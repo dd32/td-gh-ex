@@ -183,7 +183,7 @@ if ( ! function_exists( 'catchkathmandu_featured_image' ) ) :
  * To override this in a child theme
  * simply create your own catchkathmandu_featured_image(), and that function will be used instead.
  *
- * @since Catch Kathmandu Pro 1.0
+ * @since Catch Kathmandu 1.0
  */
 function catchkathmandu_featured_image() {
 	//delete_transient( 'catchkathmandu_featured_image' );	
@@ -194,46 +194,58 @@ function catchkathmandu_featured_image() {
 	$defaults = $catchkathmandu_options_defaults;
 	$enableheaderimage = $options[ 'enable_featured_header_image' ];
 		
-	if ( !$catchkathmandu_featured_image = get_transient( 'catchkathmandu_featured_image' ) ) {
+	if ( !empty( $options[ 'featured_header_image' ] ) ) {
 		
-		echo '<!-- refreshing cache -->';
-
-		if ( !empty( $options[ 'featured_header_image' ] ) ) {
-			// Header Image Link Target
-			if ( !empty( $options[ 'featured_header_image_base' ] ) ) :
-				$base = '_blank'; 	
-			else:
-				$base = '_self'; 	
-			endif;
-			
-			// Header Image Title/Alt
-			if ( !empty( $options[ 'featured_header_image_alt' ] ) ) :
-				$title = $options[ 'featured_header_image_alt' ]; 	
-			else:
-				$title = ''; 	
-			endif;
-			
-			// Header Image
-			if ( !empty( $options[ 'featured_header_image' ] ) ) :
-				$feat_image = '<img class="wp-post-image" src="'.esc_url( $options[ 'featured_header_image' ] ).'" />'; 	
+		$catchkathmandu_featured_image = '<div id="header-image">';
+		
+		// Header Image Link and Target
+		if ( !empty( $options[ 'featured_header_image_url' ] ) ) {
+			//support for qtranslate custom link
+			if ( function_exists( 'qtrans_convertURL' ) ) {
+				$link = qtrans_convertURL($options[ 'featured_header_image_url' ]);
+			}
+			else {
+				$link = esc_url( $options[ 'featured_header_image_url' ] );
+			}
+			//Checking Link Target
+			if ( !empty( $options[ 'featured_header_image_base' ] ) )  {
+				$target = '_blank'; 	
+			}
+			else {
+				$target = '_self'; 	
+			}
+		}
+		else {
+			$link = '';
+			$target = '';
+		}
+		
+		// Header Image Title/Alt
+		if ( !empty( $options[ 'featured_header_image_alt' ] ) ) {
+			$title = esc_attr( $options[ 'featured_header_image_alt' ] ); 	
+		}
+		else {
+			$title = ''; 	
+		}
+		
+		// Header Image
+		if ( !empty( $options[ 'featured_header_image' ] ) ) :
+			$feat_image = '<img class="wp-post-image" src="'.esc_url( $options[ 'featured_header_image' ] ).'" />'; 	
+		else:
+			// if empty featured_header_image on theme options, display default
+			$feat_image = '<img class="wp-post-image" src="'.esc_url( $defaults[ 'featured_header_image' ] ).'" />';
+		endif;
+		
+		$catchkathmandu_featured_image = '<div id="header-featured-image">';
+			// Header Image Link 
+			if ( !empty( $options[ 'featured_header_image_url' ] ) ) :
+				$catchkathmandu_featured_image .= '<a title="'.$title.'" href="'.$link.'" target="'.$target.'"><img id="main-feat-img" class="wp-post-image" alt="'.$title.'" src="'.esc_url( $options[ 'featured_header_image' ] ).'" /></a>'; 	
 			else:
 				// if empty featured_header_image on theme options, display default
-				$feat_image = '<img class="wp-post-image" src="'.esc_url( $defaults[ 'featured_header_image' ] ).'" />';
+				$catchkathmandu_featured_image .= '<img id="main-feat-img" class="wp-post-image" alt="'.$title.'" src="'.esc_url( $options[ 'featured_header_image' ] ).'" />';
 			endif;
-			
-			$catchkathmandu_featured_image = '<div id="header-featured-image">';
-				// Header Image Link 
-				if ( !empty( $options[ 'featured_header_image_url' ] ) ) :
-					$catchkathmandu_featured_image .= '<a title="'.$title.'" href="'.$options[ 'featured_header_image_url' ] .'" target="'.$base.'"><img id="main-feat-img" class="wp-post-image" alt="'.$title.'" src="'.esc_url( $options[ 'featured_header_image' ] ).'" /></a>'; 	
-				else:
-					// if empty featured_header_image on theme options, display default
-					$catchkathmandu_featured_image .= '<img id="main-feat-img" class="wp-post-image" alt="'.$title.'" src="'.esc_url( $options[ 'featured_header_image' ] ).'" />';
-				endif;
-			$catchkathmandu_featured_image .= '</div><!-- #header-featured-image -->';
-		}
-			
-		set_transient( 'catchkathmandu_featured_image', $catchkathmandu_featured_image, 86940 );	
-	}	
+		$catchkathmandu_featured_image .= '</div><!-- #header-featured-image -->';
+	}
 	
 	echo $catchkathmandu_featured_image;
 	
@@ -248,39 +260,59 @@ if ( ! function_exists( 'catchkathmandu_featured_page_post_image' ) ) :
  * To override this in a child theme
  * simply create your own catchkathmandu_featured_imaage_pagepost(), and that function will be used instead.
  *
- * @since Catch Kathmandu Pro 1.0
+ * @since Catch Kathmandu 1.0
  */
 function catchkathmandu_featured_page_post_image() {
 
-	global $post, $wp_query, $catchkathmandu_options_settings, $catchkathmandu_options_defaults;
+	global $post, $wp_query, $catchkathmandu_options_settings;
    	$options = $catchkathmandu_options_settings;
-	$defaults = $catchkathmandu_options_defaults; 
-	$enableheaderimage =  $options[ 'enable_featured_header_image' ];
 	$featured_image = $options['page_featured_image'];
 	
-	// Front page displays in Reading Settings
-	$page_on_front = get_option('page_on_front') ;
-	$page_for_posts = get_option('page_for_posts'); 
+	
+	if ( has_post_thumbnail() ) {
+		
+		echo '<div id="header-featured-image">';
+			
+			if ( !empty( $options[ 'featured_header_image_url' ] ) ) {
+				// Header Image Link Target
+				if ( !empty( $options[ 'featured_header_image_base' ] ) ) :
+					$base = '_blank'; 	
+				else:
+					$base = '_self'; 	
+				endif;
+				
+				// Header Image Title/Alt
+				if ( !empty( $options[ 'featured_header_image_alt' ] ) ) :
+					$title = esc_attr( $options[ 'featured_header_image_alt' ] ); 
+				else:
+					$title = ''; 	
+				endif;
+				
+				$linkopen = '<a title="'.$title.'" href="'.$options[ 'featured_header_image_url' ] .'" target="'.$base.'">';
+				$linkclose = '</a>';
+			}
+			else {
+				$linkopen = '';
+				$linkclose = '';
+			}
+		
+			echo $linkopen;
+				if ( $featured_image == 'featured' ) { 
+					echo get_the_post_thumbnail($post->ID, 'featured', array('id' => 'main-feat-img'));
+				} 
+				elseif ( $featured_image == 'slider' ) {
+					echo get_the_post_thumbnail($post->ID, 'slider', array('id' => 'main-feat-img'));
+				}
+				else { 
+					echo get_the_post_thumbnail($post->ID, 'full', array('id' => 'main-feat-img'));
+				}
+			echo $linkclose;
 
-	// Get Page ID outside Loop
-	$page_id = $wp_query->get_queried_object_id();
-	
-	//Individual Page/Post Image Setting
-	$individual_featured_image = get_post_meta( $post->ID, 'catchkathmandu-header-image', true ); 
-	
-	if ( is_home() || $individual_featured_image == 'disable' || ( $individual_featured_image == 'default' && $enableheaderimage == 'disable' ) || '' == get_the_post_thumbnail() ) {
-		echo '<!-- Disable Header Image -->';
+		echo '</div><!-- #header-featured-image -->';
+			
 	}
 	else {
-		if ( $individual_featured_image == 'featured' || ( $individual_featured_image=='default' && $featured_image == 'featured' ) ) { 
-			echo get_the_post_thumbnail($post->ID, 'featured', array('id' => 'main-feat-img'));
-		} 
-		elseif ( $individual_featured_image == 'slider' || ( $individual_featured_image=='default' && $featured_image == 'slider' ) ) {
-			echo get_the_post_thumbnail($post->ID, 'slider', array('id' => 'main-feat-img'));
-		}
-		else { 
-			echo get_the_post_thumbnail($post->ID, 'full', array('id' => 'main-feat-img'));
-		}
+		catchkathmandu_featured_image();
 	}		
 	
 } // catchkathmandu_featured_page_post_image
@@ -298,20 +330,38 @@ if ( ! function_exists( 'catchkathmandu_featured_overall_image' ) ) :
  */
 function catchkathmandu_featured_overall_image() {
 
-	global $post, $wp_query, $catchkathmandu_options_settings, $catchkathmandu_options_defaults;
+	global $post, $wp_query, $catchkathmandu_options_settings;
    	$options = $catchkathmandu_options_settings;
-	$defaults = $catchkathmandu_options_defaults; 
 	$enableheaderimage =  $options[ 'enable_featured_header_image' ];
-	$featured_image = $options['page_featured_image'];
 	
 	// Front page displays in Reading Settings
-	$page_on_front = get_option('page_on_front') ;
 	$page_for_posts = get_option('page_for_posts'); 
 
 	// Get Page ID outside Loop
 	$page_id = $wp_query->get_queried_object_id();
-	
-	if ( $enableheaderimage == 'excludehome'  ) {
+
+	// Check Enable/Disable header image in Page/Post Meta box
+	if ( is_page() || is_single() ) {
+		//Individual Page/Post Image Setting
+		$individual_featured_image = get_post_meta( $post->ID, 'catchkathmandu-header-image', true ); 
+		
+		if ( $individual_featured_image == 'disable' || ( $individual_featured_image == 'default' && $enableheaderimage == 'disable' ) ) {
+			echo '<!-- Page/Post Disable Header Image -->';
+			return;
+		}
+		elseif ( $individual_featured_image == 'enable' && $enableheaderimage == 'disable' ) {
+			catchkathmandu_featured_page_post_image();
+		}
+	}
+
+	// Check Homepage 
+	if ( $enableheaderimage == 'homepage' ) {
+		if ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) {
+			catchkathmandu_featured_image();
+		}
+	}
+	// Check Excluding Homepage 
+	if ( $enableheaderimage == 'excludehome' ) {
 		if ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) {
 			return false;
 		}
@@ -319,9 +369,11 @@ function catchkathmandu_featured_overall_image() {
 			catchkathmandu_featured_image();	
 		}
 	}
-	elseif ( $enableheaderimage == 'allpage' || ( ( $enableheaderimage == 'homepage' || $enableheaderimage == 'postpage' ) && ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) ) ) {
+	// Check Entire Site
+	elseif ( $enableheaderimage == 'allpage' ) {
 		catchkathmandu_featured_image();
 	}
+	// Check Entire Site (Post/Page)
 	elseif ( $enableheaderimage == 'postpage' ) {
 		if ( is_page() || is_single() ) {
 			catchkathmandu_featured_page_post_image();
@@ -329,9 +381,12 @@ function catchkathmandu_featured_overall_image() {
 		else {
 			catchkathmandu_featured_image();
 		}
-	}
-	elseif ( $enableheaderimage == 'pagespostes' && ( is_page || is_single ) ) {
-		catchkathmandu_featured_page_post_image();
+	}	
+	// Check Page/Post
+	elseif ( $enableheaderimage == 'pagespostes' ) {
+		if ( is_page() || is_single() ) {
+			catchkathmandu_featured_page_post_image();
+		}
 	}
 	else {
 		echo '<!-- Disable Header Image -->';
@@ -349,7 +404,7 @@ if ( ! function_exists( 'catchkathmandu_content_image' ) ) :
  * To override this in a child theme
  * simply create your own catchkathmandu_content_image(), and that function will be used instead.
  *
- * @since Catch Kathmandu Pro 1.0
+ * @since Catch Kathmandu 1.0
  */
 function catchkathmandu_content_image() {
 	global $post, $wp_query;
@@ -430,36 +485,55 @@ function catchkathmandu_inline_css() {
 add_action('wp_head', 'catchkathmandu_inline_css');
 
 
-/**
- * Filters wp_title to print a neat <title> tag based on what is being viewed.
- *
- * @since Catch Kathmandu 1.0
- *
- * @param string $title Default title text for current view.
- * @param string $sep Optional separator.
- * @return string The filtered title.
- */
-function catchkathmandu_wp_title( $title, $sep ) {
-	global $page, $paged;
-
-	if ( is_feed() )
+if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
+	/**
+	* Filters wp_title to print a neat <title> tag based on what is being viewed.
+	*
+	* @param string $title Default title text for current view.
+	* @param string $sep Optional separator.
+	* @return string The filtered title.
+	*/
+	function catchkathmandu_wp_title( $title, $sep ) {
+		if ( is_feed() ) {
+			return $title;
+		}
+		
+		global $page, $paged;
+		
+		// Add the blog name
+		$title .= get_bloginfo( 'name', 'display' );
+		
+		// Add the blog description for the home/front page.
+		$site_description = get_bloginfo( 'description', 'display' );
+		
+		if ( $site_description && ( is_home() || is_front_page() ) ) {
+			$title .= " $sep $site_description";
+		}
+		
+		// Add a page number if necessary:
+		if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
+			$title .= " $sep " . sprintf( __( 'Page %s', '_s' ), max( $paged, $page ) );
+		}
+		
 		return $title;
-
-	// Add the blog name
-	$title .= get_bloginfo( 'name' );
-
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
-
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'catchkathmandu' ), max( $paged, $page ) );
-
-	return $title;
-}
-add_filter( 'wp_title', 'catchkathmandu_wp_title', 10, 2 );
+		
+	}
+		
+	add_filter( 'wp_title', 'catchkathmandu_wp_title', 10, 2 );
+	
+	/**
+	* Title shim for sites older than WordPress 4.1.
+	*
+	* @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
+	* @todo Remove this function when WordPress 4.3 is released.
+	*/
+	function catchkathmandu_render_title() {
+	?>
+		<title><?php wp_title( '&#124;', true, 'right' ); ?></title>
+	<?php
+	}
+	add_action( 'wp_head', 'catchkathmandu_render_title' );
+endif;
 
 
 /**

@@ -4,9 +4,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Kathmandu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-28 23:17-0800\n"
-"PO-Revision-Date: 2014-10-28 23:17-0800\n"
-"Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
+"POT-Creation-Date: 2015-01-04 16:59+0545\n"
+"PO-Revision-Date: 2015-01-04 17:02+0545\n"
+"Last-Translator: Jaume Albaigès <jaumealbaiges@hotmail.com>\n"
 "Language-Team: Ruben Ramos Fernandez <support@catchthemes.com>\n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
@@ -44,7 +44,7 @@ msgstr "Trate de buscar en los archivos mensuales. %1$s"
 #: ../archive.php:23
 #, php-format
 msgid "Category Archives: %s"
-msgstr "Archivos de la categoría:%s"
+msgstr "Archivo de la categoría: %s"
 
 #: ../archive.php:26
 #, php-format
@@ -54,22 +54,22 @@ msgstr "Archivo de la etiqueta: %s"
 #: ../archive.php:33
 #, php-format
 msgid "Author Archives: %s"
-msgstr "Archivos del Autor: %s"
+msgstr "Archivo del autor: %s"
 
 #: ../archive.php:41
 #, php-format
 msgid "Daily Archives: %s"
-msgstr "Archivos diarios: %s"
+msgstr "Archivo diarios: %s"
 
 #: ../archive.php:44
 #, php-format
 msgid "Monthly Archives: %s"
-msgstr "Archivos por mes: %s"
+msgstr "Archivo mensual: %s"
 
 #: ../archive.php:47
 #, php-format
 msgid "Yearly Archives: %s"
-msgstr "Archivos anuales: %s"
+msgstr "Archivo anual: %s"
 
 #: ../archive.php:50 ../sidebar.php:62
 msgid "Archives"
@@ -102,7 +102,7 @@ msgstr "Comentarios cerrados."
 #: ../content-gallery.php:25 ../content-gallery.php:42
 #: ../content-gallery.php:43 ../content-image.php:23 ../content-page.php:18
 #: ../content-single.php:18 ../content-video.php:24 ../content.php:32
-#: ../inc/catchkathmandu-functions.php:384
+#: ../inc/catchkathmandu-functions.php:439
 #, php-format
 msgid "Permalink to %s"
 msgstr "Enlace permanente a %s"
@@ -224,11 +224,11 @@ msgstr "Video"
 msgid "Featured post"
 msgstr "Articulo destacado"
 
-#: ../functions.php:93 ../inc/catchkathmandu-menus.php:11
+#: ../functions.php:101 ../inc/catchkathmandu-menus.php:11
 msgid "Primary Menu"
 msgstr "Menú Principal"
 
-#: ../functions.php:94 ../inc/catchkathmandu-menus.php:45
+#: ../functions.php:102 ../inc/catchkathmandu-menus.php:45
 msgid "Secondary Menu"
 msgstr "Menu Secundario"
 
@@ -288,168 +288,168 @@ msgstr ""
 msgid "Both comments and trackbacks are currently closed."
 msgstr "Ambos comentarios y trackbacks están cerrados."
 
-#: ../inc/catchkathmandu-functions.php:458
+#: ../inc/catchkathmandu-functions.php:515
 #, php-format
 msgid "Page %s"
 msgstr "Pagina %s"
 
-#: ../inc/catchkathmandu-functions.php:505
-#: ../inc/catchkathmandu-functions.php:1002
-#: ../inc/catchkathmandu-functions.php:1005 ../searchform.php:18
+#: ../inc/catchkathmandu-functions.php:579
+#: ../inc/catchkathmandu-functions.php:1076
+#: ../inc/catchkathmandu-functions.php:1079 ../searchform.php:18
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: ../inc/catchkathmandu-functions.php:1534 ../inc/panel/theme-options.php:108
+#: ../inc/catchkathmandu-functions.php:1608 ../inc/panel/theme-options.php:108
 #: ../inc/panel/theme-options.php:1016
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../inc/catchkathmandu-functions.php:1539 ../inc/panel/theme-options.php:109
+#: ../inc/catchkathmandu-functions.php:1613 ../inc/panel/theme-options.php:109
 #: ../inc/panel/theme-options.php:1024
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../inc/catchkathmandu-functions.php:1544
+#: ../inc/catchkathmandu-functions.php:1618
 #: ../inc/panel/theme-options.php:1032
 msgid "Google+"
 msgstr "Google+"
 
-#: ../inc/catchkathmandu-functions.php:1549
+#: ../inc/catchkathmandu-functions.php:1623
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: ../inc/catchkathmandu-functions.php:1554
+#: ../inc/catchkathmandu-functions.php:1628
 #: ../inc/panel/theme-options.php:1040
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/catchkathmandu-functions.php:1559
+#: ../inc/catchkathmandu-functions.php:1633
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../inc/catchkathmandu-functions.php:1564
+#: ../inc/catchkathmandu-functions.php:1638
 #: ../inc/panel/theme-options.php:1056
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/catchkathmandu-functions.php:1569
+#: ../inc/catchkathmandu-functions.php:1643
 msgid "SlideShare"
 msgstr "SlideShare"
 
-#: ../inc/catchkathmandu-functions.php:1574
+#: ../inc/catchkathmandu-functions.php:1648
 msgid "FourSquare"
 msgstr "FourSquare"
 
-#: ../inc/catchkathmandu-functions.php:1579
+#: ../inc/catchkathmandu-functions.php:1653
 #: ../inc/panel/theme-options.php:1088
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/catchkathmandu-functions.php:1584
+#: ../inc/catchkathmandu-functions.php:1658
 #: ../inc/panel/theme-options.php:1096
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/catchkathmandu-functions.php:1589
+#: ../inc/catchkathmandu-functions.php:1663
 #: ../inc/panel/theme-options.php:1104
 msgid "deviantART"
 msgstr "deviantART"
 
-#: ../inc/catchkathmandu-functions.php:1594
+#: ../inc/catchkathmandu-functions.php:1668
 #: ../inc/panel/theme-options.php:1112
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/catchkathmandu-functions.php:1599
+#: ../inc/catchkathmandu-functions.php:1673
 #: ../inc/panel/theme-options.php:1120
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../inc/catchkathmandu-functions.php:1604
+#: ../inc/catchkathmandu-functions.php:1678
 #: ../inc/panel/theme-options.php:1128
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../inc/catchkathmandu-functions.php:1609
+#: ../inc/catchkathmandu-functions.php:1683
 #: ../inc/panel/theme-options.php:1136
 msgid "RSS"
 msgstr "RSS"
 
-#: ../inc/catchkathmandu-functions.php:1614
+#: ../inc/catchkathmandu-functions.php:1688
 #: ../inc/panel/theme-options.php:1144
 msgid "Delicious"
 msgstr "Delicious"
 
-#: ../inc/catchkathmandu-functions.php:1619
+#: ../inc/catchkathmandu-functions.php:1693
 #: ../inc/panel/theme-options.php:1152
 msgid "Last.fm"
 msgstr "Last.fm"
 
-#: ../inc/catchkathmandu-functions.php:1624
+#: ../inc/catchkathmandu-functions.php:1698
 #: ../inc/panel/theme-options.php:1160
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/catchkathmandu-functions.php:1629
+#: ../inc/catchkathmandu-functions.php:1703
 #: ../inc/panel/theme-options.php:1168
 msgid "GitHub"
 msgstr "GitHub"
 
-#: ../inc/catchkathmandu-functions.php:1634
+#: ../inc/catchkathmandu-functions.php:1708
 #: ../inc/panel/theme-options.php:1176
 msgid "Vkontakte"
 msgstr "Vkontakte"
 
-#: ../inc/catchkathmandu-functions.php:1639
+#: ../inc/catchkathmandu-functions.php:1713
 #: ../inc/panel/theme-options.php:1184
 msgid "My World"
 msgstr "My World"
 
-#: ../inc/catchkathmandu-functions.php:1644
+#: ../inc/catchkathmandu-functions.php:1718
 #: ../inc/panel/theme-options.php:1192
 msgid "Odnoklassniki"
 msgstr "Odnoklassniki"
 
-#: ../inc/catchkathmandu-functions.php:1649
+#: ../inc/catchkathmandu-functions.php:1723
 msgid "GoodReads"
 msgstr "GoodReads"
 
-#: ../inc/catchkathmandu-functions.php:1654
+#: ../inc/catchkathmandu-functions.php:1728
 #: ../inc/panel/theme-options.php:1208
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/catchkathmandu-functions.php:1659
+#: ../inc/catchkathmandu-functions.php:1733
 msgid "SoundCloud"
 msgstr "SoundCloud"
 
-#: ../inc/catchkathmandu-functions.php:1664
+#: ../inc/catchkathmandu-functions.php:1738
 #: ../inc/panel/theme-options.php:1224
 msgid "Email"
 msgstr "Email"
 
-#: ../inc/catchkathmandu-functions.php:1669
+#: ../inc/catchkathmandu-functions.php:1743
 #: ../inc/panel/theme-options.php:1232
 msgid "Contact"
 msgstr "Contact"
 
-#: ../inc/catchkathmandu-functions.php:1674
+#: ../inc/catchkathmandu-functions.php:1748
 #: ../inc/panel/theme-options.php:1240
 msgid "Xing"
 msgstr "Xing"
 
-#: ../inc/catchkathmandu-functions.php:1679
+#: ../inc/catchkathmandu-functions.php:1753
 #: ../inc/panel/theme-options.php:1248
 msgid "Meetup"
 msgstr "Meetup"
 
-#: ../inc/catchkathmandu-functions.php:1774
+#: ../inc/catchkathmandu-functions.php:1848
 msgid "ID"
 msgstr "ID"
 
-#: ../inc/catchkathmandu-functions.php:1798
-#: ../inc/catchkathmandu-functions.php:1811
+#: ../inc/catchkathmandu-functions.php:1872
+#: ../inc/catchkathmandu-functions.php:1885
 msgid "Menu"
 msgstr "menú"
 
@@ -600,7 +600,7 @@ msgstr "Todos los derechos reservados"
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:106
 #: ../inc/panel/theme-options.php:1811
 msgid "Catch Kathmandu by"
-msgstr "Catch Kathmandu by"
+msgstr "Catch Kathmandu Pro por"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:124
 msgid "Y"
@@ -1532,17 +1532,492 @@ msgstr "Resultados de la busqueda para: %s"
 msgid "Search"
 msgstr "Buscar"
 
-#~ msgid "Catch Kathmandu Pro"
-#~ msgstr "Catch Kathmandu Pro"
+#~ msgid "Footer Menu"
+#~ msgstr "Menú del pie de página"
 
-#~ msgid "Powered by"
-#~ msgstr "Desarrollado por"
+#~ msgid ""
+#~ "You have selected Post Slider but you haven't added the Post ID in "
+#~ "\"Appearance => Theme Options => Featured Slider => Featured Post Slider "
+#~ "Options\""
+#~ msgstr ""
+#~ "You have selected Post Slider but you haven't added the Post ID in "
+#~ "\"Appearance => Theme Options => Featured Slider => Featured Post Slider "
+#~ "Options\""
 
-#~ msgid "Theme"
-#~ msgstr "Theme"
+#~ msgid ""
+#~ "You have selected Page Slider but you haven't added the Page ID in "
+#~ "\"Appearance => Theme Options => Featured Slider => Featured Page Slider "
+#~ "Options\""
+#~ msgstr ""
+#~ "You have selected Page Slider but you haven't added the Page ID in "
+#~ "\"Appearance => Theme Options => Featured Slider => Featured Page Slider "
+#~ "Options\""
 
-#~ msgid "Upload Fav Icon"
-#~ msgstr "Upload Fav Icon"
+#~ msgid ""
+#~ "You have selected Category Slider but you haven't selected any categories "
+#~ "in \"Appearance => Theme Options => Featured Slider => Featured Category "
+#~ "Slider Options\""
+#~ msgstr ""
+#~ "You have selected Category Slider but you haven't selected any categories "
+#~ "in \"Appearance => Theme Options => Featured Slider => Featured Category "
+#~ "Slider Options\""
+
+#~ msgid ""
+#~ "You have selected Image Slider but you haven't uploaded any image in "
+#~ "\"Appearance => Theme Options => Featured Slider => Featured Image Slider "
+#~ "Options\""
+#~ msgstr ""
+#~ "You have selected Image Slider but you haven't uploaded any image in "
+#~ "\"Appearance => Theme Options => Featured Slider => Featured Image Slider "
+#~ "Options\""
+
+#~ msgid "%1$s on %2$s"
+#~ msgstr "%1$s en %2$s"
+
+#~ msgid "No sidebar, Full Width"
+#~ msgstr "No sidebar, Full Width"
+
+#~ msgid "No Sidebar, One Column"
+#~ msgstr "No Sidebar, One Column"
+
+#~ msgid "Default Sidebar"
+#~ msgstr "Default Sidebar"
+
+#~ msgid "Optional Sidebar One"
+#~ msgstr "Default Sidebar"
+
+#~ msgid "Optional Sidebar Two"
+#~ msgstr "Optional Sidebar Two"
+
+#~ msgid "Optional Sidebar three"
+#~ msgstr "Optional Sidebar three"
+
+#~ msgid "Select Sidebar"
+#~ msgstr "Select Sidebar"
+
+#~ msgid "Header Top Sidebar"
+#~ msgstr "Header Top Sidebar"
+
+#~ msgid "Shows the Widgets at the Top of Header"
+#~ msgstr "Shows the Widgets at the Top of Header"
+
+#~ msgid "Optional Homepage Sidebar"
+#~ msgstr "Optional Homepage Sidebar"
+
+#~ msgid "This is Optional Sidebar for Homepage"
+#~ msgstr "This is Optional Sidebar for Homepage"
+
+#~ msgid "Optional Archive Sidebar"
+#~ msgstr "Optional Archive Sidebar"
+
+#~ msgid "This is Optional Sidebar for Archive"
+#~ msgstr "This is Optional Sidebar for Archive"
+
+#~ msgid "Optional Page Sidebar"
+#~ msgstr "Optional Page Sidebar"
+
+#~ msgid "This is Optional Sidebar for Page"
+#~ msgstr "This is Optional Sidebar for Page"
+
+#~ msgid "Optional Post Sidebar"
+#~ msgstr "Optional Post Sidebar"
+
+#~ msgid "This is Optional Sidebar for Post"
+#~ msgstr "This is Optional Sidebar for Post"
+
+#~ msgid "This is Optional Sidebar One"
+#~ msgstr "This is Optional Sidebar One"
+
+#~ msgid "This is Optional Sidebar Two"
+#~ msgstr "This is Optional Sidebar Two"
+
+#~ msgid "Optional Sidebar Three"
+#~ msgstr "Optional Sidebar Three"
+
+#~ msgid "This is Optional Sidebar Three"
+#~ msgstr "This is Optional Sidebar Three"
+
+#~ msgid "WooCommerce Sidebar"
+#~ msgstr "WooCommerce Sidebar"
+
+#~ msgid "This is Optional WooCommerce Sidebar"
+#~ msgstr "This is Optional WooCommerce Sidebar"
+
+#~ msgid "404 Page Not Found Content"
+#~ msgstr "404 Page Not Found Content"
+
+#~ msgid "Replaces the default 404 Page Not Found Content"
+#~ msgstr "Replaces the default 404 Page Not Found Content"
+
+#~ msgid "Use this widget to add any type of Advertisement as a widget."
+#~ msgstr "Use this widget to add any type of Advertisement as a widget."
+
+#~ msgid "2. Catch Kathmandu: Advertisement"
+#~ msgstr "2. Catch Kathmandu: Advertisement"
+
+#~ msgid "Advertisement Code:"
+#~ msgstr "Advertisement Code:"
+
+#~ msgid "Image Url:"
+#~ msgstr "Image Url:"
+
+#~ msgid "Link URL:"
+#~ msgstr "Link URL:"
+
+#~ msgid "Open Link in New Window"
+#~ msgstr "Open Link in New Window"
+
+#~ msgid "Alt text:"
+#~ msgstr "Alt text:"
+
+#~ msgid "Add Advertisement Code or Image URL"
+#~ msgstr "Add Advertisement Code or Image URL"
+
+#~ msgid "Use this widget to add Featured Content as a widget."
+#~ msgstr "Use this widget to add Featured Content as a widget."
+
+#~ msgid "3. Catch Kathmandu: Featured Content"
+#~ msgstr "3. Catch Kathmandu: Featured Content"
+
+#~ msgid "Title:"
+#~ msgstr "Title:"
+
+#~ msgid "Content:"
+#~ msgstr "Content:"
+
+#~ msgid "Show Image Before Title"
+#~ msgstr "Show Image Before Title"
+
+#~ msgid "Show Image After Title"
+#~ msgstr "Show Image After Title"
+
+#~ msgid "Use this widget to add Page as a widget."
+#~ msgstr "Use this widget to add Page as a widget."
+
+#~ msgid "4. Catch Kathmandu: Featured Page"
+#~ msgstr "4. Catch Kathmandu: Featured Page"
+
+#~ msgid "Title (Optional): Add in the Title to replace the Page Title"
+#~ msgstr "Title (Optional): Add in the Title to replace the Page Title"
+
+#~ msgid "Page"
+#~ msgstr "Page"
+
+#~ msgid "Image:"
+#~ msgstr "Image:"
+
+#~ msgid "Show Small Image Size"
+#~ msgstr "Show Small Image Size"
+
+#~ msgid "Show Featured Image Size"
+#~ msgstr "Show Featured Image Size"
+
+#~ msgid "Show Slider Image Size"
+#~ msgstr "Show Slider Image Size"
+
+#~ msgid "Show Full Size Image Size"
+#~ msgstr "Show Full Size Image Size"
+
+#~ msgid "Move Image After Title?"
+#~ msgstr "Move Image After Title?"
+
+#~ msgid "Use this widget to add Post as a widget."
+#~ msgstr "Use this widget to add Post as a widget."
+
+#~ msgid "5. Catch Kathmandu: Featured Post"
+#~ msgstr "5. Catch Kathmandu: Featured Post"
+
+#~ msgid "Post ID"
+#~ msgstr "Post ID"
+
+#~ msgid "Use this widget to add About Text with Image."
+#~ msgstr "Use this widget to add About Text with Image."
+
+#~ msgid "6. Catch Kathmandu: About Profile"
+#~ msgstr "6. Catch Kathmandu: About Profile"
+
+#~ msgid "Short Description:"
+#~ msgstr "Short Description:"
+
+#~ msgid "Continue Reading &rarr;"
+#~ msgstr "Seguir leyendo &rarr;"
+
+#~ msgid "Search &hellip;"
+#~ msgstr "Buscar &hellip;"
+
+#~ msgid "Webmaster Tools"
+#~ msgstr "Herramientas para Webmaster"
+
+#~ msgid "Move Site Title & Description"
+#~ msgstr "Move Site Title & Description"
+
+#~ msgid "Check to move before Logo"
+#~ msgstr "Check to move before Logo"
+
+#~ msgid "Featured HeaderImage Position"
+#~ msgstr "Featured HeaderImage Position"
+
+#~ msgid "Before Menu"
+#~ msgstr "Before Menu"
+
+#~ msgid "After Menu"
+#~ msgstr "After Menu"
+
+#~ msgid "Before Header"
+#~ msgstr "Before Header"
+
+#~ msgid "After Top Sidebar"
+#~ msgstr "After Top Sidebar"
+
+#~ msgid "No Sidebar, Full Width"
+#~ msgstr "No Sidebar, Full Width"
+
+#~ msgid "Font Family Options"
+#~ msgstr "Font Family Options"
+
+#~ msgid "Default Font Family"
+#~ msgstr "Default Font Family"
+
+#~ msgid "Site Title Font Family"
+#~ msgstr "Site Title Font Family"
+
+#~ msgid "Site Tagline Font Family"
+#~ msgstr "Site Tagline Font Family"
+
+#~ msgid "Content Title Font Family"
+#~ msgstr "Content Title Font Family"
+
+#~ msgid "Content Body Font Family"
+#~ msgstr "Content Body Font Family"
+
+#~ msgid "Headings Tags from h1 to h6 Font Family"
+#~ msgstr "Headings Tags from h1 to h6 Font Family"
+
+#~ msgid "Reset Fonts?"
+#~ msgstr "Reset Fonts?"
+
+#~ msgid "Comments Options"
+#~ msgstr "Comments Options"
+
+#~ msgid "Disable Comment?"
+#~ msgstr "Disable Comment?"
+
+#~ msgid "Use WordPress Settings"
+#~ msgstr "Use WordPress Settings"
+
+#~ msgid "Disable in Pages"
+#~ msgstr "Disable in Pages"
+
+#~ msgid "Disable Completely"
+#~ msgstr "Disable Completely"
+
+#~ msgid "Disable Website Field?"
+#~ msgstr "Disable Website Field?"
+
+#~ msgid "Footer Editor Option"
+#~ msgstr "Footer Editor Option"
+
+#~ msgid "Footer Editor"
+#~ msgstr "Footer Editor"
+
+#~ msgid ""
+#~ "You can add custom <acronym title=\"Hypertext Markup Language\">HTML</"
+#~ "acronym> and/or shortcodes, which will be automatically inserted into "
+#~ "your theme.<br />Some shorcodes: [footer-image], [the-year], [site-link], "
+#~ "[wp-link], [shop-link]  for current year, your site link, wordpress site "
+#~ "link, Catch Themes shop link respectively."
+#~ msgstr ""
+#~ "You can add custom <acronym title=\"Hypertext Markup Language\">HTML</"
+#~ "acronym> and/or shortcodes, which will be automatically inserted into "
+#~ "your theme.<br />Some shorcodes: [footer-image], [the-year], [site-link], "
+#~ "[wp-link], [shop-link]  for current year, your site link, wordpress site "
+#~ "link, Catch Themes shop link respectively."
+
+#~ msgid "Reset Footer?"
+#~ msgstr "Reset Footer?"
+
+#~ msgid "Scroll Up"
+#~ msgstr "Scroll Up"
+
+#~ msgid "Disable Scroll Up?"
+#~ msgstr "Disable Scroll Up?"
+
+#~ msgid "Update Notifier"
+#~ msgstr "Update Notifier"
+
+#~ msgid "Disable Update Notifier?"
+#~ msgstr "Disable Update Notifier?"
+
+#~ msgid "Color Scheme"
+#~ msgstr "Color Scheme"
+
+#~ msgid "Menus Color Options"
+#~ msgstr "Menus Color Options"
+
+#~ msgid "Primary Menu Color Options"
+#~ msgstr "Primary Menu Color Options"
+
+#~ msgid "Menu Background Color:"
+#~ msgstr "Menu Background Color:"
+
+#~ msgid "Menu Text Color:"
+#~ msgstr "Menu Text Color:"
+
+#~ msgid "Menu Hover & Active Background Color:"
+#~ msgstr "Menu Hover & Active Background Color:"
+
+#~ msgid "Menu Hover & Active Text Color:"
+#~ msgstr "Menu Hover & Active Text Color:"
+
+#~ msgid "Sub-Menu Background Color:"
+#~ msgstr "Sub-Menu Background Color:"
+
+#~ msgid "Sub-Menu Text Color:"
+#~ msgstr "Sub-Menu Text Color:"
+
+#~ msgid "Secondary Menu Color Options"
+#~ msgstr "Secondary Menu Color Options"
+
+#~ msgid "Footer Menu Color Options"
+#~ msgstr "Footer Menu Color Options"
+
+#~ msgid "Reset Menu Color?"
+#~ msgstr "Reset Menu Color?"
+
+#~ msgid "Pagination Color Options"
+#~ msgstr "Pagination Color Options"
+
+#~ msgid "Pages Color:"
+#~ msgstr "Pages Color:"
+
+#~ msgid "Pages Box Background Color:"
+#~ msgstr "Pages Box Background Color:"
+
+#~ msgid "Pages Box Text Color:"
+#~ msgstr "Pages Box Text Color:"
+
+#~ msgid "Pages Box Hover/Active Background Color:"
+#~ msgstr "Pages Box Hover/Active Background Color:"
+
+#~ msgid "Pages Box Hover/Active Text Color:"
+#~ msgstr "Pages Box Hover/Active Text Color:"
+
+#~ msgid "Reset Pagination Color?"
+#~ msgstr "Reset Pagination Color?"
+
+#~ msgid "Slider Color Options"
+#~ msgstr "Slider Color Options"
+
+#~ msgid "Slider Background Color:"
+#~ msgstr "Slider Background Color:"
+
+#~ msgid "Slider Border Bottom Color:"
+#~ msgstr "Slider Border Bottom Color:"
+
+#~ msgid "Slider Controller Background Color:"
+#~ msgstr "Slider Controller Background Color:"
+
+#~ msgid "Slider Controller Arrow Color:"
+#~ msgstr "Slider Controller Arrow Color:"
+
+#~ msgid "Slider Content Background Color:"
+#~ msgstr "Slider Content Background Color:"
+
+#~ msgid "Slider Content Text Color:"
+#~ msgstr "Slider Content Text Color:"
+
+#~ msgid "Reset Slider Color?"
+#~ msgstr "Reset Slider Color?"
+
+#~ msgid "Homepage Headline Color Options"
+#~ msgstr "Homepage Headline Color Options"
+
+#~ msgid "Background Color:"
+#~ msgstr "Background Color:"
+
+#~ msgid "Text Color:"
+#~ msgstr "Text Color:"
+
+#~ msgid "Border Bottom Color:"
+#~ msgstr "Border Bottom Color:"
+
+#~ msgid "Button Background Color:"
+#~ msgstr "Button Background Color:"
+
+#~ msgid "Button Text Color:"
+#~ msgstr "Button Text Color:"
+
+#~ msgid "Button Hover Background Color:"
+#~ msgstr "Button Hover Background Color:"
+
+#~ msgid "Button Hover Text Color:"
+#~ msgstr "Button Hover Text Color:"
+
+#~ msgid "Button Border Color:"
+#~ msgstr "Button Border Color:"
+
+#~ msgid "Reset Homepage Headline Color?"
+#~ msgstr "Reset Homepage Headline Color?"
+
+#~ msgid "Site Color Options"
+#~ msgstr "Site Color Options"
+
+#~ msgid "Header Background Color:"
+#~ msgstr "Header Background Color:"
+
+#~ msgid "Content Background Color:"
+#~ msgstr "Content Background Color:"
+
+#~ msgid "Footer Background Sidebar Color: "
+#~ msgstr "Footer Background Sidebar Color: "
+
+#~ msgid "Footer Background Color: "
+#~ msgstr "Footer Background Color: "
+
+#~ msgid "Title Color:"
+#~ msgstr "Title Color:"
+
+#~ msgid "Title Hover Color:"
+#~ msgstr "Title Hover Color:"
+
+#~ msgid "Meta Description Color:"
+#~ msgstr "Meta Description Color:"
+
+#~ msgid "Link Color:"
+#~ msgstr "Link Color:"
+
+#~ msgid "Sidebar Widget Title Color:"
+#~ msgstr "Sidebar Widget Title Color:"
+
+#~ msgid "Sidebar Widget Text Color:"
+#~ msgstr "Sidebar Widget Text Color:"
+
+#~ msgid "Sidebar Widget Link Color:"
+#~ msgstr "Sidebar Widget Link Color:"
+
+#~ msgid "Scroll Up Background Color:"
+#~ msgstr "Scroll Up Background Color:"
+
+#~ msgid "Scroll Up Text Color:"
+#~ msgstr "Scroll Up Text Color:"
+
+#~ msgid "Reset Site Color?"
+#~ msgstr "Reset Site Color?"
+
+#~ msgid "Target. Open Link in New Window? "
+#~ msgstr "Destino. Abrir enlace en una ventana nueva? "
+
+#~ msgid "Insert as Homepage Featured Image"
+#~ msgstr "Insert as Homepage Featured Image"
+
+#~ msgid "Demo Slider"
+#~ msgstr "Demo Slider"
+
+#~ msgid "Page Slider"
+#~ msgstr "Page Slider"
+
+#~ msgid "Image Slider"
+#~ msgstr "Image Slider"
 
 #~ msgid "Featured Page Slider Options"
 #~ msgstr "Featured Page Slider Options"
@@ -1561,8 +2036,68 @@ msgstr "Buscar"
 #~ msgid "Featured Image Slider #%s"
 #~ msgstr "Featured Image Slider #%s"
 
+#~ msgid "Insert as Featured Image Slider #%s"
+#~ msgstr "Insert as Featured Image Slider #%s"
+
 #~ msgid "Upload"
 #~ msgstr "Upload"
+
+#~ msgid "Custom Social Icons"
+#~ msgstr "Custom Social Icons"
+
+#~ msgid "Number of Custom Social Icons"
+#~ msgstr "Number of Custom Social Icons"
+
+#~ msgid "Custom Social Icon #%s"
+#~ msgstr "Custom Social Icon #%s"
+
+#~ msgid "Social Icon Name"
+#~ msgstr "Social Icon Name"
+
+#~ msgid "Social Icon Image URL"
+#~ msgstr "Social Icon Image URL"
+
+#~ msgid "Insert as Custom Social Icon Image"
+#~ msgstr "Insert as Custom Social Icon Image"
+
+#~ msgid "Social Icon URL"
+#~ msgstr "Social Icon URL"
+
+#~ msgid "Site Verification"
+#~ msgstr "Verificacion del sitio"
+
+#~ msgid "Google Site Verification ID"
+#~ msgstr "Google Site Verification ID"
+
+#~ msgid "Enter your Google ID number only"
+#~ msgstr "Introduzca solamente su numero de Google ID"
+
+#~ msgid "Yahoo Site Verification ID"
+#~ msgstr "Yahoo Site Verification ID"
+
+#~ msgid "Enter your Yahoo ID number only"
+#~ msgstr "Introduzca solamente su numero de Yahoo ID"
+
+#~ msgid "Bing Site Verification ID"
+#~ msgstr "Bing Site Verification ID"
+
+#~ msgid "Enter your Bing ID number only"
+#~ msgstr "Introduzca solamente su numero de Bing ID"
+
+#~ msgid "Posted on"
+#~ msgstr "Posted on"
+
+#~ msgid "By"
+#~ msgstr "By"
+
+#~ msgid "Powered by"
+#~ msgstr "Desarrollado por"
+
+#~ msgid "Theme"
+#~ msgstr "Theme"
+
+#~ msgid "Upload Fav Icon"
+#~ msgstr "Upload Fav Icon"
 
 #~ msgid "%s on Facebook"
 #~ msgstr "%s en Facebook"
@@ -1642,8 +2177,8 @@ msgstr "Buscar"
 #~ msgid "%s on Email"
 #~ msgstr "%s en Email"
 
-#~ msgid "%s on Xing"
-#~ msgstr "%s en Xing"
+#~ msgid "Homepage Headline Background Color:"
+#~ msgstr "Homepage Headline Background Color:"
 
 #~ msgid "http://facebook.com/catchthemes"
 #~ msgstr "http://facebook.com/catchthemes"

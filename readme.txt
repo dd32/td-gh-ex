@@ -1,5 +1,5 @@
 == Catch Kathmandu ==
-Catch Kathmandu Theme by Catch Themes team, http://catchthemes.com/
+Catch Kathmandu Theme by Catch Themes, http://catchthemes.com/
 
 == About Catch Kathmandu ==
 Catch Kathmandu Theme is a fully responsive WordPress theme that looks elegant on any devices. It is simple, clean and lightweight full-fledged WordPress theme based on HTML5 and CSS3. The design is highly customizable and you can tailor the display to your taste with a few easy clicks. If you are looking for a clean professional space, which accommodates your visuals and yet provides you with ample amount of textual area, Catch Kathmandu is your perfect find. This theme is widely been used by Photographers, Bloggers, Corporate Houses and Universities. Translation ready and currently translated in French, Russian, Spanish, Polish, Brazilian Portuguese, Italian, German(SWITZERLAND), Japanese and Dutch languages. Check out Theme Instructions at http://catchthemes.com/theme-instructions/catch-kathmandu/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/catch-kathmandu/
@@ -19,6 +19,7 @@ Added Translation for German - SWITZERLAND by Marc Andri Etterlin (m.a.etterlin@
 Added Translation for Japanese - Key Saito (key@keyspace.info)
 Added Translation for Dutch - Yoshi van den Akker (yoshivda@gmail.com)
 Added Translation for Turkish - Dr. Hakan Gur (dilderslerisitesi@gmail.com)
+Added Translation for Catalan - Dr. Jaume Albaiges (jaumealbaiges@hotmail.com)
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt

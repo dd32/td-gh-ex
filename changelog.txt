@@ -1,5 +1,11 @@
 == Changelog ==
 
+Version 3.0
+* Added Catalan translation ca_ES.po and ca_ES.mo
+* Added title tag via add theme support
+* Bug Fixed: Featured Header image condition
+* Updated Spanish translation es_ES.po and es_ES.mo
+
 Version 2.5.2
 * Fixed footer credit link
 * Replaced get_bloginfo() with admin_url() that links to Theme Options
