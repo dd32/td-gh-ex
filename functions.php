@@ -43,7 +43,6 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	//$content_width = 710; /* pixels */
 	$content_width = 600; /* pixels */
 }	
 	
@@ -143,6 +142,14 @@ function catchflames_setup() {
 	// Add support for a variety of post formats
 	add_theme_support( 'post-formats', array( 'aside', 'link', 'gallery', 'status', 'quote', 'image', 'chat' ) );
 	
+	/*
+	* Let WordPress manage the document title.
+	* By adding theme support, we declare that this theme does not use a
+	* hard-coded <title> tag in the document head, and expect WordPress to
+	* provide it for us.
+	*/
+	add_theme_support( 'title-tag' );
+		
 	// Load up theme options defaults
 	require( get_template_directory() . '/inc/panel/catchflames-themeoptions-defaults.php' );
 	
@@ -229,13 +236,12 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 
 
 /**
- * Adds support for qTranslate Plugin
+ * Adds support for mqtranslate and qTranslate Plugin
  */
-if ( in_array( 'qtranslate/qtranslate.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) { 
-	
+if ( in_array( 'qtranslate/qtranslate.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ||
+in_array( 'mqtranslate/mqtranslate.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) { 
     require( get_template_directory() . '/inc/catchflames-qtranslate.php' );
 }
-
 
 /**
  * Adds support for WPML Plugin

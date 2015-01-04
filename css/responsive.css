@@ -540,7 +540,7 @@
 		display: inline;
 		float: left;
 		margin-left: 20px;
-		width: 400px;
+		width: 440px;
 	}
 	.three-columns #third-sidebar .widget:nth-child(2n+1) {  
 		clear: both;
@@ -651,7 +651,7 @@
     	width: 760px;
 	}
 	.three-columns #third-sidebar .widget {
-		width: 320px;
+		width: 360px;
 	}
 	#supplementary.four .widget-area,
 	#supplementary.two .widget-area,
@@ -862,7 +862,6 @@
 		display: inline;
 		float: left;
 		margin-left: 20px;
-		width: 250px;
 	}
 	.two-columns #secondary .widget:nth-child(2n+1),
 	.three-columns #secondary .widget:nth-child(2n+1) {  
@@ -872,9 +871,11 @@
 	.three-columns.equal #third-sidebar {
 		width: 620px;
 	}
+	.two-columns #secondary .widget,
+	.three-columns #secondary .widget,
 	.three-columns #third-sidebar .widget,
 	.three-columns.equal #third-sidebar .widget {
-    	width: 250px;
+    	width: 290px;
 	}	
 	#supplementary.four .widget-area,
 	.two-columns #supplementary.two .widget-area,
@@ -1054,7 +1055,7 @@ and (orientation : portrait) {
 	.three-columns #secondary .widget,
 	.three-columns #third-sidebar .widget,
 	.three-columns.equal #third-sidebar .widget {
-    	width: 200px;
+    	width: 240px;
 	}
 	#commentform .comment-subscription-form {
 		margin-top: 10px;
@@ -1222,7 +1223,7 @@ and (orientation : portrait) {
 	.three-columns #secondary .widget,
 	.three-columns #third-sidebar .widget,
 	.three-columns.equal #third-sidebar .widget {
-    	width: 170px;
+    	width: 210px;
 	}
 	#supplementary.four .widget-area,
 	.two-columns #supplementary.two .widget-area,
@@ -1356,16 +1357,13 @@ and (orientation : landscape) {
 	.three-columns #secondary,
 	.three-columns #third-sidebar,
 	.three-columns.equal #secondary,
-	.three-columns.equal #third-sidebar {
-		margin-left: 0;
-		width: 100%;
-	}
+	.three-columns.equal #third-sidebar,
 	.two-columns #secondary .widget,
 	.three-columns #secondary .widget,
 	.three-columns #third-sidebar .widget,
 	.three-columns.equal #third-sidebar .widget {
 		margin-left: 0;
-    	width: 320px;
+    	width: 100%;
 	}	
 	#supplementary.four .widget-area,
 	.two-columns #supplementary.two .widget-area,
@@ -1437,12 +1435,6 @@ and (orientation : landscape) {
 	.has-header-left-menu.has-header-right-menu #logo-wrap {
 		width: 280px;
 	}	
-	.two-columns #secondary .widget, 
-	.three-columns #secondary .widget, 
-	.three-columns #third-sidebar .widget, 
-	.three-columns.equal #third-sidebar .widget {
-		width: 300px;
-	}	
 }
 
 
@@ -1489,12 +1481,6 @@ and (orientation : landscape) {
 	.has-header-left-menu.has-header-right-menu #logo-wrap {
 		width: 260px;
 	}		
-	.two-columns #secondary .widget, 
-	.three-columns #secondary .widget, 
-	.three-columns #third-sidebar .widget, 
-	.three-columns.equal #third-sidebar .widget {
-		width: 280px;
-	}
 	#branding img {
 		max-height: 35px;
 	}
@@ -1542,14 +1528,7 @@ and (orientation : landscape) {
 	} 
 	.has-header-left-menu.has-header-right-menu #logo-wrap {
 		width: 240px;
-	}		
-	.two-columns #secondary .widget, 
-	.three-columns #secondary .widget, 
-	.three-columns #third-sidebar .widget, 
-	.three-columns.equal #third-sidebar .widget {
-		width: 260px;
-	}		
-	
+	}			
 }
 
 /* =Screen Size Max 300px
@@ -1610,11 +1589,7 @@ and (orientation : landscape) {
 	#author-info,
 	#disqus_thread, 
 	#content .error404, 
-	.widget, #comments {
-		margin-bottom: 10px;
-		padding: 2%;
-		width: 96%;
-	}	
+	.widget, #comments,
 	.two-columns #secondary .widget,
 	.three-columns #secondary .widget,
 	.three-columns #third-sidebar .widget,
