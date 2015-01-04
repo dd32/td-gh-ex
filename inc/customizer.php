@@ -5,6 +5,14 @@ add_action( 'customize_register', 'ct_unlimited_add_customizer_content' );
 
 function ct_unlimited_add_customizer_content( $wp_customize ) {
 
+	/***** Reorder default sections *****/
+
+	$wp_customize->get_section('title_tagline')->priority     = 1;
+	$wp_customize->get_section('static_front_page')->priority = 5;
+	$wp_customize->get_section('static_front_page')->title = __('Front Page', 'unlimited');
+	$wp_customize->get_section('nav')->priority = 10;
+	$wp_customize->get_section('nav')->title = __('Menus', 'unlimited');
+
 	/***** Add PostMessage Support *****/
 	
 	// Add postMessage support for site title and description.
@@ -82,7 +90,7 @@ function ct_unlimited_add_customizer_content( $wp_customize ) {
 	// section
 	$wp_customize->add_section( 'ct_unlimited_logo_upload', array(
 		'title'      => __( 'Logo Upload', 'unlimited' ),
-		'priority'   => 30,
+		'priority'   => 20,
 		'capability' => 'edit_theme_options'
 	) );
 	// setting
@@ -113,7 +121,7 @@ function ct_unlimited_add_customizer_content( $wp_customize ) {
 	// section
 	$wp_customize->add_section( 'ct_unlimited_social_media_icons', array(
 		'title'          => __('Social Media Icons', 'unlimited'),
-		'priority'       => 35,
+		'priority'       => 25,
 	) );
 
 	// create a setting and control for each social site
@@ -159,7 +167,7 @@ function ct_unlimited_add_customizer_content( $wp_customize ) {
 	// section
 	$wp_customize->add_section( 'ct_unlimited_search_bar', array(
 		'title'      => __( 'Search Bar', 'unlimited' ),
-		'priority'   => 40,
+		'priority'   => 30,
 		'capability' => 'edit_theme_options'
 	) );
 	// setting
@@ -186,8 +194,8 @@ function ct_unlimited_add_customizer_content( $wp_customize ) {
 
 	// section
 	$wp_customize->add_section( 'ct_unlimited_layout', array(
-		'title'      => __( 'Layout', 'unlimited' ),
-		'priority'   => 50,
+		'title'      => __( 'Layouts', 'unlimited' ),
+		'priority'   => 45,
 		'capability' => 'edit_theme_options'
 	) );
 	// setting
@@ -200,7 +208,7 @@ function ct_unlimited_add_customizer_content( $wp_customize ) {
 	) );
 	// control
 	$wp_customize->add_control( 'layout', array(
-		'label'          => __( 'Choose Your Layout:', 'unlimited' ),
+		'label'          => __( 'Choose your layout:', 'unlimited' ),
 		'section'        => 'ct_unlimited_layout',
 		'settings'       => 'layout',
 		'type'           => 'radio',
@@ -257,8 +265,8 @@ function ct_unlimited_add_customizer_content( $wp_customize ) {
 
 	// section
 	$wp_customize->add_section( 'ct_unlimited_comments_display', array(
-		'title'      => __( 'Comments', 'unlimited' ),
-		'priority'   => 70,
+		'title'      => __( 'Comment Display', 'unlimited' ),
+		'priority'   => 65,
 		'capability' => 'edit_theme_options'
 	) );
 	// setting
@@ -289,7 +297,7 @@ function ct_unlimited_add_customizer_content( $wp_customize ) {
 	// section
 	$wp_customize->add_section( 'ct_unlimited_custom_css', array(
 		'title'      => __( 'Custom CSS', 'unlimited' ),
-		'priority'   => 90,
+		'priority'   => 80,
 		'capability' => 'edit_theme_options'
 	) );
 	// setting
@@ -339,9 +347,21 @@ function ct_unlimited_sanitize_email( $input ) {
 
 // sanitize layout selection
 function ct_unlimited_sanitize_layout_settings($input){
+
+	/*
+	 * Also allow layouts only included in the premium plugin.
+	 * Needs to be done this way b/c sanitize_callback cannot by updated
+	 * via get_setting()
+	 */
 	$valid = array(
-		'right'   => __('Right sidebar', 'unlimited'),
-		'left'  => __('Left sidebar', 'unlimited'),
+		'right'      => __( 'Right sidebar', 'unlimited' ),
+		'left'       => __( 'Left sidebar', 'unlimited' ),
+		'narrow'     => __( 'No sidebar - Narrow', 'unlimited' ),
+		'wide'       => __( 'No sidebar - Wide', 'unlimited' ),
+		'two-right'  => __( 'Two column - Right sidebar', 'unlimited' ),
+		'two-left'   => __( 'Two column - Left sidebar', 'unlimited' ),
+		'two-narrow' => __( 'Two column - No Sidebar - Narrow', 'unlimited' ),
+		'two-wide'   => __( 'Two column - No Sidebar - Wide', 'unlimited' )
 	);
 
 	if ( array_key_exists( $input, $valid ) ) {
@@ -391,44 +411,6 @@ function ct_unlimited_sanitize_comments_setting($input){
 
 /***** Helper Functions *****/
 
-/*
- * Sets default values in customizer.
- * Otherwise, they will be empty until a visitor visits and saves changed in the Customizer
- */
-function ct_unlimited_set_customizer_values() {
-
-	// search bar
-	if( ! get_theme_mod('search_bar') ) {
-		set_theme_mod( 'search_bar', 'show' );
-	}
-	// layout
-	if( ! get_theme_mod('layout') ) {
-		set_theme_mod( 'layout', 'right' );
-	}
-	// full post
-	if( ! get_theme_mod('full_post') ) {
-		set_theme_mod( 'full_post', 'no' );
-	}
-	// excerpt length
-	if( ! get_theme_mod('excerpt_length') ) {
-		set_theme_mod( 'excerpt_length', '25' );
-	}
-	// comments display
-	if( ! get_theme_mod( 'comments_display' ) ) {
-		set_theme_mod( 'comments_display', array( 'post', 'page', 'attachment', 'none' ) );
-	}
-}
-add_action( 'init', 'ct_unlimited_set_customizer_values' );
-
-// add the ad for Unlimited Pro
-function ct_unlimited_customize_preview_js() { ?>
-	<script>
-		jQuery('#customize-info').append('<div class="upgrades-ad"><a href="<?php echo esc_url('https://www.competethemes.com/unlimited-pro/');?>" target="_blank"><?php _e('Have you seen Unlimited Pro?','unlimited');?> <span>&rarr;</span></a></div>');
-	</script>
-<?php }
-
-add_action('customize_controls_print_footer_scripts', 'ct_unlimited_customize_preview_js');
-
 // ajax in search bar content when updated
 function unlimited_update_search_bar_ajax(){
 
@@ -450,3 +432,57 @@ function unlimited_ajaxurl() { ?>
 <?php
 }
 add_action('wp_head','unlimited_ajaxurl');
+
+function ct_unlimited_customizer_ad_array() {
+
+	// create array of ad text
+	$ads_array = array(
+		__('Have you seen Unlimited Pro?', 'unlimited')  => 'https://www.competethemes.com/unlimited-pro/?utm_source=customizer-ad&utm_medium=unlimited&utm_content=have-you-seen-unlimited-pro&utm_campaign=customizer-ad',
+		__('Upgrade to Unlimited Pro', 'unlimited')      => 'https://www.competethemes.com/unlimited-pro/?utm_source=customizer-ad&utm_medium=unlimited&utm_content=upgrade-to-unlimited-pro&utm_campaign=customizer-ad',
+		__('Check out Unlimited Pro', 'unlimited')       => 'https://www.competethemes.com/unlimited-pro/?utm_source=customizer-ad&utm_medium=unlimited&utm_content=check-out-unlimited-pro&utm_campaign=customizer-ad',
+		__('Unlimited Pro', 'unlimited')                 => 'https://www.competethemes.com/unlimited-pro/?utm_source=customizer-ad&utm_medium=unlimited&utm_content=unlimited-pro&utm_campaign=customizer-ad',
+		__('Premium Upgrade for Unlimited', 'unlimited') => 'https://www.competethemes.com/unlimited-pro/?utm_source=customizer-ad&utm_medium=unlimited&utm_content=premium-upgrade-for-unlimited&utm_campaign=customizer-ad'
+	);
+	return $ads_array;
+}
+function ct_unlimited_assign_customizer_ad() {
+
+	// if the ad text isn't set already
+	if( ! get_option('ct_unlimited_ad_text') ) {
+
+		$ads_array = ct_unlimited_customizer_ad_array();
+
+		// randomly pick one
+		$ad = rand(0,4);
+
+		// get randomly selected ad from array
+		$ad = array_slice($ads_array, $ad, 1);
+
+		// the phrase from the array
+		$ad_text = key($ad);
+
+		// sanitize
+		$ad_text = esc_html($ad_text);
+
+		// update database
+		update_option('ct_unlimited_ad_text', $ad_text);
+	}
+}
+add_action('admin_init', 'ct_unlimited_assign_customizer_ad');
+
+function ct_unlimited_customize_preview_js() {
+
+	// get the ad text
+	$ad = get_option('ct_unlimited_ad_text');
+
+	// get the array of ads
+	$ads_array = ct_unlimited_customizer_ad_array();
+
+	// get the link based on the ad text
+	$link = $ads_array[$ad];
+
+	$content = "<script>jQuery('#customize-info').append('<div class=\"upgrades-ad\"><a href=\"" . esc_url($link) . "\" target=\"_blank\">" . esc_html($ad) . "<span>&rarr;</span></a></div>');</script>";
+
+	echo apply_filters('ct_unlimited_customizer_ad', $content);
+}
+add_action('customize_controls_print_footer_scripts', 'ct_unlimited_customize_preview_js');

@@ -19,6 +19,7 @@ if( ! function_exists( 'ct_unlimited_theme_setup' ) ) {
 		// add functionality from WordPress core
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'automatic-feed-links' );
+		add_theme_support( 'title-tag' );
 
 		// load theme options page
 		require_once( trailingslashit( get_template_directory() ) . 'theme-options.php' );
@@ -246,7 +247,7 @@ function ct_unlimited_custom_excerpt_length( $length ) {
 		return 25;
 	}
 }
-add_filter( 'excerpt_length', 'ct_unlimited_custom_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'ct_unlimited_custom_excerpt_length', 99 );
 
 // for displaying featured images
 if( ! function_exists( 'ct_unlimited_featured_image' ) ) {
@@ -450,7 +451,7 @@ function ct_unlimited_profile_image_output(){
 function ct_unlimited_wp_backwards_compatibility() {
 
 	// not using this function, simply remove it so use of "has_image_size" doesn't break < 3.9
-	if( get_bloginfo('version') < 3.9 ) {
+	if( version_compare( get_bloginfo('version'), '3.9', '<' ) ) {
 		remove_filter( 'image_size_names_choose', 'hybrid_image_size_names_choose' );
 	}
 }
@@ -471,12 +472,11 @@ function ct_unlimited_set_date_format() {
 		add_option('ct_unlimited_date_format_origin', 'updated');
 	}
 }
-add_action( 'init', 'ct_unlimited_set_date_format' );
+add_action( 'after_switch_theme', 'ct_unlimited_set_date_format' );
 
 /*
  * WP will apply the ".menu-primary-items" class & id to the containing <div> instead of <ul>
- * making styling extremely difficult and confusing. Using this wrapper to add a unique class,
- * so I can sleep at night.
+ * making styling difficult and confusing. Using this wrapper to add a unique class to make styling easier.
  */
 function ct_unlimited_wp_page_menu() {
 	wp_page_menu(array(
@@ -516,3 +516,57 @@ function ct_unlimited_custom_css_output(){
 	}
 }
 add_action('wp_enqueue_scripts', 'ct_unlimited_custom_css_output');
+
+function ct_unlimited_sticky_post_marker() {
+
+	if( is_sticky() && !is_archive() ) {
+		echo '<span class="sticky-status">Featured Post</span>';
+	}
+}
+add_action( 'archive_post_before', 'ct_unlimited_sticky_post_marker' );
+
+function ct_unlimited_reset_customizer_options() {
+
+	// validate name and value
+	if( empty( $_POST['ct_unlimited_reset_customizer'] ) || 'ct_unlimited_reset_customizer_settings' !== $_POST['ct_unlimited_reset_customizer'] )
+		return;
+
+	// validate nonce
+	if( ! wp_verify_nonce( $_POST['ct_unlimited_reset_customizer_nonce'], 'ct_unlimited_reset_customizer_nonce' ) )
+		return;
+
+	// validate user permissions
+	if( ! current_user_can( 'manage_options' ) )
+		return;
+
+	// delete customizer mods
+	remove_theme_mods();
+
+	$redirect = admin_url( 'themes.php?page=unlimited-options' );
+	$redirect = add_query_arg( 'unlimited_status', 'deleted', $redirect);
+
+	// safely redirect
+	wp_safe_redirect( $redirect ); exit;
+}
+add_action( 'admin_init', 'ct_unlimited_reset_customizer_options' );
+
+function ct_unlimited_delete_settings_notice() {
+
+	if ( isset( $_GET['unlimited_status'] ) ) {
+		?>
+		<div class="updated">
+			<p><?php _e( 'Customizer settings deleted', 'unlimited' ); ?>.</p>
+		</div>
+		<?php
+	}
+}
+add_action( 'admin_notices', 'ct_unlimited_delete_settings_notice' );
+
+if ( ! function_exists( '_wp_render_title_tag' ) ) :
+	function ct_unlimited_add_title_tag() {
+		?>
+		<title><?php wp_title( ' | ' ); ?></title>
+	<?php
+	}
+	add_action( 'wp_head', 'ct_unlimited_add_title_tag' );
+endif;
