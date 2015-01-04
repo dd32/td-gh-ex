@@ -16,8 +16,8 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-		$content_width = 660; /* pixels */
-	}
+	$content_width = 660; /* pixels */
+}
 
 if ( ! function_exists( 'biancaa_theme_setup' ) ) :
 /**
@@ -33,6 +33,14 @@ function biancaa_theme_setup() {
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
+	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
+	add_theme_support( 'title-tag' );
+
 	// Enable support for Post Thumbnails.
 	add_theme_support( 'post-thumbnails' );
 
@@ -40,8 +48,8 @@ function biancaa_theme_setup() {
 	add_image_size( 'biancaa-featured', 660, 330, true );
 	add_image_size( 'biancaa-featured-big', 800, 370, true );
 	add_image_size( 'biancaa-featured-full', 960, 370, true );
-	add_image_size( 'biancaa-slides', 960, 440, true );
-	add_image_size( 'biancaa-widget', 262, 180, true );
+	add_image_size( 'biancaa-slides', 960, 400, true );
+	add_image_size( 'biancaa-widget', 262, 200, true );
 	add_image_size( 'biancaa-related', 195, 110, true );
 
 	// Register custom navigation menu.
@@ -154,4 +162,4 @@ require trailingslashit( get_template_directory() ) . 'inc/hybrid/theme-layouts.
  * Custom widgets.
  */
 require trailingslashit( get_template_directory() ) . 'inc/classes/widget-about.php';
-// require trailingslashit( get_template_directory() ) . 'inc/classes/widget-slides.php';
+require trailingslashit( get_template_directory() ) . 'inc/classes/widget-slides.php';
