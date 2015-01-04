@@ -12,7 +12,7 @@ function moesia_custom_styles($custom) {
 	$services_item_title = esc_html(get_theme_mod( 'services_item_title' ));
 	$services_body_text = esc_html(get_theme_mod( 'services_body_text' ));
 
-	if ( isset($services_bg) && ( $services_bg != '#fff' ) ) {
+	if ( isset($services_bg) && ( $services_bg != '#ffffff' ) ) {
 		$custom = ".services-area { background-color: {$services_bg} !important; }"."\n";
 	}
 	if ( isset($services_title) && ( $services_title != '#444' ) ) {
@@ -39,7 +39,7 @@ function moesia_custom_styles($custom) {
 	$employees_function = esc_html(get_theme_mod( 'employees_function' ));
 	$employees_body_text = esc_html(get_theme_mod( 'employees_body_text' ));
 
-	if ( isset($employees_bg) && ( $employees_bg != '#fff' ) ) {
+	if ( isset($employees_bg) && ( $employees_bg != '#ffffff' ) ) {
 		$custom .= ".employees-area { background-color: {$employees_bg} !important; }"."\n";
 	}
 	if ( isset($employees_title) && ( $employees_title != '#444' ) ) {
@@ -66,7 +66,7 @@ function moesia_custom_styles($custom) {
 	$testimonials_body_bg = esc_html(get_theme_mod( 'testimonials_body_bg' ));
 	$testimonials_body_text = esc_html(get_theme_mod( 'testimonials_body_text' ));
 
-	if ( isset($testimonials_bg) && ( $testimonials_bg != '#fff' ) ) {
+	if ( isset($testimonials_bg) && ( $testimonials_bg != '#ffffff' ) ) {
 		$custom .= ".testimonials-area { background-color: {$testimonials_bg} !important; }"."\n";
 	}
 	if ( isset($testimonials_title) && ( $testimonials_title != '#444' ) ) {
@@ -95,7 +95,7 @@ function moesia_custom_styles($custom) {
 	$skills_bar = esc_html(get_theme_mod( 'skills_bar' ));
 	$skills_body_text = esc_html(get_theme_mod( 'skills_body_text' ));
 
-	if ( isset($skills_bg) && ( $skills_bg != '#fff' ) ) {
+	if ( isset($skills_bg) && ( $skills_bg != '#ffffff' ) ) {
 		$custom .= ".skills-area { background-color: {$skills_bg} !important; }"."\n";
 	}
 	if ( isset($skills_title) && ( $skills_title != '#444' ) ) {
@@ -117,7 +117,7 @@ function moesia_custom_styles($custom) {
 	$facts_numbers = esc_html(get_theme_mod( 'facts_numbers' ));
 	$facts_body_text = esc_html(get_theme_mod( 'facts_body_text' ));
 
-	if ( isset($facts_bg) && ( $facts_bg != '#fff' ) ) {
+	if ( isset($facts_bg) && ( $facts_bg != '#ffffff' ) ) {
 		$custom .= ".facts-area { background-color: {$facts_bg} !important; }"."\n";
 	}
 	if ( isset($facts_title) && ( $facts_title != '#444' ) ) {
@@ -138,7 +138,7 @@ function moesia_custom_styles($custom) {
 	$clients_title_dec = esc_html(get_theme_mod( 'clients_title_dec' ));
 	$clients_slider = esc_html(get_theme_mod( 'clients_slider' ));
 
-	if ( isset($clients_bg) && ( $clients_bg != '#fff' ) ) {
+	if ( isset($clients_bg) && ( $clients_bg != '#ffffff' ) ) {
 		$custom .= ".clients-area { background-color: {$clients_bg} !important; }"."\n";
 	}
 	if ( isset($clients_title) && ( $clients_title != '#444' ) ) {
@@ -157,7 +157,7 @@ function moesia_custom_styles($custom) {
 	$blockquote_icon = esc_html(get_theme_mod( 'blockquote_icon' ));
 	$blockquote_body_text = esc_html(get_theme_mod( 'blockquote_body_text' ));	
 
-	if ( isset($blockquote_bg) && ( $blockquote_bg != '#fff' ) ) {
+	if ( isset($blockquote_bg) && ( $blockquote_bg != '#ffffff' ) ) {
 		$custom .= ".blockquote-area { background-color: {$blockquote_bg} !important; }"."\n";
 	}
 	if ( isset($blockquote_title) && ( $blockquote_title != '#444' ) ) {
@@ -179,7 +179,7 @@ function moesia_custom_styles($custom) {
 	$social_icons = esc_html(get_theme_mod( 'social_icons' ));
 	$social_body_text = esc_html(get_theme_mod( 'social_body_text' ));	
 
-	if ( isset($social_bg) && ( $social_bg != '#fff' ) ) {
+	if ( isset($social_bg) && ( $social_bg != '#ffffff' ) ) {
 		$custom .= ".social-area { background-color: {$social_bg} !important; }"."\n";
 	}
 	if ( isset($social_title) && ( $social_title != '#444' ) ) {
@@ -198,7 +198,7 @@ function moesia_custom_styles($custom) {
 	$projects_item_bg = esc_html(get_theme_mod( 'projects_item_bg' ));
 	$projects_icons = esc_html(get_theme_mod( 'projects_icons' ));	
 
-	if ( isset($projects_bg) && ( $projects_bg != '#fff' ) ) {
+	if ( isset($projects_bg) && ( $projects_bg != '#ffffff' ) ) {
 		$custom .= ".projects-area { background-color: {$projects_bg} !important; }"."\n";
 	}
 	if ( isset($projects_title) && ( $projects_title != '#444' ) ) {
@@ -210,7 +210,7 @@ function moesia_custom_styles($custom) {
 	if ( isset($projects_item_bg) && ( $projects_item_bg != '#ff6b53' ) ) {
 		$custom .= ".project-image { background-color: {$projects_item_bg}; }"."\n";
 	}
-	if ( isset($projects_icons) && ( $projects_icons != '#fff' ) ) {
+	if ( isset($projects_icons) && ( $projects_icons != '#ffffff' ) ) {
 		$custom .= ".link-icon, .pp-icon { color: {$projects_icons}; }"."\n";
 	}	
     //Latest news section
@@ -221,7 +221,7 @@ function moesia_custom_styles($custom) {
     $latest_news_body_text = esc_html(get_theme_mod( 'latest_news_body_text' ));
     $latest_news_see_all = esc_html(get_theme_mod( 'latest_news_see_all' ));
 
-    if ( isset($latest_news_bg) && ( $latest_news_bg != '#fff' ) ) {
+    if ( isset($latest_news_bg) && ( $latest_news_bg != '#ffffff' ) ) {
         $custom .= ".latest-news-area { background-color: {$latest_news_bg} !important; }"."\n";
     }
     if ( isset($latest_news_title) && ( $latest_news_title != '#444' ) ) {
@@ -247,8 +247,8 @@ function moesia_custom_styles($custom) {
     $action_area_btn = esc_html(get_theme_mod( 'action_area_btn' ));
     $action_area_btn_bs = esc_html(get_theme_mod( 'action_area_btn_bs' ));
 
-    if ( isset($action_area_bg) && ( $action_area_bg != '#fff' ) ) {
-        $custom .= ".action-area { background-color: {$action_area_bg} !important; }"."\n";
+    if ( isset($action_area_bg) && ( $action_area_bg != '#ffffff' ) ) {
+        $custom .= ".action-area { background-color: {$action_area_bg}; }"."\n";
     }
     if ( isset($action_area_title) && ( $action_area_title != '#444' ) ) {
         $custom .= ".action-area .widget-title { color: {$action_area_title}; }"."\n";
@@ -270,7 +270,7 @@ function moesia_custom_styles($custom) {
     $header_desc_color = esc_html(get_theme_mod( 'header_desc_color' ));
     $header_btn_bg = esc_html(get_theme_mod( 'header_btn_bg' ));
     $header_btn_bs = esc_html(get_theme_mod( 'header_btn_bs' ));
-    if ( isset($header_title_color) && ( $header_title_color != '#fff' ) ) {
+    if ( isset($header_title_color) && ( $header_title_color != '#ffffff' ) ) {
         $custom .= ".welcome-title { color: {$header_title_color}; }"."\n";
     }
     if ( isset($header_desc_color) && ( $header_desc_color != '#d8d8d8' ) ) {
@@ -297,7 +297,7 @@ function moesia_custom_styles($custom) {
 	}
 	//Site title
 	$site_title = esc_html(get_theme_mod( 'site_title_color' ));
-	if ( isset($site_title) && ( $site_title != '#fff' )) {
+	if ( isset($site_title) && ( $site_title != '#ffffff' )) {
 		$custom .= ".site-title a { color: {$site_title}; }"."\n";
 	}
 	//Site description
@@ -409,6 +409,12 @@ function moesia_custom_styles($custom) {
     if ( get_theme_mod( 'footer_widgets' ) == 1 ) {
         $custom .= "@media only screen and (max-width: 991px) { .footer-widget-area { display: none; } }"."\n";
     }
+
+    $background_img = get_post_meta( get_the_ID(), 'wpcf-page-bg-image', true );
+    global $post;
+    if ( $background_img ) {
+        $custom .= ".page-id-" . $post->ID . " { background-image: url('" . esc_url($background_img) . "') !important; background-attachment: fixed !important; background-repeat: no-repeat !important; background-size: cover;}"."\n";
+    }    
 
 	//Output all the styles
 	wp_add_inline_style( 'moesia-style', $custom );	

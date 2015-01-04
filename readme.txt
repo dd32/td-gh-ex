@@ -110,6 +110,12 @@ Resource URI: https://github.com/garand/sticky
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
+o) imagesLoaded
+Copyright: 2014 David DeSandro
+Resource URI: http://imagesloaded.desandro.com/
+License: MIT
+License URI: http://opensource.org/licenses/MIT
+
 
 III. Documentation 
 

@@ -331,6 +331,8 @@ function moesia_customize_register( $wp_customize ) {
             'choices' => array(
                 'small-images' => 'Small images',
                 'large-images' => 'Large images',
+                'masonry'      => 'Masonry (no sidebar)',
+                'fullwidth'    => 'Full width (no sidebar)',
             ),
         )
     );
@@ -2541,6 +2543,8 @@ function moesia_sanitize_layout( $input ) {
     $valid = array(
         'small-images' => 'Small images',
         'large-images' => 'Large images',
+        'masonry'      => 'Masonry (no sidebar)',
+        'fullwidth'    => 'Full width (no sidebar)',
     );
  
     if ( array_key_exists( $input, $valid ) ) {

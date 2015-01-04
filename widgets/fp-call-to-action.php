@@ -113,7 +113,7 @@ class Moesia_Action extends WP_Widget {
 				<?php if ( $title ) echo $before_title . '<span class="wow bounce">' . $title . '</span>' . $after_title; ?>
 				<?php if ($action_text !='') : ?>				
 					<div class="action-text wow zoomIn">
-						<?php echo esc_textarea($action_text); ?>
+						<?php echo $action_text; ?>
 					</div>
 				<?php endif; ?>
 				<?php if ($action_btn_link !='') : ?>	

@@ -4,7 +4,7 @@ Theme URI: http://athemes.com/theme/moesia
 Author: aThemes
 Author URI: http://athemes.com
 Description: Moesia is the business theme you need in order to build your presence on the Internet. Choose from eleven predefined blocks and build the homepage that best suits your company. Each of the homepage blocks can have a parallax background image and its own set of colors. Moesia also features a selection of Google Fonts, two types of layouts for the blog page, cool animations and effects, a parallax header and much more.
-Version: 1.18
+Version: 1.19
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: moesia
@@ -175,8 +175,33 @@ Menus
 .main-navigation .current_page_item a,
 .main-navigation .current-menu-item a {
 }
-
-
+/* Icons */
+.main-navigation li::before {
+	font-family: Fontawesome;
+	color: #fff;
+	float: left;
+	margin-right: 5px;
+	font-size: 20px;
+	line-height: 1;
+	font-weight: 400;
+}
+.main-navigation ul ul li::before {
+	color: #aaa;
+}
+.main-navigation a {
+	float: left;
+}
+.main-navigation ul ul a {
+	float: none;
+}
+@media only screen and (max-width: 991px) {
+	.main-navigation a {
+		float: none;
+	}
+	.main-navigation li::before {
+		content: '';
+	}
+}
 /*--------------------------------------------------------------
 Post and page navigation
 --------------------------------------------------------------*/
@@ -863,6 +888,14 @@ Structure
 	width: 100%;
 	text-align: center;
 }
+/* Masonry layout */
+.home-masonry .hentry {
+	width: 350px;
+	margin: 15px;
+}
+.home-masonry .entry-title {
+	font-size: 26px;
+}
 /*--------------------------------------------------------------
 Page builder
 --------------------------------------------------------------*/
@@ -1030,6 +1063,10 @@ section .widget-title:after {
 .social-area a[href*="plus.google.com"]::before {
 	content: '\f0d4';
 }
+.social-widget a[href*="google.com/+"]::before,
+.social-area a[href*="google.com/+"]::before {
+	content: '\f0d4';
+}
 .social-widget a[href*="dribbble.com"]::before,
 .social-area a[href*="dribbble.com"]::before {
 	content: '\f17d';
@@ -1115,6 +1152,10 @@ section .widget-title:after {
 .skills-list {
 	border-left: 1px solid #ebebeb;
 	margin-left: -1px;
+}
+.skills-area .col-md-2 {
+	clear: left;
+	margin-bottom: 5px;
 }
 /* Facts */
 .facts-area .col-md-3 {
@@ -1480,17 +1521,23 @@ Center Services and Employees
 	vertical-align: top;
 	text-align: left;
 }
+.page-template-page_services-php .service.col-xs-6,
+.page-template-page_employees-php .employee.col-xs-6,
 .services-area .col-xs-6,
 .employees-area .col-xs-6 {
 		width: 49.5%;
 }
 @media (min-width: 768px) {
+	.page-template-page_services-php .service.col-sm-6,
+	.page-template-page_employees-php .employee.col-sm-6,
 	.services-area .col-sm-6,
 	.employees-area .col-sm-6 {
 		width: 49.5%;
 	}
 }
 @media (min-width: 992px) {
+	.page-template-page_services-php .service.col-md-4,
+	.page-template-page_employees-php .employee.col-md-4,
 	.services-area .col-md-4,
 	.employees-area .col-md-4 {
 		width: 33%;
@@ -1510,6 +1557,9 @@ Responsive
 	}	
 	.fullwidth {
 		width: 100%;
+	}
+	.home-masonry .hentry {
+		width: 283px;
 	}
 }
 @media only screen and (max-width: 991px) {
@@ -1536,7 +1586,10 @@ Responsive
 	}
 	.stuck {
 		position: relative;
-	}	
+	}
+	.home-masonry .hentry {
+		width: 330px;
+	}		
 }
 @media only screen and (max-width: 767px) {
 	.blog-post:nth-of-type(3) {
@@ -1550,6 +1603,20 @@ Responsive
 		border: 0;
 		margin: 0;
 	}
+	.home-masonry {
+		margin: 0 auto;
+	}
+	.home-masonry .hentry {
+		width: 280px;
+	}		
+}
+@media only screen and (max-width: 650px) {
+	.home-masonry .hentry {
+		width: auto;
+	}	
+	.home-masonry {
+		max-width: 100%;
+	}		
 }
 @media only screen and (max-width: 600px) {
 	.hentry .entry-thumb,
@@ -1577,11 +1644,11 @@ Responsive
 }
 @media only screen and (max-width: 499px) {
 	.project,
-	.services-area .service,
-	.employees-area .employee,
+	.service,
+	.employee,
 	.bq-text,
 	.bq-img {
-		width: 100%;		
+		width: 100% !important;		
 	}
 	.project img {
 		display: block;

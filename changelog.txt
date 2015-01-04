@@ -1,5 +1,16 @@
 Changelog
 
+4 Jan 2015 - 1.19
+--------------------------------------
+- services/employees page templates layout fix;
+- removed redundant esc_textarea from fp-call-to-action.php;
+- small CSS changes;
+- added CSS support for menu icons;
+- added home.php file;
+- added support for masonry and full width blog index layouts;
+- added imagesLoaded script and provided license info for it in readme.txt
+
+
 17 Dec 2014 - 1.18
 --------------------------------------
 - switched to inline-block for services/employees to allow centering
