@@ -24,7 +24,6 @@ function richwp_setup() {
     
     // Add Menus
     register_nav_menus(array(
-        'primary' => __('Primary Navigation', 'richwp'),
         'shopselect1' => __('Select Menu', 'richwp'),
         'iconmenu' => __('Icon Menu', 'richwp'),
         'flyoutmenu' => __('Fly Out Menu', 'richwp'),
