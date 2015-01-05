@@ -494,9 +494,12 @@ $site ="http://www.weblizar.com" ;?>
 			<h3><?php _e('Service  Icons','weblizar'); ?></h3>
 			<input  class="weblizar_inpute" type="text" name="service_1_icons" id="service_1_icons"  value="<?php if($wl_theme_options['service_1_icons']!='') { echo esc_attr($wl_theme_options['service_1_icons']); } ?>" >	
 			<br>
-			<span class="explain"><?php  _e('Service Icon (Using Bootstrap icons name) like: icon-tablet','weblizar');?> <a href="http://fortawesome.github.io/Font-Awesome/3.2.1/icons/" target="_blank"> <?php _e('Get your Font Awesome icons','weblizar'); ?>.</a> </span>
+			<span class="explain"><?php  _e('Service Icon (Using Bootstrap icons name) like: icon-tablet','weblizar');?> <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank"> <?php _e('Get your Font Awesome icons','weblizar'); ?>.</a> </span>
 			<h3><?php _e('Service Description','weblizar'); ?></h3>			
-			<textarea rows="8" cols="8" id="service_1_text" name="service_1_text"><?php if($wl_theme_options['service_1_text']!='') { echo esc_attr($wl_theme_options['service_1_text']); } ?></textarea>
+			<?php $settings = array( "media_buttons" => false,"quicktags" => false, "tinymce" => array( "plugins" => "wordpress" ) ); ?>
+		<?php $content = $wl_theme_options["service_1_text"]!="" ? esc_attr($wl_theme_options["service_1_text"]) : "" ; ?>                     
+		<?php $editor_id = "service_1_text"; ?>
+		<?php wp_editor( $content, $editor_id,$settings ); ?>
 			<div class="explain"><?php _e('Type here your service description.','weblizar'); ?><br></div>
 			<h3><?php _e('Service  Link','weblizar'); ?></h3>
 			<input  class="weblizar_inpute" type="text" name="service_1_link" id="service_1_link"  value="<?php if($wl_theme_options['service_1_link']!='') { echo esc_attr($wl_theme_options['service_1_link']); } ?>" >	
@@ -524,9 +527,12 @@ $site ="http://www.weblizar.com" ;?>
 				<h3><?php _e('Service  Icons','weblizar'); ?></h3>
 				<input  class="weblizar_inpute" type="text" name="service_2_icons" id="service_2_icons"  value="<?php if($wl_theme_options['service_2_icons']!='') { echo esc_attr($wl_theme_options['service_2_icons']); } ?>" >	
 				<br>
-				<span class="explain"><?php  _e('Service Icon (Using Bootstrap icons name) like: icon-tablet','weblizar');?> <a href="http://fortawesome.github.io/Font-Awesome/3.2.1/icons/" target="_blank"> <?php _e('Get your Font Awesome icons','weblizar'); ?>.</a> </span>
+				<span class="explain"><?php  _e('Service Icon (Using Bootstrap icons name) like: icon-tablet','weblizar');?> <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank"> <?php _e('Get your Font Awesome icons','weblizar'); ?>.</a> </span>
 				<h3><?php _e('Service Description','weblizar'); ?></h3>			
-				<textarea rows="8" cols="8" id="service_2_text" name="service_2_text"><?php if($wl_theme_options['service_2_text']!='') { echo esc_attr($wl_theme_options['service_2_text']); } ?></textarea>
+				<?php $settings = array( "media_buttons" => false,"quicktags" => false, "tinymce" => array( "plugins" => "wordpress" ) ); ?>
+		<?php $content = $wl_theme_options["service_2_text"]!="" ? esc_attr($wl_theme_options["service_2_text"]) : "" ; ?>                     
+		<?php $editor_id = "service_2_text"; ?>
+		<?php wp_editor( $content, $editor_id,$settings ); ?>
 				<div class="explain"><?php _e('Type here your service description.','weblizar'); ?><br></div>
 				<h3><?php _e('Service  Link','weblizar'); ?></h3>
 				<input  class="weblizar_inpute" type="text" name="service_2_link" id="service_2_link"  value="<?php if($wl_theme_options['service_2_link']!='') { echo esc_attr($wl_theme_options['service_2_link']); } ?>" >	
@@ -553,9 +559,12 @@ $site ="http://www.weblizar.com" ;?>
 				<h3><?php _e('Service  Icons','weblizar'); ?></h3>
 				<input  class="weblizar_inpute" type="text" name="service_3_icons" id="service_3_icons"  value="<?php if($wl_theme_options['service_3_icons']!='') { echo esc_attr($wl_theme_options['service_3_icons']); } ?>" >	
 				<br>
-				<span class="explain"><?php  _e('Service Icon (Using Bootstrap icons name) like: icon-tablet','weblizar');?> <a href="http://fortawesome.github.io/Font-Awesome/3.2.1/icons/" target="_blank"> <?php _e('Get your Font Awesome icons','weblizar'); ?>.</a> </span>
+				<span class="explain"><?php  _e('Service Icon (Using Bootstrap icons name) like: icon-tablet','weblizar');?> <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank"> <?php _e('Get your Font Awesome icons','weblizar'); ?>.</a> </span>
 				<h3><?php _e('Service Description','weblizar'); ?></h3>			
-				<textarea rows="8" cols="8" id="service_3_text" name="service_3_text"><?php if($wl_theme_options['service_3_text']!='') { echo esc_attr($wl_theme_options['service_3_text']); } ?></textarea>
+				<?php $settings = array( "media_buttons" => false,"quicktags" => false, "tinymce" => array( "plugins" => "wordpress" ) ); ?>
+		<?php $content = $wl_theme_options["service_3_text"]!="" ? esc_attr($wl_theme_options["service_3_text"]) : "" ; ?>                     
+		<?php $editor_id = "service_3_text"; ?>
+		<?php wp_editor( $content, $editor_id,$settings ); ?>
 				<div class="explain"><?php _e('Type here your service description.','weblizar'); ?><br></div>
 				<h3><?php _e('Service  Link','weblizar'); ?></h3>
 				<input  class="weblizar_inpute" type="text" name="service_3_link" id="service_3_link"  value="<?php if($wl_theme_options['service_3_link']!='') { echo esc_attr($wl_theme_options['service_3_link']); } ?>" >	

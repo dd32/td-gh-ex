@@ -1,6 +1,6 @@
 /*Admin options pannal data value*/
 	function weblizar_option_data_save(name) 
-	{ 	
+	{ 	tinyMCE.triggerSave();
 		var weblizar_settings_save= "#weblizar_settings_save_"+name;
 		var weblizar_theme_options = "#weblizar_theme_options_"+name;
 		var weblizar_settings_save_success = weblizar_settings_save+"_success";

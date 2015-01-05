@@ -143,7 +143,7 @@
 		//Blogs thumbs
 		add_image_size('wl_page_thumb',730,350,true);	
 		add_image_size('blog_2c_thumb',570,350,true);
-		
+		add_theme_support( 'title-tag' );
 		// Load text domain for translation-ready
 		load_theme_textdomain( 'weblizar', WL_TEMPLATE_DIR_CORE . '/lang' );	
 		
@@ -156,7 +156,14 @@
 		add_theme_support( 'automatic-feed-links'); 
 		require( WL_TEMPLATE_DIR . '/options-reset.php'); //Reset Theme Options Here				
 	}
-	
+	if ( ! function_exists( '_wp_render_title_tag' ) ) :
+	function wl_title() {
+?>
+<title><?php wp_title( '|', true, 'right' ); ?></title>
+<?php
+	}
+	add_action( 'wp_head', 'wl_title' );
+endif;
 
 	// Read more tag to formatting in blog page 
 	function weblizar_content_more($more)

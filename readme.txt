@@ -5,6 +5,13 @@ Consider weblizar PRE-Fix for function-name and as a slug of the Theme Enigma.
 Enigma
 
 CHANGE-LOG:
+
+@Version: 1.7 [05/01/15]
+1. Editor added in Theme-Options.
+2. Discount Coupon Removed.
+3. FA link updated.
+4. Portfolio Link Title fixed.  
+
 @Version: 1.6.1 [09/12/14]
 1.Minor Translated String
 

@@ -75,7 +75,7 @@
 		{	
 			foreach($_POST as  $key => $value)
 			{
-				$wl_theme_options[$key]=sanitize_text_field($_POST[$key]);	
+				$wl_theme_options[$key]=$_POST[$key];	
 			}
 			update_option('enigma_options', stripslashes_deep($wl_theme_options));
 			
