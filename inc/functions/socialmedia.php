@@ -16,6 +16,9 @@ if ($awaken_options['social_media_switch'] == '1' ) : ?>
 	<?php if ($awaken_options['googleplus-url']) : ?>
 		<span class="asocial-icon googleplus"><a href="<?php echo esc_url ( $awaken_options['googleplus-url'] ) ?>" target="_blank"><i class="fa fa-google-plus"></i></a></span>
 	<?php endif; ?>
+	<?php if ($awaken_options['linkedin-url']) : ?>
+		<span class="asocial-icon linkedin"><a href="<?php echo esc_url ( $awaken_options['linkedin-url'] ) ?>" target="_blank"><i class="fa fa-linkedin"></i></a></span>
+	<?php endif; ?>
 	<?php if ($awaken_options['youtube-url']) : ?>
 		<span class="asocial-icon youtube"><a href="<?php echo esc_url ( $awaken_options['youtube-url'] ) ?>" target="_blank"><i class="fa fa-youtube"></i></a></span>
 	<?php endif; ?>

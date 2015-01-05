@@ -258,7 +258,13 @@
                             //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
                             //)
                         ),                        
-        
+                        array(
+                            'id'    => 'pro-general',
+                            'type'  => 'info',
+                            'title' => __('<a href="http://www.themezhut.com/themes/awaken-pro" target="_blank">Upgrade to Pro</a>', 'awaken'),
+                            'desc'  => __('Pro Version Comes with Layout Options, Unlimited Colors, Post Options, Unlimited Sidebars etc.',  'awaken')
+                        ),
+           
                         array(
                             'id'       => 'site-title-option',
                             'type'     => 'radio',
@@ -370,7 +376,12 @@
                             'subtitle' => __( 'Post thumbnails of the posts from selected category will be displayed as featured posts', 'awaken' ),
                             'desc'     => __( 'Do not select a category or close the current category if you want to display latest posts.', 'awaken' ),
                         ),
-
+                        array(
+                            'id'    => 'pro-home',
+                            'type'  => 'info',
+                            'title' => __('<a href="http://www.themezhut.com/themes/awaken-pro" target="_blank">Upgrade to Pro</a>', 'awaken'),
+                            'desc'  => __('Pro Version comes with unlimited slides, more slider options, custom slider etc',  'awaken')
+                        ),
                     ),
                 );
 
@@ -381,7 +392,12 @@
                     'icon'   => 'el-icon-website',
                     // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
                     'fields' => array(
-
+                        array(
+                            'id'    => 'pro-styling',
+                            'type'  => 'info',
+                            'title' => __('<a href="http://www.themezhut.com/themes/awaken-pro" target="_blank">Upgrade to Pro</a>', 'awaken'),
+                            'desc'  => __('Pro Version comes with unlimited fonts, unlimited colors, custom styling options, boxed and wide layouts. etc',  'awaken')
+                        ),
                         array(
                             'id'       => 'awaken-background',
                             'type'     => 'background',
@@ -420,7 +436,7 @@
                             'id'       => 'facebook-url',
                             'type'     => 'text',
                             'title'    => __( 'Facebook Link', 'awaken' ),
-                            'subtitle' => __( 'This must be a URL.', 'awaken' ),
+                            'subtitle' => __( 'This must be a URL. Start with http://', 'awaken' ),
                             //'desc'     => __( 'This is the description field, again good for additional info.', 'awaken' ),
                             'validate' => 'url',
                             'default'  => '',
@@ -429,7 +445,7 @@
                             'id'       => 'twitter-url',
                             'type'     => 'text',
                             'title'    => __( 'Twitter Link', 'awaken' ),
-                            'subtitle' => __( 'This must be a URL.', 'awaken' ),
+                            'subtitle' => __( 'This must be a URL. Start with http://', 'awaken' ),
                             //'desc'     => __( 'This is the description field, again good for additional info.', 'awaken' ),
                             'validate' => 'url',
                             'default'  => '',
@@ -438,7 +454,16 @@
                             'id'       => 'googleplus-url',
                             'type'     => 'text',
                             'title'    => __( 'Google Plus Link', 'awaken' ),
-                            'subtitle' => __( 'This must be a URL.', 'awaken' ),
+                            'subtitle' => __( 'This must be a URL. Start with http://', 'awaken' ),
+                            //'desc'     => __( 'This is the description field, again good for additional info.', 'awaken' ),
+                            'validate' => 'url',
+                            'default'  => '',
+                        ),
+                        array(
+                            'id'       => 'linkedin-url',
+                            'type'     => 'text',
+                            'title'    => __( 'Linkedin Link', 'awaken' ),
+                            'subtitle' => __( 'This must be a URL. Start with http://', 'awaken' ),
                             //'desc'     => __( 'This is the description field, again good for additional info.', 'awaken' ),
                             'validate' => 'url',
                             'default'  => '',
@@ -447,7 +472,7 @@
                             'id'       => 'rss-url',
                             'type'     => 'text',
                             'title'    => __( 'RSS Link', 'awaken' ),
-                            'subtitle' => __( 'This must be a URL.', 'awaken' ),
+                            'subtitle' => __( 'This must be a URL. Start with http://', 'awaken' ),
                             //'desc'     => __( 'This is the description field, again good for additional info.', 'awaken' ),
                             'validate' => 'url',
                             'default'  => '',
@@ -456,7 +481,7 @@
                             'id'       => 'instagram-url',
                             'type'     => 'text',
                             'title'    => __( 'Instagram Link', 'awaken' ),
-                            'subtitle' => __( 'This must be a URL.', 'awaken' ),
+                            'subtitle' => __( 'This must be a URL. Start with http://', 'awaken' ),
                             //'desc'     => __( 'This is the description field, again good for additional info.', 'awaken' ),
                             'validate' => 'url',
                             'default'  => '',
@@ -465,7 +490,7 @@
                             'id'       => 'flickr-url',
                             'type'     => 'text',
                             'title'    => __( 'Flickr Link', 'awaken' ),
-                            'subtitle' => __( 'This must be a URL.', 'awaken' ),
+                            'subtitle' => __( 'This must be a URL. Start with http://', 'awaken' ),
                             //'desc'     => __( 'This is the description field, again good for additional info.', 'awaken' ),
                             'validate' => 'url',
                             'default'  => '',
@@ -474,10 +499,16 @@
                             'id'       => 'youtube-url',
                             'type'     => 'text',
                             'title'    => __( 'Youtube Link', 'awaken' ),
-                            'subtitle' => __( 'This must be a URL.', 'awaken' ),
+                            'subtitle' => __( 'This must be a URL. Start with http://', 'awaken' ),
                             //'desc'     => __( 'This is the description field, again good for additional info.', 'awaken' ),
                             'validate' => 'url',
                             'default'  => '',
+                        ),
+                        array(
+                            'id'    => 'pro-social',
+                            'type'  => 'info',
+                            'title' => __('<a href="http://www.themezhut.com/themes/awaken-pro" target="_blank">Upgrade to Pro</a>', 'awaken'),
+                            'desc'  => __('Pro Version comes with more social media link options.',  'awaken')
                         ),
                     ),
                 );
@@ -490,7 +521,7 @@
 
                 $this->sections[] = array(
                     'icon'   => 'el-icon-eye-open',
-                    'title'  => __( 'Theme Support', 'awaken' ),
+                    'title'  => __( '<span class="sp-menu">Theme Support</span>', 'awaken' ),
                     'desc'   => __( '<p class="description">Follow these links to get more details about Awaken WordPress Theme.</p>', 'redux-framework-demo' ),
                     'fields' => array(
 

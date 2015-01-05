@@ -298,6 +298,15 @@ function awaken_font_styles() {
 add_action( 'wp_enqueue_scripts', 'awaken_font_styles' );
 
 /**
+* Enqueue awaken options panel custom css.
+*/
+function awaken_option_panel_style() {
+	wp_enqueue_style( 'admin_css', get_template_directory_uri() . '/inc/options/admin.css', false );
+}
+add_action( 'admin_enqueue_scripts', 'awaken_option_panel_style' );
+
+
+/**
  * Activate a favicon for the website.
  */
 function awaken_favicon() {

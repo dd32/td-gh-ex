@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: awaken 1.0.5\n"
-"POT-Creation-Date: 2014-12-20 13:50+0530\n"
-"PO-Revision-Date: 2014-12-20 13:51+0530\n"
+"Project-Id-Version: awaken.1.0.6\n"
+"POT-Creation-Date: 2015-01-05 23:38+0530\n"
+"PO-Revision-Date: 2015-01-05 23:38+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -296,198 +296,231 @@ msgid ""
 "Upload a logo for your website. Recommended height for your logo is 135px."
 msgstr ""
 
+#: inc/options/admin-config.php:264 inc/options/admin-config.php:382
+#: inc/options/admin-config.php:398 inc/options/admin-config.php:510
+msgid ""
+"<a href=\"http://www.themezhut.com/themes/awaken-pro\" target=\"_blank"
+"\">Upgrade to Pro</a>"
+msgstr ""
+
 #: inc/options/admin-config.php:265
+msgid ""
+"Pro Version Comes with Layout Options, Unlimited Colors, Post Options, "
+"Unlimited Sidebars etc."
+msgstr ""
+
+#: inc/options/admin-config.php:271
 msgid "Display Site Title / Logo"
 msgstr ""
 
-#: inc/options/admin-config.php:266
+#: inc/options/admin-config.php:272
 msgid "Choose your preffered option."
 msgstr ""
 
-#: inc/options/admin-config.php:280
+#: inc/options/admin-config.php:286
 msgid "Read more text"
 msgstr ""
 
-#: inc/options/admin-config.php:281
+#: inc/options/admin-config.php:287
 msgid "Give a read more text for posts."
 msgstr ""
 
-#: inc/options/admin-config.php:282
+#: inc/options/admin-config.php:288
 msgid "You can use html if you want."
 msgstr ""
 
-#: inc/options/admin-config.php:289
+#: inc/options/admin-config.php:295
 msgid "Show Favicon"
 msgstr ""
 
-#: inc/options/admin-config.php:290
+#: inc/options/admin-config.php:296
 msgid "Choose your preferred option."
 msgstr ""
 
-#: inc/options/admin-config.php:296
+#: inc/options/admin-config.php:302
 msgid "Favicon"
 msgstr ""
 
-#: inc/options/admin-config.php:305
+#: inc/options/admin-config.php:311
 msgid "Upload a favicon"
 msgstr ""
 
-#: inc/options/admin-config.php:308
+#: inc/options/admin-config.php:314
 msgid "Upload a site favicon"
 msgstr ""
 
-#: inc/options/admin-config.php:309
+#: inc/options/admin-config.php:315
 msgid "Upload or choose a favicon for your website."
 msgstr ""
 
-#: inc/options/admin-config.php:325
+#: inc/options/admin-config.php:331
 msgid "Header Code"
 msgstr ""
 
-#: inc/options/admin-config.php:326
+#: inc/options/admin-config.php:332
 msgid ""
 "Paste your Google Analytics (or other) tracking code here. This will be "
 "added into the header of your theme."
 msgstr ""
 
-#: inc/options/admin-config.php:334
+#: inc/options/admin-config.php:340
 msgid "Footer Text"
 msgstr ""
 
-#: inc/options/admin-config.php:335
+#: inc/options/admin-config.php:341
 msgid ""
 "Enter your text here. If you want to align the text, center or right simply "
 "do that using the editor"
 msgstr ""
 
-#: inc/options/admin-config.php:343
+#: inc/options/admin-config.php:349
 msgid "Home Settings"
 msgstr ""
 
-#: inc/options/admin-config.php:344
+#: inc/options/admin-config.php:350
 msgid "Use this tab to set the homepage settings of your site"
 msgstr ""
 
-#: inc/options/admin-config.php:352
+#: inc/options/admin-config.php:358
 msgid "Activate Slider"
 msgstr ""
 
-#: inc/options/admin-config.php:353
+#: inc/options/admin-config.php:359
 msgid "Check the checkbox to activate the slider"
 msgstr ""
 
-#: inc/options/admin-config.php:361
+#: inc/options/admin-config.php:367
 msgid "Select the slider category"
 msgstr ""
 
-#: inc/options/admin-config.php:362
+#: inc/options/admin-config.php:368
 msgid ""
 "Post thumbnails of the posts from selected category will be displayed in the "
 "slider"
 msgstr ""
 
-#: inc/options/admin-config.php:363 inc/options/admin-config.php:371
+#: inc/options/admin-config.php:369 inc/options/admin-config.php:377
 msgid ""
 "Do not select a category or close the current category if you want to "
 "display latest posts."
 msgstr ""
 
-#: inc/options/admin-config.php:369
+#: inc/options/admin-config.php:375
 msgid "Select the featured posts category"
 msgstr ""
 
-#: inc/options/admin-config.php:370
+#: inc/options/admin-config.php:376
 msgid ""
 "Post thumbnails of the posts from selected category will be displayed as "
 "featured posts"
 msgstr ""
 
-#: inc/options/admin-config.php:379
-msgid "Styling Options"
-msgstr ""
-
-#: inc/options/admin-config.php:380
-msgid "Use this tab to set the style settings of the site"
-msgstr ""
-
-#: inc/options/admin-config.php:389
-msgid "Body Background"
+#: inc/options/admin-config.php:383
+msgid ""
+"Pro Version comes with unlimited slides, more slider options, custom slider "
+"etc"
 msgstr ""
 
 #: inc/options/admin-config.php:390
-msgid "Body background with image, color, etc."
+msgid "Styling Options"
 msgstr ""
 
-#: inc/options/admin-config.php:396
-msgid "Custom CSS Code"
+#: inc/options/admin-config.php:391
+msgid "Use this tab to set the style settings of the site"
 msgstr ""
 
-#: inc/options/admin-config.php:397
-msgid "Add your CSS code here."
+#: inc/options/admin-config.php:399
+msgid ""
+"Pro Version comes with unlimited fonts, unlimited colors, custom styling "
+"options, boxed and wide layouts. etc"
+msgstr ""
+
+#: inc/options/admin-config.php:405
+msgid "Body Background"
 msgstr ""
 
 #: inc/options/admin-config.php:406
-msgid "Social Media"
+msgid "Body background with image, color, etc."
 msgstr ""
 
-#: inc/options/admin-config.php:407
-msgid "Use this tab to set the social media settings of the site"
+#: inc/options/admin-config.php:412
+msgid "Custom CSS Code"
 msgstr ""
 
-#: inc/options/admin-config.php:414
-msgid "Display social media icons."
-msgstr ""
-
-#: inc/options/admin-config.php:415
-msgid "Check the checkbox to activate social icons."
+#: inc/options/admin-config.php:413
+msgid "Add your CSS code here."
 msgstr ""
 
 #: inc/options/admin-config.php:422
-msgid "Facebook Link"
+msgid "Social Media"
 msgstr ""
 
-#: inc/options/admin-config.php:423 inc/options/admin-config.php:432
-#: inc/options/admin-config.php:441 inc/options/admin-config.php:450
-#: inc/options/admin-config.php:459 inc/options/admin-config.php:468
-#: inc/options/admin-config.php:477
-msgid "This must be a URL."
+#: inc/options/admin-config.php:423
+msgid "Use this tab to set the social media settings of the site"
+msgstr ""
+
+#: inc/options/admin-config.php:430
+msgid "Display social media icons."
 msgstr ""
 
 #: inc/options/admin-config.php:431
+msgid "Check the checkbox to activate social icons."
+msgstr ""
+
+#: inc/options/admin-config.php:438
+msgid "Facebook Link"
+msgstr ""
+
+#: inc/options/admin-config.php:439 inc/options/admin-config.php:448
+#: inc/options/admin-config.php:457 inc/options/admin-config.php:466
+#: inc/options/admin-config.php:475 inc/options/admin-config.php:484
+#: inc/options/admin-config.php:493 inc/options/admin-config.php:502
+msgid "This must be a URL. Start with http://"
+msgstr ""
+
+#: inc/options/admin-config.php:447
 msgid "Twitter Link"
 msgstr ""
 
-#: inc/options/admin-config.php:440
+#: inc/options/admin-config.php:456
 msgid "Google Plus Link"
 msgstr ""
 
-#: inc/options/admin-config.php:449
+#: inc/options/admin-config.php:465
+msgid "Linkedin Link"
+msgstr ""
+
+#: inc/options/admin-config.php:474
 msgid "RSS Link"
 msgstr ""
 
-#: inc/options/admin-config.php:458
+#: inc/options/admin-config.php:483
 msgid "Instagram Link"
 msgstr ""
 
-#: inc/options/admin-config.php:467
+#: inc/options/admin-config.php:492
 msgid "Flickr Link"
 msgstr ""
 
-#: inc/options/admin-config.php:476
+#: inc/options/admin-config.php:501
 msgid "Youtube Link"
 msgstr ""
 
-#: inc/options/admin-config.php:493
-msgid "Theme Support"
+#: inc/options/admin-config.php:511
+msgid "Pro Version comes with more social media link options."
 msgstr ""
 
-#: inc/options/admin-config.php:494
+#: inc/options/admin-config.php:524
+msgid "<span class=\"sp-menu\">Theme Support</span>"
+msgstr ""
+
+#: inc/options/admin-config.php:525
 msgid ""
 "<p class=\"description\">Follow these links to get more details about Awaken "
 "WordPress Theme.</p>"
 msgstr ""
 
-#: inc/options/admin-config.php:501
+#: inc/options/admin-config.php:532
 msgid ""
 "<h4><a class=\"button-primary\" href=\"http://www.themezhut.com/themes/awaken"
 "\" target=\"_blank\">Theme Details</a></h4> <h4><a class=\"button-primary\" "
@@ -497,35 +530,35 @@ msgid ""
 "a></h4>"
 msgstr ""
 
-#: inc/options/admin-config.php:511
+#: inc/options/admin-config.php:542
 msgid "Import / Export"
 msgstr ""
 
-#: inc/options/admin-config.php:512
+#: inc/options/admin-config.php:543
 msgid "Import and Export your Redux Framework settings from file, text or URL."
 msgstr ""
 
-#: inc/options/admin-config.php:527
+#: inc/options/admin-config.php:558
 msgid "Theme Information"
 msgstr ""
 
-#: inc/options/admin-config.php:545
+#: inc/options/admin-config.php:576
 msgid "Theme Information 1"
 msgstr ""
 
-#: inc/options/admin-config.php:546 inc/options/admin-config.php:552
+#: inc/options/admin-config.php:577 inc/options/admin-config.php:583
 msgid "<p>This is the tab content, HTML is allowed.</p>"
 msgstr ""
 
-#: inc/options/admin-config.php:551
+#: inc/options/admin-config.php:582
 msgid "Theme Information 2"
 msgstr ""
 
-#: inc/options/admin-config.php:556
+#: inc/options/admin-config.php:587
 msgid "<p>This is the sidebar content, HTML is allowed.</p>"
 msgstr ""
 
-#: inc/options/admin-config.php:579 inc/options/admin-config.php:580
+#: inc/options/admin-config.php:610 inc/options/admin-config.php:611
 msgid "Awaken Options"
 msgstr ""
 
