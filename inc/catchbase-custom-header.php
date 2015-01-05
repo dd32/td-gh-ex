@@ -334,7 +334,6 @@ if ( ! function_exists( 'catchbase_featured_page_post_image' ) ) :
 	 * @since Catchbase 1.0
 	 */
 	function catchbase_featured_page_post_image() {
-		echo 'hi';
 		global $post;
 
 		if( has_post_thumbnail( ) ) {

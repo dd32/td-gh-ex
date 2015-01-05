@@ -1,15 +1,19 @@
 == Change log ==
 
+= 1.1.1 =
+* Added hover color css Foursquare, PollDaddy and Twitch TV social icons
+* Bug Fixed: Single Post/Page Featured Image showing extra hi
+
 = 1.1 =
-* Added Foursquare, PollDaddy, Spotify and Twitch TV social icons
+* Added Foursquare, PollDaddy and Twitch TV social icons
 * Bug Fixed: Contextual text in Customizer
 * Bug Fixed: Featured header image
 * Bug Fixed: Featured content width in mobile 
 * Bug Fixed: Sanitize email for email output
 * Bug Fixed: Typo in content featured image
 * Bug Fixed: Primary sidebar closing tag issue
-* Removed unnecessay body_class for page-blog
-* Moved Featured content position option from Homeage/Frontpage options to featured content settings
+* Removed unnecessary body_class for page-blog
+* Moved Featured content position option from Homepage/Frontpage options to featured content settings
 * Changed catchbase_footer_content_start and catchbase_footer_sidebar hook priority  
 
 = 1.0 =

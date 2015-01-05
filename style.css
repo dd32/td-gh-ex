@@ -4,7 +4,7 @@ Theme URI: http://catchthemes.com/themes/catch-base
 Author: Catch Themes
 Author URI: http://catchthemes.com/
 Description: If you are looking to tailor-make a unique site without having to spend time coding a strong base for a theme that is smooth and displays well in all mobile and desktop devices, Catch Base is where your search ends. Catch Base is a simple, clean and responsive WordPress Theme. Use this as a base for your theme development or custom site development, and you will be thrilled with its ease and efficiency! Catch Base is built in HTML5, CSS3 and WordPress Theme Customizer for real time customization. This theme is translation ready. Check out Theme Instructions at http://catchthemes.com/theme-instructions/catch-base/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/catch-base/
-Version: 1.1
+Version: 1.1.1
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: catchbase
@@ -2130,7 +2130,7 @@ caption {
 	margin-left: -5px;
 }
 
-#page .widget_catchbase_social_icons a.genericon {
+.site .widget_catchbase_social_icons a.genericon {
 	background-color: #f2f2f2;
 	border: 1px solid #eee;
 	border-radius: 3px;
@@ -2144,134 +2144,149 @@ caption {
     padding: 5px;
 }
 
-#page .widget_catchbase_social_icons a.genericon:hover {
+.site .widget_catchbase_social_icons a.genericon:hover {
 	background-color: #000;
 	border-color: #000;
     color: #fff;
     text-decoration: none;
 }
 
-#page .widget_catchbase_social_icons a.genericon-facebook-alt:hover {
+.site .widget_catchbase_social_icons a.genericon-facebook-alt:hover {
 	background-color: #3b5998;
 	border-color: #3b5998;	
 }
 
-#page .widget_catchbase_social_icons a.genericon-twitter:hover {
+.site .widget_catchbase_social_icons a.genericon-twitter:hover {
 	background-color: #00aced;
 	border-color: #00aced;	
 }
 
-#page .widget_catchbase_social_icons a.genericon-googleplus-alt:hover {
+.site .widget_catchbase_social_icons a.genericon-googleplus-alt:hover {
 	background-color: #dd4b39;
 	border-color: #dd4b39;	
 }
 
-#page .widget_catchbase_social_icons a.genericon-mail:hover {
+.site .widget_catchbase_social_icons a.genericon-mail:hover {
 	background-color: #1d62f0;
 	border-color: #1d62f0;	
 }
 
-#page .widget_catchbase_social_icons a.genericon-feed:hover {
+.site .widget_catchbase_social_icons a.genericon-feed:hover {
 	background-color: #dc622c;
 	border-color: #dc622c;	
 }
 
-#page .widget_catchbase_social_icons a.genericon-wordpress:hover {
+.site .widget_catchbase_social_icons a.genericon-wordpress:hover {
 	background-color: #21759b;
 	border-color: #21759b;	
 }
 
-#page .widget_catchbase_social_icons a.genericon-github:hover {
+.site .widget_catchbase_social_icons a.genericon-github:hover {
 	background-color: #4183c4;
 	border-color: #4183c4;	
 }
 
-#page .widget_catchbase_social_icons a.genericon-linkedin:hover {
+.site .widget_catchbase_social_icons a.genericon-linkedin:hover {
 	background-color: #007bb6;
 	border-color: #007bb6;	
 }
 
-#page .widget_catchbase_social_icons a.genericon-pinterest:hover {
+.site .widget_catchbase_social_icons a.genericon-pinterest:hover {
 	background-color: #cb2027;
 	border-color: #cb2027;	
 }
 
-#page .widget_catchbase_social_icons a.genericon-flickr:hover {
+.site .widget_catchbase_social_icons a.genericon-flickr:hover {
 	background-color: #ff0084;
 	border-color: #ff0084;	
 }
 
-#page .widget_catchbase_social_icons a.genericon-vimeo:hover {
+.site .widget_catchbase_social_icons a.genericon-vimeo:hover {
 	background-color: #aad450;
 	border-color: #aad450;	
 }
 
-#page .widget_catchbase_social_icons a.genericon-youtube:hover {
+.site .widget_catchbase_social_icons a.genericon-youtube:hover {
 	background-color: #bb0000;
 	border-color: #bb0000;	
 }
 
-#page .widget_catchbase_social_icons a.genericon-tumblr:hover {
+.site .widget_catchbase_social_icons a.genericon-tumblr:hover {
 	background-color: #32506d;
 	border-color: #32506d;	
 }
 
-#page .widget_catchbase_social_icons a.genericon-instagram:hover {
+.site .widget_catchbase_social_icons a.genericon-instagram:hover {
 	background-color: #517fa4;
 	border-color: #517fa4;	
 }
 
-#page .widget_catchbase_social_icons a.genericon-codepen:hover {
+.site .widget_catchbase_social_icons a.genericon-codepen:hover {
 	background-color: #000;
 	border-color: #000;	
 }
 
-#page .widget_catchbase_social_icons a.genericon-path:hover {
+.site .widget_catchbase_social_icons a.genericon-path:hover {
 	background-color: #ff442c;
 	border-color: #ff442c;	
 }
 
-#page .widget_catchbase_social_icons a.genericon-dribbble:hover {
+.site .widget_catchbase_social_icons a.genericon-dribbble:hover {
 	background-color: #ea4c89;
 	border-color: #ea4c89;	
 }
 
-#page .widget_catchbase_social_icons a.genericon-skype:hover {
+.site .widget_catchbase_social_icons a.genericon-skype:hover {
 	background-color: #12a5f4;
 	border-color: #12a5f4;	
 }
 
-#page .widget_catchbase_social_icons a.genericon-digg:hover {
+.site .widget_catchbase_social_icons a.genericon-digg:hover {
 	background-color: #333;
 	border-color: #333;	
 }
 
-#page .widget_catchbase_social_icons a.genericon-reddit:hover {
+.site .widget_catchbase_social_icons a.genericon-reddit:hover {
 	background-color: #ff4500;
 	border-color: #ff4500;	
 }
 
-#page .widget_catchbase_social_icons a.genericon-stumbleupon:hover {
+.site .widget_catchbase_social_icons a.genericon-stumbleupon:hover {
 	background-color: #eb4924;
 	border-color: #eb4924;	
 }
 
-#page .widget_catchbase_social_icons a.genericon-pocket:hover {
+.site .widget_catchbase_social_icons a.genericon-pocket:hover {
 	background-color: #f13753;
 	border-color: #f13753;	
 }
 
-#page .widget_catchbase_social_icons a.genericon-dropbox:hover {
+.site .widget_catchbase_social_icons a.genericon-dropbox:hover {
 	background-color: #2281cf;
 	border-color: #2281cf;	
 }
 
-#page .widget_catchbase_social_icons a.genericon-spotify:hover {
+.site .widget_catchbase_social_icons a.genericon-spotify:hover {
 	background-color: #81b900;
 	border-color: #73a500;	
 }
 
-#page .widget_catchbase_social_icons a.custom-icon {
+.site .widget_catchbase_social_icons a.genericon-polldaddy:hover {
+	background-color: #bc0b0b;
+	border-color: #bc0b0b;	
+}
+
+.site .widget_catchbase_social_icons a.genericon-foursquare:hover {
+	background-color: #f94877;
+	border-color: #f94877;	
+}
+
+.site .widget_catchbase_social_icons a.genericon-twitch:hover {
+	background-color: #6441a5;
+	border-color: #6441a5;	
+}
+
+.site .widget_catchbase_social_icons a.custom-icon {
 	border: none;
 	background: transparent;
 	padding: 0;
