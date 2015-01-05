@@ -1,5 +1,10 @@
 == Changelog ==
 
+Version 1.4
+* Added title tag via add theme support
+* Bug Fixed: Featured Header image conditions
+* Bug Fixed: Changed content width to 800px
+
 Version 1.3
 * Added German translation de_DE.po and de_DE.mo
 * Removed shortcodes

@@ -1,6 +1,6 @@
 == Adventurous ==
 
-Adventurous Theme by Catch Themes team, http://catchthemes.com/
+Adventurous Theme by Catch Themes, http://catchthemes.com/
 
 
 == About Adventurous ==

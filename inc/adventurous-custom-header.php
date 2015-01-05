@@ -1,18 +1,8 @@
 <?php
 /**
- * Sample implementation of the Custom Header feature
+ * Implementation of the Custom Header feature
  * http://codex.wordpress.org/Custom_Headers
- *
- * You can add an optional custom header image to header.php like so ...
-
-	<?php $header_image = get_header_image();
-	if ( ! empty( $header_image ) ) { ?>
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-			<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" />
-		</a>
-	<?php } // if ( ! empty( $header_image ) ) ?>
-
- *
+ * 
  * @package Catch Themes
  * @subpackage Adventurous
  * @since Adventurous 1.0
@@ -399,34 +389,11 @@ if ( ! function_exists( 'adventurous_featured_page_post_image' ) ) :
  */
 function adventurous_featured_page_post_image() {
 
-	global $post, $wp_query, $adventurous_options_settings, $adventurous_options_defaults;
+	global $post, $wp_query, $adventurous_options_settings;
    	$options = $adventurous_options_settings;
-	$defaults = $adventurous_options_defaults; 
-	$enableheaderimage =  $options[ 'enable_featured_header_image' ];
 	$featured_image = $options['page_featured_image'];
 	
-	// Front page displays in Reading Settings
-	$page_on_front = get_option('page_on_front') ;
-	$page_for_posts = get_option('page_for_posts'); 
-
-	// Get Page ID outside Loop
-	$page_id = $wp_query->get_queried_object_id();
-	
-	//Individual Page/Post Image Setting
-	$individual_featured_image = get_post_meta( $post->ID, 'adventurous-header-image', true ); 
-	
-	if ( $individual_featured_image == 'disable' || ( $individual_featured_image == 'default' && $enableheaderimage == 'disable' ) ) {
-		echo '<!-- Page/Post Disable Header Image -->';
-	}
-	elseif ( is_home() || is_archive() ) {
-		if ( $enableheaderimage == 'postpage' ) {
-			adventurous_featured_image();
-		}
-		else {
-			echo '<!-- Page/Post will not display in Home/Archive -->';
-		}
-	}		
-	elseif ( has_post_thumbnail() ) {
+	if ( has_post_thumbnail() ) {
 		
 		echo '<div id="header-featured-image">';
 			
@@ -454,16 +421,17 @@ function adventurous_featured_page_post_image() {
 			}
 		
 			echo $linkopen;
-				if ( $individual_featured_image == 'featured' || ( $individual_featured_image=='default' && $featured_image == 'featured' ) ) { 
+				if ( $featured_image == 'featured' ) { 
 					echo get_the_post_thumbnail($post->ID, 'featured', array('id' => 'main-feat-img'));
 				} 
-				elseif ( $individual_featured_image == 'slider' || ( $individual_featured_image=='default' && $featured_image == 'slider' ) ) {
+				elseif ( $featured_image == 'slider' ) {
 					echo get_the_post_thumbnail($post->ID, 'slider', array('id' => 'main-feat-img'));
 				}
 				else { 
 					echo get_the_post_thumbnail($post->ID, 'full', array('id' => 'main-feat-img'));
 				}
 			echo $linkclose;
+
 		echo '</div><!-- #header-featured-image -->';
 	}	
 	else {
@@ -485,36 +453,63 @@ if ( ! function_exists( 'adventurous_featured_overall_image' ) ) :
  */
 function adventurous_featured_overall_image() {
 
-	global $post, $wp_query, $adventurous_options_settings, $adventurous_options_defaults;
+	global $post, $wp_query, $adventurous_options_settings;
    	$options = $adventurous_options_settings;
-	$defaults = $adventurous_options_defaults; 
 	$enableheaderimage =  $options[ 'enable_featured_header_image' ];
-	$featured_image = $options['page_featured_image'];
 	
 	// Front page displays in Reading Settings
-	$page_on_front = get_option('page_on_front') ;
 	$page_for_posts = get_option('page_for_posts'); 
 
 	// Get Page ID outside Loop
 	$page_id = $wp_query->get_queried_object_id();
 	
-	//Individual Page/Post Image Setting
-	$individual_featured_image = get_post_meta( $post->ID, 'adventurous-header-image', true ); 
+	// Check Enable/Disable header image in Page/Post Meta box
+	if ( is_page() || is_single() ) {
+		//Individual Page/Post Image Setting
+		$individual_featured_image = get_post_meta( $post->ID, 'adventurous-header-image', true );  
+		
+		if ( $individual_featured_image == 'disable' || ( $individual_featured_image == 'default' && $enableheaderimage == 'disable' ) ) {
+			echo '<!-- Page/Post Disable Header Image -->';
+			return;
+		}
+		elseif ( $individual_featured_image == 'enable' && $enableheaderimage == 'disable' ) {
+			adventurous_featured_page_post_image();
+		}
+	}
 	
-	if ( $individual_featured_image  == 'disable' ) {
-		echo '<!-- Disable Header Image in Page/Post -->';	
+	// Check Homepage 
+	if ( $enableheaderimage == 'homepage' ) {
+		if ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) {
+			adventurous_featured_image();
+		}
 	}
-	elseif ( $individual_featured_image  == 'enable' ) {
-		adventurous_featured_page_post_image();
+	// Check Excluding Homepage 
+	if ( $enableheaderimage == 'excludehome' ) {
+		if ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) {
+			return false;
+		}
+		else {
+			adventurous_featured_image();	
+		}
 	}
-	elseif ( $enableheaderimage == 'allpage' || ( $enableheaderimage == 'homepage' && ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) ) ) {
+	// Check Entire Site
+	elseif ( $enableheaderimage == 'allpage' ) {
 		adventurous_featured_image();
 	}
-	elseif ( $enableheaderimage == 'excludehome' && !(is_home() ) ) {
-		adventurous_featured_image();
-	}
-	elseif ( $enableheaderimage == 'postpage' || $enableheaderimage == 'pagespostes' ) {
-		adventurous_featured_page_post_image();
+	// Check Entire Site (Post/Page)
+	elseif ( $enableheaderimage == 'postpage' ) {
+		if ( is_page() || is_single() ) {
+			adventurous_featured_page_post_image();
+		}
+		else {
+			adventurous_featured_image();
+		}
+	}	
+	// Check Page/Post
+	elseif ( $enableheaderimage == 'pagespostes' ) {
+		if ( is_page() || is_single() ) {
+			adventurous_featured_page_post_image();
+		}
 	}
 	else {
 		echo '<!-- Disable Header Image -->';
