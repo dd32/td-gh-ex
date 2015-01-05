@@ -4,19 +4,14 @@ Theme URI: http://richwp.com/themes/minimumminimal/
 Author: Felix Krusch
 Author URI: http://RichWP.com
 Description: Minimum Minimal live demo: http://demo.richwp.com/minimumminimal/
-Version: 1.0.3
+Version: 1.0.4
 Tags: featured-images, custom-menu, threaded-comments, translation-ready, theme-options, post-formats, sticky-post
 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Copyright 2014 by Felix Krusch
+Copyright 2014 & 2015 by Felix Krusch
 Minimum Minimal Edition is distributed under the terms of the GNU GPL
-Changelog:	V1.0.0 - 2014-09-12 Release of Minimum Minimal
-Changelog:	V1.0.0 - 2014-11-17 Theme Check Passed for wordpress.org release
-Changelog:	V1.0.1 - 2014-11-18 Select Menu Bugfix
-Changelog:	V1.0.2 - 2014-11-18 Insert Spacer in Author Info
-Changelog:	V1.0.3 - 2014-11-27 Post Pagination Translation String Fix
 */
 
 
@@ -91,7 +86,7 @@ input[type="text"], textarea {padding: 3px;}
 
 /* Container */
 .containermargin { margin: 0 auto 0 auto;}
-#contentcontainer{ background: rgba(255,255,255,.8)}
+#contentcontainer{ background: rgba(255,255,255,.8); margin-top:25px;}
 
 /* Navigation */
 #header {background: #1A1A1A; width: 100%;}
@@ -103,10 +98,6 @@ h1#sitetitle{color:#000; font-family: 'Roboto', sans-serif; font-weight:700; mar
 a:hover.menu-trigger{text-decoration:none;}
 #navigation {background:rgba(255, 255, 255, 0.8); position: fixed; top: 0; width: 100%; z-index: 9999; overflow:hidden; border-bottom: 1px solid rgba(0,0,0,.2);}
 #flyoutmenu{visibility:hidden;}
-ul#primarytop{list-style: none; float:right; margin:0 62px 0 20px;}
-ul#primarytop li{float:left; margin-left:25px;}
-ul#primarytop a{color:rgba(0, 0, 0, 0.4); padding: 4px 10px;}
-ul#primarytop a:hover, ul#primarytop li.current-menu-item a{color:rgba(0, 0, 0, 1); text-decoration: none;}
 .sidr{background: #f7f7f7; display:none;position:absolute;position:fixed;top:0;height:100%;z-index:9999;width:260px;overflow-x:hidden;overflow-y:auto;}
 .sidr .sidr-inner{padding:0 0 15px}
 .sidr .sidr-inner>p{margin-left:15px;margin-right:15px}
@@ -456,15 +447,9 @@ h1#sitetitle{font-size:20px;}
 
 /* Misc */
 .entry-meta, .entry-utility{color: #7f8c8d;}
-.next-previous_nav{position:fixed; display:none; bottom:200px; width: 32px;}
-.next-previous_nav_previous{left:0px;}
-.next-previous_nav_next {right:0px;}
-.nav-previous{width:auto; height:64px; background:url(img/next-previous.png) no-repeat scroll left center transparent; background-position: 0px -74px; float:left;}
-.nav-next{width:auto; height:64px; background:url(img/next-previous.png) no-repeat scroll right center transparent; background-position: 0px 0px; text-align:right; float:right;}
-.nav-previous a, .nav-next a{display:block; width:32px; height:64px; text-decoration:none;}
-.nav-previous a span, .nav-next a span{margin-top:13px; padding:10px; display:none; min-width:140px; background-color:#f0eff2; border:1px solid #dfdde0;}
-.nav-previous a:hover span, .nav-next a:hover span{display:block; color:#000000; font-size:90%; line-height:18px; text-decoration:none; text-align:center;}
-.nav-next a span{float:right;}
+.nav-previous, .nav-next{float:right; display:inline; margin-right:10px;}
+.nav-previous a, .nav-next a{color:#FFF; padding:10px 15px; text-decoration: none;}
+
 .relatedpost{margin-top: 15px;}
 .relatedpost img{float:left; margin-right:20px;}
 h3.related-title{margin-top:10px;}

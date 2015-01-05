@@ -35,6 +35,15 @@
 			) );
 		?>
 		<?php the_tags( '<div class="tags">' . __( 'Tags: ', 'richwp' ), ', ', '</div>');?>
+		
+		</div>
+		<div style="clear:both;"></div>
+		<div class="next-previous_nav">
+			<div class="nav-next"><?php next_post_link( '%link', __('Next &raquo;', 'richwp') ); ?></div>
+			<div class="nav-previous"><?php previous_post_link( '%link', __('&laquo; Previous', 'richwp') ); ?></div>
+		<div style="clear:both;"></div>
+		</div>
+	</div>
 </article>
 <?php comments_template( '', true ); ?>
 </div><!-- #content -->

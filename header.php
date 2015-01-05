@@ -34,12 +34,6 @@
 				
 			</div><!-- #logo -->
 			
-			
-			<?php if ( has_nav_menu( 'primary' ) ) {  wp_nav_menu( array( 'container' => false, 'menu_id' => 'primarytop', 'menu_class' => 'primary-menu headerelements', 'theme_location' => 'primary', 'depth' => 1 ) );  } ?>
- 
-
-
-
 			</header><!-- #navigation -->
 			
 	<nav id="sidr" >

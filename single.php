@@ -6,11 +6,5 @@
 		<?php endwhile; endif;?>
 	<div style="clear:both;"></div>
 	</div><!-- #contentcontainer -->
-	<div class="next-previous_nav next-previous_nav_previous">
-		<div class="nav-previous"><?php previous_post_link( '%link', '<span>%title</span>' ); ?></div>
-	</div>
-	<div class="next-previous_nav next-previous_nav_next">
-		<div class="nav-next"><?php next_post_link( '%link', '<span>%title</span>' ); ?></div>
-	</div>
 </div><!-- #wrapper -->
 <?php get_footer(); ?>

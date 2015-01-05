@@ -272,11 +272,11 @@ function add_styles() {
   }
 a, a:hover, h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, h1.entry-title a:hover, .meta-nav a, .meta-nav a:hover, #respond .required, .widget-area a:hover, .footer-widget-area a:hover, #colophon a:hover, .nav-previous a span, .nav-next a span, .postformatlabel a span, .paginate a:hover, .paginate a:active, .paginate .current, #cancel-comment-reply-link{color:<?php
     echo rwp('color1');
-?>;}  a.afflinkbutton, a:hover.styledbutton, a:hover.more-link, input[type="submit"]:hover#submit, input[type="submit"]:hover, .nav-below a:hover{background:<?php
+?>;}  a.afflinkbutton, a:hover.styledbutton, a:hover.more-link, input[type="submit"]:hover#submit, input[type="submit"]:hover, .nav-below a:hover, .nav-previous a:hover, .nav-next a:hover{background:<?php
     echo rwp('color1');
 ?>;}  a:hover {color:<?php
     echo rwp('color2');
-?>;} a.styledbutton, a.more-link, input[type="submit"]#submit, input[type="submit"], a:hover.afflinkbutton, .nav-below a {background:<?php
+?>;} a.styledbutton, a.more-link, input[type="submit"]#submit, input[type="submit"], a:hover.afflinkbutton, .nav-below a, .nav-previous a, .nav-next a {background:<?php
     echo rwp('color2');
 ?>;} .archiveheader{border: 5px solid <?php
     echo rwp('color1');

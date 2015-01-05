@@ -18,12 +18,12 @@
 
 			<div style="clear:both;"></div>		
 		</div><!-- .selecttagcat -->
+		<?php get_sidebar ( 'top' ); ?>
 	</div>
-	
 		
 	<div id="contentcontainer" class="container_16 containermargin postlistcontainer">
-		<?php get_sidebar ( 'top' ); ?>
-		<div class="grid_16"  >	
+		
+		<div class="grid_16">	
 							
 		 	<?php if ( have_posts() ) :  while ( have_posts() ) : the_post();?>
 					<?php get_template_part( 'loop', get_post_format() ); ?>

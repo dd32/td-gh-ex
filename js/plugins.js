@@ -99,15 +99,6 @@ if(!(window.console&&console.log)){(function(){var noop=function(){};var methods
 // Works with either jQuery or Zepto
 })( window.jQuery || window.Zepto );
 
-/* Next/Previous Nav */
-jQuery(window).scroll(function(){
-	var visible = false;
-	if(jQuery(window).scrollTop() > 200){
-		jQuery('.next-previous_nav').fadeIn('slow');
-	}else if(jQuery(window).scrollTop() < 200){
-		jQuery('.next-previous_nav').fadeOut('slow');
-	}
-});
 
 
 /*!
@@ -238,7 +229,7 @@ debounce=setTimeout(resizer,settings.debounceTimeout)});$this.find("img").load(r
 	 		autoTrigger: false
 	 	});	
                  
-                /* Transform Shop Menus into select */		 	
+        /* Transform Shop Menus into select */		 	
 	 	$(".shopselect").tinyNav();
 	 	
 	 	/* Transform Selectboxes */	
