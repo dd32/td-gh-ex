@@ -4,7 +4,7 @@ Theme URI: http://woothemes.com/storefront
 Author: WooThemes
 Author URI: http://woothemes.com
 Description: Storefront is the perfect theme for your next eCommerce project. Designed and developed by WooThemes, it features a deep integration with our market leading WooCommerce plugin, several layout & color options to personalise your shop, multiple widget regions, a responsive design and much more. Developers will love it's lean and extensible codebase making it a joy to customise and extend.
-Version: 1.2.1
+Version: 1.2.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: storefront
@@ -437,6 +437,10 @@ body {
   .site-header .widget {
     margin-bottom: 0; }
 
+.header-widget-region {
+  position: relative;
+  z-index: 99; }
+
 .site-branding h1 {
   font-size: 1.618em;
   letter-spacing: -1px;
@@ -788,7 +792,7 @@ input[type="submit"],
   cursor: pointer;
   /* Improves usability and consistency of cursor style between image-type 'input' and others */
   line-height: 1;
-  padding: .857em 1.387em;
+  padding: .618em 1em;
   text-decoration: none;
   font-weight: 700;
   text-shadow: none;
@@ -891,7 +895,7 @@ input[type="password"],
 input[type="search"],
 textarea,
 .input-text {
-  padding: .857em;
+  padding: .618em;
   background-color: #efefef;
   color: #787E87;
   line-height: 1;
@@ -1411,7 +1415,7 @@ fieldset {
       border-bottom-color: rgba(0, 0, 0, 0.2); }
 
 .byline,
-.updated {
+.updated:not(.published) {
   display: none; }
 
 .single .byline, .group-blog .byline {
@@ -1910,6 +1914,8 @@ object {
   .widget ul {
     margin-left: 0;
     list-style: none; }
+    .widget ul ul {
+      margin-left: 1.618em; }
 
 .widget-area .widget a.button {
   font-weight: 700 !important;
@@ -1941,7 +1947,7 @@ object {
     content: "\f002";
     font-family: "FontAwesome";
     position: absolute;
-    top: 1em;
+    top: .618em;
     left: 1em;
     line-height: 1; }
 
