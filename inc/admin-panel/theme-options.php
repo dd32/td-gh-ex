@@ -264,7 +264,7 @@ function accesspresslite_theme_options_page() {
 			    
 				<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FAccessPress-Themes%2F1396595907277967&amp;width&amp;layout=button&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=35&amp;appId=1411139805828592" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:20px; width:50px " allowTransparency="true"></iframe>
 				&nbsp;&nbsp;
-			    <a href="https://twitter.com/apthemes" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @apthemes</a>
+			    <a href="<?php echo esc_url('https://twitter.com/apthemes', 'accesspresslite'); ?>" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @apthemes</a>
 				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 	    		
 			</div>
@@ -292,7 +292,7 @@ function accesspresslite_theme_options_page() {
 
 	<div id="optionsframework-metabox" class="metabox-holder clearfix">
 		<div id="optionsframework" class="postbox">
-			<form id="form_options" method="post" action="options.php">
+			<form id="form_options" method="POST" action="options.php" enctype="multipart/form-data">
 
 			<?php $settings = get_option( 'accesspresslite_options', $accesspresslite_options ); ?>
 			
@@ -306,7 +306,7 @@ function accesspresslite_theme_options_page() {
 			<h3><?php _e('Basic Settings','accesspresslite'); ?></h3>
 				<table class="form-table">
 					<tr>
-						<th><label for="footer_copyright"><?php _e('Disable Responsive Design?','accesspresslite'); ?></th>
+						<th><label for="footer_copyright"><?php _e('Disable Responsive Design?','accesspresslite'); ?></label></th>
 						<td>
 							<input type="checkbox" id="responsive_design" name="accesspresslite_options[responsive_design]" value="1" <?php checked( true, $settings['responsive_design'] ); ?> />
 							<label for="responsive_design"><?php _e('Check to disable','accesspresslite'); ?></label>
@@ -326,7 +326,7 @@ function accesspresslite_theme_options_page() {
 					</tr>
                     
                     <tr>
-						<th><label for="show_search"><?php _e('Show Search in Header?','accesspresslite') ?></th>
+						<th><label for="show_search"><?php _e('Show Search in Header?','accesspresslite') ?></label></th>
 						<td>
 							<input type="checkbox" id="show_search" name="accesspresslite_options[show_search]" value="1" <?php checked( true, $settings['show_search'] ); ?> />
 							<label for="show_search"><?php _e('Check to enable','accesspresslite'); ?></label>
@@ -334,7 +334,7 @@ function accesspresslite_theme_options_page() {
 					</tr>
 
 					<tr>
-						<th><label for="accesspresslite_favicon"><?php _e('Upload Favicon','accesspresslite'); ?></th>
+						<th><label for="accesspresslite_favicon"><?php _e('Upload Favicon','accesspresslite'); ?></label></th>
 						<td>
 							<div class="accesspresslite_fav_icon">
 							  <input type="text" name="accesspresslite_options[media_upload]" id="accesspresslite_media_upload" value="<?php if(!empty($settings['media_upload'])){ echo $settings['media_upload']; }?>" />
@@ -357,7 +357,7 @@ function accesspresslite_theme_options_page() {
 					</tr>
 
 					<tr>
-						<th><label for="upload_log"><?php _e('Upload Logo','accesspresslite'); ?></th>
+						<th><label for="upload_log"><?php _e('Upload Logo','accesspresslite'); ?></label></th>
 						<td>
 							<a class="button" target="_blank" href="<?php echo admin_url('/themes.php?page=custom-header'); ?>"><?php _e('Upload','accesspresslite'); ?></a>
 						</td>
@@ -375,8 +375,9 @@ function accesspresslite_theme_options_page() {
 					<?php $accesspresslite_menu_alignments = array('Left','Right','Center'); ?>
 					<select id="menu_alignment" name="accesspresslite_options[menu_alignment]">
 					<?php
-					foreach ( $accesspresslite_menu_alignments as $accesspresslite_menu_alignment ) :
-						echo '<option value="' .$accesspresslite_menu_alignment. '" ' . selected( $accesspresslite_menu_alignment , $settings['menu_alignment'] ) . '>' . esc_attr($accesspresslite_menu_alignment,'accesspresslite')  . '</option>';
+					foreach ( $accesspresslite_menu_alignments as $accesspresslite_menu_alignment ) : ?>
+						<option value="<?php echo $accesspresslite_menu_alignment; ?>" <?php selected( $accesspresslite_menu_alignment , $settings['menu_alignment'] ); ?>><?php echo esc_attr($accesspresslite_menu_alignment,'accesspresslite');?></option>
+					<?php
 					endforeach;
 					?>
 					</select>
@@ -495,7 +496,7 @@ function accesspresslite_theme_options_page() {
 					</tr>
 
 					<tr>
-						<th><label for="full_content"><?php _e('Show Full Content?','accesspresslite'); ?></th>
+						<th><label for="full_content"><?php _e('Show Full Content?','accesspresslite'); ?></label></th>
 						<td>
 							<input type="checkbox" id="full_content" name="accesspresslite_options[welcome_post_content]" value="1" <?php checked( true, $settings['welcome_post_content'] ); ?> />
 							<label for="full_content"><?php _e('Check to enable','accesspresslite'); ?></label><br />
@@ -515,7 +516,7 @@ function accesspresslite_theme_options_page() {
 					<tr><td colspan="2" class="seperator">&nbsp;</td></tr>
 
 					<tr>
-						<th><label for="show_eventdate"><?php _e('Disable Event Section?','accesspresslite'); ?></th>
+						<th><label for="show_eventdate"><?php _e('Disable Event Section?','accesspresslite'); ?></label></th>
 						<td>
 							<input type="checkbox" id="disable_event" name="accesspresslite_options[disable_event]" value="1" <?php checked( true, $settings['disable_event'] ); ?> />
 							<label for="disable_event"><?php _e('Check to Disable','accesspresslite'); ?></label><br />
@@ -529,7 +530,7 @@ function accesspresslite_theme_options_page() {
 					</tr>
 
 					<tr>
-						<th><label for="show_eventdate"><?php _e('Show Event Date?','accesspresslite'); ?></th>
+						<th><label for="show_eventdate"><?php _e('Show Event Date?','accesspresslite'); ?></label></th>
 						<td>
 							<input type="checkbox" id="show_eventdate" name="accesspresslite_options[show_eventdate]" value="1" <?php checked( true, $settings['show_eventdate'] ); ?> />
 							<label for="show_eventdate"><?php _e('Check to enable','accesspresslite'); ?></label>
@@ -543,7 +544,7 @@ function accesspresslite_theme_options_page() {
 					<tr><td colspan="2" class="seperator">&nbsp;</td></tr>
 
 					<tr>
-						<th><label for="show_fontawesome"><?php _e('Show Font Awesome icon for Featured Post?','accesspresslite'); ?></th>
+						<th><label for="show_fontawesome"><?php _e('Show Font Awesome icon for Featured Post?','accesspresslite'); ?><label></th>
 						<td>
 							<input type="checkbox" id="show_fontawesome" name="accesspresslite_options[show_fontawesome]" value="1" <?php checked( true, $settings['show_fontawesome'] ); ?> />
 							<label for="show_fontawesome"><?php _e('Check to enable','accesspresslite'); ?></label><br />
@@ -552,7 +553,7 @@ function accesspresslite_theme_options_page() {
 					</tr>
                     
                     <tr>
-						<th><label for="big_icons"><?php _e('Show Big Font Awesome icon with center aligned','accesspresslite'); ?></th>
+						<th><label for="big_icons"><?php _e('Show Big Font Awesome icon with center aligned','accesspresslite'); ?></label></th>
 						<td>
 							<input type="checkbox" id="big_icons" name="accesspresslite_options[big_icons]" value="1" <?php checked( true, $settings['big_icons'] ); ?> />
 							<label for="big_icons"><?php _e('Check to enable','accesspresslite'); ?></label><br />
@@ -627,7 +628,7 @@ function accesspresslite_theme_options_page() {
                     <tr><td colspan="2" class="seperator">&nbsp;</td></tr>
 
                     <tr>
-						<th><label for="featured_bar"><?php _e('Disable Featured Bar (above footer)','accesspresslite'); ?></th>
+						<th><label for="featured_bar"><?php _e('Disable Featured Bar (above footer)','accesspresslite'); ?></label></th>
 						<td>
 							<input type="checkbox" id="featured_bar" name="accesspresslite_options[featured_bar]" value="1" <?php checked( true, $settings['featured_bar'] ); ?> />
 							<label for="featured_bar"><?php _e('Check to disable','accesspresslite'); ?></label><br />
@@ -637,27 +638,27 @@ function accesspresslite_theme_options_page() {
 					<tr><td colspan="2" class="seperator">&nbsp;</td></tr>
 
 					<tr>
-						<th><label for="featured_bar"><?php _e('Call To action','accesspresslite'); ?></th>
+						<th><label for="featured_bar"><?php _e('Call To action','accesspresslite'); ?></label></th>
 					</tr>
 
 					<tr><td colspan="2" class="seperator">&nbsp;</td></tr>
 
 					<tr>
-						<th><label for="call_to_action"><?php _e('Text','accesspresslite'); ?></th>
+						<th><label for="call_to_action"><?php _e('Text','accesspresslite'); ?></label></th>
 						<td>
 							<textarea rows="4" cols="60" name="accesspresslite_options[action_text]" placeholder="Write Call to Action Text"><?php if(!empty($settings['action_text'])) echo $settings['action_text']; ?></textarea>
 						</td>
 					</tr>
 
 					<tr>
-						<th><label for="call_to_action"><?php _e('Read More Button Text','accesspresslite'); ?></th>
+						<th><label for="call_to_action"><?php _e('Read More Button Text','accesspresslite'); ?></label></th>
 						<td>
 							<input type="text" name="accesspresslite_options[action_btn_text]" value="<?php if(!empty($settings['action_btn_text'])) echo $settings['action_btn_text']; ?>">
 						</td>
 					</tr>
 
 					<tr>
-						<th><label for="call_to_action"><?php _e('Read More Button link','accesspresslite'); ?></th>
+						<th><label for="call_to_action"><?php _e('Read More Button link','accesspresslite'); ?></label></th>
 						<td>
 							<input type="text" name="accesspresslite_options[action_btn_link]" value="<?php if(!empty($settings['action_btn_link'])) echo $settings['action_btn_link']; ?>">
 						</td>
@@ -706,8 +707,9 @@ function accesspresslite_theme_options_page() {
 					<select id="slider1" name="accesspresslite_options[slider1]">
 					<?php
 					foreach ( $accesspresslite_postlist as $single_post ) :
-						$label = $single_post['label'];
-						echo '<option value="' . $single_post['value'] . '" ' . selected($single_post['value'] , $settings['slider1'] ). '>' . $label . '</option>';
+						$label = $single_post['label']; ?>
+						<option value="<?php echo $single_post['value']; ?>" <?php selected($single_post['value'] , $settings['slider1'] ) ?>><?php echo $label; ?></option>
+					<?php
 					endforeach;
 					?>
 					</select>
@@ -719,8 +721,9 @@ function accesspresslite_theme_options_page() {
 					<select id="slider2" name="accesspresslite_options[slider2]">
 					<?php
 					foreach ( $accesspresslite_postlist as $single_post ) :
-						$label = $single_post['label'];
-						echo '<option value="' . $single_post['value']  . '" ' . selected($single_post['value'] , $settings['slider2'] ) . '>' . $label . '</option>';
+						$label = $single_post['label']; ?>
+                        <option value="<?php echo $single_post['value']; ?>" <?php selected($single_post['value'] , $settings['slider2'] ) ?>><?php echo $label; ?></option>
+					<?php
 					endforeach;
 					?>
 					</select>
@@ -732,8 +735,9 @@ function accesspresslite_theme_options_page() {
 					<select id="slider3" name="accesspresslite_options[slider3]">
 					<?php
 					foreach ( $accesspresslite_postlist as $single_post ) :
-						$label = $single_post['label'];
-						echo '<option value="' . esc_attr( $single_post['value'] ) . '" ' . selected($single_post['value'] , $settings['slider3'] ) . '>' . $label . '</option>';
+						$label = $single_post['label']; ?>
+						<option value="<?php echo $single_post['value']; ?>" <?php selected($single_post['value'] , $settings['slider3'] ) ?>><?php echo $label; ?></option>
+					<?php
 					endforeach;
 					?>
 					</select>
@@ -746,8 +750,9 @@ function accesspresslite_theme_options_page() {
 					<select id="slider4" name="accesspresslite_options[slider4]">
 					<?php
 					foreach ( $accesspresslite_postlist as $single_post ) :
-						$label = $single_post['label'];
-						echo '<option value="' . esc_attr( $single_post['value'] ) . '" ' . selected( $single_post['value'], $settings['slider4'] ) . '>' . $label . '</option>';
+						$label = $single_post['label']; ?>
+						<option value="<?php echo $single_post['value']; ?>" <?php selected($single_post['value'] , $settings['slider4'] ) ?>><?php echo $label; ?></option>
+					<?php
 					endforeach;
 					?>
 					</select>
@@ -767,8 +772,9 @@ function accesspresslite_theme_options_page() {
 						<select id="slider_cat" name="accesspresslite_options[slider_cat]">
 						<?php
 						foreach ( $accesspresslite_catlist as $single_cat ) :
-							$label = $single_cat['label'];
-							echo '<option value="' . $single_cat['value'] . '" ' . selected( $single_cat['value'] , $settings['slider_cat'] ) . '>' . $label . '</option>';
+							$label = $single_cat['label']; ?>
+							<option value="<?php echo $single_cat['value'] ?>" <?php selected( $single_cat['value'] , $settings['slider_cat'] )  ?>><?php echo $label; ?></option>
+						<?php
 						endforeach;
 						?>
 					</select>
@@ -862,7 +868,7 @@ function accesspresslite_theme_options_page() {
 						<tbody>
 						<tr><th colspan="2" class="line"><?php _e('Left Sidebar Options','accesspresslite'); ?></th></tr>
 						<tr>
-							<th><label for="leftsidebar_show_latest_events"><?php _e('Show Latest Events?','accesspresslite'); ?></th>
+							<th><label for="leftsidebar_show_latest_events"><?php _e('Show Latest Events?','accesspresslite'); ?></label></th>
 							<td>
 							<input type="checkbox" id="leftsidebar_show_latest_events" name="accesspresslite_options[leftsidebar_show_latest_events]" value="1" <?php checked( true, $settings['leftsidebar_show_latest_events'] ); ?> />
 							<label for="leftsidebar_show_latest_events"><?php _e('Check to enable','accesspresslite'); ?></label>
@@ -870,7 +876,7 @@ function accesspresslite_theme_options_page() {
 						</tr>
 
 						<tr>
-							<th><label for="leftsidebar_show_testimonials"><?php _e('Show Testimonials?','accesspresslite'); ?></th>
+							<th><label for="leftsidebar_show_testimonials"><?php _e('Show Testimonials?','accesspresslite'); ?></label></th>
 							<td>
 							<input type="checkbox" id="leftsidebar_show_testimonials" name="accesspresslite_options[leftsidebar_show_testimonials]" value="1" <?php checked( true, $settings['leftsidebar_show_testimonials'] ); ?> />
 							<label for="leftsidebar_show_testimonials"><?php _e('Check to enable','accesspresslite'); ?></label>
@@ -887,7 +893,7 @@ function accesspresslite_theme_options_page() {
 						<table>
 						<tr><th colspan="2" class="line"><?php _e('Right Sidebar Options','accesspresslite'); ?></th></tr>
 						<tr>
-							<th><label for="rightsidebar_show_latest_events"><?php _e('Show Latest Events?','accesspresslite'); ?></th>
+							<th><label for="rightsidebar_show_latest_events"><?php _e('Show Latest Events?','accesspresslite'); ?></label></th>
 							<td>
 							<input type="checkbox" id="rightsidebar_show_latest_events" name="accesspresslite_options[rightsidebar_show_latest_events]" value="1" <?php checked( true, $settings['rightsidebar_show_latest_events'] ); ?> />
 							<label for="rightsidebar_show_latest_events"><?php _e('Check to enable','accesspresslite'); ?></label>
@@ -895,7 +901,7 @@ function accesspresslite_theme_options_page() {
 						</tr>
 
 						<tr>
-							<th><label for="rightsidebar_show_testimonials"><?php _e('Show Testimonials?','accesspresslite'); ?></th>
+							<th><label for="rightsidebar_show_testimonials"><?php _e('Show Testimonials?','accesspresslite'); ?></label></th>
 							<td>
 							<input type="checkbox" id="rightsidebar_show_testimonials" name="accesspresslite_options[rightsidebar_show_testimonials]" value="1" <?php checked( true, $settings['rightsidebar_show_testimonials'] ); ?> />
 							<label for="rightsidebar_show_testimonials"><?php _e('Check to enable','accesspresslite'); ?></label>
@@ -911,12 +917,10 @@ function accesspresslite_theme_options_page() {
 				</tr>
 				</tbody>
 				<tbody>
-					<td>
-						<tr>
-							<td colspan="2"><?php _e('View All Text','accesspresslite'); ?>&nbsp;&nbsp;
-							<input type="text" name="accesspresslite_options[view_all_text]" value="<?php if (isset($settings['view_all_text'])){ echo esc_attr($settings['view_all_text']); } ?>" />&nbsp;&nbsp;<em class="f13"><?php _e('Leave blank if you don\'t want to show View All Text','accesspresslite'); ?></em></td>
-						</tr>
-					</td>
+					<tr>
+						<td colspan="2"><?php _e('View All Text','accesspresslite'); ?>&nbsp;&nbsp;
+						<input type="text" name="accesspresslite_options[view_all_text]" value="<?php if (isset($settings['view_all_text'])){ echo esc_attr($settings['view_all_text']); } ?>" />&nbsp;&nbsp;<em class="f13"><?php _e('Leave blank if you don\'t want to show View All Text','accesspresslite'); ?></em></td>
+					</tr>
 				</tbody>
 				</table>
 			</div>
@@ -930,7 +934,7 @@ function accesspresslite_theme_options_page() {
 					</tr>
 
 					<tr>
-						<th><label for="show_social_header"><?php _e('Disable Social icons in header?','accesspresslite'); ?></th>
+						<th><label for="show_social_header"><?php _e('Disable Social icons in header?','accesspresslite'); ?></label></th>
 						<td>
 							<input type="checkbox" id="show_social_header" name="accesspresslite_options[show_social_header]" value="1" <?php checked( true, $settings['show_social_header'] ); ?> />
 							<label for="show_social_header"><?php _e('Check to disable','accesspresslite'); ?></label>
@@ -938,7 +942,7 @@ function accesspresslite_theme_options_page() {
 					</tr>
 
 					<tr>
-						<th><label for="show_social_footer"><?php _e('Disable Social icons in Footer?','accesspresslite'); ?></th>
+						<th><label for="show_social_footer"><?php _e('Disable Social icons in Footer?','accesspresslite'); ?></label></th>
 						<td>
 							<input type="checkbox" id="show_social_footer" name="accesspresslite_options[show_social_footer]" value="1" <?php checked( true, $settings['show_social_footer'] ); ?> />
 							<label for="show_social_footer"><?php _e('Check to disable','accesspresslite'); ?></label>
@@ -1095,7 +1099,7 @@ function accesspresslite_theme_options_page() {
 						<h4><?php _e('Get in touch','accesspresslite'); ?></h4>
 
 						<p>
-						<?php _e('If you’ve any question/feedback, please get in touch:','accesspresslite'); ?><br/>
+						<?php _e('If you have any question/feedback, please get in touch:','accesspresslite'); ?><br/>
 						<?php _e('General enquiries:','accesspresslite'); ?> <a href="mailto:<?php echo esc_url('info@accesspressthemes.com'); ?>">info@accesspressthemes.com</a><br/>
 						<?php _e('Support:','accesspresslite'); ?> <a href="mailto:<?php echo esc_url('support@accesspressthemes.com'); ?>">support@accesspressthemes.com</a><br/>
 						<?php _e('Sales:','accesspresslite'); ?> <a href="mailto:<?php echo esc_url('sales@accesspressthemes.com'); ?>">sales@accesspressthemes.com</a><br/>

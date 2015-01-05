@@ -60,6 +60,9 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.33
+* Minor bugs found and fixed
+
 Version 2.32
 * Screenshot changed
 

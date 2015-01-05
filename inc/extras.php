@@ -547,15 +547,6 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
    
    add_filter( 'body_class', 'accesspresslite_web_layout' );
 
-   function accesspresslite_post_count_queries( $query ) {
-	  if (!is_admin() && $query->is_main_query()){
-	    if(is_home()){
-	       $query->set('posts_per_page', 1);
-	    }
-	  }
-	}
-	//add_action( 'pre_get_posts', 'accesspresslite_post_count_queries' );
-
 	function accesspresslite_custom_css(){
 		global $accesspresslite_options;
 		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );

@@ -78,7 +78,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 
 				<div  class="welcome-detail">
 				<p>AccessPress Lite is a HTML5 & CSS3 Responsive Free WordPress Business Theme with clean, minimal yet highly professional design.</p>
-<p>With our years of experience, we’ve developed this theme and given back to this awesome WordPress community. It is feature rich, multi purpose and flexible responsive theme Suitable for Agencies, Small Biz, Corporates, Bloggers – Anyone and Everyone!</p>
+<p>With our years of experience, we have developed this theme and given back to this awesome WordPress community. It is feature rich, multi purpose and flexible responsive theme Suitable for Agencies, Small Biz, Corporates, Bloggers - Anyone and Everyone!</p>
 <p>The theme is complete with many useful features. The intuitive theme options let you manage all the possible options/features of the theme. You can use it to create your next superb website in no time and all for FREE.</p>
 				<a href="#" class="readmore bttn">Read More</a>
 				</div>
