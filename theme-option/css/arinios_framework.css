@@ -1,0 +1,362 @@
+/* Options Framework Admin Styles */
+
+.updated {
+	max-width:764px;
+	margin-bottom:0px !important;
+}
+#arinios_framework {
+	position:relative;
+	z-index: 0;
+	max-width:780px;
+	background:#fff;
+}
+#arinios_framework h3 {
+	cursor: default;
+}
+#arinios_framework p {
+	margin-bottom:0;
+	padding-bottom:10px;
+	line-height: 1.4em;
+}
+#arinios_framework .section {
+	padding:10px 10px 0;
+}
+#arinios_framework .group {
+	padding-bottom:40px;
+}
+#arinios_framework .section .heading {
+	padding:10px 0px;
+	margin:0 0 15px;
+	border-bottom: 1px solid #dfdfdf;
+}
+#arinios_framework .section .controls {
+	float: left;
+	min-width:350px;
+	width: 54%;
+	padding-right:2%;
+}
+#arinios_framework .section .explain {
+	max-width:38%;
+	float: left;
+	font-size: 12px;
+	line-height:16px;
+	color: #777;
+}
+#arinios_framework .section-checkbox .controls {
+	width: 98%;
+}
+#arinios_framework .section-checkbox .explain {
+	max-width:94%;
+}
+#arinios_framework .of-input {
+	width:100%;
+}
+#arinios_framework .controls select, #arinios_framework .controls textarea {
+	margin-bottom:10px;
+	width:100%;
+}
+#arinios_framework .section-radio label, #arinios_framework .section-multicheck label {
+	float:left;
+	max-width:90%;
+	line-height: 16px;
+	margin-bottom: 5px;
+}
+#arinios_framework input.checkbox, #arinios_framework input.of-radio {
+	width: 30px;
+	margin-top:2px;
+	float:left;
+	clear:both;
+}
+#arinios_framework .section-typography .controls {
+	float:none;
+	width:auto;
+}
+#arinios_framework .section-typography .explain {
+	float:none;
+	width:auto;
+}
+#arinios_framework .controls .of-typography-size {
+	width:80px;
+	float:left
+}
+#arinios_framework .controls .of-typography-unit {
+	width:50px;
+	margin-left:5px;
+	float:left
+}
+#arinios_framework .controls .of-typography-face {
+	width:100px;
+	margin-left:5px;
+	float:left
+}
+#arinios_framework .controls .of-typography-style {
+	width:80px;
+	margin-left:5px;
+	margin-right:5px;
+	float:left
+}
+#arinios_framework .of-background-properties {
+	clear:both;
+	margin-top: 18px;	
+}
+#arinios_framework .controls .of-background-repeat {
+	width:125px;
+	margin-right:5px;
+	float:left
+}
+#arinios_framework .controls .of-background-position {
+	width:125px;
+	margin-right:5px;
+	float:left
+}
+#arinios_framework .controls .of-background-attachment {
+	width:125px;
+	margin-right:5px;
+	float:left
+}
+#arinios_framework .section-background .wp-picker-container {
+	margin-bottom:10px;
+}
+#arinios_framework .controls .of-radio-img-img {
+	border:3px solid #f9f9f9;
+	margin:0 5px 10px 0;
+	display:none;
+	cursor:pointer;
+	float:left;
+}
+#arinios_framework .controls .of-radio-img-selected {
+	border:3px solid #ccc
+}
+#arinios_framework .controls .of-radio-img-img:hover {
+	opacity:.8;
+}
+#arinios_framework .controls .of-border-width {
+	width:80px;
+	float:left
+}
+#arinios_framework .controls .of-border-style {
+	width:120px;
+	float:left
+}
+#arinios_framework .hide {
+	display:none;
+}
+#arinios_framework .of-option-image {
+	max-width:340px;
+	margin:3px 0 18px 0;
+}
+#arinios_framework .mini .controls select, #arinios_framework .section .mini .controls {
+	width: 140px;
+}
+#arinios_framework .mini .controls input, #arinios_framework .mini .controls {
+	min-width:140px;
+	/*width: 140px;*/
+}
+#arinios_framework .mini .explain {
+	max-width:74%;
+}
+
+/* Editor */
+
+#arinios_framework .section-editor .explain {
+	max-width: 98%;
+	float:none;
+	margin-bottom:5px;
+}
+
+/* Image Uploader */
+
+#arinios_framework .controls input.upload {
+	width:80%;
+}
+#arinios_framework .controls input.upload_button {
+	float:right;
+	border-color:#BBBBBB;
+	cursor:pointer;
+}
+#arinios_framework .controls input.upload_button:hover {
+	border-color:#666666;
+	color:#000;
+}
+#arinios_framework .screenshot {
+	float:left;
+	margin-left:1px;
+	position:relative;
+	width:344px;
+	margin-top:3px;
+}
+#arinios_framework .screenshot img {
+	background:#FAFAFA;
+	border-color:#ccc #eee #eee #ccc;
+	border-style:solid;
+	border-width:1px;
+	float:left;
+	max-width:334px;
+	padding:4px;
+	margin-bottom:10px;
+}
+#arinios_framework .screenshot .remove-image {
+	background:url("../images/ico-delete.png") no-repeat;
+	border:medium none;
+	bottom:4px;
+	display:block;
+	float:left;
+	height:16px;
+	padding:0;
+	position:absolute;
+	left:-4px;
+	text-indent:-9999px;
+	width:16px;
+}
+#arinios_framework .screenshot .no_image .file_link {
+	margin-left: 20px;
+}
+#arinios_framework .screenshot .no_image .remove-button {
+	bottom: 0px;
+}
+#arinios_framework .reset-button {
+	float:left;
+	cursor:pointer;
+}
+
+/* Bottom Section */
+
+#arinios_framework-submit {
+	padding: 7px 10px;
+	border-top: 1px solid #ECECEC;
+	background-color: #F1F1F1;
+    background-image: -moz-linear-gradient(center top , #F9F9F9, #ECECEC);
+}
+#arinios_framework-submit span{
+	vertical-align:sub;
+}
+#arinios_framework-submit span{
+	vertical-align:sub;
+}
+#arinios_framework-submit span a{
+	text-decoration:none;	
+}
+#arinios_framework-submit .fb{
+	margin-left:20%;
+}
+
+#arinios_framework-submit span a{
+	text-decoration:none;	
+} 
+#arinios_framework .button-primary {
+	float:right;
+}
+#arinios_framework .section:after {
+	content: "";
+	display: table;
+}
+#arinios_framework .section:after {
+	clear: both;
+}
+#arinios_framework img
+{
+ margin-left:20px;
+ vertical-align:middle;
+}
+
+
+
+hr { 
+    display: block;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 4px;
+	color:#CC9966;
+	background:#CC9966;
+}
+
+
+
+
+#optionsframework-sidebar {
+    float: left;
+    margin-left: 20px;
+    width: 320px;
+}
+
+#arinios_framework {
+	float: left;
+	width: 800px;
+}
+#optionsframework-sidebar .metabox-holder{
+	padding-top: 0px;
+
+}
+#optionsframework-sidebar .postbox{
+	text-align: center;
+
+}
+
+
+a.btn {
+    color: #FFFFFF;
+    display: block;
+    font-size: 22px;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.upgrade {
+	background: none repeat scroll 0 0 #5FAAE3;
+}
+
+.support {
+	background: none repeat scroll 0 0 #3DCC98;
+}
+
+.doc {
+	background: none repeat scroll 0 0 #F0C561;
+}
+
+.demo {
+	background: none repeat scroll 0 0 #F58C7A;
+}
+.rate {
+    background: none repeat scroll 0 0 #6ABEB1;
+}
+
+a.upgrade:hover {
+	background-color: #5B92E2;
+}
+
+a.support:hover {
+	background-color: #3BC492;
+}
+
+a.doc:hover {
+	background-color: #E5BC5D;
+}
+
+a.demo:hover {
+	background-color: #F88E5A;
+}
+a.rate:hover {
+    background-color: #40BEB1;
+}
+
+.option-btn {
+    margin-bottom: 12px;
+}
+
+.tnotify {
+margin: 15px;
+width: 763px;
+border: 1px solid #ccc;
+
+padding: 10px;
+background: #24D2AA;
+color: #fff;
+}
+.tnotify a {
+color: #000;
+text-decoration: none;
+}
