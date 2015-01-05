@@ -334,29 +334,71 @@ if ( ! function_exists( 'catchbase_featured_page_post_image' ) ) :
 	 * @since Catchbase 1.0
 	 */
 	function catchbase_featured_page_post_image() {
-		global $post, $wp_query;
-	   	$options				= catchbase_get_theme_options();	
-		$defaults 				= catchbase_get_default_theme_options(); 
-		$enableheaderimage 		= $options['enable_featured_header_image'];
-		$featured_image_size 	= $options['featured_image_size'];
-		
-		// Front page displays in Reading Settings
-		$page_on_front = get_option('page_on_front') ;
-		$page_for_posts = get_option('page_for_posts'); 
+		echo 'hi';
+		global $post;
 
-		// Get Page ID outside Loop
-		$page_id = $wp_query->get_queried_object_id();
+		if( has_post_thumbnail( ) ) {
+		   	$options					= catchbase_get_theme_options();	
+			$featured_header_image_url	= $options['featured_header_image_url'];
+			$featured_header_image_base	= $options['featured_header_image_base'];
+
+			if ( '' != $featured_header_image_url ) {
+				//support for qtranslate custom link
+				if ( function_exists( 'qtrans_convertURL' ) ) {
+					$link = qtrans_convertURL( $featured_header_image_url );
+				}
+				else {
+					$link = esc_url( $featured_header_image_url );
+				}
+				//Checking Link Target
+				if ( '1' == $featured_header_image_base ) {
+					$target = '_blank';
+				}
+				else {
+					$target = '_self'; 	
+				}
+			}
+			else {
+				$link = '';
+				$target = '';
+			}
+			
+			$featured_header_image_alt	= $options['featured_header_image_alt'];
+			// Header Image Title/Alt
+			if ( '' != $featured_header_image_alt ) {
+				$title = esc_attr( $featured_header_image_alt ); 	
+			}
+			else {
+				$title = '';
+			}
+			
+			$featured_image_size	= $options['featured_image_size'];
 		
-		//Individual Page/Post Image Setting
-		$individual_featured_image = get_post_meta( $post->ID, 'catchbase-header-image', true ); 
-		
-		if ( is_home() || $individual_featured_image == 'disable' || ( $individual_featured_image == 'default' && $enableheaderimage == 'disable' ) || '' == get_the_post_thumbnail() ) {
-			echo '<!-- Disable Header Image -->';
+			if ( 'slider' ==  $featured_image_size ) {
+				$feat_image = get_the_post_thumbnail( $post->ID, 'catchbase-slider', array('id' => 'main-feat-img'));
+			}
+			else if ( 'full' ==  $featured_image_size ) {
+				$feat_image = get_the_post_thumbnail( $post->ID, 'full', array('id' => 'main-feat-img'));
+			}
+			else {
+				$feat_image = get_the_post_thumbnail( $post->ID, 'catchbase-large', array('id' => 'main-feat-img'));
+			}
+			
+			$catchbase_featured_image = '<div id="header-featured-image" class =' . $featured_image_size . '>';
+				// Header Image Link 
+				if ( '' != $featured_header_image_url ) :
+					$catchbase_featured_image .= '<a title="'. esc_attr( $title ).'" href="'. esc_url( $link ) .'" target="'.$target.'">' . $feat_image . '</a>'; 	
+				else:
+					// if empty featured_header_image on theme options, display default
+					$catchbase_featured_image .= $feat_image;
+				endif;
+			$catchbase_featured_image .= '</div><!-- #header-featured-image -->';
+			
+			echo $catchbase_featured_image;
 		}
 		else {
-			echo get_the_post_thumbnail($post->ID, $featured_image_size, array('id' => 'main-feat-img'));
+			catchbase_featured_image();
 		}		
-		
 	} // catchbase_featured_page_post_image
 endif;
 
@@ -376,14 +418,31 @@ if ( ! function_exists( 'catchbase_featured_overall_image' ) ) :
 		$defaults 				= catchbase_get_default_theme_options(); 
 		$enableheaderimage 		= $options['enable_featured_header_image'];
 		
-		// Front page displays in Reading Settings
-		$page_on_front = get_option('page_on_front') ;
-		$page_for_posts = get_option('page_for_posts'); 
-
 		// Get Page ID outside Loop
 		$page_id = $wp_query->get_queried_object_id();
-		
-		if ( $enableheaderimage == 'exclude-home'  ) {
+
+		// Check Enable/Disable header image in Page/Post Meta box
+		if ( is_page() || is_single() ) {
+			//Individual Page/Post Image Setting
+			$individual_featured_image = get_post_meta( $post->ID, 'catchbase-header-image', true ); 
+
+			if ( $individual_featured_image == 'disable' || ( $individual_featured_image == 'default' && $enableheaderimage == 'disable' ) ) {
+				echo '<!-- Page/Post Disable Header Image -->';
+				return;
+			}
+			elseif ( $individual_featured_image == 'enable' && $enableheaderimage == 'disabled' ) {
+				catchbase_featured_page_post_image();
+			}
+		}
+
+		// Check Homepage 
+		if ( $enableheaderimage == 'homepage' ) {
+			if ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) {
+				catchbase_featured_image();
+			}
+		}
+		// Check Excluding Homepage 
+		if ( $enableheaderimage == 'exclude-home' ) {
 			if ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) {
 				return false;
 			}
@@ -391,9 +450,11 @@ if ( ! function_exists( 'catchbase_featured_overall_image' ) ) :
 				catchbase_featured_image();	
 			}
 		}
-		elseif ( $enableheaderimage == 'entire-site' || ( ( $enableheaderimage == 'homepage' || $enableheaderimage == 'entire-site-page-post' ) && ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) ) ) {
+		// Check Entire Site
+		elseif ( $enableheaderimage == 'entire-site' ) {
 			catchbase_featured_image();
 		}
+		// Check Entire Site (Post/Page)
 		elseif ( $enableheaderimage == 'entire-site-page-post' ) {
 			if ( is_page() || is_single() ) {
 				catchbase_featured_page_post_image();
@@ -401,9 +462,12 @@ if ( ! function_exists( 'catchbase_featured_overall_image' ) ) :
 			else {
 				catchbase_featured_image();
 			}
-		}
-		elseif ( $enableheaderimage == 'pages-posts' && ( is_page || is_single ) ) {
-			catchbase_featured_page_post_image();
+		}	
+		// Check Page/Post
+		elseif ( $enableheaderimage == 'pages-posts' ) {
+			if ( is_page() || is_single() ) {
+				catchbase_featured_page_post_image();
+			}
 		}
 		else {
 			echo '<!-- Disable Header Image -->';

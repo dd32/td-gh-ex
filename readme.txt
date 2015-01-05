@@ -79,13 +79,40 @@ To add featured page slider,
 
 Note: You can also change Enable Slider, slider effects, delay and length under Featured Slider Settings.
 
-= Featured Icons =
+= Social Icons =
 
-Catch Base has custom social icons for various social networking sites. 
+Catch Base has social icons for various social networking sites. 
 1. Go to "Appearance -> Customize -> Social Links" form your WordPress Dashboard
 2. Add in your social profile links and click on "Save & Publish" 
 
 Note: By default social links will be added in Header Right Section. You can also add that in your sidebar from "Appearance -> Widgets"
+
+Available icons:
+* Codepen
+* Digg
+* Dribbble
+* Dropbox
+* Facebook
+* Flickr
+* Foursquare
+* GitHub
+* Google+
+* Instagram
+* LinkedIn
+* Email
+* Pinterest
+* Pocket
+* PollDaddy
+* Reddit
+* RSS Feed
+* Spotify
+* StumbleUpon
+* Tumblr
+* Twitch
+* Twitter
+* Vimeo
+* WordPress
+* YouTube
 
 = Theme Instructions =
 

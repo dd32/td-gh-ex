@@ -71,6 +71,20 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'type'	  	=> 'select',
 	) );
 
+	$wp_customize->add_setting( 'catchbase_theme_options[featured_content_position]', array(
+		'capability'		=> 'edit_theme_options',
+		'default'			=> $defaults['featured_content_position'],
+		'sanitize_callback' => 'catchbase_sanitize_checkbox'
+	) );
+
+	$wp_customize->add_control( 'catchbase_theme_options[featured_content_position]', array(
+		'label'		=> __( 'Check to Move above Footer', 'catchbase' ),
+		'priority'	=> '3',
+		'section'  	=> 'catchbase_featured_content_settings',
+		'settings'	=> 'catchbase_theme_options[featured_content_position]',
+		'type'		=> 'checkbox',
+	) );  
+
 	$wp_customize->add_section( 'catchbase_featured_content_type', array(
 		'panel'			=> 'catchbase_featured_content_options',
 		'priority'		=> 2,

@@ -60,7 +60,16 @@ function catchbase_featured_content_display() {
 				$classes .= ' featured-page-content' ;
 			}
 
-			if ( '1' == $options [ 'move_posts_home' ] ) {
+			//Check Featured Content Position
+			if ( isset( $options [ 'featured_content_position' ] ) ) {
+				$featured_content_position = $options [ 'featured_content_position' ];
+			}
+			// Providing Backward Compatible with Version 1.0
+			else {
+				$featured_content_position =  $options [ 'move_posts_home' ];
+			}
+
+			if ( '1' == $featured_content_position ) {
 				$classes .= ' border-top' ;
 			}
 
@@ -106,7 +115,16 @@ function catchbase_featured_content_display_position() {
 	// Getting data from Theme Options
 	$options 		= catchbase_get_theme_options();
 	
-	if ( !$options['move_posts_home'] ) { 
+	//Check Featured Content Position
+	if ( isset( $options [ 'featured_content_position' ] ) ) {
+		$featured_content_position = $options [ 'featured_content_position' ];
+	}
+	// Providing Backward Compatible with Version 1.0
+	else {
+		$featured_content_position =  $options [ 'move_posts_home' ];
+	}
+
+	if ( '1' != $featured_content_position ) { 
 		add_action( 'catchbase_before_content', 'catchbase_featured_content_display', 40 );
 	} else {
 		add_action( 'catchbase_after_content', 'catchbase_featured_content_display', 40 );

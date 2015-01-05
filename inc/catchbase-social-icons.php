@@ -49,12 +49,15 @@ function catchbase_get_social_icons(){
 		$social_icons['Stumbleupon']	= isset( $options['stumbleupon_link'] ) ? $options['stumbleupon_link'] : '' ;
 		$social_icons['Pocket']			= isset( $options['pocket_link'] ) ? $options['pocket_link'] : '' ;
 		$social_icons['DropBox']		= isset( $options['dropbox_link'] ) ? $options['dropbox_link'] : '' ;
+		$social_icons['Foursquare']		= isset( $options['foursquare_link'] ) ? $options['foursquare_link'] : '' ;
+		$social_icons['Spotify']		= isset( $options['spotify_link'] ) ? $options['spotify_link'] : '' ;
+		$social_icons['Twitch']			= isset( $options['twitch_link'] ) ? $options['twitch_link'] : '' ;
 
 		foreach ( $social_icons as $key => $value )
 			if( $value !='' ){
 				$title	=	explode( '-', $key );
 				if ( $key == 'Mail' )  
-					$output .= '<a class="genericon_parent genericon genericon-'. strtolower( $key ) .'" target="_blank" title="'. __( 'Email', 'catchbase') . '" href="mailto:'. esc_url( $value ) .'"><span class="screen-reader-text">'. __( 'Email', 'catchbase') . '</span> </a>';
+					$output .= '<a class="genericon_parent genericon genericon-'. strtolower( $key ) .'" target="_blank" title="'. __( 'Email', 'catchbase') . '" href="mailto:'. sanitize_email( $value ) .'"><span class="screen-reader-text">'. __( 'Email', 'catchbase') . '</span> </a>';
 				else
 					$output .= '<a class="genericon_parent genericon genericon-'. strtolower( $key ) .'" target="_blank" title="'. $title[ 0 ] .'" href="'. esc_url( $value ) .'"><span class="screen-reader-text">'. $title[ 0 ] .'</span> </a>';
 			}

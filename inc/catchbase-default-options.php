@@ -54,7 +54,6 @@ function catchbase_get_default_theme_options() {
 		
 		//Homepage / Frontpage Settings
 		'front_page_category'								=> array(),
-		'move_posts_home'									=> 0,
 		
 		//Pagination Options
 		'pagination_type'									=> 'default',
@@ -65,7 +64,7 @@ function catchbase_get_default_theme_options() {
 		'promotion_subheadline'								=> __( 'This is promotion headline. You can edit this from Appearance -> Customize -> Theme Options -> Promotion Headline Options', 'catchbase' ),
 		'promotion_headline_button'							=> __( 'Reviews', 'catchbase' ),
 		'promotion_headline_url'							=> esc_url( 'http://wordpress.org/support/view/theme-reviews/catch-base' ),
-		'promotion_headline_target'							=> '1',
+		'promotion_headline_target'							=> 1,
 
 		//Search Options
 		'search_text'										=> __( 'Search...', 'catchbase' ),
@@ -76,6 +75,9 @@ function catchbase_get_default_theme_options() {
 		//Featured Content Options
 		'featured_content_option'							=> 'homepage',
 		'featured_content_layout'							=> 'layout-four',
+		//move_posts_home replaced with featured_content_position from version 1.1
+		'move_posts_home'									=> 0,
+		'featured_content_position'							=> 0,
 		'featured_content_headline'							=> '',
 		'featured_content_subheadline'						=> '',
 		'featured_content_type'								=> 'demo-featured-content',
@@ -178,7 +180,7 @@ function catchbase_enable_featured_header_image_options() {
 			'value'	=> 'homepage',
 			'label' => __( 'Homepage / Frontpage', 'catchbase' ),
 		),
-		'homepage' 		=> array(
+		'exclude-home' 		=> array(
 			'value'	=> 'exclude-home',
 			'label' => __( 'Excluding Homepage', 'catchbase' ),
 		),
@@ -452,15 +454,19 @@ function catchbase_get_social_icons_list() {
 											__( 'YouTube', 'catchbase' ), 
 											__( 'Tumblr', 'catchbase' ), 
 											__( 'Instagram', 'catchbase' ), 
+											__( 'PollDaddy', 'catchbase' ),
 											__( 'CodePen', 'catchbase' ), 
 											__( 'Path', 'catchbase' ), 
 											__( 'Dribbble', 'catchbase' ), 
 											__( 'Skype', 'catchbase' ), 
 											__( 'Digg', 'catchbase' ), 
 											__( 'Reddit', 'catchbase' ), 
-											__( 'Stumbleupon', 'catchbase' ), 
+											__( 'StumbleUpon', 'catchbase' ), 
 											__( 'Pocket', 'catchbase' ), 
 											__( 'DropBox', 'catchbase' ),
+											__( 'Foursquare', 'catchbase' ),											
+											__( 'Spotify', 'catchbase' ),
+											__( 'Twitch', 'catchbase' ),
 										);
 
 	return apply_filters( 'catchbase_social_icons_list', $catchbase_social_icons_list );

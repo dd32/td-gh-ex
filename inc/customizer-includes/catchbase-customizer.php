@@ -158,6 +158,27 @@ function catchbase_customize_register( $wp_customize ) {
 		'type'     => 'checkbox',
 	) );
 	// Reset all settings to default end
+
+	//Important Links
+	$wp_customize->add_section( 'important_links', array(
+		'priority' 		=> 999,
+		'title'   	 	=> __( 'Important Links', 'catchbase' ),
+	) );
+
+	/**
+	 * Has dummy Sanitizaition function as it contains no value to be sanitized
+	 */
+	$wp_customize->add_setting( 'important_links', array(
+		'sanitize_callback'	=> 'catchbase_sanitize_important_link',
+	) );
+
+	$wp_customize->add_control( new Catchbase_Important_Links( $wp_customize, 'important_links', array(
+        'label'   	=> __( 'Important Links', 'catchbase' ),
+         'section'  	=> 'important_links',
+        'settings' 	=> 'important_links',
+        'type'     	=> 'important_links',
+    ) ) );  
+    //Important Links End
 }
 add_action( 'customize_register', 'catchbase_customize_register' );
 
@@ -377,6 +398,16 @@ function catchbase_reset_all_settings( $input ) {
 
 
 /**
+ * Dummy Sanitizaition function as it contains no value to be sanitized
+ *
+ * @since  Catchbase 1.2
+ */
+function create_sanitize_important_link() {
+	return false;
+} 
+
+
+/**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously for catchbase.
  * And flushes out all transient data on preview
  *
@@ -400,32 +431,13 @@ function catchbase_customize_scripts() {
 	wp_register_script( 'catchbase_customizer_custom', get_template_directory_uri() . '/js/catchbase-customizer-custom-scripts.min.js', array( 'jquery' ), '20131028', true );
 
 	$catchbase_misc_links = array(
-							'heading'					=> __( 'Important Links', 'catchbase' ),
 							'upgrade_link' 				=> esc_url( 'http://catchthemes.com/themes/catch-base-pro/' ),
 							'upgrade_text'	 			=> __( 'Upgrade To Pro', 'catchbase' ),
-							'theme_instructions_link' 	=> esc_url( 'http://catchthemes.com/theme-instructions/catch-base/' ),
-							'theme_instructions_text' 	=> __( 'Theme Instructions', 'catchbase' ),
-							'support_forum_link'		=> esc_url( 'http://catchthemes.com/support/' ),
-							'support_forum_text' 		=> __( 'Support', 'catchbase' ),
-							'changelog_link' 			=> esc_url( 'http://catchthemes.com/changelogs/catch-base-theme/' ),
-							'changelog_text' 			=> __( 'Changelog', 'catchbase' ),
-							'donate_link'			 	=> esc_url( 'http://catchthemes.com/donate/' ),
-							'donate_link_text' 			=> __( 'Donate Now', 'catchbase' ),
-							'review_link' 				=> esc_url( 'https://wordpress.org/support/view/theme-reviews/catch-base' ),
-							'review_text' 				=> __( 'Review', 'catchbase' ),
-							'facebook_link' 			=> esc_url( 'https://www.facebook.com/catchthemes/' ),
-							'facebook_text' 			=> __( 'Facebook', 'catchbase' ),
-							'twitter_link' 				=> esc_url( 'https://twitter.com/catchthemes/' ),
-							'twitter_text' 				=> __( 'Twitter', 'catchbase' ),
-							'gplus_link' 				=> esc_url( 'https://plus.google.com/+Catchthemes/' ),
-							'gplus_text' 				=> __( 'Google+', 'catchbase' ),
-							'pinterest_link' 			=> esc_url( 'http://www.pinterest.com/catchthemes/' ),
-							'pinterest_text' 			=> __( 'Pinterest', 'catchbase' ),
 							'WP_version'				=> get_bloginfo( 'version' ),
 							'old_version_message'		=> __( 'Some settings might be missing or disorganized in this version of WordPress. So we suggest you to upgrade to version 4.0 or better.', 'catchbase' )
 		);
 
-	//Add Upgrade Button,Theme instruction, Support Forum, Changelog, Donate link, Review, Facebook, Twitter, Google+, Pinterest links via localized script
+	//Add Upgrade Button and old WordPress message via localized script
 	wp_localize_script( 'catchbase_customizer_custom', 'catchbase_misc_links', $catchbase_misc_links );
 
 	wp_enqueue_script( 'catchbase_customizer_custom' );

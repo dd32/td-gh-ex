@@ -164,19 +164,6 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
         'settings' 	=> 'catchbase_theme_options[front_page_category]',
         'type'     	=> 'dropdown-categories',
     ) ) );
-
-	$wp_customize->add_setting( 'catchbase_theme_options[move_posts_home]', array(
-		'capability'		=> 'edit_theme_options',
-		'default'			=> $defaults['move_posts_home'],
-		'sanitize_callback' => 'catchbase_sanitize_checkbox'
-	) );
-
-	$wp_customize->add_control( 'catchbase_theme_options[move_posts_home]', array(
-		'label'    => __( 'Check to Move above Homepage Featured Content', 'catchbase' ),
-		'section'  => 'catchbase_homepage_options',
-		'settings' => 'catchbase_theme_options[move_posts_home]',
-		'type'     => 'checkbox',
-	) );    
 	//Homepage / Frontpage Settings End
 	
 	// Icon Options
@@ -430,7 +417,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	) );
 
 	$wp_customize->add_control( 'catchbase_theme_options[promotion_headline_target]', array(
-		'label'    	=> __( 'Check to open link in new tab', 'catchbase' ),
+		'label'    	=> __( 'Check to Open Link in New Window/Tab', 'catchbase' ),
 		'priority'	=> '5',
 		'section'  	=> 'catchbase_promotion_headline_options',
 		'settings' 	=> 'catchbase_theme_options[promotion_headline_target]',

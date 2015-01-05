@@ -1,12 +1,24 @@
 == Change log ==
 
+= 1.1 =
+* Added Foursquare, PollDaddy, Spotify and Twitch TV social icons
+* Bug Fixed: Contextual text in Customizer
+* Bug Fixed: Featured header image
+* Bug Fixed: Featured content width in mobile 
+* Bug Fixed: Sanitize email for email output
+* Bug Fixed: Typo in content featured image
+* Bug Fixed: Primary sidebar closing tag issue
+* Removed unnecessay body_class for page-blog
+* Moved Featured content position option from Homeage/Frontpage options to featured content settings
+* Changed catchbase_footer_content_start and catchbase_footer_sidebar hook priority  
+
 = 1.0 =
 * Fixed Sub-menu issue
 * Fixed featured image issue in archive pages
 * Fixed color scheme
 * Fixed frontpage category options
 * Fixed content width 
-* Fixed featured content postions
+* Fixed featured content positions
 * Removed dark-noise.png image
 * Removed unnecessary header right sidebar
 * Removed default favicon and webclip icon

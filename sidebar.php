@@ -77,9 +77,10 @@ do_action( 'catchbase_before_secondary' );?>
            		</div><!-- .widget-wrap -->
        		</section><!-- #widget-default-text -->
 		<?php
-	echo '</aside><!-- .sidebar sidebar-primary widget-area -->';
-	}
-
+		} ?>
+		</aside><!-- .sidebar sidebar-primary widget-area -->
+		
+	<?php 
 	/** 
 	 * catchbase_after_primary_sidebar hook
 	 */

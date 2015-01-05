@@ -258,7 +258,7 @@ function catchbase_footer_content_start() {
     <?php
 }
 endif;
-add_action( 'catchbase_footer', 'catchbase_footer_content_start', 20 );
+add_action( 'catchbase_footer', 'catchbase_footer_content_start', 30 );
 
 
 if ( ! function_exists( 'catchbase_footer_sidebar' ) ) :
@@ -271,7 +271,7 @@ function catchbase_footer_sidebar() {
 	get_sidebar( 'footer' );
 }
 endif;
-add_action( 'catchbase_footer', 'catchbase_footer_sidebar', 30 );
+add_action( 'catchbase_footer', 'catchbase_footer_sidebar', 40 );
 
 
 if ( ! function_exists( 'catchbase_footer_content_end' ) ) :

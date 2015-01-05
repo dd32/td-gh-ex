@@ -64,16 +64,14 @@ if ( ! function_exists( 'catchbase_content_width' ) ) :
 			$layout='default';
 		}
 
-
 		// Theme Columns: Default width sidebars
 		if ( $layout == 'three-columns' || ( $layout=='default' && $themeoption_layout == 'three-columns' ) ) {
 			$content_width = 540;
 		}
-
 		// Two Colums: Left and Right Sidebar & One Column: No Sidbear
 		elseif ( $layout == 'right-sidebar' || $layout == 'left-sidebar' || $layout == 'no-sidebar' || ( $layout=='default' && $themeoption_layout == 'right-sidebar' ) || ( $layout=='default' && $themeoption_layout == 'left-sidebar' ) || ( $layout=='default' && $themeoption_layout == 'no-sidebar' ) ) {
 			$content_width = 780;
-		}
+		}	
 	}
 endif;
 add_action( 'template_redirect', 'catchbase_content_width' );
@@ -1032,10 +1030,6 @@ if ( ! function_exists( 'catchbase_body_classes' ) ) :
 	function catchbase_body_classes( $classes ) {
 		global $post;
 
-		if ( is_page_template( 'page-blog.php') ) {
-			$classes[] = 'page-blog';
-		}
-
 		// Adds a class of group-blog to blogs with more than 1 published author
 		if ( is_multi_author() ) {
 			$classes[] = 'group-blog';
@@ -1212,10 +1206,16 @@ if ( ! function_exists( 'catchbase_single_content_image' ) ) :
 	 */
 	function catchbase_single_content_image() {
 		global $post, $wp_query;
+
+		// Getting data from Theme Options
+	   	$options = catchbase_get_theme_options();
+		
+		$featured_image = $options['single_post_image_layout'];
 		
 		// Get Page ID outside Loop
 		$page_id = $wp_query->get_queried_object_id();
-		if( $post) {
+		
+		if( $post ) {
 	 		if ( is_attachment() ) { 
 				$parent = $post->post_parent;
 				$individual_featured_image = get_post_meta( $parent,'catchbase-featured-image', true );
@@ -1225,19 +1225,25 @@ if ( ! function_exists( 'catchbase_single_content_image' ) ) :
 		}
 
 		if( empty( $individual_featured_image ) || ( !is_page() && !is_single() ) ) {
-			$individual_featured_image='default';
+			$individual_featured_image = 'default';
 		}
-		
-		// Getting data from Theme Options
-	   	$options = catchbase_get_theme_options();
-		
-		$featured_image = $options['single_post_image_layout'];
-			
-		if ( ( $individual_featured_image == 'disabled' || '' == get_the_post_thumbnail() || ( $individual_featured_image=='default' && $featured_image == 'disabled') ) ) {
+
+		if ( ( $individual_featured_image == 'disable' || '' == get_the_post_thumbnail() || ( $individual_featured_image=='default' && $featured_image == 'disabled') ) ) {
+			echo '<!-- Page/Post Single Image Disabled or No Image set in Post Thumbnail -->';
 			return false;
 		}
-		else { ?>
-			<figure class="featured-image <?php echo $featured_image; ?>">
+		else { 
+			$class = '';
+
+			if ( 'default' == $individual_featured_image ) {
+				$class = $featured_image;
+			}
+			else {
+				$class = 'from-metabox ' . $individual_featured_image;
+			}
+
+			?>
+			<figure class="featured-image <?php echo $class; ?>">
                 <?php 
 				if ( $individual_featured_image == 'large' || ( $individual_featured_image=='default' && $featured_image == 'large' ) ) {
                      the_post_thumbnail( 'catchbase-large' );

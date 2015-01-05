@@ -88,7 +88,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	) );
 
 	$wp_customize->add_control( 'catchbase_theme_options[featured_header_image_base]', array(
-		'label'    	=> __( 'Check to Open Link in New Window', 'catchbase' ),
+		'label'    	=> __( 'Check to Open Link in New Window/Tab', 'catchbase' ),
 		'section'  	=> 'header_image',
 		'settings' 	=> 'catchbase_theme_options[featured_header_image_base]',
 		'type'     	=> 'checkbox',

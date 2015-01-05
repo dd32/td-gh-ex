@@ -1226,6 +1226,7 @@ Responsive Style
 	.sidebar-primary .widget,
 	.sidebar-secondary .widget,
 	#featured-content.layout-four .hentry,
+	#featured-content.layout-three .hentry,
 	#supplementary.four .widget-area,
 	#supplementary.three .widget-area,
 	#supplementary.two .widget-area,
