@@ -55,3 +55,6 @@ Version 1.1.0
 2. Corrected languages pot file
 3. Slide Fix (typo)
 4. Pro Version Price Change
+
+Version 1.1.1
+1. Calendar Widget anchors in footer doesn't highlight. Fixed.
