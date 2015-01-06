@@ -82,6 +82,9 @@ Featured Images look best at 732 pixels wide or larger.
 
 
 = Changelog =
+### Version 1.0.6
+- Modified 404 page hard-coded string and added unminified version of 'jquery.appear.js' file
+
 ### Version 1.0.5
 - Remove 'rtl.css', add 'enqueue google fonts' and 'Changed to SEO structured data'
 
