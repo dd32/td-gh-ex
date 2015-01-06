@@ -50,6 +50,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.1.2 =
+* add_theme_support('title_tag') added as per WordPress 4.1
+
 = Version 1.1.1 =
 * Responsive menu h1 tag changed to h3.
 * Slider navigation arrows and slider titles when in same line overlapping issue fixed.

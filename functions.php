@@ -39,9 +39,12 @@ function accelerate_setup() {
 
 	// This theme uses Featured Images (also known as post thumbnails) for per-post/per-page.
 	add_theme_support( 'post-thumbnails' );
- 
+
+   // Supporting title tag via add_theme_support (since WordPress 4.1)
+   add_theme_support( 'title-tag' );
+
 	// Registering navigation menus.
-	register_nav_menus( array(	
+	register_nav_menus( array(
 		'primary' 	=> __( 'Primary/Main Menu', 'accelerate' ),
 		'footer' 	=> __( 'Footer Menu', 'accelerate' )
 	) );
@@ -50,7 +53,7 @@ function accelerate_setup() {
 	add_image_size( 'featured-blog-large', 720, 300, true );
 	add_image_size( 'featured-blog-small', 230, 230, true );
 	add_image_size( 'featured-service', 600, 330, true );
-	add_image_size( 'featured-recent-work', 365, 365, true );	
+	add_image_size( 'featured-recent-work', 365, 365, true );
 
 	// Setup the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'accelerate_custom_background_args', array(
@@ -66,13 +69,13 @@ function accelerate_setup() {
 endif;
 
 /**
- * Define Directory Location Constants 
+ * Define Directory Location Constants
  */
 define( 'ACCELERATE_PARENT_DIR', get_template_directory() );
 define( 'ACCELERATE_CHILD_DIR', get_stylesheet_directory() );
 
 define( 'ACCELERATE_IMAGES_DIR', ACCELERATE_PARENT_DIR . '/images' );
-define( 'ACCELERATE_INCLUDES_DIR', ACCELERATE_PARENT_DIR. '/inc' );	
+define( 'ACCELERATE_INCLUDES_DIR', ACCELERATE_PARENT_DIR. '/inc' );
 define( 'ACCELERATE_CSS_DIR', ACCELERATE_PARENT_DIR . '/css' );
 define( 'ACCELERATE_JS_DIR', ACCELERATE_PARENT_DIR . '/js' );
 define( 'ACCELERATE_LANGUAGES_DIR', ACCELERATE_PARENT_DIR . '/languages' );
@@ -85,8 +88,8 @@ define( 'ACCELERATE_ADMIN_JS_DIR', ACCELERATE_ADMIN_DIR . '/js' );
 define( 'ACCELERATE_ADMIN_CSS_DIR', ACCELERATE_ADMIN_DIR . '/css' );
 
 
-/** 
- * Define URL Location Constants 
+/**
+ * Define URL Location Constants
  */
 define( 'ACCELERATE_PARENT_URL', get_template_directory_uri() );
 define( 'ACCELERATE_CHILD_URL', get_stylesheet_directory_uri() );
@@ -109,7 +112,7 @@ require_once( ACCELERATE_INCLUDES_DIR . '/custom-header.php' );
 require_once( ACCELERATE_INCLUDES_DIR . '/functions.php' );
 require_once( ACCELERATE_INCLUDES_DIR . '/header-functions.php' );
 
-require_once( ACCELERATE_ADMIN_DIR . '/meta-boxes.php' );		
+require_once( ACCELERATE_ADMIN_DIR . '/meta-boxes.php' );
 
 /** Load Widgets and Widgetized Area */
 require_once( ACCELERATE_WIDGETS_DIR . '/widgets.php' );
