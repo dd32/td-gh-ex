@@ -52,6 +52,9 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+
+@version 0.5
+1. Fixed minor bug related to undefined index error!!
 @Version 0.4.4
 1. Added translation ready tag.
 @version 0.4.3

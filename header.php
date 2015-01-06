@@ -77,7 +77,7 @@
 			</a>
 		</a><!-- /logo -->
 		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-			<span class="sr-only"><?php __(Toggle navigation,'wallstreet'); ?></span>
+			<span class="sr-only"><?php __("Toggle navigation",'wallstreet'); ?></span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
