@@ -31,14 +31,14 @@
 			</div>
 
 			<div class="header-search-icon"></div>
-			<?php get_search_form(); ?>	
+			<?php get_search_form(); ?>
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">
 				<h1 class="menu-toggle"></h1>
 				<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'radiate' ); ?></a>
 
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-			</nav><!-- #site-navigation -->				
+			</nav><!-- #site-navigation -->
 		</div><!-- .inner-wrap header-wrap -->
 	</header><!-- #masthead -->
 

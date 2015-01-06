@@ -3,8 +3,8 @@ Theme Name: Radiate
 Theme URI: http://themegrill.com/themes/radiate/
 Author: ThemeGrill
 Author URI: http://themegrill.com/
-Description: Radiate is a clean, creative and light retina ready responsive blogging theme supporting parallax header image. It integrates primary color option, custom background, custom css and few other features through WordPress customizer. The theme is translation ready and you can get free support on http://themegrill.com/support-forum. View demo at http://demo.themegrill.com/radiate. Available Translations: French, German, Russian, Swedish, Dutch and Norwegian.
-Version: 1.1.0
+Description: Radiate is a clean, creative and light retina ready responsive blogging theme supporting parallax header image. It integrates primary color option, custom background, custom css and few other features through WordPress customizer. The theme is translation ready and you can get free support on http://themegrill.com/support-forum. View demo at http://demo.themegrill.com/radiate. Available Translations: French, German, Russian, Swedish, Dutch, Norwegian and Brazilian Portuguese.
+Version: 1.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: radiate
@@ -508,7 +508,7 @@ a:active {
 }
 #masthead {
 }
-.header-wrap {	
+.header-wrap {
 	border-bottom: 1px solid #E1E4E6;
 	position: fixed;
 	top: 0;
@@ -611,9 +611,9 @@ img.header-image {
 	color: #444444;
 }
 .main-navigation a:hover,
-.main-navigation ul li.current-menu-item a, 
-.main-navigation ul li.current_page_ancestor a, 
-.main-navigation ul li.current-menu-ancestor a, 
+.main-navigation ul li.current-menu-item a,
+.main-navigation ul li.current_page_ancestor a,
+.main-navigation ul li.current-menu-ancestor a,
 .main-navigation ul li.current_page_item a,
 .main-navigation ul li:hover > a {
 	background-color: #632E9B;
@@ -621,17 +621,17 @@ img.header-image {
 }
 
 /* Dropdown */
-.main-navigation ul li ul, 
-.main-navigation ul li:hover ul ul, 
-.main-navigation ul ul li:hover ul ul, 
-.main-navigation ul ul ul li:hover ul ul, 
+.main-navigation ul li ul,
+.main-navigation ul li:hover ul ul,
+.main-navigation ul ul li:hover ul ul,
+.main-navigation ul ul ul li:hover ul ul,
 .main-navigation ul ul ul ul li:hover ul ul {
 	display:none;
 	z-index: 9999;
 }
-.main-navigation ul li:hover ul, 
-.main-navigation ul ul li:hover ul, 
-.main-navigation ul ul ul li:hover ul, 
+.main-navigation ul li:hover ul,
+.main-navigation ul ul li:hover ul,
+.main-navigation ul ul ul li:hover ul,
 .main-navigation ul ul ul ul li:hover ul,
 .main-navigation ul ul ul ul ul li:hover ul {
 	display:block;
@@ -649,10 +649,10 @@ img.header-image {
 	font-size: 14px;
 	font-size: 1.4rem;
 }
-.main-navigation ul li ul li a, 
-.main-navigation ul li.current-menu-item ul li a, 
+.main-navigation ul li ul li a,
+.main-navigation ul li.current-menu-item ul li a,
 .main-navigation ul li ul li.current-menu-item a,
-.main-navigation ul li.current_page_ancestor ul li a, 
+.main-navigation ul li.current_page_ancestor ul li a,
 .main-navigation ul li.current-menu-ancestor ul li a,
 .main-navigation ul li.current_page_item ul li a {
 	color: #444444;
@@ -670,7 +670,7 @@ img.header-image {
 }
 .main-navigation ul ul a {
 	min-width: 200px;
-} 
+}
 
 
 
@@ -703,7 +703,7 @@ img.header-image {
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 15px 0 0; 
+	margin: 15px 0 0;
 	margin: 1.5rem 0 0;
 }
 .page-links {
@@ -734,8 +734,8 @@ img.header-image {
 	list-style: square;
 }
 .entry-content ul,
-.entry-content ol {	
-	padding: 0 0 0 35px; 
+.entry-content ol {
+	padding: 0 0 0 35px;
    margin-bottom: 30px;
 }
 .entry-content li > ul,
@@ -746,7 +746,7 @@ img.header-image {
 	padding-right: 20px;
 }
 .entry-meta span {
-	padding-right: 20px;	
+	padding-right: 20px;
 	color: #999999;
 	font-size: 14px;
 	font-size: 1.4rem;
@@ -767,7 +767,7 @@ img.header-image {
 .entry-meta .cat-links:before,
 .entry-meta .tags-links:before,
 .entry-meta .comments-link:before,
-.entry-meta .edit-link:before {	
+.entry-meta .edit-link:before {
 	display: inline-block;
 	-webkit-font-smoothing: antialiased;
 	font: normal 22px/1 'Genericons';
@@ -898,24 +898,24 @@ img.header-image {
 
 /* =WordPress Gallery Support
 ----------------------------------------------- */
-.gallery { 
+.gallery {
 	margin: 0 auto 20px;
 	margin: 0 auto 2rem;
 }
-.gallery .gallery-item { 
-	float: left; 
-	display: block; 
-	background: #fff; 
-	margin: 10px 1.5% 20px; 
+.gallery .gallery-item {
+	float: left;
+	display: block;
+	background: #fff;
+	margin: 10px 1.5% 20px;
 	text-align: center;
 }
 .gallery .gallery-item:hover { }
-.gallery .gallery-icon { 
-	text-align: center; 
-	padding: 0; 
-	margin: 0; 
-	overflow: hidden; 
-	line-height: 0; 
+.gallery .gallery-icon {
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	line-height: 0;
 }
 .gallery-columns-1 .gallery-item { float: none; text-align: center; width:100%; margin: 10px 0 20px; }
 .gallery-columns-2 .gallery-item { width:47%; }
@@ -926,17 +926,17 @@ img.header-image {
 .gallery-columns-7 .gallery-item { width:12.25%; margin:10px 1% 10px; }
 .gallery-columns-8 .gallery-item { width:10.5%; margin:10px 1% 10px; }
 .gallery-columns-9 .gallery-item { width:9.11%; margin:10px 1% 10px; }
-.gallery dl a { 
-	display: block; 
+.gallery dl a {
+	display: block;
 }
-.gallery dl a img { 
-	height: auto; 
+.gallery dl a img {
+	height: auto;
 	margin: 0 auto;
 }
-.gallery .gallery-caption { 	
-	font-size: 14px; 
-	line-height: 1.2; 
-	margin: 10px 0 0; 
+.gallery .gallery-caption {
+	font-size: 14px;
+	line-height: 1.2;
+	margin: 10px 0 0;
 }
 .gallery br+br { display:none; }
 
@@ -1002,7 +1002,7 @@ object {
 	overflow: hidden;
 	position: relative;
 }
-.comments-area .comment-edit-link, 
+.comments-area .comment-edit-link,
 .comments-area .comment-permalink,
 .comments-area .comment-date-time,
 .comments-area .comment-author-link {
@@ -1269,10 +1269,10 @@ object {
 .main-small-navigation ul > .current-menu-item  a{
   color: #ffffff;
 }
-.main-small-navigation ul li ul li a, 
-.main-small-navigation ul li.current-menu-item ul li a, 
+.main-small-navigation ul li ul li a,
+.main-small-navigation ul li.current-menu-item ul li a,
 .main-small-navigation ul li ul li.current-menu-item a,
-.main-small-navigation ul li.current_page_ancestor ul li a, 
+.main-small-navigation ul li.current_page_ancestor ul li a,
 .main-small-navigation ul li.current-menu-ancestor ul li a,
 .main-small-navigation ul li.current_page_item ul li a {
 	color: #444444;
@@ -1300,10 +1300,13 @@ object {
  	body.admin-bar .header-wrap {
 		top: 45px;
 	}
+   body.admin-bar #parallax-bg {
+      top: 14px;
+   }
 }
 
 /* All Mobile Portrait size smaller than 768 (devices and browsers) */
-@media screen and (max-width: 768px) {	
+@media screen and (max-width: 768px) {
 	#primary, #secondary {
 		float: none;
 		width: 100%;
@@ -1352,6 +1355,10 @@ object {
 	}
 	.header-wrap {
 		position: relative;
-	}	
+	}
+   body.admin-bar .header-wrap {
+      top: 0;
+   }
+   .site-title { font-size: 22px; padding-top: 16px; }
 }
 
