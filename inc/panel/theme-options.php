@@ -13,17 +13,20 @@ add_action( 'admin_menu', 'catcheverest_options_menu' );
 /**
  * Enqueue admin script and styles
  *
- * @uses wp_register_script, wp_enqueue_script and wp_enqueue_style
- * @Calling jquery, jquery-ui-tabs,jquery-cookie, jquery-ui-sortable, jquery-ui-draggable, media-upload, thickbox, farbtastic, colorpicker
+ * @uses wp_register_script, wp_enqueue_script, wp_enqueue_media and wp_enqueue_style
+ * @Calling jquery, jquery-ui-tabs,jquery-cookie, jquery-ui-sortable, jquery-ui-draggable
  */
 function catcheverest_admin_scripts() {
-	//jQuery Cookie
-	wp_register_script( 'jquery-cookie', get_template_directory_uri() . '/inc/panel/js/jquery.cookie.min.js', array( 'jquery' ), '1.0', true );
-	
-	wp_enqueue_script( 'catcheverest_admin', get_template_directory_uri().'/inc/panel/js/admin.min.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable' ) );
-	wp_enqueue_script( 'catcheverest_upload', get_template_directory_uri().'/inc/panel/js/add_image_scripts.min.js', array( 'jquery','media-upload','thickbox' ) );
-	
-	wp_enqueue_style( 'catcheverest_admin_style',get_template_directory_uri().'/inc/panel/admin.min.css', array( 'thickbox'), '1.0', 'screen' );
+    //jQuery Cookie
+    wp_register_script( 'jquery-cookie', get_template_directory_uri() . '/inc/panel/js/jquery.cookie.min.js', array( 'jquery' ), '1.0', true );
+    
+    wp_enqueue_script( 'catcheverest_admin', get_template_directory_uri().'/inc/panel/js/admin.min.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable' ) );
+    
+    wp_enqueue_media();
+        
+    wp_enqueue_script( 'catcheverest_upload', get_template_directory_uri().'/inc/panel/js/add_image_scripts.js', array( 'jquery' ) );
+    
+    wp_enqueue_style( 'catcheverest_admin_style',get_template_directory_uri().'/inc/panel/admin.min.css', '', '1.0', 'screen' );
 }
 add_action('admin_print_styles-appearance_page_theme_options', 'catcheverest_admin_scripts');
 
@@ -36,13 +39,13 @@ add_action('admin_print_styles-appearance_page_theme_options', 'catcheverest_adm
  */
 function catcheverest_options_menu() {
 
-	add_theme_page( 
+    add_theme_page( 
         __( 'Theme Options', 'catcheverest' ),           // Name of page
         __( 'Theme Options', 'catcheverest' ),           // Label in menu
         'edit_theme_options',                           // Capability required
         'theme_options',                                // Menu slug, used to uniquely identify the page
         'catcheverest_theme_options_do_page'             // Function that renders the options page
-    );	
+    );  
 
 }
 
@@ -54,7 +57,7 @@ function catcheverest_options_menu() {
  * @action admin_init
  */
 function catcheverest_register_settings(){
-	register_setting( 'catcheverest_options', 'catcheverest_options', 'catcheverest_theme_options_validate' );
+    register_setting( 'catcheverest_options', 'catcheverest_options', 'catcheverest_theme_options_validate' );
 }
 
 
@@ -65,23 +68,23 @@ function catcheverest_register_settings(){
  * @Settings Updated
  */
 function catcheverest_theme_options_do_page() {
-	if (!isset($_REQUEST['settings-updated']))
-		$_REQUEST['settings-updated'] = false;
-	?>
+    if (!isset($_REQUEST['settings-updated']))
+        $_REQUEST['settings-updated'] = false;
+    ?>
     
-	<div id="catchthemes" class="wrap">
-    	
-    	<form method="post" action="options.php">
-			<?php
+    <div id="catchthemes" class="wrap">
+        
+        <form method="post" action="options.php">
+            <?php
                 settings_fields( 'catcheverest_options' );
                 global $catcheverest_options_settings;
-                $options = $catcheverest_options_settings;				
+                $options = $catcheverest_options_settings;              
             ?>   
             <?php if (false !== $_REQUEST['settings-updated']) : ?>
-            	<div class="updated fade"><p><strong><?php _e('Options Saved', 'catcheverest'); ?></strong></p></div>
+                <div class="updated fade"><p><strong><?php _e('Options Saved', 'catcheverest'); ?></strong></p></div>
             <?php endif; ?>            
             
-			<div id="theme-option-header">            
+            <div id="theme-option-header">            
                 <div id="theme-option-title">
                     <h2 class="title"><?php _e( 'Theme Options By', 'catcheverest' ); ?></h2>
                     <h2 class="logo">
@@ -92,21 +95,21 @@ function catcheverest_theme_options_do_page() {
                 </div><!-- #theme-option-title -->
                 
                 <div id="upgradepro">
-                	<a class="button" href="<?php echo esc_url(__('http://catchthemes.com/themes/catch-everest-pro/','catcheverest')); ?>" title="<?php esc_attr_e('Upgrade to Catch Everest Pro', 'catcheverest'); ?>" target="_blank"><?php printf(__('Upgrade to Catch Everest Pro','catcheverest')); ?></a>
-               	</div><!-- #upgradepro -->
+                    <a class="button" href="<?php echo esc_url(__('http://catchthemes.com/themes/catch-everest-pro/','catcheverest')); ?>" title="<?php esc_attr_e('Upgrade to Catch Everest Pro', 'catcheverest'); ?>" target="_blank"><?php printf(__('Upgrade to Catch Everest Pro','catcheverest')); ?></a>
+                </div><!-- #upgradepro -->
             
                 <div id="theme-support">
                     <ul>
-                    	<li><a class="button donate" href="<?php echo esc_url(__('http://catchthemes.com/donate/','catcheverest')); ?>" title="<?php esc_attr_e('Donate to Catch Everest', 'catcheverest'); ?>" target="_blank"><?php printf(__('Donate Now','catcheverest')); ?></a></li>
+                        <li><a class="button donate" href="<?php echo esc_url(__('http://catchthemes.com/donate/','catcheverest')); ?>" title="<?php esc_attr_e('Donate to Catch Everest', 'catcheverest'); ?>" target="_blank"><?php printf(__('Donate Now','catcheverest')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/support/','catcheverest')); ?>" title="<?php esc_attr_e('Support', 'catcheverest'); ?>" target="_blank"><?php printf(__('Support','catcheverest')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/theme-instructions/catch-everest/','catcheverest')); ?>" title="<?php esc_attr_e('Theme Instruction', 'catcheverest'); ?>" target="_blank"><?php printf(__('Theme Instruction','catcheverest')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('https://www.facebook.com/catchthemes/','catcheverest')); ?>" title="<?php esc_attr_e('Like Catch Themes on Facebook', 'catcheverest'); ?>" target="_blank"><?php printf(__('Facebook','catcheverest')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('https://twitter.com/catchthemes/','catcheverest')); ?>" title="<?php esc_attr_e('Follow Catch Themes on Twitter', 'catcheverest'); ?>" target="_blank"><?php printf(__('Twitter','catcheverest')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('http://wordpress.org/support/view/theme-reviews/catch-everest','catcheverest')); ?>" title="<?php esc_attr_e('Rate us 5 Star on WordPress', 'catcheverest'); ?>" target="_blank"><?php printf(__('5 Star Rating','catcheverest')); ?></a></li>
-                   	</ul>
+                    </ul>
                 </div><!-- #theme-support --> 
                  
-          	</div><!-- #theme-option-header -->              
+            </div><!-- #theme-option-header -->              
  
             
             <div id="catcheverest_ad_tabs">
@@ -122,28 +125,28 @@ function catcheverest_theme_options_do_page() {
                 <!-- Option for Design Settings -->
                 <div id="themeoptions">     
                 
-                	<div class="option-container">
+                    <div class="option-container">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Responsive Design', 'catcheverest' ); ?></a></h3>
                         <div class="option-content inside">
-                        	<table class="form-table">
+                            <table class="form-table">
                                 <tbody>
                                     <tr>                            
                                         <th scope="row"><?php _e( 'Disable Responsive Design?', 'catcheverest' ); ?></th>
                                         <input type='hidden' value='0' name='catcheverest_options[disable_responsive]'>
                                         <td><input type="checkbox" id="headerlogo" name="catcheverest_options[disable_responsive]" value="1" <?php checked( '1', $options['disable_responsive'] ); ?> /> <?php _e('Check to disable', 'catcheverest'); ?></td>
                                     </tr>
-                               	</tbody>
-                          	</table>
-                      		<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catcheverest' ); ?>" /></p> 
+                                </tbody>
+                            </table>
+                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catcheverest' ); ?>" /></p> 
                         </div><!-- .option-content --> 
                     </div><!-- .option-container --> 
                                         
                     <div class="option-container">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Upload Logo', 'catcheverest' ); ?></a></h3>
                         <div class="option-content inside">
-                        	<p><?php printf(__('Custom Header. Need to Add or Remove Logo?','catcheverest')); ?> <?php printf(__('<a class="button" href="%s">Click here</a>', 'catcheverest'), admin_url('themes.php?page=custom-header')); ?></p>	
-                    	</div><!-- .option-content -->
-                 	</div><!-- .option-container --> 
+                            <p><?php printf(__('Custom Header. Need to Add or Remove Logo?','catcheverest')); ?> <?php printf(__('<a class="button" href="%s">Click here</a>', 'catcheverest'), admin_url('themes.php?page=custom-header')); ?></p> 
+                        </div><!-- .option-content -->
+                    </div><!-- .option-container --> 
 
                     <div class="option-container">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Favicon', 'catcheverest' ); ?></a></h3>
@@ -162,7 +165,7 @@ function catcheverest_theme_options_do_page() {
                                             <?php } else { ?>
                                                 <input class="upload-url" size="65" type="text" name="catcheverest_options[fav_icon]" value="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" alt="fav" />
                                             <?php }  ?> 
-                                            <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Fav Icon','catcheverest' );?>" />
+                                            <input ref="<?php esc_attr_e( 'Insert as Fav Icon','catcheverest' );?>" class="catcheverest_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Fav Icon','catcheverest' );?>" />
                                         </td>
                                     </tr>
                                     
@@ -201,7 +204,7 @@ function catcheverest_theme_options_do_page() {
                                             <?php } else { ?>
                                                 <input size="65" type="text" name="catcheverest_options[web_clip]" value="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png" alt="fav" />
                                             <?php }  ?> 
-                                            <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Web Clip Icon','catcheverest' );?>" />
+                                            <input ref="<?php esc_attr_e( 'Insert as Web Clip Icon','catcheverest' );?>" class="catcheverest_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Web Clip Icon','catcheverest' );?>" />
                                         </td>
                                     </tr>
                                     
@@ -243,9 +246,9 @@ function catcheverest_theme_options_do_page() {
                     <div class="option-container">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Background', 'catcheverest' ); ?></a></h3>
                         <div class="option-content inside">
-                        	<p><?php printf(__('Custom Background. Need to replace or remove background?','catcheverest')); ?> <?php printf(__('<a class="button" href="%s">Click here</a>', 'catcheverest'), admin_url('themes.php?page=custom-background')); ?></p>	                                 
-                    	</div><!-- .option-content -->
-                 	</div><!-- .option-container -->                     
+                            <p><?php printf(__('Custom Background. Need to replace or remove background?','catcheverest')); ?> <?php printf(__('<a class="button" href="%s">Click here</a>', 'catcheverest'), admin_url('themes.php?page=custom-background')); ?></p>                                    
+                        </div><!-- .option-content -->
+                    </div><!-- .option-container -->                     
  
                     <div class="option-container">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Search Text Settings', 'catcheverest' ); ?></a></h3>
@@ -268,7 +271,7 @@ function catcheverest_theme_options_do_page() {
                         <div class="option-content inside">
                             <table class="form-table">  
                                 <tbody>
-									<tr>
+                                    <tr>
                                         <th scope="row"><label><?php _e( 'More Tag Text', 'catcheverest' ); ?></label></th>
                                         <td><input type="text" size="45" name="catcheverest_options[more_tag_text]" value="<?php echo esc_attr( $options[ 'more_tag_text' ] ); ?>" />
                                         </td>
@@ -277,7 +280,7 @@ function catcheverest_theme_options_do_page() {
                                         <th scope="row"><?php _e( 'Excerpt length(words)', 'catcheverest' ); ?></th>
                                         <td><input type="text" size="3" name="catcheverest_options[excerpt_length]" value="<?php echo intval( $options[ 'excerpt_length' ] ); ?>" /></td>
                                     </tr>  
-                              	</tbody>
+                                </tbody>
                             </table>
                             <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catcheverest' ); ?>" /></p> 
                         </div><!-- .option-content -->
@@ -288,18 +291,18 @@ function catcheverest_theme_options_do_page() {
                         <div class="option-content inside">
                             <table class="form-table">  
                                 <tbody>
-									<tr>
+                                    <tr>
                                         <th scope="row"><label><?php _e( 'Feed Redirect URL', 'catcheverest' ); ?></label></th>
                                         <td><input type="text" size="70" name="catcheverest_options[feed_url]" value="<?php echo esc_attr( $options[ 'feed_url' ] ); ?>" /> <?php _e( 'Add in the Feedburner URL', 'catcheverest' ); ?>
                                         </td>
                                     </tr>  
-                               	</tbody>
+                                </tbody>
                             </table>
                             <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catcheverest' ); ?>" /></p> 
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->    
                     
-					<div class="option-container">
+                    <div class="option-container">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Layout Options', 'catcheverest' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table content-layout">  
@@ -307,7 +310,7 @@ function catcheverest_theme_options_do_page() {
                                     <tr>
                                         <th scope="row"><label><?php _e( 'Sidebar Layout Options', 'catcheverest' ); ?></label></th>
                                         <td>
-                                        	<label title="right-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/right-sidebar.png" alt="Content-Sidebar" /><br />
+                                            <label title="right-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/right-sidebar.png" alt="Content-Sidebar" /><br />
                                             <input type="radio" name="catcheverest_options[sidebar_layout]" id="right-sidebar" <?php checked($options['sidebar_layout'], 'right-sidebar') ?> value="right-sidebar"  />
                                             <?php _e( 'Right Sidebar', 'catcheverest' ); ?>
                                             </label>  
@@ -331,11 +334,11 @@ function catcheverest_theme_options_do_page() {
                                     <tr>
                                         <th scope="row"><label><?php _e( 'Content Layout', 'catcheverest' ); ?></label></th>
                                         <td>
-                                        	<label title="content-full" class="box"><input type="radio" name="catcheverest_options[content_layout]" id="content-full" <?php checked($options['content_layout'], 'full') ?> value="full"  />
+                                            <label title="content-full" class="box"><input type="radio" name="catcheverest_options[content_layout]" id="content-full" <?php checked($options['content_layout'], 'full') ?> value="full"  />
                                             <?php _e( 'Full Content Display', 'catcheverest' ); ?>
                                             </label>   
                                             
-                                        	<label title="content-excerpt" class="box"><input type="radio" name="catcheverest_options[content_layout]" id="content-excerpt" <?php checked($options['content_layout'], 'excerpt') ?> value="excerpt"  />
+                                            <label title="content-excerpt" class="box"><input type="radio" name="catcheverest_options[content_layout]" id="content-excerpt" <?php checked($options['content_layout'], 'excerpt') ?> value="excerpt"  />
                                             <?php _e( 'Excerpt/Blog Display', 'catcheverest' ); ?>
                                             </label>                                    
                                         </td>
@@ -380,7 +383,7 @@ function catcheverest_theme_options_do_page() {
                                        
                 </div><!-- #themeoptions -->  
 
-				<!-- Options for Homepage Settings -->
+                <!-- Options for Homepage Settings -->
                 <div id="homepagesettings">                    
                 
                     <div class="option-container">
@@ -393,16 +396,16 @@ function catcheverest_theme_options_do_page() {
                                             <p><small><?php _e( 'The appropriate length for Headine is around 10 words.', 'catcheverest' ); ?></small></p>
                                         </th>
                                         <td>
-	                                        <textarea class="textarea input-bg" name="catcheverest_options[homepage_headline]" cols="65" rows="3"><?php echo esc_textarea( $options[ 'homepage_headline' ] ); ?></textarea>
-	                                    </td>
+                                            <textarea class="textarea input-bg" name="catcheverest_options[homepage_headline]" cols="65" rows="3"><?php echo esc_textarea( $options[ 'homepage_headline' ] ); ?></textarea>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <th scope="row"><?php _e( 'Homepage Subheadline Headline', 'catcheverest' ); ?>
                                             <p><small><?php _e( 'The appropriate length for Headine is around 10 words.', 'catcheverest' ); ?></small></p>
                                         </th>
                                         <td>
-	                                        <textarea class="textarea input-bg" name="catcheverest_options[homepage_subheadline]" cols="65" rows="3"><?php echo esc_textarea( $options[ 'homepage_subheadline' ] ); ?></textarea>
-	                                    </td>
+                                            <textarea class="textarea input-bg" name="catcheverest_options[homepage_subheadline]" cols="65" rows="3"><?php echo esc_textarea( $options[ 'homepage_subheadline' ] ); ?></textarea>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <th scope="row"><?php _e( 'Disable Homepage Headline?', 'catcheverest' ); ?></th>
@@ -425,39 +428,39 @@ function catcheverest_theme_options_do_page() {
                         <div class="option-content inside">
                             <table class="form-table">
                                 <tbody>
-                                	<tr>
+                                    <tr>
                                         <th scope="row"><?php _e( 'Disable Homepage Featured Content?', 'catcheverest' ); ?></th>
                                         <input type='hidden' value='0' name='catcheverest_options[disable_homepage_featured]'>
                                         <td><input type="checkbox" id="favicon" name="catcheverest_options[disable_homepage_featured]" value="1" <?php checked( '1', $options['disable_homepage_featured'] ); ?> /> <?php _e( 'Check to disable', 'catcheverest'); ?></td>
                                     </tr>  
                                     <tr>
                                         <th scope="row">
-											<?php _e( 'Headline', 'catcheverest' ); ?>
+                                            <?php _e( 'Headline', 'catcheverest' ); ?>
                                         </th>
                                         <td>
-                                        	<input type="text" size="65" name="catcheverest_options[homepage_featured_headline]" value="<?php echo esc_attr( $options[ 'homepage_featured_headline' ] ); ?>" /> <?php _e( 'Leave empty if you want to remove headline', 'catcheverest' ); ?>
-	                                    </td>
+                                            <input type="text" size="65" name="catcheverest_options[homepage_featured_headline]" value="<?php echo esc_attr( $options[ 'homepage_featured_headline' ] ); ?>" /> <?php _e( 'Leave empty if you want to remove headline', 'catcheverest' ); ?>
+                                        </td>
                                     </tr>
                                     <tr>
-                                    	<th scope="row"><?php _e( 'Number of Featured Content', 'catcheverest' ); ?></th>
-                                    	<td>
-                                        	<input type="text" size="2" name="catcheverest_options[homepage_featured_qty]" value="<?php echo intval( $options[ 'homepage_featured_qty' ] ); ?>" size="2" />
+                                        <th scope="row"><?php _e( 'Number of Featured Content', 'catcheverest' ); ?></th>
+                                        <td>
+                                            <input type="text" size="2" name="catcheverest_options[homepage_featured_qty]" value="<?php echo intval( $options[ 'homepage_featured_qty' ] ); ?>" size="2" />
                                         </td>
-                                	</tr>
+                                    </tr>
                                     <?php for ( $i = 1; $i <= $options[ 'homepage_featured_qty' ]; $i++ ): ?> 
                                     <tr>
-                                    	<th scope="row">
-											<strong><?php printf( esc_attr__( 'Featured Content #%s', 'catcheverest' ), $i ); ?></strong>
+                                        <th scope="row">
+                                            <strong><?php printf( esc_attr__( 'Featured Content #%s', 'catcheverest' ), $i ); ?></strong>
                                         </th>
-                                   	</tr>
+                                    </tr>
                                     <tr>
                                         <th scope="row">
-											<?php _e( 'Image', 'catcheverest' ); ?>
+                                            <?php _e( 'Image', 'catcheverest' ); ?>
                                         </th>
                                         <td>
-                                        	<input class="upload-url" size="65" type="text" name="catcheverest_options[homepage_featured_image][<?php echo $i; ?>]" value="<?php if( array_key_exists( 'homepage_featured_image', $options ) && array_key_exists( $i, $options[ 'homepage_featured_image' ] ) ) echo esc_url( $options[ 'homepage_featured_image' ][ $i ] ); ?>" />
-                                            <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php if( array_key_exists( 'homepage_featured_image', $options ) && array_key_exists( $i, $options[ 'homepage_featured_image' ] ) ) { esc_attr_e( 'Change Image','catcheverest' ); } else { esc_attr_e( 'Add Image','catcheverest' ); } ?>" />  
-                                      	</td>
+                                            <input class="upload-url" size="65" type="text" name="catcheverest_options[homepage_featured_image][<?php echo $i; ?>]" value="<?php if( array_key_exists( 'homepage_featured_image', $options ) && array_key_exists( $i, $options[ 'homepage_featured_image' ] ) ) echo esc_url( $options[ 'homepage_featured_image' ][ $i ] ); ?>" />
+                                            <input ref="<?php printf( esc_attr__( 'Insert as Featured Content #%s', 'catcheverest' ), $i ); ?>" class="catcheverest_upload_image button" name="wsl-image-add" type="button" value="<?php if( array_key_exists( 'homepage_featured_image', $options ) && array_key_exists( $i, $options[ 'homepage_featured_image' ] ) ) { esc_attr_e( 'Change Image','catcheverest' ); } else { esc_attr_e( 'Add Image','catcheverest' ); } ?>" />  
+                                        </td>
                                     </tr>
                                     <tr>
                                         <th scope="row"><label><?php _e( 'Link URL', 'catcheverest' ); ?></label></th>
@@ -472,19 +475,19 @@ function catcheverest_theme_options_do_page() {
                                     </tr>     
                                     <tr>
                                         <th scope="row">
-											<?php _e( 'Title', 'catcheverest' ); ?>
+                                            <?php _e( 'Title', 'catcheverest' ); ?>
                                         </th>
                                         <td>
-                                        	<input type="text" size="65" name="catcheverest_options[homepage_featured_title][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'homepage_featured_title', $options ) && array_key_exists( $i, $options[ 'homepage_featured_title' ] ) ) echo esc_attr( $options[ 'homepage_featured_title' ][ $i ] ); ?>" /> <?php _e( 'Leave empty if you want to remove title', 'catcheverest' ); ?>
-	                                    </td>
+                                            <input type="text" size="65" name="catcheverest_options[homepage_featured_title][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'homepage_featured_title', $options ) && array_key_exists( $i, $options[ 'homepage_featured_title' ] ) ) echo esc_attr( $options[ 'homepage_featured_title' ][ $i ] ); ?>" /> <?php _e( 'Leave empty if you want to remove title', 'catcheverest' ); ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <th scope="row"><?php _e( 'Content', 'catcheverest' ); ?>
                                             <p><small><?php _e( 'The appropriate length for Content is around 10 words.', 'catcheverest' ); ?></small></p>
                                         </th>
                                         <td>
-	                                        <textarea class="textarea input-bg" name="catcheverest_options[homepage_featured_content][<?php echo absint( $i ); ?>]" cols="80" rows="3"><?php if( array_key_exists( 'homepage_featured_content', $options ) && array_key_exists( $i, $options[ 'homepage_featured_content' ] ) ) echo esc_html( $options[ 'homepage_featured_content' ][ $i ] ); ?></textarea>
-	                                    </td>
+                                            <textarea class="textarea input-bg" name="catcheverest_options[homepage_featured_content][<?php echo absint( $i ); ?>]" cols="80" rows="3"><?php if( array_key_exists( 'homepage_featured_content', $options ) && array_key_exists( $i, $options[ 'homepage_featured_content' ] ) ) echo esc_html( $options[ 'homepage_featured_content' ][ $i ] ); ?></textarea>
+                                        </td>
                                     </tr>
                                     <?php endfor; ?>    
                                 </tbody>
@@ -534,13 +537,13 @@ function catcheverest_theme_options_do_page() {
                             </table>
                             <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catcheverest' ); ?>" /></p> 
                         </div><!-- .option-content -->
-                  	</div><!-- .option-container --> 
-            	</div><!-- #homepagesettings -->       
+                    </div><!-- .option-container --> 
+                </div><!-- #homepagesettings -->       
                 
                 <!-- Options for Slider Settings -->
                 <div id="slidersettings">
-           			<div class="option-container">
-                		<h3 class="option-toggle"><a href="#"><?php _e( 'Slider Options', 'catcheverest' ); ?></a></h3>
+                    <div class="option-container">
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Slider Options', 'catcheverest' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">  
                                 <tr>
@@ -602,10 +605,10 @@ function catcheverest_theme_options_do_page() {
                             </table>
                             <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catcheverest' ); ?>" /></p> 
                         </div><!-- .option-content -->
-            		</div><!-- .option-container --> 
+                    </div><!-- .option-container --> 
               
             
-            		<div class="option-container post-slider">
+                    <div class="option-container post-slider">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Featured Post Slider Options', 'catcheverest' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">
@@ -629,12 +632,12 @@ function catcheverest_theme_options_do_page() {
                             <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catcheverest' ); ?>" /></p> 
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->                
-				</div><!-- #slidersettings -->
+                </div><!-- #slidersettings -->
                 
   
                 <!-- Options for Social Links -->
                 <div id="sociallinks">
-                	<div class="option-container">
+                    <div class="option-container">
                         <table class="form-table">
                             <tbody>
                                 <tr>
@@ -785,7 +788,7 @@ function catcheverest_theme_options_do_page() {
                                 </tr>                                                                 
                             </tbody>
                         </table>                           
-            			<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catcheverest' ); ?>" /></p>                    
+                        <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catcheverest' ); ?>" /></p>                    
                     </div><!-- .option-container -->
                 </div><!-- #sociallinks -->
                 
@@ -826,8 +829,8 @@ function catcheverest_theme_options_do_page() {
                 </div><!-- #webmaster -->
 
             </div><!-- #catcheverest_ad_tabs -->
-		</form>
-	</div><!-- .wrap -->
+        </form>
+    </div><!-- .wrap -->
 <?php
 }
 
@@ -839,133 +842,133 @@ function catcheverest_theme_options_do_page() {
  * @return array
  */
 function catcheverest_theme_options_validate( $options ) {
-	global $catcheverest_options_settings;
+    global $catcheverest_options_settings;
     $input_validated = $catcheverest_options_settings;
-	
-	global $catcheverest_options_defaults;
-	$defaults = $catcheverest_options_defaults;
-	
+    
+    global $catcheverest_options_defaults;
+    $defaults = $catcheverest_options_defaults;
+    
     $input = array();
     $input = $options;
-	
-	// Data Validation for Resonsive Design	
-	if ( isset( $input['disable_responsive'] ) ) {
-		// Our checkbox value is either 0 or 1 
-		$input_validated[ 'disable_responsive' ] = $input[ 'disable_responsive' ];
-	}
-	
-	// Data Validation for Favicon		
-	if ( isset( $input[ 'fav_icon' ] ) ) {
-		$input_validated[ 'fav_icon' ] = esc_url_raw( $input[ 'fav_icon' ] );
-	}
-	if ( isset( $input['remove_favicon'] ) ) {
-		// Our checkbox value is either 0 or 1 
-		$input_validated[ 'remove_favicon' ] = $input[ 'remove_favicon' ];
-	}
-	
-	// Data Validation for web clip icon
-	if ( isset( $input[ 'web_clip' ] ) ) {
-		$input_validated[ 'web_clip' ] = esc_url_raw( $input[ 'web_clip' ] );
-	}
-	if ( isset( $input['remove_web_clip'] ) ) {
-		// Our checkbox value is either 0 or 1 
-		$input_validated[ 'remove_web_clip' ] = $input[ 'remove_web_clip' ];
-	}	
-	
-	// Data Validation for Header Sidebar	
-	if ( isset( $input[ 'disable_header_right_sidebar' ] ) ) {
-		$input_validated[ 'disable_header_right_sidebar' ] = $input[ 'disable_header_right_sidebar' ];
-	}	
-	
-	
-	// Data Validation for Custom CSS Style
-	if ( isset( $input['custom_css'] ) ) {
-		$input_validated['custom_css'] = wp_kses_stripslashes($input['custom_css']);
-	}
-	
-	// Data Validation for Homepage Headline Message
-	if( isset( $input[ 'homepage_headline' ] ) ) {
-		$input_validated['homepage_headline'] =  sanitize_text_field( $input[ 'homepage_headline' ] ) ? $input [ 'homepage_headline' ] : $defaults[ 'homepage_headline' ];
-	}
-	if( isset( $input[ 'homepage_subheadline' ] ) ) {
-		$input_validated['homepage_subheadline'] =  sanitize_text_field( $input[ 'homepage_subheadline' ] ) ? $input [ 'homepage_subheadline' ] : $defaults[ 'homepage_subheadline' ];
-	}	
-	if ( isset( $input[ 'disable_homepage_headline' ] ) ) {
-		$input_validated[ 'disable_homepage_headline' ] = $input[ 'disable_homepage_headline' ];
-	}
-	if ( isset( $input[ 'disable_homepage_subheadline' ] ) ) {
-		$input_validated[ 'disable_homepage_subheadline' ] = $input[ 'disable_homepage_subheadline' ];
-	}	
-	
+    
+    // Data Validation for Resonsive Design 
+    if ( isset( $input['disable_responsive'] ) ) {
+        // Our checkbox value is either 0 or 1 
+        $input_validated[ 'disable_responsive' ] = $input[ 'disable_responsive' ];
+    }
+    
+    // Data Validation for Favicon      
+    if ( isset( $input[ 'fav_icon' ] ) ) {
+        $input_validated[ 'fav_icon' ] = esc_url_raw( $input[ 'fav_icon' ] );
+    }
+    if ( isset( $input['remove_favicon'] ) ) {
+        // Our checkbox value is either 0 or 1 
+        $input_validated[ 'remove_favicon' ] = $input[ 'remove_favicon' ];
+    }
+    
+    // Data Validation for web clip icon
+    if ( isset( $input[ 'web_clip' ] ) ) {
+        $input_validated[ 'web_clip' ] = esc_url_raw( $input[ 'web_clip' ] );
+    }
+    if ( isset( $input['remove_web_clip'] ) ) {
+        // Our checkbox value is either 0 or 1 
+        $input_validated[ 'remove_web_clip' ] = $input[ 'remove_web_clip' ];
+    }   
+    
+    // Data Validation for Header Sidebar   
+    if ( isset( $input[ 'disable_header_right_sidebar' ] ) ) {
+        $input_validated[ 'disable_header_right_sidebar' ] = $input[ 'disable_header_right_sidebar' ];
+    }   
+    
+    
+    // Data Validation for Custom CSS Style
+    if ( isset( $input['custom_css'] ) ) {
+        $input_validated['custom_css'] = wp_kses_stripslashes($input['custom_css']);
+    }
+    
+    // Data Validation for Homepage Headline Message
+    if( isset( $input[ 'homepage_headline' ] ) ) {
+        $input_validated['homepage_headline'] =  sanitize_text_field( $input[ 'homepage_headline' ] ) ? $input [ 'homepage_headline' ] : $defaults[ 'homepage_headline' ];
+    }
+    if( isset( $input[ 'homepage_subheadline' ] ) ) {
+        $input_validated['homepage_subheadline'] =  sanitize_text_field( $input[ 'homepage_subheadline' ] ) ? $input [ 'homepage_subheadline' ] : $defaults[ 'homepage_subheadline' ];
+    }   
+    if ( isset( $input[ 'disable_homepage_headline' ] ) ) {
+        $input_validated[ 'disable_homepage_headline' ] = $input[ 'disable_homepage_headline' ];
+    }
+    if ( isset( $input[ 'disable_homepage_subheadline' ] ) ) {
+        $input_validated[ 'disable_homepage_subheadline' ] = $input[ 'disable_homepage_subheadline' ];
+    }   
+    
 
-	// Data Validation for Homepage Featured Content 
-	if ( isset( $input[ 'disable_homepage_featured' ] ) ) {
-		$input_validated[ 'disable_homepage_featured' ] = $input[ 'disable_homepage_featured' ];
-	}	
-	if( isset( $input[ 'homepage_featured_headline' ] ) ) {
-		$input_validated['homepage_featured_headline'] =  sanitize_text_field( $input[ 'homepage_featured_headline' ] ) ? $input [ 'homepage_featured_headline' ] : $defaults[ 'homepage_featured_headline' ];
-	}	
-	if ( isset( $input[ 'homepage_featured_image' ] ) ) {
-		$input_validated[ 'homepage_featured_image' ] = array();
-	}
-	if ( isset( $input[ 'homepage_featured_url' ] ) ) {
-		$input_validated[ 'homepage_featured_url' ] = array();
-	}
-	if ( isset( $input[ 'homepage_featured_base' ] ) ) {
-		$input_validated[ 'homepage_featured_base' ] = array();
-	}	
-	if ( isset( $input[ 'homepage_featured_title' ] ) ) {
-		$input_validated[ 'homepage_featured_title' ] = array();
-	}
-	if ( isset( $input[ 'homepage_featured_content' ] ) ) {
-		$input_validated[ 'homepage_featured_content' ] = array();
-	}
-	if ( isset( $input[ 'homepage_featured_qty' ] ) ) {
-		$input_validated[ 'homepage_featured_qty' ] = absint( $input[ 'homepage_featured_qty' ] ) ? $input [ 'homepage_featured_qty' ] : $defaults[ 'homepage_featured_qty' ];
-		for ( $i = 1; $i <= $input [ 'homepage_featured_qty' ]; $i++ ) {
-			if ( !empty( $input[ 'homepage_featured_image' ][ $i ] ) ) {
-				$input_validated[ 'homepage_featured_image' ][ $i ] = esc_url_raw($input[ 'homepage_featured_image' ][ $i ] );
-			}
-			if ( !empty( $input[ 'homepage_featured_url' ][ $i ] ) ) {
-				$input_validated[ 'homepage_featured_url'][ $i ] = esc_url_raw($input[ 'homepage_featured_url'][ $i ]);
-			}
-			if ( !empty( $input[ 'homepage_featured_base' ][ $i ] ) ) {
-				$input_validated[ 'homepage_featured_base'][ $i ] = $input[ 'homepage_featured_base'][ $i ];
-			}
-			if ( !empty( $input[ 'homepage_featured_title' ][ $i ] ) ) {
-				$input_validated[ 'homepage_featured_title'][ $i ] = sanitize_text_field($input[ 'homepage_featured_title'][ $i ]);
-			}
-			if ( !empty( $input[ 'homepage_featured_content' ][ $i ] ) ) {
-				$input_validated[ 'homepage_featured_content'][ $i ] = wp_kses_stripslashes($input[ 'homepage_featured_content'][ $i ]);
-			}	
-		}
-	}	
-	
-	// Data Validation for Homepage
-	if ( isset( $input[ 'enable_posts_home' ] ) ) {
-		$input_validated[ 'enable_posts_home' ] = $input[ 'enable_posts_home' ];
-	}	
-	
+    // Data Validation for Homepage Featured Content 
+    if ( isset( $input[ 'disable_homepage_featured' ] ) ) {
+        $input_validated[ 'disable_homepage_featured' ] = $input[ 'disable_homepage_featured' ];
+    }   
+    if( isset( $input[ 'homepage_featured_headline' ] ) ) {
+        $input_validated['homepage_featured_headline'] =  sanitize_text_field( $input[ 'homepage_featured_headline' ] ) ? $input [ 'homepage_featured_headline' ] : $defaults[ 'homepage_featured_headline' ];
+    }   
+    if ( isset( $input[ 'homepage_featured_image' ] ) ) {
+        $input_validated[ 'homepage_featured_image' ] = array();
+    }
+    if ( isset( $input[ 'homepage_featured_url' ] ) ) {
+        $input_validated[ 'homepage_featured_url' ] = array();
+    }
+    if ( isset( $input[ 'homepage_featured_base' ] ) ) {
+        $input_validated[ 'homepage_featured_base' ] = array();
+    }   
+    if ( isset( $input[ 'homepage_featured_title' ] ) ) {
+        $input_validated[ 'homepage_featured_title' ] = array();
+    }
+    if ( isset( $input[ 'homepage_featured_content' ] ) ) {
+        $input_validated[ 'homepage_featured_content' ] = array();
+    }
+    if ( isset( $input[ 'homepage_featured_qty' ] ) ) {
+        $input_validated[ 'homepage_featured_qty' ] = absint( $input[ 'homepage_featured_qty' ] ) ? $input [ 'homepage_featured_qty' ] : $defaults[ 'homepage_featured_qty' ];
+        for ( $i = 1; $i <= $input [ 'homepage_featured_qty' ]; $i++ ) {
+            if ( !empty( $input[ 'homepage_featured_image' ][ $i ] ) ) {
+                $input_validated[ 'homepage_featured_image' ][ $i ] = esc_url_raw($input[ 'homepage_featured_image' ][ $i ] );
+            }
+            if ( !empty( $input[ 'homepage_featured_url' ][ $i ] ) ) {
+                $input_validated[ 'homepage_featured_url'][ $i ] = esc_url_raw($input[ 'homepage_featured_url'][ $i ]);
+            }
+            if ( !empty( $input[ 'homepage_featured_base' ][ $i ] ) ) {
+                $input_validated[ 'homepage_featured_base'][ $i ] = $input[ 'homepage_featured_base'][ $i ];
+            }
+            if ( !empty( $input[ 'homepage_featured_title' ][ $i ] ) ) {
+                $input_validated[ 'homepage_featured_title'][ $i ] = sanitize_text_field($input[ 'homepage_featured_title'][ $i ]);
+            }
+            if ( !empty( $input[ 'homepage_featured_content' ][ $i ] ) ) {
+                $input_validated[ 'homepage_featured_content'][ $i ] = wp_kses_stripslashes($input[ 'homepage_featured_content'][ $i ]);
+            }   
+        }
+    }   
+    
+    // Data Validation for Homepage
+    if ( isset( $input[ 'enable_posts_home' ] ) ) {
+        $input_validated[ 'enable_posts_home' ] = $input[ 'enable_posts_home' ];
+    }   
+    
 
     if ( isset( $input['exclude_slider_post'] ) ) {
         // Our checkbox value is either 0 or 1 
-   		$input_validated[ 'exclude_slider_post' ] = $input[ 'exclude_slider_post' ];	
-	
+        $input_validated[ 'exclude_slider_post' ] = $input[ 'exclude_slider_post' ];    
+    
     }
-	// Front page posts categories
+    // Front page posts categories
     if( isset( $input['front_page_category' ] ) ) {
-		$input_validated['front_page_category'] = $input['front_page_category'];
+        $input_validated['front_page_category'] = $input['front_page_category'];
     }
-	
+    
 
-	// data validation for Enable Slider
-	if( isset( $input[ 'enable_slider' ] ) ) {
-		$input_validated[ 'enable_slider' ] = $input[ 'enable_slider' ];
-	}	
+    // data validation for Enable Slider
+    if( isset( $input[ 'enable_slider' ] ) ) {
+        $input_validated[ 'enable_slider' ] = $input[ 'enable_slider' ];
+    }   
     // data validation for number of slides
-	if ( isset( $input[ 'slider_qty' ] ) ) {
-		$input_validated[ 'slider_qty' ] = absint( $input[ 'slider_qty' ] ) ? $input [ 'slider_qty' ] : 4;
-	}	
+    if ( isset( $input[ 'slider_qty' ] ) ) {
+        $input_validated[ 'slider_qty' ] = absint( $input[ 'slider_qty' ] ) ? $input [ 'slider_qty' ] : 4;
+    }   
     // data validation for transition effect
     if( isset( $input[ 'transition_effect' ] ) ) {
         $input_validated['transition_effect'] = wp_filter_nohtml_kses( $input['transition_effect'] );
@@ -977,135 +980,135 @@ function catcheverest_theme_options_validate( $options ) {
     // data validation for transition length
     if ( isset( $input[ 'transition_duration' ] ) && is_numeric( $input[ 'transition_duration' ] ) ) {
         $input_validated[ 'transition_duration' ] = $input[ 'transition_duration' ];
-    }	
-	
-	// data validation for Featured Post Slider
-	if ( isset( $input[ 'featured_slider' ] ) ) {
-		$input_validated[ 'featured_slider' ] = array();
-	}
- 	if ( isset( $input[ 'slider_qty' ] ) )	{	
-		for ( $i = 1; $i <= $input [ 'slider_qty' ]; $i++ ) {
-			if ( !empty( $input[ 'featured_slider' ][ $i ] ) && intval( $input[ 'featured_slider' ][ $i ] ) ) {
-				$input_validated[ 'featured_slider' ][ $i ] = absint($input[ 'featured_slider' ][ $i ] );
-			}
-		}
-	}	
-	
-	
-	// data validation for Social Icons
-	if( isset( $input[ 'social_facebook' ] ) ) {
-		$input_validated[ 'social_facebook' ] = esc_url_raw( $input[ 'social_facebook' ] );
-	}
-	if( isset( $input[ 'social_twitter' ] ) ) {
-		$input_validated[ 'social_twitter' ] = esc_url_raw( $input[ 'social_twitter' ] );
-	}
-	if( isset( $input[ 'social_googleplus' ] ) ) {
-		$input_validated[ 'social_googleplus' ] = esc_url_raw( $input[ 'social_googleplus' ] );
-	}
-	if( isset( $input[ 'social_pinterest' ] ) ) {
-		$input_validated[ 'social_pinterest' ] = esc_url_raw( $input[ 'social_pinterest' ] );
-	}	
-	if( isset( $input[ 'social_youtube' ] ) ) {
-		$input_validated[ 'social_youtube' ] = esc_url_raw( $input[ 'social_youtube' ] );
-	}
-	if( isset( $input[ 'social_vimeo' ] ) ) {
-		$input_validated[ 'social_vimeo' ] = esc_url_raw( $input[ 'social_vimeo' ] );
-	}	
-	if( isset( $input[ 'social_linkedin' ] ) ) {
-		$input_validated[ 'social_linkedin' ] = esc_url_raw( $input[ 'social_linkedin' ] );
-	}
-	if( isset( $input[ 'social_slideshare' ] ) ) {
-		$input_validated[ 'social_slideshare' ] = esc_url_raw( $input[ 'social_slideshare' ] );
-	}	
-	if( isset( $input[ 'social_foursquare' ] ) ) {
-		$input_validated[ 'social_foursquare' ] = esc_url_raw( $input[ 'social_foursquare' ] );
-	}
-	if( isset( $input[ 'social_flickr' ] ) ) {
-		$input_validated[ 'social_flickr' ] = esc_url_raw( $input[ 'social_flickr' ] );
-	}
-	if( isset( $input[ 'social_tumblr' ] ) ) {
-		$input_validated[ 'social_tumblr' ] = esc_url_raw( $input[ 'social_tumblr' ] );
-	}	
-	if( isset( $input[ 'social_deviantart' ] ) ) {
-		$input_validated[ 'social_deviantart' ] = esc_url_raw( $input[ 'social_deviantart' ] );
-	}
-	if( isset( $input[ 'social_dribbble' ] ) ) {
-		$input_validated[ 'social_dribbble' ] = esc_url_raw( $input[ 'social_dribbble' ] );
-	}	
-	if( isset( $input[ 'social_myspace' ] ) ) {
-		$input_validated[ 'social_myspace' ] = esc_url_raw( $input[ 'social_myspace' ] );
-	}
-	if( isset( $input[ 'social_wordpress' ] ) ) {
-		$input_validated[ 'social_wordpress' ] = esc_url_raw( $input[ 'social_wordpress' ] );
-	}	
-	if( isset( $input[ 'social_rss' ] ) ) {
-		$input_validated[ 'social_rss' ] = esc_url_raw( $input[ 'social_rss' ] );
-	}
-	if( isset( $input[ 'social_delicious' ] ) ) {
-		$input_validated[ 'social_delicious' ] = esc_url_raw( $input[ 'social_delicious' ] );
-	}	
-	if( isset( $input[ 'social_lastfm' ] ) ) {
-		$input_validated[ 'social_lastfm' ] = esc_url_raw( $input[ 'social_lastfm' ] );
-	}	
-	if( isset( $input[ 'social_instagram' ] ) ) {
-		$input_validated[ 'social_instagram' ] = esc_url_raw( $input[ 'social_instagram' ] );
-	}	
-	if( isset( $input[ 'social_github' ] ) ) {
-		$input_validated[ 'social_github' ] = esc_url_raw( $input[ 'social_github' ] );
-	}	
-	if( isset( $input[ 'social_vkontakte' ] ) ) {
-		$input_validated[ 'social_vkontakte' ] = esc_url_raw( $input[ 'social_vkontakte' ] );
-	}	
-	if( isset( $input[ 'social_myworld' ] ) ) {
-		$input_validated[ 'social_myworld' ] = esc_url_raw( $input[ 'social_myworld' ] );
-	}
-	if( isset( $input[ 'social_odnoklassniki' ] ) ) {
-		$input_validated[ 'social_odnoklassniki' ] = esc_url_raw( $input[ 'social_odnoklassniki' ] );
-	}	
-	if( isset( $input[ 'social_goodreads' ] ) ) {
-		$input_validated[ 'social_goodreads' ] = esc_url_raw( $input[ 'social_goodreads' ] );
-	}	
-	if( isset( $input[ 'social_skype' ] ) ) {
-		$input_validated[ 'social_skype' ] = sanitize_text_field( $input[ 'social_skype' ] );
-	}
-	if( isset( $input[ 'social_soundcloud' ] ) ) {
-		$input_validated[ 'social_soundcloud' ] = esc_url_raw( $input[ 'social_soundcloud' ] );
-	}	
-	if( isset( $input[ 'social_email' ] ) ) {
-		$input_validated[ 'social_email' ] = sanitize_email( $input[ 'social_email' ] );
-	}	
-	if( isset( $input[ 'social_contact' ] ) ) {
-		$input_validated[ 'social_contact' ] = esc_url_raw( $input[ 'social_contact' ] );
-	}	
-	if( isset( $input[ 'social_xing' ] ) ) {
-		$input_validated[ 'social_xing' ] = esc_url_raw( $input[ 'social_xing' ] );
-	}		
-		
-	//Webmaster Tool Verification
-	if( isset( $input[ 'google_verification' ] ) ) {
-		$input_validated[ 'google_verification' ] = wp_filter_post_kses( $input[ 'google_verification' ] );
-	}
-	if( isset( $input[ 'yahoo_verification' ] ) ) {
-		$input_validated[ 'yahoo_verification' ] = wp_filter_post_kses( $input[ 'yahoo_verification' ] );
-	}
-	if( isset( $input[ 'bing_verification' ] ) ) {
-		$input_validated[ 'bing_verification' ] = wp_filter_post_kses( $input[ 'bing_verification' ] );
-	}	
-	if( isset( $input[ 'analytic_header' ] ) ) {
-		$input_validated[ 'analytic_header' ] = wp_kses_stripslashes( $input[ 'analytic_header' ] );
-	}
-	if( isset( $input[ 'analytic_footer' ] ) ) {
-		$input_validated[ 'analytic_footer' ] = wp_kses_stripslashes( $input[ 'analytic_footer' ] );	
-	}		
-	
+    }   
+    
+    // data validation for Featured Post Slider
+    if ( isset( $input[ 'featured_slider' ] ) ) {
+        $input_validated[ 'featured_slider' ] = array();
+    }
+    if ( isset( $input[ 'slider_qty' ] ) )  {   
+        for ( $i = 1; $i <= $input [ 'slider_qty' ]; $i++ ) {
+            if ( !empty( $input[ 'featured_slider' ][ $i ] ) && intval( $input[ 'featured_slider' ][ $i ] ) ) {
+                $input_validated[ 'featured_slider' ][ $i ] = absint($input[ 'featured_slider' ][ $i ] );
+            }
+        }
+    }   
+    
+    
+    // data validation for Social Icons
+    if( isset( $input[ 'social_facebook' ] ) ) {
+        $input_validated[ 'social_facebook' ] = esc_url_raw( $input[ 'social_facebook' ] );
+    }
+    if( isset( $input[ 'social_twitter' ] ) ) {
+        $input_validated[ 'social_twitter' ] = esc_url_raw( $input[ 'social_twitter' ] );
+    }
+    if( isset( $input[ 'social_googleplus' ] ) ) {
+        $input_validated[ 'social_googleplus' ] = esc_url_raw( $input[ 'social_googleplus' ] );
+    }
+    if( isset( $input[ 'social_pinterest' ] ) ) {
+        $input_validated[ 'social_pinterest' ] = esc_url_raw( $input[ 'social_pinterest' ] );
+    }   
+    if( isset( $input[ 'social_youtube' ] ) ) {
+        $input_validated[ 'social_youtube' ] = esc_url_raw( $input[ 'social_youtube' ] );
+    }
+    if( isset( $input[ 'social_vimeo' ] ) ) {
+        $input_validated[ 'social_vimeo' ] = esc_url_raw( $input[ 'social_vimeo' ] );
+    }   
+    if( isset( $input[ 'social_linkedin' ] ) ) {
+        $input_validated[ 'social_linkedin' ] = esc_url_raw( $input[ 'social_linkedin' ] );
+    }
+    if( isset( $input[ 'social_slideshare' ] ) ) {
+        $input_validated[ 'social_slideshare' ] = esc_url_raw( $input[ 'social_slideshare' ] );
+    }   
+    if( isset( $input[ 'social_foursquare' ] ) ) {
+        $input_validated[ 'social_foursquare' ] = esc_url_raw( $input[ 'social_foursquare' ] );
+    }
+    if( isset( $input[ 'social_flickr' ] ) ) {
+        $input_validated[ 'social_flickr' ] = esc_url_raw( $input[ 'social_flickr' ] );
+    }
+    if( isset( $input[ 'social_tumblr' ] ) ) {
+        $input_validated[ 'social_tumblr' ] = esc_url_raw( $input[ 'social_tumblr' ] );
+    }   
+    if( isset( $input[ 'social_deviantart' ] ) ) {
+        $input_validated[ 'social_deviantart' ] = esc_url_raw( $input[ 'social_deviantart' ] );
+    }
+    if( isset( $input[ 'social_dribbble' ] ) ) {
+        $input_validated[ 'social_dribbble' ] = esc_url_raw( $input[ 'social_dribbble' ] );
+    }   
+    if( isset( $input[ 'social_myspace' ] ) ) {
+        $input_validated[ 'social_myspace' ] = esc_url_raw( $input[ 'social_myspace' ] );
+    }
+    if( isset( $input[ 'social_wordpress' ] ) ) {
+        $input_validated[ 'social_wordpress' ] = esc_url_raw( $input[ 'social_wordpress' ] );
+    }   
+    if( isset( $input[ 'social_rss' ] ) ) {
+        $input_validated[ 'social_rss' ] = esc_url_raw( $input[ 'social_rss' ] );
+    }
+    if( isset( $input[ 'social_delicious' ] ) ) {
+        $input_validated[ 'social_delicious' ] = esc_url_raw( $input[ 'social_delicious' ] );
+    }   
+    if( isset( $input[ 'social_lastfm' ] ) ) {
+        $input_validated[ 'social_lastfm' ] = esc_url_raw( $input[ 'social_lastfm' ] );
+    }   
+    if( isset( $input[ 'social_instagram' ] ) ) {
+        $input_validated[ 'social_instagram' ] = esc_url_raw( $input[ 'social_instagram' ] );
+    }   
+    if( isset( $input[ 'social_github' ] ) ) {
+        $input_validated[ 'social_github' ] = esc_url_raw( $input[ 'social_github' ] );
+    }   
+    if( isset( $input[ 'social_vkontakte' ] ) ) {
+        $input_validated[ 'social_vkontakte' ] = esc_url_raw( $input[ 'social_vkontakte' ] );
+    }   
+    if( isset( $input[ 'social_myworld' ] ) ) {
+        $input_validated[ 'social_myworld' ] = esc_url_raw( $input[ 'social_myworld' ] );
+    }
+    if( isset( $input[ 'social_odnoklassniki' ] ) ) {
+        $input_validated[ 'social_odnoklassniki' ] = esc_url_raw( $input[ 'social_odnoklassniki' ] );
+    }   
+    if( isset( $input[ 'social_goodreads' ] ) ) {
+        $input_validated[ 'social_goodreads' ] = esc_url_raw( $input[ 'social_goodreads' ] );
+    }   
+    if( isset( $input[ 'social_skype' ] ) ) {
+        $input_validated[ 'social_skype' ] = sanitize_text_field( $input[ 'social_skype' ] );
+    }
+    if( isset( $input[ 'social_soundcloud' ] ) ) {
+        $input_validated[ 'social_soundcloud' ] = esc_url_raw( $input[ 'social_soundcloud' ] );
+    }   
+    if( isset( $input[ 'social_email' ] ) ) {
+        $input_validated[ 'social_email' ] = sanitize_email( $input[ 'social_email' ] );
+    }   
+    if( isset( $input[ 'social_contact' ] ) ) {
+        $input_validated[ 'social_contact' ] = esc_url_raw( $input[ 'social_contact' ] );
+    }   
+    if( isset( $input[ 'social_xing' ] ) ) {
+        $input_validated[ 'social_xing' ] = esc_url_raw( $input[ 'social_xing' ] );
+    }       
+        
+    //Webmaster Tool Verification
+    if( isset( $input[ 'google_verification' ] ) ) {
+        $input_validated[ 'google_verification' ] = wp_filter_post_kses( $input[ 'google_verification' ] );
+    }
+    if( isset( $input[ 'yahoo_verification' ] ) ) {
+        $input_validated[ 'yahoo_verification' ] = wp_filter_post_kses( $input[ 'yahoo_verification' ] );
+    }
+    if( isset( $input[ 'bing_verification' ] ) ) {
+        $input_validated[ 'bing_verification' ] = wp_filter_post_kses( $input[ 'bing_verification' ] );
+    }   
+    if( isset( $input[ 'analytic_header' ] ) ) {
+        $input_validated[ 'analytic_header' ] = wp_kses_stripslashes( $input[ 'analytic_header' ] );
+    }
+    if( isset( $input[ 'analytic_footer' ] ) ) {
+        $input_validated[ 'analytic_footer' ] = wp_kses_stripslashes( $input[ 'analytic_footer' ] );    
+    }       
+    
     // Layout settings verification
-	if( isset( $input[ 'sidebar_layout' ] ) ) {
-		$input_validated[ 'sidebar_layout' ] = $input[ 'sidebar_layout' ];
-	}
-	if( isset( $input[ 'content_layout' ] ) ) {
-		$input_validated[ 'content_layout' ] = $input[ 'content_layout' ];
-	}
-	
+    if( isset( $input[ 'sidebar_layout' ] ) ) {
+        $input_validated[ 'sidebar_layout' ] = $input[ 'sidebar_layout' ];
+    }
+    if( isset( $input[ 'content_layout' ] ) ) {
+        $input_validated[ 'content_layout' ] = $input[ 'content_layout' ];
+    }
+    
     if( isset( $input[ 'more_tag_text' ] ) ) {
         $input_validated[ 'more_tag_text' ] = htmlentities( sanitize_text_field ( $input[ 'more_tag_text' ] ), ENT_QUOTES, 'UTF-8' );
     }   
@@ -1113,35 +1116,35 @@ function catcheverest_theme_options_validate( $options ) {
     if( isset( $input[ 'search_display_text' ] ) ) {
         $input_validated[ 'search_display_text' ] = sanitize_text_field( $input[ 'search_display_text' ] ) ? $input [ 'search_display_text' ] : $defaults[ 'search_display_text' ];
     }
-	
-	if ( isset( $input['reset_layout'] ) ) {
-		// Our checkbox value is either 0 or 1 
-		$input_validated[ 'reset_layout' ] = $input[ 'reset_layout' ];
-	}	
-	
-	//Reset Color Options
-	if( $input[ 'reset_layout' ] == 1 ) {
-		global $catcheverest_options_defaults;
-		$defaults = $catcheverest_options_defaults;
+    
+    if ( isset( $input['reset_layout'] ) ) {
+        // Our checkbox value is either 0 or 1 
+        $input_validated[ 'reset_layout' ] = $input[ 'reset_layout' ];
+    }   
+    
+    //Reset Color Options
+    if( $input[ 'reset_layout' ] == 1 ) {
+        global $catcheverest_options_defaults;
+        $defaults = $catcheverest_options_defaults;
 
-		$input_validated[ 'sidebar_layout' ] = $defaults[ 'sidebar_layout' ];
-		$input_validated[ 'content_layout' ] = $defaults[ 'content_layout' ];
-	}		
-	
+        $input_validated[ 'sidebar_layout' ] = $defaults[ 'sidebar_layout' ];
+        $input_validated[ 'content_layout' ] = $defaults[ 'content_layout' ];
+    }       
+    
     //data validation for excerpt length
     if ( isset( $input[ 'excerpt_length' ] ) ) {
         $input_validated[ 'excerpt_length' ] = absint( $input[ 'excerpt_length' ] ) ? $input [ 'excerpt_length' ] : $defaults[ 'excerpt_length' ];
     }
 
-	//Feed Redirect
-	if ( isset( $input[ 'feed_url' ] ) ) {
-		$input_validated['feed_url'] = esc_url_raw($input['feed_url']);
-	}
-	
-	//Clearing the theme option cache
-	if( function_exists( 'catcheverest_themeoption_invalidate_caches' ) ) catcheverest_themeoption_invalidate_caches();
-	
-	return $input_validated;
+    //Feed Redirect
+    if ( isset( $input[ 'feed_url' ] ) ) {
+        $input_validated['feed_url'] = esc_url_raw($input['feed_url']);
+    }
+    
+    //Clearing the theme option cache
+    if( function_exists( 'catcheverest_themeoption_invalidate_caches' ) ) catcheverest_themeoption_invalidate_caches();
+    
+    return $input_validated;
 }
 
 
@@ -1149,15 +1152,15 @@ function catcheverest_theme_options_validate( $options ) {
  * Clearing the cache if any changes in Admin Theme Option
  */
 function catcheverest_themeoption_invalidate_caches(){
-	delete_transient( 'catcheverest_favicon' );	  // favicon on cpanel/ backend and frontend
-	delete_transient( 'catcheverest_web_clip' ); // web clip icons
-	delete_transient( 'catcheverest_post_sliders' ); // featured post slider
-	delete_transient( 'catcheverest_homepage_headline' ); // Homepage Headline Message
-	delete_transient( 'catcheverest_homepage_featured_content' ); // Homepage Featured Content
-	delete_transient( 'catcheverest_social_networks' ); // Social Networks
-	delete_transient( 'catcheverest_webmaster' ); // scripts which loads on header	
-	delete_transient( 'catcheverest_footercode' ); // scripts which loads on footer
-	delete_transient( 'catcheverest_inline_css' ); // Custom Inline CSS
+    delete_transient( 'catcheverest_favicon' );   // favicon on cpanel/ backend and frontend
+    delete_transient( 'catcheverest_web_clip' ); // web clip icons
+    delete_transient( 'catcheverest_post_sliders' ); // featured post slider
+    delete_transient( 'catcheverest_homepage_headline' ); // Homepage Headline Message
+    delete_transient( 'catcheverest_homepage_featured_content' ); // Homepage Featured Content
+    delete_transient( 'catcheverest_social_networks' ); // Social Networks
+    delete_transient( 'catcheverest_webmaster' ); // scripts which loads on header  
+    delete_transient( 'catcheverest_footercode' ); // scripts which loads on footer
+    delete_transient( 'catcheverest_inline_css' ); // Custom Inline CSS
 }
 
 
@@ -1165,81 +1168,93 @@ function catcheverest_themeoption_invalidate_caches(){
  * Clearing the cache if any changes in post or page
  */
 function catcheverest_post_invalidate_caches(){
-	delete_transient( 'catcheverest_post_sliders' );
+    delete_transient( 'catcheverest_post_sliders' );
 }
 //Add action hook here save post
 add_action( 'save_post', 'catcheverest_post_invalidate_caches' );
 
 
 /**
- * Creates new shortcodes for use in any shortcode-ready area.  This function uses the add_shortcode() 
- * function to register new shortcodes with WordPress.
- *
- * @uses add_shortcode() to create new shortcodes.
- */
-function catcheverest_add_shortcodes() {
-	/* Add theme-specific shortcodes. */
-	add_shortcode( 'footer-image', 'catcheverest_footer_image_shortcode' );
-	add_shortcode( 'the-year', 'catcheverest_the_year_shortcode' );
-	add_shortcode( 'site-link', 'catcheverest_site_link_shortcode' );
-	add_shortcode( 'wp-link', 'catcheverest_wp_link_shortcode' );
-	add_shortcode( 'theme-link', 'catcheverest_theme_link_shortcode' );
-	
-}
-/* Register shortcodes. */
-add_action( 'init', 'catcheverest_add_shortcodes' );
-
-
-/**
- * Shortcode to display Footer Image.
+ * Function to display the current year.
  *
  * @uses date() Gets the current year.
  * @return string
  */
-function catcheverest_footer_image_shortcode() {
-	if( function_exists( 'catcheverest_footerlogo' ) ) :
-    	return catcheverest_footerlogo(); 
-    endif;
+function catcheverest_the_year() {
+    return date( __( 'Y', 'catcheverest' ) );
 }
 
 
 /**
- * Shortcode to display the current year.
- *
- * @uses date() Gets the current year.
- * @return string
- */
-function catcheverest_the_year_shortcode() {
-	return date( __( 'Y', 'catcheverest' ) );
-}
-
-
-/**
- * Shortcode to display a link back to the site.
+ * Function to display a link back to the site.
  *
  * @uses get_bloginfo() Gets the site link
  * @return string
  */
-function catcheverest_site_link_shortcode() {
-	return '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" ><span>' . get_bloginfo( 'name', 'display' ) . '</span></a>';
+function catcheverest_site_link() {
+    return '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" ><span>' . get_bloginfo( 'name', 'display' ) . '</span></a>';
 }
 
 
 /**
- * Shortcode to display a link to WordPress.org.
+ * Function to display a link to WordPress.org.
  *
  * @return string
  */
-function catcheverest_wp_link_shortcode() {
-	return '<a href="http://wordpress.org" target="_blank" title="' . esc_attr__( 'WordPress', 'catcheverest' ) . '"><span>' . __( 'WordPress', 'catcheverest' ) . '</span></a>';
+function catcheverest_wp_link() {
+    return '<a href="http://wordpress.org" target="_blank" title="' . esc_attr__( 'WordPress', 'catcheverest' ) . '"><span>' . __( 'WordPress', 'catcheverest' ) . '</span></a>';
 }
 
 
 /**
- * Shortcode to display a link to Theme Link.
+ * Function to display a link to Theme Link.
  *
  * @return string
  */
-function catcheverest_theme_link_shortcode() {
-	return '<a href="http://catchthemes.com/themes/catch-everest" target="_blank" title="' . esc_attr__( 'Catch Everest', 'catcheverest' ) . '"><span>' . __( 'Catch Everest', 'catcheverest' ) . '</span></a>';
+function catcheverest_theme_name() {
+    return '<span class="theme-name">' . __( 'Catch Everest Theme by ', 'catcheverest' ) . '</span>';    
 }
+/**
+ * Function to display a link to Theme Link.
+ *
+ * @return string
+ */
+function catcheverest_theme_author() {
+    
+    return '<span class="theme-author"><a href="' . esc_url( 'http://catchthemes.com/' ) . '" target="_blank" title="' . esc_attr__( 'Catch Themes', 'catcheverest' ) . '">' . __( 'Catch Themes', 'catcheverest' ) . '</a></span>';
+
+}
+
+
+/**
+ * Function to display Catch Everest assets
+ *
+ * @return string
+ */
+function catcheverest_assets(){
+    $catcheverest_content = '<div class="copyright">'. esc_attr__( 'Copyright', 'catcheverest' ) . ' &copy; '. catcheverest_the_year() . ' ' . catcheverest_site_link() . ' ' . esc_attr__( 'All Rights Reserved', 'catcheverest' ) . '.</div><div class="powered">'. catcheverest_theme_name() . catcheverest_theme_author() . '</div>';
+    return $catcheverest_content;
+}
+
+
+/**
+ * Custom scripts and styles on Customizer for Catch Everest
+ *
+ * @since Catch Everest 1.9
+ */
+function catcheverest_customize_scripts() {
+    wp_register_script( 'catcheverest_customizer_custom', get_template_directory_uri() . '/inc/panel/js/customizer-custom-scripts.js', array( 'jquery' ), '20140107', true );
+
+    $catcheverest_misc_links = array(
+                            'upgrade_link'              => esc_url( admin_url( 'themes.php?page=theme_options' ) ),
+                            'upgrade_text'              => __( 'More Theme Options &raquo;', 'catcheverest' ),
+                            );
+
+    //Add Upgrade Button and old WordPress message via localized script
+    wp_localize_script( 'catcheverest_customizer_custom', 'catcheverest_misc_links', $catcheverest_misc_links );
+
+    wp_enqueue_script( 'catcheverest_customizer_custom' );
+
+    wp_enqueue_style( 'catcheverest_customizer_custom', get_template_directory_uri() . '/inc/panel/catcheverest-customizer.css');
+}
+add_action( 'customize_controls_print_footer_scripts', 'catcheverest_customize_scripts');

@@ -7,6 +7,61 @@
  * @since Catch Everest 1.0
  */
 
+
+/**
+ * Set the content width based on the theme's design and stylesheet.
+ */
+if ( ! isset( $content_width ) ) {
+	$content_width = 690; /* pixels */
+}	
+
+
+if ( ! function_exists( 'catcheverest_content_width' ) ) :
+/**
+ * Change the content width based on the Theme Settings and Page/Post Settings
+ */
+function catcheverest_content_width() {
+	
+	//Getting Ready to load data from Theme Options Panel
+	global $post, $wp_query, $content_width, $catcheverest_options_settings;
+   	$options = $catcheverest_options_settings;
+	$themeoption_layout = $options['sidebar_layout'];
+	
+	// Front page displays in Reading Settings
+	$page_on_front = get_option('page_on_front') ;
+	$page_for_posts = get_option('page_for_posts'); 
+
+	// Get Page ID outside Loop
+	$page_id = $wp_query->get_queried_object_id();
+	
+	// Blog Page setting in Reading Settings
+	if ( $page_id == $page_for_posts ) {
+		$layout = get_post_meta( $page_for_posts,'catcheverest-sidebarlayout', true );
+	}	
+	// Settings for page/post/attachment
+	elseif ( $post) {
+ 		if ( is_attachment() ) { 
+			$parent = $post->post_parent;
+			$layout = get_post_meta( $parent,'catcheverest-sidebarlayout', true );
+		} else {
+			$layout = get_post_meta( $post->ID,'catcheverest-sidebarlayout', true ); 
+		}
+	}
+	
+	if ( empty( $layout ) || ( !is_page() && !is_single() ) ) {
+		$layout='default';
+	}	
+
+	if( ( $layout == 'no-sidebar-full-width' || ( $layout=='default' && $themeoption_layout == 'no-sidebar-full-width') ) ) {
+		$content_width = 1040; /* pixels */	
+	}
+	
+}
+endif; // catcheverest_content_width
+
+add_action( 'template_redirect', 'catcheverest_content_width' );
+
+
 if ( ! function_exists( 'catcheverest_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -19,13 +74,6 @@ if ( ! function_exists( 'catcheverest_setup' ) ) :
  */
 function catcheverest_setup() {
 	
-	global $content_width;
-	/**
-	 * Global content width.
-	 */
-	 if (!isset($content_width))
-     	$content_width = 690;
-				
 	/**
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
@@ -44,7 +92,15 @@ function catcheverest_setup() {
 	 * Add default posts and comments RSS feed links to head
 	 */
 	add_theme_support( 'automatic-feed-links' );	
-	
+
+	/*
+	* Let WordPress manage the document title.
+	* By adding theme support, we declare that this theme does not use a
+	* hard-coded <title> tag in the document head, and expect WordPress to
+	* provide it for us.
+	*/
+	add_theme_support( 'title-tag' );
+		
 	/**
 	 * Theme Options Defaults
 	 */	

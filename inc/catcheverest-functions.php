@@ -28,7 +28,7 @@ function catcheverest_scripts() {
 	/**
 	 * Loads up main stylesheet.
 	 */
-	wp_enqueue_style( 'style', get_stylesheet_uri() );
+	wp_enqueue_style( 'catcheverest-style', get_stylesheet_uri() );
 	
 	/**
 	 * Add Genericons font, used in the main stylesheet.
@@ -161,32 +161,55 @@ function catcheverest_wp_page_menu ($page_markup) {
 add_filter('wp_page_menu', 'catcheverest_wp_page_menu');
 
 
-/**
- * Filters wp_title to print a neat <title> tag based on what is being viewed.
- *
- * @since Catch Everest 1.0
- */
-function catcheverest_wp_title( $title, $sep ) {
-	global $page, $paged;
-
-	if ( is_feed() )
+if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
+	/**
+	* Filters wp_title to print a neat <title> tag based on what is being viewed.
+	*
+	* @param string $title Default title text for current view.
+	* @param string $sep Optional separator.
+	* @return string The filtered title.
+	*/
+	function catcheverest_wp_title( $title, $sep ) {
+		if ( is_feed() ) {
+			return $title;
+		}
+		
+		global $page, $paged;
+		
+		// Add the blog name
+		$title .= get_bloginfo( 'name', 'display' );
+		
+		// Add the blog description for the home/front page.
+		$site_description = get_bloginfo( 'description', 'display' );
+		
+		if ( $site_description && ( is_home() || is_front_page() ) ) {
+			$title .= " $sep $site_description";
+		}
+		
+		// Add a page number if necessary:
+		if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
+			$title .= " $sep " . sprintf( __( 'Page %s', '_s' ), max( $paged, $page ) );
+		}
+		
 		return $title;
-
-	// Add the blog name
-	$title .= get_bloginfo( 'name' );
-
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
-
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'responsive' ), max( $paged, $page ) );
-
-	return $title;
-}
-add_filter( 'wp_title', 'catcheverest_wp_title', 10, 2 );
+		
+	}
+		
+	add_filter( 'wp_title', 'catcheverest_wp_title', 10, 2 );
+	
+	/**
+	* Title shim for sites older than WordPress 4.1.
+	*
+	* @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
+	* @todo Remove this function when WordPress 4.3 is released.
+	*/
+	function catcheverest_render_title() {
+	?>
+		<title><?php wp_title( '&#124;', true, 'right' ); ?></title>
+	<?php
+	}
+	add_action( 'wp_head', 'catcheverest_render_title' );
+endif;
 
 
 /**
@@ -978,24 +1001,19 @@ function catcheverest_footer_sidebar_class() {
 
 
 /**
- * shows footer content
+ * Function for footer content
  */
 function catcheverest_footer_content() { 
-	//delete_transient( 'catcheverest_footer_content' );	
+	//delete_transient( 'catcheverest_footer_content_new' );	
 	
-	if ( ( !$catcheverest_footer_content = get_transient( 'catcheverest_footer_content' ) ) ) {
+	if ( ( !$catcheverest_footer_content = get_transient( 'catcheverest_footer_content_new' ) ) ) {
 		echo '<!-- refreshing cache -->';
 		
-		// get the data value from theme options
-		global $catcheverest_options_settings;
-   	 	$options = $catcheverest_options_settings;
+		$catcheverest_footer_content = catcheverest_assets();
 		
-       // $catcheverest_footer_content = $options[ 'footer_code' ];
-		$catcheverest_footer_content = '<div class="copyright">'. esc_attr__( 'Copyright', 'catcheverest' ) . ' &copy; [the-year] <span>[site-link]</span>. '. esc_attr__( 'All Rights Reserved', 'catcheverest' ) . '.</div><div class="powered">'. esc_attr__( 'Powered by', 'catcheverest' ) . ': [wp-link] | '. esc_attr__( 'Theme', 'catcheverest' ) . ': [theme-link]</div>';
-		
-    	set_transient( 'catcheverest_footer_content', $catcheverest_footer_content, 86940 );
+    	set_transient( 'catcheverest_footer_content_new', $catcheverest_footer_content, 86940 );
     }
-	echo do_shortcode( $catcheverest_footer_content );
+	echo $catcheverest_footer_content;
 }
 add_action( 'catcheverest_site_generator', 'catcheverest_footer_content', 10 );
 

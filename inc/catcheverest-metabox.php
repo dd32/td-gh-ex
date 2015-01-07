@@ -30,7 +30,7 @@ $sidebar_layout = array(
 		 'default-sidebar' => array(
             			'id'		=> 'catcheverest-sidebarlayout',
 						'value' 	=> 'default',
-						'label' 	=> __( 'Default Layout Set in', 'catcheverest' ).' <a href="'.get_bloginfo('url').'/wp-admin/themes.php?page=theme_options" target="_blank">'. __( 'Theme Settings', 'catcheverest' ).'</a>',
+						'label' 	=> __( 'Default Layout Set in', 'catcheverest' ).' <a href="' . admin_url('themes.php?page=theme_options') . '" target="_blank">'. __( 'Theme Settings', 'catcheverest' ).'</a>',
 						'thumbnail' => ' '
         			),
        'right-sidebar' => array(
