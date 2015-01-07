@@ -1,5 +1,10 @@
 # Storefront Changelog
 
+### *2015.01.07* - 1.2.3
+* **Fix** - Button border in WooCommerce messages when using the Storefront Designer extension.
+* **Tweak** - Stock icon.
+* **Dev** - Grid system now powered by Susy.
+
 ### *2015.01.05* - 1.2.2
 * **Fix** - Hidden publish date on single post.
 * **Fix** - Order details color.
