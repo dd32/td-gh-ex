@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.0.2 - January 07, 2015 =
+* jQuery enqueue removed - Thanks to @karmatosed for the valuable knowledge.
+
 = 1.0.1 - January 06, 2015 =
 * Hard-coded <title> tag in the document head removed by adding theme support, and expect WordPress to provide it for us.
 * Readme file (readme.txt) updated.

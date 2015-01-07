@@ -101,9 +101,6 @@ function aileron_scripts() {
 	 * Enqueue JS files
 	 */
 
-	// jQuery
-	wp_enqueue_script( 'jquery' );
-
 	// Modernizr
 	wp_enqueue_script( 'aileron-modernizr', get_template_directory_uri() . '/js/modernizr.js', array( 'jquery' ), '2.7.1', true );
 
