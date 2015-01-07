@@ -66,7 +66,6 @@ Font license info
    Homepage:  http://aristeides.com/
  
  
- 
  Javascript License Info
  
  ## Sidr - v1.2.1 - 2013-11-06

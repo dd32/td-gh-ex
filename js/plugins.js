@@ -238,7 +238,9 @@ debounce=setTimeout(resizer,settings.debounceTimeout)});$this.find("img").load(r
 		
 		/* Vertical Header Element Alignment */
 		$('.headerelements').flexVerticalCenter({ cssAttribute: 'padding-top' });
-			 	
+		
+		/* Show Iconmenu elements only with icon class */
+		$("#iconmenu li[class^=icon]").show();
 		
 		/* Sidr */	
 		$('.menu-trigger').sidr();

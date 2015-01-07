@@ -6,17 +6,12 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
-<meta name="p:domain_verify" content="1b7f0ffe7012017c9a28777a6c1c7698"/>
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php wp_head(); ?>
 </head>
 <body <?php body_class('bg'); ?>>
-
-
-
-
 
 	<header id="navigation" >
 		<ul id="iconstopleft" class="headerelements">

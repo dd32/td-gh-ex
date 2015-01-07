@@ -1,5 +1,6 @@
 
-			<div id="comments" class="boxes">
+			<div id="comments" class="container_16 containermargin">
+				<div class="grid_16">
 <?php if ( post_password_required() ) : ?>
 				<div class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'richwp' ); ?></div>
 			</div><!-- .comments -->
@@ -46,5 +47,5 @@
 <?php endif; ?>
 
 <?php  comment_form(); ?>
-
+			</div>
 </div><!-- #comments -->

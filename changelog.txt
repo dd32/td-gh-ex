@@ -10,3 +10,4 @@ V1.0.4 - 2015-01-05 Change Next / Previous Post Buttons, Top Menu Removed, Updat
 					- Top widget made none repeatable in post lists - advertising banner can not be repeated anymore - to change back, move <?php get_sidebar ( 'top' ); ?> in index.php, category.php, tag.php, search.php author.php archive.php two lines down into #contentcontainer div.
 					- Fly Out Menu layout issues can not be recreated (Theme Unit Tests being used, see screenshot), please communicate.
 V1.0.5 - 2015-01-05 Clean up functions.php
+V1.0.6 - 2015-01-07 Remove unused meta tag, New Screenshot, Icon Menu Elements will only be shown if icon-* css classes have been set up, Comment Container Fix

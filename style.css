@@ -4,7 +4,7 @@ Theme URI: http://richwp.com/themes/minimumminimal/
 Author: Felix Krusch
 Author URI: http://RichWP.com
 Description: Minimum Minimal live demo: http://demo.richwp.com/minimumminimal/
-Version: 1.0.5
+Version: 1.0.6
 Tags: featured-images, custom-menu, threaded-comments, translation-ready, theme-options, post-formats, sticky-post
 
 License: GNU General Public License v2 or later
@@ -162,6 +162,7 @@ ul#iconstopleft li:hover{color:#000;}
 .icon-vimeo:before { content: '\e812'; } /* '' */
 .icon-soundcloud:before { content: '\e815'; } /* '' */
 .icon-xing:before { content: '\e817'; } /* '' */
+#iconmenu li{display:none;}
 [class^="icon-"] a, [class*=" icon-"] a{text-indent: -9999px; display: inline-block; position:absolute; left:0; top:0; width:1.7em; height:2.5em;}
 .icon-picture-2:before , .icon-play-circled2:before , .icon-volume:before , .icon-picture:before , .icon-chat:before, .icon-alert:before {font-size: 0.9em; margin-right:7px;}
 .icon-comment-alt:before {font-size: 0.8em; color: #95a5a6;}
