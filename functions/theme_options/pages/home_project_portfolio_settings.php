@@ -40,21 +40,21 @@
 			$portfolio_image = WEBRITI_TEMPLATE_DIR_URI . "/images/portfolio.jpg";
 			$current_options['portfolio_section_enabled'] = 'on';
 			
-			$current_options['portfolio_title_one'] => __('Wall Street Style','wallstreet'),
-			$current_options['portfolio_description_one'] => __('A wonderful serenity has taken possession of my entire soul, like these sweet mornings.','wallstreet'),
-			$current_options['portfolio_image_one'] => $portfolio_image,
+			$current_options['portfolio_title_one'] = __('Wall Street Style','wallstreet');
+			$current_options['portfolio_description_one'] = __('A wonderful serenity has taken possession of my entire soul, like these sweet mornings.','wallstreet');
+			$current_options['portfolio_image_one'] = $portfolio_image;
 			
-			$current_options['portfolio_title_two'] => __('Wall Street Style','wallstreet'),
-			$current_options['portfolio_description_two'] => __('A wonderful serenity has taken possession of my entire soul, like these sweet mornings.','wallstreet'),
-			$current_options['portfolio_image_two'] => $portfolio_image,
+			$current_options['portfolio_title_two'] = __('Wall Street Style','wallstreet');
+			$current_options['portfolio_description_two'] = __('A wonderful serenity has taken possession of my entire soul, like these sweet mornings.','wallstreet');
+			$current_options['portfolio_image_two'] = $portfolio_image;
 			
-			$current_options['portfolio_title_three'] => __('Wall Street Style','wallstreet'),
-			$current_options['portfolio_description_three'] => __('A wonderful serenity has taken possession of my entire soul, like these sweet mornings.','wallstreet'),
-			$current_options['portfolio_image_three'] => $portfolio_image,
+			$current_options['portfolio_title_three'] = __('Wall Street Style','wallstreet');
+			$current_options['portfolio_description_three'] = __('A wonderful serenity has taken possession of my entire soul, like these sweet mornings.','wallstreet');
+			$current_options['portfolio_image_three'] = $portfolio_image;
 			
-			$current_options['portfolio_title_four'] => __('Wall Street Style','wallstreet'),
-			$current_options['portfolio_description_four'] => __('A wonderful serenity has taken possession of my entire soul, like these sweet mornings.','wallstreet'),
-			$current_options['portfolio_image_four'] => $portfolio_image,
+			$current_options['portfolio_title_four'] = __('Wall Street Style','wallstreet');
+			$current_options['portfolio_description_four'] = __('A wonderful serenity has taken possession of my entire soul, like these sweet mornings.','wallstreet');
+			$current_options['portfolio_image_four'] = $portfolio_image;
 			
 			
 			update_option('wallstreet_lite_options',$current_options);
