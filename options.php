@@ -306,7 +306,7 @@ function optionscheck_display_sidebar() { ?>
             <h3><?php echo __('Upgrade to premium', "base"); ?></h3>
                 <div class="inside">
                     <p><?php echo __('Upgrade to the premium version to get access to advanced options and priority support.', "base"); ?></p>
-                    <a title="Upgrade to premium version" href="http://themes.iografica.it/downloads/base-wp-premium/" target="_blank">
+                    <a title="Upgrade to premium version" href="http://www.iograficathemes.com/downloads/base-wp-premium/" target="_blank">
                     <span class="upgrade-button">Upgrade to premium</span>
                     </a>
 					<p><?php echo __('We offer a 7 day full refund if you are not happy with your purchase.',  "base"); ?></p>
@@ -314,7 +314,7 @@ function optionscheck_display_sidebar() { ?>
         </div>
          <div class="inside">
                     <h3><?php echo __('Iografica Themes', "base"); ?></h3>
-                    <a title="Facebook" href="https://www.facebook.com/themes.iografica" target="_blank">
+                    <a title="Facebook" href="https://www.facebook.com/iograficathemes" target="_blank">
                     <span class="facebook"><?php echo __('Facebook', "base"); ?></span>
                     </a>
                     <?php echo __(' | ', "base"); ?>
@@ -322,12 +322,12 @@ function optionscheck_display_sidebar() { ?>
                     <span class="twitter"><?php echo __('Twitter', "base"); ?></span>
                     </a>
                     <?php echo __(' | ', "base"); ?>
-					<a title="Iografica Themes" href="http://themes.iografica.it/" target="_blank">
-                    <span class="website"><?php echo __('Website', "base"); ?></span>
+					<a title="Google Plus" href="http://plus.google.com/111064256285067685536" target="_blank">
+                    <span class="website"><?php echo __('Google Plus', "base"); ?></span>
                     </a>
                     <?php echo __(' | ', "base"); ?>
-					<a title="Themes Showcase" href="http://themes.iografica.it/showcase-submit/" target="_blank">
-                    <span class="website"><?php echo __('Showcase', "base"); ?></span>
+					<a title="Iografica Themes" href="http://www.iograficathemes.com" target="_blank">
+                    <span class="website"><?php echo __('Website', "base"); ?></span>
                     </a>
 					<p><?php echo __('Sign up to our newsletter and get a discount coupon.',  "base"); ?></p>
                     <div id="mc_embed_signup">

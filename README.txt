@@ -97,3 +97,9 @@ Screenshot images are licensed under Creative Commons Deed CC0.
 * Add attribution for option framework.
 * Fix theme homepage.
 * Change readme in txt format.
+
+== 1.24 ==
+* Minor bug fix
+* Change get_stylesheet_directory_uri() to get_template_directory_uri() for sticky-nav.js
+* Add style for quote and chat post format
+* Fix author website link

@@ -1,10 +1,10 @@
 /*
 Theme Name: Base WP
-Theme URI: http://themes.iografica.it/downloads/base-wp/
+Theme URI: http://www.iograficathemes.com/downloads/base-wp/
 Author: iografica
-Author URI: http://themes.iografica.it/
-Description: Base WP is a basic blog or business WordPress theme, based on undescores with integration of skeleton 960 grid. Base WP is WooCommerce compatible, multilingual ready, RTL-Language support, retina-ready, SEO friendly and cross-browser compatible. For other themes and plugin or for support and documentation visit our website (http://themes.iografica.it).
-Version: 1.23
+Author URI: http://www.iograficathemes.com/
+Description: Base WP is a basic blog or business WordPress theme, based on undescores with integration of skeleton 960 grid. Base WP is WooCommerce compatible, multilingual ready, RTL-Language support, retina-ready, SEO friendly and cross-browser compatible. For other themes and plugin or for support and documentation visit our website (http://www.iograficathemes.com).
+Version: 1.24
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: base
@@ -160,7 +160,9 @@ dfn, cite, em, i {
 	font-style: italic;
 }
 blockquote {
-	margin: 0 1.5em;
+	padding: 1.5em 0 .1em 1.5em;
+    border-left: 4px solid #dedede;
+    background: #fafafa;
 }
 address {
 	margin: 0 0 1.5em;
@@ -789,6 +791,13 @@ b.fn{
 .sitemap li {
 	padding:2px 0;
 	}
+/* Post format */
+.format-chat .entry-content {
+	padding:1.5em;
+    background: #f6f6f6;
+    border-left: 4px solid #dedede;
+	}
+
 /*--------------------------------------------------------------
 10.2 Asides
 --------------------------------------------------------------*/
