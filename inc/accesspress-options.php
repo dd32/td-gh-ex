@@ -166,7 +166,7 @@ function optionsframework_options() {
 		'type' => 'checkbox');
 
 	$options[] = array(
-		'name' => __('Enable Animation', 'accesspress_parallax'),
+		'name' => __('Enable Animation on scroll', 'accesspress_parallax'),
 		'desc' => __('Check To enable', 'accesspress_parallax'),
 		'id' => 'enable_animation',
 		'std' => '1',

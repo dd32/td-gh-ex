@@ -89,6 +89,10 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.13
+* Div with clearfix class added in service section to prevent misalignment
+* Overlapping of Heading with date in the blog/archive page fixed
+
 Version 1.11
 * Smooth Scroll Js added for smooth scrolling in Chrome
 * ScreenShot Changed

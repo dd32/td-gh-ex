@@ -39,7 +39,7 @@
 		</div>
 
 		<?php 
-		if($service_class == "even"): ?>
+		if($count_service % 2 == 0): ?>
 			<div class="clearfix"></div>
 		<?php endif;
 		?>
