@@ -1,5 +1,9 @@
 == Changelog ==
 
+Version 1.1
+* Fix duplicate title (Backward compatibility of title-tag)
+* Remove background color of text widget
+
 Version 1.0.9
 * Add `title-tag` support
 * Setttings API is fully implemented for theme options

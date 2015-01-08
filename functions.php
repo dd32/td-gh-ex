@@ -44,6 +44,7 @@ function blue_planet_setup() {
 
     // Add support for title tag
     add_theme_support( "title-tag" );
+
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 */
@@ -167,8 +168,6 @@ if ( ! function_exists( 'blue_planet_scripts' ) ):
           wp_enqueue_style( 'nivo-slider-style-theme', get_template_directory_uri().'/thirdparty/nivoslider/themes/default/default.css', false ,'3.2' );
           wp_enqueue_script('nivo-slider-script',get_template_directory_uri().'/thirdparty/nivoslider/jquery.nivo.slider.pack.js', array('jquery'),'3.2', TRUE);
 
-
-
       }
 
       //meanmenu
@@ -190,9 +189,10 @@ add_action( 'wp_enqueue_scripts', 'blue_planet_scripts' );
  */
 require get_template_directory() . '/inc/custom-header.php';
 
-
+/**
+ * Include custom theme functions.
+ */
 require get_template_directory() . '/inc/theme-custom.php';
-
 
 /**
  * Custom template tags for this theme.
@@ -209,6 +209,12 @@ require get_template_directory() . '/inc/extras.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+/**
+ * Setup for theme options.
+ */
 require get_template_directory() . '/admin/setup.php';
 
+/**
+ * Load Theme Widgets.
+ */
 require get_template_directory() . '/inc/widgets.php';
