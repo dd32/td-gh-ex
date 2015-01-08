@@ -299,20 +299,13 @@ if ( function_exists( 'dsq_options' ) ) {
     add_filter( 'comments_template', 'dsq_comments_template', 99 ); // You can use any priority higher than '10'
 }
 
-// list social media sites
-function ct_unlimited_social_site_list(){
-
-    $social_sites = array('twitter', 'facebook', 'google-plus', 'flickr', 'pinterest', 'youtube', 'vimeo', 'tumblr', 'dribbble', 'rss', 'linkedin', 'instagram', 'reddit', 'soundcloud', 'spotify', 'vine','yahoo', 'behance', 'codepen', 'delicious', 'stumbleupon', 'deviantart', 'digg', 'github', 'hacker-news', 'steam', 'vk', 'weibo', 'tencent-weibo', 'email' );
-    return $social_sites;
-}
-
 // associative array of social media sites
 function ct_unlimited_social_array(){
 
 	$social_sites = array(
 		'twitter' => 'unlimited_twitter_profile',
 		'facebook' => 'unlimited_facebook_profile',
-		'googleplus' => 'unlimited_googleplus_profile',
+		'google-plus' => 'unlimited_google_plus_profile',
 		'pinterest' => 'unlimited_pinterest_profile',
 		'linkedin' => 'unlimited_linkedin_profile',
 		'youtube' => 'unlimited_youtube_profile',
@@ -344,23 +337,36 @@ function ct_unlimited_social_array(){
 	return $social_sites;
 }
 
+// used in ct_unlimited_social_icons_output to return urls
+function ct_unlimited_get_social_url($source, $site){
+
+	if( $source == 'header' ) {
+		return get_theme_mod($site);
+	} elseif( $source == 'author' ) {
+		return get_the_author_meta($site);
+	}
+}
+
+// output social icons
 if( ! function_exists('ct_unlimited_social_icons_output') ) {
 	function ct_unlimited_social_icons_output($source) {
 
-		if( $source == 'header' ) {
-			$social_sites = ct_unlimited_social_site_list();
-			foreach ( $social_sites as $social_site ) {
+		// get social sites array
+		$social_sites = ct_unlimited_social_array();
+
+		// store the site name and url
+		foreach ( $social_sites as $social_site => $profile ) {
+
+			if( $source == 'header') {
 
 				if ( strlen( get_theme_mod( $social_site ) ) > 0 ) {
-					$active_sites[] = $social_site;
+					$active_sites[$social_site] = $social_site;
 				}
 			}
-		} elseif( $source == 'author' ) {
-			$social_sites = ct_unlimited_social_array();
-			foreach ( $social_sites as $key => $social_site ) {
+			elseif( $source == 'author' ) {
 
-				if ( strlen( get_the_author_meta( $social_site ) ) > 0 ) {
-					$active_sites[] = $key;
+				if ( strlen( get_the_author_meta( $profile ) ) > 0 ) {
+					$active_sites[$profile] = $social_site;
 				}
 			}
 		}
@@ -370,26 +376,26 @@ if( ! function_exists('ct_unlimited_social_icons_output') ) {
 
 			echo "<ul class='social-media-icons'>";
 
-			foreach ( $active_sites as $active_site ) {
+			foreach ( $active_sites as $key => $active_site ) {
 
 				if ( $active_site == 'email' ) {
 					?>
 					<li>
-						<a class="email" target="_blank" href="mailto:<?php echo antispambot( is_email( get_theme_mod( $active_site ) ) ); ?>">
+						<a class="email" target="_blank" href="mailto:<?php echo antispambot( is_email( ct_unlimited_get_social_url( $source, $key ) ) ); ?>">
 							<span class="screen-reader-text">email icon</span>
 							<i class="fa fa-envelope"></i>
 						</a>
 					</li>
 				<?php } elseif ( $active_site == "flickr" || $active_site == "dribbble" || $active_site == "instagram" || $active_site == "soundcloud" || $active_site == "spotify" || $active_site == "vine" || $active_site == "yahoo" || $active_site == "codepen" || $active_site == "delicious" || $active_site == "stumbleupon" || $active_site == "deviantart" || $active_site == "digg" || $active_site == "hacker-news" || $active_site == "vk" || $active_site == 'weibo' || $active_site == 'tencent-weibo' ) { ?>
 					<li>
-						<a class="<?php echo $active_site; ?>" target="_blank" href="<?php echo esc_url( get_theme_mod( $active_site ) ); ?>">
+						<a class="<?php echo $active_site; ?>" target="_blank" href="<?php echo esc_url( ct_unlimited_get_social_url( $source, $key ) ); ?>">
 							<span class="screen-reader-text"><?php echo $active_site; ?> icon</span>
 							<i class="fa fa-<?php echo esc_attr( $active_site ); ?>"></i>
 						</a>
 					</li>
 				<?php } else { ?>
 					<li>
-						<a class="<?php echo $active_site; ?>" target="_blank" href="<?php echo esc_url( get_theme_mod( $active_site ) ); ?>">
+						<a class="<?php echo $active_site; ?>" target="_blank" href="<?php echo esc_url( ct_unlimited_get_social_url( $source, $key ) ); ?>">
 							<span class="screen-reader-text"><?php echo $active_site; ?> icon</span>
 							<i class="fa fa-<?php echo esc_attr( $active_site ); ?>-square"></i>
 						</a>
@@ -398,8 +404,6 @@ if( ! function_exists('ct_unlimited_social_icons_output') ) {
 				}
 			}
 			echo "</ul>";
-		} else {
-			return "empty";
 		}
 	}
 }

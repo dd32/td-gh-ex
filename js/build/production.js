@@ -174,7 +174,7 @@ jQuery(document).ready(function($){
     // get height of primary menu
     function calculateMenuHeight() {
 
-        if( $('#menu-primary-items').length > 0 ) {
+        if( $('#menu-primary-items').length ) {
             var menuHeight = $('#menu-primary-items').height();
         } else {
             var menuHeight = $('.menu-unset').height();
@@ -226,6 +226,9 @@ jQuery(document).ready(function($){
                 // add an open class
                 $(this).addClass('open');
 
+                // remove 'closed' class to enable link
+                $(this).removeClass('closed');
+
                 // get the submenu
                 var submenu = $(this).children('ul');
 
@@ -237,11 +240,8 @@ jQuery(document).ready(function($){
                     submenuHeight = submenuHeight + $(this).height();
                 });
 
-                // set new max-height to open submenu
+                // set ul max-height to the height of all it's children li
                 submenu.css('max-height', submenuHeight);
-
-                // remove 'closed' class to enable link
-                $(this).removeClass('closed');
 
                 var listItem = $(this);
 
@@ -255,7 +255,7 @@ jQuery(document).ready(function($){
                 parentList.css('max-height', parseInt(parentListHeight + submenuHeight));
 
                 // only open the primary menu if clicked menu item is in primary menu
-                if( $(this).parent().hasClass('menu-primary-items') || $(this).parent().hasClass('menu-unset') ) {
+                if( $(this).parents().hasClass('menu-primary-items') || $(this).parents().hasClass('menu-unset') ) {
 
                     // just needs long enough for the 0.15s animation fo play out
                     setTimeout(function () {
