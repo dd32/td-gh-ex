@@ -5,29 +5,9 @@
  * @package electa
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.1' );
+define( 'KAIRA_THEME_VERSION' , '1.1.10' );
 
-// Adding the Redux Framework
-if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/framework/ReduxCore/framework.php' ) ) {
-    require_once( dirname( __FILE__ ) . '/framework/ReduxCore/framework.php' );
-}
-if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/framework/cx-config.php' ) ) {
-    require_once( dirname( __FILE__ ) . '/framework/cx-config.php' );
-}
-
-global $cx_framework_options;
-
-// Include Electa Widgets
-include get_template_directory() . '/includes/widgets.php';
-
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */
-}
-
-if ( ! function_exists( 'electa_setup' ) ) :
+if ( ! function_exists( 'kaira_setup_theme' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -35,7 +15,15 @@ if ( ! function_exists( 'electa_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function electa_setup() {
+function kaira_setup_theme() {
+    
+    /**
+     * Set the content width based on the theme's design and stylesheet.
+     */
+    global $content_width;
+    if ( ! isset( $content_width ) ) {
+        $content_width = 900; /* pixels */
+    }
 
 	/*
 	 * Make theme available for translation.
@@ -60,10 +48,10 @@ function electa_setup() {
     
     // The custom header is used for the logo
     add_theme_support('custom-header', array(
-        'default-image' => get_template_directory_uri() . '/images/electa_logo.png',
-        'width'         => 300,
-        'height'        => 110,
-        'flex-width' => true,
+        'default-image' => '',
+        'width'         => 250,
+        'height'        => 180,
+        'flex-width' => false,
         'flex-height' => true,
         'header-text' => false,
     ));
@@ -97,15 +85,15 @@ function electa_setup() {
     
     add_theme_support( 'woocommerce' );
 }
-endif; // electa_setup
-add_action( 'after_setup_theme', 'electa_setup' );
+endif; // kaira_setup_theme
+add_action( 'after_setup_theme', 'kaira_setup_theme' );
 
 /**
  * Register widget area.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
-function electa_widgets_init() {
+function kaira_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'electa' ),
 		'id'            => 'sidebar-1',
@@ -115,27 +103,27 @@ function electa_widgets_init() {
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
-    
-    register_widget( 'electa_carousel' );
-    register_widget( 'electa_icon' );
 }
-add_action( 'widgets_init', 'electa_widgets_init' );
+add_action( 'widgets_init', 'kaira_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function electa_scripts() {
-    global $cx_framework_options;
-    
+function kaira_scripts() {
+    if( !get_theme_mod( 'kra-body-font', false ) ) {
+        wp_enqueue_style( 'albar-google-body-font-default', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic', array(), KAIRA_THEME_VERSION );
+    }
+    if( !get_theme_mod( 'kra-heading-font', false ) ) {
+        wp_enqueue_style( 'albar-google-heading-font-default', '//fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic', array(), KAIRA_THEME_VERSION );
+    }
     wp_enqueue_style( 'electa-fontawesome', get_template_directory_uri() . '/includes/font-awesome/css/font-awesome.css', array(), '4.0.3' );
 	wp_enqueue_style( 'electa-style', get_stylesheet_uri(), array(), KAIRA_THEME_VERSION );
 
 	wp_enqueue_script( 'electa-navigation', get_template_directory_uri() . '/js/navigation.js', array(), KAIRA_THEME_VERSION, true );
-    wp_enqueue_script( 'electa-caroufredSel', get_template_directory_uri() . '/js/jquery.carouFredSel-6.2.1-packed.js', array('jquery'), KAIRA_THEME_VERSION, true );
     
-    if ( ( ( is_front_page() ) && ( ( $cx_framework_options['cx-options-home-blocks'] == 1 ) ) ) || ( is_home() ) && ( $cx_framework_options['cx-options-blog-blocks'] == 1 ) ) {
-        wp_enqueue_script( 'electa-isotope', get_template_directory_uri() . '/js/isotope.min.js', array(), KAIRA_THEME_VERSION, true );
-        wp_enqueue_script( 'electa-layout-blocks-js', get_template_directory_uri() . '/js/layout-blocks.js', array('jquery'), KAIRA_THEME_VERSION, true );
+    if ( ( ( is_front_page() ) && ( ( get_theme_mod( 'kra-home-blocks-layout' ) == 1 ) ) ) || ( is_home() ) && ( get_theme_mod( 'kra-blog-blocks-layout' ) == 1 ) ) {
+        wp_enqueue_script( 'jquery-masonry' );
+        wp_enqueue_script( 'electa-masonry-custom', get_template_directory_uri() . '/js/layout-blocks.js', array('jquery'), KAIRA_THEME_VERSION, true );
     }
     
     wp_enqueue_script( 'electa-customjs', get_template_directory_uri() . '/js/custom.js', array('jquery'), KAIRA_THEME_VERSION, true );
@@ -146,80 +134,22 @@ function electa_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'electa_scripts' );
-
-/**
- * Enqueue electa admin stylesheet.
- */
-function load_electa_wp_admin_style() {
-    wp_enqueue_style( 'electa-admin-css', get_template_directory_uri() . '/includes/admin/admin-style.css' );
-}    
-add_action( 'admin_enqueue_scripts', 'load_electa_wp_admin_style' );
+add_action( 'wp_enqueue_scripts', 'kaira_scripts' );
 
 /**
  * Print Electa styling settings.
  */
-function electa_print_styles(){
-    global $cx_framework_options;
-    $custom_css = $cx_framework_options['cx-options-custom-css'];
-    
-    $header_color = $cx_framework_options['cx-options-header-bg-color'];
-    
-    $primary_color = $cx_framework_options['cx-options-primary-color'];
-    $primary_color_hover = $cx_framework_options['cx-options-primary-hover-color']; ?>
+function kaira_custom_css_styles(){
+    $custom_css = '';
+    if ( get_theme_mod( 'kra-custom-css', false ) ) {
+        $custom_css = get_theme_mod( 'kra-custom-css' );
+    } ?>
     <style type="text/css" media="screen">
-        a,
-        .pc-text a,
-        .entry-content a,
-        .entry-footer a,
-        .search-button .fa-search,
-        .widget ul li a {
-            color: <?php echo $primary_color; ?>;
-        }
-        .pc-bg,
-        .electa-button,
-        #comments .form-submit #submit,
-        .main-navigation li.current-menu-item > a,
-        .main-navigation li.current_page_item > a,
-        .main-navigation li.current-menu-parent > a,
-        .main-navigation li.current_page_parent > a,
-        .main-navigation li.current-menu-ancestor > a,
-        .main-navigation li.current_page_ancestor > a,
-        .main-navigation button,
-        .wpcf7-submit {
-            background-color: <?php echo $primary_color; ?> !important;
-        }
-        a:hover,
-        .pc-text a:hover,
-        .entry-content a:hover,
-        .entry-footer a:hover,
-        .search-button .fa-search:hover,
-        .widget ul li a:hover {
-            color: <?php echo $primary_color_hover; ?>;
-        }
-        .pc-bg:hover,
-        .electa-button:hover,
-        .main-navigation button:hover,
-        #comments .form-submit #submit:hover,
-        .wpcf7-submit:hover {
-            background-color: <?php echo $primary_color_hover; ?> !important;
-        }
-        .site-header,
-        .site-header-inner,
-        .main-navigation ul ul,
-        .main-navigation ul ul li a {
-            background-color: <?php echo $header_color; ?>;
-        }
-        <?php echo ($custom_css) ? $custom_css : ''; ?>
+        <?php echo htmlspecialchars_decode( $custom_css ); ?>
     </style>
     <?php
 }
-add_action('wp_head', 'electa_print_styles', 11);
-
-/**
- * Implement the Custom Header feature.
- */
-//require get_template_directory() . '/inc/custom-header.php';
+add_action( 'wp_head', 'kaira_custom_css_styles', 11 );
 
 /**
  * Custom template tags for this theme.
@@ -230,6 +160,18 @@ require get_template_directory() . '/inc/template-tags.php';
  * Custom functions that act independently of the theme templates.
  */
 require get_template_directory() . '/inc/extras.php';
+
+// Helper library for the theme customizer.
+require get_template_directory() . '/customizer/customizer-library/customizer-library.php';
+
+// Define options for the theme customizer.
+require get_template_directory() . '/customizer/customizer-options.php';
+
+// Output inline styles based on theme customizer selections.
+require get_template_directory() . '/customizer/styles.php';
+
+// Additional filters and actions based on theme customizer selections.
+require get_template_directory() . '/customizer/mods.php';
 
 /**
  * Customizer additions.
@@ -242,73 +184,65 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
- * Custom function sets categories for Home blocks list page.
+ * Display the premium admin menu
  *
- * @param $cats
+ * @action admin_menu
  */
-function electa_load_selected_categories($cats) {
-    if($cats) {
-        $the_cats_count = count( $cats );
-        
-        $cats_set = '';
-        $cats_counter = 1;
-        if( $cats ) {
-            foreach ( $cats as $cat ) {
-                $cats_set .= $cat . ',';
-                $cats_counter++;
-            }
-        }
-        $cats_set = substr($cats_set, 0, -1);
-    
-        return 'cat=' . $cats_set . '';
-    } else {
-        return 'post_type=post';
-    }
-}
-/**
- * Custom function excludes categories from Blog list page.
- *
- * @param $excl_cats
- */
-function electa_exclude_selected_blog_categories() {
-    global $cx_framework_options;
-    
-    $excl_cats = $cx_framework_options['cx-options-blog-excl-cats'];
-    
-    if ($excl_cats) {
-        if ( is_home() ) {
-            $the_excl_cats_count = count( $excl_cats );
-            
-            $excl_cats_set = '';
-            $excl_cats_counter = 1;
-            if( $excl_cats ) {
-                foreach ( $excl_cats as $excl_cat ) {
-                    $excl_cats_set .= '-' . $excl_cat . ',';
-                    $excl_cats_counter++;
-                }
-            }
-            $excl_cats_set = substr($excl_cats_set, 0, -1);
-            
-            query_posts( 'cat=' . $excl_cats_set . '' );
-        }
-    } else {
-        return;
-    }
+function kaira_premium_admin_menu() {
+    global $kaira_upgrade_page;
+    $kaira_upgrade_page = add_theme_page( 'Electa Premium', 'Electa Premium', 'edit_theme_options', 'premium_upgrade', 'kaira_upgrade_page_render' );
 }
 
-// add category nicenames in body and post class
-function electa_add_body_home_class( $home_add_class ) {
-    global $cx_framework_options;
+add_action( 'admin_menu', 'kaira_premium_admin_menu' );
+
+/**
+ * Render the theme upgrade page
+ */
+function kaira_upgrade_page_render() {
+    locate_template( 'upgrade/kaira-upgrade-page.php', true, false );
+}
+
+/**
+ * Enqueue electa admin stylesheet only on upgrade page.
+ */
+function load_kaira_admin_style($hook) {
+    global $kaira_upgrade_page;
+ 
+    if( $hook != $kaira_upgrade_page ) 
+        return;
     
-    if ( ( ( is_front_page() ) && ( $cx_framework_options['cx-options-home-blocks'] == 1 ) ) || ( ( is_home() ) && ( $cx_framework_options['cx-options-blog-blocks'] == 1 ) ) ) {
+    wp_enqueue_style( 'electa-admin-css', get_template_directory_uri() . '/upgrade/css/kaira-admin.css' );
+}    
+add_action( 'admin_enqueue_scripts', 'load_kaira_admin_style' );
+
+/**
+ * Enqueue electa custom customizer styling.
+ */
+function load_kaira_customizer_style() {
+    wp_enqueue_style( 'electa-customizer-css', get_template_directory_uri() . '/customizer/customizer-library/css/customizer.css' );
+}    
+add_action( 'customize_controls_enqueue_scripts', 'load_kaira_customizer_style' );
+
+// add category nicenames in body and post class
+function kaira_add_body_home_class( $home_add_class ) {
+    if ( ( ( is_front_page() ) && ( get_theme_mod( 'kra-home-blocks-layout' ) == 1 ) ) || ( ( is_home() ) && ( get_theme_mod( 'kra-blog-blocks-layout' ) == 1 ) ) ) {
         $home_add_class[] = ' body-blocks-layout';
     }
     return $home_add_class;
 }
-add_filter( 'body_class', 'electa_add_body_home_class' );
+add_filter( 'body_class', 'kaira_add_body_home_class' );
 
 /**
- * Add Conica WP Updates code.
+ * Check if Meta Slider plugin is active then add Meta Slider hoplink if slider is enabled
  */
-require get_template_directory() . '/wp-updates-theme.php';
-new WPUpdatesThemeUpdater_981( 'http://wp-updates.com/api/2/theme', basename( get_template_directory() ) );
+if ( ! function_exists( 'is_plugin_active' ) )
+     require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
+ 
+if ( is_plugin_active( 'ml-slider/ml-slider.php' ) ) {
+    
+    function metaslider_hoplink( $link ) {
+        return "https://getdpd.com/cart/hoplink/15318?referrer=9jtzbgs34v8k4c0gs";
+    }
+    add_filter('metaslider_hoplink', 'metaslider_hoplink', 10, 1);
+    
+}

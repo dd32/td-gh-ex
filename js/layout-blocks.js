@@ -5,19 +5,19 @@
 ( function( $ ) {
     
     $(window).load(function() {
+        var $container = $('.body-blocks-layout .blocks-wrap');
         
-        var isotope_container = $('.body-blocks-layout .blocks-wrap');
-        // init
-        isotope_container.isotope({
-            // options
-            itemSelector: '.electa-blocks-post',
-            layoutMode: 'masonry',
-            onLayout: onBlocksLayout()
+        // initialize
+        $container.masonry({
+          columnWidth: '.electa-blocks-post',
+          itemSelector: '.electa-blocks-post'
         });
         
+        // Show layout once Masonry is complete
+        $container.masonry( 'on', 'layoutComplete', onBlogGridLayout() );
     });
     
-    function onBlocksLayout() {
+    function onBlogGridLayout() {
         $('.blocks-wrap').removeClass('blocks-wrap-remove');
     }
     

@@ -5,10 +5,10 @@
  * @package electa
  */
 $has_img = ' post-no-img';
-if ( has_post_thumbnail() )
+if ( has_post_thumbnail() ) {
     $has_img = '';
     $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'blog_standard_img' );
-?>
+} ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'electa-blocks-post' . $has_img ); ?><?php echo ( has_post_thumbnail() ) ? ' style="background-image: url(' . esc_url( $thumbnail[0] ) . ');"' : ''; ?>>
     <a href="<?php echo esc_url( get_permalink() ); ?>" class="electa-blocks-post-a">
@@ -17,7 +17,7 @@ if ( has_post_thumbnail() )
     	</header><!-- .entry-header -->
     </a>
     <?php if ( has_post_thumbnail() ) : ?>
-        <img src="<?php echo esc_url( $thumbnail[0] ); ?>" alt="<?php the_title(); ?>" />
+        <?php the_post_thumbnail( 'blog_standard_img' ); ?>
     <?php else : ?>
         <img src="<?php echo get_template_directory_uri(); ?>/images/blank_img.png" alt="<?php the_title(); ?>" />
     <?php endif; ?>

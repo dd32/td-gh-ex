@@ -10,18 +10,22 @@
  * @package electa
  */
 
-get_header();
-global $cx_framework_options; ?>
+get_header(); ?>
 
-	<div id="primary" class="content-area home-loop-columns-four<?php echo ( ( is_front_page() ) && ( $cx_framework_options['cx-options-home-blocks'] == 1 ) ) ? ' content-area-full' : ''; ?>">
+	<div id="primary" class="content-area home-loop-columns-four<?php echo ( ( is_front_page() ) && ( get_theme_mod( 'kra-home-blocks-layout' ) == 1 ) ) ? ' content-area-full' : ''; ?>">
 		<main id="main" class="site-main" role="main">
             
-            <?php if ( ( is_front_page() ) && ( $cx_framework_options['cx-options-home-blocks'] == 1 ) ) : ?>
+            <?php if ( ( is_front_page() ) && ( get_theme_mod( 'kra-home-blocks-layout' ) == 1 ) ) : ?>
             
                 <?php
-                $post_cats_set = electa_load_selected_categories( $cx_framework_options['cx-options-home-loop-post-cats'] );
-                
-                $home_query = new WP_Query( $post_cats_set . '&posts_per_page=-1' ); ?>
+                $home_cats_set = '';
+                if ( get_theme_mod( 'kra-home-cats', false ) ) {
+                    $home_cats_set = 'cat=' . get_theme_mod( 'kra-home-cats' ) . '';
+                } else {
+                    $home_cats_set = 'post_type=post';
+                }
+
+                $home_query = new WP_Query( $home_cats_set . '&posts_per_page=-1' ); ?>
                 
                 <?php if ( $home_query->have_posts() ) : ?>
                 
@@ -65,7 +69,7 @@ global $cx_framework_options; ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
     
-    <?php if ( ( is_front_page() ) && ( $cx_framework_options['cx-options-home-blocks'] == 1 ) ) : ?>
+    <?php if ( ( is_front_page() ) && ( get_theme_mod( 'kra-home-blocks-layout' ) == 1 ) ) : ?>
     
         <!-- Do Nothing -->
     

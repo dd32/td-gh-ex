@@ -1,13 +1,12 @@
-<?php get_header();
-global $cx_framework_options; ?>
+<?php get_header(); ?>
 
-    <div id="primary" class="content-area home-loop-columns-four<?php echo ( ( is_home() ) && ( $cx_framework_options['cx-options-blog-blocks'] == 1 ) ) ? ' content-area-full' : ''; ?>">
+    <div id="primary" class="content-area home-loop-columns-four<?php echo ( ( is_home() ) && ( get_theme_mod( 'kra-blog-blocks-layout' ) == 1 ) ) ? ' content-area-full' : ''; ?>">
         <main id="main" class="site-main" role="main">
-            
-        <?php if ( ( is_home() ) && ( $cx_framework_options['cx-options-blog-blocks'] == 0 ) ) : ?>
+        
+        <?php if ( ( is_home() ) && ( get_theme_mod( 'kra-blog-blocks-layout' ) == 0 ) ) : ?>
             
             <header class="page-header">
-                <h1 class="page-title"><?php echo wp_kses_post( $cx_framework_options['cx-options-blog-title'] ) ?></h1>
+                <h1 class="page-title"><?php echo esc_html( get_theme_mod( 'kra-blog-title', false ) ) ?></h1>
                 
                 <?php if ( function_exists( 'bcn_display' ) ) : ?>
                     <div class="cx-breadcrumbs">
@@ -19,18 +18,27 @@ global $cx_framework_options; ?>
             
         <?php endif; ?>
             
-        <?php electa_exclude_selected_blog_categories(); ?>
+        <?php
+        $cats_set = '';
+        $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+        if ( get_theme_mod( 'kra-blog-cats', false ) ) {
+            $cats_set = 'cat=' . get_theme_mod( 'kra-blog-cats' ) . '&posts_per_page=-1';
+        } else {
+            $cats_set = 'post_type=post';
+        }
+        
+        $cats_query = new WP_Query( $cats_set . '&paged=' . $paged ); ?>
 
-        <?php if ( have_posts() ) : ?>
+        <?php if ( $cats_query->have_posts() ) : ?>
         
             <div class="blocks-wrap blocks-wrap-remove">
 
                 <?php /* Start the Loop */ ?>
-                <?php while ( have_posts() ) : the_post(); ?>
+                <?php while ( $cats_query->have_posts() ) : $cats_query->the_post(); ?>
                 
                     <?php if ( is_home() ) : ?>
                         
-                        <?php if ( $cx_framework_options['cx-options-blog-blocks'] == 1 ) : ?>
+                        <?php if ( get_theme_mod( 'kra-blog-blocks-layout' ) == 1 ) : ?>
                         
                             <?php
                             // Blocks Layout
@@ -57,9 +65,9 @@ global $cx_framework_options; ?>
                     
                 <?php endwhile; ?>
                 
+                <?php electa_paging_nav(); ?>
+                
             </div>
-            
-            <?php electa_paging_nav(); ?>
 
         <?php else : ?> <?php /* have_posts() else : */ ?>
 
@@ -70,7 +78,7 @@ global $cx_framework_options; ?>
         </main><!-- #main -->
     </div><!-- #primary -->
 
-    <?php if ( ( is_home() ) && ( $cx_framework_options['cx-options-blog-blocks'] == 1 ) ) : ?>
+    <?php if ( ( is_home() ) && ( get_theme_mod( 'kra-blog-blocks-layout' ) == 1 ) ) : ?>
     
         <!-- Do Nothing -->
     
