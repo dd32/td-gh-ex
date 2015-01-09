@@ -9,8 +9,7 @@ Esteem is a clean multipurpose responsive WordPress theme designed to fit busine
 Resources packed within the theme.
 * Font Awesome by Dave Gandy http://fortawesome.github.io/Font-Awesome/
   SIL OFL 1.1 http://scripts.sil.org/OFL.
-* Image in the screenshot is under CC0 License from http://www.pexels.com/photo/1402/ link:
-	http://static.pexels.com/wp-content/uploads/2014/06/evening-lake-people-1402.jpg
+* Image used on screenshot is our own creation[licensed under GPL] which also makes use of this image http://www.pexels.com/photo/922/ which is under CC0 License.
 * HTML5 Shiv @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
 * The script jquery.cycle.all.js is dual licensed under GPL & MIT
 * Options Framework by WP Theming licensed under the GPLv2 license (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -43,6 +42,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.1.9 =
+* add_theme_support('title_tag') added as per WordPress 4.1
+* Screenshot Changed.
+
 = Version 1.1.8 =
 * Featured image hover icon bug fixed for category page.
 * Options Framework text domain changed.

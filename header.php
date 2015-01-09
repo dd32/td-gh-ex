@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Theme Header Section for our theme.
  *
@@ -12,18 +12,10 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>
-	<?php
-	/**
-	 * Print the <title> tag based on what is being viewed.
-	 */
-	wp_title( '|', true, 'right' );
-	?>
-</title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php
-/** 
+/**
  * This hook is important for wordpress plugins and other many things
  */
 wp_head();
@@ -47,7 +39,7 @@ wp_head();
 						if( of_get_option( 'esteem_show_header_logo_text', 'text_only' ) == 'both' || of_get_option( 'esteem_show_header_logo_text', 'text_only' ) == 'text_only' ) {
 						?>
 							<div class="header-text">
-								<h1 id="site-title"> 
+								<h1 id="site-title">
 										<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 											<?php bloginfo( 'name' ); ?>
 										</a>
@@ -61,7 +53,7 @@ wp_head();
 							<h3 class="menu-toggle"></h3>
 							<div class="nav-menu clearfix">
 								<?php
-									if ( has_nav_menu( 'primary' ) ) {									
+									if ( has_nav_menu( 'primary' ) ) {
 											wp_nav_menu( array( 'theme_location' => 'primary',
 																'container' => false
 																 ) );

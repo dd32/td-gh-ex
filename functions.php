@@ -38,12 +38,15 @@ function esteem_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
 	// This theme uses Featured Images (also known as post thumbnails) for per-post/per-page.
-	add_theme_support( 'post-thumbnails' ); 
+	add_theme_support( 'post-thumbnails' );
+
+	// Supporting title tag via add_theme_support (since WordPress 4.1)
+   add_theme_support( 'title-tag' );
 
 	// Switches default core markup for comment form, and comments
 	// to output valid HTML5.
 	add_theme_support( 'html5', array( 'comment-form', 'comment-list' ) );
- 
+
 	// Registering navigation menus.
 	register_nav_menu( 'primary', 'Primary Menu' );
 
@@ -51,7 +54,7 @@ function esteem_setup() {
 	add_image_size( 'blog-large', 642, 300, true ); 				// used on blog large template
 	add_image_size( 'blog-medium', 306, 205, true ); 				// used on blog medium template
 	add_image_size( 'recent-thumb', 350, 316, true );
-	
+
 	// Setup the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'esteem_custom_background_args', array(
 		'default-color' => 'eaeaea'
@@ -62,7 +65,7 @@ function esteem_setup() {
 }
 endif;
 
-/** 
+/**
  * esteem_init hook
  *
  * Hooking some functions of functions.php file to this action hook.
@@ -71,7 +74,7 @@ endif;
 
 add_action( 'esteem_init', 'esteem_constants', 10 );
 
-if( !function_exists( 'esteem_constants' ) ) {  
+if( !function_exists( 'esteem_constants' ) ) {
 /**
  * This function defines the Esteem theme constants
  *
@@ -79,13 +82,13 @@ if( !function_exists( 'esteem_constants' ) ) {
  */
 function esteem_constants() {
 	/**
-	 * Define Directory Location Constants 
+	 * Define Directory Location Constants
 	 */
 	define( 'ESTEEM_PARENT_DIR', get_template_directory() );
 	define( 'ESTEEM_CHILD_DIR', get_stylesheet_directory() );
 
 	define( 'ESTEEM_IMAGES_DIR', ESTEEM_PARENT_DIR . '/images' );
-	define( 'ESTEEM_INCLUDES_DIR', ESTEEM_PARENT_DIR. '/inc' );	
+	define( 'ESTEEM_INCLUDES_DIR', ESTEEM_PARENT_DIR. '/inc' );
 	define( 'ESTEEM_CSS_DIR', ESTEEM_PARENT_DIR . '/css' );
 	define( 'ESTEEM_JS_DIR', ESTEEM_PARENT_DIR . '/js' );
 	define( 'ESTEEM_LANGUAGES_DIR', ESTEEM_PARENT_DIR . '/languages' );
@@ -101,8 +104,8 @@ function esteem_constants() {
 
 	define( 'ESTEEM_FONTAWESOME_DIR', ESTEEM_PARENT_DIR . '/fontawesome' );
 
-	/** 
-	 * Define URL Location Constants 
+	/**
+	 * Define URL Location Constants
 	 */
 	define( 'ESTEEM_PARENT_URL', get_template_directory_uri() );
 	define( 'ESTEEM_CHILD_URL', get_stylesheet_directory_uri() );
