@@ -118,7 +118,7 @@ input[type="reset"],
 input[type="submit"] {
   border: none;
   border-radius: 3px;
-  background: #ce4435;
+  background: #e74c3c;
   color: white;
   cursor: pointer;
   /* Improves usability and consistency of cursor style between image-type 'input' and others */
@@ -140,7 +140,7 @@ input[type="reset"]:focus,
 input[type="submit"]:hover,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-  background-color: #a73529;
+  background-color: #d62c1a;
 }
 
 input[type="checkbox"],
@@ -181,10 +181,10 @@ textarea {
   padding: 5px 10px;
   font-size: 16px;
   font-size: 1rem;
-  color: #556677;
+  color: #6b8095;
   border: 1px solid #dddddd;
   border-radius: 3px;
-  outline-text: #556677;
+  outline-text: #6b8095;
 }
 
 input[type="text"]:focus,
@@ -298,10 +298,10 @@ label {
   display: block;
   margin: 30px 0 0;
   text-align: center;
-  color: #7c94ac;
+  color: #d5dee8;
 }
 .read-more:hover, .read-more:active, .read-more:focus {
-  color: #4b6177;
+  color: #93aac4;
 }
 .read-more:before {
   content: '\2022\20\2022\20\2022\20';
@@ -339,8 +339,8 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 input[type="search"]:focus,
 textarea:focus {
-  color: #556677;
-  border-color: #556677;
+  color: #6b8095;
+  border-color: #6b8095;
   outline: none;
 }
 
@@ -359,7 +359,7 @@ textarea:focus {
 }
 .main-navigation .search-form .search-field:focus {
   color: white;
-  border-color: #556677;
+  border-color: #6b8095;
 }
 .main-navigation .search-form input::-webkit-input-placeholder, .main-navigation .search-form textarea::-webkit-input-placeholder {
   color: #9aa7b5;
@@ -389,7 +389,7 @@ textarea:focus {
 
 .post-password-form label {
   line-height: 40px;
-  color: #556677;
+  color: #6b8095;
   font-weight: normal;
 }
 .post-password-form input[type="password"] {
@@ -417,7 +417,7 @@ button,
 input,
 select,
 textarea {
-  color: #556677;
+  color: #6b8095;
   font-family: "Varela Round", sans-serif;
   font-size: 20px;
   font-size: 1.25rem;
@@ -516,7 +516,7 @@ h6 {
 
 .page-title {
   margin-bottom: 1em;
-  color: #556677;
+  color: #6b8095;
   text-align: center;
 }
 
@@ -560,7 +560,7 @@ dd {
 
 b, strong {
   font-weight: bold;
-  color: #15191e;
+  color: #2b333c;
 }
 
 dfn, cite, em, i {
@@ -570,7 +570,7 @@ dfn, cite, em, i {
 blockquote {
   margin: 0;
   padding: 0 1.5em;
-  border-left: 10px solid #ce4435;
+  border-left: 10px solid #e74c3c;
 }
 
 q {
@@ -584,7 +584,7 @@ q:after {
 }
 
 cite {
-  color: #15191e;
+  color: #2b333c;
 }
 
 address {
@@ -663,13 +663,13 @@ th {
 .site-content th {
   font-weight: normal;
   color: white;
-  background: #46d9bc;
+  background: #5edec5;
 }
 .site-content td {
-  background: #c1f7ec;
+  background: #dbfaf4;
 }
 .site-content tr:nth-of-type(odd) td {
-  background: #abf4e5;
+  background: #c5f7ed;
 }
 
 img {
@@ -681,14 +681,14 @@ img {
 
 /* Links */
 a {
-  color: #16a387;
+  color: #1abc9c;
   text-decoration: none;
   -webkit-transition: color 0.15s ease-in-out;
   -moz-transition: color 0.15s ease-in-out;
   transition: color 0.15s ease-in-out;
 }
 a:hover, a:active, a:focus {
-  color: #107662;
+  color: #148f77;
 }
 
 a:focus {

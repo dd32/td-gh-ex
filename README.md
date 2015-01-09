@@ -10,7 +10,7 @@ With large type and bright colors, Aventurine really puts the focus back on your
 
 ###Accessibility
 
-The code for this theme was written with accessibility in mind, so your content can be easily available to your entire audience.
+The code for this theme was written with keyboard and screen reader accessibility in mind, so your content can be easily available to your entire audience.
 
 ###Fully responsive
 
@@ -33,6 +33,9 @@ Fonts Josefin Sans by Santiago Orozco and Varela Round by Joe Prince from Google
 DoubleTapToGo by Osvaldas Valutis (MIT), http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
 
 ### Changelog
+
+Version 0.1.2
+* Update & brighten up colors
 
 Version 0.1.1
 * Update Licenses
