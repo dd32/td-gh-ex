@@ -5,7 +5,7 @@
  * @package electa
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.1.10' );
+define( 'KAIRA_THEME_VERSION' , '1.1.11' );
 
 if ( ! function_exists( 'kaira_setup_theme' ) ) :
 /**
