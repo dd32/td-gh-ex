@@ -68,6 +68,8 @@ View the settings under Appearance -> ALBAR Settings.
 
 == Changelog ==
 
+#### 1.5.8
+* Added link to Theme URI
 
 #### 1.5.4
 * Add demo slides for if there are no categories selected yet, to display a demo slider.
