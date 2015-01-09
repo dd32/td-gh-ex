@@ -2,7 +2,7 @@ Aventurine
 ===
 by [Kelly Dwan](http://redradar.net) and [Mel Choyce](http://choycedesign.com)
 
-Aventurine puts the focus back on your content, with large type and bright colors. Responsive and accessibility-ready, your content can be easily available to your entire audience.
+Aventurine puts the focus back on your content, with large type and bright colors. Responsive and built with accessibility in mind, your content can be easily available to your entire audience.
 
 ###Back to Basics
 
@@ -33,6 +33,9 @@ Fonts Josefin Sans by Santiago Orozco and Varela Round by Joe Prince from Google
 DoubleTapToGo by Osvaldas Valutis (MIT), http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
 
 ### Changelog
+
+Version 0.1.3
+* Remove accessibility-ready tag
 
 Version 0.1.2
 * Update & brighten up colors
