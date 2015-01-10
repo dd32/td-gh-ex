@@ -4,7 +4,7 @@ Theme URI: http://ketchupthemes.com/beyond-magazine/
 Author: Alexandros Itsios
 Author URI: http://ketchupthemes/alex-itsios
 Description: Beyond is a free and responsive Magazine Theme for WordPress that makes you stand out of the crowd.
-Version: 1.2
+Version: 1.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, blue, gray, light, two-columns, editor-style, left-sidebar, responsive-layout, custom-menu, featured-image-header, featured-images, sticky-post, theme-options, translation-ready, threaded-comments, flexible-header
@@ -110,6 +110,28 @@ a img.aligncenter {
 .clearfix{
     clear:both;
 }
+table {
+    width:90%;
+    border-top:1px solid #e5eff8;
+    border-right:1px solid #e5eff8;
+    
+    border-collapse:collapse;
+}
+th,td {
+    color:#678197;
+    border-bottom:1px solid #e5eff8;
+    border-left:1px solid #e5eff8;
+    padding:.3em 1em;
+    text-align:center;
+}
+  dt {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  dd {
+    margin: 0;
+    padding: 0 0 0.5em 0;
+  }
 /***
 *
 HEADER
@@ -164,7 +186,6 @@ HEADER
     display:block;
     padding:0 15px;
 }
-
 /**Second Level**/
 #kt-main-nav ul.sub-menu{
     display:none;
@@ -195,6 +216,7 @@ HEADER
 .slicknav_menu{
        display:none;
    }
+   
 /***
 *
 MAIN
@@ -245,6 +267,7 @@ MAIN
 	background: #fff;
 	margin: 15px 15px 15px 15px;
 	padding: 20px;
+    overflow: hidden;
 }
 #kt-icon {
 	float: left;
@@ -274,6 +297,7 @@ MAIN
 	background: url(img/bg.png);
 	border-radius: 5px;
 }
+
 /***
 *
 COMMENTS
@@ -549,20 +573,21 @@ p.comment-form-url input[type="text"]{
     margin-top: 25px;
     margin-bottom: 0;
 }
+
 /***
 *
 SIDEBAR & WIDGETS
 *
 ***/
-#kt-sidebar{
+.kt-sidebar{
     color: #a2a2a2;
 }
-#kt-sidebar h3 {
+.kt-sidebar h3 {
     position: relative;
     overflow: hidden;
     padding-left: 10px;
 }
-#kt-sidebar h3 span {
+.kt-sidebar h3 span {
   display: inline-block;
   vertical-align: baseline;
   zoom: 1;
@@ -571,7 +596,7 @@ SIDEBAR & WIDGETS
   position: relative;
   padding: 0 10px;
 }
-#kt-sidebar h3 span:before, #kt-sidebar h3 span:after {
+.kt-sidebar h3 span:before, #kt-sidebar h3 span:after {
   content: '';
   display: block;
   width: 100%;
@@ -579,14 +604,25 @@ SIDEBAR & WIDGETS
   top: 0.6em;
   border-image:url(img/bg.png) 1 1;
 }
-#kt-sidebar h3 span:before {
+.kt-sidebar h3 span:before {
   right: 100%;
 }
-#kt-sidebar h3 span:after {
+.kt-sidebar h3 span:after {
   left: 100%;
 }
-#kt-sidebar h1, #kt-sidebar h2, #kt-sidebar h3, #kt-sidebar h4, #kt-sidebar h5, #kt-sidebar h6, #kt-sidebar .h1, #kt-sidebar .h2, #kt-sidebar .h3, #kt-sidebar .h4, #kt-sidebar .h5, #kt-sidebar .h6 {
-    color: #06bfea;
+.kt-sidebar h1, 
+.kt-sidebar h2, 
+.kt-sidebar h3, 
+.kt-sidebar h4, 
+.kt-sidebar h5, 
+.kt-sidebar h6, 
+.kt-sidebar .h1, 
+.kt-sidebar .h2, 
+.kt-sidebar .h3, 
+.kt-sidebar .h4, 
+.kt-sidebar .h5, 
+.kt-sidebar .h6 {
+   color: #06bfea;
 }
 
 /***
@@ -598,7 +634,7 @@ FOOTER & WIDGETS
     background-color: #3a3a3a;
     color: #fff;
 }
-.kt-footer-column {
+.kt-copyright-column {
     margin: 15px;
 }
 #kt-footer h1, #kt-footer h2, #kt-footer h3, #kt-footer h4, #kt-footer h5, #kt-footer h6, #kt-footer .h1, #kt-footer .h2, #kt-footer .h3, #kt-footer .h4, #kt-footer .h5, #kt-footer .h6 {
@@ -613,6 +649,7 @@ FOOTER & WIDGETS
 #kt-copyright p {
     color: #fff;
 }
+
 /***
 *
 BOOTSTRAP OVERRIDES

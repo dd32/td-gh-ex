@@ -22,15 +22,12 @@ get_header();?>
                             </h1>
                         </div>
                         <div>
-                            <p>
                             <?php 
                             if(has_post_thumbnail()):
                                 the_post_thumbnail('',array('class'=>'img-responsive')); 
                             endif; 
+                            the_content();
                             ?>
-                            </p>
-                            
-                            <?php the_content();?>
                             
                             <?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'beyondmagazine' ) . '</span>', 'after' => '</div>' ) ); ?>
                             <div class="clearfix"></div>

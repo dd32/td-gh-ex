@@ -1,11 +1,11 @@
 <?php if(is_active_sidebar('footer-sidebar-1') && is_active_sidebar('footer-sidebar-2')): ?> 
-   <footer id="kt-footer">
+   <footer class="kt-footer">
    <div class="container">
         <div class="row">
-        <?php $fsn = esc_html(of_get_option('footer_sidebars_number','1')); 
-              if($fsn == 1):
+        <?php $beyond_fsn = esc_html(of_get_option('footer_sidebars_number','1')); 
+              if($beyond_fsn == 1):
         ?>
-               <div class="col-md-12" id="kt-sidebar">
+               <div class="col-md-12 kt-sidebar">
                     <?php if (!dynamic_sidebar( 'footer-sidebar-1')): ?>
                         <div class="pre-widget">
                             <h3><?php _e('Widgetized Sidebar', 'beyondmagazine'); ?></h3>
@@ -14,8 +14,8 @@
                         </div>
                     <?php endif; ?>
                 </div>    
-        <?php elseif($fsn == 2): ?>
-                <div class="col-md-6" id="kt-sidebar">
+        <?php elseif($beyond_fsn == 2): ?>
+                <div class="col-md-6 kt-sidebar">
                     <?php if (!dynamic_sidebar( 'footer-sidebar-1')): ?>
                         <div class="pre-widget">
                             <h3><?php _e('Widgetized Sidebar', 'beyondmagazine'); ?></h3>
@@ -24,7 +24,7 @@
                         </div>
                     <?php endif; ?>
                 </div>
-                <div class="col-md-6" id="kt-sidebar">
+                <div class="col-md-6 kt-sidebar">
                     <?php if (!dynamic_sidebar( 'footer-sidebar-2')): ?>
                         <div class="pre-widget">
                             <h3><?php _e('Widgetized Sidebar', 'beyondmagazine'); ?></h3>
@@ -34,7 +34,7 @@
                     <?php endif; ?>
                 </div>
         <?php else: ?>
-               <div class="col-md-12" id="kt-sidebar">
+               <div class="col-md-12 kt-sidebar">
                     <?php if (!dynamic_sidebar( 'footer-sidebar-1')): ?>
                         <div class="pre-widget">
                             <h3><?php _e('Widgetized Sidebar', 'beyondmagazine'); ?></h3>
@@ -51,9 +51,9 @@
             <div id="kt-copyright">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="kt-footer-column">
+                        <div class="kt-copyright-column">
                         <p><a rel="nofollow" href="<?php echo esc_url( __( 'http://www.ketchupthemes.com/beyond-magazine/', 'beyondmagazine')); ?>">
-                        <?php printf( __( 'Beyond Magazine', 'beyondmagazine' )); ?></a>, <?php echo __('&copy; 2014','beyondmagazine'); ?> <?php echo get_bloginfo('name'); ?></p>
+                        <?php printf( __( 'Beyond Magazine', 'beyondmagazine' )); ?></a>, <?php echo __('&copy;','beyondmagazine').date('Y'); ?> <?php echo get_bloginfo('name'); ?></p>
                         </div>
                     </div>
                 </div>

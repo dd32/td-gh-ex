@@ -14,7 +14,6 @@ function optionsframework_option_name() {
 
 	$optionsframework_settings = get_option('optionsframework');
 	$optionsframework_settings['id'] = $themename;
-	update_option('optionsframework', $optionsframework_settings);
 
 	// echo $themename;
 }
@@ -33,11 +32,29 @@ function optionsframework_options() {
 	$options = array();
 
 	$options[] = array(
-		'name' => __('Basic Options', 'options_check'),
+		'name' => __('Basic Options', 'beyondmagazine'),
 		'type' => 'heading');
+        
+         
+    $options[] = array(
+        'name' => __('Premium Features', 'beyondmagazine'),
+        'desc' => __('<ul>
+        
+        <li>Upload Logo</li>
+        <li>Slider (enable/disable title & description)</li>
+        <li>Testimonials</li>
+        <li>Google Fonts</li>
+        <li>Color Picker</li>
+        <li>Opening Hours</li>
+        <li>Jet Pack </li>
+        <li>2-4 Columns Widgetized Footer Sidebar</li>
+        </ul>
+        <p>
+        <a rel="nofollow" href="'.esc_url( __( 'http://www.ketchupthemes.com/beyond-magazine/', 'beyondmagazine')).'" style="background:red; padding:10px 20px; color:#ffffff; margin-top:10px; text-decoration:none;">Update to Premium</a></p>'),
+        'type' => 'info');  
 
 	$options[] = array(
-		'name' => __('Favicon Upload', 'options_check'),
+		'name' => __('Favicon Upload', 'beyondmagazine'),
 		'desc' => __('Upload Your Favicon icon here. Please upload a 16x16 icon.', 'beyondmagazine'),
 		'id' => 'favicon_upload',
 		'type' => 'upload');
@@ -59,25 +76,6 @@ function optionsframework_options() {
         'options' => array('1'=>__('1','beyondmagazine'),
                            '2'=>__('2','beyondmagazine')
                            ));
-    $options[] = array(
-        'name' => __('Premium Options', 'beyondmagazine'),
-        'type' => 'heading');
-        
-    $options[] = array(
-        'name' => __('Premium Features', 'beyondmagazine'),
-        'desc' => __('<ul>
-        
-        <li>Upload Logo</li>
-        <li>Slider (enable/disable title & description)</li>
-        <li>Testimonials</li>
-        <li>Google Fonts</li>
-        <li>Color Picker</li>
-        <li>Opening Hours</li>
-        <li>Jet Pack </li>
-        <li>2-4 Columns Widgetized Footer Sidebar</li>
-        </ul>
-        <p>
-        <a rel="nofollow" href="'.esc_url( __( 'http://www.ketchupthemes.com/beyond-magazine/', 'beyondmagazine')).'" style="background:red; padding:10px 20px; color:#ffffff; margin-top:10px; text-decoration:none;">Update to Premium</a></p>'),
-        'type' => 'info');  
+
 	return $options;
 }

@@ -27,12 +27,11 @@
                             <?php endif; ?>
                             &nbsp; <i class="glyphicon glyphicon-comment small"></i> 
                             <?php comments_number( __('No Comments','beyondmagazine'), __('1 Comment','beyondmagazine'),__('% Comment' ,'beyondmagazine')); ?></p>
-                            <p>
-                            <?php if(has_post_thumbnail()):the_post_thumbnail('',array('class'=>'img-responsive')); endif; 
-                            ?>
-                            </p>
                             
-                            <?php the_content();?>
+                            <?php 
+                            if(has_post_thumbnail()):the_post_thumbnail('',array('class'=>'img-responsive')); endif; 
+                            the_content();
+                            ?>
                             
                             <?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'beyondmagazine' ) . '</span>', 'after' => '</div>' ) ); ?>
                             <div class="clearfix"></div>

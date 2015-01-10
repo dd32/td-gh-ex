@@ -2,7 +2,7 @@
 License:
 -----------------------------------------------
 
-Beyond Magazine WordPress Theme, Copyright 2014 WordPress.org
+Beyond Magazine WordPress Theme, Copyright 2014 Ketchupthemes.com
 Beyond Magazine is distributed under the terms of the GNU GPL-2.0+
 
 -----------------------------------------------
@@ -15,14 +15,14 @@ SlickNav jQuery Plugin is licended under the MIT Licence
 -----------------------------------------------
 Images
 -----------------------------------------------
-http://creativecommons.org/choose/zero/
-http://www.gratisography.com/pictures/130_1.jpg
-http://www.gratisography.com/pictures/129_1.jpg
-http://www.gratisography.com/pictures/125_1.jpg
-http://www.gratisography.com/pictures/108_1.jpg
-http://www.gratisography.com/pictures/83_1.jpg
-http://www.gratisography.com/pictures/129_1.jpg
-http://www.gratisography.com/pictures/132_1.jpg
+http://creativecommons.org/choose/zero/ - CCO License
+http://www.gratisography.com/pictures/130_1.jpg - CCO License
+http://www.gratisography.com/pictures/129_1.jpg - CCO License
+http://www.gratisography.com/pictures/125_1.jpg - CCO License
+http://www.gratisography.com/pictures/108_1.jpg - CCO License
+http://www.gratisography.com/pictures/83_1.jpg  - CCO License
+http://www.gratisography.com/pictures/129_1.jpg - CCO License
+http://www.gratisography.com/pictures/132_1.jpg - CCO License
 
 
 
@@ -48,3 +48,6 @@ First Release
 - Minor Fixes
 = 1.2 =
 - Changed screenshot.png
+= 1.3 = 
+- Bug Fixes
+- Better Sanitazion Process

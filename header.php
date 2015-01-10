@@ -4,9 +4,9 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <title><?php wp_title('|',true,'right'); ?></title>
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-    
-    <link rel="icon" href="<?php if(of_get_option('favicon_upload','')): echo esc_url_raw(of_get_option('favicon_upload','')); endif; ?>" type="image/x-icon">    
-    
+    <?php if(of_get_option('favicon_upload','')): ?>
+        <link rel="icon" href="<?php if(of_get_option('favicon_upload','')): echo esc_url(of_get_option('favicon_upload','')); endif; ?>" type="image/x-icon">
+    <?php endif; ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); ?>
 </head>
@@ -17,7 +17,7 @@
         
             <div class="row">
                 <div class="col-md-4" id="kt-logo">
-                    <h1><a href="<?php echo home_url();?>"><?php echo get_bloginfo('name');?> <span class="kt-grey"><?php echo get_bloginfo('description');?></span></a></h1>
+                    <h1><a href="<?php echo esc_url(home_url()); ?>"><?php echo get_bloginfo('name');?> <span class="kt-grey"><?php echo get_bloginfo('description');?></span></a></h1>
                 </div>
                 <div class="col-md-8" id="kt-main-nav">
                 <?php $menu_args =  array('location'=>'primary',
@@ -25,7 +25,7 @@
                                       'menu_class'=>'main-menu',
                                       'menu_id'=>false); 
                 wp_nav_menu($menu_args);                           
-            ?>
+				?>
                 </div>
             </div>
  <?php if (get_header_image() != ''){    ?>           
