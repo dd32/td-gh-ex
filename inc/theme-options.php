@@ -57,27 +57,27 @@ function annina_options_do_page() {
 		<?php echo "<h2>" . wp_get_theme() . __( ' Free Theme Options', 'annina' ) . "</h2>"; ?>
 			
 		<div class="updated" style="background:#E9F7DF;clear: both;display: table;width: 100%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;border-left: 4px solid #1fa67a;">
-			<h3><div class="dashicons dashicons-megaphone"></div> Need more features and options? Upgrade to PRO!</h3>
-			<p>Get <b>Annina PRO</b> WordPress Theme for only <b>24,90&euro;</b> <i>(One Time Fee)</i></p>
+			<h3><div class="dashicons dashicons-megaphone"></div> <?php _e( 'Need more features and options? Upgrade to PRO!', 'annina' ); ?></h3>
+			<p><?php _e( 'Get', 'annina' ); ?> <b><?php _e( 'Annina PRO', 'annina' ); ?></b> <?php _e( 'WordPress Theme for only', 'annina' ); ?> <b>24,90&euro;</b> <i><?php _e( '(One Time Fee)', 'annina' ); ?></i></p>
 			<div class="anninaLeft" style="float:left; width: 30%; text-align: center;">
-				<a style="display: inline-block;padding: 20px;background: #1fa67a;border-radius: 5px;color: #ffffff;font-size: 125%;-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);margin: 40px 0 20px;" href="http://crestaproject.com/demo/annina-pro/" target="_blank"><div class="dashicons dashicons-visibility"></div> Demo (Annina PRO)</a>
+				<a style="display: inline-block;padding: 20px;background: #1fa67a;border-radius: 5px;color: #ffffff;font-size: 125%;-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);margin: 40px 0 20px;" href="http://crestaproject.com/demo/annina-pro/" target="_blank"><div class="dashicons dashicons-visibility"></div> <?php _e( 'Demo (Annina PRO)', 'annina' ); ?></a>
 				<br />
-				<a style="display: inline-block;padding: 20px;background: #1fa67a;border-radius: 5px;color: #ffffff;font-size: 125%;-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);" href=" http://crestaproject.com/downloads/annina/" target="_blank"><div class="dashicons dashicons-heart"></div> Get The Pro Version</a>
+				<a style="display: inline-block;padding: 20px;background: #1fa67a;border-radius: 5px;color: #ffffff;font-size: 125%;-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);" href=" http://crestaproject.com/downloads/annina/" target="_blank"><div class="dashicons dashicons-heart"></div> <?php _e( 'Get The Pro Version', 'annina' ); ?></a></a>
 			</div>
 			<div class="anninaRight" style="float:right; width: 70%;">
 			<ul>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Advanced Theme Options</b> (Manage Loading Page, Additional Custom Code, Font switcher and much more...)</li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Logo and Favicon Upload</b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Unlimited Colors and Skin</b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Post views counter</b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Infinite Scroll</b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Breadcrumb</b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Post format</b> (Standard, Audio, Link, Video, Quote)</li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>7 Shortcodes</b> (Toggle, Tabs, Boxes, Columns, Highlights, Buttons and Drop Cap)</li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>10 Exclusive Widgets</b> (Latest Tweet, Instagram, Social Buttons, Recent Posts with Thumbnail and Most Commented Posts...)</li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Related Posts Box</b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Information About Author Box</b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>And much more...</b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Advanced Theme Options', 'annina' ); ?></b> <?php _e( '(Manage Loading Page, Additional Custom Code, Font switcher and much more...)', 'annina' ); ?></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Logo and Favicon Upload', 'annina' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Unlimited Colors and Skin', 'annina' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Post views counter', 'annina' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Infinite Scroll', 'annina' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Breadcrumb', 'annina' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Post format', 'annina' ); ?></b> <?php _e( '(Standard, Audio, Link, Video, Quote)', 'annina' ); ?></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( '7 Shortcodes', 'annina' ); ?></b> <?php _e( '(Toggle, Tabs, Boxes, Columns, Highlights, Buttons and Drop Cap)', 'annina' ); ?></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( '10 Exclusive Widgets', 'annina' ); ?></b> <?php _e( '(Latest Tweet, Instagram, Social Buttons, Recent Posts with Thumbnail and Most Commented Posts...)', 'annina' ); ?></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Related Posts Box', 'annina' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Information About Author Box', 'annina' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'And much more...', 'annina' ); ?></b></li>
 			<ul>
 			</div>
 		</div>	

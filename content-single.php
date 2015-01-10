@@ -10,7 +10,7 @@
 	<?php
 		if ( '' != get_the_post_thumbnail() ) {
 			echo '<div class="entry-featuredImg annina-loader">';
-			the_post_thumbnail('normal-post');
+			the_post_thumbnail('annina-normal-post');
 			echo '</div>';
 		}
 	?>

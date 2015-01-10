@@ -45,13 +45,17 @@
 		/*-----------------------------------------------------------------------------------*/
 		/*  Home icon in main menu
 		/*-----------------------------------------------------------------------------------*/ 
-			$('.main-navigation .menu-item-home a').prepend('<i class="fa fa-lg fa-home spaceRight"></i>');
+			$('.main-navigation .menu-item-home a').prepend('<i class="fa fa-home spaceRight"></i>');
 			
 		/*-----------------------------------------------------------------------------------*/
 		/*  Search button
 		/*-----------------------------------------------------------------------------------*/ 
 			$('#open-search').click(function() {
 				$('#search-full').fadeIn(400);
+				if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+				} else {
+					$("#search-full #search-field").focus();
+				}
 			});
 
 			$('#close-search').click(function() {
@@ -106,6 +110,16 @@
 				}, function() {
 					clearTimeout(hoverTimeout);
 					$(this).find('> ul.sub-menu, > ul.children').slideUp(200);
+				});
+				
+				
+			/*-----------------------------------------------------------------------------------*/
+			/*  If you are in a page of the submenu
+			/*-----------------------------------------------------------------------------------*/ 
+				$('.main-navigation ul').each(function() {
+					if($(this).children('li').hasClass('current_page_item') || $(this).children('li').hasClass('current-menu-item') ) {
+						$(this).slideDown(400);
+					}
 				});
 		
 		}

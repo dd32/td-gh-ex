@@ -12,7 +12,7 @@
 	<?php
 		if ( '' != get_the_post_thumbnail() ) {
 			echo '<div class="entry-featuredImg annina-loader">';
-			the_post_thumbnail('normal-post');
+			the_post_thumbnail('annina-normal-post');
 			echo '</div>';
 		}
 	?>
@@ -35,7 +35,7 @@
 	<span style="display:none" class="updated"><?php the_time(get_option('date_format')); ?></span>
 	<div style="display:none" class="vcard author"><a class="url fn n" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php echo esc_html( get_the_author() ); ?></a></div>
 
-	<footer class="entry-footer">
+	<footer class="entry-footer smallPart">
 		<?php edit_post_link( __( 'Edit', 'annina' ), '<span class="edit-link"><i class="fa fa-wrench spaceRight"></i>', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 	</div><!-- .content-annina -->

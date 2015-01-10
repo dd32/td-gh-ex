@@ -206,11 +206,11 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: content-page.php:35 content.php:42 inc/template-tags.php:123
+#: content-page.php:39 content.php:46 inc/template-tags.php:123
 msgid "Edit"
 msgstr ""
 
-#: content.php:41
+#: content.php:45
 msgid "Read More"
 msgstr ""
 
@@ -228,35 +228,31 @@ msgstr ""
 msgid "%1$s by %2$s."
 msgstr ""
 
-#: functions.php:47
+#: functions.php:56
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:74
+#: functions.php:83
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:112
-#, php-format
-msgid ""
-"Thank you for installing <b>Annina</b> WordPress Theme! <a href=\"%2$s"
-"\"><b>Click here to go to the Theme Options</b></a>  | <a href=\"%1$s\">Hide "
-"Notice</a>"
+#: header.php:35
+msgid "Search for:"
 msgstr ""
 
-#: header.php:35
+#: header.php:36
 msgid "Type here and hit enter..."
 msgstr ""
 
-#: header.php:37
+#: header.php:39
 msgid "Close"
 msgstr ""
 
-#: header.php:43
+#: header.php:45
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:52
+#: header.php:54
 msgid "Main Menu"
 msgstr ""
 
@@ -276,7 +272,7 @@ msgstr ""
 msgid "Special Color"
 msgstr ""
 
-#: inc/extras.php:63
+#: inc/extras.php:64
 #, php-format
 msgid "Page %s"
 msgstr ""
@@ -320,13 +316,13 @@ msgstr ""
 #: inc/template-tags.php:82
 #, php-format
 msgctxt "post date"
-msgid "<i class=\"fa fa-calendar spaceRight\"></i> %s"
+msgid "<i class=\"fa fa-calendar spaceRight\"></i>%s"
 msgstr ""
 
 #: inc/template-tags.php:87
 #, php-format
 msgctxt "post author"
-msgid "<i class=\"fa fa-user spaceLeftRight\"></i> %s"
+msgid "<i class=\"fa fa-user spaceLeftRight\"></i>%s"
 msgstr ""
 
 #: inc/template-tags.php:95 inc/template-tags.php:118
@@ -335,7 +331,7 @@ msgstr ""
 
 #: inc/template-tags.php:97
 #, php-format
-msgid "<i class=\"fa fa-folder-open-o spaceLeftRight\"></i> %1$s"
+msgid "<i class=\"fa fa-folder-open-o spaceLeftRight\"></i>%1$s"
 msgstr ""
 
 #: inc/template-tags.php:103
@@ -352,15 +348,110 @@ msgstr ""
 
 #: inc/template-tags.php:120
 #, php-format
-msgid "<i class=\"fa fa-tags spaceRight\"></i> %1$s"
+msgid "<i class=\"fa fa-tags spaceRight\"></i>%1$s"
 msgstr ""
 
-#: inc/theme-options.php:22 inc/theme-options.php:45
+#: inc/theme-options.php:21 inc/theme-options.php:44
 msgid "Annina Theme Options"
 msgstr ""
 
-#: inc/theme-options.php:58
+#: inc/theme-options.php:57
 msgid " Free Theme Options"
+msgstr ""
+
+#: inc/theme-options.php:60
+msgid "Need more features and options? Upgrade to PRO!"
+msgstr ""
+
+#: inc/theme-options.php:61
+msgid "Get"
+msgstr ""
+
+#: inc/theme-options.php:61
+msgid "Annina PRO"
+msgstr ""
+
+#: inc/theme-options.php:61
+msgid "WordPress Theme for only"
+msgstr ""
+
+#: inc/theme-options.php:61
+msgid "(One Time Fee)"
+msgstr ""
+
+#: inc/theme-options.php:63
+msgid "Demo (Annina PRO)"
+msgstr ""
+
+#: inc/theme-options.php:65
+msgid "Get The Pro Version"
+msgstr ""
+
+#: inc/theme-options.php:69
+msgid "Advanced Theme Options"
+msgstr ""
+
+#: inc/theme-options.php:69
+msgid ""
+"(Manage Loading Page, Additional Custom Code, Font switcher and much more...)"
+msgstr ""
+
+#: inc/theme-options.php:70
+msgid "Logo and Favicon Upload"
+msgstr ""
+
+#: inc/theme-options.php:71
+msgid "Unlimited Colors and Skin"
+msgstr ""
+
+#: inc/theme-options.php:72
+msgid "Post views counter"
+msgstr ""
+
+#: inc/theme-options.php:73
+msgid "Infinite Scroll"
+msgstr ""
+
+#: inc/theme-options.php:74
+msgid "Breadcrumb"
+msgstr ""
+
+#: inc/theme-options.php:75
+msgid "Post format"
+msgstr ""
+
+#: inc/theme-options.php:75
+msgid "(Standard, Audio, Link, Video, Quote)"
+msgstr ""
+
+#: inc/theme-options.php:76
+msgid "7 Shortcodes"
+msgstr ""
+
+#: inc/theme-options.php:76
+msgid "(Toggle, Tabs, Boxes, Columns, Highlights, Buttons and Drop Cap)"
+msgstr ""
+
+#: inc/theme-options.php:77
+msgid "10 Exclusive Widgets"
+msgstr ""
+
+#: inc/theme-options.php:77
+msgid ""
+"(Latest Tweet, Instagram, Social Buttons, Recent Posts with Thumbnail and "
+"Most Commented Posts...)"
+msgstr ""
+
+#: inc/theme-options.php:78
+msgid "Related Posts Box"
+msgstr ""
+
+#: inc/theme-options.php:79
+msgid "Information About Author Box"
+msgstr ""
+
+#: inc/theme-options.php:80
+msgid "And much more..."
 msgstr ""
 
 #: inc/theme-options.php:85

@@ -24,7 +24,13 @@ Scripts used in the site are as below:
 	4. imagesLoaded script (http://imagesloaded.desandro.com/) licensed under MIT
 
 Images used in Theme Screenshot
-	1. Pixabay (http://pixabay.com/) Free photos for commercial and personal works
+	1. Pixabay (http://pixabay.com/it/home-office-workstation-ufficio-336373/) Free photos for commercial and personal works
+	2. Pixabay (http://pixabay.com/it/iphone-6-apple-ios-iphone-ios-8-458153/) Free photos for commercial and personal works
+	3. Pixabay (http://pixabay.com/it/servizio-computer-riparazione-428540/) Free photos for commercial and personal works
+	4. Pixabay (http://pixabay.com/it/notebook-portatile-lavoro-pc-405755/) Free photos for commercial and personal works
+	5. Pixabay (http://pixabay.com/it/tastiera-apple-ingresso-tasti-338510/) Free photos for commercial and personal works
+	6. Pixabay (http://pixabay.com/it/notebook-penne-stilografiche-penna-428293/) Free photos for commercial and personal works
+	7. Pixabay (http://pixabay.com/it/iphone-modello-mockup-mock-up-500291/) Free photos for commercial and personal works
 
 == Translation ==
 Annina Free theme is translation ready. 
@@ -42,6 +48,11 @@ two-columns, right-sidebar, responsive-layout, custom-background, custom-menu, c
 3. Log into your WP admin panel and click on the Design tab. Now click on the Annina theme to activate it.
 
 == Changelog ==
+Version 1.2
+* Included non minify version of js and css
+* Improved full screen search field
+* Minor bug fixes
+
 Version 1.1.1
 * Fixed Masonry Script
 * Minor Bug Fixes

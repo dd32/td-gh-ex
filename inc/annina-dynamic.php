@@ -59,11 +59,10 @@ function annina_color_primary_register( $wp_customize ) {
 	'label' => __('Special Color', 'annina')
 	);
 	
-	foreach( $colors as $color ) {
+	foreach( $colors as $annina_theme_options ) {
 	// SETTINGS
-	$wp_customize->add_setting(
-		$color['slug'], array(
-			'default' => $color['default'],
+		$wp_customize->add_setting( 'annina_theme_options[' . $annina_theme_options['slug'] . ']', array(
+			'default' => $annina_theme_options['default'],
 			'type' => 'option', 
 			'sanitize_callback' => 'sanitize_hex_color',
 			'capability' => 'edit_theme_options'
@@ -73,12 +72,14 @@ function annina_color_primary_register( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			$color['slug'], 
-			array('label' => $color['label'], 
+			$annina_theme_options['slug'], 
+			array('label' => $annina_theme_options['label'], 
 			'section' => 'colors',
-			'settings' => $color['slug'])
+			'settings' =>'annina_theme_options[' . $annina_theme_options['slug'] . ']',
+			)
 		)
 	);
+	
 	}
 }
 add_action( 'customize_register', 'annina_color_primary_register' );
@@ -86,11 +87,21 @@ add_action( 'customize_register', 'annina_color_primary_register' );
 /**
  * Add Custom CSS to Header 
  */
-function annina_custom_css_styles() { 
-	$text_color_first = get_option('text_color_first');
-	$header_background_fourth = get_option('header_background_fourth');
-	$box_color_second = get_option('box_color_second');
-	$special_color_third = get_option('special_color_third');
+function annina_custom_css_styles() { 	
+	global $annina_theme_options;
+	$se_options = get_option( 'annina_theme_options', $annina_theme_options );
+	if( isset( $se_options[ 'text_color_first' ] ) ) {
+		$text_color_first = $se_options['text_color_first'];
+	}
+	if( isset( $se_options[ 'box_color_second' ] ) ) {
+		$box_color_second = $se_options['box_color_second'];
+	}
+	if( isset( $se_options[ 'special_color_third' ] ) ) {
+		$special_color_third = $se_options['special_color_third'];
+	}
+	if( isset( $se_options[ 'header_background_fourth' ] ) ) {
+		$header_background_fourth = $se_options['header_background_fourth'];
+	}
 ?>
 
 <style type="text/css">
@@ -104,20 +115,20 @@ function annina_custom_css_styles() {
 	a:focus,
 	a:active,
 	.entry-title a	{
-		color: <?php echo $text_color_first; ?>;
+		color: <?php echo esc_attr($text_color_first); ?>;
 	}
 	<?php endif; ?>
 	
 	<?php if (!empty($header_background_fourth) && $header_background_fourth != '#222222' ) : ?>
 	.site-header {
-		background: <?php echo $header_background_fourth; ?>;
+		background: <?php echo esc_attr($header_background_fourth); ?>;
 	}
 	<?php endif; ?>
 	
 	<?php if (!empty($box_color_second) && $box_color_second != '#ffffff' ) : ?>
 	<?php list($r, $g, $b) = sscanf($box_color_second, '#%02x%02x%02x'); ?>
 	#search-full {
-		background: rgba(<?php echo $r.', '.$g.', '.$b; ?>, 0.9);
+		background: rgba(<?php echo esc_attr($r).', '.esc_attr($g).', '.esc_attr($b); ?>, 0.9);
 	}
 	button,
 	input[type="button"],
@@ -138,12 +149,12 @@ function annina_custom_css_styles() {
 	#wp-calendar > caption,
 	.content-annina-title,
 	.tagcloud a {
-		color: <?php echo $box_color_second; ?>;
+		color: <?php echo esc_attr($box_color_second); ?>;
 	}
 	.post-navigation .meta-nav:hover, 
 	.paging-navigation .meta-nav:hover,
 	.content-annina {
-		background: <?php echo $box_color_second; ?>;
+		background: <?php echo esc_attr($box_color_second); ?>;
 	}
 	<?php endif; ?>
 	
@@ -159,7 +170,7 @@ function annina_custom_css_styles() {
 	#wp-calendar > caption,
 	.content-annina-title,
 	.tagcloud a {
-		background: <?php echo $special_color_third; ?>;
+		background: <?php echo esc_attr($special_color_third); ?>;
 	}
 	blockquote::before,
 	button:hover:not(.menu-toggle),
@@ -185,7 +196,7 @@ function annina_custom_css_styles() {
 	.edit-link, 
 	.tags-links,
 	.sticky:before {
-		color: <?php echo $special_color_third; ?>;
+		color: <?php echo esc_attr($special_color_third); ?>;
 	}
 	button:hover:not(.menu-toggle),
 	input[type="button"]:hover,
@@ -195,11 +206,11 @@ function annina_custom_css_styles() {
 	.paging-navigation .meta-nav:hover,
 	#wp-calendar tbody td#today,
 	.tagcloud a:hover {
-		border: 1px solid <?php echo $special_color_third; ?>;
+		border: 1px solid <?php echo esc_attr($special_color_third); ?>;
 	}
 	blockquote {
-		border-left: 4px solid <?php echo $special_color_third; ?>;
-		border-right: 2px solid <?php echo $special_color_third; ?>;
+		border-left: 4px solid <?php echo esc_attr($special_color_third); ?>;
+		border-right: 2px solid <?php echo esc_attr($special_color_third); ?>;
 	}
 	.main-navigation ul li:hover > a, 
 	.main-navigation li a:focus, 
@@ -211,10 +222,10 @@ function annina_custom_css_styles() {
 	.main-navigation ul > li:hover .indicator, 
 	.main-navigation li.current-menu-parent .indicator, 
 	.main-navigation li.current-menu-item .indicator {
-		border-left: 2px solid <?php echo $special_color_third; ?>;
+		border-left: 2px solid <?php echo esc_attr($special_color_third); ?>;
 	}
 	.widget-title h3 {
-		border-bottom: 2px solid <?php echo $special_color_third; ?>;
+		border-bottom: 2px solid <?php echo esc_attr($special_color_third); ?>;
 	}
 	<?php endif; ?>
 	

@@ -33,6 +33,14 @@ function annina_setup() {
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
+	
+	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
+	add_theme_support( 'title-tag' );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -40,8 +48,8 @@ function annina_setup() {
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
-	add_image_size( 'normal-post' , 950, 9999);
-	add_image_size( 'masonry-post' , 450, 9999);
+	add_image_size( 'annina-normal-post' , 950, 9999);
+	add_image_size( 'annina-masonry-post' , 450, 9999);
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -92,8 +100,7 @@ function annina_scripts() {
 	$protocol = is_ssl() ? 'https' : 'http';
 	wp_enqueue_style( 'annina-googlefonts', $protocol .'://fonts.googleapis.com/css?family=Lato:300,400,700');
 
-	wp_enqueue_script( 'jquery-masonry' );
-	wp_enqueue_script( 'annina-custom', get_template_directory_uri() . '/js/jquery.annina.js', array('jquery'), '1.0', true );
+	wp_enqueue_script( 'annina-custom', get_template_directory_uri() . '/js/jquery.annina.js', array('jquery', 'jquery-masonry'), '1.0', true );
 	wp_enqueue_script( 'annina-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 	wp_enqueue_script( 'annina-imagesloaded', get_template_directory_uri() . '/js/imagesloaded.pkgd.min.js', array('jquery'), '1.0', true );
 	wp_enqueue_script( 'annina-smoothScroll', get_template_directory_uri() . '/js/SmoothScroll.min.js', array('jquery'), '1.0', true );
@@ -103,17 +110,6 @@ function annina_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'annina_scripts' );
-
-/**
- * EXCLUDE PAGE FROM SEARCH
- */
-function annina_nosearch_page($query) {
-	if ($query->is_search) {
-		$query->set('post_type', 'post');
-	}
-		return $query;
-}
-add_filter('pre_get_posts','annina_nosearch_page'); 
 
 /**
  * Custom template tags for this theme.

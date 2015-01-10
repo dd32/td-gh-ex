@@ -19,9 +19,9 @@
 		if ( '' != get_the_post_thumbnail() ) {
 			echo '<div class="entry-featuredImg"><a href="' .get_permalink(). '"><span class="overlay-img"></span>';
 			if ($i == 0 && $se_options['firstbig'] ) {
-				the_post_thumbnail('normal-post');
+				the_post_thumbnail('annina-normal-post');
 			} else {
-				the_post_thumbnail('masonry-post');
+				the_post_thumbnail('annina-masonry-post');
 			}
 			echo '</a></div>';
 		}
