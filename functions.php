@@ -76,6 +76,11 @@ function maxflat_setup(){
 	  add_image_size('wide-image', 1000, 620, true);
 	  add_image_size('medium-square', 350, 350, true);
 
+	  /*
+		 * Let WordPress manage the document title.
+		 */
+	add_theme_support( 'title-tag' );
+
 
 
 /**
@@ -105,3 +110,18 @@ function maxflat_scripts_styles()
 }
 
 add_action('wp_enqueue_scripts', 'maxflat_scripts_styles');
+
+/**
+Ads title tag backward compatibility - versions before title-tag support
+ */
+
+function maxflat_site_title(){
+	if(version_compare( $GLOBALS['wp_version'], '4.1-alpha', '<' )){
+	?>
+<title><?php wp_title( '|', true, 'right' ); ?></title>
+	<?php
+	}
+
+}
+
+add_action('wp_head', 'maxflat_site_title', 1);
