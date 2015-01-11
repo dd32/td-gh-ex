@@ -1,5 +1,5 @@
 <?php
-$bfa_ata_version = "3.7.20";
+$bfa_ata_version = "3.7.21";
 
 // Load translation file above
 load_theme_textdomain('atahualpa');

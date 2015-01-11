@@ -9,7 +9,7 @@
 if (!isset($bfa_ata))  
 list($bfa_ata, $cols, $left_col, $left_col2, $right_col, $right_col2, $bfa_ata['h_blogtitle'], $bfa_ata['h_posttitle']) = bfa_get_options(); ?>
 <?php global $post_id; ?>
-<title><?php wp_title(); ?></title>
+<title><?php wp_title( '' ); ?></title>
 <?php if ( isset($bfa_ata['IEDocType']) ) { 
 switch ( $bfa_ata['IEDocType'] ) { 
 	case "None":

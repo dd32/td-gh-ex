@@ -63,11 +63,17 @@ function bfa_title_tag( $title, $sep ) {
 	// if the option "Use Bytes For All SEO options?" is set to "No"
 	$bfa_ata['use_bfa_seo'] == "No") { 
 	
-		return $title . $sep . get_bloginfo('name');
+		if ( is_front_page() ) {
+			return get_bloginfo('name');
+		} else {
+			return trim( $title ) . " &laquo; " . get_bloginfo('name');
+		}
+
 		
 	} else { 
 
-		if ( is_home() ) {
+		#if ( is_home() ) {
+		if ( is_front_page() ) {
 
 			return get_bloginfo('name');
 
