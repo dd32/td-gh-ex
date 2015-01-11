@@ -198,6 +198,12 @@ function bfa_postinfo($postinfo_string) {
 		$postinfo = str_replace("%author-yim%", $author_yim, $postinfo);
 	}
 
+    // Author Gravatar 
+    if (strpos($postinfo_string, '%gravatar%') !== FALSE) { 
+        $gravatar = get_avatar(get_the_author_meta('ID'), 30); 
+        $postinfo = str_replace("%gravatar%", $gravatar, $postinfo); 
+    }  
+	
 	// Date & Time
 	if ( strpos($postinfo_string,'%date(') !== FALSE ) {
 		$postinfo = preg_replace_callback("/%date\((.*?)'(.*?)'(.*?)\)%/is","bfa_parse_date_callback",$postinfo);
