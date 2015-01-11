@@ -291,12 +291,75 @@ function fkidd_the_content_single() {
 /**
  * Displays the Page Header Section including Page Title and Breadcrumb
  */
-function fkidd_show_page_header_section() { ?>
+function fkidd_show_page_header_section() { 
+	global $paged, $page;
+
+	if ( is_single() || is_page() ) :
+        $title = single_post_title( '', false );
+
+	elseif ( is_home() ) :
+		if ( $paged >= 2 || $page >= 2 ) :
+			$title = sprintf( __( '%s - Page %s', 'fkidd' ), single_post_title( '', false ), max( $paged, $page ) );	
+		else :
+			$title = single_post_title( '', false );	
+		endif;
+
+	elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
+		$title = __( 'Asides', 'fkidd' );
+
+	elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
+		$title = __( 'Images', 'fkidd' );
+
+	elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
+		$title = __( 'Videos', 'fkidd' );
+
+	elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
+		$title = __( 'Audio', 'fkidd' );
+
+	elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
+		$title = __( 'Quotes', 'fkidd' );
+
+	elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
+		$title = __( 'Links', 'fkidd' );
+		
+	elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
+		$title = __( 'Galleries', 'fkidd' );
+		
+	elseif ( is_tag() ) :
+		$title = sprintf( __( 'Tag Archives: %s', 'fkidd' ), single_tag_title( '', false ) );
+
+	elseif ( is_category() ) :
+		$title = sprintf( __( 'Category Archives: %s', 'fkidd' ), single_cat_title( '', false ) );
+		
+	elseif ( is_day() ) :
+		$title = sprintf( __( 'Daily Archives: %s', 'fkidd' ), get_the_date() );
+
+	elseif ( is_month() ) :
+		$title = sprintf( __( 'Monthly Archives: %s', 'fkidd' ),
+					get_the_date( _x( 'F Y', 'monthly archives date format', 'fkidd' ) ) );
+
+	elseif ( is_year() ) :
+		$title = sprintf( __( 'Yearly Archives: %s', 'fkidd' ),
+					get_the_date( _x( 'Y', 'yearly archives date format', 'fkidd' )  ) );
+
+	elseif ( is_archive() ) :
+		$title = __( 'Archives', 'fkidd' );
+		
+	elseif ( is_404() ) :
+		$title = __( 'Error 404: Not Found', 'fkidd' );
+
+	else :
+		$title = wp_title('', false);
+
+	endif;
+	
+	
+	?>
 
 	<section id="page-header">
 		<div id="page-header-content">
 
-			<h1><?php wp_title(''); ?></h1>
+			<h1><?php echo $title; ?></h1>
 
 			<div class="clear">
 			</div>
