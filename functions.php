@@ -89,7 +89,14 @@ function harmonux_setup(){
 
     if ( ! isset( $content_width ) ){
         $content_width = 640;
-    }}
+    }
+
+			/*
+			 * Let WordPress manage the document title.
+			 */
+	add_theme_support( 'title-tag' );
+
+}
 endif; // harmonux_setup
 add_action('after_setup_theme', 'harmonux_setup');
 
@@ -189,3 +196,18 @@ function harmonux_theme_register_required_plugins() {
 
 }
 endif; // harmonux_setup
+
+/**
+Ads title tag backward compatibility - versions before title-tag support
+ */
+
+function maxflat_site_title(){
+	if(version_compare( $GLOBALS['wp_version'], '4.1-alpha', '<' )){
+		?>
+	<title><?php wp_title( '|', true, 'right' ); ?></title>
+	<?php
+	}
+
+}
+
+add_action('wp_head', 'maxflat_site_title', 1);

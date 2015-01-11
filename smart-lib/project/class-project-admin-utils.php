@@ -24,7 +24,7 @@ class Smart_Project_Admin_Utils extends Smart_Base_Admin{
 			'path'     => '/js/customize-script.js',
 			'deps'     => array( 'jquery' ),
 			'version'  => '1.0',
-			'in_footer'=> false
+			'in_footer'=> true
 		),
 	);
 
