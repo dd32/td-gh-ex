@@ -1,4 +1,11 @@
 == Changelog ==
+Version 3.3
+* Added title tag via add theme support
+* Added More theme options button in Customizer
+* Changed license to GPLv3
+* Updated Farbtastic Color Picker to Iris Color Picker in theme options
+* Updated media uploader to new version in theme options
+
 Version 3.2
 * Added Romanian translation ro_RO.po and ro_RO.mo
 
