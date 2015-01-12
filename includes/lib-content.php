@@ -564,11 +564,12 @@ function weaverx_per_post_style() {
 				if ($rule[0] == '+')
 					echo (substr($rule, 1) . "}\n");
 				else
-					echo("$post_id $rule}\n");	// add the post id to the front of each rule
+					echo("{$post_id}{$rule}}\n");	// add the post id to the front of each rule
 			}
 		}
 		echo("</style>\n");
 	}
+	do_action('weaverx_per_post', $weaverx_cur_post_ID);
 }
 
 // ------------------------------------- TITLES -----------------------------------

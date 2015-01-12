@@ -298,6 +298,8 @@ function weaverx_page_lead( $who , $archive = false ) {
 
 	weaverx_sidebar_before( $sb_layout, $who );          // sidebars if top-stacking
 
+	do_action('weaverx_per_page');
+
 	echo '<div id="content" role="main"' . weaverx_content_class( $sb_layout, $who, false ) . ">\n";
 	weaverx_inject_area( 'precontent' );
 

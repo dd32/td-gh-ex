@@ -1093,6 +1093,9 @@ If you use one of these extra widget areas more than once on the same page (for 
       <li><em>Blank</em> - Provides a totally blank content area inside the #wrapper div. (This means the page will match the overall look of your site.) It  lets you provide totally custom HTML on a page. It doesn't show the page title you set when creating the page.
 It does show page top and bottom widget areas and comments unless you explicitly hide them on a per page basis.
 You can optionally hide the header and footer areas using the check boxes on the per page options. This template is good for entering raw HTML using the HTML editor tab. This page will use the default widget areas for a standard page, but this can be overridden in the per page options.<br />
+<br />
+      </li>
+      <li><em>Raw</em> - This is an even more &quot;bare-bones&quot; version of Blank. Instead of being wrapped in the #container and #content classes, the post's content will be wrapped in a &lt;div&gt; named '#page-raw'. There will be no additional styling on the #page-raw, so the content won't have any margins or padding as defined by the normal #container or #content divs, but will instead have the margins/padding of the #wrapper. There will be none of the normal sidebars or widget areas displayed, nor are any of the HTML insertion areas included.<br />
         <br />
       </li>
       <li><em>Two Column Content</em> - Allows you to create a content page with two columns of content using the standard &lt;!--more--&gt; page tag (entered using the page break icon from the Visual Editor). If you break the content into more than two areas, they will automatically be placed vertically (in other words, you can use more than one &lt;!--more--&gt; tag.<br />
@@ -1120,7 +1123,7 @@ You can optionally hide the header and footer areas using the check boxes on the
       <li><em>Sitemap</em> - This page template will display a simple sitemap, consisting of a list of all ages, monthly post archives, all categories, and the tag cloud. You can add content to the page that will appear above the sitemap, but there are no other options to control the organization or content of the sitemap (other than the meta info line options for posts in general).</li>
     </ol>
     <p><strong>Other options for creating custom pages</strong></p>
-    <p>You can provide additional customization for a given page using the <a href="#ExtraPP">Extra Per Page Options</a> described below. For example, the previous version of Weaver had a Custom Header page template. That can now be accomplished by checking the &quot;Hide Entire Header&quot; per page option, and including a Custom Field called &quot;preheader&quot; that has the code for the custom header.</p>
+    <p>You can provide additional customization for a given page using the <a href="#ExtraPP">Extra Per Page Options</a> described below. For example, creating an entire custom header can be accomplished by checking the &quot;Hide Entire Header&quot; per page option, and including a Custom Field called &quot;preheader&quot; that has the code for the custom header.</p>
     <p>Any page can be made into a one full column page simply by setting the &quot;No sidebars, one column content&quot; sidebar layout in the per page option box.</p>
     <h3><a name="PerPostTemplate" id="PerPostTemplate"></a>Settings for &quot;Page with Posts&quot; Template </h3>
     <p> One of the most powerful features of the Page with Posts template is that it allows you to create filters on a <a href="#PerPage">per page</a> basis that lets you display specific posts on a page. You can have as many different pages using the Page with Posts template as you need, all showing a different set of posts.</p>

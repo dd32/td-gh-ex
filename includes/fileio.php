@@ -152,7 +152,7 @@ function weaverx_f_wp_filesystem_error() {
 }
 
 function weaverx_f_fail($msg) {
-	weaverx_pop_msg($msg);
+	weaverx_alert($msg);
 	return false;
 }
 ?>

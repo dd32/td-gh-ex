@@ -77,3 +77,7 @@ First Official Release: Version 0.90
   - makes color flow work with them.
 * Tweaked respond.min.js script.
 * Added styling support for [site_title] and [site_tagline] (Theme Support Plugin)
+
+= Changed 0.96 =
+* Added Raw page template
+* Added new do_actions for pre-page and pre-post processing
