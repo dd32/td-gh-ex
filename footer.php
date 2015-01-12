@@ -11,35 +11,20 @@
             <div class="row">
             
             
-             <?php if (!dynamic_sidebar('footer-sidebar')) : ?>
+            <?php if (!dynamic_sidebar('footer-sidebar')) : ?>
            
-        
-            
-            
-            
-            
-                <div class="col-md-3" id="footerArea1">
-                <?php 
-				$options = get_option( 'arinio_theme_options' ); 
-									if($options['footert1'] != '')
-									{
-										echo $options['footert1'];
-									}else{
-										echo ' <h3>About Company</h3>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet purus rutrum, vestibulum urna a, elementum nulla. Etiam pharetra nisi sit amet sapien malesuada, non hendrerit arcu pellentesque. .  </p>
-                    
-                     ';
-										 				
-									}
-									?>
+            <div class="col-md-3" id="footerArea1">  <h3><?php $options = get_option( 'arinio_theme_options' ); if($options['fwidgett1'] != '') { echo esc_attr($options['fwidgett1']); }else{ ?> <?php _e( 'About Company', 'ariwoo' ); ?> <?php } ?></h3>
+                
+				
+				<p> <?php  if($options['footert1'] != '') { echo esc_attr($options['footert1']); }else{ ?> <?php _e( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet purus rutrum, vestibulum urna a, elementum nulla. Etiam pharetra nisi sit amet sapien malesuada, non hendrerit arcu pellentesque.', 'ariwoo' ); ?> <?php  } ?> </p>
+				 
                    
 
                 </div>
                 <div class="col-md-3" id="footerArea2">
 
-                    <h3>Recent Post </h3> 
-                   <ul>
+                    <h3><?php if($options['fwidgett2'] != '') { echo esc_attr($options['fwidgett2']); }else{ ?> <?php _e( 'Recent Post', 'ariwoo' ); ?> <?php  } ?></h3> 
+                   <ul class="sparrow">
           <?php
 						$args = array(
 							'numberposts' => 5,
@@ -57,58 +42,26 @@
                      
 
                 </div>
-                <div class="col-md-3" id="footerArea3">
- <?php 
-				$options = get_option( 'arinio_theme_options' ); 
-									if($options['footert2'] != '')
-									{
-										echo $options['footert2'];
-									}else{
-										echo ' <h3>Sample Content</h3> 
-                    <p>Nam eget placerat justo. Suspendisse quis hendrerit nisl. Nullam eget malesuada dui. Phasellus auctor, justo eu euismod vestibulum, ex nisl mollis elit, ut efficitur mauris turpis ullamcorper nisl. Proin eleifend erat tellus, at feugiat mi pulvinar at. Fusce vitae ante fermentum nisi fermentum euismod eu ac quam.
-                    </p>';
-										 				
-									}
-									?>
+                <div class="col-md-3" id="footerArea3">  <h3><?php if($options['fwidgett3'] != '') { echo esc_attr($options['fwidgett3']); }else{ ?> <?php _e( 'Sample Content', 'ariwoo' ); ?> <?php  } ?></h3>
+                
+                <p> <?php if($options['footert2'] != '') { echo esc_attr($options['footert2']); }else{ ?> <?php _e( 'Nam eget placerat justo. Suspendisse quis hendrerit nisl. Nullam eget malesuada dui. Phasellus auctor, justo eu euismod vestibulum, ex nisl mollis elit, ut efficitur mauris turpis ullamcorper nisl. Proin eleifend erat tellus, at feugiat mi pulvinar at.', 'ariwoo' ); ?> <?php } ?> </p>
+ 
                     
 
                 </div>
-                <div class="col-md-3" id="footerArea4">
- <?php 
-				$options = get_option( 'arinio_theme_options' ); 
-									if($options['footert3'] != '')
-									{
-										echo $options['footert3'];
-									}else{
-										echo ' <h3>Get in Touch</h3>  
+                <div class="col-md-3" id="footerArea4"> 
+                <h3><?php if($options['fwidgett4'] != '') { echo esc_attr($options['fwidgett4']); }else{ ?> <?php _e( 'Get in Touch', 'ariwoo' ); ?> <?php  } ?></h3>
+    
                                                                
                     <ul id="contact-info">
-                    <li>                                    
-                        <i class="fa fa-phone icon"></i>
-                        <span class="field">Phone:</span>
-                        <br />
-                       +91-21-2556-2200/2500-3200                                                                      
-                    </li>
-                    <li>
-                        <i class="fa fa-envelope icon"></i>
-                        <span class="field">Email:</span>
-                        <br />
-                        <a href="mailto:contact@mysite.com" title="Email">contact@mysite.com</a>
-                    </li>
+                   
                     <li>
                         <i class="fa fa-home icon" style="margin-bottom:50px"></i>
                         <span class="field">Address:</span>
                         <br />
-                       ARINIO GROUP
-
-<br />
-                        WZ-290,Plot No.-8, Commodo <br />
-                         Aenean Cursus-100002
+                       <?php if($options['footert3'] != '') { echo esc_attr($options['footert3']); }else{ ?> <?php _e( 'ARINIO GROUP <br /> WZ-290,Plot No.-8, Commodo <br /> Aenean Cursus-100002', 'ariwoo' ); ?> <?php } ?> 
                     </li>
-                    </ul>';
-										 				
-									}
-									?>
+                    </ul> 
                     
 
                 </div>

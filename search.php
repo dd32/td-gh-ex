@@ -22,36 +22,36 @@ get_header(); ?>
         <?php if (have_posts() ) : ?>
         <?php while (have_posts()) : the_post(); ?>
         <div class="article-page">
-          <?php if ((function_exists('has_post_thumbnail')) && (has_post_thumbnail())) { ?>
-                    <?php 
-			   the_post_thumbnail();
-			  ?>
-                <?php }   ?>
-                  
-           
-          <div class="post-meta">
-            <div class="post-date"> <span class="day"><?php echo get_the_time('d'); ?></span> <span class="month"><?php echo get_the_time('M'); ?></span> </div>
-            
-            <!--end / post-date-->
-            
-            <div class="post-meta-author">
-              <div class="post-author-name">
-                <h5><a href="<?php the_permalink(); ?>">
-                  <?php the_title(); ?>
-                  </a></h5>
-              </div>
-              <?php ariwoo_entry_meta(); ?>
-              <div class="clear-fix"></div>
-			  <?php the_tags(); ?>
-            </div>
-            
-            <!--end / post-meta--> 
-            
-          </div>
-          <div class="post-content">
-            <?php the_excerpt(); ?>
-          </div>
-           </div>
+                                
+                                 <?php if ((function_exists('has_post_thumbnail')) && (has_post_thumbnail())) { ?>
+             <?php
+ 	             the_post_thumbnail();
+             ?>
+ 	                <?php }  ?>
+                                
+                                
+                                
+                                    <h1 class="article-page-head"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+ <ul class="meta">
+                    <li><i class="fa fa-clock-o blogin-color"></i> <?php
+                        $archive_year = get_the_time('Y');
+                        $archive_month = get_the_time('m');
+                        $archive_day = get_the_time('d');
+                        ?>
+                        <a href="<?php
+                        echo get_day_link($archive_year,
+                                $archive_month,
+                                $archive_day);
+                        ?>"><?php echo get_the_time('m, d, Y') ?></a></li>
+                    <li><i class="fa fa-user blogin-color"></i>&nbsp;<?php the_author_posts_link(); ?></li>
+                    <li><i class="fa fa-folder-open blogin-color"></i>&nbsp;<?php the_category(', '); ?></li>
+                    <li class="comments"><i class="fa fa-comment blogin-color"></i> <?php comments_popup_link('No Comments.',
+                                'Comment: 1',
+                                'Comments: %'); ?></li>
+                </ul>
+
+                                    <?php the_excerpt(); ?>
+                                </div>
           <!--end / post-content--> 
           
        <div class="clearfix"></div>
@@ -65,10 +65,11 @@ get_header(); ?>
         <?php endif; ?>
         
         <!--end / article--> 
-         <nav class="ariniom-nav">
-                <span class="ariniom-nav-previous"><?php previous_posts_link(); ?></span>
-                <span class="ariniom-nav-next"><?php next_posts_link(); ?></span>
-			</nav>
+         <nav id="nav-single"> <span class="nav-previous">
+                            <?php next_posts_link('Next Post'); ?>
+                        </span> <span class="nav-next">
+<?php previous_posts_link('Previous Post'); ?>
+                        </span> </nav>
       </div>
       
       <!--end / main-->

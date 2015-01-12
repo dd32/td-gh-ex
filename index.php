@@ -21,6 +21,15 @@ get_header(); ?>
                     <?php if (have_posts()) while (have_posts()) : the_post(); ?> 
                             <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                                 <div class="article-page">
+                                
+                                 <?php if ((function_exists('has_post_thumbnail')) && (has_post_thumbnail())) { ?>
+             <?php
+ 	             the_post_thumbnail();
+             ?>
+ 	                <?php }  ?>
+                                
+                                
+                                
                                     <h1 class="article-page-head"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
  <ul class="meta">
                     <li><i class="fa fa-clock-o blogin-color"></i> <?php
@@ -40,7 +49,7 @@ get_header(); ?>
                                 'Comments: %'); ?></li>
                 </ul>
 
-                                    <?php the_content(); ?>
+                                    <?php the_excerpt(); ?>
                                 </div>
                             </div>
                         <?php endwhile; ?>

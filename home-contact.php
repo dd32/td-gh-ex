@@ -28,6 +28,7 @@ if (isset($_POST['submitted'])) {
     } else {
         $email = trim($_POST['email']);
     }
+	$phone = trim($_POST['phone']);
     if (trim($_POST['message']) === '') {
         $commentError = 'Please enter a message.';
         $hasError = true;
@@ -46,7 +47,7 @@ if (isset($_POST['submitted'])) {
             $emailTo = get_option('admin_email');
         }
         $subject = '[Wordpress] From ' . $name;
-        $body = "Name: $name \n\nEmail: $email \n\nComments: $comments";
+        $body = "Name: $name \n\nPhone: $phone \n\nEmail: $email \n\nComments: $comments";
         $headers = 'From: ' . $name . ' <' . $emailTo . '>' . "\r\n" . 'Reply-To: ' . $email;
         mail($emailTo, $subject, $body, $headers);
         $emailSent = true;
@@ -68,7 +69,7 @@ if (isset($_POST['submitted'])) {
             
             
              <form   action="<?php $_SERVER['PHP_SELF'] ?>" id="register-form" novalidate="novalidate" method="post">
-						<div class="col-md-6 span at">
+						<div class="col-md-6 span">
 						
                         
                         	<input type="text"   name="firstname" value="<?php if (isset($_POST['firstname']))
@@ -79,7 +80,7 @@ if (isset($_POST['submitted'])) {
                        
                        
                        
-							<input type="text" name="subject" value="" placeholder="Phone">
+							<input type="text" name="phone" value="" placeholder="Phone">
 							<input type="text" name="email" value="<?php if (isset($_POST['email']))
                        echo $_POST['email'];
                    ?>" placeholder="Email"> <?php if ($emailError != '') { ?>
@@ -88,7 +89,7 @@ if (isset($_POST['submitted'])) {
 						</div>
                         
                         
-						<div class="col-md-6 omega span at"><textarea  name="message" value="<?php
+						<div class="col-md-6 omega span"><textarea  name="message" value="<?php
                    if (isset($_POST['message'])) {
                        if (function_exists('stripslashes')) {
                            echo stripslashes($_POST['message']);
@@ -100,9 +101,9 @@ if (isset($_POST['submitted'])) {
                     <span class="error comment"> <?php echo $commentError; ?> </span>
                 <?php } ?></div>
 						<div class="clear"></div>
-						<input type="reset" class="con_btn" value="Clear Form">
+					<div class="col-md-12">		<input type="reset" class="con_btn" value="Clear Form">
 						<input type="submit" class="con_btn send_btn" value="Send">
-                         <input type="hidden" name="submitted" id="submitted" value="true" />
+                         <input type="hidden" name="submitted" id="submitted" value="true" /> </div>
 						<div class="clear"></div>
 					</form>
             

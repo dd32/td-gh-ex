@@ -1,8 +1,55 @@
 <?php
 function arinios_options_init(){
- register_setting( 'ar_options', 'arinio_theme_options');
+ register_setting( 'ar_options', 'arinio_theme_options','ar_options_validate');
 } 
 add_action( 'admin_init', 'arinios_options_init' );
+
+function ar_options_validate($input)
+{
+	$input['logo'] = esc_url_raw( $input['logo'] );
+$input['fevicon'] = esc_url_raw( $input['fevicon'] );
+
+$input['blogh'] = wp_filter_nohtml_kses( $input['blogh'] );
+$input['footertext'] = wp_filter_nohtml_kses( $input['footertext'] );
+$input['customcss'] = esc_html( $input['customcss'] );
+$input['slide1title'] = wp_filter_nohtml_kses( $input['slide1title'] );
+$input['slide1subtitle'] = wp_filter_nohtml_kses( $input['slide1subtitle'] );
+$input['slide1des'] = wp_filter_nohtml_kses( $input['slide1des'] );
+$input['slide1image'] = esc_url_raw( $input['slide1image'] );
+$input['slide2title'] = wp_filter_nohtml_kses( $input['slide2title'] );
+$input['slide2subtitle'] = wp_filter_nohtml_kses( $input['slide2subtitle'] );
+$input['slide2des'] = wp_filter_nohtml_kses( $input['slide2des'] );
+$input['slide2image'] = esc_url_raw( $input['slide2image'] );
+$input['msheading'] = wp_filter_nohtml_kses( $input['msheading'] );
+$input['sicon1'] = wp_filter_nohtml_kses( $input['sicon1'] );
+$input['fstitle'] = wp_filter_nohtml_kses( $input['fstitle'] );
+$input['fdtitle'] = wp_filter_nohtml_kses( $input['fdtitle'] );
+$input['sicon2'] = wp_filter_nohtml_kses( $input['sicon2'] );
+$input['sstitle'] = wp_filter_nohtml_kses( $input['sstitle'] );
+$input['sdtitle'] = wp_filter_nohtml_kses( $input['sdtitle'] );
+$input['sicon3'] = wp_filter_nohtml_kses( $input['sicon3'] );
+$input['sstitle3'] = wp_filter_nohtml_kses( $input['sstitle3'] );
+$input['sdtitle3'] = wp_filter_nohtml_kses( $input['sdtitle3'] );
+$input['aboutus'] = wp_filter_nohtml_kses( $input['aboutus'] );
+$input['aboutusdh'] = wp_filter_nohtml_kses( $input['aboutusdh'] );
+$input['aboutusd'] = esc_html( $input['aboutusd'] );
+$input['aboutusimg'] = esc_url_raw( $input['aboutusimg'] );
+$input['contacth'] = wp_filter_nohtml_kses( $input['contacth'] );
+$input['contactd'] = wp_filter_nohtml_kses( $input['contactd'] );
+$input['fwidgett1'] = wp_filter_nohtml_kses( $input['fwidgett1'] );
+$input['footert1'] = wp_filter_nohtml_kses( $input['footert1'] );
+$input['fwidgett2'] = wp_filter_nohtml_kses( $input['fwidgett2'] );
+$input['fwidgett3'] = wp_filter_nohtml_kses( $input['fwidgett3'] );
+$input['footert2'] = wp_filter_nohtml_kses( $input['footert2'] );
+$input['fwidgett4'] = wp_filter_nohtml_kses( $input['fwidgett4'] );
+$input['footert3'] = wp_filter_nohtml_kses( $input['footert3'] );
+
+
+    return $input;
+}
+
+
+
 function arinios_framework_load_scripts(){
 	wp_enqueue_media();
 	wp_enqueue_style( 'arinios_framework', get_template_directory_uri(). '/theme-option/css/arinios_framework.css' ,false, '1.0.0');
@@ -46,16 +93,15 @@ function arinio_framework_page(){
 ?>
 
 <div class="tnotify">
-        <h1>Get Ariwoo PRO Theme!</h1>
+        <h1>Get Ariwoo PRO Theme!  Just $21</h1>
         <p style="font-size:15px; line-height: 20px;">You are using the Ariwoo, Free Version of Ariwoo Pro Theme. Upgrade to Pro for extra features like Home Page Unlimited Slider, Work Gallery, Team section, Client Section and many more Page Templates, Social Link Section, Life time theme support and much more.</p>
         <a href="http://arinio.com/ariwoo-responsive-multipurpose-wordpress-theme/" target="blank">Upgrade to Ariwoo PRO Theme here >></a>
     </div>
 <div id="arinio_framework-wrap" class="wrap">
-  <h2 class="nav-tab-wrapper"> <a id="options-group-1-tab" class="nav-tab basicsettings-tab" title="Basic Settings" href="#options-group-1">Basic Settings</a> <a id="options-group-3-tab" class="nav-tab basicsettings-tab" title="Basic Settings" href="#options-group-3">Slider Settings</a> <a id="options-group-4-tab" class="nav-tab socialsettings-tab" title="Services Settings" href="#options-group-4">Services Settings</a>  <a id="options-group-5-tab" class="nav-tab socialsettings-tab" title="Work Settings" href="#options-group-5">About us Settings</a> <a id="options-group-7-tab" class="nav-tab socialsettings-tab" title="Work Settings" href="#options-group-7">Contact Settings</a> </h2>
+  <h2 class="nav-tab-wrapper"> <a id="options-group-1-tab" class="nav-tab basicsettings-tab" title="Basic Settings" href="#options-group-1">Basic Settings</a> <a id="options-group-3-tab" class="nav-tab basicsettings-tab" title="Basic Settings" href="#options-group-3">Slider Settings</a> <a id="options-group-4-tab" class="nav-tab socialsettings-tab" title="Services Settings" href="#options-group-4">Services Settings</a>  <a id="options-group-5-tab" class="nav-tab socialsettings-tab" title="Work Settings" href="#options-group-5">About us Settings</a> <a id="options-group-7-tab" class="nav-tab socialsettings-tab" title="Work Settings" href="#options-group-7">Contact Settings</a> <a id="options-group-9-tab" class="nav-tab Footer-tab" title="Footer Settings" href="#options-group-9">Footer Settings</a> </h2>
   <div id="arinio_framework-metabox" class="metabox-holder">
     <div id="arinios_framework" class="postbox"> 
-      
-      <!--======================== F I N A L - - T H E M E - - O P T I O N ===================-->
+    
       
       <form method="post" action="options.php" id="form-option" class="theme_option_ar">
         <?php settings_fields( 'ar_options' );  
@@ -64,33 +110,33 @@ function arinio_framework_page(){
         <!-------------- First group ----------------->
         
         <div id="options-group-1" class="group basicsettings">
-          <h3>Basic Settings</h3>
+           <h3><?php _e( 'Basic Settings', 'ariwoo' ); ?></h3>
           <div id="section-logo" class="section section-upload ">
-            <h4 class="heading">Site Logo</h4>
+            <h4 class="heading"><?php _e( 'Site Logo', 'ariwoo' ); ?></h4>
             <div class="option">
               <div class="controls">
                 <input id="logo" class="upload" type="text" name="arinio_theme_options[logo]" 
-                            value="<?php echo $options['logo']; ?>" placeholder="No file chosen" />
-                <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
+                            value="<?php echo $options['logo']; ?>" placeholder="<?php _e( 'No file chosen', 'ariwoo' ); ?>" />
+                <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e( 'Upload', 'ariwoo' ); ?>" />
                 <div class="screenshot" id="logo-image">
-                  <?php if($options['logo'] != '') echo "<img src='".$options['logo']."' /><a class='remove-image'>Remove</a>" ?>
+                  <?php if($options['logo'] != '') echo "<img src='".esc_url_raw($options['logo'])."' /><a class='remove-image'>"._e( 'Remove', 'ariwoo' )."</a>" ?>
                 </div>
               </div>
-              <div class="explain">Upload a logo for your Website. </div>
+              <div class="explain"><?php _e( 'Upload a logo for your Website.', 'ariwoo' ); ?> </div>
             </div>
           </div>
           <div id="section-logo" class="section section-upload ">
-            <h4 class="heading">Favicon</h4>
+            <h4 class="heading"><?php _e( 'Favicon', 'ariwoo' ); ?></h4>
             <div class="option">
               <div class="controls">
                 <input id="logo" class="upload" type="text" name="arinio_theme_options[fevicon]" 
-                            value="<?php echo $options['fevicon']; ?>" placeholder="No file chosen" />
-                <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
+                            value="<?php echo $options['fevicon']; ?>" placeholder="<?php _e( 'No file chosen', 'ariwoo' ); ?>" />
+                <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e( 'Upload', 'ariwoo' ); ?>" />
                 <div class="screenshot" id="logo-image">
-                  <?php if($options['fevicon'] != '') echo "<img src='".$options['fevicon']."' /><a class='remove-image'>Remove</a>" ?>
+                  <?php if($options['fevicon'] != '') echo "<img src='".esc_url_raw($options['fevicon'])."' /><a class='remove-image'>"._e( 'Remove', 'ariwoo' )."</a>" ?>
                 </div>
               </div>
-              <div class="explain">Size of fevicon should be exactly 32x32px for best results.</div>
+              <div class="explain"><?php _e( 'Size of fevicon should be exactly 32x32px for best results.', 'ariwoo' ); ?></div>
             </div>
           </div>
           
@@ -102,43 +148,44 @@ function arinio_framework_page(){
           
           
           
-          
-              <div id="section-footertext2" class="section section-textarea">
-            <h4 class="heading">Blog Heading</h4>
-            <div class="option">
-              <div class="controls">
-                <input type="text" id="blogh" class="of-input" name="arinio_theme_options[blogh]" size="32"  value="<?php echo $options['blogh']; ?>">
-              </div>
-              <div class="explain">Enter here Blog Heading to show on front page.</div>
-            </div>
-          </div>
-           
           
             
+              <div id="section-footertext2" class="section section-textarea">
+            <h4 class="heading"><?php _e( 'Blog Heading', 'ariwoo' ); ?></h4>
+            <div class="option">
+              <div class="controls">
+                <input type="text" id="blogh" class="of-input" name="arinio_theme_options[blogh]" size="32"  value="<?php echo esc_attr($options['blogh']); ?>">
+              </div>
+              <div class="explain"><?php _e( 'Enter here Blog Heading to show on front page.', 'ariwoo' ); ?></div>
+            </div>
+          </div>
+           
+          
+           
           
           
           <div id="section-footertext2" class="section section-textarea">
-            <h4 class="heading">Copyright Text</h4>
+            <h4 class="heading"><?php _e( 'Copyright Text', 'ariwoo' ); ?></h4>
             <div class="option">
               <div class="controls">
-                <input type="text" id="footertext2" class="of-input" name="arinio_theme_options[footertext]" size="32"  value="<?php echo $options['footertext']; ?>">
+                <input type="text" id="footertext2" class="of-input" name="arinio_theme_options[footertext]" size="32"  value="<?php echo esc_attr($options['footertext']); ?>">
               </div>
-              <div class="explain">Some text regarding copyright of your site, you would like to display in the footer.</div>
+              <div class="explain"><?php _e( 'Some text regarding copyright of your site, you would like to display in the footer.', 'ariwoo' ); ?></div>
             </div>
           </div>
           
+          
           <div id="section-footertext2" class="section section-textarea">
-            <h4 class="heading">Custom CSS</h4>
+            <h4 class="heading"><?php _e( 'Custom CSS', 'ariwoo' ); ?></h4>
             <div class="option">
               <div class="controls">
-               <textarea class="of-input" name="arinio_theme_options[customcss]" id="customcss" cols="6" rows="6"><?php echo $options['customcss']; ?></textarea>
+               <textarea class="of-input" name="arinio_theme_options[customcss]" id="customcss" cols="6" rows="6"><?php echo esc_attr($options['customcss']); ?></textarea>
               
                 
               </div>
-              <div class="explain">add your custom CSS code to your theme by writing the code in this block.</div>
+              <div class="explain"><?php _e( 'add your custom CSS code to your theme by writing the code in this block.', 'ariwoo' ); ?></div>
             </div>
           </div>
-           
           
           
           
@@ -159,90 +206,90 @@ function arinio_framework_page(){
         
          
  <div id="options-group-3" class="group socialsettings">
- <h3>Slider Settings</h3>
+ <h3><?php _e( 'Slider Settings', 'ariwoo' ); ?></h3>
         
           <div id="section-facebook" class="section section-text mini">
-            <h4 class="heading">Slide 1 Title </h4>
+            <h4 class="heading"><?php _e( 'Slide 1 Title', 'ariwoo' ); ?> </h4>
             <div class="option">
               <div class="controls">
-                <input id="slide1title" class="of-input" name="arinio_theme_options[slide1title]" size="30" type="text" value="<?php echo $options['slide1title']; ?>" />
+                <input id="slide1title" class="of-input" name="arinio_theme_options[slide1title]" size="30" type="text" value="<?php echo esc_attr($options['slide1title']); ?>" />
               </div>
-              <div class="explain">Mention the Slide 1 Title   for Slider  </div>
+              <div class="explain"><?php _e( 'Mention the Slide 1 Title   for Slider', 'ariwoo' ); ?>  </div>
             </div>
           </div>
           <div id="section-facebook" class="section section-text mini">
-            <h4 class="heading">Slide 1 SubTitle </h4>
+            <h4 class="heading"><?php _e( 'Slide 1 SubTitle', 'ariwoo' ); ?> </h4>
             <div class="option">
               <div class="controls">
-                <input id="slide1subtitle" class="of-input" name="arinio_theme_options[slide1subtitle]" size="30" type="text" value="<?php echo $options['slide1subtitle']; ?>" />
+                <input id="slide1subtitle" class="of-input" name="arinio_theme_options[slide1subtitle]" size="30" type="text" value="<?php echo esc_attr($options['slide1subtitle']); ?>" />
               </div>
-              <div class="explain">Mention the Slide 1 SubTitle  for Slider  </div>
+              <div class="explain"><?php _e( 'Mention the Slide 1 SubTitle  for Slider', 'ariwoo' ); ?>  </div>
             </div>
           </div>
           <div id="section-facebook" class="section section-text mini">
-            <h4 class="heading">Slide 1 Description </h4>
+            <h4 class="heading"><?php _e( 'Slide 1 Description', 'ariwoo' ); ?> </h4>
             <div class="option">
               <div class="controls">
                  
-                <textarea class="of-input" name="arinio_theme_options[slide1des]" id="slide1des" cols="6" rows="6"><?php echo $options['slide1des']; ?></textarea>
+                <textarea class="of-input" name="arinio_theme_options[slide1des]" id="slide1des" cols="6" rows="6"><?php echo esc_attr($options['slide1des']); ?></textarea>
               </div>
-              <div class="explain">Mention the Slide 1 Description   for Slider  </div>
+              <div class="explain"><?php _e( 'Mention the Slide 1 Description   for Slider', 'ariwoo' ); ?>  </div>
             </div>
           </div>
           <div id="section-logo" class="section section-upload ">
-            <h4 class="heading">Slide 1 Image</h4>
+            <h4 class="heading"><?php _e( 'Slide 1 Image', 'ariwoo' ); ?></h4>
             <div class="option">
               <div class="controls">
                 <input id="logo" class="upload" type="text" name="arinio_theme_options[slide1image]" 
-                            value="<?php echo $options['slide1image']; ?>" placeholder="No file chosen" />
-                <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
+                            value="<?php echo $options['slide1image']; ?>" placeholder="<?php _e( 'No file chosen', 'ariwoo' ); ?>" />
+                <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e( 'Upload', 'ariwoo' ); ?>" />
                 <div class="screenshot" id="logo-image">
-                  <?php if($options['slide1image'] != '') echo "<img src='".$options['slide1image']."' /><a class='remove-image'>Remove</a>" ?>
+                  <?php if($options['slide1image'] != '') echo "<img src='".esc_url_raw($options['slide1image'])."' /><a class='remove-image'>"._e( 'Remove', 'ariwoo' )."</a>" ?>
                 </div>
               </div>
-              <div class="explain">Upload a Image for your Slider. </div>
+              <div class="explain"><?php _e( 'Upload a Image for your Slider.', 'ariwoo' ); ?> </div>
             </div>
             </div> <hr>
              <div id="section-facebook" class="section section-text mini">
-            <h4 class="heading">Slide 2 Title </h4>
+            <h4 class="heading"><?php _e( 'Slide 2 Title', 'ariwoo' ); ?> </h4>
             <div class="option">
               <div class="controls">
-                <input id="slide2title" class="of-input" name="arinio_theme_options[slide2title]" size="30" type="text" value="<?php echo $options['slide2title']; ?>" />
+                <input id="slide2title" class="of-input" name="arinio_theme_options[slide2title]" size="30" type="text" value="<?php echo esc_attr($options['slide2title']); ?>" />
               </div>
-              <div class="explain">Mention the Slide 2 Title   for Slider  </div>
+              <div class="explain"><?php _e( 'Mention the Slide 2 Title   for Slider ', 'ariwoo' ); ?> </div>
             </div>
           </div>
           <div id="section-facebook" class="section section-text mini">
-            <h4 class="heading">Slide 2 SubTitle </h4>
+            <h4 class="heading"><?php _e( 'Slide 2 SubTitle', 'ariwoo' ); ?> </h4>
             <div class="option">
               <div class="controls">
-                <input id="slide2subtitle" class="of-input" name="arinio_theme_options[slide2subtitle]" size="30" type="text" value="<?php echo $options['slide2subtitle']; ?>" />
+                <input id="slide2subtitle" class="of-input" name="arinio_theme_options[slide2subtitle]" size="30" type="text" value="<?php echo esc_attr($options['slide2subtitle']); ?>" />
               </div>
-              <div class="explain">Mention the Slide 2 SubTitle  for Slider  </div>
+              <div class="explain"><?php _e( 'Mention the Slide 2 SubTitle  for Slider', 'ariwoo' ); ?>  </div>
             </div>
           </div>
           <div id="section-facebook" class="section section-text mini">
-            <h4 class="heading">Slide 1 Description </h4>
+            <h4 class="heading"><?php _e( 'Slide 1 Description', 'ariwoo' ); ?> </h4>
             <div class="option">
               <div class="controls">
                  
-                <textarea class="of-input" name="arinio_theme_options[slide2des]" id="slide1des" cols="6" rows="6"><?php echo $options['slide2des']; ?></textarea>
+                <textarea class="of-input" name="arinio_theme_options[slide2des]" id="slide1des" cols="6" rows="6"><?php echo esc_attr($options['slide2des']); ?></textarea>
               </div>
-              <div class="explain">Mention the Slide 2 Description   for Slider  </div>
+              <div class="explain"><?php _e( 'Mention the Slide 2 Description   for Slider', 'ariwoo' ); ?>  </div>
             </div>
           </div>
           <div id="section-logo" class="section section-upload ">
-            <h4 class="heading">Slide 2 Image</h4>
+            <h4 class="heading"><?php _e( 'Slide 2 Image', 'ariwoo' ); ?></h4>
             <div class="option">
               <div class="controls">
                 <input id="logo" class="upload" type="text" name="arinio_theme_options[slide2image]" 
-                            value="<?php echo $options['slide2image']; ?>" placeholder="No file chosen" />
-                <input id="upload_image_button" class="upload-button button" type="button" value="Upload" />
+                            value="<?php echo $options['slide2image']; ?>" placeholder="<?php _e( 'No file chosen', 'ariwoo' ); ?>" />
+                <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e( 'Upload', 'ariwoo' ); ?>" />
                 <div class="screenshot" id="logo-image">
-                  <?php if($options['slide2image'] != '') echo "<img src='".$options['slide2image']."' /><a class='remove-image'>Remove</a>" ?>
+                  <?php if($options['slide2image'] != '') echo "<img src='".esc_url_raw($options['slide2image'])."' /><a class='remove-image'>"._e( 'Remove', 'ariwoo' )."</a>" ?>
                 </div>
               </div>
-              <div class="explain">Upload a Image for your Slider. </div>
+              <div class="explain"><?php _e( 'Upload a Image for your Slider.', 'ariwoo' ); ?> </div>
             </div>
             </div> <hr>
           
@@ -287,102 +334,102 @@ function arinio_framework_page(){
         
         
          <div id="options-group-4" class="group socialsettings">
-          <h3>Services Settings</h3>
+          <h3><?php _e( 'Services Settings', 'ariwoo' ); ?></h3>
           <div id="section-facebook" class="section section-text mini">
-            <h4 class="heading">Main Heading</h4>
+            <h4 class="heading"><?php _e( 'Main Heading', 'ariwoo' ); ?></h4>
             <div class="option">
               <div class="controls">
-                <input id="heading" class="of-input" name="arinio_theme_options[msheading]" size="30" type="text" value="<?php echo $options['msheading']; ?>" />
+                <input id="heading" class="of-input" name="arinio_theme_options[msheading]" size="30" type="text" value="<?php echo esc_attr($options['msheading']); ?>" />
               </div>
-              <div class="explain">Mention the Service Main Heading text for Service section </div>
+              <div class="explain"><?php _e( 'Mention the Service Main Heading text for Service section', 'ariwoo' ); ?></div>
             </div>
           </div>
           <div id="section-twitter" class="section section-text mini">
-            <h4 class="heading">First Icon</h4>
+            <h4 class="heading"><?php _e( 'First Icon', 'ariwoo' ); ?></h4>
             <div class="option">
               <div class="controls">
-                <input id="icon1" class="of-input" name="arinio_theme_options[sicon1]" type="text" size="30" value="<?php echo $options['sicon1']; ?>" />
+                <input id="icon1" class="of-input" name="arinio_theme_options[sicon1]" type="text" size="30" value="<?php echo esc_attr($options['sicon1']); ?>" />
               </div>
-              <div class="explain">Enter the CSS class of the icons you want to use on your site like: fa-desktop or fa-group. You can find a list of icon classes here <a href="http://fortawesome.github.io/Font-Awesome" target="_blank">Click here</a></div>
+              <div class="explain"><?php _e( 'Enter the CSS class of the icons you want to use on your site like: fa-desktop or fa-group. You can find a list of icon classes here', 'ariwoo' ); ?> <a href="http://fortawesome.github.io/Font-Awesome" target="_blank"><?php _e( 'Click here', 'ariwoo' ); ?></a></div>
             </div>
           </div>
           <div id="section-facebook" class="section section-text mini">
-            <h4 class="heading">First Title</h4>
+            <h4 class="heading"><?php _e( 'First Title', 'ariwoo' ); ?></h4>
             <div class="option">
               <div class="controls">
-                <input id="heading" class="of-input" name="arinio_theme_options[fstitle]" size="30" type="text" value="<?php echo $options['fstitle']; ?>" />
+                <input id="heading" class="of-input" name="arinio_theme_options[fstitle]" size="30" type="text" value="<?php echo esc_attr($options['fstitle']); ?>" />
               </div>
-              <div class="explain">Mention the First Service Title text for Service section </div>
+              <div class="explain"><?php _e( 'Mention the First Service Title text for Service section', 'ariwoo' ); ?> </div>
             </div>
           </div>
           <div id="section-facebook" class="section section-text mini">
-            <h4 class="heading">First Description</h4>
+            <h4 class="heading"><?php _e( 'First Description', 'ariwoo' ); ?></h4>
             <div class="option">
               <div class="controls">
-               <textarea class="of-input" name="arinio_theme_options[fdtitle]" id="fdtitle" cols="6" rows="6"><?php echo $options['fdtitle']; ?></textarea>
+               <textarea class="of-input" name="arinio_theme_options[fdtitle]" id="fdtitle" cols="6" rows="6"><?php echo esc_attr($options['fdtitle']); ?></textarea>
                 
               </div>
-              <div class="explain">Mention the First Service Description text for Service section </div>
+              <div class="explain"><?php _e( 'Mention the First Service Description text for Service section', 'ariwoo' ); ?></div>
             </div>
           </div>
           
           
           
            <div id="section-twitter" class="section section-text mini">
-            <h4 class="heading">Second Icon</h4>
+            <h4 class="heading"><?php _e( 'Second Icon', 'ariwoo' ); ?></h4>
             <div class="option">
               <div class="controls">
-                <input id="icon1" class="of-input" name="arinio_theme_options[sicon2]" type="text" size="30" value="<?php echo $options['sicon2']; ?>" />
+                <input id="icon1" class="of-input" name="arinio_theme_options[sicon2]" type="text" size="30" value="<?php echo esc_attr($options['sicon2']); ?>" />
               </div>
-              <div class="explain">Enter the CSS class of the icons you want to use on your site. You can find a list of icon classes here <a href="http://fortawesome.github.io/Font-Awesome" target="_blank">Click here</a></div>
+              <div class="explain"><?php _e( 'Enter the CSS class of the icons you want to use on your site like: fa-desktop or fa-group. You can find a list of icon classes here', 'ariwoo' ); ?> <a href="http://fortawesome.github.io/Font-Awesome" target="_blank"><?php _e( 'Click here', 'ariwoo' ); ?></a></div>
             </div>
           </div>
           <div id="section-facebook" class="section section-text mini">
-            <h4 class="heading">Second Title</h4>
+            <h4 class="heading"><?php _e( 'Second Title', 'ariwoo' ); ?></h4>
             <div class="option">
               <div class="controls">
-                <input id="heading" class="of-input" name="arinio_theme_options[sstitle]" size="30" type="text" value="<?php echo $options['sstitle']; ?>" />
+                <input id="heading" class="of-input" name="arinio_theme_options[sstitle]" size="30" type="text" value="<?php echo esc_attr($options['sstitle']); ?>" />
               </div>
-              <div class="explain">Mention the Second Service Title text for Service section </div>
+              <div class="explain"><?php _e( 'Mention the Second Service Title text for Service section ', 'ariwoo' ); ?></div>
             </div>
           </div>
           <div id="section-facebook" class="section section-text mini">
-            <h4 class="heading">Second Description</h4>
+            <h4 class="heading"><?php _e( 'Second Description', 'ariwoo' ); ?></h4>
             <div class="option">
               <div class="controls">
-              <textarea class="of-input" name="arinio_theme_options[sdtitle]" id="sdtitle" cols="6" rows="6"><?php echo $options['sdtitle']; ?></textarea>
+              <textarea class="of-input" name="arinio_theme_options[sdtitle]" id="sdtitle" cols="6" rows="6"><?php echo esc_attr($options['sdtitle']); ?></textarea>
                  
               </div>
-              <div class="explain">Mention the Second Service Description text for Service section</div>
+              <div class="explain"><?php _e( 'Mention the Second Service Description text for Service section', 'ariwoo' ); ?></div>
             </div>
           </div>
           
           <div id="section-twitter" class="section section-text mini">
-            <h4 class="heading">Third Icon</h4>
+            <h4 class="heading"><?php _e( 'Third Icon', 'ariwoo' ); ?></h4>
             <div class="option">
               <div class="controls">
-                <input id="icon1" class="of-input" name="arinio_theme_options[sicon3]" type="text" size="30" value="<?php echo $options['sicon2']; ?>" />
+                <input id="icon1" class="of-input" name="arinio_theme_options[sicon3]" type="text" size="30" value="<?php echo esc_attr($options['sicon3']); ?>" />
               </div>
-              <div class="explain">Enter the CSS class of the icons you want to use on your site. You can find a list of icon classes here <a href="http://fortawesome.github.io/Font-Awesome" target="_blank">Click here</a></div>
+            <div class="explain"><?php _e( 'Enter the CSS class of the icons you want to use on your site like: fa-desktop or fa-group. You can find a list of icon classes here', 'ariwoo' ); ?> <a href="http://fortawesome.github.io/Font-Awesome" target="_blank"><?php _e( 'Click here', 'ariwoo' ); ?></a></div>
             </div>
           </div>
           <div id="section-facebook" class="section section-text mini">
-            <h4 class="heading">Third Title</h4>
+            <h4 class="heading"><?php _e( 'Third Title', 'ariwoo' ); ?></h4>
             <div class="option">
               <div class="controls">
-                <input id="heading" class="of-input" name="arinio_theme_options[sstitle3]" size="30" type="text" value="<?php echo $options['sstitle']; ?>" />
+                <input id="heading" class="of-input" name="arinio_theme_options[sstitle3]" size="30" type="text" value="<?php echo esc_attr($options['sstitle3']); ?>" />
               </div>
-              <div class="explain">Mention the Third Service Title text for Service section </div>
+              <div class="explain"><?php _e( 'Mention the Third Service Title text for Service section', 'ariwoo' ); ?> </div>
             </div>
           </div>
           <div id="section-facebook" class="section section-text mini">
-            <h4 class="heading">Third Description</h4>
+            <h4 class="heading"><?php _e( 'Third Description', 'ariwoo' ); ?></h4>
             <div class="option">
               <div class="controls">
-              <textarea class="of-input" name="arinio_theme_options[sdtitle3]" id="sdtitle3" cols="6" rows="6"><?php echo $options['sdtitle3']; ?></textarea>
+              <textarea class="of-input" name="arinio_theme_options[sdtitle3]" id="sdtitle3" cols="6" rows="6"><?php echo esc_attr($options['sdtitle3']); ?></textarea>
                  
               </div>
-              <div class="explain">Mention the Third Service Description text for Service section </div>
+              <div class="explain"><?php _e( 'Mention the Third Service Description text for Service section', 'ariwoo' ); ?></div>
             </div>
           </div>
           
@@ -399,60 +446,176 @@ function arinio_framework_page(){
         
         
         <div id="options-group-5" class="group socialsettings">
-          <h3>Work & About us Settings</h3>
+          <h3><?php _e( 'About us Settings', 'ariwoo' ); ?></h3>
       <div id="section-facebook" class="section section-text mini">
-            <h4 class="heading">About Us Main Heading</h4>
+            <h4 class="heading"><?php _e( 'About Us Main Heading', 'ariwoo' ); ?></h4>
             <div class="option">
               <div class="controls">
-                <input id="Aboutus" class="of-input" name="arinio_theme_options[aboutus]" size="30" type="text" value="<?php echo $options['aboutus']; ?>" />
+                <input id="Aboutus" class="of-input" name="arinio_theme_options[aboutus]" size="30" type="text" value="<?php echo esc_attr($options['aboutus']); ?>" />
               </div>
-              <div class="explain">Mention the About Us Main Heading text for About Us section</div>
+              <div class="explain"><?php _e( 'Mention the About Us Main Heading text for About Us section', 'ariwoo' ); ?></div>
             </div>
           </div>
-          <div id="section-twitter" class="section section-text mini">
-            <h4 class="heading">About Us Description</h4>
+          
+           <div id="section-facebook" class="section section-text mini">
+            <h4 class="heading"><?php _e( 'About Us Description Heading', 'ariwoo' ); ?></h4>
             <div class="option">
               <div class="controls">
-               <textarea class="of-input" name="arinio_theme_options[aboutusd]" id="aboutusd" cols="6" rows="6"><?php echo $options['aboutusd']; ?></textarea>
+                <input id="Aboutus" class="of-input" name="arinio_theme_options[aboutusdh]" size="30" type="text" value="<?php echo esc_attr($options['aboutusdh']); ?>" />
+              </div>
+              <div class="explain"><?php _e( 'Mention the About Us Description Heading text for About Us section', 'ariwoo' ); ?></div>
+            </div>
+          </div>
+          
+          <div id="section-twitter" class="section section-text mini">
+            <h4 class="heading"><?php _e( 'About Us Description', 'ariwoo' ); ?></h4>
+            <div class="option">
+              <div class="controls">
+               <textarea class="of-input" name="arinio_theme_options[aboutusd]" id="aboutusd" cols="6" rows="6"><?php echo esc_attr($options['aboutusd']); ?></textarea>
                  
               </div>
-              <div class="explain">Mention the About Us Description text for About Us section</div>
+              <div class="explain"><?php _e( 'Mention the About Us Description text for About Us section', 'ariwoo' ); ?></div>
             </div>
           </div>
+         
+         <div id="section-logo" class="section section-upload ">
+            <h4 class="heading"><?php _e( 'About Us Header Image', 'ariwoo' ); ?></h4>
+            <div class="option">
+              <div class="controls">
+                <input id="logo" class="upload" type="text" name="arinio_theme_options[aboutusimg]" 
+                            value="<?php echo $options['aboutusimg']; ?>" placeholder="<?php _e( 'No file chosen', 'ariwoo' ); ?>" />
+                <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e( 'Upload', 'ariwoo' ); ?>" />
+                <div class="screenshot" id="logo-image">
+                  <?php if($options['aboutusimg'] != '') echo "<img src='".esc_url_raw($options['aboutusimg'])."' /><a class='remove-image'>"._e( 'Remove', 'ariwoo' )."</a>" ?>
+                </div>
+              </div>
+              <div class="explain"><?php _e( 'Upload here About Us Header Image.', 'ariwoo' ); ?></div>
+            </div>
+          </div>
+         
+         
           
         </div>
         
         <div id="options-group-7" class="group socialsettings">
-          <h3>Contact Settings</h3>
+          <h3><?php _e( 'Contact Settings', 'ariwoo' ); ?></h3>
       
-        <div id="section-footertext2" class="section section-textarea">
-            <h4 class="heading">Contact Main Heading</h4>
+           <div id="section-footertext2" class="section section-textarea">
+            <h4 class="heading"><?php _e( 'Contact Main Heading', 'ariwoo' ); ?></h4>
             <div class="option">
               <div class="controls">
-                <input type="text" id="contact" class="of-input" name="arinio_theme_options[contacth]" size="132"  value="<?php echo $options['contacth']; ?>">
+                <input type="text" id="contact" class="of-input" name="arinio_theme_options[contacth]" size="132"  value="<?php echo esc_attr($options['contacth']); ?>">
               </div>
-              <div class="explain">Mention the Contact Main Heading text for Contact section.</div>
+              <div class="explain"><?php _e( 'Mention the Contact Main Heading text for Contact section.', 'ariwoo' ); ?></div>
             </div>
           </div>
           <div id="section-footertext2" class="section section-textarea">
-            <h4 class="heading">Contact Description</h4>
+            <h4 class="heading"><?php _e( 'Contact Description', 'ariwoo' ); ?></h4>
             <div class="option">
               <div class="controls">
-               <textarea class="of-input" name="arinio_theme_options[contactd]" id="contactd" cols="6" rows="6"><?php echo $options['contactd']; ?></textarea>
+               <textarea class="of-input" name="arinio_theme_options[contactd]" id="contactd" cols="6" rows="6"><?php echo esc_attr($options['contactd']); ?></textarea>
               
                 
               </div>
-              <div class="explain">Mention the Contact Description text for Contact section.</div>
+              <div class="explain"><?php _e( 'Mention the Contact Description text for Contact section.', 'ariwoo' ); ?></div>
             </div>
           </div>
          
           
         </div>
      
+     
+     <div id="options-group-9" class="group socialsettings">
+          <h3><?php _e( 'Footer Settings', 'ariwoo' ); ?></h3>
+          
+          
+          <div id="section-footertext2" class="section section-textarea">
+            <h4 class="heading"><?php _e( 'Fisrt widget title', 'ariwoo' ); ?> </h4>
+            <div class="option">
+              <div class="controls">
+                <input type="text" id="fwidgett1" class="of-input" name="arinio_theme_options[fwidgett1]" size="132"  value="<?php echo esc_attr($options['fwidgett1']); ?>">
+              </div>
+              <div class="explain"><?php _e( 'Mention the widget title text for footer section.', 'ariwoo' ); ?></div>
+            </div>
+          </div>
+          
+          <div id="section-facebook" class="section section-text mini">
+            <h4 class="heading"><?php _e( 'Fisrt widget Description', 'ariwoo' ); ?> </h4>
+            <div class="option">
+              <div class="controls">
+               <textarea class="of-input" name="arinio_theme_options[footert1]" id="footert1" cols="6" rows="6"><?php echo esc_attr($options['footert1']); ?></textarea>
+                 
+              </div>
+              <div class="explain"><?php _e( 'Mention the Fisrt widget Description for Footer section.', 'ariwoo' ); ?> </div>
+            </div>
+          </div>
+          
+          
+          
+          <div id="section-footertext2" class="section section-textarea">
+            <h4 class="heading"><?php _e( 'Second widget title(Recent Post Footer)', 'ariwoo' ); ?> </h4>
+            <div class="option">
+              <div class="controls">
+                <input type="text" id="fwidgett2" class="of-input" name="arinio_theme_options[fwidgett2]" size="132"  value="<?php echo esc_attr($options['fwidgett2']); ?>">
+              </div>
+              <div class="explain"><?php _e( 'Mention the widget title text for footer section.', 'ariwoo' ); ?></div>
+            </div>
+          </div>
+          
+          
+          
+          
+          <div id="section-footertext2" class="section section-textarea">
+            <h4 class="heading"><?php _e( 'Third widget title', 'ariwoo' ); ?> </h4>
+            <div class="option">
+              <div class="controls">
+                <input type="text" id="fwidgett3" class="of-input" name="arinio_theme_options[fwidgett3]" size="132"  value="<?php echo esc_attr($options['fwidgett3']); ?>">
+              </div>
+              <div class="explain"><?php _e( 'Mention the widget title text for footer section.', 'ariwoo' ); ?></div>
+            </div>
+          </div>
+          
+          
+          <div id="section-twitter" class="section section-text mini">
+            <h4 class="heading"><?php _e( 'Third widget Description', 'ariwoo' ); ?></h4>
+            <div class="option">
+              <div class="controls">
+               <textarea class="of-input" name="arinio_theme_options[footert2]" id="footert2" cols="6" rows="6"><?php echo esc_attr($options['footert2']); ?></textarea>
+                </div>
+              <div class="explain"><?php _e( 'Mention the Third widget Description for Footer section.', 'ariwoo' ); ?></div>
+            </div>
+          </div>
+          
+          
+          <div id="section-footertext2" class="section section-textarea">
+            <h4 class="heading"><?php _e( 'Fourth widget title (contact details Footer)', 'ariwoo' ); ?> </h4>
+            <div class="option">
+              <div class="controls">
+                <input type="text" id="fwidgett4" class="of-input" name="arinio_theme_options[fwidgett4]" size="132"  value="<?php echo esc_attr($options['fwidgett4']); ?>">
+              </div>
+              <div class="explain"><?php _e( 'Mention the widget title text for footer section.', 'ariwoo' ); ?></div>
+            </div>
+          </div>
+          
+           <div id="section-twitter" class="section section-text mini">
+            <h4 class="heading"><?php _e( 'Address (contact details Footer)', 'ariwoo' ); ?></h4>
+            <div class="option">
+              <div class="controls">
+              <textarea class="of-input" name="arinio_theme_options[footert3]" id="footert3" cols="6" rows="6"><?php echo esc_attr($options['footert3']); ?></textarea>
+                 
+              </div>
+              <div class="explain"><?php _e( 'Mention the Address for Footer section.', 'ariwoo' ); ?></div>
+            </div>
+          </div>
+        </div>
+     
+     
+     
+     
         <!-------------- End group ----------------->
         
-        <div id="arinios_framework-submit" class="section-submite">  <span class="fb"> <a href="https://www.facebook.com/ArinioThemes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-option/images/fb.png"/> </a> </span> <span class="tw"> <a href="https://twitter.com/ArinioThemes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-option/images/tw.png"/> </a> </span> &nbsp; <span class="tw"> <a href="http://arinio.com" target="_blank"> BY: arinio.com </a> </span>
-          <input type="submit" class="button-primary" value="Save Options" />
+        <div id="arinios_framework-submit" class="section-submite">  <span class="fb"> <a href="<?php echo esc_url( 'https://www.facebook.com/ArinioThemes' ); ?>" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-option/images/fb.png"/> </a> </span> <span class="tw"> <a href="<?php echo esc_url( 'https://twitter.com/ArinioThemes' ); ?>" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-option/images/tw.png"/> </a> </span> &nbsp; <span class="tw"> <a href="<?php echo esc_url( 'http://arinio.com' ); ?>" target="_blank"><?php esc_attr_e( 'BY: arinio.com' , 'ariwoo' ); ?> </a> </span>
+          <input type="submit" class="button-primary" value="<?php _e( 'Save Options', 'ariwoo' ); ?>" />
           <div class="clear"></div>
         </div>
         
@@ -460,7 +623,7 @@ function arinio_framework_page(){
         
       </form>
       
-      <!--======================== F I N A L - - T H E M E - - O P T I O N S ===================--> 
+      
       
     </div>
     <!-- / #container --> 

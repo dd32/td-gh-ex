@@ -23,6 +23,9 @@
 
 
 
+.sparrow li:before {
+content: "\25B6 \ ";
+}
 
 
 
@@ -548,7 +551,7 @@ height: 0; }
 
 .cofrm input[type="text"],
 .cofrm textarea {
-	width:93%;
+	width:100%;
 	margin:22px 0 0 0;
 	padding:17px 10px 17px 21px;
 	background: #fff;
@@ -1669,6 +1672,13 @@ margin-top: 0px;
 .article-page a{
 	color: #222;
 }
+.moree a{
+color: #fff;
+
+}
+
+
+
 .article-page a:hover{
 	color: #e93424;
 }
@@ -1728,7 +1738,7 @@ text-shadow: 0px 2px 1px rgba(0,0,0,0.3);
     box-shadow: 6px 6px 5px #888888;
 }
 .article-page h1.article-page-head {
-  border-bottom: 1px solid #e93424;
+  border-bottom: 1px solid #222;
   padding-bottom: 13px;
   margin-bottom: 10px;
 }
@@ -2155,11 +2165,19 @@ font-size: 24px;
 
 .headline  {color:#fff;}
 
+.moree {
+
+margin-top: 15px;
+
+margin-bottom:: 15px;
+}
 
 
 
-
-
+a {
+color: #e7746f;
+ 
+}
 
 
 

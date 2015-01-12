@@ -1,5 +1,5 @@
 <?php
-require_once('theme-option/ariniothemes.php');
+require_once get_template_directory() . '/theme-option/ariniothemes.php';
 /**
  * Set up the content width value based on the theme's design.
  */
@@ -86,7 +86,7 @@ function ariwoo_setup() {
 	 */
 	load_theme_textdomain( 'ariwoo', get_template_directory() . '/languages' );
 	// This theme styles the visual editor to resemble the theme style.
-	add_editor_style( array( 'css/editor-style.css', ariwoo_font_url() ) );
+  add_editor_style();
 	// Add RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
 	// Enable support for Post Thumbnails, and declare two sizes.
@@ -98,14 +98,7 @@ function ariwoo_setup() {
 		'primary'   => __( 'Main Menu', 'ariwoo' ),
 		'secondary' => __( 'Secondary menu  for footer menu', 'ariwoo' ),		
 	) );
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
-	
-	/*
-	 * Enable support for Post Formats.
-	 */
+	 
 	// This theme allows users to set a custom background.
 	add_theme_support( 'custom-background', apply_filters( 'ariwoo_custom_background_args', array(
 		'default-color' => 'f5f5f5',
@@ -115,28 +108,12 @@ function ariwoo_setup() {
 		'featured_content_filter' => 'ariwoo_get_featured_posts',
 		'max_posts' => 6,
 	) );
-	// This theme uses its own gallery styles.
-	add_filter( 'use_default_gallery_style', '__return_false' );
+	
 }
 endif; // ariwoo_setup
 add_action( 'after_setup_theme', 'ariwoo_setup' );
 
-/**
- * Register Lato Google font for ariwoo.
- *
- */
-function ariwoo_font_url() {
-	$font_url = '';
-	/*
-	 * Translators: If there are characters in your language that are not supported
-	 * by Lato, translate this to 'off'. Do not translate into your own language.
-	 */
-	if ( 'off' !== _x( 'on', 'Lato font: on or off', 'ariwoo' ) ) {
-		$font_url = add_query_arg( 'family', urlencode( 'Lato:300,400,700,900,300italic,400italic,700italic' ), "//fonts.googleapis.com/css" );
-	}
-	return $font_url;
-}
-
+ 
 /**
  * Filter the page title.
  **/
@@ -264,7 +241,7 @@ add_filter('wp_list_categories', 'ariwoo_add_nav_class');
  * Replace Excerpt [...] with Read More
 **/
 function ariwoo_read_more( ) {
-return ' ... <a class="more" href="'. get_permalink( get_the_ID() ) . '">Read more</a>';
+return ' ... <p class="moree"><a class="btn btn-inverse btn-normal btn-primary " href="'. get_permalink( get_the_ID() ) . '">Read more</a></p>';
  }
 add_filter( 'excerpt_more', 'ariwoo_read_more' ); 
 /**
@@ -273,7 +250,7 @@ add_filter( 'excerpt_more', 'ariwoo_read_more' );
 function ariwoo_scripts_styles() {
 	 wp_enqueue_style('bootstrap', get_template_directory_uri() . '/styles/bootstrap.min.css');
           
-		   wp_enqueue_script( 'min', get_template_directory_uri() . '/scripts/jquery.min.js',array(),false,true);
+		   wp_enqueue_script('jquery');
 			wp_enqueue_script( 'nav', get_template_directory_uri() . '/scripts/jquery.nav.js',array(),false,true);
 		   
 		  wp_enqueue_script( 'validate', get_template_directory_uri() . '/styles/jquery.validate.min.js',array(),false,true);
@@ -353,7 +330,7 @@ function ariwoo_comment_textarea_field($comment_field) {
 }
 add_filter('comment_form_field_comment','ariwoo_comment_textarea_field');
 //comment text
-function ariwoo_comment_text($content) {
+function ariwoo_wrap_comment_text($content) {
     return "<div class=\"comment-text\"><a class='commenttext-arrow'></a>". $content ."</div>";
 }
 add_filter('comment_text', 'ariwoo_wrap_comment_text');
@@ -366,103 +343,14 @@ add_filter('comment_text', 'ariwoo_wrap_comment_text');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ add_action('admin_menu', 'ariniom_admin_menu');
+ 
 /**
- * Add default menu style if menu is not set from the backend.
- */
-function ariwoo_add_menuid ($page_markup) {
-preg_match('/^<div class=\"([a-z0-9-_]+)\">/i', $page_markup, $matches);
-$divclass = $matches[1];
-$toreplace = array('<div class="'.$divclass.'">', '</div>');
-$replace = array('<div class="navbar-collapse collapse top-gutter">', '</div>');
-$new_markup = str_replace($toreplace,$replace, $page_markup);
-$new_markup= preg_replace('/<ul/', '<ul class="nav navbar-nav navbar-right"', $new_markup);
-return $new_markup; }
-
-add_filter('wp_page_menu', 'ariwoo_add_menuid');
-/**
- * ariwoo custom pagination for posts 
- */
-function ariwoo_paginate($pages = '', $range = 1)
-{  
-     $showitems = ($range * 2)+1;  
-     global $paged;
-     if(empty($paged)) $paged = 1;
-     if($pages == '')
-     {
-         global $wp_query;
-         $pages = $wp_query->max_num_pages;
-         if(!$pages)
-         {
-             $pages = 1;
-         }
-     }   
-     if(1 != $pages)
-     {
-         echo "<div class='pagination'>";
-         if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<li class='pagination-previous-all'><a href='".get_pagenum_link(1)."'><span class='sprite previous-all-icon'><<</span></a></li>";
-         if($paged > 1 && $showitems < $pages) echo "<li class='pagination-previous'><a href='".get_pagenum_link($paged - 1)."'><span class='sprite previous-icon'><</span></a></li>";
-         for ($i=1; $i <= $pages; $i++)
-         {
-             if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
-             {
-                 echo ($paged == $i)? "<li><a href='#'>".$i."</a></li>":"<li><a href='".get_pagenum_link($i)."' class='inactive' >".$i."</a></li>";
-             }
-         }
-         if ($paged < $pages && $showitems < $pages) echo "<li class='pagination-next'><a href='".get_pagenum_link($paged + 1)."'><span class='sprite next-icon'>></span></a></li>";  
-         if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<li class='pagination-next-all'><a href='".get_pagenum_link($pages)."'><span class='sprite next-all-icon'>>></span></a></li>";
-         echo "</div>\n";
-     }
+* add external link to Tools area
+*/
+function ariniom_admin_menu() {
+    global $submenu;
+    $url = 'http://arinio.com/';
+    $submenu['options-general.php'][] = array('Arinio More', 'manage_options', $url);
 }
-
-
-
-
-
-
-
-
 

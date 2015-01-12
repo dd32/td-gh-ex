@@ -40,10 +40,7 @@ if($options['fevicon'] != '') {
 
  
     
-<style>
-#mainheader {background-image: url(<?php  $options = get_option( 'arinio_theme_options' );  if($options['mainhi'] != '') { echo $options['mainhi']; }else{ echo get_template_directory_uri(); echo '/styles/Banner031.jpg'; } ?>);}
-</style>    
-    
+ 
 <?php if($options['trackingc'] != '') {
 ?>
  
@@ -83,14 +80,14 @@ if($options['fevicon'] != '') {
                 <div class="col-md-12">
 
                    <div id="divLogo" class="pull-left">
-                     <?php    if($options['logo'] != '') { echo '<img src="'.$options['logo'].'">'; }else{ echo ' <a href="" id="divSiteTitle">'; echo bloginfo('name'); echo '</a><br />
+                     <?php    if($options['logo'] != '') { echo '<img src="'.esc_url_raw($options['logo']).'">'; }else{ echo ' <a href="" id="divSiteTitle">'; echo bloginfo('name'); echo '</a><br />
                         <a href="" id="divTagLine">';echo bloginfo('description'); echo'</a>'; } ?>
                     </div>
 
                     <div id="divMenuRight" class="pull-right">
                     <div class="navbar">
                         <button type="button" class="btn btn-navbar-highlight btn-large btn-primary" data-toggle="collapse" data-target=".nav-collapse">
-                            NAVIGATION <span class="icon-chevron-down icon-white"></span>
+                            <?php _e( 'NAVIGATION', 'ariniom' ); ?> <span class="icon-chevron-down icon-white"></span>
                         </button>
                         <div id="abby" class="nav-collapse navbar-collapse single-page-nav collapse">
                         

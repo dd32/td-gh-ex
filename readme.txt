@@ -1,4 +1,4 @@
-"Ariwoo Multipurpose WordPress Theme"
+﻿"Ariwoo Multipurpose WordPress Theme"
 
 == Theme: Ariwoo==
 
@@ -52,3 +52,9 @@ Get free support at http://arinio.com/support/
 All available options can be used from Appearance->AR Options
 
 /**********************************************************/
+
+
+License for images:
+1. Image Name: slide1.jpg
+2. Image Name: slide2.jpg
+Resource link: - https://www.flickr.com
