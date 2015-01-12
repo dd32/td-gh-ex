@@ -37,8 +37,16 @@ are licensed under GPLv2
 16. Other theme options are self explanatory.
 
 == Change Log ==
+v. 1.0.7
+	* Fixed Custom Header
+	
+v. 1.0.6
+	* Fixed Sticky Border 
+	* Fixed Word Wrap Issue
+
 v. 1.0.5
 	* Added uncompressed font awesome css files
 	* Fixing Coding Standards
+
 v. 1.0.4
 	* Initial Release

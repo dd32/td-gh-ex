@@ -24,6 +24,7 @@ global $boxy;
 
 	<header id="masthead" class="site-header" role="banner">
 	<?php if( get_header_image() ) : ?>
+		<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" style="position: absolute;" />
 	<?php endif; ?>
 		<div class="container">
 			<div class="sixteen columns">
