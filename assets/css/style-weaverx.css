@@ -3234,7 +3234,7 @@ dl.gallery-item {
 }
 /* -- /desktop */
 
-/* =Padding / Margin definitions ============================================================================ */
+/* =Padding / Margin definitions ============================================================================ */}
 
 #wrapper,
 #header-widget-area,
@@ -3299,6 +3299,8 @@ dl.gallery-item {
 	bottom:         0;
 }
 
+#header-html,
+#footer-html,
 .inject_postpostcontent,
 [id*='inject_'] {       /* give injection areas border-box, too. */
 	-moz-box-sizing:    border-box;

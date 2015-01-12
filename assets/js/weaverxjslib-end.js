@@ -117,8 +117,8 @@ function weaverx_ToggleDIV(his, me, show, hide, text) {
 
   $.fn.wvrx_fixbranding = function( ) {
 
-	$('#inject_fixedtop').innerWidth( $('#wrapper').innerWidth());      // handle fixed top and bottom
-	$('#inject_fixedbottom').innerWidth( $('#wrapper').innerWidth());
+	$('#inject_fixedtop').outerWidth( $('#wrapper').outerWidth());      // handle fixed top and bottom
+	$('#inject_fixedbottom').outerWidth( $('#wrapper').outerWidth());
 
 	if ($('#site-title').css('display') == 'none' &&  $('#site-tagline').css('display') == 'none')  // if both hidden, don't bother
 		return;

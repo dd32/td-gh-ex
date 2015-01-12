@@ -81,3 +81,6 @@ First Official Release: Version 0.90
 = Changed 0.96 =
 * Added Raw page template
 * Added new do_actions for pre-page and pre-post processing
+
+= Change 0.97 =
+* Fixed border-box on footer/header html, fixed top/bottom injection
