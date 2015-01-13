@@ -46,12 +46,14 @@ add_action('after_setup_theme', 'richwp_setup');
 function richwp_scripts_styles() {
     wp_enqueue_style('richwp-style', get_stylesheet_uri());
     wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/modernizr-2.6.2.min.js', '', '1.0', false);
-    wp_enqueue_script('jquery');
     wp_enqueue_script('plugins', get_template_directory_uri() . '/js/plugins.js', array(
         'jquery'
     ), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'richwp_scripts_styles');
+
+
+
 
 
 // Prevent Video Resizing

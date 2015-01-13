@@ -1,27 +1,553 @@
 // Avoid `console` errors in browsers that lack a console.
-if(!(window.console&&console.log)){(function(){var noop=function(){};var methods=['assert','clear','count','debug','dir','dirxml','error','exception','group','groupCollapsed','groupEnd','info','log','markTimeline','profile','profileEnd','markTimeline','table','time','timeEnd','timeStamp','trace','warn'];var length=methods.length;var console=window.console={};while(length--){console[methods[length]]=noop}}())}
+(function() {
+var method;
+var noop = function noop() {};
+var methods = [
+'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
+'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
+'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
+'timeStamp', 'trace', 'warn'
+];
+var length = methods.length;
+var console = (window.console = window.console || {});
+ 
+while (length--) {
+method = methods[length];
+ 
+// Only stub undefined methods.
+if (!console[method]) {
+console[method] = noop;
+}
+}
+}()); 
 
 
-/*! Sidr - v1.2.1 - 2013-11-06
+/*
+ * Sidr
  * https://github.com/artberri/sidr
- * Copyright (c) 2013 Alberto Varela; Licensed MIT */
-(function(e){var t=!1,i=!1,n={isUrl:function(e){var t=RegExp("^(https?:\\/\\/)?((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|((\\d{1,3}\\.){3}\\d{1,3}))(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*(\\?[;&a-z\\d%_.~+=-]*)?(\\#[-a-z\\d_]*)?$","i");return t.test(e)?!0:!1},loadContent:function(e,t){e.html(t)},addPrefix:function(e){var t=e.attr("id"),i=e.attr("class");"string"==typeof t&&""!==t&&e.attr("id",t.replace(/([A-Za-z0-9_.\-]+)/g,"sidr-id-$1")),"string"==typeof i&&""!==i&&"sidr-inner"!==i&&e.attr("class",i.replace(/([A-Za-z0-9_.\-]+)/g,"sidr-class-$1")),e.removeAttr("style")},execute:function(n,s,a){"function"==typeof s?(a=s,s="sidr"):s||(s="sidr");var r,d,l,c=e("#"+s),u=e(c.data("body")),f=e("html"),p=c.outerWidth(!0),g=c.data("speed"),h=c.data("side"),m=c.data("displace"),v=c.data("onOpen"),y=c.data("onClose"),x="sidr"===s?"sidr-open":"sidr-open "+s+"-open";if("open"===n||"toggle"===n&&!c.is(":visible")){if(c.is(":visible")||t)return;if(i!==!1)return o.close(i,function(){o.open(s)}),void 0;t=!0,"left"===h?(r={left:p+"px"},d={left:"0px"}):(r={right:p+"px"},d={right:"0px"}),u.is("body")&&(l=f.scrollTop(),f.css("overflow-x","hidden").scrollTop(l)),m?u.addClass("sidr-animating").css({width:u.width(),position:"absolute"}).animate(r,g,function(){e(this).addClass(x)}):setTimeout(function(){e(this).addClass(x)},g),c.css("display","block").animate(d,g,function(){t=!1,i=s,"function"==typeof a&&a(s),u.removeClass("sidr-animating")}),v()}else{if(!c.is(":visible")||t)return;t=!0,"left"===h?(r={left:0},d={left:"-"+p+"px"}):(r={right:0},d={right:"-"+p+"px"}),u.is("body")&&(l=f.scrollTop(),f.removeAttr("style").scrollTop(l)),u.addClass("sidr-animating").animate(r,g).removeClass(x),c.animate(d,g,function(){c.removeAttr("style").hide(),u.removeAttr("style"),e("html").removeAttr("style"),t=!1,i=!1,"function"==typeof a&&a(s),u.removeClass("sidr-animating")}),y()}}},o={open:function(e,t){n.execute("open",e,t)},close:function(e,t){n.execute("close",e,t)},toggle:function(e,t){n.execute("toggle",e,t)},toogle:function(e,t){n.execute("toggle",e,t)}};e.sidr=function(t){return o[t]?o[t].apply(this,Array.prototype.slice.call(arguments,1)):"function"!=typeof t&&"string"!=typeof t&&t?(e.error("Method "+t+" does not exist on jQuery.sidr"),void 0):o.toggle.apply(this,arguments)},e.fn.sidr=function(t){var i=e.extend({name:"sidr",speed:200,side:"left",source:null,renaming:!0,body:"body",displace:!0,onOpen:function(){},onClose:function(){}},t),s=i.name,a=e("#"+s);if(0===a.length&&(a=e("<div />").attr("id",s).appendTo(e("body"))),a.addClass("sidr").addClass(i.side).data({speed:i.speed,side:i.side,body:i.body,displace:i.displace,onOpen:i.onOpen,onClose:i.onClose}),"function"==typeof i.source){var r=i.source(s);n.loadContent(a,r)}else if("string"==typeof i.source&&n.isUrl(i.source))e.get(i.source,function(e){n.loadContent(a,e)});else if("string"==typeof i.source){var d="",l=i.source.split(",");if(e.each(l,function(t,i){d+='<div class="sidr-inner">'+e(i).html()+"</div>"}),i.renaming){var c=e("<div />").html(d);c.find("*").each(function(t,i){var o=e(i);n.addPrefix(o)}),d=c.html()}n.loadContent(a,d)}else null!==i.source&&e.error("Invalid Sidr Source");return this.each(function(){var t=e(this),i=t.data("sidr");i||(t.data("sidr",s),"ontouchstart"in document.documentElement?(t.bind("touchstart",function(e){e.originalEvent.touches[0],this.touched=e.timeStamp}),t.bind("touchend",function(e){var t=Math.abs(e.timeStamp-this.touched);200>t&&(e.preventDefault(),o.toggle(s))})):t.click(function(e){e.preventDefault(),o.toggle(s)}))})}})(jQuery);
+ *
+ * Copyright (c) 2013 Alberto Varela
+ * Licensed under the MIT license.
+ */
+
+;(function( $ ){
+
+  var sidrMoving = false,
+      sidrOpened = false;
+
+  // Private methods
+  var privateMethods = {
+    // Check for valids urls
+    // From : http://stackoverflow.com/questions/5717093/check-if-a-javascript-string-is-an-url
+    isUrl: function (str) {
+      var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+        '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+        '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+        '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+        '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+      if(!pattern.test(str)) {
+        return false;
+      } else {
+        return true;
+      }
+    },
+    // Loads the content into the menu bar
+    loadContent: function($menu, content) {
+      $menu.html(content);
+    },
+    // Add sidr prefixes
+    addPrefix: function($element) {
+      var elementId = $element.attr('id'),
+          elementClass = $element.attr('class');
+
+      if(typeof elementId === 'string' && '' !== elementId) {
+        $element.attr('id', elementId.replace(/([A-Za-z0-9_.\-]+)/g, 'sidr-id-$1'));
+      }
+      if(typeof elementClass === 'string' && '' !== elementClass && 'sidr-inner' !== elementClass) {
+        $element.attr('class', elementClass.replace(/([A-Za-z0-9_.\-]+)/g, 'sidr-class-$1'));
+      }
+      $element.removeAttr('style');
+    },
+    execute: function(action, name, callback) {
+      // Check arguments
+      if(typeof name === 'function') {
+        callback = name;
+        name = 'sidr';
+      }
+      else if(!name) {
+        name = 'sidr';
+      }
+
+      // Declaring
+      var $menu = $('#' + name),
+          $body = $($menu.data('body')),
+          $html = $('html'),
+          menuWidth = $menu.outerWidth(true),
+          speed = $menu.data('speed'),
+          side = $menu.data('side'),
+          displace = $menu.data('displace'),
+          onOpen = $menu.data('onOpen'),
+          onClose = $menu.data('onClose'),
+          bodyAnimation,
+          menuAnimation,
+          scrollTop,
+          bodyClass = (name === 'sidr' ? 'sidr-open' : 'sidr-open ' + name + '-open');
+
+      // Open Sidr
+      if('open' === action || ('toggle' === action && !$menu.is(':visible'))) {
+        // Check if we can open it
+        if( $menu.is(':visible') || sidrMoving ) {
+          return;
+        }
+
+        // If another menu opened close first
+        if(sidrOpened !== false) {
+          methods.close(sidrOpened, function() {
+            methods.open(name);
+          });
+
+          return;
+        }
+
+        // Lock sidr
+        sidrMoving = true;
+
+        // Left or right?
+        if(side === 'left') {
+          bodyAnimation = {left: menuWidth + 'px'};
+          menuAnimation = {left: '0px'};
+        }
+        else {
+          bodyAnimation = {right: menuWidth + 'px'};
+          menuAnimation = {right: '0px'};
+        }
+
+        // Prepare page if container is body
+        if($body.is('body')){
+          scrollTop = $html.scrollTop();
+          $html.css('overflow-x', 'hidden').scrollTop(scrollTop);
+        }
+
+        // Open menu
+        if(displace){
+          $body.addClass('sidr-animating').css({
+            width: $body.width(),
+            position: 'absolute'
+          }).animate(bodyAnimation, speed, function() {
+            $(this).addClass(bodyClass);
+          });
+        }
+        else {
+          setTimeout(function() {
+            $(this).addClass(bodyClass);
+          }, speed);
+        }
+        $menu.css('display', 'block').animate(menuAnimation, speed, function() {
+          sidrMoving = false;
+          sidrOpened = name;
+          // Callback
+          if(typeof callback === 'function') {
+            callback(name);
+          }
+          $body.removeClass('sidr-animating');
+        });
+
+        // onOpen callback
+        onOpen();
+      }
+      // Close Sidr
+      else {
+        // Check if we can close it
+        if( !$menu.is(':visible') || sidrMoving ) {
+          return;
+        }
+
+        // Lock sidr
+        sidrMoving = true;
+
+        // Right or left menu?
+        if(side === 'left') {
+          bodyAnimation = {left: 0};
+          menuAnimation = {left: '-' + menuWidth + 'px'};
+        }
+        else {
+          bodyAnimation = {right: 0};
+          menuAnimation = {right: '-' + menuWidth + 'px'};
+        }
+
+        // Close menu
+        if($body.is('body')){
+          scrollTop = $html.scrollTop();
+          $html.removeAttr('style').scrollTop(scrollTop);
+        }
+        $body.addClass('sidr-animating').animate(bodyAnimation, speed).removeClass(bodyClass);
+        $menu.animate(menuAnimation, speed, function() {
+          $menu.removeAttr('style').hide();
+          $body.removeAttr('style');
+          $('html').removeAttr('style');
+          sidrMoving = false;
+          sidrOpened = false;
+          // Callback
+          if(typeof callback === 'function') {
+            callback(name);
+          }
+          $body.removeClass('sidr-animating');
+        });
+
+        // onClose callback
+        onClose();
+      }
+    }
+  };
+
+  // Sidr public methods
+  var methods = {
+    open: function(name, callback) {
+      privateMethods.execute('open', name, callback);
+    },
+    close: function(name, callback) {
+      privateMethods.execute('close', name, callback);
+    },
+    toggle: function(name, callback) {
+      privateMethods.execute('toggle', name, callback);
+    },
+    // I made a typo, so I mantain this method to keep backward compatibilty with 1.1.1v and previous
+    toogle: function(name, callback) {
+      privateMethods.execute('toggle', name, callback);
+    }
+  };
+
+  $.sidr = function( method ) {
+
+    if ( methods[method] ) {
+      return methods[method].apply( this, Array.prototype.slice.call( arguments, 1 ));
+    }
+    else if ( typeof method === 'function' || typeof method === 'string' || ! method ) {
+      return methods.toggle.apply( this, arguments );
+    }
+    else {
+      $.error( 'Method ' + method + ' does not exist on jQuery.sidr' );
+    }
+
+  };
+
+  $.fn.sidr = function( options ) {
+
+    var settings = $.extend( {
+      name          : 'sidr',         // Name for the 'sidr'
+      speed         : 200,            // Accepts standard jQuery effects speeds (i.e. fast, normal or milliseconds)
+      side          : 'left',         // Accepts 'left' or 'right'
+      source        : null,           // Override the source of the content.
+      renaming      : true,           // The ids and classes will be prepended with a prefix when loading existent content
+      body          : 'body',         // Page container selector,
+      displace: true, // Displace the body content or not
+      onOpen        : function() {},  // Callback when sidr opened
+      onClose       : function() {}   // Callback when sidr closed
+    }, options);
+
+    var name = settings.name,
+        $sideMenu = $('#' + name);
+
+    // If the side menu do not exist create it
+    if( $sideMenu.length === 0 ) {
+      $sideMenu = $('<div />')
+        .attr('id', name)
+        .appendTo($('body'));
+    }
+
+    // Adding styles and options
+    $sideMenu
+      .addClass('sidr')
+      .addClass(settings.side)
+      .data({
+        speed          : settings.speed,
+        side           : settings.side,
+        body           : settings.body,
+        displace      : settings.displace,
+        onOpen         : settings.onOpen,
+        onClose        : settings.onClose
+      });
+
+    // The menu content
+    if(typeof settings.source === 'function') {
+      var newContent = settings.source(name);
+      privateMethods.loadContent($sideMenu, newContent);
+    }
+    else if(typeof settings.source === 'string' && privateMethods.isUrl(settings.source)) {
+      $.get(settings.source, function(data) {
+        privateMethods.loadContent($sideMenu, data);
+      });
+    }
+    else if(typeof settings.source === 'string') {
+      var htmlContent = '',
+          selectors = settings.source.split(',');
+
+      $.each(selectors, function(index, element) {
+        htmlContent += '<div class="sidr-inner">' + $(element).html() + '</div>';
+      });
+
+      // Renaming ids and classes
+      if(settings.renaming) {
+        var $htmlContent = $('<div />').html(htmlContent);
+        $htmlContent.find('*').each(function(index, element) {
+          var $element = $(element);
+          privateMethods.addPrefix($element);
+        });
+        htmlContent = $htmlContent.html();
+      }
+      privateMethods.loadContent($sideMenu, htmlContent);
+    }
+    else if(settings.source !== null) {
+      $.error('Invalid Sidr Source');
+    }
+
+    return this.each(function(){
+      var $this = $(this),
+          data = $this.data('sidr');
+
+      // If the plugin hasn't been initialized yet
+      if ( ! data ) {
+
+        $this.data('sidr', name);
+        if('ontouchstart' in document.documentElement) {
+          $this.bind('touchstart', function(e) {
+            var theEvent = e.originalEvent.touches[0];
+            this.touched = e.timeStamp;
+          });
+          $this.bind('touchend', function(e) {
+            var delta = Math.abs(e.timeStamp - this.touched);
+            if(delta < 200) {
+              e.preventDefault();
+              methods.toggle(name);
+            }
+          });
+        }
+        else {
+          $this.click(function(e) {
+            e.preventDefault();
+            methods.toggle(name);
+          });
+        }
+      }
+    });
+  };
+
+})( jQuery );
+
+
 
 /*!
-* jScroll - jQuery Plugin for Infinite Scrolling / Auto-Paging - v2.2.4
-* http://jscroll.com/
-*
-* Copyright 2011-2013, Philip Klauzinski
-* http://klauzinski.com/
-* Dual licensed under the MIT and GPL Version 2 licenses.
-* http://jscroll.com/#license
-* http://www.opensource.org/licenses/mit-license.php
-* http://www.gnu.org/licenses/gpl-2.0.html
-*
-* @author Philip Klauzinski
-* @requires jQuery v1.4.3+
-*/
-(function(b){b.jscroll={defaults:{debug:false,autoTrigger:true,autoTriggerUntil:false,loadingHtml:"<small>Loading...</small>",padding:0,nextSelector:"a:last",contentSelector:"",pagingSelector:"",callback:false}};var a=function(e,g){var o=e.data("jscroll"),n=(typeof g==="function")?{callback:g}:g,p=b.extend({},b.jscroll.defaults,n,o||{}),c=(e.css("overflow-y")==="visible"),l=e.find(p.nextSelector).first(),v=b(window),h=b("body"),q=c?v:e,m=b.trim(l.attr("href")+" "+p.contentSelector);e.data("jscroll",b.extend({},o,{initialized:true,waiting:false,nextHref:m}));r();k();t();function k(){var x=b(p.loadingHtml).filter("img").attr("src");if(x){var w=new Image();w.src=x}}function r(){if(!e.find(".jscroll-inner").length){e.contents().wrapAll('<div class="jscroll-inner" />')}}function d(w){if(p.pagingSelector){var x=w.closest(p.pagingSelector).hide()}else{var x=w.parent().not(".jscroll-inner,.jscroll-added").addClass("jscroll-next-parent").hide();if(!x.length){w.wrap('<div class="jscroll-next-parent" />').parent().hide()}}}function j(){return q.unbind(".jscroll").removeData("jscroll").find(".jscroll-inner").children().unwrap().filter(".jscroll-added").children().unwrap()}function i(){r();var D=e.find("div.jscroll-inner").first(),B=e.data("jscroll"),C=parseInt(e.css("borderTopWidth")),y=isNaN(C)?0:C,x=parseInt(e.css("paddingTop"))+y,A=c?q.scrollTop():e.offset().top,z=D.length?D.offset().top:0,w=Math.ceil(A-z+q.height()+x);if(!B.waiting&&w+p.padding>=D.outerHeight()){f("info","jScroll:",D.outerHeight()-w,"from bottom. Loading next request...");return u()}}function s(w){w=w||e.data("jscroll");if(!w||!w.nextHref){f("warn","jScroll: nextSelector not found - destroying");j();return false}else{t();return true}}function t(){var w=e.find(p.nextSelector).first();if(p.autoTrigger&&(p.autoTriggerUntil===false||p.autoTriggerUntil>0)){d(w);if(h.height()<=v.height()){i()}q.unbind(".jscroll").bind("scroll.jscroll",function(){return i()});if(p.autoTriggerUntil>0){p.autoTriggerUntil--}}else{q.unbind(".jscroll");w.bind("click.jscroll",function(){d(w);u();return false})}}function u(){var x=e.find("div.jscroll-inner").first(),w=e.data("jscroll");w.waiting=true;x.append('<div class="jscroll-added" />').children(".jscroll-added").last().html('<div class="jscroll-loading">'+p.loadingHtml+"</div>");return e.animate({scrollTop:x.outerHeight()},0,function(){x.find("div.jscroll-added").last().load(w.nextHref,function(A,z,B){if(z==="error"){return j()}var y=b(this).find(p.nextSelector).first();w.waiting=false;w.nextHref=y.attr("href")?b.trim(y.attr("href")+" "+p.contentSelector):false;b(".jscroll-next-parent",e).remove();s();if(p.callback){p.callback.call(this)}f("dir",w)})})}function f(w){if(p.debug&&typeof console==="object"&&(typeof w==="object"||typeof console[w]==="function")){if(typeof w==="object"){var y=[];for(var x in w){if(typeof console[x]==="function"){y=(w[x].length)?w[x]:[w[x]];console[x].apply(console,y)}else{console.log.apply(console,y)}}}else{console[w].apply(console,Array.prototype.slice.call(arguments,1))}}}b.extend(e.jscroll,{destroy:j});return e};b.fn.jscroll=function(c){return this.each(function(){var f=b(this),e=f.data("jscroll");if(e&&e.initialized){return}var d=new a(f,c)})}})(jQuery);
+ * jScroll - jQuery Plugin for Infinite Scrolling / Auto-Paging - v2.2.4
+ * http://jscroll.com/
+ *
+ * Copyright 2011-2013, Philip Klauzinski
+ * http://klauzinski.com/
+ * Dual licensed under the MIT and GPL Version 2 licenses.
+ * http://jscroll.com/#license
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * @author Philip Klauzinski
+ * @requires jQuery v1.4.3+
+ */
+(function($) {
+
+    // Define the jscroll namespace and default settings
+    $.jscroll = {
+        defaults: {
+            debug: false,
+            autoTrigger: true,
+            autoTriggerUntil: false,
+            loadingHtml: '<small>Loading...</small>',
+            padding: 0,
+            nextSelector: 'a:last',
+            contentSelector: '',
+            pagingSelector: '',
+            callback: false
+        }
+    };
+
+    // Constructor
+    var jScroll = function($e, options) {
+
+        // Private vars
+        var _data = $e.data('jscroll'),
+            _userOptions = (typeof options === 'function') ? { callback: options } : options,
+            _options = $.extend({}, $.jscroll.defaults, _userOptions, _data || {}),
+            _isWindow = ($e.css('overflow-y') === 'visible'),
+            _$next = $e.find(_options.nextSelector).first(),
+            _$window = $(window),
+            _$body = $('body'),
+            _$scroll = _isWindow ? _$window : $e,
+            _nextHref = $.trim(_$next.attr('href') + ' ' + _options.contentSelector);
+
+        // Initialization
+        $e.data('jscroll', $.extend({}, _data, {initialized: true, waiting: false, nextHref: _nextHref}));
+        _wrapInnerContent();
+        _preloadImage();
+        _setBindings();
+
+        // Private methods
+
+        // Check if a loading image is defined and preload
+        function _preloadImage() {
+            var src = $(_options.loadingHtml).filter('img').attr('src');
+            if (src) {
+                var image = new Image();
+                image.src = src;
+            }
+        }
+
+        // Wrapper inner content, if it isn't already
+        function _wrapInnerContent() {
+            if (!$e.find('.jscroll-inner').length) {
+                $e.contents().wrapAll('<div class="jscroll-inner" />');
+            }
+        }
+
+        // Find the next link's parent, or add one, and hide it
+        function _nextWrap($next) {
+            if (_options.pagingSelector) {
+                var $parent = $next.closest(_options.pagingSelector).hide();
+            } else {
+                var $parent = $next.parent().not('.jscroll-inner,.jscroll-added').addClass('jscroll-next-parent').hide();
+                if (!$parent.length) {
+                    $next.wrap('<div class="jscroll-next-parent" />').parent().hide();
+                }
+            }
+        }
+
+        // Remove the jscroll behavior and data from an element
+        function _destroy() {
+            return _$scroll.unbind('.jscroll')
+                .removeData('jscroll')
+                .find('.jscroll-inner').children().unwrap()
+                .filter('.jscroll-added').children().unwrap();
+        }
+
+        // Observe the scroll event for when to trigger the next load
+        function _observe() {
+            _wrapInnerContent();
+            var $inner = $e.find('div.jscroll-inner').first(),
+                data = $e.data('jscroll'),
+                borderTopWidth = parseInt($e.css('borderTopWidth')),
+                borderTopWidthInt = isNaN(borderTopWidth) ? 0 : borderTopWidth,
+                iContainerTop = parseInt($e.css('paddingTop')) + borderTopWidthInt,
+                iTopHeight = _isWindow ? _$scroll.scrollTop() : $e.offset().top,
+                innerTop = $inner.length ? $inner.offset().top : 0,
+                iTotalHeight = Math.ceil(iTopHeight - innerTop + _$scroll.height() + iContainerTop);
+
+            if (!data.waiting && iTotalHeight + _options.padding >= $inner.outerHeight()) {
+                //data.nextHref = $.trim(data.nextHref + ' ' + _options.contentSelector);
+                _debug('info', 'jScroll:', $inner.outerHeight() - iTotalHeight, 'from bottom. Loading next request...');
+                return _load();
+            }
+        }
+
+        // Check if the href for the next set of content has been set
+        function _checkNextHref(data) {
+            data = data || $e.data('jscroll');
+            if (!data || !data.nextHref) {
+                _debug('warn', 'jScroll: nextSelector not found - destroying');
+                _destroy();
+                return false;
+            } else {
+                _setBindings();
+                return true;
+            }
+        }
+
+        function _setBindings() {
+            var $next = $e.find(_options.nextSelector).first();
+            if (_options.autoTrigger && (_options.autoTriggerUntil === false || _options.autoTriggerUntil > 0)) {
+                _nextWrap($next);
+                if (_$body.height() <= _$window.height()) {
+                    _observe();
+                }
+                _$scroll.unbind('.jscroll').bind('scroll.jscroll', function() {
+                    return _observe();
+                });
+                if (_options.autoTriggerUntil > 0) {
+                    _options.autoTriggerUntil--;
+                }
+            } else {
+                _$scroll.unbind('.jscroll');
+                $next.bind('click.jscroll', function() {
+                    _nextWrap($next);
+                    _load();
+                    return false;
+                });
+            }
+        }
+
+        // Load the next set of content, if available
+        function _load() {
+            var $inner = $e.find('div.jscroll-inner').first(),
+                data = $e.data('jscroll');
+
+            data.waiting = true;
+            $inner.append('<div class="jscroll-added" />')
+                .children('.jscroll-added').last()
+                .html('<div class="jscroll-loading">' + _options.loadingHtml + '</div>');
+
+            return $e.animate({scrollTop: $inner.outerHeight()}, 0, function() {
+                $inner.find('div.jscroll-added').last().load(data.nextHref, function(r, status, xhr) {
+                    if (status === 'error') {
+                        return _destroy();
+                    }
+                    var $next = $(this).find(_options.nextSelector).first();
+                    data.waiting = false;
+                    data.nextHref = $next.attr('href') ? $.trim($next.attr('href') + ' ' + _options.contentSelector) : false;
+                    $('.jscroll-next-parent', $e).remove(); // Remove the previous next link now that we have a new one
+                    _checkNextHref();
+                    if (_options.callback) {
+                        _options.callback.call(this);
+                    }
+                    _debug('dir', data);
+                });
+            });
+        }
+
+        // Safe console debug - http://klauzinski.com/javascript/safe-firebug-console-in-javascript
+        function _debug(m) {
+            if (_options.debug && typeof console === 'object' && (typeof m === 'object' || typeof console[m] === 'function')) {
+                if (typeof m === 'object') {
+                    var args = [];
+                    for (var sMethod in m) {
+                        if (typeof console[sMethod] === 'function') {
+                            args = (m[sMethod].length) ? m[sMethod] : [m[sMethod]];
+                            console[sMethod].apply(console, args);
+                        } else {
+                            console.log.apply(console, args);
+                        }
+                    }
+                } else {
+                    console[m].apply(console, Array.prototype.slice.call(arguments, 1));
+                }
+            }
+        }
+
+        // Expose API methods via the jQuery.jscroll namespace, e.g. $('sel').jscroll.method()
+        $.extend($e.jscroll, {
+            destroy: _destroy
+        });
+        return $e;
+    };
+
+    // Define the jscroll plugin method and loop
+    $.fn.jscroll = function(m) {
+        return this.each(function() {
+            var $this = $(this),
+                data = $this.data('jscroll');
+            // Instantiate jScroll on this element if it hasn't been already
+            if (data && data.initialized) return;
+            var jscroll = new jScroll($this, m);
+        });
+    };
+})(jQuery);
+
+
 
 
 /*global jQuery */
@@ -101,6 +627,7 @@ if(!(window.console&&console.log)){(function(){var noop=function(){};var methods
 
 
 
+/*global jQuery */
 /*!
 * FlexVerticalCenter.js 1.0
 *
@@ -110,19 +637,907 @@ if(!(window.console&&console.log)){(function(){var noop=function(){};var methods
 *
 * Date: Fri Oct 28 19:12:00 2011 +0100
 */
-(function($){$.fn.flexVerticalCenter=function(options){var settings=$.extend({cssAttribute:"margin-top",verticalOffset:0,parentSelector:null,debounceTimeout:25},options||{});var debounce;return this.each(function(){var $this=$(this);var resizer=function(){var parentHeight=settings.parentSelector?$this.parents(settings.parentSelector).first().height():$this.parent().height();$this.css(settings.cssAttribute,(parentHeight-$this.height())/2+parseInt(settings.verticalOffset))};resizer();$(window).resize(function(){clearTimeout(debounce);
-debounce=setTimeout(resizer,settings.debounceTimeout)});$this.find("img").load(resizer)})}})(jQuery);
+(function( $ ){
+
+  $.fn.flexVerticalCenter = function( options ) {
+    var settings = $.extend({
+      cssAttribute:   'margin-top', // the attribute to apply the calculated value to
+      verticalOffset: 0,            // the number of pixels to offset the vertical alignment by
+      parentSelector: null,         // a selector representing the parent to vertically center this element within
+      debounceTimeout: 25           // a default debounce timeout in milliseconds
+    }, options || {});
+
+    return this.each(function(){
+      var $this   = $(this); // store the object
+      var debounce;
+
+      // recalculate the distance to the top of the element to keep it centered
+      var resizer = function () {
+
+        var parentHeight = (settings.parentSelector && $this.parents(settings.parentSelector).length) ?
+          $this.parents(settings.parentSelector).first().height() : $this.parent().height();
+
+        $this.css(
+          settings.cssAttribute, ( ( ( parentHeight - $this.height() ) / 2 ) + parseInt(settings.verticalOffset) )
+        );
+      };
+
+      // Call on resize. Opera debounces their resize by default.
+      $(window).resize(function () {
+          clearTimeout(debounce);
+          debounce = setTimeout(resizer, settings.debounceTimeout);
+      });
+
+      // Call once to set after window loads.
+      $(window).load(function () {
+          resizer();
+      });
+
+      // Apply a load event to images within the element so it fires again after an image is loaded
+      $this.find('img').load(resizer);
+
+    });
+
+  };
+
+})( jQuery );
 
 
-/*
-* Selecter v3.1.2 - 2014-05-30
-* A jQuery plugin for replacing default select elements. Part of the Formstone Library.
-* http://formstone.it/selecter/
-*
-* Copyright 2014 Ben Plum; MIT Licensed
-*/
 
-!function(a,b){"use strict";function c(b){b=a.extend({},F,b||{}),null===E&&(E=a("body"));for(var c=a(this),e=0,f=c.length;f>e;e++)d(c.eq(e),b);return c}function d(b,c){if(!b.hasClass("selecter-element")){c=a.extend({},c,b.data("selecter-options")),c.external&&(c.links=!0);var d=b.find("option, optgroup"),g=d.filter("option"),h=g.filter(":selected"),j=h.length>0?g.index(h):1,k="div";c.tabIndex=b[0].tabIndex,b[0].tabIndex=-1,c.multiple=b.prop("multiple"),c.disabled=b.is(":disabled");var q="",s="";s+="<"+k+' class="selecter '+c.customClass,C?s+=" mobile":c.cover&&(s+=" cover"),s+=c.multiple?" multiple":" closed",c.disabled&&(s+=" disabled"),s+='" tabindex="'+c.tabIndex+'">',s+="</"+k+">",c.multiple||(q+='<span class="selecter-selected'+(""!==c.label?" placeholder":"")+'">',q+=a("<span></span>").text(v(""!==h.text()?h.text():c.label,c.trim)).html(),q+="</span>"),q+='<div class="selecter-options">',q+="</div>",b.addClass("selecter-element").wrap(s).after(q);var t=b.parent(".selecter"),u=a.extend({$select:b,$allOptions:d,$options:g,$selecter:t,$selected:t.find(".selecter-selected"),$itemsWrapper:t.find(".selecter-options"),index:-1,guid:z++},c);e(u),u.multiple||r(j,u),void 0!==a.fn.scroller&&u.$itemsWrapper.scroller(),u.$selecter.on("touchstart.selecter",".selecter-selected",u,f).on("click.selecter",".selecter-selected",u,i).on("click.selecter",".selecter-item",u,m).on("close.selecter",u,l).data("selecter",u),u.$select.on("change.selecter",u,n),C||(u.$selecter.on("focus.selecter",u,o).on("blur.selecter",u,p),u.$select.on("focus.selecter",u,function(a){a.data.$selecter.trigger("focus")}))}}function e(b){for(var c="",d=b.links?"a":"span",e=0,f=0,g=b.$allOptions.length;g>f;f++){var h=b.$allOptions.eq(f);if("OPTGROUP"===h[0].tagName)c+='<span class="selecter-group',h.is(":disabled")&&(c+=" disabled"),c+='">'+h.attr("label")+"</span>";else{var i=h.val();h.attr("value")||h.attr("value",i),c+="<"+d+' class="selecter-item',h.is(":selected")&&(c+=" selected"),h.is(":disabled")&&(c+=" disabled"),c+='" ',c+=b.links?'href="'+i+'"':'data-value="'+i+'"',c+=">"+a("<span></span>").text(v(h.text(),b.trim)).html()+"</"+d+">",e++}}b.$itemsWrapper.html(c),b.$items=b.$selecter.find(".selecter-item")}function f(a){a.stopPropagation();var b=a.data,c=a.originalEvent;y(b.timer),b.touchStartX=c.touches[0].clientX,b.touchStartY=c.touches[0].clientY,b.$selecter.on("touchmove.selecter",".selecter-selected",b,g).on("touchend.selecter",".selecter-selected",b,h)}function g(a){var b=a.data,c=a.originalEvent;(Math.abs(c.touches[0].clientX-b.touchStartX)>10||Math.abs(c.touches[0].clientY-b.touchStartY)>10)&&b.$selecter.off("touchmove.selecter touchend.selecter")}function h(a){var b=a.data;b.$selecter.off("touchmove.selecter touchend.selecter click.selecter"),b.timer=x(b.timer,1e3,function(){b.$selecter.on("click.selecter",".selecter-selected",b,i)}),i(a)}function i(c){c.preventDefault(),c.stopPropagation();var d=c.data;if(!d.$select.is(":disabled"))if(a(".selecter").not(d.$selecter).trigger("close.selecter",[d]),C&&!D){var e=d.$select[0];if(b.document.createEvent){var f=b.document.createEvent("MouseEvents");f.initMouseEvent("mousedown",!1,!0,b,0,0,0,0,0,!1,!1,!1,!1,0,null),e.dispatchEvent(f)}else e.fireEvent&&e.fireEvent("onmousedown")}else d.$selecter.hasClass("closed")?j(c):d.$selecter.hasClass("open")&&l(c)}function j(a){a.preventDefault(),a.stopPropagation();var b=a.data;if(!b.$selecter.hasClass("open")){{var c=b.$selecter.offset(),d=E.outerHeight(),e=b.$itemsWrapper.outerHeight(!0);b.index>=0?b.$items.eq(b.index).position():{left:0,top:0}}c.top+e>d&&b.$selecter.addClass("bottom"),b.$itemsWrapper.show(),b.$selecter.removeClass("closed").addClass("open"),E.on("click.selecter-"+b.guid,":not(.selecter-options)",b,k),s(b)}}function k(b){b.preventDefault(),b.stopPropagation(),0===a(b.currentTarget).parents(".selecter").length&&l(b)}function l(a){a.preventDefault(),a.stopPropagation();var b=a.data;b.$selecter.hasClass("open")&&(b.$itemsWrapper.hide(),b.$selecter.removeClass("open bottom").addClass("closed"),E.off(".selecter-"+b.guid))}function m(b){b.preventDefault(),b.stopPropagation();var c=a(this),d=b.data;if(!d.$select.is(":disabled")){if(d.$itemsWrapper.is(":visible")){var e=d.$items.index(c);e!==d.index&&(r(e,d),t(d))}d.multiple||l(b)}}function n(b,c){var d=a(this),e=b.data;if(!c&&!e.multiple){var f=e.$options.index(e.$options.filter("[value='"+w(d.val())+"']"));r(f,e),t(e)}}function o(b){b.preventDefault(),b.stopPropagation();var c=b.data;c.$select.is(":disabled")||c.multiple||(c.$selecter.addClass("focus").on("keydown.selecter-"+c.guid,c,q),a(".selecter").not(c.$selecter).trigger("close.selecter",[c]))}function p(b){b.preventDefault(),b.stopPropagation();var c=b.data;c.$selecter.removeClass("focus").off("keydown.selecter-"+c.guid),a(".selecter").not(c.$selecter).trigger("close.selecter",[c])}function q(b){var c=b.data;if(13===b.keyCode)c.$selecter.hasClass("open")&&(l(b),r(c.index,c)),t(c);else if(!(9===b.keyCode||b.metaKey||b.altKey||b.ctrlKey||b.shiftKey)){b.preventDefault(),b.stopPropagation();var d=c.$items.length-1,e=c.index<0?0:c.index;if(a.inArray(b.keyCode,B?[38,40,37,39]:[38,40])>-1)e+=38===b.keyCode||B&&37===b.keyCode?-1:1,0>e&&(e=0),e>d&&(e=d);else{var f,g,h=String.fromCharCode(b.keyCode).toUpperCase();for(g=c.index+1;d>=g;g++)if(f=c.$options.eq(g).text().charAt(0).toUpperCase(),f===h){e=g;break}if(0>e||e===c.index)for(g=0;d>=g;g++)if(f=c.$options.eq(g).text().charAt(0).toUpperCase(),f===h){e=g;break}}e>=0&&(r(e,c),s(c))}}function r(a,b){var c=b.$items.eq(a),d=c.hasClass("selected"),e=c.hasClass("disabled");if(!e){if(-1===a&&""!==b.label)b.$selected.html(b.label);else if(d)b.multiple&&(b.$options.eq(a).prop("selected",null),c.removeClass("selected"));else{{var f=c.html();c.data("value")}b.multiple?b.$options.eq(a).prop("selected",!0):(b.$selected.html(f).removeClass("placeholder"),b.$items.filter(".selected").removeClass("selected"),b.$select[0].selectedIndex=a),c.addClass("selected")}b.multiple||(b.index=a)}}function s(b){var c=b.index>=0?b.$items.eq(b.index).position():{left:0,top:0};void 0!==a.fn.scroller?b.$itemsWrapper.scroller("scroll",b.$itemsWrapper.find(".scroller-content").scrollTop()+c.top,0).scroller("reset"):b.$itemsWrapper.scrollTop(b.$itemsWrapper.scrollTop()+c.top)}function t(a){a.links?u(a):(a.callback.call(a.$selecter,a.$select.val(),a.index),a.$select.trigger("change",[!0]))}function u(a){var c=a.$select.val();a.external?b.open(c):b.location.href=c}function v(a,b){return 0===b?a:a.length>b?a.substring(0,b)+"...":a}function w(a){return"string"==typeof a?a.replace(/([;&,\.\+\*\~':"\!\^#$%@\[\]\(\)=>\|])/g,"\\$1"):a}function x(a,b,c,d){return y(a,d),d===!0?setInterval(c,b):setTimeout(c,b)}function y(a){null!==a&&(clearInterval(a),a=null)}var z=0,A=b.navigator.userAgent||b.navigator.vendor||b.opera,B=/Firefox/i.test(A),C=/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(A),D=B&&C,E=null,F={callback:a.noop,cover:!1,customClass:"",label:"",external:!1,links:!1,trim:0},G={defaults:function(b){return F=a.extend(F,b||{}),a(this)},disable:function(b){return a(this).each(function(c,d){var e=a(d).parent(".selecter").data("selecter");if(e)if("undefined"!=typeof b){var f=e.$items.index(e.$items.filter("[data-value="+b+"]"));e.$items.eq(f).addClass("disabled"),e.$options.eq(f).prop("disabled",!0)}else e.$selecter.hasClass("open")&&e.$selecter.find(".selecter-selected").trigger("click.selecter"),e.$selecter.addClass("disabled"),e.$select.prop("disabled",!0)})},enable:function(b){return a(this).each(function(c,d){var e=a(d).parent(".selecter").data("selecter");if(e)if("undefined"!=typeof b){var f=e.$items.index(e.$items.filter("[data-value="+b+"]"));e.$items.eq(f).removeClass("disabled"),e.$options.eq(f).prop("disabled",!1)}else e.$selecter.removeClass("disabled"),e.$select.prop("disabled",!1)})},destroy:function(){return a(this).each(function(b,c){var d=a(c).parent(".selecter").data("selecter");d&&(d.$selecter.hasClass("open")&&d.$selecter.find(".selecter-selected").trigger("click.selecter"),void 0!==a.fn.scroller&&d.$selecter.find(".selecter-options").scroller("destroy"),d.$select[0].tabIndex=d.tabIndex,d.$selected.remove(),d.$itemsWrapper.remove(),d.$selecter.off(".selecter"),d.$select.off(".selecter").removeClass("selecter-element").show().unwrap())})},refresh:function(){return a(this).each(function(b,c){var d=a(c).parent(".selecter").data("selecter");if(d){var f=d.index;d.$allOptions=d.$select.find("option, optgroup"),d.$options=d.$allOptions.filter("option"),d.index=-1,f=d.$options.index(d.$options.filter(":selected")),e(d),d.multiple||r(f,d)}})}};a.fn.selecter=function(a){return G[a]?G[a].apply(this,Array.prototype.slice.call(arguments,1)):"object"!=typeof a&&a?this:c.apply(this,arguments)},a.selecter=function(a){"defaults"===a&&G.defaults.apply(this,Array.prototype.slice.call(arguments,1))}}(jQuery,window);
+/* 
+ * Selecter v3.2.4 - 2015-01-07 
+ * A jQuery plugin for replacing default select elements. Part of the Formstone Library. 
+ * http://formstone.it/selecter/ 
+ * 
+ * Copyright 2015 Ben Plum; MIT Licensed 
+ */
+
+;(function ($, window) {
+	"use strict";
+
+	var guid = 0,
+		userAgent = (window.navigator.userAgent||window.navigator.vendor||window.opera),
+		isFirefox = /Firefox/i.test(userAgent),
+		isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(userAgent),
+		isFirefoxMobile = (isFirefox && isMobile),
+		$body = null;
+
+	/**
+	 * @options
+	 * @param callback [function] <$.noop> "Select item callback"
+	 * @param cover [boolean] <false> "Cover handle with option set"
+	 * @param customClass [string] <''> "Class applied to instance"
+	 * @param label [string] <''> "Label displayed before selection"
+	 * @param external [boolean] <false> "Open options as links in new window"
+	 * @param links [boolean] <false> "Open options as links in same window"
+	 * @param mobile [boolean] <false> "Force desktop interaction on mobile"
+	 * @param trim [int] <0> "Trim options to specified length; 0 to disable”
+	 */
+	var options = {
+		callback: $.noop,
+		cover: false,
+		customClass: "",
+		label: "",
+		external: false,
+		links: false,
+		mobile: false,
+		trim: 0
+	};
+
+	var pub = {
+
+		/**
+		 * @method
+		 * @name defaults
+		 * @description Sets default plugin options
+		 * @param opts [object] <{}> "Options object"
+		 * @example $.selecter("defaults", opts);
+		 */
+		defaults: function(opts) {
+			options = $.extend(options, opts || {});
+			return (typeof this === 'object') ? $(this) : true;
+		},
+
+		/**
+		 * @method
+		 * @name disable
+		 * @description Disables target instance or option
+		 * @param option [string] <null> "Target option value"
+		 * @example $(".target").selecter("disable", "1");
+		 */
+		disable: function(option) {
+			return $(this).each(function(i, input) {
+				var data = $(input).parent(".selecter").data("selecter");
+
+				if (data) {
+					if (typeof option !== "undefined") {
+						var index = data.$items.index( data.$items.filter("[data-value=" + option + "]") );
+
+						data.$items.eq(index).addClass("disabled");
+						data.$options.eq(index).prop("disabled", true);
+					} else {
+						if (data.$selecter.hasClass("open")) {
+							data.$selecter.find(".selecter-selected").trigger("click.selecter");
+						}
+
+						data.$selecter.addClass("disabled");
+						data.$select.prop("disabled", true);
+					}
+				}
+			});
+		},
+
+		/**
+		 * @method
+		 * @name destroy
+		 * @description Removes instance of plugin
+		 * @example $(".target").selecter("destroy");
+		 */
+		destroy: function() {
+			return $(this).each(function(i, input) {
+				var data = $(input).parent(".selecter").data("selecter");
+
+				if (data) {
+					if (data.$selecter.hasClass("open")) {
+						data.$selecter.find(".selecter-selected").trigger("click.selecter");
+					}
+
+					// Scroller support
+					if ($.fn.scroller !== undefined) {
+						data.$selecter.find(".selecter-options").scroller("destroy");
+					}
+
+					data.$select[0].tabIndex = data.tabIndex;
+
+					data.$select.find(".selecter-placeholder").remove();
+					data.$selected.remove();
+					data.$itemsWrapper.remove();
+
+					data.$selecter.off(".selecter");
+
+					data.$select.off(".selecter")
+								.removeClass("selecter-element")
+								.show()
+								.unwrap();
+				}
+			});
+		},
+
+		/**
+		 * @method
+		 * @name enable
+		 * @description Enables target instance or option
+		 * @param option [string] <null> "Target option value"
+		 * @example $(".target").selecter("enable", "1");
+		 */
+		enable: function(option) {
+			return $(this).each(function(i, input) {
+				var data = $(input).parent(".selecter").data("selecter");
+
+				if (data) {
+					if (typeof option !== "undefined") {
+						var index = data.$items.index( data.$items.filter("[data-value=" + option + "]") );
+						data.$items.eq(index).removeClass("disabled");
+						data.$options.eq(index).prop("disabled", false);
+					} else {
+						data.$selecter.removeClass("disabled");
+						data.$select.prop("disabled", false);
+					}
+				}
+			});
+		},
+
+
+		/**
+		* @method private
+		* @name refresh
+		* @description DEPRECATED - Updates instance base on target options
+		* @example $(".target").selecter("refresh");
+		*/
+		refresh: function() {
+			return pub.update.apply($(this));
+		},
+
+		/**
+		* @method
+		* @name update
+		* @description Updates instance base on target options
+		* @example $(".target").selecter("update");
+		*/
+		update: function() {
+			return $(this).each(function(i, input) {
+				var data = $(input).parent(".selecter").data("selecter");
+
+				if (data) {
+					var index = data.index;
+
+					data.$allOptions = data.$select.find("option, optgroup");
+					data.$options = data.$allOptions.filter("option");
+					data.index = -1;
+
+					index = data.$options.index(data.$options.filter(":selected"));
+
+					_buildOptions(data);
+
+					if (!data.multiple) {
+						_update(index, data);
+					}
+				}
+			});
+		}
+	};
+
+	/**
+	 * @method private
+	 * @name _init
+	 * @description Initializes plugin
+	 * @param opts [object] "Initialization options"
+	 */
+	function _init(opts) {
+		// Local options
+		opts = $.extend({}, options, opts || {});
+
+		// Check for Body
+		if ($body === null) {
+			$body = $("body");
+		}
+
+		// Apply to each element
+		var $items = $(this);
+		for (var i = 0, count = $items.length; i < count; i++) {
+			_build($items.eq(i), opts);
+		}
+		return $items;
+	}
+
+	/**
+	 * @method private
+	 * @name _build
+	 * @description Builds each instance
+	 * @param $select [jQuery object] "Target jQuery object"
+	 * @param opts [object] <{}> "Options object"
+	 */
+	function _build($select, opts) {
+		if (!$select.hasClass("selecter-element")) {
+			// EXTEND OPTIONS
+			opts = $.extend({}, opts, $select.data("selecter-options"));
+
+			opts.multiple = $select.prop("multiple");
+			opts.disabled = $select.is(":disabled");
+
+			if (opts.external) {
+				opts.links = true;
+			}
+
+			// Grab true original index, only if selected attribute exits
+			var $originalOption = $select.find("[selected]").not(":disabled"),
+				originalOptionIndex = $select.find("option").index($originalOption);
+
+			if (!opts.multiple && opts.label !== "") {
+				$select.prepend('<option value="" class="selecter-placeholder" selected>' + opts.label + '</option>');
+				if (originalOptionIndex > -1) {
+					originalOptionIndex++;
+				}
+			} else {
+				opts.label = "";
+			}
+
+			// Build options array
+			var $allOptions = $select.find("option, optgroup"),
+				$options = $allOptions.filter("option");
+
+			// If we didn't actually have a selected elemtn
+			if (!$originalOption.length) {
+				$originalOption = $options.eq(0);
+			}
+
+			// Determine original item
+			var originalIndex = (originalOptionIndex > -1) ? originalOptionIndex : 0,
+				originalLabel = (opts.label !== "") ? opts.label : $originalOption.text(),
+				wrapperTag = "div";
+
+			// Swap tab index, no more interacting with the actual select!
+			opts.tabIndex = $select[0].tabIndex;
+			$select[0].tabIndex = -1;
+
+			// Build HTML
+			var inner = "",
+				wrapper = "";
+
+			// Build wrapper
+			wrapper += '<' + wrapperTag + ' class="selecter ' + opts.customClass;
+			// Special case classes
+			if (isMobile) {
+				wrapper += ' mobile';
+			} else if (opts.cover) {
+				wrapper += ' cover';
+			}
+			if (opts.multiple) {
+				wrapper += ' multiple';
+			} else {
+				wrapper += ' closed';
+			}
+			if (opts.disabled) {
+				wrapper += ' disabled';
+			}
+			wrapper += '" tabindex="' + opts.tabIndex + '">';
+			wrapper += '</' + wrapperTag + '>';
+
+			// Build inner
+			if (!opts.multiple) {
+				inner += '<span class="selecter-selected">';
+				inner += $('<span></span>').text( _trim(originalLabel, opts.trim) ).html();
+				inner += '</span>';
+			}
+			inner += '<div class="selecter-options">';
+			inner += '</div>';
+
+			// Modify DOM
+			$select.addClass("selecter-element")
+				   .wrap(wrapper)
+				   .after(inner);
+
+			// Store plugin data
+			var $selecter = $select.parent(".selecter"),
+				data = $.extend({
+					$select: $select,
+					$allOptions: $allOptions,
+					$options: $options,
+					$selecter: $selecter,
+					$selected: $selecter.find(".selecter-selected"),
+					$itemsWrapper: $selecter.find(".selecter-options"),
+					index: -1,
+					guid: guid++
+				}, opts);
+
+			_buildOptions(data);
+
+			if (!data.multiple) {
+				_update(originalIndex, data);
+			}
+
+			// Scroller support
+			if ($.fn.scroller !== undefined) {
+				data.$itemsWrapper.scroller();
+			}
+
+			// Bind click events
+			data.$selecter.on("touchstart.selecter", ".selecter-selected", data, _onTouchStart)
+						  .on("click.selecter", ".selecter-selected", data, _onClick)
+						  .on("click.selecter", ".selecter-item", data, _onSelect)
+						  .on("close.selecter", data, _onClose)
+						  .data("selecter", data);
+
+			// Change events
+			data.$select.on("change.selecter", data, _onChange);
+
+			// Focus/Blur events
+			if (!isMobile) {
+				data.$selecter.on("focusin.selecter", data, _onFocus)
+							  .on("blur.selecter", data, _onBlur);
+
+				// Handle clicks to associated labels
+				data.$select.on("focusin.selecter", data, function(e) {
+					e.data.$selecter.trigger("focus");
+				});
+			}
+		}
+	}
+
+	/**
+	 * @method private
+	 * @name _buildOptions
+	 * @description Builds instance's option set
+	 * @param data [object] "Instance data"
+	 */
+	function _buildOptions(data) {
+		var html = '',
+			itemTag = (data.links) ? "a" : "span",
+			j = 0;
+
+		for (var i = 0, count = data.$allOptions.length; i < count; i++) {
+			var $op = data.$allOptions.eq(i);
+
+			// Option group
+			if ($op[0].tagName === "OPTGROUP") {
+				html += '<span class="selecter-group';
+				// Disabled groups
+				if ($op.is(":disabled")) {
+					html += ' disabled';
+				}
+				html += '">' + $op.attr("label") + '</span>';
+			} else {
+				var opVal = $op.val();
+
+				if (!$op.attr("value")) {
+					$op.attr("value", opVal);
+				}
+
+				html += '<' + itemTag + ' class="selecter-item';
+				if ($op.hasClass('selecter-placeholder')) {
+					html += ' placeholder';
+				}
+				// Default selected value - now handles multi's thanks to @kuilkoff
+				if ($op.is(':selected')) {
+					html += ' selected';
+				}
+				// Disabled options
+				if ($op.is(":disabled")) {
+					html += ' disabled';
+				}
+				html += '" ';
+				if (data.links) {
+					html += 'href="' + opVal + '"';
+				} else {
+					html += 'data-value="' + opVal + '"';
+				}
+				html += '>' + $("<span></span>").text( _trim($op.text(), data.trim) ).html() + '</' + itemTag + '>';
+				j++;
+			}
+		}
+
+		data.$itemsWrapper.html(html);
+		data.$items = data.$selecter.find(".selecter-item");
+	}
+
+	/**
+	 * @method private
+	 * @name _onTouchStart
+	 * @description Handles touchstart to selected item
+	 * @param e [object] "Event data"
+	 */
+	function _onTouchStart(e) {
+		e.stopPropagation();
+
+		var data = e.data;
+
+		data.touchStartEvent = e.originalEvent;
+
+		data.touchStartX = data.touchStartEvent.touches[0].clientX;
+		data.touchStartY = data.touchStartEvent.touches[0].clientY;
+
+		data.$selecter.on("touchmove.selecter", ".selecter-selected", data, _onTouchMove)
+					  .on("touchend.selecter", ".selecter-selected", data, _onTouchEnd);
+	}
+
+	/**
+	 * @method private
+	 * @name _onTouchMove
+	 * @description Handles touchmove to selected item
+	 * @param e [object] "Event data"
+	 */
+	function _onTouchMove(e) {
+		var data = e.data,
+			oe = e.originalEvent;
+
+		if (Math.abs(oe.touches[0].clientX - data.touchStartX) > 10 || Math.abs(oe.touches[0].clientY - data.touchStartY) > 10) {
+			data.$selecter.off("touchmove.selecter touchend.selecter");
+		}
+	}
+
+	/**
+	 * @method private
+	 * @name _onTouchEnd
+	 * @description Handles touchend to selected item
+	 * @param e [object] "Event data"
+	 */
+	function _onTouchEnd(e) {
+		var data = e.data;
+
+		data.touchStartEvent.preventDefault();
+
+		data.$selecter.off("touchmove.selecter touchend.selecter");
+
+		_onClick(e);
+	}
+
+	/**
+	 * @method private
+	 * @name _onClick
+	 * @description Handles click to selected item
+	 * @param e [object] "Event data"
+	 */
+	function _onClick(e) {
+		e.preventDefault();
+		e.stopPropagation();
+
+		var data = e.data;
+
+		if (!data.$select.is(":disabled")) {
+			$(".selecter").not(data.$selecter).trigger("close.selecter", [data]);
+
+			// Handle mobile, but not Firefox, unless desktop forced
+			if (!data.mobile && isMobile && !isFirefoxMobile) {
+				var el = data.$select[0];
+				if (window.document.createEvent) { // All
+					var evt = window.document.createEvent("MouseEvents");
+					evt.initMouseEvent("mousedown", false, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+					el.dispatchEvent(evt);
+				} else if (el.fireEvent) { // IE
+					el.fireEvent("onmousedown");
+				}
+			} else {
+				// Delegate intent
+				if (data.$selecter.hasClass("closed")) {
+					_onOpen(e);
+				} else if (data.$selecter.hasClass("open")) {
+					_onClose(e);
+				}
+			}
+		}
+	}
+
+	/**
+	 * @method private
+	 * @name _onOpen
+	 * @description Opens option set
+	 * @param e [object] "Event data"
+	 */
+	function _onOpen(e) {
+		e.preventDefault();
+		e.stopPropagation();
+
+		var data = e.data;
+
+		// Make sure it's not alerady open
+		if (!data.$selecter.hasClass("open")) {
+			var offset = data.$selecter.offset(),
+				bodyHeight = $body.outerHeight(),
+				optionsHeight = data.$itemsWrapper.outerHeight(true),
+				selectedOffset = (data.index >= 0) ? data.$items.eq(data.index).position() : { left: 0, top: 0 };
+
+			// Calculate bottom of document
+			if (offset.top + optionsHeight > bodyHeight) {
+				data.$selecter.addClass("bottom");
+			}
+
+			data.$itemsWrapper.show();
+
+			// Bind Events
+			data.$selecter.removeClass("closed")
+						  .addClass("open");
+			$body.on("click.selecter-" + data.guid, ":not(.selecter-options)", data, _onCloseHelper);
+
+			_scrollOptions(data);
+		}
+	}
+
+	/**
+	 * @method private
+	 * @name _onCloseHelper
+	 * @description Determines if event target is outside instance before closing
+	 * @param e [object] "Event data"
+	 */
+	function _onCloseHelper(e) {
+		e.preventDefault();
+		e.stopPropagation();
+
+		if ($(e.currentTarget).parents(".selecter").length === 0) {
+			_onClose(e);
+		}
+	}
+
+	/**
+	 * @method private
+	 * @name _onClose
+	 * @description Closes option set
+	 * @param e [object] "Event data"
+	 */
+	function _onClose(e) {
+		e.preventDefault();
+		e.stopPropagation();
+
+		var data = e.data;
+
+		// Make sure it's actually open
+		if (data.$selecter.hasClass("open")) {
+			data.$itemsWrapper.hide();
+			data.$selecter.removeClass("open bottom")
+						  .addClass("closed");
+
+			$body.off(".selecter-" + data.guid);
+		}
+	}
+
+	/**
+	 * @method private
+	 * @name _onSelect
+	 * @description Handles option select
+	 * @param e [object] "Event data"
+	 */
+	function _onSelect(e) {
+		e.preventDefault();
+		e.stopPropagation();
+
+		var $target = $(this),
+			data = e.data;
+
+		if (!data.$select.is(":disabled")) {
+			if (data.$itemsWrapper.is(":visible")) {
+				// Update
+				var index = data.$items.index($target);
+
+				if (index !== data.index) {
+					_update(index, data);
+					_handleChange(data);
+				}
+			}
+
+			if (!data.multiple) {
+				// Clean up
+				_onClose(e);
+			}
+		}
+	}
+
+	/**
+	 * @method private
+	 * @name _onChange
+	 * @description Handles external changes
+	 * @param e [object] "Event data"
+	 */
+	function _onChange(e, internal) {
+		var $target = $(this),
+			data = e.data;
+
+		if (!internal && !data.multiple) {
+			var index = data.$options.index(data.$options.filter("[value='" + _escape($target.val()) + "']"));
+
+			_update(index, data);
+			_handleChange(data);
+		}
+	}
+
+	/**
+	 * @method private
+	 * @name _onFocus
+	 * @description Handles instance focus
+	 * @param e [object] "Event data"
+	 */
+	function _onFocus(e) {
+		e.preventDefault();
+		e.stopPropagation();
+
+		var data = e.data;
+
+		if (!data.$select.is(":disabled") && !data.multiple) {
+			data.$selecter.addClass("focus")
+						  .on("keydown.selecter-" + data.guid, data, _onKeypress);
+
+			$(".selecter").not(data.$selecter)
+						  .trigger("close.selecter", [ data ]);
+		}
+	}
+
+	/**
+	 * @method private
+	 * @name _onBlur
+	 * @description Handles instance focus
+	 * @param e [object] "Event data"
+	 */
+	function _onBlur(e, internal, two) {
+		e.preventDefault();
+		e.stopPropagation();
+
+		var data = e.data;
+
+		data.$selecter.removeClass("focus")
+					  .off("keydown.selecter-" + data.guid);
+
+		$(".selecter").not(data.$selecter)
+					  .trigger("close.selecter", [ data ]);
+	}
+
+	/**
+	 * @method private
+	 * @name _onKeypress
+	 * @description Handles instance keypress, once focused
+	 * @param e [object] "Event data"
+	 */
+	function _onKeypress(e) {
+		var data = e.data;
+
+		if (e.keyCode === 13) {
+			if (data.$selecter.hasClass("open")) {
+				_onClose(e);
+				_update(data.index, data);
+			}
+			_handleChange(data);
+		} else if (e.keyCode !== 9 && (!e.metaKey && !e.altKey && !e.ctrlKey && !e.shiftKey)) {
+			// Ignore modifiers & tabs
+			e.preventDefault();
+			e.stopPropagation();
+
+			var total = data.$items.length - 1,
+				index = (data.index < 0) ? 0 : data.index;
+
+			// Firefox left/right support thanks to Kylemade
+			if ($.inArray(e.keyCode, (isFirefox) ? [38, 40, 37, 39] : [38, 40]) > -1) {
+				// Increment / decrement using the arrow keys
+				index = index + ((e.keyCode === 38 || (isFirefox && e.keyCode === 37)) ? -1 : 1);
+
+				if (index < 0) {
+					index = 0;
+				}
+				if (index > total) {
+					index = total;
+				}
+			} else {
+				var input = String.fromCharCode(e.keyCode).toUpperCase(),
+					letter,
+					i;
+
+				// Search for input from original index
+				for (i = data.index + 1; i <= total; i++) {
+					letter = data.$options.eq(i).text().charAt(0).toUpperCase();
+					if (letter === input) {
+						index = i;
+						break;
+					}
+				}
+
+				// If not, start from the beginning
+				if (index < 0 || index === data.index) {
+					for (i = 0; i <= total; i++) {
+						letter = data.$options.eq(i).text().charAt(0).toUpperCase();
+						if (letter === input) {
+							index = i;
+							break;
+						}
+					}
+				}
+			}
+
+			// Update
+			if (index >= 0) {
+				_update(index, data);
+				_scrollOptions(data);
+			}
+		}
+	}
+
+	/**
+	 * @method private
+	 * @name _update
+	 * @description Updates instance based on new target index
+	 * @param index [int] "Selected option index"
+	 * @param data [object] "instance data"
+	 */
+	function _update(index, data) {
+		var $item = data.$items.eq(index),
+			isSelected = $item.hasClass("selected"),
+			isDisabled = $item.hasClass("disabled");
+
+		// Check for disabled options
+		if (!isDisabled) {
+			if (data.multiple) {
+				if (isSelected) {
+					data.$options.eq(index).prop("selected", null);
+					$item.removeClass("selected");
+				} else {
+					data.$options.eq(index).prop("selected", true);
+					$item.addClass("selected");
+				}
+			} else if (index > -1 && index < data.$items.length) {
+				var newLabel = $item.html(),
+					newValue = $item.data("value");
+
+				data.$selected.html(newLabel)
+							  .removeClass('placeholder');
+
+				data.$items.filter(".selected")
+						   .removeClass("selected");
+
+				data.$select[0].selectedIndex = index;
+
+				$item.addClass("selected");
+				data.index = index;
+			} else if (data.label !== "") {
+				data.$selected.html(data.label);
+			}
+		}
+	}
+
+	/**
+	 * @method private
+	 * @name _scrollOptions
+	 * @description Scrolls options wrapper to specific option
+	 * @param data [object] "Instance data"
+	 */
+	function _scrollOptions(data) {
+		var $selected = data.$items.eq(data.index),
+			selectedOffset = (data.index >= 0 && !$selected.hasClass("placeholder")) ? $selected.position() : { left: 0, top: 0 };
+
+		if ($.fn.scroller !== undefined) {
+			data.$itemsWrapper.scroller("scroll", (data.$itemsWrapper.find(".scroller-content").scrollTop() + selectedOffset.top), 0)
+							  .scroller("reset");
+		} else {
+			data.$itemsWrapper.scrollTop( data.$itemsWrapper.scrollTop() + selectedOffset.top );
+		}
+	}
+
+	/**
+	 * @method private
+	 * @name _handleChange
+	 * @description Handles change events
+	 * @param data [object] "Instance data"
+	 */
+	function _handleChange(data) {
+		if (data.links) {
+			_launch(data);
+		} else {
+			data.callback.call(data.$selecter, data.$select.val(), data.index);
+			data.$select.trigger("change", [ true ]);
+		}
+	}
+
+	/**
+	 * @method private
+	 * @name _launch
+	 * @description Launches link
+	 * @param data [object] "Instance data"
+	 */
+	function _launch(data) {
+		//var url = (isMobile) ? data.$select.val() : data.$options.filter(":selected").attr("href");
+		var url = data.$select.val();
+
+		if (data.external) {
+			// Open link in a new tab/window
+			window.open(url);
+		} else {
+			// Open link in same tab/window
+			window.location.href = url;
+		}
+	}
+
+	/**
+	 * @method private
+	 * @name _trim
+	 * @description Trims text, if specified length is greater then 0
+	 * @param length [int] "Length to trim at"
+	 * @param text [string] "Text to trim"
+	 * @return [string] "Trimmed string"
+	 */
+	function _trim(text, length) {
+		if (length === 0) {
+			return text;
+		} else {
+			if (text.length > length) {
+				return text.substring(0, length) + "...";
+			} else {
+				return text;
+			}
+		}
+	}
+
+	/**
+	 * @method private
+	 * @name _escape
+	 * @description Escapes text
+	 * @param text [string] "Text to escape"
+	 */
+	function _escape(text) {
+		return (typeof text === "string") ? text.replace(/([;&,\.\+\*\~':"\!\^#$%@\[\]\(\)=>\|])/g, '\\$1') : text;
+	}
+
+	$.fn.selecter = function(method) {
+		if (pub[method]) {
+			return pub[method].apply(this, Array.prototype.slice.call(arguments, 1));
+		} else if (typeof method === 'object' || !method) {
+			return _init.apply(this, arguments);
+		}
+		return this;
+	};
+
+	$.selecter = function(method) {
+		if (method === "defaults") {
+			pub.defaults.apply(this, Array.prototype.slice.call(arguments, 1));
+		}
+	};
+})(jQuery, window);
+
+
+
 
 /*! http://tinynav.viljamis.com v1.2 by @viljamis */
 (function ($, window, i) {
@@ -239,13 +1654,12 @@ debounce=setTimeout(resizer,settings.debounceTimeout)});$this.find("img").load(r
 		/* Vertical Header Element Alignment */
 		$('.headerelements').flexVerticalCenter({ cssAttribute: 'padding-top' });
 		
-		/* Show Iconmenu elements only with icon class */
-		$("#iconmenu li[class^=icon]").show();
 		
 		/* Sidr */	
 		$('.menu-trigger').sidr();
 		
-		
+		/* Show Iconmenu elements only with icon class */
+		$("#iconmenu li[class^=icon]").show();
  		
 		/* Call FitVids */
 		$(".entry-content").fitVids();

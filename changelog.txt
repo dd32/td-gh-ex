@@ -11,3 +11,4 @@ V1.0.4 - 2015-01-05 Change Next / Previous Post Buttons, Top Menu Removed, Updat
 					- Fly Out Menu layout issues can not be recreated (Theme Unit Tests being used, see screenshot), please communicate.
 V1.0.5 - 2015-01-05 Clean up functions.php
 V1.0.6 - 2015-01-07 Remove unused meta tag, New Screenshot, Icon Menu Elements will only be shown if icon-* css classes have been set up, Comment Container Fix
+V1.0.7 - 2015-01-13 Load it into the array of an enqueue to ensure dependency, Change javascripts for long versions.
