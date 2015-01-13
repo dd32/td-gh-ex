@@ -35,6 +35,7 @@ function wp_fanzone_setup() {
 	 */
 	load_theme_textdomain( 'wp-fanzone', get_template_directory() . '/languages' );
 	// Add default posts and comments RSS feed links to head.
+	add_theme_support( "title-tag" );
 	add_theme_support( 'automatic-feed-links' );
 	add_editor_style();
 	add_theme_support( 'post-thumbnails' );

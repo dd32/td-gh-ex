@@ -30,14 +30,16 @@
 							<p style="display:inline-block; color:#fff; vertical-align: top; padding-top:10px; float:left; margin-right:10px;"><?php echo date_i18n( get_option( 'date_format' )); ?></p>
                             <?php if (has_nav_menu('top-menu')) { ?>
                             <div id="top-nav" role="navigation" class="top-nav clearfix">
-                            	 <button class="menu-toggle navbar-toggle" aria-controls="menu" aria-expanded="false">
+                            	 <button class="menu-toggle navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
                                     <span class="sr-only"><?php _e( 'Toggle navigation', 'wp-fanzone' ); ?></span>            
                                     <span class="icon-bar"></span>            
                                     <span class="icon-bar"></span>            
                                     <span class="icon-bar"></span>
-                                  </button>
-                                <?php wp_nav_menu( array( 'theme_location' => 'top-menu','depth' => 1, 'container'	=> false ) ); ?>                            	
+                                  </button>                                                       	
 							</div>
+                             <div class="collapse navbar-collapse" id="navbar-collapse">                    
+									 <?php wp_nav_menu( array( 'theme_location' => 'top-menu','depth' => 1, 'container'	=> false ) ); ?>   
+                             </div><!-- /.navbar-collapse --> 
                              <?php } ?>
 					</div>
                     <div class="col-md-5 fan-sociel-media">
