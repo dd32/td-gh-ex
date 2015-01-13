@@ -146,7 +146,7 @@ if( !class_exists( 'ReduxFramework' ) ) {
             $defaults['dev_mode']           = false;
             $defaults['system_info']        = true;
             $defaults['admin_stylesheet']   = 'standard';
-            $defaults['footer_credit']      = __( '<span id="footer-thankyou">Options panel created using <a href="' . $this->framework_url . '" target="_blank">Redux Framework</a> v' . $this->framework_version . '</span>', 'redux-framework' );
+            $defaults['footer_credit']      = __( '<span id="footer-thankyou">Options panel created using Redux Framework</span>', 'redux-framework' );
             $defaults['help_tabs']          = array();
             $defaults['help_sidebar']       = '';
             $defaults['database'] 			= ''; // possible: options, theme_mods, theme_mods_expanded, transient

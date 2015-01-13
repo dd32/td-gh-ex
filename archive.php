@@ -17,19 +17,19 @@ get_header(); ?>
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class('blog-article'); ?>>
 
-						<header class="entry-header">
+						<header class="entry-header<?php thinkup_input_stylelayout_class1(); ?>">
 
 							<?php thinkup_input_blogimage(); ?>
 
 						</header>
 
-						<div class="entry-content<?php thinkup_input_blogcommentclass(); ?>">
+						<div class="entry-content<?php thinkup_input_stylelayout_class2(); ?><?php thinkup_input_blogcommentclass(); ?>">
 
 							<?php thinkup_input_blogmeta(); ?>
 							<?php thinkup_input_blogtitle(); ?>
 							<?php thinkup_input_blogtext(); ?>
 
-						</div>
+						</div><div class="clearboth"></div>
 
 					</article><!-- #post-<?php get_the_ID(); ?> -->
 

@@ -1173,24 +1173,13 @@ function redux_setup_framework_options(){
 				),
 
 			array(
-				'title' => __('Blog Style', 'redux-framework'), 
-				'subtitle' => __('Select a style for the blog page. This will also be applied to all pages set using the blog template.', 'redux-framework'),
-				'id'=>'thinkup_blog_style',
+				'title' => __('Blog Layout', 'redux-framework'), 
+				'subtitle' => __('Select a layout for your blog page. This will also be applied to all pages set using the blog template.', 'redux-framework'),
+				'id'=>'thinkup_blog_style1layout',
 				'type' => 'radio',
 				'options' => array( 
 					'option1' => 'Style 1',
 					'option2' => 'Style 2',
-					),
-				),
-
-			array(
-				'title' => __('Blog Grid Layout', 'redux-framework'), 
-				'subtitle' => __('Select a column layout for your blog page. This will also be applied to all pages set using the blog template.', 'redux-framework'),
-				'id'=>'thinkup_blog_stylegrid',
-				'type' => 'radio',
-				'options' => array( 
-					'option1' => '1 column',
-					'option2' => '2 column',
 					),
 				),
 

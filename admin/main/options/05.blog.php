@@ -11,37 +11,13 @@
 ---------------------------------------------------------------------------------- */
 
 function thinkup_input_blogclass($classes){
-global $thinkup_blog_style;
-
-global $post;
-
-// Set variables to avoid php non-object notice error
-$_thinkup_meta_blogstyle       = NULL;
-$_thinkup_meta_blogstylelayout = NULL;
-
-// Assign meta data variable
-if ( ! empty( $post->ID ) ) {
-	$_thinkup_meta_blogstyle       = get_post_meta( $post->ID, '_thinkup_meta_blogstyle', true );
-	$_thinkup_meta_blogstylelayout = get_post_meta( $post->ID, '_thinkup_meta_blogstylelayout', true );
-}
+global $thinkup_blog_style1layout;
 
 	if ( thinkup_check_isblog() ) {
-		if ( empty( $thinkup_blog_style ) or $thinkup_blog_style == 'option1' ) {
-			$classes[] = 'blog-style1';
+		if ( $thinkup_blog_style1layout !== 'option2' ) {
+			$classes[] = 'blog-style1 blog-style1-layout1';
 		} else {
-			$classes[] = 'blog-style2';
-		}
-	} else if ( is_page_template( 'template-blog.php' ) ) {
-		if ( empty( $_thinkup_meta_blogstyle ) or $_thinkup_meta_blogstyle == 'option1' ) {
-			if ( empty( $thinkup_blog_style ) or $thinkup_blog_style == 'option1' ) {
-				$classes[] = 'blog-style1';
-			} else {
-				$classes[] = 'blog-style2';
-			}
-		} else if ( $_thinkup_meta_blogstyle == 'option2' ) {
-			$classes[] = 'blog-style1';
-		} else if ( $_thinkup_meta_blogstyle == 'option3' ) {
-			$classes[] = 'blog-style2';
+			$classes[] = 'blog-style1 blog-style1-layout2';
 		}
 	}
 	return $classes;
@@ -50,46 +26,38 @@ add_action( 'body_class', 'thinkup_input_blogclass');
 
 
 /* ----------------------------------------------------------------------------------
-	BLOG STYLE
+	BLOG STYLE (INCLUDED TO ALLOW ADDITION OF NEW LAYOUTS IN FUTURE UPDATE)
 ---------------------------------------------------------------------------------- */
 
 function thinkup_input_stylelayout() {
-global $thinkup_blog_style;
-global $thinkup_blog_stylegrid;
+	echo ' column-1';
+}
 
-global $thinkup_blog_pageid;
-$_thinkup_meta_blogstyle       = get_post_meta( $thinkup_blog_pageid, '_thinkup_meta_blogstyle', true );
-$_thinkup_meta_blogstylelayout = get_post_meta( $thinkup_blog_pageid, '_thinkup_meta_blogstylelayout', true );
-  
-	if ( get_page_template_slug( $thinkup_blog_pageid ) !== 'template-blog.php' ) {
-		if ( $thinkup_blog_style !== 'option2' ) {
-			echo ' column-1';
-		} else if ( $thinkup_blog_style == 'option2' ) {			
-			if ( empty($thinkup_blog_stylegrid) or $thinkup_blog_stylegrid == 'option1' ) {
-				echo ' column-1';
-			} else if ( $thinkup_blog_stylegrid == 'option2' ) {
-				echo ' column-2';
-			}
+
+/* ----------------------------------------------------------------------------------
+	BLOG STYLE - CLASSES FOR STYLE 1
+---------------------------------------------------------------------------------- */
+
+function thinkup_input_stylelayout_class1() {
+global $post;
+global $thinkup_blog_postswitch;
+global $thinkup_blog_style1layout;
+
+	if ( has_post_thumbnail( $post->ID ) and $thinkup_blog_postswitch !== 'option2' ) {
+		if ( $thinkup_blog_style1layout !== 'option2' ) {
+			echo ' one_third';
 		}
-	} else if ( get_page_template_slug( $thinkup_blog_pageid ) == 'template-blog.php' ) {
-		if ( empty( $_thinkup_meta_blogstyle ) or $_thinkup_meta_blogstyle == 'option1' ) {
-			if ( $thinkup_blog_style !== 'option2' ) {
-				echo ' column-1';
-			} else if ( $thinkup_blog_style == 'option2' ) {		
-				if ( empty($thinkup_blog_stylegrid) or $thinkup_blog_stylegrid == 'option1' ) {
-					echo ' column-1';
-				} else if ( $thinkup_blog_stylegrid == 'option2' ) {
-					echo ' column-2';
-				}
-			}
-		} else if ( $_thinkup_meta_blogstyle == 'option2' ) {
-			echo ' column-1';	
-		} else if ( $_thinkup_meta_blogstyle == 'option3' ) {
-			if ( empty($_thinkup_meta_blogstylelayout) or $_thinkup_meta_blogstylelayout == 'option1' ) {
-				echo ' column-1';
-			} else if ( $_thinkup_meta_blogstylelayout == 'option2' ) {
-				echo ' column-2';
-			}
+	}
+}
+
+function thinkup_input_stylelayout_class2() {
+global $post;
+global $thinkup_blog_postswitch;
+global $thinkup_blog_style1layout;
+
+	if ( has_post_thumbnail( $post->ID ) and $thinkup_blog_postswitch !== 'option2' ) {
+		if ( $thinkup_blog_style1layout !== 'option2' ) {
+			echo ' two_third last';
 		}
 	}
 }
@@ -115,19 +83,9 @@ function thinkup_input_blogtitle() {
 function thinkup_input_blogimage() {
 global $post;
 global $wp_embed;
-global $thinkup_blog_style;
-global $thinkup_blog_stylegrid;
+global $thinkup_blog_style1layout;
 global $thinkup_blog_lightbox;
 global $thinkup_blog_link;
-
-global $thinkup_blog_pageid;
-$_thinkup_meta_blogstyle       = get_post_meta( $thinkup_blog_pageid, '_thinkup_meta_blogstyle', true );
-$_thinkup_meta_blogstylelayout = get_post_meta( $thinkup_blog_pageid, '_thinkup_meta_blogstylelayout', true );
-
-if ( ! empty( $post->ID ) ) {
-	$_thinkup_meta_featuredmedia   = get_post_meta( $post->ID, '_thinkup_meta_featuredmedia', true );
-	$_thinkup_meta_featuredgallery = get_post_meta( $post->ID, '_thinkup_meta_featuredgallery', true ); 
-}
 
 	$size  = NULL;
 	$link  = NULL;
@@ -139,36 +97,10 @@ if ( ! empty( $post->ID ) ) {
 	$blog_overlay  = NULL;
 
 	// Set image size for blog thumbnail
-	if ( get_page_template_slug( $thinkup_blog_pageid ) !== 'template-blog.php' ) {
-		if ( $thinkup_blog_style !== 'option2' ) {
-			$size = 'column1-1/3';
-		} else if ( $thinkup_blog_style == 'option2' ) {			
-			if ( empty($thinkup_blog_stylegrid) or $thinkup_blog_stylegrid == 'option1' ) {
-				$size = 'column1-1/3';;
-			} else if ( $thinkup_blog_stylegrid == 'option2' ) {
-				$size = 'column2-1/2';
-			}
-		}
-	} else if ( get_page_template_slug( $thinkup_blog_pageid ) == 'template-blog.php' ) {
-		if ( empty( $_thinkup_meta_blogstyle ) or $_thinkup_meta_blogstyle == 'option1' ) {
-			if ( $thinkup_blog_style !== 'option2' ) {
-				$size = 'column1-1/3';;
-			} else if ( $thinkup_blog_style == 'option2' ) {		
-				if ( empty($thinkup_blog_stylegrid) or $thinkup_blog_stylegrid == 'option1' ) {
-					$size = 'column1-1/3';;
-				} else if ( $thinkup_blog_stylegrid == 'option2' ) {
-					$size = 'column2-1/2';
-				}
-			}
-		} else if ( $_thinkup_meta_blogstyle == 'option2' ) {
-			$size = 'column1-1/3';;	
-		} else if ( $_thinkup_meta_blogstyle == 'option3' ) {
-			if ( empty($_thinkup_meta_blogstylelayout) or $_thinkup_meta_blogstylelayout == 'option1' ) {
-				$size = 'column1-1/3';;
-			} else if ( $_thinkup_meta_blogstylelayout == 'option2' ) {
-				$size = 'column2-1/2';
-			}
-		}
+	if ( empty($thinkup_blog_style1layout) or $thinkup_blog_style1layout == 'option1' ) {
+		$size = 'column3-2/3';
+	} else {
+		$size = 'column1-1/3';
 	}
 
 	$featured_id = get_post_thumbnail_id( $post->ID );
@@ -257,7 +189,7 @@ function thinkup_input_blogcomment() {
 	if ( '0' != get_comments_number() ) {
 		echo	'<span class="comment">';
 			if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) {;
-				comments_popup_link( __( '<i class="fa fa-comments"></i>0 <span>Comments</span>', 'renden' ), __( '<i class="fa fa-comments"></i>1 <span>Comment</span>', 'renden' ), __( '<i class="fa fa-comments"></i>% <span>Comments</span>', 'renden' ) );
+				comments_popup_link( __( '<i class="fa fa-comments"></i><span class="comment-count">0</span> <span class="comment-text">Comments</span>', 'renden' ), __( '<i class="fa fa-comments"></i><span class="comment-count">1</span> <span class="comment-text">Comment</span>', 'renden' ), __( '<i class="fa fa-comments"></i><span class="comment-count">%</span> <span class="comment-text">Comments</span>', 'renden' ) );
 			};
 		echo	'</span>';
 	}
@@ -300,38 +232,12 @@ function thinkup_input_blogauthor() {
 
 function thinkup_input_readmore() {
 global $post;
-global $thinkup_blog_style;
-global $thinkup_blog_pageid;
 
 // Set variables to avoid php non-object notice error
-$_thinkup_meta_blogstyle = NULL;
 $class_button = NULL;
 
-// Assign meta data variable
-if ( ! empty( $thinkup_blog_pageid ) ) {
-	$_thinkup_meta_blogstyle = get_post_meta( $thinkup_blog_pageid, '_thinkup_meta_blogstyle', true );
-}
-
 	// Specify button class for blog style
-	if ( get_page_template_slug( $thinkup_blog_pageid ) !== 'template-blog.php' ) {
-		if ( empty( $thinkup_blog_style ) or $thinkup_blog_style == 'option1') {
-			$class_button = 'themebutton2';
-		} else {
-			$class_button = 'themebutton';		
-		}
-	} else if ( get_page_template_slug( $thinkup_blog_pageid ) == 'template-blog.php' ) {
-		if ( empty( $_thinkup_meta_blogstyle ) or $_thinkup_meta_blogstyle == 'option1' ) {
-			if ( empty( $thinkup_blog_style ) or $thinkup_blog_style == 'option1' ) {
-				$class_button = 'themebutton2';
-			} else {
-				$class_button = 'themebutton';		
-			}
-		} else if ( $_thinkup_meta_blogstyle == 'option2' ) {
-			$class_button = 'themebutton2';
-		} else {
-			$class_button = 'themebutton';		
-		}
-	}
+	$class_button = 'themebutton2';
 
 	return '<p class="more-link"><a href="'. esc_url( get_permalink($post->ID) ) . '" class="' . $class_button . '">' . __( 'READ MORE', 'renden') . '</a></p>';
 }
@@ -345,19 +251,10 @@ add_filter( 'the_content_more_link', 'thinkup_input_readmore' );
 
 // Input blog comments
 function thinkup_input_blogcommentclass() {
-global $thinkup_blog_style;
-
-global $post;
-global $thinkup_blog_pageid;
-
-// Set variables to avoid php non-object notice error
-$_thinkup_meta_blogstyle = NULL;
 
 	// Only output for blog layout 1
 	if ( '0' != get_comments_number() ) {
-		if ( empty( $thinkup_blog_style ) or $thinkup_blog_style == 'option1' ) {
-			echo ' comment-icon';
-		}
+		echo ' comment-icon';
 	}
 }
 

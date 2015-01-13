@@ -114,8 +114,7 @@ function thinkup_reduxvariables() {
 	//  1.5.1.   Blog - Main page.
 	$GLOBALS['thinkup_blog_layout']                         = thinkup_var ( 'thinkup_blog_layout' );
 	$GLOBALS['thinkup_blog_sidebars']                       = thinkup_var ( 'thinkup_blog_sidebars' );
-	$GLOBALS['thinkup_blog_style']                          = thinkup_var ( 'thinkup_blog_style' );
-	$GLOBALS['thinkup_blog_stylegrid']                      = thinkup_var ( 'thinkup_blog_stylegrid' );
+	$GLOBALS['thinkup_blog_style1layout']                   = thinkup_var ( 'thinkup_blog_style1layout' );
 	$GLOBALS['thinkup_blog_lightbox']                       = thinkup_var ( 'thinkup_blog_hovercheck', 'option1' );
 	$GLOBALS['thinkup_blog_link']                           = thinkup_var ( 'thinkup_blog_hovercheck', 'option2' );
 	$GLOBALS['thinkup_blog_postswitch']                     = thinkup_var ( 'thinkup_blog_postswitch' );

@@ -83,57 +83,57 @@ if ( ! empty( $post->ID ) ) {
 		if ( $thinkup_homepage_layout == "option1" or empty( $thinkup_homepage_layout ) ) {		
 			echo '';
 		} else if ( $thinkup_homepage_layout == "option2" ) {
-			wp_enqueue_style ( 'sidebarleft' );
+			wp_enqueue_style ( 'thinkup-sidebarleft' );
 		} else if ( $thinkup_homepage_layout == "option3" ) {
-			wp_enqueue_style ( 'sidebarright' );
+			wp_enqueue_style ( 'thinkup-sidebarleft' );
 		}
 	} else if ( is_page() and ! is_page_template( 'template-blog.php' ) ) {	
 		if ( empty( $_thinkup_meta_layout ) or $_thinkup_meta_layout == 'option1' ) {
 			if ( $thinkup_general_layout == "option1" or empty( $thinkup_general_layout ) ) {		
 				echo '';
 			} else if ( $thinkup_general_layout == "option2" ) {
-				wp_enqueue_style ( 'sidebarleft' );
+				wp_enqueue_style ( 'thinkup-sidebarleft' );
 			} else if ( $thinkup_general_layout == "option3" ) {
-				wp_enqueue_style ( 'sidebarright' );
+				wp_enqueue_style ( 'thinkup-sidebarright' );
 			}
 		} else if ( $_thinkup_meta_layout == 'option2' ) {
 			echo '';
 		} else if ( $_thinkup_meta_layout == 'option3' ) {
-			wp_enqueue_style ( 'sidebarleft' );
+			wp_enqueue_style ( 'thinkup-sidebarleft' );
 		} else if ( $_thinkup_meta_layout == 'option4' ) {
-			wp_enqueue_style ( 'sidebarright' );
+			wp_enqueue_style ( 'thinkup-sidebarright' );
 		}
 	} else if ( thinkup_check_isblog() and ! is_single() and ! is_post_type_archive( 'portfolio' ) and ! is_post_type_archive( 'product' ) ) {
 		if ( $thinkup_blog_layout == "option1" or empty( $thinkup_blog_layout ) ) {		
 			echo '';
 		} else if ( $thinkup_blog_layout == "option2" ) {
-			wp_enqueue_style ( 'sidebarleft' );
+			wp_enqueue_style ( 'thinkup-sidebarleft' );
 		} else if ( $thinkup_blog_layout == "option3" ) {
-			wp_enqueue_style ( 'sidebarright' );
+			wp_enqueue_style ( 'thinkup-sidebarright' );
 		}
 	} else if ( is_page_template( 'template-blog.php' ) ) {
 		if ( empty( $_thinkup_meta_layout ) or $_thinkup_meta_layout == 'option1' ) {
 			if ( $thinkup_blog_layout == "option1" or empty( $thinkup_blog_layout ) ) {		
 				echo '';
 			} else if ( $thinkup_blog_layout == "option2" ) {
-				wp_enqueue_style ( 'sidebarleft' );
+				wp_enqueue_style ( 'thinkup-sidebarleft' );
 			} else if ( $thinkup_blog_layout == "option3" ) {
-				wp_enqueue_style ( 'sidebarright' );
+				wp_enqueue_style ( 'thinkup-sidebarright' );
 			}
 		} else if ( $_thinkup_meta_layout == 'option2' ) {
 			echo '';
 		} else if ( $_thinkup_meta_layout == 'option3' ) {
-			wp_enqueue_style ( 'sidebarleft' );
+			wp_enqueue_style ( 'thinkup-sidebarleft' );
 		} else if ( $_thinkup_meta_layout == 'option4' ) {
-			wp_enqueue_style ( 'sidebarright' );
+			wp_enqueue_style ( 'thinkup-sidebarright' );
 		}
 	} else if ( is_post_type_archive( 'product' ) or is_tax( 'product_cat' ) or is_tax( 'product_tag' ) ) {
 		if ( $thinkup_woocommerce_layout == "option1" or empty( $thinkup_woocommerce_layout ) ) {
 			echo '';
 		} else if ( $thinkup_woocommerce_layout == "option5" or $thinkup_woocommerce_layout == "option7" ) {
-			wp_enqueue_style ( 'sidebarleft' );
+			wp_enqueue_style ( 'thinkup-sidebarleft' );
 		} else if ( $thinkup_woocommerce_layout == "option6" or $thinkup_woocommerce_layout == "option8" ) {
-			wp_enqueue_style ( 'sidebarright' );
+			wp_enqueue_style ( 'thinkup-sidebarright' );
 		} else {
 			echo '';
 		}
@@ -142,62 +142,62 @@ if ( ! empty( $post->ID ) ) {
 			if ( $thinkup_post_layout == "option1" or empty( $thinkup_post_layout ) ) {		
 				echo '';
 			} else if ( $thinkup_post_layout == "option2" ) {
-				wp_enqueue_style ( 'sidebarleft' );
+				wp_enqueue_style ( 'thinkup-sidebarleft' );
 			} else if ( $thinkup_post_layout == "option3" ) {
-				wp_enqueue_style ( 'sidebarright' );
+				wp_enqueue_style ( 'thinkup-sidebarright' );
 			} else {
 				echo '';
 			}
 		} else if ( $_thinkup_meta_layout == 'option2' ) {
 			echo '';
 		} else if ( $_thinkup_meta_layout == 'option3' ) {
-			wp_enqueue_style ( 'sidebarleft' );
+			wp_enqueue_style ( 'thinkup-sidebarleft' );
 		} else if ( $_thinkup_meta_layout == 'option4' ) {
-			wp_enqueue_style ( 'sidebarright' );
+			wp_enqueue_style ( 'thinkup-sidebarright' );
 		}
 	} else if ( is_singular( 'portfolio' ) ) {	
 		if ( empty( $_thinkup_meta_layout ) or $_thinkup_meta_layout == 'option1' ) {
 			if ( $thinkup_project_layout == "option1" or empty( $thinkup_project_layout ) ) {		
 				echo '';
 			} else if ( $thinkup_project_layout == "option2" ) {
-				wp_enqueue_style ( 'sidebarleft' );
+				wp_enqueue_style ( 'thinkup-sidebarleft' );
 			} else if ( $thinkup_project_layout == "option3" ) {
-				wp_enqueue_style ( 'sidebarright' );
+				wp_enqueue_style ( 'thinkup-sidebarright' );
 			} else {
 				echo '';
 			}
 		} else if ( $_thinkup_meta_layout == 'option2' ) {
 			echo '';
 		} else if ( $_thinkup_meta_layout == 'option3' ) {
-			wp_enqueue_style ( 'sidebarleft' );
+			wp_enqueue_style ( 'thinkup-sidebarleft' );
 		} else if ( $_thinkup_meta_layout == 'option4' ) {
-			wp_enqueue_style ( 'sidebarright' );
+			wp_enqueue_style ( 'thinkup-sidebarright' );
 		}
 	} else if ( is_singular( 'product' ) ) {
 		if ( empty( $_thinkup_meta_layout ) or $_thinkup_meta_layout == 'option1' ) {
 			if ( $thinkup_woocommerce_layoutproduct == "option1" or empty( $thinkup_woocommerce_layoutproduct ) ) {		
 				echo '';
 			} else if ( $thinkup_woocommerce_layoutproduct == "option2" ) {
-				wp_enqueue_style ( 'sidebarleft' );
+				wp_enqueue_style ( 'thinkup-sidebarleft' );
 			} else if ( $thinkup_woocommerce_layoutproduct == "option3" ) {
-				wp_enqueue_style ( 'sidebarright' );
+				wp_enqueue_style ( 'thinkup-sidebarright' );
 			} else {
 				echo '';
 			}
 		} else if ( $_thinkup_meta_layout == 'option2' ) {
 			echo '';
 		} else if ( $_thinkup_meta_layout == 'option3' ) {
-			wp_enqueue_style ( 'sidebarleft' );
+			wp_enqueue_style ( 'thinkup-sidebarleft' );
 		} else if ( $_thinkup_meta_layout == 'option4' ) {
-			wp_enqueue_style ( 'sidebarright' );
+			wp_enqueue_style ( 'thinkup-sidebarright' );
 		}
 	} else if ( is_search() ) {	
 		if ( $thinkup_general_layout == "option1" or empty( $thinkup_general_layout ) ) {		
 			echo '';
 		} else if ( $thinkup_general_layout == "option2" ) {
-			wp_enqueue_style ( 'sidebarleft' );
+			wp_enqueue_style ( 'thinkup-sidebarleft' );
 		} else if ($thinkup_general_layout == "option3") {
-			wp_enqueue_style ( 'sidebarright' );
+			wp_enqueue_style ( 'thinkup-sidebarright' );
 		}
 	}
 }
@@ -426,9 +426,16 @@ return $output;
 
 /* Add custom intro section [Extend for more options in future update] */
 function thinkup_custom_intro() {
+$class_intro = NULL;
 
+	// Input additional class if breadcrumb is present
+	if ( thinkup_input_breadcrumbswitch() != '' ) { 
+		$class_intro = 'option2'; 
+	}
+
+	// Output page title and breadcrumb
 	if ( ! is_front_page() ) {
-		echo	'<div id="intro" class="option2"><div class="wrap-safari"><div id="intro-core">',
+		echo	'<div id="intro" class="' . $class_intro . '"><div class="wrap-safari"><div id="intro-core">',
 				'<h1 class="page-title"><span>',
 				thinkup_title_select(),
 				'</span></h1>',
@@ -436,6 +443,19 @@ function thinkup_custom_intro() {
 				'</div></div></div>';
 	} else {
 		echo '';
+	}
+}
+
+
+/* ----------------------------------------------------------------------------------
+	Enable Breadcrumbs
+---------------------------------------------------------------------------------- */
+
+/* Toggle Breadcrumbs */
+function thinkup_input_breadcrumbswitch() {
+
+	if( ! is_front_page() ) {
+		return thinkup_input_breadcrumb();
 	}
 }
 
@@ -533,7 +553,7 @@ function thinkup_input_responsivecss() {
 global $thinkup_general_responsiveswitch;
 	
 	if ( $thinkup_general_responsiveswitch == '1' ) {
-		wp_enqueue_style ( 'responsive' );
+		wp_enqueue_style ( 'thinkup-responsive' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'thinkup_input_responsivecss', '12' );
@@ -549,19 +569,6 @@ global $thinkup_general_responsiveswitch;
 	return $classes;
 }
 add_action( 'body_class', 'thinkup_input_responsiveclass');
-
-
-/* ----------------------------------------------------------------------------------
-	Enable Breadcrumbs
----------------------------------------------------------------------------------- */
-
-/* Toggle Breadcrumbs */
-function thinkup_input_breadcrumbswitch() {
-
-	if( ! is_front_page() ) {
-		thinkup_input_breadcrumb();
-	}
-}
 
 
 /* ----------------------------------------------------------------------------------

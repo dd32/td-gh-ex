@@ -86,7 +86,9 @@ global $post;
 
 function thinkup_input_breadcrumb() {
 
-	$delimiter 			= '<span class="delimiter">/</span>';
+	$output = NULL;
+
+	$delimiter 		   = '<span class="delimiter">/</span>';
 
 	$delimiter_inner   =   '<span class="delimiter_core"> &bull; </span>';
 	$main              =   __( 'Home ', 'renden' );
@@ -104,63 +106,65 @@ function thinkup_input_breadcrumb() {
 
 	/* Display breadcumbs if NOT the home page */
 	if ( !is_home() ) {
-		echo '<div id="breadcrumbs"><div id="breadcrumbs-core">';
+		$output .= '<div id="breadcrumbs"><div id="breadcrumbs-core">';
 		global $post, $cat;
 		$homeLink = home_url( '/' );
-		echo '<a href="' . $homeLink . '">' . $main . '</a>' . $delimiter;    
+		$output .=  '<a href="' . $homeLink . '">' . $main . '</a>' . $delimiter;    
 
 		/* Display breadcrumbs for single post */
 		if ( is_single() ) {
 			$category = get_the_category();
 			$num_cat = count($category);
 			if ($num_cat <=1) {
-				echo ' ' . get_the_title();
+				$output .=  ' ' . get_the_title();
 			} else {
-				echo the_category( $delimiter_inner, 'multiple' );
+				$output .=  the_category( $delimiter_inner, 'multiple' );
 				if (strlen(get_the_title()) >= $maxLength) {
-					echo ' ' . $delimiter . trim(substr(get_the_title(), 0, $maxLength)) . ' ...';
+					$output .=  ' ' . $delimiter . trim(substr(get_the_title(), 0, $maxLength)) . ' ...';
 				} else {
-					echo ' ' . $delimiter . get_the_title();
+					$output .=  ' ' . $delimiter . get_the_title();
 				}
 			}
 		} elseif (is_category()) {
-			_e( 'Archive Category: ', 'renden' ) . get_category_parents($cat, true,' ' . $delimiter . ' ') ;
+			$output .= __( 'Archive Category: ', 'renden' ) . get_category_parents($cat, true,' ' . $delimiter . ' ') ;
 		} elseif ( is_tag() ) {
-			_e( 'Posts Tagged: ', 'renden' ) . single_tag_title("", false) . '"';
-		} elseif ( is_day()) {
-			echo '<a href="' . $url_year . '">' . $arc_year . '</a> ' . $delimiter . ' ';
-			echo '<a href="' . $url_month . '">' . $arc_month . '</a> ' . $delimiter . $arc_day . ' (' . $arc_day_full . ')';
+			$output .= __( 'Posts Tagged: ', 'renden' ) . single_tag_title("", false) . '"';
+		} elseif ( is_day() ) {
+			$output .=  '<a href="' . $url_year . '">' . $arc_year . '</a> ' . $delimiter . ' ';
+			$output .=  '<a href="' . $url_month . '">' . $arc_month . '</a> ' . $delimiter . $arc_day . ' (' . $arc_day_full . ')';
 		} elseif ( is_month() ) {
-			echo '<a href="' . $url_year . '">' . $arc_year . '</a> ' . $delimiter . $arc_month;
+			$output .=  '<a href="' . $url_year . '">' . $arc_year . '</a> ' . $delimiter . $arc_month;
 		} elseif ( is_year() ) {
-			echo $arc_year;
+			$output .=  $arc_year;
 		} elseif ( is_search() ) {
-			_e( 'Search Results for: ', 'renden' ) . get_search_query() . '"';
+			$output .= __( 'Search Results for: ', 'renden' ) . get_search_query() . '"';
 		} elseif ( is_page() && !$post->post_parent ) {
-			echo get_the_title();
+			$output .=  get_the_title();
 		} elseif ( is_page() && $post->post_parent ) {
 			$post_array = get_post_ancestors( $post );
 			krsort( $post_array ); 
 			foreach( $post_array as $key=>$postid ){
 				$post_ids = get_post( $postid );
-				$title = $post_ids->post_title;
-				echo '<a href="' . get_permalink($post_ids) . '">' . $title . '</a>' . $delimiter;
+				$title    = $post_ids->post_title;
+				$output  .= '<a href="' . get_permalink($post_ids) . '">' . $title . '</a>' . $delimiter;
 			}
 			the_title();
 		} elseif ( is_author() ) {
 			global $author;
 			$user_info = get_userdata($author);
-			_e( 'Archived Article(s) by Author: ', 'renden' ) . $user_info->display_name ;
+			$output .= __( 'Archived Article(s) by Author: ', 'renden' ) . $user_info->display_name ;
 		} elseif ( is_404() ) {
-			_e( 'Error 404 - Not Found.', 'renden' );
+			$output .= __( 'Error 404 - Not Found.', 'renden' );
 		} elseif( is_tax() ) {
 			echo get_queried_object()->name;
 		} elseif ( is_post_type_archive( 'portfolio' )	) {
-			_e( 'Portfolio', 'renden' );
+			$output .= __( 'Portfolio', 'renden' );
 		} elseif ( is_post_type_archive( 'product' ) and function_exists( 'thinkup_woo_titleshop_archive' ) ) {
 			thinkup_woo_titleshop_archive();
 		}
-       echo '</div></div>';
+       $output .=  '</div></div>';
+	   
+	   return $output;
     }
 }
 

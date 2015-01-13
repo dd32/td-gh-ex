@@ -58,43 +58,33 @@ The following opensource projects, graphics, fonts, API's or other files as list
            Licence:     GPLv2
            Licence URL: http://www.gnu.org/licenses/gpl-2.0.html
 
-    [1.05] Item:        Masonry
-           Item URL:    https://github.com/desandro/masonry
-           Licence:     MIT
-           Licence URL: http://opensource.org/licenses/mit-license.html
-
-    [1.06] Item:        ImagesLoaded
+    [1.05] Item:        ImagesLoaded
            Item URL:    https://github.com/desandro/imagesloaded
            Licence:     MIT
            Licence URL: http://opensource.org/licenses/mit-license.html
 
-    [1.07] Item:        Retina js
+    [1.06] Item:        Retina js
            Item URL:    http://retinajs.com
            Licence:     MIT
            Licence URL: http://opensource.org/licenses/mit-license.html
 
-    [1.08] Item:        ResponsiveSlides
+    [1.07] Item:        ResponsiveSlides
            Item URL:    https://github.com/viljamis/ResponsiveSlides.js
            Licence:     MIT
            Licence URL: http://opensource.org/licenses/mit-license.html
 
-    [1.09] Item:        Font Awesome
+    [1.08] Item:        Font Awesome
            Item URL:    http://fortawesome.github.io/Font-Awesome/#license
            Licence:     SIL Open Font &  MIT
            Licence OFL: http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
            Licence MIT: http://opensource.org/licenses/mit-license.html
 
-    [1.10] Item:        DashIcons
-           Item URL:    https://github.com/melchoyce/dashicons
-           Licence:     GPLv2 or later
-           Licence URL: http://www.gnu.org/licenses/gpl.html
-
-    [1.11] Item:        Twitter Bootstrap
+    [1.09] Item:        Twitter Bootstrap
            Item URL:    https://github.com/twitter/bootstrap/wiki/License
            Licence:     Apache 2.0
            Licence URL: http://www.apache.org/licenses/LICENSE-2.0
 
-    [1.12] Item:        Google Fonts - Open Sans
+    [1.10] Item:        Google Fonts - Open Sans
            Item URL:    http://www.google.com/fonts/specimen/Open+Sans
            Licence:     SIL Open Font
            Licence URL: http://scripts.sil.org/OFL
@@ -102,6 +92,28 @@ The following opensource projects, graphics, fonts, API's or other files as list
 -----------------------------------------------------------------------------
 	Changelog
 -----------------------------------------------------------------------------
+
+Version 1.0.2
+- New:     Slider text css updated.
+- New:     add_theme_support( 'title-tag' ) added to functions.php.
+- New:     Scaling removed from featured images for homepage on hover.
+- Fixed:   Page title now displays on left where no breadcrumbs are available for the page. (e.g. archive.php)
+- Updated: Styling added for stick post.
+- Updated: All custom style handles prefixed with thinkup-.
+- Updated: All custom script handles prefixed with thinkup-.
+- Updated: bootstrap.min minified css replaced with developer version.
+- Updated: prettyPhoto.css minified css replaced with developer version.
+- Updated: font-awesome.min.css minified css replaced with developer version.
+- Updated: thinkup_input_breadcrumb() updated to "return" content rather than "echo".
+- Updated: index.php and archive.php updated. Layout classes functions moved to 05.blog.php.
+- Updated: Styling for overlay buttons on hover changed to be clear background and white border.
+- Removed: wp_enqueue_script('jquery') removed as jQuery is enqueued when script dependent on this is enqueued.
+- Removed: Theme version of Masonry removed and enqueued directly from WordPress core.
+- Removed: Theme version of Dashicons removed and enqueued directly from WordPress core.
+- Removed: Duplicate Font Awesome library removed.
+- Removed: Blog style 2 removed.
+- Removed: All references to $thinkup_blog_style removed.
+- Removed: All references to $thinkup_blog_stylegrid removed.
 
 Version 1.0.1
 - New:     Featured content areas increased to 4 from 3.
