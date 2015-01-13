@@ -29,39 +29,6 @@ content: "\25B6 \ ";
 
 
 
-@charset "utf-8";
-/* CSS Document */
-
-@font-face {
-  font-family: 'Source Sans Pro';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url(../googlefont/ODelI1aHBYDBqgeIAH2zlBM0YzuT7MdOe03otPbuUS0.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url(../googlefont/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Abel';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Abel'), local('Abel-Regular'), url(../googlefont/EAqh528fFdbUek8UOky4sA.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url(../googlefont/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
-}
-
-
-
 
 
 
@@ -372,9 +339,9 @@ h6,.page-content h6 a {font-weight: normal; font-style: normal; font-family: 'So
 
 .ddmenu .dropdown-menu li a{line-height: 29px; font-size: 15px;}
 
-#mainheader1 {position:fixed;top:0;left:0;right:0;z-index:1032}
+#mainheader1 {position:fixed;top:auto;left:0;right:0;z-index:1032}
 
- body {padding-top:85px}
+ 
 
 .lead h2 {font-size: 37px; line-height: 57px; font-family: 'Open Sans';}
 
@@ -384,7 +351,7 @@ h6,.page-content h6 a {font-weight: normal; font-style: normal; font-family: 'So
 .dropdown-menu li:hover .sub-menu {visibility:visible;}
 .navbar .btn-navbar-highlight {display:none;width:100%}
 
-#mainheader1 {z-index:100 !important}
+#mainheader1 {z-index:3 !important}
 
 @media (max-width: 979px) {
      #divLogo {margin-bottom:10px;}
@@ -831,7 +798,7 @@ color:#898989;
 /*-====slider start-----*/
 .clr{clear:both}
 .cntr{text-align:center}
-#carouselSection{ margin:0 auto;  padding: 0; color:#eee;}
+#carouselSection{ margin:0 auto;  padding: 0; padding-top:85px; color:#eee;}
 #carouselSection #myCarousel{margin-bottom:0}
 #myCarousel .carousel .item {-webkit-transition: opacity 3s; -moz-transition: opacity 3s; -ms-transition: opacity 3s; -o-transition: opacity 3s; transition: opacity 3s;}
 #myCarousel .carousel .active.left {left:0;opacity:0;z-index:2;}

@@ -23,7 +23,7 @@
                 <div class="col-md-9">
                
                 <h1>
-                    <?php printf('Tag Archives: %s', '' . single_tag_title('', false) . ''); ?>
+                   <?php printf(__('Tag Archives: %s', 'ariwoo'), '' . single_tag_title('', false) . ''); ?>
                 </h1>
                 <?php
                 /* Run the loop for the tag archive to output the posts

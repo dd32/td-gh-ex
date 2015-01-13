@@ -60,7 +60,7 @@ get_header(); ?>
                     <div class="clearfix"></div>
         <?php endwhile; 
 	  else:
-			echo'<h2>No Results Found</h2>';
+			echo'<h2>'._e( 'No Results Found', 'ariwoo' ).'</h2>';
 	  ?>
         <?php endif; ?>
         

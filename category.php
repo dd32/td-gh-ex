@@ -26,7 +26,7 @@
             
                 <h2>
                     <?php
-                    printf('Category Archives: %s', '' . single_cat_title('', false) . '');
+                    printf(__('Category Archives: %s', 'ariniom'), '' . single_cat_title('', false) . '');
                     ?>
                 </h2>
                 <?php

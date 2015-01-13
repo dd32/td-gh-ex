@@ -14,11 +14,11 @@ function ariwoo_breadcrumbs() {
  echo '<li><a href="';
  //echo get_option('home');
  echo home_url(); 
- echo '">Home';
+ echo '">'. _x('Home','ariwoo');
  echo "</a></li>";
  
 if (is_attachment()) {
-            echo "<li class='active'>attachment: ";
+           echo "<li class='active'>". _x('attachment:','ariwoo');
     
     
    
@@ -28,7 +28,7 @@ if (is_attachment()) {
   if (is_category() || is_single()) {
    if(is_category())
    {
-    echo "<li class='active'>Category By: ";
+   echo "<li class='active'>". _x('Category By:','ariwoo');
    the_category(' &bull; ');
    echo "</li>";
    }
@@ -47,20 +47,20 @@ if (is_attachment()) {
             echo the_title();
    echo "</li>";
   } elseif (is_search()) {
-            echo "<li class='active'>Search Results for... ";
+            echo "<li class='active'>". _x('Search Results for...','ariwoo');
    echo '"<em>';
    echo the_search_query();
    echo '</em>"';
    echo "</li>";
         } elseif (is_tag()) { echo "<li class='active'>"; single_tag_title(); echo "</li>";}
-		 elseif (is_day()) {echo"<li class='active'>Archive for "; the_time('F jS, Y'); echo'</li>';}
-    elseif (is_month()) {echo"<li class='active'>Archive for "; the_time('F, Y'); echo'</li>';}
-    elseif (is_year()) {echo"<li class='active'>Archive for "; the_time('Y'); echo'</li>';}
-    elseif (is_author()) {echo"<li class='active'>Author Archive: "; printf(__(' %s', 'ariwoo'), "<a class='url fn n' href='" . get_author_posts_url(get_the_author_meta('ID')) . "' title='" . esc_attr(get_the_author()) . "' rel='me'>" . get_the_author() . "</a>"); echo'</li>';}
+		 elseif (is_day()) {echo"<li class='active'>". _x('Archive for ','ariwoo'); the_time('F jS, Y'); echo'</li>';}
+    elseif (is_month()) {echo"<li class='active'>". _x('Archive for ','ariwoo'); the_time('F, Y'); echo'</li>';}
+    elseif (is_year()) {echo"<li class='active'>". _x('Archive for ','ariwoo'); the_time('Y'); echo'</li>';}
+    elseif (is_author()) {echo"<li class='active'>". _x('Author Archive for ','ariwoo'); printf(__(' %s', 'ariwoo'), "<a class='url fn n' href='" . get_author_posts_url(get_the_author_meta('ID')) . "' title='" . esc_attr(get_the_author()) . "' rel='me'>" . get_the_author() . "</a>"); echo'</li>';}
 	elseif (!is_single() && !is_page() && get_post_type() != 'post') {
         $post_type = get_post_type_object(get_post_type());
         //echo $before . $post_type->labels->singular_name . $after;
-        echo $before . '<li class="active">Search results for "' . get_search_query() . '"' . $after; echo "</li>";
+        echo $before . '<li class="active">'. _x('Search Results for "','ariwoo').'' . get_search_query() . '"' . $after; echo "</li>";
     }
     }
 //fetch title
@@ -241,23 +241,32 @@ add_filter('wp_list_categories', 'ariwoo_add_nav_class');
  * Replace Excerpt [...] with Read More
 **/
 function ariwoo_read_more( ) {
-return ' ... <p class="moree"><a class="btn btn-inverse btn-normal btn-primary " href="'. get_permalink( get_the_ID() ) . '">Read more</a></p>';
+return ' ... <p class="moree"><a class="btn btn-inverse btn-normal btn-primary " href="'. get_permalink( get_the_ID() ) . '">'.__('Read more','ariwoo').'</a></p>';
  }
 add_filter( 'excerpt_more', 'ariwoo_read_more' ); 
 /**
  * Enqueues scripts and styles for front-end.
  */
 function ariwoo_scripts_styles() {
+ if (!is_admin()) {
 	 wp_enqueue_style('bootstrap', get_template_directory_uri() . '/styles/bootstrap.min.css');
           
-		   wp_enqueue_script('jquery');
-			wp_enqueue_script( 'nav', get_template_directory_uri() . '/scripts/jquery.nav.js',array(),false,true);
+		   wp_enqueue_style( 'ari-fonts1', '//fonts.googleapis.com/css?family=Source+Sans+Pro' );
+	        wp_enqueue_style( 'ari-fonts2', '//fonts.googleapis.com/css?family=Open+Sans' );
+			 wp_enqueue_style( 'ari-fonts3', '//fonts.googleapis.com/css?family=Abel' );
+			wp_enqueue_style( 'ari-fonts4', '//fonts.googleapis.com/css?family=Open+Sans' );
+			wp_enqueue_script( 'nav', get_template_directory_uri() . '/scripts/jquery.nav.js',array('jquery'),false,true);
 		   
-		  wp_enqueue_script( 'validate', get_template_directory_uri() . '/styles/jquery.validate.min.js',array(),false,true);
+		  wp_enqueue_script( 'validate', get_template_directory_uri() . '/styles/jquery.validate.min.js',array('jquery'),false,true);
 		
-		  wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/scripts/modernizr.js',array(),false,true);
-		  wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/styles/bootstrap.min.js',array(),false,true);
-		  wp_enqueue_script( 'custom', get_template_directory_uri() . '/scripts/custom.js',array(),false,true);
+		  wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/scripts/modernizr.js',array('jquery'),false,true);
+		  wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/styles/bootstrap.min.js',array('jquery'),false,true);
+		  wp_enqueue_script( 'custom', get_template_directory_uri() . '/scripts/custom.js',array('jquery'),false,true);
+	 } elseif (is_admin()) {
+        
+    }
+	
+	
 	  if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 }
 add_action( 'wp_enqueue_scripts', 'ariwoo_scripts_styles' );
@@ -278,52 +287,15 @@ add_action( 'wp_enqueue_scripts', 'ariwoo_scripts_styles' );
 
 
 
-add_filter( 'comment_form_default_fields', 'ariwoo_comment_placeholders' );
-
-/**
- * Change default fields, add placeholder and change type attributes.
- *
- * @param  array $fields
- * @return array
- */
-function ariwoo_comment_placeholders( $fields )
-{
-    $fields['author'] = str_replace(
-        '<input',
-        '<input placeholder="'
-        /** I use _x() here to make your translators life easier. :)
-         * See http://codex.wordpress.org/Function_Reference/_x
-         */
-            . _x(
-                'Name',
-                'comment form placeholder',
-                'ariwoo'
-                )
-            . '"',
-        $fields['author']
-    );
-    $fields['email'] = str_replace(
-        '<input id="email" name="email" type="text"',
-        '<input type="email" placeholder="contact@example.com"  id="email" name="email"',
-        $fields['email']
-    );
-    $fields['url'] = str_replace(
-        '<input id="url" name="url" type="text"',
-        // Again: a better 'type' attribute value.
-        '<input placeholder="http://example.com" id="url" name="url" type="url"',
-        $fields['url']
-    );
-	
-
-    return $fields;
-}
+ 
+ 
 
 // placeholder to textarea
 function ariwoo_comment_textarea_field($comment_field) {
  
     $comment_field = 
          '<div class="col-md-12">
-            <textarea class="form-control" required placeholder="Enter Your Comments" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
+            <textarea class="form-control" required placeholder="'. _x( 'Enter Your Comments', 'ariwoo' ).'" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
         </div>';
  
     return $comment_field;
@@ -343,12 +315,12 @@ add_filter('comment_text', 'ariwoo_wrap_comment_text');
 
 
 
- add_action('admin_menu', 'ariniom_admin_menu');
+ add_action('admin_menu', 'ariwoo_admin_menu');
  
 /**
 * add external link to Tools area
 */
-function ariniom_admin_menu() {
+function ariwoo_admin_menu() {
     global $submenu;
     $url = 'http://arinio.com/';
     $submenu['options-general.php'][] = array('Arinio More', 'manage_options', $url);

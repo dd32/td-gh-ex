@@ -59,11 +59,11 @@ if (isset($_POST['submitted'])) {
 <!-- blog title ends -->
 <?php if (isset($emailSent) && $emailSent == true) { ?>
             <div class="thanks">
-                <p>Thanks, your email was sent successfully.</p>
+                <p><?php _e( 'Thanks, your email was sent successfully.', 'ariwoo' ); ?></p>
             </div>
         <?php } else { ?>
     <?php if (isset($hasError) || isset($captchaError)) { ?>
-                <p class="error common">Sorry, an error occured. </p>
+                <p class="error common"><?php _e( 'Sorry, an error occured. ', 'ariwoo' ); ?></p>
             <?php } ?>
             
             
@@ -74,16 +74,16 @@ if (isset($_POST['submitted'])) {
                         
                         	<input type="text"   name="firstname" value="<?php if (isset($_POST['firstname']))
             echo $_POST['firstname'];
-            ?>" placeholder="Name"><?php if ($nameError != '') { ?>
+            ?>" placeholder="<?php _e( 'Name', 'ariwoo' ); ?>"><?php if ($nameError != '') { ?>
                     <span class="error name"> <?php echo $nameError; ?> </span>                           
                        <?php } ?>
                        
                        
                        
-							<input type="text" name="phone" value="" placeholder="Phone">
+							<input type="text" name="phone" value="" placeholder="<?php _e( 'Phone', 'ariwoo' ); ?>">
 							<input type="text" name="email" value="<?php if (isset($_POST['email']))
                        echo $_POST['email'];
-                   ?>" placeholder="Email"> <?php if ($emailError != '') { ?>
+                   ?>" placeholder="<?php _e( 'Email', 'ariwoo' ); ?>"> <?php if ($emailError != '') { ?>
                     <span class="error email"> <?php echo $emailError; ?> </span>                            
                        <?php } ?>
 						</div>
@@ -97,7 +97,7 @@ if (isset($_POST['submitted'])) {
                            echo $_POST['message'];
                        }
                    }
-                       ?>" placeholder="Message"></textarea>  <?php if ($commentError != '') { ?>
+                       ?>" placeholder="<?php _e( 'Message', 'ariwoo' ); ?>"></textarea>  <?php if ($commentError != '') { ?>
                     <span class="error comment"> <?php echo $commentError; ?> </span>
                 <?php } ?></div>
 						<div class="clear"></div>

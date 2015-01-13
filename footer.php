@@ -89,7 +89,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <p class="copyright">
-                     <?php  if($options['footertext'] != '') { echo $options['footertext']; }else{ echo " Copyright &#169; 2014 Your Company. All Rights Reserved."; } ?>  
+                     <?php  $options = get_option( 'arinio_theme_options' );  if($options['footertext'] != '') { echo $options['footertext']; }else{?> <?php _e( ' Copyright &#169; 2014 Your Company. All Rights Reserved.', 'ariwoo' ); ?> <?php } ?>  
                     </p>
 
                   
