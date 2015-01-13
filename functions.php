@@ -24,7 +24,26 @@ function hostmarks_setup() {
 	/**
 	 * Add default posts and comments RSS feed links to head
 	 */
+	add_post_type_support( 'page', 'excerpt' );
 	add_theme_support( 'automatic-feed-links' );
+	add_theme_support( "title-tag" );
+	$defaults = array(
+		'default-image'          => '',
+		'random-default'         => false,
+		'width'                  => 0,
+		'height'                 => 0,
+		'flex-height'            => false,
+		'flex-width'             => false,
+		'default-text-color'     => '',
+		'header-text'            => true,
+		'uploads'                => true,
+		'wp-head-callback'       => '',
+		'admin-head-callback'    => '',
+		'admin-preview-callback' => '',
+	);
+	
+	add_theme_support( 'custom-header', $defaults );
+	remove_theme_support('custom-header');
 
 	/**
 	 * This theme uses wp_nav_menu() in one location.
@@ -141,7 +160,9 @@ if ( ! function_exists( 'hostmarks_theme_customizer' ) ) :
 			'description' => __( 'Upload a logo to replace the default site name in the header', 'hostmarks' ),
 		) );
 		
-		$wp_customize->add_setting( 'hostmarks_logo' );
+		$wp_customize->add_setting( 'hostmarks_logo', array(
+		'sanitize_callback' => 'esc_url_raw',) );
+			
 		
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'hostmarks_logo', array(
 			'label'    => __( 'Choose your logo (ideal width is 100-300px and ideal height is 40-100px)', 'hostmarks' ),
@@ -152,6 +173,7 @@ if ( ! function_exists( 'hostmarks_theme_customizer' ) ) :
 		/* header background color option */
 		$wp_customize->add_setting( 'hostmarks_header_bg', array (
 			'default' => '#04396c',
+			'sanitize_callback' => 'sanitize_hex_color',
 		) );
 		
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'hostmarks_header_bg', array(
@@ -164,6 +186,7 @@ if ( ! function_exists( 'hostmarks_theme_customizer' ) ) :
 		/* alt blog intro text bg */
 		$wp_customize->add_setting( 'hostmarks_alt_blog_intro', array (
 			'default' => '#408ad2',
+			'sanitize_callback' => 'sanitize_hex_color',
 		) );
 		
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'hostmarks_alt_blog_intro', array(
@@ -176,6 +199,7 @@ if ( ! function_exists( 'hostmarks_theme_customizer' ) ) :
 		/* post title color option */
 		$wp_customize->add_setting( 'hostmarks_post_title_color', array (
 			'default' => '#408ad2',
+			'sanitize_callback' => 'sanitize_hex_color',
 		) );
 		
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'hostmarks_post_title_color', array(
@@ -188,6 +212,7 @@ if ( ! function_exists( 'hostmarks_theme_customizer' ) ) :
 		/* body text color option */
 		$wp_customize->add_setting( 'hostmarks_body_text_color', array (
 			'default' => '#222222',
+			'sanitize_callback' => 'sanitize_hex_color',
 		) );
 		
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'hostmarks_body_text_color', array(
@@ -200,6 +225,7 @@ if ( ! function_exists( 'hostmarks_theme_customizer' ) ) :
 		/* vertical divider color */
 		$wp_customize->add_setting( 'hostmarks_divider_color', array (
 			'default' => '#ffffff',
+			'sanitize_callback' => 'sanitize_hex_color',
 		) );
 		
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'hostmarks_divider_color', array(
@@ -212,6 +238,7 @@ if ( ! function_exists( 'hostmarks_theme_customizer' ) ) :
 		/* comment/reply form title color */
 		$wp_customize->add_setting( 'hostmarks_comment_title', array (
 			'default' => '#ff9700',
+			'sanitize_callback' => 'sanitize_hex_color',
 		) );
 		
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'hostmarks_comment_title', array(
@@ -224,6 +251,7 @@ if ( ! function_exists( 'hostmarks_theme_customizer' ) ) :
 		/* widget title background color option */
 		$wp_customize->add_setting( 'hostmarks_widget_title_bg', array (
 			'default' => '#0c5aa6',
+			'sanitize_callback' => 'sanitize_hex_color',
 		) );
 		
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'hostmarks_widget_title_bg', array(
@@ -237,6 +265,7 @@ if ( ! function_exists( 'hostmarks_theme_customizer' ) ) :
 		/* footer background color option */
 		$wp_customize->add_setting( 'hostmarks_footer_bg', array (
 			'default' => '#408AD2',
+			'sanitize_callback' => 'sanitize_hex_color',
 		) );
 		
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'hostmarks_footer_bg', array(
@@ -253,7 +282,8 @@ if ( ! function_exists( 'hostmarks_theme_customizer' ) ) :
 			'description' => __( 'Option to show/hide the footer widgets on all pages.', 'hostmarks' ),
 		) );
 		
-		$wp_customize->add_setting( 'hostmarks_footer_widget' );
+		$wp_customize->add_setting( 'hostmarks_footer_widget', array(
+		'sanitize_callback' => 'esc_url_raw',) );
 		
 		$wp_customize->add_control('footer_widget', array(
 			'settings' => 'hostmarks_footer_widget',
@@ -284,7 +314,8 @@ if ( ! function_exists( 'hostmarks_theme_customizer' ) ) :
 		) );
 		
 		/* Sidebar Banner (max 300px wide)  */
-		$wp_customize->add_setting( 'hostmarks_banner_sidebar' );
+		$wp_customize->add_setting( 'hostmarks_banner_sidebar', array(
+		'sanitize_callback' => 'esc_url_raw',) );
 		
 		$wp_customize->add_control( new hostmarks_Customize_Textarea_Control( $wp_customize, 'hostmarks_banner_sidebar', array(
 			'label'    => __( 'Sidebar Banner (max 300px wide)', 'hostmarks' ),
@@ -740,4 +771,8 @@ if ( ! function_exists( 'hostmarks_custom_scripts' ) ) :
 endif;
 add_action('wp_enqueue_scripts', 'hostmarks_custom_scripts');
 
+function new_excerpt_more( $more ) {
+	return '...';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
 ?>

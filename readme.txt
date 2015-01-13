@@ -46,6 +46,11 @@ This theme is bundled with Modernizr
 =================================
 CHANGELOG
 =================================
+verion 1.1
+ * Added Alt Full Width Template
+ * - alt_full_with_template.php
+ * - add functions on function.php
+
 Version 1.0.3
  * removed a function that sometimes causes all the images in the media library to not display at all when setting a featured image
  * replaced the screenshot with 880x660 size
