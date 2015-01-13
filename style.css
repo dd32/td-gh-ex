@@ -4,11 +4,11 @@ Theme URI: http://themes.redradar.net/adirondack/documentation/
 Author: Kelly Dwan & Mel Choyce
 Author URI: http://themes.redradar.net
 Description: Adirondack has a bright, clean layout designed to give your content the full attention it deserves. With large images and neat typography, this theme is crafted for longform writers and photographers alike.
-Version: 0.1.1
+Version: 0.1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: adirondack
-Tags: blue, white, light, fluid-layout, responsive-layout, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, microformats, post-formats, rtl-language-support, threaded-comments, translation-ready, photoblogging, one-column, two-columns, right-sidebar
+Tags: blue, white, light, fluid-layout, responsive-layout, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, post-formats, rtl-language-support, threaded-comments, translation-ready, photoblogging, one-column, two-columns, right-sidebar
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -891,6 +891,7 @@ button.menu-toggle:focus {
   width: 50%;
 }
 
+.paging-navigation a,
 .comment-navigation a,
 .post-navigation a {
   display: inline-block;
@@ -906,10 +907,12 @@ button.menu-toggle:focus {
   border: 3px solid #a9bbd2;
   border-radius: 20px;
 }
+.paging-navigation .nav-previous a,
 .comment-navigation .nav-previous a,
 .post-navigation .nav-previous a {
   margin-right: 2px;
 }
+.paging-navigation .nav-next a,
 .comment-navigation .nav-next a,
 .post-navigation .nav-next a {
   margin-left: 2px;
@@ -934,6 +937,37 @@ button.menu-toggle:focus {
 }
 .comment-navigation .nav-previous + .nav-next {
   margin-top: 10px;
+}
+
+.paging-navigation {
+  margin: 0 !important;
+  padding: 1.5em 120px;
+  width: 100%;
+}
+@media (max-width: 800px) {
+  .paging-navigation {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+@media (max-width: 450px) {
+  .paging-navigation {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (max-width: 400px) {
+  .paging-navigation .nav-next,
+  .paging-navigation .nav-previous {
+    width: 100%;
+  }
+  .paging-navigation .nav-next a,
+  .paging-navigation .nav-previous a {
+    width: 100%;
+  }
+  .paging-navigation .nav-previous + .nav-next {
+    margin-top: 20px;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1420,6 +1454,13 @@ body.no-image .entry-title {
 }
 .meta-item a:focus {
   text-decoration: underline;
+}
+
+.meta-item.author {
+  display: none;
+}
+.group-blog .meta-item.author {
+  display: block;
 }
 
 .singular {

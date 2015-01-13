@@ -36,7 +36,18 @@ Source: http://modernizr.com/
 
 Images in screenshot are CC0, from https://unsplash.com/
 
+Fonts loaded from Google under SIL Open Font License, 1.1 http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+ - Maven Pro by Joe Prince
+ - PT Serif by ParaType
+
 ### Changelog
+
+Version 0.1.2
+* Style navigation links when infinite scroll is disabled
+* Add `title-tag` support
+* Add Author meta to single posts, only displayed if there is more than 1 author
+* Update license information
+* Remove unsupported theme tag
 
 Version 0.1.1
 * Style 404 and No Results pages.
