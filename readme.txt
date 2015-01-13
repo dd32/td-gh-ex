@@ -1,7 +1,7 @@
 = Catch Evolution =
-* by the Catch Themes team, http://catchthemes.com/
+* Catch Evolution by the Catch Themes, http://catchthemes.com/
 
-== ABOUT Catch Evolution==
+== ABOUT Catch Evolution ==
 Catch Evolution is a beautifully sleek creation of Catch Themes. It exudes a clean and super sharp look. It comes with a whole set of interesting, rich features and flexible theme options. Built on HTML5, CSS3, it has a responsive design which lets the content automatically adapt to the screen's size on different devices. Catch Evolution looks striking in a bigger screen. The layout is wider, bigger and luxuriously spacious. This theme is easily customizable with an advanced theme options panel. It supports popular plugins such as Jetpack, WordPress SEO by Yoast, WP-PageNavi, Contact Form 7, WooCommerce and many more. It is also translation ready and currently translated in Spanish, French, Swedish, German, Danish, Italian, Japanese, Russian, Czech, Bosnian and Brazilian Portuguese. If you need support with this theme, please go to http://catchthemes.com/support/
 
 == Translation ==
@@ -23,7 +23,7 @@ Added Translation for Dutch by Alain Baudrez (Email: a.baudrez@gmail.com)
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Catch Evolution WordPress Theme, Copyright 2012-2014 Catchthemes.com
+Catch Evolution WordPress Theme, Copyright 2012-2015 Catchthemes.com
 Catch Evolution is distributed under the terms of the GNU General Public License v3
 
 Images used in the demo site and the screenshot are from PixaBay.com and are released under the CC0 license
@@ -52,7 +52,7 @@ dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-si
 
 == Installation ==
 1. Primary: Login to your wp-admin area and go to Appearance -> Themes. Select Install tab and click on Upload link. Select theme .zip and ckick on Install now button. If you have any errors, use alternate method.
-2. Alternate: Unzip the template file (catch-evolution.zip) that you have downloaded. Via FTP, upload the whole folder (catch-everest) to your server and place it in the /wp-content/themes/ folder. Do not change directory name. The template files should thus be here now: /wp-content/themes/catch-evolution/index.php (for example).
+2. Alternate: Unzip the template file (catch-evolution.zip) that you have downloaded. Via FTP, upload the whole folder (catch-evolution) to your server and place it in the /wp-content/themes/ folder. Do not change directory name. The template files should thus be here now: /wp-content/themes/catch-evolution/index.php (for example).
 3. Log into your WP admin panel and click on the Design tab. Now click on the Catch Box theme to activate it.
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 

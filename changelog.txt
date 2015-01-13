@@ -1,5 +1,12 @@
 == Changelog ==
 
+2.3
+* Added title tag via add theme support
+* Added More theme options button in Customizer
+* Bug Fixed: Content width settings
+* Updated catch-evolution.pot file to fix missing plural translation
+* Updated media uploader to new version in theme options
+
 2.2
 * Added changelog.txt file which list the theme change log
 * Changed Webmaster tools heading to Tools

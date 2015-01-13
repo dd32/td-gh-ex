@@ -34,8 +34,8 @@
  * For more information on hooks, actions, and filters, see http://codex.wordpress.org/Plugin_API.
  *
  * @package Catch Themes
- * @subpackage Catch_Evolution_Pro
- * @since Catch Evolution Pro 1.0
+ * @subpackage Catch_Evolution
+ * @since Catch Evolution 1.0
  */
 
 
@@ -43,9 +43,55 @@
  * Sets up the content width value based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) )
-	$content_width = 754;	
+	$content_width = 678;	
 	
+
+if ( ! function_exists( 'catchevolution_content_width' ) ) :
+/**
+ * Change the content width based on the Theme Settings and Page/Post Settings
+ */
+function catchevolution_content_width() {
 	
+	//Getting Ready to load data from Theme Options Panel
+	global $post, $wp_query, $content_width, $catchevolution_options_settings;
+   	$options = $catchevolution_options_settings;
+	$themeoption_layout = $options['sidebar_layout'];
+	
+	// Front page displays in Reading Settings
+	$page_on_front = get_option('page_on_front') ;
+	$page_for_posts = get_option('page_for_posts'); 
+
+	// Get Page ID outside Loop
+	$page_id = $wp_query->get_queried_object_id();
+	
+	// Blog Page setting in Reading Settings
+	if ( $page_id == $page_for_posts ) {
+		$layout = get_post_meta( $page_for_posts,'catchevolution-sidebarlayout', true );
+	}	
+	// Settings for page/post/attachment
+	elseif ( $post) {
+ 		if ( is_attachment() ) { 
+			$parent = $post->post_parent;
+			$layout = get_post_meta( $parent,'catchevolution-sidebarlayout', true );
+		} else {
+			$layout = get_post_meta( $post->ID,'catchevolution-sidebarlayout', true ); 
+		}
+	}
+	
+	if ( empty( $layout ) || ( !is_page() && !is_single() ) ) {
+		$layout='default';
+	}	
+
+	if ( ( $layout == 'three-columns' || ( $layout=='default' && $themeoption_layout == 'three-columns') ) ) {
+		$content_width = 454; /* pixels */	
+	}
+	
+}
+endif; // catchevolution_content_width
+
+add_action( 'template_redirect', 'catchevolution_content_width' );
+
+
 /**
  * Tell WordPress to run catchevolution_setup() when the 'after_setup_theme' hook is run.
  */
@@ -77,7 +123,7 @@ function catchevolution_setup() {
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
 	 * If you're building a theme based on Catch Evolution, use a find and replace
-	 * to change 'catcheverest' to the name of your theme in all the template files
+	 * to change 'catchevolution' to the name of your theme in all the template files
 	 */
 	load_theme_textdomain( 'catchevolution', get_template_directory() . '/languages' );	
 
@@ -89,6 +135,14 @@ function catchevolution_setup() {
 	
 	// Add default posts and comments RSS feed links to <head>.
 	add_theme_support( 'automatic-feed-links' );
+
+	/**
+	* Let WordPress manage the document title.
+	* By adding theme support, we declare that this theme does not use a
+	* hard-coded <title> tag in the document head, and expect WordPress to
+	* provide it for us.
+	*/
+	add_theme_support( 'title-tag' );	
 
 	// Add support for a variety of post formats
 	add_theme_support( 'post-formats', array( 'aside', 'link', 'gallery', 'status', 'quote', 'image', 'chat' ) );
@@ -144,9 +198,8 @@ function catchevolution_setup() {
 	//Featured Posts for Full Width
 	add_image_size( 'featured-slider-larger', 1190, 500, true ); // Used for featured posts if a large-feature doesn't exist
 	
-	if ( function_exists('catchevolution_woocommerce' ) ) { 
- 		catchevolution_woocommerce();
-    }	
+	//Plugin Support for WooCommerce
+	catchevolution_woocommerce_activated();
 
 }
 endif; // catchevolution_setup
@@ -158,19 +211,19 @@ endif; // catchevolution_setup
 require( get_template_directory() . '/inc/custom-header.php' );
 
 
+if ( ! function_exists( 'catchevolution_woocommerce_activated' ) ) :
 /**
- * Adds support for WooCommerce Plugin
- */
-if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-	
-	/**
-	 * Add Suport for WooCommerce Plugin
-	 */
-	add_theme_support( 'woocommerce' );	
-	
-    require( get_template_directory() . '/inc/catchevolution-woocommerce.php' );
+ * Add Suport for WooCommerce Plugin
+ */	
+function catchevolution_woocommerce_activated() {
+	if ( class_exists( 'woocommerce' ) ) { 
+		add_theme_support( 'woocommerce' );			
+	    require( get_template_directory() . '/inc/catchevolution-woocommerce.php' );
+	} 
 }
-		
+endif; // catchevolution_woocommerce_activated
+
+
 /**
   * Filters the_category() to output html 5 valid rel tag
   *
