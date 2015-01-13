@@ -34,7 +34,7 @@
                 if (get_the_author_meta('description')) :
                     ?>
                     <?php echo get_avatar(get_the_author_meta('user_email'), apply_filters('ariwoo_author_bio_avatar_size', 60)); ?>
-                    <h2><?php printf(__('About %s', 'ariwoo'), . get_the_author()); ?></h2>
+                    <h2><?php printf(__('About %s', 'ariwoo') . get_the_author()); ?></h2>
                     <?php the_author_meta('description'); ?>
                 <?php endif; ?>
                 </div>
