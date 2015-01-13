@@ -89,6 +89,11 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.14
+* Section ID changed by page ID instead of Page name (Page name created problem with other language then english.)
+* Header spacing bug fixed when logged in.
+* Design bug on 2nd level menu fixed on responsive layout.
+
 Version 1.13
 * Div with clearfix class added in service section to prevent misalignment
 * Overlapping of Heading with date in the blog/archive page fixed

@@ -239,8 +239,8 @@ function accesspress_header_styles_scripts(){
 	echo "<style type='text/css' media='all'>"; 
 
 	foreach ($sections as $section) {
-		echo "#".sanitize_title(get_the_title($section['page']))."{ background:url(".$section['image'].") ".$section['repeat']." ".$section['attachment']." ".$section['position']." ".$section['color']."; background-size:".$section['size']."; color:".$section['font_color']."}\n";
-		echo "#".sanitize_title(get_the_title($section['page']))." .overlay { background:url(".$image_url.$section['overlay'].".png);}\n";
+		echo "#section-".$section['page']."{ background:url(".$section['image'].") ".$section['repeat']." ".$section['attachment']." ".$section['position']." ".$section['color']."; background-size:".$section['size']."; color:".$section['font_color']."}\n";
+		echo "#section-".$section['page']." .overlay { background:url(".$image_url.$section['overlay'].".png);}\n";
 	}
 	echo $custom_css;
 

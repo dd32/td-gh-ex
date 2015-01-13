@@ -150,6 +150,15 @@ Responsive CSS
 	.next-page{
 		display: none;
 	}
+	.main-navigation ul ul a{
+		color: #FFF;
+	}
+	.main-navigation ul ul li{
+		padding: 5px 0;
+	}
+	.main-navigation ul ul{
+		box-shadow: none;
+	}
 }
 @media screen and (max-width: 480px){
 	.parallax-section h1{

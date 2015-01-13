@@ -24,7 +24,7 @@
 	?>
 
 	<?php if(!empty($section['page'])): ?>
-		<section class="parallax-section clearfix<?php echo $googlemapclass." ".$layout;  ?>" id="<?php echo sanitize_title($page->post_title); ?>">
+		<section class="parallax-section clearfix<?php echo $googlemapclass." ".$layout;  ?>" id="<?php echo "section-".$page->ID; ?>">
 		<?php if(!empty($image) && $overlay!="overlay0") : ?>
 			<div class="overlay"></div>
 		<?php endif; ?>

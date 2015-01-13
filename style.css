@@ -4,7 +4,7 @@ Theme URI: http://accesspressthemes.com/wordpress-themes/accesspress-parallax/
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Parallax is a beautiful WordPress theme with Parallax design. Parallax design has become popular and is being adopted because 3D effects are possible with it, you can add some sphere to your product, it is the best way of storytelling, you can draw your visitors in, it is interactive, engaging, makes your visitors curious, fun, surprise, effective to trigger action, invite your visitors in great Call to Action, great conversion rates and many more. This is probably the most beautiful, feature rich and complete free WordPress parallax theme with features like: fully responsive, advance theme option panel, featured slider, advance post settings, services/team/blog/portfolio/testimonial layout, Google map integration, custom logo/fav icon, call to action, CSS animation, SEO friendly, translation ready, RTL support, custom CSS/JS and more! Demo: http://accesspressthemes.com/accesspress-parallax/ Support forum:https://accesspressthemes.com/support/ Pro version:https://accesspressthemes.com/wordpress-themes/accesspress-parallax-pro/ 
-Version: 1.13
+Version: 1.14
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: accesspress_parallax
@@ -485,10 +485,13 @@ Content
 	margin-top: 30px;
 	margin-bottom: 30px;
 }
+.logged-in #content > .mid-content{
+	margin-top: 30px;
+}
 .parallax-on #content{
 	margin-bottom: 0;
 }
-.home #content, .blog #content, .home #content.no-slider{
+.home #content, .blog #content, .home #content.no-slider, .logged-in #content{
 	margin-top: 0;
 }
 #primary{
@@ -988,13 +991,13 @@ body.parallax-on .wpcf7-not-valid-tip{
 .main-navigation > ul > li {
 	float: left;
 	position: relative;
-	padding: 5px 15px;
 	font-family: 'Oxygen', sans-serif;	
     font-weight: 400;
 }
 .main-navigation > ul > li > a{
 	text-transform: uppercase;
 	font-size:14px;
+	padding: 5px 15px;
 }
 .main-navigation > ul > li.current a{
 	color: #E66432;
@@ -1020,7 +1023,7 @@ body.parallax-on .wpcf7-not-valid-tip{
 	top: 0;
 }
 .main-navigation ul ul a {
-	width: 200px;
+	min-width: 200px;
 }
 .main-navigation ul ul li {
 	border-bottom: 1px solid #EEE;

@@ -51,7 +51,7 @@
 				foreach ($sections as $single_sections): 
 					if($single_sections['layout'] != "action_template" && $single_sections['layout'] != "blank_template" && $single_sections['layout'] != "googlemap_template" && !empty($single_sections['page'])) :
 					$title = get_the_title($single_sections['page']); ?>
-					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>#<?php echo sanitize_title($title); ?>"><?php echo $title; ?></a></li>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>#section-<?php echo $single_sections['page']; ?>"><?php echo $title; ?></a></li>
 					<?php 
 					endif;
 				endforeach; ?>
