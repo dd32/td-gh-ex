@@ -17,9 +17,10 @@ class Moesia_Latest_News extends WP_Widget {
 	function form($instance) {
 
 	// Check values
-		$title     = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
-		$category  = isset( $instance['category'] ) ? esc_attr( $instance['category'] ) : '';					
-		$image_uri = isset( $instance['image_uri'] ) ? esc_url_raw( $instance['image_uri'] ) : '';		
+		$title     		= isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
+		$category  		= isset( $instance['category'] ) ? esc_attr( $instance['category'] ) : '';
+		$see_all_text  	= isset( $instance['see_all_text'] ) ? esc_html( $instance['see_all_text'] ) : '';											
+		$image_uri 		= isset( $instance['image_uri'] ) ? esc_url_raw( $instance['image_uri'] ) : '';		
 	?>
 
 	<p>
@@ -29,6 +30,9 @@ class Moesia_Latest_News extends WP_Widget {
 
 	<p><label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php _e( 'Enter the slug for your category or leave empty to show posts from all categories.', 'moesia' ); ?></label>
 	<input class="widefat" id="<?php echo $this->get_field_id( 'category' ); ?>" name="<?php echo $this->get_field_name( 'category' ); ?>" type="text" value="<?php echo $category; ?>" size="3" /></p>	
+
+    <p><label for="<?php echo $this->get_field_id('see_all_text'); ?>"><?php _e('Add the text for the button here if you want to change the default <em>See all our news</em>', 'moesia'); ?></label>
+	<input class="widefat custom_media_url" id="<?php echo $this->get_field_id( 'see_all_text' ); ?>" name="<?php echo $this->get_field_name( 'see_all_text' ); ?>" type="text" value="<?php echo $see_all_text; ?>" size="3" /></p>		
 
     <?php
         if ( $image_uri != '' ) :
@@ -45,9 +49,10 @@ class Moesia_Latest_News extends WP_Widget {
 	// update widget
 	function update($new_instance, $old_instance) {
 		$instance = $old_instance;
-		$instance['title'] 		= strip_tags($new_instance['title']);
-		$instance['category'] 	= strip_tags($new_instance['category']);		
-	    $instance['image_uri'] 	= esc_url_raw( $new_instance['image_uri'] );			
+		$instance['title'] 			= strip_tags($new_instance['title']);
+		$instance['category'] 		= strip_tags($new_instance['category']);
+		$instance['see_all_text'] 	= strip_tags($new_instance['see_all_text']);						
+	    $instance['image_uri'] 		= esc_url_raw( $new_instance['image_uri'] );			
 		$this->flush_widget_cache();
 
 		$alloptions = wp_cache_get( 'alloptions', 'options' );
@@ -89,6 +94,7 @@ class Moesia_Latest_News extends WP_Widget {
 		/** This filter is documented in wp-includes/default-widgets.php */
 		$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
 		$category = isset( $instance['category'] ) ? esc_attr($instance['category']) : '';
+		$see_all_text = isset( $instance['see_all_text'] ) ? esc_html($instance['see_all_text']) : __( 'See all our news', 'moesia' );		
 		$image_uri = isset( $instance['image_uri'] ) ? esc_url($instance['image_uri']) : '';		
 
 		/**
@@ -127,7 +133,7 @@ class Moesia_Latest_News extends WP_Widget {
 						</div>
 					<?php endwhile; ?>
 				</div>
-				<a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>" class="all-news"><?php echo __('See all our news', 'moesia'); ?></a>
+				<a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>" class="all-news"><?php echo $see_all_text; ?></a>
 			</div>
 		<?php if ($image_uri != '') : ?>
 			<style type="text/css">

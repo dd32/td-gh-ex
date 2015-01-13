@@ -249,7 +249,24 @@ function moesia_customize_register( $wp_customize ) {
             'section' => 'moesia_general',
             'priority' => 19,           
         )
-    );            
+    );
+    //Search
+    $wp_customize->add_setting(
+        'toggle_search',
+        array(
+            'sanitize_callback' => 'moesia_sanitize_checkbox',
+            'default' => 0,         
+        )       
+    );
+    $wp_customize->add_control(
+        'toggle_search',
+        array(
+            'type' => 'checkbox',
+            'label' => __('Activate header search icon?', 'moesia'),
+            'section' => 'moesia_general',
+            'priority' => 20,           
+        )
+    );                
     //___Single posts___//
     $wp_customize->add_section(
         'moesia_singles',

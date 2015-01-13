@@ -41,6 +41,7 @@
 	<?php //Single page header image data
 		$himage  = get_post_meta( get_the_ID(), 'wpcf-header-image', true );
 		$htitle  = get_post_meta( get_the_ID(), 'wpcf-header-title', true );
+		$hlogo 	 = get_post_meta( get_the_ID(), 'wpcf-header-logo', true );
 		$htext 	 = get_post_meta( get_the_ID(), 'wpcf-header-text', true );
 		$hbutton = get_post_meta( get_the_ID(), 'wpcf-header-button-title', true );
 		$hlink 	 = get_post_meta( get_the_ID(), 'wpcf-header-button-link', true );
@@ -80,7 +81,9 @@
 		<header id="masthead" class="site-header has-banner" role="banner">
 			<img class="header-image" src="<?php echo esc_url($himage); ?>">
 			<div class="welcome-info">
-				<?php if ( $htitle ) : ?>
+				<?php if ( $hlogo ) : ?>
+					<img class="welcome-logo wow bounceInDown" src="<?php echo esc_url($hlogo); ?>" />
+				<?php elseif ( $htitle ) : ?>
 					<div class="welcome-title wow bounceInDown"><?php echo esc_html($htitle); ?></div>
 				<?php endif; ?>
 				<?php if ( $htext ) : ?>
@@ -106,6 +109,11 @@
 			<nav id="site-navigation" class="main-navigation col-md-8" role="navigation">
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 			</nav><!-- #site-navigation -->
+			<?php if ( get_theme_mod('toggle_search', 0) ) : ?>
+				<span class="nav-search"><i class="fa fa-search"></i></span>
+				<span class="nav-deco"></span>
+				<div class="nav-search-box"><?php get_search_form(); ?></div>
+			<?php endif; ?>			
 		</div>
 	</div>	
 

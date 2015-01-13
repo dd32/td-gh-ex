@@ -110,7 +110,7 @@ jQuery(function($) {
 			var target = $(this.hash);
 			var topbar = $('.top-bar').height();
 			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-			if ( $(window).width() > 1024 ) {
+			if ( this.hash != '#site-navigation' && $(window).width() > 1024 ) {
 				if (target.length) {
 				$('html,body').animate({
 				scrollTop: target.offset().top - topbar + 40
@@ -127,4 +127,14 @@ jQuery(function($) {
 			}
 		}
 	});
+});
+
+//Search form
+jQuery(function($) {
+	$('.nav-search').click(function() {
+		$('.nav-search-box').addClass('search-visible');
+	});
+	$('.search-close').click(function() {
+		$('.nav-search-box').removeClass('search-visible');
+	});			
 });
