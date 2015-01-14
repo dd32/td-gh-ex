@@ -761,14 +761,12 @@ endif;
 /**
  * Enqueue scripts & styles
  */
-if ( ! function_exists( 'hostmarks_custom_scripts' ) ) :
-	function hostmarks_custom_scripts() {
-		wp_register_script( 'imagesloaded', get_template_directory_uri() . '/library/js/imagesloaded.pkgd.min.js');
-		wp_register_script( 'masonry', get_template_directory_uri() . '/library/js/masonry.pkgd.min.js' );
-		wp_enqueue_script( 'hostmarks_custom_js', get_template_directory_uri() . '/library/js/scripts.js', array( 'jquery', 'imagesloaded', 'masonry' ), '1.0.0' );
-		wp_enqueue_style( 'hostmarks_style', get_stylesheet_uri() );
-	}
-endif;
+function hostmarks_custom_scripts() {
+	wp_enqueue_script( 'hostmarks_custom_js', get_template_directory_uri() . '/library/js/scripts.js', array( 'jquery', 'jquery-masonry' ), '1.0.0' );
+	wp_enqueue_script( 'imagesloaded', get_template_directory_uri() . '/library/js/imagesloaded.pkgd.min.js');	
+	wp_enqueue_style( 'hostmarks_style', get_stylesheet_uri() );
+}
+
 add_action('wp_enqueue_scripts', 'hostmarks_custom_scripts');
 
 function new_excerpt_more( $more ) {

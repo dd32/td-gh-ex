@@ -46,9 +46,28 @@ This theme is bundled with Modernizr
 =================================
 CHANGELOG
 =================================
+
+verion 1.2
+ * fixes on function.php
+
+
 verion 1.1
+ * edit property style on style.css line 1033 - line 1045
+   - 	#full-width-content p {
+		color:#fff;
+		margin-top:20px;
+	}
+	#content, #full-width-content {
+		width: 96%;
+		margin: 0 auto;
+		padding: 0 2%;
+		max-width: 1044px; /* for ie8 & below */
+		max-width: 104.4rem;
+		padding-bottom: 1px; /* for ie8 & below */
+		padding-bottom: 0.1rem;
+	}
  * Added Alt Full Width Template
- * - alt_full_with_template.php
+   - alt_full_with_template.php
  * - add functions on function.php
 
 Version 1.0.3
