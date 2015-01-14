@@ -13,6 +13,9 @@ Author: Larry Judd Oliver - tradesouthwest.com
 -! Note that top row menu area does NOT SUPPORT DROP-DOWN MENUS! This is a static inline menu only.
 
 == Change Log ==
+= 1.8.1 =
+* fixed Tstring end missing
+
 = 1.8 =
 * fixed loop count for first post in top lead article box display progression
 * added conditional statement for secondary menu

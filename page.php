@@ -6,7 +6,7 @@
 */
 get_header(); ?>
 <div id="content-wide-page" role="main">
-    <?php if ( have_posts() ) : while (have_posts() ) : the_post(); 
+    <?php if ( have_posts() ) : while (have_posts() ) : the_post(); ?>
      
     <section class="content-area-left">
         <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
