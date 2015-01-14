@@ -61,3 +61,6 @@ Version 1.1.1
 
 Version 1.1.2
 1. Fix for posted on date. v.1.1.1 showed modified date rather than published. Fixed.
+
+Version 1.1.3
+1. Error uploading 1.1.2
