@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sparkling Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-20 16:00+0200\n"
-"PO-Revision-Date: 2015-03-20 16:00+0200\n"
+"POT-Creation-Date: 2015-01-14 13:12+0200\n"
+"PO-Revision-Date: 2015-01-14 13:12+0200\n"
 "Last-Translator: Aigars Silkalns <a.silkalns@gmail.com>\n"
 "Language-Team: colorlib <info@colorlib.com>\n"
 "Language: pl\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Loco-Source-Locale: en_GB\n"
-"X-Generator: Poedit 1.7.5\n"
+"X-Generator: Poedit 1.7.3\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-KeywordsList: _e;__;esc_attr__;_nx:4c,1,2;_n:1,2\n"
 "X-Loco-Parser: loco_parse_po\n"
@@ -202,43 +202,43 @@ msgstr "Czytaj więcej"
 msgid "Primary Menu"
 msgstr "Główne menu"
 
-#: ../functions.php:70 ../inc/extras.php:226
+#: ../functions.php:70 ../inc/extras.php:216
 msgid "Footer Links"
 msgstr "Linki stopki"
 
-#: ../functions.php:108
+#: ../functions.php:99
 msgid "Sidebar"
 msgstr "Pasek boczny"
 
-#: ../functions.php:118
+#: ../functions.php:109
 msgid "Homepage Widget 1"
 msgstr "Widgety strony głównej 1"
 
-#: ../functions.php:119 ../functions.php:129 ../functions.php:139
+#: ../functions.php:110 ../functions.php:120 ../functions.php:130
 msgid "Displays on the Home Page"
 msgstr "Wyświetl na stronie głównej"
 
-#: ../functions.php:128
+#: ../functions.php:119
 msgid "Homepage Widget 2"
 msgstr "Widgety strony głównej 2"
 
-#: ../functions.php:138
+#: ../functions.php:129
 msgid "Homepage Widget 3"
 msgstr "Widgety strony głównej 3"
 
-#: ../functions.php:148
+#: ../functions.php:139
 msgid "Footer Widget 1"
 msgstr "Widgety stopki 1"
 
-#: ../functions.php:149 ../functions.php:159 ../functions.php:169
+#: ../functions.php:140 ../functions.php:150 ../functions.php:160
 msgid "Used for footer widget area"
 msgstr "Używane w widgetach stopki"
 
-#: ../functions.php:158
+#: ../functions.php:149
 msgid "Footer Widget 2"
 msgstr "Widgety stopki 2"
 
-#: ../functions.php:168
+#: ../functions.php:159
 msgid "Footer Widget 3"
 msgstr "Widgety stopki 3"
 
@@ -366,70 +366,70 @@ msgstr "Pogrubiona"
 msgid "Bold Italic"
 msgstr "Pogrubiona Kursywa"
 
-#: ../inc/extras.php:61
+#: ../inc/extras.php:63
 #, php-format
 msgid "Page %s"
 msgstr "Strona %s"
 
-#: ../inc/extras.php:121
+#: ../inc/extras.php:111
 msgid "Search..."
 msgstr "Szukaj..."
 
-#: ../inc/extras.php:142
+#: ../inc/extras.php:132
 msgid ""
 "<p>This post is password protected. To view it please enter your password "
 "below:</p>"
 msgstr ""
 "<p>Ten post jest chroniony hasłem. Aby go zobaczyć wpisz hasło poniżej:</p>"
 
-#: ../inc/extras.php:143
+#: ../inc/extras.php:133
 msgid "Password:"
 msgstr "Hasło:"
 
-#: ../inc/extras.php:146
+#: ../inc/extras.php:136
 msgid "Submit"
 msgstr "Wyślij"
 
-#: ../inc/extras.php:190
+#: ../inc/extras.php:180
 msgid "Follow us on "
 msgstr "Śledź nas na"
 
-#: ../inc/extras.php:301
+#: ../inc/extras.php:293
 #, php-format
 msgid "Theme by %1$s Powered by %2$s"
 msgstr "Temat stworzony przez %1$s Napędzany przez %2$s"
 
-#: ../inc/extras.php:405
+#: ../inc/extras.php:397
 msgid "Support and Documentation"
 msgstr "Wsparcie i dokumentacja"
 
-#: ../inc/extras.php:411
+#: ../inc/extras.php:403
 msgid "Sparkling Documentation"
 msgstr "Dokumentacja"
 
-#: ../inc/extras.php:412
+#: ../inc/extras.php:404
 msgid ""
 "The best way to contact us with <b>support questions</b> and <b>bug reports</"
 "b> is via"
 msgstr "Najlepsza metoda aby się z nami skontaktować jest przez"
 
-#: ../inc/extras.php:412
+#: ../inc/extras.php:404
 msgid "Colorlib support forum"
 msgstr "Colorlib forum wsparcia"
 
-#: ../inc/extras.php:413
+#: ../inc/extras.php:405
 msgid "If you like this theme, I'd appreciate any of the following:"
 msgstr "Jeśli lubisz ten temat, będę wdzięczny za"
 
-#: ../inc/extras.php:415
+#: ../inc/extras.php:407
 msgid "Rate this Theme"
 msgstr "Oceń ten temat"
 
-#: ../inc/extras.php:416
+#: ../inc/extras.php:408
 msgid "Like on Facebook"
 msgstr "Polub nas na Facebook-u"
 
-#: ../inc/extras.php:417
+#: ../inc/extras.php:409
 msgid "Follow on Twitter"
 msgstr "Śledź nas na Twitterze"
 

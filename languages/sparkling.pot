@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sparkling Theme\n"
-"POT-Creation-Date: 2015-03-20 16:00+0200\n"
-"PO-Revision-Date: 2015-03-20 16:00+0200\n"
+"POT-Creation-Date: 2015-01-14 13:12+0200\n"
+"PO-Revision-Date: 2015-01-14 13:12+0200\n"
 "Last-Translator: Aigars Silkalns <a.silkalns@gmail.com>\n"
 "Language-Team: colorlib <info@colorlib.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.5\n"
+"X-Generator: Poedit 1.7.3\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: _e;__;esc_attr__;_nx:4c,1,2;_n:1,2\n"
@@ -186,43 +186,43 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: ../functions.php:70 ../inc/extras.php:226
+#: ../functions.php:70 ../inc/extras.php:216
 msgid "Footer Links"
 msgstr ""
 
-#: ../functions.php:108
+#: ../functions.php:99
 msgid "Sidebar"
 msgstr ""
 
-#: ../functions.php:118
+#: ../functions.php:109
 msgid "Homepage Widget 1"
 msgstr ""
 
-#: ../functions.php:119 ../functions.php:129 ../functions.php:139
+#: ../functions.php:110 ../functions.php:120 ../functions.php:130
 msgid "Displays on the Home Page"
 msgstr ""
 
-#: ../functions.php:128
+#: ../functions.php:119
 msgid "Homepage Widget 2"
 msgstr ""
 
-#: ../functions.php:138
+#: ../functions.php:129
 msgid "Homepage Widget 3"
 msgstr ""
 
-#: ../functions.php:148
+#: ../functions.php:139
 msgid "Footer Widget 1"
 msgstr ""
 
-#: ../functions.php:149 ../functions.php:159 ../functions.php:169
+#: ../functions.php:140 ../functions.php:150 ../functions.php:160
 msgid "Used for footer widget area"
 msgstr ""
 
-#: ../functions.php:158
+#: ../functions.php:149
 msgid "Footer Widget 2"
 msgstr ""
 
-#: ../functions.php:168
+#: ../functions.php:159
 msgid "Footer Widget 3"
 msgstr ""
 
@@ -349,69 +349,69 @@ msgstr ""
 msgid "Bold Italic"
 msgstr ""
 
-#: ../inc/extras.php:61
+#: ../inc/extras.php:63
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: ../inc/extras.php:121
+#: ../inc/extras.php:111
 msgid "Search..."
 msgstr ""
 
-#: ../inc/extras.php:142
+#: ../inc/extras.php:132
 msgid ""
 "<p>This post is password protected. To view it please enter your password "
 "below:</p>"
 msgstr ""
 
-#: ../inc/extras.php:143
+#: ../inc/extras.php:133
 msgid "Password:"
 msgstr ""
 
-#: ../inc/extras.php:146
+#: ../inc/extras.php:136
 msgid "Submit"
 msgstr ""
 
-#: ../inc/extras.php:190
+#: ../inc/extras.php:180
 msgid "Follow us on "
 msgstr ""
 
-#: ../inc/extras.php:301
+#: ../inc/extras.php:293
 #, php-format
 msgid "Theme by %1$s Powered by %2$s"
 msgstr ""
 
-#: ../inc/extras.php:405
+#: ../inc/extras.php:397
 msgid "Support and Documentation"
 msgstr ""
 
-#: ../inc/extras.php:411
+#: ../inc/extras.php:403
 msgid "Sparkling Documentation"
 msgstr ""
 
-#: ../inc/extras.php:412
+#: ../inc/extras.php:404
 msgid ""
 "The best way to contact us with <b>support questions</b> and <b>bug reports</"
 "b> is via"
 msgstr ""
 
-#: ../inc/extras.php:412
+#: ../inc/extras.php:404
 msgid "Colorlib support forum"
 msgstr ""
 
-#: ../inc/extras.php:413
+#: ../inc/extras.php:405
 msgid "If you like this theme, I'd appreciate any of the following:"
 msgstr ""
 
-#: ../inc/extras.php:415
+#: ../inc/extras.php:407
 msgid "Rate this Theme"
 msgstr ""
 
-#: ../inc/extras.php:416
+#: ../inc/extras.php:408
 msgid "Like on Facebook"
 msgstr ""
 
-#: ../inc/extras.php:417
+#: ../inc/extras.php:409
 msgid "Follow on Twitter"
 msgstr ""
 
