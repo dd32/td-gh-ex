@@ -3,10 +3,9 @@
  *  sticky gets priority
  *  @theme betilu
  */
-if (have_posts()) : while (have_posts()) : the_post(); ?>
-    <?php static $count = 1; 
-    if ($count == "2" ) { break; }
-        else { ?>
+//$i = 0; while (have_posts() && $i < 1) : the_post();
+    //$count_posts = wp_count_posts()->publish; static $count_posts = 1; 
+?> 
     <section class="content-area-lead">
         <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <header class="entry-header">
@@ -33,13 +32,8 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
                 <!-- <?php trackback_rdf(); ?> -->
                     <?php comments_template(); ?>
     </section><!-- ends content-area-lead -->
-    <?php $count++; } ?>
-    <?php endwhile; ?>
-        <?php else : ?>
-            <section class="content-area">
-                <p><?php _e( 'No posts matched your criteria.', 'betilu' ); ?></p>
-            </section>            
-    <?php endif; ?>
+
+     
         <aside class="post-right">
             <?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
                 <?php dynamic_sidebar( 'sidebar-2' ); ?>

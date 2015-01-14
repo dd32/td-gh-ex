@@ -10,13 +10,12 @@
 </head>
 <body <?php body_class(); ?>>
 <div id="main">
-    <nav class="toprow" role="navigation">
-        <?php wp_nav_menu( array(
-            'fallback_cb' => '__return_false',
-            'theme_location' => 'secondary',
-            'depth'           => 1, 
-            )); ?>
-    </nav>
+    <?php if ( has_nav_menu( 'secondary' ) ) {
+    echo '<nav class="toprow" role="navigation">';
+    wp_nav_menu( array( 'fallback_cb' => '__return_false', 'theme_location' => 'secondary', 'depth' => 1, 
+    ) ); 
+    echo '</nav>'; } ?>
+
         <header id="masthead" class="site-header" role="banner">
             <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>/"><?php bloginfo('name'); ?></a></h1>
 	        <h2 class="site-description"><?php bloginfo('description'); ?></h2>	

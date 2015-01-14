@@ -7,11 +7,16 @@ Author: Larry Judd Oliver - tradesouthwest.com
 * All default images GPL2 License
 
 === About ===
--! Lead article page must have at least three posts to use front page - home.php template.
--! The content for each new page of posts will show the tenth article in progression of pagination as the lead-article in top lead-article box. You can create a feature article for the lead-article box by changing the post type and assigning it to that custom loop in the content-lead.php template.
+-! Setting the number of posts to show on your home page is the most important part of getting a even number of posts to show on the home page. Set to multiples of 4.
+-! Lead article page will show the latest post in top box of front page - home.php template.
+-! The content for each new page of posts will show without the lead article in pagination.
 -! Note that top row menu area does NOT SUPPORT DROP-DOWN MENUS! This is a static inline menu only.
 
 == Change Log ==
+= 1.8 =
+* fixed loop count for first post in top lead article box display progression
+* added conditional statement for secondary menu
+* changed url of theme
 = 1.7 =
 * fixed javascript name of html5shiv
 = 1.6 =
