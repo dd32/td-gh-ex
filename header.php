@@ -23,7 +23,7 @@
 	
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><span class="screen-reader-text"><?php _e( 'Primary Menu', 'miranda' ); ?></span></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'header', 'container' => 'div', 'container_id' => 'header-menu', 'fallback_cb' => false, 'depth'=>2 ) );  ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'header', 'fallback_cb' => false, 'depth'=>2 ) );  ?>
 		</nav><!-- #site-navigation -->
 		
 		<?php if ( is_home() || is_front_page() ) {?>

@@ -21,11 +21,11 @@ function miranda_paging_nav() {
 		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'miranda' ); ?></h1>
 		<div class="nav-links">
 			<?php if ( get_next_posts_link() ) : ?>
-				<?php next_posts_link( '<span class="nav-previous">' . __( 'Older posts', 'miranda' ) . '</span>' ); ?>
+			<div class="nav-previous"><?php next_posts_link( __( 'Older posts', 'miranda' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-				<?php previous_posts_link( '<span class="nav-next">' . __( 'Newer posts', 'miranda' ) . '</span>' ); ?>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts', 'miranda' ) ); ?></div>
 			<?php endif; ?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -50,8 +50,8 @@ function miranda_post_nav() {
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'miranda' ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '%link', '<span class="nav-previous">' . _x( '%title','Previous post link', 'miranda' ) . '</span>' );
-				next_post_link( '%link' , '<span class="nav-next">' . _x( '%title','Next post link','miranda' ) . '</span>' );
+				previous_post_link( '<div class="nav-previous">%link</div>', '%title' );
+				next_post_link( '<div class="nav-next">%link</div>', '%title' );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -244,18 +244,18 @@ add_action( 'save_post',     'miranda_category_transient_flusher' );
 function miranda_breadcrumbs(){
 	if ( get_theme_mod( 'miranda_breadcrumb' ) <> ''){
 		?>
-			<div class="crumbs"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e('Home', 'miranda');?></a>
+			<div class="crumbs" aria-label="breadcrumb" role="navigation"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e('Home', 'miranda');?></a>
 			<?php
 				if ( count( get_the_category() ) ) : 
 					$miranda_category = get_the_category(); 
 						if($miranda_category[0]){
-							echo '<i>/</i>  ';
+							echo ' &#x279c;  ';
 							echo '<a href="'.get_category_link($miranda_category[0]->term_id ).'">'.$miranda_category[0]->cat_name.'</a>';
 						}
 				endif;
-				echo ' <i>/</i>  ';
+				echo ' &#x279c;;  ';
 				?>
-				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+				<?php the_title(); ?>
 			</div>
 		<?php
 	}

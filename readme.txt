@@ -4,7 +4,7 @@ Tags: light, white, pink, threaded-comments, custom-menu, sticky-post, translati
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Copyright 2014 Carolina Nymark
+Copyright 2014-2015 Carolina Nymark
 
 = Description ==
 Miranda is an accessible and responsive two column theme with two menus and a flexible sidebar for all your widgets.
@@ -19,6 +19,12 @@ Miranda is an accessible and responsive two column theme with two menus and a fl
 Please note that changing the colours can impact the accessibility of the theme.
 
 If you have any questions or suggestions for this theme, please visit http://wordpress.org/support/theme/miranda.
+
+== Change log ==
+Version: 1.1
+Updated menu and realted javascript
+Updated post navigation
+
 
 
 == Folders included in this theme ==
