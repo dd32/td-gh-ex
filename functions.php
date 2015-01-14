@@ -33,6 +33,14 @@ function keratin_setup() {
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
+	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
+	add_theme_support( 'title-tag' );
+
 	// Enable support for Post Thumbnails on posts and pages.
 	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'keratin-featured-image',         1576, 1182, true );
@@ -93,9 +101,6 @@ function keratin_scripts() {
 	/**
 	 * Enqueue JS files
 	 */
-
-	// jQuery
-	wp_enqueue_script( 'jquery' );
 
 	// Masonry
 	wp_enqueue_script( 'masonry' );

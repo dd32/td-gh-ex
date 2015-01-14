@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Keratin 1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2014-12-04 22:26+0500\n"
-"PO-Revision-Date: 2014-12-04 22:27+0500\n"
+"POT-Creation-Date: 2015-01-15 00:06+0500\n"
+"PO-Revision-Date: 2015-01-15 00:07+0500\n"
 "Last-Translator: ThemeCot <themecot@gmail.com>\n"
 "Language-Team: ThemeCot <themecot@gmail.com>\n"
 "Language: en_US\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.7\n"
+"X-Generator: Poedit 1.7.3\n"
 "X-Poedit-KeywordsList: __;_e;_x;_ex;_nx;esc_attr_x;esc_html_e\n"
 "X-Poedit-Basepath: /Applications/MAMP/htdocs/wporg/wp-content/themes/"
 "keratin/\n"
@@ -253,11 +253,11 @@ msgstr ""
 msgid "Featured"
 msgstr ""
 
-#: functions.php:43 header.php:56
+#: functions.php:51 header.php:55
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:77
+#: functions.php:85
 msgid "Main Sidebar"
 msgstr ""
 
@@ -335,7 +335,7 @@ msgstr ""
 msgid "Powered by"
 msgstr ""
 
-#: inc/extras.php:238
+#: inc/extras.php:239
 #, php-format
 msgid "Page %s"
 msgstr ""
