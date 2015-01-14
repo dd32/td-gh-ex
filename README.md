@@ -82,6 +82,9 @@ Featured Images look best at 732 pixels wide or larger.
 
 
 = Changelog =
+### Version 1.0.7
+- Added unminified version of 'html5.js' file
+
 ### Version 1.0.6
 - Modified 404 page hard-coded string and added unminified version of 'jquery.appear.js' file
 
