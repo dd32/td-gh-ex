@@ -60,6 +60,9 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.35
+* Yet another new translation Language added(Portuguese)
+
 Version 2.34
 * New translation Language added(Russian)
 
