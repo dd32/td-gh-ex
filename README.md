@@ -58,3 +58,6 @@ Version 1.1.0
 
 Version 1.1.1
 1. Calendar Widget anchors in footer doesn't highlight. Fixed.
+
+Version 1.1.2
+1. Fix for posted on date. v.1.1.1 showed modified date rather than published. Fixed.
