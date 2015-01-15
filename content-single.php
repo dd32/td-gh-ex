@@ -13,11 +13,11 @@
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
-	<?php if ( has_post_thumbnail() ) : ?>
+	<?php /* if ( has_post_thumbnail() ) : ?>
 	<div class="entry-thumbnail thumbnailSingle">
 		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 	</div>
-	<?php endif; ?>
+	<?php endif;*/ ?>
 
 	<div class="entry-content">
 		<?php the_content(); ?>
