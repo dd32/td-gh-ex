@@ -28,7 +28,7 @@
 function enrichmg_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'enrichmg_custom_header_args', array(
 		'default-image'          => '',
-		'default-text-color'     => '000',
+		'default-text-color'     => '#000',
 		'width'                  => 375,
 		'height'                 => 60,
 		'flex-height'            => true,
@@ -50,8 +50,8 @@ function enrichmg_header_style() {
 
 	// If no custom options for text are set, let's bail
 	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
-	/*if ( HEADER_TEXTCOLOR == $header_text_color )
-		return; */
+//	if ( HEADER_TEXTCOLOR == $header_text_color )
+//		return; 
 
 	// If we get this far, we have custom styles. Let's do this.
 	?>

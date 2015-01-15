@@ -20,6 +20,7 @@ function enrichmg_setup() {
 	 * If you're building a theme based on enrichmg, use a find and replace
 	 * to change 'enrichmg' to the name of your theme in all the template files
 	 */
+	
 	load_theme_textdomain( 'enrichmg', get_template_directory() . '/languages' );
 
 	/**
@@ -52,12 +53,14 @@ function enrichmg_setup() {
 	 * Setup the WordPress core custom background feature.
 	 */
   
-  $args = array (
-    		'default-color' => 'dd3333',
-				'default-image' => '',
-	);
-  
-	add_theme_support( 'custom-background', $args );
+
+	add_theme_support( 'custom-background', apply_filters( 'enrichmg_custom_background_args', array(
+		'default-color' => 'dd3333',
+		'default-image' => '',
+	) ) );
+	
+	/* New title-tag support */
+	add_theme_support( 'title-tag' );
   
   if ( ! isset( $content_width ) )
 	$content_width = 640;
@@ -128,15 +131,15 @@ function upload_columns($columns) {
 				$title =_draft_or_post_title($post->post_parent);
 			}
 			?>
-			<strong><a href="<?php echo get_edit_post_link( $post->post_parent ); ?>"><?php echo $title ?></a></strong>, <?php echo get_the_time(__('Y/m/d')); ?>
+			<strong><a href="<?php echo get_edit_post_link( $post->post_parent ); ?>"><?php echo $title ?></a></strong>, <?php echo get_the_time(__('Y/m/d', 'enrichmg')); ?>
 			<br />
-			<a class="hide-if-no-js" onclick="findPosts.open('media[]','<?php echo $post->ID ?>');return false;" href="#the-list"><?php _e('Re-Attach'); ?></a></td>
+			<a class="hide-if-no-js" onclick="findPosts.open('media[]','<?php echo $post->ID ?>');return false;" href="#the-list"><?php _e('Re-Attach', 'enrichmg'); ?></a></td>
 
 			<?php
 		} else {
 			?>
-			<?php _e('(Unattached)'); ?><br />
-			<a class="hide-if-no-js" onclick="findPosts.open('media[]','<?php echo $post->ID ?>');return false;" href="#the-list"><?php _e('Attach'); ?></a>
+			<?php _e('(Unattached)', 'enrichmg'); ?><br />
+			<a class="hide-if-no-js" onclick="findPosts.open('media[]','<?php echo $post->ID ?>');return false;" href="#the-list"><?php _e('Attach', 'enrichmg'); ?></a>
 			<?php
 		}
 

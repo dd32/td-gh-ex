@@ -29,9 +29,9 @@ get_header();
 								esc_url( get_permalink( $post->post_parent ) ),
 								esc_attr( strip_tags( get_the_title( $post->post_parent ) ) ),
 								get_the_title( $post->post_parent )
-							);
-
-							edit_post_link( __( 'Edit', 'enrichmg' ), '<span class="edit-link">', '</span>' );
+							); ?>
+                            &nbsp;
+                            <?php edit_post_link( __( 'Edit', 'enrichmg' ), '<span class="edit-link">', '</span>' );
 						?>
 					</div><!-- .entry-meta -->
 
@@ -53,7 +53,7 @@ get_header();
 						</div><!-- .entry-caption -->
 						<?php endif; ?>
 					</div><!-- .entry-attachment -->
-
+                    <div class="attachment-description">
 					<?php
 						the_content();
 						wp_link_pages( array(
@@ -61,6 +61,7 @@ get_header();
 							'after'  => '</div>',
 						) );
 					?>
+                    </div> <!-- .attachment-description -->
 				</div><!-- .entry-content -->
 
 				<footer class="entry-meta">
@@ -91,4 +92,5 @@ get_header();
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>
