@@ -154,22 +154,12 @@
 					<div  class="row">
 						<div class="col-lg-6">
 							<div class="copyright">
-								&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>. 
-								<!--  -->
-								<?php if ( of_get_option( 'footer_copyright' ) ) { ?>
-									<?php echo of_get_option( 'footer_copyright' ); ?>
-								<?php } ?>
+								&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="pull-right">
-								<ul class="nav nav-pills footer-social">
-									<li><a title="Facebook" href="<?php if(of_get_option('facebook_url')) echo of_get_option('facebook_url'); ?>"><i class="fa fa-facebook"></i></a></li>
-									<li><a title="Google Plus" href="<?php if(of_get_option('googleplus_url')) echo of_get_option('googleplus_url'); ?>"><i class="fa fa-google-plus"></i></a></li>
-									<li><a title="LinkedIn" href="<?php if(of_get_option('linkedin_url')) echo of_get_option('linkedin_url'); ?>"><i class="fa fa-linkedin"></i></a></li>
-									<li><a title="Twitter" href="<?php if(of_get_option('twitter_url')) echo of_get_option('twitter_url'); ?>"><i class="fa fa-twitter"></i></a></li>
-									<li><a title="YouTube" href="<?php if(of_get_option('youtube_url')) echo of_get_option('youtube_url'); ?>"><i class="fa fa-youtube"></i></a></li>
-								</ul>
+							
 							</div>
 						</div>
 					</div>
