@@ -544,7 +544,7 @@ function accesspresslite_theme_options_page() {
 					<tr><td colspan="2" class="seperator">&nbsp;</td></tr>
 
 					<tr>
-						<th><label for="show_fontawesome"><?php _e('Show Font Awesome icon for Featured Post?','accesspresslite'); ?><label></th>
+						<th><label for="show_fontawesome"><?php _e('Show Font Awesome icon for Featured Post?','accesspresslite'); ?></label></th>
 						<td>
 							<input type="checkbox" id="show_fontawesome" name="accesspresslite_options[show_fontawesome]" value="1" <?php checked( true, $settings['show_fontawesome'] ); ?> />
 							<label for="show_fontawesome"><?php _e('Check to enable','accesspresslite'); ?></label><br />
@@ -621,7 +621,7 @@ function accesspresslite_theme_options_page() {
                     
                     <tr>
                         <td colspan="2">
-                        <em><?php _e('You can replace the gallery and testimonial section of the home page with custom widget','accesspresslite'); ?> <a href="<?php echo admin_url('/widgets.php') ?>"><?php _e('here','accesspresslite'); ?></em></a>
+                        <em><?php _e('You can replace the gallery and testimonial section of the home page with custom widget','accesspresslite'); ?> <a href="<?php echo admin_url('/widgets.php') ?>"><?php _e('here','accesspresslite'); ?></a></em>
                         </td>
                     </tr>
 
@@ -1048,14 +1048,14 @@ function accesspresslite_theme_options_page() {
 					<tr><th scope="row"><label for="google_map"><?php _e('Google Map Iframe','accesspresslite'); ?></label></th>
 						<td>
 						<textarea id="google_map" name="accesspresslite_options[google_map]" rows="5" cols="40"><?php echo $settings['google_map']; ?></textarea>
-						<p class="f13"><em><?php _e('Enter the Iframe of the google map to show in last column of the footer of the home page.<br />Leave Blank if you don\'t want to show','accesspresslite'); ?><em></p>
+						<p class="f13"><em><?php _e('Enter the Iframe of the google map to show in last column of the footer of the home page.<br />Leave Blank if you don\'t want to show','accesspresslite'); ?></em></p>
 						</td>
 					</tr>
 
 					<tr><th scope="row"><label for="contact_address"><?php _e('Contact Address','accesspresslite'); ?></label></th>
 						<td>
 						<textarea id="contact_address" name="accesspresslite_options[contact_address]" rows="5" cols="40"><?php echo $settings['contact_address']; ?></textarea>
-						<p class="f13"><em><?php _e('Enter the Contact Address to show below the google map<br />Leave Blank if you don\'t want to show','accesspresslite'); ?><em></p>
+						<p class="f13"><em><?php _e('Enter the Contact Address to show below the google map<br />Leave Blank if you don\'t want to show','accesspresslite'); ?></em></p>
 						</td>
 					</tr>
 
