@@ -57,10 +57,10 @@
                 ?>
             <div class="clearfix"></div>
                         <nav id="nav-single"> <span class="nav-previous">
-                                <?php next_posts_link('Next Post'); ?>
-                            </span> <span class="nav-next">
-                        <?php previous_posts_link('Previous Post'); ?>
-                            </span> </nav>
+                            <?php next_posts_link(); ?>
+                        </span> <span class="nav-next">
+<?php previous_posts_link(); ?>
+                        </span> </nav>
            <div class="clearfix"></div>
                 </div>
                 <div class="col-md-3">

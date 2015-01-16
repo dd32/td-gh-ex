@@ -30,7 +30,7 @@ get_header(); ?>
                                 
                                 
                                 
-                                    <h1 class="article-page-head"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+                                    <h1 class="article-page-head"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
  <ul class="meta">
                     <li><i class="fa fa-clock-o blogin-color"></i> <?php
                         $archive_year = get_the_time('Y');
@@ -44,9 +44,11 @@ get_header(); ?>
                         ?>"><?php echo get_the_time('m, d, Y') ?></a></li>
                     <li><i class="fa fa-user blogin-color"></i>&nbsp;<?php the_author_posts_link(); ?></li>
                     <li><i class="fa fa-folder-open blogin-color"></i>&nbsp;<?php the_category(', '); ?></li>
-                    <li class="comments"><i class="fa fa-comment blogin-color"></i> <?php comments_popup_link('No Comments.',
-                                'Comment: 1',
-                                'Comments: %'); ?></li>
+                   <li class="comments"><i class="fa fa-comment blogin-color"></i> <?php comments_popup_link( __( 'No Comments.', 'ariwoo' ),
+                                 __( 'Comment: 1', 'ariwoo' ),
+                                __( 'Comments: %', 'ariwoo' )); ?></li>
+                   
+                     
                 </ul>
 
                                     <?php the_excerpt(); ?>
@@ -55,9 +57,9 @@ get_header(); ?>
                         <?php endwhile; ?>
                     <div class="clearfix"></div>
                     <nav id="nav-single"> <span class="nav-previous">
-                            <?php next_posts_link('Next Post'); ?>
+                            <?php next_posts_link(); ?>
                         </span> <span class="nav-next">
-<?php previous_posts_link('Previous Post'); ?>
+<?php previous_posts_link(); ?>
                         </span> </nav>
                     <div class="clearfix"></div>
                     <?php comments_template(); ?>

@@ -9,74 +9,7 @@ require_once get_template_directory() . '/theme-option/ariniothemes.php';
 if ( ! isset( $content_width ) ) {
 	$content_width = 900;
 }
-// Adding breadcrumbs
-function ariwoo_breadcrumbs() {
- echo '<li><a href="';
- //echo get_option('home');
- echo home_url(); 
- echo '">'. _x('Home','ariwoo');
- echo "</a></li>";
- 
-if (is_attachment()) {
-           echo "<li class='active'>". _x('attachment:','ariwoo');
-    
-    
-   
-   echo "</li>";
-        }
- 
-  if (is_category() || is_single()) {
-   if(is_category())
-   {
-   echo "<li class='active'>". _x('Category By:','ariwoo');
-   the_category(' &bull; ');
-   echo "</li>";
-   }
-   
-    if (is_single()) {
-   echo "<li>";
-   $category = get_the_category();
-   echo '<a rel="category" title="View all posts in '.$category[0]->cat_name.'" href="'.site_url().'/?cat='.$category[0]->term_id.'">'.$category[0]->cat_name.'</a>';
-   echo "</li>";
-     echo "<li class='active'>";
-     the_title();
-     echo "</li>";
-    }
-        } elseif (is_page()) {
-            echo "<li class='active'>";
-            echo the_title();
-   echo "</li>";
-  } elseif (is_search()) {
-            echo "<li class='active'>". _x('Search Results for...','ariwoo');
-   echo '"<em>';
-   echo the_search_query();
-   echo '</em>"';
-   echo "</li>";
-        } elseif (is_tag()) { echo "<li class='active'>"; single_tag_title(); echo "</li>";}
-		 elseif (is_day()) {echo"<li class='active'>". _x('Archive for ','ariwoo'); the_time('F jS, Y'); echo'</li>';}
-    elseif (is_month()) {echo"<li class='active'>". _x('Archive for ','ariwoo'); the_time('F, Y'); echo'</li>';}
-    elseif (is_year()) {echo"<li class='active'>". _x('Archive for ','ariwoo'); the_time('Y'); echo'</li>';}
-    elseif (is_author()) {echo"<li class='active'>". _x('Author Archive for ','ariwoo'); printf(__(' %s', 'ariwoo'), "<a class='url fn n' href='" . get_author_posts_url(get_the_author_meta('ID')) . "' title='" . esc_attr(get_the_author()) . "' rel='me'>" . get_the_author() . "</a>"); echo'</li>';}
-	elseif (!is_single() && !is_page() && get_post_type() != 'post') {
-        $post_type = get_post_type_object(get_post_type());
-        //echo $before . $post_type->labels->singular_name . $after;
-        echo $before . '<li class="active">'. _x('Search Results for "','ariwoo').'' . get_search_query() . '"' . $after; echo "</li>";
-    }
-    }
-//fetch title
-function ariwoo_title() {
-	  if (is_category() || is_single())
-	  {
-	   if(is_category())
-		  the_category();
-	   if (is_single())
-		 the_title();
-	   }
-	   elseif (is_page()) 
-		  the_title();
-	   elseif (is_search())
-		   echo the_search_query();
-    }
+
 /* ariwoo Theme Starts */
 if ( ! function_exists( 'ariwoo_setup' ) ) :
 function ariwoo_setup() {
@@ -112,6 +45,95 @@ function ariwoo_setup() {
 }
 endif; // ariwoo_setup
 add_action( 'after_setup_theme', 'ariwoo_setup' );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Adding breadcrumbs
+function ariwoo_breadcrumbs() {
+ echo '<li><a href="';
+ //echo get_option('home');
+ echo home_url(); 
+ echo '">'. __('Home','ariwoo');
+ echo "</a></li>";
+ 
+if (is_attachment()) {
+           echo "<li class='active'>". __('attachment:','ariwoo');
+    
+    
+   
+   echo "</li>";
+        }
+ 
+  if (is_category() || is_single()) {
+   if(is_category())
+   {
+   echo "<li class='active'>". __('Category By:','ariwoo');
+   the_category(' &bull; ');
+   echo "</li>";
+   }
+   
+    if (is_single()) {
+   echo "<li>";
+   $category = get_the_category();
+   echo '<a rel="category" title="View all posts in '.$category[0]->cat_name.'" href="'.site_url().'/?cat='.$category[0]->term_id.'">'.$category[0]->cat_name.'</a>';
+   echo "</li>";
+     echo "<li class='active'>";
+     the_title();
+     echo "</li>";
+    }
+        } elseif (is_page()) {
+            echo "<li class='active'>";
+            echo the_title();
+   echo "</li>";
+  } elseif (is_search()) {
+            echo "<li class='active'>". __('Search Results for...','ariwoo');
+   echo '"<em>';
+   echo the_search_query();
+   echo '</em>"';
+   echo "</li>";
+        } elseif (is_tag()) { echo "<li class='active'>"; single_tag_title(); echo "</li>";}
+		 elseif (is_day()) {echo"<li class='active'>". __('Archive for ','ariwoo'); the_time('F jS, Y'); echo'</li>';}
+    elseif (is_month()) {echo"<li class='active'>". __('Archive for ','ariwoo'); the_time('F, Y'); echo'</li>';}
+    elseif (is_year()) {echo"<li class='active'>". __('Archive for ','ariwoo'); the_time('Y'); echo'</li>';}
+    elseif (is_author()) {echo"<li class='active'>". __('Author Archive for ','ariwoo'); printf(__(' %s', 'ariwoo'), "<a class='url fn n' href='" . get_author_posts_url(get_the_author_meta('ID')) . "' title='" . esc_attr(get_the_author()) . "' rel='me'>" . get_the_author() . "</a>"); echo'</li>';}
+	elseif (!is_single() && !is_page() && get_post_type() != 'post') {
+        $post_type = get_post_type_object(get_post_type());
+        //echo $before . $post_type->labels->singular_name . $after;
+        echo $before . '<li class="active">'. __('Search Results for "','ariwoo').'' . get_search_query() . '"' . $after; echo "</li>";
+    }
+    }
+//fetch title
+function ariwoo_title() {
+	  if (is_category() || is_single())
+	  {
+	   if(is_category())
+		  the_category();
+	   if (is_single())
+		 the_title();
+	   }
+	   elseif (is_page()) 
+		  the_title();
+	   elseif (is_search())
+		   echo the_search_query();
+    }
 
  
 /**
@@ -250,18 +272,20 @@ add_filter( 'excerpt_more', 'ariwoo_read_more' );
 function ariwoo_scripts_styles() {
  if (!is_admin()) {
 	 wp_enqueue_style('bootstrap', get_template_directory_uri() . '/styles/bootstrap.min.css');
-          
+          wp_enqueue_style( 'ariwoo-basic-style', get_stylesheet_uri() );
 		   wp_enqueue_style( 'ari-fonts1', '//fonts.googleapis.com/css?family=Source+Sans+Pro' );
 	        wp_enqueue_style( 'ari-fonts2', '//fonts.googleapis.com/css?family=Open+Sans' );
 			 wp_enqueue_style( 'ari-fonts3', '//fonts.googleapis.com/css?family=Abel' );
 			wp_enqueue_style( 'ari-fonts4', '//fonts.googleapis.com/css?family=Open+Sans' );
+			wp_enqueue_style('font-awesome', get_template_directory_uri() . '/styles/font-awesome.css');
 			wp_enqueue_script( 'nav', get_template_directory_uri() . '/scripts/jquery.nav.js',array('jquery'),false,true);
 		   
 		  wp_enqueue_script( 'validate', get_template_directory_uri() . '/styles/jquery.validate.min.js',array('jquery'),false,true);
 		
 		  wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/scripts/modernizr.js',array('jquery'),false,true);
 		  wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/styles/bootstrap.min.js',array('jquery'),false,true);
-		  wp_enqueue_script( 'custom', get_template_directory_uri() . '/scripts/custom.js',array('jquery'),false,true);
+		  wp_enqueue_script( 'scrolltotop', get_template_directory_uri() . '/scripts/scrolltotop.js',array('jquery'),false,true);
+		  wp_enqueue_script( 'slider', get_template_directory_uri() . '/scripts/slider.js',array('jquery'),false,true);
 	 } elseif (is_admin()) {
         
     }
@@ -295,7 +319,7 @@ function ariwoo_comment_textarea_field($comment_field) {
  
     $comment_field = 
          '<div class="col-md-12">
-            <textarea class="form-control" required placeholder="'. _x( 'Enter Your Comments', 'ariwoo' ).'" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
+            <textarea class="form-control" required placeholder="'. __( 'Enter Your Comments', 'ariwoo' ).'" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
         </div>';
  
     return $comment_field;
@@ -315,14 +339,32 @@ add_filter('comment_text', 'ariwoo_wrap_comment_text');
 
 
 
- add_action('admin_menu', 'ariwoo_admin_menu');
- 
-/**
-* add external link to Tools area
-*/
-function ariwoo_admin_menu() {
-    global $submenu;
-    $url = 'http://arinio.com/';
-    $submenu['options-general.php'][] = array('Arinio More', 'manage_options', $url);
+if ( ! function_exists( 'ariwoo_ie_js_header' ) ) {
+	function ariwoo_ie_js_header () {
+		echo '<!--[if lt IE 9]>'. "\n";
+		echo '<script src="' . esc_url( get_template_directory_uri() . '/scripts/html5.js' ) . '"></script>'. "\n";
+		echo '<script src="' . esc_url( get_template_directory_uri() . '/scripts/selectivizr.js' ) . '"></script>'. "\n";
+		echo '<![endif]-->'. "\n";
+	}
+	
 }
+add_action( 'wp_head', 'ariwoo_ie_js_header' );
+/*  IE js footer
+/* ------------------------------------ */
+if ( ! function_exists( 'ariwoo_ie_js_footer' ) ) {
+	function ariwoo_ie_js_footer () {
+		echo '<!--[if lt IE 9]>'. "\n";
+		echo '<script src="' . esc_url( get_template_directory_uri() . '/scripts/respond.js' ) . '"></script>'. "\n";
+		echo '<![endif]-->'. "\n";
+	}
+	
+}
+add_action( 'wp_footer', 'ariwoo_ie_js_footer', 20 );	
+
+
+
+
+
+
+
 

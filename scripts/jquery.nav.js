@@ -221,3 +221,15 @@
 	};
 
 })( jQuery, window , document );
+
+
+
+
+
+
+jQuery(document).ready(function() {
+			jQuery('#nav').onePageNav();
+		});
+
+
+

@@ -4,56 +4,29 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?php wp_title( '|', true, 'right' ); ?></title>
-<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="profile" href="<?php echo esc_url( 'http://gmpg.org/xfn/11' ); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-
-<?php $options = get_option( 'arinio_theme_options' ); 
-if($options['metak'] != '') {
-?>
- <meta name="keywords" content="<?php echo $options['metak'];?>" />
- 
-<?php } ?>
-<?php if($options['metad'] != '') {
-?>
- <meta name="description" content="<?php echo $options['metad'];?>" />
- 
-<?php } ?>
-<?php if($options['metaa'] != '') {
-?>
- <meta name="author" content="<?php echo $options['metaa'];?>" />
- 
-<?php } ?>
 
 
 <?php $options = get_option( 'arinio_theme_options' ); 
 if($options['fevicon'] != '') {
 ?>
-<link rel="shortcut icon" href="<?php echo $options['fevicon'];?>">
+<link rel="shortcut icon" href="<?php echo esc_url_raw($options['fevicon']);?>">
 <?php } ?>
-<!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
-<!--[if lt IE 9]>
-      <script src="<?php echo get_template_directory_uri(); ?>/js/respond.min.js"></script>
-    <![endif]-->
+
  
    <?php wp_head(); ?> 
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
+ 
 
  
     
  
-<?php if($options['trackingc'] != '') {
-?>
- 
- 
-<?php echo $options['trackingc'];?>
- 
-<?php } ?>
 
 <?php if($options['customcss'] != '') {
 ?>
  
   <style type="text/css">
-<?php echo $options['customcss'];?>
+<?php echo esc_attr($options['customcss']);?>
 </style> 
 <?php } ?>
   

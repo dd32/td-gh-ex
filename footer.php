@@ -57,7 +57,7 @@
                    
                     <li>
                         <i class="fa fa-home icon" style="margin-bottom:50px"></i>
-                        <span class="field">Address:</span>
+                        <span class="field"><?php _e( 'Address:', 'ariwoo' ); ?></span>
                         <br />
                        <?php if($options['footert3'] != '') { echo esc_attr($options['footert3']); }else{ ?> <?php _e( 'ARINIO GROUP <br /> WZ-290,Plot No.-8, Commodo <br /> Aenean Cursus-100002', 'ariwoo' ); ?> <?php } ?> 
                     </li>
@@ -89,10 +89,10 @@
             <div class="row">
                 <div class="col-md-12">
                     <p class="copyright">
-                     <?php  $options = get_option( 'arinio_theme_options' );  if($options['footertext'] != '') { echo $options['footertext']; }else{?> <?php _e( ' Copyright &#169; 2014 Your Company. All Rights Reserved.', 'ariwoo' ); ?> <?php } ?>  
-                    </p>
-
-                  
+                     <?php  $options = get_option( 'arinio_theme_options' );  if($options['footertext'] != '') { echo $options['footertext']; }else{?> <?php _e( ' Copyright &#169; 2015 Your Company. All Rights Reserved.', 'ariwoo' ); ?> <?php } ?>  
+                    </p><p>
+<?php _e('Powered by','ariwoo'); ?> <a href="<?php echo esc_url( 'http://wordpress.org' ); ?>" rel="nofollow"><?php _e('WordPress','ariwoo'); ?></a>. <?php _e('Theme by','ariwoo'); ?> <a href="<?php echo esc_url( 'http://arinio.com' ); ?>" rel="nofollow"><?php _e('Arinio','ariwoo'); ?></a>
+                  </p>
                 </div>
             </div>
             <br />

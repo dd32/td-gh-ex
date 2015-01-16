@@ -93,12 +93,12 @@ function arinio_framework_page(){
 ?>
 
 <div class="tnotify">
-        <h1>Get Ariwoo PRO Theme!  Just $21</h1>
-        <p style="font-size:15px; line-height: 20px;">You are using the Ariwoo, Free Version of Ariwoo Pro Theme. Upgrade to Pro for extra features like Home Page Unlimited Slider, Work Gallery, Team section, Client Section and many more Page Templates, Social Link Section, Life time theme support and much more.</p>
-        <a href="http://arinio.com/ariwoo-responsive-multipurpose-wordpress-theme/" target="blank">Upgrade to Ariwoo PRO Theme here >></a>
+        <h1><?php _e( 'Get Ariwoo PRO Theme!  Just $21', 'ariwoo' ); ?></h1>
+        <p style="font-size:15px; line-height: 20px;"><?php _e( 'You are using the Ariwoo, Free Version of Ariwoo Pro Theme. Upgrade to Pro for extra features like Home Page Unlimited Slider, Work Gallery, Team section, Client Section and many more Page Templates, Social Link Section, Life time theme support and much more.', 'ariwoo' ); ?></p>
+        <a href="<?php echo esc_url( 'http://arinio.com/ariwoo-responsive-multipurpose-wordpress-theme/' ); ?>" target="blank"><?php _e( 'Upgrade to Ariwoo PRO Theme here >>', 'ariwoo' ); ?></a>
     </div>
 <div id="arinio_framework-wrap" class="wrap">
-  <h2 class="nav-tab-wrapper"> <a id="options-group-1-tab" class="nav-tab basicsettings-tab" title="Basic Settings" href="#options-group-1">Basic Settings</a> <a id="options-group-3-tab" class="nav-tab basicsettings-tab" title="Basic Settings" href="#options-group-3">Slider Settings</a> <a id="options-group-4-tab" class="nav-tab socialsettings-tab" title="Services Settings" href="#options-group-4">Services Settings</a>  <a id="options-group-5-tab" class="nav-tab socialsettings-tab" title="Work Settings" href="#options-group-5">About us Settings</a> <a id="options-group-7-tab" class="nav-tab socialsettings-tab" title="Work Settings" href="#options-group-7">Contact Settings</a> <a id="options-group-9-tab" class="nav-tab Footer-tab" title="Footer Settings" href="#options-group-9">Footer Settings</a> </h2>
+  <h2 class="nav-tab-wrapper"> <a id="options-group-1-tab" class="nav-tab basicsettings-tab" title="" href="<?php echo esc_url( '#options-group-1' ); ?>"><?php _e( 'Basic Settings', 'ariwoo' ); ?></a> <a id="options-group-3-tab" class="nav-tab basicsettings-tab" title="" href="<?php echo esc_url( '#options-group-3' ); ?>"><?php _e( 'Slider Settings', 'ariwoo' ); ?></a> <a id="options-group-4-tab" class="nav-tab socialsettings-tab" title="" href="<?php echo esc_url( '#options-group-4' ); ?>"><?php _e( 'Services Settings', 'ariwoo' ); ?></a>  <a id="options-group-5-tab" class="nav-tab socialsettings-tab" title="" href="<?php echo esc_url( '#options-group-5' ); ?>"><?php _e( 'About us Settings', 'ariwoo' ); ?></a> <a id="options-group-7-tab" class="nav-tab socialsettings-tab" title="" href="<?php echo esc_url( '#options-group-7' ); ?>"><?php _e( 'Contact Settings', 'ariwoo' ); ?></a> <a id="options-group-9-tab" class="nav-tab Footer-tab" title="" href="<?php echo esc_url( '#options-group-9' ); ?>"><?php _e( 'Footer Settings', 'ariwoo' ); ?></a> </h2>
   <div id="arinio_framework-metabox" class="metabox-holder">
     <div id="arinios_framework" class="postbox"> 
     
@@ -116,7 +116,7 @@ function arinio_framework_page(){
             <div class="option">
               <div class="controls">
                 <input id="logo" class="upload" type="text" name="arinio_theme_options[logo]" 
-                            value="<?php echo $options['logo']; ?>" placeholder="<?php _e( 'No file chosen', 'ariwoo' ); ?>" />
+                            value="<?php echo esc_url_raw($options['logo']); ?>" placeholder="<?php _e( 'No file chosen', 'ariwoo' ); ?>" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e( 'Upload', 'ariwoo' ); ?>" />
                 <div class="screenshot" id="logo-image">
                   <?php if($options['logo'] != '') echo "<img src='".esc_url_raw($options['logo'])."' /><a class='remove-image'>"._e( 'Remove', 'ariwoo' )."</a>" ?>
@@ -130,7 +130,7 @@ function arinio_framework_page(){
             <div class="option">
               <div class="controls">
                 <input id="logo" class="upload" type="text" name="arinio_theme_options[fevicon]" 
-                            value="<?php echo $options['fevicon']; ?>" placeholder="<?php _e( 'No file chosen', 'ariwoo' ); ?>" />
+                            value="<?php echo esc_url_raw($options['fevicon']); ?>" placeholder="<?php _e( 'No file chosen', 'ariwoo' ); ?>" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e( 'Upload', 'ariwoo' ); ?>" />
                 <div class="screenshot" id="logo-image">
                   <?php if($options['fevicon'] != '') echo "<img src='".esc_url_raw($options['fevicon'])."' /><a class='remove-image'>"._e( 'Remove', 'ariwoo' )."</a>" ?>
@@ -212,7 +212,7 @@ function arinio_framework_page(){
             <h4 class="heading"><?php _e( 'Slide 1 Title', 'ariwoo' ); ?> </h4>
             <div class="option">
               <div class="controls">
-                <input id="slide1title" class="of-input" name="arinio_theme_options[slide1title]" size="30" type="text" value="<?php echo esc_attr($options['slide1title']); ?>" />
+                <input id="slide1title" class="of-input" name="arinio_theme_options[slide1title]" size="30" type="text" value="<?php  if(!empty($options['slide1title'])) { echo esc_attr($options['slide1title']); }?>" />
               </div>
               <div class="explain"><?php _e( 'Mention the Slide 1 Title   for Slider', 'ariwoo' ); ?>  </div>
             </div>
@@ -221,7 +221,7 @@ function arinio_framework_page(){
             <h4 class="heading"><?php _e( 'Slide 1 SubTitle', 'ariwoo' ); ?> </h4>
             <div class="option">
               <div class="controls">
-                <input id="slide1subtitle" class="of-input" name="arinio_theme_options[slide1subtitle]" size="30" type="text" value="<?php echo esc_attr($options['slide1subtitle']); ?>" />
+                <input id="slide1subtitle" class="of-input" name="arinio_theme_options[slide1subtitle]" size="30" type="text" value="<?php if(!empty($options['slide1subtitle'])) { echo esc_attr($options['slide1subtitle']);} ?>" />
               </div>
               <div class="explain"><?php _e( 'Mention the Slide 1 SubTitle  for Slider', 'ariwoo' ); ?>  </div>
             </div>
@@ -231,7 +231,7 @@ function arinio_framework_page(){
             <div class="option">
               <div class="controls">
                  
-                <textarea class="of-input" name="arinio_theme_options[slide1des]" id="slide1des" cols="6" rows="6"><?php echo esc_attr($options['slide1des']); ?></textarea>
+                <textarea class="of-input" name="arinio_theme_options[slide1des]" id="slide1des" cols="6" rows="6"><?php if(!empty($options['slide1des'])) { echo esc_attr($options['slide1des']); }?></textarea>
               </div>
               <div class="explain"><?php _e( 'Mention the Slide 1 Description   for Slider', 'ariwoo' ); ?>  </div>
             </div>
@@ -241,10 +241,10 @@ function arinio_framework_page(){
             <div class="option">
               <div class="controls">
                 <input id="logo" class="upload" type="text" name="arinio_theme_options[slide1image]" 
-                            value="<?php echo $options['slide1image']; ?>" placeholder="<?php _e( 'No file chosen', 'ariwoo' ); ?>" />
+                            value="<?php if(!empty($options['slide1image'])) { echo esc_url_raw($options['slide1image']);} ?>" placeholder="<?php _e( 'No file chosen', 'ariwoo' ); ?>" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e( 'Upload', 'ariwoo' ); ?>" />
                 <div class="screenshot" id="logo-image">
-                  <?php if($options['slide1image'] != '') echo "<img src='".esc_url_raw($options['slide1image'])."' /><a class='remove-image'>"._e( 'Remove', 'ariwoo' )."</a>" ?>
+                  <?php  if(!empty($options['slide1image']))  echo "<img src='".esc_url_raw($options['slide1image'])."' /><a class='remove-image'>"._e( 'Remove', 'ariwoo' )."</a>" ?>
                 </div>
               </div>
               <div class="explain"><?php _e( 'Upload a Image for your Slider.', 'ariwoo' ); ?> </div>
@@ -254,7 +254,7 @@ function arinio_framework_page(){
             <h4 class="heading"><?php _e( 'Slide 2 Title', 'ariwoo' ); ?> </h4>
             <div class="option">
               <div class="controls">
-                <input id="slide2title" class="of-input" name="arinio_theme_options[slide2title]" size="30" type="text" value="<?php echo esc_attr($options['slide2title']); ?>" />
+                <input id="slide2title" class="of-input" name="arinio_theme_options[slide2title]" size="30" type="text" value="<?php if(!empty($options['slide2title'])) {  echo esc_attr($options['slide2title']); } ?>" />
               </div>
               <div class="explain"><?php _e( 'Mention the Slide 2 Title   for Slider ', 'ariwoo' ); ?> </div>
             </div>
@@ -263,7 +263,7 @@ function arinio_framework_page(){
             <h4 class="heading"><?php _e( 'Slide 2 SubTitle', 'ariwoo' ); ?> </h4>
             <div class="option">
               <div class="controls">
-                <input id="slide2subtitle" class="of-input" name="arinio_theme_options[slide2subtitle]" size="30" type="text" value="<?php echo esc_attr($options['slide2subtitle']); ?>" />
+                <input id="slide2subtitle" class="of-input" name="arinio_theme_options[slide2subtitle]" size="30" type="text" value="<?php if(!empty($options['slide2subtitle'])) { echo esc_attr($options['slide2subtitle']);} ?>" />
               </div>
               <div class="explain"><?php _e( 'Mention the Slide 2 SubTitle  for Slider', 'ariwoo' ); ?>  </div>
             </div>
@@ -273,7 +273,7 @@ function arinio_framework_page(){
             <div class="option">
               <div class="controls">
                  
-                <textarea class="of-input" name="arinio_theme_options[slide2des]" id="slide1des" cols="6" rows="6"><?php echo esc_attr($options['slide2des']); ?></textarea>
+                <textarea class="of-input" name="arinio_theme_options[slide2des]" id="slide1des" cols="6" rows="6"><?php if(!empty($options['slide2des'])) { echo esc_attr($options['slide2des']); } ?></textarea>
               </div>
               <div class="explain"><?php _e( 'Mention the Slide 2 Description   for Slider', 'ariwoo' ); ?>  </div>
             </div>
@@ -283,10 +283,10 @@ function arinio_framework_page(){
             <div class="option">
               <div class="controls">
                 <input id="logo" class="upload" type="text" name="arinio_theme_options[slide2image]" 
-                            value="<?php echo $options['slide2image']; ?>" placeholder="<?php _e( 'No file chosen', 'ariwoo' ); ?>" />
+                            value="<?php if(!empty($options['slide2image'])) { echo esc_url_raw($options['slide2image']);} ?>" placeholder="<?php _e( 'No file chosen', 'ariwoo' ); ?>" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e( 'Upload', 'ariwoo' ); ?>" />
                 <div class="screenshot" id="logo-image">
-                  <?php if($options['slide2image'] != '') echo "<img src='".esc_url_raw($options['slide2image'])."' /><a class='remove-image'>"._e( 'Remove', 'ariwoo' )."</a>" ?>
+                  <?php if(!empty($options['slide2image'])) echo "<img src='".esc_url_raw($options['slide2image'])."' /><a class='remove-image'>"._e( 'Remove', 'ariwoo' )."</a>" ?>
                 </div>
               </div>
               <div class="explain"><?php _e( 'Upload a Image for your Slider.', 'ariwoo' ); ?> </div>
@@ -350,7 +350,7 @@ function arinio_framework_page(){
               <div class="controls">
                 <input id="icon1" class="of-input" name="arinio_theme_options[sicon1]" type="text" size="30" value="<?php echo esc_attr($options['sicon1']); ?>" />
               </div>
-              <div class="explain"><?php _e( 'Enter the CSS class of the icons you want to use on your site like: fa-desktop or fa-group. You can find a list of icon classes here', 'ariwoo' ); ?> <a href="http://fortawesome.github.io/Font-Awesome" target="_blank"><?php _e( 'Click here', 'ariwoo' ); ?></a></div>
+              <div class="explain"><?php _e( 'Enter the CSS class of the icons you want to use on your site like: fa-desktop or fa-group. You can find a list of icon classes here', 'ariwoo' ); ?> <a href="<?php echo esc_url( 'http://fortawesome.github.io/Font-Awesome' ); ?>" target="_blank"><?php _e( 'Click here', 'ariwoo' ); ?></a></div>
             </div>
           </div>
           <div id="section-facebook" class="section section-text mini">
@@ -381,7 +381,7 @@ function arinio_framework_page(){
               <div class="controls">
                 <input id="icon1" class="of-input" name="arinio_theme_options[sicon2]" type="text" size="30" value="<?php echo esc_attr($options['sicon2']); ?>" />
               </div>
-              <div class="explain"><?php _e( 'Enter the CSS class of the icons you want to use on your site like: fa-desktop or fa-group. You can find a list of icon classes here', 'ariwoo' ); ?> <a href="http://fortawesome.github.io/Font-Awesome" target="_blank"><?php _e( 'Click here', 'ariwoo' ); ?></a></div>
+              <div class="explain"><?php _e( 'Enter the CSS class of the icons you want to use on your site like: fa-desktop or fa-group. You can find a list of icon classes here', 'ariwoo' ); ?> <a href="<?php echo esc_url( 'http://fortawesome.github.io/Font-Awesome' ); ?>" target="_blank"><?php _e( 'Click here', 'ariwoo' ); ?></a></div>
             </div>
           </div>
           <div id="section-facebook" class="section section-text mini">
@@ -410,7 +410,7 @@ function arinio_framework_page(){
               <div class="controls">
                 <input id="icon1" class="of-input" name="arinio_theme_options[sicon3]" type="text" size="30" value="<?php echo esc_attr($options['sicon3']); ?>" />
               </div>
-            <div class="explain"><?php _e( 'Enter the CSS class of the icons you want to use on your site like: fa-desktop or fa-group. You can find a list of icon classes here', 'ariwoo' ); ?> <a href="http://fortawesome.github.io/Font-Awesome" target="_blank"><?php _e( 'Click here', 'ariwoo' ); ?></a></div>
+            <div class="explain"><?php _e( 'Enter the CSS class of the icons you want to use on your site like: fa-desktop or fa-group. You can find a list of icon classes here', 'ariwoo' ); ?> <a href="<?php echo esc_url( 'http://fortawesome.github.io/Font-Awesome' ); ?>" target="_blank"><?php _e( 'Click here', 'ariwoo' ); ?></a></div>
             </div>
           </div>
           <div id="section-facebook" class="section section-text mini">
@@ -483,7 +483,7 @@ function arinio_framework_page(){
             <div class="option">
               <div class="controls">
                 <input id="logo" class="upload" type="text" name="arinio_theme_options[aboutusimg]" 
-                            value="<?php echo $options['aboutusimg']; ?>" placeholder="<?php _e( 'No file chosen', 'ariwoo' ); ?>" />
+                            value="<?php echo esc_url_raw($options['aboutusimg']); ?>" placeholder="<?php _e( 'No file chosen', 'ariwoo' ); ?>" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e( 'Upload', 'ariwoo' ); ?>" />
                 <div class="screenshot" id="logo-image">
                   <?php if($options['aboutusimg'] != '') echo "<img src='".esc_url_raw($options['aboutusimg'])."' /><a class='remove-image'>"._e( 'Remove', 'ariwoo' )."</a>" ?>
@@ -649,11 +649,11 @@ function arinio_framework_page(){
 We are also helping poor community so please help us to help and HAVE A BETTER WORLD. Even 2$ really help :)', 'Ariwoo' ); ?></strong>
 	      				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
     <div class="paypal-donations">
-        <input type="hidden" name="cmd" value="_donations">
-        <input type="hidden" name="business" value="LQ7DEYTTUPCLL">
-        <input type="hidden" name="rm" value="0">
-        <input type="hidden" name="currency_code" value="USD">
-        <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online.">
+        <input type="hidden" name="cmd" value="<?php _e( '_donations', 'ariwoo' ); ?>">
+        <input type="hidden" name="business" value="<?php _e( 'LQ7DEYTTUPCLL', 'ariwoo' ); ?>">
+        <input type="hidden" name="rm" value="<?php _e( '0', 'ariwoo' ); ?>">
+        <input type="hidden" name="currency_code" value="<?php _e( 'USD', 'ariwoo' ); ?>">
+        <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" alt="<?php esc_attr_e( 'PayPal - The safer, easier way to pay online.' , 'ariwoo' ); ?>">
         <img alt="" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
     </div>
 </form>

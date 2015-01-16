@@ -14,23 +14,23 @@ $commentError = '';
 
 if (isset($_POST['submitted'])) {
     if (trim($_POST['firstname']) === '') {
-        $nameError = 'Please enter your name.';
+        $nameError = __( 'Please enter your name.', 'ariwoo' );
         $hasError = true;
     } else {
         $name = trim($_POST['firstname']);
     }
     if (trim($_POST['email']) === '') {
-        $emailError = 'Please enter your email address.';
+         $emailError = __( 'Please enter your email address.', 'ariwoo' );
         $hasError = true;
     } else if (!eregi("^[A-Z0-9._%-]+@[A-Z0-9._%-]+\.[A-Z]{2,4}$", trim($_POST['email']))) {
-        $emailError = 'You entered an invalid email address.';
+        $emailError = __( 'You entered an invalid email address.', 'ariwoo' );
         $hasError = true;
     } else {
         $email = trim($_POST['email']);
     }
 	$phone = trim($_POST['phone']);
     if (trim($_POST['message']) === '') {
-        $commentError = 'Please enter a message.';
+       $commentError =  __( 'Please enter a message.', 'ariwoo' );
         $hasError = true;
     } else {
         if (function_exists('stripslashes')) {
@@ -102,8 +102,8 @@ if (isset($_POST['submitted'])) {
                 <?php } ?></div>
 						<div class="clear"></div>
 					<div class="col-md-12">		<input type="reset" class="con_btn" value="Clear Form">
-						<input type="submit" class="con_btn send_btn" value="Send">
-                         <input type="hidden" name="submitted" id="submitted" value="true" /> </div>
+						<input type="submit" class="con_btn send_btn" value="<?php _e( 'Send', 'ariwoo' ); ?>">
+                         <input type="hidden" name="submitted" id="submitted" value="<?php _e( 'true', 'ariwoo' ); ?>" /> </div>
 						<div class="clear"></div>
 					</form>
             

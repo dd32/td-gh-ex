@@ -51,10 +51,10 @@
                 get_template_part('loop', 'author');
                 ?>
            <div class="clearfix"></div>
-                    <nav id="nav-single"> <span class="nav-previous">
-<?php next_posts_link('Next Post'); ?>
+                   <nav id="nav-single"> <span class="nav-previous">
+                            <?php next_posts_link(); ?>
                         </span> <span class="nav-next">
-<?php previous_posts_link('Previous Post'); ?>
+<?php previous_posts_link(); ?>
                         </span> </nav>
                     <div class="clearfix"></div>
                 </div>

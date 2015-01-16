@@ -16,13 +16,13 @@ get_header(); ?>
 		
 			<div class="carousel-inner">
             
-				<div class="item active" style="background-image:url( <?php  $options = get_option( 'arinio_theme_options' );  if($options['slide1image'] != '') { echo esc_url_raw($options['slide1image']); }else{ echo get_template_directory_uri(); echo '/img/slide1.jpg'; } ?>);">
+				<div class="item active" style="background-image:url( <?php  $options = get_option( 'arinio_theme_options' );  if(!empty($options['slide1image']))  { echo esc_url_raw($options['slide1image']); }else{ echo get_template_directory_uri(); echo '/img/slide1.jpg'; } ?>);">
 					<div class="carousel-caption-text">
 <div class="container">
 
 
 <?php $options = get_option( 'arinio_theme_options' ); 
- if($options['slide1title'] != '') {
+ if(!empty($options['slide1title'])) {
 ?>
 <div class="slide_h1_wrap"><h1 class="headline"><?php echo  esc_attr($options['slide1title']);?></h1></div>
  
@@ -32,7 +32,7 @@ get_header(); ?>
 
 
 <?php $options = get_option( 'arinio_theme_options' ); 
- if($options['slide1subtitle'] != '') {
+ if(!empty($options['slide1subtitle'])) {
 ?>
 <div class="slide_h3_wrap"><h3 class="sub-headline"><?php echo  esc_attr($options['slide1subtitle']);?></h3></div>
 <?php } else { ?>
@@ -43,7 +43,7 @@ get_header(); ?>
 
 
 <?php $options = get_option( 'arinio_theme_options' ); 
- if($options['slide1des'] != '') {
+ if(!empty($options['slide1des'])) {
 ?>
  
 <div class="descriptions"><p><?php echo  esc_attr($options['slide1des']);?></p>
@@ -62,12 +62,12 @@ get_header(); ?>
                 
                 
                 
-				<div class="item" style="background-image:url(<?php  $options = get_option( 'arinio_theme_options' );  if($options['slide2image'] != '') { echo esc_url_raw($options['slide2image']); }else{ echo get_template_directory_uri(); echo '/img/slide2.jpg'; } ?>);">
+				<div class="item" style="background-image:url(<?php  $options = get_option( 'arinio_theme_options' );   if(!empty($options['slide2image'])) { echo esc_url_raw($options['slide2image']); }else{ echo get_template_directory_uri(); echo '/img/slide2.jpg'; } ?>);">
 					 <div class="carousel-caption-text">
 <div class="container">
 
 <?php $options = get_option( 'arinio_theme_options' ); 
- if($options['slide2title'] != '') {
+  if(!empty($options['slide2title'])) {
 ?>
 <div class="slide_h1_wrap"><h1 class="headline"><?php echo  esc_attr($options['slide2title']);?></h1></div>
  
@@ -77,7 +77,7 @@ get_header(); ?>
 
 
 <?php $options = get_option( 'arinio_theme_options' ); 
- if($options['slide2subtitle'] != '') {
+  if(!empty($options['slide2subtitle'])) {
 ?>
 <div class="slide_h3_wrap"><h3 class="sub-headline"><?php echo  esc_attr($options['slide2subtitle']);?></h3></div>
 <?php } else { ?>
@@ -88,7 +88,7 @@ get_header(); ?>
 
 
 <?php $options = get_option( 'arinio_theme_options' ); 
- if($options['slide2des'] != '') {
+  if(!empty($options['slide2des'])) {
 ?>
  
 <div class="descriptions"><p><?php echo  esc_attr($options['slide2des']);?></p>
@@ -196,7 +196,7 @@ get_header(); ?>
   
      <div class="row">
     
-    <?php  if($options['blogp'] != '') { $blogpt = $options['blogp']; }else{ $blogpt = 3; } ?>
+    <?php  $blogpt = 3; ?>
       <?php 
 	 $args = array(
 	'posts_per_page'      => $blogpt,
@@ -265,7 +265,7 @@ query_posts( $args );
 
 			<!--Edit Main Content Area here-->
                 <div class="col-md-12" id="divMain">
-<p><img src="<?php  $options = get_option( 'arinio_theme_options' );  if($options['slide4image'] != '') { echo esc_url_raw($options['slide4image']); }else{ echo get_template_directory_uri(); echo '/images/slide1.jpg'; } ?>" width="1140px" height="200px" alt="" ></p>
+<p><img src="<?php  $options = get_option( 'arinio_theme_options' );  if($options['aboutusimg'] != '') { echo esc_url_raw($options['aboutusimg']); }else{ echo get_template_directory_uri(); echo '/images/slide1.jpg'; } ?>" width="1140px" height="200px" alt="" ></p>
                 
                <h4><?php  if($options['aboutusdh'] != '') { echo esc_attr($options['aboutusdh']); }else{  ?> <?php _e( 'Who We Are', 'ariwoo' ); ?> <?php   } ?></h4> 
                 <p>
