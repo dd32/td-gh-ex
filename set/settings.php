@@ -225,17 +225,6 @@ class Theme_settings{
 		
 	}
 	public function get_fmi_option() {
-//		$this->settings['vs-website-layout'] = array(
-//            'section' => 'general',
-//            'title'   => __( 'Website Layout','fmi'),
-//            'desc'    => __( 'Select if you\'d like the layout to be Full Width or Boxed','fmi'),
-//            'type'    => 'select',
-//            'std'     => 'site-layout-boxed',
-//            'choices' => array(
-//                'site-layout-full-width' => 'Full Width Layout',
-//                'site-layout-boxed' => 'Boxed Layout'
-//            )
-//        );
 		$this->settings['vs-favicon'] = array(
 			'title'   => __( 'Favicon','fmi'),
 			'desc'    => __( 'Upload a favicon to your website, this needs to be 16 pixels by 16 pixels','fmi'),
@@ -250,13 +239,6 @@ class Theme_settings{
             'desc'    => 'Header Settings',
             'type'    => 'heading'
         );
-//        $this->settings['vs-heading-upsell-one'] = array(
-//            'section' => 'general',
-//            'title'   => __( 'Header Layout','fmi'),
-//            'desc'    => __( 'http://','fmi'),
-//            'type'    => 'upsell',
-//            'std'     => ''
-//        );
         $this->settings['vs-header-search'] = array(
             'section' => 'general',
             'title'   => __( 'Header Search','fmi'),
@@ -264,14 +246,6 @@ class Theme_settings{
             'type'    => 'checkbox',
             'std'     => 1 // Set to 1 to be checked by default
         );
-//        $this->settings['vs-heading-upsell-two'] = array(
-//            'section' => 'general',
-//            'title'   => __( 'Sticky Header','fmi'),
-//            'desc'    => __( 'http://','fmi'),
-//            'type'    => 'upsell',
-//            'std'     => ''
-//        );
-        
 
         $this->settings['vs-enable-home-slider'] = array(
             'section' => 'slider',
@@ -324,14 +298,6 @@ class Theme_settings{
             'class'   => 'code'
         );
         
-
-//        $this->settings['vs-heading-upsell-four'] = array(
-//            'section' => 'blog',
-//            'title'   => __( 'Blog Layout','fmi'),
-//            'desc'    => __( 'http://sllwi.re/p/Eu','fmi'),
-//            'type'    => 'upsell',
-//            'std'     => ''
-//        );
         $this->settings['vs-blog-excl-categories'] = array(
             'section' => 'blog',
             'title'   => __( 'Blog Categories','fmi'),
@@ -339,13 +305,7 @@ class Theme_settings{
             'type'    => 'text',
             'std'     => ''
         );
-//        $this->settings['vs-blog-title'] = array(
-//            'section' => 'blog',
-//            'title'   => __( 'Blog Page Title','fmi'),
-//            'desc'    => __( 'Enter the title you want for the blog page.','fmi'),
-//            'type'    => 'text',
-//            'std'     => 'Blog'
-//        );
+
         $this->settings['vs-blog-ppp'] = array(
             'section' => 'blog',
             'title'   => __( 'Blog Posts Per Page','fmi'),
@@ -432,49 +392,6 @@ class Theme_settings{
             'type'    => 'url',
             'std'     => ''
         );
-        
-
-//        $this->settings['vs-website-txt-address'] = array(
-//            'section' => 'website',
-//            'title'   => __( 'Address','fmi'),
-//            'desc'    => '',
-//            'type'    => 'text',
-//            'std'     => 'Liberty Island, 10004 New York Harbor'
-//        );
-//        $this->settings['vs-website-txt-email'] = array(
-//            'section' => 'website',
-//            'title'   => __( 'Email Address','fmi'),
-//            'desc'    => '',
-//            'type'    => 'text',
-//            'std'     => 'hello@nethemes.com'
-//        );
-//        $this->settings['vs-website-txt-phone'] = array(
-//            'section' => 'website',
-//            'title'   => __( 'Phone Number','fmi'),
-//            'desc'    => '',
-//            'type'    => 'text',
-//            'std'     => '+1 123456789'
-//        );
-        
-//        $this->settings['vs-heading-six'] = array(
-//            'section' => 'website',
-//            'title'   => '',
-//            'desc'    => 'Footer',
-//            'type'    => 'heading'
-//        );
-//        $this->settings['vs-website-footer-text'] = array(
-//            'section' => 'website',
-//            'title'   => __( 'Footer Copy Text','fmi'),
-//			'desc'    => __( 'Enter the default text on the foorer','fmi'),
-//            'type'    => 'textarea',
-//            'std'     => ''
-//        );
-//        $this->settings['vs-heading-seven'] = array(
-//            'section' => 'website',
-//            'title'   => '',
-//            'desc'    => '404 Error Page',
-//            'type'    => 'heading'
-//        );
         $this->settings['vs-website-error-head'] = array(
             'section' => 'website',
             'title'   => __( '404 Error Page Heading','fmi'),

@@ -31,7 +31,7 @@ if( fmi_theme_option( 'vs-social-flickr' ) ) :
 	</div>
 </div></div>
 
-<div id="gotop"><a href="javascript:void(0)"></a></div>
+<div id="back_top"><i class="fa fa-angle-up"></i></div>
 
 </div>
 

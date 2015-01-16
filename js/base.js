@@ -9,11 +9,22 @@
 			}		   
 		});
 		
-		var $toTop = $("#gotop");
-		$toTop.click(function(){$("html,body").animate({scrollTop: "0px"},500); return false;});
-		$(window).scroll(function($){
-			var sd = jQuery(window).scrollTop();
-			if (sd>200){$toTop.fadeIn(600);}else{$toTop.stop().fadeOut(400);}
+		jQuery('#back_top').click(function(){
+			jQuery('html, body').animate({scrollTop:0}, 'normal');
+			return false;
+		});	
+		jQuery(window).scroll(function() {
+			if(jQuery(this).scrollTop() !== 0) {
+				jQuery('#back_top').fadeIn();	
+			} else {
+				jQuery('#back_top').fadeOut();
+			}
 		});
+		if(jQuery(window).scrollTop() !== 0) {
+			jQuery('#back_top').show();	
+		} else {
+			jQuery('#back_top').hide();
+		}
+		
 	});
 })(jQuery);
