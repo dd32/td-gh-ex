@@ -1,0 +1,455 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Deserve V1.0\n"
+"POT-Creation-Date: 2015-01-16 11:09+0530\n"
+"PO-Revision-Date: 2015-01-16 11:11+0530\n"
+"Last-Translator: FruitThemes <info@fruitthemes.com>\n"
+"Language-Team: FruitThemes <info@fruitthemes.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.3\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:16
+msgid "404 - Article Not Found"
+msgstr ""
+
+#: 404.php:36
+msgid "Epic 404 - Article Not Found"
+msgstr ""
+
+#: 404.php:37
+msgid "This is embarassing. We can't find what you were looking for."
+msgstr ""
+
+#: 404.php:39
+msgid ""
+"Whatever you were looking for was not found, but maybe try looking again or "
+"search using the form below."
+msgstr ""
+
+#: author.php:15
+#, php-format
+msgid "Author : %s"
+msgstr ""
+
+#: category.php:15
+#, php-format
+msgid "Category : %s"
+msgstr ""
+
+#: comments.php:10 functions.php:488
+msgid "1 comment"
+msgstr ""
+
+#: comments.php:10 functions.php:488
+#, php-format
+msgid "% comments"
+msgstr ""
+
+#: footer.php:29
+#, php-format
+msgid "Powered by %1$s and %2$s."
+msgstr ""
+
+#: functions.php:35
+msgid "Header Menu"
+msgstr ""
+
+#: functions.php:36
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:67
+msgctxt "Istok Web font: on or off"
+msgid "on"
+msgstr ""
+
+#: functions.php:95
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: functions.php:107
+msgid "Primary Sidebar"
+msgstr ""
+
+#: functions.php:109
+msgid "Main sidebar that appears on the right."
+msgstr ""
+
+#: functions.php:117
+msgid "Footer Area One"
+msgstr ""
+
+#: functions.php:119
+msgid "Footer area one that appears on the footer."
+msgstr ""
+
+#: functions.php:127
+msgid "Footer Area Two"
+msgstr ""
+
+#: functions.php:129
+msgid "Footer area two that appears on the footer."
+msgstr ""
+
+#: functions.php:137
+msgid "Footer Area Three"
+msgstr ""
+
+#: functions.php:139
+msgid "Footer area three that appears on the footer."
+msgstr ""
+
+#: functions.php:147
+msgid "Footer area four"
+msgstr ""
+
+#: functions.php:149
+msgid "Footer area four that appears on the footer."
+msgstr ""
+
+#: functions.php:205
+msgid "A widget that displays content, image and social links. "
+msgstr ""
+
+#: functions.php:209
+msgid "Deserve Author Information"
+msgstr ""
+
+#: functions.php:241
+msgid "footer-logo"
+msgstr ""
+
+#: functions.php:311
+msgid "Content:"
+msgstr ""
+
+#: functions.php:315
+msgid "Image:"
+msgstr ""
+
+#: functions.php:316 theme-options/theme-option.php:133
+#: theme-options/theme-option.php:184 theme-options/theme-option.php:225
+msgid "No file chosen"
+msgstr ""
+
+#: functions.php:318 theme-options/theme-option.php:134
+#: theme-options/theme-option.php:185 theme-options/theme-option.php:226
+msgid "Upload"
+msgstr ""
+
+#: functions.php:323
+msgid "Facebook url:"
+msgstr ""
+
+#: functions.php:329
+msgid "Twitter url:"
+msgstr ""
+
+#: functions.php:333
+msgid "Linkedin url:"
+msgstr ""
+
+#: functions.php:337
+msgid "Google+ url:"
+msgstr ""
+
+#: functions.php:348
+msgid "Read More"
+msgstr ""
+
+#: functions.php:380
+msgid "Title:"
+msgstr ""
+
+#: functions.php:381
+msgid "Number of posts to show:"
+msgstr ""
+
+#: functions.php:384
+msgid "Display post date?"
+msgstr ""
+
+#: functions.php:442 functions.php:484
+msgid "By "
+msgstr ""
+
+#: functions.php:485
+msgid "In "
+msgstr ""
+
+#: functions.php:486
+msgid "Posted On "
+msgstr ""
+
+#: functions.php:487
+msgid "Tags "
+msgstr ""
+
+#: functions.php:518
+msgctxt "comment form placeholder"
+msgid "Name"
+msgstr ""
+
+#: functions.php:529
+msgctxt "comment form placeholder"
+msgid "Email"
+msgstr ""
+
+#: functions.php:543
+msgctxt "comment form placeholder"
+msgid "Website"
+msgstr ""
+
+#: functions.php:564
+msgctxt "comment form placeholder"
+msgid "Message"
+msgstr ""
+
+#: functions/breadcrumbs.php:9
+msgid "Home"
+msgstr ""
+
+#: functions/breadcrumbs.php:28
+msgid "Archive by category"
+msgstr ""
+
+#: functions/breadcrumbs.php:31
+msgid "Search results for"
+msgstr ""
+
+#: functions/breadcrumbs.php:90
+msgid "Posts tagged"
+msgstr ""
+
+#: functions/breadcrumbs.php:96
+msgid "Articles posted by"
+msgstr ""
+
+#: functions/breadcrumbs.php:100
+msgid "Error 404"
+msgstr ""
+
+#: functions/breadcrumbs.php:106
+msgid "Page"
+msgstr ""
+
+#: header.php:97
+msgid "logo"
+msgstr ""
+
+#: header.php:142
+msgid "customheader"
+msgstr ""
+
+#: search.php:15
+#, php-format
+msgid "Search Results for : %s"
+msgstr ""
+
+#: search.php:76
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: tag.php:15
+#, php-format
+msgid "Tag : %s"
+msgstr ""
+
+#: theme-options/theme-option.php:67
+msgid "Deserve Options"
+msgstr ""
+
+#: theme-options/theme-option.php:68
+msgid "Theme Options"
+msgstr ""
+
+#: theme-options/theme-option.php:99 theme-options/theme-option.php:319
+msgid "Save Options"
+msgstr ""
+
+#: theme-options/theme-option.php:108
+msgid "theme options"
+msgstr ""
+
+#: theme-options/theme-option.php:111
+msgid "Basic Settings"
+msgstr ""
+
+#: theme-options/theme-option.php:112
+msgid "Home Page Settings"
+msgstr ""
+
+#: theme-options/theme-option.php:113
+msgid "Social Settings"
+msgstr ""
+
+#: theme-options/theme-option.php:129
+msgid "Site Logo (Recommended Size : 169px * 40px)"
+msgstr ""
+
+#: theme-options/theme-option.php:145
+msgid "Copyright Text"
+msgstr ""
+
+#: theme-options/theme-option.php:148
+msgid ""
+"Some text regarding copyright of your site, you would like to display in the "
+"footer."
+msgstr ""
+
+#: theme-options/theme-option.php:155
+msgid "Email"
+msgstr ""
+
+#: theme-options/theme-option.php:158
+msgid ""
+"Enter e-mail id for your site , you would like to display in the top header."
+msgstr ""
+
+#: theme-options/theme-option.php:165
+msgid "Phone"
+msgstr ""
+
+#: theme-options/theme-option.php:168
+msgid ""
+"Enter phone number for your site , you would like to display in the top "
+"header."
+msgstr ""
+
+#: theme-options/theme-option.php:177
+msgid "Banner Slider"
+msgstr ""
+
+#: theme-options/theme-option.php:180
+msgid "Slider"
+msgstr ""
+
+#: theme-options/theme-option.php:180
+msgid " (Recommended Size : 1350px * 350px)"
+msgstr ""
+
+#: theme-options/theme-option.php:192
+msgid "Slide"
+msgstr ""
+
+#: theme-options/theme-option.php:192
+msgid "Content"
+msgstr ""
+
+#: theme-options/theme-option.php:199
+msgid "First Section Title Bar"
+msgstr ""
+
+#: theme-options/theme-option.php:201 theme-options/theme-option.php:247
+msgid "Title"
+msgstr ""
+
+#: theme-options/theme-option.php:204
+msgid ""
+"Enter home page title for your site , you would like to display in the home "
+"page."
+msgstr ""
+
+#: theme-options/theme-option.php:210 theme-options/theme-option.php:256
+msgid "Short Description"
+msgstr ""
+
+#: theme-options/theme-option.php:213
+msgid ""
+"Enter home content for your site , you would like to display in the home "
+"page."
+msgstr ""
+
+#: theme-options/theme-option.php:218
+msgid "First Section"
+msgstr ""
+
+#: theme-options/theme-option.php:221
+msgid "Tab"
+msgstr ""
+
+#: theme-options/theme-option.php:221
+msgid " (Recommended Size : 94px * 93px)"
+msgstr ""
+
+#: theme-options/theme-option.php:233
+msgid ""
+"Enter section title for your home template , you would like to display in "
+"the home page."
+msgstr ""
+
+#: theme-options/theme-option.php:234
+msgid "Enter title here"
+msgstr ""
+
+#: theme-options/theme-option.php:237
+msgid ""
+"Enter section content for home template , you would like to display in the "
+"home page."
+msgstr ""
+
+#: theme-options/theme-option.php:238
+msgid "Enter Content here"
+msgstr ""
+
+#: theme-options/theme-option.php:245
+msgid "Second Section Title Bar"
+msgstr ""
+
+#: theme-options/theme-option.php:250
+msgid ""
+"Enter home page title for your site , you would like to display in the Home "
+"Page."
+msgstr ""
+
+#: theme-options/theme-option.php:259
+msgid ""
+"Enter home content for your site , you would like to display in the Home "
+"Page."
+msgstr ""
+
+#: theme-options/theme-option.php:272
+msgid "Facebook"
+msgstr ""
+
+#: theme-options/theme-option.php:275
+msgid "Facebook profile or page URL i.e."
+msgstr ""
+
+#: theme-options/theme-option.php:281
+msgid "Twitter"
+msgstr ""
+
+#: theme-options/theme-option.php:284
+msgid "Twitter profile or page URL i.e."
+msgstr ""
+
+#: theme-options/theme-option.php:290
+msgid "Google+"
+msgstr ""
+
+#: theme-options/theme-option.php:293
+msgid "gplus profile or page URL i.e."
+msgstr ""
+
+#: theme-options/theme-option.php:300
+msgid "Skype"
+msgstr ""
+
+#: theme-options/theme-option.php:303
+msgid "skype profile or page URL i.e."
+msgstr ""
