@@ -82,34 +82,19 @@ function wl_reset_portfolio_setting()
 function wl_reset_service_setting()
 {
 	$wl_theme_options['service_1_title']="Idea";
-	$wl_theme_options['service_1_icons']="icon-lightbulb";
+	$wl_theme_options['service_1_icons']="fa fa-google";
 	$wl_theme_options['service_1_text']="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in";
 	$wl_theme_options['service_1_link']="";
 	
-	$wl_theme_options['service_2_title']="Design";
-	$wl_theme_options['service_2_icons']="icon-laptop";
+	$wl_theme_options['service_2_title']="Records";
+	$wl_theme_options['service_2_icons']="fa fa-database";
 	$wl_theme_options['service_2_text']="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in";
 	$wl_theme_options['service_2_link']="#";
 	
-	$wl_theme_options['service_3_title']="Management";
-	$wl_theme_options['service_3_icons']="glyphicon glyphicon-th";
+	$wl_theme_options['service_3_title']="WordPress";
+	$wl_theme_options['service_3_icons']="fa fa-wordpress";
 	$wl_theme_options['service_3_text']="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in";
 	$wl_theme_options['service_3_link']="#";
-	
-	$wl_theme_options['service_4_title']="Development";
-	$wl_theme_options['service_4_icons']="icon-code";
-	$wl_theme_options['service_4_text']="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in.";
-	$wl_theme_options['service_4_link']="#";
-	
-	$wl_theme_options['service_5_title']="Testing";
-	$wl_theme_options['service_5_icons']="icon-code";
-	$wl_theme_options['service_5_text']="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in.";
-	$wl_theme_options['service_5_link']="#";
-	
-	$wl_theme_options['service_6_title']="Collbration";
-	$wl_theme_options['service_6_icons']="icon-code";
-	$wl_theme_options['service_6_text']="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in.";
-	$wl_theme_options['service_6_link']="#";
 	
 	update_option('enigma_options',$wl_theme_options);
 }
@@ -138,7 +123,7 @@ function wl_reset_social_setting()
 
 function wl_reset_footer_customizations_setting()
 {
-	$wl_theme_options['footer_customizations']="@ 2014 Weblizar Theme";
+	$wl_theme_options['footer_customizations']="@ 2015 Weblizar Theme";
 	$wl_theme_options['developed_by_text']="Theme Developed By";
 	$wl_theme_options['developed_by_weblizar_text']="Weblizar";
 	$wl_theme_options['developed_by_link']="http://weblizar.com/";

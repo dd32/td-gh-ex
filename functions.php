@@ -6,8 +6,6 @@
 	define('WL_TEMPLATE_DIR_URI', get_template_directory_uri());
 	define('WL_TEMPLATE_DIR', get_template_directory());
 	define('WL_TEMPLATE_DIR_CORE' , WL_TEMPLATE_DIR . '/core');
-	
-	//require( WL_TEMPLATE_DIR_CORE . '/menu/wlkr_bootstrap_navwalker.php' );
 	require( WL_TEMPLATE_DIR_CORE . '/menu/default_menu_walker.php' );
 	require( WL_TEMPLATE_DIR_CORE . '/menu/weblizar_nav_walker.php' );
 	require( WL_TEMPLATE_DIR_CORE . '/scripts/css_js.php' ); //Enquiring Resources here	
@@ -35,23 +33,23 @@
 			'upload_image_favicon'=>'',			
 			'custom_css'=>'',
 			'slide_image_1' => $ImageUrl,
-			'slide_title_1' => 'Slide Title',
-			'slide_desc_1' => 'Lorem Ipsum is simply dummy text of the printing',
-			'slide_btn_text_1' => 'Read More',
+			'slide_title_1' => __('Slide Title', 'weblizar' ),
+			'slide_desc_1' => __('Lorem Ipsum is simply dummy text of the printing', 'weblizar' ),
+			'slide_btn_text_1' => __('Read More', 'weblizar' ),
 			'slide_btn_link_1' => '#',
 			'slide_image_2' => $ImageUrl2,
-			'slide_title_2' => 'variations of passages',
-			'slide_desc_2' => 'Contrary to popular belief, Lorem Ipsum is not simply random text',
-			'slide_btn_text_2' => 'Read More',
+			'slide_title_2' => __('variations of passages', 'weblizar' ),
+			'slide_desc_2' => __('Contrary to popular belief, Lorem Ipsum is not simply random text', 'weblizar' ),
+			'slide_btn_text_2' => __('Read More', 'weblizar' ),
 			'slide_btn_link_2' => '#',
 			'slide_image_3' => $ImageUrl3,
-			'slide_title_3' => 'Contrary to popular ',
-			'slide_desc_3' => 'Aldus PageMaker including versions of Lorem Ipsum, rutrum turpi',
-			'slide_btn_text_3' => 'Read More',
+			'slide_title_3' => __('Contrary to popular ', 'weblizar' ),
+			'slide_desc_3' => __('Aldus PageMaker including versions of Lorem Ipsum, rutrum turpi', 'weblizar' ),
+			'slide_btn_text_3' => __('Read More', 'weblizar' ),
 			'slide_btn_link_3' => '#',			
-			'blog_title'=>'Latest Blog',			
-			'fc_title' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
-			'fc_btn_txt' => 'More Features',
+			'blog_title'=>__('Latest Blog', 'weblizar' ),			
+			'fc_title' => __('Lorem Ipsum is simply dummy text of the printing and typesetting industry. ', 'weblizar' ),
+			'fc_btn_txt' => __('More Features', 'weblizar' ),
 			'fc_btn_link' =>'#',
 			//Social media links
 			'header_social_media_in_enabled'=>'on',
@@ -65,41 +63,41 @@
 			
 			'email_id' => 'enigma@mymail.com',
 			'phone_no' => '0159753586',
-			'footer_customizations' => ' &#169; 2014 Enigma Theme',
-			'developed_by_text' => 'Theme Developed By',
-			'developed_by_weblizar_text' => 'Weblizar Themes',
+			'footer_customizations' => __(' &#169; 2015 Enigma Theme', 'weblizar' ),
+			'developed_by_text' => __('Theme Developed By', 'weblizar' ),
+			'developed_by_weblizar_text' => __('Weblizar Themes', 'weblizar' ),
 			'developed_by_link' => 'http://weblizar.com/',
 			
-			'home_service_heading' => 'Our Services',
-			'service_1_title'=>"Idea",
+			'home_service_heading' => __('Our Services', 'weblizar' ),
+			'service_1_title'=>__("Idea",'weblizar' ),
 			'service_1_icons'=>"fa fa-google",
-			'service_1_text'=>"There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in.",
+			'service_1_text'=>__("There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in.", 'weblizar' ),
 			'service_1_link'=>"#",
 			
-			'service_2_title'=>"Records",
+			'service_2_title'=>__('Records', 'weblizar' ),
 			'service_2_icons'=>"fa fa-database",
-			'service_2_text'=>"There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in.",
+			'service_2_text'=>__("There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in.", 'weblizar' ),
 			'service_2_link'=>"#",
 			
-			'service_3_title'=>"WordPress",
+			'service_3_title'=>__("WordPress", 'weblizar' ),
 			'service_3_icons'=>"fa fa-wordpress",
-			'service_3_text'=>"There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in.",
+			'service_3_text'=>__("There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in.", 'weblizar' ),
 			'service_3_link'=>"#",			
 
 			//Portfolio Settings:
 			'portfolio_home'=>'on',
-			'port_heading' => 'Recent Works',
+			'port_heading' => __('Recent Works', 'weblizar' ),
 			'port_1_img'=> $ImageUrl4,
-			'port_1_title'=>'Bonorum',
+			'port_1_title'=>__('Bonorum', 'weblizar' ),
 			'port_1_link'=>'#',
 			'port_2_img'=> $ImageUrl5,			
-			'port_2_title'=>'Content',
+			'port_2_title'=>__('Content', 'weblizar' ),
 			'port_2_link'=>'#',
 			'port_3_img'=> $ImageUrl6,
-			'port_3_title'=>'dictionary',
+			'port_3_title'=>__('dictionary', 'weblizar' ),
 			'port_3_link'=>'#',
 			'port_4_img'=> $ImageUrl7,
-			'port_4_title'=>'randomised',
+			'port_4_title'=>__('randomised', 'weblizar' ),
 			'port_4_link'=>'#'
 			
 		);
@@ -113,23 +111,7 @@
     );    
 	}
 	require( WL_TEMPLATE_DIR_CORE . '/theme-options/option-panel.php' ); // for Options Panel
-	//wp title tag starts here
-	function weblizar_head( $title, $sep )
-	{	global $paged, $page;		
-		if ( is_feed() )
-			return $title;
-		// Add the site name.
-		$title .= get_bloginfo( 'name' );
-		// Add the site description for the home/front page.
-		$site_description = get_bloginfo( 'description' );
-		if ( $site_description && ( is_home() || is_front_page() ) )
-			$title = "$title $sep $site_description";
-		// Add a page number if necessary.
-		if ( $paged >= 2 || $page >= 2 )
-			$title = "$title $sep " . sprintf( _e( 'Page', 'weblizar' ), max( $paged, $page ) );
-		return $title;
-	}	
-	add_filter( 'wp_title', 'weblizar_head', 10,2 );
+	
 	/*After Theme Setup*/
 	add_action( 'after_setup_theme', 'weblizar_head_setup' ); 	
 	function weblizar_head_setup()
@@ -156,7 +138,7 @@
 		add_theme_support( 'automatic-feed-links'); 
 		require( WL_TEMPLATE_DIR . '/options-reset.php'); //Reset Theme Options Here				
 	}
-	if ( ! function_exists( '_wp_render_title_tag' ) ) :
+	if ( ! function_exists( 'wl_title' ) ) :
 	function wl_title() {
 ?>
 <title><?php wp_title( '|', true, 'right' ); ?></title>
@@ -168,7 +150,7 @@ endif;
 	// Read more tag to formatting in blog page 
 	function weblizar_content_more($more)
 	{  							
-	   return '<div class="blog-post-details-item"><a class="enigma_blog_read_btn" href="'.get_permalink().'"><i class="fa fa-plus-circle"></i>Read More</a></div>';
+	   return '<div class="blog-post-details-item"><a class="enigma_blog_read_btn" href="'.get_permalink().'"><i class="fa fa-plus-circle"></i>"'.__('Read More', 'weblizar' ).'"</a></div>';
 	}   
 	add_filter( 'the_content_more_link', 'weblizar_content_more' );
 	
