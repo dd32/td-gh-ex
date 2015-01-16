@@ -4,7 +4,7 @@ Theme URI: https://www.competethemes.com/unlimited/
 Author: Compete Themes
 Author URI: https://www.competethemes.com/
 Description: Fast, responsive, beautiful, and accessible. What does this mean? It means your content will reach more people, on more devices, around the world. It means your site will look beautiful, load quickly, and perform professionally. This is the product of experience and ambition. We call it, Unlimited.
-Version: 1.02
+Version: 1.03
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, gray, silver, tan, white, dark, light, two-columns, left-sidebar, right-sidebar, fluid-layout, responsive-layout, accessibility-ready, custom-menu, editor-style, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -788,6 +788,12 @@ a img {
   background: #3a3a3a;
   text-align: center;
 }
+.post-meta a:hover, .post-meta a:active, .post-meta a:focus {
+  text-decoration: none;
+}
+.post-meta a:hover span, .post-meta a:active span, .post-meta a:focus span {
+  text-decoration: underline;
+}
 .post-meta span {
   opacity: 0;
   position: absolute;
@@ -964,10 +970,7 @@ a img {
 .comment-list .children {
   position: relative;
   background: white;
-  border: solid 1px #d9d9d9;
-  border-top: none;
-  margin: -13px 0 1.5em;
-  padding: 1px 1.5em 1.5em;
+  margin: 1.5em 0 0;
 }
 
 li.comment,
@@ -1374,6 +1377,13 @@ li.pingback {
   .left-sidebar .sidebar-primary {
     float: right;
     margin: 1.5em 3.125% 1.5em 0;
+  }
+
+  .widget_nav_menu .menu-item-has-children a:hover + ul, .widget_nav_menu .menu-item-has-children a:active + ul, .widget_nav_menu .menu-item-has-children a:focus + ul {
+    top: 1.5em;
+  }
+  .widget_nav_menu .menu-item-has-children ul:hover, .widget_nav_menu .menu-item-has-children ul:active, .widget_nav_menu .menu-item-has-children ul:focus {
+    top: 1.5em;
   }
 }
 /* gallery styles copied from Hybrid Core */
