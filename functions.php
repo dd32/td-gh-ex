@@ -1,10 +1,12 @@
 <?php
 function fmi_theme_setup(){
 	global $content_width;
-	if(!isset($content_width)){$content_width = 660;}
+	if(!isset($content_width)){$content_width = 640;}
 	
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' ,array('post'));
+	
+	load_theme_textdomain('fmi',get_template_directory().'/languages');
 }
 add_action('after_setup_theme','fmi_theme_setup');
 

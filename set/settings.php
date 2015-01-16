@@ -1,5 +1,5 @@
 <?php
-class Theme_settings{
+class Fmi_theme_settings{
 	
 	private $sections;
 	private $checkboxes;
@@ -472,10 +472,10 @@ class Theme_settings{
 	
 }
 
-$theme_options = new Theme_settings();
+$theme_options = new Fmi_theme_settings();
 
 function fmi_theme_option($option){
-    if (!isset($theme_options))$theme_options = new Theme_settings();
+    if (!isset($theme_options))$theme_options = new Fmi_theme_settings();
     
     $options = $theme_options->fmi_get_options_with_defaults();
     if (isset($options[$option]))

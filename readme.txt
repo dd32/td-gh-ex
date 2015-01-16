@@ -1,7 +1,7 @@
 == Fmi ==
 Theme Name: Fmi
 Theme URI: http://demo.forrss.com/fmi
-Version: 1.0.2
+Version: 1.0.3
 Requires at least: 3.0.1
 Tested up to: 4.0.1
 Author: Forrss
