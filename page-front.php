@@ -16,7 +16,7 @@ get_header(); ?>
 		
 			<div class="carousel-inner">
             
-				<div class="item active" style="background-image:url( <?php  $options = get_option( 'arinio_theme_options' );  if(!empty($options['slide1image']))  { echo esc_url_raw($options['slide1image']); }else{ echo get_template_directory_uri(); echo '/img/slide1.jpg'; } ?>);">
+				<div class="item active" style="background-image:url( <?php  $options = get_option( 'arinio_theme_options' );  if(!empty($options['slide1image']))  { echo esc_url_raw($options['slide1image']); }else{ echo get_template_directory_uri(); echo '/images/slide1.jpg'; } ?>);">
 					<div class="carousel-caption-text">
 <div class="container">
 
@@ -62,7 +62,7 @@ get_header(); ?>
                 
                 
                 
-				<div class="item" style="background-image:url(<?php  $options = get_option( 'arinio_theme_options' );   if(!empty($options['slide2image'])) { echo esc_url_raw($options['slide2image']); }else{ echo get_template_directory_uri(); echo '/img/slide2.jpg'; } ?>);">
+				<div class="item" style="background-image:url(<?php  $options = get_option( 'arinio_theme_options' );   if(!empty($options['slide2image'])) { echo esc_url_raw($options['slide2image']); }else{ echo get_template_directory_uri(); echo '/images/slide1.jpg'; } ?>);">
 					 <div class="carousel-caption-text">
 <div class="container">
 
@@ -72,7 +72,7 @@ get_header(); ?>
 <div class="slide_h1_wrap"><h1 class="headline"><?php echo  esc_attr($options['slide2title']);?></h1></div>
  
 <?php } else { ?>
-<div class="slide_h1_wrap"><h1 class="headline"><?php _e( 'Stylish Page Theme', 'ariwoo' ); ?></h1></div>
+<div class="slide_h1_wrap"><h1 class="headline"><?php _e( 'Stylish Page Theme 2', 'ariwoo' ); ?></h1></div>
 <?php } ?>
 
 
@@ -136,7 +136,7 @@ get_header(); ?>
  
  
                        <h2> <?php $options = get_option( 'arinio_theme_options' ); if($options['msheading'] != '') { echo esc_attr($options['msheading']); }else{ ?> <?php _e( 'Our Services', 'ariwoo' ); ?> <?php } ?></h2> 
-                       <p class="saperator"><img src="<?php echo get_template_directory_uri(); ?>/styles/recent-blog-seperator-icon.jpg"></p>
+                       <p class="saperator"><img src="<?php echo get_template_directory_uri(); ?>/images/divider-02.jpg"></p>
                     </div> </div> </div> 
  
  <div class="row">
@@ -191,7 +191,7 @@ get_header(); ?>
    <div class="row" >  
    <div class="col-md-12" >     <div class="lead">
                         <h2><?php if($options['blogh'] != '') { echo esc_attr($options['blogh']); }else{  ?> <?php _e( 'Our Blog', 'ariwoo' ); ?> <?php    } ?></h2> 
-                       <p class="saperator"><img src="<?php echo get_template_directory_uri(); ?>/styles/recent-blog-seperator-icon.jpg"></p>
+                       <p class="saperator"><img src="<?php echo get_template_directory_uri(); ?>/images/divider-02.jpg"></p>
                     </div></div></div> 
   
      <div class="row">
@@ -258,14 +258,14 @@ query_posts( $args );
 
 <div class="row" id="section_three"><div class="col-md-12">           <div class="lead">
                         <h2><?php $options = get_option( 'arinio_theme_options' ); if($options['aboutus'] != '') { echo esc_attr($options['aboutus']); }else{  ?> <?php _e( 'About Us', 'ariwoo' ); ?> <?php   } ?></h2> 
-                       <p class="saperator"><img src="<?php echo get_template_directory_uri(); ?>/styles/recent-blog-seperator-icon.jpg"></p>
+                       <p class="saperator"><img src="<?php echo get_template_directory_uri(); ?>/images/divider-02.jpg"></p>
                     </div> </div></div>
 
 <div class="row">
 
 			<!--Edit Main Content Area here-->
                 <div class="col-md-12" id="divMain">
-<p><img src="<?php  $options = get_option( 'arinio_theme_options' );  if($options['aboutusimg'] != '') { echo esc_url_raw($options['aboutusimg']); }else{ echo get_template_directory_uri(); echo '/images/slide1.jpg'; } ?>" width="1140px" height="200px" alt="" ></p>
+<p><img src="<?php  $options = get_option( 'arinio_theme_options' );  if($options['aboutusimg'] != '') { echo esc_url_raw($options['aboutusimg']); }else{ echo get_template_directory_uri(); echo '/images/about.jpg'; } ?>" width="1140px" height="200px" alt="" ></p>
                 
                <h4><?php  if($options['aboutusdh'] != '') { echo esc_attr($options['aboutusdh']); }else{  ?> <?php _e( 'Who We Are', 'ariwoo' ); ?> <?php   } ?></h4> 
                 <p>
@@ -300,7 +300,7 @@ query_posts( $args );
             
 <div class="row" id="section_four"> <div class="col-md-12" >           <div class="lead">
                         <h2><?php $options = get_option( 'arinio_theme_options' ); if($options['contacth'] != '') { echo esc_attr($options['contacth']); }else{?> <?php _e( 'Contact Us', 'ariwoo' ); ?> <?php    } ?></h2> 
-                       <p class="saperator"><img src="<?php echo get_template_directory_uri(); ?>/styles/recent-blog-seperator-icon.jpg"></p>
+                       <p class="saperator"><img src="<?php echo get_template_directory_uri(); ?>/images/divider-02.jpg"></p>
                     </div> </div>    </div>    
                     
  <div class="row slide" id="slide10" >  

@@ -209,35 +209,35 @@ function arinio_framework_page(){
  <h3><?php _e( 'Slider Settings', 'ariwoo' ); ?></h3>
         
           <div id="section-facebook" class="section section-text mini">
-            <h4 class="heading"><?php _e( 'Slide 1 Title', 'ariwoo' ); ?> </h4>
+            <h4 class="heading"><?php _e( 'Slider 1 Title', 'ariwoo' ); ?> </h4>
             <div class="option">
               <div class="controls">
                 <input id="slide1title" class="of-input" name="arinio_theme_options[slide1title]" size="30" type="text" value="<?php  if(!empty($options['slide1title'])) { echo esc_attr($options['slide1title']); }?>" />
               </div>
-              <div class="explain"><?php _e( 'Mention the Slide 1 Title   for Slider', 'ariwoo' ); ?>  </div>
+              <div class="explain"><?php _e( 'Mention the Slider 1 Title   for Slider', 'ariwoo' ); ?>  </div>
             </div>
           </div>
           <div id="section-facebook" class="section section-text mini">
-            <h4 class="heading"><?php _e( 'Slide 1 SubTitle', 'ariwoo' ); ?> </h4>
+            <h4 class="heading"><?php _e( 'Slider 1 SubTitle', 'ariwoo' ); ?> </h4>
             <div class="option">
               <div class="controls">
                 <input id="slide1subtitle" class="of-input" name="arinio_theme_options[slide1subtitle]" size="30" type="text" value="<?php if(!empty($options['slide1subtitle'])) { echo esc_attr($options['slide1subtitle']);} ?>" />
               </div>
-              <div class="explain"><?php _e( 'Mention the Slide 1 SubTitle  for Slider', 'ariwoo' ); ?>  </div>
+              <div class="explain"><?php _e( 'Mention the Slider 1 SubTitle  for Slider', 'ariwoo' ); ?>  </div>
             </div>
           </div>
           <div id="section-facebook" class="section section-text mini">
-            <h4 class="heading"><?php _e( 'Slide 1 Description', 'ariwoo' ); ?> </h4>
+            <h4 class="heading"><?php _e( 'Slider 1 Description', 'ariwoo' ); ?> </h4>
             <div class="option">
               <div class="controls">
                  
                 <textarea class="of-input" name="arinio_theme_options[slide1des]" id="slide1des" cols="6" rows="6"><?php if(!empty($options['slide1des'])) { echo esc_attr($options['slide1des']); }?></textarea>
               </div>
-              <div class="explain"><?php _e( 'Mention the Slide 1 Description   for Slider', 'ariwoo' ); ?>  </div>
+              <div class="explain"><?php _e( 'Mention the Slider 1 Description   for Slider', 'ariwoo' ); ?>  </div>
             </div>
           </div>
           <div id="section-logo" class="section section-upload ">
-            <h4 class="heading"><?php _e( 'Slide 1 Image', 'ariwoo' ); ?></h4>
+            <h4 class="heading"><?php _e( 'Slider 1 Image', 'ariwoo' ); ?></h4>
             <div class="option">
               <div class="controls">
                 <input id="logo" class="upload" type="text" name="arinio_theme_options[slide1image]" 
@@ -251,35 +251,35 @@ function arinio_framework_page(){
             </div>
             </div> <hr>
              <div id="section-facebook" class="section section-text mini">
-            <h4 class="heading"><?php _e( 'Slide 2 Title', 'ariwoo' ); ?> </h4>
+            <h4 class="heading"><?php _e( 'Slider 2 Title', 'ariwoo' ); ?> </h4>
             <div class="option">
               <div class="controls">
                 <input id="slide2title" class="of-input" name="arinio_theme_options[slide2title]" size="30" type="text" value="<?php if(!empty($options['slide2title'])) {  echo esc_attr($options['slide2title']); } ?>" />
               </div>
-              <div class="explain"><?php _e( 'Mention the Slide 2 Title   for Slider ', 'ariwoo' ); ?> </div>
+              <div class="explain"><?php _e( 'Mention the Slider 2 Title   for Slider ', 'ariwoo' ); ?> </div>
             </div>
           </div>
           <div id="section-facebook" class="section section-text mini">
-            <h4 class="heading"><?php _e( 'Slide 2 SubTitle', 'ariwoo' ); ?> </h4>
+            <h4 class="heading"><?php _e( 'Slider 2 SubTitle', 'ariwoo' ); ?> </h4>
             <div class="option">
               <div class="controls">
                 <input id="slide2subtitle" class="of-input" name="arinio_theme_options[slide2subtitle]" size="30" type="text" value="<?php if(!empty($options['slide2subtitle'])) { echo esc_attr($options['slide2subtitle']);} ?>" />
               </div>
-              <div class="explain"><?php _e( 'Mention the Slide 2 SubTitle  for Slider', 'ariwoo' ); ?>  </div>
+              <div class="explain"><?php _e( 'Mention the Slider 2 SubTitle  for Slider', 'ariwoo' ); ?>  </div>
             </div>
           </div>
           <div id="section-facebook" class="section section-text mini">
-            <h4 class="heading"><?php _e( 'Slide 1 Description', 'ariwoo' ); ?> </h4>
+            <h4 class="heading"><?php _e( 'Slider 2 Description', 'ariwoo' ); ?> </h4>
             <div class="option">
               <div class="controls">
                  
                 <textarea class="of-input" name="arinio_theme_options[slide2des]" id="slide1des" cols="6" rows="6"><?php if(!empty($options['slide2des'])) { echo esc_attr($options['slide2des']); } ?></textarea>
               </div>
-              <div class="explain"><?php _e( 'Mention the Slide 2 Description   for Slider', 'ariwoo' ); ?>  </div>
+              <div class="explain"><?php _e( 'Mention the Slider 2 Description   for Slider', 'ariwoo' ); ?>  </div>
             </div>
           </div>
           <div id="section-logo" class="section section-upload ">
-            <h4 class="heading"><?php _e( 'Slide 2 Image', 'ariwoo' ); ?></h4>
+            <h4 class="heading"><?php _e( 'Slider 2 Image', 'ariwoo' ); ?></h4>
             <div class="option">
               <div class="controls">
                 <input id="logo" class="upload" type="text" name="arinio_theme_options[slide2image]" 
@@ -530,7 +530,7 @@ function arinio_framework_page(){
           
           
           <div id="section-footertext2" class="section section-textarea">
-            <h4 class="heading"><?php _e( 'Fisrt widget title', 'ariwoo' ); ?> </h4>
+            <h4 class="heading"><?php _e( 'First widget title', 'ariwoo' ); ?> </h4>
             <div class="option">
               <div class="controls">
                 <input type="text" id="fwidgett1" class="of-input" name="arinio_theme_options[fwidgett1]" size="132"  value="<?php echo esc_attr($options['fwidgett1']); ?>">
@@ -540,13 +540,13 @@ function arinio_framework_page(){
           </div>
           
           <div id="section-facebook" class="section section-text mini">
-            <h4 class="heading"><?php _e( 'Fisrt widget Description', 'ariwoo' ); ?> </h4>
+            <h4 class="heading"><?php _e( 'First widget Description', 'ariwoo' ); ?> </h4>
             <div class="option">
               <div class="controls">
                <textarea class="of-input" name="arinio_theme_options[footert1]" id="footert1" cols="6" rows="6"><?php echo esc_attr($options['footert1']); ?></textarea>
                  
               </div>
-              <div class="explain"><?php _e( 'Mention the Fisrt widget Description for Footer section.', 'ariwoo' ); ?> </div>
+              <div class="explain"><?php _e( 'Mention the First widget Description for Footer section.', 'ariwoo' ); ?> </div>
             </div>
           </div>
           

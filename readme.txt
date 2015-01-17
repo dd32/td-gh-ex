@@ -56,7 +56,40 @@ All available options can be used from Appearance->AR Options
 
 License for images:
 1. Image Name: slide1.jpg
-2. Image Name: slide2.jpg
-Resource link: - https://www.flickr.com
+Resource link: - http://www.flickr.com/photos/35924887@N02/5447731379
+License:  Creative Commons license
+
+2. Image Name: about.jpg
+Resource link: - https://www.flickr.com/photos/45393120@N07/5998133376
 License:  Creative Commons license
 url : https://creativecommons.org/licenses/by/2.0/
+
+
+3. Image Name: divider-02.jpg
+Resource link: - http://all-free-download.com/free-vector/vector-misc/vector_set_of_calligraphic_elements_for_design_267735.html
+License:  Creative Commons Attribution-ShareAlike Unported 3.0 license
+
+4. Image Name: sidebar-li-icon-black.png
+Resource link: - https://www.iconfinder.com/icons/186409/arrow_right_right%2Cnext_icon#size=128
+License:  Free for commercial use
+
+5. Image Name: fb.png
+Resource link: - https://www.iconfinder.com/icons/104458/facebook_fb_social_social_media_icon#size=128
+License:  Free for commercial use
+
+6. Image Name: tw.png
+Resource link: - https://www.iconfinder.com/icons/104461/twitter_icon#size=128
+License:  Free for commercial use
+
+7. Image Name: ico-delete.png
+Resource link: - https://www.iconfinder.com/icons/330399/bad_cancel_clear_close_decline_delete_empty_exit_not_refuse_remove_stop_icon#size=16
+License:  Free for commercial use
+ 
+other images made by us .
+
+
+
+
+
+
+

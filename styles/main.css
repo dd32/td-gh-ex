@@ -474,12 +474,7 @@ h2 {
 
 
 
-/* ___________________________________Slide 10 ____________________________________ */
-
-#slide10 {
-	background:url(../images/effect_2.png) repeat left top;
-	 
-}
+ 
 .map {
 margin: 0;
 padding:0;
@@ -585,7 +580,10 @@ height: 32px;
 
 
 
-
+.carousel-inner>.item {
+ 
+background-position: 90% 60%;
+}
 
 
 
@@ -853,7 +851,7 @@ width: 100%;
 }
 
 .sub-headline  {
-color: #ffffff;
+color: #000;
 font-size: 20px;
 margin: 0 0 20px;
 font-weight: 400;
@@ -1453,7 +1451,7 @@ a img.aligncenter {
 	display: block;
 }
 .commentlist .comment-text a.commenttext-arrow {
-  background: url(com-arrow.png);
+  background: url(../images/com-arrow.png);
   width: 18px;
   height: 7px;
   display: inline-block;
@@ -2114,7 +2112,7 @@ font-size: 24px;
 
 
 
-.headline  {color:#fff;}
+.headline  {color:#000;}
 
 .moree {
 
