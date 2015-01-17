@@ -51,3 +51,5 @@ First Release
 = 1.3 = 
 - Bug Fixes
 - Better Sanitazion Process
+= 1.3.1 =
+- Minor Bug Fixes

@@ -44,7 +44,7 @@ function beyond_register_recommended_plugins() {
      * Array of plugin arrays. Required keys are name and slug.
      * If the source is NOT from the .org repo, then source is also required.
      */
-    $plugins = array(
+    $beyond_plugins = array(
         array(
             'name'      => 'Options Framework',
             'slug'      => 'options-framework',
@@ -63,7 +63,7 @@ function beyond_register_recommended_plugins() {
     
 
     );
-    $config = array(
+    $beyond_config = array(
         'default_path' => '',                      // Default absolute path to pre-packaged plugins.
         'menu'         => 'tgmpa-install-plugins', // Menu slug.
         'has_notices'  => true,                    // Show admin notices or not.
@@ -93,7 +93,7 @@ function beyond_register_recommended_plugins() {
         )
     );
  
-    tgmpa( $plugins, $config );
+    tgmpa( $beyond_plugins, $beyond_config );
 }
 /***
 *

@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
-    <title><?php wp_title('|',true,'right'); ?></title>
+    <title><?php wp_title('|',true,'right'); ?></title>    
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
     <?php if(of_get_option('favicon_upload','')): ?>
         <link rel="icon" href="<?php if(of_get_option('favicon_upload','')): echo esc_url(of_get_option('favicon_upload','')); endif; ?>" type="image/x-icon">
@@ -20,11 +20,11 @@
                     <h1><a href="<?php echo esc_url(home_url()); ?>"><?php echo get_bloginfo('name');?> <span class="kt-grey"><?php echo get_bloginfo('description');?></span></a></h1>
                 </div>
                 <div class="col-md-8" id="kt-main-nav">
-                <?php $menu_args =  array('location'=>'primary',
+                <?php $beyond_menu_args =  array('location'=>'primary',
                                       'menu_container'=>false,
                                       'menu_class'=>'main-menu',
                                       'menu_id'=>false); 
-                wp_nav_menu($menu_args);                           
+                wp_nav_menu($beyond_menu_args);                           
 				?>
                 </div>
             </div>

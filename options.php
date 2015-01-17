@@ -48,9 +48,9 @@ function optionsframework_options() {
         <li>Opening Hours</li>
         <li>Jet Pack </li>
         <li>2-4 Columns Widgetized Footer Sidebar</li>
-        </ul>
+        </ul>','beyondmagazine').'
         <p>
-        <a rel="nofollow" href="'.esc_url( __( 'http://www.ketchupthemes.com/beyond-magazine/', 'beyondmagazine')).'" style="background:red; padding:10px 20px; color:#ffffff; margin-top:10px; text-decoration:none;">Update to Premium</a></p>'),
+        <a rel="nofollow" href="'.esc_url( __( 'http://www.ketchupthemes.com/beyond-magazine/').'" style="background:red; padding:10px 20px; color:#ffffff; margin-top:10px; text-decoration:none;">'.__('Update to Premium','beyondmagazine').'</a></p>'),
         'type' => 'info');  
 
 	$options[] = array(

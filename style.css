@@ -4,7 +4,7 @@ Theme URI: http://ketchupthemes.com/beyond-magazine/
 Author: Alexandros Itsios
 Author URI: http://ketchupthemes/alex-itsios
 Description: Beyond is a free and responsive Magazine Theme for WordPress that makes you stand out of the crowd.
-Version: 1.3
+Version: 1.3.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, blue, gray, light, two-columns, editor-style, left-sidebar, responsive-layout, custom-menu, featured-image-header, featured-images, sticky-post, theme-options, translation-ready, threaded-comments, flexible-header
@@ -20,6 +20,7 @@ body {
 	text-align: justify;
 	color: #a2a2a2;
     font-family:'Open Sans',sans-serif;
+    word-wrap: break-word;
 }
 img {
 	max-width: 100%;

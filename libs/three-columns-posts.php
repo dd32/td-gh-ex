@@ -1,42 +1,42 @@
 <?php              
 if(is_category()): 
-    $category = get_query_var('cat'); 
-    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-    $my_query = new WP_Query(
+    $beyond_category = get_query_var('cat'); 
+    $beyond_paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+    $beyond_my_query = new WP_Query(
     array('post_type'=>'post',
-    'paged'=>$paged,
-    'cat'=>$category
+    'paged'=>$beyond_paged,
+    'cat'=>$beyond_category
     ));
    
-elseif(is_tag()):$tag = get_query_var('tag');
-    $tag = get_query_var('tag'); 
-    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-    $my_query = new WP_Query(
+elseif(is_tag()):
+    $$beyond_tag = get_query_var('tag'); 
+    $$beyond_paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+    $beyond_my_query = new WP_Query(
     array('post_type'=>'post',
-    'paged'=>$paged,
-    'tag'=>$tag
+    'paged'=>$beyond_paged,
+    'tag'=>$beyond_tag
     )); 
     
 elseif(is_search()):
     
-    $search = get_query_var('s');
-    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-    $my_query = new WP_Query(
+    $$beyond_search = get_query_var('s');
+    $beyond_paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+    $beyond_my_query = new WP_Query(
     array('post_type'=>'post',
-    's'=>$search,
-    'paged'=>$paged));
+    's'=>$$beyond_search,
+    'paged'=>$beyond_paged));
 else:
-    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-    $my_query = new WP_Query(
+    $beyond_paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+    $beyond_my_query = new WP_Query(
     array('post_type'=>'post',
-    'paged'=>$paged));
+    'paged'=>$beyond_paged));
 endif;
-    $divider = 3;
+    $beyond_divider = 3;
 ?>
-<?php if( $my_query->have_posts() ) : ?>
+<?php if( $beyond_my_query->have_posts() ) : ?>
                     <div class="kt-articles">  
                         <div class="row">
-                        <?php while( $my_query->have_posts() ) : $my_query->the_post(); ?>
+                        <?php while($beyond_my_query->have_posts() ) : $beyond_my_query->the_post(); ?>
                             <article class="col-md-4">
                                 <div class="kt-article clearfix">
                                     <a href="<?php the_permalink();?>">
@@ -47,9 +47,9 @@ endif;
                                     <a href="<?php the_permalink();?>" class="btn btn-primary pull-right"><?php echo __('Read More','beyondmagazine');?></a>
                                 </div>
                             </article>
-                            <?php $current_position = $my_query->current_post + 1; ?>
+                            <?php $beyond_current_position = $beyond_my_query->current_post + 1; ?>
 
-                                <?php if( $current_position < $my_query->found_posts && $current_position % $divider == 0 ) : ?>
+                                <?php if( $beyond_current_position < $beyond_my_query->found_posts && $beyond_current_position % $beyond_divider == 0 ) : ?>
 
                                 <!-- if position is equal to the divider and not the last result close the currently open div and start another -->
                                 </div><div class="row">
@@ -61,6 +61,6 @@ endif;
                               <!-- close whichever div was last open -->
                               <?php else: ?>
                               <div class="row kt-no-found-posts"><?php echo __('No posts found.Sorry','beyondmagazine') ;?></div>
-                              <?php endif; wp_reset_query();?>
+                              <?php endif; wp_reset_postdata();?>
                             
                     </div><!-- .kt-articles end here -->
