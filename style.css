@@ -2,7 +2,7 @@
 Theme Name: activetab
 Theme URI: http://web-profile.com.ua/wordpress/themes/activetab/
 Description: Responsive clean theme. More info at http://web-profile.com.ua/activetab/
-Version: 1.6
+Version: 2.0
 Author: webvitaly
 Author URI: http://web-profile.com.ua/wordpress/
 Tags: gray, white, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -511,19 +511,16 @@ input[type="submit"], input[type="button"], input[type="reset"], button {
 	border: 0;
 	padding: 0;
 }
-
 .commentlist {
 	list-style-type: none;
 	margin-left: 0;
 	padding-left: 0;
 }
-
 .commentlist .children {
 	list-style-type: none;
 	margin: 0 0 0 20px;
 	padding-left: 0;
 }
-
 
 
 .wp_link_pages {
@@ -878,17 +875,13 @@ table#wp-calendar td, table#wp-calendar th {
 
 /* ========== rss feed ========== */
 .rss-feed-link {
-	background: transparent url("img/rss-feed-icon.png") left top no-repeat; /* http://www.feedicons.com/ */
-	background-size: cover;
-	display: inline-block;
-	width: 16px;
-	height: 16px;
 	margin-left: 10px;
-	opacity: 0.7;
-	transition: all .3s ease;
+	color: #F3A96F;
+	font-size: 18px;
+	line-height: 18px;
 }
 .rss-feed-link:hover {
-	opacity: 1;
+	color: #F3A96F;
 }
 
 /* ========== footer ========== */

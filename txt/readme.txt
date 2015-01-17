@@ -3,8 +3,8 @@ Contributors: webvitaly
 Donate link: http://web-profile.com.ua/donate/
 Tags: gray, white, light, one-column, two-columns, right-sidebar, flexible-width, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, clean
 Requires at least: 3.4
-Tested up to: 4.0
-Stable tag: 1.6
+Tested up to: 4.1
+Stable tag: 2.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -43,7 +43,7 @@ FAQ:
 
 == Other Notes ==
 
-activetab theme, copyright 2014 web-profile.com.ua
+activetab theme, copyright 2015 web-profile.com.ua
 activetab theme is distributed under the terms of the GNU GPL
 
 
@@ -53,12 +53,11 @@ activetab theme is distributed under the terms of the GNU GPL
 * [Options Framework](http://wptheming.com/options-framework-theme/) licensed under [GPL](https://github.com/devinsays/options-framework-theme/blob/master/license.txt)
 * [Pixabay](http://pixabay.com/) public domain images
 * [Font Awesome](http://fortawesome.github.io/Font-Awesome/) licensed under [open source and GPL compatible license](http://fortawesome.github.io/Font-Awesome/license/)
-* [RSS-feed icon](http://www.feedicons.com/) is free to use
 
 
 = Images used: =
 
-* http://pixabay.com/en/summer-clouds-sky-field-nature-69557/
+* http://pixabay.com/en/summer-field-sky-clouds-outdoors-69557/
 * http://pixabay.com/en/beach-beautiful-blue-coast-84560/
 * http://pixabay.com/en/solar-flare-flare-explosion-67532/
 * http://pixabay.com/en/baby-boy-child-childhood-computer-84626/

@@ -39,8 +39,8 @@
 				<?php endif; ?>
 
 				<?php if ( ! is_home() && ! is_front_page() ) : // show rss links everywhere except homepage ?>
-					<a href="<?php echo esc_url( get_bloginfo( 'rss2_url' ) ); ?>" class="rss-feed-link rss-feed-link-posts" title="<?php echo esc_attr( __( 'Posts RSS feed', 'activetab' ) ); ?>"></a>
-					<a href="<?php echo esc_url( get_bloginfo( 'comments_rss2_url' ) ); ?>" class="rss-feed-link rss-feed-link-comments" title="<?php echo esc_attr( __( 'Comments RSS feed', 'activetab' ) ); ?>"></a>
+					<a href="<?php echo esc_url( get_bloginfo( 'rss2_url' ) ); ?>" class="rss-feed-link" title="<?php echo esc_attr( __( 'Posts RSS feed', 'activetab' ) ); ?>"><i class="fa fa-rss-square"></i></a>
+					<a href="<?php echo esc_url( get_bloginfo( 'comments_rss2_url' ) ); ?>" class="rss-feed-link" title="<?php echo esc_attr( __( 'Comments RSS feed', 'activetab' ) ); ?>"><i class="fa fa-rss-square"></i></a>
 				<?php endif; ?>
 
 			</div> <!-- /.site-footer-right -->
