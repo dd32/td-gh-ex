@@ -1,16 +1,16 @@
 <?php
 /************ Home Page Banner meta post ****************/
-add_action('admin_init','webriti_init');
-function webriti_init()
+add_action('admin_init','elitepress_init');
+function elitepress_init()
 	{
 	foreach (array('post','page') as $type) 
 		{
-			add_meta_box('my_banner_meta', 'Description', 'my_meta_banner', $type, 'normal', 'high');
+			add_meta_box('my_banner_meta', 'Description', 'elitepress_meta_banner', $type, 'normal', 'high');
 		}
 		
-			add_action('save_post','webriti_meta_save');
+			add_action('save_post','elitepress_meta_save');
 	}	
-function my_meta_banner()
+function elitepress_meta_banner()
 	{
 		global $post ;
 		
@@ -18,14 +18,14 @@ function my_meta_banner()
 		$banner_title =sanitize_text_field( get_post_meta( get_the_ID(), 'banner_title', true ));
 		$banner_description = sanitize_text_field( get_post_meta( get_the_ID(), 'banner_description', true )); ?>
 		
-		<input type="checkbox" name="banner_chkbx" id="banner_chkbx" <?php if($banner_chkbx){echo "checked='checked'";}?> /><?php _e('Allow Banner on Page','elegance'); ?></p>
-		<p><h4 class="heading"><?php _e('Enter Banner heading Title','elegance');?></h4>
+		<input type="checkbox" name="banner_chkbx" id="banner_chkbx" <?php if($banner_chkbx){echo "checked='checked'";}?> /><?php _e('Allow Banner on Page','elitepress'); ?></p>
+		<p><h4 class="heading"><?php _e('Enter Banner heading Title','elitepress');?></h4>
 		<p><input type="text" id="banner_title" name="banner_title" placeholder="Enter Banner Title"  value="<?php if (!empty($banner_title)) esc_attr($banner_title); ?>" > </p>
-		<p><h4 class="heading"><?php _e('Banner Description','elegance');?></h4></p>
+		<p><h4 class="heading"><?php _e('Banner Description','elitepress');?></h4></p>
 		<p><textarea id="banner_description" name="banner_description" placeholder="Enter banner description " style="width: 480px; height: 80px; padding: 0px;" rows="3" cols="10" ><?php if (!empty($banner_description)) { echo $banner_description; } ?></textarea></p>
 		<?php }
 		
-function webriti_meta_save($post_id) 
+function elitepress_meta_save($post_id) 
 {	
 	if((defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) || (defined('DOING_AJAX') && DOING_AJAX) || isset($_REQUEST['bulk_edit']))
         return;

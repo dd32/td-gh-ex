@@ -3,15 +3,15 @@
 		<?php 
 				// Check Image size for fullwidth template
 				if( is_page_template('blog-full-width.php'))
-				elegance_image_thumbnail('blog-area-full','img-responsive'); 
+				elitepress_image_thumbnail('blog-area-full','img-responsive'); 
 				
 				
 				// Check Image size for Different format like Single post,page
 				elseif(is_single() || is_page())
-				elegance_post_thumbnail('webriti_blog_thumb','img-responsive');
+				elitepress_post_thumbnail('webriti_blog_thumb','img-responsive');
 				
 				else
-				elegance_post_thumbnail('blog-area-full','img-responsive');	
+				elitepress_post_thumbnail('blog-area-full','img-responsive');	
 		
 				// Close div if page is call
 				if(is_page() )  echo "</div>";
@@ -31,7 +31,7 @@
 				else 
 				{
 				// call post related meta contant like posted by, author name and comment
-				elegance_post_meta_content();
+				elitepress_post_meta_content();
 				}
 			
                 // call editor content of post/page	
@@ -39,7 +39,7 @@
 				the_content();
 				echo "</div>"; 	
 				// allow support for <!--nextpage-->
-				wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'elegance' ), 'after' => '</div>' ) ); 
+				wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'elitepress' ), 'after' => '</div>' ) ); 
 				echo "</div>";
 				// close div if page is not call
 				if(!is_page())  echo "</div>";

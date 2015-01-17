@@ -1,5 +1,5 @@
 <?php 
-$current_options=get_option('elegance_lite_options');
+$current_options=get_option('elitepress_lite_options');
 if($current_options['header_call_out_area_enabled']=='on'){
 ?>
 <!-- Top Callout Section -->

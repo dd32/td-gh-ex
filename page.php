@@ -8,7 +8,7 @@ get_template_part('index', 'banner');
 		<div class="row">
 		
 			<!--Blog Area-->
-			<div class="<?php elegance_post_layout_class(); ?>" >
+			<div class="<?php elitepress_post_layout_class(); ?>" >
 			<?php get_template_part('content',''); ?>
 			<?php comments_template('',true); ?>
 			</div>

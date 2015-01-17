@@ -5,10 +5,10 @@
 		</div>
 		<div class="webriti-submenu">
 		<div id="icon-themes" class="icon32"></div>
-			<h2><?php _e('elegance','elegance'); ?>
+			<h2><?php _e('elitepress','elitepress'); ?>
 				<div class="webriti-submenu-links">
-					<a target="_blank" href="https://www.facebook.com/webriti" class="btn btn-primary"><?php _e('Like us on facebook','elegance'); ?></a>
-					<a target="_blank" href="https://wordpress.org/support/theme/elegance" class="btn btn-primary"><?php _e('Support Desk','elegance'); ?></a>
+					<a target="_blank" href="https://www.facebook.com/webriti" class="btn btn-primary"><?php _e('Like us on facebook','elitepress'); ?></a>
+					<a target="_blank" href="https://wordpress.org/support/theme/elitepress" class="btn btn-primary"><?php _e('Support Desk','elitepress'); ?></a>
 				</div><!-- webriti-submenu-links -->
 			</h2>
           <div class="clear"></div>
@@ -18,26 +18,26 @@
 				<ul class="options_tabs ui-tabs-nav" role="tablist" id="nav">
 					<div id="nav-shadow"></div>
 					<li class="active" >
-						<div class="arrow"><div></div></div><a href="#" id="1"><span class="icon home-page"></span><?php _e('Home Page','elegance');?></a>
-						<ul><li class="currunt" ><a href="#" class="ui-tabs-anchor" id="ui-id-1"><?php _e('Quick Start','elegance');?> </a><span></span></li>
+						<div class="arrow"><div></div></div><a href="#" id="1"><span class="icon home-page"></span><?php _e('Home Page','elitepress');?></a>
+						<ul><li class="currunt" ><a href="#" class="ui-tabs-anchor" id="ui-id-1"><?php _e('Quick Start','elitepress');?> </a><span></span></li>
 							
-							<li><a href="#" id="ui-id-22"><?php _e('Header setting','elegance');?></a><span></span></li>
-							<li><a href="#"  id="ui-id-2"><?php _e('Slider Setting','elegance');?></a><span></span></li>
-							<li><a href="#"  id="ui-id-9"><?php _e('Home Top Call Out Area Setting','elegance');?></a><span></span></li>
-							<li><a href="#"  id="ui-id-3"><?php _e('Service Setting','elegance');?></a><span></span></li> 
-							<li><a href="#"  id="ui-id-4"><?php _e('Project Portfolio','elegance');?></a><span></span></li>
+							<li><a href="#" id="ui-id-22"><?php _e('Header setting','elitepress');?></a><span></span></li>
+							<li><a href="#"  id="ui-id-2"><?php _e('Slider Setting','elitepress');?></a><span></span></li>
+							<li><a href="#"  id="ui-id-9"><?php _e('Home Top Call Out Area Setting','elitepress');?></a><span></span></li>
+							<li><a href="#"  id="ui-id-3"><?php _e('Service Setting','elitepress');?></a><span></span></li> 
+							<li><a href="#"  id="ui-id-4"><?php _e('Project Portfolio','elitepress');?></a><span></span></li>
 							</ul>
 					</li>
 					<li>
-						<div class="arrow"><div></div></div><a href="#" id="ui-id-24"><span class="icon footer"></span><?php _e('Banner Setting','elegance');?></a><span></span>
+						<div class="arrow"><div></div></div><a href="#" id="ui-id-24"><span class="icon footer"></span><?php _e('Banner Setting','elitepress');?></a><span></span>
 					</li>
 					
 					<li>
-						<div class="arrow"><div></div></div><a href="#" id="ui-id-23"><span class="icon footer"></span><?php _e('Footer Customization','elegance');?></a><span></span>
+						<div class="arrow"><div></div></div><a href="#" id="ui-id-23"><span class="icon footer"></span><?php _e('Footer Customization','elitepress');?></a><span></span>
 					</li>
 					
 					<li>
-						<div class="arrow"><div></div></div><a href="#" id="ui-id-8"><span class="icon footer"></span><?php _e('Upgrade to Pro','elegance');?></a><span></span>
+						<div class="arrow"><div></div></div><a href="#" id="ui-id-8"><span class="icon footer"></span><?php _e('Upgrade to Pro','elitepress');?></a><span></span>
 					</li>
 					<div id="nav-shadow"></div>
                 </ul>
@@ -79,7 +79,7 @@
 // Restore all defaults
 if(isset($_POST['restore_all_defaults'])) 
 	{
-		$elegance_lite_theme_options = theme_data_setup();	
-		update_option('elegance_lite_options',$elegance_lite_theme_options);
+		$elitepress_lite_theme_options = theme_data_setup();	
+		update_option('elitepress_lite_options',$elitepress_lite_theme_options);
 	}
 ?>

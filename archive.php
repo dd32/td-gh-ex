@@ -10,18 +10,18 @@
 		<div class="row">
 			
 			<!--Blog Area-->
-			<div class="<?php elegance_post_layout_class(); ?>" >
+			<div class="<?php elitepress_post_layout_class(); ?>" >
 			
 					<?php if ( have_posts() ) : ?>
 					<h1 class="blog_detail_head">
 					<?php if ( is_day() ) : ?>
-					<?php  _e( "Daily Archives: ", 'elegance' ); echo (get_the_date()); ?>
+					<?php  _e( "Daily Archives: ", 'elitepress' ); echo (get_the_date()); ?>
 					<?php elseif ( is_month() ) : ?>
-					<?php  _e( "Monthly Archives: ", 'elegance' ); echo (get_the_date( 'F Y' )); ?>
+					<?php  _e( "Monthly Archives: ", 'elitepress' ); echo (get_the_date( 'F Y' )); ?>
 					<?php elseif ( is_year() ) : ?>
-					<?php  _e( "Yearly Archives: ", 'elegance' );  echo (get_the_date( 'Y' )); ?>
+					<?php  _e( "Yearly Archives: ", 'elitepress' );  echo (get_the_date( 'Y' )); ?>
 					<?php else : ?>
-					<?php _e( "Blog Archives: ", 'elegance' ); ?>
+					<?php _e( "Blog Archives: ", 'elitepress' ); ?>
 					<?php endif; ?>
 					</h1>
 				<?php
@@ -32,8 +32,8 @@
 				<?php get_template_part('content',''); ?>
 				<?php endwhile;	?>			
 				<div class="blog-pagination">
-					<?php previous_posts_link( __('Previous','elegance') ); ?>
-					<?php next_posts_link( __('Next','elegance') ); ?>
+					<?php previous_posts_link( __('Previous','elitepress') ); ?>
+					<?php next_posts_link( __('Next','elitepress') ); ?>
 				</div>
 			</div>
 			<?php endif; ?>

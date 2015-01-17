@@ -1,4 +1,4 @@
-<?php $current_options=get_option('elegance_lite_options'); ?>
+<?php $current_options=get_option('elitepress_lite_options'); ?>
 <!-- Service Section -->
 
 <div class="service-section">

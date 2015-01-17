@@ -12,8 +12,8 @@ function theme_data_setup()
 			
 			//Featured Image Setting
 			'home_banner_enabled'=>'on',
-			'slider_title_one' => __('elegance BY WEBRITI THEMES','elegance'),
-			'slider_description' => __('Create Fresh Website fast with us!','elegance'),
+			'slider_title_one' => __('ELITEPRESS BY WEBRITI THEMES','elitepress'),
+			'slider_description' => __('Create Fresh Website fast with us!','elitepress'),
 			'slider_image' => $slider_image,
 			
 			// Social media links
@@ -38,9 +38,9 @@ function theme_data_setup()
 			'social_media_pagelines_link' => "#",
 			
 			//Contact Address Settings
-			'contact_address_settings' => __('on','elegance'),
-			'contact_phone_number' => __('+48-0987-654-321','elegance'),
-			'contact_email' => __('info@elegancetheme.com','elegance'),
+			'contact_address_settings' => __('on','elitepress'),
+			'contact_phone_number' => __('+48-0987-654-321','elitepress'),
+			'contact_email' => __('info@elitepresstheme.com','elitepress'),
 			
 			
 			
@@ -56,15 +56,15 @@ function theme_data_setup()
 			
 			//Home Top Call Out Area
 			'header_call_out_area_enabled' => 'on',
-			'header_call_out_title'=> __('Want to say Hey or find out more?','elegance'),
-			'header_call_out_description'=> __('Reprehen derit in voluptate velit cillum dolore eu fugiat nulla pariaturs  sint occaecat proidentse.','elegance'),
-			'header_call_out_btn_text'=> __('Buy It Now!','elegance'),
+			'header_call_out_title'=> __('Want to say Hey or find out more?','elitepress'),
+			'header_call_out_description'=> __('Reprehen derit in voluptate velit cillum dolore eu fugiat nulla pariaturs  sint occaecat proidentse.','elitepress'),
+			'header_call_out_btn_text'=> __('Buy It Now!','elitepress'),
 			'header_call_out_btn_link'=>'',
 			'header_call_out_btn_link_target'=>'on',
 			
 			
 			//Footer Copyright custmization
-			'footer_copyright_text' => __('<p>Copyright 2014 Elegance <a href="#">Wordpress Theme</a>. All rights reserved</p>','elegance'),
+			'footer_copyright_text' => __('<p>Copyright 2014 ElitePress <a href="#">Wordpress Theme</a>. All rights reserved</p>','elitepress'),
 			
 			//Footer Menu bar Setting			
 			'footer_menu_bar_enabled' => 'on',
@@ -72,62 +72,62 @@ function theme_data_setup()
 			//portfolio
 			'portfolio_section_enabled' => 'on',
 			
-			'front_portfolio_title' => __('Latest Projects','elegance'),
-			'front_portfolio_description' => __ ('Morbi leo risus, porta ac consectetur vestibulum eros cras mattis consectetur purus sit...','elegance'),
+			'front_portfolio_title' => __('Latest Projects','elitepress'),
+			'front_portfolio_description' => __ ('Morbi leo risus, porta ac consectetur vestibulum eros cras mattis consectetur purus sit...','elitepress'),
 			
-			'portfolio_one_title' => __('Business Growth','elegance'),
-			'portfolio_one_description' => __('Morbi leo risus, porta ac consectetur vestibulum eros cras 	mattis consectetur purus sit...','elegance'),
+			'portfolio_one_title' => __('Business Growth','elitepress'),
+			'portfolio_one_description' => __('Morbi leo risus, porta ac consectetur vestibulum eros cras 	mattis consectetur purus sit...','elitepress'),
 			'portfolio_one_image' => $portfolio_image,
 
-			'portfolio_two_title' => __('Functional Beauty','elegance'),
-			'portfolio_two_description' => __('Morbi leo risus, porta ac consectetur vestibulum eros cras mattis consectetur purus sit...','elegance'),
+			'portfolio_two_title' => __('Functional Beauty','elitepress'),
+			'portfolio_two_description' => __('Morbi leo risus, porta ac consectetur vestibulum eros cras mattis consectetur purus sit...','elitepress'),
 			'portfolio_two_image' => $portfolio_image,
 			
-			'portfolio_three_title' => __('Planning Around','elegance'),
-			'portfolio_three_description' => __('Morbi leo risus, porta ac consectetur vestibulum eros cras mattis consectetur purus sit...','elegance'),
+			'portfolio_three_title' => __('Planning Around','elitepress'),
+			'portfolio_three_description' => __('Morbi leo risus, porta ac consectetur vestibulum eros cras mattis consectetur purus sit...','elitepress'),
 			'portfolio_three_image' => $portfolio_image,
 			
 			
 			// service
 			'service_section_enabled' => 'on',
-			'service_title' => __('Our Services','elegance'),
-			'service_description' => __('Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupid non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','elegance'),
+			'service_title' => __('Our Services','elitepress'),
+			'service_description' => __('Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupid non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','elitepress'),
 			/** Service One Setting **/
 			'service_one_icon' => 'fa fa-shield',
-			'service_one_title' => __('Responsive Design','elegance'),
-			'service_one_description' => __('Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet ferment etiam porta sem malesuada magna mollis.','elegance'),
+			'service_one_title' => __('Responsive Design','elitepress'),
+			'service_one_description' => __('Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet ferment etiam porta sem malesuada magna mollis.','elitepress'),
 			/** Service Two Setting **/
 			'service_two_icon' => 'fa fa-tablet',
-			'service_two_title' => __('Twitter Bootstrap 3.2.0','elegance'),
-			'service_two_description' => __('Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet ferment etiam porta sem malesuada magna mollis.','elegance'),
+			'service_two_title' => __('Twitter Bootstrap 3.2.0','elitepress'),
+			'service_two_description' => __('Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet ferment etiam porta sem malesuada magna mollis.','elitepress'),
 			/** Service Three Setting **/
 			'service_three_icon' => 'fa fa-edit',
-			'service_three_title' => __('Exclusive Support','elegance'),
-			'service_three_description' => __('Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet ferment etiam porta sem malesuada magna mollis.','elegance'),
+			'service_three_title' => __('Exclusive Support','elitepress'),
+			'service_three_description' => __('Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet ferment etiam porta sem malesuada magna mollis.','elitepress'),
 			/** Service Four Setting **/
 			'service_four_icon' => 'fa fa-star-half-o',
-			'service_four_title' => __('Incredibly Flexible','elegance'),
-			'service_four_description' => __('Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet ferment etiam porta sem malesuada magna mollis.','elegance'),
+			'service_four_title' => __('Incredibly Flexible','elitepress'),
+			'service_four_description' => __('Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet ferment etiam porta sem malesuada magna mollis.','elitepress'),
 			
 			//Banner Heading
 			
-			'banner_title_category' => __('Category Title','elegance'),
-			'banner_description_category' => __(' Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.','elegance'),
+			'banner_title_category' => __('Category Title','elitepress'),
+			'banner_description_category' => __(' Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.','elitepress'),
 			
-			'banner_title_archive' => __('Archive Title','elgent'),
-			'banner_description_archive' => __(' Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.','elegance'),
+			'banner_title_archive' => __('Archive Title','elitepress'),
+			'banner_description_archive' => __(' Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.','elitepress'),
 			
-			'banner_title_author' => __('Author Title','elgent'),
-			'banner_description_author' => __(' Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.','elegance'),
+			'banner_title_author' => __('Author Title','elitepress'),
+			'banner_description_author' => __(' Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.','elitepress'),
 			
-			'banner_title_404' => __('404 Title','elegance'),
-			'banner_description_404' => __(' Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.','elegance'),
+			'banner_title_404' => __('404 Title','elitepress'),
+			'banner_description_404' => __(' Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.','elitepress'),
 								
-			'banner_title_tag' => __('Tag Title','elegance'),
-			'banner_description_tag' => __(' Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.','elegance'),
+			'banner_title_tag' => __('Tag Title','elitepress'),
+			'banner_description_tag' => __(' Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.','elitepress'),
 								
-			'banner_title_search' => __('Search Title','elegance'),
-			'banner_description_search' => __(' Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.','elegance'),
+			'banner_title_search' => __('Search Title','elitepress'),
+			'banner_description_search' => __(' Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.','elitepress'),
 			
 			);
 }

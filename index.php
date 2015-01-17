@@ -8,7 +8,7 @@ get_template_part('index', 'banner');
 		<div class="row">
 		
 			<!--Blog Area-->
-					<div class="<?php elegance_post_layout_class(); ?>" >
+					<div class="<?php elitepress_post_layout_class(); ?>" >
 					<?php
 					$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 					$args = array( 'post_type' => 'post','paged'=>$paged);		
@@ -21,8 +21,8 @@ get_template_part('index', 'banner');
 					<?php get_template_part('content',''); ?>
 					<?php }	?>
 					<div class="blog-pagination">
-					<?php previous_posts_link( __('Previous','elegance') ); ?>
-					<?php next_posts_link( __('Next','elegance') ); ?>
+					<?php previous_posts_link( __('Previous','elitepress') ); ?>
+					<?php next_posts_link( __('Next','elitepress') ); ?>
 					</div>
 				
 			</div>

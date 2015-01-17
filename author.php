@@ -10,9 +10,9 @@
 		<div class="row">
 			
 			<!--Blog Area-->
-				<div class="<?php elegance_post_layout_class(); ?>" >
+				<div class="<?php elitepress_post_layout_class(); ?>" >
 				<h1 class="blog_detail_head">
-				<?php  _e( "Author  Archives:", 'elegance' ); echo get_the_author(); ?>
+				<?php  _e( "Author  Archives:", 'elitepress' ); echo get_the_author(); ?>
 				</h1>
 				<?php
 				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -27,8 +27,8 @@
 				<?php } ?>
 				
 				<div class="blog-pagination">
-					<?php previous_posts_link( __('Previous','elegance') ); ?>
-					<?php next_posts_link( __('Next','elegance') ); ?>
+					<?php previous_posts_link( __('Previous','elitepress') ); ?>
+					<?php next_posts_link( __('Next','elitepress') ); ?>
 				</div>
 			</div>
 			<!--/Blog Area-->

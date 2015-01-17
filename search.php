@@ -10,7 +10,7 @@ get_template_part('banner','header'); ?>
 			<div class="col-md-12">
 				<?php if ( have_posts() ) { ?>
 				<h1 class="search_heading">
-				<?php printf( __( "Search Results For: %s", 'elegance' ), '<span>' . get_search_query() . '</span>' ); ?>
+				<?php printf( __( "Search Results For: %s", 'elitepress' ), '<span>' . get_search_query() . '</span>' ); ?>
 				</h1>
 				<?php while ( have_posts() ) { the_post();
 				global $more;
@@ -28,27 +28,27 @@ get_template_part('banner','header'); ?>
 						<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 						<div class="blog-seprator"></div>
 						<div class="blog-post-info-detail">
-							<?php _e('By', 'elegance'); ?><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a>
+							<?php _e('By', 'elitepress'); ?><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a>
 							<?php 	$tag_list = get_the_tag_list();
 							if(!empty($tag_list)) { ?>
-							<div class="blog-tags"><?php _e('IN', 'elegance')?> <a href="<?php the_permalink(); ?>"><?php the_tags('', ', ', ''); ?></a>
+							<div class="blog-tags"><?php _e('IN', 'elitepress')?> <a href="<?php the_permalink(); ?>"><?php the_tags('', ', ', ''); ?></a>
 							</div>
 							<?php } ?>
 						</div>
-						<div class="blog-description"><?php the_content( __( 'Read More' , 'elegance' ) ); ?></div>
-						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'elegance' ), 'after' => '</div>' ) ); ?>
+						<div class="blog-description"><?php the_content( __( 'Read More' , 'elitepress' ) ); ?></div>
+						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'elitepress' ), 'after' => '</div>' ) ); ?>
 					</div>
 				</div>
 				<?php }	?>
 				<div class="blog-pagination">
-				<?php next_posts_link( __('Previous','elegance') ); ?>
-				<?php previous_posts_link( __('Next','elegance') ); ?>
+				<?php next_posts_link( __('Previous','elitepress') ); ?>
+				<?php previous_posts_link( __('Next','elitepress') ); ?>
 				</div>
 				<?php } else { ?>
 				<div class="search_error">
-					<div class="search_err_heading"><h2><?php _e( "Nothing Found", 'elegance' ); ?></h2> </div>
-					<div class="elegance_searching">
-						<p><?php _e( "Sorry, but nothing matched your search criteria. Please try again with some different keywords.", 'elegance' ); ?></p>
+					<div class="search_err_heading"><h2><?php _e( "Nothing Found", 'elitepress' ); ?></h2> </div>
+					<div class="elitepress_searching">
+						<p><?php _e( "Sorry, but nothing matched your search criteria. Please try again with some different keywords.", 'elitepress' ); ?></p>
 					</div>
 				</div>
 			<?php get_search_form();

@@ -1,5 +1,5 @@
 <!-- Navigation Section -->
-<?php $current_options=get_option('elegance_lite_options'); ?>
+<?php $current_options=get_option('elitepress_lite_options'); ?>
 <div class="menu-section">
 		<nav role="navigation" class="navbar navbar-default">
       <div class="container-fluid">

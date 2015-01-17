@@ -1,5 +1,5 @@
 <?php
-/**Theme Name	: elegance
+/**Theme Name	: elitepress
  * Theme Core Functions and Codes
 */	
 	/**Includes reqired resources here**/
@@ -16,7 +16,7 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/font/font.php');
 	
 	//wp title tag starts here
-	function elegance_head( $title, $sep ) {
+	function elitepress_head( $title, $sep ) {
 	        global $paged, $page;
 	
 	        if ( is_feed() )
@@ -30,24 +30,24 @@
                 $title = "$title $sep $site_description";
 	 // Add a page number if necessary.
         if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() )
-	                $title = "$title $sep " . sprintf( __( 'Page %s', 'elegance' ), max( $paged, $page ) );	
+	                $title = "$title $sep " . sprintf( __( 'Page %s', 'elitepress' ), max( $paged, $page ) );	
         return $title;
 	}	
-	add_filter( 'wp_title', 'elegance_head', 10, 2);
+	add_filter( 'wp_title', 'elitepress_head', 10, 2);
 	
-	add_action( 'after_setup_theme', 'elegance_setup' ); 	
-	function elegance_setup()
+	add_action( 'after_setup_theme', 'elitepress_setup' ); 	
+	function elitepress_setup()
 	{
 		global $content_width;
 		if ( ! isset( $content_width ) ) $content_width = 600;//In PX */
 		
 		// Load text domain for translation-ready
-		load_theme_textdomain( 'elegance', WEBRITI_THEME_FUNCTIONS_PATH . '/lang' );
+		load_theme_textdomain( 'elitepress', WEBRITI_THEME_FUNCTIONS_PATH . '/lang' );
 		
 		add_theme_support( 'post-thumbnails' ); //supports featured image
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menu( 'primary', __( 'Primary Menu', 'elegance' ) ); //Navigation
-		register_nav_menu( 'footer_menu', __( 'Footer Menu', 'elegance' ) );
+		register_nav_menu( 'primary', __( 'Primary Menu', 'elitepress' ) ); //Navigation
+		register_nav_menu( 'footer_menu', __( 'Footer Menu', 'elitepress' ) );
 		// theme support 	
 		$args = array('default-color' => '000000',);
 		add_theme_support( 'custom-background', $args  ); 
@@ -55,38 +55,38 @@
 		
 		require_once('theme_setup_data.php');
 		// setup admin pannel defual data for index page		
-		$elegance_lite_options=theme_data_setup();
+		$elitepress_lite_options=theme_data_setup();
 		
-		$current_theme_options = get_option('elegance_lite_options'); // get existing option data 		
+		$current_theme_options = get_option('elitepress_lite_options'); // get existing option data 		
 		if($current_theme_options)
-		{ 	$elegance_lite_options = array_merge($elegance_lite_options, $current_theme_options);
-			update_option('elegance_lite_options',$elegance_lite_options);	// Set existing and new option data			
+		{ 	$elitepress_lite_options = array_merge($elitepress_lite_options, $current_theme_options);
+			update_option('elitepress_lite_options',$elitepress_lite_options);	// Set existing and new option data			
 		}
 		else
 		{
-			add_option('elegance_lite_options', $elegance_lite_options);
+			add_option('elitepress_lite_options', $elitepress_lite_options);
 		}
 		require( WEBRITI_THEME_FUNCTIONS_PATH . '/theme_options/option_pannel.php' ); // for Option Panel Settings		
 	}
 	
-	function elegance_content_more($more)
+	function elitepress_content_more($more)
 	{  global $post;
 		return '<div class="blog-btn-div"><a href="' . get_permalink() . "#more-{$post->ID}\" class=\"blog-btn\">Read More</a></div>";
 	}   
-	add_filter( 'the_content_more_link', 'elegance_content_more' );
+	add_filter( 'the_content_more_link', 'elitepress_content_more' );
 
-	function elegance_add_gravatar_class($class) {
+	function elitepress_add_gravatar_class($class) {
 		$class = str_replace("class='avatar", "class='img-responsive comment-img", $class);
 		return $class;
 	}
-	add_filter('get_avatar','elegance_add_gravatar_class');
+	add_filter('get_avatar','elitepress_add_gravatar_class');
 
-function elegance_excerpt_length( $length ) {	return 50; }
-		add_filter( 'excerpt_length', 'elegance_excerpt_length', 999 );
-		function elegance_excerpt_more( $more ) {	return '';}
-		add_filter('excerpt_more', 'elegance_excerpt_more');
+function elitepress_excerpt_length( $length ) {	return 50; }
+		add_filter( 'excerpt_length', 'elitepress_excerpt_length', 999 );
+		function elitepress_excerpt_more( $more ) {	return '';}
+		add_filter('excerpt_more', 'elitepress_excerpt_more');
 
-function elegance_get_custom_link($url,$target,$title)
+function elitepress_get_custom_link($url,$target,$title)
 {
 	if($title)
 	{

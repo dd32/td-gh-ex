@@ -4,7 +4,7 @@
 /*     Register Google Fonts
 /*--------------------------------------------------------------------*/
 
-function elegance_fonts_url() {
+function elitepress_fonts_url() {
 	
     $fonts_url = '';
 		
@@ -22,10 +22,10 @@ function elegance_fonts_url() {
     return $fonts_url;
 }
 
-function elegance_scripts_styles() {
-    wp_enqueue_style( 'elegance-fonts', elegance_fonts_url(), array(), null );
+function elitepress_scripts_styles() {
+    wp_enqueue_style( 'elitepress-fonts', elitepress_fonts_url(), array(), null );
 }
-add_action( 'wp_enqueue_scripts', 'elegance_scripts_styles' );
+add_action( 'wp_enqueue_scripts', 'elitepress_scripts_styles' );
 
 
 ?>

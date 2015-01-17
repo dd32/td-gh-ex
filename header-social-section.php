@@ -1,7 +1,7 @@
 <!-- Header social & Contact Info -->
 	<div class="container">
 		<div class="row">
-		<?php $current_options=get_option('elegance_lite_options'); ?>
+		<?php $current_options=get_option('elitepress_lite_options'); ?>
 			<?php if($current_options['header_social_media_enabled']=='on') { ?>
 			<div class="col-md-6">
 				<ul class="head-contact-social">
@@ -43,7 +43,7 @@
 					<li><a href="#"><?php echo $current_options['contact_email'];?><i class="fa fa-envelope"></i></a></li>
 					<?php } ?>
 					<?php if(($current_options['contact_email']) && ($current_options['contact_phone_number'])){ ?>
-					<li><span class="line"><?php _e('&#124;', 'elegance'); ?></span></li>
+					<li><span class="line"><?php _e('&#124;', 'elitepress'); ?></span></li>
 					<?php } ?>
 					<?php if($current_options['contact_phone_number']){ ?>
 					<li><i class="fa fa-phone"></i><?php echo $current_options['contact_phone_number']; ?></li>

@@ -1,5 +1,5 @@
 <?php
-$current_options=get_option('elegance_lite_options'); ?>
+$current_options=get_option('elitepress_lite_options'); ?>
 <?php if($current_options['portfolio_section_enabled'] == 'on') { ?>
 <!-- Portfolio Section -->
 <div class="portfolio-section">

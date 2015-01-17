@@ -1,6 +1,6 @@
 <?php
 get_header();
-$current_options=get_option('elegance_lite_options');
+$current_options=get_option('elitepress_lite_options');
 
  if(is_category()){
   $h1=$current_options['banner_title_category'];
@@ -41,10 +41,10 @@ $current_options=get_option('elegance_lite_options');
 				<div class="col-md-12">
 					<div class="page-title">
 					<h1><?php if($h1!=''){ echo $h1; } else{ 
-					_e("Title",'elegance');} ?></h1>
+					_e("Title",'elitepress');} ?></h1>
 					<div class="page-title-seprator"></div>
 					 <p><?php if($bd!=''){ echo $bd;}  else { 
-					_e('Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait','elegance');}?></p>
+					_e('Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait','elitepress');}?></p>
 					</div>
 				</div>
 			</div>

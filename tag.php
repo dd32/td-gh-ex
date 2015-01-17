@@ -7,9 +7,9 @@ get_header(); ?>
 		<div class="row">
 			
 			<!--Blog Area-->
-				<div class="<?php elegance_post_layout_class(); ?>" >
+				<div class="<?php elitepress_post_layout_class(); ?>" >
 				<h1 class="blog_detail_head">
-				<?php  _e( "Tag Archives:", 'elegance' ); echo single_tag_title( '', false ); ?>
+				<?php  _e( "Tag Archives:", 'elitepress' ); echo single_tag_title( '', false ); ?>
 				</h1>
 				<?php
 				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -24,8 +24,8 @@ get_header(); ?>
 				<?php get_template_part('content',''); ?>
 				<?php }	?>			
 				<div class="blog-pagination">
-					<?php previous_posts_link( __('Previous','elegance') ); ?>
-					<?php next_posts_link( __('Next','elegance') ); ?>
+					<?php previous_posts_link( __('Previous','elitepress') ); ?>
+					<?php next_posts_link( __('Next','elitepress') ); ?>
 				</div>
 			</div>
 			<!--/Blog Area-->
