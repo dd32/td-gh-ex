@@ -338,6 +338,13 @@ function awaken_flex_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'awaken_flex_scripts' );
 
+function awaken_add_editor_styles() {
+	$font_url = str_replace( ',', '%2C', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic|Roboto+Condensed:400italic,400,700' );
+    add_editor_style( $font_url );
+    add_editor_style( 'editor-style.css' );
+}
+add_action( 'after_setup_theme', 'awaken_add_editor_styles' );
+
 /**
  * Implement the Custom Header feature.
  */

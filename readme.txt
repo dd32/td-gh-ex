@@ -1,5 +1,5 @@
 Theme Name : Awaken
-Version    : 1.0.6
+Version    : 1.0.7
 Theme URL  : http://www.themezhut.com/themes/awaken
 Theme Documentation  : http://www.themezhut.com/awaken-theme-documentation
 License: GNU General Public License v2 or later
@@ -135,3 +135,6 @@ Changed slider locations.
 
 - Version 1.0.6
 Added linkedin social link to the header.
+
+- Version 1.0.7
+Added Editor Stylesheet to the theme.

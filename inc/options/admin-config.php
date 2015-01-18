@@ -261,6 +261,7 @@
                         array(
                             'id'    => 'pro-general',
                             'type'  => 'info',
+                            'style' => 'success',
                             'title' => __('<a href="http://www.themezhut.com/themes/awaken-pro" target="_blank">Upgrade to Pro</a>', 'awaken'),
                             'desc'  => __('Pro Version Comes with Layout Options, Unlimited Colors, Post Options, Unlimited Sidebars etc.',  'awaken')
                         ),
@@ -379,6 +380,7 @@
                         array(
                             'id'    => 'pro-home',
                             'type'  => 'info',
+                            'style' => 'success',
                             'title' => __('<a href="http://www.themezhut.com/themes/awaken-pro" target="_blank">Upgrade to Pro</a>', 'awaken'),
                             'desc'  => __('Pro Version comes with unlimited slides, more slider options, custom slider etc',  'awaken')
                         ),
@@ -395,6 +397,7 @@
                         array(
                             'id'    => 'pro-styling',
                             'type'  => 'info',
+                            'style' => 'success',
                             'title' => __('<a href="http://www.themezhut.com/themes/awaken-pro" target="_blank">Upgrade to Pro</a>', 'awaken'),
                             'desc'  => __('Pro Version comes with unlimited fonts, unlimited colors, custom styling options, boxed and wide layouts. etc',  'awaken')
                         ),
@@ -507,6 +510,7 @@
                         array(
                             'id'    => 'pro-social',
                             'type'  => 'info',
+                            'style' => 'success',
                             'title' => __('<a href="http://www.themezhut.com/themes/awaken-pro" target="_blank">Upgrade to Pro</a>', 'awaken'),
                             'desc'  => __('Pro Version comes with more social media link options.',  'awaken')
                         ),
@@ -529,7 +533,7 @@
                             'id'   => 'opt-info-field',
                             'type' => 'info',
                             'style' => 'success',
-                            'desc' => __( '<h4><a class="button-primary" href="http://www.themezhut.com/themes/awaken" target="_blank">Theme Details</a></h4> <h4><a class="button-primary" href="http://www.themezhut.com/awaken-wordpress-theme-documentation" target="_blank">Theme Setup Guide</a></h4> <h4><a class="button-primary" href="http://www.themezhut.com/demo/awaken" target="_blank">Theme Demo</a></h4>', 'awaken' )
+                            'desc' => __( '<h4><a class="button-primary" href="http://www.themezhut.com/themes/awaken" target="_blank">Theme Details</a></h4> <h4><a class="button-primary" href="http://www.themezhut.com/awaken-wordpress-theme-documentation" target="_blank">Theme Setup Guide</a></h4> <h4><a class="button-primary" href="http://www.themezhut.com/demo/awaken" target="_blank">Theme Demo</a></h4> <h4><a class="button-primary" href="http://wordpress.org/themes/awaken" target="_blank">Rate Awaken Theme</a></h4> <h4><a class="button-primary" href="http://www.themezhut.com/themes/awaken-pro" target="_blank">Awaken Pro Details</a></h4> <h4><a class="button-primary" href="http://www.themezhut.com/demo/awaken-pro" target="_blank">Awaken Pro Demo</a></h4>', 'awaken' )
                         ),
                     ),
                 );
