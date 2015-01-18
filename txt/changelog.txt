@@ -1,3 +1,6 @@
+= 2.1 - 2015-01-18 =
+* added 'title-tag' feature
+
 = 2.0 - 2015-01-18 =
 * added Bootstrap theme and *.map files
 * updated Font Awesome v.4.2.0

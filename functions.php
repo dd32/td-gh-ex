@@ -1,6 +1,6 @@
 <?php
 
-define('ACTIVETAB_VERSION', '2.0');
+define('ACTIVETAB_VERSION', '2.1');
 
 
 if ( ! isset( $content_width ) ) {
@@ -37,6 +37,8 @@ if ( ! function_exists( 'activetab_setup' ) ) :
 		add_editor_style(); // visual editor style match the theme style (add editor-style.css)
 
 		add_theme_support( 'automatic-feed-links' ); // add RSS feed links to <head> for posts and comments
+
+		add_theme_support( 'title-tag' ); // let WordPress manage the document title
 
 		//add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat', ) ); // post formats for future
 
@@ -135,31 +137,6 @@ if ( ! function_exists( 'activetab_list_pages' ) ) :
 endif; // activetab_list_pages()
 
 
-if ( ! function_exists( 'activetab_title' ) ) :
-	function activetab_title( $title, $sep ) {
-		global $page, $paged;
-
-		if ( is_feed() ) {
-			return $title;
-		}
-
-		$title .= get_bloginfo( 'name' ); // add the blog name
-
-		$site_description = get_bloginfo( 'description', 'display' );
-		if ( $site_description && ( is_home() || is_front_page() ) ) { // add the blog description for the home/front page
-			$title .= ' ' . $sep . ' ' . $site_description;
-		}
-
-		if ( $paged >= 2 || $page >= 2 ) { // add a page number if necessary
-			$title .= ' ' . $sep . ' ' . sprintf( __( 'page %s', 'activetab' ), max( $paged, $page ) );
-		}
-
-		return $title;
-	}
-	add_filter( 'wp_title', 'activetab_title', 10, 2 );
-endif; // activetab_title()
-
-
 if ( ! function_exists( 'activetab_comments' ) ) :
 	function activetab_comments( $comment, $args, $depth ) {
 		$GLOBALS['comment'] = $comment;
@@ -249,13 +226,11 @@ endif; // activetab_post_date()
 
 if ( ! function_exists( 'activetab_post_sticky' ) ) :
 	function activetab_post_sticky() {
+		$post_sticky = '';
 
 		if( is_sticky() ) { // add 'sticky' label to sticky post
 			$sticky = ' <span class="label label-info">'.__( 'Sticky', 'activetab' ).'</span>';
 			$post_sticky = '<span class="entry-meta-item entry-meta-sticky">'.$sticky.'</span>'."\n";
-		} else {
-			$sticky = '';
-			$post_sticky = '';
 		}
 
 		return $post_sticky;
