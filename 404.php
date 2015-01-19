@@ -3,16 +3,7 @@
 <?php fkidd_show_page_header_section(); ?>
 
 <?php
-	$options = get_option( 'fkidd_settings' );
-	if ( $options === false ) {
-		// get default Not Found settings
-		$options = array (  
-					'notfound_image'	=> get_stylesheet_directory_uri().'/images/404.png',
-					'notfound_title'	=> 'Error 404: Not Found',
-					'notfound_content'	=> '<p>Sorry. The page you are looking for does not exist.</p>',
-					);
-	}
-	
+	$options = fkidd_get_options(); 
 ?>
 <div id="main-content-wrapper">
 	<div id="main-content-full">

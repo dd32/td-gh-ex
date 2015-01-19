@@ -7,7 +7,7 @@
 	</head>
 	<body <?php body_class(); ?>>
 		<div id="body-content-wrapper">
-			<header id="header-main-fixed">
+			<header id="header-main">
 				<div id="header-content-wrapper">
 					<div id="header-top">
 						<?php fkidd_show_header_top(); ?>
@@ -16,10 +16,8 @@
 						<?php fkidd_show_website_logo_image_or_title(); ?>
 					</div>
 					<nav id="navmain">
-						<?php wp_nav_menu( array(
-												  'container_class' => 'menu-all-pages-container',
-												  'menu_class' => 'menu',
-											      'theme_location' => 'primary',
+						<?php wp_nav_menu( array('theme_location' => 'primary',
+												 'fallback_cb'    => 'wp_page_menu',
 												) ); ?>
 					</nav>
 					
@@ -27,6 +25,4 @@
 					</div>
 				</div>
 			</header>
-			<div id="header-spacer">
-				&nbsp;
-			</div>
+

@@ -4,7 +4,7 @@ Description: fKidd is a Free Education WordPress theme. It is fully responsive, 
 Theme URI: http://tishonator.com/product/fkidd
 Author: tishonator
 Author URI: http://tishonator.com
-Version: 1.3.7
+Version: 1.3.8
 Text Domain: fkidd
 Tags: blue, pink, white, light, two-columns, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-header, custom-menu, featured-images, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 License: GNU General Public License v2 or later
@@ -202,21 +202,19 @@ dt.gallery-icon:before {
 }
 
 /* header */
-#header-main-fixed {
+#header-main {
 	clear:both;
 	background-color:#FDFFFF;
 	margin:0;
-	position:fixed;
 	width:100%;
-	z-index:5000;
 	color:#303132;
 }
 
-#header-main-fixed a {
+#header-main a {
 	color:#398790;
 }
 
-#header-main-fixed a:hover {
+#header-main a:hover {
 	color:#ed265a;
 }
 
@@ -1584,7 +1582,7 @@ img.wp-post-image {
 		padding-bottom:4px;
 	}
 
-	#header-main-fixed {
+	#header-main {
 		padding-bottom:0;
 		top:0;
 	}
@@ -1991,22 +1989,22 @@ img.wp-post-image {
 
 @media screen and (min-width: 800px) {
 
-	#header-main-fixed{width:auto;left:0;right:0;margin-left:30px;margin-right:30px;}
+	#header-main{width:auto;left:0;right:0;margin-left:30px;margin-right:30px;}
 }
 
 @media screen and (max-width: 799px) {
 
-	#header-main-fixed{width:auto;left:0;right:0;margin-left:20px;margin-right:20px;}
+	#header-main{width:auto;left:0;right:0;margin-left:20px;margin-right:20px;}
 }
 
 @media screen and (max-width: 360px) {
 
-	#header-main-fixed{width:auto;left:0;right:0;margin-left:10px;margin-right:10px;}
+	#header-main{width:auto;left:0;right:0;margin-left:10px;margin-right:10px;}
 }
 
 @media screen and (min-width: 1200px) {
 
-	#header-main-fixed{margin:0 auto;width:1180px;}
+	#header-main{margin:0 auto;width:1180px;}
 }
 
 /**

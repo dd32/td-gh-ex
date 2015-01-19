@@ -3,11 +3,11 @@ jQuery( document ).ready(function() {
 	// add submenu icons class in main menu (only for large resolution)
 	if (fkidd_IsLargeResolution()) {
 	
-		jQuery('.menu > li:has(".sub-menu")').addClass('level-one-sub-menu');
-		jQuery('.menu li ul li:has(".sub-menu")').addClass('level-two-sub-menu');										
+		jQuery('#navmain > div > ul > li:has("ul")').addClass('level-one-sub-menu');
+		jQuery('#navmain > div > ul li ul li:has("ul")').addClass('level-two-sub-menu');										
 	}
 
-	jQuery('.menu-all-pages-container', jQuery('#navmain')).on('click', function(e) {
+	jQuery('#navmain > div').on('click', function(e) {
 
 		e.stopPropagation();
 
@@ -25,13 +25,13 @@ jQuery( document ).ready(function() {
 		}
 	});
 
-	jQuery("#navmain .menu li").mouseleave( function() {
+	jQuery("#navmain > div > ul li").mouseleave( function() {
 		if (fkidd_IsLargeResolution()) {
 			jQuery(this).children("ul").stop(true, true).css('display', 'block').slideUp(300);
 		}
 	});
 	
-	jQuery("#navmain .menu li").mouseenter( function() {
+	jQuery("#navmain > div > ul li").mouseenter( function() {
 		if (fkidd_IsLargeResolution()) {
 
 			var curMenuLi = jQuery(this);
@@ -40,14 +40,6 @@ jQuery( document ).ready(function() {
 			jQuery(this).children("ul").stop(true, true).css('display','none').slideDown(400);
 		}
 	});
-	
-	jQuery('#header-spacer').height(jQuery('#header-main-fixed').height());
-	
-	if (jQuery('#wpadminbar').length > 0) {
-	
-		jQuery('#header-main-fixed').css('top', jQuery('#wpadminbar').height() + 'px');
-		jQuery('#wpadminbar').css('position', 'fixed');
-	}
 });
 
 function fkidd_IsSmallResolution() {

@@ -35,6 +35,28 @@
 			</span>
 			
 		<?php endif; ?>
+		
+		<?php if ( ! post_password_required() ) :
+		
+					$format = get_post_format();
+						if ( current_theme_supports( 'post-formats', $format ) ) :
+							printf( '<span class="%1$s-icon"> <a href="%2$s">%3$s</a></span>',
+									$format,							
+									esc_url( get_post_format_link( $format ) ),
+									get_post_format_string( $format )
+								);
+						endif;
+				
+			   endif;
+		?>
+		
+		<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
+
+				<span class="comments-icon">
+					<?php comments_popup_link(__( 'No Comments', 'fkidd' ), __( '1 Comment', 'fkidd' ), __( '% Comments', 'fkidd' ), '', __( 'Comments are closed.', 'fkidd' )); ?>
+				</span>
+		<?php endif; ?>
+		
 	</div>
 
 	<?php if ( is_single() ) : ?>
@@ -55,30 +77,22 @@
 
 
 	<div class="after-content">
-		<span class="author-icon">
-			<?php the_author_posts_link(); ?>
-		</span>
-		<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
-
-<span class="comments-icon">
-			<?php comments_popup_link(__( 'No Comments', 'fkidd' ), __( '1 Comment', 'fkidd' ), __( '% Comments', 'fkidd' ), '', __( 'Comments are closed.', 'fkidd' )); ?>
-		</span>
-<?php endif; ?>
+		
 		<?php if ( ! post_password_required() ) : ?>
 
-<?php if ( has_category() ) : ?>
-					<span class="category-icon">
-						<?php the_category( ', ' ) ?>
-					</span>
-		<?php endif; ?>
-		
-		<?php if ( has_tag() ) : ?>
-					<span class="tags-icon">
-						<?php echo get_the_tag_list( '', ', ','' ); ?>
-					</span>
-		<?php endif; ?>
+				<?php if ( has_category() ) : ?>
+							<span class="category-icon">
+								<?php the_category( ', ' ) ?>
+							</span>
+				<?php endif; ?>
+				
+				<?php if ( has_tag() ) : ?>
+							<span class="tags-icon">
+								<?php echo get_the_tag_list( '', ', ','' ); ?>
+							</span>
+				<?php endif; ?>
 
-<?php endif; ?>
+		<?php endif; ?>
 		<?php edit_post_link( __( 'Edit', 'fkidd'), '<span class="edit-icon">', '</span>' ); ?>
 	</div>
 	

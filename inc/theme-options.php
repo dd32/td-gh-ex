@@ -35,6 +35,10 @@ function fkidd_get_option_defaults() {
 
 	$defaults = array(
 		'social_rss' 	   		=> get_bloginfo( 'rss2_url' ),
+		'social_facebook'		=> '#',
+		'social_googleplus'		=> '#',
+		'social_youtube'		=> '#',
+		'header_logo'			=> get_stylesheet_directory_uri().'/images/logo.png',
 		'notfound_image'		=> get_stylesheet_directory_uri().'/images/404.png',
 		'notfound_title'		=> __( 'Error 404: Not Found', 'fkidd' ),
 		'notfound_content'		=> __( '<p>Sorry. The page you are looking for does not exist.</p>', 'fkidd' ),
