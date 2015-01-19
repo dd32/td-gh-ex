@@ -1,4 +1,9 @@
-<?php get_header();?>
+<?php
+/**
+ * The Template for displaying all single posts.
+ *
+ */
+get_header(); ?>
 
 <div id="content"><div class="inner">
 <div id="cont">

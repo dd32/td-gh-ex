@@ -1,4 +1,9 @@
-<?php if(post_password_required())return;?>
+<?php
+/**
+ * The template for displaying Comments.
+ *
+ */
+if(post_password_required())return;?>
 
 <?php if(have_comments()):?>
 <div id="comments">

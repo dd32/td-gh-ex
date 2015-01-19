@@ -1,3 +1,8 @@
+<?php
+/**
+ * @package fmi
+ */
+?>
 <div id="post-0" class="post no-results not-found">
 	<div class="entry-title"><span>Nothing Found</span></div>
 	<div class="entry-content"><div class="mscont">
@@ -7,7 +12,7 @@
 			
 		<?php elseif ( is_search() ) : ?>
 			
-			<p><?php echo wp_kses_post(fmi_theme_option('vs-website-nosearch-msg'));?></p>
+			<p><?php echo esc_attr(fmi_theme_option('vs-website-nosearch-msg'));?></p>
 			
             <div class="not-found-options">
                 <a href="<?php echo esc_url(home_url('/')); ?>" class="alba-button">[<?php echo __('Return Home','fmi');?>]</a>
@@ -15,7 +20,7 @@
 			
 		<?php else : ?>
 			
-			<p><?php echo wp_kses_post(fmi_theme_option('vs-website-nosearch-msg'));?></p>
+			<p><?php echo esc_attr(fmi_theme_option('vs-website-nosearch-msg'));?></p>
             
             <div class="not-found-options">
                 <a href="<?php echo esc_url(home_url('/')); ?>" class="alba-button">[<?php echo __('Return Home','fmi');?>]</a>

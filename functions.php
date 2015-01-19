@@ -1,4 +1,18 @@
 <?php
+/**
+ * functions and definitions
+ *
+ * @package fmi
+ */
+
+
+/**
+ * Sets up theme defaults and registers support for various WordPress features.
+ *
+ * Note that this function is hooked into the after_setup_theme hook, which runs
+ * before the init hook. The init hook is too late for some features, such as indicating
+ * support post thumbnails.
+ */
 function fmi_theme_setup(){
 	global $content_width;
 	if(!isset($content_width)){$content_width = 640;}
@@ -10,15 +24,18 @@ function fmi_theme_setup(){
 }
 add_action('after_setup_theme','fmi_theme_setup');
 
+/**
+ * Enqueue scripts and styles
+ */
 function fmi_theme_scripts(){
 	wp_enqueue_style('style',get_stylesheet_uri());
 	wp_enqueue_style('base',get_template_directory_uri()."/css/base.css");
 	wp_enqueue_style('responsive',get_template_directory_uri()."/css/responsive.css");
 	wp_enqueue_style('font-awesome',get_template_directory_uri().'/css/font-awesome/css/font-awesome.min.css');
 	if(fmi_theme_option( 'vs-body-google-font-url' ) ) {
-        wp_enqueue_style( 'google-fonts-body', fmi_theme_option( 'vs-body-google-font-url' ));
+        wp_enqueue_style( 'google-fonts-body', esc_url(fmi_theme_option( 'vs-body-google-font-url' )));
     } else {
-        wp_enqueue_style( 'google-body-fonts-default', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic');
+        wp_enqueue_style( 'google-body-fonts-default', 'http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic');
     }
 	
 	wp_enqueue_script('base',get_template_directory_uri().'/js/base.js',array('jquery'),'1.0',true);
@@ -26,6 +43,9 @@ function fmi_theme_scripts(){
 }
 add_action('wp_enqueue_scripts','fmi_theme_scripts');
 
+/**
+ * This theme uses wp_nav_menu() in one location.
+ */
 function fmi_register_menus(){
 	register_nav_menus(array('menu' => 'Menu'));
 }
@@ -61,9 +81,9 @@ add_action( 'widgets_init', 'fmi_theme_widgets' );
 function fmi_theme_styles(){
     $custom_css = '';
     if (fmi_theme_option( 'vs-custom-css' ) ) {
-        $custom_css = fmi_theme_option( 'vs-custom-css' );
+        $custom_css = wp_kses_post(fmi_theme_option( 'vs-custom-css' ));
     }
-	$body_font = fmi_theme_option( 'vs-body-google-font-name' );
+	$body_font = wp_kses_post(fmi_theme_option( 'vs-body-google-font-name' ));
 ?>
 <style type="text/css" media="screen">
 body{<?php echo ( $body_font ) ? $body_font : 'font-family: \'Open Sans\', sans-serif;'; ?>}
@@ -73,6 +93,9 @@ body{<?php echo ( $body_font ) ? $body_font : 'font-family: \'Open Sans\', sans-
 }
 add_action('wp_head', 'fmi_theme_styles', 11);
 
+/**
+ * Custom functions.
+ */
 require get_template_directory() . '/fun/base.php';
 require get_template_directory().'/set/settings.php';
 ?>

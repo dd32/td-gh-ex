@@ -52,8 +52,8 @@ ol,ul,li{list-style:none outside none;}
 .mscont a{color:#46A8C8;}
 .mscont a:hover{color:#83AA59;}
 .mscont li{ list-style:inside;}
-.mscont .alignright{float:right;padding-left:15px;}
-.mscont .alignleft{float:left;padding-right:15px;}
+.mscont .alignright{float:right;margin-left:15px;}
+.mscont .alignleft{float:left;margin-right:15px;}
 .page-header{height:30px;line-height:30px;padding:20px 0 0 10px;}
 .page-header span{font-weight:bold;margin:0 0 0 5px;}
 #nav-below{padding:0 10px 10px;line-height:20px;font-size:12px;border-bottom: 1px double #EBEDED;}

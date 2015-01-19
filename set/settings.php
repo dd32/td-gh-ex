@@ -244,7 +244,7 @@ class Fmi_theme_settings{
             'title'   => __( 'Header Search','fmi'),
             'desc'    => __( 'Select this to show the search in the header','fmi'),
             'type'    => 'checkbox',
-            'std'     => 1 // Set to 1 to be checked by default
+            'std'     => 1
         );
 
         $this->settings['vs-enable-home-slider'] = array(
@@ -252,7 +252,7 @@ class Fmi_theme_settings{
             'title'   => __( 'Enable Slider','fmi'),
             'desc'    => __( 'Click to enable the default homepage slider','fmi'),
             'type'    => 'checkbox',
-            'std'     => 1 // Set to 1 to be checked by default
+            'std'     => 1
         );
         
         $this->settings['vs-heading-two'] = array(
@@ -272,16 +272,16 @@ class Fmi_theme_settings{
         $this->settings['vs-body-google-font-url'] = array(
             'section' => 'styling',
             'title'   => __( 'Body font URL','fmi'),
-            'desc'    => __( 'Enter ONLY the fonts URL here. Eg: link href=\'<b><big> //fonts.googleapis.com/css?family=Open+Sans:400italic,400 </big></b>\' rel=\'stylesheet\' type=\'text/css\'','fmi'),
+            'desc'    => __( 'Enter ONLY the fonts URL here. Eg: link href=\'<b><big> http://fonts.googleapis.com/css?family=Open+Sans:400italic,400 </big></b>\' rel=\'stylesheet\' type=\'text/css\'','fmi'),
             'type'    => 'url',
-            'std'     => '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic'
+            'std'     => esc_url('http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic')
         );
         $this->settings['vs-body-google-font-name'] = array(
             'section' => 'styling',
             'title'   => __( 'Body font name','fmi'),
             'desc'    => __( 'Enter the FULL name. Eg:<b><big> font-family: \'Open Sans\', sans-serif; </big></b>','fmi'),
             'type'    => 'text',
-            'std'     => 'font-family: \'Open Sans\', sans-serif;'
+            'std'     => wp_kses_post('font-family: \'Open Sans\', sans-serif;')
         );       
         $this->settings['vs-heading-four'] = array(
             'section' => 'styling',
@@ -397,12 +397,12 @@ class Fmi_theme_settings{
             'title'   => __( '404 Error Page Heading','fmi'),
             'desc'    => __( 'Enter the heading for the 404 Error page','fmi'),
             'type'    => 'text',
-            'std'     => 'Oops! That page can\'t be found.'
+            'std'     => wp_kses_post('Oops! That page can\'t be found.')
         );
         $this->settings['vs-website-error-msg'] = array(
             'title'   => __( 'Error 404 Message','fmi'),
             'desc'    => __( 'Enter the default text on the 404 error page (Page not found)','fmi'),
-            'std'     => 'The page you are looking for can\'t be found. Please select one of the options below.',
+            'std'     => wp_kses_post('The page you are looking for can\'t be found. Please select one of the options below.'),
             'type'    => 'textarea',
             'section' => 'website',
             'class'   => 'code'
@@ -417,7 +417,7 @@ class Fmi_theme_settings{
         $this->settings['vs-website-nosearch-msg'] = array(
             'title'   => __( 'No Search Results','fmi'),
             'desc'    => __( 'Enter the default text for when no search results are found','fmi'),
-            'std'     => 'Sorry, but nothing matched your search terms. Please try again with some different keywords or return to home.',
+            'std'     => wp_kses_post('Sorry, but nothing matched your search terms. Please try again with some different keywords or return to home.'),
             'type'    => 'textarea',
             'section' => 'website',
             'class'   => 'code'

@@ -1,4 +1,9 @@
-<?php get_header();?>
+<?php
+/**
+ * The template for displaying all pages.
+ *
+ */
+get_header(); ?>
 
 <div id="content"><div class="inner">
 <div id="cont">
