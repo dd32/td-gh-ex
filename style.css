@@ -1,7 +1,7 @@
 /*
 Theme Name: Hueman
 Theme URI: http://alxmedia.se/themes/hueman/
-Version: 1.4.5
+Version: 1.4.6
 Description: <a href="http://alxmedia.se/themes/hueman/">Hueman</a> is a responsive 100% high resolution theme for blogs and magazines. Unique toggle sidebars give a great browsing and reading experience on both tablet and mobile. The feature list is long: Unlimited topbar, header, footer and accent colors, unlimited widget areas, 0-2 sidebars to the left or right that can be uniquely specified for each page or post, 300px / 220px fixed width sidebars, 0-4 footer widget columns, almost zero layout images, related posts and post nav, featured story or slider, 10 post formats, good SEO, 3 flexible custom widgets, localisation support, social links, logo upload and many more useful admin panel features.
 Author: Alexander Agnarson
 Author URI: http://alxmedia.se
@@ -557,6 +557,10 @@ box-shadow: 0 0 2px rgba(255,255,255,0.4);
 .site-description { font-size: 16px; font-style: italic; color: #fff; color: rgba(255,255,255,0.5); float: left; margin-left: 20px; line-height: 60px; padding: 10px 0; }
 .site-image { display: block; margin: 0 auto; max-height: 400px; }
 
+#header-ads { float: right; }
+#header-ads h3 { display: none; }
+#header-ads img { display: block; }
+
 /*  header : search
 /* ------------------------------------ */
 .toggle-search { color: #fff; font-size: 18px; line-height: 24px; cursor: pointer; padding: 13px 20px; display: block; position: absolute; right: 0; top: -50px;
@@ -686,6 +690,10 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.1); }
 #footer a { color: #777; }
 #footer a:hover { color: #ccc; }
 #footer .pad { padding-bottom: 30px; }
+
+#footer-ads { text-align: center; padding: 10px 0; border-bottom: 1px solid #eee; }
+#footer #footer-ads .widget { padding-bottom: 0; font-size: 0; line-height: 0; }
+#footer-ads h3 { display: none; }
 
 #footer-widgets{ padding-top: 20px; }
 
@@ -836,6 +844,19 @@ box-shadow: inset -1px 0 1px rgba(0,0,0,0.2); }
 
 .entry.excerpt { font-size: 16px; color: #aaa; }
 .entry.excerpt p { margin-bottom: 0; }
+
+/*  post : standard loop
+/* ------------------------------------ */
+.blog .post-standard, 
+.single .post-standard, 
+.archive .post-standard, 
+.search .post-standard { margin-bottom: 20px; }
+.page.post-standard .post-inner { padding-left: 0; }
+.page.post-standard .post-thumbnail { display: none; }
+
+.post-standard .post-inner { padding-left: 230px; padding-bottom: 20px; float: left; border-bottom: 1px solid #eee; }
+.post-standard .post-thumbnail { margin-left: -230px; max-width: 200px; margin-bottom: 0; float: left; }
+.post-standard .post-content { float: left; }
 
 
 /* ------------------------------------------------------------------------- *
