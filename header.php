@@ -9,18 +9,20 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<title><?php wp_title( '|', true, 'right' ); ?></title>
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<?php 
-wp_head();
-$generate_settings = wp_parse_args( 
-	get_option( 'generate_settings', array() ), 
-	generate_get_defaults() 
-);
-?>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<?php if ( ! function_exists( '_wp_render_title_tag' ) ) : ?>
+		<title><?php wp_title( '|', true, 'right' ); ?></title>
+	<?php endif; ?>
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<?php 
+	wp_head();
+	$generate_settings = wp_parse_args( 
+		get_option( 'generate_settings', array() ), 
+		generate_get_defaults() 
+	);
+	?>
 </head>
 
 <body itemtype="http://schema.org/WebPage" itemscope="itemscope" <?php body_class(); ?>>
@@ -49,7 +51,7 @@ $generate_settings = wp_parse_args(
 			
 			if ( !empty( $generate_settings['logo'] ) ) : ?>
 				<div class="site-logo">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img class="header-image" src="<?php echo $generate_settings['logo']; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /></a>
+					<a href="<?php echo apply_filters( 'generate_logo_href' , esc_url( home_url( '/' ) ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img class="header-image" src="<?php echo $generate_settings['logo']; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /></a>
 				</div>
 			<?php endif; ?>
 			<?php do_action( 'generate_after_header_content'); ?>

@@ -3,15 +3,15 @@ Theme Name: GeneratePress
 Theme URI: http://generatepress.com
 Author: Thomas Usborne
 Author URI: http://edge22.com
-Description: GeneratePress is a fast, lightweight HTML5 and CSS3 framework that allows anyone to create a completely unique website with ease. Using the Customizer you can transform GeneratePress to meet your needs in minutes. GeneratePress is mobile responsive, W3C Markup Validated, Schema.org microdata integrated, search engine friendly, cross browser compatible (including IE8+), WooCommerce compatible, BuddyPress compatible and 100% translatable. GeneratePress has 8 widget areas, 5 navigation positions, 5 sidebar layouts and much more. Available in English, German, Spanish, Russian and French! See more at http://generatepress.com
-Version: 1.2.4
+Description: GeneratePress is a lightweight mobile responsive WordPress theme built with speed, SEO and usability in mind. Create your website just the way you want it using the Customizer and see the changes take place right in front of you before you publish. GeneratePress is mobile responsive, W3C Markup Validated, Schema.org microdata integrated, search engine friendly, cross browser compatible (including IE8+), WooCommerce compatible, BuddyPress compatible and 100% translatable. GeneratePress has 8 widget areas, 5 navigation positions, 5 sidebar layouts and much more. Available in English, German, Spanish, Russian, French and Polish! See more at http://generatepress.com
+Version: 1.2.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: generate
 Domain Path: /languages/
 Tags: two-columns, three-columns, one-column, right-sidebar, left-sidebar, fluid-layout, fixed-layout, responsive-layout, custom-header, custom-background, custom-menu, custom-colors, sticky-post, threaded-comments, translation-ready, featured-images, theme-options, light, white, dark, black, blue, brown, gray, green, orange, pink, purple, red, silver, tan, yellow
 
-GeneratePress, Copyright 2014 Thomas Usborne
+GeneratePress, Copyright 2015 Thomas Usborne
 GeneratePress is distributed under the terms of the GNU GPL
 
 GeneratePress is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
@@ -420,6 +420,47 @@ a:active {
 ----------------------------------------------- */
 
 .main-navigation {
+	z-index: 100;
+}
+
+.main-navigation {
+	padding: 0;
+}
+.main-navigation .main-nav ul li a {
+	display: block;
+	line-height: 60px;
+	padding: 0 20px;
+	/*color:#FFF;*/
+}
+.menu-toggle {
+	line-height: 60px;
+	/*color:#FFF;*/
+	margin: 0;
+	padding: 0 20px;
+}
+.menu-toggle:before {
+	content: "\f0c9";
+	font-family: FontAwesome;
+	margin-right: 10px;
+}
+.toggled .menu-toggle:before {
+	content: "\f00d";
+}
+.main-navigation .main-nav ul ul li a {
+	line-height: normal;
+	padding: 10px 20px;
+}
+.main-navigation .main-nav > ul.sf-arrows > li > a.sf-with-ul {
+	padding-right:2.5em;
+}
+.main-navigation ul ul{
+	top: 60px;
+}
+.main-navigation ul ul li a {
+	font-size: 90%;
+}
+
+.main-navigation {
 	clear: both;
 	display: block;
 }
@@ -592,6 +633,9 @@ a:active {
 	text-align: right;
 }
 
+.main-navigation .main-nav ul li .dropdown-toggle {
+	display: none;
+}
 
 /* =Content
 ----------------------------------------------- */
@@ -621,7 +665,10 @@ a:active {
 	margin: 0 0 1.5em;
 }
 
-
+.blog .format-status .entry-title, 
+.archive .format-status .entry-title {
+    display: none;
+}
 
 /* =Media
 ----------------------------------------------- */
@@ -707,7 +754,6 @@ object {
 	margin: 0;
 }
 
-.comment-avatar,
 .comment-author-info {
 	display: inline-block;
 	*display: inline;
@@ -715,11 +761,9 @@ object {
 	vertical-align:middle;
 }
 
-.comment-avatar {
+.comment-meta .avatar {
+	float: left;
 	margin-right: 10px;
-}
-
-.comment-avatar img {
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
 	border-radius: 50%;
@@ -788,6 +832,15 @@ object {
 	display: none;
 }
 
+/* Categories widget */
+.widget_categories .children {
+    margin-left: 1.5em;
+	padding-top: 5px;
+}
+.widget_categories .children li:last-child {
+	padding-bottom: 0;
+}
+
 /* =Infinite Scroll
 ----------------------------------------------- */
 
@@ -833,44 +886,6 @@ body .grid-container {
 /*.one-container .container {
 	background: #FFF;
 }*/
-
-.main-navigation {
-	z-index: 100;
-}
-
-.main-navigation {
-	padding: 0;
-}
-.main-navigation .main-nav ul li a {
-	display: block;
-	line-height: 60px;
-	padding: 0 20px;
-	/*color:#FFF;*/
-}
-.menu-toggle {
-	line-height: 60px;
-	/*color:#FFF;*/
-	margin: 0;
-	padding: 0 20px;
-}
-.menu-toggle:before {
-	content: "\f0c9";
-	font-family: FontAwesome;
-	margin-right: 10px;
-}
-.main-navigation .main-nav ul ul li a {
-	line-height: normal;
-	padding: 10px 20px;
-}
-.main-navigation .main-nav > ul.sf-arrows > li > a.sf-with-ul {
-	padding-right:2.5em;
-}
-.main-navigation ul ul{
-	top: 60px;
-}
-.main-navigation ul ul li a {
-	font-size: 90%;
-}
 
 h1 {
 	font-size: 35px;
@@ -1133,12 +1148,9 @@ h4, h5, h6 {
 .page-header h1 {
 	font-size: 25px;
 }
-.author .page-header h1 {
-	margin-bottom: 0;
-}
 .page-header .avatar {
 	float: left;
-	margin-right: 15px;
+	margin-right: 1.5em;
 }
 .page-header .author-info {
 	overflow: hidden;
@@ -1147,7 +1159,7 @@ h4, h5, h6 {
 	margin-bottom:0;
 }
 .entry-meta {
-	font-size: 80%;
+	font-size: 85%;
 	margin-top: .5em;
 }
 /*.entry-meta a,
@@ -1161,6 +1173,30 @@ footer.entry-meta {
 	margin-top: 2em;
 }
 
+footer.entry-meta .author:before {
+	content: "\f007";
+	font-family: FontAwesome;
+  	font-weight: normal;
+ 	font-style: normal;
+	display: inline-block;
+	text-decoration: inherit;
+	position:relative;
+	margin-right: 5px;
+	width: 13px;
+	text-align:center;
+}
+footer.entry-meta .posted-on:before {
+	content: "\f073";
+	font-family: FontAwesome;
+  	font-weight: normal;
+ 	font-style: normal;
+	display: inline-block;
+	text-decoration: inherit;
+	position:relative;
+	margin-right: 5px;
+	width: 13px;
+	text-align:center;
+}
 .cat-links:before {
 	content: "\f07b";
 	font-family: FontAwesome;
@@ -1236,7 +1272,9 @@ footer.entry-meta {
 
 .cat-links,
 .tags-links,
-.comments-link {
+.comments-link,
+footer.entry-meta .posted-on,
+footer.entry-meta .byline {
 	display: block;
 }
 

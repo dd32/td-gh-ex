@@ -12,15 +12,10 @@ $generate_settings = wp_parse_args(
 	<div class="inside-article">
 		<?php do_action( 'generate_before_content'); ?>
 		<header class="entry-header">
-			<h2 class="entry-title" itemprop="headline"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-			<?php if ( 'post' == get_post_type() ) : ?>
-			<div class="entry-meta">
-				<?php generate_posted_on(); ?>
-			</div><!-- .entry-meta -->
-			<?php endif; ?>
+			<h2 class="entry-title" itemprop="headline"><a href="<?php echo esc_url( generate_get_link_url() ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 		</header><!-- .entry-header -->
 		<?php do_action( 'generate_after_entry_header'); ?>
-
+		
 		<?php
 		if ( is_search() || 'excerpt' == $generate_settings['post_content'] ) : ?>
 		<div class="entry-summary" itemprop="text">
@@ -30,10 +25,10 @@ $generate_settings = wp_parse_args(
 		<div class="entry-content" itemprop="text">
 			<?php the_content(); ?>
 			<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'generate' ),
-				'after'  => '</div>',
-			) );
+				wp_link_pages( array(
+					'before' => '<div class="page-links">' . __( 'Pages:', 'generate' ),
+					'after'  => '</div>',
+				) );
 			?>
 		</div><!-- .entry-content -->
 		<?php endif; ?>

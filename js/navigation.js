@@ -30,23 +30,43 @@
 	};
 } )();
 
-( function() {
-	var is_webkit 	= navigator.userAgent.toLowerCase().indexOf( 'webkit' ) > -1,
-		is_opera  	= navigator.userAgent.toLowerCase().indexOf( 'opera' )  > -1,
-		is_ie     	= navigator.userAgent.toLowerCase().indexOf( 'msie' )   > -1,
-		is_android 	= navigator.userAgent.toLowerCase().indexOf( 'android' ) > -1;
-
-	if ( ( is_webkit || is_opera || is_ie || is_android ) && 'undefined' !== typeof( document.getElementById ) ) {
-		var eventMethod = ( window.addEventListener ) ? 'addEventListener' : 'attachEvent';
-		window[ eventMethod ]( 'hashchange', function() {
-			var element = document.getElementById( location.hash.substring( 1 ) );
-
-			if ( element ) {
-				if ( ! /^(?:a|select|input|button|textarea)$/i.test( element.tagName ) )
-					element.tabIndex = -1;
-
-				element.focus();
-			}
-		}, false );
-	}
-})();
+jQuery(window).load(function($) {
+   
+	var resizeTimer, sf, body, breakpoint = 768;
+	body = jQuery('body');
+    sf = jQuery('ul.sf-menu');
+	
+	// Build a function that disables and enables superfish when needed
+	function generateResizeNavigation() {
+        if( body.width() >= breakpoint && !sf.hasClass('sf-js-enabled') ) {
+            // you only want SuperFish to be re-enabled once (sf.hasClass)
+            sf.superfish('init');
+        } else if ( body.width() < breakpoint ) {
+            // smaller screen, disable SuperFish
+            sf.superfish('destroy');
+        }
+    };
+	
+	// Add dropdown toggle that display child menu items.
+	jQuery( '.main-navigation .page_item_has_children > a, .main-navigation .menu-item-has-children > a' ).after( '<a href="#" class="dropdown-toggle" aria-expanded="false"><i class="fa fa-caret-down"></i></a>' );
+	
+	// When we resize the browser, check to see which dropdown type we should use
+    jQuery(window).resize(function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(generateResizeNavigation, 250);
+    });
+	
+	// Check to see which dropdown type we should use
+	generateResizeNavigation();
+	
+	// Build the mobile button that displays the dropdown menu
+	jQuery( '.dropdown-toggle' ).click( function( e ) {
+		var _this = jQuery( this );
+		e.preventDefault();
+		_this.toggleClass( 'toggle-on' );
+		_this.next( '.children, .sub-menu' ).toggleClass( 'toggled-on' );
+		_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
+		_this.html( _this.html() === '<i class="fa fa-caret-down"></i>' ? '<i class="fa fa-caret-up"></i>' : '<i class="fa fa-caret-down"></i>' );
+			return false;
+	} );
+});

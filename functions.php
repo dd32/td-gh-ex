@@ -5,7 +5,7 @@
  * @package Generate
  */
 	
-define( 'GENERATE_VERSION', '1.2.4');
+define( 'GENERATE_VERSION', '1.2.5');
 define( 'GENERATE_URI', get_template_directory_uri() );
 define( 'GENERATE_DIR', get_template_directory() );
 
@@ -58,9 +58,14 @@ function generate_setup() {
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 	
 	/**
-	 * Enable support WooCommerce
+	 * Enable support for WooCommerce
 	 */
 	add_theme_support( 'woocommerce' );
+	
+	/**
+	 * Enable support for <title> tag
+	 */
+	add_theme_support( 'title-tag' );
 	
 	/**
 	 * Set the content width based on the theme's design and stylesheet.
@@ -233,7 +238,7 @@ function generate_scripts() {
 	wp_enqueue_style( 'generate-mobile-style', get_template_directory_uri() . '/css/mobile.css', false, GENERATE_VERSION, 'all' );
 	wp_add_inline_style( 'generate-style', generate_base_css() );
 	if ( is_child_theme() ) :
-		wp_enqueue_style( 'generate-child', get_stylesheet_uri(), true, GENERATE_VERSION, 'all' );
+		wp_enqueue_style( 'generate-child', get_stylesheet_uri(), true, filemtime( get_stylesheet_directory() . '/style.css' ), 'all' );
 	endif;
 	wp_enqueue_style( 'superfish', get_template_directory_uri() . '/css/superfish.css', false, GENERATE_VERSION, 'all' );
 	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
@@ -246,6 +251,9 @@ function generate_scripts() {
 
 	if ( 'enable' == $generate_settings['nav_search'] ) {
 		wp_enqueue_script( 'generate-navigation-search', get_template_directory_uri() . '/js/navigation-search.js', array('jquery'), GENERATE_VERSION, true );
+		wp_localize_script( 'generate-navigation-search', 'generateSearch', array(
+			'search' => __( 'Search', 'generate' ),
+		) );
 	}
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

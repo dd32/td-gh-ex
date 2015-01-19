@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GeneratePress\n"
-"POT-Creation-Date: 2015-01-06 17:14-0800\n"
-"PO-Revision-Date: 2015-01-06 17:15-0800\n"
+"POT-Creation-Date: 2014-12-26 15:54-0800\n"
+"PO-Revision-Date: 2014-12-26 15:56-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: en_GB\n"
+"Language: fi_FI\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,47 +28,47 @@ msgid ""
 "below or a search?"
 msgstr ""
 
-#: archive.php:33
+#: archive.php:32
 #, php-format
 msgid "About %s"
 msgstr ""
 
-#: archive.php:41
+#: archive.php:40
 #, php-format
 msgid "Day: %s"
 msgstr ""
 
-#: archive.php:44
+#: archive.php:43
 #, php-format
 msgid "Month: %s"
 msgstr ""
 
-#: archive.php:47
+#: archive.php:46
 #, php-format
 msgid "Year: %s"
 msgstr ""
 
-#: archive.php:50
+#: archive.php:49
 msgid "Asides"
 msgstr ""
 
-#: archive.php:53
+#: archive.php:52
 msgid "Images"
 msgstr ""
 
-#: archive.php:56
+#: archive.php:55
 msgid "Videos"
 msgstr ""
 
-#: archive.php:59
+#: archive.php:58
 msgid "Quotes"
 msgstr ""
 
-#: archive.php:62
+#: archive.php:61
 msgid "Links"
 msgstr ""
 
-#: archive.php:65 sidebar-left.php:39 sidebar.php:38
+#: archive.php:64 sidebar-left.php:39 sidebar.php:38
 msgid "Archives"
 msgstr ""
 
@@ -137,13 +137,12 @@ msgstr ""
 msgid "Post Comment"
 msgstr ""
 
-#: content-link.php:30 content-page.php:20 content-single.php:21
-#: content.php:34 image.php:56
+#: content-page.php:20 content-single.php:18 content.php:30 image.php:56
 msgid "Pages:"
 msgstr ""
 
-#: content-page.php:26 content-single.php:32 image.php:78
-#: inc/template-tags.php:117 inc/template-tags.php:137
+#: content-page.php:26 content-single.php:27 image.php:78
+#: inc/template-tags.php:117 inc/template-tags.php:139
 msgid "Edit"
 msgstr ""
 
@@ -195,7 +194,7 @@ msgstr ""
 
 #: functions.php:250
 msgid "Search"
-msgstr ""
+msgstr "Haku"
 
 #: functions.php:341 inc/options.php:120
 msgid "Copyright"
@@ -819,119 +818,138 @@ msgstr ""
 msgid "Pingback:"
 msgstr ""
 
-#: inc/template-tags.php:128
+#: inc/template-tags.php:130
 #, php-format
 msgid "%s"
 msgstr ""
 
-#: inc/template-tags.php:134
+#: inc/template-tags.php:136
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: inc/template-tags.php:151
+#: inc/template-tags.php:153
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "Viestisi odottaa hyväksyntää."
 
-#: inc/template-tags.php:239
+#: inc/template-tags.php:241
 #, php-format
 msgid ""
 "<span class=\"posted-on\">%1$s</span> <span class=\"byline\">%2$s</span>"
 msgstr ""
 
-#: inc/template-tags.php:246
-msgid "by"
-msgstr ""
-
 #: inc/template-tags.php:248
+msgid "by"
+msgstr "kirjoittaja"
+
+#: inc/template-tags.php:250
 #, php-format
 msgid "View all posts by %s"
-msgstr ""
+msgstr "Selaa kaikkia viestejä kirjoittajalta %s"
 
-#: inc/template-tags.php:262
+#: inc/template-tags.php:264
 msgid "Read more"
-msgstr ""
+msgstr "Lue lisää"
 
-#: inc/template-tags.php:305
+#: inc/template-tags.php:307
 msgctxt "label"
 msgid "Search"
+msgstr "Haku"
+
+#: inc/template-tags.php:337
+msgctxt "Used before publish date."
+msgid "Posted on"
 msgstr ""
 
-#: inc/template-tags.php:350 inc/template-tags.php:358
+#: inc/template-tags.php:346
+msgctxt "Used before post author name."
+msgid "Author"
+msgstr ""
+
+#: inc/template-tags.php:352 inc/template-tags.php:360
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:353
+#: inc/template-tags.php:355
 msgctxt "Used before category names."
 msgid "Categories"
 msgstr ""
 
-#: inc/template-tags.php:361
+#: inc/template-tags.php:363
 msgctxt "Used before tag names."
 msgid "Tags"
 msgstr ""
 
-#: inc/template-tags.php:372
+#: inc/template-tags.php:374
 msgctxt "Used before full size attachment link."
 msgid "Full size"
 msgstr ""
 
-#: inc/template-tags.php:381
+#: inc/template-tags.php:383
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:381
+#: inc/template-tags.php:383
 msgid "1 Comment"
 msgstr ""
 
-#: inc/template-tags.php:381
+#: inc/template-tags.php:383
 msgid "% Comments"
 msgstr ""
 
-#: no-results.php:15
+#: no-results.php:14
 msgid "Nothing Found"
-msgstr ""
+msgstr "Sivua ei löydy"
 
-#: no-results.php:22
+#: no-results.php:21
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
+"Valmis julkaisemaan ensimmäisen viestisi? <a href=\"%1$s\">Aloita tästä</a>."
 
-#: no-results.php:26
+#: no-results.php:25
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
+"﻿Emme löytäneet hakuasi vastaavia artikkeleita. Yritä uudelleen käyttäen "
+"toisia hakusanoja."
 
-#: no-results.php:31
+#: no-results.php:30
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
-msgstr ""
+msgstr "Näyttää siltä että mitään ei löydy. Ole hyvä ja käytä hakua."
 
 #: search.php:16
 #, php-format
 msgid "Search Results for: %s"
-msgstr ""
+msgstr "Hakutulokset haulle: %s"
 
 #: searchform.php:10 searchform.php:11
 msgctxt "label"
 msgid "Search for:"
-msgstr ""
+msgstr "Haku"
 
 #: searchform.php:11
 msgctxt "placeholder"
 msgid "Search &hellip;"
-msgstr ""
+msgstr "Haku &hellip;"
 
 #: searchform.php:13
 msgctxt "submit button"
 msgid "Search"
-msgstr ""
+msgstr "Haku"
 
 #: sidebar-left.php:46 sidebar.php:45
 msgid "Meta"
-msgstr ""
+msgstr "﻿Meta"
+
+#~ msgid "Search for:"
+#~ msgstr "Hae sanoilla:"
+
+#~ msgid "Search &hellip;"
+#~ msgstr "Haku &hellip;"

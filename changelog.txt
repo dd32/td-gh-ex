@@ -10,6 +10,30 @@ Changelog Legend:
 
 ----
 
+() - 1.2.5
+[*] Mobile menu dropdowns now require arrow click to expand
+[+] Close icon added to mobile menu when opened
+[+] Add search title to navigation search
+[+] Finnish translation started (thanks, Olli!)
+[+] content-link.php added for "Link" post format
+[*] Title removed from blog posts with "Status" post format
+[*] Footer entry meta packed into one clean function
+[+] New filter add to logo href: generate_logo_href
+[*] Comment avatar container removed
+[+] Hooks added to no-results.php template
+[+] generate_after_entry_content hook added
+[+] generate_before_archive_title hook added to archive.php
+[+] generate_after_archive_title hook added to archive.php
+[+] generate_after_archive_description hook added to archive.php
+[*] German translation updated (thanks Rudi!)
+[*] Change version of child theme stylesheet when changed
+[!] Show post images on all custom post types
+[+] Add theme support for the <title> tag
+[+] Polish translation added (thanks Wojciech!)
+[*] Author avatar increased in size
+
+----
+
 (12/14/2014) - 1.2.4
 [+] Add filter to mobile menu label: generate_mobile_menu_label
 [+] More fonts added to typography

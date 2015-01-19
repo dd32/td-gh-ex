@@ -15,6 +15,7 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header<?php if ( is_author() ) echo ' clearfix';?>">
+				<?php do_action( 'generate_before_archive_title' ); ?>
 				<h1 class="page-title">
 					<?php
 						if ( is_category() ) :
@@ -28,7 +29,7 @@ get_header(); ?>
 							 * what author we're dealing with (if that is the case).
 							*/
 							the_post();
-							echo get_avatar( get_the_author_meta( 'ID' ), 50 );
+							echo get_avatar( get_the_author_meta( 'ID' ), 75 );
 							printf( __( 'About %s', 'generate' ), '<span class="vcard">' . get_the_author() . '</span>' );
 							/* Since we called the_post() above, we need to
 							 * rewind the loop back to the beginning that way
@@ -66,6 +67,7 @@ get_header(); ?>
 						endif;
 					?>
 				</h1>
+				<?php do_action( 'generate_after_archive_title' ); ?>
 				<?php
 					// Show an optional term description.
 					$term_description = term_description();
@@ -77,6 +79,7 @@ get_header(); ?>
 						echo '<div class="author-info">' . get_the_author_meta('description') . '</div>';
 					endif;
 				?>
+				<?php do_action( 'generate_after_archive_description' ); ?>
 			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>

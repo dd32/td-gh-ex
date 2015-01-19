@@ -11,6 +11,27 @@
 	.main-navigation.toggled .main-nav > ul {
 		display: block;
 	}
+	
+	.main-navigation ul li:hover > ul {
+		display: none;
+	}
+	.sf-menu li:hover > ul, .sf-menu li.sfHover > ul {
+		display: none;
+	}
+	
+	.sub-menu.toggled-on {
+		display: block !important;
+	}
+	
+	.main-navigation .main-nav ul li .dropdown-toggle {
+		display: block;
+	}
+	
+	.main-navigation li a.dropdown-toggle {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
 
 	.main-navigation ul {
 		display: none;
@@ -57,6 +78,7 @@
 	.header-widget {
 		float: none;
 		max-width: 100%;
+		text-align: center;
 	}
 	.main-navigation, 
 	.main-navigation {

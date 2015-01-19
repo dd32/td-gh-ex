@@ -122,9 +122,7 @@ function generate_comment( $comment, $args, $depth ) {
 	<li id="comment-<?php comment_ID(); ?>" <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?>>
 		<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
 			<footer class="comment-meta">
-				<div class="comment-avatar">
-					<?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
-				</div>
+				<?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
 				<div class="comment-author-info">
 					<div class="comment-author vcard">
 						<?php printf( __( '%s', 'generate' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
@@ -254,10 +252,10 @@ function generate_posted_on() {
 }
 endif;
 
+if ( ! function_exists( 'generate_excerpt_more' ) ) :
 /**
  * Prints the read more HTML to post excerpts
  */
-if ( ! function_exists( 'generate_excerpt_more' ) ) :
 	add_filter( 'excerpt_more', 'generate_excerpt_more' );
 	add_filter( 'the_content_more_link', 'generate_excerpt_more' );
 	function generate_excerpt_more( $more ) {
@@ -265,48 +263,194 @@ if ( ! function_exists( 'generate_excerpt_more' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'generate_post_image' ) ) :
 /**
  * Prints the Post Image to post excerpts
  */
-if ( ! function_exists( 'generate_post_image' ) ) :
-	add_action( 'generate_after_entry_header', 'generate_post_image' );
-	function generate_post_image()
-	{
+add_action( 'generate_after_entry_header', 'generate_post_image' );
+function generate_post_image()
+{
 		
-		if ( !has_post_thumbnail() )
-			return;
-			
-		if ( 'post' == get_post_type() && !is_single() ) {
-		?>
-			<div class="post-image">
-				<a href="<?php the_permalink();?>" title="<?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
-			</div>
-		<?php
-		}
+	// If there's no featured image, return
+	if ( ! has_post_thumbnail() )
+		return;
+		
+	// If the post type is anything other than a page, and we're not on a single template
+	if ( 'page' !== get_post_type() && !is_single() ) {
+	?>
+		<div class="post-image">
+			<a href="<?php the_permalink();?>" title="<?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
+		</div>
+	<?php
 	}
+}
 endif;
 
+if ( ! function_exists( 'generate_navigation_search' ) ) :
 /**
  * Add the search bar to the navigation
  * @since 1.1.4
  */
-if ( ! function_exists( 'generate_navigation_search' ) ) :
-	add_action( 'generate_inside_navigation','generate_navigation_search');
-	function generate_navigation_search()
-	{
-		$generate_settings = wp_parse_args( 
-			get_option( 'generate_settings', array() ), 
-			generate_get_defaults() 
-		);
+add_action( 'generate_inside_navigation','generate_navigation_search');
+function generate_navigation_search()
+{
+	$generate_settings = wp_parse_args( 
+		get_option( 'generate_settings', array() ), 
+		generate_get_defaults() 
+	);
 		
-		if ( 'enable' !== $generate_settings['nav_search'] )
-			return;
+	if ( 'enable' !== $generate_settings['nav_search'] )
+		return;
 			
-		?>
-		<form role="search" method="get" class="search-form navigation-search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-			<input type="search" class="search-field" value="<?php echo esc_attr( get_search_query() ); ?>" name="s" title="<?php _ex( 'Search', 'label', 'generate' ); ?>">
-		</form>
+	?>
+	<form role="search" method="get" class="search-form navigation-search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+		<input type="search" class="search-field" value="<?php echo esc_attr( get_search_query() ); ?>" name="s" title="<?php _ex( 'Search', 'label', 'generate' ); ?>">
+	</form>
+	
+	<?php
+}
+endif;
 
-		<?php
+if ( ! function_exists( 'generate_entry_meta' ) ) :
+/**
+ * Prints HTML with meta information for the categories, tags.
+ *
+ * @since 1.2.5
+ */
+function generate_entry_meta() {
+
+	// Commented out for now - will be added later
+	// if ( in_array( get_post_type(), array( 'post', 'attachment' ) ) ) {
+		// $time_string = '<time class="entry-date published" datetime="%1$s" itemprop="datePublished">%2$s</time>';
+
+		// if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+			// $time_string = '<time class="entry-date published" datetime="%1$s" itemprop="datePublished">%2$s</time><time class="updated" datetime="%3$s" itemprop="dateModified">%4$s</time>';
+		// }
+
+		// $time_string = sprintf( $time_string,
+			// esc_attr( get_the_date( 'c' ) ),
+			// get_the_date(),
+			// esc_attr( get_the_modified_date( 'c' ) ),
+			// get_the_modified_date()
+		// );
+
+		// printf( '<span class="posted-on"><span class="screen-reader-text">%1$s </span><a href="%2$s" rel="bookmark">%3$s</a></span>',
+			// _x( 'Posted on', 'Used before publish date.', 'generate' ),
+			// esc_url( get_permalink() ),
+			// $time_string
+		// );
+	// }
+
+	if ( 'post' == get_post_type() ) {
+		// if ( is_singular() || is_multi_author() ) {
+			// printf( '<span class="byline"><span class="author vcard" itemtype="http://schema.org/Person" itemscope="itemscope" itemprop="author"><span class="screen-reader-text">%1$s </span><a class="url fn n" href="%2$s">%3$s</a></span></span>',
+				// _x( 'Author', 'Used before post author name.', 'generate' ),
+				// esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+				// get_the_author()
+			// );
+		// }
+
+		$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'generate' ) );
+		if ( $categories_list ) {
+			printf( '<span class="cat-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
+				_x( 'Categories', 'Used before category names.', 'generate' ),
+				$categories_list
+			);
+		}
+
+		$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'generate' ) );
+		if ( $tags_list ) {
+			printf( '<span class="tags-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
+				_x( 'Tags', 'Used before tag names.', 'generate' ),
+				$tags_list
+			);
+		}
 	}
+
+	if ( is_attachment() && wp_attachment_is_image() ) {
+		// Retrieve attachment metadata.
+		$metadata = wp_get_attachment_metadata();
+
+		printf( '<span class="full-size-link"><span class="screen-reader-text">%1$s </span><a href="%2$s">%3$s &times; %4$s</a></span>',
+			_x( 'Full size', 'Used before full size attachment link.', 'generate' ),
+			esc_url( wp_get_attachment_url() ),
+			$metadata['width'],
+			$metadata['height']
+		);
+	}
+
+	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+		echo '<span class="comments-link">';
+		comments_popup_link( __( 'Leave a comment', 'generate' ), __( '1 Comment', 'generate' ), __( '% Comments', 'generate' ) );
+		echo '</span>';
+	}
+}
+endif;
+
+if ( ! function_exists( 'generate_categorized_blog' ) ) :
+/**
+ * Determine whether blog/site has more than one category.
+ *
+ * @since 1.2.5
+ *
+ * @return bool True of there is more than one category, false otherwise.
+ */
+function generate_categorized_blog() {
+	if ( false === ( $all_the_cool_cats = get_transient( 'generate_categories' ) ) ) {
+		// Create an array of all the categories that are attached to posts.
+		$all_the_cool_cats = get_categories( array(
+			'fields'     => 'ids',
+			'hide_empty' => 1,
+
+			// We only need to know if there is more than one category.
+			'number'     => 2,
+		) );
+
+		// Count the number of categories that are attached to the posts.
+		$all_the_cool_cats = count( $all_the_cool_cats );
+
+		set_transient( 'generate_categories', $all_the_cool_cats );
+	}
+
+	if ( $all_the_cool_cats > 1 ) {
+		// This blog has more than 1 category so twentyfifteen_categorized_blog should return true.
+		return true;
+	} else {
+		// This blog has only 1 category so twentyfifteen_categorized_blog should return false.
+		return false;
+	}
+}
+endif;
+
+if ( ! function_exists( 'generate_category_transient_flusher' ) ) :
+/**
+ * Flush out the transients used in {@see generate_categorized_blog()}.
+ *
+ * @since 1.2.5
+ */
+add_action( 'edit_category', 'generate_category_transient_flusher' );
+add_action( 'save_post',     'generate_category_transient_flusher' );
+function generate_category_transient_flusher() {
+	// Like, beat it. Dig?
+	delete_transient( 'generate_categories' );
+}
+endif;
+
+if ( ! function_exists( 'generate_get_link_url' ) ) :
+/**
+ * Return the post URL.
+ *
+ * Falls back to the post permalink if no URL is found in the post.
+ *
+ * @since 1.2.5
+ *
+ * @see get_url_in_content()
+ *
+ * @return string The Link format URL.
+ */
+function generate_get_link_url() {
+	$has_url = get_url_in_content( get_the_content() );
+
+	return $has_url ? $has_url : apply_filters( 'the_permalink', get_permalink() );
+}
 endif;
