@@ -2,7 +2,7 @@
 
 ## Description
 
-Description: Travelify is a clan, simple and fully responsive WordPress WooCommerce theme that looks awesome on any device. It adjusts automatically to any screen size including tablets and smartphones as well as Retina displays. Theme is built using HTML5 / CSS3 and is SEO friendly. This WordPress theme was built with travel, adventures, languages and nature in mind but it can be used for anything so be creative and unleash its full potential in blogging, eCommerce, business and other websites. Along the awesome design this theme is customizable via a simple but yet powerful theme options. Some of the nicest features are featured post slider, social icons, custom logo, translation ready (compatible with WPML plugin) and many more. This theme out-of-the-box plays nicely with WooCommerce, Breadcrumb NavXT, WP-PageNavi, Contact Form 7, WPML and other popular plugins. Theme available in English, French, German, Hungarian, Italian, Spanish, Dutch, Hebrew, Slovak, Turkish, Swedish, Brazilian Portuguese, Polish, Finnish and Chinese.
+Description: Travelify is a clan, simple and fully responsive WordPress WooCommerce theme that looks awesome on any device. It adjusts automatically to any screen size including tablets and smartphones as well as Retina displays. Theme is built using HTML5 / CSS3 and is SEO friendly. This WordPress theme was built with travel, adventures, languages and nature in mind but it can be used for anything so be creative and unleash its full potential in blogging, eCommerce, business and other websites. Along the awesome design this theme is customizable via a simple but yet powerful theme options. Some of the nicest features are featured post slider, social icons, custom logo, translation ready (compatible with WPML plugin) and many more. This theme out-of-the-box plays nicely with WooCommerce, Breadcrumb NavXT, WP-PageNavi, Contact Form 7, WPML and other popular plugins. Theme available in English, French, German, Hungarian, Italian, Spanish, Dutch, Hebrew, Slovak, Turkish, Swedish, Brazilian Portuguese, Polish, Finnish, Bulgarian and Chinese.
 
 ## More info
 More about this theme you can find in the [following link](http://colorlib.com/wp/themes/travelify/).
@@ -52,6 +52,22 @@ Unless otherwise specified, all the theme files, scripts and images are licensed
 
 
 ## Change Log
+
+**= 2.3.0 =**
+- Created sanitize callback for WordPress Customizer
+- Removed  add_shortcode functionality (plugin territory)
+- Escaped URLs where needed
+- Added support for title-tag as for WordPress 4.1
+- Some minor code cleanup
+
+**= 2.2.2 =**
+
+- Added Bulgarian translation thanks to Kaloyan Dimitrov
+
+**= 2.2.1 =**
+
+- Code cleanup
+- Updated Genericons to versions 3.3
 
 **= 2.2.0 =**
 - Added full WPML plugin support. We have also made it certified by WPML.

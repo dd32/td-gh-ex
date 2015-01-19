@@ -81,7 +81,7 @@ function travelify_setup() {
 	add_image_size( 'slider', 1018, 460, true ); 		// used on Featured Slider on Homepage Header
 	add_image_size( 'gallery', 474, 342, true ); 				// used to show gallery all images
 
-	// This feature enables woocommerce support for a theme.
+	// This feature enables WooCommerce support for a theme.
 	add_theme_support( 'woocommerce' );
 
 	/**
@@ -92,6 +92,14 @@ function travelify_setup() {
 		'default-image' => get_template_directory_uri() . '/images/background.png',
 	);
 	add_theme_support( 'custom-background', $args );
+
+	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
+	add_theme_support( 'title-tag' );
 
 	/**
 	 * This theme supports add_editor_style
