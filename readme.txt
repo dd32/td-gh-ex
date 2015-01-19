@@ -116,6 +116,11 @@ Resource URI: http://imagesloaded.desandro.com/
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
+p) Theme Hook Alliance
+Copyright: zamoose
+Resource URI: https://github.com/zamoose/themehookalliance
+License: GPLv2
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 III. Documentation 
 

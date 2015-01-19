@@ -46,12 +46,14 @@
 		$hbutton = get_post_meta( get_the_ID(), 'wpcf-header-button-title', true );
 		$hlink 	 = get_post_meta( get_the_ID(), 'wpcf-header-button-link', true );
 	?>
-
+	<?php tha_header_before(); ?>
 	<?php if ( get_header_image() && $himage == '' ) : ?>
 		<?php if ( get_theme_mod('moesia_banner') == 1 && !is_front_page() ) : ?>
 			<header id="masthead" class="site-header" role="banner">
+			<?php tha_header_top(); ?>
 		<?php else : ?>
 			<header id="masthead" class="site-header has-banner" role="banner">
+			<?php tha_header_top(); ?>	
 			<?php if ( get_theme_mod('mobile_header') ) : ?>
 				<img class="header-image" src="<?php echo esc_url( get_theme_mod('mobile_header') ); ?>">
 			<?php else : ?>
@@ -76,50 +78,38 @@
 				<?php endif; ?>
 			</div>
 		<?php endif; ?>
+		<?php tha_header_bottom(); ?>
 		</header><!-- #masthead -->
+		<?php tha_header_after(); ?>
 	<?php elseif ( $himage != '' ) : ?>	
 		<header id="masthead" class="site-header has-banner" role="banner">
+			<?php tha_header_top(); ?>
 			<img class="header-image" src="<?php echo esc_url($himage); ?>">
 			<div class="welcome-info">
+				
 				<?php if ( $hlogo ) : ?>
 					<img class="welcome-logo wow bounceInDown" src="<?php echo esc_url($hlogo); ?>" />
 				<?php elseif ( $htitle ) : ?>
 					<div class="welcome-title wow bounceInDown"><?php echo esc_html($htitle); ?></div>
 				<?php endif; ?>
+
 				<?php if ( $htext ) : ?>
 					<div class="welcome-desc wow bounceInRight" data-wow-delay="0.2s"><?php echo esc_html($htext); ?></div>
 				<?php endif; ?>
 				<?php if ($hbutton && $hlink) : ?>
 					<a href="<?php echo esc_url($hlink); ?>" class="welcome-button wow bounceInUp" data-wow-delay="0.3s"><?php echo esc_html($hbutton); ?></a>
 				<?php endif; ?>
-			</div>			
-		</header><!-- #masthead -->		
-	<?php endif; ?>
-	<div class="top-bar">
-		<div class="container">
-			<div class="site-branding col-md-4">
-				<?php if ( get_theme_mod('site_logo') ) : ?>
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><img class="site-logo" src="<?php echo esc_url(get_theme_mod('site_logo')); ?>" alt="<?php bloginfo('name'); ?>" /></a>
-				<?php else : ?>
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-				<?php endif; ?>
 			</div>
-			<button class="menu-toggle btn"><i class="fa fa-bars"></i></button>
-			<nav id="site-navigation" class="main-navigation col-md-8" role="navigation">
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-			</nav><!-- #site-navigation -->
-			<?php if ( get_theme_mod('toggle_search', 0) ) : ?>
-				<span class="nav-search"><i class="fa fa-search"></i></span>
-				<span class="nav-deco"></span>
-				<div class="nav-search-box"><?php get_search_form(); ?></div>
-			<?php endif; ?>			
-		</div>
-	</div>	
+			<?php tha_header_bottom(); ?>			
+		</header><!-- #masthead -->	
+		<?php tha_header_after(); ?>	
+	<?php endif; ?>
 
-	<?php if (!is_page_template('page_front-page.php') || ( 'posts' == get_option( 'show_on_front' ) ) ) : ?>
+	<?php if ( !is_page_template('page_front-page.php') || ( 'posts' == get_option( 'show_on_front' ) ) ) : ?>
 		<?php $container = "container"; ?>
 	<?php else : ?>
 		<?php $container = ""; ?>
 	<?php endif; ?>
+	<?php tha_content_before(); ?>
 	<div id="content" class="site-content clearfix <?php echo $container; ?>">
+		<?php tha_content_top(); ?>

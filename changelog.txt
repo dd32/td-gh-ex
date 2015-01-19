@@ -1,5 +1,13 @@
 Changelog
 
+19 Jan 2015 - 1.21
+--------------------------------------
+- added Menu tab in Customizer with some new options;
+- moved the nav bar inside a function;
+- added support for parts of Theme Hook Alliance;
+- added missing image size;
+- some CSS improvements.
+
 
 13 Jan 2015 - 1.20
 --------------------------------------

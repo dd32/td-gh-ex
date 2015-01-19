@@ -391,7 +391,7 @@ function moesia_custom_styles($custom) {
     //Widget titles size
     $widget_title_size = get_theme_mod( 'widget_title_size' );
     if ( get_theme_mod( 'widget_title_size' )) {
-        $custom .= "section .widget-title, .panel.widget .widget-title { font-size:" . intval($widget_title_size) . "px; }"."\n";
+        $custom .= "@media (min-width: 499px) { section .widget-title, .panel.widget .widget-title { font-size:" . intval($widget_title_size) . "px; } }"."\n";
     }
     //Menu links font size
     $menu_size = get_theme_mod( 'menu_size' );
@@ -399,6 +399,22 @@ function moesia_custom_styles($custom) {
         $custom .= ".main-navigation li { font-size:" . intval($menu_size) . "px; }"."\n";
     }	
 	
+    //Menu height
+    $menu_height = get_theme_mod( 'moesia_menu_height' );
+    if ( $menu_height ) {
+        $custom .= ".site-branding, .main-navigation li { padding-top:" . intval($menu_height) . "px; padding-bottom:" . intval($menu_height) . "px; }"."\n";
+        $custom .= ".menu-toggle { margin:" . intval($menu_height) . "px 0;}"."\n";
+    }
+    $sticky_menu_height = get_theme_mod( 'moesia_sticky_height' );
+    if ( $sticky_menu_height ) {
+        $custom .= "@media screen and (min-width: 992px) { .is-sticky .site-branding, .is-sticky .main-navigation li { padding-top:" . intval($sticky_menu_height) . "px; padding-bottom:" . intval($sticky_menu_height) . "px; } }"."\n";
+    } 
+ 
+    //Sticky menu
+    $sticky_menu = get_theme_mod( 'moesia_menu_sticky', 0 );
+    if ( $sticky_menu ) {
+        $custom .= ".top-bar { position: relative !important; }"."\n";
+    }
 
     //Widgets display on small screens
     //1. Sidebar

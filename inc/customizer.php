@@ -626,7 +626,91 @@ function moesia_customize_register( $wp_customize ) {
                 'priority' => 24
             )
         )
-    );     	
+    );
+    //___Menu___//
+    $wp_customize->add_section(
+        'moesia_menu',
+        array(
+            'title' => __('Menu', 'moesia'),
+            'priority' => 13,
+        )
+    );
+    //Top menu
+    $wp_customize->add_setting(
+        'moesia_menu_top',
+        array(
+            'sanitize_callback' => 'moesia_sanitize_checkbox',
+            'default' => 0,         
+        )       
+    );
+    $wp_customize->add_control(
+        'moesia_menu_top',
+        array(
+            'type' => 'checkbox',
+            'label' => __('Check this box to show the nav bar at top (changes will be visible after you save and exit the Customizer).', 'moesia'),
+            'section' => 'moesia_menu',
+            'priority' => 10,           
+        )
+    );
+    //Menu height
+    $wp_customize->add_setting(
+        'moesia_menu_height',
+        array(
+            'sanitize_callback' => 'absint',
+            'default'           => '40',
+        )       
+    );
+    $wp_customize->add_control( 'moesia_menu_height', array(
+        'type'        => 'number',
+        'priority'    => 11,
+        'section'     => 'moesia_menu',
+        'label'       => __('Menu bar height', 'moesia'),
+        'description' => __('The 40px default value refers to the top/bottom padding', 'moesia'),
+        'input_attrs' => array(
+            'min'   => 5,
+            'max'   => 100,
+            'step'  => 5,
+            'style' => 'margin-bottom: 15px; padding: 15px;',
+        ),
+    ) );
+    //Sticky menu height
+    $wp_customize->add_setting(
+        'moesia_sticky_height',
+        array(
+            'sanitize_callback' => 'absint',
+            'default'           => '20',
+        )       
+    );
+    $wp_customize->add_control( 'moesia_sticky_height', array(
+        'type'        => 'number',
+        'priority'    => 12,
+        'section'     => 'moesia_menu',
+        'label'       => __('Menu bar height [sticky]', 'moesia'),
+        'description' => __('This option refers to the menu in sticky mode', 'moesia'),
+        'input_attrs' => array(
+            'min'   => 5,
+            'max'   => 100,
+            'step'  => 5,
+            'style' => 'margin-bottom: 15px; padding: 15px;',
+        ),
+    ) );
+    //Unsticky menu
+    $wp_customize->add_setting(
+        'moesia_menu_sticky',
+        array(
+            'sanitize_callback' => 'moesia_sanitize_checkbox',
+            'default' => 0,         
+        )       
+    );
+    $wp_customize->add_control(
+        'moesia_menu_sticky',
+        array(
+            'type' => 'checkbox',
+            'label' => __('Stop the nav bar from being sticky?', 'moesia'),
+            'section' => 'moesia_menu',
+            'priority' => 12,        
+        )
+    );         	
 	//___FRONT PAGE COLORS___//
     $wp_customize->add_section(
         'moesia_fp_colors',

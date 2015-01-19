@@ -40,6 +40,7 @@ function moesia_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 	add_image_size('project-image', 350, 250, true);
+	add_image_size('moesia-thumb', 750);
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -294,6 +295,52 @@ function moesia_excerpt_length( $length ) {
 
 }
 add_filter( 'excerpt_length', 'moesia_excerpt_length', 999 );
+
+/**
+ * Nav bar
+ */
+if ( ! function_exists( 'moesia_nav_bar' ) ) {
+function moesia_nav_bar() {
+	echo '<div class="top-bar">
+			<div class="container">
+				<div class="site-branding col-md-4">';
+				if ( get_theme_mod('site_logo') ) :
+					echo '<a href="' . esc_url( home_url( '/' ) ) . '" title="';
+						bloginfo('name');
+					echo '"><img class="site-logo" src="' . esc_url(get_theme_mod('site_logo')) . '" alt="';
+						bloginfo('name');
+					echo '" /></a>';
+				else :
+					echo '<h1 class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '" rel="home">';
+						bloginfo( 'name' );
+					echo '</a></h1>';
+					echo '<h2 class="site-description">';
+						bloginfo( 'description' );
+					echo '</h2>';
+				endif;
+			echo '</div>';
+			echo '<button class="menu-toggle btn"><i class="fa fa-bars"></i></button>
+				<nav id="site-navigation" class="main-navigation col-md-8" role="navigation">';
+				wp_nav_menu( array( 'theme_location' => 'primary' ) );
+			echo '</nav>';
+			
+			if ( get_theme_mod('toggle_search', 0) ) :
+				echo '<span class="nav-search"><i class="fa fa-search"></i></span>';
+				echo '<span class="nav-deco"></span>';
+				echo '<div class="nav-search-box">';
+					get_search_form();
+				echo '</div>';
+			endif;
+		echo '</div>';
+	echo '</div>';
+}
+}
+if (get_theme_mod('moesia_menu_top', 0) == 0) {
+	add_action('tha_header_after', 'moesia_nav_bar');
+} else {
+	add_action('tha_header_before', 'moesia_nav_bar');
+}
+
 /**
  * Implement the Custom Header feature.
  */
@@ -326,6 +373,10 @@ require get_template_directory() . '/styles.php';
  * Page builder styles
  */
 require get_template_directory() . '/inc/rows.php';
+/**
+ * Theme Hook Alliance
+ */
+require get_template_directory() . '/inc/tha-theme-hooks.php';
 
 /**
  *TGM Plugin activation.
