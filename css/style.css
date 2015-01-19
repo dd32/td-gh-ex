@@ -131,6 +131,9 @@ form {
   border: #ccc solid 1px;
   margin: 20px 0;
 }
+.acf-map img {
+  max-width: none;
+}
 .newsmag-logo {
   height: 39px;
 }
