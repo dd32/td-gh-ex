@@ -16,7 +16,7 @@
 								$link_before = '';
 								$link_after = '';
 							} else {
-								$link_before = '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . $title_desc . '" rel="home">';
+								$link_before = '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . $title_desc . '">';
 								$link_after = '</a>';
 							}
 							$header_image = get_header_image();
@@ -37,7 +37,7 @@
 							?>
 
 
-							<aside id="search" class="widget widget_search">
+							<aside class="widget widget_search">
 								<?php get_search_form(); ?>
 							</aside>
 
@@ -53,7 +53,7 @@
 							$popular_posts = get_posts( $args );
 							if( ! empty( $popular_posts ) ) : // show only if we have posts
 							?>
-							<aside id="archives-popular" class="widget widget_popular_entries">
+							<aside class="widget widget_popular_entries">
 								<h4 class="widget-title"><?php _e( 'Popular posts', 'activetab' ); ?></h4>
 								<ul>
 									<?php
@@ -76,7 +76,7 @@
 							$recent_posts = get_posts( $args );
 							if( ! empty( $recent_posts ) ) : // show only if we have posts
 							?>
-							<aside id="archives" class="widget widget_recent_entries">
+							<aside class="widget widget_recent_entries">
 								<h4 class="widget-title"><?php _e( 'Recent posts', 'activetab' ); ?></h4>
 								<ul>
 									<?php
@@ -88,7 +88,7 @@
 							<?php endif; ?>
 
 
-							<aside id="categories" class="widget widget_categories">
+							<aside class="widget widget_categories">
 								<h4 class="widget-title"><?php _e( 'Categories', 'activetab' ); ?></h4>
 								<ul>
 									<?php
@@ -112,7 +112,7 @@
 							</aside>
 
 
-							<aside id="meta" class="widget">
+							<aside class="widget widget_meta">
 								<h4 class="widget-title"><?php _e( 'Meta', 'activetab' ); ?></h4>
 								<ul>
 									<?php wp_register(); ?>

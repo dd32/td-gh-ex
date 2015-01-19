@@ -19,7 +19,7 @@
 
 				<?php else : ?>
 
-					<article id="post-0" class="post no-results not-found">
+					<article class="post no-results not-found">
 						<header class="entry-header page-header">
 							<h1 class="entry-title"><?php _e( 'No posts to display', 'activetab' ); ?></h1>
 						</header><!-- /.entry-header -->

@@ -1,3 +1,6 @@
+= 2.2 - 2015-01-20 =
+* fixing validator errors (remove pubdate attr, remove rel attr, remove duplicate ids)
+
 = 2.1 - 2015-01-18 =
 * added 'title-tag' feature
 

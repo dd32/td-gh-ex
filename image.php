@@ -15,7 +15,7 @@
 									<div class="entry-meta">
 										<?php
 										$metadata = wp_get_attachment_metadata();
-										printf( __( '<a href="%1$s">%2$s &times; %3$s</a> in <a href="%4$s" title="Return to %5$s" rel="gallery">%6$s</a>', 'activetab' ),
+										printf( __( '<a href="%1$s">%2$s &times; %3$s</a> in <a href="%4$s" title="Return to %5$s">%6$s</a>', 'activetab' ),
 											wp_get_attachment_url(),
 											$metadata['width'],
 											$metadata['height'],
@@ -64,7 +64,7 @@
 											}
 											?>
 
-											<a href="<?php echo $next_attachment_url; ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment"><?php
+											<a href="<?php echo $next_attachment_url; ?>" title="<?php echo esc_attr( get_the_title() ); ?>"><?php
 												echo wp_get_attachment_image( $post->ID, array( 1200, 1200 ) );
 												?></a>
 										</div><!-- /.attachment -->

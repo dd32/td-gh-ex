@@ -1,5 +1,5 @@
 
-		<article id="post-0" class="post no-results nothing-found">
+		<article class="post no-results nothing-found">
 			<header class="entry-header page-header">
 				<h1 class="entry-title"><?php _e( 'Nothing found', 'activetab' ); ?></h1>
 			</header><!-- /.entry-header -->

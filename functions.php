@@ -1,6 +1,6 @@
 <?php
 
-define('ACTIVETAB_VERSION', '2.1');
+define('ACTIVETAB_VERSION', '2.2');
 
 
 if ( ! isset( $content_width ) ) {
@@ -188,7 +188,7 @@ if ( ! function_exists( 'activetab_comments' ) ) :
 
 								echo '<div class="comment-meta">';
 								echo '<span class="comment-meta-item comment-meta-item-author fn"><i class="fa fa-user" title="'.esc_attr( __( 'Author', 'activetab' ) ).'"></i> '.get_comment_author_link().$post_author_label.'</span> ';
-								echo '<span class="comment-meta-item comment-meta-item-date"><i class="fa fa-calendar" title="'.esc_attr( __( 'Published', 'activetab' ) ).'"></i> <a href="'.esc_url( get_comment_link( $comment->comment_ID ) ).'"><time pubdate datetime="'.get_comment_time( 'c' ).'" title="'.get_comment_time().'">'.get_comment_date().'</time></a></span>';
+								echo '<span class="comment-meta-item comment-meta-item-date"><i class="fa fa-calendar" title="'.esc_attr( __( 'Published', 'activetab' ) ).'"></i> <a href="'.esc_url( get_comment_link( $comment->comment_ID ) ).'"><time datetime="'.get_comment_time( 'c' ).'" title="'.get_comment_time().'">'.get_comment_date().'</time></a></span>';
 
 								edit_comment_link( '<span class="btn btn-default btn-small"><i class="fa fa-pencil"></i> '.__( 'Edit', 'activetab' ).'</span>', '<span class="edit-link comment-edit-link">', '</span>' );
 
@@ -218,7 +218,7 @@ endif; // activetab_comments()
 
 if ( ! function_exists( 'activetab_post_date' ) ) :
 	function activetab_post_date() {
-		$post_date = '<span class="entry-meta-item entry-meta-date"><i class="fa fa-calendar" title="'.esc_attr( __( 'Published', 'activetab' ) ).'"></i> '.'<a href="'.esc_url( get_permalink() ).'" title="'.get_the_time().'" rel="bookmark"><time class="entry-date" datetime="'.get_the_date( 'c' ).'" pubdate title="'.get_the_time().'">'.get_the_date().'</time></a></span>'."\n";
+		$post_date = '<span class="entry-meta-item entry-meta-date"><i class="fa fa-calendar" title="'.esc_attr( __( 'Published', 'activetab' ) ).'"></i> '.'<a href="'.esc_url( get_permalink() ).'" title="'.get_the_time().'"><time class="entry-date" datetime="'.get_the_date( 'c' ).'" title="'.get_the_time().'">'.get_the_date().'</time></a></span>'."\n";
 		return $post_date;
 	}
 endif; // activetab_post_date()
@@ -243,7 +243,7 @@ if ( ! function_exists( 'activetab_post_author' ) ) :
 		global $authordata;
 		if ( !is_object( $authordata ) )
 			return false;
-		$post_author = '<span class="entry-meta-item entry-meta-author"><i class="fa fa-user" title="'.esc_attr( __( 'Author', 'activetab' ) ).'"></i> <a href="'.esc_url( get_author_posts_url( $authordata->ID, $authordata->user_nicename ) ).'" title="'.esc_attr(  __( 'Author', 'activetab' ) ).'" rel="author">'.get_the_author().'</a></span>'."\n";
+		$post_author = '<span class="entry-meta-item entry-meta-author"><i class="fa fa-user" title="'.esc_attr( __( 'Author', 'activetab' ) ).'"></i> <a href="'.esc_url( get_author_posts_url( $authordata->ID, $authordata->user_nicename ) ).'" title="'.esc_attr(  __( 'Author', 'activetab' ) ).'">'.get_the_author().'</a></span>'."\n";
 		return $post_author;
 	}
 endif; // activetab_post_author()

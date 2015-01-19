@@ -13,7 +13,7 @@ if ( activetab_is_homepage() ) {
 	$link_before = '';
 	$link_after = '';
 } else {
-	$link_before = '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . $title_desc . '" rel="home">';
+	$link_before = '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . $title_desc . '">';
 	$link_after = '</a>';
 }
 

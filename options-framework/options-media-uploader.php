@@ -81,7 +81,7 @@ function optionsframework_uploader( $_id, $_value, $_desc = '', $_name = '' ) {
 		
 			// Standard generic output if it's not an image.	
 			$title = __( 'View File', 'activetab' );
-			$output .= '<div class="no-image"><span class="file_link"><a href="' . $value . '" target="_blank" rel="external">'.$title.'</a></span></div>';
+			$output .= '<div class="no-image"><span class="file_link"><a href="' . $value . '" target="_blank">'.$title.'</a></span></div>';
 		}	
 	}
 	$output .= '</div>' . "\n";
