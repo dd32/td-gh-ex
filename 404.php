@@ -20,23 +20,20 @@ get_header();
     </div>    
     <!--Breadcrumb Part End-->
     <!-- 404 Content Start -->
-    <div class="webpage-container">
+    <div class="webpage-container container">
         <div class="blog-main">
-            <div class="col-md-12"> 
-                <div class="jumbotron">
-                    <h1><?php _e('Epic 404 - Article Not Found', 'advent') ?></h1>
-                    <p><?php _e("This is embarassing. We can't find what you were looking for.", "advent") ?></p>
-                    <section class="post_content">
-                        <p><?php _e('Whatever you were looking for was not found, but maybe try looking again or search using the form below.', 'advent') ?></p>
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <?php get_search_form(); ?>
-                            </div>
+            <div class="jumbotron">
+                <h1><?php _e('Epic 404 - Article Not Found', 'advent') ?></h1>
+                <p><?php _e("This is embarassing. We can't find what you were looking for.", "advent") ?></p>
+                <section class="post_content">
+                    <p><?php _e('Whatever you were looking for was not found, but maybe try looking again or search using the form below.', 'advent') ?></p>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <?php get_search_form(); ?>
                         </div>
-                    </section>
-                </div>
-
-            </div>
+                    </div>
+                </section>
+            </div>            
         </div>
     </div>
     <!-- 404 Content Start End -->

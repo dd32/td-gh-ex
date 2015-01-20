@@ -11,11 +11,6 @@ $advent_options = get_option('advent_theme_options');
         <div class="webpage-container container">
             <div class="site-breadcumb">
                 <h1><?php _e('Blog', 'advent') ?></h1>
-                <ol class="breadcrumb breadcrumb-menubar">
-                    <li>
-                        <?php if (function_exists('advent_custom_breadcrumbs')) advent_custom_breadcrumbs(); ?>
-                    </li>
-                </ol>
             </div>
         </div>
     </div>    
@@ -55,7 +50,7 @@ $advent_options = get_option('advent_theme_options');
             <?php get_sidebar(); ?>
         </div>
     </div>
-</div>
+
 <!-- Blog Posts End -->
 </section>
 <?php get_footer(); ?>

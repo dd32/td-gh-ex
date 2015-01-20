@@ -47,11 +47,11 @@ function advent_setup() {
 	// This theme uses its own gallery styles.
 	add_filter('use_default_gallery_style', '__return_false' );
         
-        /* slug setup */	
-        add_theme_support( 'title-tag' );
+    /* slug setup */	
+    add_theme_support( 'title-tag' );
 
-        /* height width automaticly adjust for home slider */
-        add_image_size( 'home-thumbnail-image', 250, 180, true );
+    /* height width automaticly adjust for home slider */
+    add_image_size( 'home-thumbnail-image', 250, 180, true );
         
 }
 endif; // advent_setup
@@ -64,7 +64,7 @@ function advent_font_url() {
 	$advent_font_url = '';
 	/*
 	 * Translators: If there are characters in your language that are not supported
-	 * by Lato, translate this to 'off'. Do not translate into your own language.
+	 * by OpenSans, translate this to 'off'. Do not translate into your own language.
 	 */
 	if ( 'off' !== _x( 'on', 'OpenSans font: on or off', 'advent' ) ) {
 		$advent_font_url = add_query_arg( 'family', urlencode( 'OpenSans:300,400,700,900,300italic,400italic,700italic' ), "//fonts.googleapis.com/css?family=Open+Sans" );
@@ -72,6 +72,17 @@ function advent_font_url() {
 	return $advent_font_url;
 }
 
+/* top header background image on wp_head hook */
+add_action('wp_head','advent_header_bg');
+function advent_header_bg()
+{
+	$advent_options = get_option('advent_theme_options');
+	if (!empty($advent_options['headertop-bg'])) 
+	{
+		$advent_header_bg_img="<style> .header_bg { background :url('".$advent_options['headertop-bg']."'); } </style>";
+		echo $advent_header_bg_img;
+	}	
+}
 
 /* thumbnail list */ 
 function advent_thumbnail_image($content) {
@@ -164,3 +175,6 @@ require_once('functions/theme-default-setup.php');
 require_once('functions/breadcrumbs.php');
 /*** Custom Header ***/
 require_once('functions/custom-header.php');
+
+
+

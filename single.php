@@ -35,7 +35,7 @@ get_header();
                             </div>
                         <?php } ?>
                         <div class="blog-info">
-                            <p><?php
+                            <?php
                                 the_content();
                                 wp_link_pages(array(
                                     'before' => '<div class="page-links"><span class="page-links-title">' . __('Pages:', 'advent') . '</span>',
@@ -43,7 +43,7 @@ get_header();
                                     'link_before' => '<span>',
                                     'link_after' => '</span>',
                                 ));
-                                ?></p>
+                                ?>
                         </div>
 <?php endwhile; ?> 
                 </div>

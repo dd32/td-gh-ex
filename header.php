@@ -8,7 +8,6 @@ $advent_options = get_option('advent_theme_options');
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title><?php wp_title('|', true, 'right'); ?></title>
         <!--[if lt IE 9]>
                 <script src="<?php echo esc_url(get_template_directory_uri()); ?>/js/html5.js"></script>
         <![endif]-->
@@ -16,8 +15,39 @@ $advent_options = get_option('advent_theme_options');
             <link rel="shortcut icon" href="<?php echo esc_url($advent_options['favicon']); ?>">
         <?php } ?>
         <?php wp_head(); ?>
+       
     </head>
     <body <?php body_class(); ?>>
+        <?php /* start condition for only home page */
+        if (is_page_template('page-template/frontpage.php')) {
+            ?> 
+		<div class="header_bg">
+                <span class="mask-overlay"></span>
+                <div class="webpage-container">
+                        <?php if (!empty($advent_options['headertop-logo']) OR !empty($advent_options['topheading'])) { ?>
+                        <div class="col-sm-6 col-md-6 col-sm-offset-1 text-center center-block">
+                                <?php if (!empty($advent_options['headertop-logo'])) { ?>
+                                <div class="logo">
+                                    <?php if (!empty($advent_options['headertop-logo'])) { ?>
+                                        <img src="<?php echo esc_url($advent_options['headertop-logo']); ?>" class="img-responsive" alt="<?php echo get_the_title(); ?>">
+                                <?php } ?>
+                                </div>
+                            <?php } ?>
+        <?php if (!empty($advent_options['topheading'])) { ?>
+                                <div class="slogan">
+                                    <h1><?php echo esc_attr($advent_options['topheading']); ?></h1>
+                                </div>
+                        <?php } ?>
+                        </div>
+                    <?php } ?>
+    <?php if (!empty($advent_options['headertop-img'])) { ?>
+                        <div class="col-sm-5 col-md-6 mobile">                
+                            <img src="<?php echo esc_url($advent_options['headertop-img']); ?>" class="img-responsive" alt="<?php echo get_the_title(); ?>">             
+                        </div>
+    <?php } ?>
+                </div>
+            </div>
+<?php } /* end condition for only home page */ ?>   
         <header>
             <div class="scrolling-header">
                 <div class="header-menu" id="stickyheader">
@@ -28,16 +58,16 @@ $advent_options = get_option('advent_theme_options');
                                     <a href="<?php echo esc_url(home_url('/')); ?>"><?php echo get_bloginfo('name'); ?></a>
                                 <?php } else { ?>
                                     <a href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo esc_url($advent_options['logo']); ?>" alt="<?php echo get_the_title(); ?>" class="img-responsive" /></a>
-                                <?php } ?>
-                                <div class="navbar-header res-nav-header toggle-respon">
-                                   <?php if (has_nav_menu('primary')) { ?>
-                                    <button type="button" class="navbar-toggle menu_toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                        <span class="sr-only"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                    </button>
                                     <?php } ?>
+                                <div class="navbar-header res-nav-header toggle-respon">
+<?php if (has_nav_menu('primary')) { ?>
+                                        <button type="button" class="navbar-toggle menu_toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                            <span class="sr-only"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+<?php } ?>
                                 </div>
                             </div>
                         </div>
@@ -48,7 +78,7 @@ $advent_options = get_option('advent_theme_options');
                                 'container' => 'div',
                                 'container_class' => 'collapse navbar-collapse main_menu no-padding',
                                 'container_id' => 'example-navbar-collapse',
-                                'menu_class' => 'collapse navbar-collapse main_menu no-padding',
+                                'menu_class' => '',
                                 'echo' => true,
                                 'before' => '',
                                 'after' => '',
@@ -60,17 +90,17 @@ $advent_options = get_option('advent_theme_options');
                             );
                             if (has_nav_menu('primary')) {
                                 wp_nav_menu($advent_defaults);
-                            }
+                            } 
                             ?>       
                         </div>               
                     </div>
                 </div>
             </div>      
-            <?php if (get_header_image()) { ?>
+<?php if (get_header_image()) { ?>
                 <div class="custom-header-img">
                     <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
                         <img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php echo get_the_title(); ?>">
                     </a>
                 </div>
-            <?php } ?>   
+<?php } ?>   
         </header>

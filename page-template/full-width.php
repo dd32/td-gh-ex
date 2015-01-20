@@ -26,14 +26,14 @@ get_header();
                 <div class="blog-details single">
                     <?php while (have_posts()) : the_post(); ?>
 
-                        <?php $advent_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()), 'large'); ?>
+                        <?php $advent_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()), 'full'); ?>
                         <?php if ($advent_image[0] != "") { ?>
                             <div class="blog-img">
                                 <img src="<?php echo esc_url($advent_image[0]); ?>" width="<?php echo $advent_image[1]; ?>" height="<?php echo $advent_image[2]; ?>" alt="<?php echo get_the_title(); ?>" class="img-responsive" />
                             </div>
                         <?php } ?>
                         <div class="blog-info">
-                            <p><?php
+                            <?php
                                 the_content();
                                 wp_link_pages(array(
                                     'before' => '<div class="page-links"><span class="page-links-title">' . __('Pages:', 'advent') . '</span>',
@@ -41,7 +41,7 @@ get_header();
                                     'link_before' => '<span>',
                                     'link_after' => '</span>',
                                 ));
-                                ?></p>
+                                ?>
                         </div>
                 <?php endwhile; ?> 
                 </div>

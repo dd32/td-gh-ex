@@ -4,37 +4,6 @@
  */
 $advent_options = get_option('advent_theme_options');
 ?>
-<?php if (!empty($advent_options['headertop-bg'])) { ?>
-    <style>
-        .header_bg{background:url(<?php echo esc_url($advent_options['headertop-bg']); ?>);}
-    </style>
-<?php } ?>
-<div class="header_bg">
-    <span class="mask-overlay"></span>
-    <div class="webpage-container">
-        <?php if (!empty($advent_options['headertop-logo']) OR !empty($advent_options['topheading'])) { ?>
-            <div class="col-sm-4 col-md-5 text-center center-block">
-                <?php if (!empty($advent_options['headertop-logo'])) { ?>
-                    <div class="logo">
-                        <?php if (!empty($advent_options['headertop-logo'])) { ?>
-                            <img src="<?php echo esc_url($advent_options['headertop-logo']); ?>" class="img-responsive" alt="<?php echo get_the_title(); ?>">
-                        <?php } ?>
-                    </div>
-                <?php } ?>
-                <?php if (!empty($advent_options['topheading'])) { ?>
-                    <div class="slogan">
-                        <h1><?php echo esc_attr($advent_options['topheading']); ?></h1>
-                    </div>
-                <?php } ?>
-            </div>
-        <?php } ?>
-        <?php if (!empty($advent_options['headertop-img'])) { ?>
-            <div class="col-sm-8 col-md-7 mobile">                
-                <img src="<?php echo esc_url($advent_options['headertop-img']); ?>" class="img-responsive">             
-            </div>
-        <?php } ?>
-    </div>
-</div>
 <?php get_header(); ?>
 
 <section>

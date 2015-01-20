@@ -5,9 +5,9 @@ jQuery(document).ready(function() {
 
         items: 3,
         itemsDesktop: [1024, 3],
-        itemsDesktopSmall: [979, 3],
-        itemsMobile: [768, 2],
-        itemsMobile : [380, 1]
+        itemsDesktopSmall: [980, 3],
+        itemsTabletSmall: [768, 2],
+        itemsMobile : [480, 1]
 
     });
     jQuery(".next").click(function() {

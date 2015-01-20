@@ -1,0 +1,9 @@
+Version 1.0
+i)   Theme Submitted for approval
+
+Version 1.0.1
+i)	fix css and js issue
+ii) remove unnecessary commented code
+iii) Screenshot Changed.
+
+
