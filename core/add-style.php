@@ -10,7 +10,7 @@
 	
 	/* Background Image */
 	if ( (suevafree_setting('suevafree_footer_background')) && (suevafree_setting('suevafree_footer_background') <> 'None') ):
-		$footerstyle .= 'background: url('.get_bloginfo('template_directory').suevafree_setting('suevafree_footer_background').');'; 
+		$footerstyle .= 'background: url('.get_template_directory_uri().suevafree_setting('suevafree_footer_background').');'; 
 	elseif ( suevafree_setting('suevafree_footer_background') == "None") : 
 		$footerstyle .= 'background-image: none;'; 
 	endif;
