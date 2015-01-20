@@ -198,18 +198,7 @@ function catchbase_save_custom_meta( $post_id ) {
 		} elseif ('' == $new && $old) {  
 			delete_post_meta($post_id, $field['id'], $old);  
 		} 
-	 } // end foreach   
-	 
-	foreach ( $sidebar_options as $field ) {  
-		//Execute this saving function
-		$old = get_post_meta( $post_id, $field['id'], true); 
-		$new = $_POST[$field['id']];
-		if ($new && $new != $old) {  
-			update_post_meta($post_id, $field['id'], $new);  
-		} elseif ('' == $new && $old) {  
-			delete_post_meta($post_id, $field['id'], $old);  
-		} 
-	 } // end foreach  
+	 } // end foreach
 	 
 	foreach ( $featured_image_options as $field ) {  
 		//Execute this saving function

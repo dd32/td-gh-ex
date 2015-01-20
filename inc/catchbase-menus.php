@@ -24,7 +24,7 @@ function catchbase_primary_menu() {
     ?>
 	<nav class="nav-primary search-enabled" role="navigation">
         <div class="wrapper">
-            <h1 class="menu-toggle"><?php _e( 'Primary Menu', 'catchbase' ); ?></h1>
+            <h1 class="assistive-text"><?php _e( 'Primary Menu', 'catchbase' ); ?></h1>
             <div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'catchbase' ); ?>"><?php _e( 'Skip to content', 'catchbase' ); ?></a></div>
             <?php
                 if ( has_nav_menu( 'primary' ) ) { 
@@ -66,7 +66,7 @@ function catchbase_secondary_menu() {
 	?>
     	<nav class="nav-secondary" role="navigation">
             <div class="wrapper">
-                <h1 class="menu-toggle"><?php _e( 'Secondary Menu', 'catchbase' ); ?></h1>
+                <h1 class="assistive-text"><?php _e( 'Secondary Menu', 'catchbase' ); ?></h1>
                 <div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'catchbase' ); ?>"><?php _e( 'Skip to content', 'catchbase' ); ?></a></div>
                 <?php             
                     $catchbase_secondary_menu_args = array(
@@ -161,7 +161,7 @@ function catchbase_mobile_secondary_nav_anchor() {
     if ( has_nav_menu( 'secondary' ) ) {  
         ?>    
         <div id="mobile-header-right-menu" class="mobile-menu-anchor secondary-menu">
-            <a href="#mobile-header-right-menu" id="footer-menu" class="genericon genericon-menu">
+            <a href="#mobile-header-right-menu" id="secondary-menu" class="genericon genericon-menu">
                 <span class="mobile-menu-text"><?php _e( 'Menu', 'catchbase' );?></span>
             </a>
         </div><!-- #mobile-header-menu -->

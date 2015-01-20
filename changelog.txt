@@ -1,12 +1,21 @@
 == Change log ==
 
+= 1.2 =
+* Added title tag via add theme support
+* Bug Fixed: Homepage Category Conditions (Reporter by leucospis)
+* Bug Fixed: Removed unnecessary code in sidebar options meta (Reporter by ladonnaraeh)
+* Bug Fixed: Assistive text 
+* Bug Fixed: Secondary Menu anchor ID
+* Changed customizer button color
+* Removed unnecessary file catchbase-customizer-color-options.php
+* Removed unnecessary css
+
 = 1.1.1 =
 * Added hover color css Foursquare, PollDaddy and Twitch TV social icons
 * Bug Fixed: Single Post/Page Featured Image showing extra hi
 
 = 1.1 =
 * Added Foursquare, PollDaddy and Twitch TV social icons
-* Bug Fixed: Contextual text in Customizer
 * Bug Fixed: Featured header image
 * Bug Fixed: Featured content width in mobile 
 * Bug Fixed: Sanitize email for email output

@@ -262,10 +262,6 @@
 
 
 /* Additional */
-#catchwebtools_seo_metabox a {
-	cursor: pointer;
-	outline: none;
-}
 .ui-tabs .ui-tabs-panel {
 	border: 1px solid #ddd;
 	background-color: #fff;

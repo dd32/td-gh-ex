@@ -21,6 +21,8 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Catch Base WordPress Theme, Copyright 2014 Catchthemes.com
 Catch Base is distributed under the terms of the GNU General Public License v3
 
+Catchbase is based on Underscores http://underscores.me/, (C) Automattic, Inc.
+
 Images used are released under the CC0 license
 1. http://pixabay.com/en/buddha-deity-himalayan-park-nepal-100706/ - header image
 2. http://pixabay.com/en/new-york-city-manhattan-island-20211/ - 1st slider image and screenshot image

@@ -43,7 +43,6 @@ if ( ! function_exists( 'catchbase_head' ) ) :
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-		<?php if ( ! function_exists( '_wp_render_title_tag' ) ) : ?><title><?php wp_title( '|', true, 'right' ); ?></title><?php endif; ?>	
 		<!--[if lt IE 9]>
 			<script src="<?php echo get_template_directory_uri(); ?>/js/html5.min.js"></script>
 		<![endif]-->
