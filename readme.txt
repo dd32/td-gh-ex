@@ -57,6 +57,11 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 0.2.1
+1. Change screenshot image
+2. Change Responsive and color image for webriti Theme
+3. Add footer copywriting setting
+
 @Version 0.2
 1. Change all function prefix and text domain to elitepress.
 @Version 0.1 released

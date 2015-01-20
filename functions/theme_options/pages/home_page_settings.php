@@ -9,7 +9,7 @@
 			else  
 			{	
 				$current_options['upload_image_favicon']=sanitize_text_field($_POST['upload_image_favicon']);
-				$current_options['webrit_custom_css'] =$_POST['webrit_custom_css'];			
+				$current_options['webrit_custom_css'] =esc_html($_POST['webrit_custom_css']);			
 				if(isset($_POST['text_title']))
 				{ echo $current_options['text_title']=sanitize_text_field($_POST['text_title']); } 
 				else

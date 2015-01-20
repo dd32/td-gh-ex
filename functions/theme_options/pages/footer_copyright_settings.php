@@ -8,8 +8,7 @@
 			{  print 'Sorry, your nonce did not verify.';	exit; }
 			else  
 			{		
-				$current_options['footer_copyright_text']=$_POST['footer_copyright_text'];
-				
+				$current_options['footer_copyright_text']=wp_kses_post(balanceTags($_POST['footer_copyright_text'],true));
 				// Footer menu bar Enabled or Disabled
 				if(isset($_POST['footer_menu_bar_enabled']))
 				{ echo $current_options['footer_menu_bar_enabled']= "on"; } 
