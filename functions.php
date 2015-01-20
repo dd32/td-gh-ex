@@ -50,6 +50,14 @@ function aileron_setup() {
 		'primary' => __( 'Primary Menu', 'aileron' ),
 	) );
 
+	/*
+	 * Switch default core markup for search form, comment form, comments, gallery and captions
+	 * to output valid HTML5.
+	 */
+	add_theme_support( 'html5', array(
+		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
+	) );
+
 	// This theme styles the visual editor to resemble the theme style.
 	add_editor_style( array( 'editor-style.css', aileron_google_fonts_url() ) );
 
@@ -66,9 +74,6 @@ function aileron_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
-
-	// This theme uses its own gallery styles.
-	add_filter( 'use_default_gallery_style', '__return_false' );
 
 }
 endif; // aileron_setup

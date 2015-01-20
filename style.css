@@ -4,7 +4,7 @@ Theme URI: http://themecot.com/wordpress-theme/aileron/
 Author: ThemeCot
 Author URI: http://themecot.com/
 Description: Aileron is a magazine and blog WordPress theme with a clean design and modern look. It is well suited for magazine, news, editorial, blog, photography or review site.
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aileron
@@ -228,10 +228,6 @@ p:last-child {
 /*--------------------------------------------------------------
 2.4 General
 --------------------------------------------------------------*/
-::selection {
-	background-color: #444;
-	color: #fff;
-}
 b, strong {
 	font-weight: bold;
 }
@@ -478,7 +474,6 @@ textarea {
 	font-size: 100%; /* Corrects font size not being inherited in all browsers */
 	margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
 	vertical-align: baseline; /* Improves appearance and consistency in all browsers */
-	*vertical-align: middle; /* Improves appearance and consistency in all browsers */
 }
 button,
 input[type="button"],
@@ -644,7 +639,6 @@ textarea {
 .sf-menu ul {
 	box-shadow: 2px 2px 6px rgba(0,0,0,.2);
 	min-width: 15em; /* allow long menu items to determine submenu width */
-	*width: 15em; /* no auto sub width for IE7, see white-space comment below */
 	text-align: left;
 }
 .sf-menu a,
@@ -656,7 +650,6 @@ textarea {
 	padding: 5px 14px;
 	text-decoration: none;
 	text-transform: uppercase;
-	zoom: 1; /* IE7 */
 }
 .custom-header-image .sf-menu > li > a {
 	text-shadow: 0px 1px 0px #ebebeb;
@@ -680,7 +673,6 @@ textarea {
 .sf-menu li {
 	word-wrap: break-word;
 	white-space: normal; /* no need for Supersubs plugin */
-	*white-space: normal; /* ...unless you support IE7 (let it wrap) */
 	-webkit-transition: background .2s;
 	transition: background .2s;
 }
@@ -736,7 +728,6 @@ textarea {
 /* styling for right-facing arrows */
 .sf-arrows ul .sf-with-ul {
 	padding-right: 2.5em;
-	*padding-right: 1em; /* no CSS arrows for IE7 (lack pseudo-elements) */
 }
 .sf-arrows ul .sf-with-ul:after {
 	content: '';
@@ -1252,7 +1243,6 @@ form.search-form input[type="submit"] {
 	color: transparent;
 	cursor: pointer;
 	opacity: 0;
-	filter: alpha('opacity=0');
 	outline: 0;
 }
 form.search-form:before {
@@ -1804,98 +1794,51 @@ form.search-form:before {
 12.2 Galleries
 --------------------------------------------------------------*/
 .gallery {
-	margin: 50px 0;
+	margin: 0 0 40px;
 }
 .gallery-item {
-	float: left;
-	margin: 0 4px 4px 0;
-	overflow: hidden;
-	position: relative;
-}
-.gallery-columns-1 .gallery-item {
-	max-width: 100%;
+	display: inline-block;
+	padding: 1.79104477%;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
 }
 .gallery-columns-2 .gallery-item {
-	max-width: 48%;
-	max-width: -webkit-calc(50% - 4px);
-	max-width:				 calc(50% - 4px);
+	max-width: 50%;
 }
 .gallery-columns-3 .gallery-item {
-	max-width: 32%;
-	max-width: -webkit-calc(33.3% - 4px);
-	max-width:				 calc(33.3% - 4px);
+	max-width: 33.33%;
 }
 .gallery-columns-4 .gallery-item {
-	max-width: 23%;
-	max-width: -webkit-calc(25% - 4px);
-	max-width:				 calc(25% - 4px);
+	max-width: 25%;
 }
 .gallery-columns-5 .gallery-item {
-	max-width: 19%;
-	max-width: -webkit-calc(20% - 4px);
-	max-width:				 calc(20% - 4px);
+	max-width: 20%;
 }
 .gallery-columns-6 .gallery-item {
-	max-width: 15%;
-	max-width: -webkit-calc(16.7% - 4px);
-	max-width:				 calc(16.7% - 4px);
+	max-width: 16.66%;
 }
 .gallery-columns-7 .gallery-item {
-	max-width: 13%;
-	max-width: -webkit-calc(14.28% - 4px);
-	max-width:				 calc(14.28% - 4px);
+	max-width: 14.28%;
 }
 .gallery-columns-8 .gallery-item {
-	max-width: 11%;
-	max-width: -webkit-calc(12.5% - 4px);
-	max-width:				 calc(12.5% - 4px);
+	max-width: 12.5%;
 }
 .gallery-columns-9 .gallery-item {
-	max-width: 9%;
-	max-width: -webkit-calc(11.1% - 4px);
-	max-width:				 calc(11.1% - 4px);
+	max-width: 11.11%;
 }
-.gallery-columns-1 .gallery-item:nth-of-type(1n),
-.gallery-columns-2 .gallery-item:nth-of-type(2n),
-.gallery-columns-3 .gallery-item:nth-of-type(3n),
-.gallery-columns-4 .gallery-item:nth-of-type(4n),
-.gallery-columns-5 .gallery-item:nth-of-type(5n),
-.gallery-columns-6 .gallery-item:nth-of-type(6n),
-.gallery-columns-7 .gallery-item:nth-of-type(7n),
-.gallery-columns-8 .gallery-item:nth-of-type(8n),
-.gallery-columns-9 .gallery-item:nth-of-type(9n) {
-	margin-right: 0;
+.gallery-icon img {
+	margin: 0 auto;
 }
 .gallery-caption {
-	background-color: rgba(0, 0, 0, 0.7);
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing:		border-box;
-	box-sizing:				 border-box;
-	color: #fff;
+	color: #999;
+	display: block;
 	font-size: 12px;
+	font-size: 1.2rem;
 	line-height: 1.5;
-	margin: 0;
-	max-height: 50%;
-	opacity: 0;
-	padding: 6px 8px;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	text-align: left;
-	width: 100%;
+	padding: 10px 0;
 }
-.gallery-caption:before {
-	content: "";
-	height: 100%;
-	min-height: 49px;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-}
-.gallery-item:hover .gallery-caption {
-	opacity: 1;
-}
+.gallery-columns-6 .gallery-caption,
 .gallery-columns-7 .gallery-caption,
 .gallery-columns-8 .gallery-caption,
 .gallery-columns-9 .gallery-caption {
