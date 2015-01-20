@@ -2,7 +2,7 @@
 Deserve Theme by FruitThemes http://fruitthemes.com/
 
 === About Deserve ===
-Deserve is a premium quality multi-purpose WordPress theme for corporate websites or start-ups. Deserve is a mobile responsive WordPress theme based on Twitter Bootstrap framework. It's SEO friendly as well. It comes with easy to manage THEME OPTIONS using which you can easily manage footer settings, social icons etc.
+Deserve is a lightweight, faster, clean, super flexible and bootstrap based responsive theme for business or personal websites. Deserve Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, theme-options etc in order to get it customized as per your needs.
 
 === Tags ===
 left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments , translation-ready
@@ -21,7 +21,7 @@ Deserve is distributed under the terms of the GNU GPL
 1. Primary:
  = Login to your wp-admin account and go to Appearance -> Themes.
  = Select "Install" tab and click on the "Upload" link.
- = Select "Deserve.zip" and click on "Install Now" button.
+ = Select "deserve.zip" and click on "Install Now" button.
  = In case of errors, use an alternate method.
  
 2. Alternate:

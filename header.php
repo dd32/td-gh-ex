@@ -17,7 +17,7 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width">
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
+	
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<!--[if lt IE 9]>
@@ -109,14 +109,14 @@
                 </div>
             </div>
             <div class="col-md-10">
-                <div class="hrader-menu">             
+                <div class="header-menu">             
                    
                     <?php
 			$deserve_defaults = array(
 							'theme_location'  => 'primary',
 							'container'       => 'div',
-							'container_class' => 'navbar-collapse nav_coll no-padding collapse',
-							'container_id'    => 'example-navbar-collapse',
+							'container_class' => '',
+							'container_id'    => '',
 							'menu_class'      => 'navbar-collapse nav_coll no-padding collapse',
 							'menu_id'         => 'example-navbar-collapse',
 							'echo'            => true,

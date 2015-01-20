@@ -71,33 +71,7 @@ function deserve_font_url() {
 	return $deserve_font_url;
 }
 
-/*
- * Function for deserve theme title.
- */
-function deserve_wp_title( $title, $sep ) {
-	global $paged, $page;
 
-	if ( is_feed() ) {
-		return $title;
-	}
-
-	// Add the site name.
-	$title .= get_bloginfo( 'name', 'display' );
-
-	// Add the site description for the home/front page.
-	$deserve_site_description = get_bloginfo( 'description', 'display' );
-	if ( $deserve_site_description && ( is_home() || is_front_page() ) ) {
-		$title = "$title $sep $deserve_site_description";
-	}
-
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 ) {
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'deserve' ), max( $paged, $page ) );
-	}
-
-	return $title;
-}
-add_filter( 'wp_title', 'deserve_wp_title', 10, 2 );
 
 /*
  * Register widget areas.
@@ -426,7 +400,7 @@ $query = new WP_Query( apply_filters( 'widget_posts_args', array( 'posts_per_pag
 							<?php } 
 							else
 							{ ?>
-								<img src="<?php echo get_template_directory_uri(); ?>/images/image.jpeg" height="100px" width="100px" alt="<?php echo get_the_title(); ?>" class="img-responsive" />
+								<img src="<?php echo get_template_directory_uri(); ?>/images/image.jpeg" height="100" width="100" alt="<?php echo get_the_title(); ?>" class="img-responsive" />
 							<?php } ?>
              	
 						</a>
@@ -524,7 +498,7 @@ function deserve_comment_placeholders( $deserve_fields )
     );
     $deserve_fields['email'] = str_replace(
         '<input',
-        '<input id="email" name="email" type="text" placeholder="'
+        '<input  placeholder="'
             . _x(
                 'Email',
                 'comment form placeholder',
@@ -538,7 +512,7 @@ function deserve_comment_placeholders( $deserve_fields )
     
     $deserve_fields['url'] = str_replace(
         '<input',
-        '<input id="url" name="url" type="url" placeholder="'
+        '<input  placeholder="'
             . _x(
                 'Website',
                 'comment form placeholder',

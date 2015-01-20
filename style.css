@@ -3,8 +3,8 @@ Theme Name: Deserve
 Theme URI: http://fruitthemes.com/wordpress-themes/deserve
 Author: FruitThemes
 Author URI: http://fruitthemes.com/
-Description: Deserve is a premium quality multi-purpose WordPress theme for corporate websites or start-ups. Deserve is a mobile responsive WordPress theme based on Twitter Bootstrap framework. It's SEO friendly as well. It comes with easy to manage THEME OPTIONS using which you can easily manage footer settings, social icons etc.
-Version: 1.0
+Description: Deserve is a lightweight, faster, clean, super flexible and bootstrap based responsive theme for business or personal websites. Deserve Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, theme-options etc in order to get it customized as per your need.
+Version: 1.0.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Copyright :
@@ -147,12 +147,12 @@ img{
 .toggle-menu .icon-bar {
     background-color: #ee4b3a;
 }
-.hrader-menu ul{
+.header-menu ul{
     float: right;
     margin: 0;
     list-style: outside none none;
 }
-.hrader-menu ul li{
+.header-menu ul li{
     padding-left: 0;
     padding-right: 0;
     position:relative;
@@ -160,7 +160,7 @@ img{
     float: left;
     margin-left: 5px;
 }
-.hrader-menu ul li a{
+.header-menu ul li a{
     color:#084d54;
     font-family: opensans-regular;    
     text-transform:uppercase;
@@ -171,64 +171,64 @@ img{
     display: block;
     line-height: 20px;
 }
-.hrader-menu ul > li a:focus,
-.hrader-menu ul > li a:hover,
-.hrader-menu ul > li .active{
+.header-menu ul > li a:focus,
+.header-menu ul > li a:hover,
+.header-menu ul > li .active{
     background-color:#084d54;
     color:#f8f8f8;
     border-bottom:2px solid #ee4b3a;	
 }
 
-.hrader-menu ul > .open > a, .hrader-menu ul > .open > a:hover, .hrader-menu ul > .open > a:focus {
+.header-menu ul > .open > a, .header-menu ul > .open > a:hover, .header-menu ul > .open > a:focus {
     background-color:#084d54;
     color:#f8f8f8;
     border-bottom:2px solid #ee4b3a;
 }
-.hrader-menu ul li ul {
+.header-menu ul li ul {
     background-color:#f8f8f8;	
     border: 0;    
     padding: 0;
     margin: 0;
     border-radius: 0;	
     min-width: 0;   
-    width: 200px;
+    width: 160px;
     box-shadow:0 6px 12px rgba(0, 0, 0, 0.176);
     position:absolute;
     opacity:0;
     visibility:hidden;
     z-index:3;	
 }
-.hrader-menu ul li:hover ul {
+.header-menu ul li:hover ul {
     opacity:1;
     visibility:visible;
 }
-.hrader-menu ul li ul li{
+.header-menu ul li ul li{
     width: 100%;
     margin-left: 0;
 }
-.hrader-menu ul li:hover ul li ul {
+.header-menu ul li:hover ul li ul {
     opacity: 0;
     visibility: hidden;
 }
-.hrader-menu ul li ul li:hover > ul {
+.header-menu ul li ul li:hover > ul {
     opacity: 1;
     visibility: visible;
     z-index: 1;
     top: 0;
     right: 100%;
 }
-.hrader-menu ul li ul > li > a {
+.header-menu ul li ul > li > a {
     color:#084d54;
     font-size: 15px;
     text-transform: capitalize;
-    padding: 10px;
+   padding: 10px 5px;
     margin: 0;
     text-align: left;
     display:inline-block;
     width:100%;
     border: none;
 }
-.hrader-menu ul > li > ul > li > a:hover
+.header-menu ul > li > ul > li > a:hover
 {
     background-color:#084d54;
     color:#f8f8f8;
@@ -1583,28 +1583,28 @@ embed, iframe, object, video {
         float: none;
         margin: 20px auto 13px;
     }
-    .hrader-menu ul{
+    .header-menu ul{
         float: left;
         width:100%;
     }
-    .hrader-menu ul li ul,
-    .hrader-menu ul li ul li ul{
+    .header-menu ul li ul,
+    .header-menu ul li ul li ul{
         opacity: 1;
         visibility: visible;
     }
-    .hrader-menu ul li{
+    .header-menu ul li{
         margin-top: 5px;	
         float: none;
         margin-left: 0;
     }
-    .hrader-menu ul li a{
+    .header-menu ul li a{
         padding-bottom: 10px;
         padding-top:10px;
         margin-left: 0;
         border-bottom: 2px solid #f8f8f8;
         text-align: left;	
     }
-    .hrader-menu ul li ul {
+    .header-menu ul li ul {
         box-shadow: none;
         display: list-item;
         float: none;
@@ -1613,10 +1613,10 @@ embed, iframe, object, video {
         text-align: left;
         width:96%;
     }
-    .hrader-menu ul li ul li:hover ul{
+    .header-menu ul li ul li:hover ul{
         right:0;
     }
-    .hrader-menu ul li:hover ul li ul {
+    .header-menu ul li:hover ul li ul {
         opacity: 1;
         visibility: visible;
     }
@@ -1726,7 +1726,7 @@ embed, iframe, object, video {
     /*****************HOME PAGE END******************/
 }
 @media (min-width:981px)and (max-width:1024px){
-    .hrader-menu ul li ul{
+    .header-menu ul li ul{
         right: 0;
     }
 }
@@ -1744,7 +1744,7 @@ embed, iframe, object, video {
     .site-logo img{
         margin: 0 auto;
     }
-    .hrader-menu{
+    .header-menu{
         display: inline-block;
         margin-bottom: -5px;	
     }
@@ -1766,7 +1766,7 @@ embed, iframe, object, video {
     .comment-form-email {
         padding: 0;
     }
-    .hrader-menu ul li ul{
+    .header-menu ul li ul{
         right: 0;
     }
     /*****************HOME PAGE END******************/

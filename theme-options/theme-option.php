@@ -105,7 +105,7 @@ function deserve_framework_page(){
       <div class="right-box">
         <div class="nav-tab-wrapper">
 			 <div class="option-title">
-            <h2><?php _e('theme options','deserve'); ?> </h2>
+            <h2><?php _e('Theme Options','deserve'); ?> </h2>
           </div>
           <ul>
             <li><a id="options-group-1-tab" class="nav-tab basicsettings-tab" title="<?php _e('Basic Settings','deserve'); ?>" href="#options-group-1"><?php _e('Basic Settings','deserve'); ?></a></li>
