@@ -54,11 +54,7 @@ add_action( 'after_setup_theme', 'ariwoo_setup' );
 
 
 
-
-
-
-
-
+ 
 
 
 

@@ -58,6 +58,8 @@ License for images:
 1. Image Name: slide1.jpg
 Resource link: - http://www.flickr.com/photos/35924887@N02/5447731379
 License:  Creative Commons license
+url : https://creativecommons.org/licenses/by/2.0/
+
 
 2. Image Name: about.jpg
 Resource link: - https://www.flickr.com/photos/45393120@N07/5998133376
