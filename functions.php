@@ -39,13 +39,16 @@ function freedom_setup() {
 
 	// This theme uses Featured Images (also known as post thumbnails) for per-post/per-page.
 	add_theme_support( 'post-thumbnails' );
- 
+
+   // Supporting title tag via add_theme_support (since WordPress 4.1)
+   add_theme_support( 'title-tag' );
+
 	// Registering navigation menu.
 	register_nav_menu( 'primary', 'Primary Menu' );
 
 	// Cropping the images to different sizes to be used in the theme
 	add_image_size( 'featured', 660, 300, true );
-	add_image_size( 'featured-home', 485, 400, true );	
+	add_image_size( 'featured-home', 485, 400, true );
 
 	// Setup the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'freedom_custom_background_args', array(
@@ -61,12 +64,12 @@ function freedom_setup() {
 endif;
 
 /**
- * Define Directory Location Constants 
+ * Define Directory Location Constants
  */
 define( 'FREEDOM_PARENT_DIR', get_template_directory() );
 define( 'FREEDOM_CHILD_DIR', get_stylesheet_directory() );
 
-define( 'FREEDOM_INCLUDES_DIR', FREEDOM_PARENT_DIR. '/inc' );	
+define( 'FREEDOM_INCLUDES_DIR', FREEDOM_PARENT_DIR. '/inc' );
 define( 'FREEDOM_CSS_DIR', FREEDOM_PARENT_DIR . '/css' );
 define( 'FREEDOM_JS_DIR', FREEDOM_PARENT_DIR . '/js' );
 define( 'FREEDOM_LANGUAGES_DIR', FREEDOM_PARENT_DIR . '/languages' );
@@ -79,8 +82,8 @@ define( 'FREEDOM_ADMIN_JS_DIR', FREEDOM_ADMIN_DIR . '/js' );
 define( 'FREEDOM_ADMIN_CSS_DIR', FREEDOM_ADMIN_DIR . '/css' );
 
 
-/** 
- * Define URL Location Constants 
+/**
+ * Define URL Location Constants
  */
 define( 'FREEDOM_PARENT_URL', get_template_directory_uri() );
 define( 'FREEDOM_CHILD_URL', get_stylesheet_directory_uri() );
@@ -102,7 +105,7 @@ require_once( FREEDOM_INCLUDES_DIR . '/custom-header.php' );
 require_once( FREEDOM_INCLUDES_DIR . '/functions.php' );
 require_once( FREEDOM_INCLUDES_DIR . '/header-functions.php' );
 
-require_once( FREEDOM_ADMIN_DIR . '/meta-boxes.php' );		
+require_once( FREEDOM_ADMIN_DIR . '/meta-boxes.php' );
 
 /** Load Widgets and Widgetized Area */
 require_once( FREEDOM_WIDGETS_DIR . '/widgets.php' );

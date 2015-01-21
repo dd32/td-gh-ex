@@ -9,47 +9,66 @@
 
 /****************************************************************************************/
 
-add_filter( 'wp_title', 'freedom_filter_wp_title' );
-if ( ! function_exists( 'freedom_filter_wp_title' ) ) :
-/**
- * Modifying the Title
- *
- * Function tied to the wp_title filter hook.
- * @uses filter wp_title
- */
-function freedom_filter_wp_title( $title ) {
-	global $page, $paged;
-	
-	// Get the Site Name
-   $site_name = get_bloginfo( 'name' );
+// Backwards compatibility for older versions
+if ( ! function_exists( '_wp_render_title_tag' ) ) :
 
-   // Get the Site Description
-   $site_description = get_bloginfo( 'description' );
-
-   $filtered_title = ''; 
-
-	// For Homepage or Frontpage
-   if(  is_home() || is_front_page() ) {		
-		$filtered_title .= $site_name;	
-		if ( !empty( $site_description ) )  {
-        	$filtered_title .= ' &#124; '. $site_description;
-		}
+   add_action( 'wp_head', 'freedom_render_title' );
+   function freedom_render_title() {
+      ?>
+      <title>
+      <?php
+      /**
+       * Print the <title> tag based on what is being viewed.
+       */
+      wp_title( '|', true, 'right' );
+      ?>
+      </title>
+      <?php
    }
-	elseif( is_feed() ) {
-		$filtered_title = '';
-	}
-	else{	
-		$filtered_title = $title . $site_name;
-	}
 
-	// Add a page number if necessary:
-	if( $paged >= 2 || $page >= 2 ) {
-		$filtered_title .= ' &#124; ' . sprintf( __( 'Page %s', 'freedom' ), max( $paged, $page ) );
-	}
-	
-	// Return the modified title
-   return $filtered_title;
-}
+   add_filter( 'wp_title', 'freedom_filter_wp_title' );
+   if ( ! function_exists( 'freedom_filter_wp_title' ) ) :
+   /**
+    * Modifying the Title
+    *
+    * Function tied to the wp_title filter hook.
+    * @uses filter wp_title
+    */
+   function freedom_filter_wp_title( $title ) {
+   	global $page, $paged;
+
+   	// Get the Site Name
+      $site_name = get_bloginfo( 'name' );
+
+      // Get the Site Description
+      $site_description = get_bloginfo( 'description' );
+
+      $filtered_title = '';
+
+   	// For Homepage or Frontpage
+      if(  is_home() || is_front_page() ) {
+   		$filtered_title .= $site_name;
+   		if ( !empty( $site_description ) )  {
+           	$filtered_title .= ' &#124; '. $site_description;
+   		}
+      }
+   	elseif( is_feed() ) {
+   		$filtered_title = '';
+   	}
+   	else{
+   		$filtered_title = $title . $site_name;
+   	}
+
+   	// Add a page number if necessary:
+   	if( $paged >= 2 || $page >= 2 ) {
+   		$filtered_title .= ' &#124; ' . sprintf( __( 'Page %s', 'freedom' ), max( $paged, $page ) );
+   	}
+
+   	// Return the modified title
+      return $filtered_title;
+   }
+   endif;
+
 endif;
 
 /****************************************************************************************/

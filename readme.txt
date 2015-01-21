@@ -51,6 +51,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.0.2 =
+* add_theme_support('title_tag') added as per WordPress 4.1
+
 = Version 1.0.1 =
 * Default background color added for body.
 * Transform CSS add for safari browser support.
