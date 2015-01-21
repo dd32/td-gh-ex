@@ -54,6 +54,9 @@ if ( ! function_exists( 'boxy_setup' ) ) :
 		// Add theme support for Semantic Markup
 		$markup = array( 'search-form', 'comment-form', 'comment-list', );
 		add_theme_support( 'html5', $markup );
+
+		// Add theme support for title tag
+		add_theme_support( 'title-tag' );
 	}
 endif; // boxy_setup
 add_action( 'after_setup_theme', 'boxy_setup' );

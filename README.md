@@ -37,6 +37,9 @@ are licensed under GPLv2
 16. Other theme options are self explanatory.
 
 == Change Log ==
+v. 1.0.8
+	* Added theme support for title-tag
+	
 v. 1.0.7
 	* Fixed Custom Header
 	
