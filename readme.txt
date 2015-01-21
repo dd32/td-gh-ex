@@ -4,7 +4,7 @@ Author: Larry Judd Oliver - tradesouthwest.com
 
 == Additional License Information ==  
 * HTML5 Shiv v3.7.0 | @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed    
-* All default images GPL2 License
+* All default images by author @tradesouthwest | GPL2 License 
 
 === About ===
 -! Setting the number of posts to show on your home page is the most important part of getting a even number of posts to show on the home page. Set to multiples of 4.
@@ -13,6 +13,8 @@ Author: Larry Judd Oliver - tradesouthwest.com
 -! Note that top row menu area does NOT SUPPORT DROP-DOWN MENUS! This is a static inline menu only.
 
 == Change Log ==
+= 1.8.2 =
+* resent to svn
 = 1.8.1 =
 * fixed Tstring end missing
 
