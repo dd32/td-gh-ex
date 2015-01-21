@@ -29,7 +29,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="f_left col-lg-6 col-md-6 col-sm-6">
-							<?php _e('Copyright', 'mwsmall'); ?> &copy; <?php echo date("Y") ?> <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> <?php _e('All Rights Reserved.', 'mwsmall'); ?>
+							<?php _e('Copyright', 'mwsmall'); ?> &copy; <?php echo date("Y") ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> <?php _e('All Rights Reserved.', 'mwsmall'); ?>
 						</div>
 						<div class="f_right col-lg-6 col-md-6 col-sm-6">
 							<?php _e( 'Proudly powered by', 'mwsmall' ); ?> <a href="http://wordpress.org/" rel="generator" target="_blank">WordPress</a> 

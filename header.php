@@ -12,7 +12,7 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<!--[if lt IE 9]>
-		<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
+		<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
 	<![endif]-->
 	<?php wp_head(); ?>
 </head>
@@ -43,17 +43,17 @@
 					<?php 
 						$ifb = get_theme_mod('icon_facebook');
 						if ( get_theme_mod('icon_facebook') !="") { ?>
-							<a target="_blank" href="<?php echo $ifb ?>"><i class="fa fa-facebook"></i></a>
+							<a target="_blank" href="<?php echo esc_url($ifb); ?>"><i class="fa fa-facebook"></i></a>
 					<?php } ?>
 					<?php 
 						$itwitter = get_theme_mod('icon_twitter');
 						if ( get_theme_mod('icon_twitter') !="") { ?>
-							<a target="_blank" href="<?php echo $itwitter ?>"><i class="fa fa-twitter"></i></a>
+							<a target="_blank" href="<?php echo esc_url($itwitter); ?>"><i class="fa fa-twitter"></i></a>
 					<?php } ?>
 					<?php 
 						$igp = get_theme_mod('icon_google');
 						if ( get_theme_mod('icon_google') !="") { ?>
-							<a target="_blank" href="<?php echo $igp ?>"><i class="fa fa-google-plus"></i></a>
+							<a target="_blank" href="<?php echo esc_url($igp); ?>"><i class="fa fa-google-plus"></i></a>
 					<?php } ?>
 					<a href="#"><i class="fa fa-search"></i></a>	
 				</div>

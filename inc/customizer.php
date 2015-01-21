@@ -98,8 +98,7 @@ function mwsmall_customize_register($wp_customize){
 	$wp_customize->add_setting( 
 		'more_info_mwthemes',
 		array(
-			'default'        => '',
-			'sanitize_callback' => 'sanitize_mw_info_',
+			'sanitize_callback' => 'esc_url_raw',
 		)
 		
 	);

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: mwsmall1.0.0\n"
-"POT-Creation-Date: 2014-11-25 22:59+0100\n"
-"PO-Revision-Date: 2014-11-25 23:00+0100\n"
+"Project-Id-Version: mwsmall1.0.4\n"
+"POT-Creation-Date: 2015-01-21 18:24+0100\n"
+"PO-Revision-Date: 2015-01-21 18:27+0100\n"
 "Last-Translator: mk <michalv2@o2.pl>\n"
 "Language-Team: MW Themes <info@mwthemes.net>\n"
 "Language: en\n"
@@ -39,9 +39,17 @@ msgstr ""
 msgid "Month: %s"
 msgstr ""
 
+#: ../archive.php:28
+msgid "F Y"
+msgstr ""
+
 #: ../archive.php:31
 #, php-format
 msgid "Year: %s"
+msgstr ""
+
+#: ../archive.php:31
+msgid "Y"
 msgstr ""
 
 #: ../archive.php:34
@@ -92,14 +100,14 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: ../content-audio.php:32 ../content-gallery.php:57 ../content-image.php:34
-#: ../content-link.php:12 ../content-quote.php:16 ../content-single.php:38
-#: ../content-video.php:34 ../content.php:39
+#: ../content-audio.php:35 ../content-gallery.php:62 ../content-image.php:38
+#: ../content-link.php:12 ../content-quote.php:16 ../content-single.php:72
+#: ../content-video.php:38 ../content.php:42
 msgid "[...]"
 msgstr ""
 
-#: ../content-audio.php:43 ../content-gallery.php:68 ../content-image.php:45
-#: ../content-video.php:45 ../content.php:52
+#: ../content-audio.php:46 ../content-gallery.php:73 ../content-image.php:49
+#: ../content-video.php:49 ../content.php:55
 msgid "Read more"
 msgstr ""
 
@@ -125,7 +133,7 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: ../content-page.php:15 ../content-single.php:39 ../content.php:41
+#: ../content-page.php:15 ../content-single.php:73 ../content.php:44
 msgid "Pages:"
 msgstr ""
 
@@ -153,35 +161,35 @@ msgstr ""
 msgid "Main Navigation"
 msgstr ""
 
-#: ../functions.php:109
+#: ../functions.php:107
 msgid "Blog Widget"
 msgstr ""
 
-#: ../functions.php:117
+#: ../functions.php:115
 msgid "Footer Widget 1"
 msgstr ""
 
-#: ../functions.php:125
+#: ../functions.php:123
 msgid "Footer Widget 2"
 msgstr ""
 
-#: ../functions.php:133
+#: ../functions.php:131
 msgid "Footer Widget 3"
 msgstr ""
 
-#: ../functions.php:149
+#: ../functions.php:147
 msgid "Older posts"
 msgstr ""
 
-#: ../functions.php:153
+#: ../functions.php:151
 msgid "Newer posts"
 msgstr ""
 
-#: ../functions.php:185
+#: ../functions.php:183
 msgid "Your comment is awaiting approval"
 msgstr ""
 
-#: ../functions.php:234
+#: ../functions.php:232
 #, php-format
 msgid "Page %s"
 msgstr ""
