@@ -66,13 +66,7 @@ wp_head();
 						</nav><!-- #site-description -->
 						<i class="icon-search search-top"></i>
 						<div class="search-form-top">
-							<form action="<?php echo esc_url( home_url( '/' ) ); ?>" id="search-form" class="searchform clearfix" method="get">
-								<div class="search-wrap">
-									<input type="text" placeholder="<?php esc_attr_e( 'Search', 'esteem' ); ?>" class="s field" name="s">
-									<button type="submit">Search</button>
-								</div>
-								<input type="submit" value="<?php esc_attr_e( 'Search', 'esteem' ); ?>" id="search-submit" name="submit" class="submit">
-							</form><!-- .searchform -->
+							<?php get_search_form(); ?>
 						</div><!-- .search-form-top -->
 					</div><!-- .hgroup-wrap-right -->
 				</div><!-- .hgroup-wrap -->

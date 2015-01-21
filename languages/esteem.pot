@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Esteem\n"
-"POT-Creation-Date: 2014-12-23 11:43+0545\n"
-"PO-Revision-Date: 2014-12-23 11:43+0545\n"
+"POT-Creation-Date: 2015-01-21 15:39+0545\n"
+"PO-Revision-Date: 2015-01-21 15:39+0545\n"
 "Last-Translator: \n"
 "Language-Team: ThemeGrill <themegrill@gmail.com>\n"
 "Language: en\n"
@@ -48,32 +48,32 @@ msgid "Comments are closed."
 msgstr ""
 
 #: content-blog-full-content.php:28 content-blog-image-large.php:46
-#: content-blog-image-medium.php:28 content-single.php:44 content.php:48
+#: content-blog-image-medium.php:28 content-single.php:44 content.php:51
 msgid "No Comments"
 msgstr ""
 
 #: content-blog-full-content.php:28 content-blog-image-large.php:46
-#: content-blog-image-medium.php:28 content-single.php:44 content.php:48
+#: content-blog-image-medium.php:28 content-single.php:44 content.php:51
 msgid "1 Comment"
 msgstr ""
 
 #: content-blog-full-content.php:28 content-blog-image-large.php:46
-#: content-blog-image-medium.php:28 content-single.php:44 content.php:48
+#: content-blog-image-medium.php:28 content-single.php:44 content.php:51
 msgid "% Comments"
 msgstr ""
 
 #: content-blog-full-content.php:28 content-blog-image-large.php:46
-#: content-blog-image-medium.php:28 content-single.php:44 content.php:48
+#: content-blog-image-medium.php:28 content-single.php:44 content.php:51
 msgid "Comments Off"
 msgstr ""
 
 #: content-blog-full-content.php:30 content-blog-image-large.php:48
-#: content-blog-image-medium.php:30 content-single.php:46 content.php:50
+#: content-blog-image-medium.php:30 content-single.php:46 content.php:53
 msgid "Edit"
 msgstr ""
 
 #: content-blog-image-large.php:54 content-blog-image-medium.php:55
-#: content.php:57 inc/widgets/widgets.php:191
+#: content.php:60 inc/widgets/widgets.php:191
 msgid "Read more"
 msgstr ""
 
@@ -87,10 +87,6 @@ msgstr ""
 
 #: fontawesome/icons.php:4
 msgid "(None)"
-msgstr ""
-
-#: header.php:79 header.php:82 searchform.php:12 searchform.php:15
-msgid "Search"
 msgstr ""
 
 #: inc/admin/meta-boxes.php:21 inc/admin/meta-boxes.php:31
@@ -134,23 +130,23 @@ msgstr ""
 msgid "Theme Options"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-framework-admin.php:198
+#: inc/admin/options/includes/class-options-framework-admin.php:203
 msgid "Save Options"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-framework-admin.php:199
+#: inc/admin/options/includes/class-options-framework-admin.php:204
 msgid "Restore Defaults"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-framework-admin.php:199
+#: inc/admin/options/includes/class-options-framework-admin.php:204
 msgid "Click OK to reset. Any theme settings will be lost!"
 msgstr ""
 
-#: inc/admin/options/includes/class-options-framework-admin.php:230
+#: inc/admin/options/includes/class-options-framework-admin.php:235
 msgid "Default options restored."
 msgstr ""
 
-#: inc/admin/options/includes/class-options-framework-admin.php:284
+#: inc/admin/options/includes/class-options-framework-admin.php:289
 msgid "Options saved."
 msgstr ""
 
@@ -275,44 +271,44 @@ msgstr ""
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: inc/header-functions.php:47
+#: inc/header-functions.php:64
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: inc/header-functions.php:141
+#: inc/header-functions.php:159
 #, php-format
 msgid "Author: %s"
 msgstr ""
 
-#: inc/header-functions.php:149
+#: inc/header-functions.php:167
 #, php-format
 msgid "Day: %s"
 msgstr ""
 
-#: inc/header-functions.php:152
+#: inc/header-functions.php:170
 #, php-format
 msgid "Month: %s"
 msgstr ""
 
-#: inc/header-functions.php:155
+#: inc/header-functions.php:173
 #, php-format
 msgid "Year: %s"
 msgstr ""
 
-#: inc/header-functions.php:158 sidebar-left.php:29 sidebar.php:29
+#: inc/header-functions.php:176 sidebar-left.php:29 sidebar.php:29
 msgid "Archives"
 msgstr ""
 
-#: inc/header-functions.php:163
+#: inc/header-functions.php:181
 msgid "Page NOT Found"
 msgstr ""
 
-#: inc/header-functions.php:166
+#: inc/header-functions.php:184
 msgid "Search Results"
 msgstr ""
 
-#: inc/header-functions.php:199
+#: inc/header-functions.php:217
 msgid "You are here:"
 msgstr ""
 
@@ -739,6 +735,10 @@ msgstr ""
 
 #: options.php:277
 msgid "If you like our work. Buy us a beer."
+msgstr ""
+
+#: searchform.php:12 searchform.php:13 searchform.php:15
+msgid "Search"
 msgstr ""
 
 #: sidebar-left.php:36 sidebar.php:36

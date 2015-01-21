@@ -42,6 +42,11 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.2 =
+* Search form code fixed.
+* Missed translation text fixed.
+* Options framework updated to 1.9.1
+
 = Version 1.1.9 =
 * add_theme_support('title_tag') added as per WordPress 4.1
 * Screenshot Changed.
