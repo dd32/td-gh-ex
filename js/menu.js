@@ -1,6 +1,6 @@
 jQuery(document).ready(function() {		
-		jQuery('.nav li.dropdown').click(function() { jQuery(this).addClass('open');   }}); 
-		jQuery('ul.dropdown li.dropdown-submenu').click(function() { jQuery(this).addClass('open');	} });	
+		jQuery('.nav li.dropdown').click(function() { jQuery(this).addClass('open');   }); 
+		jQuery('ul.dropdown li.dropdown-submenu').click(function() { jQuery(this).addClass('open');	} );	
 	   var bMobile;  // true if in mobile mode
 		// Initiate event handlers
 		function init() {

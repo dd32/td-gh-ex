@@ -17,7 +17,7 @@
                 
                 // Js
                 wp_enqueue_script('menu', WL_TEMPLATE_DIR_URI .'/js/menu.js', array('jquery'));
-                wp_enqueue_script('bootstrap-min-js', WL_TEMPLATE_DIR_URI .'/js/bootstrap.min.js');
+                wp_enqueue_script('bootstrap-js', WL_TEMPLATE_DIR_URI .'/js/bootstrap.js');
                 wp_enqueue_script('enigma-theme-script', WL_TEMPLATE_DIR_URI .'/js/enigma_theme_script.js');
                 if(is_front_page()){
                 /*Carofredsul Slides*/
@@ -28,7 +28,7 @@
                 wp_enqueue_style('photobox', WL_TEMPLATE_DIR_URI . '/css/photobox.css');
                 //Footer JS//
 				wp_enqueue_script('enigma-footer-script', WL_TEMPLATE_DIR_URI .'/js/enigma-footer-script.js','','',true);
-				wp_enqueue_script('waypoints.min', WL_TEMPLATE_DIR_URI .'/js/waypoints.min.js','','',true);
+				wp_enqueue_script('waypoints', WL_TEMPLATE_DIR_URI .'/js/waypoints.js','','',true);				
 				wp_enqueue_script('scroll', WL_TEMPLATE_DIR_URI .'/js/scroll.js','','',true);
 				}
                 if ( is_singular() ) wp_enqueue_script( "comment-reply" );

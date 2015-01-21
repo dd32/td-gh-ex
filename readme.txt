@@ -5,6 +5,10 @@ Consider weblizar PRE-Fix for function-name and as a slug of the Theme Enigma.
 Enigma
 
 CHANGE-LOG:
+@Version: 1.7.2[21/01/2015]
+1. Unminified JS.
+
+
 @Version: 1.7.1[16/01/2015]
 1. Title Repetition Removed.
 2. Unused JS file removed.
