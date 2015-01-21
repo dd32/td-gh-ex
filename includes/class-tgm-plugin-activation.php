@@ -333,8 +333,6 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 			foreach ( $this->plugins as $plugin ) {
 				if ( ! is_plugin_active( $plugin['file_path'] ) ) {
-					//add_submenu_page(
-					//	$this->parent_menu_slug,				// Parent menu slug @@@@@@ fix for 3.8 theme check
 					add_theme_page(
 						$this->strings['page_title'],           // Page title
 						$this->strings['menu_title'],           // Menu title

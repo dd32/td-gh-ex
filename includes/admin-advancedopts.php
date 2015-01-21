@@ -194,7 +194,7 @@ function weaverx_add_html_field($title, $name, $info, $help='', $icon = '') {
 	echo $info;
 ?>
 	<br />
-	<textarea placeholder="Any HTML, including shortcodes." name="<?php weaverx_sapi_main_name($area_name); ?>" rows=3 style="width: 95%"><?php weaverx_esc_textarea(weaverx_getopt($area_name)); ?></textarea>
+	<textarea placeholder="<?php _e('Any HTML, including shortcodes.','weaver-xtreme' /*adm*/); ?>" name="<?php weaverx_sapi_main_name($area_name); ?>" rows=3 style="width: 95%"><?php weaverx_esc_textarea(weaverx_getopt($area_name)); ?></textarea>
 	<br />
 	<?php
 	 echo '<table>'; weaverx_form_ctext($val); echo '</table>';
@@ -257,7 +257,7 @@ You can alternatively load a <code>favicon.ico</code> file to the root directory
 		echo '<img src="' . esc_url($icon) . '" alt="favicon" />&nbsp;';
 	}
 ?>
-	<strong>FavIcon URL: </strong>
+	<strong><?php _e('FavIcon URL:','weaver-xtreme' /*adm*/); ?> </strong>
 	<textarea name="<?php weaverx_sapi_main_name('_favicon_url'); ?>" id="_favicon_url" rows=1 style="width: 350px"><?php echo(esc_textarea(weaverx_getopt('_favicon_url'))); ?></textarea>
 	<?php weaverx_media_lib_button('_favicon_url'); ?>&nbsp;&nbsp;<?php _e('Full path to FavIcon','weaver-xtreme' /*adm*/);?>
 </p><br />

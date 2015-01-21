@@ -461,7 +461,7 @@ function weaverx_sidebar_after( $sb_layout, $who ) {
 
 	switch ( $sb_layout ) {
 
-		case 'right':                       // for non-top sidebars, both upper and lower get emittend here together
+		case 'right':                       // for non-top sidebars, both upper and lower get emitted here together
 		case 'left':
 		case 'split':
 			get_sidebar( $sb_layout );

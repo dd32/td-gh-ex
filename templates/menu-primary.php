@@ -28,11 +28,13 @@ if (weaverx_getopt( 'm_primary_hide') != 'hide' && !weaverx_is_checked_page_opt(
 	if ( $left ) {
 		$hide = ' ' . weaverx_getopt('m_primary_hide_left');
 		$left = '<span class="wvrx-menu-html wvrx-menu-left' . $hide .'">' . do_shortcode( $left ) . '</span>';
+		$left = str_replace('%','%%',$left);	// wp_nav_menu uses sprintf! This will almost always fix the issue.
 	}
 
 	if ( $right ) {
 		$hide = ' ' . weaverx_getopt('m_primary_hide_right');
 		$right = '<span class="wvrx-menu-html wvrx-menu-right ' . $hide . '">' . do_shortcode( $right ) . '</span>';
+		$right = str_replace('%','%%',$right);	// wp_nav_menu uses sprintf!
 	} // not needed... else {$right = '<span class="wvrx-menu-clear"></span>'; }
 
 	echo "\n\n<div id=\"nav-primary\" class=\"menu-primary\">\n";

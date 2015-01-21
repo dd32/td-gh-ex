@@ -20,7 +20,7 @@ function weaverx_admin_saverestore() {
 <?php _e('Note: if you have Weaver Xtreme Plus installed, then options marked with &starf;Plus will be included in saves and restores.','weaver-xtreme' /*adm*/); ?>
 </p>
 <div class="atw-option-subheader"><?php _e('Save/Restore Current Theme Settings using WordPress Database','weaver-xtreme' /*adm*/);?></div>
-<?php _e('<p>This option allows you to save and restore all current theme settings using your host\'s WordPress database. Your options will be preserved across Weaver Xtreme theme upgrades, as well when you change to different themes. There is only one saved backup avaiable. You can also download your setting to your computer with the options below.</p>
+<?php _e('<p>This option allows you to save and restore all current theme settings using your host\'s WordPress database. Your options will be preserved across Weaver Xtreme theme upgrades, as well when you change to different themes. There is only one saved backup available. You can also download your setting to your computer with the options below.</p>
 <p>Note: This save option saves <strong>all</strong> settings, including those marked with &diams;.</p>','weaver-xtreme' /*adm*/);?>
 <form name="save_mysave_form" method="post">
 	<span class="submit"><input type="submit" name="save_mytheme" value="<?php _e('Save Current Theme Settings','weaver-xtreme' /*adm*/);?>"/></span>
@@ -225,8 +225,10 @@ function weaverx_ex_set_current_to_serialized_values($contents)  {
 		$type = 'theme';
 	else if (substr($contents,0,10) == 'WXB-V01.00')
 		$type = 'backup';
-	else
-		return weaverx_f_fail(__("Wrong theme file format version",'weaver-xtreme' /*adm*/)); 	/* simple check for one of ours */
+	else {
+		$val = substr($contents,0,10);
+		return weaverx_f_fail(__("Wrong theme file format version",'weaver-xtreme' /*adm*/) . ':' . $val); 	/* simple check for one of ours */
+	}
 	$restore = array();
 	$restore = unserialize(substr($contents,10));
 

@@ -21,8 +21,7 @@ function weaverx_admin_help() {
 <?php _e('Clicking the ? will open the Weaver Xtreme Help	document to the appropriate section.','weaver-xtreme' /*adm*/); ?>
 </p>
 <p>
-More help is available at the <?php weaverx_site(); ?><strong>Weaver Xtreme Theme web site</strong></a>, which includes
-a support forum.
+<?php _e('More help is available at the ','weaver-xtreme' /*adm*/); ?><?php weaverx_site(); ?><strong><?php _e('Weaver Xtreme Theme web site','weaver-xtreme' /*adm*/); ?></strong></a><?php _e(', which includes a support forum.','weaver-xtreme' /*adm*/); ?>
 </p>
 <?php
 	do_action('weaverxplus_admin','help');

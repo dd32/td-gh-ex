@@ -3,7 +3,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 /* --- MULTI-SITE Control ---
   All non-checkbox options for this theme are filtered based on the 'unfiltered_html' capability,
   so non-admins and non-editors can only add safe html to the various options. It should be
-  farily safe to leave all theme options available on your Multi-site installation. If you want
+  fairly safe to leave all theme options available on your Multi-site installation. If you want
   to eliminate most of the options that let users enter HTML,
   then set WVRX_MULTISITE_RESTRICT_OPTIONS to true.
 
@@ -18,7 +18,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
 /* Version Information */
 
-define ('WEAVERX_VERSION','0.97');
+define ('WEAVERX_VERSION','1.0');
 define ('WEAVERX_VERSION_ID', 100);
 define ('WEAVERX_THEMENAME', 'Weaver Xtreme');
 define ('WEAVERX_THEMEVERSION', WEAVERX_THEMENAME . ' ' . WEAVERX_VERSION);

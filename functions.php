@@ -88,9 +88,9 @@ function weaverx_setup() {
 
 	// Weaver Xtreme supports two main nav menus
 	register_nav_menus( array(
-		'primary' => 'Primary Navigation: if specified, used instead of Default menu',
-		'secondary' => 'Secondary Navigation: if specified, adds 2nd menu bar',
-		'header-mini' => 'Header Mini-Menu: if specified, adds horizontal mini-menu to header'
+		'primary' => __('Primary Navigation: if specified, used instead of Default menu','weaver-xtreme' /*adm*/),
+		'secondary' => __('Secondary Navigation: if specified, adds 2nd menu bar','weaver-xtreme' /*adm*/),
+		'header-mini' => __('Header Mini-Menu: if specified, adds horizontal mini-menu to header','weaver-xtreme' /*adm*/)
 	) );
 
 	// Add support for a variety of post formats
@@ -390,7 +390,10 @@ function weaverx_admin_theme_page() {
 		$cur_vers = substr($cur_vers,0,$beta);	// strip the beta part if there
 	}
 	if (version_compare($cur_vers, WEAVERX_MIN_WPVERSION, '<')) {
-		echo '<br><br><h2 style="padding:4px;background:pink;">ERROR: You are using WordPress Version ' . $GLOBALS['wp_version'] . '. Weaver Xtreme requires <em>WordPress Version ' . WEAVERX_MIN_WPVERSION . '</em> or above. You should always upgrade to the latest version of WordPress for maximum site performance and security.</h2>';	// admin message
+		echo '<br><br><h2 style="padding:4px;background:pink;">' .  __('ERROR: You are using WordPress Version ','weaver-xtreme' /*adm*/) . $GLOBALS['wp_version'] .
+		__(' Weaver Xtreme requires <em>WordPress Version ','weaver-xtreme' /*adm*/) . WEAVERX_MIN_WPVERSION .
+		__('</em> or above. You should always upgrade to the latest version of WordPress for maximum site performance and security.','weaver-xtreme' /*adm*/) .
+		'</h2>';	// admin message
 		return;
 	}
 
@@ -411,7 +414,7 @@ function weaverx_admin_scripts() {
 	wp_enqueue_style ("thickbox");
 	wp_enqueue_script ("thickbox");
 
-	wp_enqueue_script('wvrxJscolor', get_template_directory_uri().'/assets/js/jscolor/jscolor.js',WEAVERX_VERSION);
+	wp_enqueue_script('wvrxJscolor', get_template_directory_uri().'/assets/js/jscolor/jscolor.js',WEAVERX_VERSION); // .min fails
 	wp_enqueue_script('wvrxYetii', get_template_directory_uri().'/assets/js/yetii/yetii'.WEAVERX_MINIFY.'.js',WEAVERX_VERSION);
 	wp_enqueue_script('wvrxHide', get_template_directory_uri().'/assets/js/theme/hide-css'.WEAVERX_MINIFY.'.js',WEAVERX_VERSION);
 	wp_enqueue_script('wvrxMediaLib', get_template_directory_uri().'/assets/js/theme/media-lib'.WEAVERX_MINIFY.'.js',WEAVERX_VERSION);

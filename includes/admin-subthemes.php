@@ -60,7 +60,7 @@ function weaverx_st_pick_theme($list_in) {
 	if ($cur_addon == '') {
 	echo ucwords(str_replace('-',' ',$cur_theme));
 	} else {
-		echo 'Add-on Subtheme: ' . ucwords(str_replace('-',' ',$cur_addon));
+		echo __('Add-on Subtheme: ','weaverx-xtreme') . ucwords(str_replace('-',' ',$cur_addon));
 		$cur_theme = '';
 	}
 ?>
@@ -167,7 +167,7 @@ function weaverx_activate_subtheme($theme) {
 	/* load settings for specified theme */
 	global $weaverx_opts_cache;
 
-	/* build the filename - theme files stored in /wp-content/themes/weaverx/subthemes/
+	/* build the filename - theme files stored in /wp-content/themes/weaver-xtreme/subthemes/
 
 	Important: the following code assumes that any of the pre-defined theme files won't have
 	and end-of-line character in them, which should be true. A user could muck about with the

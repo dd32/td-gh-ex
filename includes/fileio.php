@@ -122,22 +122,22 @@ function weaverx_f_content_dir() {
  }
 
 function weaverx_f_plugins_dir() {
-	// delivers appropraite path for using weaverx_f_ functions. WP_PLUGIN_DIR
+	// delivers appropriate path for using weaverx_f_ functions. WP_PLUGIN_DIR
 	return trailingslashit(WP_PLUGIN_DIR);
 }
 
 function weaverx_f_themes_dir() {
-	// delivers appropraite path for using weaverx_f_ functions.
+	// delivers appropriate path for using weaverx_f_ functions.
 	return weaverx_f_content_dir() . 'themes/';
 }
 
 function weaverx_f_wp_lang_dir() {
-	// delivers appropraite path for using weaverx_f_ functions. WP_LANG_DIR
+	// delivers appropriate path for using weaverx_f_ functions. WP_LANG_DIR
 	return trailingslashit(WP_LANG_DIR);
 }
 
 function weaverx_f_uploads_base_dir() {
-	// delivers appropraite path for using weaverx_f_ functions.
+	// delivers appropriate path for using weaverx_f_ functions.
 	$upload_dir = wp_upload_dir();
 	return trailingslashit($upload_dir['basedir']);
 }

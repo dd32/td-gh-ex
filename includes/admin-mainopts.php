@@ -85,7 +85,7 @@ function weaverx_mainopts_general() {
 	$opts = array(
 	array( 'type' => 'submit'),
 	array('name' => __('Wrapping Areas','weaver-xtreme' /*adm*/), 'id' => '-admin-generic', 'type' => 'header',
-		'info' => 'Settings for outer wrapping areas',
+		'info' => __('Settings for outer wrapping areas','weaverx-xtreme' /*adm*/),
 		'help' => 'help.html#GenApp'),
 	array('name' => __('Outside BG','weaver-xtreme' /*adm*/), 'id' => 'body_bgcolor', 'type' => 'ctext',
 		'info' => __('Background color that wraps entire page. (&lt;body&gt;) Using <em>Appearance->Background</em> will override this value, or allow a background image instead.','weaver-xtreme' /*adm*/)),
@@ -314,7 +314,7 @@ function weaverx_mainopts_header() {
 
 
 	array('name' => '<small>' . __('Move Title/Tagline over Image','weaver-xtreme' /*adm*/) . '</small>', 'id' => 'title_over_image', 'type' => 'checkbox',
-		'info' => __('Move the Title, Tagline, Seach, and Mini-Menu over the Header Image.','weaver-xtreme' /*adm*/)),
+		'info' => __('Move the Title, Tagline, Search, and Mini-Menu over the Header Image.','weaver-xtreme' /*adm*/)),
 
 
 	array( 'type' => 'submit'),
@@ -515,7 +515,7 @@ function weaverx_mainopts_content() {
 		'info' => __('Space after paragraphs and lists (Recommended: 1.5 em)','weaver-xtreme' /*adm*/)),
 
 	array('name' => '<small>' . __('Page/Post Editor BG','weaver-xtreme' /*adm*/) . '</small>', 'id' => 'editor_bgcolor', 'type' => 'ctext',
-		'info' => 'Alternative Background Color to use for Page/Post editor if you\'re using transparent or image backgrounds.'),
+		'info' => __('Alternative Background Color to use for Page/Post editor if you\'re using transparent or image backgrounds.','weaverx-xtreme' /*adm*/)),
 
 	array('name' => '<small>' . __('Input Area BG','weaver-xtreme' /*adm*/) . '</small>', 'id' => 'input_bgcolor', 'type' => 'ctext',
 		'info' => __('Background color for text input (textareas) boxes.','weaver-xtreme' /*adm*/)),
@@ -532,7 +532,7 @@ function weaverx_mainopts_content() {
 
 	array('name' => '<small>' . __('Search Input BG','weaver-xtreme' /*adm*/) . '</small>', 'id' => 'search_bgcolor', 'type' => 'ctext',
 		'info' => __('Background color for search input boxes.','weaver-xtreme' /*adm*/)),
-	array('name' => '<small>' . __('Serch Input Text','weaver-xtreme' /*adm*/) . '</small>', 'id' => 'search_color', 'type' => 'color',
+	array('name' => '<small>' . __('Search Input Text','weaver-xtreme' /*adm*/) . '</small>', 'id' => 'search_color', 'type' => 'color',
 		'info' => __('Text color for search input boxes.','weaver-xtreme' /*adm*/)),
 
 	array('name' => '<small>' . __('Search Icon','weaver-xtreme' /*adm*/) . '</small>', 'id' => 'search_icon', 'type' => 'radio',	//code
@@ -576,7 +576,7 @@ function weaverx_mainopts_content() {
 		'info' => __('Display of Page Featured Images','weaver-xtreme' /*adm*/)),
 	array('name' => '<span class="i-left" style=font-size:120%;">&nbsp;&#10538;</span>' . __('Featured Image Location','weaver-xtreme' /*adm*/),
 		'id' => 'page_fi_location', 'type' => 'fi_location',
-		'info' => 'Where to display Featured Image for Pages'),
+		'info' => __('Where to display Featured Image for Pages','weaverx-xtreme' /*adm*/)),
 	array('name' => '<span class="i-left dashicons dashicons-editor-alignleft"></span><small>' . __('Featured Image Alignment<small>','weaver-xtreme' /*adm*/), 'id' => 'page_fi_align', 'type' => 'fi_align',
 		'info' => __('How to align the Featured Image','weaver-xtreme' /*adm*/)),
 
@@ -828,7 +828,7 @@ array('name' => __('Post Layout','weaver-xtreme' /*adm*/), 'id' => '-schedule', 
 
 	array('name' => '<span class="i-left dashicons dashicons-visibility"></span><small>' . __('Hide top post info','weaver-xtreme' /*adm*/) . '</small>',
 		'id' => 'post_info_hide_top', 'type' => 'checkbox',	//code
-		'info' => 'Hide entire top info line (posted on, by) of post.'),
+		'info' => __('Hide entire top info line (posted on, by) of post.','weaverx-xtreme' /*adm*/)),
 
 	array('name' => __('Bottom Post Info','weaver-xtreme' /*adm*/), 'id' => 'post_info_bottom', 'type' => 'titles_text',
 		'info' => __('The bottom post info line','weaver-xtreme' /*adm*/)),
@@ -872,7 +872,7 @@ array('name' => __('Post Layout','weaver-xtreme' /*adm*/), 'id' => '-schedule', 
 		'id' => 'post_hide_categories', 'type' => 'checkbox',
 		'info' => __('Hide the post categories and tags wherever they are normally displayed.','weaver-xtreme' /*adm*/)),
 	array('name' => '<span class="i-left dashicons dashicons-visibility"></span><small>' . __('Hide Post Tags','weaver-xtreme' /*adm*/) . '</small>', 'id' => 'post_hide_tags', 'type' => 'checkbox',
-			'info' => 'Hide the post tags wherever they are normally displayed.'),
+			'info' => __('Hide the post tags wherever they are normally displayed.','weaverx-xtreme' /*adm*/)),
 	array('name' => '<span class="i-left dashicons dashicons-visibility"></span><small>' . __('Hide Permalink','weaver-xtreme' /*adm*/) . '</small>',
 		'id' => 'hide_permalink', 'type' => 'checkbox',
 		'info' => __('Hide the permalink.','weaver-xtreme' /*adm*/)),
@@ -897,7 +897,7 @@ array('name' => __('Post Layout','weaver-xtreme' /*adm*/), 'id' => '-schedule', 
 		'info' => __('Where to display Featured Image for full blog posts.','weaver-xtreme' /*adm*/)),
 	array('name' => '<span class="i-left dashicons dashicons-editor-alignleft"></span><small>' . __('FI Alignment - Full post','weaver-xtreme' /*adm*/) . '</small>',
 		'id' => 'post_full_fi_align', 'type' => 'fi_align',
-		'info' => 'Featured Image alignment'),
+		'info' => __('Featured Image alignment','weaverx-xtreme' /*adm*/)),
 
 
 	array('name' => '<span class="i-left dashicons dashicons-visibility"></span><small>' . __('Hide FI - Full Posts','weaver-xtreme' /*adm*/) . '</small>',

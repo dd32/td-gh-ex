@@ -451,7 +451,8 @@ function weaverx_mce_css($default_style) {
 		$put .= '&fontfamily=' . urlencode($font);
 	}
 
-	/* need to handle bg color of content area - need to do the cascade ourself */
+	/* need to handle bg color of content area - need to do the cascade yourself */
+
 	if ( ($val = weaverx_getopt('editor_bgcolor')) && strcasecmp($val,'transparent') != 0) {	        /* alt bg color */
 		$put .= '&bg=' . urlencode($val);
 	} else if ( ($val = weaverx_getopt('content_bgcolor')) && strcasecmp($val,'transparent') != 0) {	/* #content */
@@ -465,6 +466,7 @@ function weaverx_mce_css($default_style) {
 	} else if (($name = weaverx_getopt('themename')) && strcasecmp($name,'Transparent Light') === 0) {
 		$put .= '&bg=' . urlencode('#ccc');
 	}
+
 
 	if (($val = weaverx_getopt('content_color')) ) {	        // text color
 		$put .= '&textcolor=' . urlencode($val);

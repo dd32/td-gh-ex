@@ -14,13 +14,13 @@ function weaverx_install_tgm_plugins() {
 
 		// This is an example of how to include a plugin pre-packaged with a theme
 		array(
-			'name'     => 'Weaver Xtreme Theme Support', // The plugin name
+			'name'     => __('Weaver Xtreme Theme Support','weaver-xtreme' /*adm*/), // The plugin name
 			'slug'     => 'weaverx-theme-support', // The plugin slug (typically the folder name)
 			'required' => false
 		),
 
 		array(
-			'name'     => 'ATW Show Posts', // The plugin name
+			'name'     => __('ATW Show Posts','weaver-xtreme' /*adm*/), // The plugin name
 			'slug'     => 'show-posts', // The plugin slug (typically the folder name)
 			'required' => false
 		),

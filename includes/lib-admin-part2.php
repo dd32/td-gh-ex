@@ -487,7 +487,7 @@ function weaverx_form_menu_opts( $value, $submit = false ) {
 			'id' => $id . '_sub_hover_color', 'type' => 'color',
 			'info' => '<em>' . $name . '</em>' . __(': Submenu Hover Text Color (Default: Inherit Top Level)','weaver-xtreme' /*adm*/) ),
 
-		// can't get to font properties for the submenus beause no way to add the classes
+		// can't get to font properties for the submenus because no way to add the classes
 
 		array(
 			'name' => '<small>' . __('Full-width BG','weaver-xtreme' /*adm*/) . '</small>', 'id' => $id . '_extend_bgcolor', 'type' => '+color',
@@ -542,7 +542,7 @@ function weaverx_form_menu_opts( $value, $submit = false ) {
 		array( 'name' => '<span class="i-left dashicons dashicons-align-none"></span><small>' . __('Desktop Menu Padding','weaver-xtreme' /*adm*/) . '</small>',
 			'id' => $id .'_menu_pad_dec', 'type' => 'val_em',
 			'info' => '<em>' . $name . '</em>' . __(': Add vertical padding to Desktop menu bar and submenus (Default: 0.6em)','weaver-xtreme' /*adm*/) ),
-		array( 'name' => '<span class="i-left">{ }</span> <small>Add Classes</small>',
+		array( 'name' => '<span class="i-left">{ }</span> <small>' . __('Add Classes','weaverx-xtreme' /*adm*/) . '</small>',
 			'id' => $id . '_add_class', 'type' => '+widetext',
 			'info' => '<em>' . $name . '</em>' . __(': Space separated class names to add to this area (<em>Advanced option</em>) (&starf;Plus)','weaver-xtreme' /*adm*/) ),
 		array('name' => '<span class="i-left dashicons dashicons-editor-code"></span><small>' . __('Left HTML','weaver-xtreme' /*adm*/) . '</small>',

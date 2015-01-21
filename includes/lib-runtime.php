@@ -185,7 +185,7 @@ function weaverx_is_checked_page_opt($meta_name) {
 }
 
 function weaverx_page_posts_error($info='') {
-	echo('<h2 style="color:red;">WARNING: error defining Custom Field on Page with Posts.</h2>');
+	echo('<h2 style="color:red;">' . __('WARNING: error defining Custom Field on Page with Posts.','weaver-xtreme' /*adm*/) . '</h2>');
 	if (strlen($info) > 0) echo('More info: '.$info.'<br />');
 }
 
@@ -392,7 +392,10 @@ function weaverx_filter_textarea( $text ) {
 }
 
 function weaverx_esc_textarea($text) {
-	echo esc_textarea(stripslashes($text));
+	if ( current_user_can('unfiltered_html') )
+		echo esc_textarea($text);
+	else
+		echo esc_textarea(stripslashes($text));
 }
 
 function weaverx_filter_head( $text ) {
@@ -426,20 +429,22 @@ function weaverx_filter_code( $text ) {
 	// that is more restrictive than the standard text widget uses.
 	// Note: this check also works OK for simple checkboxes/radio buttons/selections,
 	// so it is ok to blindly pass those options in here, too.
-	$noslash = trim(stripslashes($text));
-	if ($noslash == ' ') return '';
+	//$noslash = trim(stripslashes($text));
+	$trimmed = trim($text);
+
+	if ($trimmed == ' ') return '';
 
 	if ( current_user_can('unfiltered_html') ) {
-		return wp_check_invalid_utf8( $noslash );
+		return wp_check_invalid_utf8( $trimmed );
 	} else {
-		return wp_filter_post_kses( $noslash ); // wp_filter_post_kses() handles slashes
+		return wp_filter_post_kses( $trimmed ); // wp_filter_post_kses() handles slashes
 	}
 }
 
 function weaverx_echo_css( $css ) {
 	if ( is_multisite() ) {
 		// non-superadmins have some filtering on CSS - this will fix it.
-		$css = stripslashes($css);
+		//$css = stripslashes($css);
 		$css = str_replace( array('&lt;','&gt;'), array('<','>'), $css);
 	}
 	echo $css;

@@ -26,7 +26,7 @@ Weaver Xtreme Plus adds useful new options to the Weaver Xtreme admin tabs
 <strong><em><?php _e('Premium features included with Weaver Xtreme Plus:','weaver-xtreme' /*adm*/); ?></em></strong>
 <ul>
 <li><?php _e('<strong>More Wrapping Areas Options</strong> - Specify background images for specific areas','weaver-xtreme' /*adm*/); ?></li>
-<li><?php _e('<strong>More Widget Options</stong> - Define custom multi-column widgets. Equalize multi-column widget height','weaver-xtreme' /*adm*/); ?></li>
+<li><?php _e('<strong>More Widget Options</strong> - Define custom multi-column widgets. Equalize multi-column widget height','weaver-xtreme' /*adm*/); ?></li>
 <li><?php _e('<strong>More Font Options</strong> - Easily add font families from hundreds of Google Fonts','weaver-xtreme' /*adm*/); ?></li>
 <li><?php _e('<strong>Add Extra Menus</strong> - Add extra menus to your site using the Weaver Xtreme Plus Extra Menu
 Widget, or the [extra_menu] shortcode','weaver-xtreme' /*adm*/);?></li>

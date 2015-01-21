@@ -26,6 +26,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 	get_template_part('templates/infobar');	// put the info bar
 
 	weaverx_sidebar_before( $sb_layout, 'blog' );          // sidebars if top-stacking
+	do_action('weaverx_per_page');
 
 	$paged = weaverx_get_page();
 

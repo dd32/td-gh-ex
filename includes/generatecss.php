@@ -166,7 +166,7 @@ function weaverx_output_style( $sout ) {
 
 	if ( weaverx_getopt('link_site_image') && $align != 'center') {
 		// normally, we use display:block on the image to make it align, etc, but that makes the link
-		// extend over the whole column... So, we will use alternate layout for linked left/right algin, and let center just be wrong.
+		// extend over the whole column... So, we will use alternate layout for linked left/right align, and let center just be wrong.
 		if ( $align == 'float-left')
 			weaverx_f_write( $sout, '#branding #header-image img{display:inline-block;float:left;}');
 		else
@@ -648,13 +648,12 @@ $xbg . ';box-shadow:9999px 0 0 ' . $xbg . ";z-index:-1;}\n"
 			weaverx_f_write( $sout, '.is-desktop ' . $tag . "{max-width:{$w}px;}\n" );
 
 		if ( ( $xbg = weaverx_getopt( $id . '_extend_bgcolor' ) ) ) {
-			weaverx_f_write( $sout,
+				weaverx_f_write( $sout,
 /*'.is-desktop ' . */$tag . '{position:relative;overflow:visible;}' .
 /*'.is-desktop ' . */$tag . ':before{content:"";position:absolute;top:0;bottom:0;left:-9999px;right:0;border-left:9999px solid ' .
 $xbg . ';box-shadow:9999px 0 0 ' . $xbg . ";z-index:-1;}\n"
 			);
 		}
-
 	}
 
 // custom widths for header, footer widget areas
@@ -1005,7 +1004,7 @@ function weaverx_put_bgcolor($sout, $opt, $tag, $important = false ) {
 				$ie8 .= '.ie8 ' . $id;
 			}
 
-			if (strpos($opt,'menubar') !== false || ($opt[0] == 'm' && $opt[1] == '_') ) {	// menus don't work with transparent bg in IE 7/8  @@@@@@@
+			if (strpos($opt,'menubar') !== false || ($opt[0] == 'm' && $opt[1] == '_') ) {  // menus don't work with transparent bg in IE 7/8
 				$bgcss = 'background-color:#' . substr($argb,3) . ';';	// use the non-transparent color provided
 			} else {
 

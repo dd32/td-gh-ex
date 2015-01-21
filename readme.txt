@@ -41,8 +41,8 @@ of their own licenses in the listed files in the Weaver Xtreme theme distributio
 
 == Acknowledgements ==
 
-Way back in 2010, the orignal version of Weaver was developed by Bruce Wampler. Over time,
-the orignal "2010 Weaver" evolved into Weaver, then Weaver II, and now this version,
+Way back in 2010, the original version of Weaver was developed by Bruce Wampler. Over time,
+the original "2010 Weaver" evolved into Weaver, then Weaver II, and now this version,
 Weaver Xtreme. This latest version could not have been developed with out the considerable
 contributions of the Weaver Forum moderators, scrambler, Joy, Gillian, and Joerg. These
 great people did extensive testing, provided feedback, and contributed both ideas and code.
@@ -84,3 +84,14 @@ First Official Release: Version 0.90
 
 = Change 0.97 =
 * Fixed border-box on footer/header html, fixed top/bottom injection
+
+= Change 0.99 =
+* Fixed sprintf issue with custom menu html left/right
+
+= Version 0.100 =
+* Fixed \ value issue for CSS+
+* WeaverTheme.com release corresponding to Version 1.00 WP.org repository release
+* Will be removed once 1.00 WP.org release
+
+= Version 1.00 =
+* First release on WP.org repository

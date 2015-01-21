@@ -1054,6 +1054,12 @@ a {
 	font-style:         normal;
 }
 
+.menu-vertical {
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+
 .wvrx-menu,
 .wvrx-menu * {
 	-webkit-box-sizing: border-box;

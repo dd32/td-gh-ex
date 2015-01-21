@@ -24,7 +24,7 @@ function weaverx_do_admin() {
 	if (!current_user_can('edit_theme_options'))
 		wp_die(__('No permission to access that page.','weaver-xtreme' /*adm*/));
 
-	weaverx_admin_page_process_options();	// cess non-sapi options
+	weaverx_admin_page_process_options();	// Process non-sapi options
 
 	echo('<div class="wrap">');
 ?>
@@ -43,9 +43,8 @@ function weaverx_do_admin() {
 	//weaverx_check_theme();
 	weaverx_clear_messages();
 
-	weaverx_check_version();           // check version RSS @@@@@@
+	weaverx_check_version();           // check version RSS
 
-	// print_r(get_option('weaverx_settings'));
 	weaverx_clear_both();
 ?>
 

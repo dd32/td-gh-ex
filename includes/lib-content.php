@@ -564,7 +564,7 @@ function weaverx_per_post_style() {
 				if ($rule[0] == '+')
 					echo (substr($rule, 1) . "}\n");
 				else
-					echo("{$post_id}{$rule}}\n");	// add the post id to the front of each rule
+					echo("{$post_id} {$rule}}\n");	// add the post id to the front of each rule
 			}
 		}
 		echo("</style>\n");
@@ -610,7 +610,8 @@ function weaverx_page_title( $title = '') {
 
 function weaverx_single_title( $title = '' ) {
 	// The page title for single view page
-
+	if ( weaverx_is_checked_post_opt('_pp_hide_post_title') || weaverx_t_get('hide_title') )
+		return;
 	if ( ! $title )
 		$title = the_title( '', '', false );
 ?>
@@ -654,7 +655,7 @@ function weaverx_fi( $who, $where ) {
 
 
 	if ( !$show ) {
-		if ( $who == 'page' )
+		if ( $who == 'page' || $who == 'post_full')
 			$show = weaverx_get_per_page_value( '_pp_fi_location');
 		else if ( $GLOBALS['weaverx_page_who'] == 'single' )
 			$show = weaverx_get_per_post_value( '_pp_fi_location');

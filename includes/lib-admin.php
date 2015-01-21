@@ -195,7 +195,7 @@ function weaverx_validate_all_options($in) {
 							stripos($val,'<script') !== false || stripos($val, '</script') !== false) {
 							$err_msg .= __('&lt;style&gt; or &lt;script&gt; tags have been automatically stripped from your CSS+ rules,','weaver-xtreme' /*adm*/)
 							. ' ' . __('Please correct your entry.','weaver-xtreme' /*adm*/) . '<br />';
-							$val = wp_filter_post_kses( trim(stripslashes($val)) );
+							$val = wp_filter_post_kses( trim($val) );
 						}
 
 						$in[$key] = $val;
@@ -293,7 +293,7 @@ function weaverx_validate_all_options($in) {
 		}
 	}
 
-	if (false && $wvr_last != 'Weaver Xtreme') { // @@@@@@ move this somewhere else
+	if (false && $wvr_last != 'Weaver Xtreme') {
 		$err_msg .= __('Warning - your host may be configured to limit how many input var options you are allowed to pass via PHP.' .
 		' Unfortunately, this means your settings may not be saved correctly. See the "Weaver II Doesn\'t Save Settings" FAQ on weavertheme.com.<br />','weaver-xtreme' /*adm*/);
 	}
@@ -319,7 +319,7 @@ function weaverx_end_of_section($who = '') {
 	printf(__("%s %s | Options Version: %s | Subtheme: %s\n",'weaver-xtreme' /*adm*/),WEAVERX_THEMENAME, WEAVERX_VERSION, weaverx_getopt('style_version'), $name);
 
 	$last = weaverx_getopt('last_option');
-	if ($last != 'Weaver Xtreme') // check for case of limited PHP $_POST values @@@@@@ popup?
+	if ($last != 'Weaver Xtreme') // check for case of limited PHP $_POST values
 	{
 ?>
 <p style="color:red">
@@ -362,7 +362,7 @@ function weaverx_clear_messages() {
 	if (!function_exists('weaverxplus_plugin_installed')) {
 		echo '<strong style="border:1px solid blue;background:yellow;padding:4px;margin:5px;">';
 		weaverx_site('','http://plus.weavertheme.com/',__('Weaver Xtreme Plus','weaver-xtreme' /*adm*/));
-		echo 'Get Weaver Xtreme Plus!</a> </strong>';
+		echo __('Get Weaver Xtreme Plus!','weaverx-xtreme' /*adm*/) . '</a> </strong>';
 	}
 	do_action('weaverx_check_licenses');
 ?>
