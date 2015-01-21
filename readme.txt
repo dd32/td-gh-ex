@@ -93,6 +93,10 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.0.3
+- Fixed:   Breadcrumbs now display post categories correctly on single posts.
+- Updated: Bootstrap.css updated with non-minified script from original Renden (free) release.
+
 Version 1.0.2
 - New:     Slider text css updated.
 - New:     add_theme_support( 'title-tag' ) added to functions.php.

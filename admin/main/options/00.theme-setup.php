@@ -87,6 +87,8 @@ global $post;
 function thinkup_input_breadcrumb() {
 
 	$output = NULL;
+	$count_loop = NULL;
+	$count_categories = NULL;
 
 	$delimiter 		   = '<span class="delimiter">/</span>';
 
@@ -118,7 +120,23 @@ function thinkup_input_breadcrumb() {
 			if ($num_cat <=1) {
 				$output .=  ' ' . get_the_title();
 			} else {
-				$output .=  the_category( $delimiter_inner, 'multiple' );
+
+				// Count Total categories
+				foreach( get_the_category() as $category) {
+					$count_categories++;
+				}
+				
+				// Output Categories
+				foreach( get_the_category() as $category) {
+					$count_loop++;
+
+					if ( $count_loop < $count_categories ) {
+						$output .= '<a href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a>' . $delimiter_inner; 
+					} else {
+						$output .= '<a href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a>'; 
+					}
+				}
+				
 				if (strlen(get_the_title()) >= $maxLength) {
 					$output .=  ' ' . $delimiter . trim(substr(get_the_title(), 0, $maxLength)) . ' ...';
 				} else {
