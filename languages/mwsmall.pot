@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: mwsmall1.0.4\n"
-"POT-Creation-Date: 2015-01-21 18:24+0100\n"
-"PO-Revision-Date: 2015-01-21 18:27+0100\n"
-"Last-Translator: mk <michalv2@o2.pl>\n"
+"POT-Creation-Date: 2015-01-21 19:49+0100\n"
+"PO-Revision-Date: 2015-01-21 19:49+0100\n"
+"Last-Translator: MW Themes <info@mwthemes.net>\n"
 "Language-Team: MW Themes <info@mwthemes.net>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
@@ -39,17 +39,9 @@ msgstr ""
 msgid "Month: %s"
 msgstr ""
 
-#: ../archive.php:28
-msgid "F Y"
-msgstr ""
-
 #: ../archive.php:31
 #, php-format
 msgid "Year: %s"
-msgstr ""
-
-#: ../archive.php:31
-msgid "Y"
 msgstr ""
 
 #: ../archive.php:34
