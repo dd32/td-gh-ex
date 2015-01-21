@@ -10,7 +10,7 @@
 	<?php
 		if ( '' != get_the_post_thumbnail() ) {
 			echo '<div class="entry-featuredImg">';
-			the_post_thumbnail('normal-post');
+			the_post_thumbnail('zenzero-normal-post');
 			echo '</div>';
 		}
 	?>

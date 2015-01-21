@@ -22,6 +22,10 @@
 		
 			$('#open-search').click(function() {
 				$('#search-full').fadeIn(400);
+				if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+				} else {
+					$("#search-full #search-field").focus();
+				}
 			});
 
 			$('#close-search').click(function() {

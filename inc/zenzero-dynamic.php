@@ -183,7 +183,7 @@ function zenzero_custom_css_styles() {
 	.comment-navigation a:hover,
 	.entry-meta,
 	.entry-footer a:hover,
-	.sticky:after {
+	.sticky .entry-header:before {
 		color: <?php echo esc_attr($special_color_third); ?>;
 	}
 	.tagcloud a {	

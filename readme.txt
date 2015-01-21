@@ -32,7 +32,7 @@ Zenzero Free theme is translation ready.
 Zenzero Free Theme have 1 menu: Primary
 
 == Tags ==
-one-column, left-sidebar, responsive-layout, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready, accessibility-ready, editor-style
+one-column, left-sidebar, responsive-layout, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready, editor-style
 
 == Installation ==
 
@@ -41,6 +41,12 @@ one-column, left-sidebar, responsive-layout, custom-background, custom-menu, cus
 3. Log into your WP admin panel and click on the Design tab. Now click on the Zenzero theme to activate it.
 
 == Changelog ==
+Version 1.2.1
+* Added WordPress 4.1 compatibility
+* Updated sticky post style
+* Fixed font size
+* Minor bug fixes
+
 Version 1.2
 * Minor bug fixes
 

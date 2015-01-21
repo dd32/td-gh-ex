@@ -79,12 +79,12 @@ function zenzero_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		_x( '<i class="fa fa-clock-o spaceLeftRight"></i> %s', 'post date', 'zenzero' ),
+		_x( '<i class="fa fa-clock-o spaceLeftRight"></i>%s', 'post date', 'zenzero' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
-		_x( '<i class="fa fa-user spaceLeftRight"></i> %s', 'post author', 'zenzero' ),
+		_x( '<i class="fa fa-user spaceLeftRight"></i>%s', 'post author', 'zenzero' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
@@ -94,7 +94,7 @@ function zenzero_posted_on() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( __( ' / ', 'zenzero' ) );
 		if ( $categories_list && zenzero_categorized_blog() ) {
-			printf( '<span class="cat-links">' . __( '<i class="fa fa-folder-open-o spaceLeftRight"></i> %1$s', 'zenzero' ) . '</span>', $categories_list );
+			printf( '<span class="cat-links">' . __( '<i class="fa fa-folder-open-o spaceLeftRight"></i>%1$s', 'zenzero' ) . '</span>', $categories_list );
 		}
 	}
 	
@@ -117,7 +117,7 @@ function zenzero_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', '' );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( '<i class="fa fa-tags spaceRight"></i> %1$s', 'zenzero' ) . '</span>', $tags_list );
+			printf( '<span class="tags-links">' . __( '<i class="fa fa-tags spaceRight"></i>%1$s', 'zenzero' ) . '</span>', $tags_list );
 		}
 	}
 
