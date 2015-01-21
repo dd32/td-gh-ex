@@ -8,7 +8,7 @@ get_header();  ?>
   <div class="col-md-12 a1-breadcrumb">
     <div class="container a1-container">
       <div class="col-md-6 col-sm-6 no-padding-lr left-part">     
-		<h3><?php echo get_the_title(); ?></h3>    
+		<h3><?php the_title(); ?></h3>    
       </div>
       <div class="col-md-6 col-sm-6 no-padding-lr right-part">
         <?php if(function_exists('a1_custom_breadcrumbs')) a1_custom_breadcrumbs(); ?>
