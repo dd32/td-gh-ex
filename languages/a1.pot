@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: A1 V1.2.2\n"
-"POT-Creation-Date: 2014-12-23 16:23+0530\n"
-"PO-Revision-Date: 2014-12-23 16:24+0530\n"
-"Last-Translator: FasterThemes <support@fasterthemes.com>\n"
+"Project-Id-Version: A1 V1.3.1\n"
+"POT-Creation-Date: 2015-01-21 14:22+0530\n"
+"PO-Revision-Date: 2015-01-21 14:22+0530\n"
+"Last-Translator: FruitThemes <info@fruitthemes.com>\n"
 "Language-Team: FasterThemes <support@fasterthemes.com>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 1.7.3\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -49,15 +49,15 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: footer.php:39
+#: footer.php:62
 msgid "Powered by"
 msgstr ""
 
-#: footer.php:39
+#: footer.php:64
 msgid "WordPress"
 msgstr ""
 
-#: footer.php:39
+#: footer.php:66
 msgid "and"
 msgstr ""
 
@@ -155,7 +155,7 @@ msgstr ""
 msgid "Reply"
 msgstr ""
 
-#: header.php:85
+#: header.php:73
 msgid "Toggle navigation"
 msgstr ""
 
@@ -539,355 +539,351 @@ msgstr ""
 msgid "Tag"
 msgstr ""
 
-#: theme-options/a1.php:77
+#: theme-options/a1.php:83
 msgid "A1 Theme Options"
 msgstr ""
 
-#: theme-options/a1.php:78 theme-options/a1.php:105
+#: theme-options/a1.php:84 theme-options/a1.php:114
 msgid "Theme Options"
 msgstr ""
 
-#: theme-options/a1.php:107 theme-options/a1.php:587
+#: theme-options/a1.php:116 theme-options/a1.php:666
 msgid "Save Options"
 msgstr ""
 
-#: theme-options/a1.php:116
+#: theme-options/a1.php:125
 msgid "Basic Settings"
 msgstr ""
 
-#: theme-options/a1.php:117
+#: theme-options/a1.php:126
 msgid "Header Settings"
 msgstr ""
 
-#: theme-options/a1.php:117
+#: theme-options/a1.php:126
 msgid "Top Header Settings"
 msgstr ""
 
-#: theme-options/a1.php:118
+#: theme-options/a1.php:127
 msgid "Footer Settings"
 msgstr ""
 
-#: theme-options/a1.php:119
+#: theme-options/a1.php:128
 msgid "Home Page Settings"
 msgstr ""
 
-#: theme-options/a1.php:120
+#: theme-options/a1.php:129
 msgid "Blog Page Settings"
 msgstr ""
 
-#: theme-options/a1.php:130
-msgid "Logo (Recommended Size"
+#: theme-options/a1.php:143
+msgid "Logo (Recommended Size : 100px * 62px)"
 msgstr ""
 
-#: theme-options/a1.php:135 theme-options/a1.php:153 theme-options/a1.php:304
-#: theme-options/a1.php:368 theme-options/a1.php:486
+#: theme-options/a1.php:150 theme-options/a1.php:172 theme-options/a1.php:333
+#: theme-options/a1.php:411 theme-options/a1.php:547
 msgid "No file chosen"
 msgstr ""
 
-#: theme-options/a1.php:136 theme-options/a1.php:154 theme-options/a1.php:305
-#: theme-options/a1.php:369 theme-options/a1.php:487
+#: theme-options/a1.php:151 theme-options/a1.php:173 theme-options/a1.php:334
+#: theme-options/a1.php:412 theme-options/a1.php:548
 msgid "Upload"
 msgstr ""
 
-#: theme-options/a1.php:147
+#: theme-options/a1.php:164
 msgid "Favicon"
 msgstr ""
 
-#: theme-options/a1.php:149
+#: theme-options/a1.php:166
 msgid "Size of favicon should be exactly 32x32px for best results"
 msgstr ""
 
-#: theme-options/a1.php:165
+#: theme-options/a1.php:186
 msgid "Breadcrumbs"
 msgstr ""
 
-#: theme-options/a1.php:168 theme-options/a1.php:179 theme-options/a1.php:257
-#: theme-options/a1.php:292 theme-options/a1.php:336 theme-options/a1.php:398
-#: theme-options/a1.php:455
+#: theme-options/a1.php:189 theme-options/a1.php:200 theme-options/a1.php:280
+#: theme-options/a1.php:319 theme-options/a1.php:373 theme-options/a1.php:447
+#: theme-options/a1.php:510
 msgid "yes"
 msgstr ""
 
-#: theme-options/a1.php:169
+#: theme-options/a1.php:190
 msgid "Check this if you want to hide the breadcrumbs"
 msgstr ""
 
-#: theme-options/a1.php:180
+#: theme-options/a1.php:201
 msgid "Check this if you want to hide the top header"
 msgstr ""
 
-#: theme-options/a1.php:184
-msgid "Location"
-msgstr ""
-
-#: theme-options/a1.php:194 theme-options/a1.php:197
+#: theme-options/a1.php:205 theme-options/a1.php:208
 msgid "Phone"
 msgstr ""
 
-#: theme-options/a1.php:204 theme-options/a1.php:207
+#: theme-options/a1.php:217 theme-options/a1.php:220
 msgid "E-mail"
 msgstr ""
 
-#: theme-options/a1.php:214
+#: theme-options/a1.php:229
 msgid "Facebook Link"
 msgstr ""
 
-#: theme-options/a1.php:217
+#: theme-options/a1.php:232
 msgid "Facebook profile or page URL like"
 msgstr ""
 
-#: theme-options/a1.php:224
+#: theme-options/a1.php:241
 msgid "Twitter Link"
 msgstr ""
 
-#: theme-options/a1.php:227
+#: theme-options/a1.php:244
 msgid "Twitter profile or page URL like"
 msgstr ""
 
-#: theme-options/a1.php:234
+#: theme-options/a1.php:253
 msgid "Pinterest Link"
 msgstr ""
 
-#: theme-options/a1.php:237
+#: theme-options/a1.php:256
 msgid "Pinterest profile or page URL like"
 msgstr ""
 
-#: theme-options/a1.php:244
+#: theme-options/a1.php:265
 msgid "Google+ Link"
 msgstr ""
 
-#: theme-options/a1.php:247
+#: theme-options/a1.php:268
 msgid "Google plus profile or page URL like"
 msgstr ""
 
-#: theme-options/a1.php:254
+#: theme-options/a1.php:277
 msgid "Display top header on scroll"
 msgstr ""
 
-#: theme-options/a1.php:258
+#: theme-options/a1.php:281
 msgid "Check this if you want to display top header on scroll"
 msgstr ""
 
-#: theme-options/a1.php:265
+#: theme-options/a1.php:288
 msgid "Copyright Text"
 msgstr ""
 
-#: theme-options/a1.php:268
+#: theme-options/a1.php:291
 msgid "Copyright text for the footer of your website"
 msgstr ""
 
-#: theme-options/a1.php:275 theme-options/a1.php:424
+#: theme-options/a1.php:300 theme-options/a1.php:477
 msgid "Content"
 msgstr ""
 
-#: theme-options/a1.php:278
+#: theme-options/a1.php:303
 msgid "Enter content for your site , you would like to display in the Footer"
 msgstr ""
 
-#: theme-options/a1.php:288
+#: theme-options/a1.php:315
 msgid "Banner Slider"
 msgstr ""
 
-#: theme-options/a1.php:293
+#: theme-options/a1.php:320
 msgid "Check this to remove slider section on the home page"
 msgstr ""
 
-#: theme-options/a1.php:298
+#: theme-options/a1.php:325
 msgid "Slider"
 msgstr ""
 
-#: theme-options/a1.php:315
+#: theme-options/a1.php:346
 msgid "Slide Caption"
 msgstr ""
 
-#: theme-options/a1.php:320
+#: theme-options/a1.php:353
 msgid "Slide Button Text"
 msgstr ""
 
-#: theme-options/a1.php:325
+#: theme-options/a1.php:360
 msgid "Slide Button Link"
 msgstr ""
 
-#: theme-options/a1.php:332
+#: theme-options/a1.php:369
 msgid "Core Features Section"
 msgstr ""
 
-#: theme-options/a1.php:337
+#: theme-options/a1.php:374
 msgid "Check this to remove core features section on home page"
 msgstr ""
 
-#: theme-options/a1.php:341 theme-options/a1.php:403 theme-options/a1.php:460
+#: theme-options/a1.php:378 theme-options/a1.php:452 theme-options/a1.php:515
 msgid "Title"
 msgstr ""
 
-#: theme-options/a1.php:344
+#: theme-options/a1.php:381
 msgid ""
 "Enter core features title for your site , you would like to display in the "
 "Home Page"
 msgstr ""
 
-#: theme-options/a1.php:351 theme-options/a1.php:413 theme-options/a1.php:470
+#: theme-options/a1.php:390 theme-options/a1.php:464 theme-options/a1.php:527
 msgid "Caption"
 msgstr ""
 
-#: theme-options/a1.php:354
+#: theme-options/a1.php:393
 msgid ""
 "Enter core features caption for your site , you would like to display in the "
 "Home Page"
 msgstr ""
 
-#: theme-options/a1.php:363
+#: theme-options/a1.php:404
 msgid "Tab"
 msgstr ""
 
-#: theme-options/a1.php:379
+#: theme-options/a1.php:424
 msgid ""
 "Enter core features tab title for your home template , you would like to "
 "display in the Home Page"
 msgstr ""
 
-#: theme-options/a1.php:380
+#: theme-options/a1.php:425
 msgid "Enter title here"
 msgstr ""
 
-#: theme-options/a1.php:385
+#: theme-options/a1.php:432
 msgid ""
 "Enter score features tab content for home template , you would like to "
 "display in the Home Page"
 msgstr ""
 
-#: theme-options/a1.php:386
+#: theme-options/a1.php:433
 msgid "Enter Content here"
 msgstr ""
 
-#: theme-options/a1.php:394
+#: theme-options/a1.php:443
 msgid "Product Description"
 msgstr ""
 
-#: theme-options/a1.php:399
+#: theme-options/a1.php:448
 msgid "Check this to remove product description section on home page"
 msgstr ""
 
-#: theme-options/a1.php:406
+#: theme-options/a1.php:455
 msgid ""
 "Enter product title for your site , you would like to display in the Home "
 "Page"
 msgstr ""
 
-#: theme-options/a1.php:416
+#: theme-options/a1.php:467
 msgid ""
 "Enter product caption for your site , you would like to display in the Home "
 "Page"
 msgstr ""
 
-#: theme-options/a1.php:427
+#: theme-options/a1.php:480
 msgid ""
 "Enter product content for your site , you would like to display in the Home "
 "Page"
 msgstr ""
 
-#: theme-options/a1.php:441
+#: theme-options/a1.php:494
 msgid "Form E-mail"
 msgstr ""
 
-#: theme-options/a1.php:444
+#: theme-options/a1.php:497
 msgid "Enter e-mail id"
 msgstr ""
 
-#: theme-options/a1.php:451
+#: theme-options/a1.php:506
 msgid "Get in Touch"
 msgstr ""
 
-#: theme-options/a1.php:456
+#: theme-options/a1.php:511
 msgid "Check this to remove get in touch section on home page"
 msgstr ""
 
-#: theme-options/a1.php:463
+#: theme-options/a1.php:518
 msgid ""
 "Enter get in touch title for your site , you would like to display in the "
 "Home Page"
 msgstr ""
 
-#: theme-options/a1.php:473
+#: theme-options/a1.php:530
 msgid ""
 "Enter get in touch caption for your site , you would like to display in the "
 "Home Page"
 msgstr ""
 
-#: theme-options/a1.php:481
+#: theme-options/a1.php:540
 msgid "Get in Touch Logo"
 msgstr ""
 
-#: theme-options/a1.php:498
+#: theme-options/a1.php:561
 msgid "Button Text"
 msgstr ""
 
-#: theme-options/a1.php:501
+#: theme-options/a1.php:564
 msgid ""
 "Enter button text for your site , you would like to display in the button"
 msgstr ""
 
-#: theme-options/a1.php:508
+#: theme-options/a1.php:573
 msgid "Contact Link"
 msgstr ""
 
-#: theme-options/a1.php:511
+#: theme-options/a1.php:576
 msgid "Contact link for your button"
 msgstr ""
 
-#: theme-options/a1.php:520
+#: theme-options/a1.php:587
 msgid "Blog Title"
 msgstr ""
 
-#: theme-options/a1.php:529
+#: theme-options/a1.php:598
 msgid "Entry meta by word"
 msgstr ""
 
-#: theme-options/a1.php:532
+#: theme-options/a1.php:601
 msgid ""
 "Enter entry meta by word for your site , you would like to replace with "
 "current word"
 msgstr ""
 
-#: theme-options/a1.php:539
+#: theme-options/a1.php:610
 msgid "Entry meta in word"
 msgstr ""
 
-#: theme-options/a1.php:542
+#: theme-options/a1.php:613
 msgid ""
 "Enter entry meta in word for your site , you would like to replace with "
 "current word"
 msgstr ""
 
-#: theme-options/a1.php:549
+#: theme-options/a1.php:622
 msgid "Entry meta on word"
 msgstr ""
 
-#: theme-options/a1.php:552
+#: theme-options/a1.php:625
 msgid ""
 "Enter entry meta on word for your site , you would like to replace with "
 "current word"
 msgstr ""
 
-#: theme-options/a1.php:559
+#: theme-options/a1.php:634
 msgid "Entry meta comments word"
 msgstr ""
 
-#: theme-options/a1.php:562
+#: theme-options/a1.php:637
 msgid ""
 "Enter entry meta comments word for your site , you would like to replace "
 "with current word"
 msgstr ""
 
-#: theme-options/a1.php:569
+#: theme-options/a1.php:646
 msgid "Entry meta tags word"
 msgstr ""
 
-#: theme-options/a1.php:572
+#: theme-options/a1.php:649
 msgid ""
 "Enter entry meta tags word for your site , you would like to replace with "
 "current word"
 msgstr ""
 
-#: theme-options/a1.php:593
+#: theme-options/a1.php:672
 msgid "Options saved successfully"
 msgstr ""

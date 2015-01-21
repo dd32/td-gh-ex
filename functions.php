@@ -205,9 +205,9 @@ if (!function_exists('a1_entry_meta')) :
        );
 
 	
-       $a1_tag_list = sprintf('%1$s</li>', get_the_tag_list( '<li>'.$a1_tags_text.': ', ' , ', __( '', 'a1' )));
+       $a1_tag_list = sprintf('%1$s</li>', get_the_tag_list( '<li>'.$a1_tags_text.': ', ' , '));
     
-	$a1_category_list = sprintf('<li>'.$a1_in_text.': %1$s</li>', get_the_category_list(' , ',__('', 'a1')));
+	$a1_category_list = sprintf('<li>'.$a1_in_text.': %1$s</li>', get_the_category_list(' , '));
        
        printf('%1$s %2$s %3$s %4$s %5$s', $a1_author, $a1_category_list, $a1_date, $a1_comment, $a1_tag_list);
    }
