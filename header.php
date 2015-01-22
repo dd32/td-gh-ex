@@ -12,8 +12,16 @@ global $abaris;
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<?php
+if ( ! function_exists( '_wp_render_title_tag' ) ) :
+    function abaris_render_title() {
+?>
 <title><?php wp_title( '|', true, 'right' ); ?></title>
-
+<?php
+    }
+    add_action( 'wp_head', 'abaris_render_title' );
+endif;
+?>
 <?php if( isset( $abaris['ipad-icon-retina'] ) ) : ?>
 	<!-- For third-generation iPad with high-resolution Retina display: -->
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo esc_url( $abaris['ipad-icon-retina']['url'] ); ?>">

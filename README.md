@@ -64,3 +64,6 @@ Version 1.1.2
 
 Version 1.1.3
 1. Error uploading 1.1.2
+
+Version 1.1.4
+1. Added theme support for title tag

@@ -52,6 +52,8 @@ function abaris_setup() {
 	$markup = array( 'search-form', 'comment-form', 'comment-list', );
 	add_theme_support( 'html5', $markup );
 
+	// Add theme support for title tag
+	add_theme_support( 'title-tag' );
 
 }
 endif; // abaris_setup
