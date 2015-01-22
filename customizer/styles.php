@@ -5,7 +5,7 @@
  * @package Customizer Library Demo
  */
 
-if ( ! function_exists( 'customizer_library_kaira_build_styles' ) && class_exists( 'Customizer_Library_Styles' ) ) :
+if ( ! function_exists( 'customizer_library_topshop_build_styles' ) && class_exists( 'Customizer_Library_Styles' ) ) :
 /**
  * Process user options to generate CSS needed to implement the choices.
  *
@@ -13,7 +13,7 @@ if ( ! function_exists( 'customizer_library_kaira_build_styles' ) && class_exist
  *
  * @return void
  */
-function customizer_library_kaira_build_styles() {
+function customizer_library_topshop_build_styles() {
 
     // Main Color
     $color = 'kra-main-color';
@@ -284,9 +284,9 @@ function customizer_library_kaira_build_styles() {
 }
 endif;
 
-add_action( 'customizer_library_styles', 'customizer_library_kaira_build_styles' );
+add_action( 'customizer_library_styles', 'customizer_library_topshop_build_styles' );
 
-if ( ! function_exists( 'customizer_library_kaira_styles' ) ) :
+if ( ! function_exists( 'customizer_library_topshop_styles' ) ) :
 /**
  * Generates the style tag and CSS needed for the theme options.
  *
@@ -297,7 +297,7 @@ if ( ! function_exists( 'customizer_library_kaira_styles' ) ) :
  *
  * @return void
  */
-function customizer_library_kaira_styles() {
+function customizer_library_topshop_styles() {
 
 	do_action( 'customizer_library_styles' );
 
@@ -312,4 +312,4 @@ function customizer_library_kaira_styles() {
 }
 endif;
 
-add_action( 'wp_head', 'customizer_library_kaira_styles', 11 );
+add_action( 'wp_head', 'customizer_library_topshop_styles', 11 );

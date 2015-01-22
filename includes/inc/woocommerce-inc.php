@@ -1,8 +1,8 @@
 <?php
 // Ensure cart contents update when products are added to the cart via AJAX
-add_filter('add_to_cart_fragments', 'woocommerce_topshop_header_add_to_cart_fragment');
+add_filter('add_to_cart_fragments', 'topshop_wc_header_add_to_cart_fragment');
  
-function woocommerce_topshop_header_add_to_cart_fragment( $fragments ) {
+function topshop_wc_header_add_to_cart_fragment( $fragments ) {
     global $woocommerce;
     
     ob_start(); ?>

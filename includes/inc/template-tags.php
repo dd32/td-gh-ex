@@ -123,9 +123,9 @@ function topshop_entry_footer() {
 }
 endif;
 
-if ( ! function_exists( 'the_archive_title' ) ) :
+if ( ! function_exists( 'topshop_the_archive_title' ) ) :
 /**
- * Shim for `the_archive_title()`.
+ * Shim for `topshop_the_archive_title()`.
  *
  * Display the archive title based on the queried object.
  *
@@ -134,7 +134,7 @@ if ( ! function_exists( 'the_archive_title' ) ) :
  * @param string $before Optional. Content to prepend to the title. Default empty.
  * @param string $after  Optional. Content to append to the title. Default empty.
  */
-function the_archive_title( $before = '', $after = '' ) {
+function topshop_the_archive_title( $before = '', $after = '' ) {
 	if ( is_category() ) {
 		$title = sprintf( __( 'Category: %s', 'topshop' ), single_cat_title( '', false ) );
 	} elseif ( is_tag() ) {
@@ -180,7 +180,7 @@ function the_archive_title( $before = '', $after = '' ) {
 	 *
 	 * @param string $title Archive title to be displayed.
 	 */
-	$title = apply_filters( 'get_the_archive_title', $title );
+	$title = apply_filters( 'get_topshop_the_archive_title', $title );
 
 	if ( ! empty( $title ) ) {
 		echo $before . $title . $after;
@@ -188,9 +188,9 @@ function the_archive_title( $before = '', $after = '' ) {
 }
 endif;
 
-if ( ! function_exists( 'the_archive_description' ) ) :
+if ( ! function_exists( 'topshop_the_archive_description' ) ) :
 /**
- * Shim for `the_archive_description()`.
+ * Shim for `topshop_the_archive_description()`.
  *
  * Display category, tag, or term description.
  *
@@ -199,8 +199,8 @@ if ( ! function_exists( 'the_archive_description' ) ) :
  * @param string $before Optional. Content to prepend to the description. Default empty.
  * @param string $after  Optional. Content to append to the description. Default empty.
  */
-function the_archive_description( $before = '', $after = '' ) {
-	$description = apply_filters( 'get_the_archive_description', term_description() );
+function topshop_the_archive_description( $before = '', $after = '' ) {
+	$description = apply_filters( 'get_topshop_the_archive_description', term_description() );
 
 	if ( ! empty( $description ) ) {
 		/**

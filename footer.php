@@ -11,26 +11,14 @@
 
 <footer id="colophon" class="site-footer" role="contentinfo">
 	
-	<?php
-	$sidebars_widgets = wp_get_sidebars_widgets();
-	if ( is_active_sidebar( 'topshop-site-footer' ) ) : ?>
-        
-        <?php if( !empty( $sidebars_widgets['topshop-site-footer'] ) ) : ?>
-        	<div class="site-footer-widgets">
-                <div class="site-container">
-                    
-            		<ul>
-        <?php endif; ?>
-            			<?php dynamic_sidebar('topshop-site-footer') ?>
-        <?php if( !empty( $sidebars_widgets['topshop-site-footer'] ) ) : ?>
-            		</ul>
-            		<div class="clearboth"></div>
-                    
-                </div>
-        	</div>
-        <?php endif; ?>
-        
-	<?php endif; ?>
+    <div class="site-footer-widgets">
+        <div class="site-container">
+            <ul>
+                <?php dynamic_sidebar( 'topshop-site-footer' ); ?>
+            </ul>
+            <div class="clearboth"></div>
+        </div>
+    </div>
 	
 	<div class="site-footer-bottom-bar">
 	

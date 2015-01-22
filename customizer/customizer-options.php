@@ -5,7 +5,7 @@
  * @package Customizer Library Demo
  */
 
-function customizer_library_kaira_options() {
+function customizer_library_topshop_options() {
 
 	// Theme defaults
 	$primary_color = '#29a6e5';
@@ -305,4 +305,4 @@ function customizer_library_kaira_options() {
 	// To delete custom mods use: customizer_library_remove_theme_mods();
 
 }
-add_action( 'init', 'customizer_library_kaira_options' );
+add_action( 'init', 'customizer_library_topshop_options' );

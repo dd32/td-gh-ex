@@ -8,7 +8,7 @@
 /**
  * Enqueue Google Fonts Example
  */
-function kaira_theme_fonts() {
+function customizer_topshop_theme_fonts() {
 
 	// Font options
 	$fonts = array(
@@ -19,7 +19,7 @@ function kaira_theme_fonts() {
 	$font_uri = customizer_library_get_google_font_uri( $fonts );
 
 	// Load Google Fonts
-	wp_enqueue_style( 'kaira_theme_fonts', $font_uri, array(), null, 'screen' );
+	wp_enqueue_style( 'customizer_topshop_theme_fonts', $font_uri, array(), null, 'screen' );
 
 }
-add_action( 'wp_enqueue_scripts', 'kaira_theme_fonts' );
+add_action( 'wp_enqueue_scripts', 'customizer_topshop_theme_fonts' );

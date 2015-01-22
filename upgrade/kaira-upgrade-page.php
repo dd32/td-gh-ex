@@ -1,10 +1,10 @@
 <div class="wrap kaira-upgrade-page-wrap">
     <?php
-    $kaira_link = 'http://www.kairaweb.com';
-    $premium_link = 'http://sllwi.re/p/K3'; ?>
+    $topshop_kaira_link = 'http://www.kairaweb.com';
+    $topshop_premium_link = 'http://app.sellwire.net/p/K3'; ?>
     
     <h2 id="theme-settings-title">
-        <a href="<?php echo $kaira_link; ?>" target="_blank"></a>
+        <a href="<?php echo $topshop_kaira_link; ?>" target="_blank"></a>
     </h2>
     
     <div class="kaira-page-description">
@@ -17,11 +17,11 @@
                 <?php _e( 'Site Layout', 'topshop' ); ?>
             </th>
             <td>
-                <a href="<?php echo $premium_link; ?>" target="_blank">
+                <a href="<?php echo $topshop_premium_link; ?>" target="_blank">
                     <img src="<?php echo get_template_directory_uri() . '/upgrade/images/site-layout-full-width.jpg'; ?>" alt="" class="kaira-page-img" /><br />
                     <img src="<?php echo get_template_directory_uri() . '/upgrade/images/site-layout-boxed.jpg'; ?>" alt="" class="kaira-page-img" />
                 </a>
-                <p class="description"><?php _e( '<a href="http://sllwi.re/p/K3" target="_blank">Upgrade to premium</a> to enable the option to select between the website being full width or boxed layout.', 'topshop' ); ?></p>
+                <p class="description"><?php _e( '<a href="http://app.sellwire.net/p/K3" target="_blank">Upgrade to premium</a> to enable the option to select between the website being full width or boxed layout.', 'topshop' ); ?></p>
             </td>
         </tr>
         <tr>
@@ -29,7 +29,7 @@
                 <?php _e( 'Header Layout', 'topshop' ); ?>
             </th>
             <td>
-                <a href="<?php echo $premium_link; ?>" target="_blank">
+                <a href="<?php echo $topshop_premium_link; ?>" target="_blank">
                     <img src="<?php echo get_template_directory_uri() . '/upgrade/images/site-header-standard.jpg'; ?>" alt="" class="kaira-page-img" /><br />
                     <img src="<?php echo get_template_directory_uri() . '/upgrade/images/site-header-centered.jpg'; ?>" alt="" class="kaira-page-img" />
                 </a>
@@ -41,7 +41,7 @@
                 <?php _e( 'Blog Posts Layout', 'topshop' ); ?>
             </th>
             <td>
-                <a href="<?php echo $premium_link; ?>" target="_blank">
+                <a href="<?php echo $topshop_premium_link; ?>" target="_blank">
                     <img src="<?php echo get_template_directory_uri() . '/upgrade/images/blog-layout-side.jpg'; ?>" alt="" class="kaira-page-img" /><br />
                     <img src="<?php echo get_template_directory_uri() . '/upgrade/images/blog-layout-top.jpg'; ?>" alt="" class="kaira-page-img" />
                 </a>
@@ -53,7 +53,7 @@
                 <?php _e( 'Social Links', 'topshop' ); ?>
             </th>
             <td>
-                <a href="<?php echo $premium_link; ?>" target="_blank">
+                <a href="<?php echo $topshop_premium_link; ?>" target="_blank">
                     <img src="<?php echo get_template_directory_uri() . '/upgrade/images/social-icons.jpg'; ?>" alt="" class="kaira-page-img" />
                 </a>
                 <p class="description"><?php _e( 'Enable social links on the theme to link to all your social profiles.', 'topshop' ); ?></p>
@@ -64,7 +64,7 @@
                 <?php _e( 'Website copy text', 'topshop' ); ?>
             </th>
             <td>
-                <a href="<?php echo $premium_link; ?>" target="_blank">
+                <a href="<?php echo $topshop_premium_link; ?>" target="_blank">
                     <img src="<?php echo get_template_directory_uri() . '/upgrade/images/site-copy-text.jpg'; ?>" alt="" class="kaira-page-img" />
                 </a>
                 <p class="description"><?php _e( 'Change the website copy to link out to your own website.', 'topshop' ); ?></p>

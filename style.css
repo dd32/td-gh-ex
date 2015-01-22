@@ -1,10 +1,10 @@
 /*
 Theme Name: TopShop
-Theme URI: 
+Theme URI: http://kairaweb.com/theme/topshop/
 Author: Kaira
 Author URI: http://www.kairaweb.com/
 Description: TopShop is the perfect theme to easily build an eCommerce store for yourself or for your clients. Integrating with the best plugins such as WooCommerce, SiteOrigin's Page Builder, Meta Slider and more, TopShop is easily scalable and very customizable, fitting to your online needs. Not only for eCommerce, TopShop is also great for building the basic business website and blog. With a clean simple design, developers too will love how customizable TopShop is. Go on... give it a try!
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: topshop
@@ -495,23 +495,22 @@ a:active {
 	padding-left: 0;
 }
 .main-navigation ul.nav-menu {
-    display: table;
-    width: 100%;
+    
 }
 
 .main-navigation li {
 	position: relative;
 }
 .main-navigation ul.nav-menu > li {
-    display: table-cell;
-    width: 10%;
+    display: block;
+    float: left;
 }
 
 .main-navigation a {
 	display: block;
 	text-decoration: none;
 	color: #626262;
-	padding: 19px 10px 20px;
+	padding: 19px 22px 20px;
 	font-size: 13px;
 	text-transform: uppercase;
 	white-space: nowrap;
@@ -1080,18 +1079,23 @@ a:active {
 
 .site-footer-widgets {
     border-top: 1px solid rgba(0, 0, 0, 0.08);
-	
     padding: 20px 0 15px;
 }
-.site-footer-widgets ul {
+.site-footer-widgets .site-container ul li {
+    display: block;
+}
+.site-footer-widgets .site-container > ul {
 	margin: 0;
 	padding: 0;
 }
-.site-footer-widgets ul li {
+.site-footer-widgets .site-container > ul > li {
 	margin: 0;
 	padding: 10px 18px 20px;
 	list-style-type: none;
+	display: block;
 	float: left;
+	width: 25%;
+	box-sizing: border-box;
 }
 .site-footer-widgets ul li:first-child {
 	padding: 10px 18px 20px 0;
@@ -1691,13 +1695,14 @@ object {
         margin: 10px 0 0;
     }
     
-    .site-footer-widgets ul {
-        
+    .site-footer-widgets .site-container > ul {
+        display: block;
     }
     .site-footer-widgets ul li.widget {
         width: 100% !important;
         float: none !important;
         padding: 0 0 40px !important;
+        display: block;
     }
     .site-footer-widgets ul li.widget:last-child {
         padding: 0 0 10px !important;

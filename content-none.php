@@ -31,6 +31,6 @@
 	</div><!-- .page-content -->
     <div class="clearboth"></div>
     
-    <div class="button no-results-btn search-btn">Search Again</div>
+    <div class="button no-results-btn search-btn"><?php _e( 'Search Again', 'topshop' ); ?></div>
     
 </section><!-- .no-results -->

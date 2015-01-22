@@ -12,7 +12,7 @@
             </div>
             <div class="site-top-bar-right">
                 
-                <?php if ( is_woocommerce_activated() ) : ?>
+                <?php if ( topshop_is_woocommerce_activated() ) : ?>
                     <div class="site-top-bar-left-text"><?php echo wp_kses_post( get_theme_mod( 'kra-header-info-text', 'Call Us: 082 444 BOOM' ) ) ?></div>
                 <?php endif; ?>
                 
@@ -45,7 +45,7 @@
     <div class="site-header-right">
         
         <?php
-        if ( is_woocommerce_activated() ) { ?>
+        if ( topshop_is_woocommerce_activated() ) { ?>
         
             <?php if ( is_user_logged_in() ) { ?>
                 <div class="site-header-right-link"><a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('My Account','topshop'); ?>"><?php _e('My Account','topshop'); ?></a></div>
@@ -80,7 +80,7 @@
     
     <div class="site-container">
         
-        <button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Primary Menu', 'topshop' ); ?></button>
+        <button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Menu', 'topshop' ); ?></button>
         <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
         
     </div>

@@ -22,7 +22,7 @@ if ( has_post_thumbnail() ) {
                 <?php
                 foreach ( $images as $image ) {
                     $title = $image->post_title;
-                    $thumbimage = wp_get_attachment_image_src( $image->ID, 'blog_img_side' ); ?>
+                    $thumbimage = wp_get_attachment_image_src( $image->ID, 'topshop_blog_img_side' ); ?>
                     <div><img src="<?php echo $thumbimage[0]; ?>" alt="<?php echo esc_html( $title ) ?>" /></div>
                 <?php
                 } ?>

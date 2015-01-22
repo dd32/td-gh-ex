@@ -4,7 +4,7 @@
         
         <?php if ( is_home() ) : ?>
             
-            <?php echo '<h1 class="entry-title">' . get_theme_mod( 'kra-blog-title', false ) . '</h1>'; ?>
+            <?php echo ( get_theme_mod( 'kra-blog-title' ) ) ? '<h1 class="entry-title">' . esc_html( get_theme_mod( 'kra-blog-title', false ) ) . '</h1>' : '<h1 class="entry-title">' . __( 'Blog', 'topshop' ) . '</h1>'; ?>
             
         <?php else: ?>
             
