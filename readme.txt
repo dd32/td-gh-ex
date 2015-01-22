@@ -49,6 +49,14 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 2.3.5 =
+* Add home page template.
+* Remove gallery metabox (moved to virtue plugin).
+* Remove contact page template (moved to virtue plugin).
+* Add esc to all varibles.
+* Fix tagline showing when empty.
+* Update various css styles.
+
 = Version: 2.3.3 =
 * Fix issue with live preview.
 * Small CSS changes.

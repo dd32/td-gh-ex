@@ -1,10 +1,7 @@
 <?php 
 /* Thumbnail Flex Slider */
-
 global $virtue; 
-
 ?>
-
 <div class="sliderclass kad-desktop-slider">
     <div id="imageslider" class="container">
         <?php // Get slider settings
@@ -50,7 +47,7 @@ global $virtue;
             }
              ?>
               
-              <div id="flex" class="flexslider loading" style="max-width:<?php echo $slidewidth;?>px; margin-left: auto; margin-right:auto;">
+              <div id="flex" class="flexslider loading" style="max-width:<?php echo esc_attr($slidewidth);?>px; margin-left: auto; margin-right:auto;">
                   <ul class="slides">
                     <?php foreach ($slides as $slide) :
                         if(!empty($slide['target']) && $slide['target'] == 1) {
@@ -61,8 +58,8 @@ global $virtue;
                         $image = aq_resize($slide['url'], $slidewidth, $slideheight, true);
                         if(empty($image)) {$image = $slide['url'];} ?>
                               <li> 
-                                  <?php if($slide['link'] != '') echo '<a href="'.$slide['link'].'" target="'.$target.'">'; ?>
-                                      <img src="<?php echo $image; ?>" alt="<?php echo esc_attr($slide['title']); ?>" />
+                                  <?php if($slide['link'] != '') echo '<a href="'.esc_url($slide['link']).'" target="'.esc_attr($target).'">'; ?>
+                                      <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($slide['title']); ?>" />
                                             <?php if ($captions == '1') { ?> 
                                                 <div class="flex-caption">
                                                   <?php if ($slide['title'] != '') echo '<div class="captiontitle headerfont">'.$slide['title'].'</div>'; ?>
@@ -75,7 +72,7 @@ global $virtue;
                   </ul>
               </div> <!--Flex Slides-->
 
-              <div id="thumbnails" class="flexslider" style="max-width:<?php echo $slidewidth;?>px; margin-left: auto; margin-right:auto;">
+              <div id="thumbnails" class="flexslider" style="max-width:<?php echo esc_attr($slidewidth);?>px; margin-left: auto; margin-right:auto;">
                    <ul class="slides">
                        <?php foreach ($slides as $slide) :
                                 $imgurl = $slide['url'];
@@ -103,9 +100,9 @@ global $virtue;
               animation: "<?php echo $transtype ?>",
               controlNav: false,
               animationLoop: false,
-              animationSpeed: <?php echo $transtime ?>,
-              slideshow: <?php echo $autoplay ?>,
-              slideshowSpeed: <?php echo $pausetime ?>,
+              animationSpeed: <?php echo esc_js($transtime); ?>,
+              slideshow: <?php echo esc_js($autoplay); ?>,
+              slideshowSpeed: <?php echo esc_js($pausetime); ?>,
               sync: "#thumbnails",
               before: function(slider) {
                       slider.removeClass('loading');

@@ -1,6 +1,6 @@
 <div class="sliderclass kad-desktop-slider">
   <div id="imageslider" class="container">
-    <div class="flexslider loading" >
+    <div class="flexslider kt-flexslider loading" data-flex-speed="7000" data-flex-anim-speed="400" data-flex-animation="fade" data-flex-auto="true">
         <ul class="slides">
                       <li> 
                         <a href="#" target="_blank" >
@@ -16,18 +16,3 @@
       </div> <!--Flex Slides-->
   </div><!--Container-->
 </div><!--sliderclass-->
-
-      <script type="text/javascript">
-            jQuery(window).load(function () {
-                jQuery('.flexslider').flexslider({
-                    animation: "fade",
-                    animationSpeed: 300,
-                    slideshow: true,
-                    slideshowSpeed: 7000,
-
-                    before: function(slider) {
-                      slider.removeClass('loading');
-                    }  
-                  });
-                });
-      </script>

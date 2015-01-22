@@ -86,26 +86,13 @@ if ( ! function_exists( 'kadence_wooframework_related_products' ) ) {
     }
   }
 }
-//add_action( 'woocommerce_archive_description', 'kadence_woocommerce_category_image', 2 );
-function kadence_woocommerce_category_image() {
-    if ( is_product_category() ){
-      global $wp_query;
-      $cat = $wp_query->get_queried_object();
-      $thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
-      $image = wp_get_attachment_url( $thumbnail_id );
-      global $virtue; if( isset( $virtue[ 'shop_layout' ] ) && $virtue[ 'shop_layout' ] == "sidebar" ) {$cat_width = 770;} else {$cat_width = 1140;}
-      $sizeimage = aq_resize($image, $cat_width, 300, true);
-      if ( $image ) {
-        echo '<div class="cat_main_img"><img src="' . $sizeimage . '" alt="" /></div>';
-    }
-  }
-}
+
 add_filter('add_to_cart_fragments', 'kadence_woocommerce_header_add_to_cart_fragment');
 function kadence_woocommerce_header_add_to_cart_fragment( $fragments ) {
     global $woocommerce;
     ob_start(); ?>
 
-    <a class="cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php esc_attr_e('View your shopping cart', 'virtue'); ?>">
+    <a class="cart-contents" href="<?php echo esc_url($woocommerce->cart->get_cart_url()); ?>" title="<?php esc_attr_e('View your shopping cart', 'virtue'); ?>">
         <i class="icon-shopping-cart" style="padding-right:5px;"></i>  <?php _e('Your Cart', 'virtue');?> <span class="kad-cart-dash">-</span> <?php echo $woocommerce->cart->get_cart_total(); ?>
     </a>
     <?php

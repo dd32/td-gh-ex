@@ -40,3 +40,53 @@ class Kadence_Sidebar {
     return is_page_template($page_template);
   }
 }
+function kadence_sidebar_id() {
+    if(is_front_page()) {
+      global $virtue;
+        if (!empty($virtue['home_sidebar'])) {
+          $sidebar = $virtue['home_sidebar'];
+          }
+        else  {
+          $sidebar = 'sidebar-primary';
+        } 
+    } else if( class_exists('woocommerce') and (is_shop() || is_product_category() || is_product_tag())) {
+        global $virtue;
+        if (!empty($virtue['shop_sidebar'])) {
+          $sidebar = $virtue['shop_sidebar'];
+        } else {
+          $sidebar = 'sidebar-primary';
+        } 
+    } elseif( class_exists('woocommerce') and (is_account_page())) {
+            get_template_part('templates/account', 'sidebar');
+    } elseif(is_page_template('page-blog.php') || is_page_template('page-sidebar.php') || is_page_template('page-feature-sidebar.php') || (get_post_type() == 'post')) {
+      global $post;
+      $sidebar_name = get_post_meta( $post->ID, '_kad_sidebar_choice', true ); 
+        if (!empty($sidebar_name)) {
+            $sidebar = $sidebar_name;
+        } else  {
+            $sidebar = 'sidebar-primary';
+        } 
+    } else if (is_archive()) {
+      $sidebar = 'sidebar-primary';
+    } else if(is_category()) {
+      $sidebar = 'sidebar-primary';
+    } elseif (is_tag()) {
+      $sidebar = 'sidebar-primary';
+    } elseif (is_post_type_archive()) {
+      $sidebar = 'sidebar-primary';
+    } elseif (is_day()) {
+       $sidebar = 'sidebar-primary';
+    } elseif (is_month()) {
+       $sidebar = 'sidebar-primary';
+    } elseif (is_year()) {
+       $sidebar = 'sidebar-primary';
+    } elseif (is_author()) {
+       $sidebar = 'sidebar-primary';
+    } elseif (is_search()) {
+      $sidebar = 'sidebar-primary';
+    } else {
+      $sidebar = 'sidebar-primary';
+    }
+
+    return apply_filters('kadence_sidebar_id', $sidebar);
+}

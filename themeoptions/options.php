@@ -295,7 +295,7 @@ $this->sections[] = array(
             'id'=>'topbar_widget',
             'type' => 'switch', 
             'title' => __('Enable widget area in right of Topbar?', 'virtue'),
-            'subtitle'=> __('Note this will hide remove search (you can re-enable it my adding it to the widget area)', 'virtue'),
+            'subtitle'=> __('Note this will hide remove search (you can re-enable it by adding it to the widget area)', 'virtue'),
             "default"       => 0,
             ),
         array(

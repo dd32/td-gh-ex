@@ -9,7 +9,7 @@ if ( 0 == $current_user->ID ) {
     </div>
     <div class="kad-customer-name">
       <h5>
-          <?php echo $current_user->display_name; ?>
+          <?php echo esc_html($current_user->display_name); ?>
         </h5>
       </div> 
    <div class="account_page_menu"> 

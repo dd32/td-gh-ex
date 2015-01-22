@@ -1,5 +1,4 @@
-
-	<div id="pageheader" class="titleclass">
+<div id="pageheader" class="titleclass">
 		<div class="container">
 			<div class="page-header">
 				<div class="portfolionav clearfix">
@@ -16,17 +15,22 @@
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 		</div>
 		</div><!--container-->
-	</div><!--titleclass-->
+</div><!--titleclass-->
 <div id="content" class="container">
     <div class="row">
-      <div class="main <?php echo kadence_main_class(); ?> portfolio-single" role="main">
+      <div class="main <?php echo esc_attr( kadence_main_class() ); ?> portfolio-single" role="main">
       <?php while (have_posts()) : the_post(); ?>
-      <?php global $post; $layout = get_post_meta( $post->ID, '_kad_ppost_layout', true ); 
-						$ppost_type = get_post_meta( $post->ID, '_kad_ppost_type', true );
-						 $imgheight = get_post_meta( $post->ID, '_kad_posthead_height', true );
-						 $imgwidth = get_post_meta( $post->ID, '_kad_posthead_width', true );
-						 $autoplay = get_post_meta( $post->ID, '_kad_portfolio_autoplay', true );
-						 if(isset($autoplay) && $autoplay == 'no') {$slideauto = 'false';} else {$slideauto = 'true';}
+      <?php global $post; 
+      	$layout 	= get_post_meta( $post->ID, '_kad_ppost_layout', true ); 
+		$ppost_type = get_post_meta( $post->ID, '_kad_ppost_type', true );
+		$imgheight 	= get_post_meta( $post->ID, '_kad_posthead_height', true );
+		$imgwidth 	= get_post_meta( $post->ID, '_kad_posthead_width', true );
+		$autoplay 	= get_post_meta( $post->ID, '_kad_portfolio_autoplay', true );
+		if(isset($autoplay) && $autoplay == 'no') {
+			$slideauto = 'false';
+		} else {
+			$slideauto = 'true';
+		}
 		if($layout == 'above')  {
 				$imgclass = 'col-md-12';
 				$textclass = 'pcfull clearfix';
@@ -47,17 +51,25 @@
 				$slidewidth_d = 653;
 			 	}
 			 	$portfolio_margin = '';
-		if (!empty($imgheight)) { $slideheight = $imgheight; } else { $slideheight = 450; } 
-		if (!empty($imgwidth)) { $slidewidth = $imgwidth; } else { $slidewidth = $slidewidth_d; } 
+		if (!empty($imgheight)) {
+			$slideheight = $imgheight;
+		} else {
+			$slideheight = 450;
+		} 
+		if (!empty($imgwidth)) {
+			$slidewidth = $imgwidth;
+		} else {
+			$slidewidth = $slidewidth_d;
+		} 
 		 ?>
   <article <?php post_class() ?> id="post-<?php the_ID(); ?>">
       <div class="postclass">
       	<div class="row">
-      		<div class="<?php echo $imgclass; ?>">
+      		<div class="<?php echo esc_attr($imgclass); ?>">
 				<?php if ($ppost_type == 'flex') { ?>
-					<div class="flexslider loading kad-light-gallery" style="max-width:<?php echo $slidewidth;?>px;">
+					<div class="flexslider loading kt-flexslider kad-light-gallery" style="max-width:<?php echo esc_attr($slidewidth);?>px;" data-flex-speed="7000" data-flex-anim-speed="400" data-flex-animation="fade" data-flex-auto="<?php echo esc_attr($slideauto);?>">
                        <ul class="slides">
-						<?php global $post;
+						<?php
                           	$image_gallery = get_post_meta( $post->ID, '_kad_image_gallery', true );
                           		if(!empty($image_gallery)) {
                     				$attachments = array_filter( explode( ',', $image_gallery ) );
@@ -67,7 +79,7 @@
 												$caption = get_post($attachment)->post_excerpt;
 												$image = aq_resize($attachment_url, $slidewidth, $slideheight, true);
 													if(empty($image)) {$image = $attachment_url;}
-												echo '<li><a href="'.$attachment_url.'" rel="lightbox" title="'.$caption.'"><img src="'.$image.'" alt="'.$caption.'"/></a></li>';
+												echo '<li><a href="'.esc_url($attachment_url).'" data-rel="lightbox" title="'.esc_attr($caption).'"><img src="'.esc_url($image).'" alt="'.esc_attr($caption).'"/></a></li>';
 											}
 										}
                     			} else {
@@ -78,32 +90,17 @@
 												$attachment_url = wp_get_attachment_url($attachment->ID , 'full');
 												$image = aq_resize($attachment_url, $slidewidth, $slideheight, true);
 													if(empty($image)) {$image = $attachment_url;}
-												echo '<li><a href="'.$attachment_url.'" rel="lightbox"><img src="'.$image.'"/></a></li>';
+												echo '<li><a href="'.esc_url($attachment_url).'" data-rel="lightbox"><img src="'.esc_url($image).'"/></a></li>';
 											}
                     					}	
 								} ?>                                
 					</ul>
-					<script type="text/javascript">
-			            jQuery(window).load(function () {
-			                jQuery('.flexslider').flexslider({
-			                    animation: "fade",
-			                    animationSpeed: 500,
-			                    slideshow: <?php echo $slideauto; ?>,
-			                    slideshowSpeed: 7000,
-
-			                    before: function(slider) {
-			                      slider.removeClass('loading');
-			                    }  
-			                  });
-			                });
-			      </script>
               </div> <!--Flex Slides-->
               <?php } else if ($ppost_type == 'carousel') { ?>
-					
 					 <div id="imageslider" class="loading carousel_outerrim">
-					    <div class="carousel_slider_outer fredcarousel fadein-carousel" style="overflow:hidden; max-width:<?php echo $slidewidth;?>px; height: <?php echo $slideheight;?>px; margin-left: auto; margin-right:auto;">
-					        <div class="carousel_slider kad-light-gallery">
-					            <?php global $post;
+					    <div class="carousel_slider_outer fredcarousel fadein-carousel" style="overflow:hidden; max-width:<?php echo esc_attr($slidewidth);?>px; height: <?php echo esc_attr($slideheight);?>px; margin-left: auto; margin-right:auto;">
+					        <div class="carousel_slider kad-light-gallery initcarouselslider" data-carousel-container=".carousel_slider_outer" data-carousel-transition="600" data-carousel-height="<?php echo esc_attr($slideheight); ?>" data-carousel-auto="<?php echo esc_attr($slideauto);?>" data-carousel-speed="9000" data-carousel-id="carouselslider">
+					            <?php
                           		$image_gallery = get_post_meta( $post->ID, '_kad_image_gallery', true );
                           		if(!empty($image_gallery)) {
                     				$attachments = array_filter( explode( ',', $image_gallery ) );
@@ -113,10 +110,10 @@
 											$caption = get_post($attachment)->post_excerpt;
 					                    	$image = aq_resize($attachment_url, null, $slideheight, false, false);
 					                    	if(empty($image)) {$image = array($attachment_url, $slidewidth, $slideheight);} 
-					                        echo '<div class="carousel_gallery_item" style="float:left; display: table; position: relative; text-align: center; margin: 0; width:auto; height:'.$image[2].'px;">';
+					                        echo '<div class="carousel_gallery_item" style="float:left; display: table; position: relative; text-align: center; margin: 0; width:auto; height:'.esc_attr($image[2]).'px;">';
 					                        echo '<div class="carousel_gallery_item_inner" style="vertical-align: middle; display: table-cell;">';
-					                        echo '<a href="'.$attachment_url.'" rel="lightbox" title="'.$caption.'">';
-					                        echo '<img src="'.$image[0].'" width="'.$image[1].'" height="'.$image[2].'" />';
+					                        echo '<a href="'.esc_url($attachment_url).'" data-rel="lightbox" title="'.esc_attr($caption).'">';
+					                        echo '<img src="'.esc_url($image[0]).'" width="'.esc_attr($image[1]).'" height="'.esc_attr($image[2]).'" />';
 					                        echo '</a>'; ?>
 					                      </div>
 					                    </div>
@@ -125,90 +122,14 @@
 					                  <?php } ?>
 					            </div>
 					            <div class="clearfix"></div>
-					              <a id="prevport_carouselslider" class="prev_carousel icon-arrow-left" href="#"></a>
-					              <a id="nextport_carouselslider" class="next_carousel icon-arrow-right" href="#"></a>
+					              <a id="prevport-carouselslider" class="prev_carousel icon-arrow-left" href="#"></a>
+					              <a id="nextport-carouselslider" class="next_carousel icon-arrow-right" href="#"></a>
 					          </div> <!--fredcarousel-->
-					  </div><!--Container-->
-					  <script type="text/javascript">
-                jQuery( window ).load(function () {
-                    var $wcontainer = jQuery('.carousel_slider_outer');
-                    var $container = jQuery('.carousel_slider_outer .carousel_slider');
-                      var align = 'center';
-                      var carheight = <?php echo $slideheight; ?>;
-                          setWidths();
-                          $container.carouFredSel({
-                              width: '100%',
-                              height: carheight,
-                              align: align,
-                              auto: {play: <?php echo $slideauto; ?>, timeoutDuration: 9000},
-                              scroll: {
-                                items : 1,
-                                easing: 'quadratic'
-                              },
-                              items: {
-                                visible: 1,
-                                width: 'variable'
-                              },
-                              prev: '.carousel_slider_outer .prev_carousel',
-                              next: '.carousel_slider_outer .next_carousel',
-                              swipe: {
-                                onMouse: false,
-                                onTouch: true
-                              },
-                              onCreate: function() {
-                                jQuery('.carousel_slider').css('positon','static');
-                              }
-                            });
-                            var cresizeTimer;
-                            jQuery(window).resize(function() {
-                            clearTimeout(cresizeTimer);
-                            cresizeTimer = setTimeout(carouselSlider, 100);
-                            });
-                            function carouselSlider() {
-                            // set the widths on resize
-                            $container.trigger("destroy");
-                            setWidths();
-                              $container.carouFredSel({
-                                 width: '100%',
-                                  height: carheight,
-                                  align: align,
-                                  auto: {play: <?php echo $slideauto; ?>, timeoutDuration: 9000},
-                                  scroll: {
-                                    items : 1,
-                                    easing: 'quadratic'
-                                  },
-                                  items: {
-                                    visible: 1,
-                                    width: 'variable'
-                                  },
-                                  prev: '.carousel_slider_outer .prev_carousel',
-                                  next: '.carousel_slider_outer .next_carousel',
-                                  swipe: {
-                                    onMouse: false,
-                                    onTouch: true
-                                  },
-                                });
-                            };
-                          $wcontainer.animate({'opacity' : 1});
-                          $wcontainer.css({ height: 'auto' });
-                          $wcontainer.parent().removeClass('loading');
-                          // set all the widths to the elements
-                          function setWidths() {
-                            var unitWidth = $container.width();
-                            $container.children().css({ width: unitWidth });
-                            if(jQuery(window).width() <= 768) {
-                            carheight = null;
-                            $container.children().css({ height: 'auto' });
-                          }
-                        }
-
-                });
-                
-              </script> 
-				<?php 
-				} else if ($ppost_type == 'video') { ?>
+					  </div><!--carousel_outerrim-->
+				<?php } else if ($ppost_type == 'video') { ?>
 					<div class="videofit">
-                  <?php global $post; $video = get_post_meta( $post->ID, '_kad_post_video', true ); echo $video; ?>
+                  <?php
+                  	echo get_post_meta( $post->ID, '_kad_post_video', true ); ?>
                   </div>
 				<?php } else if ($ppost_type == 'none') {
 					 $portfolio_margin = "kad_portfolio_nomargin";
@@ -220,21 +141,21 @@
 							?>
                                 <?php if($image) : ?>
                                     <div class="imghoverclass">
-                                    	<a href="<?php echo $img_url ?>" rel="lightbox" class="lightboxhover">
-                                    		<img src="<?php echo $image ?>" alt="<?php echo get_post($post_id)->post_excerpt; ?>" />
+                                    	<a href="<?php echo esc_url($img_url); ?>" data-rel="lightbox" class="lightboxhover">
+                                    		<img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr( get_post($post_id)->post_excerpt); ?>" />
                                     	</a>
                                     </div>
                                 <?php endif; ?>
 				<?php } ?>
         </div><!--imgclass -->
-  		<div class="<?php echo $textclass; ?>">
-		    <div class="entry-content <?php echo $entryclass; ?> <?php echo $portfolio_margin; ?>">
+  		<div class="<?php echo esc_attr($textclass); ?>">
+		    <div class="entry-content <?php echo esc_attr($entryclass); ?> <?php echo esc_attr($portfolio_margin); ?>">
 		      <?php the_content(); ?>
-		  </div>
-	    		<div class="<?php echo $valueclass; ?>">
+		  	</div>
+	    	<div class="<?php echo esc_attr($valueclass); ?>">
 	    			<div class="pcbelow">
-				    <ul class="portfolio-content disc">
-				    	<?php global $post; $project_v1t = get_post_meta( $post->ID, '_kad_project_val01_title', true );
+				    	<ul class="portfolio-content disc">
+				    	<?php  				$project_v1t = get_post_meta( $post->ID, '_kad_project_val01_title', true );
 				    						$project_v1d = get_post_meta( $post->ID, '_kad_project_val01_description', true );
 				    						$project_v2t = get_post_meta( $post->ID, '_kad_project_val02_title', true );
 				    						$project_v2d = get_post_meta( $post->ID, '_kad_project_val02_description', true );
@@ -244,11 +165,11 @@
 				    						$project_v4d = get_post_meta( $post->ID, '_kad_project_val04_description', true );
 				    						$project_v5t = get_post_meta( $post->ID, '_kad_project_val05_title', true );
 				    						$project_v5d = get_post_meta( $post->ID, '_kad_project_val05_description', true ); ?>
-				    <?php if ($project_v1t != '') echo '<li class="pdetails"><span>'.$project_v1t.'</span> '.$project_v1d.'</li>'; ?>
-				    <?php if ($project_v2t != '') echo '<li class="pdetails"><span>'.$project_v2t.'</span> '.$project_v2d.'</li>'; ?>
-				    <?php if ($project_v3t != '') echo '<li class="pdetails"><span>'.$project_v3t.'</span> '.$project_v3d.'</li>'; ?>
-				    <?php if ($project_v4t != '') echo '<li class="pdetails"><span>'.$project_v4t.'</span> '.$project_v4d.'</li>'; ?>
-				    <?php if ($project_v5t != '') echo '<li class="pdetails"><span>'.$project_v5t.'</span> <a href="'.$project_v5d.'" target="_new">'.$project_v5d.'</a></li>'; ?>
+				    <?php if ($project_v1t != '') echo '<li class="pdetails"><span>'.esc_html($project_v1t).'</span> '.esc_html($project_v1d).'</li>'; ?>
+				    <?php if ($project_v2t != '') echo '<li class="pdetails"><span>'.esc_html($project_v2t).'</span> '.esc_html($project_v2d).'</li>'; ?>
+				    <?php if ($project_v3t != '') echo '<li class="pdetails"><span>'.esc_html($project_v3t).'</span> '.esc_html($project_v3d).'</li>'; ?>
+				    <?php if ($project_v4t != '') echo '<li class="pdetails"><span>'.esc_html($project_v4t).'</span> '.esc_html($project_v4d).'</li>'; ?>
+				    <?php if ($project_v5t != '') echo '<li class="pdetails"><span>'.esc_html($project_v5t).'</span> <a href="'.esc_url($project_v5d).'" target="_new">'.esc_html($project_v5d).'</a></li>'; ?>
 				    </ul><!--Portfolio-content-->
 				</div>
 				</div>

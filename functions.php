@@ -17,7 +17,6 @@ require_once locate_template('/lib/config.php');          			// Configuration
 require_once locate_template('/lib/cleanup.php');        			// Cleanup
 require_once locate_template('/lib/nav.php');            			// Custom nav modifications
 require_once locate_template('/lib/metaboxes.php');     			// Custom metaboxes
-require_once locate_template('/lib/gallery_metabox.php');     		// Custom metaboxes
 require_once locate_template('/lib/comments.php');        			// Custom comments modifications
 require_once locate_template('/lib/widgets.php');         			// Sidebars and widgets
 require_once locate_template('/lib/aq_resizer.php');      			// Resize on the fly
@@ -28,3 +27,4 @@ require_once locate_template('/lib/authorbox.php');         		// Author box
 require_once locate_template('/lib/custom-woocommerce.php'); 		// Woocommerce functions
 require_once locate_template('/lib/virtuetoolkit-activate.php'); 	// Plugin Activation
 require_once locate_template('/lib/custom-css.php'); 			    // Fontend Custom CSS
+

@@ -6,7 +6,7 @@
 	
     <div id="content" class="container">
    		<div class="row">
-      <div class="main <?php echo kadence_main_class(); ?>" role="main">
+      <div class="main <?php echo esc_attr( kadence_main_class() ); ?>" role="main">
 <div class="alert">
   <?php _e('Sorry, but the page you were trying to view does not exist.', 'virtue'); ?>
 </div>

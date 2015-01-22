@@ -51,7 +51,7 @@ if(!empty($virtue['primary_color'])) {
   a, #nav-main ul.sf-menu ul li a:hover, .product_price ins .amount, .price ins .amount, .color_primary, .primary-color, #logo a.brand, #nav-main ul.sf-menu a:hover,
   .woocommerce-message:before, .woocommerce-info:before, #nav-second ul.sf-menu a:hover, .footerclass a:hover, .posttags a:hover, .subhead a:hover, .nav-trigger-case:hover .kad-menu-name, 
   .nav-trigger-case:hover .kad-navbtn, #kadbreadcrumbs a:hover, #wp-calendar a {color: '.$virtue['primary_color'].';}
-.widget_price_filter .ui-slider .ui-slider-handle, .product_item .kad_add_to_cart:hover, .product_item:hover .kad_add_to_cart:hover, .kad-btn-primary, html .woocommerce-page .widget_layered_nav ul.yith-wcan-label li a:hover, html .woocommerce-page .widget_layered_nav ul.yith-wcan-label li.chosen a,
+.widget_price_filter .ui-slider .ui-slider-handle, .product_item .kad_add_to_cart:hover, .product_item:hover a.button:hover, .product_item:hover .kad_add_to_cart:hover, .kad-btn-primary, html .woocommerce-page .widget_layered_nav ul.yith-wcan-label li a:hover, html .woocommerce-page .widget_layered_nav ul.yith-wcan-label li.chosen a,
 .product-category.grid_item a:hover h5, .woocommerce-message .button, .widget_layered_nav_filters ul li a, .widget_layered_nav ul li.chosen a, .wpcf7 input.wpcf7-submit, .yith-wcan .yith-wcan-reset-navigation,
 #containerfooter .menu li a:hover, .bg_primary, .portfolionav a:hover, .home-iconmenu a:hover, p.demo_store, .topclass, #commentform .form-submit #submit, .kad-hover-bg-primary:hover, .widget_shopping_cart_content .checkout,
 .login .form-row .button, .variations .kad_radio_variations label.selectedValue, #payment #place_order, .shop_table .actions input[type=submit].checkout-button, input[type="submit"].button, .order-actions .button  {background: '.$virtue['primary_color'].';}';
@@ -61,7 +61,7 @@ if(!empty($virtue['primary_color'])) {
 if(!empty($virtue['primary20_color'])) {
   $color_primary30 =  'a:hover {color: '.$virtue['primary20_color'].';} .kad-btn-primary:hover, .login .form-row .button:hover, #payment #place_order:hover, .yith-wcan .yith-wcan-reset-navigation:hover, .widget_shopping_cart_content .checkout:hover,
 .woocommerce-message .button:hover, #commentform .form-submit #submit:hover, .wpcf7 input.wpcf7-submit:hover, .widget_layered_nav_filters ul li a:hover, 
-.widget_layered_nav ul li.chosen a:hover, .shop_table .actions input[type=submit].checkout-button:hover, .order-actions .button:hover, input[type="submit"].button:hover, .product_item:hover .kad_add_to_cart  {background: '.$virtue['primary20_color'].';}';
+.widget_layered_nav ul li.chosen a:hover, .shop_table .actions input[type=submit].checkout-button:hover, .order-actions .button:hover, input[type="submit"].button:hover, .product_item:hover .kad_add_to_cart, .product_item:hover a.button {background: '.$virtue['primary20_color'].';}';
 } else {
   $color_primary30 = '';
 }
@@ -272,27 +272,32 @@ if(!empty($virtue['bg_boxed_bg_img']['url'])) {
   $boxedbg_img = '';
 }
 if(!empty($virtue['boxed_bg_repeat'])) {
-$boxedbg_repeat = $virtue['boxed_bg_repeat'];
+$boxedbg_repeat = 'background-repeat:'. $virtue['boxed_bg_repeat'].';';
 } else {
   $boxedbg_repeat = '';
 }
 if(!empty($virtue['boxed_bg_placementx'])) {
 $boxedbg_x = $virtue['boxed_bg_placementx'];
 } else {
-  $boxedbg_x = '';
+  $boxedbg_x = '0%';
 }
 if(!empty($virtue['boxed_bg_placementy'])) {
 $boxedbg_y = $virtue['boxed_bg_placementy'];
 } else {
-  $boxedbg_y = '';
+  $boxedbg_y = '0%';
 }
 if(!empty($virtue['boxed_bg_fixed'])) {
-$boxedbg_fixed = $virtue['boxed_bg_fixed']; 
+$boxedbg_fixed = 'background-attachment: '.$virtue['boxed_bg_fixed'].';'; 
 } else {
   $boxedbg_fixed = '';
 }
+if(!empty($virtue['boxed_bg_size'])) {
+  $boxedbg_size = 'background-size: '.$virtue['boxed_bg_size'].';'; 
+} else {
+  $boxedbg_size = '';
+}
 if(!empty($virtue['boxed_bg_color']) || !empty($virtue['bg_boxed_bg_img']['url'])) {
-    $boxedclass = 'body {background:'.$boxedbg_color.' '.$boxedbg_img.' '.$boxedbg_repeat.' '.$boxedbg_x.' '.$boxedbg_y.'; background-attachment:'.$boxedbg_fixed.';}';
+    $boxedclass = 'body {background:'.$boxedbg_color.' '.$boxedbg_img.'; background-position: '.$boxedbg_x.' '.$boxedbg_y.'; '.$boxedbg_repeat.' '.$boxedbg_fixed.' '.$boxedbg_size.'}';
   } else {
     $boxedclass = '';
   }

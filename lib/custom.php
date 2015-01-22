@@ -25,6 +25,33 @@ add_filter('kadence_post_default_placeholder_image', 'virtue_post_default_placeh
 add_filter('kadence_post_default_widget_placeholder_image', 'virtue_post_default_placeholder_override');
 }
 
+//Page Navigation
+
+function virtue_wp_pagenav() {
+
+  global $wp_query, $wp_rewrite;
+  $pages = '';
+  $big = 999999999; // need an unlikely integer
+  $max = $wp_query->max_num_pages;
+  if (!$current = get_query_var('paged')) $current = 1;
+  $args['base'] = str_replace($big, '%#%', esc_url( get_pagenum_link( $big ) ) );
+  $args['total'] = $max;
+  $args['current'] = $current;
+  $args['add_args'] = false;
+
+  $total = 1;
+  $args['mid_size'] = 3;
+  $args['end_size'] = 1;
+  $args['prev_text'] = '«';
+  $args['next_text'] = '»';
+ 
+  if ($max > 1) echo '<div class="wp-pagenavi">';
+  if ($total == 1 && $max > 1)
+    echo paginate_links($args);
+  if ($max > 1) echo '</div>';
+}
+
+
 function kadence_hex2rgb($hex) {
    $hex = str_replace("#", "", $hex);
 
