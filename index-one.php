@@ -69,7 +69,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 				
 				else{ ?>
 				
-				<h1><a href="#">Free WordPress theme - ACCESSPRESS LITE</a></h1>
+				<h1><a href="#"><?php _e('Free WordPress theme - ACCESSPRESS LITE','accesspresslite'); ?></a></h1>
 				<figure class="welcome-text-image">
 				<a href="#">
 					<img src="<?php echo get_template_directory_uri(); ?>/images/demo/welcome-image.jpg" alt="welcome">
@@ -77,10 +77,10 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 				</figure>
 
 				<div  class="welcome-detail">
-				<p>AccessPress Lite is a HTML5 & CSS3 Responsive Free WordPress Business Theme with clean, minimal yet highly professional design.</p>
-<p>With our years of experience, we have developed this theme and given back to this awesome WordPress community. It is feature rich, multi purpose and flexible responsive theme Suitable for Agencies, Small Biz, Corporates, Bloggers - Anyone and Everyone!</p>
-<p>The theme is complete with many useful features. The intuitive theme options let you manage all the possible options/features of the theme. You can use it to create your next superb website in no time and all for FREE.</p>
-				<a href="#" class="readmore bttn">Read More</a>
+				<p><?php _e('AccessPress Lite is a HTML5 & CSS3 Responsive Free WordPress Business Theme with clean, minimal yet highly professional design.','accesspresslite'); ?></p>
+<p><?php _e('With our years of experience, we have developed this theme and given back to this awesome WordPress community. It is feature rich, multi purpose and flexible responsive theme Suitable for Agencies, Small Biz, Corporates, Bloggers - Anyone and Everyone!','accesspresslite'); ?></p>
+<p><?php _e('The theme is complete with many useful features. The intuitive theme options let you manage all the possible options/features of the theme. You can use it to create your next superb website in no time and all for FREE.','accesspresslite'); ?></p>
+				<a href="#" class="readmore bttn"><?php _e('Read More','accesspresslite'); ?></a>
 				</div>
 
 			<?php } ?>
@@ -162,18 +162,18 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 							<a href="#"><img src="<?php echo get_template_directory_uri().'/images/demo/event-'.$event_count.'.jpg'; ?>" alt="<?php echo 'event'.$event_count; ?>">
 							<div class="event-date">
 								<span class="event-date-day"><?php echo $event_count; ?></span>
-								<span class="event-date-month"><?php echo "Mar"; ?></span>
+								<span class="event-date-month"><?php _e('Mar','accesspresslite'); ?></span>
 							</div>
 							</a>
 						</figure>	
 
 						<div class="event-detail">
 			        		<h4 class="event-title">
-			        			<a href="#">Title of the event-<?php echo $event_count; ?></a>
+			        			<a href="#"><?php _e('Title of the event-','accesspresslite'); ?><?php echo $event_count; ?></a>
 			        		</h4>
 
 			        		<div class="event-excerpt">
-			        			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor...
+			        			<?php _e('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor...','accesspresslite'); ?>
 			        		</div>
 		        		</div>
 		        	</div>
@@ -374,11 +374,11 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 		</a>
 		</figure>
 
-		<h2><a href="#">Featured Post <?php echo $featured_post; ?></a></h2>
+		<h2><a href="#"><?php _e('Featured Post','accesspresslite'); ?> <?php echo $featured_post; ?></a></h2>
 
 		<div class="featured-content">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate...</p>
-			<a href="#" class="read-more bttn">Read More</a>
+			<p><?php _e('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate...','accesspresslite'); ?></p>
+			<a href="#" class="read-more bttn"><?php _e('Read More','accesspresslite'); ?></a>
 		</div>
 	</div>
 
@@ -446,17 +446,17 @@ wp_reset_query(); ?>
         else:  
         ?>
         <aside id="text-3" class="widget widget_text">
-            <h3 class="widget-title">Why AccessPress?</h3>
+            <h3 class="widget-title"><?php _e('Why AccessPress?','accesspresslite'); ?></h3>
             <div class="textwidget">
                 <ul>
-                <li>Theme Options Panel</li>
-                <li>Responsive Design</li>
-                <li>Featured Slider</li>
-                <li>Sidebar & custom Logo/favicon Option</li>
-                <li>Multiple Homepage Layouts</li>
-                <li>Portfolio, Event/News Layout</li>
-                <li>CSS3 Animations</li>
-                <li>Many More</li>
+                <li><?php _e('Theme Options Panel','accesspresslite'); ?></li>
+                <li><?php _e('Responsive Design','accesspresslite'); ?></li>
+                <li><?php _e('Featured Slider','accesspresslite'); ?></li>
+                <li><?php _e('Sidebar & custom Logo/favicon Option','accesspresslite'); ?></li>
+                <li><?php _e('Multiple Homepage Layouts','accesspresslite'); ?></li>
+                <li><?php _e('Portfolio, Event/News Layout','accesspresslite'); ?></li>
+                <li><?php _e('CSS3 Animations','accesspresslite'); ?></li>
+                <li><?php _e('Many More','accesspresslite'); ?></li>
                 </ul>
             </div>
         </aside>
@@ -565,7 +565,7 @@ wp_reset_query(); ?>
 	        <?php wp_reset_postdata(); 
 			}else{ 
 			?>
-			<h3 class="widget-title">Testimonials</h3>
+			<h3 class="widget-title"><?php _e('Testimonials','accesspresslite'); ?></h3>
 			<div class="testimonial-wrap">
 				<div class="testimonial-slider">
 					<div class="testimonial-slide">
@@ -574,9 +574,9 @@ wp_reset_query(); ?>
 			        		<img src="<?php echo get_template_directory_uri(); ?>/images/demo/Yanetxys-Torreblanca.jpg">
 			        		</div>
 
-			        		<div class="testimonial-excerpt">Thanks for delivering top quality services to your clients. It just takes a minute to get an answer from you when in difficulties.</div>
+			        		<div class="testimonial-excerpt"><?php _e('Thanks for delivering top quality services to your clients. It just takes a minute to get an answer from you when in difficulties.','accesspresslite'); ?></div>
 			        	</div>
-						<div class="testimoinal-client-name">Yanetxys Torreblanca</div>
+						<div class="testimoinal-client-name"><?php _e('Yanetxys Torreblanca','accesspresslite'); ?></div>
 					</div>
 
 					<div class="testimonial-slide">
@@ -585,9 +585,9 @@ wp_reset_query(); ?>
 			        		<img src="<?php echo get_template_directory_uri(); ?>/images/demo/David-Soriano.jpg">
 			        		</div>
 
-			        		<div class="testimonial-excerpt">Thank you very much the support team AccessPress lite for service, are really wonderful in their care and in the resolution of the problem.</div>
+			        		<div class="testimonial-excerpt"><?php _e('Thank you very much the support team AccessPress lite for service, are really wonderful in their care and in the resolution of the problem.','accesspresslite'); ?></div>
 			        	</div>
-						<div class="testimoinal-client-name">David Soriano</div>
+						<div class="testimoinal-client-name"><?php _e('David Soriano','accesspresslite'); ?></div>
 					</div>
 
 					<div class="testimonial-slide">
@@ -596,17 +596,16 @@ wp_reset_query(); ?>
 			        		<img src="<?php echo get_template_directory_uri(); ?>/images/demo/Jotta-Lima.jpg">
 			        		</div>
 
-			        		<div class="testimonial-excerpt">Hello, I would say I am much satisfied! I tested installing the theme AccessPress Lite on my blog and found it very good. </div>
+			        		<div class="testimonial-excerpt"><?php _e('Hello, I would say I am much satisfied! I tested installing the theme AccessPress Lite on my blog and found it very good.','accesspresslite'); ?></div>
 			        	</div>
-						<div class="testimoinal-client-name">Jotta Lima</div>
+						<div class="testimoinal-client-name"><?php _e('Jotta Lima','accesspresslite'); ?></div>
 					</div>
 				</div>
 			</div>
-				<a class="all-testimonial" href="#">View All Testimonials</a>
+				<a class="all-testimonial" href="#"><?php _e('View All Testimonials','accesspresslite'); ?></a>
 			<?php } 
 			}?>
 		</div>
 	</div>
 </section>
 <?php endif; ?>
-

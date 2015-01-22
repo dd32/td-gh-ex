@@ -12,7 +12,7 @@ function accesspress_lite_admin_scripts() {
 	wp_enqueue_script( 'accesspresslite_custom_js', get_template_directory_uri().'/inc/admin-panel/js/custom.js', array( 'jquery' ) );
 	wp_enqueue_script( 'of-media-uploader', get_template_directory_uri().'/inc/admin-panel/js/media-uploader.js', array( 'jquery' ) );
 	
-	wp_enqueue_style( 'accesspresslite_admin_style',get_template_directory_uri().'/inc/admin-panel/css/admin.css', array( 'farbtastic', 'thickbox'), '1.0', 'screen' );
+	wp_enqueue_style( 'accesspresslite_admin_style',get_template_directory_uri().'/inc/admin-panel/css/admin.css', '1.0', 'screen' );
 
 }
 add_action('admin_print_styles-appearance_page_theme_options', 'accesspress_lite_admin_scripts');
@@ -256,18 +256,6 @@ function accesspresslite_theme_options_page() {
 	<div class="accesspresslite-header">
 		<div class="accesspresslite-logo">
 		<img src="<?php echo get_template_directory_uri();?>/inc/admin-panel/images/logo.png" alt="<?php esc_attr_e('AccessPress Lite','accesspresslite'); ?>" />
-		</div>
-
-		<div class="ak-socials">
-		<p><?php _e('Follow us for new updates','accesspresslite') ?></p>
-			<div class="social-bttns">
-			    
-				<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FAccessPress-Themes%2F1396595907277967&amp;width&amp;layout=button&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=35&amp;appId=1411139805828592" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:20px; width:50px " allowTransparency="true"></iframe>
-				&nbsp;&nbsp;
-			    <a href="<?php echo esc_url('https://twitter.com/apthemes', 'accesspresslite'); ?>" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @apthemes</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-	    		
-			</div>
 		</div>
 
 		<div class="accesspresslite_title"><?php echo wp_get_theme();  _e( ' Theme Options', 'accesspresslite' )?></div>
@@ -520,7 +508,7 @@ function accesspresslite_theme_options_page() {
 						<td>
 							<input type="checkbox" id="disable_event" name="accesspresslite_options[disable_event]" value="1" <?php checked( true, $settings['disable_event'] ); ?> />
 							<label for="disable_event"><?php _e('Check to Disable','accesspresslite'); ?></label><br />
-							<em class="f13">The welcome post will cover the full width if disabled.</em>
+							<em class="f13"><?php _e('The welcome post will cover the full width if disabled.','accesspresslite'); ?></em>
 						</td>
 					</tr>
 
@@ -544,7 +532,7 @@ function accesspresslite_theme_options_page() {
 					<tr><td colspan="2" class="seperator">&nbsp;</td></tr>
 
 					<tr>
-						<th><label for="show_fontawesome"><?php _e('Show Font Awesome icon for Featured Post?','accesspresslite'); ?></label></th>
+						<th><label for="show_fontawesome"><?php _e('Show Font Awesome icon for Featured Post?','accesspresslite'); ?><label></th>
 						<td>
 							<input type="checkbox" id="show_fontawesome" name="accesspresslite_options[show_fontawesome]" value="1" <?php checked( true, $settings['show_fontawesome'] ); ?> />
 							<label for="show_fontawesome"><?php _e('Check to enable','accesspresslite'); ?></label><br />
@@ -571,7 +559,7 @@ function accesspresslite_theme_options_page() {
 					endforeach;
 					?>
 					</select>
-					<input id="featured_post1_icon" name="accesspresslite_options[featured_post1_icon]" type="text" value="<?php echo esc_attr($settings['featured_post1_icon'],'accesspresslite'); ?>" placeholder="Font Awesome icon name" /><em class="f13">&nbsp;&nbsp;Example: fa-bell</em>
+					<input id="featured_post1_icon" name="accesspresslite_options[featured_post1_icon]" type="text" value="<?php echo esc_attr($settings['featured_post1_icon'],'accesspresslite'); ?>" placeholder="Font Awesome icon name" /><em class="f13">&nbsp;&nbsp;<?php _e('Example:','accesspresslite'); ?> fa-bell</em>
 					</td>
 					</tr>
 
@@ -586,7 +574,7 @@ function accesspresslite_theme_options_page() {
 					endforeach;
 					?>
 					</select>
-					<input id="featured_post2_icon" name="accesspresslite_options[featured_post2_icon]" type="text" value="<?php echo esc_attr($settings['featured_post2_icon'],'accesspresslite'); ?>" placeholder="Font Awesome icon name" /><em class="f13">&nbsp;&nbsp;Example: fa-bell</em>
+					<input id="featured_post2_icon" name="accesspresslite_options[featured_post2_icon]" type="text" value="<?php echo esc_attr($settings['featured_post2_icon'],'accesspresslite'); ?>" placeholder="Font Awesome icon name" /><em class="f13">&nbsp;&nbsp;<?php _e('Example:','accesspresslite'); ?> fa-bell</em>
 					</td>
 					</tr>
 
@@ -601,7 +589,7 @@ function accesspresslite_theme_options_page() {
 					endforeach;
 					?>
 					</select>
-					<input id="featured_post3_icon" name="accesspresslite_options[featured_post3_icon]" type="text" value="<?php  echo esc_attr($settings['featured_post3_icon'],'accesspresslite'); ?>" placeholder="Font Awesome icon name" /><em class="f13">&nbsp;&nbsp;Example: fa-bell</em>
+					<input id="featured_post3_icon" name="accesspresslite_options[featured_post3_icon]" type="text" value="<?php  echo esc_attr($settings['featured_post3_icon'],'accesspresslite'); ?>" placeholder="Font Awesome icon name" /><em class="f13">&nbsp;&nbsp;<?php _e('Example:','accesspresslite'); ?> fa-bell</em>
 					</td>
 					</tr>
 
@@ -621,7 +609,7 @@ function accesspresslite_theme_options_page() {
                     
                     <tr>
                         <td colspan="2">
-                        <em><?php _e('You can replace the gallery and testimonial section of the home page with custom widget','accesspresslite'); ?> <a href="<?php echo admin_url('/widgets.php') ?>"><?php _e('here','accesspresslite'); ?></a></em>
+                        <em><?php _e('You can replace the gallery and testimonial section of the home page with custom widget','accesspresslite'); ?> <a href="<?php echo admin_url('/widgets.php') ?>"><?php _e('here','accesspresslite'); ?></em></a>
                         </td>
                     </tr>
 
@@ -1048,28 +1036,28 @@ function accesspresslite_theme_options_page() {
 					<tr><th scope="row"><label for="google_map"><?php _e('Google Map Iframe','accesspresslite'); ?></label></th>
 						<td>
 						<textarea id="google_map" name="accesspresslite_options[google_map]" rows="5" cols="40"><?php echo $settings['google_map']; ?></textarea>
-						<p class="f13"><em><?php _e('Enter the Iframe of the google map to show in last column of the footer of the home page.<br />Leave Blank if you don\'t want to show','accesspresslite'); ?></em></p>
+						<p class="f13"><em><?php _e('Enter the Iframe of the google map to show in last column of the footer of the home page.<br />Leave Blank if you don\'t want to show','accesspresslite'); ?><em></p>
 						</td>
 					</tr>
 
 					<tr><th scope="row"><label for="contact_address"><?php _e('Contact Address','accesspresslite'); ?></label></th>
 						<td>
 						<textarea id="contact_address" name="accesspresslite_options[contact_address]" rows="5" cols="40"><?php echo $settings['contact_address']; ?></textarea>
-						<p class="f13"><em><?php _e('Enter the Contact Address to show below the google map<br />Leave Blank if you don\'t want to show','accesspresslite'); ?></em></p>
+						<p class="f13"><em><?php _e('Enter the Contact Address to show below the google map<br />Leave Blank if you don\'t want to show','accesspresslite'); ?><em></p>
 						</td>
 					</tr>
 
 					<tr><th scope="row"><label for="custom_css"><?php _e('Custom CSS','accesspresslite'); ?></label></th>
 						<td>
 						<textarea id="custom_css" name="accesspresslite_options[custom_css]" rows="8" cols="60"><?php if(isset($settings['custom_css'])){ echo esc_attr($settings['custom_css']); } ?></textarea>
-						<p class="f13"><em>Put your custom CSS</em></p>
+						<p class="f13"><em><?php _e('Put your custom CSS','accesspresslite'); ?></em></p>
 						</td>
 					</tr>
 
 					<tr><th scope="row"><label for="custom_code"><?php _e('Custom Code (analytics)','accesspresslite'); ?></label></th>
 						<td>
 						<textarea id="custom_code" name="accesspresslite_options[custom_code]" rows="8" cols="60"><?php if(isset($settings['custom_code'])){ echo esc_html($settings['custom_code']); } ?></textarea>
-						<p class="f13"><em>Put the script like anlytics or any other</em></p>
+						<p class="f13"><em><?php _e('Put the script like anlytics or any other','accesspresslite'); ?></em></p>
 						</td>
 					</tr>
 				</table>
@@ -1108,10 +1096,11 @@ function accesspresslite_theme_options_page() {
 
 						<h4><?php _e('Get social','accesspresslite'); ?></h4>
 
-						<p><?php _e('Get connected with us on social media. Facebook is the best place to find updates on our themes/plugins:','accesspresslite'); ?></p>
+						<p><?php _e('Get connected with us on social media. It is the best place to find updates on our themes/plugins:','accesspresslite'); ?></p>
 
-						<p><?php _e('Like us on facebook:','accesspresslite'); ?></p>
-						<iframe style="border: none; overflow: hidden; width: 740px; height: 230px;" src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FAccessPress-Themes%2F1396595907277967&amp;width=740&amp;height=230&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=true&amp;appId=1411139805828592" width="740" height="230" frameborder="0" scrolling="no"></iframe>	
+						<p><a title="Facebook" target="_blank" href="https://www.facebook.com/pages/AccessPress-Themes/1396595907277967">Facebook</a></p>
+						<p><a target="_blank" title="Twitter" href="https://twitter.com/apthemes">Twitter</a></p>
+						<p><a target="_blank" title="Youtube" href="https://www.youtube.com/user/accesspressthemes">Youtube</i></a></p>
 						</td>
 					</tr>
 				</table>
@@ -1136,7 +1125,7 @@ function accesspresslite_theme_options_page() {
 			</div>
 
 			<div class="any-question">
-				Any question!! Click <a href="<?php echo esc_url('https://accesspressthemes.com/contact/'); ?>" target="_blank">here</a> for Live Chat.
+				<?php echo sprintf(__('Any question!! Click <a href="%s" target="_blank">here</a> for Live Chat.','accesspresslite'),esc_url('https://accesspressthemes.com/contact/')); ?>
 			</div>
 		</div>
 	</div><!-- #optionsframework-metabox -->
