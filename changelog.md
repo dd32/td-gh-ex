@@ -1,5 +1,17 @@
 # Storefront Changelog
 
+### *2015.01.22* - 1.2.5
+* **Fix** - Review form input alignment.
+* **Tweak** - Widget region order in dashboard.
+* **Tweak** - Post archive pagination is now numbered.
+* **Tweak** - Styling for current post / product category in widgets.
+* **Tweak** - Added an informational section to the Customizer.
+* **Tweak** - Link color in the sidebar.
+* **Tweak** - Padding in the header.
+* **Tweak** - Breadcrumb position.
+* **Dev** - `storefront_header_cart()` is now pluggable.
+* **Dev** - Make use of WordPress 4.1 functions `the_archive_title()` and `the_archive_description()`.
+
 ### *2015.01.15* - 1.2.4
 * **Fix** - First level threaded comment layout.
 * **Tweak** - Improved font size on handheld devices.

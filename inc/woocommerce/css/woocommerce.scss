@@ -313,7 +313,7 @@ ul.products {
 
 	.comment-form-author,
 	.comment-form-email {
-		width: 48%;
+		width: 47%;
 	}
 
 	.comment-form-email {
@@ -326,60 +326,12 @@ ul.products {
 }
 
 /**
- * Pagination
- */
-.woocommerce-pagination {
-	padding: 1em 0;
-	border: 1px solid $color_border;
-	border-width: 1px 0;
-	text-align: center;
-
-	.page-numbers {
-		list-style: none;
-		margin: 0;
-		@include clearfix;
-
-		li {
-			display: inline-block;
-
-			.page-numbers {
-				border-left-width: 0;
-				display: inline-block;
-				padding: .327em .857em;
-
-				&.current {
-					font-weight: 700;
-					background-color: rgba(0,0,0,0.0125);
-				}
-
-				&.dots {
-					background-color: transparent;
-				}
-
-				&.prev,
-				&.next {
-					padding-left: 1.387em;
-					padding-right: 1.387em;
-				}
-			}
-
-			a.page-numbers {
-				&:hover {
-					border-color: $color_border;
-				}
-			}
-		}
-	}
-}
-
-/**
  * Breadcrumbs
  */
 .woocommerce-breadcrumb {
 	margin-bottom: 4.236em;
 	font-size: .857em;
 	padding: 1em 0;
-	margin-top: -2.618em;
 	border-bottom: 1px solid rgba(0,0,0,0.05);
 
 	a.home {
@@ -467,6 +419,12 @@ ul.products {
 				display: inline-block;
 				opacity: 0.25;
 				content: "\f114";
+			}
+
+			&.current-cat {
+				&:before {
+					content: "\f115";
+				}
 			}
 		}
 	}
@@ -1282,13 +1240,6 @@ dl.variation {
 	/**
 	 * Header Elements
 	 */
-	.woocommerce-active {
-		.site-branding,
-		.site-logo-anchor {
-			margin-right: gs-gutter(c, false, true);
-		}
-	}
-
 	.site-header-cart {
 		position: relative;
 

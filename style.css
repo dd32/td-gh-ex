@@ -3,8 +3,8 @@ Theme Name: Storefront
 Theme URI: http://woothemes.com/storefront
 Author: WooThemes
 Author URI: http://woothemes.com
-Description: Storefront is the perfect theme for your next eCommerce project. Designed and developed by WooThemes, it features a deep integration with our market leading WooCommerce plugin, several layout & color options to personalise your shop, multiple widget regions, a responsive design and much more. Developers will love it's lean and extensible codebase making it a joy to customise and extend.
-Version: 1.2.4
+Description: Storefront is the perfect theme for your next WooCommerce project. Designed and developed by WooThemes, it features a deep integration with our market leading WooCommerce plugin, several layout & color options to personalise your shop, multiple widget regions, a responsive design and much more. Developers will love it's lean and extensible codebase making it a joy to customise and extend. Looking for a WooCommerce theme? Look no further!
+Version: 1.2.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: storefront
@@ -786,7 +786,8 @@ a {
     width: 21.73913%;
     float: right;
     margin-right: 0;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    padding-top: 1.618em; }
 
   .site-branding .site-description {
     margin-bottom: 0;
@@ -796,7 +797,7 @@ a {
   .site-search,
   .site-header-cart,
   .site-logo-anchor {
-    margin-bottom: 2.618em; }
+    margin-bottom: 1em; }
 
   .site-header .subscribe-and-connect-connect {
     float: right;
@@ -1207,7 +1208,8 @@ fieldset {
    * Primary Navigation
    */
   .main-navigation {
-    position: relative; }
+    position: relative;
+    padding-top: 1.618em; }
     .main-navigation ul.menu > li > a,
     .main-navigation ul.nav-menu > li > a {
       padding: 0 1em 2.244em; }
@@ -1522,6 +1524,48 @@ object {
     width: 50%; }
 
 /**
+ * Pagination
+ */
+.storefront-pagination,
+.woocommerce-pagination {
+  padding: 1em 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-width: 1px 0;
+  text-align: center; }
+  .storefront-pagination .page-numbers,
+  .woocommerce-pagination .page-numbers {
+    list-style: none;
+    margin: 0; }
+    .storefront-pagination .page-numbers:after,
+    .woocommerce-pagination .page-numbers:after {
+      content: "";
+      display: table;
+      clear: both; }
+    .storefront-pagination .page-numbers li,
+    .woocommerce-pagination .page-numbers li {
+      display: inline-block; }
+      .storefront-pagination .page-numbers li .page-numbers,
+      .woocommerce-pagination .page-numbers li .page-numbers {
+        border-left-width: 0;
+        display: inline-block;
+        padding: .327em .857em; }
+        .storefront-pagination .page-numbers li .page-numbers.current,
+        .woocommerce-pagination .page-numbers li .page-numbers.current {
+          font-weight: 700;
+          background-color: rgba(0, 0, 0, 0.0125); }
+        .storefront-pagination .page-numbers li .page-numbers.dots,
+        .woocommerce-pagination .page-numbers li .page-numbers.dots {
+          background-color: transparent; }
+        .storefront-pagination .page-numbers li .page-numbers.prev, .storefront-pagination .page-numbers li .page-numbers.next,
+        .woocommerce-pagination .page-numbers li .page-numbers.prev,
+        .woocommerce-pagination .page-numbers li .page-numbers.next {
+          padding-left: 1.387em;
+          padding-right: 1.387em; }
+      .storefront-pagination .page-numbers li a.page-numbers:hover,
+      .woocommerce-pagination .page-numbers li a.page-numbers:hover {
+        border-color: rgba(0, 0, 0, 0.1); }
+
+/**
  * Comments
  */
 #comments {
@@ -1722,6 +1766,10 @@ object {
 
 .header-widget-region {
   margin-bottom: 4.236em; }
+  .header-widget-region:after {
+    content: "";
+    display: table;
+    clear: both; }
   .header-widget-region .widget {
     margin: 0;
     padding: 1em 0;
@@ -1802,6 +1850,8 @@ object {
 
 .widget_categories ul li:before {
   content: "\f114"; }
+.widget_categories ul li.current-cat:before {
+  content: "\f115"; }
 
 .widget_archive ul li:before {
   content: "\f115"; }
@@ -1822,7 +1872,7 @@ object {
   .widget-area .widget a {
     color: #787E87;
     font-weight: 400;
-    opacity: 0.5; }
+    opacity: 0.75; }
     .widget-area .widget a:hover {
       color: #a46497;
       opacity: 1; }
