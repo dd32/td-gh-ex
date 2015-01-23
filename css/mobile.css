@@ -19,7 +19,8 @@
 		display: none;
 	}
 	
-	.sub-menu.toggled-on {
+	.sub-menu.toggled-on,
+	.children.toggled-on {
 		display: block !important;
 	}
 	

@@ -10,7 +10,15 @@ Changelog Legend:
 
 ----
 
-() - 1.2.5
+(1/23/2015) - 1.2.6
+[!] Fix bug affecting mobile menu when superfish is disabled
+[!] Fix bug affecting mobile dropdowns when no menu is set
+[!] Fix bug causing title tag to show double site title and tagline
+[x] scripts.js removed as only js in there was superfish stuff - added to superfish.js
+
+----
+
+(1/19/2015) - 1.2.5
 [*] Mobile menu dropdowns now require arrow click to expand
 [+] Close icon added to mobile menu when opened
 [+] Add search title to navigation search

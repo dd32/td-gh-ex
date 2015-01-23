@@ -5,7 +5,7 @@
  * @package Generate
  */
 	
-define( 'GENERATE_VERSION', '1.2.5');
+define( 'GENERATE_VERSION', '1.2.6');
 define( 'GENERATE_URI', get_template_directory_uri() );
 define( 'GENERATE_DIR', get_template_directory() );
 
@@ -64,8 +64,9 @@ function generate_setup() {
 	
 	/**
 	 * Enable support for <title> tag
+	 * Removed for now - causing double title
 	 */
-	add_theme_support( 'title-tag' );
+	//add_theme_support( 'title-tag' );
 	
 	/**
 	 * Set the content width based on the theme's design and stylesheet.
@@ -247,7 +248,6 @@ function generate_scripts() {
 	wp_enqueue_script( 'generate-navigation', get_template_directory_uri() . '/js/navigation.js', array(), GENERATE_VERSION, true );
 	wp_enqueue_script( 'superfish', get_template_directory_uri() . '/js/superfish.js', array('jquery'), GENERATE_VERSION, true );
 	wp_enqueue_script( 'hoverIntent', get_template_directory_uri() . '/js/hoverIntent.js', array('superfish'), GENERATE_VERSION, true );
-	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), GENERATE_VERSION, true );
 
 	if ( 'enable' == $generate_settings['nav_search'] ) {
 		wp_enqueue_script( 'generate-navigation-search', get_template_directory_uri() . '/js/navigation-search.js', array('jquery'), GENERATE_VERSION, true );
