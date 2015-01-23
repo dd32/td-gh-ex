@@ -152,6 +152,9 @@ wp_nonce_field( basename( __FILE__ ), 'accesspresslite_event_date_nonce' );
 $accesspresslite_event_day = get_post_meta( $post->ID, 'accesspresslite_event_day', true );
 $accesspresslite_event_month = get_post_meta( $post->ID, 'accesspresslite_event_month', true );
 $accesspresslite_event_year = get_post_meta( $post->ID, 'accesspresslite_event_year', true );
+$accesspresslite_event_day = empty($accesspresslite_event_day) ? date('j'): $accesspresslite_event_day; 
+$accesspresslite_event_month = empty($accesspresslite_event_month) ? date('M'): $accesspresslite_event_month; 
+$accesspresslite_event_year = empty($accesspresslite_event_year) ? date('Y'): $accesspresslite_event_year; 
  ?>
     <select name="accesspresslite_event_day">
     <?php for($event_day=1; $event_day <= 31; $event_day++){?>
