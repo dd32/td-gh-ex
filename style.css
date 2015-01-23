@@ -4,7 +4,7 @@ Theme URI: http://themes.tradesouthwest.com/betilu/
 Author: Larry Judd Oliver Tradesouthwest
 Author URI: http://tradesouthwest.com/
 Description: Beti-Lu is a lead article style layout. You can post news paper style on the custom home page. Just set your theme to show your latest posts in Settings to use this layout. Lead article at top with sidebar to the right and all other articles appear as quarters, as excerpts, below middle-bar. Options to change color of middle bar, side bar and lead article container. Some elements will auto-adjust in contrast to your selections. Middle bar has option to edit text. Four footer widget ready areas. Upper right corner logo can be uploaded and set to circular or square. Phone number and email plus facebook and twitter options editor. Two menus. Top bar menu does not allow drop downs. Theme not responsive but is fluid and optimized for most screens as well as print media. Must-read notes in readme file. Demo at http://themes.tradesouthwest.com/betilu/.
-Version: 1.8.2
+Version: 1.8.3
 Copyright: Larry Judd Oliver 2014
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -500,10 +500,8 @@ footer#colophon > div,
     float:         right;
 }
 #right-sidebar-absolute {
-    position:      relative;
-    top:           0;   
-    left:          2em; 
-    width:         298px;
+    margin-left:   1.215em;
+    width:         17.5em;
     margin-bottom: 1.5em; 
     border-top:    4px solid #d5e6e7;
     border-right:  4px solid #d5e6e7;
@@ -512,7 +510,7 @@ footer#colophon > div,
     box-shadow:    0 3px 7px rgba( 0, 0, 0, 0.7);
     padding:       5px 7px;
     background:    #fafafa;
-    display:       table-cell;
+    display:       inline-block;
 }
 #right-sidebar-breaker {
     display:       block;
