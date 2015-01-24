@@ -9,6 +9,7 @@ function wl_reset_general_setting()
 	$wl_theme_options['upload_image_logo']="";
 	$wl_theme_options['height']=55;
 	$wl_theme_options['width']=150;
+	$wl_theme_options['_frontpage'] ="on";
 	$wl_theme_options['upload_image_favicon']="";
 	$wl_theme_options['text_title']="on";
 	$wl_theme_options['custom_css']="";		

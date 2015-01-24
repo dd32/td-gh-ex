@@ -14,7 +14,7 @@ function weblizar_admin_menu_pannel() {
 function weblizar_admin_enqueue_script() {
 	
 	
-	wp_enqueue_script('bootjs', WL_TEMPLATE_DIR_URI .'/js/bootstrap.min.js');	
+	wp_enqueue_script('bootjs', WL_TEMPLATE_DIR_URI .'/js/bootstrap.js');	
 	wp_enqueue_script('weblizar-tab-js', WL_TEMPLATE_DIR_URI .'/core/theme-options/js/option-js.js',array('media-upload', 'jquery-ui-sortable'));	
 	
 	wp_enqueue_style('thickbox');

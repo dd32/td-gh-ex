@@ -14,7 +14,11 @@
 				if($_POST['text_title']){
 				echo $wl_theme_options['text_title']=sanitize_text_field($_POST['text_title']); } 
 				else
-				{ echo $wl_theme_options['text_title']="off"; } 
+				{ echo $wl_theme_options['text_title']="off"; }
+				if($_POST['_frontpage']){
+				echo $wl_theme_options['_frontpage']=sanitize_text_field($_POST['_frontpage']); } 
+				else
+				{ echo $wl_theme_options['_frontpage']="off"; }		
 					
 				update_option('enigma_options', stripslashes_deep($wl_theme_options));
 		}	

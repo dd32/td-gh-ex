@@ -29,6 +29,7 @@
 			'upload_image_logo'=>'',
 			'height'=>'55',
 			'width'=>'150',
+			'_frontpage' => 'on',
 			'text_title'=>'off',
 			'upload_image_favicon'=>'',			
 			'custom_css'=>'',

@@ -1,4 +1,7 @@
 <?php get_header();
+$wl_theme_options = weblizar_get_options();
+if ($wl_theme_options['_frontpage']=="on" && is_front_page() && 'posts' == get_option( 'show_on_front' )): get_template_part( 'frontpage' );
+else: 
 get_template_part('breadcrums'); ?>
 <div class="container">	
 	<div class="row enigma_blog_wrapper">
@@ -13,4 +16,5 @@ get_template_part('breadcrums'); ?>
 	<?php get_sidebar(); ?>
 	</div>	
 </div>
-<?php get_footer(); ?>
+<?php endif;
+get_footer(); ?>

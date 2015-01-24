@@ -57,6 +57,10 @@ $site ="http://www.weblizar.com" ;?>
 			</div>	
 		</div>	
 		<div class="section">
+			<h3><?php _e('Home-Page or Custom Page','weblizar'); ?></h3>
+			<input type="checkbox" <?php if($wl_theme_options['_frontpage']=='on') echo "checked='checked'"; ?> id="_frontpage" name="_frontpage" > <span class="explain"><?php _e('Enable Custom Static Front-Page.','weblizar');?> <a href="<?php echo home_url( '/' ); ?>wp-admin/options-reading.php"><?php _e('Click Here','weblizar');?></a>.</span>
+		</div>
+		<div class="section">
 			<h3><?php _e('Custom Logo','weblizar'); ?></h3>
 			<input class="weblizar_inpute" type="text" value="<?php if($wl_theme_options['upload_image_logo']!='') { echo esc_attr($wl_theme_options['upload_image_logo']); } ?>" id="upload_image_logo" name="upload_image_logo" size="36" class="upload has-file"/>
 			<input type="button" id="upload_button" value="Custom Logo" class="upload_image_button" />

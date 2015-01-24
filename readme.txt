@@ -5,6 +5,11 @@ Consider weblizar PRE-Fix for function-name and as a slug of the Theme Enigma.
 Enigma
 
 CHANGE-LOG:
+@Version: 1.8[24/01/2015]
+1. Custom Static Front-Page.
+2.
+
+
 @Version: 1.7.2[21/01/2015]
 1. Unminified JS.
 
