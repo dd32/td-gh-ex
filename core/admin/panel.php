@@ -25,13 +25,31 @@
 		switch ( $element['type'] ) { 
 		
 			case 'navigation': ?>
-				
-				<div class="header">
-                    <h2 class="maintitle settings"> <?php _e( 'General Settings',"diarjolite"); ?> </h2> 
-                    <div class="right">
-                        <h2 class="maintitle"> <?php echo diarjolite_theme_data('Name') . " " . diarjolite_theme_data('Version');  ?> </h2>
+
+                <div class="banner">
+
+                    <h2> <?php echo diarjolite_theme_data('Name') . " " . diarjolite_theme_data('Version');  ?> </h2>
+    
+                    <h1> <?php _e( 'To Activate All Features, Please Upgrade to Premium version!','diarjolite'); ?> </h1>
+                    
+                    <div class="big-button"> 
+                    
+                        <a href="<?php echo esc_url('https://www.themeinprogress.com/diarjo-free-creative-minimal-wordpress-theme/?ref=panel'); ?>" target="_blank">
+                            <?php _e( 'GET PREMIUM VERSION','diarjolite'); ?>
+                        </a>
+                    
                     </div>
+                
+                </div>
+                
+				<div class="header">
+                    
+                    <h2 class="maintitle settings"> <?php _e( 'General Settings',"diarjolite"); ?> </h2> 
+                    
+                    <div class="right"> <h2 class="maintitle"> <?php echo diarjolite_theme_data('Name') . " " . diarjolite_theme_data('Version');  ?> </h2> </div>
+                    
                     <div class="clear"></div>
+                
                 </div>
                 
 				<?php diarjolite_message($panel); ?>
@@ -40,14 +58,17 @@
 
                 <ul>
     
-   				<?php 
-				
-   				foreach ($element['item'] as $option => $name ) {
-					if (str_replace(" ", "", $option) == $_GET['tab'] ) $class = "class='ui-state-active'"; else $class = ""; 
-					echo "<li ".$class."><a href='themes.php?page=diarjolite_option&tab=".str_replace(" ", "", $option)."'>".$name."</a></li>";
-				}
-				?>
-               		<li> <a href="<?php echo esc_url('themes.php?page=diarjolite_premium'); ?>"> <?php _e('Get premium version','diarjolite'); ?> </a> </li>
+					<?php 
+                    
+                        foreach ($element['item'] as $option => $name ) {
+                            
+                            if (str_replace(" ", "", $option) == $_GET['tab'] ) $class = "class='ui-state-active'"; else $class = ""; 
+                                
+                                echo "<li ".$class."><a href='themes.php?page=diarjolite_option&tab=".str_replace(" ", "", $option)."'>".$name."</a></li>";
+                            
+                        }
+                    
+                    ?>
               
                 </ul>
                

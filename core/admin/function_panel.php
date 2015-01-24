@@ -11,10 +11,10 @@
  */
 
 function diarjolite_add_menu() {
-	global $themename, $adminmenuname, $optionfile;
 	
+	global $themename, $adminmenuname, $optionfile;
 	add_theme_page(__('Diarjo Options', 'diarjolite' ), __('Diarjo Options', 'diarjolite' ), 'administrator',  'diarjolite_option', 'diarjolite_option');
-	add_theme_page(__('Get Premium', 'diarjolite' ), __('Get Premium', 'diarjolite' ), 'administrator',  'diarjolite_premium', 'diarjolite_premium');
+
 }
 
 add_action('admin_menu', 'diarjolite_add_menu'); 
@@ -105,16 +105,11 @@ function diarjolite_save_option ( $panel ) {
 			}
 		}
 }
+
 function diarjolite_message () {
 		global $message_action;
 		if (isset($message_action))
 		echo '<div id="message" class="updated fade message_save voobis_message"><p><strong>'.$message_action.'</strong></p></div>';
 	}
 
-function diarjolite_premium() {	?>
-
-	<a href="http://www.themeinprogress.com/diarjo/?ref=panel" target="_blank" >
-    	<img src="<?php echo get_template_directory_uri()."/core/admin/include/images/"; ?>diarjopremium.png" alt="Get Premium" style="margin:15px auto" />
-    </a>
-
-<?php } ?>
+?>

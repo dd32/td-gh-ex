@@ -11,9 +11,60 @@
   font-weight: 600;
   src: local('Source Sans Pro Semibold'), local('SourceSansPro-Semibold'), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v2/toadOcfmlt9b38dHJxOBGJ6-ys_j0H4QL65VLqzI3wI.woff) format('woff');
 }
+
 .postformat {
 	display:none;
 }
+
+.banner {
+	background:#333;
+	width:94%;
+	padding:50px 2%;
+	text-align:center; 
+	margin-top:25px;
+	color:#fff;
+}
+
+.banner h1 {
+	font-size:21px;
+}
+
+.banner h2 {
+	color:#fff;
+	font-size:18px;
+}
+
+.big-button {
+	margin:50px auto 0 auto;
+}
+
+.big-button a {
+	
+	background: #ff6644;
+	border:solid 2px #ff6644;
+	color:#fff;
+	text-decoration:none;
+	padding: 14px;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	text-align: center;
+	position: relative;
+	margin:50px auto;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	width:198px;
+
+}
+
+.big-button a:hover {
+	background: none;
+	border:solid 2px #fff;
+}
+
 .header {
 	background: #f1f1f1;
 	color:#616161;

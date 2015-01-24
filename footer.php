@@ -21,13 +21,23 @@
                 <div class="copyright">
 
                     <p>
-                        <?php if (diarjolite_setting('diarjolite_copyright_text')): ?>
-                           <?php echo stripslashes(diarjolite_setting('diarjolite_copyright_text')); ?>
-                        <?php else: ?>
-                          <?php _e('Copyright','diarjolite'); ?> <?php echo get_bloginfo("name"); ?> <?php echo date("Y"); ?> 
-                        <?php endif; ?> 
-                        | <?php _e('Theme by','diarjolite'); ?> <a href="<?php echo esc_url('http://www.themeinprogress.com/'); ?>" target="_blank">Theme in Progress</a> |
-                        <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'diarjolite' ) ); ?>" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'diarjolite' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'diarjolite' ), 'WordPress' ); ?></a>
+                        
+						<?php 
+						
+							if (diarjolite_setting('diarjolite_copyright_text')):
+							
+								echo stripslashes(diarjolite_setting('diarjolite_copyright_text')) . " | ";
+								
+							else: 
+							
+								echo __('Copyright','diarjolite') . ' ' . get_bloginfo("name") . ' ' . date("Y") . " | ";
+								echo __('Theme by','diarjolite').' <a href="'.esc_url('https://www.themeinprogress.com/').'" target="_blank">Theme in Progress</a> | ';
+                       
+							endif; 
+						
+						?> 
+                        
+                        	<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'diarjolite' ) ); ?>" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'diarjolite' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'diarjolite' ), 'WordPress' ); ?></a>
                     
                     </p>
 
