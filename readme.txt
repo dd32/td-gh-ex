@@ -49,6 +49,10 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 2.3.6 =
+* Bug fix for recent carousel, portfolio post.
+* Buf fix mobile changes at 992 not 993px
+
 = Version: 2.3.5 =
 * Add home page template.
 * Remove gallery metabox (moved to virtue plugin).
