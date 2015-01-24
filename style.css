@@ -1,0 +1,358 @@
+/*
+Theme Name: fCorpo
+Theme URI: http://tishonator.com/product/fcorpo
+Description: fCorpo is a Child Theme of fKidd Theme. It's suitable for Corporate, Business, Company, Startup website or blog. The theme is Fully Responsive, Built-in Slider, Multi-Level Drop-Down Custom Menu, Admin Panel Options, W3C Markup Validated, Search Engine Optimized, Multiple Browsers support (IE9, IE10, IE11, Chrome, Firefox, Safari, and Opera), Page navigation, Threaded Comments, FontAwesome Icons, Custom Post Formats, Translation Ready, and much more.
+Author: tishonator
+Author URI: http://www.tishonator.com
+Template: fkidd
+Version: 1.0.0
+Tags: gray, orange, red, white, light, two-columns, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+@import url('../fkidd/style.css');
+
+/* general styles */
+body {
+	font-family:"PT Sans",Arial,Helvetica,sans-serif;
+	font-size:13px;
+	color:#666666;
+}
+
+#body-content-wrapper-full {
+	background-color:#fcfcfc;
+	position:relative;
+	overflow:hidden;
+}
+
+button {
+	cursor:pointer;
+}
+
+a {
+	color:#c3512f;
+}
+
+a:hover {
+	color:#a81010;
+}
+
+h1, h2, h3, h4, h5, h6{
+	color:#222222;
+}
+
+h2 {
+	padding:5px 0 0 0;
+}
+
+
+#navmain li {
+	padding:0;
+}
+
+
+
+/* header */
+#header-main {
+	background-color:#ffffff;
+	z-index:5000;
+	color:#222222;
+	-webkit-box-shadow: 0 4px 2px -2px gray;
+	-moz-box-shadow: 0 4px 2px -2px gray;
+	box-shadow: 0 4px 2px -2px gray;
+	margin-left:0;
+	margin-right:0;
+}
+
+#header-main a {
+	color:#c3512f;
+}
+
+#header-main a:hover {
+	color:#a81010;
+}
+
+#navmain > div > ul > li > a {
+	color:#808080;
+}
+
+#footer-main {
+	clear:both;
+	background-color:#222222;
+	color:#dddddd;
+}
+
+#footer-main a {
+	color:#ffffff;
+}
+
+#footer-main a:hover {
+	color:#919191;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+textarea {
+	-webkit-border-radius:1px;
+	-moz-border-radius:1px;
+	-ms-border-radius:1px;
+	-o-border-radius:1px;
+	border-radius:1px;
+}
+
+input[type="submit"],
+button {
+	font-size:14px;
+}
+
+input[type="submit"],
+#container .button,
+button {
+	background-image: -ms-linear-gradient(top, #c3512f 0%, #a81010 100%);
+	background-image: -moz-linear-gradient(top, #c3512f 0%, #a81010 100%);
+	background-image: -o-linear-gradient(top, #c3512f 0%, #a81010 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #c3512f), color-stop(1, #a81010));
+	background-image: -webkit-linear-gradient(top, #c3512f 0%, #a81010 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#c3512f', endColorstr='#a81010');
+	background-image: linear-gradient(top, #c3512f 0%, #a81010 100%);
+	-webkit-border-radius:1px;
+	-moz-border-radius:1px;
+	-ms-border-radius:1px;
+	-o-border-radius:1px;
+	border-radius:1px;
+}
+
+input[type="submit"]:hover,
+#container .button:hover,
+button:hover {
+	background-image: -ms-linear-gradient(top, #a81010 0%, #c3512f 100%);
+	background-image: -moz-linear-gradient(top, #a81010 0%, #c3512f 100%);
+	background-image: -o-linear-gradient(top, #a81010 0%, #c3512f 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #a81010), color-stop(1, #c3512f));
+	background-image: -webkit-linear-gradient(top, #a81010 0%, #c3512f 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#a81010', endColorstr='#c3512f');
+	background-image: linear-gradient(top, #a81010 0%, #c3512f 100%);
+}
+
+.btn,
+.btn:hover {
+	background-image:none;
+	background:none;
+}
+
+.navigation .page-dots,
+.navigation .page-numbers {
+	-webkit-border-radius:1px;
+	-moz-border-radius:1px;
+	-ms-border-radius:1px;
+	-o-border-radius:1px;
+	border-radius:1px;
+}
+
+.navigation .current,
+.navigation .current:hover {
+	-webkit-border-radius:1px;
+	-moz-border-radius:1px;
+	-ms-border-radius:1px;
+	-o-border-radius:1px;
+	border-radius:1px;
+}
+
+/* search form */
+.search-wrapper {
+	-webkit-border-radius:1px;
+	-moz-border-radius:1px;
+	-ms-border-radius:1px;
+	-o-border-radius:1px;
+	border-radius:1px;
+}
+
+.search-wrapper .search-textbox {
+	-webkit-border-radius:1px;
+	-moz-border-radius:1px;
+	-ms-border-radius:1px;
+	-o-border-radius:1px;
+	border-radius:1px;
+}
+
+.search-wrapper  .search-button {
+	-webkit-border-radius:1px;
+	-moz-border-radius:1px;
+	-ms-border-radius:1px;
+	-o-border-radius:1px;
+	border-radius:1px;
+}
+
+.after-content {
+	clear:both;
+}
+
+.after-content,
+.custom-after-content,
+.page-after-content {
+	border-top:2px solid #555555;
+	margin-top:5px;
+}
+
+#page-header,
+#page-header h1 {
+	color:#333333;
+}
+
+#page-header a {
+	color:#999999;
+}
+
+#page-header a:hover {
+	color:#36b3b3;
+}
+
+.footer-title {
+	border-bottom:4px solid #cccccc;
+}
+
+/* Large Resolution */
+@media screen and (min-width: 800px) {
+	
+	#header-logo img {
+		margin-top:0;
+	}
+	
+	#navmain ul {
+		padding:0;
+	}
+
+
+	#navmain ul ul li:hover > a {
+		background-color:#f8f8f8;
+		color:#333333;
+	}
+	
+	#navmain ul ul ul,
+	#navmain ul ul  ul li:first-of-type,
+	#navmain ul ul ul li:first-of-type > a {
+		-webkit-border-top-left-radius:1px;
+		-moz-border-top-left-radius:1px;
+		border-top-left-radius:1px;
+		-webkit-border-top-right-radius:1px;
+		-moz-border-top-right-radius:1px;
+		border-top-right-radius:1px;
+	}
+	
+	#navmain ul ul,
+	#navmain ul ul li:last-of-type,
+	#navmain ul ul li:last-of-type > a {
+		-webkit-border-bottom-left-radius:1px;
+		-moz-border-bottom-left-radius:1px;
+		border-bottom-left-radius:1px;
+		-webkit-border-bottom-right-radius:1px;
+		-moz-border-bottom-right-radius:1px;
+		border-bottom-right-radius:1px;
+	}
+
+	#navmain ul ul {
+		color:#808080;
+		background-color:#ffffff;
+		border:1px solid rgba(0, 0, 0, 0.25);
+	}
+
+	
+	#navmain ul li:hover > a,
+	#navmain > div > ul > .current-menu-item > a,
+	#navmain > div > ul > .current-menu-ancestor > a,
+	#navmain > div > ul > li > a:hover {
+		padding-bottom:17px;
+		border-bottom:none;
+		color:#333333;
+	}
+	
+	#navmain > div > ul > li > a,
+	#navmain > div > ul > li > a:hover,
+	#navmain > div > ul > .current-menu-item > a,
+	#navmain > div > ul > .current-menu-ancestor > a {
+		-webkit-border-top-left-radius:0;
+		-moz-border-top-left-radius:0;
+		-ms-border-top-left-radius:0;
+		-o-border-top-left-radius:0;
+		border-top-left-radius:0;
+		-webkit-border-top-right-radius:0;
+		-moz-border-top-right-radius:0;
+		-ms-border-top-right-radius:0;
+		-o-border-top-right-radius:0;
+		border-top-right-radius:0;
+	}
+	
+	#navmain > div > ul > li > a {
+		text-transform:none;
+	}
+	
+	
+	#navmain ul ul a {
+		box-shadow:none;
+	}
+	
+	#navmain > div > ul > .current-menu-item > a, #navmain > div > ul > .current-menu-ancestor > a,
+	#navmain > div > ul > li > a:hover, .cart-contents-icon:hover, .search-form-icon:hover {
+		color:#333333;
+		border-bottom: 2px solid #a81010 !important;
+		padding-bottom: 15px !important;
+	}
+	
+	#navmain ul ul li:hover > a {
+		padding-bottom:9px;
+	}
+	
+	#navmain ul li:hover > a,
+	#navmain > div > ul > .current-menu-item > a,
+	#navmain > div > ul > .current-menu-ancestor > a {
+		background-color:#ffffff;
+	}
+}
+
+/* Medium Resolution */
+@media screen and (max-width: 799px) {
+	
+	#header-logo {
+		margin-top:5px;
+	}
+				
+	#navmain div > ul {
+		color:#808080 !important;
+		background-color: #ffffff;
+		-webkit-border-radius:1px;
+		-moz-border-radius:1px;
+		border-radius:1px;
+	}
+
+	#navmain ul a:hover {
+		color:#333333 !important;
+		background-color:#f8f8f8 !important;
+		border:none !important;
+		padding:10px 0 10px 10px !important;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+
+	#header-main{width:auto;}
+}
+
+.camera_wrap {
+	width: 100%;
+	height: 450px;
+}
+
+.camera_wrap .camera_pag .camera_pag_ul li {
+	margin: 10px 5px 0 5px;
+}
+
+.camera_wrap .camera_pag .camera_pag_ul li {
+	margin: 5px 5px 0 5px;
+}
+
+.aligncenter,
+.alignnone,
+.page-after-content {
+	clear:both;
+}
