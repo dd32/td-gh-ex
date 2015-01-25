@@ -254,14 +254,8 @@ function alhenalite_request($id) {
 
 function alhenalite_theme_data($id) {
 	
-	 global $wp_version;	
-	 if ( $wp_version <= 3.4 ) :
-	 	$themedata = get_theme_data( get_template_directory(). '/style.css');
-		return $themedata[$id];
-	 else:
-		$themedata = wp_get_theme();
-		return $themedata->get($id);
-	 endif;
+	$themedata = wp_get_theme();
+	return $themedata->get($id);
 	
 }
 
