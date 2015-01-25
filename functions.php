@@ -5,7 +5,7 @@
  * @package Generate
  */
 	
-define( 'GENERATE_VERSION', '1.2.6');
+define( 'GENERATE_VERSION', '1.2.7');
 define( 'GENERATE_URI', get_template_directory_uri() );
 define( 'GENERATE_DIR', get_template_directory() );
 
@@ -64,9 +64,8 @@ function generate_setup() {
 	
 	/**
 	 * Enable support for <title> tag
-	 * Removed for now - causing double title
 	 */
-	//add_theme_support( 'title-tag' );
+	add_theme_support( 'title-tag' );
 	
 	/**
 	 * Set the content width based on the theme's design and stylesheet.
@@ -242,7 +241,7 @@ function generate_scripts() {
 		wp_enqueue_style( 'generate-child', get_stylesheet_uri(), true, filemtime( get_stylesheet_directory() . '/style.css' ), 'all' );
 	endif;
 	wp_enqueue_style( 'superfish', get_template_directory_uri() . '/css/superfish.css', false, GENERATE_VERSION, 'all' );
-	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
+	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css', false, '4.2.0', 'all' );
 
 	// Generate scripts
 	wp_enqueue_script( 'generate-navigation', get_template_directory_uri() . '/js/navigation.js', array(), GENERATE_VERSION, true );

@@ -10,6 +10,15 @@ Changelog Legend:
 
 ----
 
+() - 1.2.7
+[+] Font fallback set - use generate_fallback_font filter to change it
+[x] Remove filter dealing with wp_title
+[+] Re-add theme support for title-tag
+[*] Mobile menu handling improved
+[+] Added fallback fonts
+
+----
+
 (1/23/2015) - 1.2.6
 [!] Fix bug affecting mobile menu when superfish is disabled
 [!] Fix bug affecting mobile dropdowns when no menu is set

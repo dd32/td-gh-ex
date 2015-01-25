@@ -1,9 +1,3 @@
-/* Small menu */
-.menu-toggle {
-	display: none;
-	cursor: pointer;
-}
-
 @media screen and (max-width: 768px) {
 
 	/* GeneratePress specific */
@@ -108,6 +102,13 @@
 	.main-navigation li.search-item.current-menu-item {
 		position: relative !important;
 		right: auto;
+	}
+	
+	.post-image-aligned-left .post-image,
+	.post-image-aligned-right .post-image {
+		float: none;
+		margin: 2em 0;
+		text-align: center;
 	}
 	
 	/* Unsemantic Framework*/

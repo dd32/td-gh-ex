@@ -752,6 +752,14 @@ add_action('customize_controls_print_styles', 'generate_customize_preview_css');
 function generate_customize_preview_css() {
 	?>
 	<style>
+		#accordion-section-layout_section .accordion-section-content .customize-control {
+			border-bottom: 1px solid #eee;
+			padding-bottom: 10px;
+		}
+		#accordion-section-layout_section .accordion-section-content .customize-control:last-child {
+			border-bottom: 0;
+			padding-bottom: 0;
+		}
 		#customize-control-blogname,
 		#customize-control-blogdescription {
 			margin-bottom: 0;

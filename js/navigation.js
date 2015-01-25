@@ -30,20 +30,20 @@
 	};
 } )();
 
-jQuery(document).ready(function($) {
+jQuery(window).load(function($) {
    
-	var resizeTimer, sf, body, breakpoint = 768;
-	body = jQuery('body');
+	var resizeTimer, sf, mobile;
     sf = jQuery('ul.sf-menu');
+	mobile = jQuery( '.menu-toggle' );
 	
 	// Build a function that disables and enables superfish when needed
 	function generateResizeNavigation() {
-        if( body.width() >= breakpoint && !sf.hasClass('sf-js-enabled') ) {
+        if( ! mobile.is( ':visible' ) && !sf.hasClass('sf-js-enabled') ) {
 			if (typeof jQuery.fn.superfish !== 'undefined' && jQuery.isFunction(jQuery.fn.superfish)) {
 				// you only want SuperFish to be re-enabled once (sf.hasClass)
 				sf.superfish('init');
 			}
-        } else if ( body.width() < breakpoint ) {
+        } else if ( mobile.is( ':visible' ) ) {
 			if (typeof jQuery.fn.superfish !== 'undefined' && jQuery.isFunction(jQuery.fn.superfish)) {
 				// smaller screen, disable SuperFish
 				sf.superfish('destroy');
@@ -57,11 +57,11 @@ jQuery(document).ready(function($) {
 	// When we resize the browser, check to see which dropdown type we should use
     jQuery(window).resize(function() {
         clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(generateResizeNavigation, 250);
+        resizeTimer = setTimeout(generateResizeNavigation, 150);
     });
 	
 	// Check to see which dropdown type we should use
-	if ( body.width() <= breakpoint ) {
+	if ( mobile.is( ':visible' ) ) {
 		generateResizeNavigation();
 	}
 	

@@ -75,20 +75,35 @@ if ( !function_exists('generate_get_default_fonts') && !function_exists('generat
 			generate_get_default_fonts() 
 		);
 		
+		
+		// Calculate the sub navigation font size based on the navigation font size
 		if ( $generate_settings['navigation_font_size'] >= 17 ) :
 			$subnav_font_size = $generate_settings['navigation_font_size'] - 3;
 		else :
 			$subnav_font_size = $generate_settings['navigation_font_size'] - 2;
 		endif;
 		
+		// Set a fallback for the fonts
+		$fallback = apply_filters( 'generate_fallback_font','sans-serif' );
+		
+		// Create all of our font family entries
+		$body_family = ( 'inherit' == $generate_settings['font_body'] ) ? current(explode(':', $generate_settings['font_body'])) : current(explode(':', $generate_settings['font_body'])) . ' ,' . $fallback;
+		$site_title_family = ( 'inherit' == $generate_settings['font_site_title'] ) ? current(explode(':', $generate_settings['font_site_title'])) : current(explode(':', $generate_settings['font_site_title'])) . ' ,' . $fallback;
+		$site_tagline_family = ( 'inherit' == $generate_settings['font_site_tagline'] ) ? current(explode(':', $generate_settings['font_site_tagline'])) : current(explode(':', $generate_settings['font_site_tagline'])) . ' ,' . $fallback;
+		$navigation_family = ( 'inherit' == $generate_settings['font_navigation'] ) ? current(explode(':', $generate_settings['font_navigation'])) : current(explode(':', $generate_settings['font_navigation'])) . ' ,' . $fallback;
+		$widget_family = ( 'inherit' == $generate_settings['font_widget_title'] ) ? current(explode(':', $generate_settings['font_widget_title'])) : current(explode(':', $generate_settings['font_widget_title'])) . ' ,' . $fallback;
+		$h1_family = ( 'inherit' == $generate_settings['font_heading_1'] ) ? current(explode(':', $generate_settings['font_heading_1'])) : current(explode(':', $generate_settings['font_heading_1'])) . ' ,' . $fallback;
+		$h2_family = ( 'inherit' == $generate_settings['font_heading_2'] ) ? current(explode(':', $generate_settings['font_heading_2'])) : current(explode(':', $generate_settings['font_heading_2'])) . ' ,' . $fallback;
+		$h3_family = ( 'inherit' == $generate_settings['font_heading_3'] ) ? current(explode(':', $generate_settings['font_heading_3'])) : current(explode(':', $generate_settings['font_heading_3'])) . ' ,' . $fallback;
+		
 		$space = ' ';
 		
 		// Start the magic
 		$visual_css = array (
 		
-			// Main title font
+			// Body font
 			'body, button, input, select, textarea' => array(
-				'font-family' => current(explode(':', $generate_settings['font_body'])),
+				'font-family' => $body_family,
 				'font-weight' => $generate_settings['body_font_weight'],
 				'text-transform' => $generate_settings['body_font_transform'],
 				'font-size' => $generate_settings['body_font_size'] . 'px'
@@ -96,7 +111,7 @@ if ( !function_exists('generate_get_default_fonts') && !function_exists('generat
 			
 			// Main title font
 			'.main-title' => array(
-				'font-family' => current(explode(':', $generate_settings['font_site_title'])),
+				'font-family' => $site_title_family,
 				'font-weight' => $generate_settings['site_title_font_weight'],
 				'text-transform' => $generate_settings['site_title_font_transform'],
 				'font-size' => $generate_settings['site_title_font_size'] . 'px'
@@ -104,7 +119,7 @@ if ( !function_exists('generate_get_default_fonts') && !function_exists('generat
 			
 			// Main tagline font
 			'.site-description' => array(
-				'font-family' => current(explode(':', $generate_settings['font_site_tagline'])),
+				'font-family' => $site_tagline_family,
 				'font-weight' => $generate_settings['site_tagline_font_weight'],
 				'text-transform' => $generate_settings['site_tagline_font_transform'],
 				'font-size' => $generate_settings['site_tagline_font_size'] . 'px'
@@ -112,7 +127,7 @@ if ( !function_exists('generate_get_default_fonts') && !function_exists('generat
 			
 			// Navigation font
 			'.main-navigation a, .menu-toggle' => array(
-				'font-family' => current(explode(':', $generate_settings['font_navigation'])),
+				'font-family' => $navigation_family,
 				'font-weight' => $generate_settings['navigation_font_weight'],
 				'text-transform' => $generate_settings['navigation_font_transform'],
 				'font-size' => $generate_settings['navigation_font_size'] . 'px'
@@ -124,7 +139,7 @@ if ( !function_exists('generate_get_default_fonts') && !function_exists('generat
 			
 			// Widget title font
 			'.widget-title' => array(
-				'font-family' => current(explode(':', $generate_settings['font_widget_title'])),
+				'font-family' => $widget_family,
 				'font-weight' => $generate_settings['widget_title_font_weight'],
 				'text-transform' => $generate_settings['widget_title_font_transform'],
 				'font-size' => $generate_settings['widget_title_font_size'] . 'px'
@@ -132,7 +147,7 @@ if ( !function_exists('generate_get_default_fonts') && !function_exists('generat
 			
 			// Heading 1 font
 			'h1' => array(
-				'font-family' => current(explode(':', $generate_settings['font_heading_1'])),
+				'font-family' => $h1_family,
 				'font-weight' => $generate_settings['heading_1_weight'],
 				'text-transform' => $generate_settings['heading_1_transform'],
 				'font-size' => $generate_settings['heading_1_font_size'] . 'px'
@@ -140,7 +155,7 @@ if ( !function_exists('generate_get_default_fonts') && !function_exists('generat
 			
 			// Heading 2 font
 			'h2' => array(
-				'font-family' => current(explode(':', $generate_settings['font_heading_2'])),
+				'font-family' => $h2_family,
 				'font-weight' => $generate_settings['heading_2_weight'],
 				'text-transform' => $generate_settings['heading_2_transform'],
 				'font-size' => $generate_settings['heading_2_font_size'] . 'px'
@@ -148,19 +163,11 @@ if ( !function_exists('generate_get_default_fonts') && !function_exists('generat
 			
 			// Heading 3 font
 			'h3' => array(
-				'font-family' => current(explode(':', $generate_settings['font_heading_3'])),
+				'font-family' => $h3_family,
 				'font-weight' => $generate_settings['heading_3_weight'],
 				'text-transform' => $generate_settings['heading_3_transform'],
 				'font-size' => $generate_settings['heading_3_font_size'] . 'px'
-			),
-			
-			// Heading 1 font
-			'h4' => array(
-				'font-family' => current(explode(':', $generate_settings['font_heading_4'])),
-				'font-weight' => $generate_settings['heading_4_weight'],
-				'text-transform' => $generate_settings['heading_4_transform'],
-				'font-size' => $generate_settings['heading_4_font_size'] . 'px'
-			),
+			)
 			
 		);
 		
@@ -264,7 +271,7 @@ endif;
 if ( ! function_exists( 'generate_fonts_customize_register' ) ) :
 	add_action( 'customize_register', 'generate_default_fonts_customize_register' );
 	function generate_default_fonts_customize_register( $wp_customize ) {
-			
+
 		require_once get_template_directory() . '/inc/addons/typography/get-fonts.php';
 		require_once get_template_directory() . '/inc/addons/typography/google-font-dropdown-custom-control.php';
 
