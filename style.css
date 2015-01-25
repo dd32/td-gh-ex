@@ -4,7 +4,7 @@ Theme URI: http://catchthemes.com/themes/gridalicious
 Author: Catch Themes
 Author URI: http://catchthemes.com/
 Description: Gridalicious is a Simple, Clean, Grid Base Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and WordPress Theme Customizer for real time customization. This theme is translation ready. Check out Theme Instructions at http://catchthemes.com/theme-instructions/gridalicious/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/gridalicious/
-Version: 0.1
+Version: 0.2
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: gridalicious
@@ -309,9 +309,10 @@ big {
 	line-height: 30px;
 }
 
+#breadcrumb-list .wrapper,
 .entry-meta,
 .site-description {
-	font-size:  13px;
+	font-size: 13px;
 }
 
 .widget_calendar #wp-calendar caption {
@@ -425,17 +426,25 @@ blockquote:before {
 }
 
 .entry-content ol, 
-.entry-content ul {
+.entry-content ul,
+.sidebar ol,
+.sidebar ul,
+#supplementary ol,
+#supplementary ul {
     margin-bottom: 20px;
-    margin-left: 20px;
+    margin-left: 15px;
 }
 
-.entry-content ol > li {
+.entry-content ol > li,
+.sidebar ol > li,
+#supplementary ol > li {
 	list-style-type: decimal;
 }
 
-.entry-content ul > li {
-    list-style-type: square;
+.entry-content ul > li,
+.sidebar ul > li,
+#supplementary ul > li {
+    list-style-type: disc;
 }
 
 .entry-content ol ol,
@@ -703,6 +712,10 @@ input[type="search"] {
 
 .page-header .page-title {
     padding-bottom: 10px;
+}
+
+#breadcrumb-list .wrapper {
+    padding-left: 35px;
 }
 
 .logo-left #site-header {
@@ -1132,19 +1145,16 @@ textarea {
 }
 
 .nav-secondary .menu .sub-menu a,
-.nav-secondary .menu .children a {
+.nav-secondary .menu .children a,
+.nav-secondary .menu .sub-menu .sub-menu,
+.nav-secondary .menu .children .children {
 	background-color: #333;
-	border-color: #f9f9f9;
+	border-color: #444;
 }
 
 .nav-secondary .menu .sub-menu .sub-menu,
 .nav-secondary .menu .children .children  {
     margin: -45px 0 0 249px;	
-}
-
-.nav-secondary .menu .sub-menu a,
-.nav-secondary .menu .sub-menu .sub-menu {
-    border-color: #444;
 }
 
 /* Seconday & Footer Menu */
@@ -1194,13 +1204,17 @@ textarea {
 	float: right;
 }
 
+#nav-below a:hover {
+	text-decoration: none;
+}
+
 #nav-below .wp-pagenavi a, 
 #nav-below .wp-pagenavi span,
 .page-links span {
 	border: none;
 	float: left;
 	height: 28px;
-	color: #000;
+	color: #21759b;
 	text-align: center;
 	display: block;
 	padding: 0 10px;
@@ -1243,26 +1257,23 @@ textarea {
 
 #nav-below .wp-pagenavi a:hover,
 #nav-below #wp_page_numbers ul li a:hover {
-	background-color: #000;
+	background-color: #222;
 	color: #fff;
 }
 
-#nav-below .wp-pagenavi span.current{
-	background-color: #000;
+#nav-below .wp-pagenavi span.current {
+	background-color: #222;
 	color: #fff;
 	font-weight: normal;
 }
 
 /* Jetpack Infinite Scroll */
 #infinite-handle span {
-    background-color: #666;
+    background-color: #f2f2f2;
     border-radius: 3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px; 
-    -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-	-moz-box-shadow: 	0 2px 6px rgba(0, 0, 0, 0.5);	
-	box-shadow: 		0 2px 6px rgba(0, 0, 0, 0.5);	
-    color: #eee;
+    color: #21759b;
     cursor: pointer;
     display: block;
     padding: 10px 0;
@@ -1271,7 +1282,7 @@ textarea {
 }
 
 #infinite-handle span:hover {
-	background-color: #000;
+	background-color: #222;
     color: #fff;	
     text-decoration: none;
 }
@@ -2014,10 +2025,6 @@ caption {
     color: #ddd;
 }
 
-#supplementary .widget ul {
-    list-style: outside none disc;
-}
-
 #site-generator {
     background-color: #222;
     color: #aaa;
@@ -2072,25 +2079,17 @@ caption {
 }
 
 /* Gridalicious breadcrumb */
-#breadcrumb-list {
-}
-
 #breadcrumb-list .wrapper {
-    padding: 20px 40px 0;
-}
-
-.home #breadcrumb-list .wrapper {
-	padding-bottom: 20px;
+    background-color: #f2f2f2;
+    font-size: 13px;
 }
 
 #breadcrumb-list span {
 	background-color: transparent;
-	border: 1px solid #eee;
     color: #666;
 	display: block;
    	float: left;
-   	font-style: italic;
-   	margin-left: -1px;   
+   	font-style: italic; 
 }
 
 #breadcrumb-list span.sep {
@@ -2104,7 +2103,7 @@ caption {
 #breadcrumb-list a span {
 	color: #21759b;
 	display: block;
-	padding: 5px 10px 3px; 
+	padding: 7px 5px 5px; 
 }
 
 #breadcrumb-list a:hover,
@@ -2114,8 +2113,7 @@ caption {
 }
 
 #breadcrumb-list .breadcrumb-current {
-	background-color: #f2f2f2;
-	padding: 5px 10px 3px; 
+	padding: 7px 5px 5px; 
 }
 
 /* Social Icons */
@@ -2138,7 +2136,7 @@ caption {
 }
 
 .site .widget_gridalicious_social_icons .genericon:before {
-	font-size: 22px;
+	font-size: 20px;
 }
 
 .site .widget_gridalicious_social_icons .genericon:hover {

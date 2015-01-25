@@ -7,7 +7,7 @@
  * @since Gridalicious 0.1 
  */
 
-if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
+if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 	header( 'Status: 403 Forbidden' );
 	header( 'HTTP/1.1 403 Forbidden' );
 	exit();
@@ -29,13 +29,13 @@ function gridalicious_get_default_theme_options() {
 		'move_title_tagline'								=> 0,
 		
 		//Layout
-		'theme_layout' 										=> 'three-columns',
-		'content_layout'									=> 'excerpt-featured-image',
-		'single_post_image_layout'							=> 'disabled',
+		'theme_layout' 										=> 'right-sidebar',
+		'content_layout'									=> 'excerpt-image-left',
+		'single_post_image_layout'							=> 'featured',
 		
 		//Header Image
 		'enable_featured_header_image'						=> 'disabled',
-		'featured_image_size'								=> 'full',
+		'featured_image_size'								=> 'featured-header',
 		'featured_header_image_url'							=> '',
 		'featured_header_image_alt'							=> '',
 		'featured_header_image_base'						=> 0,
@@ -74,7 +74,7 @@ function gridalicious_get_default_theme_options() {
 		
 		//Featured Content Options
 		'featured_content_option'							=> 'homepage',
-		'featured_content_layout'							=> 'layout-four',
+		'featured_content_layout'							=> 'layout-three',
 		//move_posts_home replaced with featured_content_position from version 1.1
 		'move_posts_home'									=> 0,
 		'featured_content_position'							=> 0,
@@ -132,10 +132,6 @@ function gridalicious_layouts() {
 			'value' => 'right-sidebar',
 			'label' => __( 'Content, Primary Sidebar', 'gridalicious' ),
 		),
-		'three-columns'	=> array(
-			'value' => 'three-columns',
-			'label' => __( 'Three Columns ( Secondary Sidebar, Content, Primary Sidebar )', 'gridalicious' ),
-		),
 		'no-sidebar'	=> array(
 			'value' => 'no-sidebar',
 			'label' => __( 'No Sidebar ( Content Width )', 'gridalicious' ),
@@ -152,9 +148,9 @@ function gridalicious_layouts() {
  */
 function gridalicious_get_archive_content_layout() {
 	$layout_options = array(
-		'excerpt-featured-image' => array(
-			'value' => 'excerpt-featured-image',
-			'label' => __( 'Show Excerpt', 'gridalicious' ),
+		'excerpt-image-left' => array(
+			'value' => 'excerpt-image-left',
+			'label' => __( 'Show Excerpt (Image Left)', 'gridalicious' ),
 		),		
 		'full-content' => array(
 			'value' => 'full-content',
@@ -210,17 +206,17 @@ function gridalicious_enable_featured_header_image_options() {
  */
 function gridalicious_featured_image_size_options() {
 	$featured_image_size_options = array(
-		'full' 		=> array(
-			'value'	=> 'full',
-			'label' => __( 'Full Image', 'gridalicious' ),
+		'featured-header' => array(
+			'value' => 'featured-header',
+			'label' => __( 'Featured Header Size', 'gridalicious' ),
 		),
-		'large' 	=> array(
-			'value' => 'large',
-			'label' => __( 'Large Image', 'gridalicious' ),
+		'featured' => array(
+			'value' => 'featured',
+			'label' => __( 'Featured Size', 'gridalicious' ),
 		),
-		'grid-content'		=> array(
-			'value' => 'grid-content',
-			'label' => __( 'Grid Content Image', 'gridalicious' ),
+		'full-size' => array(
+			'value' => 'full-size',
+			'label' => __( 'Full Size', 'gridalicious' ),
 		),
 	);
 
@@ -353,22 +349,14 @@ function gridalicious_get_pagination_types() {
  */
 function gridalicious_single_post_image_layout_options() {
 	$single_post_image_layout_options = array(
-		'large' => array(
-			'value' => 'large',
-			'label' => __( 'Large', 'gridalicious' ),
-		),
-		'medium' => array(
-			'value' => 'medium',
-			'label' => __( 'Medium', 'gridalicious' ),
+		'featured' => array(
+			'value' => 'featured',
+			'label' => __( 'Featured', 'gridalicious' ),
 		),
 		'full-size' => array(
 			'value' => 'full-size',
-			'label' => __( 'Full size', 'gridalicious' ),
+			'label' => __( 'Full Size', 'gridalicious' ),
 		),
-		'grid-content-image-size' => array(
-			'value' => 'grid-content-image-size',
-			'label' => __( 'Grid Content Image Size', 'gridalicious' ),
-		),		
 		'disabled' => array(
 			'value' => 'disabled',
 			'label' => __( 'Disabled', 'gridalicious' ),
@@ -440,11 +428,6 @@ function gridalicious_metabox_layouts() {
 			'value' => 'right-sidebar',
 			'label' => __( 'Content, Primary Sidebar', 'gridalicious' ),
 		),
-		'three-columns'	=> array(
-			'id' 	=> 'gridalicious-layout-option',
-			'value' => 'three-columns',
-			'label' => __( 'Three Columns ( Secondary Sidebar, Content, Primary Sidebar )', 'gridalicious' ),
-		),
 		'no-sidebar'	=> array(
 			'id' 	=> 'gridalicious-layout-option',
 			'value' => 'no-sidebar',
@@ -501,12 +484,7 @@ function gridalicious_metabox_featured_image_options() {
 		'full' => array(
 			'id' => 'gridalicious-featured-image',
 			'value' => 'full',
-			'label' => __( 'Full Image', 'gridalicious' )
-		),
-		'grid-content' => array(
-			'id' => 'gridalicious-featured-image',
-			'value' => 'grid-content',
-			'label' => __( 'Grid Content Image', 'gridalicious' )
+			'label' => __( 'Full Size', 'gridalicious' )
 		),
 		'disable' => array(
 			'id' => 'gridalicious-featured-image',

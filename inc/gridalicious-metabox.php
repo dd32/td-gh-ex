@@ -10,7 +10,7 @@
  * @since Gridalicious 0.1 
  */
  
- if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
+ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 	header( 'Status: 403 Forbidden' );
 	header( 'HTTP/1.1 403 Forbidden' );
 	exit();

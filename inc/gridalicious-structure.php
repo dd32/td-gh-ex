@@ -7,7 +7,7 @@
  * @since Gridalicious 0.1 
  */
 
-if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
+if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 	header( 'Status: 403 Forbidden' );
 	header( 'HTTP/1.1 403 Forbidden' );
 	exit();
@@ -190,60 +190,6 @@ if ( ! function_exists( 'gridalicious_sidebar_secondary' ) ) :
 		get_sidebar( 'secondary' );
 	}
 endif;
-
-
-if ( ! function_exists( 'gridalicious_layout_condition_check' ) ) :
-	/**
-	 * Layout Optons Condition Check and Hook
-	 *
-	 * @since Gridalicious 0.1
-	 */
-	function gridalicious_layout_condition_check() {
-		global $post, $wp_query;
-
-		$options = gridalicious_get_theme_options();
-		
-		$themeoption_layout = $options['theme_layout'];
-		
-		// Front page displays in Reading Settings
-		$page_on_front = get_option('page_on_front') ;
-		$page_for_posts = get_option('page_for_posts'); 
-
-		// Get Page ID outside Loop
-		$page_id = $wp_query->get_queried_object_id();	
-		
-		// Post /Page /General Layout
-		if ( $post) {
-			if ( is_attachment() ) { 
-				$parent = $post->post_parent;
-				$layout = get_post_meta( $parent, 'gridalicious-layout-option', true );
-				$sidebaroptions = get_post_meta( $parent, 'gridalicious-sidebar-options', true );
-				
-			} else {
-				$layout = get_post_meta( $post->ID, 'gridalicious-layout-option', true ); 
-				$sidebaroptions = get_post_meta( $post->ID, 'gridalicious-sidebar-options', true ); 
-			}
-		}
-		else {
-			$sidebaroptions = '';
-		}
-				
-		if( empty( $layout ) || ( !is_page() && !is_single() ) ) {
-			$layout='default';
-		}
-		
-		if ( $layout == 'three-columns' || ( $layout=='default' && ( $themeoption_layout == 'three-columns' ) ) ){
-			add_action( 'gridalicious_content', 'gridalicious_content_sidebar_wrap_start', 40 );
-
-			add_action( 'gridalicious_after_content', 'gridalicious_content_sidebar_wrap_end', 10 );
-			
-			add_action( 'gridalicious_after_content', 'gridalicious_sidebar_secondary', 20 );
-
-			
-		}
-	} // gridalicious_layout_condition_check
-endif;
-add_action( 'gridalicious_before', 'gridalicious_layout_condition_check' ); 
 
 
 if ( ! function_exists( 'gridalicious_footer_content_start' ) ) :

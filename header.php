@@ -74,7 +74,6 @@
      *
      *  @hooked gridalicious_content_start - 10
      *  @hooked gridalicious_add_breadcrumb - 20
-     *  @hooked gridalicious_sidebar_secondary (three-columns-secondary-sidebar-first) - 30
      *  @hooked gridalicious_content_sidebar_wrap_start - 40
      *
      */

@@ -12,8 +12,6 @@
     /** 
      * gridalicious_after_content hook
      *
-     * @hooked gridalicious_content_sidebar_wrap_end - 10
-     * @hooked gridalicious_sidebar_secondary (three-column) - 20 
      * @hooked gridalicious_content_end - 30
      * @hooked gridalicious_featured_content_display (move featured content below homepage posts) - 40 
      *

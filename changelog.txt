@@ -1,4 +1,15 @@
 == Change log ==
+= 0.2 =
+* Bug Fixed: classes for excerpt and content fixed in content.php
+* Bug Fixed: missing breadcrumb separator in category
+* Bug Fixed: Dark color scheme css
+* Initial Release in Catchthemes.com
+* Removed unnecessary options from Default Layout and Archive Content Layout
+* Removed unnecessary secondary sidebar
+* Removed unnecessary mobile menu script
+* Renamed CATCHBASE_* to GRIDALICIOUS_*
+* Updated image sizes
+* Updated options for Single page/post image layout
 
 = 0.1 =
 * Submitted to WordPress.org

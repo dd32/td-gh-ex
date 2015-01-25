@@ -6,7 +6,7 @@
  * @subpackage Gridalicious
  * @since Gridalicious 0.1 
  */
-if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
+if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 	header( 'Status: 403 Forbidden' );
 	header( 'HTTP/1.1 403 Forbidden' );
 	exit();
@@ -334,7 +334,6 @@ if ( ! function_exists( 'gridalicious_featured_page_post_image' ) ) :
 	 * @since Gridalicious 0.1
 	 */
 	function gridalicious_featured_page_post_image() {
-		echo 'hi';
 		global $post;
 
 		if( has_post_thumbnail( ) ) {
@@ -374,14 +373,14 @@ if ( ! function_exists( 'gridalicious_featured_page_post_image' ) ) :
 			
 			$featured_image_size	= $options['featured_image_size'];
 		
-			if ( 'grid-content' ==  $featured_image_size ) {
-				$feat_image = get_the_post_thumbnail( $post->ID, 'gridalicious-grid-content', array('id' => 'main-feat-img'));
+			if ( 'featured-header' ==  $featured_image_size ) {
+				$feat_image = get_the_post_thumbnail( $post->ID, 'gridalicious-featured-header', array('id' => 'main-feat-img'));
 			}
-			else if ( 'full' ==  $featured_image_size ) {
-				$feat_image = get_the_post_thumbnail( $post->ID, 'full', array('id' => 'main-feat-img'));
+			else if ( 'featured' ==  $featured_image_size ) {
+				$feat_image = get_the_post_thumbnail( $post->ID, 'gridalicious-featured', array('id' => 'main-feat-img'));
 			}
 			else {
-				$feat_image = get_the_post_thumbnail( $post->ID, 'gridalicious-large', array('id' => 'main-feat-img'));
+				$feat_image = get_the_post_thumbnail( $post->ID, 'gridalicious-featured-grid', array('id' => 'main-feat-img'));
 			}
 			
 			$gridalicious_featured_image = '<div id="header-featured-image" class =' . $featured_image_size . '>';
@@ -483,7 +482,7 @@ if ( ! function_exists( 'gridalicious_featured_image_display' ) ) :
 	 * @since Gridalicious 0.1
 	 */
 	function gridalicious_featured_image_display() {
-		add_action( 'gridalicious_after_header', 'gridalicious_featured_overall_image', 40 );	
+		add_action( 'gridalicious_after_header', 'gridalicious_featured_overall_image', 10 );
 	} // gridalicious_featured_image_display
 endif;
 add_action( 'gridalicious_before', 'gridalicious_featured_image_display' ); 

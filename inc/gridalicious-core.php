@@ -14,7 +14,7 @@
  * @since Gridalicious 0.1 
  */
 
-if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
+if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 	header( 'Status: 403 Forbidden' );
 	header( 'HTTP/1.1 403 Forbidden' );
 	exit();
@@ -62,7 +62,7 @@ if ( ! function_exists( 'gridalicious_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
-		 // Add Gridalicious custom image sizes uses Ratio 16:9
+		// Add Gridalicious custom image sizes uses Ratio 16:9
         add_image_size( 'gridalicious-featured', 780, 439, true);
         // Used for Featured Grid Content - 1st Image
         add_image_size( 'gridalicious-featured-grid', 800, 450, true);
@@ -990,40 +990,8 @@ if ( ! function_exists( 'gridalicious_body_classes' ) ) :
 				$classes[] = 'two-columns content-left';
 			break;
 			
-			case 'three-columns':
-				$classes[] = 'three-columns';
-			break;
-			
-			case 'three-columns-secondary-sidebar-first':
-				$classes[] = 'three-columns secondary-first';
-			break;
-			
-			case 'three-columns-equal-sidebars':
-				$classes[] = 'three-columns equal-sidebars';
-			break;
-			
-			case 'three-columns-equal-columns':
-				$classes[] = 'three-columns equal-columns';
-			break;
-			
-			case 'three-columns-content-left':
-				$classes[] = 'three-columns content-left';
-			break;
-			
-			case 'three-columns-content-right':
-				$classes[] = 'three-columns content-right';
-			break;
-			
 			case 'no-sidebar':
 				$classes[] = 'no-sidebar content-width';
-			break;
-			
-			case 'no-sidebar-one-column':
-				$classes[] = 'no-sidebar one-column';
-			break;
-			
-			case 'no-sidebar-full-width':
-				$classes[] = 'no-sidebar full-width';
 			break;
 		}
 
@@ -1065,6 +1033,29 @@ endif; //gridalicious_body_classes
 add_filter( 'body_class', 'gridalicious_body_classes' );
 
 
+if ( ! function_exists( 'gridalicious_post_classes' ) ) :
+	/**
+	 * Adds Gridalicious post classes to the array of post classes.
+	 * used for supporting different content layouts
+	 *
+	 * @since Gridalicious 1.0
+	 */
+	function gridalicious_post_classes( $classes ) {
+		//Getting Ready to load data from Theme Options Panel
+		$options 		= gridalicious_get_theme_options();
+	
+		$contentlayout = $options['content_layout'];
+
+		if ( is_archive() || is_home() ) {
+			$classes[] = $contentlayout;
+		}
+
+		return $classes;
+	}
+endif; //gridalicious_post_classes
+add_filter( 'post_class', 'gridalicious_post_classes' );
+
+
 if ( ! function_exists( 'gridalicious_responsive' ) ) :
 	/**
 	 * Responsive Layout
@@ -1100,12 +1091,12 @@ if ( ! function_exists( 'gridalicious_archive_content_image' ) ) :
 		
 		$featured_image = $options['content_layout'];
 			
-		if ( has_post_thumbnail() && 'excerpt-featured-image' == $featured_image ) {
+		if ( has_post_thumbnail() && 'excerpt-image-left' == $featured_image ) {
 		?>
 			<figure class="featured-image <?php echo $featured_image; ?>">
 	            <a rel="bookmark" href="<?php the_permalink(); ?>">
 	                <?php 
-	                	the_post_thumbnail( 'gridalicious-featured' );		                
+						the_post_thumbnail( 'gridalicious-featured-content' );		                
 					?>
 				</a>
 	        </figure>
@@ -1166,16 +1157,10 @@ if ( ! function_exists( 'gridalicious_single_content_image' ) ) :
 			?>
 			<figure class="featured-image <?php echo $class; ?>">
                 <?php 
-				if ( $individual_featured_image == 'large' || ( $individual_featured_image=='default' && $featured_image == 'large' ) ) {
-                     the_post_thumbnail( 'gridalicious-large' );
+				if ( $individual_featured_image == 'featured' || ( $individual_featured_image=='default' && $featured_image == 'featured' ) ) {
+                     the_post_thumbnail( 'gridalicious-featured' );
                 }
-                elseif ( $individual_featured_image == 'medium' || ( $individual_featured_image=='default' && $featured_image == 'medium' ) ) {
-					the_post_thumbnail( 'gridalicious-medium' );
-				}	
-				elseif ( $individual_featured_image == 'grid-content-image-size' || ( $individual_featured_image=='default' && $featured_image == 'grid-content-image-size' ) ) {
-					the_post_thumbnail( 'gridalicious-featured-grid' );
-				}
-				else {
+                else {
 					the_post_thumbnail( 'full' );
 				} ?>
 	        </figure>

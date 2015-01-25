@@ -12,8 +12,8 @@
  */
 
 //define theme version
-if ( !defined( 'CATCHBASE_THEME_VERSION' ) )
-define ( 'CATCHBASE_THEME_VERSION', '1.0' );
+if ( !defined( 'GRIDALICIOUS_THEME_VERSION' ) )
+define ( 'GRIDALICIOUS_THEME_VERSION', '1.0' );
 
 /**
  * Implement the core functions

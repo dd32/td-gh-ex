@@ -7,7 +7,7 @@
  * @since Gridalicious 0.1 
  */
 
-if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
+if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 	header( 'Status: 403 Forbidden' );
 	header( 'HTTP/1.1 403 Forbidden' );
 	exit();
@@ -49,7 +49,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 
 	$wp_customize->add_control( 'gridalicious_theme_options[featured_image_size]', array(
 			'choices'  	=> $choices,
-			'label'		=> __( 'Page/Post Featured Image Size', 'gridalicious' ),
+			'label'		=> __( 'Page/Post Featured Header Image Size', 'gridalicious' ),
 			'section'   => 'header_image',
 			'settings'  => 'gridalicious_theme_options[featured_image_size]',
 			'type'	  	=> 'select',

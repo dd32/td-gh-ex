@@ -356,10 +356,6 @@ Responsive Style
 		padding-top: 15px;
 	}	
 
-	#breadcrumb-list .wrapper {
-	    padding: 15px 30px 0;
-	}
-
 	.gridalicious-nav-menu a, 
 	.sidebar-header-right .widget_nav_menu a {
 	    padding: 10px 15px;
@@ -367,6 +363,20 @@ Responsive Style
 
 	#site-generator .wrapper {
 	    padding: 0 10px;
+	}
+
+	#breadcrumb-list .wrapper {
+	    padding-left: 25px;
+	}
+
+	p,
+	.entry-content ol, 
+	.entry-content ul,
+	.sidebar ol,
+	.sidebar ul,
+	#supplementary ol,
+	#supplementary ul {
+		margin-bottom: 15px;
 	}
 
 	#main {
@@ -516,19 +526,29 @@ Responsive Style
 
 	.hentry,
 	.widget {
-		margin: 0 0 1em;
+		margin: 0 0 10px;
 	}
 
 	#featured-content .entry-container {
 		margin-top: 10px;
 	}
 
+	#breadcrumb-list .wrapper {
+	    padding-left: 15px;
+	}
+
 	h1, h2, h3, h4, h5, h6 {
 		margin-bottom: 5px;
 	}
 
-	p {
-	    margin-bottom: 10px;
+	p,
+	.entry-content ol, 
+	.entry-content ul,
+	.sidebar ol,
+	.sidebar ul,
+	#supplementary ol,
+	#supplementary ul {
+		margin-bottom: 10px;
 	}
 
 	.hentry .featured-image {
@@ -1085,7 +1105,9 @@ Responsive Style
 		padding-top: 0;
 	}
 
-	.entry-meta, .site-description {
+	#breadcrumb-list .wrapper,
+	.entry-meta, 
+	.site-description {
 	    font-size: 12px;
 	}
 
