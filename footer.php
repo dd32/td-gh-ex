@@ -32,8 +32,8 @@
 							<?php _e('Copyright', 'mwsmall'); ?> &copy; <?php echo date("Y") ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> <?php _e('All Rights Reserved.', 'mwsmall'); ?>
 						</div>
 						<div class="f_right col-lg-6 col-md-6 col-sm-6">
-							<?php _e( 'Proudly powered by', 'mwsmall' ); ?> <a href="http://wordpress.org/" rel="generator" target="_blank">WordPress</a> 
-							<?php _e( 'Theme by', 'mwsmall' ); ?> <a target="_blank" href="http://www.mwthemes.net">MW Themes</a>
+							<?php _e( 'Proudly powered by', 'mwsmall' ); ?> <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'mwsmall' ) ); ?>" rel="generator" target="_blank">WordPress</a> 
+							<?php _e( 'Theme by', 'mwsmall' ); ?> <a target="_blank" href="<?php echo esc_url( __( 'http://www.mwthemes.net', 'mwsmall' ) ); ?>">MW Themes</a>
 						</div>
 					</div>
 				</div>

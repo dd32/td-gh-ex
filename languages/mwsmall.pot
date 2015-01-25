@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: mwsmall1.0.4\n"
-"POT-Creation-Date: 2015-01-21 19:49+0100\n"
-"PO-Revision-Date: 2015-01-21 19:49+0100\n"
+"POT-Creation-Date: 2015-01-25 20:08+0100\n"
+"PO-Revision-Date: 2015-01-25 20:08+0100\n"
 "Last-Translator: MW Themes <info@mwthemes.net>\n"
 "Language-Team: MW Themes <info@mwthemes.net>\n"
 "Language: en\n"
@@ -145,8 +145,16 @@ msgstr ""
 msgid "Proudly powered by"
 msgstr ""
 
+#: ../footer.php:35
+msgid "http://wordpress.org/"
+msgstr ""
+
 #: ../footer.php:36
 msgid "Theme by"
+msgstr ""
+
+#: ../footer.php:36
+msgid "http://www.mwthemes.net"
 msgstr ""
 
 #: ../functions.php:42

@@ -27,7 +27,7 @@
 					<?php 
 						$customize_logo = get_theme_mod('logo_mwsmall');
 						if ( get_theme_mod('logo_mwsmall')) { ?>
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $customize_logo; ?>" alt="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>"></a>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo esc_url($customize_logo); ?>" alt="<?php echo esc_attr( get_bloginfo('name', 'display') ); ?>"></a>
 						
 					<?php					
 					} else { ?>
@@ -72,7 +72,7 @@
 			</div>
 			
 		</header><!-- #masthead -->
-		
+
 		<?php if ( get_header_image() ) : ?>
 		<div class="mw_header_image">
 			<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="<?php echo get_bloginfo('name'); ?>" />

@@ -4,7 +4,7 @@ Theme URI: http://mwthemes.net/portfolio/mw-small-blog-responsive-theme/
 Author: MWThemes
 Author URI: http://mwthemes.net
 Description: MW Small is a minimalistic responsive and customizable WordPress theme, built with Twitter Bootstrap 3.0. Support WordPress post formats: Image, Gallery, Video,  Status, Quote, Audio and Link. Easily customized from the theme customizer. Demo: http://demo.mwthemes.net/mw-small/
-Version: 1.0.5
+Version: 1.0.6
 Tags:  custom-header, white, blue, custom-background, custom-menu,  featured-images, flexible-header, light, post-formats, translation-ready
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -496,7 +496,7 @@ hr {
 .mw-go-top {
     background-color: #3E4A57;
 	border: 1px solid #0099CC;
-    bottom: 20px;
+    bottom: 40px;
     color: #DDDDDD;
 	cursor: pointer;
 	display: none;
@@ -806,6 +806,7 @@ article {
     font-style: normal;
     height: 100%;
 	line-height: 20px;
+	max-width: 170px;
     padding: 15px 10px 0;
     text-align: center;
     text-transform: capitalize;
@@ -817,6 +818,14 @@ article {
     line-height: 30px;
 }
 
+.entry-time span.month {
+    padding-left: 3px;
+}
+
+.entry-time span.year {
+    padding-right: 3px;
+}
+
 .mw-date-format {
     display: block;
     margin-top: 15px;
@@ -825,7 +834,7 @@ article {
 .entry-title {
     clear: none;
     float: left;
-	margin: 5px 5px 0 13px;
+	margin: 5px 2px 0 8px;
     padding: 0;
 }
 
@@ -836,8 +845,11 @@ article {
 }
 .post-icon {
     background-color: #0099CC;
+	bottom: 0;
     float: right;
     height: 80px;
+    position: absolute;
+    right: 0;
     width: 80px;
 }
 
@@ -852,6 +864,10 @@ article {
     margin: 15px;
     text-align: center;
     width: 50px;
+}
+
+.format-gallery .flex-direction-nav a {
+    top: 33%;
 }
 
 .entry-header .post-icon i {
@@ -1418,12 +1434,22 @@ embed, iframe, object, video {
     width: 100%;
 }
 
+@media (min-width: 768px) and (max-width: 979px) {
+	.entry-time {
+		max-width: 130px;
+		padding: 10px 7px 0;
+	}
+}
+
 @media only screen and (max-width: 768px) {
 	.mw-date-format {
 		margin-top: 8px;
 	}
 	.entry-time {
-		width: 80px;
+		max-width: 130px;
+		padding: 10px 7px 0;
+	}
+	.entry-time span.day {
 		padding-top: 5px;
 	}
 	.entry-title {
@@ -1445,6 +1471,9 @@ embed, iframe, object, video {
 	}
 	.hentry.format-link .entry-content {
 		margin-right: 90px;
+	}	
+	.format-gallery .flex-direction-nav a {
+		opacity: .5;
 	}
 	.footer_info .f_left,
 	.footer_info .f_right {
@@ -1472,6 +1501,9 @@ embed, iframe, object, video {
 	}
 	.hentry.format-link .entry-content {
 		margin-right: 90px;
+	}
+	.format-gallery .flex-direction-nav a {
+		top: 25%;
 	}
 	.footer_info .f_left,
 	.footer_info .f_right {
