@@ -15,7 +15,7 @@ function optionsframework_option_name() {
 	$optionsframework_settings = get_option('optionsframework');
 	$optionsframework_settings['id'] = $themename;
 
-	// echo $themename;
+	return $themename;
 }
 
 /**
@@ -50,7 +50,7 @@ function optionsframework_options() {
         <li>2-4 Columns Widgetized Footer Sidebar</li>
         </ul>','beyondmagazine').'
         <p>
-        <a rel="nofollow" href="'.esc_url( __( 'http://www.ketchupthemes.com/beyond-magazine/').'" style="background:red; padding:10px 20px; color:#ffffff; margin-top:10px; text-decoration:none;">'.__('Update to Premium','beyondmagazine').'</a></p>'),
+        <a rel="nofollow" href="'.esc_url("http://www.ketchupthemes.com/beyond-magazine/").'" style="background:red; padding:10px 20px; color:#ffffff; margin-top:10px; text-decoration:none;">'.__('Update to Premium','beyondmagazine').'</a></p>'),
         'type' => 'info');  
 
 	$options[] = array(
@@ -60,7 +60,7 @@ function optionsframework_options() {
 		'type' => 'upload');
     
     $options[] = array(
-        'name' => __('Choose Post Layout)', 'options_check'),
+        'name' => __('Choose Post Layout)', 'beyondmagazine'),
         'desc' => __('Choose two column or three column for posts layout.', 'beyondmagazine'),
         'id' => 'post_layout',
         'std' => 'two_col',
