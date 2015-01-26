@@ -49,6 +49,11 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 2.3.7 =
+* added text domain to style.css file.
+* added unmified scripts.
+* added get_footer action hook.
+
 = Version: 2.3.6 =
 * Bug fix for recent carousel, portfolio post.
 * Buf fix mobile changes at 992 not 993px
