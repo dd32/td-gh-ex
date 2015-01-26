@@ -103,3 +103,6 @@ Screenshot images are licensed under Creative Commons Deed CC0.
 * Change get_stylesheet_directory_uri() to get_template_directory_uri() for sticky-nav.js
 * Add style for quote and chat post format
 * Fix author website link
+
+== 1.25 ==
+* Removed newsletter form on options page

@@ -329,12 +329,6 @@ function optionscheck_display_sidebar() { ?>
 					<a title="Iografica Themes" href="http://www.iograficathemes.com" target="_blank">
                     <span class="website"><?php echo __('Website', "base"); ?></span>
                     </a>
-					<p><?php echo __('Sign up to our newsletter and get a discount coupon.',  "base"); ?></p>
-                    <div id="mc_embed_signup">
-					<form action="//iografica.us2.list-manage.com/subscribe/post?u=14e09f1fb92769d69dfd5ea17&amp;id=5fd8564ba4" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-					<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-    				<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-					</form>
                 </div>
     </div>
 <?php }
