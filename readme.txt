@@ -64,6 +64,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.1.2 =
+* Spanish language file added. Thanks to Mr. David Cantón for providing the language files.
+* Updated previous language files to add missed strings.
+
 = Version 1.1.1 =
 * Brazilian Portuguese language file added. Thanks to Mr. Fernando Sedrez for providing the language files.
 * POT language file updated to include missing strings.

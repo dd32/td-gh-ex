@@ -3,114 +3,20 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Radiate\n"
-"POT-Creation-Date: 2014-11-18 19:04-0300\n"
-"PO-Revision-Date: 2014-11-18 19:21-0300\n"
-"Last-Translator: Fernando Sedrez <fernando@fms.eti.br>\n"
+"POT-Creation-Date: 2015-01-26 16:52+0545\n"
+"PO-Revision-Date: 2015-01-26 16:52+0545\n"
+"Last-Translator: ThemeGrill <themegrill@gmail.com>\n"
 "Language-Team: fms.eti.br <fernando@fms.eti.br>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
-"X-Poedit-KeywordsList: __;_e;esc_attr_x;_x;_nx;_ex\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr_x:1,2c;_x;_n:1,2;_ex:1,2c\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
-
-#: ../sidebar.php:19 ../archive.php:65
-msgid "Archives"
-msgstr "Arquivos"
-
-#: ../sidebar.php:26
-msgid "Meta"
-msgstr "Meta"
-
-#: ../searchform.php:12
-msgid "Search for:"
-msgstr "Pesquisar por:"
-
-#: ../searchform.php:13
-msgid "Search &hellip;"
-msgstr "Pesquisa &hellip;"
-
-#: ../searchform.php:15
-msgid "Search"
-msgstr "Pesquisar"
-
-#: ../search.php:18
-#, php-format
-msgid "Search Results for: %s"
-msgstr "Resultados de pesquisa para: %s "
-
-#: ../content-single.php:24 ../content-page.php:20 ../content.php:29
-msgid "Pages:"
-msgstr "P&aacute;ginas:"
-
-#: ../content-single.php:34 ../content-single.php:44 ../content.php:40
-#: ../content.php:50
-msgid ", "
-msgstr ", "
-
-#: ../content-single.php:54 ../content.php:60
-msgid "Leave a comment"
-msgstr "Deixe um coment&aacute;rio"
-
-#: ../content-single.php:54 ../content.php:60
-msgid "1 Comment"
-msgstr "1 Coment&aacute;rio"
-
-#: ../content-single.php:54 ../content.php:60
-msgid "% Comments"
-msgstr "% Coment&aacute;rios"
-
-#: ../content-single.php:57 ../content-page.php:25 ../content.php:63
-msgid "Edit"
-msgstr "Editar"
-
-#: ../content-none.php:15
-msgid "Nothing Found"
-msgstr "Nada Encontrado"
-
-#: ../content-none.php:21
-#, php-format
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-"Pronto para publicar a sua primeira postagem? <a href=\"%1$s\">Come&ccedil;e "
-"aqui</a>."
-
-#: ../content-none.php:25
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr ""
-"Desculpe, mas nada foi encontrado nos termos da sua pesquisa. Por favor, "
-"tente novamente com algumas palavras chave diferentes."
-
-#: ../content-none.php:30
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
-msgstr ""
-"Parece que n&atilde;o podemos encontrar o que voc&ecirc; est&aacute; "
-"procurando. Talvez uma pesquisa possa ajudar."
-
-#: ../header.php:38
-msgid "Skip to content"
-msgstr "Pular para o conte&uacute;do"
-
-#: ../functions.php:48
-msgid "Primary Menu"
-msgstr "Menu principal"
-
-#: ../functions.php:71
-msgid "Sidebar"
-msgstr "Barra Lateral"
-
-#: ../front-page.php:34
-msgid "Read more"
-msgstr "Leia mais"
 
 #: ../404.php:17
 msgid "Oops! That page can&rsquo;t be found."
@@ -123,27 +29,6 @@ msgid ""
 msgstr ""
 "Parece que nada foi encontrado neste endere&ccedil;o. Tente pesquisar com "
 "algumas palavras chave."
-
-#: ../comments.php:32
-#, php-format
-msgid "One thought on &ldquo;%2$s&rdquo;"
-msgstr "Um pensamento sobre &ldquo;%2$s&rdquo;"
-
-#: ../comments.php:39 ../comments.php:57
-msgid "Comment navigation"
-msgstr "Navegar no Coment&aacute;rio"
-
-#: ../comments.php:40 ../comments.php:58
-msgid "&larr; Older Comments"
-msgstr "&larr; Coment&aacute;rios Mais Antigos"
-
-#: ../comments.php:41 ../comments.php:59
-msgid "Newer Comments &rarr;"
-msgstr "Coment&aacute;rios Mais Novos &rarr;"
-
-#: ../comments.php:69
-msgid "Comments are closed."
-msgstr "Coment&aacute;rios est&atilde;o desabilitados."
 
 #: ../archive.php:33
 #, php-format
@@ -185,6 +70,90 @@ msgstr "Cita&ccedil;&otilde;es"
 msgid "Links"
 msgstr "Links"
 
+#: ../archive.php:65 ../sidebar.php:19
+msgid "Archives"
+msgstr "Arquivos"
+
+#: ../comments.php:32
+#, php-format
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Um pensamento sobre &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s pensamentos sobre &ldquo;%2$s&rdquo;"
+
+#: ../comments.php:39 ../comments.php:57
+msgid "Comment navigation"
+msgstr "Navegar no Coment&aacute;rio"
+
+#: ../comments.php:40 ../comments.php:58
+msgid "&larr; Older Comments"
+msgstr "&larr; Coment&aacute;rios Mais Antigos"
+
+#: ../comments.php:41 ../comments.php:59
+msgid "Newer Comments &rarr;"
+msgstr "Coment&aacute;rios Mais Novos &rarr;"
+
+#: ../comments.php:69
+msgid "Comments are closed."
+msgstr "Coment&aacute;rios est&atilde;o desabilitados."
+
+#: ../content-none.php:15
+msgid "Nothing Found"
+msgstr "Nada Encontrado"
+
+#: ../content-none.php:21
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Pronto para publicar a sua primeira postagem? <a href=\"%1$s\">Come&ccedil;e "
+"aqui</a>."
+
+#: ../content-none.php:25
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Desculpe, mas nada foi encontrado nos termos da sua pesquisa. Por favor, "
+"tente novamente com algumas palavras chave diferentes."
+
+#: ../content-none.php:30
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Parece que n&atilde;o podemos encontrar o que voc&ecirc; est&aacute; "
+"procurando. Talvez uma pesquisa possa ajudar."
+
+#: ../content-page.php:20 ../content-single.php:24 ../content.php:29
+msgid "Pages:"
+msgstr "P&aacute;ginas:"
+
+#: ../content-page.php:25 ../content-single.php:57 ../content.php:63
+msgid "Edit"
+msgstr "Editar"
+
+#: ../content-single.php:34 ../content-single.php:44 ../content.php:40
+#: ../content.php:50
+msgid ", "
+msgstr ", "
+
+#: ../content-single.php:54 ../content.php:60
+msgid "Leave a comment"
+msgstr "Deixe um coment&aacute;rio"
+
+#: ../content-single.php:54 ../content.php:60
+msgid "1 Comment"
+msgstr "1 Coment&aacute;rio"
+
+#: ../content-single.php:54 ../content.php:60
+msgid "% Comments"
+msgstr "% Coment&aacute;rios"
+
+#: ../content.php:26
+msgid "Read more <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Leia mais <span class=\"meta-nav\">&rarr;</span>"
+
 #: ../footer.php:19
 msgid "Proudly  powered by "
 msgstr "Orgulhosamente desenvolvido por"
@@ -198,9 +167,25 @@ msgstr "WordPress"
 msgid "Theme: %1$s by %2$s."
 msgstr "Tema: %1$s por %2$s."
 
-#: ../content.php:26
-msgid "Read more <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Leia mais <span class=\"meta-nav\">&rarr;</span>"
+#: ../front-page.php:34
+msgid "Read more"
+msgstr "Leia mais"
+
+#: ../functions.php:48
+msgid "Primary Menu"
+msgstr "Menu principal"
+
+#: ../functions.php:71
+msgid "Sidebar"
+msgstr "Barra Lateral"
+
+#: ../header.php:38
+msgid "Skip to content"
+msgstr "Pular para o conte&uacute;do"
+
+#: ../inc/custom-header.php:41
+msgid "Header Image One"
+msgstr "Imagem um do cabe&ccedil;alho"
 
 #: ../inc/customizer.php:38
 msgid "Site Title"
@@ -235,6 +220,11 @@ msgstr "Segunda p&aacute;gina destacada"
 #: ../inc/customizer.php:152
 msgid "Third featured page"
 msgstr "Terceira p&aacute;gina destacada"
+
+#: ../inc/extras.php:82
+#, php-format
+msgid "Page %s"
+msgstr "P&aacute;agina %s"
 
 #: ../inc/template-tags.php:25
 msgid "Posts navigation"
@@ -290,11 +280,26 @@ msgstr "Seu coment&aacute;rio est&aacute; aguardando modera&ccedil;&atilde;o."
 msgid "Reply"
 msgstr "Responder"
 
-#: ../inc/custom-header.php:41
-msgid "Header Image One"
-msgstr "Imagem um do cabe&ccedil;alho"
-
-#: ../inc/extras.php:82
+#: ../search.php:18
 #, php-format
-msgid "Page %s"
-msgstr "P&aacute;agina %s"
+msgid "Search Results for: %s"
+msgstr "Resultados de pesquisa para: %s "
+
+#: ../searchform.php:12
+msgctxt "label"
+msgid "Search for:"
+msgstr "Pesquisar por:"
+
+#: ../searchform.php:13
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr "Pesquisa &hellip;"
+
+#: ../searchform.php:15
+msgctxt "submit button"
+msgid "Search"
+msgstr "Pesquisar"
+
+#: ../sidebar.php:26
+msgid "Meta"
+msgstr "Meta"

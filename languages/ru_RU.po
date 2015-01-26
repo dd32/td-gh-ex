@@ -3,20 +3,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Radiate\n"
-"POT-Creation-Date: 2014-02-23 22:55+0545\n"
-"PO-Revision-Date: 2014-06-22 14:53+0200\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2015-01-26 16:56+0545\n"
+"PO-Revision-Date: 2015-01-26 16:56+0545\n"
+"Last-Translator: ThemeGrill <themegrill@gmail.com>\n"
 "Language-Team: ThemeGrill <themegrill@gmail.com>\n"
+"Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.5\n"
-"X-Poedit-KeywordsList: __;_e;esc_attr_x;_x;_nx;_ex\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr_x:1,2c;_x;_n:1,2;_ex:1,2c\n"
 "X-Poedit-Basepath: .\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"Language: ru_RU\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:17
@@ -78,7 +77,9 @@ msgstr "Архивы"
 #: ../comments.php:32
 #, php-format
 msgid "One thought on &ldquo;%2$s&rdquo;"
-msgstr "Одна мысль о &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Одна мысль о &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s мысли о &ldquo;%2$s&rdquo;"
 
 #: ../comments.php:39 ../comments.php:57
 msgid "Comment navigation"
@@ -182,27 +183,6 @@ msgstr "Боковая панель"
 msgid "Skip to content"
 msgstr "Перейти к содержанию"
 
-#: ../search.php:18
-#, php-format
-msgid "Search Results for: %s"
-msgstr "Результаты поиска для: %s"
-
-#: ../searchform.php:12
-msgid "Search for:"
-msgstr "Искать в:"
-
-#: ../searchform.php:13
-msgid "Search &hellip;"
-msgstr "Найти"
-
-#: ../searchform.php:15
-msgid "Search"
-msgstr "Поиск"
-
-#: ../sidebar.php:26
-msgid "Meta"
-msgstr "Мета"
-
 #: ../inc/custom-header.php:41
 msgid "Header Image One"
 msgstr "Картинка шапки"
@@ -298,3 +278,27 @@ msgstr "Ваш комментарий ожидает модерации"
 #: ../inc/template-tags.php:115
 msgid "Reply"
 msgstr "Ответить"
+
+#: ../search.php:18
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Результаты поиска для: %s"
+
+#: ../searchform.php:12
+msgctxt "label"
+msgid "Search for:"
+msgstr "Искать в:"
+
+#: ../searchform.php:13
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr "Найти"
+
+#: ../searchform.php:15
+msgctxt "submit button"
+msgid "Search"
+msgstr "Поиск"
+
+#: ../sidebar.php:26
+msgid "Meta"
+msgstr "Мета"

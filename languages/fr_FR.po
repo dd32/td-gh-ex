@@ -3,16 +3,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Radiate\n"
-"POT-Creation-Date: 2014-02-23 22:55+0545\n"
-"PO-Revision-Date: 2014-03-20 15:55+0100\n"
-"Last-Translator: Et voilà le travail <bureau@etvoilaletravail.com>\n"
+"POT-Creation-Date: 2015-01-26 16:41+0545\n"
+"PO-Revision-Date: 2015-01-26 16:41+0545\n"
+"Last-Translator: ThemeGrill <themegrill@gmail.com>\n"
 "Language-Team: Wolforg <contact@wolforg.eu>\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.6.4\n"
-"X-Poedit-KeywordsList: __;_e;esc_attr_x;_x;_nx;_ex\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr_x:1,2c;_x;_n:1,2;_ex:1,2c\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -77,7 +77,9 @@ msgstr "Archives"
 #: ../comments.php:32
 #, php-format
 msgid "One thought on &ldquo;%2$s&rdquo;"
-msgstr "Une pensée sur &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Une pensée sur &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s pensées sur &ldquo;%2$s&rdquo;"
 
 #: ../comments.php:39 ../comments.php:57
 msgid "Comment navigation"
@@ -178,33 +180,6 @@ msgstr "Barre"
 msgid "Skip to content"
 msgstr "Aller au contenu"
 
-#: ../search.php:18
-#, php-format
-msgid "Search Results for: %s"
-msgstr "Résultats de recherche pour : %s"
-
-#: ../searchform.php:12
-msgid "Search for:"
-msgstr "Rechercher pour :"
-
-#: ../searchform.php:13
-msgctxt "placeholder"
-msgid "Search &hellip;"
-msgstr "Rechercher &hellip;"
-
-#: ../searchform.php:15
-msgctxt "submit button"
-msgid "Search"
-msgstr "Rechercher"
-
-#: ../searchform.php:15
-msgid "Search"
-msgstr "Rechercher"
-
-#: ../sidebar.php:26
-msgid "Meta"
-msgstr "Meta"
-
 #: ../inc/custom-header.php:41
 msgid "Header Image One"
 msgstr "Image En-tête 1"
@@ -299,3 +274,30 @@ msgstr "Votre commentaire est en attente de validation."
 #: ../inc/template-tags.php:115
 msgid "Reply"
 msgstr "Répondre"
+
+#: ../search.php:18
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Résultats de recherche pour : %s"
+
+#: ../searchform.php:12
+msgctxt "label"
+msgid "Search for:"
+msgstr "Rechercher pour :"
+
+#: ../searchform.php:13
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr "Rechercher &hellip;"
+
+#: ../searchform.php:15
+msgctxt "submit button"
+msgid "Search"
+msgstr "Rechercher"
+
+#: ../sidebar.php:26
+msgid "Meta"
+msgstr "Meta"
+
+#~ msgid "Search"
+#~ msgstr "Rechercher"
