@@ -46,6 +46,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.2.2 =
+* Brazilian Portuguese language file added. Thanks to Mr. Adriano Almeida for providing the language files.
+
 = Version 1.2.1 =
 * Slider text not aligning properly and moving to side of screen issue fixed for bigger devices.
 * add_theme_support('title_tag') added as per WordPress 4.1
