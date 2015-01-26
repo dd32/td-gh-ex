@@ -45,7 +45,7 @@ function unite_setup() {
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
-	/*
+	/**
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
@@ -73,6 +73,13 @@ function unite_setup() {
 	// Add WooCommerce support
 	add_theme_support( 'woocommerce' );
 
+	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
+	add_theme_support( 'title-tag' );
 }
 endif; // unite_setup
 add_action( 'after_setup_theme', 'unite_setup' );
@@ -90,33 +97,33 @@ function unite_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 	register_sidebar(array(
-    	'id' => 'home1',
-    	'name' => 'Homepage Widget 1',
-    	'description' => 'Used only on the homepage page template.',
-    	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    	'after_widget' => '</div>',
-    	'before_title' => '<h3 class="widgettitle">',
-    	'after_title' => '</h3>',
+			'id'            => 'home1',
+			'name'          => 'Homepage Widget 1',
+			'description'   => 'Used only on the homepage page template.',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widgettitle">',
+			'after_title'   => '</h3>',
     ));
 
     register_sidebar(array(
-      'id' => 'home2',
-      'name' => 'Homepage Widget 2',
-      'description' => 'Used only on the homepage page template.',
-      'before_widget' => '<div id="%1$s" class="widget %2$s">',
-      'after_widget' => '</div>',
-      'before_title' => '<h3 class="widgettitle">',
-      'after_title' => '</h3>',
+			'id'            => 'home2',
+			'name'          => 'Homepage Widget 2',
+			'description'   => 'Used only on the homepage page template.',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widgettitle">',
+			'after_title'   => '</h3>',
     ));
 
     register_sidebar(array(
-      'id' => 'home3',
-      'name' => 'Homepage Widget 3',
-      'description' => 'Used only on the homepage page template.',
-      'before_widget' => '<div id="%1$s" class="widget %2$s">',
-      'after_widget' => '</div>',
-      'before_title' => '<h3 class="widgettitle">',
-      'after_title' => '</h3>',
+			'id'            => 'home3',
+			'name'          => 'Homepage Widget 3',
+			'description'   => 'Used only on the homepage page template.',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widgettitle">',
+			'after_title'   => '</h3>',
     ));
 
     register_widget( 'unite_popular_posts_widget' );
@@ -131,9 +138,9 @@ include(get_template_directory() . "/inc/popular-posts-widget.php");
  */
 function unite_scripts() {
 
-  wp_enqueue_style( 'unite-bootstrap', get_template_directory_uri() . '/inc/css/bootstrap.min.css' );
+	wp_enqueue_style( 'unite-bootstrap', get_template_directory_uri() . '/inc/css/bootstrap.min.css' );
 
-  wp_enqueue_style( 'unite-icons', get_template_directory_uri().'/inc/css/font-awesome.min.css' );
+	wp_enqueue_style( 'unite-icons', get_template_directory_uri().'/inc/css/font-awesome.min.css' );
 
 	wp_enqueue_style( 'unite-style', get_stylesheet_uri() );
 
@@ -151,10 +158,10 @@ add_action( 'wp_enqueue_scripts', 'unite_scripts' );
  * Add HTML5 shiv and Respond.js for IE8 support of HTML5 elements and media queries
  */
 function unite_ie_support_header() {
-    echo '<!--[if lt IE 9]>'. "\n";
-    echo '<script src="' . esc_url( get_template_directory_uri() . '/inc/js/html5shiv.min.js' ) . '"></script>'. "\n";
-    echo '<script src="' . esc_url( get_template_directory_uri() . '/inc/js/respond.min.js' ) . '"></script>'. "\n";
-    echo '<![endif]-->'. "\n";
+	echo '<!--[if lt IE 9]>'. "\n";
+	echo '<script src="' . esc_url( get_template_directory_uri() . '/inc/js/html5shiv.min.js' ) . '"></script>'. "\n";
+	echo '<script src="' . esc_url( get_template_directory_uri() . '/inc/js/respond.min.js' ) . '"></script>'. "\n";
+	echo '<![endif]-->'. "\n";
 }
 add_action( 'wp_head', 'unite_ie_support_header', 1 );
 
