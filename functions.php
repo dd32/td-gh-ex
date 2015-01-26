@@ -55,6 +55,7 @@ function abaris_setup() {
 	// Add theme support for title tag
 	add_theme_support( 'title-tag' );
 
+	add_editor_style( 'css/editor-style.css' );
 }
 endif; // abaris_setup
 add_action( 'after_setup_theme', 'abaris_setup' );

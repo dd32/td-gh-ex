@@ -48,8 +48,16 @@ function abaris_register_required_plugins() {
             'slug'               => 'redux-framework', // The plugin slug (typically the folder name).
             'required'           => false, // If false, the plugin is only 'recommended' instead of required.
         ),
-
-
+        array(
+            'name'               => 'WP Product Review', // The plugin name.
+            'slug'               => 'wp-product-review', // The plugin slug (typically the folder name).
+            'required'           => false, // If false, the plugin is only 'recommended' instead of required.
+        ),
+        array(
+            'name'               => 'Revive Old Post (Former Tweet Old Post)', // The plugin name.
+            'slug'               => 'tweet-old-post', // The plugin slug (typically the folder name).
+            'required'           => false, // If false, the plugin is only 'recommended' instead of required.
+        ),
     );
 
     /**

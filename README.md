@@ -67,3 +67,7 @@ Version 1.1.3
 
 Version 1.1.4
 1. Added theme support for title tag
+
+Version 1.1.5
+1. Added theme support for editor style
+2. Added couple of plugin recommendations
