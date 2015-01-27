@@ -2,7 +2,7 @@
 
 	Theme Name: Rams
 	Theme URI: http://www.andersnoren.se/teman/rams-wordpress-theme/
-	Version: 1.09
+	Version: 1.10
 	Description: A clean, minimalist and responsive theme for bloggers. Features responsive and retina-ready design, support for the gallery, video and quote post formats, custom accent color support, Jetpack infinite scroll integration, editor styles and translation ready code. Included translation: Swedish/svenska.
 	Tags: gray, green, silver, white, light, one-column, two-columns, left-sidebar, fluid-layout, responsive-layout, custom-colors, custom-menu, editor-style, featured-images, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 	Author: Anders Norén
@@ -443,13 +443,15 @@ img#wpstats { display: none !important } /* silly wp stats */
 	color: #fff;
 }
 
-.post-quote blockquote {
-	font-size: 1.4em;
+.post-quote blockquote,
+.post-quote blockquote p {
+	font-size: 1.5rem;
 	font-weight: 700;
 	line-height: 150%;
 }
 
 .post-quote cite {
+	font-size: 1.1rem;
 	display: block;
 	margin-top: 30px;
 }
@@ -867,7 +869,10 @@ abbr, acronym { cursor: help; }
 .alignnone,
 .alignleft,
 .alignright,
-.aligncenter { display: block; }
+.aligncenter { 
+	display: block; 
+	max-width: 100%;
+}
 
 .post-content .alignleft,
 .post-content .alignright {
@@ -894,8 +899,8 @@ abbr, acronym { cursor: help; }
 	margin-left: 1.5em;
 }
 
-.post-content .aligncenter img,
-.post-content .alignnone img {
+.post-content .aligncenter,
+.post-content .aligncenter img {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -906,7 +911,7 @@ abbr, acronym { cursor: help; }
 	padding-top: 15px;
 	font-size: 18px;
 	font-style: italic;
-	color: #999;
+	color: #666;
 	text-align: center;
 }
 
@@ -1012,6 +1017,7 @@ abbr, acronym { cursor: help; }
 }
 
 .post-content input[type="text"],
+.post-content input[type="email"],
 .post-content input[type="tel"],
 .post-content input[type="url"],
 .post-content input[type="password"],
@@ -1040,6 +1046,7 @@ abbr, acronym { cursor: help; }
 }
 
 .post-content input[type="text"]:focus,
+.post-content input[type="email"]:focus,
 .post-content input[type="tel"]:focus,
 .post-content input[type="url"]:focus,
 .post-content input[type="password"]:focus,
@@ -1690,6 +1697,7 @@ li.comment { position: relative; }
 	.post-content h6 { font-size: 0.7em; }
 
 	.post-content input[type="text"],
+	.post-content input[type="email"],
 	.post-content input[type="tel"],
 	.post-content input[type="url"],
 	.post-content input[type="password"],
@@ -1770,7 +1778,8 @@ li.comment { position: relative; }
 	
 	/* post formats */
 	
-	.post-quote blockquote { font-size: 1.25em; }
+	.post-quote blockquote,
+	.post-quote blockquote p { font-size: 1.25rem; }
 
 	/* post content */
 	

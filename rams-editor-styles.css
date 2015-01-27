@@ -43,6 +43,8 @@ body#tinymce.wp-editor hr {
 	margin: 30px auto;
 }
 
+body#tinymce.wp-editor img.wp-more-tag { height: 16px; }
+
 
 /* Headlines --------------------------------------- */
 

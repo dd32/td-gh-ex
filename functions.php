@@ -13,7 +13,7 @@ function rams_setup() {
 	add_image_size( 'post-image', 800, 9999 );
 	
 	// Post formats
-	add_theme_support( 'post-formats', array( 'gallery', 'quote', 'video' ) );
+	add_theme_support( 'post-formats', array( 'gallery', 'quote' ) );
 		
 	// Jetpack infinite scroll
 	add_theme_support( 'infinite-scroll', array(
@@ -146,36 +146,6 @@ function rams_if_featured_image_class($classes) {
 }
 
 
-// Remove inline styling of attachment
-add_shortcode('wp_caption', 'rams_fixed_img_caption_shortcode');
-add_shortcode('caption', 'rams_fixed_img_caption_shortcode');
-
-function rams_fixed_img_caption_shortcode($attr, $content = null) {
-	if ( ! isset( $attr['caption'] ) ) {
-		if ( preg_match( '#((?:<a [^>]+>\s*)?<img [^>]+>(?:\s*</a>)?)(.*)#is', $content, $matches ) ) {
-			$content = $matches[1];
-			$attr['caption'] = trim( $matches[2] );
-		}
-	}
-	
-	$output = apply_filters('img_caption_shortcode', '', $attr, $content);
-	
-	if ( $output != '' ) return $output;
-	extract(shortcode_atts(array(
-		'id' => '',
-		'align' => 'alignnone',
-		'width' => '',
-		'caption' => ''
-	), $attr));
-	
-	if ( 1 > (int) $width || empty($caption) )
-	return $content;
-	if ( $id ) $id = 'id="' . esc_attr($id) . '" ';
-	return '<div ' . $id . 'class="wp-caption ' . esc_attr($align) . '" >' 
-	. do_shortcode( $content ) . '<p class="wp-caption-text">' . $caption . '</p></div>';
-}
-
-
 // Style the admin area
 function rams_custom_colors() { 
    echo '
@@ -216,6 +186,8 @@ function rams_flexslider($size) {
 			<ul class="slides">
 	
 				<?php foreach($images as $image) { 
+					
+					global $attachment_id;
 					
 					$default_attr = array(
 						'alt'   => trim(strip_tags( get_post_meta($attachment_id, '_wp_attachment_image_alt', true) )),
@@ -315,127 +287,6 @@ function rams_comment( $comment, $args, $depth ) {
 endif;
 
 
-// Add and save meta boxes for posts
-add_action( 'add_meta_boxes', 'cd_meta_box_add' );
-function cd_meta_box_add() {
-	add_meta_box( 'post-video-url', __('Video URL', 'rams'), 'cd_meta_box_video_url', 'post', 'side', 'high' );
-	add_meta_box( 'post-quote-content-box', __('Quote content', 'rams'), 'cd_meta_box_quote_content', 'post', 'normal', 'core' );
-	add_meta_box( 'post-quote-attribution-box', __('Quote attribution', 'rams'), 'cd_meta_box_quote_attribution', 'post', 'normal', 'core' );
-}
-
-function cd_meta_box_video_url( $post ) {
-	$values = get_post_custom( $post->ID );
-	$video_url = isset( $values['video_url'] ) ? esc_attr( $values['video_url'][0] ) : '';
-	wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
-	?>
-		<p>
-			<input type="text" class="widefat" name="video_url" id="video_url" value="<?php echo $video_url; ?>" />
-		</p>
-	<?php		
-}
-
-function cd_meta_box_quote_content( $post ) {
-	$values = get_post_custom( $post->ID );
-	$quote_content = isset( $values['quote_content'] ) ? esc_attr( $values['quote_content'][0] ) : '';
-	wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
-	?>
-		<p>
-			<textarea name="quote_content" id="quote_content" class="widefat" rows="5"><?php echo $quote_content; ?></textarea>
-		</p>
-	<?php		
-}
-
-function cd_meta_box_quote_attribution( $post ) {
-	$values = get_post_custom( $post->ID );
-	$quote_attribution = isset( $values['quote_attribution'] ) ? esc_attr( $values['quote_attribution'][0] ) : '';
-	wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
-	?>
-		<p>
-			<input name="quote_attribution" id="quote_attribution" class="widefat" value="<?php echo $quote_attribution; ?>" />
-		</p>
-	<?php		
-}
-
-add_action( 'save_post', 'cd_meta_box_save' );
-function cd_meta_box_save( $post_id ) {
-	// Bail if we're doing an auto save
-	if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
-	
-	// if our nonce isn't there, or we can't verify it, bail
-	if( !isset( $_POST['meta_box_nonce'] ) || !wp_verify_nonce( $_POST['meta_box_nonce'], 'my_meta_box_nonce' ) ) return;
-	
-	// if our current user can't edit this post, bail
-	if( !current_user_can( 'edit_post', $post_id ) ) return;
-	
-	// now we can actually save the data
-	$allowed = array( 
-		'a' => array( // on allow a tags
-			'href' => array() // and those anchords can only have href attribute
-		)
-	);
-	
-	// Probably a good idea to make sure the data is set		
-	if( isset( $_POST['video_url'] ) ) {
-		update_post_meta( $post_id, 'video_url', wp_kses( $_POST['video_url'], $allowed ) );
-	}
-	
-	if( isset( $_POST['quote_content'] ) ) {
-		update_post_meta( $post_id, 'quote_content', wp_kses( $_POST['quote_content'], $allowed ) );
-	}
-	
-	if( isset( $_POST['quote_attribution'] ) ) {
-		update_post_meta( $post_id, 'quote_attribution', wp_kses( $_POST['quote_attribution'], $allowed ) );
-	}
-
-}
-
-
-// Hide/show meta boxes depending on the post format selected
-function meta_box_post_format_toggle()
-{
-    wp_enqueue_script( 'jquery' );
-
-    $script = '
-    <script type="text/javascript">
-        jQuery( document ).ready( function($)
-            {
-            
-                $( "#post-video-url" ).hide();
-                $( "#post-quote-content-box" ).hide();
-                $( "#post-quote-attribution-box" ).hide();
-            	
-            	if($("#post-format-video").is(":checked"))
-	                $( "#post-video-url" ).show();
-                
-            	if($("#post-format-quote").is(":checked")) {
-	                $( "#post-quote-content-box" ).show();
-	                $( "#post-quote-attribution-box" ).show();
-				}
-                
-                $( "input[name=\"post_format\"]" ).change( function() {
-	                $( "#post-video-url" ).hide();
-	                $( "#post-quote-content-box" ).hide();
-	                $( "#post-quote-attribution-box" ).hide();
-                } );
-
-                $( "input#post-format-video" ).change( function() {
-                    $( "#post-video-url" ).show();
-				});
-				
-                $( "input#post-format-quote" ).change( function() {
-                    $( "#post-quote-content-box" ).show();
-                    $( "#post-quote-attribution-box" ).show();
-                });
-
-            }
-        );
-    </script>';
-
-    return print $script;
-}
-add_action( 'admin_footer', 'meta_box_post_format_toggle' );
-
-
 // Rams theme options
 class rams_Customize {
 
@@ -457,6 +308,7 @@ class rams_Customize {
             'default' => '#6AA897', //Default setting/value to save
             'type' => 'theme_mod', //Is this an 'option' or a 'theme_mod'?
             'transport' => 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+      		'sanitize_callback' => 'sanitize_hex_color'
          ) 
       );
       

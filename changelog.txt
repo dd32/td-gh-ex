@@ -1,6 +1,17 @@
 *** Rams changelog ***
 
 
+Version 1.10 (2015-01-27)
+-------------------------
+- Removed the video template file and format, and changed the display of the quote post format in order to be able to remove the meta fields from the theme
+- Removed the meta fields and associated functions from functions.php
+- Added sanitize callback to the custom accent color function
+- Removed the shortcode modifying the display of wp_caption
+- Updated the associated image alignment code in style.css
+- Fixed the height of the more tag in the theme editor styles
+- Added styling for the email input type
+
+
 Version 1.09 (2014-10-02)
 -------------------------
 - Added a missing function prefix to functions.php
