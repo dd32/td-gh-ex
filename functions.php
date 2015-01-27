@@ -35,6 +35,9 @@ function athenea_setup() {
 	) );
 	// Enable support for Post Formats.
 	//add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'audio', 'quote', 'link' ) );
+	
+	// Enable support for title-tag.
+	add_theme_support( 'title-tag' );
 
 	// Setup the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'athenea_custom_background_args', array(

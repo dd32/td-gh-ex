@@ -2,7 +2,7 @@
 
 Theme Name: Athenea
 Theme URI: http://www.ibermega.com/themes/athenea
-Version: 1.2.2
+Version: 1.2.3
 Requires at least: 3.0.1
 Tested up to: 4.1
 Author: Miguel Angel Rico
@@ -61,6 +61,9 @@ To view the tutorials for use http://www.ibermega.com/tutoriales/plantilla-athen
 
 
 == Changelog ==
+
+= 1.2.3 - 27.01.2015 =
+* Enable support for title-tag.
 
 = 1.2.2 - 20.12.2014 =
 * Title is added on the Continue button reading the loop.
