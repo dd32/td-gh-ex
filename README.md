@@ -71,3 +71,7 @@ Version 1.1.4
 Version 1.1.5
 1. Added theme support for editor style
 2. Added couple of plugin recommendations
+
+Version 1.1.6
+1. Menu Overlapping on Logo on Mobile View issue. Fixed.
+2. Validation issue. Fixed.

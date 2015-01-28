@@ -22,27 +22,27 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) :
     add_action( 'wp_head', 'abaris_render_title' );
 endif;
 ?>
-<?php if( isset( $abaris['ipad-icon-retina'] ) ) : ?>
+<?php if( isset( $abaris['ipad-icon-retina'] ) && $abaris['ipad-icon-retina']['url'] != '' ) : ?>
 	<!-- For third-generation iPad with high-resolution Retina display: -->
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo esc_url( $abaris['ipad-icon-retina']['url'] ); ?>">
 <?php endif; ?>
 
-<?php if( isset( $abaris['iphone-icon-retina'] ) ) : ?>
+<?php if( isset( $abaris['iphone-icon-retina'] ) && $abaris['iphone-icon-retina']['url'] != '' ) : ?>
 	<!-- For iPhone with high-resolution Retina display: -->
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo esc_url( $abaris['iphone-icon-retina']['url'] ); ?>">
 <?php endif; ?>
 
-<?php if( isset( $abaris['ipad-icon'] ) ) : ?>
+<?php if( isset( $abaris['ipad-icon'] ) && $abaris['ipad-icon']['url'] != '' ) : ?>
 	<!-- For first- and second-generation iPad: -->
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo esc_url( $abaris['ipad-icon']['url'] ); ?>">
 <?php endif; ?>
 
-<?php if( isset( $abaris['iphone-icon'] ) ) : ?>
+<?php if( isset( $abaris['iphone-icon'] ) && $abaris['iphone-icon']['url'] != '' ) : ?>
 	<!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
 	<link rel="apple-touch-icon-precomposed" href="<?php echo esc_url( $abaris['iphone-icon']['url'] ); ?>">
 <?php endif; ?>
 
-<?php if( isset( $abaris['favicon'] ) ) : ?>
+<?php if( isset( $abaris['favicon'] ) && $abaris['favicon']['url'] != '' ) : ?>
 	<link rel="icon" href="<?php echo esc_url( $abaris['favicon']['url'] ); ?>">
 <?php endif; ?>
 
