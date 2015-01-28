@@ -20,11 +20,11 @@
 
 		<?php elseif ( is_search() ) : ?>
         
-            <p><?php echo wp_kses_post( get_theme_mod( 'kra-website-nosearch-msg', 'Sorry, but nothing matched your search terms. Please try again with some different keywords.' ) ) ?></p>
+            <p><?php echo wp_kses_post( get_theme_mod( 'topshop-website-nosearch-msg', 'Sorry, but nothing matched your search terms. Please try again with some different keywords.' ) ) ?></p>
 
 		<?php else : ?>
 
-			<p><?php echo wp_kses_post( get_theme_mod( 'kra-website-nosearch-msg', 'Sorry, but nothing matched your search terms. Please try again with some different keywords.' ) ) ?></p>
+			<p><?php echo wp_kses_post( get_theme_mod( 'topshop-website-nosearch-msg', 'Sorry, but nothing matched your search terms. Please try again with some different keywords.' ) ) ?></p>
 
 		<?php endif; ?>
         

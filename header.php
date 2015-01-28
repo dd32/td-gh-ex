@@ -19,7 +19,7 @@ global $woocommerce;
 </head>
 <body <?php body_class(); ?>>
 
-<header id="masthead" class="site-header border-bottom kra-header-layout-standard" role="banner">
+<header id="masthead" class="site-header border-bottom topshop-header-layout-standard" role="banner">
     
     <?php get_template_part( '/templates/header/header-layout-standard' ); ?>
     

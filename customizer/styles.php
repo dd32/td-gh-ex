@@ -16,7 +16,7 @@ if ( ! function_exists( 'customizer_library_topshop_build_styles' ) && class_exi
 function customizer_library_topshop_build_styles() {
 
     // Main Color
-    $color = 'kra-main-color';
+    $color = 'topshop-main-color';
     $colormod = get_theme_mod( $color, customizer_library_get_default( $color ) );
     
     $bgcolormod = get_theme_mod( $color, customizer_library_get_default( $color ) );
@@ -119,7 +119,7 @@ function customizer_library_topshop_build_styles() {
     }
 
     // Main Color Hover
-    $colorh = 'kra-main-color-hover';
+    $colorh = 'topshop-main-color-hover';
     $colorhmod = get_theme_mod( $colorh, customizer_library_get_default( $colorh ) );
     
     $bgcolorhmod = get_theme_mod( $colorh, customizer_library_get_default( $colorh ) );
@@ -195,11 +195,11 @@ function customizer_library_topshop_build_styles() {
 
 
     // Body Font
-    $font = 'kra-body-font';
+    $font = 'topshop-body-font';
     $fontmod = get_theme_mod( $font, customizer_library_get_default( $font ) );
     $fontstack = customizer_library_get_font_stack( $fontmod );
     
-    $fontcolor = 'kra-body-font-color';
+    $fontcolor = 'topshop-body-font-color';
     $fontcolormod = get_theme_mod( $fontcolor, customizer_library_get_default( $fontcolor ) );
 
     if ( $fontmod != customizer_library_get_default( $font ) ) {
@@ -233,11 +233,11 @@ function customizer_library_topshop_build_styles() {
     
     
     // Heading Font
-    $hfont = 'kra-heading-font';
+    $hfont = 'topshop-heading-font';
     $hfontmod = get_theme_mod( $hfont, customizer_library_get_default( $hfont ) );
     $hfontstack = customizer_library_get_font_stack( $hfontmod );
     
-    $hfontcolor = 'kra-heading-font-color';
+    $hfontcolor = 'topshop-heading-font-color';
     $hfontcolormod = get_theme_mod( $hfontcolor, customizer_library_get_default( $hfontcolor ) );
 
     if ( $hfontmod != customizer_library_get_default( $hfont ) ) {

@@ -1,30 +1,30 @@
 <?php
-if ( get_theme_mod( 'kra-slider-type', false ) == 'kra-no-slider' ) : ?>
+if ( get_theme_mod( 'topshop-slider-type', false ) == 'topshop-no-slider' ) : ?>
     
     <!-- No Slider -->
     
 <?php
-elseif ( get_theme_mod( 'kra-slider-type', false ) == 'kra-meta-slider' ) : ?>
+elseif ( get_theme_mod( 'topshop-slider-type', false ) == 'topshop-meta-slider' ) : ?>
     
     <?php
     $slider_code = '';
-    if ( get_theme_mod( 'kra-meta-slider-shortcode', false ) ) {
-        $slider_code = get_theme_mod( 'kra-meta-slider-shortcode' );
+    if ( get_theme_mod( 'topshop-meta-slider-shortcode', false ) ) {
+        $slider_code = get_theme_mod( 'topshop-meta-slider-shortcode' );
     } ?>
     
-    <?php echo do_shortcode( $slider_code ); ?>
+    <?php echo do_shortcode( esc_html( $slider_code ) ); ?>
     
 <?php else : ?>
     
     <?php
     $slider_cats = '';
-    if ( get_theme_mod( 'kra-slider-cats', false ) ) {
-        $slider_cats = get_theme_mod( 'kra-slider-cats' );
+    if ( get_theme_mod( 'topshop-slider-cats', false ) ) {
+        $slider_cats = get_theme_mod( 'topshop-slider-cats' );
     } ?>
     
     <?php if( $slider_cats ) : ?>
         
-        <?php $slider_query = new WP_Query( 'cat=' . $slider_cats . '&posts_per_page=-1&orderby=date&order=DESC' ); ?>
+        <?php $slider_query = new WP_Query( 'cat=' . esc_html( $slider_cats ) . '&posts_per_page=-1&orderby=date&order=DESC' ); ?>
         
         <?php if ( $slider_query->have_posts() ) : ?>
 

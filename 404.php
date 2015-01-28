@@ -12,12 +12,12 @@ get_header(); ?>
 
 			<section class="error-404 not-found">
 				<header class="page-header">
-					<h1 class="page-title"><?php echo wp_kses_post( get_theme_mod( 'kra-website-error-head', 'Oops! <span>404</span>' ) ); ?></h1>
+					<h1 class="page-title"><?php echo wp_kses_post( get_theme_mod( 'topshop-website-error-head', 'Oops! <span>404</span>' ) ); ?></h1>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
 					<p>
-                        <?php echo wp_kses_post( get_theme_mod( 'kra-website-error-head', 'It looks like that page does not exist. <br />Return home or try a search' ) ); ?>
+                        <?php echo wp_kses_post( get_theme_mod( 'topshop-website-error-head', 'It looks like that page does not exist. <br />Return home or try a search' ) ); ?>
 					</p>
 
 				</div><!-- .page-content -->

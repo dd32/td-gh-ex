@@ -4,9 +4,7 @@
  *
  * @package topshop
  */
-define( 'TOPSHOP_THEME_VERSION' , '1.0.1' );
-
-
+define( 'TOPSHOP_THEME_VERSION' , '1.0.2' );
 
 if ( ! function_exists( 'topshop_theme_setup' ) ) :
 /**
@@ -121,7 +119,7 @@ function topshop_theme_scripts() {
 	wp_enqueue_script( 'topshop-navigation', get_template_directory_uri() . '/js/navigation.js', array(), TOPSHOP_THEME_VERSION, true );
 	wp_enqueue_script( 'topshop-caroufredSel', get_template_directory_uri() . '/js/jquery.carouFredSel-6.2.1-packed.js', array('jquery'), TOPSHOP_THEME_VERSION, true );
 	
-	if ( get_theme_mod( 'kra-sticky-header', false ) ) {
+	if ( get_theme_mod( 'topshop-sticky-header', false ) ) {
 		wp_enqueue_script( 'topshop-waypoints', get_template_directory_uri() . '/js/waypoints.min.js', array('jquery'), TOPSHOP_THEME_VERSION, true );
 	    wp_enqueue_script( 'topshop-waypoints-sticky', get_template_directory_uri() . '/js/waypoints-sticky.min.js', array('jquery'), TOPSHOP_THEME_VERSION, true );
 	}
@@ -141,8 +139,8 @@ add_action( 'wp_enqueue_scripts', 'topshop_theme_scripts' );
  */
 function topshop_print_styles() {
     $topshop_custom_css = '';
-    if ( get_theme_mod( 'kra-custom-css', false ) ) {
-        $topshop_custom_css = get_theme_mod( 'kra-custom-css' );
+    if ( get_theme_mod( 'topshop-custom-css', false ) ) {
+        $topshop_custom_css = get_theme_mod( 'topshop-custom-css' );
     } ?>
     <style type="text/css" media="screen">
         <?php echo htmlspecialchars_decode( $topshop_custom_css ); ?>
@@ -153,8 +151,8 @@ add_action('wp_head', 'topshop_print_styles', 11);
 
 // Add the favicon to the header if set
 function topshop_site_favicon() {
-    if ( get_theme_mod( 'kra-header-favicon', false ) ) :
-        echo '<link rel="icon" href="' . esc_url( get_theme_mod( 'kra-header-favicon' ) ) . '">';
+    if ( get_theme_mod( 'topshop-header-favicon', false ) ) :
+        echo '<link rel="icon" href="' . esc_url( get_theme_mod( 'topshop-header-favicon' ) ) . '">';
     endif;
 }
 add_action('wp_head', 'topshop_site_favicon');
@@ -212,7 +210,7 @@ function topshop_recommended_plugin_notice() {
     
     /* If on plugins page, check that the user hasn't already clicked to ignore the message */
     if ( $pagenow == 'plugins.php' ) {
-	    if ( ! get_user_meta( $user_id, 'kaira_recommended_plugin_ignore_notice' ) ) {
+	    if ( ! get_user_meta( $user_id, 'topshop_recommended_plugin_ignore_notice' ) ) {
 	        echo '<div class="updated"><p>';
             printf( __('<p>Install the plugins we at <a href="http://www.kairaweb.com/" target="_blank">Kaira</a> recommended | <a href="%1$s">Hide Notice</a></p>'), '?topshop_recommended_plugin_nag_ignore=0' ); ?>
             <a href="<?php echo admin_url('plugin-install.php?tab=favorites&user=kaira'); ?>"><?php printf( __( 'WooCommerce', 'topshop' ), 'WordPress' ); ?></a><br />
@@ -232,7 +230,7 @@ function topshop_recommended_plugin_nag_ignore() {
         
     /* If user clicks to ignore the notice, add that to their user meta */
     if ( isset($_GET['topshop_recommended_plugin_nag_ignore']) && '0' == $_GET['topshop_recommended_plugin_nag_ignore'] ) {
-        add_user_meta( $user_id, 'kaira_recommended_plugin_ignore_notice', 'true', true );
+        add_user_meta( $user_id, 'topshop_recommended_plugin_ignore_notice', 'true', true );
     }
 }
 
@@ -250,12 +248,12 @@ if ( topshop_is_woocommerce_activated() ) {
 }
 
 /**
- * Adjust is_home query if kra-blog-cats is set
+ * Adjust is_home query if topshop-blog-cats is set
  */
 function topshop_set_blog_queries( $query ) {
     $topshop_blog_query_set = '';
-    if ( get_theme_mod( 'kra-blog-cats', false ) ) {
-        $topshop_blog_query_set = get_theme_mod( 'kra-blog-cats' );
+    if ( get_theme_mod( 'topshop-blog-cats', false ) ) {
+        $topshop_blog_query_set = get_theme_mod( 'topshop-blog-cats' );
     }
     
     if ( $topshop_blog_query_set ) {

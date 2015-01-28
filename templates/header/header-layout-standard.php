@@ -1,6 +1,6 @@
 <?php global $woocommerce; ?>
 
-<?php if( get_theme_mod( 'kra-show-header-top-bar', false ) ) : ?>
+<?php if( get_theme_mod( 'topshop-show-header-top-bar', false ) ) : ?>
     
     <div class="site-top-bar border-bottom">
         <div class="site-container">
@@ -13,17 +13,17 @@
             <div class="site-top-bar-right">
                 
                 <?php if ( topshop_is_woocommerce_activated() ) : ?>
-                    <div class="site-top-bar-left-text"><?php echo wp_kses_post( get_theme_mod( 'kra-header-info-text', 'Call Us: 082 444 BOOM' ) ) ?></div>
+                    <div class="site-top-bar-left-text"><?php echo wp_kses_post( get_theme_mod( 'topshop-header-info-text', 'Call Us: 082 444 BOOM' ) ) ?></div>
                 <?php endif; ?>
                 
-                <?php if( get_theme_mod( 'kra-header-search', false ) ) : ?>
+                <?php if( get_theme_mod( 'topshop-header-search', false ) ) : ?>
                     <i class="fa fa-search search-btn"></i>
                 <?php endif; ?>
                 
             </div>
             <div class="clearboth"></div>
             
-            <?php if( get_theme_mod( 'kra-header-search', false ) ) : ?>
+            <?php if( get_theme_mod( 'topshop-header-search', false ) ) : ?>
                 <div class="search-block">
                     <?php get_search_form(); ?>
                 </div>
@@ -66,7 +66,7 @@
         <?php
         } else { ?>
             
-            <div class="site-top-bar-left-text"><?php echo wp_kses_post( get_theme_mod( 'kra-header-info-text', 'Call Us: 082 444 BOOM' ) ) ?></div>
+            <div class="site-top-bar-left-text"><?php echo wp_kses_post( get_theme_mod( 'topshop-header-info-text', 'Call Us: 082 444 BOOM' ) ) ?></div>
             
         <?php
         } ?>
@@ -76,7 +76,7 @@
     
 </div>
 
-<nav id="site-navigation" class="main-navigation nav-load<?php echo ( get_theme_mod( 'kra-sticky-header', false ) ) ? ' header-stick' : ''; ?>" role="navigation">
+<nav id="site-navigation" class="main-navigation nav-load<?php echo ( get_theme_mod( 'topshop-sticky-header', false ) ) ? ' header-stick' : ''; ?>" role="navigation">
     
     <div class="site-container">
         

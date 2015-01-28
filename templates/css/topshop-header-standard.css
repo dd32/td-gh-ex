@@ -2,7 +2,7 @@
 TopShop - Header Standard Styling
 --------------------------------------------------------------*/
 
-.kra-header-layout-standard .site-top-bar-left {
+.topshop-header-layout-standard .site-top-bar-left {
     float: left;
     padding: 3px 0;
     min-height: 25px;
@@ -11,22 +11,22 @@ TopShop - Header Standard Styling
     position: relative;
     z-index: 99;
 }
-.kra-header-layout-standard .site-top-bar-left ul li:first-child a {
+.topshop-header-layout-standard .site-top-bar-left ul li:first-child a {
     padding: 0 10px 0 0;
 }
-.kra-header-layout-standard .site-top-bar-left ul li:last-child {
+.topshop-header-layout-standard .site-top-bar-left ul li:last-child {
     box-shadow: none;
 }
-.kra-header-layout-standard .site-top-bar-left ul li:last-child a {
+.topshop-header-layout-standard .site-top-bar-left ul li:last-child a {
     padding: 0 0 0 6px;
 }
-.kra-header-layout-standard .site-top-bar-left-text {
+.topshop-header-layout-standard .site-top-bar-left-text {
     display: inline-block;
     font-size: 11px;
     margin: 0 1px 0 0;
 }
 
-.kra-header-layout-standard .site-top-bar-right {
+.topshop-header-layout-standard .site-top-bar-right {
     float: right;
     font-size: 14px;
     padding: 1px 0 3px;
@@ -36,27 +36,27 @@ TopShop - Header Standard Styling
     position: relative;
     z-index: 99;
 }
-.kra-header-layout-standard .site-top-bar-right i {
+.topshop-header-layout-standard .site-top-bar-right i {
     margin: 0 0 0 8px;
 }
 
-.kra-header-layout-standard .site-header-left {
+.topshop-header-layout-standard .site-header-left {
     float: left;
     min-height: 91px;
 }
-.kra-header-layout-standard .site-header-right {
+.topshop-header-layout-standard .site-header-right {
     float: right;
     min-height: 91px;
     padding: 34px 0 0;
     font-size: 12px;
 }
-.kra-header-layout-standard .site-header-right a {
+.topshop-header-layout-standard .site-header-right a {
     text-transform: uppercase;
     display: inline-block;
     vertical-align: top;
     color: #626262;
 }
-.kra-header-layout-standard .site-header-right-link {
+.topshop-header-layout-standard .site-header-right-link {
     box-shadow: 1px 0 0 rgba(0, 0, 0, 0.08);
     display: inline-block;
     vertical-align: top;
@@ -64,7 +64,7 @@ TopShop - Header Standard Styling
     padding: 1px 8px 1px 0;
     line-height: 14px;
 }
-.kra-header-layout-standard .site-header-right-link a {
+.topshop-header-layout-standard .site-header-right-link a {
     padding: 1px 5px 0px;
     border-radius: 3px;
     
@@ -74,18 +74,18 @@ TopShop - Header Standard Styling
        -o-transition: all 0.05s linear 0s;
           transition: all 0.05s linear 0s;
 }
-.kra-header-layout-standard .site-header-right-link a:hover {
+.topshop-header-layout-standard .site-header-right-link a:hover {
     background-color: #545454;
     color: #FFF;
 }
 
-.kra-header-layout-standard .site-title {
+.topshop-header-layout-standard .site-title {
     font-size: 34px;
     line-height: 34px;
     margin: 0;
     padding: 17px 0 0;
 }
-.kra-header-layout-standard .site-description {
+.topshop-header-layout-standard .site-description {
     margin: 0;
     padding: 4px 0 0;
     font-size: 12px;

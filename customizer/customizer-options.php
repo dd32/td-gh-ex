@@ -24,7 +24,7 @@ function customizer_library_topshop_options() {
 	$options['sections'] = $sections;
 
 	// Logo
-	$section = 'kra-favicon';
+	$section = 'topshop-favicon';
     
 	$sections[] = array(
 		'id' => $section,
@@ -33,8 +33,8 @@ function customizer_library_topshop_options() {
 		'description' => __( 'Add a favicon to your website', 'topshop' )
 	);
     
-	$options['kra-header-favicon'] = array(
-		'id' => 'kra-header-favicon',
+	$options['topshop-header-favicon'] = array(
+		'id' => 'topshop-header-favicon',
 		'label'   => __( 'Favicon', 'topshop' ),
 		'section' => $section,
 		'type'    => 'image',
@@ -43,7 +43,7 @@ function customizer_library_topshop_options() {
     
     
     // Layout Settings
-    $section = 'kra-layout';
+    $section = 'topshop-layout';
 
     $sections[] = array(
         'id' => $section,
@@ -52,39 +52,39 @@ function customizer_library_topshop_options() {
     );
     
     // Upsell Button One
-    $options['kra-upsell-one'] = array(
-        'id' => 'kra-upsell-one',
+    $options['topshop-upsell-one'] = array(
+        'id' => 'topshop-upsell-one',
         'label'   => __( 'Site Layout', 'topshop' ),
         'section' => $section,
         'type'    => 'upsell',
     );
     
     // Upsell Button Two
-    $options['kra-upsell-two'] = array(
-        'id' => 'kra-upsell-two',
+    $options['topshop-upsell-two'] = array(
+        'id' => 'topshop-upsell-two',
         'label'   => __( 'Header Layout', 'topshop' ),
         'section' => $section,
         'type'    => 'upsell',
     );
     
-    $options['kra-header-search'] = array(
-        'id' => 'kra-header-search',
+    $options['topshop-header-search'] = array(
+        'id' => 'topshop-header-search',
         'label'   => __( 'Show Search', 'topshop' ),
         'section' => $section,
         'type'    => 'checkbox',
         'description' => __( 'Enable to a slogan for your site. This uses the site Tagline', 'topshop' ),
         'default' => 1,
     );
-    $options['kra-sticky-header'] = array(
-        'id' => 'kra-sticky-header',
+    $options['topshop-sticky-header'] = array(
+        'id' => 'topshop-sticky-header',
         'label'   => __( 'Sticky Header', 'topshop' ),
         'section' => $section,
         'type'    => 'checkbox',
         'description' => __( 'Select this box to make the main navigation sticky', 'topshop' ),
         'default' => 0,
     );
-    $options['kra-show-header-top-bar'] = array(
-        'id' => 'kra-show-header-top-bar',
+    $options['topshop-show-header-top-bar'] = array(
+        'id' => 'topshop-show-header-top-bar',
         'label'   => __( 'Show Top Bar', 'topshop' ),
         'section' => $section,
         'type'    => 'checkbox',
@@ -94,7 +94,7 @@ function customizer_library_topshop_options() {
     
     
     // Blog Settings
-    $section = 'kra-slider';
+    $section = 'topshop-slider';
 
     $sections[] = array(
         'id' => $section,
@@ -103,27 +103,27 @@ function customizer_library_topshop_options() {
     );
     
     $choices = array(
-        'kra-slider-default' => 'Default Slider',
-        'kra-meta-slider' => 'Meta Slider',
-        'kra-no-slider' => 'None'
+        'topshop-slider-default' => 'Default Slider',
+        'topshop-meta-slider' => 'Meta Slider',
+        'topshop-no-slider' => 'None'
     );
-    $options['kra-slider-type'] = array(
-        'id' => 'kra-slider-type',
+    $options['topshop-slider-type'] = array(
+        'id' => 'topshop-slider-type',
         'label'   => __( 'Choose a Slider', 'topshop' ),
         'section' => $section,
         'type'    => 'select',
         'choices' => $choices,
-        'default' => 'kra-slider-default'
+        'default' => 'topshop-slider-default'
     );
-    $options['kra-slider-cats'] = array(
-        'id' => 'kra-slider-cats',
+    $options['topshop-slider-cats'] = array(
+        'id' => 'topshop-slider-cats',
         'label'   => __( 'Slider Categories', 'topshop' ),
         'section' => $section,
         'type'    => 'text',
         'description' => __( 'Enter the ID\'s of the post categories you want to display in the slider. Eg: "13,17,19" (no spaces and only comma\'s)', 'topshop' )
     );
-    $options['kra-meta-slider-shortcode'] = array(
-        'id' => 'kra-meta-slider-shortcode',
+    $options['topshop-meta-slider-shortcode'] = array(
+        'id' => 'topshop-meta-slider-shortcode',
         'label'   => __( 'Slider Shortcode', 'topshop' ),
         'section' => $section,
         'type'    => 'text',
@@ -132,7 +132,7 @@ function customizer_library_topshop_options() {
 
 
 	// Colors
-	$section = 'kra-styling';
+	$section = 'topshop-styling';
     $font_choices = customizer_library_get_font_choices();
 
 	$sections[] = array(
@@ -141,54 +141,54 @@ function customizer_library_topshop_options() {
 		'priority' => '38'
 	);
 
-	$options['kra-main-color'] = array(
-		'id' => 'kra-main-color',
+	$options['topshop-main-color'] = array(
+		'id' => 'topshop-main-color',
 		'label'   => __( 'Main Color', 'topshop' ),
 		'section' => $section,
 		'type'    => 'color',
 		'default' => $primary_color,
 	);
-	$options['kra-main-color-hover'] = array(
-		'id' => 'kra-main-color-hover',
+	$options['topshop-main-color-hover'] = array(
+		'id' => 'topshop-main-color-hover',
 		'label'   => __( 'Secondary Color', 'topshop' ),
 		'section' => $section,
 		'type'    => 'color',
 		'default' => $secondary_color,
 	);
     
-    $options['kra-body-font'] = array(
-        'id' => 'kra-body-font',
+    $options['topshop-body-font'] = array(
+        'id' => 'topshop-body-font',
         'label'   => __( 'Body Font', 'topshop' ),
         'section' => $section,
         'type'    => 'select',
         'choices' => $font_choices,
         'default' => 'Open Sans'
     );
-    $options['kra-body-font-color'] = array(
-        'id' => 'kra-body-font-color',
+    $options['topshop-body-font-color'] = array(
+        'id' => 'topshop-body-font-color',
         'label'   => __( 'Body Font Color', 'topshop' ),
         'section' => $section,
         'type'    => 'color',
         'default' => $body_font_color,
     );
-    $options['kra-heading-font'] = array(
-        'id' => 'kra-heading-font',
+    $options['topshop-heading-font'] = array(
+        'id' => 'topshop-heading-font',
         'label'   => __( 'Headings Font', 'topshop' ),
         'section' => $section,
         'type'    => 'select',
         'choices' => $font_choices,
         'default' => 'Raleway'
     );
-    $options['kra-heading-font-color'] = array(
-        'id' => 'kra-heading-font-color',
+    $options['topshop-heading-font-color'] = array(
+        'id' => 'topshop-heading-font-color',
         'label'   => __( 'Heading Font Color', 'topshop' ),
         'section' => $section,
         'type'    => 'color',
         'default' => $heading_font_color,
     );
     
-    $options['kra-custom-css'] = array(
-        'id' => 'kra-custom-css',
+    $options['topshop-custom-css'] = array(
+        'id' => 'topshop-custom-css',
         'label'   => __( 'Custom CSS', 'topshop' ),
         'section' => $section,
         'type'    => 'textarea',
@@ -198,7 +198,7 @@ function customizer_library_topshop_options() {
     
     
     // Blog Settings
-    $section = 'kra-blog';
+    $section = 'topshop-blog';
 
     $sections[] = array(
         'id' => $section,
@@ -207,21 +207,21 @@ function customizer_library_topshop_options() {
     );
     
     // Upsell Button Three
-    $options['kra-upsell-three'] = array(
-        'id' => 'kra-upsell-three',
+    $options['topshop-upsell-three'] = array(
+        'id' => 'topshop-upsell-three',
         'label'   => __( 'Blog Post Layout', 'topshop' ),
         'section' => $section,
         'type'    => 'upsell',
     );
-    $options['kra-blog-title'] = array(
-        'id' => 'kra-blog-title',
+    $options['topshop-blog-title'] = array(
+        'id' => 'topshop-blog-title',
         'label'   => __( 'Blog Page Title', 'topshop' ),
         'section' => $section,
         'type'    => 'text',
         'default' => 'Blog'
     );
-    $options['kra-blog-cats'] = array(
-        'id' => 'kra-blog-cats',
+    $options['topshop-blog-cats'] = array(
+        'id' => 'topshop-blog-cats',
         'label'   => __( 'Exclude Blog Categories', 'topshop' ),
         'section' => $section,
         'type'    => 'text',
@@ -230,7 +230,7 @@ function customizer_library_topshop_options() {
     
     
     // Social Settings
-    $section = 'kra-social';
+    $section = 'topshop-social';
 
     $sections[] = array(
         'id' => $section,
@@ -239,8 +239,8 @@ function customizer_library_topshop_options() {
     );
     
     // Upsell Button Four
-    $options['kra-upsell-four'] = array(
-        'id' => 'kra-upsell-four',
+    $options['topshop-upsell-four'] = array(
+        'id' => 'topshop-upsell-four',
         'label'   => __( 'Add Social Links', 'topshop' ),
         'section' => $section,
         'type'    => 'upsell',
@@ -248,7 +248,7 @@ function customizer_library_topshop_options() {
     
     
     // Site Text Settings
-    $section = 'kra-website';
+    $section = 'topshop-website';
 
     $sections[] = array(
         'id' => $section,
@@ -256,8 +256,8 @@ function customizer_library_topshop_options() {
         'priority' => '50'
     );
     
-    $options['kra-header-info-text'] = array(
-        'id' => 'kra-header-info-text',
+    $options['topshop-header-info-text'] = array(
+        'id' => 'topshop-header-info-text',
         'label'   => __( 'Header Info Text', 'topshop' ),
         'section' => $section,
         'type'    => 'text',
@@ -265,30 +265,30 @@ function customizer_library_topshop_options() {
         'description' => __( 'This is the text in the header', 'topshop' )
     );
     // Upsell Button Five
-    $options['kra-upsell-five'] = array(
-        'id' => 'kra-upsell-five',
+    $options['topshop-upsell-five'] = array(
+        'id' => 'topshop-upsell-five',
         'label'   => __( 'Site Copy Text', 'topshop' ),
         'section' => $section,
         'type'    => 'upsell',
     );
-    $options['kra-website-error-head'] = array(
-        'id' => 'kra-website-error-head',
+    $options['topshop-website-error-head'] = array(
+        'id' => 'topshop-website-error-head',
         'label'   => __( '404 Error Page Heading', 'topshop' ),
         'section' => $section,
         'type'    => 'text',
         'default' => __( 'Oops! <span>404</span>', 'topshop'),
         'description' => __( 'Enter the heading for the 404 Error page', 'topshop' )
     );
-    $options['kra-website-error-msg'] = array(
-        'id' => 'kra-website-error-msg',
+    $options['topshop-website-error-msg'] = array(
+        'id' => 'topshop-website-error-msg',
         'label'   => __( 'Error 404 Message', 'topshop' ),
         'section' => $section,
         'type'    => 'textarea',
         'default' => __( 'It looks like that page does not exist. <br />Return home or try a search', 'topshop'),
         'description' => __( 'Enter the default text on the 404 error page (Page not found)', 'topshop' )
     );
-    $options['kra-website-nosearch-msg'] = array(
-        'id' => 'kra-website-nosearch-msg',
+    $options['topshop-website-nosearch-msg'] = array(
+        'id' => 'topshop-website-nosearch-msg',
         'label'   => __( 'No Search Results', 'topshop' ),
         'section' => $section,
         'type'    => 'textarea',
