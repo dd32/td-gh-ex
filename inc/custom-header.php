@@ -26,7 +26,7 @@ function moesia_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'moesia_custom_header_args', array(
 		'default-image'          => get_template_directory_uri() . '/images/header.jpg',
 		'width'                  => 1920,
-		'height'                 => 650,
+		'height'                 => 1080,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'moesia_header_style',
 		'admin-head-callback'    => 'moesia_admin_header_style',

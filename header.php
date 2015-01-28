@@ -80,7 +80,6 @@
 		<?php endif; ?>
 		<?php tha_header_bottom(); ?>
 		</header><!-- #masthead -->
-		<?php tha_header_after(); ?>
 	<?php elseif ( $himage != '' ) : ?>	
 		<header id="masthead" class="site-header has-banner" role="banner">
 			<?php tha_header_top(); ?>
@@ -102,8 +101,8 @@
 			</div>
 			<?php tha_header_bottom(); ?>			
 		</header><!-- #masthead -->	
-		<?php tha_header_after(); ?>	
 	<?php endif; ?>
+	<?php tha_header_after(); ?>
 
 	<?php if ( !is_page_template('page_front-page.php') || ( 'posts' == get_option( 'show_on_front' ) ) ) : ?>
 		<?php $container = "container"; ?>

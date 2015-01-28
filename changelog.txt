@@ -1,5 +1,10 @@
 Changelog
 
+28 Jan 2015 - 1.22
+--------------------------------------
+- added translation files for de_DE, de_AT and fr_FR;
+- minor CSS and PHP adjustments.
+
 19 Jan 2015 - 1.21
 --------------------------------------
 - added Menu tab in Customizer with some new options;
