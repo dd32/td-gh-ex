@@ -1,4 +1,4 @@
-Swell Lite v1.0.4
+Swell Lite v1.0.5
 http://www.swelltheme.com
 
 Image Credits
@@ -39,3 +39,6 @@ CHANGELOG v1.0.3:
 CHANGELOG v1.0.4:
 - Removed Featured Video
 - Added credits to readme.txt file
+
+CHANGELOG v1.0.5:
+- Updated author and link
