@@ -24,12 +24,12 @@
 		<div id="header-info-wrap" class="cf">
 			<?php if ( asteroid_option('ast_header_logo') != '' ) : ?>
 				<div id="header-logo" class="cf"><a href="<?php echo esc_url( home_url('/') ); ?>">
-					<img src="<?php echo asteroid_option('ast_header_logo'); ?>" <?php echo apply_filters( 'asteroid_logo_alt', 'alt=""' ); ?> /></a>
+					<img src="<?php echo asteroid_option('ast_header_logo'); ?>" alt="<?php echo get_bloginfo( 'name' ); ?>" /></a>
 				</div>
 			<?php else : ?>
 				<?php if (! ('blank' == get_header_textcolor() )) : ?>
 					<div id="header-text" class="cf">
-						<h1 id="site-title"><a href="<?php echo esc_url( home_url('/') ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+						<h1 id="site-title"><a href="<?php echo esc_url( home_url('/') ); ?>"><?php echo get_bloginfo( 'name' ); ?></a></h1>
 						<h4 id="site-description"><?php bloginfo( 'description' ); ?></h4>		
 					</div>
 				<?php endif; ?>

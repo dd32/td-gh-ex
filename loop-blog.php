@@ -5,7 +5,7 @@
 </div>
 
 <?php if ( ( asteroid_option('ast_blog_date') == 1 ) && ( get_post_type() == 'post' ) ) : ?>
-	<div class="entry-date"><a href="<?php the_permalink(); ?>"><?php the_time(get_option('date_format')); ?></a></div>
+	<div class="entry-date"><a href="<?php the_permalink(); ?>" class="updated"><?php the_time(get_option('date_format')); ?></a></div>
 <?php endif; ?>
 
 <div class="entry-meta-top cf">

@@ -4,7 +4,7 @@
  * @package Asteroid
  *
  */
-$ast_version = "1.1.8";
+$ast_version = "1.1.9";
 /*-------------------------------------
 	Setup Theme Options
 --------------------------------------*/
@@ -329,7 +329,7 @@ function asteroid_tinymce_width() {
 ?>
 <script type="text/javascript">
 jQuery( document ).ready( function() {
-	var editor_width = '.mceContentBody {width: <?php echo ( $content_width > 800 ) ? 800 : $content_width; ?>px;}';
+	var editor_width = '.mceContentBody {width: <?php echo $content_width; ?>px;}';
 	var checkInterval = setInterval(
 		function() {
 			if ( 'undefined' !== typeof( tinyMCE ) ) {

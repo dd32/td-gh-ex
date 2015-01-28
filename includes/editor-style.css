@@ -1,8 +1,8 @@
 html {background: #EEE;}
 
-.mceContentBody {
+body.mceContentBody {
     background: #fff;
-	padding: 10px;
+	padding: 10px !important;
 	margin: 10px auto;
 	font-family: Arial, sans-serif;
 	font-size: 14px;
@@ -75,7 +75,16 @@ pre, code {
 	line-height: 1.55;
 }
 
+dl {padding-left: 20px;}
+
+.rtl dl {
+	padding-left: 0;
+	padding-right: 20px;
+}
+
 dt {font-weight: bold;}
+
+dd {margin: 0 0 10px;}
 
 table {
 	border-collapse: collapse;

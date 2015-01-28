@@ -9,11 +9,12 @@
 
 		<ol class="comment-list">
 			<?php
-				wp_list_comments( array(
-					'style'       => 'ol',
-					'short_ping'  => true,
-					'avatar_size' => 50,
-				) );
+				$args = array(
+					'style'			=> 'ol',
+					'short_ping'	=> true,
+					'avatar_size'	=> 50,
+				);
+				wp_list_comments( apply_filters( 'asteroid_comment_list_args', $args ) );
 			?>
 		</ol>
 
