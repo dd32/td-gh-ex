@@ -55,3 +55,5 @@ First Release
 - Minor Bug Fixes
 = 1.3.2 =
 - Minor Bug Fixes
+= 1.3.3 =
+- Slicknav.js added
