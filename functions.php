@@ -307,35 +307,6 @@ function swelllite_wp_link_pages_args_prevnext_add($args) {
 add_filter('wp_link_pages_args', 'swelllite_wp_link_pages_args_prevnext_add');
 
 /*-----------------------------------------------------------------------------------------------------//	
-	Featured Video Meta Box		       	     	 
--------------------------------------------------------------------------------------------------------*/
-
-add_action("admin_init", "admin_init_featurevid");
-add_action('save_post', 'save_featurevid');
-
-function admin_init_featurevid(){
-	add_meta_box("featurevid-meta", __("Featured Video Embed Code", 'swelllite'), "meta_options_featurevid", "post", "normal", "high");
-}
-
-function meta_options_featurevid(){
-	global $post;
-	$custom = get_post_custom($post->ID);
-	$featurevid = isset( $custom["featurevid"] ) ? esc_attr( $custom["featurevid"][0] ) : '';
-
-	echo '<textarea name="featurevid" cols="60" rows="4" style="width:97.6%" />'.$featurevid.'</textarea>';
-}
-
-function save_featurevid($post_id){
-	global $post;
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-        return $post_id;
-    }
-	if ( isset($_POST["featurevid"]) ) { 
-		update_post_meta($post->ID, "featurevid", $_POST["featurevid"]); 
-	}
-}
-
-/*-----------------------------------------------------------------------------------------------------//	
 	Add Home Link To Custom Menu		       	     	 
 -------------------------------------------------------------------------------------------------------*/
 

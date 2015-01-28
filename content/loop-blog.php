@@ -1,15 +1,10 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
-<?php if (isset($_POST['featurevid'])){ $custom = get_post_custom($post->ID); $featurevid = $custom['featurevid'][0]; } ?>
 	
 	<!-- BEGIN .post class -->
 	<div <?php post_class('blog-holder shadow radius-full'); ?> id="post-<?php the_ID(); ?>">
-	
-		<?php if ( get_post_meta($post->ID, 'featurevid', true) ) { ?>
-			<div class="feature-vid radius-top"><?php echo get_post_meta($post->ID, 'featurevid', true); ?></div>
-		<?php } else { ?>
-			<?php if ( has_post_thumbnail() ) { ?>
-				<a class="feature-img radius-top" href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'swelllite' ), the_title_attribute( 'echo=0' ) ) ); ?>"><?php the_post_thumbnail( 'swell-featured-large' ); ?></a>
-			<?php } ?>
+
+		<?php if ( has_post_thumbnail() ) { ?>
+			<a class="feature-img radius-top" href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'swelllite' ), the_title_attribute( 'echo=0' ) ) ); ?>"><?php the_post_thumbnail( 'swell-featured-large' ); ?></a>
 		<?php } ?>
 		
 		<!-- BEGIN .article -->

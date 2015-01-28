@@ -25,10 +25,6 @@
 		
 		<span class="divider-small"></span>
 		
-		<?php if ( get_post_meta($post->ID, 'featurevid', true) ) { ?>
-			<div class="feature-vid radius-full"><?php echo get_post_meta($post->ID, 'featurevid', true); ?></div>
-		<?php } ?>
-		
 		<?php the_content(); ?>
 		
 		<?php wp_link_pages(array(

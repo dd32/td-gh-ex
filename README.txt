@@ -1,5 +1,19 @@
-Swell Lite v1.0.3
+Swell Lite v1.0.4
 http://www.swelltheme.com
+
+Image Credits
+
+- logo.png: Created by David Morgan, http://dav.idmorgan.com. Licensed under the GPLv2 license.
+- logo.psd: Created by David Morgan, http://dav.idmorgan.com. Licensed under the GPLv2 license.
+
+Font Awesome
+
+- Font License: SIL OFL 1.1 http://scripts.sil.org/OFL
+- Code License: MIT License http://opensource.org/licenses/mit-license.html
+
+Navigation.js
+
+- Licensed under the GPLv2 license.
  
 INSTALL: 
 1. Upload the theme by navigating to Appearance > Themes > Install Themes within the WordPress admin. Select the theme zip file to upload.
@@ -21,3 +35,7 @@ CHANGELOG v1.0.3:
 - Removed favicon
 - Changed footer credit
 - Replaced title tag function
+
+CHANGELOG v1.0.4:
+- Removed Featured Video
+- Added credits to readme.txt file
