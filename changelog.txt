@@ -1,6 +1,11 @@
 *** Lovecraft changelog ***
 
 
+Version 1.10 (2014-01-29)
+------------------------- 
+- Added additional missing esc_attr() to widgets/flickr-widget.php
+
+
 Version 1.09 (2014-01-29)
 ------------------------- 
 - Added missing esc_attr() to widgets and header.php

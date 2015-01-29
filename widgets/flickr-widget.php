@@ -11,10 +11,10 @@ class lovecraft_flickr_widget extends WP_Widget {
 		// Outputs the content of the widget
 		extract($args); // Make before_widget, etc available.
 		
-		$widget_title = apply_filters('widget_title', $instance['widget_title']);
-		$fli_id = $instance['id'];
-		$fli_number = $instance['number'];
-		$unique_id = $args['widget_id'];
+		$widget_title = apply_filters('widget_title', esc_attr($instance['widget_title']));
+		$fli_id = esc_attr($instance['id']);
+		$fli_number = esc_attr($instance['number']);
+		$unique_id = esc_attr($args['widget_id']);
 		
 		echo $before_widget;
 		
@@ -56,20 +56,20 @@ class lovecraft_flickr_widget extends WP_Widget {
 		?>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('widget_title'); ?>"><?php  _e('Title', 'lovecraft'); ?>:
-			<input id="<?php echo $this->get_field_id('widget_title'); ?>" name="<?php echo esc_attr($this->get_field_name('widget_title')); ?>" type="text" class="widefat" value="<?php echo $widget_title; ?>" /></label>
+			<label for="<?php echo esc_attr($this->get_field_id('widget_title')); ?>"><?php  _e('Title', 'lovecraft'); ?>:
+			<input id="<?php echo esc_attr($this->get_field_id('widget_title')); ?>" name="<?php echo esc_attr($this->get_field_name('widget_title')); ?>" type="text" class="widefat" value="<?php echo esc_attr($widget_title); ?>" /></label>
 		</p>
 				
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('id'); ?>"><?php _e('Flickr ID (use <a target="_blank" href="http://www.idgettr.com">idGettr</a>)', 'lovecraft'); ?>:
-			<input id="<?php echo $this->get_field_id('id'); ?>" name="<?php echo esc_attr($this->get_field_name('id')); ?>" type="text" class="widefat" value="<?php echo $fli_id; ?>" /></label>
+			<label for="<?php echo esc_attr($this->get_field_id('id')); ?>"><?php _e('Flickr ID (use <a target="_blank" href="http://www.idgettr.com">idGettr</a>)', 'lovecraft'); ?>:
+			<input id="<?php echo esc_attr($this->get_field_id('id')); ?>" name="<?php echo esc_attr($this->get_field_name('id')); ?>" type="text" class="widefat" value="<?php echo esc_attr($fli_id); ?>" /></label>
 		</p>
 		
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('number'); ?>"><?php _e('Number of images to display', 'lovecraft'); ?>:
-			<input id="<?php echo $this->get_field_id('number'); ?>" name="<?php echo esc_attr($this->get_field_name('number')); ?>" type="text" class="widefat" value="<?php echo $fli_number; ?>" /></label>
+			<label for="<?php echo esc_attr($this->get_field_id('number')); ?>"><?php _e('Number of images to display', 'lovecraft'); ?>:
+			<input id="<?php echo esc_attr($this->get_field_id('number')); ?>" name="<?php echo esc_attr($this->get_field_name('number')); ?>" type="text" class="widefat" value="<?php echo esc_attr($fli_number); ?>" /></label>
 		</p>
 		
 		<?php
