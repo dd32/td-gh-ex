@@ -4,7 +4,14 @@
  */
 ?>
 <div id="post-<?php the_ID(); ?>" <?php post_class();?>>
-	<div class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title();?>"><?php the_title();?></a></div>
+	<?php if ( has_post_thumbnail() ):?> 
+	<div class="post-entry-media">
+    	<a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><?php the_post_thumbnail();?></a>
+    </div>
+    <?php endif;?>
+
+
+	<div class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title();?>"><?php if(get_the_title() == ""){echo __('(no title)','fmi');}else{the_title();}?></a></div>
 
 	<div class="entry-meta">
     	<span><i class="fa fa-calendar"></i> <?php echo get_the_date(); ?></span>
@@ -19,10 +26,6 @@
     </div>
 
 	<div class="entry-content"><div class="mscont">
-		<?php if ( has_post_thumbnail() ):?> 
-        <?php the_post_thumbnail('full'); ?> 
-        <?php endif;?> 
-    
 		<?php the_content();?>
 		
 		<?php wp_link_pages( array('before' => '<div class="page-links"><i class="fa fa-file"></i> '.__( 'Pages:', 'fmi' ),'after'  => '</div>',));?>

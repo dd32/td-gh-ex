@@ -1,6 +1,6 @@
 <div id="footer"><div class="inner">
 	<div id="foot">
-		<div class="div1">Proudly Powered by <a href="http://wordpress.org/" rel="external nofollow">WordPress</a>. Theme:Fmi by <a href="http://www.forrss.com/" rel="external">Forrss</a>.</div>
+		<div class="div1"><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'fmi' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'fmi' ), 'WordPress' ); ?></a>. Theme:Fmi by <a href="http://www.forrss.com/" rel="external">Forrss</a>.</div>
 		<div class="div2">
 <?php
 if( fmi_theme_option( 'vs-social-email' ) ) :

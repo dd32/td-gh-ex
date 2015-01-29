@@ -2,6 +2,15 @@
 function fmi_theme_comment($comment,$args,$depth){
 	$GLOBALS['comment'] = $comment;
 	$args['avatar_size'] = 40;
+	if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ){
+?>
+	<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
+		<div class="comment-body">
+			<?php _e( 'Pingback:', 'fred' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'fred' ), '<span class="edit-link">', '</span>' ); ?>
+		</div>
+
+<?php
+	}else{
 ?>
 	<li id="comment-<?php comment_ID(); ?>" <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?>>
 		<div id="div-comment-<?php comment_ID(); ?>" class="comment-body">
@@ -19,13 +28,14 @@ function fmi_theme_comment($comment,$args,$depth){
 				<?php endif; ?>
 			</div>
 
-			<div class="comment-content"><?php comment_text();?></div>
+			<div class="mscont comment-content"><?php comment_text();?></div>
 
 			<div class="reply"><?php comment_reply_link( array_merge( $args, array('reply_text' => '<i class="fa fa-retweet"></i>', 'add_below' => 'div-comment', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?></div>
             
             <div class="clear"></div>
 		</div>
 <?php
+	}
 }
 
 function fmi_post_nav() {

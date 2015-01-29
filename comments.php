@@ -41,7 +41,7 @@ $comments_args = array(
 	'comment_notes_after'  => '',
     'fields' =>  $fields,
 	'comment_field'        => '<div class="input-container-full"><textarea id="comment" tabindex="4" rows="10" cols="58" name="comment" autocomplete="off" /></textarea></div><div class="input-container-full"><button class="button" type="submit">Post Comment</button></div>',
-	'cancel_reply_link'    => __( '<i class="fa fa-times-circle"></i>' )
+	'cancel_reply_link'    => '<i class="fa fa-times-circle"></i>'
 );
 comment_form($comments_args);
 ?>

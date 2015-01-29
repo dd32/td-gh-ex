@@ -18,7 +18,7 @@ function fmi_theme_setup(){
 	if(!isset($content_width)){$content_width = 640;}
 	
 	add_theme_support( 'automatic-feed-links' );
-	add_theme_support( 'post-thumbnails' ,array('post'));
+	add_theme_support( 'post-thumbnails' );
 	
 	load_theme_textdomain('fmi',get_template_directory().'/languages');
 }

@@ -25,6 +25,8 @@
             <div class="clear"></div>
         </div>
         <?php endif;?>
+        
+        <div class="clear"></div>
 	</div>
 </div></div>
 

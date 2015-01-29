@@ -1,31 +1,22 @@
 <?php
 class Fmi_theme_settings{
-	
 	private $sections;
 	private $checkboxes;
 	private $settings;
-	
 	public function __construct() {
-
 		$this->checkboxes = array();
 		$this->settings = array();
 		$this->get_fmi_option();
 		
-		$this->sections['general']   = __( 'General Settings','fmi');
-		$this->sections['styling']   = __( 'Styling Settings','fmi');
-        $this->sections['social']   = __( 'Social Links','fmi');
-        $this->sections['website']   = __( 'Website Text','fmi');
-		
+		$this->sections['general'] = __( 'General Settings','fmi');
+		$this->sections['styling'] = __( 'Styling Settings','fmi');
+        $this->sections['social']  = __( 'Social Links','fmi');
+        $this->sections['website'] = __( 'Website Text','fmi');
 		add_action( 'admin_menu', array( &$this, 'fmi_add_pages' ) );
-        
-		add_action( 'admin_init', array( &$this, 'fmi_register_settings' ) );
-		
+		add_action( 'admin_init', array( &$this, 'fmi_register_settings' ) );	
 	}
-
-    public function fmi_get_options_with_defaults() {
-
+    public function fmi_get_options_with_defaults(){
         $options_set_before = get_option( 'theme_options');
-
         $dafaults_array = array();
         foreach ($this->settings as $settings_key => $settings_array) {
             if( isset($settings_array['std']) ){
@@ -236,7 +227,7 @@ class Fmi_theme_settings{
         $this->settings['vs-heading-one'] = array(
             'section' => 'general',
             'title'   => '', // Not used for headings.
-            'desc'    => 'Header Settings',
+            'desc'    => __('Header Settings','fmi'),
             'type'    => 'heading'
         );
         $this->settings['vs-header-search'] = array(
@@ -258,7 +249,7 @@ class Fmi_theme_settings{
         $this->settings['vs-heading-two'] = array(
             'section' => 'slider',
             'title'   => '', // Not used for headings.
-            'desc'    => 'Slider Options',
+            'desc'    => __('Slider Options','fmi'),
             'type'    => 'heading'
         );
         $this->settings['vs-slider-categories'] = array(
@@ -286,7 +277,7 @@ class Fmi_theme_settings{
         $this->settings['vs-heading-four'] = array(
             'section' => 'styling',
             'title'   => '',
-            'desc'    => 'Custom Styling',
+            'desc'    => __('Custom Styling','fmi'),
             'type'    => 'heading'
         );
         $this->settings['vs-custom-css'] = array(
@@ -411,7 +402,7 @@ class Fmi_theme_settings{
         $this->settings['vs-heading-eight'] = array(
             'section' => 'website',
             'title'   => '',
-            'desc'    => 'Search Results Page',
+            'desc'    => __('Search Results Page','fmi'),
             'type'    => 'heading'
         );
         $this->settings['vs-website-nosearch-msg'] = array(
@@ -471,9 +462,7 @@ class Fmi_theme_settings{
 	}
 	
 }
-
 $theme_options = new Fmi_theme_settings();
-
 function fmi_theme_option($option){
     if (!isset($theme_options))$theme_options = new Fmi_theme_settings();
     
