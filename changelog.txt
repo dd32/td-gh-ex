@@ -1,6 +1,14 @@
 *** Lovecraft changelog ***
 
 
+Version 1.09 (2014-01-29)
+------------------------- 
+- Added missing esc_attr() to widgets and header.php
+- Replaced the query in widgets/recent-posts.php with a custom wp_query
+- Wrapped the custom Read More text link in a paragraph element
+- Optimized the comments respond form for subscribe checkboxes
+
+
 Version 1.08 (2014-01-01)
 ------------------------- 
 - Dialed up the contrast in the design

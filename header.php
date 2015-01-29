@@ -138,7 +138,7 @@
 				$post_image = $thumb['0']; 
 			?>
 		
-			<div class="header-image bg-image" style="background-image: url(<?php echo $post_image; ?>)">
+			<div class="header-image bg-image" style="background-image: url(<?php echo esc_url( $post_image ); ?>)">
 				
 				<?php the_post_thumbnail('post-image'); ?>
 				

@@ -14,8 +14,8 @@ class lovecraft_recent_comments extends WP_Widget {
 		$widget_title = null; 
 		$number_of_comments = null; 
 		
-		$widget_title = apply_filters('widget_title', $instance['widget_title']);
-		$number_of_comments = $instance['number_of_comments'];
+		$widget_title = esc_attr(apply_filters('widget_title', $instance['widget_title']));
+		$number_of_comments = esc_attr($instance['number_of_comments']);
 		
 		echo $before_widget;
 		
@@ -61,7 +61,7 @@ class lovecraft_recent_comments extends WP_Widget {
 									<div class="inner">
 									
 										<p class="title"><span><?php comment_author(); ?></span></p>
-										<p class="excerpt">"<?php echo lovecraft_get_comment_excerpt($comment->comment_ID, 13); ?>"</p>
+										<p class="excerpt">"<?php echo esc_attr(lovecraft_get_comment_excerpt($comment->comment_ID, 13)); ?>"</p>
 									
 									</div>
 									
@@ -95,18 +95,18 @@ class lovecraft_recent_comments extends WP_Widget {
 		if(!isset($instance["number_of_comments"])) { $instance["number_of_comments"] = '5'; }
 	
 		// Get the options into variables, escaping html characters on the way
-		$widget_title = $instance['widget_title'];
-		$number_of_comments = $instance['number_of_comments'];
+		$widget_title = esc_attr($instance['widget_title']);
+		$number_of_comments = esc_attr($instance['number_of_comments']);
 		?>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id('widget_title'); ?>"><?php  _e('Title', 'lovecraft'); ?>:
-			<input id="<?php echo $this->get_field_id('widget_title'); ?>" name="<?php echo $this->get_field_name('widget_title'); ?>" type="text" class="widefat" value="<?php echo $widget_title; ?>" /></label>
+			<label for="<?php echo esc_attr($this->get_field_id('widget_title')); ?>"><?php  _e('Title', 'lovecraft'); ?>:
+			<input id="<?php echo esc_attr($this->get_field_id('widget_title')); ?>" name="<?php echo esc_attr($this->get_field_name('widget_title')); ?>" type="text" class="widefat" value="<?php echo esc_attr($widget_title); ?>" /></label>
 		</p>
 						
 		<p>
 			<label for="<?php echo $this->get_field_id('number_of_comments'); ?>"><?php _e('Number of comments to display', 'lovecraft'); ?>:
-			<input id="<?php echo $this->get_field_id('number_of_comments'); ?>" name="<?php echo $this->get_field_name('number_of_comments'); ?>" type="text" class="widefat" value="<?php echo $number_of_comments; ?>" /></label>
+			<input id="<?php echo $this->get_field_id('number_of_comments'); ?>" name="<?php echo $this->get_field_name('number_of_comments'); ?>" type="text" class="widefat" value="<?php echo esc_attr($number_of_comments); ?>" /></label>
 			<small>(<?php _e('Defaults to 5 if empty','lovecraft'); ?>)</small>
 		</p>
 				
