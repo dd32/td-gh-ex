@@ -1,6 +1,10 @@
   Theme : Hueman (wordpress.org release)
-Version : 1.4.7
+Version : 1.4.8
  Author : Alexander "Alx" Agnarson - http://alxmedia.se
+
+January 29 2014 - 1.4.8
+===========================================================
+- Fixed double title tag
 
 January 22 2014 - 1.4.7
 ===========================================================
