@@ -5,10 +5,6 @@
  * @package Accent
  */
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-
 if ( ! function_exists( 'accent_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -19,6 +15,9 @@ if ( ! function_exists( 'accent_setup' ) ) :
  */
 function accent_setup() {
 	
+	/**
+	 * Set the content width based on the theme's design and stylesheet.
+	 */
 	global $content_width;
 	if ( ! isset( $content_width ) ) {
 		$content_width = 640; /* pixels */
@@ -69,6 +68,9 @@ function accent_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+	
+	// Add editor style
+	add_editor_style( 'accent-editor-style.css' );
 }
 endif; // accent_setup
 add_action( 'after_setup_theme', 'accent_setup' );
@@ -132,8 +134,6 @@ function accent_scripts() {
 
 	wp_enqueue_style( 'accent-style', get_stylesheet_uri() );
 	
-	wp_enqueue_script('jquery');
-	
 	// Google Fonts
 	if ( accent_google_fonts_url() ) {
 		wp_register_style( 'accent-fonts', accent_google_fonts_url() );
@@ -178,8 +178,3 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
-
-function accent_theme_add_editor_styles() {
-    add_editor_style( 'accent-editor-style.css' );
-}
-add_action( 'after_setup_theme', 'accent_theme_add_editor_styles' );

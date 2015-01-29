@@ -92,21 +92,109 @@ add_action( 'wp', 'accent_setup_author' );
 function accent_google_fonts_url() {
 	$accent_font_families = array();
 	
+	/* Translators: If there are characters in your language that are not supported by Source Sans Pro, translate this to 'off'. Do not translate into your own language. */
+    $source_sans_pro = _x( 'on', 'Source Sans Pro font: on or off', 'accent' );
+	
+	/* Translators: If there are characters in your language that are not supported by Varela Round, translate this to 'off'. Do not translate into your own language. */
+	$varela_round = _x( 'on', 'Varela Round: on or off', 'accent' );
+	
+	/* Translators: If there are characters in your language that are not supported by Open Sans, translate this to 'off'. Do not translate into your own language. */
+	$open_sans = _x( 'on', 'Open Sans: on or off', 'accent' );
+	
+	/* Translators: If there are characters in your language that are not supported by Lato, translate this to 'off'. Do not translate into your own language. */
+	$lato = _x( 'on', 'Lato: on or off', 'accent' );
+	
+	/* Translators: If there are characters in your language that are not supported by Merriweather Sans, translate this to 'off'. Do not translate into your own language. */
+	$merriweather_sans = _x( 'on', 'Merriweather Sans: on or off', 'accent' );
+	
+	/* Translators: If there are characters in your language that are not supported by Ubuntu, translate this to 'off'. Do not translate into your own language. */
+	$ubuntu = _x( 'on', 'Ubuntu: on or off', 'accent' );
+	
+	/* Translators: If there are characters in your language that are not supported by Vollkorn, translate this to 'off'. Do not translate into your own language. */
+	$vollkorn = _x( 'on', 'Vollkorn: on or off', 'accent' );
+	
+	/* Translators: If there are characters in your language that are not supported by Alegreya, translate this to 'off'. Do not translate into your own language. */
+	$alegreya = _x( 'on', 'Alegreya: on or off', 'accent' );
+	
+	/* Translators: If there are characters in your language that are not supported by Lora, translate this to 'off'. Do not translate into your own language. */
+	$lora = _x( 'on', 'Lora: on or off', 'accent' );
+	
+	/* Translators: If there are characters in your language that are not supported by Sorts Mill Goudy, translate this to 'off'. Do not translate into your own language. */
+	$sorts_mill_goudy = _x( 'on', 'Sorts Mill Goudy: on or off', 'accent' );
+	
+	/* Translators: If there are characters in your language that are not supported by Droid Serif, translate this to 'off'. Do not translate into your own language. */
+	$droid_serif = _x( 'on', 'Droid Serif: on or off', 'accent' );
+	
+	/* Translators: If there are characters in your language that are not supported by Noto Serif, translate this to 'off'. Do not translate into your own language. */
+	$noto_serif = _x( 'on', 'Noto Serif: on or off', 'accent' );
+	
+	/* Translators: If there are characters in your language that are not supported by Gentium Book Basic, translate this to 'off'. Do not translate into your own language. */
+	$gentium_book_basic = _x( 'on', 'Gentium Book Basic: on or off', 'accent' );
+	
+	/* Translators: If there are characters in your language that are not supported by Roboto Condensed, translate this to 'off'. Do not translate into your own language. */
+	$roboto_condensed = _x( 'on', 'Roboto Condensed: on or off', 'accent' );
+	
+	/* Translators: If there are characters in your language that are not supported by Montserrat, translate this to 'off'. Do not translate into your own language. */
+	$montserrat = _x( 'on', 'Montserrat: on or off', 'accent' );
+	
+	/* Translators: If there are characters in your language that are not supported by Sanchez, translate this to 'off'. Do not translate into your own language. */
+	$sanchez = _x( 'on', 'Sanchez: on or off', 'accent' );
+	
+	/* Translators: If there are characters in your language that are not supported by Patua One, translate this to 'off'. Do not translate into your own language. */
+	$patua_one = _x( 'on', 'Patua One: on or off', 'accent' );
+	
+	/* Translators: If there are characters in your language that are not supported by Bitter, translate this to 'off'. Do not translate into your own language. */
+	$bitter = _x( 'on', 'Bitter: on or off', 'accent' );
+	
+	/* Translators: If there are characters in your language that are not supported by Libre Baskerville, translate this to 'off'. Do not translate into your own language. */
+	$libre_baskerville = _x( 'on', 'Libre Baskerville: on or off', 'accent' );
+	
 	// The default Source Sans Pro & Varela Round fonts
 	if ( !is_admin() ) {
-        wp_register_style('accent-source-sans-pro', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,400italic,700,700italic', array(), false, 'all');
-        wp_enqueue_style('accent-source-sans-pro');
-		wp_register_style('accent-varela-round', 'http://fonts.googleapis.com/css?family=Varela+Round:400', array(), false, 'all');
-        wp_enqueue_style('accent-varela-round');
+		if ( 'off' !== $source_sans_pro || 'off' !== $varela_round ) {
+			if ( 'off' !== $source_sans_pro ) {
+				wp_register_style('accent-source-sans-pro', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,400italic,700,700italic', array(), false, 'all');
+				wp_enqueue_style('accent-source-sans-pro');
+			}
+			if ( 'off' !== $varela_round ) {
+				wp_register_style('accent-varela-round', 'http://fonts.googleapis.com/css?family=Varela+Round:400', array(), false, 'all');
+				wp_enqueue_style('accent-varela-round');
+			}
+		}
     }
-
+	
+	$font_mod_array = array(
+		'Open Sans'          => $open_sans,
+		'Lato'               => $lato,
+		'Merriweather Sans'  => $merriweather_sans,
+		'Ubuntu'             => $ubuntu,
+		'Vollkorn'           => $vollkorn,
+		'Alegreya'           => $alegreya,
+		'Lora'               => $lora,
+		'Sorts Mill Goudy'   => $sorts_mill_goudy,
+		'Droid Serif'        => $droid_serif,
+		'Noto Serif'         => $noto_serif,
+		'Gentium Book Basic' => $gentium_book_basic,
+		'Roboto Condensed'   => $roboto_condensed,
+		'Montserrat'         => $montserrat,
+		'Sanchez'            => $sanchez,
+		'Patua One'          => $patua_one,		
+		'Bitter'             => $bitter,
+		'Libre Baskerville'  => $libre_baskerville
+	);
+	
 	// Check if body font is not Source Sans Pro 
 	if ( 'Source Sans Pro' != get_theme_mod( 'body_font', 'Source Sans Pro' ) ) {
-		$accent_font_families[] = get_theme_mod( 'body_font' ) . ':400,300,400italic,700,700italic';
-	} 
-	// Check if heading font is not Source Sans Pro and it is different from the body font
-	if ( 'Source Sans Pro' != get_theme_mod( 'headings_font', 'Source Sans Pro' ) && get_theme_mod( 'body_font' ) != get_theme_mod( 'headings_font' ) ) {
-		$accent_font_families[] = get_theme_mod( 'headings_font' ) . ':700,400,400italic';
+		if ( 'off' !== $font_mod_array[get_theme_mod( 'body_font' )] ) {
+			$accent_font_families[] = get_theme_mod( 'body_font' ) . ':400,300,400italic,700,700italic';
+		}
+	}
+	
+	// Check if heading font is not Varela Round and it is different from the body font
+	if ( 'Varela Round' != get_theme_mod( 'headings_font', 'Varela Round' ) && get_theme_mod( 'body_font' ) != get_theme_mod( 'headings_font' ) ) {
+		if ( 'off' !== $font_mod_array[get_theme_mod( 'headings_font' )] ) {
+			$accent_font_families[] = get_theme_mod( 'headings_font' ) . ':700,400,400italic';
+		}
 	} 
 
 	if ( ! empty( $accent_font_families ) ) {
