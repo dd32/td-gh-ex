@@ -1,0 +1,153 @@
+/* Large desktop */
+@media (max-width: 1140px) {
+.ak-container {
+  padding: 0 10px;
+  width: 100%;
+}
+
+
+}
+ 
+/* Portrait tablet to landscape and desktop */
+@media (max-width: 979px) {
+.newsletter-widget p{
+	width: 50%;
+}
+
+.blog-date {
+  font-size: 14px;
+  height: 60px;
+  line-height: 15px;
+  padding-top: 15px;
+  width: 60px;
+}
+
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+.service-block, .feature-block {
+  width: 47%;
+  margin-bottom: 3%;
+} 
+
+.blog-block{
+	width: 98%;
+}
+
+.widget-block {
+  width: 97%;
+  margin-bottom: 3%;
+}
+
+.blog-image {
+  text-align: center;
+}
+
+.blog-date {
+  font-size: 18px;
+  height: 80px;
+  line-height: 22px;
+  padding-top: 18px;
+  width: 80px;
+}
+
+.columns-3 .top-footer-block {
+  display: block;
+  float: none;
+  margin-bottom: 2%;
+  margin-left: 0;
+  padding: 0 10px;
+  width: 100%;
+}
+
+#testimonial .testimonial-quote, 
+#testimonial .speaker-name{
+	padding: 0 10px;
+}
+
+.caption-content-wrapper {
+  display: none;
+}
+
+.copyright, .social-icon {
+  display: block;
+  float: none;
+  margin-bottom: 10px;
+  text-align: center;
+}
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 580px) {
+.service-block, .feature-block {
+  width: 97%;
+  margin-bottom: 30px;
+  text-align: center;
+} 
+
+.blog-block{
+	width: 98%;
+}
+
+.widget-block {
+  margin-bottom: 3%;
+  width: 97%;
+  padding: 10px;
+}
+
+.blog-image {
+  text-align: center;
+}
+
+.blog-date {
+  font-size: 14px;
+  height: 60px;
+  line-height: 15px;
+  padding-top: 15px;
+  width: 60px;
+}
+
+.cta-banner-text {
+  float: none;
+  width: 100%;
+  text-align: center;
+}
+
+.cta-banner-btn {
+  float: none;
+  margin: 0 auto;
+  width: 50%;
+}
+
+.slider-caption .caption-title{
+	font-size: 26px;
+}
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 479px) {
+.blog-date {
+  font-size: 11px;
+  height: 40px;
+  line-height: 14px;
+  padding-top: 5px;
+  width: 40px;
+}
+
+.testimonial-thumb {
+  height: 70px;
+  margin-left: 20px;
+  width: 70px;
+}
+
+#main-slider .bx-controls .bx-controls-direction{
+	display: none;
+}
+#main-slider .bx-controls .bx-pager{
+	bottom: 0;
+}
+h1{
+	font-size: 28px;
+}
+}
