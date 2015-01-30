@@ -55,7 +55,8 @@
 	.site-content .site-navigation,
 	#infinite-handle,
 	.comments-title, #reply-title,
-	#respond {
+	#respond,
+	.comments-area article {
 		margin-bottom: 40px;
 	}	
 }
@@ -121,7 +122,8 @@
 	.site-content .site-navigation,
 	#infinite-handle,
 	.comments-title, #reply-title,
-	#respond {
+	#respond,
+	.comments-area article {
 		margin-bottom: 30px;
 	}	
 	#featured-post.layout-four .featued-content-wrap,
@@ -414,7 +416,8 @@ and (orientation : portrait) {
 	.site-content .site-navigation,
 	#infinite-handle,
 	.comments-title, #reply-title,
-	#respond {
+	#respond,
+	.comments-area article {
 		margin-bottom: 20px;
 	}	
 	#main-slider .entry-container {

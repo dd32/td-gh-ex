@@ -102,7 +102,7 @@ function catchkathmandu_theme_options_do_page() {
                             
                 <div id="theme-support">
                     <ul>
-                    	<li><a class="button donate" href="<?php echo esc_url(__('http://catchthemes.com/donate/','catchkathmandu')); ?>" title="<?php esc_attr_e('Donate to Catch Kathmandu', 'catcheverest'); ?>" target="_blank"><?php printf(__('Donate Now','catchkathmandu')); ?></a></li>
+                    	<li><a class="button donate" href="<?php echo esc_url(__('http://catchthemes.com/donate/','catchkathmandu')); ?>" title="<?php esc_attr_e('Donate to Catch Kathmandu', 'catchkathmandu'); ?>" target="_blank"><?php printf(__('Donate Now','catchkathmandu')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/support/','catchkathmandu')); ?>" title="<?php esc_attr_e('Support', 'catchkathmandu'); ?>" target="_blank"><?php printf(__('Support','catchkathmandu')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/theme-instructions/catch-kathmandu/','catchkathmandu')); ?>" title="<?php esc_attr_e('Theme Instruction', 'catchkathmandu'); ?>" target="_blank"><?php printf(__('Theme Instruction','catchkathmandu')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('https://www.facebook.com/catchthemes/','catchkathmandu')); ?>" title="<?php esc_attr_e('Like Catch Themes on Facebook', 'catchkathmandu'); ?>" target="_blank"><?php printf(__('Facebook','catchkathmandu')); ?></a></li>
@@ -1820,3 +1820,26 @@ function catchkathmandu_make_footer_modifications() {
     }
 }
 add_action( 'init', 'catchkathmandu_make_footer_modifications' );
+
+
+/**
+ * Custom scripts and styles on Customizer for Catch Kathmandu
+ *
+ * @since Catch Kathmandu 4.1
+ */
+function catchkathmandu_customize_scripts() {
+    wp_register_script( 'catchkathmandu_customizer_custom', get_template_directory_uri() . '/inc/panel/js/customizer-custom-scripts.js', array( 'jquery' ), '20140108', true );
+
+    $catchkathmandu_misc_links = array(
+                            'upgrade_link'              => esc_url( admin_url( 'themes.php?page=theme_options' ) ),
+                            'upgrade_text'              => __( 'More Theme Options &raquo;', 'catchkathmandu' ),
+                            );
+
+    //Add More Theme Options Button
+    wp_localize_script( 'catchkathmandu_customizer_custom', 'catchkathmandu_misc_links', $catchkathmandu_misc_links );
+
+    wp_enqueue_script( 'catchkathmandu_customizer_custom' );
+
+    wp_enqueue_style( 'catchkathmandu_customizer_custom', get_template_directory_uri() . '/inc/panel/catchkathmandu-customizer.css');
+}
+add_action( 'customize_controls_print_footer_scripts', 'catchkathmandu_customize_scripts');

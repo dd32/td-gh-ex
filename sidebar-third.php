@@ -3,8 +3,8 @@
  * The Footer widget areas.
  *
  * @package Catch Themes
- * @subpackage Catch_Evolution_Pro
- * @since Catch Evolution 1.0
+ * @subpackage Catch Kathmandu Pro
+ * @since Catch Kathmandu 1.0
  */
 ?>
 
@@ -42,7 +42,7 @@
         <div id="third" class="widget-area sidebar-three-columns" role="complementary">
 			<?php 
 			/** 
-			 * catchevolution_before_third hook
+			 * catchkathmandu_before_third hook
 			 */
 			do_action( 'catchkathmandu_before_third' );         
         
@@ -51,7 +51,7 @@
 			endif; 
 			
 			/** 
-			 * catchevolution_after_third hook
+			 * catchkathmandu_after_third hook
 			 */
 			do_action( 'catchkathmandu_after_third' ); ?>  
                         

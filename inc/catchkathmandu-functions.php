@@ -1429,7 +1429,7 @@ add_action( 'catchkathmandu_content_sidebar_end', 'catchkathmandu_content_sideba
  * Third Sidebar
  *
  * @Hooked in catchkathmandu_content_sidebar_end
- * @since Catch Evolution 1.1
+ * @since Catch Kathmandu 1.1
  */
 
 function catchkathmandu_third_sidebar() {
