@@ -19,6 +19,7 @@ Added Translation for Japanese - Key Saito (key@keyspace.info)
 Added Translation for French by Rico (Email: postmaster@web-automobile.com) and Sebastian Chamusard (admin78@orange.fr)
 Added Translation for Brazilian Portuguese by Valdir Trombini (Email: valdirtrombini@hotmail.com)
 Added Translation for Dutch by Alain Baudrez (Email: a.baudrez@gmail.com) and Yoshi van den Akker ( Email: yoshivda@gmail.com )
+Added Translation for German - Stephan Erdmann (Email: s.erdmann@bewegungsfelder.de )
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
