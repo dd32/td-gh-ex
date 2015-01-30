@@ -4,7 +4,7 @@ Theme URI: http://templatesnext.org/itrans/
 Author: templatesnext team
 Author URI: http://templatesnext.org/
 Description: The i-transform theme for WordPress is developed using a populer theme "Twenty Thirteen" giving you all the features of Twenty Thirteen plus several additional features like easy to use admin theme options, featured post section, 5 color schemes, multiple blog layouts, WooCommerce ready etc.
-Version: 2.0.5
+Version: 2.0.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, red, green, purple, white, yellow, light, blue, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, theme-options, translation-ready
@@ -3852,7 +3852,47 @@ div.ibanner .da-img img {
 	.site-footer .copyright {
 		text-align: left;
 		width: 100%;
-	}	
+	}
+	
+	
+	.utilitybar {
+		height: auto;
+	}
+		
+	.socialicons {
+		display: block;
+		float: none;
+		padding-bottom: 32px;
+		clear: both;
+	}
+	
+	.topphone {
+		display: block;
+		float: none;
+		clear: both;
+		margin-left: 0px;
+		padding-left: 0px;
+	}
+	
+	.sidebar .site-content {
+		display: block;
+		float: none;
+		width: 100%;
+	}
+	
+	.site-main .sidebar-container {
+		width: 100%;
+		display: block;
+		float: none;
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+	
+	.site-main .sidebar-inner {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	
 	
 }
 
@@ -3996,17 +4036,6 @@ div.ibanner .da-img img {
 	(-webkit-min-device-pixel-ratio: 1.25),
 	(min-resolution: 120dpi) {
 
-	.site-header .search-field {
-		background-image: url(images/search-icon-2x.png);
-	}
-
-	.format-audio .audio-content,
-	.format-status .entry-content:before,
-	.format-status .entry-meta:before,
-	.comment-list > li:after,
-	.comment-list .children > li:before {
-		background-image: url(images/dotted-line-2x.png);
-	}
 }
 
 @media print {

@@ -273,6 +273,13 @@ function optionsframework_options() {
 		'id' => 'itrans_social_googleplus',
 		'std' => '',
 		'type' => 'text');
+		
+	$options[] = array(
+		'name' => __('YouTube', 'itransform'),
+		'desc' => __('', 'itransform'),
+		'id' => 'itrans_social_youtube',
+		'std' => '',
+		'type' => 'text');		
 				
 		
 	/* Sliders */
