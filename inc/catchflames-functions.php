@@ -1028,17 +1028,15 @@ function catchflames_footer_content() {
 	if ( ( !$catchflames_footer_content = get_transient( 'catchflames_footer_content' ) ) ) {
 		echo '<!-- refreshing cache -->';
 			
-        catchflames_assets();
+        $catchflames_footer_content = catchflames_assets();
 		
     	set_transient( 'catchflames_footer_content', $catchflames_footer_content, 86940 );
     }
-	echo do_shortcode( $catchflames_footer_content );
+	echo $catchflames_footer_content;
 }
 add_action( 'catchflames_site_generator', 'catchflames_footer_content', 30 );
 
-function catchflames_assets() {
-	echo catchflames_content();
-}
+
 /**
  * Footer Site Generator Close
  *

@@ -225,12 +225,7 @@ require( get_template_directory() . '/inc/catchflames-custom-header.php' );
  * Adds support for WooCommerce Plugin
  */
 if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-	
-	/**
-	 * Add Suport for WooCommerce Plugin
-	 */
 	add_theme_support( 'woocommerce' );	
-	
     require( get_template_directory() . '/inc/catchflames-woocommerce.php' );
 }
 
@@ -244,10 +239,9 @@ in_array( 'mqtranslate/mqtranslate.php', apply_filters( 'active_plugins', get_op
 }
 
 /**
- * Adds support for WPML Plugin
- */
-if ( defined( 'ICL_SITEPRESS_VERSION' ) ) {
-	
+ * Adds support for WPML Plugin and Polyland
+ */	
+if ( defined( 'ICL_SITEPRESS_VERSION' ) || class_exists( 'Polylang' ) ) {
 	require( get_template_directory() . '/inc/catchflames-wpml.php' );
 }
 	

@@ -19,8 +19,12 @@ add_action( 'admin_menu', 'catchflames_options_menu' );
 function catchflames_admin_scripts() {
 	//jquery-cookie registered in functions.php
 	wp_enqueue_script( 'catchflames_admin', get_template_directory_uri().'/inc/panel/admin.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable' ) );
-	wp_enqueue_script( 'catchflames_upload', get_template_directory_uri().'/inc/panel/add_image_scripts.min.js', array( 'jquery','media-upload','thickbox' ) );
-	wp_enqueue_style( 'catchflames_admin',get_template_directory_uri().'/inc/panel/admin.css', array( 'farbtastic', 'thickbox' ), '1.0', 'screen' );
+	
+    wp_enqueue_media();
+        
+    wp_enqueue_script( 'catchflames_upload', get_template_directory_uri().'/inc/panel/add_image_scripts.min.js', array( 'jquery' ) );
+
+	wp_enqueue_style( 'catchflames_admin',get_template_directory_uri().'/inc/panel/admin.css', '', '1.0', 'screen' );
 }
 add_action( 'admin_print_styles-appearance_page_theme_options', 'catchflames_admin_scripts' );
 
@@ -144,14 +148,14 @@ function catchflames_theme_options_do_page() {
                             	<div class="col col-1">
                                 	<?php _e( 'Fav Icon URL:', 'catchflames' ); ?>
                                 </div>
-                                <div class="col col-2">  
-                                	<?php if ( !empty ( $options[ 'fav_icon' ] ) ) { ?>
-                               			<input class="upload-url" size="65" type="text" name="catchflames_options[fav_icon]" value="<?php echo esc_url( $options [ 'fav_icon' ] ); ?>" class="upload" />
-									<?php } else { ?>
-                                        <input size="65" type="text" name="catchflames_options[fav_icon]" value="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" alt="fav" />
-                                    <?php }  ?> 
-                                    <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Fav Icon','catchflames' );?>" />
-                            	</div>
+                                <div class="col col-2">
+                                    <?php if ( !empty ( $options[ 'fav_icon' ] ) ) { ?>
+                                        <input class="upload-url" size="65" type="text" name="catchflames_options[fav_icon]" value="<?php echo esc_url( $options [ 'fav_icon' ] ); ?>" />
+                                        <?php } else { ?>
+                                        <input class="upload-url" size="65" type="text" name="catchflames_options[fav_icon]" value="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" alt="fav" />
+                                        <?php }  ?> 
+                                        <input ref="<?php esc_attr_e( 'Insert as Favicon','catchflames' );?>" class="catchflames_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Favicon','catchflames' );?>" />
+                                </div>
                          	</div><!-- .row -->                            
                        		<div class="row">
                             	<div class="col col-1">
@@ -195,7 +199,7 @@ function catchflames_theme_options_do_page() {
                                     <?php } else { ?>
                                         <input size="65" type="text" name="catchflames_options[web_clip]" value="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png" alt="fav" />
                                     <?php }  ?> 
-                                    <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Web Clip Icon','catchflames' );?>" />
+                                    <input ref="<?php esc_attr_e( 'Insert as Web Clip Icon','catchflames' );?>" class="catchflames_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Web Clip Icon','catchflames' );?>" />
                              	</div>
                          	</div><!-- .row -->
                             <div class="row">
@@ -252,7 +256,7 @@ function catchflames_theme_options_do_page() {
                                     <?php } else { ?>
                                      	<input class="upload-url" size="65" type="text" name="catchflames_options[top_menu_logo]" value="<?php echo get_template_directory_uri(); ?>/images/fixed-logo.png" alt="logo" />
                                     <?php }  ?>
-                                  	<input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Header Logo','catchflames' ); ?>" />
+                                  	<input ref="<?php esc_attr_e( 'Insert as Header Logo','catchflames' );?>" class="catchflames_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Header Logo','catchflames' );?>" />
                            		</div>
                          	</div><!-- .row -->
                             <div class="row">
@@ -299,7 +303,7 @@ function catchflames_theme_options_do_page() {
                                      <?php } else { ?>
                                      	<input class="upload-url" size="65" type="text" name="catchflames_options[featured_logo_header]" value="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="logo" />
                                      <?php }  ?>
-                                    <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Header Logo','catchflames' ); ?>" />
+                                    <input ref="<?php esc_attr_e( 'Insert as Logo','catchflames' );?>" class="catchflames_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Logo','catchflames' );?>" />
                            		</div>
                          	</div><!-- .row -->
                             <div class="row">
@@ -1401,7 +1405,7 @@ add_action( 'custom_header_options', 'catchflames_customheader_invalidate_caches
 
 
 /**
- * Shortcode to display the current year.
+ * Function to display the current year.
  *
  * @uses date() Gets the current year.
  * @return string
@@ -1412,7 +1416,7 @@ function catchflames_the_year() {
 
 
 /**
- * Shortcode to display a link back to the site.
+ * Function to display a link back to the site.
  *
  * @uses get_bloginfo() Gets the site link
  * @return string
@@ -1423,7 +1427,7 @@ function catchflames_site_link() {
 
 
 /**
- * Shortcode to display a link to WordPress.org.
+ * Function to display a link to WordPress.org.
  *
  * @return string
  */
@@ -1433,7 +1437,7 @@ function catchflames_theme_name() {
 
 
 /**
- * Shortcode to display a link to Theme Link.
+ * Function to display a link to Theme Link.
  *
  * @return string
  */
@@ -1444,7 +1448,35 @@ function catchflames_theme_author() {
 }
 
 
-function catchflames_content(){
+/**
+ * Function to display Catch Flames Assets
+ *
+ * @return string
+ */
+function catchflames_assets(){
     $catchflames_content = '<div class="copyright">'. esc_attr__( 'Copyright', 'catchflames' ) . ' &copy; '. catchflames_the_year() . ' ' . catchflames_site_link() . ' ' . esc_attr__( 'All Rights Reserved', 'catchflames' ) . '.</div><div class="powered">'. catchflames_theme_name() . catchflames_theme_author() . '</div>';
     return $catchflames_content;
 }
+
+
+/**
+ * Custom scripts and styles on Customizer for Catch Everest
+ *
+ * @since Catch Flames 2.1.1
+ */
+function catchflames_customize_scripts() {
+    wp_register_script( 'catchflames_customizer_custom', get_template_directory_uri() . '/inc/panel/customizer-custom-scripts.js', array( 'jquery' ), '20140108', true );
+
+    $catchflames_misc_links = array(
+                            'upgrade_link'              => esc_url( admin_url( 'themes.php?page=theme_options' ) ),
+                            'upgrade_text'              => __( 'More Theme Options &raquo;', 'catchflames' ),
+                            );
+
+    //Add More Theme Options Button
+    wp_localize_script( 'catchflames_customizer_custom', 'catchflames_misc_links', $catchflames_misc_links );
+
+    wp_enqueue_script( 'catchflames_customizer_custom' );
+
+    wp_enqueue_style( 'catchflames_customizer_custom', get_template_directory_uri() . '/inc/panel/catchflames-customizer.css');
+}
+add_action( 'customize_controls_print_footer_scripts', 'catchflames_customize_scripts');

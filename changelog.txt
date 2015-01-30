@@ -1,5 +1,11 @@
 == Changelog ==
 
+Version 2.2
+* Added support for Polylang plugin
+* Added Dutch translation nl_NL.po and nl_NL.mo files
+* Added More theme options button in Customizer
+* Updated media uploader to new version in theme options
+
 Version 2.1
 * Added French translation fr_FR.po and fr_FR.mo files
 * Added title tag via add theme support
