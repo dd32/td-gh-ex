@@ -8,16 +8,23 @@
  */
 get_header();
 ?>
+<div class="page-intro" style="margin-top: 0px;">
+				<div class="container">
+					<div class="row">
+ <div class="col-md-12  col-sm-12 ">
+        <ol class="breadcrumb ">
+          <?php avnii_breadcrumbs(); ?>
+        </ol>
+      </div>
+</div>
+				</div>
+			</div>
 <!--Start Content Grid-->
 <div class="mainblogwrapper">
     <div class="container">
         <div class="row">
             <div class="mainblogcontent">
-            <div class="col-md-12  col-sm-12 ">
-        <ol class="breadcrumb ">
-          <?php avnii_breadcrumbs(); ?>
-        </ol>
-      </div>
+             
                 <div class="col-md-9">
                 <div class="article-page">
             

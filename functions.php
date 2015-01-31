@@ -1,11 +1,11 @@
 <?php
-require_once('theme-option/ariniothemes.php');
+require_once get_template_directory() . '/theme-option/ariniothemes.php';
 /**
  * Set up the content width value based on the theme's design.
  */
  
- 
- 
+ add_image_size('custombig', 798, 398, TRUE);
+ add_image_size('workimg', 750, 464, TRUE);
 if ( ! isset( $content_width ) ) {
 	$content_width = 900;
 }
@@ -86,10 +86,12 @@ function avnii_setup() {
 	 */
 	load_theme_textdomain( 'avnii', get_template_directory() . '/languages' );
 	// This theme styles the visual editor to resemble the theme style.
- 
+	add_editor_style();
 	// Add RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
 	// Enable support for Post Thumbnails, and declare two sizes.
+	add_theme_support('post-formats', array('image', 'gallery', 'video', 'link', 'quote', 'audio'));
+	
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 798, 398, true );
 	add_image_size( 'avnii-full-width', 1038, 576, true );
@@ -120,13 +122,7 @@ function avnii_setup() {
 }
 endif; // avnii_setup
 add_action( 'after_setup_theme', 'avnii_setup' );
-
-/**
- * Register Lato Google font for avnii.
- *
- */
  
-
 /**
  * Filter the page title.
  **/
@@ -254,7 +250,7 @@ add_filter('wp_list_categories', 'avnii_add_nav_class');
  * Replace Excerpt [...] with Read More
 **/
 function avnii_read_more( ) {
-return ' ... <p class="moree"><a class="btn btn-inverse btn-normal btn-primary " href="'. get_permalink( get_the_ID() ) . '">Read more</a></p>';
+return ' ... <p class="moree"><a class="arbtnn arbtnn-small arbtnnsrborder" href="'. get_permalink( get_the_ID() ) . '">Read more <i class="fa fa-arrow-circle-right"></i></a></p>';
  }
 add_filter( 'excerpt_more', 'avnii_read_more' ); 
 /**
@@ -262,15 +258,13 @@ add_filter( 'excerpt_more', 'avnii_read_more' );
  */
 function avnii_scripts_styles() {
 	 wp_enqueue_style('bootstrap', get_template_directory_uri() . '/styles/bootstrap.min.css');
-          
+          wp_enqueue_style( 'avnii-basic-style', get_stylesheet_uri() );
+		  wp_enqueue_style('normalize', get_template_directory_uri() . '/styles/normalize.css');
 		   wp_enqueue_script('jquery');
-			wp_enqueue_script( 'nav', get_template_directory_uri() . '/scripts/jquery.nav.js',array(),false,true);
-		   
-		  wp_enqueue_script( 'validate', get_template_directory_uri() . '/styles/jquery.validate.min.js',array(),false,true);
-		
-		  wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/scripts/modernizr.js',array(),false,true);
+		 wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/scripts/modernizr.js',array(),false,true);
 		  wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/styles/bootstrap.min.js',array(),false,true);
 		  wp_enqueue_script( 'custom', get_template_directory_uri() . '/scripts/custom.js',array(),false,true);
+		  
 	  if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 }
 add_action( 'wp_enqueue_scripts', 'avnii_scripts_styles' );
@@ -347,42 +341,6 @@ function avnii_wrap_comment_text($content) {
     return "<div class=\"comment-text\"><a class='commenttext-arrow'></a>". $content ."</div>";
 }
 add_filter('comment_text', 'avnii_wrap_comment_text');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

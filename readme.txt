@@ -1,8 +1,8 @@
-"Avnii Multipurpose WordPress Theme"
+﻿"Avnii Multipurpose WordPress Theme"
 
 == Theme: Avnii==
 
-Avnii is Beautiful  multipurpose responsive theme. You can use it for your business, portfolio, blogging, fitness, GYM, Travels Agencies or any type of site. Its comes with beautiful slider. It has a very easy admin option panel where you change lot of things easily. It also give you custom  blog page and fixed header. and it is fully responsive.
+Avnii is Multipurpose, Elegant, Responsive and beautiful Theme with Easy Customization Options. Avnii Theme is Single Click Intall feature, Just press activate button and your website will get ready. Avnii is a bootstrap based fully responsive theme that works on any device. You can use it for your business, portfolio, blogging, fitness, GYM, Travels Agencies or any type of site. Its comes with beautiful slider. It has a very easy admin option panel where you change lot of things easily. You can upload logo , fevicon etc. This theme made by arinio.com.
 
 * By ArinioThemes, http://arinio.com/
 
@@ -12,8 +12,8 @@ Avnii - Copyright 2014 Avnii, arinio.com
 
 
 
-* The script jquery.nav.js is dual licensed under GPL & MIT { Copyright (c) 2010 Trevor Davis (http://trevordavis.net)}
-* The script jquery.validate.min.js is dual licensed under GPL & MIT {Copyright (c) 2006 - 2011 Jörn Zaefferer}
+ 
+ 
 * The script modernizr.js is dual licensed under BSD & MIT 
 * Other custom.js files are our own creation and is licensed under the same license as this theme.
 
@@ -52,3 +52,21 @@ Get free support at http://arinio.com/support/
 All available options can be used from Appearance->AR Options
 
 /**********************************************************/
+
+
+License for images:
+1. Image Name: img11final.jpg
+Resource link: - http://www.flickr.com/photos/35924887@N02/5447731379
+License:  Creative Commons license
+url : https://creativecommons.org/licenses/by/2.0/
+
+ 
+ 
+other images made by us .
+
+
+
+
+
+
+

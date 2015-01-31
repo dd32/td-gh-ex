@@ -1,7 +1,7 @@
 (function($) {
 	$(document).ready(function() {
 
-		function redpro_add_file(event, selector) {
+		function avnii_add_file(event, selector) {
 		
 			var upload = $(".uploaded-file"), frame;
 			var $el = $(this);
@@ -38,10 +38,10 @@
 				if ( attachment.attributes.type == 'image' ) {
 					selector.find('.screenshot').empty().hide().append('<img src="' + attachment.attributes.url + '"><a class="remove-image">Remove</a>').slideDown('fast');
 				}
-				selector.find('.upload-button').unbind().addClass('remove-file').removeClass('upload-button').val(redpro_l10n.remove);
+				selector.find('.upload-button').unbind().addClass('remove-file').removeClass('upload-button').val(avnii_l10n.remove);
 				selector.find('.of-background-properties').slideDown();
 				selector.find('.remove-image, .remove-file').on('click', function() {
-					redpro_remove_file( $(this).parents('.section') );
+					avnii_remove_file( $(this).parents('.section') );
 				});
 			});
 
@@ -49,28 +49,28 @@
 			frame.open();
 		}
         
-		function redpro_remove_file(selector) {
+		function avnii_remove_file(selector) {
 			selector.find('.remove-image').hide();
 			selector.find('.upload').val('');
 			selector.find('.of-background-properties').hide();
 			selector.find('.screenshot').slideUp();
-			selector.find('.remove-file').unbind().addClass('upload-button').removeClass('remove-file').val(redpro_l10n.upload);
+			selector.find('.remove-file').unbind().addClass('upload-button').removeClass('remove-file').val(avnii_l10n.upload);
 			// We don't display the upload button if .upload-notice is present
 			// This means the user doesn't have the WordPress 3.5 Media Library Support
 			if ( $('.section-upload .upload-notice').length > 0 ) {
 				$('.upload-button').remove();
 			}
 			selector.find('.upload-button').on('click', function() {
-				redpro_add_file(event, $(this).parents('.section'));
+				avnii_add_file(event, $(this).parents('.section'));
 			});
 		}
 		
 		$('.remove-image, .remove-file').on('click', function() {
-			redpro_remove_file( $(this).parents('.section') );
+			avnii_remove_file( $(this).parents('.section') );
         });
         
         $('.upload-button').click( function( event ) {
-        	redpro_add_file(event, $(this).parents('.section'));
+        	avnii_add_file(event, $(this).parents('.section'));
         });
         
     });

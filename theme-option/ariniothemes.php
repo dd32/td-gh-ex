@@ -38,24 +38,19 @@ function arinio_framework_page(){
 		if ( ! isset( $_REQUEST['settings-updated'] ) ) 
 		$_REQUEST['settings-updated'] = false;
 		
-		
-		echo "<h1>". __( 'Avnii Theme Options', 'customtheme' ) . "</h1>"; 
+		 
+		$image=get_template_directory_uri().'/theme-option/images/logo.png';
+		echo "<h1><img src='".$image."' height='64px'  /> ". __( 'Arinio Theme Options', 'customtheme' ) . "</h1>"; 
 		if ( false !== $_REQUEST['settings-updated'] ) :
 			echo "<div><p><strong>"._e( 'Options saved', 'customtheme' )."</strong></p></div>";
 		endif; 
 ?>
-
-<div class="tnotify">
-        <h1>Get Avnii PRO Theme!  Just $11</h1>
-        <p style="font-size:15px; line-height: 20px;">You are using the avnii, Free Version of avnii Pro Theme. Upgrade to Pro for extra features like Home Page Unlimited Slider, Work Gallery, Team section, Client Section and many more Page Templates, Social Link Section, Life time theme support and much more.</p>
-        <a href="http://arinio.com/avnii-responsive-multipurpose-wordpress-theme/" target="blank">Upgrade to avnii PRO Theme here >></a>
-    </div>
 <div id="arinio_framework-wrap" class="wrap">
-  <h2 class="nav-tab-wrapper"> <a id="options-group-1-tab" class="nav-tab basicsettings-tab" title="Basic Settings" href="#options-group-1">Basic Settings</a> <a id="options-group-3-tab" class="nav-tab basicsettings-tab" title="Basic Settings" href="#options-group-3">Slider Settings</a> <a id="options-group-4-tab" class="nav-tab socialsettings-tab" title="Services Settings" href="#options-group-4">Services Settings</a>  <a id="options-group-5-tab" class="nav-tab socialsettings-tab" title="Work Settings" href="#options-group-5">About us Settings</a> <a id="options-group-7-tab" class="nav-tab socialsettings-tab" title="Work Settings" href="#options-group-7">Contact Settings</a> </h2>
+  <h2 class="nav-tab-wrapper"> <a id="options-group-1-tab" class="nav-tab basicsettings-tab" title="Basic Settings" href="#options-group-1">Basic</a> <a id="options-group-3-tab" class="nav-tab basicsettings-tab" title="Basic Settings" href="#options-group-3">Slider</a> <a id="options-group-4-tab" class="nav-tab socialsettings-tab" title="Services Settings" href="#options-group-4">Services </a>   <a id="options-group-11-tab" class="nav-tab socialsettings-tab" title="Blog Settings" href="#options-group-11">Blog</a></h2>
   <div id="arinio_framework-metabox" class="metabox-holder">
     <div id="arinios_framework" class="postbox"> 
       
-      <!--======================== F I N A L - - T H E M E - - O P T I O N ===================-->
+     
       
       <form method="post" action="options.php" id="form-option" class="theme_option_ar">
         <?php settings_fields( 'ar_options' );  
@@ -96,25 +91,12 @@ function arinio_framework_page(){
           
            
           
+         
           
           
           
-          
-          
-          
-          
-              <div id="section-footertext2" class="section section-textarea">
-            <h4 class="heading">Blog Heading</h4>
-            <div class="option">
-              <div class="controls">
-                <input type="text" id="blogh" class="of-input" name="arinio_theme_options[blogh]" size="32"  value="<?php echo $options['blogh']; ?>">
-              </div>
-              <div class="explain">Enter here Blog Heading to show on front page.</div>
-            </div>
-          </div>
-           
-          
-            
+         
+             
           
           
           <div id="section-footertext2" class="section section-textarea">
@@ -127,6 +109,9 @@ function arinio_framework_page(){
             </div>
           </div>
           
+          
+            
+            
           <div id="section-footertext2" class="section section-textarea">
             <h4 class="heading">Custom CSS</h4>
             <div class="option">
@@ -138,17 +123,11 @@ function arinio_framework_page(){
               <div class="explain">add your custom CSS code to your theme by writing the code in this block.</div>
             </div>
           </div>
+          
+          
            
-          
-          
-          
-         
-          
-          
-          
-          
-          
-          
+           
+           
           
           
           
@@ -158,6 +137,13 @@ function arinio_framework_page(){
         <!-------------- Second group ----------------->
         
          
+        
+        
+        
+        
+        
+        
+        
  <div id="options-group-3" class="group socialsettings">
  <h3>Slider Settings</h3>
         
@@ -179,16 +165,12 @@ function arinio_framework_page(){
               <div class="explain">Mention the Slide 1 SubTitle  for Slider  </div>
             </div>
           </div>
-          <div id="section-facebook" class="section section-text mini">
-            <h4 class="heading">Slide 1 Description </h4>
-            <div class="option">
-              <div class="controls">
-                 
-                <textarea class="of-input" name="arinio_theme_options[slide1des]" id="slide1des" cols="6" rows="6"><?php echo $options['slide1des']; ?></textarea>
-              </div>
-              <div class="explain">Mention the Slide 1 Description   for Slider  </div>
-            </div>
-          </div>
+          
+    
+          
+          
+          
+           
           <div id="section-logo" class="section section-upload ">
             <h4 class="heading">Slide 1 Image</h4>
             <div class="option">
@@ -203,7 +185,10 @@ function arinio_framework_page(){
               <div class="explain">Upload a Image for your Slider. </div>
             </div>
             </div> <hr>
-             <div id="section-facebook" class="section section-text mini">
+          
+          
+          
+           <div id="section-facebook" class="section section-text mini">
             <h4 class="heading">Slide 2 Title </h4>
             <div class="option">
               <div class="controls">
@@ -221,16 +206,10 @@ function arinio_framework_page(){
               <div class="explain">Mention the Slide 2 SubTitle  for Slider  </div>
             </div>
           </div>
-          <div id="section-facebook" class="section section-text mini">
-            <h4 class="heading">Slide 1 Description </h4>
-            <div class="option">
-              <div class="controls">
-                 
-                <textarea class="of-input" name="arinio_theme_options[slide2des]" id="slide1des" cols="6" rows="6"><?php echo $options['slide2des']; ?></textarea>
-              </div>
-              <div class="explain">Mention the Slide 2 Description   for Slider  </div>
-            </div>
-          </div>
+          
+           
+          
+          
           <div id="section-logo" class="section section-upload ">
             <h4 class="heading">Slide 2 Image</h4>
             <div class="option">
@@ -246,8 +225,7 @@ function arinio_framework_page(){
             </div>
             </div> <hr>
           
-          
-          
+            
           
           
             
@@ -288,6 +266,25 @@ function arinio_framework_page(){
         
          <div id="options-group-4" class="group socialsettings">
           <h3>Services Settings</h3>
+          
+          
+          <div id="section-bloglayout" class="section section-radio">
+            <h4 class="heading">Activate Services Section</h4>
+            <div class="option">
+              <div class="controls">
+                 
+                 <input type="radio"  name="arinio_theme_options[servicessection]" value="on" <?php if(!empty($options['servicessection'])) { if($options['servicessection'] == 'on') { ?> checked="checked" <?php }} ?>>ON 
+                  <input type="radio" name="arinio_theme_options[servicessection]" value="off"  <?php if(!empty($options['servicessection'])) { if($options['servicessection'] == 'off') { ?> checked="checked" <?php }} ?>>OFF 
+                 
+                
+              </div>
+              <div class="explain">Activate Services Section For Front Page</div>
+            </div>
+          </div>
+          
+          
+          
+          
           <div id="section-facebook" class="section section-text mini">
             <h4 class="heading">Main Heading</h4>
             <div class="option">
@@ -297,6 +294,18 @@ function arinio_framework_page(){
               <div class="explain">Mention the Service Main Heading text for Service section </div>
             </div>
           </div>
+          <div id="section-facebook" class="section section-text mini">
+            <h4 class="heading">Main Heading Description</h4>
+            <div class="option">
+              <div class="controls">
+               <textarea class="of-input" name="arinio_theme_options[msheadingdes]" id="msheadingdes" cols="6" rows="6"><?php echo $options['msheadingdes']; ?></textarea>
+                
+              </div>
+              <div class="explain">Mention the Main Heading Description text for Service section </div>
+            </div>
+          </div>
+          
+          
           <div id="section-twitter" class="section section-text mini">
             <h4 class="heading">First Icon</h4>
             <div class="option">
@@ -361,7 +370,7 @@ function arinio_framework_page(){
             <h4 class="heading">Third Icon</h4>
             <div class="option">
               <div class="controls">
-                <input id="icon1" class="of-input" name="arinio_theme_options[sicon3]" type="text" size="30" value="<?php echo $options['sicon2']; ?>" />
+                <input id="icon1" class="of-input" name="arinio_theme_options[sicon3]" type="text" size="30" value="<?php echo $options['sicon3']; ?>" />
               </div>
               <div class="explain">Enter the CSS class of the icons you want to use on your site. You can find a list of icon classes here <a href="http://fortawesome.github.io/Font-Awesome" target="_blank">Click here</a></div>
             </div>
@@ -370,7 +379,7 @@ function arinio_framework_page(){
             <h4 class="heading">Third Title</h4>
             <div class="option">
               <div class="controls">
-                <input id="heading" class="of-input" name="arinio_theme_options[sstitle3]" size="30" type="text" value="<?php echo $options['sstitle']; ?>" />
+                <input id="heading" class="of-input" name="arinio_theme_options[sstitle3]" size="30" type="text" value="<?php echo $options['sstitle3']; ?>" />
               </div>
               <div class="explain">Mention the Third Service Title text for Service section </div>
             </div>
@@ -398,61 +407,80 @@ function arinio_framework_page(){
         
         
         
-        <div id="options-group-5" class="group socialsettings">
-          <h3>Work & About us Settings</h3>
-      <div id="section-facebook" class="section section-text mini">
-            <h4 class="heading">About Us Main Heading</h4>
-            <div class="option">
-              <div class="controls">
-                <input id="Aboutus" class="of-input" name="arinio_theme_options[aboutus]" size="30" type="text" value="<?php echo $options['aboutus']; ?>" />
-              </div>
-              <div class="explain">Mention the About Us Main Heading text for About Us section</div>
-            </div>
-          </div>
-          <div id="section-twitter" class="section section-text mini">
-            <h4 class="heading">About Us Description</h4>
-            <div class="option">
-              <div class="controls">
-               <textarea class="of-input" name="arinio_theme_options[aboutusd]" id="aboutusd" cols="6" rows="6"><?php echo $options['aboutusd']; ?></textarea>
-                 
-              </div>
-              <div class="explain">Mention the About Us Description text for About Us section</div>
-            </div>
-          </div>
-          
-        </div>
+         
         
-        <div id="options-group-7" class="group socialsettings">
-          <h3>Contact Settings</h3>
-      
-        <div id="section-footertext2" class="section section-textarea">
-            <h4 class="heading">Contact Main Heading</h4>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <div id="options-group-11" class="group socialsettings">
+          <h3>Blog Settings</h3>
+          
+          <div id="section-bloglayout" class="section section-radio">
+            <h4 class="heading">Activate Blog Section</h4>
             <div class="option">
               <div class="controls">
-                <input type="text" id="contact" class="of-input" name="arinio_theme_options[contacth]" size="132"  value="<?php echo $options['contacth']; ?>">
+                 
+                 <input type="radio"  name="arinio_theme_options[blogsection]" value="on" <?php if(!empty($options['blogsection'])) { if($options['blogsection'] == 'on') { ?> checked="checked" <?php }} ?>>ON 
+                  <input type="radio" name="arinio_theme_options[blogsection]" value="off"  <?php if(!empty($options['blogsection'])) { if($options['blogsection'] == 'off') { ?> checked="checked" <?php }} ?>>OFF 
+                 
+                
               </div>
-              <div class="explain">Mention the Contact Main Heading text for Contact section.</div>
+              <div class="explain">Activate Blog Section For Front Page</div>
+            </div>
+          </div>
+           
+           
+          
+          
+          
+              <div id="section-footertext2" class="section section-textarea">
+            <h4 class="heading">Blog Heading</h4>
+            <div class="option">
+              <div class="controls">
+                <input type="text" id="blogh" class="of-input" name="arinio_theme_options[blogh]" size="32"  value="<?php echo $options['blogh']; ?>">
+              </div>
+              <div class="explain">Enter here Blog Heading to show on front page.</div>
             </div>
           </div>
           <div id="section-footertext2" class="section section-textarea">
-            <h4 class="heading">Contact Description</h4>
+            <h4 class="heading">Blog Description</h4>
             <div class="option">
               <div class="controls">
-               <textarea class="of-input" name="arinio_theme_options[contactd]" id="contactd" cols="6" rows="6"><?php echo $options['contactd']; ?></textarea>
+               <textarea class="of-input" name="arinio_theme_options[bloghdd]" id="customcss" cols="6" rows="6"><?php echo $options['bloghdd']; ?></textarea>
               
                 
               </div>
-              <div class="explain">Mention the Contact Description text for Contact section.</div>
+              <div class="explain">Enter here Blog Description to show on front page.</div>
             </div>
           </div>
+          
+            
+          
+          
+          
          
           
-        </div>
-     
+             </div>
+        
+        
+        
+        
+         
+        
+        
+        
         <!-------------- End group ----------------->
         
-        <div id="arinios_framework-submit" class="section-submite">  <span class="fb"> <a href="https://www.facebook.com/ArinioThemes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-option/images/fb.png"/> </a> </span> <span class="tw"> <a href="https://twitter.com/ArinioThemes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-option/images/tw.png"/> </a> </span> &nbsp; <span class="tw"> <a href="http://arinio.com" target="_blank"> BY: arinio.com </a> </span>
-          <input type="submit" class="button-primary" value="Save Options" />
+        <div id="arinios_framework-submit" class="section-submite">  <span class="fb"> <a href="<?php echo esc_url( 'https://www.facebook.com/ArinioThemes' ); ?>" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-option/images/fb.png"/> </a> </span> <span class="tw"> <a href="<?php echo esc_url( 'https://twitter.com/ArinioThemes' ); ?>" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-option/images/tw.png"/> </a> </span> &nbsp; <span class="tw"> <a href="<?php echo esc_url( 'http://arinio.com' ); ?>" target="_blank"><?php esc_attr_e( 'BY: arinio.com' , 'ariwoo' ); ?> </a> </span>
+          <input type="submit" class="button-primary" value="<?php _e( 'Save Options', 'ariwoo' ); ?>" />
           <div class="clear"></div>
         </div>
         
@@ -460,44 +488,11 @@ function arinio_framework_page(){
         
       </form>
       
-      <!--======================== F I N A L - - T H E M E - - O P T I O N S ===================--> 
+     
       
     </div>
     <!-- / #container --> 
     
   </div>
-  
-  
-  
-  <div id="optionsframework-sidebar">
-		<div class="metabox-holder">
-	    	<div class="postbox">
-	    		<h3><?php esc_attr_e( 'About avnii', 'avnii' ); ?></h3>
-      			<div class="inside"> 
-					<div class="option-btn"><a class="btn upgrade" target="_blank" href="<?php echo esc_url( 'http://arinio.com/avnii-responsive-multipurpose-wordpress-theme/' ); ?>"><?php esc_attr_e( 'Upgrade to Pro' , 'avnii' ); ?></a></div>
-                    <div class="option-btn"><a class="btn rate" target="_blank" href="<?php echo esc_url( 'http://arinio.com/' ); ?>"><?php esc_attr_e( 'View More our themes' , 'avnii' ); ?></a></div>
-					<div class="option-btn"><a class="btn support" target="_blank" href="<?php echo esc_url( 'http://arinio.com/support/' ); ?>"><?php esc_attr_e( 'Free Support' , 'avnii' ); ?></a></div>
-					<div class="option-btn"><a class="btn doc" target="_blank" href="<?php echo esc_url( 'http://arinio.com/document/' ); ?>"><?php esc_attr_e( 'Documentation' , 'avnii' ); ?></a></div>
-					<div class="option-btn"><a class="btn demo" target="_blank" href="<?php echo esc_url( 'http://arinio.com/avnii-responsive-multipurpose-wordpress-theme/' ); ?>"><?php esc_attr_e( 'View Demo' , 'avnii' ); ?></a></div>
-					
-
-	      			<div align="center" style="padding:5px; background-color:#fafafa;border: 1px solid #CCC;margin-bottom: 10px;">
-	      				<strong><?php esc_attr_e( 'If you would like to donate to GROW development and want to helping us you can donate to us.
-We are also helping poor community so please help us to help and HAVE A BETTER WORLD. Even 2$ really help :)', 'avnii' ); ?></strong>
-	      				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-    <div class="paypal-donations">
-        <input type="hidden" name="cmd" value="_donations">
-        <input type="hidden" name="business" value="LQ7DEYTTUPCLL">
-        <input type="hidden" name="rm" value="0">
-        <input type="hidden" name="currency_code" value="USD">
-        <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online.">
-        <img alt="" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-    </div>
-</form>
-					</div>
-      			</div><!-- inside -->
-	    	</div><!-- .postbox -->
-	  	</div><!-- .metabox-holder -->
-	</div>
 </div>
 <?php }

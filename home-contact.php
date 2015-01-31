@@ -28,6 +28,15 @@ if (isset($_POST['submitted'])) {
     } else {
         $email = trim($_POST['email']);
     }
+	 
+    if (trim($_POST['phone']) === '') {
+        $phoneError = 'Please enter your phone no.';
+        $hasError = true;
+    } else {
+        $phone = trim($_POST['phone']);
+    }
+	
+	
     if (trim($_POST['message']) === '') {
         $commentError = 'Please enter a message.';
         $hasError = true;
@@ -46,7 +55,7 @@ if (isset($_POST['submitted'])) {
             $emailTo = get_option('admin_email');
         }
         $subject = '[Wordpress] From ' . $name;
-        $body = "Name: $name \n\nEmail: $email \n\nComments: $comments";
+        $body = "Name: $name \n\nPhone: $phone \n\nEmail: $email \n\nComments: $comments";
         $headers = 'From: ' . $name . ' <' . $emailTo . '>' . "\r\n" . 'Reply-To: ' . $email;
         mail($emailTo, $subject, $body, $headers);
         $emailSent = true;
@@ -67,28 +76,22 @@ if (isset($_POST['submitted'])) {
             
             
             
-             <form   action="<?php $_SERVER['PHP_SELF'] ?>" id="register-form" novalidate="novalidate" method="post">
-						<div class="col-md-6 span at">
-						
-                        
-                        	<input type="text"   name="firstname" value="<?php if (isset($_POST['firstname']))
+             <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>" id="register-form" novalidate="novalidate">
+					<div class="to">
+                     	<input type="text" class="text"  name="firstname" value="<?php if (isset($_POST['firstname']))
             echo $_POST['firstname'];
-            ?>" placeholder="Name"><?php if ($nameError != '') { ?>
+            ?>" placeholder="Name" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Name';}"> <?php if ($nameError != '') { ?>
                     <span class="error name"> <?php echo $nameError; ?> </span>                           
                        <?php } ?>
-                       
-                       
-                       
-							<input type="text" name="subject" value="" placeholder="Phone">
-							<input type="text" name="email" value="<?php if (isset($_POST['email']))
+					 	<input type="text" class="text" name="email" value="<?php if (isset($_POST['email']))
                        echo $_POST['email'];
-                   ?>" placeholder="Email"> <?php if ($emailError != '') { ?>
+                   ?>" placeholder="Email" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Email';}" style="margin-left:20px"><?php if ($emailError != '') { ?>
                     <span class="error email"> <?php echo $emailError; ?> </span>                            
                        <?php } ?>
-						</div>
-                        
-                        
-						<div class="col-md-6 omega span at"><textarea  name="message" value="<?php
+					 	<input type="text" class="text"  name="phone" value="Phone" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Phone';}" style="margin-left:20px">
+					</div>
+					<div class="contacttext">
+	                   <textarea value="<?php
                    if (isset($_POST['message'])) {
                        if (function_exists('stripslashes')) {
                            echo stripslashes($_POST['message']);
@@ -96,16 +99,17 @@ if (isset($_POST['submitted'])) {
                            echo $_POST['message'];
                        }
                    }
-                       ?>" placeholder="Message"></textarea>  <?php if ($commentError != '') { ?>
+                       ?>" placeholder="Message" name="message" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Message';}"></textarea> <?php if ($commentError != '') { ?>
                     <span class="error comment"> <?php echo $commentError; ?> </span>
-                <?php } ?></div>
-						<div class="clear"></div>
-						<input type="reset" class="con_btn" value="Clear Form">
-						<input type="submit" class="con_btn send_btn" value="Send">
-                         <input type="hidden" name="submitted" id="submitted" value="true" />
-						<div class="clear"></div>
-					</form>
-            
+                <?php } ?>
+	                </div>
+	                <div class="formsbt">
+			           <input name="submit" type="submit" id="submit" value="Submit Your Message"> <input type="hidden" name="submitted" id="submitted" value="true" /><br>
+			            
+					</div>
+					<div class="clear"></div>
+                 </form>
+                 
 
             
              
