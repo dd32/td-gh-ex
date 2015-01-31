@@ -75,3 +75,8 @@ Version 1.2.4
 
 Version 1.2.5
 * Minor bug fixes
+
+Version 1.2.6
+* Added compatibility with WordPress 4.1
+* Update FontAwesome to 4.3.0 Version
+* Minor Bug Fixes

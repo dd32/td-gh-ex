@@ -79,12 +79,12 @@ function blogghiamo_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		_x( '<i class="fa fa-calendar spaceRight" aria-hidden="true"></i> %s', 'post date', 'blogghiamo' ),
+		_x( '<i class="fa fa-calendar spaceRight" aria-hidden="true"></i>%s', 'post date', 'blogghiamo' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
-		_x( '<i class="fa fa-user spaceRight" aria-hidden="true"></i> %s', 'post author', 'blogghiamo' ),
+		_x( '<i class="fa fa-user spaceRight" aria-hidden="true"></i>%s', 'post author', 'blogghiamo' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
@@ -116,7 +116,7 @@ function blogghiamo_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', __( ' / ', 'blogghiamo' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links"><i class="fa fa-tags spaceRight" aria-hidden="true"></i> %1$s</span>', $tags_list );
+			printf( '<span class="tags-links"><i class="fa fa-tags spaceRight" aria-hidden="true"></i>%1$s</span>', $tags_list );
 		}
 	}
 
