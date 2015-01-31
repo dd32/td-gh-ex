@@ -48,6 +48,10 @@ two-columns, right-sidebar, responsive-layout, custom-background, custom-menu, c
 3. Log into your WP admin panel and click on the Design tab. Now click on the Annina theme to activate it.
 
 == Changelog ==
+Version 1.2.1
+* Minor bug fixes
+* Update FontAwesome to 4.3.0 version
+
 Version 1.2
 * Included non minify version of js and css
 * Improved full screen search field
