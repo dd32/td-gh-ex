@@ -82,12 +82,13 @@ class Awaken_Tabbed_Widget extends WP_Widget {
 		$noc = ( ! empty( $instance['noc'] ) ) ? (int)( $instance['noc'] ) : 5;
 
 		echo $before_widget; ?>
-		
+
 <ul class="nav nav-tabs" id="awt-widget">
 	<li><a href="#awaken-popular" role="tab" data-toggle="tab"><?php _e( 'Popular', 'awaken' ); ?></a></li>
 	<li><a href="#awaken-comments" role="tab" data-toggle="tab"><?php _e( 'Comments', 'awaken' ); ?></a></li>
 	<li><a href="#awaken-tags" role="tab" data-toggle="tab"><?php _e( 'Tags', 'awaken' ); ?></a></li>
 </ul>
+
 <div class="tab-content">
 	<div class="tab-pane fade active in" id="awaken-popular">
 		<?php 

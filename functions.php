@@ -384,3 +384,4 @@ require get_template_directory() . '/inc/widgets/video-widget.php';
 require get_template_directory() . '/inc/functions/slider.php';
 /* Social Media Icons */
 require get_template_directory() . '/inc/functions/socialmedia.php';
+

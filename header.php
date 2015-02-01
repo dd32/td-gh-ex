@@ -24,7 +24,8 @@
 		<div class="top-nav">
 			<div class="container">
 		<div class="row">
-			<div class="col-xs-12 col-sm-6 col-md-8">
+			<?php is_rtl() ? $rtl = 'awaken-rtl' : $rtl = ''; ?>
+			<div class="col-xs-12 col-sm-6 col-md-8 <?php echo $rtl; ?>">
 				<nav id="top-navigation" class="top-navigation" role="navigation">
 					<?php wp_nav_menu( array( 'theme_location' => 'top_navigation' ) ); ?>
 				</nav><!-- #site-navigation -->	

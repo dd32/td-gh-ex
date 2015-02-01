@@ -21,7 +21,8 @@ get_header(); ?>
 	?>
 	</div><!-- .amt-area -->		
 	<div class="row">
-		<div class="col-xs-12 col-sm-12 col-md-8">
+		<?php is_rtl() ? $rtl = 'awaken-rtl' : $rtl = ''; ?>
+		<div class="col-xs-12 col-sm-12 col-md-8 <?php echo $rtl ?>">
 			<?php 
 				if( is_active_sidebar( 'magazine-2' ) ) {
 					// Calling the business page left section sidebar if it exists.

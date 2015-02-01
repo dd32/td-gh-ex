@@ -7,7 +7,8 @@
 
 get_header(); ?>
 <div class="row">
-<div class="col-xs-12 col-sm-12 col-md-8">
+<?php is_rtl() ? $rtl = 'awaken-rtl' : $rtl = ''; ?>
+<div class="col-xs-12 col-sm-12 col-md-8 <?php echo $rtl ?>">
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
