@@ -1,6 +1,6 @@
 == Changelog ==
 
-2.4
+2.4.1 (2.4 Merged)
 * Added Polish translation pl_PL.po and pl_PL.mo
  
 2.3
