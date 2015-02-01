@@ -98,6 +98,10 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.6.1
+- New:     three-columns tag added to style.css given the 3 column layout of the homepage feauted content section.
+- Fixed:   Function thinkup_input_wptitle() removed as it causes issues with page title when posts are assigned to homepage.
+
 Version 1.6.0
 - Updated: blog article css updated to ensure white background - makes it easier for user to customize site.
 
