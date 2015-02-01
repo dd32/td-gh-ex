@@ -18,6 +18,7 @@ Added Translation for Czech by Marek Pridal (Email: m.pridal29@gmail.com)
 Added translation for Bosnian
 Added Translation for Brazilian Portuguese by Valdir Trombini ( Email: valdir.trombini@hotmail.com )
 Added Translation for Dutch by Alain Baudrez (Email: a.baudrez@gmail.com)
+Added Translation for Polish by Piotr (Email: fansitepoprostugry@gmail.com)
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt

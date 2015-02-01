@@ -1,5 +1,8 @@
 == Changelog ==
 
+2.4
+* Added Polish translation pl_PL.po and pl_PL.mo
+ 
 2.3
 * Added title tag via add theme support
 * Added More theme options button in Customizer
