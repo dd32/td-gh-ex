@@ -1,0 +1,864 @@
+# Copyright (C) 2014 Automattic
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: aaron\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/theme/_s\n"
+"POT-Creation-Date: 2015-02-01 09:22+0100\n"
+"PO-Revision-Date: 2015-02-01 09:22+0100\n"
+"Last-Translator: Carolina Nymark <myazalea@hotmail.com>\n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.7.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_nx\n"
+"X-Poedit-SearchPath-0: C:\\xampp\\htdocs\\wordpress\\wp-content\\themes"
+"\\aaron\n"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/404.php:19
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/404.php:27
+msgid "Most Used Categories"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/404.php:44
+#, php-format
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/archive.php:16
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:167
+msgid "Portfolio"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/comments.php:28
+#, php-format
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/comments.php:35
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/comments.php:53
+msgid "Comment navigation"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/comments.php:36
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/comments.php:54
+msgid "Older Comments"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/comments.php:37
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/comments.php:55
+msgid "Newer Comments"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/comments.php:65
+msgid "Comments are closed."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/comments.php:74
+msgid "Name"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/comments.php:75
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/comments.php:83
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/comments.php:93
+msgid "required"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/comments.php:82
+msgid "Email"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/comments.php:89
+msgid "Website"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/comments.php:93
+msgid "Comment"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/comments.php:97
+#, php-format
+msgid ""
+"You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags "
+"and attributes: %s"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/comments.php:99
+msgid "Your email address will not be published."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/content-none.php:13
+msgid "Nothing Found"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/content-none.php:19
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/content-none.php:23
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/content-none.php:28
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/content-page.php:23
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/content-portfolio-single.php:21
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/content-single.php:25
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/content.php:28
+msgid "Pages:"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/content.php:25
+#, php-format
+msgid "Continue reading %s"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:5
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:13
+msgid "Aaron Setup help"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:15
+msgid "Thank you for downloading and trying out Aaron!"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:16
+msgid ""
+"A lot of time and careful testing were put into this theme to make it work "
+"for <b>you</b> :)."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:17
+msgid "If you like the theme, please "
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:17
+msgid "review it on WordPress.org"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:18
+msgid ""
+"If you have any questions, accessibility issues or feature requests for this "
+"theme, please visit "
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:19
+msgid "Your feedback is essential for the future developement of the theme."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:23
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:32
+msgid "Menus"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:24
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:52
+msgid "Widget areas"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:25
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:60
+msgid "Frontpage"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:26
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:82
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:131
+msgid "Advanced settings"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:27
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:98
+msgid "Accessibility"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:28
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:111
+msgid "Plugins"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:33
+msgid ""
+"This theme has two optional menu locations, the <b>Primary menu</b> and the "
+"<b>Social menu</b>."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:35
+msgid "An image describing how a submenu drops down from the Primary menu"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:37
+msgid "The Primary menu"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:37
+msgid ""
+"is fixed at the top of the website and shows two menu levels. <br/>\n"
+"\t\tThis menu will collapse on smaller screens, and can then be opened and "
+"closed by a menu button. It can also be closed with the Esc key."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:40
+msgid ""
+"An image describing how social icons are lined up next to each other in the "
+"Social menu"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:42
+msgid ""
+"<b>The social menu</b> is at the bottom of the page and shows logos of the "
+"social networks of your choice. It does not display any text,<br/>\n"
+"\t\tbut has additional information for screen readers."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:44
+msgid ""
+"The icon will be added automatically, all you need to do is add a link to "
+"your menu."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:46
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:54
+msgid "Advanced"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:47
+msgid ""
+"By default, the primary meny also shows the site title and a search form. "
+"The searchform is not visible on screens smaller than 800 pixels.<br/>\n"
+"\t\tYou can hide these features under the Advanced settings tab in the "
+"Customizer. "
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:53
+msgid ""
+"The theme has two widget areas that can hold <b>any number of widgets</b>. "
+"Both areas are empty unless they have widgets in them. The footer widget "
+"area is shown on all pages."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:55
+msgid ""
+"By default, the sidebar is shown on the right hand side in single post view, "
+"archives, the search page and the 404 page.<br/>\n"
+"\t\tIf you open the customizer and go to the Advanced settings, you will "
+"find options for showing the sidebar on more pages."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:61
+msgid "The standard frontpage has the following features:"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:62
+msgid ""
+"<b>Site title:</b> You will find an option to hide your site title in the "
+"customizer."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:63
+msgid ""
+"<b>Call to action:</b> The Call to action is a great way to get your "
+"visitors attention. In the customizer you can:"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:65
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:72
+msgid "Add your own text"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:66
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:73
+msgid "Add a link"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:67
+msgid "Hide the button"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:70
+msgid ""
+"<b>Highlights:</b> The themes displays three highlights by default. This is "
+"a flexible way for you to feature different sections of your website. In the "
+"customizer you can:"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:74
+msgid "Add an icon"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:75
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:222
+msgid "Hide the highlights"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:77
+msgid ""
+"<b>Tagline:</b> You will find an option to hide your tagline in the "
+"customizer."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:78
+msgid ""
+"<b>Background:</b> You can change the background image or background color "
+"in the customizer."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:83
+msgid ""
+"Under the Advanced settings tab in the customizer you will find the "
+"following options:"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:85
+msgid "Hide the meta information. -This will hide the category and tags."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:86
+msgid "Hide the author and post date information."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:87
+msgid "Show the sidebar on pages."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:88
+msgid "Show the sidebar on the frontpage."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:89
+msgid ""
+"Show the breadcrumb navigation. -Breadcrumbs are shown below the post titel. "
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:90
+msgid "Hide the search form in the header menu."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:91
+msgid "Hide the Site title in the header menu."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:92
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:389
+msgid "Add a descriptive screen reader text for the footer."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:93
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:400
+msgid "Add a descriptive screen reader text for the sidebar."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:100
+msgid ""
+"Skip link: the theme has one skip link at the very top that lets you skip "
+"the main menu."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:101
+msgid "Known issues:"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:103
+msgid ""
+"Some widgets that uses forms (category dropdown) are missing form labels. "
+"This is a known issue with WordPress."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:104
+msgid ""
+"Menus have a visible focus and can be tabbed through, but you can not "
+"navigate them using the arrow keys."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:112
+msgid ""
+"Aaron has been tested with and style has been added for the following "
+"plugins:"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:114
+msgid "Woocommerce"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:115
+msgid "BBpress"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:116
+msgid "Jetpack"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:116
+msgid ""
+" Note: Not all of Jetpacks modules are accessibe, and some uses iframes. I "
+"have increased the contrast of some of the modules."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:117
+msgid "Recommended modules:"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:119
+msgid "Featured content"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:120
+msgid ""
+"-Once Jetpack has been activated, you can select up to six posts or pages as "
+"a frontpage feature. Chose a tag and add it to your posts to seperate them "
+"from the rest.<br/>\n"
+"\t\t\t\t\t\tYou can also choose a headline for your featured section. "
+"Featured images are optional and the recommended image size is 360x300 "
+"pixels."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:122
+msgid ""
+"An image describing three featured posts on the frontpage, two with featured "
+"images and one \n"
+"\t\t\t\t\t\tthat only displays the post title."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:125
+msgid "Custom Content Type: Portfolio"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:126
+msgid "Aaron also supports Jetpack"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:127
+msgid "Portfolios"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:128
+msgid "Read more about how to setup your Portfolio on Jetpacks support site."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:129
+msgid "An image describing two portfolio items."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:131
+msgid "Sharing"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:132
+msgid ""
+"-If you activate Jetpack sharing, your buttons will be displayed below the "
+"meta information, to the right of your post content."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:133
+msgid ""
+"An image describing how sharing buttons are added to the post footer below "
+"Tags and Categories."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:135
+msgid "Contact Form"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:136
+msgid "<b>Site icon</b> -Use this module to add a favicon to your site."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:137
+msgid ""
+"<b>Site logo</b> -Once Jetpack has been activated, you can add a logo above "
+"your Site title on the frontpage. You will find this setting in the "
+"customizer."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/footer.php:20
+msgid "Footer Content"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/footer.php:33
+msgid "Social Media"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/footer.php:40
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/footer.php:40
+#, php-format
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/footer.php:42
+#, php-format
+msgid "Theme: %1$s"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/front-page.php:16
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/front-page.php:21
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:370
+msgid "Featured"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/functions.php:49
+msgid "Primary Menu"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/functions.php:50
+msgid "Social Menu"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/functions.php:115
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/sidebar.php:22
+msgid "Sidebar"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/functions.php:125
+msgid "Footer widget area"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/functions.php:144
+msgctxt "Montserrat font: on or off"
+msgid "on"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/functions.php:149
+msgctxt "Add new subset (greek, cyrillic, devanagari, vietnamese)"
+msgid "no-subset"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/functions.php:240
+msgid "(Untitled)"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/header.php:27
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/header.php:29
+msgid "Skip to content"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/header.php:36
+msgid "Main Menu"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/header.php:66
+msgid "Click here to setup your Call to Action"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:115
+msgid "Frontpage Highlights"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:116
+msgid "Frontpage Highlights are displayed in the lower part of the header."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:124
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:300
+msgid "Call to Action"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:125
+msgid "The Call to Action is displayed below the site title in the header."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:137
+msgid "Reset"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:144
+msgid "Header background"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:152
+msgid "Header background color:"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:165
+msgid "Check this box to hide the meta information."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:177
+msgid "Check this box to hide the author and post date information."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:188
+msgid "Check this box to show the sidebar on pages."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:200
+msgid "Check this box to show the sidebar on the frontpage."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:211
+msgid "Check this box to show the breadcrumb navigation."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:232
+msgid "Check this box to hide the highlights."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:241
+msgid "Highlight number"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:252
+msgid "Add this headline to your highlight:"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:264
+msgid "Add this text to your highlight:"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:276
+msgid "Chose an icon for your highlight:"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:289
+msgid "Add a link to your highlight:"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:313
+msgid "Add this text to the Call to Action button on the front page:"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:325
+msgid "Add a link to the Call to action button:"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:336
+msgid "Check this box to hide the Call to Action button."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:349
+msgid "Check this box to hide the search form in the header menu."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:361
+msgid "Check this box to hide the clickable site title in the header menu."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:375
+msgid "Headline above your featured content:"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:413
+msgid ""
+"Are you sure that you want to reset your settings? Type YES in the box, save "
+"and refresh the page."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/extras.php:52
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/highlights.php:40
+msgid "Easy setup"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/highlights.php:41
+msgid ""
+"You will find all your options in the <i>Customizer</i> and setup help under "
+"<i>Appearance</i>."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/highlights.php:77
+msgid "Accessible and responsive"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/highlights.php:78
+msgid "Keyboard friendly menus, aria roles and helpful screen reader texts"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/highlights.php:115
+msgid "Jetpack compatible"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/highlights.php:116
+msgid "Install Jetpack for additional featured content, logo and more"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:21
+msgid "Posts navigation"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:24
+msgid "Older posts"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:27
+msgid "Newer posts"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:52
+msgid "Post navigation"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:91
+#, php-format
+msgctxt "post date"
+msgid "on %s"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:115
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:121
+msgid ", "
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:117
+#, php-format
+msgid "Categories: %1$s"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:123
+#, php-format
+msgid "Tags: %1$s"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:129
+msgid "Leave a comment"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:129
+msgid "1 Comment"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:129
+msgid "% Comments"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:134
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:175
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:170
+msgid "Project Type: "
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:172
+msgid "Project Tags: "
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:219
+#, php-format
+msgid "Continue Reading %s"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:239
+#, php-format
+msgid "Category: %s"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:241
+#, php-format
+msgid "Tag: %s"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:243
+#, php-format
+msgid "Author: %s"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:245
+#, php-format
+msgid "Year: %s"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:245
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:247
+#, php-format
+msgid "Month: %s"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:247
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:249
+#, php-format
+msgid "Day: %s"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:249
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:251
+#, php-format
+msgid "Archives: %s"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:255
+#, php-format
+msgid "%1$s: %2$s"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:257
+msgid "Archives"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:351
+msgid "You are here: "
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:353
+msgid "Home"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/search.php:15
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/search.php:37
+msgid "Would you like to search again?"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/searchform.php:3
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/searchform.php:6
+msgid "Search"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/searchform.php:4
+msgid "Search..."
+msgstr ""
+
+#, fuzzy
+#~ msgid "Posted on %s"
+#~ msgstr "Version: %s"
+
+#, fuzzy
+#~ msgid "by %s"
+#~ msgstr "Av %s"
+
+#, fuzzy
+#~ msgid "Posted in %1$s"
+#~ msgstr "Version: %s"
