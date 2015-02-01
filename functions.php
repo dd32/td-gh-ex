@@ -17,6 +17,7 @@ function ct_tracks_theme_setup() {
     // from WordPress core not theme hybrid
     add_theme_support( 'post-thumbnails' );
     add_theme_support( 'automatic-feed-links' );
+    add_theme_support( 'title-tag' );
 
     register_nav_menus(array(
         'primary' => __('Primary', 'tracks'),
@@ -41,21 +42,6 @@ function ct_tracks_theme_setup() {
 	foreach (glob(trailingslashit( get_template_directory() ) . 'licenses/functions/*.php') as $filename)
 	{
 		include $filename;
-	}
-
-	// query database to get Bold Template license status
-	if( trim( get_option( 'ct_tracks_bold_template_license_key_status' ) ) == 'valid' ) {
-		define( 'BOLD_TEMPLATE_ACTIVE', true );
-		define( 'TEMPLATE_ACTIVE', true );
-	}
-	// include Bold Template files
-	if( defined( 'BOLD_TEMPLATE_ACTIVE' ) ) {
-		include get_template_directory() . '/licenses/templates/bold/meta-boxes.php';
-		include get_template_directory() . '/licenses/templates/bold/customizer.php';
-	}
-	// include functions.php file for templates
-	if( defined( 'TEMPLATE_ACTIVE' ) ) {
-		include get_template_directory() . '/licenses/templates/functions.php';
 	}
 
 	// load text domain
@@ -130,7 +116,6 @@ function ct_tracks_customize_comments( $comment, $args, $depth ) {
                 <?php comment_text(); ?>
             </div>
         </article>
-    </li>
     <?php
 }
 
@@ -295,8 +280,13 @@ function ct_tracks_featured_image() {
     if ($has_image == true) {
 
         // for layouts using img
-        if($premium_layout == 'two-column-images' || ( $premium_layout == 'full-width-images' && get_theme_mod('premium_layouts_full_width_image_height') == 'image') ){ ?>
+        if($premium_layout == 'two-column-images'){ ?>
              <img class="featured-image" src='<?php echo $image; ?>' /><?php
+        }
+        elseif(
+        ( ( is_archive() || is_home() ) && $premium_layout == 'full-width-images' && get_theme_mod('premium_layouts_full_width_image_height') == 'image' )
+        || is_singular() && $premium_layout == 'full-width-images' && get_theme_mod('premium_layouts_full_width_image_height_post') == 'image' ) { ?>
+            <img class="featured-image" src='<?php echo $image; ?>' /><?php
         }
         // otherwise, output the src as a bg image
         else {
@@ -346,7 +336,10 @@ function ct_tracks_body_class( $classes ) {
     elseif( $premium_layout_setting == 'full-width-images'){
         $classes[] = 'full-width-images';
 
-        if(get_theme_mod('premium_layouts_full_width_image_height') == '2:1-ratio'){
+        if( ( is_home() || is_archive() ) && get_theme_mod('premium_layouts_full_width_image_height') == '2:1-ratio'){
+            $classes[] = 'ratio';
+        }
+        if( is_singular() && get_theme_mod('premium_layouts_full_width_image_height_post') == '2:1-ratio'){
             $classes[] = 'ratio';
         }
 	    if(get_theme_mod('premium_layouts_full_width_image_style') == 'title'){
@@ -418,6 +411,15 @@ function ct_tracks_post_class_update($classes){
 			$classes[] = 'has-video';
 		}
 	}
+
+    // if < 3.9
+    if( version_compare( get_bloginfo('version'), '3.9', '<') ) {
+
+        // add the has-post-thumbnail class
+        if( has_post_thumbnail() ) {
+            $classes[] = 'has-post-thumbnail';
+        }
+    }
 
     return $classes;
 }
@@ -661,23 +663,20 @@ function ct_tracks_toolbar_link( $wp_admin_bar ) {
 }
 add_action( 'admin_bar_menu', 'ct_tracks_toolbar_link', 999 );
 
-// remove page templates unless license activated
-function ct_tracks_remove_page_templates( $templates ) {
-
-	// WP will find and add the template on it's own, so remove bold template if license not active
-	if( ! defined( 'BOLD_TEMPLATE_ACTIVE' ) ) {
-		unset( $templates['templates/bold.php'] );
-	}
-
-	return $templates;
-}
-add_filter( 'theme_page_templates', 'ct_tracks_remove_page_templates' );
-
 function ct_tracks_wp_backwards_compatibility() {
 
 	// not using this function, simply remove it so use of "has_image_size" doesn't break < 3.9
-	if( get_bloginfo('version') < 3.9 ) {
+	if( version_compare( get_bloginfo('version'), '3.9', '<') ) {
 		remove_filter( 'image_size_names_choose', 'hybrid_image_size_names_choose' );
 	}
 }
 add_action('init', 'ct_tracks_wp_backwards_compatibility');
+
+if ( ! function_exists( '_wp_render_title_tag' ) ) :
+    function ct_tracks_add_title_tag() {
+        ?>
+        <title><?php wp_title( ' | ' ); ?></title>
+    <?php
+    }
+    add_action( 'wp_head', 'ct_tracks_add_title_tag' );
+endif;

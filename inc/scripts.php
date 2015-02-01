@@ -34,11 +34,6 @@ function ct_tracks_load_javascript_files() {
 		elseif(get_theme_mod('premium_layouts_setting') == 'two-column-images'){
 			wp_enqueue_style('ct-tracks-two-column-images', get_template_directory_uri() . '/licenses/css/two-column-images.min.css');
 		}
-
-		// enqueue page template stylesheet
-		if( is_page_template( 'templates/bold.php') ) {
-			wp_enqueue_style('ct-tracks-bold-template', get_template_directory_uri() . '/licenses/templates/bold/dynamic-styles.php');
-		}
 	}
 	// enqueue the comment-reply script on posts & pages if comments open (included in WP by default)
 	if( is_singular() && comments_open() && get_option('thread_comments') ) {
@@ -77,33 +72,6 @@ function ct_tracks_enqueue_admin_styles($hook){
 
 			// enqueue the JS needed to utilize media uploader on profile image upload
 			wp_enqueue_script( 'ct-profile-uploader', get_template_directory_uri() . '/js/build/profile-uploader.min.js#ct_tracks_asyncload' );
-		}
-	}
-
-	// Bold Template
-	if( trim( get_option( 'ct_tracks_bold_template_license_key_status' ) ) == 'valid' ) {
-
-		// Post Editor
-		if ( 'post.php' == $hook || 'post-new.php' == $hook ) {
-
-			// admin stylesheet
-			wp_enqueue_style( 'style-admin', get_template_directory_uri() . '/styles/style-admin.css' );
-
-			// enqueue admin JS file
-			wp_enqueue_script( 'admin-js', get_template_directory_uri() . '/js/build/admin.min.js', array( 'jquery' ), '', true );
-
-			global $post;
-
-			// don't enqueue unless bold template is active
-			if( get_post_meta( $post->ID, '_wp_page_template', TRUE ) == 'templates/bold.php' ) {
-
-				// Enqueues all scripts, styles, settings, and templates necessary to use media JavaScript APIs.
-				wp_enqueue_media();
-
-				// enqueue the JS needed to utilize media uploader on profile image upload
-				wp_enqueue_script( 'ct-profile-uploader', get_template_directory_uri() . '/js/build/profile-uploader.min.js#ct_tracks_asyncload' );
-			}
-
 		}
 	}
 

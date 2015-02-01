@@ -140,11 +140,13 @@ jQuery(function($){
     function displayLayoutOptions(){
 
         var imageHeightOption = $('html', window.parent.document).find('#customize-control-premium_layouts_full_width_image_height');
+        var imageHeightPostOption = $('html', window.parent.document).find('#customize-control-premium_layouts_full_width_image_height_post');
         var imageStyleOption = $('html', window.parent.document).find('#customize-control-premium_layouts_full_width_image_style');
         var fullPostOption = $('html', window.parent.document).find('#customize-control-premium_layouts_full_width_full_post');
         var contentDisplayOption = $('html', window.parent.document).find('#customize-control-premium_layouts_two_column_images_content_display');
 
         imageHeightOption.hide();
+        imageHeightPostOption.hide();
         imageStyleOption.hide();
         fullPostOption.hide();
         contentDisplayOption.hide();
@@ -154,6 +156,7 @@ jQuery(function($){
             if($(this).attr('selected') == 'selected' && $(this).val() == 'full-width-images'){
                 imageHeightOption.show();
                 imageStyleOption.show();
+                imageHeightPostOption.show();
             }
             if($(this).attr('selected') == 'selected' && $(this).val() == 'full-width'){
                 fullPostOption.show();
@@ -339,6 +342,15 @@ jQuery(function($){
         }
     }
     videoHeightAdjust();
+
+    // adjust height to fit footer into viewport instead of keeping it just out of view
+    function adjustSiteHeight() {
+
+        var footerHeight = $('#site-footer').outerHeight();
+
+        $('body').css('height', 'calc(100% - ' + footerHeight + 'px)');
+    }
+    adjustSiteHeight();
 
 });
 
