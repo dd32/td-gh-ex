@@ -2,7 +2,7 @@
 Theme Name: Rubine Lite
 Theme URI: http://themezee.com/themes/rubine/
 Description: Rubine Lite is a clean and retina-ready magazine theme created with usability and simplicity in mind. The theme offers a gorgeous featured content area on the home page to highlight your most important posts. Of course the design is fully responsive and makes your content readable on every device.
-Version: 1.0.5
+Version: 1.0.6
 Author: ThemeZee
 Author URI: http://themezee.com
 Tags: two-columns, light, red, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, fluid-layout, responsive-layout, one-column, left-sidebar, right-sidebar, three-columns, four-columns, black, blue, silver, white, green, gray
@@ -785,13 +785,11 @@ sub {
 	font-family: "Courier 10 Pitch", Courier, monospace;
 }
 blockquote {
-	background:#f5f5f5;
-	border-left: 10px solid #ccc;
-	margin: 1.5em 0;
-	padding: 0.8em 1.5em;
-}
-blockquote p {
-	display:inline;
+	background: #f8f8f8;
+	border: 1px solid #e5e5e5;
+	border-left: 8px solid #e5e5e5;
+	margin: 1.2em 0;
+	padding: 0.3em 1.2em;
 }
 blockquote cite {
 	display: block;
@@ -1063,10 +1061,12 @@ embed, iframe, object, video {
 .social-icons-menu li a[href*="polldaddy.com"]:before { content: '\f217'; }
 .social-icons-menu li a[href*="getpocket.com"]:before { content: '\f224'; }
 .social-icons-menu li a[href*="reddit.com"]:before { content: '\f222'; }
+.social-icons-menu li a[href*="spotify.com"]:before { content: '\f515'; }
 .social-icons-menu li a[href*="skype.com"]:before,
 .social-icons-menu li a[href*="skype:"]:before { content: '\f220'; }
 .social-icons-menu li a[href*="stumbleupon.com"]:before { content: '\f223'; }
 .social-icons-menu li a[href*="tumblr.com"]:before { content: '\f214'; }
+.social-icons-menu li a[href*="twitch.tv"]:before { content: '\f516'; }
 .social-icons-menu li a[href*="twitter.com"]:before { content: '\f202'; }
 .social-icons-menu li a[href*="vimeo.com"]:before  { content: '\f212'; }
 .social-icons-menu li a[href*="wordpress.org"]:before,

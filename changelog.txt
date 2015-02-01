@@ -2,6 +2,13 @@
 Rubine Lite Changelog
 ===================================
 
+Version 1.0.6
+-----------------------------------
+[improved] styling of blockquotes
+[updated] to Genericon Font 3.3 and added new twitch and spotify icons
+[fixed] wrong translation textdomain in some files
+[fixed] ampersand escape bug in pagination links (https://core.trac.wordpress.org/ticket/30831)
+
 Version 1.0.5
 -----------------------------------
 [changed] structure and organization of theme files for the Customizer
