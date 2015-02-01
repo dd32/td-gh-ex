@@ -657,7 +657,7 @@ function adventurous_footer_content() {
 		
     	set_transient( 'adventurous_footer_content', $adventurous_footer_content, 86940 );
     }
-	echo do_shortcode( $adventurous_footer_content );
+	echo $adventurous_footer_content;
 }
 endif;
 add_action( 'adventurous_site_generator', 'adventurous_footer_content', 20 );

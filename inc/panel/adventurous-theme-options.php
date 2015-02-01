@@ -21,7 +21,10 @@ function adventurous_admin_scripts() {
 	wp_register_script( 'jquery-cookie', get_template_directory_uri() . '/inc/panel/js/jquery.cookie.min.js', array( 'jquery' ), '1.0', true );
 	
 	wp_enqueue_script( 'adventurous_admin', get_template_directory_uri().'/inc/panel/js/admin.min.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable' ) );
-	wp_enqueue_script( 'adventurous_upload', get_template_directory_uri().'/inc/panel/js/add_image_scripts.js', array( 'jquery','media-upload','thickbox' ) );
+
+    wp_enqueue_media();
+        
+    wp_enqueue_script( 'adventurous_upload', get_template_directory_uri().'/inc/panel/js/add_image_scripts.js', array( 'jquery' ) );
 	
 	wp_enqueue_style( 'adventurous_admin_style',get_template_directory_uri().'/inc/panel/admin.min.css', array( 'thickbox'), '1.0', 'screen' );
 
@@ -141,10 +144,11 @@ function adventurous_theme_options_do_page() {
                                 </div>
                                 <div class="col col-2">
                                 	<?php if ( !empty ( $options[ 'fav_icon' ] ) ) { ?>
-                                        <input class="upload-url" size="65" type="text" name="adventurous_options[fav_icon]" value="<?php echo esc_url( $options [ 'fav_icon' ] ); ?>" /> <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Fav Icon','adventurous' );?>" />
+                                        <input class="upload-url" size="65" type="text" name="adventurous_options[fav_icon]" value="<?php echo esc_url( $options [ 'fav_icon' ] ); ?>" />
                                     <?php } else { ?>
-                                        <input class="upload-url" size="65" type="text" name="adventurous_options[fav_icon]" value="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" alt="fav" /> <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Upload Fav Icon','adventurous' );?>" />
+                                        <input class="upload-url" size="65" type="text" name="adventurous_options[fav_icon]" value="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" alt="fav" />
                                     <?php }  ?> 
+                                    <input ref="<?php esc_attr_e( 'Insert as Fav Icon','adventurous' );?>" class="adventurous_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Fav Icon','adventurous' );?>" />
                                 </div>
                           	</div><!-- .row -->                            
                        		<div class="row">
@@ -189,7 +193,7 @@ function adventurous_theme_options_do_page() {
                                     <?php } else { ?>
                                         <input size="65" type="text" name="adventurous_options[web_clip]" value="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png" alt="fav" />
                                     <?php }  ?> 
-                                    <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Web Clip Icon','adventurous' );?>" />
+                                    <input ref="<?php esc_attr_e( 'Insert as Web Clip Icon','adventurous' );?>" class="adventurous_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Web Clip Icon','adventurous' );?>" />
                               	</div>
                          	</div><!-- .row -->
                             <div class="row">
@@ -266,7 +270,7 @@ function adventurous_theme_options_do_page() {
 									else { ?>
                                     	<input class="upload-url" size="65" type="text" name="adventurous_options[featured_logo_header]" value="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="logo" />
                                     <?php } ?>
-                                       	<input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Logo','adventurous' ); ?>" />
+                                       	<input ref="<?php esc_attr_e( 'Insert as Logo','adventurous' );?>" class="adventurous_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Logo','adventurous' );?>" />
                            		</div>
                          	</div><!-- .row -->   
                             <div class="row">
@@ -390,7 +394,7 @@ function adventurous_theme_options_do_page() {
                                 	<?php _e( 'Featured Header Image Alt/Title Tag', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">         
-                                	<input class="upload-url" size="65" type="text" name="adventurous_options[featured_header_image_alt]" value="<?php echo esc_attr( $options [ 'featured_header_image_alt' ] ); ?>" />
+                                	<input size="65" type="text" name="adventurous_options[featured_header_image_alt]" value="<?php echo esc_attr( $options [ 'featured_header_image_alt' ] ); ?>" />
                               	</div>
                           	</div><!-- .row -->
                             <div class="row">
@@ -775,7 +779,7 @@ function adventurous_theme_options_do_page() {
                             <div class="row">
                             	<div class="col col-1">
                                 	<?php _e( 'Featured Content Subheadline Text', 'adventurous' ); ?>
-                                    <p><small><?php _e( 'eave empty if you want to remove Subheadline', 'adventurous' ); ?></small></p>
+                                    <p><small><?php _e( 'Leave empty if you want to remove Subheadline', 'adventurous' ); ?></small></p>
                                 </div>
                                 <div class="col col-2">
                                 	<textarea class="textarea input-bg" name="adventurous_options[homepage_featured_subheadline]" cols="70" rows="3"><?php echo esc_textarea( $options[ 'homepage_featured_subheadline' ] ); ?></textarea>
@@ -827,7 +831,7 @@ function adventurous_theme_options_do_page() {
                                         </div>
                                         <div class="col col-2">
                                             <input class="upload-url" size="70" type="text" name="adventurous_options[homepage_featured_image][<?php echo $i; ?>]" value="<?php if( array_key_exists( 'homepage_featured_image', $options ) && array_key_exists( $i, $options[ 'homepage_featured_image' ] ) ) echo esc_url( $options[ 'homepage_featured_image' ][ $i ] ); ?>" />
-                                            <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php if( array_key_exists( 'homepage_featured_image', $options ) && array_key_exists( $i, $options[ 'homepage_featured_image' ] ) ) { esc_attr_e( 'Change Image','adventurous' ); } else { esc_attr_e( 'Add Image','adventurous' ); } ?>" />
+                                            <input ref="<?php esc_attr_e( 'Insert Image','adventurous' );?>" class="adventurous_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Image','adventurous' );?>" />
                                         </div>
                                     </div><!-- .row -->
                                     <div class="row">
@@ -1753,3 +1757,26 @@ function adventurous_make_footer_modifications() {
     }
 }
 add_action( 'init', 'adventurous_make_footer_modifications' );
+
+
+/**
+ * Custom scripts and styles on Customizer for Adventurous
+ *
+ * @since Adventurous 1.4
+ */
+function adventurous_customize_scripts() {
+    wp_register_script( 'adventurous_customizer_custom', get_template_directory_uri() . '/inc/panel/js/customizer-custom-scripts.js', array( 'jquery' ), '20140107', true );
+
+    $adventurous_misc_links = array(
+                            'upgrade_link'              => esc_url( admin_url( 'themes.php?page=theme_options' ) ),
+                            'upgrade_text'              => __( 'More Theme Options &raquo;', 'adventurous' ),
+                            );
+
+    //Add Upgrade Button and old WordPress message via localized script
+    wp_localize_script( 'adventurous_customizer_custom', 'adventurous_misc_links', $adventurous_misc_links );
+
+    wp_enqueue_script( 'adventurous_customizer_custom' );
+
+    wp_enqueue_style( 'adventurous_customizer_custom', get_template_directory_uri() . '/inc/panel/adventurous-customizer.css');
+}
+add_action( 'customize_controls_print_footer_scripts', 'adventurous_customize_scripts');

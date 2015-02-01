@@ -20,6 +20,7 @@ Added Translation for Brazilian Portuguese by Valdir Trombini ( Email: valdir.tr
 Added Translation for Hungarian by Dinnye ( Email: pdinnye@gmail.com )
 Added Translation for Dutch by Alain Baudrez (Email: a.baudrez@gmail.com) and Yoshi van den Akker ( Email: yoshivda@gmail.com )
 Added Translation for German by Volker Homann ( Email: adventurous@volkerhomann.de )
+Added Translation for Polish by Piotrek Jas (fansitejustgames@gmail.com)
 
 
 == License ==

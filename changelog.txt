@@ -1,5 +1,10 @@
 == Changelog ==
 
+Version 1.5
+* Added Polish translation pl_PL.po and pl_PL.mo
+* Added More theme options button in Customizer
+* Updated media uploader to new version in theme options
+
 Version 1.4
 * Added title tag via add theme support
 * Bug Fixed: Featured Header image conditions
