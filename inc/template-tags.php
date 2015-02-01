@@ -152,11 +152,13 @@ function blue_planet_posted_on() {
 			esc_html( get_the_author() )
 		)
 	);
-	echo '<span class="comments">';
-	echo '<a href="'.get_comments_link().'">';
-	echo comments_number( __('0 comment','blue-planet'), __('1 comment','blue-planet'), __('% comments','blue-planet') );
-	echo "</a>";
-	echo '</span>';
+	if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) :
+		echo '<span class="comments">';
+		echo '<a href="'.get_comments_link().'">';
+		echo comments_number( __('0 comment','blue-planet'), __('1 comment','blue-planet'), __('% comments','blue-planet') );
+		echo "</a>";
+		echo '</span>';
+	endif;
 
 	edit_post_link( __( 'Edit', 'blue-planet' ), '<span class="edit-link">', '</span>' );
 }

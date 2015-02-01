@@ -177,7 +177,7 @@ if ( ! function_exists( 'blue_planet_scripts' ) ):
 
 
       //theme custom
-      wp_enqueue_script('blue-planet-theme-script-custom',get_template_directory_uri().'/js/custom.js', array('jquery'),'1.0.9', TRUE);
+      wp_enqueue_script('blue-planet-theme-script-custom',get_template_directory_uri().'/js/custom.js', array('jquery'),'1.1.1', TRUE);
     }
 
 endif;

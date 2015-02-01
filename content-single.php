@@ -48,4 +48,7 @@
 
 		<?php edit_post_link( __( 'Edit', 'blue-planet' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
+
+	<?php do_action( 'blue_planet_author_box' ); ?>
+
 </article><!-- #post-## -->

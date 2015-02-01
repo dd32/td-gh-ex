@@ -1,5 +1,9 @@
 == Changelog ==
 
+Version 1.1.1
+* Change goto top implementation approach to optimize performance
+* Remove duplicate Edit link
+
 Version 1.1
 * Fix duplicate title (Backward compatibility of title-tag)
 * Remove background color of text widget

@@ -52,6 +52,8 @@ dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-si
 - blue_planet_before_page_close()
 - blue_planet_before_container_close()
 
+=== Since 1.1.1 ===
+- blue_planet_author_box()
 
 == List of Filter Hooks ==
 === Since 1.0.0 ===

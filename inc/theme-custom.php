@@ -438,15 +438,7 @@ if ( ! function_exists( 'blue_planet_goto_top' ) ) :
     {
         $flg_enable_goto_top = blueplanet_get_option( 'flg_enable_goto_top' );
         if ( $flg_enable_goto_top ) {
-
-            wp_enqueue_style('blue-planet-goto-top-style',
-                get_template_directory_uri(). '/thirdparty/goto-top/goto-top.css' );
-
             echo '<a href="#" class="scrollup">'. __('Scroll', 'blue-planet') . '</a>';
-
-            wp_enqueue_script('blue-planet-goto-top-script',
-                get_template_directory_uri().'/thirdparty/goto-top/goto-top.js',
-                    array('jquery'));
         }
     }
 endif; // blue_planet_goto_top

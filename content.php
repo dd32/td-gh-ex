@@ -86,7 +86,7 @@ $content_layout = blueplanet_get_option('content_layout');
 			?>
 				<?php
 				if (!empty($categories_list)) {
-					echo '<span class="bs-category">'.$categories_list.'</span>';
+					echo '<span class="bp-category">'.$categories_list.'</span>';
 				}
 				 ?>
 
@@ -100,23 +100,11 @@ $content_layout = blueplanet_get_option('content_layout');
 			?>
 				<?php
 				if (!empty($tags_list)) {
-					echo '<span class="bs-tags">'.$tags_list.'</span>';
+					echo '<span class="bp-tags">'.$tags_list.'</span>';
 				}
 				 ?>
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
 
-
-
-
-		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-			<?php
-			echo '<span class="comments">';
-			echo comments_popup_link( __('0 comment','blue-planet'), __('1 comment','blue-planet'), __('% comments','blue-planet') );
-			echo '</span>';
-			?>
-		<?php endif; ?>
-
-		<?php edit_post_link( __( 'Edit', 'blue-planet' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->
