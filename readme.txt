@@ -127,6 +127,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.1.4
+- Fixed:   Function thinkup_input_wptitle() removed as it causes issues with page title when posts are assigned to homepage.
+
 Version 1.1.3
 - Updated: Functions used to add additional image sizes are now child theme compatible. Allows user to override to fix rare http error.
 
