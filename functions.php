@@ -171,11 +171,16 @@ endif;
 	add_action( 'widgets_init', 'medical_widgets_init' );
 
 
-// Add class to the excerpt 
-	function medical_excerpt( $excerpt ) {
-    		return str_replace('<p', '<p class="excerpt"', $excerpt);
-		}
-	add_filter( "the_excerpt", "medical_excerpt" );
+// Add class to post nav 
+	function medical_post_next() { 
+		return 'class="nav-next"'; 
+	}
+	add_filter('next_posts_link_attributes', 'medical_post_next'); 
+
+	function medical_post_prev() { 
+		return 'class="nav-prev"'; 
+	}
+	add_filter('previous_posts_link_attributes', 'medical_post_prev'); 
 
 
 // Custom excerpt lenght (default length is 55 words)

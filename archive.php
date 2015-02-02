@@ -50,8 +50,8 @@
 	<?php endif; ?>
 				
 	<div class="post-nav">
-		<div class="nav-prev"><?php next_posts_link(__( '&laquo; Older posts', 'medical' )) ?></div>
-		<div class="nav-next"><?php previous_posts_link(__( 'Newer posts &raquo;', 'medical' )) ?></div>
+		<?php next_posts_link(__( '&laquo; Older posts', 'medical' )); ?>
+		<?php previous_posts_link(__( 'Newer posts &raquo;', 'medical' )); ?>
 	</div>
 
 </div>
