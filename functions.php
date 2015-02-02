@@ -161,11 +161,16 @@ endif;
 	add_action( 'widgets_init', 'simplyblack_widgets_init' );
 
 
-// Add class to the excerpt 
-	function simplyblack_excerpt( $excerpt ) {
-    		return str_replace('<p', '<p class="excerpt"', $excerpt);
-		}
-	add_filter( "the_excerpt", "simplyblack_excerpt" );
+// Add class to post nav 
+	function simplyblack_post_next() { 
+		return 'class="nav-next"'; 
+	}
+	add_filter('next_posts_link_attributes', 'simplyblack_post_next'); 
+
+	function simplyblack_post_prev() { 
+		return 'class="nav-prev"'; 
+	}
+	add_filter('previous_posts_link_attributes', 'simplyblack_post_prev'); 
 
 
 // Custom excerpt lenght (default length is 55 words)

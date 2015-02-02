@@ -51,8 +51,8 @@
 	<?php endif; ?>
 				
 	<div class="post-nav">
-		<div class="nav-prev"><?php next_posts_link(__( '&laquo; Older posts', 'simplyblack' )) ?></div>
-		<div class="nav-next"><?php previous_posts_link(__( 'Newer posts &raquo;', 'simplyblack' )) ?></div>
+		<?php next_posts_link(__( '&laquo; Older posts', 'simplyblack' )); ?>
+		<?php previous_posts_link(__( 'Newer posts &raquo;', 'simplyblack' )); ?>
 	</div>
 
 </div>
