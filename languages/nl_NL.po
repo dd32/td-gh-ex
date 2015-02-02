@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: MultiColors v2.2\n"
+"Project-Id-Version: MultiColors v2.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-11-28 22:42:21+0000\n"
+"PO-Revision-Date: 2015-01-11 12:44:44+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,15 +21,15 @@ msgstr ""
 "X-Textdomain-Support: yes"
 
 #: 404.php:11
-#: search.php:39
+#: search.php:40
 #@ multicolors
 msgid "Nothing Found"
 msgstr "Niets gevonden"
 
 #: 404.php:12
-#: archive.php:51
-#: index.php:45
-#: search.php:40
+#: archive.php:52
+#: index.php:46
+#: search.php:41
 #@ multicolors
 msgid "Sorry, no posts matched your criteria."
 msgstr "Sorry, er zijn helaas geen berichten gevonden."
@@ -64,45 +64,45 @@ msgstr "Auteur Archieven"
 msgid "Tag Archives"
 msgstr "Tag Archieven"
 
-#: archive.php:55
-#: index.php:49
-#: search.php:46
+#: archive.php:56
+#: index.php:50
+#: search.php:48
 #@ multicolors
 msgid "&laquo; Older posts"
 msgstr "&laquo; Oudere berichten"
 
-#: archive.php:56
-#: index.php:50
-#: search.php:47
+#: archive.php:57
+#: index.php:51
+#: search.php:49
 #@ multicolors
 msgid "Newer posts &raquo;"
 msgstr "Nieuwere berichten &raquo;"
 
-#: functions.php:105
+#: functions.php:121
 #@ multicolors
 msgid "Primary Sidebar"
 msgstr "Hoofd Sidebar"
 
-#: functions.php:107
-#: functions.php:117
-#: functions.php:127
-#: functions.php:137
-#: functions.php:148
-#: functions.php:158
-#: functions.php:168
-#: functions.php:178
+#: functions.php:123
+#: functions.php:133
+#: functions.php:143
+#: functions.php:153
+#: functions.php:163
+#: functions.php:173
+#: functions.php:183
+#: functions.php:193
 #@ multicolors
 msgid "Select widgets from the right-hand side."
 msgstr "Selecteer widgets van de rechterkant."
 
-#: archive.php:47
-#: index.php:39
-#: search.php:34
+#: archive.php:48
+#: index.php:40
+#: search.php:35
 #@ multicolors
 msgid "Read More &raquo;"
 msgstr "Lees Meer &raquo;"
 
-#: functions.php:40
+#: functions.php:43
 #@ multicolors
 msgid "Boats"
 msgstr "Boten"
@@ -112,8 +112,8 @@ msgstr "Boten"
 msgid "Featured post"
 msgstr "Aanbevolen bericht"
 
-#: page-full.php:27
-#: page.php:26
+#: page-full.php:29
+#: page.php:28
 #: single.php:40
 #@ multicolors
 msgid "Edit"
@@ -125,27 +125,27 @@ msgstr "Bewerk"
 msgid "Search Results for: %s"
 msgstr "Zoekresultaat voor: %s"
 
-#: comments.php:38
+#: comments.php:35
 #@ multicolors
 msgid "&laquo; Older Comments"
 msgstr "&laquo; Oudere Reacties"
 
-#: comments.php:39
+#: comments.php:36
 #@ multicolors
 msgid "Newer Comments &raquo;"
 msgstr "Nieuwere Reacties &raquo;"
 
-#: comments.php:44
+#: comments.php:42
 #@ multicolors
 msgid "Comments are closed"
 msgstr "Reageren is niet mogelijk"
 
-#: functions.php:156
+#: functions.php:171
 #@ multicolors
 msgid "Footer Sidebar Right"
 msgstr "Footer Sidebar Rechts"
 
-#: functions.php:176
+#: functions.php:191
 #@ multicolors
 msgid "Footer Sidebar Left"
 msgstr "Footer Sidebar Links"
@@ -155,7 +155,7 @@ msgstr "Footer Sidebar Links"
 msgid "Primary Navigation"
 msgstr "Hoofdmenu"
 
-#: comments.php:18
+#: comments.php:17
 #, php-format
 #@ multicolors
 msgid "1 response on %2$s"
@@ -163,23 +163,23 @@ msgid_plural "%1$s responses on %2$s"
 msgstr[0] "1 reactie op %2$s"
 msgstr[1] "%1$s reacties op %2$s"
 
-#: functions.php:205
-#: functions.php:214
+#: functions.php:220
+#: functions.php:229
 #@ multicolors
 msgid "Logo"
 msgstr "Logo"
 
-#: functions.php:207
+#: functions.php:222
 #@ multicolors
 msgid "Upload a logo to replace blogname and description in header"
 msgstr "Upload een logo om blognaam en beschrijving in header te vervangen"
 
-#: functions.php:125
+#: functions.php:141
 #@ multicolors
 msgid "Homepage Sidebar Right"
 msgstr "Homepage Sidebar Rechts"
 
-#: functions.php:146
+#: functions.php:161
 #@ multicolors
 msgid "Homepage Sidebar Left"
 msgstr "Homepage Sidebar Links"
@@ -208,27 +208,27 @@ msgstr "% reacties"
 msgid "1 response"
 msgstr "1 reactie"
 
-#: footer.php:25
+#: footer.php:26
 #@ multicolors
 msgid "Copyright"
 msgstr "Copyright"
 
-#: footer.php:26
+#: footer.php:27
 #@ multicolors
 msgid "WordPress Blog Platform"
 msgstr "WordPress Blog Platform"
 
-#: footer.php:26
+#: footer.php:27
 #@ multicolors
 msgid "Proudly powered by WordPress"
 msgstr "Proudly powered by WordPress"
 
-#: functions.php:135
+#: functions.php:151
 #@ multicolors
 msgid "Homepage Sidebar Middle"
 msgstr "Homepage Sidebar Midden"
 
-#: functions.php:166
+#: functions.php:181
 #@ multicolors
 msgid "Footer Sidebar Middle"
 msgstr "Footer Sidebar Midden"
@@ -251,25 +251,25 @@ msgstr "Geplaatst op %s"
 msgid "By %s"
 msgstr "Door %s"
 
-#: single.php:29
 #: single.php:30
+#: single.php:31
 #@ multicolors
 msgid ", "
 msgstr ", "
 
-#: single.php:29
+#: single.php:30
 #, php-format
 #@ multicolors
 msgid "Posted in %s"
 msgstr "Geplaatst in %s"
 
-#: single.php:30
+#: single.php:31
 #, php-format
 #@ multicolors
 msgid "Tags: %s"
 msgstr "Tags: %s"
 
-#: functions.php:115
+#: functions.php:131
 #@ multicolors
 msgid "Header Sidebar"
 msgstr "Header Sidebar"

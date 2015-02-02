@@ -5,19 +5,20 @@
 ?>
 
 <div id="footer">
-<div id="footer-content">
 
-	<?php if ( is_active_sidebar( 'footer-right' ) || is_active_sidebar( 'footer-middle' ) || is_active_sidebar( 'footer-left' ) ) {?> 
-	<div class="footer-left"> 
-		<?php dynamic_sidebar( 'footer-left' ); ?>
-	</div>
+	<?php if ( is_active_sidebar( 'footer-right' ) || is_active_sidebar( 'footer-middle' ) || is_active_sidebar( 'footer-left' ) ) {?>
+	<div id="footer-widgets">
+		<div class="footer-left"> 
+			<?php dynamic_sidebar( 'footer-left' ); ?>
+		</div>
 
-	<div class="footer-middle"> 
-		<?php dynamic_sidebar( 'footer-middle' ); ?>
-	</div>
+		<div class="footer-middle"> 
+			<?php dynamic_sidebar( 'footer-middle' ); ?>
+		</div>
 
-	<div class="footer-right"> 
-		<?php dynamic_sidebar( 'footer-right' ); ?>
+		<div class="footer-right"> 
+			<?php dynamic_sidebar( 'footer-right' ); ?>
+		</div>
 	</div>
 	<?php } ?>	
 
@@ -26,7 +27,6 @@
 		<a href="http://wordpress.org" title="<?php _e('WordPress Blog Platform', 'multicolors'); ?>"><?php _e('Proudly powered by WordPress', 'multicolors'); ?></a>
 	</div>
 
-</div>
 </div>
 </div><!-- #container -->
 

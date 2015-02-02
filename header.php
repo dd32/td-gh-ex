@@ -8,7 +8,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
+<meta charset="<?php bloginfo( 'charset' ); ?>">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
@@ -45,7 +45,6 @@
 	<?php if ( is_home() || is_front_page() ) {?> 
 	<div id="header-third-container">
 	<div id="header-third">
-	
 		<?php if ( get_header_image() ) {?> 
 		<div class="image-header"> 
 			<img src="<?php echo get_header_image(); ?>" class="header-img" alt="" />
@@ -57,7 +56,6 @@
 			<?php dynamic_sidebar( 'header' ); ?>
 		</div>
 		<?php } ?>
-	
 	</div>
 	</div>
 	<?php } ?> 
@@ -66,7 +64,6 @@
 	<?php if ( is_active_sidebar( 'homepage-right' ) || is_active_sidebar( 'homepage-middle' ) || is_active_sidebar( 'homepage-left' ) ) {?> 
 	<div id="header-fourth-container">
 	<div id="header-fourth">
-
 		<div class="home-left"> 
 			<?php dynamic_sidebar( 'homepage-left' ); ?>
 		</div>
@@ -78,7 +75,6 @@
 		<div class="home-right"> 
 			<?php dynamic_sidebar( 'homepage-right' ); ?>
 		</div>
-
 	</div>
 	</div>
 	<?php } ?>	
