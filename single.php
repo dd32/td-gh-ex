@@ -6,7 +6,6 @@
 
 <?php get_header(); ?>
 <div id="content">
-<div class="main">
 
 	<?php if (have_posts()) : ?>
 	<?php while (have_posts()) : the_post(); ?>
@@ -35,9 +34,8 @@
 	<?php endwhile; ?>
 	<?php endif; ?>
 	
-	<?php edit_post_link( __( 'Edit', 'onecolumn' ), '<h5><span class="edit-link">', '</span></h5>' ) ?>
+	<?php edit_post_link( __( 'Edit', 'onecolumn' ), '<div class="edit-link">', '</div>' ) ?>
 
-</div>
 </div>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

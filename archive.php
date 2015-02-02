@@ -6,7 +6,6 @@
 
 <?php get_header(); ?>
 <div id="content">
-<div class="main">
 
 	<?php if (have_posts()) : $count = 0; ?>
 		<?php if (is_category()) { ?>
@@ -52,11 +51,10 @@
 	<?php endif; ?>
 				
 	<div class="post-nav">
-		<div class="nav-prev"><?php next_posts_link(__( '&laquo; Older posts', 'onecolumn' )) ?></div>
-		<div class="nav-next"><?php previous_posts_link(__( 'Newer posts &raquo;', 'onecolumn' )) ?></div>
+		<?php next_posts_link(__( '&laquo; Older posts', 'onecolumn' )); ?>
+		<?php previous_posts_link(__( 'Newer posts &raquo;', 'onecolumn' )); ?>
 	</div>
 
-</div>
 </div>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
