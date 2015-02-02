@@ -24,7 +24,7 @@
 
 	<?php endwhile; ?>
 
-	<?php edit_post_link( __( 'Edit', 'myknowledgebase' ), '<h5><span class="edit-link">', '</span></h5>' ) ?>
+	<?php edit_post_link( __( 'Edit', 'myknowledgebase' ), '<div class="edit-link">', '</div>' ) ?>
 
 </div>	
 <?php get_footer(); ?>

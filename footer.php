@@ -6,19 +6,19 @@
 <div id="footer">
 
 	<?php if ( is_active_sidebar( 'footer-right' ) || is_active_sidebar( 'footer-middle' ) || is_active_sidebar( 'footer-left' ) ) {?> 
+	<div id="footer-widgets">
+		<div class="footer-left"> 
+			<?php dynamic_sidebar( 'footer-left' ); ?>
+		</div>
 
-	<div class="footer-left"> 
-		<?php dynamic_sidebar( 'footer-left' ); ?>
+		<div class="footer-middle"> 
+			<?php dynamic_sidebar( 'footer-middle' ); ?>
+		</div>
+
+		<div class="footer-right"> 
+			<?php dynamic_sidebar( 'footer-right' ); ?>
+		</div>
 	</div>
-
-	<div class="footer-middle"> 
-		<?php dynamic_sidebar( 'footer-middle' ); ?>
-	</div>
-
-	<div class="footer-right"> 
-		<?php dynamic_sidebar( 'footer-right' ); ?>
-	</div>
-
 	<?php } ?>	
 
 	<div class="site-info">
