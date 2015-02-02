@@ -152,17 +152,22 @@ endif;
 	add_action( 'widgets_init', 'shipyard_widgets_init' );
 
 
-// Add class to the excerpt 
-	function shipyard_excerpt( $excerpt ) {
-    		return str_replace('<p', '<p class="excerpt"', $excerpt);
-		}
-	add_filter( "the_excerpt", "shipyard_excerpt" );
+// Add class to post nav 
+	function shipyard_post_next() { 
+		return 'class="nav-next"'; 
+	}
+	add_filter('next_posts_link_attributes', 'shipyard_post_next'); 
+
+	function shipyard_post_prev() { 
+		return 'class="nav-prev"'; 
+	}
+	add_filter('previous_posts_link_attributes', 'shipyard_post_prev'); 
 
 
 // Custom excerpt lenght (default length is 55 words)
-	function bluegray_excerpt_length( $length ) { 
+	function shipyard_excerpt_length( $length ) { 
 		return 55; } 
-	add_filter( 'excerpt_length', 'bluegray_excerpt_length', 999 ); 
+	add_filter( 'excerpt_length', 'shipyard_excerpt_length', 999 ); 
 
 
 // Theme Customizer (option to add logo)

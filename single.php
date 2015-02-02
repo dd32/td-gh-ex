@@ -36,7 +36,7 @@
 	<?php endwhile; ?>
 	<?php endif; ?>
 	
-	<?php edit_post_link( __( 'Edit', 'shipyard' ), '<h5><span class="edit-link">', '</span></h5>' ) ?>
+	<?php edit_post_link( __( 'Edit', 'shipyard' ), '<div class="edit-link">', '</div>' ) ?>
 
 </div>
 <?php get_sidebar(); ?>
