@@ -20,7 +20,7 @@ function accent_setup() {
 	 */
 	global $content_width;
 	if ( ! isset( $content_width ) ) {
-		$content_width = 640; /* pixels */
+		$content_width = 736; /* pixels */
 	}
 	/*
 	 * Make theme available for translation.
@@ -140,7 +140,7 @@ function accent_scripts() {
 		wp_enqueue_style( 'accent-fonts' );
 	}
 	
-	wp_enqueue_style( 'accent-font-awesome', get_template_directory_uri() . '/inc/fontawesome/font-awesome.min.css', array(), '4.2.0' );
+	wp_enqueue_style( 'accent-font-awesome', get_template_directory_uri() . '/inc/fontawesome/font-awesome.min.css', array(), '4.3.0' );
 
 	wp_enqueue_script( 'accent-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
