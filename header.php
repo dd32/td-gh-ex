@@ -8,7 +8,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
+<meta charset="<?php bloginfo( 'charset' ); ?>">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
@@ -26,7 +26,6 @@
 <div id="container">
 
 <div id="header">
-
 	<div class="logo"> 
 		<?php if ( get_theme_mod( 'leftside_logo' ) ) : ?> 
 			<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>
@@ -53,7 +52,6 @@
 	<?php } ?>
 
 	<?php get_sidebar(); ?>
-
 </div>
 
 <?php if ( is_home() || is_front_page() ) {?> 

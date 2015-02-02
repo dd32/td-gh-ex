@@ -23,7 +23,7 @@
 
 	<?php endwhile; ?>
 
-	<?php edit_post_link( __( 'Edit', 'leftside' ), '<h5><span class="edit-link">', '</span></h5>' ) ?>
+	<?php edit_post_link( __( 'Edit', 'leftside' ), '<div class="edit-link">', '</div>' ) ?>
 
 </div>		
 	
