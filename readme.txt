@@ -4,7 +4,7 @@ Contributors: Iceable
 Tags: black, blue, white, light, two-columns, right-sidebar, flexible-width, custom-header, custom-background, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
 Tested up to: 4.1
-Stable tag: 1.1.46
+Stable tag: 1.1.47
 
 == ABOUT BOLDR LITE ==
 
@@ -40,7 +40,7 @@ This theme bundles some third party javascript and jQuery plugins, released unde
 * ru_RU, de_DE, es_ES, pt_BR, pl_PL and it_IT translation files: see below.
 * HTML5 Shiv v3.6 | @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed. Source: https://github.com/aFarkas/html5shiv
 
-All other files are copyright 2013-2014 Iceable Media and released under the terms of the GNU GPLv2 License.
+All other files are copyright 2013-2015 Iceable Media and released under the terms of the GNU GPLv2 License.
 
 == TRANSLATIONS ==
 
@@ -61,6 +61,12 @@ If you have translated this theme into your own language and are willing to shar
 Your translation files will be added to the next update. Don't forget to leave your name, email address and/or website link so credits can be given to you!
 
 == CHANGELOG ==
+
+= 1.1.47 =
+February 2nd, 2015
+* Enhanced menu items: the whole area (box) around menu item is now clickable, not only the text
+* Updated copyright date to 2015
+* Updated description
 
 = 1.1.46 =
 December 18th, 2014
@@ -159,7 +165,7 @@ April 7th, 2014
 * Fixed german translation: "Kein Kommentar" instead of "Nein Kommentar" based on user feedback
 * Fixed typo in french translation "Votre recherche" instead of "Votre recherché"
 * Updated .pot file
-* Updated copyright note in all files (2013-2014)
+* Updated copyright note in all files (2013-2015)
 
 = 1.1.27 =
 March 31th, 2014
