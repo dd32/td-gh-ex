@@ -147,19 +147,16 @@ msgstr ""
 msgid "Comments are closed"
 msgstr ""
 
-#: footer-home.php:44
 #: footer.php:44
 #@ gridbulletin
 msgid "Copyright"
 msgstr ""
 
-#: footer-home.php:45
 #: footer.php:45
 #@ gridbulletin
 msgid "WordPress Blog Platform"
 msgstr ""
 
-#: footer-home.php:45
 #: footer.php:45
 #@ gridbulletin
 msgid "Proudly powered by WordPress"
@@ -193,32 +190,17 @@ msgstr ""
 
 #: functions.php:116
 #@ gridbulletin
-msgid "Footer Right"
+msgid "Footer Sidebar Right"
 msgstr ""
 
 #: functions.php:126
 #@ gridbulletin
-msgid "Footer Middle"
+msgid "Footer Sidebar Middle"
 msgstr ""
 
 #: functions.php:136
 #@ gridbulletin
-msgid "Footer Left"
-msgstr ""
-
-#: functions.php:146
-#@ gridbulletin
-msgid "Footer Home Right"
-msgstr ""
-
-#: functions.php:156
-#@ gridbulletin
-msgid "Footer Home Middle"
-msgstr ""
-
-#: functions.php:166
-#@ gridbulletin
-msgid "Footer Home Left"
+msgid "Footer Sidebar Left"
 msgstr ""
 
 #: functions.php:196

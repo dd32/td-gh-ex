@@ -6,7 +6,6 @@
 
 <?php get_header(); ?>
 <div id="content">
-<div class="main">
 
 	<?php if (have_posts()) : $count = 0; ?>
 		<?php if (is_category()) { ?>
@@ -39,7 +38,7 @@
 		</h5>
 
 		<?php if ( has_post_thumbnail() ) { 
-			the_post_thumbnail(); 
+			the_post_thumbnail('list', array('class' => 'list-image')); 
 		} ?>
 
 		<?php the_excerpt(); ?>
@@ -58,11 +57,10 @@
 	<?php endif; ?>
 				
 	<div class="post-nav">
-		<div class="nav-prev"><?php next_posts_link(__( '&laquo; Older posts', 'gridbulletin' )) ?></div>
-		<div class="nav-next"><?php previous_posts_link(__( 'Newer posts &raquo;', 'gridbulletin' )) ?></div>
+		<?php next_posts_link(__( '&laquo; Older posts', 'gridbulletin' )); ?>
+		<?php previous_posts_link(__( 'Newer posts &raquo;', 'gridbulletin' )); ?>
 	</div>
 
-</div>
 </div>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

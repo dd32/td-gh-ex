@@ -7,7 +7,6 @@
 
 <?php get_header(); ?>
 <div id="content-full">
-<div class="main-full">
 
 	<?php while ( have_posts() ) : the_post(); ?>
 
@@ -25,8 +24,7 @@
 
 	<?php endwhile; ?>
 
-	<?php edit_post_link( __( 'Edit', 'gridbulletin' ), '<h5><span class="edit-link">', '</span></h5>' ) ?>
+	<?php edit_post_link( __( 'Edit', 'gridbulletin' ), '<div class="edit-link">', '</div>' ) ?>
 
-</div>
 </div>	
 <?php get_footer(); ?>

@@ -48,9 +48,12 @@
 		add_theme_support( 'post-thumbnails' ); 
 
 	// Resize thumbnails
-		set_post_thumbnail_size( 250, 250 ); 
+		set_post_thumbnail_size( 300, 300 ); 
 
-	// Resize single post and page thumbnail
+	// Resize post thumbnail in list
+		add_image_size( 'list', 250, 250 ); 
+
+	// Resize page thumbnail
 		add_image_size( 'single', 300, 300 ); 
 
 	// This feature adds RSS feed links to html head 
@@ -129,7 +132,7 @@ endif;
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Right', 'gridbulletin' ),
+		'name' => __( 'Footer Sidebar Right', 'gridbulletin' ),
 		'id' => 'footer-right',
 		'description' => __( 'Select widgets from the right-hand side.', 'gridbulletin' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -139,7 +142,7 @@ endif;
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Middle', 'gridbulletin' ),
+		'name' => __( 'Footer Sidebar Middle', 'gridbulletin' ),
 		'id' => 'footer-middle',
 		'description' => __( 'Select widgets from the right-hand side.', 'gridbulletin' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -149,38 +152,8 @@ endif;
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Left', 'gridbulletin' ),
+		'name' => __( 'Footer Sidebar Left', 'gridbulletin' ),
 		'id' => 'footer-left',
-		'description' => __( 'Select widgets from the right-hand side.', 'gridbulletin' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgettitle">',
-		'after_title' => '</h4>',
-	) );
-
-	register_sidebar( array(
-		'name' => __( 'Footer Home Right', 'gridbulletin' ),
-		'id' => 'footer-home-right',
-		'description' => __( 'Select widgets from the right-hand side.', 'gridbulletin' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgettitle">',
-		'after_title' => '</h4>',
-	) );
-
-	register_sidebar( array(
-		'name' => __( 'Footer Home Middle', 'gridbulletin' ),
-		'id' => 'footer-home-middle',
-		'description' => __( 'Select widgets from the right-hand side.', 'gridbulletin' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgettitle">',
-		'after_title' => '</h4>',
-	) );
-
-	register_sidebar( array(
-		'name' => __( 'Footer Home Left', 'gridbulletin' ),
-		'id' => 'footer-home-left',
 		'description' => __( 'Select widgets from the right-hand side.', 'gridbulletin' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
@@ -192,11 +165,16 @@ endif;
 	add_action( 'widgets_init', 'gridbulletin_widgets_init' );
 
 
-// Add class to the excerpt 
-	function gridbulletin_excerpt( $excerpt ) {
-    		return str_replace('<p', '<p class="excerpt"', $excerpt);
-		}
-	add_filter( "the_excerpt", "gridbulletin_excerpt" );
+// Add class to post nav 
+	function gridbulletin_post_next() { 
+		return 'class="nav-next"'; 
+	}
+	add_filter('next_posts_link_attributes', 'gridbulletin_post_next'); 
+
+	function gridbulletin_post_prev() { 
+		return 'class="nav-prev"'; 
+	}
+	add_filter('previous_posts_link_attributes', 'gridbulletin_post_prev'); 
 
 
 // Custom excerpt lenght (default length is 55 words)
