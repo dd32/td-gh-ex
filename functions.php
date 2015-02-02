@@ -164,11 +164,16 @@ function darkorange_widgets_init() {
 	add_action( 'widgets_init', 'darkorange_widgets_init' );
 
 
-// Add class to the excerpt 
-	function darkorange_excerpt( $excerpt ) {
-    		return str_replace('<p', '<p class="excerpt"', $excerpt);
-		}
-	add_filter( "the_excerpt", "darkorange_excerpt" );
+// Add class to post nav 
+	function darkorange_post_next() { 
+		return 'class="nav-next"'; 
+	}
+	add_filter('next_posts_link_attributes', 'darkorange_post_next'); 
+
+	function darkorange_post_prev() { 
+		return 'class="nav-prev"'; 
+	}
+	add_filter('previous_posts_link_attributes', 'darkorange_post_prev'); 
 
 
 // Custom excerpt lenght (default length is 55 words)
