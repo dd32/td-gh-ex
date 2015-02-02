@@ -1,11 +1,9 @@
 <?php
 /**
- * The template part for displaying a message that posts cannot be found.
+ * The template for displaying a "No posts found" message
  *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
- * @package thebox
- * @since thebox 1.0
+ * @package WordPress
+ * @since The Box 1.0
  */
 ?>
 

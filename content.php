@@ -1,7 +1,8 @@
 <?php
 /**
- * @package thebox
- * @since thebox 1.0
+ *
+ * @package WordPress
+ * @since The Box 1.0
  */
 ?>
 

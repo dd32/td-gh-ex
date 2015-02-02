@@ -7,8 +7,8 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package thebox
- * @since thebox 1.0
+ * @package WordPress
+ * @since The Box 1.0
  */
 
 get_header(); ?>
@@ -31,5 +31,5 @@ get_header(); ?>
 			</div><!-- #content .site-content -->
 		</div><!-- #primary .content-area -->
 
-<?php get_sidebar('sidebar-1'); ?>
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

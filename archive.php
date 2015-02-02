@@ -4,8 +4,8 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package thebox
- * @since thebox 1.0
+ * @package WordPress
+ * @since The Box 1.0
  */
 
 get_header(); ?>
@@ -80,12 +80,12 @@ get_header(); ?>
 					?>
 
 				<?php endwhile; ?>
-
+				
 				<?php thebox_pagination(); ?>
 
 			<?php else : ?>
 
-				<?php get_template_part( 'no-results', 'archive' ); ?>
+				<?php get_template_part( 'content', 'none' ); ?>
 
 			<?php endif; ?>
 

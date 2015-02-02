@@ -2,8 +2,8 @@
 /**
  * The template for displaying posts in the Quote post format
  *
- * @package thebox
- * @since thebox 1.0
+ * @package WordPress
+ * @since The Box 1.0
  */
 ?>
 

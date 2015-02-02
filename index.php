@@ -8,8 +8,8 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package thebox
- * @since thebox 1.0
+ * @package WordPress
+ * @since The Box 1.0
  */
 
 get_header(); ?>
@@ -18,8 +18,6 @@ get_header(); ?>
 			<div id="content" class="site-content" role="main">
 			
 			<?php if ( have_posts() ) : ?>
-
-				<?php // thebox_content_nav( 'nav-above' ); ?>
 
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
@@ -33,13 +31,13 @@ get_header(); ?>
 					?>
 
 				<?php endwhile; ?>
-
-				<?php //thebox_content_nav( 'nav-below' ); ?>
+				
+				<?php /* Pagination */ ?>
 				<?php thebox_pagination(); ?>
 
 			<?php else : ?>
 
-				<?php get_template_part( 'no-results', 'index' ); ?>
+				<?php get_template_part( 'content', 'none' ); ?>
 
 			<?php endif; ?>
 

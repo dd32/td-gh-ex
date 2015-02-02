@@ -4,8 +4,8 @@
  *
  * Contains the closing of the id=main div and all content after
  *
- * @package thebox
- * @since thebox 1.0
+ * @package WordPress
+ * @since The Box 1.0
  */
 ?>
 		
@@ -24,7 +24,7 @@
 			<span class="sep"> / </span>
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'thebox' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'thebox' ), 'WordPress' ); ?></a>
 			<span class="sep"> / </span>
-			<?php printf( __( 'Theme: %1$s by %2$s', 'thebox' ), 'The Box', '<a href="http://design.altervista.org" rel="designer">design lab</a>' ); ?>
+			<?php printf( __( 'Theme: %1$s by %2$s', 'thebox' ), 'The Box', '<a href="http://design.altervista.org" rel="designer">Design Lab</a>' ); ?>
 		</p>
 
 	</footer><!-- #colophon .site-footer -->

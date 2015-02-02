@@ -48,18 +48,13 @@ function thebox_options_do_page() {
 		<div class="updated fade"><p><strong><?php _e( 'Options saved', 'thebox' ); ?></strong></p></div>
 		<?php endif; ?>
 			
-		
 		<table class="form-table">
 			<tr valign="top">
 				<th scope="row"><strong><?php _e( 'Support', 'thebox' ); ?></strong></th>
 				<td>
 					<p>
 						<a href="http://design.altervista.org/thebox-documentation"><?php _e( 'You find documentation here', 'thebox' ); ?></a>
-						&amp;
-						<a href="https://wordpress.org/support/theme/the-box"><?php _e( 'free support Forum', 'thebox' ); ?></a>
-						<?php _e( 'on wordpress.org', 'thebox' ); ?>
 					</p>
-					
 				</td>
 			</tr>
 			<tr valign="top">

@@ -1,9 +1,9 @@
 <?php
 /**
- * thebox functions and definitions
+ * The Box functions and definitions
  *
- * @package thebox
- * @since thebox 1.0
+ * @package WordPress
+ * @since The Box 1.0
  */
 
 
@@ -61,7 +61,7 @@ function thebox_scripts() {
 	wp_enqueue_style( 'thebox-icons', get_template_directory_uri() . '/fonts/icons-font.css', array(), '1.4' );
 		
 	// Loads main stylesheet.
-	wp_enqueue_style( 'thebox-style', get_stylesheet_uri(), array(), '1.3.7' );
+	wp_enqueue_style( 'thebox-style', get_stylesheet_uri(), array(), '1.3.8' );
 	
 	wp_enqueue_script( 'thebox-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
@@ -250,7 +250,7 @@ if ( ! function_exists('thebox_pagination') ) {
 				 $format = '&paged=%#%';
 			 }
 			echo paginate_links(array(
-				'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+				'base' => str_replace( $big, '%#%', get_pagenum_link( $big, false ) ),
 				'format' => $format,
 				'current' => max( 1, get_query_var('paged') ),
 				'total' => $total,
