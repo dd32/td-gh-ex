@@ -7,30 +7,28 @@
 </div><!-- #main-content -->
 
 <div id="footer">
-<div class="footer-content">
 
 	<?php if ( is_active_sidebar( 'footer-right' ) || is_active_sidebar( 'footer-middle' ) || is_active_sidebar( 'footer-left' ) ) {?> 
+	<div id="footer-widgets">
+		<div class="footer-left"> 
+			<?php dynamic_sidebar( 'footer-left' ); ?>
+		</div>
 
-	<div class="footer-left"> 
-		<?php dynamic_sidebar( 'footer-left' ); ?>
+		<div class="footer-middle"> 
+			<?php dynamic_sidebar( 'footer-middle' ); ?>
+		</div>
+
+		<div class="footer-right"> 
+			<?php dynamic_sidebar( 'footer-right' ); ?>
+		</div>
 	</div>
-
-	<div class="footer-middle"> 
-		<?php dynamic_sidebar( 'footer-middle' ); ?>
-	</div>
-
-	<div class="footer-right"> 
-		<?php dynamic_sidebar( 'footer-right' ); ?>
-	</div>
-
 	<?php } ?>	
-
+	
 	<div class="site-info">
 		<?php _e('Copyright', 'bluegray'); ?> <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> - 
 		<a href="http://wordpress.org" title="<?php _e('WordPress Blog Platform', 'bluegray'); ?>"><?php _e('Proudly powered by WordPress', 'bluegray'); ?></a>
 	</div>
 
-</div>
 </div>
 </div><!-- #container -->
 

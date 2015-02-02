@@ -8,7 +8,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
+<meta charset="<?php bloginfo( 'charset' ); ?>">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
@@ -53,20 +53,18 @@
 
 	<?php if( is_home() || is_front_page() ) {?>
 	<?php if ( is_active_sidebar( 'homepage-right' ) || is_active_sidebar( 'homepage-middle' ) || is_active_sidebar( 'homepage-left' ) ) {?> 
+		<div id="header-widgets">
+			<div class="home-left"> 
+				<?php dynamic_sidebar( 'homepage-left' ); ?>
+			</div>
 	
-	<div id="header-widgets">
-		<div class="home-left"> 
-			<?php dynamic_sidebar( 'homepage-left' ); ?>
-		</div>
+			<div class="home-middle"> 
+				<?php dynamic_sidebar( 'homepage-middle' ); ?>
+			</div>
 	
-		<div class="home-middle"> 
-			<?php dynamic_sidebar( 'homepage-middle' ); ?>
+			<div class="home-right"> 
+				<?php dynamic_sidebar( 'homepage-right' ); ?>
+			</div>
 		</div>
-	
-		<div class="home-right"> 
-			<?php dynamic_sidebar( 'homepage-right' ); ?>
-		</div>
-	</div>
-
 	<?php } ?>	
 	<?php } ?>
