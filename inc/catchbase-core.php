@@ -398,6 +398,11 @@ function catchbase_flush_transients(){
 	delete_transient( 'catchbase_scrollup' );
 
 	delete_transient( 'all_the_cool_cats' );
+
+	//Add Catchbase default themes if there is no values
+	if ( !get_theme_mod('catchbase_theme_options') ) {
+		set_theme_mod( 'catchbase_theme_options', catchbase_get_default_theme_options() );
+	}
 }
 add_action( 'customize_save', 'catchbase_flush_transients' );
 
@@ -1204,7 +1209,7 @@ if ( ! function_exists( 'catchbase_archive_content_image' ) ) :
 			
 		if ( has_post_thumbnail() && 'excerpt-featured-image' == $featured_image ) {
 		?>
-			<figure class="featured-image <?php echo $featured_image; ?>">
+			<figure class="featured-image">
 	            <a rel="bookmark" href="<?php the_permalink(); ?>">
 	                <?php 
 	                	the_post_thumbnail( 'catchbase-featured' );		                

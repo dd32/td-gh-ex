@@ -61,7 +61,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 
 	$wp_customize->add_setting( 'catchbase_theme_options[breadcumb_seperator]', array(
 		'capability'		=> 'edit_theme_options',
-		'default'			=> $defaults['breadcrumb_seperator'],
+		'default'			=> $defaults['breadcumb_seperator'],
 		'sanitize_callback'	=> 'sanitize_text_field',
 	) );
 

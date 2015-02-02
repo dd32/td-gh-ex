@@ -26,18 +26,10 @@ jQuery(document).ready(function() {
 		jQuery('#mobile-header-left-menu').sidr({
 		   name: 'mobile-header-left-nav',
 		   side: 'left' // By default
-		});
-		jQuery('#mobile-secondary-menu').sidr({
-		   name: 'mobile-secondary-nav',
-		   side: 'left' // By default
-		});		
+		});	
 		jQuery('#mobile-header-right-menu').sidr({
 		   name: 'mobile-header-right-nav',
 		   side: 'right' // By default
-		});
-		jQuery('#mobile-footer-menu').sidr({
-		   name: 'mobile-footer-nav',
-		   side: 'left' // By default
 		});
 	}
 });

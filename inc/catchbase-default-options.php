@@ -43,7 +43,7 @@ function catchbase_get_default_theme_options() {
 		//Breadcrumb Options
 		'breadcumb_option'									=> 0,
 		'breadcumb_onhomepage'								=> 0,
-		'breadcrumb_seperator'								=> '&raquo;',
+		'breadcumb_seperator'								=> '&raquo;',
 
 		//Custom CSS
 		'custom_css'										=> '',

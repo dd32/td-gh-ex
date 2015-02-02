@@ -49,7 +49,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 
 	$wp_customize->add_control( 'catchbase_theme_options[featured_image_size]', array(
 			'choices'  	=> $choices,
-			'label'		=> __( 'Page/Post Featured Image Size', 'catchbase' ),
+			'label'		=> __( 'Page/Post Featured Header Image Size', 'catchbase' ),
 			'section'   => 'header_image',
 			'settings'  => 'catchbase_theme_options[featured_image_size]',
 			'type'	  	=> 'select',
