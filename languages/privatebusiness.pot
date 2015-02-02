@@ -10,15 +10,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: 404.php:9
-#: search.php:37
+#: search.php:38
 #@ privatebusiness
 msgid "Nothing Found"
 msgstr ""
 
 #: 404.php:10
-#: archive.php:48
-#: index.php:39
-#: search.php:38
+#: archive.php:49
+#: index.php:40
+#: search.php:39
 #@ privatebusiness
 msgid "Sorry, no posts matched your criteria."
 msgstr ""
@@ -103,28 +103,28 @@ msgstr ""
 msgid "% responses"
 msgstr ""
 
-#: archive.php:44
-#: index.php:35
-#: search.php:32
+#: archive.php:45
+#: index.php:36
+#: search.php:33
 #@ privatebusiness
 msgid "Read More &raquo;"
 msgstr ""
 
-#: archive.php:52
-#: index.php:43
-#: search.php:44
+#: archive.php:53
+#: index.php:44
+#: search.php:46
 #@ privatebusiness
 msgid "&laquo; Older posts"
 msgstr ""
 
-#: archive.php:53
-#: index.php:44
-#: search.php:45
+#: archive.php:54
+#: index.php:45
+#: search.php:47
 #@ privatebusiness
 msgid "Newer posts &raquo;"
 msgstr ""
 
-#: comments.php:18
+#: comments.php:17
 #, php-format
 #@ privatebusiness
 msgid "1 response on %2$s"
@@ -132,32 +132,32 @@ msgid_plural "%1$s responses on %2$s"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:38
+#: comments.php:35
 #@ privatebusiness
 msgid "&laquo; Older Comments"
 msgstr ""
 
-#: comments.php:39
+#: comments.php:36
 #@ privatebusiness
 msgid "Newer Comments &raquo;"
 msgstr ""
 
-#: comments.php:45
+#: comments.php:42
 #@ privatebusiness
 msgid "Comments are closed"
 msgstr ""
 
-#: footer.php:32
+#: footer.php:22
 #@ privatebusiness
 msgid "Copyright"
 msgstr ""
 
-#: footer.php:33
+#: footer.php:23
 #@ privatebusiness
 msgid "WordPress Blog Platform"
 msgstr ""
 
-#: footer.php:33
+#: footer.php:23
 #@ privatebusiness
 msgid "Proudly powered by WordPress"
 msgstr ""
@@ -167,57 +167,57 @@ msgstr ""
 msgid "Primary Navigation"
 msgstr ""
 
-#: functions.php:40
-#@ privatebusiness
-msgid "Boats"
-msgstr ""
-
-#: functions.php:105
-#@ privatebusiness
-msgid "Primary Sidebar"
-msgstr ""
-
 #: functions.php:20
 #@ privatebusiness
 msgid "Secondary Navigation"
 msgstr ""
 
-#: functions.php:107
-#: functions.php:117
-#: functions.php:127
-#: functions.php:137
-#: functions.php:147
+#: functions.php:44
+#@ privatebusiness
+msgid "Boats"
+msgstr ""
+
+#: functions.php:123
+#@ privatebusiness
+msgid "Primary Sidebar"
+msgstr ""
+
+#: functions.php:125
+#: functions.php:135
+#: functions.php:145
+#: functions.php:155
+#: functions.php:165
 #@ privatebusiness
 msgid "Select widgets from the right-hand side."
 msgstr ""
 
-#: functions.php:115
+#: functions.php:133
 #@ privatebusiness
 msgid "Homepage Sidebar Right"
 msgstr ""
 
-#: functions.php:125
+#: functions.php:143
 #@ privatebusiness
 msgid "Homepage Sidebar Left"
 msgstr ""
 
-#: functions.php:135
+#: functions.php:153
 #@ privatebusiness
 msgid "Footer Sidebar Right"
 msgstr ""
 
-#: functions.php:145
+#: functions.php:163
 #@ privatebusiness
 msgid "Footer Sidebar Left"
 msgstr ""
 
-#: functions.php:169
-#: functions.php:175
+#: functions.php:192
+#: functions.php:201
 #@ privatebusiness
 msgid "Logo"
 msgstr ""
 
-#: functions.php:171
+#: functions.php:194
 #@ privatebusiness
 msgid "Upload a logo to replace blogname and description in header"
 msgstr ""
@@ -227,8 +227,8 @@ msgstr ""
 msgid "Featured post"
 msgstr ""
 
-#: page-full.php:21
-#: page.php:19
+#: page-full.php:27
+#: page.php:26
 #: single.php:38
 #@ privatebusiness
 msgid "Edit"
@@ -240,22 +240,20 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: single.php:27
+#: single.php:28
 #, php-format
 #@ privatebusiness
 msgid "Posted in %s"
 msgstr ""
 
-#: single.php:27
 #: single.php:28
+#: single.php:29
 #@ privatebusiness
 msgid ", "
 msgstr ""
 
-#: single.php:28
+#: single.php:29
 #, php-format
 #@ privatebusiness
 msgid "Tags: %s"
 msgstr ""
-
-
