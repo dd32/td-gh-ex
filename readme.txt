@@ -36,7 +36,7 @@ You can create and set menu via WordPress Dashboard > Appearance > Menu's.
 
 TRANSLATION
 ===========
-This theme is translation-ready (Dutch and French translation included). 
+This theme is translation-ready (Dutch, German, Spanish and French translation included). 
 You can translate this into your own language using for example plugin Codestyling Localization: http://wordpress.org/plugins/codestyling-localization/
 
 
@@ -62,7 +62,6 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 THEME IMAGES
 ============
 Item: boats.jpg
-Item: background.jpg
 Item: back.png
 Copyright author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl

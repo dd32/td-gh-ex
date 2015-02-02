@@ -1,6 +1,18 @@
 CHANGELOG
 =========
 
+DarkElements version 2.3 - february 2015
+- added Spanish translation (thanks Miquel)
+- added German translation (thanks Frank)
+- updated French translation (thanks Ollie)
+- file style: adjusted styling comments area
+- file style: added support in Chrome for Checkbox, Radio and Select
+- file style and file custom-editor-style: finetuned img position in post and page
+- file style: reordered mobile stylesheet
+- file functions: removed class excerpt because not used anymore
+- file functions: added class to posts nav (now no empty space when posts nav is not present)
+- removed default background image because not fully supported in Theme Customizer 
+
 DarkElements version 2.2 - december 2014
 - file header: removed wp_title because of new title-tag
 - file functions: added backwards compatibility for WP 4.0 and older

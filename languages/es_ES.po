@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: DarkElements v2.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2015-01-11 13:24:10+0000\n"
+"PO-Revision-Date: 2015-01-23 16:16:05+0000\n"
 "Last-Translator: Guido van der Leest\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n>1;\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: CSL v1.x\n"
-"X-Poedit-Language: French\n"
-"X-Poedit-Country: FRANCE\n"
+"X-Poedit-Language: Spanish\n"
+"X-Poedit-Country: SPAIN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
 "X-Poedit-Basepath: ../\n"
@@ -21,244 +21,244 @@ msgstr ""
 "X-Textdomain-Support: yes"
 
 #: 404.php:9
-#: search.php:37
+#: search.php:39
 #@ darkelements
 msgid "Nothing Found"
-msgstr "Recherche infructueuse"
+msgstr "No se ha encontrado nada"
 
 #: 404.php:10
-#: archive.php:48
-#: index.php:39
-#: search.php:38
+#: archive.php:49
+#: index.php:40
+#: search.php:40
 #@ darkelements
 msgid "Sorry, no posts matched your criteria."
-msgstr "Désolé, il n'y a pas de résultats correspondant aux critères demandés."
+msgstr "Ninguna publicación coincide con tus indicaciones."
 
 #: archive.php:12
 #@ darkelements
 msgid "Archive"
-msgstr "Archive"
+msgstr "Archivo"
 
 #: archive.php:14
 #@ darkelements
 msgid "Daily Archives"
-msgstr "Archives du jour"
+msgstr "Archivos diarios"
 
 #: archive.php:16
 #@ darkelements
 msgid "Monthly Archives"
-msgstr "Archives du mois"
+msgstr "Archivos mensuales"
 
 #: archive.php:18
 #@ darkelements
 msgid "Yearly Archives"
-msgstr "Archives de l'année"
+msgstr "Archivos anuales"
 
 #: archive.php:20
 #@ darkelements
 msgid "Author Archives"
-msgstr "Archives par auteur"
+msgstr "Archivos por autor"
 
 #: archive.php:22
 #@ darkelements
 msgid "Tag Archives"
-msgstr "Achives du mot-clé"
+msgstr "Archivos por etiqueta"
 
 #: archive.php:28
 #: index.php:19
-#: search.php:16
+#: search.php:17
 #, php-format
 #@ darkelements
 msgid "Permalink to %s"
-msgstr "Permalien vers %s"
+msgstr "Enlace permanente a %s"
 
 #: archive.php:32
 #: index.php:23
-#: search.php:20
+#: search.php:21
 #: single.php:17
 #, php-format
 #@ darkelements
 msgid "Posted on %s"
-msgstr "Publié le %s"
+msgstr "Publicado en %s"
 
 #: archive.php:33
 #: index.php:24
-#: search.php:21
+#: search.php:22
 #: single.php:18
 #, php-format
 #@ darkelements
 msgid "By %s"
-msgstr "Par %s"
+msgstr "Por %s"
 
 #: archive.php:35
 #: index.php:26
-#: search.php:23
+#: search.php:24
 #: single.php:20
 #@ darkelements
 msgid "Leave a response"
-msgstr "Commenter"
+msgstr "Añadir una respuesta"
 
 #: archive.php:35
 #: index.php:26
-#: search.php:23
+#: search.php:24
 #: single.php:20
 #@ darkelements
 msgid "1 response"
-msgstr "1 commentaire"
+msgstr "1 respuesta"
 
 #: archive.php:35
 #: index.php:26
-#: search.php:23
+#: search.php:24
 #: single.php:20
 #@ darkelements
 msgid "% responses"
-msgstr "% commentaires"
+msgstr "% respuestas"
 
-#: archive.php:44
-#: index.php:35
-#: search.php:32
+#: archive.php:45
+#: index.php:36
+#: search.php:34
 #@ darkelements
 msgid "Read More &raquo;"
-msgstr "Lire la suite &raquo;"
-
-#: archive.php:52
-#: index.php:43
-#: search.php:44
-#@ darkelements
-msgid "&laquo; Older posts"
-msgstr "&laquo; Articles précédents"
+msgstr "Leer más &raquo;"
 
 #: archive.php:53
 #: index.php:44
-#: search.php:45
+#: search.php:47
+#@ darkelements
+msgid "&laquo; Older posts"
+msgstr "&laquo; Publicaciones anteriores"
+
+#: archive.php:54
+#: index.php:45
+#: search.php:48
 #@ darkelements
 msgid "Newer posts &raquo;"
-msgstr "Articles plus récents &raquo;"
+msgstr "Últimas publicaciones &raquo;"
 
-#: comments.php:18
+#: comments.php:17
 #, php-format
 #@ darkelements
 msgid "1 response on %2$s"
 msgid_plural "%1$s responses on %2$s"
-msgstr[0] "1 commentaire sur %2$s"
-msgstr[1] "%1$s commentaires sur %2$s"
+msgstr[0] "1 respuesta en %2$s"
+msgstr[1] "%1$s respuestas en %2$s"
 
-#: comments.php:38
+#: comments.php:35
 #@ darkelements
 msgid "&laquo; Older Comments"
-msgstr "&laquo; Commentaires précédents"
+msgstr "&laquo; Comentarios anteriores"
 
-#: comments.php:39
+#: comments.php:36
 #@ darkelements
 msgid "Newer Comments &raquo;"
-msgstr "Commentaires plus récents &raquo;"
+msgstr "Últimos comentarios &raquo;"
 
-#: comments.php:45
+#: comments.php:42
 #@ darkelements
 msgid "Comments are closed"
-msgstr "Les commentaires sont fermés"
+msgstr "No se admiten más comentarios"
 
-#: footer.php:28
+#: footer.php:26
 #@ darkelements
 msgid "Copyright"
 msgstr "Copyright"
 
-#: footer.php:29
+#: footer.php:27
 #@ darkelements
 msgid "WordPress Blog Platform"
-msgstr "Plateforme de blog WordPress"
+msgstr "Plataforma WordPress Blog"
 
-#: footer.php:29
+#: footer.php:27
 #@ darkelements
 msgid "Proudly powered by WordPress"
-msgstr "Fièrement propulsé par WordPress"
+msgstr "Proudly powered by WordPress"
 
 #: functions.php:19
 #@ darkelements
 msgid "Primary Navigation"
-msgstr "Navigation principale"
+msgstr "Navegación primaria"
 
-#: functions.php:40
+#: functions.php:43
 #@ darkelements
 msgid "Boats"
-msgstr "Bateaux"
+msgstr "Barcos"
 
-#: functions.php:107
+#: functions.php:121
 #@ darkelements
 msgid "Primary Sidebar"
-msgstr "Colonne latérale pincipale"
+msgstr "Barra lateral primaria"
 
-#: functions.php:109
-#: functions.php:119
-#: functions.php:129
-#: functions.php:139
+#: functions.php:123
+#: functions.php:133
+#: functions.php:143
+#: functions.php:153
 #@ darkelements
 msgid "Select widgets from the right-hand side."
-msgstr "Choisir les widgets sur le côté droit."
+msgstr "Seleccionar los widgets de la derecha."
 
-#: functions.php:117
+#: functions.php:131
 #@ darkelements
 msgid "Footer Sidebar Right"
-msgstr "Pied de page Barre latérale à droite"
+msgstr "Barra lateral al pie, derecha"
 
-#: functions.php:137
+#: functions.php:141
+#@ darkelements
+msgid "Footer Sidebar Middle"
+msgstr "Barra lateral al pie, centrado"
+
+#: functions.php:151
 #@ darkelements
 msgid "Footer Sidebar Left"
-msgstr "Pied de page Barre latérale à gauche"
+msgstr "Barra lateral al pie, izquierda"
 
-#: functions.php:166
-#: functions.php:175
+#: functions.php:185
+#: functions.php:194
 #@ darkelements
 msgid "Logo"
 msgstr "Logo"
 
-#: functions.php:168
+#: functions.php:187
 #@ darkelements
 msgid "Upload a logo to replace blogname and description in header"
-msgstr "Télécharger un logo pour remplacer le nom du blog et sa description dans l'en-tête"
+msgstr "Subir un logo para sustituir el nombre del blog y la descripción en el encabezamiento"
 
 #: index.php:14
 #@ darkelements
 msgid "Featured post"
-msgstr "Articles mis en avant"
+msgstr "Publicación destacada"
 
-#: page.php:24
+#: page.php:26
 #: single.php:38
 #@ darkelements
 msgid "Edit"
-msgstr "Modifier"
+msgstr "Editar"
 
-#: search.php:11
+#: search.php:12
 #, php-format
 #@ darkelements
 msgid "Search Results for: %s"
-msgstr "Résultats de la recherche pour: %s"
+msgstr "Resultados de búsqueda para: %s"
 
-#: single.php:27
+#: single.php:28
 #, php-format
 #@ darkelements
 msgid "Posted in %s"
-msgstr "Publié dans %s"
+msgstr "Publicado en %s"
 
-#: single.php:27
 #: single.php:28
+#: single.php:29
 #@ darkelements
 msgid ", "
 msgstr ", "
 
-#: single.php:28
+#: single.php:29
 #, php-format
 #@ darkelements
 msgid "Tags: %s"
-msgstr "Mots-clés: %s"
+msgstr "Etiquetas: %s"
 
-#: functions.php:127
-#@ darkelements
-msgid "Footer Sidebar Middle"
-msgstr "Pied de page Barre latérale au centre"
-
-#: header.php:42
+#: header.php:41
 #@ darkelements
 msgid "Navigation"
-msgstr "Navigation"
+msgstr "Navegación"
 
