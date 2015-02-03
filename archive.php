@@ -30,10 +30,10 @@ if (is_category()) {
 	printf( __('Archive for <span>%1$s</span>', 'fmi'), get_the_time(__('Y', 'fmi')) );
 // If this is an author archive
 } elseif (is_author()) {
-	_e('Author Archive', 'fmi');
+	echo __('Author Archive', 'fmi');
 // If this is a paged archive
 } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {
-	_e('Blog Archives', 'fmi');
+	echo __('Blog Archives', 'fmi');
 }
 ?>
         </div>
@@ -43,12 +43,26 @@ if (is_category()) {
         
 	<?php endwhile;?>
 	
-			<?php
+            <?php
+			if(function_exists('the_posts_pagination')){
 				the_posts_pagination( array(
 					'prev_text'          => '<i class="fa fa-arrow-left"></i>',
 					'next_text'          => '<i class="fa fa-arrow-right"></i>',
 					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'fmi' ) . ' </span>',
 				) );
+			}else{
+			?>
+				<div id="page-nav-below">
+					<?php if ( get_next_posts_link() ) : ?>
+					<div class="nav-previous"><i class="fa fa-arrow-left"></i> <?php next_posts_link( __( 'Older posts', 'fmi' ) ); ?></div>
+					<?php endif; ?>
+
+					<?php if ( get_previous_posts_link() ) : ?>
+					<div class="nav-next"><?php previous_posts_link( __( 'Newer posts', 'fmi' ) ); ?> <i class="fa fa-arrow-right"></i></div>
+					<?php endif; ?>
+				</div>
+			<?php
+			}
 			?>
     
 <?php else:?>

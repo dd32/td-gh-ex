@@ -3,6 +3,7 @@ class Fmi_theme_settings{
 	private $sections;
 	private $checkboxes;
 	private $settings;
+	
 	public function __construct() {
 		$this->checkboxes = array();
 		$this->settings = array();
@@ -12,9 +13,11 @@ class Fmi_theme_settings{
 		$this->sections['styling'] = __( 'Styling Settings','fmi');
         $this->sections['social']  = __( 'Social Links','fmi');
         $this->sections['website'] = __( 'Website Text','fmi');
+		
 		add_action( 'admin_menu', array( &$this, 'fmi_add_pages' ) );
 		add_action( 'admin_init', array( &$this, 'fmi_register_settings' ) );	
 	}
+	
     public function fmi_get_options_with_defaults(){
         $options_set_before = get_option( 'theme_options');
         $dafaults_array = array();
@@ -199,7 +202,7 @@ class Fmi_theme_settings{
                 break;
                 
             case 'upsell':
-                echo '<a href="' . esc_url( $desc ) . '" class="fmi-upsell-btn" target="_blank">Upgrade to Albar Premium</a>';
+                echo '<a href="' . esc_url( $desc ) . '" class="fmi-upsell-btn" target="_blank">Upgrade to Fmi Premium</a>';
                 echo '<br /><span class="description">' . __( 'Upgrade to premium to get all features','fmi') . '</span></label>';
                 break;
 						
@@ -217,16 +220,16 @@ class Fmi_theme_settings{
 	}
 	public function get_fmi_option() {
 		$this->settings['vs-favicon'] = array(
+			'section' => 'general',
 			'title'   => __( 'Favicon','fmi'),
 			'desc'    => __( 'Upload a favicon to your website, this needs to be 16 pixels by 16 pixels','fmi'),
-			'std'     => '',
 			'type'    => 'media',
-			'section' => 'general'
+			'std'     => ''
 		);
         
         $this->settings['vs-heading-one'] = array(
             'section' => 'general',
-            'title'   => '', // Not used for headings.
+            'title'   => '',
             'desc'    => __('Header Settings','fmi'),
             'type'    => 'heading'
         );
@@ -248,7 +251,7 @@ class Fmi_theme_settings{
         
         $this->settings['vs-heading-two'] = array(
             'section' => 'slider',
-            'title'   => '', // Not used for headings.
+            'title'   => '',
             'desc'    => __('Slider Options','fmi'),
             'type'    => 'heading'
         );
@@ -263,16 +266,16 @@ class Fmi_theme_settings{
         $this->settings['vs-body-google-font-url'] = array(
             'section' => 'styling',
             'title'   => __( 'Body font URL','fmi'),
-            'desc'    => __( 'Enter ONLY the fonts URL here. Eg: link href=\'<b><big> http://fonts.googleapis.com/css?family=Open+Sans:400italic,400 </big></b>\' rel=\'stylesheet\' type=\'text/css\'','fmi'),
+            'desc'    => __( 'Enter ONLY the fonts URL here. Eg: link href=\'<b><big> http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic </big></b>\' rel=\'stylesheet\' type=\'text/css\'','fmi'),
             'type'    => 'url',
-            'std'     => esc_url('http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic')
+            'std'     => 'http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic'
         );
         $this->settings['vs-body-google-font-name'] = array(
             'section' => 'styling',
             'title'   => __( 'Body font name','fmi'),
             'desc'    => __( 'Enter the FULL name. Eg:<b><big> font-family: \'Open Sans\', sans-serif; </big></b>','fmi'),
             'type'    => 'text',
-            'std'     => wp_kses_post('font-family: \'Open Sans\', sans-serif;')
+            'std'     => 'font-family: \'Open Sans\', sans-serif;'
         );       
         $this->settings['vs-heading-four'] = array(
             'section' => 'styling',
@@ -281,11 +284,11 @@ class Fmi_theme_settings{
             'type'    => 'heading'
         );
         $this->settings['vs-custom-css'] = array(
+			'section' => 'styling',
             'title'   => __( 'Custom CSS','fmi'),
             'desc'    => __( 'Add Custom CSS to add your own styling to the Theme','fmi'),
+			'type'    => 'textarea',
             'std'     => '',
-            'type'    => 'textarea',
-            'section' => 'styling',
             'class'   => 'code'
         );
         
@@ -388,14 +391,14 @@ class Fmi_theme_settings{
             'title'   => __( '404 Error Page Heading','fmi'),
             'desc'    => __( 'Enter the heading for the 404 Error page','fmi'),
             'type'    => 'text',
-            'std'     => wp_kses_post('Oops! That page can\'t be found.')
+            'std'     => 'Oops! That page can\'t be found.'
         );
         $this->settings['vs-website-error-msg'] = array(
+			'section' => 'website',
             'title'   => __( 'Error 404 Message','fmi'),
             'desc'    => __( 'Enter the default text on the 404 error page (Page not found)','fmi'),
-            'std'     => wp_kses_post('The page you are looking for can\'t be found. Please select one of the options below.'),
-            'type'    => 'textarea',
-            'section' => 'website',
+			'type'    => 'textarea',
+            'std'     => 'The page you are looking for can\'t be found. Please select one of the options below.',
             'class'   => 'code'
         );
         
@@ -406,11 +409,11 @@ class Fmi_theme_settings{
             'type'    => 'heading'
         );
         $this->settings['vs-website-nosearch-msg'] = array(
+			'section' => 'website',
             'title'   => __( 'No Search Results','fmi'),
             'desc'    => __( 'Enter the default text for when no search results are found','fmi'),
-            'std'     => wp_kses_post('Sorry, but nothing matched your search terms. Please try again with some different keywords or return to home.'),
-            'type'    => 'textarea',
-            'section' => 'website',
+			'type'    => 'textarea',
+            'std'     => 'Sorry, but nothing matched your search terms. Please try again with some different keywords or return to home.',
             'class'   => 'code'
         );
 		
@@ -424,8 +427,6 @@ class Fmi_theme_settings{
 			else
 				add_settings_section( $slug, $title, array( &$this, 'fmi_display_section' ), 'theme-options' );
 		}
-		
-		// $this->get_fmi_option();
 		
 		foreach ( $this->settings as $id => $setting ) {
 			$setting['id'] = $id;
@@ -463,7 +464,9 @@ class Fmi_theme_settings{
 	
 }
 $theme_options = new Fmi_theme_settings();
+
 function fmi_theme_option($option){
+	
     if (!isset($theme_options))$theme_options = new Fmi_theme_settings();
     
     $options = $theme_options->fmi_get_options_with_defaults();

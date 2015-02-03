@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Fmi\n"
-"POT-Creation-Date: 2015-01-29 22:31+0800\n"
-"PO-Revision-Date: 2015-01-29 22:32+0800\n"
+"Project-Id-Version: fmi\n"
+"POT-Creation-Date: 2015-02-03 16:23+0800\n"
+"PO-Revision-Date: 2015-02-03 16:23+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh\n"
@@ -47,8 +47,24 @@ msgstr ""
 msgid "Y"
 msgstr ""
 
-#: archive.php:50 index.php:22 search.php:25
+#: archive.php:33
+msgid "Author Archive"
+msgstr ""
+
+#: archive.php:36
+msgid "Blog Archives"
+msgstr ""
+
+#: archive.php:51 index.php:23 search.php:26
 msgid "Page"
+msgstr ""
+
+#: archive.php:57 index.php:29 search.php:32
+msgid "Older posts"
+msgstr ""
+
+#: archive.php:61 index.php:33 search.php:36
+msgid "Newer posts"
 msgstr ""
 
 #: comments.php:35
@@ -73,8 +89,8 @@ msgstr ""
 msgid "(no title)"
 msgstr ""
 
-#: content-page.php:18 content-single.php:18 content.php:19
-#: fun/base.php:10 fun/base.php:25
+#: content-page.php:18 content-single.php:18 content.php:19 fun/base.php:9
+#: fun/base.php:24
 msgid "Edit"
 msgstr ""
 
@@ -96,10 +112,6 @@ msgstr ""
 
 #: content.php:35
 msgid "Featured"
-msgstr ""
-
-#: footer.php:3
-msgid "https://wordpress.org/"
 msgstr ""
 
 #: footer.php:3
@@ -151,30 +163,33 @@ msgstr ""
 msgid "Find Us on Flickr"
 msgstr ""
 
-#: fun/base.php:21
-#, php-format
-msgid "%s"
+#: fun/base.php:9
+msgid "Pingback:"
 msgstr ""
 
-#: fun/base.php:28
+#: fun/base.php:27
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: fun/base.php:49
+#: fun/base.php:48
 msgid "Previous Post"
 msgstr ""
 
-#: fun/base.php:50
+#: fun/base.php:49
 msgid "Next Post"
 msgstr ""
 
-#: functions.php:64
+#: functions.php:69
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: functions.php:71
+#: functions.php:78
 msgid "Sidebar"
+msgstr ""
+
+#: header.php:36
+msgid "Menu"
 msgstr ""
 
 #: search.php:13
@@ -182,200 +197,200 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: set/settings.php:11
+#: set/settings.php:12
 msgid "General Settings"
 msgstr ""
 
-#: set/settings.php:12
+#: set/settings.php:13
 msgid "Styling Settings"
 msgstr ""
 
-#: set/settings.php:13
+#: set/settings.php:14
 msgid "Social Links"
 msgstr ""
 
-#: set/settings.php:14
+#: set/settings.php:15
 msgid "Website Text"
 msgstr ""
 
-#: set/settings.php:39 set/settings.php:81
+#: set/settings.php:42 set/settings.php:84
 msgid "Theme Settings"
 msgstr ""
 
-#: set/settings.php:50
+#: set/settings.php:53
 msgid "Fmi Setting"
 msgstr ""
 
-#: set/settings.php:51
+#: set/settings.php:54
 msgid "This is a default description."
 msgstr ""
 
-#: set/settings.php:84
+#: set/settings.php:87
 msgid "Theme options updated."
 msgstr ""
 
-#: set/settings.php:102
+#: set/settings.php:105
 msgid "Save Changes"
 msgstr ""
 
-#: set/settings.php:203
+#: set/settings.php:206
 msgid "Upgrade to premium to get all features"
 msgstr ""
 
-#: set/settings.php:220
+#: set/settings.php:224
 msgid "Favicon"
 msgstr ""
 
-#: set/settings.php:221
+#: set/settings.php:225
 msgid ""
 "Upload a favicon to your website, this needs to be 16 pixels by 16 pixels"
 msgstr ""
 
-#: set/settings.php:230
+#: set/settings.php:233
 msgid "Header Settings"
 msgstr ""
 
-#: set/settings.php:235
+#: set/settings.php:238
 msgid "Header Search"
 msgstr ""
 
-#: set/settings.php:236
+#: set/settings.php:239
 msgid "Select this to show the search in the header"
 msgstr ""
 
-#: set/settings.php:243
+#: set/settings.php:246
 msgid "Enable Slider"
 msgstr ""
 
-#: set/settings.php:244
+#: set/settings.php:247
 msgid "Click to enable the default homepage slider"
 msgstr ""
 
-#: set/settings.php:252
+#: set/settings.php:255
 msgid "Slider Options"
 msgstr ""
 
-#: set/settings.php:257
+#: set/settings.php:260
 msgid "Slider Categories"
 msgstr ""
 
-#: set/settings.php:258 set/settings.php:295
+#: set/settings.php:261 set/settings.php:298
 msgid "Enter the ID of the <a href=\""
 msgstr ""
 
-#: set/settings.php:265
+#: set/settings.php:268
 msgid "Body font URL"
 msgstr ""
 
-#: set/settings.php:266
+#: set/settings.php:269
 msgid ""
 "Enter ONLY the fonts URL here. Eg: link href='<b><big> http://fonts."
 "googleapis.com/css?family=Open+Sans:400italic,400 </big></b>' "
 "rel='stylesheet' type='text/css'"
 msgstr ""
 
-#: set/settings.php:272
+#: set/settings.php:275
 msgid "Body font name"
 msgstr ""
 
-#: set/settings.php:273
+#: set/settings.php:276
 msgid ""
 "Enter the FULL name. Eg:<b><big> font-family: 'Open Sans', sans-serif; </"
 "big></b>"
 msgstr ""
 
-#: set/settings.php:280
+#: set/settings.php:283
 msgid "Custom Styling"
 msgstr ""
 
-#: set/settings.php:284
+#: set/settings.php:288
 msgid "Custom CSS"
 msgstr ""
 
-#: set/settings.php:285
+#: set/settings.php:289
 msgid "Add Custom CSS to add your own styling to the Theme"
 msgstr ""
 
-#: set/settings.php:294
+#: set/settings.php:297
 msgid "Blog Categories"
 msgstr ""
 
-#: set/settings.php:302
+#: set/settings.php:305
 msgid "Blog Posts Per Page"
 msgstr ""
 
-#: set/settings.php:303
+#: set/settings.php:306
 msgid "Enter the number of posts you'd like to show per page"
 msgstr ""
 
-#: set/settings.php:311
+#: set/settings.php:314
 msgid "Email Address"
 msgstr ""
 
-#: set/settings.php:318
+#: set/settings.php:321
 msgid "Skype"
 msgstr ""
 
-#: set/settings.php:325
+#: set/settings.php:328
 msgid "Facebook"
 msgstr ""
 
-#: set/settings.php:332
+#: set/settings.php:335
 msgid "Twitter"
 msgstr ""
 
-#: set/settings.php:339
+#: set/settings.php:342
 msgid "Google Plus"
 msgstr ""
 
-#: set/settings.php:346
+#: set/settings.php:349
 msgid "YouTube"
 msgstr ""
 
-#: set/settings.php:353
+#: set/settings.php:356
 msgid "Instagram"
 msgstr ""
 
-#: set/settings.php:360
+#: set/settings.php:363
 msgid "Pinterest"
 msgstr ""
 
-#: set/settings.php:367
+#: set/settings.php:370
 msgid "LinkedIn"
 msgstr ""
 
-#: set/settings.php:374
+#: set/settings.php:377
 msgid "Tumblr"
 msgstr ""
 
-#: set/settings.php:381
+#: set/settings.php:384
 msgid "Flickr"
 msgstr ""
 
-#: set/settings.php:388
+#: set/settings.php:391
 msgid "404 Error Page Heading"
 msgstr ""
 
-#: set/settings.php:389
+#: set/settings.php:392
 msgid "Enter the heading for the 404 Error page"
 msgstr ""
 
-#: set/settings.php:394
+#: set/settings.php:398
 msgid "Error 404 Message"
 msgstr ""
 
-#: set/settings.php:395
+#: set/settings.php:399
 msgid "Enter the default text on the 404 error page (Page not found)"
 msgstr ""
 
-#: set/settings.php:405
+#: set/settings.php:408
 msgid "Search Results Page"
 msgstr ""
 
-#: set/settings.php:409
+#: set/settings.php:413
 msgid "No Search Results"
 msgstr ""
 
-#: set/settings.php:410
+#: set/settings.php:414
 msgid "Enter the default text for when no search results are found"
 msgstr ""

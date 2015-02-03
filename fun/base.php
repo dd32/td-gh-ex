@@ -6,7 +6,7 @@ function fmi_theme_comment($comment,$args,$depth){
 ?>
 	<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
 		<div class="comment-body">
-			<?php _e( 'Pingback:', 'fred' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'fred' ), '<span class="edit-link">', '</span>' ); ?>
+			<?php echo __( 'Pingback:', 'fmi' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'fmi' ), '<span class="edit-link">', '</span>' ); ?>
 		</div>
 
 <?php
@@ -17,7 +17,7 @@ function fmi_theme_comment($comment,$args,$depth){
             <div class="comment-author"><?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'] ); ?></div>
         
 			<div class="comment-meta">
-            	<?php printf( __( '%s', 'fmi' ), sprintf( '<span class="fn">%s</span>', get_comment_author_link() ) ); ?>
+            	<span class="fn"><?php echo get_comment_author_link();?></span>
 				<span><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 						<time datetime="<?php comment_time( 'c' ); ?>"><?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'fmi' ), get_comment_date(), get_comment_time() ); ?></time>
 				</a></span>

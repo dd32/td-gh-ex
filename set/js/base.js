@@ -1,5 +1,5 @@
 /**
- * Albar Admin Custom Functionality
+ * Fmi Admin Custom Functionality
  *
  */
 ( function( $ ) {
