@@ -31,14 +31,15 @@ $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspressl
     <div id="top-header">
 		<div class="ak-container">
 			<div class="site-branding">
-				
-				
+
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>">				
 				<?php if ( get_header_image() ) { ?>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 					<img src="<?php header_image(); ?>" alt="<?php bloginfo('name') ?>">
+				<?php }else{ ?>
+					<h1><?php echo bloginfo('title'); ?></h1>
+					<div class="tagline"><?php echo bloginfo('description'); ?></div>
+				<?php } ?>		
 				</a>
-				<?php } ?>
-				
 				
 			</div><!-- .site-branding -->
         

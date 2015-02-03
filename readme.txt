@@ -60,6 +60,10 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.39
+* Support for header text added
+* Unwanted Images removed. 
+
 Version 2.36 
 * HTML bug Fixed in Theme Option Admin Panel 
 * Event date set to current date as a default value. 
