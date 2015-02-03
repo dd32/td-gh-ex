@@ -5,10 +5,13 @@ Consider weblizar PRE-Fix for function-name and as a slug of the Theme Enigma.
 Enigma
 
 CHANGE-LOG:
+@Version: 1.8.1[03/02/2015]
+1. Slider time interval and mouse hover slide show option added.
+2. In Theme option font-awesome class added.
+3. Tag and category  breadcrumb  issue is fixed.
+
 @Version: 1.8[24/01/2015]
 1. Custom Static Front-Page.
-2.
-
 
 @Version: 1.7.2[21/01/2015]
 1. Unminified JS.
