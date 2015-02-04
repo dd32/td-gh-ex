@@ -13,7 +13,7 @@
             <div class="site-top-bar-right">
                 
                 <?php if ( topshop_is_woocommerce_activated() ) : ?>
-                    <div class="site-top-bar-left-text"><?php echo wp_kses_post( get_theme_mod( 'topshop-header-info-text', 'Call Us: 082 444 BOOM' ) ) ?></div>
+                    <div class="site-top-bar-left-text"><?php echo wp_kses_post( get_theme_mod( 'topshop-header-info-text', false ) ) ?></div>
                 <?php endif; ?>
                 
                 <?php if( get_theme_mod( 'topshop-header-search', false ) ) : ?>
@@ -66,7 +66,7 @@
         <?php
         } else { ?>
             
-            <div class="site-top-bar-left-text"><?php echo wp_kses_post( get_theme_mod( 'topshop-header-info-text', 'Call Us: 082 444 BOOM' ) ) ?></div>
+            <div class="site-top-bar-left-text"><?php echo wp_kses_post( get_theme_mod( 'topshop-header-info-text', false ) ) ?></div>
             
         <?php
         } ?>

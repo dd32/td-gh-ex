@@ -71,6 +71,10 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.0.3
+* Added un-minified scripts
+* Recommended changes
+
 #### 1.0.2
 * Changed settings to have 'topshop_' prefix
 * Escaped theme options in homepage-slider.php
