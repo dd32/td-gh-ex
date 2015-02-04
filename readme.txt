@@ -50,6 +50,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.1.3 =
+* Options framework updated to 1.9.1
+* missed textdomain changed
+
 = Version 1.1.2 =
 * add_theme_support('title_tag') added as per WordPress 4.1
 

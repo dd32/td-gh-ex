@@ -123,6 +123,10 @@ require_once( ACCELERATE_WIDGETS_DIR . '/widgets.php' );
 if ( !function_exists( 'optionsframework_init' ) ) {
 	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/admin/options/' );
 	require_once( ACCELERATE_ADMIN_DIR . '/options/options-framework.php' );
+
+	// Loads options.php from child or parent theme
+	$optionsfile = locate_template( 'options.php' );
+	load_template( $optionsfile );
 }
 
 ?>
