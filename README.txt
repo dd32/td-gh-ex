@@ -68,6 +68,9 @@ View the settings under Appearance -> ALBAR Settings.
 
 == Changelog ==
 
+#### 1.5.9
+** Add support for add_theme_support( 'title-tag' ).
+
 #### 1.5.8
 * Added link to Theme URI
 

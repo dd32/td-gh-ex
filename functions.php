@@ -5,7 +5,7 @@
  * @package Albar
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.5.8' );
+define( 'KAIRA_THEME_VERSION' , '1.5.9' );
 
 if ( file_exists( get_stylesheet_directory() . '/settings/class.kaira-theme-settings.php' ) ) {
     require_once( get_stylesheet_directory() . '/settings/class.kaira-theme-settings.php' );
@@ -73,6 +73,8 @@ function kaira_setup_theme() {
 	 */
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
     add_theme_support( 'custom-background', array( 'default-color' => '#ffffff', ) );
+    
+    add_theme_support( 'title-tag' );
     
     add_theme_support( 'woocommerce' );
 }
