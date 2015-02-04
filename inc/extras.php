@@ -54,45 +54,63 @@ function radiate_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'radiate_body_classes' );
 
-/**
- * Filters wp_title to print a neat <title> tag based on what is being viewed.
- *
- * @param string $title Default title text for current view.
- * @param string $sep Optional separator.
- * @return string The filtered title.
- */
-function radiate_wp_title( $title, $sep ) {
-	global $page, $paged;
+// Backwards compatibility for older versions
+if ( ! function_exists( '_wp_render_title_tag' ) ) :
 
-	if ( is_feed() ) {
-		return $title;
-	}
+   add_action( 'wp_head', 'radiate_render_title' );
+   function radiate_render_title() {
+      ?>
+      <title>
+      <?php
+      /**
+       * Print the <title> tag based on what is being viewed.
+       */
+      wp_title( '|', true, 'right' );
+      ?>
+      </title>
+      <?php
+   }
 
-	// Add the blog name
-	$title .= get_bloginfo( 'name' );
+   add_filter( 'wp_title', 'radiate_wp_title', 10, 2 );
+   /**
+    * Filters wp_title to print a neat <title> tag based on what is being viewed.
+    *
+    * @param string $title Default title text for current view.
+    * @param string $sep Optional separator.
+    * @return string The filtered title.
+    */
+   function radiate_wp_title( $title, $sep ) {
+   	global $page, $paged;
 
-	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) ) {
-		$title .= " $sep $site_description";
-	}
+   	if ( is_feed() ) {
+   		return $title;
+   	}
 
-	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 ) {
-		$title .= " $sep " . sprintf( __( 'Page %s', 'radiate' ), max( $paged, $page ) );
-	}
+   	// Add the blog name
+   	$title .= get_bloginfo( 'name' );
 
-	return $title;
-}
-add_filter( 'wp_title', 'radiate_wp_title', 10, 2 );
+   	// Add the blog description for the home/front page.
+   	$site_description = get_bloginfo( 'description', 'display' );
+   	if ( $site_description && ( is_home() || is_front_page() ) ) {
+   		$title .= " $sep $site_description";
+   	}
 
+   	// Add a page number if necessary:
+   	if ( $paged >= 2 || $page >= 2 ) {
+   		$title .= " $sep " . sprintf( __( 'Page %s', 'radiate' ), max( $paged, $page ) );
+   	}
+
+   	return $title;
+   }
+
+endif;
 
 add_action('wp_head', 'radiate_internal_css');
 /**
  * Hooks the Custom Internal CSS to head section
  */
 function radiate_internal_css() {
-	if ( get_header_image() ) : 
+	if ( get_header_image() ) :
 		$header_image_height = get_custom_header()->height;
 		if ( is_user_logged_in() ) { $height = $header_image_height - 32; }
 		else { $height = $header_image_height; }
@@ -107,14 +125,14 @@ function radiate_internal_css() {
 		$header_image_style = $header_image . $header_repeat . $header_position . $header_attachment;
 		?>
 		<style type="text/css" id="custom-header-css">
-		#parallax-bg { <?php echo trim( $header_image_style ); ?> } #masthead { margin-bottom: <?php echo $height; ?>px; } 
+		#parallax-bg { <?php echo trim( $header_image_style ); ?> } #masthead { margin-bottom: <?php echo $height; ?>px; }
 		@media only screen and (max-width: 600px) { #masthead { margin-bottom: <?php echo $heightsmall; ?>px; }  }
 		</style>
 		<?php
 	endif;
 
 	if ( get_background_image() || get_background_color() ) :
-		$image = get_background_image();	
+		$image = get_background_image();
 		$color = get_background_color();
 
 		$style = $color ? "background-color: #$color;" : '#EAEAEA';

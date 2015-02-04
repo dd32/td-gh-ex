@@ -43,6 +43,9 @@ function radiate_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
+   // Supporting title tag via add_theme_support (since WordPress 4.1)
+   add_theme_support( 'title-tag' );
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'radiate' ),
@@ -59,6 +62,9 @@ function radiate_setup() {
 
 	// Adding excerpt option box for pages as well
 	add_post_type_support( 'page', 'excerpt' );
+
+   // Cropping images to different sizes to be used in the theme
+   add_image_size( 'featured-image-medium', 768, 350, true );
 }
 endif; // radiate_setup
 add_action( 'after_setup_theme', 'radiate_setup' );
@@ -85,14 +91,14 @@ function radiate_scripts() {
 	// Load our main stylesheet.
 	wp_enqueue_style( 'radiate-style', get_stylesheet_uri() );
 
-	wp_enqueue_style( 'radiate-google-fonts', '//fonts.googleapis.com/css?family=Roboto|Merriweather:400,300' ); 
+	wp_enqueue_style( 'radiate-google-fonts', '//fonts.googleapis.com/css?family=Roboto|Merriweather:400,300' );
 
 	wp_enqueue_script( 'radiate-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'radiate-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	wp_enqueue_script( 'radiate-custom-js', get_template_directory_uri() . '/js/custom.js', array( 'jquery' ), false, true );
-	
+
 	$radiate_header_image_link = get_header_image();
 	wp_localize_script( 'radiate-custom-js', 'radiateScriptParam', array('radiate_image_link'=> $radiate_header_image_link ) );
 
@@ -102,7 +108,7 @@ function radiate_scripts() {
 
 	$radiate_user_agent = strtolower($_SERVER['HTTP_USER_AGENT']);
 	if(preg_match('/(?i)msie [1-8]/',$radiate_user_agent)) {
-		wp_enqueue_script( 'html5', get_template_directory_uri() . '/js/html5shiv.min.js', true ); 
+		wp_enqueue_script( 'html5', get_template_directory_uri() . '/js/html5shiv.min.js', true );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'radiate_scripts' );

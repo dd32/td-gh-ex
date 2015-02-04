@@ -7,7 +7,21 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+
+   <?php
+   if( has_post_thumbnail() ) {
+      $image = '';
+      $title_attribute = the_title_attribute( 'echo=0' );
+      $image .= '<figure class="post-featured-image">';
+      $image .= '<a href="' . get_permalink() . '" title="'.$title_attribute.'">';
+      $image .= get_the_post_thumbnail( $post->ID, 'featured-image-medium', array( 'title' => $title_attribute, 'alt' => $title_attribute ) ).'</a>';
+      $image .= '</figure>';
+
+      echo $image;
+   }
+   ?>
+
+   <header class="entry-header">
 		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
 		<?php if ( 'post' == get_post_type() ) : ?>

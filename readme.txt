@@ -64,6 +64,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.1.3 =
+* Posts now display featured image (768 X 350 pixels) in archive view.
+* add_theme_support('title_tag') added as per WordPress 4.1
+
 = Version 1.1.2 =
 * Spanish language file added. Thanks to Mr. David Cantón for providing the language files.
 * Updated previous language files to add missed strings.
