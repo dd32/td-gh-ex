@@ -29,5 +29,5 @@
 
 		<?php endif; ?>
 	</div><!-- .entry-content -->
-	<footer class="entry-meta"></footer>
+	<footer class="entry-footer"></footer>
 </article><!-- #post-0 .post .no-results .not-found -->

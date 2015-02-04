@@ -16,7 +16,7 @@
 		<?php the_content(); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'thebox' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
-	<footer class="entry-meta">
+	<footer class="entry-footer">
 		<p>
 			<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
 			<span class="comments-link">

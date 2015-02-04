@@ -4,7 +4,7 @@ Theme URI: http://design.altervista.org/thebox/
 Author: Design Lab
 Author URI: http://design.altervista.org
 Description: Simple and minimal two columns Theme: custom header, custom background, custom colors, post thumbnails, post formats
-Version: 1.3.8
+Version: 1.3.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: thebox
@@ -34,6 +34,7 @@ Index:
 :12 Widget
 :13 Footer
 :14 Comments
+:15 Site Boxed Styles
 :16 Media Queries
 
 */
@@ -276,12 +277,12 @@ body {
 }
 
 .content-area {
-	width: 640px;
+	width: 65.3062%; /* 640px */
 	float: left;
 }
 
 .widget-area {
-	width: 300px;
+	width: 30.6123%; /* 300px */
 	float: right;
 }
 
@@ -315,7 +316,7 @@ body {
 	margin-bottom: 1.5307%;
 }
 
-.page-template-no-sidebar .entry-meta {
+.page-template-no-sidebar .entry-footer {
 	padding: 1.5307% 2.0409%;
 }
 
@@ -364,8 +365,8 @@ body {
 }
 
 .one-column .entry-header,
-.one-column .entry-meta,
-.one-column .site-content .site-navigation {
+.one-column .entry-footer,
+.one-column .site-navigation {
 	padding: 2.85715% 7.14286%;
 }
 
@@ -588,6 +589,7 @@ textarea {
 .main-navigation,
 .site-footer,
 .widget-area,
+.entry-footer,
 .entry-meta {
 	font-size: 0.929em /* 13px */
 }
@@ -1175,15 +1177,22 @@ button.menu-toggle {
 	cursor: pointer;
 	margin: auto;
 	padding: 0;
-	width: 24px;
-	height: 24px;
-	background: transparent url('images/icon-toggle.png') no-repeat;
-	text-align: center;
+	width: 30px;
+	height: 30px;
 	border: 0;
-	text-indent: -9999em;
-	border: none;
+	background: transparent;
+	text-align: center;
 	-webkit-border-radius: 0;
 	border-radius: 0;
+}
+
+button.menu-toggle .icon-font {
+	color: #353535;
+}
+
+button.menu-toggle .icon-font:before {
+	vertical-align: inherit;
+	font-size: 28px;
 }
 
 @media screen and (max-width: 768px) {
@@ -1194,7 +1203,7 @@ button.menu-toggle {
 	}
 	.menu-toggle {
 		position: absolute;
-		top: 2.75em;
+		top: 35px;
 		right: 0;
 	}
 	.main-navigation.toggled .nav-menu {
@@ -1378,14 +1387,19 @@ button.menu-toggle {
 	margin-bottom: 0;
 }
 
-.entry-meta {
+.entry-footer {
+	padding: 2.34375% 3.125%;
+	border-top: 1px solid rgba(0, 0, 0, 0.07);
 	color: #959595;
-	clear: both;
 }
 
-.entry-header .entry-meta {
+.entry-footer p {
+	margin: 0;
+}
+
+.entry-meta {
 	float: left;
-	clear: none;
+	color: #959595;
 }
 
 .entry-time {
@@ -1417,15 +1431,6 @@ button.menu-toggle {
     padding: 3px 0 0;
 }
 
-.entry-meta {
-	padding: 2.34375% 3.125%;
-	border-top: 1px solid rgba(0, 0, 0, 0.07);
-}
-
-.entry-meta p {
-	margin: 0;
-}
-
 .post-thumbnail {
 	margin: 0 0 1em 0;
 	max-width: 100%;
@@ -1442,7 +1447,7 @@ button.menu-toggle {
 }
 
 .post-thumbnail.medium {
-	max-width: 200px;	
+	max-width: 220px;	
 }
 
 .post-thumbnail img {
@@ -1472,8 +1477,9 @@ button.menu-toggle {
 	color: #b5b5b5;
 }
 
-.cat-links .icon-font,
-.tags-links .icon-font {
+.author .icon-font,
+.category-meta .icon-font,
+.tag-meta .icon-font {
 	color: #0fa5d9;
 }
 
@@ -1508,6 +1514,46 @@ button.menu-toggle {
 
 .page-title span {
 	color: #0fa5d9;
+}
+
+/* :08 Content > Author bio */
+
+.author-info {
+	background-color: #fff;
+    margin: 0 0 3.125%;
+    padding: 2.34375% 3.125%;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
+    font-size: 0.929em;
+}
+
+.author-avatar {
+	float: left;
+	max-width: 80px;
+	margin-right: 1em;
+}
+
+.author-avatar img {
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+}
+
+h3.author-title {
+	clear: none;
+	margin: 0;
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.author-description p:last-child {
+	margin-bottom: 0;
+}
+
+.site-paged .author-info {
+	margin: 0;
+    padding: 3.3334% 0;
+	-webkit-box-shadow: none;
+    box-shadow: none;
 }
 
 /* :09 Custom Formats */
@@ -1696,7 +1742,7 @@ object {
 
 /* :11 Navigation */
 
-.site-content .site-navigation {
+.site-navigation {
 	margin: 0 0 3.125%;
 	overflow: hidden;
 	padding: 2.34375% 3.125%;
@@ -1710,12 +1756,12 @@ object {
 	box-shadow: none;
 }
 
-.site-content .nav-previous {
+.post-navigation .nav-previous {
 	float: left;
 	width: 50%;
 }
 
-.site-content .nav-next {
+.post-navigation .nav-next {
 	float: right;
 	text-align: right;
 	width: 50%;
@@ -2060,7 +2106,184 @@ textarea {
 }
 
 
-/* :15 Media Queries */
+/* :15 Site Boxed Styles */
+
+.site-paged #page {
+	max-width: 940px;
+	padding: 40px;
+	margin: 30px auto;
+	background-color: #fff;
+}
+
+.site-paged h1.site-title {
+	font-size: 2.5em;
+}
+
+.site-paged .entry-header,
+.site-paged .entry-content,
+.site-paged .entry-summary,
+.site-paged .entry-footer {
+	padding: 0;
+}
+
+.site-paged .content-area {
+	width: 600px;
+}
+
+.site-paged .site-main {
+	padding: 0;
+	margin: 3.1915% 0;
+}
+
+.site-paged .site-brand {
+	margin-top: 0;
+}
+
+.site-paged .hentry,
+.site-paged .widget,
+.site-paged .site-navigation,
+.site-paged .comments-area {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.site-paged .hentry {
+	margin-bottom: 5%;
+}
+
+.site-paged .format-aside {
+	padding: 3.3334%;
+	border: 1px solid rgba(0,0,0,0.07);
+}
+
+.site-paged #content .entry-time {
+	border: 1px solid #0fa5d9;	
+}
+
+.site-paged .widget {
+	padding: 0 6.66667%;
+	margin-bottom: 10%;
+}
+
+.site-paged .site-navigation {
+	margin: 0;
+	padding: 3.3334% 0;
+}
+
+.site-paged .entry-header,
+.site-paged .entry-footer {
+	border: 0;
+}
+
+.site-paged .entry-header {
+	margin-bottom: 1.6667%;
+}
+
+.single.site-paged .hentry,
+.page.site-paged .hentry {
+	margin-bottom: 0;
+	padding-bottom: 5%;
+	border-bottom: 1px solid #eee;
+}
+
+.site-paged .widget-title {
+	padding-bottom: 3px;
+	border-bottom: 1px solid #eee;
+	margin-bottom: 1em;
+}
+
+.site-paged .widget-title span {
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	padding-bottom: 5px;
+}
+
+.site-paged .comments-area {
+	padding: 0;
+	margin: 5% 0;
+}
+
+.site-paged .entry-header h1 {
+	font-size: 2em;
+	margin: 0;
+}
+
+.site-paged .entry-header h2 {
+	margin: 0;
+}
+
+.site-paged .entry-content {
+	margin-bottom: 3.3334%;
+}
+
+.site-paged .entry-summary {
+	margin-bottom: 1.6667%;
+}
+
+.site-paged .entry-summary .post-thumbnail {
+	margin-top: 0;
+}
+
+.site-paged .widget_search input#s {
+	border: 1px solid #eee;
+	width: 80%;
+	float: left;
+	height: 40px;
+}
+
+.site-paged .widget_search #searchsubmit {
+	display: block;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	float: left;
+	width: 20%;
+	height: 40px;
+	background-image: url('images/icon-search.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+	text-indent: -999em;
+}
+
+.site-paged .widget_search #searchsubmit:hover {
+	opacity: 0.9;
+}
+
+.site-paged .site-footer {
+	padding: 2.1278%
+}
+
+.site-paged #content .entry-header .comments-link,
+.site-paged #content .entry-header .comments-link a,
+.site-paged #content .entry-header .category-meta,
+.site-paged #content .entry-header .category-meta a {
+	color: #959595;
+}
+
+.site-paged #content .entry-header .comments-link a:hover,
+.site-paged #content .entry-header .category-meta a:hover {
+	text-decoration: none;
+}
+
+.site-paged .flexslider {
+	margin-bottom: 5%;
+}
+
+.site-paged ul.page-numbers a,
+.site-paged ul.page-numbers span {
+	background-color: #eee;
+}
+
+.site-paged .page-header {
+	padding-right: 0;
+	padding-left: 0;
+	margin-bottom: 5%;
+	border-bottom: 1px solid #eee;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+
+/* :16 Media Queries */
 
 @media screen and (min-width: 769px) and (max-width: 1023px) {   
 	#page,
@@ -2070,9 +2293,9 @@ textarea {
 	hgroup {
 	width: 40%;
 	}
-	.site-paged .content-area,
 	.content-area,
-	.widget-area {
+	.widget-area,
+	.site-paged .content-area {
 	float: none;
 	width: 100%;
 	margin: auto;
@@ -2082,18 +2305,27 @@ textarea {
 	-webkit-box-shadow: none;
 	box-shadow: none;
 	margin-bottom: 0;
-	}
-	.site-fullwidth .widget {
-	border-bottom: 1px solid rgba(0,0,0,0.07);	
+	padding: 3.125%;
+	border-bottom: 1px solid rgba(0,0,0,0.07);
 	}
 	.site-paged .widget {
 	padding: 0;
+	border: 0;
 	}
 }
 
 @media screen and (max-width: 768px) { 
 	body {
 	font-size: 16px;
+	}
+	.main-navigation,
+	.site-footer,
+	.widget-area,
+	.entry-footer,
+	.entry-meta,
+	.entry-time,
+	.author-info {
+	font-size: 0.875em; /* 14px */
 	}
 	#page,
 	.site-paged #page {
@@ -2115,53 +2347,58 @@ textarea {
 	width: 80%;
 	}
 	hgroup h1 {
-	margin-bottom: 1em;
+	margin-bottom: 3%;
 	}
 	hgroup h1 a {
 	margin: auto;
 	}
 	.social-links {
 	float: none;
-	margin: 1em 0 0;
+	margin: 3% 0 0;
 	}
 	.site-brand,
 	.site-paged .site-brand {
 	float: none;
 	padding: 0;
-	margin: 2em 0;
-	}
-	.site-header .widget {
-	margin-bottom: 0.5em;
+	margin: 5% 0;
 	}
 	.main-navigation {
 	float: none;
-	margin: 0 0 2em 0;
+	margin: 0 0 5% 0;
 	}
 	.main-navigation ul {
 	float: none;
 	}
 	.header-image {
-	margin: 0 0 2em 0;
+	margin: 0 0 5% 0;
 	}
-	/* Content */
+	/* Layout */
 	.site-main {
 	padding: 0;
 	}
-	.site-paged .content-area,
+	.site-paged .site-main {
+	margin: 5% 0;	
+	}
 	.content-area,
-	.widget-area {
+	.widget-area,
+	.site-paged .content-area {
 	float: none;
 	width: 100%;
 	margin: auto;
 	}
 	.site-footer {
 	padding: 5%;
-	margin-top: 2em;
+	margin-top: 5%;
+	}
+	.site-paged .site-footer {
+	padding: 3%;
 	}
 	/* Hentry */
 	.hentry,
-	.flexslider {
-	margin-bottom: 2em !important;
+	.flexslider,
+	.site-paged .hentry,
+	.site-paged .flexslider {
+	margin-bottom: 5%;
 	}
 	.post-thumbnail img {
 	float: none;
@@ -2170,10 +2407,14 @@ textarea {
 	max-width: 100%;
 	height: auto;
 	}
+	.single.site-paged.page-template-no-sidebar .hentry,
+	.page.site-paged.page-template-no-sidebar .hentry {
+	padding-bottom: 5%;
+	}
 	.entry-header,
-	.entry-meta,
+	.entry-footer,
 	.page-template-no-sidebar .entry-header,
-	.page-template-no-sidebar .entry-meta { 
+	.page-template-no-sidebar .entry-footer { 
 	padding: 3% 5%;
 	}	
 	.entry-content,
@@ -2183,23 +2424,39 @@ textarea {
 	padding: 0 5%;
 	}
 	.entry-header,
-	.page-template-no-sidebar .entry-header,
 	.entry-content,
-	.page-template-no-sidebar .entry-content {	
-	margin-bottom: 3%;
+	.page-template-no-sidebar .entry-header,
+	.page-template-no-sidebar .entry-content,
+	.site-paged .entry-header,
+	.site-paged .entry-content,
+	.site-paged.page-template-no-sidebar .entry-header,
+	.site-paged.page-template-no-sidebar .entry-content {	
+	margin-bottom: 5%;
 	}
 	.site-paged .entry-header,
 	.site-paged .entry-content,
 	.site-paged .entry-summary,
-	.site-paged .entry-meta {
+	.site-paged .entry-footer {
 	padding: 0;
 	}
-	.comments-area {
-	margin: 2em 0;
+	.comments-area,
+	.page-template-no-sidebar .comments-area {
+	margin: 5% 0;
+	padding: 3% 5%;
+	}
+	.site-paged .comments-area,
+	.site-paged.page-template-no-sidebar .comments-area {
+	padding: 0;
+	margin: 5% 0;	
 	}	
-	.entry-header h2 {
+	.entry-header h2,
+	.site-paged .entry-header h2 {
 	width: 100%;
 	max-width: 100%;
+	float: none;
+	clear: left;
+	margin: 0 0 3% 0;
+	line-height: 1.3;
 	} 
 	.entry-time:before {
 	content: none;
@@ -2241,17 +2498,36 @@ textarea {
 	.site-paged .entry-time-month {
 	border: none;
 	}
+	.entry-meta {
+	margin-left: 0.5em;
+	}
+	.entry-time {
+	float: left;
+	text-transform: none;
+	color: #959595 !important;
+	}
+	.author-info {
+	padding: 3% 5%;
+	margin-bottom: 5%;
+	}
+	.site-paged .author-info {
+	padding: 5% 0;
+	margin-bottom: 5%;
+	}
+
 	/* Widget */
 	.widget {
+	padding: 3% 5%;
+	margin-bottom: 0;
 	-webkit-box-shadow: none;
 	box-shadow: none;
-	margin-bottom: 0;
 	}
 	.site-fullwidth .widget {
 	border-bottom: 1px solid rgba(0,0,0,0.07);
 	}
 	.site-paged .widget {
 	padding: 0;
+	margin-bottom: 5%;
 	}
 	/* Tertiary */
 	#tertiary .widget_nav_menu {
@@ -2269,15 +2545,19 @@ textarea {
 	float: none;
 	}
 	/* Site Navigation */
-	.site-content .site-navigation {
-	margin-bottom: 2em;
+	.site-navigation {
+	margin-bottom: 5%;
+	padding: 3% 5%;
 	}
 	ul.page-numbers {
-	margin-bottom: 2em;
+	margin-bottom: 5%;
 	}
 }
 
 @media screen and (max-width: 480px) {
+	button.menu-toggle {
+	top: 25px;
+	}
 	.header-image {
 	display: none;
 	}
@@ -2286,6 +2566,17 @@ textarea {
 	margin: 1.5em auto;
 	text-align: center;
 	display: block;
+	}
+	.hentry .post-thumbnail img {
+	margin: 0 auto 5%;
+	}
+	.post-thumbnail.medium {
+	float: none;
+	max-width: 100%;
+	margin: 0;
+	}
+	.post-thumbnail.medium img {
+	margin-top: 0;
 	}
 	#tertiary .widget_search input#s {
 	width: 80%;

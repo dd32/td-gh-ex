@@ -53,15 +53,25 @@
 		
 	<?php endif; // is_single() ?>
 
-	<footer class="entry-meta">
+	<footer class="entry-footer">
 		<p>
+		<?php if ( is_single() ) : ?>
+			<span class="author">
+				<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
+					<span class="icon-font icon-user"></span>
+					<?php _e( 'Posted by', 'thebox' ); ?> <?php the_author(); ?> 
+				</a>
+				<span class="sep"></span>
+			</span>
+		<?php endif; // is_single() ?>
+			
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 			<?php
 				/* translators: used between list items, there is a space after the comma */
 				$categories_list = get_the_category_list( __( ', ', 'thebox' ) );
 				 if ( $categories_list && thebox_categorized_blog() ) :
 			?>
-			<span class="cat-links">
+			<span class="category-meta">
 				<span class="icon-font icon-category-alt"></span>
 				<?php printf( __( '%1$s', 'thebox' ), $categories_list ); ?>
 			</span>
@@ -73,7 +83,7 @@
 				if ( $tags_list ) :
 			?>
 			<span class="sep"></span>
-			<span class="tags-links">
+			<span class="tag-meta">
 				<span class="icon-font icon-tag-alt"></span>
 				<?php printf( __( '%1$s', 'thebox' ), $tags_list ); ?>
 			</span>
