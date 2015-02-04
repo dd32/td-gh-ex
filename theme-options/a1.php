@@ -11,7 +11,7 @@ function a1_options_validate($input) {
     $input['logo'] = a1_image_validation(esc_url_raw($input['logo']));
     $input['favicon'] = a1_image_validation(esc_url_raw($input['favicon']));
     /* ------------Top Header Settings-------------- */
-    $input['phone'] = sanitize_text_field($input['phone']);    
+    $input['phone'] = sanitize_text_field($input['phone']);
     $input['email'] = sanitize_email($input['email']);
     $input['fburl'] = esc_url_raw($input['fburl']);
     $input['twitter'] = esc_url_raw($input['twitter']);
@@ -111,7 +111,7 @@ function a1_framework_page() {
                     ?>
                 </div>
                 <div class="header-right">
-                    <h1><?php _e('Theme Options', 'a1'); ?></h1>			
+                    <h1><?php _e('Theme Options', 'a1'); ?></h1>
                     <div class='btn-save'>
                         <input type="submit" class="button-primary" value="<?php _e('Save Options', 'a1'); ?>" />
                     </div>
@@ -125,13 +125,15 @@ function a1_framework_page() {
                                 <li><a id="options-group-1-tab" class="nav-tab basicsettings-tab" title="<?php _e('Basic Settings', 'a1'); ?>" href="#options-group-1"><?php _e('Basic Settings', 'a1'); ?></a></li>
                                 <li><a id="options-group-2-tab" class="nav-tab headersettings-tab" title="<?php _e('Header Settings', 'a1'); ?>" href="#options-group-2"><?php _e('Top Header Settings', 'a1'); ?></a></li>
                                 <li><a id="options-group-3-tab" class="nav-tab footersettings-tab" title="<?php _e('Footer Settings', 'a1'); ?>" href="#options-group-3"><?php _e('Footer Settings', 'a1'); ?></a></li>
-                                <li><a id="options-group-4-tab" class="nav-tab homepagesettings-tab" title="<?php _e('Home Page Settings', 'a1'); ?>" href="#options-group-4"><?php _e('Home Page Settings', 'a1'); ?></a></li>  
+                                <li><a id="options-group-4-tab" class="nav-tab homepagesettings-tab" title="<?php _e('Home Page Settings', 'a1'); ?>" href="#options-group-4"><?php _e('Home Page Settings', 'a1'); ?></a></li>
                                 <li><a id="options-group-5-tab" class="nav-tab blogpagesettings-tab" title="<?php _e('Blog Page Settings', 'a1'); ?>" href="#options-group-5"><?php _e('Blog Page Settings', 'a1'); ?></a></li>
+                                <li><a id="options-group-6-tab" class="nav-tab profeatures-tab" title="<?php _e('Pro Settings', 'a1'); ?>" href="#options-group-6"><?php _e('PRO Theme Features', 'a1') ?></a></li>
+                            </ul>
                             </ul>
                         </div>
                     </div>
                     <div class="right-box-bg"></div>
-                    <div class="postbox left-box"> 
+                    <div class="postbox left-box">
                         <!--======================== F I N A L - - T H E M E - - O P T I O N ===================-->
                         <?php
                         settings_fields('a1_options');
@@ -190,10 +192,10 @@ function a1_framework_page() {
                                         <label class="remove-breadcrumbs-class" for="a1-remove-breadcrumbs"><?php _e('Check this if you want to hide the breadcrumbs', 'a1'); ?>.</label>
                                     </div>
                                 </div>
-                            </div>     
+                            </div>
                         </div>
                         <!-------------- Top Header Settings----------------->
-                        <div id="options-group-2" class="group topheadersettings a1-inner-tabs">          
+                        <div id="options-group-2" class="group topheadersettings a1-inner-tabs">
                             <div class="theme-tabs theme-colors theme-fonts">
                                 <div style="display: block;">
                                     <div class="ft-control">
@@ -281,10 +283,10 @@ function a1_framework_page() {
                                         <label class="scroll-top-header-class" for="a1-scroll-top-header"><?php _e('Check this if you want to display top header on scroll', 'a1'); ?>.</label>
                                     </div>
                                 </div>
-                            </div>      
+                            </div>
                         </div>
                         <!-------------- Footer Settings----------------->
-                        <div id="options-group-3" class="group footersettings a1-inner-tabs"> 
+                        <div id="options-group-3" class="group footersettings a1-inner-tabs">
                             <div id="section-footertext" class="section theme-tabs"> <a class="heading a1-inner-tab active" href="javascript:void(0)"><?php _e('Copyright Text', 'a1'); ?></a>
                                 <div class="a1-inner-tab-group active">
                                     <div class="ft-control">
@@ -310,22 +312,22 @@ function a1_framework_page() {
                                 </div>
                             </div>
                         </div>
-                        <!-------------- Homepage settings ----------------->     
-                        <div id="options-group-4" class="group a1-inner-tabs">
+                        <!-------------- Homepage settings ----------------->
+                        <div id="options--group-4" class="group a1-inner-tabs">
                             <br /><h3><?php _e('Banner Slider', 'a1'); ?></h3>
                             <div class="theme-tabs theme-colors theme-fonts">
                                 <div style="display: block;">
                                     <div class="ft-control">
                                         <input type="checkbox" id="a1-remove-slider" name="a1_theme_options[remove-slider]" <?php if (!empty($a1_options['remove-slider'])) { ?> checked="checked" <?php } ?> value="<?php _e('yes', 'a1'); ?>">
                                         <label class="remove-slider-class" for="a1-remove-slider"><?php _e('Check this to remove slider section on the home page', 'a1'); ?>.</label>
-                                    </div>          
+                                    </div>
                                 </div>
                             </div>
-    <?php for ($a1_i = 1; $a1_i <= 5; $a1_i++): ?>
+                            <?php for ($a1_i = 1; $a1_i <= 5; $a1_i++): ?>
                                 <div class="section theme-tabs theme-slider-img"> <a class="heading a1-inner-tab" href="javascript:void(0)"><?php _e('Slider', 'a1'); ?> <?php echo $a1_i; ?></a>
                                     <div class="a1-inner-tab-group">
                                         <div class="ft-control">
-                                            <input id="slider-img-<?php echo $a1_i; ?>" class="upload" type="text" name="a1_theme_options[slider-img-<?php echo $a1_i; ?>]" 
+                                            <input id="slider-img-<?php echo $a1_i; ?>" class="upload" type="text" name="a1_theme_options[slider-img-<?php echo $a1_i; ?>]"
                                                    value="<?php
                                                    if (!empty($a1_options['slider-img-' . $a1_i])) {
                                                        echo esc_url($a1_options['slider-img-' . $a1_i]);
@@ -365,14 +367,14 @@ function a1_framework_page() {
                                         </div>
                                     </div>
                                 </div>
-    <?php endfor; ?>
+                            <?php endfor; ?>
                             <h3><?php _e('Core Features Section', 'a1'); ?></h3>
                             <div class="theme-tabs theme-colors theme-fonts">
                                 <div style="display: block;">
                                     <div class="ft-control">
                                         <input type="checkbox" id="a1-remove-core-features" name="a1_theme_options[remove-core-features]" <?php if (!empty($a1_options['remove-core-features'])) { ?> checked="checked" <?php } ?> value="<?php _e('yes', 'a1'); ?>">
                                         <label class="a1-core-features-class" for="a1-remove-core-features"><?php _e('Check this to remove core features section on home page', 'a1'); ?>.</label>
-                                    </div>          
+                                    </div>
                                 </div>
                             </div>
                             <div id="section-coretitle" class="section theme-tabs"> <a class="heading a1-inner-tab" href="javascript:void(0)"><?php _e('Title', 'a1'); ?></a>
@@ -400,7 +402,7 @@ function a1_framework_page() {
                                     </div>
                                 </div>
                             </div>
-    <?php for ($a1_section_i = 1; $a1_section_i <= 3; $a1_section_i++): ?>
+                            <?php for ($a1_section_i = 1; $a1_section_i <= 3; $a1_section_i++): ?>
                                 <div class="section theme-tabs theme-slider-img"> <a class="heading a1-inner-tab" href="javascript:void(0)"><?php _e('Tab', 'a1'); ?> <?php echo $a1_section_i; ?></a>
                                     <div class="a1-inner-tab-group">
                                         <div class="ft-control">
@@ -439,14 +441,14 @@ function a1_framework_page() {
                                         </div>
                                     </div>
                                 </div>
-    <?php endfor; ?>
+                            <?php endfor; ?>
                             <h3><?php _e('Product Description', 'a1'); ?></h3>
                             <div class="theme-tabs theme-colors theme-fonts">
                                 <div style="display: block;">
                                     <div class="ft-control">
                                         <input type="checkbox" id="a1-remove-product-description" name="a1_theme_options[remove-product-description]" <?php if (!empty($a1_options['remove-product-description'])) { ?> checked="checked" <?php } ?> value="<?php _e('yes', 'a1'); ?>">
                                         <label class="a1-core-features-class" for="a1-remove-product-description"><?php _e('Check this to remove product description section on home page', 'a1'); ?>.</label>
-                                    </div>          
+                                    </div>
                                 </div>
                             </div>
                             <div id="section-producttitle" class="section theme-tabs"> <a class="heading a1-inner-tab" href="javascript:void(0)"><?php _e('Title', 'a1'); ?></a>
@@ -487,7 +489,7 @@ function a1_framework_page() {
                                         $a1_editor_id = 'productcontent';
                                         $a1_settings = array('textarea_name' => 'a1_theme_options[productcontent]', 'textarea_rows' => 25);
                                         wp_editor($a1_content, $a1_editor_id, $a1_settings);
-                                        ?> 
+                                        ?>
                                     </div>
                                 </div>
                             </div>
@@ -509,7 +511,7 @@ function a1_framework_page() {
                                     <div class="ft-control">
                                         <input type="checkbox" id="a1-remove-getin-touch" name="a1_theme_options[remove-getin-touch]" <?php if (!empty($a1_options['remove-getin-touch'])) { ?> checked="checked" <?php } ?> value="<?php _e('yes', 'a1'); ?>">
                                         <label class="a1-our-portfolio-class" for="a1-remove-getin-touch"><?php _e('Check this to remove get in touch section on home page', 'a1'); ?>.</label>
-                                    </div>          
+                                    </div>
                                 </div>
                             </div>
                             <div id="section-get-touch-title" class="section theme-tabs"> <a class="heading a1-inner-tab" href="javascript:void(0)"><?php _e('Title', 'a1'); ?></a>
@@ -578,11 +580,12 @@ function a1_framework_page() {
                                         if (!empty($a1_options['get-touch-page'])) {
                                             echo $a1_options['get-touch-page'];
                                         }
-                                        ?>" /> 
+                                        ?>" />
                                     </div>
                                 </div>
                             </div>
-                        </div>  <!-------------- Blog Settings----------------->
+                        </div>
+                        <!-------------- Blog Settings----------------->
                         <div id="options-group-5" class="group blogsettings a1-inner-tabs">
                             <div id="section-blogtitle" class="section theme-tabs"> <a class="heading a1-inner-tab active" href="javascript:void(0)"><?php _e('Blog Title', 'a1'); ?></a>
                                 <div class="a1-inner-tab-group active">
@@ -656,12 +659,20 @@ function a1_framework_page() {
                                 </div>
                             </div>
                         </div>
-                        <!-------------- End group -----------------> 
+                        <!-------------- Pro Features group ----------------->
+                        <div id="options-group-6" class="group faster-inner-tabs fasterthemes-pro-image">
+                            <div class="fasterthemes-pro-header">
+                                <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/a1_pro_features-logo.png" class="fasterthemes-pro-logo" />
+                                <a href="http://fasterthemes.com/wordpress-themes/A1" target="_blank" class="fasterthemes-pro-buynow"><img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/starting-button.png" /></a>
+                            </div>
+                            <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/a1_pro_features.png" />
+                        </div>
+                        <!-------------- End group ----------------->
                     </div>
                 </div>
             </div>
             <div class="a1-footer">
-                <ul>   		
+                <ul>
                     <li class="btn-save">
                         <input type="submit" class="button-primary" value="<?php _e('Save Options', 'a1'); ?>" />
                     </li>
@@ -669,6 +680,6 @@ function a1_framework_page() {
             </div>
         </form>
     </div>
-    <div class="save-options"><h2><?php _e('Options saved successfully', 'a1'); ?>.</h2></div>    
+    <div class="save-options"><h2><?php _e('Options saved successfully', 'a1'); ?>.</h2></div>
     <?php
 }

@@ -17,9 +17,9 @@ if ( post_password_required() )
 		?>
 	</h3>
     <ul>
-		<?php wp_list_comments( array( 'callback' => 'a1_comment', 'short_ping' => true) ); ?>
+		<?php wp_list_comments( array( 'short_ping' => true, 'avatar_size'       => 80,) ); ?>
     </ul>
-	<?php paginate_comments_links(); ?>    
+	<?php paginate_comments_links(); ?>
 	<?php endif; // have_comments() ?>
 		<?php comment_form(); ?>
 </div><!-- #comments .comments-area -->
