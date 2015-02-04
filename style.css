@@ -4,7 +4,7 @@ Theme URI: http://fruitthemes.com/wordpress-themes/deserve
 Author: FruitThemes
 Author URI: http://fruitthemes.com/
 Description: Deserve is a lightweight, faster, clean, super flexible and bootstrap based responsive theme for business or personal websites. Deserve Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, theme-options etc in order to get it customized as per your need.
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Copyright :
@@ -67,8 +67,7 @@ a{
     color:#727272;
     transition: all 0.5s ease-in-out 0s;
     -webkit-transition: all 0.5s ease-in-out 0s;
-    text-decoration: none;	
-   
+    text-decoration: none;   
 }
 a:hover,
 a:focus{
@@ -309,7 +308,7 @@ img{
 }
 .title h2 > span,
 .sidebar-widget h2 > span {
-    background: none repeat scroll 0 0 #f8f8f8;   
+    background: none repeat scroll 0 0 #f8f8f8;  
     position: relative;
     z-index: 2;
     padding-right:10px;
@@ -329,8 +328,21 @@ img{
     font-size: 14px;
     line-height: 2;
 }
-.process{
-    margin-left: -30px;	
+.round-image{
+    float: left;
+    margin-right: 20px;
+    width: 94px;    
+    border: 2px solid #FFF;	
+    margin-left: -45px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    box-shadow: 0 1px 2px 0 rgb(234, 234, 234);
+    transition: all 0.8s ease-in-out 0s;
+    -webkit-transition: all 0.8s ease-in-out 0s;
+}
+.process{  
+     float: left;
+    width: calc(100% - 100px);
 }
 .devlopment-process .title{
     margin-bottom: 0;
@@ -367,16 +379,8 @@ img{
     box-shadow:none;
     background-color: #fff;
 }
-.round-image{
-    display: inline-block;
-    border: 2px solid #FFF;	
-    margin-left: -45px;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-    box-shadow: 0 1px 2px 0 rgb(234, 234, 234);
-    transition: all 0.8s ease-in-out 0s;
-    -webkit-transition: all 0.8s ease-in-out 0s;
-}
+
+
 .process-detail img{   
     max-width: 100%;
     transition: all 0.8s ease-in-out 0s;
@@ -478,6 +482,9 @@ img{
     margin: 5px 0 0;
     padding: 0;	
     background-color: transparent; 	
+}
+.site-breadcumb ol li {
+    text-transform: capitalize;
 }
 .breadcrumb-menubar li a{
     font-size: 15px;
@@ -720,6 +727,7 @@ img{
 }
 .blog-media{
     float: left;
+     text-transform: capitalize;
     margin: 10px 0 0;	
     width: 100%;
 }
@@ -788,9 +796,7 @@ input{
 /*****************BLOG PAGE END******************/
 /**************************footer *********************/
 
-footer{
 
-}
 .bottom-footer{
     border-top: 1px solid #3f848f;
 }
@@ -822,8 +828,6 @@ footer{
     font-size: 14px;
     margin-bottom: 15px;
     width: 100%;
-
-
 }
 .footer-widget h3 {
     color: #f4f4f4;
@@ -838,8 +842,12 @@ footer{
     color: #d7d7d7;
     line-height: 1.6;
     margin-bottom: 15px;
-    padding-right: 10px;
+     text-align: justify;
 }
+.textwidget {
+    text-align: justify;
+}
+
 .social-icon a i{
     font-size: 2.6em;	
 }
@@ -861,15 +869,17 @@ footer{
     margin: 0 0 11px;    
 }
 .footer-widget input{
-    width: 235px;
+    width: 100%;
     color:#212121;
     border-radius: 3px;
     background-color: #e5e5e5;
     padding: 8px 10px;
     border: none;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
-
+.search-form > label {
+    width: 100%;
+}
 input[type="submit"] 
 {
     background-color: #1c7b8a;
@@ -1320,9 +1330,14 @@ input[type="submit"]
 {
     color:white;
 }
-
-.footer-widget .blog-img {
-    padding-left: 0;
+.blog-img {
+    float: left;
+    margin-right: 20px;
+    width: 80px;
+}
+.blog-post {
+    float: left;
+    width: calc(100% - 100px);
 }
 .footer-widget .blog-post .date-lp {
     margin-bottom: 0;
@@ -1667,12 +1682,16 @@ embed, iframe, object, video {
     .dblog{
         padding-right: 15px;
     }
+    .page-template-left-sidebar .dblog{
+    	 padding-left: 15px;
+    }
     .sidebar-widget .blog-media img {
     width: 100%;
-    }
-    .footer-widget .blog-media img {
-    width: 100%;
-    }
+    }  
+    .caption-text h2{
+    	font-size:26px;
+    	right: 10%;
+    } 
 
 }
 
@@ -1769,12 +1788,18 @@ embed, iframe, object, video {
     .header-menu ul li ul{
         right: 0;
     }
+    .caption-text h2{
+    	font-size:26px;
+    }
     /*****************HOME PAGE END******************/
 
 }
 @media (max-width:380px){
     .process-detail{
         width: 83%;
+    }
+    .slider_button{
+    	top:35%;
     }
 }
 @media (max-width:360px){

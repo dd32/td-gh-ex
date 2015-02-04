@@ -27,7 +27,7 @@ get_header(); ?>
  
     <div class="deserve-container">    
 		       <?php get_sidebar(); ?>    
-        <div class="col-md-9 col-sm-7  dblog"> 
+        <div class="col-md-9 col-sm-8  dblog"> 
         
         <?php while ( have_posts() ) : the_post(); ?>
              

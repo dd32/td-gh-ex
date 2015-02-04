@@ -3,9 +3,9 @@ Version 1.0
 	i)   Theme Submitted for approval
 
 Version 1.0.1
-	i)fix css issue
-    ii)remove unnecessary commented code
-    iii)Fixed the latest post widget image bug
+	i)	fix css issue
+   ii)	remove unnecessary commented code
+  iii)	solve the latest post widget image issue
       
-
-
+Version 1.0.2
+	i)	fix css issue

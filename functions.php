@@ -389,7 +389,7 @@ $query = new WP_Query( apply_filters( 'widget_posts_args', array( 'posts_per_pag
 			while ( $query->have_posts() ) : $query->the_post(); ?>
          
 				<div class="blog-media">
-					<div class="col-md-4 col-xs-4 col-sm-4 blog-img">
+					<div class="blog-img">
 						<a href="<?php echo get_permalink(); ?>">
             	
 							<?php $deserve_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()),'deserve-latest-post-widget'); ?>
@@ -406,7 +406,7 @@ $query = new WP_Query( apply_filters( 'widget_posts_args', array( 'posts_per_pag
 						</a>
 						
 					</div>
-					<div class="col-md-8 col-xs-8 col-sm-8 blog-post no-padding">					
+					<div class="blog-post">					
 						 <a href="<?php the_permalink() ?>" title="<?php echo esc_attr( get_the_title() ? get_the_title() : get_the_ID() ); ?>"><?php if ( get_the_title() ) the_title(); else the_ID(); ?></a> 
 						    <?php if ( $deserve_lp_show_date ) : ?>          
 								<p class="date-lp"><?php echo get_the_date(); ?></p>

@@ -49,7 +49,8 @@ get_header();
 </div>
 <?php  } ?>
    
-    <div class="deserve-container container devlopment-process">
+    <div class="deserve-container container devlopment-
+    ">
 		 <?php if (!empty($deserve_options['home-title'])) { ?>
         <div class="title">
             <?php if (!empty($deserve_options['home-title'])) {
@@ -77,14 +78,14 @@ get_header();
         $deserve_id = deserve_get_image_id_by_url($deserve_image);
         $deserve_image = wp_get_attachment_image_src($deserve_id, 'deserve-home-tab-size');
         ?>
-                    <div class="col-md-4 col-sm-6">
+                    <div class="col-md-4 col-sm-6 col-sm-offset-3 col-md-offset-0">
                         <div class="process-detail">
-                            <div class="col-md-4 col-sm-4 col-xs-4 no-padding"> 
+                            
                                 <div class="round-image">
                                     <img alt="<?php echo $deserve_l; ?>" class="img-circle" src="<?php echo $deserve_image[0]; ?>" width="<?php echo $deserve_image[1]; ?>" height="<?php echo $deserve_image[2]; ?>">			
                                 </div>
-                            </div>
-                            <div class="process col-md-8 col-sm-8 col-xs-8 no-padding">
+                           
+                            <div class="process">
                                 <h2><?php if (!empty($deserve_options['section-title-' . $deserve_l])) echo sanitize_text_field($deserve_options['section-title-' . $deserve_l]); ?></h2>
                                 <p><?php if (!empty($deserve_options['section-content-' . $deserve_l])) echo sanitize_text_field($deserve_options['section-content-' . $deserve_l]); ?></p>
                             </div>

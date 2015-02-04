@@ -93,26 +93,8 @@ OwlCarousel - (https://github.com/OwlFonk/OwlCarousel/blob/master/LICENSE) Copyr
 ---------------------------------------------------------
 Image
 ---------------------------------------------------------
-
-
-SLIDER IMAGE-------------------------------------------
-1..http://pixabay.com/en/new-york-skyscrapers-cityscape-164591/
-2..http://pixabay.com/en/chicago-skyline-willis-tower-chicago-139388/
-
-
-CIRCLE IMAGE---------------------------
-
-1..http://pixabay.com/en/woman-girl-smile-beautiful-happy-431658/ 
-
-2..http://pixabay.com/en/telephone-mobile-to-call-attainable-586266/
-
-3..http://pixabay.com/en/hands-holding-hands-together-peace-344759/
-
-
-BLOG-------------------------------------
-
-1..http://pixabay.com/en/man-people-umbrella-rain-weather-316521/
-2..http://pixabay.com/en/photo-camera-photography-digital-351528/
-3..http://pixabay.com/en/hand-writing-pen-people-author-325321/
-4..http://pixabay.com/en/driving-car-automobile-driver-407181/
-
+1).http://pixabay.com/en/new-york-skyscrapers-cityscape-164591/
+2).http://pixabay.com/en/chicago-skyline-willis-tower-chicago-139388/
+3).http://pixabay.com/en/woman-girl-smile-beautiful-happy-431658/ 
+4).http://pixabay.com/en/telephone-mobile-to-call-attainable-586266/
+5).http://pixabay.com/en/hands-holding-hands-together-peace-344759/
