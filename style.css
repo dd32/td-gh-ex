@@ -4,7 +4,7 @@ Theme URI: http://catchthemes.com/themes/catch-flames
 Author: Catch Themes
 Author URI: http://catchthemes.com
 Description: Catch Flames is a Simple, Clean, Lightweight, Box Shaped Full-Width responsive WordPress theme that automatically adapts to the screen's size, ensuring that your content is displayed beautifully no matter what device visitors are using. Catch Flames is wider, bigger and looks luxuriously spacious. It uses Three Columns Layout as its default layout and can be changed to Two Columns or One Column as per your need. This theme can be considered as the successor of our popular theme Catch Box, as it has been further carefully crafted keeping in mind the concerns and adaptation possibilities requested by our existing CatchBox users. Catch Flames is based on HTML5, CSS3 and Catch Themes' very own easy to use Theme Options panel, all of which make it highly customizable and flexible. Put together your beautiful, yet professional website in no time. This theme is compatible with popular plugins such as WPML, qTranslate, mqTranslate, Polulang, WooCommerce, Jetpack, WP-PageNavi, Contact Form 7 and so on. This theme is translation ready and is currently translated in Brazilian Portuguese and French. Check out Theme Instructions at http://catchthemes.com/theme-instructions/catch-flames/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/catch-flames/
-Version: 2.2
+Version: 2.3
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Tags: black, gray, tan, white, dark, light, one-column, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, front-page-post-form, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready 
@@ -82,6 +82,9 @@ figure  a {
 #slider-nav .slide-previous:before,
 #slider-nav .slide-next:before,
 #searchform .search-label:before {
+	-webkit-box-sizing: content-box; /* Not needed for modern webkit but still used by Blackberry Browser 7.0; see http://caniuse.com/#search=box-sizing */
+	-moz-box-sizing:    content-box; /* Still needed for Firefox 28; see http://caniuse.com/#search=box-sizing */
+	box-sizing:         content-box;
 	width: 20px;
 	height: 20px;
 	font-family: 'Genericons';
@@ -120,6 +123,7 @@ a.genericon:hover {
 
 .site {
 	display: block;
+	overflow: hidden;
 	width: 100%;
 }
 .wrapper {
@@ -598,22 +602,13 @@ a:hover {
 }
 
 /* Assistive text */
-.assistive-text {
-	position: absolute !important;
-	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+.assistive-text,
+.screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
-}
-#access a.assistive-text:active,
-#access a.assistive-text:focus {
-	background: #eee;
-	border-bottom: 1px solid #ccc;
-	color: #1982d1;
-	clip: auto !important;
-	font-size: 12px;
-	position: absolute;
-	text-decoration: underline;
-	top: 0;
-	left: 3%;
+	height: 1px;
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
 }
 /* close commented backslash hack */
 .displayblock {
@@ -665,6 +660,9 @@ a:hover {
 #access-top {
 	float: left;
 }
+#header-top .wrapper {
+	position: relative;
+}
 .has-header-top.menu-logo #access-top {
 	float: right;
 }
@@ -677,11 +675,11 @@ a:hover {
     padding: 8px 0;
 	height: auto;
     margin: 0 auto;
-	max-height: 30px;
+	max-height: 46px;
     max-width: 100%;
 }
 #header-image {
-	background-color: #222;
+	background-color: #fff;
 }
 #header-image a { 
 	line-height: 0; 
@@ -744,8 +742,7 @@ a:hover {
 
 #header-extra {
 	float: right;	
-	position: relative;
-	padding: 5px 0;
+	padding: 6px 0;
 }
 #header-extra #header-social-toggle, 
 #header-extra #header-search-toggle {
@@ -759,6 +756,7 @@ a:hover {
 	/* Firefox, other Gecko */
 	box-sizing: border-box;
 	color: #fff;
+	cursor: pointer;
     display: block;
     float: left;
     font-size: 20px;
@@ -797,7 +795,7 @@ a:hover {
 	background-color: #fff;
 	border-color: #eee;
 	color: #000;
-	width: 500px;
+	width: 480px;
 }
 
 
@@ -810,9 +808,10 @@ a:hover {
 	box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
 	-moz-box-shadow: 0 0 7px rgba(0, 0, 0, 0.1); 
 	-webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
-	-moz-transition: all 0.5s ease-in-out; 
-	-webkit-transition: all 0.5s ease-in-out; 
-	transition: all 0.5s ease-in-out; 	
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
 	top: 0;
 	width: 100%;
 	-webkit-box-sizing: border-box;

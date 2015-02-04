@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Flames\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-30 13:07+0545\n"
-"PO-Revision-Date: 2015-01-30 13:07+0545\n"
+"POT-Creation-Date: 2015-02-04 19:34+0545\n"
+"PO-Revision-Date: 2015-02-04 19:34+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "Language: en\n"
@@ -135,7 +135,7 @@ msgstr ""
 #: ../content-gallery.php:18 ../content-gallery.php:50 ../content-image.php:18
 #: ../content-link.php:18 ../content-page.php:13 ../content-quote.php:16
 #: ../content-status.php:17 ../content.php:31 ../content.php:35
-#: ../inc/catchflames-functions.php:886
+#: ../inc/catchflames-functions.php:885
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
@@ -184,7 +184,7 @@ msgstr ""
 #: ../content-gallery.php:98 ../content-image.php:76 ../content-link.php:52
 #: ../content-page.php:30 ../content-quote.php:81 ../content-single.php:66
 #: ../content-status.php:53 ../content.php:113 ../image.php:100
-#: ../inc/catchflames-functions.php:455
+#: ../inc/catchflames-functions.php:454
 msgid "Edit"
 msgstr ""
 
@@ -252,7 +252,7 @@ msgid ""
 "\" rel=\"author\">%6$s</a></span></span>"
 msgstr ""
 
-#: ../content-image.php:47 ../inc/catchflames-functions.php:493
+#: ../content-image.php:47 ../inc/catchflames-functions.php:492
 #, php-format
 msgid "View all posts by %s"
 msgstr ""
@@ -329,50 +329,50 @@ msgid ""
 "in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:121
+#: ../inc/catchflames-functions.php:120
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:335 ../single.php:18
+#: ../inc/catchflames-functions.php:334 ../single.php:18
 msgid "Post navigation"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:343
+#: ../inc/catchflames-functions.php:342
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:344
+#: ../inc/catchflames-functions.php:343
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:423
+#: ../inc/catchflames-functions.php:422
 msgid "Pingback:"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:423
+#: ../inc/catchflames-functions.php:422
 msgid "(Edit)"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:438
+#: ../inc/catchflames-functions.php:437
 msgid "Post author"
 msgstr ""
 
 #. translators: 1: date, 2: time
-#: ../inc/catchflames-functions.php:444
+#: ../inc/catchflames-functions.php:443
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:450
+#: ../inc/catchflames-functions.php:449
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../inc/catchflames-functions.php:459
+#: ../inc/catchflames-functions.php:458
 msgid "Reply"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:487
+#: ../inc/catchflames-functions.php:486
 #, php-format
 msgid ""
 "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel="
@@ -382,107 +382,107 @@ msgid ""
 "\" rel=\"author\">%7$s</a></span></span>"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:588
+#: ../inc/catchflames-functions.php:587
 msgid "ID"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:734 ../inc/panel/theme-options.php:115
+#: ../inc/catchflames-functions.php:733 ../inc/panel/theme-options.php:115
 #: ../inc/panel/theme-options.php:842
 msgid "Facebook"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:739 ../inc/panel/theme-options.php:116
+#: ../inc/catchflames-functions.php:738 ../inc/panel/theme-options.php:116
 #: ../inc/panel/theme-options.php:850
 msgid "Twitter"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:744 ../inc/panel/theme-options.php:117
+#: ../inc/catchflames-functions.php:743 ../inc/panel/theme-options.php:117
 #: ../inc/panel/theme-options.php:858
 msgid "Google+"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:749 ../inc/panel/theme-options.php:890
+#: ../inc/catchflames-functions.php:748 ../inc/panel/theme-options.php:890
 msgid "Linkedin"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:754 ../inc/panel/theme-options.php:866
+#: ../inc/catchflames-functions.php:753 ../inc/panel/theme-options.php:866
 msgid "Pinterest"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:759
+#: ../inc/catchflames-functions.php:758
 msgid "YouTube"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:764 ../inc/panel/theme-options.php:882
+#: ../inc/catchflames-functions.php:763 ../inc/panel/theme-options.php:882
 msgid "Vimeo"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:769 ../inc/panel/theme-options.php:898
+#: ../inc/catchflames-functions.php:768 ../inc/panel/theme-options.php:898
 msgid "AIM"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:774 ../inc/panel/theme-options.php:906
+#: ../inc/catchflames-functions.php:773 ../inc/panel/theme-options.php:906
 msgid "MySpace"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:779 ../inc/panel/theme-options.php:915
+#: ../inc/catchflames-functions.php:778 ../inc/panel/theme-options.php:915
 msgid "Flickr"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:784 ../inc/panel/theme-options.php:923
+#: ../inc/catchflames-functions.php:783 ../inc/panel/theme-options.php:923
 msgid "Tumblr"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:789 ../inc/panel/theme-options.php:931
+#: ../inc/catchflames-functions.php:788 ../inc/panel/theme-options.php:931
 msgid "deviantART"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:794 ../inc/panel/theme-options.php:939
+#: ../inc/catchflames-functions.php:793 ../inc/panel/theme-options.php:939
 msgid "Dribbble"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:799 ../inc/panel/theme-options.php:948
+#: ../inc/catchflames-functions.php:798 ../inc/panel/theme-options.php:948
 msgid "WordPress"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:804 ../inc/panel/theme-options.php:956
+#: ../inc/catchflames-functions.php:803 ../inc/panel/theme-options.php:956
 msgid "RSS"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:809 ../inc/panel/theme-options.php:964
+#: ../inc/catchflames-functions.php:808 ../inc/panel/theme-options.php:964
 msgid "Slideshare"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:814 ../inc/panel/theme-options.php:972
+#: ../inc/catchflames-functions.php:813 ../inc/panel/theme-options.php:972
 msgid "Instagram"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:819 ../inc/panel/theme-options.php:980
+#: ../inc/catchflames-functions.php:818 ../inc/panel/theme-options.php:980
 msgid "Skype"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:824 ../inc/panel/theme-options.php:988
+#: ../inc/catchflames-functions.php:823 ../inc/panel/theme-options.php:988
 msgid "Soundcloud"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:829 ../inc/panel/theme-options.php:996
+#: ../inc/catchflames-functions.php:828 ../inc/panel/theme-options.php:996
 msgid "Email"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:834 ../inc/panel/theme-options.php:1004
+#: ../inc/catchflames-functions.php:833 ../inc/panel/theme-options.php:1004
 msgid "Contact"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:839 ../inc/panel/theme-options.php:1012
+#: ../inc/catchflames-functions.php:838 ../inc/panel/theme-options.php:1012
 msgid "Xing"
 msgstr ""
 
-#: ../inc/catchflames-functions.php:844
+#: ../inc/catchflames-functions.php:843
 msgid "SpecificFeeds"
 msgstr ""
 
-#: ../inc/catchflames-menus.php:46 ../inc/catchflames-menus.php:163
-#: ../inc/catchflames-menus.php:169
+#: ../inc/catchflames-menus.php:46 ../inc/catchflames-menus.php:162
+#: ../inc/catchflames-menus.php:168
 msgid "Menu"
 msgstr ""
 
@@ -490,21 +490,21 @@ msgstr ""
 msgid "Connect"
 msgstr ""
 
-#: ../inc/catchflames-menus.php:63
+#: ../inc/catchflames-menus.php:62
 #: ../inc/panel/catchflames-themeoptions-defaults.php:76 ../searchform.php:17
 #: ../searchform.php:19
 msgid "Search"
 msgstr ""
 
-#: ../inc/catchflames-menus.php:112
+#: ../inc/catchflames-menus.php:111
 msgid "Primary menu"
 msgstr ""
 
-#: ../inc/catchflames-menus.php:114
+#: ../inc/catchflames-menus.php:113
 msgid "Skip to primary content"
 msgstr ""
 
-#: ../inc/catchflames-menus.php:115
+#: ../inc/catchflames-menus.php:114
 msgid "Skip to secondary content"
 msgstr ""
 

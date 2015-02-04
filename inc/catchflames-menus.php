@@ -51,20 +51,19 @@ function catchflames_header_top_menu() {
             <?php echo $headerimage; ?>
             <div id="header-extra">
             	
-                <a class="genericon genericon-link" id="header-social-toggle" href="#header-social">
-                    <span class="displaynone"><?php _e( 'Connect', 'catchflames' );?></span>
-                </a>
+                <div id="header-social-toggle" class="genericon genericon-link">
+                    <a class="assistive-text" href="#header-social-toggle"><?php _e( 'Connect', 'catchflames' );?></a>
+             	</div>
                 <div id="header-social" class="displaynone">
                    <?php catchflames_social_networks(); ?>
                 </div><!-- #header-social -->
            
-           
-                <a class="genericon genericon-search" id="header-search-toggle" href="#header-search">
-                    <span class="displaynone"><?php _e( 'Search', 'catchflames' );?></span>
-                </a>
+                <div id="header-search-toggle" class="genericon genericon-search">
+                	<a class="assistive-text" href="#header-search-toggle"><?php _e( 'Search', 'catchflames' );?></a>
+              	</div>
                 <div id="header-search" class="displaynone">
-                    <?php get_search_form(); ?> 
-                </div>
+                    <?php get_search_form(); ?>
+                </div><!-- #header-search -->
               	   
             </div>           
             

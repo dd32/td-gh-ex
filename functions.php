@@ -224,7 +224,7 @@ require( get_template_directory() . '/inc/catchflames-custom-header.php' );
 /**
  * Adds support for WooCommerce Plugin
  */
-if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+if ( class_exists( 'woocommerce' ) ) { 
 	add_theme_support( 'woocommerce' );	
     require( get_template_directory() . '/inc/catchflames-woocommerce.php' );
 }

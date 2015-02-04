@@ -50,16 +50,15 @@ function catchflames_scripts_method() {
 	/**
 	 * Loads up Waypoint script
 	 */
-	wp_register_script( 'waypoint', get_template_directory_uri() . '/js/waypoints.min.js', array( 'jquery' ), '2.0.5', true );
-	if ( !empty( $options['enable_header_top'] ) ) : 
-		wp_enqueue_script( 'waypoint' );
-	endif; 
-	
+	wp_register_script( 'jquery-waypoint', get_template_directory_uri() . '/js/jquery.waypoints.min.js', array( 'jquery' ), '3.1.1', true );
+	if ( '1' == $options['enable_header_top'] || '1' != $options['disable_scrollup'] ) :
+		wp_enqueue_script( 'jquery-waypoint' );
+	endif;
+
 	/**
 	 * Loads up Custom script
 	 */
-	wp_enqueue_script( 'catchflames-custom', get_template_directory_uri() . '/js/catchflames-custom.min.js', array( 'jquery' ), '20140823', false );	
-	
+	wp_enqueue_script( 'catchflames-custom', get_template_directory_uri() . '/js/catchflames-custom.min.js', array( 'jquery' ), '20140823', true );	
 	
 	//Browser Specific Enqueue Script i.e. for IE 1-6
 	$catchflames_ua = strtolower($_SERVER['HTTP_USER_AGENT']);
