@@ -1,53 +1,54 @@
-<?php  
-/**
- * Page Template
- * @file           Page.php
- * @package        Appointment
- * @author         webriti
- * @copyright      2014 Appointment
- * @license        license.txt
- * @filesource     wp-content/themes/appoinment/page.php
- */
+<?php
 get_header();
-get_template_part('orange','header');
-?>
-<!-- /Header Strip -->
-<!-- Main_area -->
-<div class="container">
-		<div class="row-fluid">
-		<div class="span12 main_space">
-			<!-- Main_content -->
-			<div class="span8 appo_main_content">
-			
-				<div class="row-fluid appo_blog_post">
-					<?php  the_post(); ?>
-					<h3 class="main_title"><a class="blog_title-anchor" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-					<?php $defalt_arg =array('class' => "img-polaroid" )?>
-					<?php if(has_post_thumbnail()):?>
-					<div class="blog_img">
-					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('', $defalt_arg); ?></a>
+get_template_part('index','banner'); ?>
+<!-- Blog Section with Sidebar -->
+<div class="blog-section-lg">
+	<div class="container">
+		<div class="row">
+		
+			<!-- Blog Area -->
+			<div class="<?php appointment_post_layout_class(); ?>" >
+			<?php if( have_posts()) :  the_post(); ?>		
+			<div class="blog-lg-area-left">
+					<div class="media">						
+						<aside class="blog-post-date-area">
+							<div class="date"><?php echo get_the_date('j'); ?> <div class="month-year"><?php echo get_the_date('M'); ?></div></div>
+							<div class="comment"><a href="<?php the_permalink(); ?>"><i class="fa fa-comments"></i><?php comments_number( '', 'o', '%' ); ?></a></div>
+						</aside>
+						<div class="media-body">
+							<?php if ( has_post_thumbnail()) : ?>
+							<div class="blog-lg-box">
+								<a class ="img-responsive" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+								<?php appointment_image_thumbnail('blog-area-full','img-responsive'); ?>
+								</a>
+							</div>
+						<?php endif; ?> 
+							<div class="blog-post-lg">
+								<?php echo get_avatar( get_the_author_meta('user_email'), $size = '40'); ?><?php _e('By','appointment');?><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) );?>"><?php the_author();?></a>
+							<?php 	$tag_list = get_the_tag_list();
+								if(!empty($tag_list)) { ?>
+								<div class="blog-tags-lg"><i class="fa fa-tags"></i><?php the_tags('', ', ', ''); ?></div>
+								<?php } ?>
+							</div>
+							<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+							<p> <?php the_content( __( 'Read More' , 'appointment' ) ); ?></p>
+							<?php wp_link_pages( ); ?>
+							<div class="blog-btn-area-lg"><a class=""></a></div>
+						</div>
 					</div>
-					<?php endif;?>
-					<!-- <img src="images/large.jpg"> -->
-					<div class="app-page-content">
-					<p><?php the_content(); ?></p>			
-					</div>
-					<?php if(wp_link_pages(array('echo'=>0))):?>
-                    <div class="pagination_blog">
-					<ul class="page-numbers"><?php 
-					 $args=array('before' => '<li>'.__('Pages:','appointment'),'after' => '</li>');
-					 wp_link_pages($args); ?>
-					</ul>
-					</div>
-					<?php endif; ?>				    
 				</div>
-				<div class="row-fluid comment_mn">
-				<?php comments_template( '', true );?>
-				</div>
+				<?php endif; ?>
+				<?php comments_template( '', true ); // show comments ?>
 			</div>
-			<?php get_sidebar(); ?>
-			<!-- /Sidebar -->
+			<!-- /Blog Area -->			
+			
+			<!--Sidebar Area-->
+			<div class="col-md-4">
+				<?php get_sidebar(); ?>
+			</div>
+			<!--Sidebar Area-->
 		</div>
 	</div>
 </div>
+<!-- /Blog Section with Sidebar -->
 <?php get_footer(); ?>

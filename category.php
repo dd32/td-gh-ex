@@ -1,69 +1,55 @@
-<?php 
-/**
- * Category Template
- *
- *
- * @file           category.php
- * @package        Appointment
- * @author         webriti
- * @copyright      2014 Appointment
- * @license        license.txt
- * @filesource     wp-content/themes/appoinment/category.php
- */
-
-get_header(); 
-get_template_part('orange','header');
-?>
-<div class="container">
-	<div class="row-fluid">
-	<div class="span12 main_space">
-		<div class="span8 appo_main_content">
-            <div class="row-fluid appo_blog_post"> 
-             <h3 class="main_title">
-               	<?php  _e( "Category  Archives : ", 'appointment' ); echo single_cat_title( '', false ); ?>
-             </h3><!--page_blog_row_mn-->
-            </div>
-            <?php    while(have_posts()): the_post();?>
-			<h3>
-			<a class="blog_title-anchor" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?>
-			</a>
-			</h3>
-				<ul class="the-icons clearfix">
-				<li><i class="icon-calendar"></i> <?php the_time('M j,Y');?></li>
-				<li><i class="icon-comment"></i>  <?php  comments_popup_link( __( 'Leave a comment', 'appointment' ),__( '1 Comment', 'appointment' ), __( 'Comments', 'appointment' ),'name' ); ?></li>
-				<li><i class="icon-edit"></i><?php edit_post_link( __( 'Edit', 'appointment' ), '<span class="meta-sep"></span> <span class="name">', '</span>' ); ?></li>
-				<li><i class="icon-ok-circle">  </i><?php the_category(); ?></li>
-				</ul>
-				<?php if(has_post_thumbnail()):?>					
-				<div class="blog_img">
-				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-				<?php the_post_thumbnail('large',array('class' => 'img-polaroid'));?>
-				</a>
+<?php
+  get_header(); ?>
+<!-- Page Title Section -->
+<div class="page-title-section">		
+	<div class="overlay">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="page-title"><h1><?php echo single_cat_title("", false); ?></h1></div>
 				</div>
-				<?php endif;?>					
-				<p><?php  the_excerpt(); ?></p>
-				<?php if(wp_link_pages(array('echo'=>0))):?>
-				<div class="pagination"><ul><?php 
-				 $args=array('before' => '<li>'.__('Pages:','appointment'),'after' => '</li>');
-				 wp_link_pages($args); ?></ul>
-                </div><!--pagination_blog-->
-				 <?php endif;?>
-				<div class="blog_bot_mn">
-				<button class="btn appo_btn" type="button">	<a href="<?php the_permalink(); ?>" class="blog_rdmore"> <?php _e('Read More','appointment'); ?> </a></button>
-				<p class="tag-element"> <?php the_tags('<b>'.__('Tags:','appointment').'</b>','');?> 
-				</p>
-				</div><!--blog_bot_mn-->
-				<?php endwhile;?>		 
-				<div class="pagination">	
-					<ul>
-					<li><?php previous_posts_link(); ?></li>
-					<li><?php next_posts_link(); ?></li>
+				<div class="col-md-6">
+					<ul class="page-breadcrumb">
+						<?php if (function_exists('qt_custom_breadcrumbs')) qt_custom_breadcrumbs();?>
 					</ul>
 				</div>
-        </div>
-			<?php get_sidebar();?>
+			</div>
+		</div>	
 	</div>
 </div>
-</div><!--blog_right_bg_mn_con-->
-<!--page_wi-->
-<?php get_footer();?>
+<!-- /Page Title Section -->
+<!-- Page Seperator --><div class="page-seperator"></div><!-- /Page Seperator -->
+<div class="clearfix"></div>
+<!-- /Page Title Section ---->
+<div class="blog-section-lg">
+	<div class="container">
+		<div class="row">
+			<!-- Blog Area -->
+			<div class="<?php appointment_post_layout_class(); ?>" >
+			<?php 
+		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1 ;
+		$category_id = get_query_var('cat');
+		$args = array( 'post_type' => 'post','cat' => $category_id ,'paged' => $paged );
+		$loop = new WP_Query( $args );
+		if( have_posts() ) :
+		 while( $loop->have_posts() ) : $loop->the_post(); ?>
+				<?php get_template_part('content','')?>
+		</div>		
+				<?php endwhile; ?>
+				<?php endif; ?>
+			<!-- Blog Pagination -->
+				<div class="blog-pagination-square">
+					<?php previous_posts_link( __('Previous','appointment') ); ?>
+					<?php next_posts_link( __('Next','appointment') ); ?> 
+				</div>
+			<!-- /Blog Pagination -->
+			</div>
+			<!--Sidebar Area-->
+			<div class="col-md-4">
+				<?php get_sidebar(); ?>
+			</div>
+			<!--Sidebar Area-->
+		</div>
+	</div>
+</div>
+<?php get_footer(); ?>

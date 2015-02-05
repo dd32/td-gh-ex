@@ -1,50 +1,38 @@
-<?php 
-/**
- * Index.php 
- * @file           index.php
- * @package        Appointment
- * @author         webriti
- * @copyright      2014 Appointment
- * @license        license.txt
- * @filesource     wp-content/themes/appoinment/index.php
- */
-	get_header();
-	get_template_part('orange','header');
-?><!-- Main_area -->
-<div class="container">
-	<div class="row-fluid">
-	<div class="span12 main_space">
-<!-- Main_content -->
-	<div class="span8 appo_main_content"> 
-		<?php if (have_posts()) : 
-		while (have_posts()) : the_post(); ?>
-		<div class="row-fluid appo_blog">
-			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>       
-				<h3 class="main_title"><a class="blog_title-anchor" href="<?php the_permalink(); ?>"><?php the_title();?>
-				<?php  echo  get_template_part( 'post-meta-page' ); ?>	</a></h3>
-				<?php if ( has_post_thumbnail()) : ?>
-				<div class="blog_img">
-				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-				<?php the_post_thumbnail(); ?>
-				</a>
-				</div>
-				<?php endif; ?>				
-				<p><?php the_content(); ?></p>
+<?php
+get_header();
+get_template_part('index','banner'); ?>
+<!-- Blog Section with Sidebar -->
+<div class="blog-section-lg">
+	<div class="container">
+		<div class="row">
+		
+			<!-- Blog Area -->
+			<div class="<?php appointment_post_layout_class(); ?>" >
+			<?php
+					$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+					$args = array( 'post_type' => 'post','paged'=>$paged);		
+					$post_type_data = new WP_Query( $args );
+					while($post_type_data->have_posts()){
+					$post_type_data->the_post();
+					global $more;
+					$more = 0;
+					?>		
+			<?php get_template_part('content',''); ?>
 			</div>
-			<?php comments_template( '', true );?>
+				<?php } ?>
+				<div class="blog-pagination-square">
+					<?php previous_posts_link( __('Previous','appointment') ); ?>
+					<?php next_posts_link( __('Next','appointment') ); ?> 
+				</div>
+			</div>
+			<!-- /Blog Area -->			
+			<!--Sidebar Area-->
+			<div class="col-md-4">
+				<?php get_sidebar(); ?>
+			</div>
+			<!--Sidebar Area-->
 		</div>
-		<?php endwhile; ?>
-		<div class="pagination">	
-				<ul>
-				<li><?php previous_posts_link(); ?></li>
-				<li><?php next_posts_link(); ?></li>
-				</ul>
-		</div>
-	<?php endif;?>
-	</div><!--appo_main_content-->
-<!-- sidebar section -->
-	<?php get_sidebar();?>  
 	</div>
 </div>
-</div>
+<!-- /Blog Section with Sidebar -->
 <?php get_footer(); ?>

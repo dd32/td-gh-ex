@@ -1,74 +1,93 @@
-<?php
-/**
- * Comments Template
- * @file           comments.php
- * @package        Appointment
- * @author         webriti
- * @copyright      2014 Appointment
- * @license        license.txt
- * @filesource     wp-content/themes/appoinment/comments.php
- */
-?>
 <?php if ( post_password_required() ) : ?>
-		<p class="nopassword">
-		<?php _e( 'This post is password protected. Enter the password to view any comments.', 'appointment' ); ?>
-		</p>
-<?php return;endif;?>
-        <?php if ( have_comments() ) : ?>
-		<div class="row-fluid comment_mn">
-		
-			<?php   printf( _n( '<p id="comment_apt">One thought on &ldquo;%2$s&rdquo;', '<p id="comment_apt">%1$s thoughts on &ldquo;%2$s&rdquo;</p>', get_comments_number(), 'appointment' ),
-		number_format_i18n( get_comments_number() ),  get_the_title()  );?>
-		
-			<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :  ?>
-			<nav id="comment-nav-above">
-				<h1 class="assistive-text"><?php _e( 'Comment navigation', 'appointment' ); ?></h1>
-				<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'appointment' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'appointment' ) ); ?></div>
-			</nav>
-			<?php endif;  ?>
-		<?php wp_list_comments( array( 'callback' => 'appointment_comment' ) );?>
-		
-		</div><!-- comment_mn -->
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
+	<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'appointment' ); ?></p>
+<?php return; endif; 
+		// code for comment
+		if ( ! function_exists( 'appointment_comment' ) ) {
+		function appointment_comment( $comment, $args, $depth ) 
+		{
+		$GLOBALS['comment'] = $comment;
+		//get theme data
+		global $comment_data;
+		//translations
+		$leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['translation_reply_to_coment'] : __('Reply','appointment');
+	?>	
+	
+		<div <?php comment_class('media comment-box'); ?> id="comment-<?php comment_ID(); ?>">
+			<a class="pull-left-comment" href="<?php the_author_meta('user_url'); ?>">
+			<?php echo get_avatar( $comment , 70); ?>		
+			</a>
+			<div class="media-body">
+				<div class="comment-detail">
+					<div class="reply">
+						<?php comment_reply_link(array_merge( $args, array('reply_text' => $leave_reply,'depth' => $depth, 'max_depth' => $args['max_depth'], 'per_page' => $args['per_page']))) ?>
+					</div>
+					<h4 class="comment-detail-title"><?php comment_author(); ?><span class="comment-date"><a href="<?php echo get_comment_link( $comment->comment_ID );?>"><?php _e('Posted on &nbsp;', 'appointment'); ?><?php echo comment_time('g:i a'); ?><?php echo " - "; echo comment_date('M j, Y');?></a></span></h4>
+					<p><?php comment_text(); ?></p>
+					<?php edit_comment_link( __( 'Edit', 'appointment' ), '<p class="edit-link">', '</p>' ); ?>
+					
+					<?php if ( $comment->comment_approved == '0' ) : ?>
+					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'appointment' ); ?></em>
+					<br/>
+					<?php endif; ?>
+				
+				</div>
+			</div>
+		</div>
+	<?php } }// end of appointment_comment function 
+	if ( have_comments() ) { ?>
+
+<div class="comment-section">
+	<div class="comment-title"><h3></i> <?php comments_number ( __('No Comments so far','appointment'), __( '1 Comment so far','appointment'), __('% Comments so far','appointment') ); ?> </h3>
+	</div>
+	<?php wp_list_comments( array( 'callback' => 'appointment_comment' ) ); ?>
+</div> <!---comment_section--->
+
+<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) { ?>
 		<nav id="comment-nav-below">
 			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'appointment' ); ?></h1>
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'appointment' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'appointment' ) ); ?></div>
 		</nav>
-		<?php endif; 
-		elseif ( ! comments_open() /* &&  ! is_page() */  && post_type_supports( get_post_type(), 'comments' ) ) :
-		  // echo "comments are closed.";
+		<?php }  
+		if ( ! comments_open() && get_comments_number() ) : ?>
+		<p class="nocomments"><?php _e( 'Comments are closed.' , 'appointment' ); ?></p>
+		<?php endif; } ?>
+	<?php if ('open' == $post->comment_status) { ?>
+	<?php if ( get_option('comment_registration') && !$user_ID ) { ?>
+<p><?php _e("You must be",'appointment'); ?> <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>"><?php _e('logged in','appointment')?></a> <?php _e("to post a comment",'appointment'); ?>
+</p>
+<?php } else { 
 ?>
-<?php endif; ?>
-<?php if ('open' == $post->comment_status) : ?>
-<?php if ( get_option('comment_registration') && !$user_ID ) : ?>
-<p><?php _e('You must be','appointment' );?><a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>"><?php _e('logged in','appointment' );?></a><?php _e('to post a comment.','appointment' );?></p>
-<?php else : ?>
-<div class="span12 comment_form">
-	<?php
- 
-	$fields=array(
-    'author' => '<input class="input-xlarge" type="text" value="" placeholder="Your name" tabindex="1" />',
-    'email'  => '<input class="input-xlarge" type="text" placeholder="Email Id">',
-    );
- 
- function my_fields($fields) {
-	return $fields;
-}
-add_filter('comment_form_default_fields','my_fields');
- 
-	$defaults = array(
-     'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
-   'comment_field'        => '<textarea class="input-xxxlarge" id="comment" name="comment" type="text" placeholder="Message" rows="3"></textarea>',
- 
-   'logged_in_as' => '<p class="logged-in-as">' . __( "Logged in as ",'appointment' ).'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'. '<a href="'. wp_logout_url( get_permalink() ).'" title="Log out of this account">'.__(" Log out?",'appointment').'</a>' . '</p>',
-   'comment_notes_after'  => '<dl class="">',
-    'id_form'              => 'commentform',
-    'id_submit'            => 'appo-form-post',
-);
-comment_form($defaults);
-?>
-</div><!-- leave_comment_mn -->
-<?php endif; // If registration required and not logged in ?>
-<?php endif;  ?>
+<div class="comment-form-section">
+
+	<?php  
+	 $fields=array(
+		'author' => ' <div class="blog-form-group"><input class="blog-form-control" name="author" id="author" value="" type="name" placeholder="'.__('Name:','appointment').'" /></div>',
+		'email' => '<div class="blog-form-group"><input class="blog-form-control" name="email" id="email" value=""   type="email" placeholder="'.__('Email:','appointment').'" /></div>',
+		);
+		function appointment_fields($fields) { 
+			return $fields;
+		}
+		add_filter('comment_form_default_fields','appointment_fields');
+			$defaults = array(
+			'fields'=> apply_filters( 'comment_form_default_fields', $fields ),
+			'comment_field'=> '<div class="blog-form-group-textarea" >
+			<textarea id="comments" rows="7" class="blog-form-control-textarea" name="comment" type="text" placeholder="'.__('Message:','appointment').'"></textarea></div>',		
+			'logged_in_as' => '<p class="blog-post-info-detail">' . __( "Logged in as ",'appointment' ).'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'. '<a href="'. wp_logout_url( get_permalink() ).'" title="'.__('Log out of this Account','appointment').'">'.__(" Log out?",'appointment').'</a>' . '</p>',
+			'id_submit'=> 'blogdetail-btn',
+			'label_submit'=>__( 'Send Message','appointment'),
+			'comment_notes_after'=> '',
+			'comment_notes_before' => '',
+			'title_reply'=> '<div class="comment-title"><h3>'.__('Leave a Reply', 'appointment').'</h3></div>',
+			'id_form'=> 'commentform'
+			);
+			ob_start();
+			comment_form($defaults);
+			echo str_replace('class="comment-form"','class="form-inline"',ob_get_clean());
+		
+	?>
+</div>	
+<?php } } ?>
+<?php if ( ! comments_open() && ! is_page() ) : 
+        _e("Comments Are Closed!!!",'innovation');?>
+	<?php endif; ?>

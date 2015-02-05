@@ -1,27 +1,18 @@
-<?php
-/**
- * 404 Template
- * @file           404.php
- * @package        Appointment
- * @author         webriti
- * @copyright      2014 Appointment
- * @license        license.txt
- * @filesource     wp-content/themes/appoinment/404.php
- */
-get_header();
-get_template_part('orange','header');
-?><div class="container">
-	<div class="_blank"></div>
-		<!--- Main ---> 
-		<div class="row-fluid">
-		<div class="span8"  >
-				<h2 class="blog-detail-head"><?php _e( 'Unfortunately, the page you tried accessing could not be retrieved. ', 'sis_spa' ); ?></h2>
-					 <div class="blog_content"><p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'sis_spa' ); ?></p></div>
-					<?php get_search_form(); ?>
-				<!-- .entry-content -->
-		</div>
-		<?php get_sidebar (); ?>
-		</div><!-- #content -->
-	</div><!-- #primary -->
-		<div class="_blank"></div>	<div class="_blank"></div>	<div class="_blank"></div>	<div class="_blank"></div>
+<?php get_header();
+get_template_part('index','banner'); ?>
+<div class="error-section">		
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="error-404">
+					<div class="text-center"><i class="fa fa-bug"></i></div>
+					<h1><?php _e('404','appointment'); ?></h1>
+					<h4><?php _e('Oops! Page not found','appointment'); ?></h4>
+					<p><?php _e('We`re sorry, but the page you are looking for doesn`t exist.','appointment'); ?></p>
+					<div class="error-btn-area"><a href="<?php echo esc_html(site_url());?>" class="error-btn"><?php _e('Go Back','elitepress'); ?></a></div>
+				</div>
+			</div>
+		</div>			
+	</div>
+</div>
 <?php get_footer(); ?>

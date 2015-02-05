@@ -61,7 +61,26 @@ Support
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
+Appointment WordPress Theme bundles the following third-party resources:
+
+Screenshot Image
+URL: http://pixabay.com/en/entrepreneur-startup-start-up-man-593362/
+Source:http://pixabay.com
+LIcense: CC0 Public Domain
+
+Page Header Image
+URL: http://pixabay.com/en/home-office-workstation-office-336377/
+Source:http://pixabay.com
+LIcense: CC0 Public Domain
+
+# --- EOF --- #
 ============================Change Log================================
+@version 1.4.8
+1. Improved Blog page Styling.
+2. Add Full-width page
+3. Add 404 page.
+4. Add Social Link header and Footer.
+5. Add Option panel to use Add favicon,logo,custom css,Social link setting,Meta Setting and Footer Copyright Setting.
 @Version: 1.4.7
 1.Small Bug fixed.
 @Version: 1.4.6

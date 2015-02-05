@@ -1,52 +1,78 @@
-<?php  
-/**
- * Single Template
- * @file           single.php
- * @package        Appointment
- * @author         webriti
- * @copyright      2014 Appointment
- * @license        license.txt
- * @filesource     wp-content/themes/appoinment/single.php
- */
+<?php
 get_header();
-get_template_part('orange','header');
-?><!-- /Header Strip -->
-<!-- Main_area -->
-<div class="container">
-		<div class="row-fluid">
-		<div class="span12 main_space">
-			<!-- Main_content -->
-			<div class="span8 appo_main_content">
-			
-				<div class="row-fluid appo_blog_post">
-					<?php  the_post(); ?>
-					<h3 class="main_title"><a class="blog_title-anchor" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-					<?php $defalt_arg =array('class' => "img-polaroid" )?>
-					<?php if(has_post_thumbnail()):?>
-					<div class="blog_img">
-					<a href="<?php the_permalink(); ?>"title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('', $defalt_arg); ?></a>
-					</div>
-					<?php endif;?>
-					<!-- <img src="images/large.jpg"> -->
-					<div class="app-page-content">
-					<p><?php the_content(); ?></p>
-					</div>
-					<?php if(wp_link_pages(array('echo'=>0))):?>
-                    <div class="pagination_blog">
-					<ul class="page-numbers"><?php 
-					 $args=array('before' => '<li>'.__('Pages:','appointment'),'after' => '</li>');
-					 wp_link_pages($args); ?>
-					</ul>
-					</div>
-					 <?php endif; ?>				    
-				</div>
-				<div class="row-fluid comment_mn">
-				<?php comments_template( '', true );?>
-				</div>
+get_template_part('index','banner'); ?>
+<!-- Blog Section Right Sidebar -->
+<div class="blog-section-lg">
+	<div class="container">
+		<div class="row">
+		
+			<!-- Blog Area -->
+			<div class="<?php appointment_post_layout_class(); ?>" >
+			<?php
+		if(have_posts())
+		{
+		while(have_posts()) { the_post();
+		get_template_part('content',''); ?>
 			</div>
-			<!-- Sidebar -->
-			<?php get_sidebar(); ?>
-			<!-- /Sidebar -->
+				<!--Blog Author-->
+				<div class="comment-title"><h3><?php _e('About the Author','appointment'); ?></h3></div>
+				<div class="blog-author">
+					<div class="media">
+						<div class="pull-left">
+							<?php echo get_avatar( get_the_author_meta( 'ID') , 94); ?>
+						</div>
+						<div class="media-body">
+							<h2> <?php the_author(); ?> <span> <?php $user = new WP_User( get_the_author_meta( 'ID' ) ); echo $user->roles[0];?> </span></h2>
+							<p><?php the_author_meta( 'description' ); //the_author_description(); ?> </p>
+							<ul class="blog-author-social">
+							   <?php			
+				$google_profile = get_the_author_meta( 'google_profile' );
+				if ( $google_profile && $google_profile != '' ) {
+					echo '<li class="googleplus"><a href="' . esc_url($google_profile) . '" rel="author"><i class="fa fa-google-plus"></i></a></li>';
+				}
+								
+				$twitter_profile = get_the_author_meta( 'twitter_profile' );
+				if ( $twitter_profile && $twitter_profile != '' ) {
+					echo '<li class="twitter"><a href="' . esc_url($twitter_profile) . '"><i class="fa fa-twitter"></i></a></li>';
+				}
+								
+				$facebook_profile = get_the_author_meta( 'facebook_profile' );
+				if ( $facebook_profile && $facebook_profile != '' ) {
+					echo '<li class="facebook"><a href="' . esc_url($facebook_profile) . '"><i class="fa fa-facebook"></i></a></li>';
+				}
+								
+				$linkedin_profile = get_the_author_meta( 'linkedin_profile' );
+				if ( $linkedin_profile && $linkedin_profile != '' ) {
+					   echo '<li class="linkedin"><a href="' . esc_url($linkedin_profile) . '"><i class="fa fa-linkedin"></i></a></li>';
+				}
+				$skype_profile = get_the_author_meta( 'skype_profile' );
+				if ( $skype_profile && $skype_profile != '' ) {
+					   echo '<li class="skype"><a href="' . esc_url($skype_profile) . '"><i class="fa fa-skype"></i></a></li>';
+				}
+				?>
+							</ul>
+						</div>
+					</div>	
+				</div>
+			<div class="blog-pagination-square">
+					<?php previous_posts_link( __('Previous','appointment') ); ?>
+					<?php next_posts_link( __('Next','appointment') ); ?> 
+			</div>	
+				<!--/Blog Author-->
+				<?php } ?>
+			<?php comments_template('',true); ?>	
+				<?php } ?>	
+				</div>
+			<!-- /Blog Area -->			
+			
+			<!--Sidebar Area-->
+			<div class="col-md-4">
+			<?php get_sidebar(); ?>	
+			</div>
+			<!--Sidebar Area-->
+			
 		</div>
-		</div>
-</div><?php get_footer(); ?>
+	</div>
+</div>
+<!-- /Blog Section Right Sidebar -->
+<?php get_footer(); ?>
