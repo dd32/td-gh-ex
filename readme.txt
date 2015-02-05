@@ -52,6 +52,14 @@ Pinnacle Theme Uses:
 
 = Theme Name: Pinnacle =
 
+= Version 1.1.9 = 
+* Update two strings with correct WordPress
+* Update notice of woocmmerce and pinnacle toolkit in the theme options
+* Update CSS validator with jetpacks solution.
+* Update Theme Options perissions to "edit_theme_options"
+* Update a few css styles for mobile.
+* Update the woocommerce ajax function.
+
 = Version 1.1.8 = 
 * remove some code per theme review request.
 

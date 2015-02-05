@@ -1003,7 +1003,7 @@ $this->sections[] = array(
     'icon' => 'icon-shopping-cart',
     'icon_class' => 'icon-large',
     'title' => __('Shop Settings', 'pinnacle'),
-    'desc' => "<div class='redux-info-field'><h3>".__('Shop Archive Page Settings', 'pinnacle')."</h3></div>",
+    'desc' => "<div class='redux-info-field'><h3>".__('Shop Archive Page Settings (Woocommerce plugin required)', 'pinnacle')."</h3></div>",
     'fields' => array(
       array(
             'id'=>'product_shop_layout',
@@ -1160,7 +1160,7 @@ $this->sections[] = array(
     'icon' => 'icon-barcode',
     'icon_class' => 'icon-large',
     'title' => __('Product Settings', 'pinnacle'),
-    'desc' => "<div class='redux-info-field'><h3>".__('Single Product Page Header', 'pinnacle')."</h3></div>",
+    'desc' => "<div class='redux-info-field'><h3>".__('Single Product Page Header (Woocommerce plugin required)', 'pinnacle')."</h3></div>",
     'fields' => array(
            array(
             'id'=>'default_showproducttitle',
@@ -1217,7 +1217,7 @@ $this->sections[] = array(
     'icon' => 'icon-camera-retro',
     'icon_class' => 'icon-large',
     'title' => __('Portfolio Options', 'pinnacle'),
-    'desc' => "<div class='redux-info-field'><h3>".__('Portfolio Options', 'pinnacle')."</h3></div>",
+    'desc' => "<div class='redux-info-field'><h3>".__('Portfolio Options (Pinnacle Toolkit plugin required)', 'pinnacle')."</h3></div>",
     'fields' => array(
         array(
             'id'=>'portfolio_comments',
@@ -2105,12 +2105,12 @@ $this->sections[] = array(
         array(
             'id'=>'info_wpgallerys',
             'type' => 'info',
-            'desc' => __('Wordpress Galleries', 'pinnacle'),
+            'desc' => __('WordPress Galleries', 'pinnacle'),
             ),
         array(
             'id'=>'pinnacle_gallery',
             'type' => 'switch', 
-            'title' => __('Enable Pinnacle Galleries to override Wordpress', 'pinnacle'),
+            'title' => __('Enable Pinnacle Galleries to override WordPress', 'pinnacle'),
             'subtitle' => __('You must have virtue/pinnacle toolkit installed to use.', 'pinnacle'),
             "default" => 1,
             ),
@@ -2138,6 +2138,7 @@ $this->sections[] = array(
             'dev_mode' => false,
             'update_notice' => false,
             'customizer' => false,
+            'page_permissions' => 'edit_theme_options',
             'dev_mode_icon_class' => 'icon-large',
             'opt_name' => 'pinnacle',
             'system_info_icon_class' => 'icon-large',

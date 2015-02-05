@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pinnacle Premium\n"
-"POT-Creation-Date: 2014-12-20 21:49-0700\n"
-"PO-Revision-Date: 2014-12-20 21:52-0700\n"
+"POT-Creation-Date: 2015-02-05 00:44-0700\n"
+"PO-Revision-Date: 2015-02-05 00:47-0700\n"
 "Last-Translator: Victor Debone <victor@debone.com.br>\n"
 "Language-Team: Victor Debone <victor@debone.com.br>\n"
 "Language: pt_BR\n"
@@ -2066,7 +2066,8 @@ msgid "Shop Settings"
 msgstr "Opções da Loja"
 
 #: ../themeoptions/theme_options.php:1006
-msgid "Shop Archive Page Settings"
+#, fuzzy
+msgid "Shop Archive Page Settings (Woocommerce plugin required)"
 msgstr "Opções da página de arquivo da loja"
 
 #: ../themeoptions/theme_options.php:1011
@@ -2216,7 +2217,7 @@ msgstr "Opções da Página do Produto"
 
 #: ../themeoptions/theme_options.php:1163
 #, fuzzy
-msgid "Single Product Page Header"
+msgid "Single Product Page Header (Woocommerce plugin required)"
 msgstr "Layout do Produto"
 
 #: ../themeoptions/theme_options.php:1168
@@ -2290,9 +2291,12 @@ msgid "This determines related products are displayed"
 msgstr "Isso determina se os produtos relacionados são mostrados"
 
 #: ../themeoptions/theme_options.php:1219
-#: ../themeoptions/theme_options.php:1220
 msgid "Portfolio Options"
 msgstr "Opções do Portfólio"
+
+#: ../themeoptions/theme_options.php:1220
+msgid "Portfolio Options (Pinnacle Toolkit plugin required)"
+msgstr ""
 
 #: ../themeoptions/theme_options.php:1225
 msgid "Allow Comments on Portfolio Posts"
@@ -2946,12 +2950,13 @@ msgid "Extra Sidebar"
 msgstr "Barra lateral extra"
 
 #: ../themeoptions/theme_options.php:2108
-msgid "Wordpress Galleries"
+#, fuzzy
+msgid "WordPress Galleries"
 msgstr "Galerias Wordpress"
 
 #: ../themeoptions/theme_options.php:2113
 #, fuzzy
-msgid "Enable Pinnacle Galleries to override Wordpress"
+msgid "Enable Pinnacle Galleries to override WordPress"
 msgstr "Habilitar as Galerias do Virtue sobrescreverem a do WordPress"
 
 #: ../themeoptions/theme_options.php:2114
@@ -2972,12 +2977,12 @@ msgid "Quickly add some CSS to your theme by adding it to this block."
 msgstr ""
 "Adicione rapidamente algum CSS para o seu tema adicionando ele nesse bloco."
 
-#: ../themeoptions/theme_options.php:2148
 #: ../themeoptions/theme_options.php:2149
+#: ../themeoptions/theme_options.php:2150
 msgid "Theme Options"
 msgstr "Opções do Tema"
 
-#: ../themeoptions/theme_options.php:2156
+#: ../themeoptions/theme_options.php:2157
 #, fuzzy
 msgid ""
 "Thank you for using the Pinnacle Theme by <a href=\"http://kadencethemes.com/"
@@ -3007,6 +3012,11 @@ msgstr "Descrição da Página"
 #: ../woocommerce/single-product/add-to-cart/variable.php:105
 msgid "This product is currently out of stock and unavailable."
 msgstr ""
+
+#: ../woocommerce/single-product/product-image.php:51
+#, fuzzy
+msgid "Placeholder"
+msgstr "Procurar Texto Placeholder"
 
 #~ msgid "Add/Edit Gallery"
 #~ msgstr "Adicionar/Editar Galeria"
@@ -5135,9 +5145,6 @@ msgstr ""
 
 #~ msgid "Quick Language Settings"
 #~ msgstr "Opções Rápidas de Língua"
-
-#~ msgid "Search Placeholder Text"
-#~ msgstr "Procurar Texto Placeholder"
 
 #~ msgid "Standard: Search\""
 #~ msgstr "Padrão: Buscar"

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pinnacle Premium\n"
-"POT-Creation-Date: 2014-12-20 21:49-0700\n"
-"PO-Revision-Date: 2014-12-20 21:51-0700\n"
+"POT-Creation-Date: 2015-02-05 00:44-0700\n"
+"PO-Revision-Date: 2015-02-05 00:47-0700\n"
 "Last-Translator: Serhio <588885@mail.ru>\n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -2123,7 +2123,8 @@ msgid "Shop Settings"
 msgstr "Настройки Магазина."
 
 #: ../themeoptions/theme_options.php:1006
-msgid "Shop Archive Page Settings"
+#, fuzzy
+msgid "Shop Archive Page Settings (Woocommerce plugin required)"
 msgstr "Настройки архива Магазина"
 
 #: ../themeoptions/theme_options.php:1011
@@ -2284,7 +2285,7 @@ msgstr "Настройка страницы продукта"
 
 #: ../themeoptions/theme_options.php:1163
 #, fuzzy
-msgid "Single Product Page Header"
+msgid "Single Product Page Header (Woocommerce plugin required)"
 msgstr "Формат проекта"
 
 #: ../themeoptions/theme_options.php:1168
@@ -2358,10 +2359,13 @@ msgid "This determines related products are displayed"
 msgstr "Это определяет будут ли отображаться связанные продукты"
 
 #: ../themeoptions/theme_options.php:1219
-#: ../themeoptions/theme_options.php:1220
 #, fuzzy
 msgid "Portfolio Options"
 msgstr "Опции поста портфолио"
+
+#: ../themeoptions/theme_options.php:1220
+msgid "Portfolio Options (Pinnacle Toolkit plugin required)"
+msgstr ""
 
 #: ../themeoptions/theme_options.php:1225
 msgid "Allow Comments on Portfolio Posts"
@@ -3035,12 +3039,13 @@ msgid "Extra Sidebar"
 msgstr "Дополнительные боковые панели"
 
 #: ../themeoptions/theme_options.php:2108
-msgid "Wordpress Galleries"
+#, fuzzy
+msgid "WordPress Galleries"
 msgstr "Галереи WordPress"
 
 #: ../themeoptions/theme_options.php:2113
 #, fuzzy
-msgid "Enable Pinnacle Galleries to override Wordpress"
+msgid "Enable Pinnacle Galleries to override WordPress"
 msgstr "Включите галереи Virtue вместо галерей WordPress"
 
 #: ../themeoptions/theme_options.php:2114
@@ -3060,12 +3065,12 @@ msgstr "Пользовательский стиль CSS"
 msgid "Quickly add some CSS to your theme by adding it to this block."
 msgstr "Быстро добавьте код CSS к вашей теме добавляя его в этот блок кода."
 
-#: ../themeoptions/theme_options.php:2148
 #: ../themeoptions/theme_options.php:2149
+#: ../themeoptions/theme_options.php:2150
 msgid "Theme Options"
 msgstr "Настройки темы"
 
-#: ../themeoptions/theme_options.php:2156
+#: ../themeoptions/theme_options.php:2157
 #, fuzzy
 msgid ""
 "Thank you for using the Pinnacle Theme by <a href=\"http://kadencethemes.com/"
@@ -3094,6 +3099,11 @@ msgstr "Очистить выбор"
 #: ../woocommerce/single-product/add-to-cart/variable.php:105
 msgid "This product is currently out of stock and unavailable."
 msgstr "Этот товар на данный момент отсутствует и недоступен."
+
+#: ../woocommerce/single-product/product-image.php:51
+#, fuzzy
+msgid "Placeholder"
+msgstr "Оформить заказ"
 
 #~ msgid "Add/Edit Gallery"
 #~ msgstr "Добавить/Редактировать галерею"

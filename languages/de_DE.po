@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pinnacle - Premium\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-20 21:49-0700\n"
-"PO-Revision-Date: 2014-12-20 21:51-0700\n"
+"POT-Creation-Date: 2015-02-05 00:44-0700\n"
+"PO-Revision-Date: 2015-02-05 00:45-0700\n"
 "Last-Translator: Administrator <georg_t123@hotmail.com>\n"
 "Language-Team: Pinnacle Theme german translation\n"
 "Language: de\n"
@@ -2525,7 +2525,8 @@ msgstr "Shop Einstellungen"
 
 # @ virtue
 #: ../themeoptions/theme_options.php:1006
-msgid "Shop Archive Page Settings"
+#, fuzzy
+msgid "Shop Archive Page Settings (Woocommerce plugin required)"
 msgstr "Shop Archivseiten Einstellung"
 
 # @ virtue
@@ -2698,7 +2699,7 @@ msgstr "Produktseiten Einstellung"
 # @ virtue
 #: ../themeoptions/theme_options.php:1163
 #, fuzzy
-msgid "Single Product Page Header"
+msgid "Single Product Page Header (Woocommerce plugin required)"
 msgstr "Single Produkt Layout"
 
 # @ woocommerce
@@ -2789,9 +2790,12 @@ msgstr "Dies entscheidet ob ähnliche Produkte angezeigt werden"
 
 # @ virtue
 #: ../themeoptions/theme_options.php:1219
-#: ../themeoptions/theme_options.php:1220
 msgid "Portfolio Options"
 msgstr "Portfolio-Optionen"
+
+#: ../themeoptions/theme_options.php:1220
+msgid "Portfolio Options (Pinnacle Toolkit plugin required)"
+msgstr ""
 
 # @ virtue
 #: ../themeoptions/theme_options.php:1225
@@ -3580,13 +3584,14 @@ msgstr "Extra Sidebar"
 
 # @ virtue
 #: ../themeoptions/theme_options.php:2108
-msgid "Wordpress Galleries"
+#, fuzzy
+msgid "WordPress Galleries"
 msgstr "Wordpress Gallerien"
 
 # @ virtue
 #: ../themeoptions/theme_options.php:2113
 #, fuzzy
-msgid "Enable Pinnacle Galleries to override Wordpress"
+msgid "Enable Pinnacle Galleries to override WordPress"
 msgstr "Ermöglicht das Virtue die Wordpressgallerien ersetzt"
 
 #: ../themeoptions/theme_options.php:2114
@@ -3611,13 +3616,13 @@ msgstr ""
 "Addiert am schnellsten CSS zu ihren Theme durch Eintragung in diese Box."
 
 # @ virtue
-#: ../themeoptions/theme_options.php:2148
 #: ../themeoptions/theme_options.php:2149
+#: ../themeoptions/theme_options.php:2150
 msgid "Theme Options"
 msgstr "Theme Einstellungen"
 
 # @ virtue
-#: ../themeoptions/theme_options.php:2156
+#: ../themeoptions/theme_options.php:2157
 #, fuzzy
 msgid ""
 "Thank you for using the Pinnacle Theme by <a href=\"http://kadencethemes.com/"
@@ -3650,6 +3655,12 @@ msgstr "Lösche Auswahl"
 #: ../woocommerce/single-product/add-to-cart/variable.php:105
 msgid "This product is currently out of stock and unavailable."
 msgstr "Dieses Produkt ist momentan nicht auf Lager."
+
+# @ virtue
+#: ../woocommerce/single-product/product-image.php:51
+#, fuzzy
+msgid "Placeholder"
+msgstr "SUCHE Platzhaltertext"
 
 # @ virtue
 # @ redux-framework
@@ -6291,10 +6302,6 @@ msgstr "Dieses Produkt ist momentan nicht auf Lager."
 # @ virtue
 #~ msgid "Quick Language Settings"
 #~ msgstr "Schnelle Spracheinstellungen"
-
-# @ virtue
-#~ msgid "Search Placeholder Text"
-#~ msgstr "SUCHE Platzhaltertext"
 
 # @ virtue
 #~ msgid "Standard: Search\""

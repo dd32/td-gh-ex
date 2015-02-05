@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pinnacle Premium\n"
-"POT-Creation-Date: 2014-12-20 21:49-0700\n"
-"PO-Revision-Date: 2014-12-20 21:52-0700\n"
+"POT-Creation-Date: 2015-02-05 00:44-0700\n"
+"PO-Revision-Date: 2015-02-05 00:46-0700\n"
 "Last-Translator: Erwan <deskapade@gmail.com>\n"
 "Language-Team:  <deskapade@gmail.com>\n"
 "Language: fr\n"
@@ -2121,7 +2121,8 @@ msgid "Shop Settings"
 msgstr "Magasin"
 
 #: ../themeoptions/theme_options.php:1006
-msgid "Shop Archive Page Settings"
+#, fuzzy
+msgid "Shop Archive Page Settings (Woocommerce plugin required)"
 msgstr "Réglages de la page d'archive du magasin"
 
 #: ../themeoptions/theme_options.php:1011
@@ -2276,7 +2277,7 @@ msgstr "Réglages de la page de produit"
 
 #: ../themeoptions/theme_options.php:1163
 #, fuzzy
-msgid "Single Product Page Header"
+msgid "Single Product Page Header (Woocommerce plugin required)"
 msgstr "Agencement d'un produit isolé"
 
 #: ../themeoptions/theme_options.php:1168
@@ -2351,9 +2352,12 @@ msgid "This determines related products are displayed"
 msgstr "Ceci détermine les produits semblables affichés"
 
 #: ../themeoptions/theme_options.php:1219
-#: ../themeoptions/theme_options.php:1220
 msgid "Portfolio Options"
 msgstr "Portfolio"
+
+#: ../themeoptions/theme_options.php:1220
+msgid "Portfolio Options (Pinnacle Toolkit plugin required)"
+msgstr ""
 
 #: ../themeoptions/theme_options.php:1225
 msgid "Allow Comments on Portfolio Posts"
@@ -3022,12 +3026,13 @@ msgid "Extra Sidebar"
 msgstr "Colonne latérale supplémentaire"
 
 #: ../themeoptions/theme_options.php:2108
-msgid "Wordpress Galleries"
+#, fuzzy
+msgid "WordPress Galleries"
 msgstr "Galeries Wordpress"
 
 #: ../themeoptions/theme_options.php:2113
 #, fuzzy
-msgid "Enable Pinnacle Galleries to override Wordpress"
+msgid "Enable Pinnacle Galleries to override WordPress"
 msgstr "Permettre aux galeries du thème Virtue de supplanter Wordpress"
 
 #: ../themeoptions/theme_options.php:2114
@@ -3049,12 +3054,12 @@ msgstr ""
 "Ajouter rapidement quelques éléments de CSS à votre thème en les ajoutant "
 "dans ce champ."
 
-#: ../themeoptions/theme_options.php:2148
 #: ../themeoptions/theme_options.php:2149
+#: ../themeoptions/theme_options.php:2150
 msgid "Theme Options"
 msgstr "Options du thème"
 
-#: ../themeoptions/theme_options.php:2156
+#: ../themeoptions/theme_options.php:2157
 #, fuzzy
 msgid ""
 "Thank you for using the Pinnacle Theme by <a href=\"http://kadencethemes.com/"
@@ -3083,6 +3088,12 @@ msgstr "Effacer la sélection"
 #: ../woocommerce/single-product/add-to-cart/variable.php:105
 msgid "This product is currently out of stock and unavailable."
 msgstr ""
+
+# My translation means : text for looking a place, which does not make any sense, but...
+#: ../woocommerce/single-product/product-image.php:51
+#, fuzzy
+msgid "Placeholder"
+msgstr "Texte de recherche d'emplacement"
 
 #~ msgid "Add/Edit Gallery"
 #~ msgstr "Ajouter/Éditer une galerie"
@@ -5148,11 +5159,6 @@ msgstr ""
 
 #~ msgid "Quick Language Settings"
 #~ msgstr "Réglages rapides de langue"
-
-# My translation means : text for looking a place, which does not make any sense, but...
-#, fuzzy
-#~ msgid "Search Placeholder Text"
-#~ msgstr "Texte de recherche d'emplacement"
 
 #~ msgid "Standard: Search\""
 #~ msgstr "Standard&nbsp;: Rechercher"

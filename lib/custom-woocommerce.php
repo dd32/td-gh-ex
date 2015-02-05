@@ -86,5 +86,33 @@ if ( isset( $pinnacle['default_showproducttitle_inpost'] ) && $pinnacle['default
   remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
 }
 
+add_filter( 'add_to_cart_fragments', 'kt_get_refreshed_fragments' );
+ function kt_get_refreshed_fragments($fragments) {
+    // Get mini cart
+    ob_start();
+
+    woocommerce_mini_cart();
+
+    $mini_cart = ob_get_clean();
+
+    // Fragments and mini cart are returned
+    $fragments['div.kt-header-mini-cart-refreash'] ='<div class="kt-header-mini-cart-refreash">' . $mini_cart . '</div>';
+
+    return $fragments;
+
+  }
+  add_filter( 'add_to_cart_fragments', 'kt_get_refreshed_fragments_number' );
+ function kt_get_refreshed_fragments_number($fragments) {
+    global $woocommerce;
+    // Get mini cart
+    ob_start();
+
+    ?><span class="kt-cart-total"><?php echo $woocommerce->cart->cart_contents_count; ?></span> <?php
+
+    $fragments['span.kt-cart-total'] = ob_get_clean();
+
+    return $fragments;
+
+  }
 
 

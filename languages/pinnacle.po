@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pinnacle Premium\n"
-"POT-Creation-Date: 2014-12-20 21:49-0700\n"
-"PO-Revision-Date: 2014-12-20 21:51-0700\n"
+"POT-Creation-Date: 2015-02-05 00:44-0700\n"
+"PO-Revision-Date: 2015-02-05 00:44-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -1212,6 +1212,434 @@ msgstr ""
 msgid "Add %s"
 msgstr ""
 
+#: ../themeoptions/redux/extensions/customizer/extension_customizer.php:534
+#: ../themeoptions/redux/framework.php:1850
+msgid "You have changes that are not saved. Would you like to save them now?"
+msgstr ""
+
+#: ../themeoptions/redux/extensions/customizer/extension_customizer.php:535
+#: ../themeoptions/redux/framework.php:1858
+msgid "Are you sure? Resetting will lose all custom values."
+msgstr ""
+
+#: ../themeoptions/redux/extensions/customizer/extension_customizer.php:536
+#: ../themeoptions/redux/framework.php:1874
+msgid ""
+"Your current options will be replaced with the values of this preset. Would "
+"you like to proceed?"
+msgstr ""
+
+#: ../themeoptions/redux/extensions/customizer/extension_customizer.php:569
+msgid "You have changes that are not saved.  Would you like to save them now?"
+msgstr ""
+
+#: ../themeoptions/redux/extensions/customizer/extension_customizer.php:570
+msgid "Are you sure?  Resetting will lose all custom values."
+msgstr ""
+
+#: ../themeoptions/redux/extensions/customizer/extension_customizer.php:571
+msgid ""
+"Your current options will be replaced with the values of this preset.  Would "
+"you like to proceed?"
+msgstr ""
+
+#: ../themeoptions/redux/framework.php:209
+#, php-format
+msgid "Options panel created using %1$s"
+msgstr ""
+
+#: ../themeoptions/redux/framework.php:209
+msgid "Redux Framework"
+msgstr ""
+
+#: ../themeoptions/redux/framework.php:213
+#: ../themeoptions/redux/framework.php:217
+msgid "Options"
+msgstr ""
+
+#: ../themeoptions/redux/framework.php:1866
+msgid "Are you sure? Resetting will lose all custom values in this section."
+msgstr ""
+
+#: ../themeoptions/redux/framework.php:1881
+msgid "Please Wait"
+msgstr ""
+
+#: ../themeoptions/redux/framework.php:2006
+msgid "Enable"
+msgstr ""
+
+#: ../themeoptions/redux/framework.php:2011
+msgid "Disable"
+msgstr ""
+
+#: ../themeoptions/redux/framework.php:2017
+msgid "moving the mouse over"
+msgstr ""
+
+#: ../themeoptions/redux/framework.php:2019
+msgid "clicking"
+msgstr ""
+
+#: ../themeoptions/redux/framework.php:2023
+#, php-format
+msgid ""
+"Hints are tooltips that popup when %d the hint icon, offering addition "
+"information about the field in which they appear.  They can be %d d by using "
+"the link below."
+msgstr ""
+
+#: ../themeoptions/redux/framework.php:2028
+msgid "Hints"
+msgstr ""
+
+#: ../themeoptions/redux/framework.php:3256
+msgid "Warning- This options panel will not work properly without javascript!"
+msgstr ""
+
+#: ../themeoptions/redux/framework.php:3307
+msgid "Developer Mode Enabled"
+msgstr ""
+
+#: ../themeoptions/redux/framework.php:3336
+msgid "Expand"
+msgstr ""
+
+#: ../themeoptions/redux/framework.php:3338
+#: ../themeoptions/redux/framework.php:3648
+msgid "Save Changes"
+msgstr ""
+
+#: ../themeoptions/redux/framework.php:3342
+#: ../themeoptions/redux/framework.php:3652
+msgid "Reset Section"
+msgstr ""
+
+#: ../themeoptions/redux/framework.php:3344
+#: ../themeoptions/redux/framework.php:3654
+msgid "Reset All"
+msgstr ""
+
+#: ../themeoptions/redux/framework.php:3349
+#: ../themeoptions/redux/framework.php:3659
+msgid "Working..."
+msgstr ""
+
+#: ../themeoptions/redux/framework.php:3369
+msgid "Settings Imported!"
+msgstr ""
+
+#: ../themeoptions/redux/framework.php:3384
+msgid "All Defaults Restored!"
+msgstr ""
+
+#: ../themeoptions/redux/framework.php:3398
+msgid "Section Defaults Restored!"
+msgstr ""
+
+#: ../themeoptions/redux/framework.php:3412
+msgid "Settings Saved!"
+msgstr ""
+
+#: ../themeoptions/redux/framework.php:3432
+msgid "Settings have changed, you should save them!"
+msgstr ""
+
+#: ../themeoptions/redux/framework.php:3440
+msgid "error(s) were found!"
+msgstr ""
+
+#: ../themeoptions/redux/framework.php:3448
+msgid "warning(s) were found!"
+msgstr ""
+
+#: ../themeoptions/redux/framework.php:3512
+#: ../themeoptions/redux/framework.php:3591
+msgid "System Info"
+msgstr ""
+
+#: ../themeoptions/redux/inc/class.redux_filesystem.php:22
+msgid "Unable to create a required directory. Please ensure that"
+msgstr ""
+
+#: ../themeoptions/redux/inc/class.redux_filesystem.php:24
+msgid ""
+"has the proper read/write permissions or enter your FTP information below."
+msgstr ""
+
+#: ../themeoptions/redux/inc/class.redux_functions.php:253
+msgid "Dismiss"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/background/field_background.php:124
+#: ../themeoptions/redux/inc/fields/color/field_color.php:72
+msgid "Transparent"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/background/field_background.php:141
+msgid "Background Repeat"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/background/field_background.php:157
+msgid "Background Clip"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/background/field_background.php:173
+msgid "Background Origin"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/background/field_background.php:188
+msgid "Background Size"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/background/field_background.php:203
+msgid "Background Attachment"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/background/field_background.php:223
+msgid "Background Position"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/background/field_background.php:277
+#: ../themeoptions/redux/inc/fields/media/field_media.php:149
+msgid "No media selected"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/multi_text/field_multi_text.php:61
+msgid "Add More"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/select/field_select.php:83
+msgid "Select an item"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/select/field_select.php:134
+msgid "No items of this type were found."
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/switch/field_switch.php:41
+msgid "On"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/switch/field_switch.php:44
+msgid "Off"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:227
+msgid "Font Family"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:228
+msgid "Font family"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:254
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:255
+msgid "Backup Font Family"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:269
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:276
+msgid "Font style"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:270
+msgid "Font Weight &amp; Style"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:276
+msgid "Style"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:316
+msgid "Font subsets"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:318
+msgid "Font Subsets"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:319
+msgid "Subsets"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:319
+msgid "Font script"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:336
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:337
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:338
+msgid "Text Align"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:359
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:360
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:361
+msgid "Text Transform"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:382
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:383
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:384
+msgid "Font Variant"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:402
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:403
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:404
+msgid "Text Decoration"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:426
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:427
+msgid "Font Size"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:427
+msgid "Size"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:435
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:436
+msgid "Line Height"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:436
+msgid "Height"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:444
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:445
+msgid "Word Spacing"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:453
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:454
+msgid "Letter Spacing"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:472
+msgid "Font Color"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:474
+msgid "Font color"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:864
+msgid "Standard Fonts"
+msgstr ""
+
+#: ../themeoptions/redux/inc/fields/typography/field_typography.php:965
+msgid "Google Webfonts"
+msgstr ""
+
+#: ../themeoptions/redux/inc/import_export.php:78
+msgid "Import / Export Options"
+msgstr ""
+
+#: ../themeoptions/redux/inc/import_export.php:81
+msgid "Import Options"
+msgstr ""
+
+#: ../themeoptions/redux/inc/import_export.php:82
+msgid "Import from file"
+msgstr ""
+
+#: ../themeoptions/redux/inc/import_export.php:82
+msgid "Import from URL"
+msgstr ""
+
+#: ../themeoptions/redux/inc/import_export.php:85
+msgid ""
+"Input your backup file below and hit Import to restore your sites options "
+"from a backup."
+msgstr ""
+
+#: ../themeoptions/redux/inc/import_export.php:90
+msgid ""
+"Input the URL to another sites options set and hit Import to load the "
+"options from that site."
+msgstr ""
+
+#: ../themeoptions/redux/inc/import_export.php:94
+msgid "Import"
+msgstr ""
+
+#: ../themeoptions/redux/inc/import_export.php:94
+msgid ""
+"WARNING! This will overwrite all existing option values, please proceed with "
+"caution!"
+msgstr ""
+
+#: ../themeoptions/redux/inc/import_export.php:97
+msgid "Export Options"
+msgstr ""
+
+#: ../themeoptions/redux/inc/import_export.php:100
+msgid ""
+"Here you can copy/download your current option settings. Keep this safe as "
+"you can use it as a backup should anything go wrong, or you can use it to "
+"restore your settings on this site (or any other site)."
+msgstr ""
+
+#: ../themeoptions/redux/inc/import_export.php:104
+msgid "Copy"
+msgstr ""
+
+#: ../themeoptions/redux/inc/import_export.php:104
+msgid "Copy Link"
+msgstr ""
+
+#: ../themeoptions/redux/inc/import_export.php:140
+msgid "Import / Export"
+msgstr ""
+
+#: ../themeoptions/redux/inc/validation/color/validation_color.php:15
+#: ../themeoptions/redux/inc/validation/color_rgba/validation_color_rgba.php:14
+#: ../themeoptions/redux/inc/validation/colorrgba/validation_colorrgba.php:16
+msgid "This field must be a valid color value."
+msgstr ""
+
+#: ../themeoptions/redux/inc/validation/comma_numeric/validation_comma_numeric.php:16
+msgid ""
+"You must provide a comma separated list of numerical values for this option."
+msgstr ""
+
+#: ../themeoptions/redux/inc/validation/date/validation_date.php:16
+msgid "This field must be a valid date."
+msgstr ""
+
+#: ../themeoptions/redux/inc/validation/email/validation_email.php:16
+#: ../themeoptions/redux/inc/validation/email_not_empty/validation_email_not_empty.php:16
+msgid "You must provide a valid email for this option."
+msgstr ""
+
+#: ../themeoptions/redux/inc/validation/no_html/validation_no_html.php:15
+msgid ""
+"You must not enter any HTML in this field, all HTML tags have been removed."
+msgstr ""
+
+#: ../themeoptions/redux/inc/validation/no_special_chars/validation_no_special_chars.php:16
+msgid ""
+"You must not enter any special characters in this field, all special "
+"characters have been removed."
+msgstr ""
+
+#: ../themeoptions/redux/inc/validation/not_empty/validation_not_empty.php:16
+msgid "This field cannot be empty. Please provide a value."
+msgstr ""
+
+#: ../themeoptions/redux/inc/validation/numeric/validation_numeric.php:16
+#: ../themeoptions/redux/inc/validation/numeric_not_empty/validation_numeric_not_empty.php:16
+msgid "You must provide a numerical value for this option."
+msgstr ""
+
+#: ../themeoptions/redux/inc/validation/url/validation_url.php:16
+msgid "You must provide a valid URL for this option."
+msgstr ""
+
 #: ../themeoptions/theme_options.php:69
 msgid "Site Header"
 msgstr ""
@@ -1974,7 +2402,7 @@ msgid "Shop Settings"
 msgstr ""
 
 #: ../themeoptions/theme_options.php:1006
-msgid "Shop Archive Page Settings"
+msgid "Shop Archive Page Settings (Woocommerce plugin required)"
 msgstr ""
 
 #: ../themeoptions/theme_options.php:1011
@@ -2102,7 +2530,7 @@ msgid "Product Settings"
 msgstr ""
 
 #: ../themeoptions/theme_options.php:1163
-msgid "Single Product Page Header"
+msgid "Single Product Page Header (Woocommerce plugin required)"
 msgstr ""
 
 #: ../themeoptions/theme_options.php:1168
@@ -2168,8 +2596,11 @@ msgid "This determines related products are displayed"
 msgstr ""
 
 #: ../themeoptions/theme_options.php:1219
-#: ../themeoptions/theme_options.php:1220
 msgid "Portfolio Options"
+msgstr ""
+
+#: ../themeoptions/theme_options.php:1220
+msgid "Portfolio Options (Pinnacle Toolkit plugin required)"
 msgstr ""
 
 #: ../themeoptions/theme_options.php:1225
@@ -2748,11 +3179,11 @@ msgid "Extra Sidebar"
 msgstr ""
 
 #: ../themeoptions/theme_options.php:2108
-msgid "Wordpress Galleries"
+msgid "WordPress Galleries"
 msgstr ""
 
 #: ../themeoptions/theme_options.php:2113
-msgid "Enable Pinnacle Galleries to override Wordpress"
+msgid "Enable Pinnacle Galleries to override WordPress"
 msgstr ""
 
 #: ../themeoptions/theme_options.php:2114
@@ -2772,12 +3203,12 @@ msgstr ""
 msgid "Quickly add some CSS to your theme by adding it to this block."
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2148
 #: ../themeoptions/theme_options.php:2149
+#: ../themeoptions/theme_options.php:2150
 msgid "Theme Options"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2156
+#: ../themeoptions/theme_options.php:2157
 msgid ""
 "Thank you for using the Pinnacle Theme by <a href=\"http://kadencethemes.com/"
 "\" target=\"_blank\">Kadence Themes</a>."
@@ -2801,4 +3232,8 @@ msgstr ""
 
 #: ../woocommerce/single-product/add-to-cart/variable.php:105
 msgid "This product is currently out of stock and unavailable."
+msgstr ""
+
+#: ../woocommerce/single-product/product-image.php:51
+msgid "Placeholder"
 msgstr ""

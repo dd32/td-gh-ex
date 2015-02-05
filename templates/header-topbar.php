@@ -60,7 +60,9 @@
                     </ul>
                     <div id="kad-top-cart-popup" class="collapse">
                       <div id="kad-top-cart-popup-inner">
-                        <?php woocommerce_mini_cart();?>
+                        <div class="kt-header-mini-cart-refreash">
+                          <?php woocommerce_mini_cart();?>
+                        </div>
                       </div>
                     </div>
                   </div>

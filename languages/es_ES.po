@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pinnacle Premium\n"
-"POT-Creation-Date: 2014-12-20 21:49-0700\n"
-"PO-Revision-Date: 2014-12-20 21:51-0700\n"
+"POT-Creation-Date: 2015-02-05 00:44-0700\n"
+"PO-Revision-Date: 2015-02-05 00:46-0700\n"
 "Last-Translator: María Digo <web.esdemay@gmail.com>\n"
 "Language-Team: María Digo <web.esdemay@gmail.com>\n"
 "Language: es_ES\n"
@@ -2023,7 +2023,8 @@ msgid "Shop Settings"
 msgstr "Ajustes  Tienda"
 
 #: ../themeoptions/theme_options.php:1006
-msgid "Shop Archive Page Settings"
+#, fuzzy
+msgid "Shop Archive Page Settings (Woocommerce plugin required)"
 msgstr "Ajustes Tienda - Archivo / P&aacute;gina"
 
 #: ../themeoptions/theme_options.php:1011
@@ -2176,7 +2177,8 @@ msgid "Product Settings"
 msgstr "Ajustes Productos"
 
 #: ../themeoptions/theme_options.php:1163
-msgid "Single Product Page Header"
+#, fuzzy
+msgid "Single Product Page Header (Woocommerce plugin required)"
 msgstr "Encabezado de página de un producto"
 
 #: ../themeoptions/theme_options.php:1168
@@ -2242,9 +2244,12 @@ msgid "This determines related products are displayed"
 msgstr "Esto determina qu&eacute; productos si se muestran o no"
 
 #: ../themeoptions/theme_options.php:1219
-#: ../themeoptions/theme_options.php:1220
 msgid "Portfolio Options"
 msgstr "Opciones Portafolio"
+
+#: ../themeoptions/theme_options.php:1220
+msgid "Portfolio Options (Pinnacle Toolkit plugin required)"
+msgstr ""
 
 #: ../themeoptions/theme_options.php:1225
 msgid "Allow Comments on Portfolio Posts"
@@ -2846,11 +2851,13 @@ msgid "Extra Sidebar"
 msgstr "Barra lateral extra"
 
 #: ../themeoptions/theme_options.php:2108
-msgid "Wordpress Galleries"
+#, fuzzy
+msgid "WordPress Galleries"
 msgstr "Galerías de Wordpress"
 
 #: ../themeoptions/theme_options.php:2113
-msgid "Enable Pinnacle Galleries to override Wordpress"
+#, fuzzy
+msgid "Enable Pinnacle Galleries to override WordPress"
 msgstr "Habilitar Galerías Pinnacle para anular las de Wordpress"
 
 #: ../themeoptions/theme_options.php:2114
@@ -2871,12 +2878,12 @@ msgid "Quickly add some CSS to your theme by adding it to this block."
 msgstr ""
 "A&ntilde;ada rápidamente algunos CSS a su tema agregándolo a este bloque."
 
-#: ../themeoptions/theme_options.php:2148
 #: ../themeoptions/theme_options.php:2149
+#: ../themeoptions/theme_options.php:2150
 msgid "Theme Options"
 msgstr "Opciones del Tema"
 
-#: ../themeoptions/theme_options.php:2156
+#: ../themeoptions/theme_options.php:2157
 msgid ""
 "Thank you for using the Pinnacle Theme by <a href=\"http://kadencethemes.com/"
 "\" target=\"_blank\">Kadence Themes</a>."
@@ -2903,6 +2910,11 @@ msgstr "Borrar selección"
 #: ../woocommerce/single-product/add-to-cart/variable.php:105
 msgid "This product is currently out of stock and unavailable."
 msgstr "Producto actualmente agotado y no est&aacute; disponible."
+
+#: ../woocommerce/single-product/product-image.php:51
+#, fuzzy
+msgid "Placeholder"
+msgstr "Texto marcador para b&uacute;squeda"
 
 #~ msgid "Add/Edit Gallery"
 #~ msgstr "Agregar / Editar Galería"
@@ -5097,9 +5109,6 @@ msgstr "Producto actualmente agotado y no est&aacute; disponible."
 
 #~ msgid "Quick Language Settings"
 #~ msgstr "Configuración r&aacute;pida de idioma"
-
-#~ msgid "Search Placeholder Text"
-#~ msgstr "Texto marcador para b&uacute;squeda"
 
 #~ msgid "Standard: Search\""
 #~ msgstr "Estándar:  búsqueda"
