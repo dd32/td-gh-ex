@@ -20,7 +20,7 @@
 function suits_custom_header_setup() {
 	$args = array(
 		// Text color (empty to use none).
-		'default-text-color'     => 'ffffff',
+		'default-text-color'     => '',
 
 		// Set height and width, with flexible values for both.
 		'flex-width'             => true,
@@ -67,10 +67,13 @@ function suits_header_style() {
 	?>
 	<style type="text/css" id="suits-header-css">
 	<?php
-		if ( ! empty( $header_image ) ) :
+		if ( ! empty( $header_image ) && display_header_text() ) :
 	?>
 		.site-header {
-			background: url(<?php header_image(); ?>) no-repeat scroll top;
+			background-image: url(<?php header_image(); ?>);
+			background-repeat: no-repeat;
+			background-attachment: scroll;
+			background-position: top;
 		}
 	<?php
 		endif;
@@ -83,14 +86,11 @@ function suits_header_style() {
 			position: absolute;
 			clip: rect(1px, 1px, 1px, 1px);
 		}
-	<?php
-			if ( empty( $header_image ) ) :
-	?>
+
 		.site-header .home-link {
 			min-height: 0;
 		}
 	<?php
-			endif;
 
 		// If the user has set a custom color for the text, use that.
 		elseif ( $text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) :

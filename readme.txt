@@ -43,3 +43,7 @@ Please visit http://wordpress.org/support/ if you have any questions about the t
 #### 1.0.0
 
 - initial release
+
+#### 1.1.0
+
+- changes to custom header
