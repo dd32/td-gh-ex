@@ -1,4 +1,10 @@
 == Changelog ==
+
+Version 3.4
+* Added class site for main wrapper
+* Updated CSS to make it better responsive
+* Bug Fixed: Color issue added from catchbox_print_link_color_style
+
 Version 3.3
 * Added title tag via add theme support
 * Added More theme options button in Customizer
