@@ -126,38 +126,15 @@ $site ="http://www.weblizar.com" ;?>
 				</td>
 				</tr>
 			</table>			
-		</div>
-		<div class="section">
-			<h3><?php _e('On-mouse hover Pause','weblizar'); ?></h3>
-			<?php $side_pause = $wl_theme_options['side_pause']; ?>		
-			<select name="side_pause" class="webriti_inpute" >					
-				<option value="yes"  <?php echo selected($side_pause, 'yes' ); ?>><?php _e('Yes','weblizar');?></option>
-				<option value="no" <?php echo selected($side_pause, 'no' ); ?>><?php _e('No','weblizar');?></option> 
-			</select>
-			<span class="explain"><?php _e('Pause Slider on hover.','weblizar'); ?></span>
 		</div>	
+			
 		<div class="section">
-			<h3><?php _e('Slide show Interval','weblizar') ?></h3>
-			<?php $side_interval = $wl_theme_options['side_interval']; ?>		
-				<select name="side_interval" class="webriti_inpute" >
-					<option value="4000" <?php selected($side_interval, '4000' ); ?>>4000</option>
-					<option value="5000" <?php selected($side_interval, '5000' ); ?>>5000</option>
-					<option value="6000" <?php selected($side_interval, '6000' ); ?>>6000</option>
-					<option value="7000" <?php selected($side_interval, '7000' ); ?>>7000</option>
-					<option value="8000" <?php selected($side_interval, '8000' ); ?>>8000</option>
-					<option value="9000" <?php selected($side_interval, '9000' ); ?>>9000</option>
-					<option value="10000" <?php selected($side_interval, '10000' ); ?>>10000</option>
-				</select>
-				<span class="explain"><?php _e('Select Slide show Interval.','weblizar'); ?></span>	
-		</div>
-		<div class="section">
-		
 		<div class="panel-group" id="accordion31">
 		<div class="panel panel-default">		 
 			<div class="panel-heading">
 				<h4 class="panel-title"> <?php _e('Home Slide 1','weblizar'); ?>
 					<a data-toggle="collapse" data-parent="#accordion" href="#collapse31">
-					<i class="fa fa-chevron-down  pull-right"></i>
+					<i class="indicator glyphicon glyphicon-chevron-down  pull-right"></i>
 					</a>
 				</h4>
 			</div>
@@ -196,7 +173,7 @@ $site ="http://www.weblizar.com" ;?>
 			<div class="panel-heading">
 				<h4 class="panel-title"> <?php _e('Home Slide 2','weblizar'); ?>
 					<a data-toggle="collapse" data-parent="#accordion" href="#collapse32">
-					<i class="fa fa-chevron-down  pull-right"></i>
+					<i class="indicator glyphicon glyphicon-chevron-down  pull-right"></i>
 					</a>
 				</h4>
 			</div>
@@ -238,7 +215,7 @@ $site ="http://www.weblizar.com" ;?>
 			<div class="panel-heading">
 				<h4 class="panel-title"> <?php _e('Home Slide 3','weblizar'); ?>
 					<a data-toggle="collapse" data-parent="#accordion" href="#collapse33">
-					<i class="fa fa-chevron-down  pull-right"></i>
+					<i class="indicator glyphicon glyphicon-chevron-down  pull-right"></i>
 					</a>
 				</h4>
 			</div>
@@ -338,7 +315,7 @@ $site ="http://www.weblizar.com" ;?>
 			<div class="panel-heading">
 				<h4 class="panel-title"> <?php _e('Portfolio One','weblizar'); ?>
 					<a data-toggle="collapse" data-parent="#accordion" href="#collapse11">
-					<i class="fa fa-chevron-down  pull-right"></i>
+					<i class="indicator glyphicon glyphicon-chevron-down  pull-right"></i>
 					</a>
 			</div>
 			<div id="collapse11" class="panel-collapse collapse in">
@@ -368,7 +345,7 @@ $site ="http://www.weblizar.com" ;?>
 			<div class="panel-heading">
 				<h4 class="panel-title"><?php _e('Portfolio Two','weblizar'); ?>
 					<a data-toggle="collapse" data-parent="#accordion" href="#collapse12">
-					 <i class="fa fa-chevron-down  pull-right"></i>
+					 <i class="indicator glyphicon glyphicon-chevron-down  pull-right"></i>
 					</a>
 			</div>
 			<div id="collapse12" class="panel-collapse collapse">
@@ -398,7 +375,7 @@ $site ="http://www.weblizar.com" ;?>
 			<div class="panel-heading">
 				<h4 class="panel-title"><?php _e('Portfolio Three','weblizar'); ?>
 					<a data-toggle="collapse" data-parent="#accordion" href="#collapse13">
-					 <i class="fa fa-chevron-down  pull-right"></i>
+					 <i class="indicator glyphicon glyphicon-chevron-down  pull-right"></i>
 					</a>
 			</div>
 			<div id="collapse13" class="panel-collapse collapse">
@@ -428,7 +405,7 @@ $site ="http://www.weblizar.com" ;?>
 			<div class="panel-heading">
 				<h4 class="panel-title"><?php _e('Portfolio Four','weblizar'); ?>
 					<a data-toggle="collapse" data-parent="#accordion" href="#collapse14">
-					<i class="fa fa-chevron-down  pull-right"></i> 
+					<i class="indicator glyphicon glyphicon-chevron-down  pull-right"></i> 
 					</a>
 			</div>
 			<div id="collapse14" class="panel-collapse collapse">
@@ -508,7 +485,7 @@ $site ="http://www.weblizar.com" ;?>
 			 <div class="panel panel-default">
 			<div class="panel-heading">
 			<h4 class="panel-title">
-			<?php _e('Service one','weblizar'); ?><a data-toggle="collapse" data-parent="#accordion" href="#collapse21"><i class="fa fa-chevron-down  pull-right"></i>
+			<?php _e('Service one','weblizar'); ?><a data-toggle="collapse" data-parent="#accordion" href="#collapse21"><i class="indicator glyphicon glyphicon-chevron-down  pull-right"></i>
 			</a>
 			</h4>
 			</div>
@@ -542,7 +519,7 @@ $site ="http://www.weblizar.com" ;?>
 				<div class="panel-heading">
 				<h4 class="panel-title"><?php _e('Service Two','weblizar'); ?><a data-toggle="collapse" data-parent="#accordion" href="#collapse22">
 				
-				<i class="fa fa-chevron-down  pull-right"></i></a>
+				<i class="indicator glyphicon glyphicon-chevron-down  pull-right"></i></a>
 				</h4>
 				</div>
 			<div id="collapse22" class="panel-collapse collapse">
@@ -575,7 +552,7 @@ $site ="http://www.weblizar.com" ;?>
 			 <div class="panel panel-default">
 				<div class="panel-heading">
 				<h4 class="panel-title"><?php _e('Service Three','weblizar'); ?>
-				<a data-toggle="collapse" data-parent="#accordion" href="#collapse23"><i class="fa fa-chevron-down  pull-right"></i></a></h4>
+				<a data-toggle="collapse" data-parent="#accordion" href="#collapse23"><i class="indicator glyphicon glyphicon-chevron-down  pull-right"></i></a></h4>
 				</div>
 			<div id="collapse23" class="panel-collapse collapse">
 				<div class="panel-body">

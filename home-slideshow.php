@@ -1,13 +1,14 @@
-<?php  $wl_theme_options = weblizar_get_options();  ?>
-<div id="myCarousel" class="carousel slide" data-ride="carousel" <?php if($wl_theme_options['side_pause']=="yes") { echo "data-pause='hover'"; } else { echo 'data-pause="false"'; } ?> data-interval="<?php echo $wl_theme_options['side_interval']; ?>">
-<!-- Indicators -->
+<!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>        
         <li data-target="#myCarousel" data-slide-to="2"></li>        
       </ol>
       <div class="carousel-inner">
-	  <?php
+	  <?php $wl_theme_options = weblizar_get_options();
 		$ImageUrl1 = WL_TEMPLATE_DIR_URI ."/images/1.png";
 		$ImageUrl2 = WL_TEMPLATE_DIR_URI ."/images/2.png";
 		$ImageUrl3 = WL_TEMPLATE_DIR_URI ."/images/3.png";  ?>

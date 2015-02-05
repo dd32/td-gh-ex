@@ -33,8 +33,6 @@
 			'text_title'=>'off',
 			'upload_image_favicon'=>'',			
 			'custom_css'=>'',
-			'side_interval' =>'yes',	
-			'side_pause' => '5000',
 			'slide_image_1' => $ImageUrl,
 			'slide_title_1' => __('Slide Title', 'weblizar' ),
 			'slide_desc_1' => __('Lorem Ipsum is simply dummy text of the printing', 'weblizar' ),
@@ -257,7 +255,7 @@ endif;
     } elseif (is_search()) {
         echo $before . '_e("Search results for","weblizar") "' . get_search_query() . '"' . $after;
     } elseif (is_tag()) {
-        echo $before . _e("Posts tagged","weblizar"). single_tag_title('', false) . $after;
+        echo $before . '_e("Posts tagged","weblizar") "' . single_tag_title('', false) . '"' . $after;
     } elseif (is_author()) {
         global $author;
         $userdata = get_userdata($author);
