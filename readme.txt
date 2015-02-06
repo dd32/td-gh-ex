@@ -46,6 +46,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.2.3 =
+* Greek language file added. Thanks to Mr. Yury Kherimyan for providing the language files.
+
 = Version 1.2.2 =
 * Brazilian Portuguese language file added. Thanks to Mr. Adriano Almeida for providing the language files.
 
