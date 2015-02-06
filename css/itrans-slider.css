@@ -216,9 +216,6 @@
 	opacity: 1;
 }
 
-
-
-
 .da-slider {
 }
 
@@ -852,15 +849,11 @@
 }
 
 
-
-
-
 @media (max-width: 1069px) {
 
 	.da-slide .da-img{
 		top: 64px;
 	}
-	
 }
 
 @media (max-width: 768px) {

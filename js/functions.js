@@ -164,18 +164,26 @@ jQuery(document).ready(function($) {
 	});
 	*/
 	
+	
 
 	// footer area masonry
-	var container_1 = document.querySelector('.site-footer .widget-area');
-	var msnry_1 = new Masonry( container_1, {
+	var container_1 = $('.site-footer .widget-area');
+	//var msnry_1 = new Masonry( container_1, {
 	  //columnWidth: 60
-	});
+	//});
+	
+	container_1.imagesLoaded( function(){
+	  container_1.masonry({});
+	});	
 	
 	// Two column Blog layout masonry
-	var container_2 = document.querySelector('.twocol-blog .blog-columns');
-	var msnry_2 = new Masonry( container_2, {
+	var container_2 = $('.twocol-blog .blog-columns');
+	//var msnry_2 = new Masonry( container_2, {
 	  //columnWidth: 60
-	});	
+	//});
+	container_2.imagesLoaded( function(){
+	  container_2.masonry({});
+	})		
 	
 		
 	

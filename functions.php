@@ -102,7 +102,10 @@ function itransform_setup() {
 	 */
 	add_image_size( 'category-thumb', 300, 300, true ); //300 pixels wide (and unlimited height)
 	add_image_size( 'homepage-thumb', 220, 220, true ); //(cropped)	
-	add_image_size( 'slider-thumb', 564, 280, true ); //(cropped)		
+	add_image_size( 'slider-thumb', 564, 280, true ); //(cropped)
+	
+	add_image_size( 'tx-medium', 600, 400, true ); //(cropped)
+	add_image_size( 'folio-silder', 1200, 480, true ); //(cropped)		
 
 	// This theme uses its own gallery styles.
 	add_filter( 'use_default_gallery_style', '__return_false' );
@@ -180,6 +183,9 @@ function itransform_scripts_styles() {
 	
 	// Loads JavaScript file for small screen side menu.
 	wp_enqueue_script( 'itransform-sidr', get_template_directory_uri() . '/js/jquery.sidr.min.js', array( 'jquery' ), '2014-01-13', true );	
+	
+	// Loads imagesloaded
+	wp_enqueue_script( 'imagesloaded', get_template_directory_uri() . '/js/imagesloaded.pkgd.min.js', array( 'jquery' ), '3.1.8', true );
 	
 	// Loads JavaScript file with functionality specific to i-transform.
 	wp_enqueue_script( 'itransform-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '2013-07-18', true );
@@ -359,7 +365,8 @@ function itransform_paging_nav() {
 			'total' => $wp_query->max_num_pages,
 			'type' => 'list',
 			'prev_text' => '<span class="text">&laquo; ' . __( 'Previous', 'itransform' ) . '</span>',
-			'next_text' => '<span class="text">' . __( 'Next', 'itransform' ) . ' &raquo;</span>'					
+			'next_text' => '<span class="text">' . __( 'Next', 'itransform' ) . ' &raquo;</span>',
+			'add_args' => false					
 		);
 	?>				    
 	<nav class="navigation paging-navigation" role="navigation">

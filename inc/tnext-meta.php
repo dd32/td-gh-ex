@@ -12,14 +12,14 @@
  */
 
 
-add_filter( 'rwmb_meta_boxes', 'icreate_register_meta_boxes' );
+add_filter( 'rwmb_meta_boxes', 'itrans_register_meta_boxes' );
 
 /**
  * Register meta boxes
  *
  * @return void
  */
-function icreate_register_meta_boxes( $meta_boxes )
+function itrans_register_meta_boxes( $meta_boxes )
 {
 	/**
 	 * Prefix of meta keys (optional)
@@ -27,9 +27,9 @@ function icreate_register_meta_boxes( $meta_boxes )
 	 * Alt.: You also can make prefix empty to disable it
 	 */
 	// Better has an underscore as last sign
-	$prefix = 'icreate_';
+	$prefix = 'itrans_';
 	
-	$icreate_template_url = get_template_directory_uri();
+	$itrans_template_url = get_template_directory_uri();
 
 	// 1st meta box
 	$meta_boxes[] = array(
@@ -37,7 +37,7 @@ function icreate_register_meta_boxes( $meta_boxes )
 		'id' => 'heading',
 
 		// Meta box title - Will appear at the drag and drop handle bar. Required.
-		'title' => __( 'Page Heading Options', 'icreate' ),
+		'title' => __( 'Page Heading Options', 'itrans' ),
 
 		// Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
 		'pages' => array( 'post', 'page' ),
@@ -55,58 +55,43 @@ function icreate_register_meta_boxes( $meta_boxes )
 		'fields' => array(
 			// Hide Title
 			array(
-				'name' => __( 'Hide Title', 'icreate' ),
+				'name' => __( 'Hide Titlebar', 'itrans' ),
 				'id'   => "{$prefix}hidetitle",
 				'type' => 'checkbox',
 				// Value can be 0 or 1
 				'std'  => 0,
 				'class' => 'hide-ttl',
 			),
+			/**/	
 			array(
-				'name' => __( 'Show Default i-create Slider', 'icreate' ),
+				'name' => __( 'Show Default i-transform Slider', 'itrans' ),
 				'id'   => "{$prefix}show_slider",
 				'type' => 'checkbox',
 				// Value can be 0 or 1
 				'std'  => 0,
 				'class' => 'show-slider',
 			),			
-					
-			// Custom Title
-			array(
-				// Field name - Will be used as label
-				'name'  => __( 'Custom title', 'icreate' ),
-				// Field ID, i.e. the meta key
-				'id'    => "{$prefix}customtitle",
-				// Field description (optional)
-				'desc'  => __( 'Enter custom title for the page', 'icreate' ),
-				'type'  => 'text',
-				// Default value (optional)
-				'std'   => __( '', 'icreate' ),
-				// CLONES: Add to make the field cloneable (i.e. have multiple value)
-				//'clone' => true,
-				'class' => 'cust-ttl',
-			),
-			
+				
 			// hide breadcrum
 			array(
-				'name' => __( 'Hide breadcrumb', 'icreate' ),
+				'name' => __( 'Hide breadcrumb', 'itrans' ),
 				'id'   => "{$prefix}hide_breadcrumb",
 				'type' => 'checkbox',
 				// Value can be 0 or 1
 				'std'  => 0,
 			),
 			
-			// Custom Title
+			// Other Slider Shortcode
 			array(
 				// Field name - Will be used as label
-				'name'  => __( 'Other Slider Plugin Shortcode', 'icreate' ),
+				'name'  => __( 'Other Slider Plugin Shortcode', 'itrans' ),
 				// Field ID, i.e. the meta key
 				'id'    => "{$prefix}other_slider",
 				// Field description (optional)
-				'desc'  => __( 'Enter a 3rd party slider shortcode, ex. meta slider, smart slider 2, wow slider, etc.', 'icreate' ),
+				'desc'  => __( 'Enter a 3rd party slider shortcode, ex. meta slider, smart slider 2, wow slider, etc. <br />Recommended width 1632px or 100%', 'itrans' ),
 				'type'  => 'text',
 				// Default value (optional)
-				'std'   => __( '', 'icreate' ),
+				'std'   => __( '', 'itrans' ),
 				// CLONES: Add to make the field cloneable (i.e. have multiple value)
 				//'clone' => true,
 				'class' => 'cust-ttl',

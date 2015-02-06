@@ -96,37 +96,64 @@
                 </div>
             </header><!-- #masthead -->
         </div>
-        
+        <?php
+		
+			global $post; 
+			
+			$hide_title = rwmb_meta('itrans_hidetitle');
+			$show_slider = rwmb_meta('itrans_show_slider');
+			$other_slider = rwmb_meta('itrans_other_slider');
+			$hide_bread = rwmb_meta('itrans_hide_breadcrumb');
+
+			
+        ?>
         <!-- #Banner -->
-        <?php if ( is_home() && ! is_paged() || is_front_page() ) : ?>
-			<?php itransform_ibanner_slider(); ?>
-        <?php else : ?>
-        <div class="iheader">
-        	<div class="titlebar">
-				<?php 
-                    if(function_exists('bcn_display'))
-                    {
-				?>
-                	<div class="breadcrumb">
-                <?php
-                        bcn_display();
-				?>
-                	</div>
-                <?php		
-                    } else {
-                ?>               
-            	<h1>
-					<?php if ( of_get_option('itrans_slogan') ) : ?>
-                    	<?php echo esc_attr(of_get_option('itrans_slogan')); ?>
-                    <?php //else : ?> 
-                    	<?php //printf( __( 'Welcome To ', 'itransform' ) ); ?><?php //bloginfo( 'name' ); ?>   
-                    <?php endif; ?>
-                </h1>
-                <?php
-					}
-                ?>
-            </div>
-        </div>
+        <?php 
+		if( $other_slider )
+		{
+			?>
+                <div class="other-slider">
+                	<div class="other-slider-innerwrap">
+                    	<?php echo do_shortcode( $other_slider ) ?>
+                    </div>
+                </div>            
+            <?php
+		}
+		//if ( is_home() && ! is_paged() || is_front_page() ) 
+		elseif ( is_home() && ! is_paged() || $show_slider ) 
+		{
+			itransform_ibanner_slider();
+		} elseif ( !$hide_title )
+		{
+        ?>	
+			<div class="iheader">
+				<div class="titlebar">
+					<?php 
+						if( function_exists('bcn_display')  && !$hide_bread )
+						{
+					?>
+						<div class="breadcrumb">
+					<?php
+							bcn_display();
+					?>
+						</div>
+					<?php		
+						} else {
+					?>               
+					<h1>
+						<?php if ( of_get_option('itrans_slogan') ) : ?>
+							<?php echo esc_attr(of_get_option('itrans_slogan')); ?>
+						<?php //else : ?> 
+							<?php //printf( __( 'Welcome To ', 'itransform' ) ); ?><?php //bloginfo( 'name' ); ?>   
+						<?php endif; ?>
+					</h1>
+					<?php
+						}
+					?>
+				</div>
+			</div>
         
-		<?php endif; ?>
+		<?php
+		}
+        ?>
 		<div id="main" class="site-main">

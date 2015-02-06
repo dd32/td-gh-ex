@@ -4,7 +4,7 @@ Theme URI: http://templatesnext.org/itrans/
 Author: templatesnext team
 Author URI: http://templatesnext.org/
 Description: The i-transform theme for WordPress is developed using a populer theme "Twenty Thirteen" giving you all the features of Twenty Thirteen plus several additional features like easy to use admin theme options, featured post section, 5 color schemes, multiple blog layouts, WooCommerce ready etc.
-Version: 2.0.6
+Version: 2.0.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, red, green, purple, white, yellow, light, blue, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, theme-options, translation-ready
@@ -1438,6 +1438,10 @@ div#ft-post div.entry-thumbnail:hover > div.comments-link a {
 	color: #575757;
 }
 
+.portfolio .entry-header h1.entry-title {
+	margin-bottom: 32px;
+}
+
 .entry-header h1.entry-title a,
 .entry-header h1.entry-title a:visited {
 }
@@ -1656,6 +1660,10 @@ article div.post-mainpart > div.entry-content {
 .entry-thumbnail img {
 	display: block;
 	margin: 0 auto 10px;
+}
+
+.portfolio .entry-header img {
+	width: 100%;
 }
 
 .entry-header {
@@ -1885,7 +1893,8 @@ footer.entry-meta {
 *------------------------------------------------------------------------------
 */
 
-.site-content > .page.type-page {
+.site-content > .page.type-page,
+.site-content > .portfolio.type-portfolio {
 	padding-left: 2.5%;
 	padding-right: 2.5%;
 }
@@ -1964,6 +1973,17 @@ footer.entry-meta {
 	color: #FFF;
 	line-height: 100px;
 	text-align: left;
+}
+
+.other-slider {
+	display: block;
+	clear: both;
+	text-align: center;
+}
+
+.other-slider-innerwrap {
+	display: inline-block;
+	margin: 0px auto;
 }
 
 .woocommerce-page div.site-content {
@@ -3201,6 +3221,10 @@ footer.entry-meta {
 	position: relative;
 }
 
+#tertiary .sidebar-inner .widget-area {
+	padding-top: 14px;
+}
+
 
 /**
  * 9.1 Widgets
@@ -3670,6 +3694,57 @@ div.ibanner .da-img img {
 .content-area .tx-service:hover .tx-service-icon span i {
 	color: #FFFFFF;	
 }
+
+
+.portfolio h2.tx-subtitle {
+	font-size: 18px;
+	padding-bottom: 6px;
+	margin-bottom: 6px;
+}
+
+.portfolio .folio-meta {
+	padding-bottom: 6px;
+	border-bottom: 1px solid #eee;
+	margin-bottom: 32px;
+}
+
+.portfolio .folio-meta .proj-url {
+	display: block;
+	font-size: 12px;
+	line-height: 24px;
+}
+
+.portfolio .folio-meta .proj-url a,
+.portfolio .folio-meta .proj-url a:hover {
+	text-decoration: none;
+	padding-left: 12px;
+}
+
+.portfolio .folio-meta .proj-url .genericon,
+.portfolio .folio-meta .proj-url .genericon:before {
+	font-size: 24px;
+	line-height: 24px;
+	padding-right: 12px;
+	color: #999;	
+}
+
+.portfolio .folio-meta .folio-cat .folio-categories {
+	display: inline-block;
+	font-size: 12px;
+	line-height: 24px;
+	padding-left: 12px;
+	color: #999;
+}
+
+.portfolio .folio-meta .folio-cat .genericon,
+.portfolio .folio-meta .folio-cat .genericon:before {
+	font-size: 24px;
+	line-height: 24px;
+	padding-right: 12px;
+	color: #999;	
+}
+
+
 /**
  * 12.0 Media Queries
  * ----------------------------------------------------------------------------

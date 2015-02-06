@@ -158,5 +158,3 @@ function ispirit_get_attachment_id_from_url( $attachment_url = '' ) {
 
     return $attachment_id;
 }
-
-
