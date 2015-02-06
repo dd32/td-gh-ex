@@ -1,8 +1,15 @@
   Theme : Hueman (wordpress.org release)
-Version : 1.4.8
+Version : 1.4.9
  Author : Alexander "Alx" Agnarson - http://alxmedia.se
 
-January 29 2014 - 1.4.8
+February 6 2015 - 1.4.9
+===========================================================
+- Fixed dropdown menus for iPhone
+- Fixed toggle sidebars for iPhone and iPad
+- Fixed typos in functions.php - @jaylinski (via GitHub)
+- Updated to jPlayer 2.9.2
+
+January 29 2015 - 1.4.8
 ===========================================================
 - Fixed double title tag
 
