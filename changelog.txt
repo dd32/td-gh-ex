@@ -1,6 +1,12 @@
   Theme : Hueman (wordpress.org release)
-Version : 1.4.9
+Version : 1.5.0
  Author : Alexander "Alx" Agnarson - http://alxmedia.se
+
+February 6 2015 - 1.5.0
+===========================================================
+- Added missing wp_reset_postdata to tabs and posts widgets - @Marco Almeida
+- Optimized search results - @Marco Almeida
+- Updated language files
 
 February 6 2015 - 1.4.9
 ===========================================================
