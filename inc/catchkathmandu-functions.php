@@ -43,6 +43,10 @@ function catchkathmandu_scripts() {
 	if ( 'dark' == $color_scheme ) {
 		wp_enqueue_style( 'dark', get_template_directory_uri() . '/css/dark.css', array(), null );	
 	}
+	elseif ( 'lightblack' == $color_scheme ) {
+		wp_enqueue_style( 'lightblack', get_template_directory_uri() . '/css/lightblack.css', array(), null );	
+	}
+	
 	
 	//Responsive Menu
 	wp_register_script('catchkathmandu-menu', get_template_directory_uri() . '/js/catchkathmandu-menu.min.js', array('jquery'), '20140317', true);

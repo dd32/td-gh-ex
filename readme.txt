@@ -25,7 +25,7 @@ Added Translation for Catalan - Dr. Jaume Albaiges (jaumealbaiges@hotmail.com)
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Catch Kathmandu WordPress Theme, Copyright 2014 Catchthemes.com
+Catch Kathmandu WordPress Theme, Copyright 2015 Catchthemes.com
 Catch Kathmandu is distributed under the terms of the GNU General Public License v3
 
 Catch Kathmandu is a derivative of the Catch Everest theme by the Catch Themes Team:

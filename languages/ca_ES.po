@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Kathmandu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-30 09:13+0545\n"
-"PO-Revision-Date: 2015-01-30 09:13+0545\n"
+"POT-Creation-Date: 2015-02-07 01:21+0545\n"
+"PO-Revision-Date: 2015-02-07 01:24+0545\n"
 "Last-Translator: Jaume Albaigès <jaumealbaiges@hotmail.com>\n"
 "Language-Team: Jaume Albaigès <jaumealbaiges@hotmail.com>\n"
 "Language: ca_ES\n"
@@ -102,7 +102,7 @@ msgstr "Els comentaris estan tancats."
 #: ../content-gallery.php:25 ../content-gallery.php:42
 #: ../content-gallery.php:43 ../content-image.php:23 ../content-page.php:18
 #: ../content-single.php:18 ../content-video.php:24 ../content.php:32
-#: ../inc/catchkathmandu-functions.php:439
+#: ../inc/catchkathmandu-functions.php:443
 #, php-format
 msgid "Permalink to %s"
 msgstr "Enllaç permanent a %s"
@@ -178,7 +178,7 @@ msgstr[1] "Aquesta galeria conté <a %1$s>%2$s fotos</a>."
 msgid "All Image Posts"
 msgstr "Totes les entrades d'imatge"
 
-#: ../content-image.php:24 ../inc/panel/theme-options.php:742
+#: ../content-image.php:24 ../inc/panel/theme-options.php:746
 msgid "Image"
 msgstr "Imatge"
 
@@ -288,168 +288,168 @@ msgstr ""
 msgid "Both comments and trackbacks are currently closed."
 msgstr "Els comentaris i els retroenllaços estan tancats."
 
-#: ../inc/catchkathmandu-functions.php:515
+#: ../inc/catchkathmandu-functions.php:519
 #, php-format
 msgid "Page %s"
 msgstr "Pàgina %s"
 
-#: ../inc/catchkathmandu-functions.php:579
-#: ../inc/catchkathmandu-functions.php:1076
-#: ../inc/catchkathmandu-functions.php:1079 ../searchform.php:18
+#: ../inc/catchkathmandu-functions.php:583
+#: ../inc/catchkathmandu-functions.php:1080
+#: ../inc/catchkathmandu-functions.php:1083 ../searchform.php:18
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: ../inc/catchkathmandu-functions.php:1608 ../inc/panel/theme-options.php:108
-#: ../inc/panel/theme-options.php:1016
+#: ../inc/catchkathmandu-functions.php:1612 ../inc/panel/theme-options.php:108
+#: ../inc/panel/theme-options.php:1020
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../inc/catchkathmandu-functions.php:1613 ../inc/panel/theme-options.php:109
-#: ../inc/panel/theme-options.php:1024
+#: ../inc/catchkathmandu-functions.php:1617 ../inc/panel/theme-options.php:109
+#: ../inc/panel/theme-options.php:1028
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../inc/catchkathmandu-functions.php:1618
-#: ../inc/panel/theme-options.php:1032
+#: ../inc/catchkathmandu-functions.php:1622
+#: ../inc/panel/theme-options.php:1036
 msgid "Google+"
 msgstr "Google+"
 
-#: ../inc/catchkathmandu-functions.php:1623
+#: ../inc/catchkathmandu-functions.php:1627
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: ../inc/catchkathmandu-functions.php:1628
-#: ../inc/panel/theme-options.php:1040
+#: ../inc/catchkathmandu-functions.php:1632
+#: ../inc/panel/theme-options.php:1044
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/catchkathmandu-functions.php:1633
+#: ../inc/catchkathmandu-functions.php:1637
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../inc/catchkathmandu-functions.php:1638
-#: ../inc/panel/theme-options.php:1056
+#: ../inc/catchkathmandu-functions.php:1642
+#: ../inc/panel/theme-options.php:1060
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/catchkathmandu-functions.php:1643
+#: ../inc/catchkathmandu-functions.php:1647
 msgid "SlideShare"
 msgstr "SlideShare"
 
-#: ../inc/catchkathmandu-functions.php:1648
+#: ../inc/catchkathmandu-functions.php:1652
 msgid "FourSquare"
 msgstr "FourSquare"
 
-#: ../inc/catchkathmandu-functions.php:1653
-#: ../inc/panel/theme-options.php:1088
+#: ../inc/catchkathmandu-functions.php:1657
+#: ../inc/panel/theme-options.php:1092
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/catchkathmandu-functions.php:1658
-#: ../inc/panel/theme-options.php:1096
+#: ../inc/catchkathmandu-functions.php:1662
+#: ../inc/panel/theme-options.php:1100
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/catchkathmandu-functions.php:1663
-#: ../inc/panel/theme-options.php:1104
+#: ../inc/catchkathmandu-functions.php:1667
+#: ../inc/panel/theme-options.php:1108
 msgid "deviantART"
 msgstr "deviantART"
 
-#: ../inc/catchkathmandu-functions.php:1668
-#: ../inc/panel/theme-options.php:1112
+#: ../inc/catchkathmandu-functions.php:1672
+#: ../inc/panel/theme-options.php:1116
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/catchkathmandu-functions.php:1673
-#: ../inc/panel/theme-options.php:1120
+#: ../inc/catchkathmandu-functions.php:1677
+#: ../inc/panel/theme-options.php:1124
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../inc/catchkathmandu-functions.php:1678
-#: ../inc/panel/theme-options.php:1128
+#: ../inc/catchkathmandu-functions.php:1682
+#: ../inc/panel/theme-options.php:1132
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../inc/catchkathmandu-functions.php:1683
-#: ../inc/panel/theme-options.php:1136
+#: ../inc/catchkathmandu-functions.php:1687
+#: ../inc/panel/theme-options.php:1140
 msgid "RSS"
 msgstr "RSS"
 
-#: ../inc/catchkathmandu-functions.php:1688
-#: ../inc/panel/theme-options.php:1144
+#: ../inc/catchkathmandu-functions.php:1692
+#: ../inc/panel/theme-options.php:1148
 msgid "Delicious"
 msgstr "Delicious"
 
-#: ../inc/catchkathmandu-functions.php:1693
-#: ../inc/panel/theme-options.php:1152
+#: ../inc/catchkathmandu-functions.php:1697
+#: ../inc/panel/theme-options.php:1156
 msgid "Last.fm"
 msgstr "Last.fm"
 
-#: ../inc/catchkathmandu-functions.php:1698
-#: ../inc/panel/theme-options.php:1160
+#: ../inc/catchkathmandu-functions.php:1702
+#: ../inc/panel/theme-options.php:1164
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/catchkathmandu-functions.php:1703
-#: ../inc/panel/theme-options.php:1168
+#: ../inc/catchkathmandu-functions.php:1707
+#: ../inc/panel/theme-options.php:1172
 msgid "GitHub"
 msgstr "GitHub"
 
-#: ../inc/catchkathmandu-functions.php:1708
-#: ../inc/panel/theme-options.php:1176
+#: ../inc/catchkathmandu-functions.php:1712
+#: ../inc/panel/theme-options.php:1180
 msgid "Vkontakte"
 msgstr "Vkontakte"
 
-#: ../inc/catchkathmandu-functions.php:1713
-#: ../inc/panel/theme-options.php:1184
+#: ../inc/catchkathmandu-functions.php:1717
+#: ../inc/panel/theme-options.php:1188
 msgid "My World"
 msgstr "My World"
 
-#: ../inc/catchkathmandu-functions.php:1718
-#: ../inc/panel/theme-options.php:1192
+#: ../inc/catchkathmandu-functions.php:1722
+#: ../inc/panel/theme-options.php:1196
 msgid "Odnoklassniki"
 msgstr "Odnoklassniki"
 
-#: ../inc/catchkathmandu-functions.php:1723
+#: ../inc/catchkathmandu-functions.php:1727
 msgid "GoodReads"
 msgstr "GoodReads"
 
-#: ../inc/catchkathmandu-functions.php:1728
-#: ../inc/panel/theme-options.php:1208
+#: ../inc/catchkathmandu-functions.php:1732
+#: ../inc/panel/theme-options.php:1212
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/catchkathmandu-functions.php:1733
+#: ../inc/catchkathmandu-functions.php:1737
 msgid "SoundCloud"
 msgstr "SoundCloud"
 
-#: ../inc/catchkathmandu-functions.php:1738
-#: ../inc/panel/theme-options.php:1224
+#: ../inc/catchkathmandu-functions.php:1742
+#: ../inc/panel/theme-options.php:1228
 msgid "Email"
 msgstr "Correu-e"
 
-#: ../inc/catchkathmandu-functions.php:1743
-#: ../inc/panel/theme-options.php:1232
+#: ../inc/catchkathmandu-functions.php:1747
+#: ../inc/panel/theme-options.php:1236
 msgid "Contact"
 msgstr "Contacte"
 
-#: ../inc/catchkathmandu-functions.php:1748
-#: ../inc/panel/theme-options.php:1240
+#: ../inc/catchkathmandu-functions.php:1752
+#: ../inc/panel/theme-options.php:1244
 msgid "Xing"
 msgstr "Xing"
 
-#: ../inc/catchkathmandu-functions.php:1753
-#: ../inc/panel/theme-options.php:1248
+#: ../inc/catchkathmandu-functions.php:1757
+#: ../inc/panel/theme-options.php:1252
 msgid "Meetup"
 msgstr "Meetup"
 
-#: ../inc/catchkathmandu-functions.php:1848
+#: ../inc/catchkathmandu-functions.php:1852
 msgid "ID"
 msgstr "ID"
 
-#: ../inc/catchkathmandu-functions.php:1872
-#: ../inc/catchkathmandu-functions.php:1885
+#: ../inc/catchkathmandu-functions.php:1876
+#: ../inc/catchkathmandu-functions.php:1889
 msgid "Menu"
 msgstr "Menú"
 
@@ -470,7 +470,7 @@ msgid "Enable"
 msgstr "Activa"
 
 #: ../inc/catchkathmandu-metabox.php:44 ../inc/panel/theme-options.php:321
-#: ../inc/panel/theme-options.php:884
+#: ../inc/panel/theme-options.php:888
 msgid "Disable"
 msgstr "Desactiva"
 
@@ -588,17 +588,17 @@ msgid "Catch Kathmandu Logo"
 msgstr "Catch Kathmandu Logo"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:106
-#: ../inc/panel/theme-options.php:1811
+#: ../inc/panel/theme-options.php:1815
 msgid "Copyright"
 msgstr "Copyright"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:106
-#: ../inc/panel/theme-options.php:1811
+#: ../inc/panel/theme-options.php:1815
 msgid "All Rights Reserved"
 msgstr "Tots els drets reservats"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:106
-#: ../inc/panel/theme-options.php:1811
+#: ../inc/panel/theme-options.php:1815
 msgid "Catch Kathmandu by"
 msgstr "Catch Kathmandu by"
 
@@ -716,9 +716,9 @@ msgid "Disable Responsive Design?"
 msgstr "Desactivar el disseny adaptatiu? "
 
 #: ../inc/panel/theme-options.php:141 ../inc/panel/theme-options.php:168
-#: ../inc/panel/theme-options.php:213 ../inc/panel/theme-options.php:664
-#: ../inc/panel/theme-options.php:673 ../inc/panel/theme-options.php:682
-#: ../inc/panel/theme-options.php:700
+#: ../inc/panel/theme-options.php:213 ../inc/panel/theme-options.php:668
+#: ../inc/panel/theme-options.php:677 ../inc/panel/theme-options.php:686
+#: ../inc/panel/theme-options.php:704
 msgid "Check to disable"
 msgstr "Marca per desactivar"
 
@@ -734,13 +734,13 @@ msgstr "Marca per activar"
 #: ../inc/panel/theme-options.php:154 ../inc/panel/theme-options.php:199
 #: ../inc/panel/theme-options.php:247 ../inc/panel/theme-options.php:281
 #: ../inc/panel/theme-options.php:387 ../inc/panel/theme-options.php:418
-#: ../inc/panel/theme-options.php:472 ../inc/panel/theme-options.php:516
-#: ../inc/panel/theme-options.php:533 ../inc/panel/theme-options.php:568
-#: ../inc/panel/theme-options.php:585 ../inc/panel/theme-options.php:610
-#: ../inc/panel/theme-options.php:686 ../inc/panel/theme-options.php:786
-#: ../inc/panel/theme-options.php:842 ../inc/panel/theme-options.php:935
-#: ../inc/panel/theme-options.php:969 ../inc/panel/theme-options.php:1002
-#: ../inc/panel/theme-options.php:1255 ../inc/panel/theme-options.php:1285
+#: ../inc/panel/theme-options.php:472 ../inc/panel/theme-options.php:520
+#: ../inc/panel/theme-options.php:537 ../inc/panel/theme-options.php:572
+#: ../inc/panel/theme-options.php:589 ../inc/panel/theme-options.php:614
+#: ../inc/panel/theme-options.php:690 ../inc/panel/theme-options.php:790
+#: ../inc/panel/theme-options.php:846 ../inc/panel/theme-options.php:939
+#: ../inc/panel/theme-options.php:973 ../inc/panel/theme-options.php:1006
+#: ../inc/panel/theme-options.php:1259 ../inc/panel/theme-options.php:1289
 msgid "Save Changes"
 msgstr "Desa els canvis"
 
@@ -832,7 +832,7 @@ msgstr "Fes clic aquí per afegir o substituir ginys"
 msgid "Enable Featured Header Image"
 msgstr "Habilita la imatge destacada de capçalera"
 
-#: ../inc/panel/theme-options.php:296 ../inc/panel/theme-options.php:876
+#: ../inc/panel/theme-options.php:296 ../inc/panel/theme-options.php:880
 msgid "Homepage"
 msgstr "Pàgina d'inici"
 
@@ -840,7 +840,7 @@ msgstr "Pàgina d'inici"
 msgid "Excluding Homepage"
 msgstr "Excloent la pàgina d'inici"
 
-#: ../inc/panel/theme-options.php:306 ../inc/panel/theme-options.php:880
+#: ../inc/panel/theme-options.php:306 ../inc/panel/theme-options.php:884
 msgid "Entire Site"
 msgstr "El lloc sencer"
 
@@ -876,11 +876,11 @@ msgstr "Text per a les etiquetes Alt/Title de la imatge destacada de capçalera"
 msgid "Featured Header Image Link URL"
 msgstr "URL per a la imatge destacada de capçalera"
 
-#: ../inc/panel/theme-options.php:369 ../inc/panel/theme-options.php:759
+#: ../inc/panel/theme-options.php:369 ../inc/panel/theme-options.php:763
 msgid "Target. Open Link in New Window?"
 msgstr "Obrir l'enllaç en una finestra nova?"
 
-#: ../inc/panel/theme-options.php:373 ../inc/panel/theme-options.php:763
+#: ../inc/panel/theme-options.php:373 ../inc/panel/theme-options.php:767
 msgid "Check to open in new window"
 msgstr "Marca per obrir l'enllaç en una finestra nova"
 
@@ -890,7 +890,7 @@ msgstr ""
 "Restaurar les opcions per defecte de la imatge destacada de la capçalera?"
 
 #: ../inc/panel/theme-options.php:383 ../inc/panel/theme-options.php:468
-#: ../inc/panel/theme-options.php:564
+#: ../inc/panel/theme-options.php:568
 msgid "Check to reset"
 msgstr "Marca per restablir els valors per defecte"
 
@@ -943,235 +943,239 @@ msgid "Default Color Scheme"
 msgstr "Esquema de colors per defecte"
 
 #: ../inc/panel/theme-options.php:487
-msgid "Light"
+msgid "Light (Blue)"
 msgstr "Clar"
 
 #: ../inc/panel/theme-options.php:491
 msgid "Dark"
 msgstr "Fosc"
 
-#: ../inc/panel/theme-options.php:497
+#: ../inc/panel/theme-options.php:495
+msgid "Light (Black)"
+msgstr "Light (Black)"
+
+#: ../inc/panel/theme-options.php:501
 msgid "Custom Background Color:"
 msgstr "Color de fons personalitzat:"
 
-#: ../inc/panel/theme-options.php:501
+#: ../inc/panel/theme-options.php:505
 msgid "Click Here to change Background Color/Image"
 msgstr "Fes clic aquí per canviar la imatge o el color de fons"
 
-#: ../inc/panel/theme-options.php:507
+#: ../inc/panel/theme-options.php:511
 msgid "Custom Header: "
 msgstr "Capçalera personalitzada:"
 
-#: ../inc/panel/theme-options.php:511
+#: ../inc/panel/theme-options.php:515
 msgid "Click Here to change Site Title and Tagline Color"
 msgstr ""
 "Fes clic aquí per personalitzar les imatges i altres elements de la capçalera"
 
-#: ../inc/panel/theme-options.php:522
+#: ../inc/panel/theme-options.php:526
 msgid "Search Text Settings"
 msgstr "Configuració de cerca textual"
 
-#: ../inc/panel/theme-options.php:526
+#: ../inc/panel/theme-options.php:530
 msgid "Default Display Text in Search"
 msgstr "Text per defecte per mostrar a la casella de cerca"
 
-#: ../inc/panel/theme-options.php:539
+#: ../inc/panel/theme-options.php:543
 msgid "Excerpt / More Tag Settings"
 msgstr "Configuració de l'extracte (etiqueta Llegeix més)"
 
-#: ../inc/panel/theme-options.php:543
+#: ../inc/panel/theme-options.php:547
 msgid "More Tag Text"
 msgstr "Text per a l'etiqueta Llegeix més"
 
-#: ../inc/panel/theme-options.php:551
+#: ../inc/panel/theme-options.php:555
 msgid "Excerpt length(words)"
 msgstr "Longitud de l'extracte (en paraules)"
 
-#: ../inc/panel/theme-options.php:560
+#: ../inc/panel/theme-options.php:564
 msgid "Reset Excerpt?"
 msgstr "Restablir l'extracte?"
 
-#: ../inc/panel/theme-options.php:574
+#: ../inc/panel/theme-options.php:578
 msgid "Feed Redirect"
 msgstr "Redirecció del canal RSS"
 
-#: ../inc/panel/theme-options.php:578
+#: ../inc/panel/theme-options.php:582
 msgid "Feed Redirect URL"
 msgstr "URL de redirecció del canal RSS"
 
-#: ../inc/panel/theme-options.php:581
+#: ../inc/panel/theme-options.php:585
 msgid "Add in the Feedburner URL"
 msgstr "Afegeix a la URL de Feedburner"
 
-#: ../inc/panel/theme-options.php:591
+#: ../inc/panel/theme-options.php:595
 msgid "Custom CSS"
 msgstr "CSS personalitzat"
 
-#: ../inc/panel/theme-options.php:595
+#: ../inc/panel/theme-options.php:599
 msgid "Enter your custom CSS styles."
 msgstr "Insereix els teus estils CSS personalitzats."
 
-#: ../inc/panel/theme-options.php:603
+#: ../inc/panel/theme-options.php:607
 msgid "CSS Tutorial from W3Schools."
 msgstr "Tutorial CSS de W3Schools."
 
-#: ../inc/panel/theme-options.php:606
+#: ../inc/panel/theme-options.php:610
 msgid "http://www.w3schools.com/css/default.asp"
 msgstr "http://www.w3schools.com/css/default.asp"
 
-#: ../inc/panel/theme-options.php:606
+#: ../inc/panel/theme-options.php:610
 msgid "CSS Tutorial"
 msgstr "Tutorial de CSS"
 
-#: ../inc/panel/theme-options.php:606
+#: ../inc/panel/theme-options.php:610
 msgid "Click Here to Read"
 msgstr "Fes clic aquí per llegir-lo"
 
-#: ../inc/panel/theme-options.php:621
+#: ../inc/panel/theme-options.php:625
 msgid "Homepage Headline Options"
 msgstr "Opcions del titular de la pàgina d'inici"
 
-#: ../inc/panel/theme-options.php:625
+#: ../inc/panel/theme-options.php:629
 msgid "Homepage Headline Text"
 msgstr "Text del titular de la pàgina d'inici"
 
-#: ../inc/panel/theme-options.php:626
+#: ../inc/panel/theme-options.php:630
 msgid "The appropriate length for Headine is around 10 words."
 msgstr "La longitud adequada per al titular és d'unes 10 paraules."
 
-#: ../inc/panel/theme-options.php:634
+#: ../inc/panel/theme-options.php:638
 msgid "Homepage Subheadline Headline"
 msgstr "Subtítol del titular de la pàgina d'inici"
 
-#: ../inc/panel/theme-options.php:635
+#: ../inc/panel/theme-options.php:639
 msgid "The appropriate length for Headine is around 15 words."
 msgstr "La longitud adequada per al titular és d'unes 15 paraules."
 
-#: ../inc/panel/theme-options.php:643
+#: ../inc/panel/theme-options.php:647
 msgid "Homepage Headline Button Text"
 msgstr "Text del botó del titular de la pàgina d'inici"
 
-#: ../inc/panel/theme-options.php:644
+#: ../inc/panel/theme-options.php:648
 msgid "The appropriate length for Headine is around 3 words."
 msgstr "La longitud adequada per al titular és d'unes 3 paraules."
 
-#: ../inc/panel/theme-options.php:652
+#: ../inc/panel/theme-options.php:656
 msgid "Headine Link"
 msgstr "Enllaç del titular"
 
-#: ../inc/panel/theme-options.php:660
+#: ../inc/panel/theme-options.php:664
 msgid "Disable Homepage Headline?"
 msgstr "Deshabilitar el titular de la pàgina d'inici?"
 
-#: ../inc/panel/theme-options.php:669
+#: ../inc/panel/theme-options.php:673
 msgid "Disable Homepage Subheadline?"
 msgstr "Deshabilitar el subtítol del titular de la pàgina d'inici?"
 
-#: ../inc/panel/theme-options.php:678
+#: ../inc/panel/theme-options.php:682
 msgid "Disable Homepage Button?"
 msgstr "Deshabilitar el botó del titular de la pàgina d'inici?"
 
-#: ../inc/panel/theme-options.php:692
+#: ../inc/panel/theme-options.php:696
 msgid "Homepage Featured Content Options"
 msgstr "Opcions del contingut destacat de la pàgina d'inici"
 
-#: ../inc/panel/theme-options.php:696
+#: ../inc/panel/theme-options.php:700
 msgid "Disable Homepage Featured Content?"
 msgstr "Desactivar els continguts destacats de la pàgina d'inici?"
 
-#: ../inc/panel/theme-options.php:705
+#: ../inc/panel/theme-options.php:709
 msgid "Headline"
 msgstr "Titular"
 
-#: ../inc/panel/theme-options.php:708
+#: ../inc/panel/theme-options.php:712
 msgid "Leave empty if you want to remove headline"
 msgstr "Deixa-ho buit si vols eliminar el titular"
 
-#: ../inc/panel/theme-options.php:713
+#: ../inc/panel/theme-options.php:717
 msgid "Number of Featured Content"
 msgstr "Nombre de continguts destacats"
 
-#: ../inc/panel/theme-options.php:721
+#: ../inc/panel/theme-options.php:725
 msgid "Featured Content Layout"
 msgstr "Disposició dels continguts destacats"
 
-#: ../inc/panel/theme-options.php:726
+#: ../inc/panel/theme-options.php:730
 msgid "3 Columns"
 msgstr "3 columnes"
 
-#: ../inc/panel/theme-options.php:731
+#: ../inc/panel/theme-options.php:735
 msgid "4 Columns"
 msgstr "4 columnes"
 
-#: ../inc/panel/theme-options.php:739
+#: ../inc/panel/theme-options.php:743
 #, php-format
 msgid "Featured Content #%s"
 msgstr "Contingut destacat %s"
 
-#: ../inc/panel/theme-options.php:746
+#: ../inc/panel/theme-options.php:750
 #, php-format
 msgid "Insert as Featured Content #%s"
 msgstr "Utilitza com a contingut destacat %s"
 
-#: ../inc/panel/theme-options.php:746
+#: ../inc/panel/theme-options.php:750
 msgid "Change Image"
 msgstr "Canvia la imatge"
 
-#: ../inc/panel/theme-options.php:746
+#: ../inc/panel/theme-options.php:750
 msgid "Add Image"
 msgstr "Afegeix una imatge"
 
-#: ../inc/panel/theme-options.php:751
+#: ../inc/panel/theme-options.php:755
 msgid "Link URL"
 msgstr "URL"
 
-#: ../inc/panel/theme-options.php:754
+#: ../inc/panel/theme-options.php:758
 msgid "Add in the Target URL for the content"
 msgstr "Afegeix la URL de destí del contingut"
 
-#: ../inc/panel/theme-options.php:768
+#: ../inc/panel/theme-options.php:772
 msgid "Title"
 msgstr "Títol"
 
-#: ../inc/panel/theme-options.php:771
+#: ../inc/panel/theme-options.php:775
 msgid "Leave empty if you want to remove title"
 msgstr "Deixa-ho buit si vols eliminar el títol"
 
-#: ../inc/panel/theme-options.php:776
+#: ../inc/panel/theme-options.php:780
 msgid "Content"
 msgstr "Contingut"
 
-#: ../inc/panel/theme-options.php:777
+#: ../inc/panel/theme-options.php:781
 msgid "The appropriate length for Content is around 10 words."
 msgstr "La longitud adequada per al contingut és d'unes 10 paraules."
 
-#: ../inc/panel/theme-options.php:792
+#: ../inc/panel/theme-options.php:796
 msgid "Homepage / Frontpage Settings"
 msgstr "Configuració de la pàgina d'inici"
 
-#: ../inc/panel/theme-options.php:796
+#: ../inc/panel/theme-options.php:800
 msgid "Enable Latest Posts?"
 msgstr "Mostra les entrades més recents?"
 
-#: ../inc/panel/theme-options.php:800
+#: ../inc/panel/theme-options.php:804
 msgid "Check to Enable"
 msgstr "Marca per activar"
 
-#: ../inc/panel/theme-options.php:805
+#: ../inc/panel/theme-options.php:809
 msgid "Add Page instead of Latest Posts"
 msgstr "Afegeix una pàgina en comptes de les entrades més recents"
 
-#: ../inc/panel/theme-options.php:808
+#: ../inc/panel/theme-options.php:812
 msgid "Click Here to Set Static Front Page Instead of Latest Posts"
 msgstr ""
 "Fes clic aquí per activar una pàgina d'inici estàtica enlloc de les entrades "
 "més recents"
 
-#: ../inc/panel/theme-options.php:813
+#: ../inc/panel/theme-options.php:817
 msgid "Homepage posts categories:"
 msgstr "Categories de les entrades per a la pàgina d'inici"
 
-#: ../inc/panel/theme-options.php:814
+#: ../inc/panel/theme-options.php:818
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page."
@@ -1179,147 +1183,147 @@ msgstr ""
 "Només les entrades que pertanyin a les categories escollides es mostraran a "
 "la pàgina d'inici."
 
-#: ../inc/panel/theme-options.php:818 ../inc/panel/theme-options.php:984
+#: ../inc/panel/theme-options.php:822 ../inc/panel/theme-options.php:988
 msgid "--Disabled--"
 msgstr "--Deshabilitat--"
 
-#: ../inc/panel/theme-options.php:829 ../inc/panel/theme-options.php:995
+#: ../inc/panel/theme-options.php:833 ../inc/panel/theme-options.php:999
 msgid "You may select multiple categories by holding down the CTRL key."
 msgstr "Pots escollir diverses categories prement la tecla CTRL."
 
-#: ../inc/panel/theme-options.php:834
+#: ../inc/panel/theme-options.php:838
 msgid "Move above Homepage Featured Content?"
 msgstr ""
 "Desplaçar les entrades més recents al damunt del contingut destacat de la "
 "pàgina d'inici?"
 
-#: ../inc/panel/theme-options.php:838
+#: ../inc/panel/theme-options.php:842
 msgid "Check to Move"
 msgstr "Marca per moure"
 
-#: ../inc/panel/theme-options.php:851
+#: ../inc/panel/theme-options.php:855
 msgid "Slider Options"
 msgstr "Opcions d'slider"
 
-#: ../inc/panel/theme-options.php:855
+#: ../inc/panel/theme-options.php:859
 msgid "Select Slider Type"
 msgstr "Escull el tipus d'slider"
 
-#: ../inc/panel/theme-options.php:860
+#: ../inc/panel/theme-options.php:864
 msgid "Post Slider"
 msgstr "Slider d'entrades"
 
-#: ../inc/panel/theme-options.php:865
+#: ../inc/panel/theme-options.php:869
 msgid "Category Slider"
 msgstr "Slider de categories"
 
-#: ../inc/panel/theme-options.php:871
+#: ../inc/panel/theme-options.php:875
 msgid "Enable Slider"
 msgstr "Habilita l'slider"
 
-#: ../inc/panel/theme-options.php:890
+#: ../inc/panel/theme-options.php:894
 msgid "Number of Slides"
 msgstr "Nombre de diapositives"
 
-#: ../inc/panel/theme-options.php:898
+#: ../inc/panel/theme-options.php:902
 msgid "Transition Effect:"
 msgstr "Efecte de transició:"
 
-#: ../inc/panel/theme-options.php:902
+#: ../inc/panel/theme-options.php:906
 msgid "fade"
 msgstr "fade"
 
-#: ../inc/panel/theme-options.php:903
+#: ../inc/panel/theme-options.php:907
 msgid "wipe"
 msgstr "wipe"
 
-#: ../inc/panel/theme-options.php:904
+#: ../inc/panel/theme-options.php:908
 msgid "scrollUp"
 msgstr "scrollUp"
 
-#: ../inc/panel/theme-options.php:905
+#: ../inc/panel/theme-options.php:909
 msgid "scrollDown"
 msgstr "scrollDown"
 
-#: ../inc/panel/theme-options.php:906
+#: ../inc/panel/theme-options.php:910
 msgid "scrollLeft"
 msgstr "scrollLeft"
 
-#: ../inc/panel/theme-options.php:907
+#: ../inc/panel/theme-options.php:911
 msgid "scrollRight"
 msgstr "scrollRight"
 
-#: ../inc/panel/theme-options.php:908
+#: ../inc/panel/theme-options.php:912
 msgid "blindX"
 msgstr "blindX"
 
-#: ../inc/panel/theme-options.php:909
+#: ../inc/panel/theme-options.php:913
 msgid "blindY"
 msgstr "blindY"
 
-#: ../inc/panel/theme-options.php:910
+#: ../inc/panel/theme-options.php:914
 msgid "blindZ"
 msgstr "blindZ"
 
-#: ../inc/panel/theme-options.php:911
+#: ../inc/panel/theme-options.php:915
 msgid "cover"
 msgstr "cover"
 
-#: ../inc/panel/theme-options.php:912
+#: ../inc/panel/theme-options.php:916
 msgid "shuffle"
 msgstr "shuffle"
 
-#: ../inc/panel/theme-options.php:918
+#: ../inc/panel/theme-options.php:922
 msgid "Transition Delay"
 msgstr "Temps entre slides"
 
-#: ../inc/panel/theme-options.php:922 ../inc/panel/theme-options.php:931
+#: ../inc/panel/theme-options.php:926 ../inc/panel/theme-options.php:935
 msgid "second(s)"
 msgstr "segon(s)"
 
-#: ../inc/panel/theme-options.php:927
+#: ../inc/panel/theme-options.php:931
 msgid "Transition Length"
 msgstr "Durada de la transició entre slides"
 
-#: ../inc/panel/theme-options.php:941
+#: ../inc/panel/theme-options.php:945
 msgid "Featured Post Slider Options"
 msgstr "Opcions de l'slider d'entrades destacades"
 
-#: ../inc/panel/theme-options.php:945
+#: ../inc/panel/theme-options.php:949
 msgid "Exclude Slider post from Homepage posts?"
 msgstr ""
 "Excloure les entrades destacades de l'slider de la llista d'entrades de la "
 "pàgina d'inici?"
 
-#: ../inc/panel/theme-options.php:949
+#: ../inc/panel/theme-options.php:953
 msgid "Check to exclude"
 msgstr "Marca per excloure"
 
-#: ../inc/panel/theme-options.php:956
+#: ../inc/panel/theme-options.php:960
 #, php-format
 msgid "Featured Post Slider #%s"
 msgstr "Slide d'entrada destacada %s"
 
-#: ../inc/panel/theme-options.php:960
+#: ../inc/panel/theme-options.php:964
 msgid "Click Here To Edit"
 msgstr "Fes clic aquí per editar"
 
-#: ../inc/panel/theme-options.php:966
+#: ../inc/panel/theme-options.php:970
 msgid ""
 "Note: Here You can put your Post IDs which displays on Homepage as slider."
 msgstr ""
 "Nota: Pots indicar l'ID de les entrades que vulguis que es vegin a l'slider "
 "de la pàgina d'inici."
 
-#: ../inc/panel/theme-options.php:975
+#: ../inc/panel/theme-options.php:979
 msgid "Featured Category Slider Options"
 msgstr "Opcions de l'slider de categories destacades"
 
-#: ../inc/panel/theme-options.php:979
+#: ../inc/panel/theme-options.php:983
 msgid "Select Slider Categories"
 msgstr "Escull les categories per a l'slider"
 
-#: ../inc/panel/theme-options.php:980
+#: ../inc/panel/theme-options.php:984
 msgid ""
 "Use this only is you want to display posts from Specific Categories in "
 "Featured Slider"
@@ -1327,7 +1331,7 @@ msgstr ""
 "Fes-ho servir si només vols mostrar entrades de determinades categories a "
 "l'slider destacat"
 
-#: ../inc/panel/theme-options.php:999
+#: ../inc/panel/theme-options.php:1003
 msgid ""
 "Note: Here you can select the categories from which latest posts will "
 "display on Featured Slider."
@@ -1335,43 +1339,43 @@ msgstr ""
 "Nota: aquí pots escollir les categories de les quals es mostraran entrades a "
 "l'slider destacat."
 
-#: ../inc/panel/theme-options.php:1012
+#: ../inc/panel/theme-options.php:1016
 msgid "Predefine Social Icons"
 msgstr "Predefineix les icones socials"
 
-#: ../inc/panel/theme-options.php:1048
+#: ../inc/panel/theme-options.php:1052
 msgid "Youtube"
 msgstr "Youtube"
 
-#: ../inc/panel/theme-options.php:1064
+#: ../inc/panel/theme-options.php:1068
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: ../inc/panel/theme-options.php:1072
+#: ../inc/panel/theme-options.php:1076
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../inc/panel/theme-options.php:1080
+#: ../inc/panel/theme-options.php:1084
 msgid "Foursquare"
 msgstr "Foursquare"
 
-#: ../inc/panel/theme-options.php:1200
+#: ../inc/panel/theme-options.php:1204
 msgid "Goodreads"
 msgstr "Goodreads"
 
-#: ../inc/panel/theme-options.php:1216
+#: ../inc/panel/theme-options.php:1220
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
-#: ../inc/panel/theme-options.php:1266
+#: ../inc/panel/theme-options.php:1270
 msgid "Header and Footer Codes"
 msgstr "Codi per a la capçalera i el peu de pàgina"
 
-#: ../inc/panel/theme-options.php:1270
+#: ../inc/panel/theme-options.php:1274
 msgid "Code to display on Header"
 msgstr "Codi per incloure a la capçalera"
 
-#: ../inc/panel/theme-options.php:1273
+#: ../inc/panel/theme-options.php:1277
 msgid ""
 "Note: Note: Here you can put scripts from Google, Facebook, Twitter, Add "
 "This etc. which will load on Header"
@@ -1379,11 +1383,11 @@ msgstr ""
 "Nota: aquí pots posar-hi scripts de Google, Facebook, Twitter, Add This, "
 "etc. que hagin de ser carregats a la capçalera."
 
-#: ../inc/panel/theme-options.php:1278
+#: ../inc/panel/theme-options.php:1282
 msgid "Code to display on Footer"
 msgstr "Codi per incloure al peu de pàgina"
 
-#: ../inc/panel/theme-options.php:1281
+#: ../inc/panel/theme-options.php:1285
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Twitter, Add This etc. "
 "which will load on footer"
@@ -1391,7 +1395,7 @@ msgstr ""
 "Nota: aquí pots posar-hi scripts de Google, Facebook, Twitter, Add This, "
 "etc. que hagin de ser carregats al peu de pàgina."
 
-#: ../inc/panel/theme-options.php:1835
+#: ../inc/panel/theme-options.php:1839
 msgid "More Theme Options &raquo;"
 msgstr "More Theme Options &raquo;"
 
@@ -1543,6 +1547,9 @@ msgstr "Resultats de la cerca per a: %s"
 #: ../searchform.php:17 ../searchform.php:19
 msgid "Search"
 msgstr "Cerca"
+
+#~ msgid "Light"
+#~ msgstr "Clar"
 
 #~ msgid "Footer Menu"
 #~ msgstr "Menú del peu de pàgina"

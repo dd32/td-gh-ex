@@ -483,12 +483,16 @@ function catchkathmandu_theme_options_do_page() {
                                	</div>
                                 <div class="col col-options">
                                     <label title="color-light" class="box first"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/light.png" alt="color-light" /><br />
-                                    <input type="radio" name="catchkathmandu_options[color_scheme]" id="color-light" <?php checked($options['color_scheme'], 'light'); ?> value="light"  />
-                                    <?php _e( 'Light', 'catchkathmandu' ); ?>
+                                        <input type="radio" name="catchkathmandu_options[color_scheme]" id="color-light" <?php checked($options['color_scheme'], 'light'); ?> value="light"  />
+                                        <?php _e( 'Light (Blue)', 'catchkathmandu' ); ?>
                                     </label>
                                     <label title="color-dark" class="box"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/dark.png" alt="color-dark" /><br />
-                                    <input type="radio" name="catchkathmandu_options[color_scheme]" id="color-dark" <?php checked($options['color_scheme'], 'dark'); ?> value="dark"  />
-                                    <?php _e( 'Dark', 'catchkathmandu' ); ?>
+                                        <input type="radio" name="catchkathmandu_options[color_scheme]" id="color-dark" <?php checked($options['color_scheme'], 'dark'); ?> value="dark"  />
+                                        <?php _e( 'Dark', 'catchkathmandu' ); ?>
+                                    </label>
+                                    <label title="color-lightblack" class="box"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/lightblank.png" alt="color-lightblack" /><br />
+                                        <input type="radio" name="catchkathmandu_options[color_scheme]" id="color-lightblack" <?php checked($options['color_scheme'], 'lightblack'); ?> value="lightblack"  />
+                                        <?php _e( 'Light (Black)', 'catchkathmandu' ); ?>
                                     </label>    
                               	</div>
                           	</div><!-- .row -->   
