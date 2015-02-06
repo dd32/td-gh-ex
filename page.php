@@ -1,24 +1,36 @@
-<?php get_header(); ?>
-	<div id="container">
-		<div id="content" role="main">
-			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<div class="page-content">
-						<?php
-						if ( has_post_thumbnail() ) 
-						{
-							the_post_thumbnail();// check if the post has a Post Thumbnail assigned to it.
-						}
-						
-						the_content();	
-						wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'star' ), 'after' => '</div>' ) );
-						edit_post_link( __( 'Edit', 'star' ), '<div class="edit-link">', '</div>' ); 
-						?>
-					</div>
-				</div>
-				<?php comments_template( '', true ); ?>
-<?php endwhile; // end of the loop. ?>
-			</div>
-			<?php get_sidebar(); ?>
-		</div>
+<?php
+/**
+ * The template for displaying all pages.
+ *
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages
+ * and that other 'pages' on your WordPress site will use a
+ * different template.
+ *
+ * @package star
+ */
+
+get_header(); ?>
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+			<?php while ( have_posts() ) : the_post(); ?>
+
+				<?php get_template_part( 'content', 'page' ); ?>
+
+				<?php
+					// If comments are open , load up the comment template
+					if ( comments_open()) :
+						comments_template();
+					endif;
+				?>
+
+			<?php endwhile; // end of the loop. ?>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+ 
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>
