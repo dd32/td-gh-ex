@@ -18,7 +18,7 @@
 					<div class="span12">
 						<?php
 							global $abaris;
-							if( $abaris['footer-widgets'] ) {
+							if( isset( $abaris['footer-widget'] ) && $abaris['footer-widgets'] ) {
 								get_template_part('footer','widgets');
 							} 
 						?>
@@ -30,15 +30,10 @@
 			<div class="container">
 				<div class="row">
 					<div class="span12">
-						<?php if( $abaris['footer-text'] ) : ?>
+						<?php if( isset( $abaris['footer-text'] ) && $abaris['footer-text'] != '' ) : ?>
 							<p><?php echo $abaris['footer-text']; ?></p>
 						<?php else : ?>
-							<p>
 							<?php do_action( 'abaris_credits' ); ?>
-							Powered by <a href="http://wordpress.org/"><?php printf( __( '%s', 'abaris' ), 'WordPress' ); ?></a>
-							<span class="sep"> | </span>
-							<?php printf( __( 'Theme: %1$s by %2$s.', 'abaris' ), 'Abaris', '<a href="http://www.webulous.in" rel="author">Webulous</a>' ); ?>
-							</p>
 						<?php endif; ?>
 					</div>
 				</div><!-- .site-info -->			

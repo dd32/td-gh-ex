@@ -166,3 +166,6 @@ if( class_exists('ReduxFrameworkPlugin')) {
 
 /* JigoShop Support */
 require_once( ABARIS_INCLUDES_DIR . '/jigoshop.php' );
+
+// Hooks and Filters
+require_once ( ABARIS_INCLUDES_DIR . '/hooks-filters.php' );

@@ -75,3 +75,8 @@ Version 1.1.5
 Version 1.1.6
 1. Menu Overlapping on Logo on Mobile View issue. Fixed.
 2. Validation issue. Fixed.
+
+Version 1.1.7
+	1. Fix for "Notice" messages when there is no ReduxFramework
+	2. Footer credits via hook
+
