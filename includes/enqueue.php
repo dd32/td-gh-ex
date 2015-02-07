@@ -25,6 +25,10 @@ function boxy_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+	global $boxy;
+	if( $boxy['color'] == '2' ) {
+		wp_enqueue_style( 'boxy-red', BOXY_PARENT_URL . '/css/red.css' );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'boxy_scripts' );
 

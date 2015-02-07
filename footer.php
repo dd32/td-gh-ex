@@ -29,7 +29,7 @@ if ( $boxy['footer-widgets'] ) : ?>
 					<div class="site-info">
 						<?php printf( __( 'Proudly powered by %s', 'boxy' ), '<a href="http://wordpress.org">WordPress</a>' ); ?>
 						<span class="sep"> | </span>
-						<?php printf( __( 'Theme %1$s by %2$s', 'boxy' ), 'Boxy', '<a href="http://www.webulous.in/" rel="designer">Webulous Themes</a>' ); ?>
+						<?php printf( __( 'Theme %1$s by %2$s', 'boxy' ), 'Boxy', '<a href="http://www.webulousthemes.com/" rel="designer">Webulous Themes</a>' ); ?>
 					</div><!-- .site-info -->
 				</div>
 			</div>

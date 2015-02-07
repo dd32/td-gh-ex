@@ -308,6 +308,14 @@ FEATURES;
                 // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
                 'fields' => array(
                     array(
+                        'id'=>'color',
+                        'type' => 'select',
+                        'title' => __( 'Color Scheme', 'boxy' ),
+                        'options' => array('1' => 'Grey',  '2' => 'Red'),
+                        'default' => '1'
+                    ),
+
+                    array(
                         'id'=>'breadcrumb',
                         'type' => 'switch',
                         'title' => __( 'Enable Breadcrumb Navigation', 'boxy' ),
@@ -332,7 +340,7 @@ FEATURES;
                         'notice'    => true,
                         'style'     => 'critical',
                         'icon'      => 'fa fa-info-circle',
-                        'title'     => __( 'Boxy Pro Options. <a href="http://www.webulous.in/?add-to-cart=25">Upgrade Now</a> for just $39.', 'boxy' ),
+                        'title'     => __( 'Boxy Pro Options. <a href="http://www.webulousthemes.com/?add-to-cart=25">Upgrade Now</a> for just $39.', 'boxy' ),
                         'desc'      => __( 'These options are available only in Boxy Pro version theme. Upgrade now for just $39.', 'boxy' )
                     ),
                     array(
@@ -432,7 +440,7 @@ FEATURES;
                         'notice'    => true,
                         'style'     => 'critical',
                         'icon'      => 'fa fa-info-circle',
-                        'title'     => __( 'Boxy Pro Options. <a href="http://www.webulous.in/?add-to-cart=25">Upgrade Now</a> for just $39.', 'boxy' ),
+                        'title'     => __( 'Boxy Pro Options. <a href="http://www.webulousthemes.com/?add-to-cart=25">Upgrade Now</a> for just $39.', 'boxy' ),
                         'desc'      => __( 'These options are available only in Boxy Pro version theme. Upgrade now for just $39.', 'boxy' )
                     ),
                     array(
@@ -521,7 +529,7 @@ FEATURES;
                         'notice'    => true,
                         'style'     => 'critical',
                         'icon'      => 'fa fa-info-circle',
-                        'title'     => __( 'Boxy Pro Options. <a href="http://www.webulous.in/?add-to-cart=25">Upgrade Now</a> for just $39.', 'boxy' ),
+                        'title'     => __( 'Boxy Pro Options. <a href="http://www.webulousthemes.com/?add-to-cart=25">Upgrade Now</a> for just $39.', 'boxy' ),
                         'desc'      => __( 'These options are available only in Boxy Pro version theme. Upgrade now for just $39.', 'boxy' )
                     ),
                     array(
@@ -530,7 +538,7 @@ FEATURES;
                         'title' => __( 'Footer Copyright Text', 'boxy' ),
                         'subtitle' => __( 'Footer copyright text. HTML Allowed', 'boxy' ),
                         'desc' => __( 'This field is even HTML validated!', 'boxy' ),
-                        'default' => __( 'Powered by <a href="http://wordpress.org/" target="_blank">WordPress</a>. Theme by <a href="http://www.webulous.in/">Webulous</a>.', 'boxy' ),
+                        'default' => __( 'Powered by <a href="http://wordpress.org/" target="_blank">WordPress</a>. Theme by <a href="http://www.webulousthemes.com/">Webulous</a>.', 'boxy' ),
                         'validate' => 'html',
                     ),
 
@@ -679,7 +687,7 @@ FEATURES;
                         'notice'    => true,
                         'style'     => 'critical',
                         'icon'      => 'fa fa-info-circle',
-                        'title'     => __( 'Boxy Pro Options. <a href="http://www.webulous.in/?add-to-cart=25">Upgrade Now</a> for just $39.', 'boxy' ),
+                        'title'     => __( 'Boxy Pro Options. <a href="http://www.webulousthemes.com/?add-to-cart=25">Upgrade Now</a> for just $39.', 'boxy' ),
                         'desc'      => __( 'These options are available only in Boxy Pro version theme. Upgrade now for just $39.', 'boxy' )
                     ),
 
@@ -754,7 +762,7 @@ FEATURES;
                         'type'      => 'info',
                         'style'     => 'critical',
                         'title'     => __( 'Support and Documentation.', 'boxy' ),
-                        'desc'      => __( 'Please refer to documentation page of this site\'s demo to know how to use theme options specific to this theme. For professional support about customization and other advices from theme author, Please <a href="http://www.webulous.in/?add-to-cart=25">Upgrade</a> to Boxy Pro Version', 'boxy' )
+                        'desc'      => __( 'Please refer to documentation page of this site\'s demo to know how to use theme options specific to this theme. For professional support about customization and other advices from theme author, Please <a href="http://www.webulousthemes.com/?add-to-cart=25">Upgrade</a> to Boxy Pro Version', 'boxy' )
                     ),
                 )
             );
@@ -944,7 +952,7 @@ FEATURES;
                         'notice'    => true,
                         'style'     => 'critical',
                         'icon'      => 'fa fa-info-circle',
-                        'title'     => __( 'Boxy Pro Options. <a href="http://www.webulous.in/?add-to-cart=25">Upgrade Now</a> for just $39.', 'boxy' ),
+                        'title'     => __( 'Boxy Pro Options. <a href="http://www.webulousthemes.com/?add-to-cart=25">Upgrade Now</a> for just $39.', 'boxy' ),
                         'desc'      => __( 'These options are available only in Boxy Pro version theme. Upgrade now for just $39.', 'boxy' )
                     ),
 
@@ -1145,7 +1153,7 @@ FEATURES;
                         'notice'    => true,
                         'style'     => 'critical',
                         'icon'      => 'fa fa-info-circle',
-                        'title'     => __( 'Boxy Pro Options. <a href="http://www.webulous.in/?add-to-cart=25">Upgrade Now</a> for just $39.', 'boxy' ),
+                        'title'     => __( 'Boxy Pro Options. <a href="http://www.webulousthemes.com/?add-to-cart=25">Upgrade Now</a> for just $39.', 'boxy' ),
                         'desc'      => __( 'These options are available only in Boxy Pro version theme. Upgrade now for just $39.', 'boxy' )
                     ),
 
@@ -1342,7 +1350,7 @@ FEATURES;
                     $v = str_replace( "-", "_", $this->args['opt_name'] );
                 }
                 //$this->args['intro_text'] = sprintf(__('<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'boxy'), $v);
-                $this->args['intro_text'] = sprintf( __( '<p class="btn-upgrade"><a href="http://www.webulous.in/?add-to-cart=25"><i class="fa fa-upload"></i> Upgrade for just $39</a> <a href="http://demo.webulous.in/boxy/" class="vide-demo"><i class="fa fa-eye"></i>View Demo</p>', 'boxy' ), $v );
+                $this->args['intro_text'] = sprintf( __( '<p class="btn-upgrade"><a href="http://www.webulousthemes.com/?add-to-cart=25"><i class="fa fa-upload"></i> Upgrade for just $39</a> <a href="http://demo.webulous.in/boxy/" class="vide-demo"><i class="fa fa-eye"></i>View Demo</p>', 'boxy' ), $v );
             } else {
                 $this->args['intro_text'] = __( '<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'boxy' );
             }

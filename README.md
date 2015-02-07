@@ -8,7 +8,10 @@ are licensed under GPLv2
 4. This theme uses { Flexslider } which is licensed under GPLv2
 5. This theme uses { Font Awesome } which is licensed under GPL-compatible SIL Open Font License
 6. {CAR IMAGE} is CC0 Public Domain License. http://pixabay.com/en/car-sports-car-wedding-car-49278/
+7. Sun Rise image is CC0 Public Domain License.
+https://unsplash.imgix.net/photo-1414446483597-8d8f792bfe39?q=75&fm=jpg&s=2756ab87b786786b9e689b6204d99c90
 7. All other images are created by me and is licensed under GPLv2 or later
+
 
 
 ======== Documentation =========
@@ -37,6 +40,10 @@ are licensed under GPLv2
 16. Other theme options are self explanatory.
 
 == Change Log ==
+v. 1.0.9
+	* Added color scheme and banner
+	* Domain name changes
+
 v. 1.0.8
 	* Added theme support for title-tag
 	
