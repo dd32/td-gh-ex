@@ -111,7 +111,12 @@ class Moesia_Clients extends WP_Widget {
 				<div class="carousel clearfix slider">
 					<?php while ( $r->have_posts() ) : $r->the_post(); ?>
 						<div class="clearfix">	
-							<?php the_post_thumbnail(); ?>
+							<?php $link = get_post_meta( get_the_ID(), 'wpcf-client-link', true ); ?>
+							<?php if ($link) : ?>	
+								<a href="<?php echo esc_url($link); ?>" target="_blank"><?php the_post_thumbnail(); ?></a>
+							<?php else : ?>
+								<?php the_post_thumbnail(); ?>
+							<?php endif; ?>
 						</div>
 					<?php endwhile; ?>
 				</div>				

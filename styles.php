@@ -341,17 +341,19 @@ function moesia_custom_styles($custom) {
 		$custom .= ".welcome-logo { max-width:" . intval($wlogo_size) . "px; }"."\n";
 	}
 
-	//Fonts
-	$headings_font = esc_html(get_theme_mod('headings_fonts'));	
-	$body_font = esc_html(get_theme_mod('body_fonts'));	
-	
-	if ( $headings_font ) {
-		$font_pieces = explode(":", $headings_font);
-		$custom .= "h1, h2, h3, h4, h5, h6, .main-navigation li, .fact, .all-news, .welcome-button, .call-to-action .employee-position, .post-navigation .nav-previous, .post-navigation .nav-next, .paging-navigation .nav-previous, .paging-navigation .nav-next { font-family: {$font_pieces[0]}; }"."\n";
-	}
-	if ( $body_font ) {
-		$font_pieces = explode(":", $body_font);
-		$custom .= "body { font-family: {$font_pieces[0]}; }"."\n";
+	if ( ! function_exists('moesia_fonts_extended') ) { //Check that the Moesia Fonts extension is not active	
+		//Fonts
+		$headings_font = esc_html(get_theme_mod('headings_fonts'));	
+		$body_font = esc_html(get_theme_mod('body_fonts'));	
+		
+		if ( $headings_font ) {
+			$font_pieces = explode(":", $headings_font);
+			$custom .= "h1, h2, h3, h4, h5, h6, .main-navigation li, .fact, .all-news, .welcome-button, .call-to-action .employee-position, .post-navigation .nav-previous, .post-navigation .nav-next, .paging-navigation .nav-previous, .paging-navigation .nav-next { font-family: {$font_pieces[0]}; }"."\n";
+		}
+		if ( $body_font ) {
+			$font_pieces = explode(":", $body_font);
+			$custom .= "body { font-family: {$font_pieces[0]}; }"."\n";
+		}
 	}
 	//H1 size
 	$h1_size = get_theme_mod( 'h1_size' );

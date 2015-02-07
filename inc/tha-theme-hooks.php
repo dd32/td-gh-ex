@@ -39,6 +39,7 @@ define( 'THA_HOOKS_VERSION', '1.0-draft' );
 add_theme_support( 'tha_hooks', array(
 	'header',
 	'content',
+	'footer',
 ) );
 
 /**

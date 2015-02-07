@@ -1,5 +1,13 @@
 Changelog
 
+6 Feb 2015 - 1.23
+--------------------------------------
+- updated Fontawesome to the latest version;
+- added some new options in some widgets;
+- added video support for the projects section;
+- added a check for a Moesia extension;
+- added support for some more Theme Hooks Alliance hooks.
+
 28 Jan 2015 - 1.22
 --------------------------------------
 - added translation files for de_DE, de_AT and fr_FR;
