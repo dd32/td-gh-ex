@@ -5,7 +5,7 @@
  * @package Generate
  */
 	
-define( 'GENERATE_VERSION', '1.2.7');
+define( 'GENERATE_VERSION', '1.2.8');
 define( 'GENERATE_URI', get_template_directory_uri() );
 define( 'GENERATE_DIR', get_template_directory() );
 
@@ -70,6 +70,7 @@ function generate_setup() {
 	/**
 	 * Set the content width based on the theme's design and stylesheet.
 	 */
+	global $content_width;
 	if ( ! isset( $content_width ) )
 		$content_width = 1200; /* pixels */
 
@@ -251,7 +252,7 @@ function generate_scripts() {
 	if ( 'enable' == $generate_settings['nav_search'] ) {
 		wp_enqueue_script( 'generate-navigation-search', get_template_directory_uri() . '/js/navigation-search.js', array('jquery'), GENERATE_VERSION, true );
 		wp_localize_script( 'generate-navigation-search', 'generateSearch', array(
-			'search' => __( 'Search', 'generate' ),
+			'search' => _x( 'Search', 'submit button', 'generate' ),
 		) );
 	}
 	
@@ -606,3 +607,16 @@ function generate_ie_compatibility()
 	<![endif]-->
 <?php
 }
+
+/**
+ * Remove WordPress's default padding on images with captions
+ *
+ * @param int $width Default WP .wp-caption width (image width + 10px)
+ * @return int Updated width to remove 10px padding
+ */
+if ( ! function_exists( 'generate_remove_caption_padding' ) ) :
+add_filter( 'img_caption_shortcode_width', 'generate_remove_caption_padding' );
+function generate_remove_caption_padding( $width ) {
+	return $width - 10;
+}
+endif;

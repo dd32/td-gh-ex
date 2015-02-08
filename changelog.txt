@@ -10,7 +10,15 @@ Changelog Legend:
 
 ----
 
-() - 1.2.7
+(2/8/2015) - 1.2.8
+[+] Portuguese translation added
+[!] Fix navigation search translation issue
+[!] $content_width variable now working correctly
+[+] Image caption width decreased to real image width
+
+----
+
+(1/25/2015) - 1.2.7
 [+] Font fallback set - use generate_fallback_font filter to change it
 [x] Remove filter dealing with wp_title
 [+] Re-add theme support for title-tag
