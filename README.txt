@@ -61,6 +61,12 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.2.0
+** Add support for add_theme_support( 'title-tag' ).
+
+#### 1.1.11
+* Added Theme URI link to stylesheet.
+
 #### 1.1.9
 * Changed kaira-admin.css to only load on upgrade page.
 * Changed /customizer-library/customizer.css to only load within customizer preview.

@@ -5,7 +5,7 @@
  * @package electa
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.1.9' );
+define( 'KAIRA_THEME_VERSION' , '1.2.0' );
 
 if ( ! function_exists( 'kaira_setup_theme' ) ) :
 /**
@@ -82,6 +82,8 @@ function kaira_setup_theme() {
 		'default-color' => 'F6F6F6',
 		'default-image' => '',
 	) ) );
+    
+    add_theme_support( 'title-tag' );
     
     add_theme_support( 'woocommerce' );
 }
