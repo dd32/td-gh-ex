@@ -1,4 +1,8 @@
 == Changelog ==
+
+version 2.1
+* Added Catalan translation ca_ES.po and ca_ES.mo
+
 version 2.0
 * Added German translation de_DE.po and de_DE
 
