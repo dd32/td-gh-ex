@@ -3,7 +3,7 @@ jQuery(document).ready(function() {
 	
 	/* Waypoint */
 	if ( jQuery.isFunction( jQuery.fn.waypoint ) ) {
-		var waypoint = new Waypoint({
+		var waypointheader = new Waypoint({
 			element: document.getElementById('page'),
 			handler: function(direction) {
 				if( direction == 'down' ) {
@@ -16,25 +16,26 @@ jQuery(document).ready(function() {
 			offset: -50
 		})
 
-		var waypoint = new Waypoint({
+		var waypointtoup = new Waypoint({
 			element: document.getElementById('page'),
 			handler: function(direction) {
-				if( direction == 'down' ) {
-					jQuery('#scrollup').fadeIn();
-					jQuery('#scrollup').click(function () {
-						jQuery('body,html').animate({
-							scrollTop: 0
-						}, 800);
-						return false;
-					});	
+				if( direction == 'up' ) {
+					jQuery('#scrollup').fadeOut();	
 				}
 				else {
-					jQuery('#scrollup').fadeOut();
-				}
+					jQuery('#scrollup').fadeIn();
+				}	
 			},
 			offset: -500
 		})
 	}
+
+	jQuery('#scrollup').click(function () {
+		jQuery('body,html').animate({
+			scrollTop: 1
+		}, 800);
+		return false;
+	});
 
 	/* Social */
 	jQuery( '#header-social-toggle' ).on( 'click.catchflames', function( event ) {

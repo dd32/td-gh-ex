@@ -1,7 +1,11 @@
 == Changelog ==
 
+Version 2.3.1
+* Adjusted font and padding of fixed header top menu
+* Bug Fixed: Scroll up script issue
+
 Version 2.3
-* Bug Fixed: Plugin compatiblity with WooCommerce
+* Bug Fixed: Plugin compatibility with WooCommerce
 * Bug Fixed: Search and Social in fixed header top menu
 * Updated Dutch translation nl_NL.po and nl_NL.mo files
 * Updated waypoint and custom scripts
