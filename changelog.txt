@@ -1,6 +1,11 @@
 *** Lovecraft changelog ***
 
 
+Version 1.11 (2014-02-09)
+------------------------- 
+- Removed a duplicate title function causing the page title to be added twice to <title></title>
+
+
 Version 1.10 (2014-01-29)
 ------------------------- 
 - Added additional missing esc_attr() to widgets/flickr-widget.php

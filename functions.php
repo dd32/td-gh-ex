@@ -166,31 +166,6 @@ function html_js_class () {
 }
 
 
-// Custom title function
-add_filter( 'wp_title', 'lovecraft_wp_title', 10, 2 );
-
-function lovecraft_wp_title( $title, $sep ) {
-	global $paged, $page;
-
-	if ( is_feed() )
-		return $title;
-
-	// Add the site name.
-	$title .= get_bloginfo( 'name' );
-
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title &mdash; $site_description";
-
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title &mdash; " . sprintf( __( 'Page %s', 'lovecraft' ), max( $paged, $page ) );
-
-	return $title;
-}
-
-
 // Archive navigation function
 function lovecraft_archive_navigation() {
 	
