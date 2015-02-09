@@ -6,17 +6,17 @@
         Purpose of the stylesheet follows.
 */
 a,a:visited {
-  color: #DC838D;
+  color: #ACBD5D;
 }
 a:hover{
-    color: #E05867;
+    color: #8F9E4A;
 }
-.primary-color{ color: #DC838D;}
+.primary-color{ color: #ACBD5D;}
 #site-cta .site-cta .fa.hover{
-    background: #DC838D;    
+    background: #ACBD5D;    
 }
 a.button-primary {
-    background-color: #DC838D;
+    background-color: #ACBD5D;
     color: #ffffff;
 }
 .button-primary:hover,
@@ -24,43 +24,43 @@ a.button-primary {
 .button-primary:active,
 .button-primary.active,
 .open .dropdown-toggle.button-primary {
-  background-color: #E05867;
+  background-color: #8F9E4A;
 }
 fieldset[disabled] .button-primary.active {
-  background-color: #DC838D;
+  background-color: #ACBD5D;
 }
 
 #main-heading,
 #secondary-heading{
-    background: #DC838D;
+    background: #ACBD5D;
     color: #fff;
 }
 .button-primary .badge {
-  color: #DC838D;
+  color: #ACBD5D;
 }
 .button-link {
-  color: #DC838D;
+  color: #ACBD5D;
 }
-.sc-primary-color{ color: #DC838D;}
-.sc-primary-border{ border-color: #DC838D;}
+.sc-primary-color{ color: #ACBD5D;}
+.sc-primary-border{ border-color: #ACBD5D;}
 .site-branding .search-bar .search-field:focus{
-    border-bottom: 1px solid #DC838D;
+    border-bottom: 1px solid #ACBD5D;
 }
 .icon404{
-    color: #DC838D;
+    color: #ACBD5D;
 }
 .nav-menu > li a:hover{
-    color: #DC838D;
+    color: #ACBD5D;
 }
 .scroll-top:hover{
-    border-color: #DC838D;
+    border-color: #ACBD5D;
 }
 
 ul.social-icons li a:hover{
-    background: #DC838D;
+    background: #ACBD5D;
 }
 .smartcat_team_member:hover h4{
-    color: #DC838D;
+    color: #ACBD5D;
     
 }
 .smartcat_team_member:hover img{
@@ -68,20 +68,22 @@ ul.social-icons li a:hover{
     -moz-filter: grayscale(0%);
     filter: grayscale(0%);
 }
+
 #site-toolbar .row .social-bar a:hover{
-    background: #DC838D;
+    background: #ACBD5D;
 }
 #site-navigation.main-navigation li a:hover,
 #site-navigation.main-navigation li.current_page_item a{
-    color: #DC838D;
+    color: #ACBD5D;
 }
 #site-cta .site-cta .fa{
-    border: 2px solid #DC838D;
-    color: #DC838D;
+    border: 2px solid #ACBD5D;
+    color: #ACBD5D;
 }
 @media(max-width: 600px){
     .nav-menu > li.current_page_item a{
-        color: #DC838D;
+        color: #ACBD5D;
     }      
 }
+
 

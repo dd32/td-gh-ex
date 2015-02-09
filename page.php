@@ -12,7 +12,7 @@
 get_header();
 ?>
 
-<div id="content" class="site-content site-content-wrapper">
+<div id="content" class="site-content site-content-wrapper <?php echo of_get_option('sc_theme_background_pattern','crossword'); ?>">
     <?php while (have_posts()) : the_post(); ?>
         <?php // get_template_part('content', 'page'); ?>
         <div class="page-content row ">

@@ -1,20 +1,7 @@
 <?php
 /* 
- * Avenue Go
+ * Ares Theme setup
  */
-
-
-
-function smartcat_tasty_add_menu(){
-    add_theme_page( 'Tasty', 'Tasty', 'manage_options', 'tasty_menu', 'smartcat_tasty_menu_init',  get_template_directory_uri() . '/inc/images/cat_logo_mini.png' ); 
-}
-add_action( 'admin_menu', 'smartcat_tasty_add_menu' );
-
-function smartcat_tasty_menu_init(){
-    include_once 'tasty.php';
-}
-
-//require  get_template_directory() . '/inc/engine/plugins-init.php';
 
 function avenue_scripts() {
     wp_enqueue_style('avenue-style', get_stylesheet_uri());
@@ -65,7 +52,7 @@ function avenue_widgets_init() {
         'name' => __('Header Right', 'avenue'),
         'id' => 'sidebar-header-right',
         'description' => '',
-        'before_widget' => '<aside id="%1$s" class="' . of_get_option('sc_footer_columns') . ' widget %2$s">',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget' => '</aside>',
         'before_title' => '<h2 class="hidden">',
         'after_title' => '</h2>',
@@ -177,7 +164,7 @@ class sc_recent_posts_widget extends WP_Widget {
         // Widget admin form
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'ares'); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />             
         </p>
         <?php
@@ -238,7 +225,7 @@ function sc_slider() { ?>
 <script>
     jQuery(document).ready(function($){
         jQuery('#camera_wrap_1').camera({
-            height: '800px',
+            height: '650px',
             loader: 'pie',
             pagination: false,
             thumbnails: false,
@@ -247,32 +234,31 @@ function sc_slider() { ?>
             overlayer: true,
         });            
     });
-
 </script>
     <div class="sc-slider-wrapper">
 	<div class="fluid_container">
         <div class="camera_wrap" id="camera_wrap_1">
 
-                <?php if ('' != of_get_option('sc_slide1_image', get_template_directory_uri() . '/images/demo-orange.png')) { ?>
-                    <div data-thumb="<?php echo of_get_option('sc_slide1_image', get_template_directory_uri() . '/images/demo-orange.png') ?>" data-src="<?php echo of_get_option('sc_slide1_image', get_template_directory_uri() . '/images/demo-orange.png') ?>">
+                <?php if ('' != of_get_option('sc_slide1_image', get_template_directory_uri() . '/images/ares-demo.png')) { ?>
+                    <div data-thumb="<?php echo of_get_option('sc_slide1_image', get_template_directory_uri() . '/images/ares-demo.png') ?>" data-src="<?php echo of_get_option('sc_slide1_image', get_template_directory_uri() . '/images/ares-demo.png') ?>">
                         <div class="camera_caption fadeFromBottom">
-                            <span><?php echo of_get_option('sc_slide1_text','Clean & Modern Design');?></span>
+                            <span><?php echo of_get_option('sc_slide1_text','Ares: Responsive WordPress Theme');?></span>
                         </div>
                     </div>
                 <?php } ?>            
             
-                <?php if ('' != of_get_option('sc_slide2_image', get_template_directory_uri() . '/images/demo-orange.png')) { ?>
-                      <div data-thumb="<?php echo of_get_option('sc_slide2_image', get_template_directory_uri() . '/images/demo-orange.png') ?>" data-src="<?php echo of_get_option('sc_slide2_image', get_template_directory_uri() . '/images/demo-orange.png') ?>">
+                <?php if ('' != of_get_option('sc_slide2_image', get_template_directory_uri() . '/images/ares-demo.png')) { ?>
+                      <div data-thumb="<?php echo of_get_option('sc_slide2_image', get_template_directory_uri() . '/images/ares-demo.png') ?>" data-src="<?php echo of_get_option('sc_slide2_image', get_template_directory_uri() . '/images/ares-demo.png') ?>">
                         <div class="camera_caption fadeFromBottom">
-                            <span><?php echo of_get_option('sc_slide2_text','Clean & Modern Design');?></span>
+                            <span><?php echo of_get_option('sc_slide2_text','Ares: Responsive WordPress Theme');?></span>
                         </div>
                     </div>
                 <?php } ?>   
             
-                <?php if ('' != of_get_option('sc_slide3_image', get_template_directory_uri() . '/images/demo-orange.png')) { ?>     
-                    <div data-thumb="<?php echo of_get_option('sc_slide3_image', get_template_directory_uri() . '/images/demo-orange.png') ?>" data-src="<?php echo of_get_option('sc_slide3_image', get_template_directory_uri() . '/images/demo-orange.png') ?>">
+                <?php if ('' != of_get_option('sc_slide3_image', get_template_directory_uri() . '/images/ares-demo.png')) { ?>     
+                    <div data-thumb="<?php echo of_get_option('sc_slide3_image', get_template_directory_uri() . '/images/ares-demo.png') ?>" data-src="<?php echo of_get_option('sc_slide3_image', get_template_directory_uri() . '/images/ares-demo.png') ?>">
                         <div class="camera_caption fadeFromBottom">
-                            <span><?php echo of_get_option('sc_slide3_text','Clean & Modern Design');?></span>
+                            <span><?php echo of_get_option('sc_slide3_text','Ares: Responsive WordPress Theme');?></span>
                         </div>
                     </div>
                 <?php } ?>      
@@ -283,8 +269,8 @@ function sc_slider() { ?>
 }
 
 function sc_ctas() { ?>
-    <div id="site-cta" class="row <?php echo of_get_option('sc_slider_bool', 'yes') == 'yes' ? '' : 'no-slider' ?>"><!-- #CTA boxes -->
-        
+    <div id="site-cta" class="<?php echo of_get_option('sc_slider_bool', 'yes') == 'yes' ? '' : 'no-slider' ?>"><!-- #CTA boxes -->
+        <div class="row">
 <!--        <h3 class="first-heading"><?php echo of_get_option('sc_cta_header_one', 'Easy to customize'); ?></h3>
         <h2 class="main-heading"><?php echo of_get_option('sc_cta_header_two', 'Restaurant and food inspired theme'); ?></h2>-->
         
@@ -330,6 +316,7 @@ function sc_ctas() { ?>
                 </p>
 
             </div>
+        </div>
         
     </div><!-- #CTA boxes -->
     <div class="clear"></div>
@@ -339,7 +326,7 @@ function sc_ctas() { ?>
 function sc_banner() {
     ?>
     <div id="top-banner" class="full-banner col-md-12">
-        <div>
+        <div class="row">
             <div class="col-md-12">
                 <div class="top-banner-text">
                     <?php get_sidebar('banner'); ?>
@@ -355,9 +342,7 @@ function sc_toolbar() {
     if ('no' != of_get_option('sc_headerbar_bool', 'yes')) {
         ?>
         <div id="site-toolbar">
-            <div class="row ">
-                
-                    
+            <div class="row "> 
                     <div class="col-xs-6 social-bar">
 
                         <?php if ('' != of_get_option('sc_facebook_url')) : ?>
@@ -389,10 +374,7 @@ function sc_toolbar() {
                     </div>                    
                     
                     <div class="col-xs-6 contact-bar">
-                        
-                        <a href="#">My Account</a>
-                        <a href="#">Cart</a>
-                        <a href="#">Checkout</a>
+                        <?php echo get_sidebar('header-right'); ?>
 
                     </div>
 
@@ -404,15 +386,34 @@ function sc_toolbar() {
     }
 }
 
-function sc_footer() {
-    if( 'on' == of_get_option('sc_theme_branding','on') ) :
-    echo of_get_option('sc_footer_text');?>
-    <br>
-    <!-- Before you delete the link, please make a donation! Links & donations are the only way i get credit for the days it took to make this theme -->
-    <a href="http://smartcatdesign.net/" rel="designer">
-        <img src="<?php echo get_template_directory_uri() . '/inc/images/cat_logo.png'?>" width="20px"/>
-        Design by SmartCat
-    </a>
+function wp_sc_close() { ?>
+
+    <footer id="colophon" class="site-footer " role="contentinfo">
+        <div class="footer-boxes">
+            <div class="row ">
+                <div class="col-md-12">
+                    <?php get_sidebar('footer'); ?>
+                </div>            
+            </div>        
+        </div>
+        <div class="site-info">
+            <div class="row ">
+                <div class="col-xs-6 text-left">
+                    <?php echo of_get_option('sc_footer_text');?>
+                    <br>
+                    <!-- Before you delete the link, please make a donation! Links & donations are the only way i get credit for the days it took to make this theme -->
+                    <a href="http://smartcatdesign.net/" rel="designer">
+                        <img src="<?php echo get_template_directory_uri() . '/inc/images/cat_logo.png'?>" width="20px"/>
+                        Design by SmartCat
+                    </a>                        
+                </div>
+                <div class="col-xs-6 text-right">
+                    <i class="scroll-top fa fa-chevron-circle-up"></i>
+                </div>              
+            </div>
+        </div><!-- .site-info -->
+    </footer><!-- #colophon -->
+    </div><!-- #page -->    
     <?php 
-    endif;
+
 }

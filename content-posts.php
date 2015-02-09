@@ -5,6 +5,7 @@
  * 
  */
 ?>
+<div class="row">
 <div class="item-post">
     <div class="post-thumb col-md-4">
         <a href="<?php the_permalink(); ?>">
@@ -24,4 +25,5 @@
             <a class="btn btn-default btn-primary" href="<?php the_permalink(); ?>">Read More</a>
         </div>                        
     </div>
+</div>
 </div>

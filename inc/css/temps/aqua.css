@@ -9,10 +9,12 @@ a,a:visited {
   color: #83CBDC;
 }
 a:hover{
-    color: #3D5F00;
+    color: #57A9BD;
 }
 .primary-color{ color: #83CBDC;}
-
+#site-cta .site-cta .fa.hover{
+    background: #83CBDC;    
+}
 a.button-primary {
     background-color: #83CBDC;
     color: #ffffff;
@@ -22,10 +24,16 @@ a.button-primary {
 .button-primary:active,
 .button-primary.active,
 .open .dropdown-toggle.button-primary {
-  background-color: #3D5F00;
+  background-color: #57A9BD;
 }
 fieldset[disabled] .button-primary.active {
   background-color: #83CBDC;
+}
+
+#main-heading,
+#secondary-heading{
+    background: #83CBDC;
+    color: #fff;
 }
 .button-primary .badge {
   color: #83CBDC;
@@ -60,6 +68,7 @@ ul.social-icons li a:hover{
     -moz-filter: grayscale(0%);
     filter: grayscale(0%);
 }
+
 #site-toolbar .row .social-bar a:hover{
     background: #83CBDC;
 }

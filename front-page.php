@@ -10,6 +10,24 @@ get_header(); ?>
     <div id="" class="page-content frontpage">
 
         <?php if (of_get_option('sc_slider_bool', 'yes') == 'yes') echo sc_slider(); ?>
+        
+        <?php if( of_get_option('sc_cta_header_one') ) : ?>
+        <div class="center relative" id="main-heading">
+            <div class="row">
+                <h3 id=""><span><?php echo of_get_option('sc_cta_header_one', 'Tyros: A highly customizable modern online store');?></span></h3>
+            </div>
+        </div>
+        <?php endif; ?>        
+        
+        <?php if( of_get_option('sc_cta_header_two') ) : ?>
+        <div class="center relative" id="secondary-heading">
+            <div class="row">
+                <h3 id=""><span><?php echo of_get_option('sc_cta_header_two', 'Tyros: A highly customizable modern online store');?></span></h3>
+            </div>
+        </div>
+        <?php endif; ?>        
+        
+        
         <?php if (of_get_option('sc_cta_bool', 'yes') == 'yes') echo sc_ctas(); ?>
         <?php if (of_get_option('sc_banner_bool', 'yes') == 'yes') echo sc_banner(); ?>
 
