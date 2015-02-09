@@ -24,9 +24,9 @@
                             <div class="<?php echo esc_attr($itemsize);?> home-iconmenu <?php echo 'homeitemcount'.esc_attr($counter);?>">
                                 <a href="<?php echo esc_url($icon['link']); ?>" target="<?php echo esc_attr($target); ?>" title="<?php echo esc_attr($icon['title']); ?>">
                                 <?php if(!empty($icon['url'])) {
-                                    echo '<img src="'.$icon['url'].'"/>';
+                                    echo '<img src="'.esc_url($icon['url']).'"/>';
                                 } else {
-                                    echo '<i class="'.$icon['icon_o'].'"></i>';
+                                    echo '<i class="'.esc_attr($icon['icon_o']).'"></i>';
                                 }
                                 if (!empty($icon['title'])) {
                                     echo '<h4>'.esc_html($icon['title']).'</h4>'; 

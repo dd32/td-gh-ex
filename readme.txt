@@ -49,6 +49,10 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 2.3.8 =
+* Add: better security for custom css box.
+* Fix: strange audio player conflict with mobile menu.
+
 = Version: 2.3.7 =
 * added text domain to style.css file.
 * added unmified scripts.

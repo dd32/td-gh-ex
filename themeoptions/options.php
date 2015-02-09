@@ -1524,7 +1524,7 @@ $this->sections[] = array(
             'id'=>'post_summery_default_image',
             'type' => 'media', 
             'url'=> true,
-            'title' => __('Defualt post summary feature Image', 'virtue'),
+            'title' => __('Default post summary feature Image', 'virtue'),
             'subtitle' => __('Replace theme default feature image for posts without a featured image', 'virtue'),
             ),
         array(
@@ -1572,6 +1572,7 @@ $this->sections[] = array(
             'type' => 'textarea',
             'title' => __('Custom CSS', 'virtue'), 
             'subtitle' => __('Quickly add some CSS to your theme by adding it to this block.', 'virtue'),
+            'validate' => 'css',
             ),
     ),
 );

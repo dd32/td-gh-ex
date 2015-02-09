@@ -34,7 +34,7 @@
 			$wp_query->query(array(
 				'posts_per_page' => $blogcount,
 				'category_name'	 => $blog_cat_slug,
-				'post__not_in' 	 => get_option( 'sticky_posts' )
+				'ignore_sticky_posts' => true
 				)
 			);
 			$xyz = 0;

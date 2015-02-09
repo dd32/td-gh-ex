@@ -90,10 +90,10 @@
     </div> <!-- Close Row -->
     <?php if (has_nav_menu('mobile_navigation')) : ?>
            <div id="mobile-nav-trigger" class="nav-trigger">
-              <a class="nav-trigger-case mobileclass collapsed" rel="nofollow" data-toggle="collapse" data-target=".kad-nav-collapse">
+              <button class="nav-trigger-case mobileclass collapsed" data-toggle="collapse" data-target=".kad-nav-collapse">
                 <div class="kad-navbtn"><i class="icon-reorder"></i></div>
                 <div class="kad-menu-name"><?php echo __('Menu', 'virtue'); ?></div>
-              </a>
+              </button>
             </div>
             <div id="kad-mobile-nav" class="kad-mobile-nav">
               <div class="kad-nav-inner mobileclass">
