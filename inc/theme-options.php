@@ -72,7 +72,6 @@ function annina_options_do_page() {
 				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Post views counter', 'annina' ); ?></b></li>
 				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Infinite Scroll', 'annina' ); ?></b></li>
 				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Breadcrumb', 'annina' ); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Post format', 'annina' ); ?></b> <?php _e( '(Standard, Audio, Link, Video, Quote)', 'annina' ); ?></li>
 				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( '7 Shortcodes', 'annina' ); ?></b> <?php _e( '(Toggle, Tabs, Boxes, Columns, Highlights, Buttons and Drop Cap)', 'annina' ); ?></li>
 				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( '10 Exclusive Widgets', 'annina' ); ?></b> <?php _e( '(Latest Tweet, Instagram, Social Buttons, Recent Posts with Thumbnail and Most Commented Posts...)', 'annina' ); ?></li>
 				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Related Posts Box', 'annina' ); ?></b></li>
