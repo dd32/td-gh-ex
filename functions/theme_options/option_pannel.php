@@ -28,10 +28,8 @@ function appointment_admin_menu_pannel()
 	}	
 }
 function appointment_option_panal_function()
-{	require_once('appointment_option_pannel.php'); }
+{	load_template( dirname( __FILE__ ) . '/appointment_option_pannel.php' ); }
 
-function appointment_themes_function ()
-{	
-	require_once('webriti_theme.php');
-}
+function appointment_themes_function()
+{	load_template( dirname( __FILE__ ) . '/webriti_theme.php' ); }
 ?>

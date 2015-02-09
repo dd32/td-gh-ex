@@ -75,6 +75,10 @@ LIcense: CC0 Public Domain
 
 # --- EOF --- #
 ============================Change Log================================
+@version 1.4.9
+1. Use load_template function instead of require_once.
+2. All text Translation.
+3. Update Pot file.
 @version 1.4.8
 1. Improved Blog page Styling.
 2. Add Full-width page

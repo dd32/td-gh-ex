@@ -9,7 +9,7 @@ get_template_part('index','banner'); ?>
 					<h1><?php _e('404','appointment'); ?></h1>
 					<h4><?php _e('Oops! Page not found','appointment'); ?></h4>
 					<p><?php _e('We`re sorry, but the page you are looking for doesn`t exist.','appointment'); ?></p>
-					<div class="error-btn-area"><a href="<?php echo esc_html(site_url());?>" class="error-btn"><?php _e('Go Back','elitepress'); ?></a></div>
+					<div class="error-btn-area"><a href="<?php echo esc_html(site_url());?>" class="error-btn"><?php _e('Go Back','appointment'); ?></a></div>
 				</div>
 			</div>
 		</div>			

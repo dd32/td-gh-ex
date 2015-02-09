@@ -30,7 +30,7 @@
                         <div id="setting_theme_options_ui_text" class="format-settings">
                             <div class="format-setting-wrap">
                                         
-                                  <?php require_once('pages/home_page_settings.php'); ?>    
+                                  <?php load_template( dirname( __FILE__ ) . './pages/home_page_settings.php' );  ?>    
                 </div>
             </div>
         </div>
@@ -43,7 +43,7 @@
       <div class = "format-setting type-textarea has-desc">
         <div class = "format-setting-inner">
         
-		<?php require_once('pages/home_page_header_setting.php'); ?>
+		<?php  load_template( dirname( __FILE__ ) . './pages/home_page_header_setting.php' ); ?>
                                               
 						</div>
 					</div>
@@ -57,8 +57,8 @@
             <div id="setting_export_settings_file_text" class="format-settings">
                 <div class="format-setting-wrap">
                     <div class="format-setting-label">
-					<?php require_once('pages/footer_copyright_settings.php'); ?>
-                    </div>
+					<?php  load_template( dirname( __FILE__ ) . './pages/footer_copyright_settings.php' ); ?>
+					</div>
 				</div>
             </div>
         </div>
