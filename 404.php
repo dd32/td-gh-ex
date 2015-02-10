@@ -2,7 +2,7 @@
 /**
  * The template for displaying 404 pages (Not Found).
  *
- * @package avenue
+ * @package ares
  */
 get_header();
 ?>
@@ -13,7 +13,7 @@ get_header();
                 <div class="widget widget_categories">
                     <h2 class="widgettitle center">
                         <i class="fa fa-exclamation-triangle icon404"></i>
-                        <h3 class="center">Sorry the page you're looking for is not available</h3>
+                        <h3 class="center"><?php _e("Sorry the page you're looking for is not available"); ?></h3>
                         <div class="center mt20">
                             <?php get_search_form(); ?>
                         </div>

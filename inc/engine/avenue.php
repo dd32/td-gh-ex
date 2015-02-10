@@ -3,42 +3,38 @@
  * Ares Theme setup
  */
 
-function avenue_scripts() {
-    wp_enqueue_style('avenue-style', get_stylesheet_uri());
-    wp_enqueue_style('bootstrap', get_template_directory_uri() . '/inc/css/bootstrap.css', array(), SC_AVENUE_VERSION);
-    wp_enqueue_style('fontawesome', get_template_directory_uri() . '/inc/css/font-awesome.min.css', array(), SC_AVENUE_VERSION);
-    wp_enqueue_style('avenue-main-style', get_template_directory_uri() . '/inc/css/style.css', array(), SC_AVENUE_VERSION);
+function ares_scripts() {
+    wp_enqueue_style('ares-style', get_stylesheet_uri());
+    wp_enqueue_style('bootstrap', get_template_directory_uri() . '/inc/css/bootstrap.css', array(), ARES_VERSION);
+    wp_enqueue_style('fontawesome', get_template_directory_uri() . '/inc/css/font-awesome.min.css', array(), ARES_VERSION);
+    wp_enqueue_style('ares-main-style', get_template_directory_uri() . '/inc/css/style.css', array(), ARES_VERSION);
     
-    if('Source Sans Pro, sans-serif' == of_get_option('sc_font_family')) 
-        wp_enqueue_style('avenue-font-sans', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600', array(), SC_AVENUE_VERSION);
-    if('Lato, sans-serif' == of_get_option('sc_font_family')) 
-        wp_enqueue_style('avenue-font-lato', 'http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic,400italic', array(), SC_AVENUE_VERSION);
+    if('Source Sans Pro, sans-serif' == of_get_option('ares_font_family')) 
+        wp_enqueue_style('ares-font-sans', '//fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600', array(), ARES_VERSION);
+    if('Lato, sans-serif' == of_get_option('ares_font_family')) 
+        wp_enqueue_style('ares-font-lato', '//fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic,400italic', array(), ARES_VERSION);
     
-    if('Josefin Sans, sans-serif' == of_get_option('sc_font_family')) 
-        wp_enqueue_style('avenue-font-josefin', 'http://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700', array(), SC_AVENUE_VERSION);
+    if('Josefin Sans, sans-serif' == of_get_option('ares_font_family')) 
+        wp_enqueue_style('ares-font-josefin', '//fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700', array(), ARES_VERSION);
     
-    wp_enqueue_style('avenue-template', get_template_directory_uri() . '/inc/css/temps/' . of_get_option('sc_theme_color', 'orange') . '.css', array(), SC_AVENUE_VERSION);
-    wp_enqueue_style('avenue-slider-style', get_template_directory_uri() . '/inc/css/camera.css', array(), SC_AVENUE_VERSION);
-    
+    wp_enqueue_style('ares-template', get_template_directory_uri() . '/inc/css/temps/' . esc_attr( of_get_option('ares_theme_color', 'aqua') ) . '.css', array(), ARES_VERSION);
+    wp_enqueue_style('ares-slider-style', get_template_directory_uri() . '/inc/css/camera.css', array(), ARES_VERSION);
 
+    wp_enqueue_script('ares-navigation', get_template_directory_uri() . '/js/navigation.js', array(), ARES_VERSION, true);
+    wp_enqueue_script('ares-bootstrapjs', get_template_directory_uri() . '/inc/js/bootstrap.js', array(), ARES_VERSION, true);
+    wp_enqueue_script('ares-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), ARES_VERSION, true);
 
-    wp_enqueue_script('avenue-navigation', get_template_directory_uri() . '/js/navigation.js', array(), SC_AVENUE_VERSION, true);
-    wp_enqueue_script('avenue-bootstrapjs', get_template_directory_uri() . '/inc/js/bootstrap.js', array(), SC_AVENUE_VERSION, true);
-    wp_enqueue_script('avenue-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), SC_AVENUE_VERSION, true);
+    wp_enqueue_script('ares-easing', get_template_directory_uri() . '/inc/js/jquery.easing.1.3.js', array(), ARES_VERSION, true);
+    wp_enqueue_script('ares-uslider', get_template_directory_uri() . '/inc/js/camera.js', array(), ARES_VERSION, true);
 
-    wp_enqueue_script('avenue-easing', get_template_directory_uri() . '/inc/js/jquery.easing.1.3.js', array(), SC_AVENUE_VERSION, true);
-    wp_enqueue_script('avenue-uslider', get_template_directory_uri() . '/inc/js/camera.js', array(), SC_AVENUE_VERSION, true);
-    
-
-    wp_enqueue_script('avenue-script', get_template_directory_uri() . '/inc/js/script.js', array('jquery', 'jquery-ui-core'), SC_AVENUE_VERSION);
-
+    wp_enqueue_script('ares-script', get_template_directory_uri() . '/inc/js/script.js', array('jquery', 'jquery-ui-core'), ARES_VERSION);
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
 }
 
-add_action('wp_enqueue_scripts', 'avenue_scripts');
+add_action('wp_enqueue_scripts', 'ares_scripts');
 
 
 /**
@@ -46,10 +42,10 @@ add_action('wp_enqueue_scripts', 'avenue_scripts');
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
-function avenue_widgets_init() {
+function ares_widgets_init() {
 
     register_sidebar(array(
-        'name' => __('Header Right', 'avenue'),
+        'name' => __('Header Right', 'ares'),
         'id' => 'sidebar-header-right',
         'description' => '',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -59,7 +55,7 @@ function avenue_widgets_init() {
     ));
 
     register_sidebar(array(
-        'name' => __('Fullwidth Banner', 'avenue'),
+        'name' => __('Fullwidth Banner', 'ares'),
         'id' => 'sidebar-banner',
         'description' => '',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -69,7 +65,7 @@ function avenue_widgets_init() {
     ));
 
     register_sidebar(array(
-        'name' => __('Sidebar', 'avenue'),
+        'name' => __('Sidebar', 'ares'),
         'id' => 'sidebar-1',
         'description' => '',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -79,16 +75,16 @@ function avenue_widgets_init() {
     ));
     
     register_sidebar(array(
-        'name' => __('Footer', 'avenue'),
+        'name' => __('Footer', 'ares'),
         'id' => 'sidebar-footer',
         'description' => '',
-        'before_widget' => '<aside id="%1$s" class="' . of_get_option('sc_footer_columns') . ' widget %2$s">',
+        'before_widget' => '<aside id="%1$s" class="' . esc_attr( of_get_option('ares_footer_columns') ) . ' widget %2$s">',
         'after_widget' => '</aside>',
         'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2><div class="avenue-underline"></div>',
     ));
 }
-add_action('widgets_init', 'avenue_widgets_init');
+add_action('widgets_init', 'ares_widgets_init');
 
 
 add_action('optionsframework_custom_scripts', 'optionsframework_custom_scripts');
@@ -110,31 +106,23 @@ function optionsframework_custom_scripts() { ?>
     <?php
 }
 
-add_action('wp_head', 'sc_avenue_css');
-function sc_avenue_css() {
+add_action('wp_head', 'ares_css');
+function ares_css() {
     ?>
     <style type="text/css">
         body{
-            font-size: <?php echo of_get_option('sc_font_size'); ?>;
-            font-family: <?php echo of_get_option('sc_font_family'); ?>;
-        }
-        .row{
-            /*width: ;*/
-        }
-        .sc-slider ul li{
-            background-size: <?php echo of_get_option('sc_slider_style'); ?>;
-            -webkit-background-size: <?php echo of_get_option('sc_slider_style'); ?>;
-            -moz-background-size: <?php echo of_get_option('sc_slider_style'); ?>;
+            font-size: <?php echo esc_attr( of_get_option('ares_font_size') ); ?>;
+            font-family: <?php echo esc_attr( of_get_option('ares_font_family') ); ?>;
         }
     </style>
     <?php
 }
 
-class sc_recent_posts_widget extends WP_Widget {
+class ares_recent_posts_widget extends WP_Widget {
 
     function __construct() {
         parent::__construct(
-                'sc_recent_posts_widget', __('Avenue Recent Articles', 'sc_recent_posts_widget_domain'), array('description' => __('Use this widget to display the Avenue Recent Posts.', 'sc_recent_posts_widget_domain'),)
+                'ares_recent_posts_widget', __('Avenue Recent Articles', 'ares'), array('description' => __('Use this widget to display the Ares Recent Posts.', 'ares'),)
         );
     }
 
@@ -150,7 +138,7 @@ class sc_recent_posts_widget extends WP_Widget {
 
         // This is where you run the code and display the output
 //        include 'inc/widget.php';
-        echo avenue_recent_posts();
+        echo ares_recent_posts();
 
     }
 
@@ -159,7 +147,7 @@ class sc_recent_posts_widget extends WP_Widget {
         if (isset($instance['title'])) {
             $title = $instance['title'];
         } else {
-            $title = __('Recent Articles', 'sc_recent_posts_widget_domain');
+            $title = __('Recent Articles', 'ares');
         }
         // Widget admin form
         ?>
@@ -181,19 +169,19 @@ class sc_recent_posts_widget extends WP_Widget {
 
 // Class sc_recent_posts_widget ends here
 // Register and load the widget
-function sc_avenue_load_widget() {
-    register_widget('sc_recent_posts_widget');
+function ares_load_widget() {
+    register_widget('ares_recent_posts_widget');
 }
 
-add_action('widgets_init', 'sc_avenue_load_widget');
+add_action('widgets_init', 'ares_load_widget');
 
-function avenue_recent_posts() {
+function ares_recent_posts() {
     $args = array(
         'numberposts' => '4',
         'post_status' => 'publish'
     );
     ?>
-    <div id="sc_avenue_recent_posts">
+    <div id="ares_recent_posts">
         <?php $recent_posts = wp_get_recent_posts($args);
         foreach ($recent_posts as $post) { ?>
             <div class="col-sm-3">
@@ -221,7 +209,7 @@ function avenue_recent_posts() {
     </div>
 <?php
 }
-function sc_slider() { ?>
+function ares_slider() { ?>
 <script>
     jQuery(document).ready(function($){
         jQuery('#camera_wrap_1').camera({
@@ -239,26 +227,26 @@ function sc_slider() { ?>
 	<div class="fluid_container">
         <div class="camera_wrap" id="camera_wrap_1">
 
-                <?php if ('' != of_get_option('sc_slide1_image', get_template_directory_uri() . '/images/ares-demo.png')) { ?>
-                    <div data-thumb="<?php echo of_get_option('sc_slide1_image', get_template_directory_uri() . '/images/ares-demo.png') ?>" data-src="<?php echo of_get_option('sc_slide1_image', get_template_directory_uri() . '/images/ares-demo.png') ?>">
+                <?php if ('' != of_get_option('ares_slide1_image', get_template_directory_uri() . '/images/ares-demo.png')) { ?>
+                    <div data-thumb="<?php echo esc_attr( of_get_option('ares_slide1_image', get_template_directory_uri() . '/images/ares-demo.png') ) ;?>" data-src="<?php echo esc_attr( of_get_option('ares_slide1_image', get_template_directory_uri() . '/images/ares-demo.png') ) ?>">
                         <div class="camera_caption fadeFromBottom">
-                            <span><?php echo of_get_option('sc_slide1_text','Ares: Responsive WordPress Theme');?></span>
+                            <span><?php echo esc_attr( of_get_option('ares_slide1_text','Ares: Responsive WordPress Theme') );?></span>
                         </div>
                     </div>
                 <?php } ?>            
             
-                <?php if ('' != of_get_option('sc_slide2_image', get_template_directory_uri() . '/images/ares-demo.png')) { ?>
-                      <div data-thumb="<?php echo of_get_option('sc_slide2_image', get_template_directory_uri() . '/images/ares-demo.png') ?>" data-src="<?php echo of_get_option('sc_slide2_image', get_template_directory_uri() . '/images/ares-demo.png') ?>">
+                <?php if ('' != of_get_option('ares_slide2_image', get_template_directory_uri() . '/images/ares-demo.png')) { ?>
+                      <div data-thumb="<?php echo esc_attr( of_get_option('ares_slide2_image', get_template_directory_uri() . '/images/ares-demo.png') ); ?>" data-src="<?php echo esc_attr( of_get_option('ares_slide2_image', get_template_directory_uri() . '/images/ares-demo.png') ); ?>">
                         <div class="camera_caption fadeFromBottom">
-                            <span><?php echo of_get_option('sc_slide2_text','Ares: Responsive WordPress Theme');?></span>
+                            <span><?php echo esc_attr( of_get_option('ares_slide2_text','Ares: Responsive WordPress Theme') );?></span>
                         </div>
                     </div>
                 <?php } ?>   
             
-                <?php if ('' != of_get_option('sc_slide3_image', get_template_directory_uri() . '/images/ares-demo.png')) { ?>     
-                    <div data-thumb="<?php echo of_get_option('sc_slide3_image', get_template_directory_uri() . '/images/ares-demo.png') ?>" data-src="<?php echo of_get_option('sc_slide3_image', get_template_directory_uri() . '/images/ares-demo.png') ?>">
+                <?php if ('' != of_get_option('ares_slide3_image', get_template_directory_uri() . '/images/ares-demo.png')) { ?>     
+                    <div data-thumb="<?php echo esc_attr( of_get_option('ares_slide3_image', get_template_directory_uri() . '/images/ares-demo.png') );?>" data-src="<?php echo esc_attr( of_get_option('ares_slide3_image', get_template_directory_uri() . '/images/ares-demo.png') ); ?>">
                         <div class="camera_caption fadeFromBottom">
-                            <span><?php echo of_get_option('sc_slide3_text','Ares: Responsive WordPress Theme');?></span>
+                            <span><?php echo esc_attr( of_get_option('ares_slide3_text','Ares: Responsive WordPress Theme') );?></span>
                         </div>
                     </div>
                 <?php } ?>      
@@ -268,51 +256,49 @@ function sc_slider() { ?>
     <?php
 }
 
-function sc_ctas() { ?>
-    <div id="site-cta" class="<?php echo of_get_option('sc_slider_bool', 'yes') == 'yes' ? '' : 'no-slider' ?>"><!-- #CTA boxes -->
+function ares_ctas() { ?>
+    <div id="site-cta" class="<?php echo of_get_option('ares_slider_bool', 'yes') == 'yes' ? '' : 'no-slider' ?>"><!-- #CTA boxes -->
         <div class="row">
-<!--        <h3 class="first-heading"><?php echo of_get_option('sc_cta_header_one', 'Easy to customize'); ?></h3>
-        <h2 class="main-heading"><?php echo of_get_option('sc_cta_header_two', 'Restaurant and food inspired theme'); ?></h2>-->
         
         <div class="col-md-4 site-cta">
             <div class="center">
-                <i class="<?php echo of_get_option('sc_cta1_icon', 'fa fa-desktop'); ?>"></i>
+                <i class="<?php echo esc_attr( of_get_option('ares_cta1_icon', 'fa fa-desktop') ); ?>"></i>
             </div>
                 
-            <h3><?php echo of_get_option('sc_cta1_title', 'Box 1 Title') ?></h3>
+            <h3><?php echo esc_attr( of_get_option('ares_cta1_title', 'Box 1 Title') ); ?></h3>
             <p>
-                <?php echo of_get_option('sc_cta1_text', 'Box 1 Text. Input anything you want here'); ?>
+                <?php echo of_get_option('ares_cta1_text', 'Box 1 Text. Input anything you want here'); ?>
             </p>
             <p class="">
-                <a href="<?php echo of_get_option('sc_cta1_url') ?>" class=""><?php echo of_get_option('sc_cta1_button_text', 'Click Here');  ?></a>
+                <a href="<?php echo esc_attr( of_get_option('ares_cta1_url') ) ?>" class=""><?php echo of_get_option('ares_cta1_button_text', 'Click Here');  ?></a>
             </p>                                
                 
         </div>
             <div class="col-md-4 site-cta">
                 <div class="center">
-                    <i class="<?php echo of_get_option('sc_cta2_icon', 'fa fa-tachometer'); ?>"></i>
+                    <i class="<?php echo esc_attr( of_get_option('ares_cta2_icon', 'fa fa-tachometer') ); ?>"></i>
                 </div>
 
-                <h3><?php echo of_get_option('sc_cta2_title', 'Box 2 Title') ?></h3>
+                <h3><?php echo of_get_option('ares_cta2_title', 'Box 2 Title') ?></h3>
                 <p>
-                    <?php echo of_get_option('sc_cta2_text', 'Box 2 Text. Input anything you want here'); ?>
+                    <?php echo of_get_option('ares_cta2_text', 'Box 2 Text. Input anything you want here'); ?>
                 </p>
                 <p class="">
-                    <a href="<?php echo of_get_option('sc_cta2_url') ?>" class=""><?php echo of_get_option('sc_cta2_button_text', 'Click Here');  ?></a>
+                    <a href="<?php echo esc_attr( of_get_option('ares_cta2_url') ); ?>" class=""><?php echo of_get_option('ares_cta2_button_text', 'Click Here');  ?></a>
                 </p>                                
 
             </div>
             <div class="col-md-4 site-cta">
                 <div class="center">
-                    <i class="<?php echo of_get_option('sc_cta3_icon', 'fa fa-rocket'); ?>"></i>
+                    <i class="<?php echo esc_attr( of_get_option('ares_cta3_icon', 'fa fa-rocket') ); ?>"></i>
                 </div>
 
-                <h3><?php echo of_get_option('sc_cta3_title', 'Box 3 Title') ?></h3>
+                <h3><?php echo of_get_option('ares_cta3_title', 'Box 3 Title') ?></h3>
                 <p>
-                    <?php echo of_get_option('sc_cta3_text', 'Box 3 Text. Input anything you want here') ?>
+                    <?php echo of_get_option('ares_cta3_text', 'Box 3 Text. Input anything you want here') ?>
                 </p>
                 <p class="">
-                    <a href="<?php echo of_get_option('sc_cta3_url') ?>" class=""><?php echo of_get_option('sc_cta3_button_text', 'Click Here');  ?></a>
+                    <a href="<?php echo esc_attr( of_get_option('ares_cta3_url') ) ?>" class=""><?php echo of_get_option('ares_cta3_button_text', 'Click Here');  ?></a>
                 </p>
 
             </div>
@@ -323,7 +309,7 @@ function sc_ctas() { ?>
     <?php
 }
 
-function sc_banner() {
+function ares_banner() {
     ?>
     <div id="top-banner" class="full-banner col-md-12">
         <div class="row">
@@ -338,35 +324,35 @@ function sc_banner() {
     <?php
 }
 
-function sc_toolbar() {
-    if ('no' != of_get_option('sc_headerbar_bool', 'yes')) {
+function ares_toolbar() {
+    if ('no' != of_get_option('ares_headerbar_bool', 'yes')) {
         ?>
         <div id="site-toolbar">
             <div class="row "> 
                     <div class="col-xs-6 social-bar">
 
-                        <?php if ('' != of_get_option('sc_facebook_url')) : ?>
-                            <a href="<?php echo of_get_option('sc_facebook_url') ?>" target="_blank" class="icon-facebook">
+                        <?php if ('' != of_get_option('ares_facebook_url')) : ?>
+                            <a href="<?php echo esc_attr( of_get_option('ares_facebook_url') ) ?>" target="_blank" class="icon-facebook">
                                 <i class="fa fa-facebook"></i>
                             </a>
                         <?php endif; ?>
 
-                        <?php if ('' != of_get_option('sc_twitter_url')) : ?>
-                            <a href="<?php echo of_get_option('sc_twitter_url') ?>" target="_blank" class="icon-twitter">
+                        <?php if ('' != of_get_option('ares_twitter_url')) : ?>
+                        <a href="<?php echo esc_attr( of_get_option('ares_twitter_url') ) ?>" target="_blank" class="icon-twitter">
                                 <i class="fa fa-twitter"></i>                            
                             </a>
                         <?php endif; ?>
 
 
-                        <?php if ('' != of_get_option('sc_linkedin_url')) : ?>
-                            <a href="<?php echo of_get_option('sc_linkedin_url') ?>" target="_blank" class="icon-linkedin">
+                        <?php if ('' != of_get_option('ares_linkedin_url')) : ?>
+                            <a href="<?php echo esc_attr( of_get_option('ares_linkedin_url') ) ?>" target="_blank" class="icon-linkedin">
                                 <i class="fa fa-linkedin"></i>                            
                             </a>
                         <?php endif; ?>
 
 
-                        <?php if ('' != of_get_option('sc_gplus_url')) : ?>
-                            <a href="<?php echo of_get_option('sc_gplus_url') ?>" target="_blank" class="icon-gplus">
+                        <?php if ('' != of_get_option('ares_gplus_url')) : ?>
+                            <a href="<?php echo esc_attr( of_get_option('ares_gplus_url') ) ?>" target="_blank" class="icon-gplus">
                                 <i class="fa fa-google-plus"></i>                            
                             </a>
                         <?php endif; ?>
@@ -386,7 +372,7 @@ function sc_toolbar() {
     }
 }
 
-function wp_sc_close() { ?>
+function ares_close() { ?>
 
     <footer id="colophon" class="site-footer " role="contentinfo">
         <div class="footer-boxes">
@@ -399,7 +385,7 @@ function wp_sc_close() { ?>
         <div class="site-info">
             <div class="row ">
                 <div class="col-xs-6 text-left">
-                    <?php echo of_get_option('sc_footer_text');?>
+                    <?php echo of_get_option('ares_footer_text');?>
                     <br>
                     <!-- Before you delete the link, please make a donation! Links & donations are the only way i get credit for the days it took to make this theme -->
                     <a href="http://smartcatdesign.net/" rel="designer">

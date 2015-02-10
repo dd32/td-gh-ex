@@ -2,7 +2,7 @@
 /**
  * The template for displaying Search Results pages.
  *
- * @package avenue
+ * @package ares
  */
 
 get_header(); ?>
@@ -11,7 +11,7 @@ get_header(); ?>
 		<div class="col-md-12">
 			<?php if ( have_posts() ) : ?>
 				<div class="page-title">
-					<h1 class="row center"><?php printf( __( 'Search Results for: %s', 'avenue' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+					<h1 class="row center"><?php printf( __( 'Search Results for: %s', 'ares' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 				</div><!-- .page-title -->
 
 				<?php /* Start the Loop */ ?>
@@ -30,7 +30,7 @@ get_header(); ?>
 							?>
 							<?php endwhile; ?>
 	
-							<?php avenue_paging_nav(); ?>
+							<?php ares_paging_nav(); ?>
 						</div>
 						<div class="col-md-3">
                         	<?php get_sidebar(); ?>

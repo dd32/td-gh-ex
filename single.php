@@ -2,14 +2,14 @@
 /**
  * The Template for displaying all single posts.
  *
- * @package avenue
+ * @package ares
  */
 get_header(); ?>
 
-<div id="content" class="site-content-wrapper <?php echo of_get_option('sc_theme_background_pattern','crossword'); ?>">
+<div id="content" class="site-content-wrapper <?php echo esc_attr( of_get_option('sc_theme_background_pattern','crossword') ); ?>">
     <?php while (have_posts()) : the_post(); ?>
         <div class="page-content row ">
-            <article class="col-md-9 item-page <?php echo of_get_option('sc_single_layout'); ?>">
+            <article class="col-md-9 item-page <?php echo esc_attr( of_get_option('sc_single_layout') ); ?>">
                 <h2 class="post-title"><?php the_title(); ?></h2>
                 <div class="avenue-underline"></div>
                 <?php
@@ -18,7 +18,7 @@ get_header(); ?>
                 echo 'on' == of_get_option('sc_single_date', 'on') ? 'Posted on: ' .  esc_html( get_the_date() ) : '';
                 echo 'on' == of_get_option('sc_single_author', 'on') ? ', by : ' . esc_attr(get_the_author() ) : '';
                 wp_link_pages(array(
-                    'before' => '<div class="page-links">' . __('Pages:', 'avenue'),
+                    'before' => '<div class="page-links">' . __('Pages:', 'ares'),
                     'after' => '</div>',
                 ));
                 if (comments_open() || '0' != get_comments_number()) :

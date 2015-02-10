@@ -13,9 +13,9 @@
 get_header();
 ?>
 
-<div id="content" class="site-content-wrapper <?php echo of_get_option('sc_theme_background_pattern','crossword'); ?>">
+<div id="content" class="site-content-wrapper <?php echo esc_attr( of_get_option('sc_theme_background_pattern','crossword') ); ?>">
     <div class="page-content row">
-        <div class="col-md-9  site-content item-page <?php echo of_get_option('sc_blog_layout'); ?>">
+        <div class="col-md-9  site-content item-page <?php echo esc_attr( of_get_option('sc_blog_layout') ); ?>">
             <?php if (have_posts()) : ?>
                 <?php /* Start the Loop */ ?>
                 <?php while (have_posts()) : the_post(); ?>
@@ -47,7 +47,7 @@ get_header();
             <?php else : ?>
                 <?php get_template_part('content', 'none'); ?>
             <?php endif; ?>
-            <?php avenue_paging_nav(); ?>
+            <?php ares_paging_nav(); ?>
         </div>
         
         <?php if( 'col2r' == of_get_option('sc_blog_layout', 'col2r')) : ?>

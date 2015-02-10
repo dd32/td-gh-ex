@@ -2,12 +2,12 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package avenue
+ * @package ares
  */
 ?>
 <div class="homepage-content">
     <div class="row">
-        <article id="post-<?php the_ID(); ?>" <?php //post_class();  ?> class="col-md-9 <?php echo of_get_option( 'sc_homepage_sidebar' ); ?>">
+        <article id="post-<?php the_ID(); ?>" <?php //post_class();  ?> class="col-md-9 <?php echo esc_attr( of_get_option( 'sc_homepage_sidebar' ) ); ?>">
             <header class="entry-header">
                 <?php the_title( '<h2 class="post-title">', '</h2>' ); ?>
                 <div class="avenue-underline"></div>
@@ -17,13 +17,13 @@
                 <?php the_content(); ?>
                 <?php
                 wp_link_pages( array(
-                    'before' => '<div class="page-links">' . __( 'Pages:', 'avenue' ),
+                    'before' => '<div class="page-links">' . __( 'Pages:', 'ares' ),
                     'after' => '</div>',
                 ) );
                 ?>
             </div><!-- .entry-content -->
             <footer class="entry-footer">
-                <?php edit_post_link( __( 'Edit', 'avenue' ), '<span class="edit-link">', '</span>' ); ?>
+                <?php edit_post_link( __( 'Edit', 'ares' ), '<span class="edit-link">', '</span>' ); ?>
             </footer><!-- .entry-footer -->
         </article><!-- #post-## -->
         <?php if ( 'sidebar-on' == of_get_option( 'sc_homepage_sidebar', 'sidebar-off' ) ) : ?>

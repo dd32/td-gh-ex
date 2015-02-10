@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package avenue
+ * @package ares
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -19,9 +19,9 @@
     </head>
 
     <body <?php body_class(); ?>>
-        <div id="page" class="hfeed site <?php echo 'no' == of_get_option('sc_headerbar_bool', 'yes') ? 'no_toolbar' : ''; ?>">
+        <div id="page" class="hfeed site <?php echo 'no' == of_get_option('ares_headerbar_bool', 'yes') ? 'no_toolbar' : ''; ?>">
             <header id="masthead" class="site-header" role="banner">
-                <?php sc_toolbar(); ?>
+                <?php ares_toolbar(); ?>
                 <div class="site-branding">
                     <div class="row ">
                             <div class="col-xs-3">
@@ -33,14 +33,14 @@
                                 
                                 <h2 class="site-title">
                                     <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-                                        <?php if (of_get_option('sc_logo_image') != '') : ?>
-                                        <img src="<?php echo of_get_option('sc_logo_image'); ?>" alt="" id="sc_logo"/>
+                                        <?php if (of_get_option('ares_logo_image') != '') : ?>
+                                        <img src="<?php echo esc_attr( of_get_option('ares_logo_image') ); ?>" alt="" id="sc_logo"/>
                                         <?php else : ?>
                                         <?php bloginfo('name');?>
                                         <?php endif; ?>                                        
                                     </a>
                                 </h2>
-                                <?php if (of_get_option('sc_logo_image') == '') : ?>
+                                <?php if (of_get_option('ares_logo_image') == '') : ?>
                                     <h3 class="site-description"><?php bloginfo('description'); ?></h3>
                                 <?php endif; ?>
 

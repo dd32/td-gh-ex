@@ -1,18 +1,18 @@
 <?php
 /**
- * avenue functions and definitions
+ * ares functions and definitions
  *
- * @package avenue
+ * @package ares
  */
-if (!function_exists('avenue_setup')) :
-    function avenue_setup() {
+if (!function_exists('ares_setup')) :
+    function ares_setup() {
         if (!isset($content_width)) {
             global $content_width;
             $content_width = 1060;
         }
 
-        define('SC_AVENUE_VERSION', '1.0');
-        load_theme_textdomain('avenue', get_template_directory() . '/languages');
+        define('ARES_VERSION', '1.3');
+        load_theme_textdomain('ares', get_template_directory() . '/languages');
 
         // Add default posts and comments RSS feed links to head.
         add_theme_support('automatic-feed-links');
@@ -25,14 +25,14 @@ if (!function_exists('avenue_setup')) :
          * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
          */
         register_nav_menus(array(
-            'primary' => __('Primary Menu', 'avenue'),
+            'primary' => __('Primary Menu', 'ares'),
         ));
 
         // Enable support for Post Formats.
         add_theme_support('post-formats', array('aside', 'image', 'video', 'quote', 'link'));
 
         // Setup the WordPress core custom background feature.
-        add_theme_support('custom-background', apply_filters('avenue_custom_background_args', array(
+        add_theme_support('custom-background', apply_filters('ares_custom_background_args', array(
             'default-color' => 'ffffff',
             'default-image' => '',
         )));
@@ -48,7 +48,7 @@ if (!function_exists('avenue_setup')) :
         add_filter('widget_text', 'do_shortcode');
     }
 endif; 
-add_action('after_setup_theme', 'avenue_setup');
+add_action('after_setup_theme', 'ares_setup');
 require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/customizer.php';

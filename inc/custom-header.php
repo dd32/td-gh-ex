@@ -12,37 +12,37 @@
 	<?php endif; // End header image check. ?>
 
  *
- * @package avenue
+ * @package ares
  */
 
 /**
  * Setup the WordPress core custom header feature.
  *
- * @uses avenue_header_style()
- * @uses avenue_admin_header_style()
- * @uses avenue_admin_header_image()
+ * @uses ares_header_style()
+ * @uses ares_admin_header_style()
+ * @uses ares_admin_header_image()
  */
-function avenue_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'avenue_custom_header_args', array(
+function ares_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'ares_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'avenue_header_style',
-		'admin-head-callback'    => 'avenue_admin_header_style',
-		'admin-preview-callback' => 'avenue_admin_header_image',
+		'wp-head-callback'       => 'ares_header_style',
+		'admin-head-callback'    => 'ares_admin_header_style',
+		'admin-preview-callback' => 'ares_admin_header_image',
 	) ) );
 }
-add_action( 'after_setup_theme', 'avenue_custom_header_setup' );
+add_action( 'after_setup_theme', 'ares_custom_header_setup' );
 
-if ( ! function_exists( 'avenue_header_style' ) ) :
+if ( ! function_exists( 'ares_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
  *
- * @see avenue_custom_header_setup().
+ * @see ares_custom_header_setup().
  */
-function avenue_header_style() {
+function ares_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	// If no custom options for text are set, let's bail
@@ -75,15 +75,15 @@ function avenue_header_style() {
 	</style>
 	<?php
 }
-endif; // avenue_header_style
+endif; // ares_header_style
 
-if ( ! function_exists( 'avenue_admin_header_style' ) ) :
+if ( ! function_exists( 'ares_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
- * @see avenue_custom_header_setup().
+ * @see ares_custom_header_setup().
  */
-function avenue_admin_header_style() {
+function ares_admin_header_style() {
 ?>
 	<style type="text/css">
 		.appearance_page_custom-header #headimg {
@@ -103,15 +103,15 @@ function avenue_admin_header_style() {
 	</style>
 <?php
 }
-endif; // avenue_admin_header_style
+endif; // ares_admin_header_style
 
-if ( ! function_exists( 'avenue_admin_header_image' ) ) :
+if ( ! function_exists( 'ares_admin_header_image' ) ) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *
- * @see avenue_custom_header_setup().
+ * @see ares_custom_header_setup().
  */
-function avenue_admin_header_image() {
+function ares_admin_header_image() {
 	$style = sprintf( ' style="color:#%s;"', get_header_textcolor() );
 ?>
 	<div id="headimg">
@@ -123,4 +123,4 @@ function avenue_admin_header_image() {
 	</div>
 <?php
 }
-endif; // avenue_admin_header_image
+endif; // ares_admin_header_image

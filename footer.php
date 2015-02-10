@@ -4,9 +4,9 @@
  *
  * Contains the closing of the #content div and all content after
  *
- * @package avenue
+ * @package ares
  */
-?><?php echo wp_sc_close(); ?>
+?><?php echo ares_close(); ?>
 <?php wp_footer(); ?>
 </body>
 </html>

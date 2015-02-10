@@ -17,3 +17,4 @@ are licensed under GNU General Public License version 2, see file license.txt.
 * Unslider by @idiot is fully open source under GPLv2(http://www.gnu.org/licenses/gpl-2.0.html#SEC1) https://github.com/idiot/unslider http://unslider.com/
 * Camera slider by pixedelic is Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
 * jQuery easing http://gsgd.co.uk/sandbox/jquery/easing/ is open source licensed under BSD  http://www.freebsd.org/copyright/freebsd-license.html
+* I own the image in the screenshot as well as the license to use it, license details: http://photodune.net/licenses/terms/photodune_regular

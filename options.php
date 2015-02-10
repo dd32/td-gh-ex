@@ -150,13 +150,13 @@ function optionsframework_options() {
     $options[] = array(
         'name' => __('Logo', 'ares'),
         'desc' => __('Your website Logo.', 'ares'),
-        'id' => 'sc_logo_image',
+        'id' => 'ares_logo_image',
         'type' => 'upload');
 
     $options[] = array(
         'name' => __('Header Bar', 'ares'),
         'desc' => __('Toggle the headerbar on or off', 'ares'),
-        'id' => 'sc_headerbar_bool',
+        'id' => 'ares_headerbar_bool',
         'std' => 'yes',
         'type' => 'radio',
         'options' => $bool_array);
@@ -164,28 +164,28 @@ function optionsframework_options() {
     $options[] = array(
         'name' => __('Facebook URL', 'ares'),
         'desc' => __('Enter the URL for your Facebook Page', 'ares'),
-        'id' => 'sc_facebook_url',
+        'id' => 'ares_facebook_url',
         'std' => 'https://www.facebook.com/SmartcatDesign',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('Twitter URL', 'ares'),
         'desc' => __('Enter the URL for your Facebook Page', 'ares'),
-        'id' => 'sc_twitter_url',
+        'id' => 'ares_twitter_url',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('LinkedIn URL', 'ares'),
         'desc' => __('Enter the URL for your LinkedIn Page', 'ares'),
-        'id' => 'sc_linkedin_url',
+        'id' => 'ares_linkedin_url',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('Google Plus URL', 'ares'),
         'desc' => __('Enter the URL for your Google Plus Page', 'ares'),
-        'id' => 'sc_gplus_url',
+        'id' => 'ares_gplus_url',
         'std' => '',
         'type' => 'text');
 
@@ -197,7 +197,7 @@ function optionsframework_options() {
     $options[] = array(
         'name' => "Select theme skin color",
         'desc' => "This sets the main color of the theme",
-        'id' => "sc_theme_color",
+        'id' => "ares_theme_color",
         'std' => "aqua",
         'type' => "images",
         'options' => array(
@@ -209,7 +209,7 @@ function optionsframework_options() {
     $options[] = array(
         'name' => "Select background pattern",
         'desc' => "Set the pattern for the site background",
-        'id' => "sc_theme_background_pattern",
+        'id' => "ares_theme_background_pattern",
         'std' => "crossword",
         'type' => "images",
         'options' => array(
@@ -224,7 +224,7 @@ function optionsframework_options() {
     $options[] = array(
         'name' => __('Font Size', 'ares'),
         'desc' => __('Main body font size', 'ares'),
-        'id' => 'sc_font_size',
+        'id' => 'ares_font_size',
         'std' => '14px',
         'type' => 'select',
         'class' => 'mini', //mini, tiny, small
@@ -233,7 +233,7 @@ function optionsframework_options() {
     $options[] = array(
         'name' => __('Font Family', 'ares'),
         'desc' => __('font family for the website', 'ares'),
-        'id' => 'sc_font_family',
+        'id' => 'ares_font_family',
         'std' => 'Josefin Sans, sans-serif',
         'type' => 'select',
         'class' => 'small', //mini, tiny, small
@@ -251,7 +251,7 @@ function optionsframework_options() {
     $options[] = array(
         'name' => "Select homepage design",
         'desc' => "Select to show or hide the homepage sidebar",
-        'id' => "sc_homepage_sidebar",
+        'id' => "ares_homepage_sidebar",
         'std' => "sidebar-off",
         'type' => "images",
         'options' => array(
@@ -263,7 +263,7 @@ function optionsframework_options() {
     $options[] = array(
         'name' => __('Slider', 'ares'),
         'desc' => __('Toggle the Slider on or off', 'ares'),
-        'id' => 'sc_slider_bool',
+        'id' => 'ares_slider_bool',
         'std' => 'yes',
         'type' => 'radio',
         'options' => $bool_array);
@@ -272,47 +272,47 @@ function optionsframework_options() {
     $options[] = array(
         'name' => __('Slide #1', 'ares'),
         'desc' => __('First Slide', 'ares'),
-        'id' => 'sc_slide1_image',
+        'id' => 'ares_slide1_image',
         'std' => $path,
         'type' => 'upload');
     $options[] = array(
         'name' => __('Slide #1 Text', 'ares'),
         'desc' => __('First Slide Text', 'ares'),
-        'id' => 'sc_slide1_text',
+        'id' => 'ares_slide1_text',
         'std' => 'Clean & Modern Design',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('Slide #2', 'ares'),
         'desc' => __('Second Slide', 'ares'),
-        'id' => 'sc_slide2_image',
+        'id' => 'ares_slide2_image',
         'std' => $path,
         'type' => 'upload');
     $options[] = array(
         'name' => __('Slide #2 Text', 'ares'),
         'desc' => __('Second Slide Text', 'ares'),
-        'id' => 'sc_slide2_text',
+        'id' => 'ares_slide2_text',
         'std' => 'Reponsive with Bootstrap',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('Slide #3', 'ares'),
         'desc' => __('Third Slide', 'ares'),
-        'id' => 'sc_slide3_image',
+        'id' => 'ares_slide3_image',
         'std' => $path,
         'type' => 'upload');
     
     $options[] = array(
         'name' => __('Slide #3 Text', 'ares'),
         'desc' => __('Third Slide Text', 'ares'),
-        'id' => 'sc_slide3_text',
+        'id' => 'ares_slide3_text',
         'std' => 'Comes with 600 Icons',
         'type' => 'text');
     
     $options[] = array(
         'name' => __('Show Banner', 'ares'),
         'desc' => __('Toggle the banner on or off', 'ares'),
-        'id' => 'sc_banner_bool',
+        'id' => 'ares_banner_bool',
         'std' => 'yes',
         'type' => 'radio',
         'options' => $bool_array);
@@ -320,7 +320,7 @@ function optionsframework_options() {
     $options[] = array(
         'name' => __('Show 3 CTA Boxes', 'ares'),
         'desc' => __('Toggle the CTAs on or off', 'ares'),
-        'id' => 'sc_cta_bool',
+        'id' => 'ares_cta_bool',
         'std' => 'yes',
         'type' => 'radio',
         'options' => $bool_array);
@@ -328,14 +328,14 @@ function optionsframework_options() {
     $options[] = array(
         'name' => __('CTA Heading 1', 'ares'),
         'desc' => __('first heading for CTA boxes', 'ares'),
-        'id' => 'sc_cta_header_one',
+        'id' => 'ares_cta_header_one',
         'std' => 'Easy to customize',
         'type' => 'text');    
     
     $options[] = array(
         'name' => __('CTA Heading 2', 'ares'),
         'desc' => __('second heading for CTA boxes', 'ares'),
-        'id' => 'sc_cta_header_two',
+        'id' => 'ares_cta_header_two',
         'std' => 'Responsive, Professional & Modern Multi-purpose theme',
         'type' => 'text');    
     
@@ -343,14 +343,14 @@ function optionsframework_options() {
     $options[] = array(
         'name' => __('Box #1 Title', 'ares'),
         'desc' => __('First box title', 'ares'),
-        'id' => 'sc_cta1_title',
+        'id' => 'ares_cta1_title',
         'std' => 'Box 1 Title',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('Box #1 Icon', 'ares'),
         'desc' => __('Icon for the first box', 'ares'),
-        'id' => 'sc_cta1_icon',
+        'id' => 'ares_cta1_icon',
         'std' => 'fa fa-desktop',
         'type' => 'select',
         'class' => 'mini', //mini, tiny, small
@@ -359,35 +359,35 @@ function optionsframework_options() {
     $options[] = array(
         'name' => __('Box #1 Text', 'ares'),
         'desc' => __('Textarea for Box #1', 'ares'),
-        'id' => 'sc_cta1_text',
+        'id' => 'ares_cta1_text',
         'std' => 'Box 1 Text. Input anything you want here',
         'type' => 'textarea');
 
     $options[] = array(
         'name' => __('Box #1 Link', 'ares'),
         'desc' => __('URL box button links to', 'ares'),
-        'id' => 'sc_cta1_url',
+        'id' => 'ares_cta1_url',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('Box #1 Button Text', 'ares'),
         'desc' => __('Set the text on the button', 'ares'),
-        'id' => 'sc_cta1_button_text',
+        'id' => 'ares_cta1_button_text',
         'std' => 'Click Here',
         'type' => 'text');
     // box 2
     $options[] = array(
         'name' => __('Box #2 Title', 'ares'),
         'desc' => __('First box title', 'ares'),
-        'id' => 'sc_cta2_title',
+        'id' => 'ares_cta2_title',
         'std' => 'Box #2 Title',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('Box #2 Icon', 'ares'),
         'desc' => __('Icon for the second box', 'ares'),
-        'id' => 'sc_cta2_icon',
+        'id' => 'ares_cta2_icon',
         'std' => 'fa fa-tachometer',
         'type' => 'select',
         'class' => 'mini', //mini, tiny, small
@@ -396,35 +396,35 @@ function optionsframework_options() {
     $options[] = array(
         'name' => __('Box #2 Text', 'ares'),
         'desc' => __('Textarea for Box #2', 'ares'),
-        'id' => 'sc_cta2_text',
+        'id' => 'ares_cta2_text',
         'std' => 'Box #2 text',
         'type' => 'textarea');
 
     $options[] = array(
         'name' => __('Box #2 Link', 'ares'),
         'desc' => __('URL box button links to', 'ares'),
-        'id' => 'sc_cta2_url',
+        'id' => 'ares_cta2_url',
         'std' => '',
         'type' => 'text');
     
     $options[] = array(
         'name' => __('Box #2 Button Text', 'ares'),
         'desc' => __('Set the text on the button', 'ares'),
-        'id' => 'sc_cta2_button_text',
+        'id' => 'ares_cta2_button_text',
         'std' => 'Click Here',
         'type' => 'text');
     //box3
     $options[] = array(
         'name' => __('Box #3 Title', 'ares'),
         'desc' => __('Third box title', 'ares'),
-        'id' => 'sc_cta3_title',
+        'id' => 'ares_cta3_title',
         'std' => 'Box #3 Title',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('Box #3 Icon', 'ares'),
         'desc' => __('Icon for the third box', 'ares'),
-        'id' => 'sc_cta3_icon',
+        'id' => 'ares_cta3_icon',
         'std' => 'fa fa-rocket',
         'type' => 'select',
         'class' => 'mini', //mini, tiny, small
@@ -433,21 +433,21 @@ function optionsframework_options() {
     $options[] = array(
         'name' => __('Box #3 Text', 'ares'),
         'desc' => __('Textarea for Box #3', 'ares'),
-        'id' => 'sc_cta3_text',
+        'id' => 'ares_cta3_text',
         'std' => 'Box #3 Text',
         'type' => 'textarea');
 
     $options[] = array(
         'name' => __('Box #3 Link', 'ares'),
         'desc' => __('URL box button links to', 'ares'),
-        'id' => 'sc_cta3_url',
+        'id' => 'ares_cta3_url',
         'std' => '',
         'type' => 'text');
     
     $options[] = array(
         'name' => __('Box #3 Button Text', 'ares'),
         'desc' => __('Set the text on the button', 'ares'),
-        'id' => 'sc_cta3_button_text',
+        'id' => 'ares_cta3_button_text',
         'std' => 'Click Here',
         'type' => 'text');
     
@@ -461,7 +461,7 @@ function optionsframework_options() {
     $options[] = array(
         'name' => "Blog Page Layout",
         'desc' => "Select full-width or right sidebar page layout",
-        'id' => "sc_blog_layout",
+        'id' => "ares_blog_layout",
         'std' => "col2r",
         'type' => "images",
         'options' => array(
@@ -472,7 +472,7 @@ function optionsframework_options() {
     $options[] = array(
         'name' => __('Blog Featured Images','ares'),
         'desc' => __('Show or Hide the post images on the blog page', 'ares'),
-        'id' => 'sc_blog_featured',
+        'id' => 'ares_blog_featured',
         'std' => 'on',
         'type' => 'radio',
         'options' => array(
@@ -483,7 +483,7 @@ function optionsframework_options() {
     $options[] = array(
         'name' => __("Single Post Layout", 'ares'),
         'desc' => __("Select full-width or right sidebar page layout", 'ares'),
-        'id' => "sc_single_layout",
+        'id' => "ares_single_layout",
         'std' => "col2r",
         'type' => "images",
         'options' => array(
@@ -494,7 +494,7 @@ function optionsframework_options() {
     $options[] = array(
         'name' => __('Single Post Featured Images','ares'),
         'desc' => __('Show or Hide the post images on a single post', 'ares'),
-        'id' => 'sc_single_featured',
+        'id' => 'ares_single_featured',
         'std' => 'on',
         'type' => 'radio',
         'options' => array(
@@ -506,7 +506,7 @@ function optionsframework_options() {
     $options[] = array(
         'name' => __('Single Post Date','ares'),
         'desc' => __('Show or Hide the Posted On post date', 'ares'),
-        'id' => 'sc_single_date',
+        'id' => 'ares_single_date',
         'std' => 'on',
         'type' => 'radio',
         'options' => array(
@@ -517,7 +517,7 @@ function optionsframework_options() {
     $options[] = array(
         'name' => __('Single Post Author','ares'),
         'desc' => __('Show or Hide the post author', 'ares'),
-        'id' => 'sc_single_author',
+        'id' => 'ares_single_author',
         'std' => 'on',
         'type' => 'radio',
         'options' => array(
@@ -533,7 +533,7 @@ function optionsframework_options() {
     $options[] = array(
         'name' => __('Number of Columns','ares'),
         'desc' => __('How many columns is the footer', 'ares'),
-        'id' => 'sc_footer_columns',
+        'id' => 'ares_footer_columns',
         'std' => 'col-md-4',
         'type' => 'select',
         'options' => $footer_columns);
@@ -541,209 +541,16 @@ function optionsframework_options() {
     $options[] = array(
         'name' => __('Footer Text', 'ares'),
         'desc' => __('Enter text for the footer', 'ares'),
-        'id' => 'sc_footer_text',
+        'id' => 'ares_footer_text',
         'std' => '&#169; 2014 Your company name',
         'type' => 'textarea');
-   
-    
-    //-------------------- Add ons
-//    $options[] = array(
-//        'name' => __('Add Ons', 'ares'),
-//        'type' => 'heading');
-    
-    
-//    $options[] = array(
-//        'name' => __('Add Ons', 'ares'),
-//        'type' => 'heading');
-
-
-//    $options[] = array(
-//        'name' => __('Text Editor', 'ares'),
-//        'type' => 'heading');
-//    $options[] = array(
-//        'name' => __('Input Text Mini', 'ares'),
-//        'desc' => __('A mini text input field.', 'ares'),
-//        'id' => 'example_text_mini',
-//        'std' => 'Default',
-//        'class' => 'mini',
-//        'type' => 'text');
-//
-//    $options[] = array(
-//        'name' => __('Input Text', 'ares'),
-//        'desc' => __('A text input field.', 'ares'),
-//        'id' => 'example_text',
-//        'std' => 'Default Value',
-//        'type' => 'text');
-//
-//    $options[] = array(
-//        'name' => __('Textarea', 'ares'),
-//        'desc' => __('Textarea description.', 'ares'),
-//        'id' => 'example_textarea',
-//        'std' => 'Default Text',
-//        'type' => 'textarea');
-//
-//    $options[] = array(
-//        'name' => __('Input Select Small', 'ares'),
-//        'desc' => __('Small Select Box.', 'ares'),
-//        'id' => 'example_select',
-//        'std' => 'three',
-//        'type' => 'select',
-//        'class' => 'mini', //mini, tiny, small
-//        'options' => $test_array);
-//
-//    $options[] = array(
-//        'name' => __('Input Select Wide', 'ares'),
-//        'desc' => __('A wider select box.', 'ares'),
-//        'id' => 'example_select_wide',
-//        'std' => 'two',
-//        'type' => 'select',
-//        'options' => $test_array);
-//
-//    if ($options_categories) {
-//        $options[] = array(
-//            'name' => __('Select a Category', 'ares'),
-//            'desc' => __('Passed an array of categories with cat_ID and cat_name', 'ares'),
-//            'id' => 'example_select_categories',
-//            'type' => 'select',
-//            'options' => $options_categories);
-//    }
-//
-//    if ($options_tags) {
-//        $options[] = array(
-//            'name' => __('Select a Tag', 'options_check'),
-//            'desc' => __('Passed an array of tags with term_id and term_name', 'options_check'),
-//            'id' => 'example_select_tags',
-//            'type' => 'select',
-//            'options' => $options_tags);
-//    }
-//
-//    $options[] = array(
-//        'name' => __('Select a Page', 'ares'),
-//        'desc' => __('Passed an pages with ID and post_title', 'ares'),
-//        'id' => 'example_select_pages',
-//        'type' => 'select',
-//        'options' => $options_pages);
-//
-//    $options[] = array(
-//        'name' => __('Input Radio (one)', 'ares'),
-//        'desc' => __('Radio select with default options "one".', 'ares'),
-//        'id' => 'example_radio',
-//        'std' => 'one',
-//        'type' => 'radio',
-//        'options' => $test_array);
-//
-//    $options[] = array(
-//        'name' => __('Example Info', 'ares'),
-//        'desc' => __('This is just some example information you can put in the panel.', 'ares'),
-//        'type' => 'info');
-//
-//    $options[] = array(
-//        'name' => __('Input Checkbox', 'ares'),
-//        'desc' => __('Example checkbox, defaults to true.', 'ares'),
-//        'id' => 'example_checkbox',
-//        'std' => '1',
-//        'type' => 'checkbox');
-//    
-//
-//    $options[] = array(
-//        'name' => __('Check to Show a Hidden Text Input', 'ares'),
-//        'desc' => __('Click here and see what happens.', 'ares'),
-//        'id' => 'example_showhidden',
-//        'type' => 'checkbox');
-//
-//    $options[] = array(
-//        'name' => __('Hidden Text Input', 'ares'),
-//        'desc' => __('This option is hidden unless activated by a checkbox click.', 'ares'),
-//        'id' => 'example_text_hidden',
-//        'std' => 'Hello',
-//        'class' => 'hidden',
-//        'type' => 'text');
-//
-//    $options[] = array(
-//        'name' => __('Uploader Test', 'ares'),
-//        'desc' => __('This creates a full size uploader that previews the image.', 'ares'),
-//        'id' => 'example_uploader',
-//        'type' => 'upload');
-//
-//    $options[] = array(
-//        'name' => "Example Image Selector",
-//        'desc' => "Images for layout.",
-//        'id' => "example_images",
-//        'std' => "2c-l-fixed",
-//        'type' => "images",
-//        'options' => array(
-//            '1col-fixed' => $imagepath . '1col.png',
-//            '2c-l-fixed' => $imagepath . '2cl.png',
-//            '2c-r-fixed' => $imagepath . '2cr.png')
-//    );
-//
-//    $options[] = array(
-//        'name' => __('Example Background', 'ares'),
-//        'desc' => __('Change the background CSS.', 'ares'),
-//        'id' => 'example_background',
-//        'std' => $background_defaults,
-//        'type' => 'background');
-//
-//    $options[] = array(
-//        'name' => __('Multicheck', 'ares'),
-//        'desc' => __('Multicheck description.', 'ares'),
-//        'id' => 'example_multicheck',
-//        'std' => $multicheck_defaults, // These items get checked by default
-//        'type' => 'multicheck',
-//        'options' => $multicheck_array);
-//
-//    $options[] = array(
-//        'name' => __('Colorpicker', 'ares'),
-//        'desc' => __('No color selected by default.', 'ares'),
-//        'id' => 'example_colorpicker',
-//        'std' => '',
-//        'type' => 'color');
-//
-//    $options[] = array('name' => __('Typography', 'ares'),
-//        'desc' => __('Example typography.', 'ares'),
-//        'id' => "example_typography",
-//        'std' => $typography_defaults,
-//        'type' => 'typography');
-//
-//    $options[] = array(
-//        'name' => __('Custom Typography', 'ares'),
-//        'desc' => __('Custom typography options.', 'ares'),
-//        'id' => "custom_typography",
-//        'std' => $typography_defaults,
-//        'type' => 'typography',
-//        'options' => $typography_options);
-
-
-    /**
-     * For $settings options see:
-     * http://codex.wordpress.org/Function_Reference/wp_editor
-     *
-     * 'media_buttons' are not supported as there is no post to attach items to
-     * 'textarea_name' is set by the 'id' you choose
-     
-    
-      $wp_editor_settings = array(
-      'wpautop' => true, // Default
-      'textarea_rows' => 5,
-      'tinymce' => array('plugins' => 'wordpress')
-      );
-
-      $options[] = array(
-      'name' => __('Default Text Editor', 'ares'),
-      'desc' => sprintf(__('You can also pass settings to the editor.  Read more about wp_editor in <a href="%1$s" target="_blank">the WordPress codex</a>', 'ares'), 'http://codex.wordpress.org/Function_Reference/wp_editor'),
-      'id' => 'example_editor',
-      'type' => 'editor',
-      'settings' => $wp_editor_settings);
-      */
-      
-     
 
     return $options;
 }
 
-add_action('optionsframework_after', 'sc_avenue_options_display_sidebar');
+add_action('optionsframework_after', 'ares_ares_options_display_sidebar');
 
-function sc_avenue_options_display_sidebar() {
+function ares_ares_options_display_sidebar() {
     ?>
 
     <div class="width30 left ml2p">

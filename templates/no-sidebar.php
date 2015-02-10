@@ -4,7 +4,7 @@
  */
 get_header();
 ?>
-<div class="site-content-wrapper <?php echo of_get_option('sc_theme_background_pattern','crossword'); ?>">
+<div class="site-content-wrapper <?php echo esc_attr( of_get_option('sc_theme_background_pattern','crossword') ); ?>">
     <div id="content" class="site-content">
         <?php while (have_posts()) : the_post(); ?>
             <?php // get_template_part('content', 'page'); ?>
@@ -14,7 +14,7 @@ get_header();
                     <div class="avenue-underline"></div>
                     <?php
                     the_content();
-                    wp_link_pages(array('before' => '<div class="page-links">' . __('Pages:', 'avenue'), 'after' => '</div>'));
+                    wp_link_pages(array('before' => '<div class="page-links">' . __('Pages:', 'ares'), 'after' => '</div>'));
 
                     // If comments are open or we have at least one comment, load up the comment template
                     if (comments_open() || '0' != get_comments_number()) :
