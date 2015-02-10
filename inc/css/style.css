@@ -83,7 +83,7 @@ a.button-primary{
     height: 50px;
     line-height: 50px;
     border-bottom: 1px solid #F0F0F0;
-
+    overflow: hidden;
 }
 #site-toolbar .contact-bar a{
     height: 30px;
@@ -147,6 +147,9 @@ a.button-primary{
     height: 100%;
     line-height: 80px;
     overflow: initial;
+}
+.site-branding .row .col-xs-3{
+    overflow: hidden;
 }
 .site-branding .row [class*="col-"],
 .site-title{
@@ -258,7 +261,7 @@ a.button-primary{
 }
 .site-title{
     margin: 0;
-    font-size: 40px;
+    font-size: 29px;
 }
 .site-description{
     font-size: 14px;

@@ -201,7 +201,7 @@ function optionsframework_options() {
         'std' => "aqua",
         'type' => "images",
         'options' => array(
-            'orange' => $imagepath . 'orange.png',
+            'red' => $imagepath . 'red.png',
             'green' => $imagepath . 'green.png',
             'aqua' => $imagepath . 'aqua.png')
     );
@@ -308,14 +308,7 @@ function optionsframework_options() {
         'id' => 'ares_slide3_text',
         'std' => 'Comes with 600 Icons',
         'type' => 'text');
-    
-    $options[] = array(
-        'name' => __('Show Banner', 'ares'),
-        'desc' => __('Toggle the banner on or off', 'ares'),
-        'id' => 'ares_banner_bool',
-        'std' => 'yes',
-        'type' => 'radio',
-        'options' => $bool_array);
+
     
     $options[] = array(
         'name' => __('Show 3 CTA Boxes', 'ares'),
