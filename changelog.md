@@ -1,5 +1,26 @@
 # Storefront Changelog
 
+### *2015.02.10* - 1.3.0
+* **New** - Support for WooCommerce 2.3 features like responsive tables.
+* **Fix** - Margin on site title / logo.
+* **Fix** - Tweaked some css selectors in the checkout to improve compatiblity with Amazon Payments Advanced gateway.
+* **Fix** - Layout selector in Firefox.
+* **Fix** - `storefront_menu_toggle_text` filter. Props [jesinwp](https://github.com/jesinwp).
+* **Tweak** - Product Reviews Pro integration.
+* **Tweak** - Select width in WooCommerce forms.
+* **Tweak** - Composite Products integration improvements.
+* **Tweak** - Removed header widget region bottom margin.
+* **Tweak** - Increased size of photos displayed in the WooCommerce Photography extension.
+* **Tweak** - Page / term description width.
+* **Tweak** - Hide 'What is WooCommerce' section on welcome screen when it's already installed.
+* **Tweak** - Widget region order in dashboard.
+* **Tweak** - Add the correct page content hook in the inline docs ( template-homepage.php ).
+* **Tweak** - `mark` styling.
+* **Dev** - Added `storefront_sanitize_choices()`.
+* **Dev** - Tweaked the divider Customizer control to allow text/title.
+* **Dev** - Updated FontAwesome to version 4.3.0.
+* **Dev** - Libsass / node susy for faster compiling. Please do a fresh `npm install` when working with this version.
+
 ### *2015.01.22* - 1.2.5
 * **Fix** - Review form input alignment.
 * **Tweak** - Widget region order in dashboard.
