@@ -361,7 +361,7 @@ FEATURES;
                         'notice'    => true,
                         'style'     => 'critical',
                         'icon'      => 'fa fa-info-circle',
-                        'title'     => __('Greenr Pro Options. <a href="http://www.webulous.in/?add-to-cart=27">Upgrade Now</a> for just $39.', 'greenr'),
+                        'title'     => __('Greenr Pro Options. <a href="http://www.webulousthemes.com/?add-to-cart=27">Upgrade Now</a> for just $39.', 'greenr'),
                         'desc'      => __('These options are available only in Greenr Pro version theme. Upgrade now for just $39.', 'greenr')
                     ),
                     array(
@@ -469,7 +469,7 @@ FEATURES;
                         'notice'    => true,
                         'style'     => 'critical',
                         'icon'      => 'fa fa-info-circle',
-                        'title'     => __('Greenr Pro Options. <a href="http://www.webulous.in/?add-to-cart=27">Upgrade Now</a> for just $39.', 'greenr'),
+                        'title'     => __('Greenr Pro Options. <a href="http://www.webulousthemes.com/?add-to-cart=27">Upgrade Now</a> for just $39.', 'greenr'),
                         'desc'      => __('These options are available only in Greenr Pro version theme. Upgrade now for just $39.', 'greenr')
                     ),
                     array(
@@ -558,7 +558,7 @@ FEATURES;
                         'notice'    => true,
                         'style'     => 'critical',
                         'icon'      => 'fa fa-info-circle',
-                        'title'     => __('Greenr Pro Options. <a href="http://www.webulous.in/?add-to-cart=27">Upgrade Now</a> for just $39.', 'greenr'),
+                        'title'     => __('Greenr Pro Options. <a href="http://www.webulousthemes.com/?add-to-cart=27">Upgrade Now</a> for just $39.', 'greenr'),
                         'desc'      => __('These options are available only in Greenr Pro version theme. Upgrade now for just $39.', 'greenr')
                     ),
                     array(
@@ -567,7 +567,7 @@ FEATURES;
                         'title' => __('Footer Copyright Text', 'greenr'), 
                         'subtitle' => __('Footer copyright text. HTML Allowed', 'greenr'),
                         'desc' => __('This field is even HTML validated!', 'greenr'),
-                        'default' => __( 'Powered by <a href="http://wordpress.org/" target="_blank">WordPress</a>. Theme by <a href="http://www.webulous.in/">Webulous</a>.', 'greenr' ),
+                        'default' => __( 'Powered by <a href="http://wordpress.org/" target="_blank">WordPress</a>. Theme by <a href="http://www.webulousthemes.com/">Webulous</a>.', 'greenr' ),
                         'validate' => 'html',
                         ),
 
@@ -706,7 +706,7 @@ FEATURES;
                         'type' => 'textarea',
                         'title' => __('Additional Info', 'greenr' ), 
                         'validate' => 'html',
-                        'default' => __('<div class="callout-widget"><div class="call-content"><p>Vestibulum dapibus, elis id lacinia efficitur, ex mi iaculis ipsum, ac posuere dui tellus a odio. </p></div><div class="callout-btn"><a href="http://www.webulous.in/?add-to-cart=27">Purchase Now</a></div><br class="clear"></div>', 'greenr'),
+                        'default' => __('<div class="callout-widget"><div class="call-content"><p>Vestibulum dapibus, elis id lacinia efficitur, ex mi iaculis ipsum, ac posuere dui tellus a odio. </p></div><div class="callout-btn"><a href="http://www.webulousthemes.com/?add-to-cart=27">Purchase Now</a></div><br class="clear"></div>', 'greenr'),
                     ), 
 
                     array(
@@ -715,7 +715,7 @@ FEATURES;
                         'notice'    => true,
                         'style'     => 'critical',
                         'icon'      => 'fa fa-info-circle',
-                        'title'     => __('Greenr Pro Options. <a href="http://www.webulous.in/?add-to-cart=27">Upgrade Now</a> for just $39.', 'greenr'),
+                        'title'     => __('Greenr Pro Options. <a href="http://www.webulousthemes.com/?add-to-cart=27">Upgrade Now</a> for just $39.', 'greenr'),
                         'desc'      => __('These options are available only in Greenr Pro version theme. Upgrade now for just $39.', 'greenr')
                     ),
                     array(
@@ -795,7 +795,7 @@ FEATURES;
                         'notice'    => true,
                         'style'     => 'critical',
                         'icon'      => 'fa fa-info-circle',
-                        'title'     => __('Greenr Pro Options. <a href="http://www.webulous.in/?add-to-cart=27">Upgrade Now</a> for just $39.', 'greenr'),
+                        'title'     => __('Greenr Pro Options. <a href="http://www.webulousthemes.com/?add-to-cart=27">Upgrade Now</a> for just $39.', 'greenr'),
                         'desc'      => __('These options are available only in Greenr Pro version theme. Upgrade now for just $39.', 'greenr')
                     ),
                     
@@ -881,7 +881,7 @@ FEATURES;
                         'type'      => 'info',
                         'style'     => 'critical',
                         'title'     => __('Support and Documentation.', 'redux-framework-demo'),
-                        'desc'      => __('Please refer to documentation page of this site\'s demo to know how to use theme options specific to this theme. For professional support about customization and other advices from theme author, Please <a href="http://www.webulous.in/?add-to-cart=27">Upgrade</a> to Greenr Pro Version', 'greenr')
+                        'desc'      => __('Please refer to documentation page of this site\'s demo to know how to use theme options specific to this theme. For professional support about customization and other advices from theme author, Please <a href="http://www.webulousthemes.com/?add-to-cart=27">Upgrade</a> to Greenr Pro Version', 'greenr')
                     ),
                 )
             );
@@ -1071,7 +1071,7 @@ FEATURES;
                         'notice'    => true,
                         'style'     => 'critical',
                         'icon'      => 'fa fa-info-circle',
-                        'title'     => __('Greenr Pro Options. <a href="http://www.webulous.in/?add-to-cart=27">Upgrade Now</a> for just $39.', 'greenr'),
+                        'title'     => __('Greenr Pro Options. <a href="http://www.webulousthemes.com/?add-to-cart=27">Upgrade Now</a> for just $39.', 'greenr'),
                         'desc'      => __('These options are available only in Greenr Pro version theme. Upgrade now for just $39.', 'greenr')
                     ),
                     
@@ -1272,7 +1272,7 @@ FEATURES;
                         'notice'    => true,
                         'style'     => 'critical',
                         'icon'      => 'fa fa-info-circle',
-                        'title'     => __('Greenr Pro Options. <a href="http://www.webulous.in/?add-to-cart=27">Upgrade Now</a> for just $39.', 'greenr'),
+                        'title'     => __('Greenr Pro Options. <a href="http://www.webulousthemes.com/?add-to-cart=27">Upgrade Now</a> for just $39.', 'greenr'),
                         'desc'      => __('These options are available only in Greenr Pro version theme. Upgrade now for just $39.', 'greenr')
                     ),
                     
@@ -1472,7 +1472,7 @@ FEATURES;
                     $v = str_replace("-", "_", $this->args['opt_name']);
                 }
                 //$this->args['intro_text'] = sprintf(__('<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'redux-framework-demo'), $v);
-                $this->args['intro_text'] = sprintf(__('<p class="btn-upgrade"><a href="http://www.webulous.in/?add-to-cart=27"><i class="fa fa-upload"></i> Upgrade for just $39</a> <a href="http://demo.webulous.in/greenr" class="vide-demo"><i class="fa fa-eye"></i>View Demo</p>', 'redux-framework-demo'), $v);
+                $this->args['intro_text'] = sprintf(__('<p class="btn-upgrade"><a href="http://www.webulousthemes.com/?add-to-cart=27"><i class="fa fa-upload"></i> Upgrade for just $39</a> <a href="http://demo.webulous.in/greenr" class="vide-demo"><i class="fa fa-eye"></i>View Demo</p>', 'redux-framework-demo'), $v);
             } else {
                 $this->args['intro_text'] = __('<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'redux-framework-demo');
             }

@@ -22,8 +22,8 @@ http://www.gratisography.com/pictures/46_1.jpg
 ======== Documentation =========
 
 === Installation ===
-1. Download and unzip 'boxy' theme
-2. Upload the `boxy` folder to the `/wp-content/themes/` directory
+1. Download and unzip `greenr` theme
+2. Upload the `greenr` folder to the `/wp-content/themes/` directory
 3. Activate the Theme through the 'Themes' menu in WordPress
 
 == Setting Up Front Page ==
@@ -45,23 +45,27 @@ http://www.gratisography.com/pictures/46_1.jpg
 16. Other theme options are self explanatory.
 
 == Change Log ==
+Version 1.0.5
+	* Typo Fix
+	* Screenshot change
+	* Title Tag Support added.
 
 Version 1.0.4
-1) Languages directory path fix
-2) Pro Version Price Change
+	* Languages directory path fix
+	* Pro Version Price Change
 
 Version 1.0.3
-1) Text domain fix
-2) rtl.css removal
+	* Text domain fix
+	* rtl.css removal
 
 Version 1.0.2
-1) Word Wrap fix
-2) Remove unnecessary text in theme options
+	* Word Wrap fix
+	* Remove unnecessary text in theme options
 
 Version 1.0.1
-1) Fix issues raised by reviewer
-2) Added Redux Theme Options
+	* Fix issues raised by reviewer
+	* Added Redux Theme Options
 
 Version 1.0.0
-1) Initial Release
+	* Initial Release
 

@@ -65,7 +65,7 @@ function greenr_wp_title( $title, $sep ) {
 
 	return $title;
 }
-add_filter( 'wp_title', 'greenr_wp_title', 10, 2 );
+//add_filter( 'wp_title', 'greenr_wp_title', 10, 2 );
 
 /**
  * Sets the authordata global when viewing an author archive.

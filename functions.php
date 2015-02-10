@@ -62,6 +62,9 @@ function greenr_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+
+	// Add title-tag support
+	add_theme_support( 'title-tag' );
 }
 endif; // greenr_setup
 add_action( 'after_setup_theme', 'greenr_setup' );
