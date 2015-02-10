@@ -83,24 +83,6 @@ function ares_widgets_init() {
         'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2><div class="avenue-underline"></div>',
     ));
-    
-    // unregister all widgets
-     function unregister_default_widgets() {
-         unregister_widget('WP_Widget_Pages');
-         unregister_widget('WP_Widget_Calendar');
-         unregister_widget('WP_Widget_Archives');
-         unregister_widget('WP_Widget_Links');
-         unregister_widget('WP_Widget_Meta');
-         unregister_widget('WP_Widget_Search');
-         unregister_widget('WP_Widget_Text');
-         unregister_widget('WP_Widget_Categories');
-         unregister_widget('WP_Widget_Recent_Posts');
-         unregister_widget('WP_Widget_Recent_Comments');
-         unregister_widget('WP_Widget_RSS');
-         unregister_widget('WP_Widget_Tag_Cloud');
-         unregister_widget('WP_Nav_Menu_Widget');
-     }    
-    
 }
 add_action('widgets_init', 'ares_widgets_init');
 
@@ -405,7 +387,6 @@ function ares_close() { ?>
                 <div class="col-xs-6 text-left">
                     <?php echo of_get_option('ares_footer_text');?>
                     <br>
-                    <!-- Before you delete the link, please make a donation! Links & donations are the only way i get credit for the days it took to make this theme -->
                     <a href="http://smartcatdesign.net/" rel="designer">
                         <img src="<?php echo get_template_directory_uri() . '/inc/images/cat_logo.png'?>" width="20px"/>
                         Design by SmartCat
