@@ -1,5 +1,8 @@
 == Changelog ==
 
+Version 3.4.1
+* Bug Fixed: Layout issue with body_class (Reported by Christian Nicole Hamann )
+
 Version 3.4
 * Added class site for main wrapper
 * Updated CSS to make it better responsive
