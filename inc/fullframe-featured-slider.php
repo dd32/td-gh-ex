@@ -188,7 +188,7 @@ function fullframe_page_slider( $options ) {
 				}
 				else {
 					//Default value if there is no first image
-					$fullframe_image = '<img class="pngfix wp-post-image" src="'.get_template_directory_uri().'/images/gallery/no-featured-image-1200x514.jpg" >';
+					$fullframe_image = '<img class="pngfix wp-post-image" src="'.get_template_directory_uri().'/images/gallery/no-featured-image-1680x720.jpg" >';
 					
 					//Get the first image in page, returns false if there is no image
 					$fullframe_first_image = fullframe_get_first_image( $post->ID, 'fullframe-slider', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class' => 'pngfix' ) );

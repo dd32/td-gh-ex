@@ -1225,15 +1225,11 @@ Responsive Style
 	}
 
 	#logo-icon {
-	    width: 286px;
+	    width: 272px;
 	}
 
 	#site-branding {
 		padding-top: 0;
-	}
-
-	.genericon-menu {
-	    padding: 5px;
 	}
 
 	.mobile-menu-one #site-branding {
@@ -1304,7 +1300,7 @@ Responsive Style
 	}
 
 	#logo-icon {
-	    width: 73%;
+	    width: 70%;
 	    padding: 0 20px;
 	}
 

@@ -1,6 +1,6 @@
 === Full Frame ===
 
-If you are looking to tailor-make a unique site without having to spend time coding a strong base for a theme that is smooth and displays well in all mobile and desktop devices, Full Frame is where your search ends. Full Frame is a simple, clean and responsive WordPress Theme. Use this as a base for your theme development or custom site development, and you will be thrilled with its ease and efficiency! Full Frame is built in HTML5, CSS3 and WordPress Theme Customizer for real time customization. This theme is translation ready. Check out Theme Instructions at http://catchthemes.com/theme-instructions/full-frame/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/full-frame/
+Full Frame is a Simple, Clean and Spacious Full Width Responsive WordPress Theme based on Catch Base Theme. Built on HTML5, CSS3 and Theme Customizer for real time customization, it comes with a whole set of interesting and rich features which makes this theme highly customizable and flexible. Make your beautiful yet professional website in no time. Full Frame WordPress Theme will be best suited for business, portfolio and blogging sites. This theme is translation ready. Check out Theme Instructions at http://catchthemes.com/theme-instructions/full-frame/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/full-frame/
 
 
 == Support ==
@@ -18,7 +18,7 @@ Full Frame theme is translation ready.
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Full Frame WordPress Theme, Copyright 2014 Catchthemes.com
+Full Frame WordPress Theme, Copyright 2015 Catchthemes.com
 Full Frame is distributed under the terms of the GNU General Public License v3
 
 Fullframe is based on Underscores http://underscores.me/, (C) Automattic, Inc.
@@ -26,8 +26,7 @@ Fullframe is based on Underscores http://underscores.me/, (C) Automattic, Inc.
 Images used are released under the CC0 license
 Slider Image 1: http://pixabay.com/en/photography-photo-camera-olympus-407218/
 Slider Image 2: http://pixabay.com/en/photographer-photo-camera-camera-455747/
-Background Image 1:http://pixabay.com/en/drops-raindrops-glass-bokeh-night-407156/
-Background Image 2: http://pixabay.com/en/trees-forest-sunset-blur-soft-407262/
+Featured Content Background Image: http://www.pexels.com/photo/2286/
 4. All other images are self shot image by (CatchThemes.com) 
 
 Font Icons
@@ -120,3 +119,8 @@ Available icons:
 = Theme Instructions =
 
 For detail instructions, check out theme instructions page at http://catchthemes.com/theme-instructions/full-frame/
+
+
+== Change Log ==
+
+Please refer to changelog.txt file or change log page at http://catchthemes.com/changelogs/full-frame-theme/
