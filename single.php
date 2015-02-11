@@ -66,15 +66,13 @@ get_header(); ?>
 			      
 			      <div class="prev-next-pagination">
 					  
-				 <?php wp_link_pages(); ?> 
-						  <nav class="deserve-nav"> 
-								<span class="deserve-nav-previous">
-								<?php previous_post_link(); ?>
-							   </span>
-							   <span class="deserve-nav-next">
-								<?php next_post_link(); ?>
-							  </span> 
-						</nav>
+					 <?php wp_link_pages(); ?> 
+					<nav class="deserve-nav"> 
+						<?php
+						 // Previous/next post navigation.
+						 deserve_pagination();
+						 ?>
+					</nav>
 			  <!-- .nav-single -->
             </div>
 			

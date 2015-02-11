@@ -23,7 +23,7 @@ get_header(); ?>
 					<img src="<?php echo esc_url($deserve_image[0]); ?>" width="<?php echo $deserve_image[1]; ?>" height="<?php echo $deserve_image[2]; ?>"  alt="<?php the_title(); ?>" class="img-responsive" />
 		
 					</a>
-                <?php } else { the_post_thumbnail(); } ?>
+                <?php } ?>
                 
                 
                 

@@ -9,3 +9,7 @@ Version 1.0.1
       
 Version 1.0.2
 	i)	fix css issue
+
+Version 1.0.3
+	i)	Set unminified html5.js
+	ii) Set sanitization in header.php

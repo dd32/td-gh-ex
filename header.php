@@ -92,9 +92,9 @@
             	<div  class="site-logo">
 					
 				<?php if(empty($deserve_options['logo'])) { ?>
-        		<h4 class="deserve-site-name"><a href="<?php echo home_url('/'); ?>"><?php echo get_bloginfo('name'); ?></a></h4>
+        		<h4 class="deserve-site-name"><a href="<?php echo esc_url(home_url('/')); ?>"><?php echo get_bloginfo('name'); ?></a></h4>
 				<?php } else { ?>
-        		<a href="<?php echo home_url('/'); ?>"><img src="<?php echo esc_url($deserve_options['logo']); ?>" alt="<?php _e('logo','deserve') ?>" class="img-responsive" /></a>
+        		<a href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo esc_url($deserve_options['logo']); ?>" alt="<?php _e('logo','deserve') ?>" class="img-responsive" /></a>
 				<?php } ?> 
             
                 	

@@ -295,21 +295,21 @@ class deserve_info_widget extends WP_Widget {
         
         <p>
             <label for="<?php echo $this->get_field_id( 'facebook' ); ?>"><?php _e('Facebook url:', 'deserve'); ?></label>
-           <input id="<?php echo $this->get_field_id( 'facebook' ); ?>" name="<?php echo $this->get_field_name( 'facebook' ); ?>" value="<?php if(!empty($deserve_instance['facebook']))
+           <input type="text"  id="<?php echo $this->get_field_id( 'facebook' ); ?>" name="<?php echo $this->get_field_name( 'facebook' ); ?>" value="<?php if(!empty($deserve_instance['facebook']))
              { 
 				 echo esc_url($deserve_instance['facebook']); } ?>" class="author-input"  />
         </p>
         <p>
             <label for="<?php echo $this->get_field_id( 'twitter' ); ?>"><?php _e('Twitter url:', 'deserve'); ?></label>
-            <input id="<?php echo $this->get_field_id( 'twitter' ); ?>" name="<?php echo $this->get_field_name( 'twitter' ); ?>" value="<?php if(!empty($deserve_instance['twitter'])) { echo esc_url($deserve_instance['twitter']); } ?>" class="author-input" />
+            <input  type="text"  id="<?php echo $this->get_field_id( 'twitter' ); ?>" name="<?php echo $this->get_field_name( 'twitter' ); ?>" value="<?php if(!empty($deserve_instance['twitter'])) { echo esc_url($deserve_instance['twitter']); } ?>" class="author-input" />
         </p>
         <p>
             <label for="<?php echo $this->get_field_id( 'linkedin' ); ?>"><?php _e('Linkedin url:', 'deserve'); ?></label>
-            <input id="<?php echo $this->get_field_id( 'linkedin' ); ?>" name="<?php echo $this->get_field_name( 'linkedin' ); ?>" value="<?php if(!empty($deserve_instance['linkedin'])) { echo esc_url($deserve_instance['linkedin']); } ?>" class="author-input" />
+            <input  type="text"  id="<?php echo $this->get_field_id( 'linkedin' ); ?>" name="<?php echo $this->get_field_name( 'linkedin' ); ?>" value="<?php if(!empty($deserve_instance['linkedin'])) { echo esc_url($deserve_instance['linkedin']); } ?>" class="author-input" />
         </p>
         <p>
             <label for="<?php echo $this->get_field_id( 'google' ); ?>"><?php _e('Google+ url:', 'deserve'); ?></label>
-            <input id="<?php echo $this->get_field_id( 'google' ); ?>" name="<?php echo $this->get_field_name( 'google' ); ?>" value="<?php if(!empty($deserve_instance['google'])) { echo esc_url($deserve_instance['google']); } ?>" class="author-input" />
+            <input type="text"  id="<?php echo $this->get_field_id( 'google' ); ?>" name="<?php echo $this->get_field_name( 'google' ); ?>" value="<?php if(!empty($deserve_instance['google'])) { echo esc_url($deserve_instance['google']); } ?>" class="author-input" />
         </p>
 		
         
@@ -556,11 +556,18 @@ function deserve_get_image_id_by_url($image_url) {
 
 function deserve_pagination()
 {
-	the_posts_pagination( array(
-						
-							'prev_text'  =>'<<',
-							'next_text'  =>'>>',							
-						) );
+	if(is_single()){
+		the_post_navigation( array(
+			'prev_text' => '<span class="deserve-nav-previous">%title</span>',
+			'next_text' => '<span class="deserve-nav-next">%title</span>',
+		) );
+	}else{	
+		the_posts_pagination( array(
+			
+				'prev_text'  =>'<<',
+				'next_text'  =>'>>',							
+			) );						
+	}
 }
 
 
