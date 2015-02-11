@@ -27,16 +27,16 @@
             $('#customize-control-fullframe_theme_options-featured_content_number').hide();
             $('#customize-control-fullframe_theme_options-featured_content_headline').hide();
             $('#customize-control-fullframe_theme_options-featured_content_subheadline').hide();
+            $('[id*=customize-control-fullframe_featured_content_page]').hide();
+            $('#customize-control-fullframe_theme_options-featured_content_enable_title').hide();
+            $('#customize-control-fullframe_theme_options-featured_content_enable_excerpt_content').hide();
         } else {
             $('#customize-control-fullframe_theme_options-featured_content_number').show();
             $('#customize-control-fullframe_theme_options-featured_content_headline').show();
             $('#customize-control-fullframe_theme_options-featured_content_subheadline').show();
-        }
-
-        if (value == 'featured-page-content') {
             $('[id*=customize-control-fullframe_featured_content_page]').show();
-        } else {
-            $('[id*=customize-control-fullframe_featured_content_page]').hide();
+            $('#customize-control-fullframe_theme_options-featured_content_enable_title').show();
+            $('#customize-control-fullframe_theme_options-featured_content_enable_excerpt_content').show();
         }
     });
 
@@ -49,16 +49,16 @@
             $('#customize-control-fullframe_theme_options-featured_content_number').hide();
             $('#customize-control-fullframe_theme_options-featured_content_headline').hide();
             $('#customize-control-fullframe_theme_options-featured_content_subheadline').hide();
+            $('[id*=customize-control-fullframe_featured_content_page]').hide();
+            $('#customize-control-fullframe_theme_options-featured_content_enable_title').hide();
+            $('#customize-control-fullframe_theme_options-featured_content_enable_excerpt_content').hide();
         } else {
             $('#customize-control-fullframe_theme_options-featured_content_number').show();
             $('#customize-control-fullframe_theme_options-featured_content_headline').show();
             $('#customize-control-fullframe_theme_options-featured_content_subheadline').show();
-        }
-
-        if (value == 'featured-page-content') {
             $('[id*=customize-control-fullframe_featured_content_page]').show();
-        } else {
-            $('[id*=customize-control-fullframe_featured_content_page]').hide();
+            $('#customize-control-fullframe_theme_options-featured_content_enable_title').show();
+            $('#customize-control-fullframe_theme_options-featured_content_enable_excerpt_content').show();
         }
     });
 
@@ -72,20 +72,19 @@
         $('#customize-control-fullframe_theme_options-featured_content_number').hide();
         $('#customize-control-fullframe_theme_options-featured_content_headline').hide();
         $('#customize-control-fullframe_theme_options-featured_content_subheadline').hide();
+        $('[id*=customize-control-fullframe_featured_content_page]').hide();
+        $('#customize-control-fullframe_theme_options-featured_content_enable_title').hide();
+        $('#customize-control-fullframe_theme_options-featured_content_enable_excerpt_content').hide();
     } else {
         $('#customize-control-fullframe_theme_options-featured_content_number').show();
         $('#customize-control-fullframe_theme_options-featured_content_headline').show();
         $('#customize-control-fullframe_theme_options-featured_content_subheadline').show();
-    }
-
-    if (fullframe_featured_content_layout_value == 'featured-page-content') {
         $('[id*=customize-control-fullframe_featured_content_page]').show();
-    } else {
-        $('[id*=customize-control-fullframe_featured_content_page]').hide();
+        $('#customize-control-fullframe_theme_options-featured_content_enable_title').show();
+        $('#customize-control-fullframe_theme_options-featured_content_enable_excerpt_content').show();
     }
 
-
-    /*
+   /*
      * For Feature Slider on featured_slider_type change event
      */
 

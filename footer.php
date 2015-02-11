@@ -12,7 +12,6 @@
     /** 
      * fullframe_after_content hook
      *
-     * @hooked fullframe_content_sidebar_wrap_end - 10
      * @hooked fullframe_content_end - 30
      * @hooked fullframe_featured_content_display (move featured content below homepage posts) - 40 
      *

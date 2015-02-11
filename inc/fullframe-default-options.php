@@ -29,12 +29,12 @@ function fullframe_get_default_theme_options() {
 		'move_title_tagline'								=> 0,
 		
 		//Layout
-		'theme_layout' 										=> 'three-columns',
+		'theme_layout' 										=> 'right-sidebar',
 		'content_layout'									=> 'excerpt-featured-image',
 		'single_post_image_layout'							=> 'disabled',
 		
 		//Header Image
-		'enable_featured_header_image'						=> 'disabled',
+		'enable_featured_header_image'						=> 'entire-site-page-post',
 		'featured_image_size'								=> 'full',
 		'featured_header_image_url'							=> '',
 		'featured_header_image_alt'							=> '',
@@ -74,14 +74,17 @@ function fullframe_get_default_theme_options() {
 		
 		//Featured Content Options
 		'featured_content_option'							=> 'homepage',
-		'featured_content_layout'							=> 'layout-four',
-		//move_posts_home replaced with featured_content_position from version 1.1
-		'move_posts_home'									=> 0,
+		'featured_content_layout'							=> 'layout-three',
+		'featured_content_slider'							=> 1,
 		'featured_content_position'							=> 0,
 		'featured_content_headline'							=> '',
 		'featured_content_subheadline'						=> '',
 		'featured_content_type'								=> 'demo-featured-content',
+		'featured_content_enable_title'						=> 1,
+		'featured_content_enable_excerpt_content'			=> 0,
 		'featured_content_number'							=> '4',
+
+		'featured_content_background_image'					=> get_template_directory_uri() . '/images/default-featured-bg.jpg',
 
 		//Featured Slider Options
 		'featured_slider_option'							=> 'homepage',
@@ -134,10 +137,6 @@ function fullframe_layouts() {
 		'right-sidebar' => array(
 			'value' => 'right-sidebar',
 			'label' => __( 'Content, Primary Sidebar', 'fullframe' ),
-		),
-		'three-columns'	=> array(
-			'value' => 'three-columns',
-			'label' => __( 'Three Columns ( Secondary Sidebar, Content, Primary Sidebar )', 'fullframe' ),
 		),
 		'no-sidebar'	=> array(
 			'value' => 'no-sidebar',
@@ -404,26 +403,18 @@ function fullframe_get_pagination_types() {
 /**
  * Returns an array of content featured image size.
  *
- * @since Fullframe 1.0
+ * @since Full Frame 1.0
  */
 function fullframe_single_post_image_layout_options() {
 	$single_post_image_layout_options = array(
-		'large' => array(
-			'value' => 'large',
-			'label' => __( 'Large', 'fullframe' ),
-		),
-		'medium' => array(
-			'value' => 'medium',
-			'label' => __( 'Medium', 'fullframe' ),
+		'featured' => array(
+			'value' => 'featured',
+			'label' => __( 'Featured', 'fullframe' ),
 		),
 		'full-size' => array(
 			'value' => 'full-size',
-			'label' => __( 'Full size', 'fullframe' ),
+			'label' => __( 'Full Size', 'fullframe' ),
 		),
-		'slider-image-size' => array(
-			'value' => 'slider-image-size',
-			'label' => __( 'Slider Image Size', 'fullframe' ),
-		),		
 		'disabled' => array(
 			'value' => 'disabled',
 			'label' => __( 'Disabled', 'fullframe' ),
@@ -476,7 +467,7 @@ function fullframe_get_social_icons_list() {
 /**
  * Returns an array of metabox layout options registered for fullframe.
  *
- * @since Fullframe 1.0
+ * @since Full Frame 1.0
  */
 function fullframe_metabox_layouts() {
 	$layout_options = array(
@@ -495,15 +486,15 @@ function fullframe_metabox_layouts() {
 			'value' => 'right-sidebar',
 			'label' => __( 'Content, Primary Sidebar', 'fullframe' ),
 		),
-		'three-columns'	=> array(
-			'id' 	=> 'fullframe-layout-option',
-			'value' => 'three-columns',
-			'label' => __( 'Three Columns ( Secondary Sidebar, Content, Primary Sidebar )', 'fullframe' ),
-		),
 		'no-sidebar'	=> array(
 			'id' 	=> 'fullframe-layout-option',
 			'value' => 'no-sidebar',
 			'label' => __( 'No Sidebar ( Content Width )', 'fullframe' ),
+		),
+		'no-sidebar-full-width' => array(
+			'id' 	=> 'fullframe-layout-option',
+			'value' => 'no-sidebar-full-width',
+			'label' => __( 'No Sidebar ( Full Width )', 'fullframe' ),
 		),
 	);
 	return apply_filters( 'fullframe_layouts', $layout_options );
@@ -512,7 +503,7 @@ function fullframe_metabox_layouts() {
 /**
  * Returns an array of metabox header featured image options registered for fullframe.
  *
- * @since Fullframe 1.0
+ * @since Full Frame 1.0
  */
 function fullframe_metabox_header_featured_image_options() {
 	$header_featured_image_options = array(
@@ -539,7 +530,7 @@ function fullframe_metabox_header_featured_image_options() {
 /**
  * Returns an array of metabox featured image options registered for fullframe.
  *
- * @since Fullframe 1.0
+ * @since Full Frame 1.0
  */
 function fullframe_metabox_featured_image_options() {
 	$featured_image_options = array(
@@ -556,12 +547,7 @@ function fullframe_metabox_featured_image_options() {
 		'full' => array(
 			'id' => 'fullframe-featured-image',
 			'value' => 'full',
-			'label' => __( 'Full Image', 'fullframe' )
-		),
-		'slider' => array(
-			'id' => 'fullframe-featured-image',
-			'value' => 'slider',
-			'label' => __( 'Slider Image', 'fullframe' )
+			'label' => __( 'Full Size', 'fullframe' )
 		),
 		'disable' => array(
 			'id' => 'fullframe-featured-image',

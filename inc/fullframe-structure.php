@@ -67,7 +67,6 @@ if ( ! function_exists( 'fullframe_doctype_start' ) ) :
 endif;
 add_action( 'fullframe_header', 'fullframe_page_start', 10 );
 
-
 if ( ! function_exists( 'fullframe_page_end' ) ) :
 	/**
 	 * End div id #page
@@ -84,6 +83,38 @@ endif;
 add_action( 'fullframe_footer', 'fullframe_page_end', 200 );
 
 
+if ( ! function_exists( 'fullframe_fixed_header_start' ) ) :
+	/**
+	 * Start div id #fixed-header
+	 *
+	 * @since Fullframe 1.0
+	 *
+	 */
+	function fullframe_fixed_header_start() {
+		?>
+		<div id="fixed-header">
+		<?php
+	}
+endif;
+add_action( 'fullframe_header', 'fullframe_fixed_header_start', 20 );
+
+
+if ( ! function_exists( 'fullframe_fixed_header_end' ) ) :
+	/**
+	 * End div id #fixed-header
+	 *
+	 * @since Fullframe 1.0
+	 *
+	 */
+	function fullframe_fixed_header_end() {
+		?>
+		</div><!-- #fixed-header -->
+		<?php
+	}
+endif;
+add_action( 'fullframe_header', 'fullframe_fixed_header_end', 80 );
+
+
 if ( ! function_exists( 'fullframe_header_start' ) ) :
 	/**
 	 * Start Header id #masthead and class .wrapper
@@ -98,7 +129,7 @@ if ( ! function_exists( 'fullframe_header_start' ) ) :
 		<?php
 	}
 endif;
-add_action( 'fullframe_header', 'fullframe_header_start', 30 );
+add_action( 'fullframe_header', 'fullframe_header_start', 40 );
 
 
 if ( ! function_exists( 'fullframe_header_end' ) ) :
@@ -115,7 +146,7 @@ if ( ! function_exists( 'fullframe_header_end' ) ) :
 		<?php
 	}
 endif;
-add_action( 'fullframe_header', 'fullframe_header_end', 100 );
+add_action( 'fullframe_header', 'fullframe_header_end', 70 );
 
 
 if ( ! function_exists( 'fullframe_content_start' ) ) :
@@ -149,46 +180,6 @@ if ( ! function_exists( 'fullframe_content_end' ) ) :
 
 endif;
 add_action( 'fullframe_after_content', 'fullframe_content_end', 30 );
-
-
-if ( ! function_exists( 'fullframe_content_sidebar_wrap_start' ) ) :
-	/**
-	 * Start div id #content_sidebar_wrap
-	 *
-	 * @since Fullframe 1.0
-	 */
-	function fullframe_content_sidebar_wrap_start() {
-		?>
-			<div id="content_sidebar_wrap">
-		<?php
-	}
-endif;
-
-
-if ( ! function_exists( 'fullframe_content_sidebar_wrap_end' ) ) :
-	/**
-	 * End div id #content_sidebar_wrap
-	 * 
-	 * @since Fullframe 1.0
-	 */
-	function fullframe_content_sidebar_wrap_end() {
-		?>
-			</div><!-- #content_sidebar_wrap -->
-		<?php
-	}
-endif;
-
-
-if ( ! function_exists( 'fullframe_sidebar_secondary' ) ) :
-	/**
-	 * Secondary Sidebar
-	 * 
-	 * @since Fullframe 1.0
-	 */
-	function fullframe_sidebar_secondary() {
-		get_sidebar( 'secondary' );
-	}
-endif;
 
 
 if ( ! function_exists( 'fullframe_footer_content_start' ) ) :
@@ -236,16 +227,22 @@ add_action( 'fullframe_footer', 'fullframe_footer_content_end', 110 );
 
 if ( ! function_exists( 'fullframe_header_right' ) ) :
 /**
- * Shows Header Right Social Icon
+ * Shows Header Right
  *
  * @since Fullframe 1.0
  */
 function fullframe_header_right() { ?>
 	<aside class="sidebar sidebar-header-right widget-area">
-	<?php
-		//Header Right Widgets Sidebar
-		the_widget( 'Fullframe_social_icons_widget' );
-	?>
+		<section class="widget widget_fullframe_social_icons" id="header-right-social-icons">
+			<div class="widget-wrap">
+				<?php echo fullframe_get_social_icons(); ?>
+			</div>
+		</section>
+		<section class="widget widget_search" id="header-right-search">
+			<div class="widget-wrap">
+				<?php echo get_search_form(); ?>
+			</div>
+		</section>
 	</aside><!-- .sidebar .header-sidebar .widget-area -->
 <?php	
 }

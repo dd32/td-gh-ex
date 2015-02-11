@@ -37,7 +37,7 @@ Responsive Style
 
 .mobile-menu-anchor a.genericon-menu,
 .mobile-menu-anchor a.genericon-menu:hover {
-	color: #404040;
+	color: #eee;
 	text-decoration: none;
 }
 
@@ -686,6 +686,12 @@ Responsive Style
 		width: 740px;
 	}
 
+	#logo-icon {
+	    padding: 0 40px;
+	    text-align: center;
+	    width: 612px;
+	}
+
 	#masthead {
 	    padding: 10px 0;
 	}
@@ -714,7 +720,6 @@ Responsive Style
 	    padding: 10px 10px 0;
 	}
 
-	.genericon-menu,
 	#feature-slider .entry-container,	
 	#promotion-message .section,
 	#content .wrapper,
@@ -728,6 +733,10 @@ Responsive Style
 	#supplementary .widget,
 	#site-generator {
 		padding: 10px;
+	}
+
+	.genericon-menu {
+		padding: 12px;
 	}
 
 	.hentry,
@@ -894,8 +903,10 @@ Responsive Style
 	.sidebar-header-right .widget-wrap {
 	    float: none;
 	}
-
-	.nav-primary,
+	.mobile-header-left-nav-open #fixed-header {
+		left: 260px;
+	}
+	.nav-primary .menu,
 	.nav-header-right,
 	.nav-secondary,
 	.nav-footer {
@@ -1000,6 +1011,10 @@ Responsive Style
 	.no-sidebar.one-column .wrapper {
 		width: 660px;
 	}
+	
+	#logo-icon {
+	    width: 532px;
+	}
 
 	.mobile-menu-one #site-branding {
 	    width: 600px;
@@ -1022,6 +1037,10 @@ Responsive Style
 	.wrapper,
 	.no-sidebar.one-column .wrapper {
 		width: 560px;
+	}
+
+	#logo-icon {
+	    width: 432px;
 	}
 
 	.mobile-menu-one #site-branding {
@@ -1048,6 +1067,11 @@ Responsive Style
 	.wrapper,
 	.no-sidebar.one-column .wrapper {
 		width: 520px;
+	}
+
+	#logo-icon {
+		padding: 0 30px;
+	    width: 392px;
 	}
 
 	.mobile-menu-one #site-branding {
@@ -1117,6 +1141,10 @@ Responsive Style
 	.wrapper,
 	.no-sidebar.one-column .wrapper {
 		width: 460px;
+	}
+
+	#logo-icon {
+	    width: 332px;
 	}
 
 	.mobile-menu-one #site-branding {
@@ -1193,7 +1221,11 @@ Responsive Style
 @media screen and (max-width: 479px) {
 	.wrapper,
 	.no-sidebar.one-column .wrapper {
-		width: 320px;
+		width: 400px;
+	}
+
+	#logo-icon {
+	    width: 286px;
 	}
 
 	#site-branding {
@@ -1265,10 +1297,15 @@ Responsive Style
 /*--------------------------------------------------------------
 12. x <= 319px
 --------------------------------------------------------------*/
-@media screen and (max-width: 319px) {
+@media screen and (max-width: 400px) {
 	.wrapper,
 	.no-sidebar.one-column .wrapper {
 		width: 100%;
+	}
+
+	#logo-icon {
+	    width: 73%;
+	    padding: 0 20px;
 	}
 
 	#masthead {

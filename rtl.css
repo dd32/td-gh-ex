@@ -28,7 +28,7 @@ td {
 .entry-meta .cat-links {
 	float: right;
 }
-.nav-primary #search-toggle,
+.nav-primary #header-toggle,
 .sidebar-header-right {
 	float: left;
 }

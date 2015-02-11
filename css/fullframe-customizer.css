@@ -18,3 +18,11 @@
 	float: left;
 	width: 100%;
 }
+#customize-controls #accordion-section-fullframe_icons img,
+#customize-controls #customize-control-logo img {
+    display: block;
+    margin: 0 auto;
+    max-width: 96%;
+    padding: 2%;
+    width: auto;
+}

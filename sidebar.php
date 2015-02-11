@@ -71,7 +71,7 @@ do_action( 'fullframe_before_secondary' );?>
                 	<h4 class="widget-title"><?php _e( 'Primary Sidebar Widget Area', 'fullframe' ); ?></h4>
            		
            			<div class="textwidget">
-                   		<p><?php _e( 'This is the Primary Sidebar Widget Area if you are using a two or three column site layout option.', 'fullframe' ); ?></p>
+                   		<p><?php _e( 'This is the Primary Sidebar Widget Area if you are using two column site layout option.', 'fullframe' ); ?></p>
                    		<p><?php printf( __( 'You can add content to this area by visiting your <a href="%s">Widgets Panel</a> and adding new widgets to this area.', 'fullframe' ), admin_url( 'widgets.php' ) ); ?></p>
                  	</div>
            		</div><!-- .widget-wrap -->

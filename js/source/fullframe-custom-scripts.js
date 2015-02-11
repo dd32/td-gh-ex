@@ -4,7 +4,7 @@
  */
 
 jQuery(document).ready(function() {
-	var jQueryheader_search = jQuery( '#search-toggle' );
+	var jQueryheader_search = jQuery( '#header-toggle' );
 	jQueryheader_search.click( function() {
 		var jQueryform_search = jQuery("div").find( '#masthead' );	
 			

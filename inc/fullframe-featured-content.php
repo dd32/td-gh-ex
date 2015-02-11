@@ -23,7 +23,7 @@ if( !function_exists( 'fullframe_featured_content_display' ) ) :
 * @since Fullframe 1.0
 */
 function fullframe_featured_content_display() {
-	//fullframe_flush_transients();
+	fullframe_flush_transients();
 	
 	global $post, $wp_query;
 
@@ -31,6 +31,7 @@ function fullframe_featured_content_display() {
 	$options 		= fullframe_get_theme_options();
 	$enablecontent 	= $options['featured_content_option'];
 	$contentselect 	= $options['featured_content_type'];
+	$sliderselect	= $options['featured_content_slider'];
 	
 	// Front page displays in Reading Settings
 	$page_on_front 	= get_option('page_on_front') ;
@@ -80,21 +81,41 @@ function fullframe_featured_content_display() {
 							<h1 id="featured-heading" class="entry-title">'. esc_attr( $headline ) .'</h1>
 							<p>'. esc_attr( $subheadline ) .'</p>
 						</div><!-- .featured-heading-wrap -->
-
 						<div class="featured-content-wrap">';
+							if ( $sliderselect ) {
+								$fullframe_featured_content .='
+								<div class="cycle-slideshow" 
+								    data-cycle-log="false"
+								    data-cycle-pause-on-hover="true"
+								    data-cycle-swipe="true"
+								    data-cycle-auto-height=container
+									data-cycle-slides=".featured_content_slider_wrap"
+									data-cycle-fx="scrollHorz"
+									>
+								    
+								    <!-- prev/next links -->
+								    <div class="cycle-prev"></div>
+								    <div class="cycle-next"></div>';
+							 }
 
-							// Select content
-							if ( $contentselect == 'demo-featured-content'  && function_exists( 'fullframe_demo_content' ) ) {
-								$fullframe_featured_content .= fullframe_demo_content( $options );
-							}
-							elseif ( $contentselect == 'featured-page-content' && function_exists( 'fullframe_page_content' ) ) {
-								$fullframe_featured_content .= fullframe_page_content( $options );
-							}
+								// Select content
+								if ( $contentselect == 'demo-featured-content'  && function_exists( 'fullframe_demo_content' ) ) {
+									$fullframe_featured_content .= fullframe_demo_content( $options );
+								}
+								elseif ( $contentselect == 'featured-page-content' && function_exists( 'fullframe_page_content' ) ) {
+									$fullframe_featured_content .= fullframe_page_content( $options );
+								}
 
-			$fullframe_featured_content .='
+							if ( $sliderselect ) {
+								$fullframe_featured_content .='
+								</div><!-- .cycle-slideshow -->';
+							}
+				
+				$fullframe_featured_content .='			
 						</div><!-- .featured-content-wrap -->
 					</div><!-- .wrapper -->
 				</section><!-- #featured-content -->';
+		
 		set_transient( 'fullframe_featured_content', $fullframe_featured_content, 86940 );
 		}
 	echo $fullframe_featured_content;
@@ -146,53 +167,54 @@ if ( ! function_exists( 'fullframe_demo_content' ) ) :
  */
 function fullframe_demo_content( $options ) {
 	$fullframe_demo_content = '
-		<article id="featured-post-1" class="post hentry post-demo">
-			<figure class="featured-content-image">
-				<img alt="Durbar Square" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured1-400x225.jpg" />
-			</figure>
-			<div class="entry-container">
-				<header class="entry-header">
-					<h1 class="entry-title">
-						Durbar Square
-					</h1>
-				</header>
-				<div class="entry-content">
-					The Kathmandu Durbar Square holds the palaces of the Malla and Shah kings who ruled over the city. Along with these palaces, the square surrounds quadrangles revealing courtyards and temples.
-				</div>
-			</div><!-- .entry-container -->			
-		</article>
+		<div class="featured_content_slider_wrap">
+			<article id="featured-post-1" class="post hentry post-demo">
+				<figure class="featured-content-image">
+					<img alt="Durbar Square" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured1-400x225.jpg" />
+				</figure>
+				<div class="entry-container">
+					<header class="entry-header">
+						<h1 class="entry-title">
+							Durbar Square
+						</h1>
+					</header>
+					<div class="entry-content">
+						The Kathmandu Durbar Square holds the palaces of the Malla and Shah kings who ruled over the city. Along with these palaces, the square surrounds quadrangles revealing courtyards and temples.
+					</div>
+				</div><!-- .entry-container -->			
+			</article>
 
-		<article id="featured-post-2" class="post hentry post-demo">
-			<figure class="featured-content-image">
-				<img alt="Seto Ghumba" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured2-400x225.jpg" />
-			</figure>
-			<div class="entry-container">
-				<header class="entry-header">
-					<h1 class="entry-title">
-						Seto Ghumba
-					</h1>
-				</header>
-				<div class="entry-content">
-					Situated western part in the outskirts of the Kathmandu valley, Seto Gumba also known as Druk Amitabh Mountain or White Monastery, is one of the most popular Buddhist monasteries of Nepal.
-				</div>
-			</div><!-- .entry-container -->			
-		</article>
-		
-		<article id="featured-post-3" class="post hentry post-demo">
-			<figure class="featured-content-image">
-				<img alt="Swayambhunath" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured3-400x225.jpg" />
-			</figure>
-			<div class="entry-container">
-				<header class="entry-header">
-					<h1 class="entry-title">
-						Swayambhunath
-					</h1>
-				</header>
-				<div class="entry-content">
-					Swayambhunath is an ancient religious site up in the hill around Kathmandu Valley. It is also known as the Monkey Temple as there are holy monkeys living in the north-west parts of the temple.
-				</div>
-			</div><!-- .entry-container -->			
-		</article>';
+			<article id="featured-post-2" class="post hentry post-demo">
+				<figure class="featured-content-image">
+					<img alt="Seto Ghumba" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured2-400x225.jpg" />
+				</figure>
+				<div class="entry-container">
+					<header class="entry-header">
+						<h1 class="entry-title">
+							Seto Ghumba
+						</h1>
+					</header>
+					<div class="entry-content">
+						Situated western part in the outskirts of the Kathmandu valley, Seto Gumba also known as Druk Amitabh Mountain or White Monastery, is one of the most popular Buddhist monasteries of Nepal.
+					</div>
+				</div><!-- .entry-container -->			
+			</article>
+			
+			<article id="featured-post-3" class="post hentry post-demo">
+				<figure class="featured-content-image">
+					<img alt="Swayambhunath" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured3-400x225.jpg" />
+				</figure>
+				<div class="entry-container">
+					<header class="entry-header">
+						<h1 class="entry-title">
+							Swayambhunath
+						</h1>
+					</header>
+					<div class="entry-content">
+						Swayambhunath is an ancient religious site up in the hill around Kathmandu Valley. It is also known as the Monkey Temple as there are holy monkeys living in the north-west parts of the temple.
+					</div>
+				</div><!-- .entry-container -->			
+			</article>';
 
 	if( 'layout-four' == $options ['featured_content_layout']) {
 		$fullframe_demo_content .= '
@@ -212,6 +234,78 @@ function fullframe_demo_content( $options ) {
 			</div><!-- .entry-container -->			
 		</article>';
 	}
+	$fullframe_demo_content .= '</div><!-- .featured_content_slider_wrap -->';
+
+	$fullframe_demo_content .= '
+		<div class="featured_content_slider_wrap">
+			<article id="featured-post-1" class="post hentry post-demo">
+				<figure class="featured-content-image">
+					<img alt="Durbar Square" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured1-400x225.jpg" />
+				</figure>
+				<div class="entry-container">
+					<header class="entry-header">
+						<h1 class="entry-title">
+							Durbar Square
+						</h1>
+					</header>
+					<div class="entry-content">
+						The Another Durbar Square holds the palaces of the Malla and Shah kings who ruled over the city. Along with these palaces, the square surrounds quadrangles revealing courtyards and temples.
+					</div>
+				</div><!-- .entry-container -->			
+			</article>
+
+			<article id="featured-post-2" class="post hentry post-demo">
+				<figure class="featured-content-image">
+					<img alt="Seto Ghumba" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured2-400x225.jpg" />
+				</figure>
+				<div class="entry-container">
+					<header class="entry-header">
+						<h1 class="entry-title">
+							Seto Ghumba
+						</h1>
+					</header>
+					<div class="entry-content">
+						Situated western part in the outskirts of the Another valley, Seto Gumba also known as Druk Amitabh Mountain or White Monastery, is one of the most popular Buddhist monasteries of Nepal.
+					</div>
+				</div><!-- .entry-container -->			
+			</article>
+			
+			<article id="featured-post-3" class="post hentry post-demo">
+				<figure class="featured-content-image">
+					<img alt="Swayambhunath" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured3-400x225.jpg" />
+				</figure>
+				<div class="entry-container">
+					<header class="entry-header">
+						<h1 class="entry-title">
+							Swayambhunath
+						</h1>
+					</header>
+					<div class="entry-content">
+						Swayambhunath is an ancient religious site up in the hill around Another Valley. It is also known as the Monkey Temple as there are holy monkeys living in the north-west parts of the temple.
+					</div>
+				</div><!-- .entry-container -->			
+			</article>';
+
+	if( 'layout-four' == $options ['featured_content_layout']) {
+		$fullframe_demo_content .= '
+		<article id="featured-post-4" class="post hentry post-demo">
+			<figure class="featured-content-image">
+				<img alt="Dhulikhel" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured4-400x225.jpg" />
+			</figure>
+			<div class="entry-container">
+				<header class="entry-header">
+					<h1 class="entry-title">
+						Dhulikhel
+					</h1>
+				</header>
+				<div class="entry-content">
+					Dhulikhel is a popular place to observe the high Himalaya - A Tourist Paradise: The spectacular snowfed mountains seen from Dhuklikhel must be one of the finest panoramic views in the world. 
+				</div>
+			</div><!-- .entry-container -->			
+		</article>';
+	}
+	
+	$fullframe_demo_content .= '</div><!-- .featured_content_slider_wrap -->';
 
 	return $fullframe_demo_content;
 }
@@ -224,7 +318,7 @@ if ( ! function_exists( 'fullframe_page_content' ) ) :
  *
  * @param $options: fullframe_theme_options from customizer
  *
- * @since Fullframe 1.0
+ * @since Full Frame 1.0
  */
 function fullframe_page_content( $options ) {
 	global $post;
@@ -238,6 +332,13 @@ function fullframe_page_content( $options ) {
    	$number_of_page 			= 0; 		// for number of pages
 
 	$page_list					= array();	// list of valid pages ids
+
+	if( 'layout-four' == $options ['featured_content_layout']) {
+		$layouts = 4;
+	}
+	else{
+		$layouts = 3;
+	}
 
 	//Get valid pages
 	for( $i = 1; $i <= $quantity; $i++ ){
@@ -257,10 +358,16 @@ function fullframe_page_content( $options ) {
                 ));
 
 		$i=0; 
-		while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post(); $i++;
-			$title_attribute = apply_filters( 'the_title', get_the_title( $post->ID ) );
+
+		$fullframe_page_content = '
+		<div class="featured_content_slider_wrap">';
+
+		while ( $get_featured_posts->have_posts()) : 
+			$get_featured_posts->the_post(); 
+
+			$i++;
 			
-			$excerpt = get_the_excerpt();
+			$title_attribute = apply_filters( 'the_title', get_the_title( $post->ID ) );
 			
 			$fullframe_page_content .= '
 				<article id="featured-post-' . $i . '" class="post hentry featured-page-content">';	
@@ -268,34 +375,54 @@ function fullframe_page_content( $options ) {
 					$fullframe_page_content .= '
 					<figure class="featured-homepage-image">
 						<a href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">
-						'. get_the_post_thumbnail( $post->ID, 'medium', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class' => 'pngfix' ) ) .'
+						'. get_the_post_thumbnail( $post->ID, 'fullframe-featured-content', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class' => 'pngfix' ) ) .'
 						</a>
 					</figure>';
 				}
 				else {
-					$fullframe_first_image = fullframe_get_first_image( $post->ID, 'medium', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class' => 'pngfix' ) );
+					//Default value if there is no first image
+					$fullframe_image = '<img class="pngfix wp-post-image" src="'.get_template_directory_uri().'/images/gallery/no-featured-image-1200x514.jpg" >';
+					
+					//Get the first image in page, returns false if there is no image
+					$fullframe_first_image = fullframe_get_first_image( $post->ID, 'fullframe-featured-content', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class' => 'pngfix' ) );
 
+					//Set value of image as first image if there is an image present in the page
 					if ( '' != $fullframe_first_image ) {
-						$fullframe_page_content .= '
-						<figure class="featured-homepage-image">
-							<a href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">
-								'. $fullframe_first_image .'
-							</a>
-						</figure>';
+						$fullframe_image =	$fullframe_first_image;
 					}
+
+					$fullframe_page_content .= '<a title="Permalink to '.the_title('','',false).'" href="' . get_permalink() . '">
+						'. $fullframe_image .'
+					</a>';
 				}
 
+				if ( '1' == $options['featured_content_enable_title'] || '1'== $options['featured_content_enable_excerpt_content'] ) {
 				$fullframe_page_content .= '
 					<div class="entry-container">';
-						$fullframe_page_content .= the_title( '<h2>','</h2>', false );
-						$fullframe_page_content .= '<p>'. get_the_content( $more_link_text , true ) .'</p>';
-						$fullframe_page_content .= '<a href="' . get_permalink() . '" title="Permalink to '.the_title( '', '', false ).'"></a>';
+					if ( '1' == $options['featured_content_enable_title'] ) {		
+							$fullframe_page_content .= the_title( '<header><h1>','</h1></header>', false );
+					}
+					if ( '1'== $options['featured_content_enable_excerpt_content'] ) {
+							$fullframe_page_content .= '<div class="entry-content">'. get_the_excerpt() . '</div>';
+					}
 					$fullframe_page_content .= '
-					</div><!-- .entry-container -->
-				</article><!-- .featured-post-'. $i .' -->';
+					</div><!-- .entry-container -->';
+				}
+				$fullframe_page_content .= '
+				</article><!-- .featured-page-'. $i .' -->';
+				
+				if ( 0 == ( $i % $layouts ) && $i < $number_of_page ) {
+					//end and start featured_content_slider_wrap div based on logic
+					$fullframe_page_content .= '
+				</div><!-- .featured_content_slider_wrap -->
+				
+				<div class="featured_content_slider_wrap">';
+				}
 		endwhile;
 
 		wp_reset_query();
+
+		$fullframe_page_content .= '</div><!-- .featured_content_slider_wrap -->';
 	}		
 	
 	return $fullframe_page_content;

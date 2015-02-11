@@ -32,11 +32,6 @@ In full-frame/page.php:
 	fullframe_comment_section
 
 
-In full-frame/sidebar-secondary.php:
-	fullframe_before_secondary_sidebar
-	fullframe_after_secondary_sidebar
-
-
 In full-frame/sidebar.php:
 	fullframe_before_secondary
 	fullframe_before_primary_sidebar

@@ -28,18 +28,7 @@ function fullframe_widgets_init() {
 		'after_widget'  => '</div><!-- .widget-wrap --></section><!-- #widget-default-search -->',
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
-		'description'	=> __( 'This is the primary sidebar if you are using a two or three column site layout option.', 'fullframe' ),
-	) );
-
-	//Secondary Sidebar
-	register_sidebar( array(
-		'name'          => __( 'Secondary Sidebar', 'fullframe' ),
-		'id'            => 'secondary-sidebar',
-		'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-wrap">',
-		'after_widget'  => '</div><!-- .widget-wrap --></section><!-- #widget-default-search -->',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
-		'description'	=> __( 'This is the secondary sidebar if you are using a three column site layout option.', 'fullframe' ),
+		'description'	=> __( 'This is the primary sidebar if you are using two column site layout option.', 'fullframe' ),
 	) );
 
 	$footer_sidebar_number = 3; //Number of footer sidebars

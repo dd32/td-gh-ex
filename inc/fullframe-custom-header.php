@@ -29,11 +29,11 @@ if ( ! function_exists( 'fullframe_custom_header' ) ) :
 		'default-text-color'     => '404040',
 		
 		// Header image default
-		'default-image'			=> get_template_directory_uri() . '/images/headers/buddha.jpg',
+		'default-image'			=> get_template_directory_uri() . '/images/gallery/slider1-1680x720.jpg',
 		
 		// Set height and width, with a maximum value for the width.
-		'height'                 => 400,
-		'width'                  => 1200,
+		'height'                 => 720,
+		'width'                  => 1680,
 		
 		// Support flexible height and width.
 		'flex-height'            => true,
@@ -194,8 +194,6 @@ if ( ! function_exists( 'fullframe_site_branding' ) ) :
 	function fullframe_site_branding() {
 		//fullframe_flush_transients();
 		$options 			= fullframe_get_theme_options();
-
-		//$style 				= sprintf( ' style="color:#%s;"', get_header_textcolor() );
 
 		//Checking Logo
 		if ( '' != $options['logo'] && !$options['logo_disable'] ) {
@@ -474,15 +472,4 @@ if ( ! function_exists( 'fullframe_featured_overall_image' ) ) :
 	} // fullframe_featured_overall_image
 endif;
 
-
-if ( ! function_exists( 'fullframe_featured_image_display' ) ) :
-	/**
-	 * Display Featured Header Image
-	 *
-	 * @since Fullframe 1.0
-	 */
-	function fullframe_featured_image_display() {
-		add_action( 'fullframe_after_header', 'fullframe_featured_overall_image', 40 );	
-	} // fullframe_featured_image_display
-endif;
-add_action( 'fullframe_before', 'fullframe_featured_image_display' ); 
+add_action( 'fullframe_before_content', 'fullframe_featured_overall_image', 20 );	

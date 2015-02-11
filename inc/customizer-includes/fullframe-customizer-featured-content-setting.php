@@ -85,6 +85,20 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'type'		=> 'checkbox',
 	) );  
 
+	$wp_customize->add_setting( 'fullframe_theme_options[featured_content_slider]', array(
+		'capability'		=> 'edit_theme_options',
+		'default'			=> $defaults['featured_content_slider'],
+		'sanitize_callback' => 'fullframe_sanitize_checkbox'
+	) );
+
+	$wp_customize->add_control( 'fullframe_theme_options[featured_content_slider]', array(
+		'label'		=> __( 'Check to Enable Sliding Effect', 'fullframe' ),
+		'priority'	=> '4',
+		'section'  	=> 'fullframe_featured_content_settings',
+		'settings'	=> 'fullframe_theme_options[featured_content_slider]',
+		'type'		=> 'checkbox',
+	) );  
+
 	$wp_customize->add_section( 'fullframe_featured_content_type', array(
 		'panel'			=> 'fullframe_featured_content_options',
 		'priority'		=> 2,
@@ -166,6 +180,31 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		) 
 	);
 
+	$wp_customize->add_setting( 'fullframe_theme_options[featured_content_enable_title]', array(
+	        'default'			=> $defaults['featured_content_enable_title'],
+			'sanitize_callback'	=> 'fullframe_sanitize_checkbox',
+		) );
+
+	$wp_customize->add_control(  'fullframe_theme_options[featured_content_enable_title]', array(
+		'label'		=> __( 'Check to Enable Title', 'fullframe' ),
+        'priority'	=> '7',
+		'section'   => 'fullframe_featured_content_type',
+        'settings'  => 'fullframe_theme_options[featured_content_enable_title]',
+		'type'		=> 'checkbox',
+    ) );
+
+	$wp_customize->add_setting( 'fullframe_theme_options[featured_content_enable_excerpt_content]', array(
+	        'default'			=> $defaults['featured_content_enable_excerpt_content'],
+			'sanitize_callback'	=> 'fullframe_sanitize_checkbox',
+		) );
+
+	$wp_customize->add_control(  'fullframe_theme_options[featured_content_enable_excerpt_content]', array(
+		'label'		=> __( 'Check to Enable Excerpt Content', 'fullframe' ),
+        'priority'	=> '8',
+		'section'   => 'fullframe_featured_content_type',
+        'settings'  => 'fullframe_theme_options[featured_content_enable_excerpt_content]',
+		'type'		=> 'checkbox',
+    ) );
 
 	//loop for featured page content
 	for ( $i=1; $i <= $options['featured_content_number'] ; $i++ ) {
@@ -182,4 +221,23 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 			'type'	   	=> 'dropdown-pages',
 		) );
 	}
+
+	$wp_customize->add_section( 'fullframe_featured_content_background_settings', array(
+		'panel'			=> 'fullframe_featured_content_options',
+		'priority'		=> 3,
+		'title'			=> __( 'Featured Content Background Settings', 'fullframe' ),
+	) );
+
+	$wp_customize->add_setting( 'fullframe_theme_options[featured_content_background_image]', array(
+			'capability'		=> 'edit_theme_options',
+			'default'			=> $defaults['featured_content_background_image'],
+			'sanitize_callback'	=> 'esc_url_raw',
+		) );
+
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'fullframe_theme_options[featured_content_background_image]', array(
+		'label'		=> __( 'Select/Add Background Image', 'fullframe' ),
+		'priority'	=> '1',
+		'section'   => 'fullframe_featured_content_background_settings',
+        'settings'  => 'fullframe_theme_options[featured_content_background_image]',
+	) ) );
 // Featured Content Setting End

@@ -4,7 +4,7 @@ Theme URI: http://catchthemes.com/themes/full-frame
 Author: Catch Themes
 Author URI: http://catchthemes.com/
 Description: Full Frame is a Simple, Clean and Spacious Full Width Responsive WordPress Theme based on Catch Base Theme. Built on HTML5, CSS3 and Theme Customizer for real time customization, it comes with a whole set of interesting and rich features which makes this theme highly customizable and flexible. Make your beautiful yet professional website in no time. Full Frame WordPress Theme will be best suited for business, portfolio and blogging sites. This theme is translation ready. Check out Theme Instructions at http://catchthemes.com/theme-instructions/full-frame/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/full-frame/
-Version: 0.1
+Version: 0.2
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: fullframe
@@ -493,10 +493,7 @@ blockquote:before {
     vertical-align: text-bottom;
 }
 
-/*#search-toggle:before {
-    content: "\f400";	
-}*/
-#search-toggle:before {
+#header-toggle:before {
     content: "\f505";	
 }
 
@@ -655,7 +652,7 @@ blockquote:before {
 	margin-bottom: 0;
 }
 
-#search-toggle:before {
+#header-toggle:before {
     margin-top: 12px;	
 }
 
@@ -843,12 +840,20 @@ textarea {
 }
 
 /* Primary Menu */
+#fixed-header {
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 198;
+}
+.admin-bar #fixed-header {
+    top: 32px;
+}
 .nav-primary {
     background: #444;
     background: rgba(0,0,0,0.7);
-	position: fixed;
 	width: 100%;
-	z-index: 198;
 }
 
 .nav-primary .menu a {
@@ -1025,28 +1030,39 @@ textarea {
 	opacity: 1;
 }
 
+#logo-icon {
+    float: left;
+}
+#logo-icon a {
+	display: block;
+	line-height: 0
+}
+#logo-icon img {
+    max-height: 44px;
+    padding: 6px 0;
+    width: auto;
+}
 /* Menu Search */
 .nav-primary.search-enabled .menu {
 	float: left;
 }
 
-#search-toggle {
+#header-toggle {
     background-color: transparent;
     color: #eee;
     cursor: pointer;
     float: right;
-    height: 42px;
-    margin-right: 20px;
+    height: 44px;
     text-align: center;
-    width: 42px;
+    width: 44px;
 }
 
-#search-toggle:hover {
+#header-toggle:hover {
 	background-color: transparent;
     color: #aaa;	
 }
 
-#search-container {
+#header-container {
     background-color: #fff;
     border-bottom: 1px solid #eee;
     border-top: 1px solid #eee;
@@ -1175,6 +1191,7 @@ textarea {
 	position: absolute !important;
 	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
 	clip: rect(1px, 1px, 1px, 1px);
+	margin: 0;
 }
 
 /* Text meant only for screen readers */
@@ -1258,11 +1275,7 @@ textarea {
     background-color: #fff;
     background: rgba(255,255,255,0.7);
     border-bottom: 1px solid #d6d6d6;
-    left: 0;
-    position: fixed;
-    top: 76px;
     width: 100%;
-    z-index: 197;
 }
 
 #site-branding,
@@ -1312,12 +1325,19 @@ textarea {
 	float: right;
 }
 
+.sidebar-header-right .search-submit {
+	display: none;
+}
 #header-featured-image {
 	clear: both;
 	display: block;
 	line-height: 0;
 	width: 100%;
 	text-align: center;
+}
+
+#header-featured-image .wrapper {
+	width: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -1944,24 +1964,18 @@ caption {
 
 /* Fullframe breadcrumb */
 #breadcrumb-list {
+	background-color: #ddd;
 }
 
 #breadcrumb-list .wrapper {
-    padding: 20px 40px 0;
-}
-
-.home #breadcrumb-list .wrapper {
-	padding-bottom: 20px;
+	padding: 0 30px;
 }
 
 #breadcrumb-list span {
-	background-color: transparent;
-	border: 1px solid #eee;
     color: #666;
 	display: block;
    	float: left;
-   	font-style: italic;
-   	margin-left: -1px;   
+   	font-style: italic; 
 }
 
 #breadcrumb-list span.sep {
@@ -1975,7 +1989,7 @@ caption {
 #breadcrumb-list a span {
 	color: #21759b;
 	display: block;
-	padding: 5px 10px 3px; 
+	padding: 5px 10px; 
 }
 
 #breadcrumb-list a:hover,
@@ -1986,7 +2000,7 @@ caption {
 
 #breadcrumb-list .breadcrumb-current {
 	background-color: #f2f2f2;
-	padding: 5px 10px 3px; 
+	padding: 5px 10px; 
 }
 
 /* jQuery Cycle 2 Custom CSS */

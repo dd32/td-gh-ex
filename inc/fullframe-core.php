@@ -64,12 +64,8 @@ if ( ! function_exists( 'fullframe_content_width' ) ) :
 			$layout='default';
 		}
 
-		// Theme Columns: Default width sidebars
-		if ( $layout == 'three-columns' || ( $layout=='default' && $themeoption_layout == 'three-columns' ) ) {
-			$content_width = 540;
-		}
 		// Two Colums: Left and Right Sidebar & One Column: No Sidbear
-		elseif ( $layout == 'right-sidebar' || $layout == 'left-sidebar' || $layout == 'no-sidebar' || ( $layout=='default' && $themeoption_layout == 'right-sidebar' ) || ( $layout=='default' && $themeoption_layout == 'left-sidebar' ) || ( $layout=='default' && $themeoption_layout == 'no-sidebar' ) ) {
+		if ( $layout == 'right-sidebar' || $layout == 'left-sidebar' || $layout == 'no-sidebar' || ( $layout=='default' && $themeoption_layout == 'right-sidebar' ) || ( $layout=='default' && $themeoption_layout == 'left-sidebar' ) || ( $layout=='default' && $themeoption_layout == 'no-sidebar' ) ) {
 			$content_width = 780;
 		}	
 	}
@@ -111,13 +107,14 @@ if ( ! function_exists( 'fullframe_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
-		// Add Fullframe custom image sizes
+		// Used for Featured Content, Featured Grid Content and Archive/blog Featured Image
     	add_image_size( 'fullframe-featured-content', 400, 225, true); // used in Featured Content Options Ratio 16:9
 
-        add_image_size( 'fullframe-slider', 1200, 514, true); // used in Featured Slider Ratio 21:9
+        // Used for Featured Slider Ratio 21:9
+        add_image_size( 'fullframe-slider', 1680, 720, true);
 
-		//One Archive Image
-    	add_image_size( 'fullframe-featured', 780, 439, true); // used in Archive Landecape Ratio 16:9
+		//Used For Archive Landescape Ratio 16:9
+    	add_image_size( 'fullframe-featured', 860, 484, true);
 
     	/**
 		 * This theme uses wp_nav_menu() in one location.
@@ -229,7 +226,7 @@ function fullframe_scripts() {
 	/**
 	 * Loads up Cycle JS
 	 */
-	if( $options['featured_slider_option'] != 'disabled' ) {
+	if( 'disabled' != $options['featured_slider_option'] || $options['featured_content_slider']  ) {
 		wp_register_script( 'jquery.cycle2', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.min.js', array( 'jquery' ), '2.1.5', true );
 
 		/**
@@ -530,6 +527,13 @@ if ( ! function_exists( 'fullframe_custom_css' ) ) :
 		
 		if ( ( !$fullframe_custom_css = get_transient( 'fullframe_custom_css' ) ) ) {		
 			$fullframe_custom_css ='';
+
+			// Featured Content Background Image Options
+			if( $defaults['featured_content_background_image'] != $options['featured_content_background_image'] ) {
+				$fullframe_custom_css .= "#featured-content {". "\n";
+				$fullframe_custom_css .=  "background-image: url(\"". esc_url( $options[ 'featured_content_background_image' ] ) ."\");". "\n";
+				$fullframe_custom_css .= "}";
+			}
 
 			//Custom CSS Option		
 			if( !empty( $options[ 'custom_css' ] ) ) {
@@ -1095,30 +1099,6 @@ if ( ! function_exists( 'fullframe_body_classes' ) ) :
 			
 			case 'right-sidebar':
 				$classes[] = 'two-columns content-left';
-			break;
-			
-			case 'three-columns':
-				$classes[] = 'three-columns';
-			break;
-			
-			case 'three-columns-secondary-sidebar-first':
-				$classes[] = 'three-columns secondary-first';
-			break;
-			
-			case 'three-columns-equal-sidebars':
-				$classes[] = 'three-columns equal-sidebars';
-			break;
-			
-			case 'three-columns-equal-columns':
-				$classes[] = 'three-columns equal-columns';
-			break;
-			
-			case 'three-columns-content-left':
-				$classes[] = 'three-columns content-left';
-			break;
-			
-			case 'three-columns-content-right':
-				$classes[] = 'three-columns content-right';
 			break;
 			
 			case 'no-sidebar':

@@ -196,6 +196,18 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'section'    	=> 'fullframe_icons',
         'settings'   	=> 'fullframe_theme_options[web_clip]',
 	) ) );
+
+	$wp_customize->add_setting( 'fullframe_theme_options[logo_icon]', array(
+		'capability'		=> 'edit_theme_options',
+		'sanitize_callback'	=> 'fullframe_sanitize_image',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'fullframe_theme_options[logo_icon]', array(
+		'description'	=> __( 'Logo Icon is displayed in Primary Menu', 'fullframe'),
+		'label'		 	=> __( 'Select/Add Logo Icon', 'fullframe' ),
+		'section'    	=> 'fullframe_icons',
+        'settings'   	=> 'fullframe_theme_options[logo_icon]',
+	) ) );
 	// Icon Options End
 
 	// Layout Options
