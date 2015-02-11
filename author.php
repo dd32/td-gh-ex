@@ -36,15 +36,15 @@
 		if( have_posts() ) :
 		while( $loop->have_posts() ) : $loop->the_post(); ?>
 		
-				<?php get_template_part('content','')?>
-		</div>			
+				<?php get_template_part('content','')?>			
 		<?php endwhile; ?>
 		<?php endif; ?>
 		<div class="blog-pagination-square">
 					<?php previous_posts_link( __('Previous','appointment') ); ?>
 					<?php next_posts_link( __('Next','appointment') ); ?> 
-				</div>
-		<!-- /Blog Pagination --></div>
+		</div>
+		<!-- /Blog Pagination -->
+		</div>
 			<!--Sidebar Area-->
 			<div class="col-md-4">
 				<?php get_sidebar(); ?>

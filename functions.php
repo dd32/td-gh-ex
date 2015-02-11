@@ -11,7 +11,6 @@
     require( WEBRITI_THEME_FUNCTIONS_PATH.'/menu/default_menu_walker.php');
     require( WEBRITI_THEME_FUNCTIONS_PATH.'/menu/appoinment_nav_walker.php');
     require( WEBRITI_THEME_FUNCTIONS_PATH.'/widgets/sidebars.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/pagination/webriti_pagination.php' );
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/template-tag.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/breadcrumbs/breadcrumbs.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/font/font.php');
@@ -62,29 +61,23 @@ function appointment_title( $title, $sep )
 			$title = "$title $sep $site_description";
 		// Add a page number if necessary.
 		if ( $paged >= 2 || $page >= 2 )
-			$title = "$title $sep " . sprintf( _e( 'Page', 'rambo' ), max( $paged, $page ) );
+			$title = "$title $sep " . sprintf( _e( 'Page', 'appointment' ), max( $paged, $page ) );
 		return $title;
 }	
 add_filter( 'wp_title', 'appointment_title', 10,2 );
 
-add_filter('get_avatar','appo_add_gravatar_class');
+add_filter('get_avatar','appointment_add_gravatar_class');
 
-function appo_add_gravatar_class($class) {
+function appointment_add_gravatar_class($class) {
     $class = str_replace("class='avatar", "class='img-circle", $class);
     return $class;
 }
 function appointment_add_to_author_profile( $contactmethods ) {
-		$contactmethods['facebook_profile'] = __('Facebook Profile URL','wallstreet');
-		$contactmethods['twitter_profile'] = __('Twitter Profile URL','wallstreet');
-		$contactmethods['linkedin_profile'] = __('Linkedin Profile URL','wallstreet');
-		$contactmethods['google_profile'] = __('Google Profile URL','wallstreet');
+		$contactmethods['facebook_profile'] = __('Facebook Profile URL','appointment');
+		$contactmethods['twitter_profile'] = __('Twitter Profile URL','appointment');
+		$contactmethods['linkedin_profile'] = __('Linkedin Profile URL','appointment');
+		$contactmethods['google_profile'] = __('Google Profile URL','appointment');
 		return $contactmethods;
 	}
 	add_filter( 'user_contactmethods', 'appointment_add_to_author_profile', 10, 1);
-	
-	function appointment_add_gravatar_class($class) {
-		$class = str_replace("class='avatar", "class='img-responsive comment-img img-circle", $class);
-		return $class;
-	}
-	add_filter('get_avatar','appointment_add_gravatar_class');
 ?>

@@ -6,7 +6,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6">
-					<div class="page-title"><h1><?php printf( __( 'Tag Archives: %s', 'innovation' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?></h1></div>
+					<div class="page-title"><h1><?php printf( __( 'Tag Archives: %s', 'appointment' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?></h1></div>
 				</div>
 				<div class="col-md-6">
 					<ul class="page-breadcrumb">
@@ -25,7 +25,6 @@
 <div class="blog-section-lg">
 	<div class="container">
 		<div class="row">
-		
 			<!-- Blog Area -->
 			<div class="<?php appointment_post_layout_class(); ?>" >
 			<?php
@@ -36,7 +35,6 @@
 					if( $loop->have_posts() ) :
 					while( $loop->have_posts() ) : $loop->the_post(); 
 				 get_template_part('content',''); ?>
-			</div>	
 				<?php endwhile; ?>
 				<?php endif; ?>
 			<!-- Blog Pagination -->
@@ -44,10 +42,8 @@
 					<?php previous_posts_link( __('Previous','appointment') ); ?>
 					<?php next_posts_link( __('Next','appointment') ); ?> 
 				</div>
-				<!-- /Blog Pagination -->
-				
+			<!-- /Blog Pagination -->
 			</div>
-			<!-- /Blog Area -->			
 			<!--Sidebar Area-->
 			<div class="col-md-4">
 				<?php get_sidebar(); ?>

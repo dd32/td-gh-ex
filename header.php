@@ -32,7 +32,7 @@
 				</a></h1>
 				<?php } ?>	
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-				<span class="sr-only"><?php _e('Toggle navigation','appoinment'); ?></span>
+				<span class="sr-only"><?php _e('Toggle navigation','appointment'); ?></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
@@ -82,8 +82,7 @@
 				'fallback_cb' => 'webriti_fallback_page_menu',
 				'items_wrap'  => $social,
 				'walker' => new webriti_nav_walker()
-				 )
-                                );
+				 ) );
 				?>
 		</div><!-- /.navbar-collapse -->
 	</div><!-- /.container-fluid -->

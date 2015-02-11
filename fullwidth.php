@@ -8,7 +8,6 @@ get_template_part('index','banner');
 <div class="blog-section-lg">
 	<div class="container">
 		<div class="row">
-		
 			<!-- Blog Area -->
 			<div class="col-md-12">
 			<?php if( have_posts()) :  the_post(); ?>		

@@ -16,7 +16,6 @@
 	</div>
 </div>
 <!-- /Page Title Section -->
-<!-- /Page Title Section -->
 
 <!-- Page Seperator --><div class="page-seperator"></div><!-- /Page Seperator -->
 

@@ -89,5 +89,5 @@
 </div>	
 <?php } } ?>
 <?php if ( ! comments_open() && ! is_page() ) : 
-        _e("Comments Are Closed!!!",'innovation');?>
+        _e("Comments Are Closed!!!",'appointment');?>
 	<?php endif; ?>

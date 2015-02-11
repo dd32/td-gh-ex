@@ -5,8 +5,7 @@ get_template_part('index','banner'); ?>
 <div class="blog-section-lg">
 	<div class="container">
 		<div class="row">
-		
-			<!-- Blog Area -->
+		 <!-- Blog Area -->
 			<div class="<?php appointment_post_layout_class(); ?>" >
 			<?php
 					$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -18,7 +17,6 @@ get_template_part('index','banner'); ?>
 					$more = 0;
 					?>		
 			<?php get_template_part('content',''); ?>
-			</div>
 				<?php } ?>
 				<div class="blog-pagination-square">
 					<?php previous_posts_link( __('Previous','appointment') ); ?>

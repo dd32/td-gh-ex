@@ -75,6 +75,11 @@ LIcense: CC0 Public Domain
 
 # --- EOF --- #
 ============================Change Log================================
+@version 1.5
+1. All translation.
+2. Update pot file.
+3. Remove unused whitespace.
+
 @version 1.4.9
 1. Use load_template function instead of require_once.
 2. All text Translation.

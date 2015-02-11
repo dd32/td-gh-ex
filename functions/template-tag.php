@@ -1,8 +1,8 @@
 <?php
 // function for post meta
-if ( ! function_exists( 'appointment_post_meta_content' ) ) :
+if ( ! function_exists( 'appointment_aside_meta_content' ) ) :
 
-function appointment_post_meta_content()
+function appointment_aside_meta_content()
 { ?>
 			<?php $current_options=get_option('appointment_lite_options'); 
 			if($current_options['meta_section_settings']=='on') { ?>
@@ -11,23 +11,24 @@ function appointment_post_meta_content()
 							<div class="date"><?php echo get_the_date('j'); ?> <div class="month-year"><?php echo get_the_date('M'); ?>,<?php echo get_the_date('Y'); ?></div></div>
 							<div class="comment"><a href="<?php the_permalink(); ?>"><i class="fa fa-comments"></i><?php comments_number( '', 'o', '%' ); ?></a></div>
 			</aside>
-			
-			<div class="blog-post-lg">				
-				<div class="blog-post-author">
-					<a href="#"><?php echo get_avatar( get_the_author_meta('user_email'), $size = '40'); ?></a>
-				</div>
-				<div class="blog-post-detail">
-					<div class="blog-admin-lg">
-						<?php _e('By','appointment');?><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) );?>"><?php the_author();?></a>
-						</div>
-					<?php 	$tag_list = get_the_tag_list();
+			<?php } ?>
+<?php } endif;
+
+
+if ( ! function_exists( 'appointment_post_meta_content' ) ) :
+function appointment_post_meta_content()
+{ ?>
+			<?php $current_options=get_option('appointment_lite_options'); 
+			if($current_options['meta_section_settings']=='on') { ?>
+			<div class="blog-post-lg">
+				<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) );?>"><?php echo get_avatar( get_the_author_meta('user_email'), $size = '40'); ?></a><?php _e('By','appointment');?><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) );?>"><?php echo get_the_author();?></a>
+				<?php 	$tag_list = get_the_tag_list();
 					if(!empty($tag_list)) { ?>
 					<div class="blog-tags-lg"><i class="fa fa-tags"></i><?php the_tags('', ', ', ''); ?></div>
 					<?php } ?>
-				</div>
 			</div>
-			<?php } ?>
-<?php } endif; 
+			<?php }  
+} endif; 
 
 // this functions accepts two parameters first is the preset size of the image and second  is for additional classes, you can also add yours 
 if(!function_exists( 'appointment_post_thumbnail')) : 
@@ -68,6 +69,5 @@ function appointment_post_layout_class(){
 		{ echo 'col-md-8'; } 
 	else 
 		{ echo 'col-md-12'; }  
- 
 } endif; 
 ?>

@@ -1,17 +1,14 @@
 <?php $current_options=get_option('appointment_lite_options'); ?>
 <!-- Footer Section -->
 <div class="container">	
-		<div class="row footer-widget-section">
+	<div class="row footer-widget-section">
 			<?php 
 			if ( is_active_sidebar( 'footer-widget-area' ) )
 			{ dynamic_sidebar( 'footer-widget-area' );	}
 			?>	
-			
 			<div class="clearfix"></div>
-			
-		</div>
-		
 	</div>
+</div>
 <!-- /Footer Section -->
 <div class="clearfix"></div>
 <!-- Footer Copyright Section -->

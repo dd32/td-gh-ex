@@ -13,7 +13,6 @@ get_template_part('index','banner'); ?>
 		{
 		while(have_posts()) { the_post();
 		get_template_part('content',''); ?>
-			</div>
 				<!--Blog Author-->
 				<div class="comment-title"><h3><?php _e('About the Author','appointment'); ?></h3></div>
 				<div class="blog-author">
@@ -70,7 +69,6 @@ get_template_part('index','banner'); ?>
 			<?php get_sidebar(); ?>	
 			</div>
 			<!--Sidebar Area-->
-			
 		</div>
 	</div>
 </div>

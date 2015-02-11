@@ -1,5 +1,5 @@
 <?php
-  get_header();
+ get_header();
  get_template_part('index', 'banner'); ?>
 <!-- /Page Title Section ---->
 <div class="blog-section-lg">
@@ -11,7 +11,6 @@
 				<h2><?php printf( __( "Search Results for: %s", 'appointment' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
 					<?php while ( have_posts() ) : the_post(); ?>
 				<?php get_template_part('content','')?>
-			</div>	
 				<?php endwhile; ?>
 				<?php else : ?>
 				<h2><?php _e( "Nothing Found", 'appointment' ); ?></h2>

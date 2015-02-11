@@ -34,7 +34,6 @@
 		if( have_posts() ) :
 		 while( $loop->have_posts() ) : $loop->the_post(); ?>
 				<?php get_template_part('content','')?>
-		</div>		
 				<?php endwhile; ?>
 				<?php endif; ?>
 			<!-- Blog Pagination -->

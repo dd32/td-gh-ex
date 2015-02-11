@@ -49,7 +49,6 @@
 				$more = 0;
 				?>
 				<?php get_template_part('content',''); ?>
-			</div>	
 				<?php endwhile;	?>
 				<div class="blog-pagination-square">
 					<?php previous_posts_link( __('Previous','appointment') ); ?>

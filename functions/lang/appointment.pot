@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: appointment\n"
-"POT-Creation-Date: 2015-02-09 17:41+0530\n"
-"PO-Revision-Date: 2015-02-09 17:41+0530\n"
+"POT-Creation-Date: 2015-02-10 14:48+0530\n"
+"PO-Revision-Date: 2015-02-10 14:54+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -47,21 +47,21 @@ msgstr ""
 msgid "Blog Archives"
 msgstr ""
 
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/archive.php:54
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/author.php:43
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/category.php:41
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/index.php:23
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/single.php:57
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/tag.php:43
+msgid "Previous"
+msgstr ""
+
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/archive.php:55
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/author.php:44
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/category.php:42
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/index.php:24
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/single.php:58
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/tag.php:44
-msgid "Previous"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/archive.php:56
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/author.php:45
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/category.php:43
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/index.php:25
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/single.php:59
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/tag.php:45
 msgid "Next"
 msgstr ""
 
@@ -167,40 +167,38 @@ msgstr ""
 msgid "Comments Are Closed!!!"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/content.php:36
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/content.php:19
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/fullwidth.php:37
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/page.php:34
 msgid "Read More"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/fullwidth.php:30
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/page.php:27
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/template-tag.php:21
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/template-tag.php:24
 msgid "By"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions.php:29
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions.php:28
 msgid "Primary Menu"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions.php:65
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions.php:64
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/breadcrumbs/breadcrumbs.php:99
 msgid "Page"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions.php:77
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions.php:76
 msgid "Facebook Profile URL"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions.php:78
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions.php:77
 msgid "Twitter Profile URL"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions.php:79
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions.php:78
 msgid "Linkedin Profile URL"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions.php:80
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions.php:79
 msgid "Google Profile URL"
 msgstr ""
 
@@ -213,17 +211,17 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/search.php:17
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/search.php:16
 msgid "Nothing Found"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/search.php:19
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/search.php:18
 msgid ""
 "Sorry, but nothing matched your search criteria. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/single.php:18
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/single.php:17
 msgid "About the Author"
 msgstr ""
 
