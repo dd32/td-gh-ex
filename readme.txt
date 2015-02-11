@@ -49,6 +49,14 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 2.3.9 =
+* Add: masonry call to main.js
+* Updated for woocommerce 2.3.
+* Remove: Woocommerce shipping cart template, no longer needed.
+* Add: quantity input buttons back. (woocomerce removed in 2.3).
+* Fix for mobile orientation issue.
+* Fix add icon issue.
+
 = Version: 2.3.8 =
 * Add: better security for custom css box.
 * Fix: strange audio player conflict with mobile menu.

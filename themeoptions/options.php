@@ -711,12 +711,18 @@ $this->sections[] = array(
             "step"      => "1",
             "max"       => "40",
             ),
-
     	array(
             'id'=>'shop_rating',
             'type' => 'switch', 
             'title' => __('Show Ratings in Shop and Category Pages', 'virtue'),
             'subtitle' => __('This determines if the rating is displayed in the product archive pages', 'virtue'),
+            "default"=> 1,
+            ),
+        array(
+            'id'=>'product_quantity_input',
+            'type' => 'switch', 
+            'title' => __('Quantity Box plus and minus', 'virtue'),
+            'subtitle' => __('Turn this off if you would like to use browser added plus and minus for number boxes', 'virtue'),
             "default"=> 1,
             ),
         array(

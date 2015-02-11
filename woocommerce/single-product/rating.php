@@ -4,7 +4,7 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.1.0
+ * @version     2.2.6
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -20,12 +20,12 @@ $average = $product->get_average_rating();
 if ( $count > 0 ) : ?>
 
 	<div class="woocommerce-product-rating" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
-		<div class="star-rating primary-color" title="<?php printf( __( 'Rated %s out of 5', 'woocommerce' ), $average ); ?>">
+		<div class="star-rating primary-color" title="<?php printf( __( 'Rated %s out of 5', 'virtue' ), $average ); ?>">
 			<span style="width:<?php echo ( ( $average / 5 ) * 100 ); ?>%">
-				<strong itemprop="ratingValue" class="rating"><?php echo esc_html( $average ); ?></strong> <?php _e( 'out of 5', 'woocommerce' ); ?>
+				<strong itemprop="ratingValue" class="rating"><?php echo esc_html( $average ); ?></strong> <?php _e( 'out of 5', 'virtue' ); ?>
 			</span>
 		</div>
-		<a href="#reviews" class="woocommerce-review-link" rel="nofollow">(<?php printf( _n( '%s customer review', '%s customer reviews', $count, 'woocommerce' ), '<span itemprop="ratingCount" class="count">' . $count . '</span>' ); ?>)</a>
+		<?php if ( comments_open() ) : ?><a href="#reviews" class="woocommerce-review-link" rel="nofollow">(<?php printf( _n( '%s customer review', '%s customer reviews', $count, 'virtue' ), '<span itemprop="ratingCount" class="count">' . $count . '</span>' ); ?>)</a><?php endif ?>
 	</div>
 
 <?php endif; ?>

@@ -11,7 +11,13 @@ jQuery(document).ready(function ($) {
 		$(".videofit").fitVids();
 		$('.woocommerce-ordering .orderby').customSelect();
 		$('.kad-select').customSelect();
-
+		matchMedia('only screen and (max-width: 480px)').addListener(function(list){
+			$('select.hasCustomSelect').removeAttr("style");
+			$('select.hasCustomSelect').css({'width':'250px'});
+	    	$('.kad-select.customSelect').remove();
+	    	$('select.kad-select').customSelect();
+	    	$('.customSelectInner').css('width','100%');
+		});
 		// Lightbox
 			$.extend(true, $.magnificPopup.defaults, {
 			tClose: '',
@@ -96,6 +102,13 @@ jQuery(document).ready(function ($) {
 	    });
 		//init masonry
 		$('.init-masonry').each(function(){
+	    	var masonrycontainer = $(this),
+	    	masonry_selector = $(this).data('masonry-selector');
+	    	masonrycontainer.imagesLoadedn( function(){
+				masonrycontainer.masonry({itemSelector: masonry_selector});
+			});
+		});
+		$('.kt-masonry-init').each(function(){
 	    	var masonrycontainer = $(this),
 	    	masonry_selector = $(this).data('masonry-selector');
 	    	masonrycontainer.imagesLoadedn( function(){

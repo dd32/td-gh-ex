@@ -4,8 +4,9 @@
  *
  */
 function kadence_scripts() {
+  global $virtue;
   wp_enqueue_style('kadence_theme', get_template_directory_uri() . '/assets/css/virtue.css', false, "238");
-global $virtue; if(isset($virtue['skin_stylesheet']) || !empty($virtue['skin_stylesheet'])) {$skin = $virtue['skin_stylesheet'];} else { $skin = 'default.css';} 
+ if(isset($virtue['skin_stylesheet']) || !empty($virtue['skin_stylesheet'])) {$skin = $virtue['skin_stylesheet'];} else { $skin = 'default.css';} 
  wp_enqueue_style('virtue_skin', get_template_directory_uri() . '/assets/css/skins/'.$skin.'', false, null);
 
   if (is_child_theme()) {
@@ -33,6 +34,14 @@ global $virtue; if(isset($virtue['skin_stylesheet']) || !empty($virtue['skin_sty
       'i18n_unavailable_text'            => esc_attr__( 'Sorry, this product is unavailable. Please choose a different combination.', 'woocommerce' ),
     ) ) );
   wp_enqueue_script( 'wc-add-to-cart-variation');
+  if(isset($virtue['product_quantity_input']) && $virtue['product_quantity_input'] == 1) {
+      function kt_get_wc_version() {return defined( 'WC_VERSION' ) && WC_VERSION ? WC_VERSION : null;}
+      function kt_is_wc_version_gte_2_3() {return kt_get_wc_version() && version_compare(kt_get_wc_version(), '2.3', '>=' );}
+      if (kt_is_wc_version_gte_2_3() ) {
+        wp_register_script( 'wcqi-js', get_template_directory_uri() . '/assets/js/min/wc-quantity-increment.min.js' , array( 'jquery' ), false, '288', true );
+        wp_enqueue_script( 'wcqi-js' );
+      }
+    }
   }
 
 
