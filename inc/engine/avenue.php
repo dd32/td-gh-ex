@@ -21,11 +21,11 @@ function ares_scripts() {
     wp_enqueue_style('ares-slider-style', get_template_directory_uri() . '/inc/css/camera.css', array(), ARES_VERSION);
 
     wp_enqueue_script('ares-navigation', get_template_directory_uri() . '/js/navigation.js', array(), ARES_VERSION, true);
-    wp_enqueue_script('ares-bootstrapjs', get_template_directory_uri() . '/inc/js/bootstrap.js', array(), ARES_VERSION, true);
+    wp_enqueue_script('ares-bootstrapjs', get_template_directory_uri() . '/inc/js/bootstrap.min.js', array(), ARES_VERSION, true);
     wp_enqueue_script('ares-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), ARES_VERSION, true);
 
     wp_enqueue_script('ares-easing', get_template_directory_uri() . '/inc/js/jquery.easing.1.3.js', array(), ARES_VERSION, true);
-    wp_enqueue_script('ares-uslider', get_template_directory_uri() . '/inc/js/camera.js', array(), ARES_VERSION, true);
+    wp_enqueue_script('ares-uslider', get_template_directory_uri() . '/inc/js/camera.min.js', array(), ARES_VERSION, true);
 
     wp_enqueue_script('ares-script', get_template_directory_uri() . '/inc/js/script.js', array('jquery', 'jquery-ui-core'), ARES_VERSION);
 
