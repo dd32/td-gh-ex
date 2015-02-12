@@ -1,8 +1,8 @@
 <!-- Header social & Contact Info -->
 	<div class="container">
 		<div class="row">
-		<?php $current_options=get_option('elitepress_lite_options'); ?>
-			<?php if($current_options['header_social_media_enabled']=='on') { ?>
+		<?php $current_options = get_option('elitepress_lite_options',theme_data_setup());
+			if($current_options['header_social_media_enabled']=='on') { ?>
 			<div class="col-md-6">
 				<ul class="head-contact-social">
 					<?php if($current_options['social_media_facebook_link']!='') { ?>

@@ -55,17 +55,17 @@
 		
 		require_once('theme_setup_data.php');
 		// setup admin pannel defual data for index page		
-		$elitepress_lite_options=theme_data_setup();
+		//$elitepress_lite_options=theme_data_setup();
 		
-		$current_theme_options = get_option('elitepress_lite_options'); // get existing option data 		
-		if($current_theme_options)
+		/* $current_theme_options = get_option('elitepress_lite_options'); */ // get existing option data 		
+		/* if($current_theme_options)
 		{ 	$elitepress_lite_options = array_merge($elitepress_lite_options, $current_theme_options);
-			update_option('elitepress_lite_options',$elitepress_lite_options);	// Set existing and new option data			
-		}
-		else
+			//update_option('elitepress_lite_options',$elitepress_lite_options);	// Set existing and new option data			
+		} */
+		/* else
 		{
-			add_option('elitepress_lite_options', $elitepress_lite_options);
-		}
+			//add_option('elitepress_lite_options', $elitepress_lite_options);
+		} */
 		require( WEBRITI_THEME_FUNCTIONS_PATH . '/theme_options/option_pannel.php' ); // for Option Panel Settings		
 	}
 	

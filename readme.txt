@@ -57,6 +57,15 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+
+@Version 0.2.2
+1. Add bootstrap.js for unless provide origianl profile.
+2. use sens default.
+3. Add Escape missing home URL('\').
+4. Add Attribution for fontawesome.
+5. Add interlization missing.
+6. Update Pot file.
+
 @Version 0.2.1
 1. Change screenshot image
 2. Change Responsive and color image for webriti Theme
@@ -108,4 +117,7 @@ URL: http://pixabay.com/en/home-office-workstation-office-336377/
 Source:http://pixabay.com
 LIcense: CC0 Public Domain
 
+Font Awesome 4.0.3 by @davegandy - http://fontawesome.io - @fontawesome
+License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+Source: http://fontawesome.io
 # --- EOF --- #

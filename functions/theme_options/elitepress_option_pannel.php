@@ -44,26 +44,25 @@
 				<!--         Home Page   -------->
 				
 				<!--most 24 Banner_settings --> 
-				<?php require_once('pages/banner.php'); ?>
+				<?php load_template( dirname( __FILE__ ) . './pages/banner.php' ); ?>
 				<!--most 1 tabs home_page_settings --> 
-				<?php require_once('pages/home_page_settings.php'); ?>
+				<?php  load_template( dirname( __FILE__ ) . './pages/home_page_settings.php' ); ?>
 				<!--most 2 tabs home_page_settings --> 
-				<?php require_once('pages/home_slider_settings.php'); ?>
+				<?php  load_template( dirname( __FILE__ ) . './pages/home_slider_settings.php' ); ?>
 				<!--most 22 tabs Social_media_settings -->
-				<?php require_once('pages/home_page_header_setting.php'); ?>
+				<?php load_template( dirname( __FILE__ ) . './pages/home_page_header_setting.php' ); ?>
 				<!--most  home page Project Settings  -->
-				<?php require_once('pages/home_header_top_call_out_settings.php'); ?>
+				<?php  load_template( dirname( __FILE__ ) . './pages/home_header_top_call_out_settings.php' ); ?>
 				<!--most 5 tabs footer_call_out_settings -->
-				<?php require_once('pages/home_service_settings.php'); ?>
+				<?php load_template( dirname( __FILE__ ) . './pages/home_service_settings.php' ); ?>
 				<!--most  home page Project Settings  -->
-				<?php require_once('pages/home_project_portfolio_settings.php'); ?>
+				<?php  load_template( dirname( __FILE__ ) . './pages/home_project_portfolio_settings.php' ); ?>
 				<!--most 23 tabs footer_copyright_settings --> 
-				<?php require_once('pages/footer_copyright_settings.php'); ?>
+				<?php load_template( dirname( __FILE__ ) . './pages/footer_copyright_settings.php' ); ?>
 				<!--Contact page setting-->
 				<!--most 8 tabs footer social media Settings  -->
-				<?php require_once('pages/UpgradeToPro.php'); ?>
-				
-				</div>		
+				<?php load_template( dirname( __FILE__ ) . './pages/UpgradeToPro.php' ); ?>
+			</div>		
         </div>
 		<div class="webriti-submenu" style="height:35px;">			
             <div class="webriti-submenu-links" style="margin-top:5px;">

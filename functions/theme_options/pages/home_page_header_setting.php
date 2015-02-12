@@ -1,5 +1,5 @@
  <div class="block ui-tabs-panel deactive" id="option-ui-id-22" >	
-	<?php $current_options = get_option('elitepress_lite_options');
+	<?php $current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), theme_data_setup() );
 	if(isset($_POST['webriti_settings_save_22']))
 	{	
 		if($_POST['webriti_settings_save_22'] == 1) 
@@ -265,7 +265,7 @@
 		</div>
 		<div class="section">
 			<h3><?php _e('Text Title','elitepress'); ?></h3>
-			<input type="checkbox" <?php if($current_options['text_title']=='on') echo "checked='checked'"; ?> id="text_title" name="text_title" > <span class="explain"><?php _e('Enable text-based Site Title.   Setup title','elitepress');?> <a href="<?php echo home_url( '/' ); ?>wp-admin/options-general.php"><?php _e('Click Here','elitepress');?></a>.</span>
+			<input type="checkbox" <?php if($current_options['text_title']=='on') echo "checked='checked'"; ?> id="text_title" name="text_title" > <span class="explain"><?php _e('Enable text-based Site Title.   Setup title','elitepress');?> <a href="<?php echo esc_url(home_url('/') ); ?>wp-admin/options-general.php"><?php _e('Click Here','elitepress');?></a>.</span>
 		</div>
 		
 		<div id="heading">

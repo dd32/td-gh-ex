@@ -1,5 +1,5 @@
 <div class="block ui-tabs-panel deactive" id="option-ui-id-2" >	
-	<?php $current_options = get_option('elitepress_lite_options');
+	<?php $current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), theme_data_setup() );
 	if(isset($_POST['webriti_settings_save_2']))
 	{	
 		if($_POST['webriti_settings_save_2'] == 1) 
@@ -8,6 +8,7 @@
 			{  print 'Sorry, your nonce did not verify.';	exit; }
 			else  
 			{	
+			    
 				$current_options['slider_title_one']= sanitize_text_field($_POST['slider_title_one']);
 				$current_options['slider_description']= sanitize_text_field($_POST['slider_description']);
 				$current_options['slider_image']= sanitize_text_field($_POST['slider_image']);
@@ -16,18 +17,18 @@
 				{ echo $current_options['home_banner_enabled']= sanitize_text_field($_POST['home_banner_enabled']); } 
 				else { echo $current_options['home_banner_enabled']="off"; } 
 				
-				update_option('elitepress_lite_options', stripslashes_deep($current_options));
+				update_option('elitepress_lite_options', $current_options);
 			}
 		}	
-		if($_POST['webriti_settings_save_2'] == 2) 
+		 if($_POST['webriti_settings_save_2'] == 2) 
 		{
 			$slider_image = WEBRITI_TEMPLATE_DIR_URI . "/images/slider.jpg";
 			$current_options['home_banner_enabled']="on";
-			$current_options['slider_title_one']= __('elitepress BY WEBRITI THEMES','elitepress');
+			$current_options['slider_title_one']= __('Elitepress BY WEBRITI THEMES','elitepress');
 			$current_options['slider_description']=  __('Create Fresh Website fast with us!','elitepress');
 			$current_options['slider_image']= $slider_image;
 			update_option('elitepress_lite_options',$current_options);
-		}
+		} 
 	}  ?>
 	<form method="post" id="webriti_theme_options_2">
 		<div id="heading">

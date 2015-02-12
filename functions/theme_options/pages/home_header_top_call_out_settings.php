@@ -1,5 +1,5 @@
 <div class="block ui-tabs-panel deactive" id="option-ui-id-9" >	
-	<?php $current_options = get_option('elitepress_lite_options');
+	<?php $current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), theme_data_setup() );
 	if(isset($_POST['webriti_settings_save_9']))
 	{	
 		if($_POST['webriti_settings_save_9'] == 1) 

@@ -1,6 +1,6 @@
-<?php
-$current_options=get_option('elitepress_lite_options'); ?>
-<?php if($current_options['portfolio_section_enabled'] == 'on') { ?>
+<?php $current_options = get_option('elitepress_lite_options',theme_data_setup()); 
+
+if($current_options['portfolio_section_enabled'] == 'on') { ?>
 <!-- Portfolio Section -->
 <div class="portfolio-section">
 	<div class="container">

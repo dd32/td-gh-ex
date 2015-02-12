@@ -1,7 +1,5 @@
 <!-- Slider Section -->
-<?php
-$current_options = get_option('elitepress_lite_options');
-?>
+<?php $current_options = get_option('elitepress_lite_options',theme_data_setup()); ?>
 <div class="homepage-mycarousel">
 	<div class="flexslider">
         <div class="flex-viewport">

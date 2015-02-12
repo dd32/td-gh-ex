@@ -1,11 +1,11 @@
 <div class="block ui-tabs-panel deactive" id="option-ui-id-23" >	
-	<?php $current_options = get_option('elitepress_lite_options');
+	<?php $current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), theme_data_setup() );
 	if(isset($_POST['webriti_settings_save_23']))
 	{	
 		if($_POST['webriti_settings_save_23'] == 1) 
 		{
 			if ( empty($_POST) || !wp_verify_nonce($_POST['webriti_gernalsetting_nonce_customization'],'webriti_customization_nonce_gernalsetting') )
-			{  print 'Sorry, your nonce did not verify.';	exit; }
+			{  printf (__('Sorry, your nonce did not verify.','elitepress'));	exit; }
 			else  
 			{		
 				$current_options['footer_copyright_text']=wp_kses_post(balanceTags($_POST['footer_copyright_text'],true));

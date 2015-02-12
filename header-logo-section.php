@@ -1,9 +1,9 @@
 <!-- Logo goes here -->
 	<div class="container">
 		<div class="row">
-		<?php ?>
-		<?php $current_options=get_option('elitepress_lite_options'); ?>
-		<?php if($current_options['logo_section_settings']=='on') { ?>
+	<?php $current_options = get_option('elitepress_lite_options',theme_data_setup()); 
+     
+	 if($current_options['logo_section_settings']=='on') { ?>
 			<div class="site-logo">
 				<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="elitepress">
 				<?php
