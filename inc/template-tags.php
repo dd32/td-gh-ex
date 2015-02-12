@@ -34,7 +34,7 @@ if ( ! function_exists( 'courage_display_custom_header' ) ):
 		if( is_page() && has_post_thumbnail() ) :
 		?>
 			<div id="custom-header" class="featured-image-header">
-				<?php the_post_thumbnail('custom-header-image'); ?>
+				<?php the_post_thumbnail('courage-header-image'); ?>
 			</div>
 <?php
 		// Check if there is a custom header image
@@ -159,7 +159,8 @@ if ( ! function_exists( 'courage_display_pagination' ) ):
 				'current' => max( 1, get_query_var( 'paged' ) ),
 				'total' => $wp_query->max_num_pages,
 				'next_text' => '&raquo;',
-				'prev_text' => '&laquo'
+				'prev_text' => '&laquo',
+				'add_args' => false
 			) );
 
 		// Display the pagination if more than one page is found

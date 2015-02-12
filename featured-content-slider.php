@@ -8,10 +8,10 @@
 $slider_posts = courage_get_featured_content();
 
 // Check if there is Featured Content
-if ( empty( $slider_posts ) ) : ?>
+if ( empty( $slider_posts ) and current_user_can( 'edit_theme_options' ) ) : ?>
 
 	<p class="post-slider-empty-posts">
-		<?php _e('There is no featured content to be displayed in the slider. To set up the slider, go to Appearance → Customize  → Theme Options, and add a tag under Tag Name in the Featured Content section. The slideshow will then display all posts which are tagged with that keyword.', 'courage'); ?>
+		<?php _e('There is no featured content to be displayed in the slider. To set up the slider, go to Appearance -> Customize -> Theme Options, and add a tag under Tag Name in the Featured Content section. The slideshow will then display all posts which are tagged with that keyword.', 'courage'); ?>
 	</p>
 	
 <?php
@@ -39,7 +39,7 @@ add_filter('excerpt_length', 'courage_slideshow_excerpt_length');
 					if ( has_post_thumbnail() ) : ?>
 					
 						<div class="slide-image">
-							<?php the_post_thumbnail('slider-image'); ?>
+							<?php the_post_thumbnail('courage-slider-image'); ?>
 						</div>
 
 					<?php else: ?>

@@ -169,7 +169,7 @@ class Courage_Category_Posts_Columns_Widget extends WP_Widget {
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class('big-post clearfix'); ?>>
 
-						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('category-posts-widget-big'); ?></a>
+						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('courage-category-posts-widget-big'); ?></a>
 
 						<h3 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h3>
 
@@ -186,7 +186,7 @@ class Courage_Category_Posts_Columns_Widget extends WP_Widget {
 					<article id="post-<?php the_ID(); ?>" <?php post_class('small-post clearfix'); ?>>
 
 					<?php if ( '' != get_the_post_thumbnail() ) : ?>
-						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('category-posts-widget-small'); ?></a>
+						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('courage-category-posts-widget-small'); ?></a>
 					<?php endif; ?>
 
 						<div class="small-post-content">
@@ -251,10 +251,28 @@ class Courage_Category_Posts_Columns_Widget extends WP_Widget {
 			// Link Category Title
 			if( $category_link == true ) : 
 				
-				$link_title = sprintf( __('View all posts from category %s', 'courage'), get_cat_name( $category_id ) );
-				$link_url = esc_url( get_category_link( $category_id ) );
+				// Check if "All Categories" is selected
+				if( $category_id == 0 ) :
 				
-				echo '<a href="'. esc_url( get_category_link( $category_id ) ) .'" title="'. $widget_title . '">'. $widget_title . '</a>';
+					$link_title = __('View all posts', 'courage');
+					
+					// Set Link URL to always point to latest posts page
+					if ( get_option( 'show_on_front' ) == 'page' ) :
+						$link_url = esc_url( get_permalink( get_option('page_for_posts' ) ) );
+					else : 
+						$link_url =	esc_url( home_url('/') );
+					endif;
+					
+				else :
+					
+					// Set Link URL and Title for Category
+					$link_title = sprintf( __('View all posts from category %s', 'courage'), get_cat_name( $category_id ) );
+					$link_url = esc_url( get_category_link( $category_id ) );
+					
+				endif;
+				
+				// Display linked Widget Title
+				echo '<a href="'. $link_url .'" title="'. $link_title . '">'. $widget_title . '</a>';
 				echo '<a class="category-archive-link" href="'. $link_url .'" title="'. $link_title . '"><span class="genericon-expand"></span></a>';
 				
 			else:

@@ -62,7 +62,7 @@ function courage_google_fonts_url() {
 
 	$fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
 
-    return apply_filters( 'courage-fonts-url', $fonts_url );
+    return apply_filters( 'courage_google_fonts_url', $fonts_url );
 }
 
 
@@ -81,10 +81,13 @@ function courage_setup() {
 	load_theme_textdomain('courage', get_template_directory() . '/languages' );
 
 	// Add Theme Support
-	add_theme_support('post-thumbnails');
 	add_theme_support('automatic-feed-links');
 	add_editor_style();
 	
+	// Add Post Thumbnails
+	add_theme_support('post-thumbnails');
+	set_post_thumbnail_size( 840, 200, true );
+
 	// Add Custom Background
 	add_theme_support('custom-background', array('default-color' => 'e5e5e5'));
 
@@ -122,21 +125,15 @@ add_action( 'after_setup_theme', 'courage_add_image_sizes' );
 if ( ! function_exists( 'courage_add_image_sizes' ) ):
 function courage_add_image_sizes() {
 	
-	// Add Post Thumbnail Size
-	add_image_size( 'post-thumbnail', 840, 200, true);
-	
 	// Add Custom Header Image Size
-	add_image_size( 'custom-header-image', 1320, 250, true);
+	add_image_size( 'courage-header-image', 1320, 250, true);
 	
 	// Add Slider Image Size
-	add_image_size( 'slider-image', 1320, 380, true);
+	add_image_size('courage-slider-image', 1320, 380, true);
 	
 	// Add Category Post Widget image sizes
-	add_image_size( 'category-posts-widget-small', 80, 80, true);
-	add_image_size( 'category-posts-widget-big', 540, 180, true);
-	
-	// Add Site Logo Size
-	add_image_size( 'site-logo', 1340, 250);
+	add_image_size('courage-category-posts-widget-small', 80, 80, true);
+	add_image_size('courage-category-posts-widget-big', 540, 180, true);
 
 }
 endif;

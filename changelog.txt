@@ -2,6 +2,18 @@
 Courage Changelog
 ===================================
 
+Version 1.0.2
+-----------------------------------
+[added] unminified version of html5shiv.min.js and jquery.flexslider-min.js
+[added] check if current user can edit theme options before displaying admin notices on frontend
+[changed] namespacing of image size names: added theme slug as prefix
+[fixed] linked widget titles in Category Post Widgets with "All Categories" selected
+
+Version 1.0.1
+-----------------------------------
+[fixed] wrong filter name for implementing Google Fonts
+[fixed] ampersand escape bug in pagination links (https://core.trac.wordpress.org/ticket/30831)
+
 Version 1.0
 -----------------------------------
 Final Version
