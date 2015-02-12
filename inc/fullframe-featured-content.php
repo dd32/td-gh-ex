@@ -178,9 +178,6 @@ function fullframe_demo_content( $options ) {
 							Durbar Square
 						</h1>
 					</header>
-					<div class="entry-content">
-						The Kathmandu Durbar Square holds the palaces of the Malla and Shah kings who ruled over the city. Along with these palaces, the square surrounds quadrangles revealing courtyards and temples.
-					</div>
 				</div><!-- .entry-container -->			
 			</article>
 
@@ -194,9 +191,6 @@ function fullframe_demo_content( $options ) {
 							Seto Ghumba
 						</h1>
 					</header>
-					<div class="entry-content">
-						Situated western part in the outskirts of the Kathmandu valley, Seto Gumba also known as Druk Amitabh Mountain or White Monastery, is one of the most popular Buddhist monasteries of Nepal.
-					</div>
 				</div><!-- .entry-container -->			
 			</article>
 			
@@ -210,9 +204,6 @@ function fullframe_demo_content( $options ) {
 							Swayambhunath
 						</h1>
 					</header>
-					<div class="entry-content">
-						Swayambhunath is an ancient religious site up in the hill around Kathmandu Valley. It is also known as the Monkey Temple as there are holy monkeys living in the north-west parts of the temple.
-					</div>
 				</div><!-- .entry-container -->			
 			</article>';
 
@@ -228,83 +219,9 @@ function fullframe_demo_content( $options ) {
 						Dhulikhel
 					</h1>
 				</header>
-				<div class="entry-content">
-					Dhulikhel is a popular place to observe the high Himalaya - A Tourist Paradise: The spectacular snowfed mountains seen from Dhuklikhel must be one of the finest panoramic views in the world. 
-				</div>
 			</div><!-- .entry-container -->			
 		</article>';
 	}
-	$fullframe_demo_content .= '</div><!-- .featured_content_slider_wrap -->';
-
-	$fullframe_demo_content .= '
-		<div class="featured_content_slider_wrap">
-			<article id="featured-post-1" class="post hentry post-demo">
-				<figure class="featured-content-image">
-					<img alt="Durbar Square" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured1-400x225.jpg" />
-				</figure>
-				<div class="entry-container">
-					<header class="entry-header">
-						<h1 class="entry-title">
-							Durbar Square
-						</h1>
-					</header>
-					<div class="entry-content">
-						The Another Durbar Square holds the palaces of the Malla and Shah kings who ruled over the city. Along with these palaces, the square surrounds quadrangles revealing courtyards and temples.
-					</div>
-				</div><!-- .entry-container -->			
-			</article>
-
-			<article id="featured-post-2" class="post hentry post-demo">
-				<figure class="featured-content-image">
-					<img alt="Seto Ghumba" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured2-400x225.jpg" />
-				</figure>
-				<div class="entry-container">
-					<header class="entry-header">
-						<h1 class="entry-title">
-							Seto Ghumba
-						</h1>
-					</header>
-					<div class="entry-content">
-						Situated western part in the outskirts of the Another valley, Seto Gumba also known as Druk Amitabh Mountain or White Monastery, is one of the most popular Buddhist monasteries of Nepal.
-					</div>
-				</div><!-- .entry-container -->			
-			</article>
-			
-			<article id="featured-post-3" class="post hentry post-demo">
-				<figure class="featured-content-image">
-					<img alt="Swayambhunath" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured3-400x225.jpg" />
-				</figure>
-				<div class="entry-container">
-					<header class="entry-header">
-						<h1 class="entry-title">
-							Swayambhunath
-						</h1>
-					</header>
-					<div class="entry-content">
-						Swayambhunath is an ancient religious site up in the hill around Another Valley. It is also known as the Monkey Temple as there are holy monkeys living in the north-west parts of the temple.
-					</div>
-				</div><!-- .entry-container -->			
-			</article>';
-
-	if( 'layout-four' == $options ['featured_content_layout']) {
-		$fullframe_demo_content .= '
-		<article id="featured-post-4" class="post hentry post-demo">
-			<figure class="featured-content-image">
-				<img alt="Dhulikhel" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured4-400x225.jpg" />
-			</figure>
-			<div class="entry-container">
-				<header class="entry-header">
-					<h1 class="entry-title">
-						Dhulikhel
-					</h1>
-				</header>
-				<div class="entry-content">
-					Dhulikhel is a popular place to observe the high Himalaya - A Tourist Paradise: The spectacular snowfed mountains seen from Dhuklikhel must be one of the finest panoramic views in the world. 
-				</div>
-			</div><!-- .entry-container -->			
-		</article>';
-	}
-	
 	$fullframe_demo_content .= '</div><!-- .featured_content_slider_wrap -->';
 
 	return $fullframe_demo_content;

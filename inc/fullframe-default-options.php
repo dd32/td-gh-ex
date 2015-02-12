@@ -75,7 +75,7 @@ function fullframe_get_default_theme_options() {
 		//Featured Content Options
 		'featured_content_option'							=> 'homepage',
 		'featured_content_layout'							=> 'layout-three',
-		'featured_content_slider'							=> 1,
+		'featured_content_slider'							=> 0,
 		'featured_content_position'							=> 0,
 		'featured_content_headline'							=> '',
 		'featured_content_subheadline'						=> '',

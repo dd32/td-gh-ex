@@ -1,5 +1,10 @@
 == Change log ==
 
+= 0.5 =
+* Changed featured content slider disable by default
+* Removed unnecessary images
+* Removed exta featured content
+
 = 0.4 =
 * Added Option in Enable Header Image: Excluding Home, Page/Post Featured Image 
 * Bug Fixed: Breadcrumb position
