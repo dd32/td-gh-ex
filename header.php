@@ -45,7 +45,7 @@
 			<ul class="nav">
 			<?php
 				if(of_get_option('show_slider')== "yes") : ?>
-					<li class="current"><a href="#main-slider">Home</a></li>
+					<li class="current"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#main-slider">Home</a></li>
 				<?php endif;
 				
 				foreach ($sections as $single_sections): 

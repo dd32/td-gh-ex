@@ -89,6 +89,11 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.17
+* Fixed the link on the Scroll down arrow over the banner.
+* Added New Translation language (Russian).
+* Minor CSS bugs fixed.
+
 Version 1.16
 * Theme option value not saving bug fixed.
 

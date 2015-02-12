@@ -94,7 +94,7 @@ function accesspress_bxslidercb(){
 		$accesspress_parallax = of_get_option('parallax_section');
 		if(!empty($accesspress_parallax)) :
 			$accesspress_parallax_first_page_array = array_slice($accesspress_parallax, 0, 1);
-			$accesspress_parallax_first_page = sanitize_title(get_the_title($accesspress_parallax_first_page_array[0]['page']));
+			$accesspress_parallax_first_page = $accesspress_parallax_first_page_array[0]['page'];
 		endif;
 		$accesspress_slider_category = of_get_option('slider_category');
 		$accesspress_slider_full_window = of_get_option('slider_full_window') ;
@@ -114,8 +114,8 @@ function accesspress_bxslidercb(){
 		
 		<div class="overlay"></div>
 
-		<?php if(!empty($accesspress_parallax_first_page)): ?>
-		<div class="next-page"><a href="#<?php echo $accesspress_parallax_first_page; ?>"></a></div>
+		<?php if(!empty($accesspress_parallax_first_page) && $accesspress_enable_parallax == 1): ?>
+		<div class="next-page"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#section-<?php echo $accesspress_parallax_first_page; ?>"></a></div>
 		<?php endif; ?>
 
  		<script type="text/javascript">
