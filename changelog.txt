@@ -1,4 +1,11 @@
 == Change log ==
 
+= 0.4 =
+* Added Option in Enable Header Image: Excluding Home, Page/Post Featured Image 
+* Bug Fixed: Breadcrumb position
+* Bug Fixed: Responsive layout for Footer text
+* Initial Release in Catchthemes.com
+* Removed: Secondary Menu
+
 = 0.1-0.3 =
 * Submitted to WordPress.org

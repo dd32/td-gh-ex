@@ -38,7 +38,7 @@ if( !function_exists( 'fullframe_add_breadcrumb' ) ) :
 	}
 
 endif;
-add_action( 'fullframe_before_content', 'fullframe_add_breadcrumb', 100 );
+add_action( 'fullframe_before_content', 'fullframe_add_breadcrumb', 30 );
 
 
 /**

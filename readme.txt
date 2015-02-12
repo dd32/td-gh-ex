@@ -1,6 +1,6 @@
 === Full Frame ===
 
-Full Frame is a Simple, Clean and Spacious Full Width Responsive WordPress Theme based on Catch Base Theme. Built on HTML5, CSS3 and Theme Customizer for real time customization, it comes with a whole set of interesting and rich features which makes this theme highly customizable and flexible. Make your beautiful yet professional website in no time. Full Frame WordPress Theme will be best suited for business, portfolio and blogging sites. This theme is translation ready. Check out Theme Instructions at http://catchthemes.com/theme-instructions/full-frame/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/full-frame/
+Full Frame is a Simple, Clean and Spacious Full Width Responsive WordPress Theme based on Catch Base Theme. Built on HTML5, CSS3 and Theme Customizer for real time customization, it comes with a whole set of interesting and rich features which makes this theme highly customizable and flexible. Make your beautiful yet professional website in no time. Full Frame WordPress Theme will be best suited for photography, portfolio and blogging sites. This theme is translation ready. Check out Theme Instructions at http://catchthemes.com/theme-instructions/full-frame/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/full-frame/
 
 
 == Support ==
@@ -21,7 +21,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Full Frame WordPress Theme, Copyright 2015 Catchthemes.com
 Full Frame is distributed under the terms of the GNU General Public License v3
 
-Fullframe is based on Underscores http://underscores.me/, (C) Automattic, Inc.
+Full Frame is based on Catch Base theme http://catchthemes.com/themes/catch-base/ 
 
 Images used are released under the CC0 license
 Slider Image 1: http://pixabay.com/en/photography-photo-camera-olympus-407218/
@@ -58,7 +58,7 @@ JS Files
 
 = Custom Menus =
 
-Full Frame theme supports two custom menus that is primary and secondary. 
+Full Frame theme supports one custom menu that is primary menu. 
 To create a custom menu, go to Appearance -> Menus in your dashboard. 
 For more about custom menu, check out http://catchthemes.com/blog/custom-menus-wordpress-themes/
 

@@ -25,10 +25,6 @@ jQuery(document).ready(function() {
 		jQuery('#mobile-header-left-menu').sidr({
 		   name: 'mobile-header-left-nav',
 		   side: 'left' // By default
-		});	
-		jQuery('#mobile-header-right-menu').sidr({
-		   name: 'mobile-header-right-nav',
-		   side: 'right' // By default
 		});
 	}
 });

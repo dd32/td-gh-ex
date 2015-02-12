@@ -477,10 +477,6 @@ Responsive Style
 		padding-top:  15px;
 	}	
 
-	#breadcrumb-list .wrapper {
-	    padding: 15px 30px 0;
-	}
-
 	.fullframe-nav-menu a, 
 	.sidebar-header-right .widget_nav_menu a {
 	    padding: 10px 15px;
@@ -1056,6 +1052,9 @@ Responsive Style
 		display: block;
 		text-align: center;
 	    width: 100%;
+	}
+	#footer-right-content {
+		padding-top: 0;
 	}
 
 }

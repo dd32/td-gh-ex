@@ -146,7 +146,7 @@ function fullframe_featured_content_display_position() {
 	}
 
 	if ( '1' != $featured_content_position ) { 
-		add_action( 'fullframe_before_content', 'fullframe_featured_content_display', 40 );
+		add_action( 'fullframe_before_content', 'fullframe_featured_content_display', 50 );
 	} else {
 		add_action( 'fullframe_after_content', 'fullframe_featured_content_display', 40 );
 	}

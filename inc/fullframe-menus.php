@@ -71,36 +71,6 @@ endif; //fullframe_primary_menu
 add_action( 'fullframe_header', 'fullframe_primary_menu', 30 );
 
 
-if ( ! function_exists( 'fullframe_secondary_menu' ) ) :
-/**
- * Shows the Secondary Menu 
- *
- * default load in sidebar-header-right.php
- */
-function fullframe_secondary_menu() {
-    if ( has_nav_menu( 'secondary' ) ) { 
-	?>
-    	<nav class="nav-secondary" role="navigation">
-            <div class="wrapper">
-                <h1 class="assistive-text"><?php _e( 'Secondary Menu', 'fullframe' ); ?></h1>
-                <div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'fullframe' ); ?>"><?php _e( 'Skip to content', 'fullframe' ); ?></a></div>
-                <?php             
-                    $fullframe_secondary_menu_args = array(
-                        'theme_location'    => 'secondary',
-                        'menu_class' => 'menu fullframe-nav-menu'
-                    );
-                    wp_nav_menu( $fullframe_secondary_menu_args );
-                ?>
-        	</div><!-- .wrapper -->
-        </nav><!-- .nav-secondary -->
-
-<?php
-    }
-}
-endif; //fullframe_secondary_menu
-add_action( 'fullframe_before_content', 'fullframe_secondary_menu', 25 );
-
-
 if ( ! function_exists( 'fullframe_mobile_menus' ) ) :
 /**
  * This function loads Mobile Menus
@@ -122,52 +92,7 @@ function fullframe_mobile_menus() {
             wp_page_menu( array( 'menu_class'  => 'menu' ) );
         }
     echo '</nav><!-- #mobile-header-left-nav -->';
-
-    //For Secondary Menu
-    if ( has_nav_menu( 'secondary' ) ) {
-        echo '<nav id="mobile-header-right-nav" class="mobile-menu" role="navigation">';
-            $args = array(
-                'theme_location'    => 'secondary',
-                'container'         => false,
-                'items_wrap'        => '<ul id="header-right-nav" class="menu">%3$s</ul>'
-            );
-            wp_nav_menu( $args );
-        echo '</nav><!-- #mobile-header-right-nav -->';
-    }
 }
 endif; //fullframe_mobile_menus
 
 add_action( 'fullframe_after', 'fullframe_mobile_menus', 20 );
-
-
-if ( ! function_exists( 'fullframe_mobile_header_nav_anchor' ) ) :
-/**
- * This function loads Mobile Menus Left Anchor
- *
- * @uses fullframe_header action to add in the Header
- */
-function fullframe_mobile_header_nav_anchor() {
-      
-}
-endif; //fullframe_mobile_menus    
-add_action( 'fullframe_header', 'fullframe_mobile_header_nav_anchor', 30 );
-
-
-if ( ! function_exists( 'fullframe_mobile_secondary_nav_anchor' ) ) :
-/**
- * This function loads Mobile Menus Footer Anchor
- * @uses fullframe_header action to add in the Header
- */
-function fullframe_mobile_secondary_nav_anchor() {
-    if ( has_nav_menu( 'secondary' ) ) {  
-        ?>    
-        <div id="mobile-header-right-menu" class="mobile-menu-anchor secondary-menu">
-            <a href="#mobile-header-right-menu" id="secondary-menu" class="genericon genericon-menu">
-                <span class="mobile-menu-text"><?php _e( 'Menu', 'fullframe' );?></span>
-            </a>
-        </div><!-- #mobile-header-menu -->
-    <?php    
-    }
-}
-endif; //fullframe_mobile_secondary_nav_anchor    
-add_action( 'fullframe_header', 'fullframe_mobile_secondary_nav_anchor', 50 );

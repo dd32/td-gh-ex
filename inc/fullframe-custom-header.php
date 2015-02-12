@@ -192,15 +192,17 @@ if ( ! function_exists( 'fullframe_site_branding' ) ) :
 	 * @since Fullframe 1.0
 	 */
 	function fullframe_site_branding() {
-		//fullframe_flush_transients();
+		fullframe_flush_transients();
 		$options 			= fullframe_get_theme_options();
+
+		$logo_alt = ( '' != $options['logo_alt_text'] ) ? $options['logo_alt_text'] : get_bloginfo( 'name', 'display' );
 
 		//Checking Logo
 		if ( '' != $options['logo'] && !$options['logo_disable'] ) {
 			$fullframe_site_logo = '
 			<div id="site-logo">
 				<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">
-					<img src="' . esc_url( $options['logo'] ) . '" alt="' . esc_attr(  $options['logo_alt_text'] ). '">
+					<img src="' . esc_url( $options['logo'] ) . '" alt="' . esc_attr(  $logo_alt ). '">
 				</a>
 			</div><!-- #site-logo -->';
 		}
@@ -445,6 +447,17 @@ if ( ! function_exists( 'fullframe_featured_overall_image' ) ) :
 			}
 			else {
 				fullframe_featured_image();	
+			}
+		}
+		elseif ( $enableheaderimage == 'exclude-home-page-post' ) {
+			if ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) {
+				return false;
+			}
+			elseif ( is_page() || is_single() ) {
+				fullframe_featured_page_post_image();
+			}
+			else {
+				fullframe_featured_image();
 			}
 		}
 		// Check Entire Site

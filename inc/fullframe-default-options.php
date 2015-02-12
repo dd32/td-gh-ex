@@ -34,7 +34,7 @@ function fullframe_get_default_theme_options() {
 		'single_post_image_layout'							=> 'disabled',
 		
 		//Header Image
-		'enable_featured_header_image'						=> 'entire-site-page-post',
+		'enable_featured_header_image'						=> 'exclude-home-page-post',
 		'featured_image_size'								=> 'full',
 		'featured_header_image_url'							=> '',
 		'featured_header_image_alt'							=> '',
@@ -182,6 +182,10 @@ function fullframe_enable_featured_header_image_options() {
 		'exclude-home' 		=> array(
 			'value'	=> 'exclude-home',
 			'label' => __( 'Excluding Homepage', 'fullframe' ),
+		),
+		'exclude-home-page-post' 	=> array(
+			'value' => 'exclude-home-page-post',
+			'label' => __( 'Excluding Homepage, Page/Post Featured Image', 'fullframe' ),
 		),
 		'entire-site' 	=> array(
 			'value' => 'entire-site',

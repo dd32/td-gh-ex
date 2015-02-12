@@ -44,15 +44,9 @@
      * @hooked fullframe_primary_menu - 30 
      * @hooked fullframe_header_start - 40
      * @hooked fullframe_site_branding - 50 
+	 * @hooked fullframe_header_right - 60
 	 * @hooked fullframe_header_end - 70
-     * @hooked fullframe_fixed_header_end - 80 
-	 *
-	 *
-     * 
-     *
-     *
-	 * @hooked fullframe_mobile_header_nav_anchor - 39
-	 * @hooked fullframe_header_right - 50
+     * @hooked fullframe_fixed_header_end - 80
 	 * 
 	 */
 	do_action( 'fullframe_header' );
@@ -67,10 +61,9 @@
 	 *
 	 * @hooked fullframe_featured_slider - 10
      * @hooked fullframe_featured_overall_image - 20
-	 * @hooked fullframe_secondary_menu - 25
-	 * @hooked fullframe_promotion_headline - 30
-	 * @hooked fullframe_featured_content_display (move featured content above homepage posts - default option) - 40
-     * @hooked fullframe_add_breadcrumb - 100	
+	 * @hooked fullframe_add_breadcrumb - 30
+	 * @hooked fullframe_promotion_headline - 40
+	 * @hooked fullframe_featured_content_display (move featured content above homepage posts - default option) - 50	
 	 */
 	do_action( 'fullframe_before_content' );
 	

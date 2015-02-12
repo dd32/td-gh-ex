@@ -119,10 +119,7 @@ if ( ! function_exists( 'fullframe_setup' ) ) :
     	/**
 		 * This theme uses wp_nav_menu() in one location.
 		 */
-		register_nav_menus( array(
-			'primary' 	=> __( 'Primary Menu', 'fullframe' ),
-			'secondary' => __( 'Secondary Menu', 'fullframe' ),
-		) );
+		register_nav_menu( 'primary', __( 'Primary Menu', 'fullframe' ) );
 
 		/**
 		 * Enable support for Post Formats
@@ -1375,7 +1372,7 @@ if ( ! function_exists( 'fullframe_promotion_headline' ) ) :
 		 }
 	}
 endif; // fullframe_promotion_featured_content
-add_action( 'fullframe_before_content', 'fullframe_promotion_headline', 30 );
+add_action( 'fullframe_before_content', 'fullframe_promotion_headline', 40 );
 
 
 /**
