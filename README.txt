@@ -68,6 +68,12 @@ View the settings under Appearance -> ALBAR Settings.
 
 == Changelog ==
 
+#### 1.6.0
+** Added dismiss-able notice to plugins.php page.
+** Styling tweaks to page templates - improved.
+** Added image to upgrade page to show that premium includes extra wWooCommerce styling.
+** Updated .pot language file
+
 #### 1.5.9
 ** Add support for add_theme_support( 'title-tag' ).
 

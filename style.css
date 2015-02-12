@@ -4,7 +4,7 @@ Theme URI: http://kairaweb.com/theme/albar/
 Author: Kaira
 Author URI: http://www.kairaweb.com/
 Description: Albar is a responsive multipurpose Wordpress theme. You can use Albar to build a business website, portfolio website, online store or a simple blogging website which adapts nicely to all devices. We've integrated with some powerful plugins like SiteOrigin's Page Builder, WooCommerce, Contact Form 7 and more.
-Version: 1.5.9
+Version: 1.6.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: responsive-layout, fluid-layout, custom-menu, featured-images, theme-options, threaded-comments, translation-ready, white, light, one-column, two-columns, full-width-template
@@ -1552,15 +1552,24 @@ body.admin-bar .stuck {
     padding: 30px 20px 20px 20px;
 }
 
+.post-type-archive.woocommerce-page .site-boxed .content-area {
+    padding-left: 0;
+}
+
 .woocommerce-page .widget-area,
 .archive .widget-area,
 .single .widget-area,
 .search .widget-area,
 .page-template-template-right-nav-sidebar-php .widget-area,
 .page-template-default .widget-area {
-    margin: 0 0 35px;
-    padding: 0 0 10px 0;
+    margin: 0;
+    padding: 0 0 30px;
     box-shadow: 1px 0 0 #eaeaea inset;
+}
+
+.post-type-archive.woocommerce-page .widget-area,
+.post-type-archive.archive .widget-area {
+    box-shadow: -1px 0 0 #eaeaea;
 }
 
 .woocommerce-page .widget-area .widget,
@@ -1594,8 +1603,8 @@ body.admin-bar .stuck {
 
 .page-template-template-left-nav-sidebar-php .widget-area,
 .page-template-template-left-sidebar-php .widget-area {
-    margin: 0 0 35px;
-    padding: 0 0 10px 0;
+    margin: 0;
+    padding: 0 0 30px;
     box-shadow: 1px 0 0 #eaeaea;
 }
 

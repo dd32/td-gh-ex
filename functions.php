@@ -5,7 +5,7 @@
  * @package Albar
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.5.9' );
+define( 'KAIRA_THEME_VERSION' , '1.6.0' );
 
 if ( file_exists( get_stylesheet_directory() . '/settings/class.kaira-theme-settings.php' ) ) {
     require_once( get_stylesheet_directory() . '/settings/class.kaira-theme-settings.php' );
@@ -289,4 +289,38 @@ function kaira_wrap_woocommerce_start() {
 }
 function kaira_wrap_woocommerce_end() {
     echo '</div>';
+}
+
+/* Display the recommended plugins notice that can be dismissed */
+add_action('admin_notices', 'kaira_recommended_plugin_notice');
+
+function kaira_recommended_plugin_notice() {
+    global $pagenow;
+    global $current_user;
+    
+    $user_id = $current_user->ID;
+    
+    /* If on plugins page, check that the user hasn't already clicked to ignore the message */
+    if ( $pagenow == 'plugins.php' ) {
+        if ( ! get_user_meta( $user_id, 'kaira_recommended_plugin_ignore_notice' ) ) {
+            echo '<div class="updated"><p>';
+            printf( __('<p>Install the plugins we at <a href="http://www.kairaweb.com/" target="_blank">Kaira</a> recommended | <a href="%1$s">Hide Notice</a></p>'), '?kaira_recommended_plugin_nag_ignore=0' ); ?>
+            <a href="<?php echo admin_url('plugin-install.php?tab=favorites&user=kaira'); ?>"><?php printf( __( 'SiteOrigin\'s Page Builder', 'kaira' ), 'WordPress' ); ?></a><br />
+            <a href="<?php echo admin_url('plugin-install.php?tab=favorites&user=kaira'); ?>"><?php printf( __( 'Contact Form 7', 'kaira' ), 'WordPress' ); ?></a><br />
+            <a href="<?php echo admin_url('plugin-install.php?tab=favorites&user=kaira'); ?>"><?php printf( __( 'Breadcrumb NavXT', 'kaira' ), 'WordPress' ); ?></a>
+            <?php
+            echo "</p></div>";
+        }
+    }
+}
+add_action('admin_init', 'kaira_recommended_plugin_nag_ignore');
+
+function kaira_recommended_plugin_nag_ignore() {
+    global $current_user;
+    $user_id = $current_user->ID;
+        
+    /* If user clicks to ignore the notice, add that to their user meta */
+    if ( isset($_GET['kaira_recommended_plugin_nag_ignore']) && '0' == $_GET['kaira_recommended_plugin_nag_ignore'] ) {
+        add_user_meta( $user_id, 'kaira_recommended_plugin_ignore_notice', 'true', true );
+    }
 }

@@ -66,6 +66,19 @@
             <div class="clearboth"></div>
         </div>
         
+        <div class="premium-albar-block">
+            <div class="premium-albar-block-left">
+                <h6><?php echo __( 'Extra WooCommerce Styling', 'albar' ); ?></h6>
+                <span class="description">
+                    <?php echo __( 'Premium version includes some extra WooCommerce styling', 'albar' ); ?>
+                </span>
+            </div>
+            <div class="premium-albar-block-right">
+                <img src="<?php echo get_template_directory_uri(); ?>/settings/images/albar-woocommerce-styling.jpg" alt="Albar WooCommerce Styling" />
+            </div>
+            <div class="clearboth"></div>
+        </div>
+        
         <div class="clearboth"></div>
     </div>
     
