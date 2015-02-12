@@ -79,10 +79,10 @@
                 }
 
                 echo '<h4>' . __( 'Import Options', 'redux-framework' ) . '</h4>';
-                echo '<p><a href="javascript:void(0);" id="redux-import-code-button" class="button-secondary">' . __( 'Import from file', 'redux-framework' ) . '</a> <a href="javascript:void(0);" id="redux-import-link-button" class="button-secondary">' . __( 'Import from URL', 'redux-framework' ) . '</a></p>';
+                echo '<p><a href="javascript:void(0);" id="redux-import-code-button" class="button-secondary">' . __( 'Import from file (Paste Code into Box)', 'redux-framework' ) . '</a> <a href="javascript:void(0);" id="redux-import-link-button" class="button-secondary">' . __( 'Import from URL', 'redux-framework' ) . '</a></p>';
 
                 echo '<div id="redux-import-code-wrapper">';
-                echo '<p class="description" id="import-code-description">' . apply_filters( 'redux-import-file-description', __( 'Input your backup file below and hit Import to restore your sites options from a backup.', 'redux-framework' ) ) . '</p>';
+                echo '<p class="description" id="import-code-description">' . apply_filters( 'redux-import-file-description', __( 'Input (Paste the code) from your backup file below and hit Import to restore your sites options from a backup.', 'redux-framework' ) ) . '</p>';
                 echo '<textarea id="import-code-value" name="' . $this->parent->args['opt_name'] . '[import_code]" class="large-text noUpdate" rows="8"></textarea>';
                 echo '</div>';
 

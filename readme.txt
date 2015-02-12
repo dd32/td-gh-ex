@@ -49,6 +49,10 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version: 2.4.0 =
+* Remove: Two woocommerce template files.
+* Update: Css tweeks for woocommerce 2.3.
+
 = Version: 2.3.9 =
 * Add: masonry call to main.js
 * Updated for woocommerce 2.3.
