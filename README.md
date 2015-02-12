@@ -82,6 +82,9 @@ Featured Images look best at 732 pixels wide or larger.
 
 
 = Changelog =
+### Version 1.0.8
+- Fixed Header email link, Updated 'options-framework' and change footer credit link
+
 ### Version 1.0.7
 - Added unminified version of 'html5.js' file
 

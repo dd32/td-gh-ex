@@ -33,7 +33,7 @@
 			    <span class="phone-info"><i class="fa fa-phone"></i> <?php echo of_get_option('phone_number'); ?></span>
 			<?php endif; ?>
 			<?php if(of_get_option('email_id')): ?>
-			    <span><i class="fa fa-envelope"></i> <a href="<?php echo of_get_option('email_id'); ?>" target="_blank"><?php echo of_get_option('email_id'); ?></a></span>
+			    <span><i class="fa fa-envelope"></i> <a href="mailto:<?php echo of_get_option('email_id'); ?>"><?php echo of_get_option('email_id'); ?></a></span>
 			<?php endif; ?>
                     </div>
                 </div><!-- .col-sm-6-->

@@ -25,7 +25,7 @@
                 <?php do_action( 'ascent_credits' ); ?>
                 <a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'ascent' ); ?>" ><?php printf( __( '&copy; 2014 ascent. All rights reserved', 'ascent' ), 'WordPress' ); ?></a>	
                 <span class="sep"> | </span>
-                <?php printf( __( '%1$s  ', 'ascent' ), 'Ascent by '); ?><a href="<?php echo esc_url( __( 'http://testbase.info/c/theme/wp/ascent/', 'ascent' ) ); ?>"><?php printf( __( 'NetTantra', 'ascent' ), 'NetTantra' ); ?></a>
+                <?php printf( __( '%1$s  ', 'ascent' ), 'Ascent by '); ?><a href="<?php echo esc_url( __( 'http://nettantra.com/', 'ascent' ) ); ?>"><?php printf( __( 'NetTantra', 'ascent' ), 'NetTantra' ); ?></a>
             </div><!-- close .site-info -->
         </div>
     </div>
