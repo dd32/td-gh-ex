@@ -1,6 +1,7 @@
 == Changelog ==
 
-Version 3.4.1
+Version 3.4.2 (Merged 3.4.1)
+* Bug Fixed: Full width no-sidebar page tempalte (Reported by Chrisse )
 * Bug Fixed: Layout issue with body_class (Reported by Christian Nicole Hamann )
 
 Version 3.4

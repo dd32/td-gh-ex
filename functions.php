@@ -739,7 +739,7 @@ function catchbox_body_classes( $classes ) {
 		$classes[] = 'no-sidebar';
 	}
 	elseif ( is_page_template( 'page-fullwidth.php' ) || is_attachment() ) {
-		$classes[] = 'no-sidebar';
+		$classes[] = 'no-sidebar full-width';
 	}	
 	return $classes;
 }
