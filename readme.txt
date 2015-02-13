@@ -131,6 +131,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
+@version 1.2.8
+Fixed header cannot modified by removing the extra white spaces from the woocommerce.php file.
 @veriosn 1.2.7
 1. All social media links initialised with the # value.
 2. Add text domain to __ and _e funstions.

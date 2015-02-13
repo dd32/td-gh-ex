@@ -67,19 +67,19 @@ function theme_data_setup()
 			'project_heading_one' => __('Featured Portfolio Projects','rambo'),
 			'project_tagline' => __('Maecenas sit amet tincidunt elit. Pellentesque habitant morbi tristique senectus et netus et Nulla facilisi.','rambo'),
 			'project_one_thumb' => $project_img,
-			'project_two_title' => __('Product one','rambo'),
+			'project_one_title' => __('Product one','rambo'),
 			'project_one_text' => __('A set of pieces of creative work collected to be shown to potential customers or employers; "the artist had put together a portfolio of his work";','rambo'),
 		
 		    'project_two_thumb' => $project_img,
 			'project_two_title' => __('Product two','rambo'),
-			'project_Two_text' => __('A set of pieces of creative work collected to be shown to potential customers or employers; "the artist had put together a portfolio of his work";','rambo'),
+			'project_two_text' => __('A set of pieces of creative work collected to be shown to potential customers or employers; "the artist had put together a portfolio of his work";','rambo'),
 			
 			'project_three_thumb' => $project_img,
-			'project_two_title' => __('Product Three','rambo'),
+			'project_three_title' => __('Product Three','rambo'),
 			'project_three_text' => __('A set of pieces of creative work collected to be shown to potential customers or employers; "the artist had put together a portfolio of his work";','rambo'),
 			
 			'project_four_thumb' => $project_img,
-			'project_two_title' => __('Product Four','rambo'),
+			'project_four_title' => __('Product Four','rambo'),
 			'project_four_text' => __('A set of pieces of creative work collected to be shown to potential customers or employers; "the artist had put together a portfolio of his work";','rambo'),
 		);
 }

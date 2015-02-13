@@ -1,3 +1,8 @@
+<?php
+wp_enqueue_style('rambo-responsive',get_template_directory_uri().'/css/bootstrap-responsive.css'); 
+wp_enqueue_style('rambo-bootstrap',get_template_directory_uri().'/functions/theme_options/css/webriti_theme.css'); 
+?>
+
 <div class="wrap">
 	<div class="container-fluid">	
 		<div class="row-fluid">
