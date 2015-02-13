@@ -2,17 +2,17 @@
 
 Theme Name: Azabu-Juban
 Theme URI: http://wpshop.com/theme/BJyn1BC5Zg41
-Author: WP Shop byGMO
-Author URI: http://www.wpshop.com/
+Author: GMO WP Cloud
+Author URI: http://www.wpcloud.jp/en/
 Description: Azabu-Juban is a simple, easy-to-use, and highly customizable WordPress theme. Beautiful Japanese design inspiration comes from Edo komon pattern.
-Version: 1.1.2
+Version: 1.1.3
 Template: twentythirteen
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, brown, orange, tan, white, yellow, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
 
 == Copyright ==
-Azabu-Juban WordPress theme, Copyright (C) 2014 WP Shop byGMO
+Azabu-Juban WordPress theme, Copyright (C) 2015 GMO WP Cloud
 Azabu-Juban is licensed under the GPL.
 
 == License ==
@@ -27,14 +27,14 @@ scrolltopcontrol.js is licensed under MIT
 slider.full.js is licensed under MIT
 slider.js is licensed under the Apache license
 
-*Header background images are designed by WP Shop byGMO and distributed under the terms of the GNU GPL v2
-*Sample image used in the screenshot is an original image owned by WP Shop byGMO. 
+*Header background images are designed by GMO WP Cloud and distributed under the terms of the GNU GPL v2
+*Sample image used in the screenshot is an original image owned by GMO WP Cloud. 
 
 Azabu-Juban WordPress theme is based on Twenty-Thirteen deafault theme. 
 
 == Theme Notes ==
 You can drop your queries in our contact form in the following link.
-http://support.wpshop.com/?page_id=15
+info@onamae-server.com
 
 == Instructions ==
 -To Customize Header 
