@@ -1,9 +1,9 @@
 === Best ===
 Contributors: the BestWebSoft team
-Tags: white, gray, light, fluid-layout, right-sidebar, threaded-comments, sticky-post, custom-header, translation-ready, featured-images
+Tags: white, gray, light, fluid-layout, right-sidebar, threaded-comments, sticky-post, custom-header, translation-ready, featured-images, editor-style
 Requires at least: 3.7
 Tested up to: 4.1 
-Stable tag: 1.0 
+Stable tag: 1.1
 License: GNU General Public License V3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Best WordPress Theme, Copyright 2014 BestWebSoft.com
@@ -11,7 +11,7 @@ Best is distributed under the terms of the GNU GPL
 
 == Description ==
 
-Best is a professional, fast, easy-to-use and multipurpose theme. It is beautifully styled, and has an awesome design. In spite of the number of great opportunities, Best theme may seem simple, yet its simplicity brings clarity, sense of balance, and looks really great. Best is a multipurpose theme, which will be useful for a variety of websites such as daily news, news magazines, network sites, etc.
+Best is a professional, fast, easy-to-use and multipurpose theme. It is beautifully styled, and has an awesome design. In spite of the number of great opportunities, Best theme may seem simple, yet its simplicity brings clarity, sense of balance, and looks really great. Best is a multipurpose theme, which will be useful for a variety of websites such as daily news, news magazines, network sites, etc. Live demo: http://bestwebsoft.com/wordpress_demo_theme/best/
 
 = Features = 
 
@@ -76,13 +76,13 @@ Activiation and Use
 
 == Theme Notes == 
 
-= Post Formats: Aside, Image, Link, Status, Quote =
+= Post Formats: Aside, Audio, Chat, Gallery, Image, Link, Quote, Status, Video =
 
 Best Wordpress theme only supports these post formats. Please style them in a certain way. Other post formats will be displayed as regular posts.
 
 = Widgets =
 
-The Theme includes a standard Widget.
+The Theme includes a standard Widget. The following widgets are shown by default: recent posts, recent comments, archives, categories.
 
 == Frequently Asked Questions ==
 
@@ -94,27 +94,33 @@ You can do this in Posts section > Add new or edit existing post > Set featured 
 
 You can easily change background color through Admin UI (Dashboard): use the select menu Appearance > Customize > Colors > Background color
 
-= Does the theme support widgets? =
-
-Yes, this theme includes widgets. The following widgets are shown by default: recent posts, recent comments, archives, categories.
-
 = How can I change language from English into Russian? =
 
-In the main catalog of your WordPress site find wp-config.php file, open it and change define( ‘WPLANG’, '' ); to define( ‘WPLANG’, ‘ru_RU’ );
+WordPress v4.0 and above:
+Change the language in the admin settings screen. Settings > General > Site Language.
+WordPress v3.9.2 and below:
+In the main catalog of your WordPress site, please find wp-config.php file, open it and change define( 'WPLANG', '' ); for define( 'WPLANG', 'ru_RU' );
 
 == Screenshots ==
 
 1. Theme home page.
 
-== Changelog == 
+== Changelog ==
+
+= V1.1 - 13.02.2015 =
+* Update: Added function add_theme_support( "title-tag" ) for WP4.1.
+* Update: Added editor_style.css file.
+* Bugfix: List of supports post formats was fixed.
+* Bugfix: List of supports HTML5-forms was fixed.
 
 = V1.0 - 28.11.2014 =
 * Update: Code formatting and indentation were fixed.
 * Bugfix: Bug in the slider was fixed.
 
-== Upgrade Notice == 
+== Upgrade Notice ==
+
+= V1.1 =
+Added function add_theme_support( "title-tag" ) for WP4.1. Added editor_style.css file. List of supports post formats was fixed. List of supports HTML5-forms was fixed.
 
 = V1.0 =
 The code formatting and indentation were fixed. Bug in the slider was fixed.
-
-
