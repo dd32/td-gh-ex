@@ -52,6 +52,11 @@ Pinnacle Theme Uses:
 
 = Theme Name: Pinnacle =
 
+= Version 1.2.0 = 
+* Update: CSS validation to redux.
+* Update: Woocommerce 2.3 support.
+* Add: quantity input buttons back. (woocomerce removed in 2.3).
+
 = Version 1.1.9 = 
 * Update two strings with correct WordPress
 * Update notice of woocmmerce and pinnacle toolkit in the theme options

@@ -1077,6 +1077,13 @@ $this->sections[] = array(
             'subtitle' => __('This determines if add to cart button will be hidden till the mouse hovers over the product', 'pinnacle'),
             "default"=> 1,
             ),
+      array(
+            'id'=>'product_quantity_input',
+            'type' => 'switch', 
+            'title' => __('Quantity box plus and minus', 'pinnacle'),
+            'subtitle' => __('Turn this off if you would like to use browser added plus and minus for number boxes', 'pinnacle'),
+            "default"=> 1,
+            ),
         array(
             'id'=>'info_cat_product_size',
             'type' => 'info',

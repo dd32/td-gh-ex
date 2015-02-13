@@ -4,7 +4,7 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.1.0
+ * @version     2.3.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -35,28 +35,15 @@ global $woocommerce, $product, $post, $pinnacle;
 									}
 
 								// Get terms if this is a taxonomy - ordered
-								if ( taxonomy_exists( $name ) ) {
+									if ( taxonomy_exists( $name ) ) {
 
-									$orderby = wc_attribute_orderby( $name );
+										$terms = wc_get_product_terms( $post->ID, $name, array( 'fields' => 'all' ) );
 
-									switch ( $orderby ) {
-										case 'name' :
-											$args = array( 'orderby' => 'name', 'hide_empty' => false, 'menu_order' => false );
-										break;
-										case 'id' :
-											$args = array( 'orderby' => 'id', 'order' => 'ASC', 'menu_order' => false );
-										break;
-										case 'menu_order' :
-											$args = array( 'menu_order' => 'ASC' );
-										break;
-									}
-
-									$terms = get_terms( $name, $args );
-
-									foreach ( $terms as $term ) {
-										if ( ! in_array( $term->slug, $options ) )
-											continue;
-
+										foreach ( $terms as $term ) {
+											if ( ! in_array( $term->slug, $options ) ) {
+												continue;
+											}
+											
 										echo '<option value="' . esc_attr( $term->slug ) . '" ' . selected( sanitize_title( $selected_value ), sanitize_title( $term->slug ), false ) . '>' . apply_filters( 'woocommerce_variation_option_name', $term->name ) . '</option>';
 									}
 								} else {
