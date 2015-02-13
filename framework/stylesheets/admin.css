@@ -1,0 +1,20 @@
+table textarea{
+	width: 100%;
+}
+
+table tr{
+	border-bottom: none;
+}
+
+table th strong{
+	display: block;
+	font-size: 14px;
+	color: #000;
+	font-weight: bold;
+}
+
+table th span, .form-table th{
+	font-size: 13px;
+	color: #777;
+	font-weight: 400;
+}
