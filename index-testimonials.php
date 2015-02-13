@@ -6,7 +6,7 @@ $template_uri=get_template_directory_uri(). '/images/default' ;
 	<div class="row">
 		<div class="span6 testimonial_mn">
 				<?php if($current_options['testimonials_title']!='') {?>
-				<h2><?php esc_html($current_options['testimonials_title']); ?>
+				<h2><?php echo $current_options['testimonials_title']; ?>
 				<?php } ?><br><span><?php if($current_options['testimonials_text']!='') { esc_html_e($current_options['testimonials_text']);  } ?></span></h2>
 				<div id="testimonial_mn_cols" class="media">
 					<img alt="webriti" src="<?php if($current_options['testimonials_image_one']!='') { echo esc_url($current_options['testimonials_image_one']);} ?>"  class="media-object img-circle pull-left recent_blog_thumb">

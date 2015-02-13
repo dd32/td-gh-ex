@@ -3,9 +3,10 @@
   <!-- Main --> 
   <div class="row-fluid">
     <div class="<?php if( is_active_sidebar('sidebar-primary')) { echo "span8"; } else { echo "span12"; } ?> blog_left">
-      <h2><?php  _e( "Category  Archives:", 'busi_prof'); echo single_cat_title( '', false ); ?></h2>
+      
       <?php    while(have_posts()): the_post();?>
       <div class="blog_section">
+	  <h2 class="cate-archive"><?php  _e( "Category  Archives:", 'busi_prof'); echo single_cat_title( '', false ); ?></h2>
         <div class="blog_con_mn">
           <h2><a href="<?php the_permalink(); ?>"title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
           <?php $defalt_arg =array('class' => "blog_section_img" )?>

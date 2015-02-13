@@ -31,10 +31,10 @@
           if (strlen($title) == 0)  _e('no title','busi_prof'); else  echo $title; ?>	</a>
         </h2>
         <div class="blog_link">
-          <span><img  src="<?php echo $image_uri. '/blog_ic.png' ?>">&nbsp;&nbsp;<?php the_time('M j,Y');?></span> 
-          <a><img  src="<?php echo $image_uri. '/blog_ic2.png'?>">&nbsp;&nbsp;<?php  comments_popup_link( __( 'Leave a comment', 'busi_prof' ) ); ?></a>
-          <span><img  src="<?php echo $image_uri. '/blog_ic3.png'?>"><?php the_category(' | '); ?></span>
-        </div>
+					<span><img  src="<?php echo $image_uri. '/blog_ic.png' ?>">&nbsp;&nbsp;<?php the_time('M j,Y');?></span> 
+					<span><a><img  src="<?php echo $image_uri. '/blog_ic2.png'?>">&nbsp;&nbsp;<?php  comments_popup_link( __( 'Leave a comment', 'busi_prof' ) ); ?></a></span>
+					<span><a><img class="post-cate" src="<?php echo $image_uri. '/blog_ic3.png'?>"><?php the_category(', '); ?></a></span>
+				</div>
         <?php if(has_post_thumbnail()):?>					
         <div class="blog_img">
           <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" ><?php the_post_thumbnail('large',array('class' => 'img-polaroid'));?></a>

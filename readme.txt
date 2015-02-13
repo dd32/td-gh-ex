@@ -57,6 +57,13 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.5
+1. Fix styling issues of Sidebar-widgets.
+2. Fix styling issues of Footer-widgets. 
+3. Fix styling issue of banner-strip.
+4. Fix styling issues of post-meta in index.php, archive.php, category.php, tag.php, page.php, single.php
+5. Fix styling issues of button.  
+
 @version 1.4.3.1
 1. all the bug fixed https://themes.trac.wordpress.org/ticket/22045
 @version 1.4.3

@@ -21,11 +21,10 @@
         <?php  the_post(); ?>
         <h2 class="blog_section_title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
         <div class="blog_link">
-          <span>
-          <img   alt="webriti" src="<?php echo $image_uri. '/blog_ic.png' ?>">&nbsp;&nbsp;<?php the_time('M j,Y');?></span> 
-          <img  alt="webriti" src="<?php echo $image_uri. '/blog_ic2.png'?>">&nbsp;&nbsp;<b><?php  comments_popup_link( __( 'Leave a comment', 'busi_prof' ) ); ?></b>
-          <img  alt="webriti" src="<?php echo $image_uri. '/blog_ic3.png'?>"><?php the_category('|'); ?>
-        </div>
+						<span><img  src="<?php echo $image_uri. '/blog_ic.png' ?>">&nbsp;&nbsp;<?php the_time('M j,Y');?></span> 
+						<span><a><img  src="<?php echo $image_uri. '/blog_ic2.png'?>">&nbsp;&nbsp;<?php  comments_popup_link( __( 'Leave a comment', 'busi_prof' ) ); ?></a></span>
+						<span><a><img class="post-cate" src="<?php echo $image_uri. '/blog_ic3.png'?>"><?php the_category(', '); ?></a></span>
+					</div>
         <?php $defalt_arg =array('class' => "blog_section_img" )?>
         <?php if(has_post_thumbnail()):?>
         <div >
