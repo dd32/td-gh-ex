@@ -2,6 +2,13 @@
 Momentous Lite Changelog
 ===================================
 
+Version 1.0.3
+-----------------------------------
+[added] Masonry JS layout for two column post layout
+[added] unminified version of html5shiv.min.js
+[added] action hooks before footer and for site title
+[moved] credit link and footer text functions to /inc/template-tags.php
+
 Version 1.0.2
 -----------------------------------
 [improved] styling of blockquotes

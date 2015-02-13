@@ -17,6 +17,18 @@ function momentous_enqueue_scripts() {
 	// Register and enqueue navigation.js
 	wp_enqueue_script('momentous-lite-jquery-navigation', get_template_directory_uri() .'/js/navigation.js', array('jquery'));
 	
+	// Get Theme Options from Database
+	$theme_options = momentous_theme_options();
+	
+	// Register and Enqueue Masonry JS for two column post layout
+	if ( isset($theme_options['post_layout']) and $theme_options['post_layout'] == 'index' ) :
+	
+		// Register and enqueue masonry script
+		wp_enqueue_script('masonry');
+		wp_enqueue_script('momentous-lite-masonry', get_template_directory_uri() .'/js/masonry-init.js', array('jquery', 'masonry'));
+		
+	endif;
+	
 	// Register and Enqueue Fonts
 	wp_enqueue_style('momentous-lite-default-font', '//fonts.googleapis.com/css?family=Average+Sans');
 	wp_enqueue_style('momentous-lite-default-title-font', '//fonts.googleapis.com/css?family=Fjalla+One');
@@ -40,7 +52,7 @@ add_action('wp_head', 'momentous_enqueue_html5shiv');
 
 function momentous_enqueue_html5shiv(){  ?>
 	<!--[if lt IE 9]>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.min.js" type="text/javascript"></script>
 	<![endif]-->
 <?php
 }
@@ -173,16 +185,6 @@ function momentous_get_featured_content() {
 // Check if featured posts exists
 function momentous_has_featured_content() {
 	return ! is_paged() && (bool) momentous_get_featured_content();
-}
-
-
-// Display Credit Link Function
-function momentous_credit_link() {
-	
-	printf(__( 'Powered by %1$s and %2$s.', 'momentous-lite' ), 
-			sprintf( '<a href="http://wordpress.org" title="WordPress">%s</a>', __( 'WordPress', 'momentous-lite' ) ),
-			sprintf( '<a href="http://themezee.com/themes/momentous/" title="Momentous WordPress Theme">%s</a>', __( 'Momentous', 'momentous-lite' ) )
-		);
 }
 
 
