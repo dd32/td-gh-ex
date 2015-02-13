@@ -53,6 +53,8 @@ Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
+@version 0.7
+1. Fixed header cannot modified by removing the extra white spaces from the woocommerce.php file.
 @version 0.6
 1. Removed the undefined idex errors from the project , service and slider settings.
 

@@ -1,4 +1,3 @@
-
 <?php 
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
@@ -27,8 +26,7 @@ function wallstreet_wrapper_start() {?>
 <!-- /Header Strip -->
  <div class="container"><div class="row-fluid">
  <div class="<?php if( is_active_sidebar('sidebar-primary')) echo "span8"; else echo "span12";?>">
- <?php } ?>
- 
-<?php function wallstreet_wrapper_end() {
+ <?php } 
+function wallstreet_wrapper_end() {
 if( is_active_sidebar('sidebar-primary')){ echo "</div>"; get_sidebar(); echo "</div></div>"; }
 else { echo "</div></div></div>"; } }?>
