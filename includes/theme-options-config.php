@@ -495,7 +495,7 @@ FEATURES;
                         'title' => __('Footer Copyright Text', 'abaris'), 
                         'subtitle' => __('Footer copyright text. HTML Allowed', 'abaris'),
                         'desc' => __('This field is even HTML validated!', 'abaris'),
-                        'default' => __( 'Powered by <a href="http://wordpress.org/" target="_blank">WordPress</a>. Theme by <a href="http://www.webulous.in/">Webulous</a>.', 'abaris' ),
+                        'default' => __( 'Powered by <a href="http://wordpress.org/" target="_blank">WordPress</a>. Theme by <a href="http://www.webulousthemes.com/">Webulous Themes</a>.', 'abaris' ),
                         'validate' => 'html',
                         ),
 
@@ -505,7 +505,7 @@ FEATURES;
                         'notice'    => true,
                         'style'     => 'critical',
                         'icon'      => 'el-icon-info-sign',
-                        'title'     => __('Abaris Pro Options. <a href="http://www.webulous.in/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
+                        'title'     => __('Abaris Pro Options. <a href="http://www.webulousthemes.com/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
                         'desc'      => __('These options are available only in Abaris Pro version theme. Upgrade now for just $39 .', 'abaris')
                     ),
 
@@ -541,7 +541,7 @@ FEATURES;
                             'notice'    => true,
                             'style'     => 'critical',
                             'icon'      => 'el-icon-info-sign',
-                            'title'     => __('Flex Slider Post Type and Multiple Sliders. <a href="http://www.webulous.in/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
+                            'title'     => __('Flex Slider Post Type and Multiple Sliders. <a href="http://www.webulousthemes.com/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
                             'desc'      => __('Upgrade to Abaris Pro version to use Flex Slider Custom Post Type<br> and setup multiple sliders. You can also tweak slider effects.', 'abaris')
                         ),
                         array(
@@ -758,7 +758,7 @@ FEATURES;
 		                    'notice'    => true,
 		                    'style'     => 'critical',
 		                    'icon'      => 'el-icon-info-sign',
-		                    'title'     => __('Abaris Pro Options. <a href="http://www.webulous.in/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
+		                    'title'     => __('Abaris Pro Options. <a href="http://www.webulousthemes.com/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
 		                    'desc'      => __('These options are available only in Abaris Pro version theme. Upgrade now for just $39 .', 'abaris')
 		                ),
 		                array(
@@ -814,7 +814,7 @@ FEATURES;
                         'notice'    => true,
                         'style'     => 'critical',
                         'icon'      => 'el-icon-info-sign',
-                        'title'     => __('Abaris Pro Options. <a href="http://www.webulous.in/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
+                        'title'     => __('Abaris Pro Options. <a href="http://www.webulousthemes.com/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
                         'desc'      => __('These options are available only in Abaris Pro version theme. Upgrade now for just $39', 'abaris')
                     ),
                     
@@ -900,7 +900,7 @@ FEATURES;
                         'notice'    => true,
                         'style'     => 'critical',
                         'icon'      => 'el-icon-info-sign',
-                        'title'     => __('Abaris Pro Options. <a href="http://www.webulous.in/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
+                        'title'     => __('Abaris Pro Options. <a href="http://www.webulousthemes.com/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
                         'desc'      => __('These options are available only in Abaris Pro version theme. Upgrade now for just $39 .', 'abaris')
                     ),
 
@@ -967,7 +967,7 @@ FEATURES;
                         'notice'    => true,
                         'style'     => 'critical',
                         'icon'      => 'el-icon-info-sign',
-                        'title'     => __('Abaris Pro Options. <a href="http://www.webulous.in/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
+                        'title'     => __('Abaris Pro Options. <a href="http://www.webulousthemes.com/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
                         'desc'      => __('These options are available only in Abaris Pro version theme. Upgrade now for just $39 .', 'abaris')
                     ),
 
@@ -1075,7 +1075,7 @@ FEATURES;
                         'type'      => 'info',
                         'style'     => 'critical',
                         'title'     => __('Support and Documentation.', 'redux-framework-demo'),
-                        'desc'      => __('Please refer to <a href="http://demo.webulous.in/abaris/documentation/">documentation</a> page of this site\'s demo to know how to use theme options specific to this theme. For professional support about customization and other advices from theme author, Please <a href="http://www.webulous.in/?add-to-cart=21">Upgrade</a> to Abaris Pro Version', 'abaris')
+                        'desc'      => __('Please refer to <a href="http://demo.webulous.in/abaris/documentation/">documentation</a> page of this site\'s demo to know how to use theme options specific to this theme. For professional support about customization and other advices from theme author, Please <a href="http://www.webulousthemes.com/?add-to-cart=21">Upgrade</a> to Abaris Pro Version', 'abaris')
                     ),
                 )
             );
@@ -1108,7 +1108,7 @@ FEATURES;
                         'notice'    => true,
                         'style'     => 'critical',
                         'icon'      => 'el-icon-info-sign',
-                        'title'     => __('Abaris Pro Options. <a href="http://www.webulous.in/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
+                        'title'     => __('Abaris Pro Options. <a href="http://www.webulousthemes.com/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
                         'desc'      => __('These options are available only in Abaris Pro version theme. Upgrade now for just $39 .', 'abaris')
                     ),
                     
@@ -1309,7 +1309,7 @@ FEATURES;
                         'notice'    => true,
                         'style'     => 'critical',
                         'icon'      => 'el-icon-info-sign',
-                        'title'     => __('Abaris Pro Options. <a href="http://www.webulous.in/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
+                        'title'     => __('Abaris Pro Options. <a href="http://www.webulousthemes.com/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
                         'desc'      => __('These options are available only in Abaris Pro version theme. Upgrade now for just $39 .', 'abaris')
                     ),
                     
@@ -1414,7 +1414,7 @@ FEATURES;
                         'notice'    => true,
                         'style'     => 'critical',
                         'icon'      => 'el-icon-info-sign',
-                        'title'     => __('Abaris Pro Options. <a href="http://www.webulous.in/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
+                        'title'     => __('Abaris Pro Options. <a href="http://www.webulousthemes.com/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
                         'desc'      => __('These options are available only in Abaris Pro version theme. Upgrade now for just $39 .', 'abaris')
                     ),
                     
@@ -1716,7 +1716,7 @@ FEATURES;
                     $v = str_replace("-", "_", $this->args['opt_name']);
                 }
                 //$this->args['intro_text'] = sprintf(__('<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'redux-framework-demo'), $v);
-                $this->args['intro_text'] = sprintf(__('<p class="btn-upgrade"><a href="http://www.webulous.in/?add-to-cart=21"><i class="el-icon-upload"></i> Upgrade for just $39</a> <a href="http://demo.webulous.in/abarispro/" class="vide-demo"><i class="el-icon-eye-open"></i>View Demo</p>', 'redux-framework-demo'), $v);
+                $this->args['intro_text'] = sprintf(__('<p class="btn-upgrade"><a href="http://www.webulousthemes.com/?add-to-cart=21"><i class="el-icon-upload"></i> Upgrade for just $39</a> <a href="http://demo.webulous.in/abarispro/" class="vide-demo"><i class="el-icon-eye-open"></i>View Demo</p>', 'redux-framework-demo'), $v);
             } else {
                 $this->args['intro_text'] = __('<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'redux-framework-demo');
             }
