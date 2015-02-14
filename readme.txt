@@ -93,6 +93,13 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.0.4
+- New:     three-columns tag added to style.css given the 3 column layout of the homepage feauted content section.
+- Updated: Breadcrumbs display correctly  for taxonomy archive pages.
+- Updated: Full compatibility (and backward compatibility) added for add_theme_support( 'title-tag' ) added.
+- Updated: wp_title() no longer required in header.php. Title now hooked directly to wp_head using 'title-tag'.
+- Updated: thinkup_input_wptitle() removed. Was used to filter wp_title. No longer required given introduction of 'title-tag'.
+
 Version 1.0.3
 - Fixed:   Breadcrumbs now display post categories correctly on single posts.
 - Updated: Bootstrap.css updated with non-minified script from original Renden (free) release.

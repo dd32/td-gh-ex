@@ -96,24 +96,24 @@ function thinkup_input_breadcrumb() {
 	$main              =   __( 'Home ', 'renden' );
 	$maxLength         =   30;
 
-	/* Archive variables */
+	// Archive variables
 	$arc_year       =   get_the_time('Y');
 	$arc_month      =   get_the_time('F');
 	$arc_day        =   get_the_time('d');
 	$arc_day_full   =   get_the_time('l');  
 
-	/* URL variables */
+	// URL variables
 	$url_year    =   get_year_link($arc_year);
 	$url_month   =   get_month_link($arc_year,$arc_month);
 
-	/* Display breadcumbs if NOT the home page */
+	// Display breadcumbs if NOT the home page
 	if ( !is_home() ) {
 		$output .= '<div id="breadcrumbs"><div id="breadcrumbs-core">';
 		global $post, $cat;
 		$homeLink = home_url( '/' );
 		$output .=  '<a href="' . $homeLink . '">' . $main . '</a>' . $delimiter;    
 
-		/* Display breadcrumbs for single post */
+		// Display breadcrumbs for single post
 		if ( is_single() ) {
 			$category = get_the_category();
 			$num_cat = count($category);
@@ -174,7 +174,7 @@ function thinkup_input_breadcrumb() {
 		} elseif ( is_404() ) {
 			$output .= __( 'Error 404 - Not Found.', 'renden' );
 		} elseif( is_tax() ) {
-			echo get_queried_object()->name;
+			$output .= get_queried_object()->name;
 		} elseif ( is_post_type_archive( 'portfolio' )	) {
 			$output .= __( 'Portfolio', 'renden' );
 		} elseif ( is_post_type_archive( 'product' ) and function_exists( 'thinkup_woo_titleshop_archive' ) ) {
@@ -267,27 +267,27 @@ function thinkup_input_addimagesizes() {
 	// Image size for testimonial shortcode
 	add_image_size( 'sc-testimonial', 53, 53, true );
 
-	/* 1 Column Layout */
+	// 1 Column Layout
 	add_image_size( 'column1-1/2', 1140, 570, true );
 	add_image_size( 'column1-1/3', 1140, 380, true );
 	add_image_size( 'column1-1/4', 1140, 285, true );
 	add_image_size( 'column1-2/5', 1140, 456, true );
 
-	/* 2 Column Layout */
+	// 2 Column Layout
 	add_image_size( 'column2-1/1', 570, 570, true );
 	add_image_size( 'column2-1/4', 570, 142, true );
 	add_image_size( 'column2-1/2', 570, 285, true );
 	add_image_size( 'column2-2/3', 570, 380, true );
 	add_image_size( 'column2-3/5', 570, 342, true );
 
-	/* 3 Column Layout */
+	// 3 Column Layout
 	add_image_size( 'column3-1/1', 380, 380, true );
 	add_image_size( 'column3-1/3', 320, 107, true );
 	add_image_size( 'column3-2/5', 380, 152, true );	
 	add_image_size( 'column3-2/3', 380, 254, true );
 	add_image_size( 'column3-3/4', 380, 285, true );
 
-	/* 4 Column Layout */
+	// 4 Column Layout
 	add_image_size( 'column4-1/1', 285, 285, true );
 	add_image_size( 'column4-2/3', 285, 190, true );
 	add_image_size( 'column4-3/4', 285, 214, true );
