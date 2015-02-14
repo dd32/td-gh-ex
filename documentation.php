@@ -13,8 +13,8 @@ function star_docs() {
 <h1 class="doc-title"><?php _e('Star Setup help', 'star'); ?></h1>
 <div class="doc-thanks">
 <b><?php _e('Thank you for downloading and trying out Star!', 'star'); ?></b><br/><br/>
-<?php sprintf( __('If you like the theme, please %s review it on WordPress.org', 'star'), 'https://wordpress.org/support/view/theme-reviews/star' );?>
-</a><br/><br/>
+<?php printf( __('If you like the theme, please review it on %s', 'star'), '<a href="https://wordpress.org/support/view/theme-reviews/star">WordPress.org</a>' );?>
+<br/>
 <b><?php _e('If you have any questions, accessibility issues or feature requests for this theme, please visit ', 'star'); ?><a href="http://wptema.se/star">http://wptema.se/star</a></b>.<br/>
 <?php _e('Your feedback is essential for the future developement of the theme.', 'star'); ?>
 </div>
@@ -35,7 +35,9 @@ function star_docs() {
 		<img src="<?php echo get_template_directory_uri() . '/images/doc-menu.jpg';?>" alt="<?php _e('An image describing how a submenu drops down from the Primary menu','star' ); ?>"><br/>
 			
 		<b><?php _e('The Primary menu','star' ); ?></b> <?php _e('is fixed at the top of the website and shows two menu levels. <br/>
-		This menu will collapse on smaller screens, and can then be opened and closed by a menu button. It can also be closed with the Esc key.','star' ); ?><br/><br/>
+		This menu will collapse on smaller screens, and can then be opened and closed by a menu button. It can also be closed with the Esc key.','star' ); ?><br/>
+		<?php _e('A one line menu is recommended, or the menu will overlap your content. Use submenus instead.','star');?><br/>
+		<br/>
 
 		<img src="<?php echo get_template_directory_uri() . '/images/doc-social.jpg';?>" alt="<?php _e('An image describing how social icons are lined up next to each other in the Social menu','star' ); ?>"><br/>
 
@@ -99,10 +101,10 @@ function star_docs() {
 
 	<div class="doc-box" id="star-plugins">
 		<h3><?php _e('Plugins','star' ); ?></h3>
-		<?php _e('star has been tested with and style has been added for the following plugins:', 'star' ); ?>
+		<?php _e('Star has been tested with and style has been added for the following plugins:', 'star' ); ?>
 		<ul>
 			<li><b><?php _e('Woocommerce','star' )?></b></li>
-			<li><b><?php _e('BBpress','star' )?></b></li>
+			<li><b><?php _e('bbPress','star' )?></b></li>
 			<li><b><?php _e('Jetpack','star' )?></b></br><?php _e(' Note: Not all of Jetpacks modules are accessibe, and some uses iframes. I have increased the contrast of some of the modules.','star' )?></li>
 				<?php _e('Recommended modules:','star' )?><br/>
 				<ul>
@@ -113,9 +115,8 @@ function star_docs() {
 						that only displays the post title.', 'star') ?>"><br/>
 					</li>
 					<li><b><?php _e('Custom Content Type: Portfolio','star' )?></b><br>
-						<?php _e('star also supports Jetpack','star' )?> 
-						<b><?php _e('Portfolios','star' )?></b>. <a href="http://en.support.wordpress.com/portfolios/">
-						<i><?php _e('Read more about how to setup your Portfolio on Jetpacks support site.','star' )?></i></a></br><br/>
+						<?php _e('Star also supports Jetpack','star' )?> 
+						<b><?php _e('Portfolios','star' )?></b>. <a href="http://en.support.wordpress.com/portfolios/"><i><?php _e('Read more about how to setup your Portfolio on Jetpacks support site.','star' )?></i></a></br><br/>
 						<img src="<?php echo get_template_directory_uri() . '/images/doc-portfolio.jpg';?>" alt="<?php _e('An image describing two portfolio items.','star' )?>"></br>
 					</li>
 					<li><b><?php _e('Sharing','star' )?></b><br/>

@@ -5,7 +5,7 @@ Author: Carolina Nymark
 Author URI: http://wptema.se
 Description: Star is a responsive, accessibility-ready blogging theme. Features include Call to action that will grab your visitors attention and help you feature different parts of your website. The theme has two optional menus (including a social menu) and two widget areas that will hold any number of widgets. We recommend that you install the Jetpack plugin to make full use of supported features like logos, featured content, contact forms, social sharing and favicon. To create a portfolio, install Jetpack and create your projects, all the templates are already shipped with the theme. Star also works well with Woocommerce and BBpress.
 If you have any questions, accessibility issues or feature requests for this theme, please visit http://wptema.se/star.
-Version: 1.6
+Version: 1.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Copyright: Carolina Nymark 2011-2015
@@ -146,7 +146,7 @@ button,
 input,
 select,
 textarea {
-	color: #666666;
+	color: #333333;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 	font-size: 1.6rem;
@@ -443,7 +443,7 @@ textarea {
 	-moz-osx-font-smoothing: grayscale;
 	font-size: 14px; 
 	line-height: 1; 
-	color: #717171;
+	color: #487694;
 	margin-right:10px;
 	margin-top:4px;
 	vertical-align: middle;	
@@ -460,7 +460,7 @@ textarea {
 	-moz-osx-font-smoothing: grayscale;
 	font-size: 14px; 
 	line-height: 1; 
-	color: #717171;
+	color: #487694;
 	margin-left:10px;
 	vertical-align: middle;	
 	text-decoration: none; 
@@ -522,11 +522,11 @@ textarea {
 5.1 Links
 --------------------------------------------------------------*/
 a {
-	color: #666666;
+	color: #000000;
 }
 
 a:visited {
-	color: #666666;
+	color: #000000;
 }
 
 a:hover,
@@ -588,7 +588,7 @@ a:active {
 .main-navigation li:focus > a,
 .main-navigation li:hover > a {
   background: url('images/border.png') repeat-x bottom; 
-  	color:#666666;
+  	color:#000000;
 }
 
 .main-navigation ul ul {
@@ -646,9 +646,36 @@ content:'';
 	-webkit-font-smoothing: antialiased;
 }
 
+/* Text meant only for screen readers */
 .main-navigation .search-submit{
-	display:none;
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
 }
+
+.main-navigation .search-submit:hover,
+.main-navigation .search-submit:active,
+.main-navigation .search-submit:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 1.4rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 35px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar */
+}	
 
 .main-navigation li.topsearch{
 	float:right; 
@@ -656,14 +683,7 @@ content:'';
 	line-height: 1; 
 }
 
-.topsearch form input{
-	font-size:14px;
-	font-size:1.4rem;
-	font-family: 'Montserrat', sans-serif;	
-	text-transform:uppercase;
-	letter-spacing: 2px;
-	color:#487694;
-}
+
 .topsearch form:before {		
 	content: "\f002";
 	display: inline-block;
@@ -776,7 +796,7 @@ li a:before{
 }
 .social-menu li a, 
 .social-menu li a:hover{text-decoration: none; background:none;}
-.social-menu li a:hover:before{color:#666666;}
+.social-menu li a:hover:before{color:#000000;}
 
  li a[href*="dribbble.com"]::before { content: '\f17d'; }
  li a[href*="facebook.com"]::before { content: '\f09a'; }
@@ -959,7 +979,7 @@ li.recentcomments::before{
 	vertical-align:top;
 	font-size: 14px; 
 	line-height: 1; 
-	color: #717171;
+	color: #487694;
 	text-decoration: none; 
 	margin-right:8px;
 	margin-top:-3px;
@@ -976,7 +996,7 @@ li.recentcomments::before{
 	vertical-align:top;
 	font-size: 14px; 
 	line-height: 1; 
-	color: #717171;
+	color: #487694;
 	text-decoration: none; 
 	margin-right:8px;
 	margin-top:-3px;
@@ -994,7 +1014,7 @@ li.recentcomments::before{
 	vertical-align:top;
 	font-size: 14px; 
 	line-height: 1; 
-	color: #717171;
+	color: #487694;
 	text-decoration: none; 
 	margin-right:8px;
 	margin-top:-3px;
@@ -1012,7 +1032,7 @@ li.recentcomments::before{
 	vertical-align:top;
 	font-size: 14px; 
 	line-height: 1; 
-	color: #717171;
+	color: #487694;
 	text-decoration: none; 
 	margin-right:8px;
 	margin-top:-3px;
@@ -1061,8 +1081,13 @@ table#wp-calendar,
 	overflow:hidden;
 }
 
-.widget_search input, 
-.search-post input {
+.widget select,
+.widget_search input[type='search']{
+	width:95%;
+	margin-bottom:3px;
+}
+
+.search-post input{
 	margin:3px;
 }
 
@@ -1141,9 +1166,9 @@ table#wp-calendar,
 
 .site-info{
 	width:90%; 
-	margin:15px auto 15px auto; 
-	font-size:14px;
-	font-size:1.4rem;
+	margin:35px auto 15px auto; 
+	font-size:12px;
+	font-size:1.2rem;
 	text-align: center; 
 	font-family: 'Montserrat', sans-serif;	
 	text-transform:uppercase;
@@ -1417,7 +1442,7 @@ table#wp-calendar,
 	font-size:14px;
 	font-size:1.4rem; 
 	margin:0 10px 20px 0px;
-	color:#666666;
+	color:#333333;
 	font-style: italic;
 	padding:0 3px 0 3px;
 	border:4px solid #fff;
@@ -1487,6 +1512,7 @@ table#wp-calendar,
 
 .type-page .entry-footer{display:none;}
 
+.widget a,
 .entry-meta a , 
 .entry-footer a, 
 .site-footer a, 
@@ -1494,6 +1520,8 @@ table#wp-calendar,
 	text-decoration:none;
 }
 
+.widget a:focus,
+.widget a:hover,
 .entry-meta a:focus,
 .entry-footer a:focus,
 .page-links a:focus,
@@ -1512,7 +1540,7 @@ table#wp-calendar,
 	height:16px;
 	width:16px;
 	-webkit-font-smoothing: antialiased;
-	color: #666666;
+	color: #487694;
 	margin-right:8px;
 	vertical-align: middle;
 
@@ -1539,7 +1567,7 @@ table#wp-calendar,
 	vertical-align: top;
 	font-size: 14px; 
 	line-height: 1; 
-	color: #717171;
+	color: #487694;
 	text-decoration: none; 
 	margin-right:8px;
 	vertical-align: middle;
@@ -1577,7 +1605,7 @@ table#wp-calendar,
 	text-decoration: none; 
 	margin:0px 10px 0px 5px;
 	padding:0;
-	color:#666;
+	color: #487694;
 }
 
 /*--------------------------------------------------------------
@@ -1841,7 +1869,7 @@ table#wp-calendar,
 	-moz-osx-font-smoothing: grayscale;
 	font-size: 14px; 
 	line-height: 1; 
-	color: #717171;
+	color: #487694;
 	text-decoration: none; 
 	margin-right:8px;
 	vertical-align: middle;

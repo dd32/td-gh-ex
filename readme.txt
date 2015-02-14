@@ -25,11 +25,13 @@ fonts/ -contains Font Awesome files.
 js/ -contains javscript
 
 == Resources Used In This Theme ==
-star is a derivative work of:
+Star is a derivative work of:
 Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc. License: GNU General Public License v2 or later
 Universal http://themes.joedolson.com/universal/ (C) Joseph C Dolson. License: GNU General Public License v2 or later
 
-Image used in the documentation: https://tookapic.com/kaboompics/3311-dead-flower Karolina Grabowska, License: CC0
+Images used in the documentation: 
+https://tookapic.com/kaboompics/3311-dead-flower Karolina Grabowska, License: CC0
+http://www.gratisography.com/  License: CC0
 
 Fonts
 Font Awesome by @davegandy - http://fontawesome.io - @fontawesome

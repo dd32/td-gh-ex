@@ -39,7 +39,7 @@
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'star' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'star' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s', 'star' ), 'star'); ?>
+			<a href="<?php echo esc_url( __( 'http://wptema.se/star', 'star' ) ); ?>"><?php printf( __( 'Theme: <i>%1$s by Carolina', 'star' ), 'Star'); ?></a>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

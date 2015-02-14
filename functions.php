@@ -70,7 +70,7 @@ if ( get_theme_mod('star_hide_search') =="" ){
 
 	function star_menu_search( $items, $args ) {
 	    if( $args->theme_location == 'header' ) {
-	    	 $items = $items . '<li class="topsearch">' . get_search_form(false) .'</li>';
+	    	 $items = $items . '<li class="topsearch" >' . get_search_form(false) .'</li>';
 	    }
 	    return $items;
 	}

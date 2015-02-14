@@ -26,8 +26,8 @@
 	 if ( has_nav_menu( 'header' )  ) {
 	?>
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><span class="screen-reader-text"><?php _e( 'Main Menu', 'star' ); ?></span></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'header', 'fallback_cb' => false, 'depth'=>2 ) );  ?>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="screen-reader-text"><?php _e( 'Main Menu', 'star' ); ?></span></button>
+			<?php wp_nav_menu( array( 'theme_location' => 'header', 'fallback_cb' => false, 'depth'=>2, 'menu_id' => 'primary-menu', ) );  ?>
 		</nav><!-- #site-navigation -->
 	<?php
 	}
