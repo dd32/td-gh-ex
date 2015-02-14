@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: star\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/_s\n"
-"POT-Creation-Date: 2015-02-06 19:00+0100\n"
-"PO-Revision-Date: 2015-02-06 19:00+0100\n"
+"POT-Creation-Date: 2015-02-14 10:50+0100\n"
+"PO-Revision-Date: 2015-02-14 10:50+0100\n"
 "Last-Translator: Carolina Nymark <myazalea@hotmail.com>\n"
 "Language-Team: \n"
 "Language: en\n"
@@ -152,7 +152,7 @@ msgstr ""
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:16
 #, php-format
-msgid "If you like the theme, please %s review it on WordPress.org"
+msgid "If you like the theme, please review it on %s"
 msgstr ""
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:18
@@ -171,28 +171,28 @@ msgid "Menus"
 msgstr ""
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:24
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:52
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:54
 msgid "Widget areas"
 msgstr ""
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:25
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:60
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:62
 msgid "Frontpage"
 msgstr ""
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:26
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:75
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:77
 #: C:\xampp\htdocs\wordpress\wp-content\themes\star/inc/customizer.php:156
 msgid "Advanced settings"
 msgstr ""
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:27
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:88
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:90
 msgid "Accessibility"
 msgstr ""
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:28
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:101
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:103
 msgid "Plugins"
 msgstr ""
 
@@ -217,31 +217,37 @@ msgid ""
 "closed by a menu button. It can also be closed with the Esc key."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:40
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:39
+msgid ""
+"A one line menu is recommended, or the menu will overlap your content. Use "
+"submenus instead."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:42
 msgid ""
 "An image describing how social icons are lined up next to each other in the "
 "Social menu"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:42
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:44
 msgid ""
 "<b>The social menu</b> is at the bottom of the page and shows logos of the "
 "social networks of your choice. It does not display any text,<br/>\n"
 "\t\tbut has additional information for screen readers."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:44
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:46
 msgid ""
 "The icon will be added automatically, all you need to do is add a link to "
 "your menu."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:46
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:54
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:48
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:56
 msgid "Advanced"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:47
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:49
 msgid ""
 "By default, the primary meny also shows the site title and a search form. "
 "The searchform is not visible on screens smaller than 800 pixels.<br/>\n"
@@ -249,14 +255,14 @@ msgid ""
 "Customizer. "
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:53
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:55
 msgid ""
 "The theme has two widget areas that can hold <b>any number of widgets</b>. "
 "Both areas are empty unless they have widgets in them. The footer widget "
 "area is shown on all pages."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:55
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:57
 msgid ""
 "By default, the sidebar is shown on the right hand side in single post view, "
 "archives, the search page and the 404 page.<br/>\n"
@@ -264,132 +270,132 @@ msgid ""
 "find options for showing the sidebar on more pages."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:61
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:63
 msgid "The standard frontpage has the following features:"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:62
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:64
 msgid ""
 "<b>Site title:</b> You will find an option to hide your site title in the "
 "customizer."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:63
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:65
 msgid ""
 "<b>Call to action:</b> The Call to action is a great way to get your "
 "visitors attention. In the customizer you can:"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:65
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:67
 msgid "Add your own text"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:66
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:68
 msgid "Add a link"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:67
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:69
 msgid "Hide the button"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:70
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:72
 msgid ""
 "<b>Tagline:</b> You will find an option to hide your tagline in the "
 "customizer."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:71
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:73
 msgid ""
 "<b>Background:</b> You can change the background image, color and icon in "
 "the customizer."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:76
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:78
 msgid ""
 "Under the Advanced settings tab in the customizer you will find the "
 "following options:"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:78
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:80
 msgid "Show the sidebar on pages."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:79
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:81
 msgid "Show the sidebar on the frontpage."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:80
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:82
 msgid "Hide the search form in the header menu."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:81
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:83
 msgid "Hide the Site title in the header menu."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:82
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:84
 #: C:\xampp\htdocs\wordpress\wp-content\themes\star/inc/customizer.php:326
 msgid "Add a descriptive screen reader text for the footer."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:83
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:85
 #: C:\xampp\htdocs\wordpress\wp-content\themes\star/inc/customizer.php:337
 msgid "Add a descriptive screen reader text for the sidebar."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:90
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:92
 msgid ""
 "Skip link: the theme has one skip link at the very top that lets you skip "
 "the main menu."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:91
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:93
 msgid "Known issues:"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:93
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:95
 msgid ""
 "Some widgets that uses forms (category dropdown) are missing form labels. "
 "This is a known issue with WordPress."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:94
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:96
 msgid ""
 "Menus have a visible focus and can be tabbed through, but you can not "
 "navigate them using the arrow keys."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:102
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:104
 msgid ""
-"star has been tested with and style has been added for the following plugins:"
+"Star has been tested with and style has been added for the following plugins:"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:104
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:106
 msgid "Woocommerce"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:105
-msgid "BBpress"
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:107
+msgid "bbPress"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:106
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:108
 msgid "Jetpack"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:106
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:108
 msgid ""
 " Note: Not all of Jetpacks modules are accessibe, and some uses iframes. I "
 "have increased the contrast of some of the modules."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:107
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:109
 msgid "Recommended modules:"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:109
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:111
 msgid "Featured content"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:110
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:112
 msgid ""
 "-Once Jetpack has been activated, you can select up to six posts or pages as "
 "a frontpage feature. Chose a tag and add it to your posts to seperate them "
@@ -399,58 +405,58 @@ msgid ""
 "pixels."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:112
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:114
 msgid ""
 "An image describing three featured posts on the frontpage, two with featured "
 "images and one \n"
 "\t\t\t\t\t\tthat only displays the post title."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:115
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:117
 msgid "Custom Content Type: Portfolio"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:116
-msgid "star also supports Jetpack"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:117
-msgid "Portfolios"
-msgstr ""
-
 #: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:118
-msgid "Read more about how to setup your Portfolio on Jetpacks support site."
+msgid "Star also supports Jetpack"
 msgstr ""
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:119
+msgid "Portfolios"
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:119
+msgid "Read more about how to setup your Portfolio on Jetpacks support site."
+msgstr ""
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:120
 msgid "An image describing two portfolio items."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:121
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:122
 msgid "Sharing"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:122
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:123
 msgid ""
 "-If you activate Jetpack sharing, your buttons will be displayed below the "
 "meta information, to the right of your post content."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:123
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:124
 msgid ""
 "An image describing how sharing buttons are added to the post footer below "
 "Tags and Categories."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:125
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:126
 msgid "Contact Form"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:126
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:127
 msgid "<b>Site icon</b> -Use this module to add a favicon to your site."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:127
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/documentation.php:128
 msgid ""
 "<b>Site logo</b> -Once Jetpack has been activated, you can add a logo above "
 "your Site title on the frontpage. You will find this setting in the "
@@ -475,8 +481,13 @@ msgid "Proudly powered by %s"
 msgstr ""
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\star/footer.php:42
+#, fuzzy
+msgid "http://wptema.se/star"
+msgstr "http://wordpress.org/"
+
+#: C:\xampp\htdocs\wordpress\wp-content\themes\star/footer.php:42
 #, fuzzy, php-format
-msgid "Theme: %1$s"
+msgid "Theme: %1$s by Carolina"
 msgstr "VIKTIGT: spara inställningen för ditt standardtema"
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\star/front-page.php:16
@@ -821,12 +832,7 @@ msgid "Would you like to search again?"
 msgstr ""
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\star/searchform.php:3
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/searchform.php:6
 msgid "Search"
-msgstr ""
-
-#: C:\xampp\htdocs\wordpress\wp-content\themes\star/searchform.php:4
-msgid "Search..."
 msgstr ""
 
 #, fuzzy
