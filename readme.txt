@@ -49,6 +49,10 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version 2.4.1 =
+* Fix: IE9 Issue.
+* Fix: lightbox issue with products.
+
 = Version: 2.4.0 =
 * Remove: Two woocommerce template files.
 * Update: Css tweeks for woocommerce 2.3.

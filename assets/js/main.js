@@ -1,5 +1,25 @@
 /* Initialize
 */
+var isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+};
 jQuery(document).ready(function ($) {
 		$("[rel=tooltip]").tooltip();
 		$('[data-toggle=tooltip]').tooltip();
@@ -11,13 +31,6 @@ jQuery(document).ready(function ($) {
 		$(".videofit").fitVids();
 		$('.woocommerce-ordering .orderby').customSelect();
 		$('.kad-select').customSelect();
-		matchMedia('only screen and (max-width: 480px)').addListener(function(list){
-			$('select.hasCustomSelect').removeAttr("style");
-			$('select.hasCustomSelect').css({'width':'250px'});
-	    	$('.kad-select.customSelect').remove();
-	    	$('select.kad-select').customSelect();
-	    	$('.customSelectInner').css('width','100%');
-		});
 		// Lightbox
 			$.extend(true, $.magnificPopup.defaults, {
 			tClose: '',
@@ -210,6 +223,17 @@ jQuery(document).ready(function ($) {
 	          	});
 	    });
 });
+if( isMobile.any() ) {
+jQuery(document).ready(function ($) {
+matchMedia('only screen and (max-width: 480px)').addListener(function(list){
+			$('select.hasCustomSelect').removeAttr("style");
+			$('select.hasCustomSelect').css({'width':'250px'});
+	    	$('.kad-select.customSelect').remove();
+	    	$('select.kad-select').customSelect();
+	    	$('.customSelectInner').css('width','100%');
+		});
+	});
+}
 var ua = navigator.userAgent.toLowerCase();
 var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
 if(isAndroid) {
