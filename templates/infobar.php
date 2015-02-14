@@ -29,9 +29,12 @@ if (weaverx_getopt('infobar_hide') != 'hide' && !weaverx_is_checked_page_opt('_p
 ?>
 	<span class='infobar_right'>
 <?php
-	if (!weaverx_getopt_checked('info_hide_pagenav')) {
+	if (isset($GLOBALS['weaverx_page_who']))
+		$pwp = $GLOBALS['weaverx_page_who'] == 'pwp';
+
+	if ( !weaverx_getopt_checked('info_hide_pagenav') ) {
 		echo ('<span id="infobar_paginate">');
-		if ( ! is_singular() ) {
+		if ( $pwp || !is_singular() ) {
 			if (function_exists ('wp_pagenavi')) {
 				wp_pagenavi();
 			} elseif ( function_exists( 'wp_paginate' ) ) {

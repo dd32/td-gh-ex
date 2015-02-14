@@ -185,7 +185,7 @@ function weaverx_is_checked_page_opt($meta_name) {
 }
 
 function weaverx_page_posts_error($info='') {
-	echo('<h2 style="color:red;">' . __('WARNING: error defining Custom Field on Page with Posts.','weaver-xtreme' /*adm*/) . '</h2>');
+	echo('<h2 style="color:red;">' . __('WARNING: error defining Custom Field on Page with Posts.', 'weaver-xtreme' /*adm*/) . '</h2>');
 	if (strlen($info) > 0) echo('More info: '.$info.'<br />');
 }
 
@@ -229,7 +229,7 @@ function weaverx_submitted($submit_name) {
 		if (isset($_POST[$nonce_name]) && wp_verify_nonce($_POST[$nonce_name],$nonce_act)) {
 			return true;
 		} else {
-			die(__('WARNING: invalid form submit detected. Probably caused by session time-out, or, rarely, a failed security check. Please contact WeaverTheme.com if you continue to receive this message.','weaver-xtreme' /*adm*/) . '(' . $submit_name . ')');
+			die(__('WARNING: invalid form submit detected. Probably caused by session time-out, or, rarely, a failed security check. Please contact WeaverTheme.com if you continue to receive this message.', 'weaver-xtreme' /*adm*/) . '(' . $submit_name . ')');
 		}
 	} else {
 		return false;
@@ -354,7 +354,7 @@ function weaverx_get_page_orderby() {
 
 	if ($orderby == 'author' || $orderby == 'date' || $orderby == 'title' || $orderby == 'rand')
 		return $orderby;
-	weaverx_page_posts_error(__('orderby must be author, date, title, or rand. You used: ','weaver-xtreme' /*adm*/). $orderby);
+	weaverx_page_posts_error(__('orderby must be author, date, title, or rand. You used: ', 'weaver-xtreme' /*adm*/). $orderby);
 	return '';
 }
 
@@ -363,7 +363,7 @@ function weaverx_get_page_order() {
 	if (empty($order)) return '';
 	if ($order == 'ASC' || $order == 'DESC')
 		return $order;
-	weaverx_page_posts_error(__('order value must be ASC or DESC. You used: ','weaver-xtreme' /*adm*/). $order);
+	weaverx_page_posts_error(__('order value must be ASC or DESC. You used: ', 'weaver-xtreme' /*adm*/). $order);
 	return '';
 }
 
@@ -391,11 +391,15 @@ function weaverx_filter_textarea( $text ) {
 	return weaverx_filter_code($text);
 }
 
-function weaverx_esc_textarea($text) {
+function weaverx_esc_textarea($text, $echo=true) {
 	if ( current_user_can('unfiltered_html') )
-		echo esc_textarea($text);
+		$out = esc_textarea($text);
 	else
-		echo esc_textarea(stripslashes($text));
+		$out = esc_textarea(stripslashes($text));
+	if ($echo)
+		echo $out;
+	else
+		return $out;
 }
 
 function weaverx_filter_head( $text ) {
@@ -404,10 +408,10 @@ function weaverx_filter_head( $text ) {
 		'title' => array(),
 		'style' => array( 'media' => true, 'scoped' => true, 'type' => true ),
 		'meta' => array( 'charset' => true, 'content' => true, 'http-equiv' => true, 'name' => true, 'scheme' => true ),
-		'link' => array( 'href' => true, 'rel' => true, 'type' => true, 'title' => true, 'media' => true, 'id' => true, 'class' => true,  ),
-		'script' => array( 'async' => true, 'charset' => true, 'defer' => true, 'src' => true, 'type' => true,  ),
+		'link' => array( 'href' => true, 'rel' => true, 'type' => true, 'title' => true, 'media' => true, 'id' => true, 'class' => true  ),
+		'script' => array( 'async' => true, 'charset' => true, 'defer' => true, 'src' => true, 'type' => true  ),
 		'noscript' => array(),
-		'base' => array( 'href' => true, 'target' => true, )
+		'base' => array( 'href' => true, 'target' => true )
 		);
 
 	// restrict head code to valid stuff for <head>
@@ -451,9 +455,31 @@ function weaverx_echo_css( $css ) {
 }
 
 // # MISC ==============================================================
+function weaverx_header_widget_area( $where_now ) {	// header.php support
+	// 'top' => 'Top of Header'
+	// 'after_header' => 'After Header Image'
+	// 'after_html' => 'After HTML Block'
+	// 'after_menu' => 'After Main Menu'
+
+	$sb_position = weaverx_getopt_default('header_sb_position', 'top');
+	if ( $sb_position == $where_now && weaverx_has_widgetarea('header-widget-area') ) {
+		$p_class = weaverx_area_class('header_sb', 'notpad', '-none', 'margin-none');
+		//weaverx_clear_both('header_sb');
+		weaverx_put_widgetarea('header-widget-area', $p_class);
+		//weaverx_clear_both('header-widget-area');
+	}
+}
+
+function weaverx_add_ie_scripts() {
+	echo '<!--[if lt IE 9]>
+<script src="' . esc_url(get_template_directory_uri()) . '/assets/js/html5.min.js" type="text/javascript"></script>
+<script src="' . esc_url(get_template_directory_uri()) . '/assets/js/respond.min.js" type="text/javascript"></script>
+<![endif]-->';
+}
+
 function weaverx_media_lib_button($fillin = '') {
 ?>
-&nbsp;&larr;&nbsp;<a style='text-decoration:none;' title="<?php _e('Select image from Media Library. Click \'Insert into Post\' to paste url here.','weaver-xtreme' /*adm*/); ?>" alt="media" href="javascript:weaverx_media_lib('<?php echo $fillin;?>');" ><span style="font-size:16px;margin-top:2px;" class="dashicons dashicons-format-image"></span></a>
+&nbsp;&larr;&nbsp;<a style='text-decoration:none;' title="<?php _e('Select image from Media Library. Click \'Insert into Post\' to paste url here.', 'weaver-xtreme' /*adm*/); ?>" alt="media" href="javascript:weaverx_media_lib('<?php echo $fillin;?>');" ><span style="font-size:16px;margin-top:2px;" class="dashicons dashicons-format-image"></span></a>
 <?php
 }
 

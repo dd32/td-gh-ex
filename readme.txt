@@ -6,10 +6,10 @@ Theme URI: http://weavertheme.com
 Tags: custom-header, custom-colors, custom-background, custom-menu, theme-options, left-sidebar, right-sidebar,
 fixed-width, three-columns, two-columns, black, blue, brown, green, orange, red, tan, dark, white, light,
 translation-ready, rtl-language-support, editor-style
-Copyright: Weaver Xtreme Theme - Copyright 2014, Bruce E Wampler
+Copyright: Weaver Xtreme Theme - Copyright 2014-1015 Bruce E Wampler
 Requires at least: 3.9
-Tested up to: 4.0
-Stable tag: 1.0
+Tested up to: 4.1
+Stable tag: 1.0.1
 
 == Description ==
 
@@ -18,9 +18,9 @@ as well as automatic support for mobile devices.
 
 == Licenses ==
 
-* Weaver Xtreme is licensed under the terms of the GNU GENERAL PUBLIC LICENSE, Version 2,
-June 1991. (GPL) The full text of the license is in the license.txt file.
-* Weaver Xtreme has been derived from the Weaver II Theme, also licensed
+* License: GNU General Public License v3 or later
+* License URI: //www.gnu.org/licenses/gpl-3.0.html
+* Weaver Xtreme has been derived from the Weaver II Theme, licensed
 under GPL V2. The source code for Weaver Xtreme is available at
 http://wordpress.org/themes/weaver-xtreme
 * Images: All images included with Weaver Xtreme are either original works of the author which
@@ -51,47 +51,23 @@ with testing and feature suggestions.
 
 == Changelog ==
 
-First Official Release: Version 0.90
-
-= Changed Version 0.92 =
-* Tweaked viewport to initial-scale=1.0
-* Fixed [ widget_area area_style=footer/header ] issue (Plus)
-* All Admin side text strings now wrapped in translation functions
-* Changed Appearance : Weaver Xtreme to Theme Options per WP requirements
-* Fixed issue with late loading header image and branding resizing
-* Appearance menu now reads 'Theme Options' instead of Weaver Xtreme (WP.org requirement)
-* Loading mechanism for style files changed - should be strictly internal change (WP.org requirement)
-* Removed shortcode filter for Text widget - (WP.org requirement) - will be in Theme Support plugin
-
-= Changed 0.95 =
-* Removed Per Page and Per Post options - now in Theme Support and Weaver Plus (WP requirement)
-* Tweaked license list, copyright - Changed to GPL V3
-* Tweaked style sheet loading
-* Removed /vendors directory
-* Tweaked search box cursor style
-* Tweaked widget equalize JS
-* Fixed [widget_area] classes (Plus)
-* Fixed secondary z-index issue when shadows used on menu bars
-* Added support for custom translations in /wp-content/languages/weaver-xtreme/xx_XX.mo (or xx_XX_help.html)
-* Added .dynamic-content class support to add to any areas that dynamically change size
-  - makes color flow work with them.
-* Tweaked respond.min.js script.
-* Added styling support for [site_title] and [site_tagline] (Theme Support Plugin)
-
-= Changed 0.96 =
-* Added Raw page template
-* Added new do_actions for pre-page and pre-post processing
-
-= Change 0.97 =
-* Fixed border-box on footer/header html, fixed top/bottom injection
-
-= Change 0.99 =
-* Fixed sprintf issue with custom menu html left/right
-
-= Version 0.100 =
-* Fixed \ value issue for CSS+
-* WeaverTheme.com release corresponding to Version 1.00 WP.org repository release
-* Will be removed once 1.00 WP.org release
-
 = Version 1.00 =
 * First release on WP.org repository
+
+= Version 1.0.1 =
+* New: Desktop Menu Bar Item Spacing Option
+* New: .wvrx-fullwidth built-in class for full width BG color
+* New: Add CSS Classes to HTML insertion areas, Header, Title/Tagline block (X-Plus)
+* Tweak: Changed default theme to Plain, new screenshot provided
+* Tweak: Some interactions with X-Plus
+* Tweak: textarea tweaks for future X-Plus features
+* Tweak: Styling for Wide 2 table
+* Tweak: Description for Rounded Corners - need to add rounded to parent/child areas, too.
+* Tweak: Refactored some PHP code
+* Fix: added missing .is-desktop to full bg color rules
+* Fix: full width bg unintended left border in some cases
+* Fix: added default font-weight:normal; to menus to avoid override by content link settings
+* Fix: issue with bold font links (Menu)
+* Fix: Info Bar page navigation on Page with Posts wasn't displaying
+* Fix: Rounded Corner Radius generated CSS (X-Plus)
+* Fix: Auto margins on right sidebars - stack top

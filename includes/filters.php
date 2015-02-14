@@ -39,9 +39,8 @@ function weaverx_page_menu( $args = array() ) {
 	// Show Home in the menu
 	if ( $args['show_home'] ) {
 		$text = __( 'Home', 'weaver-xtreme' );
-
-		$class = '';
-		if ( is_home() || is_front_page() ) $class = 'class="current_page_item"';
+		$class = 'class="default-home-menu-item"';
+		if ( is_home() || is_front_page() ) $class = 'class="default-home-menu-item current_page_item"';
 
 		$menu .= '<li ' . $class . '><a href="' . esc_url( home_url( '/' ) ). '" title="' . esc_attr($text) . '">' . $args['link_before'] . $text . $args['link_after'] . '</a></li>';
 
@@ -82,7 +81,7 @@ function weaverx_page_menu( $args = array() ) {
 
 	// add the styling classes here
 
-	$menu = '<div class="' . esc_attr( $args['container_class'] ) . '">' . $menu . "</div>\n";
+	$menu = '<div class="wvrx-default-menu ' . esc_attr( $args['container_class'] ) . '">' . $menu . "</div>\n";
 
 	if ( $args['echo'] )
 		echo $menu;
@@ -101,7 +100,7 @@ function weaverx_featured_image_info($text) {
 
 	return $text .
 '<p><small>' .
- __('Please see Weaver X\'s <em>Main Options&rarr;Content Areas</em> and <em>Main Options&rarr;Post Specifics</em> for options to display Featured Images.','weaver-xtreme' /*adm*/) . '</small></p>';
+ __('Please see Weaver X\'s <em>Main Options&rarr;Content Areas</em> and <em>Main Options&rarr;Post Specifics</em> for options to display Featured Images.', 'weaver-xtreme' /*adm*/) . '</small></p>';
 
 }
 //--
@@ -282,10 +281,10 @@ function weaverx_replace_widget_area_filter( $area_name ) {
 
 		if ( ! is_active_sidebar( $replace ) ) {
 ?>
-		<h3><?php _e('Notice: Widget Area Not Found:','weaver-xtreme' /*adm*/); ?> <em><?php echo $replace; ?></em></h3>
+		<h3><?php _e('Notice: Widget Area Not Found:', 'weaver-xtreme' /*adm*/); ?> <em><?php echo $replace; ?></em></h3>
 		<p><?php _e('You probably have not defined it as a Per Page Widget area at the bottom of the Weaver Xtreme
 		<em>Main Options &rarr; Sidebars &amp; Layout</em> tab, or you may need to add
-		widgets to the area.','weaver-xtreme' /*adm*/); ?></p>
+		widgets to the area.', 'weaver-xtreme' /*adm*/); ?></p>
 <?php
 			return $area_name;
 		}

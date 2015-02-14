@@ -18,19 +18,19 @@ function weaverx_fwrite_current_css() {
 
 	$theme_dir_exists = weaverx_f_mkdir($save_dir);
 	if (!$theme_dir_exists) {
-		weaverx_f_file_access_fail(__('Unable to create directory. Probably a file system permission problem. Directory','weaver-xtreme' /*adm*/) . $save_dir);
+		weaverx_f_file_access_fail(__('Unable to create directory. Probably a file system permission problem. Directory', 'weaver-xtreme' /*adm*/) . $save_dir);
 	}
 	$theme_dir_writable = $theme_dir_exists;
 
    if (!weaverx_f_is_writable($save_dir)) {
-		weaverx_f_file_access_fail(__('Directory not writable. Probably a file system permission problem. Directory: ','weaver-xtreme' /*adm*/) . $save_dir);
+		weaverx_f_file_access_fail(__('Directory not writable. Probably a file system permission problem. Directory: ', 'weaver-xtreme' /*adm*/) . $save_dir);
 		$theme_dir_writable = false;
 	}
 
 	$filename = $save_dir . '/'. $usename;    // we will add txt
 
 	if (!$theme_dir_writable || !$theme_dir_exists || !($handle = weaverx_f_open($filename, 'w')) ) {
-		weaverx_f_file_access_fail(__('Unable to create file. Probably a file system permission problem. File: ','weaver-xtreme' /*adm*/) . $filename);
+		weaverx_f_file_access_fail(__('Unable to create file. Probably a file system permission problem. File: ', 'weaver-xtreme' /*adm*/) . $filename);
 		return '';
 	}
 
@@ -41,7 +41,7 @@ function weaverx_fwrite_current_css() {
 
 	weaverx_output_style($handle);
 	if (!weaverx_f_close($handle)) {
-		weaverx_f_file_access_fail(__('Unable to create file. Probably a file system permission problem. File: ','weaver-xtreme' /*adm*/) . $filename);
+		weaverx_f_file_access_fail(__('Unable to create file. Probably a file system permission problem. File: ', 'weaver-xtreme' /*adm*/) . $filename);
 		return '';
 	}
 
@@ -94,12 +94,16 @@ function weaverx_output_style( $sout ) {
 
 		// It's time: no -moz or -webkit
 
-		$rounded = '.rounded,.rounded-all,.rounded-custom{border-radius:8px;}
-.rounded-top{border-top-left-radius:8px;border-top-right-radius:8px;}
-.rounded-bottom{border-bottom-left-radius:8px;border-bottom-right-radius:8px;}
-.rounded-left{border-top-left-radius:8px;border-bottom-left-radius:8px;}
-.rounded-right{border-top-right-radius:8px;border-bottom-right-radius:8px;}
-';
+	$rounded = '.rounded,.rounded-all,.rounded-custom{	-moz-border-radius:8px !important;
+ -webkit-border-radius:8px !important;border-radius:8px !important;}
+.rounded-top{-moz-border-radius-topleft:8px; -moz-border-radius-topright:8px;-webkit-border-top-left-radius:8px;
+-webkit-border-top-right-radius:8px;border-top-left-radius:8px; border-top-right-radius: 8px;}
+.rounded-bottom {-moz-border-radius-bottomleft:8px;-moz-border-radius-bottomright:8px;-webkit-border-bottom-left-radius:8px;
+ -webkit-border-bottom-right-radius:8px;border-bottom-left-radius:8px; border-bottom-right-radius:8px;}
+.rounded-left{-moz-border-radius-topleft:8px;-moz-border-radius-bottomleft:8px;-webkit-border-top-left-radius:8px;
+ -webkit-border-bottom-left-radius:8px;border-top-left-radius:8px;border-bottom-left-radius:8px;}
+.rounded-right{-moz-border-radius-topright:8px;-moz-border-radius-bottomright:8px;-webkit-border-top-right-radius:8px;
+ -webkit-border-bottom-right-radius:8px;border-top-right-radius:8px;border-bottom-right-radius:8px;}';
 
 	weaverx_f_write( $sout, str_replace('8',$rm,$rounded) );
 	}
@@ -286,7 +290,8 @@ text_color = 0.213 * this.rgb[0] +
 		weaverx_f_write($sout, sprintf("#content table {border: 1px solid #e7e7e7;margin: 0 -1px 24px 0;text-align: left;width: 100%%;}
 #content tr th, #content thead th {color: #888;font-size: 12px;font-weight: bold;line-height: 18px;padding: 9px 24px;}
 #content tr td {border-style:none; border-top: 1px solid #e7e7e7; padding: 6px 24px;}
-#content tr.odd td {background: #f2f7fc;}\n"));
+#content tr.odd td {background: rgba(0,0,0,0.1);}\n"));
+		//weaverx_f_write($sout,"#content tr.odd td{background:transparent;}\n");
 	} elseif ($table == 'bold') {
 		weaverx_f_write($sout, sprintf("#content table {border: 2px solid #888;}
 #content tr th, #content thead th {font-weight: bold;}
@@ -456,9 +461,10 @@ $menu_detail = array (              /* can't use multiple selectors here! */
 		$val = weaverx_getopt($id . '_html_margin_dec');
 
 		if ( ( $xbg = weaverx_getopt( $id . '_extend_bgcolor' ) ) ) {
+			$cname = '.is-desktop ' . $tag;	// this extend bg method required for iPads to work right
 			weaverx_f_write( $sout,
-/*'.is-desktop ' . */$tag . '{position:relative;overflow:visible;}' .
-/*'.is-desktop ' . */$tag . ':before{content:"";position:absolute;top:0;bottom:0;left:-9999px;right:0;border-left:9999px solid ' .
+$cname . '{position:relative;overflow:visible;}' .
+$cname . ':before{content:"";position:absolute;top:0;bottom:0;left:-9998px;right:0;border-left:9999px solid ' .
 $xbg . ';box-shadow:9999px 0 0 ' . $xbg . ";z-index:-1;}\n"
 			);
 		}
@@ -515,12 +521,25 @@ $xbg . ';box-shadow:9999px 0 0 ' . $xbg . ";z-index:-1;}\n"
 			weaverx_f_write( $sout, $tag . ' .wvrx-menu ul a {border-top:none;border-left:none;border-right:none;border-bottom:1px solid ' . $color . ";}\n" );
 		}
 
+		// menu padding
+
+		if ( ($rpad = weaverx_getopt( $id . '_right_padding_dec' )) != '') {
+			$rpad_arrow = $rpad + 1.5;
+			weaverx_f_write( $sout, '.is-desktop ' . $tag . ' .wvrx-menu-container li.default-home-menu-item a{padding-right:' . $rpad . "em;}\n" );
+			weaverx_f_write( $sout, '.is-desktop ' . $tag . ' .wvrx-menu-container{padding-right:' . $rpad . "em;}\n" );
+			weaverx_f_write( $sout, '.is-desktop ' . $tag . ' .menu-hover.menu-arrows .has-submenu > a{padding-right:' . $rpad_arrow . "em;}\n" );
+			weaverx_f_write( $sout, '.is-desktop ' . $tag . ' .menu-arrows.menu-hover .toggle-submenu{margin-right:' . $rpad . "em;}\n" );
+		}
+
+
 		// Menu Arrows
 
 		if ( weaverx_getopt( $id . '_hide_arrows') ) {
 			weaverx_f_write($sout,
-				".is-desktop {$tag} .menu-arrows .toggle-submenu:after{content:'';display:none;}
-.is-desktop {$tag} .menu-hover.menu-arrows .has-submenu > a {padding-right:0.75em;}\n" );
+				".is-desktop {$tag} .menu-arrows .toggle-submenu:after{content:'';display:none;}\n");
+			if ($rpad == '')
+				weaverx_f_write($sout,
+					".is-desktop {$tag} .menu-hover.menu-arrows .has-submenu > a {padding-right:0.75em;}\n" );
 		}
 		$color = weaverx_getopt( $id .'_color');
 
@@ -648,9 +667,10 @@ $xbg . ';box-shadow:9999px 0 0 ' . $xbg . ";z-index:-1;}\n"
 			weaverx_f_write( $sout, '.is-desktop ' . $tag . "{max-width:{$w}px;}\n" );
 
 		if ( ( $xbg = weaverx_getopt( $id . '_extend_bgcolor' ) ) ) {
-				weaverx_f_write( $sout,
-/*'.is-desktop ' . */$tag . '{position:relative;overflow:visible;}' .
-/*'.is-desktop ' . */$tag . ':before{content:"";position:absolute;top:0;bottom:0;left:-9999px;right:0;border-left:9999px solid ' .
+			$cname = '.is-desktop ' . $tag;
+			weaverx_f_write( $sout,
+$cname . '{position:relative;overflow:visible;}' .
+$cname . ':before{content:"";position:absolute;top:0;bottom:0;left:-9998px;right:0;border-left:9999px solid ' .
 $xbg . ';box-shadow:9999px 0 0 ' . $xbg . ";z-index:-1;}\n"
 			);
 		}
@@ -955,8 +975,6 @@ function weaverx_sidebar_style( $sout, $override = 0 ) {
 
 }
 //--
-
-
 
 function weaverx_get_title_color( $title ) {
 

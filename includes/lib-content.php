@@ -552,23 +552,6 @@ function weaverx_post_top_meta( $type='' ) {
 function weaverx_per_post_style() {
 	// Emit a <style> for this post
 	global $weaverx_cur_post_ID;
-
-	$post_style = weaverx_get_per_post_value('_pp_post_style');
-	if (!empty($post_style)) {
-		$rules = explode('}', trim($post_style));
-		$post_id = '#post-' . $weaverx_cur_post_ID;
-		echo ("\n<style type=\"text/css\">\n");
-		foreach ($rules as $rule) {
-			$rule = trim($rule);
-			if (strlen($rule) > 1)  {		// must have some content to the rule!
-				if ($rule[0] == '+')
-					echo (substr($rule, 1) . "}\n");
-				else
-					echo("{$post_id} {$rule}}\n");	// add the post id to the front of each rule
-			}
-		}
-		echo("</style>\n");
-	}
 	do_action('weaverx_per_post', $weaverx_cur_post_ID);
 }
 

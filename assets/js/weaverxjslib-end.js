@@ -268,6 +268,60 @@ function wvrxFlowColor() {
 }
 
 
+/*	-------------------------------------------------------------------------------
+	This is the full-width method using padding and margin
+	It requires the base rules (below) to be in the general CSS (no longer requires html {overflow-x:hidden;})
+
+		.wrx-fullwidth {
+			box-sizing:content-box !important;
+			-moz-box-sizing:content-box !important;
+			-webkit-box-sizing:content-box !important;
+			overflow:visible !important;
+		}
+
+	It requires the #wvrx-page-width to get the following CSS so it becomes 100% wide and works with the monitoring
+		#wvrx-page-width {
+			width:100%;
+			display:block;
+			position:absolute;
+		}
+*/
+
+function weaverxFullWidth() {
+	var BrowserWidth = weaverxBrowserWidth();                    			//get browser width
+	var WrapperWidth = parseInt(jQuery('#wrapper').css('max-width'),10);    //Get site width
+	var Extension = ((( BrowserWidth / WrapperWidth ) -1 ) * 100 ) / 2;     //Computes the side extension in %
+
+	ExtensionPlus = Extension +'%';  										//Makes padding string
+	ExtensionMinus = '-' + Extension +'%'; 									//Makes negative margin string
+
+	if ( Extension > 0 ) {												     //If there is space on the side generate the correct css rules for all affected objects
+		jQuery('.wvrx-fullwidth').css({                                    	//Sets the margin and padding on all elements with the class
+			'margin-left': ExtensionMinus,
+			'margin-right': ExtensionMinus,
+			'padding-left': ExtensionPlus,
+			'padding-right': ExtensionPlus
+        });
+	} else {
+		jQuery('.wvrx-fullwidth').css({                         				//Reset values when no extension
+			'margin-left': '0px',
+			'margin-right': '0px',
+			'padding-left': '0px',
+			'padding-right': '0px'
+		});
+
+    }
+}
+
+if (jQuery('.wvrx-fullwidth')) {   			//Only start monitoring if the class is being used
+	jQuery(function($) {      				//Runs the extension rule everytime the browser changes size
+		$('#wvrx-page-width').resizeX(weaverxFullWidth);
+	});
+}
+
+
+
+
 
 function weaverxWidgetEq(WdgtClass,AreaId) {
 //version 0.9 - 26 Nov 2014

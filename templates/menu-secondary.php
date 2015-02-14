@@ -33,7 +33,11 @@ if (weaverx_getopt( 'm_secondary_hide') != 'hide' && has_nav_menu( $menu )  && !
 		$right = str_replace('%','%%',$right);	// wp_nav_menu uses sprintf!
 	} // else { $right = '<span class="wvrx-menu-clear"></span>'; }
 
-	echo "\n\n<div id=\"nav-secondary\" class=\"menu-secondary\">\n";
+	if ( weaverx_getopt ('m_secondary_move') )
+		echo "\n\n<div id=\"nav-secondary\" class=\"menu-secondary menu-secondary-moved\">\n";
+	else
+		echo "\n\n<div id=\"nav-secondary\" class=\"menu-secondary menu-secondary-standard\">\n";
+
 	wp_nav_menu( array(
 		'fallback_cb'     => '',
 		'theme_location'  => $menu,

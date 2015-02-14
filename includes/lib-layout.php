@@ -19,15 +19,20 @@ function weaverx_inject_area( $name ) {
 		return;
 
 	$idinj = 'inject_' . $name;
+	$add_class = weaverx_getopt('inject_add_class_' . $name);
+
 	$html = apply_filters('weaverx_inject_area', weaverx_getopt($area_name), $name);
 	$per_page_code = apply_filters('weaverx_inject_area', weaverx_get_per_page_value($name), $name);	/* per page values */
 
 	if (!empty($html) || !empty($per_page_code)) {
 		if ( $name !='postpostcontent') {
-			echo("\t<div id=\"$idinj\">\n");
+			if ($add_class != '')
+			echo("\t<div id=\"{$idinj}\" class=\"{$add_class}\">\n");
+			else
+				echo("\t<div id=\"{$idinj}\">\n");
 		}
 		else
-			echo("\t<div class=\"$idinj\">\n");
+			echo("\t<div class=\"{$idinj} {$add_class}\">\n");
 		if (!empty($html)) {	/* area insert defined? */
 			if (is_front_page()) {
 				weaverx_e_notopt($hide_front,  do_shortcode($html)  );
@@ -768,7 +773,7 @@ function weaverx_no_sidebars( $class ) {
 <?php _e('<strong>Add Some Widgets!</strong><br /><small>This theme has been designed to be used with sidebars. <span style="color:red">This message will no longer be displayed after
 you add at least one widget to one of the Sidebar Widget Areas using the Appearance &rarr; Widgets control panel.</span>
 <br />You can also change the sidebar layout for this page using theme options.
-<br />Note: If you have added widgets, be sure you\'ve not hidden all sidebars on the Per Page options. You could switch this page to One Column.</small>','weaver-xtreme' /*adm*/); ?></li>
+<br />Note: If you have added widgets, be sure you\'ve not hidden all sidebars on the Per Page options. You could switch this page to One Column.</small>', 'weaver-xtreme' /*adm*/); ?></li>
 <li>
 <?php       wp_loginout(); ?>
 </li>

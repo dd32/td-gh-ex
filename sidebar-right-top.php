@@ -10,6 +10,8 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
 
 	$l_area = 'l-sb-right';
+	if ( weaverx_getopt('primary_smartmargin') || weaverx_getopt('secondary_smartmargin') )
+		$l_area .= '-lm';
 
 	$class = $l_area . ' m-full s-full l-flow-opposite ' . weaverx_area_class('primary', 'pad', '', 'margin-bottom');
 

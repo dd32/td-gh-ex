@@ -61,7 +61,7 @@ function weaverx_sapi_form_bottom($form_name='end of form') {
 
 function weaverx_sapi_submit( $before='', $after='', $show_more_opts = false ) {
 	// generate a submit button for the form
-	$submit_label = __('Save Settings','weaver-xtreme' /*adm*/);
+	$submit_label = __('Save Settings', 'weaver-xtreme' /*adm*/);
 	echo $before;
 ?>
 	<span style="display:inline;"><input name="save_options" type="submit" style="margin-top:10px;" class="button-primary" value="<?php echo($submit_label); ?>" />
@@ -86,7 +86,6 @@ function weaverx_sapi_main_name($id, $echo=true) {
 */
 function weaverx_validate_all_options($in) {
 	/* validation for all options  */
-
 	$err_msg = '';			// no error message yet
 
 	if (empty($in)) {
@@ -109,8 +108,8 @@ function weaverx_validate_all_options($in) {
 				if (!empty($value) && (!is_numeric($value) || !is_int((int)$value))) {
 					$opt_id = str_replace('', '', $key);
 					$opt_id = str_replace('_', ' ', $opt_id);
-					$err_msg .= __('Option must be an integer value: ','weaver-xtreme' /*adm*/) . '"'. $opt_id . '" = "' . $value . '".'
-						. __(' Value has been cleared to blank value','weaver-xtreme' /*adm*/) . '<br />';
+					$err_msg .= __('Option must be an integer value: ', 'weaver-xtreme' /*adm*/) . '"'. $opt_id . '" = "' . $value . '".'
+						. __(' Value has been cleared to blank value', 'weaver-xtreme' /*adm*/) . '<br />';
 					$in[$key] = '';
 				}
 				break;
@@ -169,8 +168,8 @@ function weaverx_validate_all_options($in) {
 					$in[$key] = $val;
 					if (stripos($val,'<style') !== false || stripos($val, '</style') !== false ||
 						stripos($val,'<script') !== false || stripos($val, '</script') !== false) {
-						$err_msg .= __('&lt;style&gt; or &lt;script&gt; tags have been automatically stripped from your "Add CSS Rules"!','weaver-xtreme' /*adm*/)
-						. ' ' . __('Please correct your entry.','weaver-xtreme' /*adm*/) . '<br />';
+						$err_msg .= __('&lt;style&gt; or &lt;script&gt; tags have been automatically stripped from your "Add CSS Rules"!', 'weaver-xtreme' /*adm*/)
+						. ' ' . __('Please correct your entry.', 'weaver-xtreme' /*adm*/) . '<br />';
 						$in[$key] = wp_filter_post_kses( trim(stripslashes($val)) );
 					}
 				}
@@ -193,8 +192,8 @@ function weaverx_validate_all_options($in) {
 						$val = weaverx_filter_code($value);
 						if (stripos($val,'<style') !== false || stripos($val, '</style') !== false ||
 							stripos($val,'<script') !== false || stripos($val, '</script') !== false) {
-							$err_msg .= __('&lt;style&gt; or &lt;script&gt; tags have been automatically stripped from your CSS+ rules,','weaver-xtreme' /*adm*/)
-							. ' ' . __('Please correct your entry.','weaver-xtreme' /*adm*/) . '<br />';
+							$err_msg .= __('&lt;style&gt; or &lt;script&gt; tags have been automatically stripped from your CSS+ rules,', 'weaver-xtreme' /*adm*/)
+							. ' ' . __('Please correct your entry.', 'weaver-xtreme' /*adm*/) . '<br />';
 							$val = wp_filter_post_kses( trim($val) );
 						}
 
@@ -204,8 +203,8 @@ function weaverx_validate_all_options($in) {
 							$opt_id = str_replace('_css', '', $key);	// kill _css
 							$opt_id = str_replace('', '', $opt_id);
 							$opt_id = str_replace('_', ' ', $opt_id);
-							$err_msg .= __('CSS options must be enclosed in {}\'s: ','weaver-xtreme' /*adm*/) . '"'. $opt_id . '" = "' . $value . '". '
-							. __('Please correct your entry.','weaver-xtreme' /*adm*/) . '<br />';
+							$err_msg .= __('CSS options must be enclosed in {}\'s: ', 'weaver-xtreme' /*adm*/) . '"'. $opt_id . '" = "' . $value . '". '
+							. __('Please correct your entry.', 'weaver-xtreme' /*adm*/) . '<br />';
 						}
 					}
 					break;
@@ -232,8 +231,8 @@ function weaverx_validate_all_options($in) {
 						$opt_id = str_replace('', '', $key);
 						$opt_id = str_replace('_dec', '', $opt_id);
 						$opt_id = str_replace('_', ' ', $opt_id);
-						$err_msg .= __('Option must be a numeric value: ','weaver-xtreme' /*adm*/) . '"'. $opt_id . '" = "' . $value . '". '
-							. __('Value has been cleared to blank value.','weaver-xtreme' /*adm*/) . '<br />';
+						$err_msg .= __('Option must be a numeric value: ', 'weaver-xtreme' /*adm*/) . '"'. $opt_id . '" = "' . $value . '". '
+							. __('Value has been cleared to blank value.', 'weaver-xtreme' /*adm*/) . '<br />';
 						$in[$key] = '';
 					}
 					break;
@@ -250,8 +249,8 @@ function weaverx_validate_all_options($in) {
 						$opt_id = str_replace('', '', $key);
 						$opt_id = str_replace('_int', '', $opt_id);
 						$opt_id = str_replace('_', ' ', $opt_id);
-						$err_msg .= __('Option must be a numeric value: ','weaver-xtreme' /*adm*/) . '"'. $opt_id . '" = "' . $value . '". '
-							. __('Value has been cleared to blank value.','weaver-xtreme' /*adm*/) . '<br />';
+						$err_msg .= __('Option must be a numeric value: ', 'weaver-xtreme' /*adm*/) . '"'. $opt_id . '" = "' . $value . '". '
+							. __('Value has been cleared to blank value.', 'weaver-xtreme' /*adm*/) . '<br />';
 						$in[$key] = '';
 					}
 					break;
@@ -274,9 +273,9 @@ function weaverx_validate_all_options($in) {
 								if ( $value == ' ') {
 									$in[$key] = '';
 								} else {
-									$err_msg .= __('Color must be a valid # hex value, rgb value, or color name (a-z): ','weaver-xtreme' /*adm*/) .
+									$err_msg .= __('Color must be a valid # hex value, rgb value, or color name (a-z): ', 'weaver-xtreme' /*adm*/) .
 									'"'. $key . '" = "' . bin2hex($value) . '". ' .
-									__('Value has been cleared to blank value.','weaver-xtreme' /*adm*/) . '<br />';
+									__('Value has been cleared to blank value.', 'weaver-xtreme' /*adm*/) . '<br />';
 								}
 								$in[$key] = '';
 							} else {
@@ -295,14 +294,14 @@ function weaverx_validate_all_options($in) {
 
 	if (false && $wvr_last != 'Weaver Xtreme') {
 		$err_msg .= __('Warning - your host may be configured to limit how many input var options you are allowed to pass via PHP.' .
-		' Unfortunately, this means your settings may not be saved correctly. See the "Weaver II Doesn\'t Save Settings" FAQ on weavertheme.com.<br />','weaver-xtreme' /*adm*/);
+		' Unfortunately, this means your settings may not be saved correctly. See the "Weaver II Doesn\'t Save Settings" FAQ on weavertheme.com.<br />', 'weaver-xtreme' /*adm*/);
 	}
 
 
 	if (!empty($err_msg)) {
 		add_settings_error('weaverx_settings', 'settings_error', $err_msg, 'error');
 	} else {
-		add_settings_error('weaverx_settings', 'settings_updated', __('Weaver Xtreme Settings Saved.','weaver-xtreme' /*adm*/), 'updated');
+		add_settings_error('weaverx_settings', 'settings_updated', __('Weaver Xtreme Settings Saved.', 'weaver-xtreme' /*adm*/), 'updated');
 	}
 
 	return $in;
@@ -314,9 +313,9 @@ function weaverx_end_of_section($who = '') {
 	echo '<hr />';
 	$name = weaverx_getopt('themename');
 	if ( ! $name )
-		$name = __('Please set theme name on the Advanced Options &rarr; Admin Options tab.','weaver-xtreme' /*adm*/);
+		$name = __('Please set theme name on the Advanced Options &rarr; Admin Options tab.', 'weaver-xtreme' /*adm*/);
 
-	printf(__("%s %s | Options Version: %s | Subtheme: %s\n",'weaver-xtreme' /*adm*/),WEAVERX_THEMENAME, WEAVERX_VERSION, weaverx_getopt('style_version'), $name);
+	printf(__("%s %s | Options Version: %s | Subtheme: %s\n", 'weaver-xtreme' /*adm*/),WEAVERX_THEMENAME, WEAVERX_VERSION, weaverx_getopt('style_version'), $name);
 
 	$last = weaverx_getopt('last_option');
 	if ($last != 'Weaver Xtreme') // check for case of limited PHP $_POST values
@@ -326,7 +325,7 @@ function weaverx_end_of_section($who = '') {
 <?php _e('Possible Non-Standard Web Host Configuration detected. If your options
 are not saving correctly, your host may have limited the default number of values that PHP can use for
 settings. Try saving your settings again, and if this message persists, please contact your host and ask them to "Increase the PHP <em>max_input_vars</em> value for $_POST to at least 600." If that does not fix the issue,
-please contact Weaver Xtreme support. Diagnostic info: last_option=','weaver-xtreme' /*adm*/); ?><?php echo $last;?>
+please contact Weaver Xtreme support. Diagnostic info: last_option=', 'weaver-xtreme' /*adm*/); ?><?php echo $last;?>
 </p>
 <?php
 	}
@@ -334,7 +333,7 @@ please contact Weaver Xtreme support. Diagnostic info: last_option=','weaver-xtr
 	if (false && !weaverx_getopt('_hide_subtheme_link')) {
 ?>
 	<p style="max-width:90%;"><?php weaverx_site('/subthemes/'); ?><img style="max-width:95%;float:left;margin-right:10px;" src="<?php echo weaverx_relative_url('/assets/images/'); ?>theme-bar.jpg" alt="addons" />
-	<?php _e('<strong>Discover more premium <br />Weaver Xtreme Subthemes</strong>','weaver-xtreme' /*adm*/); ?></a>
+	<?php _e('<strong>Discover more premium <br />Weaver Xtreme Subthemes</strong>', 'weaver-xtreme' /*adm*/); ?></a>
 	</p>
 <?php
 	}
@@ -343,7 +342,7 @@ please contact Weaver Xtreme support. Diagnostic info: last_option=','weaver-xtr
 function weaverx_donate_button() {
 
 	if (!weaverx_getopt_checked('_hide_donate') && !function_exists('weaverxplus_plugin_installed')) { ?>
-<div style="float:right;padding-right:30px;"><small><strong><?php _e('Like Weaver X? Consider','weaver-xtreme' /*adm*/); ?></strong></small>
+<div style="float:right;padding-right:30px;"><small><strong><?php _e('Like Weaver X? Consider', 'weaver-xtreme' /*adm*/); ?></strong></small>
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 <input type="hidden" name="cmd" value="_s-xclick">
 <input type="hidden" name="hosted_button_id" value="6Y68LG9G9M82W">
@@ -361,12 +360,12 @@ function weaverx_clear_messages() {
 <?php
 	if (!function_exists('weaverxplus_plugin_installed')) {
 		echo '<strong style="border:1px solid blue;background:yellow;padding:4px;margin:5px;">';
-		weaverx_site('','http://plus.weavertheme.com/',__('Weaver Xtreme Plus','weaver-xtreme' /*adm*/));
+		weaverx_site('','http://plus.weavertheme.com/',__('Weaver Xtreme Plus', 'weaver-xtreme' /*adm*/));
 		echo __('Get Weaver Xtreme Plus!','weaverx-xtreme' /*adm*/) . '</a> </strong>';
 	}
 	do_action('weaverx_check_licenses');
 ?>
-	<span class="submit"><input type="submit" name="weaverx_clear_messages" value="<?php _e('Clear Messages','weaver-xtreme' /*adm*/); ?>"/></span>
+	<span class="submit"><input type="submit" name="weaverx_clear_messages" value="<?php _e('Clear Messages', 'weaver-xtreme' /*adm*/); ?>"/></span>
 	<?php weaverx_nonce_field('weaverx_clear_messages'); ?>
 </form> <!-- resetweaverx_form -->
 <?php
@@ -591,7 +590,7 @@ function weaverx_fix_type($type) {
 
 function weaverx_form_inactive($value, $reason= '') {
 	if ( $reason == '' )
-		$reason = '<small>' . __('Weaver Xtreme Plus Options','weaver-xtreme' /*adm*/) . '&nbsp;</small>';
+		$reason = '<small>' . __('Weaver Xtreme Plus Options', 'weaver-xtreme' /*adm*/) . '&nbsp;</small>';
 	if (!isset($value['name']) || !isset($value['id']) || !isset($value['info'])) {     // probably an '=submit'
 		return;
 	}
@@ -604,7 +603,7 @@ function weaverx_form_inactive($value, $reason= '') {
 	<th scope="row" style="width:200px;"><?php      /* NO SAPI SETTING */
 	echo '<span style="color:#777;float:right;">'.$title.':&nbsp;</span>';
 	if (!empty($value['help'])) {
-		weaverx_help_link($value['help'], __('Help for ','weaver-xtreme' /*adm*/) . $title);
+		weaverx_help_link($value['help'], __('Help for ', 'weaver-xtreme' /*adm*/) . $title);
 	}
 ?>
 		</th>
@@ -658,7 +657,10 @@ function weaverx_form_ctext( $value, $val_only = false ) {
 	if ( ! $val_only ) { ?>
 	<tr>
 	<th scope="row" align="right"><?php weaverx_echo_name($value, $add_icon ); ?>:&nbsp;</th>
-	<td> <?php } else { echo '&nbsp;<small>' . $value['info'] . '</small>&nbsp;'; } ?>
+	<td> <?php
+	} else {
+		echo '&nbsp;<small>' . $value['info'] . '</small>&nbsp;';
+	} ?>
 	<input class="<?php echo $pclass; ?>" name="<?php weaverx_sapi_main_name($value['id']); ?>" id="<?php echo $value['id']; ?>" type="text" style="width:90px" value="<?php if ( weaverx_getopt( $value['id'] ) != "") { weaverx_esc_textarea(weaverx_getopt( $value['id'] )); } else { echo ''; } ?>" />
 <?php
 echo $img_css; ?><a href="javascript:void(null);" onclick="weaverx_ToggleRowCSS(document.getElementById('<?php echo $css_id . '_js'; ?>'), this, '<?php echo $img_show; ?>', '<?php echo $img_hide; ?>')"><?php echo '<img src="' . esc_url($img_toggle) . '" alt="toggle css" />'; ?></a>
@@ -673,31 +675,48 @@ echo $img_css; ?><a href="javascript:void(null);" onclick="weaverx_ToggleRowCSS(
 		$css_rows = 1;
 	if ($css_id_text && !weaverx_getopt( '_hide_auto_css_rules' )) { ?>
 	<tr id="<?php echo $css_id . '_js'; ?>">
-	<th scope="row" align="right"><span style="color:#22a;"><small><?php _e('Custom CSS styling:','weaver-xtreme' /*adm*/); ?></small></span></th>
+	<th scope="row" align="right"><span style="color:#22a;"><small><?php _e('Custom CSS styling:', 'weaver-xtreme' /*adm*/); ?></small></span></th>
 	<td align="right"><small>&nbsp;</small></td>
 	<td>
 		<small>
-<?php _e('You can enter CSS rules, enclosed in {}\'s, and separated by <strong>;</strong>. See ','weaver-xtreme' /*adm*/); ?>
-<a href="<?php echo $help_file; ?>" target="_blank"><?php _e('CSS Help','weaver-xtreme' /*adm*/); ?></a> <?php _e('for more details.','weaver-xtreme' /*adm*/); ?></small><br />
-	<textarea placeholder="{ font-size:150%; font-weight:bold; } /* for example */" name="<?php weaverx_sapi_main_name($css_id); ?>" rows=<?php echo $css_rows;?> style="width: 85%"><?php weaverx_esc_textarea($css_id_text); ?></textarea>
+<?php _e('You can enter CSS rules, enclosed in {}\'s, and separated by <strong>;</strong>. See ', 'weaver-xtreme' /*adm*/); ?>
+<a href="<?php echo $help_file; ?>" target="_blank"><?php _e('CSS Help', 'weaver-xtreme' /*adm*/); ?></a> <?php _e('for more details.', 'weaver-xtreme' /*adm*/); ?></small><br />
+	<?php weaverx_textarea( $css_id_text, $css_id, $css_rows,'{ font-size:150%; font-weight:bold; } /* for example */' ); ?>
 	</td>
 	</tr>
 <?php
 	} else {
 ?>
 	<tr id="<?php echo $css_id . '_js'; ?>" style="display:none;">
-	<th scope="row" align="right"><span style="color:green;"><small><?php _e('Custom CSS styling:','weaver-xtreme' /*adm*/); ?></small></span></th>
+	<th scope="row" align="right"><span style="color:green;"><small><?php _e('Custom CSS styling:', 'weaver-xtreme' /*adm*/); ?></small></span></th>
 	<td align="right"><small>&nbsp;</small></td>
 	<td>
 		<small>
-<?php _e('You can enter CSS rules, enclosed in {}\'s, and separated by <strong>;</strong>. See','weaver-xtreme' /*adm*/); ?>
-<a href="<?php echo $help_file; ?>" target="_blank"><?php _e('CSS Help','weaver-xtreme' /*adm*/); ?></a> for more details.</small><br />
-		<textarea placeholder="{ font-size:150%; font-weight:bold; } /* for example */" name="<?php weaverx_sapi_main_name($css_id); ?>" rows=<?php echo $css_rows;?> style="width: 85%"><?php weaverx_esc_textarea($css_id_text); ?></textarea>
+<?php _e('You can enter CSS rules, enclosed in {}\'s, and separated by <strong>;</strong>. See', 'weaver-xtreme' /*adm*/); ?>
+<a href="<?php echo $help_file; ?>" target="_blank"><?php _e('CSS Help', 'weaver-xtreme' /*adm*/); ?></a> for more details.</small><br />
+		<?php weaverx_textarea( $css_id_text, $css_id, $css_rows,'{ font-size:150%; font-weight:bold; } /* for example */' ); ?>
 	</td>
 	</tr>
 <?php
 	}
 }
+
+function weaverx_textarea($text, $id, $rows = 0, $place = '', $style = 'width:85%;', $class='wvrx-edit', $filter = true) {
+	$name = weaverx_sapi_main_name($id, false);
+	/* if ($text) {
+		$newrows = count((explode("\n",$text)))+1;
+		if ($newrows > $rows)
+			$rows = $newrows;
+	} else { */
+	if ( $rows < 2 ) {
+		$rows = 1;
+	}
+	if ($rows > 25) $rows = 25;
+	if ( $filter )
+		$text = weaverx_esc_textarea($text, false);	// don't echo
+	echo "<textarea class='{$class}' placeholder='{$place}' name='{$name}' rows='$rows' style='{$style}'>{$text}</textarea>\n";
+}
+
 
 function weaverx_form_color($value, $val_only = false) {
 

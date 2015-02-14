@@ -1673,7 +1673,7 @@ if ( ! class_exists( 'WP_Upgrader' ) && ( isset( $_GET[sanitize_key( 'page' )] )
 							'clear_destination' => false, // Do we want to clear the destination or not?
 							'clear_working'     => true, // Remove original install file
 							'is_multi'          => true, // Are we processing multiple installs?
-							'hook_extra'        => array( 'plugin' => $plugin, ), // Pass plugin source as extra data
+							'hook_extra'        => array( 'plugin' => $plugin ), // Pass plugin source as extra data
 						)
 					);
 

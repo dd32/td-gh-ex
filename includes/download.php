@@ -28,12 +28,12 @@ function weaverx_filter_strip_default( $var ) {
 		$nonce = '';
 	if (! wp_verify_nonce($nonce, 'weaverx_download')) {
 		@header('Content-Type: ' . get_option('html_type') . '; charset=' . get_option('blog_charset'));
-		wp_die(__('Sorry - download must be initiated from admin panel.','weaver-xtreme' /*adm*/));
+		wp_die(__('Sorry - download must be initiated from admin panel.', 'weaver-xtreme' /*adm*/));
 	}
 
 	if (headers_sent()) {
 		@header('Content-Type: ' . get_option('html_type') . '; charset=' . get_option('blog_charset'));
-		wp_die(__('Headers Sent: The headers have been sent by another plugin - there may be a plugin conflict.','weaver-xtreme' /*adm*/));
+		wp_die(__('Headers Sent: The headers have been sent by another plugin - there may be a plugin conflict.', 'weaver-xtreme' /*adm*/));
 	}
 
 	$weaverx_opts = get_option( apply_filters('weaverx_options','weaverx_settings') ,array());

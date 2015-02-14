@@ -61,7 +61,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 		<?php
 		if (! weaverx_getopt('_hide_poweredby')) { ?>
 			<span id="site-generator">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/','weaver-xtreme') ); ?>" title="wordpress.org" target="_blank"><?php printf( __( 'Proudly powered by %s','weaver-xtreme'), 'WordPress' ); ?></a> -
+			<a href="<?php echo esc_url( __( '//wordpress.org/','weaver-xtreme') ); ?>" title="wordpress.org" target="_blank"><?php printf( __( 'Proudly powered by %s','weaver-xtreme'), 'WordPress' ); ?></a> -
 			<?php echo(WEAVERX_THEMENAME); ?> by <?php weaverx_site('/weaver-x/'); ?>WeaverTheme</a>
 		</span> <!-- #site-generator -->
 		<?php

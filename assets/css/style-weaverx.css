@@ -289,11 +289,6 @@ body {                      /* body has global settings for others to inherit */
 	overflow:           hidden;
 }
 
-#page-top,
-#page-bottom {
-	display:            none;
-}
-
 /* Assistive text */
 .assistive-text {
 	position:           absolute    !important;
@@ -312,6 +307,11 @@ body {                      /* body has global settings for others to inherit */
 
 /* =Borders, Rounded Corners ======================================================================================= */
 
+#header {           /* helps most of the time if the #wrapper set to rounded corners */
+	border-top-left-radius:     inherit;
+	border-top-right-radius:    inherit;
+}
+
 .border {
 	border:             1px solid #222;
 }
@@ -323,9 +323,9 @@ body {                      /* body has global settings for others to inherit */
 .rounded,
 .rounded-all,
 .rounded-custom {
-	-moz-border-radius:     8px;
-	-webkit-border-radius:  8px;
-	border-radius:          8px;
+	-moz-border-radius:     8px !important;
+	-webkit-border-radius:  8px !important;
+	border-radius:          8px !important;
 }
 
 .rounded-top {
@@ -352,10 +352,7 @@ body {                      /* body has global settings for others to inherit */
 	border-top-right-radius:            8px; border-bottom-right-radius: 8px;
 }
 
-#header {           /* helps most of the time if the #wrapper set to rounded corners */
-	border-top-left-radius:     inherit;
-	border-top-right-radius:    inherit;
-}
+
 /* -- /Borders, Rounded Corners */
 
 /* =HTML Elements ======================================================================================= */
@@ -1052,6 +1049,7 @@ a {
 .colophon .menu-horizontal li a {
 	text-decoration:    none;
 	font-style:         normal;
+	font-weight:		normal;
 }
 
 .menu-vertical {
@@ -1100,6 +1098,7 @@ ul.wvrx-menu {
 	margin-left:        1.0em;
 }
 
+
 ul.wvrx-center-menu {
 	margin-left:        0;
 }
@@ -1120,8 +1119,9 @@ ul.wvrx-center-menu {
 .wvrx-menu a {
   text-decoration:      none;
   position:             relative;
-  padding:              0.6em 0.75em;       /* The 0.6em interacts with 0.35em on arrow rules */
+  padding:              0.6em .75em;       /* The 0.6em interacts with 0.35em on arrow rules */
 }
+
 
 .wvrx-menu ul li {
   display:              block;
@@ -1840,6 +1840,18 @@ ol.trackbacklist {
 #page-bottom {
 	display:        none;
 } /* top/bottom page links */
+
+#wvrx-page-width {		/* stub for full-width class script alignment-adjust */
+	width:100%;
+	display:block;
+	position:absolute;
+}
+.wvrx-fullwidth {		/* used to support .wvrx-fullwidth class script */
+	box-sizing:content-box !important;
+	-moz-box-sizing:content-box !important;
+	-webkit-box-sizing:content-box !important;
+	overflow:visible !important;
+}
 
 .shadow-0 {
 }
@@ -2627,11 +2639,6 @@ a.more-link {
 	position:           relative;
 }
 
-.hentry:last-child,
-.no-results {
-	border-bottom:      none;
-}
-
 
 .entry-content,
 .entry-summary {
@@ -3340,11 +3347,17 @@ dl.gallery-item {
  */
 
 .font-bold {
-	font-weight:            bold;
+	font-weight:			bold;
+}
+.font-bold a {
+	font-weight:			bold !important;
 }
 
 .font-weight-normal {
 	font-weight:            normal;
+}
+.font-weight-normal a {
+	font-weight:            normal !important;
 }
 
 .font-italic {

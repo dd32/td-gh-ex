@@ -21,9 +21,11 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
 	weaverx_container_div( 'pwp' );       // #container
 
+	ob_start();			// generate the stuff that comes AFTER the infobar for pwp since we can't generate page nav until later
+
 	$sb_layout = weaverx_sb_layout( 'blog' );
 
-	get_template_part('templates/infobar');	// put the info bar
+	// ********* get_template_part('templates/infobar');	// put the info bar
 
 	weaverx_sidebar_before( $sb_layout, 'blog' );          // sidebars if top-stacking
 	do_action('weaverx_per_page');
@@ -52,8 +54,10 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 			weaverx_edit_link();
 		}
 	}
-
+	//weaverx_edit_link();
 	echo "\n<!-- PwP: End Page content -->\n";
+
+	$top_of_pwp = ob_get_clean();			// now get the top sidebar, etc.
 
 
 	// Now, the posts
@@ -83,6 +87,10 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 		$args = weaverx_setup_post_args($args);	// setup custom fields for this page
 		$wp_query = new WP_Query(apply_filters('weaverx_pwp_wp_query',$args));		// reuse $wp_query to make paging work
 	}
+
+	// now have to put the sidebar
+	get_template_part('templates/infobar');	// put the info bar now that the posts info is available
+	echo $top_of_pwp;
 
 
 	if ( have_posts() ) {				// same loop as index.php

@@ -37,7 +37,10 @@ if (weaverx_getopt( 'm_primary_hide') != 'hide' && !weaverx_is_checked_page_opt(
 		$right = str_replace('%','%%',$right);	// wp_nav_menu uses sprintf!
 	} // not needed... else {$right = '<span class="wvrx-menu-clear"></span>'; }
 
-	echo "\n\n<div id=\"nav-primary\" class=\"menu-primary\">\n";
+	if ( weaverx_getopt ('m_primary_move') )
+		echo "\n\n<div id=\"nav-primary\" class=\"menu-primary menu-primary-moved\">\n";
+	else
+		echo "\n\n<div id=\"nav-primary\" class=\"menu-primary menu-primary-standard\">\n";
 	wp_nav_menu( array(
 		'fallback_cb'     => 'weaverx_page_menu',
 		'theme_location'  => $loc,
