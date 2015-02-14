@@ -10,7 +10,7 @@
 
 <?php /* Embeds HTML5shiv to support HTML5 elements in older IE versions plus CSS Backgrounds */ ?>
 <!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.min.js" type="text/javascript"></script>
 <![endif]-->
 <?php wp_head(); ?>
 </head>
@@ -57,14 +57,12 @@
 
 			<div id="logo">
 			
-				<a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-					<h1 class="site-title"><?php bloginfo('name'); ?></h1>
-				</a>
+				<?php do_action('rubine_site_title'); ?>
 				
-			<?php // Display Tagline on header if activated
-			if ( isset($theme_options['header_tagline']) and $theme_options['header_tagline'] == true ) : ?>			
-				<h2 class="site-description"><?php echo bloginfo('description'); ?></h2>
-			<?php endif; ?>
+				<?php // Display Tagline on header if activated
+				if ( isset($theme_options['header_tagline']) and $theme_options['header_tagline'] == true ) : ?>			
+					<h2 class="site-description"><?php echo bloginfo('description'); ?></h2>
+				<?php endif; ?>
 			
 			</div>
 			

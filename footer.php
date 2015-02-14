@@ -5,6 +5,8 @@
 
 	<div id="footer-bg">
 	
+		<?php do_action('rubine_before_footer'); ?>
+		
 		<div id="footer-wrap">
 		
 			<footer id="footer" class="container clearfix" role="contentinfo">
@@ -18,7 +20,9 @@
 
 				<?php endif; ?>
 				
-				<div id="credit-link"><?php rubine_credit_link(); ?></div>
+				<div id="footer-text">
+					<?php do_action('rubine_footer_text'); ?>
+				</div>
 				
 			</footer>
 			

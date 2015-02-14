@@ -2,6 +2,12 @@
 Rubine Lite Changelog
 ===================================
 
+Version 1.0.7
+-----------------------------------
+[added] unminified version of html5shiv.min.js
+[added] action hooks for footer text and site title
+[moved] credit link function to /inc/template-tags.php
+
 Version 1.0.6
 -----------------------------------
 [improved] styling of blockquotes

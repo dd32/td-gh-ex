@@ -163,17 +163,6 @@ function rubine_has_featured_content() {
 }
 
 
-// Display Credit Link Function
-function rubine_credit_link() {
-	
-	printf(__( 'Powered by %1$s and %2$s.', 'rubine-lite' ), 
-			sprintf( '<a href="http://wordpress.org" title="WordPress">%s</a>', __( 'WordPress', 'rubine-lite' ) ),
-			sprintf( '<a href="http://themezee.com/themes/rubine/" title="Rubine WordPress Theme">%s</a>', __( 'Rubine Theme', 'rubine-lite' ) )
-		);
-
-}
-
-
 // Change Excerpt Length
 add_filter('excerpt_length', 'rubine_excerpt_length');
 function rubine_excerpt_length($length) {

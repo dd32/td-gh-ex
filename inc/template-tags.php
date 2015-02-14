@@ -8,6 +8,19 @@
  */
 	
 
+// Display Site Title
+add_action( 'rubine_site_title', 'rubine_display_site_title' );
+
+function rubine_display_site_title() { ?>
+
+	<a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+		<h1 class="site-title"><?php bloginfo('name'); ?></h1>
+	</a>
+
+<?php
+}
+
+
 // Display Custom Header
 if ( ! function_exists( 'rubine_display_custom_header' ) ):
 	
@@ -149,6 +162,22 @@ if ( ! function_exists( 'rubine_display_pagination' ) ):
 	}
 	
 endif;
+
+
+// Display Footer Text
+add_action( 'rubine_footer_text', 'rubine_display_footer_text' );
+
+function rubine_display_footer_text() { ?>
+
+	<div id="credit-link">
+		<?php printf(__( 'Powered by %1$s and %2$s.', 'rubine-lite' ), 
+			sprintf( '<a href="http://wordpress.org" title="WordPress">%s</a>', __( 'WordPress', 'rubine-lite' ) ),
+			sprintf( '<a href="http://themezee.com/themes/rubine/" title="Rubine WordPress Theme">%s</a>', __( 'Rubine', 'rubine-lite' ) )
+		); ?>
+	</div>
+
+<?php
+}
 
 
 // Display Social Icons
