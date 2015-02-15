@@ -22,7 +22,7 @@ add_filter( 'admin_body_class', 'suevafree_admin_body_class' );
 
 function suevafree_setup() {
 
-	add_theme_support( 'post-formats', array( 'aside','gallery','quote','video','audio','link' ) );
+	add_theme_support( 'post-formats', array( 'aside','gallery','quote','video','audio','link','status','chat','image' ) );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
 	

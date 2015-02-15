@@ -1,5 +1,10 @@
 SuevaFree Changelog
 
+
+- Version 1.2.7.1 - Released: 15.02.2015
+
+-- Added : New post formats (image, chat and status post format).
+
 - Version 1.2.6.9 - Released: 26.09.2014
 
 -- Added : New default skin.
