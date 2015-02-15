@@ -786,6 +786,13 @@ if ( ! function_exists( 'alx_plugins' ) ) {
 					'force_deactivation'=> false,
 				),
 				array(
+					'name' 				=> 'Responsive Lightbox',
+					'slug' 				=> 'responsive-lightbox',
+					'required'			=> false,
+					'force_activation' 	=> false,
+					'force_deactivation'=> false,
+				),
+				array(
 					'name' 				=> 'Contact Form 7',
 					'slug' 				=> 'contact-form-7',
 					'required'			=> false,
