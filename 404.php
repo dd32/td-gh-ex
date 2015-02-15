@@ -1,29 +1,32 @@
 <?php
 /**
- * The template for displaying 404 pages (not found)
+ * The template for displaying 404 pages (Not Found).
  *
- * @package fmi
  */
+?>
+<?php get_header(); ?>
 
-get_header(); ?>
+<div id="content"><div class="inner">
+<div id="cont">
+	<div id="main">
+        <div id="post-0" class="post not-found">
+            <div class="entry-title"><span><?php echo esc_attr(fmi_theme_option('vs-website-error-head'));?></span></div>
+            <div class="entry-meta"></div>
+            <div class="entry-content"><div class="mscont">
+                <p><?php echo esc_attr(fmi_theme_option('vs-website-error-msg'));?></p>
+                
+                <div class="not-found-options">
+                    <a href="<?php echo esc_url(home_url('/'));?>" class="alba-button">[<?php echo __('Return Home','fmi');?>]</a>
+                </div>
+                
+            </div></div>
+        </div>	
+	</div>
+    
+	<?php get_sidebar();?>
 
-<div id="content" class="site-content">
-  <div class="container">
-    <div class="site-content-area">
-      <div id="primary" class="content-area">
-        <main id="main" class="site-main">
+	<div class="clear"></div>
+</div>		
+</div></div>
 
-          <section class="error-404 not-found">
-            <header class="page-header">
-              <h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'fmi' ); ?></h1>
-            </header><!-- .page-header -->                
-          </section><!-- .error-404 -->
-
-        </main><!-- #main -->
-      </div><!-- #primary -->
-    </div>
-  </div>
-</div><!-- #content -->
-
-<?php
-get_footer();
+<?php get_footer(); ?>
