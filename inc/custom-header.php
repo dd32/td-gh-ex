@@ -49,21 +49,11 @@ if ( ! function_exists( 'moesia_header_style' ) ) :
 			<style type="text/css">
 				@media only screen and (min-width: 1025px) {	
 					.has-banner:after {
-					    content : "";
-					    display: block;
-					    position: absolute;
-					    top: 0;
-					    left: 0;
 					    <?php if ( is_page() && $himage != '' ) : ?>
-					    	background: url(<?php echo esc_url($himage); ?>) no-repeat;
+					    	background-image: url(<?php echo esc_url($himage); ?>);
 					    <?php else : ?>
-					    	background: url(<?php echo get_header_image(); ?>) no-repeat;
+					    	background-image: url(<?php echo get_header_image(); ?>);
 					    <?php endif; ?>
-					    background-position: center top;
-					    background-attachment: fixed;
-					    background-size: cover;
-					    width: 100%;
-					    height: 100%;
 					}
 				}		
 			</style>

@@ -269,7 +269,7 @@ function moesia_custom_styles($custom) {
     $header_title_color = esc_html(get_theme_mod( 'header_title_color' ));
     $header_desc_color = esc_html(get_theme_mod( 'header_desc_color' ));
     $header_btn_bg = esc_html(get_theme_mod( 'header_btn_bg' ));
-    $header_btn_bs = esc_html(get_theme_mod( 'header_btn_bs' ));
+    $header_btn_bs = esc_html(get_theme_mod( 'header_btn_bs', '#C2503D' ));
     if ( isset($header_title_color) && ( $header_title_color != '#ffffff' ) ) {
         $custom .= ".welcome-title { color: {$header_title_color}; }"."\n";
     }
@@ -434,6 +434,21 @@ function moesia_custom_styles($custom) {
         $custom .= ".page-id-" . $post->ID . " { background-image: url('" . esc_url($background_img) . "') !important; background-attachment: fixed !important; background-repeat: no-repeat !important; background-size: cover;}"."\n";
     }    
 
+    //Header background size
+    if (get_theme_mod('header_bg_size', 'cover') == 'contain') {
+    	$custom .= ".has-banner::after { background-size: contain; }"."\n";
+    }
+    //Header max height
+    $header_max_height_1025 = get_theme_mod('header_max_height_1025', '1080');
+    $custom .= "@media only screen and (min-width: 1025px) { .has-banner,.has-banner::after { max-height:" . intval($header_max_height_1025) . "px; } }"."\n";    
+    $header_max_height_1199 = get_theme_mod('header_max_height_1199', '1080');
+    $custom .= "@media only screen and (min-width: 1199px) { .has-banner,.has-banner::after { max-height:" . intval($header_max_height_1199) . "px; } }"."\n";
+    //Welcome info offset
+    $wi_offset_991 = get_theme_mod('welcome_info_offset_991', '100');
+    $custom .= "@media only screen and (min-width: 991px) { .welcome-info { top:" . intval($wi_offset_991) . "px; } }"."\n";
+    $wi_offset_1199 = get_theme_mod('welcome_info_offset_1199', '100');
+    $custom .= "@media only screen and (min-width: 1199px) { .welcome-info { top:" . intval($wi_offset_1199) . "px; } }"."\n";
+    
 	//Output all the styles
 	wp_add_inline_style( 'moesia-style', $custom );	
 }

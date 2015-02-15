@@ -2562,6 +2562,28 @@ function moesia_customize_register( $wp_customize ) {
         'priority' => 10
         ) )
     );
+    //___Extensions___//
+    $wp_customize->add_section(
+        'moesia_extensions',
+        array(
+            'title' => __('Extensions', 'moesia'),
+            'priority' => 99,
+            'description' => __('A growing collection of free extensions for Moesia is available ', 'moesia') . '<a href="http://athemes.com/moesia-extensions">here</a>',
+        )
+    );  
+    //Extensions
+    $wp_customize->add_setting('moesia_options[info]', array(
+            'sanitize_callback' => 'moesia_no_sanitize',
+            'type' => 'info_control',
+            'capability' => 'edit_theme_options',
+        )
+    );
+    $wp_customize->add_control( new Moesia_Info( $wp_customize, 'extensions', array(
+        'section' => 'moesia_extensions',
+        'settings' => 'moesia_options[info]',
+        'priority' => 10
+        ) )
+    );    
     //___Mobile header image___//
     $wp_customize->add_setting(
         'mobile_header',
@@ -2583,7 +2605,112 @@ function moesia_customize_register( $wp_customize ) {
                'priority'       => 10,
             )
         )
-    );          
+    );
+    //Background-size
+    $wp_customize->add_setting(
+        'header_bg_size',
+        array(
+            'default' => 'cover',
+            'sanitize_callback' => 'moesia_sanitize_bg_size',
+        )
+    );
+    $wp_customize->add_control(
+        'header_bg_size',
+        array(
+            'type' => 'radio',
+            'priority'    => 10,
+            'label' => __('Header background size', 'moesia'),
+            'section' => 'header_image',
+            'choices' => array(
+                'cover'     => __('Cover', 'moesia'),
+                'contain'   => __('Contain', 'moesia'),
+            ),
+        )
+    );
+    //Header max height 1199
+    $wp_customize->add_setting(
+        'header_max_height_1199',
+        array(
+            'sanitize_callback' => 'absint',
+            'default'           => '1080',
+        )       
+    );
+    $wp_customize->add_control( 'header_max_height_1199', array(
+        'type'        => 'number',
+        'priority'    => 11,
+        'section'     => 'header_image',
+        'label'       => __('Header max height > 1199px', 'moesia'),
+        'description' => __('Max height for the header at screen widths above 1199px', 'moesia'),
+        'input_attrs' => array(
+            'min'   => 200,
+            'max'   => 1080,
+            'step'  => 5,
+            'style' => 'margin-bottom: 15px; padding: 15px;',
+        ),
+    ) );
+    //Header max height 1025
+    $wp_customize->add_setting(
+        'header_max_height_1025',
+        array(
+            'sanitize_callback' => 'absint',
+            'default'           => '1080',
+        )       
+    );
+    $wp_customize->add_control( 'header_max_height_1025', array(
+        'type'        => 'number',
+        'priority'    => 12,
+        'section'     => 'header_image',
+        'label'       => __('Header max height > 1024px', 'moesia'),
+        'description' => __('Max height for the header at screen widths above 1024px', 'moesia'),
+        'input_attrs' => array(
+            'min'   => 200,
+            'max'   => 1080,
+            'step'  => 5,
+            'style' => 'margin-bottom: 15px; padding: 15px;',
+        ),
+    ) );
+    //Welcome info top offset 1199
+    $wp_customize->add_setting(
+        'welcome_info_offset_1199',
+        array(
+            'sanitize_callback' => 'absint',
+            'default'           => '100',
+        )       
+    );
+    $wp_customize->add_control( 'welcome_info_offset_1199', array(
+        'type'        => 'number',
+        'priority'    => 13,
+        'section'     => 'header_image',
+        'label'       => __('Welcome info offset top > 1199px', 'moesia'),
+        'description' => __('Offset at screen widths above 1199px', 'moesia'),        
+        'input_attrs' => array(
+            'min'   => 0,
+            'max'   => 300,
+            'step'  => 5,
+            'style' => 'margin-bottom: 15px; padding: 15px;',
+        ),
+    ) );
+    //Welcome info top offset 991
+    $wp_customize->add_setting(
+        'welcome_info_offset_991',
+        array(
+            'sanitize_callback' => 'absint',
+            'default'           => '100',
+        )       
+    );
+    $wp_customize->add_control( 'welcome_info_offset_991', array(
+        'type'        => 'number',
+        'priority'    => 13,
+        'section'     => 'header_image',
+        'label'       => __('Welcome info offset top > 991px', 'moesia'),
+        'description' => __('Offset at screen widths above 991px', 'moesia'),        
+        'input_attrs' => array(
+            'min'   => 0,
+            'max'   => 300,
+            'step'  => 5,
+            'style' => 'margin-bottom: 15px; padding: 15px;',
+        ),
+    ) );           
 }
 add_action( 'customize_register', 'moesia_customize_register' );
 
@@ -2648,6 +2775,18 @@ function moesia_sanitize_layout( $input ) {
         'fullwidth'    => 'Full width (no sidebar)',
     );
  
+    if ( array_key_exists( $input, $valid ) ) {
+        return $input;
+    } else {
+        return '';
+    }
+}
+//Background size
+function moesia_sanitize_bg_size( $input ) {
+    $valid = array(
+        'cover'     => __('Cover', 'moesia'),
+        'contain'   => __('Contain', 'moesia'),
+    );
     if ( array_key_exists( $input, $valid ) ) {
         return $input;
     } else {

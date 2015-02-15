@@ -127,16 +127,19 @@ class Moesia_Services extends WP_Widget {
 					<?php $link = get_post_meta( get_the_ID(), 'wpcf-service-link', true ); ?>
 					<div class="service col-md-4 col-sm-6 col-xs-6">
 						<?php if ($icon) : ?>
-							<span class="service-icon wow zoomInDown"><?php echo '<i class="fa ' . esc_html($icon) . '"></i>'; ?></span>
+							<?php $icon_html = '<span class="service-icon wow zoomInDown">' . '<i class="fa ' . esc_html($icon) . '"></i>' . '</span>'; ?>
+							<?php echo apply_filters( 'services_widget_icon', $icon_html ); ?>
 						<?php endif; ?>
-						<h4 class="service-title wow fadeInUp">
-							<?php if ($link) : ?>
-								<a href="<?php echo esc_url($link); ?>"><?php the_title(); ?></a>
-							<?php else : ?>
-								<?php the_title(); ?>
-							<?php endif; ?>
-						</h4>
-						<div class="service-desc wow fadeInUp"><?php the_content(); ?></div>
+						<?php $content_html = '<h4 class="service-title wow fadeInUp">';
+							if ($link) :
+								$content_html .= '<a href="' . esc_url($link) . '">' . get_the_title() . '</a>';
+							 else :
+								$content_html .= get_the_title();
+							endif;
+						$content_html .= '</h4>';
+						$content_html .= '<div class="service-desc wow fadeInUp">' . get_the_content() . '</div>';
+						echo apply_filters( 'services_widget_content', $content_html );
+						?>
 					</div>
 				<?php endwhile; ?>
 			</div>

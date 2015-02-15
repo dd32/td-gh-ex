@@ -1,5 +1,12 @@
 Changelog
 
+15 Feb 2015 - 1.24
+--------------------------------------
+- new options added in the Customizer;
+- added pt_PT language files;
+- small changes in custom-header.php, fp-services.php, styles.php
+
+
 6 Feb 2015 - 1.23
 --------------------------------------
 - updated Fontawesome to the latest version;

@@ -133,7 +133,12 @@ class Moesia_Latest_News extends WP_Widget {
 						</div>
 					<?php endwhile; ?>
 				</div>
-				<a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>" class="all-news"><?php echo $see_all_text; ?></a>
+				<?php $cat = get_term_by('slug', $category, 'category') ?>
+				<?php if ($category) : //Link to the category page instead of blog page if a category is selected ?>
+					<a href="<?php echo esc_url(get_category_link(get_cat_ID($cat -> name))); ?>" class="all-news"><?php echo $see_all_text; ?></a>
+				<?php else : ?>
+					<a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>" class="all-news"><?php echo $see_all_text; ?></a>
+				<?php endif; ?>
 			</div>
 		<?php if ($image_uri != '') : ?>
 			<style type="text/css">
