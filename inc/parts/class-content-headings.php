@@ -36,7 +36,8 @@ if ( ! class_exists( 'TC_headings' ) ) :
       */
       function tc_set_archives_heading_hooks() {
         //is there anything to render in the current context
-        if ( ! $this -> tc_archive_title_and_class_callback() )
+        //by default don't display the Customizr title in feeds
+        if ( apply_filters('tc_display_customizr_headings',  ! $this -> tc_archive_title_and_class_callback() || is_feed() ) )
           return;
 
         //Headings for archives, authors, search, 404
@@ -63,8 +64,8 @@ if ( ! class_exists( 'TC_headings' ) ) :
       */
       function tc_set_post_page_heading_hooks() {
 
-        //by default don't display the title of the front page
-        if( apply_filters('tc_hide_front_page_title', is_front_page() && 'page' == get_option( 'show_on_front' ) ) )
+        //by default don't display the Customizr title of the front page and in feeds
+        if ( apply_filters('tc_display_customizr_headings', ( is_front_page() && 'page' == get_option( 'show_on_front' ) ) ) || is_feed() )
           return;
 
         //Set single post/page icon with customizer options (since 3.2.0)
@@ -74,11 +75,11 @@ if ( ! class_exists( 'TC_headings' ) ) :
         //Populate heading with default content
         add_filter ( 'tc_headings_content_html'       , array( $this , 'tc_post_page_title_callback'), 10, 2 );
         //Create the Customizr title
-        add_filter( 'the_title'                       , array( $this , 'tc_content_heading_title' ) , 0 );
+        add_filter( 'tc_the_title'                    , array( $this , 'tc_content_heading_title' ) , 0 );
         //Add comment bubble
-        add_filter( 'the_title'                       , array( $this , 'tc_add_comment_bubble_after_title' ), 1 );
+        add_filter( 'tc_the_title'                    , array( $this , 'tc_add_comment_bubble_after_title' ), 1 );
         //Add edit link
-        add_filter( 'the_title'                       , array( $this , 'tc_add_edit_link_after_title' ), 2 );
+        add_filter( 'tc_the_title'                    , array( $this , 'tc_add_edit_link_after_title' ), 2 );
 
         //SOME DEFAULT OPTIONS
         //No hr if not singular
@@ -146,14 +147,14 @@ if ( ! class_exists( 'TC_headings' ) ) :
         return sprintf('<%1$s class="entry-title %2$s">%3$s</%1$s>',
               apply_filters( 'tc_content_title_tag' , is_singular() ? 'h1' : 'h2' ),
               apply_filters( 'tc_content_title_icon', 'format-icon' ),
-              get_the_title()
+              apply_filters( 'tc_the_title', get_the_title() )
         );
       }
 
 
 
       /**
-      * Callback for get_the_title
+      * Callback for tc_the_title
       * @return  string
       *
       * @package Customizr
@@ -179,7 +180,7 @@ if ( ! class_exists( 'TC_headings' ) ) :
 
 
       /**
-      * Callback for get_the_title
+      * Callback for tc_the_title
       * @return  string
       *
       * @package Customizr
@@ -223,7 +224,7 @@ if ( ! class_exists( 'TC_headings' ) ) :
 
 
       /**
-      * Callback for get_the_title
+      * Callback for tc_the_title
       * @return  string
       *
       * @package Customizr
@@ -427,6 +428,10 @@ if ( ! class_exists( 'TC_headings' ) ) :
       * @since Customizr 3.2.6
       */
       function tc_set_headings_options() {
+        //by default don't display the Customizr title in feeds
+        if ( apply_filters('tc_display_customizr_headings',  is_feed() ) )
+          return;
+
         //Custom Bubble comment since 3.2.6
         add_filter( 'tc_bubble_comment'             , array( $this , 'tc_custom_bubble_comment') );
         //Add comment bubble color type class to the headings <header> wrapper element
@@ -434,7 +439,7 @@ if ( ! class_exists( 'TC_headings' ) ) :
         //Set user defined various inline stylings
         add_filter( 'tc_user_options_style'         , array( $this , 'tc_write_headings_inline_css' ) );
         //Add update status next to the title (@since 3.2.6)
-        add_filter( 'the_title'                      , array( $this , 'tc_add_update_notice_in_title'), 20);
+        add_filter( 'tc_the_title'                  , array( $this , 'tc_add_update_notice_in_title'), 20);
       }
 
 
@@ -553,7 +558,7 @@ if ( ! class_exists( 'TC_headings' ) ) :
 
 
       /**
-      * Callback of the the_title => add an updated status
+      * Callback of the tc_the_title => add an updated status
       * User option based
       *
       * @package Customizr
@@ -573,31 +578,15 @@ if ( ! class_exists( 'TC_headings' ) ) :
           if ( version_compare( PHP_VERSION, '5.2.0' ) < 0 )
             return $html;
 
-          //Instantiates the different date objects
-          $created = new DateTime( get_the_date('Y-m-d g:i:s') );
-          $updated = new DateTime( get_the_modified_date('Y-m-d g:i:s') );
-          $current = new DateTime( date('Y-m-d g:i:s') );
-
-
-          //Creates the date_diff objects from dates
-          $created_to_updated = TC_utils::$instance -> tc_date_diff( $created , $updated );
-          $updated_to_today   = TC_utils::$instance -> tc_date_diff( $updated, $current );
-
-          //Check if the post has been updated since its creation
-          $has_been_updated = ( $created_to_updated -> s > 0 || $created_to_updated -> i > 0 ) ? true : false;
-
           //get the user defined interval in days
           $_interval = esc_attr( tc__f( '__get_option' , 'tc_post_metas_update_notice_interval' ) );
           $_interval = ( 0 != $_interval ) ? $_interval : 30;
 
           //Check if the last update is less than n days old. (replace n by your own value)
-          $has_recent_update = ( $has_been_updated && $updated_to_today -> days < $_interval ) ? true : false;
+          $has_recent_update = ( TC_utils::$instance -> tc_post_has_update( true ) && TC_utils::$instance -> tc_post_has_update( 'in_days') < $_interval ) ? true : false;
 
           if ( ! $has_recent_update )
               return $html;
-
-           //Add HTML after the title
-          $recent_update = $has_recent_update ? 'Recently updated' : '';
 
           //Return the modified title
           return apply_filters(

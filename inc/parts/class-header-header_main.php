@@ -67,7 +67,9 @@ if ( ! class_exists( 'TC_header_main' ) ) :
 				<head>
 				    <meta charset="<?php bloginfo( 'charset' ); ?>" />
 				    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
-				    <title><?php wp_title( '|' , true, 'right' ); ?></title>
+            <?php if ( ! function_exists( '_wp_render_title_tag' ) ) :?>
+				      <title><?php wp_title( '|' , true, 'right' ); ?></title>
+            <?php endif; ?>
 				    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 				    <link rel="profile" href="http://gmpg.org/xfn/11" />
 				    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -166,8 +168,8 @@ if ( ! class_exists( 'TC_header_main' ) ) :
               $_attachement_id 	= $_logo_option;
               $_attachment_data 	= apply_filters( "tc{$logo_type}logo_attachment_img" , wp_get_attachment_image_src( $_logo_option , 'large' ) );
               $_logo_src 			= $_attachment_data[0];
-              $_width 			= isset($_attachment_data[1]) ? $_attachment_data[1] : $_width;
-              $_height 			= isset($_attachment_data[2]) ? $_attachment_data[2] : $_height;
+              $_width 			= ( isset($_attachment_data[1]) && $_attachment_data[1] > 1 ) ? $_attachment_data[1] : $_width;
+              $_height 			= ( isset($_attachment_data[2]) && $_attachment_data[2] > 1 ) ? $_attachment_data[2] : $_height;
           } else { //old treatment
               //rebuild the logo path : check if the full path is already saved in DB. If not, then rebuild it.
               $upload_dir 			= wp_upload_dir();
@@ -530,7 +532,7 @@ if ( ! class_exists( 'TC_header_main' ) ) :
     function tc_add_body_classes($_classes) {
       //STICKY HEADER
     	if ( 1 == esc_attr( tc__f( '__get_option' , 'tc_sticky_header' ) ) ) {
-       		$_classes = array_merge( $_classes, array('tc-sticky-header') );
+       		$_classes = array_merge( $_classes, array('tc-sticky-header', 'sticky-disabled') );
        		//STICKY TRANSPARENT ON SCROLL
 	       	if ( 1 == esc_attr( tc__f( '__get_option' , 'tc_sticky_transparent_on_scroll' ) ) )
 	       		$_classes = array_merge( $_classes, array('tc-transparent-on-scroll') );

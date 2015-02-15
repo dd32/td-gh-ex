@@ -39,6 +39,104 @@ The exceptions to this license are as follows:
 
 
 #######################  Changelog ######################
+= 3.3.0 February 15th 2015 =
+Fix: dropcap skips also ul,ol tags
+Updated : dropcaps are disabled by default in pages and posts
+Added smart img load script
+Added new option "Website Performance" in a new section  Advanced Settings > Performances
+Added lang zh_TW. Thanks to https://github.com/pppdog
+Changed : tc_menu_item_style_first_letter set to false for new users
+Updated thai and hebrew lang
+Improved : increased headings line height for accessibility (font-size x 1.25)
+Fix infinite loop potential issue on resize
+Updated theme doc link
+Moved date functions in TC_utils and added : check on date format validity
+Fix: better check on when changing default slider's height
+Fix: set sticky offsets after resizing logo
+Fix: fp-button display nothing if empty
+Fix: logo image stretched when sticky header enabled, handled for both logos (normal and sticky) in js. Avoid uFix: tagline navbar-wrapper. Navbar h2 => use .site-description instead of H2 and split the CSS rule in two parFix: add clear:both to boostrap .nav-collapse fix the misplacing .nav-collapse when no socials are displayed inFix: re-add comment near the closing brace for compatibility function
+Fix: typo in the latest commit
+Fix: new filter tc_the_title, apply filters to the_title in Customizr contexts strictly
+Fix: handle mobile menu display in tc_common (tc_custom)
+Fix: add body class sticky-disabled, with php, by default when sticky header selected
+Fix: tc_has_update() catch exceptions use bool false if no updates
+updated stylesheets
+Improved : skip tc_common.css when scan the skins folder
+Added : tc_common.css
+Fix: in post metas don't call tc_has_update() when not needed
+
+= 3.2.17 January 27th 2015 =
+* removed : console.log() in addDropCap script
+
+= 3.2.16 January 27th 2015 =
+* d1207b1 updated : list of selectors to skip when applying drop caps
+* 6512345 changed : external links icon and new tab (_target = blank) are disabled by default
+* 6d0f725 Fix drop cap feature : html tags are not striped out anymore. Instead, the dropcap plugin search the first
+* h0145a45 add : front javascript underscore.js dependency ~+5.5kb
+* 57a7a6f Fix: handle boolean types in default options
+* bb355ec Imp: handle .tc-no-title-logo in css (instead of js), when sticky header is enabled,
+* 95b3e6f Fix: force hiding tc-reset-margin-top when no sticky header (css way)
+
+= 3.2.15 January 23rd 2015 =
+* Fix: don't re-add edit link button for tribe-events events
+
+= 3.2.13 January 22nd 2015 =
+* c583b19 Fix warning when attempting to load Google font in the admin editor
+
+= 3.2.12 January 22nd 2015 =
+* cbe6780 Update : theme description
+
+= 3.2.11 January 21st 2015 =
+* 7df1282 update : translation files
+* cbd0c0c New theme description
+* 24e1ae3 add missing icon parameter to wp_get_attachment_image()
+* 2719d65 Apply a drop cap to paragraphs including at least 50 words by default The min number of words can be cu
+* 05fc1ae Fix: .tc-open-on click submenus typo
+* 19336e0 New drop cap options for paragraphs in post / page content
+* 04a56cd New option added in Global settings > Authors, to display the author's infos box after post content
+* 9f43181 changed hook : 'tc_hide_front_page_title' to 'tc_display_customizr_headings' by default don't display t
+* 4a57b7d sticky header : additional refresh on scroll top for some edge cases like big logos
+* 483178d Merge branch 'eri-trabiccolo-tribe-events' into dev
+* 5b6c8f8 Fix: check if wp_query var exists otherwise a notice will be displayed (plug-in not running) when WP_DE
+* fafc579 Better customizer settings organization : Logo, favicon, site title and tagline have been moved to global settings
+* 4afdbfc added a title for the global post lists settings
+* 75efa6a post metas customizer control. The recent update notice after post titles is now a separate subsection
+* 0416b16 Fix a rtl issue for the slider control arrows
+* b106e02 Fix some rtl issues in the customizer
+* 1caa268 Add The Event Calendar plugin compatibility : fixes an issue with the titles.
+* 3ff11e2 style of the first letter menu items made optional
+* 69ec886 fix the issue with the front js params when scripts are not concatenated
+* 61f1439 missing '%' escape when sprintf tc-thumb inline style
+* 086b923 handle the new css classes filter with implode()
+* 2962a2d options for external links style and target is only applied to external links => url must be different
+* d54f73c Fix issue with tc_post_list_thumb_height : check if exist in options
+* f5111ca better customizer js part files structure
+* dc8b0a1 post content links : add 2 new options activated by default, except for users already using a previous
+* ed5c490 better front js file organization
+* 75938ad Better way to check the user start version of the theme
+* 4dda608 add user defined fonts to the admin editor
+* 04d4505 Fix donate and cta in subpanel
+* 994abc7 remove useless string var for "Recent update" in title
+* b697085 Add a fallback value to tc_user_started_before_version
+* 34d4bcb Fix: retrieve correct ID in posts page
+* b584148 Fix: fix typos and missing matching visibility condition
+* a57ec96 Fix tc_check_filetype: we want just the basename
+* 9604be2 Fix logo print: don't use wrong attachment's height & width
+* 5149c3d Add new filters for fp and footer widget areas
+* 1c30809 Fix: dropdown menu on click
+* b349192 Fix: make slides centering compatible with 'link the whole slide' snippet
+
+= 3.2.10 December 23rd 2014 =
+* f404eda Add a fallback false value to tc_user_started_before_version()
+* 1577dfb Add Google fonts to the theme description
+*   349ee57 Merge branch 'eri-trabiccolo-fix_tccta-in-subpanel' into dev
+|\
+| *   72d22a6 Merge branch 'fix_tccta-in-subpanel' of https://github.com/eri-trab| |\
+|/ /
+| * be4b067 Fix: 'hide' tc-cta when in sub-panel
+* | 7414a5e Fix the double title bug add backward compatibility with wp_title()
+|/
+
 = 3.2.9 December 22nd 2014 =
 * 4602677 add more single fonts check on _g_ prefix to determine if google font
 * 76282b8 Customizer : Add Google logo in fonts title
