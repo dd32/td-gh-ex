@@ -1,10 +1,10 @@
 /*
 Theme Name: Artikler
 Theme URI: http://jathemes.com/artikler-theme/
-Author: Jathemes Team
+Author: JA Themes Team
 Author URI: http://www.jathemes.com/
-Description: Artikler theme created and designed by jathemes Team. Features include custom headers,custom background,theme options, multiple widget areas, an optional icon navigation menu. This theme is perfect for article sites.More detail for this theme visit http://www.jathemes.com/.
-Version: 1.3.4.3
+Description: Artikler theme created and designed by JA Themes Team. Features include custom headers,custom background,theme options, multiple widget areas, an optional icon navigation menu. This theme is perfect for article sites.More detail for this theme visit http://www.jathemes.com/.
+Version: 1.3.4.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: gray, white, two-columns, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header,  rtl-language-support,theme-options,light
@@ -215,7 +215,7 @@ background: -o-linear-gradient(top,  #fcfcfc 0%,#cecece 47%,#fcfcfc 100%); /* Op
 background: -ms-linear-gradient(top,  #fcfcfc 0%,#cecece 47%,#fcfcfc 100%); /* IE10+ */
 background: linear-gradient(to bottom,  #fcfcfc 0%,#cecece 47%,#fcfcfc 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#fcfcfc',GradientType=0 ); /* IE6-9 */
-border-bottom:3px solid #c0c0c0; padding:10px 10px 8px; font-size:24px; color:#333; border-top-left-radius:10px; border-top-right-radius:10px;}
+border-bottom:3px solid #c0c0c0; padding:10px 10px 8px; font-size:20px; color:#333; border-top-left-radius:10px; border-top-right-radius:10px;}
 .widget{margin:0 0 12px 0; border:1px groove #ccc; /*padding:10px 0 10px 2px; */border-top-left-radius:11px; border-top-right-radius:11px; background:#e9e9e9;}
 .widget ul{padding:5px 10px; list-style:none; text-transform:capitalize; margin:0;}
 .widget ul li{margin:0px 0 3px; }
@@ -243,15 +243,7 @@ border-bottom:3px solid #c0c0c0; font-size:24px; color:#333; padding:10px 10px 8
 .entry-content img{padding:5px;}
 code{border:1px inset #333; padding:2px;background:#efefef;}
 .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6{margin:5px;}
-.entry-meta{font-size:12px; font:italic; margin:5px;padding:5px 5px; background: rgb(192,192,192);
-background: -moz-linear-gradient(top,  rgba(192,192,192,1) 0%, rgba(223,229,215,1) 60%, rgba(252,255,244,1) 100%);
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(192,192,192,1)), color-stop(60%,rgba(223,229,215,1)), color-stop(100%,rgba(252,255,244,1)));
-background: -webkit-linear-gradient(top,  rgba(192,192,192,1) 0%,rgba(223,229,215,1) 60%,rgba(252,255,244,1) 100%);
-background: -o-linear-gradient(top,  rgba(192,192,192,1) 0%,rgba(223,229,215,1) 60%,rgba(252,255,244,1) 100%);
-background: -ms-linear-gradient(top,  rgba(192,192,192,1) 0%,rgba(223,229,215,1) 60%,rgba(252,255,244,1) 100%);
-background: linear-gradient(to bottom,  rgba(192,192,192,1) 0%,rgba(223,229,215,1) 60%,rgba(252,255,244,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c0c0c0', endColorstr='#fcfff4',GradientType=0 );
- border:1px outset #888; height:20px; overflow:hidden;}
+.entry-meta{font-size:12px; font:italic; margin:5px;padding:5px 5px; background: #eee; border:1px outset #888; height:20px; overflow:hidden;}
 .content-post-adsense{float:left; margin:10px 10px 0 0;}
 /*********************************Comment*************************************/
 .comment{overflow:hidden;}
@@ -265,7 +257,7 @@ background: -o-linear-gradient(top,  #fcfcfc 0%,#cecece 47%,#fcfcfc 100%); /* Op
 background: -ms-linear-gradient(top,  #fcfcfc 0%,#cecece 47%,#fcfcfc 100%); /* IE10+ */
 background: linear-gradient(to bottom,  #fcfcfc 0%,#cecece 47%,#fcfcfc 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#fcfcfc',GradientType=0 ); /* IE6-9 */ padding:5px; text-transform:capitalize;}
-.comment-title{font-size:18px; color:#666; }
+.comment-title{font-size:18px; color:#333; }
 .comments-area{background:#cfcfcf;margin: 5px;padding: 10px;}
 .comment-li{border:1px solid #999;; margin:0 0 10px 0; padding:10px; background:#efefef;}
 .comment-header{ overflow:hidden;}

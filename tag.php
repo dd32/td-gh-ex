@@ -16,7 +16,7 @@ get_header(); ?>
 				<h1 class="archive-title"><?php printf( __( 'Tag Archives: %s', 'artikler' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?></h1>
 
 			<?php if ( tag_description() ) : // Show an optional tag description ?>
-				<div class="archive-meta"><?php echo tag_description(); ?></div>
+				<div class="archive-meta" style="display:none"><?php echo tag_description(); ?></div>
 			<?php endif; ?>
 			</header><!-- .archive-header -->
 

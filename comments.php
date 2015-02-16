@@ -13,9 +13,9 @@ if ( post_password_required() )
 	<?php if ( have_comments() ) : ?>
 	<div class="comments-title"><h3 class="comment-title">  <?php comments_number( 'No Comment', 'One Comment', '% Comment' ); ?> on "<?php single_post_title(); ?>"</h3></div>
 
-		<ol class="commentlist">
-			<?php wp_list_comments( array( 'callback' => 'artikler_theme_comment', 'style' => 'ol' ) ); ?>
-		</ol><!-- .commentlist -->
+		<ul class="commentlist">
+			<?php wp_list_comments( array( 'callback' => 'artikler_theme_comment', 'style' => 'ul' ) ); ?>
+		</ul><!-- .commentlist -->
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below" class="navigation" role="navigation">

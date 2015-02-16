@@ -19,7 +19,7 @@ function artikler_theme_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menu( 'primary', __( 'Primary Menu', 'artikler' ) );
-
+	
 	 //This theme supports custom background color and image,
 	 add_theme_support( 'custom-background', array(
 		'default-color' => 'eaeaea',
@@ -48,6 +48,8 @@ function artikler_theme_setup() {
 	);
 	add_theme_support( 'custom-header', $custom_header );
 	
+	//Title Tag
+	add_theme_support( 'title-tag' );
 	// This theme supports html5.
 	add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 	
