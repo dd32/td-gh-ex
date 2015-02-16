@@ -1086,10 +1086,13 @@ function accesspresslite_theme_options_page() {
 						<h4><?php _e('Get in touch','accesspresslite'); ?></h4>
 
 						<p>
-						<?php _e('If you have any question/feedback, please get in touch:','accesspresslite'); ?><br/>
-						<?php _e('General enquiries:','accesspresslite'); ?> <a href="mailto:<?php echo esc_url('info@accesspressthemes.com'); ?>">info@accesspressthemes.com</a><br/>
+						<?php _e('If you have any question/feedback regarding theme, please post in our forum','accesspresslite'); ?><br/>
+						<?php _e('Forum:','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/support/'); ?>"><?php echo esc_url('http://accesspressthemes.com/support/'); ?></a><br/>
+						
+						<br />
+
+						<?php _e('For Queries Regading Themes','accesspresslite'); ?><br/>
 						<?php _e('Support:','accesspresslite'); ?> <a href="mailto:<?php echo esc_url('support@accesspressthemes.com'); ?>">support@accesspressthemes.com</a><br/>
-						<?php _e('Sales:','accesspresslite'); ?> <a href="mailto:<?php echo esc_url('sales@accesspressthemes.com'); ?>">sales@accesspressthemes.com</a><br/>
 						</p>
 
 						<hr />
@@ -1098,9 +1101,9 @@ function accesspresslite_theme_options_page() {
 
 						<p><?php _e('Get connected with us on social media. It is the best place to find updates on our themes/plugins:','accesspresslite'); ?></p>
 
-						<p><a title="Facebook" target="_blank" href="https://www.facebook.com/pages/AccessPress-Themes/1396595907277967">Facebook</a></p>
-						<p><a target="_blank" title="Twitter" href="https://twitter.com/apthemes">Twitter</a></p>
-						<p><a target="_blank" title="Youtube" href="https://www.youtube.com/user/accesspressthemes">Youtube</i></a></p>
+						<a title="Facebook" target="_blank" href="https://www.facebook.com/pages/AccessPress-Themes/1396595907277967"><img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/facebook.png"></a>
+						<a target="_blank" title="Twitter" href="https://twitter.com/apthemes"><img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/twitter.png"></a>
+						<a target="_blank" title="Youtube" href="https://www.youtube.com/user/accesspressthemes"><img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/youtube.png"></i></a>
 						</td>
 					</tr>
 				</table>
