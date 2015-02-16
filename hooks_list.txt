@@ -32,11 +32,6 @@ In gridalicious/page.php:
 	gridalicious_comment_section
 
 
-In gridalicious/sidebar-secondary.php:
-	gridalicious_before_secondary_sidebar
-	gridalicious_after_secondary_sidebar
-
-
 In gridalicious/sidebar.php:
 	gridalicious_before_secondary
 	gridalicious_before_primary_sidebar

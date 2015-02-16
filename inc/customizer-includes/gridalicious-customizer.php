@@ -347,9 +347,49 @@ function gridalicious_reset_all_settings( $input ) {
  *
  * @since  Gridalicious 1.2
  */
-function create_sanitize_important_link() {
+function gridalicious_sanitize_important_link() {
 	return false;
-} 
+}
+
+
+/**
+ * Sanitizes category list in slider
+ * @param  $input entered value
+ * @return sanitized output
+ *
+ * @since  Gridalicious 0.3
+ */
+function gridalicious_sanitize_category_list( $input ) {
+	if ( $input != '' ) { 
+		$args = array(
+						'type'			=> 'post',
+						'child_of'      => 0,
+						'parent'        => '',
+						'orderby'       => 'name',
+						'order'         => 'ASC',
+						'hide_empty'    => 0,
+						'hierarchical'  => 0,
+						'taxonomy'      => 'category',
+					); 
+		
+		$categories = ( get_categories( $args ) );
+
+		$category_list 	=	array();
+		
+		foreach ( $categories as $category )
+			$category_list 	=	array_merge( $category_list, array( $category->term_id ) );
+
+		if ( count( array_intersect( $input, $category_list ) ) == count( $input ) ) {
+	    	return $input;
+	    } 
+	    else {
+    		return '';
+   		}
+    }
+    else {
+    	return '';
+    }
+}
 
 
 /**

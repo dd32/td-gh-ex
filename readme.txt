@@ -18,7 +18,7 @@ Gridalicious theme is translation ready.
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Gridalicious WordPress Theme, Copyright 2014 Catchthemes.com
+Gridalicious WordPress Theme, Copyright 2015 Catchthemes.com
 Gridalicious is distributed under the terms of the GNU General Public License v3
 
 Gridalicious is based on Catch Base theme http://catchthemes.com/themes/catch-base/

@@ -319,6 +319,11 @@ function gridalicious_flush_transients(){
 	delete_transient( 'gridalicious_scrollup' );
 
 	delete_transient( 'all_the_cool_cats' );
+
+	//Add Gridalicious default themes if there is no values
+	if ( !get_theme_mod('gridalicious_theme_options') ) {
+		set_theme_mod( 'gridalicious_theme_options', gridalicious_get_default_theme_options() );
+	}
 }
 add_action( 'customize_save', 'gridalicious_flush_transients' );
 

@@ -1,4 +1,8 @@
 == Change log ==
+
+= 0.3=
+* Bug Fixed: Homepage Category Options ( missing function gridalicious_sanitize_category_list ) 
+
 = 0.2 =
 * Bug Fixed: classes for excerpt and content fixed in content.php
 * Bug Fixed: missing breadcrumb separator in category

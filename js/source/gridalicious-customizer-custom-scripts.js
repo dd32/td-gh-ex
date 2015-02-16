@@ -141,17 +141,14 @@
     }
 
      $("#customize-control-gridalicious_theme_options-color_scheme").live( "change", function() {
-        //var name = $('#customize-control-gridalicious_theme_options-color_scheme input').attr('name');
         var value = $('#customize-control-gridalicious_theme_options-color_scheme input:checked').val();
         if ( 'dark' == value ){
             $('#customize-control-header_textcolor .color-picker-hex').iris('color', '#ddd');
-
             $('#customize-control-background_color .color-picker-hex').iris('color', '#111');
         
         }
         else {
             $('#customize-control-header_textcolor .color-picker-hex').iris('color', '#404040');
-
             $('#customize-control-background_color .color-picker-hex').iris('color', '#f2f2f2');
         }
     });
