@@ -16,11 +16,11 @@ function elitepress_meta_banner()
 		
 		$banner_chkbx = sanitize_text_field( get_post_meta( get_the_ID(), 'banner_chkbx', true ));
 		$banner_title =sanitize_text_field( get_post_meta( get_the_ID(), 'banner_title', true ));
-		$banner_description = sanitize_text_field( get_post_meta( get_the_ID(), 'banner_description', true )); ?>
-		
+		$banner_description = sanitize_text_field( get_post_meta( get_the_ID(), 'banner_description', true )); 
+		?>
 		<input type="checkbox" name="banner_chkbx" id="banner_chkbx" <?php if($banner_chkbx){echo "checked='checked'";}?> /><?php _e('Allow Banner on Page','elitepress'); ?></p>
 		<p><h4 class="heading"><?php _e('Enter Banner heading Title','elitepress');?></h4>
-		<p><input type="text" id="banner_title" name="banner_title" placeholder="Enter Banner Title"  value="<?php if (!empty($banner_title)) esc_attr($banner_title); ?>" > </p>
+		<p><input type="text" id="banner_title" name="banner_title" placeholder="Enter Banner Title"  value="<?php if (!empty($banner_title)) echo esc_attr($banner_title); ?>" > </p>
 		<p><h4 class="heading"><?php _e('Banner Description','elitepress');?></h4></p>
 		<p><textarea id="banner_description" name="banner_description" placeholder="Enter banner description " style="width: 480px; height: 80px; padding: 0px;" rows="3" cols="10" ><?php if (!empty($banner_description)) { echo $banner_description; } ?></textarea></p>
 		<?php }

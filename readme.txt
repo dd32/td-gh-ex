@@ -36,6 +36,7 @@ Fresh installation!
 1. Upload the ElitePress Theme folder to your wp-content/themes folder.
 2. Activate the theme from the WP Dashboard.
 3. Done!
+4. We have added one beautifully designed front page in the form of Business Front Page Template. You can assign this template to any page and make that page as a front page.
 === Images ===
 
 All images in ElitePress are licensed under the terms of the GNU GPL.
@@ -57,6 +58,11 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+
+@Version 0.2.3
+1. Add some escape tags, missing banner_header.php , footer.php , home_page_header_setting.php
+2. Add  sanitizing for custom css box.
+3. Solve front page Reading Issue 
 
 @Version 0.2.2
 1. Add bootstrap.js for unless provide origianl profile.

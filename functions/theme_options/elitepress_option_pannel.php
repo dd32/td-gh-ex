@@ -1,7 +1,7 @@
 <div class="wrap" id="framework_wrap">   		
     <div id="content_wrap">
 		<div class="webriti-header">
-			<h2 style="padding-top: 0px;font-size: 23px;line-height: 10px;"><a href="http://www.webriti.com/" style="margin-bottom:0px;"><img style="margin-left:10px;" src="<?php echo get_template_directory_uri(); ?>/functions/theme_options/images/png.png"></a></h2>
+			<h2 style='padding-top: 0px;font-size: 23px;line-height: 10px;'><a href='http://www.webriti.com' style="margin-bottom:0px;"><img style='margin-left:10px;' src='<?php echo get_template_directory_uri(); ?>/functions/theme_options/images/png.png'></a></h2>
 		</div>
 		<div class="webriti-submenu">
 		<div id="icon-themes" class="icon32"></div>

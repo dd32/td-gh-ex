@@ -167,47 +167,47 @@
 		</div>
 		<div class="section">
 			<h3><?php _e('Facebook Profile Link:','elitepress');?></h3>
-			<input class="webriti_inpute"  placeholder="Enter http://facebook.com"  type="text" name="social_media_facebook_link" id="social_media_facebook_link" value="<?php if($current_options['social_media_facebook_link']!='') { echo esc_attr($current_options['social_media_facebook_link']); } ?>" >
+			<input class="webriti_inpute"  placeholder="Enter http://facebook.com"  type="text" name="social_media_facebook_link" id="social_media_facebook_link" value="<?php if($current_options['social_media_facebook_link']!='') { echo  esc_url($current_options['social_media_facebook_link']); } ?>" >
 			<input type="checkbox" <?php if($current_options['facebook_media_enabled']=='on') echo "checked='checked'"; ?> id="facebook_media_enabled" name="facebook_media_enabled" > <span class="explain"><?php _e('Open facebook media link in new tab/window','elitepress'); ?></span>
 		</div>
 		<div class="section">
 			<h3><?php _e('Twitter Profile Link:','elitepress');?></h3>
-			<input class="webriti_inpute" placeholder="Enter http://twitter.com"  type="text" name="social_media_twitter_link" id="social_media_twitter_link" value="<?php if($current_options['social_media_twitter_link']!='') { echo esc_attr($current_options['social_media_twitter_link']); } ?>" >
+			<input class="webriti_inpute" placeholder="Enter http://twitter.com"  type="text" name="social_media_twitter_link" id="social_media_twitter_link" value="<?php if($current_options['social_media_twitter_link']!='') { echo  esc_url($current_options['social_media_twitter_link']); } ?>" >
 			<input type="checkbox" <?php if($current_options['twitter_media_enabled']=='on') echo "checked='checked'"; ?> id="twitter_media_enabled" name="twitter_media_enabled" > <span class="explain"><?php _e('Open twitter media link in new tab/window','elitepress'); ?></span>
 		</div>
 		<div class="section">
 			<h3><?php _e('Google Plus Profile Link:','elitepress');?></h3>
-			<input class="webriti_inpute" placeholder="Enter http://google.com"  type="text" name="social_media_googleplus_link" id="social_media_googleplus_link" value="<?php if($current_options['social_media_googleplus_link']!='') { echo esc_attr($current_options['social_media_googleplus_link']); } ?>" >
+			<input class="webriti_inpute" placeholder="Enter http://google.com"  type="text" name="social_media_googleplus_link" id="social_media_googleplus_link" value="<?php if($current_options['social_media_googleplus_link']!='') { echo  esc_url($current_options['social_media_googleplus_link']); } ?>" >
 			<input type="checkbox" <?php if($current_options['googleplus_media_enabled']=='on') echo "checked='checked'"; ?> id="googleplus_media_enabled" name="googleplus_media_enabled" > <span class="explain"><?php _e('Open googleplus media link in new tab/window','elitepress'); ?></span>
 		</div>
 		<div class="section">
 			<h3><?php _e('Linkedin Profile Link:','elitepress');?></h3>
-			<input class="webriti_inpute" placeholder="Enter http://linkedin.com"  type="text" name="social_media_linkedin_link" id="social_media_linkedin_link" value="<?php if($current_options['social_media_linkedin_link']!='') { echo esc_attr($current_options['social_media_linkedin_link']); } ?>" >
+			<input class="webriti_inpute" placeholder="Enter http://linkedin.com"  type="text" name="social_media_linkedin_link" id="social_media_linkedin_link" value="<?php if($current_options['social_media_linkedin_link']!='') { echo  esc_url($current_options['social_media_linkedin_link']); } ?>" >
 			<input type="checkbox" <?php if($current_options['linkedin_media_enabled']=='on') echo "checked='checked'"; ?> id="linkedin_media_enabled" name="linkedin_media_enabled" > <span class="explain"><?php _e('Open linkedin media link in new tab/window','elitepress'); ?></span>
 		</div>
 		<div class="section">
 			<h3><?php _e('Skype Profile Link:','elitepress');?></h3>
-			<input class="webriti_inpute" placeholder="Enter http://skype.com"  type="text" name="social_media_skype_link" id="social_media_skype_link" value="<?php if($current_options['social_media_skype_link']!='') { echo esc_attr($current_options['social_media_skype_link']); } ?>" >
+			<input class="webriti_inpute" placeholder="Enter http://skype.com"  type="text" name="social_media_skype_link" id="social_media_skype_link" value="<?php if($current_options['social_media_skype_link']!='') { echo  esc_url($current_options['social_media_skype_link']); } ?>" >
 			<input type="checkbox" <?php if($current_options['skype_media_enabled']=='on') echo "checked='checked'"; ?> id="skype_media_enabled" name="skype_media_enabled" > <span class="explain"><?php _e('Open skype media link in new tab/window','elitepress'); ?></span>
 		</div>
 		<div class="section">
 			<h3><?php _e('Dribbble Profile Link:','elitepress');?></h3>
-			<input class="webriti_inpute" placeholder="Enter http://dribbble.com"  type="text" name="social_media_dribbble_link" id="social_media_dribbble_link" value="<?php if($current_options['social_media_dribbble_link']!='') { echo esc_attr($current_options['social_media_dribbble_link']); } ?>" >
+			<input class="webriti_inpute" placeholder="Enter http://dribbble.com"  type="text" name="social_media_dribbble_link" id="social_media_dribbble_link" value="<?php if($current_options['social_media_dribbble_link']!='') { echo  esc_url($current_options['social_media_dribbble_link']); } ?>" >
 			<input type="checkbox" <?php if($current_options['dribbble_media_enabled']=='on') echo "checked='checked'"; ?> id="dribbble_media_enabled" name="dribbble_media_enabled" > <span class="explain"><?php _e('Open dribbble media link in new tab/window','elitepress'); ?></span>
 		</div>
 		<div class="section">
 			<h3><?php _e('Youtube Profile Link:','elitepress');?></h3>
-			<input class="webriti_inpute" placeholder="Enter http://youtube.com"  type="text" name="social_media_youtube_link" id="social_media_youtube_link" value="<?php if($current_options['social_media_youtube_link']!='') { echo esc_attr($current_options['social_media_youtube_link']); } ?>" >
+			<input class="webriti_inpute" placeholder="Enter http://youtube.com"  type="text" name="social_media_youtube_link" id="social_media_youtube_link" value="<?php if($current_options['social_media_youtube_link']!='') { echo  esc_url($current_options['social_media_youtube_link']); } ?>" >
 			<input type="checkbox" <?php if($current_options['youtube_media_enabled']=='on') echo "checked='checked'"; ?> id="youtube_media_enabled" name="youtube_media_enabled" > <span class="explain"><?php _e('Open youtube media link in new tab/window','elitepress'); ?></span>
 		</div>
 		<div class="section">
 			<h3><?php _e('Vimeo Profile Link:','elitepress');?></h3>
-			<input class="webriti_inpute" placeholder="Enter http://vimeo.com"  type="text" name="social_media_vimeo_link" id="social_media_vimeo_link" value="<?php if($current_options['social_media_vimeo_link']!='') { echo esc_attr($current_options['social_media_vimeo_link']); } ?>" >
+			<input class="webriti_inpute" placeholder="Enter http://vimeo.com"  type="text" name="social_media_vimeo_link" id="social_media_vimeo_link" value="<?php if($current_options['social_media_vimeo_link']!='') { echo  esc_url($current_options['social_media_vimeo_link']); } ?>" >
 			<input type="checkbox" <?php if($current_options['vimeo_media_enabled']=='on') echo "checked='checked'"; ?> id="vimeo_media_enabled" name="vimeo_media_enabled" > <span class="explain"><?php _e('Open vimeo media link in new tab/window','elitepress'); ?></span>
 		</div>
 		<div class="section">
 			<h3><?php _e('Pagelines Profile Link:','elitepress');?></h3>
-			<input class="webriti_inpute" placeholder="Enter http://pagelines.com"  type="text" name="social_media_pagelines_link" id="social_media_pagelines_link" value="<?php if($current_options['social_media_pagelines_link']!='') { echo esc_attr($current_options['social_media_pagelines_link']); } ?>" >
+			<input class="webriti_inpute" placeholder="Enter http://pagelines.com"  type="text" name="social_media_pagelines_link" id="social_media_pagelines_link" value="<?php if($current_options['social_media_pagelines_link']!='') { echo  esc_url($current_options['social_media_pagelines_link']); } ?>" >
 			<input type="checkbox" <?php if($current_options['pagelines_media_enabled']=='on') echo "checked='checked'"; ?> id="pagelines_media_enabled" name="pagelines_media_enabled" > <span class="explain"><?php _e('Open pagelines media link in new tab/window','elitepress'); ?></span>
 		</div>
 		<div id="heading">
@@ -243,11 +243,11 @@
 			<h3><?php _e('Custom Logo','elitepress'); ?>
 				<span class="icons help"><span class="tooltip"><?php  _e('Add custom logo from here suggested size is 250X50 px','elitepress');?></span></span>
 			</h3>
-			<input class="webriti_inpute" type="text" value="<?php if($current_options['upload_image_logo']!='') { echo esc_attr($current_options['upload_image_logo']); } ?>" id="upload_image_logo" name="upload_image_logo" size="36" class="upload has-file"/>
+			<input class="webriti_inpute" type="text" value="<?php if($current_options['upload_image_logo']!='') { echo esc_url($current_options['upload_image_logo']); } ?>" id="upload_image_logo" name="upload_image_logo" size="36" class="upload has-file"/>
 			<input type="button" id="upload_button" value="Custom Logo" class="upload_image_button" />
 			
 			<?php if($current_options['upload_image_logo']!='') { ?>
-			<p><img style="height:60px;width:100px;" src="<?php if($current_options['upload_image_logo']!='') { echo esc_attr($current_options['upload_image_logo']); } ?>" /></p>
+			<p><img style="height:60px;width:100px;" src="<?php if($current_options['upload_image_logo']!='') { echo esc_url($current_options['upload_image_logo']); } ?>" /></p>
 			<?php } ?>
 		</div>
 		

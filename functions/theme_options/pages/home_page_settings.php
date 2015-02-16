@@ -8,8 +8,8 @@
 			{  print 'Sorry, your nonce did not verify.';	exit; }
 			else  
 			{	
-				$current_options['upload_image_favicon']=sanitize_text_field($_POST['upload_image_favicon']);
-				$current_options['webrit_custom_css'] =esc_html($_POST['webrit_custom_css']);			
+				$current_options['upload_image_favicon']=esc_url($_POST['upload_image_favicon']);
+				$current_options['webrit_custom_css'] = wp_strip_all_tags($_POST['webrit_custom_css']);			
 				if(isset($_POST['text_title']))
 				{ echo $current_options['text_title']=sanitize_text_field($_POST['text_title']); } 
 				else
@@ -47,10 +47,10 @@
 			<h3><?php _e('Custom Favicon','elitepress'); ?>
 				<span class="icons help"><span class="tooltip"><?php  _e('Make sure you upload .icon image type which is not more then 25X25 px.','elitepress');?></span></span>
 			</h3>
-			<input class="webriti_inpute" type="text" value="<?php if($current_options['upload_image_favicon']!='') { echo esc_attr($current_options['upload_image_favicon']); } ?>" id="upload_image_favicon" name="upload_image_favicon" size="36" class="upload has-file"/>
+			<input class="webriti_inpute" type="text" value="<?php if($current_options['upload_image_favicon']!='') { echo esc_url($current_options['upload_image_favicon']); } ?>" id="upload_image_favicon" name="upload_image_favicon" size="36" class="upload has-file"/>
 			<input type="button" id="upload_button" value="Favicon Icon" class="upload_image_button"  />			
 			<?php if($current_options['upload_image_favicon']!='') { ?>
-			<p><img style="height:60px;width:100px;" src="<?php  echo esc_attr($current_options['upload_image_favicon']);  ?>" /></p>
+			<p><img style="height:60px;width:100px;" src="<?php  echo esc_url($current_options['upload_image_favicon']);  ?>" /></p>
 			<?php } ?>
 		</div>
 		<div class="section">

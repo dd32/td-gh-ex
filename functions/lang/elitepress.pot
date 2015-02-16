@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: elitepress\n"
-"POT-Creation-Date: 2015-02-12 19:43+0530\n"
-"PO-Revision-Date: 2015-02-12 19:43+0530\n"
+"POT-Creation-Date: 2015-02-16 17:17+0530\n"
+"PO-Revision-Date: 2015-02-16 17:17+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -193,6 +193,14 @@ msgstr ""
 
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\elitepress-lite/functions.php:50
 msgid "Footer Menu"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\elitepress-lite/header-menu-section.php:9
+msgid "Toggle navigation"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\elitepress-lite/header-menu-section.php:9
+msgid "Navigation Menu"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\elitepress-lite/header-social-section.php:46
@@ -410,15 +418,15 @@ msgstr ""
 msgid "In"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\elitepress-lite/functions/meta-box/post-meta.php:21
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\elitepress-lite/functions/meta-box/post-meta.php:25
 msgid "Allow Banner on Page"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\elitepress-lite/functions/meta-box/post-meta.php:22
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\elitepress-lite/functions/meta-box/post-meta.php:26
 msgid "Enter Banner heading Title"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\elitepress-lite/functions/meta-box/post-meta.php:24
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\elitepress-lite/functions/meta-box/post-meta.php:28
 msgid "Banner Description"
 msgstr ""
 

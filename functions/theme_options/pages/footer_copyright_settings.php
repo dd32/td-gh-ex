@@ -46,7 +46,7 @@
 		<div class="section">		
 			<h3><?php _e('Footer Customization text','elitepress'); ?></h3>
 			<textarea rows="10" cols="50" class="webriti_inpute" name="footer_copyright_text" id="footer_copyright_text" ><?php if(isset($current_options['footer_copyright_text'])) 
-			{ esc_attr_e($current_options['footer_copyright_text']); } ?> </textarea>
+			{ echo esc_attr_e($current_options['footer_copyright_text']); } ?> </textarea>
 			<span class="explain"><?php  _e('Enter the Footer Customization text','elitepress');?></span>
 		</div>	
 		

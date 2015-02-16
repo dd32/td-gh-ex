@@ -19,10 +19,8 @@ function elitepress_admin_menu_pannel()
 	}	
 }
 function elitepress_option_panal_function()
-{	require_once('elitepress_option_pannel.php'); }
+{ load_template( dirname( __FILE__ ) . '/elitepress_option_pannel.php' );  }
 
 function elitepress_themes_function ()
-{	
-	require_once('webriti_theme.php');
-}
+{ load_template( dirname( __FILE__ ) . '/webriti_theme.php' );  }
 ?>

@@ -7,7 +7,7 @@ get_template_part('banner','header'); ?>
 	<div class="container">
 		<div class="row">
 			<!--Blog Area-->
-			<div class="col-md-12">
+			<div class="<?php elitepress_post_layout_class(); ?>" >
 				<?php if ( have_posts() ) { ?>
 				<h1 class="search_heading">
 				<?php printf( __( "Search Results For: %s", 'elitepress' ), '<span>' . get_search_query() . '</span>' ); ?>

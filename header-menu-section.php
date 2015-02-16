@@ -1,12 +1,12 @@
 <!-- Navigation Section -->
-<?php $current_options=get_option('elitepress_lite_options'); ?>
+<?php $current_options = get_option('elitepress_lite_options',theme_data_setup());?>
 <div class="menu-section">
 		<nav role="navigation" class="navbar navbar-default">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->		
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-			  <span class="sr-only">Toggle navigation</span>Navigation Menu
+			  <span class="sr-only"><?php _e('Toggle navigation','elitepress'); ?></span><?php _e('Navigation Menu','elitepress'); ?>
 			</button>
 		</div>
 

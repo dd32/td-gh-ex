@@ -1,6 +1,7 @@
 <?php
-		
-		// call header
+/**
+Template Name: Business Front Page
+*/
 		get_header();
 		
 		//****** get index static banner  ********
@@ -16,5 +17,5 @@
 		get_template_part('index', 'portfolio');
 				
 		get_footer(); 
-	
+		
 ?>
