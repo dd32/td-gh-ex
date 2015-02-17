@@ -324,7 +324,7 @@ class Kaira_theme_settings {
         $this->settings['kra-enable-home-slider'] = array(
             'section' => 'slider',
             'title'   => __( 'Enable Slider', 'albar' ),
-            'desc'    => __( 'Click to enable the default homepage slider', 'albar' ),
+            'desc'    => __( 'Click to enable the default homepage slider<br /><br />See <a href="http://demo.kairaweb.com/albar/installing-premium/albar-default-slider/" target="_blank">instructions here</a> on setting up the default slider', 'albar' ),
             'type'    => 'checkbox',
             'std'     => 1 // Set to 1 to be checked by default
         );
@@ -380,7 +380,7 @@ class Kaira_theme_settings {
         $this->settings['kra-slider-links'] = array(
             'section' => 'slider',
             'title'   => __( 'Enable slider links', 'albar' ),
-            'desc'    => __( 'Select if you want the slides to link to their post page', 'albar' ),
+            'desc'    => __( 'Select if you want the slides to link to their post page<br /><br />See here how to <a href="http://demo.kairaweb.com/albar/installing-premium/removing-the-slider-title/" target="_blank">remove the slider titles</a>', 'albar' ),
             'type'    => 'checkbox',
             'std'     => 0 // Set to 1 to be checked by default
         );

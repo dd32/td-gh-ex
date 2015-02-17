@@ -68,10 +68,13 @@ View the settings under Appearance -> ALBAR Settings.
 
 == Changelog ==
 
+#### 1.6.1
+** Added 2 help links in the ALBAR Settings -> Slider Settings page.
+
 #### 1.6.0
 ** Added dismiss-able notice to plugins.php page.
 ** Styling tweaks to page templates - improved.
-** Added image to upgrade page to show that premium includes extra wWooCommerce styling.
+** Added image to upgrade page to show that premium includes extra WooCommerce styling.
 ** Updated .pot language file
 
 #### 1.5.9

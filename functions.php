@@ -5,7 +5,7 @@
  * @package Albar
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.6.0' );
+define( 'KAIRA_THEME_VERSION' , '1.6.1' );
 
 if ( file_exists( get_stylesheet_directory() . '/settings/class.kaira-theme-settings.php' ) ) {
     require_once( get_stylesheet_directory() . '/settings/class.kaira-theme-settings.php' );
