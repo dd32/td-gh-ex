@@ -32,7 +32,6 @@ get_header();
 									get_the_title( $post->post_parent )
 								);
 							?>
-							<?php edit_post_link( __( 'Edit', 'thebox' ), '<span class="sep"> | </span> <span class="edit-link">', '</span>' ); ?>
 						</div><!-- .entry-meta -->	
 					</header><!-- .entry-header -->
 

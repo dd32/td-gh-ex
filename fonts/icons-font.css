@@ -39,7 +39,7 @@
 }
 
 
-/* Icons v. 1.4 */
+/* Icons v. 1.5 */
 
 .icon-quote-right:before {
   content: "a";
@@ -134,7 +134,8 @@
 .icon-category-alt:before {
   content: "H";
 }
-.icon-bookmark-alt:before {
+.icon-bookmark-alt:before,
+.icon-tag-alt:before {
   content: "I";
 }
 .icon-comment-alt:before {
@@ -146,7 +147,7 @@
 .icon-music:before {
   content: "N";
 }
-.icon-bookmark:before {
+.icon-tag:before {
   content: "O";
 }
 .icon-mail-alt:before {
@@ -161,29 +162,14 @@
 .icon-category:before {
   content: "L";
 }
-.icon-food1:before {
-  content: "T";
-}
 .icon-hearth:before {
   content: "8";
-}
-.icon-food2:before {
-  content: "R";
-}
-.icon-food3:before {
-  content: "S";
 }
 .icon-camera:before {
   content: "U";
 }
 .icon-book:before {
   content: "V";
-}
-.icon-tag:before {
-  content: "W";
-}
-.icon-tags:before {
-  content: "X";
 }
 .icon-star-alt:before {
   content: "G";
@@ -220,4 +206,16 @@
 }
 .icon-share:before {
   content: "6";
+}
+.icon-download:before {
+  content: "5";
+}
+.icon-left-circle:before {
+  content: "7";
+}
+.icon-tumblr:before {
+  content: "9";
+}
+.icon-github:before {
+  content: "!";
 }

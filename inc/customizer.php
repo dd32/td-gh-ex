@@ -88,8 +88,8 @@ function add_color_styles() { ?>
 	?>
 
 	<style type="text/css">
-
 		.main-navigation > div > ul,
+		#main input#submit,
 		#main button,
 		#main input[type="button"],
 		#main input[type="reset"],
@@ -99,43 +99,46 @@ function add_color_styles() { ?>
 		#content .page-numbers a:hover {
 		background-color: <?php echo $color_primary; ?>;	
 		}
+		#main input#submit:hover,
 		#main button:hover,
 		#main input[type="button"]:hover,
 		#main input[type="reset"]:hover,
 		#main input[type="submit"]:hover {
 		background-color: rgba(<?php echo hex2rgb( $color_primary ); ?>, 0.9);		
 		}
-		#content .entry-time {
+		.entry-time {
 		background-color: rgba(<?php echo hex2rgb( $color_primary ); ?>, 0.7);		
 		}
 		.site-header .main-navigation ul ul a:hover,
 	    .site-header .main-navigation ul ul a:focus,
 	    .site-header h1.site-title a:hover,
-	    #nav-below a,
-	    .entry-summary a,
+	    .site-header h1.site-title a:focus,
+	    .page-title a:hover,
+	    .entry-title a:hover,
 	    .entry-content a,
-	    #content .entry-title a:hover,
-	    #content .entry-title a:focus,
-	    #content .entry-title a:active,
-	    #content .author .icon-font,
-	    #content .category-meta .icon-font,
-	    #content .category-tag .icon-font,
-	    #content .more-link,
-	    #content .entry-content a,
-	    #content .entry-footer a,
-	    #content .entry-meta a,
-	    #content .comments-area a,
-	    #content .page-title span,
-		#content #tertiary td a,
+	    .entry-content a:hover,
+	    .entry-summary a,
+	    .entry-summary a:hover,
+		.entry-footer a,
+	    .entry-footer a:hover,
+	    .entry-footer .icon-font,
+	    .entry-meta a,
+	    .author-bio a,
+	    .comments-area a,
+	    .page-title span,
+		#tertiary td a,
+		.more-link,
+		#nav-above a,
+	    #nav-below a,
 		#secondary a,
+		#secondary a:hover,
 		#secondary .widget_recent_comments a.url { 
 	    color: <?php echo $color_primary; ?>;
 	    }
-	    #content .edit-link a {
+	    .edit-link a {
 		border-color: <?php echo $color_primary; ?>;
 	    }
-	    
-	</style>
+	    </style>
 
 <?php
 	}

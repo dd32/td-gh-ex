@@ -1,5 +1,5 @@
 # The Box
-The Box is a two columns free WordPress theme designed to showcase content. It features a minimal, responsive design with a strong focus on typography.
+The Box is a two columns free WordPress theme designed to showcase content. It features a simple and elegant design with a strong focus on typography.
 
 
 # Installation #
@@ -36,7 +36,7 @@ Unless otherwise specified, all the theme files, scripts and images are licensed
 
 
 # Support #
-Please visit http://wordpress.org/support/ if you have any questions about the theme.
+Please visit https://wordpress.org/support/theme/the-box if you have any questions about the theme.
 
 
 # Changelog #
@@ -56,3 +56,7 @@ Please visit http://wordpress.org/support/ if you have any questions about the t
 1.3.6
 - Fix Menu on Tablet
 - Added Flickr to Social Icons
+
+1.3.9
+- Fix Menu on Tablet and Mobile
+- No Sidebar Template

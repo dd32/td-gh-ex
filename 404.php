@@ -13,7 +13,7 @@ get_header(); ?>
 			<article id="post-0" class="post hentry error404 not-found">
 				<header class="entry-header">
 					<h1 class="entry-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'thebox' ); ?></h1>
-				</header><!-- .page-header -->
+				</header><!-- .entry-header -->
 
 				<div class="entry-content">
 				
@@ -22,6 +22,7 @@ get_header(); ?>
 					<?php get_search_form(); ?>
 
 				</div><!-- .entry-content -->
+				<footer class="entry-footer"></footer>
 			</article><!-- #post-0 .post .error404 .not-found -->
 		</div><!-- #content .site-content -->
 	</div><!-- #primary .content-area -->
