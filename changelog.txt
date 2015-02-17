@@ -1,6 +1,9 @@
 == Change log ==
 
- = 0.4=
+= 0.5 =
+* Fixed header text condition for Sidebar
+
+= 0.4=
 * Added gridalicious- prefix to some js handles
 * Bug Fixed: undefined index $page_for_posts for Featured Header Image
 * Bug Fixed: featured-heading-wrap, $headline and $subheadline empty check in featured content
