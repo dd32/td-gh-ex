@@ -27,6 +27,8 @@ set_post_thumbnail_size(624, 9999);
 add_theme_support('custom-background', array(
 	'default-color'	=> 'cccccc',
 	)); 
+	
+add_theme_support('title-tag');
 
 }
 add_action('after_setup_theme', 'silverquantum_setup');
