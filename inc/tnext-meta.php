@@ -62,6 +62,7 @@ function itrans_register_meta_boxes( $meta_boxes )
 				'std'  => 0,
 				'class' => 'hide-ttl',
 			),
+						
 			/**/	
 			array(
 				'name' => __( 'Show Default i-transform Slider', 'itrans' ),
@@ -240,6 +241,41 @@ function itrans_register_meta_boxes( $meta_boxes )
 
 		
 						
+		)
+	);	
+	
+	
+	// 1st meta box
+	$meta_boxes[] = array(
+		// Meta box id, UNIQUE per meta box. Optional since 4.1.5
+		'id' => 'pageoptions',
+
+		// Meta box title - Will appear at the drag and drop handle bar. Required.
+		'title' => __( 'Page Options', 'itrans' ),
+
+		// Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
+		'pages' => array( 'page' ),
+
+		// Where the meta box appear: normal (default), advanced, side. Optional.
+		'context' => 'normal',
+
+		// Order of meta box: high (default), low. Optional.
+		'priority' => 'high',
+
+		// Auto save: true, false (default). Optional.
+		'autosave' => true,
+
+		// List of meta fields
+		'fields' => array(
+			array(
+				'name' => __( 'Hide Title Text', 'itrans' ),
+				'id'   => "{$prefix}hide_title_text",
+				'type' => 'checkbox',
+				// Value can be 0 or 1
+				'std'  => 0,
+				'class' => 'hide-ttl-text',
+			),
+
 		)
 	);	
 	

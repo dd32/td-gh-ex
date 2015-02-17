@@ -31,14 +31,37 @@ get_header(); ?>
                 	<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
 					<header class="entry-header">
                     	<h1 class="entry-title"><?php the_title(); ?></h1>
-						<div class="entry-thumbnail">
+						<div class="entry-thumbnail tx-slider" data-delay="8000">
 						<?php                        
-							$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
+							$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
 							echo '<a href="' . $large_image_url[0] . '" title="' . the_title_attribute( 'echo=0' ) . '" alt="" class="tx-colorbox">';
 							the_post_thumbnail('folio-silder');
 							echo '</a>';
+							
+                            if (class_exists('MultiPostThumbnails')) 
+							{
+								$large_image_url1 = wp_get_attachment_image_src( MultiPostThumbnails::get_post_thumbnail_id( get_post_type(), 'feature-image-2', $post->ID ), 'large' );
+								if ($large_image_url1)
+								{
+									echo '<a href="' . $large_image_url1[0] . '" title="' . the_title_attribute('echo=0') . '" class="tx-colorbox">';
+									MultiPostThumbnails::the_post_thumbnail( get_post_type(), 'feature-image-2', NULL, 'folio-silder' );
+									echo '</a>';
+								}
+								
+								$large_image_url2 = wp_get_attachment_image_src( MultiPostThumbnails::get_post_thumbnail_id( get_post_type(), 'feature-image-3', $post->ID ), 'large' );
+								if ($large_image_url2)
+								{
+									echo '<a href="' . $large_image_url2[0] . '" title="' . the_title_attribute('echo=0') . '" class="tx-colorbox">';
+									MultiPostThumbnails::the_post_thumbnail( get_post_type(), 'feature-image-3', NULL, 'folio-silder' );
+									echo '</a>';
+								}
+                                //MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'feature-image-2', $link_to_original);
+                            } 							
                         ?>
 						</div>
+						<?php 
+
+                        ?>                        
 						
 					</header><!-- .entry-header -->
                     <div class="folio-meta">

@@ -46,7 +46,9 @@ input[type="reset"] {
 	background-color: #3787be;
 }
 
-.ibanner {
+.ibanner,
+.tx-folio-img .folio-links .folio-linkico, 
+.tx-folio-img .folio-links .folio-zoomico {
 	background-color: #3787be;
 }
 
