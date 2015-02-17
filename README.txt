@@ -1,11 +1,11 @@
 == Description ==
 
 Theme Name: Azabu-Juban
-Theme URI: http://wpshop.com/theme/BJyn1BC5Zg41
+Theme URI: http://wpshop.com/themes
 Author: GMO WP Cloud
-Author URI: http://www.wpcloud.jp/en/
-Description: Azabu-Juban is a simple, easy-to-use, and highly customizable WordPress theme. Beautiful Japanese design inspiration comes from Edo komon pattern.
-Version: 1.1.3
+Author URI: https://www.wpcloud.jp/en/
+Description: Azabu Juban is an upgraded version of Twenty Thirteen WordPress default theme, which is simple, easy-to-use and highly customizable. This theme features numbers of beautiful design templates with traditional Japanese taste which gives your website a unique look.
+Version: 1.1.4
 Template: twentythirteen
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html

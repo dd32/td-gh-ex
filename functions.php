@@ -1,4 +1,18 @@
 <?php
+/*
+Plugin name: Hook Suffix Console
+*/
+add_action("admin_head", 'suffix2console');
+function suffix2console() {
+global $hook_suffix;
+if (is_user_logged_in()) {
+$str = "<script type=\"text/javascript\">console.log('%s')</script>";
+printf($str, $hook_suffix);
+}
+}
+?> 
+
+<?php
 
 require_once(dirname(__FILE__).'/include/class-tgm-plugin-activation.php');
 
@@ -163,6 +177,7 @@ function azabujuban_original_customize( $wp_customize ) {
 
 	$wp_customize->add_setting('Header_Navigation_Opacity', array(
 		'default'           => '100',
+		'sanitize_callback' => '100',
 		'type'           => 'option',
 	));
 	$wp_customize->add_control('Header_Navigation_Opacity', array(
@@ -535,6 +550,7 @@ function azabujuban_original_customize( $wp_customize ) {
         'default'        => '',
         'type'           => 'option',
         'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'Logo_Image',
     ));
     $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,'Logo_Image',array(
             'label'     => 'Logo Image',
@@ -542,9 +558,6 @@ function azabujuban_original_customize( $wp_customize ) {
             'settings'  => 'Logo_Image',
         )
     ));
-
-
-
 	
 	$wp_customize->remove_section('colors');
 }
@@ -622,18 +635,17 @@ function azabujuban_scripts(){
 add_action( 'wp_enqueue_scripts', 'azabujuban_scripts' );
 
 
-function azabu_juban_style(){
-    wp_enqueue_style( 'azabu_juban_style', get_stylesheet_directory_uri().'/css/more.css' );
-}
-add_action( 'admin_enqueue_scripts', 'azabu_juban_style' );
-
-
 function azabujuban_scriptsMore(){
 	wp_enqueue_script('jquery');
 	wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/js/more.js' );
 }
 add_action( 'admin_enqueue_scripts', 'azabujuban_scriptsMore' );
 
+
+
+add_action('appearance_page_more', 'regist_more_css');
+function regist_more_css() { ?>
+<link rel='stylesheet' id='azabu_juban_style-css'  href='<?php echo get_stylesheet_directory_uri() .'/css/more.css' ?>' type='text/css' media='all' /><?php }
 
 //More
 function azabu_juban_menu_more() {
