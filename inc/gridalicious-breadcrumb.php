@@ -29,7 +29,7 @@ if( !function_exists( 'gridalicious_add_breadcrumb' ) ) :
 		if( isset ( $options['breadcumb_option'] ) && $options['breadcumb_option'] ){
 			$showOnHome = ( isset ( $options['breadcumb_onhomepage'] ) && $options['breadcumb_onhomepage'] ) ? '1' : '0';
 
-			$delimiter = '<span class="sep">'. $options['breadcumb_seperator'] .'</span><!-- .sep -->'; // delimiter between crumbs
+			$delimiter = '<span class="sep">'. $options['breadcrumb_seperator'] .'</span><!-- .sep -->'; // delimiter between crumbs
 
 			echo gridalicious_custom_breadcrumbs( $showOnHome, $delimiter );
 		}
@@ -188,7 +188,7 @@ if( !function_exists( 'gridalicious_custom_breadcrumbs' ) ) :
 				$parent_id   = $post->post_parent;
 				$breadcrumbs = array();
 				while( $parent_id ) {
-					$page_child    = get_page( $parent_id );
+					$page_child    = get_post( $parent_id );
 					$breadcrumbs[] = sprintf( $link, get_permalink( $page_child->ID ), get_the_title( $page_child->ID ) );
 					$parent_id     = $page_child->post_parent;
 				}

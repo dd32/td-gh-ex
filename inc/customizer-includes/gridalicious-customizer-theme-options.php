@@ -59,19 +59,19 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 		'type'     => 'checkbox',
 	) );
 
-	$wp_customize->add_setting( 'gridalicious_theme_options[breadcumb_seperator]', array(
+	$wp_customize->add_setting( 'gridalicious_theme_options[breadcrumb_seperator]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['breadcrumb_seperator'],
 		'sanitize_callback'	=> 'sanitize_text_field',
 	) );
 
-	$wp_customize->add_control( 'gridalicious_breadcumb_seperator', array(
+	$wp_customize->add_control( 'gridalicious_breadcrumb_seperator', array(
 			'input_attrs' => array(
 	            'style' => 'width: 40px;'
             	),
             'label'    	=> __( 'Seperator between Breadcrumbs', 'gridalicious' ),
 			'section' 	=> 'gridalicious_breadcumb_options',
-			'settings' 	=> 'gridalicious_theme_options[breadcumb_seperator]',
+			'settings' 	=> 'gridalicious_theme_options[breadcrumb_seperator]',
 			'type'     	=> 'text'
 		) 
 	);
@@ -356,7 +356,7 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'gridalicious_theme_options[promotion_headline]', array(
 		'capability'		=> 'edit_theme_options',
 		'default' 			=> $defaults['promotion_headline'],
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'wp_kses_post'
 	) );
 
 	$wp_customize->add_control( new Gridalicious_Customize_Textarea_Control( $wp_customize, 'gridalicious_theme_options[promotion_headline]', array(
@@ -370,7 +370,7 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'gridalicious_theme_options[promotion_subheadline]', array(
 		'capability'		=> 'edit_theme_options',
 		'default' 			=> $defaults['promotion_subheadline'],
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'wp_kses_post'
 	) );
 
 	$wp_customize->add_control( new Gridalicious_Customize_Textarea_Control( $wp_customize, 'gridalicious_theme_options[promotion_subheadline]', array(

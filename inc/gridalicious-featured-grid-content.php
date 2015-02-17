@@ -174,7 +174,7 @@ function gridalicious_page_grid_content( $options ) {
 			}
 
 			$gridalicious_page_grid_content .= 
-			'<a class="grid-box '. $classes .'" title="Permalink to '. the_title('', '', false) . '" href="' . get_permalink() . '">';
+			'<a class="grid-box '. $classes .'" title="Permalink to '. esc_attr( the_title('', '', false) ) . '" href="' . esc_url( get_permalink() ) . '">';
 				
 			if ( has_post_thumbnail() ) {
 				$gridalicious_page_grid_content .= get_the_post_thumbnail( $post->ID, 'gridalicious-featured-grid', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class'	=> 'pngfix' ) );

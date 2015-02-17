@@ -244,7 +244,7 @@ function gridalicious_sanitize_image( $input ) {
  * @since  Gridalicious 1.0
  */
 function gridalicious_sanitize_page( $input ) {
-	if(  get_page( $input ) ){
+	if(  get_post( $input ) ){
 		return $input;
 	}
     else {

@@ -420,6 +420,8 @@ if ( ! function_exists( 'gridalicious_featured_overall_image' ) ) :
 		// Get Page ID outside Loop
 		$page_id = $wp_query->get_queried_object_id();
 
+		$page_for_posts = get_option('page_for_posts');
+
 		// Check Enable/Disable header image in Page/Post Meta box
 		if ( is_page() || is_single() ) {
 			//Individual Page/Post Image Setting

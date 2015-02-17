@@ -1,5 +1,16 @@
 == Change log ==
 
+ = 0.4=
+* Added gridalicious- prefix to some js handles
+* Bug Fixed: undefined index $page_for_posts for Featured Header Image
+* Bug Fixed: featured-heading-wrap, $headline and $subheadline empty check in featured content
+* Bug Fixed: Featured Content missing classes entry-header and entry-title
+* Bug Fixed: Html is now allowed in Promotion Headline
+* Bug Fixed: Breadcrumb undefined index issue
+* Changed get_page to get_post as get_page is depriciated
+* Renamed "custom_meta_box_nonce" renamed to  "gridalicious_custom_meta_box_nonce"
+* Sanitized custom metabox settings
+
 = 0.3=
 * Bug Fixed: Homepage Category Options ( missing function gridalicious_sanitize_category_list ) 
 

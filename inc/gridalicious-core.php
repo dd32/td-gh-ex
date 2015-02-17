@@ -146,9 +146,9 @@ function gridalicious_scripts() {
 
 	wp_enqueue_style( 'gridalicious-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'navigation', get_template_directory_uri() . '/js/navigation.min.js', array(), '20120206', true );
+	wp_enqueue_script( 'gridalicious-navigation', get_template_directory_uri() . '/js/navigation.min.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.min.js', array(), '20130115', true );
+	wp_enqueue_script( 'gridalicious-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.min.js', array(), '20130115', true );
 
 	/**
 	 * Adds JavaScript to pages with the comment form to support
