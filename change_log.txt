@@ -13,3 +13,6 @@ Version 1.0.2
 Version 1.0.3
 	i)	Set unminified html5.js
 	ii) Set sanitization in header.php
+
+Version 1.0.4
+	i) Repalace esc_attar to esc_html for footer text.

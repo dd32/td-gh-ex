@@ -146,7 +146,7 @@ function deserve_framework_page(){
               <div class="theme-option-inner-tab-group">
               	<div class="ft-control">
               		<div class="explain"><?php _e('Some text regarding copyright of your site, you would like to display in the footer.','deserve'); ?></div>                
-                  	<input type="text" id="footertext" class="of-input" name="deserve_theme_options[footertext]" size="32"  value="<?php if(!empty($deserve_options['footertext'])) { echo esc_attr($deserve_options['footertext']); } ?>">
+                  	<input type="text" id="footertext" class="of-input" name="deserve_theme_options[footertext]" size="32"  value="<?php if(!empty($deserve_options['footertext'])) { echo esc_html($deserve_options['footertext']); } ?>">
                 </div>                
               </div>
             </div>

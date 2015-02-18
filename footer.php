@@ -22,7 +22,7 @@
       
       <div class="bottom-footer">
 	<?php if(!empty($deserve_options['footertext'])) { ?>
-        <p><?php 	echo esc_attr($deserve_options['footertext']).' ';  ?></p>
+        <p><?php 	echo esc_html($deserve_options['footertext']).' ';  ?></p>
         <?php } ?>
         
         <span class='deserve-poweredby'>
