@@ -39,7 +39,7 @@ function attitude_scripts_styles_method() {
 	 */
 	wp_register_script( 'jquery_cycle', ATTITUDE_JS_URL . '/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
 
-   wp_register_style( 'google_fonts', 'http://fonts.googleapis.com/css?family=PT+Sans|Philosopher' );    
+   wp_register_style( 'google_fonts', '//fonts.googleapis.com/css?family=PT+Sans|Philosopher' );    
 	
 	/**
 	 * Enqueue Slider setup js file.
@@ -52,6 +52,15 @@ function attitude_scripts_styles_method() {
    wp_enqueue_script( 'backtotop', ATTITUDE_JS_URL. '/backtotop.js', array( 'jquery' ) );
 
    wp_enqueue_style( 'google_fonts' );
+   /****************************************************************************************/
+
+function attitude_add_editor_styles() {
+	$font_url = str_replace( ',', '%2C', '//fonts.googleapis.com/css?family=PT+Sans:400,700italic,700,400italic' );
+	add_editor_style( $font_url );
+}
+add_action( 'after_setup_theme', 'attitude_add_editor_styles' );
+
+/****************************************************************************************/
 
    /**
     * Browser specific queuing i.e
@@ -344,7 +353,7 @@ add_filter( 'wp_nav_menu_items', 'attitude_nav_menu_alter', 10, 2 );
 */
 if ( !function_exists('attitude_nav_menu_alter') ) {
 	function attitude_nav_menu_alter( $items, $args ) {
-		$items .= '<li class="default-menu"><a href="'.get_bloginfo('url').'" title="Navigation">'.__( 'Navigation','attitude' ).'</a></li>';
+		$items .= '<li class="default-menu"><a href="'.esc_url( home_url() ).'" title="Navigation">'.__( 'Navigation','attitude' ).'</a></li>';
 		return $items;
 	}
 }
@@ -358,7 +367,7 @@ add_filter( 'wp_list_pages', 'attitude_page_menu_alter' );
  */
 if ( !function_exists('attitude_page_menu_alter') ) {
 	function attitude_page_menu_alter( $output ) {
-		$output .= '<li class="default-menu"><a href="'.get_bloginfo('url').'" title="Navigation">'.__( 'Navigation','attitude' ).'</a></li>';
+		$output .= '<li class="default-menu"><a href="'.esc_url( home_url() ).'" title="Navigation">'.__( 'Navigation','attitude' ).'</a></li>';
 		return $output;
 	}
 }

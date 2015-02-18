@@ -4,7 +4,7 @@ Theme URI: http://themehorse.com/themes/attitude
 Author: Team Horse
 Author URI: http://themehorse.com
 Description: Attitude is a Simple, Clean and Responsive Retina Ready WordPress Theme which adapts automatically to your tablets and mobile devices. Theme is easily customizable with numerous theme options. Some of the highlighted options are two site layout (Narrow and Wide), 5 layouts for every post/page, 5 Page Templates, 5 widget areas, 4 custom widgets, featured slider to highlight your post/page, 11 social icons and many more. Also has custom background, header, menu, favicon, CSS, webclip icon, and logo. Supports popular plugins like Breadcrumb NavXT, WP-PageNavi and Contact Form 7. It is also translation ready. Available Translation: Traditional Chinese (Taiwan), Spanish, Norwegian (Nynorsk), German, Russian, Dutch, Italian and Danish. Get free support on http://themehorse.com/support-forum/
-Version: 1.2.9
+Version: 1.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, light, blue, one-column, two-columns, three-columns, left-sidebar, right-sidebar, fluid-layout, custom-menu, custom-background, custom-header, featured-images, full-width-template, theme-options, threaded-comments, translation-ready, sticky-post
@@ -86,6 +86,14 @@ For more instruction you can visit the theme-instruction page of attitude at htt
 If you have still any other questions about the theme you can email at support@themehorse.com for free support.
 
 == Change Log ==
+
+= 1.3 =
+* Update - Recommended title-tag function implemented for WordPress 4.1 and above
+* Update - get_bloginfo('url') changed to esc_url( home_url() )
+* Update - Screenshot updated with recommended size
+* Update - add_editor_style() added
+* Fix - Removed shortcodes plugin-territory function
+* Fix - Google fonts display issue fixed for SSL
 
 = 1.2.9 =
 * bbPress compatible

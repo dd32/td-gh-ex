@@ -38,7 +38,7 @@ function attitude_constants() {
 	define( 'ATTITUDE_JS_DIR', ATTITUDE_LIBRARY_DIR . '/js' );
 	define( 'ATTITUDE_CSS_DIR', ATTITUDE_LIBRARY_DIR . '/css' );	
 	define( 'ATTITUDE_FUNCTIONS_DIR', ATTITUDE_LIBRARY_DIR . '/functions' );
-	define( 'ATTITUDE_SHORTCODES_DIR', ATTITUDE_LIBRARY_DIR . '/shortcodes' );
+	define( 'ATTITUDE_SHORTCODES_DIR', ATTITUDE_LIBRARY_DIR . '/footer_info' );
 	define( 'ATTITUDE_STRUCTURE_DIR', ATTITUDE_LIBRARY_DIR . '/structure' );
 	if ( ! defined( 'ATTITUDE_LANGUAGES_DIR' ) ) /** So we can define with a child theme */
 		define( 'ATTITUDE_LANGUAGES_DIR', ATTITUDE_LIBRARY_DIR . '/languages' );
@@ -56,7 +56,7 @@ function attitude_constants() {
 	define( 'ATTITUDE_JS_URL', ATTITUDE_LIBRARY_URL . '/js' );
 	define( 'ATTITUDE_CSS_URL', ATTITUDE_LIBRARY_URL . '/css' );
 	define( 'ATTITUDE_FUNCTIONS_URL', ATTITUDE_LIBRARY_URL . '/functions' );
-	define( 'ATTITUDE_SHORTCODES_URL', ATTITUDE_LIBRARY_URL . '/shortcodes' );
+	define( 'ATTITUDE_SHORTCODES_URL', ATTITUDE_LIBRARY_URL . '/footer_info' );
 	define( 'ATTITUDE_STRUCTURE_URL', ATTITUDE_LIBRARY_URL . '/structure' );
 	if ( ! defined( 'ATTITUDE_LANGUAGES_URL' ) ) /** So we can predefine to child theme */
 		define( 'ATTITUDE_LANGUAGES_URL', ATTITUDE_LIBRARY_URL . '/languages' );
@@ -89,7 +89,7 @@ function attitude_load_files() {
 	require_once( ATTITUDE_ADMIN_DIR . '/attitude-show-post-id.php' );
 
 	/** Load Shortcodes */
-	require_once( ATTITUDE_SHORTCODES_DIR . '/attitude-shortcodes.php' );
+	require_once( ATTITUDE_SHORTCODES_DIR . '/attitude-footer_info.php' );
 
 	/** Load Structure */
 	require_once( ATTITUDE_STRUCTURE_DIR . '/header-extensions.php' );
@@ -118,6 +118,15 @@ function attitude_core_functionality() {
 
 	// Add default posts and comments RSS feed links to head
 	add_theme_support( 'automatic-feed-links' );
+
+	/*
+	* Let WordPress manage the document title.
+	* By adding theme support, we declare that this theme does not use a
+	* hard-coded <title> tag in the document head, and expect WordPress to
+	* provide it for us.
+	*/
+	add_theme_support( 'title-tag' );
+
 
 	// This theme uses Featured Images (also known as post thumbnails) for per-post/per-page.
 	add_theme_support( 'post-thumbnails' ); 

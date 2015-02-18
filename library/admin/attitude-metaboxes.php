@@ -35,7 +35,7 @@ $sidebar_layout = array(
 							'default-sidebar' 		=> array(
 															'id'			=> 'attitude_sidebarlayout',
 															'value' 		=> 'default',
-															'label' 		=> __( 'Default Layout Set in', 'attitude' ).' '.'<a href="'.get_bloginfo('url').'/wp-admin/themes.php?page=theme_options" target="_blank">'.__( 'Theme Settings', 'attitude' ).'</a>',
+															'label' 		=> __( 'Default Layout Set in', 'attitude' ).' '.'<a href="'.esc_url( home_url() ).'/wp-admin/themes.php?page=theme_options" target="_blank">'.__( 'Theme Settings', 'attitude' ).'</a>',
 															'thumbnail' => ' '
 															),
 							'no-sidebar' 				=> array(

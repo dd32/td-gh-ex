@@ -18,7 +18,6 @@
 		 * HOOKED_FUNCTION_NAME PRIORITY
 		 *
 		 * attitude_add_meta 5
-		 * attitude_show_title 10
 		 *
 		 */
 		do_action( 'attitude_title' );
