@@ -1,8 +1,12 @@
 == Changelog ==
 
+Version 3.5
+* Added Ukrainian translation uk.po and uk.mo
+* Bug Fixed: Footer content not changing as per changes made in Site title using customizer (Reported by Peter Kember)
+
 Version 3.4.2 (Merged 3.4.1)
-* Bug Fixed: Full width no-sidebar page tempalte (Reported by Chrisse )
-* Bug Fixed: Layout issue with body_class (Reported by Christian Nicole Hamann )
+* Bug Fixed: Full width no-sidebar page template (Reported by Chrisse)
+* Bug Fixed: Layout issue with body_class (Reported by Christian Nicole Hamann)
 
 Version 3.4
 * Added class site for main wrapper
