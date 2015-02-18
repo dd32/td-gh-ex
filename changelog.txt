@@ -1,5 +1,9 @@
 Changelog
 
+Hiero 1.6 - 18 Feb 2014
+-----------------------------
+- bug fix for post date;
+
 Hiero 1.4 - 7 Dec 2014
 -----------------------------
 - added changelog.txt;
