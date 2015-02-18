@@ -4,8 +4,8 @@ Theme Name: Azabu-Juban
 Theme URI: http://wpshop.com/themes
 Author: GMO WP Cloud
 Author URI: https://www.wpcloud.jp/en/
-Description: Azabu Juban is an upgraded version of Twenty Thirteen WordPress default theme, which is simple, easy-to-use and highly customizable. This theme features numbers of beautiful design templates with traditional Japanese taste which gives your website a unique look.
-Version: 1.1.4
+Description: Azabu Juban is an upgraded version of Twenty Fourteen WordPress default theme, which is simple, easy-to-use and highly customizable. This theme features numbers of beautiful design templates with traditional Japanese taste which gives your website a unique look.
+Version: 1.1.5
 Template: twentythirteen
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -28,7 +28,7 @@ slider.full.js is licensed under MIT
 slider.js is licensed under the Apache license
 
 *Header background images are designed by GMO WP Cloud and distributed under the terms of the GNU GPL v2
-*Sample image used in the screenshot is an original image owned by GMO WP Cloud. 
+*Sample image used in the screenshot is an original image owned by WP Shop byGMO. 
 
 Azabu-Juban WordPress theme is based on Twenty-Thirteen deafault theme. 
 

@@ -1,18 +1,4 @@
 <?php
-/*
-Plugin name: Hook Suffix Console
-*/
-add_action("admin_head", 'suffix2console');
-function suffix2console() {
-global $hook_suffix;
-if (is_user_logged_in()) {
-$str = "<script type=\"text/javascript\">console.log('%s')</script>";
-printf($str, $hook_suffix);
-}
-}
-?> 
-
-<?php
 
 require_once(dirname(__FILE__).'/include/class-tgm-plugin-activation.php');
 
