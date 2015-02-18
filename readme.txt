@@ -71,6 +71,8 @@ iii)Fonts
 ===========
 Istok Web - http://fonts.googleapis.com/css?family=Istok+Web
 Scada - http://fonts.googleapis.com/css?family=Scada
+Open Sans - http://fonts.googleapis.com/css?family=Open+Sans
+
 They are under SIL Open Font.
 	
 iv)Bootstrap files
