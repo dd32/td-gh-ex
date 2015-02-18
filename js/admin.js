@@ -6,17 +6,19 @@ jQuery(window).ready(function() {
 	jQuery(this).addClass('tr_' + classtr);
 	});
 	
+	jQuery('#asteria-logo_image_id input').remove();
+	
 	//Frontpage Settings Submenu
 	jQuery('#2_section_group').prepend('<ul class="front_sub"><li class="active block_trigger">Blocks</li><li class="welcome_trigger">Welcome Text</li><li class="posts_trigger">Frontpage Posts</li><li class="map_trigger">Location Map</li><li class="callaction_trigger">Call to Action</li><li class="frontwdgt_trigger">Frontpage Widgets</li></ul>')
-	jQuery('.tr_asteria-block1_text_id, .tr_asteria-block1_icon, .tr_asteria-block1_textarea_id, .tr_asteria-block1_link_id, .tr_asteria-block2_text_id, .tr_asteria-block2_icon, .tr_asteria-block2_textarea_id, .tr_asteria-block2_link_id, .tr_asteria-block3_text_id, .tr_asteria-block3_icon, .tr_asteria-block3_textarea_id, .tr_asteria-block3_link_id, .tr_asteria-block4_text_id, .tr_asteria-block4_icon, .tr_asteria-block4_textarea_id, .tr_asteria-block4_link_id').addClass('ast_blocks');
+	jQuery('.tr_asteria-block1_text_id, .tr_asteria-block1_icon, .tr_asteria-block1_textarea_id, .tr_asteria-block1_link_id, .tr_asteria-block2_text_id, .tr_asteria-block2_icon, .tr_asteria-block2_textarea_id, .tr_asteria-block2_link_id, .tr_asteria-block3_text_id, .tr_asteria-block3_icon, .tr_asteria-block3_textarea_id, .tr_asteria-block3_link_id, .tr_asteria-block4_text_id, .tr_asteria-block4_icon, .tr_asteria-block4_textarea_id, .tr_asteria-block4_link_id, #blocks-info').addClass('ast_blocks');
 	jQuery('.tr_asteria-welcm_textarea_id, .tr_asteria-welcome_color_id').addClass('ast_welcome');
 	jQuery('.tr_asteria-posts_title_id, .tr_asteria-front_layout_id, .tr_asteria-enable_cat, .tr_asteria-posts_cat_id, .tr_asteria-n_posts_field_id').addClass('ast_posts');	
 	jQuery('#map-info').addClass('ast_map');
 	jQuery('#callaction-info').addClass('ast_callaction');
 	jQuery('#2_section_group #widget-info').addClass('ast_frntwdgt');
 		
-	jQuery(".ast_frntwdgt, .ast_posts, .ast_map, .ast_callaction, .ast_welcome, .tr_asteria-map-info:parent, .tr_asteria-callaction-info:parent, .tr_asteria-widget-info:parent").hide();
-	jQuery(".tr_asteria-map-info, .tr_asteria-callaction-info, .tr_asteria-widget-info").prev().hide();
+	jQuery(".ast_frntwdgt, .ast_posts, .ast_map, .ast_callaction, .ast_welcome, .tr_asteria-map-info:parent, .tr_asteria-callaction-info:parent, .tr_asteria-widget-info:parent, .tr_asteria-blocks-info:parent").hide();
+	jQuery(".tr_asteria-map-info, .tr_asteria-callaction-info, .tr_asteria-widget-info, .tr_asteria-blocks-info").prev().hide();
 
 	
 	jQuery('.front_sub li').click(function(){
@@ -31,7 +33,8 @@ jQuery(window).ready(function() {
 		jQuery('.callaction_trigger').click(function(){ jQuery('.ast_callaction').fadeIn(300); });
 		jQuery('.frontwdgt_trigger').click(function(){ jQuery('.ast_frntwdgt').fadeIn(300); });
 		
-//Documentation
+///Documentation
+jQuery(".docu_faq").click(function() {jQuery('#ast_docu').fadeOut();jQuery("#docu_faq").delay(300).fadeIn();});
 jQuery(".docu_front").click(function() {jQuery('#ast_docu').fadeOut();jQuery("#docu_front").delay(300).fadeIn();});
 jQuery(".docu_img").click(function() {jQuery('#ast_docu').fadeOut();jQuery("#docu_img").delay(300).fadeIn();});
 jQuery(".docu_vid").click(function() {jQuery('#ast_docu').fadeOut();jQuery("#docu_vid").delay(300).fadeIn();});
@@ -46,7 +49,7 @@ jQuery(".docu_shorts").click(function() {jQuery('#ast_docu').fadeOut();jQuery("#
 jQuery(".docu_supp").click(function() {jQuery('#ast_docu').fadeOut();jQuery("#docu_supp").delay(300).fadeIn();});
 jQuery(".docu_gallery").click(function() {jQuery('#ast_docu').fadeOut();jQuery("#docu_gallery").delay(300).fadeIn();});
 
-jQuery(".docuback").click(function() {jQuery('#docu_gallery, #docu_front, #docu_img, #docu_vid, #docu_blog, #docu_contct, #docu_bg, #docu_headr, #docu_menu, #docu_styling, #docu_wdgts, #docu_shorts, #docu_supp').fadeOut();jQuery("#ast_docu").delay(300).fadeIn();});
+jQuery(".docuback").click(function() {jQuery('#docu_faq, #docu_gallery, #docu_front, #docu_img, #docu_vid, #docu_blog, #docu_contct, #docu_bg, #docu_headr, #docu_menu, #docu_styling, #docu_wdgts, #docu_shorts, #docu_supp').fadeOut();jQuery("#ast_docu").delay(300).fadeIn();});
 
 //UPGRADE
 	jQuery("#sub_ex, #sub_compare").hide();

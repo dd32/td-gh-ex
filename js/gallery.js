@@ -1,124 +1,86 @@
 // Gallery plugin written by Towfiq I.
 jQuery(window).ready(function() {
-//======================Gallery=================================//
 	
+//Check if image links to attachment
+jQuery('.gallery-item a[href*="attachment_id"]').each(function() {
+    jQuery(this).addClass('attachedlink');
+});
+jQuery('.gallery').each(function() {
+	jQuery(this).has('.attachedlink').addClass('defgallery');
+});
+
 //remove any <br> inside the gallery markup
 jQuery(".gallery br").remove();
+//Empty Caption FIX
+jQuery('.gallery-item:not(:has(.gallery-caption))').prepend('<dd class="wp-caption-text gallery-caption"></dd>');
 //wrap all .gallery-item with .gall_dash /  For making the thumbnail navigation area
-jQuery(".gallery").each(function (){jQuery(this).find(".gallery-item").wrapAll('<div class="gall_dash" />');});
+jQuery(".gallery").each(function (){jQuery(this).find(".gallery-item").wrapAll('<div class="gall_dash" style="display:none" />');});
+
 jQuery('.gall_dash .hasimg').removeClass('hasimg');
-
+	
 //Prepend the big image area. and load the src image of the first thumbnail. The.ast_full is for fancybox integration.
-jQuery(".thn_post_wrap .gallery").prepend("<div class='ast_gall'><img class='gall_loader' src='"+galleryloadergif+"' /></div>");
-
-
-//add .gall_active to first gallery-item for styling purpose
-jQuery('.gallery-item:eq(0) img').addClass('gall_active');
-
-
-
-//here goes our main click function to load the large images from the thumbnail images
-jQuery(".gallery-item a").click(function(event) {
-	event.preventDefault();
-	
-	jQuery(".gall_active").removeClass("gall_active");
-	jQuery(this).find("img").addClass("gall_active");
-
-	//change the main image
-	var clickedgall = jQuery(this).attr('class');
-	jQuery('.gib').fadeOut('fast');
-	jQuery(".gib").not(".gall_img_block"+clickedgall+"").removeClass('active_full');
-	jQuery(".gall_img_block"+clickedgall+"").addClass('active_full').delay(200).fadeIn('fast');
-	var gallnewheight = jQuery(".gall_img_block"+clickedgall+"").height();
-	jQuery(".ast_gall").height(gallnewheight);
-	
-	//change the link of .ast_full to current large image link
-	jQuery(".fancygall"+clickedgall+"").delay(200).fadeIn('fast');
-});
-
-
+jQuery(".single_post .gallery").prepend("<div class='ast_gall'><div class='sk-spinner sk-spinner-wave'><div class='sk-rect1'></div><div class='sk-rect2'></div><div class='sk-rect3'></div><div class='sk-rect4'></div><div class='sk-rect5'></div></div><a href='' class='ast_full' style='display: block;'></a><div class='ast_gall_wrap'></div></div>");
 
 //==============REMAP AND APPEND THE MAIN IMAGES================
-var tn_array = jQuery(".gall_dash .gallery-item a").map(function() {
-  return jQuery(this).attr("href");
-});
+jQuery(".gallery").each(function (){
+		var gallid = jQuery(this).attr('id');
+		var tn_array = jQuery(this).find(".gallery-item a").map(function() {
+		  return jQuery(this).attr("href");
+		});
+		var tn_array_cap = jQuery(this).find(".gallery-caption").map(function() {
+				return jQuery(this).text();	
+		});
+		var tn_array_src = jQuery(this).find(".gallery-item img").map(function() {
+		  return jQuery(this).attr("src");
+		});
+		var pageLimit= jQuery(this).find(".gall_dash img").size() - 1;
+		for (var i = 0; i <= pageLimit; i++) {
+			var article = jQuery(this).find(".gallery-item a");
+				jQuery(article[i]).addClass("" + i + "");
+				jQuery(article[i]).attr('id' , "vis" + i + "");
+				jQuery(this).find('.ast_gall_wrap').append("<img id='mainImage" + i + "' src='"+tn_array[i]+"' title='#"+gallid + i + "' data-thumb='"+tn_array_src[i]+"' data-caption='"+tn_array_cap[i]+"' />");
+				jQuery(this).find('.ast_gall_wrap').after('<div id="'+gallid + i + '" class="nivo-html-caption"><div class="cap_inner">'+tn_array_cap[i]+'</div></div>')
 
-var pageLimit= jQuery(".gall_dash img").size() - 1;
-for (var i = 0; i <= pageLimit; i++) {
-	var article = jQuery(".gallery-item a");
-		jQuery(article[i]).addClass("" + i + "");
-		jQuery(article[i]).attr('id' , "vis" + i + "");
-        jQuery('.ast_gall').append("<div class='gib gall_img_block" + i + "' data-thummbid='vis" + parseInt(1+i) + "' style='z-index:" + parseInt(10-i) + "'><a class='ast_full fancygall" + i + "' href='"+tn_array[i]+"' rel='gall1' title='See larger version of this image'></a><img id='mainImage" + i + "' src='"+tn_array[i]+"' class='gallery_full'/><a data-prev='" + parseInt(i-1) + "' class='ast_gall_prev'><i class='fa fa-chevron-left'></i></a><a data-next='" + parseInt(i+1) + "' class='ast_gall_next'><i class='fa fa-chevron-right'></i></a><p class='capcap'></p></div>");
-    }
-
-//APPEND CAPTION	
-for (var i = 0; i <= pageLimit; i++) {	
-	jQuery('#vis'+ i +'').parent().parent().find('.wp-caption-text').appendTo('.gall_img_block' + i + ' .capcap');
-    }
-	
-	
-jQuery("#mainImage0").addClass("active_full");
-jQuery( "p.capcap:empty" ).css( "display", "none" );
-
-
-//Hide the First Next/Previous Link
-jQuery(".gib:eq(0) .ast_gall_prev, div.gib:last-child a.ast_gall_next").css({"display":"none"});
-jQuery(".gib:eq(0) .ast_gall_next").css({"display":"block"});
-
-
-//==============NEXT & PREVIOUS BUTTONS=================
-//---NEXT BUTTON---
-jQuery(".ast_gall_next").click(function(event) {
-	jQuery(".gall_active").removeClass("gall_active");
-	jQuery(this).find("img").addClass("gall_active");
-	
-	//SHOW THE NEXT DIV
-	jQuery(this).parent().fadeOut('fast');
-	jQuery(this).parent().next('.gib').fadeIn('fast');
-	
-	var gallnewheight = jQuery(this).parent().next('.gib').height();
-	jQuery(".ast_gall").height(gallnewheight);
-	
-	//Highlight the Thumb on clicking next button
-	var thumbnext = jQuery(this).parent().attr('data-thummbid');
-	jQuery('.gall_dash img').removeClass("gall_active");
-	jQuery('#'+thumbnext+' img').addClass("gall_active");
-	
-});
-//---PREVIOUS BUTTON---
-jQuery(".ast_gall_prev").click(function(event) {
-	jQuery(".gall_active").removeClass("gall_active");
-	jQuery(this).find("img").addClass("gall_active");
-	
-	//SHOW THE NEXT DIV
-	jQuery(this).parent().fadeOut('fast');
-	jQuery(this).parent().prev('.gib').fadeIn('fast');
-	
-	var gallnewheight = jQuery(this).parent().prev('.gib').height();
-	jQuery(".ast_gall").height(gallnewheight);
-	
-	//Highlight the Thumb on clicking prev button
-	var thumbprev = jQuery(this).parent().prev().prev().attr('data-thummbid');
-	jQuery('.gall_dash img').removeClass("gall_active");
-	jQuery('#'+thumbprev+' img').addClass("gall_active");
+			}
+			});
 });
 
 
-
-//Add Lazyload
-jQuery('.ast_gall').fadeOut();
-
-jQuery('.ast_gall').waitForImages(function() {
-	jQuery('.gall_loader').fadeOut(300);
-	jQuery(".gib").each(function (){
-		var gibheight = jQuery(this).find(".gallery_full").height();
-		jQuery(this).height(gibheight);
+jQuery(window).ready(function() {
+	jQuery(".ast_gall_wrap").each(function (){	
+	jQuery(this).waitForImages(function() {
+		jQuery(this).css({"minHeight":"initial"});
+		jQuery(this).parent().find('.sk-spinner-wave').hide();
+		jQuery(this).fadeIn();
+		
+		jQuery(this).nivoSlider({
+				effect: 'fade',
+				animSpeed:300,
+				pauseTime:3000,
+				startSlide:0,
+				slices:5,
+				directionNav:true,
+				directionNavHide:true,
+				controlNav:true,
+				controlNavThumbs:true,
+				keyboardNav:true,
+				manualAdvance: true,
+				afterChange: function(){  
+					jQuery(this).parent().find('.ast_full').attr('href', jQuery(this).find('.nivo-main-image').attr('src')); 
+					jQuery(this).find('.nivo-caption').css({"width":jQuery(this).find('.nivo-main-image').width()});
+				}
+		});
+		jQuery(this).parent().find('.ast_full').attr('href', jQuery(this).find('.nivo-main-image').attr('src'));
+		
+		jQuery(".ast_full").fancybox({
+			'transitionIn'	:	'elastic',
+			'transitionOut'	:	'elastic',
+			'speedIn'		:	400,
+			'speedOut'		:	200,
+			'overlayShow'	:	true,
+			'hideOnContentClick' : true,
+			'titleShow':false
+		}); 
 	});
-	jQuery('.ast_gall').height(jQuery('.gall_img_block0').height());
-	
-	jQuery('.ast_gall').fadeIn();
 });
-
-
-
 });

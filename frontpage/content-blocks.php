@@ -19,7 +19,7 @@
             <?php }else{ ?>
             <div class="block_img"><div class="icon_wrap"><i class="<?php echo $asteria['block1_icon']; ?> fa-2x"></i></div></div>
             <?php } ?>
-            <h3><?php echo $asteria['block1_text_id']; ?></h3>
+            <h3><?php echo do_shortcode($asteria['block1_text_id']); ?></h3>
             <p><?php echo do_shortcode($asteria['block1_textarea_id']); ?></p>
     
             </div>
@@ -39,7 +39,7 @@
             <?php }else{ ?>
             <div class="block_img"><div class="icon_wrap"><i class="<?php echo $asteria['block2_icon']; ?> fa-2x"></i></div></div>
             <?php } ?>
-            <h3><?php echo $asteria['block2_text_id']; ?></h3>
+            <h3><?php echo do_shortcode($asteria['block2_text_id']); ?></h3>
             <p><?php echo do_shortcode($asteria['block2_textarea_id']); ?></p>
     
             </div>
@@ -58,7 +58,7 @@
             <?php }else{ ?>
             <div class="block_img"><div class="icon_wrap"><i class="<?php echo $asteria['block3_icon']; ?> fa-2x"></i></div></div>
             <?php } ?>
-            <h3><?php echo $asteria['block3_text_id']; ?></h3>
+            <h3><?php echo do_shortcode($asteria['block3_text_id']); ?></h3>
             <p><?php echo do_shortcode($asteria['block3_textarea_id']); ?></p>
     
             </div>
@@ -77,7 +77,7 @@
             <?php }else{ ?>
             <div class="block_img"><div class="icon_wrap"><i class="<?php echo $asteria['block4_icon']; ?> fa-2x"></i></div></div>
             <?php } ?>
-            <h3><?php echo $asteria['block4_text_id']; ?></h3>
+            <h3><?php echo do_shortcode($asteria['block4_text_id']); ?></h3>
             <p><?php echo do_shortcode($asteria['block4_textarea_id']); ?></p>
        
             </div>

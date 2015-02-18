@@ -28,8 +28,11 @@
                         <div class="single_metainfo">
                             <i class="fa-calendar"></i><a class="comm_date"><?php the_time( get_option('date_format') ); ?></a>
                             <i class="fa-user"></i><?php global $authordata; $post_author = "<a class='auth_meta' href=\"".get_author_posts_url( $authordata->ID, $authordata->user_nicename )."\">".get_the_author()."</a>\r\n"; echo $post_author; ?>
-                            <i class="fa-comments"></i><?php if (!empty($post->post_password)) { ?>
-                        <?php } else { ?><div class="meta_comm"><?php comments_popup_link( __('0 Comment', 'asteria'), __('1 Comment', 'asteria'), __('% Comments', 'asteria'), '', __('Off' , 'asteria')); ?></div><?php } ?>
+						<?php if (!empty($post->post_password)) { ?>
+                        <?php } else { ?>
+                            <?php if (!empty ($asteria['post_comments_id'])) { ?>
+                                    <i class="fa-comments"></i> <div class="meta_comm"><?php comments_popup_link( __('0 Comment', 'asteria'), __('1 Comment', 'asteria'), __('% Comments', 'asteria'), '', __('Off' , 'asteria')); ?></div><?php } ?>
+                        <?php } ?>
                         
                           <i class="fa-th-list"></i><div class="catag_list"><?php the_category(', '); ?></div>
                         </div>
@@ -73,14 +76,14 @@
 	<?php $prevPost = get_previous_post(true); if($prevPost) {?>
         <div class="nav-box ast-prev">
         <?php $prevthumbnail = get_the_post_thumbnail($prevPost->ID, array(100,100) );?>
-        <?php previous_post_link('%link',"$prevthumbnail Previous Post<br><span>%title</span>", TRUE); ?>
+        <?php previous_post_link('%link',"".$prevthumbnail." Previous Post<br><span>%title</span>", TRUE); ?>
         <a class="left_arro" href="#"><i class="fa-angle-left"></i></a>
         </div>
     <?php }?>
     <?php $nextPost = get_next_post(true); if($nextPost) { ?>
         <div class="nav-box ast-next">
         <?php $nextthumbnail = get_the_post_thumbnail($nextPost->ID, array(100,100) ); ?>
-        <?php next_post_link('%link',"$nextthumbnail Next Post<br><span>%title</span>", TRUE); ?>
+        <?php next_post_link('%link',"".$nextthumbnail." Next Post<br><span>%title</span>", TRUE); ?>
         <a class="right_arro" href="#"><i class="fa-angle-right"></i></a>
         </div>
     <?php }?>

@@ -117,6 +117,8 @@ class ReduxFramework_typography extends ReduxFramework{
               }
               if (empty($this->field['fonts'])) {
                   $this->field['fonts'] = array(
+				  	  "Open Sans" => "Open Sans",
+					  "Yanone Kaffeesatz" => "Yanone Kaffeesatz",
                       "Arial, Helvetica, sans-serif" => "Arial, Helvetica, sans-serif",
                       "'Arial Black', Gadget, sans-serif" => "'Arial Black', Gadget, sans-serif",
                       "'Bookman Old Style', serif" => "'Bookman Old Style', serif",

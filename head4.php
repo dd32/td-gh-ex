@@ -3,13 +3,11 @@
     <div class="center">  
 	<!--LOGO START-->        
     <div class="logo">
-
 			<?php if ( is_home() ) { ?>   
             <h1><a href="<?php echo esc_url( home_url( '/' ) );?>"><?php bloginfo('name'); ?></a></h1>
             <?php }else{ ?>
             <h2><a href="<?php echo esc_url( home_url( '/' ) );?>"><?php bloginfo('name'); ?></a></h2>
             <?php } ?>
-
     </div>
 	<!--LOGO END-->  
     

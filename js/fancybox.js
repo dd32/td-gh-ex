@@ -49,10 +49,10 @@ easingOut:"swing",showCloseButton:true,showNavArrows:true,enableEscapeButton:tru
 jQuery(function() {
 	
 	jQuery('.single_post a, .type-attachment a').has('img').addClass('hasimg');
-	jQuery('.imgwrap a, .gall_dash .hasimg').removeClass('hasimg');
-	jQuery(".post_content .gallery .hasimg[href$='.jpg'], .post_content .gallery .hasimg[href$='.png'], .post_content .gallery .hasimg[href$='.gif']").addClass('grouped_elements');
-	jQuery('.post_content .gallery .hasimg').attr("rel","group1");	
-	jQuery(".hasimg[href$='.jpg'], .hasimg[href$='.png'], .hasimg[href$='.gif'], a.grouped_elements, .ast_full").fancybox({
+	jQuery('.imgwrap a, .gall_dash .hasimg, .nivo-thumbs-enabled a').removeClass('hasimg');
+	jQuery(".single_post_content.gallery .hasimg[href$='.jpg'], .single_post_content .gallery .hasimg[href$='.png'], .single_post_content .gallery .hasimg[href$='.gif']").addClass('grouped_elements');
+	jQuery('.single_post_content .gallery .hasimg').attr("rel","group1");	
+	jQuery(".hasimg[href$='.jpg'], .hasimg[href$='.jpeg'], .hasimg[href$='.png'], .hasimg[href$='.gif'], a.grouped_elements, .ast_full").fancybox({
 		'transitionIn'	:	'elastic',
 		'transitionOut'	:	'elastic',
 		'speedIn'		:	400,

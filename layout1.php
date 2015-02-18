@@ -4,7 +4,7 @@
 
 <?php if ( is_home() ) { ?>
     <div class="homeposts_title">
-	<?php if (get_option( 'asteria' )) { ?><?php echo $asteria['posts_title_id']; ?><?php }else{?> 
+	<?php if (get_option( 'asteria' )) { ?><?php echo do_shortcode($asteria['posts_title_id']); ?><?php }else{?> 
 	<h2 style="text-align: center;"><span style="color: #e2341d;">Check Out Our Portfolio</span></h2>
 	<p style="text-align: center;">The Very recent work for our clients</p>
 	<?php } ?>
@@ -61,7 +61,8 @@
                 'current' => max( 1, get_query_var('paged') ),
                 'total' => $wp_query->max_num_pages,
                 'show_all'     => true,
-                'prev_next'    => false
+                'prev_next'    => false,
+				'add_args' => false
             
             ) );
     ?>

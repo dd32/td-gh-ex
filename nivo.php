@@ -10,11 +10,11 @@
 			<?php foreach ((array)$asteria['slides'] as $arr){ ?>
             
 				<?php if (!empty ($arr['slide_url'])) { ?>
-					<a href="<?php echo $arr['slide_url']; ?>" title="<?php echo $arr['slide_title']; ?>">
-					<img src="<?php echo $arr['slide_image_url']; ?>" alt="<?php echo $arr['slide_title']; ?>" title="#nv_<?php echo $arr['slide_image_id']; ?>"/>
+					<a href="<?php echo $arr['slide_url']; ?>" title="<?php echo do_shortcode($arr['slide_title']); ?>">
+					<img src="<?php echo $arr['slide_image_url']; ?>" alt="<?php echo do_shortcode($arr['slide_title']); ?>" title="#nv_<?php echo $arr['slide_image_id']; ?>"/>
 					</a>
 				<?php } else { ?>
-					<img src="<?php echo $arr['slide_image_url']; ?>" alt="<?php echo $arr['slide_title']; ?>" title="#nv_<?php echo $arr['slide_image_id']; ?>"/>						
+					<img src="<?php echo $arr['slide_image_url']; ?>" alt="<?php echo do_shortcode($arr['slide_title']); ?>" title="#nv_<?php echo $arr['slide_image_id']; ?>"/>						
 				<?php } ?>
 
 
@@ -25,8 +25,11 @@
 
 					<div id="nv_<?php echo $arr['slide_image_id']; ?>" class="nivo-html-caption sld_<?php echo $arr['slide_content_id']; ?>">
                     <div class="nivoinner sld_<?php echo $arr['slide_content_id']; ?>">
-					<h3 class="entry-title"><a <?php if (!empty ($arr['slide_url'])) { ?>href="<?php echo $arr['slide_url']; ?>"<?php } ?>><?php echo $arr['slide_title']; ?></a></h3>
-							<p><?php echo $arr['slide_description']; ?></p>
+					<h3 class="entry-title"><a <?php if (!empty ($arr['slide_url'])) { ?>href="<?php echo $arr['slide_url']; ?>"<?php } ?>><?php echo do_shortcode($arr['slide_title']); ?></a></h3>
+							<p><?php echo do_shortcode($arr['slide_description']); ?></p>
+                            <?php if (!empty ($asteria['slide_button_text']) && !empty ($arr['slide_url'])) { ?>
+                            <a class="sld_buttn" <?php if (!empty ($arr['slide_url'])) { ?>href="<?php echo $arr['slide_url']; ?>"<?php } ?>><?php echo do_shortcode($asteria['slide_button_text']); ?></a>
+                            <?php } ?>
                      </div>
 					</div>
 

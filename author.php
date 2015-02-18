@@ -52,8 +52,11 @@ endif;
                     <div class="single_metainfo">
                     <i class="fa-calendar"></i><a class="comm_date"><?php the_time( get_option('date_format') ); ?></a>
                     <i class="fa-user"></i><a class="meta_auth"><?php the_author(); ?></a>
-                    <i class="fa-comments"></i><?php if (!empty($post->post_password)) { ?>
-                <?php } else { ?><div class="meta_comm"><?php comments_popup_link( __('0 Comment', 'asteria'), __('1 Comment', 'asteria'), __('% Comments', 'asteria'), '', __('Off' , 'asteria')); ?></div><?php } ?>
+                    <?php if (!empty($post->post_password)) { ?>
+                	<?php } else { ?>
+                        <?php if (!empty ($asteria['post_comments_id'])) { ?>
+                        		<i class="fa-comments"></i> <div class="meta_comm"><?php comments_popup_link( __('0 Comment', 'asteria'), __('1 Comment', 'asteria'), __('% Comments', 'asteria'), '', __('Off' , 'asteria')); ?></div><?php } ?>
+					<?php } ?>
                 
                   <i class="fa-th-list"></i><div class="catag_list"><?php the_category(', '); ?></div>
                     </div>
@@ -76,7 +79,8 @@ echo paginate_links( array(
 	'current' => max( 1, get_query_var('paged') ),
 	'total' => $wp_query->max_num_pages,
 	'show_all'     => true,
-	'prev_next'    => false
+	'prev_next'    => false,
+	'add_args' => false
 
 ) );
 ?>

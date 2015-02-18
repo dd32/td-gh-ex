@@ -23,7 +23,8 @@
 					jQuery(".nivo-caption").animate({"opacity": "1", "right":"0"}, {easing:"easeOutBack", duration: 500});
 						}else{
 					jQuery(".nivo-caption").animate({"opacity": "1", "right":"11%"}, {easing:"easeOutBack", duration: 500});	
-					jQuery(".nivo-caption").has('.sld_layout3').addClass('sld3wrap');
+					jQuery("#zn_nivo, .nivo-controlNav, #slide_acord, .nivoinner").css({"display":"block"});
+					jQuery(".nivo-caption").addClass('sld3wrap');
 							}
 				},
 				beforeChange: function(){
@@ -43,9 +44,14 @@
 							}
 				}
 			});
+			
+	<?php if(!empty($asteria['slides'][0]) && $asteria['slides'][0]['slide_content_id'] == 'layout3') { ?>
+    	jQuery(".nivo-caption").addClass('sld3wrap');	
+    <?php } ?>
 
 	});
 </script>
+
 <?php } ?>
 
 <?php /*?><!------------------------------------------------------------Other Javascripts--------------------------------------------------------><?php */?>
@@ -107,7 +113,6 @@ var galleryloadergif = "<?php echo get_template_directory_uri(); ?>/images/newlo
 	if(jQuery('.midrow_block').length == 2){ jQuery('.midrow_blocks').addClass('twoblocks'); }
 	if(jQuery('.midrow_block').length == 1){ jQuery('.midrow_blocks').addClass('oneblock'); }
 
-
 <?php if((!empty($asteria['offline_id']))){ ?>
 jQuery(window).ready(function() {jQuery("#countdown_mntnc").countdown({
 	date: "<?php echo $asteria['offline_date_id']; ?> <?php echo $asteria['offline_time_id'];?>:00",
@@ -124,7 +129,7 @@ jQuery('.ast_pagenav span').replaceWith(function() {
     var url = (jQuery(this).text());
 	 <?php global $wp; $current_url = add_query_arg( $wp->query_string, '', home_url('/', $wp->request ) ); ?>
 	 if (jQuery("span.page-numbers").prev().length === 0) {
-    return '<a class="page-numbers current" href="<?php echo $current_url ?><?php if(is_category() || is_search() || is_author()) { ?>&paged=1<?php }else{ ?>?paged=1<?php } ?>" target="_blank">' + url + '</a>';
+    return '<a class="page-numbers current" href="<?php echo $current_url ?><?php if(is_category() || is_search() || is_author() || $template = get_post_meta( get_the_ID(), '_wp_page_template', true ) == 'page-blog.php') { ?>&paged=1<?php }else{ ?>?paged=1<?php } ?>" target="_blank">' + url + '</a>';
 	 }else{
 		    return '<a class="page-numbers current" href="<?php echo $current_url ?>" target="_blank">' + url + '</a>'; 
 	 }
@@ -144,7 +149,7 @@ jQuery('.ast_pagenav span.page-numbers').each(function () {
 jQuery('.ast_pagenav a').each(function(){
         
 	<?php if(is_category() || is_search() || is_author()) {  ?>
-	this.href = this.href.replace('/page/', '&paged=');
+	this.href = '<?php echo $current_url ?>&paged='+jQuery(this).text()+'';
 	<?php }else{ ?>
     this.href = this.href.replace('/page/', '?paged=');
 	<?php } ?>
@@ -163,7 +168,7 @@ jQuery('.ast_pagenav a').each(function(){
 	if( is_author() || ($template == 'page-blog.php' ) ){  ?>
 	//Layout 4 Ajax
 	var link = jQuery(this).attr('href');
-	jQuery('.lay4_inner').html('<div class="ast_ajaxwrap"><div class="ast_ajax"></div></div>').load(link + '.lay4_inner .hentry', function(){
+	jQuery('.lay4_inner').html('<div class="ast_ajaxwrap"><div class="sk-spinner sk-spinner-wave"><div class="sk-rect1"></div><div class="sk-rect2"></div><div class="sk-rect3"></div><div class="sk-rect4"></div><div class="sk-rect5"></div></div></div>').load(link + '.lay4_inner .hentry', function(){
     jQuery('.lay4_inner').fadeIn(500); 
 	jQuery(".hentry").hide().each(function() {
   	jQuery(this).fadeIn(500, "easeInSine");
@@ -175,7 +180,7 @@ jQuery('.ast_pagenav a').each(function(){
 <?php if(($asteria['cat_layout_id'] == "1") && (!is_home())){ ?>
 	//Layout 1 Ajax
 			var link = jQuery(this).attr('href');
-	jQuery('.lay1_wrap').html('<div class="ast_ajaxwrap"><div class="ast_ajax"></div></div>').load(link + '.lay1_wrap .hentry', function(){
+	jQuery('.lay1_wrap').html('<div class="ast_ajaxwrap"><div class="sk-spinner sk-spinner-wave"><div class="sk-rect1"></div><div class="sk-rect2"></div><div class="sk-rect3"></div><div class="sk-rect4"></div><div class="sk-rect5"></div></div></div>').load(link + '.lay1_wrap .hentry', function(){
 		
 	if (jQuery(window).width() < 360) {
 		var divs = jQuery(".lay1 .hentry");
@@ -204,7 +209,7 @@ jQuery('.ast_pagenav a').each(function(){
 <?php }elseif(($asteria['front_layout_id'] == "1") && (is_home())){ ?>
 	//Layout 1 Ajax
 			var link = jQuery(this).attr('href');
-	jQuery('.lay1_wrap').html('<div class="ast_ajaxwrap"><div class="ast_ajax"></div></div>').load(link + '.lay1_wrap .hentry', function(){
+	jQuery('.lay1_wrap').html('<div class="ast_ajaxwrap"><div class="sk-spinner sk-spinner-wave"><div class="sk-rect1"></div><div class="sk-rect2"></div><div class="sk-rect3"></div><div class="sk-rect4"></div><div class="sk-rect5"></div></div></div>').load(link + '.lay1_wrap .hentry', function(){
 		
 	if (jQuery(window).width() < 360) {
 		var divs = jQuery(".lay1 .hentry");
@@ -242,7 +247,7 @@ jQuery('.ast_pagenav a').each(function(){
 <?php if(($asteria['cat_layout_id'] == "4") && (!is_home())){ ?>
 	//Layout 4 Ajax
 	var link = jQuery(this).attr('href');
-	jQuery('.lay4_inner').html('<div class="ast_ajaxwrap"><div class="ast_ajax"></div></div>').load(link + '.lay4_inner .hentry', function(){
+	jQuery('.lay4_inner').html('<div class="ast_ajaxwrap"><div class="sk-spinner sk-spinner-wave"><div class="sk-rect1"></div><div class="sk-rect2"></div><div class="sk-rect3"></div><div class="sk-rect4"></div><div class="sk-rect5"></div></div></div>').load(link + '.lay4_inner .hentry', function(){
     jQuery('.lay4_inner').fadeIn(500); 
 	jQuery(".hentry").hide().each(function() {
   	jQuery(this).fadeIn(500, "easeInSine");
@@ -251,7 +256,7 @@ jQuery('.ast_pagenav a').each(function(){
 <?php }elseif(($asteria['front_layout_id'] == "4") && (is_home())){ ?>
 	//Layout 4 Ajax
 	var link = jQuery(this).attr('href');
-	jQuery('.lay4_inner').html('<div class="ast_ajaxwrap"><div class="ast_ajax"></div></div>').load(link + '.lay4_inner .hentry', function(){
+	jQuery('.lay4_inner').html('<div class="ast_ajaxwrap"><div class="sk-spinner sk-spinner-wave"><div class="sk-rect1"></div><div class="sk-rect2"></div><div class="sk-rect3"></div><div class="sk-rect4"></div><div class="sk-rect5"></div></div></div>').load(link + '.lay4_inner .hentry', function(){
     jQuery('.lay4_inner').fadeIn(500); 
 	jQuery(".hentry").hide().each(function() {
   	jQuery(this).fadeIn(500, "easeInSine");

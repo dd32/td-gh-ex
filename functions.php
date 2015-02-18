@@ -19,6 +19,7 @@ function asteria_home_query($query) {
 add_action( 'pre_get_posts', 'asteria_home_query' );
 
 //Asteria Site title
+if ( ! function_exists( '_wp_render_title_tag' ) ) {
 function asteria_wp_title( $title, $sep ) {
 	global $paged, $page;
 
@@ -41,25 +42,44 @@ function asteria_wp_title( $title, $sep ) {
 }
 add_filter( 'wp_title', 'asteria_wp_title', 10, 2 );
 
+function asteria_render_title() {
+?>
+<title><?php wp_title(); ?></title>
+<?php
+}
+add_action( 'wp_head', 'asteria_render_title' );
+}
+
 //Load Other CSS files
 function asteria_other_css() { 
 if ( !is_admin() ) {
 wp_enqueue_style( 'asteria-style', get_stylesheet_uri());
 global $asteria; if ( ! empty ( $asteria['post_lightbox_id'] ) ) {wp_enqueue_style('fancybox',get_template_directory_uri().'/css/fancybox.css'); }
-wp_enqueue_style('customfont',get_template_directory_uri().'/fonts/yanone_kaffeesatz.css', 'yanone_kaffeesatz' ); 
-wp_enqueue_style('customfont2',get_template_directory_uri().'/fonts/opensans-light.css', 'open_sans' );
-wp_enqueue_style('icons',get_template_directory_uri().'/fonts/font-awesome.css', 'font_awesome' );
+
+if($asteria['content_font_id'] == 'Open Sans'){
+	wp_register_style('asteria-bodyfont', '//fonts.googleapis.com/css?family=Open+Sans');
+	wp_enqueue_style( 'asteria-bodyfont');
+}
+if($asteria['ptitle_font_id'] == 'Yanone Kaffeesatz'){
+	wp_register_style('asteria-titlefont', '//fonts.googleapis.com/css?family=Yanone+Kaffeesatz');
+	wp_enqueue_style( 'asteria-titlefont');
+}
+
+wp_enqueue_style('asteria-icons',get_template_directory_uri().'/fonts/font-awesome.css', 'font_awesome' );
 	}
 }
 add_action('wp_enqueue_scripts', 'asteria_other_css');	
 
+//LOAD DYNAMIC CSS
+get_template_part('style');
+
 //Load Default Logo Fonts
 function asteria_google_fonts() {
 		//Site Title Font
-		wp_register_style('SiteTitleFont','http://fonts.googleapis.com/css?family=Cinzel+Decorative');
+		wp_register_style('asteria-SiteTitleFont','//fonts.googleapis.com/css?family=Raleway');
 			global $asteria;
             if ( !get_option( 'asteria' )) {
-				wp_enqueue_style( 'SiteTitleFont'); }
+				wp_enqueue_style( 'asteria-SiteTitleFont'); }
 
 }
 add_action('wp_print_styles', 'asteria_google_fonts');
@@ -268,6 +288,9 @@ if (class_exists('Woocommerce')) {
 
 //**************ASTERIA SETUP******************//
 function asteria_setup() {
+//Meta Title Tag (4.1)
+add_theme_support( 'title-tag' );
+	
 //Custom Thumbnail Size	
 if ( function_exists( 'add_image_size' ) ) { 
 	add_image_size( 'asteriathumb', 387, 260, true ); //(cropped)
@@ -389,13 +412,13 @@ if ( $wp_customize->is_preview() && ! is_admin() )
         )
     );
 	
-	$wp_customize->add_setting('asteria[sec_color_id]',array('type' => 'option','transport'   => 'postMessage'));
+	$wp_customize->add_setting('asteria[sec_color_id]',array('type' => 'option','transport'   => 'postMessage','sanitize_callback' => 'sanitize_hex_color'));
 
 
-	$wp_customize->add_setting('asteria[primtxt_color_id]',array('type' => 'option','transport'   => 'postMessage'));
-	$wp_customize->add_setting('asteria[sectxt_color_id]',array('type' => 'option','transport'   => 'postMessage'));
-	$wp_customize->add_setting('asteria[menutxt_color_id]',array('type' => 'option','transport'   => 'postMessage'));
-	$wp_customize->add_setting('asteria[leavreplytxt_color_id]',array('type' => 'option','transport'   => 'postMessage'));	
+	$wp_customize->add_setting('asteria[primtxt_color_id]',array('type' => 'option','transport'=> 'postMessage','sanitize_callback' => 'sanitize_hex_color'));
+	$wp_customize->add_setting('asteria[sectxt_color_id]',array('type' => 'option','transport'=> 'postMessage','sanitize_callback' => 'sanitize_hex_color'));
+	$wp_customize->add_setting('asteria[menutxt_color_id]',array('type' => 'option','transport'=> 'postMessage','sanitize_callback' => 'sanitize_hex_color'));
+	$wp_customize->add_setting('asteria[leavreplytxt_color_id]',array('type' => 'option','transport'=> 'postMessage','sanitize_callback' => 'sanitize_hex_color'));	
 	
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'live_sec_elm', array(
 		'label'   => __( 'Secondary Element background Color', 'asteria' ),
@@ -426,19 +449,6 @@ if ( $wp_customize->is_preview() && ! is_admin() )
 add_action( 'customize_register', 'asteria_customizer' );
 
 
-function asteria_customizer_live_preview() {
- 
-	wp_enqueue_script(
-		'live_fontselect',
-		get_template_directory_uri() . '/admin/js/jquery.fontselect.min.js',
-		array( 'jquery', 'customize-preview' ),
-		'',
-		true
-	);
- 
-} // end asteria_customizer_live_preview
-add_action( 'customize_preview_init', 'asteria_customizer_live_preview' );
-
 function asteria_customize_preview() {
 
     ?>
@@ -447,7 +457,7 @@ function asteria_customize_preview() {
 	//Primary Color change
     wp.customize('asteria[prim_color_id]',function( value ) {value.bind(function(newval) {$('.fixed_wrap, #ast_nextprev, #ast_related ul li.active, .single_post .tabs li.active, .single_post .tabs li, .trigger_wrap, .single_post, .comment-body, #ast_related, #ast_related ul, .comm_wrap input, .comment-form-comment textarea, .lay4 .hentry, .lay2 .hentry, .lay3 .hentry, .search_term, .author_div').attr('style', 'background:'+ newval + '!important');});});
 	//Secondary Color change
-    wp.customize('asteria[sec_color_id]',function( value ) {value.bind(function(newval) {$('#topmenu ul li ul li a:hover, .nivo-caption .sldcontent1 h3 a, .nivo-controlNav a.active, .banner .sldcontent1 h3 a, .acc-sldcontent1 h3 a, .tab.active, .thn_post_wrap .more-link:hover, .moretag:hover, #submit, .page_tt, #searchsubmit, .contact_submit input, .pad_menutitle, .to_top:hover, .page-numbers:hover, .ast_pagenav .current, .progrssn').attr('style', 'background:'+ newval + '!important');});});	
+    wp.customize('asteria[sec_color_id]',function( value ) {value.bind(function(newval) {$('#topmenu ul li ul li a:hover, .nivo-caption .sldcontent1 h3 a, .nivo-controlNav a.active, .banner .sldcontent1 h3 a, .acc-sldcontent1 h3 a, .tab.active, .thn_post_wrap .more-link:hover, .moretag:hover, #submit, .page_tt, #searchsubmit, .contact_submit input, .pad_menutitle, .to_top:hover, .page-numbers:hover, .ast_pagenav .current, .progrssn, .midrow_block:hover').attr('style', 'background:'+ newval + '!important');});});	
     wp.customize('asteria[sec_color_id]',function( value ) {value.bind(function(newval) {$('#sidebar .widget .widgettitle, #home_widgets .widget .widgettitle, .single_post .postitle, .nivo-caption p a, .banner .sldcontent1 p a, .banner .sldcontent2 p a, .banner .wrap-sld_layout3 p a, .acord_text p a, .lay2 h2 a, .lay3 h2 a, .lay4 h2 a, .lay5 .postitle a, #ast_nextprev .ast-prev:hover .left_arro i, #ast_nextprev .ast-next:hover .right_arro i, .rel_content a, #reply-title small a, .logged-in-as a, .thn_post_wrap a:link, .thn_post_wrap a:visited, .single_metainfo a i:hover, .edit_wrap i:hover, .single_post .postitle, #sidebar .widget .widgettitle, #sidebar .widget .widgettitle a, #home_widgets .widget a:link, #home_widgets .widget a:visited, #home_widgets .widget .thn_wgt_tt, #sidebar .widget .thn_wgt_tt, #footer .widget .thn_wgt_tt, .widget_calendar td a, .astwt_iframe a, .ast_countdown li, .ast_biotxt a, .ast_bio .ast_biotxt h3, .search_term h2, .author_right h2, .author_right a, #contact_block .widgettitle, #contact_block a:link, #contact_block a:visited, .copytext a, .ast_maintanace .logo h1 a, #ast_nextprev .ast-prev:hover .left_arro i, #ast_nextprev .ast-next:hover .right_arro i').attr('style', 'background:'+ newval + '!important');});});	
 
 	//TEXT COLORS=======================

@@ -1,13 +1,13 @@
+
+<?php function asteria_dynamic_css() { ?>
 <?php global $asteria;?>
 <style type="text/css">
 <?php if ( !get_option( 'asteria' )) {?>
 /*load font when theme options dont exist*/
-body .header4 .logo h1, body .header4 .logo h2{font-family:'Cinzel Decorative'!important; font-weight:normal;}
-.nivo-caption h3{font-family:'Cinzel Decorative'!important; font-weight:normal; font-size:60px!important;}
+body .header4 .logo h1, body .header4 .logo h2{font-family:'Raleway'!important; font-weight:normal;}
+.nivo-caption h3{font-family:'Raleway'!important; font-weight:normal; font-size:44px!important;}
+<?php $asteria['sec_color_id'] = '#30B7E8'; ?>
 <?php } ?>
-/*USER'S CUSTOM CSS---------------------------------------------------------*/
-<?php if ( ! empty ( $asteria['custom-css'] ) ) { ?><?php echo $asteria['custom-css']; ?><?php } ?>
-/*---------------------------------------------------------*/
 
 <?php if(($asteria['site_width_id'] == "1") || (!get_option( 'asteria' )) ) {?>
 body .fixed_site .header .center{width:100%!important;}
@@ -22,7 +22,7 @@ body .fixed_site .header .center{width:100%!important;}
 #sidebar .widget{ padding-bottom:0px!important}
 .page-template-page-leftsidebar-php #sidebar{border-right:1px solid rgba(0, 0, 0, 0.05);border-left:none;}
 .page-template-page-leftsidebar-php #sidebar .widget_wrap{ padding-left:0!important;;}
-#sidebar .widget .widgettitle, #home_widgets .widget .widgettitle{text-align: right;padding-bottom: 30px;border-bottom: 1px solid; border-color:rgba(0, 0, 0, 0.05);}
+#sidebar .widget .widgettitle, #home_widgets .widget .widgettitle{text-align: right;padding-bottom: 15px;border-bottom: 1px solid; border-color:rgba(0, 0, 0, 0.05);}
 #sidebar .widget{ background:none!important; padding-bottom:0;}
 #sidebar .widget_wrap{width:88%!important; padding:0!important; padding-left:12%!important;}
 #sidebar #searchform div{border:1px solid rgba(0, 0, 0, 0.05)}
@@ -140,7 +140,7 @@ body .social_buttons div i, body .social_buttons div a{color:<?php echo $asteria
 .header4 #topmenu ul li:hover, .nivo-caption .sld_layout1 p, .banner .sld_layout1 p, .acc-sld_layout2 p, .header4 #topmenu .sub-menu, .acc-sld_layout1 p{ border-color:<?php echo $asteria['sec_color_id']; ?>!important;}
 #topmenu ul li ul li a:hover, .nivo-caption .sld_layout1 h3 a, .nivo-controlNav a.active, .banner .sld_layout1 h3 a, .acc-sld_layout1 h3 a, .tab.active, .thn_post_wrap .more-link:hover, .moretag:hover, #submit, .page_tt, #searchsubmit, .contact_submit input, .pad_menutitle, .to_top:hover, .page-numbers:hover, .ast_pagenav .current, .progrssn, #simple-menu, .wpcf7-submit{background-color:<?php echo $asteria['sec_color_id']; ?>!important;}
 
-.nivo-caption p a, .banner .sld_layout1 p a, .banner .sld_layout2 p a, .banner .wrap-sld_layout3 p a, .acord_text p a, .lay2 h2 a, .lay3 h2 a, .lay4 h2 a, .lay5 .postitle a, #ast_nextprev .ast-prev:hover .left_arro i, #ast_nextprev .ast-next:hover .right_arro i, .rel_content a, #reply-title small a, .logged-in-as a, .thn_post_wrap a:link, .thn_post_wrap a:visited, .single_metainfo a i:hover, .edit_wrap i:hover, .single_post .postitle, #sidebar .widget .widgettitle, #sidebar .widget .widgettitle a, #home_widgets .widget a:link, #home_widgets .widget a:visited, #home_widgets .widget .thn_wgt_tt, #sidebar .widget .thn_wgt_tt, #footer .widget .thn_wgt_tt, .widget_calendar td a, .astwt_iframe a, .ast_countdown li, .ast_biotxt a, .ast_bio .ast_biotxt h3, .search_term h2, .author_right h2, .author_right a, #contact_block .widgettitle, #contact_block a:link, #contact_block a:visited, .copytext a, .ast_maintanace .logo h1 a, #ast_nextprev .ast-prev:hover .left_arro i, #ast_nextprev .ast-next:hover .right_arro i, .single_metainfo a:hover, .post_meta a:hover, .social_buttons div a:hover i, .social_buttons div a:hover, .widgets p a, .tagcloud a, .text_block a:link, .text_block a:visited{color:<?php echo $asteria['sec_color_id']; ?>!important;}
+.nivo-caption p a, .banner .sld_layout1 p a, .banner .sld_layout2 p a, .banner .wrap-sld_layout3 p a, .acord_text p a, .lay2 h2 a, .lay3 h2 a, .lay4 h2 a, .lay5 .postitle a, #ast_nextprev .ast-prev:hover .left_arro i, #ast_nextprev .ast-next:hover .right_arro i, .rel_content a, #reply-title small a, .logged-in-as a, .thn_post_wrap a:link, .thn_post_wrap a:visited, .edit_wrap i:hover, .single_post .postitle, #sidebar .widget .widgettitle, #sidebar .widget .widgettitle a, #home_widgets .widget a:link, #home_widgets .widget a:visited, #home_widgets .widget .thn_wgt_tt, #sidebar .widget .thn_wgt_tt, #footer .widget .thn_wgt_tt, .widget_calendar td a, .astwt_iframe a, .ast_countdown li, .ast_biotxt a, .ast_bio .ast_biotxt h3, .search_term h2, .author_right h2, .author_right a, #contact_block .widgettitle, #contact_block a:link, #contact_block a:visited, .copytext a, .ast_maintanace .logo h1 a, #ast_nextprev .ast-prev:hover .left_arro i, #ast_nextprev .ast-next:hover .right_arro i, .post_meta a:hover, .social_buttons div a:hover i, .social_buttons div a:hover, .widgets p a, .tagcloud a, .text_block a:link, .text_block a:visited, .commentmetadata a{color:<?php echo $asteria['sec_color_id']; ?>!important;}
 
 .rel_content .rel_more:hover{border-color: transparent transparent <?php echo $asteria['sec_color_id']; ?> transparent!important;}
 .tab.active .tab_arrow{border-color: <?php echo $asteria['sec_color_id']; ?> transparent transparent transparent!important;}
@@ -161,8 +161,9 @@ body .social_buttons div i, body .social_buttons div a{color:<?php echo $asteria
 .head_soc a{color:<?php echo $asteria['social_color_id']; ?>!important;}
 
 /*------------------------------------TEXT COLORS------------------------------------------*/
+
 /*Body Text Color*/
-body, .single_metainfo, .single_post .single_metainfo a, .post_meta a, .midrow_blocks a{color:<?php echo $asteria['primtxt_color_id']; ?>!important;}
+body, .single_metainfo, .single_post .single_metainfo a, .post_meta a, .midrow_blocks a, .lay4 .single_metainfo a{color:<?php echo $asteria['primtxt_color_id']; ?>!important;}
 
 /*Text Color on Secondary Element*/
 #submit, #searchsubmit, .page_tt, body #topmenu ul li ul li a:hover, .tab a.active, #ast_nextprev .ast-prev:hover .left_arro, #ast_nextprev .ast-next:hover .right_arro, .page-numbers:hover, .more-link, .moretag, #simple-menu, #simple-menu i{color:<?php echo $asteria['sectxt_color_id']; ?>!important;}
@@ -185,6 +186,40 @@ body .fixed_site{ width:95%!important; margin: 0 auto;}
 /*Gallery*/
 .gallery{ float:left; margin:20px auto!important; width:100%;}
 body .gallery-item{text-align: center;width: 50px!important; height:45px;display: inline-block;margin: 10px 5px; float:none!important;}
-
 <?php } ?>
+
+/*HOVER ANIMATIONS (Asteria 1.0)*/
+.midrow_block, .nav-box, .ast-prev, .ast-next, #footer .widgets .widget ul li a, #home_widgets .widget li a, #sidebar .widget li a, #footmenu ul li a, .single_metainfo .catag_list a, .auth_meta, .meta_comm a, .post_meta a, .social_buttons div i, .social_buttons div a{-webkit-transition:all 0.3s ease-out;-moz-transition:all 0.3s ease-out;-ms-transition:all 0.3s ease-out;-o-transition:all 0.3s ease-out;transition:all 0.3s ease-out;}
+
+#home_widgets .widget li a:hover, #sidebar .widget li a:hover, #footmenu ul li a:hover, .single_metainfo .catag_list a:hover, .auth_meta:hover, .meta_comm a:hover, .post_meta a:hover{color:<?php echo $asteria['sec_color_id']; ?>;}
+
+.single_metainfo .catag_list a:hover, .auth_meta:hover, .meta_comm a:hover, .post_meta a:hover{ opacity:1;}
+
+.midrow_block:hover{color:<?php echo $asteria['sectxt_color_id']; ?>; background-color:<?php echo $asteria['sec_color_id']; ?>; padding-top:0px;}
+.midrow_block:hover .block_img{ border-color:<?php echo $asteria['sectxt_color_id']; ?>;}
+.midrow_block:hover .icon_wrap i{color:<?php echo $asteria['sectxt_color_id']; ?>;}
+
+.nav-box:hover{color<?php echo $asteria['primtxt_color_id']; ?>:; background-color:<?php echo $asteria['sec_color_id']; ?>;}
+#ast_nextprev .ast-prev:hover a, #ast_nextprev .ast-next:hover a{color:<?php echo $asteria['sectxt_color_id']; ?>;}
+
+
+/*BODY FONT*/
+<?php if(!empty($asteria['content_font_id']['font-family'])) { ?>
+body{ font-family:<?php echo $asteria['content_font_id']['font-family']; ?>;}
+<?php } ?>
+/*POST TITLE FONT*/
+<?php if(!empty($asteria['ptitle_font_id']['font-family'])) { ?>
+h1, h2, h3, h4, h5, h6, #topmenu ul li a, .text_block, .lay1_title h3, #sidebar .widget .widgettitle, .left_arro, .right_arro, #submit, .logo h1 a, .logo h2 a, .widget_calendar caption, .rel_content a, #ast_related ul li a, .fourofour a{font-family: <?php echo $asteria['ptitle_font_id']['font-family']; ?>;
+<?php if($asteria['ptitle_font_id'] =='Yanone Kaffeesatz'){ ?>letter-spacing: 0.3px;<?php } ?>font-weight: normal;}
+<?php } ?>
+
+/** SLIDER BUTTON COLOR**/
+a.sld_buttn{background:<?php echo $asteria['sec_color_id']; ?>; color:<?php echo $asteria['sectxt_color_id']; ?>;}
+
+
+/*USER'S CUSTOM CSS---------------------------------------------------------*/
+<?php if ( ! empty ( $asteria['custom-css'] ) ) { ?><?php echo $asteria['custom-css']; ?><?php } ?>
+/*---------------------------------------------------------*/
 </style>
+<?php } ?>
+<?php if(is_child_theme()){ add_action( 'wp_print_styles', 'asteria_dynamic_css'); }else{ add_action( 'wp_head', 'asteria_dynamic_css'); } ?>

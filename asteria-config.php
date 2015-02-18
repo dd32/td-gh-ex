@@ -290,13 +290,13 @@ function setup_framework_options(){
     	} else {
     		$v = str_replace("-", "_", $args['opt_name']);
     	}
-    	$args['intro_text'] = __('<p><strong>Upgrade to Asteria PRO</strong> to Unlock all features and design your site anyway you want. For Documentation you can either click the Documentation tab or <a target="_blank" href="http://bit.ly/HXxREO">Download This PDF.</a></p>', 'asteria');
+    	$args['intro_text'] = __('<p><strong><a target="_blank" href="http://bit.ly/1FWcAUG"><i class="icon-upload"></i> Upgrade to Asteria PRO</a></strong> to Unlock all features and design your site anyway you want. <strong>Limited Time Offer:</strong> Use coupon code <code>15OFF</code> to get instant 15% off of the PRO!</p>', 'asteria');
     } else {
     	$args['intro_text'] = __('<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'asteria');
     }
 
     // Add content after the form.
-    $args['footer_text'] = __('', 'asteria');
+    $args['footer_text'] = __('Like this Theme? Want to Support the Developer & <strong>Keep it Free forever? <a href="https://wordpress.org/support/view/theme-reviews/asteria-lite?filter=5#postform" target="_blank">Rate it!</a></strong>', 'asteria');
 
     // Set footer/credit line.
     //$args['footer_credit'] = __('<p>This text is displayed in the options panel footer across from the WordPress version (where it normally says \'Thank you for creating with WordPress\'). This field accepts all HTML.</p>', 'asteria');
@@ -346,14 +346,22 @@ function setup_framework_options(){
 						'2' => array('alt' => 'Full Width', 'img' => get_template_directory_uri().'/images/fullwidth.png'),
 					),
 				'default' => '1'
-				),	
+				),
+				
+			array(
+				'id'=>'logo_image_id',
+				'type' => 'text', 
+				'title' => __('Logo/Header Image', 'asteria'),
+				'desc'=> __('The Feature is only available in Asteria PRO', 'asteria'),
+				'subtitle' => '',
+				),		
 				
 			array(
 				'id'=>'head_type_id',
 				'type' => 'select',
 				'title' => __('Header Type', 'asteria'), 
-				'subtitle' => '',
-				'desc' => __('Change how the header looks', 'asteria'),
+				'desc' => __('More Header Types are available in Asteria PRO', 'asteria'),
+				'subtitle' => __('Change how the header looks', 'asteria'),
 				'options' => array('head4' => 'Header Type 4'),
 				'default' => 'head4'
 				),	
@@ -519,6 +527,7 @@ function setup_framework_options(){
 				'default' => 'Lorem ipsum dolor sit amet, consectetur  dol adipiscing elit. Nam nec rhoncus risus. In ultrices lacinia ipsum, posuere faucibus velit bibe.',
 				),
 				
+				
 			array(
 				'id'=>'welcm_textarea_id',
 				'type' => 'editor',
@@ -530,14 +539,14 @@ function setup_framework_options(){
 				'id'=>'welcome_color_id',
 				'type' => 'color',
 				'title' => __('Background Color ', 'asteria'), 
-				'default' => '#333333',
+				'default' => '#eeeeee',
 				'validate' => 'color',
 				),
 			array(
 				'id'=>'posts_title_id',
 				'type' => 'editor',
 				'title' => __('Title &amp; Description', 'asteria'), 
-				'default' => '<h2 style="text-align: center;"><span style="color: #e2341d;">Check Out Our Portfolio</span></h2><p style="text-align: center;">The Very recent work for our clients</p>',
+				'default' => '<h2 style="text-align: center;"><span style="color: #30B7E8;">Check Out Our Portfolio</span></h2><p style="text-align: center;">The Very recent work for our clients</p>',
 				),
 				
 			array(
@@ -545,6 +554,7 @@ function setup_framework_options(){
 				'type' => 'image_select',
 				'compiler'=>true,
 				'title' => __('Posts layout', 'asteria'), 
+				'subtitle' => __('More Posts Layouts are only available in PRO version.', 'asteria'), 
 				'options' => array(
 						'1' => array('alt' => 'Layout 1', 'img' => get_template_directory_uri().'/images/layout1.png'),
 					),
@@ -571,6 +581,12 @@ function setup_framework_options(){
 				'type' => 'text',
 				'title' => __('Number of Posts ', 'asteria'),
 				'default' => '9',
+				),
+				
+			array(
+				'id'=>'blocks-info',
+				'type' => 'info',
+				'desc' => __("You can Add More Blocks in Asteria PRO", "asteria"),
 				),
 				
 			array(
@@ -625,6 +641,7 @@ function setup_framework_options(){
 				'type' => 'select',
 				'title' => __('Slider Type', 'asteria'), 
 				'options' => array('nivo'=>'Nivo Slider','noslider'=>'Disable Slider'),
+				'desc' => __('More Slider types are only available in PRO version.', 'asteria'), 
 				'default' => 'nivo',
 				),
 			array(
@@ -638,6 +655,7 @@ function setup_framework_options(){
 				'id'=>'slide_height',
 				'type' => 'text',
 				'title' => __('Slider Height ', 'asteria'),
+				'description' => __('type in "auto" to make the slider height flexible. ', 'asteria'),
 				'default' => '500px',
 				),
 
@@ -647,6 +665,14 @@ function setup_framework_options(){
 				'type' => 'text',
 				'title' => __('Slide Font Size', 'asteria'),
 				'default' => '60px'
+				),
+				
+			array(
+				'id'=>'slide_button_text',
+				'type' => 'text',
+				'title' => __('Slider Button Text', 'asteria'),
+				'description' => __('If you dont want to display The Slider Buttons, keep this field empty', 'asteria'),
+				'default' => ''
 				),
 		
 			array(
@@ -668,7 +694,7 @@ function setup_framework_options(){
 				'id'=>'sec_color_id',
 				'type' => 'color',
 				'title' => __('Secondary Element background Color', 'asteria'), 
-				'default' => '#2dcb73',
+				'default' => '#30B7E8',
 				'transparent' => false,
 				'validate' => 'color',
 				),
@@ -743,15 +769,59 @@ function setup_framework_options(){
 				'line-height'=>false,
 				'default' => array(
 					'color'=>'#ffffff',
-					'font-size'=>'50px',
-					'font-family'=>'Cinzel Decorative',
+					'font-size'=>'44px',
+					'font-family'=>'Raleway',
 					'font-weight'=>'Normal',
 					),
-				),	
+				),
+				
+			array(
+				'id'=>'content_font_id',
+				'type' => 'typography',
+				'title' => __('Site Content Text Style', 'asteria'),
+				'google'=>false,
+				'subsets' => false,
+				'font-weight' => false,
+				'font-style' => false,
+				'font-backup' => false,
+				'font-size'=>false,
+				'color' => false,
+				'preview' => true,
+				'line-height' => false,
+				'word-spacing' => false,
+				'letter-spacing' => false,
+				'default' => array(
+					'font-size'=>'14px',
+					//'font-family'=>'Open Sans',
+					//'font-weight'=>'Normal',
+					),
+				),
+				
+			array(
+				'id'=>'ptitle_font_id',
+				'type' => 'typography',
+				'title' => __('Post Titles, headings and Menu Font', 'asteria'),
+				'google'=>false,
+				'subsets' => false,
+				'font-weight' => false,
+				'font-style' => false,
+				'font-backup' => false,
+				'color' => false,
+				'preview' => true,
+				'line-height' => false,
+				'word-spacing' => false,
+				'letter-spacing' => false,
+				'font-size'=>false,
+				'default' => array(
+					'font-family'=>'Open Sans',
+					//'font-weight'=>'200'
+					),
+				),
+					
 			array(
 				'id'=>'typo-info',
 				'type' => 'info',
-				'desc' => __("More Typography Options are only available in Asteria PRO", "asteria"),
+				'desc' => __("More Typography Options & 600+ Fonts are only available in Asteria PRO", "asteria"),
 				),
 				
 	
@@ -903,6 +973,14 @@ function setup_framework_options(){
 				'desc' => __('If you have setup a Blog page with Blog Page Template, choose a category to get the posts from', 'asteria'),
 				),
 				
+			array(
+				'id'=>'blog_num',
+				'type' => 'text',
+				'title' => __('Blog Posts Per Page', 'asteria'), 
+				'desc' => __('If you have setup a Blog page with Blog Page Template, choose the number of posts you want to display per page', 'asteria'),
+				'default' => '10',
+				),
+				
 		)
 	);	
 	$sections[] = array(
@@ -961,7 +1039,7 @@ function setup_framework_options(){
 		'icon' => 'css',
 		'icon_class' => 'icon-large',
 		'title' => __('Custom CSS', 'asteria'),
-		'desc' => __('Write your custom css here', 'asteria'),
+		'desc' => __('Add your custom css here', 'asteria'),
 		'fields' => array(
 			array(
 				'id'=>'custom-css',

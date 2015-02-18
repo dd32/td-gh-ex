@@ -162,7 +162,7 @@ if (!class_exists('ReduxFramework_slides')) {
                 echo '</div>' . "\n";
 
                 echo '<ul id="' . $this->field['id'] . '-ul" class="redux-multi-text">';
-                echo '<li><input type="text" id="' . $this->field['id'] . '-slide_title_' . $x . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][slide_title]" value="" placeholder="'.__('Title', 'redux-framework').'" class="full-text slide-title" /></li>';
+                echo '<li><input type="text" id="' . $this->field['id'] . '-slide_title_' . $x . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][slide_title]" value="" placeholder="'.__('Title (Required)', 'redux-framework').'" class="full-text slide-title" /></li>';
                 echo '<li><textarea name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][slide_description]" id="' . $this->field['id'] . '-slide_description_' . $x . '" placeholder="'.__('Description', 'redux-framework').'" class="large-text" rows="6"></textarea></li>';
                 echo '<li><input type="text" id="' . $this->field['id'] . '-slide_url_' . $x . '" name="' . $this->args['opt_name'] . '[' . $this->field['id'] . '][' . $x . '][slide_url]" value="" class="full-text" placeholder="'.__('URL', 'redux-framework').'" /></li>';
 				//New Field by Towfiq: 

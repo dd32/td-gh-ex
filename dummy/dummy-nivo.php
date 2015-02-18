@@ -9,9 +9,10 @@
             </div>	
 
             <div id="nv_1">
-            <div class="nivoinner sld_layout2">
-            <h3 class="entry-title"><a>Lorem Ipsum Dolor Sit Amet</a></h3>
-                    <p>This is the first slide</p>
+            <div class="nivoinner sld_layout3">
+            <h3 class="entry-title"><a>ASTERIA MULTIPURPOSE WORDPRESS THEME</a></h3>
+                    <p>The Most Advanced WordPress theme with Lots of Options &amp; Great Theme Support</p>
+                    <a class="sld_buttn" href="<?php echo esc_url( home_url( '/' ) );?>">MORE</a>
              </div>
             </div>
             

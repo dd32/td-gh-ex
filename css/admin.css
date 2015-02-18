@@ -33,7 +33,7 @@
 
 /*Documentation Tab*/
 .docc{ line-height:24px;}
-#docu_gallery, #docu_front, #docu_img, #docu_vid, #docu_blog, #docu_contct, #docu_bg, #docu_headr, #docu_menu, #docu_styling, #docu_wdgts, #docu_shorts, #docu_supp{ display:none;}
+#docu_faq, #docu_gallery, #docu_front, #docu_img, #docu_vid, #docu_blog, #docu_contct, #docu_bg, #docu_headr, #docu_menu, #docu_styling, #docu_wdgts, #docu_shorts, #docu_supp{ display:none;}
 #ast_docu ol li{ cursor:pointer;}
 #ast_docu ol li:hover{color:#db5a49;}
 .docuback{ cursor:pointer; color:#26cd94;}
@@ -43,7 +43,7 @@
 /*Upgrade to PRO */
 #tab_upg{ color:#aaa;}
 .up_ul{ margin:0; padding:0; margin-top:30px; text-align:center;}
-.up_ul li{ display:inline-block; width:70px; padding:10px 17px; background:#fff; color:#999; margin-left:-3px; border-right:1px solid #eee;border-bottom: 2px solid #eee; cursor:pointer;}
+.up_ul li{ display:inline-block; padding:10px 17px; background:#fff; color:#999; margin-left:-3px; border-right:1px solid #eee;border-bottom: 2px solid #eee; cursor:pointer;}
 .up_ul li.active{ color:#db5a49; font-weight:bold;border-bottom: 2px solid #db5a49;}
 .tab_option{}
 .tab_option h2{ font-weight:bold; text-align:center; margin:24px 0; color:#999!important;}
@@ -84,6 +84,9 @@ text-decoration: none;
 text-shadow: 0 1px 0 rgba(0,0,0,.1);
 }
 
+.redux-slides-accordion-group h3{ margin-bottom:0;}
+.ui-accordion .ui-accordion-content-active{ border:none;}
+
 .feat, .feat_top{ padding-left:15px!important;}
 
 
@@ -116,3 +119,9 @@ text-shadow: 0 1px 0 rgba(0,0,0,.1);
 
 /*WP 3.9 FIX*/
 #redux-main textarea, #redux-main input, #redux-main select, #redux-main button{ border:none!important;}
+
+div#redux-sub-footer {padding: 20px 0;text-align: right;width: 85%;color: #999;}
+#asteria-logo_image_id input{ display:none;}
+#asteria-logo_image_id .description{background: #eee;padding: 10px;max-width: 350px;margin-top: -5px;}
+#redux-main .description{color: #888; font-size:13px;}
+#redux-main input.button-primary{background: #1e8cbe!important;}

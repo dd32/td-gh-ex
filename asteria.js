@@ -1,54 +1,6 @@
 // JavaScript Document
 jQuery(window).ready(function() {
 
-	//Text Animation Color
-	jQuery('.single_metainfo .catag_list a, .auth_meta, .meta_comm a, .post_meta a').hover(function(){
-		jQuery(this).stop().animate({"opacity": "1", "color":sechover }, 200);
-	}, function(){
-		jQuery(this).stop().animate({ "color":primarytext }, 200);
-	});
-	//Single Social buttons Animation
-	jQuery('.social_buttons div a').hover(function(){
-	jQuery(this).find('i').stop().animate({ "color":primarycolor }, 200);
-	}, function(){
-	jQuery(this).find('i').stop().animate({ "color":socialbuttons }, 200);	
-	});
-	//Sidebar item hover animation
-	jQuery('#sidebar .widgets .widget li').hover(function(){
-	jQuery(this).find('a, i').animate({ "color":sechover }, 200);
-	}, function(){
-	jQuery(this).find('a, i').animate({ "color":primarytext }, 200);	
-	});
-	//Block Animation
-	if (jQuery(window).width() > 480) {
-	jQuery('.midrow_block').hover(function(){
-	jQuery(this).stop().animate({ "color":sechovertext, "backgroundColor":sechover, "paddingTop":"0px" }, 200);
-	jQuery(this).find('.icon_wrap i').animate({ "color":sechovertext }, 200);
-	jQuery(this).find('.midrow_block:hover .block_img').animate({ "borderColor":sechovertext }, 200);
-	}, function(){
-	jQuery(this).stop().animate({ "color":primarytext, "backgroundColor":"transparent", "paddingTop":"2%" }, 200);	
-	jQuery(this).find('.icon_wrap i').animate({ "color":"rgba(0, 0, 0, 0.15)" }, 200);
-	jQuery(this).find('.midrow_block:hover .block_img').animate({ "borderColor":"rgba(0, 0, 0, 0.15)" }, 200);
-	});
-	}
-	//Related Animation
-	jQuery('.nav-box').hover(function(){
-		jQuery(this).stop().animate({ "color":sechovertext, "backgroundColor":primarycolor }, 200);
-	}, function(){
-		jQuery(this).stop().animate({ "color":primarytext, "backgroundColor":primardefault }, 200);
-	});
-	//Footer Widget color Animation
-	jQuery('#footer .widgets .widget ul li a').hover(function(){
-	jQuery(this).stop().animate({ "color":footwidgethover}, 200);
-	}, function(){
-	jQuery(this).stop().animate({ "color":footwidget}, 200);	
-	});
-	//Footer Menu Animation
-	jQuery('#footmenu ul li a').hover(function(){
-	jQuery(this).stop().animate({ "color":sechover}, 200);
-	}, function(){
-	jQuery(this).stop().animate({ "color":primarytext}, 200);	
-	});
 	//MENU Animation
 	if (jQuery(window).width() > 768) {
 	jQuery('#topmenu ul > li').hoverIntent(function(){
@@ -147,27 +99,20 @@ jQuery('.lay1, .lay2, .lay3, .lay4, .lay5, .lay6').not(':has(.hentry)').css({"di
 
 //WAYPOINT ANIMATIONS
 if (jQuery(window).width() > 480) {	
-jQuery('.home_tabs .center, .midrow_block, .home .lay4').css({"opacity":"0", "marginTop":"60px"});
 
-jQuery('.midrow_block').css({"marginTop":"60px"})
-jQuery('.midrow_blocks').waypoint(function() {
-  jQuery('.midrow_block:eq(0)').animate({"opacity":"1", "marginTop":"0px"});
-    jQuery('.midrow_block:eq(1)').delay(150).animate({"opacity":"1", "marginTop":"0px"});
-	  jQuery('.midrow_block:eq(2)').delay(300).animate({"opacity":"1", "marginTop":"0px"});
-	    jQuery('.midrow_block:eq(3)').delay(450).animate({"opacity":"1", "marginTop":"0px"});
-  
-}, { offset: '80%' });
+
+jQuery('.midrow_block').css({"opacity":"0"})
+jQuery('.midrow_block').waypoint(function() {
+	jQuery(this).addClass('animated fadeInUp'); 
+}, { offset: '90%' });
 
 //Posts Animation
-jQuery('.home .lay1 .hentry:eq(0) , .home .lay1 .hentry:eq(1) , .home .lay1 .hentry:eq(2), .homeposts_title').css({"opacity":"0","marginTop":"60px"})
+jQuery('.home .lay1 .lay1_wrap').css({"opacity":"0"});
 jQuery('.home .lay1').waypoint(function() {
-  jQuery('.home .homeposts_title').animate({"opacity":"1", "marginTop":"0px"});
-  	jQuery('.home .lay1 .hentry:eq(0)').delay(150).animate({"opacity":"1", "marginTop":"0px"});
-    	jQuery('.home .lay1 .hentry:eq(1)').delay(300).animate({"opacity":"1", "marginTop":"0px"});
-	 		jQuery('.home .lay1 .hentry:eq(2)').delay(450).animate({"opacity":"1", "marginTop":"0px"});
+  jQuery('.home .homeposts_title, .home .lay1_wrap').addClass('animated fadeInUp');
   }, { offset: '90%' });
 
-
+jQuery('.home_tabs .center, .home .lay4').css({"opacity":"0", "marginTop":"60px"});
 jQuery('.home_tabs .center, .lay4').waypoint(function() {
   jQuery(this).animate({"opacity":"1", "marginTop":"0px"});
 }, { offset: '90%' });
@@ -237,11 +182,8 @@ jQuery(window).load(function(){
 jQuery('.nivo-controlNav').css({"display":"block"});
 });	
 
-//load yanone font by default
-if (jQuery('#redux-google-fonts-css').length){}else{
-    jQuery("h2, .mid_block_content h3, .widgettitle, .postitle, body .fixed_site .header4 #topmenu ul li a, .text_block, .lay1_title h3, #sidebar .widget .widgettitle, .left_arro, .right_arro, #submit, .widget_calendar caption, .rel_content a, #ast_related ul li a, .fourofour a").attr('style', 'font-family: "kaffeesatzthin"!important');
-}
 
 //Remove margin from homeblocks after ast_blocks
 jQuery(".ast_blocks").next('.home_blocks').css({"marginTop":"0"});
+
 });

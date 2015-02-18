@@ -27,21 +27,11 @@ Template Name: Blog Page Template
 				   'post_type' => 'post',
 				   'cat' => ''.$asteria['blog_cat_id'].'',
 				   'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1),
-				   'posts_per_page' => '6');
+				   'posts_per_page' => ''.$asteria['blog_num'].'');
 	$the_query = new WP_Query( $args );
  ?>
                 <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
                 <div <?php post_class(); ?> id="post-<?php the_ID(); ?>"> 
-
-                <?php global $wp_query; $postid = $wp_query->post->ID; $astvidthumb = get_post_meta( $postid, 'ast_videolink', true ); ?>
-                <?php if ( ! empty ( $astvidthumb ) ) { ?>
-                 <div class="imgwrap">
-				<!--VIDEO THUMBNAIL--> 
-                <?php $astvidthumb =str_replace('https://www.youtube.com/watch?v=', '//www.youtube.com/embed/', $astvidthumb);?>                    
-               <div class="ast_vid"><div class="responsive-container"><iframe src="<?php echo $astvidthumb; ?>?rel=0&amp;autohide=1&amp;showinfo=0"></iframe></div></div>
-
- 				</div>              
-               <?php } else { ?> 
             
                 <div class="post_image">
                      <!--CALL TO POST IMAGE-->
@@ -61,7 +51,7 @@ Template Name: Blog Page Template
                              
                     <?php endif; ?>
                 </div>
-                					<?php } ?>
+
                 
                 <div class="post_content">
                     <h2 class="postitle"><a href="<?php the_permalink();?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
@@ -69,8 +59,11 @@ Template Name: Blog Page Template
                     <div class="single_metainfo">
                     <i class="fa-calendar"></i><a class="comm_date"><?php the_time( get_option('date_format') ); ?></a>
                     <i class="fa-user"></i><a class="meta_auth"><?php the_author(); ?></a>
-                    <i class="fa-comments"></i><?php if (!empty($post->post_password)) { ?>
-                <?php } else { ?><div class="meta_comm"><?php comments_popup_link( __('0 Comment', 'asteria'), __('1 Comment', 'asteria'), __('% Comments', 'asteria'), '', __('Off' , 'asteria')); ?></div><?php } ?>
+                    <?php if (!empty($post->post_password)) { ?>
+                	<?php } else { ?>
+                        <?php if (!empty ($asteria['post_comments_id'])) { ?>
+                        		<i class="fa-comments"></i> <div class="meta_comm"><?php comments_popup_link( __('0 Comment', 'asteria'), __('1 Comment', 'asteria'), __('% Comments', 'asteria'), '', __('Off' , 'asteria')); ?></div><?php } ?>
+					<?php } ?>
                 
                   <i class="fa-th-list"></i><div class="catag_list"><?php the_category(', '); ?></div>
                     </div>
@@ -97,7 +90,8 @@ Template Name: Blog Page Template
                 'current' => max( 1, get_query_var('paged') ),
                 'total' => $the_query->max_num_pages,
                 'show_all'     => true,
-                'prev_next'    => false
+                'prev_next'    => false,
+				'add_args' => false
             
             ) );
     ?>
