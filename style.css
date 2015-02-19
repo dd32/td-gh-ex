@@ -4,7 +4,7 @@ Theme URI: http://getmasum.esy.es/bhost
 Author: Masum Billah
 Author URI: http://getmasum.esy.es/
 Description: Simple Responsive WordPress Theme.This theme made with Responsive Framework Skeleton v2.0.4.
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bhost
@@ -46,6 +46,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 --------------------------------------------------------------*/
 @import url("css/normalize.css");
 @import url("css/skeleton.css");
+@import url("css/hover.css");
 
 /*--------------------------------------------------------------
 1.0 Google fonts
@@ -403,7 +404,8 @@ ol {
 }
 
 ul {
-	list-style: disc;
+	
+	list-style-type: circle;
 }
 
 ol {
@@ -508,6 +510,48 @@ textarea {
 }
 
 /*--------------------------------------------------------------
+5.0 Table
+--------------------------------------------------------------*/
+
+table {
+  font-family: 'Arial';
+  margin: 25px auto;
+  border-collapse: collapse;
+  border: 1px solid #eee;
+  border-bottom: 2px solid #d10046;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1), 0px 10px 20px rgba(0, 0, 0, 0.05), 0px 20px 20px rgba(0, 0, 0, 0.05), 0px 30px 20px rgba(0, 0, 0, 0.05);
+	
+  }
+table tr:hover {
+  background: #f4f4f4;
+}
+table tr:hover td {
+  color: #555;
+}
+th:first-child, td:first-child{
+	padding-left: 5%;
+}
+th:last-child, td:last-child{
+	padding-right: %;
+}
+table th, table td {
+  color: #999;
+  border: 1px solid #eee;
+  padding: 12px 35px;
+  border-collapse: collapse;
+  text-align: center;
+}
+table th {
+  background: #509bb7;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+table th.last {
+  border-right: none;
+}
+
+/*--------------------------------------------------------------
 5.0 Navigation
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
@@ -536,7 +580,11 @@ a:active {
 	outline: 0;
 }
 
-
+.container{
+	box-shadow: 0 0 16px #524963;
+	-moz-box-shadow: 0 0 16px #524963;
+	-webkit-box-shadow: 0 0 16px #524963;
+}
 /*--------------------------------------------------------------
 5.2 Header
 --------------------------------------------------------------*/
@@ -546,7 +594,7 @@ a:active {
 	background: #333333;
 	color: #fff;
 }
-.site-branding{padding: 1em;}
+.site-branding{padding: 3.5em;}
 
 .site-branding h1.site-title{
 	margin-bottom: 5px;
@@ -556,12 +604,20 @@ a:active {
 	font-size: 2.2em;
 	text-decoration: none;
 	color: #fff;
-	transition: all 0.5s ease 0s;
+	-webkit-transition: all .25s linear;
+    -moz-transition: all .25s linear;
+    -o-transition: all .25s linear;
+    transition: all .25s linear;
+	position: relative;
+	display: inline-block;
 	
 }
 .site-branding h1.site-title a:hover{
-	color: #509bb7;
+	color: #d10046;
+	 -webkit-transform: none;
+	transform: none;
 }
+
 .site-branding .site-description{
 	font-size: 1.5em;
 	font-family: 'Roboto', sans-serif;
@@ -586,7 +642,7 @@ a:active {
 	padding:0;
 }
 .main-navigation a{
-	font-size: 15px;
+	font-size: 1.5em;
 	color: white;
 	display: block;
 	text-decoration: none;
@@ -598,6 +654,8 @@ a:active {
 	position:relative;
 	list-style-type: none;
 	margin-bottom: 0;
+	padding-right: 5px;
+	margin-right: 5px;
 }
 .main-navigation  li:first-child{
 	border-left:0px solid;
@@ -608,23 +666,28 @@ a:active {
 .main-navigation  li a{
 	display:block;
 	text-decoration:none;
-	padding: 15px 20px;
+	padding: 13px 20px;
 	color:#fff;
 	
 }
-.main-navigation  li a:hover{
-	background:#333;
-	color: #d10046;
+.main-navigation  .current-menu-item{
+	background: #509bb7;
+	color: ;
 }
-.main-navigation  li ul{
+
+.main-navigation  .sub-menu, .main-navigation  .sub-menu .sub-menu{
 	position:absolute;
 	left:-99999px;
 	list-style:none;
 }
+
 .main-navigation ul li:hover ul{
 	left:0px; 
-	top:52px;
-	
+	top:48px;	
+}
+.main-navigation  .sub-menu li:hover .sub-menu{
+	left:201px; 
+	top:-4px;
 }
 .main-navigation  li ul li{
 	float:left;
@@ -633,8 +696,10 @@ a:active {
 	text-align: left;
 	margin:3px;
 	margin-top: 0;
-	margin-bottom: 0;
+	margin-bottom: 0px;
+	border-bottom: 1px solid #ddd;
 }
+.main-navigation  li ul li:last-child{border: none;}
 .main-navigation li ul{
 	background:#fff;
 	border: 1px  solid #ddd;
@@ -642,19 +707,20 @@ a:active {
 	padding-bottom: 3px;
 }
 .main-navigation li ul li a{
-	text-decoration:none;
-	display:block;
-	font-size:14px;
-	color:#444;	
-	padding: 10px 15px;
+	color: #444;
+	display: block;
+	font-size: 14px;
+	padding: 9px 15px;
+	text-decoration: none;
 	text-transform: none;
+	width: 200px;
 	
 	
 }
 
 .main-navigation li ul li a:hover{
-	background: #ddd;
-	color: #444;
+	background:;
+	color: #fff;
 }
 
 /* Small menu. */
@@ -723,26 +789,37 @@ h1.entry-title:before{
 	background: none repeat scroll 0 0 #509bb7;
 	content: "";
 	display: inline-block;
-	height: 20px;
-	margin-right: 7px;
+	height: 19px;
+	margin-right: 10px;
 	width: 5px;
 }
 
 h1.entry-title a{
 	text-decoration: none;
 	color: #444;
+	
 }
 h1.entry-title a:hover{
 	color: #509bb7;
+	 -webkit-transform: none;
+	transform: none;
+	transition: all 0.8s ease 0s;
+	
 }
-.entry-meta{font-size: 12px;}
+.entry-meta,.entry-footer{font-size: 1.5em;}
+.entry-meta .entry-date{margin-top: -3px; display: block;}
 .entry-meta a{text-decoration: none; color: #404040;}
 .entry-content{
 	font-size: 1.5em;	
 }
 #primary a:hover{color: #d10046;}
-.entry-footer{
-	font-size: 12px;
+
+.page-title{
+	border: 1px solid #ddd;
+	font-size: 1.8em;
+	margin-bottom: 1em;
+	padding: 1em;
+	text-align: center;
 }
 
 .entry-footer a{
@@ -913,7 +990,7 @@ h1.entry-title a:hover{
 	background: none repeat scroll 0 0 #222222;
 	color: #ffffff;
 	text-align: center;
-	padding: 4em;
+	padding: 3.5em;
 	font-size: 1.5em;
 }
 #footer a{
@@ -922,6 +999,7 @@ h1.entry-title a:hover{
 }
 #footer a:hover{
 	color: #d10046;
+
 }
 /*--------------------------------------------------------------
 10.0 Content
@@ -982,7 +1060,9 @@ h1.entry-title a:hover{
 10.3 Comments
 --------------------------------------------------------------*/
 #comments{
-	margin-top: 4em;
+	border: 2px solid #ddd;
+	margin-top: 3em;
+	padding: 3em 3em 2em;
 }
 
 .comments-title{
@@ -1025,10 +1105,11 @@ h1.entry-title a:hover{
 	
 }
 .reply a{
-	font-size: 1.3em;
-	padding-left: .5em;
-	text-decoration: none;
+	color: #444;
 	float: right;
+	font-size: 1.4em;
+	padding-left: 0.5em;
+	text-decoration: none;
 }
 .comment-metadata a{
 	text-decoration: none;
@@ -1063,6 +1144,29 @@ h1.entry-title a:hover{
 	display: block;
 }
 #form-allowed-tags{display: none;}
+
+/*--------------------------------------------------------------
+11.0 Infinite scroll
+--------------------------------------------------------------*/
+#scrollUp {
+	bottom: 20px;
+	right: 20px;
+	background: url("img/arrow13.png") no-repeat;
+	width: 41px;
+	height: 41px;
+	text-indent: -99999px;
+	 -webkit-transform: none;
+	transform: none;
+	opacity: .5;
+	transition: all 0.8s ease 0s;
+}
+#scrollUp:hover{
+	opacity: 1;
+}
+
+#scrollUp-active{
+	display: none;
+}
 /*--------------------------------------------------------------
 11.0 Infinite scroll
 --------------------------------------------------------------*/

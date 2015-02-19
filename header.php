@@ -14,6 +14,10 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
+<!--[if lt IE 9]>
+<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
+<![endif]-->
+
 <?php wp_head(); ?>
 </head>
 
@@ -26,11 +30,11 @@
 		<div class="row">
 			<header id="masthead" class="site-header twelve columns" role="banner">
 				<div class="site-branding">
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="hvr-pulse"><?php bloginfo( 'name' ); ?></a></h1>
+					<h2 class="site-description hvr-grow-rotate"><?php bloginfo( 'description' ); ?></h2>
 				</div><!-- .site-branding -->
 
-				<nav id="site-navigation" class="main-navigation" role="navigation">
+				<nav id="site-navigation" class="main-navigation hvr-bounce-to-bottom hvr-bounce-to-right" role="navigation">
 					<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Primary Menu', 'bhost' ); ?></button>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 				</nav><!-- #site-navigation -->

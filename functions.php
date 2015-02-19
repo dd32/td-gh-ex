@@ -96,11 +96,20 @@ function bhost_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside class="single-widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
+		'before_title'  => '<h3 class="widget-title hvr-wobble-bottom">',
 		'after_title'   => '</h3>',
 	) );
 }
 add_action( 'widgets_init', 'bhost_widgets_init' );
+
+/**
+*	latest jQuery
+*/
+if( !is_admin() ){
+	wp_deregister_script('jquery');
+	wp_register_script('jquery', ("http://code.jquery.com/jquery-latest.min.js"), false, '');
+	wp_enqueue_script('jquery');
+}
 
 /**
  * Enqueue scripts and styles.
@@ -111,12 +120,20 @@ function bhost_scripts() {
 	wp_enqueue_script( 'bhost-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'bhost-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	
+	wp_enqueue_script( 'bhost-scrol-top', get_template_directory_uri() . '/js/jquery.scrollUp.js', array(), true );
+	
+	wp_enqueue_script( 'bhost-table', get_template_directory_uri() . '/js/jable.js', array(), true );
+
+	wp_enqueue_script( 'bhost-theme', get_template_directory_uri() . '/js/theme.js', array(), true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'bhost_scripts' );
+
+
 
 /**
  * Implement the Custom Header feature.
