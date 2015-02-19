@@ -80,20 +80,6 @@ jQuery(document).ready(function($) {
 
     });
 
-    var myCodeMirror1 = CodeMirror.fromTextArea(custom_css, {
-        'mode': 'css',
-        'lineNumbers': true,
-        'lineWrapping': true
-    });
-    myCodeMirror1.setSize(false, 500);
-
-    var myCodeMirror2 = CodeMirror.fromTextArea(custom_js, {
-        'mode': 'htmlmixed',
-        'lineNumbers': true,
-        'lineWrapping': true
-    });
-    myCodeMirror2.setSize(false, 500);
-
     //scope = scope || document;
     $('#optionsframework-wrap select').each(function() {
         if (!$(this).parent().hasClass('select-wrapper')) {

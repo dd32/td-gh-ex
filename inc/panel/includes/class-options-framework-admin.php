@@ -135,7 +135,6 @@ class Options_Framework_Admin {
 	        return;
 
 	    wp_enqueue_style('accesspress-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(),  Options_Framework::VERSION);
-		wp_enqueue_style('accesspress-codemirror-css', OPTIONS_FRAMEWORK_DIRECTORY . 'css/codemirror.css', array(), Options_Framework::VERSION);
 		wp_enqueue_style( 'optionsframework', OPTIONS_FRAMEWORK_DIRECTORY . 'css/optionsframework.css', array(),  Options_Framework::VERSION );
 		wp_enqueue_style( 'wp-color-picker' );
 	}
@@ -149,9 +148,6 @@ class Options_Framework_Admin {
 
 		if ( $this->options_screen != $hook )
 	        return;
-
-	    wp_enqueue_script('accesspress-codemirror-js', OPTIONS_FRAMEWORK_DIRECTORY . 'js/codemirror.js', array('jquery'), Options_Framework::VERSION);
-		wp_enqueue_script('accesspress-codemirror-css-php-js', OPTIONS_FRAMEWORK_DIRECTORY . 'js/codemirror-css-php.js', array('jquery'), Options_Framework::VERSION);
 
 		// Enqueue custom option panel JS
 		wp_enqueue_script('options-custom',	OPTIONS_FRAMEWORK_DIRECTORY . 'js/options-custom.js', array( 'jquery','wp-color-picker' ), Options_Framework::VERSION);

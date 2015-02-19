@@ -60,12 +60,12 @@ get_header(); ?>
 				<div class="ak-container">
 					<div class="section-title-wrap">
 						<?php if(of_get_option('service_title')): ?>
-							<h1 class="main-title"><?php echo of_get_option('service_title'); ?></h1>
+							<h1 class="main-title"><?php echo esc_attr(of_get_option('service_title')); ?></h1>
 						<?php endif; ?>
 
 						<?php if(of_get_option('service_desc')): ?>
 						<div class="sub-desc">
-							<?php echo of_get_option('service_desc'); ?>
+							<?php echo esc_attr(of_get_option('service_desc')); ?>
 						</div>
 						<?php endif; ?>
 					</div>
@@ -126,14 +126,14 @@ get_header(); ?>
 			?>
 			<section id="cta-banner" class="clearfix">
 				<div class="ak-container">
-					<div class="cta-banner-text <?php echo $class; ?>">
-						<h1 class="cta-banner-title color-bold"><?php echo $call_to_action_title; ?></h1>
-						<div class="cta-banner-desc"><?php echo $call_to_action_desc; ?></div>
+					<div class="cta-banner-text <?php echo esc_attr($class); ?>">
+						<h1 class="cta-banner-title color-bold"><?php echo esc_attr($call_to_action_title); ?></h1>
+						<div class="cta-banner-desc"><?php echo esc_attr($call_to_action_desc); ?></div>
 					</div>
 
 					<?php if(!empty($call_to_action_button_text)): ?>
 					<div class="cta-banner-btn">
-						<a href="<?php echo $call_to_action_link; ?>"><?php echo $call_to_action_button_text; ?></a>
+						<a href="<?php echo esc_url($call_to_action_link); ?>"><?php echo esc_attr($call_to_action_button_text); ?></a>
 					</div>
 					<?php endif; ?>
 				</div>
@@ -147,11 +147,11 @@ get_header(); ?>
 				<div class="ak-container">
 					<div class="section-title-wrap">
 						<?php if(of_get_option('feature_title')): ?>
-							<h1 class="main-title"><?php echo of_get_option('feature_title'); ?></h1>
+							<h1 class="main-title"><?php echo esc_attr(of_get_option('feature_title')); ?></h1>
 						<?php endif; ?>
 						<?php if(of_get_option('feature_desc')): ?>
 						<div class="sub-desc">
-							<?php echo of_get_option('feature_desc'); ?>
+							<?php echo esc_attr(of_get_option('feature_desc')); ?>
 						</div>
 						<?php endif; ?>
 					</div>
@@ -203,12 +203,12 @@ get_header(); ?>
 				<?php if(of_get_option('latest_post_title') || of_get_option('latest_post_desc')): ?>
 					<div class="section-title-wrap">
 						<?php if(of_get_option('latest_post_title')): ?>
-							<h1 class="main-title"><?php echo of_get_option('latest_post_title');?></h1>
+							<h1 class="main-title"><?php echo esc_attr(of_get_option('latest_post_title'));?></h1>
 						<?php endif; ?>
 						
 						<?php if(of_get_option('latest_post_desc')): ?>
 							<div class="sub-desc">
-								<?php echo of_get_option('latest_post_desc');?>
+								<?php echo esc_attr(of_get_option('latest_post_desc'));?>
 							</div>
 						<?php endif; ?>
 					</div>
@@ -252,7 +252,7 @@ get_header(); ?>
 									endif; ?>
 								</div>
 
-								<div class="blog-content-wrapper">
+								<div class="blog-content-wrapper clearfix"> 
 									<div class="blog-date-wrap">
 										<div class="blog-date">
 											<?php echo get_the_date('d'); ?><br/>
@@ -264,19 +264,21 @@ get_header(); ?>
 										<div class="blog-desc"><?php echo accesspress_letter_count(get_the_content(),'200'); ?></div>
 									</div>
 									<div class="clearfix"> </div>
-									<div class="blog-comments clearfix">
-										<span><a class="author" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"> <i class="fa fa-user"> </i><?php echo get_the_author(); ?></a></span>
-										<span><a class="comment" href="<?php echo get_comments_link( $post->ID ); ?>"> <i class="fa fa-comments"> </i><?php echo get_comments_number(); ?></a></span>
-										<?php if(has_category()): ?>
-										<span>
-										<i class="fa fa-folder"></i><?php echo get_the_category_list(', '); ?>
-										</span>
-										<?php endif; ?>
-										<?php if(has_tag()): ?>
-										<span>
-										<i class="fa fa-tags"></i><?php echo get_the_tag_list('' , ', '); ?>
-										</span>
-										<?php endif; ?>
+									<div class="blog-comments-wrap clearfix">
+                                        <div class="blog-comments">
+    										<span><a class="author" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"> <i class="fa fa-user"> </i><?php echo get_the_author(); ?></a></span>
+    										<span><a class="comment" href="<?php echo get_comments_link( $post->ID ); ?>"> <i class="fa fa-comments"> </i><?php echo get_comments_number(); ?></a></span>
+    										<?php if(has_category()): ?>
+    										<span>
+    										<i class="fa fa-folder"></i><?php echo get_the_category_list(', '); ?>
+    										</span>
+    										<?php endif; ?>
+    										<?php if(has_tag()): ?>
+    										<span>
+    										<i class="fa fa-tags"></i><?php echo get_the_tag_list('' , ', '); ?>
+    										</span>
+    										<?php endif; ?>
+                                        </div>
 									</div>
 								</div>
 							</div>
@@ -388,12 +390,12 @@ get_header(); ?>
 				<div class="ak-container">
 					<div class="section-title-wrap">
 						<?php if(of_get_option('testimonial_title')): ?>
-						<h1 class="main-title"><?php echo of_get_option('testimonial_title');?></h1>
+						<h1 class="main-title"><?php echo esc_attr(of_get_option('testimonial_title'));?></h1>
 						<?php endif; ?>
 
 						<?php if(of_get_option('testimonial_desc')): ?>
 						<div class="sub-desc">
-							<?php echo of_get_option('testimonial_desc');?>
+							<?php echo esc_attr(of_get_option('testimonial_desc'));?>
 						</div>
 						<?php endif; ?>
 					</div>

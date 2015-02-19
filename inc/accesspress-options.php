@@ -16,27 +16,27 @@ function optionsframework_options() {
 
 	// Slider Transitions
 	$transitions = array(
-		'fade' => __('Fade', 'accesspress_parallax'),
-		'horizontal' => __('Slide Horizontal', 'accesspress_parallax'),
-		'vertical' => __('Slide Vertical', 'accesspress_parallax')
+		'fade' => __('Fade', 'accesspress-root'),
+		'horizontal' => __('Slide Horizontal', 'accesspress-root'),
+		'vertical' => __('Slide Vertical', 'accesspress-root')
 	);
 
 	// Website Background Options
 	$background_options = array(
-		'none' => __('-- None --', 'accesspress_parallax'),
-		'image' => __('Image', 'accesspress_parallax'),
-		'color' => __('Color', 'accesspress_parallax'),
-		'pattern' => __('Pattern', 'accesspress_parallax'),
+		'none' => __('-- None --', 'accesspress-root'),
+		'image' => __('Image', 'accesspress-root'),
+		'color' => __('Color', 'accesspress-root'),
+		'pattern' => __('Pattern', 'accesspress-root'),
 	);
 
 	//Background Pattern
 	$background_pattern = array( 
-		'pattern1' => $imagepath . 'patterns/80x80/pattern1.png',  
-		'pattern2' => $imagepath . 'patterns/80x80/pattern2.png', 
-		'pattern3' => $imagepath . 'patterns/80x80/pattern3.png', 
-		'pattern4' => $imagepath . 'patterns/80x80/pattern4.png', 
-		'pattern5' => $imagepath . 'patterns/80x80/pattern5.png',  
-		'pattern6' => $imagepath . 'patterns/80x80/pattern6.png', 
+		'pattern1' => $imagepath . 'patterns/80X80/pattern1.png',  
+		'pattern2' => $imagepath . 'patterns/80X80/pattern2.png', 
+		'pattern3' => $imagepath . 'patterns/80X80/pattern3.png', 
+		'pattern4' => $imagepath . 'patterns/80X80/pattern4.png', 
+		'pattern5' => $imagepath . 'patterns/80X80/pattern5.png',  
+		'pattern6' => $imagepath . 'patterns/80X80/pattern6.png', 
 		);
 
 	//Sidebar layout
@@ -47,12 +47,19 @@ function optionsframework_options() {
 		'no-sidebar' => $imagepath . 'no-sidebar.png',
 		);
 
+	//Logo Options
+	$logo_options = array(
+		'image' => __('Image', 'accesspress-root'),
+		'text' => __('Text', 'accesspress-root'),
+		'image_text' => __('Image & Text', 'accesspress-root'),
+		);
+
 	// Website Background Options
 	$blog_layout = array(
-		'blog_layout1' => __('Blog Image Large', 'accesspress_parallax'),
-		'blog_layout2' => __('Blog Image Medium', 'accesspress_parallax'),
-		'blog_layout3' => __('Blog Image Alternate Medium', 'accesspress_parallax'),
-		'blog_layout4' => __('Blog Full Content', 'accesspress_parallax'),
+		'blog_layout1' => __('Blog Image Large', 'accesspress-root'),
+		'blog_layout2' => __('Blog Image Medium', 'accesspress-root'),
+		'blog_layout3' => __('Blog Image Alternate Medium', 'accesspress-root'),
+		'blog_layout4' => __('Blog Full Content', 'accesspress-root'),
 	);
 
 	// Background Defaults
@@ -110,7 +117,7 @@ function optionsframework_options() {
 		$options_pages[$page->ID] = $page->post_title;
 	}
 
-	$about_content = "AccessPress Themes is an online WordPress themes store, that provides beautiful and useful themes. All of our themes are crafted with our years of experience. Our theme don't lack the basics and don't have a lot of non-sense features which you might never use. <br /><br /> AccessPress Themes has beautiful and elegant, fully responsive, multipurpose themes to meet your need for free and premium basis. Our themes have bunch of easily customizable options and features, someone with no programming knowledge can use our easy theme options panel and configure/setup the theme as needed. Our support is 24/7, even for the free themes! Turn around times are as less as 1 hour!";
+	$about_content = __("AccessPress Themes is an online WordPress themes store, that provides beautiful and useful themes. All of our themes are crafted with our years of experience. Our theme don't lack the basics and don't have a lot of non-sense features which you might never use. <br /><br /> AccessPress Themes has beautiful and elegant, fully responsive, multipurpose themes to meet your need for free and premium basis. Our themes have bunch of easily customizable options and features, someone with no programming knowledge can use our easy theme options panel and configure/setup the theme as needed. Our support is 24/7, even for the free themes! Turn around times are as less as 1 hour!","accesspress-root");
 
 	
 
@@ -130,24 +137,24 @@ function optionsframework_options() {
 	);
 
 	$options[] = array(
-		'name' => __('Responsive', 'accesspress_parallax'),
+		'name' => __('Responsive', 'accesspress-root'),
 		'id' => 'responsive',
-		'on' => 'Enable',
-		'off' => 'Disable',
+		'on' => __('Enable', 'accesspress-root'),
+		'off' => __('Disable', 'accesspress-root'),
 		'std' => '1',
 		'type' => 'switch');
 
 	$options[] = array( 
-		"name" => "Background",
-		"desc" => "Image/Color/Pattern",
+		"name" => __('Background', 'accesspress-root'),
+		"desc" => __('Image/Color/Pattern', 'accesspress-root'),
 		"id" => "page_background_option",
 		"std" => "none",
 		"type" => "select",
 		"options" => $background_options );
 
 	$options[] = array( 
-		"name" => "Background Image",
-		"id" => "page_background_image",
+		"name" => __('Background Image', 'accesspress-root'),
+		"id" => __('page_background_image', 'accesspress-root'),
 		"class" =>"sub-option",
 		"type" => "background",
 		'std' => array(
@@ -159,24 +166,31 @@ function optionsframework_options() {
 		);
 
 	$options[] = array( 
-		"name" => "Background Color",
-		"desc" => "Color for the Background",
+		"name" => __('Background Color', 'accesspress-root'),
+		"desc" => __('Color for the Background', 'accesspress-root'),
 		"id" => "page_background_color",
 		"std" => "#FFFFFF",
 		"type" => "color" );
 
 	$options[] = array(
-		'name' => "Background Patterns",
+		'name' => __('Background Patterns', 'accesspress-root'),
 		'id' => "page_background_pattern",
 		'std' => "pattern1",
 		'type' => "images",
 		'options' => $background_pattern
 	);
 
+	$options[] = array( 
+		"name" => __('Logo Settings', 'accesspress-root'),
+		"id" => "logo_setting",
+		"std" => "image",
+		"type" => "select",
+		"options" => $logo_options );
+
 	$options[] = array(
 		'name' => __( 'Upload Logo', 'accesspress-root' ),
 		'id' => 'logo',
-		'desc' => 'Standard size of the logo is 280X80px',
+		'desc' => __('Standard size of the logo is 280X80px', 'accesspress-root'),
 		'type' => 'upload'
 	);
 
@@ -187,7 +201,7 @@ function optionsframework_options() {
 	);
 
 	$options[] = array(
-		'name' => "Single Post Layout",
+		'name' => __('Single Post Layout', 'accesspress-root' ),
 		'id' => "single_post_layout",
 		'std' => "right-sidebar",
 		'type' => "images",
@@ -195,7 +209,7 @@ function optionsframework_options() {
 	);
 
 	$options[] = array(
-		'name' => "Single Page Layout",
+		'name' => __('Single Page Layout', 'accesspress-root' ),
 		'id' => "single_page_layout",
 		'std' => "right-sidebar",
 		'type' => "images",
@@ -203,7 +217,7 @@ function optionsframework_options() {
 	);
 
 	$options[] = array(
-		'name' => "Archive Page Layout",
+		'name' => __('Archive Page Layout', 'accesspress-root' ),
 		'id' => "archive_page_layout",
 		'std' => "right-sidebar",
 		'type' => "images",
@@ -211,15 +225,15 @@ function optionsframework_options() {
 	);
 
 	$options[] = array( 
-		"name" => "Blog Post Layout",
+		"name" => __('Blog Post Layout', 'accesspress-root' ),
 		"id" => "blog_post_layout",
 		"std" => "blog_layout1",
 		"type" => "select",
 		"options" => $blog_layout );
 
 	$options[] = array(
-		'name' => __('Exclude From Blog', 'options_framework_theme'),
-		'desc' => __('Check the categories to exclude from blog page.', 'options_framework_theme'),
+		'name' => __('Exclude From Blog', 'accesspress-root'),
+		'desc' => __('Check the categories to exclude from blog page.', 'accesspress-root'),
 		'id' => 'exclude_from_blog',
 		'type' => 'multicheck',
 		'options' => $options_categories_multicheck);
@@ -255,7 +269,7 @@ function optionsframework_options() {
 		if ( $options_categories ) {
 			$options[] = array(
 				'name' => __( 'Select a Category', 'accesspress-root' ),
-				'desc' => __( 'Select the category for text slider.', 'accesspress-root' ),
+				'desc' => __( 'Select the category for text slider', 'accesspress-root' ),
 				'id' => 'text_slider_cat',
 				'type' => 'select',
 				'options' => $options_categories
@@ -351,7 +365,7 @@ function optionsframework_options() {
 		$options[] = array(
 			'name' => __( 'Feature Section Title', 'accesspress-root' ),
 			'id' => 'feature_title',
-			'std' => 'Our Features',
+			'std' => __( 'Our Features', 'accesspress-root' ),
 			'type' => 'text'
 		);
 
@@ -376,7 +390,7 @@ function optionsframework_options() {
 		$options[] = array(
 			'name' => __( 'Read More Text', 'accesspress-root' ),
 			'id' => 'feature_readmore',
-			'std' => 'Read More',
+			'std' => __( 'Read More', 'accesspress-root' ),
 			'type' => 'text'
 		);
 
@@ -394,7 +408,7 @@ function optionsframework_options() {
 		$options[] = array(
 			'name' => __( 'Title', 'accesspress-root' ),
 			'id' => 'latest_post_title',
-			'std' => 'AccessPress Root',
+			'std' => __( 'AccessPress Root', 'accesspress-root' ),
 			'type' => 'text'
 		);
 
@@ -436,7 +450,7 @@ function optionsframework_options() {
 		$options[] = array(
 			'name' => __( 'Project Read More', 'accesspress-root' ),
 			'id' => 'project_readmore',
-			'std' => 'Read More',
+			'std' => __( 'Read More', 'accesspress-root' ),
 			'type' => 'text'
 		);
 
@@ -464,7 +478,7 @@ function optionsframework_options() {
 		$options[] = array(
 			'name' => __( 'Title', 'accesspress-root' ),
 			'id' => 'testimonial_title',
-			'std' => 'What Our Client Say',
+			'std' => __( 'What Our Client Say', 'accesspress-root' ),
 			'type' => 'text'
 		);
 
@@ -527,7 +541,7 @@ function optionsframework_options() {
 	$options[] = array(
 		'name' => __( 'Slider Button Text', 'accesspress-root' ),
 		'id' => 'slider_button_text'.$slider_count,
-		'std' => 'Read More',
+		'std' => __( 'Read More', 'accesspress-root' ),
 		'type' => 'text'
 	);
 
@@ -541,50 +555,50 @@ function optionsframework_options() {
 
 /* --------------------------SLIDER SETTINGS-------------------------- */
 	$options[] = array(
-		'name' => __('Slider Settings', 'accesspress_parallax'),
+		'name' => __('Slider Settings', 'accesspress-root'),
 		'type' => 'heading');
 
 	$options[] = array(
-		'name' => __('Show Slider', 'accesspress_parallax'),
+		'name' => __('Show Slider', 'accesspress-root'),
 		'id' => 'show_slider',
-		'on' => 'Yes',
-		'off' => 'No',
+		'on' => __( 'Yes', 'accesspress-root'),
+		'off' => __( 'No', 'accesspress-root'),
 		'std' => '1',
 		'type' => 'switch');
 
 	$options[] = array(
-		'name' => __('Show Pager', 'accesspress_parallax'),
+		'name' => __('Show Pager', 'accesspress-root'),
 		'id' => 'show_pager',
-		'on' => 'Yes',
-		'off' => 'No',
+		'on' => __( 'Yes', 'accesspress-root'),
+		'off' => __( 'No', 'accesspress-root'),
 		'std' => '1',
 		'type' => 'switch');
 
 	$options[] = array(
-		'name' => __('Show Controls', 'accesspress_parallax'),
+		'name' => __('Show Controls', 'accesspress-root'),
 		'id' => 'show_controls',
-		'on' => 'Yes',
-		'off' => 'No',
+		'on' =>  __('Yes', 'accesspress-root'),
+		'off' =>  __('No', 'accesspress-root'),
 		'std' => '1',
 		'type' => 'switch');
 
 	$options[] = array(
-		'name' => __('Auto Transition', 'accesspress_parallax'),
+		'name' => __('Auto Transition', 'accesspress-root'),
 		'id' => 'auto_transition',
-		'on' => 'Yes',
-		'off' => 'No',
+		'on' =>  __('Yes', 'accesspress-root'),
+		'off' =>  __('No', 'accesspress-root'),
 		'std' => '1',
 		'type' => 'switch');
 
 	$options[] = array(
-		'name' => __('Slider Transition', 'accesspress_parallax'),
+		'name' => __('Slider Transition', 'accesspress-root'),
 		'id' => 'slider_transition',
 		'std' => 'fade',
 		'type' => 'select',
 		'options' => $transitions);
 
 	$options[] = array(
-		'name' => __('Slider Transition Speed', 'accesspress_parallax'),
+		'name' => __('Slider Transition Speed', 'accesspress-root'),
 		'id' => 'slider_speed',
 		'std' => '5000',
 		"min" 	=> "1000",
@@ -593,7 +607,7 @@ function optionsframework_options() {
 		"type" 	=> "sliderui");
 
 	$options[] = array(
-		'name' => __('Slider Pause Duration', 'accesspress_parallax'),
+		'name' => __('Slider Pause Duration', 'accesspress-root'),
 		'id' => 'slider_pause',
 		'std' => '5000',
 		"min" 	=> "1000",
@@ -602,102 +616,71 @@ function optionsframework_options() {
 		"type" 	=> "sliderui");
 
 	$options[] = array(
-		'name' => __('Show Caption', 'accesspress_parallax'),
+		'name' => __('Show Caption', 'accesspress-root'),
 		'id' => 'show_caption',
-		'on' => 'Yes',
-		'off' => 'No',
+		'on' =>  __('Yes', 'accesspress-root'),
+		'off' =>  __('No', 'accesspress-root'),
 		'std' => '1',
 		'type' => 'switch');
 	
 /* --------------------------SOCIAL SETTINGS-------------------------- */
 	$options[] = array(
-		'name' => __('Social Links', 'accesspress_parallax'),
+		'name' => __('Social Links', 'accesspress-root'),
 		'type' => 'heading');
 
 	$options[] = array(
-		'name' => __('Show Social Icon', 'accesspress_parallax'),
-		'id' => 'show_social',
-		'on' => 'Enable',
-		'off' => 'Disable',
-		'std' => '1',
-		'type' => 'switch');
-
-	$options[] = array(
-		'name' => __('Facebook', 'accesspress_parallax'),
+		'name' => __('Facebook', 'accesspress-root'),
 		'id' => 'facebook',
 		'type' => 'url');
 
 	$options[] = array(
-		'name' => __('Twitter', 'accesspress_parallax'),
+		'name' => __('Twitter', 'accesspress-root'),
 		'id' => 'twitter',
 		'type' => 'url');
 
 	$options[] = array(
-		'name' => __('Google Plus', 'accesspress_parallax'),
+		'name' => __('Google Plus', 'accesspress-root'),
 		'id' => 'google_plus',
 		'type' => 'url');
 
 	$options[] = array(
-		'name' => __('Youtube', 'accesspress_parallax'),
+		'name' => __('Youtube', 'accesspress-root'),
 		'id' => 'youtube',
 		'type' => 'url');
 
 	$options[] = array(
-		'name' => __('Pinterest', 'accesspress_parallax'),
+		'name' => __('Pinterest', 'accesspress-root'),
 		'id' => 'pinterest',
 		'type' => 'url');
 
 	$options[] = array(
-		'name' => __('Linkedin', 'accesspress_parallax'),
+		'name' => __('Linkedin', 'accesspress-root'),
 		'id' => 'linkedin',
 		'type' => 'url');
 
 	$options[] = array(
-		'name' => __('Instagram', 'accesspress_parallax'),
+		'name' => __('Instagram', 'accesspress-root'),
 		'id' => 'instagram',
 		'type' => 'url');
 
 	$options[] = array(
-		'name' => __('StumbleUpon', 'accesspress_parallax'),
+		'name' => __('StumbleUpon', 'accesspress-root'),
 		'id' => 'stumbleupon',
 		'type' => 'url');
 
 	$options[] = array(
-		'name' => __('Skype', 'accesspress_parallax'),
+		'name' => __('Skype', 'accesspress-root'),
 		'id' => 'skype',
 		'type' => 'text');
-
-/* --------------------------CUSTOM CSS-------------------------- */
-	$options[] = array(
-		'name' => __('Custom CSS', 'accesspress_parallax'),
-		'type' => 'heading');
-
-	$options[] = array(
-		'name' => __('Custom CSS', 'accesspress_parallax'),
-		'id' => 'custom_css',
-		'type' => 'textarea',
-		'desc' => 'Put your custom CSS here');
-
-/* --------------------------CUSTOM JS-------------------------- */
-
-	$options[] = array(
-		'name' => __('Custom JS', 'accesspress_parallax'),
-		'type' => 'heading');
-
-	$options[] = array(
-		'name' => __('Custom JS', 'accesspress_parallax'),
-		'id' => 'custom_js',
-		'type' => 'textarea',
-		'desc' => 'Put your analytics code/custom JS here');
 
 /* --------------------------ABOUT SECTION-------------------------- */
 
 	$options[] = array(
-		'name' => __('About', 'accesspress_parallax'),
+		'name' => __('About', 'accesspress-root'),
 		'type' => 'heading');
 
 	$options[] = array(
-		'name' => __('About AccessPress Themes', 'accesspress_parallax'),
+		'name' => __('About AccessPress Themes', 'accesspress-root'),
 		'desc' => $about_content,
 		'type' => 'info');
 

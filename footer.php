@@ -44,7 +44,7 @@
 		<div id="middle-footer">
 			<div class="ak-container">
 				<div class="footer-menu">
-					<?php wp_nav_menu( array( 'theme_location' => 'footer' ) ); ?>
+					<?php wp_nav_menu( array( 'theme_location' => 'footer', 'depth' => -1 ) ); ?>
 				</div>
 			</div>
 		</div> <!-- middle-footr end -->
@@ -59,7 +59,8 @@
 		</div> <!-- bottom footer end -->
 	</footer><!-- #colophon --> 
 </div><!-- #page -->
-
+</div> <!-- Inner wrap -->
+</div> <!-- Outer wrap -->
 <?php wp_footer(); ?>
 
 </body>

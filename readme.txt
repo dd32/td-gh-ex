@@ -12,6 +12,14 @@ Install Steps:
 3. Setup theme options
 
 
+Activate Home Page
+--------------------
+1. Make a new page and assign a Home Template to it.
+2. Go to Settings - Reading and Select static page for Front page display option.
+3. Select the created page with Home Template in the Front page dropdown.
+4. Set up the home page in Appearance - Theme Options
+
+
 ------------------------------------------
 
 JS Files 
@@ -23,6 +31,12 @@ JS Files
 
     jQuery Actual: MIT licenses
     https://github.com/dreamerslab/jquery.actual/
+    
+    Responsive Off Canvas Menu : BSD and MIT license
+    https://github.com/dbushell/Responsive-Off-Canvas-Menu
+    
+    Modernizr : BSD and MIT license
+    http://modernizr.com/
 
 -------------------------------------------
 Fonts

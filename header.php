@@ -18,15 +18,22 @@
 </head>
 
 <body <?php body_class(); ?>>
+<div id="outer-wrap">
+<div id="inner-wrap"> 
 <div id="page" class="site">
 	<header id="masthead" class="site-header">
 		<div class="ak-container">
-			<div id="site-branding">
-			<?php if(of_get_option('logo')) : ?>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo of_get_option('logo'); ?>" alt="accesspress-root"/> </a> 
-			<?php else: ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<div id="site-branding" class="clearfix">
+			<?php if(of_get_option('logo_setting') == 'image' || of_get_option('logo_setting') == 'image_text') : 
+				if(of_get_option('logo')): ?>
+				<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url(of_get_option('logo')); ?>" alt="<?php bloginfo( 'name' ); ?>"/> </a> 
+			<?php endif;
+			endif;
+			if(of_get_option('logo_setting') == 'text' || of_get_option('logo_setting') == 'image_text'): ?>
+				<a class="site-text" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+				<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
 				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+				</a>
 			<?php endif; ?>	
 			</div><!-- .site-branding -->
 
@@ -47,9 +54,28 @@
 						<?php get_search_form(); ?>
 					</div>
 				</div> <!--  search-icon-->
+			</div> <!-- right-header -->
+			<div id="top" class="hide"> 
+				<div class="block">
+					<a href="#nav" id="nav-open-btn" class="nav-btn">
+						<span class="nav-row"> </span>
+						<span class="nav-row"> </span>
+						<span class="nav-row"> </span>
+					</a>
+				</div>
 			</div>
 		</div>
 	</header><!-- #masthead -->
+
+	<nav id="nav" role="navigation" class="hide"> 
+		<div class="block">
+			<?php wp_nav_menu( array( 
+			'theme_location' => 'primary',
+			'container'       => '', 
+			) ); ?>
+			<a href="#top" id="nav-close-btn" class="close-btn">×</a>
+		</div>
+	</nav><!-- #site-navigation -->
 
 	<div id="content" class="site-content">
 	<?php 

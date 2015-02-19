@@ -70,33 +70,45 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	add_action( 'wp_head', 'accesspress_root_render_title' );
 endif;
 
+//Script for bxslider
+function accesspress_bxsliderscript(){
+    $accesspress_show_slider = of_get_option('show_slider') ;
+    $accesspress_show_pager = (of_get_option('show_pager') == "0") ? "false" : "true";
+	$accesspress_show_controls = (of_get_option('show_controls') == "0") ? "false" : "true";
+	$accesspress_auto_transition = (of_get_option('auto_transition') == "0") ? "false" : "true";
+	$accesspress_slider_transition = (!of_get_option('slider_transition')) ? "fade" : of_get_option('slider_transition');
+	$accesspress_slider_speed = (!of_get_option('slider_speed')) ? "5000" : of_get_option('slider_speed');
+	$accesspress_slider_pause = (!of_get_option('slider_pause')) ? "5000" : of_get_option('slider_pause');
+    if( $accesspress_show_slider == "1") : 
+    ?>
+    <script type="text/javascript">
+        jQuery(function($){
+			$('#main-slider .bx-slider').bxSlider({
+				adaptiveHeight: true,
+				pager: <?php echo $accesspress_show_pager; ?>,
+				controls: <?php echo $accesspress_show_controls; ?>,
+				mode: '<?php echo $accesspress_slider_transition; ?>',
+				auto : <?php echo $accesspress_auto_transition; ?>,
+				pause: '<?php echo $accesspress_slider_pause; ?>',
+				speed: '<?php echo $accesspress_slider_speed; ?>'
+			});				
+		});
+    </script>
+    <?php
+    endif;
+}
+
+add_action('wp_head', 'accesspress_bxsliderscript');
+
 //bxSlider Callback for do action
 function accesspress_bxslidercb(){
 		$accesspress_show_slider = of_get_option('show_slider') ;
-		$accesspress_show_pager = (!of_get_option('show_pager') || of_get_option('show_pager') == "1") ? "true" : "false";
-		$accesspress_show_controls = (!of_get_option('show_controls') || of_get_option('show_controls') == "1") ? "true" : "false";
-		$accesspress_auto_transition = (!of_get_option('auto_transition') || of_get_option('auto_transition') == "1") ? "true" : "false";
-		$accesspress_slider_transition = (!of_get_option('slider_transition')) ? "fade" : of_get_option('slider_transition');
-		$accesspress_slider_speed = (!of_get_option('slider_speed')) ? "5000" : of_get_option('slider_speed');
-		$accesspress_slider_pause = (!of_get_option('slider_pause')) ? "5000" : of_get_option('slider_pause');
 		$accesspress_show_caption = of_get_option('show_caption') ;
 		?>
 
 		<?php if( $accesspress_show_slider == "1") : ?>
 		<section id="main-slider">
- 		<script type="text/javascript">
-            jQuery(function($){
-				$('#main-slider .bx-slider').bxSlider({
-					adaptiveHeight: true,
-					pager: <?php echo $accesspress_show_pager; ?>,
-					controls: <?php echo $accesspress_show_controls; ?>,
-					mode: '<?php echo $accesspress_slider_transition; ?>',
-					auto : '<?php echo $accesspress_auto_transition; ?>',
-					pause: '<?php echo $accesspress_slider_pause; ?>',
-					speed: '<?php echo $accesspress_slider_speed; ?>'
-				});				
-			});
-        </script>
+ 		
         <?php
         $settings = get_option('accesspress-root');
 		if( !empty($settings)) :
@@ -115,24 +127,25 @@ function accesspress_bxslidercb(){
 				?>
 				<div class="slides">
 				
-					<img src="<?php echo $slider_image; ?>" alt="<?php echo $slider_title; ?>">
+					<img src="<?php echo esc_url($slider_image); ?>" alt="<?php echo esc_attr($slider_title); ?>">
 							
 					<?php if($accesspress_show_caption == '1'): ?>
 					<div class="slider-caption">
 						<div class="ak-container">
+                            <div class="caption-content-wrapper">
 							<?php if($slider_title): ?>
-								<h1 class="caption-title"><?php echo $slider_title;?></h1>
+								<h1 class="caption-title"><?php echo esc_attr($slider_title);?></h1>
 							<?php endif; ?>
 
 							<?php if($slider_desc): ?>
-								<div class="caption-content-wrapper">
-									<div class="caption-content"><?php echo $slider_desc;?></div>
+								<div class="caption-content"><?php echo esc_attr($slider_desc);?></div>
 									
-									<?php if($slider_button_text): ?>
-									<a class="caption-read-more" href="<?php echo $slider_button_link; ?>"><?php echo $slider_button_text; ?></a>
-									<?php endif; ?>
-								</div>
 							<?php endif; ?>
+                            </div>
+
+                            <?php if($slider_button_text): ?>
+                                <a class="caption-read-more" href="<?php echo esc_url($slider_button_link); ?>"><?php echo esc_attr($slider_button_text); ?></a>
+                            <?php endif; ?>
 						</div>
 					</div>
 					<?php endif; ?>
@@ -183,39 +196,39 @@ function accesspress_social_cb() {
     $skypelink = of_get_option('skype');
     ?>
         <?php if (!empty($facebooklink)) { ?>
-            <a href="<?php echo of_get_option('facebook'); ?>" class="facebook" data-title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="<?php echo esc_url($facebooklink); ?>" class="facebook" data-title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
         <?php } ?>
 
         <?php if (!empty($twitterlink)) { ?>
-            <a href="<?php echo of_get_option('twitter'); ?>" class="twitter" data-title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a href="<?php echo esc_url($twitterlink); ?>" class="twitter" data-title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
         <?php } ?>
 
         <?php if (!empty($google_pluslink)) { ?>
-            <a href="<?php echo of_get_option('google_plus'); ?>" class="gplus" data-title="Google Plus" target="_blank"><i class="fa fa-google-plus"></i></a>
+            <a href="<?php echo esc_url($google_pluslink); ?>" class="gplus" data-title="Google Plus" target="_blank"><i class="fa fa-google-plus"></i></a>
         <?php } ?>
 
         <?php if (!empty($youtubelink)) { ?>
-            <a href="<?php echo of_get_option('youtube'); ?>" class="youtube" data-title="Youtube" target="_blank"><i class="fa fa-youtube"></i></a>
+            <a href="<?php echo esc_url($youtubelink); ?>" class="youtube" data-title="Youtube" target="_blank"><i class="fa fa-youtube"></i></a>
         <?php } ?>
 
         <?php if (!empty($pinterestlink)) { ?>
-            <a href="<?php echo of_get_option('pinterest'); ?>" class="pinterest" data-title="Pinterest" target="_blank"><i class="fa fa-pinterest"></i></a>
+            <a href="<?php echo esc_url($pinterestlink); ?>" class="pinterest" data-title="Pinterest" target="_blank"><i class="fa fa-pinterest"></i></a>
         <?php } ?>
 
         <?php if (!empty($linkedinlink)) { ?>
-            <a href="<?php echo of_get_option('linkedin'); ?>" class="linkedin" data-title="Linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
+            <a href="<?php echo esc_url($linkedinlink); ?>" class="linkedin" data-title="Linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
         <?php } ?>
 
         <?php if (!empty($instagramlink)) { ?>
-            <a href="<?php echo of_get_option('instagram'); ?>" class="instagram" data-title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="<?php echo esc_url($instagramlink); ?>" class="instagram" data-title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
         <?php } ?>
 
         <?php if (!empty($stumbleuponlink)) { ?>
-            <a href="<?php echo of_get_option('stumbleupon'); ?>" class="stumbleupon" data-title="Stumbleupon" target="_blank"><i class="fa fa-stumbleupon"></i></a>
+            <a href="<?php echo esc_url($stumbleuponlink); ?>" class="stumbleupon" data-title="Stumbleupon" target="_blank"><i class="fa fa-stumbleupon"></i></a>
         <?php } ?>
 
         <?php if (!empty($skypelink)) { ?>
-            <a href="<?php echo "skype:" . of_get_option('skype') ?>" class="skype" data-title="Skype"><i class="fa fa-skype"></i></a>
+            <a href="<?php echo "skype:" . esc_attr($skypelink) ?>" class="skype" data-title="Skype"><i class="fa fa-skype"></i></a>
         <?php } ?>
     <?php
 }
@@ -294,9 +307,9 @@ function accesspress_breadcrumbs() {
             $thisCat = get_category(get_query_var('cat'), false);
             if ($thisCat->parent != 0)
                 echo get_category_parents($thisCat->parent, TRUE, ' ' . $delimiter . ' ');
-            echo $before . 'Archive by category "' . single_cat_title('', false) . '"' . $after;
+            echo $before . __('Archive by category','accesspress-root').' "' . single_cat_title('', false) . '"' . $after;
         } elseif (is_search()) {
-            echo $before . 'Search results for "' . get_search_query() . '"' . $after;
+            echo $before . __('Search results for','accesspress-root'). '"' . get_search_query() . '"' . $after;
         } elseif (is_day()) {
             echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
             echo '<a href="' . get_month_link(get_the_time('Y'), get_the_time('m')) . '">' . get_the_time('F') . '</a> ' . $delimiter . ' ';
@@ -354,11 +367,11 @@ function accesspress_breadcrumbs() {
             if ($showCurrent == 1)
                 echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
         } elseif (is_tag()) {
-            echo $before . 'Posts tagged "' . single_tag_title('', false) . '"' . $after;
+            echo $before . __('Posts tagged','accesspress-root').' "' . single_tag_title('', false) . '"' . $after;
         } elseif (is_author()) {
             global $author;
             $userdata = get_userdata($author);
-            echo $before . 'Articles posted by ' . $userdata->display_name . $after;
+            echo $before . __('Articles posted by ','accesspress-root'). $userdata->display_name . $after;
         } elseif (is_404()) {
             echo $before . 'Error 404' . $after;
         }
@@ -366,7 +379,7 @@ function accesspress_breadcrumbs() {
         if (get_query_var('paged')) {
             if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author())
                 echo ' (';
-            echo __('Page', 'accesspress_pro') . ' ' . get_query_var('paged');
+            echo __('Page', 'accesspress-root') . ' ' . get_query_var('paged');
             if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author())
                 echo ')';
         }
@@ -432,6 +445,7 @@ add_filter('pre_get_posts', 'exclude_category_from_blogpost');
 function accesspress_header_scripts(){
     $fav_icon = of_get_option('fav_icon');
     $page_background_option = of_get_option('page_background_option');
+    $show_slider = of_get_option('show_slider');
     if(!empty($fav_icon)):
     ?>
     <link rel="icon" type="image/png" href="<?php echo $fav_icon; ?>"> 
@@ -441,13 +455,17 @@ function accesspress_header_scripts(){
     echo "html body{";
     if($page_background_option == 'image'): 
     $background = of_get_option('page_background_image');
-        echo 'background:url('.$background["image"].') '.$background["repeat"].' '.$background["position"].' '.$background["attachment"].' '.$background["color"];
+        echo 'background:url('.esc_url($background["image"]).') '.esc_attr($background["repeat"]).' '.esc_attr($background["position"]).' '.esc_attr($background["attachment"]).' '.esc_attr($background["color"]);
     elseif($page_background_option == 'color'): 
-        echo 'background:'.of_get_option('page_background_color');
+        echo 'background:'.esc_attr(of_get_option('page_background_color'));
     elseif($page_background_option == 'pattern'):
-        echo 'background:url('.get_template_directory_uri().'/inc/panel/images/patterns/'.of_get_option("page_background_pattern").'.png)';
+        echo 'background:url('.get_template_directory_uri().'/inc/panel/images/patterns/'.esc_attr(of_get_option("page_background_pattern")).'.png)';
     endif;
     echo "}";
+    
+    if($show_slider == '0'):
+        echo '#masthead{margin-bottom:40px}';
+    endif;
     echo "</style>";
 
 
