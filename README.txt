@@ -106,3 +106,8 @@ Screenshot images are licensed under Creative Commons Deed CC0.
 
 == 1.25 ==
 * Removed newsletter form on options page
+
+== 1.26 ==
+* Added more themes admin page.
+* Added title tag support.
+* Added esc_url() to social link.

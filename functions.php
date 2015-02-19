@@ -188,6 +188,11 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+/*
+ * Products  upsell.
+ */
+require get_template_directory() . '/inc/upsell/igthemes-upsell.php';
+
 /* 
 * Option panel
 */
@@ -363,7 +368,7 @@ function delete_retina_support_images( $attachment_id ) {
  * Schema.org.
  */
  
-function html_tag_schema()
+function base_tag_schema()
 {
     $schema = 'http://schema.org/';
 
