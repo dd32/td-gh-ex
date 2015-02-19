@@ -188,9 +188,9 @@ function fullframe_scripts() {
 
 	wp_enqueue_style( 'fullframe-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'navigation', get_template_directory_uri() . '/js/navigation.min.js', array(), '20120206', true );
+	wp_enqueue_script( 'fullframe-navigation', get_template_directory_uri() . '/js/navigation.min.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.min.js', array(), '20130115', true );
+	wp_enqueue_script( 'fullframe-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.min.js', array(), '20130115', true );
 
 	/**
 	 * Adds JavaScript to pages with the comment form to support
@@ -1115,31 +1115,6 @@ if ( ! function_exists( 'fullframe_body_classes' ) ) :
 		if( "" != $current_content_layout ) {
 			$classes[] = $current_content_layout;
 		}
-
-		//Count number of menus avaliable and set class accordingly
-		$mobile_menu_count = 1; // For primary menu
-		
-		if ( has_nav_menu( 'secondary' ) ) {
-			$mobile_menu_count++;
-		}
-
-		if ( has_nav_menu( 'header-right' ) ) {
-			$mobile_menu_count++;
-		}
-
-		switch ( $mobile_menu_count ) {
-			case 1:
-				$classes[] = 'mobile-menu-one';
-				break;
-
-			case 2:
-				$classes[] = 'mobile-menu-two';
-				break;
-
-			case 3:
-				$classes[] = 'mobile-menu-three';
-				break;
-		}	
 
 		$classes 	= apply_filters( 'fullframe_body_classes', $classes );
 

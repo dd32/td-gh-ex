@@ -192,7 +192,6 @@ if ( ! function_exists( 'fullframe_site_branding' ) ) :
 	 * @since Fullframe 1.0
 	 */
 	function fullframe_site_branding() {
-		fullframe_flush_transients();
 		$options 			= fullframe_get_theme_options();
 
 		$logo_alt = ( '' != $options['logo_alt_text'] ) ? $options['logo_alt_text'] : get_bloginfo( 'name', 'display' );
@@ -202,7 +201,7 @@ if ( ! function_exists( 'fullframe_site_branding' ) ) :
 			$fullframe_site_logo = '
 			<div id="site-logo">
 				<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">
-					<img src="' . esc_url( $options['logo'] ) . '" alt="' . esc_attr(  $logo_alt ). '">
+					<img src="' . esc_url( $options['logo'] ) . '" alt="' . esc_attr(  $logo_alt ) . '">
 				</a>
 			</div><!-- #site-logo -->';
 		}
@@ -419,6 +418,8 @@ if ( ! function_exists( 'fullframe_featured_overall_image' ) ) :
 		
 		// Get Page ID outside Loop
 		$page_id = $wp_query->get_queried_object_id();
+
+		$page_for_posts = get_option('page_for_posts');
 
 		// Check Enable/Disable header image in Page/Post Meta box
 		if ( is_page() || is_single() ) {

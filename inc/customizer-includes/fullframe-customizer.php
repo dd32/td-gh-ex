@@ -262,7 +262,7 @@ function fullframe_sanitize_post_id( $input ) {
  * @since  Fullframe 1.0
  */
 function fullframe_sanitize_page( $input ) {
-	if(  get_page( $input ) ){
+	if(  get_post( $input ) ){
 		return $input;
 	}
     else {

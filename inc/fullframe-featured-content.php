@@ -23,7 +23,7 @@ if( !function_exists( 'fullframe_featured_content_display' ) ) :
 * @since Fullframe 1.0
 */
 function fullframe_featured_content_display() {
-	fullframe_flush_transients();
+	//fullframe_flush_transients();
 	
 	global $post, $wp_query;
 
@@ -76,14 +76,26 @@ function fullframe_featured_content_display() {
 
 			$fullframe_featured_content ='
 				<section id="featured-content" class="' . $classes . '">
-					<div class="wrapper">
-						<div class="featured-heading-wrap">
-							<h1 id="featured-heading" class="entry-title">'. esc_attr( $headline ) .'</h1>
-							<p>'. esc_attr( $subheadline ) .'</p>
-						</div><!-- .featured-heading-wrap -->
+					<div class="wrapper">';
+						if ( !empty( $headline ) || !empty( $subheadline ) ) {
+							$fullframe_featured_content .='<div class="featured-heading-wrap">';
+								if ( !empty( $headline ) ) {
+									$fullframe_featured_content .='<h1 id="featured-heading" class="entry-title">'. esc_attr( $headline ) .'</h1>';
+								}
+								if ( !empty( $subheadline ) ) {
+									$fullframe_featured_content .='<p>'. esc_attr( $subheadline ) .'</p>';
+								}
+							$fullframe_featured_content .='</div><!-- .featured-heading-wrap -->';
+						}
+						$fullframe_featured_content .='
 						<div class="featured-content-wrap">';
 							if ( $sliderselect ) {
 								$fullframe_featured_content .='
+								<!-- prev/next links -->
+								<div id="content-controls">
+									<div id="content-prev"></div>
+									<div id="content-next"></div>
+								</div>
 								<div class="cycle-slideshow" 
 								    data-cycle-log="false"
 								    data-cycle-pause-on-hover="true"
@@ -91,11 +103,9 @@ function fullframe_featured_content_display() {
 								    data-cycle-auto-height=container
 									data-cycle-slides=".featured_content_slider_wrap"
 									data-cycle-fx="scrollHorz"
-									>
-								    
-								    <!-- prev/next links -->
-								    <div class="cycle-prev"></div>
-								    <div class="cycle-next"></div>';
+									data-cycle-prev="#content-prev"
+        							data-cycle-next="#content-next"
+									>';
 							 }
 
 								// Select content
@@ -167,45 +177,54 @@ if ( ! function_exists( 'fullframe_demo_content' ) ) :
  */
 function fullframe_demo_content( $options ) {
 	$fullframe_demo_content = '
-		<div class="featured_content_slider_wrap">
-			<article id="featured-post-1" class="post hentry post-demo">
-				<figure class="featured-content-image">
-					<img alt="Durbar Square" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured1-400x225.jpg" />
-				</figure>
-				<div class="entry-container">
-					<header class="entry-header">
-						<h1 class="entry-title">
-							Durbar Square
-						</h1>
-					</header>
-				</div><!-- .entry-container -->			
-			</article>
+	<div class="featured_content_slider_wrap">
+		<article id="featured-post-1" class="post hentry post-demo">
+			<figure class="featured-content-image">
+				<img alt="Central Park" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured1-400x225.jpg" />
+			</figure>
+			<div class="entry-container">
+				<header class="entry-header">
+					<h1 class="entry-title">
+						Central Park
+					</h1>
+				</header>
+				<div class="entry-content">
+					Central Park is is the most visited urban park in the United States as well as one of the most filmed locations in the world. It was opened in 1857 and is expanded in 843 acres of city-owned land.
+				</div>
+			</div><!-- .entry-container -->			
+		</article>
 
-			<article id="featured-post-2" class="post hentry post-demo">
-				<figure class="featured-content-image">
-					<img alt="Seto Ghumba" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured2-400x225.jpg" />
-				</figure>
-				<div class="entry-container">
-					<header class="entry-header">
-						<h1 class="entry-title">
-							Seto Ghumba
-						</h1>
-					</header>
-				</div><!-- .entry-container -->			
-			</article>
-			
-			<article id="featured-post-3" class="post hentry post-demo">
-				<figure class="featured-content-image">
-					<img alt="Swayambhunath" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured3-400x225.jpg" />
-				</figure>
-				<div class="entry-container">
-					<header class="entry-header">
-						<h1 class="entry-title">
-							Swayambhunath
-						</h1>
-					</header>
-				</div><!-- .entry-container -->			
-			</article>';
+		<article id="featured-post-2" class="post hentry post-demo">
+			<figure class="featured-content-image">
+				<img alt="Antique Clock" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured2-400x225.jpg" />
+			</figure>
+			<div class="entry-container">
+				<header class="entry-header">
+					<h1 class="entry-title">
+						Antique Clock
+					</h1>
+				</header>
+				<div class="entry-content">
+					Antique clocks increase in value with the rarity of the design, their condition, and appeal in the market place. Many different materials were used in antique clocks.
+				</div>
+			</div><!-- .entry-container -->			
+		</article>
+		
+		<article id="featured-post-3" class="post hentry post-demo">
+			<figure class="featured-content-image">
+				<img alt="Vespa Scooter" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured3-400x225.jpg" />
+			</figure>
+			<div class="entry-container">
+				<header class="entry-header">
+					<h1 class="entry-title">
+						Vespa Scooter
+					</h1>
+				</header>
+				<div class="entry-content">
+					The Vespa has evolved from a single model motor scooter manufactured in 1946 by Piaggio & Co. S.p.A. of Pontedera, Italy-to a full line of scooters, today owned by Piaggio.
+				</div>
+			</div><!-- .entry-container -->			
+		</article>';
 
 	if( 'layout-four' == $options ['featured_content_layout']) {
 		$fullframe_demo_content .= '
@@ -317,7 +336,7 @@ function fullframe_page_content( $options ) {
 				$fullframe_page_content .= '
 					<div class="entry-container">';
 					if ( '1' == $options['featured_content_enable_title'] ) {		
-							$fullframe_page_content .= the_title( '<header><h1>','</h1></header>', false );
+							$fullframe_page_content .= the_title( '<header class="entry-header"><h1 class="entry-title">','</h1></header>', false );
 					}
 					if ( '1'== $options['featured_content_enable_excerpt_content'] ) {
 							$fullframe_page_content .= '<div class="entry-content">'. get_the_excerpt() . '</div>';

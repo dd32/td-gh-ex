@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Full Frame\n"
 "Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/full-frame-pro-"
 "premium/pro-premium/\n"
-"POT-Creation-Date: 2015-02-12 10:32+0545\n"
-"PO-Revision-Date: 2015-02-12 10:32+0545\n"
+"POT-Creation-Date: 2015-02-19 20:40+0545\n"
+"PO-Revision-Date: 2015-02-19 20:40+0545\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: en\n"
@@ -96,7 +96,7 @@ msgstr ""
 msgid "Chats"
 msgstr ""
 
-#: ../archive.php:69
+#: ../archive.php:69 ../sidebar.php:90
 msgid "Archives"
 msgstr ""
 
@@ -699,15 +699,15 @@ msgstr ""
 msgid "%s"
 msgstr ""
 
-#: ../inc/fullframe-core.php:1457
+#: ../inc/fullframe-core.php:1432
 msgid "Scroll Up"
 msgstr ""
 
-#: ../inc/fullframe-core.php:1474
+#: ../inc/fullframe-core.php:1449
 msgid "Posted on"
 msgstr ""
 
-#: ../inc/fullframe-core.php:1475
+#: ../inc/fullframe-core.php:1450
 msgid "By"
 msgstr ""
 
@@ -1048,7 +1048,7 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: ../inc/fullframe-menus.php:64
+#: ../inc/fullframe-menus.php:67
 msgid "Header Toggle"
 msgstr ""
 
@@ -1100,29 +1100,20 @@ msgctxt "label"
 msgid "Search for:"
 msgstr ""
 
-#: ../sidebar-secondary.php:25
-msgid "Secondary Sidebar Widget Area"
-msgstr ""
-
-#: ../sidebar-secondary.php:28
-msgid ""
-"This is the Secondary Sidebar Widget Area if you are using a three column site "
-"layout option."
-msgstr ""
-
-#: ../sidebar-secondary.php:29 ../sidebar.php:75
-#, php-format
-msgid ""
-"You can add content to this area by visiting your <a href=\"%s\">Widgets Panel</"
-"a> and adding new widgets to this area."
-msgstr ""
-
-#: ../sidebar.php:71
+#: ../sidebar.php:73
 msgid "Primary Sidebar Widget Area"
 msgstr ""
 
-#: ../sidebar.php:74
+#: ../sidebar.php:76
 msgid ""
-"This is the Primary Sidebar Widget Area if you are using two column site layout "
-"option."
+"This is the Primary Sidebar Widget Area if you are using a two column site "
+"layout option."
+msgstr ""
+
+#: ../sidebar.php:77
+#, php-format
+msgid ""
+"By default it will load Search and Archives widgets as shown below. You can add "
+"widget to this area by visiting your <a href=\"%s\">Widgets Panel</a> which will "
+"replace default widgets."
 msgstr ""

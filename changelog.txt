@@ -1,9 +1,33 @@
 == Change log ==
 
+= 0.6 =
+* Added fullframe- prefix to some js handles
+* Bug Fixed: undefined index $page_for_posts for Featured Header Image
+* Bug Fixed: Menu float issue
+* Bug Fixed: alt text for fixed header logo icon
+* Bug Fixed: Admin bar overlap with fixed header while login
+* Bug Fixed: Spacing issue when there is no Header Featured Image & Slider
+* Bug Fixed: Featured Content layout clear on column 4
+* Bug Fixed: Featured Content sliding effect 
+* Bug Fixed: Featured Content missing classes entry-header and entry-title
+* Bug Fixed: featured-heading-wrap, $headline and $subheadline empty check in featured content
+* Bug Fixed: Html is now allowed in Promotion Headline
+* Bug Fixed: Responsive style for menu and header details
+* Bug Fixed: Layout Options style
+* Changed demo featured content image and text
+* Changed get_page to get_post as get_page is depriciated
+* Changed default value for single_post_image_layout to disabled
+* Changed default value for featured_image_size to slider
+* Fixed header text condition for Sidebar
+* Removed unnecessary body class
+* Removed unnecessary css
+* Renamed "custom_meta_box_nonce" renamed to "fullframe_custom_meta_box_nonce"
+* Sanitized custom metabox settings
+
 = 0.5 =
 * Changed featured content slider disable by default
 * Removed unnecessary images
-* Removed exta featured content
+* Removed extra featured content
 
 = 0.4 =
 * Added Option in Enable Header Image: Excluding Home, Page/Post Featured Image 

@@ -296,131 +296,6 @@ Responsive Style
 	    width: 720px;
 	}
 
-	/* Three Columns */
-	#content_sidebar_wrap {
-	    width: 830px;
-	}
-
-	#content_sidebar_wrap #main {
-	    width: 500px;
-	}
-
-	.three-columns .sidebar-primary {
-	    width: 330px;
-	}
-
-	.sidebar-secondary {
-	    width: 230px;
-	}
-
-	/* Three Columns Equal Sidebars */	
-	.three-columns.equal-sidebars #content_sidebar_wrap {
-		width:  760px;
-	}
-
-	.three-columns.equal-sidebars #content_sidebar_wrap #main {
-		width:  460px;
-	}
-
-	.three-columns.equal-sidebars .sidebar-primary,
-	.three-columns.equal-sidebars .sidebar-secondary {
-		width: 300px;
-	}
-
-	/* Three Columns Equal Columns */	
-	.three-columns.equal-columns #content_sidebar_wrap {
-	    width: 707px;
-	}
-
-	.three-columns.equal-columns #content_sidebar_wrap #main {
-	    width: 354px;
-	}
-
-	.three-columns.equal-columns .sidebar-primary, 
-	.three-columns.equal-columns .sidebar-secondary {
-	    width: 353px;
-	}
-
-	/* Layout Options with Featured Image on Left */
-	/* Three Colummns */
-	.three-columns .has-post-thumbnail.excerpt-portrait-featured-image .featured-image,
-	.three-columns .has-post-thumbnail.excerpt-landscape-featured-image .featured-image,
-	.three-columns .has-post-thumbnail.excerpt-thumbnail-featured-image .featured-image {
-	    width: 30%;
-	}
-
-	.three-columns .has-post-thumbnail.excerpt-portrait-featured-image .entry-container,
-	.three-columns .has-post-thumbnail.excerpt-landscape-featured-image .entry-container,
-	.three-columns .has-post-thumbnail.excerpt-thumbnail-featured-image .entry-container {
-	    width: 66%;
-	}
-
-	/* Three Equal Columns */
-	.three-columns.equal-columns .has-post-thumbnail .featured-image {
-	    width: 100%;
-	}
-
-	.three-columns.equal-columns .has-post-thumbnail .entry-container {
-	    width: 100%;
-	}
-
-	/* Two Colummns */
-	/* Show Excerpt Landscape Featured Image */
-	.two-columns .has-post-thumbnail.excerpt-landscape-featured-image .featured-image {
-	    width: 220px;
-	}
-
-	/* Show Excerpt Portrait Featured Image */
-	.two-columns .has-post-thumbnail.excerpt-portrait-featured-image .entry-container {
-	    width: 491px;
-	}
-
-	/* Show Excerpt Landscape Featured Image */
-	.two-columns .has-post-thumbnail.excerpt-landscape-featured-image .entry-container {
-	    width: 440px;
-	}
-
-	/* Show Excerpt Thumbnail Featured Image */
-	.two-columns .has-post-thumbnail.excerpt-thumbnail-featured-image .entry-container {
-	    width: 510px;
-	}
-
-	/* One Column  */
-	/* Show Excerpt Landscape Featured Image */
-	.no-sidebar .has-post-thumbnail.excerpt-landscape-featured-image .featured-image {
-	    width: 300px;
-	}
-
-	.no-sidebar .has-post-thumbnail.excerpt-portrait-featured-image .entry-container  {
-	    width: 591px;
-	}
-
-	/* Show Excerpt Landscape Featured Image */
-	.no-sidebar .has-post-thumbnail.excerpt-landscape-featured-image .entry-container {
-	    width: 460px;
-	}
-
-	/* Show Excerpt Thumbnail Featured Image */
-	.no-sidebar .has-post-thumbnail.excerpt-thumbnail-featured-image .entry-container {
-	    width: 610px;
-	}
-
-	/* Full Width */
-	/* Show Excerpt Portrait Featured Image */
-	.full-width .has-post-thumbnail.excerpt-portrait-featured-image .entry-container  {
-	    width: 821px;
-	}
-
-	/* Show Excerpt Landscape Featured Image */
-	.full-width .has-post-thumbnail.excerpt-landscape-featured-image .entry-container {
-	    width: 680px;
-	}
-
-	/* Show Excerpt Thumbnail Featured Image */
-	.full-width .has-post-thumbnail.excerpt-thumbnail-featured-image .entry-container {
-	    width: 830px;
-	}
-
 	#featured-content.layout-four .hentry,
 	#supplementary.four .widget-area {
 	    width: 25%;
@@ -490,83 +365,6 @@ Responsive Style
 	    width: 330px;
 	}
 
-	/* Three Columns */
-	#content_sidebar_wrap {
-	    width: 790px;
-	}
-
-	#content_sidebar_wrap #main {
-	    width: 490px;
-	}
-
-	.three-columns .sidebar-primary {
-	    width: 300px;
-	}
-
-	.sidebar-secondary {
-	    width: 220px;
-	}
-
-	/* Three Columns Equal Sidebars */	
-	.three-columns.equal-sidebars  #content_sidebar_wrap {
-		width:  735px;
-	}
-
-	.three-columns.equal-sidebars .sidebar-primary,
-	.three-columns.equal-sidebars .sidebar-secondary {
-		width: 275px;
-	}
-
-	/* Three Columns Equal Columns */	
-	.three-columns.equal-columns #content_sidebar_wrap {
-	    width: 673px;
-	}
-
-	.three-columns.equal-columns #content_sidebar_wrap #main {
-	    width: 336px;
-	}
-
-	.three-columns.equal-columns .sidebar-primary, 
-	.three-columns.equal-columns .sidebar-secondary {
-	    width: 337px;
-	}	
-
-	/* Two Colummns */
-	/* Show Excerpt Landscape Featured Image */
-	.two-columns .has-post-thumbnail.excerpt-landscape-featured-image .featured-image {
-	    width: 200px;
-	}
-
-	.two-columns .has-post-thumbnail.excerpt-landscape-featured-image .entry-container {
-	    width: 430px;
-	}
-
-	/* Show Excerpt Portrait Featured Image */
-	.two-columns .has-post-thumbnail.excerpt-portrait-featured-image .entry-container {
-	    width: 461px;
-	}
-
-	/* Show Excerpt Thumbnail Featured Image */
-	.two-columns .has-post-thumbnail.excerpt-thumbnail-featured-image .entry-container {
-	    width: 480px;
-	}
-
-	/* Full Width */
-	/* Show Excerpt Portrait Featured Image */
-	.full-width .has-post-thumbnail.excerpt-portrait-featured-image .entry-container  {
-	    width: 781px;
-	}
-
-	/* Show Excerpt Landscape Featured Image */
-	.full-width .has-post-thumbnail.excerpt-landscape-featured-image .entry-container {
-	    width: 650px;
-	}
-
-	/* Show Excerpt Thumbnail Featured Image */
-	.full-width .has-post-thumbnail.excerpt-thumbnail-featured-image .entry-container {
-	    width: 800px;
-	}
-
 }
 
 /*--------------------------------------------------------------
@@ -579,48 +377,6 @@ Responsive Style
 
 	#main {
 	    width: 600px;
-	}
-
-	/* Three Columns */
-	#content_sidebar_wrap {
-	    width: 730px;
-	}
-
-	#content_sidebar_wrap #main {
-	    width: 470px;
-	}
-
-	.three-columns .sidebar-primary {
-	    width: 260px;
-	}
-
-	.sidebar-secondary {
-	    width: 200px;
-	}
-
-	/* Three Columns Equal Sidebars */	
-	.three-columns.equal-sidebars #content_sidebar_wrap {
-		width:  690px;
-	}
-
-	.three-columns.equal-sidebars #content_sidebar_wrap #main {
-    	width: 450px;
-	}
-
-	.three-columns.equal-sidebars .sidebar-primary,
-	.three-columns.equal-sidebars .sidebar-secondary {
-		width: 240px;
-	}	
-
-	/* Three Columns Equal Columns */	
-	.three-columns.equal-columns #content_sidebar_wrap {
-	    width: 620px;
-	}
-
-	.three-columns.equal-columns #content_sidebar_wrap #main,
-	.three-columns.equal-columns .sidebar-primary, 
-	.three-columns.equal-columns .sidebar-secondary {
-	    width: 310px;
 	}
 
 	#feature-slider .cycle-prev,
@@ -643,49 +399,32 @@ Responsive Style
 	    height: 30px;   
 	} 
 
-	.two-columns .has-post-thumbnail.excerpt-portrait-featured-image .featured-image,
-	.two-columns .has-post-thumbnail.excerpt-landscape-featured-image .featured-image,
-	.two-columns .has-post-thumbnail.excerpt-thumbnail-featured-image .featured-image {
-	    width: 26%;
-	}
-
-	.two-columns .has-post-thumbnail.excerpt-portrait-featured-image .entry-container,
-	.two-columns .has-post-thumbnail.excerpt-landscape-featured-image .entry-container,
-	.two-columns .has-post-thumbnail.excerpt-thumbnail-featured-image .entry-container {
-	    width: 70%;
-	}
-
-	/* Full Width */
-	/* Show Excerpt Portrait Featured Image */
-	.full-width .has-post-thumbnail.excerpt-portrait-featured-image .entry-container  {
-	    width: 701px;
-	}
-
-	/* Show Excerpt Landscape Featured Image */
-	.full-width .has-post-thumbnail.excerpt-landscape-featured-image .entry-container {
-	    width: 570px;
-	}
-
-	/* Show Excerpt Thumbnail Featured Image */
-	.full-width .has-post-thumbnail.excerpt-thumbnail-featured-image .entry-container {
-	    width: 720px;
-	}	
-
 }
 
 /*--------------------------------------------------------------
 6. x <= 990px (iPad Portrait)
 --------------------------------------------------------------*/
 @media screen and (max-width: 990px) {	
-	.wrapper,
-	.no-sidebar.one-column .wrapper {
+	.wrapper {
 		width: 740px;
 	}
 
 	#logo-icon {
-	    padding: 0 40px;
-	    text-align: center;
+	    text-align: center; 
 	    width: 612px;
+	}
+
+	.no-mobile-left-menu #logo-icon {
+    	margin-left: 44px;
+	}
+
+	.no-mobile-right-menu #logo-icon {
+		margin-right: 44px;
+	}
+
+	.no-mobile-left-menu.no-mobile-right-menu #logo-icon {
+		margin: 0;
+		width: 100%
 	}
 
 	#masthead {
@@ -805,31 +544,16 @@ Responsive Style
 	#site-branding,
 	#main,
 	.no-sidebar.content-width #main,
-	.no-sidebar.one-column #main,
-	#content_sidebar_wrap,
-	#content_sidebar_wrap #main,
-	.sidebar-primary,
-	.three-columns .sidebar-primary,
-	.sidebar-secondary,
-	.three-columns.equal-sidebars #content_sidebar_wrap,
-	.three-columns.equal-sidebars #content_sidebar_wrap #main,
-	.three-columns.equal-sidebars .sidebar-primary,
-	.three-columns.equal-sidebars .sidebar-secondary,
-	.three-columns.equal-columns #content_sidebar_wrap,
-	.three-columns.equal-columns #content_sidebar_wrap #main,
-	.three-columns.equal-columns .sidebar-primary, 
-	.three-columns.equal-columns .sidebar-secondary {
+	.sidebar-primary {
 	    width: 100%;
 	}	
 
-	.sidebar-primary,
-	.sidebar-secondary {
+	.sidebar-primary {
 		clear: both;
 		padding: 0;
 	}
 
 	.sidebar-primary .widget,
-	.sidebar-secondary .widget,
 	#featured-content.layout-four .hentry,
 	#supplementary.four .widget-area,
 	#supplementary.three .widget-area,
@@ -913,17 +637,6 @@ Responsive Style
 	    text-align: center;
 	}
 
-	.mobile-menu-one #site-branding {
-		padding-left:  0;
-	    width: 680px;
-	}
-
-	.mobile-menu-two #site-branding {
-		padding-left: 0;
-		padding-right: 0;
-	    width: 640px;
-	}
-
 	#mobile-secondary-menu {
 		display: block;
 		width: 100%;
@@ -955,56 +668,22 @@ Responsive Style
 	    width: 30px;
 	    height: 30px;   
 	} 
-
-	/* Layout Options with Featured Image on Left */
-	/* Three Colummns */
-	.three-columns .has-post-thumbnail.excerpt-portrait-featured-image .featured-image,
-	.two-columns .has-post-thumbnail.excerpt-portrait-featured-image .featured-image,
-	.no-sidebar .has-post-thumbnail.excerpt-portrait-featured-image .featured-image {
-	    width: 24%;
-	}
-
-	.three-columns .has-post-thumbnail.excerpt-portrait-featured-image .entry-container,
-	.two-columns .has-post-thumbnail.excerpt-portrait-featured-image .entry-container,
-	.no-sidebar .has-post-thumbnail.excerpt-portrait-featured-image .entry-container {
-		clear: none;
-	    width: 73%;
-	}
-
-	.three-columns .has-post-thumbnail.excerpt-landscape-featured-image .featured-image,
-	.two-columns .has-post-thumbnail.excerpt-landscape-featured-image .featured-image,
-	.no-sidebar .has-post-thumbnail.excerpt-landscape-featured-image .featured-image {
-		width: 30%
-	}
-
-	.three-columns .has-post-thumbnail.excerpt-landscape-featured-image .entry-container,
-	.two-columns .has-post-thumbnail.excerpt-landscape-featured-image .entry-container,
-	.no-sidebar .has-post-thumbnail.excerpt-landscape-featured-image .entry-container {
-		clear: none;
-		width: 67%;
-	}
-
-	.three-columns .has-post-thumbnail.excerpt-thumbnail-featured-image .featured-image,
-	.two-columns .has-post-thumbnail.excerpt-thumbnail-featured-image .featured-image,
-	.no-sidebar .has-post-thumbnail.excerpt-thumbnail-featured-image .featured-image {
-	    width: 21%;
-	}
-
-	.three-columns .has-post-thumbnail.excerpt-thumbnail-featured-image .entry-container,
-	.two-columns .has-post-thumbnail.excerpt-thumbnail-featured-image .entry-container,
-	.no-sidebar .has-post-thumbnail.excerpt-thumbnail-featured-image .entry-container {
-		clear: none;
-	    width: 76%;
-	}	
-
 }
 
 /*--------------------------------------------------------------
-7. x <= 767px
+7. x <= 782px
+--------------------------------------------------------------*/
+@media screen and (max-width:782px){
+	.admin-bar #fixed-header {
+	    top: 45px;
+	}
+}
+
+/*--------------------------------------------------------------
+8. x <= 767px
 --------------------------------------------------------------*/
 @media screen and (max-width: 767px) {
-	.wrapper,
-	.no-sidebar.one-column .wrapper {
+	.wrapper {
 		width: 660px;
 	}
 	
@@ -1012,13 +691,6 @@ Responsive Style
 	    width: 532px;
 	}
 
-	.mobile-menu-one #site-branding {
-	    width: 600px;
-	}
-
-	.mobile-menu-two #site-branding {
-	    width: 560px;
-	}
 	#supplementary {
 		height: 1%;
 		overflow: hidden;
@@ -1027,24 +699,15 @@ Responsive Style
 }
 
 /*--------------------------------------------------------------
-8. x <= 700px
+9. x <= 700px
 --------------------------------------------------------------*/
 @media screen and (max-width: 700px) {
-	.wrapper,
-	.no-sidebar.one-column .wrapper {
+	.wrapper {
 		width: 560px;
 	}
 
 	#logo-icon {
 	    width: 432px;
-	}
-
-	.mobile-menu-one #site-branding {
-	    width: 500px;
-	}
-
-	.mobile-menu-two #site-branding {
-	    width: 460px;
 	}
 
 	#footer-left-content, 
@@ -1060,26 +723,20 @@ Responsive Style
 }
 
 /*--------------------------------------------------------------
-9. x <= 600px (iPhone 5 Landscape)
+10. x <= 600px (iPhone 5 Landscape)
 --------------------------------------------------------------*/
 @media screen and (max-width:600px) {
-	.wrapper,
-	.no-sidebar.one-column .wrapper {
+	.wrapper {
 		width: 520px;
 	}
 
+	.admin-bar #wpadminbar {
+		position: fixed;
+	}
+
 	#logo-icon {
-		padding: 0 30px;
 	    width: 392px;
 	}
-
-	.mobile-menu-one #site-branding {
-	    width: 460px;
-	}
-
-	.mobile-menu-two #site-branding {
-	    width: 420px;
-	}	
 
 	#feature-slider .entry-container {
 	    padding: 5px;
@@ -1134,24 +791,15 @@ Responsive Style
 }
 
 /*--------------------------------------------------------------
-10. x <= 540px (iPhone 4 Landscape)
+11. x <= 540px (iPhone 4 Landscape)
 --------------------------------------------------------------*/
 @media screen and (max-width: 540px) {
-	.wrapper,
-	.no-sidebar.one-column .wrapper {
+	.wrapper {
 		width: 460px;
 	}
 
 	#logo-icon {
 	    width: 332px;
-	}
-
-	.mobile-menu-one #site-branding {
-	    width: 400px;
-	}
-
-	.mobile-menu-two #site-branding {
-	    width: 360px;
 	}
 
 	body, 
@@ -1215,11 +863,10 @@ Responsive Style
 }
 
 /*--------------------------------------------------------------
-11. x <= 479px (iPhone Portrait)
+12. x <= 479px (iPhone Portrait)
 --------------------------------------------------------------*/
 @media screen and (max-width: 479px) {
-	.wrapper,
-	.no-sidebar.one-column .wrapper {
+	.wrapper {
 		width: 400px;
 	}
 
@@ -1231,17 +878,15 @@ Responsive Style
 		padding-top: 0;
 	}
 
-	.mobile-menu-one #site-branding {
-	    width: 270px;
+	#content-prev, #content-next {
+	    font-size: 20px;
+	    line-height: 10px;
 	}
 
-	.mobile-menu-two #site-branding {
-	    width: 240px;
-	}
-
+	#content .has-post-thumbnail .archive-post-wrap .featured-image,
+	#content .has-post-thumbnail .archive-post-wrap .entry-container,
 	#promotion-message .section,	
 	.sidebar-primary .widget,
-	.sidebar-secondary .widget,
 	#featured-content.layout-four .hentry,
 	#featured-content.layout-three .hentry,
 	#supplementary.four .widget-area,
@@ -1273,34 +918,18 @@ Responsive Style
 		font-size: 11px;
 	}	
 
-	/* Layout Options with Featured Image on Left */
-	.three-columns .has-post-thumbnail.excerpt-landscape-featured-image .featured-image,
-	.two-columns .has-post-thumbnail.excerpt-landscape-featured-image .featured-image,
-	.no-sidebar .has-post-thumbnail.excerpt-landscape-featured-image .featured-image {
-		width: 100%
-	}
-
-	.three-columns .has-post-thumbnail.excerpt-landscape-featured-image .entry-container,
-	.two-columns .has-post-thumbnail.excerpt-landscape-featured-image .entry-container,
-	.no-sidebar .has-post-thumbnail.excerpt-landscape-featured-image .entry-container {
-		clear: both;
-		width: 100%;
-	}	
-
 }
 
 /*--------------------------------------------------------------
-12. x <= 319px
+13. x <= 319px
 --------------------------------------------------------------*/
 @media screen and (max-width: 400px) {
-	.wrapper,
-	.no-sidebar.one-column .wrapper {
+	.wrapper {
 		width: 100%;
 	}
 
 	#logo-icon {
 	    width: 70%;
-	    padding: 0 20px;
 	}
 
 	#masthead {
@@ -1382,7 +1011,7 @@ Responsive Style
 }
 
 /*--------------------------------------------------------------
-13. Form Zoom Fix
+14. Form Zoom Fix
 --------------------------------------------------------------*/
 @media screen and (-webkit-min-device-pixel-ratio:0) { 
 	select:focus, 

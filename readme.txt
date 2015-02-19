@@ -27,7 +27,10 @@ Images used are released under the CC0 license
 Slider Image 1: http://pixabay.com/en/photography-photo-camera-olympus-407218/
 Slider Image 2: http://pixabay.com/en/photographer-photo-camera-camera-455747/
 Featured Content Background Image: http://www.pexels.com/photo/2286/
-4. All other images are self shot image by (CatchThemes.com) 
+1st Featured Content Image: http://pixabay.com/en/central-park-new-york-city-benches-535645/
+2nd Featured Content Image: http://pixabay.com/en/clock-city-antique-architecture-426079/
+3rd Featued Content Image: http://pixabay.com/en/vespa-street-night-city-517227/
+All other images are self shot image by (CatchThemes.com) 
 
 Font Icons
 	Genericons by Automattic, Inc.

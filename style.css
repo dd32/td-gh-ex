@@ -4,7 +4,7 @@ Theme URI: http://catchthemes.com/themes/full-frame
 Author: Catch Themes
 Author URI: http://catchthemes.com/
 Description: Full Frame is a Simple, Clean and Spacious Full Width Responsive WordPress Theme based on Catch Base Theme. Built on HTML5, CSS3 and Theme Customizer for real time customization, it comes with a whole set of interesting and rich features which makes this theme highly customizable and flexible. Make your beautiful yet professional website in no time. Full Frame WordPress Theme will be best suited for photography, portfolio and blogging sites. This theme is translation ready. Check out Theme Instructions at http://catchthemes.com/theme-instructions/full-frame/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/full-frame/
-Version: 0.5
+Version: 0.6
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: fullframe
@@ -478,6 +478,8 @@ blockquote:before {
 .genericon:before,
 #feature-slider .cycle-prev:before,
 #feature-slider .cycle-next:before, 
+#content-prev:before,
+#content-next:before, 
 .posted-on a:before,
 .byline a:before,
 .cat-links span + a:before,
@@ -501,11 +503,13 @@ blockquote:before {
 	content: '\f432';
 }
 
-#feature-slider .cycle-prev:before {
+#feature-slider .cycle-prev:before,
+#content-prev:before {
     content: "\f430";
 }
 
-#feature-slider .cycle-next:before {
+#feature-slider .cycle-next:before,
+#content-next:before {
     content: "\f429";   
 }
 
@@ -539,6 +543,12 @@ blockquote:before {
 --------------------------------------------------------------*/
 .site {
 	margin: 0 auto;
+	padding-top: 44px;
+}
+
+#feature-slider,
+#header-featured-image {
+    margin-top: -44px;
 }
 
 .wrapper {
@@ -847,13 +857,19 @@ textarea {
     width: 100%;
     z-index: 198;
 }
+
 .admin-bar #fixed-header {
     top: 32px;
 }
+
 .nav-primary {
     background: #444;
     background: rgba(0,0,0,0.7);
 	width: 100%;
+}
+
+.nav-primary .menu {
+	float: left;
 }
 
 .nav-primary .menu a {
@@ -1043,10 +1059,6 @@ textarea {
     width: auto;
 }
 /* Menu Search */
-.nav-primary.search-enabled .menu {
-	float: left;
-}
-
 #header-toggle {
     background-color: transparent;
     color: #eee;
@@ -1332,6 +1344,7 @@ textarea {
 	clear: both;
 	display: block;
 	line-height: 0;
+	position: relative;
 	width: 100%;
 	text-align: center;
 }
@@ -1380,7 +1393,6 @@ textarea {
     width: 100%;
 }
 
-
 #featured-content.border-top {
 	border-top: 1px solid #eee;
 	border-bottom: none;
@@ -1422,8 +1434,39 @@ textarea {
 	width: 33.33%;
 }
 
-#featured-content.layout-three .hentry:nth-child(3n+1) {
-	clear: left;
+#featured-content .featured-content-wrap {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	padding-top: 20px;
+	position: relative;
+}
+
+#content-controls {
+    display: block;
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+}
+
+#content-prev, 
+#content-next {
+    background: #444;
+    background: rgba(0,0,0,0.5);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 25px;
+    line-height: 15px;
+    padding: 5px;
+}
+#content-next {
+    margin-left: 5px;
+}
+
+#featured-content .featured_content_slider_wrap {
+    clear: both;
+    overflow: hidden;
+    width: 100%
 }
 
 #featured-content figure a {
@@ -1488,61 +1531,30 @@ textarea {
 	float: left;
 }
 
-/* Three Columns */
-#content_sidebar_wrap {
-	float:  right;
-	width:  920px;
+.excerpt-image-left .has-post-thumbnail .archive-post-wrap .featured-image,
+.excerpt-image-right .has-post-thumbnail .archive-post-wrap .featured-image {
+    display: inline;
+    width: 40%;
 }
 
-#content_sidebar_wrap #main {
-	width:  580px;
+.excerpt-image-left .has-post-thumbnail .archive-post-wrap .entry-container,
+.excerpt-image-right .has-post-thumbnail .archive-post-wrap .entry-container {
+    display: inline;
+    width: 56%;
 }
 
-.sidebar-secondary {
-	float: left;
-	width: 240px;
+.excerpt-image-left .has-post-thumbnail .archive-post-wrap .featured-image {
+    float: left;
+}
+.excerpt-image-left .has-post-thumbnail .archive-post-wrap .entry-container {
+    float: right;
 }
 
-/* Three Columns (Equal Sidebars) */
-.three-columns.equal-sidebars #content_sidebar_wrap {
-	width:  820px;
+.excerpt-image-right .has-post-thumbnail .archive-post-wrap .featured-image {
+    float: right;
 }
-
-.three-columns.equal-sidebars #content_sidebar_wrap #main {
-	width:  480px;
-}
-
-.three-columns.equal-sidebars .sidebar-secondary {
-	width: 340px;
-}
-
-/* Three Columns (Equal Columns) */
-.three-columns.equal-columns #content_sidebar_wrap {
-    width: 773px;
-}
-
-.three-columns.equal-columns #content_sidebar_wrap #main {
-    width: 386px;
-}
-
-.three-columns.equal-columns .sidebar-primary, 
-.three-columns.equal-columns .sidebar-secondary {
-    width: 387px;
-}
-
-/* Three Content Left */
-.three-columns.content-left .sidebar-secondary,
-.three-columns.content-left .sidebar-secondary {
-	float: right;
-}
-
-.three-columns.content-left #content_sidebar_wrap {
-	float: left;
-}
-
-/* Three Content Right */
-.three-columns.content-right #content_sidebar_wrap #main {
-	float:  right;
+.excerpt-image-right .has-post-thumbnail .archive-post-wrap .entry-container {
+    float: left;
 }
 
 /* One Column (No Sidebar, Content Width) */
@@ -1550,16 +1562,7 @@ textarea {
     display: block;
     float: none;
     margin: 0 auto;
-    width: 820px;
-}
-
-/* One Column (One Column) */
-.no-sidebar.one-column .site {
-    width: 860px;
-}
-
-.no-sidebar.one-column #main {
-	width: 820px;
+    width: 900px;
 }
 
 /* One Column (No Sidebar, Full Width) */
@@ -1567,118 +1570,12 @@ textarea {
     width: 100%;
 }
 
-/* Layout Options with Featured Image on Left */
-.has-post-thumbnail.excerpt-portrait-featured-image .featured-image,
-.has-post-thumbnail.excerpt-landscape-featured-image .featured-image,
-.has-post-thumbnail.excerpt-thumbnail-featured-image .featured-image {
-	display: inline;
-    float: left;	
+.no-sidebar.full-width.excerpt-image-left .has-post-thumbnail .archive-post-wrap .featured-image {
+    width: 33%;
 }
 
-.has-post-thumbnail.excerpt-portrait-featured-image .entry-container,
-.has-post-thumbnail.excerpt-landscape-featured-image .entry-container,
-.has-post-thumbnail.excerpt-thumbnail-featured-image .entry-container {
-	display: inline;
-    float: right;
-}
-
-.has-post-thumbnail.excerpt-portrait-featured-image .featured-image {
-	width: 169px;
-}
-
-.has-post-thumbnail.excerpt-landscape-featured-image .featured-image {
-	width: 200px;
-}
-
-.has-post-thumbnail.excerpt-thumbnail-featured-image .featured-image {
-	width: 150px;
-}
-
-/* Three Colummns */
-/* Show Excerpt Portrait Featured Image */
-.has-post-thumbnail.excerpt-portrait-featured-image .entry-container {
-    width: 351px;
-}
-
-/* Show Excerpt Landscape Featured Image */
-.has-post-thumbnail.excerpt-landscape-featured-image .entry-container {
-    width: 320px;
-}
-
-/* Show Excerpt Thumbnail Featured Image */
-.has-post-thumbnail.excerpt-thumbnail-featured-image .entry-container {
-    width: 370px;
-}
-
-/* Three Colummns, Equal Primary and Secondary */
-/* Show Excerpt Portrait Featured Image */
-.equal-sidebars .has-post-thumbnail.excerpt-portrait-featured-image .entry-container {
-    width: 251px;
-}
-
-/* Show Excerpt Landscape Featured Image */
-.equal-sidebars .has-post-thumbnail.excerpt-landscape-featured-image .entry-container {
-    width: 250px;
-}
-
-.equal-sidebars .has-post-thumbnail.excerpt-landscape-featured-image .featured-image {
-    width: 170px;
-}
-
-/* Show Excerpt Thumbnail Featured Image */
-.equal-sidebars .has-post-thumbnail.excerpt-thumbnail-featured-image .entry-container {
-    width: 270px;
-}
-
-/* Three Colummns, Equal Columns ( width 346px ) */
-.equal-columns .has-post-thumbnail .featured-image {
-	text-align: center;
-	width:  100%
-}
-
-.equal-columns .has-post-thumbnail .entry-container {
-	clear: both;
-    width: 100%;
-}
-
-/* Two Colummns, One Column  */
-/* Show Excerpt Portrait Featured Image */
-.two-columns .has-post-thumbnail.excerpt-landscape-featured-image .featured-image,
-.no-sidebar .has-post-thumbnail.excerpt-landscape-featured-image .featured-image {
-    width: 300px;
-}
-
-.two-columns .has-post-thumbnail.excerpt-portrait-featured-image .entry-container,
-.no-sidebar .has-post-thumbnail.excerpt-portrait-featured-image .entry-container  {
-    width: 591px;
-}
-
-/* Show Excerpt Landscape Featured Image */
-.two-columns .has-post-thumbnail.excerpt-landscape-featured-image .entry-container,
-.no-sidebar .has-post-thumbnail.excerpt-landscape-featured-image .entry-container {
-    width: 460px;
-}
-
-/* Show Excerpt Thumbnail Featured Image */
-.two-columns .has-post-thumbnail.excerpt-thumbnail-featured-image .entry-container,
-.no-sidebar .has-post-thumbnail.excerpt-thumbnail-featured-image .entry-container {
-    width: 610px;
-}
-
-/* Full Width */
-/* Show Excerpt Portrait Featured Image */
-.full-width .has-post-thumbnail.excerpt-portrait-featured-image .entry-container  {
-    width: 911px;
-}
-
-/* Show Excerpt Landscape Featured Image */
-.full-width .has-post-thumbnail.excerpt-landscape-featured-image .entry-container {
-    width: 780px;
-}
-
-/* Show Excerpt Thumbnail Featured Image */
-.full-width .has-post-thumbnail.excerpt-thumbnail-featured-image .entry-container {
-    width: 930px;
+.no-sidebar.full-width.excerpt-image-left .has-post-thumbnail .archive-post-wrap .entry-container {
+    width: 64%;
 }
 
 /*--------------------------------------------------------------

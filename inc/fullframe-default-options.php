@@ -35,7 +35,7 @@ function fullframe_get_default_theme_options() {
 		
 		//Header Image
 		'enable_featured_header_image'						=> 'exclude-home-page-post',
-		'featured_image_size'								=> 'full',
+		'featured_image_size'								=> 'slider',
 		'featured_header_image_url'							=> '',
 		'featured_header_image_alt'							=> '',
 		'featured_header_image_base'						=> 0,

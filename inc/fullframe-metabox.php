@@ -57,7 +57,7 @@ function fullframe_meta_options() {
 	
     
     // Use nonce for verification  
-    wp_nonce_field( basename( __FILE__ ), 'custom_meta_box_nonce' );
+    wp_nonce_field( basename( __FILE__ ), 'fullframe_custom_meta_box_nonce' );
 
     // Begin the field table and loop  ?>  
     <div id="fullframe-ui-tabs" class="ui-tabs">
@@ -162,7 +162,7 @@ function fullframe_save_custom_meta( $post_id ) {
 	$header_image_options 	= fullframe_metabox_header_featured_image_options();
 	
 	// Verify the nonce before proceeding.
-    if ( !isset( $_POST[ 'custom_meta_box_nonce' ] ) || !wp_verify_nonce( $_POST[ 'custom_meta_box_nonce' ], basename( __FILE__ ) ) )
+    if ( !isset( $_POST[ 'fullframe_custom_meta_box_nonce' ] ) || !wp_verify_nonce( $_POST[ 'fullframe_custom_meta_box_nonce' ], basename( __FILE__ ) ) )
         return;
 		
 	// Stop WP from clearing custom fields on autosave
@@ -180,7 +180,7 @@ function fullframe_save_custom_meta( $post_id ) {
 	foreach ( $header_image_options as $field ) {  
 		//Execute this saving function
 		$old = get_post_meta( $post_id, $field['id'], true); 
-		$new = $_POST[$field['id']];
+		$new = sanitize_key( $_POST[$field['id']] );
 		if ($new && $new != $old) {  
 			update_post_meta($post_id, $field['id'], $new);  
 		} elseif ('' == $new && $old) {  
@@ -192,7 +192,7 @@ function fullframe_save_custom_meta( $post_id ) {
 	foreach ($layout_options as $field) {  
 		//Execute this saving function
 		$old = get_post_meta( $post_id, $field['id'], true); 
-		$new = $_POST[$field['id']];
+		$new = sanitize_key( $_POST[$field['id']] );
 		if ($new && $new != $old) {  
 			update_post_meta($post_id, $field['id'], $new);  
 		} elseif ('' == $new && $old) {  
@@ -203,7 +203,7 @@ function fullframe_save_custom_meta( $post_id ) {
 	foreach ( $featured_image_options as $field ) {  
 		//Execute this saving function
 		$old = get_post_meta( $post_id, $field['id'], true); 
-		$new = $_POST[$field['id']];
+		$new = sanitize_key( $_POST[$field['id']] );
 		if ($new && $new != $old) {  
 			update_post_meta($post_id, $field['id'], $new);  
 		} elseif ('' == $new && $old) {  

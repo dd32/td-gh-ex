@@ -368,7 +368,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'fullframe_theme_options[promotion_headline]', array(
 		'capability'		=> 'edit_theme_options',
 		'default' 			=> $defaults['promotion_headline'],
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'wp_kses_post'
 	) );
 
 	$wp_customize->add_control( new Fullframe_Customize_Textarea_Control( $wp_customize, 'fullframe_theme_options[promotion_headline]', array(
@@ -382,7 +382,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'fullframe_theme_options[promotion_subheadline]', array(
 		'capability'		=> 'edit_theme_options',
 		'default' 			=> $defaults['promotion_subheadline'],
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'wp_kses_post'
 	) );
 
 	$wp_customize->add_control( new Fullframe_Customize_Textarea_Control( $wp_customize, 'fullframe_theme_options[promotion_subheadline]', array(
