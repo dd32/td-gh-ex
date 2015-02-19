@@ -25,7 +25,7 @@ If you are looking for a clean professional space, which accommodates your visua
 * FontAwesome implementation
 * jQuery smoothScroll
 * jQuery SwipeBox
-* Setup jQuery MeanMeanu and Velocity for beautifull responsive animated menu.
+* Setup jQuery MeanMeanu and Velocity for beautiful responsive animated menu.
 * Implement jQuery appear for tracking element's appearance in browser viewport.
 * Implement Theme Options for customize the Theme
 * A just right amount of lean, well-commented, modern, HTML5 templates.
@@ -72,9 +72,9 @@ You can add Slider following these steps:
 
 * In your admin panel, go to Appearance -> Theme Options
 * Open the Home Page Slider Tab
-* Eable the 'Do you want to display slider on homepage ?' checkbox.
+* Enable the 'Do you want to display slider on homepage ?' checkbox.
 * Provide the require Images and Description.
-* Save the Ooptions.
+* Save the Options.
 
 = Does Ascent use featured images? =
 
@@ -82,6 +82,10 @@ Featured Images look best at 732 pixels wide or larger.
 
 
 = Changelog =
+### Version 1.0.9
+- Added 'main.css', Moved all css from style.css to 'includes/css/main.css'(Fixing child theme style issue)
+- Fixed translation issue on 'content-single.php' and '404.php' page.
+
 ### Version 1.0.8
 - Fixed Header email link, Updated 'options-framework' and change footer credit link
 
@@ -106,7 +110,5 @@ Featured Images look best at 732 pixels wide or larger.
 ### Version 1.0.1
 - Fixed 'of_get_option' issue.
 
-
 ### Version 1.0
 - Initial release.
-

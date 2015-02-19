@@ -11,7 +11,7 @@
 	    <?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
 		    <time class="entry-time updated" itemprop="datePublished" datetime="<?php the_time('c'); ?>"><?php the_time('M'); ?><strong><?php the_time('d'); ?></strong></time>
-		    <span class="comments_count clearfix entry-comments-link"><?php comments_popup_link(__('0', 'framework'), __('1', 'framework'), __('%', 'framework')); ?></span>
+		    <span class="comments_count clearfix entry-comments-link"><?php comments_popup_link(__('0', 'ascent'), __('1', 'ascent'), __('%', 'ascent')); ?></span>
 		</div><!-- .entry-meta -->
 	    <?php endif; ?>
 	</div><!--.post-meta-info-->
@@ -21,7 +21,7 @@
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 		 <?php if ( 'post' == get_post_type() ) : ?>
 		    <span class="entry-author">
-			<?php _e('Posted by', 'framework') ?>
+			<?php _e('Posted by', 'ascent') ?>
 			<span class="author vcard entry-author-link">
 			    <?php the_author_posts_link(); ?>
 			</span>

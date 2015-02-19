@@ -151,10 +151,8 @@ function ascent_scripts() {
     wp_enqueue_style( 'ascent-owl-theme', get_template_directory_uri() . '/includes/css/owl.theme.css' );
     wp_enqueue_style( 'ascent-animations', get_template_directory_uri() . '/includes/css/animations.css' );
     wp_enqueue_style( 'ascent-meanmenu', get_template_directory_uri() . '/includes/css/meanmenu.css' );
+    wp_enqueue_style( 'ascent-main', get_template_directory_uri() . '/includes/css/main.css' );
     
-    // load ascent styles
-    wp_enqueue_style( 'ascent-style', get_stylesheet_uri() );
-
     // load bootstrap js
     wp_enqueue_script('ascent-bootstrapjs', get_template_directory_uri().'/includes/resources/bootstrap/js/bootstrap.js', array('jquery') );
 

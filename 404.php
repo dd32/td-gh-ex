@@ -17,7 +17,7 @@ get_header(); ?>
 	    <div class="page-content">
 		<h1 class="entry-title"><?php _e( 'Oops! Something went wrong here.', 'ascent' ); ?></h1>
 		<p><?php _e( 'Nothing could be found at this location.', 'ascent' ); ?></p>
-		<p><?php _e('Try going back to the', 'ascent') ?> <a href="<?php echo esc_url(home_url('/')); ?>"><strong><?php _e('Homepage','framework'); ?></strong></a> <?php _e('instead?', 'ascent') ?> </p>
+		<p><?php _e('Try going back to the', 'ascent') ?> <a href="<?php echo esc_url(home_url('/')); ?>"><strong><?php _e('Homepage','ascent'); ?></strong></a> <?php _e('instead?', 'ascent') ?> </p>
 	    </div><!-- .page-content -->
 	</section><!-- .content-padder -->
     </div>
