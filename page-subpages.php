@@ -28,7 +28,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post() ?>
 							</div>	
 		<?php } ?>
 							<header>
-								<h1 class="postlisttitle"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'richwp' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+								<h1 class="postlisttitle"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'minimum-minimal' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 									
 				
 							</header>	 	
@@ -41,10 +41,10 @@ if ( have_posts() ) : while ( have_posts() ) : the_post() ?>
 			
 			<article class="postlistbox box boxes box-standard">
 				<header>
-					<h1 class="entry-title"><?php _e( 'Sorry, no Subpages have been found!', 'richwp' ); ?></h1>
+					<h1 class="entry-title"><?php _e( 'Sorry, no Subpages have been found!', 'minimum-minimal' ); ?></h1>
 				</header>
 				<div class="entry-content">
-					<p><?php _e( 'Set up some subpages by assigning this page as the parent.', 'richwp' ); ?></p>	
+					<p><?php _e( 'Set up some subpages by assigning this page as the parent.', 'minimum-minimal' ); ?></p>	
 					<div style="clear:both;"></div>
 				</div><!-- .entry-content -->
 			</article>			
@@ -56,10 +56,10 @@ if ( have_posts() ) : while ( have_posts() ) : the_post() ?>
 	<?php if (  $wp_query->max_num_pages > 1 ) : ?>
 		<div id="nav-below" class="meta-nav navigation navigationboxes grid_16">
 		<div class="next-previous_posts_nav next-previous_nav_previous">
-			<div id="page_nav" class="nav-previous"><?php next_posts_link( __( '&laquo; Older Posts', 'richwp' ) ); ?></div>
+			<div id="page_nav" class="nav-previous"><?php next_posts_link( __( '&laquo; Older Posts', 'minimum-minimal' ) ); ?></div>
 		</div>
 		<div class="next-previous_posts_nav next-previous_nav_next">
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer Posts &raquo;', 'richwp' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer Posts &raquo;', 'minimum-minimal' ) ); ?></div>
 		</div>
 		<div style="clear:both"></div>
 		</div><!-- #nav-below -->

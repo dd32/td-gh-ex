@@ -5,7 +5,7 @@
 		<?php the_content(); ?>
 		<div style="clear:both;"></div>
 	</div><!-- .entry-content -->
-	<?php the_tags( '<div class="tags">' . __( 'Tags: ', 'richwp' ), ', ', '</div>');?>
+	<?php the_tags( '<div class="tags">' . __( 'Tags: ', 'minimum-minimal' ), ', ', '</div>');?>
 </article>
 <?php comments_template( '', true ); ?>
 </div><!-- #content -->

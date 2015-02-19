@@ -5,13 +5,13 @@
 			
 				<article class="boxes box-standard">
 					<header>
-						<h1 class="entry-title"><?php _e( '404 Error', 'richwp' ); ?></h1>
+						<h1 class="entry-title"><?php _e( '404 Error', 'minimum-minimal' ); ?></h1>
 						<div style="clear:both;"></div>
 					</header>
 					<div class="entry-content">
-						<p><?php _e( 'Sorry, nothing was found!', 'richwp' ); ?></p>
+						<p><?php _e( 'Sorry, nothing was found!', 'minimum-minimal' ); ?></p>
 						
-						<blockquote><?php _e( '"The secret of happiness, you see, is not found in seeking more, but in developing the capacity to enjoy less."', 'richwp' ); ?></blockquote> <?php _e( '~ <i>Socrates</i>', 'richwp' ); ?>
+						<blockquote><?php _e( '"The secret of happiness, you see, is not found in seeking more, but in developing the capacity to enjoy less."', 'minimum-minimal' ); ?></blockquote> <?php _e( '~ <i>Socrates</i>', 'minimum-minimal' ); ?>
 						<div style="clear:both;"></div>
 					</div><!-- .entry-content -->
 				</article>

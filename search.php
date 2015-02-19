@@ -1,11 +1,13 @@
 <?php get_header(); ?>	
 <div id="wrapper">
 <div class="container_16 containermargin">
+	
+		<!-- Category Drop Down -->
 		<div id="selectcattag" class="grid_16">
 			<div class="selectwrap">
 				<form action="<?php echo home_url(); ?>/" method="get">
 					<div>
-							<?php $optionnone = __('Categories', 'richwp'); 
+							<?php $optionnone = __('Categories', 'minimum-minimal'); 
 							$select = wp_dropdown_categories('show_option_none='.$optionnone.'&class=selecttarget&show_count=1&orderby=name&echo=0'); $select = preg_replace("#<select([^>]*)>#", "<select$1 onchange='return this.form.submit()'>", $select); echo $select; ?>
 				<noscript><div><input type="submit" value="View" /></div></noscript>
 					</div>
@@ -34,13 +36,13 @@
 		
 			
 				<header class="archiveheader">
-					<h1 class="entry-title archive-title"><?php _e( 'Sorry, nothing was found!', 'richwp' ); ?></h1>
+					<h1 class="entry-title archive-title"><?php _e( 'Sorry, nothing was found!', 'minimum-minimal' ); ?></h1>
 				</header>
 				<div class="entry-content">
-					<p><?php _e( 'Nothing matched your search criteria. Please try searching again with some different keywords.', 'richwp' ); ?></p>
+					<p><?php _e( 'Nothing matched your search criteria. Please try searching again with some different keywords.', 'minimum-minimal' ); ?></p>
 					<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
 	<label>
-		<span class="screen-reader-text">Search for:</span>
+		<span class="screen-reader-text"><?php _e( 'Search for:', 'minimum-minimal' ); ?></span>
 		<input type="search" class="search-field" placeholder="Search ..." value="" name="s" title="Search for:" />
 	</label>
 	<input type="submit" class="search-submit" value="Search" />
@@ -61,7 +63,7 @@
 	<div style="clear:both;"></div>	
 	<?php if (  $wp_query->max_num_pages > 1 ) : ?>
 			<div id="nav-below" class="nav-below grid_16">
-			<?php next_posts_link(__('Load More Posts', 'richwp')); ?>
+			<?php next_posts_link(__('Load More Posts', 'minimum-minimal')); ?>
 			</div><!-- #nav-below -->		
 		<?php endif; ?>
 	

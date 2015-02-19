@@ -20,7 +20,7 @@
 		
 		<div id="logo" class="headerelements <?php $logo = rwp('logo'); if (!empty($logo)) { ?>imagelogo<?php } ?>">
 				<?php if (!empty($logo)) { ?>
-				<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) );?> - <?php bloginfo( 'description' ); ?>"><img src="<?php echo rwp('logo'); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> - <?php bloginfo( 'description' ); ?>"/></a>
+				<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) );?> - <?php bloginfo( 'description' ); ?>"><img src="<?php echo esc_url(rwp('logo')); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> - <?php bloginfo( 'description' ); ?>"/></a>
 				<?php } else { ?> 
 				<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) );?> - <?php bloginfo( 'description' ); ?>">
 				 <h1 id="sitetitle" class="headerelements"><?php echo esc_attr( get_bloginfo( 'name', 'display' ) );?></h1> 
@@ -33,7 +33,7 @@
 			
 	<nav id="sidr" >
 	
-		<form method="get" id="searchform-header" class="search-form searchformnav" action="<?php echo home_url(); ?>" ><input type="text" class="search-field searchfieldnav"  name="s" id="s"  value="<?php _e( 'Search', 'richwp' ); ?>" onfocus="this.value=(this.value=='<?php _e( 'Search', 'richwp' ); ?>') ? '' : this.value;" onblur="this.value=(this.value=='') ? '<?php _e( 'Search', 'richwp' ); ?>' : this.value;"/></form> 
+		<form method="get" id="searchform-header" class="search-form searchformnav" action="<?php echo home_url(); ?>" ><input type="text" class="search-field searchfieldnav"  name="s" id="s"  value="<?php _e( 'Search', 'minimum-minimal' ); ?>" onfocus="this.value=(this.value=='<?php _e( 'Search', 'minimum-minimal' ); ?>') ? '' : this.value;" onblur="this.value=(this.value=='') ? '<?php _e( 'Search', 'minimum-minimal' ); ?>' : this.value;"/></form> 
 <div style="clear:both;"></div>
 		
 		

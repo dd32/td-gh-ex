@@ -13,3 +13,6 @@ V1.0.5 - 2015-01-05 Clean up functions.php
 V1.0.6 - 2015-01-07 Remove unused meta tag, New Screenshot, Icon Menu Elements will only be shown if icon-* css classes have been set up, Comment Container Fix
 V1.0.7 - 2015-01-13 Load it into the array of an enqueue to ensure dependency, Change javascripts for long versions.
 V1.0.8 - 2015-01-13 title-tag added
+V1.0.8 - 2015-01-29 new comment styles
+V1.1.0 - 2015-02-19 change text domain to minimum-minimal, define text domain in style.css header, enqueue the google fonts,  internationalize search.php line 43/44 is not internationalized, escape `rwp('logo') and `add_styles()`, prefix the image size handles `add_image_size()` and script
+ handles `wp_enqueue_script()`, prefix all of the functions with the theme slug `minimum_minimal`, remove code from bottom of functions.php

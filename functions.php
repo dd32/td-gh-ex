@@ -1,7 +1,7 @@
 <?php
-function richwp_setup() {
+function minimum_minimal_setup() {
     // Ready for translation 
-    load_theme_textdomain('richwp', get_template_directory() . '/languages');
+    load_theme_textdomain('minimum-minimal', get_template_directory() . '/languages');
     
     // Visual editor - editor-style.css
     add_editor_style();
@@ -24,10 +24,10 @@ function richwp_setup() {
     
     // Add Menus
     register_nav_menus(array(
-        'shopselect1' => __('Select Menu', 'richwp'),
-        'iconmenu' => __('Icon Menu', 'richwp'),
-        'flyoutmenu' => __('Fly Out Menu', 'richwp'),
-        'menufooter' => __('Footer Navigation', 'richwp')
+        'shopselect1' => __('Select Menu', 'minimum-minimal'),
+        'iconmenu' => __('Icon Menu', 'minimum-minimal'),
+        'flyoutmenu' => __('Fly Out Menu', 'minimum-minimal'),
+        'menufooter' => __('Footer Navigation', 'minimum-minimal')
     ));
     
     
@@ -37,20 +37,64 @@ function richwp_setup() {
         'search-form'
     ));
     set_post_thumbnail_size(450, 9999); // Unlimited height, soft crop
-    add_image_size('fullwidthimage', 753, 9999);
-    add_image_size('related-thumb', 90, 9999);
+    add_image_size('minimum-minimal-fullwidthimage', 753, 9999);
 }
 
-add_action('after_setup_theme', 'richwp_setup');
+if ( ! function_exists( 'minimum_minimal_fonts_url' ) ) :
+function minimum_minimal_fonts_url() {
+	$fonts_url = '';
+	$fonts     = array();
+	$subsets   = 'latin,latin-ext';
 
-function richwp_scripts_styles() {
-    wp_enqueue_style('richwp-style', get_stylesheet_uri());
-    wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/modernizr-2.6.2.min.js', '', '1.0', false);
-    wp_enqueue_script('plugins', get_template_directory_uri() . '/js/plugins.js', array(
+	/* translators: If there are characters in your language that are not supported by Roboto, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Roboto font: on or off', 'minimum-minimal' ) ) {
+		$fonts[] = 'Roboto:300,500';
+	}
+
+	/* translators: If there are characters in your language that are not supported by Roboto Slap, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Roboto Slap font: on or off', 'minimum-minimal' ) ) {
+		$fonts[] = 'Roboto Slab:300';
+	}
+
+
+	/* translators: To add an additional character subset specific to your language, translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language. */
+	$subset = _x( 'no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', 'minimum-minimal' );
+
+	if ( 'cyrillic' == $subset ) {
+		$subsets .= ',cyrillic,cyrillic-ext';
+	} elseif ( 'greek' == $subset ) {
+		$subsets .= ',greek,greek-ext';
+	} elseif ( 'devanagari' == $subset ) {
+		$subsets .= ',devanagari';
+	} elseif ( 'vietnamese' == $subset ) {
+		$subsets .= ',vietnamese';
+	}
+
+	if ( $fonts ) {
+		$fonts_url = add_query_arg( array(
+			'family' => urlencode( implode( '|', $fonts ) ),
+			'subset' => urlencode( $subsets ),
+		), '//fonts.googleapis.com/css' );
+	}
+
+	return $fonts_url;
+}
+endif;
+
+add_action('after_setup_theme', 'minimum_minimal_setup');
+
+function minimum_minimal_scripts_styles() {
+	wp_enqueue_style( 'minimum-minimal-fonts', minimum_minimal_fonts_url(), array(), null );
+    wp_enqueue_style('minimum-minimal-style', get_stylesheet_uri());
+    wp_enqueue_script('minimum-minimal-modernizr', get_template_directory_uri() . '/js/modernizr-2.6.2.min.js', '', '1.0', false);
+    wp_enqueue_script('minimum-minimal-plugins', get_template_directory_uri() . '/js/plugins.js', array(
         'jquery'
     ), '1.0', true);
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
 }
-add_action('wp_enqueue_scripts', 'richwp_scripts_styles');
+add_action('wp_enqueue_scripts', 'minimum_minimal_scripts_styles');
 
 
 
@@ -61,7 +105,7 @@ if (!isset($content_width))
     $content_width = 753;
 
 // Page Titles
-function richwp_wp_title($title, $sep) {
+function minimum_minimal_wp_title($title, $sep) {
     global $paged, $page;
     
     if (is_feed())
@@ -77,19 +121,19 @@ function richwp_wp_title($title, $sep) {
     
     // Add a page number if necessary.
     if ($paged >= 2 || $page >= 2)
-        $title = "$title $sep " . sprintf(__('Page %s', 'richwp'), max($paged, $page));
+        $title = "$title $sep " . sprintf(__('Page %s', 'minimum-minimal'), max($paged, $page));
     
     return $title;
 }
-add_filter('wp_title', 'richwp_wp_title', 10, 2);
+add_filter('wp_title', 'minimum_minimal_wp_title', 10, 2);
 
 
 // Ad Link to Customizer
-function richwp_add_admin() {
-    add_theme_page('richwp Options', __('RichWP Options', 'richwp'), 'edit_theme_options', 'customize.php');
+function minimum_minimal_add_admin() {
+    add_theme_page('Minimum Minimal Options', __('Minimum Minimal Options', 'minimum-minimal'), 'edit_theme_options', 'customize.php');
 }
 
-add_action('admin_menu', 'richwp_add_admin');
+add_action('admin_menu', 'minimum_minimal_add_admin');
 
 // Options Page
 
@@ -108,26 +152,26 @@ if (!function_exists('rwp')):
     }
 endif;
 
-add_action('customize_register', 'richwp_customize_register');
-function richwp_customize_register($wp_customize) {
+add_action('customize_register', 'minimum_minimal_customize_register');
+function minimum_minimal_customize_register($wp_customize) {
     
     /* Logo, Title & Tagline */
     $wp_customize->remove_section('title_tagline');
     
     $wp_customize->add_section('rwp_logo', array(
-        'title' => __('Title & Logo', 'richwp'),
+        'title' => __('Title & Logo', 'minimum-minimal'),
         'priority' => 10
     ));
     
     $wp_customize->add_control('blogname', array(
-        'label' => __('Site Title', 'richwp'),
+        'label' => __('Site Title', 'minimum-minimal'),
         'section' => 'rwp_logo',
         'settings' => 'blogname',
         'priority' => 5
     ));
     
     $wp_customize->add_control('blogdescription', array(
-        'label' => __('Tagline', 'richwp'),
+        'label' => __('Tagline', 'minimum-minimal'),
         'section' => 'rwp_logo',
         'settings' => 'blogdescription',
         'priority' => 10
@@ -141,7 +185,7 @@ function richwp_customize_register($wp_customize) {
     ));
     
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'logo', array(
-        'label' => __('Logo Image', 'richwp'),
+        'label' => __('Logo Image', 'minimum-minimal'),
         'section' => 'rwp_logo',
         'settings' => 'rwp[logo]',
         'priority' => 20
@@ -149,7 +193,7 @@ function richwp_customize_register($wp_customize) {
     
     
     $wp_customize->add_section('rwp_colors', array(
-        'title' => __('Colors', 'richwp'),
+        'title' => __('Colors', 'minimum-minimal'),
         'priority' => 100
     ));
     
@@ -161,7 +205,7 @@ function richwp_customize_register($wp_customize) {
     ));
     
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'color1', array(
-        'label' => __('Lead Color', 'richwp'),
+        'label' => __('Lead Color', 'minimum-minimal'),
         'section' => 'rwp_colors',
         'settings' => 'rwp[color1]',
         'priority' => 10
@@ -175,14 +219,14 @@ function richwp_customize_register($wp_customize) {
     ));
     
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'color2', array(
-        'label' => __('2. Lead Color', 'richwp'),
+        'label' => __('2. Lead Color', 'minimum-minimal'),
         'section' => 'rwp_colors',
         'settings' => 'rwp[color2]',
         'priority' => 20
     )));
     
     $wp_customize->add_section('rwp_misc', array(
-        'title' => __('Misc.', 'richwp'),
+        'title' => __('Misc.', 'minimum-minimal'),
         'priority' => 120
     ));
     
@@ -195,7 +239,7 @@ function richwp_customize_register($wp_customize) {
     ));
     
     $wp_customize->add_control('copyright', array(
-        'label' => __('Copyright Notice in Footer', 'richwp'),
+        'label' => __('Copyright Notice in Footer', 'minimum-minimal'),
         'section' => 'rwp_misc',
         'settings' => 'rwp[copyright]',
         'priority' => 20
@@ -208,13 +252,13 @@ function sanitize_text_html( $input ) {
     return wp_kses_post( force_balance_tags( $input ) );
 }
 
-function richwp_widgets_init() {
+function minimum_minimal_widgets_init() {
     
     // Area 1
     register_sidebar(array(
         'name' => 'Top Widget Area',
         'id' => 'top-widget-area',
-        'description' => __('The Top widget area is perfect for sign up forms or banner ads. It will be displayed at the Top of all Postlists and Post detail pages.', 'richwp'),
+        'description' => __('The Top widget area is perfect for sign up forms or banner ads. It will be displayed at the Top of all Postlists and Post detail pages.', 'minimum-minimal'),
         'before_widget' => '<li id="%1$s" class="footerboxes widget-container-bottom %2$s">',
         'after_widget' => "</li>",
         'before_title' => '<h3 class="widget-title-bottom">',
@@ -226,7 +270,7 @@ function richwp_widgets_init() {
     register_sidebar(array(
         'name' => 'Footer Widget Area',
         'id' => 'footer-widget-area',
-        'description' => __('The Footer widget area is perfect for additional copyright information or listing your network or partner logos. It will be displayed on the bottom of the page below the footer navigation.', 'richwp'),
+        'description' => __('The Footer widget area is perfect for additional copyright information or listing your network or partner logos. It will be displayed on the bottom of the page below the footer navigation.', 'minimum-minimal'),
         'before_widget' => '<li id="%1$s" class="footerboxes widget-container-bottom %2$s">',
         'after_widget' => "</li>",
         'before_title' => '<h3 class="widget-title-bottom">',
@@ -237,10 +281,10 @@ function richwp_widgets_init() {
     
     
 }
-add_action('widgets_init', 'richwp_widgets_init');
+add_action('widgets_init', 'minimum_minimal_widgets_init');
 
 /* Add CSS */
-function add_styles() {
+function minimum_minimal_add_styles() {
     if (!function_exists('get_richicon_font')) {
         $richicon_font = array(
             'base' => get_template_directory_uri() . "/font/richicons",
@@ -284,105 +328,62 @@ a, a:hover, h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hov
 ?>;}</style>
 <?php
 }
-add_action('wp_head', 'add_styles');
+add_action ('wp_head', 'minimum_minimal_add_styles', null );
 
 /* Excerpts */
-function richwp_excerpt_length($length) {
+function minimum_minimal_excerpt_length($length) {
     return 40;
 }
-add_filter('excerpt_length', 'richwp_excerpt_length');
+add_filter('excerpt_length', 'minimum_minimal_excerpt_length');
 
 /* Ellipse */
 
-function richwp_continue_reading_link() {
-    return ' ... <a class="styledbutton" href="' . get_permalink() . '">' . __('Read More', 'richwp') . '</a>';
+function minimum_minimal_continue_reading_link() {
+    return ' ... <a class="styledbutton" href="' . get_permalink() . '">' . __('Read More', 'minimum-minimal') . '</a>';
 }
-function richwp_auto_excerpt_more($more) {
-    return ' ... <a class="styledbutton" href="' . get_permalink() . '">' . __('Read More', 'richwp') . '</a>';
+function minimum_minimal_auto_excerpt_more($more) {
+    return ' ... <a class="styledbutton" href="' . get_permalink() . '">' . __('Read More', 'minimum-minimal') . '</a>';
 }
 
-add_filter('excerpt_more', 'richwp_auto_excerpt_more');
-function richwp_custom_excerpt_more($output) {
+add_filter('excerpt_more', 'minimum_minimal_auto_excerpt_more');
+function minimum_minimal_custom_excerpt_more($output) {
     if (has_excerpt() && !is_attachment()) {
-        $output .= richwp_continue_reading_link();
+        $output .= minimum_minimal_continue_reading_link();
     }
     return $output;
 }
-add_filter('get_the_excerpt', 'richwp_custom_excerpt_more');
+add_filter('get_the_excerpt', 'minimum_minimal_custom_excerpt_more');
 
 
-add_filter('the_content_more_link', 'richwp_more_link', 10, 2);
-function richwp_more_link($more_link, $more_link_text) {
-    return str_replace($more_link_text, __('Read More ...', 'richwp'), $more_link);
+add_filter('the_content_more_link', 'minimum_minimal_more_link', 10, 2);
+function minimum_minimal_more_link($more_link, $more_link_text) {
+    return str_replace($more_link_text, __('Read More ...', 'minimum-minimal'), $more_link);
 }
-?>
-<?php
-/* Comments */
-if (is_singular() && comments_open() && get_option('thread_comments')) {
-    wp_enqueue_script('comment-reply');
+
+/*  Comment Nav */
+if ( ! function_exists( 'minimum-minimal_comment_nav' ) ) :
+
+function minimum_minimal_comment_nav() {
+	// Are there comments to navigate through?
+	if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
+	?>
+	<nav class="navigation comment-navigation" role="navigation">
+		<h2 class="screen-reader-text"><?php _e( 'Comment navigation', 'minimum-minimal' ); ?></h2>
+		<div class="nav-links">
+			<?php
+				if ( $prev_link = get_previous_comments_link( __( 'Older Comments', 'minimum-minimal' ) ) ) :
+					printf( '<div class="nav-previous">%s</div>', $prev_link );
+				endif;
+
+				if ( $next_link = get_next_comments_link( __( 'Newer Comments', 'minimum-minimal' ) ) ) :
+					printf( '<div class="nav-next">%s</div>', $next_link );
+				endif;
+			?>
+		</div><!-- .nav-links -->
+	</nav><!-- .comment-navigation -->
+	<?php
+	endif;
 }
-if (!function_exists('richwp_comment')):
-    function richwp_comment($comment, $args, $depth) {
-        $GLOBALS['comment'] = $comment;
-?>
-<?php
-        if ('' == $comment->comment_type):
-?>
-<li <?php
-            comment_class();
-?> id="li-comment-<?php
-            comment_ID();
-?>">
-<div id="comment-<?php
-            comment_ID();
-?>">
-<div class="comment-author vcard">
-<?php
-            echo get_avatar($comment, 40);
-?>
-<?php
-            printf(__('<cite class="fn">%s</cite> <span class="says">says:</span>', 'richwp'), get_comment_author_link());
-?></div>
-<?php
-            if ($comment->comment_approved == '0'):
-?>
-	<em><?php
-                _e('Your comment is awaiting moderation.', 'richwp');
-?></em><br />
-<?php
-            endif;
-?>
-<div class="comment-meta commentmetadata"><a href="<?php
-            echo esc_url(get_comment_link($comment->comment_ID));
-?>"><?php
-            printf(__('%1$s at %2$s', 'richwp'), get_comment_date(), get_comment_time());
-?></a><?php
-            edit_comment_link(__('(Edit)', 'richwp'), '  ', '');
-?></div>
-<div class="comment-body"><?php
-            comment_text();
-?></div>
-<div class="reply">
-<?php
-            comment_reply_link(array_merge($args, array(
-                'depth' => $depth,
-                'max_depth' => $args['max_depth']
-            )));
-?></div>
-</div>
-<?php
-        else:
-?>
-<li class="post pingback">
-<p><?php
-            _e('Pingback: ', 'richwp');
-?><?php
-            comment_author_link();
-?><?php
-            edit_comment_link(__('edit', 'richwp'), '&nbsp;&nbsp;', '');
-?></p>
-<?php
-        endif;
-    }
 endif;
+
 ?>

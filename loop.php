@@ -6,7 +6,7 @@
 			</div>	
 		<?php } ?>
 			<header>
-			<h2 class="postlisttitle"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'richwp' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
+			<h2 class="postlisttitle"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'minimum-minimal' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
 <?php if (is_sticky()) { ?><span class="icon-alert"></span> 
 <?php } elseif ( has_post_format( 'audio' )) { ?>
   <span class="icon-volume"></span>
