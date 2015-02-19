@@ -111,3 +111,6 @@ Screenshot images are licensed under Creative Commons Deed CC0.
 * Added more themes admin page.
 * Added title tag support.
 * Added esc_url() to social link.
+
+== 1.27 ==
+* Minor fix
