@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: RichWP Favorite\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: Wed Jul 09 2014 10:50:10 GMT+0200 (CEST)\n"
-"PO-Revision-Date: Thu Feb 19 2015 13:33:48 GMT+0100 (CET)\n"
+"PO-Revision-Date: Thu Feb 19 2015 15:48:28 GMT+0100 (CET)\n"
 "Last-Translator: felix <felix@richwp.com>\n"
 "Language-Team: \n"
 "Language: German\n"
@@ -76,12 +76,7 @@ msgid "About"
 msgstr "Über "
 
 #. Text in function
-#: minimumminimal/tag.php:10
-#: minimumminimal/category.php:10
-#: minimumminimal/search.php:10
-#: minimumminimal/index.php:12
-#: minimumminimal/author.php:10
-#: minimumminimal/archive.php:10
+#: minimumminimal/dropdowns.php:6
 msgid "Categories"
 msgstr "Kategorien"
 
@@ -134,12 +129,12 @@ msgid "Leave a comment"
 msgstr "Hinterlasse einen Kommentar"
 
 #. Text in function
-#: minimumminimal/tag.php:58
-#: minimumminimal/category.php:57
-#: minimumminimal/search.php:66
-#: minimumminimal/index.php:56
-#: minimumminimal/author.php:56
-#: minimumminimal/archive.php:61
+#: minimumminimal/tag.php:38
+#: minimumminimal/category.php:37
+#: minimumminimal/search.php:46
+#: minimumminimal/index.php:41
+#: minimumminimal/author.php:36
+#: minimumminimal/archive.php:37
 msgid "Load More Posts"
 msgstr "Mehr Artikel Laden"
 
@@ -174,12 +169,12 @@ msgid "Next &raquo;"
 msgstr "Nächster Artikel &raquo;"
 
 #. Text in echo
-#: minimumminimal/tag.php:42
-#: minimumminimal/category.php:41
-#: minimumminimal/search.php:42
-#: minimumminimal/index.php:39
-#: minimumminimal/author.php:41
-#: minimumminimal/archive.php:45
+#: minimumminimal/tag.php:22
+#: minimumminimal/category.php:21
+#: minimumminimal/search.php:22
+#: minimumminimal/index.php:24
+#: minimumminimal/author.php:21
+#: minimumminimal/archive.php:21
 msgid ""
 "Nothing matched your search criteria. Please try searching again with some "
 "different keywords."
@@ -234,7 +229,13 @@ msgid "Search"
 msgstr "Suche"
 
 #. Text in echo
-#: minimumminimal/search.php:45
+#: minimumminimal/search.php:26
+msgid "Search for ..."
+msgstr "Suche ..."
+
+#. Text in echo
+#: minimumminimal/search.php:25
+#: minimumminimal/search.php:26
 msgid "Search for:"
 msgstr "Suche:"
 
@@ -259,13 +260,13 @@ msgid "Sorry, no Subpages have been found!"
 msgstr "Sorry, keine Unterseiten konnten gefunden werden."
 
 #. Text in echo
-#: minimumminimal/tag.php:39
-#: minimumminimal/category.php:38
-#: minimumminimal/search.php:39
-#: minimumminimal/index.php:36
+#: minimumminimal/tag.php:19
+#: minimumminimal/category.php:18
+#: minimumminimal/search.php:19
+#: minimumminimal/index.php:21
 #: minimumminimal/404.php:12
-#: minimumminimal/author.php:38
-#: minimumminimal/archive.php:42
+#: minimumminimal/author.php:18
+#: minimumminimal/archive.php:18
 msgid "Sorry, nothing was found!"
 msgstr "Sorry, es ist nichts gefunden worden!"
 

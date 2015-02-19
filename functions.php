@@ -137,8 +137,8 @@ add_action('admin_menu', 'minimum_minimal_add_admin');
 
 // Options Page
 
-if (!function_exists('rwp')):
-    function rwp($name) {
+if (!function_exists('minimumminimaloptions')):
+    function minimumminimaloptions($name) {
         $default_theme_options = array(
             'logo' => '',
             'color1' => '#5359ad',
@@ -146,7 +146,7 @@ if (!function_exists('rwp')):
             'copyright' => '&copy; ' . date('Y') . ' <a href="' . home_url() . '">' . get_bloginfo('name') . '</a>'
         );
         
-        $options = wp_parse_args(get_option('rwp'), $default_theme_options);
+        $options = wp_parse_args(get_option('minimumminimaloptions'), $default_theme_options);
         
         return $options[$name];
     }
@@ -158,27 +158,27 @@ function minimum_minimal_customize_register($wp_customize) {
     /* Logo, Title & Tagline */
     $wp_customize->remove_section('title_tagline');
     
-    $wp_customize->add_section('rwp_logo', array(
+    $wp_customize->add_section('minimumminimaloptions_logo', array(
         'title' => __('Title & Logo', 'minimum-minimal'),
         'priority' => 10
     ));
     
     $wp_customize->add_control('blogname', array(
         'label' => __('Site Title', 'minimum-minimal'),
-        'section' => 'rwp_logo',
+        'section' => 'minimumminimaloptions_logo',
         'settings' => 'blogname',
         'priority' => 5
     ));
     
     $wp_customize->add_control('blogdescription', array(
         'label' => __('Tagline', 'minimum-minimal'),
-        'section' => 'rwp_logo',
+        'section' => 'minimumminimaloptions_logo',
         'settings' => 'blogdescription',
         'priority' => 10
     ));
     
-    $wp_customize->add_setting('rwp[logo]', array(
-        'default' => rwp('logo'),
+    $wp_customize->add_setting('minimumminimaloptions[logo]', array(
+        'default' => minimumminimaloptions('logo'),
         'sanitize_callback' => 'esc_url_raw',
         'type' => 'option',
         'capability' => 'edit_theme_options'
@@ -186,19 +186,19 @@ function minimum_minimal_customize_register($wp_customize) {
     
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'logo', array(
         'label' => __('Logo Image', 'minimum-minimal'),
-        'section' => 'rwp_logo',
-        'settings' => 'rwp[logo]',
+        'section' => 'minimumminimaloptions_logo',
+        'settings' => 'minimumminimaloptions[logo]',
         'priority' => 20
     )));
     
     
-    $wp_customize->add_section('rwp_colors', array(
+    $wp_customize->add_section('minimumminimaloptions_colors', array(
         'title' => __('Colors', 'minimum-minimal'),
         'priority' => 100
     ));
     
-    $wp_customize->add_setting('rwp[color1]', array(
-        'default' => rwp('color1'),
+    $wp_customize->add_setting('minimumminimaloptions[color1]', array(
+        'default' => minimumminimaloptions('color1'),
         'sanitize_callback' => 'sanitize_hex_color',
         'type' => 'option',
         'capability' => 'edit_theme_options'
@@ -206,13 +206,13 @@ function minimum_minimal_customize_register($wp_customize) {
     
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'color1', array(
         'label' => __('Lead Color', 'minimum-minimal'),
-        'section' => 'rwp_colors',
-        'settings' => 'rwp[color1]',
+        'section' => 'minimumminimaloptions_colors',
+        'settings' => 'minimumminimaloptions[color1]',
         'priority' => 10
     )));
     
-    $wp_customize->add_setting('rwp[color2]', array(
-        'default' => rwp('color2'),
+    $wp_customize->add_setting('minimumminimaloptions[color2]', array(
+        'default' => minimumminimaloptions('color2'),
         'sanitize_callback' => 'sanitize_hex_color',
         'type' => 'option',
         'capability' => 'edit_theme_options'
@@ -220,19 +220,19 @@ function minimum_minimal_customize_register($wp_customize) {
     
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'color2', array(
         'label' => __('2. Lead Color', 'minimum-minimal'),
-        'section' => 'rwp_colors',
-        'settings' => 'rwp[color2]',
+        'section' => 'minimumminimaloptions_colors',
+        'settings' => 'minimumminimaloptions[color2]',
         'priority' => 20
     )));
     
-    $wp_customize->add_section('rwp_misc', array(
+    $wp_customize->add_section('minimumminimaloptions_misc', array(
         'title' => __('Misc.', 'minimum-minimal'),
         'priority' => 120
     ));
     
     
-    $wp_customize->add_setting('rwp[copyright]', array(
-        'default' => rwp('copyright'),
+    $wp_customize->add_setting('minimumminimaloptions[copyright]', array(
+        'default' => minimumminimaloptions('copyright'),
         'sanitize_callback' => 'sanitize_text_html',
         'type' => 'option',
         'capability' => 'edit_theme_options'
@@ -240,8 +240,8 @@ function minimum_minimal_customize_register($wp_customize) {
     
     $wp_customize->add_control('copyright', array(
         'label' => __('Copyright Notice in Footer', 'minimum-minimal'),
-        'section' => 'rwp_misc',
-        'settings' => 'rwp[copyright]',
+        'section' => 'minimumminimaloptions_misc',
+        'settings' => 'minimumminimaloptions[copyright]',
         'priority' => 20
     ));
     
@@ -316,15 +316,15 @@ function minimum_minimal_add_styles() {
     font-style: normal;
   }
 a, a:hover, h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, h1.entry-title a:hover, .meta-nav a, .meta-nav a:hover, #respond .required, .widget-area a:hover, .footer-widget-area a:hover, #colophon a:hover, .nav-previous a span, .nav-next a span, .postformatlabel a span, .paginate a:hover, .paginate a:active, .paginate .current, #cancel-comment-reply-link{color:<?php
-    echo rwp('color1');
+    echo minimumminimaloptions('color1');
 ?>;}  a.afflinkbutton, a:hover.styledbutton, a:hover.more-link, input[type="submit"]:hover#submit, input[type="submit"]:hover, .nav-below a:hover, .nav-previous a:hover, .nav-next a:hover{background:<?php
-    echo rwp('color1');
+    echo minimumminimaloptions('color1');
 ?>;}  a:hover {color:<?php
-    echo rwp('color2');
+    echo minimumminimaloptions('color2');
 ?>;} a.styledbutton, a.more-link, input[type="submit"]#submit, input[type="submit"], a:hover.afflinkbutton, .nav-below a, .nav-previous a, .nav-next a {background:<?php
-    echo rwp('color2');
+    echo minimumminimaloptions('color2');
 ?>;} .archiveheader{border: 5px solid <?php
-    echo rwp('color1');
+    echo minimumminimaloptions('color1');
 ?>;}</style>
 <?php
 }
