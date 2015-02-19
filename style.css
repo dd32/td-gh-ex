@@ -3,9 +3,9 @@ Theme Name: Aaron
 Theme URI: http://wptema.se/Aaron
 Author: Carolina Nymark
 Author URI: http://wptema.se
-Description: Aaron is a responsive, accessibility-ready multi-purpose theme. Features include Call to action and frontpage Highlights that will grab your visitors attention and help you feature different parts of your website. The theme has two optional menus (including a social menu) and two widget areas that will hold any number of widgets. Want to run Aaron on a company website rather than a blog? No problem, just hide the meta, the sidebars, and turn off your comments. We recommend that you install the jetpack plugin to make full use of supported features like logos, featured content, contact forms, social sharing and favicon. To create a portfolio, install Jetpack and create your projects, all the templates are already shipped with the theme. Aaron also works well with Woocommerce and bbPress.
+Description: Aaron is a responsive, accessibility-ready multi-purpose theme. Features include Call to action and frontpage Highlights that will grab your visitors attention and help you feature different parts of your website. The theme has two optional menus (including a social menu) and two widget areas that will hold any number of widgets. Want to run Aaron on a company website rather than a blog? No problem, just hide the meta, the sidebars, and turn off your comments. We recommend that you install the Jetpack plugin to make full use of supported features like logos, featured content, contact forms, social sharing and favicon. To create a portfolio, install Jetpack and create your projects, all the templates are already shipped with the theme. Aaron also works well with Woocommerce and bbPress.
 If you have any questions, accessibility issues or feature requests for this theme, please visit http://wptema.se/Aaron.
-Version: 1.1
+Version: 1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Copyright: Carolina Nymark 2015
@@ -33,7 +33,7 @@ and Blueprint http://www.blueprintcss.org/
 7.0 Alignments
 8.0 Clearings
 10.0 Content
-	10.1 Call top action, highlights, featured posts
+	10.1 Call to action, highlights, featured posts
 	10.2 Posts and pages
 	10.3 Comments
 11.0 Jetpack
@@ -591,7 +591,7 @@ a:active {
 .main-navigation li > a:focus,
 .main-navigation li:focus > a,
 .main-navigation li:hover > a {
-  background: url('images/border.png') repeat-x bottom; 
+  text-decoration:underline;
 }
 
 .main-navigation ul ul {
@@ -687,13 +687,6 @@ content:'';
 	line-height: 1; 
 }
 
-.topsearch form input{
-	font-size:14px;
-	font-size:1.4rem;
-	font-family: 'Montserrat', sans-serif;	
-	text-transform:uppercase;
-	letter-spacing: 2px; 
-}
 .topsearch form:before {		
 	content: "\f002";
 	display: inline-block;
@@ -724,7 +717,8 @@ content:'';
 		display: none;
 	}
 
-	.menu-toggle{ margin-bottom:20px;}
+	.menu-toggle{ margin:20px;
+	}
 	.menu-toggle:before {
 		content: "\f0c9";
 		display: inline-block;
@@ -1100,7 +1094,7 @@ table#wp-calendar,
 	text-decoration:none;
 	font-family: 'Montserrat', sans-serif;	
 	text-transform:uppercase;
-	color:#333;
+	color:#ffffff;
 }
 
 .site-content{
@@ -1171,7 +1165,7 @@ table#wp-calendar,
 }
 
 /*--------------------------------------------------------------
-10.1 Call top action, highlights
+10.1 Call to action, highlights
 --------------------------------------------------------------*/
 
 #action{
@@ -1189,7 +1183,6 @@ table#wp-calendar,
 #action:hover,
 #action:focus{
 	opacity:1;
-	text-shadow:1px 1px #f5f5f5;
 	box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
 }
 
@@ -1198,6 +1191,8 @@ table#wp-calendar,
 	color:#000000;
 	padding-bottom:4px;
 }
+
+#action a:focus,
 #action:hover a{
 	background:url(images/border.png) repeat-x bottom;
 }
@@ -1642,6 +1637,12 @@ table#wp-calendar,
 	font-size:18px;
 	font-size:1.8rem;
 }
+.comment-meta .fn .url{
+	vertical-align:top;
+	font-size:18px;
+	font-size:1.8rem;
+}
+
 
 .comment-meta.fn .url:hover{
 	text-decoration:none; 

@@ -140,7 +140,6 @@ function aaron_customize_register( $wp_customize ) {
     );
 
 
-	$wp_customize->remove_section( 'colors');
 	$wp_customize->get_section('header_image')->title = __( 'Header background', 'aaron');
 
 	$wp_customize->add_setting( 'aaron_header_bgcolor', array(

@@ -276,6 +276,10 @@ function aaron_customize_css() {
 	<?php
 	 }
 
+	 
+	echo '.site-title{color:#' . get_header_textcolor() . ';} ';
+
+	
 	$header_image = get_header_image();
 	if ( ! empty( $header_image ) ) {
 	?>

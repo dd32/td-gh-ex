@@ -39,7 +39,7 @@
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'aaron' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'aaron' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<a href="<?php echo esc_url( __( 'http://wptema.se/aaron', 'aaron' ) ); ?>" rel="nofollow"><?php printf( __( 'Theme:%1$s by Carolina', 'aaron' ), 'Aaron'); ?></a>
+			<a href="<?php echo esc_url( __( 'http://wptema.se/aaron', 'aaron' ) ); ?>" rel="nofollow"><?php printf( __( 'Theme: %1$s by Carolina', 'aaron' ), 'Aaron'); ?></a>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

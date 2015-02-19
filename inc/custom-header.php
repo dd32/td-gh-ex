@@ -13,9 +13,9 @@
 function aaron_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'aaron_custom_header_args', array(
 		'default-image'          => get_template_directory_uri() . '/images/header.jpg',
-		'default-text-color'     => '000000',
+		'default-text-color'     => 'ffffff',
 		'width'                  => 1800,
-		'height'                 => 1150,
+		'height'                 => 1200,
 		'flex-height'            => false,
 		'wp-head-callback'       => 'aaron_customize_css',
 		'admin-head-callback'    => 'aaron_admin_header_style',

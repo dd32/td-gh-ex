@@ -1,8 +1,6 @@
-
 <?php 
-
 function aaron_docs_menu() {
-	add_theme_page( __('Aaron Setup help', 'aaron'), __('Aaron Setup help', 'aaron'), 'edit_theme_options', 'aaron-theme', 'aaron_docs');
+	add_theme_page( __('Aaron Setup Help', 'aaron'), __('Aaron Setup Help', 'aaron'), 'edit_theme_options', 'aaron-theme', 'aaron_docs');
 }
 add_action('admin_menu', 'aaron_docs_menu');
 
@@ -10,7 +8,7 @@ function aaron_docs() {
 
 ?>
 
-<h1 class="doc-title"><?php _e('Aaron Setup help', 'aaron'); ?></h1>
+<h1 class="doc-title"><?php _e('Aaron Setup Help', 'aaron'); ?></h1>
 <div class="doc-thanks">
 <b><?php _e('Thank you for downloading and trying out Aaron!', 'aaron'); ?></b><br><br>
 
@@ -61,7 +59,7 @@ function aaron_docs() {
 	<div class="doc-box" id="aaron-front">
 			<h3><?php _e('Frontpage','aaron' ); ?></h3>
 			<?php _e('The standard frontpage has the following features:','aaron' ); ?><br>
-			<?php _e('<b>Site title:</b> You will find an option to hide your site title in the customizer.','aaron' ); ?><br>
+			<?php _e('<b>Site title:</b> You will find an option to hide or change the color of your site title in the customizer.','aaron' ); ?><br>
 			<?php _e('<b>Call to action:</b> The Call to action is a great way to get your visitors attention. In the customizer you can:','aaron' ); ?>
 			<ul>
 				<li><?php _e('Add your own text','aaron' ); ?></li>
