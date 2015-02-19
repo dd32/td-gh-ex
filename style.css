@@ -6,10 +6,12 @@ Author URI: https://wordpress.org/
 Description: A responsive theme for all type of business that uses multiple nav menus, several sidebars etc etc . 
  It has a pixel-perfect design that's great for any blogger who wants a new look for their site. The theme is built using twitter bootstrap.
 Tags: orange, white, full-width-template, threaded-comments, microformats,two-columns,  right-sidebar, responsive-layout, sticky-post, custom-background, custom-menu,translation-ready
-Version: 1.5
+Version: 1.5.1
 License URI: https://webriti.com
 License: GNU General Public License v3 or later
 */
+/*Header Social Icons---------------------------------------------------------------------------------------------------*/
+
 body {
     padding:0;
 	background: #ffffff;
@@ -62,7 +64,7 @@ h6, .h6      {
 	color: #727272;
 }
 
-/*Header Social Icons---------------------------------------------------------------------------------------------------*/
+
 .head-contact-social {
 	float: right;
 	margin: 0px 0px 0px 35px;
@@ -78,12 +80,13 @@ h6, .h6      {
 	border-radius: 100%;
 	height: 30px;
 	margin-bottom: 0px;
-	margin-right: 5px;
+	margin-right: 0px;
 	margin-top: 0px;
 	padding: 0px;
 	text-align: center;
 	transition: background 0.2s ease-in-out 0s;
 	width: 30px;
+	margin-left:4px;
 }
 .head-contact-social li.facebook:hover { background-color: #4c66a4; }
 .head-contact-social li.twitter:hover { background-color: #15b4c9; }
@@ -111,7 +114,7 @@ h6, .h6      {
 	padding: 15px;
 	position: absolute;
 	right: 0;
-	top: 24%;
+	top: 27%;
 	width: 50%;
 	z-index: 0;
 }
@@ -120,7 +123,7 @@ h6, .h6      {
 	width: 100%;
 	text-align: left;
 	position: relative;
-	margin: 0 0 30px;
+	margin: 0 0 20px;
 	padding: 0;
 	float: left;
 }
@@ -129,13 +132,11 @@ h6, .h6      {
 	color: #242526;
 	font-family: 'Open Sans';
 	font-weight:400;
-	font-size: 36px;
-	font-weight: normal;
 	border-radius: 2px;
 	padding: 6px 12px;
 	display: inline-block;
 	letter-spacing: 0;
-	line-height: 40px;
+	line-height: 35px;
 	margin: 0 0 0px;
 	text-shadow: 0 0px 1px rgba(155, 155, 155, 0.7);
 	-webkit-box-shadow: 0 0 3px 0 rgba(161, 161, 161, 0.9);
@@ -145,40 +146,50 @@ h6, .h6      {
 .slide-text-bg2 {
     float: left;
 	text-align: left;
-    margin: 0 0 10px;
+    margin: 0 0 20px;
     padding: 0;
     position: relative;
-    width: 100%;
+    width: 80%;
     z-index: 773;
 }
 .slide-text-bg2 span {
-	background-color: rgba(255, 255, 255, 0.9);
-	color: #242526;
+	background-color: rgba(45, 47, 49, 0.8);
+	color: #ffffff;
 	font-family: 'Open Sans';
 	font-weight:400;
-	font-size: 24px;
+	font-size: 15px;
 	font-weight: normal;
 	display: inline-block;
 	border-radius: 2px;
-	line-height: 35px;
-	padding-right: 12px;
+	line-height: 25px;
+	letter-spacing: 1px;
+	padding: 6px 12px;
 	margin: 0 0 0px;
-	text-shadow: 0 0px 1px rgba(155, 155, 155, 0.9);
-	-webkit-box-shadow: 0 0 3px 0 rgba(161, 161, 161, 0.9);
-	-moz-box-shadow: 0 0 3px 0 rgba(161, 161, 161, 0.9);
-	box-shadow: 0 0 3px 0 rgba(161, 161, 161, 0.9);
+	text-shadow: 0 0px 1px rgba(155, 155, 155, 0.7);
 }
-.slide-text-bg2 .check {
-	background-color: rgba(45, 47, 49, 0.95);
-	padding: 6px 25px;
-	border-bottom-left-radius: 2px;
-    border-top-left-radius: 2px;
-	color: #ffffff;
-	width: 50px;
-	height: 40px;
-	float: left;
-	margin-right: 12px;
-}	
+.slide-btn-area-sm { margin: 0px 0 0px; float: left; width: 80%; }
+.slide-btn-sm {
+    background-color: #ee591f;
+    box-shadow: 0 3px 0 0 #b2390a;
+    color: #ffffff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+	border-radius: 3px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Open Sans';
+	font-weight:600;
+	transition: all 0.3s ease-in-out 0s;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    line-height: 20px;
+    padding: 10px 25px;
+	margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+.slide-btn-sm:hover { color: #ffffff; }
+
 /* Direction Nav */
 .carou-direction-nav {
     *height: 0;
@@ -245,7 +256,48 @@ h6, .h6      {
     content: '\f105';
 }			
 
-
+/*Top Callout Section-------------------------------------------------------------------------------------------*/
+.top-contact-detail-section {
+    background: none repeat scroll 0 0 #ee591f;
+	margin: 0 0 50px;
+    padding: 20px 0;
+    width: 100%;
+}
+.contact-area {
+	margin: 0px;
+    padding: 20px 0px;
+}
+.contact-icon {
+    float: left;
+    margin: 0 25px 0 0;
+    padding: 0;
+}
+.contact-icon i {
+    font-size: 45px;
+	color: #ffffff;
+	transition: all 0.3s ease-in-out 0s;
+}
+.contact-area:hover .contact-icon i {
+    padding-top: 10px;
+}
+.contact-area h6 {
+	color: #ffffff;
+    font-family: 'Open Sans';
+	font-weight:700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 20px;
+    margin: 0 0 7px;
+}
+.contact-area h4{
+    color: #ffffff;
+	font-family: 'Open Sans';
+	font-weight:600;
+    font-size: 20px;
+    letter-spacing: 1px;
+    line-height: 20px;
+    margin: 0 0 0px;
+}
 
 /*Section Title-------------------------------------------------------------------------------------------------*/
 .section-heading-title {
@@ -316,7 +368,98 @@ h6, .h6      {
     margin: 0;
 }
 
-
+/*Callout Section-----------------------------------------------------------------------------------------------*/
+.callout-section {
+    background: url("./images/callout-bg.jpg") no-repeat fixed 0 0 / cover rgba(0, 0, 0, 0);
+	height: 100%;
+    margin: 50px 0;
+    overflow: hidden;
+    padding: 0;
+    width: 100%;
+}
+.callout-section .overlay {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.7);
+	height: 100%;
+    padding: 74px 0 83px;
+    position: relative;
+    width: 100%;
+}
+.callout-section h1 {
+    color: #ffffff;
+    letter-spacing: 0px;
+	padding: 0 90px;
+    margin: 0 0 17px;
+	text-align: center;
+}
+.callout-section p {
+	color: #ffffff;
+    font-family: 'Open Sans';
+	font-weight:400;
+    font-size: 18px;
+    letter-spacing: 0.2px;
+    line-height: 25px;
+    margin: 0;
+	text-align: center;
+	padding: 0 90px;
+}
+.btn-area {
+    display: block;
+    margin: 25px 0 0px;
+    text-align: center;
+}
+.callout-btn1 {
+    background-color: #eeeeee;
+    box-shadow: 0 3px 0 0 #bac1c6;
+    color: #010101;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+	border-radius: 3px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Open Sans';
+	font-weight:600;
+	transition: all 0.3s ease-in-out 0s;
+    font-size: 20px;
+    letter-spacing: 0px;
+    line-height: 20px;
+    margin-bottom: 0;
+    margin-top: 10px;
+    padding: 14px 35px;
+	margin: 0 10px;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.callout-btn2 {
+    background-color: #ee591f;
+    box-shadow: 0 3px 0 0 #b2390a;
+    color: #ffffff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+	border-radius: 3px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Open Sans';
+	font-weight:600;
+	transition: all 0.3s ease-in-out 0s;
+    font-size: 20px;
+    letter-spacing: 0px;
+    line-height: 20px;
+    margin-bottom: 0;
+    margin-top: 10px;
+    padding: 14px 35px;
+	margin: 0 10px;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    white-space: nowrap;
+	text-decoration: none;
+}
+.callout-btn1:hover {
+    color: #010101;
+}
+.callout-btn2:hover {
+    color: #ffffff;
+}
 a:hover, a:focus { text-decoration: none !important;}
 
 /*Horizontaly Callout Section---------------------------------------------------------------------------------------------*/
@@ -363,6 +506,7 @@ a.hrtl-btn {
     text-align: center;
     text-decoration: none;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
     transition: all 0.3s ease-in-out 0s;
     vertical-align: middle;
     white-space: nowrap;
@@ -401,7 +545,7 @@ a.hrtl-btn:hover { color: #ffffff; }
 .portfolio-caption h4{
 	color:#242526;
 	font-family: 'Open Sans';
-	font-weight:600;
+	font-weight:700;
 	margin: 0 0 8px;
 }
 .portfolio-caption h4 a{
@@ -413,7 +557,7 @@ a.hrtl-btn:hover { color: #ffffff; }
 }
 .portfolio-caption p {	
 	color: #727272;
-   font-family: 'Open Sans';
+    font-family: 'Open Sans';
 	font-weight:400;
     font-size: 14px;
     line-height: 22px;
@@ -586,12 +730,13 @@ a.project-next:before {
     color: #242526;
 	display: inline-block;
     font-family: 'Open Sans';
-	font-weight:600;
+	font-weight:700;
     font-size: 16px;
     letter-spacing: 1px;
     line-height: 20px;
     padding: 0;
     text-decoration: none;
+    text-transform: uppercase;
     transition: all 0.3s ease 0s;
 }
 .portfolio-tabs li.active > a, .portfolio-tabs li > a:hover {
@@ -616,7 +761,7 @@ a.works-btn {
     cursor: pointer;
     display: inline-block;
     font-family: 'Open Sans';
-	font-weight:800;
+	font-weight:700;
     font-size: 20px;
     letter-spacing: 0px;
     line-height: 20px;
@@ -625,6 +770,7 @@ a.works-btn {
     text-align: center;
     text-decoration: none;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
     transition: all 0.3s ease-in-out 0s;
     vertical-align: middle;
     white-space: nowrap;
@@ -633,6 +779,7 @@ a.works-btn:hover { color: #ffffff; }
 
 /*Testimonial Section Css here---------------------------------------------------------------------------------*/
 .testimonial-section {
+	background: url("../images/testimonial-bg.jpg") repeat fixed 0 0 rgba(0, 0, 0, 0);
     height: 100%;
     margin: 50px 0;
     overflow: hidden;
@@ -679,7 +826,7 @@ a.works-btn:hover { color: #ffffff; }
 .testmonial-area h4 {
 	color: #ee591f;
     font-family: 'Open Sans';
-	font-weight:600;
+	font-weight:700;
     font-size: 15px;
     line-height: 20px;
     margin-bottom: 5px;
@@ -825,7 +972,7 @@ a.works-btn:hover { color: #ffffff; }
     cursor: pointer;
     display: inline-block;
     font-family: 'Open Sans';
-	font-weight:600;
+	font-weight:700;
 	transition: all 0.3s ease-in-out 0s;
     font-size: 13px;
     letter-spacing: 0.5px;
@@ -833,6 +980,7 @@ a.works-btn:hover { color: #ffffff; }
     padding: 8px 18px;
 	margin: 0;
     text-align: center;
+    text-transform: uppercase;
     vertical-align: middle;
 }
 .blog-btn-sm:hover {
@@ -875,7 +1023,7 @@ a.works-btn:hover { color: #ffffff; }
 	cursor: pointer;
 	display: inline-block;
 	font-family: 'Open Sans';
-	font-weight:600;
+	font-weight:700;
 	transition: all 0.3s ease-in-out 0s;
 	font-size: 15px;
 	letter-spacing: 0.5;
@@ -953,7 +1101,7 @@ a.works-btn:hover { color: #ffffff; }
 .footer-contact-area h6 {
 	color: #727272;
     font-family: 'Open Sans';
-	font-weight:600;
+	font-weight:700;
     font-size: 14px;
     letter-spacing: 1px;
     line-height: 20px;
@@ -962,7 +1110,7 @@ a.works-btn:hover { color: #ffffff; }
 .footer-contact-area h4{
     color: #727272;
 	font-family: 'Open Sans';
-	font-weight:600;
+	font-weight:700;
     font-size: 20px;
     letter-spacing: 1px;
     line-height: 20px;
@@ -1041,7 +1189,7 @@ a.works-btn:hover { color: #ffffff; }
 .footer-blog-post h3 {
     display: block;
     font-family: 'Open Sans';
-	font-weight:600;
+	font-weight:700;
     font-size: 16px;
     line-height: 22px;
     margin-bottom: 5px;
@@ -1058,7 +1206,7 @@ a.works-btn:hover { color: #ffffff; }
 .footer-blog-post span {
     color: #727272;
     font-family: 'Open Sans';
-	font-weight:600;
+	font-weight:700;
     font-size: 13.5px;
     line-height: 20px;
     margin-right: 8px;
@@ -1195,7 +1343,6 @@ a.works-btn:hover { color: #ffffff; }
 	line-height: 1.9;
 	transition: color 0.3s ease-in-out 0s;
 }
-
 /*Page Title Section Css-------------------------------------------------------------------------------------*/
 .page-title-section {
 	background: url("images/page-title-bg.jpg") no-repeat fixed 0 0 / cover rgba(0, 0, 0, 0);
@@ -2656,3 +2803,4 @@ address
 {color:#fff !important;}
 .page-title a:hover 
 {color: #ee591f !important;}
+.navbar-header h1 {margin-top:10px !important;}

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: appointment\n"
-"POT-Creation-Date: 2015-02-10 14:48+0530\n"
-"PO-Revision-Date: 2015-02-10 14:54+0530\n"
+"POT-Creation-Date: 2015-02-19 19:12+0530\n"
+"PO-Revision-Date: 2015-02-19 19:19+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -50,18 +50,18 @@ msgstr ""
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/archive.php:54
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/author.php:43
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/category.php:41
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/index.php:23
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/index.php:22
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/single.php:57
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/tag.php:43
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/tag.php:42
 msgid "Previous"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/archive.php:55
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/author.php:44
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/category.php:42
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/index.php:24
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/index.php:23
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/single.php:58
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/tag.php:44
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/tag.php:43
 msgid "Next"
 msgstr ""
 
@@ -168,11 +168,13 @@ msgid "Comments Are Closed!!!"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/content.php:19
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/fullwidth.php:37
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/fullwidth.php:36
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/theme_setup_data.php:19
 msgid "Read More"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/fullwidth.php:30
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/fullwidth.php:29
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/index-news.php:40
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/template-tag.php:24
 msgid "By"
 msgstr ""
@@ -202,7 +204,7 @@ msgstr ""
 msgid "Google Profile URL"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/header.php:35
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/header.php:42
 msgid "Toggle navigation"
 msgstr ""
 
@@ -230,7 +232,96 @@ msgstr ""
 msgid "Tag Archives: %s"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/theme_setup_data.php:31
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/theme_setup_data.php:17
+msgid "Appointment BY WEBRITI THEMES"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/theme_setup_data.php:18
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_slider_settings.php:35
+msgid "Create Fresh Website fast with us!"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/theme_setup_data.php:43
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:51
+msgid "Why Choose Us"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/theme_setup_data.php:44
+msgid "We Work with New Customers anad Grow Their Businesses"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/theme_setup_data.php:47
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:54
+msgid "Easy to Use"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/theme_setup_data.php:48
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/theme_setup_data.php:52
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/theme_setup_data.php:56
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/theme_setup_data.php:64
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/theme_setup_data.php:68
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:59
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:63
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:71
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:75
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consec tetur "
+"adipisicing elit dignissim dapib tumst."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/theme_setup_data.php:51
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:58
+msgid "Responsive Design"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/theme_setup_data.php:55
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:62
+msgid "Very Flexible"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/theme_setup_data.php:59
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:66
+msgid "Well Support"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/theme_setup_data.php:60
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:67
+msgid ""
+"Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis "
+"consectetur purus sit amet ferment etiam porta sem malesuada magna mollis."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/theme_setup_data.php:63
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:70
+msgid "Clean Code"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/theme_setup_data.php:67
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:74
+msgid "Customizable"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/theme_setup_data.php:99
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_call_out_settings.php:38
+msgid "Want to say Hey or find out more?"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/theme_setup_data.php:100
+msgid ""
+"Reprehen derit in voluptate velit cillum dolore eu fugiat nulla pariaturs  "
+"sint occaecat proidentse."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/theme_setup_data.php:101
+msgid "Purshase Now!"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/theme_setup_data.php:104
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_call_out_settings.php:43
+msgid "Get in touch!"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/theme_setup_data.php:109
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/footer_copyright_settings.php:52
 msgid ""
 "<p>Copyright 2014 appointment <a href=\"#\">Wordpress Theme</a>. All rights "
@@ -253,15 +344,35 @@ msgstr ""
 msgid "Like us on facebook"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/appointment_option_pannel.php:17
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/appointment_option_pannel.php:18
 msgid "General Settings"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/appointment_option_pannel.php:19
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/appointment_option_pannel.php:20
+msgid "Slider Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/appointment_option_pannel.php:22
+msgid "Home Top Contact Detail"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/appointment_option_pannel.php:24
+msgid "Service Setting"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/appointment_option_pannel.php:26
+msgid "Home Call out"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/appointment_option_pannel.php:28
+msgid "Home News Setting"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/appointment_option_pannel.php:30
 msgid "Social link and meta setting"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/appointment_option_pannel.php:21
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/appointment_option_pannel.php:32
 msgid "Footer Custmization setting"
 msgstr ""
 
@@ -436,20 +547,90 @@ msgstr ""
 msgid "Buy Spasalon Pro"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/footer_copyright_settings.php:72
-msgid "Footer Customizations"
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/blog_settings.php:8
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/footer_copyright_settings.php:8
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_call_out_settings.php:8
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_contact_detail_setting.php:8
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_header_setting.php:8
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:8
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:8
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_slider_settings.php:8
+msgid "Sorry, your nonce did not verify."
 msgstr ""
 
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/blog_settings.php:36
+msgid "Latest News"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/blog_settings.php:37
+msgid "Aipsum therefore always"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/blog_settings.php:50
+msgid "Blog  Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/blog_settings.php:53
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/footer_copyright_settings.php:74
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_call_out_settings.php:54
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_contact_detail_setting.php:57
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_header_setting.php:64
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:55
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:54
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:86
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_slider_settings.php:48
 msgid "Options data successfully Saved"
 msgstr ""
 
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/blog_settings.php:54
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/footer_copyright_settings.php:75
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_call_out_settings.php:55
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_contact_detail_setting.php:58
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_header_setting.php:65
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:56
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:55
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:87
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_slider_settings.php:49
 msgid "Options data successfully reset"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/blog_settings.php:66
+msgid "Enable Blog on HOME Section"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/blog_settings.php:67
+msgid "Enable Blog section in front page."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/blog_settings.php:68
+msgid "Blog Heading"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/blog_settings.php:70
+msgid "Blog Section Heading"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/blog_settings.php:72
+msgid "Enter Latest News Description"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/blog_settings.php:74
+msgid "Enter Latest News Description."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/blog_settings.php:80
+msgid "Enable Meta on Home page:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/blog_settings.php:81
+msgid "Enable Meta On Home page."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/blog_settings.php:82
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_header_setting.php:104
+msgid "If you only want to remove Author, Date and Category from the posts."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/footer_copyright_settings.php:72
+msgid "Footer Customizations"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/footer_copyright_settings.php:87
@@ -518,6 +699,152 @@ msgstr ""
 msgid "Open skype media link in new tab/window"
 msgstr ""
 
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_call_out_settings.php:39
+msgid ""
+"Reprehen derit in voluptate velit cillum dolore eu fugiat nulla pariaturs "
+"sint occaecat cupid non proidentse."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_call_out_settings.php:40
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_slider_settings.php:36
+msgid "Purchase Now!"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_call_out_settings.php:52
+msgid "home Top Call Out Area"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_call_out_settings.php:66
+msgid "Enable home Top Call Out Area Section :"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_call_out_settings.php:67
+msgid "Enable home top call out area on front page."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_call_out_settings.php:71
+msgid "home Top Call Out Title"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_call_out_settings.php:73
+msgid "Enter the home top call out title."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_call_out_settings.php:77
+msgid "home Top Call Out Description"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_call_out_settings.php:79
+msgid "Enter the home top call out description."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_call_out_settings.php:83
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_call_out_settings.php:96
+msgid "home Top Call Out Button Text"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_call_out_settings.php:85
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_call_out_settings.php:98
+msgid "Enter the home call out button text."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_call_out_settings.php:89
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_call_out_settings.php:102
+msgid "home Top Call Out Button Link"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_call_out_settings.php:91
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_call_out_settings.php:104
+msgid "Enter the home top call out button link."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_call_out_settings.php:92
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_call_out_settings.php:105
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_slider_settings.php:86
+msgid "Open link in a new window/tab"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_contact_detail_setting.php:38
+msgid "Have a question? Call us now"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_contact_detail_setting.php:39
+msgid "+82 334 843 52"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_contact_detail_setting.php:42
+msgid "We are open Mon-Fri"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_contact_detail_setting.php:43
+msgid "Mon - Fri 08.00 - 18.00"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_contact_detail_setting.php:46
+msgid "Drop us an mail"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_contact_detail_setting.php:47
+msgid "info@yoursupport.com"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_contact_detail_setting.php:55
+msgid "Front page Header Contact section"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_contact_detail_setting.php:70
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_contact_detail_setting.php:71
+msgid "Enable front page call out section"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_contact_detail_setting.php:75
+msgid "Add Phone Number icon "
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_contact_detail_setting.php:77
+msgid "Enter the Phone Number icon."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_contact_detail_setting.php:81
+msgid "Phone Phone number title"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_contact_detail_setting.php:86
+msgid "Add Phone number"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_contact_detail_setting.php:91
+msgid "Add Clock Time icon "
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_contact_detail_setting.php:93
+msgid "Enter the Clock Time icon."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_contact_detail_setting.php:97
+msgid "Add Clock Time title"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_contact_detail_setting.php:102
+msgid "Add Clock Time information"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_contact_detail_setting.php:106
+msgid "Add Email icon "
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_contact_detail_setting.php:108
+msgid "Enter the Email icon."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_contact_detail_setting.php:112
+msgid "Add Email Title"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_contact_detail_setting.php:117
+msgid "Add Email information"
+msgstr ""
+
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_header_setting.php:62
 msgid "Social Media & Meta tag settings"
 msgstr ""
@@ -542,76 +869,319 @@ msgstr ""
 msgid "Enable Meta On page."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_header_setting.php:104
-msgid "If you only want to remove Author, Date and Category from the posts."
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:52
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:51
 msgid "Quick Start Settings"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:67
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:66
 msgid "Custom Favicon"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:68
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:67
 msgid "Make sure you upload .icon image type which is not more then 25X25 px."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:77
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:76
 msgid "Enable Logo or text on Header:"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:78
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:77
 msgid "Enable Logo or text on header section."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:81
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:80
 msgid "Custom Logo"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:82
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:81
 msgid "Add custom logo from here suggested size is 250X50 px"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:93
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:92
 msgid "Logo Height"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:94
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:93
 msgid ""
 "Default Logo Height : 50px, if you want to increase than specify your value"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:99
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:98
 msgid "Logo Width"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:100
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:99
 msgid ""
 "Default Logo Width : 250px, if you want to increase than specify your value"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:105
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:104
 msgid "Text Title"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:106
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:105
 msgid "Enable text-based Site Title.   Setup title"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:106
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:105
 msgid "Click Here"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:109
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:108
 msgid "Custom css"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:111
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_page_settings.php:110
 msgid ""
 "This is a powerful feature provided here. No need to use custom css plugin, "
 "just paste your css code and see the magic."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:52
+msgid "We Work with New Customers anad Grow Their Businesses.."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:55
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consec tetur "
+"adipisicing elit dignissim dapib tumst"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:84
+msgid "Service Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:99
+msgid "Enable Home Service Section"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:101
+msgid "Enable service on front page."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:104
+msgid "Service section Heading on Home page"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:106
+msgid "Enter Service Heading for Service Section."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:109
+msgid "Service section Description on Home page"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:111
+msgid "Enter Service Description for Service Section."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:115
+msgid "Service One Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:118
+msgid "Service Icon One "
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:120
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:139
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:157
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:176
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:196
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:215
+msgid "Enter the service icon."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:124
+msgid "Service One Title"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:126
+msgid "Enter the service one title."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:129
+msgid "Service one Description"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:131
+msgid "Enter the service one description."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:134
+msgid "Service Two Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:137
+msgid "Service Icon Two "
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:142
+msgid "Service Two Title"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:144
+msgid "Enter the service two title."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:147
+msgid "Service Two Description"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:149
+msgid "Enter the service two description."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:152
+msgid "Service Three Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:155
+msgid "Service Icon Three "
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:160
+msgid "Service Three Title"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:162
+msgid "Enter the service three title."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:165
+msgid "Service Three Description"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:167
+msgid "Enter the service three description."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:171
+msgid "Service Four Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:174
+msgid "Service Icon Four "
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:179
+msgid "Service Four Title"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:181
+msgid "Enter the service Four title."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:184
+msgid "Service Four Description"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:186
+msgid "Enter the service Four description."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:191
+msgid "Service Five Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:194
+msgid "Service Icon Five "
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:199
+msgid "Service FIve Title"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:201
+msgid "Enter the service five title."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:204
+msgid "Service Five Description"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:206
+msgid "Enter the service five description."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:210
+msgid "Service Six Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:213
+msgid "Service Icon Six "
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:218
+msgid "Service Six Title"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:220
+msgid "Enter the service Six title."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:223
+msgid "Service Six Description"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_service_settings.php:225
+msgid "Enter the service six description."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_slider_settings.php:34
+msgid "appointment BY WEBRITI THEMES"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_slider_settings.php:46
+msgid "Home Feature Image Setting"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_slider_settings.php:60
+msgid "Enable Home Banner"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_slider_settings.php:62
+msgid "Enable Home Banner on front page."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_slider_settings.php:65
+msgid "Slider Title One"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_slider_settings.php:67
+msgid "Enter the slider title one."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_slider_settings.php:71
+msgid "Slider Description"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_slider_settings.php:73
+msgid "Enter the slider description."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_slider_settings.php:77
+msgid "Button Text"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_slider_settings.php:79
+msgid "Enter the Slider button text."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_slider_settings.php:83
+msgid "Slider Button Link"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_slider_settings.php:85
+msgid "Enter the slider button link."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_slider_settings.php:90
+msgid "Home Feature Image"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/theme_options/pages/home_slider_settings.php:91
+msgid "Add a image with size of 1600 X 750 px. "
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/widgets/sidebars.php:7
@@ -622,10 +1192,10 @@ msgstr ""
 msgid "The primary widget area"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/widgets/sidebars.php:17
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/widgets/sidebars.php:16
 msgid "Footer Widget Area"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/widgets/sidebars.php:19
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment/functions/widgets/sidebars.php:18
 msgid "footer widget area"
 msgstr ""

@@ -1,11 +1,11 @@
 <div class="block ui-tabs-panel" id="option-ui-id-22" >	
-	<?php $current_options = get_option('appointment_lite_options');
+	<?php $current_options = wp_parse_args(  get_option( 'appointment_lite_options', array() ), theme_data_setup() );
 	if(isset($_POST['webriti_settings_save_22']))
 	{	
 		if($_POST['webriti_settings_save_22'] == 1) 
 		{
 			if ( empty($_POST) || !wp_verify_nonce($_POST['webriti_gernalsetting_nonce_customization'],'webriti_customization_nonce_gernalsetting') )
-			{  print 'Sorry, your nonce did not verify.';	exit; }
+			{  printf (__('Sorry, your nonce did not verify.','appointment'));	exit; }
 			else  
 			{
 				$current_options['social_media_facebook_link']=esc_url_raw($_POST['social_media_facebook_link']);

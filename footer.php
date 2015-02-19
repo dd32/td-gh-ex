@@ -1,12 +1,13 @@
 <?php $current_options=get_option('appointment_lite_options'); ?>
 <!-- Footer Section -->
-<div class="container">	
-	<div class="row footer-widget-section">
-			<?php 
-			if ( is_active_sidebar( 'footer-widget-area' ) )
-			{ dynamic_sidebar( 'footer-widget-area' );	}
-			?>	
+<?php 
+if ( is_active_sidebar( 'footer-widget-area' ) ) { ?>
+<div class="footer-section">
+	<div class="container">	
+		<div class="row footer-widget-section">
+			<?php  dynamic_sidebar( 'footer-widget-area' );	} ?>	
 			<div class="clearfix"></div>
+		</div>
 	</div>
 </div>
 <!-- /Footer Section -->

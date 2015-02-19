@@ -1,16 +1,15 @@
 <div class="block ui-tabs-panel active" id="option-ui-id-1" >
-<?php $current_options = get_option('appointment_lite_options');
+<?php $current_options = wp_parse_args(  get_option( 'appointment_lite_options', array() ), theme_data_setup() );
 	if(isset($_POST['webriti_settings_save_1']))
 	{	
 		if($_POST['webriti_settings_save_1'] == 1) 
 		{
 			if ( empty($_POST) || !wp_verify_nonce($_POST['webriti_gernalsetting_nonce_customization'],'webriti_customization_nonce_gernalsetting') )
-			{  print 'Sorry, your nonce did not verify.';	exit; }
+			{  printf (__('Sorry, your nonce did not verify.','appointment'));	exit; }
 			else  
 			{	
-				$current_options['upload_image_favicon']=sanitize_text_field($_POST['upload_image_favicon']);
-				$current_options['webrit_custom_css'] =esc_html($_POST['webrit_custom_css']);		
-				
+				$current_options['upload_image_favicon']=esc_url($_POST['upload_image_favicon']);
+				$current_options['webrit_custom_css'] = wp_strip_all_tags($_POST['webrit_custom_css']);
 				// Logo Section Enable in header page
 				if(isset($_POST['logo_section_settings']))
 				{ echo $current_options['logo_section_settings']= "on"; } 
@@ -18,7 +17,7 @@
 				
 				
 				//Logo section 
-				$current_options['upload_image_logo']=sanitize_text_field($_POST['upload_image_logo']);	$current_options['height']=sanitize_text_field($_POST['height']);
+				$current_options['upload_image_logo']=esc_url($_POST['upload_image_logo']);	$current_options['height']=sanitize_text_field($_POST['height']);
 				$current_options['width']=sanitize_text_field($_POST['width']);
 				if(isset($_POST['text_title']))
 				{ echo $current_options['text_title']="on"; } 
@@ -40,8 +39,8 @@
 			$current_options['logo_section_settings']= 'on';
 			
 			$current_options['upload_image_logo']="";
-			$current_options['height']=50;
-			$current_options['width']=250;
+			$current_options['height']=40;
+			$current_options['width']=205;
 			$current_options['text_title']="on";
 			update_option('appointment_lite_options',$current_options);
 		}

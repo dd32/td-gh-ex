@@ -10,10 +10,17 @@
 	<?php } ?>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<title><?php wp_title('|', true , 'right'); ?></title>
+	<?php wp_head(); ?>
 	
-<?php wp_head(); ?>
+	<?php
+if($current_options['webrit_custom_css']!='') {  ?>
+<style>
+<?php echo $current_options['webrit_custom_css']; ?>
+</style>
+<?php }  ?>
 </head>
 <body <?php body_class(); ?> >
+
 
 <!--Logo & Menu Section-->	
 <nav class="navbar navbar-default">
@@ -27,7 +34,7 @@
 					{ echo "<div class=appointment_title_head>" . get_bloginfo( ). "</div>"; }
 					else if($current_options['upload_image_logo']!='') 
 					{ ?>
-					<img src="<?php echo esc_url($current_options['upload_image_logo']); ?>" style="height:<?php if($current_options['height']!='') { echo esc_html($current_options['height']); } ?>px; width:<?php if($current_options['width']!='') { echo esc_html($current_options['width']); } ?>px;" alt="logo" />
+					<img class="img-responsive" src="<?php echo esc_url($current_options['upload_image_logo']); ?>" style="height:<?php if($current_options['height']!='') { echo esc_html($current_options['height']); } ?>px; width:<?php if($current_options['width']!='') { echo esc_html($current_options['width']); } ?>px;" alt="logo" />
 					<?php } ?>
 				</a></h1>
 				<?php } ?>	

@@ -21,7 +21,7 @@
 	function appointment_setup()
 	{	
 	// Load text domain for translation-ready
-    load_theme_textdomain( 'appointment', WEBRITI_THEME_FUNCTIONS_PATH . '/lang' );	
+    load_theme_textdomain( 'appointment', WEBRITI_THEME_FUNCTIONS_PATH . '/lang' );
 
     add_theme_support( 'post-thumbnails' ); //supports featured image
 	// Register primary menu 
@@ -80,4 +80,23 @@ function appointment_add_to_author_profile( $contactmethods ) {
 		return $contactmethods;
 	}
 	add_filter( 'user_contactmethods', 'appointment_add_to_author_profile', 10, 1);
+	
+	/********** Image Resize *************/
+	if ( function_exists( 'add_image_size' ) ) 
+	{ 
+	add_image_size('appointment_latest_news_img',190,190,true);
+	add_image_size('webriti_blogdetail_img',750,350,true);
+	add_image_size('webriti_blogright_img',270,260,true);
+	}
+	
+	function appointment_excerpt_length( $length ) {
+	return 25;
+	}
+	add_filter( 'excerpt_length', 'appointment_excerpt_length', 999 );
+	
+	function appointment_excerpt_more($more) {
+	global $post;
+		return '<div class="blog-btn-area-sm"><a href="' . get_permalink() . "#more-{$post->ID}\" class=\"blog-btn-sm\">Read More</a></div>";
+	}
+	add_filter('excerpt_more', 'appointment_excerpt_more');
 ?>

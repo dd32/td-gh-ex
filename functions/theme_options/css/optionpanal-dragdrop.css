@@ -20,6 +20,8 @@ p {margin-bottom: 1em;}
 	Forms
 ------------------------------------------------------------------- */
 
+.webriti_inpute{ padding-bottom: 6px; width: 50%; }
+
 .input-button {
 	background-color: #E2E2E2;
 	border: 1px outset #AAA;

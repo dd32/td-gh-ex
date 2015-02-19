@@ -64,17 +64,31 @@ Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank y
 Appointment WordPress Theme bundles the following third-party resources:
 
 Screenshot Image
-URL: http://pixabay.com/en/entrepreneur-startup-start-up-man-593362/
+URL: http://pixabay.com/en/office-home-office-creative-apple-581131/
 Source:http://pixabay.com
-LIcense: CC0 Public Domain
+License: CC0 Public Domain
 
 Page Header Image
 URL: http://pixabay.com/en/home-office-workstation-office-336377/
 Source:http://pixabay.com
-LIcense: CC0 Public Domain
+License: CC0 Public Domain
+
+Slider Banner Image
+URL: http://pixabay.com/en/office-home-office-creative-apple-581131
+Source:http://pixabay.com
+License: CC0 Public Domain
+
+Home call out Overlay Image
+URL: http://pixabay.com/en/office-meeting-business-partners-336368/
+Source:http://pixabay.com
+License: CC0 Public Domain
 
 # --- EOF --- #
 ============================Change Log================================
+@version 1.5.1
+1. Add Business Page Template in home.php.
+2. Update pot file.
+3. Change Screenshot image.
 @version 1.5
 1. All translation.
 2. Update pot file.
