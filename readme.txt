@@ -59,6 +59,8 @@ Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
+@Version 0.2.4
+1. Remove Dot(.) in eliptepress option panel file.
 @Version 0.2.3
 1. Add some escape tags, missing banner_header.php , footer.php , home_page_header_setting.php
 2. Add  sanitizing for custom css box.
