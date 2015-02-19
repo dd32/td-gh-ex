@@ -114,3 +114,6 @@ Screenshot images are licensed under Creative Commons Deed CC0.
 
 == 1.27 ==
 * Minor fix
+
+== 1.28 ==
+* Minor fix
