@@ -39,27 +39,18 @@ function storefront_body_classes( $classes ) {
 		$classes[] = 'group-blog';
 	}
 
-	return $classes;
-}
+	/**
+	 * What is this?!
+	 * Take the blue pill, close this file and forget you saw the following code.
+	 * Or take the red pill, filter storefront_make_me_cute and see how deep the rabbit hole goes...
+	 */
+	$cute	= apply_filters( 'storefront_make_me_cute', false );
 
-/**
- * Sets the authordata global when viewing an author archive.
- *
- * This provides backwards compatibility with
- * http://core.trac.wordpress.org/changeset/25574
- *
- * It removes the need to call the_post() and rewind_posts() in an author
- * template to print information about the author.
- *
- * @global WP_Query $wp_query WordPress Query object.
- * @return void
- */
-function storefront_setup_author() {
-	global $wp_query;
-
-	if ( $wp_query->is_author() && isset( $wp_query->post ) ) {
-		$GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
+	if ( true == $cute ) {
+		$classes[] = 'storefront-cute';
 	}
+
+	return $classes;
 }
 
 /**

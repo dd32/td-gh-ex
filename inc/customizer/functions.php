@@ -26,12 +26,14 @@ if ( ! function_exists( 'storefront_customize_preview_js' ) ) {
  */
 if ( ! function_exists( 'storefront_sanitize_hex_color' ) ) {
 	function storefront_sanitize_hex_color( $color ) {
-		if ( '' === $color )
+		if ( '' === $color ) {
 			return '';
+        }
 
 		// 3 or 6 hex digits, or the empty string.
-		if ( preg_match( '|^#([A-Fa-f0-9]{3}){1,2}$|', $color ) )
+		if ( preg_match( '|^#([A-Fa-f0-9]{3}){1,2}$|', $color ) ) {
 			return $color;
+        }
 
 		return null;
 	}
@@ -113,7 +115,7 @@ function storefront_adjust_color_brightness( $hex, $steps ) {
     // Format the hex color string
     $hex    = str_replace( '#', '', $hex );
 
-    if ( strlen( $hex ) == 3 ) {
+    if ( 3 == strlen( $hex ) ) {
         $hex    = str_repeat( substr( $hex, 0, 1 ), 2 ) . str_repeat( substr( $hex, 1, 1 ), 2 ) . str_repeat( substr( $hex, 2, 1 ), 2 );
     }
 

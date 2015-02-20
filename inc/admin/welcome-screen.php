@@ -140,6 +140,18 @@ class Storefront_Welcome {
 		</div>
 
 		<hr style="clear: both;">
+
+		<div class="feature-section col three-col" style="margin-bottom: 1.618em; padding-top: 1.618em; overflow: hidden;">
+			<div class="col-1">
+				<h4><?php _e( 'Can\'t find a feature?', 'storefront' ); ?></h4>
+				<p><?php echo sprintf( esc_html__( 'Please suggest and vote on ideas / feature requests at the %sStorefront Ideasboard%s. The most popular ideas will see prioritised development.', 'storefront' ), '<a href="http://ideas.woothemes.com/forums/275029-storefront">', '</a>' ); ?></p>
+			</div>
+
+			<div class="col-2">
+				<h4><?php _e( 'Are you enjoying Storefront?', 'storefront' ); ?></h4>
+				<p><?php echo sprintf( esc_html__( 'Why not leave a review on %sWordPress.org%s? We\'d really appreciate it! :-)', 'storefront' ), '<a href="https://wordpress.org/themes/storefront">', '</a>' ); ?></p>
+			</div>
+		</div>
 		<?php
 	}
 
@@ -250,8 +262,19 @@ class Storefront_Welcome {
 			</div>
 
 			<div class="col-3 last-feature">
-				<h4><?php _e( 'Can\'t find a feature?', 'storefront' ); ?></h4>
-				<p><?php echo sprintf( esc_html__( 'Please suggest and vote on ideas / feature requests at the %sStorefront Ideasboard%s. The most popular ideas will see prioritised development.', 'storefront' ), '<a href="http://ideas.woothemes.com/forums/275029-storefront">', '</a>' ); ?></p>
+				<?php
+					$theme = wp_get_theme();
+				?>
+				<h4><?php _e( 'Storefront Child Themes', 'storefront' ); ?></h4>
+				<img src="<?php echo esc_url( get_template_directory_uri() ) . '/images/welcome/boutique.jpg'; ?>" class="image-50" width="440" />
+				<h4><?php _e( 'Boutique', 'storefront' ); ?></h4>
+				<p><?php _e( 'Boutique is a simple, traditionally designed Storefront child theme, ideal for small stores or boutiques. Add your logo, create a unique color scheme and start selling!', 'storefront' ); ?></p>
+				<p style="margin-bottom: 2.618em;">
+					<?php if ( 'Boutique' != $theme['Name'] ) { ?>
+						<a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-theme&theme=boutique' ), 'install-theme_boutique' ) ); ?>" class="button button-primary"><?php _e( 'Install now', 'storefront' ); ?></a>
+					<?php } ?>
+					<a href="http://www.woothemes.com/products/boutique/" class="button"><?php _e( 'Read more &rarr;', 'storefront' ); ?></a>
+				</p>
 			</div>
 
 		</div>
@@ -259,7 +282,7 @@ class Storefront_Welcome {
 		<hr style="clear: both;" />
 
 		<p style="font-size: 1.2em; margin: 2.618em 0;">
-			<?php echo sprintf( esc_html__( 'There are literally hundreds of awesome extensions available for you to use. Looking for Table Rate Shipping? Subscriptions? Product Add-ons? You can find these and more in the WooCommerce extension shop. %sGo shopping%s.', 'storefront' ), '<a href="http://www.woothemes.com/product-category/woocommerce-extensions/">', '</a>'  ); ?>
+			<?php echo sprintf( esc_html__( 'There are literally hundreds of awesome extensions available for you to use. Looking for Table Rate Shipping? Subscriptions? Product Add-ons? You can find these and more in the WooCommerce extension shop. %sGo shopping%s.', 'storefront' ), '<a href="http://www.woothemes.com/product-category/woocommerce-extensions/">', '</a>' ); ?>
 		</p>
 
 		<hr style="clear: both;" />
