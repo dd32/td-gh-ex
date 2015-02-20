@@ -1,13 +1,4 @@
 @font-face {
-    font-family: 'script_mt_bold'; 
-    src: url('../fonts/script-mt-bold.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/script-mt-bold.woff') format('woff'),
-        url('../fonts/script_mt_bold.ttf') format('truetype'),
-        url('../fonts/script-mt-bold.svg#script-mt-bold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
     font-family: 'MontserratAlternates-Bold';    
     src: url('../fonts/MontserratAlternates-Bold.eot?#iefix') format('embedded-opentype'),
         url('../fonts/MontserratAlternates-Bold.woff') format('woff'),
@@ -79,9 +70,10 @@ img{
     width: 75px;
 }
 .subtitle{
-    font-family: 'script_mt_bold';
+    font-family: 'Dancing Script';
     text-transform: capitalize;
     font-size: 24px;
+    font-weight:bold;
 }
 .social-icon ul, 
 .our-work-list > ul, 
@@ -163,24 +155,26 @@ section {
 }
 .main-menu-ul > ul > li > a {
     display: block;
-    font-family: "script_mt_bold";
+    font-family: "Dancing Script";
     font-size: 26px;   
     line-height: 1;
     padding: 10px;
     color: #fff;
     position: relative;
     text-transform: capitalize;
+    font-weight:bold;
 }
 .main-menu-ul ul ul li a{
     clear: both;
     color: #a7a7a7;
     display: block;
-    font-family: "script_mt_bold";
+    font-family: "Dancing Script";
     font-size: 18px;  
     line-height: 1;    
     padding: 10px;
     text-align: left;
     text-transform: capitalize;
+    font-weight:bold;
 }
 .main-menu-ul ul ul li a:hover,
 .main-menu-ul ul ul li a:focus, 
@@ -293,13 +287,14 @@ section {
     background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
     border: medium none;
     color: inherit;
-    font-family: 'script_mt_bold';
+    font-family: 'Dancing Script';
     font-size:20px;   
     color: #d3d3d3;
     margin: 0;
     padding: 10px;
     transition: width 0.7s ease 0s;
     -webkit-transition: width 0.7s ease 0s;
+    font-weight:bold;
     width: 85px;
     outline: 0;
 }
@@ -369,8 +364,9 @@ section {
     color: #fff;   
 }
 .copyright p{
-    font-family: "script_mt_bold";
+    font-family: "Dancing Script";
     font-size: 22px;  
+    font-weight:bold;
 }
 /**************************footer end*********************/
 
@@ -385,10 +381,11 @@ section {
     margin: 0;
 }
 .breadcrumb-menubar > li{
-    font-family: "script_mt_bold";
+    font-family: "Dancing Script";
     font-size: 22px;
     color: #181818;
     text-transform: capitalize;
+    font-weight:bold;
 }
 .breadcrumb-menubar > li > a, .breadcrumb-menubar .active, .breadcrumb-menubar > li + li:before{
     color: #181818;
@@ -557,8 +554,9 @@ section {
     clear: both;
     color: #ffffff;
     display: inline-block;
-    font-family: "script_mt_bold";
+    font-family: "Dancing Script";
     font-size: 34px;
+    font-weight:bold;
     width: 100%;
 }
 .get-in-touch-info .site-btn{
@@ -914,7 +912,8 @@ section {
     margin-top: 0;
     margin-bottom: 15px;
     color: #dba605;
-    font-family: "script_mt_bold";
+    font-family: "Dancing Script";
+    font-weight:bold;
 }
 .contact-form {
     border-right: 1px solid #dadada;
