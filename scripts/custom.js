@@ -38,8 +38,8 @@
 
 //slider
 
-$(document).ready(function() {
-	$('#myCarousel').carousel({
+jQuery(document).ready(function() {
+	jQuery('#myCarousel').carousel({
 	  interval: 7000
 	});
 	

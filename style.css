@@ -3,8 +3,8 @@ Theme Name: Avnii
 Theme URI: http://arinio.com/avnii-free-responsive-multipurpose-wordpress-theme/
 Author: Arinio Themes
 Author URI: http://arinio.com
-Description:  Avnii is Multipurpose, Elegant, Responsive and beautiful Theme with Easy Customization Options. Avnii Theme is Single Click Intall feature, Just press activate button and your website will get ready. Avnii is a bootstrap based fully responsive theme that works on any device. You can use it for your business, portfolio, blogging, fitness, GYM, Travels Agencies or any type of site. Its comes with beautiful slider. It has a very easy admin option panel where you change lot of things easily. You can upload logo , fevicon etc. This theme made by arinio.com.
-Version: 1.0.3
+Description:  Avnii is Multipurpose, Elegant, Responsive and beautiful Theme with Easy Customization Options. Avnii Theme is Single Click Intall feature, Just press activate button and your website will get ready. Avnii is a bootstrap based fully responsive theme that works on any device. You can use it for your business, portfolio, blogging, fitness, GYM, Magazine, News, Travels Agencies or any type of site. Its comes with beautiful slider. It has a very easy admin option panel where you can change lot of things easily. You can upload logo , fevicon etc. This theme made by arinio.com.
+Version: 1.0.4
 License:  GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: two-columns, right-sidebar, responsive-layout, custom-background, custom-menu, sticky-post, threaded-comments, translation-ready, featured-images, theme-options, black, flexible-header, full-width-template, light, orange, photoblogging, red, white
@@ -13,3 +13,49 @@ License information can be found in the readme.txt file.
 */
 
 @import url(styles/styles.css);
+
+
+
+#divTagLine {
+font-family: 'Century Gothic', sans-serif;
+font-size: 10px;
+text-transform: uppercase;
+letter-spacing: 5px;
+line-height: 22px;
+
+text-shadow: none;
+padding-left: 3px;
+padding-right: 3px;
+font-weight: normal;
+font-style: normal;
+}
+
+#divSiteTitle {
+font-family: 'Century Gothic', sans-serif;
+
+font-size: 26px;
+text-shadow: none;
+line-height: 42px;
+letter-spacing: 2px;
+text-transform: uppercase;
+
+font-style: normal;
+float:none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

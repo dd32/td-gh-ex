@@ -29,8 +29,8 @@ get_header();
                 <div class="article-page">
             
              
-            <h1> <?php echo ('Not Found'); ?> </h1>
-            <p> <?php echo ( 'Apologies, but the page you requested could not be found. Perhaps searching will help.'); ?> </p>
+           <h1> <?php _e( 'Not Found', 'avnii' ); ?> </h1>
+            <p> <?php _e( 'Apologies, but the page you requested could not be found. Perhaps searching will help.', 'avnii' ); ?> </p>
             <?php get_search_form(); ?>
             <?php the_widget('WP_Widget_Recent_Posts', array('number' => 10), array('widget_id' => '404')); ?>
         

@@ -1,15 +1,18 @@
 <div class="footer-bottomm">
         <div class="container">
           <div class="row">
-            <div class="col-md-6">
-              <p><?php  $options = get_option( 'arinio_theme_options' );  if($options['footertext'] != '') { echo $options['footertext']; }else{ echo '&#169; 2015 Arinio Theme.'; } ?></p>
+            <div class="col-md-6 avfoo">
+              <p><?php  $options = get_option( 'arinio_theme_options' );  if($options['footertext'] != '') { echo esc_attr($options['footertext']); }else{ ?> <?php _e( ' Copyright &#169; 2015 Your Company. All Rights Reserved.', 'avnii' ); ?> <?php } ?></p>
+              <p>
+<?php _e('Powered by','avnii'); ?> <a href="<?php echo esc_url( 'http://wordpress.org' ); ?>" rel="nofollow"><?php _e('WordPress','avnii'); ?></a>. <?php _e('Theme by','avnii'); ?> <a href="<?php echo esc_url( 'http://arinio.com' ); ?>" rel="nofollow"><?php _e('Arinio','avnii'); ?></a>
+                  </p>
             </div>
            <div class="col-md-6">
 								<nav class="navbar navbar-default" role="navigation">
 									<!-- Toggle get grouped for better mobile display -->
 									<div class="navbar-header">
 										<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-2">
-											<span class="sr-only">Toggle navigation</span>
+											<span class="sr-only"><?php _e( 'Toggle navigation', 'avnii' ); ?></span>
 											<span class="icon-bar"></span>
 											<span class="icon-bar"></span>
 											<span class="icon-bar"></span>
@@ -33,15 +36,6 @@
 
 <!--end / footer-->
 <?php wp_footer(); ?>
-
-
-
- <script>
-    $('.carousel').carousel({
-        interval: 5000 //changes the speed
-    })
-    </script>
-
 
 
 

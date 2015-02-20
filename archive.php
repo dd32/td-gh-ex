@@ -42,13 +42,13 @@
                 ?>
                 <h1>
                     <?php if (is_day()) : ?>
-                        <?php printf('Daily Archives: %s', get_the_date()); ?>
+                        <?php printf(__('Daily Archives: %s', 'avnii'), get_the_date()); ?>
                     <?php elseif (is_month()) : ?>
-                        <?php printf('Monthly Archives: %s', get_the_date('F Y')); ?>
+                        <?php printf(__('Monthly Archives: %s', 'avnii'), get_the_date('F Y')); ?>
                     <?php elseif (is_year()) : ?>
-                        <?php printf('Yearly Archives: %s', get_the_date('Y')); ?>
+                        <?php printf(__('Yearly Archives: %s', 'avnii'), get_the_date('Y')); ?>
                     <?php else : ?>
-                        <?php echo ('Blog Archives'); ?>
+                      <?php _e( 'Blog Archives', 'avnii' ); ?>  
                     <?php endif; ?>
                 </h1></div>
                 <?php
@@ -66,9 +66,9 @@
                  <?php get_template_part('loop', 'archive'); ?>
             <div class="clearfix"></div>
                         <nav id="nav-single"> <span class="nav-previous">
-                            <?php next_posts_link('Next Post <i class="fa fa-long-arrow-right"></i>'); ?>
+                            <?php next_posts_link(__( 'Next Post <i class="fa fa-long-arrow-right"></i>', 'avnii' )); ?>
                         </span> <span class="nav-next">
-<?php previous_posts_link('<i class="fa fa-long-arrow-left"></i> Previous Post '); ?>
+<?php previous_posts_link(__( '<i class="fa fa-long-arrow-left"></i> Previous Post', 'avnii' )); ?>
                         </span> </nav>
            <div class="clearfix"></div>
                 </div>

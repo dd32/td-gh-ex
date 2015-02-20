@@ -17,14 +17,14 @@ get_header(); ?>
             
             <div class="item active">
                 <!-- Set the first background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('<?php  $options = get_option( 'arinio_theme_options' );  if($options['slide1image'] != '') { echo $options['slide1image']; }else{ echo get_template_directory_uri(); echo '/img/img11final.jpg'; } ?>');"> 
+                <div class="fill" style="background-image:url('<?php  $options = get_option( 'arinio_theme_options' );  if($options['slide1image'] != '') { echo esc_url_raw($options['slide1image']); }else{ echo get_template_directory_uri(); echo '/images/img11final.jpg'; } ?>');"> 
                 <div class="container">
                 	<div class="row">
                         <div class="col-md-12">
-                        	<h2 class="animated slideInLeft delay-1"><?php  if($options['slide1title'] != '') { echo $options['slide1title']; }else{ echo "We are stylish"; } ?> </h2>
+                        	<h2 class="animated slideInLeft delay-1"><?php  if($options['slide1title'] != '') { echo esc_attr($options['slide1title']); }else{ ?> <?php _e( 'We are stylish', 'avnii' ); ?> <?php } ?></h2>
                         </div>
                         <div class="col-md-12">
-                            <h3  class="animated slideInLeft delay-2"><?php  if($options['slide1subtitle'] != '') { echo $options['slide1subtitle']; }else{ echo "Now you can buy me"; } ?></h3>
+                            <h3  class="animated slideInLeft delay-2"><?php  if($options['slide1subtitle'] != '') { echo esc_attr($options['slide1subtitle']); }else{ ?> <?php _e( 'Now you can buy me', 'avnii' ); ?> <?php } ?></h3>
                         </div>
                          
                     </div>
@@ -37,14 +37,14 @@ get_header(); ?>
           
             <div class="item">
                 <!-- Set the second background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('<?php  $options = get_option( 'arinio_theme_options' );  if($options['slide2image'] != '') { echo $options['slide2image']; }else{ echo get_template_directory_uri(); echo '/img/img11final.jpg'; } ?>');">
+                <div class="fill" style="background-image:url('<?php  $options = get_option( 'arinio_theme_options' );  if($options['slide2image'] != '') { echo esc_url_raw($options['slide2image']); }else{ echo get_template_directory_uri(); echo '/images/img11final.jpg'; } ?>');">
                  <div class="container">
                 	<div class="row">
                         <div class="col-md-12">
-                        	<h2 class="animated slideInLeft delay-1"><?php  if($options['slide2title'] != '') { echo $options['slide2title']; }else{ echo "We are elegant"; } ?> </h2>
+                        	<h2 class="animated slideInLeft delay-1"><?php  if($options['slide2title'] != '') { echo esc_attr($options['slide2title']); }else{ ?> <?php _e( 'We are elegant', 'avnii' ); ?> <?php } ?> </h2>
                         </div>
                         <div class="col-md-12">
-                            <h3 class="animated slideInLeft delay-2"><?php  if($options['slide2subtitle'] != '') { echo $options['slide2subtitle']; }else{ echo "Now you can buy me"; } ?></h3>
+                            <h3 class="animated slideInLeft delay-2"><?php  if($options['slide2subtitle'] != '') { echo esc_attr($options['slide2subtitle']); }else{ ?> <?php _e( 'Now you can buy me', 'avnii' ); ?> <?php } ?></h3>
                         </div>
                          
                     </div>
@@ -75,7 +75,7 @@ get_header(); ?>
 
 
 
-<?php if($options['servicessection'] == 'on' || $options['servicessection'] == '') { ?>
+ 
 <span id="section_two"></span>
     <!-- Page Content -->
 	 <div class="section">
@@ -83,8 +83,8 @@ get_header(); ?>
 <div class="heading">
           <div class="row">
             <div class="text-center col-md-12">
-              <div class="mainheading"> <h2><?php $options = get_option( 'arinio_theme_options' ); if($options['msheading'] != '') { echo $options['msheading']; }else{ echo "Our Services"; } ?></h2> <span class="bdline"> </span>
-              <p><?php $options = get_option( 'arinio_theme_options' ); if($options['msheadingdes'] != '') { echo $options['msheadingdes']; }else{ echo "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus accumsan egestas neque, vitae venenatis ex porta Maecenas dictum purus sed porta."; } ?></p>  </div>
+              <div class="mainheading"> <h2><?php $options = get_option( 'arinio_theme_options' ); if($options['msheading'] != '') { echo esc_attr($options['msheading']); }else{ ?> <?php _e( 'Our Services', 'avnii' ); ?> <?php } ?></h2> <span class="bdline"> </span>
+              <p><?php $options = get_option( 'arinio_theme_options' );  if(!empty($options['msheadingdes'])) { echo esc_attr($options['msheadingdes']); }else{ ?> <?php _e( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus accumsan egestas neque, vitae venenatis ex porta Maecenas dictum purus sed porta.', 'avnii' ); ?> <?php } ?></p>  </div>
             </div>
           </div> 
         </div>
@@ -95,13 +95,13 @@ get_header(); ?>
                     <div class="arfeature-inner">
 
 					<header>
- 	<i class="fa <?php $options = get_option( 'arinio_theme_options' ); if($options['sicon1'] != '') { echo $options['sicon1']; }else{ echo "fa-globe"; } ?>"></i>
+ 	<i class="fa <?php $options = get_option( 'arinio_theme_options' ); if($options['sicon1'] != '') { echo esc_attr($options['sicon1']); }else{ echo "fa-globe"; } ?>"></i>
 
-					<?php $options = get_option( 'arinio_theme_options' ); if($options['fstitle'] != '') { echo $options['fstitle']; }else{ echo "Development"; } ?>
+					<?php $options = get_option( 'arinio_theme_options' ); if($options['fstitle'] != '') { echo esc_attr($options['fstitle']); }else{ ?> <?php _e( 'Development', 'avnii' ); ?> <?php } ?>
 
 					 </header>
 
-					<p><?php $options = get_option( 'arinio_theme_options' ); if($options['fdtitle'] != '') { echo $options['fdtitle']; }else{ echo "Duis in odio quis lorem imperdiet fermentum sit amet nec ante. Nunc nibh odio, interdum."; } ?></p>
+					<p><?php $options = get_option( 'arinio_theme_options' ); if($options['fdtitle'] != '') { echo esc_attr($options['fdtitle']); }else{ ?> <?php _e( 'echo "Duis in odio quis lorem imperdiet fermentum sit amet nec ante. Nunc nibh odio, interdum.', 'avnii' ); ?> <?php } ?></p>
 
 					
                     </div>
@@ -112,13 +112,13 @@ get_header(); ?>
 
 					<header>
 
-						<i class="fa <?php $options = get_option( 'arinio_theme_options' ); if($options['sicon2'] != '') { echo $options['sicon2']; }else{ echo "fa-globe"; } ?>"></i>
+						<i class="fa <?php $options = get_option( 'arinio_theme_options' ); if($options['sicon2'] != '') { echo esc_attr($options['sicon2']); }else{ echo "fa-globe"; } ?>"></i>
 
-					<?php $options = get_option( 'arinio_theme_options' ); if($options['sstitle'] != '') { echo $options['sstitle']; }else{ echo "Designing"; } ?>
+					<?php $options = get_option( 'arinio_theme_options' ); if($options['sstitle'] != '') { echo esc_attr($options['sstitle']); }else{ ?> <?php _e( 'Designing', 'avnii' ); ?> <?php } ?> 
 
 					 </header>
 
-					<p><?php $options = get_option( 'arinio_theme_options' ); if($options['sdtitle'] != '') { echo $options['sdtitle']; }else{ echo "Duis in odio quis lorem imperdiet fermentum sit amet nec ante. Nunc nibh odio, interdum."; } ?></p>
+					<p><?php $options = get_option( 'arinio_theme_options' ); if($options['sdtitle'] != '') { echo esc_attr($options['sdtitle']); }else{ ?> <?php _e( 'Duis in odio quis lorem imperdiet fermentum sit amet nec ante. Nunc nibh odio, interdum.', 'avnii' ); ?> <?php } ?></p>
 
 					
 
@@ -128,19 +128,19 @@ get_header(); ?>
 
 					<header>
 
-						<i class="fa <?php $options = get_option( 'arinio_theme_options' ); if($options['sicon3'] != '') { echo $options['sicon3']; }else{ echo "fa-globe"; } ?>"></i>
+						<i class="fa <?php $options = get_option( 'arinio_theme_options' ); if($options['sicon3'] != '') { echo esc_attr($options['sicon3']); }else{ echo "fa-globe"; } ?>"></i>
 
-					<?php $options = get_option( 'arinio_theme_options' ); if($options['sstitle3'] != '') { echo $options['sstitle3']; }else{ echo "CONSULTING"; } ?>
+					<?php $options = get_option( 'arinio_theme_options' ); if($options['sstitle3'] != '') { echo esc_attr($options['sstitle3']); }else{ ?> <?php _e( 'CONSULTING', 'avnii' ); ?> <?php } ?>
 
 					 </header>
 
-					<p><?php $options = get_option( 'arinio_theme_options' ); if($options['sdtitle3'] != '') { echo $options['sdtitle3']; }else{ echo "Duis in odio quis lorem imperdiet fermentum sit amet nec ante. Nunc nibh odio, interdum."; } ?></p>
+					<p><?php $options = get_option( 'arinio_theme_options' ); if($options['sdtitle3'] != '') { echo esc_attr($options['sdtitle3']); }else{ ?> <?php _e( 'Duis in odio quis lorem imperdiet fermentum sit amet nec ante. Nunc nibh odio, interdum.', 'avnii' ); ?> <?php } ?></p>
 								
 				   </div></div>
              </div>
            </div> </div></div>
 
-<?php } ?> 
+  
 
 
 
@@ -161,14 +161,14 @@ get_header(); ?>
   
   
   
-    <?php if($options['blogsection'] == 'on' || $options['blogsection'] == '') { ?>
+    
   <div class="section">
    <div class="container">
    <div class="heading">
           <div class="row">
               <div class="text-center col-md-12">
-              <div class="mainheading"> <h2><?php if($options['blogh'] != '') { echo $options['blogh']; }else{ echo "Our Blog"; } ?></h2> <span class="bdline"> </span>
-              <p><?php if($options['bloghdd'] != '') { echo $options['bloghdd']; }else{ echo "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus accumsan egestas neque, vitae venenatis ex porta Maecenas dictum purus sed porta."; } ?></p>  </div>
+              <div class="mainheading"> <h2><?php if($options['blogh'] != '') { echo esc_attr($options['blogh']); }else{ ?> <?php _e( 'Our Blog', 'avnii' ); ?> <?php } ?></h2> <span class="bdline"> </span>
+              <p><?php if(!empty($options['bloghdd'])) { echo esc_attr($options['bloghdd']); }else{ ?> <?php _e( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus accumsan egestas neque, vitae venenatis ex porta Maecenas dictum purus sed porta.', 'avnii' ); ?> <?php } ?></p>  </div>
             </div>
           </div> 
         </div>
@@ -190,7 +190,7 @@ get_header(); ?>
   
      <div class="row">
     
-    <?php  if($options['blogp'] != '') { $blogpt = $options['blogp']; }else{ $blogpt = 3; } ?>
+    <?php  $blogpt = 3;  ?>
       <?php 
 	 $args = array(
 	'posts_per_page'      => $blogpt,
@@ -251,7 +251,7 @@ query_posts( $args );
         
         
  </div></div>
-      <?php } ?>
+      
   
   
  

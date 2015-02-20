@@ -4,79 +4,15 @@ require_once get_template_directory() . '/theme-option/ariniothemes.php';
  * Set up the content width value based on the theme's design.
  */
  
- add_image_size('custombig', 798, 398, TRUE);
- add_image_size('workimg', 750, 464, TRUE);
+
+
 if ( ! isset( $content_width ) ) {
 	$content_width = 900;
 }
-// Adding breadcrumbs
-function avnii_breadcrumbs() {
- echo '<li><a href="';
- //echo get_option('home');
- echo home_url(); 
- echo '">Home';
- echo "</a></li>";
- 
-if (is_attachment()) {
-            echo "<li class='active'>attachment: ";
-    
-    
-   
-   echo "</li>";
-        }
- 
-  if (is_category() || is_single()) {
-   if(is_category())
-   {
-    echo "<li class='active'>Category By: ";
-   the_category(' &bull; ');
-   echo "</li>";
-   }
-   
-    if (is_single()) {
-   echo "<li>";
-   $category = get_the_category();
-   echo '<a rel="category" title="View all posts in '.$category[0]->cat_name.'" href="'.site_url().'/?cat='.$category[0]->term_id.'">'.$category[0]->cat_name.'</a>';
-   echo "</li>";
-     echo "<li class='active'>";
-     the_title();
-     echo "</li>";
-    }
-        } elseif (is_page()) {
-            echo "<li class='active'>";
-            echo the_title();
-   echo "</li>";
-  } elseif (is_search()) {
-            echo "<li class='active'>Search Results for... ";
-   echo '"<em>';
-   echo the_search_query();
-   echo '</em>"';
-   echo "</li>";
-        } elseif (is_tag()) { echo "<li class='active'>"; single_tag_title(); echo "</li>";}
-		 elseif (is_day()) {echo"<li class='active'>Archive for "; the_time('F jS, Y'); echo'</li>';}
-    elseif (is_month()) {echo"<li class='active'>Archive for "; the_time('F, Y'); echo'</li>';}
-    elseif (is_year()) {echo"<li class='active'>Archive for "; the_time('Y'); echo'</li>';}
-    elseif (is_author()) {echo"<li class='active'>Author Archive: "; printf(__(' %s', 'avnii'), "<a class='url fn n' href='" . get_author_posts_url(get_the_author_meta('ID')) . "' title='" . esc_attr(get_the_author()) . "' rel='me'>" . get_the_author() . "</a>"); echo'</li>';}
-	elseif (!is_single() && !is_page() && get_post_type() != 'post') {
-        $post_type = get_post_type_object(get_post_type());
-        //echo $before . $post_type->labels->singular_name . $after;
-        echo $before . '<li class="active">Search results for "' . get_search_query() . '"' . $after; echo "</li>";
-    }
-    }
-//fetch title
-function avnii_title() {
-	  if (is_category() || is_single())
-	  {
-	   if(is_category())
-		  the_category();
-	   if (is_single())
-		 the_title();
-	   }
-	   elseif (is_page()) 
-		  the_title();
-	   elseif (is_search())
-		   echo the_search_query();
-    }
+
+
+
+
 /* avnii Theme Starts */
 if ( ! function_exists( 'avnii_setup' ) ) :
 function avnii_setup() {
@@ -90,7 +26,7 @@ function avnii_setup() {
 	// Add RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
 	// Enable support for Post Thumbnails, and declare two sizes.
-	add_theme_support('post-formats', array('image', 'gallery', 'video', 'link', 'quote', 'audio'));
+	 
 	
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 798, 398, true );
@@ -122,6 +58,86 @@ function avnii_setup() {
 }
 endif; // avnii_setup
 add_action( 'after_setup_theme', 'avnii_setup' );
+
+
+
+
+
+
+
+
+
+
+
+// Adding breadcrumbs
+function avnii_breadcrumbs() {
+ echo '<li><a href="';
+ //echo get_option('home');
+ echo home_url(); 
+ echo '">'. __('Home','avnii');
+ echo "</a></li>";
+ 
+if (is_attachment()) {
+           echo "<li class='active'>". __('attachment:','avnii');
+    
+    
+   
+   echo "</li>";
+        }
+ 
+  if (is_category() || is_single()) {
+   if(is_category())
+   {
+   echo "<li class='active'>". __('Category By:','avnii');
+   the_category(' &bull; ');
+   echo "</li>";
+   }
+   
+    if (is_single()) {
+   echo "<li>";
+   $category = get_the_category();
+   echo '<a rel="category" title="View all posts in '.$category[0]->cat_name.'" href="'.site_url().'/?cat='.$category[0]->term_id.'">'.$category[0]->cat_name.'</a>';
+   echo "</li>";
+     echo "<li class='active'>";
+     the_title();
+     echo "</li>";
+    }
+        } elseif (is_page()) {
+            echo "<li class='active'>";
+            echo the_title();
+   echo "</li>";
+  } elseif (is_search()) {
+            echo "<li class='active'>". __('Search Results for...','avnii');
+   echo '"<em>';
+   echo the_search_query();
+   echo '</em>"';
+   echo "</li>";
+        } elseif (is_tag()) { echo "<li class='active'>"; single_tag_title(); echo "</li>";}
+		 elseif (is_day()) {echo"<li class='active'>". __('Archive for ','avnii'); the_time('F jS, Y'); echo'</li>';}
+    elseif (is_month()) {echo"<li class='active'>". __('Archive for ','avnii'); the_time('F, Y'); echo'</li>';}
+    elseif (is_year()) {echo"<li class='active'>". __('Archive for ','avnii'); the_time('Y'); echo'</li>';}
+    elseif (is_author()) {echo"<li class='active'>". __('Author Archive for ','avnii'); printf(__(' %s', 'avnii'), "<a class='url fn n' href='" . get_author_posts_url(get_the_author_meta('ID')) . "' title='" . esc_attr(get_the_author()) . "' rel='me'>" . get_the_author() . "</a>"); echo'</li>';}
+	elseif (!is_single() && !is_page() && get_post_type() != 'post') {
+        $post_type = get_post_type_object(get_post_type());
+        //echo $before . $post_type->labels->singular_name . $after;
+        echo $before . '<li class="active">'. __('Search Results for "','avnii').'' . get_search_query() . '"' . $after; echo "</li>";
+    }
+    }
+//fetch title
+function avnii_title() {
+	  if (is_category() || is_single())
+	  {
+	   if(is_category())
+		  the_category();
+	   if (is_single())
+		 the_title();
+	   }
+	   elseif (is_page()) 
+		  the_title();
+	   elseif (is_search())
+		   echo the_search_query();
+    }
+
  
 /**
  * Filter the page title.
@@ -250,7 +266,7 @@ add_filter('wp_list_categories', 'avnii_add_nav_class');
  * Replace Excerpt [...] with Read More
 **/
 function avnii_read_more( ) {
-return ' ... <p class="moree"><a class="arbtnn arbtnn-small arbtnnsrborder" href="'. get_permalink( get_the_ID() ) . '">Read more <i class="fa fa-arrow-circle-right"></i></a></p>';
+return ' ... <p class="moree"><a class="arbtnn arbtnn-small arbtnnsrborder" href="'. get_permalink( get_the_ID() ) . '">'.__('Read more','avnii').' <i class="fa fa-arrow-circle-right"></i></a></p>';
  }
 add_filter( 'excerpt_more', 'avnii_read_more' ); 
 /**
@@ -259,11 +275,11 @@ add_filter( 'excerpt_more', 'avnii_read_more' );
 function avnii_scripts_styles() {
 	 wp_enqueue_style('bootstrap', get_template_directory_uri() . '/styles/bootstrap.min.css');
           wp_enqueue_style( 'avnii-basic-style', get_stylesheet_uri() );
+		  wp_enqueue_style('font-awesome', get_template_directory_uri() . '/styles/font-awesome.css');
 		  wp_enqueue_style('normalize', get_template_directory_uri() . '/styles/normalize.css');
-		   wp_enqueue_script('jquery');
-		 wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/scripts/modernizr.js',array(),false,true);
-		  wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/styles/bootstrap.min.js',array(),false,true);
-		  wp_enqueue_script( 'custom', get_template_directory_uri() . '/scripts/custom.js',array(),false,true);
+		 wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/scripts/modernizr.js',array('jquery'),false,true);
+		  wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/styles/bootstrap.min.js',array('jquery'),false,true);
+		  wp_enqueue_script( 'custom', get_template_directory_uri() . '/scripts/custom.js',array('jquery'),false,true);
 		  
 	  if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 }
@@ -283,54 +299,13 @@ add_action( 'wp_enqueue_scripts', 'avnii_scripts_styles' );
 
 
 
-
-
-add_filter( 'comment_form_default_fields', 'avnii_comment_placeholders' );
-
-/**
- * Change default fields, add placeholder and change type attributes.
- *
- * @param  array $fields
- * @return array
- */
-function avnii_comment_placeholders( $fields )
-{
-    $fields['author'] = str_replace(
-        '<input',
-        '<input placeholder="'
-        /** I use _x() here to make your translators life easier. :)
-         * See http://codex.wordpress.org/Function_Reference/_x
-         */
-            . _x(
-                'Name',
-                'comment form placeholder',
-                'avnii'
-                )
-            . '"',
-        $fields['author']
-    );
-    $fields['email'] = str_replace(
-        '<input id="email" name="email" type="text"',
-        '<input type="email" placeholder="contact@example.com"  id="email" name="email"',
-        $fields['email']
-    );
-    $fields['url'] = str_replace(
-        '<input id="url" name="url" type="text"',
-        // Again: a better 'type' attribute value.
-        '<input placeholder="http://example.com" id="url" name="url" type="url"',
-        $fields['url']
-    );
-	
-
-    return $fields;
-}
-
+ 
 // placeholder to textarea
 function avnii_comment_textarea_field($comment_field) {
  
     $comment_field = 
          '<div class="col-md-12">
-            <textarea class="form-control" required placeholder="Enter Your Comments" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
+            <textarea class="form-control" required placeholder="'. __( 'Enter Your Comments', 'avnii' ).'" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
         </div>';
  
     return $comment_field;
@@ -356,61 +331,43 @@ add_filter('comment_text', 'avnii_wrap_comment_text');
 
 
 
-
-
 /**
  * Add default menu style if menu is not set from the backend.
  */
 function avnii_add_menuid ($page_markup) {
 preg_match('/^<div class=\"([a-z0-9-_]+)\">/i', $page_markup, $matches);
-$divclass = $matches[1];
-$toreplace = array('<div class="'.$divclass.'">', '</div>');
+
+$toreplace = array('<div class="navbar-collapse collapse top-gutter">', '</div>');
 $replace = array('<div class="navbar-collapse collapse top-gutter">', '</div>');
 $new_markup = str_replace($toreplace,$replace, $page_markup);
 $new_markup= preg_replace('/<ul/', '<ul class="nav navbar-nav navbar-right"', $new_markup);
 return $new_markup; }
 
 add_filter('wp_page_menu', 'avnii_add_menuid');
-/**
- * avnii custom pagination for posts 
- */
-function avnii_paginate($pages = '', $range = 1)
-{  
-     $showitems = ($range * 2)+1;  
-     global $paged;
-     if(empty($paged)) $paged = 1;
-     if($pages == '')
-     {
-         global $wp_query;
-         $pages = $wp_query->max_num_pages;
-         if(!$pages)
-         {
-             $pages = 1;
-         }
-     }   
-     if(1 != $pages)
-     {
-         echo "<div class='pagination'>";
-         if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<li class='pagination-previous-all'><a href='".get_pagenum_link(1)."'><span class='sprite previous-all-icon'><<</span></a></li>";
-         if($paged > 1 && $showitems < $pages) echo "<li class='pagination-previous'><a href='".get_pagenum_link($paged - 1)."'><span class='sprite previous-icon'><</span></a></li>";
-         for ($i=1; $i <= $pages; $i++)
-         {
-             if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
-             {
-                 echo ($paged == $i)? "<li><a href='#'>".$i."</a></li>":"<li><a href='".get_pagenum_link($i)."' class='inactive' >".$i."</a></li>";
-             }
-         }
-         if ($paged < $pages && $showitems < $pages) echo "<li class='pagination-next'><a href='".get_pagenum_link($paged + 1)."'><span class='sprite next-icon'>></span></a></li>";  
-         if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<li class='pagination-next-all'><a href='".get_pagenum_link($pages)."'><span class='sprite next-all-icon'>>></span></a></li>";
-         echo "</div>\n";
-     }
+
+
+
+
+
+
+if ( ! function_exists( 'avnii_ie_js_header' ) ) {
+	function avnii_ie_js_header () {
+		echo '<!--[if lt IE 9]>'. "\n";
+		echo '<script src="' . esc_url( get_template_directory_uri() . '/scripts/html5.js' ) . '"></script>'. "\n";
+		echo '<script src="' . esc_url( get_template_directory_uri() . '/scripts/selectivizr.js' ) . '"></script>'. "\n";
+		echo '<![endif]-->'. "\n";
+	}
+	
 }
-
-
-
-
-
-
-
-
-
+add_action( 'wp_head', 'avnii_ie_js_header' );
+/*  IE js footer
+/* ------------------------------------ */
+if ( ! function_exists( 'avnii_ie_js_footer' ) ) {
+	function avnii_ie_js_footer () {
+		echo '<!--[if lt IE 9]>'. "\n";
+		echo '<script src="' . esc_url( get_template_directory_uri() . '/scripts/respond.js' ) . '"></script>'. "\n";
+		echo '<![endif]-->'. "\n";
+	}
+	
+}
+add_action( 'wp_footer', 'avnii_ie_js_footer', 20 );

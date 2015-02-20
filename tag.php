@@ -30,14 +30,14 @@
                 <div class="col-md-9">
                
                 <h1>
-                    <?php printf('Tag Archives: %s', '' . single_tag_title('', false) . ''); ?>
+                    <?php printf(__('Tag Archives: %s', 'avnii'), '' . single_tag_title('', false) . ''); ?>
                 </h1>
                 <?php get_template_part('loop', 'tag'); ?>
             <div class="clearfix"></div>
                        <nav id="nav-single"> <span class="nav-previous">
-                            <?php next_posts_link('Next Post <i class="fa fa-long-arrow-right"></i>'); ?>
+                            <?php next_posts_link(__( 'Next Post <i class="fa fa-long-arrow-right"></i>', 'avnii' )); ?>
                         </span> <span class="nav-next">
-<?php previous_posts_link('<i class="fa fa-long-arrow-left"></i> Previous Post '); ?>
+<?php previous_posts_link(__( '<i class="fa fa-long-arrow-left"></i> Previous Post', 'avnii' )); ?>
                         </span> </nav>
                  <div class="clearfix"></div>
                 </div>

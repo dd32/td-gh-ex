@@ -4,56 +4,29 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?php wp_title( '|', true, 'right' ); ?></title>
-<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="profile" href="<?php echo esc_url( 'http://gmpg.org/xfn/11' ); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
-<?php $options = get_option( 'arinio_theme_options' ); 
-if($options['metak'] != '') {
-?>
- <meta name="keywords" content="<?php echo $options['metak'];?>" />
  
-<?php } ?>
-<?php if($options['metad'] != '') {
-?>
- <meta name="description" content="<?php echo $options['metad'];?>" />
- 
-<?php } ?>
-<?php if($options['metaa'] != '') {
-?>
- <meta name="author" content="<?php echo $options['metaa'];?>" />
- 
-<?php } ?>
 
 
 <?php $options = get_option( 'arinio_theme_options' ); 
 if($options['fevicon'] != '') {
 ?>
-<link rel="shortcut icon" href="<?php echo $options['fevicon'];?>">
+<link rel="shortcut icon" href="<?php echo esc_url_raw($options['fevicon']);?>">
 <?php } ?>
-<!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
-<!--[if lt IE 9]>
-      <script src="<?php echo get_template_directory_uri(); ?>/js/respond.min.js"></script>
-    <![endif]-->
+ 
  
    <?php wp_head(); ?> 
 
 
  
-    
- 
-<?php if($options['trackingc'] != '') {
-?>
- 
- 
-<?php echo $options['trackingc'];?>
- 
-<?php } ?>
 
 <?php if($options['customcss'] != '') {
 ?>
  
   <style type="text/css">
-<?php echo $options['customcss'];?>
+<?php echo esc_attr($options['customcss']);?>
 </style> 
 <?php } ?>
   
@@ -79,12 +52,13 @@ if($options['fevicon'] != '') {
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
+                    <span class="sr-only"><?php _e( 'Toggle navigation', 'avnii' ); ?></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-               <?php    if($options['logo'] != '') { echo '<img src="'.$options['logo'].'">'; }else{ echo ' <a class="navbar-brand" href="/">Avnii</a>'; } ?> 
+               <?php    if($options['logo'] != '') { echo '<img src="'.esc_url_raw($options['logo']).'">'; }else{ echo ' <a class="navbar-brand" id="divSiteTitle" href="/">'; echo bloginfo('name'); echo '</a> <br> <a href="" id="divTagLine">';echo bloginfo('description'); echo'</a>'; } ?> 
+               
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

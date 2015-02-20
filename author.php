@@ -43,7 +43,7 @@
                 if (get_the_author_meta('description')) :
                     ?>
                     <?php echo get_avatar(get_the_author_meta('user_email'), apply_filters('avnii_author_bio_avatar_size', 60)); ?>
-                    <h2><?php printf('About %s' . get_the_author()); ?></h2>
+                    <h2><?php printf(__('About %s', 'avnii') . get_the_author()); ?></h2>
                     <?php the_author_meta('description'); ?>
                 <?php endif; ?>
                 </div>
@@ -62,9 +62,9 @@
                <?php get_template_part('loop', 'author'); ?>
            <div class="clearfix"></div>
                     <nav id="nav-single"> <span class="nav-previous">
-                            <?php next_posts_link('Next Post <i class="fa fa-long-arrow-right"></i>'); ?>
+                            <?php next_posts_link(__( 'Next Post <i class="fa fa-long-arrow-right"></i>', 'avnii' )); ?>
                         </span> <span class="nav-next">
-<?php previous_posts_link('<i class="fa fa-long-arrow-left"></i> Previous Post '); ?>
+<?php previous_posts_link(__( '<i class="fa fa-long-arrow-left"></i> Previous Post', 'avnii' )); ?>
                         </span> </nav>
                     <div class="clearfix"></div>
                 </div>

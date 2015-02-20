@@ -31,8 +31,8 @@
                 <div class="article-page">
             
                 <h2>
-                    <?php
-                    printf('Category Archives: %s', '' . single_cat_title('', false) . '');
+                   <?php
+                    printf(__('Category Archives: %s', 'avnii'), '' . single_cat_title('', false) . '');
                     ?>
                 </h2>
                 <?php
@@ -51,9 +51,9 @@
             
             <div class="clearfix"></div>
                        <nav id="nav-single"> <span class="nav-previous">
-                            <?php next_posts_link('Next Post <i class="fa fa-long-arrow-right"></i>'); ?>
+                            <?php next_posts_link(__( 'Next Post <i class="fa fa-long-arrow-right"></i>', 'avnii' )); ?>
                         </span> <span class="nav-next">
-<?php previous_posts_link('<i class="fa fa-long-arrow-left"></i> Previous Post '); ?>
+<?php previous_posts_link(__( '<i class="fa fa-long-arrow-left"></i> Previous Post', 'avnii' )); ?>
                         </span> </nav>
          <div class="clearfix"></div>
                 </div>
