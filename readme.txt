@@ -101,5 +101,5 @@ v) html5 js file
 Image
 ---------------------------------------------------------
 
-	i). http://pixabay.com/en/skyscraper-city-night-urban-503324/
+	i). http://pixabay.com/en/skyscraper-city-night-urban-503324/  - Public Domain CC0 License 
 	

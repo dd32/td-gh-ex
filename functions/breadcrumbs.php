@@ -12,7 +12,7 @@ function impressive_custom_breadcrumbs() {
   $impressive_after = ' '; // tag after the current crumb
 
   global $post;
-  $impressive_homelink = home_url();
+  $impressive_homelink = esc_url(home_url('/'));
 
   if (is_home() || is_front_page()) {
 

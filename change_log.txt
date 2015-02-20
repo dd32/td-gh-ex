@@ -1,2 +1,8 @@
 Version 1.0
 i)   Theme Submitted for approval
+
+Version 1.0.1 (20-2-2015) 
+i)   Change home_url() to home_url('/').
+ii)  Add impressive- prefix in style enqueue.
+iii) Include license details of screenshot  and  add google font url in readme. 
+iv)  Globalize $content_width. 

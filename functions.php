@@ -9,7 +9,7 @@ function impressive_setup() {
 	register_nav_menus( array(
 		'primary'   => __( 'Main Menu', 'impressive' ),	
 	) );
-	
+	global $content_width;
 	if ( ! isset( $content_width ) ) $content_width = 900;
 			/*
 		 * Make impressive theme available for translation.
@@ -68,8 +68,8 @@ add_action('wp_head','impressive_header_bg_img_css');
 function impressive_header_bg_img_css()
 {
 	$impressive_options = get_option('impressive_theme_options');
-	$impressive_header_bg_img = $impressive_options['headertop-bg'];
-	$impressive_touch_bg_img = $impressive_options['get-in-touch-background'];
+	$impressive_header_bg_img = esc_url($impressive_options['headertop-bg']);
+	$impressive_touch_bg_img = esc_url($impressive_options['get-in-touch-background']);
 	$impressive_header_output="<style> .header_bg { background :url('".$impressive_header_bg_img."'); } </style>";
 	$impressive_touch_output="<style> .get-in-touch { background :url('".$impressive_touch_bg_img."'); } </style>";
 	echo $impressive_header_output;

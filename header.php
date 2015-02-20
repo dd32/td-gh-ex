@@ -54,7 +54,7 @@ $impressive_options = get_option('impressive_theme_options');
                             <?php } ?>
 
                             <div class="searchform-wrap">
-                                <form class="searchform" method="get" id="searchform" action="<?php echo home_url(); ?>">
+                                <form class="searchform" method="get" id="searchform" action="<?php echo esc_url(home_url('/')); ?>">
                                     <i class="icon-search"></i>
                                     <input type="text" value="<?php the_search_query(); ?>" class="search-box" name="s" id="s"  placeholder="<?php _e('Search', 'impressive'); ?>" />
                                 </form>
