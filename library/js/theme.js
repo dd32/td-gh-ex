@@ -23,8 +23,6 @@
 	} );
 
 	// Image anchor
-	$( 'a:has(img)' ).addClass( 'image-anchor' );
-
 	$( 'a[href="#"]' ).click( function(e) {
 		e.preventDefault();
 	} );

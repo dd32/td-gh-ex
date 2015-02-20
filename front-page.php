@@ -16,16 +16,24 @@ $bavotasan_theme_options = bavotasan_theme_options();
 
 if ( 2 > $paged ) {
 	// Display jumbo headline is the option is set
-	if ( ! empty( $bavotasan_theme_options['jumbo_headline_title'] ) ) {
+	if ( is_active_sidebar( 'jumbo-headline' ) || ! empty( $bavotasan_theme_options['jumbo_headline_title'] ) ) {
 	?>
 	<div class="home-top">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<div class="home-jumbotron jumbotron">
-						<h1><?php echo apply_filters( 'the_title', html_entity_decode( $bavotasan_theme_options['jumbo_headline_title'] ) ); ?></h1>
-						<p class="lead"><?php echo wp_kses_post( html_entity_decode( $bavotasan_theme_options['jumbo_headline_text'] ) ); ?></p>
-					</div>
+					<?php
+					if ( is_active_sidebar( 'jumbo-headline' ) ) {
+						dynamic_sidebar( 'jumbo-headline' );
+					} else {
+						?>
+						<div class="home-jumbotron jumbotron">
+							<h1><?php echo apply_filters( 'the_title', html_entity_decode( $bavotasan_theme_options['jumbo_headline_title'] ) ); ?></h1>
+							<p><?php echo wp_kses_post( html_entity_decode( $bavotasan_theme_options['jumbo_headline_text'] ) ); ?></p>
+						</div>
+						<?php
+					}
+					?>
 				</div>
 			</div>
 		</div>

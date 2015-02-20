@@ -6,22 +6,24 @@
  */
 function bavotasan_theme_options() {
 	//delete_option( 'arcade_basic_theme_options' );
-	$default_theme_options = array(
-		'arc' => 400,
-		'fittext' => '',
-		'header_icon' => 'fa-heart',
-		'width' => '1170',
-		'layout' => 'right',
-		'primary' => 'col-md-8',
-		'display_author' => 'on',
-		'display_date' => 'on',
-		'display_comment_count' => 'on',
-		'display_categories' => 'on',
-		'jumbo_headline_title' => 'A great big headline to catch some attention',
-		'jumbo_headline_text' => 'By ten o\'clock the police organisation, and by midday even the railway organisations, were losing coherency, losing shape and efficiency, guttering, softening, running at last in that swift liquefaction of the social body.',
-	);
+	if ( ! $options = get_option( 'arcade_basic_theme_options' ) ) {
+		$options = array(
+			'arc' => 400,
+			'arc_inner' => 400,
+			'fittext' => '',
+			'header_icon' => 'fa-heart',
+			'width' => '1170',
+			'layout' => 'right',
+			'primary' => 'col-md-8',
+			'display_author' => 'on',
+			'display_date' => 'on',
+			'display_comment_count' => 'on',
+			'display_categories' => 'on',
+		);
+		add_option( 'arcade_basic_theme_options', $options );
+	}
 
-	return get_option( 'arcade_basic_theme_options', $default_theme_options );
+	return $options;
 }
 
 if ( class_exists( 'WP_Customize_Control' ) ) {
@@ -87,7 +89,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 				</label>
 				<?php
 			endforeach;
-			echo '<p class="description">' . __( 'Sidebars do not appear on the home page unless you have set a static front page.', 'arcade' ) . '</p>';
+			echo '<p class="description">' . __( 'The sidebar will not appear on the Post Block page template.', 'arcade' ) . '</p>';
 	    }
 	}
 }
@@ -101,7 +103,7 @@ class Bavotasan_Customizer {
 	public function customize_controls_print_styles() {
 		wp_enqueue_script( 'bavotasan_image_widget', BAVOTASAN_THEME_URL . '/library/js/admin/image-widget.js', array( 'jquery' ), '', true );
 		wp_enqueue_style( 'bavotasan_image_widget_css', BAVOTASAN_THEME_URL . '/library/css/admin/image-widget.css' );
-		wp_enqueue_style( 'font_awesome', BAVOTASAN_THEME_URL .'/library/css/font-awesome.css', false, '4.1.0', 'all' );
+		wp_enqueue_style( 'font_awesome', BAVOTASAN_THEME_URL .'/library/css/font-awesome.css', false, '4.3.0', 'all' );
 	}
 
 	/**
@@ -127,7 +129,22 @@ class Bavotasan_Customizer {
 			'label' => __( 'Arc Radius', 'arcade' ),
 			'section' => 'title_tagline',
 			'settings' => 'arcade_basic_theme_options[arc]',
+			'priority' => 10,
+		) ) );
+
+		$wp_customize->add_setting( 'arcade_basic_theme_options[arc_inner]', array(
+			'default' => $bavotasan_theme_options['arc_inner'],
+			'type' => 'option',
+			'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'absint',
+		) );
+
+		$wp_customize->add_control( new Bavotasan_Text_Description_Control( $wp_customize, 'arc_inner', array(
+			'label' => __( 'Arc Radius (Inner Pages)', 'arcade' ),
+			'section' => 'title_tagline',
+			'settings' => 'arcade_basic_theme_options[arc_inner]',
 			'description' => __( 'The space and rotation for each letter will be calculated using the arc radius and the width of the site title. Leave blank for no arc.', 'arcade' ),
+			'priority' => 20,
 		) ) );
 
 		$wp_customize->add_setting( 'arcade_basic_theme_options[fittext]', array(
@@ -142,6 +159,7 @@ class Bavotasan_Customizer {
 			'section' => 'title_tagline',
 			'settings' => 'arcade_basic_theme_options[fittext]',
 			'type' => 'checkbox',
+			'priority' => 30,
 		) );
 
 		$wp_customize->add_setting( 'arcade_basic_theme_options[header_icon]', array(
@@ -155,6 +173,7 @@ class Bavotasan_Customizer {
 			'label' => __( 'Header Icon', 'arcade' ),
 			'section' => 'title_tagline',
 			'settings' => 'arcade_basic_theme_options[header_icon]',
+			'priority' => 40,
 		) ) );
 
 		// Layout section panel
@@ -192,7 +211,6 @@ class Bavotasan_Customizer {
 			'col-md-8' => '66%',
 			'col-md-9' => '75%',
 			'col-md-10' => '83%',
-			'col-md-12' => '100%',
 		);
 
 		$wp_customize->add_setting( 'arcade_basic_theme_options[primary]', array(
@@ -241,62 +259,11 @@ class Bavotasan_Customizer {
 			'success' => __( 'Green', 'arcade' ),
 		);
 
-		// Jumbo headline section panel
-		$wp_customize->add_section( 'bavotasan_jumbo', array(
-			'title' => __( 'Jumbo Headline', 'arcade' ),
-			'priority' => 36,
-			'description' => __( 'This section appears below the header image on the home page. To remove it just delete all the content from the Title textarea.', 'arcade' ),
-		) );
-
-		$wp_customize->add_setting( 'arcade_basic_theme_options[jumbo_headline_title]', array(
-			'default' => $bavotasan_theme_options['jumbo_headline_title'],
-			'type' => 'option',
-			'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_textarea',
-		) );
-
-		$wp_customize->add_control( new Bavotasan_Textarea_Control( $wp_customize, 'jumbo_headline_title', array(
-			'label' => __( 'Title', 'arcade' ),
-			'section' => 'bavotasan_jumbo',
-			'settings' => 'arcade_basic_theme_options[jumbo_headline_title]',
-			'priority' => 26,
-			'type' => 'text',
-		) ) );
-
-		$wp_customize->add_setting( 'arcade_basic_theme_options[jumbo_headline_text]', array(
-			'default' => $bavotasan_theme_options['jumbo_headline_text'],
-			'type' => 'option',
-			'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_textarea',
-		) );
-
-		$wp_customize->add_control( new Bavotasan_Textarea_Control( $wp_customize, 'jumbo_headline_text', array(
-			'label' => __( 'Text', 'arcade' ),
-			'section' => 'bavotasan_jumbo',
-			'settings' => 'arcade_basic_theme_options[jumbo_headline_text]',
-			'priority' => 27,
-			'type' => 'text',
-		) ) );
-
 		// Posts panel
 		$wp_customize->add_section( 'bavotasan_posts', array(
 			'title' => __( 'Posts', 'arcade' ),
 			'priority' => 45,
-			'description' => __( 'These options do not affect the home page post section.', 'arcade' ),
-		) );
-
-		$wp_customize->add_setting( 'arcade_basic_theme_options[display_categories]', array(
-			'default' => $bavotasan_theme_options['display_categories'],
-			'type' => 'option',
-			'capability' => 'edit_theme_options',
-            'sanitize_callback' => array( $this, 'sanitize_checkbox' ),
-		) );
-
-		$wp_customize->add_control( 'bavotasan_display_categories', array(
-			'label' => __( 'Display Categories', 'arcade' ),
-			'section' => 'bavotasan_posts',
-			'settings' => 'arcade_basic_theme_options[display_categories]',
-			'type' => 'checkbox',
+			'description' => __( 'These options do not affect the Post Block page template.', 'arcade' ),
 		) );
 
 		$wp_customize->add_setting( 'arcade_basic_theme_options[display_author]', array(
@@ -311,6 +278,7 @@ class Bavotasan_Customizer {
 			'section' => 'bavotasan_posts',
 			'settings' => 'arcade_basic_theme_options[display_author]',
 			'type' => 'checkbox',
+			'priority' => 10,
 		) );
 
 		$wp_customize->add_setting( 'arcade_basic_theme_options[display_date]', array(
@@ -325,6 +293,22 @@ class Bavotasan_Customizer {
 			'section' => 'bavotasan_posts',
 			'settings' => 'arcade_basic_theme_options[display_date]',
 			'type' => 'checkbox',
+			'priority' => 20,
+		) );
+
+		$wp_customize->add_setting( 'arcade_basic_theme_options[display_categories]', array(
+			'default' => $bavotasan_theme_options['display_categories'],
+			'type' => 'option',
+			'capability' => 'edit_theme_options',
+            'sanitize_callback' => array( $this, 'sanitize_checkbox' ),
+		) );
+
+		$wp_customize->add_control( 'bavotasan_display_categories', array(
+			'label' => __( 'Display Categories', 'arcade' ),
+			'section' => 'bavotasan_posts',
+			'settings' => 'arcade_basic_theme_options[display_categories]',
+			'type' => 'checkbox',
+			'priority' => 30,
 		) );
 
 		$wp_customize->add_setting( 'arcade_basic_theme_options[display_comment_count]', array(
@@ -339,6 +323,7 @@ class Bavotasan_Customizer {
 			'section' => 'bavotasan_posts',
 			'settings' => 'arcade_basic_theme_options[display_comment_count]',
 			'type' => 'checkbox',
+			'priority' => 40,
 		) );
 	}
 

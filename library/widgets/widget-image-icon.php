@@ -17,19 +17,30 @@ class Bavotasan_Custom_Text_Widget extends WP_Widget {
 		wp_enqueue_script( 'bavotasan_image_widget', BAVOTASAN_THEME_URL . '/library/js/admin/image-widget.js', array( 'jquery' ), '', true );
 
 		wp_enqueue_style( 'bavotasan_image_widget_css', BAVOTASAN_THEME_URL . '/library/css/admin/image-widget.css' );
-		wp_enqueue_style( 'font_awesome', BAVOTASAN_THEME_URL .'/library/css/font-awesome.css', false, '4.1.0', 'all' );
+		wp_enqueue_style( 'font_awesome', BAVOTASAN_THEME_URL .'/library/css/font-awesome.css', false, '4.3.0', 'all' );
 	}
 
 	function widget( $args, $instance ) {
 		extract( $args );
 		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
-		$text = apply_filters( 'widget_text', empty( $instance['text'] ) ? '' : $instance['text'], $instance );
 		$icon =  ( empty( $instance['icon'] ) ) ? '' : '<i class="' . esc_attr( $instance['button_color'] ) . ' fa ' . strip_tags( $instance['icon'] ). '"></i>';
-		$url = esc_url( $instance['url'] );
+		$url = ( empty( $instance['url'] ) ) ? '' : esc_url( $instance['url'] );
+		$text = apply_filters( 'widget_text', empty( $instance['text'] ) ? '' : $instance['text'], $instance );
 		$button_text = ( empty( $instance['button_text'] ) ) ? '' : $instance['button_text'];
 
 		$icon_string = ( $url ) ? '<a href="' . $url . '">'. $icon . '</a>' : $icon;
 		$title_string = ( $url ) ? '<a href="' . $url . '">'. $title . '</a>' : $title;
+
+		// WPML Compatibility
+		if ( function_exists( 'icl_register_string' ) ) {
+ 			icl_register_string( 'Widgets', 'arcade_widget_text_' . $this->number, $text );
+ 			icl_register_string( 'Widgets', 'arcade_widget_button_text_' . $this->number, $button_text );
+ 		}
+
+		if ( function_exists( 'icl_t' ) ) {
+ 			$text = icl_t( 'Widgets', 'arcade_widget_text_' . $this->number, $text );
+ 			$button_text = icl_t( 'Widgets', 'arcade_widget_button_text_' . $this->number, $button_text );
+ 		}
 
 		echo $before_widget;
 
