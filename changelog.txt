@@ -1,5 +1,9 @@
 == Change log ==
 
+= 0.7 =
+* Removed jquery cookie and its dependencies
+* Added fullframe- prefix to dark css handle
+
 = 0.6 =
 * Added fullframe- prefix to some js handles
 * Bug Fixed: undefined index $page_for_posts for Featured Header Image

@@ -273,8 +273,7 @@ add_action( 'wp_enqueue_scripts', 'fullframe_scripts' );
  */
 function fullframe_enqueue_metabox_scripts() {
     //Scripts
-	wp_register_script( 'jquery-cookie', get_template_directory_uri() . '/js/jquery.cookie.min.js' );
-	wp_enqueue_script( 'fullframe-metabox', get_template_directory_uri() . '/js/fullframe-metabox.min.js', array( 'jquery-ui-tabs', 'jquery-cookie' ), '2013-10-05' );
+	wp_enqueue_script( 'fullframe-metabox', get_template_directory_uri() . '/js/fullframe-metabox.min.js', array( 'jquery', 'jquery-ui-tabs' ), '2013-10-05' );
 	
 	//CSS Styles
 	wp_enqueue_style( 'fullframe-metabox-tabs', get_template_directory_uri() . '/css/fullframe-metabox-tabs.css' );

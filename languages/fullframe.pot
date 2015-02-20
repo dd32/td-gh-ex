@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Full Frame\n"
 "Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/full-frame-pro-"
 "premium/pro-premium/\n"
-"POT-Creation-Date: 2015-02-19 20:40+0545\n"
-"PO-Revision-Date: 2015-02-19 20:40+0545\n"
+"POT-Creation-Date: 2015-02-20 11:55+0545\n"
+"PO-Revision-Date: 2015-02-20 11:55+0545\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: en\n"
@@ -141,8 +141,8 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: ../content-page.php:35 ../inc/fullframe-core.php:631
-#: ../inc/fullframe-core.php:650
+#: ../content-page.php:35 ../inc/fullframe-core.php:630
+#: ../inc/fullframe-core.php:649
 msgid "Edit"
 msgstr ""
 
@@ -629,7 +629,7 @@ msgstr ""
 msgid "Error 404"
 msgstr ""
 
-#: ../inc/fullframe-breadcrumb.php:222 ../inc/fullframe-core.php:902
+#: ../inc/fullframe-breadcrumb.php:222 ../inc/fullframe-core.php:901
 #, php-format
 msgid "Page %s"
 msgstr ""
@@ -638,76 +638,76 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: ../inc/fullframe-core.php:597
+#: ../inc/fullframe-core.php:596
 msgid "Post navigation"
 msgstr ""
 
-#: ../inc/fullframe-core.php:606
+#: ../inc/fullframe-core.php:605
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: ../inc/fullframe-core.php:607
+#: ../inc/fullframe-core.php:606
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: ../inc/fullframe-core.php:631
+#: ../inc/fullframe-core.php:630
 msgid "Pingback:"
 msgstr ""
 
-#: ../inc/fullframe-core.php:641
+#: ../inc/fullframe-core.php:640
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr ""
 
-#: ../inc/fullframe-core.php:647
+#: ../inc/fullframe-core.php:646
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: ../inc/fullframe-core.php:654
+#: ../inc/fullframe-core.php:653
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../inc/fullframe-core.php:757
+#: ../inc/fullframe-core.php:756
 msgctxt "Used before publish date."
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
 msgstr ""
 
-#: ../inc/fullframe-core.php:764
+#: ../inc/fullframe-core.php:763
 msgctxt "Used before post author name."
 msgid "<span class=\"screen-reader-text\">Author</span>"
 msgstr ""
 
-#: ../inc/fullframe-core.php:793 ../inc/fullframe-core.php:801
+#: ../inc/fullframe-core.php:792 ../inc/fullframe-core.php:800
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ""
 
-#: ../inc/fullframe-core.php:796
+#: ../inc/fullframe-core.php:795
 msgctxt "Used before category names."
 msgid "<span class=\"screen-reader-text\">Categories</span>"
 msgstr ""
 
-#: ../inc/fullframe-core.php:804
+#: ../inc/fullframe-core.php:803
 msgctxt "Used before tag names."
 msgid "<span class=\"screen-reader-text\">Tags</span>"
 msgstr ""
 
-#: ../inc/fullframe-core.php:998
+#: ../inc/fullframe-core.php:997
 #, php-format
 msgid "%s"
 msgstr ""
 
-#: ../inc/fullframe-core.php:1432
+#: ../inc/fullframe-core.php:1431
 msgid "Scroll Up"
 msgstr ""
 
-#: ../inc/fullframe-core.php:1449
+#: ../inc/fullframe-core.php:1448
 msgid "Posted on"
 msgstr ""
 
-#: ../inc/fullframe-core.php:1450
+#: ../inc/fullframe-core.php:1449
 msgid "By"
 msgstr ""
 
