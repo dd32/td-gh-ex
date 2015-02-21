@@ -4,7 +4,8 @@
 &nbsp;
 &bull;
 &nbsp;
-<a href="http://www.quickonlinethemes.com/wordpress/quickpress/" rel="nofollow" title="QuickPress Theme">QuickPress Theme</a> powered by <a href="http://wordpress.org">WordPress</a> 
+<a href="http://www.quickonlinethemes.com/wordpress/quickpress/" rel="nofollow" title="QuickPress Theme">QuickPress Theme</a> powered by <a href="http://wordpress.org">WordPress</a>
+
 </p>
 </div>
 </div>

@@ -1,8 +1,8 @@
 <?php
-/* Register sidebar widgets */
+// Register sidebar widgets
 function quickpress_widgets_init() {
 register_sidebar(array(
-        'name' => __( 'Sidebar 1', 'quickpress' ),
+        'name' => 'Sidebar 1',
         'id' => 'sidebar-1',
         'before_widget' => '',
         'after_widget' => '',
@@ -10,7 +10,7 @@ register_sidebar(array(
         'after_title' => '</h4>',
     ));
 register_sidebar(array(
-        'name' => __( 'Sidebar 2', 'quickpress' ),
+        'name' => 'Sidebar 2',
         'id' => 'sidebar-2',
         'before_widget' => '',
         'after_widget' => '',
@@ -18,7 +18,7 @@ register_sidebar(array(
         'after_title' => '</h4>',
 )); 
 register_sidebar(array(
-        'name' => __( 'Sidebar 3', 'quickpress' ),
+         'name' => 'Sidebar 3',
         'id' => 'sidebar-3',
         'before_widget' => '',
         'after_widget' => '',
@@ -26,7 +26,7 @@ register_sidebar(array(
         'after_title' => '</h4>',
 )); 
 register_sidebar(array(
-        'name' => __( 'Nav Menu', 'quickpress' ),
+         'name' => 'Nav Menu',
         'id' => 'nav-menu',
         'before_widget' => '',
         'after_widget' => '',
@@ -34,9 +34,11 @@ register_sidebar(array(
         'after_title' => '',
 )); 
 }
-add_action( 'init', 'quickpress_widgets_init' );
-/* Add feeds */
+add_action( 'widgets_init', 'quickpress_widgets_init' );
+
+// Add feeds
 add_theme_support('automatic-feed-links');
+
 // Comment Reply Script
 add_action( 'wp_enqueue_scripts', '_enqueue_scripts' );
 function _enqueue_scripts(){
@@ -45,20 +47,33 @@ function _enqueue_scripts(){
         wp_enqueue_script( 'comment-reply' );
     }
 } 
-/* Load Stylesheet */
+
+// add editor style
+function quickpress_add_editor_styles() {
+    add_editor_style( 'custom-editor-style.css' );
+}
+add_action( 'admin_init', 'quickpress_add_editor_styles' );
+
+// Load Stylesheet
 function quickstyle() {
     wp_enqueue_style( 'style-name', get_stylesheet_uri() );
 }
 add_action( 'wp_enqueue_scripts', 'quickstyle' );
-/* Custom Background */
+
+// Custom Background
 $args = array(
 	'default-color' => 'EDE8E2',
 	'default-image' => get_template_directory_uri() . '/images/background.jpg',
 );
 add_theme_support( 'custom-background', $args );
+
+// add title tag
+add_theme_support( 'title-tag' );
+
 // post thumbnails
 add_theme_support('post-thumbnails');
-/* Title filter */
+
+// Title filter 
 function quick_title( $title ) {
     // Get the Site Name
     $site_name = get_bloginfo( 'name' );
@@ -68,7 +83,8 @@ function quick_title( $title ) {
     return $filtered_title;
 }
 add_filter( 'wp_title', 'quick_title');
-/* Content width */
+ 
+// Content width
 if ( ! isset( $content_width ) )
 	$content_width = 540;
 ?>
