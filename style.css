@@ -2,13 +2,13 @@
 Theme Name: QuickPic
 Theme URI: http://www.quickonlinethemes.com/wordpress/quickpic/
 Description: 1-column, lightweight, widget ready, fast loading, SEO optimized, easy to customize theme, useful for photoblogging.
-Version: 1.4.3
+Version: 1.4.4
 Author: QuickOnlineThemes
 Author URI: http://www.quickonlinethemes.com/
 Tags: green, gray, dark, white, fixed-layout, responsive-layout, one-column, threaded-comments, sticky-post, photoblogging, custom-background
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-QuickPic WordPress Theme, Copyright 2014 QuickOnlineThemes.com
+QuickPic WordPress Theme, Copyright 2015 QuickOnlineThemes.com
 QuickPic is distributed under the terms of the GNU GPL
 */
 /* Begin Typography &amp; Colors
@@ -226,7 +226,7 @@ color: #CCC;
 }
 .narrowcolumn {
 padding: 0 0 20px 0px;
-margin: 0px auto;
+margin: 30px auto;
 width: 540px;
 background: #fff;
 }

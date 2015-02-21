@@ -7,21 +7,21 @@
 <div style="clear:both;"></div>
 <div id="boxes">
  <div id="box1">
-<!-- Widgetized sidebar 1 --> 
+<!-- Widgetized footer  1 --> 
 <ul>
   <li>
- <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
- <?php dynamic_sidebar( 'sidebar-1' ); ?>
+ <?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
+ <?php dynamic_sidebar( 'footer-1' ); ?>
 <?php endif; ?> 
   </li>
 </ul> 
 </div>
 <div id="box2"> 
-<!-- Widgetized sidebar 2 --> 
+<!-- Widgetized footer 2 --> 
 <ul>
   <li>
- <?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
- <?php dynamic_sidebar( 'sidebar-2' ); ?>
+ <?php if ( is_active_sidebar( 'footer-2' ) ) : ?>
+ <?php dynamic_sidebar( 'footer-2' ); ?>
 <?php endif; ?> 
   </li>
 </ul>
