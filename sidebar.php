@@ -3,6 +3,7 @@
 <?php if (is_home()) { ?><h1><?php } ?>
 <a class="blogtitle" href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo('name'); ?></a><?php if (is_home()) { ?></h1><?php } ?><div class="description"><?php bloginfo('description'); ?></div>
 </div> 
+
 <!-- Widgetized sidebar 1 --> 
 <ul>
   <li>
@@ -11,6 +12,7 @@
 <?php endif; ?> 
   </li>
 </ul>
+
 <!-- Widgetized sidebar 2 --> 
 <ul>
   <li>
