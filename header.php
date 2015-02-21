@@ -36,7 +36,7 @@ switch ( $bfa_ata['IEDocType'] ) {
 		break;
 	default:
 		break;
-}} ?><?php bfa_meta_tags(); ?>
+}} ?><?php echo bfa_meta_tags(); ?>
 <?php 
 
 if ($bfa_ata['favicon_file'] != "") { 

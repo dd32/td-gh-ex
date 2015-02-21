@@ -66,7 +66,7 @@ function bfa_title_tag( $title, $sep ) {
 		if ( is_front_page() ) {
 			return get_bloginfo('name');
 		} else {
-			return trim( $title ) . " &laquo; " . get_bloginfo('name');
+			return trim( $title ) . " &#171; " . get_bloginfo('name');
 		}
 
 		

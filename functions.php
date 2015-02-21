@@ -1,5 +1,5 @@
 <?php
-$bfa_ata_version = "3.7.22";
+$bfa_ata_version = "3.7.23";
 
 // Load translation file above
 load_theme_textdomain('atahualpa');
@@ -648,18 +648,21 @@ function bfa_ata_save_postdata( $post_id ) {
 
   /* verify this came from the our screen and with proper authorization,
   because save_post can be triggered at other times */
+// Before using $_POST['value']    
+if (isset($_POST['bfa_ata_noncename']))    
+{     
 
-  if ( !wp_verify_nonce( $_POST['bfa_ata_noncename'], plugin_basename(__FILE__) )) {
-    return $post_id;
-  }
+	if ( !wp_verify_nonce( $_POST['bfa_ata_noncename'], plugin_basename(__FILE__) )) {
+		return $post_id;
+	}
 
-  if ( 'page' == $_POST['post_type'] ) {
-    if ( !current_user_can( 'edit_page', $post_id ))
-      return $post_id;
-  } else {
-    if ( !current_user_can( 'edit_post', $post_id ))
-      return $post_id;
-  }
+	if ( 'page' == $_POST['post_type'] ) {
+		if ( !current_user_can( 'edit_page', $post_id ))
+			return $post_id;
+	} else {
+		if ( !current_user_can( 'edit_post', $post_id ))
+			return $post_id;
+		}
 
 	// Save the data
 	
@@ -677,7 +680,7 @@ function bfa_ata_save_postdata( $post_id ) {
 	update_post_meta($post_id, 'bfa_ata_meta_keywords', $new_meta_keywords);
 	update_post_meta($post_id, 'bfa_ata_meta_description', $new_meta_description);
 
-}
+}}
 
 if ( function_exists( 'add_theme_support' ) ) { // Added in 2.9
 
