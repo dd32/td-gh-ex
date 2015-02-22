@@ -2,7 +2,7 @@
 Catch Everest Theme by Catch Themes, http://catchthemes.com/
 
 == ABOUT Catch Everest ==
-Catch Everest is Simple, Clean and Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel which makes this theme highly customisable and flexible. Make your beautiful yet professional website in no time. Translation Ready and also currently translated in Polish, Chinese, Spanish, Italian, German(SWITZERLAND), Russian, Japanese, French, Brazilian Portuguese and Dutch. Active community at http://catchthemes.com/support-forum/
+Catch Everest is Simple, Clean and Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel which makes this theme highly customisable and flexible. Make your beautiful yet professional website in no time. Translation Ready and also currently translated in Polish, Chinese, Spanish, Italian, German(SWITZERLAND), Russian, Japanese, French, Brazilian Portuguese, Dutch and Turkish. Active community at http://catchthemes.com/support-forum/
 
 == Tags ==
 light, gray, white, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-header, custom-menu, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -21,6 +21,7 @@ Added Translation for Brazilian Portuguese by Valdir Trombini (Email: valdirtrom
 Added Translation for Dutch by Alain Baudrez (Email: a.baudrez@gmail.com) and Yoshi van den Akker ( Email: yoshivda@gmail.com )
 Added Translation for German - Stephan Erdmann (Email: s.erdmann@bewegungsfelder.de )
 Added Translation for Catalan - Dr. Jaume Albaiges (jaumealbaiges@hotmail.com)
+Added Translation for Turkish - Dr. Hakan Gur (dilderslerisitesi@gmail.com)
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt

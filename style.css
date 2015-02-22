@@ -3,8 +3,8 @@ Theme Name: Catch Everest
 Theme URI: http://catchthemes.com/themes/catch-everest
 Author: Catch Themes
 Author URI: http://catchthemes.com
-Description: Catch Everest is Simple, Clean and Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel which makes this theme highly customizable and flexible. Make your beautiful yet professional website in no time. Translation Ready and currently translated in Polish, Chinese, Spanish, Italian, German(SWITZERLAND), Russian, Japanese, French, Brazilian Portuguese and Dutch. Active community at http://catchthemes.com/support-forum/
-Version: 2.1
+Description: Catch Everest is Simple, Clean and Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel which makes this theme highly customizable and flexible. Make your beautiful yet professional website in no time. Translation Ready and currently translated in Polish, Chinese, Spanish, Italian, German(SWITZERLAND), Russian, Japanese, French, Brazilian Portuguese, Dutch and Turkish. Active community at http://catchthemes.com/support-forum/
+Version: 2.2
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Tags: light, gray, white, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -93,8 +93,11 @@ a img {
 /* Self Clearing Goodness */
 .container:after,
 #header-menu:after,
+#featured-post:after,
+#footer-menu:after,
 .entry-container:after,
 .entry-header:after,
+.entry-content:after,
 .widget:after,
 #supplementary:after,
 .site-info:after,
@@ -122,7 +125,7 @@ a img {
 
 .site {
 	width: 990px;
-	margin: 30px auto;	
+	margin: 20px auto;
 }
 #header-left {
     float: left;
@@ -159,6 +162,9 @@ blockquote,
 #homepage-message {
 	margin-top: 40px;
 }
+.single-format-gallery .entry-meta {
+	margin-top: 30px;
+}
 article.sticky .featured-post,
 .page-header,
 p,
@@ -166,13 +172,16 @@ p,
 .entry-content table,
 .comment-content table,
 .widget.widget_catcheverest_social_widget,
-#content .searchform {
+#content .searchform,
+.page-link,
+.single-attachment .entry-attachment img {
 	margin-bottom: 30px;
 }
 #header-right .widget,
 .entry-header,
 article.format-aside .entry-title,
-.comments-area article header {
+.comments-area article header,
+.widget-feat-content {
 	margin-bottom: 20px;	
 }
 .page .entry-header,
@@ -260,7 +269,6 @@ textarea {
 	-webkit-box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);	
 	-moz-box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);	
 	box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);	
-	overflow: hidden;
 }
 
 /* Headings */
@@ -674,12 +682,6 @@ img#wpstats {
 
 /* =Responsive Menu (Tinynav.js)
 -------------------------------------------------------------- */
-.default-menu {
-	display: none !important;
-}
-.sb-options li:last-child {
-	display: none;
-}
 .tinynav { 
     display: none;
 	font-size: 16px;
@@ -780,6 +782,12 @@ img#wpstats {
 }
 .sb-options .sb-sub {
     padding-left: 17px;
+}
+.default-menu {
+	display: none !important;
+}
+.sb-options li:last-child {
+	display: none;
 }
 
 
@@ -898,9 +906,9 @@ img#wpstats {
 -------------------------------------------------------------- */
 
 #homepage-message {
-    background-color: #FAFAFA;
-    border-bottom: 1px solid #E6E6E6;
-    border-top: 1px solid #E6E6E6;
+    background-color: #fafafa;
+    border-bottom: 1px solid #e6e6e6;
+    border-top: 1px solid #e6e6e6;
     line-height: 1.5;
     text-align: center;
 }
@@ -919,14 +927,13 @@ img#wpstats {
 	padding-bottom: 5px;
 }
 #featured-post .post {
-    display: inline;
     float: left;
-    margin-left: 5%;
-    width: 30%;
+    margin-left: 4%;
+    width: 30.66%;
 }
 #featured-post .post.first {
-	margin-left: 0;
 	clear: both;
+	margin-left: 0;
 }
 
 
@@ -1363,7 +1370,10 @@ img.alignright,
 .gallery-columns-1 .gallery-icon img {
 	padding: 3%;
 }
-
+.single-attachment .image-attachment img {
+	display: block;
+    margin: 0 auto;
+}
 
 /* Make sure embeds and iframes fit their containers */
 embed,
@@ -1383,14 +1393,19 @@ object {
 #nav-above {
 	display: none;
 }
-.site-content .nav-previous {
+.site-content .nav-previous,
+.site-content .previous-image {
 	float: left;
 	width: 50%;
 }
-.site-content .nav-next {
+.site-content .nav-next,
+.site-content .next-image {
 	float: right;
 	text-align: right;
 	width: 50%;
+}
+#image-navigation {
+	padding-top: 10px;
 }
 
 
@@ -1522,6 +1537,9 @@ a#scrollup:hover {
 }	
 #commentform input {
 	display: block;
+}
+#commentform .comment-subscription-form input {
+	display: inline-block;
 }
 #respond p {
 	margin-bottom: 20px;
@@ -1685,6 +1703,7 @@ ul.social-profile {
 }
 ul.social-profile li {
     display: inline-block;
+	float: left;    
     margin: 0 0 10px 10px;
 }
 ul.social-profile li a {
@@ -1909,8 +1928,8 @@ ul.social-profile li.xing a:hover {
 /* Three Footer Widget Areas */
 #supplementary.three .widget-area {
     float: left;
-    margin-right: 5%;
-    width: 30%;
+    margin-right: 4%;
+    width: 30.66%;
 }
 #supplementary.three .widget-area + .widget-area + .widget-area {
 	margin-right: 0;

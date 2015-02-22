@@ -22,6 +22,9 @@
 	#homepage-message {
 		margin-top: 50px;
 	}
+	.single-format-gallery .entry-meta {
+		margin-top: 40px;
+	}	
 	article.sticky .featured-post,
 	.page-header,
 	p,
@@ -29,7 +32,9 @@
 	.entry-content table,
 	.comment-content table,
 	.widget.widget_catcheverest_social_widget,
-	#content .searchform {
+	#content .searchform,
+	.page-link,
+	.single-attachment .entry-attachment img {
 		margin-bottom: 40px;
 	}
 	#header-right .widget,
@@ -93,13 +98,10 @@
 	}	
 }
 
-@media screen and (max-width: 1060px) {
+@media screen and (max-width: 1020px) {
 	.site {
-		margin: 20px auto;
-		width: 900px;	
-	}
-	#primary {
-		width: 500px;
+		margin: 15px auto;
+		width: 960px;
 	}
 	.page-links,
 	.widget,
@@ -111,7 +113,8 @@
 	#respond {
 		margin-bottom: 30px;
 	}
-	#homepage-message {
+	#homepage-message,
+	.single-format-gallery .entry-meta {
 		margin-top: 30px;
 	}
 	article.sticky .featured-post,
@@ -121,7 +124,9 @@
 	.entry-content table,
 	.comment-content table,
 	.widget.widget_catcheverest_social_widget,
-	#content .searchform {
+	#content .searchform,
+	.page-link,
+	.single-attachment .entry-attachment img {
 		margin-bottom: 20px;
 	}
 	#header-right .widget,
@@ -160,33 +165,20 @@
 	.entry-header .entry-title {
 		padding-bottom: 0;
 	}
-	
+
 	/* Font Sizes */
-	body,
-	button,
-	input,
-	select,
-	textarea {
-		font-size: 14px;
-		font-size: 1.4rem;
-	}
 	.entry-header .entry-title,
 	#homepage-message {
-		font-size: 20px;
-		font-size: 2rem;
+		font-size: 26px;
+		font-size: 2.6rem;
 	}
 	#homepage-message span {
-		font-size: 15px;
-		font-size: 1.5rem;	
-	}
-	.widget-title {
-		font-size: 16px;
-		font-size: 1.6rem;		
-	}
-	.comments-title, #reply-title,
+		font-size: 18px;
+		font-size: 1.8rem;	
+	}	
 	.entry-content h1, .comment-content h1 {
-		font-size: 19px;
-		font-size: 1.9rem;
+		font-size: 20px;
+		font-size: 2rem;
 	}
 	.entry-content h2, .comment-content h2 {
 		font-size: 18px;
@@ -207,57 +199,55 @@
 	.entry-content h6, .comment-content h6 {
 		font-size: 14px;
 		font-size: 1.4rem;	
-	}
+	}		
 }
-@media screen and (max-width: 960px) {
-	/* iPhone Landscape */	
+@media screen and (max-width: 1000px) {
 	.site {
-		width: 700px;
+		width: 760px;
 	}
 	#primary, 
 	#secondary {
 		width: 100%;
 	}
-	#header-menu ul.menu a, #colophon #access-footer ul.menu a {
+	#header-menu ul.menu a, 
+	#colophon #access-footer ul.menu a {
 		padding: 0 10px;
 	}
-	
-	/* Font Sizes */
-	body,
-	button,
-	input,
-	select,
-	textarea {
-		font-size: 13px;
-		font-size: 1.3rem;
+	#secondary .widget {
+	    float: left;
+	    margin-left: 4%;
+	    width: 48%;
 	}
-	.entry-meta {
-		font-size: 12px;
-		font-size: 1.2rem;	
-	}
-	#featured-post .entry-title,
-	.page-links {
-		font-size: 18px;
-		font-size: 1.8rem;
-	}
+	#secondary .widget:nth-child(2n+1) {  
+		clear: both;
+		margin-left: 0;
+	}	
 }
-
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : portrait) {
-	/* iPad Portrait */	
-	.site {
-		margin: 5px auto;
-		width: 760px;
-	}
-}
-
 @media screen and (max-width: 767px) {
 	/* Larger Smart Devices */		
 	.site {
-		width: 380px;
+		margin: 15px auto;
+		width: 660px;
 	}
+	#header-left,
+	#header-right {
+		clear: both;
+	    display: block;
+	    float: none;
+	    text-align: center;
+	    width: 100%;
+	}
+	#header-right {
+		max-width: 100%;
+	}	
+	#header-right .widget,
+	#header-right ul.social-profile li,
+	#header-right #s {
+		float: none;
+	}
+	#header-right ul.social-profile {
+		width: 100%;
+	}	
 	#site-title {
 		font-size: 30px;
 		font-size: 3rem;
@@ -267,10 +257,6 @@ and (orientation : portrait) {
 		font-size: 1.3rem;
 		line-height: 1.4;
 	}
-	#header-right {
-		max-width: 100%;
-		width: 100%;
-	}
 	#main-slider .entry-container {
 		bottom: 0;
 		max-width: 100%;
@@ -279,11 +265,14 @@ and (orientation : portrait) {
 	#main-slider .entry-header {
 		margin-bottom: 0;
 	}
-	#main-slider .entry-title a {
+	#main-slider .entry-title a,
+	#main-slider .entry-title a:hover,
+	#main-slider .entry-title a:focus {
 		background-color: transparent;
 		padding: 10px 25px 0;
 	}
-	#main-slider .entry-content {
+	#main-slider .entry-content,
+	#main-slider .entry-content:hover {
 		background-color: transparent;
 		padding: 0 25px 25px;	
 	}
@@ -294,13 +283,24 @@ and (orientation : portrait) {
 		padding: 0 5px;
 	}
 	.entry-header .entry-title,
-	#homepage-message,
-	.comments-title, #reply-title {
+	#homepage-message {
+		font-size: 20px;
+		font-size: 2.0rem;
+	}
+	#featured-post .entry-title {
+	    font-size: 1.8rem;
+	    line-height: 1.3;
+	}
+	#homepage-message span,
+	.comments-title, 
+	#reply-title {
 		font-size: 16px;
 		font-size: 1.6rem;
 	}
-	#featured-post .post,
-	#colophon #supplementary .widget-area,
+	#feature-heading {
+		width: 100%;
+		margin-left: 0;
+	}		
 	#site-generator .copyright, 
 	#site-generator .powered {
 		margin: 0;
@@ -316,7 +316,6 @@ and (orientation : portrait) {
 	.tinynav {
 		display: block;
 	}
-	
 	.sb-holder {
 		display: block;
 	}
@@ -325,14 +324,14 @@ and (orientation : portrait) {
 	}
 	.widget.widget_nav_menu .sb-holder {
 		background-color: #3A3D41;
-		color: #fff;
+		color: #eee;
 		clear: both;
 		display: block;
 		width: 100%;
 	}
 	.widget.widget_nav_menu a,
 	.widget.widget_nav_menu a:hover {
-		color: #fff;
+		color: #eee;
 	}
 	/* Pagination */
 	#nav-below .wp-pagenavi a, 
@@ -355,23 +354,43 @@ and (orientation : portrait) {
 	#nav-below .wp-pagenavi span {
 		margin-bottom: 5px;
 	}
-	a#scrollup {
-		font-size: 20px;
-		padding: 3px;
+}
+@media screen and (max-width: 700px) {
+	.site {
+		width: 560px;
+	}
+	#secondary .widget {
+	    float: left;
+	    margin-left: 6%;
+	    width: 47%;
+	}		
+}
+@media screen and (max-width:600px) {
+	/* Iphone 5 landscape */
+	.site {
+		width: 520px;
 	}
 }
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-	/* iPhone Landscape */
+@media screen and (max-width: 540px) {
 	.site {
-		width: 450px;
+		width: 460px;
 	}
+	#featured-post .post,
+	#supplementary.three .widget-area {
+		width: 100%;
+		margin-left: 0;
+	}		
 }
 @media screen and (max-width: 480px) {
-	/* iPhone Portrait */	
+	/* iPhone6plus Portrait */
 	.site {
-		margin: 10px auto;
-		width: 300px;
-	}		
+		width: 370px;
+	}	
+	#colophon #supplementary .widget-area,
+	#featured-post.layout-four .post {
+		width: 100%;
+		margin-left: 0;
+	}	
 	.container {
 		padding: 0 20px;
 	}
@@ -390,40 +409,21 @@ and (orientation : portrait) {
 	#homepage-message {
 		margin-top: 20px;
 	}
-	
-	/* Font Sizes */
-	body,
-	button,
-	input,
-	select,
-	textarea {
-		font-size: 12px;
-		font-size: 1.2rem;
-	}
-	#site-title {
-		font-size: 25px;
-		font-size: 2.5rem;
-	}
-	#site-description {
-		font-size: 12px;
-		font-size: 1.2rem;
-		line-height: 1.4;
-	}
 	.entry-meta,
 	#site-generator {
 		font-size: 11px;
 		font-size: 1.1rem;	
-	}
-	#featured-post .entry-title,
-	.page-links {
-		font-size: 16px;
-		font-size: 1.6rem;
-	}
+	}	
+}
+@media screen and (max-width: 400px) {
+	.site {
+		width: 320px;
+		margin: 0 auto;
+	}	
 }
 @media screen and (max-width: 320px) {
-	/* Small Devices */	
+	/* Small Devices iphone 5 and below Portrait */	
 	.site {
-		margin: 0;
 		width: 100%;
 	}	
 	#site-title {
@@ -434,4 +434,23 @@ and (orientation : portrait) {
 		font-size: 12px;
 		font-size: 1.1rem;
 	}
+	.container {
+		padding: 0 15px;
+	}	
+	#hgroup-wrap,
+	.hentry,
+	.comments-area article { 
+		padding-bottom: 15px;
+	}
+	#site-logo,
+	#hgroup,
+	.header-sidebar,
+	#supplementary,
+	#main,
+	#masthead .breadcrumb {
+		padding-top: 15px;
+	}
+	#homepage-message {
+		margin-top: 15px;
+	}		
 }

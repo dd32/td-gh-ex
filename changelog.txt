@@ -1,5 +1,10 @@
 == Changelog ==
 
+version 2.2
+* Added Turkish translation tr_TR.po and tr_TR.mo
+* Added responisve support for iPhone6
+* Fixed responsive design issues
+
 version 2.1
 * Added Catalan translation ca_ES.po and ca_ES.mo
 
