@@ -64,7 +64,6 @@ function fkidd_get_options() {
 function fkidd_page()
 {
 	$active_tab = isset($_GET[ 'tab' ]) ? $_GET[ 'tab' ] : 'tab_general';
-	$fullThemeUrl = "http://tishonator.com/product/tkidd";
 ?>
     <div class="wrap">
 		<h2 class="nav-tab-wrapper">  
@@ -100,7 +99,7 @@ function fkidd_page()
 						<div style="background-color:#CCCCCC;padding:10px;">
 						
 							<div>
-								<?php _e( 'These options are available in the full version only.', 'fkidd' ); ?> <a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Click Here', 'fkidd' ); ?>"><?php _e( 'Click Here', 'fkidd' ); ?></a> <?php _e( 'to get the full version of tKidd theme.', 'fkidd' ); ?>
+								<?php _e( 'These options are available in the full version only.', 'fkidd' ); ?> <a href="<?php echo esc_url( fkidd_get_full_theme_url() ); ?>" title="<?php esc_attr_e( 'Click Here', 'fkidd' ); ?>"><?php _e( 'Click Here', 'fkidd' ); ?></a> <?php _e( 'to get the full version of tKidd theme.', 'fkidd' ); ?>
 							</div>
 						
 							<table class="form-table">
@@ -150,7 +149,7 @@ function fkidd_page()
 						<?php fkidd_display_hidden_fields($active_tab); ?>
 						
 						<p class="submit">  
-							<a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Get tKidd Theme', 'fkidd' ); ?>" class="button-primary"><?php _e( 'Get tKidd Theme', 'fkidd' ); ?></a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fkidd' ) ?>" />  
+							<a href="<?php echo esc_url( fkidd_get_full_theme_url() ); ?>" title="<?php echo esc_attr( fkidd_get_full_theme_name() ); ?>" class="button-primary"><?php echo fkidd_get_full_theme_name(); ?></a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fkidd' ) ?>" />  
 						</p>
 <?php
 					elseif ( $active_tab == 'tab_header' ) :
@@ -161,7 +160,7 @@ function fkidd_page()
 						<div style="background-color:#CCCCCC;padding:10px;">
 						
 							<div>
-								<?php _e( 'These options are available in the full version only.', 'fkidd' ); ?> <a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Click Here', 'fkidd' ); ?>"><?php _e( 'Click Here', 'fkidd' ); ?></a> <?php _e( 'to get the full version of tKidd theme.', 'fkidd' ); ?>
+								<?php _e( 'These options are available in the full version only.', 'fkidd' ); ?> <a href="<?php echo esc_url( fkidd_get_full_theme_url() ); ?>" title="<?php esc_attr_e( 'Click Here', 'fkidd' ); ?>"><?php _e( 'Click Here', 'fkidd' ); ?></a> <?php _e( 'to get the full version of tKidd theme.', 'fkidd' ); ?>
 							</div>
 							
 							<table class="form-table">
@@ -214,7 +213,7 @@ function fkidd_page()
 						<?php fkidd_display_hidden_fields($active_tab); ?>
 						
 						<p class="submit">  
-							<a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Get tKidd Theme', 'fkidd' ); ?>" class="button-primary"><?php _e( 'Get tKidd Theme', 'fkidd' ); ?></a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fkidd' ) ?>" />  
+							<a href="<?php echo esc_url( fkidd_get_full_theme_url() ); ?>" title="<?php echo esc_attr( fkidd_get_full_theme_name() ); ?>" class="button-primary"><?php echo fkidd_get_full_theme_name(); ?></a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fkidd' ) ?>" />  
 						</p>
 <?php						
 					elseif ( $active_tab == 'tab_footer' ) :
@@ -224,7 +223,7 @@ function fkidd_page()
 ?>						
 						<div style="background-color:#CCCCCC;padding:10px;">
 							<div>
-								<?php _e( 'These options are available in the full version only.', 'fkidd' ); ?> <a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Click Here', 'fkidd' ); ?>"><?php _e( 'Click Here', 'fkidd' ); ?></a> <?php _e( 'to get the full version of tKidd theme.', 'fkidd' ); ?>
+								<?php _e( 'These options are available in the full version only.', 'fkidd' ); ?> <a href="<?php echo esc_url( fkidd_get_full_theme_url() ); ?>" title="<?php esc_attr_e( 'Click Here', 'fkidd' ); ?>"><?php _e( 'Click Here', 'fkidd' ); ?></a> <?php _e( 'to get the full version of tKidd theme.', 'fkidd' ); ?>
 							</div>
 							
 							<table class="form-table">
@@ -258,7 +257,7 @@ function fkidd_page()
 						<?php fkidd_display_hidden_fields($active_tab); ?>
 						
 						<p class="submit">  
-							<a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Get tKidd Theme', 'fkidd' ); ?>" class="button-primary"><?php _e( 'Get tKidd Theme', 'fkidd' ); ?></a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fkidd' ) ?>" />  
+							<a href="<?php echo esc_url( fkidd_get_full_theme_url() ); ?>" title="<?php echo esc_attr( fkidd_get_full_theme_name() ); ?>" class="button-primary"><?php echo fkidd_get_full_theme_name(); ?></a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fkidd' ) ?>" />  
 						</p>
 <?php
 
@@ -267,7 +266,7 @@ function fkidd_page()
 						<h3><?php _e( 'Home Page Settings', 'fkidd' ); ?></h3>				
 						<div style="background-color:#CCCCCC;padding:10px;">			
 							<div>
-								<?php _e( 'These options are available in the full version only.', 'fkidd' ); ?> <a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Click Here', 'fkidd' ); ?>"><?php _e( 'Click Here', 'fkidd' ); ?></a> <?php _e( 'to get the full version of tKidd theme.', 'fkidd' ); ?>
+								<?php _e( 'These options are available in the full version only.', 'fkidd' ); ?> <a href="<?php echo esc_url( fkidd_get_full_theme_url() ); ?>" title="<?php esc_attr_e( 'Click Here', 'fkidd' ); ?>"><?php _e( 'Click Here', 'fkidd' ); ?></a> <?php _e( 'to get the full version of tKidd theme.', 'fkidd' ); ?>
 							</div>
 							<table class="form-table">
 								<tbody>
@@ -302,7 +301,7 @@ function fkidd_page()
 						</div>
 						
 						<p class="submit">  
-							<a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Get tKidd Theme', 'fkidd' ); ?>" class="button-primary"><?php _e( 'Get tKidd Theme', 'fkidd' ); ?></a>  
+							<a href="<?php echo esc_url( fkidd_get_full_theme_url() ); ?>" title="<?php echo esc_attr( fkidd_get_full_theme_name() ); ?>" class="button-primary"><?php echo fkidd_get_full_theme_name(); ?></a>  
 						</p>
 <?php						
 					elseif ($active_tab == 'tab_slider' ) :
@@ -314,7 +313,7 @@ function fkidd_page()
 						<div style="background-color:#CCCCCC;padding:10px;">
 						
 							<div>
-								<?php _e( 'Full Slider options are available in the full version only.', 'fkidd' ); ?> <a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Click Here', 'fkidd' ); ?>"><?php _e( 'Click Here', 'fkidd' ); ?></a> <?php _e( 'to get the full version of tKidd theme.', 'fkidd' ); ?>
+								<?php _e( 'Full Slider options are available in the full version only.', 'fkidd' ); ?> <a href="<?php echo esc_url( fkidd_get_full_theme_url() ); ?>" title="<?php esc_attr_e( 'Click Here', 'fkidd' ); ?>"><?php _e( 'Click Here', 'fkidd' ); ?></a> <?php _e( 'to get the full version of tKidd theme.', 'fkidd' ); ?>
 							</div>
 							
 							<table class="form-table">
@@ -432,7 +431,7 @@ function fkidd_page()
 						<?php fkidd_display_hidden_fields($active_tab); ?>
 
 						<p class="submit">  
-							<a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Get tKidd Theme', 'fkidd' ); ?>" class="button-primary"><?php _e( 'Get tKidd Theme', 'fkidd' ); ?></a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fkidd' ) ?>" />  
+							<a href="<?php echo esc_url( fkidd_get_full_theme_url() ); ?>" title="<?php echo esc_attr( fkidd_get_full_theme_name() ); ?>" class="button-primary"><?php echo fkidd_get_full_theme_name(); ?></a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fkidd' ) ?>" />  
 						</p>
 <?php
 					elseif ($active_tab == 'tab_colors' ) :
@@ -440,7 +439,7 @@ function fkidd_page()
 						<h3><?php _e( 'Colors Settings', 'fkidd' ); ?></h3>
 						<div style="background-color:#CCCCCC;padding:10px;">
 							<div>
-								<?php _e( 'These options are available in the full version only.', 'fkidd' ); ?> <a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Click Here', 'fkidd' ); ?>"><?php _e( 'Click Here', 'fkidd' ); ?></a> <?php _e( 'to get the full version of tKidd theme.', 'fkidd' ); ?>
+								<?php _e( 'These options are available in the full version only.', 'fkidd' ); ?> <a href="<?php echo esc_url( fkidd_get_full_theme_url() ); ?>" title="<?php esc_attr_e( 'Click Here', 'fkidd' ); ?>"><?php _e( 'Click Here', 'fkidd' ); ?></a> <?php _e( 'to get the full version of tKidd theme.', 'fkidd' ); ?>
 							</div>
 							
 							<table class="form-table color-settings-table">
@@ -1123,7 +1122,7 @@ function fkidd_page()
 							
 						</div>
 						<p class="submit">  
-							<a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Get tKidd Theme', 'fkidd' ); ?>" class="button-primary"><?php _e( 'Get tKidd Theme', 'fkidd' ); ?></a>
+							<a href="<?php echo esc_url( fkidd_get_full_theme_url() ); ?>" title="<?php echo esc_attr( fkidd_get_full_theme_name() ); ?>" class="button-primary"><?php echo fkidd_get_full_theme_name(); ?></a>
 						</p>
 <?php
 					elseif ($active_tab == 'tab_social' ) :
@@ -1134,7 +1133,7 @@ function fkidd_page()
 						<div style="background-color:#CCCCCC;padding:10px;">
 						
 							<div>
-								<?php _e( 'These options are available in the full version only.', 'fkidd' ); ?> <a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Click Here', 'fkidd' ); ?>"><?php _e( 'Click Here', 'fkidd' ); ?></a> <?php _e( 'to get the full version of tKidd theme.', 'fkidd' ); ?>
+								<?php _e( 'These options are available in the full version only.', 'fkidd' ); ?> <a href="<?php echo esc_url( fkidd_get_full_theme_url() ); ?>" title="<?php esc_attr_e( 'Click Here', 'fkidd' ); ?>"><?php _e( 'Click Here', 'fkidd' ); ?></a> <?php _e( 'to get the full version of tKidd theme.', 'fkidd' ); ?>
 							</div>
 							
 							<table class="form-table">
@@ -1163,7 +1162,7 @@ function fkidd_page()
 						<?php fkidd_display_hidden_fields($active_tab); ?>
 
 						<p class="submit">  
-							<a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Get tKidd Theme', 'fkidd' ); ?>" class="button-primary"><?php _e( 'Get tKidd Theme', 'fkidd' ); ?></a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fkidd' ) ?>" />  
+							<a href="<?php echo esc_url( fkidd_get_full_theme_url() ); ?>" title="<?php echo esc_attr( fkidd_get_full_theme_name() ); ?>" class="button-primary"><?php echo fkidd_get_full_theme_name(); ?></a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fkidd' ) ?>" />  
 						</p>
 <?php
 					elseif ( $active_tab == 'tab_lightbox' ) :
@@ -1172,13 +1171,13 @@ function fkidd_page()
 
 						<div style="background-color:#CCCCCC;padding:10px;">
 							<div>
-								<?php _e( 'These options are available in the full version only.', 'fkidd' ); ?> <a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Click Here', 'fkidd' ); ?>"><?php _e( 'Click Here', 'fkidd' ); ?></a> <?php _e( 'to get the full version of tKidd theme.', 'fkidd' ); ?>
+								<?php _e( 'These options are available in the full version only.', 'fkidd' ); ?> <a href="<?php echo esc_url( fkidd_get_full_theme_url() ); ?>" title="<?php esc_attr_e( 'Click Here', 'fkidd' ); ?>"><?php _e( 'Click Here', 'fkidd' ); ?></a> <?php _e( 'to get the full version of tKidd theme.', 'fkidd' ); ?>
 							</div>
 							
 							<table class="form-table"><tbody><tr><th scope="row"><label for="enablelightbox"><?php _e( 'Enable Lightbox Functionality', 'fkidd' ); ?></label></th><td><input disabled type="checkbox" name="enablelightbox" id="enablelightbox"><br><span class="description"><?php _e( 'Globally Enable Lightbox functionality', 'fkidd' ); ?></span></td></tr><tr><th scope="row"><label for="enableonhomepage"><?php _e( 'Enable on Home Page', 'fkidd' ); ?></label></th><td><input disabled type="checkbox" name="enableonhomepage" id="enableonhomepage"><br><span class="description"><?php _e( 'Enable Lightbox on Home Page of your website', 'fkidd' ); ?></span></td></tr><tr><th scope="row"><label for="enableonindexpage"><?php _e( 'Enable on Blog Index Page', 'fkidd' ); ?></label></th><td><input disabled type="checkbox" name="enableonindexpage" id="enableonindexpage"><br><span class="description"><?php _e( 'Enable Lightbox on blog posts index page of your website', 'fkidd' ); ?></span></td></tr><tr><th scope="row"><label for="enableonposts"><?php _e( 'Enable on Posts', 'fkidd' ); ?></label></th><td><input disabled type="checkbox" name="enableonposts" id="enableonposts"><br><span class="description"><?php _e( 'Enable Lightbox on Posts', 'fkidd' ); ?></span></td></tr><tr><th scope="row"><label for="enableonpages"><?php _e( 'Enable on Pages', 'fkidd' ); ?></label></th><td><input disabled type="checkbox" name="enableonpages" id="enableonpages"><br><span class="description"><?php _e( 'Enable Lightbox on Pages', 'fkidd' ); ?></span></td></tr><tr><th scope="row"><label for="enableonarchives"><?php _e( 'Enable on Archive', 'fkidd' ); ?></label></th><td><input disabled type="checkbox" name="enableonarchives" id="enableonarchives"><br><span class="description"><?php _e( 'Enable Lightbox on Archive Pages (categories, tags, etc.)', 'fkidd' ); ?></span></td></tr><tr><th scope="row"><label for="groupitems"><?php _e( 'Group Items', 'fkidd' ); ?></label></th><td><input disabled type="checkbox" name="groupitems" id="groupitems"><br><span class="description"><?php _e( 'Group Items (for displaying as a slideshow)', 'fkidd' ); ?></span></td></tr></tbody></table>
 						</div>
 						<p class="submit">  
-							<a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Get tKidd Theme', 'fkidd' ); ?>" class="button-primary"><?php _e( 'Get tKidd Theme', 'fkidd' ); ?></a>  
+							<a href="<?php echo esc_url( fkidd_get_full_theme_url() ); ?>" title="<?php echo esc_attr( fkidd_get_full_theme_name() ); ?>" class="button-primary"><?php echo fkidd_get_full_theme_name(); ?></a>  
 						</p>
 <?php						
 					elseif ( $active_tab == 'tab_thumbnails' ) :
@@ -1187,7 +1186,7 @@ function fkidd_page()
 						
 						<div style="background-color:#CCCCCC;padding:10px;">
 							<div>
-								<?php _e( 'These options are available in the full version only.', 'fkidd' ); ?> <a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Click Here', 'fkidd' ); ?>"><?php _e( 'Click Here', 'fkidd' ); ?></a> <?php _e( 'to get the full version of tKidd theme.', 'fkidd' ); ?>
+								<?php _e( 'These options are available in the full version only.', 'fkidd' ); ?> <a href="<?php echo esc_url( fkidd_get_full_theme_url() ); ?>" title="<?php esc_attr_e( 'Click Here', 'fkidd' ); ?>"><?php _e( 'Click Here', 'fkidd' ); ?></a> <?php _e( 'to get the full version of tKidd theme.', 'fkidd' ); ?>
 							</div>
 							
 							<table class="form-table">
@@ -1236,7 +1235,7 @@ function fkidd_page()
 						</div>
 						
 						<p class="submit">  
-							<a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Get tKidd Theme', 'fkidd' ); ?>" class="button-primary"><?php _e( 'Get tKidd Theme', 'fkidd' ); ?></a>
+							<a href="<?php echo esc_url( fkidd_get_full_theme_url() ); ?>" title="<?php echo esc_attr( fkidd_get_full_theme_name() ); ?>" class="button-primary"><?php echo fkidd_get_full_theme_name(); ?></a>
 						</p>
 <?php						
 					elseif ( $active_tab == 'tab_contacts' ) :
@@ -1245,7 +1244,7 @@ function fkidd_page()
 						
 						<div style="background-color:#CCCCCC;padding:10px;">
 							<div>
-								<?php _e( 'These options are available in the full version only.', 'fkidd' ); ?> <a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Click Here', 'fkidd' ); ?>"><?php _e( 'Click Here', 'fkidd' ); ?></a> <?php _e( 'to get the full version of tKidd theme.', 'fkidd' ); ?>
+								<?php _e( 'These options are available in the full version only.', 'fkidd' ); ?> <a href="<?php echo esc_url( fkidd_get_full_theme_url() ); ?>" title="<?php esc_attr_e( 'Click Here', 'fkidd' ); ?>"><?php _e( 'Click Here', 'fkidd' ); ?></a> <?php _e( 'to get the full version of tKidd theme.', 'fkidd' ); ?>
 							</div>
 							
 							<table class="form-table">
@@ -1383,7 +1382,7 @@ function fkidd_page()
 						</div>
 
 						<p class="submit">  
-							<a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Get tKidd Theme', 'fkidd' ); ?>" class="button-primary"><?php _e( 'Get tKidd Theme', 'fkidd' ); ?></a>  
+							<a href="<?php echo esc_url( fkidd_get_full_theme_url() ); ?>" title="<?php echo esc_attr( fkidd_get_full_theme_name() ); ?>" class="button-primary"><?php echo fkidd_get_full_theme_name(); ?></a>  
 						</p>
 <?php
 					elseif ( $active_tab == 'tab_notfound' ) :
@@ -1395,7 +1394,7 @@ function fkidd_page()
 						<?php fkidd_display_hidden_fields($active_tab); ?>
 
 						<p class="submit">  
-							<a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Get tKidd Theme', 'fkidd' ); ?>" class="button-primary"><?php _e( 'Get tKidd Theme', 'fkidd' ); ?></a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fkidd' ) ?>" />  
+							<a href="<?php echo esc_url( fkidd_get_full_theme_url() ); ?>" title="<?php echo esc_attr( fkidd_get_full_theme_name() ); ?>" class="button-primary"><?php echo fkidd_get_full_theme_name(); ?></a>   <input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'fkidd' ) ?>" />  
 						</p>
 <?php						
 					elseif ( $active_tab == 'tab_woocommerce' ) :
@@ -1403,7 +1402,7 @@ function fkidd_page()
 						<h3><?php _e( 'WooCommerce Settings', 'fkidd' ); ?></h3>
 						<div style="background-color:#CCCCCC;padding:10px;">
 							<div>
-								<?php _e( 'These options are available in the full version only.', 'fkidd' ); ?> <a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Click Here', 'fkidd' ); ?>"><?php _e( 'Click Here', 'fkidd' ); ?></a> <?php _e( 'to get the full version of tKidd theme.', 'fkidd' ); ?>
+								<?php _e( 'These options are available in the full version only.', 'fkidd' ); ?> <a href="<?php echo esc_url( fkidd_get_full_theme_url() ); ?>" title="<?php esc_attr_e( 'Click Here', 'fkidd' ); ?>"><?php _e( 'Click Here', 'fkidd' ); ?></a> <?php _e( 'to get the full version of tKidd theme.', 'fkidd' ); ?>
 							</div>
 							
 							<table class="form-table">
@@ -1420,7 +1419,7 @@ function fkidd_page()
 							</table>
 						</div>
 						<p class="submit">  
-							<a href="<?php echo esc_url( $fullThemeUrl ); ?>" title="<?php esc_attr_e( 'Get tKidd Theme', 'fkidd' ); ?>" class="button-primary"><?php _e( 'Get tKidd Theme', 'fkidd' ); ?></a>  
+							<a href="<?php echo esc_url( fkidd_get_full_theme_url() ); ?>" title="<?php echo esc_attr( fkidd_get_full_theme_name() ); ?>" class="button-primary"><?php echo fkidd_get_full_theme_name(); ?></a>  
 						</p>
 <?php
 					endif; ?>    

@@ -108,4 +108,38 @@ function fkidd_post_classes( $classes ) {
 }
 add_filter( 'post_class', 'fkidd_post_classes' );
 
+if ( ! function_exists( 'fkidd_get_full_theme_url' ) ) :
+/**
+ * returns URL to the full theme. This function can be overridden in child themes.
+ *
+ * Note: When using a child theme you can override certain functions (those wrapped
+ * in a function_exists() call) by defining them first in your child theme's
+ * functions.php file. The child theme's functions.php file is included before
+ * the parent theme's file, so the child theme functions would be used.
+ *
+ * @link https://codex.wordpress.org/Theme_Development
+ * @link https://codex.wordpress.org/Child_Themes
+ *
+ * Functions that are not pluggable (not wrapped in function_exists()) are
+ * instead attached to a filter or action hook.
+ *
+ */
+function fkidd_get_full_theme_url() {
+
+	return "http://tishonator.com/product/tkidd";
+}
+endif; // fkidd_get_full_theme_url
+
+if ( ! function_exists( 'fkidd_get_full_theme_name' ) ) :
+/**
+ * returns the get full theme name. This function can be overridden in child themes.
+ *
+ */
+function fkidd_get_full_theme_name() {
+
+	return __("Get tKidd Theme", "fkidd");
+}
+endif; // fkidd_get_full_theme_name
+
+
 ?>
