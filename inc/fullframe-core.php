@@ -207,7 +207,7 @@ function fullframe_scripts() {
 	 * Enqueue the styles for the current color scheme for fullframe.
 	 */
 	if ( $options['color_scheme'] != 'light' )
-		wp_enqueue_style( 'dark', get_template_directory_uri() . '/css/colors/'. $options['color_scheme'] .'.css', array(), null );
+		wp_enqueue_style( 'fullframe-dark', get_template_directory_uri() . '/css/colors/'. $options['color_scheme'] .'.css', array(), null );
 	
 	/**
 	 * Loads up Responsive stylesheet and Menu JS
@@ -1224,15 +1224,9 @@ if ( ! function_exists( 'fullframe_single_content_image' ) ) :
 			?>
 			<figure class="featured-image <?php echo $class; ?>">
                 <?php 
-				if ( $individual_featured_image == 'large' || ( $individual_featured_image=='default' && $featured_image == 'large' ) ) {
-                     the_post_thumbnail( 'fullframe-large' );
+				if ( $individual_featured_image == 'featured' || ( $individual_featured_image=='default' && $featured_image == 'featured' ) ) {
+                     the_post_thumbnail( 'fullframe-featured' );
                 }
-                elseif ( $individual_featured_image == 'medium' || ( $individual_featured_image=='default' && $featured_image == 'medium' ) ) {
-					the_post_thumbnail( 'fullframe-medium' );
-				}	
-				elseif ( $individual_featured_image == 'slider-image-size' || ( $individual_featured_image=='default' && $featured_image == 'slider-image-size' ) ) {
-					the_post_thumbnail( 'fullframe-slider' );
-				}
 				else {
 					the_post_thumbnail( 'full' );
 				} ?>

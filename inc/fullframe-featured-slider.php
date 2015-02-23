@@ -182,7 +182,7 @@ function fullframe_page_slider( $options ) {
 			<article class="'.$classes.'">
 				<figure class="slider-image">';
 				if ( has_post_thumbnail() ) {
-					$fullframe_page_slider .= '<a title="Permalink to '.the_title('','',false).'" href="' . get_permalink() . '">
+					$fullframe_page_slider .= '<a title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'fullframe' ), 'echo' => false ) ) . '" href="' . get_permalink() . '">
 						'. get_the_post_thumbnail( $post->ID, 'fullframe_slider', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class'	=> 'pngfix' ) ).'
 					</a>';
 				}
@@ -198,7 +198,7 @@ function fullframe_page_slider( $options ) {
 						$fullframe_image =	$fullframe_first_image;
 					}
 
-					$fullframe_page_slider .= '<a title="Permalink to '.the_title('','',false).'" href="' . get_permalink() . '">
+					$fullframe_page_slider .= '<a title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'fullframe' ), 'echo' => false ) ) . '" href="' . get_permalink() . '">
 						'. $fullframe_image .'
 					</a>';
 				}
@@ -208,7 +208,7 @@ function fullframe_page_slider( $options ) {
 				<div class="entry-container">
 					<header class="entry-header">
 						<h1 class="entry-title">
-							<a title="Permalink to '.the_title('','',false).'" href="' . get_permalink() . '">'.the_title( '<span>','</span>', false ).'</a>
+							<a title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'fullframe' ), 'echo' => false ) ) . '" href="' . get_permalink() . '">'.the_title( '<span>','</span>', false ).'</a>
 						</h1>
 						<div class="assistive-text">'.fullframe_page_post_meta().'</div>
 					</header>';

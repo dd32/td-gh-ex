@@ -38,7 +38,7 @@ function fullframe_customize_register( $wp_customize ) {
 	$defaults = fullframe_get_default_theme_options();
 
 	//Custom Controls
-	require_once( get_template_directory() . '/inc/customizer-includes/fullframe-customizer-custom-controls.php' );
+	require get_template_directory() . '/inc/customizer-includes/fullframe-customizer-custom-controls.php';
 
 	// Custom Logo (added to Site Title and Tagline section in Theme Customizer)
 	$wp_customize->add_setting( 'fullframe_theme_options[logo]', array(
@@ -124,19 +124,19 @@ function fullframe_customize_register( $wp_customize ) {
 	//End Color Scheme
 
 	// Header Options (added to Header section in Theme Customizer)
-	require_once( get_template_directory() . '/inc/customizer-includes/fullframe-customizer-header-options.php' );
+	require get_template_directory() . '/inc/customizer-includes/fullframe-customizer-header-options.php';
 
 	//Theme Options
-	require_once( get_template_directory() . '/inc/customizer-includes/fullframe-customizer-theme-options.php' );
+	require get_template_directory() . '/inc/customizer-includes/fullframe-customizer-theme-options.php';
 	
 	//Featured Content Setting
-	require_once( get_template_directory() . '/inc/customizer-includes/fullframe-customizer-featured-content-setting.php' );
+	require get_template_directory() . '/inc/customizer-includes/fullframe-customizer-featured-content-setting.php';
    	
 	//Featured Slider
-	require_once( get_template_directory() . '/inc/customizer-includes/fullframe-customizer-featured-slider.php' );
+	require get_template_directory() . '/inc/customizer-includes/fullframe-customizer-featured-slider.php';
 
 	//Social Links
-	require_once( get_template_directory() . '/inc/customizer-includes/fullframe-customizer-social-icons.php' );
+	require get_template_directory() . '/inc/customizer-includes/fullframe-customizer-social-icons.php';
 	
 	// Reset all settings to default
 	$wp_customize->add_section( 'fullframe_reset_all_settings', array(

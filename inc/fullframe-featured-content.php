@@ -80,10 +80,10 @@ function fullframe_featured_content_display() {
 						if ( !empty( $headline ) || !empty( $subheadline ) ) {
 							$fullframe_featured_content .='<div class="featured-heading-wrap">';
 								if ( !empty( $headline ) ) {
-									$fullframe_featured_content .='<h1 id="featured-heading" class="entry-title">'. esc_attr( $headline ) .'</h1>';
+									$fullframe_featured_content .='<h1 id="featured-heading" class="entry-title">'. $headline .'</h1>';
 								}
 								if ( !empty( $subheadline ) ) {
-									$fullframe_featured_content .='<p>'. esc_attr( $subheadline ) .'</p>';
+									$fullframe_featured_content .='<p>'. $subheadline .'</p>';
 								}
 							$fullframe_featured_content .='</div><!-- .featured-heading-wrap -->';
 						}
@@ -310,7 +310,7 @@ function fullframe_page_content( $options ) {
 				if ( has_post_thumbnail() ) {
 					$fullframe_page_content .= '
 					<figure class="featured-homepage-image">
-						<a href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">
+						<a href="' . get_permalink() . '" title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'fullframe' ), 'echo' => false ) ). '">
 						'. get_the_post_thumbnail( $post->ID, 'fullframe-featured-content', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class' => 'pngfix' ) ) .'
 						</a>
 					</figure>';
@@ -327,7 +327,7 @@ function fullframe_page_content( $options ) {
 						$fullframe_image =	$fullframe_first_image;
 					}
 
-					$fullframe_page_content .= '<a title="Permalink to '.the_title('','',false).'" href="' . get_permalink() . '">
+					$fullframe_page_content .= '<a title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'fullframe' ), 'echo' => false ) ) . '" href="' . get_permalink() . '">
 						'. $fullframe_image .'
 					</a>';
 				}

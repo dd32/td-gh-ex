@@ -1,5 +1,11 @@
 == Change log ==
 
+= 0.8 =
+* Bug Fixed: Html is now allowed in Featured Content Headline and Sub-headline
+* Removed unnecessary file fullframe-menu.js
+* Replaced the_title() with the_title_attribute() where title is used as attribute
+* Replaced all require_once with require
+
 = 0.7 =
 * Removed jquery cookie and its dependencies
 * Added fullframe- prefix to dark css handle

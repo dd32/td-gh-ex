@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Full Frame\n"
 "Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/full-frame-pro-"
 "premium/pro-premium/\n"
-"POT-Creation-Date: 2015-02-20 11:55+0545\n"
-"PO-Revision-Date: 2015-02-20 11:55+0545\n"
+"POT-Creation-Date: 2015-02-23 21:07+0545\n"
+"PO-Revision-Date: 2015-02-23 21:07+0545\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: en\n"
@@ -699,15 +699,15 @@ msgstr ""
 msgid "%s"
 msgstr ""
 
-#: ../inc/fullframe-core.php:1431
+#: ../inc/fullframe-core.php:1425
 msgid "Scroll Up"
 msgstr ""
 
-#: ../inc/fullframe-core.php:1448
+#: ../inc/fullframe-core.php:1442
 msgid "Posted on"
 msgstr ""
 
-#: ../inc/fullframe-core.php:1449
+#: ../inc/fullframe-core.php:1443
 msgid "By"
 msgstr ""
 
@@ -1038,6 +1038,14 @@ msgid ""
 "Here you can showcase the x number of Featured Content. You can edit this "
 "Headline, Subheadline and Feaured Content from \"Appearance -> Customize -> "
 "Featured Content Options\"."
+msgstr ""
+
+#: ../inc/fullframe-featured-content.php:313
+#: ../inc/fullframe-featured-content.php:330
+#: ../inc/fullframe-featured-slider.php:185
+#: ../inc/fullframe-featured-slider.php:201
+#: ../inc/fullframe-featured-slider.php:211
+msgid "Permalink to:"
 msgstr ""
 
 #: ../inc/fullframe-menus.php:27
