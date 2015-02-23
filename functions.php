@@ -1,120 +1,179 @@
 <?php
-/*
-Author: Ali Siddique
-Author URI: http://alisiddique.com/
-*/
+/**
+ * bnw functions and definitions
+ */
 
 /**
  * Table of Functions:
  *
- * 1.0 - cleanup.php
- *   1.1 - Head Clean up
- *   1.2 - Remove RSS Feed
- *   1.3 - Remove injected CSS for recent comments widget
- *   1.4 - Remove injected CSS from recent comments widget
- *   1.5 - Remove injected CSS from gallery
- *   1.6 - Remove the p from around images
- * 2.0 - title.php
- * 3.0 - scripts.php
- * 4.0 - theme-support.php
- *   4.1 - wp thumbnails
- *	 4.2 - wp custom background
- *	 4.3 - Post format type
- * 	 4.4 - WP Menus
- * 5.0 - related-post.php
- * 6.0 - nav.php
- * 7.0 - utility.php
- *   7.1 - Read More
- * 8.0 - custom-post-type.php
- * 9.0 - admin.php
- *	 9.1 - Removing some default WordPress dashboard widgets
- *   9.2 - Example custom dashboard widget
- *   9.3 - Adding custom login css
- *   9.4 - Changing text in footer of admin
- * 10.0 - initial.php
- *    10.1 - Launching theme function
- *    10.2 - OEMBED SIZE OPTIONS
- *    10.3 - THUMBNAIL SIZE OPTIONS
- * 11.0 - sidebars.php
- * 12.0 - widgets.php
- * 13.0 - comments.php
- * 14.0 - fonts.php
- * 15.0 - shortcodes.php
- * 16.0 - gallery.php
- * 17.0 - custom-function.php
- * 18.0 - 
- * -----------------------------------------------------------------------------
+ * 
  */
  
-//	WordPress Head Clean up
+//	Set the content width
 //	=================================================================
-	require_once( 'library/cleanup.php' );
-	
-//	WordPress Better Title
-//	=================================================================
-	require_once( 'library/title.php' );
 
-//	Style and Script loaded this file
-//	=================================================================
-	require_once( 'library/scripts.php' );
-	
-//	Theme support function
-//	=================================================================
-	require_once( 'library/theme-support.php' );
-	
-//	Related post
-//	=================================================================
-	require_once( 'library/related-post.php' );
-	
-//	Pagination 
-//	=================================================================
-	require_once( 'library/nav.php' );
-	
-//	Utility functions
-//	=================================================================
-	require_once( 'library/utility.php' );
+	if ( ! isset( $content_width ) ) {
+		$content_width = 640; /* pixels */
+	}
 
-//	Customize WordPress admin (off by default)
+//	Enable WordPress features.
 //	=================================================================
-	//require_once( 'library/admin.php' );
+
+	if ( ! function_exists( 'bnw_setup' ) ) :
+
+	function bnw_setup() {
+
+		// Make theme available for translation.
+		load_theme_textdomain( 'bnw', get_template_directory() . '/languages' );
+
+		// Add default posts and comments RSS feed links to head.
+		add_theme_support( 'automatic-feed-links' );
+
+		// Title tag
+		add_theme_support( 'title-tag' );
+
+		//Enable support for Post Thumbnails on posts and pages.
+		add_theme_support( 'post-thumbnails' );
+		
+		// default thumb size
+		set_post_thumbnail_size(125, 125, true);
+		
+		// Thumbnail sizes
+		add_image_size( 'post-thumb-1170', 1170, 9999, true );
+		add_image_size( 'post-thumb-750', 750, 9999, true );
+		add_image_size( 'post-thumb-450', 450, 9999, true );
+		add_image_size( 'post-thumb-290', 290, 9999, true );
+		add_image_size( 'post-thumb-200', 200, 9999, true );
+		add_image_size( 'post-thumb-100', 100, 9999, true );
+		
+
+		// This theme uses wp_nav_menu() in one location.
+		register_nav_menus( array(
+			'primary' => __( 'Primary Menu', 'bnw' ),
+		) );
+		
+		// This theme uses wp_nav_menu() in Footer location.
+		register_nav_menus( array(
+			'footer' => __( 'Footer Menu', 'bnw' ),
+		) );
+
+		// html5 comment support
+		add_theme_support( 'html5', array(
+			'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
+		) );
+
+		// Enable support for Post Formats.
+		
+		add_theme_support( 'post-formats', array(
+			'aside', 'image', 'video', 'quote', 'link', 'gallery', 'status', 'audio', 'chat'
+		) );
+
+		// Set up the WordPress core custom background feature.
+		add_theme_support( 'custom-background', apply_filters( 'bnw_custom_background_args', array(
+			'default-color' => 'ffffff',
+			'default-image' => '',
+		) ) );
+	}
+	endif; // bnw_setup
+	add_action( 'after_setup_theme', 'bnw_setup' );
+
+//	Register widget area.
+//	=================================================================
+
+	function bnw_widgets_init() {
+		
+		register_sidebar( array(
+			'name'          => __( 'Sidebar Primary', 'bnw' ),
+			'id'            => 'sidebar-primary',
+			'description'   => '',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		) );
+		
+		register_sidebar( array(
+			'name'          => __( 'Sidebar Right', 'bnw' ),
+			'id'            => 'sidebar-right',
+			'description'   => '',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		) );
+		
+		register_sidebar( array(
+			'name'          => __( 'Footer One', 'bnw' ),
+			'id'            => 'footer-01',
+			'description'   => '',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		) );
+		
+		register_sidebar( array(
+			'name'          => __( 'Footer Two', 'bnw' ),
+			'id'            => 'footer-02',
+			'description'   => '',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		) );
+		
+		register_sidebar( array(
+			'name'          => __( 'Footer Three', 'bnw' ),
+			'id'            => 'footer-03',
+			'description'   => '',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		) );
+	}
+
+	add_action( 'widgets_init', 'bnw_widgets_init' );
+
+//	Enqueue scripts and styles.
+//	=================================================================
 	
-//	Initial functions
-//	=================================================================
-	require_once( 'library/initial.php' );
+	require get_template_directory() . '/libs/scripts.php';
 
-//	Functions for sidebars
-//	=================================================================
-	require_once( 'library/sidebars.php' );
 
-//	Functions for widgets
+//	Implement the Custom Header feature.
 //	=================================================================
-	require_once( 'library/widgets.php' );
 
-//	Comments
-//	=================================================================
-	require_once( 'library/comments.php' );
+	// require get_template_directory() . '/libs/custom-header.php';
 
-//	Font loaded to this scripts
+//	Custom template tags for this theme.
 //	=================================================================
-	require_once( 'library/fonts.php' );
+
+	require get_template_directory() . '/libs/template-tags.php';
+
+//	Custom functions that act independently of the theme templates.
+//	=================================================================
+
+	require get_template_directory() . '/libs/extras.php';
+
+//	Customizer additions.
+//	=================================================================
+
+	require get_template_directory() . '/libs/customizer.php';
+
+//	Load Jetpack compatibility file.
+//	=================================================================
+
+	require get_template_directory() . '/libs/jetpack.php';
+
+//	Load Titan Framework plugin checker
+//	=================================================================
+	require get_template_directory() . '/titan-framework-checker.php';
 	
-//	Short-code function
+//	Load Titan Framework options
 //	=================================================================
-	require_once( 'library/shortcodes.php' );
+	require get_template_directory() . '/titan-options.php';
 	
-//	Gallery function
+//	Load Titan Framework options
 //	=================================================================
-	require_once( 'library/gallery.php' );
-	
-//	Custom Header function 
-//	=================================================================
-	require_once( 'library/custom-header.php' );
-
-	
-//	Custom Functions
-//	=================================================================
-	require_once( 'library/custom-function.php' );
-	
-
-
-/* DON'T DELETE THIS CLOSING TAG */ ?>
+	require get_template_directory() . '/theme-options.php';

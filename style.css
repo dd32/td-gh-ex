@@ -1,14 +1,17 @@
 /*
 Theme Name: B & W
 Theme URI: http://alisiddique.com/templates/wp/bnw/
-Description: B & W clean and simple WordPress Blog theme. B & W based on twitter bootstrap and Bones Starter theme. HTML5 and CSS3 ready. 
+Description: B & W clean and simple WordPress Blog theme. B & W based on Skeleton and Underscores. HTML5 and CSS3 ready. 
 Author: Ali Siddique
 Author URI: http://alisiddique.com/
-Version: 1.6.02
+Version: 1.6.03
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Text Domain: bnw-theme
+Text Domain: bnw
+Tags: blue, white, light, one-column, two-columns, right-sidebar, custom-background, custom-header, custom-colors, custom-menu, featured-images,full-width-template, post-formats,  fluid-layout, responsive-layout, theme-options
 
-Tags: blue, white, light, one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-colors, custom-menu, featured-images,full-width-template, microformats, post-formats,  fluid-layout, responsive-layout
+bnw is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */

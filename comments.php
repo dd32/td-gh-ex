@@ -1,69 +1,64 @@
 <?php
 /**
- * The template for displaying Comments
- *
- * The area of the page that contains comments and the comment form.
- *
- * @package WordPress
- * @subpackage B & W
- * @since B & W 1.1
+ * The template for displaying comments.
  */
 
 /*
- * If the current post is protected by a password and the visitor has not yet
- * entered the password we will return early without loading the comments.
+ * If the current post is protected by a password and
+ * the visitor has not yet entered the password we will
+ * return early without loading the comments.
  */
-
-// don't load it if you can't comment
 if ( post_password_required() ) {
 	return;
 }
-
 ?>
 
-<?php // You can start editing here. ?>
+<div id="comments" class="comments-area">
 
-<?php if ( have_comments() ) : ?>
+	<?php // You can start editing here -- including this comment! ?>
 
-	<h3 id="comments-title" class="h2">
-		<?php comments_number( __( '<span>No</span> Comments', 'bnwtheme' ), __( '<span>One</span> Comment', 'bnwtheme' ), _n( '<span>%</span> Comments', '<span>%</span> Comments', get_comments_number(), 'bnwtheme' ) );?>
-	</h3>
+	<?php if ( have_comments() ) : ?>
+		<h2 class="comments-title">
+			<?php
+				printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'bnw' ),
+					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
+			?>
+		</h2>
 
-	<section class="commentlist">
-		<?php
-		wp_list_comments( array(
-			'style'             => 'div',
-			'short_ping'        => true,
-			'avatar_size'       => 40,
-			'callback'          => 'bnw_comments',
-			'type'              => 'all',
-			'reply_text'        => 'Reply',
-			'page'              => '',
-			'per_page'          => '',
-			'reverse_top_level' => null,
-			'reverse_children'  => ''
-			) );
-		?>
-	</section>
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
+		<nav id="comment-nav-above" class="comment-navigation" role="navigation">
+			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'bnw' ); ?></h1>
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'bnw' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'bnw' ) ); ?></div>
+		</nav><!-- #comment-nav-above -->
+		<?php endif; // check for comment navigation ?>
 
-	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-	<nav class="navigation comment-navigation" role="navigation">
-		<div class="comment-nav-prev">
-			<?php previous_comments_link( __( '&larr; Previous Comments', 'bnwtheme' ) ); ?>
-		</div>
-		<div class="comment-nav-next">
-			<?php next_comments_link( __( 'More Comments &rarr;', 'bnwtheme' ) ); ?>
-		</div>
-	</nav>
+		<ol class="comment-list">
+			<?php
+				wp_list_comments( array(
+					'style'      => 'ol',
+					'short_ping' => true,
+				) );
+			?>
+		</ol><!-- .comment-list -->
+
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
+		<nav id="comment-nav-below" class="comment-navigation" role="navigation">
+			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'bnw' ); ?></h1>
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'bnw' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'bnw' ) ); ?></div>
+		</nav><!-- #comment-nav-below -->
+		<?php endif; // check for comment navigation ?>
+
+	<?php endif; // have_comments() ?>
+
+	<?php
+		// If comments are closed and there are comments, let's leave a little note, shall we?
+		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+	?>
+		<p class="no-comments"><?php _e( 'Comments are closed.', 'bnw' ); ?></p>
 	<?php endif; ?>
 
-	<?php if ( ! comments_open() ) : ?>
-		<p class="no-comments">
-			<?php _e( 'Comments are closed.' , 'bnwtheme' ); ?>
-		</p>
-	<?php endif; ?>
+	<?php comment_form(); ?>
 
-	<?php endif; ?>
-
-<?php comment_form(); ?>
-
+</div><!-- #comments -->

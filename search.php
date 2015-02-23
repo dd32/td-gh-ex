@@ -1,74 +1,44 @@
 <?php
 /**
- * The template for displaying Search Results pages
+ * The template for displaying search results pages.
  *
- * @package WordPress
- * @subpackage B & W
- * @since B & W 1.1
+ * @package bnw
  */
 
 get_header(); ?>
-	<!-- /Header End -->
-	<section class="breadcrumb-wrapper" style="background: #F5F5F5; margin-bottom: 0px;">
-		<div class="container">
-			<?php if (function_exists('qt_custom_breadcrumbs')) qt_custom_breadcrumbs(); ?>
-		</div>
-	</section>
-	<!-- /breadcrumb End -->
 
-	<!-- Title Wrapper -->
-	<section class="title-wrapper">
-		<div class="container">
-			<h2 class="page-title" itemprop="headline">
-				<i class="fa fa-search"></i> <?php _e( 'Search Results for:', 'bnwtheme' ); ?></span> <?php echo esc_attr(get_search_query()); ?>
-			</h2>
-		</div>
-	</section>
-	<!-- /Title Wrapper -->
-	<!-- Content
-	================================================== -->
-	<section class="content search wow fadeInUp">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8">
-					<div class="row">
-						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-							<div class="col-sm-12 col-md-6 col-lg-12">
-								<!-- Loop -->
-								<?php get_template_part('loop'); ?>
-								<!-- /Loop -->
-							</div>
-						<?php endwhile; ?>
-							<!-- Pagination -->
-							<ul class="pager">
-								<?php bnw_page_navi(); ?>
-							</ul>
-							<!-- /Pagination -->
-						<?php else : ?>
-							<!-- Post Not Found -->
-							<article id="post-not-found" class="hentry clearfix">
-								<header class="article-header">
-								<h1><?php _e( 'Oops, Post Not Found!', 'bnwtheme' ); ?></h1>
-								</header>
-								<section class="entry-content">
-								<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bnwtheme' ); ?></p>
-								</section>
-								<footer class="article-footer">
-								<p><?php _e( 'This is the error message in the index.php template.', 'bnwtheme' ); ?></p>
-								</footer>
-							</article>
-							<!-- /Post Not Found -->
-						<?php endif; ?>
-					</div>
+	<section id="primary" class="content-area container">
+		<main id="main" class="site-main" role="main">
+
+		<?php if ( have_posts() ) : ?>
+
+			<header class="page-header">
+				<h2 class="page-title"><?php printf( __( 'Search Results for: %s', 'bnw' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
+			</header><!-- .page-header -->
+
+			<?php /* Start the Loop */ ?>
+			
+			<?php while ( have_posts() ) : the_post(); ?>
+				<div id="primary" class="content-area article">
+				<?php
+				/**
+				 * Run the loop for the search to output the results.
+				 * If you want to overload this in a child theme then include a file
+				 * called content-search.php and that will be used instead.
+				 */
+				get_template_part( 'content', 'search' );
+				?>
 				</div>
-				<div class="col-lg-4">
-					<div class="">
-						<?php get_sidebar(); ?>
-					</div>
-				</div>
-				
-			</div>
-		</div>
-	</section><!-- /home-blog -->
-	<!-- /Content End -->
+			<?php endwhile; ?>
+			
+			<?php the_posts_navigation(); ?>
+
+		<?php else : ?>
+
+			<?php get_template_part( 'content', 'none' ); ?>
+
+		<?php endif; ?>
+
+		</main><!-- #main -->
+	</section><!-- #primary -->
 <?php get_footer(); ?>

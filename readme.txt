@@ -1,17 +1,14 @@
 /*  Theme License
 /* ------------------------------------ */
 
-The theme itself is nothing but 100% GPLv3. See headers of files for further details.
+The theme itself is nothing but 100% GPLv2. See headers of files for further details.
 
-B & W clean and simple WordPress Blog theme. B & W based on twitter bootstrap and Bones Starter theme. HTML5 and CSS3 ready.
-
-
-/*  Bones Theme License
+/*  underscores Theme License
 /* ------------------------------------ */
 
-License: WTFPL
-License URI: http://sam.zoy.org/wtfpl/
-Copyright: Eddie Machado, http://themble.com/bones
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Copyright: Automattic, http://automattic.com/
 
 /*  Font Awesome License
 /* ------------------------------------ */
@@ -25,14 +22,6 @@ Code License - http://fontawesome.io
 License: MIT License
 License URI: http://opensource.org/licenses/mit-license.html
 Copyright: Dave Gandy, http://fontawesome.io
-
-/*  Bootstrap License
-/* ------------------------------------ */
-
-Code License - http://getbootstrap.com/
-License: The MIT License (MIT)
-License URI: https://github.com/twbs/bootstrap/blob/master/LICENSE
-Copyright: Copyright (c) 2011-2014 Twitter, Inc
 
 /*  Animate.css License
 /* ------------------------------------ */
@@ -50,14 +39,6 @@ License: MIT license
 License URI: https://github.com/matthieua/WOW/blob/master/LICENSE-MIT
 Copyright: Matt Aussaguel, http://mynameismatthieu.com/
 
-/*  ScrollMagic License
-/* ------------------------------------ */
-
-Code License - http://janpaepke.github.io/ScrollMagic/
-License: ScrollMagic is dual licensed under the MIT license (below) and GPL
-License URI: https://github.com/janpaepke/ScrollMagic/blob/master/LICENSE.md
-Copyright: Jan Paepke, http://www.janpaepke.de/
-
 /*  jQuery Waypoints License
 /* ------------------------------------ */
 
@@ -66,18 +47,8 @@ License: The MIT License
 License URI: https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
 Copyright: Copyright (c) 2011-2012 Caleb Troughton
 
-/*  BxSlider License
-/* ------------------------------------ */
-
-Code License - http://janpaepke.github.io/ScrollMagic/
-License: WTFPL license
-License URI: http://sam.zoy.org/wtfpl/
-Copyright: Steven Wanderski, http://stevenwanderski.com/
-
 /*  Theme images
 /* ------------------------------------ */
-
-Pattern images from http://subtlepatterns.com/
 
 
 
