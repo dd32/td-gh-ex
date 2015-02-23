@@ -60,6 +60,9 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.41
+* New Translation Language added(Italian)
+
 Version 2.40
 * Changes in theme Option panel
 * Email removed due to unnecessary spam emails
