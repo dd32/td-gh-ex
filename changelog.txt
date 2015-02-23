@@ -1,5 +1,8 @@
 SuevaFree Changelog
 
+- Version 1.2.7.1 - Released: 23.02.2015
+
+-- Added : Post author.
 
 - Version 1.2.7.1 - Released: 15.02.2015
 
