@@ -14,7 +14,7 @@ jQuery(document).ready(function($){
         }
     });
 
-	$('.parallax-on.home .nav').onePageNav({
+	$('.single-page-nav.nav').onePageNav({
 		currentClass: 'current',
     	changeHash: false,
     	scrollSpeed: 1500,

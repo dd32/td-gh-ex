@@ -373,3 +373,4 @@ function accesspress_letter_count($content, $limit) {
 	return $limit_content;
 }
 add_filter('widget_text', 'do_shortcode');
+add_filter('show_admin_bar', '__return_false');

@@ -42,10 +42,10 @@
 			<?php 
 			$sections = of_get_option('parallax_section');
 			if(of_get_option('enable_parallax')==1 && !empty($sections) && ('page' != get_option( 'show_on_front'))): ?>
-			<ul class="nav">
+			<ul class="nav single-page-nav">
 			<?php
 				if(of_get_option('show_slider')== "yes") : ?>
-					<li class="current"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#main-slider">Home</a></li>
+					<li class="current"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#main-slider"><?php _e( 'Home' ,'accesspress_parallax'); ?></a></li>
 				<?php endif;
 				
 				foreach ($sections as $single_sections): 

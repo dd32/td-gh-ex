@@ -106,10 +106,10 @@ function optionsframework_options() {
     $about_content .= "<hr/>";
 
     $about_content .= "<h4>".__('Get in touch','accesspress_parallax')."</h4>";
-    $about_content .= __('If you have any question/feedback, please get in touch:','accesspress_parallax')."<br /><br />";
-    $about_content .= __('General enquiries:','accesspress_parallax')." <a href='mailto:".esc_url('info@accesspressthemes.com')."'>info@accesspressthemes.com</a><br /><br />";
-    $about_content .= __('Support:','accesspress_parallax')." <a href='mailto:".esc_url('support@accesspressthemes.com')."'>support@accesspressthemes.com</a><br /><br />";
-    $about_content .= __('Sales:','accesspress_parallax')." <a href='mailto:".esc_url('sales@accesspressthemes.com')."'>sales@accesspressthemes.com</a><br/><br />";
+    $about_content .= __('If you have any question/feedback regarding theme, please post in our forum','accesspress_parallax')."<br /><br />"; 
+    $about_content .= __('Forum:','accesspress_parallax')." <a target='_blank' href='".esc_url('http://accesspressthemes.com/support/')."'>http://accesspressthemes.com/support/</a><br /><br /><br />";
+    $about_content .= __('For Queries Regading Themes:','accesspress_parallax')."<br/><br />";
+    $about_content .= __('Support:','accesspress_parallax')." <a href='mailto:support@accesspressthemes.com'>support@accesspressthemes.com</a><br /><br />";
     
     $about_content .= "<hr />";
 
