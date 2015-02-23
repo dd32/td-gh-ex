@@ -45,6 +45,9 @@ http://www.gratisography.com/pictures/46_1.jpg
 16. Other theme options are self explanatory.
 
 == Change Log ==
+Version 1.0.6
+	* Updated Font Awesome files
+	
 Version 1.0.5
 	* Typo Fix
 	* Screenshot change

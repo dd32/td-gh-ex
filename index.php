@@ -10,7 +10,7 @@
  *
  * @package Greenr
  */
-global $greenr
+global $greenr;
 get_header(); ?>
 
 	<div id="primary" class="content-area eleven columns">
