@@ -58,7 +58,8 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
-
+@version 0.2.5
+1. Add unminified version bootstrap.min.js for unless provide origianl profile.
 @Version 0.2.4
 1. Remove Dot(.) in eliptepress option panel file.
 @Version 0.2.3
