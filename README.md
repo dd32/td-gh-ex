@@ -40,6 +40,9 @@ https://unsplash.imgix.net/photo-1414446483597-8d8f792bfe39?q=75&fm=jpg&s=2756ab
 16. Other theme options are self explanatory.
 
 == Change Log ==
+v. 1.1.0
+	* Updated Font Awesome Files
+
 v. 1.0.9
 	* Added color scheme and banner
 	* Domain name changes
