@@ -54,6 +54,7 @@ function esteem_setup() {
 	add_image_size( 'blog-large', 642, 300, true ); 				// used on blog large template
 	add_image_size( 'blog-medium', 306, 205, true ); 				// used on blog medium template
 	add_image_size( 'recent-thumb', 350, 316, true );
+	add_image_size( 'service-featured', 600, 330, true );
 
 	// Setup the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'esteem_custom_background_args', array(

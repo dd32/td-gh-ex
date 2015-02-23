@@ -115,12 +115,19 @@ class esteem_service_widget extends WP_Widget {
  			$var = 'page_id'.$i;
  			$defaults[$var] = '';
  		}
+		$defaults['checkbox'] = '0';
  		$instance = wp_parse_args( (array) $instance, $defaults );
  		for ( $i=0; $i<3; $i++ ) {
  			$var = 'page_id'.$i;
  			$var = absint( $instance[ $var ] );
 		}
+		$checkbox = $instance[ 'checkbox' ] ? 'checked="checked"' : '';
 	?>
+		<p>
+			<input class="checkbox" <?php echo $checkbox; ?> id="<?php echo $this->get_field_id( 'checkbox' ); ?>" name="<?php echo $this->get_field_name( 'checkbox' ); ?>" type="checkbox" />
+			<label for="<?php echo $this->get_field_id('checkbox'); ?>"><?php _e( 'Check to display the Featured Image', 'esteem' ); ?></label>
+			<?php _e('<strong>Note:</strong> Featured Image will overwrite the fontawesome icon.', 'esteem'); ?>
+		</p>
 		<?php for( $i=0; $i<3; $i++) { ?>
 			<p>
 				<label for="<?php echo $this->get_field_id( key($defaults) ); ?>"><?php _e( 'Page', 'esteem' ); ?>:</label>
@@ -137,6 +144,7 @@ class esteem_service_widget extends WP_Widget {
 			$var = 'page_id'.$i;
 			$instance[ $var] = absint( $new_instance[ $var ] );
 		}
+		$instance[ 'checkbox' ] = isset( $new_instance[ 'checkbox' ] ) ? 1 : 0;
 
 		return $instance;
 	}
@@ -146,6 +154,7 @@ class esteem_service_widget extends WP_Widget {
  		extract( $instance );
 
  		global $post;
+ 		$checkbox = !empty( $instance[ 'checkbox' ] ) ? 'true' : 'false';
  		$page_array = array();
  		for( $i=0; $i<3; $i++ ) {
  			$var = 'page_id'.$i;
@@ -174,6 +183,18 @@ class esteem_service_widget extends WP_Widget {
 					}				
 					?>
 					<div class="<?php echo $service_class; ?>">
+					<?php if ( $checkbox == 'true' ) : ?>
+						<div class="services-featured-image">
+							<?php
+							if ( has_post_thumbnail() ) {
+                        echo'<div class="service-image">'.get_the_post_thumbnail( $post->ID, 'service-featured' ).'</div>';
+							}
+							?>
+							<h3 class="service-title"><a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php echo $page_title; ?></a></h3>
+							<?php the_excerpt(); ?>
+							<a class="read-more" title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php echo of_get_option( 'esteem_read_more_text', __( 'Read more', 'esteem' ) ); ?></a>
+						</div>
+					<?php else : ?>
 						<?php $esteem_icon = get_post_meta( $post->ID, '_esteem_font_icon', true );
 						if( !empty( $esteem_icon ) ) { ?>
 							<div class="service-border">
@@ -188,7 +209,8 @@ class esteem_service_widget extends WP_Widget {
 						<?php } ?>
 						<h3 class="service-title"><a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php echo $page_title; ?></a></h3>
 						<?php the_excerpt(); ?>
-						<a class="read-more" title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php _e( 'Read more','esteem' ); ?></a>					
+						<a class="read-more" title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php _e( 'Read more','esteem' ); ?></a>
+						<?php endif; ?>
 					</div><!-- .tg-one-third -->
 					<?php $j++; ?>					
 				<?php endwhile;

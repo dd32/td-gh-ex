@@ -42,6 +42,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.2.1 =
+* Featured image option added for services widget.
+
 = Version 1.2 =
 * Search form code fixed.
 * Missed translation text fixed.

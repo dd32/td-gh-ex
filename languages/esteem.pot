@@ -1,19 +1,23 @@
+# Esteem WordPress Theme. Translation template file.
+# This file is distributed under the same license as the Esteem Theme.
 msgid ""
 msgstr ""
 "Project-Id-Version: Esteem\n"
-"POT-Creation-Date: 2015-01-21 15:39+0545\n"
-"PO-Revision-Date: 2015-01-21 15:39+0545\n"
+"POT-Creation-Date: 2015-02-23 13:32+0545\n"
+"PO-Revision-Date: 2015-02-23 13:32+0545\n"
 "Last-Translator: \n"
 "Language-Team: ThemeGrill <themegrill@gmail.com>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.4\n"
-"X-Poedit-Basepath: ../\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.7\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr__;esc_attr_e\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:20
@@ -73,7 +77,7 @@ msgid "Edit"
 msgstr ""
 
 #: content-blog-image-large.php:54 content-blog-image-medium.php:55
-#: content.php:60 inc/widgets/widgets.php:191
+#: content.php:60 inc/widgets/widgets.php:195 inc/widgets/widgets.php:212
 msgid "Read more"
 msgstr ""
 
@@ -368,77 +372,86 @@ msgstr ""
 msgid "TG: Services"
 msgstr ""
 
-#: inc/widgets/widgets.php:126 inc/widgets/widgets.php:239
+#: inc/widgets/widgets.php:128
+msgid "Check to display the Featured Image"
+msgstr ""
+
+#: inc/widgets/widgets.php:129
+msgid ""
+"<strong>Note:</strong> Featured Image will overwrite the fontawesome icon."
+msgstr ""
+
+#: inc/widgets/widgets.php:133 inc/widgets/widgets.php:261
 msgid "Page"
 msgstr ""
 
-#: inc/widgets/widgets.php:211
+#: inc/widgets/widgets.php:233
 msgid ""
 "Use this widget to show recent work, portfolio or any pages as your wish "
 "( Business Layout )"
 msgstr ""
 
-#: inc/widgets/widgets.php:213
+#: inc/widgets/widgets.php:235
 msgid "TG: Featured Widget"
 msgstr ""
 
-#: inc/widgets/widgets.php:232 inc/widgets/widgets.php:538
+#: inc/widgets/widgets.php:254 inc/widgets/widgets.php:560
 msgid "Title:"
 msgstr ""
 
-#: inc/widgets/widgets.php:322
+#: inc/widgets/widgets.php:344
 msgid "Use this widget to show the call to action section"
 msgstr ""
 
-#: inc/widgets/widgets.php:324
+#: inc/widgets/widgets.php:346
 msgid "TG: Call To Action Widget"
 msgstr ""
 
-#: inc/widgets/widgets.php:340
+#: inc/widgets/widgets.php:362
 msgid "Call to Action Main Text"
 msgstr ""
 
-#: inc/widgets/widgets.php:342
+#: inc/widgets/widgets.php:364
 msgid "Call to Action Additional Text"
 msgstr ""
 
-#: inc/widgets/widgets.php:345
+#: inc/widgets/widgets.php:367
 msgid "Button Text:"
 msgstr ""
 
-#: inc/widgets/widgets.php:349
+#: inc/widgets/widgets.php:371
 msgid "Button Redirect Link:"
 msgstr ""
 
-#: inc/widgets/widgets.php:426
+#: inc/widgets/widgets.php:448
 msgid "Display Testimonial"
 msgstr ""
 
-#: inc/widgets/widgets.php:428
+#: inc/widgets/widgets.php:450
 msgid "TG: Testimonial"
 msgstr ""
 
-#: inc/widgets/widgets.php:541 inc/widgets/widgets.php:559
+#: inc/widgets/widgets.php:563 inc/widgets/widgets.php:581
 msgid "Name:"
 msgstr ""
 
-#: inc/widgets/widgets.php:544 inc/widgets/widgets.php:562
+#: inc/widgets/widgets.php:566 inc/widgets/widgets.php:584
 msgid "Image link:"
 msgstr ""
 
-#: inc/widgets/widgets.php:547 inc/widgets/widgets.php:565
+#: inc/widgets/widgets.php:569 inc/widgets/widgets.php:587
 msgid "Testimonial Description"
 msgstr ""
 
-#: inc/widgets/widgets.php:550 inc/widgets/widgets.php:568
+#: inc/widgets/widgets.php:572 inc/widgets/widgets.php:590
 msgid "Byline:"
 msgstr ""
 
-#: inc/widgets/widgets.php:553 inc/widgets/widgets.php:571
+#: inc/widgets/widgets.php:575 inc/widgets/widgets.php:593
 msgid "Company:"
 msgstr ""
 
-#: inc/widgets/widgets.php:556 inc/widgets/widgets.php:574
+#: inc/widgets/widgets.php:578 inc/widgets/widgets.php:596
 msgid "Company link:"
 msgstr ""
 
