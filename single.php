@@ -8,9 +8,9 @@
                         </div>
                         <div id="kt-article-title">
                             <h1><?php 
-                                $thetitle = get_the_title($post->ID);
-                                $origpostdate = get_the_date('M d, Y', $post->post_parent);
-                                if($thetitle == null):echo $origpostdate; 
+                                $beyond_thetitle = get_the_title($post->ID);
+                                $beyond_origpostdate = get_the_date('M d, Y', $post->post_parent);
+                                if($beyond_thetitle == null):echo $origpostdate; 
                                 else:
                                 the_title();
                                 endif;

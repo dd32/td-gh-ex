@@ -2,7 +2,8 @@
    <footer class="kt-footer">
    <div class="container">
         <div class="row">
-        <?php $beyond_fsn = esc_html(of_get_option('footer_sidebars_number','1')); 
+        <?php 
+              $beyond_fsn = esc_html(beyond_footer_sidebars()); 
               if($beyond_fsn == 1):
         ?>
                <div class="col-md-12 kt-sidebar">

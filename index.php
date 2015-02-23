@@ -5,9 +5,11 @@
                         <p><span><?php echo __('RECENT FROM BLOG','beyondmagazine');?></span></p>
                     </div>
                     <?php 
-                    if(of_get_option('post_layout','two_col') == 'two_col'):
+                    $beyond_post_columns = esc_html(beyond_post_columns());
+                    if(empty($beyond_post_columns) || $beyond_post_columns == ''):$beyond_post_columns = 'two_col'; endif;
+                    if($beyond_post_columns == 'two_col'):
                         get_template_part('libs/two-columns-posts');
-                    elseif(of_get_option('post_layout','two_col') == 'three_col'):
+                    elseif($beyond_post_columns == 'three_col'):
                         get_template_part('libs/three-columns-posts');
                     endif;
                     ?>

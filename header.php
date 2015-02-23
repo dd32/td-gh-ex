@@ -4,8 +4,8 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <title><?php wp_title('|',true,'right'); ?></title>    
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-    <?php if(of_get_option('favicon_upload','')): ?>
-        <link rel="icon" href="<?php if(of_get_option('favicon_upload','')): echo esc_url(of_get_option('favicon_upload','')); endif; ?>" type="image/x-icon">
+    <?php if(beyond_get_favicon() != '') : ?>
+        <link rel="icon" href="<?php echo esc_url(beyond_get_favicon()); ?>" type="image/x-icon">   
     <?php endif; ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); ?>

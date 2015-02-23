@@ -1,26 +1,6 @@
 <?php
 /***
 *
-OPTIONS -  This code works with the Options Framework Plugin
-*
-***/
-if ( !function_exists('of_get_option')) {
-function of_get_option($name, $default = false) {
-    $optionsframework_settings = get_option('optionsframework');
-    $option_name = $optionsframework_settings['id'];
-    if ( get_option($option_name) ) {
-        $options = get_option($option_name);
-    }
-        
-    if ( isset($options[$name]) ) {
-        return $options[$name];
-    } else {
-        return $default;
-    }
-}
-} 
-/***
-*
 TGM PLUGIN ACTIVATION
 *
 ***/
@@ -45,11 +25,6 @@ function beyond_register_recommended_plugins() {
      * If the source is NOT from the .org repo, then source is also required.
      */
     $beyond_plugins = array(
-        array(
-            'name'      => __('Options Framework','beyondmagazine'),
-            'slug'      => 'options-framework',
-            'required'  => false
-    ),
         array(
             'name'      => __('Bootstrap 3 Shortcodes','beyondmagazine'),
             'slug'      => 'bootstrap-3-shortcodes',
@@ -177,11 +152,11 @@ LOAD CSS AND JS STYLES
 ***/
     function beyond_load_scripts() {
    
-        wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.min.js',array('jquery'),'',true);
-        wp_enqueue_script('slicknav',get_template_directory_uri().'/js/jquery.slicknav.min.js',array('jquery'),'',true);
-        wp_enqueue_script('init',get_template_directory_uri().'/js/init.js',array('jquery'),'',true);
+        wp_enqueue_script('beyond_bootstrap', get_template_directory_uri().'/js/bootstrap.min.js',array('jquery'),'',true);
+        wp_enqueue_script('beyond_slicknav',get_template_directory_uri().'/js/jquery.slicknav.min.js',array('jquery'),'',true);
+        wp_enqueue_script('beyond_init',get_template_directory_uri().'/js/init.js',array('jquery'),'',true);
         
-        wp_localize_script('init', 'init_vars', array(
+        wp_localize_script('beyond_init', 'init_vars', array(
             'label' => __('Menu', 'beyondmagazine')
         ));
 
@@ -192,12 +167,12 @@ LOAD CSS AND JS STYLES
 
     function beyond_load_styles()
     { 
-        wp_enqueue_style( 'bootstrap-theme', get_template_directory_uri().'/css/bootstrap-theme.min.css','','','all' );
-        wp_enqueue_style( 'bootstrap', get_template_directory_uri(). '/css/bootstrap.min.css','','','all' );
-        wp_enqueue_style( 'slicknav',get_template_directory_uri().'/css/slicknav.css','','','all');
-        wp_enqueue_style( 'elegant-font',get_template_directory_uri().'/fonts/elegant_font/HTML_CSS/style.css','','','all');
-        wp_enqueue_style( 'openSans',get_template_directory_uri().'/css/web_fonts/opensans_regular_macroman/stylesheet.css','','','all');
-        wp_enqueue_style( 'style', get_stylesheet_uri(),'','','all' );
+        wp_enqueue_style( 'beyond_bootstrap-theme', get_template_directory_uri().'/css/bootstrap-theme.min.css','','','all' );
+        wp_enqueue_style( 'beyond_bootstrap', get_template_directory_uri(). '/css/bootstrap.min.css','','','all' );
+        wp_enqueue_style( 'beyond_slicknav',get_template_directory_uri().'/css/slicknav.css','','','all');
+        wp_enqueue_style( 'beyond_elegant-font',get_template_directory_uri().'/fonts/elegant_font/HTML_CSS/style.css','','','all');
+        wp_enqueue_style( 'beyond_openSans',get_template_directory_uri().'/css/web_fonts/opensans_regular_macroman/stylesheet.css','','','all');
+        wp_enqueue_style( 'beyond_style', get_stylesheet_uri(),'','','all' );
     }    
     add_action('wp_enqueue_scripts', 'beyond_load_styles');
    
@@ -267,3 +242,132 @@ function beyond_excerpt_length( $length ) {
     return 50;
 }
 add_filter( 'excerpt_length', 'beyond_excerpt_length', 999 );
+/** THEME OPTIONS **/
+add_action( 'admin_menu', 'beyond_add_admin_menu' );
+add_action( 'admin_init', 'beyond_settings_init' );
+
+
+function beyond_add_admin_menu(  ) { 
+    add_theme_page( __('beyondmagazine','beyondmagazine'), __('Beyond Magazine Settings','beyondmagazine'), 'manage_options', 'beyondmagazine', 'beyond_options_page' );
+
+}
+
+
+function beyond_settings_init(  ) { 
+
+    register_setting( 'pluginPage', 'beyond_settings' );
+
+    add_settings_section(
+        'beyond_pluginPage_section', 
+        __( 'General Settings For Theme.', 'beyondmagazine' ), 
+        'beyond_settings_section_callback', 
+        'pluginPage'
+    );
+    add_settings_field( 
+        'beyond_add_favicon', 
+        __( 'Favicon URL', 'beyondmagazine' ), 
+        'beyond_add_favicon_render', 
+        'pluginPage', 
+        'beyond_pluginPage_section' 
+    );
+    add_settings_field( 
+        'beyond_footer_sidebars', 
+        __( 'Select Footer Sidebars', 'beyondmagazine' ), 
+        'beyond_footer_sidebars_render', 
+        'pluginPage', 
+        'beyond_pluginPage_section' 
+    );
+    add_settings_field( 
+        'beyond_post_columns', 
+        __( 'Select Beyond Magazine Post Columns', 'beyondmagazine' ), 
+        'beyond_columns_render', 
+        'pluginPage', 
+        'beyond_pluginPage_section' 
+    );
+    
+    
+}
+function beyond_columns_render() { 
+
+    $options = get_option( 'beyond_settings' );
+    ?>
+    <select name='beyond_settings[beyond_post_columns]'>
+        <option value="two_col" <?php selected( strip_tags($options['beyond_post_columns']),'two_col' ); ?>><?php echo __('2 Columns','beyondmagazine'); ?> </option>
+        <option value="three_col" <?php selected( strip_tags($options['beyond_post_columns']),'three_col' ); ?>><?php echo __('3 Columns','beyondmagazine'); ?></option>
+    </select>
+
+<?php }
+function beyond_footer_sidebars_render() { 
+
+    $options = get_option( 'beyond_settings' );
+    ?>
+    <select name='beyond_settings[beyond_footer_sidebars]'>
+        <option value="1" <?php selected( strip_tags($options['beyond_footer_sidebars']), 1 ); ?>><?php echo __('1 Column','beyondmagazine'); ?> </option>
+        <option value="2" <?php selected( strip_tags($options['beyond_footer_sidebars']), 2 ); ?>><?php echo __('2 Columns','beyondmagazine'); ?></option>
+    </select>
+
+<?php }
+function beyond_add_favicon_render() { 
+
+    $options = get_option( 'beyond_settings' );
+    $value = esc_url_raw($options['beyond_add_favicon']);
+    ?>
+    <input type='text' name='beyond_settings[beyond_add_favicon]' value='<?php echo $value; ?>'>
+    <?php
+}
+function beyond_settings_section_callback(  ) {
+     
+    echo __('Premium Features', 'beyondmagazine');
+    echo'<ul style="background:#ffffff; padding:10px; width:90%;">
+        <li>'.__('Favicon & Logo Upload through uploaded','beyondmagazine').'</li>
+        <li>'.__('Upload Logo & Favicon','beyondmagazine').'</li>
+        <li>'.__('Full Width Slider','beyondmagazine').'</li>
+        <li>'.__('Advanced Post Formats Options','beyondmagazine').'</li>
+        <li>'.__('Slider (enable/disable title & description)','beyondmagazine').'</li>
+        <li>'.__('Testimonials','beyondmagazine').'</li>
+        <li>'.__('Google Fonts','beyondmagazine').'</li>
+        <li>'.__('Color Picker','beyondmagazine').'</li>
+        <li>'.__('Gallery','beyondmagazine').'</li>
+        <li>'.__('1-4 Columns Widgetized Footer Sidebar','beyondmagazine').'</li>
+        </ul>
+        <p>
+        <a rel="nofollow" href="'.esc_url( 'http://ketchupthemes.com/beyond-magazine/').'" style="background:red; margin:5px 0; padding:10px 20px; color:#ffffff; margin-top:10px; text-decoration:none;">'.__('Update to Premium','beyondmagazine').'</a></p>';
+}
+function beyond_options_page() { 
+?>
+    <form action='options.php' method='post' name="settingsform">
+     
+        <h2><?php _e('Theme Options','beyondmagazine'); ?></h2>
+            <?php if( isset($_GET['settings-updated']) ) { ?>
+            <div id="message" class="updated">
+                <p><strong><?php _e('Settings saved.','beyondmagazine') ?></strong></p>
+            </div>
+              
+            <?php } ?>
+        <?php
+        settings_fields( 'pluginPage' );
+        do_settings_sections( 'pluginPage' );
+        submit_button();
+        ?>
+    </form>
+    <?php
+}
+function beyond_get_favicon(){
+    $options = get_option('beyond_settings');
+    $favicon = $options['beyond_add_favicon'];
+    
+    return $favicon;
+}
+function beyond_footer_sidebars(){
+    $options = get_option('beyond_settings');
+    $beyond_footer_sidebars = $options['beyond_footer_sidebars'];
+    
+    return $beyond_footer_sidebars;
+}
+function beyond_post_columns(){
+    $options = get_option('beyond_settings');
+    $beyond_post_columns = $options['beyond_post_columns'];
+    
+    return $beyond_post_columns;
+}
+?>
