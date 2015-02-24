@@ -71,6 +71,11 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.0.4
+* Fixed waypoints .js bug when navigation is not sticky - moved function into it's own file
+* Styling tweaks
+* Updated screenshot.png
+
 #### 1.0.3
 * Added un-minified scripts
 * Recommended changes

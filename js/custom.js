@@ -25,10 +25,6 @@
                 $('.scroll-to-top').fadeOut();
             }
         });
-        
-        $('.header-stick').waypoint('sticky', {
-            offset: 0
-        });
 		
     });
     
