@@ -70,7 +70,7 @@ if ( ! function_exists( 'alx_setup' ) ) {
 		add_theme_support( 'post-thumbnails' );
 		
 		// Enable post format support
-		add_theme_support( 'post-formats', array( 'aside', 'gallery', 'image', 'status' ) );
+		add_theme_support( 'post-formats', array( 'audio', 'aside', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video' ) );
 		
 		// Declare WooCommerce support
 		add_theme_support( 'woocommerce' );
@@ -118,7 +118,6 @@ if ( ! function_exists( 'alx_scripts' ) ) {
 	
 	function alx_scripts() {
 		wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/jquery.flexslider.min.js', array( 'jquery' ),'', false );
-		wp_enqueue_script( 'jplayer', get_template_directory_uri() . '/js/jquery.jplayer.min.js', array( 'jquery' ),'', true );
 		wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ),'', true );
 		if ( is_singular() && get_option( 'thread_comments' ) )	{ wp_enqueue_script( 'comment-reply' ); }
 	}  

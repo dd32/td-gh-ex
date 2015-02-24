@@ -1,6 +1,10 @@
   Theme : Hueman (wordpress.org release)
-Version : 1.5.2
+Version : 1.5.3
  Author : Alexander "Alx" Agnarson - http://alxmedia.se
+
+February 24 2015 - 1.5.3
+===========================================================
+- Removed post format meta boxes markup as required
 
 February 24 2015 - 1.5.2
 ===========================================================
