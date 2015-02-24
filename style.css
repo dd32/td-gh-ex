@@ -2,7 +2,7 @@
 Theme Name: Anderson Lite
 Theme URI: http://themezee.com/themes/anderson/
 Description: A clean and elegant magazine theme suitable for any kind of content related website. The theme comes with a fully responsive layout and a sleek featured post slideshow. The user-friendly and flexible theme options supporting the powerful Customizer allow you to setup your magazine website in only a few minutes. 
-Version: 1.0.8
+Version: 1.0.9
 Author: ThemeZee
 Author URI: http://themezee.com
 Tags: two-columns, light, green, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, fluid-layout, responsive-layout, one-column, left-sidebar, right-sidebar, three-columns, black, silver, white, gray
@@ -148,11 +148,6 @@ input, textarea, select {
 	float: left;
 	max-width: 100%;
 	margin: 1.2em 0;
-}
-#logo .site-logo {
-	border: 0;
-	max-width: 100%;
-	height: auto;
 }
 #logo .site-title {
 	display: inline;
@@ -1792,10 +1787,6 @@ embed, iframe, object, video {
 }
 
 @media only screen and (max-width: 37em) {
-	.footer-widget-column {
-		float: none;
-		width: 100%;
-	}
 	.widget-category-posts .small-post .wp-post-image {
 		max-width: 60px;
 	}
