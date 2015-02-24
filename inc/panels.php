@@ -125,7 +125,9 @@ function vantage_prebuilt_page_layouts($layouts){
 			1 =>
 			array(
 				'cells' => '1',
-				'style' => 'wide-grey',
+				'style' => array(
+					'class' => 'wide-grey'
+				),
 			),
 			2 =>
 			array(
@@ -188,48 +190,66 @@ function vantage_panels_row_style_fields($fields) {
 
 	$fields['top_border'] = array(
 		'name' => __('Top Border Color', 'vantage'),
+		'priority' => 3,
+		'group' => 'theme',
 		'type' => 'color',
 	);
 
 	$fields['bottom_border'] = array(
 		'name' => __('Bottom Border Color', 'vantage'),
+		'priority' => 3,
+		'group' => 'theme',
 		'type' => 'color',
 	);
 
 	$fields['background'] = array(
 		'name' => __('Background Color', 'vantage'),
+		'priority' => 5,
+		'group' => 'theme',
 		'type' => 'color',
 	);
 
 	$fields['background_image'] = array(
-		'name' => __('Background Image', 'vantage'),
+		'name' => __('Background Image URL', 'vantage'),
+		'priority' => 6,
+		'group' => 'theme',
 		'type' => 'url',
 	);
 
 	$fields['background_image_repeat'] = array(
 		'name' => __('Repeat Background Image', 'vantage'),
+		'priority' => 7,
+		'group' => 'theme',
 		'type' => 'checkbox',
 	);
 
 	$fields['no_margin'] = array(
 		'name' => __('No Bottom Margin', 'vantage'),
+		'priority' => 10,
+		'group' => 'theme',
 		'type' => 'checkbox',
 	);
 
+	// How we also need to remove some of the fields implemented by Page Builder 2 that aren't compatible.
+	unset( $fields['background_image_attachment'] );
+	unset( $fields['background_display'] );
+	unset( $fields['border_color'] );
+
 	return $fields;
 }
-add_filter('siteorigin_panels_row_style_fields', 'vantage_panels_row_style_fields');
+add_filter('siteorigin_panels_row_style_fields', 'vantage_panels_row_style_fields', 11);
 
 function vantage_panels_panels_row_style_attributes($attr, $style) {
-	$attr['style'] = '';
+	if(empty($attr['style'])) $attr['style'] = '';
 
 	if(!empty($style['top_border'])) $attr['style'] .= 'border-top: 1px solid '.$style['top_border'].'; ';
 	if(!empty($style['bottom_border'])) $attr['style'] .= 'border-bottom: 1px solid '.$style['bottom_border'].'; ';
 	if(!empty($style['background'])) $attr['style'] .= 'background-color: '.$style['background'].'; ';
 	if(!empty($style['background_image'])) $attr['style'] .= 'background-image: url('.esc_url($style['background_image']).'); ';
 	if(!empty($style['background_image_repeat'])) $attr['style'] .= 'background-repeat: repeat; ';
+	if(!empty($style['row_css'])) $attr['style'] .= $style['row_css'];
 
-	if(empty($attr['style'])) unset($attr['style']);
+	if( empty($attr['style']) ) unset( $attr['style'] );
 	return $attr;
 }
 add_filter('siteorigin_panels_row_style_attributes', 'vantage_panels_panels_row_style_attributes', 10, 2);
@@ -243,3 +263,32 @@ function vantage_panels_panels_row_attributes($attr, $row) {
 	return $attr;
 }
 add_filter('siteorigin_panels_row_attributes', 'vantage_panels_panels_row_attributes', 10, 2);
+
+/**
+ * Set the groups for all Vantage registered Widgets
+ *
+ * @param $widgets
+ *
+ * @return mixed
+ */
+function vantage_panels_add_widget_groups($widgets){
+	$widgets['Vantage_CircleIcon_Widget']['groups'] = array('vantage');
+	$widgets['Vantage_Headline_Widget']['groups'] = array('vantage');
+	$widgets['Vantage_Social_Media_Widget']['groups'] = array('vantage');
+	return $widgets;
+
+}
+add_filter('siteorigin_panels_widgets', 'vantage_panels_add_widget_groups');
+
+function vantage_panels_add_widgets_dialog_tabs($tabs){
+	$tabs[] = array(
+		'title' => __('Vantage Widgets', 'vantage'),
+		'filter' => array(
+			'installed' => true,
+			'groups' => array('vantage')
+		)
+	);
+
+	return $tabs;
+}
+add_filter('siteorigin_panels_widget_dialog_tabs', 'vantage_panels_add_widgets_dialog_tabs');

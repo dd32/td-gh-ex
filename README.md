@@ -69,6 +69,44 @@ This theme is built around the SiteOrigin extras framework contained in the fold
 Change Log
 ---------------
 
+#### 1.3.4
+* Moved all body_class filtering into a single function.
+* Removed all URL shortner links.
+* Small CSS fixes.
+
+#### 1.3.3
+* Premium: Fixed fatal error with older versions of PHP.
+
+#### 1.3.2
+* Added auto text - copyright, sitename and year to footer text.
+* Fixed mobile navigation setting default.
+* Migrated to new Page Builder lite.
+* Premium: Fixed font enqueueing of bold fonts.
+
+#### 1.3.1
+* Fixed Jetpack logo support.
+* Fixed settings sanitization to allow some HTML in fields.
+* Premium: Fixed integer sanitization functions.
+* Premium: Fixed image customizer settings.
+
+#### 1.3
+* Fixed retina home page slider.
+* Updated links to include HTTPS.
+* Updated to Font Awesome 4.2.0 - including migration functions.
+* Improved Page builder 2.0 compatibility.
+* Framework updates.
+* Fixed widget validation errors.
+* Fixed widget HTML/CSS validation errors.
+* Added option to reneable sticky menu on mobile.
+* Added UberMenu compatibility.
+* Added option to disable FitVids.
+* Fix to ensure image shadows don't apply to Google maps.
+* Fixed retina slider images.
+* Updated Fitvids, Flex Slider and HTML5.js
+* Framework updates.
+* Premium: Added VK Widget.
+* Added Russian and Japanese translations.
+
 #### 1.2.3
 * Added theme tour to help setup.
 * Framework updates (theme setting now support tour and preview).

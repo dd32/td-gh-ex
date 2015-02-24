@@ -7,7 +7,7 @@
  * Enqueue scripts and styles for meta slider
  */
 function siteorigin_metaslider_register_admin_scripts(){
-	wp_enqueue_script('siteorigin-metaslider', get_template_directory_uri().'/extras/metaslider/js/metaslider.min.js',  array('jquery', 'media-views', 'metaslider-admin-script'), SITEORIGIN_THEME_VERSION);
+	wp_enqueue_script('siteorigin-metaslider', get_template_directory_uri().'/extras/metaslider/js/metaslider.js',  array('jquery', 'media-views', 'metaslider-admin-script'), SITEORIGIN_THEME_VERSION);
 	wp_enqueue_style('siteorigin-metaslider', get_template_directory_uri().'/extras/metaslider/css/metaslider.css',  array(), SITEORIGIN_THEME_VERSION);
 	wp_localize_script('siteorigin-metaslider', 'siteoriginMetaslider', array(
 		'prebuilt' => __('Prebuilt Slide Layouts', 'vantage'),
@@ -95,7 +95,7 @@ function siteorigin_metaslider_install_link(){
 }
 
 function siteorigin_metaslider_affiliate(){
-	return 'http://sorig.in/metaslider';
+	return 'https://getdpd.com/cart/hoplink/15318?referrer=2h2i49ktlxic4s4osog';
 }
 add_filter('metaslider_hoplink', 'siteorigin_metaslider_affiliate');
 

@@ -7,8 +7,8 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.2.3' );
-define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://updates.siteorigin.com' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.3.4' );
+define('SITEORIGIN_THEME_ENDPOINT', 'http://updates.siteorigin.com/');
 
 if( file_exists( get_template_directory() . '/premium/functions.php' ) ){
 	include get_template_directory() . '/premium/functions.php';
@@ -36,6 +36,8 @@ include get_template_directory() . '/inc/widgets.php';
 include get_template_directory() . '/inc/menu.php';
 include get_template_directory() . '/inc/woocommerce.php';
 include get_template_directory() . '/tour/tour.php';
+
+include get_template_directory() . '/fontawesome/icon-migration.php';
 
 
 if ( ! function_exists( 'vantage_setup' ) ) :
@@ -88,9 +90,13 @@ function vantage_setup() {
 	add_image_size('vantage-carousel', 272, 182, true);
 	add_image_size('vantage-grid-loop', 436, 272, true);
 
+	add_theme_support( 'site-logo', array(
+		'size' => 'full',
+	) );
+
 	if( !defined('SITEORIGIN_PANELS_VERSION') && !siteorigin_plugin_activation_is_activating('siteorigin-panels') ){
 		// Only include panels lite if the panels plugin doesn't exist
-		include get_template_directory() . '/extras/panels-lite/panels-lite.php';
+		include get_template_directory() . '/inc/panels-lite/panels-lite.php';
 	}
 
 	add_theme_support('siteorigin-premium-teaser', array(
@@ -186,8 +192,7 @@ add_action('wp_head', 'vantage_print_styles', 11);
  * Register all the bundled scripts
  */
 function vantage_register_scripts(){
-	wp_register_script( 'flexslider' , get_template_directory_uri() . '/js/jquery.flexslider.min.js' , array('jquery'), '2.1' );
-	wp_register_script( 'fitvids' , get_template_directory_uri() . '/js/jquery.fitvids.min.js' , array('jquery'), '1.0' );
+	wp_register_script( 'flexslider' , get_template_directory_uri() . '/js/jquery.flexslider.js' , array('jquery'), '2.1' );
 }
 add_action( 'wp_enqueue_scripts', 'vantage_register_scripts' , 5);
 
@@ -196,15 +201,22 @@ add_action( 'wp_enqueue_scripts', 'vantage_register_scripts' , 5);
  */
 function vantage_scripts() {
 	wp_enqueue_style( 'vantage-style', get_stylesheet_uri(), array(), SITEORIGIN_THEME_VERSION );
-	wp_enqueue_script( 'vantage-main' , get_template_directory_uri() . '/js/jquery.theme-main.min.js', array('jquery', 'flexslider', 'fitvids'), SITEORIGIN_THEME_VERSION );
-	wp_enqueue_style( 'vantage-fontawesome', get_template_directory_uri().'/fontawesome/css/font-awesome.css', array(), '3.2.1' );
+	wp_enqueue_style( 'vantage-fontawesome', get_template_directory_uri().'/fontawesome/css/font-awesome.css', array(), '4.2.0' );
+
+	$js_suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+	wp_enqueue_script( 'flexslider' , get_template_directory_uri() . '/js/jquery.flexslider' . $js_suffix . '.js' , array('jquery'), '2.1' );
+	wp_enqueue_script( 'vantage-main' , get_template_directory_uri() . '/js/jquery.theme-main' . $js_suffix . '.js', array('jquery'), SITEORIGIN_THEME_VERSION );
+
+	if( siteorigin_setting( 'layout_fitvids' ) ) {
+		wp_enqueue_script( 'fitvids' , get_template_directory_uri() . '/js/jquery.fitvids' . $js_suffix . '.js' , array('jquery'), '1.0' );
+	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
 	if ( is_singular() && wp_attachment_is_image() ) {
-		wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.min.js', array( 'jquery' ), '20120202' );
+		wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation' . $js_suffix . '.js', array( 'jquery' ), '20120202' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'vantage_scripts' );
@@ -214,41 +226,10 @@ add_action( 'wp_enqueue_scripts', 'vantage_scripts' );
  */
 function vantage_web_fonts(){
 	if( !siteorigin_setting('logo_image') ) {
-		wp_enqueue_style('vantage-google-webfont-roboto', 'http://fonts.googleapis.com/css?family=Roboto:300');
+		wp_enqueue_style('vantage-google-webfont-roboto', '//fonts.googleapis.com/css?family=Roboto:300');
 	}
 }
 add_action( 'wp_enqueue_scripts', 'vantage_scripts' );
-
-
-/**
- * Add custom body classes.
- *
- * @param $classes
- *
- * @return array
- * @package vantage
- * @since 1.0
- */
-function vantage_body_class($classes){
-	if( siteorigin_setting('layout_responsive') ) $classes[] = 'responsive';
-	$classes[] = 'layout-'.siteorigin_setting('layout_bound');
-	$classes[] = 'no-js';
-
-	if( !is_active_sidebar('sidebar-1') ) {
-		$classes[] = 'no-sidebar';
-	}
-
-	if( wp_is_mobile() ) {
-		$classes[] = 'mobile-device';
-	}
-
-	if(siteorigin_setting('navigation_menu_search')) {
-		$classes[] = 'has-menu-search';
-	}
-
-	return $classes;
-}
-add_filter('body_class', 'vantage_body_class');
 
 function vantage_wp_head(){
 	?>
@@ -384,3 +365,24 @@ function vantage_responsive_header(){
 	}
 }
 add_action('wp_head', 'vantage_responsive_header');
+
+/**
+
+ * Handles the site title, copyright symbol and year string replace for the Footer Copyright theme option.
+
+ */
+function vantage_footer_site_info_sub($copyright){
+
+	return str_replace(
+
+		array('{site-title}', '{copyright}', '{year}'),
+
+		array(get_bloginfo('name'), '&copy;', date('Y')),
+
+		$copyright
+
+	);
+
+}
+
+add_filter( 'vantage_site_info', 'vantage_footer_site_info_sub' );

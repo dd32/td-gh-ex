@@ -50,6 +50,10 @@ function vantage_theme_settings(){
 		'description' => __('Scale your layout for small screen devices.', 'vantage')
 	));
 
+	siteorigin_settings_add_field('layout', 'fitvids', 'checkbox', __('Enable FitVids.js', 'vantage'), array(
+		'description' => __('Include FitVids.js fluid embedded video layouts.', 'vantage')
+	));
+
 	siteorigin_settings_add_field('layout', 'bound', 'select', __('Layout Bound', 'vantage'), array(
 		'options' => array(
 			'boxed' => __('Boxed', 'vantage'),
@@ -106,6 +110,10 @@ function vantage_theme_settings(){
 		'description' => __('Display home icon for home page menu links.', 'vantage')
 	) );
 
+	siteorigin_settings_add_field('navigation', 'mobile_navigation', 'checkbox', __('Mobile Navigation', 'vantage'), array(
+		'description' => __('Enables Sticky Menu and Scroll To Top for mobile devices.', 'vantage')
+	));
+
 	/**
 	 * Home Page
 	 */
@@ -114,9 +122,9 @@ function vantage_theme_settings(){
 		'options' => siteorigin_metaslider_get_options(true),
 		'description' => sprintf(
 			__('This theme supports <a href="%s" target="_blank">Meta Slider</a>. <a href="%s">Install it</a> for free to create beautiful responsive sliders - <a href="%s" target="_blank">More Info</a>', 'vantage'),
-			'http://sorig.in/metaslider',
+			'https://siteorigin.com/metaslider/',
 			siteorigin_metaslider_install_link(),
-			'http://siteorigin.com/vantage-documentation/slider/'
+			'https://siteorigin.com/vantage-documentation/slider/'
 		)
 	));
 
@@ -188,7 +196,7 @@ function vantage_theme_settings(){
 	 */
 
 	siteorigin_settings_add_field( 'general', 'site_info_text', 'text', __( 'Site Information Text', 'vantage' ), array(
-		'description' => __( 'Text displayed in your footer. Useful for copyright information.', 'vantage' )
+		'description' => __( "Text displayed in your footer. {site-title}, {copyright} and {year} will be replaced with your website title, a copyright symbol and the current year.", 'vantage' )
 	) );
 
 }
@@ -207,6 +215,7 @@ function vantage_theme_setting_defaults($defaults){
 	$defaults['logo_header_text'] = __('Call me! Maybe?', 'vantage');
 
 	$defaults['layout_responsive'] = true;
+	$defaults['layout_fitvids'] = true;
 	$defaults['layout_bound'] = 'full';
 	$defaults['layout_masthead'] = '';
 	$defaults['layout_footer'] = '';
@@ -214,6 +223,7 @@ function vantage_theme_setting_defaults($defaults){
 	$defaults['navigation_responsive_menu'] = true;
 	$defaults['navigation_responsive_menu_text'] = '';
 	$defaults['navigation_use_sticky_menu'] = true;
+	$defaults['navigation_mobile_navigation'] = false;
 	$defaults['navigation_menu_search'] = true;
 	$defaults['navigation_display_scroll_to_top'] = true;
 	$defaults['navigation_post_nav'] = true;

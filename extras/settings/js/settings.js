@@ -156,8 +156,8 @@ jQuery( function ( $ ) {
     } );
     
     // Autofill
-    $('.input-field-select')
-        .change(function(){
+    $('body')
+        .on('change', '.input-field-select', function(){
             var c = $(this ).closest('td').find('input');
             c.val( $(this ).val() );
         });
@@ -218,7 +218,7 @@ jQuery( function ( $ ) {
 
         var $$ = $(this);
         var widget_form = $$.closest('td').find('.so-settings-widget-form');
-        widget_form.html( $$.data('form') );
+        widget_form.html( widget_form.find('.so-settings-widget-form-template').html() );
 
         return false;
     }).click();
@@ -275,11 +275,12 @@ jQuery( function ( $ ) {
                 e.preventDefault();
 
                 // Ignore this click if it's going outside the current site.
-                if( $(this).prop('href').indexOf( iframe.data('home') ) != 0) {
+                var linkUrl = $(this).prop('href').split('#')[0];
+                if( linkUrl.indexOf( iframe.data( 'home' ) ) != 0 || linkUrl == iframe.attr( 'src' ) ) {
                     return false;
                 }
 
-                iframe.attr( 'src', $(this).prop('href') );
+                iframe.attr( 'src', linkUrl );
                 submitToIframe();
             })
         });

@@ -4,7 +4,7 @@ Author: SiteOrigin
 Author URI: http://siteorigin.com/
 Theme URI: http://siteorigin.com/theme/vantage/
 Description: Vantage is a flexible multipurpose theme. It's strength lies in its tight integration with some powerful plugins like Page Builder for responsive page layouts, MetaSlider for big beautiful sliders and WooCommerce to help you sell online. Vantage is fully responsive and retina ready. Use it to start a business site, portfolio or online store. We offer free and premium support on our support <a href="http://siteorigin.com/thread/">forums</a> (http://siteorigin.com/thread/).
-Version: 1.2.3
+Version: 1.3.4
 License: GNU General Public License 2.0
 License URI: license.txt
 Tags: responsive-layout, fluid-layout, custom-background, custom-menu, featured-images, theme-options, threaded-comments, translation-ready, black, white, light, one-column, two-columns, full-width-template
@@ -626,12 +626,12 @@ body.no-sidebar #primary {
   width: 23.762%;
 }
 #main {
-  background: #FCFCFC;
+  background: #fcfcfc;
   padding: 35px;
 }
 #main-slider {
   line-height: 0;
-  background: #EEEEEE;
+  background: #eeeeee;
 }
 #main-slider .flexslider {
   margin-bottom: 0;
@@ -754,15 +754,15 @@ body.responsive.layout-full #page-wrapper .full-container {
   /* General menu link styling */
   /* For when the menu becomes a sticky menu */
 }
-.main-navigation [class^="icon-"] {
+.main-navigation [class^="fa fa-"] {
   display: inline-block;
   margin-right: 15px;
   font-size: 16px;
   line-height: 0.5em;
-  color: #CCCCCC;
+  color: #cccccc;
 }
-.main-navigation a:hover [class^="icon-"] {
-  color: #FFFFFF;
+.main-navigation a:hover [class^="fa fa-"] {
+  color: #ffffff;
 }
 .main-navigation ul {
   list-style: none;
@@ -787,7 +787,7 @@ body.responsive.layout-full #page-wrapper .full-container {
 }
 .main-navigation ul li:hover > a {
   background: #00bcff;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .main-navigation ul li a {
   padding: 20px 35px;
@@ -825,7 +825,7 @@ body.responsive.layout-full #page-wrapper .full-container {
 }
 .main-navigation ul ul li:hover > a {
   background: #00bcff;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .main-navigation ul ul ul {
   left: 100%;
@@ -856,7 +856,7 @@ body.mobile-device .main-navigation ul ul {
 body.mobile-device .main-navigation li:hover > ul {
   display: block;
 }
-.mobile-nav-frame [class^="icon-"] {
+.mobile-nav-frame [class^="fa fa-"] {
   display: inline-block;
   margin-right: 10px;
   min-width: 1em;
@@ -875,6 +875,7 @@ body.mobile-device .main-navigation li:hover > ul {
   top: 0;
   right: 0;
   height: 100%;
+  z-index: 110;
 }
 #search-icon #search-icon-icon {
   -ms-box-sizing: border-box;
@@ -911,7 +912,7 @@ body.mobile-device .main-navigation li:hover > ul {
   background-color: #00bcff;
 }
 #search-icon #search-icon-icon:hover .vantage-icon-search {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 #search-icon .searchform {
   display: none;
@@ -938,7 +939,7 @@ body.mobile-device .main-navigation li:hover > ul {
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   border-radius: 0px;
-  background: transparent;
+  background-color: transparent;
   outline: none;
   padding: 0 15px;
 }
@@ -963,7 +964,7 @@ article.page {
   zoom: 1;
   margin-bottom: 40px;
   padding-bottom: 40px;
-  border-bottom: 1px solid #EEEEEE;
+  border-bottom: 1px solid #eeeeee;
 }
 article.post:before,
 article.page:before {
@@ -1095,8 +1096,8 @@ article.post .share-buttons,
 article.page .share-buttons {
   margin: 20px 0 0 0;
   padding: 15px 25px;
-  background: #F5F5F5;
-  border: 1px solid #E0E0E0;
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
   list-style: none;
   zoom: 1;
 }
@@ -1299,7 +1300,7 @@ article.page.post-with-thumbnail-icon .entry-main {
   font-style: italic;
   margin-left: 1em;
   padding-left: 1em;
-  border-left: 1px solid #AAAAAA;
+  border-left: 1px solid #aaaaaa;
 }
 .entry-content blockquote cite {
   font-weight: bold;
@@ -1309,7 +1310,7 @@ article.page.post-with-thumbnail-icon .entry-main {
   display: block;
   background: white;
   font-family: "Courier New", Courier, mono;
-  border: 1px solid #D9D9D9;
+  border: 1px solid #d9d9d9;
   padding: 10px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.09);
   overflow-x: auto;
@@ -1373,7 +1374,7 @@ article.page.post-with-thumbnail-icon .entry-main {
 .entry-content .wp-caption {
   max-width: 100%;
   margin: 5px 0 30px 0;
-  border: 1px solid #E0E0E0;
+  border: 1px solid #e0e0e0;
   padding: 8px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.09);
   -ms-box-sizing: border-box;
@@ -1545,7 +1546,7 @@ article.page.post-with-thumbnail-icon .entry-main {
   -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.125), inset 0 0 5px rgba(0,0,0, 0.5);
   -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.125), inset 0 0 5px rgba(0,0,0, 0.5);
   box-shadow: 0 1px 1px rgba(0,0,0,0.125), inset 0 0 5px rgba(0,0,0, 0.5);
-  color: #EFEFEF;
+  color: #efefef;
 }
 .site-content .nav-previous,
 .site-content .nav-next {
@@ -1582,8 +1583,8 @@ article.page.post-with-thumbnail-icon .entry-main {
   padding-bottom: 5px;
   border-bottom: 2px solid #555555;
 }
-#comments-title [class^="icon-"],
-#reply-title [class^="icon-"] {
+#comments-title [class^="fa fa-"],
+#reply-title [class^="fa fa-"] {
   font-size: 16px;
   display: inline-block;
   margin-right: 4px;
@@ -1706,7 +1707,7 @@ article.page.post-with-thumbnail-icon .entry-main {
   text-align: right;
 }
 #commentform .required {
-  color: #A40802;
+  color: #a40802;
 }
 @media (max-width: 480px) {
   body.responsive #commentform label {
@@ -1731,12 +1732,12 @@ article.page.post-with-thumbnail-icon .entry-main {
 #colophon #site-info {
   text-align: center;
   margin-top: 25px;
-  color: #AAAAAA;
+  color: #aaaaaa;
   font-size: 11.5px;
 }
 #colophon #theme-attribution a,
 #colophon #site-info a {
-  color: #DDDDDD;
+  color: #dddddd;
   text-decoration: none;
   font-weight: 500;
 }
@@ -1781,6 +1782,26 @@ body.layout-full {
   -webkit-transform: scale(1, 1);
   transform: scale(1, 1);
   opacity: 1 !important;
+}
+#map-canvas img,
+#gmap_canvas img {
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+  line-height: normal !important;
+  max-width: none;
+  zoom: normal !important;
+}
+/* Entry Meta */
+.updated {
+  display: none;
+}
+/* Pages - Entry Meta */
+.page .entry-meta {
+  display: none;
 }
 /* =Sliders
 ----------------------------------------------- */
@@ -1903,6 +1924,7 @@ body.layout-full {
   padding: 0;
 }
 .flexslider .flex-direction-nav li a {
+  z-index: 200;
   display: block;
   position: absolute;
   top: 50%;
@@ -1929,9 +1951,11 @@ body.layout-full {
     background-size: 32px 85px;
   }
   .flexslider .flex-direction-nav li a.flex-prev {
+    background-size: cover;
     background-image: url(images/retina/gallery-prev.png);
   }
   .flexslider .flex-direction-nav li a.flex-next {
+    background-size: cover;
     background-image: url(images/retina/gallery-next.png);
   }
 }
@@ -1947,7 +1971,7 @@ body.layout-full {
 }
 .metaslider .msHtmlOverlay .layer .siteorigin-slider-action-button a {
   font-size: 16px;
-  color: #FFFFFF;
+  color: #ffffff;
   text-decoration: none;
 }
 #metaslider-demo .content,
@@ -1962,8 +1986,8 @@ body.layout-full {
   max-width: 100%;
   height: auto;
 }
-#metaslider-demo .msDefaultImage,
-.vantage-slide-with-image .msDefaultImage {
+#metaslider-demo .ms-default-image,
+.vantage-slide-with-image .ms-default-image {
   max-width: 100%;
   height: auto;
 }
@@ -2052,6 +2076,10 @@ body.layout-full {
   padding: 0 15px;
   margin-bottom: 0;
   color: #b9b9b9;
+}
+#footer-widgets .widget.panel,
+#footer-widgets .widget.widget_siteorigin-panels-builder {
+  padding: 0;
 }
 #footer-widgets .widget a {
   color: #cccccc;
@@ -2166,8 +2194,8 @@ body.layout-full {
   /* The different icon positions */
 }
 .widget_circleicon-widget .circle-icon-box.circle-icon-show-box {
-  border: 1px solid #DDDDDD;
-  background: #F6F6F6;
+  border: 1px solid #dddddd;
+  background: #f6f6f6;
   -webkit-box-shadow: 0 2px 2px rgba(0,0,0,0.05);
   -moz-box-shadow: 0 2px 2px rgba(0,0,0,0.05);
   box-shadow: 0 2px 2px rgba(0,0,0,0.05);
@@ -2198,13 +2226,13 @@ body.layout-full {
   background-size: cover;
   background-repeat: no-repeat;
 }
-.widget_circleicon-widget .circle-icon-box .circle-icon [class^="icon-"] {
+.widget_circleicon-widget .circle-icon-box .circle-icon [class^="fa fa-"] {
   display: block;
   font-size: 24px;
   width: 100%;
   height: 1em;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   line-height: 1.1em;
   position: absolute;
   top: 50%;
@@ -2295,7 +2323,7 @@ body.layout-full {
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-.widget_circleicon-widget .circle-icon-box.circle-icon-size-medium .circle-icon [class^="icon-"] {
+.widget_circleicon-widget .circle-icon-box.circle-icon-size-medium .circle-icon [class^="fa fa-"] {
   font-size: 36px;
   line-height: 1.1em;
 }
@@ -2347,7 +2375,7 @@ body.layout-full {
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-.widget_circleicon-widget .circle-icon-box.circle-icon-size-large .circle-icon [class^="icon-"] {
+.widget_circleicon-widget .circle-icon-box.circle-icon-size-large .circle-icon [class^="fa fa-"] {
   font-size: 44px;
   line-height: 1.1em;
 }
@@ -2440,14 +2468,14 @@ body.layout-full {
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 1px 1px rgba(0,0,0,0.1);
   /* The icons */
 }
-.widget_vantage-social-media .social-media-icon [class^="icon-"] {
+.widget_vantage-social-media .social-media-icon [class^="fa fa-"] {
   width: 1em;
   height: 1em;
   text-align: center;
   display: block;
   position: absolute;
   line-height: 1em;
-  color: #FFFFFF;
+  color: #ffffff;
   top: 50%;
   left: 50%;
   margin-top: -0.45em;
@@ -2578,7 +2606,7 @@ body.layout-full {
   position: absolute;
   margin: 0;
   z-index: 100;
-  border: 1px solid #E6E6E6;
+  border: 1px solid #e6e6e6;
   -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
   -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
   box-shadow: 0 1px 1px rgba(0,0,0,0.1);
@@ -2631,9 +2659,9 @@ body.layout-full {
   clear: both;
 }
 .panel-row-style-wide-grey {
-  background: #F6F6F6;
-  border-top: 1px solid #DDDDDD;
-  border-bottom: 1px solid #DDDDDD;
+  background: #f6f6f6;
+  border-top: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
 }
 .layout-full .panel-row-style {
   margin: 0 -1000px;
@@ -2666,7 +2694,7 @@ body.layout-full {
   -moz-border-radius: 2px;
   border-radius: 2px;
   text-decoration: none;
-  color: #FFFFFF;
+  color: #ffffff;
   display: block;
   float: right;
   overflow: hidden;
@@ -2743,7 +2771,7 @@ body.layout-full {
   display: block;
   width: 100%;
   height: 100%;
-  background: #3279BB;
+  background: #3279bb;
   opacity: 0;
 }
 .vantage-carousel-wrapper .vantage-carousel li.carousel-entry .thumbnail a:hover {
@@ -2813,7 +2841,7 @@ body.layout-full {
   -webkit-box-shadow: 0 0 4px rgba(0,0,0,0.1);
   -moz-box-shadow: 0 0 4px rgba(0,0,0,0.1);
   box-shadow: 0 0 4px rgba(0,0,0,0.1);
-  background: #FFFFFF;
+  background: #ffffff;
   margin-bottom: 10px;
 }
 .vantage-grid-loop article .grid-thumbnail:hover {
