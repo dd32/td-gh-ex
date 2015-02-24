@@ -82,3 +82,7 @@ Version 1.1.7
 Version 1.1.8
 	* Remove empty rtl.css
 	* Changes in Theme URL
+
+Version 1.1.9
+	* Fix PATH to languages directory
+	

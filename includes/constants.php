@@ -14,7 +14,7 @@
 	If not present, use parent theme's languages dir
 	*/
 	if ( ! defined( 'ABARIS_LANGUAGES_URL' ) ) /** So we can predefine to child theme */
-		define( 'ABARIS_LANGUAGES_URL', ABARIS_INCLUDES_URL . '/languages' );
+		define( 'ABARIS_LANGUAGES_URL', ABARIS_PARENT_URL . '/languages' );
 
 	if ( ! defined( 'ABARIS_LANGUAGES_DIR' ) ) /** So we can predefine to child theme */
-		define( 'ABARIS_LANGUAGES_DIR', ABARIS_INCLUDES_DIR . '/languages' );
+		define( 'ABARIS_LANGUAGES_DIR', ABARIS_PARENT_DIR . '/languages' );
