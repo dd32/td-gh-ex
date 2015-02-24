@@ -169,12 +169,12 @@ add_action( 'rubine_footer_text', 'rubine_display_footer_text' );
 
 function rubine_display_footer_text() { ?>
 
-	<div id="credit-link">
+	<span class="credit-link">
 		<?php printf(__( 'Powered by %1$s and %2$s.', 'rubine-lite' ), 
 			sprintf( '<a href="http://wordpress.org" title="WordPress">%s</a>', __( 'WordPress', 'rubine-lite' ) ),
 			sprintf( '<a href="http://themezee.com/themes/rubine/" title="Rubine WordPress Theme">%s</a>', __( 'Rubine', 'rubine-lite' ) )
 		); ?>
-	</div>
+	</span>
 
 <?php
 }

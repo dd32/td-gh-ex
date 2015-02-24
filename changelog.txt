@@ -2,6 +2,12 @@
 Rubine Lite Changelog
 ===================================
 
+Version 1.0.8
+-----------------------------------
+[added] setting for deactivating google fonts in case they are not compatible with user language
+[changed] implementation of embedding google fonts with font url function
+[fixed] styling of footer text line and credit link
+
 Version 1.0.7
 -----------------------------------
 [added] unminified version of html5shiv.min.js

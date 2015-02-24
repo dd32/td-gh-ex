@@ -31,8 +31,8 @@ function rubine_default_options() {
 
 	$default_options = array(
 		'layout' 							=> 'right-sidebar',
-		'header_logo' 						=> '',
-		'header_content' 					=> '',
+		'footer_icons'						=> false,
+		'deactivate_google_fonts'			=> false,
 		'header_search' 					=> false,
 		'header_icons' 						=> false,
 		'post_thumbnails_single' 			=> true,

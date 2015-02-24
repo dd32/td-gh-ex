@@ -2,6 +2,69 @@
 
 /*==================================== THEME SETUP ====================================*/
 
+// Load default style.css and Javascripts
+add_action('wp_enqueue_scripts', 'rubine_enqueue_scripts');
+
+function rubine_enqueue_scripts() {
+
+	// Register and Enqueue Stylesheet
+	wp_enqueue_style('rubine-lite-stylesheet', get_stylesheet_uri());
+	
+	// Register Genericons
+	wp_enqueue_style('rubine-lite-genericons', get_template_directory_uri() . '/css/genericons/genericons.css');
+
+	// Register and enqueue navigation.js
+	wp_enqueue_script('rubine-lite-jquery-navigation', get_template_directory_uri() .'/js/navigation.js', array('jquery'));
+	
+	// Passing Parameters to Navigation.js Javascript
+	wp_localize_script( 'rubine-lite-jquery-navigation', 'rubine_navigation_params', array('menuTitle' => __('Menu', 'rubine-lite')) );
+	
+	// Register and Enqueue Font
+	wp_enqueue_style('rubine-lite-default-fonts', rubine_fonts_url(), array(), null );
+
+}
+
+// Load comment-reply.js if comment form is loaded and threaded comments activated
+add_action( 'comment_form_before', 'rubine_enqueue_comment_reply' );
+
+function rubine_enqueue_comment_reply() {
+	if( get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+}
+
+/*
+* Retrieve Font URL to register default Google Fonts
+* Source: http://themeshaper.com/2014/08/13/how-to-add-google-fonts-to-wordpress-themes/
+*/
+function rubine_fonts_url() {
+    $fonts_url = '';
+
+	// Get Theme Options from Database
+	$theme_options = rubine_theme_options();
+	
+	// Only embed Google Fonts if not deactivated
+	if ( ! ( isset($theme_options['deactivate_google_fonts']) and $theme_options['deactivate_google_fonts'] == true ) ) :
+		
+		// Set Default Fonts
+		$font_families = array('Carme:400,700', 'Francois One');
+		 
+		// Set Google Font Query Args
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+		
+		// Create Fonts URL
+		$fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
+		
+	endif;
+	
+	return apply_filters( 'rubine_google_fonts_url', $fonts_url );
+	
+}
+
+
 // Setup Function: Registers support for various WordPress features
 add_action( 'after_setup_theme', 'rubine_setup' );
 
@@ -36,7 +99,10 @@ function rubine_setup() {
 		'max_posts'  => 8
 		)
 	);
-
+	
+	// Add Theme Support for Rubine Pro Plugin
+	add_theme_support( 'rubine-pro' );
+	
 	// Register Navigation Menus
 	register_nav_menus( array(
 		'primary'   => __('Main Navigation', 'rubine-lite'),
@@ -45,40 +111,6 @@ function rubine_setup() {
 		) 
 	);
 
-}
-
-
-// Load default style.css and Javascripts
-add_action('wp_enqueue_scripts', 'rubine_enqueue_scripts');
-
-function rubine_enqueue_scripts() {
-
-	// Register and Enqueue Stylesheet
-	wp_enqueue_style('rubine-lite-stylesheet', get_stylesheet_uri());
-	
-	// Register Genericons
-	wp_enqueue_style('rubine-lite-genericons', get_template_directory_uri() . '/css/genericons/genericons.css');
-
-	// Register and enqueue navigation.js
-	wp_enqueue_script('rubine-lite-jquery-navigation', get_template_directory_uri() .'/js/navigation.js', array('jquery'));
-	
-	// Passing Parameters to Navigation.js Javascript
-	wp_localize_script( 'rubine-lite-jquery-navigation', 'rubine_navigation_params', array('menuTitle' => __('Menu', 'rubine-lite')) );
-	
-	// Register and Enqueue Font
-	wp_enqueue_style('rubine-lite-default-font', '//fonts.googleapis.com/css?family=Carme');
-	wp_enqueue_style('rubine-lite-default-title-font', '//fonts.googleapis.com/css?family=Francois+One');
-
-}
-
-
-// Load comment-reply.js if comment form is loaded and threaded comments activated
-add_action( 'comment_form_before', 'rubine_enqueue_comment_reply' );
-
-function rubine_enqueue_comment_reply() {
-	if( get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
 }
 
 

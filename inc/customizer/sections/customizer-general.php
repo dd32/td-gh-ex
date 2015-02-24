@@ -48,10 +48,10 @@ function rubine_customize_register_general_settings( $wp_customize ) {
     );
     $wp_customize->add_control( new Rubine_Customize_Header_Control(
         $wp_customize, 'rubine_control_footer_content', array(
-            'label' => __( 'Footer Content', 'rubine-lite' ),
+            'label' => __( 'Footer Icons', 'rubine-lite' ),
             'section' => 'rubine_section_general',
             'settings' => 'rubine_theme_options[footer_content]',
-            'priority' => 2
+            'priority' => 4
             )
         )
     );
@@ -69,11 +69,45 @@ function rubine_customize_register_general_settings( $wp_customize ) {
         'section'  => 'rubine_section_general',
         'settings' => 'rubine_theme_options[footer_icons]',
         'type'     => 'checkbox',
-		'priority' => 3
+		'priority' => 5
+		)
+	);
+	
+	// Add Default Fonts Header
+	$wp_customize->add_setting( 'rubine_theme_options[default_fonts]', array(
+        'default'           => '',
+		'type'           	=> 'option',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'esc_attr'
+        )
+    );
+    $wp_customize->add_control( new Rubine_Customize_Header_Control(
+        $wp_customize, 'rubine_control_default_fonts', array(
+            'label' => __( 'Default Fonts', 'rubine-lite' ),
+            'section' => 'rubine_section_general',
+            'settings' => 'rubine_theme_options[default_fonts]',
+            'priority' => 6
+            )
+        )
+    );
+	
+	// Add Settings and Controls for Deactivate Google Font setting
+	$wp_customize->add_setting( 'rubine_theme_options[deactivate_google_fonts]', array(
+        'default'           => false,
+		'type'           	=> 'option',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'rubine_sanitize_checkbox'
+		)
+	);
+    $wp_customize->add_control( 'rubine_control_deactivate_google_fonts', array(
+        'label'    => __( 'Deactivate Google Fonts in case your language is not compatible.', 'rubine-lite' ),
+        'section'  => 'rubine_section_general',
+        'settings' => 'rubine_theme_options[deactivate_google_fonts]',
+        'type'     => 'checkbox',
+		'priority' => 7
 		)
 	);
 	
 }
-
 
 ?>

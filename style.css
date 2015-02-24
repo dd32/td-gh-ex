@@ -2,7 +2,7 @@
 Theme Name: Rubine Lite
 Theme URI: http://themezee.com/themes/rubine/
 Description: Rubine Lite is a clean and retina-ready magazine theme created with usability and simplicity in mind. The theme offers a gorgeous featured content area on the home page to highlight your most important posts. Of course the design is fully responsive and makes your content readable on every device.
-Version: 1.0.7
+Version: 1.0.8
 Author: ThemeZee
 Author URI: http://themezee.com
 Tags: two-columns, light, red, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, fluid-layout, responsive-layout, one-column, left-sidebar, right-sidebar, three-columns, four-columns, black, blue, silver, white, green, gray
@@ -167,11 +167,6 @@ input, textarea, select {
 	float: left;
 	margin: 0.6em 0;
 	max-width: 100%;
-}
-#logo .logo-image {
-	border: 0;
-	max-width: 100%;
-	height: auto;
 }
 #logo .site-title {
 	font-size: 2.5em;
@@ -1338,14 +1333,11 @@ embed, iframe, object, video {
 }
 
 
-/* Footer Widget Area
+/* Footer
 -------------------------------------------------------------- */
 #footer-bg {
 	background: #cc1111;
 }
-
-/* Footer
--------------------------------------------------------------- */
 #footer-wrap {
 	background: rgba(0,0,0,0.25);
 }
@@ -1355,7 +1347,7 @@ embed, iframe, object, video {
 #footer a {
 	color: #ddd;
 }
-#footer #credit-link {
+#footer #footer-text {
 	float: left;
 	padding: 1.05em 0;
 	font-size: 0.9em;
@@ -1741,7 +1733,7 @@ embed, iframe, object, video {
 		display: inline-block;
 		margin: 0 -2px 2px 0;
 	}
-	#footer #credit-link {
+	#footer #footer-text {
 		float: none;
 		text-align: center;
 		padding: 0.7em 0 1.4em;
