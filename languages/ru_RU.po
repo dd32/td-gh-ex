@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Pinnacle Premium\n"
-"POT-Creation-Date: 2015-02-05 00:44-0700\n"
-"PO-Revision-Date: 2015-02-05 00:47-0700\n"
+"Project-Id-Version: Pinnacle\n"
+"POT-Creation-Date: 2015-02-23 17:05-0700\n"
+"PO-Revision-Date: 2015-02-23 17:09-0700\n"
 "Last-Translator: Serhio <588885@mail.ru>\n"
 "Language-Team: \n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 1.7.4\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;esc_attr__;esc_attr_e\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
@@ -156,6 +156,7 @@ msgid "The following plugin was activated successfully:"
 msgid_plural "The following plugins were activated successfully:"
 msgstr[0] "Следующий плагин успешно активирован:"
 msgstr[1] "Следующие плагины успешно активированы:"
+msgstr[2] "Следующие плагины успешно активированы:"
 
 #: ../lib/class-tgm-plugin-activation.php:179
 #, php-format
@@ -367,11 +368,6 @@ msgstr "Добавить отзыв"
 #: ../themeoptions/options_assets/extensions/kad_icons/kad_icons/field_kad_icons.php:180
 #: ../themeoptions/options_assets/extensions/kad_slides/kad_slides/field_kad_slides.php:115
 #: ../themeoptions/options_assets/extensions/kad_slides/kad_slides/field_kad_slides.php:161
-#: ../themeoptions/redux/inc/fields/background/field_background.php:321
-#: ../themeoptions/redux/inc/fields/media/field_media.php:200
-#: ../themeoptions/redux/inc/fields/multi_text/field_multi_text.php:69
-#: ../themeoptions/redux/inc/fields/multi_text/field_multi_text.php:73
-#: ../themeoptions/redux/inc/fields/multi_text/field_multi_text.php:76
 msgid "Remove"
 msgstr "Удалить"
 
@@ -398,7 +394,6 @@ msgstr "Файл:"
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:706
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:768
-#: ../themeoptions/redux/inc/import_export.php:104
 msgid "Download"
 msgstr "Скачать"
 
@@ -407,9 +402,8 @@ msgid "Clear"
 msgstr "Очистить"
 
 #: ../lib/cmb/init.php:259 ../lib/metaboxes.php:226 ../lib/metaboxes.php:243
-#: ../lib/metaboxes.php:254 ../themeoptions/redux/framework.php:2153
-#: ../themeoptions/theme_options.php:768 ../themeoptions/theme_options.php:776
-#: ../themeoptions/theme_options.php:784
+#: ../lib/metaboxes.php:254 ../themeoptions/theme_options.php:768
+#: ../themeoptions/theme_options.php:776 ../themeoptions/theme_options.php:784
 msgid "Default"
 msgstr "По умолчанию"
 
@@ -552,26 +546,26 @@ msgid "Standard Post Default"
 msgstr "Опции поста"
 
 #: ../lib/metaboxes.php:164 ../lib/metaboxes.php:205
-#: ../themeoptions/theme_options.php:1496
-#: ../themeoptions/theme_options.php:1509
-#: ../themeoptions/theme_options.php:1530
-#: ../themeoptions/theme_options.php:1551
+#: ../themeoptions/theme_options.php:1503
+#: ../themeoptions/theme_options.php:1516
+#: ../themeoptions/theme_options.php:1537
+#: ../themeoptions/theme_options.php:1558
 msgid "Text"
 msgstr "Текст"
 
 #: ../lib/metaboxes.php:165 ../lib/metaboxes.php:206
-#: ../themeoptions/theme_options.php:1496
-#: ../themeoptions/theme_options.php:1509
-#: ../themeoptions/theme_options.php:1530
-#: ../themeoptions/theme_options.php:1551
+#: ../themeoptions/theme_options.php:1503
+#: ../themeoptions/theme_options.php:1516
+#: ../themeoptions/theme_options.php:1537
+#: ../themeoptions/theme_options.php:1558
 msgid "Portrait Image"
 msgstr "Портретное изображение"
 
 #: ../lib/metaboxes.php:166 ../lib/metaboxes.php:207
-#: ../themeoptions/theme_options.php:1496
-#: ../themeoptions/theme_options.php:1509
-#: ../themeoptions/theme_options.php:1530
-#: ../themeoptions/theme_options.php:1551
+#: ../themeoptions/theme_options.php:1503
+#: ../themeoptions/theme_options.php:1516
+#: ../themeoptions/theme_options.php:1537
+#: ../themeoptions/theme_options.php:1558
 msgid "Landscape Image"
 msgstr "Пейзажное изображение"
 
@@ -589,15 +583,15 @@ msgstr "Содержимое заголовка страницы"
 msgid "Image Post Default"
 msgstr "Настройки записей блога по умолчанию"
 
-#: ../lib/metaboxes.php:188 ../themeoptions/theme_options.php:1517
+#: ../lib/metaboxes.php:188 ../themeoptions/theme_options.php:1524
 msgid "Image"
 msgstr "Изображение"
 
 #: ../lib/metaboxes.php:189 ../themeoptions/theme_options.php:360
 #: ../themeoptions/theme_options.php:519
-#: ../themeoptions/theme_options.php:1517
-#: ../themeoptions/theme_options.php:1538
-#: ../themeoptions/theme_options.php:1559
+#: ../themeoptions/theme_options.php:1524
+#: ../themeoptions/theme_options.php:1545
+#: ../themeoptions/theme_options.php:1566
 msgid "None"
 msgstr "Никакие"
 
@@ -628,12 +622,12 @@ msgid "Choose if layout is fullwidth or sidebar"
 msgstr "Укажите, тип страницы: во всю ширину или с боковой панелью"
 
 #: ../lib/metaboxes.php:227 ../lib/metaboxes.php:245 ../lib/metaboxes.php:391
-#: ../themeoptions/theme_options.php:1319
+#: ../themeoptions/theme_options.php:1326
 msgid "Yes"
 msgstr "Да"
 
 #: ../lib/metaboxes.php:228 ../lib/metaboxes.php:244 ../lib/metaboxes.php:255
-#: ../lib/metaboxes.php:390 ../themeoptions/theme_options.php:1319
+#: ../lib/metaboxes.php:390 ../themeoptions/theme_options.php:1326
 msgid "No"
 msgstr "Нет"
 
@@ -657,11 +651,11 @@ msgstr "Карусель постов"
 msgid "Display a carousel with similar or recent posts?"
 msgstr "Отображать карусель похожих или недавних постов?"
 
-#: ../lib/metaboxes.php:256 ../themeoptions/theme_options.php:1483
+#: ../lib/metaboxes.php:256 ../themeoptions/theme_options.php:1490
 msgid "Yes - Display Recent Posts"
 msgstr "Да - отображать недавние посты"
 
-#: ../lib/metaboxes.php:257 ../themeoptions/theme_options.php:1483
+#: ../lib/metaboxes.php:257 ../themeoptions/theme_options.php:1490
 msgid "Yes - Display Similar Posts"
 msgstr "Да - отображать похожие посты"
 
@@ -697,7 +691,7 @@ msgstr "Отобразить содержимое поста как:"
 msgid "Summary"
 msgstr "Краткое содержание:"
 
-#: ../lib/metaboxes.php:317 ../themeoptions/theme_options.php:1695
+#: ../lib/metaboxes.php:317 ../themeoptions/theme_options.php:1702
 msgid "Full"
 msgstr "Полностью:"
 
@@ -712,12 +706,12 @@ msgid "Choose Column Layout:"
 msgstr "Столбец подвала 1"
 
 #: ../lib/metaboxes.php:369 ../themeoptions/theme_options.php:1013
-#: ../themeoptions/theme_options.php:1090
+#: ../themeoptions/theme_options.php:1097
 msgid "Four Column"
 msgstr "Четыре колонки"
 
 #: ../lib/metaboxes.php:370 ../themeoptions/theme_options.php:1013
-#: ../themeoptions/theme_options.php:1090
+#: ../themeoptions/theme_options.php:1097
 msgid "Three Column"
 msgstr "Три колонки"
 
@@ -1009,8 +1003,6 @@ msgstr "Ссыдка на изображение"
 #: ../lib/widgets.php:843
 #: ../themeoptions/options_assets/extensions/kad_slides/kad_slides/field_kad_slides.php:108
 #: ../themeoptions/options_assets/extensions/kad_slides/kad_slides/field_kad_slides.php:159
-#: ../themeoptions/redux/inc/fields/background/field_background.php:314
-#: ../themeoptions/redux/inc/fields/media/field_media.php:193
 msgid "Upload"
 msgstr "Загрузить"
 
@@ -1085,6 +1077,7 @@ msgid "One Response "
 msgid_plural "%1$s Responses "
 msgstr[0] "Один ответ"
 msgstr[1] "%1$s ответов"
+msgstr[2] "%1$s ответов"
 
 #: ../templates/comments.php:18
 msgid "&larr; Older comments"
@@ -1417,10 +1410,10 @@ msgid "Show the page title by default"
 msgstr "Единственный результат"
 
 #: ../themeoptions/theme_options.php:210
-#: ../themeoptions/theme_options.php:1169
 #: ../themeoptions/theme_options.php:1176
-#: ../themeoptions/theme_options.php:1261
-#: ../themeoptions/theme_options.php:1427
+#: ../themeoptions/theme_options.php:1183
+#: ../themeoptions/theme_options.php:1268
+#: ../themeoptions/theme_options.php:1434
 msgid "This can be overridden on each page."
 msgstr ""
 
@@ -1586,8 +1579,8 @@ msgid "Carousel Slider"
 msgstr "Заголовок карусели"
 
 #: ../themeoptions/theme_options.php:360 ../themeoptions/theme_options.php:519
-#: ../themeoptions/theme_options.php:1551
-#: ../themeoptions/theme_options.php:1559
+#: ../themeoptions/theme_options.php:1558
+#: ../themeoptions/theme_options.php:1566
 msgid "Video"
 msgstr "Видео"
 
@@ -1844,13 +1837,13 @@ msgid "Portfolio Layout Style"
 msgstr "Стиль конфигурации сайта"
 
 #: ../themeoptions/theme_options.php:768
-#: ../themeoptions/theme_options.php:1241
+#: ../themeoptions/theme_options.php:1248
 #, fuzzy
 msgid "Post Boxes"
 msgstr "Опции поста"
 
 #: ../themeoptions/theme_options.php:768
-#: ../themeoptions/theme_options.php:1241
+#: ../themeoptions/theme_options.php:1248
 msgid "Flat with Margin"
 msgstr ""
 
@@ -1869,7 +1862,7 @@ msgid "Dark"
 msgstr ""
 
 #: ../themeoptions/theme_options.php:776
-#: ../themeoptions/theme_options.php:1627
+#: ../themeoptions/theme_options.php:1634
 msgid "Primary Color"
 msgstr "Основной цвет"
 
@@ -2079,19 +2072,19 @@ msgstr ""
 "кратко."
 
 #: ../themeoptions/theme_options.php:986
-#: ../themeoptions/theme_options.php:1572
+#: ../themeoptions/theme_options.php:1579
 #, fuzzy
 msgid "Normal Post Excerpt"
 msgstr "Отображать выдержки описания элемента"
 
 #: ../themeoptions/theme_options.php:986
-#: ../themeoptions/theme_options.php:1572
+#: ../themeoptions/theme_options.php:1579
 #, fuzzy
 msgid "Normal Full Post"
 msgstr "Записи блога"
 
 #: ../themeoptions/theme_options.php:986
-#: ../themeoptions/theme_options.php:1572
+#: ../themeoptions/theme_options.php:1579
 #, fuzzy
 msgid "Grid Post"
 msgstr "Предыдущий пост"
@@ -2102,19 +2095,19 @@ msgid "Post Grid Columns"
 msgstr "Колонки"
 
 #: ../themeoptions/theme_options.php:994
-#: ../themeoptions/theme_options.php:1580
+#: ../themeoptions/theme_options.php:1587
 #, fuzzy
 msgid "Two"
 msgstr "Кому"
 
 #: ../themeoptions/theme_options.php:994
-#: ../themeoptions/theme_options.php:1580
+#: ../themeoptions/theme_options.php:1587
 #, fuzzy
 msgid "Three"
 msgstr "Три ряда"
 
 #: ../themeoptions/theme_options.php:994
-#: ../themeoptions/theme_options.php:1580
+#: ../themeoptions/theme_options.php:1587
 msgid "Four"
 msgstr ""
 
@@ -2195,15 +2188,25 @@ msgid ""
 msgstr ""
 
 #: ../themeoptions/theme_options.php:1083
+msgid "Quantity box plus and minus"
+msgstr ""
+
+#: ../themeoptions/theme_options.php:1084
+msgid ""
+"Turn this off if you would like to use browser added plus and minus for "
+"number boxes"
+msgstr ""
+
+#: ../themeoptions/theme_options.php:1090
 #, fuzzy
 msgid "Shop Category Image Size"
 msgstr "Размер изображений продуктов"
 
-#: ../themeoptions/theme_options.php:1088
+#: ../themeoptions/theme_options.php:1095
 msgid "Shop Category Column Layout"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1089
+#: ../themeoptions/theme_options.php:1096
 #, fuzzy
 msgid ""
 "Choose how many Category Image columns to show on the shop and category pages"
@@ -2211,51 +2214,51 @@ msgstr ""
 "Это определяет будет ли отображаться боковая панель на страницах Магазина и "
 "Каталога."
 
-#: ../themeoptions/theme_options.php:1097
+#: ../themeoptions/theme_options.php:1104
 msgid "Shop Product Title Settings"
 msgstr "Настройки заголовка Пролукта"
 
-#: ../themeoptions/theme_options.php:1102
+#: ../themeoptions/theme_options.php:1109
 msgid "Shop & archive Product title Font"
 msgstr "Шрифт заголовков страниц Магазина и Продуктов"
 
-#: ../themeoptions/theme_options.php:1113
+#: ../themeoptions/theme_options.php:1120
 msgid "Choose Size and Style for product titles on category and archive pages."
 msgstr ""
 "Выберите размер и стиль для заголовкой продуктов на страницах Каталога и "
 "архивов"
 
-#: ../themeoptions/theme_options.php:1124
+#: ../themeoptions/theme_options.php:1131
 msgid "Set Product Title to Uppercase?"
 msgstr "Перевести заголовок продукта в ВЕРХНИЙ РЕГИСТР?"
 
-#: ../themeoptions/theme_options.php:1125
+#: ../themeoptions/theme_options.php:1132
 msgid "This makes your product titles uppercase on Category pages"
 msgstr ""
 "Это приведет к отображению заголовков продуктов в Каталоге в ВЕРХНЕМ "
 "РЕГИСТРЕ."
 
-#: ../themeoptions/theme_options.php:1131
+#: ../themeoptions/theme_options.php:1138
 msgid "Product title Min Height"
 msgstr "Минимальная высота заголовка продукта"
 
-#: ../themeoptions/theme_options.php:1132
+#: ../themeoptions/theme_options.php:1139
 msgid ""
 "If your titles are long increase this to help align your products height."
 msgstr ""
 "Если названия продуктов длинные, увеличтьте этот параметр для улучшения "
 "выравнивания высоты продуктов."
 
-#: ../themeoptions/theme_options.php:1141
+#: ../themeoptions/theme_options.php:1148
 msgid "Product Image Sizes"
 msgstr "Размер изображений продуктов"
 
-#: ../themeoptions/theme_options.php:1146
+#: ../themeoptions/theme_options.php:1153
 #, fuzzy
 msgid "Enable Product Image Aspect Ratio on Catalog pages"
 msgstr "Включить обрезку изображений продукта на страницах Каталога"
 
-#: ../themeoptions/theme_options.php:1147
+#: ../themeoptions/theme_options.php:1154
 msgid ""
 "If turned off image dimensions are set by woocommerce settings - recommended "
 "width: 270px for Catalog Images"
@@ -2264,12 +2267,12 @@ msgstr ""
 "WooCommerce на основании рекомендованных: 270 пикселов для изображений в "
 "каталоге."
 
-#: ../themeoptions/theme_options.php:1153
+#: ../themeoptions/theme_options.php:1160
 #, fuzzy
 msgid "Enable Product Image Aspect Ratio on product Page"
 msgstr "Включить обрезку изображений на странице продукта"
 
-#: ../themeoptions/theme_options.php:1154
+#: ../themeoptions/theme_options.php:1161
 msgid ""
 "If turned off image dimensions are set by woocommerce settings - recommended "
 "width: 468px for Single Product Image"
@@ -2278,299 +2281,299 @@ msgstr ""
 "WooCommerce на основании рекомендованных: 486 пикселов для единичного "
 "изображения продукта."
 
-#: ../themeoptions/theme_options.php:1162
+#: ../themeoptions/theme_options.php:1169
 #, fuzzy
 msgid "Product Settings"
 msgstr "Настройка страницы продукта"
 
-#: ../themeoptions/theme_options.php:1163
+#: ../themeoptions/theme_options.php:1170
 #, fuzzy
 msgid "Single Product Page Header (Woocommerce plugin required)"
 msgstr "Формат проекта"
 
-#: ../themeoptions/theme_options.php:1168
-#: ../themeoptions/theme_options.php:1260
+#: ../themeoptions/theme_options.php:1175
+#: ../themeoptions/theme_options.php:1267
 #, fuzzy
 msgid "Show the Title in header by default"
 msgstr "Единственный результат"
 
-#: ../themeoptions/theme_options.php:1175
-#: ../themeoptions/theme_options.php:1267
+#: ../themeoptions/theme_options.php:1182
+#: ../themeoptions/theme_options.php:1274
 #, fuzzy
 msgid "Show the Title in post"
 msgstr "Отображать иконку автора в записях?"
 
-#: ../themeoptions/theme_options.php:1182
-#: ../themeoptions/theme_options.php:1273
+#: ../themeoptions/theme_options.php:1189
+#: ../themeoptions/theme_options.php:1280
 #, fuzzy
 msgid "Product Default Title Text"
 msgstr "Настройка страницы продукта"
 
-#: ../themeoptions/theme_options.php:1183
+#: ../themeoptions/theme_options.php:1190
 #, fuzzy
 msgid "Category of product"
 msgstr "Связанные продукты"
 
-#: ../themeoptions/theme_options.php:1183
+#: ../themeoptions/theme_options.php:1190
 #, fuzzy
 msgid "Product Title"
 msgstr "Продукт"
 
-#: ../themeoptions/theme_options.php:1183
-#: ../themeoptions/theme_options.php:1274
-#: ../themeoptions/theme_options.php:1434
+#: ../themeoptions/theme_options.php:1190
+#: ../themeoptions/theme_options.php:1281
+#: ../themeoptions/theme_options.php:1441
 #, fuzzy
 msgid "Custom"
 msgstr "Пользовательский CSS"
-
-#: ../themeoptions/theme_options.php:1190
-#: ../themeoptions/theme_options.php:1281
-#: ../themeoptions/theme_options.php:1448
-#, fuzzy
-msgid "Post Default Title"
-msgstr "Настройки записей блога по умолчанию"
-
-#: ../themeoptions/theme_options.php:1191
-#: ../themeoptions/theme_options.php:1282
-msgid "Example: My Shop"
-msgstr ""
 
 #: ../themeoptions/theme_options.php:1197
 #: ../themeoptions/theme_options.php:1288
 #: ../themeoptions/theme_options.php:1455
 #, fuzzy
+msgid "Post Default Title"
+msgstr "Настройки записей блога по умолчанию"
+
+#: ../themeoptions/theme_options.php:1198
+#: ../themeoptions/theme_options.php:1289
+msgid "Example: My Shop"
+msgstr ""
+
+#: ../themeoptions/theme_options.php:1204
+#: ../themeoptions/theme_options.php:1295
+#: ../themeoptions/theme_options.php:1462
+#, fuzzy
 msgid "Post Default Subtitle"
 msgstr "По умолчанию"
 
-#: ../themeoptions/theme_options.php:1203
+#: ../themeoptions/theme_options.php:1210
 msgid "Display product tabs?"
 msgstr "Отображать закладки продуктов?"
 
-#: ../themeoptions/theme_options.php:1204
+#: ../themeoptions/theme_options.php:1211
 msgid "This determines if product tabs are displayed"
 msgstr "Это определяет будут ли отображаться закладки для продуктов."
 
-#: ../themeoptions/theme_options.php:1210
+#: ../themeoptions/theme_options.php:1217
 msgid "Display related products?"
 msgstr "Отображать связанные продукты?"
 
-#: ../themeoptions/theme_options.php:1211
+#: ../themeoptions/theme_options.php:1218
 msgid "This determines related products are displayed"
 msgstr "Это определяет будут ли отображаться связанные продукты"
 
-#: ../themeoptions/theme_options.php:1219
+#: ../themeoptions/theme_options.php:1226
 #, fuzzy
 msgid "Portfolio Options"
 msgstr "Опции поста портфолио"
 
-#: ../themeoptions/theme_options.php:1220
+#: ../themeoptions/theme_options.php:1227
 msgid "Portfolio Options (Pinnacle Toolkit plugin required)"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1225
+#: ../themeoptions/theme_options.php:1232
 msgid "Allow Comments on Portfolio Posts"
 msgstr "Разрешить комментарии на записях элементов портфолио."
 
-#: ../themeoptions/theme_options.php:1226
+#: ../themeoptions/theme_options.php:1233
 msgid "Turn on to allow Comments on Portfolio posts"
 msgstr ""
 "Включите, чтобы разрешить комментарии на страницах элементов портфолио."
 
-#: ../themeoptions/theme_options.php:1232
+#: ../themeoptions/theme_options.php:1239
 #, fuzzy
 msgid "Portfolio Grid Options"
 msgstr "Опции поста портфолио"
 
-#: ../themeoptions/theme_options.php:1239
+#: ../themeoptions/theme_options.php:1246
 #, fuzzy
 msgid "Default Portfolio Layout Style"
 msgstr "Заголовок карусели портфолио домашней страницы"
 
-#: ../themeoptions/theme_options.php:1240
+#: ../themeoptions/theme_options.php:1247
 msgid "This sets the defualt layout style for the portfolio post."
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1248
+#: ../themeoptions/theme_options.php:1255
 #, fuzzy
 msgid "Default Hover Style"
 msgstr "Сортировка по умолчанию"
 
-#: ../themeoptions/theme_options.php:1249
+#: ../themeoptions/theme_options.php:1256
 msgid "This sets the defualt hover style for the portfolio post."
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1250
+#: ../themeoptions/theme_options.php:1257
 #, fuzzy
 msgid "Primary Color Style"
 msgstr "Основной цвет"
 
-#: ../themeoptions/theme_options.php:1250
+#: ../themeoptions/theme_options.php:1257
 #, fuzzy
 msgid "Light Style"
 msgstr "Стиль"
 
-#: ../themeoptions/theme_options.php:1250
+#: ../themeoptions/theme_options.php:1257
 #, fuzzy
 msgid "Dark Style"
 msgstr "Стиль рамки"
 
-#: ../themeoptions/theme_options.php:1255
+#: ../themeoptions/theme_options.php:1262
 #, fuzzy
 msgid "Single Portfolio Page Header"
 msgstr "Заголовок карусели портфолио домашней страницы"
 
-#: ../themeoptions/theme_options.php:1274
+#: ../themeoptions/theme_options.php:1281
 #, fuzzy
 msgid "Category of Portfolio"
 msgstr "Связанные продукты"
 
-#: ../themeoptions/theme_options.php:1274
+#: ../themeoptions/theme_options.php:1281
 #, fuzzy
 msgid "Portfolio Title"
 msgstr "Виды работ портфолио"
 
-#: ../themeoptions/theme_options.php:1294
+#: ../themeoptions/theme_options.php:1301
 #, fuzzy
 msgid "Single Portfolio Navigation Options"
 msgstr "Опции страницы Портфолио"
 
-#: ../themeoptions/theme_options.php:1299
+#: ../themeoptions/theme_options.php:1306
 #, fuzzy
 msgid "Show portfolio nav below post title"
 msgstr "Заголовок карусели портфолио домашней страницы"
 
-#: ../themeoptions/theme_options.php:1307
+#: ../themeoptions/theme_options.php:1314
 #, fuzzy
 msgid "All Projects Default Portfolio Page"
 msgstr "Страница портфолио всех проектов"
 
-#: ../themeoptions/theme_options.php:1308
+#: ../themeoptions/theme_options.php:1315
 #, fuzzy
 msgid "This sets the link in every portfolio post."
 msgstr ""
 "Это установит ссылку на всех страницах каждого элемента портфолио. Внимание: "
 "вам все равно необходимо установить шаблон страницы для портфолио."
 
-#: ../themeoptions/theme_options.php:1313
+#: ../themeoptions/theme_options.php:1320
 #, fuzzy
 msgid "Portfolio Post Bottom Carousel"
 msgstr "Карусель портфолио"
 
-#: ../themeoptions/theme_options.php:1318
+#: ../themeoptions/theme_options.php:1325
 #, fuzzy
 msgid "Display Bottom Portfolio carousel by Default"
 msgstr "Карусель портфолио"
 
-#: ../themeoptions/theme_options.php:1326
+#: ../themeoptions/theme_options.php:1333
 #, fuzzy
 msgid "Bottom Portfolio Carousel Items"
 msgstr "Карусель портфолио"
 
-#: ../themeoptions/theme_options.php:1327
+#: ../themeoptions/theme_options.php:1334
 #, fuzzy
 msgid "All Portfolio Posts"
 msgstr "Опции поста портфолио"
 
-#: ../themeoptions/theme_options.php:1327
+#: ../themeoptions/theme_options.php:1334
 msgid "Only of same Portfolio Type"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1334
+#: ../themeoptions/theme_options.php:1341
 #, fuzzy
 msgid "Choose how many columns to show on recent portfolio carousel."
 msgstr "Укажите, сколько элементов размещается в карусели"
 
-#: ../themeoptions/theme_options.php:1343
+#: ../themeoptions/theme_options.php:1350
 #, fuzzy
 msgid "Portfolio Category Pages"
 msgstr "Изображения для слайдера портфолио"
 
-#: ../themeoptions/theme_options.php:1348
+#: ../themeoptions/theme_options.php:1355
 #, fuzzy
 msgid "Choose how many portfolio columns to show on portfolio catagory pages."
 msgstr "Укажите, сколько элементов размещается в карусели"
 
-#: ../themeoptions/theme_options.php:1359
-#: ../themeoptions/theme_options.php:1360
+#: ../themeoptions/theme_options.php:1366
+#: ../themeoptions/theme_options.php:1367
 #, fuzzy
 msgid "Blog Options"
 msgstr "Настройки Логотипа"
 
-#: ../themeoptions/theme_options.php:1365
+#: ../themeoptions/theme_options.php:1372
 msgid "Show Comments Closed Text?"
 msgstr "Отображать текст \"Комментарии закрыты\"?"
 
-#: ../themeoptions/theme_options.php:1366
+#: ../themeoptions/theme_options.php:1373
 msgid "Choose to show or hide comments closed alert below posts."
 msgstr ""
 "Выберите отображать или нет предупреждение о закрытии возможности оставлять "
 "комментарии внизу страницы записи."
 
-#: ../themeoptions/theme_options.php:1372
+#: ../themeoptions/theme_options.php:1379
 #, fuzzy
 msgid "Show Author image with posts?"
 msgstr "Отображать иконку автора в записях?"
 
-#: ../themeoptions/theme_options.php:1373
+#: ../themeoptions/theme_options.php:1380
 #, fuzzy
 msgid "Choose to show or hide author image beside post title."
 msgstr "Выберите обображать или нет иконку автора под заголовком записи."
 
-#: ../themeoptions/theme_options.php:1379
+#: ../themeoptions/theme_options.php:1386
 #, fuzzy
 msgid "Show author name with posts?"
 msgstr "Отображать иконку автора в записях?"
 
-#: ../themeoptions/theme_options.php:1380
+#: ../themeoptions/theme_options.php:1387
 #, fuzzy
 msgid "Choose to show or hide author name under post title."
 msgstr "Выберите обображать или нет иконку автора под заголовком записи."
 
-#: ../themeoptions/theme_options.php:1386
+#: ../themeoptions/theme_options.php:1393
 #, fuzzy
 msgid "Show categories with posts?"
 msgstr "Отображать иконку автора в записях?"
 
-#: ../themeoptions/theme_options.php:1387
+#: ../themeoptions/theme_options.php:1394
 #, fuzzy
 msgid "Choose to show or hide categories in the post footer."
 msgstr "Выберите обображать или нет иконку автора под заголовком записи."
 
-#: ../themeoptions/theme_options.php:1393
+#: ../themeoptions/theme_options.php:1400
 #, fuzzy
 msgid "Show tags with posts?"
 msgstr "Отображать иконку автора в записях?"
 
-#: ../themeoptions/theme_options.php:1394
+#: ../themeoptions/theme_options.php:1401
 #, fuzzy
 msgid "Choose to show or hide tags in the post footer."
 msgstr "Выберите обображать или нет иконку автора под заголовком записи."
 
-#: ../themeoptions/theme_options.php:1400
+#: ../themeoptions/theme_options.php:1407
 #, fuzzy
 msgid "Show comment count with posts?"
 msgstr "Отображать иконку автора в записях?"
 
-#: ../themeoptions/theme_options.php:1401
+#: ../themeoptions/theme_options.php:1408
 #, fuzzy
 msgid "Choose to show or hide comment count under post title."
 msgstr "Выберите обображать или нет иконку автора под заголовком записи."
 
-#: ../themeoptions/theme_options.php:1407
+#: ../themeoptions/theme_options.php:1414
 #, fuzzy
 msgid "Show date with posts?"
 msgstr "Отображать иконку автора в записях?"
 
-#: ../themeoptions/theme_options.php:1408
+#: ../themeoptions/theme_options.php:1415
 #, fuzzy
 msgid "Choose to show or hide date under post title."
 msgstr "Выберите обображать или нет иконку автора под заголовком записи."
 
-#: ../themeoptions/theme_options.php:1414
+#: ../themeoptions/theme_options.php:1421
 msgid "Show Previous and Next posts links?"
 msgstr "Отображать ссылки на предыдущие и последующие посты?"
 
-#: ../themeoptions/theme_options.php:1415
+#: ../themeoptions/theme_options.php:1422
 #, fuzzy
 msgid ""
 "Choose to show or hide previous and next post links in the footer of a "
@@ -2579,190 +2582,190 @@ msgstr ""
 "Выберите обображать или нет ссылки на предыдущие и последующие посты в конце "
 "поста."
 
-#: ../themeoptions/theme_options.php:1421
+#: ../themeoptions/theme_options.php:1428
 #, fuzzy
 msgid "Blog Post Page Header"
 msgstr "Все посты блога"
 
-#: ../themeoptions/theme_options.php:1426
+#: ../themeoptions/theme_options.php:1433
 msgid "Show the post title in head by default"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1433
+#: ../themeoptions/theme_options.php:1440
 #, fuzzy
 msgid "Blog Post Default Head Title"
 msgstr "Настройки записей блога по умолчанию"
 
-#: ../themeoptions/theme_options.php:1434
+#: ../themeoptions/theme_options.php:1441
 #, fuzzy
 msgid "Category"
 msgstr "Категория:"
 
-#: ../themeoptions/theme_options.php:1434
+#: ../themeoptions/theme_options.php:1441
 #, fuzzy
 msgid "Post Title"
 msgstr "Заголовок страницы"
 
-#: ../themeoptions/theme_options.php:1441
+#: ../themeoptions/theme_options.php:1448
 msgid "Show the post title below the header"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1449
+#: ../themeoptions/theme_options.php:1456
 #, fuzzy
 msgid "Example: Blog"
 msgstr "Элементов на страницу"
 
-#: ../themeoptions/theme_options.php:1461
+#: ../themeoptions/theme_options.php:1468
 #, fuzzy
 msgid "Blog Post Defaults"
 msgstr "Настройки записей блога по умолчанию"
 
-#: ../themeoptions/theme_options.php:1466
+#: ../themeoptions/theme_options.php:1473
 #, fuzzy
 msgid "Blog Post Sidebar Default"
 msgstr "Настройки краткого содержания записи блога по умолчанию"
 
-#: ../themeoptions/theme_options.php:1467
-#: ../themeoptions/theme_options.php:1475
+#: ../themeoptions/theme_options.php:1474
+#: ../themeoptions/theme_options.php:1482
 msgid "Yes, Show"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1467
-#: ../themeoptions/theme_options.php:1475
-#: ../themeoptions/theme_options.php:1483
+#: ../themeoptions/theme_options.php:1474
+#: ../themeoptions/theme_options.php:1482
+#: ../themeoptions/theme_options.php:1490
 msgid "No, Do not Show"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1474
+#: ../themeoptions/theme_options.php:1481
 #, fuzzy
 msgid "Blog Post Author Box Default"
 msgstr "Настройки краткого содержания записи блога по умолчанию"
 
-#: ../themeoptions/theme_options.php:1482
+#: ../themeoptions/theme_options.php:1489
 #, fuzzy
 msgid "Blog Post Bottom Carousel Default"
 msgstr "Карусель портфолио"
 
-#: ../themeoptions/theme_options.php:1490
+#: ../themeoptions/theme_options.php:1497
 #, fuzzy
 msgid "Blog Post Defaults Standard"
 msgstr "Настройки записей блога по умолчанию"
 
-#: ../themeoptions/theme_options.php:1495
+#: ../themeoptions/theme_options.php:1502
 #, fuzzy
 msgid "Standard Blog Post Summary Default"
 msgstr "Настройки краткого содержания записи блога по умолчанию"
 
-#: ../themeoptions/theme_options.php:1503
+#: ../themeoptions/theme_options.php:1510
 #, fuzzy
 msgid "Blog Post Defaults Image"
 msgstr "Настройки записей блога по умолчанию"
 
-#: ../themeoptions/theme_options.php:1508
+#: ../themeoptions/theme_options.php:1515
 #, fuzzy
 msgid "Image Blog Post Summary Default"
 msgstr "Настройки краткого содержания записи блога по умолчанию"
 
-#: ../themeoptions/theme_options.php:1516
+#: ../themeoptions/theme_options.php:1523
 #, fuzzy
 msgid "Single Image Post Head Content"
 msgstr "Настройки записей блога по умолчанию"
 
-#: ../themeoptions/theme_options.php:1524
+#: ../themeoptions/theme_options.php:1531
 #, fuzzy
 msgid "Blog Post Defaults gallery"
 msgstr "Настройки записей блога по умолчанию"
 
-#: ../themeoptions/theme_options.php:1529
+#: ../themeoptions/theme_options.php:1536
 #, fuzzy
 msgid "Gallery Blog Post Summary Default"
 msgstr "Настройки краткого содержания записи блога по умолчанию"
 
-#: ../themeoptions/theme_options.php:1530
+#: ../themeoptions/theme_options.php:1537
 #, fuzzy
 msgid "Portrait Slider"
 msgstr "Сладер портретных изображений"
 
-#: ../themeoptions/theme_options.php:1530
+#: ../themeoptions/theme_options.php:1537
 #, fuzzy
 msgid "Landscape Slider"
 msgstr "Слайдер пейзажных изображений"
 
-#: ../themeoptions/theme_options.php:1537
+#: ../themeoptions/theme_options.php:1544
 #, fuzzy
 msgid "Single Gallery Post Head Content"
 msgstr "Настройки записей блога по умолчанию"
 
-#: ../themeoptions/theme_options.php:1538
+#: ../themeoptions/theme_options.php:1545
 #, fuzzy
 msgid "Image Slider (Flex Slider)"
 msgstr "Слайдер изображений"
 
-#: ../themeoptions/theme_options.php:1538
+#: ../themeoptions/theme_options.php:1545
 #, fuzzy
 msgid "Carousel Slider (Caroufedsel Slider)"
 msgstr "Слайдер изображений"
 
-#: ../themeoptions/theme_options.php:1545
+#: ../themeoptions/theme_options.php:1552
 #, fuzzy
 msgid "Blog Post Defaults Video"
 msgstr "Настройки записей блога по умолчанию"
 
-#: ../themeoptions/theme_options.php:1550
+#: ../themeoptions/theme_options.php:1557
 #, fuzzy
 msgid "Video Blog Post Summary Default"
 msgstr "Настройки краткого содержания записи блога по умолчанию"
 
-#: ../themeoptions/theme_options.php:1558
+#: ../themeoptions/theme_options.php:1565
 #, fuzzy
 msgid "Single Video Post Head Content"
 msgstr "Настройки записей блога по умолчанию"
 
-#: ../themeoptions/theme_options.php:1566
+#: ../themeoptions/theme_options.php:1573
 #, fuzzy
 msgid "Blog Category/Archive Defaults"
 msgstr "Настройки записей блога по умолчанию"
 
-#: ../themeoptions/theme_options.php:1571
+#: ../themeoptions/theme_options.php:1578
 #, fuzzy
 msgid "Category Display Type"
 msgstr "Отображение самых свежих записей"
 
-#: ../themeoptions/theme_options.php:1579
+#: ../themeoptions/theme_options.php:1586
 #, fuzzy
 msgid "Category Grid Columns"
 msgstr "Колонки"
 
-#: ../themeoptions/theme_options.php:1589
+#: ../themeoptions/theme_options.php:1596
 #, fuzzy
 msgid "Display the sidebar on blog archives?"
 msgstr "Отображать боковую панель на странице архива Магазина?"
 
-#: ../themeoptions/theme_options.php:1590
+#: ../themeoptions/theme_options.php:1597
 #, fuzzy
 msgid "This determines if there is a sidebar on the blog category pages."
 msgstr ""
 "Это определяет будет ли отображаться боковая панель на страницах Магазина и "
 "Каталога."
 
-#: ../themeoptions/theme_options.php:1600
+#: ../themeoptions/theme_options.php:1607
 #, fuzzy
 msgid "Choose a Sidebar for your Category/Archive Pages"
 msgstr "Выберите боковую панель для вашей домашней страницы"
 
-#: ../themeoptions/theme_options.php:1611
+#: ../themeoptions/theme_options.php:1618
 msgid "Basic Styling"
 msgstr "Базовые насройки стиля"
 
-#: ../themeoptions/theme_options.php:1612
+#: ../themeoptions/theme_options.php:1619
 msgid "Basic Stylng"
 msgstr "Базовые настройки стиля"
 
-#: ../themeoptions/theme_options.php:1617
+#: ../themeoptions/theme_options.php:1624
 msgid "Theme Skin Stylesheet"
 msgstr "Страница стилей скина темы"
 
-#: ../themeoptions/theme_options.php:1618
+#: ../themeoptions/theme_options.php:1625
 msgid ""
 "Note* changes made in options panel will override this stylesheet. Example: "
 "Colors set in typography."
@@ -2771,228 +2774,228 @@ msgstr ""
 "указанные в странице стилей. Например: цвета установленные в разделе "
 "Типография."
 
-#: ../themeoptions/theme_options.php:1628
+#: ../themeoptions/theme_options.php:1635
 msgid "Choose the default Highlight color for your site."
 msgstr "Выберите цвет выделения по умоляанию для вашего сайта."
 
-#: ../themeoptions/theme_options.php:1636
+#: ../themeoptions/theme_options.php:1643
 #, fuzzy
 msgid "Primary Hover Color"
 msgstr "Основной цвет"
 
-#: ../themeoptions/theme_options.php:1637
+#: ../themeoptions/theme_options.php:1644
 #, fuzzy
 msgid "Recomended to be 20% lighter than primary color"
 msgstr "20% более яркий, чем основной цвет"
 
-#: ../themeoptions/theme_options.php:1646
+#: ../themeoptions/theme_options.php:1653
 msgid "Sitewide Gray Fonts"
 msgstr "Серые шрифты для сайта"
 
-#: ../themeoptions/theme_options.php:1655
+#: ../themeoptions/theme_options.php:1662
 msgid "Footer Font Color"
 msgstr "Цвет шрифтов подвала"
 
-#: ../themeoptions/theme_options.php:1666
+#: ../themeoptions/theme_options.php:1673
 msgid "Advanced Styling"
 msgstr "Расширенные настройки стиля"
 
-#: ../themeoptions/theme_options.php:1667
+#: ../themeoptions/theme_options.php:1674
 msgid "Main Content Background"
 msgstr "Цвет фона основного содержимого"
 
-#: ../themeoptions/theme_options.php:1673
+#: ../themeoptions/theme_options.php:1680
 #, fuzzy
 msgid "Content Background"
 msgstr "Цвет фона основного содержимого"
 
-#: ../themeoptions/theme_options.php:1678
-#: ../themeoptions/theme_options.php:1684
+#: ../themeoptions/theme_options.php:1685
+#: ../themeoptions/theme_options.php:1691
 msgid "Topbar Background"
 msgstr "Фон чердака"
 
-#: ../themeoptions/theme_options.php:1689
-#: ../themeoptions/theme_options.php:1703
+#: ../themeoptions/theme_options.php:1696
+#: ../themeoptions/theme_options.php:1710
 msgid "Header Background"
 msgstr "Фон заголовков"
 
-#: ../themeoptions/theme_options.php:1694
+#: ../themeoptions/theme_options.php:1701
 #, fuzzy
 msgid "Header Background Style"
 msgstr "Фон заголовков"
 
-#: ../themeoptions/theme_options.php:1695
+#: ../themeoptions/theme_options.php:1702
 msgid "Simple"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1709
+#: ../themeoptions/theme_options.php:1716
 #, fuzzy
 msgid "Header Background Color"
 msgstr "Фон заголовков"
 
-#: ../themeoptions/theme_options.php:1718
+#: ../themeoptions/theme_options.php:1725
 msgid "If background is color, select Transparency"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1727
-#: ../themeoptions/theme_options.php:1733
+#: ../themeoptions/theme_options.php:1734
+#: ../themeoptions/theme_options.php:1740
 #, fuzzy
 msgid "Menu Background"
 msgstr "Фон мобильного меню"
 
-#: ../themeoptions/theme_options.php:1738
-#: ../themeoptions/theme_options.php:1744
+#: ../themeoptions/theme_options.php:1745
+#: ../themeoptions/theme_options.php:1751
 msgid "Mobile Menu Background"
 msgstr "Фон мобильного меню"
 
-#: ../themeoptions/theme_options.php:1749
+#: ../themeoptions/theme_options.php:1756
 #, fuzzy
 msgid "Post and Page Content area Background"
 msgstr "Цвет фона основного содержимого"
 
-#: ../themeoptions/theme_options.php:1755
+#: ../themeoptions/theme_options.php:1762
 #, fuzzy
 msgid "Post Background"
 msgstr "Фон подвала"
 
-#: ../themeoptions/theme_options.php:1760
-#: ../themeoptions/theme_options.php:1766
+#: ../themeoptions/theme_options.php:1767
+#: ../themeoptions/theme_options.php:1773
 msgid "Footer Background"
 msgstr "Фон подвала"
 
-#: ../themeoptions/theme_options.php:1771
-#: ../themeoptions/theme_options.php:1777
+#: ../themeoptions/theme_options.php:1778
+#: ../themeoptions/theme_options.php:1784
 msgid "Body Background"
 msgstr "Фон раздела body"
 
-#: ../themeoptions/theme_options.php:1778
+#: ../themeoptions/theme_options.php:1785
 msgid "This shows if site is using the boxed layout option."
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1785
+#: ../themeoptions/theme_options.php:1792
 msgid "Typography"
 msgstr "Типография"
 
-#: ../themeoptions/theme_options.php:1786
+#: ../themeoptions/theme_options.php:1793
 msgid "Header Font Options"
 msgstr "Настройки шрифтов заголовков"
 
-#: ../themeoptions/theme_options.php:1791
+#: ../themeoptions/theme_options.php:1798
 msgid "H1 Headings"
 msgstr "Заголовок H1"
 
-#: ../themeoptions/theme_options.php:1803
+#: ../themeoptions/theme_options.php:1810
 msgid "Choose Size and Style for h1 (This Styles Your Page Titles)"
 msgstr ""
 "Выберите размер и стиль для заголовка H1 (это стиль заголовков страниц)"
 
-#: ../themeoptions/theme_options.php:1814
+#: ../themeoptions/theme_options.php:1821
 msgid "H2 Headings"
 msgstr "Заголовок Н2"
 
-#: ../themeoptions/theme_options.php:1829
+#: ../themeoptions/theme_options.php:1836
 msgid "Choose Size and Style for h2"
 msgstr "Выберите размер и стиль для заголовка H2"
 
-#: ../themeoptions/theme_options.php:1840
+#: ../themeoptions/theme_options.php:1847
 msgid "H3 Headings"
 msgstr "Заголовок Н3"
 
-#: ../themeoptions/theme_options.php:1855
+#: ../themeoptions/theme_options.php:1862
 msgid "Choose Size and Style for h3"
 msgstr "Выберите размер и стиль для заголовка H3"
 
-#: ../themeoptions/theme_options.php:1866
+#: ../themeoptions/theme_options.php:1873
 msgid "H4 Headings"
 msgstr "Заголовок Н4"
 
-#: ../themeoptions/theme_options.php:1881
+#: ../themeoptions/theme_options.php:1888
 msgid "Choose Size and Style for h4"
 msgstr "Выберите размер и стиль для заголовка H4"
 
-#: ../themeoptions/theme_options.php:1892
+#: ../themeoptions/theme_options.php:1899
 msgid "H5 Headings"
 msgstr "Заголовок Н5"
 
-#: ../themeoptions/theme_options.php:1905
+#: ../themeoptions/theme_options.php:1912
 msgid "Choose Size and Style for h5"
 msgstr "Выберите размер и стиль для заголовка H5"
 
-#: ../themeoptions/theme_options.php:1916
+#: ../themeoptions/theme_options.php:1923
 #, fuzzy
 msgid "Page Subtitle"
 msgstr "Заголовок страницы"
 
-#: ../themeoptions/theme_options.php:1928
+#: ../themeoptions/theme_options.php:1935
 #, fuzzy
 msgid "Choose Size and Style for Page Subtitle"
 msgstr "Выберите размер и стиль для мобильного меню"
 
-#: ../themeoptions/theme_options.php:1939
+#: ../themeoptions/theme_options.php:1946
 msgid "Body Font Options"
 msgstr "Настройки шрифта раздела body"
 
-#: ../themeoptions/theme_options.php:1944
+#: ../themeoptions/theme_options.php:1951
 msgid "Body Font"
 msgstr "Шрифт раздела body"
 
-#: ../themeoptions/theme_options.php:1959
+#: ../themeoptions/theme_options.php:1966
 msgid "Choose Size and Style for paragraphs"
 msgstr "Выберите размер и стиль для отображения текста параграфов"
 
-#: ../themeoptions/theme_options.php:1972
+#: ../themeoptions/theme_options.php:1979
 msgid "Menu Settings"
 msgstr "Настройки меню"
 
-#: ../themeoptions/theme_options.php:1973
+#: ../themeoptions/theme_options.php:1980
 msgid "Primary Menu Options"
 msgstr "Главное меню"
 
-#: ../themeoptions/theme_options.php:1978
+#: ../themeoptions/theme_options.php:1985
 msgid "Primary Menu Font"
 msgstr "Шрифт главного меню"
 
-#: ../themeoptions/theme_options.php:1993
+#: ../themeoptions/theme_options.php:2000
 msgid "Choose Size and Style for primary menu"
 msgstr "Выберите размер и стиль для главного меню"
 
-#: ../themeoptions/theme_options.php:2003
+#: ../themeoptions/theme_options.php:2010
 msgid "Mobile Menu Options"
 msgstr "Настройки мобильного меню"
 
-#: ../themeoptions/theme_options.php:2008
+#: ../themeoptions/theme_options.php:2015
 msgid "Mobile Menu Font"
 msgstr "Шрифт мобильного меню"
 
-#: ../themeoptions/theme_options.php:2023
+#: ../themeoptions/theme_options.php:2030
 msgid "Choose Size and Style for Mobile Menu"
 msgstr "Выберите размер и стиль для мобильного меню"
 
-#: ../themeoptions/theme_options.php:2034
+#: ../themeoptions/theme_options.php:2041
 #, fuzzy
 msgid "Topbar Menu Options"
 msgstr "Настройки мобильного меню"
 
-#: ../themeoptions/theme_options.php:2039
+#: ../themeoptions/theme_options.php:2046
 #, fuzzy
 msgid "Topbar Menu Font"
 msgstr "Шрифт мобильного меню"
 
-#: ../themeoptions/theme_options.php:2051
+#: ../themeoptions/theme_options.php:2058
 #, fuzzy
 msgid "Choose Size and Style for topbar menu"
 msgstr "Выберите размер и стиль для главного меню"
 
-#: ../themeoptions/theme_options.php:2063
-#: ../themeoptions/theme_options.php:2064
+#: ../themeoptions/theme_options.php:2070
+#: ../themeoptions/theme_options.php:2071
 msgid "Misc Settings"
 msgstr "Прочие настройки"
 
-#: ../themeoptions/theme_options.php:2070
+#: ../themeoptions/theme_options.php:2077
 msgid "Custom Favicon"
 msgstr "Настройка иконки сайта."
 
-#: ../themeoptions/theme_options.php:2071
+#: ../themeoptions/theme_options.php:2078
 msgid ""
 "Upload a 16px x 16px png/gif/ico image that will represent your website "
 "favicon."
@@ -3000,11 +3003,11 @@ msgstr ""
 "Загрузите изображение размера 16х16 в формате png/gif/ico для использования "
 "в качестве иконки вашего сайта."
 
-#: ../themeoptions/theme_options.php:2076
+#: ../themeoptions/theme_options.php:2083
 msgid "Footer Copyright Text"
 msgstr "Текст сообщения об авторских правах для подвала"
 
-#: ../themeoptions/theme_options.php:2077
+#: ../themeoptions/theme_options.php:2084
 msgid ""
 "Write your own copyright text here. You can use the following shortcodes in "
 "your footer text: [copyright] [site-name] [the-year]"
@@ -3012,65 +3015,65 @@ msgstr ""
 "Напишите свой текст сообщения об авторских правах. Вы можете использовать "
 "следующие макросы для вашего текста: [copyright] [site-name] [the-year]"
 
-#: ../themeoptions/theme_options.php:2083
+#: ../themeoptions/theme_options.php:2090
 #, fuzzy
 msgid "Search Results Sidebars"
 msgstr "Результаты поиска по запросу %s"
 
-#: ../themeoptions/theme_options.php:2088
+#: ../themeoptions/theme_options.php:2095
 #, fuzzy
 msgid "Search Results - choose Sidebar"
 msgstr "Результаты поиска по запросу %s"
 
-#: ../themeoptions/theme_options.php:2096
+#: ../themeoptions/theme_options.php:2103
 msgid "Create Sidebars"
 msgstr "Создать боковую панель"
 
-#: ../themeoptions/theme_options.php:2101
+#: ../themeoptions/theme_options.php:2108
 msgid "Create Custom Sidebars"
 msgstr "Создать нестандартные боковые панели"
 
-#: ../themeoptions/theme_options.php:2102
+#: ../themeoptions/theme_options.php:2109
 msgid "Type new sidebar name into textbox"
 msgstr "Введите название новой боковой панели в поле"
 
-#: ../themeoptions/theme_options.php:2103
+#: ../themeoptions/theme_options.php:2110
 msgid "Extra Sidebar"
 msgstr "Дополнительные боковые панели"
 
-#: ../themeoptions/theme_options.php:2108
+#: ../themeoptions/theme_options.php:2115
 #, fuzzy
 msgid "WordPress Galleries"
 msgstr "Галереи WordPress"
 
-#: ../themeoptions/theme_options.php:2113
+#: ../themeoptions/theme_options.php:2120
 #, fuzzy
 msgid "Enable Pinnacle Galleries to override WordPress"
 msgstr "Включите галереи Virtue вместо галерей WordPress"
 
-#: ../themeoptions/theme_options.php:2114
+#: ../themeoptions/theme_options.php:2121
 msgid "You must have virtue/pinnacle toolkit installed to use."
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2122
-#: ../themeoptions/theme_options.php:2128
+#: ../themeoptions/theme_options.php:2129
+#: ../themeoptions/theme_options.php:2135
 msgid "Custom CSS"
 msgstr "Пользовательский CSS"
 
-#: ../themeoptions/theme_options.php:2123
+#: ../themeoptions/theme_options.php:2130
 msgid "Custom CSS Box"
 msgstr "Пользовательский стиль CSS"
 
-#: ../themeoptions/theme_options.php:2129
+#: ../themeoptions/theme_options.php:2136
 msgid "Quickly add some CSS to your theme by adding it to this block."
 msgstr "Быстро добавьте код CSS к вашей теме добавляя его в этот блок кода."
 
-#: ../themeoptions/theme_options.php:2149
-#: ../themeoptions/theme_options.php:2150
+#: ../themeoptions/theme_options.php:2156
+#: ../themeoptions/theme_options.php:2157
 msgid "Theme Options"
 msgstr "Настройки темы"
 
-#: ../themeoptions/theme_options.php:2157
+#: ../themeoptions/theme_options.php:2164
 #, fuzzy
 msgid ""
 "Thank you for using the Pinnacle Theme by <a href=\"http://kadencethemes.com/"
@@ -3092,11 +3095,11 @@ msgstr "Распродажа!"
 msgid "Choose an option"
 msgstr "Выберите вариант"
 
-#: ../woocommerce/single-product/add-to-cart/variable.php:73
+#: ../woocommerce/single-product/add-to-cart/variable.php:60
 msgid "Clear selection"
 msgstr "Очистить выбор"
 
-#: ../woocommerce/single-product/add-to-cart/variable.php:105
+#: ../woocommerce/single-product/add-to-cart/variable.php:92
 msgid "This product is currently out of stock and unavailable."
 msgstr "Этот товар на данный момент отсутствует и недоступен."
 

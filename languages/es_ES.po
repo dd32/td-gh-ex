@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Pinnacle Premium\n"
-"POT-Creation-Date: 2015-02-05 00:44-0700\n"
-"PO-Revision-Date: 2015-02-05 00:46-0700\n"
+"Project-Id-Version: Pinnacle\n"
+"POT-Creation-Date: 2015-02-23 17:05-0700\n"
+"PO-Revision-Date: 2015-02-23 17:07-0700\n"
 "Last-Translator: María Digo <web.esdemay@gmail.com>\n"
 "Language-Team: María Digo <web.esdemay@gmail.com>\n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 1.7.4\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -367,11 +367,6 @@ msgstr "A&ntilde;adir fila (row)"
 #: ../themeoptions/options_assets/extensions/kad_icons/kad_icons/field_kad_icons.php:180
 #: ../themeoptions/options_assets/extensions/kad_slides/kad_slides/field_kad_slides.php:115
 #: ../themeoptions/options_assets/extensions/kad_slides/kad_slides/field_kad_slides.php:161
-#: ../themeoptions/redux/inc/fields/background/field_background.php:321
-#: ../themeoptions/redux/inc/fields/media/field_media.php:200
-#: ../themeoptions/redux/inc/fields/multi_text/field_multi_text.php:69
-#: ../themeoptions/redux/inc/fields/multi_text/field_multi_text.php:73
-#: ../themeoptions/redux/inc/fields/multi_text/field_multi_text.php:76
 msgid "Remove"
 msgstr "Borrar"
 
@@ -397,7 +392,6 @@ msgstr "Archivo:"
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:706
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:768
-#: ../themeoptions/redux/inc/import_export.php:104
 msgid "Download"
 msgstr "Descargar"
 
@@ -406,9 +400,8 @@ msgid "Clear"
 msgstr "Limpiar"
 
 #: ../lib/cmb/init.php:259 ../lib/metaboxes.php:226 ../lib/metaboxes.php:243
-#: ../lib/metaboxes.php:254 ../themeoptions/redux/framework.php:2153
-#: ../themeoptions/theme_options.php:768 ../themeoptions/theme_options.php:776
-#: ../themeoptions/theme_options.php:784
+#: ../lib/metaboxes.php:254 ../themeoptions/theme_options.php:768
+#: ../themeoptions/theme_options.php:776 ../themeoptions/theme_options.php:784
 msgid "Default"
 msgstr "Por defecto"
 
@@ -542,26 +535,26 @@ msgid "Standard Post Default"
 msgstr "Entrada estandar por defecto"
 
 #: ../lib/metaboxes.php:164 ../lib/metaboxes.php:205
-#: ../themeoptions/theme_options.php:1496
-#: ../themeoptions/theme_options.php:1509
-#: ../themeoptions/theme_options.php:1530
-#: ../themeoptions/theme_options.php:1551
+#: ../themeoptions/theme_options.php:1503
+#: ../themeoptions/theme_options.php:1516
+#: ../themeoptions/theme_options.php:1537
+#: ../themeoptions/theme_options.php:1558
 msgid "Text"
 msgstr "Texto"
 
 #: ../lib/metaboxes.php:165 ../lib/metaboxes.php:206
-#: ../themeoptions/theme_options.php:1496
-#: ../themeoptions/theme_options.php:1509
-#: ../themeoptions/theme_options.php:1530
-#: ../themeoptions/theme_options.php:1551
+#: ../themeoptions/theme_options.php:1503
+#: ../themeoptions/theme_options.php:1516
+#: ../themeoptions/theme_options.php:1537
+#: ../themeoptions/theme_options.php:1558
 msgid "Portrait Image"
 msgstr "Imagen junto texto"
 
 #: ../lib/metaboxes.php:166 ../lib/metaboxes.php:207
-#: ../themeoptions/theme_options.php:1496
-#: ../themeoptions/theme_options.php:1509
-#: ../themeoptions/theme_options.php:1530
-#: ../themeoptions/theme_options.php:1551
+#: ../themeoptions/theme_options.php:1503
+#: ../themeoptions/theme_options.php:1516
+#: ../themeoptions/theme_options.php:1537
+#: ../themeoptions/theme_options.php:1558
 msgid "Landscape Image"
 msgstr "Imagen sobre texto"
 
@@ -577,15 +570,15 @@ msgstr "Contenido Encabezado"
 msgid "Image Post Default"
 msgstr "Imagen destacada por defecto"
 
-#: ../lib/metaboxes.php:188 ../themeoptions/theme_options.php:1517
+#: ../lib/metaboxes.php:188 ../themeoptions/theme_options.php:1524
 msgid "Image"
 msgstr "Imagen"
 
 #: ../lib/metaboxes.php:189 ../themeoptions/theme_options.php:360
 #: ../themeoptions/theme_options.php:519
-#: ../themeoptions/theme_options.php:1517
-#: ../themeoptions/theme_options.php:1538
-#: ../themeoptions/theme_options.php:1559
+#: ../themeoptions/theme_options.php:1524
+#: ../themeoptions/theme_options.php:1545
+#: ../themeoptions/theme_options.php:1566
 msgid "None"
 msgstr "Ninguno"
 
@@ -614,12 +607,12 @@ msgid "Choose if layout is fullwidth or sidebar"
 msgstr "Elija ancho total o con barra lateral"
 
 #: ../lib/metaboxes.php:227 ../lib/metaboxes.php:245 ../lib/metaboxes.php:391
-#: ../themeoptions/theme_options.php:1319
+#: ../themeoptions/theme_options.php:1326
 msgid "Yes"
 msgstr "S&iacute;"
 
 #: ../lib/metaboxes.php:228 ../lib/metaboxes.php:244 ../lib/metaboxes.php:255
-#: ../lib/metaboxes.php:390 ../themeoptions/theme_options.php:1319
+#: ../lib/metaboxes.php:390 ../themeoptions/theme_options.php:1326
 msgid "No"
 msgstr "No"
 
@@ -643,11 +636,11 @@ msgstr "Carousel publicaciones"
 msgid "Display a carousel with similar or recent posts?"
 msgstr "&iquest; Mostrar un carrusel con publicaciones similares o recientes?"
 
-#: ../lib/metaboxes.php:256 ../themeoptions/theme_options.php:1483
+#: ../lib/metaboxes.php:256 ../themeoptions/theme_options.php:1490
 msgid "Yes - Display Recent Posts"
 msgstr "Sí - Mostrar entradas recientes"
 
-#: ../lib/metaboxes.php:257 ../themeoptions/theme_options.php:1483
+#: ../lib/metaboxes.php:257 ../themeoptions/theme_options.php:1490
 msgid "Yes - Display Similar Posts"
 msgstr "Sí - Mostrar entradas similares"
 
@@ -685,7 +678,7 @@ msgstr "Mostrar contenido publicaci&oacute;n como:"
 msgid "Summary"
 msgstr "Resumen"
 
-#: ../lib/metaboxes.php:317 ../themeoptions/theme_options.php:1695
+#: ../lib/metaboxes.php:317 ../themeoptions/theme_options.php:1702
 msgid "Full"
 msgstr "Completo"
 
@@ -698,12 +691,12 @@ msgid "Choose Column Layout:"
 msgstr "Seleccione n&uacute;mero columnas:"
 
 #: ../lib/metaboxes.php:369 ../themeoptions/theme_options.php:1013
-#: ../themeoptions/theme_options.php:1090
+#: ../themeoptions/theme_options.php:1097
 msgid "Four Column"
 msgstr "Cuatro Columnas"
 
 #: ../lib/metaboxes.php:370 ../themeoptions/theme_options.php:1013
-#: ../themeoptions/theme_options.php:1090
+#: ../themeoptions/theme_options.php:1097
 msgid "Three Column"
 msgstr "Tres columnas"
 
@@ -988,8 +981,6 @@ msgstr "URL de imagen"
 #: ../lib/widgets.php:843
 #: ../themeoptions/options_assets/extensions/kad_slides/kad_slides/field_kad_slides.php:108
 #: ../themeoptions/options_assets/extensions/kad_slides/kad_slides/field_kad_slides.php:159
-#: ../themeoptions/redux/inc/fields/background/field_background.php:314
-#: ../themeoptions/redux/inc/fields/media/field_media.php:193
 msgid "Upload"
 msgstr "Subir"
 
@@ -1381,10 +1372,10 @@ msgid "Show the page title by default"
 msgstr "Mostar el título de página por defecto"
 
 #: ../themeoptions/theme_options.php:210
-#: ../themeoptions/theme_options.php:1169
 #: ../themeoptions/theme_options.php:1176
-#: ../themeoptions/theme_options.php:1261
-#: ../themeoptions/theme_options.php:1427
+#: ../themeoptions/theme_options.php:1183
+#: ../themeoptions/theme_options.php:1268
+#: ../themeoptions/theme_options.php:1434
 msgid "This can be overridden on each page."
 msgstr "Esto se puede anular en cada página."
 
@@ -1534,8 +1525,8 @@ msgid "Carousel Slider"
 msgstr "Carousel Slider"
 
 #: ../themeoptions/theme_options.php:360 ../themeoptions/theme_options.php:519
-#: ../themeoptions/theme_options.php:1551
-#: ../themeoptions/theme_options.php:1559
+#: ../themeoptions/theme_options.php:1558
+#: ../themeoptions/theme_options.php:1566
 msgid "Video"
 msgstr "Vídeo"
 
@@ -1776,12 +1767,12 @@ msgid "Portfolio Layout Style"
 msgstr "Diseño Portafolio"
 
 #: ../themeoptions/theme_options.php:768
-#: ../themeoptions/theme_options.php:1241
+#: ../themeoptions/theme_options.php:1248
 msgid "Post Boxes"
 msgstr "Cajas/Cuadrados"
 
 #: ../themeoptions/theme_options.php:768
-#: ../themeoptions/theme_options.php:1241
+#: ../themeoptions/theme_options.php:1248
 msgid "Flat with Margin"
 msgstr "Plano sin margen"
 
@@ -1798,7 +1789,7 @@ msgid "Dark"
 msgstr "Oscuro"
 
 #: ../themeoptions/theme_options.php:776
-#: ../themeoptions/theme_options.php:1627
+#: ../themeoptions/theme_options.php:1634
 msgid "Primary Color"
 msgstr "Color primario"
 
@@ -1985,17 +1976,17 @@ msgid "If Latest Post page is front page. Choose how to show the posts."
 msgstr "Si usa últimas entrdas en la portada, elija como mostrarlas."
 
 #: ../themeoptions/theme_options.php:986
-#: ../themeoptions/theme_options.php:1572
+#: ../themeoptions/theme_options.php:1579
 msgid "Normal Post Excerpt"
 msgstr "Extracto publicación normal"
 
 #: ../themeoptions/theme_options.php:986
-#: ../themeoptions/theme_options.php:1572
+#: ../themeoptions/theme_options.php:1579
 msgid "Normal Full Post"
 msgstr "Publicación completa"
 
 #: ../themeoptions/theme_options.php:986
-#: ../themeoptions/theme_options.php:1572
+#: ../themeoptions/theme_options.php:1579
 msgid "Grid Post"
 msgstr "Publicación rejilla (cuadricula)"
 
@@ -2004,17 +1995,17 @@ msgid "Post Grid Columns"
 msgstr "Columnas publicación rejilla"
 
 #: ../themeoptions/theme_options.php:994
-#: ../themeoptions/theme_options.php:1580
+#: ../themeoptions/theme_options.php:1587
 msgid "Two"
 msgstr "Dos"
 
 #: ../themeoptions/theme_options.php:994
-#: ../themeoptions/theme_options.php:1580
+#: ../themeoptions/theme_options.php:1587
 msgid "Three"
 msgstr "Tres"
 
 #: ../themeoptions/theme_options.php:994
-#: ../themeoptions/theme_options.php:1580
+#: ../themeoptions/theme_options.php:1587
 msgid "Four"
 msgstr "Cuatro"
 
@@ -2093,65 +2084,75 @@ msgstr ""
 "hasta que el rat&oacute;n pasa sobre el producto"
 
 #: ../themeoptions/theme_options.php:1083
+msgid "Quantity box plus and minus"
+msgstr ""
+
+#: ../themeoptions/theme_options.php:1084
+msgid ""
+"Turn this off if you would like to use browser added plus and minus for "
+"number boxes"
+msgstr ""
+
+#: ../themeoptions/theme_options.php:1090
 msgid "Shop Category Image Size"
 msgstr "Tama&ntilde;o imagen de la categor&iacute;a en la tienda"
 
-#: ../themeoptions/theme_options.php:1088
+#: ../themeoptions/theme_options.php:1095
 msgid "Shop Category Column Layout"
 msgstr "Dise&ntilde;o columnas para mostrar categor&iacute;as"
 
-#: ../themeoptions/theme_options.php:1089
+#: ../themeoptions/theme_options.php:1096
 msgid ""
 "Choose how many Category Image columns to show on the shop and category pages"
 msgstr ""
 "Elija el número de columnas para mostrar imagen categor&iacute;a en las "
 "páginas de tienda y categoría"
 
-#: ../themeoptions/theme_options.php:1097
+#: ../themeoptions/theme_options.php:1104
 msgid "Shop Product Title Settings"
 msgstr "Ajustes t&iacute;tulo producto tienda"
 
-#: ../themeoptions/theme_options.php:1102
+#: ../themeoptions/theme_options.php:1109
 msgid "Shop & archive Product title Font"
 msgstr "Fuente t&iacute;tulo  producto "
 
-#: ../themeoptions/theme_options.php:1113
+#: ../themeoptions/theme_options.php:1120
 msgid "Choose Size and Style for product titles on category and archive pages."
 msgstr ""
 "Elija un tamaño y estilo para los títulos de productos en las páginas "
 "decategoría y archivo. "
 
-#: ../themeoptions/theme_options.php:1124
+#: ../themeoptions/theme_options.php:1131
 msgid "Set Product Title to Uppercase?"
 msgstr "&iquest; Ajustar título producto en mayúsculas?"
 
-#: ../themeoptions/theme_options.php:1125
+#: ../themeoptions/theme_options.php:1132
 msgid "This makes your product titles uppercase on Category pages"
 msgstr ""
 "Esto hace que el nombre de los productos est&eacute;n en mayúsculas en las "
 "páginas Categoría"
 
-#: ../themeoptions/theme_options.php:1131
+#: ../themeoptions/theme_options.php:1138
 msgid "Product title Min Height"
 msgstr "Altura m&iacute;nima t&iacute;tulo producto"
 
-#: ../themeoptions/theme_options.php:1132
+#: ../themeoptions/theme_options.php:1139
 msgid ""
 "If your titles are long increase this to help align your products height."
 msgstr ""
 "Ay&uacute;dese aqu&iacute; para alinear la altura del t&iacute;tulo de los "
 "productos."
 
-#: ../themeoptions/theme_options.php:1141
+#: ../themeoptions/theme_options.php:1148
 msgid "Product Image Sizes"
 msgstr "Tamaño de imagen del producto"
 
-#: ../themeoptions/theme_options.php:1146
+#: ../themeoptions/theme_options.php:1153
 msgid "Enable Product Image Aspect Ratio on Catalog pages"
 msgstr ""
 "Activado relación imagen-aspecto de productos de las páginas de catálogo"
 
-#: ../themeoptions/theme_options.php:1147
+#: ../themeoptions/theme_options.php:1154
 msgid ""
 "If turned off image dimensions are set by woocommerce settings - recommended "
 "width: 270px for Catalog Images"
@@ -2159,12 +2160,12 @@ msgstr ""
 "Si se desactiva dimensiones de imagen son establecidos por los ajustes "
 "WooCommerce - ancho recomendado: 270px por Catálogo Imágenes"
 
-#: ../themeoptions/theme_options.php:1153
+#: ../themeoptions/theme_options.php:1160
 msgid "Enable Product Image Aspect Ratio on product Page"
 msgstr ""
 "Activado relación imagen - aspecto de producto en p&aacute;gina de productos"
 
-#: ../themeoptions/theme_options.php:1154
+#: ../themeoptions/theme_options.php:1161
 msgid ""
 "If turned off image dimensions are set by woocommerce settings - recommended "
 "width: 468px for Single Product Image"
@@ -2172,262 +2173,262 @@ msgstr ""
 "Si se desactiva dimensiones de imagen son establecidos por los ajustes "
 "WooCommerce - ancho recomendado: 468px Individual Imagen del producto"
 
-#: ../themeoptions/theme_options.php:1162
+#: ../themeoptions/theme_options.php:1169
 msgid "Product Settings"
 msgstr "Ajustes Productos"
 
-#: ../themeoptions/theme_options.php:1163
+#: ../themeoptions/theme_options.php:1170
 #, fuzzy
 msgid "Single Product Page Header (Woocommerce plugin required)"
 msgstr "Encabezado de página de un producto"
 
-#: ../themeoptions/theme_options.php:1168
-#: ../themeoptions/theme_options.php:1260
+#: ../themeoptions/theme_options.php:1175
+#: ../themeoptions/theme_options.php:1267
 msgid "Show the Title in header by default"
 msgstr "Mostrar título en cabecera por defecto"
 
-#: ../themeoptions/theme_options.php:1175
-#: ../themeoptions/theme_options.php:1267
+#: ../themeoptions/theme_options.php:1182
+#: ../themeoptions/theme_options.php:1274
 msgid "Show the Title in post"
 msgstr "Mostra título en la entrada"
 
-#: ../themeoptions/theme_options.php:1182
-#: ../themeoptions/theme_options.php:1273
+#: ../themeoptions/theme_options.php:1189
+#: ../themeoptions/theme_options.php:1280
 msgid "Product Default Title Text"
 msgstr "Título producto por defecto"
 
-#: ../themeoptions/theme_options.php:1183
+#: ../themeoptions/theme_options.php:1190
 msgid "Category of product"
 msgstr "Categor&iacute;a de producto"
 
-#: ../themeoptions/theme_options.php:1183
+#: ../themeoptions/theme_options.php:1190
 msgid "Product Title"
 msgstr "T&iacute;tulo producto"
 
-#: ../themeoptions/theme_options.php:1183
-#: ../themeoptions/theme_options.php:1274
-#: ../themeoptions/theme_options.php:1434
-msgid "Custom"
-msgstr "Cliente"
-
 #: ../themeoptions/theme_options.php:1190
 #: ../themeoptions/theme_options.php:1281
-#: ../themeoptions/theme_options.php:1448
-msgid "Post Default Title"
-msgstr "Título tienda por defecto"
-
-#: ../themeoptions/theme_options.php:1191
-#: ../themeoptions/theme_options.php:1282
-msgid "Example: My Shop"
-msgstr "Ejemplo: Mi tienda"
+#: ../themeoptions/theme_options.php:1441
+msgid "Custom"
+msgstr "Cliente"
 
 #: ../themeoptions/theme_options.php:1197
 #: ../themeoptions/theme_options.php:1288
 #: ../themeoptions/theme_options.php:1455
+msgid "Post Default Title"
+msgstr "Título tienda por defecto"
+
+#: ../themeoptions/theme_options.php:1198
+#: ../themeoptions/theme_options.php:1289
+msgid "Example: My Shop"
+msgstr "Ejemplo: Mi tienda"
+
+#: ../themeoptions/theme_options.php:1204
+#: ../themeoptions/theme_options.php:1295
+#: ../themeoptions/theme_options.php:1462
 msgid "Post Default Subtitle"
 msgstr "Subtítulo por defecto"
 
-#: ../themeoptions/theme_options.php:1203
+#: ../themeoptions/theme_options.php:1210
 msgid "Display product tabs?"
 msgstr "&iquest;Mostrar fichas de productos?"
 
-#: ../themeoptions/theme_options.php:1204
+#: ../themeoptions/theme_options.php:1211
 msgid "This determines if product tabs are displayed"
 msgstr "Esto determina si se muestra una ficha del producto"
 
-#: ../themeoptions/theme_options.php:1210
+#: ../themeoptions/theme_options.php:1217
 msgid "Display related products?"
 msgstr "&iquest;Mostrar productos relacionados &#63;"
 
-#: ../themeoptions/theme_options.php:1211
+#: ../themeoptions/theme_options.php:1218
 msgid "This determines related products are displayed"
 msgstr "Esto determina qu&eacute; productos si se muestran o no"
 
-#: ../themeoptions/theme_options.php:1219
+#: ../themeoptions/theme_options.php:1226
 msgid "Portfolio Options"
 msgstr "Opciones Portafolio"
 
-#: ../themeoptions/theme_options.php:1220
+#: ../themeoptions/theme_options.php:1227
 msgid "Portfolio Options (Pinnacle Toolkit plugin required)"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1225
+#: ../themeoptions/theme_options.php:1232
 msgid "Allow Comments on Portfolio Posts"
 msgstr "Permitir comentarios en publicaciones de portafolio"
 
-#: ../themeoptions/theme_options.php:1226
+#: ../themeoptions/theme_options.php:1233
 msgid "Turn on to allow Comments on Portfolio posts"
 msgstr "Activar para permitir comentarios en publicaciones de portafolio"
 
-#: ../themeoptions/theme_options.php:1232
+#: ../themeoptions/theme_options.php:1239
 msgid "Portfolio Grid Options"
 msgstr "Opciones rejilla portafolio"
 
-#: ../themeoptions/theme_options.php:1239
+#: ../themeoptions/theme_options.php:1246
 msgid "Default Portfolio Layout Style"
 msgstr "Estilo diseño por defecto Portafolio"
 
-#: ../themeoptions/theme_options.php:1240
+#: ../themeoptions/theme_options.php:1247
 msgid "This sets the defualt layout style for the portfolio post."
 msgstr ""
 "Esto establece el estilo de diseño por defecto para publicaciones de "
 "portafolio."
 
-#: ../themeoptions/theme_options.php:1248
+#: ../themeoptions/theme_options.php:1255
 msgid "Default Hover Style"
 msgstr "Estilo por defecto \"sobre\" (hover)"
 
-#: ../themeoptions/theme_options.php:1249
+#: ../themeoptions/theme_options.php:1256
 msgid "This sets the defualt hover style for the portfolio post."
 msgstr ""
 "Esto define el estilo por defecto de \"sobre\" (hover) en publicaciones de "
 "portafolio"
 
-#: ../themeoptions/theme_options.php:1250
+#: ../themeoptions/theme_options.php:1257
 msgid "Primary Color Style"
 msgstr "Color estilo primario"
 
-#: ../themeoptions/theme_options.php:1250
+#: ../themeoptions/theme_options.php:1257
 msgid "Light Style"
 msgstr "Claro"
 
-#: ../themeoptions/theme_options.php:1250
+#: ../themeoptions/theme_options.php:1257
 msgid "Dark Style"
 msgstr "Oscuro"
 
-#: ../themeoptions/theme_options.php:1255
+#: ../themeoptions/theme_options.php:1262
 msgid "Single Portfolio Page Header"
 msgstr "Cabecera página simple portafolio"
 
-#: ../themeoptions/theme_options.php:1274
+#: ../themeoptions/theme_options.php:1281
 msgid "Category of Portfolio"
 msgstr "Categoría de Portafolio"
 
-#: ../themeoptions/theme_options.php:1274
+#: ../themeoptions/theme_options.php:1281
 msgid "Portfolio Title"
 msgstr "Título Portafolio"
 
-#: ../themeoptions/theme_options.php:1294
+#: ../themeoptions/theme_options.php:1301
 msgid "Single Portfolio Navigation Options"
 msgstr "Opciones navegación portafolio individual"
 
-#: ../themeoptions/theme_options.php:1299
+#: ../themeoptions/theme_options.php:1306
 msgid "Show portfolio nav below post title"
 msgstr "Mostrar navegacion en portafolio debajo título de la publicación "
 
-#: ../themeoptions/theme_options.php:1307
+#: ../themeoptions/theme_options.php:1314
 msgid "All Projects Default Portfolio Page"
 msgstr "P&aacute;gina Portafolio por defecto, todos los proyectos "
 
-#: ../themeoptions/theme_options.php:1308
+#: ../themeoptions/theme_options.php:1315
 #, fuzzy
 msgid "This sets the link in every portfolio post."
 msgstr ""
 "Esto establece el enlace a publicaciones de cada Portafolio. Se puede "
 "reemplazar en el post."
 
-#: ../themeoptions/theme_options.php:1313
+#: ../themeoptions/theme_options.php:1320
 msgid "Portfolio Post Bottom Carousel"
 msgstr "Carrusel inferior publicaciones Portafolio"
 
-#: ../themeoptions/theme_options.php:1318
+#: ../themeoptions/theme_options.php:1325
 msgid "Display Bottom Portfolio carousel by Default"
 msgstr "Mostrar por defecto carrusel inferior de portafolio"
 
-#: ../themeoptions/theme_options.php:1326
+#: ../themeoptions/theme_options.php:1333
 msgid "Bottom Portfolio Carousel Items"
 msgstr "Elementos Carrusel inferior portafolio"
 
-#: ../themeoptions/theme_options.php:1327
+#: ../themeoptions/theme_options.php:1334
 msgid "All Portfolio Posts"
 msgstr "Todas las publicaciones de Portafolio"
 
-#: ../themeoptions/theme_options.php:1327
+#: ../themeoptions/theme_options.php:1334
 msgid "Only of same Portfolio Type"
 msgstr "Solo el mismo tipo de Portafolio"
 
-#: ../themeoptions/theme_options.php:1334
+#: ../themeoptions/theme_options.php:1341
 msgid "Choose how many columns to show on recent portfolio carousel."
 msgstr ""
 "Elija el número de columnas a mostrar en el carrusel de portafolios recientes"
 
-#: ../themeoptions/theme_options.php:1343
+#: ../themeoptions/theme_options.php:1350
 msgid "Portfolio Category Pages"
 msgstr "P&aacute;ginas Categor&iacute;a Portafolio"
 
-#: ../themeoptions/theme_options.php:1348
+#: ../themeoptions/theme_options.php:1355
 msgid "Choose how many portfolio columns to show on portfolio catagory pages."
 msgstr ""
 "Elija el número de columnas para mostrar en categor&iacute;a portafolio"
 
-#: ../themeoptions/theme_options.php:1359
-#: ../themeoptions/theme_options.php:1360
+#: ../themeoptions/theme_options.php:1366
+#: ../themeoptions/theme_options.php:1367
 msgid "Blog Options"
 msgstr "Opciones Blog"
 
-#: ../themeoptions/theme_options.php:1365
+#: ../themeoptions/theme_options.php:1372
 msgid "Show Comments Closed Text?"
 msgstr "&iquest;Mostrar  texto comentarios cerrados?"
 
-#: ../themeoptions/theme_options.php:1366
+#: ../themeoptions/theme_options.php:1373
 msgid "Choose to show or hide comments closed alert below posts."
 msgstr ""
 "Elegir mostrar u ocultar alerta  de comentarios cerrados debajo de tus "
 "mensajes."
 
-#: ../themeoptions/theme_options.php:1372
+#: ../themeoptions/theme_options.php:1379
 msgid "Show Author image with posts?"
 msgstr "¿Mostrar imagen del autor en las publicaciones?"
 
-#: ../themeoptions/theme_options.php:1373
+#: ../themeoptions/theme_options.php:1380
 msgid "Choose to show or hide author image beside post title."
 msgstr "Elija mostrar u ocultar la imagen autor junto a título de la entrada."
 
-#: ../themeoptions/theme_options.php:1379
+#: ../themeoptions/theme_options.php:1386
 msgid "Show author name with posts?"
 msgstr "¿Mostrar nombre autor en entradas?"
 
-#: ../themeoptions/theme_options.php:1380
+#: ../themeoptions/theme_options.php:1387
 msgid "Choose to show or hide author name under post title."
 msgstr "Elija mostar u ocultar nombre de autor debajo título de la entrada."
 
-#: ../themeoptions/theme_options.php:1386
+#: ../themeoptions/theme_options.php:1393
 msgid "Show categories with posts?"
 msgstr "¿Mostrar categorías en entradas?"
 
-#: ../themeoptions/theme_options.php:1387
+#: ../themeoptions/theme_options.php:1394
 msgid "Choose to show or hide categories in the post footer."
 msgstr "Elejir si mostrar u ocultar categorias al final de las entradas."
 
-#: ../themeoptions/theme_options.php:1393
+#: ../themeoptions/theme_options.php:1400
 msgid "Show tags with posts?"
 msgstr "¿Mostrar etiquetas en las entradas?"
 
-#: ../themeoptions/theme_options.php:1394
+#: ../themeoptions/theme_options.php:1401
 msgid "Choose to show or hide tags in the post footer."
 msgstr "Elegir si mostrar u ocultar etiquetas al final de las entradas."
 
-#: ../themeoptions/theme_options.php:1400
+#: ../themeoptions/theme_options.php:1407
 msgid "Show comment count with posts?"
 msgstr "¿Mostrar número comentarios en las entradas?"
 
-#: ../themeoptions/theme_options.php:1401
+#: ../themeoptions/theme_options.php:1408
 msgid "Choose to show or hide comment count under post title."
 msgstr "Elegir si mostrar u ocultar comentarios debajo del título entrada."
 
-#: ../themeoptions/theme_options.php:1407
+#: ../themeoptions/theme_options.php:1414
 msgid "Show date with posts?"
 msgstr "&iquest;Mostrar la fecha en la publicaci&oacute;n?"
 
-#: ../themeoptions/theme_options.php:1408
+#: ../themeoptions/theme_options.php:1415
 msgid "Choose to show or hide date under post title."
 msgstr "Elegir mostar u ocultar fecha debajo título entrada."
 
-#: ../themeoptions/theme_options.php:1414
+#: ../themeoptions/theme_options.php:1421
 msgid "Show Previous and Next posts links?"
 msgstr "&iquest;Mostrar enlaces anterior o siguiente&#63;"
 
-#: ../themeoptions/theme_options.php:1415
+#: ../themeoptions/theme_options.php:1422
 msgid ""
 "Choose to show or hide previous and next post links in the footer of a "
 "single post."
@@ -2435,161 +2436,161 @@ msgstr ""
 "Elija para mostrar u ocultar enlaces anterior y siguiente entrada al pie de "
 "una publicaci&oacute;n individual."
 
-#: ../themeoptions/theme_options.php:1421
+#: ../themeoptions/theme_options.php:1428
 msgid "Blog Post Page Header"
 msgstr "Encabezado página entrada de blog"
 
-#: ../themeoptions/theme_options.php:1426
+#: ../themeoptions/theme_options.php:1433
 msgid "Show the post title in head by default"
 msgstr "Mostrar el título de la entrada en la cabecera por defecto"
 
-#: ../themeoptions/theme_options.php:1433
+#: ../themeoptions/theme_options.php:1440
 msgid "Blog Post Default Head Title"
 msgstr "Título por defecto en cabecera de blog"
 
-#: ../themeoptions/theme_options.php:1434
+#: ../themeoptions/theme_options.php:1441
 msgid "Category"
 msgstr "Categor&iacute;a"
 
-#: ../themeoptions/theme_options.php:1434
+#: ../themeoptions/theme_options.php:1441
 msgid "Post Title"
 msgstr "Título entrada"
 
-#: ../themeoptions/theme_options.php:1441
+#: ../themeoptions/theme_options.php:1448
 msgid "Show the post title below the header"
 msgstr "Mostrar el título de la entrada debajo de la cabecera"
 
-#: ../themeoptions/theme_options.php:1449
+#: ../themeoptions/theme_options.php:1456
 msgid "Example: Blog"
 msgstr "Ejemplo: Blog"
 
-#: ../themeoptions/theme_options.php:1461
+#: ../themeoptions/theme_options.php:1468
 msgid "Blog Post Defaults"
 msgstr "Entradas de blog predeterminada"
 
-#: ../themeoptions/theme_options.php:1466
+#: ../themeoptions/theme_options.php:1473
 msgid "Blog Post Sidebar Default"
 msgstr "Barra lateral entrada de blog por defecto"
 
-#: ../themeoptions/theme_options.php:1467
-#: ../themeoptions/theme_options.php:1475
+#: ../themeoptions/theme_options.php:1474
+#: ../themeoptions/theme_options.php:1482
 msgid "Yes, Show"
 msgstr "Sí, mostrar"
 
-#: ../themeoptions/theme_options.php:1467
-#: ../themeoptions/theme_options.php:1475
-#: ../themeoptions/theme_options.php:1483
+#: ../themeoptions/theme_options.php:1474
+#: ../themeoptions/theme_options.php:1482
+#: ../themeoptions/theme_options.php:1490
 msgid "No, Do not Show"
 msgstr "No, No mostrar"
 
-#: ../themeoptions/theme_options.php:1474
+#: ../themeoptions/theme_options.php:1481
 msgid "Blog Post Author Box Default"
 msgstr "Caja de Autor por defecto"
 
-#: ../themeoptions/theme_options.php:1482
+#: ../themeoptions/theme_options.php:1489
 msgid "Blog Post Bottom Carousel Default"
 msgstr "Bot&oacute;n Carrusel por defecto en publicaciones del blog"
 
-#: ../themeoptions/theme_options.php:1490
+#: ../themeoptions/theme_options.php:1497
 msgid "Blog Post Defaults Standard"
 msgstr "Entrada blog estandar por defecto"
 
-#: ../themeoptions/theme_options.php:1495
+#: ../themeoptions/theme_options.php:1502
 msgid "Standard Blog Post Summary Default"
 msgstr "Resumen entradas blog  por defecto"
 
-#: ../themeoptions/theme_options.php:1503
+#: ../themeoptions/theme_options.php:1510
 msgid "Blog Post Defaults Image"
 msgstr "Imagen entradas de blog por defecto"
 
-#: ../themeoptions/theme_options.php:1508
+#: ../themeoptions/theme_options.php:1515
 msgid "Image Blog Post Summary Default"
 msgstr "Resumen imagen por defecto"
 
-#: ../themeoptions/theme_options.php:1516
+#: ../themeoptions/theme_options.php:1523
 msgid "Single Image Post Head Content"
 msgstr "Imagen indiviudal en contenido cabecera entrada"
 
-#: ../themeoptions/theme_options.php:1524
+#: ../themeoptions/theme_options.php:1531
 msgid "Blog Post Defaults gallery"
 msgstr "Galería entrada blog por defecto"
 
-#: ../themeoptions/theme_options.php:1529
+#: ../themeoptions/theme_options.php:1536
 msgid "Gallery Blog Post Summary Default"
 msgstr "Resumen entradas galería blog por defecto"
 
-#: ../themeoptions/theme_options.php:1530
+#: ../themeoptions/theme_options.php:1537
 msgid "Portrait Slider"
 msgstr "Slider retrato/vertical"
 
-#: ../themeoptions/theme_options.php:1530
+#: ../themeoptions/theme_options.php:1537
 msgid "Landscape Slider"
 msgstr "Slider Panorámico"
 
-#: ../themeoptions/theme_options.php:1537
+#: ../themeoptions/theme_options.php:1544
 msgid "Single Gallery Post Head Content"
 msgstr "Contenido cabecera entrada galería individual "
 
-#: ../themeoptions/theme_options.php:1538
+#: ../themeoptions/theme_options.php:1545
 msgid "Image Slider (Flex Slider)"
 msgstr "Imagen Slider (Flex Slider)"
 
-#: ../themeoptions/theme_options.php:1538
+#: ../themeoptions/theme_options.php:1545
 msgid "Carousel Slider (Caroufedsel Slider)"
 msgstr "Deslizador Carrusel- (Caroufedsel Slider)"
 
-#: ../themeoptions/theme_options.php:1545
+#: ../themeoptions/theme_options.php:1552
 msgid "Blog Post Defaults Video"
 msgstr "Entrada Video por defecto"
 
-#: ../themeoptions/theme_options.php:1550
+#: ../themeoptions/theme_options.php:1557
 msgid "Video Blog Post Summary Default"
 msgstr "Resumen entrada video por defecto"
 
-#: ../themeoptions/theme_options.php:1558
+#: ../themeoptions/theme_options.php:1565
 msgid "Single Video Post Head Content"
 msgstr "Contenido cabecera entrada individual video"
 
-#: ../themeoptions/theme_options.php:1566
+#: ../themeoptions/theme_options.php:1573
 msgid "Blog Category/Archive Defaults"
 msgstr "Categoría / Archivo del blog por defecto"
 
-#: ../themeoptions/theme_options.php:1571
+#: ../themeoptions/theme_options.php:1578
 msgid "Category Display Type"
 msgstr "Mostrar tipo categor&iacute;a"
 
-#: ../themeoptions/theme_options.php:1579
+#: ../themeoptions/theme_options.php:1586
 msgid "Category Grid Columns"
 msgstr "Columnas rejilla categoría"
 
-#: ../themeoptions/theme_options.php:1589
+#: ../themeoptions/theme_options.php:1596
 msgid "Display the sidebar on blog archives?"
 msgstr "&iquest;Mostrar barra lateral en los archivos del blog?"
 
-#: ../themeoptions/theme_options.php:1590
+#: ../themeoptions/theme_options.php:1597
 msgid "This determines if there is a sidebar on the blog category pages."
 msgstr ""
 "Esto determina si hay una barra lateral en las páginas de la categoría de "
 "blog."
 
-#: ../themeoptions/theme_options.php:1600
+#: ../themeoptions/theme_options.php:1607
 msgid "Choose a Sidebar for your Category/Archive Pages"
 msgstr ""
 "Elija una barra lateral para sus p&aacute;ginas Categor&iacute;a / Archivo"
 
-#: ../themeoptions/theme_options.php:1611
+#: ../themeoptions/theme_options.php:1618
 msgid "Basic Styling"
 msgstr "Estilos B&aacute;sicos"
 
-#: ../themeoptions/theme_options.php:1612
+#: ../themeoptions/theme_options.php:1619
 msgid "Basic Stylng"
 msgstr "Estilo B&aacute;sico "
 
-#: ../themeoptions/theme_options.php:1617
+#: ../themeoptions/theme_options.php:1624
 msgid "Theme Skin Stylesheet"
 msgstr "Hoja de estilo del tema"
 
-#: ../themeoptions/theme_options.php:1618
+#: ../themeoptions/theme_options.php:1625
 msgid ""
 "Note* changes made in options panel will override this stylesheet. Example: "
 "Colors set in typography."
@@ -2597,227 +2598,227 @@ msgstr ""
 "Nota * los cambios realizados en el panel de opciones tienen prioridad sobre "
 "esta hoja de estilos. Ejemplo: Los colores que figuran en la tipografía."
 
-#: ../themeoptions/theme_options.php:1628
+#: ../themeoptions/theme_options.php:1635
 msgid "Choose the default Highlight color for your site."
 msgstr "Elija el color de \"resaltado\" predeterminado para su sitio."
 
-#: ../themeoptions/theme_options.php:1636
+#: ../themeoptions/theme_options.php:1643
 msgid "Primary Hover Color"
 msgstr "Color primario \"sobre\" (hover)"
 
-#: ../themeoptions/theme_options.php:1637
+#: ../themeoptions/theme_options.php:1644
 msgid "Recomended to be 20% lighter than primary color"
 msgstr "Opacidad recomendada para color primario es de 20%"
 
-#: ../themeoptions/theme_options.php:1646
+#: ../themeoptions/theme_options.php:1653
 msgid "Sitewide Gray Fonts"
 msgstr "Texto color gris para todo el sitio"
 
-#: ../themeoptions/theme_options.php:1655
+#: ../themeoptions/theme_options.php:1662
 msgid "Footer Font Color"
 msgstr "Color de fuente pie de p&aacute;gina"
 
-#: ../themeoptions/theme_options.php:1666
+#: ../themeoptions/theme_options.php:1673
 msgid "Advanced Styling"
 msgstr "Estilos Avanzados"
 
-#: ../themeoptions/theme_options.php:1667
+#: ../themeoptions/theme_options.php:1674
 msgid "Main Content Background"
 msgstr "Fondo Contenido Principal"
 
-#: ../themeoptions/theme_options.php:1673
+#: ../themeoptions/theme_options.php:1680
 msgid "Content Background"
 msgstr "Fondo del contenido"
 
-#: ../themeoptions/theme_options.php:1678
-#: ../themeoptions/theme_options.php:1684
+#: ../themeoptions/theme_options.php:1685
+#: ../themeoptions/theme_options.php:1691
 msgid "Topbar Background"
 msgstr "Fondo Topbar"
 
-#: ../themeoptions/theme_options.php:1689
-#: ../themeoptions/theme_options.php:1703
+#: ../themeoptions/theme_options.php:1696
+#: ../themeoptions/theme_options.php:1710
 msgid "Header Background"
 msgstr "Fondo de la cabecera:"
 
-#: ../themeoptions/theme_options.php:1694
+#: ../themeoptions/theme_options.php:1701
 msgid "Header Background Style"
 msgstr "Estilo fondo cabecera"
 
-#: ../themeoptions/theme_options.php:1695
+#: ../themeoptions/theme_options.php:1702
 msgid "Simple"
 msgstr "Individual"
 
-#: ../themeoptions/theme_options.php:1709
+#: ../themeoptions/theme_options.php:1716
 msgid "Header Background Color"
 msgstr "Color de fondo cabecera"
 
-#: ../themeoptions/theme_options.php:1718
+#: ../themeoptions/theme_options.php:1725
 msgid "If background is color, select Transparency"
 msgstr "Si el fondo es de color, seleciona transparencia"
 
-#: ../themeoptions/theme_options.php:1727
-#: ../themeoptions/theme_options.php:1733
+#: ../themeoptions/theme_options.php:1734
+#: ../themeoptions/theme_options.php:1740
 msgid "Menu Background"
 msgstr "Fondo menú"
 
-#: ../themeoptions/theme_options.php:1738
-#: ../themeoptions/theme_options.php:1744
+#: ../themeoptions/theme_options.php:1745
+#: ../themeoptions/theme_options.php:1751
 msgid "Mobile Menu Background"
 msgstr "Fondo men&uacute; m&oacute;viles "
 
-#: ../themeoptions/theme_options.php:1749
+#: ../themeoptions/theme_options.php:1756
 msgid "Post and Page Content area Background"
 msgstr "Fondo del área de contenido entrada y página"
 
-#: ../themeoptions/theme_options.php:1755
+#: ../themeoptions/theme_options.php:1762
 msgid "Post Background"
 msgstr "Fondo de entrada"
 
-#: ../themeoptions/theme_options.php:1760
-#: ../themeoptions/theme_options.php:1766
+#: ../themeoptions/theme_options.php:1767
+#: ../themeoptions/theme_options.php:1773
 msgid "Footer Background"
 msgstr "Fondo Pie de página"
 
-#: ../themeoptions/theme_options.php:1771
-#: ../themeoptions/theme_options.php:1777
+#: ../themeoptions/theme_options.php:1778
+#: ../themeoptions/theme_options.php:1784
 msgid "Body Background"
 msgstr "Fondo del Cuerpo "
 
-#: ../themeoptions/theme_options.php:1778
+#: ../themeoptions/theme_options.php:1785
 msgid "This shows if site is using the boxed layout option."
 msgstr "Esto muestra si el sitio está utilizando la opción de diseño caja."
 
-#: ../themeoptions/theme_options.php:1785
+#: ../themeoptions/theme_options.php:1792
 msgid "Typography"
 msgstr "Tipografía"
 
-#: ../themeoptions/theme_options.php:1786
+#: ../themeoptions/theme_options.php:1793
 msgid "Header Font Options"
 msgstr "Opciones fuentes encabezados"
 
-#: ../themeoptions/theme_options.php:1791
+#: ../themeoptions/theme_options.php:1798
 msgid "H1 Headings"
 msgstr "Encabezamientos H1"
 
-#: ../themeoptions/theme_options.php:1803
+#: ../themeoptions/theme_options.php:1810
 msgid "Choose Size and Style for h1 (This Styles Your Page Titles)"
 msgstr ""
 "Elija el tamaño y estilo de h1 (Estilo para t&iacute;tulos de su p&aacute;"
 "gina)"
 
-#: ../themeoptions/theme_options.php:1814
+#: ../themeoptions/theme_options.php:1821
 msgid "H2 Headings"
 msgstr "Encabezamientos H2"
 
-#: ../themeoptions/theme_options.php:1829
+#: ../themeoptions/theme_options.php:1836
 msgid "Choose Size and Style for h2"
 msgstr "Elija el tamaño y estilo de h2"
 
-#: ../themeoptions/theme_options.php:1840
+#: ../themeoptions/theme_options.php:1847
 msgid "H3 Headings"
 msgstr "Encabezamientos H3"
 
-#: ../themeoptions/theme_options.php:1855
+#: ../themeoptions/theme_options.php:1862
 msgid "Choose Size and Style for h3"
 msgstr "Elija el tamaño y estilo de h3"
 
-#: ../themeoptions/theme_options.php:1866
+#: ../themeoptions/theme_options.php:1873
 msgid "H4 Headings"
 msgstr "Encabezamientos H4"
 
-#: ../themeoptions/theme_options.php:1881
+#: ../themeoptions/theme_options.php:1888
 msgid "Choose Size and Style for h4"
 msgstr "Elija un tamaño y estilo para h4"
 
-#: ../themeoptions/theme_options.php:1892
+#: ../themeoptions/theme_options.php:1899
 msgid "H5 Headings"
 msgstr "Encabezamientos H5"
 
-#: ../themeoptions/theme_options.php:1905
+#: ../themeoptions/theme_options.php:1912
 msgid "Choose Size and Style for h5"
 msgstr "Elija un tamaño y estilo para h5"
 
-#: ../themeoptions/theme_options.php:1916
+#: ../themeoptions/theme_options.php:1923
 msgid "Page Subtitle"
 msgstr "Subtítulo de página"
 
-#: ../themeoptions/theme_options.php:1928
+#: ../themeoptions/theme_options.php:1935
 msgid "Choose Size and Style for Page Subtitle"
 msgstr "Elija el tamaño y estilo  de subtítulos de la página"
 
-#: ../themeoptions/theme_options.php:1939
+#: ../themeoptions/theme_options.php:1946
 msgid "Body Font Options"
 msgstr "Opciones Fuente del Cuerpo (body)"
 
-#: ../themeoptions/theme_options.php:1944
+#: ../themeoptions/theme_options.php:1951
 msgid "Body Font"
 msgstr "Fuente del cuerpo"
 
-#: ../themeoptions/theme_options.php:1959
+#: ../themeoptions/theme_options.php:1966
 msgid "Choose Size and Style for paragraphs"
 msgstr "Elija el tamaño y estilo de los párrafos"
 
-#: ../themeoptions/theme_options.php:1972
+#: ../themeoptions/theme_options.php:1979
 msgid "Menu Settings"
 msgstr "Ajustes de menú"
 
-#: ../themeoptions/theme_options.php:1973
+#: ../themeoptions/theme_options.php:1980
 msgid "Primary Menu Options"
 msgstr "Opciones Menr&uacute; Principal"
 
-#: ../themeoptions/theme_options.php:1978
+#: ../themeoptions/theme_options.php:1985
 msgid "Primary Menu Font"
 msgstr "Fuente men&uacute; principal"
 
-#: ../themeoptions/theme_options.php:1993
+#: ../themeoptions/theme_options.php:2000
 msgid "Choose Size and Style for primary menu"
 msgstr "Elija un tamaño y estilo para el menú principal"
 
-#: ../themeoptions/theme_options.php:2003
+#: ../themeoptions/theme_options.php:2010
 msgid "Mobile Menu Options"
 msgstr "Opciones Men&uacute; M&oacute;viles"
 
-#: ../themeoptions/theme_options.php:2008
+#: ../themeoptions/theme_options.php:2015
 msgid "Mobile Menu Font"
 msgstr "Fuente men&uacute; móvil"
 
-#: ../themeoptions/theme_options.php:2023
+#: ../themeoptions/theme_options.php:2030
 msgid "Choose Size and Style for Mobile Menu"
 msgstr "Elija un tamaño y estilo para men&uacute; m&oacute;viles"
 
-#: ../themeoptions/theme_options.php:2034
+#: ../themeoptions/theme_options.php:2041
 msgid "Topbar Menu Options"
 msgstr "Opciones menú topbar"
 
-#: ../themeoptions/theme_options.php:2039
+#: ../themeoptions/theme_options.php:2046
 msgid "Topbar Menu Font"
 msgstr "Fuente menú topbar"
 
-#: ../themeoptions/theme_options.php:2051
+#: ../themeoptions/theme_options.php:2058
 msgid "Choose Size and Style for topbar menu"
 msgstr "Elegir tamaño y estilo para menú barra superior / topbar"
 
-#: ../themeoptions/theme_options.php:2063
-#: ../themeoptions/theme_options.php:2064
+#: ../themeoptions/theme_options.php:2070
+#: ../themeoptions/theme_options.php:2071
 msgid "Misc Settings"
 msgstr "Ajustes Diversos"
 
-#: ../themeoptions/theme_options.php:2070
+#: ../themeoptions/theme_options.php:2077
 msgid "Custom Favicon"
 msgstr "Personalizar Favicon"
 
-#: ../themeoptions/theme_options.php:2071
+#: ../themeoptions/theme_options.php:2078
 msgid ""
 "Upload a 16px x 16px png/gif/ico image that will represent your website "
 "favicon."
 msgstr ""
 "Subir favicon de  16x16 px  png / gif /  ico que representará a su sitio."
 
-#: ../themeoptions/theme_options.php:2076
+#: ../themeoptions/theme_options.php:2083
 msgid "Footer Copyright Text"
 msgstr " Texto de copyright pie de página"
 
-#: ../themeoptions/theme_options.php:2077
+#: ../themeoptions/theme_options.php:2084
 msgid ""
 "Write your own copyright text here. You can use the following shortcodes in "
 "your footer text: [copyright] [site-name] [the-year]"
@@ -2826,64 +2827,64 @@ msgstr ""
 "siguientes códigos cortos en el texto de pie de página:[copyright] [site-"
 "name] [the-year]"
 
-#: ../themeoptions/theme_options.php:2083
+#: ../themeoptions/theme_options.php:2090
 msgid "Search Results Sidebars"
 msgstr "Resultados b&uacute;queda - Barras Laterales"
 
-#: ../themeoptions/theme_options.php:2088
+#: ../themeoptions/theme_options.php:2095
 msgid "Search Results - choose Sidebar"
 msgstr "Resultados de la búsqueda - Elegir Barra Lateral"
 
-#: ../themeoptions/theme_options.php:2096
+#: ../themeoptions/theme_options.php:2103
 msgid "Create Sidebars"
 msgstr "Crear barras laterales"
 
-#: ../themeoptions/theme_options.php:2101
+#: ../themeoptions/theme_options.php:2108
 msgid "Create Custom Sidebars"
 msgstr "Crear barras laterales personalizadas"
 
-#: ../themeoptions/theme_options.php:2102
+#: ../themeoptions/theme_options.php:2109
 msgid "Type new sidebar name into textbox"
 msgstr "Escribar el nombre para la nueva barra lateral"
 
-#: ../themeoptions/theme_options.php:2103
+#: ../themeoptions/theme_options.php:2110
 msgid "Extra Sidebar"
 msgstr "Barra lateral extra"
 
-#: ../themeoptions/theme_options.php:2108
+#: ../themeoptions/theme_options.php:2115
 #, fuzzy
 msgid "WordPress Galleries"
 msgstr "Galerías de Wordpress"
 
-#: ../themeoptions/theme_options.php:2113
+#: ../themeoptions/theme_options.php:2120
 #, fuzzy
 msgid "Enable Pinnacle Galleries to override WordPress"
 msgstr "Habilitar Galerías Pinnacle para anular las de Wordpress"
 
-#: ../themeoptions/theme_options.php:2114
+#: ../themeoptions/theme_options.php:2121
 msgid "You must have virtue/pinnacle toolkit installed to use."
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2122
-#: ../themeoptions/theme_options.php:2128
+#: ../themeoptions/theme_options.php:2129
+#: ../themeoptions/theme_options.php:2135
 msgid "Custom CSS"
 msgstr "CSS personalizado"
 
-#: ../themeoptions/theme_options.php:2123
+#: ../themeoptions/theme_options.php:2130
 msgid "Custom CSS Box"
 msgstr "Caja CSS personalizado"
 
-#: ../themeoptions/theme_options.php:2129
+#: ../themeoptions/theme_options.php:2136
 msgid "Quickly add some CSS to your theme by adding it to this block."
 msgstr ""
 "A&ntilde;ada rápidamente algunos CSS a su tema agregándolo a este bloque."
 
-#: ../themeoptions/theme_options.php:2149
-#: ../themeoptions/theme_options.php:2150
+#: ../themeoptions/theme_options.php:2156
+#: ../themeoptions/theme_options.php:2157
 msgid "Theme Options"
 msgstr "Opciones del Tema"
 
-#: ../themeoptions/theme_options.php:2157
+#: ../themeoptions/theme_options.php:2164
 msgid ""
 "Thank you for using the Pinnacle Theme by <a href=\"http://kadencethemes.com/"
 "\" target=\"_blank\">Kadence Themes</a>."
@@ -2903,11 +2904,11 @@ msgstr "¡Oferta!"
 msgid "Choose an option"
 msgstr "Elija una opción"
 
-#: ../woocommerce/single-product/add-to-cart/variable.php:73
+#: ../woocommerce/single-product/add-to-cart/variable.php:60
 msgid "Clear selection"
 msgstr "Borrar selección"
 
-#: ../woocommerce/single-product/add-to-cart/variable.php:105
+#: ../woocommerce/single-product/add-to-cart/variable.php:92
 msgid "This product is currently out of stock and unavailable."
 msgstr "Producto actualmente agotado y no est&aacute; disponible."
 

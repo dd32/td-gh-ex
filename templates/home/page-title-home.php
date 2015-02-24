@@ -3,12 +3,12 @@
 	if(isset($pinnacle['home_page_title'])) {
 		$homepagetitle = $pinnacle['home_page_title'];
 	} else {
-		$homepagetitle = '';
+		$homepagetitle = 'Welcome to [site-name]';
 	}
 	if(isset($pinnacle['home_page_sub_title'])) {
 		$bsub = $pinnacle['home_page_sub_title'];
 	} else {
-		$bsub = '';
+		$bsub = '[site-tagline]';
 	} 
 	if(isset($pinnacle['home_page_title_ptop'])) {
 		$tpadding = 'padding-top:'.$pinnacle['home_page_title_ptop'].'px;';

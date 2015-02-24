@@ -52,6 +52,12 @@ Pinnacle Theme Uses:
 
 = Theme Name: Pinnacle =
 
+= Version 1.2.1 = 
+* Update: Better theme preview.
+* Update: Slight css improvement in cart.
+* Update: Language files.
+* Fix: Single post portfolio carousel issue
+
 = Version 1.2.0 = 
 * Update: CSS validation to redux.
 * Update: Woocommerce 2.3 support.

@@ -171,7 +171,7 @@
                         if(isset($pinnacle['single_portfolio_carousel_default']) && $pinnacle['single_portfolio_carousel_default'] == "yes") {
                           get_template_part('templates/bottomportfolio', 'carousel');
                         }
-                    } elseif ($$portfolio_carousel == 'yes'){
+                    } elseif ($portfolio_carousel == 'yes'){
                         get_template_part('templates/bottomportfolio', 'carousel');
                     } ?>
                 </footer>

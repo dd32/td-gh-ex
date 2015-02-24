@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Pinnacle Premium\n"
-"POT-Creation-Date: 2015-02-05 00:44-0700\n"
-"PO-Revision-Date: 2015-02-05 00:46-0700\n"
+"Project-Id-Version: Pinnacle\n"
+"POT-Creation-Date: 2015-02-23 17:05-0700\n"
+"PO-Revision-Date: 2015-02-23 17:10-0700\n"
 "Last-Translator: Coaex Precious Metals <info@coaex.com>\n"
 "Language-Team: \n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 1.7.4\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;esc_attr__;esc_attr_e\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -152,7 +152,6 @@ msgstr "Eklenti başarıyla etkinleştirildi."
 msgid "The following plugin was activated successfully:"
 msgid_plural "The following plugins were activated successfully:"
 msgstr[0] "Bu eklenti başarıyla etkinleştirildi:"
-msgstr[1] "Bu eklentiler başarıyla etkinleştirildiler:"
 
 #: ../lib/class-tgm-plugin-activation.php:179
 #, php-format
@@ -366,11 +365,6 @@ msgstr "Yeni Ekle"
 #: ../themeoptions/options_assets/extensions/kad_icons/kad_icons/field_kad_icons.php:180
 #: ../themeoptions/options_assets/extensions/kad_slides/kad_slides/field_kad_slides.php:115
 #: ../themeoptions/options_assets/extensions/kad_slides/kad_slides/field_kad_slides.php:161
-#: ../themeoptions/redux/inc/fields/background/field_background.php:321
-#: ../themeoptions/redux/inc/fields/media/field_media.php:200
-#: ../themeoptions/redux/inc/fields/multi_text/field_multi_text.php:69
-#: ../themeoptions/redux/inc/fields/multi_text/field_multi_text.php:73
-#: ../themeoptions/redux/inc/fields/multi_text/field_multi_text.php:76
 msgid "Remove"
 msgstr "Kaldır"
 
@@ -397,7 +391,6 @@ msgstr ""
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:706
 #: ../lib/cmb/helpers/cmb_Meta_Box_types.php:768
-#: ../themeoptions/redux/inc/import_export.php:104
 msgid "Download"
 msgstr ""
 
@@ -406,9 +399,8 @@ msgid "Clear"
 msgstr ""
 
 #: ../lib/cmb/init.php:259 ../lib/metaboxes.php:226 ../lib/metaboxes.php:243
-#: ../lib/metaboxes.php:254 ../themeoptions/redux/framework.php:2153
-#: ../themeoptions/theme_options.php:768 ../themeoptions/theme_options.php:776
-#: ../themeoptions/theme_options.php:784
+#: ../lib/metaboxes.php:254 ../themeoptions/theme_options.php:768
+#: ../themeoptions/theme_options.php:776 ../themeoptions/theme_options.php:784
 msgid "Default"
 msgstr "Varsayılan"
 
@@ -553,26 +545,26 @@ msgid "Standard Post Default"
 msgstr "Standart Yazı Seçenekleri"
 
 #: ../lib/metaboxes.php:164 ../lib/metaboxes.php:205
-#: ../themeoptions/theme_options.php:1496
-#: ../themeoptions/theme_options.php:1509
-#: ../themeoptions/theme_options.php:1530
-#: ../themeoptions/theme_options.php:1551
+#: ../themeoptions/theme_options.php:1503
+#: ../themeoptions/theme_options.php:1516
+#: ../themeoptions/theme_options.php:1537
+#: ../themeoptions/theme_options.php:1558
 msgid "Text"
 msgstr "Metin"
 
 #: ../lib/metaboxes.php:165 ../lib/metaboxes.php:206
-#: ../themeoptions/theme_options.php:1496
-#: ../themeoptions/theme_options.php:1509
-#: ../themeoptions/theme_options.php:1530
-#: ../themeoptions/theme_options.php:1551
+#: ../themeoptions/theme_options.php:1503
+#: ../themeoptions/theme_options.php:1516
+#: ../themeoptions/theme_options.php:1537
+#: ../themeoptions/theme_options.php:1558
 msgid "Portrait Image"
 msgstr "Portre Resmi"
 
 #: ../lib/metaboxes.php:166 ../lib/metaboxes.php:207
-#: ../themeoptions/theme_options.php:1496
-#: ../themeoptions/theme_options.php:1509
-#: ../themeoptions/theme_options.php:1530
-#: ../themeoptions/theme_options.php:1551
+#: ../themeoptions/theme_options.php:1503
+#: ../themeoptions/theme_options.php:1516
+#: ../themeoptions/theme_options.php:1537
+#: ../themeoptions/theme_options.php:1558
 msgid "Landscape Image"
 msgstr "Manzara Resmi"
 
@@ -590,15 +582,15 @@ msgstr "Başlık İçeriği"
 msgid "Image Post Default"
 msgstr "Blog Yazısı Varsayılanları"
 
-#: ../lib/metaboxes.php:188 ../themeoptions/theme_options.php:1517
+#: ../lib/metaboxes.php:188 ../themeoptions/theme_options.php:1524
 msgid "Image"
 msgstr "Resim"
 
 #: ../lib/metaboxes.php:189 ../themeoptions/theme_options.php:360
 #: ../themeoptions/theme_options.php:519
-#: ../themeoptions/theme_options.php:1517
-#: ../themeoptions/theme_options.php:1538
-#: ../themeoptions/theme_options.php:1559
+#: ../themeoptions/theme_options.php:1524
+#: ../themeoptions/theme_options.php:1545
+#: ../themeoptions/theme_options.php:1566
 msgid "None"
 msgstr "Hiçbiri"
 
@@ -629,12 +621,12 @@ msgid "Choose if layout is fullwidth or sidebar"
 msgstr "Yerleşim, tam genişlikli veya kenar çubuklu ise seçin"
 
 #: ../lib/metaboxes.php:227 ../lib/metaboxes.php:245 ../lib/metaboxes.php:391
-#: ../themeoptions/theme_options.php:1319
+#: ../themeoptions/theme_options.php:1326
 msgid "Yes"
 msgstr "Evet"
 
 #: ../lib/metaboxes.php:228 ../lib/metaboxes.php:244 ../lib/metaboxes.php:255
-#: ../lib/metaboxes.php:390 ../themeoptions/theme_options.php:1319
+#: ../lib/metaboxes.php:390 ../themeoptions/theme_options.php:1326
 msgid "No"
 msgstr "Hayır"
 
@@ -658,11 +650,11 @@ msgstr "Yazı Karuseli"
 msgid "Display a carousel with similar or recent posts?"
 msgstr "Benzer yazılar veya son yazıların olduğu bir karusel görüntülensin mi?"
 
-#: ../lib/metaboxes.php:256 ../themeoptions/theme_options.php:1483
+#: ../lib/metaboxes.php:256 ../themeoptions/theme_options.php:1490
 msgid "Yes - Display Recent Posts"
 msgstr "Evet - Son Yazıları Görüntüle"
 
-#: ../lib/metaboxes.php:257 ../themeoptions/theme_options.php:1483
+#: ../lib/metaboxes.php:257 ../themeoptions/theme_options.php:1490
 msgid "Yes - Display Similar Posts"
 msgstr "Evet - Benzer Yazıları Görüntüle"
 
@@ -698,7 +690,7 @@ msgstr "Yazı İçeriğini şu şekilde görüntüle:"
 msgid "Summary"
 msgstr "Özet"
 
-#: ../lib/metaboxes.php:317 ../themeoptions/theme_options.php:1695
+#: ../lib/metaboxes.php:317 ../themeoptions/theme_options.php:1702
 msgid "Full"
 msgstr "Tam"
 
@@ -711,12 +703,12 @@ msgid "Choose Column Layout:"
 msgstr "Sütun Yerleşimini Seç:"
 
 #: ../lib/metaboxes.php:369 ../themeoptions/theme_options.php:1013
-#: ../themeoptions/theme_options.php:1090
+#: ../themeoptions/theme_options.php:1097
 msgid "Four Column"
 msgstr "Dört Sütun"
 
 #: ../lib/metaboxes.php:370 ../themeoptions/theme_options.php:1013
-#: ../themeoptions/theme_options.php:1090
+#: ../themeoptions/theme_options.php:1097
 msgid "Three Column"
 msgstr "Üç Sütun"
 
@@ -1007,8 +999,6 @@ msgstr "Resim URL"
 #: ../lib/widgets.php:843
 #: ../themeoptions/options_assets/extensions/kad_slides/kad_slides/field_kad_slides.php:108
 #: ../themeoptions/options_assets/extensions/kad_slides/kad_slides/field_kad_slides.php:159
-#: ../themeoptions/redux/inc/fields/background/field_background.php:314
-#: ../themeoptions/redux/inc/fields/media/field_media.php:193
 msgid "Upload"
 msgstr "Yükle"
 
@@ -1403,10 +1393,10 @@ msgid "Show the page title by default"
 msgstr "Ekmek kırıntılarında Mağaza sayfası gösterilsin mi?"
 
 #: ../themeoptions/theme_options.php:210
-#: ../themeoptions/theme_options.php:1169
 #: ../themeoptions/theme_options.php:1176
-#: ../themeoptions/theme_options.php:1261
-#: ../themeoptions/theme_options.php:1427
+#: ../themeoptions/theme_options.php:1183
+#: ../themeoptions/theme_options.php:1268
+#: ../themeoptions/theme_options.php:1434
 msgid "This can be overridden on each page."
 msgstr ""
 
@@ -1568,8 +1558,8 @@ msgid "Carousel Slider"
 msgstr "Karusel Kaydırıcı"
 
 #: ../themeoptions/theme_options.php:360 ../themeoptions/theme_options.php:519
-#: ../themeoptions/theme_options.php:1551
-#: ../themeoptions/theme_options.php:1559
+#: ../themeoptions/theme_options.php:1558
+#: ../themeoptions/theme_options.php:1566
 msgid "Video"
 msgstr "Video"
 
@@ -1814,13 +1804,13 @@ msgid "Portfolio Layout Style"
 msgstr "Site Yerleşim Stili"
 
 #: ../themeoptions/theme_options.php:768
-#: ../themeoptions/theme_options.php:1241
+#: ../themeoptions/theme_options.php:1248
 #, fuzzy
 msgid "Post Boxes"
 msgstr "Yazı Seçenekleri"
 
 #: ../themeoptions/theme_options.php:768
-#: ../themeoptions/theme_options.php:1241
+#: ../themeoptions/theme_options.php:1248
 msgid "Flat with Margin"
 msgstr ""
 
@@ -1839,7 +1829,7 @@ msgid "Dark"
 msgstr ""
 
 #: ../themeoptions/theme_options.php:776
-#: ../themeoptions/theme_options.php:1627
+#: ../themeoptions/theme_options.php:1634
 msgid "Primary Color"
 msgstr "Birincil Renk"
 
@@ -2042,19 +2032,19 @@ msgstr ""
 "görüntülenmesini seçin."
 
 #: ../themeoptions/theme_options.php:986
-#: ../themeoptions/theme_options.php:1572
+#: ../themeoptions/theme_options.php:1579
 #, fuzzy
 msgid "Normal Post Excerpt"
 msgstr "Yazı Özeti Uzunluğu"
 
 #: ../themeoptions/theme_options.php:986
-#: ../themeoptions/theme_options.php:1572
+#: ../themeoptions/theme_options.php:1579
 #, fuzzy
 msgid "Normal Full Post"
 msgstr "Blog Yazıları"
 
 #: ../themeoptions/theme_options.php:986
-#: ../themeoptions/theme_options.php:1572
+#: ../themeoptions/theme_options.php:1579
 #, fuzzy
 msgid "Grid Post"
 msgstr "Önceki Yazı"
@@ -2065,18 +2055,18 @@ msgid "Post Grid Columns"
 msgstr "Yazı Sütunları"
 
 #: ../themeoptions/theme_options.php:994
-#: ../themeoptions/theme_options.php:1580
+#: ../themeoptions/theme_options.php:1587
 msgid "Two"
 msgstr ""
 
 #: ../themeoptions/theme_options.php:994
-#: ../themeoptions/theme_options.php:1580
+#: ../themeoptions/theme_options.php:1587
 #, fuzzy
 msgid "Three"
 msgstr "Üç Satır"
 
 #: ../themeoptions/theme_options.php:994
-#: ../themeoptions/theme_options.php:1580
+#: ../themeoptions/theme_options.php:1587
 msgid "Four"
 msgstr ""
 
@@ -2150,61 +2140,71 @@ msgstr ""
 "gizlenmeyeceğini belirler"
 
 #: ../themeoptions/theme_options.php:1083
+msgid "Quantity box plus and minus"
+msgstr ""
+
+#: ../themeoptions/theme_options.php:1084
+msgid ""
+"Turn this off if you would like to use browser added plus and minus for "
+"number boxes"
+msgstr ""
+
+#: ../themeoptions/theme_options.php:1090
 msgid "Shop Category Image Size"
 msgstr "Mağaza Kategorisi Resim Boyutu"
 
-#: ../themeoptions/theme_options.php:1088
+#: ../themeoptions/theme_options.php:1095
 msgid "Shop Category Column Layout"
 msgstr "Mağaza Kategorisi Sütun Yerleşimi"
 
-#: ../themeoptions/theme_options.php:1089
+#: ../themeoptions/theme_options.php:1096
 msgid ""
 "Choose how many Category Image columns to show on the shop and category pages"
 msgstr ""
 "Mağaza ve kategori sayfalarında kaç adet Kategori Resmi sütununun "
 "gösterileceğini seçin"
 
-#: ../themeoptions/theme_options.php:1097
+#: ../themeoptions/theme_options.php:1104
 msgid "Shop Product Title Settings"
 msgstr "Mağaza Ürün Başlığı Ayarları"
 
-#: ../themeoptions/theme_options.php:1102
+#: ../themeoptions/theme_options.php:1109
 msgid "Shop & archive Product title Font"
 msgstr "Mağaza ve Arşiv Ürün Başlığı Yazı Tipi"
 
-#: ../themeoptions/theme_options.php:1113
+#: ../themeoptions/theme_options.php:1120
 msgid "Choose Size and Style for product titles on category and archive pages."
 msgstr ""
 "Kategori ve arşiv sayfalarındaki ürün başlıkları için Boyut ve Stil seçin."
 
-#: ../themeoptions/theme_options.php:1124
+#: ../themeoptions/theme_options.php:1131
 msgid "Set Product Title to Uppercase?"
 msgstr "Ürün Başlığı, büyük harflerle gösterilsin mi?"
 
-#: ../themeoptions/theme_options.php:1125
+#: ../themeoptions/theme_options.php:1132
 msgid "This makes your product titles uppercase on Category pages"
 msgstr "Bu, Kategori sayfalarında ürün başlıklarını büyük harfli yapar"
 
-#: ../themeoptions/theme_options.php:1131
+#: ../themeoptions/theme_options.php:1138
 msgid "Product title Min Height"
 msgstr "Ürün Başlığı Minimum Yükseklik"
 
-#: ../themeoptions/theme_options.php:1132
+#: ../themeoptions/theme_options.php:1139
 msgid ""
 "If your titles are long increase this to help align your products height."
 msgstr ""
 "Eğer başlıklarınız uzunsa, bu, ürünlerinizin yüksekliğini hizalamaya "
 "yardımcı olur."
 
-#: ../themeoptions/theme_options.php:1141
+#: ../themeoptions/theme_options.php:1148
 msgid "Product Image Sizes"
 msgstr "Ürün Resmi Boyutları"
 
-#: ../themeoptions/theme_options.php:1146
+#: ../themeoptions/theme_options.php:1153
 msgid "Enable Product Image Aspect Ratio on Catalog pages"
 msgstr "Katalog sayfalarında Ürün Resmi Çerçeve Boyutunu Etkinleştir"
 
-#: ../themeoptions/theme_options.php:1147
+#: ../themeoptions/theme_options.php:1154
 msgid ""
 "If turned off image dimensions are set by woocommerce settings - recommended "
 "width: 270px for Catalog Images"
@@ -2212,11 +2212,11 @@ msgstr ""
 "Eğer bu kapatılırsa, resim ebatları, WooCommerce ayarları tarafından "
 "belirlenir - Tavsiye edilen genişlik: Katalog Resimleri için 270px"
 
-#: ../themeoptions/theme_options.php:1153
+#: ../themeoptions/theme_options.php:1160
 msgid "Enable Product Image Aspect Ratio on product Page"
 msgstr "Ürün sayfasında Ürün Resmi Çerçeve Boyutunu etkinleştir"
 
-#: ../themeoptions/theme_options.php:1154
+#: ../themeoptions/theme_options.php:1161
 msgid ""
 "If turned off image dimensions are set by woocommerce settings - recommended "
 "width: 468px for Single Product Image"
@@ -2224,301 +2224,301 @@ msgstr ""
 "Eğer bu kapatılırsa, resim ebatları, WooCommerce ayarları tarafından "
 "belirlenir - Tavsiye edilen genişlik: Tekil Ürün Resimleri için 468px"
 
-#: ../themeoptions/theme_options.php:1162
+#: ../themeoptions/theme_options.php:1169
 #, fuzzy
 msgid "Product Settings"
 msgstr "Ürün Sayfası Ayarları"
 
-#: ../themeoptions/theme_options.php:1163
+#: ../themeoptions/theme_options.php:1170
 #, fuzzy
 msgid "Single Product Page Header (Woocommerce plugin required)"
 msgstr "Tekil Ürün Yerleşimi"
 
-#: ../themeoptions/theme_options.php:1168
-#: ../themeoptions/theme_options.php:1260
+#: ../themeoptions/theme_options.php:1175
+#: ../themeoptions/theme_options.php:1267
 msgid "Show the Title in header by default"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1175
-#: ../themeoptions/theme_options.php:1267
+#: ../themeoptions/theme_options.php:1182
+#: ../themeoptions/theme_options.php:1274
 #, fuzzy
 msgid "Show the Title in post"
 msgstr "Yazılarda tarih gösterilsin mi?"
 
-#: ../themeoptions/theme_options.php:1182
-#: ../themeoptions/theme_options.php:1273
+#: ../themeoptions/theme_options.php:1189
+#: ../themeoptions/theme_options.php:1280
 #, fuzzy
 msgid "Product Default Title Text"
 msgstr "Ürün İndirim Metni"
 
-#: ../themeoptions/theme_options.php:1183
+#: ../themeoptions/theme_options.php:1190
 #, fuzzy
 msgid "Category of product"
 msgstr "Ürünler Kategorisi"
 
-#: ../themeoptions/theme_options.php:1183
+#: ../themeoptions/theme_options.php:1190
 #, fuzzy
 msgid "Product Title"
 msgstr "Ürün Videosu"
 
-#: ../themeoptions/theme_options.php:1183
-#: ../themeoptions/theme_options.php:1274
-#: ../themeoptions/theme_options.php:1434
+#: ../themeoptions/theme_options.php:1190
+#: ../themeoptions/theme_options.php:1281
+#: ../themeoptions/theme_options.php:1441
 #, fuzzy
 msgid "Custom"
 msgstr "Özel Sekme"
-
-#: ../themeoptions/theme_options.php:1190
-#: ../themeoptions/theme_options.php:1281
-#: ../themeoptions/theme_options.php:1448
-#, fuzzy
-msgid "Post Default Title"
-msgstr "Blog Yazısı Varsayılanları"
-
-#: ../themeoptions/theme_options.php:1191
-#: ../themeoptions/theme_options.php:1282
-#, fuzzy
-msgid "Example: My Shop"
-msgstr "Örnek Sayfa 2"
 
 #: ../themeoptions/theme_options.php:1197
 #: ../themeoptions/theme_options.php:1288
 #: ../themeoptions/theme_options.php:1455
 #, fuzzy
+msgid "Post Default Title"
+msgstr "Blog Yazısı Varsayılanları"
+
+#: ../themeoptions/theme_options.php:1198
+#: ../themeoptions/theme_options.php:1289
+#, fuzzy
+msgid "Example: My Shop"
+msgstr "Örnek Sayfa 2"
+
+#: ../themeoptions/theme_options.php:1204
+#: ../themeoptions/theme_options.php:1295
+#: ../themeoptions/theme_options.php:1462
+#, fuzzy
 msgid "Post Default Subtitle"
 msgstr "Varsayılan"
 
-#: ../themeoptions/theme_options.php:1203
+#: ../themeoptions/theme_options.php:1210
 msgid "Display product tabs?"
 msgstr "Ürün sekmeleri görüntülensin mi?"
 
-#: ../themeoptions/theme_options.php:1204
+#: ../themeoptions/theme_options.php:1211
 msgid "This determines if product tabs are displayed"
 msgstr "Bu, ürün sekmelerinin görüntülenip görüntülenmeyeceğini belirler"
 
-#: ../themeoptions/theme_options.php:1210
+#: ../themeoptions/theme_options.php:1217
 msgid "Display related products?"
 msgstr "Benzer ürünler görüntülensin mi?"
 
-#: ../themeoptions/theme_options.php:1211
+#: ../themeoptions/theme_options.php:1218
 msgid "This determines related products are displayed"
 msgstr "Bu, benzer ürünlerin görüntülenip görüntülenmeyeceğini belirler"
 
-#: ../themeoptions/theme_options.php:1219
+#: ../themeoptions/theme_options.php:1226
 msgid "Portfolio Options"
 msgstr "Portföy Seçenekleri"
 
-#: ../themeoptions/theme_options.php:1220
+#: ../themeoptions/theme_options.php:1227
 msgid "Portfolio Options (Pinnacle Toolkit plugin required)"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1225
+#: ../themeoptions/theme_options.php:1232
 msgid "Allow Comments on Portfolio Posts"
 msgstr "Portföy Yazılarında Yorumlara İzin Ver"
 
-#: ../themeoptions/theme_options.php:1226
+#: ../themeoptions/theme_options.php:1233
 msgid "Turn on to allow Comments on Portfolio posts"
 msgstr "Portföy yazılarında Yorumlara izin vermek için aç"
 
-#: ../themeoptions/theme_options.php:1232
+#: ../themeoptions/theme_options.php:1239
 #, fuzzy
 msgid "Portfolio Grid Options"
 msgstr "Portföy Seçenekleri"
 
-#: ../themeoptions/theme_options.php:1239
+#: ../themeoptions/theme_options.php:1246
 #, fuzzy
 msgid "Default Portfolio Layout Style"
 msgstr "Anasayfa Portföy Karuseli Başlığı"
 
-#: ../themeoptions/theme_options.php:1240
+#: ../themeoptions/theme_options.php:1247
 msgid "This sets the defualt layout style for the portfolio post."
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1248
+#: ../themeoptions/theme_options.php:1255
 #, fuzzy
 msgid "Default Hover Style"
 msgstr "Yeni Görüş"
 
-#: ../themeoptions/theme_options.php:1249
+#: ../themeoptions/theme_options.php:1256
 msgid "This sets the defualt hover style for the portfolio post."
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1250
+#: ../themeoptions/theme_options.php:1257
 #, fuzzy
 msgid "Primary Color Style"
 msgstr "Birincil Renk"
 
-#: ../themeoptions/theme_options.php:1250
+#: ../themeoptions/theme_options.php:1257
 #, fuzzy
 msgid "Light Style"
 msgstr "Sekiz Öge"
 
-#: ../themeoptions/theme_options.php:1250
+#: ../themeoptions/theme_options.php:1257
 #, fuzzy
 msgid "Dark Style"
 msgstr "Üst Bilgi Stili"
 
-#: ../themeoptions/theme_options.php:1255
+#: ../themeoptions/theme_options.php:1262
 #, fuzzy
 msgid "Single Portfolio Page Header"
 msgstr "Portföy Üst Sayfası Seç"
 
-#: ../themeoptions/theme_options.php:1274
+#: ../themeoptions/theme_options.php:1281
 #, fuzzy
 msgid "Category of Portfolio"
 msgstr "Ürünler Kategorisi"
 
-#: ../themeoptions/theme_options.php:1274
+#: ../themeoptions/theme_options.php:1281
 #, fuzzy
 msgid "Portfolio Title"
 msgstr "Portföy Türü"
 
-#: ../themeoptions/theme_options.php:1294
+#: ../themeoptions/theme_options.php:1301
 #, fuzzy
 msgid "Single Portfolio Navigation Options"
 msgstr "Portföy Navigasyon Seçenekleri"
 
-#: ../themeoptions/theme_options.php:1299
+#: ../themeoptions/theme_options.php:1306
 #, fuzzy
 msgid "Show portfolio nav below post title"
 msgstr "Anasayfa Portföy Karuseli Başlığı"
 
-#: ../themeoptions/theme_options.php:1307
+#: ../themeoptions/theme_options.php:1314
 msgid "All Projects Default Portfolio Page"
 msgstr "Tüm Projeler Varsayılan Portföy Sayfası"
 
-#: ../themeoptions/theme_options.php:1308
+#: ../themeoptions/theme_options.php:1315
 #, fuzzy
 msgid "This sets the link in every portfolio post."
 msgstr ""
 "Bu, her portföy yazınızda bağlantıyı ayarlar. Yazı içersinde bunu geçersiz "
 "kılabilirsiniz."
 
-#: ../themeoptions/theme_options.php:1313
+#: ../themeoptions/theme_options.php:1320
 msgid "Portfolio Post Bottom Carousel"
 msgstr "Portföy Yazı Altı Karuseli"
 
-#: ../themeoptions/theme_options.php:1318
+#: ../themeoptions/theme_options.php:1325
 #, fuzzy
 msgid "Display Bottom Portfolio carousel by Default"
 msgstr "Alt Portföy Karuseli"
 
-#: ../themeoptions/theme_options.php:1326
+#: ../themeoptions/theme_options.php:1333
 #, fuzzy
 msgid "Bottom Portfolio Carousel Items"
 msgstr "Alt Portföy Karuseli"
 
-#: ../themeoptions/theme_options.php:1327
+#: ../themeoptions/theme_options.php:1334
 msgid "All Portfolio Posts"
 msgstr "Tüm Portföy Yazıları"
 
-#: ../themeoptions/theme_options.php:1327
+#: ../themeoptions/theme_options.php:1334
 msgid "Only of same Portfolio Type"
 msgstr "Sadece aynı Portföy Türleri"
 
-#: ../themeoptions/theme_options.php:1334
+#: ../themeoptions/theme_options.php:1341
 msgid "Choose how many columns to show on recent portfolio carousel."
 msgstr "Son portföy karuselinde kaç adet sütun gösterileceğini seçin."
 
-#: ../themeoptions/theme_options.php:1343
+#: ../themeoptions/theme_options.php:1350
 msgid "Portfolio Category Pages"
 msgstr "Portföy Kategori Sayfaları"
 
-#: ../themeoptions/theme_options.php:1348
+#: ../themeoptions/theme_options.php:1355
 msgid "Choose how many portfolio columns to show on portfolio catagory pages."
 msgstr ""
 "Portföy kategori sayfalarında kaç adet portföy sütununun gösterileceğini "
 "seçin"
 
-#: ../themeoptions/theme_options.php:1359
-#: ../themeoptions/theme_options.php:1360
+#: ../themeoptions/theme_options.php:1366
+#: ../themeoptions/theme_options.php:1367
 msgid "Blog Options"
 msgstr "Blog Seçenekleri"
 
-#: ../themeoptions/theme_options.php:1365
+#: ../themeoptions/theme_options.php:1372
 msgid "Show Comments Closed Text?"
 msgstr "Yorumlar Kapalı yazısı gösterilsin mi?"
 
-#: ../themeoptions/theme_options.php:1366
+#: ../themeoptions/theme_options.php:1373
 msgid "Choose to show or hide comments closed alert below posts."
 msgstr ""
 "Yazıların altında yorumlar kapalı uyarısının gösterilmesini veya "
 "gizlenmesini seçin."
 
-#: ../themeoptions/theme_options.php:1372
+#: ../themeoptions/theme_options.php:1379
 #, fuzzy
 msgid "Show Author image with posts?"
 msgstr "Yazılarda Yazar İkonu gösterilsin mi?"
 
-#: ../themeoptions/theme_options.php:1373
+#: ../themeoptions/theme_options.php:1380
 #, fuzzy
 msgid "Choose to show or hide author image beside post title."
 msgstr ""
 "Yazı başlığının altında yazar ikonunun gösterilmesini veya gizlenmesini "
 "seçin."
 
-#: ../themeoptions/theme_options.php:1379
+#: ../themeoptions/theme_options.php:1386
 #, fuzzy
 msgid "Show author name with posts?"
 msgstr "Yazılarda Yazar İkonu gösterilsin mi?"
 
-#: ../themeoptions/theme_options.php:1380
+#: ../themeoptions/theme_options.php:1387
 #, fuzzy
 msgid "Choose to show or hide author name under post title."
 msgstr ""
 "Yazı başlığının altında yazar ikonunun gösterilmesini veya gizlenmesini "
 "seçin."
 
-#: ../themeoptions/theme_options.php:1386
+#: ../themeoptions/theme_options.php:1393
 #, fuzzy
 msgid "Show categories with posts?"
 msgstr "Yazılarda tarih gösterilsin mi?"
 
-#: ../themeoptions/theme_options.php:1387
+#: ../themeoptions/theme_options.php:1394
 #, fuzzy
 msgid "Choose to show or hide categories in the post footer."
 msgstr ""
 "Yazı başlığının altında tarihin gösterilmesini veya gizlenmesini seçin."
 
-#: ../themeoptions/theme_options.php:1393
+#: ../themeoptions/theme_options.php:1400
 #, fuzzy
 msgid "Show tags with posts?"
 msgstr "Yazılarda tarih gösterilsin mi?"
 
-#: ../themeoptions/theme_options.php:1394
+#: ../themeoptions/theme_options.php:1401
 #, fuzzy
 msgid "Choose to show or hide tags in the post footer."
 msgstr ""
 "Yazı başlığının altında tarihin gösterilmesini veya gizlenmesini seçin."
 
-#: ../themeoptions/theme_options.php:1400
+#: ../themeoptions/theme_options.php:1407
 #, fuzzy
 msgid "Show comment count with posts?"
 msgstr "Yazılarda Yazar İkonu gösterilsin mi?"
 
-#: ../themeoptions/theme_options.php:1401
+#: ../themeoptions/theme_options.php:1408
 #, fuzzy
 msgid "Choose to show or hide comment count under post title."
 msgstr ""
 "Yazı başlığının altında yorum ikonunun gösterilmesini veya gizlenmesini "
 "seçin."
 
-#: ../themeoptions/theme_options.php:1407
+#: ../themeoptions/theme_options.php:1414
 #, fuzzy
 msgid "Show date with posts?"
 msgstr "Yazılarda tarih gösterilsin mi?"
 
-#: ../themeoptions/theme_options.php:1408
+#: ../themeoptions/theme_options.php:1415
 #, fuzzy
 msgid "Choose to show or hide date under post title."
 msgstr ""
 "Yazı başlığının altında tarihin gösterilmesini veya gizlenmesini seçin."
 
-#: ../themeoptions/theme_options.php:1414
+#: ../themeoptions/theme_options.php:1421
 msgid "Show Previous and Next posts links?"
 msgstr "Önceki ve Sonraki yazı bağlantıları gösterilsin mi?"
 
-#: ../themeoptions/theme_options.php:1415
+#: ../themeoptions/theme_options.php:1422
 msgid ""
 "Choose to show or hide previous and next post links in the footer of a "
 "single post."
@@ -2526,182 +2526,182 @@ msgstr ""
 "Tekil bir yazının alt bilgisinde önceki ve sonraki yazı bağlantılarının "
 "gösterilmesini veya gizlenmesini seçin."
 
-#: ../themeoptions/theme_options.php:1421
+#: ../themeoptions/theme_options.php:1428
 #, fuzzy
 msgid "Blog Post Page Header"
 msgstr "Tüm Blog Yazıları Sayfası"
 
-#: ../themeoptions/theme_options.php:1426
+#: ../themeoptions/theme_options.php:1433
 msgid "Show the post title in head by default"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1433
+#: ../themeoptions/theme_options.php:1440
 #, fuzzy
 msgid "Blog Post Default Head Title"
 msgstr "Blog Yazısı Varsayılanları"
 
-#: ../themeoptions/theme_options.php:1434
+#: ../themeoptions/theme_options.php:1441
 msgid "Category"
 msgstr "Kategori"
 
-#: ../themeoptions/theme_options.php:1434
+#: ../themeoptions/theme_options.php:1441
 #, fuzzy
 msgid "Post Title"
 msgstr "Sayfa Başlığı"
 
-#: ../themeoptions/theme_options.php:1441
+#: ../themeoptions/theme_options.php:1448
 msgid "Show the post title below the header"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1449
+#: ../themeoptions/theme_options.php:1456
 #, fuzzy
 msgid "Example: Blog"
 msgstr "Örnek Sayfa"
 
-#: ../themeoptions/theme_options.php:1461
+#: ../themeoptions/theme_options.php:1468
 msgid "Blog Post Defaults"
 msgstr "Blog Yazısı Varsayılanları"
 
-#: ../themeoptions/theme_options.php:1466
+#: ../themeoptions/theme_options.php:1473
 msgid "Blog Post Sidebar Default"
 msgstr "Blog Yazısı Kenar Çubuğu Varsayılanı"
 
-#: ../themeoptions/theme_options.php:1467
-#: ../themeoptions/theme_options.php:1475
+#: ../themeoptions/theme_options.php:1474
+#: ../themeoptions/theme_options.php:1482
 msgid "Yes, Show"
 msgstr "Evet, göster"
 
-#: ../themeoptions/theme_options.php:1467
-#: ../themeoptions/theme_options.php:1475
-#: ../themeoptions/theme_options.php:1483
+#: ../themeoptions/theme_options.php:1474
+#: ../themeoptions/theme_options.php:1482
+#: ../themeoptions/theme_options.php:1490
 msgid "No, Do not Show"
 msgstr "Hayır, gösterme"
 
-#: ../themeoptions/theme_options.php:1474
+#: ../themeoptions/theme_options.php:1481
 msgid "Blog Post Author Box Default"
 msgstr "Blog Yazar Kutusu Varsayılanı"
 
-#: ../themeoptions/theme_options.php:1482
+#: ../themeoptions/theme_options.php:1489
 #, fuzzy
 msgid "Blog Post Bottom Carousel Default"
 msgstr "Portföy Yazı Altı Karuseli"
 
-#: ../themeoptions/theme_options.php:1490
+#: ../themeoptions/theme_options.php:1497
 #, fuzzy
 msgid "Blog Post Defaults Standard"
 msgstr "Blog Yazısı Varsayılanları"
 
-#: ../themeoptions/theme_options.php:1495
+#: ../themeoptions/theme_options.php:1502
 #, fuzzy
 msgid "Standard Blog Post Summary Default"
 msgstr "Blog Yazı Özeti Varsayılanı"
 
-#: ../themeoptions/theme_options.php:1503
+#: ../themeoptions/theme_options.php:1510
 #, fuzzy
 msgid "Blog Post Defaults Image"
 msgstr "Blog Yazısı Varsayılanları"
 
-#: ../themeoptions/theme_options.php:1508
+#: ../themeoptions/theme_options.php:1515
 #, fuzzy
 msgid "Image Blog Post Summary Default"
 msgstr "Blog Yazı Özeti Varsayılanı"
 
-#: ../themeoptions/theme_options.php:1516
+#: ../themeoptions/theme_options.php:1523
 #, fuzzy
 msgid "Single Image Post Head Content"
 msgstr "Blog Yazısı Başlık İçeriği Varsayılanı"
 
-#: ../themeoptions/theme_options.php:1524
+#: ../themeoptions/theme_options.php:1531
 #, fuzzy
 msgid "Blog Post Defaults gallery"
 msgstr "Blog Yazısı Varsayılanları"
 
-#: ../themeoptions/theme_options.php:1529
+#: ../themeoptions/theme_options.php:1536
 #, fuzzy
 msgid "Gallery Blog Post Summary Default"
 msgstr "Blog Yazı Özeti Varsayılanı"
 
-#: ../themeoptions/theme_options.php:1530
+#: ../themeoptions/theme_options.php:1537
 #, fuzzy
 msgid "Portrait Slider"
 msgstr "Portre Resim Kaydırıcı"
 
-#: ../themeoptions/theme_options.php:1530
+#: ../themeoptions/theme_options.php:1537
 #, fuzzy
 msgid "Landscape Slider"
 msgstr "Manzara Resim Kaydırıcı"
 
-#: ../themeoptions/theme_options.php:1537
+#: ../themeoptions/theme_options.php:1544
 #, fuzzy
 msgid "Single Gallery Post Head Content"
 msgstr "Blog Yazısı Başlık İçeriği Varsayılanı"
 
-#: ../themeoptions/theme_options.php:1538
+#: ../themeoptions/theme_options.php:1545
 #, fuzzy
 msgid "Image Slider (Flex Slider)"
 msgstr "Resim Kaydırıcı"
 
-#: ../themeoptions/theme_options.php:1538
+#: ../themeoptions/theme_options.php:1545
 #, fuzzy
 msgid "Carousel Slider (Caroufedsel Slider)"
 msgstr "Resim Kaydırıcı"
 
-#: ../themeoptions/theme_options.php:1545
+#: ../themeoptions/theme_options.php:1552
 #, fuzzy
 msgid "Blog Post Defaults Video"
 msgstr "Blog Yazısı Varsayılanları"
 
-#: ../themeoptions/theme_options.php:1550
+#: ../themeoptions/theme_options.php:1557
 #, fuzzy
 msgid "Video Blog Post Summary Default"
 msgstr "Blog Yazı Özeti Varsayılanı"
 
-#: ../themeoptions/theme_options.php:1558
+#: ../themeoptions/theme_options.php:1565
 #, fuzzy
 msgid "Single Video Post Head Content"
 msgstr "Blog Yazısı Başlık İçeriği Varsayılanı"
 
-#: ../themeoptions/theme_options.php:1566
+#: ../themeoptions/theme_options.php:1573
 msgid "Blog Category/Archive Defaults"
 msgstr "Blog Kategori/Arşiv Varsayılanları"
 
-#: ../themeoptions/theme_options.php:1571
+#: ../themeoptions/theme_options.php:1578
 #, fuzzy
 msgid "Category Display Type"
 msgstr "Son Yazıların Görüntülenmesi"
 
-#: ../themeoptions/theme_options.php:1579
+#: ../themeoptions/theme_options.php:1586
 #, fuzzy
 msgid "Category Grid Columns"
 msgstr "Galeri Sütunları"
 
-#: ../themeoptions/theme_options.php:1589
+#: ../themeoptions/theme_options.php:1596
 msgid "Display the sidebar on blog archives?"
 msgstr "Blog arşivlerinde kenar çubuğu görüntülensin mi?"
 
-#: ../themeoptions/theme_options.php:1590
+#: ../themeoptions/theme_options.php:1597
 msgid "This determines if there is a sidebar on the blog category pages."
 msgstr ""
 "Bu, blog kategori sayfalarında bir kenar çubuğunun olup olmayacağını "
 "belirler."
 
-#: ../themeoptions/theme_options.php:1600
+#: ../themeoptions/theme_options.php:1607
 msgid "Choose a Sidebar for your Category/Archive Pages"
 msgstr "Kategori/Arşiv Sayfalarınız için bir Kenar Çubuğu seçin"
 
-#: ../themeoptions/theme_options.php:1611
+#: ../themeoptions/theme_options.php:1618
 msgid "Basic Styling"
 msgstr "Temel Biçemlendirme"
 
-#: ../themeoptions/theme_options.php:1612
+#: ../themeoptions/theme_options.php:1619
 msgid "Basic Stylng"
 msgstr "Temel Biçemlendirme"
 
-#: ../themeoptions/theme_options.php:1617
+#: ../themeoptions/theme_options.php:1624
 msgid "Theme Skin Stylesheet"
 msgstr "Tema Dış Görünüm Stil Sayfası"
 
-#: ../themeoptions/theme_options.php:1618
+#: ../themeoptions/theme_options.php:1625
 msgid ""
 "Note* changes made in options panel will override this stylesheet. Example: "
 "Colors set in typography."
@@ -2709,226 +2709,226 @@ msgstr ""
 "Not: Seçenekler panelinde yapılan değişiklikler, bu stil sayfasını geçersiz "
 "kılar. Örneğin: Tipografide belirlenen renkler."
 
-#: ../themeoptions/theme_options.php:1628
+#: ../themeoptions/theme_options.php:1635
 msgid "Choose the default Highlight color for your site."
 msgstr "Siteniz için varsayılan Vurgu rengini seçin."
 
-#: ../themeoptions/theme_options.php:1636
+#: ../themeoptions/theme_options.php:1643
 #, fuzzy
 msgid "Primary Hover Color"
 msgstr "Birincil Renk"
 
-#: ../themeoptions/theme_options.php:1637
+#: ../themeoptions/theme_options.php:1644
 #, fuzzy
 msgid "Recomended to be 20% lighter than primary color"
 msgstr "Birincil Renkten %20 daha açık"
 
-#: ../themeoptions/theme_options.php:1646
+#: ../themeoptions/theme_options.php:1653
 msgid "Sitewide Gray Fonts"
 msgstr "Site Geneli Gri Yazı Tipleri"
 
-#: ../themeoptions/theme_options.php:1655
+#: ../themeoptions/theme_options.php:1662
 msgid "Footer Font Color"
 msgstr "Alt Bilgi Yazı Tipi Rengi"
 
-#: ../themeoptions/theme_options.php:1666
+#: ../themeoptions/theme_options.php:1673
 msgid "Advanced Styling"
 msgstr "Gelişmiş Biçemlendirme"
 
-#: ../themeoptions/theme_options.php:1667
+#: ../themeoptions/theme_options.php:1674
 msgid "Main Content Background"
 msgstr "Ana İçerik Arka Planı"
 
-#: ../themeoptions/theme_options.php:1673
+#: ../themeoptions/theme_options.php:1680
 #, fuzzy
 msgid "Content Background"
 msgstr "Ana İçerik Arka Planı"
 
-#: ../themeoptions/theme_options.php:1678
-#: ../themeoptions/theme_options.php:1684
+#: ../themeoptions/theme_options.php:1685
+#: ../themeoptions/theme_options.php:1691
 msgid "Topbar Background"
 msgstr "Üst Çubuk Arka Planı"
 
-#: ../themeoptions/theme_options.php:1689
-#: ../themeoptions/theme_options.php:1703
+#: ../themeoptions/theme_options.php:1696
+#: ../themeoptions/theme_options.php:1710
 msgid "Header Background"
 msgstr "Üst Bilgi Arka Planı"
 
-#: ../themeoptions/theme_options.php:1694
+#: ../themeoptions/theme_options.php:1701
 #, fuzzy
 msgid "Header Background Style"
 msgstr "Üst Bilgi Arka Planı"
 
-#: ../themeoptions/theme_options.php:1695
+#: ../themeoptions/theme_options.php:1702
 msgid "Simple"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1709
+#: ../themeoptions/theme_options.php:1716
 msgid "Header Background Color"
 msgstr "Üst Bilgi Arka Planı Rengi"
 
-#: ../themeoptions/theme_options.php:1718
+#: ../themeoptions/theme_options.php:1725
 msgid "If background is color, select Transparency"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1727
-#: ../themeoptions/theme_options.php:1733
+#: ../themeoptions/theme_options.php:1734
+#: ../themeoptions/theme_options.php:1740
 #, fuzzy
 msgid "Menu Background"
 msgstr "Mobil Menü Arka Planı"
 
-#: ../themeoptions/theme_options.php:1738
-#: ../themeoptions/theme_options.php:1744
+#: ../themeoptions/theme_options.php:1745
+#: ../themeoptions/theme_options.php:1751
 msgid "Mobile Menu Background"
 msgstr "Mobil Menü Arka Planı"
 
-#: ../themeoptions/theme_options.php:1749
+#: ../themeoptions/theme_options.php:1756
 #, fuzzy
 msgid "Post and Page Content area Background"
 msgstr "Ana İçerik Arka Planı"
 
-#: ../themeoptions/theme_options.php:1755
+#: ../themeoptions/theme_options.php:1762
 #, fuzzy
 msgid "Post Background"
 msgstr "Alt Bilgi Arka Planı"
 
-#: ../themeoptions/theme_options.php:1760
-#: ../themeoptions/theme_options.php:1766
+#: ../themeoptions/theme_options.php:1767
+#: ../themeoptions/theme_options.php:1773
 msgid "Footer Background"
 msgstr "Alt Bilgi Arka Planı"
 
-#: ../themeoptions/theme_options.php:1771
-#: ../themeoptions/theme_options.php:1777
+#: ../themeoptions/theme_options.php:1778
+#: ../themeoptions/theme_options.php:1784
 msgid "Body Background"
 msgstr "Gövde Arka Planı"
 
-#: ../themeoptions/theme_options.php:1778
+#: ../themeoptions/theme_options.php:1785
 msgid "This shows if site is using the boxed layout option."
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1785
+#: ../themeoptions/theme_options.php:1792
 msgid "Typography"
 msgstr "Tipografi"
 
-#: ../themeoptions/theme_options.php:1786
+#: ../themeoptions/theme_options.php:1793
 msgid "Header Font Options"
 msgstr "Üst Bilgi Yazı Tipi Seçenekleri"
 
-#: ../themeoptions/theme_options.php:1791
+#: ../themeoptions/theme_options.php:1798
 msgid "H1 Headings"
 msgstr "H1 Başlıkları"
 
-#: ../themeoptions/theme_options.php:1803
+#: ../themeoptions/theme_options.php:1810
 msgid "Choose Size and Style for h1 (This Styles Your Page Titles)"
 msgstr "h1 için Boyut ve Stil Seçin (Bu, Sayfa Başlıklarınızı Biçimlendirir)"
 
-#: ../themeoptions/theme_options.php:1814
+#: ../themeoptions/theme_options.php:1821
 msgid "H2 Headings"
 msgstr "H2 Başlıkları"
 
-#: ../themeoptions/theme_options.php:1829
+#: ../themeoptions/theme_options.php:1836
 msgid "Choose Size and Style for h2"
 msgstr "h2 için Boyut ve Stil Seçin"
 
-#: ../themeoptions/theme_options.php:1840
+#: ../themeoptions/theme_options.php:1847
 msgid "H3 Headings"
 msgstr "H3 Başlıkları"
 
-#: ../themeoptions/theme_options.php:1855
+#: ../themeoptions/theme_options.php:1862
 msgid "Choose Size and Style for h3"
 msgstr "h3 için Boyut ve Stil Seçin"
 
-#: ../themeoptions/theme_options.php:1866
+#: ../themeoptions/theme_options.php:1873
 msgid "H4 Headings"
 msgstr "H4 Başlıkları"
 
-#: ../themeoptions/theme_options.php:1881
+#: ../themeoptions/theme_options.php:1888
 msgid "Choose Size and Style for h4"
 msgstr "h4 için Boyut ve Stil Seçin"
 
-#: ../themeoptions/theme_options.php:1892
+#: ../themeoptions/theme_options.php:1899
 msgid "H5 Headings"
 msgstr "H5 Başlıkları"
 
-#: ../themeoptions/theme_options.php:1905
+#: ../themeoptions/theme_options.php:1912
 msgid "Choose Size and Style for h5"
 msgstr "h5 için Boyut ve Stil Seçin"
 
-#: ../themeoptions/theme_options.php:1916
+#: ../themeoptions/theme_options.php:1923
 #, fuzzy
 msgid "Page Subtitle"
 msgstr "Sayfa Başlığı"
 
-#: ../themeoptions/theme_options.php:1928
+#: ../themeoptions/theme_options.php:1935
 #, fuzzy
 msgid "Choose Size and Style for Page Subtitle"
 msgstr "Mobil Menü için Boyut ve Stil Seçin"
 
-#: ../themeoptions/theme_options.php:1939
+#: ../themeoptions/theme_options.php:1946
 msgid "Body Font Options"
 msgstr "Gövde Yazı Tipi Seçenekleri"
 
-#: ../themeoptions/theme_options.php:1944
+#: ../themeoptions/theme_options.php:1951
 msgid "Body Font"
 msgstr "Gövde Yazı Tipi"
 
-#: ../themeoptions/theme_options.php:1959
+#: ../themeoptions/theme_options.php:1966
 msgid "Choose Size and Style for paragraphs"
 msgstr "Paragraflar için Boyut ve Stil Seçin"
 
-#: ../themeoptions/theme_options.php:1972
+#: ../themeoptions/theme_options.php:1979
 msgid "Menu Settings"
 msgstr "Menü Ayarları"
 
-#: ../themeoptions/theme_options.php:1973
+#: ../themeoptions/theme_options.php:1980
 msgid "Primary Menu Options"
 msgstr "Birincil Menü Seçenekleri"
 
-#: ../themeoptions/theme_options.php:1978
+#: ../themeoptions/theme_options.php:1985
 msgid "Primary Menu Font"
 msgstr "Birincil Menü Yazı Tipi"
 
-#: ../themeoptions/theme_options.php:1993
+#: ../themeoptions/theme_options.php:2000
 msgid "Choose Size and Style for primary menu"
 msgstr "Birincil Menü için Boyut ve Stil Seçin"
 
-#: ../themeoptions/theme_options.php:2003
+#: ../themeoptions/theme_options.php:2010
 msgid "Mobile Menu Options"
 msgstr "Mobil Menü Seçenekleri"
 
-#: ../themeoptions/theme_options.php:2008
+#: ../themeoptions/theme_options.php:2015
 msgid "Mobile Menu Font"
 msgstr "Mobil Menü Yazı Tipi"
 
-#: ../themeoptions/theme_options.php:2023
+#: ../themeoptions/theme_options.php:2030
 msgid "Choose Size and Style for Mobile Menu"
 msgstr "Mobil Menü için Boyut ve Stil Seçin"
 
-#: ../themeoptions/theme_options.php:2034
+#: ../themeoptions/theme_options.php:2041
 #, fuzzy
 msgid "Topbar Menu Options"
 msgstr "Mobil Menü Seçenekleri"
 
-#: ../themeoptions/theme_options.php:2039
+#: ../themeoptions/theme_options.php:2046
 #, fuzzy
 msgid "Topbar Menu Font"
 msgstr "Mobil Menü Yazı Tipi"
 
-#: ../themeoptions/theme_options.php:2051
+#: ../themeoptions/theme_options.php:2058
 #, fuzzy
 msgid "Choose Size and Style for topbar menu"
 msgstr "Birincil Menü için Boyut ve Stil Seçin"
 
-#: ../themeoptions/theme_options.php:2063
-#: ../themeoptions/theme_options.php:2064
+#: ../themeoptions/theme_options.php:2070
+#: ../themeoptions/theme_options.php:2071
 msgid "Misc Settings"
 msgstr "Diğer Ayarlar"
 
-#: ../themeoptions/theme_options.php:2070
+#: ../themeoptions/theme_options.php:2077
 msgid "Custom Favicon"
 msgstr "Özel Site İkonu"
 
-#: ../themeoptions/theme_options.php:2071
+#: ../themeoptions/theme_options.php:2078
 msgid ""
 "Upload a 16px x 16px png/gif/ico image that will represent your website "
 "favicon."
@@ -2936,11 +2936,11 @@ msgstr ""
 "Websitenizin ikonunu temsil edecek olan bir 16px x 16px png/gif/ico resmi "
 "yükleyin."
 
-#: ../themeoptions/theme_options.php:2076
+#: ../themeoptions/theme_options.php:2083
 msgid "Footer Copyright Text"
 msgstr "Alt Bilgi Telif Hakkı Metni"
 
-#: ../themeoptions/theme_options.php:2077
+#: ../themeoptions/theme_options.php:2084
 msgid ""
 "Write your own copyright text here. You can use the following shortcodes in "
 "your footer text: [copyright] [site-name] [the-year]"
@@ -2948,64 +2948,64 @@ msgstr ""
 "Kendi telif hakkı metninizi buraya girin. Alt Bilgi metninde şu kısa kodları "
 "kullanabilirsiniz: [copyright] [site-name] [the-year]"
 
-#: ../themeoptions/theme_options.php:2083
+#: ../themeoptions/theme_options.php:2090
 msgid "Search Results Sidebars"
 msgstr "Arama Sonuçları Kenar Çubukları"
 
-#: ../themeoptions/theme_options.php:2088
+#: ../themeoptions/theme_options.php:2095
 msgid "Search Results - choose Sidebar"
 msgstr "Arama Sonuçları - Kenar Çubuğu seç"
 
-#: ../themeoptions/theme_options.php:2096
+#: ../themeoptions/theme_options.php:2103
 msgid "Create Sidebars"
 msgstr "Kenar Çubukları Yarat"
 
-#: ../themeoptions/theme_options.php:2101
+#: ../themeoptions/theme_options.php:2108
 msgid "Create Custom Sidebars"
 msgstr "Özel Kenar Çubukları Yarat"
 
-#: ../themeoptions/theme_options.php:2102
+#: ../themeoptions/theme_options.php:2109
 msgid "Type new sidebar name into textbox"
 msgstr "Metin kutusuna yeni kenar çubuğu adını yazın"
 
-#: ../themeoptions/theme_options.php:2103
+#: ../themeoptions/theme_options.php:2110
 msgid "Extra Sidebar"
 msgstr "Ekstra Kenar Çubuğu"
 
-#: ../themeoptions/theme_options.php:2108
+#: ../themeoptions/theme_options.php:2115
 #, fuzzy
 msgid "WordPress Galleries"
 msgstr "Wordpress Galerileri"
 
-#: ../themeoptions/theme_options.php:2113
+#: ../themeoptions/theme_options.php:2120
 #, fuzzy
 msgid "Enable Pinnacle Galleries to override WordPress"
 msgstr ""
 "Wordpress Galerilerini geçersiz kılmak için Virtue Galerilerini etkinleştir"
 
-#: ../themeoptions/theme_options.php:2114
+#: ../themeoptions/theme_options.php:2121
 msgid "You must have virtue/pinnacle toolkit installed to use."
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2122
-#: ../themeoptions/theme_options.php:2128
+#: ../themeoptions/theme_options.php:2129
+#: ../themeoptions/theme_options.php:2135
 msgid "Custom CSS"
 msgstr "Özel CSS"
 
-#: ../themeoptions/theme_options.php:2123
+#: ../themeoptions/theme_options.php:2130
 msgid "Custom CSS Box"
 msgstr "Özel CSS Kutusu"
 
-#: ../themeoptions/theme_options.php:2129
+#: ../themeoptions/theme_options.php:2136
 msgid "Quickly add some CSS to your theme by adding it to this block."
 msgstr "Bu kutuya kod girerek, temanıza hızlıca CSS kodu ekleyin."
 
-#: ../themeoptions/theme_options.php:2149
-#: ../themeoptions/theme_options.php:2150
+#: ../themeoptions/theme_options.php:2156
+#: ../themeoptions/theme_options.php:2157
 msgid "Theme Options"
 msgstr "Tema Ayarları"
 
-#: ../themeoptions/theme_options.php:2157
+#: ../themeoptions/theme_options.php:2164
 #, fuzzy
 msgid ""
 "Thank you for using the Pinnacle Theme by <a href=\"http://kadencethemes.com/"
@@ -3026,11 +3026,11 @@ msgstr "İndirim!"
 msgid "Choose an option"
 msgstr "Bir seçenek tercih et"
 
-#: ../woocommerce/single-product/add-to-cart/variable.php:73
+#: ../woocommerce/single-product/add-to-cart/variable.php:60
 msgid "Clear selection"
 msgstr ""
 
-#: ../woocommerce/single-product/add-to-cart/variable.php:105
+#: ../woocommerce/single-product/add-to-cart/variable.php:92
 msgid "This product is currently out of stock and unavailable."
 msgstr ""
 

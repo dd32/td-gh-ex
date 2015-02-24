@@ -12,6 +12,7 @@
 				}
 			}
 			$home_header = $pinnacle['choose_home_header'];
+			if(empty($home_header)) {$home_header = "pagetitle";}
 			if ($home_header == "flex") {
 					get_template_part('templates/home/flex', 'slider');
 			} else if ($home_header == "carousel") {
