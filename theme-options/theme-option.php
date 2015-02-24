@@ -111,6 +111,7 @@ function deserve_framework_page(){
             <li><a id="options-group-1-tab" class="nav-tab basicsettings-tab" title="<?php _e('Basic Settings','deserve'); ?>" href="#options-group-1"><?php _e('Basic Settings','deserve'); ?></a></li>
             <li><a id="options-group-2-tab" class="nav-tab homepagesettings-tab" title="<?php _e('Home Page Settings','deserve'); ?>" href="#options-group-2"><?php _e('Home Page Settings','deserve'); ?></a></li>
             <li><a id="options-group-3-tab" class="nav-tab socialsettings-tab" title="<?php _e('Social Settings','deserve'); ?>" href="#options-group-3"><?php _e('Social Settings','deserve'); ?></a></li>
+            <li><a id="options-group-4-tab" class="nav-tab profeatures-tab" title="<?php _e('PRO Theme Features','deserve');?>" href="#options-group-4"><?php _e('PRO Theme Features','deserve');?></a></li>    
            
   		  </ul>
         </div>
@@ -308,7 +309,15 @@ function deserve_framework_page(){
             
             
           </div>
-          <!-------------- Social group ----------------->          
+          <!-------------- Social group ----------------->    
+           <div id="options-group-4" class="group theme-option-inner-tabs deserve-pro-image">  
+			<div class="deserve-pro-header">
+              <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/deserve_logopro_features.png" class="deserve-pro-logo" />
+              <a href="http://fruitthemes.com/wordpress-themes/Deserve" target="_blank">
+					<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/deserve-buy-now.png" class="deserve-pro-buynow" /></a>
+              </div>
+          	<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/deserve_pro_features.png" />
+		  </div>       
          
         <!--======================== F I N A L - - T H E M E - - O P T I O N S ===================--> 
       </div>
