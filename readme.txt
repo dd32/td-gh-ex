@@ -5,8 +5,11 @@ Consider weblizar PRE-Fix for function-name and as a slug of the Theme Enigma.
 Enigma
 
 CHANGE-LOG:
-@Version: 1.8.3[12/02/2015]
+@Version: 1.8.4[25/02/2015]
+1. Menu Ipad/Mobile Issue Fixed.
 
+
+@Version: 1.8.3[12/02/2015]
 1. RTL Support.
 2. Breadcrumb Fix.
 3. HTML W3C Validated.

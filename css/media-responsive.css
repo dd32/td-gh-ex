@@ -72,6 +72,12 @@
 	
 }	
 @media only screen and (min-width: 767px) and (max-width: 992px) {
+#parent_menu { float: right; padding-right: 10%; margin-top: -25px; }
+	#navbar-header { float:none; padding-right:5%;  }
+	.navbar-collapse ul li a { height:38px;}
+	.navbar-default .navbar-nav > li > a { width:80%; }
+	ul.dropdown-menu > li > a { width:80%; }
+	
 .logo{
 	text-align:center;
 	padding-top:15px;

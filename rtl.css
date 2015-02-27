@@ -13,7 +13,9 @@ body {
 }
 
 /* Main css with editable-------------------------------------------------------------- */
-
+.navbar-nav {
+float: right;
+}
 a:hover, a:focus{
 	text-decoration: none ;
 }
