@@ -135,26 +135,21 @@ if(this.context=f.context===b?null:f.context,this.opts.createSearchChoice&&""!==
         return '0' !== to;
       }
     },
-    'tc_post_list_grid' : {
-      show: {
-        controls: [
-          'tc_grid_columns',
-          'tc_grid_expand_featured',
-          'tc_grid_in_blog',
-          'tc_grid_in_archive',
-          'tc_grid_in_search',
-          'tc_grid_thumb_height',
-          'tc_grid_bottom_border',
-          'tc_grid_shadow',
-          'tc_grid_icons',
-          'tc_grid_num_words'
-
-        ],
-        callback: function (to) {
-          return 'grid' == to;
-        }
-      }
-    },
+    // 'tc_post_list_grid' : {
+    //   show: {
+    //     controls: [
+    //       'tc_grid_columns',
+    //       'tc_grid_expand_featured',
+    //       'tc_grid_in_blog',
+    //       'tc_grid_in_archive',
+    //       'tc_grid_in_search',
+    //       'tc_grid_thumb_height'
+    //     ],
+    //     callback: function (to) {
+    //       return 'grid' == to;
+    //     }
+    //   }
+    // },
     'tc_post_list_show_thumb' : {
       controls: [
         'tc_post_list_use_attachment_as_thumb',
@@ -421,33 +416,12 @@ if(this.context=f.context===b?null:f.context,this.opts.createSearchChoice&&""!==
   };
 
 
-  /*
-  * Specific Grid action : handles the visibility of the "MORE GRID DESIGN OPTIONS" link
-  * @to do => find a way to include several callbacks in the _controlDependencies object => include the one below
-  */
-  var _handle_grid_dependencies = function() {
-    //apply visibility on ready
-    var _is_grid_enabled = api.instance('tc_theme_options[tc_post_list_grid]').get() == 'grid';
-    $('.tc-grid-toggle-controls').toggle( _is_grid_enabled );
-
-    //bind visibility on setting changes
-    api.instance('tc_theme_options[tc_post_list_grid]').bind( function(to) {
-      $('.tc-grid-toggle-controls').toggle( 'grid' == to );
-
-      if ( 'grid' == to )
-        $('.tc-grid-toggle-controls').trigger('click').toggleClass('open');
-    } );
-  };
-
-
-  //bind all actions to wp.customize ready event
+  //bind to wp.customize ready event
   //map each setting with its dependencies
   api.bind( 'ready' , function() {
     _.map( _controlDependencies , function( opts , setId ) {
         _prepare_visibilities( setId, opts );
     });
-    //additional grid action
-    _handle_grid_dependencies();
   } );
 
 })( wp, jQuery);;/**
@@ -458,31 +432,22 @@ jQuery(function ($) {
   /* CONTRIBUTION TO CUSTOMIZR */
   var donate_displayed  = false,
       is_pro            = 'customizr-pro' == TCControlParams.themeName;
+  if ( is_pro )
+    return;
 
-  if (  ! TCControlParams.HideDonate && ! is_pro ) {
+  if (  ! TCControlParams.HideDonate ) {
     _render_donate_block();
     donate_displayed = true;
   }
 
   //Main call to action
-  if ( TCControlParams.ShowCTA && ! donate_displayed && ! is_pro ) {
+  if ( TCControlParams.ShowCTA && ! donate_displayed ) {
    _render_main_cta();
   }
 
   //In controls call to action
-  if ( ! is_pro ) {
-    _render_wfc_cta();
-    _render_fpu_cta();
-    _render_footer_cta();
-  }
-  _render_rate_czr();
-
-  function _render_rate_czr() {
-    var _cta = _.template(
-        $( "script#rate-czr" ).html()
-    );
-    $('#customize-footer-actions').append( _cta() );
-  }
+  _render_wfc_cta();
+  _render_fpu_cta();
 
   function _render_donate_block() {
     // Grab the HTML out of our template tag and pre-compile it.
@@ -516,34 +481,26 @@ jQuery(function ($) {
 
   function _render_main_cta() {
     // Grab the HTML out of our template tag and pre-compile it.
-    var _cta = _.template(
+    var main_cta = _.template(
         $( "script#main_cta" ).html()
     );
-    $('#customize-info').after( _cta() );
+    $('#customize-info').after( main_cta() );
   }
 
   function _render_wfc_cta() {
     // Grab the HTML out of our template tag and pre-compile it.
-    var _cta = _.template(
+    var wfc_cta = _.template(
         $( "script#wfc_cta" ).html()
     );
-    $('li[id*="tc_body_font_size"]').append( _cta() );
+    $('li[id*="tc_body_font_size"]').append( wfc_cta() );
   }
 
   function _render_fpu_cta() {
     // Grab the HTML out of our template tag and pre-compile it.
-    var _cta = _.template(
+    var fpu_cta = _.template(
         $( "script#fpu_cta" ).html()
     );
-    $('li[id*="tc_featured_text_three"]').append( _cta() );
-  }
-
-  function _render_footer_cta() {
-    // Grab the HTML out of our template tag and pre-compile it.
-    var _cta = _.template(
-        $( "script#footer_cta" ).html()
-    );
-    $('li[id*="tc_show_back_to_top"]').append( _cta() );
+    $('li[id*="tc_featured_text_three"]').append( fpu_cta() );
   }
 
   function _ajax_save() {
@@ -583,8 +540,7 @@ jQuery(function ($) {
       'tc_grid_thumb_height',
       'tc_grid_shadow',
       'tc_grid_bottom_border',
-      'tc_grid_icons',
-      'tc_grid_num_words'
+      'tc_grid_icons'
     ];
 
     var _build_control_id = function( _control ) {

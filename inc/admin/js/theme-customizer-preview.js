@@ -13,15 +13,8 @@
 		value.bind( function( to ) {
 			if ( TCPreviewParams && TCPreviewParams.themeFolder ) {
 				//add a new link to the live stylesheet instead of replacing the actual skin link => avoid the flash of unstyle content during the skin load
-				var $skin_style_element = ( 0 === $('#live-skin-css').length ) ? $('<link>' , { id : 'live-skin-css' , rel : 'stylesheet'}) : $('#live-skin-css'),
-            skinName = to.replace('.css' , '.min.css'),
-            skinURL = [ TCPreviewParams.themeFolder , '/inc/assets/css/' , skinName ].join('');
-
-        //check if the customSkin param is filtered
-        if ( TCPreviewParams.customSkin && TCPreviewParams.customSkin.skinName && TCPreviewParams.customSkin.fullPath )
-          skinURL = to == TCPreviewParams.customSkin.skinName ? TCPreviewParams.customSkin.fullPath : skinURL;
-
-        $skin_style_element.attr('href' , skinURL );
+				var $skin_style_element = ( 0 === $('#live-skin-css').length ) ? $('<link>' , { id : 'live-skin-css' , rel : 'stylesheet'}) : $('#live-skin-css');
+				$skin_style_element.attr('href' , [ TCPreviewParams.themeFolder , '/inc/assets/css/' , to.replace('.css' , '.min.css') ].join('') );
 				if (  0 === $('#live-skin-css').length )
 					$('head').append($skin_style_element);
 			}
@@ -99,10 +92,6 @@
 	//Icons : page
 	wp.customize( 'tc_theme_options[tc_show_page_title_icon]' , function( value ) {
 		value.bind( function( to ) {
-      //disable if grid customizer on
-      if ( $('.tc-gc').length )
-        return;
-
 			if ( false === to ) {
 				$('.entry-title' , '.page').removeClass('format-icon');
 			}
@@ -127,9 +116,6 @@
 	//Icons : Archive title
 	wp.customize( 'tc_theme_options[tc_show_archive_title_icon]' , function( value ) {
 		value.bind( function( to ) {
-      //disable if grid customizer on
-      if ( $('.tc-gc').length )
-        return;
 			if ( false === to ) {
 				$('archive h1.entry-title, .blog h1.entry-title, .search h1, .author h1').removeClass('format-icon');
 			}
@@ -142,10 +128,6 @@
 	//Icons : Posts in lists titles
 	wp.customize( 'tc_theme_options[tc_show_post_list_title_icon]' , function( value ) {
 		value.bind( function( to ) {
-      //disable if grid customizer on
-      if ( $('.tc-gc').length )
-        return;
-
 			if ( false === to ) {
 				$('.archive article .entry-title, .blog article .entry-title, .search article .entry-title, .author article .entry-title').removeClass('format-icon');
 			}
@@ -595,17 +577,17 @@
   wp.customize( 'tc_theme_options[tc_grid_shadow]' , function( value ) {
     value.bind( function( to ) {
       if ( false !== to )
-        $('.article-container').addClass('tc-grid-shadow');
+        $('.tc-post-list-grid').each( function() { $(this).addClass('tc-grid-shadow'); } );
       else
-        $('.article-container').removeClass('tc-grid-shadow');
+        $('.tc-post-list-grid').each( function() { $(this).removeClass('tc-grid-shadow'); } );
     } );
   });
   wp.customize( 'tc_theme_options[tc_grid_bottom_border]' , function( value ) {
     value.bind( function( to ) {
       if ( false !== to )
-        $('.article-container').addClass('tc-grid-border');
+        $('.tc-post-list-grid').each( function() { $(this).addClass('tc-grid-border'); } );
       else
-        $('.article-container').removeClass('tc-grid-border');
+        $('.tc-post-list-grid').each( function() { $(this).removeClass('tc-grid-border'); } );
     } );
   });
   wp.customize( 'tc_theme_options[tc_grid_icons]' , function( value ) {

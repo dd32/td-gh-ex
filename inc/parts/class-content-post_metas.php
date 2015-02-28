@@ -6,9 +6,9 @@
 * @package      Customizr
 * @subpackage   classes
 * @since        3.0.5
-* @author       Nicolas GUILLAUME <nicolas@presscustomizr.com>
-* @copyright    Copyright (c) 2013-2015, Nicolas GUILLAUME
-* @link         http://presscustomizr.com/customizr
+* @author       Nicolas GUILLAUME <nicolas@themesandco.com>
+* @copyright    Copyright (c) 2013, Nicolas GUILLAUME
+* @link         http://themesandco.com/customizr
 * @license      http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 if ( ! class_exists( 'TC_post_metas' ) ) :
@@ -17,9 +17,9 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
         function __construct () {
           self::$instance =& $this;
           //Show / hide metas based on customizer user options (@since 3.2.0)
-          add_action( 'template_redirect'                            , array( $this , 'tc_set_visibility_options' ) , 10 );
+          add_action( 'wp'                            , array( $this , 'tc_set_visibility_options' ) , 10 );
            //Show / hide metas based on customizer user options (@since 3.2.0)
-          add_action( 'template_redirect'                            , array( $this , 'tc_set_design_options' ) , 20 );
+          add_action( 'wp'                            , array( $this , 'tc_set_design_options' ) , 20 );
           //Show / hide metas based on customizer user options (@since 3.2.0)
           add_action( '__after_content_title'         , array( $this , 'tc_set_post_metas_hooks' ), 20 );
 
@@ -32,7 +32,7 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
         /**
         * Set the post metas visibility based on Customizer options
         * uses hooks tc_show_post_metas, body_class
-        * hook : template_redirect
+        * hook : wp
         *
         * @package Customizr
         * @since Customizr 3.2.0
@@ -84,7 +84,7 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
 
         /**
         * Default metas visibility controller
-        * tc_show_post_metas gets filtered by tc_set_visibility_options() called early in template_redirect
+        * tc_show_post_metas gets filtered by tc_set_visibility_options() called early in wp
         * @return  boolean
         * @package Customizr
         * @since Customizr 3.2.6
@@ -171,8 +171,8 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
 
           $_args      = compact( 'cat_list' ,'tag_list', 'pub_date', 'auth', 'upd_date' );
           $_html      = sprintf( __( 'This entry was posted on %1$s<span class="by-author"> by %2$s</span>.' , 'customizr' ),
-            $pub_date,
-            $auth
+            $this -> tc_get_meta_date('publication'),
+            $this -> tc_get_meta_author()
           );
           return apply_filters( 'tc_post_metas_model' , compact( "_html" , "_args" ) );
         }
@@ -373,7 +373,7 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
         */
         public function tc_get_term_of_tax_type( $hierarchical = true ) {
           //var declaration
-          $post_type              = get_post_type( TC_utils::tc_id() );
+          $post_type              = get_post_type( tc__f('__ID') );
           $tax_list               = get_object_taxonomies( $post_type, 'object' );
           $_tax_type_list         = array();
           $_tax_type_terms_list   = array();
@@ -384,7 +384,7 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
           //filter the post taxonomies
           while ( $el = current($tax_list) ) {
               //skip the post format taxinomy
-              if ( in_array( key($tax_list) , apply_filters_ref_array ( 'tc_exclude_taxonomies_from_metas' , array( array('post_format') , $post_type , TC_utils::tc_id() ) ) ) ) {
+              if ( in_array( key($tax_list) , apply_filters_ref_array ( 'tc_exclude_taxonomies_from_metas' , array( array('post_format') , $post_type , tc__f('__ID') ) ) ) ) {
                   next($tax_list);
                   continue;
               }
@@ -398,7 +398,7 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
 
           //fill the post terms array
           foreach ($_tax_type_list as $tax_name => $data ) {
-              $_current_tax_terms = get_the_terms( TC_utils::tc_id() , $tax_name );
+              $_current_tax_terms = get_the_terms( tc__f('__ID') , $tax_name );
 
               //If current post support this tax but no terms has been assigned yet = continue
               if ( ! $_current_tax_terms )
@@ -420,22 +420,16 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
         * @package Customizr
         * @since Customizr 3.2.6
         */
-        public function tc_get_meta_date( $pub_or_update = 'publication', $_format = '' ) {
-            if ( 'short' == $_format )
-              $_format = 'j M, Y';
-
-            $_format = apply_filters( 'tc_meta_date_format' , $_format );
-            $_use_post_mod_date = apply_filters( 'tc_use_the_post_modified_date' , 'publication' != $pub_or_update );
+        public function tc_get_meta_date( $pub_or_update = 'publication', $_format = 'long' ) {
+            $_format = 'long' == $_format ? 'F j, Y' : 'j M, Y';
             return apply_filters(
                 'tc_date_meta',
                 sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date updated" datetime="%3$s">%4$s</time></a>' ,
                     esc_url( get_day_link( get_the_time( 'Y' ), get_the_time( 'm' ), get_the_time( 'd' ) ) ),
                     esc_attr( get_the_time() ),
-                    $_use_post_mod_date ? esc_attr( get_the_modified_date('c') ) : esc_attr( get_the_date( 'c' ) ),
-                    $_use_post_mod_date ? esc_html( get_the_modified_date( $_format ) ) : esc_html( get_the_date( $_format ) )
-                ),
-                $_use_post_mod_date,
-                $_format
+                    apply_filters( 'tc_use_the_post_modified_date' , 'publication' != $pub_or_update ) ? esc_attr( get_the_modified_date('c') ) : esc_attr( get_the_date( 'c' ) ),
+                    apply_filters( 'tc_use_the_post_modified_date' , 'publication' != $pub_or_update ) ? esc_html( get_the_modified_date( $_format ) ) : esc_html( get_the_date( $_format ) )
+                )
             );//end filter
         }
 

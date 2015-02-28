@@ -6,36 +6,26 @@
 * @package      Customizr
 * @subpackage   classes
 * @since        3.0
-* @author       Nicolas GUILLAUME <nicolas@presscustomizr.com>
-* @copyright    Copyright (c) 2013-2015, Nicolas GUILLAUME
-* @link         http://presscustomizr.com/customizr
+* @author       Nicolas GUILLAUME <nicolas@themesandco.com>
+* @copyright    Copyright (c) 2013, Nicolas GUILLAUME
+* @link         http://themesandco.com/customizr
 * @license      http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 if ( ! class_exists( 'TC_header_main' ) ) :
 	class TC_header_main {
-    static $instance;
-    function __construct () {
-      self::$instance =& $this;
-      //Set header hooks
-      add_action ( 'template_redirect' 		, array( $this , 'tc_set_header_hooks' ) );
+	    static $instance;
+	    function __construct () {
+	        self::$instance =& $this;
+	        //Set header hooks
+	        add_action ( 'template_redirect' 		, array( $this , 'tc_set_header_hooks' ) );
 
-      //Set header options
-      add_action ( 'template_redirect' 		, array( $this , 'tc_set_header_options' ) );
-
-      //! tc_user_options_style filter is shared by several classes => must always check the local context inside the callback before appending new css
-      //fired on hook : wp_enqueue_scripts
-      //Set thumbnail specific design based on user options
-      //Set top border style option
-      add_filter( 'tc_user_options_style'  , array( $this , 'tc_write_header_inline_css') );
-    }
+	        //Set header options
+	        add_action ( 'template_redirect' 		, array( $this , 'tc_set_header_options' ) );
+	    }
 
 
-    /***************************
-    * HEADER HOOKS SETUP
-    ****************************/
 
-
-	  /**
+	    /**
 		* Set all header hooks
 		* template_redirect callback
 		* @return  void
@@ -43,47 +33,28 @@ if ( ! class_exists( 'TC_header_main' ) ) :
 		* @package Customizr
 		* @since Customizr 3.2.6
 		*/
-    function tc_set_header_hooks() {
-    	//html > head actions
-      add_action ( '__before_body'	  , array( $this , 'tc_head_display' ));
-      add_action ( 'wp_head'     		  , array( $this , 'tc_favicon_display' ));
+	    function tc_set_header_hooks() {
+	    	//html > head actions
+	        add_action ( '__before_body'			, array( $this , 'tc_head_display' ));
+	        add_action ( 'wp_head'     				, array( $this , 'tc_favicon_display' ));
 
-      //html > header actions
-      add_action ( '__before_main_wrapper'	, 'get_header');
-      add_action ( '__header' 				, array( $this , 'tc_prepare_logo_title_display' ) , 10 );
-      add_action ( '__header' 				, array( $this , 'tc_tagline_display' ) , 20, 1 );
-      add_action ( '__header' 				, array( $this , 'tc_navbar_display' ) , 30 );
+	        //html > header actions
+	        add_action ( '__before_main_wrapper'	, 'get_header');
+	        add_action ( '__header' 				, array( $this , 'tc_prepare_logo_title_display' ) , 10 );
+	        add_action ( '__header' 				, array( $this , 'tc_tagline_display' ) , 20, 1 );
+	        add_action ( '__header' 				, array( $this , 'tc_navbar_display' ) , 30 );
 
-      //New menu view (since 3.2.0)
-      add_filter ( 'tc_navbar_display', array( $this , 'tc_new_menu_view'), 10, 2);
+	        //New menu view (since 3.2.0)
+          add_filter ( 'tc_navbar_display', array( $this , 'tc_new_menu_view'), 10, 2);
 
-      //body > header > navbar actions ordered by priority
-      add_action ( '__navbar' 				, array( $this , 'tc_social_in_header' ) , 10, 2 );
-      add_action ( '__navbar' 				, array( $this , 'tc_tagline_display' ) , 20, 1 );
-    }
-
-
-
-    /**
-    * Callback for template_redirect
-    * Set customizer user options
-    *
-    * @package Customizr
-    * @since Customizr 3.2.0
-    */
-    function tc_set_header_options() {
-      //Set some body classes
-      add_filter( 'body_class'               , array( $this , 'tc_add_body_classes') );
-      //Set header classes from options
-      add_filter( 'tc_header_classes'        , array( $this , 'tc_set_header_classes') );
-      //Set tagline visibility with a customizer option (since 3.2.0)
-      add_filter( 'tc_tagline_display'       , array( $this , 'tc_set_tagline_visibility') );
-      //Set logo layout with a customizer option (since 3.2.0)
-      add_filter( 'tc_logo_class'            , array( $this , 'tc_set_logo_title_layout') );
-    }
+	        //body > header > navbar actions ordered by priority
+	        add_action ( '__navbar' 				, array( $this , 'tc_social_in_header' ) , 10, 2 );
+	        add_action ( '__navbar' 				, array( $this , 'tc_tagline_display' ) , 20, 1 );
+	    }
 
 
-	   /**
+
+	    /**
 		* Displays what is inside the head html tag. Includes the wp_head() hook.
 		*
 		*
@@ -280,9 +251,9 @@ if ( ! class_exists( 'TC_header_main' ) ) :
     function tc_logo_img_view( $_args ){
       //Extracts $args : logo_src, logo_resize, logo_attachment_id, logo_width, logo_height, logo_type
       extract($_args);
-      $_html = sprintf( '<img src="%1$s" alt="%2$s" %3$s %4$s %5$s %6$s class="%7$s %8$s"/>',
+      $_html = sprintf('<img src="%1$s" alt="%2$s" %3$s %4$s %5$s %6$s class="%7$s %8$s"/>',
         $logo_src,
-      	apply_filters( 'tc_logo_alt', __( 'Back Home' , 'customizr' ) ),
+      	__( 'Back Home' , 'customizr' ),
         $logo_width ? sprintf( 'width="%1$s"', $logo_width ) : '',
         $logo_height ? sprintf( 'height="%1$s"', $logo_height ) : '',
         ( 1 == $logo_resize) ? sprintf( 'style="max-width:%1$spx;max-height:%2$spx"',
@@ -468,6 +439,27 @@ if ( ! class_exists( 'TC_header_main' ) ) :
 
 
 
+		/**
+   	* Callback for template_redirect
+   	* Set customizer user options
+   	*
+   	* @package Customizr
+   	* @since Customizr 3.2.0
+   	*/
+		function tc_set_header_options() {
+			//Set some body classes
+			add_filter( 'body_class'               , array( $this , 'tc_add_body_classes') );
+			//Set header classes from options
+			add_filter( 'tc_header_classes' 		   , array( $this , 'tc_set_header_classes') );
+			//Set tagline visibility with a customizer option (since 3.2.0)
+      add_filter( 'tc_tagline_display'  		 , array( $this , 'tc_set_tagline_visibility') );
+      //Set logo layout with a customizer option (since 3.2.0)
+      add_filter( 'tc_logo_class'  			     , array( $this , 'tc_set_logo_title_layout') );
+      //Set top border style option
+      add_filter( 'tc_user_options_style'		 , array( $this , 'tc_write_header_inline_css') );
+		}
+
+
 		/*
     * Callback of tc_user_options_style hook
     * @return css string
@@ -476,29 +468,28 @@ if ( ! class_exists( 'TC_header_main' ) ) :
     * @since Customizr 3.2.6
     */
 		function tc_write_header_inline_css( $_css ) {
-      //TOP BORDER
 			if ( 1 != esc_attr( TC_utils::$inst->tc_opt( 'tc_top_border') ) ) {
-  			$_css = sprintf("%s\n%s",
-  				$_css,
-  				"header.tc-header {border-top: none;}\n"
-  	    );
-	    }
+				$_css = sprintf("%s\n%s",
+					$_css,
+					"header.tc-header {border-top: none;}\n"
+		       	);
+		    }
 
-      //STICKY HEADER
-	    if ( 0 != esc_attr( TC_utils::$inst->tc_opt( 'tc_sticky_shrink_title_logo') ) || TC___::$instance -> tc_is_customizing() ) {
-	    	$_logo_shrink 	= implode (';' , apply_filters('tc_logo_shrink_css' , array("height:30px!important","width:auto!important") )	);
+	     //STICKY HEADER
+		    if ( 0 != esc_attr( TC_utils::$inst->tc_opt( 'tc_sticky_shrink_title_logo') ) || TC___::$instance -> tc_is_customizing() ) {
+		    	$_logo_shrink 	= implode (';' , apply_filters('tc_logo_shrink_css' , array("height:30px!important","width:auto!important") )	);
 
-	    	$_title_font 	= implode (';' , apply_filters('tc_title_shrink_css' , array("font-size:0.6em","opacity:0.8","line-height:1.2em") ) );
+		    	$_title_font 	= implode (';' , apply_filters('tc_title_shrink_css' , array("font-size:0.6em","opacity:0.8","line-height:1.2em") ) );
 
-		    $_css = sprintf("%s\n%s",
-  		    	$_css,
-    		    	".sticky-enabled .tc-shrink-on .site-logo img {
-    					{$_logo_shrink}
-    				}\n
-    				.sticky-enabled .tc-shrink-on .brand .site-title {
-    					{$_title_font}
-    				}\n"
-    		);
+			    $_css = sprintf("%s\n%s",
+			    	$_css,
+			    	".sticky-enabled .tc-shrink-on .site-logo img {
+						{$_logo_shrink}
+					}\n
+					.sticky-enabled .tc-shrink-on .brand .site-title {
+						{$_title_font}
+					}\n"
+				);
 			}
 
       //STICKY LOGO
@@ -527,7 +518,6 @@ if ( ! class_exists( 'TC_header_main' ) ) :
   				}\n"
         );
 			}
-
 			return $_css;
 		}
 
@@ -542,22 +532,18 @@ if ( ! class_exists( 'TC_header_main' ) ) :
     function tc_add_body_classes($_classes) {
       //STICKY HEADER
     	if ( 1 == esc_attr( TC_utils::$inst->tc_opt( 'tc_sticky_header' ) ) ) {
-     		$_classes = array_merge( $_classes, array('tc-sticky-header', 'sticky-disabled') );
-     		//STICKY TRANSPARENT ON SCROLL
-       	if ( 1 == esc_attr( TC_utils::$inst->tc_opt( 'tc_sticky_transparent_on_scroll' ) ) )
-       		$_classes = array_merge( $_classes, array('tc-transparent-on-scroll') );
-       	else
-       		$_classes = array_merge( $_classes, array('tc-solid-color-on-scroll') );
-       }
-     	else {
-     		$_classes = array_merge( $_classes, array('tc-no-sticky-header') );
-     	}
+       		$_classes = array_merge( $_classes, array('tc-sticky-header', 'sticky-disabled') );
+       		//STICKY TRANSPARENT ON SCROLL
+	       	if ( 1 == esc_attr( TC_utils::$inst->tc_opt( 'tc_sticky_transparent_on_scroll' ) ) )
+	       		$_classes = array_merge( $_classes, array('tc-transparent-on-scroll') );
+	       	else
+	       		$_classes = array_merge( $_classes, array('tc-solid-color-on-scroll') );
+	       }
+       	else {
+       		$_classes = array_merge( $_classes, array('tc-no-sticky-header') );
+       	}
 
-      //SKIN CLASS
-      $_skin = sprintf( 'skin-%s' , basename( TC_init::$instance -> tc_get_style_src() ) );
-      array_push( $_classes, substr( $_skin , 0 , strpos($_skin, '.') ) );
-
-      return $_classes;
+       	return $_classes;
     }
 
 
