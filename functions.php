@@ -33,6 +33,14 @@ function storto_setup() {
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
+	
+	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
+	add_theme_support( 'title-tag' );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -100,7 +108,6 @@ function storto_scripts() {
 
 	wp_enqueue_script( 'storto-custom', get_template_directory_uri() . '/js/jquery.storto.js', array('jquery'), '1.0', true );
 	wp_enqueue_script( 'storto-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
-	wp_enqueue_script( 'storto-scrollToTop', get_template_directory_uri() . '/js/jquery.scrollToTop.min.js', array('jquery'), '1.0', true );
 	wp_enqueue_script( 'storto-sticky', get_template_directory_uri() . '/js/jquery.hc-sticky.js', array('jquery'), '1.0', true );
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

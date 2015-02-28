@@ -64,3 +64,9 @@ Version 1.3.1
 * Fixed featured image effect
 * Edit font size
 * Minor bug fixes
+
+Version 1.3.2
+* Update FontAwesome to 4.3.0v
+* Update sticky post
+* Added title-tag support for WordPress 4.1
+* Minor bug fixes

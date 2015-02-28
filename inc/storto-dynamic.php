@@ -94,7 +94,7 @@ function storto_custom_css_styles() {
 	#toTop:hover	{
 		border: 1px solid <?php echo $color_link; ?>;
 	}
-	a, a:hover, a:focus, a:active, .main-navigation ul li .indicator, .sticky:before {
+	a, a:hover, a:focus, a:active, .main-navigation ul li .indicator, .content-area .sticky:before {
 		color: <?php echo $color_link; ?>;
 	}
 	<?php endif; ?>

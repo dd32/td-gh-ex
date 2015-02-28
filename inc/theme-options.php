@@ -16,18 +16,17 @@ $storto_theme_options = array(
 	'tumblrurl' => '#'
 );
 
+if ( is_admin() ) : // Load only if we are viewing an admin page
+
 function storto_toolbar_link_to_mypage( $wp_admin_bar ) {
 	$args = array(
 		'id'    => 'storto_theme_options',
-		'parent' => 'site-name',
 		'title' => __('Storto Theme Options', 'storto' ),
 		'href'  => admin_url('themes.php?page=theme_options')
 	);
 	$wp_admin_bar->add_node( $args );
 }
 add_action( 'admin_bar_menu', 'storto_toolbar_link_to_mypage', 999 );
-
-if ( is_admin() ) : // Load only if we are viewing an admin page
 
 add_action( 'admin_init', 'storto_options_init' );
 add_action( 'admin_menu', 'storto_options_add_page' );
