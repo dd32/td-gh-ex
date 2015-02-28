@@ -2,7 +2,7 @@
 Theme Name: Dynamic News Lite
 Theme URI: http://themezee.com/themes/dynamicnews/
 Description: A responsive, multipurpose blogging and magazine theme with bold colors and fonts. It comes with a featured content slider and a magazine page template. Dynamic News is a trending theme on wordpress.com and we are sure you will like the WordPress.org version as well.
-Version: 1.1.1
+Version: 1.1.2
 Author: ThemeZee
 Author URI: http://themezee.com
 Tags: two-columns, light, red, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, fluid-layout, responsive-layout, one-column, left-sidebar, right-sidebar, three-columns, black, blue, silver, white, green, gray
@@ -152,11 +152,6 @@ input, textarea, select {
 #logo {
 	float: left;
 	max-width: 100%;
-}
-#logo .logo-image {
-	border: 0;
-	max-width: 100%;
-	height: auto;
 }
 #logo .site-title {
 	font-size: 2.5em;
@@ -1263,7 +1258,7 @@ embed, iframe, object, video {
 #footer a:hover {
 	color: #fff;
 }
-#footer #credit-link {
+#footer #footer-text {
 	float: right;
 	font-size: 0.9em;
 }
@@ -1360,9 +1355,6 @@ embed, iframe, object, video {
 	#header-content #header-search #s {
 		max-width: 100%;
 		float: none;
-	}
-	#footer-widgets {
-		margin-right: 0;
 	}
 	.widget, .type-post, .type-page, .type-attachment, #comments {
 		box-shadow: 0 0 4px #ddd;
@@ -1519,7 +1511,7 @@ embed, iframe, object, video {
 	}
 	
 	/* Mobile Footer Navigation */
-	#footer #credit-link {
+	#footer #footer-text {
 		margin-top: -1.05em;
 	}
 		
@@ -1656,7 +1648,7 @@ embed, iframe, object, video {
 		float: none;
 		margin: 1em 0;
 	}
-	#footer #credit-link {
+	#footer #footer-text {
 		float: none;
 		margin-top: 1.05em;
 	}
