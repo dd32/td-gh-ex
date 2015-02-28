@@ -106,6 +106,7 @@ function impressive_framework_page(){
             <li><a id="options-group-2-tab" class="nav-tab homepagesettings-tab" title="<?php _e('Home Page Settings','impressive');?>" href="#options-group-2"><?php _e('Home Page Settings','impressive');?></a></li>
             <li><a id="options-group-3-tab" class="nav-tab socialsettings-tab" title="<?php _e('Social Settings','impressive');?>" href="#options-group-3"><?php _e('Social Settings','impressive');?></a></li>
              <li><a id="options-group-6-tab" class="nav-tab contactsettings-tab" title="<?php _e('Contact Us Settings','impressive');?>" href="#options-group-6"><?php _e('Contact Us Settings','impressive');?></a></li>
+              <li><a id="options-group-7-tab" class="nav-tab profeatures-tab" title="<?php _e('PRO Theme Features','impressive');?>" href="#options-group-7"><?php _e('PRO Theme Features','impressive');?></a></li> 
  		  </ul>
         </div>
       </div>
@@ -418,7 +419,17 @@ function impressive_framework_page(){
               </div>
             </div>
         </div>   
-        <!--======================== F I N A L - - T H E M E - - O P T I O N S ===================--> 
+      
+		  <div id="options-group-7" class="group theme-option-inner-tabs impressive-pro-image">  
+			<div class="impressive-pro-header">
+              <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/impressive_logopro_features.png" class="impressive-pro-logo" />
+              <a href="http://fruitthemes.com/wordpress-themes/impressive" target="_blank">
+					<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/impressive-buy-now.png" class="impressive-pro-buynow" /></a>
+              </div>
+          	<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/impressive_pro_features.jpg" />
+		  </div> 
+			
+       <!--======================== F I N A L - - T H E M E - - O P T I O N S ===================--> 
       </div>
      </div>
 	</div>

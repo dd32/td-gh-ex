@@ -15,4 +15,6 @@ ii)  Set google font Dancing Script.
 Version 1.0.3 (23-2-2015)
 
 	i)   Remove unnecessary code in index.php
- 
+
+Version 1.0.4 (28-2-2015) 
+	i)	 Add PRO Theme Features tab in theme options.
