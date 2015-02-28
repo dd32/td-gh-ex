@@ -27,16 +27,11 @@
 }
 .pager .next > a,
 .pager .next > span {
-  & when (@is_rtl = true) {
-    float: left;
-  }
-  & when (@is_rtl = false) {
-    float: right;
-  }
+  float: right;
 }
 .pager .previous > a,
 .pager .previous > span {
-  float: @floatDirection;
+  float: left;
 }
 .pager .disabled > a,
 .pager .disabled > a:hover,

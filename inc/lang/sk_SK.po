@@ -1,10 +1,10 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: * Customizr v3.3.28\n"
-"POT-Creation-Date: 2015-04-09 15:56+0100\n"
-"PO-Revision-Date: 2015-04-09 15:56+0100\n"
-"Last-Translator: Nicolas <contact@presscustomizr.com>\n"
-"Language-Team: Nicolas G. <contact@presscustomizr.com>\n"
+"Project-Id-Version: * Customizr v3.3.3\n"
+"POT-Creation-Date: 2015-02-27 18:28+0100\n"
+"PO-Revision-Date: 2015-02-27 19:03+0100\n"
+"Last-Translator: Nicolas <contact@themesandco.com>\n"
+"Language-Team: Nicolas G. <contact@themesandco.com>\n"
 "Language: sk_SK\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -100,181 +100,181 @@ msgstr "Zelenomodrá"
 msgid "Light blue "
 msgstr "Svetlá modrá"
 
-#: ../class-fire-init.php:127
+#: ../class-fire-init.php:128
 msgid "Google fonts pairs"
 msgstr ""
 
-#: ../class-fire-init.php:147
+#: ../class-fire-init.php:148
 msgid "Web safe fonts pairs"
 msgstr ""
 
-#: ../class-fire-init.php:156
+#: ../class-fire-init.php:157
 #, fuzzy
 msgid "Single fonts"
 msgstr "Jednoduché príspevky"
 
-#: ../class-fire-init.php:194
+#: ../class-fire-init.php:195
 msgid "Subscribe to my rss feed"
 msgstr "Prihlásiť sa k RSS odberom "
 
-#: ../class-fire-init.php:195
+#: ../class-fire-init.php:196
 msgid "RSS feed (default is the wordpress feed)"
 msgstr "RSS zdroj (prednastavené wordpress odbery)"
 
-#: ../class-fire-init.php:199
+#: ../class-fire-init.php:200
 msgid "Follow me on Twitter"
 msgstr "Sledujte Twitter profil"
 
-#: ../class-fire-init.php:200
+#: ../class-fire-init.php:201
 msgid "Twitter profile url"
 msgstr "url adresa profilu na Twitteri"
 
-#: ../class-fire-init.php:204
+#: ../class-fire-init.php:205
 msgid "Follow me on Facebook"
 msgstr "Sledujte Facebook profil"
 
-#: ../class-fire-init.php:205
+#: ../class-fire-init.php:206
 msgid "Facebook profile url"
 msgstr "url adresa profilu na Facebooku"
 
-#: ../class-fire-init.php:209
+#: ../class-fire-init.php:210
 msgid "Follow me on Google+"
 msgstr "Sledujte Google+ profil"
 
-#: ../class-fire-init.php:210
+#: ../class-fire-init.php:211
 msgid "Google+ profile url"
 msgstr "url adresa Google+ profilu"
 
-#: ../class-fire-init.php:214
+#: ../class-fire-init.php:215
 msgid "Follow me on Instagram"
 msgstr "Sledujte Instagram profil"
 
-#: ../class-fire-init.php:215
+#: ../class-fire-init.php:216
 msgid "Instagram profile url"
 msgstr "url adresa profilu na Instagrame"
 
-#: ../class-fire-init.php:219
+#: ../class-fire-init.php:220
 msgid "Follow me on Tumblr"
 msgstr "Sledujte Tumblr profil"
 
-#: ../class-fire-init.php:220
+#: ../class-fire-init.php:221
 msgid "Tumblr url"
 msgstr "Tumblr url"
 
-#: ../class-fire-init.php:224
+#: ../class-fire-init.php:225
 msgid "Follow me on Flickr"
 msgstr "Sledujte Flickr profil"
 
-#: ../class-fire-init.php:225
+#: ../class-fire-init.php:226
 msgid "Flickr url"
 msgstr "Flickr url"
 
-#: ../class-fire-init.php:229
+#: ../class-fire-init.php:230
 msgid "Follow me on WordPress"
 msgstr "Sledujte WordPress profil"
 
-#: ../class-fire-init.php:230
+#: ../class-fire-init.php:231
 msgid "WordPress profile url"
 msgstr "url adresa profilu vo WordPress"
 
-#: ../class-fire-init.php:234
+#: ../class-fire-init.php:235
 msgid "Follow me on Youtube"
 msgstr "Sledujte Youtube profil"
 
-#: ../class-fire-init.php:235
+#: ../class-fire-init.php:236
 msgid "Youtube profile url"
 msgstr "url adresa profilu na Youtube"
 
-#: ../class-fire-init.php:239
+#: ../class-fire-init.php:240
 msgid "Pin me on Pinterest"
 msgstr "Sledujte Pinterest profil"
 
-#: ../class-fire-init.php:240
+#: ../class-fire-init.php:241
 msgid "Pinterest profile url"
 msgstr "url adresa profilu na Pinterest"
 
-#: ../class-fire-init.php:244
+#: ../class-fire-init.php:245
 msgid "Follow me on Github"
 msgstr "Sledujte Github profil"
 
-#: ../class-fire-init.php:245
+#: ../class-fire-init.php:246
 msgid "Github profile url"
 msgstr "url adresa profilu na Github"
 
-#: ../class-fire-init.php:249
+#: ../class-fire-init.php:250
 msgid "Follow me on Dribbble"
 msgstr "Sledujte Dribbble profil"
 
-#: ../class-fire-init.php:250
+#: ../class-fire-init.php:251
 msgid "Dribbble profile url"
 msgstr "url adresa profilu na Dribbble"
 
-#: ../class-fire-init.php:254
+#: ../class-fire-init.php:255
 msgid "Follow me on LinkedIn"
 msgstr "Sledujte LinkedIn profil"
 
-#: ../class-fire-init.php:255
+#: ../class-fire-init.php:256
 msgid "LinkedIn profile url"
 msgstr "url adresa profilu na LinkedIn"
 
-#: ../class-fire-init.php:264
+#: ../class-fire-init.php:265
 msgid "Right Sidebar"
 msgstr "Pravý bočný panel"
 
-#: ../class-fire-init.php:265 ../class-fire-init.php:269
+#: ../class-fire-init.php:266 ../class-fire-init.php:270
 msgid "Appears on posts, static pages, archives and search pages"
 msgstr ""
 "Zobrazí sa v príspevkoch, statických stránkach, archívoch a stránkach "
 "vyhľadávania"
 
-#: ../class-fire-init.php:268
+#: ../class-fire-init.php:269
 msgid "Left Sidebar"
 msgstr "Ľavý bočný panel"
 
-#: ../class-fire-init.php:276
+#: ../class-fire-init.php:277
 msgid "Footer Widget Area One"
 msgstr "Footer Widget Oblasť Jeden"
 
-#: ../class-fire-init.php:277 ../class-fire-init.php:281
-#: ../class-fire-init.php:285
+#: ../class-fire-init.php:278 ../class-fire-init.php:282
+#: ../class-fire-init.php:286
 msgid "Just use it as you want !"
 msgstr "Stačí to použiť tak, ako chcete !"
 
-#: ../class-fire-init.php:280
+#: ../class-fire-init.php:281
 msgid "Footer Widget Area Two"
 msgstr "Footer Widget Oblasť Dva"
 
-#: ../class-fire-init.php:284
+#: ../class-fire-init.php:285
 msgid "Footer Widget Area Three"
 msgstr "Footer Widget Oblasť Tri"
 
-#: ../class-fire-init.php:302
+#: ../class-fire-init.php:303
 msgid "Speaking the Truth in times of universal deceit is a revolutionary act."
 msgstr "Hovoriť pravdu v čase všeobecného klamu je revolučný čin. "
 
-#: ../class-fire-init.php:303
+#: ../class-fire-init.php:304
 msgid "George Orwell"
 msgstr "George Orwell"
 
-#: ../class-fire-init.php:304
+#: ../class-fire-init.php:305
 msgid ""
 "Sorry, but the requested page is not found. You might try a search below."
 msgstr ""
 "Je nám ľúto, ale požadovaná stránka nebola nájdená. Môžete skúsiť "
 "vyhľadávanie nižšie."
 
-#: ../class-fire-init.php:309
+#: ../class-fire-init.php:310
 msgid ""
 "Success is the ability to go from one failure to another with no loss of "
 "enthusiasm..."
 msgstr ""
 "Úspech je schopnosť ísť od jedného neúspechu k ďalšiemu bez straty nadšenia."
 
-#: ../class-fire-init.php:310
+#: ../class-fire-init.php:311
 msgid "Sir Winston Churchill"
 msgstr "Sir Winston Churchill"
 
-#: ../class-fire-init.php:311
+#: ../class-fire-init.php:312
 msgid ""
 "Sorry, but nothing matched your search criteria. Please try again with some "
 "different keywords."
@@ -282,11 +282,15 @@ msgstr ""
 "Je nám ľúto, ale zadaným kritériám nič nezodpovedá. Skúste to prosím znova s "
 "inými kľúčovými slovami."
 
-#: ../class-fire-init.php:326
+#: ../class-fire-init.php:327
 msgid "Customizr is a clean responsive theme"
 msgstr "Customizr je čistá prehľadná téma"
 
-#: ../class-fire-init.php:340
+#: ../class-fire-init.php:332 ../class-fire-init.php:341
+msgid "Style your WordPress site live!"
+msgstr "Upravte si Vašu WordPress stránku !"
+
+#: ../class-fire-init.php:333
 msgid ""
 "Many layout and design options are available from the WordPress customizer "
 "screen : see your changes live !"
@@ -294,19 +298,39 @@ msgstr ""
 "Veľa nastavení rozloženia a vzhľadu je prístupných priamo z WordPress "
 "náhľadovej stránky : sledujte Vaše zmeny naživo !"
 
-#: ../class-fire-init.php:480
+#: ../class-fire-init.php:334
+msgid "Just try it!"
+msgstr "Stačí to skúsiť !"
+
+#: ../class-fire-init.php:346 ../class-fire-init.php:355
+msgid "Create beautiful sliders"
+msgstr "Vytvorte nádherné slajdre"
+
+#: ../class-fire-init.php:347
+msgid ""
+"Customizr comes with a cool slider generator : add a slider to any post or "
+"page!"
+msgstr ""
+"Customizr prichádza s úžasným generátorom slajdov : pridajte slajder na "
+"akýkoľvek príspevok alebo stránku !"
+
+#: ../class-fire-init.php:348
+msgid "Discover the features"
+msgstr "Objavte funkcie"
+
+#: ../class-fire-init.php:495
 msgid "Main Menu"
 msgstr "Hlavné Menu"
 
-#: ../class-fire-init.php:904
+#: ../class-fire-init.php:896
 msgid "Help"
 msgstr "Pomoc"
 
-#: ../class-fire-init.php:907
+#: ../class-fire-init.php:899
 msgid "Need help with Customizr? Click here!"
 msgstr "Potrebujete pomoc s témou Customizr? Kliknite tu!"
 
-#: ../class-fire-utils.php:465
+#: ../class-fire-utils.php:476
 #, php-format
 msgid "Page %s"
 msgstr "Stránka %s"
@@ -454,7 +478,7 @@ msgstr "Nastavenia komentárov"
 
 #: ../class-fire-utils_settings_map.php:320
 #: ../class-fire-utils_settings_map.php:1031
-#: ../class-fire-utils_settings_map.php:2120
+#: ../class-fire-utils_settings_map.php:2054
 msgid "Social links"
 msgstr "Sociálne siete"
 
@@ -527,12 +551,12 @@ msgid "Choose a predefined skin"
 msgstr "Zvoľte preddefinovaný vzhľad"
 
 #: ../class-fire-utils_settings_map.php:414
-#: ../class-fire-utils_settings_map.php:2148
+#: ../class-fire-utils_settings_map.php:2082
 msgid "Performance : use the minified CSS stylesheet"
 msgstr "Výkon : použiť minifikované CSS "
 
 #: ../class-fire-utils_settings_map.php:417
-#: ../class-fire-utils_settings_map.php:2151
+#: ../class-fire-utils_settings_map.php:2085
 msgid ""
 "Using the minified version of the skin stylesheet will speed up your webpage "
 "load time."
@@ -726,7 +750,7 @@ msgid "Choose the pages default layout"
 msgstr "Zvoľte prednastavené rozloženie stránok"
 
 #: ../class-fire-utils_settings_map.php:706
-#: ../class-fire-utils_settings_map.php:2033
+#: ../class-fire-utils_settings_map.php:1992
 msgid "Enable comments on pages"
 msgstr "Povoliť na stránkach komentáre"
 
@@ -739,22 +763,22 @@ msgstr ""
 "stránky môžte zakázať pri editovaní stránok. "
 
 #: ../class-fire-utils_settings_map.php:724
-#: ../class-fire-utils_settings_map.php:2084
+#: ../class-fire-utils_settings_map.php:2018
 msgid "Social links in header"
 msgstr "Sociálne siete v hlavičke"
 
 #: ../class-fire-utils_settings_map.php:733
-#: ../class-fire-utils_settings_map.php:2102
+#: ../class-fire-utils_settings_map.php:2036
 msgid "Social links in left sidebar"
 msgstr "Sociálne siete v ľavom bočnom paneli"
 
 #: ../class-fire-utils_settings_map.php:742
-#: ../class-fire-utils_settings_map.php:2112
+#: ../class-fire-utils_settings_map.php:2046
 msgid "Social links in right sidebar"
 msgstr "Sociálne siete v pravom bočnom paneli"
 
 #: ../class-fire-utils_settings_map.php:750
-#: ../class-fire-utils_settings_map.php:2093
+#: ../class-fire-utils_settings_map.php:2027
 msgid "Social links in footer"
 msgstr "Sociálne siete v päte"
 
@@ -764,11 +788,9 @@ msgid "Lightbox effect on images"
 msgstr "Povoliť / zakázať lightbox efekt pre obrázky"
 
 #: ../class-fire-utils_settings_map.php:774
-#, fuzzy
 msgid ""
-"If enabled, this option activates a popin window whith a zoom effect when an "
-"image is clicked. Note : to enable this effect on the images of your pages "
-"and posts, images have to be linked to the Media File."
+"If enabled, this option activate a popin window whith a zoom effect when an "
+"image is clicked. This will not apply to image gallery."
 msgstr ""
 "Táto možnosť aktivuje po kliknutí na obrázok okno s približovacím efektom. "
 "Neplatí pre galériu obrázkov."
@@ -829,8 +851,8 @@ msgstr "Povoliť / Zakázať centrovanie slidera"
 
 #: ../class-fire-utils_settings_map.php:822
 msgid ""
-"This option dynamically centers your images on any devices, vertically or "
-"horizontally according to their initial aspect ratio."
+"This option dynamically centers your images on any devices vertically or "
+"horizontally (without stretching them) according to their initial dimensions."
 msgstr ""
 
 #: ../class-fire-utils_settings_map.php:835
@@ -858,12 +880,12 @@ msgid ""
 msgstr ""
 
 #: ../class-fire-utils_settings_map.php:868
-#: ../class-fire-utils_settings_map.php:2133
+#: ../class-fire-utils_settings_map.php:2067
 msgid "Add your custom css here and design live! (for advanced users)"
 msgstr "Pridajte sem vlastné CSS ! (pre pokročilých užívateľov)"
 
 #: ../class-fire-utils_settings_map.php:872
-#: ../class-fire-utils_settings_map.php:2137
+#: ../class-fire-utils_settings_map.php:2071
 msgid ""
 "Use this field to test small chunks of CSS code. For important CSS "
 "customizations, you'll want to modify the style.css file of a"
@@ -872,12 +894,12 @@ msgstr ""
 "úpravy modifikujte súbor style.css"
 
 #: ../class-fire-utils_settings_map.php:873
-#: ../class-fire-utils_settings_map.php:2138
+#: ../class-fire-utils_settings_map.php:2072
 msgid "child theme."
 msgstr "témy potomka."
 
 #: ../class-fire-utils_settings_map.php:874
-#: ../class-fire-utils_settings_map.php:2139
+#: ../class-fire-utils_settings_map.php:2073
 msgid "How to create and use a child theme ?"
 msgstr "Ako vytvoriť a používať tému potomka ?"
 
@@ -1469,7 +1491,7 @@ msgid "Rectangular with unblur effect on hover"
 msgstr "Obdĺžnikový so zaostrujúcim efektom"
 
 #: ../class-fire-utils_settings_map.php:1826
-#: ../class-fire-utils_settings_map.php:1916
+#: ../class-fire-utils_settings_map.php:1875
 msgid "Set the thumbnail's max height in pixels"
 msgstr "Nastaviť maximálnu výšku "
 
@@ -1498,160 +1520,116 @@ msgid "Alternate thumbnail/content"
 msgstr "Alternatívny náhľad"
 
 #: ../class-fire-utils_settings_map.php:1860
-#: ../parts/class-content-headings.php:369
-msgid "Category Archives :"
-msgstr "Archív kategórii :"
-
-#: ../class-fire-utils_settings_map.php:1861
-#, fuzzy
-msgid "Archive titles"
-msgstr "Archívy"
-
-#: ../class-fire-utils_settings_map.php:1862
-#, fuzzy
-msgid "Category pages titles"
-msgstr "Za nadpisom"
-
-#: ../class-fire-utils_settings_map.php:1870
-#: ../parts/class-content-headings.php:385
-msgid "Tag Archives :"
-msgstr "Archív Tagov :"
-
-#: ../class-fire-utils_settings_map.php:1871
-msgid "Tag pages titles"
-msgstr ""
-
-#: ../class-fire-utils_settings_map.php:1879
-#: ../parts/class-content-headings.php:342
-msgid "Author Archives :"
-msgstr "Autor Archívu :"
-
-#: ../class-fire-utils_settings_map.php:1880
-#, fuzzy
-msgid "Author pages titles"
-msgstr "Za nadpisom"
-
-#: ../class-fire-utils_settings_map.php:1888
-#: ../parts/class-content-headings.php:327
-msgid "Search Results for :"
-msgstr "Výsledky hľadania pre :"
-
-#: ../class-fire-utils_settings_map.php:1889
-#, fuzzy
-msgid "Search results page titles"
-msgstr "Výsledky hľadania pre :"
-
-#: ../class-fire-utils_settings_map.php:1901
 msgid "Post thumbnail position"
 msgstr "Pozícia náhľadov"
 
-#: ../class-fire-utils_settings_map.php:1905
+#: ../class-fire-utils_settings_map.php:1864
 msgid "Don't display"
 msgstr "Nezobrazovať"
 
-#: ../class-fire-utils_settings_map.php:1906
+#: ../class-fire-utils_settings_map.php:1865
 msgid "Before the title in full width"
 msgstr "Pred nadpisom v plnej šírke"
 
-#: ../class-fire-utils_settings_map.php:1907
+#: ../class-fire-utils_settings_map.php:1866
 msgid "Before the title boxed"
 msgstr "Pred nadpisom"
 
-#: ../class-fire-utils_settings_map.php:1908
+#: ../class-fire-utils_settings_map.php:1867
 msgid "After the title"
 msgstr "Za nadpisom"
 
-#: ../class-fire-utils_settings_map.php:1928
+#: ../class-fire-utils_settings_map.php:1887
 msgid "Drop caps"
 msgstr ""
 
-#: ../class-fire-utils_settings_map.php:1929
+#: ../class-fire-utils_settings_map.php:1888
 msgid "Enable drop caps"
 msgstr ""
 
-#: ../class-fire-utils_settings_map.php:1931
+#: ../class-fire-utils_settings_map.php:1890
 msgid "Apply a drop cap to the first paragraph of your post / page content."
 msgstr ""
 
-#: ../class-fire-utils_settings_map.php:1940
+#: ../class-fire-utils_settings_map.php:1899
 msgid ""
 "Apply a drop cap when the paragraph includes at least the following number "
 "of words :"
 msgstr ""
 
-#: ../class-fire-utils_settings_map.php:1941
+#: ../class-fire-utils_settings_map.php:1900
 msgid "(number of words)"
 msgstr ""
 
-#: ../class-fire-utils_settings_map.php:1951
+#: ../class-fire-utils_settings_map.php:1910
 msgid "Drop cap style"
 msgstr ""
 
-#: ../class-fire-utils_settings_map.php:1955
+#: ../class-fire-utils_settings_map.php:1914
 #, fuzzy
 msgid "Skin color with shadow"
 msgstr "Farba povrchu"
 
-#: ../class-fire-utils_settings_map.php:1956
+#: ../class-fire-utils_settings_map.php:1915
 #, fuzzy
 msgid "Simple black"
 msgstr "Matná čierna"
 
-#: ../class-fire-utils_settings_map.php:1962
+#: ../class-fire-utils_settings_map.php:1921
 msgid "Enable drop caps in posts"
 msgstr ""
 
-#: ../class-fire-utils_settings_map.php:1964
+#: ../class-fire-utils_settings_map.php:1923
 msgid "Apply a drop cap to the first paragraph of your single posts content"
 msgstr ""
 
-#: ../class-fire-utils_settings_map.php:1971
+#: ../class-fire-utils_settings_map.php:1930
 #, fuzzy
 msgid "Enable drop caps in pages"
 msgstr "Povoliť na stránkach komentáre"
 
-#: ../class-fire-utils_settings_map.php:1973
+#: ../class-fire-utils_settings_map.php:1932
 msgid "Apply a drop cap to the first paragraph of your pages"
 msgstr ""
 
-#: ../class-fire-utils_settings_map.php:1983
+#: ../class-fire-utils_settings_map.php:1942
 msgid "Comments bubbles"
 msgstr "Bubliny komentárov"
 
-#: ../class-fire-utils_settings_map.php:1985
+#: ../class-fire-utils_settings_map.php:1944
 msgid "Display the number of comments in a bubble next to the post title"
 msgstr "Zobraziť počet komentárov v bublinke vedľa nadpisu príspevku."
 
-#: ../class-fire-utils_settings_map.php:1994
+#: ../class-fire-utils_settings_map.php:1953
 msgid "Comments bubble shape"
 msgstr "Tvar bublinky komentára"
 
-#: ../class-fire-utils_settings_map.php:1998
+#: ../class-fire-utils_settings_map.php:1957
 msgid "Small bubbles"
 msgstr "Malé bubliny"
 
-#: ../class-fire-utils_settings_map.php:1999
+#: ../class-fire-utils_settings_map.php:1958
 msgid "Large bubbles"
 msgstr "Veľké bubliny"
 
-#: ../class-fire-utils_settings_map.php:2007
-#: ../class-fire-utils_settings_map.php:2020
+#: ../class-fire-utils_settings_map.php:1966
+#: ../class-fire-utils_settings_map.php:1979
 msgid "Comments bubble color"
 msgstr "Farba bublinky komentára"
 
-#: ../class-fire-utils_settings_map.php:2011
+#: ../class-fire-utils_settings_map.php:1970
 msgid "Skin color"
 msgstr "Farba povrchu"
 
-#: ../class-fire-utils_settings_map.php:2012
+#: ../class-fire-utils_settings_map.php:1971
 msgid "Custom"
 msgstr "Vlastné "
 
-#: ../class-fire-utils_settings_map.php:2032
+#: ../class-fire-utils_settings_map.php:1991
 msgid "Other comments settings"
 msgstr "Ďalšie nastavenia komentárov"
 
-#: ../class-fire-utils_settings_map.php:2038
+#: ../class-fire-utils_settings_map.php:1997
 msgid ""
 "If checked, this option will enable comments on pages. You can disable "
 "comments for a single page in the quick edit mode of the page list screen."
@@ -1659,93 +1637,51 @@ msgstr ""
 "Táto možnosť povolí komentovanie na stránkach. Komentovanie pre jednotlivé "
 "stránky môžte zakázať v móde rýchlej úpravy na obrazovke zoznamu stránok. "
 
-#: ../class-fire-utils_settings_map.php:2039
-#, fuzzy
-msgid "You can also change other comments settings in :"
+#: ../class-fire-utils_settings_map.php:1998
+msgid "Change other comments settings in the"
 msgstr "Zmeniť ďalšie nastavenia komentárov"
 
-#: ../class-fire-utils_settings_map.php:2041
-#, fuzzy
-msgid "the discussion settings page."
-msgstr "Nastavenia diskusie."
-
-#: ../class-fire-utils_settings_map.php:2047
-#, fuzzy
-msgid "Enable comments on posts"
-msgstr "Povoliť na stránkach komentáre"
-
-#: ../class-fire-utils_settings_map.php:2052
-#, fuzzy
-msgid ""
-"If checked, this option enables comments on all types of single posts. You "
-"can disable comments for a single post in quick edit mode from the"
-msgstr ""
-"Táto možnosť povolí komentovanie na stránkach. Komentovanie pre jednotlivé "
-"stránky môžte zakázať v móde rýchlej úpravy na obrazovke zoznamu stránok. "
-
-#: ../class-fire-utils_settings_map.php:2054
-#, fuzzy
-msgid "post screen"
-msgstr "Obrazovka témy Customizr"
-
-#: ../class-fire-utils_settings_map.php:2055
-#, fuzzy
-msgid "You can also change other comments settings in the"
-msgstr "Zmeniť ďalšie nastavenia komentárov"
-
-#: ../class-fire-utils_settings_map.php:2057
+#: ../class-fire-utils_settings_map.php:2000
 msgid "discussion settings page."
 msgstr "Nastavenia diskusie."
 
-#: ../class-fire-utils_settings_map.php:2063
-#, fuzzy
-msgid "Display the comment list"
-msgstr "Zobraziť celý obsah"
-
-#: ../class-fire-utils_settings_map.php:2067
-msgid ""
-"By default, WordPress displays the past comments, even if comments are "
-"disabled in posts or pages. Unchecking this option allows you to not display "
-"this comment history."
-msgstr ""
-
-#: ../class-fire-utils_settings_map.php:2074
+#: ../class-fire-utils_settings_map.php:2008
 msgid "Display a back to top arrow on scroll"
 msgstr "Pri skrolovaní zobraziť šípku späť navrch"
 
-#: ../class-fire-utils_settings_map.php:2121
+#: ../class-fire-utils_settings_map.php:2055
 msgid "Social link title in sidebars"
 msgstr "Sociálne siete v bočnom paneli"
 
-#: ../class-fire-utils_settings_map.php:2127
+#: ../class-fire-utils_settings_map.php:2061
 msgid "Will be hidden if empty"
 msgstr "Bude skrytý ak je prázdny"
 
-#: ../class-fire-utils_settings_map.php:2155
+#: ../class-fire-utils_settings_map.php:2089
 #, fuzzy
 msgid "Load images on scroll"
 msgstr "Automaticky nastaviť veľkosť obrázku po priblížení"
 
-#: ../class-fire-utils_settings_map.php:2160
+#: ../class-fire-utils_settings_map.php:2094
 msgid ""
 "Check this option to delay the loading of non visible images. Images below "
 "the viewport will be loaded dynamically on scroll. This can boost "
 "performances by reducing the weight of long web pages with images."
 msgstr ""
 
-#: ../class-fire-utils_settings_map.php:2169
+#: ../class-fire-utils_settings_map.php:2103
 msgid "Set slider's height in pixels"
 msgstr "Nastaviť výšku slidera v pixeloch"
 
-#: ../class-fire-utils_settings_map.php:2179
+#: ../class-fire-utils_settings_map.php:2113
 msgid "Apply this height to all sliders"
 msgstr "Aplikovať túto výšku na každý slider"
 
-#: ../class-fire-utils_settings_map.php:2187
+#: ../class-fire-utils_settings_map.php:2121
 msgid "Replace the default image slider's height"
 msgstr "Nahradiť prednastavenú výšku obrázka slidera"
 
-#: ../class-fire-utils_settings_map.php:2193
+#: ../class-fire-utils_settings_map.php:2127
 msgid ""
 "If this option is checked, your images will be resized with your custom "
 "height on upload. This is better for your overall loading performance."
@@ -1753,116 +1689,106 @@ msgstr ""
 "Táto možnosť umení výšku obrázka na nastavenú. Je to prospešné pre celkový "
 "výkon načítavania."
 
-#: ../class-fire-utils_settings_map.php:2194
+#: ../class-fire-utils_settings_map.php:2128
 msgid "You might want to regenerate your thumbnails."
 msgstr "Mohli by ste potrebovať obnoviť Vaše náhľady"
 
-#: ../class-fire-utils_settings_map.php:2215
+#: ../class-fire-utils_settings_map.php:2149
 #, fuzzy
 msgid "Post List Design"
 msgstr "Globálne nastavenia"
 
-#: ../class-fire-utils_settings_map.php:2216
+#: ../class-fire-utils_settings_map.php:2150
 msgid "Select a Layout"
 msgstr ""
 
-#: ../class-fire-utils_settings_map.php:2220
+#: ../class-fire-utils_settings_map.php:2154
 #, fuzzy
 msgid "Alternate thumbnails layout"
 msgstr "Alternatívny náhľad"
 
-#: ../class-fire-utils_settings_map.php:2221
+#: ../class-fire-utils_settings_map.php:2155
 #, fuzzy
 msgid "Grid layout"
 msgstr "Vzhľad a rozloženie"
 
-#: ../class-fire-utils_settings_map.php:2224
+#: ../class-fire-utils_settings_map.php:2158
 msgid ""
 "When you select the grid Layout, the post content is limited to the excerpt."
 msgstr ""
 
-#: ../class-fire-utils_settings_map.php:2229
+#: ../class-fire-utils_settings_map.php:2163
 msgid "Number of columns per row"
 msgstr ""
 
-#: ../class-fire-utils_settings_map.php:2233
+#: ../class-fire-utils_settings_map.php:2167
 msgid "1"
 msgstr "1"
 
-#: ../class-fire-utils_settings_map.php:2234
+#: ../class-fire-utils_settings_map.php:2168
 msgid "2"
 msgstr ""
 
-#: ../class-fire-utils_settings_map.php:2235
+#: ../class-fire-utils_settings_map.php:2169
 msgid "3"
 msgstr ""
 
-#: ../class-fire-utils_settings_map.php:2236
+#: ../class-fire-utils_settings_map.php:2170
 msgid "4"
 msgstr ""
 
-#: ../class-fire-utils_settings_map.php:2239
-msgid ""
-"Note : columns are limited to 3 for single sidebar layouts and to 2 for "
-"double sidebar layouts."
+#: ../class-fire-utils_settings_map.php:2177
+msgid "Expand the featured posts (for home and blog page only)"
 msgstr ""
 
-#: ../class-fire-utils_settings_map.php:2244
-msgid "Expand the last sticky post (for home and blog page only)"
-msgstr ""
-
-#: ../class-fire-utils_settings_map.php:2252
+#: ../class-fire-utils_settings_map.php:2185
 msgid "Apply the grid layout to Home/Blog"
 msgstr ""
 
-#: ../class-fire-utils_settings_map.php:2260
+#: ../class-fire-utils_settings_map.php:2193
 msgid "Apply the grid layout to Archives (archives, categories, author posts)"
 msgstr ""
 
-#: ../class-fire-utils_settings_map.php:2268
+#: ../class-fire-utils_settings_map.php:2201
 msgid "Apply the grid layout to Search results"
 msgstr ""
 
-#: ../class-fire-utils_settings_map.php:2272
+#: ../class-fire-utils_settings_map.php:2205
 msgid "Unchecked contexts are displayed with the alternate thumbnails layout."
 msgstr ""
 
-#: ../class-fire-utils_settings_map.php:2277
+#: ../class-fire-utils_settings_map.php:2210
 msgid "Apply a shadow to each grid items"
 msgstr ""
 
-#: ../class-fire-utils_settings_map.php:2286
+#: ../class-fire-utils_settings_map.php:2219
 msgid "Apply a colored bottom border to each grid items"
 msgstr ""
 
-#: ../class-fire-utils_settings_map.php:2295
+#: ../class-fire-utils_settings_map.php:2228
 #, fuzzy
 msgid "Display post format icons in the background"
 msgstr "Zobraziť meta dáta prispevkov na domovskej stránke"
 
-#: ../class-fire-utils_settings_map.php:2305
-msgid "Max. length for post titles (in words)"
-msgstr ""
-
-#: ../class-fire-utils_settings_map.php:2316
+#: ../class-fire-utils_settings_map.php:2238
 msgid "Thumbnails max height for the grid layout"
 msgstr ""
 
-#: ../class-fire-utils_settings_map.php:2317
+#: ../class-fire-utils_settings_map.php:2239
 #, fuzzy
 msgid "Set the post grid thumbnail's max height in pixels"
 msgstr "Nastaviť maximálnu výšku "
 
-#: ../admin/class-admin-customize.php:368
+#: ../admin/class-admin-customize.php:364
 msgid "Hi! This is"
 msgstr ""
 
-#: ../admin/class-admin-customize.php:369
+#: ../admin/class-admin-customize.php:365
 #, fuzzy
 msgid ", developer of the Customizr theme"
 msgstr "Pokročilé nastavenia témy Customizr."
 
-#: ../admin/class-admin-customize.php:372
+#: ../admin/class-admin-customize.php:368
 #, fuzzy
 msgid ""
 "I'm doing my best to make Customizr the perfect free theme for you. If you "
@@ -1872,12 +1798,12 @@ msgstr ""
 "<strong>Snažíme sa z plných síl aby bola Customizr perfektná téma!</"
 "strong><br/> Prosím, podporte náš vývoj príspevkom $20, $50 alebo $100."
 
-#: ../admin/class-admin-customize.php:376
+#: ../admin/class-admin-customize.php:372
 #, fuzzy
 msgid "Make a donation for Customizr"
 msgstr "Vyberte vzhľad pre Customizr"
 
-#: ../admin/class-admin-customize.php:379
+#: ../admin/class-admin-customize.php:375
 msgid ""
 "Once clicked the 'Hide forever' button, this donation block will not be "
 "displayed anymore.<br/>Either you are using Customizr for personal or "
@@ -1886,65 +1812,33 @@ msgid ""
 "Live long and prosper with Customizr!</strong>"
 msgstr ""
 
-#: ../admin/class-admin-customize.php:380
+#: ../admin/class-admin-customize.php:376
 msgid "Hide forever"
 msgstr ""
 
-#: ../admin/class-admin-customize.php:381
+#: ../admin/class-admin-customize.php:377
 msgid "Let me think twice"
 msgstr ""
 
-#: ../admin/class-admin-customize.php:390
+#: ../admin/class-admin-customize.php:386
 msgid "Need more customizations options and premium support ?"
 msgstr ""
 
-#: ../admin/class-admin-customize.php:392
-#: ../admin/class-admin-customize.php:404
-#: ../admin/class-admin-customize.php:416
-#: ../admin/class-admin-customize.php:428
+#: ../admin/class-admin-customize.php:388
+#: ../admin/class-admin-customize.php:400
+#: ../admin/class-admin-customize.php:412
 #, fuzzy
 msgid "Discover Customizr Pro"
 msgstr "Vitajte v téme Customizr %s"
 
-#: ../admin/class-admin-customize.php:402
+#: ../admin/class-admin-customize.php:398
 msgid ""
 "Need more control on your fonts ? Style any text in live preview ( size, "
 "color, font family, effect, ...) with the Customizr Pro theme."
 msgstr ""
 
-#: ../admin/class-admin-customize.php:414
+#: ../admin/class-admin-customize.php:410
 msgid "Add unlimited featured pages with Customizr Pro"
-msgstr ""
-
-#: ../admin/class-admin-customize.php:426
-msgid "Customize your footer credits with Customizr Pro"
-msgstr ""
-
-#: ../admin/class-admin-customize.php:437
-msgid "If you like"
-msgstr ""
-
-#: ../admin/class-admin-customize.php:438
-#, fuzzy
-msgid "the Customizr theme"
-msgstr "Pokročilé nastavenia témy Customizr."
-
-#: ../admin/class-admin-customize.php:438
-#, fuzzy
-msgid "the Customizr pro theme"
-msgstr "Pokročilé nastavenia témy Customizr."
-
-#: ../admin/class-admin-customize.php:439
-msgid "we would love to receive a"
-msgstr ""
-
-#: ../admin/class-admin-customize.php:441
-#, fuzzy
-msgid "Review the Customizr theme"
-msgstr "Pokročilé nastavenia témy Customizr."
-
-#: ../admin/class-admin-customize.php:443
-msgid "rating. Thanks :) !"
 msgstr ""
 
 #: ../admin/class-admin-meta_boxes.php:87
@@ -2064,7 +1958,7 @@ msgstr "Slajder bude natrvalo odstránený (obrázky ostanú zachované)"
 msgid "Delete slider"
 msgstr "Odstrániť slajder"
 
-#: ../admin/class-admin-meta_boxes.php:345 ../admin/class-controls.php:82
+#: ../admin/class-admin-meta_boxes.php:345 ../admin/class-controls.php:122
 msgid ""
 "You haven't create any slider yet. Go to the media library, edit your images "
 "and add them to your sliders."
@@ -2149,10 +2043,10 @@ msgstr "Odkaz tlačidla"
 #: ../parts/class-content-breadcrumb.php:678
 #: ../parts/class-content-breadcrumb.php:693
 #: ../parts/class-content-breadcrumb.php:721
-#: ../parts/class-content-comments.php:195
+#: ../parts/class-content-comments.php:179
 #: ../parts/class-content-featured_pages.php:214
-#: ../parts/class-content-headings.php:238
-#: ../parts/class-content-slider.php:347
+#: ../parts/class-content-headings.php:204
+#: ../parts/class-content-slider.php:359
 msgid "Edit"
 msgstr "Upraviť"
 
@@ -2168,25 +2062,15 @@ msgstr "Upraviť tento slajd"
 msgid "Current slide"
 msgstr "Súčasný slajd"
 
-#: ../admin/class-controls.php:84
+#: ../admin/class-controls.php:122
 msgid "Create a slider"
 msgstr "Vytvoriť slajder"
 
-#: ../admin/class-controls.php:85
-#, fuzzy
-msgid "Need help to create a slider ?"
-msgstr "Vytvoriť slajder"
-
-#: ../admin/class-controls.php:87
-#, fuzzy
-msgid "Check the documentation"
-msgstr "Čítať dokumentáciu"
-
-#: ../admin/class-controls.php:315
+#: ../admin/class-controls.php:284
 msgid "Upload"
 msgstr "Nahrať"
 
-#: ../admin/class-controls.php:316
+#: ../admin/class-controls.php:285
 msgid "Remove"
 msgstr "Odstrániť"
 
@@ -2360,11 +2244,11 @@ msgstr ""
 msgid ""
 "Customizr's extensions are installed and upgraded from your WordPress admin, "
 "like any other WordPress plugins. Well documented and easily extendable with "
-"hooks, they come with a dedicated support forum on presscustomizr.com."
+"hooks, they come with a dedicated support forum on themesandco.com."
 msgstr ""
 "Rozšírenia sú inštalované a aktualizované priamo v administrátorskom paneli "
 "WordPress. Dobrú dokumentáciu k rozšíreniam nájdete vo fóre na stránke "
-"presscustomizr.com."
+"themesandco.com."
 
 #: ../admin/class-fire-admin_init.php:278
 #: ../admin/class-fire-admin_page.php:179
@@ -2524,64 +2408,64 @@ msgstr "Rozdeliť"
 msgid "Merge"
 msgstr "Spojiť"
 
-#: ../parts/class-content-comments.php:92
+#: ../parts/class-content-comments.php:76
 msgid "One thought on"
 msgstr "Jedna myšlienka"
 
-#: ../parts/class-content-comments.php:94
+#: ../parts/class-content-comments.php:78
 msgid "thoughts on"
 msgstr "myšlienky"
 
-#: ../parts/class-content-comments.php:154
+#: ../parts/class-content-comments.php:138
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../parts/class-content-comments.php:154
+#: ../parts/class-content-comments.php:138
 msgid "(Edit)"
 msgstr "(Upraviť)"
 
-#: ../parts/class-content-comments.php:181
+#: ../parts/class-content-comments.php:165
 msgid "Reply"
 msgstr "Odpovedať"
 
-#: ../parts/class-content-comments.php:194
+#: ../parts/class-content-comments.php:178
 msgid "Post author"
 msgstr "Autor príspevku"
 
-#: ../parts/class-content-comments.php:201
+#: ../parts/class-content-comments.php:185
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s v %2$s"
 
-#: ../parts/class-content-comments.php:206
+#: ../parts/class-content-comments.php:190
 msgid "Your comment is awaiting moderation."
 msgstr "Váš komentár čaká na schválenie."
 
-#: ../parts/class-content-comments.php:241
+#: ../parts/class-content-comments.php:225
 msgid "Comment navigation"
 msgstr "Navigácia v komentároch"
 
-#: ../parts/class-content-comments.php:247
+#: ../parts/class-content-comments.php:231
 msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
 msgstr "<span class=\"meta-nav\">&larr;</span> Staršie komentáre"
 
-#: ../parts/class-content-comments.php:255
+#: ../parts/class-content-comments.php:239
 msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Novšie komentáre <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../parts/class-content-comments.php:287
+#: ../parts/class-content-comments.php:271
 msgid "Comments are closed."
 msgstr "Komentáre sú uzavreté."
 
-#: ../parts/class-content-comments.php:322
+#: ../parts/class-content-comments.php:286
 msgid "Leave a comment"
 msgstr "Zanechať komentár "
 
-#: ../parts/class-content-comments.php:344
+#: ../parts/class-content-comments.php:320
 msgid "Comment(s) on"
 msgstr "Komentár(e) na"
 
-#: ../parts/class-content-comments.php:363
+#: ../parts/class-content-comments.php:339
 msgid "comment"
 msgstr "komentár"
 
@@ -2606,73 +2490,89 @@ msgstr ""
 "Text úvodnej predstavovacej stránky : použite ukážku stránky alebo nastavte "
 "vlastný text na obrazovke Customizr %s."
 
-#: ../parts/class-content-gallery.php:193
+#: ../parts/class-content-gallery.php:187
 msgid "Missing Attachment"
 msgstr "Chýbajúca príloha"
 
-#: ../parts/class-content-headings.php:182
-#: ../parts/class-content-headings.php:187
+#: ../parts/class-content-headings.php:169
+#: ../parts/class-content-headings.php:174
 msgid "{no title} Read the post &raquo;"
 msgstr "{žiaden nadpis} Čítať príspevok &raquo;"
 
-#: ../parts/class-content-headings.php:186
+#: ../parts/class-content-headings.php:173
 #, php-format
 msgid "Permalink to %s"
 msgstr "Permalink na %s"
 
-#: ../parts/class-content-headings.php:315
+#: ../parts/class-content-headings.php:280
 msgid "Ooops, page not found"
 msgstr "Ooops, stránka nenájdená"
 
-#: ../parts/class-content-headings.php:326
+#: ../parts/class-content-headings.php:291
 msgid "No"
 msgstr "Nie"
 
-#: ../parts/class-content-headings.php:356 ../parts/class-content-post.php:134
+#: ../parts/class-content-headings.php:292
+msgid "Search Results for :"
+msgstr "Výsledky hľadania pre :"
+
+#: ../parts/class-content-headings.php:307
+msgid "Author Archives :"
+msgstr "Autor Archívu :"
+
+#: ../parts/class-content-headings.php:321 ../parts/class-content-post.php:131
 #, php-format
 msgid "About %s"
 msgstr "O %s"
 
-#: ../parts/class-content-headings.php:398
+#: ../parts/class-content-headings.php:334
+msgid "Category Archives :"
+msgstr "Archív kategórii :"
+
+#: ../parts/class-content-headings.php:350
+msgid "Tag Archives :"
+msgstr "Archív Tagov :"
+
+#: ../parts/class-content-headings.php:363
 #, php-format
 msgid "Daily Archives: %s"
 msgstr "Denný archív: %s"
 
-#: ../parts/class-content-headings.php:398
+#: ../parts/class-content-headings.php:363
 msgid "Archives"
 msgstr "Archívy"
 
-#: ../parts/class-content-headings.php:399
+#: ../parts/class-content-headings.php:364
 #, php-format
 msgid "Monthly Archives: %s"
 msgstr "Mesačný archív: %s"
 
-#: ../parts/class-content-headings.php:400
+#: ../parts/class-content-headings.php:365
 #, php-format
 msgid "Yearly Archives: %s"
 msgstr "Ročný archív: %s"
 
-#: ../parts/class-content-page.php:42 ../parts/class-content-post.php:96
-#: ../parts/class-content-post_list.php:239
+#: ../parts/class-content-page.php:42 ../parts/class-content-post.php:93
+#: ../parts/class-content-post_list.php:230
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Čítať ďalej <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../parts/class-content-page.php:44 ../parts/class-content-post.php:97
-#: ../parts/class-content-post_list.php:241
+#: ../parts/class-content-page.php:44 ../parts/class-content-post.php:94
+#: ../parts/class-content-post_list.php:232
 msgid "Pages:"
 msgstr "Strany:"
 
-#: ../parts/class-content-post.php:138
+#: ../parts/class-content-post.php:135
 #, php-format
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Zobraziť všetky príspevky od %s <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../parts/class-content-post_list_grid.php:920
+#: ../parts/class-content-post_list_grid.php:637
 #, fuzzy
 msgid "More grid design options"
 msgstr "Nastavenia úvodných predstavovacích stránok"
 
-#: ../parts/class-content-post_list_grid.php:929
+#: ../parts/class-content-post_list_grid.php:646
 #, fuzzy
 msgid "Jump to the blog design options"
 msgstr "Možnosti nastavenia názvov ikon"
@@ -2695,7 +2595,7 @@ msgid "Link to full-size image"
 msgstr "Odkaz na obrázok plnej veľkosti"
 
 #: ../parts/class-content-post_metas.php:196
-#: ../parts/class-content-post_metas.php:512
+#: ../parts/class-content-post_metas.php:506
 msgid "in"
 msgstr "v"
 
@@ -2766,20 +2666,20 @@ msgstr ""
 msgid "View all posts in %s"
 msgstr "Zobraziť všetky príspevky v %s"
 
-#: ../parts/class-content-post_metas.php:455
+#: ../parts/class-content-post_metas.php:449
 #, php-format
 msgid "View all posts by %s"
 msgstr "Zobraziť všetky príspevky od %s"
 
-#: ../parts/class-content-post_metas.php:475
+#: ../parts/class-content-post_metas.php:469
 msgid "Open"
 msgstr ""
 
-#: ../parts/class-content-post_metas.php:513
+#: ../parts/class-content-post_metas.php:507
 msgid "tagged"
 msgstr ""
 
-#: ../parts/class-content-post_metas.php:536
+#: ../parts/class-content-post_metas.php:530
 msgid "by"
 msgstr ""
 
@@ -2796,94 +2696,17 @@ msgstr "<span class=\"meta-nav\">&larr;</span> Staršie príspevky"
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Novšie príspevky <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../parts/class-content-sidebar.php:128
-#: ../parts/class-footer-footer_main.php:102
-msgid "This block is visible for admin users only."
-msgstr ""
-
-#: ../parts/class-content-sidebar.php:132
-#, fuzzy
-msgid "The sidebar : "
-msgstr "Ľavý bočný panel"
-
-#: ../parts/class-content-sidebar.php:134
-#, fuzzy
-msgid "has no widgets"
-msgstr "Gérer les widgets"
-
-#: ../parts/class-content-sidebar.php:138
-msgid "You can add widgets to this sidebar in :"
-msgstr ""
-
-#: ../parts/class-content-sidebar.php:140
-#: ../parts/class-footer-footer_main.php:112
-#, fuzzy
-msgid "Add widgets"
-msgstr "Gérer les widgets"
-
-#: ../parts/class-content-sidebar.php:141
-#: ../parts/class-footer-footer_main.php:113
-#, fuzzy
-msgid "appearance > widgets"
-msgstr "Gérer les widgets"
-
-#: ../parts/class-content-sidebar.php:145
-msgid "You can also remove this sidebar by changing the current page layout."
-msgstr ""
-
-#: ../parts/class-content-sidebar.php:147
-#, fuzzy
-msgid "Changing the layout in the Customizr theme"
-msgstr "Nastavenia obsahu témy Customizr."
-
-#: ../parts/class-content-sidebar.php:148
-#, fuzzy
-msgid "See the theme documentation."
-msgstr "Čítať dokumentáciu"
-
-#: ../parts/class-content-sidebar.php:152
-#: ../parts/class-footer-footer_main.php:117
-msgid "dismiss notice"
-msgstr ""
-
-#: ../parts/class-footer-footer_main.php:106
-msgid "The footer has no widgets"
-msgstr ""
-
-#: ../parts/class-footer-footer_main.php:110
-msgid "You can add widgets to the footer in :"
-msgstr ""
-
-#: ../parts/class-footer-footer_main.php:221
+#: ../parts/class-footer-footer_main.php:181
 msgid "Back to top"
 msgstr "Späť hore"
 
-#: ../parts/class-header-header_main.php:285
+#: ../parts/class-header-header_main.php:256
 msgid "Back Home"
 msgstr "Späť na úvod"
 
-#: ../parts/class-header-menu.php:130
+#: ../parts/class-header-menu.php:129
 msgid "Add a menu"
 msgstr "Pridať menu "
-
-#~ msgid "Style your WordPress site live!"
-#~ msgstr "Upravte si Vašu WordPress stránku !"
-
-#~ msgid "Just try it!"
-#~ msgstr "Stačí to skúsiť !"
-
-#~ msgid "Create beautiful sliders"
-#~ msgstr "Vytvorte nádherné slajdre"
-
-#~ msgid ""
-#~ "Customizr comes with a cool slider generator : add a slider to any post "
-#~ "or page!"
-#~ msgstr ""
-#~ "Customizr prichádza s úžasným generátorom slajdov : pridajte slajder na "
-#~ "akýkoľvek príspevok alebo stránku !"
-
-#~ msgid "Discover the features"
-#~ msgstr "Objavte funkcie"
 
 #~ msgid "Enable/disable retina support"
 #~ msgstr "Povoliť / zakázať retina podporu"
@@ -2985,6 +2808,9 @@ msgstr "Pridať menu "
 
 #~ msgid "%"
 #~ msgstr "%"
+
+#~ msgid "Manage widgets"
+#~ msgstr "Gérer les widgets"
 
 #~ msgid "View details &raquo;"
 #~ msgstr "Voir les détails &raquo;"

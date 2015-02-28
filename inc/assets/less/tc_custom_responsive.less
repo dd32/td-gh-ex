@@ -131,8 +131,8 @@
     float: none;
     width: 100%;
   }
-  .navbar-wrapper .navbar .site-description {
-    display: none !important;
+  .navbar-wrapper .navbar h2 {
+    display:none
   }
   .navbar-inner .tc-nav-button {
     display:block;
@@ -214,7 +214,7 @@
   }
 
   .tc-hover-menu.nav li {
-    text-align: @textAlign;
+    text-align: left;
     position: relative;
   }
   .tc-hover-menu.nav a:after {
@@ -232,7 +232,7 @@
 
   /* social blocks */
   .social-block {
-    float: @floatDirection;
+    float: left;
   }
 
   .social-block.widget {
@@ -258,7 +258,7 @@
 
   /*featured pages */
   .widget-front.hover .round-div,
-  article.hover .tc-thumbnail .round-div {
+  article.hover .round-div {
     -webkit-transform: scale(1.3);
     -moz-transform: scale(1.3);
     -ms-transform: scale(1.3);
@@ -340,12 +340,16 @@
   .sticky-enabled .site-logo img {
   }
   .sticky-enabled .brand {
-    float: @floatDirection;
+    float: left;
     width: 80%;
-    text-align: @textAlign;
+    text-align: left;
     padding-left: 10px;
     position: relative;
     z-index: 2;
+  }
+  /* HIDE TAGLINE SINCE V3.2.0*/
+  .navbar-wrapper .navbar h2 {
+    display: none!important;
   }
   .sticky-enabled .tc-header {
     min-height: 40px;
@@ -366,10 +370,6 @@
   .sticky-enabled .navbar-wrapper {
     position: relative;
     z-index: 1;
-  }
-  /* do not display menu button when sticky enabled and tc-menu-off enabled */
-  .sticky-enabled .tc-menu-off .btn-navbar {
-    display: none;
   }
 
   .no-navbar .nav-collapse, .nav-collapse.collapse {
@@ -400,21 +400,11 @@
   }
 
   .navbar .nav-collapse ul.nav > li li a {
-    & when (@is_rtl = true) {
-      padding-right: 30px;
-    }
-    & when (@is_rtl = false) {
-      padding-left: 30px;
-    }
+    padding-left: 30px;
   }
 
   .navbar .nav-collapse ul.nav > li li li a {
-     & when (@is_rtl = true) {
-      padding-right: 60px;
-    }
-    & when (@is_rtl = false) {
-      padding-left: 60px;
-    }
+    padding-left: 60px;
   }
 
   .dropdown-submenu>a:after {
@@ -430,7 +420,7 @@
   }
 
   .navbar .navbar-inner .nav li {
-    text-align: @textAlign;
+    text-align: left;
     position: relative;
   }
 
@@ -553,7 +543,7 @@
   /*force comment layout to be not responsive */
   .row-fluid .comment-avatar.span2 {
     width: 14.893617021%;
-    float: @floatDirection;
+    float: left;
     margin-right: 2.762430939%;
   }
   footer#footer {
@@ -593,10 +583,6 @@
     height: 225px;
     max-height: 225px;
     line-height: 225px;
-  }
-  /* ICONS */
-  .tc-post-list-grid article .tc-grid-icon:before, .tc-post-list-grid article.format-quote .tc-grid-icon:before, .tc-post-list-grid article.format-status .tc-grid-icon:before, {
-    font-size: 60px;
   }
 }
 
@@ -676,7 +662,7 @@
     padding-right: 6px;
   }
   /* GRID */
-  .tc-g-cont {
+  .tc-grid-excerpt-content {
     max-height: 80px;
     overflow: hidden;
   }

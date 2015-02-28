@@ -30,12 +30,7 @@
       float: none;
       clear: none;
       width: auto;
-      & when (@is_rtl = true) {
-        text-align: right;
-      }
-      & when (@is_rtl = false) {
-        text-align: left;
-      }
+      text-align: left;
     }
     dd {
       margin-left: 0;
@@ -153,7 +148,7 @@
       float: none;
       width: auto;
       padding-top: 0;
-      text-align: @textAlign;
+      text-align: left;
     }
     // Move over all input controls and content
     .controls {

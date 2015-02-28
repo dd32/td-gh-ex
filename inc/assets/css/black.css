@@ -1,5 +1,5 @@
 /*!
- * Customizr v3.3.28
+ * Customizr v3.3.3
  *
  * Licensed under the GNU General Public License v2 or later
  * http://www.gnu.org/licenses/gpl-2.0.html
@@ -339,7 +339,10 @@ a.thumbnail:focus {
   background-color: #000000;
   background-position: 0 -30px;
 }
-.site-description {
+.navbar-wrapper .navbar h2 {
+  color: #000000;
+}
+h2.site-description {
   color: #000000;
 }
 .navbar .nav > li.current-menu-item > a,
@@ -418,6 +421,7 @@ td {
 }
 .social-block a:hover {
   color: #000000;
+  opacity: 1;
 }
 /* SLIDER CONTROLS */
 .tc-carousel-control:focus,
@@ -455,8 +459,6 @@ h3.assistive-text {
   color: white;
 }
 /* FOOTER */
-/* Back to top */
-.btt-arrow,
 footer#footer .colophon a.back-to-top {
   color: #000000;
 }

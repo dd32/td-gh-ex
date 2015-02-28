@@ -6,9 +6,9 @@
 * @package      Customizr
 * @subpackage   classes
 * @since        3.1.0
-* @author       Nicolas GUILLAUME <nicolas@presscustomizr.com>
-* @copyright    Copyright (c) 2013-2015, Nicolas GUILLAUME
-* @link         http://presscustomizr.com/customizr
+* @author       Nicolas GUILLAUME <nicolas@themesandco.com>
+* @copyright    Copyright (c) 2013, Nicolas GUILLAUME
+* @link         http://themesandco.com/customizr
 * @license      http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 if ( ! class_exists( 'TC_headings' ) ) :
@@ -17,21 +17,19 @@ if ( ! class_exists( 'TC_headings' ) ) :
       function __construct () {
         self::$instance =& $this;
         //set actions and filters for posts and page headings
-        add_action( 'template_redirect'                            , array( $this , 'tc_set_post_page_heading_hooks') );
+        add_action( 'wp'                            , array( $this , 'tc_set_post_page_heading_hooks') );
         //set actions and filters for archives headings
-        add_action( 'template_redirect'                            , array( $this , 'tc_set_archives_heading_hooks') );
+        add_action( 'wp'                            , array( $this , 'tc_set_archives_heading_hooks') );
         //Set headings user options
-        add_action( 'template_redirect'                            , array( $this , 'tc_set_headings_options') );
+        add_action( 'wp'                            , array( $this , 'tc_set_headings_options') );
       }
 
 
-      /******************************************
-      * HOOK SETTINGS ***************************
-      ******************************************/
+
       /**
       * @return void
       * set up hooks for archives headings
-      * hook : template_redirect
+      * callback of wp
       *
       * @package Customizr
       * @since Customizr 3.2.6
@@ -55,10 +53,11 @@ if ( ! class_exists( 'TC_headings' ) ) :
       }
 
 
+
       /**
       * @return void
       * set up hooks for post and page headings
-      * callback of template_redirect
+      * callback of wp
       *
       * @package Customizr
       * @since Customizr 3.2.6
@@ -70,21 +69,15 @@ if ( ! class_exists( 'TC_headings' ) ) :
           return;
 
         //Set single post/page icon with customizer options (since 3.2.0)
-        add_filter ( 'tc_content_title_icon'    , array( $this , 'tc_set_post_page_icon' ) );
+        add_filter ( 'tc_content_title_icon'          , array( $this , 'tc_set_post_page_icon' ) );
         //Prepare the headings for post, page, attachment
-        add_action ( '__before_content'         , array( $this , 'tc_render_headings_view' ) );
+        add_action ( '__before_content'               , array( $this , 'tc_render_headings_view' ) );
         //Populate heading with default content
-        add_filter ( 'tc_headings_content_html' , array( $this , 'tc_post_page_title_callback'), 10, 2 );
+        add_filter ( 'tc_headings_content_html'       , array( $this , 'tc_post_page_title_callback'), 10, 2 );
         //Create the Customizr title
-        add_filter( 'tc_the_title'              , array( $this , 'tc_content_heading_title' ) , 0 );
+        add_filter( 'tc_the_title'                    , array( $this , 'tc_content_heading_title' ) , 0 );
         //Add edit link
-        add_filter( 'tc_the_title'              , array( $this , 'tc_add_edit_link_after_title' ), 2 );
-        //Set user defined archive titles
-        add_filter( 'tc_category_archive_title' , array( $this , 'tc_set_archive_custom_title' ) );
-        add_filter( 'tc_tag_archive_title'      , array( $this , 'tc_set_archive_custom_title' ) );
-        add_filter( 'tc_search_results_title'   , array( $this , 'tc_set_archive_custom_title' ) );
-        add_filter( 'tc_author_archive_title'   , array( $this , 'tc_set_archive_custom_title' ) );
-
+        add_filter( 'tc_the_title'                    , array( $this , 'tc_add_edit_link_after_title' ), 2 );
 
         //SOME DEFAULT OPTIONS
         //No hr if not singular
@@ -92,14 +85,26 @@ if ( ! class_exists( 'TC_headings' ) ) :
           add_filter( 'tc_content_headings_separator' , '__return_false' );
 
         //No headings for some post formats
-        add_filter( 'tc_headings_content_html'  , array( $this, 'tc_post_formats_heading') , 100 );
+        add_filter( 'tc_headings_content_html'        , array( $this, 'tc_post_formats_heading') , 100 );
 
       }
 
 
-      /******************************************
-      * VIEWS ***********************************
-      ******************************************/
+      /**
+      * @return string or boolean
+      * Returns the heading html content or false
+      * callback of tc_headings_{$_heading_type}_html where $_heading_type = content when in the loop
+      *
+      * @package Customizr
+      * @since Customizr 3.2.9
+      */
+      function tc_post_formats_heading( $_html ) {
+        if( in_array( get_post_format(), apply_filters( 'tc_post_formats_with_no_heading', TC_init::$instance -> post_formats_with_no_heading ) ) )
+          return;
+        return $_html;
+      }
+
+
       /**
       * Generic heading view : archives, author, search, 404 and the post page heading (if not font page)
       * This is the place where every heading content blocks are hooked
@@ -130,25 +135,6 @@ if ( ! class_exists( 'TC_headings' ) ) :
 
 
 
-
-      /******************************************
-      * HELPERS / SETTERS / CALLBACKS ***********
-      ******************************************/
-      /**
-      * @return string or boolean
-      * Returns the heading html content or false
-      * callback of tc_headings_{$_heading_type}_html where $_heading_type = content when in the loop
-      *
-      * @package Customizr
-      * @since Customizr 3.2.9
-      */
-      function tc_post_formats_heading( $_html ) {
-        if( in_array( get_post_format(), apply_filters( 'tc_post_formats_with_no_heading', TC_init::$instance -> post_formats_with_no_heading ) ) )
-          return;
-        return $_html;
-      }
-
-
       /**
       * Callback for tc_headings_content_html
       * @return  string
@@ -156,14 +142,15 @@ if ( ! class_exists( 'TC_headings' ) ) :
       * @package Customizr
       * @since Customizr 3.2.6
       */
-      function tc_post_page_title_callback( $_content = null , $_heading_type = null ) {
-        $_title = apply_filters( 'tc_title_text', get_the_title() );
+      function tc_post_page_title_callback( $_content , $_heading_type ) {
         return sprintf('<%1$s class="entry-title %2$s">%3$s</%1$s>',
               apply_filters( 'tc_content_title_tag' , is_singular() ? 'h1' : 'h2' ),
               apply_filters( 'tc_content_title_icon', 'format-icon' ),
-              apply_filters( 'tc_the_title', $_title )
+              apply_filters( 'tc_the_title', get_the_title() )
         );
       }
+
+
 
       /**
       * Callback for tc_the_title
@@ -183,10 +170,14 @@ if ( ! class_exists( 'TC_headings' ) ) :
         else
           return sprintf('<a href="%1$s" title="%2$s" rel="bookmark">%3$s</a>',
             get_permalink(),
-            sprintf( apply_filters( 'tc_post_link_title' , __( 'Permalink to %s' , 'customizr' ) ) , esc_attr( strip_tags( get_the_title() ) ) ),
+            sprintf( apply_filters( 'tc_post_link_title' , __( 'Permalink to %s' , 'customizr' ) ) , esc_attr( strip_tags( $_title ) ) ),
             is_null($_title) ? apply_filters( 'tc_no_title_post', __( '{no title} Read the post &raquo;' , 'customizr' ) )  : $_title
           );//end sprintf
       }
+
+
+
+
 
 
       /**
@@ -201,50 +192,24 @@ if ( ! class_exists( 'TC_headings' ) ) :
         if ( ! in_the_loop() )
           return $_title;
 
-        if ( ! apply_filters( 'tc_edit_in_title', $this -> tc_is_edit_enabled() ) )
+        //when are we displaying the edit link?
+        $edit_enabled                      = ( (is_user_logged_in()) && is_page() && current_user_can('edit_pages') ) ? true : false;
+        $edit_enabled                      = ( (is_user_logged_in()) && 0 !== get_the_ID() && current_user_can('edit_post' , get_the_ID() ) && ! is_page() ) ? true : $edit_enabled;
+        if ( ! apply_filters( 'tc_edit_in_title', $edit_enabled ) )
           return $_title;
 
-        return sprintf('%1$s %2$s',
+        return sprintf('%1$s <span class="edit-link btn btn-inverse btn-mini"><a class="post-edit-link" href="%2$s" title="%3$s">%3$s</a></span>',
           $_title,
-          $this -> tc_render_edit_link_view( $_echo = false )
-        );
-
-      }
-
-
-      /**
-      * Helper Boolean
-      * @return boolean
-      * @package Customizr
-      * @since Customizr 3.3+
-      */
-      public function tc_is_edit_enabled() {
-        //when are we displaying the edit link?
-        $edit_enabled = ( (is_user_logged_in()) && is_page() && current_user_can('edit_pages') ) ? true : false;
-        return ( (is_user_logged_in()) && 0 !== get_the_ID() && current_user_can('edit_post' , get_the_ID() ) && ! is_page() ) ? true : $edit_enabled;
-      }
-
-
-
-      /**
-      * Returns the edit link html string
-      * @return  string
-      * @package Customizr
-      * @since Customizr 3.3+
-      */
-      function tc_render_edit_link_view( $_echo = true ) {
-        $_view = sprintf('<span class="edit-link btn btn-inverse btn-mini"><a class="post-edit-link" href="%1$s" title="%2$s">%2$s</a></span>',
           get_edit_post_link(),
           __( 'Edit' , 'customizr' )
         );
-        if ( ! $_echo )
-          return $_view;
-        echo $_view;
+
       }
 
 
+
       /**
-      * hook tc_content_title_icon
+      * Filter tc_content_title_icon
       * @return  boolean
       *
       * @package Customizr
@@ -263,17 +228,18 @@ if ( ! class_exists( 'TC_headings' ) ) :
 
 
 
+
       /**
-      * hook tc_archive_icon
-      * @return string
+      * Filter tc_archive_icon
+      * @return  boolean
       *
       * @package Customizr
       * @since Customizr 3.2.0
       */
-      function tc_set_archive_icon( $_class ) {
-          $_class = ( 0 == esc_attr( TC_utils::$inst->tc_opt( 'tc_show_archive_title_icon' ) ) ) ? '' : $_class;
+      function tc_set_archive_icon( $_bool ) {
+          $_bool = ( 0 == esc_attr( TC_utils::$inst->tc_opt( 'tc_show_archive_title_icon' ) ) ) ? false : $_bool;
           //last condition
-          return 0 == esc_attr( TC_utils::$inst->tc_opt( 'tc_show_title_icon' ) ) ? '' : $_class;
+          return ( 0 == esc_attr( TC_utils::$inst->tc_opt( 'tc_show_title_icon' ) ) ) ? false : $_bool;
       }
 
 
@@ -281,7 +247,6 @@ if ( ! class_exists( 'TC_headings' ) ) :
 
       /**
       * Return 1) the archive title html content OR 2) the archive title class OR 3) the boolean
-      * hook : tc_display_customizr_headings
       * @return  boolean
       *
       * @package Customizr
@@ -290,7 +255,7 @@ if ( ! class_exists( 'TC_headings' ) ) :
       function tc_archive_title_and_class_callback( $_title = null, $_return_class = false ) {
         //declares variables to return
         $content          = false;
-        $_header_class    = false;
+        $_header_class     = array();
 
         //case page for posts but not on front
         global $wp_query;
@@ -298,9 +263,6 @@ if ( ! class_exists( 'TC_headings' ) ) :
           //get page for post ID
           $page_for_post_id = get_option('page_for_posts');
           $_header_class   = array('entry-header');
-          if ( $_return_class )
-            return $_header_class;
-
           $content        = sprintf('<%1$s class="entry-title %2$s">%3$s</%1$s>',
                 apply_filters( 'tc_content_title_tag' , 'h1' ),
                 apply_filters( 'tc_content_title_icon', 'format-icon' ),
@@ -311,11 +273,8 @@ if ( ! class_exists( 'TC_headings' ) ) :
 
 
         //404
-        else if ( is_404() ) {
+        if ( is_404() ) {
           $_header_class   = array('entry-header');
-          if ( $_return_class )
-            return $_header_class;
-
           $content        = sprintf('<h1 class="entry-title %1$s">%2$s</h1>',
                 apply_filters( 'tc_archive_icon', '' ),
                 apply_filters( 'tc_404_title' , __( 'Ooops, page not found' , 'customizr' ) )
@@ -324,11 +283,8 @@ if ( ! class_exists( 'TC_headings' ) ) :
         }
 
         //search results
-        else if ( is_search() && ! is_singular() ) {
+        if ( is_search() && !is_singular() ) {
           $_header_class   = array('search-header');
-          if ( $_return_class )
-            return $_header_class;
-
           $content        = sprintf( '<div class="row-fluid"><div class="%1$s"><h1 class="%2$s">%3$s%4$s %5$s </h1></div><div class="%6$s">%7$s</div></div>',
                 apply_filters( 'tc_search_result_header_title_class', 'span8' ),
                 apply_filters( 'tc_archive_icon', 'format-icon' ),
@@ -340,95 +296,80 @@ if ( ! class_exists( 'TC_headings' ) ) :
           );
           $content       = apply_filters( 'tc_search_results_header_content', $content );
         }
-        // all archives
-        else if ( is_archive() ){
+
+        //author's posts page
+        if ( ! is_singular() && is_author() ) {
+          //gets the user ID
+          $user_id = get_query_var( 'author' );
           $_header_class   = array('archive-header');
-          if ( $_return_class )
-            return $_header_class;
-
-          //author's posts page
-          if ( is_author() ) {
-            //gets the user ID
-            $user_id = get_query_var( 'author' );
-            $content    = sprintf( '<h1 class="%1$s">%2$s %3$s</h1>',
+          $content    = sprintf( '<h1 class="%1$s">%2$s %3$s</h1>',
                   apply_filters( 'tc_archive_icon', 'format-icon' ),
-                  apply_filters( 'tc_author_archive_title' , __( '' , 'customizr' ) ),
-                  '<span class="vcard">' . get_the_author_meta( 'display_name' , $user_id ) . '</span>'
+                  apply_filters( 'tc_author_archive_title' , __( 'Author Archives :' , 'customizr' ) ),
+                  '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( $user_id ) ) . '" title="' . esc_attr( get_the_author_meta( 'display_name' , $user_id ) ) . '" rel="me">' . get_the_author_meta( 'display_name' , $user_id ) . '</a></span>'
+          );
+          if ( apply_filters ( 'tc_show_author_meta' , get_the_author_meta( 'description', $user_id  ) ) ) {
+            $content    .= sprintf('%1$s<div class="author-info"><div class="%2$s">%3$s</div></div>',
+
+              apply_filters( 'tc_author_meta_separator', '<hr class="featurette-divider '.current_filter().'">' ),
+
+              apply_filters( 'tc_author_meta_wrapper_class', 'row-fluid' ),
+
+              sprintf('<div class="%1$s">%2$s</div><div class="%3$s"><h2>%4$s</h2><p>%5$s</p></div>',
+                  apply_filters( 'tc_author_meta_avatar_class', 'comment-avatar author-avatar span2'),
+                  get_avatar( get_the_author_meta( 'user_email', $user_id ), apply_filters( 'tc_author_bio_avatar_size' , 100 ) ),
+                  apply_filters( 'tc_author_meta_content_class', 'author-description span10' ),
+                  sprintf( __( 'About %s' , 'customizr' ), get_the_author() ),
+                  get_the_author_meta( 'description' , $user_id  )
+              )
             );
-            if ( apply_filters ( 'tc_show_author_meta' , get_the_author_meta( 'description', $user_id  ) ) ) {
-              $content    .= sprintf('%1$s<div class="author-info"><div class="%2$s">%3$s</div></div>',
-
-                  apply_filters( 'tc_author_meta_separator', '<hr class="featurette-divider '.current_filter().'">' ),
-
-                  apply_filters( 'tc_author_meta_wrapper_class', 'row-fluid' ),
-
-                  sprintf('<div class="%1$s">%2$s</div><div class="%3$s"><h2>%4$s</h2><p>%5$s</p></div>',
-                      apply_filters( 'tc_author_meta_avatar_class', 'comment-avatar author-avatar span2'),
-                      get_avatar( get_the_author_meta( 'user_email', $user_id ), apply_filters( 'tc_author_bio_avatar_size' , 100 ) ),
-                      apply_filters( 'tc_author_meta_content_class', 'author-description span10' ),
-                      sprintf( __( 'About %s' , 'customizr' ), get_the_author() ),
-                      get_the_author_meta( 'description' , $user_id  )
-                  )
-              );
-            }
-            $content       = apply_filters( 'tc_author_header_content', $content );
           }
+          $content       = apply_filters( 'tc_author_header_content', $content );
+        }
 
-          //category archives
-          else if ( is_category() ) {
-            $content    = sprintf( '<h1 class="%1$s">%2$s %3$s</h1>',
+        //category archives
+        if ( !is_singular() && is_category() ) {
+          $_header_class   = array('archive-header');
+          $content    = sprintf( '<h1 class="%1$s">%2$s %3$s</h1>',
                 apply_filters( 'tc_archive_icon', 'format-icon' ),
-                apply_filters( 'tc_category_archive_title' , __( '' , 'customizr' ) ),
+                apply_filters( 'tc_category_archive_title' , __( 'Category Archives :' , 'customizr' ) ),
                 '<span>' . single_cat_title( '' , false ) . '</span>'
+          );
+          if ( apply_filters ( 'tc_show_cat_description' , category_description() ) ) {
+            $content    .= sprintf('<div class="archive-meta">%1$s</div>',
+              category_description()
             );
-            if ( apply_filters ( 'tc_show_cat_description' , category_description() ) ) {
-              $content    .= sprintf('<div class="archive-meta">%1$s</div>',
-                category_description()
-              );
-            }
-            $content       = apply_filters( 'tc_category_archive_header_content', $content );
           }
+          $content       = apply_filters( 'tc_category_archive_header_content', $content );
+        }
 
-          //tag archives
-          else if ( is_tag() ) {
-            $content    = sprintf( '<h1 class="%1$s">%2$s %3$s</h1>',
+        //tag archives
+        if ( ! is_singular() && is_tag() ) {
+          $_header_class   = array('archive-header');
+          $content    = sprintf( '<h1 class="%1$s">%2$s %3$s</h1>',
                 apply_filters( 'tc_archive_icon', 'format-icon' ),
-                apply_filters( 'tc_tag_archive_title' , __( '' , 'customizr' ) ),
+                apply_filters( 'tag_archive_title' , __( 'Tag Archives :' , 'customizr' ) ),
                 '<span>' . single_tag_title( '' , false ) . '</span>'
+          );
+          if ( apply_filters ( 'tc_show_tag_description' , tag_description() ) ) {
+            $content    .= sprintf('<div class="archive-meta">%1$s</div>',
+              tag_description()
             );
-            if ( apply_filters ( 'tc_show_tag_description' , tag_description() ) ) {
-              $content    .= sprintf('<div class="archive-meta">%1$s</div>',
-                tag_description()
-              );
-            }
-            $content       = apply_filters( 'tc_tag_archive_header_content', $content );
-          }
+                              }
+          $content       = apply_filters( 'tc_tag_archive_header_content', $content );
+        }
 
-          //time archives
-          else if ( is_day() || is_month() || is_year() ) {
-            $archive_type   = is_day() ? sprintf( __( 'Daily Archives: %s' , 'customizr' ), '<span>' . get_the_date() . '</span>' ) : __( 'Archives' , 'customizr' );
-            $archive_type   = is_month() ? sprintf( __( 'Monthly Archives: %s' , 'customizr' ), '<span>' . get_the_date( _x( 'F Y' , 'monthly archives date format' , 'customizr' ) ) . '</span>' ) : $archive_type;
-            $archive_type   = is_year() ? sprintf( __( 'Yearly Archives: %s' , 'customizr' ), '<span>' . get_the_date( _x( 'Y' , 'yearly archives date format' , 'customizr' ) ) . '</span>' ) : $archive_type;
-            $content        = sprintf('<h1 class="%1$s">%2$s</h1>',
-              apply_filters( 'tc_archive_icon', 'format-icon' ),
-              $archive_type
-            );
-            $content        = apply_filters( 'tc_time_archive_header_content', $content );
-          }
-          // all other archivers ( such as custom tax archives )
-          else if ( apply_filters('tc_show_tax_archive_title', true) ){
-            $content   = sprintf('<h1 class="%1$s">%2$s</h1>',
-                apply_filters( 'tc_archive_icon', 'format-icon' ), /* handle tax icon? */
-                apply_filters( 'tc_tax_archive_title',	get_the_archive_title() )
-            );
-            $tax_description = get_the_archive_description();
-            if ( apply_filters( 'tc_show_tax_description', $tax_description ) )
-              $content   .=  sprintf('<div class="archive-meta">%1$s</div>',
-                $tax_description
-              );
-            $content        = apply_filters( 'tc_tax_archive_header_content', $content );
-          }
-        }// end all archives
+        //time archives
+        if ( ! is_singular() && ( is_day() || is_month() || is_year() ) ) {
+          $archive_type   = is_day() ? sprintf( __( 'Daily Archives: %s' , 'customizr' ), '<span>' . get_the_date() . '</span>' ) : __( 'Archives' , 'customizr' );
+          $archive_type   = is_month() ? sprintf( __( 'Monthly Archives: %s' , 'customizr' ), '<span>' . get_the_date( _x( 'F Y' , 'monthly archives date format' , 'customizr' ) ) . '</span>' ) : $archive_type;
+          $archive_type   = is_year() ? sprintf( __( 'Yearly Archives: %s' , 'customizr' ), '<span>' . get_the_date( _x( 'Y' , 'yearly archives date format' , 'customizr' ) ) . '</span>' ) : $archive_type;
+          $_header_class   = array('archive-header');
+          $content        = sprintf('<h1 class="%1$s">%2$s</h1>',
+            apply_filters( 'tc_archive_icon', 'format-icon' ),
+            $archive_type
+          );
+          $content        = apply_filters( 'tc_time_archive_header_content', $content );
+        }
 
         return $_return_class ? $_header_class : $content;
 
@@ -438,7 +379,7 @@ if ( ! class_exists( 'TC_headings' ) ) :
       /**
       * @return void
       * set up user defined options
-      * callback of template_redirect
+      * callback of wp
       *
       * @package Customizr
       * @since Customizr 3.2.6
@@ -456,7 +397,6 @@ if ( ! class_exists( 'TC_headings' ) ) :
 
       /**
       * Callback of the tc_the_title => add an updated status
-      * @return string
       * User option based
       *
       * @package Customizr
@@ -495,34 +435,6 @@ if ( ! class_exists( 'TC_headings' ) ) :
                   esc_attr( TC_utils::$inst->tc_opt( 'tc_post_metas_update_notice_format' ) )
               )
           );
-      }
-
-
-      /**
-      * hooks : 'tc_category_archive_title', 'tc_tag_archive_title', 'tc_search_results_title', 'tc_author_archive_title'
-      * @param default title string
-      * @return string of user defined title
-      * @since Customizr 3.3+
-      */
-      function tc_set_archive_custom_title( $_title ) {
-        switch ( current_filter() ) {
-          case 'tc_category_archive_title' :
-            return esc_attr( TC_utils::$inst->tc_opt( 'tc_cat_title' ) );
-          break;
-
-          case 'tc_tag_archive_title' :
-            return esc_attr( TC_utils::$inst->tc_opt( 'tc_tag_title' ) );
-          break;
-
-          case 'tc_search_results_title' :
-            return esc_attr( TC_utils::$inst->tc_opt( 'tc_search_title' ) );
-          break;
-
-          case 'tc_author_archive_title' :
-            return esc_attr( TC_utils::$inst->tc_opt( 'tc_author_title' ) );
-          break;
-        }
-        return $_title;
       }
 
   }//end of class
