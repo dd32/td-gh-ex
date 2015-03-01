@@ -98,6 +98,11 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.6.2
+- New:     Page title is now output using add_theme_support( 'title-tag' ) to ensure compliance with WordPress 4.1.1 guidelines.
+- New:     Add WooCommerce compatibility to allow users to customize WooCommerce from theme folder.
+- Updated: Functions that are used to add additional image sizes are now child theme compatible allowing feature to be overwritten from child theme.
+
 Version 1.6.1
 - New:     three-columns tag added to style.css given the 3 column layout of the homepage feauted content section.
 - Fixed:   Function thinkup_input_wptitle() removed as it causes issues with page title when posts are assigned to homepage.
