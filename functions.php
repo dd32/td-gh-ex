@@ -74,14 +74,12 @@ if( !function_exists('swelllite_enqueue_scripts') ) {
 		wp_enqueue_style( 'swell-style', get_stylesheet_uri() );
 		wp_enqueue_style( 'swell-style-mobile', get_template_directory_uri() . '/css/style-mobile.css', array( 'swell-style' ), '1.0' );
 		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.css', array( 'swell-style' ), '1.0' );
-		
-		// Resgister Scripts
-		wp_register_script( 'swell-fitvids', get_template_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), '20130729' );
-		wp_register_script( 'swell-hover', get_template_directory_uri() . '/js/hoverIntent.js', array( 'jquery' ), '20130729' );
-		wp_register_script( 'swell-superfish', get_template_directory_uri() . '/js/superfish.js', array( 'jquery', 'swell-hover' ), '20130729' );
 	
 		// Enqueue Scripts
 		wp_enqueue_script( 'swell-html5shiv', get_template_directory_uri() . '/js/html5shiv.js' );
+		wp_enqueue_script( 'swell-fitvids', get_template_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), '20130729' );
+		wp_enqueue_script( 'swell-hover', get_template_directory_uri() . '/js/hoverIntent.js', array( 'jquery' ), '20130729' );
+		wp_enqueue_script( 'swell-superfish', get_template_directory_uri() . '/js/superfish.js', array( 'jquery', 'swell-hover' ), '20130729' );
 		wp_enqueue_script( 'swell-custom', get_template_directory_uri() . '/js/jquery.custom.js', array( 'jquery', 'swell-superfish', 'swell-fitvids' ), '20130729', true );
 		wp_enqueue_script( 'swell-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20130729', true );
 		

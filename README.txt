@@ -1,10 +1,11 @@
-Swell Lite v1.0.5
+Swell Lite v1.0.6
 http://www.swelltheme.com
 
 Image Credits
 
 - logo.png: Created by David Morgan, http://dav.idmorgan.com. Licensed under the GPLv2 license.
 - logo.psd: Created by David Morgan, http://dav.idmorgan.com. Licensed under the GPLv2 license.
+- screenshot.png: Created by David Morgan, http://dav.idmorgan.com. Licensed under the GPLv2 license.
 
 Font Awesome
 
@@ -42,3 +43,8 @@ CHANGELOG v1.0.4:
 
 CHANGELOG v1.0.5:
 - Updated author and link
+
+CHANGELOG v1.0.5:
+- Changed register scripts to enqueue
+- Renamed language file
+- Included screenshot.png in GPL licenses
