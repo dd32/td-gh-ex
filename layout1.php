@@ -5,8 +5,8 @@
 <?php if ( is_home() ) { ?>
     <div class="homeposts_title">
 	<?php if (get_option( 'asteria' )) { ?><?php echo do_shortcode($asteria['posts_title_id']); ?><?php }else{?> 
-	<h2 style="text-align: center;"><span style="color: #e2341d;">Check Out Our Portfolio</span></h2>
-	<p style="text-align: center;">The Very recent work for our clients</p>
+	<h2 style="text-align: center;"><span style="color: #e2341d;"><?php _e('Check Out Our Portfolio', 'asteria'); ?></span></h2>
+	<p style="text-align: center;"><?php _e('The Very recent work for our clients', 'asteria'); ?></p>
 	<?php } ?>
     </div>
 <?php }?>
@@ -51,22 +51,7 @@
 
 
 <!--PAGINATION START-->
-<div class="ast_pagenav">
-	<?php
-        global $wp_query;
-        $big = 999999999; // need an unlikely integer
-            echo paginate_links( array(
-                'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-                'format' => '?paged=%#%',
-                'current' => max( 1, get_query_var('paged') ),
-                'total' => $wp_query->max_num_pages,
-                'show_all'     => true,
-                'prev_next'    => false,
-				'add_args' => false
-            
-            ) );
-    ?>
-</div>
+<div class="ast_pagenav"><?php asteria_pagination(); ?></div>
 <!--PAGINATION END-->
 
 <?php wp_reset_query(); ?>

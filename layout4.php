@@ -53,23 +53,9 @@
 
             <?php endif ?>
 </div>
+
 <!--PAGINATION START-->
-<div class="ast_pagenav">
-	<?php
-        global $wp_query;
-        $big = 999999999; // need an unlikely integer
-            echo paginate_links( array(
-                'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-                'format' => '?paged=%#%',
-                'current' => max( 1, get_query_var('paged') ),
-                'total' => $wp_query->max_num_pages,
-                'show_all'     => true,
-                'prev_next'    => false,
-				'add_args' => false
-            
-            ) );
-    ?>
-</div>
+<div class="ast_pagenav"><?php asteria_pagination(); ?></div>
 <!--PAGINATION END-->
 
 <?php wp_reset_query(); ?>

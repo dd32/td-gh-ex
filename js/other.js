@@ -191,7 +191,8 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
 
 /*
  * Jquery Count Down Widget
- http://webdesign.tutsplus.com/tutorials/complete-websites/adding-a-jquery-countdown-plugin-to-our-coming-soon-page/
+ Based On: http://webdesign.tutsplus.com/tutorials/complete-websites/adding-a-jquery-countdown-plugin-to-our-coming-soon-page/
+ licensed under the MIT license.
  */
 
 (function($) {
