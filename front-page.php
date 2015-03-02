@@ -14,7 +14,7 @@ get_header(); ?>
         <?php if( of_get_option('ares_cta_header_one') ) : ?>
         <div class="center relative" id="main-heading">
             <div class="row">
-                <h3 id=""><span><?php echo esc_attr( of_get_option('ares_cta_header_one', 'Tyros: A highly customizable modern online store') );?></span></h3>
+                <h3 id="" class="animated fadeInLeft"><span><?php echo esc_attr( of_get_option('ares_cta_header_one', 'Tyros: A highly customizable modern online store') );?></span></h3>
             </div>
         </div>
         <?php endif; ?>        
@@ -22,7 +22,7 @@ get_header(); ?>
         <?php if( of_get_option('ares_cta_header_two') ) : ?>
         <div class="center relative" id="secondary-heading">
             <div class="row">
-                <h3 id=""><span><?php echo esc_attr( of_get_option('ares_cta_header_two', 'Tyros: A highly customizable modern online store') );?></span></h3>
+                <h3 id="" class="animated fadeInRight"><span><?php echo esc_attr( of_get_option('ares_cta_header_two', 'Tyros: A highly customizable modern online store') );?></span></h3>
             </div>
         </div>
         <?php endif; ?>        

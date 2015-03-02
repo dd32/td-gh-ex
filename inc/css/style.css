@@ -105,13 +105,13 @@ a.button-primary{
     color: #666;
 }
 #site-toolbar .social-bar a{
-    width: 31px;
-    height: 31px;
+    width: 25px;
+    height: 25px;
     margin: 7px 5px;
-    font-size: 16px;
+    font-size: 12px;
     display: inline-block;
     text-align: center;
-    line-height: 31px;
+    line-height: 25px;
     border: 1px solid #e0e0e0;
     color: #e0e0e0;
     border-radius: 100%;
@@ -288,10 +288,10 @@ a.button-primary{
 .sc-slider-wrapper .camera_caption > div span{
     display: inline-block;
     padding: 7px 40px;
-    background: rgba(240, 240, 240, 0.2);
     text-shadow: 1px 1px #000;
     -webkit-text-shadow: 1px 1px #000;
     -moz-text-shadow: 1px 1px #000;
+    font-size: 60px;
 }
 .sc-slider-wrapper .cameraContent{
 
@@ -565,7 +565,6 @@ article.sidebar-off{
 }
 .site-footer .site-info{
     background: #0D0D0D;
-    border-top: 2px solid rgb(230,230,230);
 }
 .site-footer .footer-boxes{
     margin-top: 15px;
@@ -948,6 +947,9 @@ ul.social-icons li a:hover{
     .site-branding .search-bar{
         display: none;
     }     
+    .sc-slider-wrapper .camera_caption > div span{
+        font-size: 32px;
+    }
 }
 @media ( min-width: 601px ) and ( max-width: 800px ){
     

@@ -8,6 +8,7 @@ function ares_scripts() {
     wp_enqueue_style('bootstrap', get_template_directory_uri() . '/inc/css/bootstrap.css', array(), ARES_VERSION);
     wp_enqueue_style('fontawesome', get_template_directory_uri() . '/inc/css/font-awesome.min.css', array(), ARES_VERSION);
     wp_enqueue_style('ares-main-style', get_template_directory_uri() . '/inc/css/style.css', array(), ARES_VERSION);
+    wp_enqueue_style('ares-animations', get_template_directory_uri() . '/inc/css/animate.css', array(), ARES_VERSION);
     
     if('Source Sans Pro, sans-serif' == of_get_option('ares_font_family')) 
         wp_enqueue_style('ares-font-sans', '//fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600', array(), ARES_VERSION);
@@ -262,7 +263,7 @@ function ares_ctas() { ?>
         
         <div class="col-md-4 site-cta">
             <div class="center">
-                <i class="<?php echo esc_attr( of_get_option('ares_cta1_icon', 'fa fa-desktop') ); ?>"></i>
+                <i class="<?php echo esc_attr( of_get_option('ares_cta1_icon', 'fa fa-desktop') ); ?> animated"></i>
             </div>
                 
             <h3><?php echo esc_attr( of_get_option('ares_cta1_title', 'Box 1 Title') ); ?></h3>
@@ -332,27 +333,27 @@ function ares_toolbar() {
                     <div class="col-xs-6 social-bar">
 
                         <?php if ('' != of_get_option('ares_facebook_url')) : ?>
-                            <a href="<?php echo esc_attr( of_get_option('ares_facebook_url') ) ?>" target="_blank" class="icon-facebook">
+                            <a href="<?php echo esc_attr( of_get_option('ares_facebook_url') ) ?>" target="_blank" class="icon-facebook animated fadeInDown">
                                 <i class="fa fa-facebook"></i>
                             </a>
                         <?php endif; ?>
 
                         <?php if ('' != of_get_option('ares_twitter_url')) : ?>
-                        <a href="<?php echo esc_attr( of_get_option('ares_twitter_url') ) ?>" target="_blank" class="icon-twitter">
+                        <a href="<?php echo esc_attr( of_get_option('ares_twitter_url') ) ?>" target="_blank" class="icon-twitter animated fadeInDown">
                                 <i class="fa fa-twitter"></i>                            
                             </a>
                         <?php endif; ?>
 
 
                         <?php if ('' != of_get_option('ares_linkedin_url')) : ?>
-                            <a href="<?php echo esc_attr( of_get_option('ares_linkedin_url') ) ?>" target="_blank" class="icon-linkedin">
+                            <a href="<?php echo esc_attr( of_get_option('ares_linkedin_url') ) ?>" target="_blank" class="icon-linkedin animated fadeInDown">
                                 <i class="fa fa-linkedin"></i>                            
                             </a>
                         <?php endif; ?>
 
 
                         <?php if ('' != of_get_option('ares_gplus_url')) : ?>
-                            <a href="<?php echo esc_attr( of_get_option('ares_gplus_url') ) ?>" target="_blank" class="icon-gplus">
+                            <a href="<?php echo esc_attr( of_get_option('ares_gplus_url') ) ?>" target="_blank" class="icon-gplus animated fadeInDown">
                                 <i class="fa fa-google-plus"></i>                            
                             </a>
                         <?php endif; ?>

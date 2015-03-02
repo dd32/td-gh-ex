@@ -11,7 +11,7 @@ if (!function_exists('ares_setup')) :
             $content_width = 1060;
         }
 
-        define('ARES_VERSION', '1.42');
+        define('ARES_VERSION', '1.43');
         load_theme_textdomain('ares', get_template_directory() . '/languages');
 
         // Add default posts and comments RSS feed links to head.
@@ -99,4 +99,5 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 define('OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/');
 require_once dirname(__FILE__) . '/inc/options-framework.php';
+require_once dirname(__FILE__) . '/inc/engine/tgm.php';
 require_once dirname(__FILE__) . '/inc/engine/avenue.php';

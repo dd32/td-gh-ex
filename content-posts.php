@@ -22,7 +22,7 @@
             <?php the_excerpt(); ?>
         </div>
         <div class="text-right">
-            <a class="btn btn-default btn-primary" href="<?php the_permalink(); ?>">Read More</a>
+            <a class="button button-primary" href="<?php the_permalink(); ?>">Read More</a>
         </div>                        
     </div>
 </div>

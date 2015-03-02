@@ -5,7 +5,19 @@
  */
 jQuery(document).ready(function($) {
     //--Match CTA Boxes height
+    
+    
     matchColHeights('.site-cta');
+    
+    $('.site-cta').css({visibility:'hidden'});
+    
+    $(window).scroll(function(){
+        if( $('.site-cta').scrollTop() <= $(window).height() ){
+            $('.site-cta').css({visibility:'visible'}).addClass('animated fadeInUp');
+        }
+    });    
+    
+    
     
     $('.site-cta').hover( function() {
         $('.fa', this).addClass('hover');
