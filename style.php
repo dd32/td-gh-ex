@@ -1,4 +1,3 @@
-
 <?php function asteria_dynamic_css() { ?>
 <?php global $asteria;?>
 <style type="text/css">
