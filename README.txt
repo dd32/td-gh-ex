@@ -1,5 +1,6 @@
-Swell Lite v1.0.6
+Swell Lite v1.0.7
 http://www.swelltheme.com
+http://organicthemes.com
 
 Image Credits
 
@@ -44,7 +45,10 @@ CHANGELOG v1.0.4:
 CHANGELOG v1.0.5:
 - Updated author and link
 
-CHANGELOG v1.0.5:
+CHANGELOG v1.0.6:
 - Changed register scripts to enqueue
 - Renamed language file
 - Included screenshot.png in GPL licenses
+
+CHANGELOG v1.0.7:
+- Updated style tags, theme description and screenshot
