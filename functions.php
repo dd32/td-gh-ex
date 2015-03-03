@@ -71,6 +71,8 @@ add_action( 'widgets_init', 'silverquantum_widgets_init' );
 
 // Scripts
 function silverquantum_scripts_styles() {
+	wp_enqueue_style('silverquantum-style', get_stylesheet_uri());	
+	
 	if (is_singular() && comments_open() && get_option( 'thread_comments' ))
 		wp_enqueue_script( 'comment-reply' );
 }

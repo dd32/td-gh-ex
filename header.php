@@ -3,7 +3,6 @@
     <head>
         <meta charset = "<?php bloginfo( 'charset' ); ?>" />
         <link href = "http://gmpg.org/xfn/11" rel = "profile" />
-        <link href = "<?php echo get_stylesheet_uri(); ?>" rel = "stylesheet" type = "text/css" media = "screen" />
         <link href = "<?php bloginfo( 'pingback_url' ); ?>" rel = "pingback" />
         <?php wp_head(); ?>
     </head>
