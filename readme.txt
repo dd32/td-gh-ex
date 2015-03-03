@@ -36,6 +36,11 @@ Custom Css:
 
 == Change log ==
 
+= 1.5 =
+* Updated Option Framework
+* Added Title tag support
+* Fix and updated minors issue
+
 = 1.4.4 =
 * Option Framework updated
 * Fixed comment security issue

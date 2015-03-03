@@ -1,19 +1,10 @@
 <?php
 /**
  * A unique identifier is defined to store the options in the database and reference them from the theme.
- * By default it uses the theme name, in lowercase and without spaces, but this can be changed if needed.
- * If the identifier changes, it'll appear as if the options have been reset.
  */
-
 function optionsframework_option_name() {
-
-	// This gets the theme name from the stylesheet
-	$themename = wp_get_theme();
-	$themename = preg_replace("/\W/", "_", strtolower($themename) );
-
-	$optionsframework_settings = get_option( 'optionsframework' );
-	$optionsframework_settings['id'] = $themename;
-	update_option( 'optionsframework', $optionsframework_settings );
+	// Change this to use your theme slug
+	return 'promax';
 }
 
 /**
@@ -503,10 +494,11 @@ $options[] = array(
 						'off' => 'Hide'
 						));
 		$options[] = array(
-            'desc' => __('Paste Ad code for single post it show ads below post title and before content.','promax'),
+            'desc' => __('Footer Copyright Text change.','promax'),
             'id' => 'promax_ftarea',
             'std' => esc_attr__( 'Copyright  &#169; 2013 Theme by: ', 'promax' ) . '<a href="' . esc_url(__('http://www.insertcart.com/promax','promax')) . '" title="' . esc_attr__( 'wRock.Org', 'promax' ) . '">' . esc_attr__( 'wRock.Org', 'promax' ) . '</a>',
-            'type' => 'textarea');
+             'type' => 'editor',
+			'settings' => $wp_editor_settings);
 
 		
 		
