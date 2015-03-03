@@ -33,7 +33,7 @@
 			<?php get_search_form(); ?>
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<h1 class="menu-toggle"></h1>
+				<h4 class="menu-toggle"></h4>
 				<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'radiate' ); ?></a>
 
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>

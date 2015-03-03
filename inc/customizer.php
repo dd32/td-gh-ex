@@ -32,7 +32,7 @@ add_action( 'customize_preview_init', 'radiate_customize_preview_js' );
 function radiate_register_theme_customizer( $wp_customize ) {
 	// remove control
 	$wp_customize->remove_control('blogdescription');
-	 
+
 	// rename existing section
 	$wp_customize->add_section( 'title_tagline' , array(
 		'title' => __('Site Title', 'radiate' ),
@@ -56,8 +56,9 @@ function radiate_register_theme_customizer( $wp_customize ) {
 		'radiate_color_scheme',
 			array(
 				'default'     	=> '#632E9B',
+            'capability' => 'edit_theme_options',
 				'sanitize_callback' => 'radiate_sanitize_hex_color',
-				'sanitize_js_callback' => 'radiate_sanitize_escaping'	
+				'sanitize_js_callback' => 'radiate_sanitize_escaping'
 			)
 	);
 
@@ -85,16 +86,17 @@ function radiate_register_theme_customizer( $wp_customize ) {
 		'radiate_custom_css',
 		array(
 		'default'    =>  '',
-		'sanitize_callback' => 'radiate_sanitize_custom_css',
-		'sanitize_js_callback' => 'radiate_sanitize_escaping'
+      'capability' => 'edit_theme_options',
+      'sanitize_callback' => 'wp_filter_nohtml_kses',
+      'sanitize_js_callback' => 'wp_filter_nohtml_kses'
 		)
 	);
 
 	$wp_customize->add_control(
 		new RADIATE_ADDITIONAL_Control (
 			$wp_customize,
-			'radiate_custom_css',			
-			array(				
+			'radiate_custom_css',
+			array(
 				'label'    	=> __( 'Add your custom css here and design live! (for advanced users)' , 'radiate' ),
 				'section'   => 'radiate_custom_css_section',
 				'settings'  => 'radiate_custom_css'
@@ -113,18 +115,21 @@ function radiate_register_theme_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'page-setting-one',
 		array(
+         'capability' => 'edit_theme_options',
 			'sanitize_callback' => 'radiate_sanitize_integer'
 		)
 	);
 	$wp_customize->add_setting(
 		'page-setting-two',
 		array(
+         'capability' => 'edit_theme_options',
 			'sanitize_callback' => 'radiate_sanitize_integer'
 		)
 	);
 	$wp_customize->add_setting(
 		'page-setting-three',
 		array(
+         'capability' => 'edit_theme_options',
 			'sanitize_callback' => 'radiate_sanitize_integer'
 		)
 	);
@@ -161,11 +166,6 @@ function radiate_register_theme_customizer( $wp_customize ) {
 
 		return $color;
 	}
-
-	function radiate_sanitize_custom_css( $input) {
-		$input = wp_kses_stripslashes( $input);
-		return $input;
-	}	
 
 	function radiate_sanitize_integer( $input ) {
     	if( is_numeric( $input ) ) {
@@ -216,4 +216,21 @@ function radiate_customizer_css() {
 	<?php
 }
 add_action( 'wp_head', 'radiate_customizer_css' );
+
+/*****************************************************************************************/
+
+/**
+ * Enqueue scripts for customizer
+ */
+function radiate_customizer_js() {
+   wp_enqueue_script( 'radiate_customizer_script', get_template_directory_uri() . '/js/radiate_customizer.js', array("jquery"), 'false', true  );
+
+   wp_localize_script( 'radiate_customizer_script', 'radiate_customizer_obj', array(
+
+      'info' => __( 'Theme Info', 'radiate' ),
+      'pro' => __('View PRO version','radiate')
+
+   ) );
+}
+add_action( 'customize_controls_enqueue_scripts', 'radiate_customizer_js' );
 ?>

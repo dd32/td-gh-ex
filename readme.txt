@@ -64,6 +64,12 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.1.4 =
+* Custom CSS option sanitized using wp_filter_nohtml_kses().
+* Some theme useful links added in customizer panel.
+* Responsive menu h1 tag changed to h4.
+* edit_theme_options capability added for custom options in customizer.
+
 = Version 1.1.3 =
 * Posts now display featured image (768 X 350 pixels) in archive view.
 * add_theme_support('title_tag') added as per WordPress 4.1
