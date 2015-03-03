@@ -73,6 +73,9 @@ add_action( 'widgets_init', 'silverquantum_widgets_init' );
 function silverquantum_scripts_styles() {
 	wp_enqueue_style('silverquantum-style', get_stylesheet_uri());	
 	
+	/* Google API for Ubuntu Font */
+	wp_enqueue_style('silverquantum-font-google', 'http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic');
+	
 	if (is_singular() && comments_open() && get_option( 'thread_comments' ))
 		wp_enqueue_script( 'comment-reply' );
 }
