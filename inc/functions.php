@@ -46,7 +46,7 @@ function accelerate_scripts_styles_method() {
 	wp_enqueue_script( 'accelerate-navigation', ACCELERATE_JS_URL . '/navigation.js', array( 'jquery' ), false, true );
 	wp_enqueue_script( 'accelerate-custom', ACCELERATE_JS_URL. '/accelerate-custom.js', array( 'jquery' ) );
 
-	wp_enqueue_style( 'accelerate-fontawesome', get_template_directory_uri().'/fontawesome/css/font-awesome.css', array(), '4.2.1' );
+	wp_enqueue_style( 'accelerate-fontawesome', get_template_directory_uri().'/fontawesome/css/font-awesome.css', array(), '4.3.0' );
 
    $accelerate_user_agent = strtolower($_SERVER['HTTP_USER_AGENT']);
 	if(preg_match('/(?i)msie [1-8]/',$accelerate_user_agent)) {
@@ -490,4 +490,25 @@ function accelerate_footer_copyright() {
 }
 endif;
 
+/**************************************************************************************/
+add_action('admin_init','accelerate_textarea_sanitization_change', 100);
+/**
+ * Override the default textarea sanitization.
+ */
+function accelerate_textarea_sanitization_change() {
+   remove_filter( 'of_sanitize_textarea', 'of_sanitize_textarea' );
+   add_filter( 'of_sanitize_textarea', 'accelerate_sanitize_textarea_custom',10,2 );
+}
+
+/**
+ * sanitize the input for custom css
+ */
+function accelerate_sanitize_textarea_custom( $input,$option ) {
+   if( $option['id'] == "accelerate_custom_css" ) {
+      $output = wp_filter_nohtml_kses( $input );
+   } else {
+      $output = $input;
+   }
+   return $output;
+}
 ?>

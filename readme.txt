@@ -50,6 +50,11 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.1.4 =
+* Fontawesome icons updated to 4.3.0
+* Custom CSS option sanitized using wp_filter_nohtml_kses().
+* Styling adjustment for link inside blockquote tag.
+
 = Version 1.1.3 =
 * Options framework updated to 1.9.1
 * missed textdomain changed
