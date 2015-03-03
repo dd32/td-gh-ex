@@ -46,6 +46,12 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.2.4 =
+* Custom CSS option sanitized using wp_filter_nohtml_kses().
+* Adding the support for the entry-title tag for Google Rich Snippets in single post view.
+* Business sidebars widget title tag changed to h3 from h1.
+* CSS adjustment for TG: Services widget for better responsiveness.
+
 = Version 1.2.3 =
 * Greek language file added. Thanks to Mr. Yury Kherimyan for providing the language files.
 
