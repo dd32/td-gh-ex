@@ -30,6 +30,12 @@ Custom Css:
 
 == Change log ==
 
+= 1.6 =
+* Updated Option Framework
+* Added Title Tag
+* Fixed other minor issue
+
+
 = 1.5.3 =
 * Fixed minor bugs
 * Credit link change

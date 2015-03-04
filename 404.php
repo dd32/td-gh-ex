@@ -11,7 +11,7 @@
 						<div class="entry">
 							<p><?php _e('Sorry, but the page you are trying to reach is unavailable or does not exist.', 'optimize'); ?></p>
 							<h3><?php _e('You may interested with this', 'optimize'); ?></h3>
-							<?php load_template (get_template_directory() . '/includes/random-posts.php'); ?>
+							<?php get_template_part('/includes/random-posts'); ?>
 						</div>
 					</div><!-- end div .post -->
 				</div><!-- end div #content -->

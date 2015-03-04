@@ -1,5 +1,7 @@
-<?php get_header(); ?><!-- BEGIN PAGE -->	<div id="page">	<div id="page-inner" class="clearfix">		<?php get_template_part('/includes/banner-top'); ?>
-		<div id="content">
+<?php get_header(); ?><!-- BEGIN PAGE -->
+<div id="page">	<div id="page-inner" class="clearfix">	
+<?php get_template_part('/includes/banner-top'); ?>
+	<div id="content">
 <?php if(have_posts()) : ?>
 <?php while(have_posts())  : the_post(); ?>
 

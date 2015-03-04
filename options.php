@@ -1,19 +1,10 @@
 <?php
 /**
  * A unique identifier is defined to store the options in the database and reference them from the theme.
- * By default it uses the theme name, in lowercase and without spaces, but this can be changed if needed.
- * If the identifier changes, it'll appear as if the options have been reset.
  */
-
 function optionsframework_option_name() {
-
-	// This gets the theme name from the stylesheet
-	$themename = wp_get_theme();
-	$themename = preg_replace("/\W/", "_", strtolower($themename) );
-
-	$optionsframework_settings = get_option( 'optionsframework' );
-	$optionsframework_settings['id'] = $themename;
-	update_option( 'optionsframework', $optionsframework_settings );
+	// Change this to use your theme slug
+	return 'optimize';
 }
 
 /**
@@ -163,19 +154,25 @@ $options[] = array(
 		'desc' => __('Paste Ad Code for top banner.', 'optimize'),
             'id' => 'optimize_ad1',
             'std' => '',
-            'type' => 'textarea');
+            'type' => 'editor',
+			'settings' => $wp_editor_settings= array(
+		'wpautop' => true, // Default
+		'textarea_rows' => 5)
+	);
 	$options[] = array(
 		'name' => __('Paste Ads code below navigation', 'optimize'),
 		'desc' => __('Activate Ads Space Below Navigation and put code in below test field.', 'optimize'),
 		'id' => 'optimize_banner_top',
 		'std' => '',
-		'type' => 'textarea');
+		'type' => 'editor',
+		'settings' => $wp_editor_settings);
 	$options[] = array(
 		 'name' => __( 'AD Code For Single Post', 'optimize' ),
             'desc' => __('Paste Ad code for single post it show ads below post title and before content.','optimize'),
             'id' => 'optimize_ad2',
             'std' => '',
-            'type' => 'textarea');
+            'type' => 'editor',
+			'settings' => $wp_editor_settings);
    	
 		
 $options[] = array(
@@ -304,7 +301,7 @@ $options[] = array(
 						));
 				
 		$options[] = array(
-		'name' => __('Edit ""Continue reading" Button', 'optimize'),
+		'name' => __('Edit "Continue reading" Button', 'optimize'),
 		'desc' => __('Show or Hide "Continue reading" or Read more Button  Button .', 'optimize'),
 		'id' => 'optimize_countinue',
 		'std' => 'on',
@@ -410,10 +407,11 @@ $options[] = array(
 						'off' => 'Hide'
 						));
 		$options[] = array(
-		    'desc' => 'Paste Ad code for single post it show ads below post title and before content.',
+		    'desc' => 'Footer Copyright Text.',
             'id' => 'optimize_ftarea',
             'std' => '&#169; 2013 Designed by: <a href="http://www.wrock.org/seo-optimized-wordpress-theme/" title="wRock.Org">wRock.Org</a> | Powered by <a href="http://wordpress.org/">WordPress</a>',
-            'type' => 'textarea');				
+            'type' => 'editor',
+			'settings' => $wp_editor_settings);				
 
 	return $options;
 }

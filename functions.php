@@ -49,14 +49,15 @@ function optimize_theme_setup() {
 	    load_theme_textdomain('optimize', get_template_directory() . '/languages');
 			 
         add_editor_style();
-		
+		add_theme_support( 'title-tag' );
         add_theme_support('automatic-feed-links');
 		
 		register_nav_menu( 'primary', __( 'Navigation Menu', 'optimize' ) );
-		$args = array(
-		'default-color' => 'ffffff',
-		);
-		add_theme_support( 'custom-background', $args );
+		// Setup the WordPress core custom background feature.
+		add_theme_support( 'custom-background', apply_filters( 'esell_custom_background_args', array(
+		'default-color' => 'F3F3F3',
+		'default-image' => '',
+		) ) );
 // Sets up the content width value based on the theme's design.
 		global $content_width;
 		if ( ! isset( $content_width ) ){
@@ -133,36 +134,5 @@ function optimize_pagenavi() {
 	           echo '</div>';
 	 }
 }
-/**
- * Creates a nicely formatted and more specific title element text
- * for output in head of document, based on current view.
- *
- * @since Optimize 1.6
- *
- * @param string $title Default title text for current view.
- * @param string $sep Optional separator.
- * @return string Filtered title.
- */
-function optimize_wp_title( $title, $sep ) {
-	global $paged, $page;
-
-	if ( is_feed() )
-		return $title;
-
-	// Add the site name.
-	$title .= get_bloginfo( 'name' );
-
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
-
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'optimize' ), max( $paged, $page ) );
-
-	return $title;
-}
-add_filter( 'wp_title', 'optimize_wp_title', 10, 2 );
 
 ?>
