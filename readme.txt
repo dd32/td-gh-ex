@@ -61,6 +61,10 @@ https://wordpress.org/themes/simple-catch
 
 == CHANGE LOG ==
 
+= 1.6 =
+ - Update - html5 updated to version 3.7.2
+ - Fix - Empty Tagline display issue fixed
+
 = 1.5 =
  - Google font issue fixed 
  - Footer credit link issue fixed

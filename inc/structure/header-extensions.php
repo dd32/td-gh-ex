@@ -289,8 +289,11 @@ if (1 != $options['disable_top']) {
       <h1 id="site-title"> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
         <?php bloginfo( 'name' ); ?>
         </a> </h1>
+       <?php $site_description = get_bloginfo( 'description', 'display' );
+			if($site_description){?>
       <h2 id="site-description">
         <?php bloginfo( 'description' ); ?>
+        <?php } ?>
       </h2>
       <?php
 						}
