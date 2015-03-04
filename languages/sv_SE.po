@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aaron\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/_s\n"
-"POT-Creation-Date: 2015-02-14 11:19+0100\n"
-"PO-Revision-Date: 2015-02-14 11:19+0100\n"
+"POT-Creation-Date: 2015-03-04 07:54+0100\n"
+"PO-Revision-Date: 2015-03-04 08:02+0100\n"
 "Last-Translator: Carolina Nymark <myazalea@hotmail.com>\n"
 "Language-Team: \n"
 "Language: sv\n"
@@ -142,113 +142,113 @@ msgstr "Sidor:"
 msgid "Continue reading %s"
 msgstr "Fortsätt läsa  %s"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:5
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:13
-msgid "Aaron Setup help"
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:3
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:11
+msgid "Aaron Setup Help"
 msgstr "Aaron"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:15
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:13
 msgid "Thank you for downloading and trying out Aaron!"
 msgstr "Tack för att du laddar ner och provar Aaron!"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:17
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:15
 #, php-format
 msgid "If you like the theme, please review it on %s"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:19
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:17
 msgid ""
 "If you have any questions, accessibility issues or feature requests for this "
 "theme, please visit "
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:20
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:18
 msgid "Your feedback is essential for the future developement of the theme."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:24
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:33
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:22
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:31
 msgid "Menus"
 msgstr "Menyer"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:25
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:54
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:23
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:52
 msgid "Widget areas"
 msgstr "Widget paneler"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:26
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:62
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:24
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:60
 msgid "Frontpage"
 msgstr "Förstasidan"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:27
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:84
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:25
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:82
 #: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:131
 msgid "Advanced settings"
 msgstr "Avancerade inställningar"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:28
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:100
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:26
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:98
 msgid "Accessibility"
 msgstr "Tillgänglighet"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:29
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:113
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:27
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:111
 msgid "Plugins"
 msgstr "Tillägg"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:34
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:32
 msgid ""
 "This theme has two optional menu locations, the <b>Primary menu</b> and the "
 "<b>Social menu</b>."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:36
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:34
 msgid "An image describing how a submenu drops down from the Primary menu"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:38
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:36
 msgid "The Primary menu"
 msgstr "Huvudmeny"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:38
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:36
 msgid ""
 "is fixed at the top of the website and shows two menu levels. <br>\n"
 "\t\tThis menu will collapse on smaller screens, and can then be opened and "
 "closed by a menu button. It can also be closed with the Esc key."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:40
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:38
 msgid ""
 "A one line menu is recommended, or the menu will overlap your content. Use "
 "submenus instead."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:42
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:40
 msgid ""
 "An image describing how social icons are lined up next to each other in the "
 "Social menu"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:44
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:42
 msgid ""
 "<b>The social menu</b> is at the bottom of the page and shows logos of the "
 "social networks of your choice. It does not display any text,<br>\n"
 "\t\tbut has additional information for screen readers."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:46
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:44
 msgid ""
 "The icon will be added automatically, all you need to do is add a link to "
 "your menu."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:48
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:56
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:46
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:54
 msgid "Advanced"
 msgstr "Avancerat"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:49
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:47
 msgid ""
 "By default, the primary meny also shows the site title and a search form. "
 "The searchform is not visible on screens smaller than 800 pixels.<br>\n"
@@ -256,14 +256,14 @@ msgid ""
 "Customizer. "
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:55
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:53
 msgid ""
 "The theme has two widget areas that can hold <b>any number of widgets</b>. "
 "Both areas are empty unless they have widgets in them. The footer widget "
 "area is shown on all pages."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:57
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:55
 msgid ""
 "By default, the sidebar is shown on the right hand side in single post view, "
 "archives, the search page and the 404 page.<br>\n"
@@ -271,65 +271,67 @@ msgid ""
 "find options for showing the sidebar on more pages."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:63
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:61
 msgid "The standard frontpage has the following features:"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:64
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:62
 msgid ""
-"<b>Site title:</b> You will find an option to hide your site title in the "
-"customizer."
+"<b>Site title:</b> You will find an option to hide or change the color of "
+"your site title in the customizer."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:65
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:63
 msgid ""
 "<b>Call to action:</b> The Call to action is a great way to get your "
 "visitors attention. In the customizer you can:"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:67
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:74
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:65
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:72
 msgid "Add your own text"
 msgstr "Lägg till den egen text"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:68
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:75
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:66
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:73
 msgid "Add a link"
 msgstr "Lägg till en länk"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:69
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:67
 msgid "Hide the button"
 msgstr "Göm knappen"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:72
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:70
 msgid ""
 "<b>Highlights:</b> The themes displays three highlights by default. This is "
 "a flexible way for you to feature different sections of your website. In the "
 "customizer you can:"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:76
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:74
 msgid "Add an icon"
 msgstr "Lägg till en ikon"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:77
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:222
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:75
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:221
 msgid "Hide the highlights"
 msgstr "Göm dina Highlights"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:79
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:77
 msgid ""
 "<b>Tagline:</b> You will find an option to hide your tagline in the "
 "customizer."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:80
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:78
 msgid ""
 "<b>Background:</b> You can change the background image or background color "
 "in the customizer."
 msgstr ""
+"<b>Bakgrund:</b> Du kan ändra din bakgrundsbild eller bakgrundsfärg under "
+"Anpassa."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:85
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:83
 msgid ""
 "Under the Advanced settings tab in the customizer you will find the "
 "following options:"
@@ -337,101 +339,101 @@ msgstr ""
 "Under panelen Avancerade inställningar i Customizer hittar du följande "
 "inställningar:"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:87
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:85
 msgid "Hide the meta information. -This will hide the category and tags."
 msgstr ""
 "Göm metainformationen. -Detta gömmer bland annat kategorier och etiketter."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:88
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:86
 msgid "Hide the author and post date information."
 msgstr "Göm författare och datum för inlägg."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:89
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:87
 msgid "Show the sidebar on pages."
 msgstr "Visa sidopanelen på sidor."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:90
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:88
 msgid "Show the sidebar on the frontpage."
 msgstr "Visa sidopanelen på förstasidan."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:91
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:89
 msgid ""
 "Show the breadcrumb navigation. -Breadcrumbs are shown below the post titel. "
 msgstr "Visa brödsmulor. -Navigeringen visas nedanför inläggets titel."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:92
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:90
 msgid "Hide the search form in the header menu."
 msgstr "Göm sökformuläret i huvudmenyn."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:93
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:91
 msgid "Hide the Site title in the header menu."
 msgstr "Göm sidtiteln i huvudmenyn."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:94
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:389
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:92
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:388
 msgid "Add a descriptive screen reader text for the footer."
 msgstr "Lägga till en beskrivande screen reader text för sidfoten."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:95
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:400
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:93
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:399
 msgid "Add a descriptive screen reader text for the sidebar."
 msgstr "Lägga till en beskrivande screen reader text för sidpanelen."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:102
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:100
 msgid ""
 "Skip link: the theme has one skip link at the very top that lets you skip "
 "the main menu."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:103
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:101
 msgid "Known issues:"
 msgstr "Kända problem:"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:105
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:103
 msgid ""
 "Some widgets that uses forms (category dropdown) are missing form labels. "
 "This is a known issue with WordPress."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:106
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:104
 msgid ""
 "Menus have a visible focus and can be tabbed through, but you can not "
 "navigate them using the arrow keys."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:114
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:112
 msgid ""
 "Aaron has been tested with and style has been added for the following "
 "plugins:"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:116
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:114
 msgid "Woocommerce"
 msgstr "Woocommerce"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:117
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:115
 msgid "bbPress"
 msgstr "bbPress"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:118
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:116
 msgid "Jetpack"
 msgstr "Jetpack"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:118
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:116
 msgid ""
 " Note: Not all of Jetpacks modules are accessibe, and some uses iframes. I "
 "have increased the contrast of some of the modules."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:119
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:117
 msgid "Recommended modules:"
 msgstr "Rekommenderade moduler:"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:121
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:119
 msgid "Featured content"
 msgstr "Utvalt innehåll"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:122
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:120
 msgid ""
 "-Once Jetpack has been activated, you can select up to six posts or pages as "
 "a frontpage feature. Chose a tag and add it to your posts to seperate them "
@@ -441,59 +443,59 @@ msgid ""
 "pixels."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:124
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:122
 msgid ""
 "An image describing three featured posts on the frontpage, two with featured "
 "images and one \n"
 "\t\t\t\t\t\tthat only displays the post title."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:127
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:125
 msgid "Custom Content Type: Portfolio"
 msgstr "Custom Content Type: Portfolio"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:128
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:126
 msgid "Aaron also supports Jetpack"
 msgstr "Aaron kan också användas tillsammans med Jetpack"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:129
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:127
 msgid "Portfolios"
 msgstr "Portfolios"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:130
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:128
 msgid "Read more about how to setup your Portfolio on Jetpacks support site."
 msgstr ""
 "Läs mer om hur du kommer igång med din Portfolio på Jetpacks support sida."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:131
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:129
 msgid "An image describing two portfolio items."
 msgstr "En bild som beskriver portfolion."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:133
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:131
 msgid "Sharing"
 msgstr "Delning"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:134
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:132
 msgid ""
 "-If you activate Jetpack sharing, your buttons will be displayed below the "
 "meta information, to the right of your post content."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:135
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:133
 msgid ""
 "An image describing how sharing buttons are added to the post footer below "
 "Tags and Categories."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:137
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:135
 msgid "Contact Form"
 msgstr "Kontaktformulär"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:138
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:136
 msgid "<b>Site icon</b> -Use this module to add a favicon to your site."
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:139
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:137
 msgid ""
 "<b>Site logo</b> -Once Jetpack has been activated, you can add a logo above "
 "your Site title on the frontpage. You will find this setting in the "
@@ -523,12 +525,12 @@ msgstr "http://wptema.se/aaron"
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/footer.php:42
 #, php-format
-msgid "Theme:%1$s by Carolina"
-msgstr "Tema:%1$s av Carolina"
+msgid "Theme: %1$s by Carolina"
+msgstr "Tema: %1$s av Carolina"
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/front-page.php:16
 #: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/front-page.php:21
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:370
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:369
 msgid "Featured"
 msgstr "Utvalt"
 
@@ -585,7 +587,7 @@ msgid "Frontpage Highlights are displayed in the lower part of the header."
 msgstr "Higlights visas i den nedre delen av sidhuvudet."
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:124
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:300
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:299
 msgid "Call to Action"
 msgstr "Call to Action"
 
@@ -597,83 +599,83 @@ msgstr "Din Call to action knapp visas nedanför sidans titel i sidhuvudet."
 msgid "Reset"
 msgstr "Återställning"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:144
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:143
 msgid "Header background"
 msgstr "Sidhuvud"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:152
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:151
 msgid "Header background color:"
 msgstr "Bakgrundsfärg för sidhuvudet:"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:165
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:164
 msgid "Check this box to hide the meta information."
 msgstr "Kryssa i rutan för att gömma meta inforrmationen."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:177
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:176
 msgid "Check this box to hide the author and post date information."
 msgstr "Kryssa i rutan för att gömma författare och datum för inlägg."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:188
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:187
 msgid "Check this box to show the sidebar on pages."
 msgstr "Kryssa i rutan för att visa sidopanelen på sidor."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:200
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:199
 msgid "Check this box to show the sidebar on the frontpage."
 msgstr "Kryssa i rutan för att visa sidopanelen på förstasidan."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:211
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:210
 msgid "Check this box to show the breadcrumb navigation."
 msgstr "Kryssa i rutan för att gömma brödsmulorna (navigeringen)."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:232
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:231
 msgid "Check this box to hide the highlights."
 msgstr "Kryssa i rutan för att gömma dina highlights."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:241
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:240
 msgid "Highlight number"
 msgstr "Highlight nummer"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:252
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:251
 msgid "Add this headline to your highlight:"
 msgstr "Lägg till en rubrik på din highlight:"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:264
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:263
 msgid "Add this text to your highlight:"
 msgstr "Lägg till en text i din highlight:"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:276
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:275
 msgid "Chose an icon for your highlight:"
 msgstr "Välj en ikon till din highlight:"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:289
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:288
 msgid "Add a link to your highlight:"
 msgstr "Lägg till en länk till din highlight:"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:313
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:312
 msgid "Add this text to the Call to Action button on the front page:"
 msgstr "Lägg till en text på din Call to action knapp:"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:325
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:324
 msgid "Add a link to the Call to action button:"
 msgstr "Lägg till en länk till din Call to action knapp:"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:336
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:335
 msgid "Check this box to hide the Call to Action button."
 msgstr "Kryssa i rutan för att gömma din Call to action."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:349
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:348
 msgid "Check this box to hide the search form in the header menu."
 msgstr "Kryssa i rutan för att gömma sökformuläret på förstasidan."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:361
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:360
 msgid "Check this box to hide the clickable site title in the header menu."
 msgstr "Kryssa i rutan för att gömma den klickbara sidtiteln på förstasidan."
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:375
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:374
 msgid "Headline above your featured content:"
 msgstr "Rubrik ovanför ditt utvalda innehåll:"
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:413
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/customizer.php:412
 msgid ""
 "Are you sure that you want to reset your settings? Type YES in the box, save "
 "and refresh the page."
@@ -695,6 +697,8 @@ msgid ""
 "You will find all your options in the <i>Customizer</i> and setup help under "
 "<i>Appearance</i>."
 msgstr ""
+"Du hittar alla dina inställningar under <i>Anpassa</i> och hjälp under "
+"menyvalet <i>Utseende</i>."
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/highlights.php:77
 msgid "Accessible and responsive"
@@ -865,6 +869,12 @@ msgstr "Vill du söka igen?"
 #: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/searchform.php:3
 msgid "Search"
 msgstr "Sök"
+
+#~ msgid "Aaron Setup help"
+#~ msgstr "Aaron"
+
+#~ msgid "Theme:%1$s by Carolina"
+#~ msgstr "Tema:%1$s av Carolina"
 
 #~ msgid ""
 #~ "A lot of time and careful testing were put into this theme to make it "

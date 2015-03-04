@@ -90,7 +90,7 @@ if ( post_password_required() ) {
 	            ' <input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" /></p>' ) ),
    
     'comment_field' => '<p class="comment-form-comment">' .
-                '<label for="comment id="comment-label">' . __( 'Comment', 'aaron' ) . ' <span class="required">(' . __( 'required', 'aaron' )  . ')</span>' . '</label> ' .
+                '<label for="comment" id="comment-label">' . __( 'Comment', 'aaron' ) . ' <span class="required">(' . __( 'required', 'aaron' )  . ')</span>' . '</label> ' .
                 '<textarea id="comment" name="comment" aria-required="true" required required aria-labelledby="comment-label, html-tags" rows="8"></textarea>' .
                 '</p>',
 
