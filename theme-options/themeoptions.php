@@ -130,7 +130,7 @@ function advent_framework_page() {
                                     <div class="ft-control">
                                         <input id="logo-img" class="upload" type="text" name="advent_theme_options[logo]" 
                                                value="<?php if (!empty($advent_options['logo'])) {
-        echo esc_url($advent_options['logo']);
+        echo esc_attr($advent_options['logo']);
     } ?>" placeholder="<?php _e('No file chosen', 'advent'); ?>" />
                                         <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload', 'advent'); ?>" />
                                         <div class="screenshot" id="logo-image">
@@ -148,7 +148,7 @@ function advent_framework_page() {
                                     <div class="ft-control">
                                         <input id="favicon-img" class="upload" type="text" name="advent_theme_options[favicon]" 
                                                value="<?php if (!empty($advent_options['favicon'])) {
-                                                echo esc_url($advent_options['favicon']);
+                                                echo esc_attr($advent_options['favicon']);
                                             } ?>" placeholder="<?php _e('No file chosen', 'advent'); ?>" />
                                         <input id="upload_image_button1" class="upload-button button" type="button" value="<?php _e('Upload', 'advent'); ?>" />
                                         <div class="screenshot" id="favicon-image">
@@ -191,7 +191,7 @@ function advent_framework_page() {
                                     <div class="ft-control">
                                         <input id="headertop-logo" class="upload" type="text" name="advent_theme_options[headertop-logo]" 
                                                value="<?php if (!empty($advent_options['headertop-logo'])) {
-        echo esc_url($advent_options['headertop-logo']);
+        echo esc_attr($advent_options['headertop-logo']);
     } ?>" placeholder="<?php _e('No file chosen', 'advent'); ?>" />
                                         <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload', 'advent'); ?>" />
                                         <div class="screenshot" id="headertop-logo">
@@ -208,7 +208,7 @@ function advent_framework_page() {
                                     <div class="ft-control">
                                         <input id="headertop-img" class="upload" type="text" name="advent_theme_options[headertop-img]" 
                                                value="<?php if (!empty($advent_options['headertop-img'])) {
-        echo esc_url($advent_options['headertop-img']);
+        echo esc_attr($advent_options['headertop-img']);
     } ?>" placeholder="<?php _e('No file chosen', 'advent'); ?>" />
                                         <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload', 'advent'); ?>" />
                                         <div class="screenshot" id="headertop-img">
@@ -229,7 +229,7 @@ function advent_framework_page() {
                                     <div class="ft-control">
                                         <input id="headertop-bg" class="upload" type="text" name="advent_theme_options[headertop-bg]" 
                                                value="<?php if (!empty($advent_options['headertop-bg'])) {
-        echo esc_url($advent_options['headertop-bg']);
+        echo esc_attr($advent_options['headertop-bg']);
     } ?>" placeholder="<?php _e('No file chosen', 'advent'); ?>" />
                                         <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload', 'advent'); ?>" />
                                         <div class="screenshot" id="headertop-bg">
@@ -333,7 +333,7 @@ function advent_framework_page() {
                                     <div class="ft-control">
                                         <input id="howitwork-img" class="upload" type="text" name="advent_theme_options[howitwork-img]" 
                                                value="<?php if (!empty($advent_options['howitwork-img'])) {
-                                            echo esc_url($advent_options['howitwork-img']);
+                                            echo esc_attr($advent_options['howitwork-img']);
                                         } ?>" placeholder="<?php _e('No file chosen', 'advent'); ?>" />
                                         <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload', 'advent'); ?>" />
                                         <div class="screenshot" id="howitwork-img">
@@ -421,7 +421,7 @@ function advent_framework_page() {
                                     <div class="ft-control">
                                         <div class="explain"><?php _e('Facebook profile or page URL i.e. ', 'advent'); ?>http://facebook.com/username/ </div>                
                                         <input id="facebook" class="of-input" name="advent_theme_options[facebook]" size="30" type="text" value="<?php if (!empty($advent_options['facebook'])) {
-        echo esc_url($advent_options['facebook']);
+        echo esc_attr($advent_options['facebook']);
     } ?>" />
                                     </div>                
                                 </div>
@@ -432,7 +432,7 @@ function advent_framework_page() {
                                     <div class="ft-control">
                                         <div class="explain"><?php _e('Twitter profile or page URL i.e. ', 'advent'); ?>http://www.twitter.com/username/</div>                
                                         <input id="twitter" class="of-input" name="advent_theme_options[twitter]" type="text" size="30" value="<?php if (!empty($advent_options['twitter'])) {
-        echo esc_url($advent_options['twitter']);
+        echo esc_attr($advent_options['twitter']);
     } ?>" />
                                     </div>                
                                 </div>
@@ -443,7 +443,7 @@ function advent_framework_page() {
                                     <div class="ft-control">
                                         <div class="explain"><?php _e('Pinterest profile or page URL i.e.', 'advent'); ?> https://pinterest.com/username/</div>                
                                         <input id="pinterest" class="of-input" name="advent_theme_options[pinterest]" type="text" size="30" value="<?php if (!empty($advent_options['pinterest'])) {
-        echo esc_url($advent_options['pinterest']);
+        echo esc_attr($advent_options['pinterest']);
     } ?>" />
                                     </div>                
                                 </div>

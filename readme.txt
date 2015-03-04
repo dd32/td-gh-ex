@@ -93,8 +93,5 @@ Image
 ---------------------------------------------------------
 
 http://pixabay.com/en/philadelphia-urban-pennsylvania-231580/ - Public Domain CC0 License
-http://pixabay.com/en/road-people-street-buildings-407247/ - Public Domain CC0 License
-http://pixabay.com/en/smartphone-movie-taking-pictures-407108/ - Public Domain CC0 License
-http://pixabay.com/en/urban-modern-architecture-city-438410/ - Public Domain CC0 License
-http://pixabay.com/en/rowing-boats-canal-boats-urban-455757/ - Public Domain CC0 License
-http://pixabay.com/en/traffic-paris-street-twilight-407696/ - Public Domain CC0 License
+http://pixabay.com/en/car-fashion-hand-style-watch-407165/  - Public Domain CC0 License
+

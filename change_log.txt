@@ -6,4 +6,11 @@ i)	fix css and js issue
 ii) remove unnecessary commented code
 iii) Screenshot Changed.
 
-
+Version 1.0.2
+i)	Change meta declaration for utf.
+ii)	Add support for XFN and pingback url.  
+iii) Rename custom template frontpage.php to front-page.php  
+iv)	Use esc_html instead of esc_attr in header.php 
+v)	Use esc_attr instead of esc_url for value attributes in themeoptions.php
+vi) Add a theme slug as prefix in functions.php and enqueue-files.php
+vii) Set images link in readme.txt

@@ -51,7 +51,7 @@ function advent_setup() {
     add_theme_support( 'title-tag' );
 
     /* height width automaticly adjust for home slider */
-    add_image_size( 'home-thumbnail-image', 250, 180, true );
+    add_image_size( 'advent-home-thumbnail-image', 250, 180, true );
         
 }
 endif; // advent_setup
