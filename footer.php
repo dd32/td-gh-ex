@@ -1,7 +1,6 @@
-	<footer class = "site-footer">
-		Theme By: Benjamin Lu<br />
-		<a href = "http://wordpress.org" target = "_blank">Proudly Powered By WordPess</a>
-	</footer>
+    </section>
+    <footer class = "site-footer">        
+    </footer>
 <?php wp_footer(); ?>
-</body>
-</html>	
+</body>        
+</html>

@@ -1,5 +1,5 @@
-<?php if ( is_active_sidebar( 'sidebar-3' ) ) : ?>
-	<div id = "widget-area">
-		<?php dynamic_sidebar( 'sidebar-3' ); ?>
-	</div>
-<?php endif; ?>
+<section id = "site-sidebar">
+    <aside>
+        <?php dynamic_sidebar('custom-content'); ?>   
+    </aside>
+</section>
