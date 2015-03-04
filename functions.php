@@ -174,6 +174,3 @@
 //	=================================================================
 	require get_template_directory() . '/titan-options.php';
 	
-//	Load Titan Framework options
-//	=================================================================
-	require get_template_directory() . '/theme-options.php';

@@ -12,7 +12,6 @@
 		wp_enqueue_style( 'defalt', get_template_directory_uri().'/assets/css/skins/defalt.css' );
 		wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/assets/fonts/font-awesome/css/font-awesome.css' );
 		wp_enqueue_style( 'animate', get_template_directory_uri().'/assets/css/animate.css' );
-		wp_enqueue_style( 'fonts', get_template_directory_uri().'/assets/css/fonts.css' );
 		wp_enqueue_style( 'base', get_template_directory_uri().'/assets/css/base.css' );
 		wp_enqueue_style( 'slick', get_template_directory_uri().'/inc/slick/slick.css' );
 		wp_enqueue_style( 'slick-theme', get_template_directory_uri().'/inc/slick/slick-theme.css' );
