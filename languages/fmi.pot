@@ -1,550 +1,284 @@
-# Copyright (C) 2020 fmi
-# This file is distributed under the same license as the fmi package.
+# Copyright (C) 2015 Automattic
+# This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: fmi\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: en\n"
+"Project-Id-Version: _s 1.0.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
+"POT-Creation-Date: 2015-01-06 02:24:02+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.2\n"
-"X-Poedit-Basepath: ..\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;"
-"_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
-"X-Poedit-SearchPath-0: .\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: comments.php:27
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr ""
+
+#: 404.php:27
+msgid "Most Used Categories"
+msgstr ""
+
+#. translators: %1$s: smiley
+
+#: 404.php:44
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: comments.php:28
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:35 comments.php:52
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:36 comments.php:53
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:37 comments.php:54
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:64
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:25
-msgid "https://wordpress.org/"
+#: content-none.php:13
+msgid "Nothing Found"
 msgstr ""
 
-#: footer.php:25
-#, php-format
-msgid "Proudly powered by %s"
+#: content-none.php:19
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: footer.php:25
-#, php-format
-msgid "Theme: %1$s by %2$s."
+#: content-none.php:23
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
-#: functions.php:36
-msgid "Primary"
+#: content-none.php:28
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: functions.php:37
-msgid "Footer"
-msgstr ""
-
-#: inc/post-meta.php:53
-msgid "No Comments"
-msgstr ""
-
-#: inc/post-meta.php:53
-msgid "1 Comment"
-msgstr ""
-
-#: inc/post-meta.php:53
-msgid "Comments"
-msgstr ""
-
-#: inc/template-comments.php:14
-msgid "Pingback:"
-msgstr ""
-
-#: inc/template-comments.php:14 inc/template-comments.php:28
-msgid "Edit"
-msgstr ""
-
-#: inc/template-comments.php:27
-#, php-format
-msgctxt "1: date, 2: time"
-msgid "%1$s at %2$s"
-msgstr ""
-
-#: inc/template-comments.php:31
-msgid "Your comment is awaiting moderation."
-msgstr ""
-
-#: inc/template-comments.php:49
-msgid "Your Name"
-msgstr ""
-
-#: inc/template-comments.php:50
-msgid "Your Email"
-msgstr ""
-
-#: inc/template-comments.php:51
-msgid "Your Website"
-msgstr ""
-
-#: inc/template-comments.php:58
-msgid "Your comment"
-msgstr ""
-
-#: inc/template-tags.php:11
-msgid "Older posts"
-msgstr ""
-
-#: inc/template-tags.php:12
-msgid "Newer posts"
-msgstr ""
-
-#: inc/template-tags.php:20
-msgid "Older comments"
-msgstr ""
-
-#: inc/template-tags.php:21
-msgid "Newer comments"
-msgstr ""
-
-#: inc/theme-mods/archive-settings.php:10
-msgid "Archive Settings"
-msgstr ""
-
-#: inc/theme-mods/archive-settings.php:20
-#: inc/theme-mods/homepage-settings.php:221 inc/theme-mods/page-settings.php:20
-#: inc/theme-mods/post-settings.php:20 inc/widgets-init.php:10
-msgid "Sidebar"
-msgstr ""
-
-#: inc/theme-mods/archive-settings.php:24
-#: inc/theme-mods/homepage-settings.php:225 inc/theme-mods/page-settings.php:24
-#: inc/theme-mods/post-settings.php:24
-msgid "Right Sidebar"
-msgstr ""
-
-#: inc/theme-mods/archive-settings.php:25
-#: inc/theme-mods/homepage-settings.php:226 inc/theme-mods/page-settings.php:25
-#: inc/theme-mods/post-settings.php:25
-msgid "Left Sidebar"
-msgstr ""
-
-#: inc/theme-mods/archive-settings.php:26
-#: inc/theme-mods/homepage-settings.php:227 inc/theme-mods/page-settings.php:26
-#: inc/theme-mods/post-settings.php:26
-msgid "No Sidebar"
-msgstr ""
-
-#: inc/theme-mods/archive-settings.php:36
-#: inc/theme-mods/homepage-settings.php:237
-msgid "Post Summary"
-msgstr ""
-
-#: inc/theme-mods/archive-settings.php:40
-#: inc/theme-mods/homepage-settings.php:241
-msgid "Use Excerpts"
-msgstr ""
-
-#: inc/theme-mods/archive-settings.php:41
-#: inc/theme-mods/homepage-settings.php:242
-msgid "Use Read More Tag"
-msgstr ""
-
-#: inc/theme-mods/archive-settings.php:51
-#: inc/theme-mods/homepage-settings.php:252
-msgid "Excerpt Length (Number of Words)"
-msgstr ""
-
-#: inc/theme-mods/archive-settings.php:60
-#: inc/theme-mods/homepage-settings.php:261 inc/theme-mods/post-settings.php:57
-msgid "Post Meta"
-msgstr ""
-
-#: inc/theme-mods/archive-settings.php:70
-#: inc/theme-mods/homepage-settings.php:271 inc/theme-mods/post-settings.php:67
-msgid "Display Author"
-msgstr ""
-
-#: inc/theme-mods/archive-settings.php:81
-#: inc/theme-mods/homepage-settings.php:282 inc/theme-mods/post-settings.php:78
-msgid "Display Date"
-msgstr ""
-
-#: inc/theme-mods/archive-settings.php:92
-#: inc/theme-mods/homepage-settings.php:293 inc/theme-mods/post-settings.php:89
-msgid "Display Categorys"
-msgstr ""
-
-#: inc/theme-mods/archive-settings.php:103
-#: inc/theme-mods/homepage-settings.php:304 inc/theme-mods/page-settings.php:45
-#: inc/theme-mods/post-settings.php:100
-msgid "Display Comments"
-msgstr ""
-
-#: inc/theme-mods/archive-settings.php:114
-#: inc/theme-mods/homepage-settings.php:315
-#: inc/theme-mods/post-settings.php:111
-msgid "Display Tags"
-msgstr ""
-
-#: inc/theme-mods/archive-settings.php:125
-#: inc/theme-mods/homepage-settings.php:326
-msgid "Display Read More"
-msgstr ""
-
-#: inc/theme-mods/design.php:10
-msgid "Design"
-msgstr ""
-
-#: inc/theme-mods/design.php:20
-msgid "Primary Color"
-msgstr ""
-
-#: inc/theme-mods/design.php:26
-msgid "Background Color"
-msgstr ""
-
-#: inc/theme-mods/footer-settings.php:10
-msgid "Footer Settings"
-msgstr ""
-
-#: inc/theme-mods/footer-settings.php:20
-msgid "Display Footer Text"
-msgstr ""
-
-#: inc/theme-mods/footer-settings.php:31
-msgid "Footer Text"
-msgstr ""
-
-#: inc/theme-mods/footer-settings.php:42
-msgid "Display Footer Menu"
-msgstr ""
-
-#: inc/theme-mods/footer-settings.php:53
-msgid "Display Social Links"
-msgstr ""
-
-#: inc/theme-mods/header-settings.php:10
-msgid "Header Settings"
-msgstr ""
-
-#: inc/theme-mods/header-settings.php:20
-msgid "Hide Header Title Text"
-msgstr ""
-
-#: inc/theme-mods/header-settings.php:31
-msgid "Hide Header Search"
-msgstr ""
-
-#: inc/theme-mods/homepage-settings.php:10
-msgid "Homepage Settings"
-msgstr ""
-
-#: inc/theme-mods/homepage-settings.php:16
-msgid "Slider"
-msgstr ""
-
-#: inc/theme-mods/homepage-settings.php:27
-msgid "Check to activate slider"
-msgstr ""
-
-#: inc/theme-mods/homepage-settings.php:38
-msgid "Image Upload #1"
-msgstr ""
-
-#: inc/theme-mods/homepage-settings.php:39
-#: inc/theme-mods/homepage-settings.php:83
-#: inc/theme-mods/homepage-settings.php:127
-#: inc/theme-mods/homepage-settings.php:171
-msgid "Upload slider image"
-msgstr ""
-
-#: inc/theme-mods/homepage-settings.php:49
-#: inc/theme-mods/homepage-settings.php:93
-#: inc/theme-mods/homepage-settings.php:137
-#: inc/theme-mods/homepage-settings.php:181
-msgid "Enter title for your slider"
-msgstr ""
-
-#: inc/theme-mods/homepage-settings.php:60
-#: inc/theme-mods/homepage-settings.php:104
-#: inc/theme-mods/homepage-settings.php:148
-#: inc/theme-mods/homepage-settings.php:192
-msgid "Enter your slider description"
-msgstr ""
-
-#: inc/theme-mods/homepage-settings.php:71
-#: inc/theme-mods/homepage-settings.php:115
-#: inc/theme-mods/homepage-settings.php:159
-#: inc/theme-mods/homepage-settings.php:203
-msgid "Enter link to redirect slider when clicked"
-msgstr ""
-
-#: inc/theme-mods/homepage-settings.php:82
-msgid "Image Upload #2"
-msgstr ""
-
-#: inc/theme-mods/homepage-settings.php:126
-msgid "Image Upload #3"
-msgstr ""
-
-#: inc/theme-mods/homepage-settings.php:170
-msgid "Image Upload #4"
-msgstr ""
-
-#: inc/theme-mods/homepage-settings.php:210
-msgid "Homepage Layout"
-msgstr ""
-
-#: inc/theme-mods/homepage-settings.php:335
-msgid "Static Front Page"
-msgstr ""
-
-#: inc/theme-mods/miscellaneous.php:10
-msgid "Miscellaneous"
-msgstr ""
-
-#: inc/theme-mods/miscellaneous.php:16 searchform.php:12
-msgid "Search ..."
-msgstr ""
-
-#: inc/theme-mods/miscellaneous.php:20
-msgid "Search Form Placeholder"
-msgstr ""
-
-#: inc/theme-mods/miscellaneous.php:27 template-parts/content-archive.php:87
-#: template-parts/content-homepage.php:87
-msgid "Read More"
-msgstr ""
-
-#: inc/theme-mods/miscellaneous.php:31
-msgid "\"Read More\" Button Label"
-msgstr ""
-
-#: inc/theme-mods/miscellaneous.php:42
-msgid "Scroll To Top Button"
-msgstr ""
-
-#: inc/theme-mods/miscellaneous.php:53
-msgid "Blog Pagination or Navigation"
-msgstr ""
-
-#: inc/theme-mods/miscellaneous.php:57
-msgid "Pagination"
-msgstr ""
-
-#: inc/theme-mods/miscellaneous.php:58
-msgid "Navigation"
-msgstr ""
-
-#: inc/theme-mods/miscellaneous.php:68
-msgid "Enable hover effects when you hover on featured images"
-msgstr ""
-
-#: inc/theme-mods/miscellaneous.php:79
-msgid "Load Google AdSense Scripts"
-msgstr ""
-
-#: inc/theme-mods/miscellaneous.php:80
-msgid "Enable this if you're using Google AdSense."
-msgstr ""
-
-#: inc/theme-mods/page-settings.php:10
-msgid "Page Settings"
-msgstr ""
-
-#: inc/theme-mods/page-settings.php:35
-msgid "Page Meta"
-msgstr ""
-
-#: inc/theme-mods/post-settings.php:10
-msgid "Post Settings"
-msgstr ""
-
-#: inc/theme-mods/post-settings.php:36
-msgid "Show \"About the author\" block (single post page)"
-msgstr ""
-
-#: inc/theme-mods/post-settings.php:47
-msgid "Show post navigation (single post page)"
-msgstr ""
-
-#: inc/theme-mods/social-links.php:10
-msgid "Social Links"
-msgstr ""
-
-#: inc/theme-mods/social-links.php:20
-msgid "Facebook URL"
-msgstr ""
-
-#: inc/theme-mods/social-links.php:31
-msgid "Twitter URL"
-msgstr ""
-
-#: inc/theme-mods/social-links.php:42
-msgid "Instagram URL"
-msgstr ""
-
-#: inc/theme-mods/social-links.php:53
-msgid "Pinterest URL"
-msgstr ""
-
-#: inc/theme-mods/social-links.php:64
-msgid "Youtube URL"
-msgstr ""
-
-#: inc/theme-mods/social-links.php:75
-msgid "Telegram URL"
-msgstr ""
-
-#: inc/theme-mods/social-links.php:86
-msgid "Vimeo URL"
-msgstr ""
-
-#: inc/theme-mods/social-links.php:97
-msgid "SoundCloud URL"
-msgstr ""
-
-#: inc/theme-mods/social-links.php:108
-msgid "Spotify URL"
-msgstr ""
-
-#: inc/theme-mods/social-links.php:119
-msgid "Dribbble URL"
-msgstr ""
-
-#: inc/theme-mods/social-links.php:130
-msgid "Behance URL"
-msgstr ""
-
-#: inc/theme-mods/social-links.php:141
-msgid "Github URL"
-msgstr ""
-
-#: inc/theme-mods/social-links.php:152
-msgid "Odnoklassniki URL"
-msgstr ""
-
-#: inc/theme-mods/social-links.php:163
-msgid "VK URL"
-msgstr ""
-
-#: inc/theme-mods/social-links.php:174
-msgid "Xing URL"
-msgstr ""
-
-#: inc/theme-mods/social-links.php:185
-msgid "Linkedin URL"
-msgstr ""
-
-#: inc/theme-mods/social-links.php:196
-msgid "Twitch URL"
-msgstr ""
-
-#: inc/theme-mods/social-links.php:207
-msgid "Flickr URL"
-msgstr ""
-
-#: inc/theme-mods/social-links.php:218
-msgid "Snapchat URL"
-msgstr ""
-
-#: inc/theme-mods/social-links.php:229
-msgid "Medium URL"
-msgstr ""
-
-#: inc/theme-mods/social-links.php:240
-msgid "Weibo URL"
-msgstr ""
-
-#: inc/theme-mods/social-links.php:251
-msgid "WeChat URL"
-msgstr ""
-
-#: inc/theme-mods/social-links.php:262
-msgid "Tumblr URL"
-msgstr ""
-
-#: inc/theme-mods/social-links.php:273
-msgid "Reddit URL"
-msgstr ""
-
-#: inc/theme-mods/social-links.php:284
-msgid "Bloglovin URL"
-msgstr ""
-
-#: inc/theme-mods/social-links.php:295
-msgid "RSS URL"
-msgstr ""
-
-#: inc/widgets-init.php:12
-msgid "Add widgets here."
-msgstr ""
-
-#: searchform.php:10
-msgid "Search for:"
-msgstr ""
-
-#: template-parts/archive.php:48 template-parts/homepage.php:47
-msgid "Nothing found"
-msgstr ""
-
-#: template-parts/archive.php:49
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr ""
-
-#: template-parts/archive.php:55
-msgid "Oops... Error 404"
-msgstr ""
-
-#: template-parts/archive.php:56
-msgid "We are sorry, but the page you are looking for does not exist."
-msgstr ""
-
-#: template-parts/archive.php:57
-#, php-format
-msgid ""
-"Please check entered address and try again or go to <a href=\"%1$s\" rel="
-"\"home\"><strong>homepage</strong></a>."
-msgstr ""
-
-#: template-parts/content-archive.php:99 template-parts/content-homepage.php:99
-#, php-format
-msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
-msgstr ""
-
-#: template-parts/content-page.php:47 template-parts/content-post.php:65
+#: content-page.php:18 content-single.php:20 content.php:29
 msgid "Pages:"
 msgstr ""
 
-#: template-parts/homepage.php:49
-#, php-format
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+#: content-page.php:25 inc/template-tags.php:126
+msgid "Edit"
 msgstr ""
 
-#: template-parts/homepage.php:51
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for."
+#. translators: %s: Name of current post
+
+#: content.php:22
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: template-parts/page-header.php:32
-#, php-format
+#: footer.php:15
+msgid "http://wordpress.org/"
+msgstr ""
+
+#: footer.php:15
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: footer.php:17
+msgid "Theme: %1$s by %2$s."
+msgstr ""
+
+#: functions.php:53 header.php:31
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:88
+msgid "Sidebar"
+msgstr ""
+
+#: header.php:22
+msgid "Skip to content"
+msgstr ""
+
+#: inc/extras.php:64
+msgid "Page %s"
+msgstr ""
+
+#: inc/template-tags.php:23
+msgid "Posts navigation"
+msgstr ""
+
+#: inc/template-tags.php:27
+msgid "Older posts"
+msgstr ""
+
+#: inc/template-tags.php:31
+msgid "Newer posts"
+msgstr ""
+
+#: inc/template-tags.php:56
+msgid "Post navigation"
+msgstr ""
+
+#: inc/template-tags.php:86
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr ""
+
+#: inc/template-tags.php:91
+msgctxt "post author"
+msgid "by %s"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:108 inc/template-tags.php:114
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:110
+msgid "Posted in %1$s"
+msgstr ""
+
+#: inc/template-tags.php:116
+msgid "Tagged %1$s"
+msgstr ""
+
+#: inc/template-tags.php:122
+msgid "Leave a comment"
+msgstr ""
+
+#: inc/template-tags.php:122
+msgid "1 Comment"
+msgstr ""
+
+#: inc/template-tags.php:122
+msgid "% Comments"
+msgstr ""
+
+#: inc/template-tags.php:143
+msgid "Category: %s"
+msgstr ""
+
+#: inc/template-tags.php:145
+msgid "Tag: %s"
+msgstr ""
+
+#: inc/template-tags.php:147
+msgid "Author: %s"
+msgstr ""
+
+#: inc/template-tags.php:149
+msgid "Year: %s"
+msgstr ""
+
+#: inc/template-tags.php:149
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: inc/template-tags.php:151
+msgid "Month: %s"
+msgstr ""
+
+#: inc/template-tags.php:151
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: inc/template-tags.php:153
+msgid "Day: %s"
+msgstr ""
+
+#: inc/template-tags.php:153
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr ""
+
+#: inc/template-tags.php:155
+msgctxt "post format archive title"
+msgid "Asides"
+msgstr ""
+
+#: inc/template-tags.php:157
+msgctxt "post format archive title"
+msgid "Galleries"
+msgstr ""
+
+#: inc/template-tags.php:159
+msgctxt "post format archive title"
+msgid "Images"
+msgstr ""
+
+#: inc/template-tags.php:161
+msgctxt "post format archive title"
+msgid "Videos"
+msgstr ""
+
+#: inc/template-tags.php:163
+msgctxt "post format archive title"
+msgid "Quotes"
+msgstr ""
+
+#: inc/template-tags.php:165
+msgctxt "post format archive title"
+msgid "Links"
+msgstr ""
+
+#: inc/template-tags.php:167
+msgctxt "post format archive title"
+msgid "Statuses"
+msgstr ""
+
+#: inc/template-tags.php:169
+msgctxt "post format archive title"
+msgid "Audio"
+msgstr ""
+
+#: inc/template-tags.php:171
+msgctxt "post format archive title"
+msgid "Chats"
+msgstr ""
+
+#: inc/template-tags.php:173
+msgid "Archives: %s"
+msgstr ""
+
+#. translators: 1: Taxonomy singular name, 2: Current taxonomy term
+
+#: inc/template-tags.php:177
+msgid "%1$s: %2$s"
+msgstr ""
+
+#: inc/template-tags.php:179
+msgid "Archives"
+msgstr ""
+
+#: search.php:16
 msgid "Search Results for: %s"
 msgstr ""
-
-#: template-parts/post-author.php:22
-msgid " Posts"
+#. Theme Name of the plugin/theme
+msgid "_s"
 msgstr ""
 
-#: template-parts/post-author.php:28
-msgid "View all author&rsquo;s posts"
+#. Theme URI of the plugin/theme
+msgid "http://underscores.me/"
 msgstr ""
 
-#: template-parts/post-prev-next.php:9
-msgid "Previous Post"
+#. Description of the plugin/theme
+msgid "Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for."
 msgstr ""
 
-#: template-parts/post-prev-next.php:10
-msgid "Next Post"
+#. Author of the plugin/theme
+msgid "Automattic"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://automattic.com/"
 msgstr ""
