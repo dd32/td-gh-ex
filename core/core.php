@@ -25,7 +25,9 @@ function suevafree_setup() {
 	add_theme_support( 'post-formats', array( 'aside','gallery','quote','video','audio','link','status','chat','image' ) );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
-	
+
+	add_theme_support( 'title-tag' );
+
 	add_image_size( 'blog', 940,429, TRUE ); 
 	add_image_size( 'large', 449,304, TRUE ); 
 	add_image_size( 'medium', 290,220, TRUE ); 
@@ -43,31 +45,24 @@ function suevafree_setup() {
 add_action( 'after_setup_theme', 'suevafree_setup' );
 
 /*-----------------------------------------------------------------------------------*/
-/* Tag Title */
+/* TAG TITLE */
 /*-----------------------------------------------------------------------------------*/  
- 
-function suevafree_title( $title, $sep ) {
-	global $paged, $page;
 
-	if ( is_feed() )
-		return $title;
+if ( ! function_exists( '_wp_render_title_tag' ) ) {
 
-	// Add the site name.
-	$title .= get_bloginfo( 'name' );
+	function suevafree_title( $title, $sep ) {
+		
+?>
 
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
+	<title><?php wp_title( '|', true, 'right' ); ?></title>
 
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'twentytwelve' ), max( $paged, $page ) );
+<?php
 
-	return $title;
+	}
+
+	add_filter( 'wp_head', 'suevafree_title', 10, 2 );
+
 }
-
-add_filter( 'wp_title', 'suevafree_title', 10, 2 );
 
 /*-----------------------------------------------------------------------------------*/
 /* Theme name */
