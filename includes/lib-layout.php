@@ -106,8 +106,8 @@ function weaverx_area_class( $area, $p_default = 'pad', $sides = '', $margin = '
 		$class .= ' font-' . $val;
 	}
 
-	$class .= weaverx_getopt( $area . '_bold') ? ' font-bold' : '';
-	$class .= weaverx_getopt( $area . '_italic') ? ' font-italic' : '';
+	$class .= weaverx_get_bold_italic($area,'bold');
+	$class .= weaverx_get_bold_italic($area,'italic');
 
 	// hide
 	$val = weaverx_getopt( $area . '_hide' );
@@ -126,6 +126,12 @@ function weaverx_area_class( $area, $p_default = 'pad', $sides = '', $margin = '
 		$class .= ' widget-eq';
 	}
 
+	// extend bg color
+
+	if ( weaverx_getopt( $area . '_extend_width') ) {
+		$class .= ' wvrx-fullwidth';
+	}
+
 	// add classes
 	$val = weaverx_getopt( $area . '_add_class' );
 	if ( $val  ) {
@@ -138,6 +144,17 @@ function weaverx_area_class( $area, $p_default = 'pad', $sides = '', $margin = '
 	return trim($class);
 }
 //--
+
+
+// >>>>> weaverx_get_bold_italic <<<<<
+function weaverx_get_bold_italic($area, $which) {
+	$val = weaverx_getopt("{$area}_{$which}");
+	if ($val == 'on')
+		return " font-{$which}";
+	elseif ($val == 'off')
+		return " font-{$which}-off";
+	return '';
+}
 
 
 // >>>>> weaverx_container_class <<<<<
@@ -245,8 +262,9 @@ function weaverx_menu_class( $who, $no_hide = false ) {
 		$class .= ' font-' . $val;
 	}
 
-	$class .= weaverx_getopt( $who . '_bold') ? ' font-bold' : '';
-	$class .= weaverx_getopt( $who . '_italic') ? ' font-italic' : '';
+	$class .= weaverx_get_bold_italic($who,'bold');
+	$class .= weaverx_get_bold_italic($who,'italic');
+
 
 	// border
 	if ( weaverx_getopt( $who . '_border'))
@@ -261,6 +279,10 @@ function weaverx_menu_class( $who, $no_hide = false ) {
 	$val = weaverx_getopt( $who . '_rounded' );
 	if ( $val && $val != 'none' )
 		$class .= ' rounded' . $val;
+
+	if ( weaverx_getopt( $who . '_extend_width') ) {
+		$class .= ' wvrx-fullwidth';
+	}
 
 	// hide - subject to override by [show_if]
 	$val = weaverx_getopt( $who . '_hide' );
@@ -344,8 +366,8 @@ function weaverx_title_class( $who, $class_only = false, $front = '' ) {
 		$class .= ' font-' . $val;
 	}
 
-	$class .= weaverx_getopt( $who . '_normal') ? ' font-weight-normal' : '';
-	$class .= weaverx_getopt( $who . '_italic') ? ' font-italic' : '';
+	$class .= weaverx_get_bold_italic($who,'bold');
+	$class .= weaverx_get_bold_italic($who,'italic');
 
 
 	if ( $class ) {
@@ -374,9 +396,8 @@ function weaverx_text_class( $who, $class_only = true ) {
 		$class .= ' font-' . $val;
 	}
 
-	$class .= weaverx_getopt( $who . '_bold') ? ' font-bold' : '';
-
-	$class .= weaverx_getopt( $who . '_italic') ? ' font-italic' : '';
+	$class .= weaverx_get_bold_italic($who,'bold');
+	$class .= weaverx_get_bold_italic($who,'italic');
 
 
 	if ( $class ) {
@@ -765,6 +786,8 @@ function weaverx_add_widget_classes( $params ) {
 
 // >>>>> weaverx_no_sidebars <<<<<
 function weaverx_no_sidebars( $class ) {
+	if (weaverx_is_checked_page_opt('_pp_secondary-widget-area'))
+		return;		// hide area option checked
 ?>
 	<div id="primary-widget-area" class="widget-area <?php echo $class;?>" role="complementary">
 			<aside id="primary-widget-area" class="widget">
@@ -791,6 +814,9 @@ function weaverx_has_widgetarea( $area_name ) {
 	// see if a widget area is available to show...
 
 	$area = apply_filters('weaverx_replace_widget_area',$area_name);
+
+	if (weaverx_is_checked_page_opt('_pp_' . $area_name))
+		return false;		// hide area option checked
 
 	if (is_active_sidebar($area))
 		return true;

@@ -10,7 +10,6 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
 		$wrap = '<div class="' . $l_area . ' s-full m-full">';
 
-
 		$p_class = 'l-full m-half-rm ' . weaverx_area_class('primary', 'pad', '', 'margin-bottom');
 		$s_class = 'l-full m-half-lm ' . weaverx_area_class('secondary', 'pad', '', 'margin-bottom');
 
@@ -20,27 +19,23 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
 		if ( weaverx_has_widgetarea('secondary-widget-area') ) {  // both top and bottom
 			weaverx_put_widgetarea('primary-widget-area', $p_class);
-
 			weaverx_put_widgetarea('secondary-widget-area', $s_class);
-
 		} else {                                                // top only
+			$p_class = str_replace('m-half-rm', 'm-full', $p_class);
 			weaverx_inject_area('presidebar', $p_class);
 			weaverx_put_widgetarea('primary-widget-area',  $p_class);
 		}
-
 		echo '</div>';
-
 	} else {
 
 		if ( weaverx_has_widgetarea('secondary-widget-area') ) {  // bottom only
+			$s_class = str_replace('m-half-lm', 'm-full', $s_class);
 			echo $wrap;
 			weaverx_put_widgetarea('secondary-widget-area', $s_class);
-
-			echo '</div>';
 		} else {
 			echo $wrap;
 			weaverx_no_sidebars( $p_class );
-			echo '</div>';
 		}
+		echo '</div>';
 	}
 ?>

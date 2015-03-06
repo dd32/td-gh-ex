@@ -12,8 +12,6 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
  * @since Weaver Xtreme 1.0
  */
 
-global $weaverx_cur_post_ID;
-$weaverx_cur_post_ID = get_the_ID();
 weaverx_per_post_style();
 $do_excerpt = weaverx_do_excerpt();
 

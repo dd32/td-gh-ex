@@ -11,8 +11,9 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
    weaverx_sb_precontent('category');
 
 				if ( have_posts() ) {
+					$msg = apply_filters('weaverx_category_archives', __( 'Category Archives: %s','weaver-xtreme'));
 					$title = '<span class="category-title-label">' .
-						sprintf( __( 'Category Archives: %s','weaver-xtreme'), '</span><span class="archive-info">' . single_cat_title( '', false ) . '</span>' );
+						sprintf( $msg, '</span><span class="archive-info">' . single_cat_title( '', false ) . '</span>' );
 					?>
 
 				<header class="page-header">

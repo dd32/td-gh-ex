@@ -12,7 +12,7 @@ function weaverx_admin_subthemes() {
 	weaverx_tab_title(__('Predefined Weaver Xtreme Subthemes','weaverx_axtreme'), 'help.html#PredefinedThemes', __('Help for Weaver Xtreme Predefined Themes', 'weaver-xtreme' /*adm*/)); ?>
 <small style="font-weight:normal;font-size:10px;"><?php _e('You can click the ?\'s found throughout Weaver Xtreme admin pages for context specific help.', 'weaver-xtreme' /*adm*/);?></small>
 
-<?php _e('<h4>Welcome to Weaver X</h4>', 'weaver-xtreme' /*adm*/);?>
+<?php _e('<h3>Welcome to Weaver X</h3>', 'weaver-xtreme' /*adm*/);?>
 
 <?php _e('<p>Weaver Xtreme gives you extreme control of your WordPress blog appearance using the
 different admin tabs here. This tab lets you get a quick start by picking one of the many
@@ -39,6 +39,11 @@ you can save it from the Save/Restore tab. The <em>Help</em> tab has much more <
 	}
 
 	if (!empty($theme_list)) {
+		echo '<p style="font-size:120%;font-weight:bold;">';
+		_e( 'Please remember: these subthemes are only starting points!
+You can use <em>Weaver Xtreme</em> options to change virtually any part of these subthemes.
+You can change colors, sidebar layouts, font family and sizes, borders, spacing - really, everything.' ,'weaver-xtreme' /*adm*/);
+		echo '</p>';
 		weaverx_st_pick_theme($theme_list);	// show the theme picker
 	} else {
 		 _e("<h3>WARNING: Your version of Weaver Xtreme is likely installed incorrectly. Unable to find subtheme definitions.</h3>\n", 'weaver-xtreme' /*adm*/);
@@ -172,7 +177,7 @@ function weaverx_activate_subtheme($theme) {
 	Important: the following code assumes that any of the pre-defined theme files won't have
 	and end-of-line character in them, which should be true. A user could muck about with the
 	files, and possibly break this assumption. This assumption is necessary because the WP
-	theme rules allow file(), but not file_get_contents(). Other than that, the following code
+	theme rules allow 'file', but not 'file get contents'. Other than that, the following code
 	is really the same as the 'theme' section of weaverx_upload_theme() in the pro library
 	*/
 

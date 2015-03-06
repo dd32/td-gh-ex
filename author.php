@@ -21,8 +21,8 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 		 * properly with a call to rewind_posts().
 		 */
 		the_post();
-
-		$title = '<span class="author-title-label">' .  sprintf( __( 'Author Archives: %s','weaver-xtreme') ,
+		$msg = apply_filters('weaverx_author_archives',  __( 'Author Archives: %s','weaver-xtreme'));
+		$title = '<span class="author-title-label">' .  sprintf($msg ,
 				'</span><span class="vcard archive-info"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) ) .
 				'" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' ); ?>
 

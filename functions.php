@@ -451,6 +451,15 @@ function weaverx_enqueue_scripts() {	// action definition
 
 	wp_enqueue_script('weaverxJSLib', get_template_directory_uri().'/assets/js/weaverxjslib'.WEAVERX_MINIFY.'.js',array('jquery'), WEAVERX_VERSION);
 
+	$local = array(
+		'menuPrimaryTrigger' => weaverx_getopt_default('menu_primary_trigger_int','768'),
+		'menuSecondaryTrigger' => weaverx_getopt_default('menu_secondary_trigger_int','768'),
+		'useSmartMenus' => weaverx_getopt_default('menu_use_smartmenus') ? '1' : '0',
+	);
+
+	wp_localize_script('weaverxJSLib', 'wvrxOpts', $local );
+
+
 	wp_enqueue_script('weaverxJSLibEnd', get_template_directory_uri().'/assets/js/weaverxjslib-end'.WEAVERX_MINIFY.'.js',array('jquery'), WEAVERX_VERSION,true);
 
 
@@ -496,8 +505,77 @@ function weaverx_infinite_scroll_init() {
  */
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'content',
-		'type' => 'click'
+		'type' => 'click',
+		'render' => 'weaverx_render_infinite_scroll',
+
 	) );
+}
+
+add_filter( 'infinite_scroll_js_settings', 'weaverx_infinite_scroll_settings');
+
+function weaverx_infinite_scroll_settings($js_settings) {
+	$js_settings['text'] = __('Load more posts&hellip;', 'weaver-xtreme');
+	return $js_settings;
+}
+
+function weaverx_render_infinite_scroll() {
+	$GLOBALS['weaverx_page_who'] = 'blog';
+	$num_cols = weaverx_getopt('blog_cols');
+	if (!$num_cols || $num_cols > 3) $num_cols = 1;
+
+	$col = 0;
+	$masonry_wrap = false;	// need this for one-column posts
+
+
+	/* Start the Loop */
+
+	weaverx_post_count_clear();
+
+	while ( have_posts() ) {
+		the_post();
+		weaverx_post_count_bump();
+
+		if (!$masonry_wrap) {
+			$masonry_wrap = true;
+			if (weaverx_masonry('begin-posts'))	// wrap all posts
+				$num_cols = 1;		// force to 1 cols
+		}
+		weaverx_masonry('begin-post');	// wrap each post
+		switch ($num_cols) {
+			case 1:
+				get_template_part( 'templates/content', get_post_format() );
+				$sticky_one = false;
+				break;
+
+			case 2:
+				echo ('<div class="content-2-col clearfix">' . "\n");
+				get_template_part( 'templates/content', get_post_format() );
+				echo ("</div> <!-- content-2-col -->\n");
+				$col++;
+				if ( !($col % 2) ) {	// force stuff to be even
+					echo "<div style=\"clear:left;\"></div>\n";
+				}
+				$sticky_one = false;
+				break;
+
+			case 3:
+				echo ('<div class="content-3-col clearfix">' . "\n");
+				get_template_part( 'templates/content', get_post_format() );
+				echo ("</div> <!-- content-3-col -->\n");
+				$col++;
+				if ( !($col % 3) ) {	// force stuff to be even
+					echo "<div style=\"clear:left;\"></div>\n";
+				}
+				$sticky_one = false;
+				break;
+
+			default:
+				get_template_part( 'templates/content', get_post_format() );
+				$sticky_one = false;
+		}   // end switch num cols
+		weaverx_masonry('end-post');
+	}	// end while have posts
+	weaverx_masonry('end-posts');
 }
 
 

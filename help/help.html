@@ -350,11 +350,13 @@ Section</a></li>
       <li><strong><a href="#PageTemplates">Weaver Page Templates</a></strong></li>
       <ul>
         <li><a href="#PerPostTemplate">Settings for "Page with Posts" Template</a></li>
+        <li><a href="#TweakSiteMap">Tweaking the SiteMap page template</a></li>
       </ul>
       <li><a href="#editstyling"><strong>Post/Page Editor Styling</strong></a>
       <li><a href="#raw_html"><strong>Entering Raw HTML and Scripts </strong></a>
       <li><a href="#post_formats"><strong>Post Formats</strong></a>
 <li><strong><a href="#CustomMenus">Custom Menus</a></strong></li>
+<li><a href="#custom-messages"><strong>Custom User Interface Messages</strong></a></li>
       <li><strong><a href="#plugins">Built-in Support for Other Plugins</a></strong><br />
       &nbsp;&nbsp;&nbsp;&nbsp;Woocommerce, WP PageNavi</li>
       <li><strong><a href="#quickcache">Compatible Caching Plugins</a></strong></li>
@@ -886,6 +888,8 @@ If you use one of these extra widget areas more than once on the same page (for 
     <p>&nbsp;</p>
     <h3><a name="AdvSiteOptions" id="SiteOptions"></a>Site Options</h3>
     <p>This tab allows you to set additional site specific options, and it provides links and hints on setting other site options. These options may only be displayed for <em>Weaver Xtreme Plus</em> or if you have installed the <em>Weaver Xtreme</em> Theme Support plugin. </p>
+    <h4>Exclude Pages from SiteMap</h4>
+    <p>You may exclude specific pages from the Weaver Xtreme SiteMap page template by adding specific page IDs in this section. See more options in the Tweaking the SiteMap page template' section below.</p>
     <h2><a name="PerPage" id="PerPage"></a>Per Page and Per Post Options</a></h2>
     <p>One of the most powerful features Weaver provides for customizing the content of your site is the set of <em>Weaver Options for This Page </em>and <em>Weaver Options for This Post</em>. When you create or edit a Page or Post from the admin page, you will see one of those two areas below the Editor box. They contain options that will be applied to that specific page or post. These settings often correspond to setting you find on the Standard Weaver Main Options or Advanced Options pages. Any settings made on the per page boxes will override the standard settings.</p>
     <p><strong>Weaver Options for This Post</strong></p>
@@ -970,8 +974,16 @@ If you need a joined class (e.g. #post-nnn.content-single), then put a vertical 
         .hide-phone</li>
       <li>.is-desktop - prefix selectors to make rules apply on specific devices<br />
         .is-mobile (either small-tablet or phone)<br />
-        .is-smalltablet<br />
-        .is-phone</li>
+        .is-smalltablet - note: many phones will be considered smalltablet when in landscape view<br />
+        .is-phone - usually when in portrait mode only<br />
+		.is-ios - an iOS device: iPhone, iPod, iPad<br />
+		.is-ipad - an iPad<br />
+		.is-ipod - an iPod<br />
+		.is-iphone - an iPhone<br />
+		.is-android - any Android device<br />
+		.is-windows - any Windows OS<br />
+		.is-macos - any Mac OS<br />
+	  </li>
       <li>.clear-both - add to clear floating, useful with at end of content column classes</li>
       <li>.border - add the standard border around area<br />
         .border-bottom </li>
@@ -1123,7 +1135,7 @@ You can optionally hide the header and footer areas using the check boxes on the
         <br />
         <br />
       </li>
-      <li><em>Sitemap</em> - This page template will display a simple sitemap, consisting of a list of all ages, monthly post archives, all categories, and the tag cloud. You can add content to the page that will appear above the sitemap, but there are no other options to control the organization or content of the sitemap (other than the meta info line options for posts in general).</li>
+      <li><em>Sitemap</em> - This page template will display a simple sitemap, consisting of a list of all ages, monthly post archives, all categories, and the tag cloud. You can add content to the page that will appear above the sitemap. See<a href="#TweakSiteMap"> Tweaking the SiteMap page template</a> for a description of tweaking the SiteMap.</li>
     </ol>
     <p><strong>Other options for creating custom pages</strong></p>
     <p>You can provide additional customization for a given page using the <a href="#ExtraPP">Extra Per Page Options</a> described below. For example, creating an entire custom header can be accomplished by checking the &quot;Hide Entire Header&quot; per page option, and including a Custom Field called &quot;preheader&quot; that has the code for the custom header.</p>
@@ -1135,6 +1147,11 @@ You can optionally hide the header and footer areas using the check boxes on the
     <p>The Categories list has an extra feature. If you add a '-' (minus sign) to the front of a category slug (e.g., <em>-uncategorized</em>), then all the posts from that category will be excluded. So if you placed <em>-uncategorized</em> in the <em>Category</em> box, then only posts that have a category other than Uncategorized will be displayed.</p>
     <p>Note: Because of what might be described as a quirk in how WordPress handles category filtering, if you specify specific categories <strong>to</strong> show (as opposed <strong>to not</strong> show), then sticky posts won't be displayed at the front with special formatting. They are displayed in their normal sort order. You can also see this behavior if you look at a category archive page, for example. Unfortunately, there seems to be no work around for this strangeness. So if you have a page that you want to display  specific categories that include sticky posts, then you have to exclude all other categories rather than include the categories you do want to show.</p>
     <p>The &quot;Page with Posts&quot; per page options also let you set how the posts are displayed: Full post, Excerpt, Title Only, and number of columns. You can also selectively hide the meta info lines.</p>
+    <h3><a name="TweakSiteMap" id="TweakSiteMap"></a>Tweaking the SiteMap page template</h3>
+    <p>The SiteMap will display any content you add to the Page Content from the Page Editor at the top. This can be left blank. It will also automatically show five other sections: List of all site pages, List of all posts by month, list of posts by Categories, list of posts by Tag cloud, and list of posts by Author.</p>
+    <p>You can specify a comma separated list of Page IDs to be excluded from the SiteMap page on the<em> Advanced Options : Site Options</em> tab. (To exclude pages from Search results, use a plugin such as &quot;Search Exclude&quot;.)</p>
+    <p> You can also hide any of the specific sections of the SiteMap by adding rules to the &quot;Custom CSS Rules&quot; box. To hide authors, for example, add the rule <span class="css">#sitemap-authors{display:none;}</span>. The IDs for the SiteMap sections are: <span class="css">#sitemap-pages, #sitemap-posts, #sitemap-categories, #sitemap-tags, #sitemap-authors</span>.</p>
+    <p>In addition to using the five different SiteMap section IDs to hide them, you could also add other rules such as borders, colors, etc. to provide a custom styled Site Map.</p>
     <h2><a name="editstyling" id="editstyling"></a>Post/Page Editor Styling</h2>
     <p><em>Weaver Xtreme</em> adds style settings for the tinyMCE editor used whenever you edit a page or post. The colors and font information for your text, headings, images, and tables will now closely match the values you've set for your theme.</p>
     <p>For the most part, the layout presented in the Page/Post editor will very closely match the final page. However, the match is not always perfect. Changing the font or theme width can cause a mismatch. In addition, the width is determined by the default layout for a default static page, and if your blog post pages doesn't use the standard page layout, the editor width will not match.    </p>
@@ -1156,7 +1173,8 @@ You can optionally hide the header and footer areas using the check boxes on the
     <p>The Quote Format is intended for quotations. (For the language sticklers, this should be called Quotation, but Quote is the name used.). It works like any other post, but with a &quot;Quote&quot; pre-title.</p>
     <p><a name="format_status" id="format_status"></a><strong>Status</strong></p>
     <p>The Status Format is intended for a short status update from the author. It displays like an Aside, but also add the Author's avatar to the post.    </p>
-    <h2><a name="CustomMenus" id="CustomMenus"></a>Custom Menus</h2>
+    <h2><a name="CustomMenus" id="CustomMenus"></a></h2>
+    <p>&nbsp;</p>
     <p>WordPress  allows you to define
       custom menus. By using the <span class="code1">Appearance-&gt;Menus</span> panel, you
       can create a menu completely under your control. <em>Weaver Xtreme</em> allows you to
@@ -1204,9 +1222,53 @@ You can optionally hide the header and footer areas using the check boxes on the
         <br />
       </li>
       <li><strong>Define Other Menus for <em>Weaver Xtreme Plus</em></strong><br />
-      <em>Weaver Xtreme Plus</em> includes an &quot;Extra Menus&quot; shortcode. While the previous explanation about the Primary and Secondary menus is true, you can really define as many menus as you want or need. You can then use the extra menu names for <em>Weaver Xtreme Plus</em>'s extra menus. </li>
+      <em>Weaver Xtreme Plus</em> includes an &quot;Extra Menus&quot; shortcode. While the previous explanation about the Primary and Secondary menus is true, you can really define as many menus as you want or need. You can then use the extra menu names for <em>Weaver Xtreme Plus</em>'s extra menus.</li>
     </ol>
-    <h3><a name="plugins" id="plugins"></a>Built-in Support for Other Plugins</h3>
+    <h3><a name="custom-messages" id="custom-messages"></a>Custom User Interface Messages</h3>
+    <p>A request we often get is the ability to customize user interface messages such as &quot;Reply&quot;, &quot;Previous/Next Post&quot;, and others. Weaver Xtreme now provides the ability to do this using standard WordPress filters. This section will list all the available filters to modify User Interface messages.</p>
+    <p>Note that some values, such as the &quot;Continue Reading&quot; message already have a built-in option due to popular demand. These messages can be changed either with a filter, or using the option.</p>
+    <p>These filters can't be added directly by<em> Weaver Xtreme</em>, but are  easily added using the new <em>Weaver Xtreme  </em>&lt;HEAD&gt; Section <strong>Actions and Filters</strong> option provided by the <em>Weaver Xtreme Plus</em> plugin.</p>
+    <p> For example, to replace the built in Older/Newer Blog Navigation messages, add these filters to the<strong> Actions and Filters</strong> box:</p>
+    <p class="code1">/* Add filters to change the Older Blog Navigation messages */<br />
+      add_filter('weaverx_older_posts','wx_older_posts');<br />
+      function wx_older_posts($older) {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return 'Back!';<br />
+}<br />
+    </p>
+    <p>The original message, including wrapping HTML for many strings, will be passed in to the filter using the single parameter. You can return whatever string you want, including your own HTML wrapping and styling. You have total flexibility in what message comes out. You would define similar filters for any of the following defined <em>Weaver Xtreme</em> filters.</p>
+    <p>Filters labeled with (%s) mean that the subject of the title (mostly archive page titles) will be used in place of the %s. If you want the extra title info, then you need to include the %s in your filter replacement. Technically, the title uses sprintf to add the specific information  to the main title. For example, the tag archive default title is &quot;Tag Archives: %s&quot;. The tag name will be filled in to the %s position - &quot;Tag Archives: Post Formats&quot;.</p>
+    <p>If you don't know PHP programming, join the crowd! But it isn't that hard to simply use the above example to create your own custom message text for the various elements described in the list below. For example, suppose you want to change the text on the &quot;Post Comment&quot; button for comments. It is a pretty easy 4 step process - you can repeat for any of the filters listed below changing to appropriate names.</p>
+    <ol>
+      <li> Copy the above example into the Actions and Filters box.</li>
+      <li> Change the 'weaverx_older_posts' to 'weaverx_post_comment_form'.</li>
+      <li> Change the 'wx_older_posts' to 'wx_post_comment_form'. </li>
+      <li>Finally, change the 'Back!' to whatever you want.</li>
+    </ol>
+<p><strong>User interface message filters supported</strong></p>
+    <ol>
+      <li>'weaverx_older_posts', 'weaverx_newer_posts' - replace the Older/Newer and Previous/Next Blog Navigation Style for navigating blog posts.</li>
+      <li>'weaverx_more_message' - the Continue Reading message (already has built-in option)</li>
+      <li>'weaverx_tag_archives' - page title for tag archives (%s)</li>
+      <li>'weaverx_404_title' - page title for 404 page</li>
+      <li>'weaverx_yearly_archives', 'weaverx_monthly_archives', 'weaverx_daily_archives' - archive page title (%s)</li>
+      <li>'weaverx_author_archives' - Author Archive page title (%s)</li>
+      <li>'weaverx_category_archives' - Category Archives page title (%s)</li>
+      <li>'weaverx_search_results' - Search results page title (%s)</li>
+      <li>'weaverx_comments_title' - Title of comments section</li>
+      <li>'weaverx_newer_comments', 'weaverx_older_comments' - Older/Newer comments links</li>
+      <li>'weaverx_leave_reply_blog' - Leave a reply (blog page version)</li>
+      <li>'weaverx_reply_1' - Original: ''&lt;b&gt;1&lt;/b&gt; Reply' (blog page version)</li>
+      <li>'weaverx_reply_many' - Original '&lt;b&gt;%&lt;/b&gt; Replies' (% replaced by number of replies) (blog page version)</li>
+      <li>'weaverx_leave_reply_form' - Leave a Reply message on comment form</li>
+      <li>'weaverx_cancel_reply_form' - Cancel Reply message on comment form</li>
+      <li>'weaverx_post_comment_form' - Post Comment button on comment form</li>
+      <li>'weaverx_site_title' - The site title</li>
+      <li>'weaverx_tagline' - Site tagline</li>
+    </ol>
+	<p>The strings associated with the Post top and bottom Meta information lines are not suitable for this type of filtering
+	due to some technical limitations. The <em>Weaver Xtreme Plus</em> plugin provides the Custom Post Info Lines option
+	to create custom wording and layout for these lines.</p>
+<h3><a name="plugins" id="plugins"></a>Built-in Support for Other Plugins</h3>
     <p>Weaver includes built-in support for a few plugins available from WordPress.org. These plugins have been tested, and work well with Weaver.</p>
     <ol>
         <li><strong>WP PageNavi</strong> - This popular plugin adds a page numbered navigation menu for your blog posts. It normally requires modification to code, plus some extra CSS styling. Now you can simply install and activate WP PageNavi, and your site will feature page number navigation.  (Note - while <em>Weaver Xtreme</em> continues to provide automatic support for WP PageNavi, its functionality is largely duplicated by the new built-in <em>Weaver Xtreme</em> Info Bar feature.) The default styling creates menus that work with existing Weaver subthemes, but you can still use WP PageNavi options to fine tune its appearance, and add custom styling for the <span class="style4">.wp-pagenavi</span> rules (see wp-pagenavi documentation about its rules) to the Advanced Options &lt;HEAD&gt; section if needed.<br />

@@ -436,7 +436,8 @@ dl, dt, dd, ol, ul, li {
 	word-wrap:          break-word;
 }
 
-
+.atwk-slide .post ol, .atwk-slide .post ul,
+.atw-post ol, .atw-post ul,
 ol, ul {
 	list-style-position:    outside;
 	margin-left:            1.5em;
@@ -739,29 +740,30 @@ p img,
 .wp-caption {
 	margin-top:     0.4em;
 }
+
 .wp-caption {
 	margin-bottom:  1em;
-	max-width:      90%;
-	padding:        8px;
+	max-width:      100%;
 }
+
 .wp-caption img {
 	display:        block;
 	margin:         0 auto;
-	max-width:       98%;
+	max-width:      100%;
 }
 
 
 #content img.alignleft {
 	display:        inline;
 	float:          left;
-	margin-right:   24px;
+	margin-right:   1.25em;
 	margin-top:     4px;
 }
 
 #content img.alignright {
 	display:        inline;
 	float:          right;
-	margin-left:    24px;
+	margin-left:    1.25em;
 	margin-top:     4px;
 }
 
@@ -775,7 +777,7 @@ p img,
 #content img.alignleft,
 #content img.alignright,
 #content img.aligncenter {
-	margin-bottom:  12px;
+	margin-bottom: 0.75em;
 }
 
 .entry-attachment img,
@@ -783,7 +785,7 @@ p img,
 #content .gallery-thumb img,
 #content img[class*="wp-image-"] {
 	border-width:   0;
-	margin-bottom:  1em;
+	margin-bottom:  0.75em;
 	text-align:     center;
 }
 
@@ -803,6 +805,26 @@ p img,
 	font-style:     italic;
 	font-size:      .85em;
 	margin:         -1em 0 0 0  !important;
+}
+
+
+.is-smalltablet #content .gallery-columns-4 .gallery-item,		/* for galleries > 3 columns, make 3 colums on small tablet */
+.is-smalltablet #content .gallery-columns-5 .gallery-item,
+.is-smalltablet #content .gallery-columns-6 .gallery-item,
+.is-smalltablet #content .gallery-columns-7 .gallery-item,
+.is-smalltablet #content .gallery-columns-8 .gallery-item,
+.is-smalltablet #content .gallery-columns-9 .gallery-item {
+	width:33%;
+}
+
+.is-phone #content .gallery-columns-3 .gallery-item,	/* for galleries > 2 columns, make 2 columns on phone */
+.is-phone #content .gallery-columns-4 .gallery-item,
+.is-phone #content .gallery-columns-5 .gallery-item,
+.is-phone #content .gallery-columns-6 .gallery-item,
+.is-phone #content .gallery-columns-7 .gallery-item,
+.is-phone #content .gallery-columns-8 .gallery-item,
+.is-phone #content .gallery-columns-9 .gallery-item {
+	width:50%;
 }
 
 #content .gallery dl {
@@ -831,6 +853,8 @@ p img,
 }
 
 /* =Featured Images */
+.atwk-slide .post img.fi-alignleft,		/* needs this for compatibility with show sliders. */
+.atwk-slide .post img.fi-alignleft-pb,
 img.fi-alignleft,
 img.fi-alignleft-pb {
 	float:          left;
@@ -838,8 +862,8 @@ img.fi-alignleft-pb {
 	padding:        0;
 }
 
-
-
+.atwk-slide img.fi-alignright,
+.atwk-slide img.fi-alignright-pb,
 img.fi-alignright,
 img.fi-alignright-pb {
 	clear:none;
@@ -848,7 +872,8 @@ img.fi-alignright-pb {
 	padding:        0;
 }
 
-
+.atwk-slide img.fi-aligncenter,
+.atwk-slide img.fi-aligncenter-pb,
 img.fi-aligncenter,
 img.fi-aligncenter-pb {
 	clear:          both;
@@ -925,8 +950,8 @@ img.fi-aligncenter-pb {
 .entry-attachment .entry-caption,
 .wp-caption .wp-caption-text,
 .gallery-caption  {
-	font-size:          .85em;
-	margin:             -.5em 0 0 0     !important;
+	font-size:          0.9em;
+	margin:             -.5em 0 0 0;
 	padding:            0 1em 1em 1em;
 	position:           relative;
 	text-align:         center;
@@ -935,6 +960,7 @@ img.fi-aligncenter-pb {
 
 .entry-attachment .entry-caption {
 	font-size:          1.1em;
+	margin-top: 		0.25em;
 }
 
 .entry-description {
@@ -1529,7 +1555,8 @@ ul.wvrx-center-menu {
 	z-index:            2;
 }
 
-#title-over-image #title-tagline {
+#title-over-image #title-tagline
+{
 	position:           absolute;
 	top:                0;
 	left:               0;
@@ -1842,15 +1869,16 @@ ol.trackbacklist {
 } /* top/bottom page links */
 
 #wvrx-page-width {		/* stub for full-width class script alignment-adjust */
-	width:100%;
-	display:block;
-	position:absolute;
+	width:			100%;
+	direction:		ltr;
+	display:		block;
+	position:		absolute;
 }
-.wvrx-fullwidth {		/* used to support .wvrx-fullwidth class script */
-	box-sizing:content-box !important;
-	-moz-box-sizing:content-box !important;
-	-webkit-box-sizing:content-box !important;
-	overflow:visible !important;
+
+.content-box {
+	box-sizing:			content-box !important;
+    -moz-box-sizing:	content-box !important;
+	-webkit-box-sizing:	content-box !important;
 }
 
 .shadow-0 {
@@ -1988,6 +2016,15 @@ ol.trackbacklist {
 
 /* =Edit button */
 
+#infinite-handle span {
+	background-color:	#ddd !important;
+	border-radius: 		1px;
+	color: 				#444 !important;
+	cursor: 			pointer;
+	font-size: 			1.2em !important;
+	padding: 			6px 16px;
+}
+
 .edit-link a {	            /* an edit link box that should show on all themes */
 	background-color:       #eee    !important;
 	-moz-border-radius:     3px;
@@ -2024,7 +2061,9 @@ ol.trackbacklist {
 
 /* =Search
 ----------------------------------------------- */
-#header-search {
+#header-search,
+.header-search,
+.menu-search {
 	display:        inline-block;
 	float:          right;
 }
@@ -2047,7 +2086,9 @@ ol.trackbacklist {
 	background-image:   url(icons/search-gray-bg-ie8.png) !important;
 }
 
-#header-search .search-field {
+#header-search .search-field,
+.header-search .search-field,
+.menu-search .search-field {
 	background-color:   transparent;
 	background-position:  2px center;
 	background-size:    24px 24px;
@@ -2061,13 +2102,17 @@ ol.trackbacklist {
 	z-index:            21;
 }
 
-#header-search .search-form {
+#header-search .search-form,
+.header-search .search-form,
+.menu-search .search-form{
 	position:           absolute;
 	right:              10px;
 	top:                5px;
 }
 
-#header-search .search-field:focus {
+#header-search .search-field:focus,
+.header-search .search-field:focus,
+.menu-search  .search-field:focus {
 	background-color:   #f0f0f0;
 	border:             2px solid #c3c0ab;
 	cursor:             text;
@@ -2355,6 +2400,30 @@ pre,
 ins {
 }
 
+#inject_fixedtop,               /* JavaScript: used to dynamically set width */
+#inject_fixedbottom {
+	display:        block;
+	left:           auto;
+	max-width:		940px;
+	position:       fixed;
+	width:			100%;
+	z-index:        23;
+}
+
+.is-mobile #inject_fixedtop,            /* make relative for mobile */
+.is-mobile #inject_fixedbottom {
+		position:   relative;
+}
+
+#inject_fixedtop {
+	top:            0;
+}
+
+#inject_fixedbottom {
+	bottom:         0;
+}
+
+
 /* =Archives
 ----------------------------------------------- */
 
@@ -2531,7 +2600,7 @@ ins {
 }
 
 .genericon-wvrx-menu:before {
-	content: "\f419";
+	content: 			"\f419";
 	font-family:        "Genericons";
 }
 
@@ -3278,8 +3347,7 @@ dl.gallery-item {
 .widget-area-top,
 .widget-area-bottom,
 .widget-area-primary,
-.widget-area-secondary,
-#colophon {
+.widget-area-secondary {
 	padding:        8px;
 	margin-bottom:  10px;
 }
@@ -3290,26 +3358,15 @@ dl.gallery-item {
 }
 
 /* =Margins */
-#colophon,
-#wrapper{
-	margin-bottom:  10px;
-	margin-top:     10px;
+#colophon {
+	padding:		8px;
+	margin-bottom:  0px;
+	margin-top:     0px;
 }
 
-#inject_fixedtop,               /* JavaScript: used to dynamically set width */
-#inject_fixedbottom {
-	display:        block;
-	left:           auto;
-	position:       fixed;
-	z-index:        23;
-}
-
-#inject_fixedtop {
-	top:            0;
-}
-
-#inject_fixedbottom {
-	bottom:         0;
+#wrapper {
+	margin-bottom:  0px;
+	margin-top:     0px;
 }
 
 #header-html,
@@ -3321,17 +3378,7 @@ dl.gallery-item {
 	box-sizing:         border-box;
 }
 
-.ie8 #inject_fixedtop,
-.ie8 #inject_fixedbottom { /* ie8 doesn't do this, so just put it at the top. */
-	position:       relative;
-	width:          940px;
-	max-width:      940px;
-}
 
-.is-mobile #inject_fixedtop,            /* make relative for mobile */
-.is-mobile #inject_fixedbottom {
-		position:   relative;
-}
 /* -- /Padding */
 /* =Font Size Group definitions */
 
@@ -3564,7 +3611,9 @@ footer.entry-utility a[rel=bookmark]:visited:after{
 #site-title,
 .site-title,
 #site-tagline,
-.site-tagline {
+.site-tagline,
+#site-logo,
+.site-logo {
 	position:       relative !important;
 	float:          none;
 	line-height:    1.5em;
@@ -3728,6 +3777,14 @@ html.ie8 .shadow-tr,
 html.ie8 .shadow-tl {
 	border:         3px solid #eee;
 }
+
+html.ie8 .is-desktop article[class*="post-"]:before,	/* help IE8 degrade better for full-width BG color */
+html.ie8 .is-desktop #header:before,
+html.ie8 .is-desktop #colophon:before,
+html.ie8 .is-desktop #container:before,
+html.ie8 .is-desktop .menu-extra:before,
+html.ie8 .is-desktop .menu-secondary:before,
+html.ie8 .is-desktop .menu-primary:before {display:none;}
 /* -- /IE8 */
 
 /* Does the same thing as <meta name="viewport" content="width=device-width">,

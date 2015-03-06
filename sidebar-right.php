@@ -36,7 +36,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 			weaverx_clear_both('secondary-widget-area');
 
 		} else {
-			weaverx_no_sidebars($l_area . ' m-full s-full margin-bottom pad');
+			weaverx_no_sidebars($l_area . ' m-full s-full margin-bottom pad' );
 		}
 	}
 ?>

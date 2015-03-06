@@ -58,6 +58,7 @@ with testing and feature suggestions.
 * New: Desktop Menu Bar Item Spacing Option
 * New: .wvrx-fullwidth built-in class for full width BG color
 * New: Add CSS Classes to HTML insertion areas, Header, Title/Tagline block (X-Plus)
+* Tweak: Auto change columns for galleries on mobile devices
 * Tweak: Changed default theme to Plain, new screenshot provided
 * Tweak: Some interactions with X-Plus
 * Tweak: textarea tweaks for future X-Plus features
@@ -71,3 +72,28 @@ with testing and feature suggestions.
 * Fix: Info Bar page navigation on Page with Posts wasn't displaying
 * Fix: Rounded Corner Radius generated CSS (X-Plus)
 * Fix: Auto margins on right sidebars - stack top
+
+= Version 1.0.2 =
+* New: added 20 new sub-themes
+* New: added filters to many visitor side strings to allow customization - advanced, see help file.
+* New: Exclude Pages From SiteMap option on Advanced Options:Site Options tab. Added CSS IDs to SiteMap sections for custom styling.
+* New: Site Title area Logo/HTML option (Plus)
+* New: .is-ipad, .is-ipod .is-iphone .is-ios, .is-android, .is-windows, .is-macos device/os specific classes
+* New: option to force full browser height for short pages
+* New: extend Area BG color for Header, Container, Footer, and menus (free version!)
+* New: set Mobile Menu trigger width for Primary/Secondary menu bars
+* New: support for JetPack's Infinite Scroll - supports blog page, including multiple columns
+* Tweak: Changed default top/bottom margin on Footer and Wrapper Areas to 0
+* Tweak: Changed Bold/Italic checkboxs to Inherit/On/Off selection
+* Tweak: Improved how IE8 degrades for full-width bg colors
+* Tweak: Full width bg support
+* Tweak: Changed FI location wording from Before Title to With Title
+* Tweak: Rules for fixedtop, fixedbottom
+* Tweak: Powered by link destination
+* Tweak: Captions - styling, fixed top margin; captioned images same max width as non-captioned images
+* Fix: small tablet left sidebar stacking layout when only one sidebar defined
+* Fix: small tablet sidebar stacking layout when per-page hide sidebar used
+* Fix: page/post editor font size
+* Fix: post id and FI issue
+* Fix: interactions with Weaver Show Posts - displaying title options, list and FI styling
+* Fix: RTL for menus

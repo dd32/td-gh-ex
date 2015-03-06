@@ -32,15 +32,15 @@ function weaverxBrowserWidth() {
 	return width;
 }
 
+
 /**
 * Detect Element Resize Plugin for jQuery
 *
 * https://github.com/sdecima/javascript-detect-element-resize
 * Sebastian Decima
 *
-* version: 0.5
-*
-* Weaver X Mod - clean up name space: resize -> resizeX
+* version: 0.5.3
+* * Weaver X Mod - clean up name space: resize -> resizeX just jquery definition (4 of them)
 **/
 
 (function ( $ ) {
@@ -109,11 +109,44 @@ function weaverxBrowserWidth() {
 				}
 			});
 		};
+
+		/* Detect CSS Animations support to detect element display/re-attach */
+		var animation = false,
+			animationstring = 'animation',
+			keyframeprefix = '',
+			animationstartevent = 'animationstart',
+			domPrefixes = 'Webkit Moz O ms'.split(' '),
+			startEvents = 'webkitAnimationStart animationstart oAnimationStart MSAnimationStart'.split(' '),
+			pfx  = '';
+		{
+			var elm = document.createElement('fakeelement');
+			if( elm.style.animationName !== undefined ) { animation = true; }
+
+			if( animation === false ) {
+				for( var i = 0; i < domPrefixes.length; i++ ) {
+					if( elm.style[ domPrefixes[i] + 'AnimationName' ] !== undefined ) {
+						pfx = domPrefixes[ i ];
+						animationstring = pfx + 'Animation';
+						keyframeprefix = '-' + pfx.toLowerCase() + '-';
+						animationstartevent = startEvents[ i ];
+						animation = true;
+						break;
+					}
+				}
+			}
+		}
+
+		var animationName = 'resizeanim';
+		var animationKeyframes = '@' + keyframeprefix + 'keyframes ' + animationName + ' { from { opacity: 0; } to { opacity: 0; } } ';
+		var animationStyle = keyframeprefix + 'animation: 1ms ' + animationName + '; ';
 	}
 
 	function createStyles() {
 		if (!stylesCreated) {
-			var css = '.resize-triggers { visibility: hidden; } .resize-triggers, .resize-triggers > div, .contract-trigger:before { content: \" \"; display: block; position: absolute; top: 0; left: 0; height: 100%; width: 100%; overflow: hidden; } .resize-triggers > div { background: #eee; overflow: auto; } .contract-trigger:before { width: 200%; height: 200%; }',
+			//opacity:0 works around a chrome bug https://code.google.com/p/chromium/issues/detail?id=286360
+			var css = (animationKeyframes ? animationKeyframes : '') +
+					'.resize-triggers { ' + (animationStyle ? animationStyle : '') + 'visibility: hidden; opacity: 0; } ' +
+					'.resize-triggers, .resize-triggers > div, .contract-trigger:before { content: \" \"; display: block; position: absolute; top: 0; left: 0; height: 100%; width: 100%; overflow: hidden; } .resize-triggers > div { background: #eee; overflow: auto; } .contract-trigger:before { width: 200%; height: 200%; }',
 				head = document.head || document.getElementsByTagName('head')[0],
 				style = document.createElement('style');
 
@@ -125,6 +158,7 @@ function weaverxBrowserWidth() {
 			}
 
 			head.appendChild(style);
+			stylesCreated = true;
 		}
 	}
 
@@ -138,10 +172,16 @@ function weaverxBrowserWidth() {
 				element.__resizeListeners__ = [];
 				(element.__resizeTriggers__ = document.createElement('div')).className = 'resize-triggers';
 				element.__resizeTriggers__.innerHTML = '<div class="expand-trigger"><div></div></div>' +
-																						   '<div class="contract-trigger"></div>';
+																						'<div class="contract-trigger"></div>';
 				element.appendChild(element.__resizeTriggers__);
 				resetTriggers(element);
 				element.addEventListener('scroll', scrollListener, true);
+
+				/* Listen for a css animation to detect element display/re-attach */
+				animationstartevent && element.__resizeTriggers__.addEventListener(animationstartevent, function(e) {
+					if(e.animationName == animationName)
+						resetTriggers(element);
+				});
 			}
 			element.__resizeListeners__.push(fn);
 		}
@@ -158,6 +198,10 @@ function weaverxBrowserWidth() {
 		}
 	}
 }( jQuery ));
+
+
+
+
 
 /*! Menu Script from Sigma - v0.1.2
  * http://stephenharris.info
@@ -226,7 +270,7 @@ if (!Object.create) {               // IE8 shim for Object.create
 			// Initialize the arrows.
 			menu.el.addClass(mo.arrowClass)
 				.find('ul').parent().addClass(mo.hasSubmenuClass)
-				.children('a').append('<span class="' + mo.toggleSubmenuClass + '"></span>');
+				.children('a').append('<span class="' + mo.toggleSubmenuClass + '"></span>'); // prepend/append
 
 			// Catch click events on submenu toggle handlers.
 			menu.el.on('click', '.' + mo.toggleSubmenuClass, function( e ) {
@@ -292,7 +336,7 @@ if (!Object.create) {               // IE8 shim for Object.create
 			// Automatically insert a toggle button icon - dashicon
 			if ( menu.toggleButton.length < 1 ) {
 				if ( !mo.hideToggle )
-					menu.toggleButton = menu.container.prepend('<div id="' + mo.toggleButtonID + '" class="menu-toggle-button genericon genericon-wvrx-menu"></div>').find('#' + mo.toggleButtonID).hide();
+					menu.toggleButton = menu.container.prepend('<div id="' + mo.toggleButtonID + '" class="menu-toggle-button genericon genericon-wvrx-menu" alt="open menu"></div>').find('#' + mo.toggleButtonID).hide();
 				else
 					menu.toggleButton = menu.container.find('#' + mo.toggleButtonID).hide();
 			}
@@ -434,9 +478,10 @@ http://snippets.webaware.com.au/snippets/make-css-drop-down-menus-work-on-touch-
 
 function weaverxOnResize() {
 	// this function is called on initial window load, and again on resizes
-	var width = 768;
+	var width;;
 	width = weaverxBrowserWidth();
-	device = 'is-desktop';
+
+	var device = 'is-desktop';
 
 	// do things when we resize
 	if ( width >= 768 ) {       // on the desktop
@@ -449,9 +494,28 @@ function weaverxOnResize() {
 		jQuery('body').removeClass("is-desktop is-smalltablet");
 		device = 'is-phone is-mobile';
 	}
-	jQuery('body').addClass(device);
-	jQuery('#monitor-device').html(device);
 
+	var agent = navigator.userAgent;
+	if ( agent.match(/iPad/i) || agent.match( /iPhone/i ) || agent.match( /iPod/i ) ) {
+		device = device + ' is-ios';
+		if ( agent.match(/iPad/i) )
+			device = device + ' is-ipad';
+		if ( agent.match(/iPod/i) )
+			device = device + ' is-ipod';
+		if ( agent.match(/iPhone/i) )
+			device = device + ' is-iphone';
+	}
+
+	if ( agent.match( /Android/i ) )
+		device = device + ' is-android';
+
+	if (agent.match(/Windows/i))
+		device = device + ' is-windows';
+	if (agent.match(/Intel Mac OS X/i))
+		device = device + ' is-macos';
+
+	jQuery('body').addClass(device);
+	// jQuery('#monitor-device').html('Device:' + device);	// + ' / Agent: ' + agent);
 };
 
 //Initial load of page
@@ -460,11 +524,22 @@ jQuery(document).ready(weaverxOnResize);
 // handle mobile menus...
 
 jQuery(function($) {
+	var triggerPrimary = '768';
+	var triggerSecondary = '768';
+	if (wvrxOpts.menuPrimaryTrigger)
+		triggerPrimary = wvrxOpts.menuPrimaryTrigger;
+	if (wvrxOpts.menuSecondaryTrigger)
+		triggerSecondary = wvrxOpts.menuSecondaryTrigger;
+
 	$('.wrapper').resizeX(weaverxOnResize);
-	$('#nav-primary .weaverx-theme-menu').thmfdnMenu({
-		toggleButtonID: 'primary-toggle-button'
-	});
-	$('#nav-secondary .weaverx-theme-menu').thmfdnMenu({
-		toggleButtonID: 'secondary-toggle-button'
-	});
+	if (wvrxOpts.useSmartMenus == '0') {
+		$('#nav-primary .weaverx-theme-menu').thmfdnMenu({
+			toggleButtonID: 'primary-toggle-button',
+			mobileBreakpoint: triggerPrimary
+		});
+		$('#nav-secondary .weaverx-theme-menu').thmfdnMenu({
+			toggleButtonID: 'secondary-toggle-button',
+			mobileBreakpoint: triggerSecondary
+	});}
+
 });

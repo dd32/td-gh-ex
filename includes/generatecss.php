@@ -316,7 +316,6 @@ text_color = 0.213 * this.rgb[0] +
 
 
 
-
 // =========================== POST SPECIFIC AREAS ===============================
 
 	weaverx_put_rule_if_checked($sout, 'show_comments_closed','.nocomments {display:block;}');
@@ -401,6 +400,8 @@ text_color = 0.213 * this.rgb[0] +
 // ================================ AREAS ========================================
 
 weaverx_put_bgcolor($sout,'body_bgcolor','body');   // start with the body colors/css+
+weaverx_put_bgcolor($sout,'title_tagline_bgcolor','#title-tagline');
+
 
 
 $menu_bars = array (
@@ -410,9 +411,6 @@ $menu_bars = array (
 	'm_primary_sub' => '.menu-primary .wvrx-menu ul li a',
 	'm_secondary_sub' => '.menu-secondary .wvrx-menu ul li a',
 	'm_extra_sub' => '.menu-extra .wvrx-menu ul li a'
-	/* 'm_primary_sub' => '.menu-primary .wvrx-menu ul li, .menu-primary .wvrx-menu ul li a',
-	'm_secondary_sub' => '.menu-secondary .wvrx-menu ul li,.menu-secondary .wvrx-menu ul li a',
-	'm_extra_sub' => '.menu-extra .wvrx-menu ul li,.menu-extra .wvrx-menu ul li a' */
 );
 
 $menu_links_bg = array (
@@ -459,15 +457,6 @@ $menu_detail = array (              /* can't use multiple selectors here! */
 
 		weaverx_put_color( $sout, $id . '_html_color', $tag . ' .wvrx-menu-html');              // Extra menu HTML Left/Right
 		$val = weaverx_getopt($id . '_html_margin_dec');
-
-		if ( ( $xbg = weaverx_getopt( $id . '_extend_bgcolor' ) ) ) {
-			$cname = '.is-desktop ' . $tag;	// this extend bg method required for iPads to work right
-			weaverx_f_write( $sout,
-$cname . '{position:relative;overflow:visible;}' .
-$cname . ':before{content:"";position:absolute;top:0;bottom:0;left:-9998px;right:0;border-left:9999px solid ' .
-$xbg . ';box-shadow:9999px 0 0 ' . $xbg . ";z-index:-1;}\n"
-			);
-		}
 
 		if ( $val ) {
 			weaverx_f_write($sout,sprintf($tag . " .wvrx-menu-html{margin-top:%.5fem;}\n",$val));
@@ -655,10 +644,13 @@ $xbg . ';box-shadow:9999px 0 0 ' . $xbg . ";z-index:-1;}\n"
 		weaverx_css_style_val($sout, $tag, '{margin-bottom:%dpx;}', $id . '_margin_B');
 	}
 
-	$max_w_areas = array (              // special areas with px max-width
+	$max_w_areas = array (              // special areas with px max-width andF extend bg color
 		'header' => '#header',
 		'footer' => '#colophon',
-		'container' => '#container'
+		'container' => '#container',
+		'm_primary' => '.menu-primary',
+		'm_secondary' => '.menu-secondary',
+		'm_extra' => '.menu-extra',
 	);
 
 	foreach ( $max_w_areas as $id => $tag ) {
@@ -774,8 +766,13 @@ $xbg . ';box-shadow:9999px 0 0 ' . $xbg . ";z-index:-1;}\n"
 		}
 
 		if ( $title == 'content_h') {       // these aren't handled by adding a style
-			weaverx_put_rule_if_checked($sout, $title . '_normal', $rule . '{font-weight:normal !important;}');
-			weaverx_put_rule_if_checked($sout, $title . '_italic', $rule . '{font-style:italic;}');
+			weaverx_put_rule_if_checked($sout, $title . '_normal', $rule . '{font-weight:normal !important;}'); // not bold?
+
+			$val = weaverx_getopt($title . '_italic');
+			if ($val == 'on')
+				weaverx_f_write($sout, "{$rule}{font-style:italic;}\n" );
+			else if ($val == 'off')
+				weaverx_f_write($sout, "{$rule}{font-style:normal;}\n" );
 		}
 
 		if ( $title == 'post_title' || $title == 'm_header_mini')   // stupid special cases because want the bg to work right ...
@@ -827,7 +824,8 @@ $xbg . ';box-shadow:9999px 0 0 ' . $xbg . ";z-index:-1;}\n"
 	}
 
 	if ( $themew != 940 ) {
-		weaverx_f_write( $sout, '.ie8 #inject_fixedtop,.ie8 #inject_fixedbottom{width:' . $themew . 'px;max-width:'. $themew . "px;}\n" );
+		weaverx_f_write( $sout, "#inject_fixedtop,#inject_fixedbottom{max-width:{$themew}px;}\n" );
+		weaverx_f_write( $sout, ".ie8 #inject_fixedtop,.ie8 #inject_fixedbottom{max-width:{$themew}px;}\n" );
 	}
 
 
@@ -995,8 +993,18 @@ function weaverx_put_link($sout,$id, $a, $ahover) {
 	weaverx_put_color($sout,$id.'_hover_color',$ahover);
 
 	weaverx_put_rule_if_checked($sout, $id . '_u',$a . '{text-decoration:underline;}');
-	weaverx_put_rule_if_checked($sout, $id. '_em',$a.'{font-style:italic;}');
-	weaverx_put_rule_if_checked($sout, $id . '_strong',$a . '{font-weight:bold;}');
+
+	$val = weaverx_getopt($id . '_em');
+	if ($val == 'on')
+		weaverx_f_write($sout, "{$a}{font-style:italic;}\n" );
+	else if ($val == 'off')
+		weaverx_f_write($sout, "{$a}{font-style:normal;}\n" );
+
+	$val = weaverx_getopt($id . '_strong');
+	if ($val == 'on')
+		weaverx_f_write($sout, "{$a}{font-weight:bold;}\n" );
+	else if ($val == 'off')
+		weaverx_f_write($sout, "{$a}{font-weight:normal;}\n" );
 }
 //--
 
@@ -1092,13 +1100,6 @@ function weaverx_put_css_plus( $sout, $id, $tag ) {
 				$replaced = str_replace( '%selector%', trim( $selector ), $style);
 				weaverx_f_write( $sout, apply_filters( 'weaverx_css', sprintf( "%s %s\n", $selector, $replaced ) ) );
 			}
-			/* incorrect code follows:
-			$each = array_map( 'trim', explode( ',', $tag ) );
-			$replaced = preg_replace( "/%selector([^%]*)%/e",
-				"join( '\\1, ', \$each ).'\\1'",
-				$style );
-			weaverx_f_write( $sout, apply_filters( 'weaverx_css', sprintf( "%s %s\n", $tag, $replaced ) ) );
-			*/
 		} else {
 			weaverx_f_write( $sout, apply_filters( 'weaverx_css', sprintf( "%s %s\n", $tag, $style ) ) );
 		}

@@ -20,7 +20,7 @@ if (weaverx_getopt( 'm_secondary_hide') != 'hide' && has_nav_menu( $menu )  && !
 
 	$left = weaverx_getopt('m_secondary_html_left');
 	$right = weaverx_getopt('m_secondary_html_right');
-
+	
 	if ( $left ) {
 		$hide = ' ' . weaverx_getopt('m_secondary_hide_left');
 		$left = '<span class="wvrx-menu-html wvrx-menu-left' . $hide .'">' . do_shortcode( $left ) . '</span>';

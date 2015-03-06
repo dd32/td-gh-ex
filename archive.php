@@ -15,13 +15,16 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 				if ( have_posts() ) {
 					$archive = 'Archive';
 					if ( is_day() ) {
-						$archive = '<span class="title-archive-label">' . sprintf( __( 'Daily Archives: %s','weaver-xtreme') ,
+						$msg = apply_filters('weaverx_daily_archives', __( 'Daily Archives: %s','weaver-xtreme'));
+						$archive = '<span class="title-archive-label">' . sprintf( $msg ,
 																			'</span><span class="archive-info">' . get_the_date() ) . '</span>' ;
 					} else if ( is_month() ) {
-						$archive = '<span class="title-archive-label">' . sprintf( __( 'Monthly Archives: %s','weaver-xtreme') ,
+						$msg = apply_filters('weaverx_monthly_archives', __( 'Monthly Archives: %s','weaver-xtreme'));
+						$archive = '<span class="title-archive-label">' . sprintf( $msg ,
 																			'</span><span class="archive-info">' . get_the_date( 'F Y' ) ) . '</span>';
 					} else if ( is_year() ) {
-						$archive =  '<span class="title-archive-label">' . sprintf( __( 'Yearly Archives: %s','weaver-xtreme') ,
+						$msg = apply_filters('weaverx_yearly_archives', __( 'Yearly Archives: %s','weaver-xtreme'));
+						$archive =  '<span class="title-archive-label">' . sprintf( $msg ,
 																			 '</span><span class="archive-info">' . get_the_date( 'Y' ) ) . '</span>';
 					} else if ( is_tax() ) {        // these improve presentation of custom tax titles
 						$archive = single_term_title('', false);

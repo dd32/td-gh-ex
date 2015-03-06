@@ -102,7 +102,87 @@ textarea {
 
 .menu-add {float:left;}
 
-.infobar_right{float:left;}
+.infobar_right {float:left;}
+
+.is-desktop .menu-alignleft {
+	float:              left;
+}
+
+.is-desktop .wvrx-menu-container ul ul {
+	float: right;
+	left: auto;
+	right: 0;
+	text-align:			right;
+}
+
+.is-desktop .wvrx-menu-container ul ul ul {
+	left: auto;
+	right: 100%;
+	text-align:			right;
+}
+
+.is-desktop .wvrx-menu > li {
+	display:            block;
+	float:              right;
+}
+
+
+/* Standard arrow styles */
+.is-desktop .menu-arrows .toggle-submenu:after {    /* down arrow on top level menu (both bar and mobile) */
+	content:            '\f502';
+	font-family:        "Genericons";
+	font-size:          80%;
+	position:           relative;
+	top:                1.2em;          /* 1.2 default interacts with .wvrx-menu a rule */
+	padding-left:       1.1em;
+	margin-right:       0.1em;
+	border:             none;
+}
+
+.is-desktop .menu-arrows ul .toggle-submenu:after {     /* left arrow on right side of submenus */
+	content:            "\f503";
+	font-family:        "Genericons";
+	font-size:          80%;
+	position:           relative;
+	top:                0.85em;             /* interacts with .wvrx-menu a rule */
+	padding-left:       1.45em;
+	margin-right:       0.1em;
+	border:             none;
+}
+
+.is-desktop .menu-type-accordion .menu-arrows .toggle-submenu:after {   /* needed for accordion menus so Hide Arrows doesn't hide in this case */
+	content:            "\f502" !important;
+	display:            inline-block !important;
+}
+
+/* CSS hover menu arrow styles */
+.is-desktop .menu-arrows.menu-hover .has-submenu > a {  /* spacing after menu item for down arrow */
+	padding-right:      1.5em;
+}
+
+.is-desktop .menu-arrows.menu-hover .toggle-submenu {
+	width:              1.5em;
+}
+
+.is-desktop .is-desktop .menu-arrows.menu-hover .toggle-submenu:after {
+	right:              .5em;
+}
+
+/* Javascript menu arrow styles */
+.is-desktop .menu-arrows .is-open-submenu > ul {
+	display:            block;
+}
+
+.is-desktop .menu-arrows.is-mobile-menu.menu-arrows ul a .toggle-submenu:after { /* down arrow - mobile submeu  */
+	content:            "\f502";
+	font-family:        "Genericons";
+	font-size:          80%;
+	position:           relative;
+	top:                1.1em;              /* interacts with .wvrx-menu a rule */
+	padding-left:		1.4em;
+}
+
+
 
 /* =Content
 ----------------------------------------------- */

@@ -11,7 +11,8 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 	weaverx_sb_precontent('search');
 
 	if ( have_posts() ) {
-		$title = '<span class="title-search-label">' . sprintf( __( 'Search Results for: %s','weaver-xtreme'), '</span><span class="archive-info">'
+		$msg = apply_filters('weaverx_search_results', __( 'Search Results for: %s','weaver-xtreme'));
+		$title = '<span class="title-search-label">' . sprintf( $msg, '</span><span class="archive-info">'
 				. '"' . get_search_query() . '"</span>' );
 		?>
 

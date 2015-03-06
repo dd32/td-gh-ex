@@ -117,9 +117,6 @@ function weaverx_ToggleDIV(his, me, show, hide, text) {
 
   $.fn.wvrx_fixbranding = function( ) {
 
-	$('#inject_fixedtop').outerWidth( $('#wrapper').outerWidth());      // handle fixed top and bottom
-	$('#inject_fixedbottom').outerWidth( $('#wrapper').outerWidth());
-
 	if ($('#site-title').css('display') == 'none' &&  $('#site-tagline').css('display') == 'none')  // if both hidden, don't bother
 		return;
 
@@ -272,53 +269,91 @@ function wvrxFlowColor() {
 	This is the full-width method using padding and margin
 	It requires the base rules (below) to be in the general CSS (no longer requires html {overflow-x:hidden;})
 
-		.wrx-fullwidth {
-			box-sizing:content-box !important;
-			-moz-box-sizing:content-box !important;
-			-webkit-box-sizing:content-box !important;
-			overflow:visible !important;
-		}
+		.content-box {box-sizing:content-box !important;
+                -moz-box-sizing:content-box !important;
+                -webkit-box-sizing:content-box !important;}
 
 	It requires the #wvrx-page-width to get the following CSS so it becomes 100% wide and works with the monitoring
 		#wvrx-page-width {
 			width:100%;
 			display:block;
+			direction: ltr;
 			position:absolute;
 		}
+
 */
-
 function weaverxFullWidth() {
-	var BrowserWidth = weaverxBrowserWidth();                    			//get browser width
-	var WrapperWidth = parseInt(jQuery('#wrapper').css('max-width'),10);    //Get site width
-	var Extension = ((( BrowserWidth / WrapperWidth ) -1 ) * 100 ) / 2;     //Computes the side extension in %
+//V3-2 testing a way to measure error in total width
+//V3-1 Fixed RTL mode. The #wvrx-page-width div must be given direction:LTR  for the real time monitoring to work
+//V3- Fixed to support right and left padding and borders, as well as non centered containers.
+//Only limitation: Width, left / right padding & border should not be set with inline style, but with a separate custom CSS rule.
+//This is because the script will write its own computed width and padding as inline style, so anything already there would be lost and lead to wrong calculation.
 
-	ExtensionPlus = Extension +'%';  										//Makes padding string
-	ExtensionMinus = '-' + Extension +'%'; 									//Makes negative margin string
-
-	if ( Extension > 0 ) {												     //If there is space on the side generate the correct css rules for all affected objects
-		jQuery('.wvrx-fullwidth').css({                                    	//Sets the margin and padding on all elements with the class
-			'margin-left': ExtensionMinus,
-			'margin-right': ExtensionMinus,
-			'padding-left': ExtensionPlus,
-			'padding-right': ExtensionPlus
-        });
-	} else {
-		jQuery('.wvrx-fullwidth').css({                         				//Reset values when no extension
-			'margin-left': '0px',
-			'margin-right': '0px',
-			'padding-left': '0px',
-			'padding-right': '0px'
+var BrowserWidth = jQuery('#wvrx-page-width').width();  //Gather Internal(content) width of browser
+	jQuery(".wvrx-fullwidth").each(function() {
+		jQuery(this).removeClass( 'content-box' );  //reset container box-sizing status to its original state
+		jQuery(this).css({							//Remove previously computed inline width, paddings and margins to always measure original values
+			'width': '',
+			'margin-left': '',
+			'margin-right': '',
+			'padding-left': '',
+			'padding-right': ''
 		});
+		var ElemWidth = jQuery(this).width();						//width of content
+		var ElemOuterWidth = jQuery(this).outerWidth();						//width of content
+		var OrigLeftPad = parseInt(jQuery(this).css("padding-left"));
+		var OrigRightPad = parseInt(jQuery(this).css("padding-right"));
+		var OrigLeftBor = parseInt(jQuery(this).css("border-left-width")) || 0;  //or zero is for IE8 that returns NaN if not set
+		var OrigRightBor = parseInt(jQuery(this).css("border-right-width")) || 0;
 
-    }
-}
+		var Extension = BrowserWidth - ElemOuterWidth ;	//Difference between browser and content
+		if ( Extension > 0 ) {											//If positive we must compute extensions
+			var ParentWidth = jQuery(this).parent().width();			//width of parents content
+			var ElemBoxSizing = jQuery(this).css("box-sizing");			//Box sizing
+			var OrigLeftMarg = parseInt(jQuery(this).css("margin-left")) || 0;  //Left margin
 
-if (jQuery('.wvrx-fullwidth')) {   			//Only start monitoring if the class is being used
-	jQuery(function($) {      				//Runs the extension rule everytime the browser changes size
-		$('#wvrx-page-width').resizeX(weaverxFullWidth);
+			var LeftPosition = Math.ceil(jQuery(this).offset().left) ;  //ceil is to avoid a 1px scrollbar in sme configuration
+
+			var RightPosition = BrowserWidth - ( LeftPosition + ElemOuterWidth );//Distance between right side of content and right side of browser
+
+			if (Math.abs(LeftPosition - RightPosition) < 2 ) {  		//if object is centered compute margins from difference with parent
+				OrigLeftMarg = Math.max(0,((ParentWidth - ElemOuterWidth) / 2));  //to workaround FF  bug with jquery auto margins
+			}
+			//COmputing any error from jQuery so we can add it to the final padding
+			var WidthError = BrowserWidth - (LeftPosition + RightPosition + OrigLeftPad + OrigRightPad + OrigLeftBor + OrigRightBor + ElemWidth );
+
+			if (jQuery("body.rtl").length) {
+//alert('RTL loop');
+				var LeftMargin = LeftPosition +'px';//Make  margin strings
+				var LeftMarginMinus = '-' + LeftMargin;
+				var RightMargin = ( Math.max( 0,RightPosition - OrigLeftMarg) ) +'px';
+				var RightMarginMinus = '-' + RightMargin;
+			} else {
+			//LTR loop
+				var LeftMargin = ( Math.max( 0,LeftPosition - OrigLeftMarg ) ) +'px';//Make  margin strings
+				var LeftMarginMinus = '-' + LeftMargin;
+				var RightMargin = RightPosition +'px';
+				var RightMarginMinus = '-' + RightMargin;
+			}
+
+			var LeftPadding = ( LeftPosition + OrigLeftPad + WidthError ) + 'px';			//Make  padding strings with error correction
+			var RightPadding = ( RightPosition + OrigRightPad ) + 'px';
+
+			if ( ElemBoxSizing == "border-box" ){			//This checks if object is border box
+				jQuery(this).addClass( 'content-box' ); 	//If so change container to content box
+				jQuery(this).css({							//and set the CSS width to the width without padding to match content box
+					'width': Math.floor(ElemWidth) + 'px'
+				});
+			}
+			jQuery(this).css({								//Sets the inline margin and padding
+				'margin-left': LeftMarginMinus,
+				'margin-right': RightMarginMinus,
+				'padding-left': LeftPadding,
+				'padding-right': RightPadding
+			});
+		}
 	});
 }
-
 
 
 
@@ -391,6 +426,40 @@ var WdgtArea = document.getElementById(AreaId);
 }
 
 
+// full_browser_height
+
+function weaverxBottomFooter() {
+
+//This function will push the footer to the bottom of the browser by adjusting the container height
+
+	jQuery('#container').css('min-height', "");    			//resetting min-height
+
+	var ContHeight = jQuery('#container').height();			//needs to exclude padding as min-height will too
+
+	var PFHeight = 0; 										//set default postfooter height at zero
+
+    if ( jQuery('#inject_postfooter') ) {					//If there is a postfooter area get its height
+			var PFHeight = jQuery('#inject_postfooter').outerHeight(true);
+
+	}
+
+	var BrowserHeight = jQuery(window).height();                                    //get browserÕs height
+
+	var WrapperBottom = jQuery('#wrapper').position().top + jQuery('#wrapper').outerHeight(true);   //get bottom position of the wrapper
+
+	var EmptySpace = BrowserHeight - WrapperBottom - PFHeight;                      //calculate empty space
+
+	if ( EmptySpace > 0 ) {                                         //if empty space is positive, push the footer
+
+		//alert ('pushing footer');
+		ContHeight = ContHeight + EmptySpace;                       //New Container Height (only needed for Method A)
+
+	   jQuery('#container').css('min-height', ContHeight + "px");  //Method A pushes the footer by extending the container height
+	}
+}
+
+// called when window resizes
+
 function weaverxResizeEnd() {
 	jQuery("#branding").wvrx_fixbranding();     // fix up the #branding area title/description/image
 
@@ -404,17 +473,29 @@ function weaverxResizeEnd() {
 
 	wvrxFlowColor();                               // fix Color Flow - must go after the weaverxWidgetEq calls.
 
+	if ( wvrxEndOpts.full_browser_height == '1')
+		weaverxBottomFooter();							// fix full height browser
+
+
 	if (typeof( weaverxUserOnResize ) == 'function' ) // call user function if there
 		weaverxUserOnResize();
 };
 
 // Invoke scripts
 
+
 jQuery(document).ready(function () {
+
+	if (jQuery('.wvrx-fullwidth').length) {   	//Only start monitoring if the class is being used
+		weaverxFullWidth();						// First-time once - resizeX doesn't fire on Win8 initial load
+		jQuery(function($) {      				//Runs the extension rule everytime the browser changes size
+			$('#wvrx-page-width').resizeX(weaverxFullWidth);
+	});
 
 	// need to run weaverxResizeEnd on doc ready for at least some browsers
 	// As of October, 2014, these included Safari, Desktop Opera, IE9, and IE8.
 	// For other browsers, it doesn't seem needed, but it is harmless to do it anyway.
+
 
 	weaverxResizeEnd();
 
@@ -452,6 +533,8 @@ jQuery(document).ready(function () {
 	// Target your #container, #wrapper etc
 	// if ( ! weaver_disable_fitvids )  // one possible solution to disabling FitVids via localize_script in functions.php
 	jQuery("#wrapper").fitVids();
+}
+
 });
 
 jQuery(function($) {

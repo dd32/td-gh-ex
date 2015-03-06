@@ -46,7 +46,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 		$ct_class = ( $c_count < 1 ) ? ' class="no-comments-made"' : '';
 ?>
 		<header id="comments-title"<?php echo $ct_class;?>>
-		<h3><?php echo __('Comments','weaver-xtreme'); ?></h3>
+		<h3><?php echo apply_filters('weaverx_comments_title', __('Comments','weaver-xtreme')); ?></h3>
 				<h4>
 <?php		printf("<em>%s</em> &#8212; ",get_the_title()); comments_number(); /* em-dash */ ?>
 		</h4>
@@ -55,8 +55,8 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) { // are there comments to navigate through ?>
 		<nav id="comment-nav-above">
 			<h1 class="assistive-text"><?php echo __( 'Comment navigation','weaver-xtreme'); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments','weaver-xtreme') ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;','weaver-xtreme') ); ?></div>
+			<div class="nav-previous"><?php previous_comments_link( apply_filters('weaverx_older_comments',__( '&larr; Older Comments','weaver-xtreme')) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( apply_filters('weaverx_newer_comments',__( 'Newer Comments &rarr;','weaver-xtreme')) ); ?></div>
 		</nav>
 		<?php } // check for comment navigation ?>
 
@@ -75,15 +75,21 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below">
 			<h1 class="assistive-text"><?php echo __( 'Comment navigation','weaver-xtreme'); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments','weaver-xtreme') ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;','weaver-xtreme') ); ?></div>
+			<div class="nav-previous"><?php previous_comments_link( apply_filters('weaverx_older_comments',__( '&larr; Older Comments','weaver-xtreme')) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( apply_filters('weaverx_newer_comments',__( 'Newer Comments &rarr;','weaver-xtreme')) ); ?></div>
 		</nav>
 		<?php endif; // check for comment navigation ?>
 
 	<?php
 
-		if ( comments_open() )
-			comment_form();
+		if ( comments_open() ) {
+			$args = array (
+				'title_reply'       => apply_filters('weaverx_leave_reply_form', __( 'Leave a Reply','weaver-xtreme' )),
+				'cancel_reply_link' => apply_filters('weaverx_cancel_reply_form',__( 'Cancel Reply','weaver-xtreme' )),
+				'label_submit'      => apply_filters('weaverx_post_comment_form',__( 'Post Comment','weaver-xtreme' ))
+			);
+			comment_form($args);
+		}
 		weaverx_inject_area('postcomments');
 		echo "</div><!-- #comments -->\n";
 

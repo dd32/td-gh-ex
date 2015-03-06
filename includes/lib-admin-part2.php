@@ -168,12 +168,11 @@ function weaverx_form_link($value) {
 	<tr><td><small style="float:right;"><?php _e('Link Attributes:', 'weaver-xtreme' /*adm*/); ?></small></td><td colspan="2">
 
 	<small style="margin-left:5em;"><strong><?php _e('Bold', 'weaver-xtreme' /*adm*/); ?></strong></small>
-	<input type="checkbox" name="<?php weaverx_sapi_main_name($id_strong); ?>" id="<?php echo $id_strong; ?>"
-<?php checked(weaverx_getopt_checked( $id_strong )); ?> >
+
+<?php weaverx_form_font_bold_italic(array('id' => $id_strong)); ?>
 
 	&nbsp;<small><em><?php _e('Italic', 'weaver-xtreme' /*adm*/); ?></em></small>
-	<input type="checkbox" name="<?php weaverx_sapi_main_name($id_em); ?>" id="<?php echo $id_em; ?>"
-<?php checked(weaverx_getopt_checked( $id_em )); ?> >
+<?php weaverx_form_font_bold_italic(array('id' => $id_em)); ?>
 
 	&nbsp;<small><u><?php _e('Underline', 'weaver-xtreme' /*adm*/); ?></u></small>
 	<input type="checkbox" name="<?php weaverx_sapi_main_name($id_u); ?>" id="<?php echo $id_u; ?>"
@@ -232,10 +231,10 @@ function weaverx_form_widget_area( $value, $submit = false ) {
 	);
 
 	$default_margins = array(
-		'infobar' => '5px', 'content' => 'T:0, B:10', 'footer' => 'T:10, B:10',
+		'infobar' => '5px', 'content' => 'T:0, B:10', 'footer' => 'T:0, B:0',
 		'footer_sb' => 'T:0, B:10',  'primary' => 'T:0, B:10', 'widget' => '0, Auto - First: T:0, Last: B:0',
 		'secondary' => 'T:0, B:10', 'extra' => 'T:0, B:10', 'top' => 'T:10, B:10', 'bottom' => 'T:10, B:10',
-		'wrapper' => 'T:10, B:10'
+		'wrapper' => 'T:0, B:0'
 	);
 
 	$id = $value['id'];
@@ -343,7 +342,13 @@ function weaverx_form_widget_area( $value, $submit = false ) {
 			'info' => '<em>' . $name . '</em>' . __(': Extend BG color to full theme width on Desktop View (&starf;Plus)', 'weaver-xtreme' /*adm*/),
 			'value' => array() ),
 
+		   array(
+			'name' => '<span class="i-left" style="font-size:150%;">&harr;</span><small>' . __('Extend BG Attributes', 'weaver-xtreme' /*adm*/) . '</small>',
+			'id' => $id . '_extend_width', 'type' => 'checkbox',
+			'info' => '<em>' . $name . '</em>' . __(': Extend all BG Attributes to full width. Overrides Full-width BG color.', 'weaver-xtreme' /*adm*/)),
+
 		);
+
 		weaverx_form_show_options($opts_max, false, false);
 	}
 
@@ -491,6 +496,10 @@ function weaverx_form_menu_opts( $value, $submit = false ) {
 			'name' => '<small>' . __('Full-width BG', 'weaver-xtreme' /*adm*/) . '</small>', 'id' => $id . '_extend_bgcolor', 'type' => '+color',
 			'info' => '<em>' . $name . '</em>' . __(': Extend BG color to full theme width on Desktop View (&starf;Plus)', 'weaver-xtreme' /*adm*/),
 			'value' => array() ),
+		array(
+			'name' => '<span class="i-left" style="font-size:150%;">&harr;</span><small>' . __('Extend BG Attributes', 'weaver-xtreme' /*adm*/) . '</small>',
+			'id' => $id . '_extend_width', 'type' => 'checkbox',
+			'info' => '<em>' . $name . '</em>' . __(': Extend all BG Attributes to full width. Overrides Full-width BG color.', 'weaver-xtreme' /*adm*/)),
 
 
 		array ('name' => '<span class="i-left dashicons dashicons-editor-alignleft"></span>' . __('Align Menu', 'weaver-xtreme' /*adm*/),
@@ -644,12 +653,24 @@ for most other areas, including Header, Container, Content, Widgets, and more.',
 
 		<?php } else { ?>
 		&nbsp;<span class="rtl-break"><small><strong><?php _e('Bold', 'weaver-xtreme' /*adm*/); ?></strong></small>
-		<input type="checkbox" name="<?php weaverx_sapi_main_name($id_bold); ?>" id="<?php echo $id_bold; ?>"
-<?php checked(weaverx_getopt_checked( $id_bold )); ?> ></span>
+<?php
+	weaverx_form_font_bold_italic(array('id' => $id_bold));
+
+/*		<input type="checkbox" name="<?php weaverx_sapi_main_name($id_bold); ?>" id="<?php echo $id_bold; ?>"
+<?php checked(weaverx_getopt_checked( $id_bold )); ?> >
+*/
+?>
+		</span>
 		<?php } ?>
-		&nbsp;<span class="rtl-break"><small><em><?php _e('Italic', 'weaver-xtreme' /*adm*/); ?></em></small>
-		<input type="checkbox" name="<?php weaverx_sapi_main_name($id_italic); ?>" id="<?php echo $id_italic; ?>"
-<?php checked(weaverx_getopt_checked( $id_italic )); ?> ></span>
+		&nbsp;<span class="rtl-break">
+		<small><em><?php _e('Italic', 'weaver-xtreme' /*adm*/); ?></em></small>
+<?php
+	weaverx_form_font_bold_italic(array('id' => $id_italic));
+/*		<input type="checkbox" name="<?php weaverx_sapi_main_name($id_italic); ?>" id="<?php echo $id_italic; ?>"
+/<?php checked(weaverx_getopt_checked( $id_italic )); ?> >
+*/
+?>
+		</span>
 <?php   if ( apply_filters('weaverx_xtra_type', '+plus_fonts' ) == 'inactive' )
 			echo '<small>&nbsp;&nbsp; ' . __('(Add new fonts with <em>Weaver Xtreme Plus</em>)', 'weaver-xtreme' /*adm*/) . '</small>';
 		else
@@ -664,7 +685,7 @@ function weaverx_from_fi_location( $value, $is_post = false ) {
 	$value['value'] = array(
 		array('val' => 'content-top', 'desc' => __('With Content - top', 'weaver-xtreme' /*adm*/) ),
 		array('val' => 'content-bottom', 'desc' => __('With Content - bottom', 'weaver-xtreme' /*adm*/) ),
-		array('val' => 'title-before', 'desc' => __('Before Title', 'weaver-xtreme' /*adm*/) ),
+		array('val' => 'title-before', 'desc' => __('With Title', 'weaver-xtreme' /*adm*/) ),
 		array('val' => 'header-image', 'desc' => $is_post ? __('Hide on Blog View', 'weaver-xtreme' /*adm*/) :
 			  __('Header Image Replacement', 'weaver-xtreme' /*adm*/) ),
 		array('val' => 'post-before', 'desc' => __('Outside of Page/Post', 'weaver-xtreme' /*adm*/) )
@@ -771,6 +792,15 @@ function weaverx_form_rounded($value) {
 	);
 
 	weaverx_form_select_id($value);
+}
+
+function weaverx_form_font_bold_italic($value) {
+	$value['value'] = array(array('val' => '', 'desc' => __('Inherit', 'weaver-xtreme' /*adm*/) ),
+		array('val' => 'on', 'desc' => __('On', 'weaver-xtreme' /*adm*/) ),
+		array('val' => 'off', 'desc' => __('Off', 'weaver-xtreme' /*adm*/) )
+	);
+
+	weaverx_form_select_id($value, false);
 }
 
 function weaverx_form_shadows($value) {

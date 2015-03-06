@@ -7,10 +7,6 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
  * @subpackage Weaver X
  * @since Weaver Xtreme 1.0
  */
-
-global $weaverx_cur_post_ID;
-$weaverx_cur_post_ID = get_the_ID();
-
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('content-page'); ?>>
 <?php

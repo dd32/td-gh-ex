@@ -91,8 +91,11 @@ function weaverx_mainopts_general() {
 		  'info' => __('These settings control site outer background and the standard link colors.', 'weaver-xtreme' /*adm*/)),
 	array('name' => __('Outside BG', 'weaver-xtreme' /*adm*/), 'id' => 'body_bgcolor', 'type' => 'ctext',
 		'info' => __('Background color that wraps entire page. (&lt;body&gt;) Using <em>Appearance->Background</em> will override this value, or allow a background image instead.', 'weaver-xtreme' /*adm*/)),
+
 	array('name' => __('Fade Outside BG', 'weaver-xtreme' /*adm*/), 'id' => 'fadebody_bg', 'type' => 'checkbox',
 		'info' => __('Will fade the Outside BG color, darker at top to lighter at bottom.', 'weaver-xtreme' /*adm*/)),
+	array('name' => __('Full Browser Height', 'weaver-xtreme' /*adm*/), 'id' => 'full_browser_height', 'type' => 'checkbox',
+		'info' => __('For short pages, add extra padding to bottom of content to force full browser height.', 'weaver-xtreme' /*adm*/)),
 	array('name' => __('Standard Links', 'weaver-xtreme' /*adm*/), 'id' => 'link', 'type' => 'link',
 		'info' => __('Global default for link colors (not including menus and titles). Set Bold, Italic, and Underline by setting those options for specific areas rather than globally to have more control.', 'weaver-xtreme' /*adm*/)),
 
@@ -177,8 +180,8 @@ function weaverx_mainopts_custom() {
 
 	array( 'type' => 'submit'),
 
-	array('name' => __('Custom CSS', 'weaver-xtreme' /*adm*/), 'id' => 'custom_css', 'type' => 'custom',
-		'info' => __('Create Custom CSS Rules', 'weaver-xtreme' /*adm*/), 'val' => 'weaverx_custom_css'),
+	array('name' => __('Custom CSS', 'weaver-xtreme' /*adm*/), 'id' => 'custom_css', 'type' => 'custom_css',
+		'info' => __('Create Custom CSS Rules', 'weaver-xtreme' /*adm*/)),
 
 	array( 'type' => 'submit'),
 
@@ -318,13 +321,23 @@ function weaverx_mainopts_header() {
 		'id' => 'hide_site_tagline', 'type' => 'select_hide',
 		'info' => __('Hide Site Tagline (Uses "display:none;" : SEO friendly.)', 'weaver-xtreme' /*adm*/)),
 
+	array('name' => __('Title/Tagline Area BG', 'weaver-xtreme' /*adm*/), 'id' => 'title_tagline_bgcolor', 'type' => 'ctext',
+		'info' => __('BG Color for the Title, Tagline, Search, Logo/HTML and Mini-Menu area.', 'weaver-xtreme' /*adm*/)),
+
+	array('name' => '<span class="i-left dashicons dashicons-editor-code"></span><small>' . __('Site Logo/HTML', 'weaver-xtreme' /*adm*/) . '</small>',
+				'id' => '_site_logo', 'type' => '+textarea',
+				'info' => __('HTML for Site Title area. (example: &lt;img src="url" style="position:absolute;top:20px;left:20px;"&nbsp;/&gt; (&starf;Plus) (&diams;)', 'weaver-xtreme' /*adm*/)),
+	array('name' => '<span class="i-left dashicons dashicons-visibility"></span><small>' . __('Hide Site Logo/HTML', 'weaver-xtreme' /*adm*/) . '</small>',
+		'id' => '_hide_site_logo', 'type' => '+select_hide',
+		'info' => __('Hide Site Logo/HTML by device (&starf;Plus) (&diams;)', 'weaver-xtreme' /*adm*/)),
+
 	array( 'name' => '<span class="i-left">{ }</span> <small>' . __('Add Classes', 'weaver-xtreme' /*adm*/) . '</small>',
 			'id' => 'site_title_add_class',  'type' => '+widetext',
 			'info' => '<em>' . __('Title/Tagline', 'weaver-xtreme' /*adm*/) . '</em>' . __(': Space separated class names to add to this area (<em>Advanced option</em>) (&starf;Plus)', 'weaver-xtreme' /*adm*/) ),
 
 
 	array('name' => '<small>' . __('Move Title/Tagline over Image', 'weaver-xtreme' /*adm*/) . '</small>', 'id' => 'title_over_image', 'type' => 'checkbox',
-		'info' => __('Move the Title, Tagline, Search, and Mini-Menu over the Header Image.', 'weaver-xtreme' /*adm*/)),
+		'info' => __('Move the Title, Tagline, Search, Logo/HTML and Mini-Menu over the Header Image.', 'weaver-xtreme' /*adm*/)),
 
 
 
@@ -390,6 +403,8 @@ function weaverx_mainopts_menus() {
 	array('name' => __('Menu &amp; Info Bars', 'weaver-xtreme' /*adm*/), 'id' => '-menu', 'type' => 'header',
 		'info' => __('Options affecting site Menus and the Info Bar', 'weaver-xtreme' /*adm*/),
 		'help' => 'help.html#MenuBar'),
+##### SmartMenu
+	array('name' => '<span class="i-left dashicons dashicons-menu"></span>' . __('Use Smart Menus', 'weaver-xtreme' /*adm*/), 'id' => 'menu_use_smartmenus', 'type' => 'checkbox',		'info' => __('Use "SmartMenus library rather than native Weaver Xtreme Menus', 'weaver-xtreme' /*adm*/)),
 
 
 	array('name' => __('Primary Menu Bar', 'weaver-xtreme' /*adm*/), 'id' => 'm_primary', 'type' => 'menu_opts',
@@ -397,11 +412,21 @@ function weaverx_mainopts_menus() {
 
 	array('name' => '<small>' . __('No Home Menu Item', 'weaver-xtreme' /*adm*/) . '</small>', 'id' => 'menu_nohome', 'type' => 'checkbox',
 		'info' => __('Don\'t automatically add Home menu item for home page (as defined in Settings->Reading)', 'weaver-xtreme' /*adm*/)),
+	array('name' => '<span class="i-left" style="font-size:150%;">&harr;</span><small> ' . __('Mobile Menu Trigger', 'weaver-xtreme' /*adm*/). '</small>',
+		'id' => 'menu_primary_trigger_int', 'type' => 'val_px',
+		'info' => __('Set trigger width where Primary Menu changes to/from Mobile Menu (Default: 768px)', 'weaver-xtreme' /*adm*/)),
+
+
 	array( 'type' => 'submit'),
 
-	array('name' => __('Secondary Menu Bar', 'weaver-xtreme' /*adm*/), 'id' => 'm_secondary', 'type' => 'menu_opts_submit',
+	array('name' => __('Secondary Menu Bar', 'weaver-xtreme' /*adm*/), 'id' => 'm_secondary', 'type' => 'menu_opts',
 		'info' => __('Attributes for the Secondary Menu Bar (Default Location: Top of Header)', 'weaver-xtreme' /*adm*/)),
+	array('name' => '<span class="i-left" style="font-size:150%;">&harr;</span><small> ' . __('Mobile Menu Trigger', 'weaver-xtreme' /*adm*/). '</small>',
+		'id' => 'menu_secondary_trigger_int', 'type' => 'val_px',
+		'info' => __('Set trigger width where Secondary Menu changes to/from Mobile Menu (Default: 768px)', 'weaver-xtreme' /*adm*/)),
 
+
+	array( 'type' => 'submit'),
 
 
 	array('name' => __('Options: All Menus', 'weaver-xtreme' /*adm*/), 'id' => '-forms', 'type' => 'subheader_alt',
@@ -482,6 +507,8 @@ function weaverx_mainopts_menus() {
 </div>
 </div>
 <?php
+
+	if (! WEAVERX_SMARTMENUS ) unset($opts[2]);		// kill it for now ###### SmartMenus
 	$all_opts = apply_filters('weaverxplus_menu_inject', $opts);
 
 	weaverx_form_show_options($all_opts);
@@ -881,7 +908,7 @@ array('name' => __('Post Layout', 'weaver-xtreme' /*adm*/), 'id' => '-schedule',
 		'info' => __('Hide the post author everywhere it is normally displayed.', 'weaver-xtreme' /*adm*/)),
 	array('name' => '<span class="i-left dashicons dashicons-visibility"></span><small>' . __('Hide Post Categories', 'weaver-xtreme' /*adm*/) . '</small>',
 		'id' => 'post_hide_categories', 'type' => 'checkbox',
-		'info' => __('Hide the post categories and tags wherever they are normally displayed.', 'weaver-xtreme' /*adm*/)),
+		'info' => __('Hide the post categories wherever they are normally displayed.', 'weaver-xtreme' /*adm*/)),
 	array('name' => '<span class="i-left dashicons dashicons-visibility"></span><small>' . __('Hide Post Tags', 'weaver-xtreme' /*adm*/) . '</small>', 'id' => 'post_hide_tags', 'type' => 'checkbox',
 			'info' => __('Hide the post tags wherever they are normally displayed.','weaverx-xtreme' /*adm*/)),
 	array('name' => '<span class="i-left dashicons dashicons-visibility"></span><small>' . __('Hide Permalink', 'weaver-xtreme' /*adm*/) . '</small>',

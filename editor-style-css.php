@@ -22,7 +22,7 @@ function weaverx_mce_opt($opt) {
 header( 'Content-type: text/css' ); // gotta honor HTTP protocol for css
 
 if (($val=weaverx_mce_opt('fontsize'))) {
-	echo "label,th,thead th,tr,td,.mceContentBody,body{font-size:" . $val . "px;}\n";
+	echo "label,th,thead th,tr,td,.mceContentBody,body{font-size:" . $val . "em;}\n";
 }
 
 if (($val = weaverx_mce_opt('twidth'))) {

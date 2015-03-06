@@ -8,8 +8,6 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
  * @since Weaver Xtreme 1.0
  */
 
-global $weaverx_cur_post_ID;
-$weaverx_cur_post_ID = get_the_ID();
 weaverx_fi( 'page', 'post-before' );
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('content-page'); ?>>

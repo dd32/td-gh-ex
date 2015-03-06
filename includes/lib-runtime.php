@@ -21,7 +21,6 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 // # Weaver Xtreme Globals ==============================================================
 $weaverx_opts_cache = false;	// internal cache for all settings
 $weaverx_cur_page_ID = false;	// the ID of the current page
-$weaverx_cur_post_ID = false;	// the ID of the current page
 $weaverx_cur_post_count = 0;	// to keep track of even/odd
 $weaverx_cur_template = '';	// current page template - set in functions.php setup
 $weaverx_crumbs = false;
@@ -159,18 +158,17 @@ function weaverx_e_notopt($opt,$str) {
 function weaverx_get_per_page_value($name) {
 	global $weaverx_cur_page_ID;
 	return get_post_meta($weaverx_cur_page_ID,$name,true);
+	//return get_post_meta(get_the_ID(),$name,true);
+
 }
 
 function weaverx_get_per_post_value($meta_name) {
-	global $weaverx_cur_post_ID;
-	return get_post_meta($weaverx_cur_post_ID,$meta_name,true);  // retrieve meta value
+	return get_post_meta(get_the_ID(),$meta_name,true);  // retrieve meta value
 }
 
 function weaverx_is_checked_post_opt($meta_name) {
 	// the standard is to check options to hide things
-	global $weaverx_cur_post_ID;
-
-	$val = get_post_meta($weaverx_cur_post_ID,$meta_name,true);  // retrieve meta value
+	$val = get_post_meta(get_the_ID(),$meta_name,true);  // retrieve meta value
 	if (!empty($val)) return true;		// value exists - 'on'
 	return false;
 }
@@ -1018,8 +1016,6 @@ function weaverx_masonry($act = false) {
 			echo '<div id="blog-posts" class="cf">';
 			break;
 		case 'begin-post' :	// wrap one post
-			global $weaverx_cur_post_ID;
-			$weaverx_cur_post_ID = get_the_ID();// we need to know now
 			if (weaverx_is_checked_post_opt('_pp_masonry_span2')) {	// span 2 columns
 				$usem .= '-span-2';
 			}

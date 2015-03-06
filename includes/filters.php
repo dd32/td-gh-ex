@@ -400,8 +400,49 @@ function weaverx_mce_css($default_style) {
 
 	}
 
-	if (($val = weaverx_getopt('site_fontsize_int')))	// base font size
-		$put .= '&fontsize=' . urlencode($val);
+	//if (($val = weaverx_getopt('site_fontsize_int')))	// base font size
+	//	$put .= '&fontsize=' . urlencode($val);
+	if (($base_font_px = weaverx_getopt('site_fontsize_int')) == '' )
+		$base_font_px = 16;
+	$base_font_px = (float)$base_font_px;
+	$font_size = 'default';
+
+	if (!is_page() && ($area_font = weaverx_getopt_default('post_font_size','default')) != 'default' )
+		$font_size = $area_font;
+	else if (($area_font = weaverx_getopt_default('content_font_size','default')) != 'default' )
+		$font_size = $area_font;
+	else if (($area_font = weaverx_getopt_default('container_font_size','default')) != 'default' )
+		$font_size = $area_font;
+	else if (($area_font = weaverx_getopt_default('wrapper_font_size','default')) != 'default' )
+		$font_size = $area_font;
+
+	switch ( $font_size ) {		// find conversion factor
+		case 'xxs-font-size':
+			$h_fontmult = 0.625;
+			break;
+		case 'xs-font-size':
+			$h_fontmult = 0.75;
+			break;
+		case 's-font-size':
+			$h_fontmult = 0.875;
+			break;
+		case 'l-font-size':
+			$h_fontmult = 1.125;
+			break;
+		case 'xl-font-size':
+			$h_fontmult = 1.25;
+			break;
+		case 'xxl-font-size':
+			$h_fontmult = 1.5;
+			break;
+		default:
+			$h_fontmult = 1;
+			break;
+	}
+
+	$em_font_size = ( $base_font_px / 16.0) * $h_fontmult ;
+	$put .= '&fontsize=' . ($em_font_size);
+
 
 
 	$val = weaverx_getopt_default('content_font_family', 'default');

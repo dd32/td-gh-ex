@@ -124,6 +124,7 @@ __('Note: Downloaded settings include <em>Weaver Xtreme Plus</em> settings.
 Setting files from Weaver Xtreme Plus can be uploaded to the Free Weaver Xtreme version, but will not be used or saved by the free version.', 'weaver-xtreme' /*adm*/)
 . '</p>';
 ?>
+
 <form enctype="multipart/form-data" action="<?php echo $_SERVER["REQUEST_URI"]; ?>" method="POST">
 	<table>
 		<tr><td><h3><?php _e('Upload settings from file saved on your computer', 'weaver-xtreme' /*adm*/); ?></h3></td></tr>
@@ -199,7 +200,7 @@ You may need to check your folder permissions or other server settings.', 'weave
 		}
 	if (!$ok) {
 		echo '<div id="message" class="updated fade"><p><strong><em style="color:red;">' .
-		__('ERROR', 'weaver-xtreme' /*adm*/) . '/em></strong></p><p>';
+		__('ERROR', 'weaver-xtreme' /*adm*/) . '</em></strong></p><p>';
 		foreach($errors as $error){
 			echo $error.'<br />';
 		}

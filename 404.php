@@ -12,7 +12,9 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 		// and next the content area.
 ?>
 		<article id="post-0" class="post error404 not-found">
-			<?php weaverx_page_title( __('Sorry, no such page.','weaver-xtreme') );
+			<?php
+				$msg = apply_filters('weaverx_404_title', __('Sorry, no such page.','weaver-xtreme'));
+				weaverx_page_title( $msg );
 
 			if (!weaverx_getopt('_hide_not_found_search')) { ?>
 				<div class="entry-content clearfix">

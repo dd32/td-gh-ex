@@ -99,7 +99,7 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 	/* ======== HEADER WIDGET AREA ======== */
 	weaverx_header_widget_area( 'top' );           // show header widget area if set to this position
 
-	$title = esc_html( get_bloginfo( 'name', 'display' ) );
+	$title = esc_html( apply_filters('weaverx_site_title', get_bloginfo( 'name', 'display' ) ));
 ?>
 
 
@@ -122,9 +122,10 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 	} else {
 		echo "    <div id=\"title-tagline\" class=\"clearfix\" >\n";
 	}
+	$logo = weaverx_getopt( '_site_logo' );
+	$hide_logo = weaverx_getopt( '_hide_site_logo' );
 
 ?>
-
 		<h1 id="site-title"<?php echo weaverx_title_class( 'site_title', false, $h_class ); ?>><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 		<?php echo $title; ?></a></h1>
 
@@ -133,9 +134,13 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 		if ( $hide_search != 'hide' ) { ?>
 			<div id="header-search" class="<?php echo $hide_search; ?>"><?php get_search_form(); ?></div><?php
 		}
-		$hide_tag = weaverx_getopt( 'hide_site_tagline' ); ?>
+		$hide_tag = weaverx_getopt( 'hide_site_tagline' );
 
-		<h2 id="site-tagline" class="<?php echo $hide_tag; ?>"><span<?php echo weaverx_title_class('tagline'); ?>><?php bloginfo( 'description' ); ?></span></h2>
+		$tagline = esc_html( apply_filters('weaverx_tagline', get_bloginfo( 'description' )) );
+
+		?>
+		<h2 id="site-tagline" class="<?php echo $hide_tag; ?>"><span<?php echo weaverx_title_class('tagline'); ?>><?php echo $tagline; ?></span></h2>
+		<span id="site-logo" class="site-logo <?php echo $hide_logo; ?>"><?php echo $logo; ?></span>
 		<?php get_template_part( 'templates/menu', 'header-mini' ); ?>
 
 	</div><!-- /.title-tagline -->

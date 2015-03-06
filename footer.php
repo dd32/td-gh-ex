@@ -62,7 +62,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 		if (! weaverx_getopt('_hide_poweredby')) { ?>
 			<span id="site-generator">
 			<a href="<?php echo esc_url( __( '//wordpress.org/','weaver-xtreme') ); ?>" title="wordpress.org" target="_blank"><?php printf( __( 'Proudly powered by %s','weaver-xtreme'), 'WordPress' ); ?></a> -
-			<?php echo(WEAVERX_THEMENAME); ?> by <?php weaverx_site('/weaver-x/'); ?>WeaverTheme</a>
+			<?php echo(WEAVERX_THEMENAME); ?> by <?php weaverx_site(''); ?>WeaverTheme</a>
 		</span> <!-- #site-generator -->
 		<?php
 		}
@@ -125,12 +125,14 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 		'hFontMult' => $h_fontmult,
 		'sbLayout' => $sb_layout,
 		'flowColor' =>  (weaverx_getopt('flow_color')) ? '1' : '0',
+		'full_browser_height' =>
+			(weaverx_getopt('full_browser_height') || weaverx_is_checked_page_opt('_pp_full_browser_height')) ? '1' : '0',
 		'primary' => (weaverx_getopt('primary_eq_widgets')) ? '1' : '0',    // #primary-widget-area
 		'secondary' => (weaverx_getopt('secondary_eq_widgets')) ? '1' : '0',  // '#secondary-widget-area',
 		'top' => (weaverx_getopt('top_eq_widgets')) ? '1' : '0',        // '.widget-area-top',
 		'bottom' => (weaverx_getopt('bottom_eq_widgets')) ? '1' : '0',     // '.widget-area-bottom',
 		'header_sb' => (weaverx_getopt('header_sb_eq_widgets')) ? '1' : '0',  // '#header-widget-area',
-		'footer_sb' => (weaverx_getopt('footer_sb_eq_widgets')) ? '1' : '0'   // '#footer-widget-area',
+		'footer_sb' => (weaverx_getopt('footer_sb_eq_widgets')) ? '1' : '0'   // '#footer-widget-area'
 	);
 
 	wp_localize_script('weaverxJSLibEnd', 'wvrxEndOpts', $local );      // in footer.php because don't know the values yet in functions.php

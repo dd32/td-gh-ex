@@ -267,6 +267,26 @@ You can alternatively load a <code>favicon.ico</code> file to the root directory
 	<?php weaverx_media_lib_button('_favicon_url'); ?>&nbsp;&nbsp;<?php _e('Full path to FavIcon', 'weaver-xtreme' /*adm*/);?>
 </p><br />
 
+	<div class="atw-option-subheader"><span style="color:black; padding:.2em;" class="dashicons dashicons-admin-page"></span><span style="color:blue;font-size:larger;">
+	<b><?php _e('Exclude Pages from SiteMap', 'weaver-xtreme' /*adm*/);?></b></span></div></br />
+<p>
+<?php _e('You can specify a comma separated list of Page IDs to be excluded from the SiteMap Page list.
+To exclude pages from Search results, use a plugin such as "Search Exclude".
+You can hide different sections of the SiteMap by adding rules to the "Custom CSS Rules" box.
+To hide authors, for example, add the rule <code>#sitemap-authors{display:none;}</code>.
+The IDs for the SiteMap sections are: <code>#sitemap-pages, #sitemap-posts, #sitemap-categories, #sitemap-tags, #sitemap-authors</code>', 'weaver-xtreme' /*adm*/);?>
+</p>
+<p>
+<?php
+	$exclude = weaverx_getopt('_sitemap_exclude_pages');
+
+?>
+	<strong><?php _e('Exclude Pages from SiteMap', 'weaver-xtreme' /*adm*/); ?>: </strong>
+	<?php weaverx_textarea(weaverx_getopt('_sitemap_exclude_pages'), '_sitemap_exclude_pages', 1, '1,2,3', $style = 'width:350px;'); ?>
+</p><br />
+
+
+
 
 	<div class="atw-option-subheader"><span style="color:black; padding:.2em;" class="dashicons dashicons-hammer"></span>
 		<span style="color:blue;font-size:larger;">

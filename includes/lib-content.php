@@ -112,9 +112,11 @@ function weaverx_content_nav( $nav_id , $from_search=false) {
 		<h3 class="assistive-text"><?php echo __( 'Post navigation','weaver-xtreme'); ?></h3>
 <?php
 	if (weaverx_getopt('nav_style') == 'prev_next') {
+		$prev = apply_filters('weaverx_older_posts','<span class="meta-nav">&larr; </span>' . __('Previous Post','weaver-xtreme'));
+		$next = apply_filters('weaverx_newer_posts', __('Next Post','weaver-xtreme') . '<span class="meta-nav">&rarr; </span>' );
 ?>
-		<div class="nav-previous"><?php next_posts_link('<span class="meta-nav">&larr; </span>' . __('Previous Post','weaver-xtreme')); ?></div>
-		<div class="nav-next"><?php previous_posts_link( __('Next Post','weaver-xtreme') . '<span class="meta-nav">&rarr; </span>'); ?></div>
+		<div class="nav-previous"><?php next_posts_link( $prev ); ?></div>
+		<div class="nav-next"><?php previous_posts_link( $next ); ?></div>
 <?php
 	} else if (weaverx_getopt('nav_style') == 'paged_left') {
 		echo ("\t<div class=\"nav-previous\">");
@@ -137,9 +139,11 @@ function weaverx_content_nav( $nav_id , $from_search=false) {
 		}
 		echo "\t</div>\n";
 	} else {	// Older/Newer posts
+		$prev = apply_filters('weaverx_older_posts', __( '<span class="meta-nav">&larr;</span> Older posts','weaver-xtreme'));
+		$next = apply_filters('weaverx_newer_posts', __( 'Newer posts <span class="meta-nav">&rarr;</span>','weaver-xtreme'));
 ?>
-		<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts','weaver-xtreme') ); ?></div>
-		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>','weaver-xtreme') ); ?></div>
+		<div class="nav-previous"><?php next_posts_link( $prev ); ?></div>
+		<div class="nav-next"><?php previous_posts_link( $next ); ?></div>
 <?php	} ?>
 	</nav><div class="clear-nav-id" style="clear:both"></div><!-- #<?php echo $nav_id;?> -->
 <?php
@@ -159,6 +163,8 @@ function weaverx_continue_reading_link() {
 	$rep = weaverx_t_get('more_msg');
 	if (!$rep)
 		$rep = weaverx_getopt('excerpt_more_msg');
+
+	$rep = apply_filters('weaverx_more_message',$rep);
 
 	if (!empty($rep))
 		$msg = '<span class="more-msg">' . $rep . '</span>';
@@ -301,9 +307,12 @@ function weaverx_format_posted_on_footer($who) {
 		<footer class="entry-utility">
 <?php 		weaverx_posted_on();
 		if ( comments_open() ) {
+			$msg = apply_filters('weaverx_leave_reply_blog', __( 'Leave a reply','weaver-xtreme'));
+			$r1 = apply_filters('weaverx_reply_1', __( '<b>1</b> Reply','weaver-xtreme'));
+			$rmany = apply_filters('weaverx_reply_many', __( '<b>%</b> Replies','weaver-xtreme'));
 			echo '<span ' . weaverx_meta_info_class( 'post_info_bottom' ) . '><span class="comments-link">';
-			comments_popup_link( '<span class="leave-reply">' . '&nbsp;&nbsp;' . __( 'Leave a reply','weaver-xtreme') . '</span>', __( '<b>1</b> Reply','weaver-xtreme'),
-				__( '<b>%</b> Replies','weaver-xtreme') ); ?></span></span>
+			comments_popup_link( '<span class="leave-reply">' . '&nbsp;&nbsp;' . $msg . '</span>', $r1 ,
+				$rmany ); ?></span></span>
 
 <?php
 		}
@@ -551,13 +560,13 @@ function weaverx_post_top_meta( $type='' ) {
 
 function weaverx_per_post_style() {
 	// Emit a <style> for this post
-	global $weaverx_cur_post_ID;
-	do_action('weaverx_per_post', $weaverx_cur_post_ID);
+	do_action('weaverx_per_post', get_the_ID());
 }
 
 // ------------------------------------- TITLES -----------------------------------
 
 
+if ( ! function_exists( 'weaverx_archive_title' ) ) {
 function weaverx_archive_title( $title = '', $type, $extra = '') {
 	// The page title for archive-like pages
 	// $type is for type of the archive - could be used to show icon
@@ -568,11 +577,12 @@ function weaverx_archive_title( $title = '', $type, $extra = '') {
 	<h1 class="page-title archive-title title-<?php echo $type . $extra; ?>"><span<?php echo weaverx_title_class( 'archive_title' ) . '>' . $title;?></span></h1>
 <?php
 }
+}
 //--
 
 
 
-
+if ( ! function_exists( 'weaverx_page_title' ) ) {
 function weaverx_page_title( $title = '') {
 	// The page title
 
@@ -587,10 +597,11 @@ function weaverx_page_title( $title = '') {
 <?php
 	}
 }
+}
 //--
 
 
-
+if ( ! function_exists( 'weaverx_single_title' ) ) {
 function weaverx_single_title( $title = '' ) {
 	// The page title for single view page
 	if ( weaverx_is_checked_post_opt('_pp_hide_post_title') || weaverx_t_get('hide_title') )
@@ -605,19 +616,19 @@ function weaverx_single_title( $title = '' ) {
 	</header><!-- .page-header -->
 <?php
 }
+}
 //--
 
 
 
+if ( ! function_exists( 'weaverx_fi' ) ) {
 function weaverx_fi( $who, $where ) {
 	// Emit Featured Image depending on settings and who and where called from
 
-	global $weaverx_cur_page_ID;
-	global $weaverx_cur_post_ID;
 
 	$hide = weaverx_getopt( $who . '_fi_hide');
 
-	// weaverx_debug_comment('WEAVERX_FI(who=' . $who . ' where=' . $where . ' / page-id: ' . $weaverx_cur_page_ID . ' / post-id: ' . $weaverx_cur_post_ID);
+	// weaverx_debug_comment('WEAVERX_FI(who=' . $who . ' where=' . $where . ' / page-id: ' . get_the_ID() . ' / post-id: ' . get_the_ID());
 
 	if (  $hide == 'hide' || weaverx_t_get( 'hide_featured_image' ) || ! has_post_thumbnail() ) // hide all or no FI
 		return false;
@@ -638,13 +649,13 @@ function weaverx_fi( $who, $where ) {
 
 
 	if ( !$show ) {
-		if ( $who == 'page' || $who == 'post_full')
+		if ( $who == 'page') // || $who == 'post_full')
 			$show = weaverx_get_per_page_value( '_pp_fi_location');
 		else if ( $GLOBALS['weaverx_page_who'] == 'single' )
 			$show = weaverx_get_per_post_value( '_pp_fi_location');
 	}
 
-	//  weaverx_debug_comment('Show PP: ' . $show );
+	// weaverx_debug_comment('Show PP: ' . $show );
 
 	if ( !$show )
 		$show = weaverx_getopt( $who . '_fi_location' );    // 'page' or 'post'
@@ -675,8 +686,15 @@ function weaverx_fi( $who, $where ) {
 		$attr['style'] = 'width:' . $w . '%';
 
 	if ( $show == $where || $show_post ) {
-		if ( $show == 'header-image' ) {
-			the_post_thumbnail( 'full', $attr );
+		if ( $show == 'header-image' ) {			// special case : header replacement area
+			if ( weaverx_getopt('link_site_image') ) { ?>
+<a href="<?php echo esc_url(home_url( '/' )); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+			<?php
+				the_post_thumbnail( 'full', $attr );
+				echo "</a>\n";
+			} else {
+				the_post_thumbnail( 'full', $attr );
+			}
 			return true;
 		}
 
@@ -692,7 +710,7 @@ function weaverx_fi( $who, $where ) {
 				}
 			}
 
-			echo "\n{$before}<a href=\"{$href}\">";
+			echo "\n{$before}<a class=\"wvrx-fi-link\" href=\"{$href}\">";
 			the_post_thumbnail( $size, $attr );
 			echo "</a>\n";
 			return true;
@@ -700,6 +718,7 @@ function weaverx_fi( $who, $where ) {
 	}
 
 	return false;
+}
 }
 //--
 
@@ -790,6 +809,13 @@ function weaverx_show_only_title() {
 			  )
 		) {
 		weaverx_fi( 'post_excerpt', 'title_featured');            // show FI
+		echo "\t</article><!-- /#post -->\n";
+		return true;
+	} elseif ( weaverx_t_get('showposts') && weaverx_t_get('show') == 'title_featured') {
+		weaverx_fi( 'post_excerpt', 'title_featured');            // show FI
+		echo "\t</article><!-- /#post -->\n";
+		return true;
+	} elseif ( weaverx_t_get('showposts') && (weaverx_t_get('show') == 'title' || weaverx_t_get('show') == 'titlelist')) {
 		echo "\t</article><!-- /#post -->\n";
 		return true;
 	}

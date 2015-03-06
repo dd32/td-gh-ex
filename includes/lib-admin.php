@@ -442,9 +442,8 @@ function weaverx_form_show_options($weaverx_olist, $begin_table = true, $end_tab
 			case 'color':
 				weaverx_form_color($value);
 				break;
-			case 'custom':
-				$func = $value['val'];
-				$func($value);
+			case 'custom_css':
+				weaverx_custom_css($value);
 				break;
 			case 'endheader':
 				echo '<!-- end header -->';
