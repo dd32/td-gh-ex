@@ -16,6 +16,8 @@ $zenzero_theme_options = array(
 	'tumblrurl' => ''
 );
 
+if ( is_admin() ) : // Load only if we are viewing an admin page
+
 function zenzero_toolbar_link_to_mypage( $wp_admin_bar ) {
 	$args = array(
 		'id'    => 'zenzero_theme_options',
@@ -25,8 +27,6 @@ function zenzero_toolbar_link_to_mypage( $wp_admin_bar ) {
 	$wp_admin_bar->add_node( $args );
 }
 add_action( 'admin_bar_menu', 'zenzero_toolbar_link_to_mypage', 999 );
-
-if ( is_admin() ) : // Load only if we are viewing an admin page
 
 add_action( 'admin_init', 'zenzero_options_init' );
 add_action( 'admin_menu', 'zenzero_options_add_page' );
@@ -59,7 +59,7 @@ function zenzero_options_do_page() {
 			
 		<div class="updated" style="background:#E9F7DF;clear: both;display: table;width: 100%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;border-left: 4px solid #1fa67a;">
 			<h3><div class="dashicons dashicons-megaphone"></div> <?php _e( 'Need more features and options? Upgrade to PRO!', 'zenzero' ); ?></h3>
-			<p><?php _e( 'Get', 'zenzero' ); ?> <b><?php _e( 'Zenzero PRO', 'zenzero' ); ?></b> <?php _e( 'WordPress Theme for only', 'zenzero' ); ?> <b>19,90&euro;</b> <i><?php _e( '(One Time Fee)', 'zenzero' ); ?></i></p>
+			<p><?php _e( 'Get', 'zenzero' ); ?> <b><?php _e( 'Zenzero PRO', 'zenzero' ); ?></b> <?php _e( 'WordPress Theme for only', 'zenzero' ); ?> <b>19,90&euro;</b></p>
 			<div class="zenzeroLeft" style="float:left; width: 30%; text-align: center;">
 				<a style="display: inline-block;padding: 20px;background: #1fa67a;border-radius: 5px;color: #ffffff;font-size: 125%;-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);margin: 40px 0 20px;" href="http://crestaproject.com/demo/zenzero-pro/" target="_blank"><div class="dashicons dashicons-visibility"></div> <?php _e( 'Demo (Zenzero PRO)', 'zenzero' ); ?></a>
 				<br />
