@@ -1,6 +1,6 @@
 SuevaFree Changelog
 
-- Version 1.2.7.3 - Released: 05.03.2015
+- Version 1.2.7.4 - Released: 06.03.2015
 
 -- Fixed : Gallery items with caption.
 -- Added : Wordpress tag title support.
