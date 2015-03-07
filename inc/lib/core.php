@@ -1169,7 +1169,7 @@
 	 * @todo Remove this function when WordPress 4.3 is released.
 	 *
 	 * @since    1.3
-	 * @version  1.3
+	 * @version  1.3.1
 	 */
 	if ( ! function_exists( 'get_the_archive_title' ) ) {
 		function get_the_archive_title() {
@@ -1180,11 +1180,11 @@
 			} elseif ( is_author() ) {
 				$title = sprintf( __( 'Author: %s', 'wm_domain' ), '<span class="vcard">' . get_the_author() . '</span>' );
 			} elseif ( is_year() ) {
-				$title = sprintf( __( 'Year: %s', 'wm_domain' ), get_the_date( _x( 'Y', 'yearly archives date format' ) ) );
+				$title = sprintf( __( 'Year: %s', 'wm_domain' ), get_the_date( _x( 'Y', 'yearly archives date format', 'wm_domain' ) ) );
 			} elseif ( is_month() ) {
-				$title = sprintf( __( 'Month: %s', 'wm_domain' ), get_the_date( _x( 'F Y', 'monthly archives date format' ) ) );
+				$title = sprintf( __( 'Month: %s', 'wm_domain' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'wm_domain' ) ) );
 			} elseif ( is_day() ) {
-				$title = sprintf( __( 'Day: %s', 'wm_domain' ), get_the_date( _x( 'F j, Y', 'daily archives date format' ) ) );
+				$title = sprintf( __( 'Day: %s', 'wm_domain' ), get_the_date( _x( 'F j, Y', 'daily archives date format', 'wm_domain' ) ) );
 			} elseif ( is_tax( 'post_format' ) ) {
 				if ( is_tax( 'post_format', 'post-format-aside' ) ) {
 					$title = _x( 'Asides', 'post format archive title', 'wm_domain' );

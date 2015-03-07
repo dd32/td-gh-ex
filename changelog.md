@@ -1,5 +1,18 @@
 # Auberge Changelog
 
+## 1.3.1
+
+* Fixed: Localization
+
+#### Files changed:
+
+	inc/lib/core.php
+	languages/sk_SK.mo
+	languages/sk_SK.po
+	languages/xx_XX.pot
+
+
+
 ## 1.3
 
 * Added: Support for Restaurant Reservations plugin
