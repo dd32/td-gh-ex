@@ -32,7 +32,7 @@ endif; ?>
 					  <div class="filtersearch">
 					    <input type="text" value="" name="s" id="s" placeholder="<?php echo get_search_query(); ?>" /> 
 					  	<?php wp_dropdown_categories( 'show_option_all=All Categories' ); ?> 
-					    <input type="submit" id="searchsubmit" value="Search" style="display:none;"/>
+					    <input type="submit" id="searchsubmit" value="<?php echo esc_attr(  __('Search', 'atout' )); ?>" style="display:none;"/>
 					  </div>
 					</form>
 				</header><!-- .page-header -->

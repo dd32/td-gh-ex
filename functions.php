@@ -13,8 +13,9 @@ function atout_setup(){
 	/*
 	 * Set the content width based on the theme's design and stylesheet.
 	 */
+	global $content_width;
 	if ( ! isset( $content_width ) ) {
-		$content_width = 640; /* pixels */
+		$content_width = 789; /* pixels */
 	}
 
 	// Translation ready
@@ -127,7 +128,7 @@ function atout_scripts() {
 
 	wp_enqueue_script( 'atout-bootstrap-js', get_template_directory_uri() . '/framework/js/bootstrap.min.js', array('jquery'), '8eb52b2e962280817af7', true );
 	wp_enqueue_script( 'atout-fitvids', get_template_directory_uri() . '/framework/js/jquery.fitvids.min.js', array('jquery') );
-	wp_enqueue_script( 'atout-prism-js', get_template_directory_uri() . '/framework/js/prism.js', array('jquery') );
+	wp_enqueue_script( 'atout-prism-js', get_template_directory_uri() . '/framework/js/prism.min.js', array('jquery') );
 	wp_enqueue_script( 'atout-skip-link-focus-fix', get_template_directory_uri() . '/framework/js/skip-link-focus-fix.js', array('jquery'), '20130115', true );
 	wp_enqueue_script( 'atout-js', get_template_directory_uri() . '/framework/js/atout-script.js', array('jquery'));
 
@@ -138,42 +139,12 @@ function atout_scripts() {
 add_action( 'wp_enqueue_scripts', 'atout_scripts' );
 
 /**
- * Enqueues scripts for back end
- *
- * @since Atout 1.0
- *
- * @return void
- */
-function atout_enqueue_admin_scripts() {
-    wp_register_script( 'atout-admin', get_template_directory_uri() . '/framework/js/jquery.post.admin.js', 'jquery' );
-    wp_enqueue_script( 'atout-admin' );
-    wp_register_script( 'atout-ajaxupload', get_template_directory_uri() . '/framework/js/ajaxupload.js', array('jquery'));
-    wp_enqueue_script( 'atout-ajaxupload' );
-}
-add_action( 'admin_enqueue_scripts', 'atout_enqueue_admin_scripts' );
-
-/**
  * Load admin CSS
  */
 function atout_admin_styles() {
 	wp_enqueue_style('atout_admin_css', get_template_directory_uri() .'/framework/stylesheets/admin.css');
 }
-add_action('admin_print_styles', 'atout_admin_styles');
-
-/**
-* Enqueue scripts and styles for login page
-*
-* @since Atout 1.0
-*/
-if(get_theme_mod('custom_login') == 'true' ){
-	function atout_login_stylesheet() {
-	
-    wp_enqueue_style( 'atout-login-css', get_template_directory_uri() . '/framework/stylesheets/style-login.css' );
-	
-    // wp_enqueue_script( 'atout-login-js', get_template_directory_uri() . '/style-login.js' );
-	}
-	add_action( 'login_enqueue_scripts', 'atout_login_stylesheet' );
-}
+add_action('admin_enqueue_scripts', 'atout_admin_styles');
 
 /**
 * Add onation link to WP Customizer

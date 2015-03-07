@@ -61,24 +61,6 @@ function atout_sanitize_thumbnail_link( $thumbnail_link ) {
 // -----------------------------------------------------------------------------
 
 /**
-* Sanitize login page option
-*
-* @since Atout 1.0
-*
-* @param string $page page type.
-* @return string Filtered page type (page|excerpt).
-*/
-function atout_sanitize_login_page( $page ) {
-    if ( ! in_array( $page, array( 'true', 'false' ) ) ) {
-        $page = 'true';
-    }
-
-    return $page;
-}
-
-// -----------------------------------------------------------------------------
-
-/**
 * Sanitize blog content
 *
 * @since Atout 1.0

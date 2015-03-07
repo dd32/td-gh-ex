@@ -75,16 +75,6 @@ class Atout_Customize {
 
     // -----------------------------------------------------------------------------
 
-    $wp_customize->add_section( 'atout_login', array(
-      'priority'       => 80,
-      'capability'     => 'edit_theme_options',
-      'theme_supports' => '',
-      'title'          => __('Login', 'atout'),
-      'description'    => '',
-    ));
-
-    // -----------------------------------------------------------------------------
-
     $wp_customize->add_section( 'atout_favicon_section', array(
       'priority'       => 100,
       'capability'     => 'edit_theme_options',
@@ -194,33 +184,6 @@ class Atout_Customize {
       'settings' => 'atout_bookmark_other',
       'description' => __('Upload image to be used as bookmark icon on other Apple devices. <b>Size must be <u>76x76px</u> and format <u>.png</u></b>', 'atout'),
     )));
-
-    // -----------------------------------------------------------------------------
-
-    /**
-    * Default or custom login page
-    * @author Frenchtastic
-    * @since Atout 1.0
-    */
-    $wp_customize->add_setting('custom_login', array(
-        'default'        =>  'true',
-        'capability'     => 'edit_theme_options',
-        'type'           => 'theme_mod',
-        'transport'      => 'refresh',
-        'sanitize_callback' => 'atout_sanitize_login_page',
-        ));
-
-    $wp_customize->add_control('custom_login', array(
-        'label'      => __('Login page', 'atout'),
-        'section'    => 'atout_login',
-        'settings'   => 'custom_login',
-        'description' => __('Choose to use the default wordpress login page or the theme custom login page', 'atout'),
-        'type'       => 'radio',
-        'choices'    => array(
-            'true' => __('Custom login', 'atout'),
-            'false' => __('Default login', 'atout')
-            ),
-    ));
 
     // -----------------------------------------------------------------------------
 

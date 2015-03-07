@@ -15,19 +15,30 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
+	
+	<?php if(!empty(get_theme_mod( 'atout_favicon'))): ?>
 	<link rel="shortcut icon" href="<?php echo esc_url( get_theme_mod( 'atout_favicon' ) ); ?>" type="image/png" />
+	<?php endif; ?>
+
+	<?php if(!empty(get_theme_mod( 'atout_bookmark_other'))): ?>
 	<link rel="apple-touch-icon" href="<?php echo esc_url( get_theme_mod( 'atout_bookmark_other' ) ); ?>">
+	<?php endif; ?>
+
+	<?php if(!empty(get_theme_mod( 'atout_bookmark_iphone'))): ?>
 	<link rel="apple-touch-icon" sizes="120x120" href="<?php echo esc_url( get_theme_mod( 'atout_bookmark_iphone' ) ); ?>">
+	<?php endif; ?>
+	
+	<?php if(!empty(get_theme_mod( 'atout_bookmark_ipad'))): ?>
 	<link rel="apple-touch-icon" sizes="152x152" href="<?php echo esc_url( get_theme_mod( 'atout_bookmark_ipad' ) ); ?>">
+	<?php endif; ?>
 
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?> id="<?php echo get_theme_mod( 'navbar_state' ); ?>">
+<body <?php body_class(); ?> id="<?php echo esc_attr(get_theme_mod( 'navbar_state' )); ?>">
 	<div id="wrap">
 		<!-- Fixed navbar -->
-		<div class="topbar" style="display:<?php echo get_theme_mod('topbar_show'); ?>;">
+		<div class="topbar" style="display:<?php echo esc_attr(get_theme_mod('topbar_show')); ?>;">
 			<div class="container">
 				<div class="topbarnav">
 					<?php
@@ -42,7 +53,7 @@
 			            );
 			   		?>
 					<ul class="pull-right">
-						<li><a href="<?php echo wp_login_url( home_url() ); ?>" title="Login"><?php echo __('Login', 'atout'); ?></a></li>
+						<li><a href="<?php echo wp_login_url( esc_url( home_url( '/' ) ) ); ?>" title="Login"><?php echo __('Login', 'atout'); ?></a></li>
 					</ul>
 				</div>
 			</div>
@@ -70,13 +81,13 @@
 					</button>
 					<?php if(get_theme_mod('logo') != ''): ?>
 						<div class="image-logo">
-							<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><img src="<?php echo esc_url( get_theme_mod( 'logo' ) ); ?>" alt="<?php bloginfo('name'); ?>"></a>
+							<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr(bloginfo('name')); ?>"><img src="<?php echo esc_url( get_theme_mod( 'logo' ) ); ?>" alt="<?php esc_attr(bloginfo('name')); ?>"></a>
 						</div>
 					<?php else: ?>
 						<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo('name'); ?></a>
 					<?php endif; ?>
 				</div>
-				<ul id="menu-menu-1" class="search-container nav navbar-nav" style="display:<?php echo get_theme_mod('nav_search'); ?>;">
+				<ul id="menu-menu-1" class="search-container nav navbar-nav" style="display:<?php echo esc_attr(get_theme_mod('nav_search')); ?>;">
 				    <li class="home-link menu-item menu-item-type-post_type menu-item-object-page">
 				      <?php get_search_form(); ?>
  				    </li>

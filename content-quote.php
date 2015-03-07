@@ -9,6 +9,10 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<header>
+			<?php atout_thumbnail(); ?>
+		</header>
+
 		<div class="quote-icon text-center">
 			<a href="<?php the_permalink(); ?>"><i class="fa fa-quote-right fa-3x"></i></a>
 		</div>

@@ -14,3 +14,5 @@ Atout uses Font Awesome  http://fortawesome.github.io/Font-Awesome/, licensed un
 Atout uses Fitvids http://fitvidsjs.com/, licensed under the WTFP license which is GPL compatible. Copyright (C) Chris Coyier http://chriscoyier.net/ and Paravel http://paravelinc.com/
 
 Atout uses Prism http://prismjs.com/, licensed under the MIT license. Copyright (C) Lea Verou
+
+The photo used for the theme screenshot was taken by the theme author, Frenchtastic. It is licensed under CC0 which is GPL compatible.
