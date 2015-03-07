@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-# Copyright (C) 2014 WebMan - Oliver Juhas
+# Copyright (C) 2015 WebMan - Oliver Juhas
 # This file is distributed under the same license as the WordPress package.
 
 
