@@ -54,5 +54,5 @@ Author Website: http://tishonator.com
 
 General Tishonator WP Themes Documentation: http://tishonator.com/general-tishonator-wp-themes-documentation
 
-Support Forum: http://tishonator.com/forums
+
 

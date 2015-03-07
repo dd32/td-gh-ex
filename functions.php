@@ -26,4 +26,26 @@ endif; // fcorpo_setup
 add_action( 'after_setup_theme', 'fcorpo_setup' );
 
 
+/**
+ *
+ * Override functions defined in the fCorpo Child Theme
+ *
+ */
+ 
+/**
+ * Returns URL to the full theme.
+ */
+function fkidd_get_full_theme_url() {
+
+	return "http://tishonator.com/product/tcorpo";
+}
+
+/**
+ * Returns the get full theme name.
+ */
+function fkidd_get_full_theme_name() {
+
+	return __("Get tCorpo Theme", "fcorpo");
+}
+
 ?>
