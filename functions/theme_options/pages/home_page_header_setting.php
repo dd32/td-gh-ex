@@ -1,5 +1,5 @@
 <div class="block ui-tabs-panel" id="option-ui-id-22" >	
-	<?php $current_options = wp_parse_args(  get_option( 'appointment_lite_options', array() ), theme_data_setup() );
+	<?php $current_options = wp_parse_args(  get_option( 'appointment_options', array() ), theme_data_setup() );
 	if(isset($_POST['webriti_settings_save_22']))
 	{	
 		if($_POST['webriti_settings_save_22'] == 1) 
@@ -34,7 +34,7 @@
 				{ echo $current_options['meta_section_settings']= "on"; } 
 				else { echo $current_options['meta_section_settings']="off"; }
 				
-				update_option('appointment_lite_options', stripslashes_deep($current_options));
+				update_option('appointment_options', stripslashes_deep($current_options));
 			}
 		}	
 		if($_POST['webriti_settings_save_22'] == 2) 
@@ -53,7 +53,7 @@
 			//Meta section Enable or Disable 
 			$current_options['meta_section_settings']= 'on';
 			
-			update_option('appointment_lite_options',$current_options);
+			update_option('appointment_options',$current_options);
 		}
 	}  ?>
 	<form method="post" id="webriti_theme_options_22">

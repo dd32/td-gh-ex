@@ -4,8 +4,8 @@
 		//****** get index static banner  ********
 		get_template_part('index', 'slider');
 		
-		//****** get index contact call out section  ********
-		get_template_part('index', 'contact-callout');
+		//****** Orange Sidebar Area ********
+		get_sidebar('orange');
 				
 		//****** get index service  ********				
 		get_template_part('index', 'service');

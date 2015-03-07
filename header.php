@@ -4,7 +4,7 @@
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<?php $current_options=get_option('appointment_lite_options'); ?>
+	<?php $current_options=get_option('appointment_options'); ?>
 	<?php if($current_options['upload_image_favicon']!=''){ ?>
 	<link rel="shortcut icon" href="<?php  echo esc_url($current_options['upload_image_favicon']); ?>" /> 
 	<?php } ?>
@@ -17,7 +17,7 @@ if($current_options['webrit_custom_css']!='') {  ?>
 <style>
 <?php echo $current_options['webrit_custom_css']; ?>
 </style>
-<?php }  ?>
+<?php }  wp_head(); ?>
 </head>
 <body <?php body_class(); ?> >
 
@@ -47,6 +47,7 @@ if($current_options['webrit_custom_css']!='') {  ?>
 		</div>
 		
 		<?php 
+		
 		$social = '<ul id="%1$s" class="%2$s">%3$s<ul class="head-contact-social">';
 				if($current_options['header_social_media_enabled']=='on') {
 				if($current_options['social_media_facebook_link']!='') {
@@ -77,7 +78,8 @@ if($current_options['webrit_custom_css']!='') {  ?>
 				
 				}
 				}
-		$social .='</ul></ul>'; 
+				$social .='</ul></ul>'; 
+		
 		?>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->

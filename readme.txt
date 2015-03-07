@@ -85,6 +85,14 @@ License: CC0 Public Domain
 
 # --- EOF --- #
 ============================Change Log================================
+@version 1.5.3
+1. Add slider using post and Category.
+2. Add widget.
+3. Update pot file.
+4. Change option panel name appointment_lite_options to appointment_options
+
+@version 1.5.2
+1. Remove Dot(.) in appointment_option_panle.php file.
 @version 1.5.1
 1. Add Business Page Template in home.php.
 2. Update pot file.

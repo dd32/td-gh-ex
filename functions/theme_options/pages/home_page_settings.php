@@ -1,5 +1,5 @@
 <div class="block ui-tabs-panel active" id="option-ui-id-1" >
-<?php $current_options = wp_parse_args(  get_option( 'appointment_lite_options', array() ), theme_data_setup() );
+<?php $current_options = wp_parse_args(  get_option( 'appointment_options', array() ), theme_data_setup() );
 	if(isset($_POST['webriti_settings_save_1']))
 	{	
 		if($_POST['webriti_settings_save_1'] == 1) 
@@ -23,10 +23,8 @@
 				{ echo $current_options['text_title']="on"; } 
 				else
 				{ echo $current_options['text_title']="off"; }
-
-
-				
-				 update_option('appointment_lite_options', stripslashes_deep($current_options));
+								
+				update_option('appointment_options', stripslashes_deep($current_options));
 				 
 				 
 			}
@@ -42,7 +40,7 @@
 			$current_options['height']=40;
 			$current_options['width']=205;
 			$current_options['text_title']="on";
-			update_option('appointment_lite_options',$current_options);
+			update_option('appointment_options',$current_options);
 		}
 	}  ?>	
 	<form method="post" id="webriti_theme_options_1">

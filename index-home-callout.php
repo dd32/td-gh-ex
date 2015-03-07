@@ -1,4 +1,4 @@
-<?php $current_options = get_option('appointment_lite_options',theme_data_setup()); 
+<?php $current_options = get_option('appointment_options',theme_data_setup()); 
 if($current_options['home_call_out_area_enabled']=='on'){ ?>
  <div class="callout-section">
 	<div class="overlay">

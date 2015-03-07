@@ -19,8 +19,6 @@
                 </li>
 				<li id="tab_slider_setting"><a href="#section_slider"><?php _e('Slider Settings','appointment'); ?></a>
                 </li>
-				<li id="tab_callout_setting"><a href="#section_contact"><?php _e('Home Top Contact Detail Call-out','appointment'); ?></a>
-                </li>
 				<li id="tab_service_setting"><a href="#section_service"><?php _e('Service Setting','appointment'); ?></a>
                 </li>
 				<li id="tab_callout_setting"><a href="#section_callout"><?php _e('Home Call-out','appointment'); ?></a>
@@ -41,7 +39,7 @@
                         <div id="setting_theme_options_ui_text" class="format-settings">
                             <div class="format-setting-wrap">
                                         
-                                  <?php load_template( dirname( __FILE__ ) . './pages/home_page_settings.php' );  ?>    
+                                  <?php load_template( dirname( __FILE__ ) . '/pages/home_page_settings.php' );  ?>    
                 </div>
             </div>
         </div>
@@ -55,7 +53,7 @@
       <div class = "format-setting type-textarea has-desc">
         <div class = "format-setting-inner">
         
-		<?php  load_template( dirname( __FILE__ ) . './pages/home_page_header_setting.php' ); ?>
+		<?php  load_template( dirname( __FILE__ ) . '/pages/home_page_header_setting.php' ); ?>
                                               
 						</div>
 					</div>
@@ -71,23 +69,7 @@
       <div class = "format-setting type-textarea has-desc">
         <div class = "format-setting-inner">
         
-		<?php  load_template( dirname( __FILE__ ) . './pages/home_slider_settings.php' ); ?>
-                                              
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-    </div>
-	
-	<div id="section_contact" class = "postbox">
-        <div class="inside">
-            <div id="design_customization_settings" class="format-settings">
-                <div class="format-setting-wrap">
-      <div class = "format-setting type-textarea has-desc">
-        <div class = "format-setting-inner">
-        
-		<?php  load_template( dirname( __FILE__ ) . './pages/home_contact_detail_setting.php' ); ?>
+		<?php  load_template( dirname( __FILE__ ) . '/pages/home_slider_settings.php' ); ?>
                                               
 						</div>
 					</div>
@@ -103,7 +85,7 @@
       <div class = "format-setting type-textarea has-desc">
         <div class = "format-setting-inner">
         
-		<?php  load_template( dirname( __FILE__ ) . './pages/home_service_settings.php' ); ?>
+		<?php  load_template( dirname( __FILE__ ) . '/pages/home_service_settings.php' ); ?>
                                               
 						</div>
 					</div>
@@ -119,7 +101,7 @@
       <div class = "format-setting type-textarea has-desc">
         <div class = "format-setting-inner">
         
-		<?php  load_template( dirname( __FILE__ ) . './pages/home_call_out_settings.php' ); ?>
+		<?php  load_template( dirname( __FILE__ ) . '/pages/home_call_out_settings.php' ); ?>
                                               
 						</div>
 					</div>
@@ -135,7 +117,7 @@
       <div class = "format-setting type-textarea has-desc">
         <div class = "format-setting-inner">
         
-		<?php  load_template( dirname( __FILE__ ) . './pages/blog_settings.php' ); ?>
+		<?php  load_template( dirname( __FILE__ ) . '/pages/blog_settings.php' ); ?>
                                               
 						</div>
 					</div>
@@ -150,7 +132,7 @@
             <div id="setting_export_settings_file_text" class="format-settings">
                 <div class="format-setting-wrap">
                     <div class="format-setting-label">
-					<?php  load_template( dirname( __FILE__ ) . './pages/footer_copyright_settings.php' ); ?>
+					<?php  load_template( dirname( __FILE__ ) . '/pages/footer_copyright_settings.php' ); ?>
 					</div>
 				</div>
             </div>
@@ -176,6 +158,6 @@
 if(isset($_POST['restore_all_defaults'])) 
 	{
 		$appointment_lite_theme_options = theme_data_setup();	
-		update_option('appointment_lite_options',$appointment_lite_theme_options);
+		update_option('appointment_options',$appointment_lite_theme_options);
 	}
 ?>

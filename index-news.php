@@ -1,8 +1,10 @@
-<?php $current_options = get_option('appointment_lite_options',theme_data_setup()); 
-if($current_options['home_blog_enabled']) { ?>
+<?php $current_options = get_option('appointment_options',theme_data_setup()); 
+if($current_options['home_blog_enabled']) { 
+?>
 <div class="blog-section">
 	<div class="container">
 	
+		
 		<!-- Section Title -->
 		<div class="row">
 			<div class="col-md-12">
@@ -19,8 +21,19 @@ if($current_options['home_blog_enabled']) { ?>
 		<!-- /Section Title -->
 		
 		<div class="row">
-		<?php	$args = array( 'post_type' => 'post','posts_per_page' => 4,'ignore_sticky_posts' => 1); 	
+		<?php
+		if($current_options['home_post_enabled']=='on')
+			{		
+		 $args = array( 'post_type' => 'post','posts_per_page' => 4,'ignore_sticky_posts' => 1 , $current_options['featured_slider_post']);
+		 query_posts( $args );
+			}
+		 
+		 else
+			{  
+			$arr=explode(",",$current_options['featured_slider_post']);
+			$args = array('post__not_in' => $arr);
 			query_posts( $args );
+			}
 			$i=1;
 			while( have_posts() ) : the_post();			
 			?>
@@ -45,7 +58,8 @@ if($current_options['home_blog_enabled']) { ?>
 								<?php } } ?>
 							</div>
 							<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-							<p><?php the_excerpt(); ?></p>
+							
+							<p><?php echo get_home_blog_excerpt(); ?></p>
 						</div>
 					</div>
 				</div>
@@ -56,6 +70,7 @@ if($current_options['home_blog_enabled']) { ?>
 			     echo '<div class="clearfix"></div>';
 				 $i=0;
 			  }$i++;
+			  wp_reset_postdata();
 			endwhile; ?>
 			</div>
 	</div>

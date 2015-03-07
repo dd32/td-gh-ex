@@ -3961,7 +3961,7 @@ textarea { width: 50%; height: auto;}
 }
 /*Options pane home page settigns*/
 
-		input[type=radio] {	display:none; margin:10px; }
+		input[type=radio] { margin:10px; }
 		input[type=radio] + label {	display:inline-block;	margin:-2px;
 			padding: 4px 12px;	background-color: #e7e7e7;	border-color: #ddd; }
 
@@ -4048,4 +4048,12 @@ textarea { width: 50%; height: auto;}
 .fb-btn {
 float: right;
 margin: 0 10px 0 0;
+}
+#all_slider_content{
+padding-left: 21px;
+}
+.slider_select_cat {
+height: auto;
+min-height: 150px;
+width: 200px;
 }

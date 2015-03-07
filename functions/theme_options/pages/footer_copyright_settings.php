@@ -1,5 +1,5 @@
 <div class="block ui-tabs-panel" id="option-ui-id-23" >	
-	<?php $current_options = wp_parse_args(  get_option( 'appointment_lite_options', array() ), theme_data_setup() );
+	<?php $current_options = wp_parse_args(  get_option( 'appointment_options', array() ), theme_data_setup() );
 	if(isset($_POST['webriti_settings_save_23']))
 	{	
 		if($_POST['webriti_settings_save_23'] == 1) 
@@ -43,7 +43,7 @@
 				
 				
 				
-				update_option('appointment_lite_options', stripslashes_deep($current_options));
+				update_option('appointment_options', stripslashes_deep($current_options));
 			}
 		}	
 		if($_POST['webriti_settings_save_23'] == 2) 
@@ -63,7 +63,7 @@
 			$current_options['footer_social_media_linkedin_link']="#";
 			$current_options['footer_social_media_skype_link']="#";
 			
-			update_option('appointment_lite_options',$current_options);
+			update_option('appointment_options',$current_options);
 		}
 	}  ?>
 	<form method="post" id="webriti_theme_options_23">

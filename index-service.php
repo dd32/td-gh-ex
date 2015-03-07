@@ -1,4 +1,4 @@
-<?php $current_options = get_option('appointment_lite_options',theme_data_setup()); 
+<?php $current_options = get_option('appointment_options',theme_data_setup()); 
 
 	if($current_options['service_section_enabled'] == 'on') {
 	$service_one_title = $current_options['service_one_title'];

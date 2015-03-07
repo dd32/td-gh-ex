@@ -16,6 +16,8 @@ function appointment_scripts()
         wp_enqueue_script('appointment-jquery-js' , WEBRITI_TEMPLATE_DIR_URI.'/js/jquery-1.11.0.js');
         wp_enqueue_script('appointment-bootstrap-js' , WEBRITI_TEMPLATE_DIR_URI.'/js/bootstrap.min.js');
 		wp_enqueue_script('appointment-menu-js' , WEBRITI_TEMPLATE_DIR_URI.'/js/menu/menu.js');
+		wp_enqueue_script('appointment-page-scroll-js' , WEBRITI_TEMPLATE_DIR_URI.'/js/page-scroll.js');
+		wp_enqueue_script('appointment-carousel-js' , WEBRITI_TEMPLATE_DIR_URI.'/js/carousel.js');
 		if ( is_singular() ){ wp_enqueue_script( "comment-reply" );	}
 		}
 add_action('wp_enqueue_scripts','appointment_scripts');

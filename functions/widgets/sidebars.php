@@ -21,5 +21,33 @@ register_sidebar( array(
 		'before_title' => '<h3 class="footer-widget-title">',
 		'after_title' => '</h3>',
 	) );
+//orange sidebar
+register_sidebar( array(
+		'name' => __( 'Homepage Orange Sidebar Left', 'appointment' ),
+		'id' => 'home-orange-sidebar_left',
+		'description' => __( 'Appointment Orange Sidebar Area', 'appointment' ),
+		'before_widget' => '',
+		'after_widget' => '<div class="clearfix"></div>',
+		'before_title' => '',
+		'after_title' => '',
+	) );
+	register_sidebar( array(
+		'name' => __( 'Homepage Orange Sidebar Right', 'appointment' ),
+		'id' => 'home-orange-sidebar_right',
+		'description' => __( 'Appointment Orange Sidebar Area', 'appointment' ),
+		'before_widget' => '',
+		'after_widget' => '<div class="clearfix"></div>',
+		'before_title' => '',
+		'after_title' => '',
+	) );
+	register_sidebar( array(
+		'name' => __( 'Homepage Orange Sidebar Center', 'appointment' ),
+		'id' => 'home-orange-sidebar_center',
+		'description' => __( 'Appointment Orange Sidebar Area', 'appointment' ),
+		'before_widget' => '',
+		'after_widget' => '<div class="clearfix"></div>',
+		'before_title' => '',
+		'after_title' => '',
+	) );
 }	                     
 ?>

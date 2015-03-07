@@ -7,10 +7,11 @@
     define('WEBRITI_TEMPLATE_DIR' , get_template_directory());
     define('WEBRITI_THEME_FUNCTIONS_PATH' , WEBRITI_TEMPLATE_DIR.'/functions');
     define('WEBRITI_THEME_OPTIONS_PATH' , WEBRITI_TEMPLATE_DIR_URI.'/functions/theme_options');
-	require( WEBRITI_THEME_FUNCTIONS_PATH.'/scripts/script.php');
-    require( WEBRITI_THEME_FUNCTIONS_PATH.'/menu/default_menu_walker.php');
-    require( WEBRITI_THEME_FUNCTIONS_PATH.'/menu/appoinment_nav_walker.php');
-    require( WEBRITI_THEME_FUNCTIONS_PATH.'/widgets/sidebars.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH .'/scripts/script.php');
+    require( WEBRITI_THEME_FUNCTIONS_PATH .'/menu/default_menu_walker.php');
+    require( WEBRITI_THEME_FUNCTIONS_PATH .'/menu/appoinment_nav_walker.php');
+    require( WEBRITI_THEME_FUNCTIONS_PATH .'/widgets/sidebars.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH .'/widgets/appointment_info_widget.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/template-tag.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/breadcrumbs/breadcrumbs.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/font/font.php');
@@ -33,16 +34,16 @@
 	
 	require_once('theme_setup_data.php');
 		// setup admin pannel defual data for index page		
-		$appointment_lite_options=theme_data_setup();
+		$appointment_options=theme_data_setup();
 		
-		$current_theme_options = get_option('appointment_lite_options'); // get existing option data 		
+		$current_theme_options = get_option('appointment_options'); // get existing option data 		
 		if($current_theme_options)
-		{ 	$appointment_lite_options = array_merge($appointment_lite_options, $current_theme_options);
-			update_option('appointment_lite_options',$appointment_lite_options);	// Set existing and new option data			
+		{ 	$appointment_options = array_merge($appointment_options, $current_theme_options);
+			update_option('appointment_options',$appointment_options);	// Set existing and new option data			
 		}
 		else
 		{
-			add_option('appointment_lite_options', $appointment_lite_options);
+			add_option('appointment_options', $appointment_options);
 		}
 		require( WEBRITI_THEME_FUNCTIONS_PATH . '/theme_options/option_pannel.php' ); // for Option Panel Settings		
 }
@@ -89,14 +90,30 @@ function appointment_add_to_author_profile( $contactmethods ) {
 	add_image_size('webriti_blogright_img',270,260,true);
 	}
 	
-	function appointment_excerpt_length( $length ) {
+	function appointment_excerpt_length($length ) {
 	return 25;
 	}
 	add_filter( 'excerpt_length', 'appointment_excerpt_length', 999 );
 	
-	function appointment_excerpt_more($more) {
-	global $post;
-		return '<div class="blog-btn-area-sm"><a href="' . get_permalink() . "#more-{$post->ID}\" class=\"blog-btn-sm\">Read More</a></div>";
+	add_filter('get_the_excerpt','appointment_post_slider_excerpt');
+	add_filter('excerpt_more','__return_false');
+	function appointment_post_slider_excerpt($output){
+	
+		return '<div class="slide-text-bg2">' .'<span>'.$output.'</span>'.'</div>'.
+		       '<div class="blog-btn-area-sm"><a href="' . get_permalink() . '" class="blog-btn-sm">Read More</a></div>';
+			}
+			
+	function get_home_blog_excerpt()
+	{
+		global $post;
+		$excerpt = get_the_content();
+		$excerpt = strip_tags(preg_replace(" (\[.*?\])",'',$excerpt));
+		$excerpt = strip_shortcodes($excerpt);		
+		$original_len = strlen($excerpt);
+		$excerpt = substr($excerpt, 0, 145);		
+		$len=strlen($excerpt);	 
+		if($original_len>275)
+		$excerpt = $excerpt;
+		return $excerpt . '<div class="blog-btn-area-sm"><a href="' . get_permalink() . '" class="blog-btn-sm">Read More</a></div>';
 	}
-	add_filter('excerpt_more', 'appointment_excerpt_more');
 ?>

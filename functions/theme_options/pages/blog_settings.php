@@ -1,5 +1,5 @@
 <div class="block ui-tabs-panel deactive" id="option-ui-id-5" >	
-	<?php $current_options = wp_parse_args(  get_option( 'appointment_lite_options', array() ), theme_data_setup() );
+	<?php $current_options = wp_parse_args(  get_option( 'appointment_options', array() ), theme_data_setup() );
 	if(isset($_POST['webriti_settings_save_5']))
 	{	
 		if($_POST['webriti_settings_save_5'] == 1) 
@@ -25,7 +25,7 @@
 				else { echo $current_options['home_meta_section_settings']="off"; }
 				
 				
-				update_option('appointment_lite_options',$current_options);
+				update_option('appointment_options',$current_options);
 			}
 		}	
 		if($_POST['webriti_settings_save_5'] == 2) 
@@ -38,7 +38,7 @@
 			
 			$current_options['home_meta_section_settings']= 'on';
 			
-			update_option('appointment_lite_options',$current_options);
+			update_option('appointment_options',$current_options);
 		}
 		
 		

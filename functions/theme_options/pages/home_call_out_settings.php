@@ -1,5 +1,5 @@
 <div class="block ui-tabs-panel deactive" id="option-ui-id-26" >	
-	<?php $current_options = wp_parse_args(  get_option( 'appointment_lite_options', array() ), theme_data_setup() );
+	<?php $current_options = wp_parse_args(  get_option( 'appointment_options', array() ), theme_data_setup() );
 	if(isset($_POST['webriti_settings_save_26']))
 	{	
 		if($_POST['webriti_settings_save_26'] == 1) 
@@ -29,7 +29,7 @@
 				{ echo $current_options['home_call_out_area_enabled']= "on"; } 
 				else { echo $current_options['home_call_out_area_enabled']="off"; }
 				
-				update_option('appointment_lite_options', stripslashes_deep($current_options));
+				update_option('appointment_options', stripslashes_deep($current_options));
 			}
 		}	
 		if($_POST['webriti_settings_save_26'] == 2) 
@@ -43,7 +43,7 @@
 			$current_options['home_call_out_btn2_text']= __('Get in touch!','appointment');
 			$current_options['home_call_out_btn2_link']="";	
 			$current_options['home_call_out_btn2_link_target']= 'on';			
-			update_option('appointment_lite_options',$current_options);
+			update_option('appointment_options',$current_options);
 		}
 	}  ?>
 	<form method="post" id="webriti_theme_options_26">

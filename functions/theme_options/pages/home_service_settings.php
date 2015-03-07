@@ -1,5 +1,5 @@
 <div class="block ui-tabs-panel deactive" id="option-ui-id-3" >	
-	<?php $current_options = wp_parse_args(  get_option( 'appointment_lite_options', array() ), theme_data_setup() );
+	<?php $current_options = wp_parse_args(  get_option( 'appointment_options', array() ), theme_data_setup() );
 	if(isset($_POST['webriti_settings_save_3']))
 	{	
 		if($_POST['webriti_settings_save_3'] == 1) 
@@ -40,7 +40,7 @@
 			{ echo $current_options['service_section_enabled']="on"; } 
 			else { echo $current_options['service_section_enabled']="off"; } 
 				
-			update_option('appointment_lite_options', stripslashes_deep($current_options));
+			update_option('appointment_options', stripslashes_deep($current_options));
 			}
 		}	
 		if($_POST['webriti_settings_save_3'] == 2) 
@@ -75,7 +75,7 @@
 			$current_options['service_six_description'] = __('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consec tetur adipisicing elit dignissim dapib tumst.', 'appointment');
 			$current_options['service_six_icon'] = 'fa fa-cog';
 			
-			update_option('appointment_lite_options',$current_options);
+			update_option('appointment_options',$current_options);
 		}
 	}  ?>
 	<form method="post" id="webriti_theme_options_3">
@@ -117,7 +117,7 @@
 		<div class="section">	
 		<h3><?php _e('Service Icon One ','appointment'); ?></h3>
 			<input class="webriti_inpute"  type="text" name="service_one_icon" id="service_one_icon" value="<?php echo $current_options['service_one_icon']; ?>" >
-			<span class="explain"><?php _e('Enter the service icon.','appointment'); ?></span>
+			<span class="explain"><?php _e('Enter the service icon. like : fa-rub','appointment'); ?></span><span></span> &nbsp <span><a href="http://fontawesome.io/icons/" target="_blank"> <?php _e('Get your fontawesome icons.','appointment') ?></a></span>
 		</div>
 		
 		<div class="section">
@@ -136,7 +136,8 @@
 		<div class="section">	
 		<h3><?php _e('Service Icon Two ','appointment'); ?></h3>
 			<input class="webriti_inpute"  type="text" name="service_two_icon" id="service_two_icon" value="<?php echo $current_options['service_two_icon']; ?>" >
-			<span class="explain"><?php _e('Enter the service icon.','appointment'); ?></span>
+			<span class="explain"><?php _e('Enter the service icon. like : fa-rub','appointment'); ?></span><span></span> &nbsp <span><a href="http://fontawesome.io/icons/" target="_blank"> <?php _e('Get your fontawesome icons.','appointment') ?></a></span>
+			 
 		</div>
 		<div class="section">
 			<h3><?php _e('Service Two Title','appointment'); ?></h3>
@@ -154,7 +155,7 @@
 		<div class="section">	
 		<h3><?php _e('Service Icon Three ','appointment'); ?></h3>
 			<input class="webriti_inpute"  type="text" name="service_three_icon" id="service_three_icon" value="<?php echo $current_options['service_three_icon']; ?>" >
-			<span class="explain"><?php _e('Enter the service icon.','appointment'); ?></span>
+			<span class="explain"><?php _e('Enter the service icon. like : fa-rub','appointment'); ?></span><span></span> &nbsp <span><a href="http://fontawesome.io/icons/" target="_blank"> <?php _e('Get your fontawesome icons.','appointment') ?></a></span>
 		</div>
 		<div class="section">
 			<h3><?php _e('Service Three Title','appointment'); ?></h3>
@@ -173,7 +174,7 @@
 		<div class="section">	
 		<h3><?php _e('Service Icon Four ','appointment'); ?></h3>
 			<input class="webriti_inpute"  type="text" name="service_four_icon" id="service_four_icon" value="<?php echo $current_options['service_four_icon']; ?>" >
-			<span class="explain"><?php _e('Enter the service icon.','appointment'); ?></span>
+			<span class="explain"><?php _e('Enter the service icon. like : fa-rub','appointment'); ?></span><span></span> &nbsp <span><a href="http://fontawesome.io/icons/" target="_blank"> <?php _e('Get your fontawesome icons.','appointment') ?></a></span>
 		</div>
 		<div class="section">
 			<h3><?php _e('Service Four Title','appointment'); ?></h3>
@@ -193,7 +194,7 @@
 		<div class="section">	
 		<h3><?php _e('Service Icon Five ','appointment'); ?></h3>
 			<input class="webriti_inpute"  type="text" name="service_five_icon" id="service_five_icon" value="<?php echo $current_options['service_five_icon']; ?>" >
-			<span class="explain"><?php _e('Enter the service icon.','appointment'); ?></span>
+			<span class="explain"><?php _e('Enter the service icon. like : fa-rub','appointment'); ?></span><span></span> &nbsp <span><a href="http://fontawesome.io/icons/" target="_blank"> <?php _e('Get your fontawesome icons.','appointment') ?></a></span>
 		</div>
 		<div class="section">
 			<h3><?php _e('Service FIve Title','appointment'); ?></h3>
@@ -212,7 +213,7 @@
 		<div class="section">	
 		<h3><?php _e('Service Icon Six ','appointment'); ?></h3>
 			<input class="webriti_inpute"  type="text" name="service_six_icon" id="service_six_icon" value="<?php echo $current_options['service_six_icon']; ?>" >
-			<span class="explain"><?php _e('Enter the service icon.','appointment'); ?></span>
+			<span class="explain"><?php _e('Enter the service icon. like : fa-rub','appointment'); ?></span><span></span> &nbsp <span><a href="http://fontawesome.io/icons/" target="_blank"> <?php _e('Get your fontawesome icons.','appointment') ?></a></span>
 		</div>
 		<div class="section">
 			<h3><?php _e('Service Six Title','appointment'); ?></h3>

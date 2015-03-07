@@ -1,5 +1,5 @@
 <?php
-  get_header(); ?>
+get_header(); ?>
 <div class="page-title-section">		
 	<div class="overlay">
 		<div class="container">

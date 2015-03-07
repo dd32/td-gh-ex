@@ -11,30 +11,30 @@ function theme_data_setup()
 			'width'=>'205',
 			'webrit_custom_css'=>'',
 			
-			//Banner
-			//Featured Image Setting
+			
+			//Featured slider Setting
 			'home_banner_enabled'=>'on',
-			'slider_title_one' => __('Appointment BY WEBRITI THEMES','appointment'),
-			'slider_description' => __('Create Fresh Website fast with us!','appointment'),
-			'slider_btn_text' => __('Read More','appointment'),
-			'slider_btn_link' => '',
-			'slider_btn_link_target' => 'on',
-			'slider_image' => $slider_image,
-			'home_banner_enabled'=>'on',
+			'home_post_enabled' => 'on',
+			'slider_total' => 4,
+			'slider_radio' => 'demo',
+			'slider_options'=> 'slide',
+			'slider_transition_delay'=> '2000',
+			'slider_select_category' => 'Uncategorized',
+			'featured_slider_post' => '',
 			
 			//front page contact information
 			'front_callout_enable'=>'on',
 			
-			'front_contact1_title'=>'Have a question? Call us now',
+			'front_contact1_title'=> __('Have a question? Call us now','appointment'),
 			'front_contact1_val'=>'+82 334 843 52',
 			'contact_one_icon' =>'fa fa-phone',
 			
-			'front_contact2_title'=>'We are open Mon-Fri',
+			'front_contact2_title'=> __('We are open Mon-Fri','appointment'),
 			'front_contact2_val'=>'Mon - Fri 08.00 - 18.00',
 			'contact_two_icon' =>'fa fa-clock-o',
 			
 			
-			'front_contact3_title'=>'Drop us an mail',
+			'front_contact3_title'=> __('Drop us an mail','appointment'),
 			'front_contact3_val'=>'info@yoursupport.com',
 			'contact_three_icon' =>'fa fa-envelope',
 			
