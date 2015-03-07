@@ -148,6 +148,10 @@ function weaverx_area_class( $area, $p_default = 'pad', $sides = '', $margin = '
 
 // >>>>> weaverx_get_bold_italic <<<<<
 function weaverx_get_bold_italic($area, $which) {
+	$val = weaverx_getopt("{$area}_normal");
+	if ( $val == 'on') {
+		return " font-weight-normal";
+	}
 	$val = weaverx_getopt("{$area}_{$which}");
 	if ($val == 'on')
 		return " font-{$which}";

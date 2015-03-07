@@ -97,3 +97,6 @@ with testing and feature suggestions.
 * Fix: post id and FI issue
 * Fix: interactions with Weaver Show Posts - displaying title options, list and FI styling
 * Fix: RTL for menus
+
+= Version 1.0.2.1 =
+* Fix: Normal Weight for Titles option 
