@@ -1,54 +1,32 @@
 <?php
 /**
- * The template for displaying all single posts
+ * The template for displaying all single posts.
  *
- * @package Fmi
+ * @package fmi
  */
 
-// header
-get_header();
+get_header(); ?>
 
-$post_id = $post->ID;
-$post_sidebar = get_post_meta( $post_id, 'vs_singular_sidebar', true );
-if ( ! $post_sidebar || 'default' === $post_sidebar ) {
-  $post_sidebar = get_theme_mod( 'post_sidebar', 'right' );
-}
-?>
-<div class="site-content sidebar-<?php echo esc_attr( $post_sidebar ); ?>">
-  <div class="vs-container">
-    <div id="content" class="main-content">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
 
+		<?php while ( have_posts() ) : the_post(); ?>
 
+			<?php get_template_part( 'content', 'single' ); ?>
 
-          <div id="primary" class="content-area">
-            <main id="main" class="site-main">
+			<?php fmi_post_navigation(); ?>
 
-            <?php
-            while ( have_posts() ) {
-              the_post();
-            ?>
+			<?php
+				// If comments are open or we have at least one comment, load up the comment template
+				if ( comments_open() || get_comments_number() ) :
+					comments_template();
+				endif;
+			?>
 
-            <?php get_template_part( 'template-parts/content-post' ); ?>
+		<?php endwhile; // end of the loop. ?>
 
-            <?php do_action( 'vs_post_after' ); ?>
+		</main><!-- #main -->
+	</div><!-- #primary -->
 
-            <?php
-            }
-            ?>
-
-            </main>
-          </div>
-
-      <?php
-      if ( 'disabled' !== $post_sidebar ) {
-        get_sidebar(); 
-      }
-      ?>
-
-    </div>
-  </div>
-</div>
-
-<?php
-// footer
-get_footer();
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>
