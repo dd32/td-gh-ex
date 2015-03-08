@@ -4,7 +4,7 @@ Theme URI: http://accesspressthemes.com/wordpress-themes/accesspress-root/
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Root is a clean and beautiful WordPress theme perfect for personal or business website. The theme is translation-ready, cross-browser compatible, search engine optimized. The theme fetures with a compact theme option panel that let you set up your website in no time. The theme offers sortable home page section. You can change the order of the homepage section with just simple drag and drop in the theme option panel.
-Version: 1.01
+Version: 1.02
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: accesspress-root
@@ -159,7 +159,7 @@ p {
 
 b,
 strong {
-	font-weight: 600;
+	font-weight: bold;
 }
 
 dfn,
@@ -440,10 +440,9 @@ a:hover {
 #site-navigation.main-navigation ul ul a {
 	width: 200px;
 	margin-left: 0;
-	padding:10px 8px;
+	padding: 8px;
 	position: relative;
 	text-align: center;
-    line-height: 1.4;
 }
 
 #site-navigation ul li ul.sub-menu > li:hover > a,
@@ -839,6 +838,10 @@ body {
 	position: relative;
 }
 
+#page{
+	padding-top: 25px;
+}
+
 .ak-container {
 	width:1140px;
 	margin: 0 auto;
@@ -892,7 +895,7 @@ body {
 
 .right-header {
 	float: right;
-	margin-top: 15px;
+	margin-top: 7px;
 }
 
 #site-navigation,
@@ -987,10 +990,6 @@ body {
   display: none;
 }
 
-.search-box .searchsubmit {
-  display: none;
-}
-
 .search-box .search-field{
 	position: absolute;
 	top: 50%;
@@ -1003,26 +1002,9 @@ body {
 	margin-top: -40px;
 	background: none;
     color: #ffffff !important;
-	font-size: 46px;
+	font-size: 54px;
 	font-style: italic;
 	font-weight: 300;
-}
-.search-box .search-field:focus{
-    border: none;
-    box-shadow: none;
-    outline: none;
-    border-bottom: 1px solid #ffffff;
-}
-
-.search-box .search-field::-webkit-input-placeholder {
-    color: #ffffff !important;
-}
-.search-box .search-field::-moz-placeholder {
-    color: #ffffff !important;
-    opacity: 1;
-}
-.search-box .search-field:-ms-input-placeholder {
-    color: #ffffff !important;
 }
 
 .search-box .close {
@@ -1078,22 +1060,17 @@ body {
 }
 
 .caption-read-more {
-	color: #FFF;
+	color: #f4e67d;
 	display: inline-block;
 	margin-top: 10px;
-	border:1px solid #FFF;
+	border:1px solid #1EB0BC;
 	padding: 8px 15px;
+	color:#1EB0BC;
 }
 
 .caption-read-more:hover{
+	color:#FFF;
 	background:#1EB0BC;
-    border:1px solid #1EB0BC;
-    color: #FFF;
-}
-
-.boxed .caption-content-wrapper, 
-.boxed .caption-read-more {
-    margin-left: 100px;
 }
 
 #main-slider .bx-controls .bx-pager {
@@ -1170,10 +1147,6 @@ body {
 	color: #1eb0bc;
 	font-weight: 600;
 }
-
-/*.message-title {
-  font-size: 30px;
-}*/
 
 .message-content {
 	font-size: 16px;
@@ -1608,6 +1581,10 @@ body {
 	font-size: 12px;
 }
 
+.blog-comments a.author {
+	margin-left: -38px;
+}
+
 .blog-comments a:hover{
 	color: #1eb0bc;
 }
@@ -1616,17 +1593,11 @@ body {
 	margin-right: 5px;
 }
 
-.blog-comments-wrap { 
+.blog-comments {
 	border-top: 1px solid #f1f1f1;
 	margin-top: 15px;
 	padding: 5px 0;
-	text-align: left;
-
-}
-
-.blog-comments{
-    width: 78%;
-    float: right;  
+	text-align: center;
 }
 
 .blog-comments .tags {
@@ -1694,8 +1665,8 @@ body {
 	-webkit-transform:translateY(0);
 	-moz-transform:translateY(0);
 	transform:translateY(0);
-	-webkit-transition: -webkittransform 1s ease 0s;
-	-moz-transition: -moz-transform 1s ease 0s;
+	-webkit-transition: transform 1s ease 0s;
+	-moz-transition: transform 1s ease 0s;
 	transition: transform 1s ease 0s;
 
 }
@@ -1728,8 +1699,8 @@ body {
 	transform: translateY(250px);
 	width: 100%;
 	height: 100%;
-	-webkit-transition: -webkit-transform 1.5s ease 0s;
-	-moz-transition: -moz-transform 1.5s ease 0s;
+	-webkit-transition: transform 1.5s ease 0s;
+	-moz-transition: transform 1.5s ease 0s;
 	transition: transform 1.5s ease 0s;
 	background: #1eb0bc;
 	text-align: center;
@@ -1740,8 +1711,8 @@ body {
 	-webkit-transform: translateY(0px);
 	-moz-transform: translateY(0px);
 	transform: translateY(0px);
-	-webkit-transition: -webkit-transform 1s ease 0s;
-	-moz-transition: -moz-transform 1s ease 0s;
+	-webkit-transition: transform 1s ease 0s;
+	-moz-transition: transform 1s ease 0s;
 	transition: transform 1s ease 0s;
 }
 
@@ -1984,17 +1955,11 @@ body {
 
 .footer-menu li a {
 	border-left: 1px solid #AAA;
-	color: #808080;
+	color: #141414;
 	padding: 0 15px;
 	font-size: 12px;
 	line-height: 12px;
 	display: block;
-}
-
-.footer-menu li a:hover,
-.footer-menu li.current-menu-item a,
-.footer-menu li.current-menu-ancestor a{
-    color:#141414;
 }
 
 .footer-menu li:first-child a{
@@ -2329,42 +2294,18 @@ widget css
 }
 
 .tagcloud a {
-    background: none repeat scroll 0 0 #1eb0bc;
-    color: #ffffff;
-    display: inline-block;
-    padding: 0px 10px;
-    -webkit-transition: background 0.3s ease 0s;
-    -moz-transition: background 0.3s ease 0s;
-    transition: background 0.3s ease 0s;
+  background: none repeat scroll 0 0 #1eb0bc;
+  color: #ffffff;
+  display: inline-block;
+  padding: 0px 10px;
+  -webkit-transition: background 0.3s ease 0s;
+  -moz-transition: background 0.3s ease 0s;
+  transition: background 0.3s ease 0s;
 }
 
 .tagcloud a:hover{
 	background: #109ba5;
 	color: #ffffff;
-}
-
-.widget_search input {
-    width: 100%;
-    padding: 0 32px 0 10px;
-}
-
-.widget_search button {
-    background: none;
-    border: none;
-}
-.widget_search .searchform{
-    position: relative;
-}
-
-.widget_search button {
-    background: none repeat scroll 0 0 ;
-    border: medium none;
-    color: #1eb0bc;
-    margin-top: -14px;
-    padding: 0;
-    position: absolute;
-    right: 10px;
-    top: 50%;
 }
 /*--------------------------------------------------------------
 	Leave a comment css
@@ -2581,8 +2522,6 @@ ol.comment-list li.comment ol.children {
 	transition:all 0.3s ease;
 	-moz-transition:all 0.3s ease;
 	-webkit-transition:all 0.3s ease;
-    -webkit-backface-visibility: hidden;
-    -webkit-transform: translateZ(0) scale(1.0, 1.0);
 }
 
 .entry-thumbanil:hover img{
@@ -2598,10 +2537,6 @@ ol.comment-list li.comment ol.children {
 .hentry {
 	border-bottom: 1px solid #eeeeee;
 	padding-bottom: 25px;
-}
-
-.hentry:last-child{
-    border-bottom:0;
 }
 
 .cat-links,
@@ -2886,140 +2821,4 @@ ol.comment-list li.comment ol.children {
 .blog_layout2 .entry-meta,
 .blog_layout3 .entry-meta {
 	margin-bottom: 5px;
-}
-
-/*--------------------------------------------------------------
-	Contact Form css
---------------------------------------------------------------*/
-
-.name-email-wrap .name, .name-email-wrap .email {
-	display: inline-block;
-	float: left;
-	width: 49%;
-}
-
-.contact-form-wrap .input{
-	position: relative;
-	display: block;
-}
-
-.name-email-wrap .email{
-	float: right;
-}
-
-.contact-form-wrap i {
-	border-left-style: solid;
-	border-left-width: 1px;
-	color: #cccccc;
-	font-size: 15px;
-	height: 29px;
-	line-height: 29px;
-	padding-left: 3px;
-	position: absolute;
-	right: 5px;
-	text-align: center;
-	top: 3px;
-	width: 29px;
-}
-
-.contact-form-wrap textarea,
-.contact-form-wrap input {
-	padding: 5px 40px 5px 5px;
-	width: 100%;
-	-webkit-appearance:none;
-}
-
-.contact-form-wrap .submt input {
-	margin: 12px 0;
-	padding: 0 20px;
-	text-align: center;
-	width: auto;
-	-webkit-appearance:none;
-    border: 1px solid #1eb0bc;
-    background: none; 
-    height: 36px;
-}
-
-.contact-form-wrap .submt input:hover{
-    background: #109BA5;
-    color: #fff;
-    -webkit-transition: background 0.5s ease 0s;
-    -moz-transition: background 0.5s ease 0s;
-    transition: background 0.5s ease 0s;
-}
-
-.contact-form-wrap textarea {
-    height: 180px;
-}
-
-.name-email-wrap {
-    margin-bottom: 10px;
-}
-
-.contact-form-wrap input:focus, 
-.contact-form-wrap textarea:focus {
-    border: 1px solid #1eb0bc;
-    -moz-box-shadow: 0 0 2px #1eb0bc;
-    -webkit-box-shadow: 0 0 2px #1eb0bc;
-    box-shadow: 0 0 2px #1eb0bc;
-}
-
-.contact-wrap {
-    margin-top: 30px;
-}
-
-.contact-info-wrap {
-    padding: 15px;
-}
-
-.contact-tit {
-    margin-top: 30px;
-}
-
-/*--------------------------------------------------------------
-Responsive grid for pages
---------------------------------------------------------------*/
-
-.ap_column {
-	float:left;
-	-webkit-box-sizing:border-box;
-	-moz-box-sizing:border-box;
-	box-sizing:border-box;
-	-moz-background-clip:padding-box !important;
-	-webkit-background-clip:padding-box !important;
-	background-clip:padding-box !important;
-}
-
-.ap_column {
-	margin-left:2%;
-	padding:0 0%;
-}
-
-.ap-row .ap_column:first-child {
-	margin-left:0;
-}
-
-.ap-span1 {
-	width:15.0%;
-}
-
-.ap-span2 {
-	width:32.0%;
-}
-
-.ap-span3 {
-	width:49.0%;
-} 
-
-.ap-span4 {
-	width:66.0%;
-}
-
-.ap-span5 {
-	width:83.0%;
-}
-
-.ap-span6 {
-	margin-left:0;
-	width:100%;
 }

@@ -118,8 +118,8 @@
     #nav ul {
         margin: 0;
     }
-    #nav ul ul {
-        text-indent: 20px;
+    #nav ul ul a{
+        padding-left: 40px;
     }
     #nav li a {
         padding: 10px 30px;

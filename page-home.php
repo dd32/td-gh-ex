@@ -65,7 +65,7 @@ get_header(); ?>
 
 						<?php if(of_get_option('service_desc')): ?>
 						<div class="sub-desc">
-							<?php echo esc_attr(of_get_option('service_desc')); ?>
+							<?php echo esc_textarea(of_get_option('service_desc')); ?>
 						</div>
 						<?php endif; ?>
 					</div>
@@ -128,7 +128,7 @@ get_header(); ?>
 				<div class="ak-container">
 					<div class="cta-banner-text <?php echo esc_attr($class); ?>">
 						<h1 class="cta-banner-title color-bold"><?php echo esc_attr($call_to_action_title); ?></h1>
-						<div class="cta-banner-desc"><?php echo esc_attr($call_to_action_desc); ?></div>
+						<div class="cta-banner-desc"><?php echo esc_textarea($call_to_action_desc); ?></div>
 					</div>
 
 					<?php if(!empty($call_to_action_button_text)): ?>
@@ -151,7 +151,7 @@ get_header(); ?>
 						<?php endif; ?>
 						<?php if(of_get_option('feature_desc')): ?>
 						<div class="sub-desc">
-							<?php echo esc_attr(of_get_option('feature_desc')); ?>
+							<?php echo esc_textarea(of_get_option('feature_desc')); ?>
 						</div>
 						<?php endif; ?>
 					</div>
@@ -208,7 +208,7 @@ get_header(); ?>
 						
 						<?php if(of_get_option('latest_post_desc')): ?>
 							<div class="sub-desc">
-								<?php echo esc_attr(of_get_option('latest_post_desc'));?>
+								<?php echo esc_textarea(of_get_option('latest_post_desc'));?>
 							</div>
 						<?php endif; ?>
 					</div>
@@ -395,7 +395,7 @@ get_header(); ?>
 
 						<?php if(of_get_option('testimonial_desc')): ?>
 						<div class="sub-desc">
-							<?php echo esc_attr(of_get_option('testimonial_desc'));?>
+							<?php echo esc_textarea(of_get_option('testimonial_desc'));?>
 						</div>
 						<?php endif; ?>
 					</div>
@@ -460,6 +460,5 @@ get_header(); ?>
 
 	}
 ?>
-
 
 <?php get_footer(); ?>

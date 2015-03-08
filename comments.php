@@ -71,28 +71,28 @@ if ( post_password_required() ) {
 		$args = array(
 		'fields' => apply_filters(
 		'comment_form_default_fields', array(
-		'author' =>'<div class="name-email-row clearfix"><p class="comment-form-author">' . '<input id="author" placeholder="Name *" name="author" type="text" value="' .
+		'author' =>'<div class="name-email-row clearfix"><p class="comment-form-author">' . '<input id="author" placeholder="'.__('Name *','accesspress-root').'" name="author" type="text" value="' .
 		esc_attr( $commenter['comment_author'] ) . '" size="30" aria-required="true" />'.
 		'</p>',
 
-		'email'  => '<p class="comment-form-email">' . '<input id="email" placeholder="Email Address *" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+		'email'  => '<p class="comment-form-email">' . '<input id="email" placeholder="'.__('Email Address *','accesspress-root').'" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
 		'" size="30" aria-required="true" />'  .
 		'</p></div>',
 
 		'url'    => '<p class="comment-form-url">' .
-		'<input id="url" name="url" placeholder="Website" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /> ' .
+		'<input id="url" name="url" placeholder="'.__('Website','accesspress-root').'" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /> ' .
 		'</p>'
 		)
 		),
 
 		'comment_field' => '<p class="comment-form-comment">' .
-		'<textarea id="comment" name="comment" placeholder="Comment *" cols="45" rows="8" aria-required="true"></textarea>' .
+		'<textarea id="comment" name="comment" placeholder="'.__('Comment *','accesspress-root').'" cols="45" rows="8" aria-required="true"></textarea>' .
 		'</p>',
 		'comment_notes_after' => '',
 		'comment_notes_before' => '',
 		);
 
-comment_form( $args );
+    comment_form( $args );
 
 	?>
 

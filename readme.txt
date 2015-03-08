@@ -37,6 +37,21 @@ JS Files
     
     Modernizr : BSD and MIT license
     http://modernizr.com/
+    
+------------------------------------------
+
+CSS Files 
+    Font Awesome: MIT and GPL licenses
+    http://fontawesome.io/license/
+
+    BxSlider: WTFPL and MIT license
+    https://github.com/stevenwanderski/bxslider-4
+    
+    Nivo Lightbox: MIT licenses
+    http://dev7studios.com/plugins/nivo-lightbox/
+    
+    Responsive Off Canvas Menu : BSD and MIT license
+    https://github.com/dbushell/Responsive-Off-Canvas-Menu
 
 -------------------------------------------
 Fonts

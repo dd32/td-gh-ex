@@ -166,7 +166,7 @@ function accesspress_root_scripts() {
         'family' => 'Oswald:400,300,700|Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic',
     ); 
 	wp_enqueue_style('accesspress-root-google-fonts-css', add_query_arg($query_args, "//fonts.googleapis.com/css"));
-	wp_enqueue_style('accesspress-root-step3-css', get_template_directory_uri() . '/css/step3.css');
+	wp_enqueue_style('accesspress-root-step3-css', get_template_directory_uri() . '/css/off-canvas-menu.css');
     wp_enqueue_style('accesspress-root-font-awesome-css', get_template_directory_uri() . '/css/font-awesome.min.css');
     wp_enqueue_style('accesspress-root-bx-slider-css', get_template_directory_uri() . '/css/jquery.bxslider.css');
     wp_enqueue_style('accesspress-root-nivo-lightbox-css', get_template_directory_uri() . '/css/nivo-lightbox.css');
