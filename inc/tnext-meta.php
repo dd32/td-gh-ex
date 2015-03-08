@@ -148,103 +148,11 @@ function itrans_register_meta_boxes( $meta_boxes )
 				'desc'  => __( 'Enter an external link for the item (optional) (NOTE: INCLUDE HTTP://).', 'nx-admin' ),				
 				'type'  => 'text',
 			),
-			/*
-			// ITEM DETAILS OPTIONS SECTION
-			array(
-				'type' => 'heading',
-				'name' => __( 'Portfolio Layout Options', 'nx-admin' ),
-				'id'   => 'fake_id_pf2', // Not used but needed for plugin
-			),
-			//Media display option
-			array(
-				'name' => __('Portfolio Layout', 'nx-admin'),
-				'id'   => "{$prefix}folio_disply_type",
-				'type' => 'select',
-				'options' => array(
-					'0'	=> __('Default Single Column', 'nx-admin'),
-					'1'	=> __('Two Column Side By Side', 'nx-admin'),
-				),
-				'multiple' => false,
-				'std'  => '0',
-				'desc' => __('Choose how you would like to have your portfolio details page', 'nx-admin'),
-			),
-			// Show Social Share
-			array(
-				'name' => __( 'Show Social Share', 'ispirit' ),
-				'id'   => "{$prefix}nx_show_social",
-				'type' => 'checkbox',
-				// Value can be 0 or 1
-				'std'  => 0
-			),
-			// Show Related Posts
-			array(
-				'name' => __( 'Show Related Posts', 'ispirit' ),
-				'id'   => "{$prefix}nx_show_related",
-				'type' => 'checkbox',
-				// Value can be 0 or 1
-				'std'  => 0
-			),
-			*/																	
 
 		)
 	);		
 	
-	
-	
-	$meta_boxes[] = array(
-		// Meta box id, UNIQUE per meta box. Optional since 4.1.5
-		'id' => 'testimonialmeta',
 
-		// Meta box title - Will appear at the drag and drop handle bar. Required.
-		'title' => __( 'Testimonial Meta', 'ispirit' ),
-
-		// Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
-		'pages' => array( 'testimonials' ),
-
-		// Where the meta box appear: normal (default), advanced, side. Optional.
-		'context' => 'normal',
-
-		// Order of meta box: high (default), low. Optional.
-		'priority' => 'high',
-
-		// Auto save: true, false (default). Optional.
-		'autosave' => true,
-
-		// List of meta fields
-		'fields' => array(
-
-			// name
-			array(
-				'name'  => __( 'Testimonial Cite', 'nx-admin' ),
-				'id'    => "{$prefix}testi_name",
-				'type'  => 'text',
-				'std'   => __( '', 'nx-admin' ),
-				'desc' => __('Enter the testimonial cite name.', 'nx-admin'),
-			),
-
-			// designation
-			array(
-				'name'  => __( 'Testimonial Cite Designation/position', 'nx-admin' ),
-				'id'    => "{$prefix}testi_desig",
-				'type'  => 'text',
-				'std'   => __( '', 'nx-admin' ),
-				'desc' => __('Enter the cite designation or position', 'nx-admin'),
-			),
-			// company name
-			array(
-				'name'  => __( 'Company name', 'nx-admin' ),
-				'id'    => "{$prefix}testi_company",
-				'type'  => 'text',
-				'std'   => __( '', 'nx-admin' ),
-				'desc' => __('Enter the cite company name', 'nx-admin'),
-			),
-
-		
-						
-		)
-	);	
-	
-	
 	// 1st meta box
 	$meta_boxes[] = array(
 		// Meta box id, UNIQUE per meta box. Optional since 4.1.5

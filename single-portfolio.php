@@ -55,7 +55,6 @@ get_header(); ?>
 									MultiPostThumbnails::the_post_thumbnail( get_post_type(), 'feature-image-3', NULL, 'folio-silder' );
 									echo '</a>';
 								}
-                                //MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'feature-image-2', $link_to_original);
                             } 							
                         ?>
 						</div>
@@ -64,6 +63,8 @@ get_header(); ?>
                         ?>                        
 						
 					</header><!-- .entry-header -->
+                    <?php endif; ?>
+                    
                     <div class="folio-meta">
                     <?php if (!empty($sub_title)) : ?>
                     <h2 class="tx-subtitle"><?php echo $sub_title; ?></h2>
@@ -79,7 +80,7 @@ get_header(); ?>
                     <?php
 					}
 					?>                    
-                    <?php endif; ?>
+                    
                     <?php if (tx_folio_term( 'portfolio-category' )) : ?>
                     	<div class="folio-cat">
                         	<span class="genericon genericon-category"></span>
