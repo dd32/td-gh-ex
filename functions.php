@@ -98,8 +98,8 @@ function weaverx_setup() {
 
 	// This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images
 	add_theme_support( 'post-thumbnails' );
-	//set_post_thumbnail_size(250,250);
-	//add_image_size('featured-image', 250, 250);
+
+	add_theme_support( 'title-tag' );
 
 
 	// now, need Weaver Xtreme settings available for everything else

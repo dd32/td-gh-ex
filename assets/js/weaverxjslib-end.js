@@ -490,7 +490,8 @@ jQuery(document).ready(function () {
 		weaverxFullWidth();						// First-time once - resizeX doesn't fire on Win8 initial load
 		jQuery(function($) {      				//Runs the extension rule everytime the browser changes size
 			$('#wvrx-page-width').resizeX(weaverxFullWidth);
-	});
+		});
+	}
 
 	// need to run weaverxResizeEnd on doc ready for at least some browsers
 	// As of October, 2014, these included Safari, Desktop Opera, IE9, and IE8.
@@ -533,7 +534,6 @@ jQuery(document).ready(function () {
 	// Target your #container, #wrapper etc
 	// if ( ! weaver_disable_fitvids )  // one possible solution to disabling FitVids via localize_script in functions.php
 	jQuery("#wrapper").fitVids();
-}
 
 });
 

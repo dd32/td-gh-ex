@@ -194,45 +194,6 @@ function weaverx_unlink_page($link, $id) {	// filter definition
 }
 //--
 
-
-
-// =============================== >>> FILTER: weaverx_wp_title <<< ================================
-add_filter('wp_title', 'weaverx_wp_title', 10, 1);		// filter the title
-
-function weaverx_wp_title($title) {	// filter definition
-
-	if (function_exists('wpseo_get_value'))
-		return $title;		// this is compatible with SEO plugins
-
-	/*
-	 * Print the <title> tag based on what is being viewed. THIS CODE DIRECTLY FROM TWENTY ELEVEN
-	 */
-	global $page, $paged;
-
-	$t = '';
-
-	if ($title) {
-		$title = trim(str_replace('&raquo;','',$title));
-		$t = $title . ' | ';
-	}
-
-	$t .= get_bloginfo('name');
-
-	/* Add the blog description for the home/front page. */
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$t .= " | $site_description";
-
-	/* Add a page number if necessary: */
-	if ( $paged >= 2 || $page >= 2 )
-		$t .= ' | ' . sprintf( __( 'Page %s','weaver-xtreme'), max( $paged, $page ) );
-
-	return $t;
-}
-//--
-
-
-
 // =============================== >>> FILTER: admin_post_thumbnail_html <<< ================================
 // Change what's hidden by default - show Custom Fields and Discussion by default!
 add_filter('default_hidden_meta_boxes', 'weaverx_hidden_meta_boxes', 10, 2);

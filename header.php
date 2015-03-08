@@ -30,9 +30,6 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 	$viewport = "<meta name='viewport' content='width=device-width,initial-scale=1.0' />\n"; /* use full horizontal size on iPad */
 	echo $viewport;
 ?>
-<title><?php		// ++++++ HEAD TITLE ++++++
-	wp_title('');		// the title - will run through our filter
-?></title>
 
 <link rel="profile" href="//gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php esc_url(bloginfo( 'pingback_url' )); ?>" />

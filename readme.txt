@@ -98,6 +98,8 @@ with testing and feature suggestions.
 * Fix: interactions with Weaver Show Posts - displaying title options, list and FI styling
 * Fix: RTL for menus
 
-= Version 1.0.2.2 =
+= Version 1.0.2.3 =
+* Tweak: Added support for WP 4.1 'title-tag'
 * Fix: Normal Weight for Titles option
 * Fix: Allow non-standard 'property' in <head> meta tag.
+* Fix: JS bug

@@ -896,6 +896,15 @@ function weaverx_get_paginate_archive_page_links( $type = 'plain', $endsize = 1,
 
 // # OTHER UTILS ==============================================================
 
+if ( ! function_exists( '_wp_render_title_tag' ) ) {
+	function weaverx_render_title() {
+?>
+<title><?php wp_title(); ?></title> <!-- pre-4.1 compatibility -->
+<?php
+	}
+	add_action( 'wp_head', 'weaverx_render_title' );
+}
+
 function weaverx_debug_comment($msg) {
 	echo "\n<!-- *************************::: {$msg} ::: ********************** -->\n";
 }
