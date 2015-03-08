@@ -405,7 +405,8 @@ function weaverx_filter_head( $text ) {
 	$allowed_head_tags = array(
 		'title' => array(),
 		'style' => array( 'media' => true, 'scoped' => true, 'type' => true ),
-		'meta' => array( 'charset' => true, 'content' => true, 'http-equiv' => true, 'name' => true, 'scheme' => true ),
+		'meta' => array( 'charset' => true, 'content' => true, 'http-equiv' => true, 'name' => true,
+						'scheme' => true, 'property'=> true ),
 		'link' => array( 'href' => true, 'rel' => true, 'type' => true, 'title' => true, 'media' => true, 'id' => true, 'class' => true  ),
 		'script' => array( 'async' => true, 'charset' => true, 'defer' => true, 'src' => true, 'type' => true  ),
 		'noscript' => array(),
