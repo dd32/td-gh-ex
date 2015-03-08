@@ -17,7 +17,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 /**
  * Generate social icons.
  *
- * @since Catchbase 1.0
+ * @since Catch Base 1.0
  */
 function catchbase_get_social_icons(){
 	if( ( !$catchbase_social_icons = get_transient( 'catchbase_social_icons' ) ) ) {
