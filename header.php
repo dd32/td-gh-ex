@@ -6,7 +6,8 @@
  *
  * @package AccessPress Root
  */
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -73,7 +74,7 @@
 			'theme_location' => 'primary',
 			'container'       => '', 
 			) ); ?>
-			<a href="#top" id="nav-close-btn" class="close-btn">×</a>
+			<a href="#top" id="nav-close-btn" class="close-btn">&times;</a>
 		</div>
 	</nav><!-- #site-navigation -->
 
