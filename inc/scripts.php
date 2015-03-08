@@ -8,7 +8,7 @@ function ct_author_load_scripts_styles() {
 	wp_register_style( 'ct-author-google-fonts', '//fonts.googleapis.com/css?family=Rokkitt:400|Lato:400');
 
 	// main JS file
-	wp_enqueue_script('ct-author-js', get_template_directory_uri() . '/js/build/production.min.js#ct_author_asyncload', array('jquery'),'', true);
+	wp_enqueue_script('ct-author-js', get_template_directory_uri() . '/js/build/production.min.js', array('jquery'),'', true);
 
 	// Google Fonts
 	wp_enqueue_style('ct-author-google-fonts');
@@ -18,9 +18,9 @@ function ct_author_load_scripts_styles() {
 
 	// load primary stylesheet
 	if( is_rtl() ) {
-		wp_enqueue_style('style-rtl', get_template_directory_uri() . '/styles/rtl.min.css');
+		wp_enqueue_style('ct-author-pro-style-rtl', get_template_directory_uri() . '/styles/rtl.min.css');
 	} else {
-		wp_enqueue_style('style', get_template_directory_uri() . 'style.min.css');
+		wp_enqueue_style('ct-author-style', get_template_directory_uri() . '/style.min.css');
 	}
 
 	// enqueue comment-reply script only on posts & pages with comments open ( included in WP core )
@@ -62,13 +62,13 @@ add_action('customize_controls_enqueue_scripts','ct_author_enqueue_customizer_sc
  * Script for live updating with customizer options. Has to be loaded separately on customize_preview_init hook
  * transport => postMessage
  */
-function author_enqueue_customizer_post_message_scripts(){
+function ct_author_enqueue_customizer_post_message_scripts(){
 
 	// JS for live updating with customizer input
 	wp_enqueue_script('ct-author-customizer-post-message-js', get_template_directory_uri() . '/js/build/postMessage.min.js',array('jquery'),'',true);
 
 }
-add_action('customize_preview_init','author_enqueue_customizer_post_message_scripts');
+add_action('customize_preview_init','ct_author_enqueue_customizer_post_message_scripts');
 
 // load scripts asynchronously
 function ct_author_add_async_script($url) {

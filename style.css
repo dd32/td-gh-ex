@@ -4,7 +4,7 @@ Theme URI: https://www.competethemes.com/author/
 Author: Compete Themes
 Author URI: https://www.competethemes.com/
 Description: Author is designed for publishers who want readers. That's why Author is fast, responsive, accessibility-ready, and optimally designed for reading. All scripts and stylesheets are minified, concatenated, and conditionally loaded to maximize performance. The layout adapts fluidly to all screen sizes to enhance usability. As one of few accessibility-ready themes, it performs well for users with wide ranges of disabilities. Lastly, based on the ancient Van de Graaf canon, Author is optimally designed for reading. Author is the theme your content deserves.
-Version: 1.0
+Version: 1.01
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, blue, gray, silver, tan, white, dark, light, one-column, two-columns, left-sidebar, fluid-layout, responsive-layout, accessibility-ready, custom-menu, featured-images, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -650,37 +650,6 @@ a img {
 .menu-unset > ul .page_item_has_children > a {
   max-width: calc(100% - 36px);
 }
-.menu-primary-items .menu-item-has-children button,
-.menu-primary-items .page_item_has_children button,
-.menu-unset > ul .menu-item-has-children button,
-.menu-unset > ul .page_item_has_children button {
-  float: right;
-  height: 32px;
-  width: 32px;
-  margin: 2px 0 0 0;
-  padding: 0;
-  font-size: 1em;
-  line-height: 1;
-  background: none;
-  color: white;
-  border: solid 1px #3e4145;
-}
-.menu-primary-items .menu-item-has-children button:focus,
-.menu-primary-items .page_item_has_children button:focus,
-.menu-unset > ul .menu-item-has-children button:focus,
-.menu-unset > ul .page_item_has_children button:focus {
-  outline: none;
-  border-color: #999999;
-}
-.menu-primary-items .menu-item-has-children button:after,
-.menu-primary-items .page_item_has_children button:after,
-.menu-unset > ul .menu-item-has-children button:after,
-.menu-unset > ul .page_item_has_children button:after {
-  content: '\f107';
-  font-family: 'FontAwesome';
-  -webkit-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
-}
 .menu-primary-items .menu-item-has-children ul,
 .menu-primary-items .page_item_has_children ul,
 .menu-unset > ul .menu-item-has-children ul,
@@ -737,12 +706,6 @@ a img {
 .menu-unset > ul .page_item_has_children ul ul a:focus {
   color: #999999;
 }
-.menu-primary-items .menu-item-has-children ul ul button:after,
-.menu-primary-items .page_item_has_children ul ul button:after,
-.menu-unset > ul .menu-item-has-children ul ul button:after,
-.menu-unset > ul .page_item_has_children ul ul button:after {
-  color: #cccccc;
-}
 .menu-primary-items .menu-item-has-children.open > button,
 .menu-primary-items .page_item_has_children.open > button,
 .menu-unset > ul .menu-item-has-children.open > button,
@@ -757,6 +720,29 @@ a img {
 .menu-unset > ul .menu-item-has-children.open > ul,
 .menu-unset > ul .page_item_has_children.open > ul {
   max-height: 9999px;
+}
+
+.toggle-dropdown {
+  float: right;
+  height: 32px;
+  width: 32px;
+  margin: 2px 0 0 0;
+  padding: 0;
+  font-size: 1em;
+  line-height: 1;
+  background: none;
+  color: white;
+  border: solid 1px #3e4145;
+}
+.toggle-dropdown:focus {
+  outline: none;
+  border-color: #999999;
+}
+.toggle-dropdown:after {
+  content: '\f107';
+  font-family: 'FontAwesome';
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 .open .menu-primary {
@@ -791,7 +777,8 @@ a img {
     width: auto;
     padding: 0;
   }
-  .menu-primary button:hover {
+
+  .toggle-dropdown:hover {
     cursor: pointer;
     border-color: #999999;
   }
