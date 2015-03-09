@@ -3,7 +3,7 @@
 class lovecraft_flickr_widget extends WP_Widget {
 
 	function lovecraft_flickr_widget() {
-		parent::WP_Widget(false, $name = 'Flickr widget', array('description' => __('Displays your latest Flickr photos.', 'lovecraft') ));	
+		parent::WP_Widget(false, $name = __('Flickr Widget', 'lovecraft'), array('description' => __('Displays your latest Flickr photos.', 'lovecraft') ));	
 	}
 	
 	function widget($args, $instance) {

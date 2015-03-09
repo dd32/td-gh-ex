@@ -3,7 +3,7 @@
 class lovecraft_recent_comments extends WP_Widget {
 
 	function lovecraft_recent_comments() {
-		parent::WP_Widget(false, $name = 'Recent comments', array('description' => __('Displays recent comments with user avatars.', 'lovecraft') ));
+		parent::WP_Widget(false, $name = __('Recent Comments', 'lovecraft'), array('description' => __('Displays recent comments with user avatars.', 'lovecraft') ));
 	}
 	
 	function widget($args, $instance) {

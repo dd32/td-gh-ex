@@ -3,7 +3,7 @@
 class lovecraft_recent_posts extends WP_Widget {
 
 	function lovecraft_recent_posts() {
-		parent::WP_Widget(false, $name = 'Recent posts', array('description' => __('Displays recent blog entries.', 'lovecraft') ));	
+		parent::WP_Widget(false, $name = __('Recent Posts', 'lovecraft'), array('description' => __('Displays recent blog entries.', 'lovecraft') ));	
 	}
 	
 	function widget($args, $instance) {

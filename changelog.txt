@@ -1,6 +1,13 @@
 *** Lovecraft changelog ***
 
 
+Version 1.13 (2014-03-09)
+------------------------- 
+- Added fallback widgets that are displayed in the sidebar if no widgets have been selected
+– Added missing namespaces in widgets
+– Updated the Swedish translation
+
+
 Version 1.12 (2014-03-09)
 ------------------------- 
 - Added validation for instances in widgets
