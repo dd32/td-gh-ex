@@ -1,7 +1,7 @@
 === Fmi ===
 Theme Name: Fmi
 Theme URI: http://www.forrss.com/fmi/
-Version: 1.3.4
+Version: 1.3.5
 Requires at least: 3.7
 Tested up to: 4.1
 Author: Forrss
@@ -22,20 +22,24 @@ Fmi is an elegant blog theme with responsive and easily customizable.
 * The GPL v2.0 or later license.
 
 == License ==
-* FontAwesome
- - Copyright 2012 Dave Gandy
- - License: MIT License
- - http://fontawesome.io/license/
+* Font Awesome by Dave Gandy http://fortawesome.github.io/Font-Awesome/
+	SIL OFL 1.1 http://scripts.sil.org/OFL.
 
-* fitvids.js
- - @ChrisCoyier, @davatron5000, @TrentWalton, @raygunray
- - Intrinsic Ratio Method by Thierry Koblentz](http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/)
+* fitvids.js  @ChrisCoyier, @davatron5000, @TrentWalton, @raygunray
+	Intrinsic Ratio Method by Thierry Koblentz](http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/)
  
 * Image in the screenshot is from public domain http://unsplash.com/ link: https://unsplash.com/photos/D62hQefhteg
 
 * Options Framework by WP Theming licensed under the GPLv2 license (http://www.gnu.org/licenses/gpl-2.0.html)
+
+* HTML5 Shiv @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
+
+* The script jquery.cycle.all.js is dual licensed under GPL & MIT
  
 == Changelog ==
+#### 1.3.5
+* Add Slider
+
 #### 1.3.4
 * Add Options Framework.
 

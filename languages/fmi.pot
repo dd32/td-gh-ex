@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: fmi\n"
-"POT-Creation-Date: 2015-03-08 14:28+0800\n"
-"PO-Revision-Date: 2015-03-08 14:28+0800\n"
+"POT-Creation-Date: 2015-03-10 07:34+0800\n"
+"PO-Revision-Date: 2015-03-10 07:34+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh\n"
@@ -53,8 +53,8 @@ msgstr ""
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: content-page.php:20 inc/template-tags.php:91 inc/template-tags.php:272
-#: inc/template-tags.php:285
+#: content-page.php:20 inc/template-tags.php:33 inc/template-tags.php:195
+#: inc/template-tags.php:208
 msgid "Edit"
 msgstr ""
 
@@ -129,11 +129,11 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: functions.php:86
+#: functions.php:91
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:141 inc/extras.php:52
+#: functions.php:169 inc/extras.php:52
 #, php-format
 msgid "Page %s"
 msgstr ""
@@ -257,159 +257,151 @@ msgstr ""
 msgid "Bold Italic"
 msgstr ""
 
-#: inc/template-tags.php:23
-msgid "Posts navigation"
-msgstr ""
-
-#: inc/template-tags.php:27 inc/template-tags.php:330
-msgid "Older posts"
-msgstr ""
-
-#: inc/template-tags.php:31 inc/template-tags.php:334
-msgid "Newer posts"
-msgstr ""
-
-#: inc/template-tags.php:56
-msgid "Post navigation"
-msgstr ""
-
-#: inc/template-tags.php:95
+#: inc/template-tags.php:37
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:95
+#: inc/template-tags.php:37
 msgid "1 Comment"
 msgstr ""
 
-#: inc/template-tags.php:95
+#: inc/template-tags.php:37
 msgid "% Comments"
 msgstr ""
 
-#: inc/template-tags.php:106
+#: inc/template-tags.php:48
 msgid "Featured"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:111 inc/template-tags.php:117
+#: inc/template-tags.php:53 inc/template-tags.php:59
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:140
+#: inc/template-tags.php:73
 #, php-format
 msgid "Category: %s"
 msgstr ""
 
-#: inc/template-tags.php:142
+#: inc/template-tags.php:75
 #, php-format
 msgid "Tag: %s"
 msgstr ""
 
-#: inc/template-tags.php:144
+#: inc/template-tags.php:77
 #, php-format
 msgid "Author: %s"
 msgstr ""
 
-#: inc/template-tags.php:146
+#: inc/template-tags.php:79
 #, php-format
 msgid "Year: %s"
 msgstr ""
 
-#: inc/template-tags.php:146
+#: inc/template-tags.php:79
 msgid "Y"
 msgstr ""
 
-#: inc/template-tags.php:148
+#: inc/template-tags.php:81
 #, php-format
 msgid "Month: %s"
 msgstr ""
 
-#: inc/template-tags.php:148
+#: inc/template-tags.php:81
 msgid "F Y"
 msgstr ""
 
-#: inc/template-tags.php:150
+#: inc/template-tags.php:83
 #, php-format
 msgid "Day: %s"
 msgstr ""
 
-#: inc/template-tags.php:150
+#: inc/template-tags.php:83
 msgid "F j, Y"
 msgstr ""
 
-#: inc/template-tags.php:153
+#: inc/template-tags.php:86
 msgid "Asides"
 msgstr ""
 
-#: inc/template-tags.php:155
+#: inc/template-tags.php:88
 msgid "Galleries"
 msgstr ""
 
-#: inc/template-tags.php:157
+#: inc/template-tags.php:90
 msgid "Images"
 msgstr ""
 
-#: inc/template-tags.php:159
+#: inc/template-tags.php:92
 msgid "Videos"
 msgstr ""
 
-#: inc/template-tags.php:161
+#: inc/template-tags.php:94
 msgid "Quotes"
 msgstr ""
 
-#: inc/template-tags.php:163
+#: inc/template-tags.php:96
 msgid "Links"
 msgstr ""
 
-#: inc/template-tags.php:165
+#: inc/template-tags.php:98
 msgid "Statuses"
 msgstr ""
 
-#: inc/template-tags.php:167
+#: inc/template-tags.php:100
 msgid "Audio"
 msgstr ""
 
-#: inc/template-tags.php:169
+#: inc/template-tags.php:102
 msgid "Chats"
 msgstr ""
 
-#: inc/template-tags.php:172
+#: inc/template-tags.php:105
 #, php-format
 msgid "Archives: %s"
 msgstr ""
 
 #. translators: 1: Taxonomy singular name, 2: Current taxonomy term
-#: inc/template-tags.php:176
+#: inc/template-tags.php:109
 #, php-format
 msgid "%1$s: %2$s"
 msgstr ""
 
-#: inc/template-tags.php:178
+#: inc/template-tags.php:111
 msgid "Archives"
 msgstr ""
 
-#: inc/template-tags.php:272
+#: inc/template-tags.php:195
 msgid "Pingback:"
 msgstr ""
 
-#: inc/template-tags.php:284
+#: inc/template-tags.php:207
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: inc/template-tags.php:288
+#: inc/template-tags.php:211
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/template-tags.php:310
+#: inc/template-tags.php:233
 msgid "Previous Post"
 msgstr ""
 
-#: inc/template-tags.php:311
+#: inc/template-tags.php:234
 msgid "Next Post"
 msgstr ""
 
-#: inc/template-tags.php:324
+#: inc/template-tags.php:247
 msgid "Page"
+msgstr ""
+
+#: inc/template-tags.php:253
+msgid "Older posts"
+msgstr ""
+
+#: inc/template-tags.php:257
+msgid "Newer posts"
 msgstr ""
 
 #: options.php:23
@@ -582,6 +574,39 @@ msgstr ""
 
 #: options.php:256
 msgid "Enter the default text for when no search results are found."
+msgstr ""
+
+#: options.php:265
+msgid "Slider"
+msgstr ""
+
+#: options.php:271
+msgid "Activate slider"
+msgstr ""
+
+#: options.php:272
+msgid "Check to activate slider."
+msgstr ""
+
+#: options.php:281
+#, php-format
+msgid "Image Upload #%1$s"
+msgstr ""
+
+#: options.php:282
+msgid "Upload slider image."
+msgstr ""
+
+#: options.php:287
+msgid "Enter title for your slider."
+msgstr ""
+
+#: options.php:293
+msgid "Enter your slider description."
+msgstr ""
+
+#: options.php:299
+msgid "Enter link to redirect slider when clicked"
 msgstr ""
 
 #: search.php:16

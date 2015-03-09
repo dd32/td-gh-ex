@@ -48,5 +48,19 @@
         
         <div class="clear"></div>
     </div></nav><!-- #site-navigation -->
+    
+<?php
+if( of_get_option( 'fmi_activate_slider', '0' ) == '1' ) {
+	if ( is_front_page() ) {
+?>
+		<div class="site-slider"><div class="inner">
+<?php
+		fmi_slider();
+?>
+		<div class="clear"></div></div></div>
+<?php
+	}
+}
+?>
 
 	<div id="content" class="site-content"><div class="inner">

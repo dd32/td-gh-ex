@@ -258,6 +258,50 @@ function optionsframework_options() {
 		'std' => 'Sorry, but nothing matched your search terms. Please try again with some different keywords or return to home.',
 		'type' => 'textarea'
 	);
+	
+	/*************************************************************************/
+
+	$options[] = array(
+		'name' => __( 'Slider', 'fmi' ),
+		'type' => 'heading'
+	);
+
+	// Slider activate option
+	$options[] = array(
+		'name' 		=> __( 'Activate slider', 'fmi' ),
+		'desc' 		=> __( 'Check to activate slider.', 'fmi' ),
+		'id' 			=> 'fmi_activate_slider',
+		'std' 		=> '0',
+		'type' 		=> 'checkbox'
+	);
+
+	// Slide options
+	for( $i=1; $i<=4; $i++) {
+		$options[] = array(
+			'name' 	=>	sprintf( __( 'Image Upload #%1$s', 'fmi' ), $i ),
+			'desc' 	=> __( 'Upload slider image.', 'fmi' ),
+			'id' 		=> 'fmi_slider_image'.$i,
+			'type' 	=> 'upload'
+		);
+		$options[] = array(
+			'desc' 	=> __( 'Enter title for your slider.', 'fmi' ),
+			'id' 		=> 'fmi_slider_title'.$i,
+			'std' 	=> '',
+			'type' 	=> 'text'
+		);
+		$options[] = array(
+			'desc' 	=> __( 'Enter your slider description.', 'fmi' ),
+			'id' 		=> 'fmi_slider_text'.$i,
+			'std' 	=> '',
+			'type' 	=> 'textarea'
+		);
+		$options[] = array(
+			'desc' 	=> __( 'Enter link to redirect slider when clicked', 'fmi' ),
+			'id' 		=> 'fmi_slider_link'.$i,
+			'std' 	=> '',
+			'type' 	=> 'text'
+		);
+	}
 
 	return $options;
 }
