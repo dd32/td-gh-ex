@@ -80,3 +80,8 @@ Version 1.2.6
 * Added compatibility with WordPress 4.1
 * Update FontAwesome to 4.3.0 Version
 * Minor Bug Fixes
+
+Version 1.2.7
+* Added menu for Theme Options in the admin toolbar
+* Fixed icon position for sticky posts
+* Minor bug fixes
