@@ -38,8 +38,18 @@
 						<div class="site-info">
 							<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'bnw' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'bnw' ), 'WordPress' ); ?></a>
 							<span class="sep"> | </span>
-							<?php printf( __( 'Theme: %1$s by %2$s.', 'bnw' ), 'bnw', '<a href="<?php the_author(); ?>" rel="designer">Ali Siddique</a>' ); ?>
+							<?php printf( __( 'Theme: %1$s by %2$s.', 'bnw' ), 'bnw', '<a href="http://alisiddique.com/" rel="designer">Ali Siddique</a>' ); ?>
+							<p class="text-center">
+								<?php
+									if (class_exists("TitanFramework")){
+										$titan = TitanFramework::getInstance( 'bnw' );
+										$customTagline = $titan->getOption( 'copyright_text' );
+										echo $customTagline;
+									}
+								?>
+							</p>
 						</div><!-- .site-info -->
+						
 					</div>
 				</div>
 			</div>

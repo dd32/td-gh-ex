@@ -113,7 +113,7 @@ function titanscore_create_options() {
 			'id' => 'headings_font_all',
 			'type' => 'font',
 			'desc' => __( 'Select the font for all headings in the site', 'bnw' ),
-			'show_color' => false,
+			'show_color' => true,
 			'show_font_size' => false,
 			'show_font_weight' => true,
 			'show_font_style' => false,
@@ -139,7 +139,7 @@ function titanscore_create_options() {
 	
 	$footerTab->createOption( array(
 		'name' => __( 'Copyright Text', 'bnw' ),
-		'id' => 'copyright',
+		'id' => 'copyright_text',
 		'type' => 'text',
 		'desc' => __( 'Enter your copyright text here', 'bnw' ),
 	) );
