@@ -36,9 +36,16 @@ class lovecraft_flickr_widget extends WP_Widget {
 	
 	
 	function update($new_instance, $old_instance) {
+		$instance = $old_instance;
+		
+		$instance['widget_title'] = strip_tags( $new_instance['widget_title'] );
+        // make sure it is a valid Flickr ID
+        $instance['id'] = preg_match( '|[0-9]{8}\@N([0-9]){2}|', $new_instance['id'] ) ? $new_instance['id'] : '';
+        // make sure we are getting a number
+        $instance['number'] = is_int( intval( $new_instance['number'] ) ) ? intval( $new_instance['number']): 6;
 	
 		//update and save the widget
-		return $new_instance;
+		return $instance;
 		
 	}
 	

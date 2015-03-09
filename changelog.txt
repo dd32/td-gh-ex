@@ -1,6 +1,11 @@
 *** Lovecraft changelog ***
 
 
+Version 1.12 (2014-03-09)
+------------------------- 
+- Added validation for instances in widgets
+
+
 Version 1.11 (2014-02-09)
 ------------------------- 
 - Removed a duplicate title function causing the page title to be added twice to <title></title>

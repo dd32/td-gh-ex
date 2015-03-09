@@ -82,9 +82,14 @@ class lovecraft_recent_comments extends WP_Widget {
 	
 	
 	function update($new_instance, $old_instance) {
+		$instance = $old_instance;
+		
+		$instance['widget_title'] = strip_tags( $new_instance['widget_title'] );
+        // make sure we are getting a number
+        $instance['number_of_comments'] = is_int( intval( $new_instance['number_of_comments'] ) ) ? intval( $new_instance['number_of_comments']): 5;
 	
 		//update and save the widget
-		return $new_instance;
+		return $instance;
 		
 	}
 	
