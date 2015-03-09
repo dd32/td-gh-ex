@@ -45,7 +45,7 @@
 		/*-----------------------------------------------------------------------------------*/
 		/*  Home icon in main menu
 		/*-----------------------------------------------------------------------------------*/ 
-			$('.main-navigation .menu-item-home a').prepend('<i class="fa fa-home spaceRight"></i>');
+			$('.main-navigation .menu-item-home > a').prepend('<i class="fa fa-home spaceRight"></i>');
 			
 		/*-----------------------------------------------------------------------------------*/
 		/*  Search button
@@ -116,9 +116,10 @@
 			/*-----------------------------------------------------------------------------------*/
 			/*  If you are in a page of the submenu
 			/*-----------------------------------------------------------------------------------*/ 
-				$('.main-navigation ul').each(function() {
+				$('.main-navigation ul.sub-menu').each(function() {
 					if($(this).children('li').hasClass('current_page_item') || $(this).children('li').hasClass('current-menu-item') ) {
 						$(this).slideDown(400);
+						$(this).parent('li').parent('ul').slideDown(400);
 					}
 				});
 		

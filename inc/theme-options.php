@@ -15,15 +15,17 @@ $annina_theme_options = array(
 	'pinteresturl' => '#', 
 );
 
-function annina_toolbar_link_to_mypage( $wp_admin_bar ) {
-	$args = array(
-		'id'    => 'annina_theme_options',
-		'title' => __('Annina Theme Options', 'annina' ),
-		'href'  => admin_url('themes.php?page=theme_options')
-	);
-	$wp_admin_bar->add_node( $args );
+if ( current_user_can('manage_options') ) {
+	function annina_toolbar_link_to_mypage( $wp_admin_bar ) {
+		$args = array(
+			'id'    => 'annina_theme_options',
+			'title' => __('Annina Theme Options', 'annina' ),
+			'href'  => admin_url('themes.php?page=theme_options')
+		);
+		$wp_admin_bar->add_node( $args );
+	}
+	add_action( 'admin_bar_menu', 'annina_toolbar_link_to_mypage', 999 );
 }
-add_action( 'admin_bar_menu', 'annina_toolbar_link_to_mypage', 999 );
 
 if ( is_admin() ) : // Load only if we are viewing an admin page
 
@@ -58,7 +60,7 @@ function annina_options_do_page() {
 			
 		<div class="updated" style="background:#E9F7DF;clear: both;display: table;width: 100%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;border-left: 4px solid #1fa67a;">
 			<h3><div class="dashicons dashicons-megaphone"></div> <?php _e( 'Need more features and options? Upgrade to PRO!', 'annina' ); ?></h3>
-			<p><?php _e( 'Get', 'annina' ); ?> <b><?php _e( 'Annina PRO', 'annina' ); ?></b> <?php _e( 'WordPress Theme for only', 'annina' ); ?> <b>24,90&euro;</b> <i><?php _e( '(One Time Fee)', 'annina' ); ?></i></p>
+			<p><?php _e( 'Get', 'annina' ); ?> <b><?php _e( 'Annina PRO', 'annina' ); ?></b> <?php _e( 'WordPress Theme for only', 'annina' ); ?> <b>24,90&euro;</b></p>
 			<div class="anninaLeft" style="float:left; width: 30%; text-align: center;">
 				<a style="display: inline-block;padding: 20px;background: #1fa67a;border-radius: 5px;color: #ffffff;font-size: 125%;-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);margin: 40px 0 20px;" href="http://crestaproject.com/demo/annina-pro/" target="_blank"><div class="dashicons dashicons-visibility"></div> <?php _e( 'Demo (Annina PRO)', 'annina' ); ?></a>
 				<br />
