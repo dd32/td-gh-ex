@@ -4,7 +4,7 @@ Theme URI: http://kairaweb.com/theme/albar/
 Author: Kaira
 Author URI: http://www.kairaweb.com/
 Description: Albar is a responsive multipurpose Wordpress theme. You can use Albar to build a business website, portfolio website, online store or a simple blogging website which adapts nicely to all devices. We've integrated with some powerful plugins like SiteOrigin's Page Builder, WooCommerce, Contact Form 7 and more.
-Version: 1.6.1
+Version: 1.6.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: responsive-layout, fluid-layout, custom-menu, featured-images, theme-options, threaded-comments, translation-ready, white, light, one-column, two-columns, full-width-template
@@ -940,6 +940,10 @@ a {
     position: relative;
     z-index: 10;
 }
+.site-header-right-link {
+	display: inline-block;
+	margin-right: 8px;
+}
 .site-header-one .site-social {
     color: #B8B8B8;
     font-size: 24px;
@@ -949,6 +953,10 @@ a {
 }
 .site-header-one .site-social i {
     margin: 0 0 0 12px;
+}
+
+.header-cart {
+	display: inline-block;
 }
 
 .site-header-one .site-title {

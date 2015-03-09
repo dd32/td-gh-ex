@@ -5,7 +5,7 @@
  * @package Albar
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.6.1' );
+define( 'KAIRA_THEME_VERSION' , '1.6.2' );
 
 if ( file_exists( get_stylesheet_directory() . '/settings/class.kaira-theme-settings.php' ) ) {
     require_once( get_stylesheet_directory() . '/settings/class.kaira-theme-settings.php' );
@@ -289,6 +289,19 @@ function kaira_wrap_woocommerce_start() {
 }
 function kaira_wrap_woocommerce_end() {
     echo '</div>';
+}
+
+// Create function to check if WooCommerce exists.
+if ( ! function_exists( 'kaira_is_woocommerce_activated' ) ) :
+    
+function kaira_is_woocommerce_activated() {
+    if ( class_exists( 'woocommerce' ) ) { return true; } else { return false; }
+}
+
+endif; // kaira_is_woocommerce_activated
+
+if ( kaira_is_woocommerce_activated() ) {
+    require get_template_directory() . '/includes/inc/woocommerce-inc.php';
 }
 
 /* Display the recommended plugins notice that can be dismissed */
