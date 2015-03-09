@@ -1,5 +1,10 @@
 == Change log ==
 
+= 0.9=
+* Bug fixed: Check class logo left or logo right only when there is logo and logo is not disabled
+* Bug Fixed: Featured Content Layout Type css issue
+* Bug Fixed: added missing keyword _nx:1,2 and esc_html__ in language file fullframe.pot
+
 = 0.8 =
 * Bug Fixed: Html is now allowed in Featured Content Headline and Sub-headline
 * Removed unnecessary file fullframe-menu.js

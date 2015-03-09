@@ -221,7 +221,7 @@ if ( ! function_exists( 'fullframe_site_branding' ) ) :
 			$fullframe_header_text = '';
 		}
 
-		if ( '' != $options['logo'] ) {
+		if ( '' != $options['logo'] && !$options['logo_disable'] ) {
 			if( ! $options['move_title_tagline'] ) {
 				$fullframe_site_branding  = '<div id="site-branding" class="logo-left">';
 				$fullframe_site_branding .= $fullframe_site_logo;
