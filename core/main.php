@@ -30,6 +30,28 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) {
 
 	function novalite_title( $title, $sep ) {
 		
+		global $paged, $page;
+	
+		if ( is_feed() )
+			return $title;
+	
+		$title .= get_bloginfo( 'name' );
+	
+		$site_description = get_bloginfo( 'description', 'display' );
+		if ( $site_description && ( is_home() || is_front_page() ) )
+			$title = "$title $sep $site_description";
+	
+		if ( $paged >= 2 || $page >= 2 )
+			$title = "$title $sep " . sprintf( __( 'Page %s', 'wip' ), max( $paged, $page ) );
+	
+		return $title;
+		
+	}
+
+	add_filter( 'wp_title', 'novalite_title', 10, 2 );
+
+	function novalite_addtitle() {
+		
 ?>
 
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
@@ -38,7 +60,7 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) {
 
 	}
 
-	add_filter( 'wp_head', 'novalite_title', 10, 2 );
+	add_action( 'wp_head', 'novalite_addtitle' );
 
 }
 
