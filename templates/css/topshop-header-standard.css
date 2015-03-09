@@ -44,6 +44,10 @@ TopShop - Header Standard Styling
     float: left;
     min-height: 91px;
 }
+.topshop-header-layout-standard .site-header-left img {
+    display: block;
+    margin: 0;
+}
 .topshop-header-layout-standard .site-header-right {
     float: right;
     min-height: 91px;

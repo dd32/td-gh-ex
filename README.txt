@@ -71,6 +71,10 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.0.5
+* Added functionality to add own logo
+* Stopped navigation from hiding until page is loaded
+
 #### 1.0.4
 * Fixed waypoints .js bug when navigation is not sticky - moved function into it's own file
 * Styling tweaks

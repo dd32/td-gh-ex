@@ -4,7 +4,7 @@
  *
  * @package topshop
  */
-define( 'TOPSHOP_THEME_VERSION' , '1.0.4' );
+define( 'TOPSHOP_THEME_VERSION' , '1.0.5' );
 
 if ( ! function_exists( 'topshop_theme_setup' ) ) :
 /**
@@ -64,6 +64,16 @@ function topshop_theme_setup() {
 	 */
 	add_theme_support( 'post-formats', array(
 		'aside', 'image', 'video', 'quote', 'link',
+	) );
+	
+	// The custom header is used for the logo
+	add_theme_support( 'custom-header', array(
+        'default-image' => '',
+		'width'         => 280,
+		'height'        => 91,
+		'flex-width'    => false,
+		'flex-height'   => false,
+		'header-text'   => false,
 	) );
 
 	// Set up the WordPress core custom background feature.

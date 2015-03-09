@@ -35,8 +35,6 @@
     }).resize();
     
     $(window).load(function() {
-        $('.main-navigation').removeClass('nav-load');
-        
         topshop_home_slider();
         topshop_blog_list_carousel();
     });
