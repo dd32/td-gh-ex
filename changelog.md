@@ -1,5 +1,14 @@
 # Storefront Changelog
 
+### *2015.03.09* - 1.4.0
+* **New** - Added a 'Handheld' menu location.
+* **New** - Many accessibility improvements.
+* **Fix** - Header margin when WooCommerce isn't activated.
+* **Fix** - Subscription payment form layout.
+* **Tweak** - Pagination now clears content.
+* **Tweak** - Header cart now displays sub total.
+* **Dev** - Removed npm-debug.log.
+
 ### *2015.02.20* - 1.3.1
 * **Fix** - Header margin when using static page or latest posts for homepage.
 * **Fix** - Related products total / columns.
