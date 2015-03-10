@@ -39,6 +39,9 @@ The exceptions to this license are as follows:
 
 
 #######################  Changelog ######################
+= 3.3.12 March 9th 2015 =
+fixed : smooth scroll new excluded selectors not properly set
+
 = 3.3.11 March 9th 2015 =
 fix : tc_set_post_list_hooks hooked on wp_head. wp was too early => fixes bbpress compatibility
 improved : tc_user_options_style filter now declared in the classes constructor
