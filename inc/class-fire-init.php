@@ -618,6 +618,7 @@ if ( ! class_exists( 'TC_init' ) ) :
           function tc_bbpress_disable_grid($bool) {
              return ( function_exists('is_bbpress') && is_bbpress() ) ? false : $bool;
           }
+
         }//end if bbpress on
 
 
