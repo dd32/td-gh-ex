@@ -314,6 +314,14 @@ function best_header_style() {
 	} ?>
 	</style> <?php 
 }
+
+if ( ! function_exists( '_wp_render_title_tag' ) ) {
+	function best_render_title() { ?>
+		<title><?php wp_title( '|', true, 'right' ); ?></title>
+	<?php }
+	add_action( 'wp_head', 'best_render_title' );
+}
+
 add_action( 'after_setup_theme', 'best_setup' );
 add_action( 'init', 'best_register_nav_menu' );
 add_action( 'admin_menu', 'best_admin_menu' );

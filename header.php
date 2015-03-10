@@ -32,7 +32,7 @@
 		<div id="best_header">
 			<div class="best-head">
 				<header class="best-logo">
-					<h1 class='best-site-title'><a href="<?php echo home_url(); ?>/"><?php bloginfo( 'name' ); ?></a></h1>
+					<h1 class='best-site-title'><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 					<p class='best-site-title'><?php bloginfo( 'description' ); ?></p>
 				</header> <!-- .best-logo -->
 				<div class="best-search">
@@ -48,8 +48,8 @@
 							'theme_location' => 'header-menu' 
 						) 
 					); ?>
-				</nav> <!-- .best-nav -->	
-				<div class="best-clear"></div>				
+				</nav> <!-- .best-nav -->
+				<div class="best-clear"></div>
 			</div> <!-- .best-head -->
 			<div class="best-breadcrumbs">
 				<div class="best-breadcrumbs-content">
@@ -58,9 +58,9 @@
 					</div> <!-- best-breadcrumbs-patch -->
 					<div class="best-breadcrumbs-posts">
 						<?php do_action( 'best_posts', 'best'); ?>
-					</div> <!-- best-breadcrumbs-posts -->			
+					</div> <!-- best-breadcrumbs-posts -->
 					<div class="best-clear"></div>
-				</div> <!-- best-breadcrumbs-content -->					
+				</div> <!-- best-breadcrumbs-content -->
 			</div> <!-- breadcrams -->
 		</div> <!-- header -->
 		<?php $header_image = get_header_image();

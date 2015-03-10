@@ -4,7 +4,7 @@ Theme URI: http://bestwebsoft.com/products/best/
 Author: the BestWebSoft team
 Author URI: https://github.com/bestwebsoft/Best-WordPress-Theme
 Description: Best is a professional, fast, easy-to-use and multipurpose theme. It is beautifully styled, and has an awesome design. In spite of the number of great opportunities, Best theme may seem simple, yet its simplicity brings clarity, sense of balance, and looks really great. Best is a multipurpose theme, which will be useful for a variety of websites such as daily news, news magazines, network sites, etc. Live demo: http://bestwebsoft.com/wordpress_demo_theme/best/
-Version: 1.1
+Version: 1.2
 License: GNU General Public License V3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: white, gray, light, fluid-layout, right-sidebar, threaded-comments, sticky-post, custom-header, translation-ready, featured-images, editor-style
@@ -177,8 +177,8 @@ dd {
 }
 hr {
 	color: #777;
-	height: 0px;
-	border-top: 0px;
+	height: 0;
+	border-top: 0;
 	border-style: dashed;
 	margin-top: 35px;
 	margin-bottom: 36px;
@@ -198,8 +198,8 @@ h5,
 h6 {
 	font-family: 'montserratregular';
 	display: block;	
-	margin-left: 0px;
-	margin-right: 0px;
+	margin-left: 0;
+	margin-right: 0;
 }
 h1 {
 	font-size: 27px;
@@ -273,7 +273,7 @@ ol ol,
 ol ul,
 ul ol {
 	margin: 0 0 0 20px;
-	padding: 0px;
+	padding: 0;
 }
 .best-witget-right-sidebar ul ul,
 .best-witget-right-sidebar ol ol,
@@ -284,7 +284,7 @@ ul ol {
 .best-witget-footer-sidebar ol ul,
 .best-witget-footer-sidebar ul ol {
 	margin: 0 0 0 10px;
-	padding: 0px;
+	padding: 0;
 }
 fieldset {
 	padding-top: 0.5em;
@@ -298,7 +298,7 @@ fieldset {
 legend {
 	padding-left: 10px;
 	padding-right: 10px;
-	padding-top: 0px;
+	padding-top: 0;
 	margin-left: -9px;
 	letter-spacing: -1px;
 }
@@ -319,7 +319,7 @@ input[type="email"] {
 	width: 100%;
 	border-radius: 5px;
 	background: #ededed;
-	margin: 3px 0px 8px;
+	margin: 3px 0 8px;
 	border: 1px solid #ccc;
 	color: #696969;
 }
@@ -333,7 +333,7 @@ textarea {
 	max-width: 586px;
 	border-radius: 4px;
 	background: #ededed;
-	margin: 2px 0px 0px;
+	margin: 2px 0 0;
 	border: 1px solid #ccc;
 }
 optgroup {
@@ -361,8 +361,8 @@ table {
 	background: #fff;
 	width: 100%;
 	max-width: 654px;
-	border-spacing: 0px;
-	margin: 22px 0px 41px 0px;
+	border-spacing: 0;
+	margin: 22px 0 41px 0;
 	border-radius: 5px;
 	border: #ccc 1px solid;
 	-moz-border-radius: 5px;
@@ -472,11 +472,11 @@ dfn {
 /*---------Blockqote-------*/
 blockquote {
 	max-width: 450px;
-	margin: 23px 0px 10px 2px;
+	margin: 23px 0 10px 2px;
 }
 blockquote p {
 	border-left: #eb5a3d 5px solid;	
-	padding: 0px 0px 0px 19px;
+	padding: 0 0 0 19px;
 	display: table-cell;
 	font-size: 24px;
 	font-family: 'montserratregular';
@@ -487,7 +487,7 @@ blockquote:after {
 	font-family: 'open_sansregular';
 	font-size: 15px;
 	line-height: 31px;
-	padding: 1px 0px 0px 23px;
+	padding: 1px 0 0 23px;
 }
 img.best-custom-img-header {
 	position: absolute;
@@ -516,7 +516,7 @@ img.best-custom-img-header {
 }
 .best-logo p {
 	font-size: 14px;
-	margin: 2px 0px 0px 0px;
+	margin: 2px 0 0 0;
 	color: #ccc;
 	word-wrap: break-word;
 	line-height: 20px;
@@ -553,7 +553,7 @@ h1.best-menu-toggle:hover {
 }
 .best-main-navigation div li {
 	display: inline-block;
-	margin: 0px;
+	margin: 0;
 	position: relative;
 	float: left;
 	padding: 12px 18px 14px 18px;
@@ -579,7 +579,7 @@ h1.best-menu-toggle:hover {
 	margin: 5px auto;
 }
 .best-main-navigation div ul li ul {
-	margin-top: 0px;
+	margin-top: 0;
 	border-radius: 3px;
 	border: 1px solid #CCC;
 	list-style-type: none;
@@ -607,7 +607,7 @@ h1.best-menu-toggle:hover {
 	opacity: 1;
 	z-index: 101 !important;
 	float: left;
-	margin: 0px 0;
+	margin: 0 0;
 	padding: 10px 0;
 	color: black;
 	top: 40px;
@@ -677,19 +677,44 @@ h1.best-menu-toggle:hover {
 .search-form {
 	display: block;
 }
+.search-form > button {
+	position: relative;
+	width: 32px;
+	height: 44px;
+	top: -6px;
+	padding: 22px 0;
+	margin-left: -38px;
+	border: medium none;
+	background: url("images/search.png") no-repeat scroll center center transparent;
+	cursor: pointer;
+	z-index: 100;
+}
 .best-search {
 	display: inline-block;
+}
+.best-search .search-form > button {
+	position: absolute;
+	width: 32px;
+	height: 34px;
+	top: 16px;
+	right: 26px;
+	padding: 17px 0;
+	margin-left: 0;
+	border: medium none;
+	background: url("images/search.png") no-repeat scroll center center transparent;
+	cursor: pointer;
+	z-index: 100;
 }
 input#s {
 	position: absolute;
 	right: 24px;
 	top: 6px;
 	background-color: transparent;
-	background: no-repeat url(images/search.png) 95% center;
+	/*background: no-repeat url(images/search.png) 95% center;*/
 	border: 3px solid #FFF;
 	cursor: pointer;
-	margin: 8px 0px;
-	padding: 6px 0px 6px 73px;
+	margin: 8px 0;
+	padding: 6px 0 6px 73px;
 	border-left: 1px #e5e5e5 solid;
 	-webkit-transition: width 400ms ease,background 400ms ease;
 	transition: width 400ms ease,background 400ms ease;
@@ -751,7 +776,7 @@ input.alignright {
 .best-breadcrumbs-posts {
 	display: block;
 	float: right;
-	margin: 13px 0px;
+	margin: 13px 0;
 	text-transform: uppercase;
 	letter-spacing: -0.5px;
 	font-size: 18px;
@@ -795,17 +820,17 @@ input.alignright {
 .attachment-654x99999 {
 	border-radius: 5px;
 	z-index: 1;
-	max-width: auto!important;
+	max-width: auto !important;
 	height: auto;
 }
 .alignleft {
 	float: left;
 	width: auto!important;
-	margin: 5px 20px 5px 0px;
+	margin: 5px 20px 5px 0;
 }
 .alignright {
 	float: right;
-	margin: 5px 0px 5px 20px;
+	margin: 5px 0 5px 20px;
 	width: auto!important;
 }
 .aligncenter {
@@ -852,7 +877,7 @@ input.alignright {
 	padding: 10px 10px;
 	position: absolute;
 	bottom: 5px;
-	left: 0px;
+	left: 0;
 	text-indent: 10px;
 	text-overflow: ellipsis;
 	width: 100%;
@@ -860,7 +885,7 @@ input.alignright {
 	color: #cecdcc;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
-	margin-bottom: 0px;
+	margin-bottom: 0;
 	box-sizing: border-box;
 	behavior: url( js/PIE.htc );
 }
@@ -869,7 +894,7 @@ dd.wp-caption-text.gallery-caption {
 	background: #fff;
 }
 .best-content-image .wp-caption-text {
-	bottom: 0px;
+	bottom: 0;
 }
 figcaption.wp-caption-text.gallery-caption {
 	bottom: 8px;
@@ -1139,7 +1164,7 @@ a.comment-edit-link:hover {
 	padding-bottom: 41px;
 }
 .best-footer-sidebar-content .best-witget-right-sidebar {
-	margin: 32px 10px 51px 0px;
+	margin: 32px 10px 51px 0;
 	color: #ddd;
 }
 .best-witget-right-sidebar {
@@ -1165,7 +1190,7 @@ a.comment-edit-link:hover {
 }
 .best-sidebar ul,
 .best-witget-right-sidebar ul {
-	padding: 4px 0 0px 10px;
+	padding: 4px 0 0 10px;
 }
 .widgettitle,
 .best-widget-title {
@@ -1194,16 +1219,16 @@ a.comment-edit-link:hover {
 }
 .best-witget-footer-sidebar li {
 	color: #999;
-	padding: 0px;
+	padding: 0;
 	list-style: none;
 	letter-spacing: -0.6px;	
 }
 .best-witget-footer-sidebar ul {
-	padding: 3px 0 0 0px;
+	padding: 3px 0 0 0;
 }
 .textwidget {
 	color: #999;
-	margin: 18px 28px 0px 0;
+	margin: 18px 28px 0 0;
 	font-size: 15px;
 	line-height: 23px;
 	letter-spacing: -0.4px;
@@ -1251,7 +1276,7 @@ select {
 	max-width: 243px;
 	width: 100%;
 	height: 43px;
-	margin: 4px 0px 23px;
+	margin: 4px 0 23px;
 	border-radius: 4px;
 	border: 1px solid #ccc;
 	background: #ededed;
@@ -1265,7 +1290,7 @@ select {
 	border-radius: 4px;
 	/*z-index: 1 !important;*/
 	cursor: pointer;
-	margin: 4px 20px 24px 0px;
+	margin: 4px 20px 24px 0;
 }
 .best-active-opt {
 	height: 43px;
@@ -1330,7 +1355,7 @@ select {
 	display: inline-block;
 	height: 26px;
 	width: 27px;
-	padding: 0px 100px 0px 0;
+	padding: 0 100px 0 0;
 	margin: 19px -92px 1px -3px;
 	cursor: pointer;
 	background: url(images/radio_button.png) no-repeat;
@@ -1339,10 +1364,10 @@ select {
 	vertical-align: -15px;
 }
 .best-radio.best-active {
-	background-position: 0px -44px;
+	background-position: 0 -44px;
 }
 .best-radio.best-hover {
-	background-position: 0px -88px;
+	background-position: 0 -88px;
 }
 /*-----------End-Radio-----------*/
 /*-----------Checkbox-----------*/
@@ -1353,8 +1378,8 @@ select {
 .best-check {
 	display: inline-block;
 	background: url(images/checkbox.png) 0 0 no-repeat;
-	padding: 0px 100px 0 0;
-	margin: 11px -65px 7px 0px;
+	padding: 0 100px 0 0;
+	margin: 11px -65px 7px 0;
 	width: 26px;
 	height: 27px;
 	cursor: pointer;
@@ -1363,10 +1388,10 @@ select {
 	vertical-align: -13px;
 }
 .best-check.best-active {
-	background-position: 0px -44px;
+	background-position: 0 -44px;
 }
 .best-check.best-hover {
-	background-position: 0px -88px;
+	background-position: 0 -88px;
 }
 /*-----------End-Checkbox-----------*/
 /*-----------Input-File-----------*/
@@ -1378,7 +1403,7 @@ select {
 	max-width: 445px;
 	width: 100%;
 	height: 43px;
-	margin: 5px 0px 19px 0px;
+	margin: 5px 0 19px 0;
 	border-radius: 5px;
 	cursor: pointer;
 	background: #fcfcfc;
@@ -1444,8 +1469,8 @@ caption {
 #wp-calendar thead tr th,
 #wp-calendar tfoot tr td,
 #wp-calendar tbody tr td {
-	padding: 0px;
-	margin: 0px;
+	padding: 0;
+	margin: 0;
 	text-align: center;
 }
 #wp-calendar {
@@ -1493,7 +1518,7 @@ caption {
 	display: block;
 	width: 100%;
 	max-width: 1188px;
-	padding: 0px;
+	padding: 0;
 	margin: 0 auto;
 	position: relative;
 }
@@ -1505,7 +1530,7 @@ caption {
 	max-width: 740px;
 	background-color: #fff;
 	border-right: #ccc 1px solid;
-	margin: 23px 0px 60px 0;
+	margin: 23px 0 60px 0;
 }
 .ie .best-contents, .ie8 .best-contents {
 	padding: 0;
@@ -1519,7 +1544,7 @@ caption {
 	width: 100%;
 	max-width: 447px;
 	background-color: #fff;
-	padding: 0px 24px 0px 60px;
+	padding: 0 24px 0 60px;
 	margin: 23px 0 60px -1px;
 	border-left: 1px solid #ccc;
 }
@@ -1573,7 +1598,7 @@ caption {
 .pdfprnt-bottom-right,
 .pdfprnt-right {
 	float: right;
-	padding: 0px;
+	padding: 0;
 }
 .content-area {
 	display: block;
@@ -1583,7 +1608,7 @@ caption {
 	max-width: 656px;
 	background-color: #fff;
 	border-right: #ccc 1px solid;
-	margin: 23px 0px 60px 0;
+	margin: 23px 0 60px 0;
 }
 .breadcrumbs.home_page_title.entry-header {
 	font-size: 24px;	
@@ -1659,7 +1684,7 @@ input.dnt_paypal_button {
 @media screen and (max-width: 1236px) {
 	#wrapper {
 		width: auto;
-		padding: 0px auto;
+		padding: 0 auto;
 	}
 	.best-head,
 	fieldset ,
@@ -1692,7 +1717,7 @@ input.dnt_paypal_button {
 	.best-breadcrumbs,
 	.best-breadcrumbs-content {
 		width: auto;
-		padding: 0px auto;
+		padding: 0 auto;
 	}
 	.content-area,
 	.best-contents{
@@ -1717,7 +1742,7 @@ input.dnt_paypal_button {
 	.footer,
 	.best-footer-sidebar-content {
 		width: auto;
-		padding: 0px auto;
+		padding: 0 auto;
 	}
 	.best-footer-logo-content {
 		width: auto;
@@ -1760,7 +1785,7 @@ input.dnt_paypal_button {
 		position: relative;
 		right: 0;
 		border-top: 1px solid #ccc;
-		left: 0px;
+		left: 0;
 		list-style: none;
 		list-style-type: none;
 		background: #fff;
@@ -1820,7 +1845,14 @@ input.dnt_paypal_button {
 		float: none;
 		border-right: none;
 		margin: 30px auto;
-		padding: 0px auto;
+		padding: 0 3%;
+	}
+	.best-post {
+		/*border-bottom: 1px solid #777;*/
+		/*margin-bottom: 42px;*/
+		/*padding-bottom: 40px;*/
+		max-width: none;
+		/*width: 100%;*/
 	}
 	.best-nav-previous,
 	.best-nav-next {
@@ -1840,7 +1872,7 @@ input.dnt_paypal_button {
 	.menu-menu-footer {
 		width: 47%;
 		margin: 0 auto;
-		padding: 0px 1.5% !important;
+		padding: 0 1.5% !important;
 		float: left;
 	}
 	.best-witget-right-sidebar,
@@ -1863,11 +1895,11 @@ input.dnt_paypal_button {
 		float: none;
 	}
 	.best-footer-logo-content-home {
-		margin-top: 0px;
+		margin-top: 0;
 		padding-top: 20px;
 	}
 	.best-footer-logo-content-by {
-		margin-bottom: 0px;
+		margin-bottom: 0;
 		padding-bottom: 20px;
 	}
 }
@@ -1881,7 +1913,7 @@ input.dnt_paypal_button {
 	}
 	.best-contents {
 		margin: 0 auto;
-		padding: 30px auto;
+		padding: 30px 3%;
 	}
 	.best-link {
 		display: inline;
@@ -1929,10 +1961,10 @@ input.dnt_paypal_button {
 	}
 	.comment-list .children {
 		list-style-type: none;
-		padding: 0px;
+		padding: 0;
 	}
 	td {
-		padding: 0px;
+		padding: 0;
 		text-align: center;
 	}
 }

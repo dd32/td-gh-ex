@@ -862,7 +862,7 @@ if ( ! function_exists ( 'bws_themes_admin_enqueue_scripts' ) ) {
 		if ( isset( $_GET['page'] ) && $_GET['page'] == "bws_themes" ) {
 			global $wp_version;
 
-			wp_enqueue_style( 'bws_themes_menu_style', get_template_directory_uri() . '/bws_menu/css/style.css' );
+			wp_enqueue_style( 'bws_themes_menu_style', get_template_directory_uri() . '/bws_menu/css/style_menu.css' );
 			wp_enqueue_script( 'bws_themes_menu_script', get_template_directory_uri() . '/bws_menu/js/bws_menu.js' );			
 			
 			if ( $wp_version >= '3.8' )

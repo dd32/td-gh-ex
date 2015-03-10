@@ -15,7 +15,7 @@
 			<div class="best-footer-logo">
 				<div class="best-footer-logo-content">
 					<div class="best-footer-logo-content-home">
-						<a href="<?php echo  home_url(); ?>/"><?php bloginfo( 'name' ); ?></a>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
 					</div> <!-- best-footer-logo-content-home -->
 					<footer class="best-footer-logo-content-by">
 						<p><?php echo __( 'Designed with love by', 'best' ) . '&nbsp;'; ?><a href="<?php echo esc_url( wp_get_theme()->get( 'AuthorURI' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'best' ); ?>" target="_blank">BestWebSoft</a> <?php _e( 'and', 'best' ); ?> <a href="<?php echo esc_url( 'http://wordpress.org/' ); ?>"target="_blank">WordPress</a>&nbsp;&copy;&nbsp;<?php echo date( 'Y' ) . '&nbsp;'; bloginfo( 'name' ); ?></p>

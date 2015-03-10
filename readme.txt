@@ -2,8 +2,8 @@
 Contributors: the BestWebSoft team
 Tags: white, gray, light, fluid-layout, right-sidebar, threaded-comments, sticky-post, custom-header, translation-ready, featured-images, editor-style
 Requires at least: 3.7
-Tested up to: 4.1 
-Stable tag: 1.1
+Tested up to: 4.1.1
+Stable tag: 1.2
 License: GNU General Public License V3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Best WordPress Theme, Copyright 2014 BestWebSoft.com
@@ -70,7 +70,7 @@ Installation using "Add New Theme"
 3. Click 'Install' button to open the theme's repository listing.
 4. Click 'Install' button.
 
-Activiation and Use
+Activation and Use
 
 1. Activate the Theme through 'Themes' menu in WordPress.
 
@@ -90,7 +90,7 @@ The Theme includes a standard Widget. The following widgets are shown by default
 
 You can do this in Posts section > Add new or edit existing post > Set featured image.
 
-= How to use custom-bachground? =
+= How to use custom-background? =
 
 You can easily change background color through Admin UI (Dashboard): use the select menu Appearance > Customize > Colors > Background color
 
@@ -107,6 +107,11 @@ In the main catalog of your WordPress site, please find wp-config.php file, open
 
 == Changelog ==
 
+= V1.2 - 09.03.2015 =
+* Update: The following files were updated: style.css, header.php, footer.php, searchform.php, functions.php.
+* Update: We updated the theme to WordPress 4.1.1.
+* Bugfix: All instance of home_url() in php-files was escaped.
+
 = V1.1 - 13.02.2015 =
 * Update: Added function add_theme_support( "title-tag" ) for WP4.1.
 * Update: Added editor_style.css file.
@@ -118,6 +123,9 @@ In the main catalog of your WordPress site, please find wp-config.php file, open
 * Bugfix: Bug in the slider was fixed.
 
 == Upgrade Notice ==
+
+= V1.2 =
+We updated the theme to WordPress 4.1.1. The following files were updated: style.css, header.php, footer.php, searchform.php, functions.php. All instance of home_url() in php-files was escaped.
 
 = V1.1 =
 Added function add_theme_support( "title-tag" ) for WP4.1. Added editor_style.css file. List of supports post formats was fixed. List of supports HTML5-forms was fixed.
