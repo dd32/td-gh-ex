@@ -89,6 +89,13 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.19
+* Navigation not clickalbe in innpages issue solved.
+* Minor CSS bugs fixed.
+* Text translation added.
+* New Options Added in Theme Options Panel
+* Option to change the home text added in menu
+
 Version 1.18
 * Nav unclickable issue solved.
 * Minor CSS bugs fixed.

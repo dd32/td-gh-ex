@@ -41,11 +41,12 @@
 					
 			<?php 
 			$sections = of_get_option('parallax_section');
-			if(of_get_option('enable_parallax')==1 && !empty($sections) && ('page' != get_option( 'show_on_front'))): ?>
+			if(of_get_option('enable_parallax')==1 && of_get_option('enable_parallax_nav')==1 && !empty($sections) ): ?>
 			<ul class="nav single-page-nav">
 			<?php
-				if(of_get_option('show_slider')== "yes") : ?>
-					<li class="current"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#main-slider"><?php _e( 'Home' ,'accesspress_parallax'); ?></a></li>
+			$home_text = of_get_option('home_text');
+				if(of_get_option('show_slider')== "yes" && !empty($home_text)) : ?>
+					<li class="current"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#main-slider"><?php echo esc_attr($home_text); ?></a></li>
 				<?php endif;
 				
 				foreach ($sections as $single_sections): 
@@ -62,7 +63,7 @@
 					'theme_location' => 'primary' , 
 					'container'      => '',
 					'menu_class'      => 'nav',
-					'fallback_cb'     => 'wp_page_menu',
+					'fallback_cb'     => '',
 					) );
 			endif; ?>
 		

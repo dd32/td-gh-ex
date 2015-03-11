@@ -230,10 +230,12 @@ add_filter('body_class','accesspress_is_parallax');
 
 //Dynamic styles on header
 function accesspress_header_styles_scripts(){
+	$sections = array();
 	$sections = of_get_option('parallax_section');
 	$favicon = of_get_option('fav_icon');
 	$custom_css = of_get_option('custom_css');
 	$custom_js = of_get_option('custom_js');
+	$slider_overlay = of_get_option('slider_overlay');
 	$image_url = get_template_directory_uri()."/images/";
 	echo "<link type='image/png' rel='icon' href='".$favicon."'/>\n";
 	echo "<style type='text/css' media='all'>"; 
@@ -241,6 +243,10 @@ function accesspress_header_styles_scripts(){
 	foreach ($sections as $section) {
 		echo "#section-".$section['page']."{ background:url(".$section['image'].") ".$section['repeat']." ".$section['attachment']." ".$section['position']." ".$section['color']."; background-size:".$section['size']."; color:".$section['font_color']."}\n";
 		echo "#section-".$section['page']." .overlay { background:url(".$image_url.$section['overlay'].".png);}\n";
+	}
+
+	if($slider_overlay == "yes"){
+		echo "#main-slider .overlay{display:none};";
 	}
 	echo $custom_css;
 

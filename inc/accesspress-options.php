@@ -108,7 +108,7 @@ function optionsframework_options() {
     $about_content .= "<h4>".__('Get in touch','accesspress_parallax')."</h4>";
     $about_content .= __('If you have any question/feedback regarding theme, please post in our forum','accesspress_parallax')."<br /><br />"; 
     $about_content .= __('Forum:','accesspress_parallax')." <a target='_blank' href='".esc_url('http://accesspressthemes.com/support/')."'>http://accesspressthemes.com/support/</a><br /><br /><br />";
-    $about_content .= __('For Queries Regading Themes:','accesspress_parallax')."<br/><br />";
+    $about_content .= __('For Queries Regading Pro Themes:','accesspress_parallax')."<br/><br />";
     $about_content .= __('Support:','accesspress_parallax')." <a href='mailto:support@accesspressthemes.com'>support@accesspressthemes.com</a><br /><br />";
     
     $about_content .= "<hr />";
@@ -155,14 +155,28 @@ function optionsframework_options() {
 		'type' => 'heading');
 
 	$options[] = array(
-		'name' => __('Enable Parallax', 'accesspress_parallax'),
+		'name' => __('Enable Single Page Parallax Home Page - if disabled, will show Blog-roll/Static-page', 'accesspress_parallax'),
 		'desc' => __('Check To enable', 'accesspress_parallax'),
 		'id' => 'enable_parallax',
 		'std' => '1',
 		'type' => 'checkbox');
 
 	$options[] = array(
-		'name' => __('Enable Animation on scroll', 'accesspress_parallax'),
+		'name' => __('Enable Single Page Nav(Menu) - if disabled, will show primary menu', 'accesspress_parallax'),
+		'desc' => __('Check To enable', 'accesspress_parallax'),
+		'id' => 'enable_parallax_nav',
+		'std' => '1',
+		'type' => 'checkbox');
+
+	$options[] = array(
+		'name' => __('Home Menu Text - Single Page Nav(Menu)', 'accesspress_parallax'),
+		'id' => 'home_text',
+		'desc' => 'Leave blank if you do not want to show',
+		'std' => 'Home',
+		'type' => 'text');
+
+	$options[] = array(
+		'name' => __('Enable Animation on scroll - Page Elements will show with some animation only in home page.', 'accesspress_parallax'),
 		'desc' => __('Check To enable', 'accesspress_parallax'),
 		'id' => 'enable_animation',
 		'std' => '1',
@@ -188,7 +202,7 @@ function optionsframework_options() {
 		'type' => 'upload');
 
 	$options[] = array(
-		'name' => "Select Header Layout",
+		'name' =>  __('Select Header Layout', 'accesspress_parallax'),
 		'id' => "header_layout",
 		'std' => "logo-side",
 		'type' => "images",
@@ -218,9 +232,13 @@ function optionsframework_options() {
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('Parallax Settings', 'accesspress_parallax'),
+		'name' => __('Parallax Sections', 'accesspress_parallax'),
 		'type' => 'heading');
 
+	$options[] = array(
+		'desc' => __('Note: Please make a new page before you create a section. Each Section should have unique Page.', 'accesspress_parallax'),
+		'id' => 'parallax_info',
+		'type' => 'info');
 
 	$options[] = array(
 		'id' => 'parallax_section',
@@ -293,6 +311,13 @@ function optionsframework_options() {
 		'name' => __('Show full window', 'accesspress_parallax'),
 		'id' => 'slider_full_window',
 		'std' => 'yes',
+		'type' => 'radio',
+		'options' => $check);
+
+	$options[] = array(
+		'name' => __('Remove Slider overlay - Black Dots', 'accesspress_parallax'),
+		'id' => 'slider_overlay',
+		'std' => 'no',
 		'type' => 'radio',
 		'options' => $check);
 
