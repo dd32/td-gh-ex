@@ -414,7 +414,7 @@ function weaverx_mainopts_menus() {
 		'info' => __('Don\'t automatically add Home menu item for home page (as defined in Settings->Reading)', 'weaver-xtreme' /*adm*/)),
 	array('name' => '<span class="i-left" style="font-size:150%;">&harr;</span><small> ' . __('Mobile Menu Trigger', 'weaver-xtreme' /*adm*/). '</small>',
 		'id' => 'menu_primary_trigger_int', 'type' => 'val_px',
-		'info' => __('Set trigger width where Primary Menu changes to/from Mobile Menu (Default: 768px)', 'weaver-xtreme' /*adm*/)),
+		'info' => __('Set trigger width where Primary Menu changes to/from Mobile Menu (Default: 768px, value must be &lt; 768)', 'weaver-xtreme' /*adm*/)),
 
 
 	array( 'type' => 'submit'),
@@ -423,7 +423,7 @@ function weaverx_mainopts_menus() {
 		'info' => __('Attributes for the Secondary Menu Bar (Default Location: Top of Header)', 'weaver-xtreme' /*adm*/)),
 	array('name' => '<span class="i-left" style="font-size:150%;">&harr;</span><small> ' . __('Mobile Menu Trigger', 'weaver-xtreme' /*adm*/). '</small>',
 		'id' => 'menu_secondary_trigger_int', 'type' => 'val_px',
-		'info' => __('Set trigger width where Secondary Menu changes to/from Mobile Menu (Default: 768px)', 'weaver-xtreme' /*adm*/)),
+		'info' => __('Set trigger width where Secondary Menu changes to/from Mobile Menu (Default: 768px, value must be &lt; 768)', 'weaver-xtreme' /*adm*/)),
 
 
 	array( 'type' => 'submit'),

@@ -57,7 +57,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 						echo ("</div> <!-- content-2-col -->\n");
 						$col++;
 						if ( !($col % 2) ) {	// force stuff to be even
-							echo "<div style=\"clear:left;\"></div>\n";
+							echo "<span style=\"clear:left;\"></span>\n";
 						}
 						$sticky_one = false;
 						break;
@@ -68,7 +68,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 						echo ("</div> <!-- content-3-col -->\n");
 						$col++;
 						if ( !($col % 3) ) {	// force stuff to be even
-							echo "<div style=\"clear:left;\"></div>\n";
+							echo "<span style=\"clear:left;\"></span>\n";
 						}
 						$sticky_one = false;
 						break;

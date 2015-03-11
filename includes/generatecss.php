@@ -546,6 +546,11 @@ $menu_detail = array (              /* can't use multiple selectors here! */
 			weaverx_f_write($sout, sprintf("{$tag} .menu-arrows ul .toggle-submenu:after{color:{$color};}\n"));
 		}
 
+		// special case - generate a .wvrx-menu text align for main menus to get rid of initial menu jumping
+		$align = weaverx_getopt_default( "{$id}_align" , 'align-left');
+		weaverx_f_write($sout, "@media(min-width:768px) {{$tag} .wvrx-menu,{$tag} .wvrx-menu-container{text-align:{$align};}}\n");
+
+
 		// alternative mobile menu arrow clickable
 		weaverx_put_bgcolor($sout, $id . '_clickable_bgcolor', $tag . ' .is-mobile-menu.menu-arrows .toggle-submenu');
 	}

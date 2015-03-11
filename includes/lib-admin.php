@@ -179,6 +179,15 @@ function weaverx_validate_all_options($in) {
 				$in[$key] = $value;
 				break;
 
+			case 'menu_primary_trigger_int':
+			case 'menu_secondary_trigger_int':
+				if ($value >= 768) {
+					$err_msg = __('Menu trigger value must be less than 768.', 'weaver-xtreme' /*adm*/) . '<br />';
+					$value = '';
+				}
+				$in[$key] = $value;
+				break;
+
 			case 'last_option':		// check for last_option...
 				if (!empty($value))
 					$wvr_last = $value;

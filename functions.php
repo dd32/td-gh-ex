@@ -454,7 +454,7 @@ function weaverx_enqueue_scripts() {	// action definition
 	$local = array(
 		'menuPrimaryTrigger' => weaverx_getopt_default('menu_primary_trigger_int','768'),
 		'menuSecondaryTrigger' => weaverx_getopt_default('menu_secondary_trigger_int','768'),
-		'useSmartMenus' => weaverx_getopt_default('menu_use_smartmenus') ? '1' : '0',
+		'useSmartMenus' => weaverx_getopt('menu_use_smartmenus') ? '1' : '0',
 	);
 
 	wp_localize_script('weaverxJSLib', 'wvrxOpts', $local );
@@ -553,7 +553,7 @@ function weaverx_render_infinite_scroll() {
 				echo ("</div> <!-- content-2-col -->\n");
 				$col++;
 				if ( !($col % 2) ) {	// force stuff to be even
-					echo "<div style=\"clear:left;\"></div>\n";
+					echo "<span style=\"clear:left;\"></span>\n";
 				}
 				$sticky_one = false;
 				break;
@@ -564,7 +564,7 @@ function weaverx_render_infinite_scroll() {
 				echo ("</div> <!-- content-3-col -->\n");
 				$col++;
 				if ( !($col % 3) ) {	// force stuff to be even
-					echo "<div style=\"clear:left;\"></div>\n";
+					echo "<span style=\"clear:left;\"></span>\n";
 				}
 				$sticky_one = false;
 				break;

@@ -1098,9 +1098,6 @@ a {
 	margin:             0;
 }
 
-.wvrx-menu {
-	text-align:         center;
-}
 
 .wvrx-menu > li {
 	display:            inline;
@@ -1108,7 +1105,6 @@ a {
 
 .wvrx-menu > li > a {
 	display:            inline-block;
-	margin:             0.25em 0;
 }
 
 .wvrx-menu li {
@@ -1332,7 +1328,7 @@ ul.wvrx-center-menu {
 	margin:             0;
 	padding:            0;
 	font-family:        inherit;
-	text-align:         center;
+	text-align:         left;
 	background-color:   #111;           /* bg color of menu_bar */
 	color:              #eee;           /* non-menu text color on the menu bar */
 }
@@ -1870,6 +1866,8 @@ ol.trackbacklist {
 
 #wvrx-page-width {		/* stub for full-width class script alignment-adjust */
 	width:			100%;
+	height:			100%;
+	top:			0px;
 	direction:		ltr;
 	display:		block;
 	position:		absolute;

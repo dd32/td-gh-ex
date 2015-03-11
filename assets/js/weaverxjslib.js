@@ -13,6 +13,9 @@
  *
  ************************************************************************************* */
 
+//Initial load of page
+jQuery(document).ready(weaverxOnResize);
+
 /* -------------------------
 	weaverx_hide_css, JavaScript specialized hide table row
 */
@@ -356,6 +359,7 @@ if (!Object.create) {               // IE8 shim for Object.create
 				width = 0;
 			width = weaverxBrowserWidth();
 
+
 			// Check if viewport width is less than the mobile breakpoint setting and the mobile menu is not displayed yet.
 			if ( (width < mo.mobileBreakpoint) && !this.el.hasClass(mo.mobileClass) ) {
 				// Show the menu toggle button.
@@ -518,18 +522,20 @@ function weaverxOnResize() {
 	// jQuery('#monitor-device').html('Device:' + device);	// + ' / Agent: ' + agent);
 };
 
-//Initial load of page
-jQuery(document).ready(weaverxOnResize);
+
 
 // handle mobile menus...
 
 jQuery(function($) {
 	var triggerPrimary = '768';
 	var triggerSecondary = '768';
-	if (wvrxOpts.menuPrimaryTrigger)
+
+	if ( wvrxOpts.menuPrimaryTrigger < '768')  {
 		triggerPrimary = wvrxOpts.menuPrimaryTrigger;
-	if (wvrxOpts.menuSecondaryTrigger)
+	}
+	if (wvrxOpts.menuSecondaryTrigger  < '768') {
 		triggerSecondary = wvrxOpts.menuSecondaryTrigger;
+	}
 
 	$('.wrapper').resizeX(weaverxOnResize);
 	if (wvrxOpts.useSmartMenus == '0') {
@@ -539,7 +545,7 @@ jQuery(function($) {
 		});
 		$('#nav-secondary .weaverx-theme-menu').thmfdnMenu({
 			toggleButtonID: 'secondary-toggle-button',
-			mobileBreakpoint: triggerSecondary
-	});}
+			mobileBreakpoint: triggerSecondary});
+	}
 
 });

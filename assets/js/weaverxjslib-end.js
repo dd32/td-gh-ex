@@ -481,23 +481,26 @@ function weaverxResizeEnd() {
 		weaverxUserOnResize();
 };
 
+function weaverxBrowserResizeEnd() {
+//New function for things that need to use the monitoring of  the browser width with #wvrx-page-width
+
+    if (jQuery('.wvrx-fullwidth').length) {              //Only start monitoring if the class is being used
+		weaverxFullWidth();                              // run full width script
+	}
+	if ( wvrxEndOpts.full_browser_height == '1')
+		weaverxBottomFooter();                           // fix full height browser
+}
+
 // Invoke scripts
 
 
 jQuery(document).ready(function () {
 
-	if (jQuery('.wvrx-fullwidth').length) {   	//Only start monitoring if the class is being used
-		weaverxFullWidth();						// First-time once - resizeX doesn't fire on Win8 initial load
-		jQuery(function($) {      				//Runs the extension rule everytime the browser changes size
-			$('#wvrx-page-width').resizeX(weaverxFullWidth);
-		});
-	}
-
-	// need to run weaverxResizeEnd on doc ready for at least some browsers
+	// need to run weaverxResizeEnd and weaverxBrowserResizeEnd on doc ready for at least some browsers
 	// As of October, 2014, these included Safari, Desktop Opera, IE9, and IE8.
 	// For other browsers, it doesn't seem needed, but it is harmless to do it anyway.
 
-
+	weaverxBrowserResizeEnd();
 	weaverxResizeEnd();
 
 	if ( wvrxEndOpts.hideTip == '1' ) {
@@ -537,8 +540,9 @@ jQuery(document).ready(function () {
 
 });
 
-jQuery(function($) {
+jQuery(function($) {										// add dynamic monitoring for these two functions
 	$('#wrapper').resizeX(weaverxResizeEnd);
+	$('#wvrx-page-width').resizeX(weaverxBrowserResizeEnd);
 });
 
 // Handle sizing of dynamic containers like Extra menus

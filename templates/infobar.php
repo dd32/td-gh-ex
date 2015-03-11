@@ -16,13 +16,17 @@ if (weaverx_getopt('infobar_hide') != 'hide' && !weaverx_is_checked_page_opt('_p
 <div id="infobar" class="<?php echo $c_class;?>">
 <?php
 	if (!weaverx_getopt_checked('info_hide_breadcrumbs')) {
-		global $weaverx_crumbs;
-		if ( function_exists('yoast_breadcrumb') )
-			$weaverx_crumbs = yoast_breadcrumb('  <span id="breadcrumbs">','</span>',false);
-		if ($weaverx_crumbs)
-			echo $weaverx_crumbs;
-		else
-			weaverx_breadcrumb();
+		$weaverx_crumbs = '';
+		if (has_action('weaverx_breadcrumbs')) {		// allow anyone to override bradcrumbs via action
+			do_action('weaverx_breadcrumbs');
+		} else {
+			if ( function_exists('yoast_breadcrumb') )
+				$weaverx_crumbs = yoast_breadcrumb('  <span id="breadcrumbs">','</span>',false);
+			if ($weaverx_crumbs)
+				echo $weaverx_crumbs;
+			else
+				weaverx_breadcrumb();
+		}
 	} else {
 		echo '  <span id="breadcrumbs"></span>';  // need to get area height
 	}
@@ -34,13 +38,17 @@ if (weaverx_getopt('infobar_hide') != 'hide' && !weaverx_is_checked_page_opt('_p
 
 	if ( !weaverx_getopt_checked('info_hide_pagenav') ) {
 		echo ('<span id="infobar_paginate">');
-		if ( $pwp || !is_singular() ) {
-			if (function_exists ('wp_pagenavi')) {
-				wp_pagenavi();
-			} elseif ( function_exists( 'wp_paginate' ) ) {
-				wp_paginate( 'title=' );
-			} else {
-				echo weaverx_get_paginate_archive_page_links( 'plain', 2, 2 );
+		if (has_action('weaverx_paginate')) {		// allow anyone to override bradcrumbs via action
+			do_action('weaverx_paginate');
+		} else {
+			if ( $pwp || !is_singular() ) {
+				if (function_exists ('wp_pagenavi')) {
+					wp_pagenavi();
+				} elseif ( function_exists( 'wp_paginate' ) ) {
+					wp_paginate( 'title=' );
+				} else {
+					echo weaverx_get_paginate_archive_page_links( 'plain', 2, 2 );
+				}
 			}
 		}
 		echo ("</span>\n");

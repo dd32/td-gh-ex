@@ -98,8 +98,11 @@ with testing and feature suggestions.
 * Fix: interactions with Weaver Show Posts - displaying title options, list and FI styling
 * Fix: RTL for menus
 
-= Version 1.0.2.3 =
+= Version 1.0.2.4 =
+* New: Advanced - added support for weaverx_breadcrumbs and weaverx_paginate actions to allow alternatives
 * Tweak: Added support for WP 4.1 'title-tag'
+* Tweak: Default Menu alignment and margin rules
+* Tweak: CSS and JS for full height/width
+* Tweak: changed multi-column post styling to allow nth-child rules to work right (div to span clear)
 * Fix: Normal Weight for Titles option
-* Fix: Allow non-standard 'property' in <head> meta tag.
-* Fix: JS bug
+* Fix: Allow non-standard 'property' in <head> <meta> tag.

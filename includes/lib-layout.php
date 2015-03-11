@@ -117,7 +117,7 @@ function weaverx_area_class( $area, $p_default = 'pad', $sides = '', $margin = '
 
 	// align
 	$align = weaverx_getopt_default( $area . '_align', 'float-left' );
-	if ( $align != 'float-left')
+	if ( $align != 'float-left' )
 		$class .= ' ' . $align;
 
 	// eq height

@@ -23,7 +23,6 @@ $weaverx_opts_cache = false;	// internal cache for all settings
 $weaverx_cur_page_ID = false;	// the ID of the current page
 $weaverx_cur_post_count = 0;	// to keep track of even/odd
 $weaverx_cur_template = '';	// current page template - set in functions.php setup
-$weaverx_crumbs = false;
 $weaverx_header = array();	    // as of WP 3.4
 $weaverx_sticky = false;
 
