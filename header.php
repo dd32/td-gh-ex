@@ -25,8 +25,7 @@
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
           <?php endif; ?>		
 		</div>		
-		<div id="banner-top">	<?php if (!dynamic_sidebar('Header Widget') ) : ?>				
-		<?php endif; ?></div>		
+		<div id="banner-top"><?php echo of_get_option( 'banner_top'); ?></div>		
     </div> <!-- end div #header-inner -->
 	</div> <!-- end div #header -->
 

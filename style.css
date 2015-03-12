@@ -2,16 +2,16 @@
 Theme Name: Digital
 Theme URI: http://www.wrock.org/digital-wordpress-theme-one/
 Description: Digital Responsive Multi-Purpose Theme is best WordPress theme design for personal and business uses support woocommerce shoping plugin with full inbuilt Slider features and SEO Optimize. Theme comes with lots of customization and connect social media like Facebook, Google+, twitter, YouTube and Adsense ready It supports all the awesome WordPress features completely free theme for blogging. This is a eCommerce theme to make sure run best online store with your website and start selling products.
-Version: 1.0.5
+Version: 1.2
 Author: insertcart.com
 Author URI: http://www.insertcart.com/
 Tags: black, blue, white, light, green, custom-menu, custom-header, custom-background, one-column, two-columns, right-sidebar, theme-options, threaded-comments, sticky-post
 Text Domain: digital
 License: GNU General Public License
 License URI: license.txt
-Copyright (C) 2011-2014 sandy, This program is distributed free, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
+Copyright (C) 2011-2015 sandy, This program is distributed free, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-Digital WordPress theme, Copyright (C) 2014 insertcart.com
+Digital WordPress theme, Copyright (C) 2015 insertcart.com
 Digital WordPress theme is licensed under the GPL.
 
 */
@@ -468,15 +468,11 @@ border-right: none;}
 #navigation  ul li:hover ul ul, #navigation  ul li:hover ul ul ul, #navigation  ul li:hover ul ul ul ul { left:-999em; }
 #navigation  ul li:hover ul, #navigation  ul li li:hover ul,#navigation  ul li li li:hover ul,#navigation  ul li li li li:hover ul { left:auto; }
 #navigation li > a:after {
-    color: #fff;
-    content: ' ▾';
-	font-size:16px;
+ content: ' \25BC';
 
 }
 #navigation li > a:hover:after {
-    color: #fff;
-    content: ' ▾';
-	font-size:16px;
+ content: ' \25BC';
 
 }
 
@@ -665,13 +661,11 @@ border-right: none;}
 
 
 .nav-menu li > a:after {
-    color: #fff;
-    content: ' ▾';
+ content: ' \25BC';
 }
 
 .nav-menu li > a:hover:after {
-    color: #fff;
-    content: ' ▾';
+ content: ' \25BC';
 }
 
 .nav-menu li > a:only-child:after {
@@ -716,9 +710,8 @@ border-right: none;}
 	width:33%;
 }
 #header #logo img {
-	max-width: 450px;
+	max-width: 88%;
 	margin-left: 0;
-	max-height: 100px
 }
 #banner-top {
 float: left;
@@ -751,12 +744,14 @@ background: #333;
 background: #13E290;
 padding: 4px 8px;
 color: #fff;
+max-width: 48%;
 }
 #single-nav-right{
 background: #13E290;
 float: right;
 padding: 4px 8px;
 color: #fff;
+max-width: 48%;
 }
 #page {
 	margin-top: 20px;
@@ -878,13 +873,13 @@ margin-top: 25px;
 
 /* ===================== crumbs  ===================== */
 #crumbs {
-	font-size: 13px;
+font-size: 13px;
 color: #f7f7f7;
 font-weight: bold;
 font-family: sans-serif;
 margin: 2px 0px 10px 0px;
 padding: 6px 0px 6px 12px;
-background: #F8F8F8;
+background: #C0C0C0;
 width: 100%;
 background-image: url(images/cat.png);
 background-position: 98% 7px;

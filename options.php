@@ -1,19 +1,10 @@
 <?php
 /**
  * A unique identifier is defined to store the options in the database and reference them from the theme.
- * By default it uses the theme name, in lowercase and without spaces, but this can be changed if needed.
- * If the identifier changes, it'll appear as if the options have been reset.
  */
-
 function optionsframework_option_name() {
-
-	// This gets the theme name from the stylesheet
-	$themename = wp_get_theme();
-	$themename = preg_replace("/\W/", "_", strtolower($themename) );
-
-	$optionsframework_settings = get_option( 'optionsframework' );
-	$optionsframework_settings['id'] = $themename;
-	update_option( 'optionsframework', $optionsframework_settings );
+	// Change this to use your theme slug
+	return 'digital';
 }
 
 /**
@@ -397,22 +388,56 @@ $options[] = array(
 		'type' => 'textarea');
 		
 
-		
+$options[] = array(
+		'name' => __('Ads Management', 'digital'),
+		'type' => 'heading');
+	
+	$options[] = array(
+		 'desc' => esc_attr__( 'If you want to add or edit more code and place widget then you need to edit from Widget area.', 'digital' ).'<b>'. esc_attr__( 'Dashboard > Appearance > Widget > add widget wherever you want.', 'digital'). '</b>',
+            'type' => 'info');	
+	$options[] = array(
+		'name' => __('Paste Ads code for header.', 'digital'),
+		'desc' => __('Enter your ads code here, preferably units Ex. 728*90 lead-board ad.', 'digital'),
+		'id' => 'banner_top',
+		'std' => '',
+		'type' => 'editor',
+		'settings' => $wp_editor_settings= array(
+		'wpautop' => true, // Default
+		'textarea_rows' => 5));
+	$options[] = array(
+		 'name' => __( 'AD Code For Single Post', 'digital' ),
+            'desc' => 'Paste Ad code for single post it show ads below post title and before content.',
+            'id' => 'digital_ad2',
+            'std' => '',
+            'type' => 'editor',
+		'settings' => $wp_editor_settings= array(
+		'wpautop' => true, // Default
+		'textarea_rows' => 5));
+     $options[] = array(
+		'name' => __( 'AD Code For Footer', 'digital' ),
+            'desc' => 'Paste Ad Code for Footer Area.',
+            'id' => 'digital_ad1',
+            'std' => '',
+            'type' => 'editor',
+		'settings' => $wp_editor_settings= array(
+		'wpautop' => true, // Default
+		'textarea_rows' => 5));	
+			
 $options[] = array(
 		'name' => __('Advance (Pro Only)', 'digital'),
 		'type' => 'heading');
 				
-		$options[] = array(
+	$options[] = array(
 		'desc' => '<span class="pre-title">New Features</span>', 
 		'type' => 'info');
 		
-		$options[] = array(
+	$options[] = array(
 		'name' => __('Social Share Buttons with count', 'digital'),
 		'desc' => __('Display social share buttons with count below post title.', 'digital'),
 		'id' => 'digital_flowshare',
 		'std' => '0',
 		'type' => 'checkbox');
-		$options[] = array(
+	$options[] = array(
 		'name' => __('Show Popular Posts in Sidebar', 'digital'),
 		'desc' => __('Check the box to Show Popular Posts with Thumbnail in Sidebar.', 'digital'),
 		'id' => 'digital_popular',
@@ -424,13 +449,13 @@ $options[] = array(
 		'std' => '5',
 		'class' => 'mini',
 		'type' => 'text');
-		$options[] = array(
+	$options[] = array(
 		'name' => __('Responsive Website Design', 'digital'),
 		'desc' => __('Enable Responsive Design for you website to increase experience on Mobile Devices', 'digital'),
 		'id' => 'digital_responsive',
 		'std' => '1',
 		'type' => 'checkbox');
-		$options[] = array(
+	$options[] = array(
 		'name' => __('Excerpt Length (Number of words display in post description)', 'digital'),
 		'desc' => __('Number of words display in every post description Default is 45.', 'digital'),
 		'id' => 'digital_excerp',
@@ -438,7 +463,7 @@ $options[] = array(
 		'class' => 'mini',
 		'type' => 'text');
 		
-		$options[] = array(
+	$options[] = array(
 		'name' => __('Home Icon from Top and Main Navigation', 'digital'),
 		'desc' => __('Show or Hide Home Icon.', 'digital'),
 		'id' => 'digital_homeicon',
@@ -653,7 +678,7 @@ $options[] = array(
 		'std' => '1',
 		'type' => 'checkbox');
 			
-		$options[] = array(
+	$options[] = array(
 		'name' => __('Next and Previous Post Link', 'digital'),
 		'desc' => __('Show or Hide Next and Previous Post Link below every post.', 'digital'),
 		'id' => 'digital_links',
@@ -663,7 +688,7 @@ $options[] = array(
 						'on' => 'Show',
 						'off' => 'Hide'
 						));
-		$options[] = array(
+	$options[] = array(
 		'name' => __('Show or Hide Copy Right Text', 'digital'),
 		'desc' => __('Show or hide Copyright Text and Link.', 'digital'),
 		'id' => 'digital_copyright',
@@ -673,14 +698,15 @@ $options[] = array(
 						'on' => 'Show',
 						'off' => 'Hide'
 						));
-		$options[] = array(
-		    'desc' => 'Paste Ad code for single post it show ads below post title and before content.',
+	$options[] = array(
+		    'desc' => 'Change copyright text.',
             'id' => 'digital_ftarea',
-            'std' => 'Copyright  &#169; 2014',
-            'type' => 'textarea');	
-			
-
-		$options[] = array(
+            'std' => 'Copyright  &#169; 2015',
+            'type' => 'editor',
+		'settings' => $wp_editor_settings= array(
+		'wpautop' => true, // Default
+		'textarea_rows' => 5));	
+	$options[] = array(
 		'name' => __('Theme Support', 'digital'),
 		'type' => 'heading' );
 

@@ -104,7 +104,7 @@ function digital_theme_setup() {
 		add_image_size( 'latestpost', 125, 120 , true );
 	    load_theme_textdomain('digital', get_template_directory() . '/languages');
 		add_editor_style();
-	  
+		add_theme_support('title-tag');
 		// Setup the WordPress core custom background feature.
 		add_theme_support( 'custom-background', apply_filters( 'digital_custom_background_args', array(
 		'default-color' => 'f7f7f7',
@@ -163,13 +163,7 @@ add_action( 'after_setup_theme', 'digital_theme_setup' );
 
     function digital_widgets_init() {
 
-	register_sidebar(array(
-		'name' => __( 'Header Widget', 'digital' ),
-	    'before_widget' => '<div class="box clearfloat"><div class="boxinside clearfloat">',
-	    'after_widget' => '</div></div>',
-	    'before_title' => '<h4 class="widgettitle">',
-	    'after_title' => '</h4>',
-	));
+
 	register_sidebar(array(
 		'name' => __( 'Sidebar Right', 'digital' ),
 	    'before_widget' => '<div class="box clearfloat"><div class="boxinside clearfloat">',
