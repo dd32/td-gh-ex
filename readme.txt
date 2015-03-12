@@ -36,6 +36,12 @@ Custom Css:
 
 == Change log ==
 
+= 1.2.1 =
+* Updated Option Framework 
+* Added Support for title tag
+* Fixed other minor issue
+
+
 = 1.0.5 =
 *Updated image license 
 
