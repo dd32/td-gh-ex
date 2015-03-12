@@ -7,7 +7,7 @@
 	Author URI: http://organicthemes.com
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Version: 1.0.7
+	Version: 1.0.8
 	Text Domain: swelllite
 	Domain Path: /languages/
 	Tags: light, gray, white, green, silver, one-column, two-columns, right-sidebar, responsive-layout, fluid-layout, custom-background, custom-header, custom-menu, featured-images, featured-image-header, flexible-header, full-width-template, translation-ready, sticky-post, threaded-comments, editor-style, theme-options, photoblogging
@@ -719,6 +719,7 @@ ul.menu li li li.sfHover ul {
 	display: block;
 	position: relative;
 	padding: 64px 12%;
+	overflow: hidden;
 	}
 .postarea.full .article {
 	padding: 96px 18%;
@@ -1021,7 +1022,7 @@ img.hide-img {
 	margin-left: -999em;
 	padding: 0px;
 	}
-img.centered {
+img.aligncenter {
 	display: block;
 	margin: 6px auto 6px;
 	padding: 0px;

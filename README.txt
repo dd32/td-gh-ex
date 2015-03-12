@@ -1,4 +1,4 @@
-Swell Lite v1.0.7
+Swell Lite v1.0.8
 http://www.swelltheme.com
 http://organicthemes.com
 
@@ -52,3 +52,7 @@ CHANGELOG v1.0.6:
 
 CHANGELOG v1.0.7:
 - Updated style tags, theme description and screenshot
+
+CHANGELOG v1.0.8:
+- Style tweaks
+- Infinite Scroll fix
