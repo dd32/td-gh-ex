@@ -80,7 +80,7 @@ a.button-primary{
     left: 0;
     width: 100%;
     z-index: 999;
-    height: 50px;
+    height: 40px;
     line-height: 50px;
     border-bottom: 1px solid #F0F0F0;
     overflow: hidden;
@@ -123,20 +123,27 @@ a.button-primary{
 }
 #site-toolbar .row .social-bar{
     text-align: left;
+    height: 40px;
+    line-height: 40px;
 }
 
 #site-toolbar .row .contact-bar{
     text-align: right;
+    height: 40px;
+    line-height: 40px;
 }
 
 .no_toolbar .site-branding{
     top: 0;
 }
+.logged-in .site-branding{
+    top: 72px;
+}
 .site-branding{
     /*margin-top: 75px;*/
     width: 100%;
     position: fixed;
-    top: 50px;
+    top: 40px;
     height: 80px;
     left: 0;
     background: rgb(255, 255, 255);
@@ -501,6 +508,10 @@ article.sidebar-off{
 #content{
     /*padding-top: 30px;*/
 }
+.frontpage .item-post{
+    margin-bottom: 0;
+    margin-top: 20px;
+}
 .homepage-content{
     background: #fff;
 }
@@ -515,9 +526,10 @@ article.sidebar-off{
     margin-top: 80px;
 }
 .site-content-wrapper{
-    margin-top: 130px;
+    margin-top: 120px;
     background: rgb(245,245,245);
     /*padding-top: 10px;*/
+    padding-bottom: 20px;
 }
 .site-content-wrapper.skulls{
     background: url('../images/skulls.png');
@@ -565,6 +577,7 @@ article.sidebar-off{
 }
 .site-footer .site-info{
     background: #0D0D0D;
+    padding: 10px 0;
 }
 .site-footer .footer-boxes{
     margin-top: 15px;
@@ -581,16 +594,23 @@ article.sidebar-off{
 .site-footer .widget-title{
     color: #fff;
 }
+input[type="search"].search-field{ border: 0;}
+input[type="search"].search-field:focus{ outline: none;}
+.site-footer .site-info .row .col-xs-6.text-right a{ display: block !important;}
 .scroll-top{
-    /*font-size: 26px;*/
-    width: 30px;
-    height: 30px;
+    font-size: 16px;
+    right: 20px;
+    bottom: 40px;
+    position: fixed;
+    width: 35px;
+    height: 35px;
     margin: 7px 5px;
     display: inline-block;
     text-align: center;
-    line-height: 30px;
-    border: 1px solid #e0e0e0;
-    color: #e0e0e0;
+    line-height: 32px;
+    background: rgba(224, 224, 224, 0.5);
+    /* border: 1px solid rgb(224, 224, 224); */
+    color: rgb(216, 216, 216);
     border-radius: 100%;
     cursor: pointer;
     transition: 0.2s all ease-in-out;

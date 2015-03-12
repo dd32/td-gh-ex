@@ -259,7 +259,7 @@ function optionsframework_options() {
             'sidebar-on' => $imagepath . '2cr.png')
     );   
     
-    $path = get_template_directory_uri() . '/images/ares-demo.png';    
+    $path = get_template_directory_uri() . '/images/ares_demo.jpg';    
     $options[] = array(
         'name' => __('Slider', 'ares'),
         'desc' => __('Toggle the Slider on or off', 'ares'),
@@ -554,7 +554,7 @@ function ares_ares_options_display_sidebar() {
 
         <div class="sc-tab-option">
             <a href="http://smartcatdesign.net/preview/ares" target="_blank">
-                View Demo
+                View Theme Demo
             </a>
         </div>
         

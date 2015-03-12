@@ -8,7 +8,7 @@
  */
 get_header();
 ?>
-<div class="site-content-wrapper <?php echo esc_attr( of_get_option('sc_theme_background_pattern','crossword') ); ?>">
+<div class="site-content-wrapper <?php echo esc_attr( of_get_option('ares_theme_background_pattern','crossword') ); ?>">
 <div id="content" class="site-content">
 
     <?php if (have_posts()) : ?>

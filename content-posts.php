@@ -5,7 +5,7 @@
  * 
  */
 ?>
-<div class="row">
+
 <div class="item-post">
     <div class="post-thumb col-md-4">
         <a href="<?php the_permalink(); ?>">
@@ -19,11 +19,10 @@
             </a>
         </h2>
         <div class="post-content">
-            <?php the_excerpt(); ?>
+            <?php echo wp_trim_words( $post->post_content, 50); ?>
         </div>
         <div class="text-right">
             <a class="button button-primary" href="<?php the_permalink(); ?>">Read More</a>
         </div>                        
     </div>
-</div>
 </div>

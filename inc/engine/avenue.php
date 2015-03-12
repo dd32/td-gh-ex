@@ -3,6 +3,8 @@
  * Ares Theme setup
  */
 
+
+
 function ares_scripts() {
     wp_enqueue_style('ares-style', get_stylesheet_uri());
     wp_enqueue_style('bootstrap', get_template_directory_uri() . '/inc/css/bootstrap.css', array(), ARES_VERSION);
@@ -12,21 +14,22 @@ function ares_scripts() {
     
     if('Source Sans Pro, sans-serif' == of_get_option('ares_font_family')) 
         wp_enqueue_style('ares-font-sans', '//fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600', array(), ARES_VERSION);
+    
     if('Lato, sans-serif' == of_get_option('ares_font_family')) 
         wp_enqueue_style('ares-font-lato', '//fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic,400italic', array(), ARES_VERSION);
     
-    if('Josefin Sans, sans-serif' == of_get_option('ares_font_family')) 
+    if('Josefin Sans, sans-serif' == of_get_option('ares_font_family', 'Josefin Sans, sans-serif') ) 
         wp_enqueue_style('ares-font-josefin', '//fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700', array(), ARES_VERSION);
     
     wp_enqueue_style('ares-template', get_template_directory_uri() . '/inc/css/temps/' . esc_attr( of_get_option('ares_theme_color', 'aqua') ) . '.css', array(), ARES_VERSION);
     wp_enqueue_style('ares-slider-style', get_template_directory_uri() . '/inc/css/camera.css', array(), ARES_VERSION);
 
-    wp_enqueue_script('ares-navigation', get_template_directory_uri() . '/js/navigation.js', array(), ARES_VERSION, true);
-    wp_enqueue_script('ares-bootstrapjs', get_template_directory_uri() . '/inc/js/bootstrap.min.js', array(), ARES_VERSION, true);
-    wp_enqueue_script('ares-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), ARES_VERSION, true);
+    wp_enqueue_script('ares-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), ARES_VERSION, true);
+    wp_enqueue_script('ares-bootstrapjs', get_template_directory_uri() . '/inc/js/bootstrap.min.js', array('jquery'), ARES_VERSION, true);
+    wp_enqueue_script('ares-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array('jquery'), ARES_VERSION, true);
 
-    wp_enqueue_script('ares-easing', get_template_directory_uri() . '/inc/js/jquery.easing.1.3.js', array(), ARES_VERSION, true);
-    wp_enqueue_script('ares-uslider', get_template_directory_uri() . '/inc/js/camera.min.js', array(), ARES_VERSION, true);
+    wp_enqueue_script('ares-easing', get_template_directory_uri() . '/inc/js/jquery.easing.1.3.js', array('jquery'), ARES_VERSION, true);
+    wp_enqueue_script('ares-uslider', get_template_directory_uri() . '/inc/js/camera.min.js', array('jquery'), ARES_VERSION, true);
 
     wp_enqueue_script('ares-script', get_template_directory_uri() . '/inc/js/script.js', array('jquery', 'jquery-ui-core'), ARES_VERSION);
 
@@ -56,7 +59,7 @@ function ares_widgets_init() {
     ));
 
     register_sidebar(array(
-        'name' => __('Fullwidth Banner', 'ares'),
+        'name' => __('Homepage Widget', 'ares'),
         'id' => 'sidebar-banner',
         'description' => '',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -113,7 +116,7 @@ function ares_css() {
     <style type="text/css">
         body{
             font-size: <?php echo esc_attr( of_get_option('ares_font_size') ); ?>;
-            font-family: <?php echo esc_attr( of_get_option('ares_font_family') ); ?>;
+            font-family: <?php echo esc_attr( of_get_option('ares_font_family', 'Josefin Sans, sans-serif') ); ?>;
         }
     </style>
     <?php
@@ -228,26 +231,26 @@ function ares_slider() { ?>
 	<div class="fluid_container">
         <div class="camera_wrap" id="camera_wrap_1">
 
-                <?php if ('' != of_get_option('ares_slide1_image', get_template_directory_uri() . '/images/ares-demo.png')) { ?>
-                    <div data-thumb="<?php echo esc_attr( of_get_option('ares_slide1_image', get_template_directory_uri() . '/images/ares-demo.png') ) ;?>" data-src="<?php echo esc_attr( of_get_option('ares_slide1_image', get_template_directory_uri() . '/images/ares-demo.png') ) ?>">
+                <?php if ('' != of_get_option('ares_slide1_image', get_template_directory_uri() . '/images/ares_demo.jpg')) { ?>
+                    <div data-thumb="<?php echo esc_attr( of_get_option('ares_slide1_image', get_template_directory_uri() . '/images/ares_demo.jpg') ) ;?>" data-src="<?php echo esc_attr( of_get_option('ares_slide1_image', get_template_directory_uri() . '/images/ares_demo.jpg') ) ?>">
                         <div class="camera_caption fadeFromBottom">
-                            <span><?php echo esc_attr( of_get_option('ares_slide1_text','Ares: Responsive WordPress Theme') );?></span>
+                            <span><?php echo esc_attr( of_get_option('ares_slide1_text','Ares: Responsive Multi-purpose WordPress Theme') );?></span>
                         </div>
                     </div>
                 <?php } ?>            
             
-                <?php if ('' != of_get_option('ares_slide2_image', get_template_directory_uri() . '/images/ares-demo.png')) { ?>
-                      <div data-thumb="<?php echo esc_attr( of_get_option('ares_slide2_image', get_template_directory_uri() . '/images/ares-demo.png') ); ?>" data-src="<?php echo esc_attr( of_get_option('ares_slide2_image', get_template_directory_uri() . '/images/ares-demo.png') ); ?>">
+                <?php if ('' != of_get_option('ares_slide2_image', get_template_directory_uri() . '/images/ares_demo.jpg')) { ?>
+                      <div data-thumb="<?php echo esc_attr( of_get_option('ares_slide2_image', get_template_directory_uri() . '/images/ares_demo.jpg') ); ?>" data-src="<?php echo esc_attr( of_get_option('ares_slide2_image', get_template_directory_uri() . '/images/ares_demo.jpg') ); ?>">
                         <div class="camera_caption fadeFromBottom">
-                            <span><?php echo esc_attr( of_get_option('ares_slide2_text','Ares: Responsive WordPress Theme') );?></span>
+                            <span><?php echo esc_attr( of_get_option('ares_slide2_text','Ares: Responsive Multi-purpose WordPress Theme') );?></span>
                         </div>
                     </div>
                 <?php } ?>   
             
-                <?php if ('' != of_get_option('ares_slide3_image', get_template_directory_uri() . '/images/ares-demo.png')) { ?>     
-                    <div data-thumb="<?php echo esc_attr( of_get_option('ares_slide3_image', get_template_directory_uri() . '/images/ares-demo.png') );?>" data-src="<?php echo esc_attr( of_get_option('ares_slide3_image', get_template_directory_uri() . '/images/ares-demo.png') ); ?>">
+                <?php if ('' != of_get_option('ares_slide3_image', get_template_directory_uri() . '/images/ares_demo.jpg')) { ?>     
+                    <div data-thumb="<?php echo esc_attr( of_get_option('ares_slide3_image', get_template_directory_uri() . '/images/ares_demo.jpg') );?>" data-src="<?php echo esc_attr( of_get_option('ares_slide3_image', get_template_directory_uri() . '/images/ares_demo.jpg') ); ?>">
                         <div class="camera_caption fadeFromBottom">
-                            <span><?php echo esc_attr( of_get_option('ares_slide3_text','Ares: Responsive WordPress Theme') );?></span>
+                            <span><?php echo esc_attr( of_get_option('ares_slide3_text','Ares: Responsive Multi-purpose WordPress Theme') );?></span>
                         </div>
                     </div>
                 <?php } ?>      
@@ -374,7 +377,7 @@ function ares_toolbar() {
 }
 
 function ares_close() { ?>
-
+    <i class="scroll-top fa fa-chevron-up"></i>
     <footer id="colophon" class="site-footer " role="contentinfo">
         <div class="footer-boxes">
             <div class="row ">
@@ -387,14 +390,13 @@ function ares_close() { ?>
             <div class="row ">
                 <div class="col-xs-6 text-left">
                     <?php echo of_get_option('ares_footer_text');?>
-                    <br>
+                </div>
+                <div class="col-xs-6 text-right">
                     <a href="http://smartcatdesign.net/" rel="designer">
                         <img src="<?php echo get_template_directory_uri() . '/inc/images/cat_logo.png'?>" width="20px"/>
                         Design by SmartCat
-                    </a>                        
-                </div>
-                <div class="col-xs-6 text-right">
-                    <i class="scroll-top fa fa-chevron-circle-up"></i>
+                    </a>                     
+                    
                 </div>              
             </div>
         </div><!-- .site-info -->

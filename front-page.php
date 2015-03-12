@@ -30,7 +30,8 @@ get_header(); ?>
         
         <?php if (of_get_option('ares_cta_bool', 'yes') == 'yes') echo ares_ctas(); ?>
         <?php if (of_get_option('ares_banner_bool', 'yes') == 'yes') echo ares_banner(); ?>
-
+        
+        <div class="frontpage row">
         <?php while (have_posts()) : the_post(); ?>
             <?php
             if( 'yes' == of_get_option('ares_frontpage_content_bool', 'yes') ) :
@@ -46,7 +47,7 @@ get_header(); ?>
             endif;
             ?>
         <?php endwhile; // end of the loop.   ?>
-
+        </div>
     </div>
 </div>
 <?php get_footer(); ?>
