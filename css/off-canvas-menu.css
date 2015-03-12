@@ -498,7 +498,7 @@ footer[role="contentinfo"] {
     left: 70%;
   }
 
-  .csstransforms3d.csstransitions.js-ready #nav {
+  .csstransforms3d.csstransitions.js-ready #nav { 
     left: 0;
     -webkit-transform: translate3d(-100%, 0, 0);
     -moz-transform: translate3d(-100%, 0, 0);

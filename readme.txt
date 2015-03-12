@@ -78,6 +78,16 @@ ScreenShot Images
     http://www.pexels.com/photo/2693/
     http://www.pexels.com/photo/915/
 
+Pattern Images
+    All pattern used are from http://subtlepatterns.com/
+    http://subtlepatterns.com/notebook/
+    http://subtlepatterns.com/noisy-grid/
+    http://subtlepatterns.com/skeletal-weave/
+    http://subtlepatterns.com/diamond-upholstery/
+    http://subtlepatterns.com/purty-wood/
+    http://subtlepatterns.com/bo-play/
+
+
 ---------------------------------------------
 
 == Changelog ==

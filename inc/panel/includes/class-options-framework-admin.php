@@ -180,12 +180,12 @@ class Options_Framework_Admin {
 		<?php $menu = $this->menu_settings(); ?>
 		
 		<div class="theme-header clearfix">
-            <div class="accesspresslite-logo">
-                <img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/logo.png" alt="<?php esc_attr_e('AccessPress Themes', 'accesspresslite'); ?>" />
+            <div class="accesspress-root-logo">
+                <img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/logo.png" alt="<?php esc_attr_e('AccessPress Themes', 'accesspress-root'); ?>" />
             </div>
 
             <div class="ak-socials">
-                <p><?php _e('Follow us for new updates', 'accesspresslite') ?></p>
+                <p><?php _e('Follow us for new updates', 'accesspress-root') ?></p>
                 <div class="social-bttns">
                     
                        
@@ -293,7 +293,7 @@ class Options_Framework_Admin {
 	 */
 
 	function save_options_notice() {
-		add_settings_error( 'options-framework', 'save_options', __( 'Options saved.', 'accesspress-root' ), 'notice notice-success fade' );
+		add_settings_error( 'options-framework', 'save_options', __( 'Options saved.', 'accesspress-root' ), 'option-saved' );
 	}
 
 	/**

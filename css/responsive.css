@@ -4,6 +4,9 @@
         width:100%;
         padding: 0 10px;
     }    
+    #main-slider .bx-controls .bx-controls-direction a{
+        display: none;
+    }
 }
 
 
@@ -11,10 +14,10 @@
     .ak-container, #main {
         padding: 0 10px;
         width: 100%;
-    }
+    }    
 }
-/* Portrait tablet to landscape and desktop */
 
+/* Portrait tablet to landscape and desktop */
 @media (max-width: 979px) {
     .newsletter-widget p {
         width: 50%;
@@ -32,8 +35,8 @@
         margin-bottom: 30px;
     }
 }
-/* Landscape phone to portrait tablet */
 
+/* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
     .service-block, .feature-block {
         width: 47%;
@@ -157,8 +160,8 @@
         margin-bottom: 30px !important;
     }
 }
-/* Landscape phone to portrait tablet */
 
+/* Landscape phone to portrait tablet */
 @media (max-width: 580px) {
     .service-block, .feature-block {
         width: 97%;
@@ -198,8 +201,8 @@
         width: 100%;
     }
 }
-/* Landscape phones and down */
 
+/* Landscape phones and down */
 @media (max-width: 479px) {
     .blog-date {
         font-size: 11px;

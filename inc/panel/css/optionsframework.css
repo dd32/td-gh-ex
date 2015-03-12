@@ -344,7 +344,7 @@
     padding: 20px;
     margin-bottom: 10px;
 }
-.theme-header .accesspresslite-logo{
+.theme-header .accesspress-root-logo{
     float: left;
 }
 .theme-header .ak-socials{
@@ -512,4 +512,11 @@
     position: absolute;
     z-index: 2;
     left: 0;
+}
+.option-saved{
+    background: #fff;
+    border-left: 4px solid #7ad03a;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+    margin: 0 0 15px;
+    padding: 1px 12px; 
 }
