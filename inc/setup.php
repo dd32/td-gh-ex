@@ -883,7 +883,7 @@
 	 * Post/page heading (title)
 	 *
 	 * @since    1.0
-	 * @version  1.2
+	 * @version  1.2.1
 	 *
 	 * @param  array $args Heading setup arguments
 	 */
@@ -895,7 +895,7 @@
 				//Requirements check
 					if (
 							! ( $title = get_the_title() )
-							|| apply_filters( 'wm_post_title_disable', false )
+							|| apply_filters( 'wmhook_wm_post_title_disable', false )
 						) {
 						return;
 					}

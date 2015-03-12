@@ -1,5 +1,14 @@
 # Modern Changelog
 
+## 1.2.1
+
+* Fixed: Incorrect filter hook name
+
+#### Files changed:
+
+	inc/setup.php
+
+
 ## 1.2
 
 * Added: Posts Views Count plugin support
