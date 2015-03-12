@@ -1338,6 +1338,10 @@ ul.wvrx-center-menu {
 	color:              #bbb;           /* link color */
 }
 
+.menu-type-accordion .wvrx-menu,		/* needs to be left */
+.menu-type-accordion .wvrx-menu-container {
+	text-align:			left !important;
+}
 
 .wvrx-menu ul li a {                    /* submenu bg */
 	background-color:   #444;
