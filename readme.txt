@@ -1,7 +1,8 @@
 /*  Theme License
 /* ------------------------------------ */
 
-The theme itself is nothing but 100% GPLv2. See headers of files for further details.
+The theme itself is nothing but 100% GPLv3. See headers of files for further details.
+http://www.gnu.org/licenses/gpl-3.0.html
 
 /*  underscores Theme License
 /* ------------------------------------ */

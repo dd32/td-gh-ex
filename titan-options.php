@@ -65,6 +65,7 @@ function titanscore_create_options() {
 	    'name' => __( 'Theme Settings', 'bnw' ),
 	) );
 	
+	/*
 	$layoutPanel = $adminPanel->createAdminPanel( array(
 		'name' => 'Documentation',
 	) );
@@ -72,7 +73,7 @@ function titanscore_create_options() {
 	$infoPanel = $adminPanel->createAdminPanel( array(
 		'name' => 'Info',
 	) );
-	
+	*/
 	/* General Tab */
 	$generalTab = $adminPanel->createTab( array(
 	    'name' => __( 'General', 'bnw' ),
@@ -133,6 +134,7 @@ function titanscore_create_options() {
 		) );
 			
 	/* footer Tab */
+	
 	$footerTab = $adminPanel->createTab( array(
 	    'name' => __( 'Footer', 'bnw' ),
 	) );
@@ -148,7 +150,7 @@ function titanscore_create_options() {
 	    'type' => 'save',
 	) );
 	
-	/* infoPanel */
+	/* infoPanel *//*
 	$infoPanel->createOption( array(
 		'name' => 'Note',
 		'type' => 'note',
