@@ -71,7 +71,9 @@ function ct_author_register_widget_areas(){
     hybrid_register_sidebar( array(
         'name'         => __( 'Primary Sidebar', 'author' ),
         'id'           => 'primary',
-        'description'  => __( 'Widgets in this area will be shown in the sidebar', 'author' )
+        'description'  => __( 'Widgets in this area will be shown in the sidebar', 'author' ),
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>'
     ) );
 }
 add_action('widgets_init','ct_author_register_widget_areas');
@@ -117,7 +119,7 @@ function ct_author_customize_comments( $comment, $args, $depth ) {
     <?php
 }
 
-/* added HTML5 placeholders for each default field and aria-required to required */
+// adjustments to default comment form inputs
 if( ! function_exists( 'ct_author_update_fields' ) ) {
     function ct_author_update_fields( $fields ) {
 
@@ -140,21 +142,21 @@ if( ! function_exists( 'ct_author_update_fields' ) ) {
         $fields['author'] =
             '<p class="comment-form-author">
 	            <label>' . __( "Name", "author" ) . $label . '</label>
-	            <input placeholder="' . __( "John Doe", "author" ) . '" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
+	            <input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
             '" size="30" ' . $aria_req . ' />
 	        </p>';
 
         $fields['email'] =
             '<p class="comment-form-email">
 	            <label>' . __( "Email", "author" ) . $label . '</label>
-	            <input placeholder="' . __( "name@email.com", "author" ) . '" id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) .
+	            <input id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) .
             '" size="30" ' . $aria_req . ' />
 	        </p>';
 
         $fields['url'] =
             '<p class="comment-form-url">
 	            <label>' . __( "Website", "author" ) . '</label>
-	            <input placeholder="' . __( "http://example.com", "author" ) . '" id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) .
+	            <input id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) .
             '" size="30" />
 	            </p>';
 
@@ -169,7 +171,7 @@ if( ! function_exists( 'ct_author_update_comment_field' ) ) {
         $comment_field =
             '<p class="comment-form-comment">
 	            <label>' . __( "Comment", "author" ) . '</label>
-	            <textarea required placeholder="' . __( "Enter Your Comment", "author" ) . '&#8230;" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
+	            <textarea required id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
 	        </p>';
 
         return $comment_field;
@@ -214,7 +216,7 @@ if( ! function_exists( 'ct_author_excerpt' ) ) {
 
         // use the read more link if present
         elseif ( $ismore ) {
-            the_content( __( 'Continue reading', 'author' ) . "<span class='screen-reader-text'>" . get_the_title() . "</span>" );
+            the_content( __( 'Continue reading', 'author' ) . " <span class='screen-reader-text'>" . get_the_title() . "</span>" );
         } // otherwise the excerpt is automatic, so output it
         else {
             the_excerpt();
@@ -225,7 +227,7 @@ if( ! function_exists( 'ct_author_excerpt' ) ) {
 // filter the link on excerpts
 function ct_author_excerpt_read_more_link($output) {
 	global $post;
-	return $output . "<p><a class='more-link' href='". get_permalink() ."'>" . __('Continue reading', 'author') . "<span class='screen-reader-text'>" . get_the_title() . "</span></a></p>";
+	return $output . "<p><a class='more-link' href='". get_permalink() ."'>" . __('Continue reading', 'author') . " <span class='screen-reader-text'>" . get_the_title() . "</span></a></p>";
 }
 
 add_filter('the_excerpt', 'ct_author_excerpt_read_more_link');
@@ -415,7 +417,8 @@ if( ! function_exists('ct_author_social_icons_output') ) {
  */
 function ct_author_wp_page_menu() {
     wp_page_menu(array(
-            "menu_class" => "menu-unset"
+            "menu_class" => "menu-unset",
+            "depth"      => -1
         )
     );
 }
@@ -480,7 +483,7 @@ function ct_author_nav_dropdown_buttons( $item_output, $item, $depth, $args ) {
     if ( 'primary' == $args->theme_location) {
 
         if( in_array('menu-item-has-children', $item->classes ) || in_array('page_item_has_children', $item->classes ) ) {
-            $item_output = str_replace( $args->link_after . '</a>', $args->link_after . '</a><button class="toggle-dropdown"><span class="screen-reader-text">expand child menu</span></button>', $item_output );
+            $item_output = str_replace( $args->link_after . '</a>', $args->link_after . '</a><button class="toggle-dropdown" aria-expanded="false"><span class="screen-reader-text">open child menu</span></button>', $item_output );
         }
     }
 
