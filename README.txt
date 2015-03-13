@@ -117,3 +117,6 @@ Screenshot images are licensed under Creative Commons Deed CC0.
 
 == 1.28 ==
 * Minor fix
+
+== 1.29 ==
+* Add rel="nofollow" to credits link
