@@ -1,19 +1,22 @@
 == Changelog ==
 
-= 1.1 =
+= 1.2 =
 * Added title tag via add theme support
-* Added Important links Section to Theme Customizer
-* Added Jetpack infinite scroll post per page to 9
-* Updated Theme description
-* Updated instructions and links in Readme.txt 
-* Bug Fixed: Navigation position in homepage
+* Added Important links section to Theme Customizer
+* Added three-columns tag
+* Bug Fixed: body_class when there is no sidebar
 * Bug Fixed: Image Size and styles
-* Bug Fixed: Spacing issues in style.css
-* Bug Fixed: Changed masonry columnWidth and gutter
-* Bug Fixed: Intro widget class and styles
+* Bug Fixed: Extra css and border issue in style.css
+* Bug Fixed: Classes for excerpt and content fixed in content.php
+* Bug Fixed: Added missing keyword _nx:1,2,4c and esc_html__ in language file create.pot
+
+= 1.1 =
+* Initial Release in Catchthemes.com
+* Updated instructions and links in Readme.txt 
+* Fixed spacing issues in style.css
+* Fixed navigation position in homepage
 * Removed unnecessary layouts directory
 * Removed unnecessary files
-* Initial Release in Catchthemes.com
 
 = 1.0 =
 * Added create_footer hook

@@ -24,31 +24,29 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
-		<?php
-		
-		    if ( is_home() || is_archive() ) {
-				
-                the_excerpt();
-				
-            } else {
-				 
+	<?php
+	    if ( is_home() || is_archive() ) {		
+			echo '<div class="entry-summary">';	        	
+	        	the_excerpt();			
+			echo '</div><!-- .entry-summary -->';
+		} 
+		else {
+    		echo '<div class="entry-content">'; 
+			
 			/* translators: %s: Name of current post */
 			the_content( sprintf(
 				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'create' ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
-			
-			 }
-		?>
 
-		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'create' ),
 				'after'  => '</div>',
 			) );
-		?>
-	</div><!-- .entry-content -->
+
+			echo '</div><!-- .entry-content -->';
+		}
+	?>
 
 	<footer class="entry-footer">
 		<?php create_entry_footer(); ?>

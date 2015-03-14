@@ -12,11 +12,9 @@
  */
 function create_jetpack_setup() {
     add_theme_support( 'infinite-scroll', array(
-        'type'              => 'scroll',
-        'container'         => 'main',
-        'footer'            => 'colophon',
-        'posts_per_page'    =>  9,
-        'wrapper'           => false,
+        'container'      => 'main',
+		'footer'         => 'colophon',
+		'wrapper'        => false,
 	) );
 	
     /**

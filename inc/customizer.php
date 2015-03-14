@@ -113,7 +113,7 @@ function create_customize_scripts() {
 
 	$create_misc_links = array(
 							'upgrade_link' 				=> esc_url( 'http://catchthemes.com/themes/create-pro/' ),
-							'upgrade_text'	 			=> __( 'Upgrade To Pro', 'create' ),
+							'upgrade_text'	 			=> __( 'Upgrade To Pro &raquo;', 'create' ),
 						);
 
 	//Add Upgrade Button via localized script

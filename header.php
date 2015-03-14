@@ -35,10 +35,8 @@
 		    </nav><!-- #site-navigation -->
         
             <?php if ( function_exists( 'jetpack_the_site_logo' ) ) jetpack_the_site_logo(); ?>
-
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<p class="site-description"><?php bloginfo( 'description' ); ?></p>
-
 		</div><!-- .site-branding -->
         
         <?php if ( has_nav_menu( 'social' ) ) : ?>

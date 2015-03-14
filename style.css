@@ -3,12 +3,12 @@ Theme Name: Create
 Theme URI: http://catchthemes.com/themes/create/
 Author: Catch Themes
 Author URI: http://catchthemes.com/
-Description: Make a remarkable first impression on your website visitors with a large headline & full-page background. How do you do it best? Do it through Create, our new WordPress Theme! Create is super easy to use and has unconventional out-of-the-box features. It is great for your personal, business or even organizational web portals. Create is based on HTML5, CSS3, Masonry and designed with a mobile-first approach in mind. Your content display will always be clean, smooth and perfect regardless of whether your visitors reach you through smartphone, tablet, laptop, or desktop computer. Create a beautiful, yet professional WordPress site in no time! Check out Theme Instructions at http://catchthemes.com/theme-instructions/create/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/create/
-Version: 1.1
+Description: Make a remarkable first impression on your website visitors with a large headline & full-page background. How do you do it best? Do it through Create, our new WordPress Theme! Create is super easy to use and has unconventional out-of-the-box features. It is great for your personal, business or even organizational web portals. Create is based on HTML5, CSS3 and designed with a mobile-first approach in mind. Your content display will always be clean, smooth and perfect regardless of whether your visitors reach you through smartphone, tablet, laptop, or desktop computer. Create a beautiful, yet professional WordPress site in no time! Check out Theme Instructions at http://catchthemes.com/theme-instructions/create/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/create/
+Version: 1.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: create
-Tags: black, tan, white, light, dark, two-columns, left-sidebar, fixed-layout, responsive-layout, custom-background, custom-menu, editor-style, featured-images, microformats, sticky-post, theme-options, translation-ready
+Tags: black, tan, white, light, dark, two-columns, three-columns, left-sidebar, fixed-layout, responsive-layout, custom-background, custom-menu, editor-style, featured-images, microformats, sticky-post, theme-options, translation-ready
 */
 
 /* =Table of Contents
@@ -1158,18 +1158,11 @@ a:active {
 }
 
 .create-menu ul ul a {
-    border: #fff;
     display: block;
     text-transform: none;
     width: 200px;
 }
 
-.create-menu ul ul a {
-    border: #fff;
-    display: block;
-    text-transform: none;
-    width: 200px;
-}
 .main-navigation ul ul a {
     background-color: #222;
     border-bottom: 1px solid #444;
@@ -1826,7 +1819,7 @@ figure {
     padding-left: 5px;
 }
 
-.content-area-full {
+.no-sidebar-full-width .content-area {
     clear: both;
     width: 100%;
 }

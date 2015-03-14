@@ -38,7 +38,7 @@ function create_body_classes( $classes ) {
     }
 	
 	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	    $classes[] = 'content-area-full';
+	    $classes[] = 'no-sidebar-full-width';
 	}
 
 	return $classes;
