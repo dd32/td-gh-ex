@@ -4,7 +4,7 @@ Theme URI: https://www.competethemes.com/author/
 Author: Compete Themes
 Author URI: https://www.competethemes.com/
 Description: Author is designed for publishers who want readers. That's why Author is fast, responsive, accessibility-ready, and optimally designed for reading. All scripts and stylesheets are minified, concatenated, and conditionally loaded to maximize performance. The layout adapts fluidly to all screen sizes to enhance usability. As one of few accessibility-ready themes, it performs well for users with wide ranges of disabilities. Lastly, based on the ancient Van de Graaf canon, Author is optimally designed for reading. Author is the theme your content deserves.
-Version: 1.03
+Version: 1.04
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, blue, gray, silver, tan, white, dark, light, one-column, two-columns, left-sidebar, fluid-layout, responsive-layout, accessibility-ready, custom-menu, featured-images, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -287,7 +287,7 @@ input[type="submit"] {
   transition: background 0.2s ease-in-out;
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus {
   cursor: pointer;
   background: #5c6066;
 }
@@ -301,19 +301,19 @@ input[type="search"] {
 }
 
 ::-webkit-input-placeholder {
-  color: #b3b3b3;
+  color: #5c6066;
 }
 
 :-moz-placeholder {
-  color: #b3b3b3;
+  color: #5c6066;
 }
 
 ::-moz-placeholder {
-  color: #b3b3b3;
+  color: #5c6066;
 }
 
 :-ms-input-placeholder {
-  color: #b3b3b3;
+  color: #5c6066;
 }
 
 /* ie image border fix */
