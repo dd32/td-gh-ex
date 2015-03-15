@@ -10,7 +10,7 @@ function maxflat_function(){
     <div id="icon-tools"class="icon32"><br></div>
     <h2>MaxFlat Premium</h2>
     <h3>Need extensive documentation and theme support? Learn more about MaxFlat Premium!</h3>
-    <p><a href="http://www.mojo-themes.com/item/maxflat-fully-responsive-flat-design-theme-for-blog-or-small-magazine/?r=netbiel">MaxFlat Premium</a> adds exciting new customization features to the Theme Customizer and other powerful customization tools like shortcodes or layout options. </p>
+    <p><a href="http://mojomarketplace.com/?r=netbiel-CQh3xTiUyF">MaxFlat Premium</a> adds exciting new customization features to the Theme Customizer and other powerful customization tools like shortcodes or layout options. </p>
     <div style="float: left; width: 50%"><p><img src="<?php echo get_template_directory_uri();?>/smart-lib/img/theme-customizer-resize.jpg" alt=""></p></div>
     <div style="float: left; width: 40%; margin-left: 5%; ">
         <div id="submitdiv" class="postbox " style="margin-top: 40px;height: 355px;">
@@ -30,7 +30,7 @@ function maxflat_function(){
                 </div>
 
 
-                <a href="http://www.mojo-themes.com/item/maxflat-fully-responsive-flat-design-theme-for-blog-or-small-magazine/?r=netbiel" class="button button-primary" style="clear: both; margin-top: 210px" target="_blank"><strong>More info &raquo;</strong></a>
+                <a href="http://mojomarketplace.com/?r=netbiel-CQh3xTiUyF" class="button button-primary" style="clear: both; margin-top: 210px" target="_blank"><strong>More info &raquo;</strong></a>
             </div>
 
         </div>
