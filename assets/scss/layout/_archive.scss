@@ -1,0 +1,126 @@
+.post {
+  padding-top: 80px;
+  background-color: $lightest;
+
+  @include query-below($small){
+    padding-top: 15px;
+  }
+
+  &.hero-content {
+    padding-top: 0;
+  }
+
+  .entry-wrapper {
+    position: relative;
+
+    @include query-below($small){
+      padding: 0 1%
+    }
+
+    .entry-header {
+
+      h1 {
+        margin-bottom: 50px;
+        position: relative;
+      }
+    }
+
+    .entry-thumbnail {
+      margin-left: -100px;
+      margin-right: -100px;
+      margin-top: -60px;
+      text-align: center;
+
+      @include query-below ($small) {
+        margin: 0;
+      }
+    }
+
+    .main-wrapper {
+      position: relative;
+      background-color: #f7f7f7;
+      padding: 50px 50px 100px 50px;
+      margin: -50px -50px 0 -50px;
+
+      @include query-below($small){
+        padding: 15px;
+        margin: 0;
+      }
+
+      .entry__read-more {
+        width: 100px;
+        background-color: $accent;
+        text-align: center;
+        margin-bottom: 55px;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include query-below($small){
+          margin-bottom: 15px;
+        }
+
+        a {
+          border-bottom: none;
+          color: $dark;
+        }
+
+      }
+
+      .entry-footer {
+        .entry-meta {
+          display: flex;
+          float: left;
+
+          .hero_categories {
+
+          }
+
+          .posted-on {
+
+            a {
+              border-bottom: none;
+            }
+          }
+
+          .separator {
+            padding-left: 5px;
+            padding-right: 5px;
+          }
+
+        }
+
+        .comments-link {
+          float: right;
+            i {
+              padding-right: 5px;
+            }
+
+          a {
+            border-bottom: none;
+          }
+
+        }
+
+        .cat-links {
+          display: none;
+        }
+
+        @include query-below($small) {
+          padding-bottom: 30px;
+        }
+      }
+
+    }
+
+  }
+
+  &.even-post {
+    background-color: $white;
+
+    .main-wrapper {
+      background-color: $white;
+    }
+
+  }
+
+}
