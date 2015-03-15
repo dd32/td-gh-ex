@@ -10,7 +10,7 @@ function harmonux_info_function(){
     <div id="icon-tools"class="icon32"><br></div>
     <h2>HarmonUX Premium</h2>
     <h3>Need extensive documentation and theme support? Learn more about HarmonUX Premium!</h3>
-    <p><a href="http://www.mojo-themes.com/item/harmonux-clean-responsive-ux-focused-wordpress-theme/">HarmonUX Premium</a> adds exciting new customization features to the Theme Customizer and other powerful customization tools like shortcodes or layout options. </p>
+    <p><a href="https://creativemarket.com/netbiel/220303-HarmonUX-Responsive-UX-focused">HarmonUX Premium</a> adds exciting new customization features to the Theme Customizer and other powerful customization tools like shortcodes or layout options. </p>
     <div style="float: left; width: 50%"><p><img src="<?php echo get_template_directory_uri();?>/admin/css/img/presentation-harmonux.jpg" alt=""></p></div>
     <div style="float: left; width: 40%; margin-left: 5%; ">
         <div id="submitdiv" class="postbox " style="margin-top: 40px;min-height: 295px;">
@@ -30,7 +30,7 @@ function harmonux_info_function(){
                 </div>
 
 
-                <a href="http://www.mojo-themes.com/item/harmonux-clean-responsive-ux-focused-wordpress-theme/" class="button button-primary" style="clear: both; margin-top: 110px" target="_blank"><strong>More info &raquo;</strong></a>
+                <a href="https://creativemarket.com/netbiel/220303-HarmonUX-Responsive-UX-focused" class="button button-primary" style="clear: both; margin-top: 110px" target="_blank"><strong>More info &raquo;</strong></a>
             </div>
 
         </div>
