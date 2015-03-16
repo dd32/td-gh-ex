@@ -1,5 +1,9 @@
 SuevaFree Changelog
 
+- Version 1.2.7.6 - Released: 16.03.2015
+
+-- Fixed : Gallery items with caption, for mobile version.
+
 - Version 1.2.7.5 - Released: 09.03.2015
 
 -- Fixed : Tag title with the older versions of WordPress.

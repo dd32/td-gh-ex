@@ -4,7 +4,7 @@ Theme URI: http://themeinprogress.com/sueva/
 Description: Sueva is a free responsive clean and corporate Tumblelog  WordPress Theme. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like HTML5 and CSS3.
 Author: ThemeinProgress.
 Author URI: http://themeinprogress.com
-Version: 1.2.7.5
+Version: 1.2.7.6
 Tags: gray, light, black, orange, blue, pink, purple, two-columns, right-sidebar, left-sidebar, custom-background, custom-menu, threaded-comments, full-width-template, theme-options,responsive-layout, translation-ready, one-column, photoblogging
 Text Domain: suevafree
 License: GNU General Public License v3 or later
@@ -1605,23 +1605,20 @@ a.email  {
 	.children li {
 		margin-left:0;
 	}
+	
 	.comment-avatar img {
 		margin-right:15px;
 	}
+	
 	.comment-text {
 		margin:0;
 		float:none;
 		border:none;
 		padding:0;
 	}
+	
 	h3#reply-title, h3.comments {
 		font-size:18px;
-	}
-	.gallery .gallery-item{
-		width:100%;
-		float:none;
-		display:block;
-		margin:0 0 5px 0;
 	}
 	
 	.gallery p{
@@ -1629,6 +1626,7 @@ a.email  {
 		display:none;
 		visibility:hidden;
 	}
+	
 	#footer .widget {
 		margin-right: inherit;
 	}
