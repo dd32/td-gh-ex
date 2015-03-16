@@ -5,7 +5,7 @@ Theme URI: http://themeinprogress.com/alhena/
 Description: Alhena is a responsive clean and corporate WordPress Theme. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like HTML5 and CSS3.
 Author: Theme in Progress.
 Author URI: http://themeinprogress.com
-Version: 1.1.0
+Version: 1.1.1
 Tags: gray, black, white, orange, blue, red, purple, yellow, green, dark, light, two-columns, right-sidebar, left-sidebar, custom-background, custom-menu, threaded-comments, full-width-template, theme-options 
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -1739,235 +1739,228 @@ a.email  {
 
 @media screen and (min-width : 0px) and (max-width : 767px)  {	
 
-#top-box .widget-box,
-#footer-box .pin-article {
-	margin-bottom:25px;
-}
-
-#sidebar {
-	margin-top:25px;
-}
-
-#slogan { 
-	margin-top:25px;
-	margin-bottom:25px;
-}
-
-p.form-submit, .button { margin-bottom:10px !important; }
-
-.header {
-	height:auto;
-	margin-top:25px;
-	margin-bottom:25px;
-}
-
-.line {
-	margin-bottom:25px;
-}
-
-#logo {
-	text-align:center;
-}
-
-#slogan p {
-	font-size: 16px;
-	padding: 0 20px;
-}
-
-#sidebar .sidebar-box {
-	padding:20px;
-}
-
-nav#mainmenu {
-	height:inherit;
-	margin-bottom:25px;
-}
-
-nav#mainmenu ul.menu {
-	visibility:hidden;
-	display:none;
-}
-
-.tinynav {
-	display: block;
-	visibility:visible;
-	width: 90% !important;
-	margin:auto;
-	height: auto;
-	padding: 8px 10px;
-	background: #fafafa;
-	color: #333;
-	font-family: "Abel", Times, serif; 
-}
-
-.wp-pagenavi,
-.main-content .pin-article.span8.left-sidebar,
-.main-content .pin-article.span8.right-sidebar,
-.pin-article { 
-	margin-bottom:25px;
-}
-
-.wip-pagination {
-	padding-bottom:50px;
-}
-
-.main-content.blog {
-	margin-top: 25px;
-	margin-bottom: 25px;
-}
-
-.main-content {
-	margin-top: 0;
-	margin-bottom: 25px;
-}
-
-.pin-article .title h1 {
-	font-size:28px !important;
-}
-
-.pin-article article.article { 
-	padding:20px;
-}
-
-#footer .copyright {
-	margin:0;
-	line-height:15px;
-	text-align:center;
-}
-
-.socials {
-	float:none;
-}
-.socials a {
-	margin:0 0 10px 0;
-}
-
-.widget-box {
-	padding:20px 0;
-}
-
-#top-box .widget-box {
-	padding:0;
-}
-
-.row.copyright .span5, 
-.row.copyright .span7{
-	padding:10px 20px;
-	text-align:center;
-}
-
-.entry-info {
-	width:auto;
-	background:none;
-}
-
-.entry-info i  {
-	line-height: 23px;
-	position:absolute;
-	left:20px;
-	margin:0;
-	padding:0
-}
-
-.entry-info .entry-date, 
-.entry-info .entry-comments,
-.entry-info .entry-article,
-.entry-info .entry-standard {
-	display:block;
-	text-align:center;
-	width:inherit;
-	padding:inherit;
-	margin:5px auto;
-}
-
-.header select.select-menu {
-	width:90% !important;
-	margin:0 auto 40px auto;
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0;
-}
-
-/* COMMENTS */
-
-.children li {
-	margin-left:0;
-}
-.comment-avatar img {
-	margin-right:15px;
-}
-.comment-text {
-	margin:0;
-	float:none;
-	border:none;
-	padding:0;
-}
-h3#reply-title, h3.comments {
-	font-size:18px;
-}
-.gallery .gallery-item{
-	width:100%;
-	float:none;
-	display:block;
-	margin:0 0 5px 0;
-}
-
-.gallery p{
-	margin:0;
-	display:none;
-	visibility:hidden;
-}
-#footer .widget {
-	margin-right: inherit;
-}
-.span8.left-sidebar,
-.span8.right-sidebar  {
-	float:inherit;
-}
-
-#sidebar h3.title {
-	font-size:22px;
-	margin:0 0 15px 0;
-}
-
-.skills {
-	margin-bottom:25px;
-	width:100%
-}
-
-.wp-caption { max-width:100% !important; }
-.wp-caption img { margin: auto }
+	#top-box .widget-box,
+	#footer-box .pin-article {
+		margin-bottom:25px;
+	}
+	
+	#sidebar {
+		margin-top:25px;
+	}
+	
+	#slogan { 
+		margin-top:25px;
+		margin-bottom:25px;
+	}
+	
+	p.form-submit, .button { margin-bottom:10px !important; }
+	
+	.header {
+		height:auto;
+		margin-top:25px;
+		margin-bottom:25px;
+	}
+	
+	.line {
+		margin-bottom:25px;
+	}
+	
+	#logo {
+		text-align:center;
+	}
+	
+	#slogan p {
+		font-size: 16px;
+		padding: 0 20px;
+	}
+	
+	#sidebar .sidebar-box {
+		padding:20px;
+	}
+	
+	nav#mainmenu {
+		height:inherit;
+		margin-bottom:25px;
+	}
+	
+	nav#mainmenu ul.menu {
+		visibility:hidden;
+		display:none;
+	}
+	
+	.tinynav {
+		display: block;
+		visibility:visible;
+		width: 90% !important;
+		margin:auto;
+		height: auto;
+		padding: 8px 10px;
+		background: #fafafa;
+		color: #333;
+		font-family: "Abel", Times, serif; 
+	}
+	
+	.wp-pagenavi,
+	.main-content .pin-article.span8.left-sidebar,
+	.main-content .pin-article.span8.right-sidebar,
+	.pin-article { 
+		margin-bottom:25px;
+	}
+	
+	.wip-pagination {
+		padding-bottom:50px;
+	}
+	
+	.main-content.blog {
+		margin-top: 25px;
+		margin-bottom: 25px;
+	}
+	
+	.main-content {
+		margin-top: 0;
+		margin-bottom: 25px;
+	}
+	
+	.pin-article .title h1 {
+		font-size:28px !important;
+	}
+	
+	.pin-article article.article { 
+		padding:20px;
+	}
+	
+	#footer .copyright {
+		margin:0;
+		line-height:15px;
+		text-align:center;
+	}
+	
+	.socials {
+		float:none;
+	}
+	.socials a {
+		margin:0 0 10px 0;
+	}
+	
+	.widget-box {
+		padding:20px 0;
+	}
+	
+	#top-box .widget-box {
+		padding:0;
+	}
+	
+	.row.copyright .span5, 
+	.row.copyright .span7{
+		padding:10px 20px;
+		text-align:center;
+	}
+	
+	.entry-info {
+		width:auto;
+		background:none;
+	}
+	
+	.entry-info i  {
+		line-height: 23px;
+		position:absolute;
+		left:20px;
+		margin:0;
+		padding:0
+	}
+	
+	.entry-info .entry-date, 
+	.entry-info .entry-comments,
+	.entry-info .entry-article,
+	.entry-info .entry-standard {
+		display:block;
+		text-align:center;
+		width:inherit;
+		padding:inherit;
+		margin:5px auto;
+	}
+	
+	.header select.select-menu {
+		width:90% !important;
+		margin:0 auto 40px auto;
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+		border-radius: 0;
+	}
+	
+	/* COMMENTS */
+	
+	.children li {
+		margin-left:0;
+	}
+	.comment-avatar img {
+		margin-right:15px;
+	}
+	.comment-text {
+		margin:0;
+		float:none;
+		border:none;
+		padding:0;
+	}
+	h3#reply-title, h3.comments {
+		font-size:18px;
+	}
+	
+	.gallery p{
+		margin:0;
+		display:none;
+		visibility:hidden;
+	}
+	#footer .widget {
+		margin-right: inherit;
+	}
+	.span8.left-sidebar,
+	.span8.right-sidebar  {
+		float:inherit;
+	}
+	
+	#sidebar h3.title {
+		font-size:22px;
+		margin:0 0 15px 0;
+	}
+	
+	.skills {
+		margin-bottom:25px;
+		width:100%
+	}
+	
+	.wp-caption { max-width:100% !important; }
+	.wp-caption img { margin: auto }
 
 }
 
 @media screen and (min-width : 768px) and (max-width : 979px)  {	
 
-nav#mainmenu ul li a {
-	font-size:14px !important;
-	padding:35px 5px;
-}
+	nav#mainmenu ul li a {
+		font-size:14px !important;
+		padding:35px 5px;
+	}
 
 }
 
 @media screen and (min-width : 0px) and (max-width : 320px) {	
-
-#searchform #searchsubmit {
-	width:35%;
-}
-#searchform .input-search {
-	width:60%;
-}
+	
+	#searchform #searchsubmit {
+		width:35%;
+	}
+	#searchform .input-search {
+		width:60%;
+	}
 
 }
 
 @media screen and (min-width : 0px) and (max-width : 479px)  {	
 
-.pin-article h1.title {
-	font-size:22px;
-}
-.pin-article .quote blockquote p {
-	font-size: 16px;
-}
-
+	.pin-article h1.title {
+		font-size:22px;
+	}
+	.pin-article .quote blockquote p {
+		font-size: 16px;
+	}
 
 }
