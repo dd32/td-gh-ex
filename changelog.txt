@@ -1,6 +1,11 @@
 == Change log ==
 
-= 1.4=
+= 1.5 =
+* Added Swedish translation sv_SE.po and sv_SE.mo
+* Bug Fixed: update keyword _nx:1,2,4c from _nx:1,2 in language file catchbase.pot
+* Bug Fixed: Skype Social icon and open link in new window for email issues
+
+= 1.4 =
 * Bug Fixed: Content Width Issue
 * Bug Fixed: Html is now allowed in Featured Content Headline and Sub-headline
 * Bug Fixed: Header Right Social Icon
