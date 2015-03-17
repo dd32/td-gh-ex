@@ -15,7 +15,7 @@
         	<div class="info-copyright">
                 <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'fmi' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'fmi' ), 'WordPress' ); ?></a>
                 <span class="sep"> | </span>
-                <?php printf( __( 'Theme: %1$s by %2$s.', 'fmi' ), 'Fmi', '<a href="http://www.forrss.com/" rel="designer">Forrss</a>' ); ?>
+                <?php printf( __( 'Theme: %1$s by %2$s.', 'fmi' ), 'Fmi', '<a href="http://forrss.com/" rel="designer">Forrss</a>' ); ?>
             </div>
             
 			<div class="info-social">

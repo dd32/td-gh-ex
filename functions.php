@@ -157,22 +157,6 @@ function fmi_theme_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'fmi_theme_scripts' );
 
-function fmi_theme_title($title,$sep) {
-	global $paged, $page;
-	if ( is_feed() )
-		return $title;
-	$title .= get_bloginfo( 'name', 'display' );
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title";
-	if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'fmi' ), max( $paged, $page ) );
-	return $title;
-}
-if ( ! function_exists( '_wp_render_title_tag' ) ) {
-	add_filter('wp_title','fmi_theme_title',10,2);
-}
-
 function fmi_theme_styles(){
 	echo '<style type="text/css" media="screen">';
 	if(of_get_option('vs-body-google-font-name') <> ""){echo "body{".of_get_option('vs-body-google-font-name')."}";}
@@ -181,11 +165,6 @@ function fmi_theme_styles(){
 	echo '</style>';
 }
 add_action('wp_head', 'fmi_theme_styles', 11);
-
-/**
- * Implement the Custom Header feature.
- */
-//require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
