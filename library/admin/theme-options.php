@@ -849,7 +849,7 @@ function attitude_theme_options_validate( $options ) {
     
 	//Custom CSS Style Validation
 	if ( isset( $input['custom_css'] ) ) {
-		$input_validated['custom_css'] = wp_kses_stripslashes($input['custom_css']);
+		$input_validated['custom_css'] = wp_filter_nohtml_kses($input['custom_css']);
 	}
 	   
 	if( isset( $input[ 'analytic_header' ] ) ) {

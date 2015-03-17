@@ -160,7 +160,10 @@ function attitude_headerdetails() {
 									<?php bloginfo( 'name' ); ?>
 								</a>
 							</h1>
+					<?php $site_description = get_bloginfo( 'description', 'display' );
+							if($site_description){?>
 							<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
+					<?php } ?>
 						<?php
 						}
 						elseif( $options[ 'header_show' ] != 'disable-both' && $options[ 'header_show' ] == 'header-logo' ) {
