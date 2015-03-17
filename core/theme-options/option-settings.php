@@ -57,8 +57,8 @@ $site ="http://www.weblizar.com" ;?>
 			</div>	
 		</div>	
 		<div class="section">
-			<h3><?php _e('Home-Page or Custom Page','weblizar'); ?></h3>
-			<input type="checkbox" <?php if($wl_theme_options['_frontpage']=='on') echo "checked='checked'"; ?> id="_frontpage" name="_frontpage" > <span class="explain"><?php _e('Enable Custom Static Front-Page.','weblizar');?> <a href="<?php echo home_url( '/' ); ?>wp-admin/options-reading.php"><?php _e('Click Here','weblizar');?></a>.</span>
+		<h3><?php _e('Home-Page or Custom Page','weblizar'); ?></h3>
+		<input type="checkbox" name="_frontpage" value="1" <?php checked( $wl_theme_options['_frontpage'], 1 ); ?> /><span class="explain"><?php _e('Enable front-page on the HOME','weblizar');?> <a href="<?php echo esc_url(home_url( '/' )); ?>wp-admin/options-reading.php"><?php _e('Click Here','weblizar');?></a>.</span> 
 		</div>
 		<div class="section">
 			<h3><?php _e('Custom Logo','weblizar'); ?></h3>
@@ -81,7 +81,7 @@ $site ="http://www.weblizar.com" ;?>
 		</div>
 		<div class="section">
 			<h3><?php _e('Text Title','weblizar'); ?></h3>
-			<input type="checkbox" <?php if($wl_theme_options['text_title']=='on') echo "checked='checked'"; ?> id="text_title" name="text_title" > <span class="explain"><?php _e('Enable text-based Site Title.   Setup title','weblizar');?> <a href="<?php echo home_url( '/' ); ?>wp-admin/options-general.php"><?php _e('Click Here','weblizar');?></a>.</span>
+			<input type="checkbox" name="text_title" value="1" <?php checked( $wl_theme_options['text_title'], 1 ); ?> /><span class="explain"><?php _e('Enable text-based Site Title.   Setup title','weblizar');?> <a href="<?php echo home_url( '/' ); ?>wp-admin/options-general.php"><?php _e('Click Here','weblizar');?></a>.</span>
 		</div>
 		<div class="section">
 			<h3><?php _e('Custom Favicon','weblizar'); ?></h3>
@@ -96,12 +96,7 @@ $site ="http://www.weblizar.com" ;?>
 			<h3><?php _e('Custom css','weblizar'); ?></h3>
 			<textarea rows="8" cols="8" id="custom_css" name="custom_css"><?php if($wl_theme_options['custom_css']!='') { echo esc_attr($wl_theme_options['custom_css']); } ?></textarea>
 			<div class="explain"><?php _e('This is a powerful feature provided here. No need to use custom css plugin, just paste your css code and see the magic.','weblizar'); ?><br></div>
-		</div>
-		<div class="section">
-			<h3><?php _e('Home-Blog Heading','weblizar'); ?></h3>
-			<input  class="weblizar_inpute" type="text" name="blog_title" id="blog_title"  value="<?php if($wl_theme_options['blog_title']!='') { echo esc_attr($wl_theme_options['blog_title']); } ?>" >	
-			<span class="explain"><?php  _e('Home Blog Heading ','weblizar');?></span>
-		</div>		
+		</div>	
 		<div id="button_section">
 			<input type="hidden" value="1" id="weblizar_settings_save_general" name="weblizar_settings_save_general" />			
 			<input class="button" type="button" name="reset" value="Restore Defaults" onclick="weblizar_option_data_reset('general');">
@@ -301,8 +296,8 @@ $site ="http://www.weblizar.com" ;?>
 			</table>			
 		</div>
 		<div class="section">
-			<h3><?php _e('Enable Portfolio on Home','weblizar'); ?></h3>
-			<input type="checkbox" <?php if($wl_theme_options['portfolio_home']=='on') echo "checked='checked'"; ?> id="portfolio_home" name="portfolio_home" > <span class="explain"><?php _e('Enable Portfolio On Home.','weblizar');?></span>
+			<h3><?php _e('Enable Portfolio on Home','weblizar'); ?></h3>			
+			<input type="checkbox" name="portfolio_home" value="1" <?php checked( $wl_theme_options['portfolio_home'], 1 ); ?> /><span class="explain"><?php _e('Enable Portfolio On Home.','weblizar');?></span>
 		</div>
 		<div class="section">					
 		<h3><?php _e('Portfolio Section Heading','weblizar'); ?></h3>
@@ -626,9 +621,9 @@ $site ="http://www.weblizar.com" ;?>
 			</table>	
 		</div>		
 		<div class="section">
-			<h3><?php _e('Enable Social media:','weblizar'); ?>  </h3>
-			<input type="checkbox" <?php if($wl_theme_options['header_social_media_in_enabled']=='on') echo "checked='checked'"; ?> id="header_social_media_in_enabled" name="header_social_media_in_enabled" > <span class="explain"><?php _e('Enable social media Header Section.','weblizar'); ?></span>
-			<input type="checkbox" <?php if($wl_theme_options['footer_section_social_media_enbled']=='on') echo "checked='checked'"; ?> id="footer_section_social_media_enbled" name="footer_section_social_media_enbled" > <span class="explain"><?php _e('Enable Social media in Footer section.','weblizar'); ?></span>
+			<h3><?php _e('Enable Social media:','weblizar'); ?>  </h3>			
+			<input type="checkbox" name="header_social_media_in_enabled" value="1" <?php checked( $wl_theme_options['header_social_media_in_enabled'], 1 ); ?> /><span class="explain"><?php _e('Enable social media Header Section.','weblizar'); ?></span>
+			<input type="checkbox" name="footer_section_social_media_enbled" value="1" <?php checked( $wl_theme_options['footer_section_social_media_enbled'], 1 ); ?> /> <span class="explain"><?php _e('Enable Social media in Footer section.','weblizar'); ?></span>
 		</div>
 		<div class="section">
 			<h3><?php _e('E-mail:','weblizar');?></h3>
@@ -765,6 +760,40 @@ $site ="http://www.weblizar.com" ;?>
 	</form>	
 </div>
 <!---------------- footer customization Settings form ------------------------>
+
+<div class="block ui-tabs-panel deactive" id="option-homeblog" >
+	<form method="post" id="weblizar_theme_options_homeblog">
+		<div id="heading">
+			<table style="width:100%;"><tr>
+				<td cols=2 ><h2><?php _e('Home Blog','weblizar');?></h2></td>
+				<td style="width:30%;">
+					<div class="weblizar_settings_loding" id="weblizar_loding_homeblog_image"></div>
+					<div class="weblizar_settings_massage" id="weblizar_settings_save_homeblog_success" ><?php _e('Options Data updated','weblizar');?></div>
+					<div class="weblizar_settings_massage" id="weblizar_settings_save_homeblog_reset" ><?php _e('Options data Reset','weblizar');?></div>
+				</td>
+				<td style="text-align:right;">					
+					<input class="button" type="button" name="reset" value="Restore Defaults" onclick="weblizar_option_data_reset('homeblog');">
+					<input class="button button-primary" type="button" value="Save Options" onclick="weblizar_option_data_save('homeblog')" >
+				</td>
+				</tr>
+			</table>			
+		</div>
+		<div class="section">
+		<h3><?php _e('Home-Page Blog','weblizar'); ?></h3>
+		<input type="checkbox" name="show_blog" value="1" <?php checked( $wl_theme_options['show_blog'], 1 ); ?> /><span class="explain"><?php _e('Enable Blog Posts on HOME Page','weblizar');?>.</span> 
+		</div>	
+		<div class="section">
+			<h3><?php _e('Home-Blog Heading','weblizar'); ?></h3>
+			<input  class="weblizar_inpute" type="text" name="blog_title" id="blog_title"  value="<?php if($wl_theme_options['blog_title']!='') { echo esc_attr($wl_theme_options['blog_title']); } ?>" >	
+			<span class="explain"><?php  _e('Home Blog Heading ','weblizar');?></span>
+		</div>			
+		<div id="button_section">
+			<input type="hidden" value="1" id="weblizar_settings_save_homeblog" name="weblizar_settings_save_homeblog" />			
+			<input class="button" type="button" name="reset" value="Restore Defaults" onclick="weblizar_option_data_reset('homeblog');">
+			<input class="button button-primary" type="button" value="Save Options" onclick="weblizar_option_data_save('homeblog')" >
+		</div>
+	</form>	
+</div>
 <?php $demo = "http://weblizar.com/themes/enigma-premium/";
 $purchase ="http://weblizar.com/themes/enigma-premium/";
 $theme_name ="Enigma"; 

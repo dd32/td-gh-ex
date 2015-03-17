@@ -14,11 +14,11 @@
 				if($_POST['text_title']){
 				echo $wl_theme_options['text_title']=sanitize_text_field($_POST['text_title']); } 
 				else
-				{ echo $wl_theme_options['text_title']="off"; }
+				{ echo $wl_theme_options['text_title']=""; }
 				if($_POST['_frontpage']){
 				echo $wl_theme_options['_frontpage']=sanitize_text_field($_POST['_frontpage']); } 
 				else
-				{ echo $wl_theme_options['_frontpage']="off"; }		
+				{ echo $wl_theme_options['_frontpage']=""; }		
 					
 				update_option('enigma_options', stripslashes_deep($wl_theme_options));
 		}	
@@ -61,7 +61,7 @@
 			if($_POST['portfolio_home']){
 				echo $wl_theme_options['portfolio_home']=sanitize_text_field($_POST['portfolio_home']); } 
 				else
-				{ echo $wl_theme_options['portfolio_home']="off"; } 
+				{ echo $wl_theme_options['portfolio_home']=""; } 
 			update_option('enigma_options', stripslashes_deep($wl_theme_options));
 			
 		}	
@@ -105,12 +105,12 @@
 			// Social Icons footer section yes or on
 			if(isset($_POST['footer_section_social_media_enbled']))
 			{  $wl_theme_options['footer_section_social_media_enbled'] = $_POST['footer_section_social_media_enbled'];
-			} else {  	echo $wl_theme_options['footer_section_social_media_enbled'] = "off";	} 
+			} else {  	echo $wl_theme_options['footer_section_social_media_enbled'] = "";	} 
 			
 			// Social Icons footer section yes or on
 			if(isset($_POST['header_social_media_in_enabled']))
 			{  $wl_theme_options['header_social_media_in_enabled'] = $_POST['header_social_media_in_enabled'];
-			} else {  	echo $wl_theme_options['header_social_media_in_enabled'] = "off";	}
+			} else {  	echo $wl_theme_options['header_social_media_in_enabled'] = "";	}
 			
 			update_option('enigma_options', stripslashes_deep($wl_theme_options));
 			
@@ -156,6 +156,29 @@
 		if($_POST['weblizar_settings_save_footercall'] == 2) 
 		{
 			wl_reset_footer_footercall_setting();
+		}
+	}
+	
+	/*
+	* HOme-Blog Settings
+	*/
+	if(isset($_POST['weblizar_settings_save_homeblog']))
+	{	
+		if($_POST['weblizar_settings_save_homeblog'] == 1) 
+		{
+			foreach($_POST as  $key => $value)
+			{
+				$wl_theme_options[$key]=sanitize_text_field($_POST[$key]);	
+			}
+			if($_POST['show_blog']){
+				echo $wl_theme_options['show_blog']=sanitize_text_field($_POST['show_blog']); } 
+				else
+				{ echo $wl_theme_options['show_blog']=""; }
+			update_option('enigma_options', stripslashes_deep($wl_theme_options));
+		}	
+		if($_POST['weblizar_settings_save_homeblog'] == 2) 
+		{
+			wl_reset_footer_homeblog_setting();
 		}
 	}
 ?>

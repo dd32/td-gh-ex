@@ -91,8 +91,10 @@ $purchase = "http://weblizar.com/themes/enigma-premium/" ;?>
 							<li class="currunt" ><a href="#" class="ui-tabs-anchor" id="general"><?php _e('General Option','weblizar');?> </a></li>
 							<li><a href="#"  id="home-image"><?php _e('Slide show Option','weblizar');?></a></li>								
 							<li><a href="#"  id="home-service"><?php _e('Service Option','weblizar');?></a></li>
-							<li><a href="#"  id="portfolio-settings"><?php _e('Portfolio Option','weblizar');?></a></li>	
+							<li><a href="#"  id="portfolio-settings"><?php _e('Portfolio Option','weblizar');?></a></li>
+							<li><a href="#"  id="homeblog"><?php _e('Home Blog Option','weblizar');?></a></li>
 							<li><a href="#"  id="footercall"><?php _e('Footer Callout Option','weblizar');?></a></li>
+						
 						</ul>
 						</li>					
 						<li><a href="#" id="social"><div class="dashicons dashicons-twitter"></div><?php _e('Social Media','weblizar');?></a></li>

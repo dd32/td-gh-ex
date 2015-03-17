@@ -9,9 +9,9 @@ function wl_reset_general_setting()
 	$wl_theme_options['upload_image_logo']="";
 	$wl_theme_options['height']=55;
 	$wl_theme_options['width']=150;
-	$wl_theme_options['_frontpage'] ="on";
+	$wl_theme_options['_frontpage'] ="1";
 	$wl_theme_options['upload_image_favicon']="";
-	$wl_theme_options['text_title']="on";
+	$wl_theme_options['text_title']="";
 	$wl_theme_options['custom_css']="";		
 	update_option('enigma_options',$wl_theme_options);
 }
@@ -57,7 +57,7 @@ function wl_reset_portfolio_setting()
 	$ImageUrl7 = WL_TEMPLATE_DIR_URI ."/images/portfolio4.png";
 	$ImageUrl8 = WL_TEMPLATE_DIR_URI ."/images/portfolio5.png";
 	$ImageUrl9 = WL_TEMPLATE_DIR_URI ."/images/portfolio6.png";
-	$wl_theme_options['portfolio_home'] = "off";
+	$wl_theme_options['portfolio_home'] = "";
 	$wl_theme_options['port_heading']="Recent Works";
 	$wl_theme_options['port_1_img']=$ImageUrl4;
 	$wl_theme_options['port_2_img']=$ImageUrl5;
@@ -106,14 +106,14 @@ function wl_reset_service_setting()
 
 function wl_reset_social_setting()
 {
-	$wl_theme_options['footer_section_social_media_enbled']="on";
-	$wl_theme_options['header_social_media_in_enabled']="on";	
+	$wl_theme_options['footer_section_social_media_enbled']="1";
+	$wl_theme_options['header_social_media_in_enabled']="1";	
 	$wl_theme_options['twitter_link']="#";
 	$wl_theme_options['fb_link']="#";
 	$wl_theme_options['linkedin_link']="#";
 	$wl_theme_options['youtube_link']="#";
 	$wl_theme_options['dribble_link'] = "#";
-	$wl_theme_options['email_id'] ="enigma@mymail.com";
+	$wl_theme_options['email_id'] ="example@mymail.com";
 	$wl_theme_options['phone_no'] ="0159753586";
 	update_option('enigma_options', $wl_theme_options);
 }
@@ -132,10 +132,17 @@ function wl_reset_footer_customizations_setting()
 }
 
 function wl_reset_footer_footercall_setting () {
-	$wl_theme_options['blog_title']="Latest Blog";
+	
 	$wl_theme_options['fc_title']="Lorem Ipsum is simply dummy text of the printing and typesetting industry. ";
 	$wl_theme_options['fc_btn_txt']="Weblizar";
 	$wl_theme_options['fc_btn_link']="http://weblizar.com/";
+	update_option('enigma_options',$wl_theme_options);
+}
+
+function wl_reset_footer_homeblog_setting() {
+	
+	$wl_theme_options['show_blog'] = '1';
+	$wl_theme_options['blog_title']="Latest Blog";
 	update_option('enigma_options',$wl_theme_options);
 }
 ?>

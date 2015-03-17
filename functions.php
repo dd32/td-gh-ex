@@ -29,8 +29,8 @@
 			'upload_image_logo'=>'',
 			'height'=>'55',
 			'width'=>'150',
-			'_frontpage' => 'on',
-			'text_title'=>'off',
+			'_frontpage' => '1',
+			'text_title'=>'',
 			'upload_image_favicon'=>'',			
 			'custom_css'=>'',
 			'slide_image_1' => $ImageUrl,
@@ -48,13 +48,13 @@
 			'slide_desc_3' => __('Aldus PageMaker including versions of Lorem Ipsum, rutrum turpi', 'weblizar' ),
 			'slide_btn_text_3' => __('Read More', 'weblizar' ),
 			'slide_btn_link_3' => '#',			
-			'blog_title'=>__('Latest Blog', 'weblizar' ),			
+						
 			'fc_title' => __('Lorem Ipsum is simply dummy text of the printing and typesetting industry. ', 'weblizar' ),
 			'fc_btn_txt' => __('More Features', 'weblizar' ),
 			'fc_btn_link' =>'#',
 			//Social media links
-			'header_social_media_in_enabled'=>'on',
-			'footer_section_social_media_enbled'=>'on',
+			'header_social_media_in_enabled'=>'1',
+			'footer_section_social_media_enbled'=>'1',
 			'twitter_link' =>"#",
 			'fb_link' =>"#",
 			'linkedin_link' =>"#",
@@ -62,7 +62,7 @@
 			'instagram' =>"#",
 			'gplus' =>"#",
 			
-			'email_id' => 'enigma@mymail.com',
+			'email_id' => 'example@mymail.com',
 			'phone_no' => '0159753586',
 			'footer_customizations' => __(' &#169; 2015 Enigma Theme', 'weblizar' ),
 			'developed_by_text' => __('Theme Developed By', 'weblizar' ),
@@ -86,7 +86,7 @@
 			'service_3_link'=>"#",			
 
 			//Portfolio Settings:
-			'portfolio_home'=>'on',
+			'portfolio_home'=>'1',
 			'port_heading' => __('Recent Works', 'weblizar' ),
 			'port_1_img'=> $ImageUrl4,
 			'port_1_title'=>__('Bonorum', 'weblizar' ),
@@ -99,7 +99,10 @@
 			'port_3_link'=>'#',
 			'port_4_img'=> $ImageUrl7,
 			'port_4_title'=>__('randomised', 'weblizar' ),
-			'port_4_link'=>'#'
+			'port_4_link'=>'#',
+			//BLOG Settings
+			'show_blog' => '1',
+			'blog_title'=>__('Latest Blog', 'weblizar' )
 			
 		);
 		return apply_filters( 'enigma_options', $wl_theme_options );
