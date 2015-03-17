@@ -2,6 +2,12 @@
 Rubine Lite Changelog
 ===================================
 
+Version 1.0.9
+-----------------------------------
+[added] language files for Dutch, Italian and Spanish translation
+[changed] implementation of title tag to add_theme_support method
+[removed] old unnecessary wp_title filter function
+
 Version 1.0.8
 -----------------------------------
 [added] setting for deactivating google fonts in case they are not compatible with user language
