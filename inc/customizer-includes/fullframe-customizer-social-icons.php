@@ -36,27 +36,45 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	foreach ( $fullframe_social_icons as $option ){
 		$lower_case_option	=	str_replace( ' ', '_', strtolower( $option ) );
 			
-		if( $option == 'Email' ){
+		if( $option == 'Skype' ){
 			$wp_customize->add_setting( 'fullframe_theme_options['. $lower_case_option .'_link]', array(
 					'capability'		=> 'edit_theme_options',
-					'sanitize_callback' => 'sanitize_email',
+					'sanitize_callback' => 'esc_attr',
 				) );
+
+			$wp_customize->add_control( 'fullframe_'. $lower_case_option .'_link', array(
+				'description'	=> __( 'Skype link can be of formats:<br>callto://+{number}<br> skype:{username}?{action}. More Information in readme file', 'fullframe' ),
+				'label'    		=> $option,
+				'priority' 		=> $i + '2',
+				'section'  		=> 'fullframe_social_links',
+				'settings' 		=> 'fullframe_theme_options['. $lower_case_option .'_link]',
+				'type'	   		=> 'url',
+			) );
 		}
 		else {
-			$wp_customize->add_setting( 'fullframe_theme_options['. $lower_case_option .'_link]', array(
-					'capability'		=> 'edit_theme_options',
-					'sanitize_callback' => 'esc_url_raw',
-				) );
+			if( $option == 'Email' ){
+				$wp_customize->add_setting( 'fullframe_theme_options['. $lower_case_option .'_link]', array(
+						'capability'		=> 'edit_theme_options',
+						'sanitize_callback' => 'sanitize_email',
+					) );
+			}
+			
+			else {
+				$wp_customize->add_setting( 'fullframe_theme_options['. $lower_case_option .'_link]', array(
+						'capability'		=> 'edit_theme_options',
+						'sanitize_callback' => 'esc_url_raw',
+					) );
+			}
+
+			$wp_customize->add_control( 'fullframe_'. $lower_case_option .'_link', array(
+				'label'    => $option,
+				'priority' => $i + '2',
+				'section'  => 'fullframe_social_links',
+				'settings' => 'fullframe_theme_options['. $lower_case_option .'_link]',
+				'type'	   => 'url',
+			) );
 		}
 
-		$wp_customize->add_control( 'fullframe_'. $lower_case_option .'_link', array(
-			'label'    => $option,
-			'priority' => $i + '2',
-			'section'  => 'fullframe_social_links',
-			'settings' => 'fullframe_theme_options['. $lower_case_option .'_link]',
-			'type'	   => 'url',
-		) );
-	
-		$i++;
+		$i++;	
 	}
 	// Social Icons End

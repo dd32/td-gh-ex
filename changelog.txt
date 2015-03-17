@@ -1,7 +1,12 @@
 == Change log ==
 
-= 0.9=
-* Bug fixed: Check class logo left or logo right only when there is logo and logo is not disabled
+= 1.1 =
+* Added Swedish translation sv_SE.po and sv_SE.mo
+* Bug Fixed: update keyword _nx:1,2,4c from _nx:1,2 in language file fullframe.pot
+* Bug Fixed: Skype Social icon and open link in new window for email issues
+
+= 1.0 =
+* Bug fixed: Check class logo left or logo right only when there is logo and is not disabled
 * Bug Fixed: Featured Content Layout Type css issue
 * Bug Fixed: added missing keyword _nx:1,2 and esc_html__ in language file fullframe.pot
 
@@ -30,7 +35,7 @@
 * Bug Fixed: Responsive style for menu and header details
 * Bug Fixed: Layout Options style
 * Changed demo featured content image and text
-* Changed get_page to get_post as get_page is depriciated
+* Changed get_page to get_post as get_page is depreciated
 * Changed default value for single_post_image_layout to disabled
 * Changed default value for featured_image_size to slider
 * Fixed header text condition for Sidebar

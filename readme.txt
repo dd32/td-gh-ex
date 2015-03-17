@@ -12,6 +12,7 @@ Support Forum: http://catchthemes.com/support-forum/forum/full-frame-free/
 == Translation ==
 
 Full Frame theme is translation ready.
+Added Translation for Swedish by Anders Paulcén ( Email: anderspaulcen@gmail.com )
 
 
 == License ==
@@ -118,6 +119,28 @@ Available icons:
 * Vimeo
 * WordPress
 * YouTube
+
+Skype Link:
+Skype link can have several formats which are documented below:
+Username:
+    skype:profile_name?action 
+
+    Examples of such actions are
+    * call        to call
+    * chat        to chat
+    * voicemail   to leave a voice mail
+    * sendfile    to send a file
+    * add         to add to contacts
+    * userinfo    to view profile
+
+    E.g: skype:echo123?call
+    This will initiate test call use skype usenarme echo123
+
+Number:
+    callto://+*********** 
+
+    E.g: callto://+14044627491
+    This will initiate Skype to call phone number 14044627491
 
 = Theme Instructions =
 
