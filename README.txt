@@ -71,6 +71,10 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.0.6
+* Styling bug on WooCommerce checkout page fixed
+* Added link to a demo to the TopShop Premium page
+
 #### 1.0.5
 * Added functionality to add own logo
 * Stopped navigation from hiding until page is loaded

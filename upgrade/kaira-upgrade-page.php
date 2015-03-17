@@ -8,7 +8,9 @@
     </h2>
     
     <div class="kaira-page-description">
-        <?php _e( '<a href="http://www.kairaweb.com/" target="_blank">Visit our website</a> to view our other Themes and Plugins', 'topshop' ); ?>
+        <p><?php _e( '<a href="http://www.kairaweb.com/" target="_blank">Visit our website</a> to view our other Themes and Plugins', 'topshop' ); ?></p>
+        
+        <p><?php _e( 'We also have the option for you to <a href="http://demo.kairaweb.com/topshop-setup-demo/" target="_blank"><big>buy a fully setup demo</big></a> of TopShop which has the pages you will need already set up.', 'topshop' ); ?></p>
     </div>
     
     <table class="form-table">
