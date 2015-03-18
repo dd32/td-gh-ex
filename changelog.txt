@@ -1,5 +1,11 @@
 == Changelog ==
 
+Version 3.5.1
+* Bug Fixed: Error 404 page templage style
+* Bug Fixed: Header image space issue in mobile devices
+* Updated Ukrainian translation uk.po and uk.mo
+* Updated Swedish translation sv_SE.po and sv_SE.mo
+
 Version 3.5
 * Added Ukrainian translation uk.po and uk.mo
 * Bug Fixed: Footer content not changing as per changes made in Site title using customizer (Reported by Peter Kember)

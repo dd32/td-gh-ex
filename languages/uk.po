@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-18 18:28+0545\n"
-"PO-Revision-Date: 2015-02-18 18:28+0545\n"
+"POT-Creation-Date: 2015-03-18 20:20+0545\n"
+"PO-Revision-Date: 2015-03-18 20:20+0545\n"
 "Last-Translator: Alexandr Baryshnyev <abb@eksi.net>\n"
 "Language-Team: Eksi.Net <info@eksi.net>\n"
 "Language: uk\n"
@@ -120,9 +120,9 @@ msgstr ""
 #, php-format
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "%1$s коментар до &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s коментара до &ldquo;%2$s&rdquo;"
-msgstr[2] "%1$s коментарів до &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s коментар до сторінки &Prime;%2$s&Prime;"
+msgstr[1] "%1$s коментара до сторінки &Prime;%2$s&Prime;"
+msgstr[2] "%1$s коментарів до сторінки &Prime;%2$s&Prime;"
 
 #: ../comments.php:40 ../comments.php:60
 msgid "Comment navigation"
@@ -223,7 +223,7 @@ msgid ""
 "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
 "title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
-"Опубліковано у розділах %1$s та помічено мітками %2$s. <a href=\"%3$s\" "
+"Опубліковано у розділах: %1$s та помічено мітками: %2$s. <a href=\"%3$s\" "
 "title=\"Постійне посилання на %4$s\" rel=\"bookmark\">Постійне посилання для "
 "закладок</a>."
 
@@ -233,8 +233,8 @@ msgid ""
 "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title="
 "\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
-"Опубліковано у розділах %1$s. <a href=\"%3$s\" title=\"Постійне посилання на "
-"%4$s\" rel=\"bookmark\">Постійне посилання для закладок</a>."
+"Опубліковано у розділах: %1$s. <a href=\"%3$s\" title=\"Постійне посилання "
+"на %4$s\" rel=\"bookmark\">Постійне посилання для закладок</a>."
 
 #: ../content-gallery.php:17
 msgid "Gallery"
@@ -252,13 +252,13 @@ msgstr[2] "Цей альбом містить у собі <a %1$s>%2$s зобр�
 #: ../content.php:75
 #, php-format
 msgid "<span class=\"%1$s\">Posted in</span> %2$s"
-msgstr "<span class=\"%1$s\">Опубліковано у розділах</span> %2$s"
+msgstr "<span class=\"%1$s\">Опубліковано у розділах:</span> %2$s"
 
 #: ../content-gallery.php:84 ../content-image.php:65 ../content-quote.php:66
 #: ../content.php:87
 #, php-format
 msgid "<span class=\"%1$s\">Tagged</span> %2$s"
-msgstr "<span class=\"%1$s\">Помічено мітками</span> %2$s"
+msgstr "<span class=\"%1$s\">Помічено мітками:</span> %2$s"
 
 #: ../content-image.php:16
 msgid "Image"
@@ -309,8 +309,8 @@ msgid ""
 "Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark"
 "\">permalink</a>."
 msgstr ""
-"Опубліковано у розділах %1$s та помічено мітками %2$s автором <a href=\"%6$s"
-"\">%5$s</a>. <a href=\"%3$s\" title=\"Постійне посилання на %4$s\" rel="
+"Опубліковано у розділах: %1$s та помічено мітками: %2$s автором <a href="
+"\"%6$s\">%5$s</a>. <a href=\"%3$s\" title=\"Постійне посилання на %4$s\" rel="
 "\"bookmark\">Постійне посилання для закладок</a>."
 
 #: ../content-single.php:49
@@ -319,7 +319,7 @@ msgid ""
 "This entry was posted in %1$s by <a href=\"%6$s\">%5$s</a>. Bookmark the <a "
 "href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
-"Опубліковано у розділах %1$s автором <a href=\"%6$s\">%5$s</a>. <a href="
+"Опубліковано у розділах: %1$s автором <a href=\"%6$s\">%5$s</a>. <a href="
 "\"%3$s\" title=\"Постійне посилання на %4$s\" rel=\"bookmark\"> Постійне "
 "посилання для закладок</a>."
 
@@ -409,11 +409,11 @@ msgstr "Пересування по публікаціях"
 
 #: ../functions.php:534 ../functions.php:563
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</span> Старіші публькації"
+msgstr "<span class=\"meta-nav\">&larr;</span> Попередні публікації"
 
 #: ../functions.php:535 ../functions.php:564
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Новіші публікації <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Наступні публікації <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../functions.php:642
 msgid "Pingback:"
@@ -488,11 +488,11 @@ msgstr "Пересування по зображеннях"
 
 #: ../image.php:16
 msgid "&larr; Previous"
-msgstr "&larr; Попередня публікація"
+msgstr "&larr; Попереднє"
 
 #: ../image.php:17
 msgid "Next &rarr;"
-msgstr "Наступна публікація &rarr;"
+msgstr "Наступне &rarr;"
 
 #: ../image.php:27
 #, php-format
@@ -534,15 +534,15 @@ msgstr "Макет змісту"
 
 #: ../inc/theme-options.php:137
 msgid "Excerpt Length in Words"
-msgstr "Кількість слів у витягу до \"Читати далі ...\""
+msgstr "Кількість слів у витягу перед посиланням \"Читати далі ...\""
 
 #: ../inc/theme-options.php:145
 msgid "Feed Redirect URL"
-msgstr "Потік перенаправленн (Feed Redirect) URL-адреси"
+msgstr "Потік перенаправленнь (Feed Redirect) URL-адреси"
 
 #: ../inc/theme-options.php:153
 msgid "Move Site Title and Tagline?"
-msgstr "Перемістити Назва сайту (Title) та Гасло сайту (Tagline)?"
+msgstr "Перемістити Назву сайту (Title) та Гасло сайту (Tagline)?"
 
 #: ../inc/theme-options.php:161
 msgid "Default Display Text in Search"
@@ -554,7 +554,7 @@ msgstr "Заборонити форму пошуку в заголовку?"
 
 #: ../inc/theme-options.php:177
 msgid "Enable Secondary & Footer Menu in Mobile Devices?"
-msgstr "Enable Secondary & Footer Menu in Mobile Devices?"
+msgstr "Дозволити показувати вторинне та нижнє меню для мобільних пристроїв?"
 
 #: ../inc/theme-options.php:185
 msgid "Custom CSS Styles"
@@ -619,11 +619,11 @@ msgstr "Вміст праворуч"
 
 #: ../inc/theme-options.php:338
 msgid "One-column, no sidebar"
-msgstr "Єдина головна колонка, без бокових панелей"
+msgstr "Тільки головна колонка, без бокових панелей"
 
 #: ../inc/theme-options.php:356
 msgid "Show excerpt"
-msgstr "Показувати витяг (до посилання \"Читати далі ...\")"
+msgstr "Показувати витяг (початок тексту до посилання \"Читати далі ...\")"
 
 #: ../inc/theme-options.php:361
 msgid "Show full content"
@@ -672,7 +672,7 @@ msgstr "http://catchthemes.com/"
 #: ../inc/theme-options.php:629 ../inc/theme-options.php:630
 #: ../inc/theme-options.php:1385
 msgid "Catch Themes"
-msgstr "Catch Themes"
+msgstr "&nbsp;&nbsp;Catch Themes"
 
 #: ../inc/theme-options.php:636
 msgid "http://catchthemes.com/themes/catch-box-pro/"
@@ -680,7 +680,7 @@ msgstr "http://catchthemes.com/themes/catch-box-pro/"
 
 #: ../inc/theme-options.php:636
 msgid "Upgrade to Catch Box Pro"
-msgstr "Оновити тему до платної версії Catch Box Pro"
+msgstr "Оновити безкоштовну тему до платної версії Catch Box Pro"
 
 #: ../inc/theme-options.php:641
 msgid "http://catchthemes.com/donate/"
@@ -688,7 +688,7 @@ msgstr "http://catchthemes.com/donate/"
 
 #: ../inc/theme-options.php:641
 msgid "Donate"
-msgstr "Пожертвувати"
+msgstr "Пожертвувати (англ.)"
 
 #: ../inc/theme-options.php:642
 msgid "http://catchthemes.com/support/"
@@ -696,7 +696,7 @@ msgstr "http://catchthemes.com/support/"
 
 #: ../inc/theme-options.php:642
 msgid "Support"
-msgstr "Підтримка теми (англійською)"
+msgstr "Підтримка теми (англ.)"
 
 #: ../inc/theme-options.php:643
 msgid "http://catchthemes.com/support-forum/forum/catch-box-public/"
@@ -704,7 +704,7 @@ msgstr "http://catchthemes.com/support-forum/forum/catch-box-public/"
 
 #: ../inc/theme-options.php:643
 msgid "Support Forum"
-msgstr "Форум підтримки теми (англійською)"
+msgstr "Форум підтримки теми (англ.)"
 
 #: ../inc/theme-options.php:644
 msgid "http://catchthemes.com/theme-instructions/catch-box/"
@@ -712,7 +712,7 @@ msgstr "http://catchthemes.com/theme-instructions/catch-box/"
 
 #: ../inc/theme-options.php:644
 msgid "Theme Instructions"
-msgstr "Інструкції теми"
+msgstr "Інструкція з користування темою (англ.)"
 
 #: ../inc/theme-options.php:645
 msgid "https://www.facebook.com/catchthemes/"
@@ -744,7 +744,7 @@ msgstr "http://wordpress.org/support/view/theme-reviews/catch-box/"
 
 #: ../inc/theme-options.php:647
 msgid "Rate us 5 Star on WordPress"
-msgstr "Оцініть нас п'ятьма зірками на сайті WordPress"
+msgstr "Будь ласка, оцініть нас п&prime;ятьма зірками на сайті WordPress"
 
 #: ../inc/theme-options.php:647
 msgid "5 Star Rating"
@@ -756,7 +756,7 @@ msgstr "Розширена панель публікацій"
 
 #: ../inc/theme-options.php:658
 msgid "Social Links"
-msgstr "Соціальні мережі"
+msgstr "Посилання на соціальні мережі"
 
 #: ../inc/theme-options.php:659
 msgid "Webmaster Tools"
@@ -811,12 +811,12 @@ msgid ""
 "Featured Slider."
 msgstr ""
 "<strong>Зауваження</strong>: Тут ви додаєте в публікацію ідентифікатор, який "
-"буде відібражатися на розиреній панелі домашньої сторінки"
+"буде відібражатися на розширеній панелі домашньої сторінки"
 
 #: ../inc/theme-options.php:716 ../inc/theme-options.php:762
 #: ../inc/theme-options.php:899 ../inc/theme-options.php:940
 msgid "Save"
-msgstr "Сберегти"
+msgstr "Зберегти"
 
 #: ../inc/theme-options.php:720
 msgid "Slider Effect Options"
@@ -852,15 +852,15 @@ msgstr "прокрутка праворуч"
 
 #: ../inc/theme-options.php:736
 msgid "blindX"
-msgstr "прив'язка X"
+msgstr "прив&prime;язка X"
 
 #: ../inc/theme-options.php:737
 msgid "blindY"
-msgstr "прив'язка Y"
+msgstr "прив&prime;язка Y"
 
 #: ../inc/theme-options.php:738
 msgid "blindZ"
-msgstr "прив'язка Z"
+msgstr "прив&prime;язка Z"
 
 #: ../inc/theme-options.php:739
 msgid "cover"
@@ -955,16 +955,16 @@ msgid ""
 "<strong>Note:</strong> Enter the url for correponding social networking "
 "website"
 msgstr ""
-"<strong>Зауваження:</strong> Введіть URL-адресу, яка відповідаю вашій "
+"<strong>Зауваження:</strong> Введіть URL-адресу, яка відповідає вашій "
 "соцільній мережі."
 
 #: ../inc/theme-options.php:913
 msgid "Header and Footer Code"
-msgstr "Коди для розміщенні у заголовку та знизу"
+msgstr "Коди для розміщення нагорі у заголовку та знизу у футері"
 
 #: ../inc/theme-options.php:918
 msgid "Code to display on Header"
-msgstr "Коди, які будуть показані у заголовку"
+msgstr "Коди, які будуть показані нагорі у заголовку"
 
 #: ../inc/theme-options.php:925
 msgid ""
@@ -972,11 +972,11 @@ msgid ""
 "Header"
 msgstr ""
 "Зауваження: Тут ви маєте можливість розмістити сценарії Google, Facebook та "
-"інші. які будуть завантажуватися у заголову"
+"інші. які будуть завантажуватися нагорі у заголовку"
 
 #: ../inc/theme-options.php:929
 msgid "Code to display on Footer"
-msgstr "Коди для показу у заголовкуer"
+msgstr "Коди, які будуть показані знизу у футері"
 
 #: ../inc/theme-options.php:936
 msgid ""
@@ -984,7 +984,7 @@ msgid ""
 "will load on footer"
 msgstr ""
 "Зауваження: Тут ви маєте можливість розмістити сценарії Google, Facebook та "
-"інші. які будуть завантажуватися знизу"
+"інші. які будуть завантажуватися знизу у футері"
 
 #: ../inc/theme-options.php:1343
 msgid "Y"
@@ -996,7 +996,7 @@ msgstr "WordPress"
 
 #: ../inc/theme-options.php:1374
 msgid "Theme: Catch Box by "
-msgstr "Тема Catch Box від"
+msgstr "Тема Catch Box від&nbsp;&nbsp;"
 
 #: ../inc/theme-options.php:1396
 msgid "Copyright"
