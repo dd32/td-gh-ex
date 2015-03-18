@@ -1,16 +1,16 @@
 <?php
 
-// Add Category Posts Grid Widget
-class Smartline_Category_Posts_Grid_Widget extends WP_Widget {
+// Add Category Posts Single Widget
+class Smartline_Category_Posts_Single_Widget extends WP_Widget {
 
 	function __construct() {
 		
 		// Setup Widget
 		$widget_ops = array(
-			'classname' => 'smartline_category_posts_grid', 
-			'description' => __('Display latest posts from category in a grid layout. Please use this widget ONLY on Frontpage Magazine widget area.', 'smartline-lite')
+			'classname' => 'smartline_category_posts_single', 
+			'description' => __('Displays a single post from a selected category. Please use this widget ONLY in the Frontpage Magazine widget area.', 'smartline-lite')
 		);
-		$this->WP_Widget('smartline_category_posts_grid', __('Category Posts Grid (Smartline)', 'smartline-lite'), $widget_ops);
+		$this->WP_Widget('smartline_category_posts_single', __('Category Posts Single (Smartline)', 'smartline-lite'), $widget_ops);
 		
 		// Delete Widget Cache on certain actions
 		add_action( 'save_post', array( $this, 'delete_widget_cache' ) );
@@ -21,7 +21,7 @@ class Smartline_Category_Posts_Grid_Widget extends WP_Widget {
 
 	public function delete_widget_cache() {
 		
-		wp_cache_delete('widget_smartline_category_posts_grid', 'widget');
+		wp_cache_delete('widget_smartline_category_posts_single', 'widget');
 		
 	}
 	
@@ -29,9 +29,8 @@ class Smartline_Category_Posts_Grid_Widget extends WP_Widget {
 	
 		$defaults = array(
 			'title'				=> '',
-			'number'			=> 6,
 			'category'			=> 0,
-			'thumbnails'		=> false,
+			'number'			=> 1,
 			'category_link'		=> false
 		);
 		
@@ -46,7 +45,7 @@ class Smartline_Category_Posts_Grid_Widget extends WP_Widget {
 				
 		// Get Widget Object Cache
 		if ( ! $this->is_preview() ) {
-			$cache = wp_cache_get( 'widget_smartline_category_posts_grid', 'widget' );
+			$cache = wp_cache_get( 'widget_smartline_category_posts_single', 'widget' );
 		}
 		if ( ! is_array( $cache ) ) {
 			$cache = array();
@@ -60,8 +59,8 @@ class Smartline_Category_Posts_Grid_Widget extends WP_Widget {
 		
 		// Start Output Buffering
 		ob_start();
-		
-		// Get Sidebar Arguments
+			
+		// Extract Sidebar Arguments
 		extract($args);
 		
 		// Get Widget Settings
@@ -71,8 +70,8 @@ class Smartline_Category_Posts_Grid_Widget extends WP_Widget {
 		// Output
 		echo $before_widget;
 	?>
-		<div id="widget-category-posts-grid" class="widget-category-posts clearfix">
-		
+		<div id="widget-category-posts-single" class="widget-category-posts clearfix">
+
 			<?php // Display Title
 			$this->display_widget_title($args, $instance); ?>
 			
@@ -89,20 +88,20 @@ class Smartline_Category_Posts_Grid_Widget extends WP_Widget {
 		// Set Cache
 		if ( ! $this->is_preview() ) {
 			$cache[ $this->id ] = ob_get_flush();
-			wp_cache_set( 'widget_smartline_category_posts_grid', $cache, 'widget' );
+			wp_cache_set( 'widget_smartline_category_posts_single', $cache, 'widget' );
 		} else {
 			ob_end_flush();
 		}
-		
+	
 	}
 	
 	// Render Widget Content
 	function render($instance) {
-
+		
 		// Get Widget Settings
 		$defaults = $this->default_settings();
 		extract( wp_parse_args( $instance, $defaults ) );
-	
+		
 		// Get latest posts from database
 		$query_arguments = array(
 			'posts_per_page' => (int)$number,
@@ -111,105 +110,34 @@ class Smartline_Category_Posts_Grid_Widget extends WP_Widget {
 		);
 		$posts_query = new WP_Query($query_arguments);
 		$i = 0;
-		
+
 		// Check if there are posts
 		if( $posts_query->have_posts() ) :
 		
-			// Limit the number of words for the excerpt
-			add_filter('excerpt_length', 'smartline_frontpage_category_excerpt_length');
-			
 			// Display Posts
-			while( $posts_query->have_posts() ) :
-				
-				$posts_query->the_post(); 
-				
-				 // Open new Row on the Grid
-				 if ( $i % 2 == 0) : ?>
-			
-					<div class="category-posts-grid-row clearfix">
-		
-				<?php // Set Variable row_open to true
-					$row_open = true;
-				endif; ?>
+			while( $posts_query->have_posts() ) : $posts_query->the_post(); ?>
 
-				<?php // Display small posts or big posts grid layout based on options
-				if( $thumbnails == true ) : ?>
+				<article id="post-<?php the_ID(); ?>" <?php post_class('single-post'); ?>>
 
-					<div class="small-post-wrap">
-						
-						<article id="post-<?php the_ID(); ?>" <?php post_class('small-post clearfix'); ?>>
-
-						<?php if ( '' != get_the_post_thumbnail() ) : ?>
-							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('category_posts_small_thumb'); ?></a>
-						<?php endif; ?>
-
-							<div class="small-post-content">
-								<h2 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-								<div class="postmeta"><?php $this->display_postmeta($instance); ?></div>
-							</div>
-
-						</article>
-						
-					</div>
+					<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('category_posts_single'); ?></a>
 					
-				<?php else: ?>
-				
-					<article id="post-<?php the_ID(); ?>" <?php post_class('big-post'); ?>>
+					<h3 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h3>
 
-						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('category_posts_wide_thumb'); ?></a>
+					<div class="postmeta"><?php smartline_display_postmeta(); ?></div>
 
-						<h3 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h3>
-
-						<div class="postmeta"><?php $this->display_postmeta($instance); ?></div>
-
-						<div class="entry">
-							<?php the_excerpt(); ?>
-						</div>
-
-					</article>
-				
-				<?php endif; ?>
-		
-				<?php // Close Row on the Grid
-				if ( $i % 2 == 1) : ?>
-				
+					<div class="entry">
+						<?php the_excerpt(); ?>
+						<a href="<?php esc_url(the_permalink()) ?>" class="more-link"><?php _e('&raquo; Read more', 'smartline-lite'); ?></a>
 					</div>
-				
-				<?php // Set Variable row_open to false
-					$row_open = false;
-				
-				endif; $i++;
-				
-			endwhile;
-			
-			// Remove excerpt filter
-			remove_filter('excerpt_length', 'smartline_frontpage_category_excerpt_length');
-			
+
+				</article>
+
+			<?php endwhile;
+
 		endif;
 		
 		// Reset Postdata
 		wp_reset_postdata();
-		
-	}
-	
-	// Display Postmeta
-	function display_postmeta($instance) { ?>
-
-		<span class="meta-date">
-		<?php printf('<a href="%1$s" title="%2$s" rel="bookmark"><time datetime="%3$s">%4$s</time></a>',
-				esc_url( get_permalink() ),
-				esc_attr( get_the_time() ),
-				esc_attr( get_the_date( 'c' ) ),
-				esc_html( get_the_date() )
-			);
-		?>
-		</span>
-
-	<?php if ( comments_open() ) : ?>
-		<span class="meta-comments sep">
-			<?php comments_popup_link( __('Leave a comment', 'smartline-lite'),__('One comment','smartline-lite'),__('% comments','smartline-lite') ); ?>
-		</span>
-	<?php endif;
 
 	}
 	
@@ -275,7 +203,6 @@ class Smartline_Category_Posts_Grid_Widget extends WP_Widget {
 		$instance['title'] = sanitize_text_field($new_instance['title']);
 		$instance['category'] = (int)$new_instance['category'];
 		$instance['number'] = (int)$new_instance['number'];
-		$instance['thumbnails'] = !empty($new_instance['thumbnails']);
 		$instance['category_link'] = !empty($new_instance['category_link']);
 		
 		$this->delete_widget_cache();
@@ -314,14 +241,6 @@ class Smartline_Category_Posts_Grid_Widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id('number'); ?>"><?php _e('Number of posts:', 'smartline-lite'); ?>
 				<input id="<?php echo $this->get_field_id('number'); ?>" name="<?php echo $this->get_field_name('number'); ?>" type="text" value="<?php echo $number; ?>" size="3" />
-				<br/><span class="description"><?php _e('Please chose an even number (2, 4, 6, 8).', 'smartline-lite'); ?></span>
-			</label>
-		</p>
-		
-		<p>
-			<label for="<?php echo $this->get_field_id('thumbnails'); ?>">
-				<input class="checkbox" type="checkbox" <?php checked( $thumbnails ) ; ?> id="<?php echo $this->get_field_id('thumbnails'); ?>" name="<?php echo $this->get_field_name('thumbnails'); ?>" />
-				<?php _e('Display as small posts grid with thumbnails', 'smartline-lite'); ?>
 			</label>
 		</p>
 		
@@ -331,8 +250,9 @@ class Smartline_Category_Posts_Grid_Widget extends WP_Widget {
 				<?php _e('Link Widget Title to Category Archive page', 'smartline-lite'); ?>
 			</label>
 		</p>
+		
 <?php
 	}
 }
-register_widget('Smartline_Category_Posts_Grid_Widget');
+register_widget('Smartline_Category_Posts_Single_Widget');
 ?>
