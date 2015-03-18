@@ -1,16 +1,16 @@
 <?php
 
-// Add Category Posts Boxed Widget
-class Dynamic_News_Category_Posts_Boxed_Widget extends WP_Widget {
+// Add Category Posts Single Widget
+class Dynamic_News_Category_Posts_Single_Widget extends WP_Widget {
 
 	function __construct() {
 		
 		// Setup Widget
 		$widget_ops = array(
-			'classname' => 'dynamicnews_category_posts_boxed', 
-			'description' => __('Display latest posts from category in boxed layout. Please use this widget ONLY on Frontpage Magazine widget area.', 'dynamicnewslite')
+			'classname' => 'dynamicnews_category_posts_single', 
+			'description' => __('Displays a single post from a selected category. Please use this widget ONLY in the Frontpage Magazine widget area.', 'dynamicnewslite')
 		);
-		$this->WP_Widget('dynamicnews_category_posts_boxed', __('Category Posts Boxed (Dynamic News)', 'dynamicnewslite'), $widget_ops);
+		$this->WP_Widget('dynamicnews_category_posts_single', __('Category Posts Single (Dynamic News)', 'dynamicnewslite'), $widget_ops);
 		
 		// Delete Widget Cache on certain actions
 		add_action( 'save_post', array( $this, 'delete_widget_cache' ) );
@@ -21,7 +21,7 @@ class Dynamic_News_Category_Posts_Boxed_Widget extends WP_Widget {
 
 	public function delete_widget_cache() {
 		
-		wp_cache_delete('widget_dynamicnews_category_posts_boxed', 'widget');
+		wp_cache_delete('widget_dynamicnews_category_posts_single', 'widget');
 		
 	}
 	
@@ -30,6 +30,7 @@ class Dynamic_News_Category_Posts_Boxed_Widget extends WP_Widget {
 		$defaults = array(
 			'title'				=> '',
 			'category'			=> 0,
+			'number'			=> 1,
 			'category_link'		=> false
 		);
 		
@@ -44,7 +45,7 @@ class Dynamic_News_Category_Posts_Boxed_Widget extends WP_Widget {
 				
 		// Get Widget Object Cache
 		if ( ! $this->is_preview() ) {
-			$cache = wp_cache_get( 'widget_dynamicnews_category_posts_boxed', 'widget' );
+			$cache = wp_cache_get( 'widget_dynamicnews_category_posts_single', 'widget' );
 		}
 		if ( ! is_array( $cache ) ) {
 			$cache = array();
@@ -69,7 +70,7 @@ class Dynamic_News_Category_Posts_Boxed_Widget extends WP_Widget {
 		// Output
 		echo $before_widget;
 	?>
-		<div id="widget-category-posts-boxed" class="widget-category-posts clearfix">
+		<div id="widget-category-posts-single" class="widget-category-posts clearfix">
 
 			<?php // Display Title
 			$this->display_widget_title($args, $instance); ?>
@@ -87,7 +88,7 @@ class Dynamic_News_Category_Posts_Boxed_Widget extends WP_Widget {
 		// Set Cache
 		if ( ! $this->is_preview() ) {
 			$cache[ $this->id ] = ob_get_flush();
-			wp_cache_set( 'widget_dynamicnews_category_posts_boxed', $cache, 'widget' );
+			wp_cache_set( 'widget_dynamicnews_category_posts_single', $cache, 'widget' );
 		} else {
 			ob_end_flush();
 		}
@@ -103,7 +104,7 @@ class Dynamic_News_Category_Posts_Boxed_Widget extends WP_Widget {
 		
 		// Get latest posts from database
 		$query_arguments = array(
-			'posts_per_page' => 4,
+			'posts_per_page' => (int)$number,
 			'ignore_sticky_posts' => true,
 			'cat' => (int)$category
 		);
@@ -113,83 +114,30 @@ class Dynamic_News_Category_Posts_Boxed_Widget extends WP_Widget {
 		// Check if there are posts
 		if( $posts_query->have_posts() ) :
 		
-			// Limit the number of words for the excerpt
-			add_filter('excerpt_length', 'dynamicnews_frontpage_category_excerpt_length');
-			
 			// Display Posts
-			while( $posts_query->have_posts() ) :
-				
-				$posts_query->the_post(); 
-				
-				if(isset($i) and $i == 0) : ?>
+			while( $posts_query->have_posts() ) : $posts_query->the_post(); ?>
 
-					<article id="post-<?php the_ID(); ?>" <?php post_class('first-post big-post'); ?>>
+				<article id="post-<?php the_ID(); ?>" <?php post_class('single-post'); ?>>
 
-						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('category_posts_wide_thumb'); ?></a>
+					<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('featured_image'); ?></a>
 
-						<h3 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+					<h3 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h3>
 
-						<div class="postmeta"><?php $this->display_postmeta($instance); ?></div>
+					<div class="postmeta"><?php dynamicnews_display_postmeta(); ?></div>
 
-						<div class="entry">
-							<?php the_excerpt(); ?>
-						</div>
+					<div class="entry">
+						<?php the_excerpt(); ?>
+						<a href="<?php esc_url(the_permalink()) ?>" class="more-link"><?php _e('Read more', 'dynamicnewslite'); ?></a>
+					</div>
 
-					</article>
+				</article>
 
-				<div class="small-posts more-posts clearfix">
-
-				<?php else: ?>
-
-					<article id="post-<?php the_ID(); ?>" <?php post_class('small-post clearfix'); ?>>
-
-					<?php if ( '' != get_the_post_thumbnail() ) : ?>
-						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail('category_posts_small_thumb'); ?></a>
-					<?php endif; ?>
-
-						<div class="small-post-content">
-							<h2 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-							<div class="postmeta"><?php $this->display_postmeta($instance); ?></div>
-						</div>
-
-					</article>
-
-				<?php
-				endif; $i++;
-				
-			endwhile; ?>
-			
-				</div><!-- end .small-posts -->
-				
-			<?php
-			// Remove excerpt filter
-			remove_filter('excerpt_length', 'dynamicnews_frontpage_category_excerpt_length');
+			<?php endwhile;
 			
 		endif;
 		
 		// Reset Postdata
 		wp_reset_postdata();
-
-	}
-	
-	// Display Postmeta
-	function display_postmeta($instance) { ?>
-
-		<span class="meta-date">
-		<?php printf('<a href="%1$s" title="%2$s" rel="bookmark"><time datetime="%3$s">%4$s</time></a>',
-				esc_url( get_permalink() ),
-				esc_attr( get_the_time() ),
-				esc_attr( get_the_date( 'c' ) ),
-				esc_html( get_the_date() )
-			);
-		?>
-		</span>
-
-	<?php if ( comments_open() ) : ?>
-		<span class="meta-comments sep">
-			<?php comments_popup_link( __('Leave a comment', 'dynamicnewslite'),__('One comment','dynamicnewslite'),__('% comments','dynamicnewslite') ); ?>
-		</span>
-	<?php endif;
 
 	}
 	
@@ -254,6 +202,7 @@ class Dynamic_News_Category_Posts_Boxed_Widget extends WP_Widget {
 		$instance = $old_instance;
 		$instance['title'] = sanitize_text_field($new_instance['title']);
 		$instance['category'] = (int)$new_instance['category'];
+		$instance['number'] = (int)$new_instance['number'];
 		$instance['category_link'] = !empty($new_instance['category_link']);
 		
 		$this->delete_widget_cache();
@@ -290,6 +239,12 @@ class Dynamic_News_Category_Posts_Boxed_Widget extends WP_Widget {
 		</p>
 		
 		<p>
+			<label for="<?php echo $this->get_field_id('number'); ?>"><?php _e('Number of posts:', 'dynamicnewslite'); ?>
+				<input id="<?php echo $this->get_field_id('number'); ?>" name="<?php echo $this->get_field_name('number'); ?>" type="text" value="<?php echo $number; ?>" size="3" />
+			</label>
+		</p>
+		
+		<p>
 			<label for="<?php echo $this->get_field_id('category_link'); ?>">
 				<input class="checkbox" type="checkbox" <?php checked( $category_link ) ; ?> id="<?php echo $this->get_field_id('category_link'); ?>" name="<?php echo $this->get_field_name('category_link'); ?>" />
 				<?php _e('Link Widget Title to Category Archive page', 'dynamicnewslite'); ?>
@@ -299,5 +254,5 @@ class Dynamic_News_Category_Posts_Boxed_Widget extends WP_Widget {
 <?php
 	}
 }
-register_widget('Dynamic_News_Category_Posts_Boxed_Widget');
+register_widget('Dynamic_News_Category_Posts_Single_Widget');
 ?>
