@@ -16,15 +16,17 @@ $semplicemente_theme_options = array(
 	'tumblrurl' => '#'
 );
 
-function semplicemente_toolbar_link_to_mypage( $wp_admin_bar ) {
-	$args = array(
-		'id'    => 'semplicemente_theme_options',
-		'title' => __('Semplicemente Theme Options', 'semplicemente' ),
-		'href'  => admin_url('themes.php?page=theme_options')
-	);
-	$wp_admin_bar->add_node( $args );
+if ( current_user_can('manage_options') ) {
+	function semplicemente_toolbar_link_to_mypage( $wp_admin_bar ) {
+		$args = array(
+			'id'    => 'semplicemente_theme_options',
+			'title' => __('Semplicemente Theme Options', 'semplicemente' ),
+			'href'  => admin_url('themes.php?page=theme_options')
+		);
+		$wp_admin_bar->add_node( $args );
+	}
+	add_action( 'admin_bar_menu', 'semplicemente_toolbar_link_to_mypage', 999 );
 }
-add_action( 'admin_bar_menu', 'semplicemente_toolbar_link_to_mypage', 999 );
 
 if ( is_admin() ) : // Load only if we are viewing an admin page
 
@@ -57,26 +59,25 @@ function semplicemente_options_do_page() {
 	<div class="wrap">
 		<?php echo "<h2>" . wp_get_theme() . __( ' Theme Options', 'semplicemente' ) . "</h2>"; ?>
 			
-		<div class="updated" style="background:#E9F7DF;clear: both;display: table;width: 100%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">
-			<h3><div class="dashicons dashicons-megaphone"></div> Need more features and options? Use CrestaProject Premium WordPress Theme!</h3>
-			<p>Get <b>CrestaProject</b> Premium WordPress Theme from <b>19,90&euro;</b> <i>(One Time Fee)</i></p>
+		<div class="updated" style="background:#E9F7DF;clear: both;display: table;width: 100%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;border-left: 4px solid #1fa67a;">
+			<h3><div class="dashicons dashicons-megaphone"></div> <?php _e( 'Need more features and options? Upgrade to PRO!', 'semplicemente' ); ?></h3>
+			<p><?php _e( 'Get', 'semplicemente' ); ?> <b><?php _e( 'Semplicemente PRO', 'semplicemente' ); ?></b> <?php _e( 'WordPress Theme for only', 'semplicemente' ); ?> <b>16,90&euro;</b></p>
 			<div class="semplicementeLeft" style="float:left; width: 30%; text-align: center;">
-				<a style="display: inline-block;padding: 20px;background: #1fa67a;border-radius: 5px;color: #ffffff;font-size: 125%;-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);margin: 40px 0 20px;" href="http://crestaproject.com/themes/" target="_blank"><div class="dashicons dashicons-visibility"></div> Go to CrestaProject WP Themes</a>
+				<a style="display: inline-block;padding: 20px;background: #1fa67a;border-radius: 5px;color: #ffffff;font-size: 125%;-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);margin: 40px 0 20px;" href="http://crestaproject.com/demo/semplicemente-pro/" target="_blank"><div class="dashicons dashicons-visibility"></div> <?php _e( 'Demo (Semplicemente PRO)', 'semplicemente' ); ?></a>
+				<br />
+				<a style="display: inline-block;padding: 20px;background: #1fa67a;border-radius: 5px;color: #ffffff;font-size: 125%;-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);" href=" http://crestaproject.com/downloads/semplicemente/" target="_blank"><div class="dashicons dashicons-heart"></div> <?php _e( 'Get The Pro Version', 'semplicemente' ); ?></a></a>
 			</div>
 			<div class="semplicementeRight" style="float:right; width: 70%;">
 			<ul>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Advanced Theme Options</b> (Choose Sidebar position, Manage Loading Page, Additional Custom Code, Font switcher and much more...)</li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Logo and Favicon Upload</b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Unlimited Colors and Skin</b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Post views counter</b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Post format</b> (Standard, Gallery, Audio, Link, Video, Quote)</li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Shortcodes</b> (Toggle, Tabs, Boxes, Columns, Highlights, Buttons and Drop Cap)</li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Exclusive Widgets</b> (Latest Tweet, Instagram, Random Posts, Social Counter, Posts with Thumbnail, News in Pictures, and much more...)</li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Slider</b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Breadcrumb</b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Related Posts Box</b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>Information About Author Box</b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b>And much more...</b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Advanced Theme Options', 'semplicemente' ); ?></b> <?php _e( '(Manage Loading Page, Additional Custom Code, Font switcher and much more...)', 'semplicemente' ); ?></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Logo and Favicon Upload', 'semplicemente' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Unlimited Colors and Skin', 'semplicemente' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Breadcrumb', 'semplicemente' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( '7 Shortcodes', 'semplicemente' ); ?></b> <?php _e( '(Toggle, Tabs, Boxes, Columns, Highlights, Buttons and Drop Cap)', 'semplicemente' ); ?></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( '10 Exclusive Widgets', 'semplicemente' ); ?></b> <?php _e( '(Latest Tweet, Instagram, Social Buttons, Recent Posts with Thumbnail and Most Commented Posts...)', 'semplicemente' ); ?></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Related Posts Box', 'semplicemente' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Information About Author Box', 'semplicemente' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'And much more...', 'semplicemente' ); ?></b></li>
 			<ul>
 			</div>
 		</div>	

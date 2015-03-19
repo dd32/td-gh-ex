@@ -4,12 +4,12 @@ Theme URI: http://crestaproject.com/downloads/semplicemente/
 Author: Rizzo Andrea - CrestaProject.com
 Author URI: http://crestaproject.com
 Description: Simple and Clean WordPress Theme created by CrestaProject.com. Live demo http://crestaproject.com/demo/semplicemente/
-Version: 1.5.1
+Version: 1.5.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: semplicemente
 Domain Path: /languages/
-Tags: two-columns, right-sidebar, responsive-layout, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready
+Tags: two-columns, right-sidebar, responsive-layout, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready, rtl-language-support
 */
 
 /*--------------------------------------------------------------
@@ -124,11 +124,13 @@ select,
 textarea {
 	color: #888888;
 	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 15px;
+	font-size: 14px;
 	line-height: 1.8;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: none;
 }
 h1, h2, h3, h4, h5, h6 {
-	text-rendering: optimizeLegibility;
 	clear: both;
 	color: #404040;
 }
@@ -391,10 +393,7 @@ a:active {
 .main-navigation li.current-menu-parent > a, 
 .main-navigation li.current-page-ancestor > a,
 .main-navigation .current_page_item > a, 
-.main-navigation .current_page_parent > a, 
-.main-navigation ul > li:hover .indicator, 
-.main-navigation li.current-menu-parent .indicator, 
-.main-navigation li.current-menu-item .indicator {
+.main-navigation .current_page_parent > a {
 	background: rgba(0,0,0,.03);
 }
 .main-navigation {
@@ -424,7 +423,7 @@ a:active {
 .main-navigation ul li .indicator {
 	position: absolute;
 	right: 43%;
-	bottom: 0px;
+	bottom: 5px;
 	font-family: 'FontAwesome';
 	font-size: 12px;
 	line-height: 1;
@@ -442,7 +441,7 @@ a:active {
 .main-navigation ul ul {
 	float: left;
 	position: absolute;
-	top: 70px;
+	top: 67px;
 	left: auto;
 	z-index: 99999;
 	background: #ffffff;
@@ -682,7 +681,7 @@ header.entry-header:after,
 	border-bottom: 1px solid #36c1c8;
 	margin-bottom: -1px;
 	padding: 3px 0;
-	font-weight: 700;
+	font-weight: 400;
 	letter-spacing: -1px;
 }
 .widget_archive li, .widget_categories li {
@@ -751,6 +750,10 @@ header.page-header {
 header.page-header h1 span {
 	font-weight: 700;
 	letter-spacing: -1px;
+}
+header.entry-header .entry-title {
+	font-weight: 700;
+	margin-bottom: 0.5em;
 }
 footer.entry-footer {
 	padding: 1.5em;
@@ -1144,6 +1147,9 @@ object {
 		-moz-column-break-inside: avoid;
 		column-break-inside: avoid;
 	}
+	.site-branding {
+		text-align: center !important;
+	}
 }
 @media all and (max-width: 767px) {
 	#page {
@@ -1165,6 +1171,15 @@ object {
 		-webkit-column-break-inside: initial;
 		-moz-column-break-inside: initial;
 		column-break-inside: initial;
+	}
+	h1 {font-size: 22px;line-height:2.8rem;}
+	h2 {font-size: 20px;line-height:2rem;}
+	h3 {font-size: 16px;line-height:1.6rem;}
+	h4 {font-size: 13px;}
+	h5 {font-size: 10px;}
+	h6 {font-size: 8px;}
+	.widget-title h3 {
+		padding: 5px 0;
 	}
 }
 @media all and (max-width: 479px) {
