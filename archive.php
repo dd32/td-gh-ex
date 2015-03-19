@@ -8,7 +8,7 @@
  */
 
 get_header(); 
-$archive_page_layout = of_get_option('archive_page_layout');
+$archive_page_layout = esc_attr(of_get_option('archive_page_layout'));
 ?>
 	<div class="page_header_wrap clearfix">
 		<div class="ak-container">

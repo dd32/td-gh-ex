@@ -6,7 +6,7 @@
  */
 
 get_header(); 
-$single_post_layout = of_get_option('single_post_layout');
+$single_post_layout = esc_attr(of_get_option('single_post_layout'));
 ?>
 
 	<div class="page_header_wrap clearfix">

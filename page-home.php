@@ -321,7 +321,7 @@ get_header(); ?>
 								</div>
 								<?php endif; ?>
 								<div class="info-content"><?php echo accesspress_letter_count(get_the_content(),'200'); ?></div>
-								<a class="info-read-more" href="<?php the_permalink(); ?>"><?php echo of_get_option('project_readmore'); ?></a>
+								<a class="info-read-more" href="<?php the_permalink(); ?>"><?php echo esc_attr(of_get_option('project_readmore')); ?></a>
 							</div>
 						</div> <!-- widget-block -->
 						<?php

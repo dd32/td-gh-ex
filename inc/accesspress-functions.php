@@ -85,12 +85,12 @@ function accesspress_bxsliderscript(){
         jQuery(function($){
 			$('#main-slider .bx-slider').bxSlider({
 				adaptiveHeight: true,
-				pager: <?php echo $accesspress_show_pager; ?>,
-				controls: <?php echo $accesspress_show_controls; ?>,
-				mode: '<?php echo $accesspress_slider_transition; ?>',
-				auto : <?php echo $accesspress_auto_transition; ?>,
-				pause: '<?php echo $accesspress_slider_pause; ?>',
-				speed: '<?php echo $accesspress_slider_speed; ?>'
+				pager: <?php echo esc_attr($accesspress_show_pager); ?>,
+				controls: <?php echo esc_attr($accesspress_show_controls); ?>,
+				mode: '<?php echo esc_attr($accesspress_slider_transition); ?>',
+				auto : <?php echo esc_attr($accesspress_auto_transition); ?>,
+				pause: '<?php echo esc_attr($accesspress_slider_pause); ?>',
+				speed: '<?php echo esc_attr($accesspress_slider_speed); ?>'
 			});				
 		});
     </script>
