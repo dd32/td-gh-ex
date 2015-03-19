@@ -10,7 +10,7 @@ function elitepress_fonts_url() {
 		
     $font_families = array();
  
-	$font_families = array('Lato:100,200,300,400,500,600,700,800,900','italic','Courgette','Roboto:100,300,400,700,900','Open Sans:100,400,700','Helvetica Neue');
+	$font_families = array('Lato:100,200,300,400,500,600,700,800,900','italic','Courgette','Roboto:100,300,400,700,900');
  
         $query_args = array(
             'family' => urlencode( implode( '|', $font_families ) ),

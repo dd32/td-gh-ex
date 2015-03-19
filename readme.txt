@@ -58,6 +58,9 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.0 
+1. Solve Font issue.
+2. Enable Copyright section on server.
 @version 0.3
 1. Solve styling issue.
 @version 0.2.5
