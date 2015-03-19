@@ -236,7 +236,7 @@ function optionsframework_options() {
 		'type' => 'heading');
 
 	$options[] = array(
-		'desc' => __('Note: Please make a new page before you create a section. Each Section should have unique Page.', 'accesspress_parallax'),
+		'desc' => __('<strong>Note: Please make a new page before you create a section. Each Section should have unique Page.</strong>', 'accesspress_parallax'),
 		'id' => 'parallax_info',
 		'type' => 'info');
 

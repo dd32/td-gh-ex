@@ -34,6 +34,20 @@ function accesspress_parallax_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
 	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
+	add_theme_support( 'title-tag' );
+
+	/**
+	 * Add callback for custom TinyMCE editor stylesheets. (editor-style.css)
+	 * @see http://codex.wordpress.org/Function_Reference/add_editor_style
+	 */
+	add_editor_style('css/editor-style.css');
+
+	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails

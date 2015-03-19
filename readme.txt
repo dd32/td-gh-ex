@@ -89,6 +89,13 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.20
+* Archive page Title link fixed
+* ScreenShot Changed
+* Few adjustment in Theme Option Panel
+* Added Theme support for title tag
+* Added callback for custom TinyMCE editor stylesheets
+
 Version 1.19
 * Navigation not clickalbe in innpages issue solved.
 * Minor CSS bugs fixed.
