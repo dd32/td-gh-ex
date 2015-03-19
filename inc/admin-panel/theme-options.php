@@ -1075,8 +1075,9 @@ function accesspresslite_theme_options_page() {
 						<p><?php _e('We want to give "a little beautiful thing" - back to the community.<br />With our experience, we are creating "AccessPress Lite", a free WordPress theme, which includes the most useful features for a generic business website!','accesspresslite'); ?></p>
 						<hr />
 						
-						<p><?php _e('For documentation, click','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/theme-instruction-accesspress-lite/'); ?>"><?php _e('here','accesspresslite'); ?></a></p>
+						<p><?php _e('For Documentation, click','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/theme-instruction-accesspress-lite/'); ?>"><?php _e('here','accesspresslite'); ?></a></p>
 						<p><?php _e('For Video tutorials, click','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('https://www.youtube.com/watch?v=Mi60ORm_VMI&list=PLdSqn2S_qFxEzeboBioXZdAg5P4l32Hm3'); ?>"><?php _e('here','accesspresslite'); ?></a></p>
+						<p><?php _e('Live Preview, click','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('https://accesspressthemes.com/accesspress-parallax/'); ?>"><?php _e('here','accesspresslite'); ?></a></p>
 						<hr />
 						
 						<h4><?php _e('Our other Products','accesspresslite'); ?></h4>
@@ -1091,8 +1092,8 @@ function accesspresslite_theme_options_page() {
 						
 						<br />
 
-						<?php _e('For Queries Regading Themes','accesspresslite'); ?><br/>
-						<?php _e('Support:','accesspresslite'); ?> <a href="mailto:<?php echo esc_url('support@accesspressthemes.com'); ?>">support@accesspressthemes.com</a><br/>
+						<?php _e('For Queries Regading Pro Themes','accesspresslite'); ?><br/>
+						<?php _e('Support:','accesspresslite'); ?> <a href="mailto:support@accesspressthemes.com">support@accesspressthemes.com</a><br/>
 						</p>
 
 						<hr />

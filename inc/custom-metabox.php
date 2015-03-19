@@ -163,18 +163,18 @@ $accesspresslite_event_year = empty($accesspresslite_event_year) ? date('Y'): $a
     </select>
 
     <select name="accesspresslite_event_month">
-        <option value="Jan" <?php selected( $accesspresslite_event_month, 'Jan'); ?>>Jan</option>
-        <option value="Feb" <?php selected( $accesspresslite_event_month, 'Feb'); ?>>Feb</option>
-        <option value="Mar" <?php selected( $accesspresslite_event_month, 'Mar'); ?>>Mar</option>
-        <option value="Apr" <?php selected( $accesspresslite_event_month, 'Apr'); ?>>Apr</option>
-        <option value="May" <?php selected( $accesspresslite_event_month, 'May'); ?>>May</option>
-        <option value="Jun" <?php selected( $accesspresslite_event_month, 'Jun'); ?>>Jun</option>
-        <option value="Jul" <?php selected( $accesspresslite_event_month, 'Jul'); ?>>Jul</option>
-        <option value="Aug" <?php selected( $accesspresslite_event_month, 'Aug'); ?>>Aug</option>
-        <option value="Sep" <?php selected( $accesspresslite_event_month, 'Sep'); ?>>Sep</option>
-        <option value="Oct" <?php selected( $accesspresslite_event_month, 'Oct'); ?>>Oct</option>
-        <option value="Nov" <?php selected( $accesspresslite_event_month, 'Nov'); ?>>Nov</option>
-        <option value="Dec" <?php selected( $accesspresslite_event_month, 'Dec'); ?>>Dec</option>
+        <option value="Jan" <?php selected( $accesspresslite_event_month, 'Jan'); ?>><?php _e('Jan','accesspresslite'); ?></option>
+        <option value="Feb" <?php selected( $accesspresslite_event_month, 'Feb'); ?>><?php _e('Feb','accesspresslite'); ?></option>
+        <option value="Mar" <?php selected( $accesspresslite_event_month, 'Mar'); ?>><?php _e('Mar','accesspresslite'); ?></option>
+        <option value="Apr" <?php selected( $accesspresslite_event_month, 'Apr'); ?>><?php _e('Apr','accesspresslite'); ?></option>
+        <option value="May" <?php selected( $accesspresslite_event_month, 'May'); ?>><?php _e('May','accesspresslite'); ?></option>
+        <option value="Jun" <?php selected( $accesspresslite_event_month, 'Jun'); ?>><?php _e('Jun','accesspresslite'); ?></option>
+        <option value="Jul" <?php selected( $accesspresslite_event_month, 'Jul'); ?>><?php _e('Jul','accesspresslite'); ?></option>
+        <option value="Aug" <?php selected( $accesspresslite_event_month, 'Aug'); ?>><?php _e('Aug','accesspresslite'); ?></option>
+        <option value="Sep" <?php selected( $accesspresslite_event_month, 'Sep'); ?>><?php _e('Sep','accesspresslite'); ?></option>
+        <option value="Oct" <?php selected( $accesspresslite_event_month, 'Oct'); ?>><?php _e('Oct','accesspresslite'); ?></option>
+        <option value="Nov" <?php selected( $accesspresslite_event_month, 'Nov'); ?>><?php _e('Nov','accesspresslite'); ?></option>
+        <option value="Dec" <?php selected( $accesspresslite_event_month, 'Dec'); ?>><?php _e('Dec','accesspresslite'); ?></option>
     </select>
 
     <select name="accesspresslite_event_year">
