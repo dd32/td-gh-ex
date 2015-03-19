@@ -17,6 +17,17 @@ If you have any questions, accessibility issues or feature requests for this the
 2. Activate the theme through the 'Appearance' menu in WordPress
 
 
+
+== Change log ==
+Set the minimum height of the header to the viewport height.
+Removed the recommended image size for the header.
+Removed social icons from the header meny.
+Slight increase of font-size on some elements.
+
+
+
+
+
 == Folders included in this theme ==
 images/ -contains header images, borer and images for the setup help.
 languages/ -contains language files.

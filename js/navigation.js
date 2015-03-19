@@ -99,4 +99,18 @@ jQuery(document).ready(function($){ $('img[title]').not(':has([alt])').each(func
     } );
 });
 
+//Set the header (hero unit) to full height
+jQuery(document).ready(function($){
+	var winHeight = $(window).height();
+	// set initial div height
+	$('.site-header').css({
+		'min-height': winHeight,
+	});
 
+	// make sure div stays full height on resize
+	$(window).resize(function(){
+	    $('.site-header').css({
+	    'min-height': winHeight,
+	});
+	});
+});

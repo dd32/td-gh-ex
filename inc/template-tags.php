@@ -114,7 +114,7 @@ function aaron_entry_footer() {
 			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( __( ', ', 'aaron' ) );
 			if ( $categories_list && aaron_categorized_blog() ) {
-				printf( '<span class="cat-links"> ' . __( 'Categories: %1$s', 'aaron' ) . '</span>', $categories_list );
+				printf( '<span class="cat-links">' . __( 'Categories: %1$s', 'aaron' ) . '</span>', $categories_list );
 			}
 
 			/* translators: used between list items, there is a space after the comma */

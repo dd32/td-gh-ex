@@ -5,7 +5,7 @@ Author: Carolina Nymark
 Author URI: http://wptema.se
 Description: Aaron is a responsive, accessibility-ready multi-purpose theme. Features include Call to action and frontpage Highlights that will grab your visitors attention and help you feature different parts of your website. The theme has two optional menus (including a social menu) and two widget areas that will hold any number of widgets. Want to run Aaron on a company website rather than a blog? No problem, just hide the meta, the sidebars, and turn off your comments. We recommend that you install the Jetpack plugin to make full use of supported features like logos, featured content, contact forms, social sharing and favicon. To create a portfolio, install Jetpack and create your projects, all the templates are already shipped with the theme. Aaron also works well with Woocommerce and bbPress.
 If you have any questions, accessibility issues or feature requests for this theme, please visit http://wptema.se/Aaron.
-Version: 1.3
+Version: 1.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Copyright: Carolina Nymark 2015
@@ -424,8 +424,8 @@ textarea {
 .more-link{
 	position:relative;
 	padding:12px; 
-	font-size:14px;
-	font-size:1.4rem;
+	font-size:16px;
+	font-size:1.6rem;
 	background:#fff;
 	border:1px solid #f2f2f2;
 	border-radius:4px;
@@ -486,8 +486,8 @@ textarea {
 	float: left;
 	text-align: left;
 	width: 40%;
-	font-size:14px;
-	font-size:1.4rem;
+	font-size:16px;
+	font-size:1.6rem;
 	padding:12px; 
 	background:#fff;
 	border:1px solid #f2f2f2;
@@ -503,8 +503,8 @@ textarea {
 	float: right;
 	text-align: right;
 	width: 40%;
-	font-size:14px;
-	font-size:1.4rem;
+	font-size:16px;
+	font-size:1.6rem;
 	padding:12px; 
 	background:#fff;
 	border:1px solid #f2f2f2;
@@ -801,33 +801,33 @@ li a:before{
 .social-menu li a:hover{text-decoration: none; background:none;}
 .social-menu li a:hover:before{color:#333333;}
 
- li a[href*="dribbble.com"]::before { content: '\f17d'; }
- li a[href*="facebook.com"]::before { content: '\f09a'; }
- li a[href*="flickr.com"]::before { content: '\f16e'; }
- li a[href*="foursquare.com"]::before { content: '\f180'; }
- li a[href*="github.com"]::before { content: '\f09b'; }
- li a[href*="plus.google.com"]::before { content: '\f0d5'; }
- li a[href*="instagram.com"]::before { content: '\f16d'; }
- li a[href*="jsfiddle.com"]::before { content: '\f1cc'; }
- li a[href*="linkedin.com"]::before { content: '\f0e1'; }
- li a[href*="pinterest.com"]::before { content: '\f0d2'; }
- li a[href*="reddit.com"]::before { content: '\f1a1'; }
- li a[href*="soundcloud.com"]::before { content: '\f1be'; }
- li a[href*="stackoverflow.com"]::before { content: '\f16c'; }
- li a[href*="tumblr.com"]::before { content: '\f173'; }
- li a[href*="twitter.com"]::before { content: '\f099'; }
- li a[href*="vimeo.com"]::before { content: '\f194'; }
- li a[href*="vine.co"]::before { content: '\f1ca'; }
- li a[href*="yelp.com"]::before { content: '\f1e9'; }
- li a[href*="youtube.com"]::before { content: '\f167'; }
- li a[href*="wordpress.com"]::before { content: '\f19a'; }
- li a[href*="paypal.com"]::before { content: "\f1ed"; }
- li a[href*="lastfm.com"]::before { content: "\f202"; }
- li a[href*="behance.net"]::before { content: "\f1b4"; }
- li a[href*="deviantart.com"]::before { content: "\f1bd"; }
- li a[href*="spotify.com"]::before { content: "\f1bc"; }
- li a[href*="skype.com"]::before { content: "\f17e"; }
- li a[href*="slack.com"]::before { content: "\f198"; }
+.social-menu li a[href*="dribbble.com"]::before { content: '\f17d'; }
+.social-menu li a[href*="facebook.com"]::before { content: '\f09a'; }
+.social-menu li a[href*="flickr.com"]::before { content: '\f16e'; }
+.social-menu li a[href*="foursquare.com"]::before { content: '\f180'; }
+.social-menu li a[href*="github.com"]::before { content: '\f09b'; }
+.social-menu li a[href*="plus.google.com"]::before { content: '\f0d5'; }
+.social-menu li a[href*="instagram.com"]::before { content: '\f16d'; }
+.social-menu li a[href*="jsfiddle.com"]::before { content: '\f1cc'; }
+.social-menu li a[href*="linkedin.com"]::before { content: '\f0e1'; }
+.social-menu li a[href*="pinterest.com"]::before { content: '\f0d2'; }
+.social-menu li a[href*="reddit.com"]::before { content: '\f1a1'; }
+.social-menu li a[href*="soundcloud.com"]::before { content: '\f1be'; }
+.social-menu li a[href*="stackoverflow.com"]::before { content: '\f16c'; }
+.social-menu li a[href*="tumblr.com"]::before { content: '\f173'; }
+.social-menu li a[href*="twitter.com"]::before { content: '\f099'; }
+.social-menu li a[href*="vimeo.com"]::before { content: '\f194'; }
+.social-menu li a[href*="vine.co"]::before { content: '\f1ca'; }
+.social-menu li a[href*="yelp.com"]::before { content: '\f1e9'; }
+.social-menu li a[href*="youtube.com"]::before { content: '\f167'; }
+.social-menu li a[href*="wordpress.com"]::before { content: '\f19a'; }
+.social-menu li a[href*="paypal.com"]::before { content: "\f1ed"; }
+.social-menu li a[href*="lastfm.com"]::before { content: "\f202"; }
+.social-menu li a[href*="behance.net"]::before { content: "\f1b4"; }
+.social-menu li a[href*="deviantart.com"]::before { content: "\f1bd"; }
+.social-menu li a[href*="spotify.com"]::before { content: "\f1bc"; }
+.social-menu li a[href*="skype.com"]::before { content: "\f17e"; }
+.social-menu li a[href*="slack.com"]::before { content: "\f198"; }
 
 
 /*--------------------------------------------------------------
@@ -1089,7 +1089,7 @@ table#wp-calendar,
 .site-title{
 	position:relative;
 	margin:0 auto 10px auto;
-	font-size: 6rem; 
+	font-size: 7rem; 
 	line-height:1; 
 	text-decoration:none;
 	font-family: 'Montserrat', sans-serif;	
@@ -1172,7 +1172,7 @@ table#wp-calendar,
 	width:30%;
 	margin:59px auto 45px auto;
 	padding:1em;
-	font-size: 1.6rem;
+	font-size: 1.8rem;
 	font-weight: bold;
 	opacity:0.7;
 	border:4px solid #fff;
@@ -1204,9 +1204,12 @@ table#wp-calendar,
 	font-size:16px ;
 	font-size:1.6rem;
 	margin:45px 40px 45px 40px;
-	background:#fff;
+	background: #fafafa;
 	opacity:0.9;
+
+	border:4px solid #fff;
 	border-radius:4px;
+
 	padding:12px;
 	width:26%;	
 	box-shadow:0 2px 25px 0 rgba(0, 0, 0, 0.12);
@@ -1288,10 +1291,16 @@ table#wp-calendar,
 	color:#333;
 	margin:70px auto 70px auto;
 	padding:35px;
-	background-color:#fff;
+
 	box-shadow: 0px 1px 6px rgba(0,0,0,0.12);
 	font-family: 'Montserrat', sans-serif;	
 	text-transform:uppercase;
+
+	background: #fafafa;
+	opacity:0.9;
+
+	border-top:4px solid #fff;
+	border-bottom:4px solid #fff;
 }
 
 
@@ -1435,8 +1444,8 @@ table#wp-calendar,
 	position:relative;
 	background:#fff;
 	padding:12px; 
-	font-size:14px;
-	font-size:1.4rem;
+	font-size:16px;
+	font-size:1.6rem;
 	border:1px solid #f2f2f2;
 	border-radius:4px;
 	font-family: 'Open Sans', sans-serif;
@@ -1492,12 +1501,12 @@ table#wp-calendar,
 .comments-link::before{
 	content: "\f0e5";
 	display: inline-block;
-	font: normal normal normal 14px/1 FontAwesome;
+	font: normal normal normal 16px/1 FontAwesome;
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	vertical-align: top;
-	font-size: 14px; 
+	font-size: 16px; 
 	line-height: 1; 
 	color: #717171;
 	text-decoration: none; 
@@ -1508,12 +1517,12 @@ table#wp-calendar,
 .cat-links::before{
 	content: "\f115";
 	display: inline-block;
-	font: normal normal normal 14px/1 FontAwesome;
+	font: normal normal normal 16px/1 FontAwesome;
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	vertical-align: top;
-	font-size: 14px; 
+	font-size: 16px; 
 	line-height: 1; 
 	color: #717171;
 	text-decoration: none; 
@@ -2156,13 +2165,7 @@ span.bbp-admin-links a,
 	/*Increase text-size on tiny screens */
 	.more-link,
 	.entry-meta, 
-	.entry-footer,
-	.comment-navigation .nav-previous,
-	.posts-navigation .nav-previous,
-	.post-navigation .nav-previous ,
-	.comment-navigation .nav-next,
-	.posts-navigation .nav-next,
-	.post-navigation .nav-next {
+	.entry-footer {
 		font-size:16px;
 		font-size:1.6rem;
 	}

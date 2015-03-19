@@ -86,7 +86,7 @@ function aaron_docs() {
 			<li><?php _e('Hide the author and post date information.','aaron' )?></li>
 			<li><?php _e('Show the sidebar on pages.','aaron' )?></li>
 			<li><?php _e('Show the sidebar on the frontpage.','aaron' )?></li>
-			<li><?php _e('Show the breadcrumb navigation. -Breadcrumbs are shown below the post titel. ','aaron' )?></li>
+			<li><?php _e('Show the breadcrumb navigation. -Breadcrumbs are shown below the post title. ','aaron' )?></li>
 			<li><?php _e('Hide the search form in the header menu.','aaron' )?></li>
 			<li><?php _e('Hide the Site title in the header menu.','aaron' )?></li>
 			<li><?php _e('Add a descriptive screen reader text for the footer.','aaron' )?></li>

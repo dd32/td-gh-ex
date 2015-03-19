@@ -113,7 +113,7 @@ if(get_theme_mod( 'aaron_hide_highlight' ) =="" ){
 		echo '<i class="dashicons dashicons-admin-plugins"></i>';
 		echo '<a  class="hll3" href="' . esc_url( home_url( '/wp-admin/customize.php' ) ) . '">';
 		echo '<h2>' . __( 'Jetpack compatible','aaron' ) . '</h2>';
-		echo '<p>' . __( 'Install Jetpack for additional featured content, logo and more','aaron' ) . '</p>';
+		echo '<p>' . __( 'InstallJetpack for additional featured content, portfolio, logo and more','aaron' ) . '</p>';
 		echo '</a>';
 		echo '</div>';
 	}

@@ -21,7 +21,6 @@ if ( ! function_exists( 'aaron_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function aaron_setup() {
-
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
@@ -275,16 +274,14 @@ function aaron_customize_css() {
 
 	<?php
 	 }
-
 	 
 	echo '.site-title{color:#' . get_header_textcolor() . ';} ';
 
-	
 	$header_image = get_header_image();
 	if ( ! empty( $header_image ) ) {
 	?>
 		.site-header {
-		background: url(<?php header_image(); ?>) no-repeat bottom;
+		background: url(<?php header_image(); ?>) no-repeat center center;
 		-webkit-background-size: cover;
 		-moz-background-size:    cover;
 		-o-background-size:      cover;

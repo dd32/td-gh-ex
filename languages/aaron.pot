@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aaron\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/_s\n"
-"POT-Creation-Date: 2015-03-04 07:54+0100\n"
-"PO-Revision-Date: 2015-03-04 07:54+0100\n"
+"POT-Creation-Date: 2015-03-19 06:07+0100\n"
+"PO-Revision-Date: 2015-03-19 06:07+0100\n"
 "Last-Translator: Carolina Nymark <myazalea@hotmail.com>\n"
 "Language-Team: \n"
 "Language: en\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.7.4\n"
+"X-Generator: Poedit 1.7.5\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_nx\n"
@@ -346,7 +346,7 @@ msgstr ""
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:89
 msgid ""
-"Show the breadcrumb navigation. -Breadcrumbs are shown below the post titel. "
+"Show the breadcrumb navigation. -Breadcrumbs are shown below the post title. "
 msgstr ""
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/documentation.php:90
@@ -521,34 +521,34 @@ msgstr ""
 msgid "Featured"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/functions.php:49
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/functions.php:48
 msgid "Primary Menu"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/functions.php:50
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/functions.php:49
 msgid "Social Menu"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/functions.php:115
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/functions.php:114
 #: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/sidebar.php:22
 msgid "Sidebar"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/functions.php:125
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/functions.php:124
 msgid "Footer widget area"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/functions.php:144
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/functions.php:143
 msgctxt "Montserrat font: on or off"
 msgid "on"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/functions.php:149
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/functions.php:148
 msgctxt "Add new subset (greek, cyrillic, devanagari, vietnamese)"
 msgid "no-subset"
 msgstr ""
 
-#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/functions.php:240
+#: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/functions.php:239
 msgid "(Untitled)"
 msgstr ""
 
@@ -696,7 +696,8 @@ msgid "Jetpack compatible"
 msgstr ""
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/highlights.php:116
-msgid "Install Jetpack for additional featured content, logo and more"
+msgid ""
+"InstallJetpack for additional featured content, portfolio, logo and more"
 msgstr ""
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:21
