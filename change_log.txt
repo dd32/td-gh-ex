@@ -46,3 +46,6 @@ v) set comment list in HTML5.
 
 Version: 1.1.7 (24 Dec 2014)
 1) comment list support with HTML5 and remove callback function.
+
+Version: 1.1.8 (19 March 2015)
+i) Add PRO Theme Features tab in theme options.

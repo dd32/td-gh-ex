@@ -22,6 +22,7 @@ jQuery(document).ready(function($) {
 	} else {
 		$('.group:first').fadeIn();
 	}
+	
 	$('.group .collapsed').each(function(){
 		$(this).find('input:checked').parent().parent().parent().nextAll().each( 
 			function(){
@@ -34,6 +35,7 @@ jQuery(document).ready(function($) {
 	});
 	if (active_tab != '' && $(active_tab + '-tab').length ) {
 		$(active_tab + '-tab').addClass('nav-tab-active');
+		
 	}
 	else {
 		$('.nav-tab-wrapper a:first').addClass('nav-tab-active');
