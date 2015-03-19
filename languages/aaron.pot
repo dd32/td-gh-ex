@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: aaron\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/_s\n"
-"POT-Creation-Date: 2015-03-19 06:07+0100\n"
-"PO-Revision-Date: 2015-03-19 06:07+0100\n"
+"POT-Creation-Date: 2015-03-19 06:10+0100\n"
+"PO-Revision-Date: 2015-03-19 06:10+0100\n"
 "Last-Translator: Carolina Nymark <myazalea@hotmail.com>\n"
 "Language-Team: \n"
 "Language: en\n"
@@ -697,7 +697,7 @@ msgstr ""
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/highlights.php:116
 msgid ""
-"InstallJetpack for additional featured content, portfolio, logo and more"
+"Install Jetpack for additional featured content, portfolio, logo and more"
 msgstr ""
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\aaron/inc/template-tags.php:21
