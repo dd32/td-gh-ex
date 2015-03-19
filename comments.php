@@ -17,14 +17,19 @@ if ( post_password_required() )
   <?php if ( have_comments() ) : 	?>
   <h2 class="comments-title">
     <?php
-			printf( _n( 'One thought on - %2$s', '%1$s thoughts on "%2$s"', get_comments_number(), 'multishop' ),
+				printf( _n( '1 Comment', '%1$s Comments', get_comments_number(), 'multishop' ),
 				number_format_i18n( get_comments_number() ), get_the_title() );
 		?>
   </h2>
-  <ul class="">
-    <?php	
-	wp_list_comments( array( 'callback' => 'multishop_comment', 'short_ping' => true, 'style' => 'ul' ) ); ?>
-  </ul>
+  <ol class="comment-list">
+	<?php
+			wp_list_comments( array(
+				'style'       => 'ol',
+				'short_ping'  => true,
+				'avatar_size' => 56,
+			) );
+	?>
+	</ol><!-- .comment-list -->
   <?php paginate_comments_links(); ?>
   <?php endif; // have_comments() ?>
   <?php comment_form(); ?>

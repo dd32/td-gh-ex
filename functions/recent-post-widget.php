@@ -62,7 +62,7 @@ while ( $multishop_single_post->have_posts() ) { $multishop_single_post->the_pos
 ?>
 <div class="multishop-recentpost no-padding-lr clearfix">
     <p>
-    	<a href="<?php echo esc_url(get_permalink()); ?>" class="recent-post-title-link"><?php the_title(); ?></a>
+    	<a href="<?php echo esc_url(get_permalink()); ?>" class="recent-post-title-link"><?php esc_attr(the_title()); ?></a>
    
        <span> <?php echo get_the_date("M j, Y "); ?></span>
    </p>

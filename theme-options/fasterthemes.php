@@ -12,18 +12,11 @@ function ft_options_validate($input)
 	 $input['fburl'] = esc_url_raw( $input['fburl'] );
 	 $input['twitter'] = esc_url_raw( $input['twitter'] );
 	 $input['googleplus'] = esc_url_raw( $input['googleplus'] ); 
-	 
-	 $input['img-section-1'] = multishop_image_validation(esc_url_raw( $input['img-section-1']));
-	 $input['text-section-1'] = sanitize_text_field( $input['text-section-1']);
-	 $input['discount-section-1'] = sanitize_text_field( $input['discount-section-1']);
-	 
-	 $input['img-section-2'] = multishop_image_validation(esc_url_raw( $input['img-section-2']));
-	 $input['text-section-2'] = sanitize_text_field( $input['text-section-2']);
-	 $input['discount-section-2'] = sanitize_text_field( $input['discount-section-2']);
-	 
-	 $input['img-section-3'] = multishop_image_validation(esc_url_raw( $input['img-section-3']));
-	 $input['text-section-3'] = sanitize_text_field( $input['text-section-3']);
-	 $input['discount-section-3'] = sanitize_text_field( $input['discount-section-3']);
+	 for($multishop_section_i=1; $multishop_section_i <=3 ;$multishop_section_i++ ):
+		$input['img-section-'.$multishop_section_i] = multishop_image_validation(esc_url_raw( $input['img-section-'.$multishop_section_i]));
+		$input['text-section-'.$multishop_section_i] = sanitize_text_field( $input['text-section-'.$multishop_section_i]);
+		$input['discount-section-'.$multishop_section_i] = sanitize_text_field( $input['discount-section-'.$multishop_section_i]);
+	 endfor;
 
     return $input;
 }
@@ -98,6 +91,7 @@ function fastertheme_framework_page(){
 		$multishop_options = get_option( 'multishop_theme_options' ); ?>
      
           <!-------------- First group ----------------->
+          
           <div id="options-group-1" class="group faster-inner-tabs">
           	<div class="section theme-tabs theme-logo">
             <a class="heading faster-inner-tab active" href="javascript:void(0)"><?php _e('Site Logo  (Preferred size : 117px * 43px)','multishop'); ?></a>
@@ -138,6 +132,7 @@ function fastertheme_framework_page(){
               </div>
             </div>            
           </div>             
+		 	
           <!-------------- Second group ----------------->
           <div id="options-group-2" class="group faster-inner-tabs">            
             <div id="section-facebook" class="section theme-tabs">
@@ -170,96 +165,30 @@ function fastertheme_framework_page(){
           </div>   
           <!-------------- Third group ----------------->
 	        <div id="options-group-3" class="group faster-inner-tabs">
+				
+				
           <!-- section-1 -->
-          <div id="section-1" class="section section-text mini">
-            <h4 class="heading">
-				<?php _e('section-1  (Preferred size : 200px * 200px)','multishop'); ?></h4>
-            <div class="option">
+          <?php for($multishop_section_i=1; $multishop_section_i <=3 ;$multishop_section_i++ ): ?>
+          <div id="section-1" class="section theme-tabs">
+			<a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('section-'.$multishop_section_i.'  (Preferred size : 200px * 200px)','multishop'); ?></a>
+			<div class="faster-inner-tab-group">
               <div class="controls">
-                <input id="image_section1" class="upload" type="text" name="multishop_theme_options[img-section-1]" value="<?php if(!empty($multishop_options['img-section-1'])) { echo $multishop_options['img-section-1']; } ?>" placeholder="<?php _e('No file chosen','multishop'); ?>" />
+                <input id="image_section<?php echo $multishop_section_i; ?>" class="upload" type="text" name="multishop_theme_options[img-section-<?php echo $multishop_section_i; ?>]" value="<?php if(!empty($multishop_options['img-section-'.$multishop_section_i])) { echo $multishop_options['img-section-'.$multishop_section_i]; } ?>" placeholder="<?php _e('No file chosen','multishop'); ?>" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload','multishop'); ?>" />
-                <div class="screenshot" id="image_section1">
-                  <?php if(!empty($multishop_options['img-section-1'])) {  echo "<img src='".esc_url($multishop_options['img-section-1'])."' /><a class='remove-image'></a>"; } ?>
+                <div class="screenshot" id="image_section<?php echo $multishop_section_i; ?>">
+                  <?php if(!empty($multishop_options['img-section-'.$multishop_section_i])) {  echo "<img src='".esc_url($multishop_options['img-section-'.$multishop_section_i])."' /><a class='remove-image'></a>"; } ?>
                 </div>
               </div>
+			  <div class="controls">
+                <input id="text_section<?php echo $multishop_section_i; ?>" class="of-input" name="multishop_theme_options[text-section-<?php echo $multishop_section_i; ?>]" size="30" type="text" value="<?php if(!empty($multishop_options['text-section-'.$multishop_section_i])) { echo esc_attr($multishop_options['text-section-'.$multishop_section_i]); } ?>" />
+              </div>	
+			  <div class="controls">
+                <input id="discount_section<?php echo $multishop_section_i; ?>" class="of-input" name="multishop_theme_options[discount-section-<?php echo $multishop_section_i; ?>]" size="30" type="text" value="<?php if(!empty($multishop_options['discount-section-'.$multishop_section_i])) { echo esc_attr($multishop_options['discount-section-'.$multishop_section_i]); } ?>" />
+              </div>	
             </div>
-           </div> 
-          <div id="text_section1" class="section section-text mini">
-            <div class="option">
-              <div class="controls">
-                <input id="text_section1" class="of-input" name="multishop_theme_options[text-section-1]" size="30" type="text" value="<?php if(!empty($multishop_options['text-section-1'])) { echo esc_attr($multishop_options['text-section-1']); } ?>" />
-              </div>
-            </div>
-          </div>
-          <div id="discount_section1" class="section section-text mini">
-            <div class="option">
-              <div class="controls">
-                <input id="discount_section1" class="of-input" name="multishop_theme_options[discount-section-1]" size="30" type="text" value="<?php if(!empty($multishop_options['discount-section-1'])) { echo esc_attr($multishop_options['discount-section-1']); } ?>" />
-              </div>
-            </div>
-          </div>
-          <!-- section-2 -->
-          <div id="section-2" class="section section-text mini">
-            <h4 class="heading">
-				
-				<?php _e('section-2 (Preferred size : 200px * 200px)','multishop'); ?>
-				
-				</h4>
-            <div class="option">
-              <div class="controls">
-                <input id="image_section2" class="upload" type="text" name="multishop_theme_options[img-section-2]" value="<?php if(!empty($multishop_options['img-section-2'])) { echo $multishop_options['img-section-2']; } ?>" placeholder="<?php _e('No file chosen','multishop'); ?>" />
-                <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload','multishop'); ?>" />
-                <div class="screenshot" id="image_section2">
-                  <?php if(!empty($multishop_options['img-section-2'])) {  echo "<img src='".esc_url($multishop_options['img-section-2'])."' /><a class='remove-image'></a>"; } ?>
-                </div>
-              </div>
-            </div>
-           </div> 
-          <div id="text_section2" class="section section-text mini">
-            <div class="option">
-              <div class="controls">
-                <input id="text_section2" class="of-input" name="multishop_theme_options[text-section-2]" size="30" type="text" value="<?php if(!empty($multishop_options['text-section-2'])) { echo esc_attr($multishop_options['text-section-2']); } ?>" />
-              </div>
-            </div>
-          </div>
-          <div id="discount_section2" class="section section-text mini">
-            <div class="option">
-              <div class="controls">
-                <input id="discount_section2" class="of-input" name="multishop_theme_options[discount-section-2]" size="30" type="text" value="<?php if(!empty($multishop_options['discount-section-2'])) { echo esc_attr($multishop_options['discount-section-2']); } ?>" />
-              </div>
-            </div>
-          </div>
-          <!-- section-3 -->
-          <div id="section-3" class="section section-text mini">
-            <h4 class="heading">
-				
-				<?php _e('section-3 (Preferred size : 200px * 200px)','multishop'); ?></h4>
-            <div class="option">
-              <div class="controls">
-                <input id="image_section3" class="upload" type="text" name="multishop_theme_options[img-section-3]" value="<?php if(!empty($multishop_options['img-section-3'])) { echo $multishop_options['img-section-3']; } ?>" placeholder="<?php _e('No file chosen','multishop'); ?>" />
-                <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload','multishop'); ?>" />
-                <div class="screenshot" id="image_section3">
-                  <?php if(!empty($multishop_options['img-section-3'])) {  echo "<img src='".esc_url($multishop_options['img-section-3'])."' /><a class='remove-image'></a>"; } ?>
-                </div>
-              </div>
-            </div>
-           </div> 
-          <div id="text_section3" class="section section-text mini">
-            <div class="option">
-              <div class="controls">
-                <input id="text_section3" class="of-input" name="multishop_theme_options[text-section-3]" size="30" type="text" value="<?php if(!empty($multishop_options['text-section-3'])) { echo esc_attr($multishop_options['text-section-3']); } ?>" />
-              </div>
-            </div>
-          </div>
-          <div id="discount_section3" class="section section-text mini">
-            <div class="option">
-              <div class="controls">
-                <input id="discount_section3" class="of-input" name="multishop_theme_options[discount-section-3]" size="30" type="text" value="<?php if(!empty($multishop_options['discount-section-3'])) { echo esc_attr($multishop_options['discount-section-3']); } ?>" />
-              </div>
-            </div>
-          </div>
+          </div> 
+          <?php endfor; ?>
         </div>
-        
         <!--======================== F I N A L - - T H E M E - - O P T I O N S ===================--> 
       </div>
      </div>
@@ -272,8 +201,4 @@ function fastertheme_framework_page(){
     </form>    
 </div>
 <div class="save-options"><h2><?php _e('Options saved successfully.','multishop'); ?></h2></div>
-<div class="newsletter"> 
-  <h1><?php _e('Subscribe with us','multishop'); ?></h1>
-  <p><?php _e("Join our mailing list and we'll keep you updated on new themes as they're released and our exclusive special offers.","multishop"); ?> <a href="http://fasterthemes.com/freethemesubscribers/" target="_blank"><?php _e('Click here to join','multishop'); ?></a></p>
-</div>
 <?php } ?>

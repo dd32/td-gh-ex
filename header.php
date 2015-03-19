@@ -17,9 +17,6 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width">
-<title>
-<?php wp_title( '|', true, 'right' ); ?>
-</title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php if(!empty($multishop_options['favicon'])) { ?>
@@ -44,13 +41,18 @@
       <div class="col-md-7 col-sm-9 no-padding-lr clearfix">
         <div class="header-navigation">
           <div class="navbar-header">
-            <button type="button" data-target=".navbarCollapse" data-toggle="collapse" class="navbar-toggle"> <span class="sr-only"><?php _e('Toggle navigation','multishop'); ?></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <button type="button" data-target=".navbarCollapse" data-toggle="collapse" class="navbar-toggle"> 
+					<span class="sr-only"></span> 
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span> 
+			</button>
           </div>
           <?php
 			$multishop_defaults = array(
 							'theme_location'  => 'primary',
 							'container'       => 'div',
-							'container_class' => 'collapse navbar-collapse no-padding-lr  pull-right',
+							'container_class' => 'collapse navbar-collapse no-padding-lr navbarCollapse  pull-right',
 							'container_id'    => '',
 							'menu_class'      => 'collapse navbar-collapse no-padding-lr navbarCollapse',
 							'menu_id'         => '',
@@ -60,11 +62,14 @@
 							'after'           => '',
 							'link_before'     => '',
 							'link_after'      => '',
-							'items_wrap'      => '<ul class="nav navbar-nav multishop-menu">%3$s</ul>',
+							'items_wrap'      => '<ul id="%1$s" class="%2$s nav navbar-nav multishop-menu">%3$s</ul>',
 							'depth'           => 0,
 							'walker'          => ''
 						);
-			wp_nav_menu($multishop_defaults); ?>
+						if (has_nav_menu('primary')) {	
+							wp_nav_menu($multishop_defaults); 
+						}
+					?>
         </div>
       </div>
       <div class="col-md-2 no-padding-lr">

@@ -12,11 +12,6 @@ function multishop_theme_register_plugins() {
             'slug'      => 'woocommerce',
             'required'  => false,
         ),
-		 array(
-            'name'      => __('Faster Pagination','multishop'),
-            'slug'      => 'faster-pagination',
-            'required'  => false,
-        ),
     );
 
     /*  Array of configuration settings. Amend each line as needed. */

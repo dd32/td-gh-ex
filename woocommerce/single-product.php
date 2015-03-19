@@ -9,7 +9,7 @@ get_header( 'shop' ); ?>
 <div class="col-md-12 site-title">
   <div class="multishop-container multishop-breadcrumb">
     <h1>
-      <?php the_title(); ?>
+      <?php esc_attr(the_title()); ?>
     </h1>
   </div>
 </div>
@@ -52,7 +52,7 @@ get_header( 'shop' ); ?>
         <div class="col-md-7">
           <div class="product-details">
             <h3>
-              <?php the_title(); ?>
+              <?php esc_attr(the_title()); ?>
             </h3>
             <p>
               <?php the_excerpt(); ?>

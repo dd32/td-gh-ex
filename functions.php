@@ -4,7 +4,6 @@
  */
 if ( ! function_exists( 'multishop_setup' ) ) :
 function multishop_setup() {
-	
 	global $content_width;
 	if ( ! isset( $content_width ) ) {
 		$content_width = 745;
@@ -18,11 +17,12 @@ function multishop_setup() {
 	// Add RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
-        
+	add_theme_support( 'woocommerce' );
+    add_theme_support( 'title-tag' );
 	set_post_thumbnail_size( 672, 372, true );
 	add_image_size( 'multishop-full-width', 1038, 576, true );
 	add_image_size( 'multishop-blog-image', 380, 260, true );
-	// This theme uses wp_nav_menu() in two locations.
+	// This theme uses wp_nav_menu() in one locations.
 	register_nav_menus( array(
 		'primary'   => __( 'Top primary menu', 'multishop' ),
 	) );
@@ -44,23 +44,21 @@ function multishop_setup() {
 	// This theme uses its own gallery styles.
 	add_filter( 'use_default_gallery_style', '__return_false' );
 }
-
 endif; // multishop_setup
 add_action( 'after_setup_theme', 'multishop_setup' );
 
 /**
- * Register Lato Google font for multishop.
+ * Register Istok Web Google font for multishop.
  */
 function multishop_font_url() {
 	$multishop_font_url = '';
 	/*
 	 * Translators: If there are characters in your language that are not supported
-	 * by Lato, translate this to 'off'. Do not translate into your own language.
+	 * by Istok Web, translate this to 'off'. Do not translate into your own language.
 	 */
-	if ( 'off' !== _x( 'on', 'Lato font: on or off', 'multishop' ) ) {
-		$multishop_font_url = add_query_arg( 'family', urlencode( 'Lato:300,400,700,900,300italic,400italic,700italic' ), "//fonts.googleapis.com/css" );
+	if ( 'off' !== _x( 'on', 'Istok+Web font: on or off', 'multishop' ) ) {
+		$multishop_font_url = add_query_arg( 'family', urlencode( 'Istok+Web:400,700,400italic,700italic' ), "//fonts.googleapis.com/css" );
 	}
-
 	return $multishop_font_url;
 }
 

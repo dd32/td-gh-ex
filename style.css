@@ -4,7 +4,7 @@ Theme URI: http://fasterthemes.com/wordpress-themes/Multishop
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
 Description: Multishop is a twitter bootstrap based responsive theme mainly designed for WooCommerce based e-commerce websites. But this can be used for developing business or personal websites as well as it contains all the features which a standard WordPress theme should have. As Multishop theme is built on top of Twitter Bootstrap framework so your website will be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, theme-options etc in order to get it customized as per your need. Pro version of this theme is also available which has several awesome options like Color options, Font Options , Google Analytics inbuilt code panel, Slider options, more speed optimized code for faster loading and a lot more options to worth having them.
-Version: 1.1.6
+Version: 1.1.7
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments , translation-ready
@@ -30,6 +30,43 @@ body {
 }
 .margin-l {
 	margin-left: 0 !important;
+}
+.page-numbers {
+    border: 1px solid #ccc;
+    color: #000;
+    padding: 6px 8px;
+}
+.page-numbers.current {
+    color: #c80000;
+}
+.multishop_previous_pagination {
+    display: inline;
+    float: left;
+    margin-top: 0.5em;
+}
+.multishop_next_pagination {
+    display: inline;
+    float: right;
+    margin-top: 0.5em;
+}
+.main-sidebar .search-field,
+.main-sidebar .search-form > label {
+    width: 100%;
+}
+.screen-reader-text {
+    display: none;
+}
+.site-title-text {
+    color: #fff;
+}
+img {
+    height: auto;
+}
+img {
+    max-width: 100%;
+}
+.current_page_item a {
+    color: #c80000 !important;
 }
 a:hover {
 	color: #c80000;
@@ -368,8 +405,8 @@ footer {
 	margin-bottom: 20px;
 }
 .blog-body {
-	padding-left: 10px;
-	padding-right: 0;
+/*	padding-left: 0px;
+	padding-right: 0;*/
 }
 .blog-body h4 a {
 	color: #545454;
@@ -392,11 +429,18 @@ footer {
 	color: #545454;
 }
 .readmore-btn {
-	color: #c80000;
-	text-transform: capitalize;
-	font-size: 14px;
-	margin-top: 15px;
-	float: left;
+	border: 1px solid #c1c1c1;
+    border-radius: 5px;
+    color: #000;
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 20px;
+    padding: 8px 15px;
+    text-transform: capitalize;
+}
+.readmore-btn:hover{
+	border: 1px solid #c80000;
+	color:#c80000;
 }
 /***single-blog page**/
 .singleblog-box {
@@ -417,121 +461,211 @@ footer {
 /**Blog**/
 .blog-image {
 	float: left;
-	margin-right: 10px;
-}
-/** commentform **/
-.comment-reply-title {
-	margin-top: 25px;
-}
-.multishop-inner-blog-comment img {
-	border: 1px solid #666666;
-	float: left;
-	height: 60px;
-	margin-right: 15px;
-	width: 60px;
-}
-.multishop-comment-hr {
-	border: 1px solid #DDDDDD;
-	margin: 15px 0;
-}
-.multishop-inner-blog-text img {
-	height: auto;
-	margin-bottom: 10px;
-	max-width: 100%;
-}
-.multishop-comment-reply-link {
-	text-align: right;
-}
-.multishop-comment-reply-link > a {
-	color: #545454;
-	font-size: 16px;
-}
-.multishop-inner-blog-comment {
-	padding: 0px;
-}
-.multishop-inner-blog-comment .multishop-comment-name {
-	float: left;
-	font-size: 16px;
-}
-.multishop-inner-blog-comment .multishop-comment-datetime {
-	color: #979797;
-	font-weight: normal;
-	text-align: right;
-}
-.multishop-inner-blog-bg article {
-	margin-bottom: 20px;
-}
-.multishop-inner-blog-text p {
-	font-size: 14px;
-}
-.multishop-comment-text {
-	margin-top: 15px;
-}
-#comments > ul, #comments > ul li ul {
-	list-style: none outside none;
-	padding: 0px;
-}
-#comments > ul li ul {
-	margin-left: 50px;
-}
-#commentform input {
-	background: none repeat scroll 0 0 #F8F8F8;
-	border-color: #C6C6C6;
-	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
-	color: #6A6A6A;
-	font-size: 13px;
-	margin-top: 20px;
-	padding: 13px 0 7px 10px;
-	width: 50%;
-}
-#commentform textarea {
-	background: none repeat scroll 0 0 #F8F8F8;
-	border: medium none #C6C6C6;
-	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
-	color: #6A6A6A;
-	font-size: 13px;
-	margin-top: 20px;
-	padding-top: 10px;
-	resize: vertical;
-	width: 100%;
-	padding-left: 10px;
-}
-#commentform .form-submit > input[type="submit"] {
-	background-color: #C80000;
-	border-color: #CCCCCC;
-	border-radius: 4px;
-	color: #FFFFFF;
-	cursor: pointer;
-	padding: 10px 15px;
-	width: auto;
-}
-#commentform small, #commentform label, .form-allowed-tags {
-	display: none;
-}
-.comments-title {
-	border-bottom: 2px solid #EDEDED;
-	color: #545454;
-	float: left;
-	font-size: 16px;
-	font-weight: bold;
-	padding-bottom: 10px;
-	width: 100%;
-	margin-bottom: 15px;
-}
-.comment-text {
-	border: 1px solid #CCCCCC;
-	margin: 5px 0 0;
-	padding: 6px 5px 5px 10px;
+	margin-right: 20px;
 }
 .site-title {
 	margin-bottom: 50px;
 }
+
+/** commentform **/
+/* comment replay box */
+.comment-body a {
+    color: rgba(51, 51, 51, 0.7);
+}
+.comment-body a:hover{
+	color:#c80000;
+}
+
+.comment-reply-title {
+    margin-top: 25px;
+}
+.comment-notes {
+    display: none;
+}
+.comment-form label {
+    display:none;
+}
+.form-allowed-tags {
+    display: none;
+}
+.form-submit{
+    color: #363f48;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.5s ease-in-out 0s;
+    width:14%;
+}
+.form-submit:hover
+{
+    background-color: #fff;
+    border-color: #666d73;
+    color: #fd3329;
+}
+.comment-form-author {
+    float: left;
+    position: relative;
+    width: 33.33%;
+}
+.comment-form-author > input {
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+    font-size: 13px;
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+    outline: none;
+}
+.comment-form-author > input:focus{
+    border-color:#999;
+    box-shadow:0 0 5px #999;
+}
+.comment-form-email{
+    float: left;
+    padding-left: 15px;
+    position: relative;
+    width: 33.33%;
+}
+.comment-form-email > input {
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+    font-size: 13px;
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+    outline: none;
+}
+.comment-form-email > input:focus{
+    border-color:#999;
+    box-shadow:0 0 5px #999;
+}
+.comment-form-url{
+    float: left;
+    padding-left: 15px;
+    position: relative;
+    width: 33.33%;
+}
+.comment-form-url > input {
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+    font-size: 13px;
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+    outline: none;
+}
+.comment-form-url > input:focus{
+    border-color:#999;
+    box-shadow:0 0 5px #999;
+}
+.comment-form-comment{
+    float: left;
+    position: relative;
+    width: 100%;
+}
+textarea {
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+    font-size: 13px;
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+    outline: none;
+}
+textarea:focus{
+    border-color:#999;
+    box-shadow:0 0 5px #999;
+}
+.form-submit > input{
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+    font-size: 13px;
+    margin-top: 20px;
+    padding: 10px;
+    outline: none;
+}
+/* end custom.css*/
+/* all comment list */
+.comment-body {
+    border-bottom: 1px solid #c1c1c1;
+    padding-bottom: 15px;
+}
+.comment-list {
+    list-style: none outside none;
+    padding: 0;
+}
+.comments-article > ol {
+    display: inline-block;
+    list-style: none outside none;
+    margin-top: 30px;
+    padding-left: 0;
+    width: 100%;
+}
+.comments-article > ol {
+    list-style: none outside none;
+}
+.comments-article > ol > li .comment-body {
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+}
+.comment-content {
+    clear: both;
+    display: inline-block;
+    padding-left: 100px;
+    width: 100%;
+}
+.comments-article > ol {
+    list-style: none outside none;
+}
+.comment-list .reply {
+    font-size: 12px;
+    text-align: right;
+}
+.comment-list .children {
+    list-style: none outside none;
+    margin: 0;
+    padding-left: 25px;
+}
+.comments-article .children li {
+    list-style: none outside none;
+}
+.comments-article > ol > li .comment-body {
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+}
+.comment-author {
+    color: rgba(51, 51, 51, 0.7);
+    float: left;
+    margin-bottom: 0.4em;
+}
+.avatar.avatar-56.photo {
+    border-radius: 50%;
+    height: 80px;
+    position: absolute;
+    width: 80px;
+}
+.comment-author .fn {
+    padding-left: 100px;
+}
+.comment-metadata {
+    float: right;
+    margin-bottom: 15px;
+}
+/* end all comment list */
+
 /* main-sidebar */
 .blog-body h4 {
 	color: #545454;
 	font-size: 16px;
 	font-weight: bold;
-	margin-top: 0px;
+	margin-top: 20px;
 }
 .recentcomments > a {
 	line-height: 2px !important;
@@ -580,6 +714,7 @@ footer {
 	font-size: 15px;
 	font-weight: bold;
 	padding: 8px 20px;
+	display: none;
 }
 .main-sidebar ul {
 	list-style: none;
@@ -735,7 +870,7 @@ footer {
 	font-weight: bold;
 	margin: 5px 0 0;
 	text-transform: uppercase;
-	padding-left: 15px;
+	padding-left: 5px;
 }
 .multishop-breadcrumb a {
 	font-size: 14px;
@@ -776,12 +911,16 @@ footer {
 	margin-right: 10px;
 }
 .multishop-default-pagination {
-	background-color: #F8F8F8;
-	margin-bottom: 30px;
-	margin-top: 20px;
-	padding: 15px 5px 15px 5px;
-	width: 100%;
-	display: table;
+/*	background-color: #f8f8f8; */
+    margin-bottom: 0;
+    margin-top: 2px;
+    padding: 15px;
+}
+.multishop-default-pagination .nav-links  a{
+	color:#000;
+}
+.multishop-default-pagination .nav-links  a:hover{
+	color:#c80000;
 }
 .multishop-box-paging {
 	background-color: #F8F8F8;
@@ -1575,10 +1714,10 @@ i {
     color: #636363;
 }
 .pagination {
-    float: right;
+float: right;
+    margin: auto 15px auto auto;
     padding: 0;
     text-align: center;
-	width:auto;
 }
 .woocommerce .woocommerce-ordering, 
 .woocommerce-page .woocommerce-ordering {

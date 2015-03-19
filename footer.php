@@ -7,6 +7,7 @@ $multishop_options = get_option('multishop_theme_options');
 
 <div class="clearfix"></div>
 <footer>
+	 <?php if (is_active_sidebar('footer-1') || is_active_sidebar('footer-2') || is_active_sidebar('footer-3') || is_active_sidebar('footer-4')) { ?>
     <div class="container multishop-container multishop-footer">
         <div class="row">
             <div class="col-md-3 col-sm-6 footer-box">
@@ -20,9 +21,9 @@ $multishop_options = get_option('multishop_theme_options');
                 } ?>
             </div>
             <div class="col-md-3 col-sm-6 footer-box">
-<?php if (is_active_sidebar('footer-3')) {
-    dynamic_sidebar('footer-3');
-} ?>
+					<?php if (is_active_sidebar('footer-3')) {
+						dynamic_sidebar('footer-3');
+					} ?>
             </div>
             <div class="col-md-3 col-sm-6 footer-box">
                 <?php if (is_active_sidebar('footer-4')) {
@@ -31,6 +32,7 @@ $multishop_options = get_option('multishop_theme_options');
             </div>
         </div>
     </div>
+    <?php } ?>
     <div class="footer-bottom">
         <div class="container multishop-container">
             <div class="col-md-6 foot-copy-right no-padding-lr">
