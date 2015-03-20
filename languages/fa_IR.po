@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sparkling Theme\n"
-"POT-Creation-Date: 2014-10-03 11:43+0200\n"
-"PO-Revision-Date: 2014-10-03 11:43+0200\n"
+"POT-Creation-Date: 2015-03-20 15:59+0200\n"
+"PO-Revision-Date: 2015-03-20 15:59+0200\n"
 "Last-Translator: Aigars Silkalns <a.silkalns@gmail.com>\n"
 "Language-Team: RobertCreed <info@robertcreed.me>\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.9\n"
+"X-Generator: Poedit 1.7.5\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-KeywordsList: _e;__;esc_attr__;_nx:4c,1,2;_n:1,2\n"
@@ -158,12 +158,11 @@ msgstr ""
 "احتمالا جستجو می تواند کمک کند."
 
 #: ../content-page.php:21 ../content-single.php:35 ../content.php:43
-#: ../front-page.php:21 ../image.php:79
+#: ../image.php:79
 msgid "Pages:"
 msgstr "صفحات:"
 
-#: ../content-page.php:26 ../content-single.php:26 ../content.php:23
-#: ../front-page.php:26
+#: ../content-page.php:32 ../content-single.php:26 ../content.php:23
 msgid "Edit"
 msgstr "ویرایش"
 
@@ -174,7 +173,7 @@ msgstr ""
 #: ../content-single.php:23
 #, fuzzy, php-format
 msgid " %1$s"
-msgstr "نگاهی به بایگانی ماهیانه. %1$s"
+msgstr "‏%1$s در %2$s"
 
 #: ../content.php:20
 msgid "Leave a comment"
@@ -192,47 +191,47 @@ msgstr "% نظر"
 msgid "Read More"
 msgstr "بیشتر بخوانید"
 
-#: ../functions.php:57
+#: ../functions.php:69
 msgid "Primary Menu"
 msgstr "قهرست اولیه"
 
-#: ../functions.php:58 ../inc/extras.php:215
+#: ../functions.php:70 ../inc/extras.php:226
 msgid "Footer Links"
 msgstr "لینک پانویس"
 
-#: ../functions.php:87
+#: ../functions.php:108
 msgid "Sidebar"
 msgstr "نوار کناری"
 
-#: ../functions.php:97
+#: ../functions.php:118
 msgid "Homepage Widget 1"
 msgstr "ویدجت خانه 1"
 
-#: ../functions.php:98 ../functions.php:108 ../functions.php:118
+#: ../functions.php:119 ../functions.php:129 ../functions.php:139
 msgid "Displays on the Home Page"
 msgstr "نمایش در صفحه اصلی"
 
-#: ../functions.php:107
+#: ../functions.php:128
 msgid "Homepage Widget 2"
 msgstr "ویدجت خانه 2"
 
-#: ../functions.php:117
+#: ../functions.php:138
 msgid "Homepage Widget 3"
 msgstr "ویدجت خانه 3"
 
-#: ../functions.php:127
+#: ../functions.php:148
 msgid "Footer Widget 1"
 msgstr "ویدجت پانویس 1"
 
-#: ../functions.php:128 ../functions.php:138 ../functions.php:148
+#: ../functions.php:149 ../functions.php:159 ../functions.php:169
 msgid "Used for footer widget area"
 msgstr "استفاده در محل ویدجت پانویس"
 
-#: ../functions.php:137
+#: ../functions.php:158
 msgid "Footer Widget 2"
 msgstr "ویدجت پانویس 2"
 
-#: ../functions.php:147
+#: ../functions.php:168
 msgid "Footer Widget 3"
 msgstr "ویدجت پانویس 3"
 
@@ -360,16 +359,16 @@ msgstr "ضخیم"
 msgid "Bold Italic"
 msgstr "ضخیم و اریب"
 
-#: ../inc/extras.php:63
+#: ../inc/extras.php:61
 #, php-format
 msgid "Page %s"
 msgstr "صفحات %s"
 
-#: ../inc/extras.php:111
+#: ../inc/extras.php:121
 msgid "Search..."
 msgstr "جستجو..."
 
-#: ../inc/extras.php:132
+#: ../inc/extras.php:142
 msgid ""
 "<p>This post is password protected. To view it please enter your password "
 "below:</p>"
@@ -377,54 +376,54 @@ msgstr ""
 "<p>این مطلب با رمز عبور محافظت می شود. برای نمایش رمز را در پایین وارد کنید: "
 "</p>"
 
-#: ../inc/extras.php:133
+#: ../inc/extras.php:143
 msgid "Password:"
 msgstr "رمز عبور:"
 
-#: ../inc/extras.php:136
+#: ../inc/extras.php:146
 msgid "Submit"
 msgstr "تایید"
 
-#: ../inc/extras.php:179
+#: ../inc/extras.php:190
 msgid "Follow us on "
 msgstr "ما را دنبال کنید در"
 
-#: ../inc/extras.php:292
+#: ../inc/extras.php:301
 #, php-format
 msgid "Theme by %1$s Powered by %2$s"
 msgstr "پوسته توسط %1$s قدرت گرفته از %2$s"
 
-#: ../inc/extras.php:396
+#: ../inc/extras.php:405
 msgid "Support and Documentation"
 msgstr "پشتیبانی و مستندات"
 
-#: ../inc/extras.php:402
+#: ../inc/extras.php:411
 msgid "Sparkling Documentation"
 msgstr "مستندات Sparkling"
 
-#: ../inc/extras.php:403
+#: ../inc/extras.php:412
 msgid ""
 "The best way to contact us with <b>support questions</b> and <b>bug reports</"
 "b> is via"
 msgstr "بهترین راه تماس با ما <b>پشتیبانی پرسش</b> و <b>گزارش باگ </b> است"
 
-#: ../inc/extras.php:403
+#: ../inc/extras.php:412
 msgid "Colorlib support forum"
 msgstr "انجمن پشتیبانی Colorlib"
 
-#: ../inc/extras.php:404
+#: ../inc/extras.php:413
 msgid "If you like this theme, I'd appreciate any of the following:"
 msgstr "اگر این قالب را می پسندید، من قدردانی میکنم از هر نوع دنبال کردنی:"
 
-#: ../inc/extras.php:406
+#: ../inc/extras.php:415
 msgid "Rate this Theme"
 msgstr "رای به این قالب"
 
-#: ../inc/extras.php:407
+#: ../inc/extras.php:416
 msgid "Like on Facebook"
 msgstr "پسند به ما در فیسبوک"
 
-#: ../inc/extras.php:408
+#: ../inc/extras.php:417
 msgid "Follow on Twitter"
 msgstr "دنبال کردن ما در توییتر"
 
@@ -772,12 +771,12 @@ msgstr "اضافه کردن URL کامل برای پروفایل های شبکه
 #: ../options.php:326
 #, fuzzy
 msgid "Facebook"
-msgstr "پسند به ما در فیسبوک"
+msgstr "فیسبوک"
 
 #: ../options.php:333
 #, fuzzy
 msgid "Twitter"
-msgstr "دنبال کردن ما در توییتر"
+msgstr "توییتر"
 
 #: ../options.php:339
 msgid "Google+"
@@ -831,15 +830,19 @@ msgstr ""
 msgid "SoundCloud"
 msgstr ""
 
-#: ../options.php:416
+#: ../options.php:417
+msgid "GitHub"
+msgstr ""
+
+#: ../options.php:422
 msgid "Other"
 msgstr "دیگر"
 
-#: ../options.php:419
+#: ../options.php:425
 msgid "Custom CSS"
 msgstr "CSS سفارشی"
 
-#: ../options.php:420
+#: ../options.php:426
 msgid "Additional CSS"
 msgstr "CSS اضافی"
 

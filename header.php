@@ -21,17 +21,8 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
-<!-- favicon -->
-
-<?php if ( of_get_option( 'custom_favicon' ) ) { ?>
-<link rel="icon" href="<?php echo of_get_option( 'custom_favicon' ); ?>" />
-<?php } ?>
-
-<!--[if IE]><?php if ( of_get_option( 'custom_favicon' ) ) { ?><link rel="shortcut icon" href="<?php echo of_get_option( 'custom_favicon' ); ?>" /><?php } ?><![endif]-->
 
 <?php wp_head(); ?>
 
@@ -79,11 +70,11 @@
 
 	<div id="content" class="site-content">
 
-			<div class="top-section">
-				<?php sparkling_featured_slider(); ?>
-				<?php sparkling_call_for_action(); ?>
-			</div>
+		<div class="top-section">
+			<?php sparkling_featured_slider(); ?>
+			<?php sparkling_call_for_action(); ?>
+		</div>
 
 		<div class="container main-content-area">
 			<div class="row">
-				<div id="content" class="main-content-inner col-sm-12 col-md-8 <?php echo of_get_option( 'site_layout' ); ?>">
+				<div class="main-content-inner <?php echo sparkling_main_content_bootstrap_classes(); ?> <?php echo of_get_option( 'site_layout' ); ?>">
