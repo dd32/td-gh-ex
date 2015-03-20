@@ -2,7 +2,7 @@
 
 Theme Name: Unite
 Theme URI: http://colorlib.com/wp/unite/
-Version: 1.5.8
+Version: 1.5.9
 Tested up to: WP 4.1
 
 #Copyright notice#
@@ -36,10 +36,9 @@ You can install the theme through the WordPress installer under "Themes" > "Inst
 
 Alternatively you can download the file, unzip it and move the unzipped contents to the "wp-content/themes" folder of your WordPress installation. You will then be able to activate the theme.
 
-This theme relies on Options Framework by WP Theming to provide customization options.
-Right after you activate Unite, you'll see message on top of your screen, asking you to install Options Framework (required) and CPT Bootstrap Carousel (optional). Make sure you install and activate those plugins.
+Right after you activate Unite, you'll see message on top of your screen, asking you to install CPT Bootstrap Carousel (optional). Make sure you install and activate it if you want to setup image slider just like on theme demo.
 
-If you dismiss this notice, you can install those plugins later via Appearance->Install plugins.
+If you dismiss this notice, you can install this plugin later via Appearance->Install plugins.
 
 #Theme Features#
 
@@ -60,6 +59,10 @@ If you dismiss this notice, you can install those plugins later via Appearance->
 Theme documentation is available on http://colorlib.com/wp/support/unite
 
 #Changelog#
+
+####1.5.9 - 11.02.2015 ####
+
+* Improved favicon support and now loaded in frontend and backend. 
 
 ####1.5.8 - 26.01.2015 ####
 
