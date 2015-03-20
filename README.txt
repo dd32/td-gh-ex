@@ -71,6 +71,10 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.0.7
+* WooCommerce styling tweaks
+* Updated language .pot file
+
 #### 1.0.6
 * Styling bug on WooCommerce checkout page fixed
 * Added link to a demo to the TopShop Premium page

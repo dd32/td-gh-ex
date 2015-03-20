@@ -171,6 +171,23 @@
           transition: all 0.08s linear 0s;
 }
 
+.single-product span.onsale {
+    border-radius: 0;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08) inset;
+    width: 60px;
+    height: 23px;
+    min-height: 18px;
+    margin: 0;
+    padding: 1px 0 0;
+    line-height: 20px;
+    font-size: 13px;
+    text-shadow: none;
+    font-weight: 400;
+    text-transform: uppercase;
+    left: 4px;
+    top: 4px;
+}
+
 .woocommerce ul.products li.product .onsale,
 .woocommerce-page ul.products li.product .onsale {
     border-radius: 0;

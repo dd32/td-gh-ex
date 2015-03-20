@@ -71,6 +71,7 @@ function customizer_library_topshop_build_styles() {
                 .woocommerce-page input.button,
                 .woocommerce #review_form #respond .form-submit input,
                 .woocommerce-page #review_form #respond .form-submit input,
+                .single-product span.onsale,
                 .header-cart:hover .header-cart-checkout .fa,
                 .main-navigation a:hover,
                 .main-navigation li.current-menu-item > a,
