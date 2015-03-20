@@ -68,9 +68,12 @@ View the settings under Appearance -> ALBAR Settings.
 
 == Changelog ==
 
+#### 1.6.3
+** Updated language .pot file.
+
 #### 1.6.2
 ** Added WooCommerce cart into the header if WooCommerce is active.
-** Added Styling tweaks
+** Added Styling tweaks.
 
 #### 1.6.1
 ** Added 2 help links in the ALBAR Settings -> Slider Settings page.

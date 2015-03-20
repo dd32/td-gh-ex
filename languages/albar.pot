@@ -1,19 +1,27 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Albar\n"
-"POT-Creation-Date: 2015-02-12 12:53+0200\n"
-"PO-Revision-Date: 2015-02-12 12:53+0200\n"
+"POT-Creation-Date: 2015-03-20 08:25+0200\n"
+"PO-Revision-Date: 2015-03-20 08:26+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: en\n"
+"Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.4\n"
+"X-Generator: Poedit 1.7.5\n"
 "X-Poedit-Basepath: ../\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-KeywordsList: __;_e;esc_attr_e\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr_e;esc_html_e\n"
 "X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:24 no-results.php:22 no-results.php:31
+msgid "Return Home"
+msgstr ""
+
+#: 404.php:25 no-results.php:23 no-results.php:32
+msgid "Search"
+msgstr ""
 
 #: archive.php:23
 #, php-format
@@ -135,6 +143,10 @@ msgstr ""
 msgid "Tags %1$s"
 msgstr ""
 
+#: content.php:72 includes/blog/blog-standard.php:83
+msgid "Read More"
+msgstr ""
+
 #: functions.php:51
 msgid "Main Menu"
 msgstr ""
@@ -147,22 +159,22 @@ msgstr ""
 msgid "Alba Footer"
 msgstr ""
 
-#: functions.php:307
+#: functions.php:320
 #, php-format
 msgid ""
 "<p>Install the plugins we at <a href=\"http://www.kairaweb.com/\" target="
 "\"_blank\">Kaira</a> recommended | <a href=\"%1$s\">Hide Notice</a></p>"
 msgstr ""
 
-#: functions.php:308
+#: functions.php:321
 msgid "SiteOrigin's Page Builder"
 msgstr ""
 
-#: functions.php:309
+#: functions.php:322
 msgid "Contact Form 7"
 msgstr ""
 
-#: functions.php:310
+#: functions.php:323
 msgid "Breadcrumb NavXT"
 msgstr ""
 
@@ -209,11 +221,28 @@ msgstr ""
 msgid "Both comments and trackbacks are currently closed."
 msgstr ""
 
-#: includes/blog/blog-standard.php:83
-msgid "Read More"
+#: includes/headers/header-layout-one.php:18
+msgid "My Account"
 msgstr ""
 
-#: includes/headers/header-layout-one.php:49
+#: includes/headers/header-layout-one.php:20
+msgid "Login"
+msgstr ""
+
+#: includes/headers/header-layout-one.php:20
+msgid "Sign In / Register"
+msgstr ""
+
+#: includes/headers/header-layout-one.php:32
+msgid "Email Us"
+msgstr ""
+
+#: includes/headers/header-layout-one.php:43
+#: includes/inc/woocommerce-inc.php:9
+msgid "View your shopping cart"
+msgstr ""
+
+#: includes/headers/header-layout-one.php:81
 msgid "Menu"
 msgstr ""
 
@@ -325,6 +354,7 @@ msgid "0"
 msgstr ""
 
 #: includes/widgets/alba-carousel.php:65
+#: includes/widgets/alba-carousel.php:119
 msgid "1"
 msgstr ""
 
@@ -344,8 +374,34 @@ msgstr ""
 msgid "Columns"
 msgstr ""
 
+#: includes/widgets/alba-carousel.php:120
+msgid "2"
+msgstr ""
+
+#: includes/widgets/alba-carousel.php:121
+msgid "3"
+msgstr ""
+
+#: includes/widgets/alba-carousel.php:122
+msgid "4"
+msgstr ""
+
 #: includes/widgets/alba-carousel.php:127
 msgid "Show Featured Image"
+msgstr ""
+
+#: includes/widgets/alba-carousel.php:129
+#: includes/widgets/alba-carousel.php:137
+#: includes/widgets/alba-carousel.php:145
+#: includes/widgets/alba-carousel.php:159
+msgid "On"
+msgstr ""
+
+#: includes/widgets/alba-carousel.php:130
+#: includes/widgets/alba-carousel.php:138
+#: includes/widgets/alba-carousel.php:146
+#: includes/widgets/alba-carousel.php:160
+msgid "Off"
 msgstr ""
 
 #: includes/widgets/alba-carousel.php:135
@@ -372,6 +428,18 @@ msgstr ""
 
 #: includes/widgets/alba-carousel.php:165
 msgid "Carousel Pagination"
+msgstr ""
+
+#: includes/widgets/alba-carousel.php:167
+msgid "Numbers"
+msgstr ""
+
+#: includes/widgets/alba-carousel.php:168
+msgid "Dots"
+msgstr ""
+
+#: includes/widgets/alba-carousel.php:169 includes/widgets/alba-icon.php:81
+msgid "None"
 msgstr ""
 
 #: includes/widgets/alba-heading.php:10
@@ -407,12 +475,48 @@ msgstr ""
 msgid "Style"
 msgstr ""
 
+#: includes/widgets/alba-heading.php:71
+msgid "Lined heading"
+msgstr ""
+
+#: includes/widgets/alba-heading.php:72
+msgid "Title heading"
+msgstr ""
+
 #: includes/widgets/alba-heading.php:77
 msgid "Size"
 msgstr ""
 
+#: includes/widgets/alba-heading.php:79
+msgid "Small"
+msgstr ""
+
+#: includes/widgets/alba-heading.php:80
+msgid "Medium"
+msgstr ""
+
+#: includes/widgets/alba-heading.php:81
+msgid "Large"
+msgstr ""
+
+#: includes/widgets/alba-heading.php:82
+msgid "Extra Large"
+msgstr ""
+
 #: includes/widgets/alba-heading.php:87
 msgid "Alignment"
+msgstr ""
+
+#: includes/widgets/alba-heading.php:89 includes/widgets/alba-icon.php:90
+msgid "Left"
+msgstr ""
+
+#: includes/widgets/alba-heading.php:90 includes/widgets/alba-icon.php:91
+msgid "Center"
+msgstr ""
+
+#: includes/widgets/alba-heading.php:91 includes/widgets/alba-icon.php:92
+msgid "Right"
 msgstr ""
 
 #: includes/widgets/alba-icon.php:10
@@ -447,8 +551,44 @@ msgstr ""
 msgid "Icon Size"
 msgstr ""
 
+#: includes/widgets/alba-icon.php:68
+msgid "18px"
+msgstr ""
+
+#: includes/widgets/alba-icon.php:69
+msgid "26px"
+msgstr ""
+
+#: includes/widgets/alba-icon.php:70
+msgid "34px"
+msgstr ""
+
+#: includes/widgets/alba-icon.php:71
+msgid "48px"
+msgstr ""
+
+#: includes/widgets/alba-icon.php:72
+msgid "66px"
+msgstr ""
+
+#: includes/widgets/alba-icon.php:73
+msgid "86px"
+msgstr ""
+
+#: includes/widgets/alba-icon.php:74
+msgid "100px"
+msgstr ""
+
 #: includes/widgets/alba-icon.php:79
 msgid "Icon Style"
+msgstr ""
+
+#: includes/widgets/alba-icon.php:82
+msgid "Round"
+msgstr ""
+
+#: includes/widgets/alba-icon.php:83
+msgid "Square"
 msgstr ""
 
 #: includes/widgets/alba-icon.php:88
@@ -463,14 +603,6 @@ msgstr ""
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-
-#: no-results.php:22 no-results.php:31
-msgid "Return Home"
-msgstr ""
-
-#: no-results.php:23 no-results.php:32
-msgid "Search"
 msgstr ""
 
 #: search.php:16
@@ -584,7 +716,10 @@ msgid "Enable Slider"
 msgstr ""
 
 #: settings/class.kaira-theme-settings.php:327
-msgid "Click to enable the default homepage slider"
+msgid ""
+"Click to enable the default homepage slider<br /><br />See <a href=\"http://"
+"demo.kairaweb.com/albar/installing-premium/albar-default-slider/\" target="
+"\"_blank\">instructions here</a> on setting up the default slider"
 msgstr ""
 
 #: settings/class.kaira-theme-settings.php:340
@@ -637,7 +772,10 @@ msgid "Enable slider links"
 msgstr ""
 
 #: settings/class.kaira-theme-settings.php:383
-msgid "Select if you want the slides to link to their post page"
+msgid ""
+"Select if you want the slides to link to their post page<br /><br />See here "
+"how to <a href=\"http://demo.kairaweb.com/albar/installing-premium/removing-"
+"the-slider-title/\" target=\"_blank\">remove the slider titles</a>"
 msgstr ""
 
 #: settings/class.kaira-theme-settings.php:392
