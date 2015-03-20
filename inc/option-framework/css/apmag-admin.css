@@ -1,0 +1,19 @@
+.pro-tmp-msg {
+    background: none repeat scroll 0 0 #ccc;
+    color: #111;
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+    width: 67px;
+}
+.radio-post-template-wrapper {
+    margin-right: 15px !important;
+    position: relative;
+    width: 87px;
+    text-align: center; 
+}
+.single-source-field .field-label {
+    display: inline-block;
+    padding-left: 10px;
+    width: 150px;
+}
