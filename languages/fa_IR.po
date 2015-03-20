@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Travelify\n"
-"POT-Creation-Date: 2015-03-20 16:08+0200\n"
-"PO-Revision-Date: 2015-03-20 16:08+0200\n"
+"POT-Creation-Date: 2015-03-20 16:07+0200\n"
+"PO-Revision-Date: 2015-03-20 16:07+0200\n"
 "Last-Translator: Aigars Silkalns <a.silkalns@gmail.com>\n"
-"Language-Team: \n"
-"Language: tr_TR\n"
+"Language-Team: Colorlib <info@colrolib.com>\n"
+"Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,614 +18,586 @@ msgstr ""
 
 #: ../404.php:11
 msgid "Error 404 - Page NOT Found"
-msgstr "Hata 404 - Sayfa Bulunamadı"
+msgstr "‎خطای 404 ‫-‬ صفحه مورد نظر پیدا نشد"
 
 #: ../404.php:14
 msgid "It seems we can't find what you're looking for."
-msgstr "Biz aradığınızı bulamıyoruz gibi görünüyor."
+msgstr "‎به نظر میرسه چیزی که به دنبال آن هستید پیدا نشد‫.‬"
 
 #: ../404.php:15
 msgid "This might be because:"
-msgstr "Bu olabilir, çünkü:"
+msgstr "‎ممکن است به دلیل این باشد که‫:‬"
 
 #: ../404.php:17
 msgid "You have typed the web address incorrectly"
-msgstr "Yanlış web adresini yazdınız"
+msgstr "‎آدرس اینترنتی را اشتباه تایپ کرده‌اید"
 
 #: ../404.php:18
 msgid "The page you were looking for may have been moved, updated or deleted."
-msgstr "Aradığınız sayfa taşınmış, güncellenmiş veya silinmiş olabilir."
+msgstr "‎امکان دارد آدرس صفحه‌ای که به دنبال آن هستید تغییر یافته و یا حذف شده باشد‫.‬"
 
 #: ../404.php:20
 msgid "Please try the following:"
-msgstr "Lütfen aşağıdakileri deneyin:"
+msgstr "‎لطفاً اینها را امتحان کنید‫:‬"
 
 #: ../404.php:22
 msgid "Check for a mis-typed URL error"
-msgstr "Bir yanlış yazdığınız URL hatası kontrolü"
+msgstr "‎آدرس URL را اشتباه وارد نکرده‌اید؟"
 
 #: ../404.php:23
 msgid "Press the refresh button on your browser."
-msgstr "Tarayıcınızda yenileme düğmesine basın."
+msgstr "‎لطفاً کلید Refresh مرورگر خود را بزنید‫.‬"
 
 #: ../404.php:24
 msgid "Go back to"
-msgstr "Geri dön"
+msgstr "‎بازگشت به"
 
 #: ../404.php:24
 msgid "Homepage"
-msgstr "Ana Sayfa"
+msgstr "‎صفحه اصلی"
 
 #: ../comments.php:24
 #, php-format
 msgid "One thought on &ldquo;%2$s&rdquo;"
-msgstr "Bir düşünce üzerine &ldquo;%2$s&rdquo;"
+msgstr "یک دیدگاه در نوشته‌ی &ldquo;%2$s&rdquo;"
 
 #: ../comments.php:27
 #, php-format
 msgid "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr "%1$s üzerine düşünceler &ldquo;%2$s&rdquo;"
+msgstr "‏%1$s دیدگاه در نوشته‌ی &ldquo;%2$s&rdquo;"
 
 #: ../comments.php:38
 msgid "Comment navigation"
-msgstr "Yorum navigasyon"
+msgstr "مسیر دیدگاه"
 
 #: ../comments.php:39
 msgid "&larr; Older Comments"
-msgstr "&larr;  Eski Yorumlar"
+msgstr "‏&larr; دیدگاه های قدیمی"
 
 #: ../comments.php:40
 msgid "Newer Comments &rarr;"
-msgstr "Yeni Yorumlar &rarr;"
+msgstr "دیدگاه های جدید &rarr;"
 
 #: ../comments.php:47
 msgid "Comments are closed."
-msgstr "Yorumlar kapalı."
+msgstr "ارسال دیدگاه برای این مطلب امکان پذیر نیست."
 
 #: ../functions.php:76
 msgid "Primary Menu"
-msgstr "İlk Menü"
+msgstr "منوی اصلی"
 
 #: ../library/functions/customizer.php:9
-#, fuzzy
 msgid "Travelify Header Area"
-msgstr "Başlık Sadece Logo "
+msgstr "تنظیمات سرفصل"
 
 #: ../library/functions/customizer.php:10
 msgid "Use the following settings change color for menu and website title"
-msgstr ""
+msgstr "برای تغییر رنگ منو و عنوان سایت از تنظیمات زیر استفاده کنید"
 
 #: ../library/functions/customizer.php:27
 msgid "Website Title Color"
-msgstr ""
+msgstr "رنگ عنوان سایت"
 
 #: ../library/functions/customizer.php:48
-#, fuzzy
 msgid "Website Title Hover Color"
-msgstr "Aşağı düşen vurgulanmış nesne rengi"
+msgstr "رنگ عنوان سایت (هنگامی که ماوس بروی آن است)"
 
 #: ../library/functions/customizer.php:69
-#, fuzzy
 msgid "Menu Bar Color"
-msgstr "İlk Menü"
+msgstr "رنگ نوار منو"
 
 #: ../library/functions/customizer.php:89
-#, fuzzy
 msgid "Menu Bar Hover Color"
-msgstr "Üst navigasyon nesne vurgulanmış rengi"
+msgstr "رنگ نوار منو (هنگامی که ماوس بروی آن است)"
 
 #: ../library/functions/customizer.php:109
-#, fuzzy
 msgid "Menu Item Text Color"
-msgstr "Eylem için çağır yazı rengi"
+msgstr "رنگ نوشته‌ی منو"
 
 #: ../library/functions/customizer.php:130
-#, fuzzy
 msgid "Social Icon Color"
-msgstr "Sosyak ikon rengi"
+msgstr "آیکون شبکه‌های اجتماعی"
 
 #: ../library/functions/customizer.php:139
 msgid "Travelify Element Color"
-msgstr ""
+msgstr "رنگ اِلِمان و دگمه‌های Travelify"
 
 #: ../library/functions/customizer.php:140
 msgid "Use the following settings change color for website elements"
-msgstr ""
+msgstr "برای تغییر رنگ اِلِمان و دگمه‌های سایت از تنظیمات زیر استفاده کنید"
 
 #: ../library/functions/customizer.php:157
-#, fuzzy
 msgid "Element Color"
-msgstr "Element rengi"
+msgstr "رنگ اِلِمان و دگمه‌ها"
 
 #: ../library/functions/customizer.php:178
 msgid "Element Hover Color"
-msgstr ""
+msgstr "رنگ اِلِمان و دگمه‌ها (هنگامی که ماوس بروی آن است)"
 
 #: ../library/functions/customizer.php:199
-#, fuzzy
 msgid "Wrapper Color"
-msgstr "Element rengi"
+msgstr "رنگ زمینه"
 
 #: ../library/functions/customizer.php:220
-#, fuzzy
 msgid "Content Background Color"
-msgstr "Üst navigason arkaplan rengi"
+msgstr "رنگ پشت زمینه مطالب"
 
 #: ../library/functions/customizer.php:229
 msgid "Travelify Typography Color"
-msgstr ""
+msgstr "رنگ فونت ها و تایپوگرافی"
 
 #: ../library/functions/customizer.php:230
 msgid ""
-"Use the following settings change color for typography such as links, "
-"headings and content"
+"Use the following settings change color for typography such as links, headings and "
+"content"
 msgstr ""
+"برای تغییر رنگ فونت و تایپوگرافی‌ها (مانند لینک، سرفصل ها و مطالب) سایت از تنظیمات زیر "
+"استفاده کنید"
 
 #: ../library/functions/customizer.php:247
-#, fuzzy
 msgid "Entry Content Color"
-msgstr "Ren seçilmediyse ön ayarlı renk kullanılır"
+msgstr "رنگ مطالب را وارد کنید"
 
 #: ../library/functions/customizer.php:267
-#, fuzzy
 msgid "Header/Title Color"
-msgstr "Header"
+msgstr "رنگ عنوان و سرفصل"
 
 #: ../library/functions/customizer.php:288
-#, fuzzy
 msgid "Link Color"
-msgstr "Bağlantı rengi"
+msgstr "رنگ لینک‌ها"
 
 #: ../library/functions/customizer.php:309
-#, fuzzy
 msgid "Link Hover Color"
-msgstr "Bağlantı:vurgulanmış rengi"
+msgstr "رنگ لینک‌ها (هنگامی که ماوس بروی آن است)"
 
 #: ../library/functions/customizer.php:318
-#, fuzzy
 msgid "Travelify Footer"
-msgstr "Alt Bölüm"
+msgstr "پانوشت (فوتر) Travelify"
 
 #: ../library/functions/customizer.php:319
 msgid "Use the following settings customize Footer"
-msgstr ""
+msgstr "برای اعمال تغییرات در بخش پانوشت (فوتر) از تنظیمات زیر استفاده کنید"
 
 #: ../library/functions/customizer.php:334
-#, fuzzy
 msgid "Copyright text"
-msgstr "Site altındaki telif hakkı yazısı"
+msgstr "متن کپی رایت"
 
 #: ../library/functions/functions.php:275
 msgid "Navigation"
-msgstr "Navigasyon"
+msgstr "ناوبری (Navigation)"
 
-#: ../library/functions/functions.php:327
-#: ../library/panel/theme-options.php:291
+#: ../library/functions/functions.php:327 ../library/panel/theme-options.php:291
 msgid "Left Sidebar"
-msgstr "Sol Kenar Çubuğu"
+msgstr "ستون چپ (سایدبار)"
 
 #: ../library/functions/functions.php:329
 msgid "Shows widgets at Left side."
-msgstr "Sol kenar çubuğunda widget gösterir."
+msgstr "نمایش ابزارک‌ها در سمت چپ."
 
-#: ../library/functions/functions.php:338
-#: ../library/panel/theme-options.php:295
+#: ../library/functions/functions.php:338 ../library/panel/theme-options.php:295
 msgid "Right Sidebar"
-msgstr "Sağ Kenar Çubuğu"
+msgstr "ستون راست (سایدبار)"
 
 #: ../library/functions/functions.php:340
 msgid "Shows widgets at Right side."
-msgstr "Sağ kenar çubuğunda widget gösterir."
+msgstr "نمایش ابزارک‌ها در سمت راست."
 
 #: ../library/functions/functions.php:349
 msgid "Footer"
-msgstr "Alt Bölüm"
+msgstr "پانوشت (فوتر)"
 
 #: ../library/functions/functions.php:351
 msgid "Shows widgets at footer."
-msgstr "Alt Bölümde widget gösterir."
+msgstr "نمایش ابزارک‌ها در پانوشت (فوتر)"
 
 #: ../library/functions/shortcodes.php:18
 msgid "WordPress"
-msgstr "WordPress"
+msgstr "وردپرس"
 
-#: ../library/functions/shortcodes.php:27
-#: ../library/panel/theme-options.php:125
+#: ../library/functions/shortcodes.php:27 ../library/panel/theme-options.php:125
 msgid "Colorlib"
-msgstr "Colorlib"
+msgstr ""
 
 #: ../library/panel/metaboxes.php:16
 msgid ""
-"Select layout for this specific Page only ( Note: This setting only reflects "
-"if page Template is set as Default Template and Blog Type Templates.)"
+"Select layout for this specific Page only ( Note: This setting only reflects if page "
+"Template is set as Default Template and Blog Type Templates.)"
 msgstr ""
-"Özel Sayfa Seçin düzen sadece (Not:. Sayfa Şablon Standart Şablon ve blog "
-"tipi şablonları olarak ayarlanırsa bu ayar sadece yansıtır)"
+"انتخاب این چیدمان (layout) فقط برای یک صفحه‌ی مشخص. (توجه: این مورد تنها زمانی "
+"تاثیرگذار خواهد بود که پوسته بر روی ‪\"‬پوسته‌ی پیشفرض‪\"‬ و ‪\"‬حالت وبلاگ‪\"‬ تنظیم شده "
+"باشد.)"
 
 #: ../library/panel/metaboxes.php:22
 msgid "Select layout for this specific Post only"
-msgstr "Özel yazı için düzeni seçin"
+msgstr "انتخاب چیدمان (layout) فقط برای این مطلب"
 
 #: ../library/panel/metaboxes.php:35
 msgid "Default Layout Set in"
-msgstr "Standart Düzen Set"
+msgstr "چیدمان (layout) پیشفرض تنظیم شده بر روی"
 
 #: ../library/panel/metaboxes.php:35
 msgid "Theme Settings"
-msgstr "Tema Ayarları"
+msgstr "تنظیمات قالب"
 
 #: ../library/panel/metaboxes.php:41
 msgid "No sidebar"
-msgstr "Kenar Çubuğu Yok"
+msgstr "بدون ستون کناری (سایدبار)"
 
 #: ../library/panel/metaboxes.php:47
 msgid "No sidebar, Full Width"
-msgstr "Kenar çubuğu yok, Tam Genişlik"
+msgstr "بدون ستون کناری و تمام صفحه"
 
 #: ../library/panel/metaboxes.php:53 ../library/panel/theme-options.php:287
 msgid "No Sidebar, One Column"
-msgstr "Kenar Çubuksuz, Tek Kolon"
+msgstr "بدون ستون کناری و یک ستونه"
 
 #: ../library/panel/metaboxes.php:59
 msgid "Left sidebar"
-msgstr "Sol Kenar Çubuğu"
+msgstr "ستون کناری سمت چپ"
 
 #: ../library/panel/metaboxes.php:65
 msgid "Right sidebar"
-msgstr "Sağ Kenar Çubuğu"
+msgstr "ستون کناری سمت راست"
 
 #: ../library/panel/theme-options.php:92 ../library/panel/theme-options.php:93
 msgid "Theme Options"
-msgstr "Tema Seçenekleri"
+msgstr "تنظیمات پوسته"
 
 #: ../library/panel/theme-options.php:125
 msgid "Theme Options by"
-msgstr "Tema Seçenekleri by"
+msgstr "تنظیمات پوسته توسط"
 
 #: ../library/panel/theme-options.php:132
-#, fuzzy
 msgid "Other Themes"
-msgstr "Diğer"
+msgstr "دیگر پوسته‌ها"
 
 #: ../library/panel/theme-options.php:133
 msgid "Rate this Theme"
-msgstr "Bu Tema değerlendir"
+msgstr "به این پوسته امتیاز دهید"
 
 #: ../library/panel/theme-options.php:134
 msgid "Theme Instruction"
-msgstr "Tema Talimatı"
+msgstr "راهنمای پوسته"
 
 #: ../library/panel/theme-options.php:134
 msgid "Theme Instructions"
-msgstr "Tema Talimatlar"
+msgstr "راهنمای پوسته‌ها"
 
 #: ../library/panel/theme-options.php:135
 msgid "Support Forum"
-msgstr "Destek Forumu"
+msgstr "انجمن پشتیبانی"
 
 #: ../library/panel/theme-options.php:135
 msgid "Support"
-msgstr "Destek"
+msgstr "پشتیبانی"
 
 #: ../library/panel/theme-options.php:136
 msgid "Facebook"
-msgstr "Facebook"
+msgstr "فیسبوک"
 
 #: ../library/panel/theme-options.php:137
 msgid "Twitter"
-msgstr "Twitter"
+msgstr "توییتر"
 
 #: ../library/panel/theme-options.php:152
 msgid "Settings saved."
-msgstr "Ayarlar kaydedildi."
+msgstr "تنظیمات ذخیره شد."
 
 #: ../library/panel/theme-options.php:158
 msgid "Main Options"
-msgstr "Ana Seçenekler"
+msgstr "تنظیمات اصلی"
 
 #: ../library/panel/theme-options.php:159
 msgid "Featured Slider"
-msgstr "Öne Slider"
+msgstr "اسلایدر مطالب ویژه"
 
 #: ../library/panel/theme-options.php:160
 msgid "Social Links"
-msgstr "Sosyal Linkler"
+msgstr "لینک شبکه‌های اجتماعی"
 
 #: ../library/panel/theme-options.php:161
 msgid "Other"
-msgstr "Diğer"
+msgstr "دیگر"
 
 #: ../library/panel/theme-options.php:167
 msgid "Header Options"
-msgstr "Başlık Seçenekleri"
+msgstr "تنظیمات سرفصل"
 
-#: ../library/panel/theme-options.php:172
-#: ../library/panel/theme-options.php:182
+#: ../library/panel/theme-options.php:172 ../library/panel/theme-options.php:182
 msgid "Header Logo"
-msgstr "Başlık Logo"
+msgstr "لوگوی سرفصل"
 
 #: ../library/panel/theme-options.php:175
 msgid "Upload Logo"
-msgstr "Logo Yükle"
+msgstr "آپلود لوگو"
 
-#: ../library/panel/theme-options.php:179
-#: ../library/panel/theme-options.php:224
+#: ../library/panel/theme-options.php:179 ../library/panel/theme-options.php:224
 #: ../library/panel/theme-options.php:256
 msgid "Preview"
-msgstr "Önizleme"
+msgstr "پیشنمایش"
 
 #: ../library/panel/theme-options.php:187
 msgid "Show"
-msgstr "Göster"
+msgstr "نمایش"
 
 #: ../library/panel/theme-options.php:190
 msgid "Header Logo Only"
-msgstr "Başlık Sadece Logo "
+msgstr "فقط لوگوی سرفصل"
 
 #: ../library/panel/theme-options.php:193
 msgid "Header Text Only"
-msgstr "Başlık Sadece Yazı "
+msgstr "فقط نوشته‌ی سرفصل"
 
 #: ../library/panel/theme-options.php:196
 msgid "Disable"
-msgstr "devre dışı"
+msgstr "غیرفعال"
 
-#: ../library/panel/theme-options.php:201
-#: ../library/panel/theme-options.php:233
-#: ../library/panel/theme-options.php:265
-#: ../library/panel/theme-options.php:310
-#: ../library/panel/theme-options.php:348
-#: ../library/panel/theme-options.php:381
-#: ../library/panel/theme-options.php:419
-#: ../library/panel/theme-options.php:477
-#: ../library/panel/theme-options.php:517
-#: ../library/panel/theme-options.php:540
+#: ../library/panel/theme-options.php:201 ../library/panel/theme-options.php:233
+#: ../library/panel/theme-options.php:265 ../library/panel/theme-options.php:310
+#: ../library/panel/theme-options.php:348 ../library/panel/theme-options.php:381
+#: ../library/panel/theme-options.php:419 ../library/panel/theme-options.php:477
+#: ../library/panel/theme-options.php:517 ../library/panel/theme-options.php:540
 msgid "Save All Changes"
-msgstr "Tüm Değişiklikleri Kaydet"
+msgstr "ذخیره‌ی تمامی تغییرات"
 
 #: ../library/panel/theme-options.php:206
 msgid "Favicon Options"
-msgstr "Favicon Seçenekleri"
+msgstr "تنظیمات آیکون سایت (Favicon)"
 
 #: ../library/panel/theme-options.php:211
 msgid "Disable Favicon"
-msgstr "Favicon Devre Dışı"
+msgstr "غیرفعال کردن (Favicon)"
 
-#: ../library/panel/theme-options.php:213
-#: ../library/panel/theme-options.php:245
+#: ../library/panel/theme-options.php:213 ../library/panel/theme-options.php:245
 #: ../library/panel/theme-options.php:431
 msgid "Check to disable"
-msgstr "Devre dışı bırakmak için kontrol edin"
+msgstr "انتخاب برای غیرفعال کردن"
 
 #: ../library/panel/theme-options.php:216
 msgid "Favicon URL"
-msgstr "Favicon URL"
+msgstr "لینک (نشانی) آیکون (Favicon)"
 
 #: ../library/panel/theme-options.php:219
 msgid "Upload Favicon"
-msgstr "Favicon Yükle"
+msgstr "آپلود آیکون (Favicon)"
 
 #: ../library/panel/theme-options.php:220
-msgid ""
-"Favicon is this tiny icon you see beside URL in your browser address bar"
+msgid "Favicon is this tiny icon you see beside URL in your browser address bar"
 msgstr ""
-"Favicon tarayıcınızın adres çubuğuna URL yanında görmek bu küçücük simgesi"
+"‏Favicon همان آیکون و عکس کوچکی است که در کنار آدرس (لینک) سایت بر روی پنجره‌ی مرورگر "
+"خود میبینید."
 
 #: ../library/panel/theme-options.php:227
+#, fuzzy
 msgid "favicon"
-msgstr "favicon"
+msgstr "فاویکن دلخواه"
 
 #: ../library/panel/theme-options.php:238
 msgid "Web Clip Icon Options"
-msgstr "Web Clip Simge Seçenekler"
+msgstr "تنظیمات Web Clip Icon"
 
 #: ../library/panel/theme-options.php:243
 msgid "Disable Web Clip Icon"
-msgstr "Web Clip Simge Devre Dışı"
+msgstr "غیرفعال کردن Web Clip Icon"
 
 #: ../library/panel/theme-options.php:248
 msgid "Web Clip Icon URL"
-msgstr "Web Clip Simgesi URL"
+msgstr "آدرس (لینک، نشانی) Web Clip Icon"
 
 #: ../library/panel/theme-options.php:251
 msgid "Upload Web Clip Icon"
-msgstr "Web Klip Simgesi Yükle"
+msgstr "آپلود (بارگذاری) Web Clip Icon"
 
 #: ../library/panel/theme-options.php:252
 msgid "Web Clip works as shortcut to website on iOS devices home screen"
 msgstr ""
-"Web Clip iOS cihazlar, ana ekranda web sitesine kısayol olarak çalışıyor"
+"‏Web Clip Icon به صورت یک آیکون یا همان Shortcut از وب سایت شما بر روی دستگاه‌ها و "
+"موبایل‌های iOS نمایش داده میشود"
 
 #: ../library/panel/theme-options.php:259
 msgid "webpage icon"
-msgstr "web sayfası simgesi"
+msgstr "آیکون صفحه"
 
 #: ../library/panel/theme-options.php:270
 msgid "Layout Options"
-msgstr "Düzen Seçenekleri"
+msgstr "تنظیمات چیدمان (Layout)"
 
 #: ../library/panel/theme-options.php:275
 msgid "Default Layout"
-msgstr "Standart Düzen"
+msgstr "چیدمان پیشفرض"
 
 #: ../library/panel/theme-options.php:279
 msgid "No Sidebar"
-msgstr "Hayır Kenar Çubuğu"
+msgstr "بدون ستون کناری"
 
 #: ../library/panel/theme-options.php:283
 msgid "No Sidebar, Full Width"
-msgstr "Hayır Kenar Çubuğu, Tam Genişlik"
+msgstr "بدون ستون کناری و تمام صفحه"
 
 #: ../library/panel/theme-options.php:301
 msgid ""
-"This will set the default layout style. However, you can choose different "
-"layout for each page via editor"
+"This will set the default layout style. However, you can choose different layout for "
+"each page via editor"
 msgstr ""
-"Bu varsayılan düzen stili koyacaktır. Ancak, editörü ile her sayfa için "
-"farklı bir düzen seçebilirsiniz"
+"در اینجا یک نوع چیدمان پیشفرض انتخاب میکنید، اما در هر صورت امکان انتخاب چیدمان‌های "
+"مختلف را در هنگام اضافه کردن صفحه دارید."
 
 #: ../library/panel/theme-options.php:302
 msgid "Reset Layout"
-msgstr "Düzeni Resetle"
+msgstr "بازنشانی چیدمان"
 
 #: ../library/panel/theme-options.php:305
 msgid "Check to reset"
-msgstr "Resetlemek için kontrol edin"
+msgstr "انتخاب برای بازنشانی"
 
 #: ../library/panel/theme-options.php:315
 msgid "Custom Background"
-msgstr "Özel Arkaplan"
+msgstr "پیش زمینه"
 
 #: ../library/panel/theme-options.php:321
 msgid "Change theme background"
-msgstr "Tema arka planını değiştirme"
+msgstr "تغییر پیش زمینه‌ی پوسته"
 
 #: ../library/panel/theme-options.php:324
 #, php-format
 msgid "<a class=\"button\" href=\"%s\">Click here</a>"
-msgstr "<a class=\"button\" href=\"%s\">Buraya tıklayın</a>"
+msgstr "‏<a class=\"button\" href=\"%s\">اینجا کلیک کنید</a>"
 
 #: ../library/panel/theme-options.php:334
 msgid "RSS URL"
-msgstr "RSS Linki"
+msgstr "لینک خبرخوان (RSS)"
 
 #: ../library/panel/theme-options.php:340
 msgid "Feed Redirect URL"
-msgstr "Yeniden Yönlendirme URLsi"
+msgstr "آدرس بازخوانی خبرخوان"
 
 #: ../library/panel/theme-options.php:343
 msgid "Enter your preferred RSS URL. (Feedburner or other)"
-msgstr "Tercih RSS URL'sini girin. (Feedburner veya başka)"
+msgstr "آدرس خبرخوان (RSS URL) مرجع خود را وارد کنید (مانند فیدبرنر یا دیگر خبرخوان‌ها)"
 
 #: ../library/panel/theme-options.php:353
 msgid "Homepage Post Options"
-msgstr "Anasayfa Yazı Seçenekleri"
+msgstr "تنظیمات مطالب در صفحه اصلی"
 
 #: ../library/panel/theme-options.php:359
 msgid "Homepage posts categories:"
-msgstr "Anasayfa Yazı Kategorileri:"
+msgstr "دسته بندی‌های صفحه اصلی:"
 
 #: ../library/panel/theme-options.php:361
 msgid ""
-"Only posts that belong to the categories selected here will be displayed on "
-"the front page."
-msgstr ""
-"Burada seçilen kategoriye ait sadece yazı ön sayfasında gösterilecektir."
+"Only posts that belong to the categories selected here will be displayed on the front "
+"page."
+msgstr "تنها مطالب موجود در دسته‌بندی‌های انتخاب شده در صفحه اصلی نمایش داده خواهند شد."
 
 #: ../library/panel/theme-options.php:366
 msgid "--Disabled--"
-msgstr "--Engelli--"
+msgstr "--غیرفعال--"
 
 #: ../library/panel/theme-options.php:376
 msgid ""
-"You may select multiple categories by holding down the CTRL (Windows) or cmd "
-"(Mac)."
+"You may select multiple categories by holding down the CTRL (Windows) or cmd (Mac)."
 msgstr ""
-"CTRL (Windows) veya cmd (Mac) basılı tutarak birden fazla kategori "
-"seçebilirsiniz."
+"برای انتخاب چند دسته‌بندی به صورت همزمان کلید CTRL در (ویندوز) و cmd در (مک) را گرفته "
+"و دسته‌بندی‌ها را انتخاب کنید."
 
 #: ../library/panel/theme-options.php:389
 msgid "Featured Post/Page Slider Options"
-msgstr "Öne çıkan Konu / Sayfa Slider Seçenekleri"
+msgstr "تنظیمات نوشته‪/‬برگه ویژه نمایش در اسلایدر"
 
 #: ../library/panel/theme-options.php:393
 msgid "Exclude Slider post from Homepage posts?"
-msgstr "Anasayfa görevlerinden Slider yazı dışla?"
+msgstr "حذف (محروم کردن) اسلایدر از نمایش نوشته‌ها در صفحه اصلی؟"
 
 #: ../library/panel/theme-options.php:395
 msgid "Check to exclude"
-msgstr "Dışlamak için kontrol edin"
+msgstr "انتخاب برای حذف (محروم کردن)"
 
 #: ../library/panel/theme-options.php:399
 msgid "Number of Slides"
-msgstr "Slaytlar Sayısı"
+msgstr "تعداد اسلایدها"
 
 #: ../library/panel/theme-options.php:404
 msgid "Featured Slide #"
-msgstr "Sunulan Slayt #"
+msgstr "اسلایدر مطالب ویژه ‪#‬"
 
 #: ../library/panel/theme-options.php:406
 msgid "Click Here To Edit"
-msgstr "Düzenlemek için Tıklayın"
+msgstr "برای ویرایش اینجا کلیک کنید"
 
 #: ../library/panel/theme-options.php:412
 msgid "How to use the featured slider?"
-msgstr "Özellikli kaydırma çubuğunu kullanmak nasıl?"
+msgstr "چگونه از اسلایدر مطالب ویژه استفاده کنم؟"
 
 #: ../library/panel/theme-options.php:414
 msgid "Create Post or Page and add featured image to it."
-msgstr "Mesaj ya da Sayfayı oluşturmak ve buna özellikli görsel eklemek."
+msgstr "یک نوشته یا برگه بسازید و عکس شاخصی (featured image) برای آن انتخاب کنید."
 
 #: ../library/panel/theme-options.php:415
 msgid ""
-"Add all the Post ID that you want to use in the featured slider. Post ID can "
-"be found at All Posts table in last column"
-msgstr ""
-"Eğer özellikli kaydırıcı kullanmak istediğiniz tüm yazı kimliği ekleyin. "
-"Post ID son sütununda Tüm Yazılar masada bulunabilir"
+"Add all the Post ID that you want to use in the featured slider. Post ID can be found "
+"at All Posts table in last column"
+msgstr "شناسه‌ی تمامی مطالبی را که میخواهید در اسلایدر ویژه نمایش داده شود را وارد کنید."
 
 #: ../library/panel/theme-options.php:416
 msgid ""
-"Featured Slider will show featured images, Title and excerpt of the "
-"respected added post IDs."
-msgstr ""
-"Öne Slider özellikli görüntüleri, Başlık ve saygı ekledi sonrası kimlikleri "
-"alıntı gösterecektir."
+"Featured Slider will show featured images, Title and excerpt of the respected added "
+"post IDs."
+msgstr "اسلایدر ویژه عکس‌های شاخص و چکیده‌ای از شناسه‌ی مطلب ‪(‬Post ID‪)‬ را نمایش میدهد‪.‬"
 
 #: ../library/panel/theme-options.php:417
 msgid "The recommended image size is"
-msgstr "Önerilen görüntü boyutu"
+msgstr "سایز عکسی که پیشنهاد میکنیم"
 
 #: ../library/panel/theme-options.php:425
 msgid "Slider Options"
-msgstr "Slider Seçenekleri"
+msgstr "تنظیمات اسلایدر"
 
 #: ../library/panel/theme-options.php:429
 msgid "Disable Slider"
-msgstr "Slider Devre Dışı"
+msgstr "غیرفعال کردن اسلایدر"
 
 #: ../library/panel/theme-options.php:435
 msgid "Transition Effect:"
-msgstr "Geçiş Efekti:"
+msgstr "افکت انتقال"
 
-#: ../library/panel/theme-options.php:455
-#: ../library/panel/theme-options.php:508
-#, php-format
+#: ../library/panel/theme-options.php:455 ../library/panel/theme-options.php:508
+#, fuzzy, php-format
 msgid "%s"
-msgstr "%s"
+msgstr "ثانیه"
 
 #: ../library/panel/theme-options.php:463
 msgid "Transition Delay"
-msgstr "Geçiş Gecikmesi"
+msgstr "تاخیر برای انتقال"
 
-#: ../library/panel/theme-options.php:466
-#: ../library/panel/theme-options.php:473
+#: ../library/panel/theme-options.php:466 ../library/panel/theme-options.php:473
 msgid "second(s)"
-msgstr "saniye(s)"
+msgstr "ثانیه"
 
 #: ../library/panel/theme-options.php:470
 msgid "Transition Length"
-msgstr "Geçiş Süresi"
+msgstr "مدت انتقال"
 
 #: ../library/panel/theme-options.php:502
 msgid "Enter URLs for your social networks e.g."
-msgstr "Sosyal ağlar için URL'leri girin, örneğin."
+msgstr "لینک (آدرس) شبکه‌های مجازی خود را وارد کنید. برای مثال:"
 
 #: ../library/panel/theme-options.php:525
 msgid "Custom CSS (Advanced)"
-msgstr "Özel CSS (Gelişmiş)"
+msgstr "‏CSS سفارشی (پیشرفته)"
 
 #: ../library/panel/theme-options.php:530
 msgid "Enter your custom CSS styles."
-msgstr "Özel CSS stilleri girin."
+msgstr "‏CSS دلخواه خود را وارد کنید."
 
 #: ../library/panel/theme-options.php:531
 msgid "This CSS will overwrite the CSS of style.css file."
-msgstr "Bu CSS style.css dosyasının CSS üzerine yazacaktır."
+msgstr "این CSS بر روی CSS قالب اصلی در style‪.‬css باز نشر خواهد شد."
 
 #: ../library/panel/theme-options.php:535
 msgid "Make sure you know what you are doing."
-msgstr "Ne yaptığınızı bildiğinizden emin olun."
+msgstr ""
+"‏&raquo; قبل از ذخیره دقت لازم را در نوشتن کد‌ها داشته باشید و کاملاً مطمئن شوید که "
+"چه‌کار میکنید ‪‏&laquo;‬"
 
 #: ../library/structure/content-extensions.php:148
 #: ../library/structure/content-extensions.php:282
@@ -633,7 +605,7 @@ msgstr "Ne yaptığınızı bildiğinizden emin olun."
 #: ../library/structure/content-extensions.php:578
 #: ../library/structure/content-extensions.php:692
 msgid "No Comments"
-msgstr "Yorum Yok"
+msgstr "بدون دیدگاه"
 
 #: ../library/structure/content-extensions.php:148
 #: ../library/structure/content-extensions.php:282
@@ -641,7 +613,7 @@ msgstr "Yorum Yok"
 #: ../library/structure/content-extensions.php:578
 #: ../library/structure/content-extensions.php:692
 msgid "1 Comment"
-msgstr "1 Yorum"
+msgstr "۱ دیدگاه"
 
 #: ../library/structure/content-extensions.php:148
 #: ../library/structure/content-extensions.php:282
@@ -649,7 +621,7 @@ msgstr "1 Yorum"
 #: ../library/structure/content-extensions.php:578
 #: ../library/structure/content-extensions.php:692
 msgid "% Comments"
-msgstr "% Yorumlar"
+msgstr "% دیدگاه"
 
 #: ../library/structure/content-extensions.php:148
 #: ../library/structure/content-extensions.php:282
@@ -657,14 +629,14 @@ msgstr "% Yorumlar"
 #: ../library/structure/content-extensions.php:578
 #: ../library/structure/content-extensions.php:692
 msgid "Comments Off"
-msgstr "Yorumlar Kapalı"
+msgstr "دیدگاه‌ها غیرفعال است"
 
 #: ../library/structure/content-extensions.php:152
 #: ../library/structure/content-extensions.php:470
 #: ../library/structure/content-extensions.php:582
 #: ../library/structure/content-extensions.php:667
 msgid "Read more"
-msgstr "Devamını oku"
+msgstr "بیشتر بخوانید"
 
 #: ../library/structure/content-extensions.php:167
 #: ../library/structure/content-extensions.php:238
@@ -674,17 +646,17 @@ msgstr "Devamını oku"
 #: ../library/structure/content-extensions.php:609
 #: ../library/structure/content-extensions.php:721
 msgid "No Posts Found."
-msgstr "Hiçbir Yazı Bulunamadı."
+msgstr "مطلبی یافت نشد."
 
 #: ../library/structure/content-extensions.php:207
 #: ../library/structure/content-extensions.php:306
 #: ../library/structure/content-extensions.php:670
 msgid "Pages:"
-msgstr "Sayfalar:"
+msgstr "صفحه‌ها:"
 
 #: ../library/structure/content-extensions.php:294
 msgid ", "
-msgstr ", "
+msgstr "، "
 
 #: ../library/structure/content-extensions.php:489
 #: ../library/structure/content-extensions.php:600
@@ -692,7 +664,7 @@ msgstr ", "
 #: ../library/structure/content-extensions.php:748
 #: ../library/structure/content-extensions.php:768
 msgid "&laquo; Previous"
-msgstr "&laquo; Önceki"
+msgstr "‏&laquo; قبلی"
 
 #: ../library/structure/content-extensions.php:490
 #: ../library/structure/content-extensions.php:601
@@ -700,74 +672,58 @@ msgstr "&laquo; Önceki"
 #: ../library/structure/content-extensions.php:749
 #: ../library/structure/content-extensions.php:769
 msgid "Next &raquo;"
-msgstr "Sonraki &raquo;"
+msgstr "بعدی &raquo;"
 
 #: ../library/structure/content-extensions.php:813
 msgid "Pingback:"
-msgstr "Geri İzleme:"
+msgstr "اشتراک ها:"
 
 #: ../library/structure/content-extensions.php:813
 msgid "(Edit)"
-msgstr "(Düzenle)"
+msgstr "(ویرایش)"
 
 #: ../library/structure/content-extensions.php:828
 msgid "Post author"
-msgstr "Yazının Yazarı"
+msgstr "نویسنده"
 
 #: ../library/structure/content-extensions.php:834
 #, php-format
 msgid "%1$s at %2$s"
-msgstr "%1$s at %2$s"
+msgstr "‏%1$s در %2$s"
 
 #: ../library/structure/content-extensions.php:840
 msgid "Your comment is awaiting moderation."
-msgstr "Yorum moderatör bekliyor"
+msgstr "دیدگاه شما در انتظار بررسی است."
 
 #: ../library/structure/content-extensions.php:845
 msgid "Edit"
-msgstr "Düzenle"
+msgstr "ویرایش"
 
 #: ../library/structure/content-extensions.php:849
 msgid "Reply"
-msgstr "Cevap"
+msgstr "پاسخ"
 
 #: ../library/structure/footer-extensions.php:35
 msgid "Copyright &copy;"
-msgstr "Copyright &copy;"
+msgstr "کپی رایت &copy;"
 
 #: ../library/structure/footer-extensions.php:35
 msgid "Theme by"
-msgstr "Tema by"
+msgstr "پوسته توسط"
 
 #: ../library/structure/footer-extensions.php:35
 msgid "Powered by"
-msgstr "Powered by"
+msgstr "طراحی شده توسط"
 
 #: ../library/structure/header-extensions.php:44
 #, php-format
 msgid "Page %s"
-msgstr "Sayfa %s"
+msgstr "صفحه %s"
 
 #: ../library/structure/header-extensions.php:407
 msgid "Search Results"
-msgstr "Arama Sonuçları"
+msgstr "نتایج جستجو"
 
 #: ../searchform.php:7 ../searchform.php:8
 msgid "Search"
-msgstr "Arama"
-
-#~ msgid "Custom Scripts"
-#~ msgstr "Scripts personalizados"
-
-#~ msgid "Code to display on Header"
-#~ msgstr "Código a mostar en el encabezado"
-
-#~ msgid ""
-#~ "Note: Enter your custom header script (i.e., analytics, social button "
-#~ "scripts). "
-#~ msgstr ""
-#~ "N.B.: introduce tu script del encabezado personalizato (Google Analytics, "
-#~ "redes sociales, etc.)"
-
-#~ msgid "Code to display on Footer"
-#~ msgstr "Código a mostrar en el pie de página"
+msgstr "جستجو"
