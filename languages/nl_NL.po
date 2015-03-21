@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
-"POT-Creation-Date: 2015-02-17 23:45+0545\n"
+"POT-Creation-Date: 2015-03-21 16:51+0545\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -96,41 +96,41 @@ msgid "Comments are closed."
 msgstr "Reacties zijn gesloten."
 
 #: ../content-aside.php:17 ../content-audio.php:16 ../content-chat.php:16
-#: ../content-gallery.php:16 ../content-gallery.php:28
-#: ../content-gallery.php:32 ../content-image.php:16 ../content-video.php:16
+#: ../content-gallery.php:16 ../content-gallery.php:29
+#: ../content-gallery.php:33 ../content-image.php:16 ../content-video.php:16
 #: ../content.php:19 ../content.php:28
 #, php-format
 msgid "Permalink to %s"
 msgstr "Link naar %s"
 
-#: ../content-aside.php:21 ../content-audio.php:26 ../content-gallery.php:36
+#: ../content-aside.php:21 ../content-audio.php:26 ../content-gallery.php:37
 #: ../content-image.php:26 ../content-link.php:20 ../content-quote.php:16
 #: ../content-status.php:24 ../content-video.php:26 ../content.php:49
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Lees verder <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../content-aside.php:29 ../content-audio.php:35 ../content-chat.php:34
-#: ../content-gallery.php:44 ../content-image.php:35 ../content-link.php:27
+#: ../content-gallery.php:45 ../content-image.php:35 ../content-link.php:27
 #: ../content-quote.php:23 ../content-status.php:31 ../content-video.php:35
 #: ../content.php:59
 msgid "Leave a reply"
 msgstr "Reageer"
 
 #: ../content-aside.php:29 ../content-audio.php:35 ../content-chat.php:34
-#: ../content-gallery.php:44 ../content-image.php:35 ../content-link.php:27
+#: ../content-gallery.php:45 ../content-image.php:35 ../content-link.php:27
 #: ../content-quote.php:23 ../content-status.php:31 ../content-video.php:35
 #: ../content.php:59
 msgid "1 Reply"
 msgstr "1 reactie"
 
 #: ../content-aside.php:29 ../content-audio.php:35 ../content-chat.php:34
-#: ../content-gallery.php:44 ../content-image.php:35 ../content-link.php:27
+#: ../content-gallery.php:45 ../content-image.php:35 ../content-link.php:27
 #: ../content-quote.php:23 ../content-status.php:31 ../content-video.php:35
 msgid "% Replies;"
 msgstr "% reacties;"
 
 #: ../content-aside.php:31 ../content-audio.php:37 ../content-chat.php:36
-#: ../content-gallery.php:46 ../content-image.php:37 ../content-link.php:29
+#: ../content-gallery.php:47 ../content-image.php:37 ../content-link.php:29
 #: ../content-page.php:18 ../content-quote.php:25 ../content-status.php:33
 #: ../content-video.php:37 ../content.php:62 ../image.php:34 ../image.php:100
 #: ../inc/template-tags.php:195
@@ -145,7 +145,7 @@ msgstr "Alle geluidsberichten"
 msgid "Audio"
 msgstr "Geluid"
 
-#: ../content-audio.php:27 ../content-gallery.php:37 ../content-image.php:27
+#: ../content-audio.php:27 ../content-gallery.php:38 ../content-image.php:27
 #: ../content-page.php:17 ../content-video.php:27 ../content.php:50
 #: ../image.php:86
 msgid "Pages:"
@@ -167,7 +167,7 @@ msgstr "Alle galerijberichten"
 msgid "Gallery"
 msgstr "Galerij"
 
-#: ../content-gallery.php:31
+#: ../content-gallery.php:32
 #, php-format
 msgid "This gallery contains <a %1$s>%2$s photo</a>."
 msgid_plural "This gallery contains <a %1$s>%2$s photos</a>."

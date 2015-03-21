@@ -2,7 +2,7 @@
 Catch Everest Theme by Catch Themes, http://catchthemes.com/
 
 == ABOUT Catch Everest ==
-Catch Everest is Simple, Clean and Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel which makes this theme highly customisable and flexible. Make your beautiful yet professional website in no time. Translation Ready and also currently translated in Polish, Chinese, Spanish, Italian, German(SWITZERLAND), Russian, Japanese, French, Brazilian Portuguese, Dutch and Turkish. Active community at http://catchthemes.com/support-forum/
+Catch Everest is Simple, Clean and Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel which makes this theme highly customizable and flexible. Make your beautiful yet professional website in no time. Translation Ready and currently translated in Polish, Chinese, Spanish, Italian, German(SWITZERLAND), Russian, Japanese, French, Brazilian Portuguese, Dutch, German, Catalan and Turkish. Active community at http://catchthemes.com/support-forum/
 
 == Tags ==
 light, gray, white, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-header, custom-menu, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready

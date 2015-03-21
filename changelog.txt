@@ -1,9 +1,15 @@
 == Changelog ==
 
+version 2.2.1
+* Bug Fixed: Sidebar widget issue in mobile devices
+* Bug Fixed: Gallery page not showing images (Reported by michellebergmann )
+* Changed screenshot
+* Updated theme description
+
 version 2.2
 * Added Turkish translation tr_TR.po and tr_TR.mo
-* Added responisve support for iPhone6
-* Fixed responsive design issues
+* Added responsive support for iPhone6
+* Bug Fixed: responsive design issues
 
 version 2.1
 * Added Catalan translation ca_ES.po and ca_ES.mo

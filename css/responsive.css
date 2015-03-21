@@ -386,6 +386,7 @@
 	.site {
 		width: 370px;
 	}	
+	#secondary .widget,
 	#colophon #supplementary .widget-area,
 	#featured-post.layout-four .post {
 		width: 100%;
