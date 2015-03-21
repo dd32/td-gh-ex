@@ -14,7 +14,8 @@ $blogghiamo_theme_options = array(
 	'instagramurl' => '#', 
 	'youtubeurl' => '#', 
 	'pinteresturl' => '#', 
-	'tumblrurl' => '#'
+	'tumblrurl' => '#',
+	'emailurl' => '#'
 );
 
 if ( current_user_can('manage_options') ) {
@@ -79,9 +80,10 @@ function blogghiamo_options_do_page() {
 				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Breadcrumb', 'blogghiamo' ); ?></b></li>
 				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Post format', 'blogghiamo' ); ?></b> <?php _e( '(Standard, Gallery, Audio, Link, Video, Quote)', 'blogghiamo' ); ?></li>
 				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( '7 Shortcodes', 'blogghiamo' ); ?></b> <?php _e( '(Toggle, Tabs, Boxes, Columns, Highlights, Buttons and Drop Cap)', 'blogghiamo' ); ?></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( '11 Exclusive Widgets', 'blogghiamo' ); ?></b> <?php _e( '(Latest Tweet, Instagram, Random Posts, Social Counter, Posts with Thumbnail, News in Pictures, and much more...)', 'blogghiamo' ); ?></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( '12 Exclusive Widgets', 'blogghiamo' ); ?></b> <?php _e( '(Latest Tweet, Instagram, Random Posts, Social Counter, Posts with Thumbnail, News in Pictures, and much more...)', 'blogghiamo' ); ?></li>
 				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Related Posts Box', 'blogghiamo' ); ?></b></li>
 				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Information About Author Box', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Advertising System', 'blogghiamo' ); ?></b></li>
 				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'And much more...', 'blogghiamo' ); ?></b></li>
 			<ul>
 			</div>
@@ -231,6 +233,18 @@ function blogghiamo_options_do_page() {
 					</td>
 				</tr>
 				
+				<?php
+				/**
+				 * Email
+				 */
+				?>
+				<tr valign="top"><th scope="row"><?php _e( 'Enter your Email', 'blogghiamo' ); ?></th>
+					<td>
+						<input id="blogghiamo_theme_options[emailurl]" class="regular-text" type="text" name="blogghiamo_theme_options[emailurl]" value="<?php if( isset( $se_options[ 'emailurl' ] ) ) echo sanitize_email( $se_options[ 'emailurl' ] ); ?>" />
+						<label class="description" for="blogghiamo_theme_options[emailurl]"><?php _e( 'Leave blank to hide Email Icon', 'blogghiamo' ); ?></label>
+					</td>
+				</tr>
+				
 			</table>
 
 			<p class="submit">
@@ -280,6 +294,8 @@ function blogghiamo_options_validate( $input ) {
 		$input['pinteresturl'] = esc_url_raw( $input['pinteresturl'] );
 	if( isset( $se_options[ 'tumblrurl' ] ) )
 		$input['tumblrurl'] = esc_url_raw( $input['tumblrurl'] );
+	if( isset( $se_options[ 'emailurl' ] ) )
+		$input['emailurl'] = sanitize_email( $input['emailurl'] );
 
 	return $input;
 }

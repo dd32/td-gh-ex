@@ -85,3 +85,7 @@ Version 1.2.7
 * Added menu for Theme Options in the admin toolbar
 * Fixed icon position for sticky posts
 * Minor bug fixes
+
+Version 1.2.8
+* Added link to email
+* Minor bug fixes
