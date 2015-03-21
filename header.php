@@ -85,7 +85,7 @@
 				<?php endif; ?>
 				
 				<?php if ( $se_options['emailurl'] != '' ) : ?>
-					<a href="mailto:<?php echo esc_url($se_options['emailurl']); ?>" title="Email"><i class="fa spaceRightDouble fa-envelope"></i></a>
+					<a href="mailto:<?php echo sanitize_email($se_options['emailurl']); ?>" title="Email"><i class="fa spaceRightDouble fa-envelope"></i></a>
 				<?php endif; ?>
 				
 				<?php if ( ! $se_options['hidesearch'] ) : ?>

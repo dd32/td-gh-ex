@@ -212,7 +212,7 @@ function annina_options_do_page() {
 				?>
 				<tr valign="top"><th scope="row"><?php _e( 'Enter your Email', 'annina' ); ?></th>
 					<td>
-						<input id="annina_theme_options[emailurl]" class="regular-text" type="text" name="annina_theme_options[emailurl]" value="<?php if( isset( $se_options[ 'emailurl' ] ) ) echo esc_url( $se_options[ 'emailurl' ] ); ?>" />
+						<input id="annina_theme_options[emailurl]" class="regular-text" type="text" name="annina_theme_options[emailurl]" value="<?php if( isset( $se_options[ 'emailurl' ] ) ) echo sanitize_email( $se_options[ 'emailurl' ] ); ?>" />
 						<label class="description" for="annina_theme_options[emailurl]"><?php _e( 'Leave blank to hide Email Icon', 'annina' ); ?></label>
 					</td>
 				</tr>
@@ -261,7 +261,7 @@ function annina_options_validate( $input ) {
 	if( isset( $se_options[ 'pinteresturl' ] ) )
 		$input['pinteresturl'] = esc_url_raw( $input['pinteresturl'] );
 	if( isset( $se_options[ 'emailurl' ] ) )
-		$input['emailurl'] = esc_url_raw( $input['emailurl'] );
+		$input['emailurl'] = sanitize_email( $input['emailurl'] );
 
 	return $input;
 }
