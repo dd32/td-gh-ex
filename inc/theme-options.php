@@ -13,6 +13,7 @@ $annina_theme_options = array(
 	'instagramurl' => '#', 
 	'youtubeurl' => '#', 
 	'pinteresturl' => '#', 
+	'emailurl' => '#'
 );
 
 if ( current_user_can('manage_options') ) {
@@ -75,9 +76,10 @@ function annina_options_do_page() {
 				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Infinite Scroll', 'annina' ); ?></b></li>
 				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Breadcrumb', 'annina' ); ?></b></li>
 				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( '7 Shortcodes', 'annina' ); ?></b> <?php _e( '(Toggle, Tabs, Boxes, Columns, Highlights, Buttons and Drop Cap)', 'annina' ); ?></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( '10 Exclusive Widgets', 'annina' ); ?></b> <?php _e( '(Latest Tweet, Instagram, Social Buttons, Recent Posts with Thumbnail and Most Commented Posts...)', 'annina' ); ?></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( '11 Exclusive Widgets', 'annina' ); ?></b> <?php _e( '(Latest Tweet, Instagram, Social Buttons, Recent Posts with Thumbnail and Most Commented Posts...)', 'annina' ); ?></li>
 				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Related Posts Box', 'annina' ); ?></b></li>
 				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Information About Author Box', 'annina' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Advertising system', 'annina' ); ?></b></li>
 				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'And much more...', 'annina' ); ?></b></li>
 			<ul>
 			</div>
@@ -203,6 +205,18 @@ function annina_options_do_page() {
 					</td>
 				</tr>
 				
+				<?php
+				/**
+				 * Email
+				 */
+				?>
+				<tr valign="top"><th scope="row"><?php _e( 'Enter your Email', 'annina' ); ?></th>
+					<td>
+						<input id="annina_theme_options[emailurl]" class="regular-text" type="text" name="annina_theme_options[emailurl]" value="<?php if( isset( $se_options[ 'emailurl' ] ) ) echo esc_url( $se_options[ 'emailurl' ] ); ?>" />
+						<label class="description" for="annina_theme_options[emailurl]"><?php _e( 'Leave blank to hide Email Icon', 'annina' ); ?></label>
+					</td>
+				</tr>
+				
 			</table>
 
 			<p class="submit">
@@ -246,6 +260,8 @@ function annina_options_validate( $input ) {
 		$input['youtubeurl'] = esc_url_raw( $input['youtubeurl'] );
 	if( isset( $se_options[ 'pinteresturl' ] ) )
 		$input['pinteresturl'] = esc_url_raw( $input['pinteresturl'] );
+	if( isset( $se_options[ 'emailurl' ] ) )
+		$input['emailurl'] = esc_url_raw( $input['emailurl'] );
 
 	return $input;
 }

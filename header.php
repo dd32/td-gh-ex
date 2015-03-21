@@ -84,6 +84,10 @@
 					<a href="<?php echo esc_url($se_options['pinteresturl']); ?>" title="Pinterest" target="_blank"><i class="fa spaceRightDouble fa-pinterest"></i></a>
 				<?php endif; ?>
 				
+				<?php if ( $se_options['emailurl'] != '' ) : ?>
+					<a href="mailto:<?php echo esc_url($se_options['emailurl']); ?>" title="Email"><i class="fa spaceRightDouble fa-envelope"></i></a>
+				<?php endif; ?>
+				
 				<?php if ( ! $se_options['hidesearch'] ) : ?>
 					<div id="open-search" class="top-search"><i class="fa spaceRightDouble fa-search"></i></div>
 				<?php endif; ?>
