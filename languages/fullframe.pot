@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Full Frame\n"
 "Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/full-frame-pro-"
 "premium/pro-premium/\n"
-"POT-Creation-Date: 2015-03-17 00:10+0545\n"
-"PO-Revision-Date: 2015-03-17 00:10+0545\n"
+"POT-Creation-Date: 2015-03-22 09:17+0545\n"
+"PO-Revision-Date: 2015-03-22 09:17+0545\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: en\n"
@@ -150,8 +150,8 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: ../content-page.php:35 ../inc/fullframe-core.php:630
-#: ../inc/fullframe-core.php:649 ../inc/fullframe-core.php:775
+#: ../content-page.php:35 ../inc/fullframe-core.php:585
+#: ../inc/fullframe-core.php:604 ../inc/fullframe-core.php:730
 msgid "Edit"
 msgstr ""
 
@@ -644,97 +644,97 @@ msgstr ""
 msgid "Error 404"
 msgstr ""
 
-#: ../inc/fullframe-breadcrumb.php:222 ../inc/fullframe-core.php:901
+#: ../inc/fullframe-breadcrumb.php:222 ../inc/fullframe-core.php:856
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: ../inc/fullframe-core.php:122 ../inc/fullframe-menus.php:26
+#: ../inc/fullframe-core.php:77 ../inc/fullframe-menus.php:26
 msgid "Primary Menu"
 msgstr ""
 
-#: ../inc/fullframe-core.php:596
+#: ../inc/fullframe-core.php:551
 msgid "Post navigation"
 msgstr ""
 
-#: ../inc/fullframe-core.php:605
+#: ../inc/fullframe-core.php:560
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: ../inc/fullframe-core.php:606
+#: ../inc/fullframe-core.php:561
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: ../inc/fullframe-core.php:630
+#: ../inc/fullframe-core.php:585
 msgid "Pingback:"
 msgstr ""
 
-#: ../inc/fullframe-core.php:640
+#: ../inc/fullframe-core.php:595
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr ""
 
-#: ../inc/fullframe-core.php:646
+#: ../inc/fullframe-core.php:601
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: ../inc/fullframe-core.php:653
+#: ../inc/fullframe-core.php:608
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../inc/fullframe-core.php:756
+#: ../inc/fullframe-core.php:711
 msgctxt "Used before publish date."
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
 msgstr ""
 
-#: ../inc/fullframe-core.php:763
+#: ../inc/fullframe-core.php:718
 msgctxt "Used before post author name."
 msgid "<span class=\"screen-reader-text\">Author</span>"
 msgstr ""
 
-#: ../inc/fullframe-core.php:771
+#: ../inc/fullframe-core.php:726
 msgid "Leave a comment"
 msgstr ""
 
-#: ../inc/fullframe-core.php:771
+#: ../inc/fullframe-core.php:726
 msgid "1 Comment"
 msgstr ""
 
-#: ../inc/fullframe-core.php:771
+#: ../inc/fullframe-core.php:726
 msgid "% Comments"
 msgstr ""
 
-#: ../inc/fullframe-core.php:792 ../inc/fullframe-core.php:800
+#: ../inc/fullframe-core.php:747 ../inc/fullframe-core.php:755
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ""
 
-#: ../inc/fullframe-core.php:795
+#: ../inc/fullframe-core.php:750
 msgctxt "Used before category names."
 msgid "<span class=\"screen-reader-text\">Categories</span>"
 msgstr ""
 
-#: ../inc/fullframe-core.php:803
+#: ../inc/fullframe-core.php:758
 msgctxt "Used before tag names."
 msgid "<span class=\"screen-reader-text\">Tags</span>"
 msgstr ""
 
-#: ../inc/fullframe-core.php:997
+#: ../inc/fullframe-core.php:952
 #, php-format
 msgid "%s"
 msgstr ""
 
-#: ../inc/fullframe-core.php:1425
+#: ../inc/fullframe-core.php:1380
 msgid "Scroll Up"
 msgstr ""
 
-#: ../inc/fullframe-core.php:1442
+#: ../inc/fullframe-core.php:1397
 msgid "Posted on"
 msgstr ""
 
-#: ../inc/fullframe-core.php:1443
+#: ../inc/fullframe-core.php:1398
 msgid "By"
 msgstr ""
 
@@ -920,7 +920,7 @@ msgid "Featured"
 msgstr ""
 
 #: ../inc/fullframe-default-options.php:420
-#: ../inc/fullframe-default-options.php:554
+#: ../inc/fullframe-default-options.php:549
 msgid "Full Size"
 msgstr ""
 
@@ -1021,38 +1021,34 @@ msgid "Twitch"
 msgstr ""
 
 #: ../inc/fullframe-default-options.php:481
-#: ../inc/fullframe-default-options.php:517
-#: ../inc/fullframe-default-options.php:544
+#: ../inc/fullframe-default-options.php:512
+#: ../inc/fullframe-default-options.php:539
 msgid "Default"
 msgstr ""
 
-#: ../inc/fullframe-default-options.php:501
-msgid "No Sidebar ( Full Width )"
-msgstr ""
-
-#: ../inc/fullframe-default-options.php:522
+#: ../inc/fullframe-default-options.php:517
 msgid "Enable"
 msgstr ""
 
-#: ../inc/fullframe-default-options.php:527
+#: ../inc/fullframe-default-options.php:522
 msgid "Disable"
 msgstr ""
 
-#: ../inc/fullframe-default-options.php:549
+#: ../inc/fullframe-default-options.php:544
 msgid "Featured Image"
 msgstr ""
 
-#: ../inc/fullframe-default-options.php:559
+#: ../inc/fullframe-default-options.php:554
 msgid "Disable Image"
 msgstr ""
 
-#: ../inc/fullframe-default-options.php:574
+#: ../inc/fullframe-default-options.php:569
 #, php-format
 msgctxt "1: Year, 2: Site Title with home URL"
 msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
 msgstr ""
 
-#: ../inc/fullframe-default-options.php:576
+#: ../inc/fullframe-default-options.php:571
 msgid "by"
 msgstr ""
 
@@ -1069,9 +1065,9 @@ msgstr ""
 
 #: ../inc/fullframe-featured-content.php:313
 #: ../inc/fullframe-featured-content.php:330
-#: ../inc/fullframe-featured-slider.php:185
-#: ../inc/fullframe-featured-slider.php:201
-#: ../inc/fullframe-featured-slider.php:211
+#: ../inc/fullframe-featured-slider.php:183
+#: ../inc/fullframe-featured-slider.php:199
+#: ../inc/fullframe-featured-slider.php:209
 msgid "Permalink to:"
 msgstr ""
 

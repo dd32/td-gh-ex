@@ -25,52 +25,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) )
-	$content_width = 1200; /* pixels */
-
-
-if ( ! function_exists( 'fullframe_content_width' ) ) :
-	/**
-	 * Change the content width based on the Theme Settings and Page/Post Settings
-	 */
-	function fullframe_content_width() {
-		global $post, $wp_query, $content_width;
-
-		//Getting Ready to load options data
-		$options					= fullframe_get_theme_options();
-		
-		$themeoption_layout 		= $options['theme_layout'];
-		
-		// Front page displays in Reading Settings
-		$page_on_front = get_option('page_on_front') ;
-		$page_for_posts = get_option('page_for_posts');
-
-		// Get Page ID outside Loop
-		$page_id = $wp_query->get_queried_object_id();
-
-		// Blog Page setting in Reading Settings
-		if ( $page_id == $page_for_posts ) {
-			$layout = get_post_meta( $page_for_posts,'fullframe-sidebarlayout', true );
-		}
-		elseif ( $post)  {
-			if ( is_attachment() ) {
-				$parent = $post->post_parent;
-				$layout = get_post_meta( $parent,'fullframe-sidebarlayout', true );
-			} else {
-				$layout = get_post_meta( $post->ID,'fullframe-sidebarlayout', true );
-			}
-		}
-
-		if ( empty( $layout ) || ( !is_page() && !is_single() ) ) {
-			$layout='default';
-		}
-
-		// Two Colums: Left and Right Sidebar & One Column: No Sidbear
-		if ( $layout == 'right-sidebar' || $layout == 'left-sidebar' || $layout == 'no-sidebar' || ( $layout=='default' && $themeoption_layout == 'right-sidebar' ) || ( $layout=='default' && $themeoption_layout == 'left-sidebar' ) || ( $layout=='default' && $themeoption_layout == 'no-sidebar' ) ) {
-			$content_width = 780;
-		}	
-	}
-endif;
-add_action( 'template_redirect', 'fullframe_content_width' );
+	$content_width = 860; /* pixels */
 
 
 if ( ! function_exists( 'fullframe_setup' ) ) :

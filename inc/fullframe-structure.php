@@ -233,11 +233,13 @@ if ( ! function_exists( 'fullframe_header_right' ) ) :
  */
 function fullframe_header_right() { ?>
 	<aside class="sidebar sidebar-header-right widget-area">
-		<section class="widget widget_fullframe_social_icons" id="header-right-social-icons">
-			<div class="widget-wrap">
-				<?php echo fullframe_get_social_icons(); ?>
-			</div>
-		</section>
+		<?php if ( '' != ( $fullframe_social_icons = fullframe_get_social_icons() ) ) { ?>
+			<section class="widget widget_fullframe_social_icons" id="header-right-social-icons">
+				<div class="widget-wrap">
+					<?php echo fullframe_get_social_icons(); ?>
+				</div>
+			</section>
+		<?php } ?>
 		<section class="widget widget_search" id="header-right-search">
 			<div class="widget-wrap">
 				<?php echo get_search_form(); ?>

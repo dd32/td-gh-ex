@@ -494,12 +494,7 @@ function fullframe_metabox_layouts() {
 			'id' 	=> 'fullframe-layout-option',
 			'value' => 'no-sidebar',
 			'label' => __( 'No Sidebar ( Content Width )', 'fullframe' ),
-		),
-		'no-sidebar-full-width' => array(
-			'id' 	=> 'fullframe-layout-option',
-			'value' => 'no-sidebar-full-width',
-			'label' => __( 'No Sidebar ( Full Width )', 'fullframe' ),
-		),
+		)
 	);
 	return apply_filters( 'fullframe_layouts', $layout_options );
 }

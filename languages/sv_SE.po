@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Full Frame\n"
 "Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/catch-base-pro-"
 "premium/pro-premium/\n"
-"POT-Creation-Date: 2015-03-17 00:19+0545\n"
-"PO-Revision-Date: 2015-03-17 00:19+0545\n"
+"POT-Creation-Date: 2015-03-22 09:17+0545\n"
+"PO-Revision-Date: 2015-03-22 09:17+0545\n"
 "Last-Translator: Anders <anders@paulcen.se>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: sv\n"
@@ -152,8 +152,8 @@ msgstr "Det verkar som att vi inte kan hitta det du letar efter. Testa att söka
 msgid "Pages:"
 msgstr "Sidor:"
 
-#: ../content-page.php:35 ../inc/fullframe-core.php:630
-#: ../inc/fullframe-core.php:649 ../inc/fullframe-core.php:775
+#: ../content-page.php:35 ../inc/fullframe-core.php:585
+#: ../inc/fullframe-core.php:604 ../inc/fullframe-core.php:730
 msgid "Edit"
 msgstr "Redigera"
 
@@ -667,97 +667,97 @@ msgstr "Visa alla inlägg av %s"
 msgid "Error 404"
 msgstr "Fel 404"
 
-#: ../inc/fullframe-breadcrumb.php:222 ../inc/fullframe-core.php:901
+#: ../inc/fullframe-breadcrumb.php:222 ../inc/fullframe-core.php:856
 #, php-format
 msgid "Page %s"
 msgstr "Sida %s"
 
-#: ../inc/fullframe-core.php:122 ../inc/fullframe-menus.php:26
+#: ../inc/fullframe-core.php:77 ../inc/fullframe-menus.php:26
 msgid "Primary Menu"
 msgstr "Primär meny"
 
-#: ../inc/fullframe-core.php:596
+#: ../inc/fullframe-core.php:551
 msgid "Post navigation"
 msgstr "Inläggsnavigering"
 
-#: ../inc/fullframe-core.php:605
+#: ../inc/fullframe-core.php:560
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Äldre inlägg"
 
-#: ../inc/fullframe-core.php:606
+#: ../inc/fullframe-core.php:561
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Nyare inlägg <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../inc/fullframe-core.php:630
+#: ../inc/fullframe-core.php:585
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../inc/fullframe-core.php:640
+#: ../inc/fullframe-core.php:595
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">skriver:</span>"
 
-#: ../inc/fullframe-core.php:646
+#: ../inc/fullframe-core.php:601
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr "%1$s kl. %2$s"
 
-#: ../inc/fullframe-core.php:653
+#: ../inc/fullframe-core.php:608
 msgid "Your comment is awaiting moderation."
 msgstr "Din kommentar inväntar granskning."
 
-#: ../inc/fullframe-core.php:756
+#: ../inc/fullframe-core.php:711
 msgctxt "Used before publish date."
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
 msgstr "<span class=\"screen-reader-text\">Postades den</span>"
 
-#: ../inc/fullframe-core.php:763
+#: ../inc/fullframe-core.php:718
 msgctxt "Used before post author name."
 msgid "<span class=\"screen-reader-text\">Author</span>"
 msgstr "<span class=\"screen-reader-text\">Författare</span>"
 
-#: ../inc/fullframe-core.php:771
+#: ../inc/fullframe-core.php:726
 msgid "Leave a comment"
 msgstr "Lämna en kommentar"
 
-#: ../inc/fullframe-core.php:771
+#: ../inc/fullframe-core.php:726
 msgid "1 Comment"
 msgstr "1 Kommentar"
 
-#: ../inc/fullframe-core.php:771
+#: ../inc/fullframe-core.php:726
 msgid "% Comments"
 msgstr "% Kommentarer"
 
-#: ../inc/fullframe-core.php:792 ../inc/fullframe-core.php:800
+#: ../inc/fullframe-core.php:747 ../inc/fullframe-core.php:755
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ", "
 
-#: ../inc/fullframe-core.php:795
+#: ../inc/fullframe-core.php:750
 msgctxt "Used before category names."
 msgid "<span class=\"screen-reader-text\">Categories</span>"
 msgstr "<span class=\"screen-reader-text\">Kategorier</span>"
 
-#: ../inc/fullframe-core.php:803
+#: ../inc/fullframe-core.php:758
 msgctxt "Used before tag names."
 msgid "<span class=\"screen-reader-text\">Tags</span>"
 msgstr "<span class=\"screen-reader-text\">Taggar</span>"
 
-#: ../inc/fullframe-core.php:997
+#: ../inc/fullframe-core.php:952
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: ../inc/fullframe-core.php:1425
+#: ../inc/fullframe-core.php:1380
 msgid "Scroll Up"
 msgstr "Scrolla upp"
 
-#: ../inc/fullframe-core.php:1442
+#: ../inc/fullframe-core.php:1397
 msgid "Posted on"
 msgstr "﻿Publicerat den"
 
-#: ../inc/fullframe-core.php:1443
+#: ../inc/fullframe-core.php:1398
 msgid "By"
 msgstr "Av"
 
@@ -945,7 +945,7 @@ msgid "Featured"
 msgstr "Utvalt"
 
 #: ../inc/fullframe-default-options.php:420
-#: ../inc/fullframe-default-options.php:554
+#: ../inc/fullframe-default-options.php:549
 msgid "Full Size"
 msgstr "Full storlek"
 
@@ -1046,38 +1046,34 @@ msgid "Twitch"
 msgstr "Twitch"
 
 #: ../inc/fullframe-default-options.php:481
-#: ../inc/fullframe-default-options.php:517
-#: ../inc/fullframe-default-options.php:544
+#: ../inc/fullframe-default-options.php:512
+#: ../inc/fullframe-default-options.php:539
 msgid "Default"
 msgstr "Förvald"
 
-#: ../inc/fullframe-default-options.php:501
-msgid "No Sidebar ( Full Width )"
-msgstr "Ingen sidpanel (Full bredd)"
-
-#: ../inc/fullframe-default-options.php:522
+#: ../inc/fullframe-default-options.php:517
 msgid "Enable"
 msgstr "Aktivera"
 
-#: ../inc/fullframe-default-options.php:527
+#: ../inc/fullframe-default-options.php:522
 msgid "Disable"
 msgstr "Inaktivera"
 
-#: ../inc/fullframe-default-options.php:549
+#: ../inc/fullframe-default-options.php:544
 msgid "Featured Image"
 msgstr "Utvald bild"
 
-#: ../inc/fullframe-default-options.php:559
+#: ../inc/fullframe-default-options.php:554
 msgid "Disable Image"
 msgstr "Inaktivera bild"
 
-#: ../inc/fullframe-default-options.php:574
+#: ../inc/fullframe-default-options.php:569
 #, php-format
 msgctxt "1: Year, 2: Site Title with home URL"
 msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
 msgstr "Copyright © %1$s %2$s. Alla rättigheter reserverade."
 
-#: ../inc/fullframe-default-options.php:576
+#: ../inc/fullframe-default-options.php:571
 msgid "by"
 msgstr "av"
 
@@ -1097,9 +1093,9 @@ msgstr ""
 
 #: ../inc/fullframe-featured-content.php:313
 #: ../inc/fullframe-featured-content.php:330
-#: ../inc/fullframe-featured-slider.php:185
-#: ../inc/fullframe-featured-slider.php:201
-#: ../inc/fullframe-featured-slider.php:211
+#: ../inc/fullframe-featured-slider.php:183
+#: ../inc/fullframe-featured-slider.php:199
+#: ../inc/fullframe-featured-slider.php:209
 msgid "Permalink to:"
 msgstr "Permalänk till:"
 
@@ -1187,3 +1183,6 @@ msgstr ""
 "Som standard läser den Sök och arkiv widgets som visas nedan. Du kan lägga till "
 "widgeten på detta område genom att besöka din <a href=\"%s\">Widgets Panel</a> "
 "som kommer att ersätta standard widgets."
+
+#~ msgid "No Sidebar ( Full Width )"
+#~ msgstr "Ingen sidpanel (Full bredd)"

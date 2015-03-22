@@ -1,5 +1,12 @@
 == Change log ==
 
+= 1.2 =
+* Bug Fixed: Removed social icons wrapper when there is no social icon url defined
+* Bug Fixed: Removed unnecessary function fullframe_content_width() and adjusted value of content width
+* Bug Fixed: Removed unnecessary no-sidebar-full-width layout option in metabox
+* Bug Fixed: Removed assistive-text from Featured Demo Slider ( Reported by bydlo )
+* Buf Fixed: Added jquery.cycle2.js.map ( Reported by tualatinweb )
+
 = 1.1 =
 * Added Swedish translation sv_SE.po and sv_SE.mo
 * Bug Fixed: update keyword _nx:1,2,4c from _nx:1,2 in language file fullframe.pot
