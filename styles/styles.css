@@ -43,7 +43,7 @@ padding: 7px 0;
 background-color: rgba(255, 255, 255, 0.95);
 }
 .header .navbar-nav>li>a:hover {
-color: #E14D43;
+color: #109975;
 }
 .header .navbar-nav>li>a {
 color: #666666;
@@ -52,7 +52,7 @@ font-weight: 500;
 /* You can change the height of the carousel by changing the height in the class below. It is set to 50% by default, but can be any height! */
 
 .carousel {
-padding-top: 40px;
+padding-top: 82px;
     height: 60%;
 }
 
@@ -75,7 +75,9 @@ padding-top: 40px;
 }
 
 
-
+.navbar-inverse .navbar-toggle .icon-bar {
+  background-color: #109975;
+}
 
 
 
@@ -119,7 +121,7 @@ margin-bottom: 30px;
 text-align: left;
 }
 .arfeature header i {
-background-color: #e14d43;
+background-color: #109975;
 }
 
 .arfeature p {
@@ -194,10 +196,10 @@ border-width: 2px;
 border-style: solid;
 }
 .arbtnn:hover {
-background-color: #e14d43;
+background-color: #109975;
 }
 .arbtnnsrborder:hover {
-border-color: #e14d43 !important;
+border-color: #109975 !important;
 }
 .arbtnn:hover {
 text-decoration: none;
@@ -210,7 +212,7 @@ padding: 10px;
 }
 
 .asat .ab {
-background-color: #e14d43;
+background-color: #109975;
 width: 30px;
 margin: 0px;
 padding: 0px;
@@ -232,7 +234,7 @@ text-align: center;
 
 
 .arbtnn-pr {
-background-color: #e14d43;
+background-color: #109975;
 color: #fff;
 }
  
@@ -259,12 +261,16 @@ text-transform: uppercase;
 
 
 
+.smallhead {
 
+padding-top:82px;
+}
 
 
 
 
 .page-intro {
+
 padding: 10px 0;
 -webkit-box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.06) inset;
 box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.06) inset;
@@ -368,7 +374,7 @@ h3.title:before {
 position: absolute;
 content: "";
 height: 1px;
-background: #e14d43;
+background: #109975;
 width: 90px;
 bottom: -1px;
 left: 0px;
@@ -425,7 +431,7 @@ font-size: 60px;
 line-height: 70px;
 padding: 20px;
 margin: 100px 0 30px;
- background-color: #E25050;
+ background-color: #109975;
  
 
 }
@@ -472,7 +478,7 @@ color: #FFFFFF;
  
 .btn-inverse:hover 
 {
-color: #E25050;
+color: #109975;
 
 }
 .btn-inverse:hover {
@@ -577,7 +583,7 @@ margin:10px 0;
 
 
 .progress-bar {
-background-color: #e14d43; }
+background-color: #109975; }
 
 
 
@@ -593,7 +599,7 @@ text-transform: capitalize;
 
 
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
-color: #E14D43;
+color: #109975;
 background-color: #f2f2f2;
 }
 
@@ -609,7 +615,7 @@ background: rgba(0, 0, 0, 0.6);
 
 
 .navbar-inverse .navbar-nav>.current>a, .navbar-inverse .navbar-nav>.current>a:hover, .navbar-inverse .navbar-nav>.current>a:focus {
-color: #E14D43;
+color: #109975;
 background-color: #f2f2f2;
 }
 
@@ -705,7 +711,7 @@ text-decoration: none;
 }
 /* Changing the color on hover */
 .nav>li>a:hover, .nav>li:hover>a {
-color: #E14D43;
+color: #109975;
 background-color: rgb(241, 241, 241);
 
 }
@@ -730,7 +736,7 @@ border-right: 1px solid #000;
 }
 /* Changing the color of the arrow on hover */	
 .menu-item-has-children>a:hover::after, .menu-item-has-children:hover>a::after {
-border-color: #e7746f;
+border-color: #109975;
 }
 /* The submenus */
 .nav ul {
@@ -782,7 +788,7 @@ background: #fff;
 }
 /* Changing the link's color and background on hover */
 .nav ul li:hover>a, .nav ul li a:hover {
-color: #E14D43;
+color: #109975;
 background-color: #E5E5E5;
 }
 /* Making the level 2 (or higher) submenus to appear at the right of their parent */
@@ -801,8 +807,8 @@ top: 12px;
 }
 /* Changing the color of the arrow on hover */
 .nav ul .menu-item-has-children:hover>a::after, .nav ul .menu-item-has-children>a:hover::after {
-border-right: 1px solid #e7746f;
-border-top: 1px solid #e7746f;
+border-right: 1px solid #109975;
+border-top: 1px solid #109975;
 }
 
 .sub-menu > li {
@@ -1087,7 +1093,7 @@ line-height: normal;
 margin-bottom: 15px;
 }
 .recent-posts-container h3 a:hover {
-color: #e7746f;
+color: #109975;
 }
 .recent-posts-container p {
   text-align: left;
@@ -1096,7 +1102,7 @@ p.rbh-post-meta {
   margin-top: 38px;
 }
 p.rbh-post-meta a {
-  color: #e7746f;
+  color: #109975;
 }
 img.rbh-readmore:hover{
 	box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.3);
@@ -1271,7 +1277,7 @@ a img.aligncenter {
 
 .commentlist .comment-meta {} 
 .commentlist .comment-meta a {
-  color: #e7746f;
+  color: #109975;
 }
 .commentlist .commentmetadata {}
 .commentlist .commentmetadata a {
@@ -1336,7 +1342,7 @@ a img.aligncenter {
 	color: #2c2c2c;
 }
 .logged-in-as a:hover{ 
-	color: #e93424;
+	color: #109975;
 }
 .comment-respond {
 	display: block;
@@ -1489,7 +1495,7 @@ border-radius: 0px;
   text-shadow: rgba(0,0,0,0.05) 0 1px 0px;
 }
 #calendar_wrap #wp-calendar #today, #calendar_wrap #wp-calendar #today {
-  background: #e7746f;
+  background: #109975;
 }
 #calendar_wrap #wp-calendar #today, #calendar_wrap #wp-calendar #today a {
   color: #FFF;
@@ -1527,13 +1533,13 @@ margin-top: 0px;
   word-break: break-word;
 }
 .article-page h1 a:hover, .breadcrum h4 a:hover{
-  color: #e93424;
+  color: #109975;
 }
 .article-page a{
 	color: #222;
 }
 .article-page a:hover{
-	color: #e93424;
+	color: #109975;
 }
 .article-page p {
 	padding-bottom: 9px;
@@ -1565,7 +1571,7 @@ margin-top: 0px;
 }
 .meta li {
   display: inline-block;
-  color: #e14d43;
+  color: #109975;
   margin-right: 15px;
 }
 .meta li.comments {
@@ -1711,7 +1717,7 @@ margin-bottom:60px
 }
 /* -- sidebar search widget --*/
 .sidebar #search, .sidebar #s {
-  border: 1px solid #e7746f;
+  border: 1px solid #109975;
   border-radius: 4px;
   padding: 7px 10px 7px 32px;
   width: 100%;
@@ -1723,13 +1729,13 @@ margin-bottom:60px
 position: absolute;
 top: 1px;
 right: 1px;
-background: #e14d43 url(../images/pattern-submit.png);
+background: #109975 url(../images/pattern-submit.png);
 border-top-right-radius: 4px;
 padding: 6px 13px 7px 13px;
 border-bottom-right-radius: 4px;
 border: 0px;
-border-top: 1px solid #e14d43;
-border-left: 1px solid #e14d43;
+border-top: 1px solid #109975;
+border-left: 1px solid #109975;
 color: #fff;
 width: auto;
 height: inherit;
@@ -1991,7 +1997,7 @@ font-size: 24px;
 }
 
 
-#calendar_wrap a{color:#e7746f;}
+#calendar_wrap a{color:#109975;}
 
 
 
@@ -2013,7 +2019,7 @@ background-color: transparent;
 
 
 .navbar-inverse .navbar-brand {
-color: #e14d43;
+color: #109975;
 text-transform: uppercase;
 font-size: 24px;
 font-weight: 800;

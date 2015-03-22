@@ -22,7 +22,7 @@
 										
                                         <?php if ( has_nav_menu( 'secondary' ) ) : ?>
  
-		<?php wp_nav_menu( array( 'theme_location' => 'secondary','menu_class' => 'nav navbar-nav nkkl navbar-right' ) ); ?>
+		<?php wp_nav_menu( array( 'theme_location' => 'secondary','menu_class' => 'nav navbar-nav nkkl navbar-right','depth'=>-1 ) ); ?>
 	 
 	<?php endif; ?>
                                         
@@ -35,13 +35,7 @@
       </div>
 
 <!--end / footer-->
-<?php wp_footer(); ?>
-
-
-
-
 <!--++++++++++++++ Footer Section End +++++++++++++++++++++++++-->
- 
 
-
+<?php wp_footer(); ?>
 </body></html>

@@ -18,25 +18,6 @@ if($options['fevicon'] != '') {
  
  
    <?php wp_head(); ?> 
-
-
- 
-
-<?php if($options['customcss'] != '') {
-?>
- 
-  <style type="text/css">
-<?php echo esc_attr($options['customcss']);?>
-</style> 
-<?php } ?>
-  
-  
-  
- 
-    
-
- 
-  
     
 </head>
 <body <?php body_class(); ?> id="pageBody">

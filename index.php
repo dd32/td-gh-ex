@@ -3,6 +3,8 @@
 ** Template Name : Right Sidebar
 */
 get_header(); ?>
+<div class="smallhead">
+</div>
 <div class="page-intro" style="margin-top: 0px;">
 				<div class="container">
 					<div class="row">

@@ -62,7 +62,21 @@ add_action( 'after_setup_theme', 'avnii_setup' );
 
 
 
+function avnii_of_head_css() {
+$options = get_option( 'arinio_theme_options' ); 
+    $output = '';
+    $custom_css = esc_attr($options['customcss']);
+    if ($custom_css <> '') {
+        $output .= $custom_css . "\n";
+    }
+// Output styles
+    if ($output <> '') {
+        $output = "<!-- Custom Styling -->\n<style type=\"text/css\">\n" . $output . "</style>\n";
+        echo $output;
+    }
+}
 
+add_action('wp_head', 'avnii_of_head_css');
 
 
 

@@ -55,9 +55,9 @@ All available options can be used from Appearance->AR Options
 
 License for images:
 1. Image Name: img11final.jpg
-Resource link: - http://www.imcreator.com/free/joshua-tree-park-road-2
+Resource link: - http://pixabay.com/en/pine-forest-branch-road-conifer-463469/
 License:  Creative Commons license
-url : https://creativecommons.org/licenses/by/2.0/
+url : http://creativecommons.org/publicdomain/zero/1.0/
 
 2. Image Name: fb.png
 Resource link: - https://www.iconfinder.com/icons/104458/facebook_fb_social_social_media_icon#size=128
@@ -68,7 +68,7 @@ Resource link: - https://www.iconfinder.com/icons/104461/twitter_icon#size=128
 License:  Free for commercial use
 
 4. Image Name: ico-delete.png
-Resource link: - https://www.iconfinder.com/icons/330399/bad_cancel_clear_close_decline_delete_empty_exit_not_refuse_remove_stop_icon#size=16
+Resource link: - https://www.iconfinder.com/icons/372905/delete_linecon_remove_round_icon#size=16
 License:  Free for commercial use
  
  
