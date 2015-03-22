@@ -1,7 +1,9 @@
 <section id = "site-content">
-    <article class = "<?php if (is_sticky()) { ?> sticky <?php } ?>" id = "post-<?php the_ID(); ?>" <?php post_class(); ?>>
-        <h3 class = "entry-title"><?php the_title(); ?></h3>
-        <?php the_content(); ?>
-        <?php comments_template(); ?>
+    <article id = "post-<?php the_ID(); ?> <?php post_class(); ?>">
+            <h3 class = "entry-title"><?php echo ( get_the_title() ) ? get_the_title() : __( '(No Title)', 'silverquantum' ); ?></h3>
+            <div class = "entry-content">
+                <?php the_content(); ?>            
+            </div>
+            <?php comments_template(); ?>
     </article>
 </section>

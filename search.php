@@ -1,11 +1,11 @@
 <?php get_header(); ?>
     <?php if (have_posts()) : ?>
+		<div class = "content-search">		
+			<h2><?php printf( __( 'Search Results for: %s', 'silverquantum' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
+		</div>
         <?php while(have_posts()) : the_post(); ?>
-            <?php get_template_part('content', get_post_format()); ?>
+            <?php get_template_part('content', 'search'); ?>
     <?php endwhile; ?>
-            <div class = "post-navigation">
-                <?php silverquantum_paging_navigation(); ?>
-            </div>
     <?php else : ?>
             <?php get_template_part('content', 'none'); ?>
     <?php endif; ?>

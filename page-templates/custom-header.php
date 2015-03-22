@@ -1,5 +1,5 @@
 <?php
-function azulsilver_custom_header_setup() {
+function silverquantum_custom_header_setup() {
 	$args = array(
 		// Text color and image (empty to use none).
 		'default-text-color'     => 'FFFFFF',
@@ -19,21 +19,21 @@ function azulsilver_custom_header_setup() {
 		'random-default'         => false,
 
 		// Callbacks for styling the header and the admin preview.
-		'wp-head-callback'       => 'azulsilver_header_style',
-		'admin-head-callback'    => 'azulsilver_admin_header_style',
+		'wp-head-callback'       => 'silverquantum_header_style',
+		'admin-head-callback'    => 'silverquantum_admin_header_style',
 	);
 	add_theme_support( 'custom-header', $args );
 }
-add_action( 'after_setup_theme', 'azulsilver_custom_header_setup' );
+add_action( 'after_setup_theme', 'silverquantum_custom_header_setup' );
 
-function azulsilver_header_style() {
+function silverquantum_header_style() {
 	$text_color = get_header_textcolor();
 	
 	if ($text_color == get_theme_support('custom-header', 'default-text-color')) {
             return;
         }
 ?>
-	<style type="text/css" id="azulsilver-header-css">
+	<style type="text/css" id="silverquantum-header-css">
 	<?php if (!display_header_text()) : ?>
             .site-title,
             .site-description {
