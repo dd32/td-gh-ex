@@ -21,6 +21,12 @@ if (!function_exists('silverquantum_theme_setup')) {
         if (!isset($content_width))
                 $content_width = 650;
         
+        // Load Theme Textdomain
+        load_theme_textdomain( 'silverquantum', get_template_directory() . '/languages' );
+        
+        // Register Navigation Menu
+        register_nav_menu('primary-navigation', __('Primary Navigation', 'silverquantum') );
+        
         // Title Tag
         add_theme_support('title-tag');
 

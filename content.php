@@ -4,7 +4,7 @@
         <small><?php silverquantum_metadata_posted_on_setup(); ?></small>
         <div class = "entry-content">
                 <div class = "small-post-thumbnail">
-                <?php the_post_thumbnail('azulsilver-small-thumbnail'); ?>
+                <?php the_post_thumbnail('silverquantum-small-thumbnail'); ?>
                 </div>
             <?php the_content(); ?>   
                 <?php wp_link_pages(); ?>
