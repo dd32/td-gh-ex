@@ -38,7 +38,7 @@ endif;
 					<div claSS="logo">						
 					<a href="<?php echo esc_url(home_url( '/' )); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 					<?php 
-					if($wl_theme_options['text_title'] =="on")
+					if($wl_theme_options['text_title'] =="1")
 					{ echo get_bloginfo('name'); }
 					else if($wl_theme_options['upload_image_logo']!='') 
 					{ ?>
@@ -48,7 +48,7 @@ endif;
 					<p><?php bloginfo( 'description' ); ?></p>
 					</div>
 				</div>
-				<?php if($wl_theme_options['header_social_media_in_enabled']=='on') { ?>
+				<?php if($wl_theme_options['header_social_media_in_enabled']=='1') { ?>
 				<div class="col-md-6 col-sm-12">
 				<?php if($wl_theme_options['email_id'] || $wl_theme_options['phone_no'] !='') { ?>
 				<ul class="head-contact-info">

@@ -5,6 +5,9 @@ Consider weblizar PRE-Fix for function-name and as a slug of the Theme Enigma.
 Enigma
 
 CHANGE-LOG:
+@Version: 1.8.6[23/03/2015]
+1. Minor Fixes in Header and Footer
+
 @Version: 1.8.5[17/03/2015]
 1. Checked() implimented.
 2. Home-Blog Show / Hide settings added in Theme-Options.
