@@ -41,6 +41,11 @@ one-column, left-sidebar, responsive-layout, custom-background, custom-menu, cus
 3. Log into your WP admin panel and click on the Design tab. Now click on the Zenzero theme to activate it.
 
 == Changelog ==
+Version 1.2.3
+* Fixed previous and next post link translation
+* Fixed font size and line height of some elements (Heading)
+* Minor bug fixes
+
 Version 1.2.2
 * Update FontAwesome to 4.3.0 version
 * Fixed a bug that enlarged font

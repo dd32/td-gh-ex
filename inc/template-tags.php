@@ -52,8 +52,8 @@ function zenzero_post_nav() {
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'zenzero' ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<i class="fa prevNext fa-lg fa-angle-left"></i> <div class="meta-nav"><small>'. __('Previous Post', 'zenzero') .'</small><span class="smallPart">%title</span></div>', 'Previous post link', 'zenzero' ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '<div class="meta-nav"><small>'. __('Next Post', 'zenzero') .'</small><span class="smallPart">%title</span></div> <i class="fa prevNext fa-lg fa-angle-right"></i>', 'Next post link',     'zenzero' ) );
+				previous_post_link( '<div class="nav-previous">%link</div>', '<i class="fa prevNext fa-lg fa-angle-left"></i> <div class="meta-nav" aria-hidden="true"><small>' . __( 'Previous Post', 'zenzero' ) . '</small> ' . '<span class="smallPart">%title</span></div><span class="screen-reader-text">' . __( 'Previous post link', 'zenzero' ) . '</span> ' );
+				next_post_link( '<div class="nav-next">%link</div>', '<div class="meta-nav" aria-hidden="true"><small>' . __( 'Next Post', 'zenzero' ) . '</small><span class="smallPart">%title</span></div> <i class="fa prevNext fa-lg fa-angle-right"></i> ' . '<span class="screen-reader-text">' . __( 'Next Post link', 'zenzero' ) . '</span> ' );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->

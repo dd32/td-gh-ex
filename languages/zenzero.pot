@@ -213,7 +213,7 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: content-page.php:33 content-search.php:35 content.php:31
+#: content-page.php:35 content-search.php:35 content.php:31
 #: inc/template-tags.php:124
 msgid "Edit"
 msgstr ""
@@ -240,15 +240,15 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: functions.php:47
+#: functions.php:55
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:74
+#: functions.php:82
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:112
+#: functions.php:120
 #, php-format
 msgid ""
 "Thank you for installing <b>Zenzero</b> WordPress Theme! <a href=\"%2$s"
@@ -256,11 +256,11 @@ msgid ""
 "Notice</a>"
 msgstr ""
 
-#: header.php:34
+#: header.php:33
 msgid "Main Menu"
 msgstr ""
 
-#: inc/extras.php:63
+#: inc/extras.php:64
 #, php-format
 msgid "Page %s"
 msgstr ""
@@ -278,10 +278,7 @@ msgid "Previous Post"
 msgstr ""
 
 #: inc/template-tags.php:55
-msgctxt "Previous post link"
-msgid ""
-"<i class=\"fa prevNext fa-lg fa-angle-left\"></i> <div class=\"meta-nav"
-"\"><small>"
+msgid "Previous post link"
 msgstr ""
 
 #: inc/template-tags.php:56
@@ -289,20 +286,19 @@ msgid "Next Post"
 msgstr ""
 
 #: inc/template-tags.php:56
-msgctxt "Next post link"
-msgid "<div class=\"meta-nav\"><small>"
+msgid "Next Post link"
 msgstr ""
 
 #: inc/template-tags.php:82
 #, php-format
 msgctxt "post date"
-msgid "<i class=\"fa fa-clock-o spaceLeftRight\"></i> %s"
+msgid "<i class=\"fa fa-clock-o spaceLeftRight\"></i>%s"
 msgstr ""
 
 #: inc/template-tags.php:87
 #, php-format
 msgctxt "post author"
-msgid "<i class=\"fa fa-user spaceLeftRight\"></i> %s"
+msgid "<i class=\"fa fa-user spaceLeftRight\"></i>%s"
 msgstr ""
 
 #: inc/template-tags.php:95
@@ -311,7 +307,7 @@ msgstr ""
 
 #: inc/template-tags.php:97
 #, php-format
-msgid "<i class=\"fa fa-folder-open-o spaceLeftRight\"></i> %1$s"
+msgid "<i class=\"fa fa-folder-open-o spaceLeftRight\"></i>%1$s"
 msgstr ""
 
 #: inc/template-tags.php:103
@@ -328,108 +324,132 @@ msgstr ""
 
 #: inc/template-tags.php:120
 #, php-format
-msgid "<i class=\"fa fa-tags spaceRight\"></i> %1$s"
+msgid "<i class=\"fa fa-tags spaceRight\"></i>%1$s"
 msgstr ""
 
-#: inc/theme-options.php:24 inc/theme-options.php:47
+#: inc/theme-options.php:23 inc/theme-options.php:46
 msgid "Zenzero Theme Options"
 msgstr ""
 
-#: inc/theme-options.php:60
+#: inc/theme-options.php:59
 msgid " Free Theme Options"
 msgstr ""
 
-#: inc/theme-options.php:87
+#: inc/theme-options.php:62
+msgid "Need more features and options? Upgrade to PRO!"
+msgstr ""
+
+#: inc/theme-options.php:63
+msgid "Get"
+msgstr ""
+
+#: inc/theme-options.php:63
+msgid "Zenzero PRO"
+msgstr ""
+
+#: inc/theme-options.php:63
+msgid "WordPress Theme for only"
+msgstr ""
+
+#: inc/theme-options.php:65
+msgid "Demo (Zenzero PRO)"
+msgstr ""
+
+#: inc/theme-options.php:67
+msgid "Get The Pro Version"
+msgstr ""
+
+#: inc/theme-options.php:86
 msgid ""
 "These options will let you setup the social icons at the bottom of the "
 "theme. You can enter the URLs of your profiles to have the icons show up."
 msgstr ""
 
-#: inc/theme-options.php:89
+#: inc/theme-options.php:88
 msgid "Options saved"
 msgstr ""
 
-#: inc/theme-options.php:104
+#: inc/theme-options.php:103
 msgid "Hide RSS Icon?"
 msgstr ""
 
-#: inc/theme-options.php:107
+#: inc/theme-options.php:106
 msgid "Hide the RSS feed icon?"
 msgstr ""
 
-#: inc/theme-options.php:116
+#: inc/theme-options.php:115
 msgid "Hide Search Button?"
 msgstr ""
 
-#: inc/theme-options.php:119
+#: inc/theme-options.php:118
 msgid "Hide the Search button?"
 msgstr ""
 
-#: inc/theme-options.php:128
+#: inc/theme-options.php:127
 msgid "Enter your Facebook URL"
 msgstr ""
 
-#: inc/theme-options.php:131
+#: inc/theme-options.php:130
 msgid "Leave blank to hide Facebook Icon"
 msgstr ""
 
-#: inc/theme-options.php:140
+#: inc/theme-options.php:139
 msgid "Enter your Twitter URL"
 msgstr ""
 
-#: inc/theme-options.php:143
+#: inc/theme-options.php:142
 msgid "Leave blank to hide Twitter Icon"
 msgstr ""
 
-#: inc/theme-options.php:152
+#: inc/theme-options.php:151
 msgid "Enter your Google + URL"
 msgstr ""
 
-#: inc/theme-options.php:155
+#: inc/theme-options.php:154
 msgid "Leave blank to hide Google + Icon"
 msgstr ""
 
-#: inc/theme-options.php:164
+#: inc/theme-options.php:163
 msgid "Enter your Linkedin URL"
 msgstr ""
 
-#: inc/theme-options.php:167
+#: inc/theme-options.php:166
 msgid "Leave blank to hide Linkedin Icon"
 msgstr ""
 
-#: inc/theme-options.php:176
+#: inc/theme-options.php:175
 msgid "Enter your Instagram URL"
 msgstr ""
 
-#: inc/theme-options.php:179
+#: inc/theme-options.php:178
 msgid "Leave blank to hide Instagram Icon"
 msgstr ""
 
-#: inc/theme-options.php:188
+#: inc/theme-options.php:187
 msgid "Enter your YouTube URL"
 msgstr ""
 
-#: inc/theme-options.php:191
+#: inc/theme-options.php:190
 msgid "Leave blank to hide YouTube Icon"
 msgstr ""
 
-#: inc/theme-options.php:200
+#: inc/theme-options.php:199
 msgid "Enter your Pinterest URL"
 msgstr ""
 
-#: inc/theme-options.php:203
+#: inc/theme-options.php:202
 msgid "Leave blank to hide Pinterest Icon"
 msgstr ""
 
-#: inc/theme-options.php:212
+#: inc/theme-options.php:211
 msgid "Enter your Tumblr URL"
 msgstr ""
 
-#: inc/theme-options.php:215
+#: inc/theme-options.php:214
 msgid "Leave blank to hide Tumblr Icon"
 msgstr ""
 
-#: inc/theme-options.php:222
+#: inc/theme-options.php:221
 msgid "Save Options"
 msgstr ""
 

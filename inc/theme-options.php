@@ -16,17 +16,18 @@ $zenzero_theme_options = array(
 	'tumblrurl' => ''
 );
 
-if ( is_admin() ) : // Load only if we are viewing an admin page
-
-function zenzero_toolbar_link_to_mypage( $wp_admin_bar ) {
-	$args = array(
-		'id'    => 'zenzero_theme_options',
-		'title' => __('Zenzero Theme Options', 'zenzero' ),
-		'href'  => admin_url('themes.php?page=theme_options')
-	);
-	$wp_admin_bar->add_node( $args );
+if ( current_user_can('manage_options') ) {
+	function zenzero_toolbar_link_to_mypage( $wp_admin_bar ) {
+		$args = array(
+			'id'    => 'zenzero_theme_options',
+			'title' => __('Zenzero Theme Options', 'zenzero' ),
+			'href'  => admin_url('themes.php?page=theme_options')
+		);
+		$wp_admin_bar->add_node( $args );
+	}
+	add_action( 'admin_bar_menu', 'zenzero_toolbar_link_to_mypage', 999 );
 }
-add_action( 'admin_bar_menu', 'zenzero_toolbar_link_to_mypage', 999 );
+if ( is_admin() ) : // Load only if we are viewing an admin page
 
 add_action( 'admin_init', 'zenzero_options_init' );
 add_action( 'admin_menu', 'zenzero_options_add_page' );
