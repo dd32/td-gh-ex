@@ -1,6 +1,14 @@
 *** Lovecraft changelog ***
 
 
+Version 1.14 (2014-03-23)
+------------------------- 
+- Renamed xx_XX.pot to lovecraft.pot
+- Replaced doubletaptogo.min.js with doubletaptogo.js (non-minified)
+- Removed the wp_is_mobile() function from functions.php
+- Replaced get_stylesheet_directory_uri() with get_template_directory_uri() so that child themes load Genericons correctly
+
+
 Version 1.13 (2014-03-09)
 ------------------------- 
 - Added fallback widgets that are displayed in the sidebar if no widgets have been selected
