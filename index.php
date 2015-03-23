@@ -32,7 +32,6 @@
 
 		<div class="entry">   
                 <?php the_post_thumbnail(); ?>
- 		<!--<?php the_excerpt(); ?>-->
                 <?php the_content(); ?>
 
 		<div class="pagenumber">  
@@ -51,9 +50,9 @@
          
         <?php endif; ?>
 
-     <div class="navigation">
-        <?php posts_nav_link(); ?> 
-        </div>
+   		<div class="navigation">
+		<?php posts_nav_link( ' ', '&#9668 Newer', 'Older &#9658' ); ?>
+		</div>
 
     </div>
 

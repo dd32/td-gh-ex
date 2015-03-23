@@ -7,8 +7,11 @@
 
 
 		<div id="credits">
-		Powered by <a href="http://wordpress.org/">Wordpress</a>.
-		Redesign Theme by <a href="http://toth-illustration.com">Robert Toth</a>
+
+		<?php _e('Powered by ','magtheme'); ?><a href="http://wordpress.org/">Wordpress</a>
+
+		<?php _e('MagTheme by ','magtheme'); ?><a href="http://tioreo.com">Tioreo</a>
+		
 		</div>
 
 	

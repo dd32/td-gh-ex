@@ -3,18 +3,12 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 
-<!--SMARTPHONES-->
 <meta name="viewport" content="width=device-width" />
-
-<title><?php wp_title( ' – ', true, 'right' ); ?></title>
-
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 <!--<link rel="shortcut icon" type="image/x-icon" href="<?php echo get_stylesheet_directory_uri() ?>/img/favicon.ico"/>-->
-
- 
 
 
 <?php wp_head(); ?>

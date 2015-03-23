@@ -38,7 +38,7 @@
 
       <?php } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
 
-	<h2 class="entry"><?php _e('News archives:'); ?></h2>
+	<h2 class="entry"><?php _e('News archives:', redesign'); ?></h2>
 
     <?php } ?>
 
@@ -69,7 +69,6 @@
 		<?php comments_popup_link('Comment &raquo; ', '1 comment &raquo;', '% comments &raquo;'); ?>
 		</div>
       
-		<!--<?php the_excerpt(); ?>-->
         	<?php the_content(); ?>
 
 		<div class="pagenumber"><?php wp_link_pages(); ?></div>
@@ -78,7 +77,9 @@
 
 	<?php endwhile; endif; ?>
 
-    	<div class="navigation"><?php posts_nav_link(); ?></div>
+    		<div class="navigation">
+		<?php posts_nav_link( ' ', '&#9668 Newer', 'Older &#9658' ); ?>
+		</div>
  
 	</div>
 

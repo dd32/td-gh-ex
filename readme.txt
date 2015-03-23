@@ -1,6 +1,6 @@
 Redesign Wordpress Theme
 ___
-Redesign WordPress theme, Copyright (C) 2014 Robert Toth
+Redesign WordPress theme, Copyright (C) 2015 Robert Toth
 Redesign WordPress theme is licensed under the GPL.
 Resource All grapcic objects, example: img/background.png, img/favicon.ico
 License: none
@@ -8,9 +8,9 @@ Copyright: none
 ---
 Author: Robert Toth
 Author URL: http://toth-illustration.com
-Version: 1.3
-Theme URL: http://redesign.toth-illustration.com
-Requires: WordPress 3.x
+Version: 1.3.1
+Theme URL: http://tioreo.com
+Requires: WordPress 4.1
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: gray, white, black, right-sidebar, three-columns, flexible-width, custom-background, custom-header, custom-menu, sticky-post, threaded-comments
@@ -50,5 +50,5 @@ Supported browsers and platforms:
 
 Typography:
 ---
-Lucida which works on more than 96% of all computers.
+Helvetica is a well known font and works on most devices.
 

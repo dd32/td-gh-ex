@@ -30,11 +30,6 @@
 
 		<div class="pagenumber"><?php wp_link_pages(); ?></div>
 
-	<!--<div class="rss"> 
-    	<a href="<?php bloginfo('rss2_url'); ?>">News RSS</a>, 
-	<a href="<?php bloginfo('comments_rss2_url'); ?>">Comments RSS</a>
-	</div>-->
-
 
     </div><!--ends entry-->
 
@@ -51,8 +46,8 @@
 
 <?php endif; ?>
 
-  		<div class="navigation"><?php previous_post_link(' &laquo; %link ') ?>
-		&nbsp; - &nbsp; <?php next_post_link(' %link &raquo; ') ?></div>
+<div class="navigation"><?php previous_post_link(' %link') ?>
+		<?php next_post_link('%link ') ?></div>
 
 </div><!--ends content-->
 

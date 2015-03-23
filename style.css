@@ -1,25 +1,25 @@
 /*
 Theme Name: Redesign
 
-Theme URI: http://redesign.toth-illustration.com
+Theme URI: http://tioreo.com
 
-Description: Redesign is a simple, clean and highly visible theme. It has transparent graphic elements and colored post formats. Responsive, liquid layout makes it equally easy to read in handheld units or modern desktop computers (max width 1366 px). It's an allround theme suitable for blogging/news, business, culture or organisations. Not based on any other WP theme. It's made from scratch.
+Description: Redesign is a simple, clean and highly visible theme. It has transparent graphic elements and colored post formats. Responsive, liquid layout makes it equally easy to read in handheld units or modern desktop computers (max width 1366 px). It's an all round theme suitable for blogging/news, business, culture or organizations. Not based on any other WP theme. It's made from scratch.
 
 - Transparent graphics.
 - Choose from several transparent color post formats.
 - Two navigation menus.
-- Custom header. Suggested measures: 1366 x 240 px.
+- Custom header. Suggested max-measures: 1366 x 300 px. But better to use smaller size, as a logo to the left (300x100px).
 - Custom background, and custom background colors.
 - Widget areas in index header, sidebar and footer.
 - Responsive. Easy to read from desktops, tablets and smartphones.
 
-Redesign WordPress theme, Copyright (C) 2014 Robert Toth
+Redesign WordPress theme, Copyright (C) 2015 Robert Toth
 Redesign WordPress theme is licensed under the GPL.
 Resource All graphic objects, example: img/background.png, img/favicon.ico
 
 Author: Robert Toth
 Author URI: http://toth-illustration.com
-Version: 1.3
+Version: 1.3.1
 Copyright: Robert Toth, http://toth-illustration.com
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -62,7 +62,11 @@ li{
 
 
 	#banner .widget,
-	#footer .widget,
+	#footer .widget{
+		width: 96%;
+		padding: 2%;
+	}
+
 	#sidebar,
 	#sidebar2{
 		width: 94%;
@@ -95,7 +99,11 @@ li{
 	}
 
 	#banner .widget,
-	#footer .widget,
+	#footer .widget{
+		width: 46%;
+		padding: 2%;
+	}
+
 	#sidebar,
 	#sidebar2{
 		width: 44%;
@@ -142,9 +150,8 @@ li{
 
 	#banner .widget,
 	#footer .widget{
-		width: 19%;
+		width: 21%;
 		padding: 2%;
-		margin: 1%;
 	}
 
 }
@@ -169,9 +176,9 @@ li{
 
 	#banner .widget,
 	#footer .widget{
-		width: 19%;
+		width: 20%;
 		padding: 2%;
-		margin: 1%;
+		margin: 1% 0 1% 1%;
 	}
 
 
@@ -282,12 +289,13 @@ body{
 #header{
 	margin: 0px auto 0px;
 	padding:0px;
+	height:300px;
 }
 
 #wrapper{
 	padding:0px;
 	text-align: left;
-	background-image:url('img/tbg80.png');
+	background-image:url('img/tbg70.png');
 }
 
 #content{
@@ -304,14 +312,14 @@ body{
 }
 
 #header-text{
-	padding:1% 2%;
-	margin-bottom:30px;
+	padding:2%;
 }
 
 .site-title{
 	font-size:260%;
 	line-height:120%;
-
+	text-transform: uppercase;
+	font-weight:bold;
 }
 
 .site-description{
@@ -425,7 +433,8 @@ h6{
 .post{
 	overflow: auto;
 	padding:2%;
-	margin-bottom: 2%;
+	margin-bottom: 20px;
+	background-image:url('img/tbg30.png');
 }
 
 .entry ul li{
@@ -570,10 +579,17 @@ pre{
 	text-decoration:none;
 }
 
-.navigation{
-	margin:20px 0px;
-	padding:5px 20px;
+.navigation a{
+	margin-right:20px;;
+	padding:10px 20px;
 	background-image:url('img/btbg10.png');
+	font-weight:bold;
+	text-decoration: none;
+	line-height:260%;
+}
+
+.navigation a:hover{
+	background-image:url('img/btbg20.png');
 }
 
 
@@ -617,7 +633,7 @@ input[type="file"] {
 	overflow: auto;
 	outline: none;
 	border: none;
-	padding-left:5px;
+	padding:3px;
 	background:#FFF;
 	border:1px solid #DDD;
 	color:#555;
@@ -637,10 +653,11 @@ textarea{
 	width:90%;
 }
 
-#searchtextarea{
-        font-size: 100%;
-	max-width: 200px;
+#searchform input {
 	color: #999;
+	max-width: 200px;
+	font-size: 90%;
+	padding: 3px 6px;
 }
 
 #searchsubmit {
@@ -649,22 +666,22 @@ textarea{
 
 input[type="submit"] {
         font-size:100% !important;
-	background-image:url('img/btbg70.png') !important;
+	background: #777 !important;
 	margin:5px 0px !important;
 	padding:7px 14px !important;
 	border:none !important;
-	color:#FFF !important;
+	color:#BBB !important;
 }
 
 input[type="submit"]:hover {
         font-size:100% !important;
-	background-image:url('img/btbg50.png') !important;
+	background: #555 !important;
 	color:#FFF !important;
 }
 
 input[type="submit"]:active {
         font-size:100% !important;
-	background-image:url('img/tbg70.png') !important;
+	background: #666 !important;
 }
 
 table{
