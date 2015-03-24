@@ -1,48 +1,58 @@
 <?php
-function jobiletheme_options_init(){
- register_setting( 'theme_options', 'jobile_theme_options','theme_options_validate');
+function jobile_options_init(){
+ register_setting( 'theme_options', 'jobile_theme_options','jobile_options_validate');
 } 
-add_action( 'admin_init', 'jobiletheme_options_init' );
-function theme_options_validate($input)
+add_action( 'admin_init', 'jobile_options_init' );
+function jobile_options_validate($input)
 {
-	$input['logo'] = jobile_image_validation(esc_url_raw( $input['logo']));
-	$input['favicon'] = jobile_image_validation(esc_url_raw( $input['favicon'] ));
+	$input['logo'] = jobile_image_validation1(esc_url_raw( $input['logo']));
+	$input['favicon'] = jobile_image_validation1(esc_url_raw( $input['favicon'] ));
 	$input['footertext'] = sanitize_text_field( $input['footertext'] );
 	
     return $input;
 }
-function jobiletheme_framework_load_scripts(){
-	wp_enqueue_media();
-	wp_enqueue_style( 'jobiletheme_framework', get_template_directory_uri(). '/theme-options/css/jobiletheme_framework.css' ,false, '1.0.0');
-	// Enqueue custom option panel JS
-	wp_enqueue_script( 'options-custom', get_template_directory_uri(). '/theme-options/js/jobiletheme-custom.js', array( 'jquery' ) );
-	wp_enqueue_script( 'media-uploader', get_template_directory_uri(). '/theme-options/js/media-uploader.js', array( 'jquery') );		
+function jobile_image_validation1($jobile_imge_url) {
+    $jobile_filetype = wp_check_filetype($jobile_imge_url);
+    $jobile_supported_image = array('gif', 'jpg', 'jpeg', 'png', 'ico');
+    if (in_array($jobile_filetype['ext'], $jobile_supported_image)) {
+	return $jobile_imge_url;
+    } else {
+	return '';
+    }
 }
-add_action( 'admin_enqueue_scripts', 'jobiletheme_framework_load_scripts' );
-function jobiletheme_framework_menu_settings() {
+function jobile_framework_load_scripts($hook){
+	if($GLOBALS['jobile_menu'] == $hook){
+		wp_enqueue_media();
+		wp_enqueue_style( 'jobile_framework', get_template_directory_uri(). '/theme-options/css/jobile_framework.css' ,false, '1.0.0');
+		// Enqueue custom option panel JS
+		wp_enqueue_script( 'options-custom', get_template_directory_uri(). '/theme-options/js/jobile-custom.js', array( 'jquery' ) );
+		wp_enqueue_script( 'media-uploader', get_template_directory_uri(). '/theme-options/js/media-uploader.js', array( 'jquery') );		
+	}
+}
+function jobile_framework_menu_settings() {
 	$jobile_menu = array(
-				'page_title' => __( 'jobiletheme Options', 'jobile'),
+				'page_title' => __( 'jobile Options', 'jobile'),
 				'menu_title' => __('Theme Options', 'jobile'),
 				'capability' => 'edit_theme_options',
-				'menu_slug' => 'jobiletheme_framework',
+				'menu_slug' => 'jobile_framework',
 				'callback' => 'jobile_framework_page'
 				);
-	return apply_filters( 'jobiletheme_framework_menu', $jobile_menu );
+	return apply_filters( 'jobile_framework_menu', $jobile_menu );
 }
-add_action( 'admin_menu', 'theme_options_add_page' ); 
-function theme_options_add_page() {
-	$jobile_menu = jobiletheme_framework_menu_settings();
-   	add_theme_page($jobile_menu['page_title'],$jobile_menu['menu_title'],$jobile_menu['capability'],$jobile_menu['menu_slug'],$jobile_menu['callback']);
+add_action( 'admin_menu', 'jobile_options_add_page' ); 
+function jobile_options_add_page() {
+	$jobile_menu = jobile_framework_menu_settings();
+   	$GLOBALS['jobile_menu']=add_theme_page($jobile_menu['page_title'],$jobile_menu['menu_title'],$jobile_menu['capability'],$jobile_menu['menu_slug'],$jobile_menu['callback']);
+   	add_action( 'admin_enqueue_scripts', 'jobile_framework_load_scripts' );
 } 
 function jobile_framework_page(){ 
 		global $select_options; 
 		if ( ! isset( $_REQUEST['settings-updated'] ) ) 
 		$_REQUEST['settings-updated'] = false;		
-		$jobile_image=get_template_directory_uri().'/theme-options/images/logo.png';		
 ?>
-<div class="jobiletheme-themes">
+<div class="jobile-themes">
 	<form method="post" action="options.php" id="form-option" class="theme_option_ft">
-	<div class="jobiletheme-header">
+	<div class="jobile-header">
     <div class="logo">
       <?php
 		$jobile_image=get_template_directory_uri().'/theme-options/images/logo.png';
@@ -56,8 +66,8 @@ function jobile_framework_page(){
 	  ?>
     </div>
   </div>
-	<div class="jobiletheme-details">
-    <div class="jobiletheme-options">
+	<div class="jobile-details">
+    <div class="jobile-options">
       <div class="right-box">
         <div class="nav-tab-wrapper">
           <ul>
@@ -110,7 +120,6 @@ function jobile_framework_page(){
               </div>
             </div>
 		  </div>
-         
            <div id="options-group-2" class="group jobile-inner-tabs fasterthemes-pro-image">
           	<div class="fasterthemes-pro-header">
               <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/jobile_logopro_features.png" class="fasterthemes-pro-logo" />
@@ -119,14 +128,12 @@ function jobile_framework_page(){
               </div>
           	<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/jobile_pro_features.png" />
           </div> 
-			
-       
         <!--======================== F I N A L - - T H E M E - - O P T I O N S ===================--> 
       </div>
      </div>
 	</div>
 	
-	<div class="jobiletheme-footer">
+	<div class="jobile-footer">
       	<ul>
 	            <li class="btn-save"><input type="submit" class="button-primary" value="<?php _e('Save Options','jobile'); ?>" /></li>
         </ul>

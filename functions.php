@@ -174,7 +174,7 @@ require get_template_directory() . '/inc/social-widget.php';
 /*
  * theme options
  */
-require get_template_directory() . '/theme-options/jobilethemes.php';
+require get_template_directory() . '/theme-options/jobile.php';
 /*
  * For class add in jobile Category list.
  */

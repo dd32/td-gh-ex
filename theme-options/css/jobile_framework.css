@@ -1,12 +1,12 @@
 /* Options Framework Admin Styles */
-.jobiletheme-themes{
+.jobile-themes{
 	background-color:#FFF;
 	border:1px solid #e5e5e5;
 	position:relative;
 	float:left;
 	width:98.5%;
 }
-.jobiletheme-header{
+.jobile-header{
 	background-color: #334d5c;
 	background-image:url(../images/header-bg.png);
 	background-repeat:no-repeat;
@@ -38,19 +38,18 @@
     margin-top: 30px;
 	margin-right:20px;
 }
-.jobiletheme-themes .btn-save input{
+.jobile-themes .btn-save input{
 	background-color: rgba(0, 0, 0, 0);
     border: 1px solid #ffffff;
     box-shadow: none;
     font-size: 16px;
     height: auto;
     padding: 5px 10px;
-	
 	transition:all 0.8s ease-in-out;
 	-webkit-transition:all 0.8s ease-in-out;
 }
-.jobiletheme-themes .btn-save input:hover,
-.jobiletheme-themes .btn-save input:focus{
+.jobile-themes .btn-save input:hover,
+.jobile-themes .btn-save input:focus{
 	background-color: #ffffff;
     border: 1px solid #ffffff;
     box-shadow: none;
@@ -66,11 +65,11 @@
     width: 74.5%;
     z-index: 0;
 }
-.jobiletheme-themes .metabox-holder{
+.jobile-themes .metabox-holder{
 	float:left;
 	width:100%;
 }
-.jobiletheme-options{
+.jobile-options{
 	position:relative;
 	float:left;
 	width:100%;
@@ -130,7 +129,7 @@
   border: 7px solid transparent;
   border-left: 7px solid #d3d2d2;
 }
-.jobiletheme-themes .heading {
+.jobile-themes .heading {
     border: 1px solid #dfdfdf;	
 	background-color: #F1F1F1;
     background-image: -moz-linear-gradient(center top , #F9F9F9, #ECECEC);	
@@ -171,34 +170,33 @@
     border-left: 1px solid #dfdfdf;
     border-right: 1px solid #dfdfdf;
     float: left;
-    
     padding-left: 15px;
     padding-top: 15px;
     width: 96.7%;
 }
 
-.jobiletheme-themes input[type='text'],
-.jobiletheme-themes textarea{
+.jobile-themes input[type='text'],
+.jobile-themes textarea{
 	box-shadow: none;
     height: auto;
     line-height: normal;
     padding: 8px 10px;
 	max-width:95%;
 }
-.jobiletheme-themes textarea,
-.jobiletheme-themes select{
+.jobile-themes textarea,
+.jobile-themes select{
 	resize: vertical;
     width: 50%;
 }
 /*****/
 /*  Theme options style
 /*****/
-.jobiletheme-details{
+.jobile-details{
 	float:left;
 	padding-top:10px;
 	width:100%;	
 }
-.jobiletheme-details .explain {	
+.jobile-details .explain {	
 	color: #777777;
     float: left;
     font-size: 12px;
@@ -255,14 +253,14 @@
 /*****/
 /* Image Uploader
 /*****/
-.jobiletheme-themes .screenshot {
+.jobile-themes .screenshot {
 	float:left;
 	margin-left:1px;
 	position:relative;
 	width:100%;
 	margin-top:3px;
 }
-.jobiletheme-themes .screenshot img {
+.jobile-themes .screenshot img {
 	background:#FAFAFA;
 	border-color:#ccc #eee #eee #ccc;
 	border-style:solid;
@@ -272,7 +270,7 @@
 	padding:4px;
 	margin-bottom:10px;
 }
-.jobiletheme-themes .screenshot .remove-image {
+.jobile-themes .screenshot .remove-image {
 	background:url("../images/ico-delete.png") no-repeat;
 	border:medium none;
 	bottom:4px;
@@ -287,7 +285,7 @@
 	width:16px;
 }
 /* Bottom Section */
-.jobiletheme-footer{
+.jobile-footer{
 	background-color: #334d5c;
     background-image: url("../images/footer_bg.png");
     color: #ffffff;
@@ -297,26 +295,26 @@
     text-align: center;
     width: 100%;
 }
-.jobiletheme-footer ul{
+.jobile-footer ul{
 	margin:0px;
 }
-.jobiletheme-footer ul li{
+.jobile-footer ul li{
 	display:inline-block;
 	margin:10px 5px;
 }
-.jobiletheme-footer .btn-save{
+.jobile-footer .btn-save{
 	float: right;
     margin: 3px 0;
 }
-.jobiletheme-footer .btn-save .button-primary{
+.jobile-footer .btn-save .button-primary{
 	margin-right:20px;
 }
 
-.jobiletheme-footer a{
+.jobile-footer a{
 	color:#FFF;
 	text-decoration:none;
 }
-.jobiletheme-footer img
+.jobile-footer img
 {
  vertical-align:middle;
 }
@@ -346,16 +344,6 @@
 	max-width:100%;
 	height:auto;
 }
-/*.fasterthemes-pro-header {
-    background-color:#030202;
-	width: 100%;
-	padding: 8px 0px 0px;
-}
-.fasterthemes-pro-logo {
-    margin-left: 30px;
-width: 200px;
-margin-bottom: 15px;
-} */
 .fasterthemes-pro-buynow {
     float:right;
 	width:190px;
@@ -394,11 +382,11 @@ margin-bottom: 15px;
 		width:95%;
 	}
 	.jobile-inner-tab-group,
-	.jobiletheme-themes .heading{
+	.jobile-themes .heading{
 		width:90%;
 	}
 	.left-box,
-	.jobiletheme-themes textarea{
+	.jobile-themes textarea{
 		width:95.5%;
 	}
 	.right-box .nav-tab-wrapper ul li .nav-tab-active:after{
