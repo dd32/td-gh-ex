@@ -10,7 +10,7 @@
 	<!-- BEGIN .article -->
 	<div class="article">
 	
-		<?php if (get_theme_mod('display_date_blog') == '1') { ?>
+		<?php if (get_theme_mod('display_date_blog', '1') == '1') { ?>
 			<div class="post-date">
 				<p><i class="fa fa-comment"></i> <a href="<?php the_permalink(); ?>#comments"><?php comments_number(__("Leave a Comment", 'swelllite'), __("1 Comment", 'swelllite'), '% Comments'); ?></a></p>
 				<p><i class="fa fa-clock-o"></i> <?php _e("Posted on", 'swelllite'); ?> <?php the_time(__("F j, Y", 'swelllite')); ?></p>
@@ -19,7 +19,7 @@
 		
 		<h2 class="headline small"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 		
-		<?php if (get_theme_mod('display_author_blog') == '1') { ?>
+		<?php if (get_theme_mod('display_author_blog', '1') == '1') { ?>
 			<div class="post-author">
 				<p><?php _e("by", 'swelllite'); ?> <?php esc_url ( the_author_posts_link() ); ?></p>
 			</div>

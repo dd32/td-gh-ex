@@ -7,7 +7,7 @@
 	Author URI: http://organicthemes.com
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-	Version: 1.0.8
+	Version: 1.0.9
 	Text Domain: swelllite
 	Domain Path: /languages/
 	Tags: light, gray, white, green, silver, one-column, two-columns, right-sidebar, responsive-layout, fluid-layout, custom-background, custom-header, custom-menu, featured-images, featured-image-header, flexible-header, full-width-template, translation-ready, sticky-post, threaded-comments, editor-style, theme-options, photoblogging
@@ -1568,7 +1568,7 @@ p.logged-in-as {
 ************************************************/
 
 a.button, .reply a, #searchsubmit, #prevLink a, #nextLink a, .more-link, #submit, 
-#comments #respond input#submit, .container .gform_wrapper input.button, #wrap #infinite-handle span {
+#comments #respond input#submit, .container .gform_wrapper input.button, #wrapper #infinite-handle span {
 	display: inline-block;
 	position: relative;
 	background-color: #10c7b4;
@@ -1587,7 +1587,7 @@ a.button, .reply a, #searchsubmit, #prevLink a, #nextLink a, .more-link, #submit
 	-webkit-appearance: none;
 	}
 a.button:hover, .reply a:hover, #searchsubmit:hover, #prevLink a:hover, #nextLink a:hover, .more-link:hover,
-#submit:hover, #comments #respond input#submit:hover, .container .gform_wrapper input.button:hover, #wrap #infinite-handle span:hover {
+#submit:hover, #comments #respond input#submit:hover, .container .gform_wrapper input.button:hover, #wrapper #infinite-handle span:hover {
 	background-color: #05ad9c;
 	color: #FFFFFF !important;
 	text-decoration: none;

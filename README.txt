@@ -1,4 +1,4 @@
-Swell Lite v1.0.8
+Swell Lite v1.0.9
 http://www.swelltheme.com
 http://organicthemes.com
 
@@ -56,3 +56,9 @@ CHANGELOG v1.0.7:
 CHANGELOG v1.0.8:
 - Style tweaks
 - Infinite Scroll fix
+
+CHANGELOG v1.0.9:
+- Style tweak for IS loader
+- Removed leftover post format conditional
+- Removed unused customizer options
+- Updated default customizer values
