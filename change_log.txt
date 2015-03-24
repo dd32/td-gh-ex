@@ -52,3 +52,6 @@ Version: 1.1.7 (19 March 2015)
 	iii) fix Translation Ready.
 	iv)  Fixed small issues. 	
 	v)   Remove Pagination plugin in tgm.
+
+Version: 1.1.8 (24 March 2015)
+	i)  Enqueue Scripts properly in options page.
