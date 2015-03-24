@@ -1,5 +1,11 @@
 == Change log ==
 
+= 1.6 =
+* Added French translation fr_FR.po and fr_FR.mo
+* Bug Fixed: Content Layout issue with content_width
+* Bug Fixed: Removed assistive-text from Featured Demo Slider ( Reported by bydlo )
+* Bug Fixed: Added jquery.cycle2.js.map ( Reported by tualatinweb )
+
 = 1.5 =
 * Added Swedish translation sv_SE.po and sv_SE.mo
 * Bug Fixed: update keyword _nx:1,2,4c from _nx:1,2 in language file catchbase.pot

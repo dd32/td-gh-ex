@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Catch Base\n"
 "Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/catch-base-pro-"
 "premium/pro-premium/\n"
-"POT-Creation-Date: 2015-03-16 23:47+0545\n"
-"PO-Revision-Date: 2015-03-16 23:47+0545\n"
+"POT-Creation-Date: 2015-03-24 08:38+0545\n"
+"PO-Revision-Date: 2015-03-24 08:38+0545\n"
 "Last-Translator: Anders <anders@paulcen.se>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: sv\n"
@@ -646,10 +646,10 @@ msgstr ""
 #: ../inc/catchbase-featured-content.php:276
 #: ../inc/catchbase-featured-content.php:287
 #: ../inc/catchbase-featured-content.php:298
-#: ../inc/catchbase-featured-slider.php:178
-#: ../inc/catchbase-featured-slider.php:185
-#: ../inc/catchbase-featured-slider.php:201
-#: ../inc/catchbase-featured-slider.php:211
+#: ../inc/catchbase-featured-slider.php:176
+#: ../inc/catchbase-featured-slider.php:183
+#: ../inc/catchbase-featured-slider.php:199
+#: ../inc/catchbase-featured-slider.php:209
 msgid "Permalink to:"
 msgstr "Permalänk till:"
 

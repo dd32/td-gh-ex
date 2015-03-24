@@ -49,14 +49,14 @@ if ( ! function_exists( 'catchbase_content_width' ) ) :
 
 		// Blog Page setting in Reading Settings
 		if ( $page_id == $page_for_posts ) {
-			$layout = get_post_meta( $page_for_posts,'catchbase-sidebarlayout', true );
+			$layout = get_post_meta( $page_for_posts,'catchbase-layout-option', true );
 		}
 		elseif ( $post)  {
 			if ( is_attachment() ) {
 				$parent = $post->post_parent;
-				$layout = get_post_meta( $parent,'catchbase-sidebarlayout', true );
+				$layout = get_post_meta( $parent,'catchbase-layout-option', true );
 			} else {
-				$layout = get_post_meta( $post->ID,'catchbase-sidebarlayout', true );
+				$layout = get_post_meta( $post->ID,'catchbase-layout-option', true );
 			}
 		}
 

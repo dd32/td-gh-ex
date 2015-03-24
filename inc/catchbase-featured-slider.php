@@ -106,7 +106,6 @@ function catchbase_demo_slider( $options ) {
 											<h1 class="entry-title">
 												<a title="Slider Image 1" href="#"><span>Slider Image 1</span></a>
 											</h1>
-											<div class="assistive-text"><span class="post-time">Posted on <time pubdate="" datetime="2014-08-16T10:56:23+00:00" class="entry-date updated">16 August, 2014</time></span><span class="post-author">By <span class="author vcard"><a rel="author" title="View all posts by Catch Themes" href="http://catchthemes.com/blog/" class="url fn n">Catch Themes</a></span></span></div>
 										</header>
 										<div class="entry-content">
 											<p>Slider Image 1 Content</p>
@@ -125,13 +124,12 @@ function catchbase_demo_slider( $options ) {
 											<h1 class="entry-title">
 												<a title="Slider Image 2" href="#"><span>Slider Image 2</span></a>
 											</h1>
-											<div class="assistive-text"><span class="post-time">Posted on <time pubdate="" datetime="2014-08-16T10:56:23+00:00" class="entry-date updated">16 August, 2014</time></span><span class="post-author">By <span class="author vcard"><a rel="author" title="View all posts by Catch Themes" href="http://catchthemes.com/blog/" class="url fn n">Catch Themes</a></span></span></div>
 										</header>
 										<div class="entry-content">
 											<p>Slider Image 2 Content</p>
 										</div>   
 									</div>             
-								</article><!-- .slides --> ';
+								</article><!-- .slides -->';
 	return $catchbase_demo_slider;
 }
 endif; // catchbase_demo_slider
