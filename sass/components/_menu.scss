@@ -32,12 +32,15 @@
 	display: none;
 }
 
-.handheld-navigation {
+.handheld-navigation,
+.nav-menu,
+.main-navigation div.menu {
 	display: none;
 }
 
 .main-navigation.toggled {
-	.handheld-navigation {
+	.handheld-navigation,
+	.menu {
 		display: block;
 	}
 }

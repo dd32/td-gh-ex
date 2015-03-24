@@ -1,5 +1,24 @@
 # Storefront Changelog
 
+### *2015.03.24* - 1.4.1
+* **Fix** - Remove unnecessary `!important` declaration on star rating color.
+* **Fix** - Star rating display in IE11.
+* **Fix** - Site header margin when using shop page as homepage.
+* **Fix** - Navigation on handheld devices when no menu is set.
+* **Tweak** - Layout selector graphics.
+* **Tweak** - Accessibility improvements in post meta.
+* **Tweak** - Products widget styling.
+* **Tweak** - Widget headings are now `h3`s.
+* **Tweak** - Skip links are now a function (`storefront_skip_links()`) hooked into `storefront_header`.
+* **Tweak** - Header widget region markup only displays when widgets are assigned.
+* **Tweak** - `:focus` styles.
+* **Dev** - Replaced `paginate_links()` with `the_posts_pagination()`.
+* **Dev** - Replaced `previous_post_link()` and `next_post_link()` with `the_post_navigation()`.
+* **Dev** - HTML5 widget support.
+* **Dev** - Fixed typo in classname: `storefront-feautred-products` is now `storefront-featured-products`.
+* **Dev** - Updated node-bourbon
+* **Dev** - Replaced instances of `box-sizing` mixin with standard css.
+
 ### *2015.03.09* - 1.4.0
 * **New** - Added a 'Handheld' menu location.
 * **New** - Many accessibility improvements.
