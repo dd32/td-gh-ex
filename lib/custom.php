@@ -52,6 +52,27 @@ function kt_hex2rgb($hex) {
    return $rgb; // returns an array with the rgb values
 }
 
+/**
+ * Schema type
+ */
+function pinnacle_html_tag_schema() {
+    $schema = 'http://schema.org/';
+
+    if( is_singular( 'post' ) ) {
+        $type = "Article";
+    } else if( is_page_template('page-contact.php') ) {
+        $type = 'ContactPage';
+    } elseif( is_author() ) {
+        $type = 'ProfilePage';
+    } elseif( is_search() ) {
+        $type = 'SearchResultsPage';
+    } else {
+        $type = 'WebPage';
+    }
+
+    echo 'itemscope="itemscope" itemtype="' .  esc_attr( $schema ) . esc_attr( $type ) . '"';
+}
+
 ///Page Navigation
 
 function pinnacle_wp_pagination() {

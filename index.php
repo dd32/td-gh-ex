@@ -3,6 +3,7 @@
       <div id="content" class="container">
         <div class="row">
           <div class="main <?php echo esc_attr( pinnacle_main_class() ); ?>  postlist" role="main">
+            <div class="entry-content" itemprop="mainContentOfPage">
             
             <?php if (!have_posts()) : ?>
                 <div class="alert">
@@ -27,7 +28,7 @@
                           </nav>
                       <?php } 
                   endif; ?>
-
+            </div>
           </div><!-- /.main -->
           <?php get_sidebar(); ?>
         </div><!-- /.row-->

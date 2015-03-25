@@ -24,7 +24,10 @@ Template Name: Blog
       
       				<div class="main <?php echo esc_attr( pinnacle_main_class() );?> <?php echo esc_attr($postclass) .' '. esc_attr($fullclass); ?>" role="main">
       					
-      					<?php get_template_part('templates/content', 'page');
+      					<div class="entry-content" temprop="mainContentOfPage">
+			      			<?php get_template_part('templates/content', 'page'); ?>
+			      		</div>
+		      		<?php
       					$blog_category 	= get_post_meta( $post->ID, '_kad_blog_cat', true ); 
 						$blog_cat 		= get_term_by ('id',$blog_category,'category');
 						$blog_items 	= get_post_meta( $post->ID, '_kad_blog_items', true ); 

@@ -54,7 +54,7 @@
               }
             }
             if($postsummery == 'img_landscape' && has_post_thumbnail( $post->ID ) || $postsummery == 'img_portrait' && has_post_thumbnail( $post->ID )) { ?>
-                <div id="post-<?php the_ID(); ?>" class="blog_item postclass kad_blog_fade_in grid_item">
+                <div id="post-<?php the_ID(); ?>" class="blog_item postclass kad_blog_fade_in grid_item" itemscope="" itemtype="http://schema.org/BlogPosting">
                     <?php $image_url = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'full' ); 
                           $thumbnailURL = $image_url[0];
                           $image = aq_resize($thumbnailURL, $image_width, false);
@@ -66,7 +66,7 @@
                               </div>
                               <?php $image = null; $thumbnailURL = null; ?>
             <?php } elseif($postsummery == 'slider_landscape' || $postsummery == 'slider_portrait' || $postsummery == 'gallery_grid') {?>
-                <div id="post-<?php the_ID(); ?>" class="blog_item postclass kad_blog_fade_in grid_item">
+                <div id="post-<?php the_ID(); ?>" class="blog_item postclass kad_blog_fade_in grid_item" itemscope="" itemtype="http://schema.org/BlogPosting">
                           <div class="flexslider kt-flexslider loading" style="max-width:<?php echo esc_attr($image_width);?>px;" data-flex-speed="7000" data-flex-anim-speed="400" data-flex-animation="fade" data-flex-auto="true">
                             <ul class="slides">
                               <?php $image_gallery = get_post_meta( $post->ID, '_kad_image_gallery', true );
@@ -88,21 +88,21 @@
                             </ul>
                           </div> <!--Flex Slides-->
             <?php } elseif($postsummery == 'video') {?>
-                <div id="post-<?php the_ID(); ?>" class="blog_item postclass kad_blog_fade_in grid_item">
+                <div id="post-<?php the_ID(); ?>" class="blog_item postclass kad_blog_fade_in grid_item" itemscope="" itemtype="http://schema.org/BlogPosting">
                         <div class="videofit">
                             <?php echo get_post_meta( $post->ID, '_kad_post_video', true ); ?>
                         </div>
             <?php } else {?>
-                <div id="post-<?php the_ID(); ?>" class="blog_item postclass kad_blog_fade_in grid_item">
+                <div id="post-<?php the_ID(); ?>" class="blog_item postclass kad_blog_fade_in grid_item" itemscope="" itemtype="http://schema.org/BlogPosting">
             <?php }?>
                   <div class="postcontent">
                         <header>
                           <a href="<?php the_permalink() ?>">
-                            <?php echo '<'.esc_attr($titletag).' class="entry-title">';  the_title(); echo '</'.esc_attr($titletag).'>'; ?>
+                            <?php echo '<'.esc_attr($titletag).' class="entry-title" itemprop="name headline">';  the_title(); echo '</'.esc_attr($titletag).'>'; ?>
                           </a>
                           <?php get_template_part('templates/entry', 'meta-subhead'); ?>
                         </header>
-                        <div class="entry-content">
+                        <div class="entry-content" itemprop="articleBody">
                             <?php the_excerpt(); ?>
                         </div>
                         <footer class="clearfix">

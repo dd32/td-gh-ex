@@ -15,7 +15,7 @@
 		<div class="page-header">
 			<div class="row">
 				<div class="col-md-12">
-				  	<h1 class="kad-page-title"><?php echo pinnacle_title(); ?></h1>
+				  	<h1 class="kad-page-title entry-title" itemprop="name headline"><?php echo pinnacle_title(); ?></h1>
 					  <?php if(!empty($bsub)) { echo '<div class="subtitle"> '.esc_html($bsub).' </div>'; } ?>
 				</div>
 			</div>

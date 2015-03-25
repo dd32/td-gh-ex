@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pinnacle\n"
-"POT-Creation-Date: 2015-02-23 17:05-0700\n"
-"PO-Revision-Date: 2015-02-23 17:05-0700\n"
+"POT-Creation-Date: 2015-03-25 17:31-0700\n"
+"PO-Revision-Date: 2015-03-25 17:32-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.4\n"
+"X-Generator: Poedit 1.7.5\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -43,21 +43,21 @@ msgid ""
 "are looking for or use the search form below."
 msgstr ""
 
-#: ../archive.php:42 ../home.php:17 ../index.php:9 ../search.php:9
+#: ../archive.php:42 ../home.php:17 ../index.php:10 ../search.php:9
 #: ../taxonomy-portfolio-type.php:67
 msgid "Sorry, no results were found."
 msgstr ""
 
-#: ../archive.php:82 ../front-page.php:122 ../home.php:38 ../index.php:24
+#: ../archive.php:82 ../front-page.php:123 ../home.php:38 ../index.php:25
 #: ../search.php:43 ../taxonomy-portfolio-type.php:154
-#: ../template-blog-grid.php:69 ../template-blog.php:85
+#: ../template-blog-grid.php:71 ../template-blog.php:88
 #: ../template-portfolio-grid.php:208
 msgid "&larr; Older posts"
 msgstr ""
 
-#: ../archive.php:83 ../front-page.php:123 ../home.php:39 ../index.php:25
+#: ../archive.php:83 ../front-page.php:124 ../home.php:39 ../index.php:26
 #: ../search.php:44 ../taxonomy-portfolio-type.php:155
-#: ../template-blog-grid.php:70 ../template-blog.php:86
+#: ../template-blog-grid.php:72 ../template-blog.php:89
 #: ../template-portfolio-grid.php:209
 msgid "Newer posts &rarr;"
 msgstr ""
@@ -118,208 +118,209 @@ msgstr ""
 msgid "Latest posts from"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:161 ../lib/plugin-activate.php:48
+#: ../lib/class-tgm-plugin-activation.php:155 ../lib/plugin-activate.php:48
 msgid "Install Required Plugins"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:162 ../lib/plugin-activate.php:49
+#: ../lib/class-tgm-plugin-activation.php:156 ../lib/plugin-activate.php:49
 msgid "Install Plugins"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:163 ../lib/plugin-activate.php:50
+#: ../lib/class-tgm-plugin-activation.php:157 ../lib/plugin-activate.php:50
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:164
+#: ../lib/class-tgm-plugin-activation.php:158
 msgid "Something went wrong."
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:175 ../lib/plugin-activate.php:62
+#: ../lib/class-tgm-plugin-activation.php:169 ../lib/plugin-activate.php:62
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:176
+#: ../lib/class-tgm-plugin-activation.php:170
 msgid "Return to the dashboard"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:177
-#: ../lib/class-tgm-plugin-activation.php:1939 ../lib/plugin-activate.php:63
+#: ../lib/class-tgm-plugin-activation.php:171
+#: ../lib/class-tgm-plugin-activation.php:1839 ../lib/plugin-activate.php:63
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:178
-#: ../lib/class-tgm-plugin-activation.php:1630
+#: ../lib/class-tgm-plugin-activation.php:172
+#: ../lib/class-tgm-plugin-activation.php:1537
 msgid "The following plugin was activated successfully:"
 msgid_plural "The following plugins were activated successfully:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../lib/class-tgm-plugin-activation.php:179
+#: ../lib/class-tgm-plugin-activation.php:173
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:180
+#: ../lib/class-tgm-plugin-activation.php:174
 msgid "Dismiss this notice"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:531
-#: ../lib/class-tgm-plugin-activation.php:2156
-msgid "Return to the Dashboard"
+#: ../lib/class-tgm-plugin-activation.php:1085
+msgid "External Link"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1166
+#: ../lib/class-tgm-plugin-activation.php:1090
 msgid "Private Repository"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1169
+#: ../lib/class-tgm-plugin-activation.php:1093
 msgid "Pre-Packaged"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1174
+#: ../lib/class-tgm-plugin-activation.php:1097
 msgid "WordPress Repository"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1177
+#: ../lib/class-tgm-plugin-activation.php:1100
 msgid "Required"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1177
+#: ../lib/class-tgm-plugin-activation.php:1100
 msgid "Recommended"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1180
+#: ../lib/class-tgm-plugin-activation.php:1103
 msgid "Not Installed"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1182
+#: ../lib/class-tgm-plugin-activation.php:1105
 msgid "Installed But Not Activated"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1287
-#: ../lib/class-tgm-plugin-activation.php:1395
-msgid "Install"
-msgstr ""
-
-#: ../lib/class-tgm-plugin-activation.php:1309
-#: ../lib/class-tgm-plugin-activation.php:1396
-msgid "Activate"
-msgstr ""
-
-#: ../lib/class-tgm-plugin-activation.php:1358
+#: ../lib/class-tgm-plugin-activation.php:1275
 #, php-format
 msgid ""
 "No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
 "Dashboard\">Return to the Dashboard</a>"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1374
+#: ../lib/class-tgm-plugin-activation.php:1291
 msgid "Plugin"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1375
+#: ../lib/class-tgm-plugin-activation.php:1292
 msgid "Source"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1376
+#: ../lib/class-tgm-plugin-activation.php:1293
 msgid "Type"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1377
+#: ../lib/class-tgm-plugin-activation.php:1294
 msgid "Status"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1922
+#: ../lib/class-tgm-plugin-activation.php:1312
+msgid "Install"
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:1313
+msgid "Activate"
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:1822
 msgid "Install package not available."
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1923
+#: ../lib/class-tgm-plugin-activation.php:1823
 #, php-format
 msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1924
+#: ../lib/class-tgm-plugin-activation.php:1824
 msgid "Unpacking the package&#8230;"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1925
+#: ../lib/class-tgm-plugin-activation.php:1825
 msgid "Installing the plugin&#8230;"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1926
+#: ../lib/class-tgm-plugin-activation.php:1826
 msgid "Plugin install failed."
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1927
+#: ../lib/class-tgm-plugin-activation.php:1827
 msgid "Plugin installed successfully."
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1938
+#: ../lib/class-tgm-plugin-activation.php:1838
 msgid "Plugin activation failed."
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:2052
+#: ../lib/class-tgm-plugin-activation.php:1948
 msgid ""
 "The installation and activation process is starting. This process may take a "
 "while on some hosts, so please be patient."
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:2053
+#: ../lib/class-tgm-plugin-activation.php:1949
 #, php-format
 msgid "%1$s installed and activated successfully."
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:2053
-#: ../lib/class-tgm-plugin-activation.php:2062
+#: ../lib/class-tgm-plugin-activation.php:1949
+#: ../lib/class-tgm-plugin-activation.php:1958
 msgid "Show Details"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:2053
-#: ../lib/class-tgm-plugin-activation.php:2062
+#: ../lib/class-tgm-plugin-activation.php:1949
+#: ../lib/class-tgm-plugin-activation.php:1958
 msgid "Hide Details"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:2054
+#: ../lib/class-tgm-plugin-activation.php:1950
 msgid "All installations and activations have been completed."
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:2055
+#: ../lib/class-tgm-plugin-activation.php:1951
 #, php-format
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:2059
+#: ../lib/class-tgm-plugin-activation.php:1955
 msgid ""
 "The installation process is starting. This process may take a while on some "
 "hosts, so please be patient."
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:2060
+#: ../lib/class-tgm-plugin-activation.php:1956
 #, php-format
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:2061
+#: ../lib/class-tgm-plugin-activation.php:1957
 #, php-format
 msgid "The installation of %1$s failed."
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:2062
+#: ../lib/class-tgm-plugin-activation.php:1958
 #, php-format
 msgid "%1$s installed successfully."
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:2063
+#: ../lib/class-tgm-plugin-activation.php:1959
 msgid "All installations have been completed."
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:2064
+#: ../lib/class-tgm-plugin-activation.php:1960
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: ../lib/cleanup.php:97 ../lib/custom.php:81
+#: ../lib/class-tgm-plugin-activation.php:2051
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: ../lib/cleanup.php:97 ../lib/custom.php:102
 #: ../templates/content-post-grid-carousel.php:42
 msgid "Read More"
 msgstr ""
@@ -435,55 +436,55 @@ msgstr ""
 msgid "The Image could not be loaded."
 msgstr ""
 
-#: ../lib/custom.php:398 ../templates/entry-post-links.php:3
+#: ../lib/custom.php:419 ../templates/entry-post-links.php:3
 msgid "Previous Post"
 msgstr ""
 
-#: ../lib/custom.php:398 ../templates/entry-post-links.php:6
+#: ../lib/custom.php:419 ../templates/entry-post-links.php:6
 msgid "Next Post"
 msgstr ""
 
-#: ../lib/custom.php:492
+#: ../lib/custom.php:513
 msgid "Occupation"
 msgstr ""
 
-#: ../lib/custom.php:495
+#: ../lib/custom.php:516
 msgid "Please enter your Occupation."
 msgstr ""
 
-#: ../lib/custom.php:502
+#: ../lib/custom.php:523
 msgid "Please enter your Twitter username."
 msgstr ""
 
-#: ../lib/custom.php:509
+#: ../lib/custom.php:530
 msgid "Please enter your Facebook url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:516
+#: ../lib/custom.php:537
 msgid "Please enter your Google Plus url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:523
+#: ../lib/custom.php:544
 msgid "Please enter your Flickr url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:530
+#: ../lib/custom.php:551
 msgid "Please enter your Vimeo url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:537
+#: ../lib/custom.php:558
 msgid "Please enter your Linkedin url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:544
+#: ../lib/custom.php:565
 msgid "Please enter your Dribbble url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:551
+#: ../lib/custom.php:572
 msgid "Please enter your Pinterest url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:558
+#: ../lib/custom.php:579
 msgid "Please enter your Instagram url. (be sure to include http://)"
 msgstr ""
 
@@ -988,7 +989,7 @@ msgstr ""
 msgid "View details"
 msgstr ""
 
-#: ../template-blog-grid.php:58 ../template-blog.php:74
+#: ../template-blog-grid.php:60 ../template-blog.php:77
 #: ../templates/home/blog-home.php:51 ../templates/home/latest-slider.php:58
 #: ../templates/recentblog-carousel.php:39
 #: ../templates/similarblog-carousel.php:45
@@ -2778,12 +2779,12 @@ msgstr ""
 msgid "Quickly add some CSS to your theme by adding it to this block."
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2156
 #: ../themeoptions/theme_options.php:2157
+#: ../themeoptions/theme_options.php:2158
 msgid "Theme Options"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2164
+#: ../themeoptions/theme_options.php:2166
 msgid ""
 "Thank you for using the Pinnacle Theme by <a href=\"http://kadencethemes.com/"
 "\" target=\"_blank\">Kadence Themes</a>."

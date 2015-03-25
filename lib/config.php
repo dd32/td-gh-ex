@@ -271,7 +271,12 @@ function pinnacle_hide_pagetitle() {
                       $pagetitledisplay = true;
                     }
   } else {
-    $pagetitledisplay = true;
+    global $pinnacle;
+      if(isset($pinnacle['default_showpagetitle']) && $pinnacle['default_showpagetitle'] == '0') {
+            $pagetitledisplay = false;
+      } else {
+            $pagetitledisplay = true;
+      }
   }
 
   return apply_filters('kadence_pagetitle_display', $pagetitledisplay);

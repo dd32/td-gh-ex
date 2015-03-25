@@ -61,7 +61,7 @@
                   $headcontent = 'none';
         } ?>
         <div id="content" class="container">
-          <div class="row single-article">
+          <div class="row single-article" itemscope="" itemtype="http://schema.org/BlogPosting">
             <div class="main <?php echo esc_attr( pinnacle_main_class() ); ?>" role="main">
               <?php while (have_posts()) : the_post(); ?>
                 <article <?php post_class('postclass'); ?>>
@@ -124,7 +124,7 @@
                     if(empty($image)) { $image = $img_url; }
                     if($image) : ?>
                     <section class="postfeat">
-                        <div class="imghoverclass post-single-img">
+                        <div class="imghoverclass post-single-img" itemprop="image">
                             <a href="<?php echo esc_url($img_url); ?>" data-rel="lightbox" class="">
                               <img src="<?php echo esc_url($image); ?>" alt="<?php the_title(); ?>" />
                             </a>
@@ -136,10 +136,10 @@
                           get_template_part('templates/entry', 'meta-author'); 
                   } ?>
                   <header>
-                      <h1 class="entry-title"><?php the_title(); ?></h1>
+                      <h1 class="entry-title" itemprop="name headline"><?php the_title(); ?></h1>
                       <?php get_template_part('templates/entry', 'meta-subhead'); ?>
                   </header>
-                  <div class="entry-content clearfix">
+                  <div class="entry-content clearfix" itemprop="description articleBody">
                     <?php the_content(); ?>
                     <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'pinnacle'), 'after' => '</p></nav>')); ?>
                   </div>

@@ -2152,13 +2152,15 @@ $this->sections[] = array(
             'display_name' => $theme->get('Name'),
             'display_version' => $theme->get('Version'),
             'google_api_key' => 'AIzaSyALkgUvb8LFAmrsczX56ZGJx-PPPpwMid0',
-            'import_icon_class' => 'icon-large icon-hdd',
+            'import_icon' => 'icon-hdd',
+            'import_icon_class' => 'icon-large',
             'menu_title' => __('Theme Options', 'pinnacle'),
             'page_title' => __('Theme Options', 'pinnacle'),
             'page_slug' => 'ktoptions',
             'default_show' => false,
             'default_mark' => '',
-            'admin_bar' => false,  
+            'admin_bar' => false, 
+            'disable_tracking' => true,
             'page_type' => 'submenu',
             'page_icon' => "kad_logo_header",
             'footer_credit' => __('Thank you for using the Pinnacle Theme by <a href="http://kadencethemes.com/" target="_blank">Kadence Themes</a>.', 'pinnacle'),
@@ -2168,6 +2170,16 @@ $this->sections[] = array(
             'link' => 'https://www.facebook.com/KadenceThemes',
             'title' => 'Follow Kadence Themes on Facebook', 
             'icon' => 'icon-facebook',
+            );
+           $this->args['share_icons']['twitter'] = array(
+            'link' => 'https://www.twitter.com/KadenceThemes',
+            'title' => 'Follow Kadence Themes on Twitter', 
+            'icon' => 'icon-twitter',
+            );
+           $this->args['share_icons']['instagram'] = array(
+            'link' => 'https://www.instagram.com/KadenceThemes',
+            'title' => 'Follow Kadence Themes on Instagram', 
+            'icon' => 'icon-instagram',
             );
 
           }

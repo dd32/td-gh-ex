@@ -14,7 +14,7 @@
               $image_width = 340;
               $image_height = 226;
             }?>
-              <div id="post-<?php the_ID(); ?>" class="blog_item postclass grid_item">
+              <div id="post-<?php the_ID(); ?>" class="blog_item postclass grid_item" itemscope="" itemtype="http://schema.org/BlogPosting">
                   <?php if(has_post_thumbnail( $post->ID )) {
                           $image_url = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'full' ); 
                           $thumbnailURL = $image_url[0];
@@ -32,11 +32,11 @@
                         <div class="postcontent">
                           <header>
                               <a href="<?php the_permalink() ?>">
-                                <h5 class="entry-title"><?php the_title();?></h5>
+                                <h5 class="entry-title" itemprop="name headline"><?php the_title();?></h5>
                               </a>
                               <?php get_template_part('templates/entry', 'meta-subhead'); ?>
                           </header>
-                          <div class="entry-content color_body">
+                          <div class="entry-content color_body" itemprop="articleBody">
                                 <p>
                                   <?php echo pinnacle_excerpt(16); ?> 
                                   <a href="<?php the_permalink() ?>"><?php echo __('Read More', 'pinnacle');?></a>

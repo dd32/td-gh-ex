@@ -52,6 +52,12 @@ Pinnacle Theme Uses:
 
 = Theme Name: Pinnacle =
 
+= Version 1.2.2 | 25th March 2015 = 
+* Add title-tag support.
+* Update: Theme options (Faster).
+* Update: Schema code.
+* Fix: CSS next and previous button issue.
+
 = Version 1.2.1 = 
 * Update: Better theme preview.
 * Update: Slight css improvement in cart.

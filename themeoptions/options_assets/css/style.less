@@ -10,6 +10,30 @@
 .redux-container-ace_editor .ace_gutter {
   z-index: 1 !important;
 }
+.redux-main .select_wrapper.typography-script.tooltip {
+background: transparent;
+border: 0;
+border-radius: 0;
+font-size: inherit;
+padding: 0;
+box-shadow: none;
+top: 0;
+}
+.redux-main {
+    position: relative;
+    }
+    .redux-container #redux-footer {
+  left: auto !important;
+  right: auto !important;
+}
+.redux-group-tab-link-li i.el-refresh:before {
+  content: "\f0a0";
+      font-family: FontAwesome;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: inherit;
+  -webkit-font-smoothing: antialiased;
+}
 .redux-main .redux-container-background .redux-background-position,
 .redux-main .redux-container-background .redux-background-position select,
 .redux-main .redux-container-background .redux-background-attachment,
@@ -1122,7 +1146,8 @@
   -moz-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
-  width: 78%;
+  width: 70%;
+  display: inline-block;
   text-align: center;
   margin: 0;
   height: 28px;
@@ -1613,7 +1638,7 @@ color: #fff;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
   margin-left: -2px;
-  padding-top: 4px!important;
+  padding-top: 2px!important;
   padding-bottom: 2px !important;
 }
 .redux-main .input-prepend input {
@@ -2310,7 +2335,7 @@ a {
   margin-bottom: -3px;
 }
 .redux-container .noUi-connect {
-  background: #777;
+  background: #777 !important;
   margin-top: 5px;
 }
 .redux-container .noUi-horizontal .noUi-handle {
@@ -2723,11 +2748,9 @@ body.wp-admin .select2-drop-active {
 .wp-admin .redux-container-switch .switch-options .cb-disable,
 .wp-admin .redux-container-switch .switch-options .cb-enable span,
 .wp-admin .redux-container-switch .switch-options .cb-disable span {
-  background: url(../img/switch.gif) repeat-x;
   display: block;
   float: left;
   padding: 0px;
-  border-width: 0;
 }
 .wp-admin .redux-container-switch .switch-options .cb-enable span,
 .wp-admin .redux-container-switch .switch-options .cb-disable span {
@@ -2750,6 +2773,33 @@ body.wp-admin .select2-drop-active {
 .wp-admin .redux-container-switch .switch-options .cb-disable.selected span {
   background-position: right -210px;
   color: #fff;
+}
+.wp-admin .redux-container-switch .cb-disable.selected {
+background-color: #646464 !important;
+background-image: -khtml-gradient(linear, left top, left bottom, from(#929292), to(#646464)) !important;
+background-image: -moz-linear-gradient(top, #929292, #646464) !important;
+background-image: -ms-linear-gradient(top, #929292, #646464) !important;
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #929292), color-stop(100%, #646464)) !important;
+background-image: -webkit-linear-gradient(top, #929292, #646464) !important;
+background-image: -o-linear-gradient(top, #929292, #646464) !important;
+background-image: linear-gradient(top, #929292, #646464) !important;
+c: progid:DXImageTransform.Microsoft.gradient(startColorstr='#929292', endColorstr='#646464', GradientType=0) !important;
+border-color: #767676 !important;
+}
+.wp-admin .redux-container-switch .cb-enable.selected {
+background-color: #00b5e2 !important;
+background-image: -khtml-gradient(linear, left top, left bottom, from(#00c5f7), to(#0090b6)) !important;
+background-image: -moz-linear-gradient(top, #00c5f7, #0090b6) !important;
+background-image: -ms-linear-gradient(top, #00c5f7, #0090b6) !important;
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #00c5f7), color-stop(100%, #0090b6)) !important;
+background-image: -webkit-linear-gradient(top, #00c5f7, #0090b6) !important;
+background-image: -o-linear-gradient(top, #00c5f7, #0090b6) !important;
+background-image: linear-gradient(top, #00c5f7, #0090b6) !important;
+c: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00c5f7', endColorstr='#0090b6', GradientType=0) !important;
+border-color: #0089ae !important;
+border-color: #0089ae !important;
+-webkit-box-shadow: inset 0 1px 0 #00abef,0 1px 0 rgba(0,0,0,0.15) !important;
+box-shadow: inset 0 1px 0 #00abef,0 1px 0 rgba(0,0,0,0.15) !important;
 }
 .redux-container-switch .switch-options .cb-enable.selected {
   background-position: 0 -60px;
@@ -2822,6 +2872,21 @@ body.wp-admin .select2-drop-active {
   margin: 3px 4px 0;
   float: right;
 }
+.redux-main  #redux_ajax_overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        -moz-opacity: 0.10;
+        -khtml-opacity: 0.10;
+        opacity: 0.10;
+        filter: progid:DXImageTransform.Microsoft.Alpha(opacity=10);
+        filter: alpha(opacity=10);
+        background: #000;
+        z-index: 200;
+        display: none;
+    }
 .wp-admin .redux-container-image_select .redux-image-select-selected img,
 .wp-admin .redux-container-image_select .redux-image-select-selected .tiles {
   border-color: #7a7a7a;
@@ -3309,7 +3374,7 @@ img {
   width: auto !important;
 }
 #redux-footer #redux-share a {
-  font-size: 30px;
+  font-size: 20px;
   text-decoration: none;
 }
 @media screen and (max-width: 1124px) {

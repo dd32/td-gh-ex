@@ -119,7 +119,7 @@ Template Name: Portfolio Grid
 	<div id="content" class="container">
    		<div class="row">
       		<div class="main <?php echo esc_attr( pinnacle_main_class() ); ?>" role="main">
-				<div class="container"><?php get_template_part('templates/content', 'page'); ?></div>              
+				<div class="container entry-content" temprop="mainContentOfPage"><?php get_template_part('templates/content', 'page'); ?></div>              
             		<div id="portfoliowrapper" class="rowtight <?php echo esc_attr($pstyleclass);?> <?php echo esc_attr($phoverstyleclass);?>"> 
 
 		           	<?php if ( post_type_exists( 'portfolio' ) ) {

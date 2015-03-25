@@ -36,7 +36,9 @@ Template Name: Blog Grid
 					} ?>
 
 		      	<div class="main <?php echo esc_attr( pinnacle_main_class() );?>" role="main">
+		      		<div class="entry-content" temprop="mainContentOfPage">
 		      		<?php get_template_part('templates/content', 'page'); ?>
+		      		</div>
 
 		      		<div id="kad-blog-grid" class="rowtight init-masonry" data-masonry-selector=".b_item">
 		      		<?php   $temp 	  = $wp_query; 

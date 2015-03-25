@@ -10,6 +10,7 @@ function kadence_setup() {
     'footer_navigation'   => __('Footer Navigation', 'pinnacle'),
   ));
   add_theme_support('post-thumbnails');
+  add_theme_support( 'title-tag' );
   add_image_size( 'pinnacle_widget-thumb', 60, 60, true );
   add_post_type_support( 'attachment', 'page-attributes' );
   add_theme_support('post-formats', array('gallery', 'image', 'video'));

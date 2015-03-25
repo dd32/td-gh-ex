@@ -64,7 +64,7 @@
                 $slidewidth = $slide_sidebar;
             
         } ?>
-          <article id="post-<?php the_ID(); ?>" <?php post_class('kad_blog_item postclass kad-animation'); ?> data-animation="fade-in" data-delay="0">
+          <article id="post-<?php the_ID(); ?>" <?php post_class('kad_blog_item postclass kad-animation'); ?> data-animation="fade-in" data-delay="0" itemscope="" itemtype="http://schema.org/BlogPosting">
               <div class="row">
                 <?php if($postsummery == 'img_landscape') { 
                             $textsize = 'col-md-12'; 
@@ -74,7 +74,7 @@
                               $image = aq_resize($thumbnailURL,$slidewidth, false);
                               if(empty($image)) { $image = $thumbnailURL; } ?>
                                 <div class="col-md-12">
-                                    <div class="imghoverclass img-margin-center">
+                                    <div class="imghoverclass img-margin-center" itemprop="image">
                                       <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
                                         <img src="<?php echo esc_url($image); ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
                                       </a> 
@@ -89,7 +89,7 @@
                               $image = aq_resize($thumbnailURL, 360, 360, true);
                               if(empty($image)) { $image = $thumbnailURL; } ?>
                                 <div class="<?php echo $portraitimg;?>">
-                                    <div class="imghoverclass img-margin-center">
+                                    <div class="imghoverclass img-margin-center" itemprop="image">
                                         <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
                                             <img src="<?php echo esc_url($image); ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">
                                         </a> 
@@ -162,10 +162,10 @@
                       <div class="<?php echo esc_attr($textsize);?> postcontent">
                           <?php if(isset($pinnacle['hide_author_img']) && $pinnacle['hide_author_img'] == '1') { get_template_part('templates/entry', 'meta-author'); } ?>
                             <header>
-                                <a href="<?php the_permalink() ?>"><h3 class="entry-title"><?php the_title(); ?></h3></a>
+                                <a href="<?php the_permalink() ?>"><h3 class="entry-title" itemprop="name headline"><?php the_title(); ?></h3></a>
                                   <?php get_template_part('templates/entry', 'meta-subhead'); ?>
                             </header>
-                            <div class="entry-content">
+                            <div class="entry-content" itemprop="articleBody">
                                 <?php the_excerpt(); ?>
                             </div>
                       </div><!-- Text size -->

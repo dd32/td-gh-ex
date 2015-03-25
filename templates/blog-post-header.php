@@ -32,7 +32,7 @@
 		<div class="page-header">
 			<div class="row">
 				<div class="col-md-12">
-				  	<h1 class="post_page_title entry-title"><?php echo esc_html($page_title_title); ?></h1>
+				  	<h1 class="post_page_title entry-title" itemprop="name headline"><?php echo esc_html($page_title_title); ?></h1>
 					  <?php if(!empty($bsub)) { echo '<p class="subtitle"> '.esc_html($bsub).' </p>'; } ?>
 				</div>
 			</div>
