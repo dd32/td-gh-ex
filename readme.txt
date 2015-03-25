@@ -42,6 +42,11 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.2.2 =
+* Custom CSS option sanitized using wp_filter_nohtml_kses().
+* Adding the support for the entry-title tag for Google Rich Snippets in single post view.
+* Added missing field (author, vcard, updated) for Google Structured Data.
+
 = Version 1.2.1 =
 * Featured image option added for services widget.
 

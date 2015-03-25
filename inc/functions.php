@@ -4,7 +4,7 @@
  *
  * This file contains all the functions and it's defination that particularly can't be
  * in other files.
- * 
+ *
  * @package ThemeGrill
  * @subpackage Esteem
  * @since Esteem 1.0
@@ -42,8 +42,8 @@ function esteem_scripts_styles_method() {
 
 	/**
 	 * Enqueue Slider setup js file.
-	 */	
-	if( of_get_option( 'esteem_activate_slider', '0' ) == '1' ) { 
+	 */
+	if( of_get_option( 'esteem_activate_slider', '0' ) == '1' ) {
 		if ( is_home() || is_front_page() ) {
 			wp_enqueue_script( 'esteem_slider', ESTEEM_JS_URL . '/esteem-slider-setting.js', array( 'jquery_cycle' ), false, true );
 
@@ -52,7 +52,7 @@ function esteem_scripts_styles_method() {
 
 	wp_enqueue_script( 'esteem-custom', ESTEEM_JS_URL. '/esteem-custom.js', array( 'jquery' ) );
 	wp_enqueue_style( 'esteem-fontawesome', get_template_directory_uri().'/fontawesome/css/font-awesome.css', array(), '3.2.1' );
-   
+
    /**
     * Browser specific queuing i.e
     */
@@ -63,7 +63,7 @@ function esteem_scripts_styles_method() {
 
 	wp_enqueue_script( 'esteem-navigation', ESTEEM_JS_URL . '/navigation.js', array( 'jquery' ), false, true );
 
-} 
+}
 
 add_action('admin_print_styles', 'esteem_admin_styles');
 /**
@@ -87,12 +87,12 @@ function esteem_sidebar_select() {
 	global $post;
 
 	if( $post ) { $layout_meta = get_post_meta( $post->ID, '_esteem_layout', true ); }
-	
+
 	if( is_home() ) {
 		$queried_id = get_option( 'page_for_posts' );
-		$layout_meta = get_post_meta( $queried_id, '_esteem_layout', true ); 
+		$layout_meta = get_post_meta( $queried_id, '_esteem_layout', true );
 	}
-	
+
 	if( empty( $layout_meta ) || is_archive() || is_search() ) { $layout_meta = 'default_layout'; }
 	$esteem_default_layout = of_get_option( 'esteem_default_layout', 'right_sidebar' );
 
@@ -126,10 +126,10 @@ function esteem_body_class( $classes ) {
 	global $post;
 
 	if( $post ) { $layout_meta = get_post_meta( $post->ID, '_esteem_layout', true ); }
-	
+
 	if( is_home() ) {
 		$queried_id = get_option( 'page_for_posts' );
-		$layout_meta = get_post_meta( $queried_id, '_esteem_layout', true ); 
+		$layout_meta = get_post_meta( $queried_id, '_esteem_layout', true );
 	}
 
 	if( empty( $layout_meta ) || is_archive() || is_search() ) { $layout_meta = 'default_layout'; }
@@ -223,7 +223,7 @@ function esteem_custom_css() {
 
 	$esteem_internal_css = '';
 
-	$primary_color = of_get_option( 'esteem_primary_color', '#ED564B' );	
+	$primary_color = of_get_option( 'esteem_primary_color', '#ED564B' );
 	if( $primary_color != '#ED564B' ) {
 		$esteem_internal_css .= 'blockquote{border-left: 3px solid ' .$primary_color.'}button,html input[type="button"],input[type="reset"],input[type="submit"],#slider-title a{background:'.$primary_color.'}a,a:visited,a:hover,a:focus,a:active,.main-navigation li:hover > a,.main-navigation li.current_page_item > a,.main-navigation li.current-menu-item > a,.main-navigation li.current-menu-ancestor > a,#site-title a span,#site-title a:hover,#site-title a:focus,#site-title a:active,#controllers a:hover, #controllers a.active,.widget ul li a:hover,.widget ul li a:hover:before,.services-block .read-more:hover,.service-image-wrap,.service-title a:hover,.entry-meta a:hover,.entry-title a:hover,.search-wrap button:before,#site-generator a:hover, #colophon .widget a:hover,.menu-toggle:before{color: '.$primary_color.'}.main-navigation ul ul {border-top: 4px solid'.$primary_color.'}#controllers a:hover, #controllers a.active,#promo-box,.fancy-tab,.call-to-action-button,.readmore-wrap,.page-title-bar,.default-wp-page .previous a:hover, .default-wp-page .next a:hover{ background-color: '.$primary_color.'}#secondary .widget-title span, #colophon .widget-title span{ border-bottom: 2px solid '.$primary_color.'}
 		.services-block .read-more:hover{border: 1px solid '.$primary_color.'}.service-border{ border: 3px solid '.$primary_color.'}
@@ -271,7 +271,7 @@ if ( ! function_exists( 'esteem_posts_listing_display_type_select' ) ) :
 /**
  * Function to select the posts listing display type
  */
-function esteem_posts_listing_display_type_select() {			
+function esteem_posts_listing_display_type_select() {
 	if ( of_get_option( 'esteem_posts_page_display_type', 'full_content' ) == 'large_image' ) {
 		$format = 'blog-image-large';
 	}
@@ -288,4 +288,37 @@ function esteem_posts_listing_display_type_select() {
 	return $format;
 }
 endif;
+
+add_action('admin_init','esteem_textarea_sanitization_change', 100);
+/**
+ * Override the default textarea sanitization.
+ */
+function esteem_textarea_sanitization_change() {
+   remove_filter( 'of_sanitize_textarea', 'of_sanitize_textarea' );
+   add_filter( 'of_sanitize_textarea', 'esteem_sanitize_textarea_custom',10,2 );
+}
+
+/**
+ * sanitize the input for custom css
+ */
+function esteem_sanitize_textarea_custom( $input,$option ) {
+   if( $option['id'] == "esteem_custom_css" ) {
+      $output = wp_filter_nohtml_kses( $input );
+   } else {
+      $output = $input;
+   }
+   return $output;
+}
+
+/**
+ * Adding the support for the entry-title tag for Google Rich Snippets
+ */
+function esteem_add_mod_hatom_data($content) {
+   $title = get_the_title();
+   if (is_single()) {
+      $content .= '<div class="extra-hatom-entry-title"><span class="entry-title">' . $title . '</span></div>';
+   }
+   return $content;
+}
+add_filter('the_content', 'esteem_add_mod_hatom_data');
 ?>
