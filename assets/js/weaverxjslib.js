@@ -538,14 +538,16 @@ jQuery(function($) {
 	}
 
 	$('.wrapper').resizeX(weaverxOnResize);
-	if (wvrxOpts.useSmartMenus == '0') {
+	if (wvrxOpts.useSmartMenusPrimary == '0') {			// SmartMenus handled inline
 		$('#nav-primary .weaverx-theme-menu').thmfdnMenu({
 			toggleButtonID: 'primary-toggle-button',
 			mobileBreakpoint: triggerPrimary
 		});
+	}
+
+	if (wvrxOpts.useSmartMenusSecondary == '0') {
 		$('#nav-secondary .weaverx-theme-menu').thmfdnMenu({
 			toggleButtonID: 'secondary-toggle-button',
 			mobileBreakpoint: triggerSecondary});
 	}
-
 });

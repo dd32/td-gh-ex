@@ -107,3 +107,16 @@ with testing and feature suggestions.
 * Tweak: changed multi-column post styling to allow nth-child rules to work right (div to span clear)
 * Fix: Normal Weight for Titles option
 * Fix: Allow non-standard 'property' in <head> <meta> tag.
+
+= Version 1.1 =
+* New: Alternative SmartMenus - X-Plus
+* New: Border around submenus
+* Tweak: Submenu styling (inline-block -> block)
+* Tweak: z-index for full page width
+* Tweak: show Weaver Xtreme Plus version in HTML
+* Tweak: menu layout speeded up
+* Tweak: added .author wrap to single page author info for Google tools
+* Fix: Desktop Menu Spacing
+* Fix: multi-column post class fixes
+* Fix: issue with <head> content option
+* Fix: clear issue with right aligned header widget area

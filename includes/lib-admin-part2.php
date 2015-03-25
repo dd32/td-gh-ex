@@ -449,6 +449,10 @@ function weaverx_form_menu_opts( $value, $submit = false ) {
 
 		array( 'name' => $name,  'id' => '-menu', 'type' => 'header_area',
 			  'info' => $value['info']),
+		##### SmartMenu
+		array('name' => '<span class="i-left dashicons dashicons-menu"></span>' . __('Use SmartMenus', 'weaver-xtreme' /*adm*/),
+			  'id' => $id . '_smartmenus', 'type' => '+checkbox',
+			'info' => __('Use <em>SmartMenus</em> rather than default Weaver Xtreme Menus. <em>SmartMenus</em> provide enhanced menu support, including auto-visibility, transition effects, and MegaMenus. (&starf;Plus)', 'weaver-xtreme' /*adm*/)),
 
 		array( 'name' => __('Menu Bar', 'weaver-xtreme' /*adm*/),
 			'id' => $id, 'type' => 'titles_menu',    // includes color, font size, font family
@@ -460,7 +464,7 @@ function weaverx_form_menu_opts( $value, $submit = false ) {
 
 		array( 'name' => '<small>' . __('Dividers between menu items', 'weaver-xtreme' /*adm*/) . '</small>',
 			'id' => $id . '_dividers_color', 'type' => '+color',
-			'info' => '<em>' . $name . '</em>' . __(': Add colored dividers between menu items. Leave blank for none.  (&starf;Plus)', 'weaver-xtreme' /*adm*/) ),
+			'info' => '<em>' . $name . '</em>' . __(': Add colored dividers between menu items. Leave blank for none. (&starf;Plus)', 'weaver-xtreme' /*adm*/) ),
 
 		array( 'name' => '<small>' . __('Hover BG', 'weaver-xtreme' /*adm*/) . '</small>',
 			'id' => $id . '_hover_bgcolor', 'type' => 'ctext',
@@ -472,7 +476,7 @@ function weaverx_form_menu_opts( $value, $submit = false ) {
 
 		array( 'name' => '<small>' . __('<em>Mobile</em> Open Submenu Arrow BG', 'weaver-xtreme' /*adm*/) . '</small>',
 			'id' => $id . '_clickable_bgcolor', 'type' => 'ctext',
-			'info' => '<em>' . $name . '</em>' . __(': Clickable mobile open submenu arrow BG. Contrasting BG color required for proper user interface. (Default: rgba(255,255,255,0.2))', 'weaver-xtreme' /*adm*/) ),
+			'info' => '<em>' . $name . '</em>' . __(': Clickable mobile open submenu arrow BG. Contrasting BG color required for proper user interface. (Default: rgba(255,255,255,0.2), N/A: SmartMenus)', 'weaver-xtreme' /*adm*/) ),
 
 
 
@@ -514,12 +518,18 @@ function weaverx_form_menu_opts( $value, $submit = false ) {
 		array( 'name' => '<span class="i-left" style="font-size:200%;margin-left:4px;">&#x25a1;</span><small>' . __('Add Border', 'weaver-xtreme' /*adm*/) . '</small>',
 			'id' => $id . '_border', 'type' => 'checkbox',
 			'info' => '<em>' . $name . '</em>' . ': Add the "standard" border (as set on Custom tab)' ),
+
+		array( 'name' => '<span class="i-left" style="font-size:200%;margin-left:4px;">&#x25a1;</span><small>' . __('Add Border to Submenus', 'weaver-xtreme' /*adm*/) . '</small>',
+			'id' => $id . '_sub_border', 'type' => 'checkbox',
+			'info' => '<em>' . $name . '</em>' . ': Add the "standard" border to Submenus' ),
+
 		array( 'name' => '<span class="i-left dashicons dashicons-admin-page"></span><small>' . __('Shadow', 'weaver-xtreme' /*adm*/) . '</small>',
 			'id' => $id .'_shadow', 'type' => 'shadows',
 			'info' => '<em>' . $name . '</em>' . __(': Wrap Menu Bar with Shadow.', 'weaver-xtreme' /*adm*/) ),
 		array( 'name' => '<span class="i-left dashicons dashicons-marker"></span><small>' . __('Rounded Corners', 'weaver-xtreme' /*adm*/) . '</small>',
 			'id' => $id .'_rounded', 'type' => 'rounded',
 			'info' => '<em>' . $name . '</em>' . __(': Add rounded corners to menu. <em>You might need to set overlapping corners Header/Wrapper areas also!</em>', 'weaver-xtreme' /*adm*/) ),
+		
 	);
 
 	weaverx_form_show_options($opts, false, false);
@@ -553,7 +563,7 @@ function weaverx_form_menu_opts( $value, $submit = false ) {
 
 		array( 'name' => '<span class="i-left" style="font-size:150%;">&harr;</span><small>' . __('Desktop Menu Spacing', 'weaver-xtreme' /*adm*/) . '</small>',
 			'id' => $id .'_right_padding_dec' , 'type' => 'val_em',
-			'info' => '<em>' . $name . '</em>' . __(': Add space between desktop menubar items (Use value &gt; 1.0)', 'weaver-xtreme' /*adm*/) ),
+			'info' => '<em>' . $name . '</em>' . __(': Add space between desktop menu bar items (Use value &gt; 1.0)', 'weaver-xtreme' /*adm*/) ),
 
 		array( 'name' => '<span class="i-left">{ }</span> <small>' . __('Add Classes','weaverx-xtreme' /*adm*/) . '</small>',
 			'id' => $id . '_add_class', 'type' => '+widetext',

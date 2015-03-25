@@ -52,24 +52,29 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 						break;
 
 					case 2:
-						echo ('<div class="content-2-col clearfix">' . "\n");
+						$col++;
+						$style = '';
+						if ( ($col % 2) == 1 ) {	// force stuff to be even
+							$style = ' style="clear:left;"';
+						}
+						echo ('<div class="content-2-col clearfix"' . $style . '>' . "\n");
 						get_template_part( 'templates/content', get_post_format() );
 						echo ("</div> <!-- content-2-col -->\n");
-						$col++;
-						if ( !($col % 2) ) {	// force stuff to be even
-							echo "<span style=\"clear:left;\"></span>\n";
-						}
+
 						$sticky_one = false;
 						break;
 
 					case 3:
-						echo ('<div class="content-3-col clearfix">' . "\n");
+						$col++;
+						$style = '';
+						if ( ($col % 3) == 1 ) {	// force stuff to be even
+							$style = ' style="clear:left;"';
+						}
+
+						echo ('<div class="content-3-col clearfix"' . $style . '>' . "\n");
 						get_template_part( 'templates/content', get_post_format() );
 						echo ("</div> <!-- content-3-col -->\n");
-						$col++;
-						if ( !($col % 3) ) {	// force stuff to be even
-							echo "<span style=\"clear:left;\"></span>\n";
-						}
+
 						$sticky_one = false;
 						break;
 

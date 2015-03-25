@@ -445,6 +445,7 @@ function weaverx_enqueue_scripts() {	// action definition
 		wp_enqueue_script( 'comment-reply' );
 	}
 
+
 	//-- Weaver Xtreme js lib - requires jQuery...
 
 	// put this one in <head> to enhance performance slightly for menu fix-up
@@ -454,11 +455,12 @@ function weaverx_enqueue_scripts() {	// action definition
 	$local = array(
 		'menuPrimaryTrigger' => weaverx_getopt_default('menu_primary_trigger_int','768'),
 		'menuSecondaryTrigger' => weaverx_getopt_default('menu_secondary_trigger_int','768'),
-		'useSmartMenus' => weaverx_getopt('menu_use_smartmenus') ? '1' : '0',
+		'useSmartMenusPrimary' => weaverx_getopt('m_primary_smartmenus') ? '1' : '0',
+		'useSmartMenusSecondary' => weaverx_getopt('m_secondary_smartmenus') ? '1' : '0',
+		'useSmartMenusExtra' => weaverx_getopt('m_extra_smartmenus') ? '1' : '0'
 	);
 
 	wp_localize_script('weaverxJSLib', 'wvrxOpts', $local );
-
 
 	wp_enqueue_script('weaverxJSLibEnd', get_template_directory_uri().'/assets/js/weaverxjslib-end'.WEAVERX_MINIFY.'.js',array('jquery'), WEAVERX_VERSION,true);
 
@@ -492,6 +494,13 @@ if (current_user_can('activate_plugins')) { // allows only admin to see, also av
 
 // ============================== MORE WEAVER THEME ACTIONS ===================
 
+// Allow HTML descriptions in WordPress Menu
+remove_filter( 'nav_menu_description', 'strip_tags' );
+add_filter( 'wp_setup_nav_menu_item', 'weaverx_wp_setup_nav_menu_item' );
+function weaverx_wp_setup_nav_menu_item( $menu_item ) {
+     $menu_item->description = apply_filters( 'nav_menu_description', $menu_item->post_content );
+     return $menu_item;
+}
 
 add_action( 'after_setup_theme', 'weaverx_infinite_scroll_init' );
 
@@ -548,24 +557,29 @@ function weaverx_render_infinite_scroll() {
 				break;
 
 			case 2:
-				echo ('<div class="content-2-col clearfix">' . "\n");
+				$col++;
+				$style = '';
+				if ( ($col % 2) == 1 ) {	// force stuff to be even
+					$style = ' style="clear:left;"';
+				}
+				echo ('<div class="content-2-col clearfix"' . $style . '>' . "\n");
+
 				get_template_part( 'templates/content', get_post_format() );
 				echo ("</div> <!-- content-2-col -->\n");
-				$col++;
-				if ( !($col % 2) ) {	// force stuff to be even
-					echo "<span style=\"clear:left;\"></span>\n";
-				}
+
 				$sticky_one = false;
 				break;
 
 			case 3:
-				echo ('<div class="content-3-col clearfix">' . "\n");
+				$col++;
+				$style = '';
+				if ( ($col % 3) == 1 ) {	// force stuff to be even
+					$style = ' style="clear:left;"';
+				}
+				echo ('<div class="content-3-col clearfix"' . $style . '>' . "\n");
 				get_template_part( 'templates/content', get_post_format() );
 				echo ("</div> <!-- content-3-col -->\n");
-				$col++;
-				if ( !($col % 3) ) {	// force stuff to be even
-					echo "<span style=\"clear:left;\"></span>\n";
-				}
+
 				$sticky_one = false;
 				break;
 

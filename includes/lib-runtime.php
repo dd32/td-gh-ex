@@ -415,9 +415,12 @@ function weaverx_filter_head( $text ) {
 	// restrict head code to valid stuff for <head>
 
 	$noslash = trim(stripslashes($text));
+
 	if ($noslash == '') return '';
 
 	if ( current_user_can('unfiltered_html') ) {
+		if (strpos( $noslash, '<script') !== false)
+			return wp_check_invalid_utf8( $noslash );	// stop <script>s from being broken
 		return wp_kses( $noslash, $allowed_head_tags);
 	} else {
 		return ''; // wp_filter_post_kses() handles slashes
@@ -463,8 +466,9 @@ function weaverx_header_widget_area( $where_now ) {	// header.php support
 	if ( $sb_position == $where_now && weaverx_has_widgetarea('header-widget-area') ) {
 		$p_class = weaverx_area_class('header_sb', 'notpad', '-none', 'margin-none');
 		//weaverx_clear_both('header_sb');
-		weaverx_put_widgetarea('header-widget-area', $p_class);
-		//weaverx_clear_both('header-widget-area');
+		weaverx_put_widgetarea('header-widget-area', $p_class, 'header');
+		if (weaverx_getopt('header_sb_align') == 'float-right')
+			weaverx_clear_both('header-widget-area');
 	}
 }
 
@@ -891,6 +895,102 @@ function weaverx_get_paginate_archive_page_links( $type = 'plain', $endsize = 1,
 }
 }
 
+
+
+// # MENU ==============================================================
+class weaverx_Walker_Nav_Menu extends Walker {
+	public $tree_type = array( 'post_type', 'taxonomy', 'custom' );
+	public $db_fields = array( 'parent' => 'menu_item_parent', 'id' => 'db_id' );
+	/**
+	 * Starts the list before the elements are added.
+	 */
+	public function start_lvl( &$output, $depth = 0, $args = array() ) {
+		$indent = str_repeat("\t", $depth);
+		$output .= "\n$indent<ul class=\"sub-menu\">\n";
+	}
+
+	/**
+	 * Ends the list of after the elements are added.
+	 */
+	public function end_lvl( &$output, $depth = 0, $args = array() ) {
+		$indent = str_repeat("\t", $depth);
+		$output .= "$indent</ul>\n";
+	}
+
+	/**
+	 * Start the element output.
+	 */
+	public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+
+		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
+		$classes[] = 'menu-item-' . $item->ID;
+
+		/**
+		 * Filter the CSS class(es) applied to a menu item's list item element.
+		 */
+		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args, $depth ) );
+		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
+
+		$megamenu = strpos($class_names, 'mega-menu') !== false && function_exists('weaverxplus_plugin_installed');
+		if ( $megamenu )
+			$class_names = str_replace('mega-menu', '' , $class_names);	// have to move it down
+
+		/**
+		 * Filter the ID applied to a menu item's list item element.
+		 */
+		$id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args, $depth );
+		$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
+
+		$output .= $indent . '<li' . $id . $class_names .'>';
+
+		$atts = array();
+		$atts['title']  = ! empty( $item->attr_title ) ? $item->attr_title : '';
+		$atts['target'] = ! empty( $item->target )     ? $item->target     : '';
+		$atts['rel']    = ! empty( $item->xfn )        ? $item->xfn        : '';
+		$atts['href']   = ! empty( $item->url )        ? $item->url        : '';
+
+		/**
+		 * Filter the HTML attributes applied to a menu item's anchor element.
+		 */
+		$atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args, $depth );
+
+		$attributes = '';
+		foreach ( $atts as $attr => $value ) {
+			if ( ! empty( $value ) ) {
+				$value = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
+				$attributes .= ' ' . $attr . '="' . $value . '"';
+			}
+		}
+
+
+		$item_output = $args->before;
+		$item_output .= '<a'. $attributes .'>';
+		/** This filter is documented in wp-includes/post-template.php */
+		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+		$item_output .= '</a>';
+		$item_output .= $args->after;
+
+		if ( $megamenu ) {
+			$desc = ! empty($item->description) ? $item->description :
+					__('Please enter MegaMenu content to Description.', 'weaver-xtreme');
+			$item_output .= '<ul class="mega-menu"><li>' . $desc . '</li></ul>';
+		}
+
+		/**
+		 * Filter a menu item's starting output.
+		 */
+		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+	}
+
+	/**
+	 * Ends the element output, if needed.
+	 */
+	public function end_el( &$output, $item, $depth = 0, $args = array() ) {
+		$output .= "</li>\n";
+	}
+
+} // Walker_Nav_Menu
 
 
 // # OTHER UTILS ==============================================================

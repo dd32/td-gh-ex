@@ -882,10 +882,10 @@ function weaverx_author_info() {
 			</div><!-- #author-avatar -->
 				<p class="author-title"><?php printf( esc_attr__( 'About %s','weaver-xtreme'), get_the_author() ); ?></p>
 				<p><?php the_author_meta( 'description' ); ?></p>
-				<div id="author-link">
+				<span class="vcard author post-author"><span class="fn">
 					<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
 						<?php printf( __( 'View all posts by %s</span>','weaver-xtreme'), get_the_author() ); ?>
-					</a>
+					</a></span></span>
 				</div><!-- #author-link	-->
 			</div><!-- #author-description -->
 		</div><!-- #author-info -->

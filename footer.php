@@ -114,7 +114,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
 
 	if ( isset( $GLOBALS['weaverx_sb_layout'] ) ) {
-			$sb_layout = $GLOBALS['weaverx_sb_layout'];
+		$sb_layout = $GLOBALS['weaverx_sb_layout'];
 	} else {
 		$sb_layout = 'none';
 	}

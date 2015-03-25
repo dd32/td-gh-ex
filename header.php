@@ -64,7 +64,6 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 <noscript><p style="border:1px solid red;font-size:14px;background-color:pink;padding:5px;margin-left:auto;margin-right:auto;max-width:640px;text-align:center;">
 <?php _e('JAVASCRIPT IS DISABLED. Please enable JavaScript on your browser to best view this site.', 'weaver-xtreme' /*adm*/); ?></p></noscript><!-- displayed only if JavaScript disabled -->
 <?php
-
 	weaverx_inject_area('prewrapper');
 
 	weaverx_area_div( 'wrapper' );

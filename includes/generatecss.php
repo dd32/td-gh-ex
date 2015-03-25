@@ -76,9 +76,21 @@ function weaverx_output_style( $sout ) {
 	$b_c = weaverx_getopt_default('border_color', '#222');	//+
 	$b_w = weaverx_getopt_default('border_width_int', 1);
 	$b_s = weaverx_getopt_default('border_style','solid');
+	$menus = array (              /* can't use multiple selectors here! */
+		'm_primary' => '.menu-primary',
+		'm_secondary' => '.menu-secondary',
+		'm_extra' => '.menu-extra',
+	);
 
-	if ( $b_c != '#222' || $b_w != 1 || $b_s != 'solid' )
+	if ( $b_c != '#222' || $b_w != 1 || $b_s != 'solid' ) {
 		weaverx_f_write($sout, sprintf(".border {border:%dpx %s %s;}.border-bottom{border-bottom:%dpx %s %s;}\n", $b_w, $b_s, $b_c, $b_w, $b_s, $b_c));
+
+		foreach ( $menus as $id => $tag ) {
+			if ( weaverx_getopt("{$id}_sub_border") )
+			weaverx_f_write($sout, sprintf("{$tag} ul ul{border:%dpx %s %s;}\n", $b_w, $b_s, $b_c));
+		}
+
+	}
 
 
 	/*  rounded_corners  */
@@ -94,7 +106,7 @@ function weaverx_output_style( $sout ) {
 
 		// It's time: no -moz or -webkit
 
-	$rounded = '.rounded,.rounded-all,.rounded-custom{	-moz-border-radius:8px !important;
+		$rounded = '.rounded,.rounded-all,.rounded-custom{	-moz-border-radius:8px !important;
  -webkit-border-radius:8px !important;border-radius:8px !important;}
 .rounded-top{-moz-border-radius-topleft:8px; -moz-border-radius-topright:8px;-webkit-border-top-left-radius:8px;
 -webkit-border-top-right-radius:8px;border-top-left-radius:8px; border-top-right-radius: 8px;}
@@ -105,9 +117,9 @@ function weaverx_output_style( $sout ) {
 .rounded-right{-moz-border-radius-topright:8px;-moz-border-radius-bottomright:8px;-webkit-border-top-right-radius:8px;
  -webkit-border-bottom-right-radius:8px;border-top-right-radius:8px;border-bottom-right-radius:8px;}';
 
-	weaverx_f_write( $sout, str_replace('8',$rm,$rounded) );
+		weaverx_f_write( $sout, str_replace('8',$rm,$rounded) );
 	}
-
+	
 	/*  fadebody_bg  */
 
 	if (weaverx_getopt('fadebody_bg')) {
@@ -408,9 +420,9 @@ $menu_bars = array (
 	'm_primary' => '.menu-primary .wvrx-menu-container',
 	'm_secondary' => '.menu-secondary .wvrx-menu-container',
 	'm_extra' => '.menu-extra .wvrx-menu-container',
-	'm_primary_sub' => '.menu-primary .wvrx-menu ul li a',
-	'm_secondary_sub' => '.menu-secondary .wvrx-menu ul li a',
-	'm_extra_sub' => '.menu-extra .wvrx-menu ul li a'
+	'm_primary_sub' => '.menu-primary .wvrx-menu ul li a,.menu-primary .wvrx-menu ul.mega-menu li',
+	'm_secondary_sub' => '.menu-secondary .wvrx-menu ul li a,.menu-secondary .wvrx-menu ul.mega-menu li',
+	'm_extra_sub' => '.menu-extra .wvrx-menu ul li a,.menu-extra .wvrx-menu ul.mega-menu li'
 );
 
 $menu_links_bg = array (
@@ -425,7 +437,14 @@ $menu_links = array (
 	'm_extra' => '.menu-extra .wvrx-menu > li > a',
 	'm_primary_sub' => '.menu-primary .wvrx-menu ul li a',
 	'm_secondary_sub' => '.menu-secondary .wvrx-menu ul li a',
-	'm_extra_sub' => '.menu-extra .wvrx-menu ul li a'
+	'm_extra_sub' => '.menu-extra .wvrx-menu ul li a',
+
+	'm_primary_sm' => '.menu-primary .sm-wvrx > li > a',
+	'm_secondary_sm' => '.menu-secondary .sm-wvrx > li > a',
+	'm_extra_sm' => '.menu-extra .sm-wvrx > li > a',
+	'm_primary_sub_sm' => '.menu-primary .sm-wvrx ul li a',
+	'm_secondary_sub_sm' => '.menu-secondary .sm-wvrx ul li a',
+	'm_extra_sub_sm' => '.menu-extra .sm-wvrx ul li a',
 	);
 
 $menu_detail = array (              /* can't use multiple selectors here! */
@@ -447,6 +466,7 @@ $menu_detail = array (              /* can't use multiple selectors here! */
 	}
 
 	foreach ($menu_links as $id => $tag) {
+		$id = str_replace('_sm', '', $id);									// share value for wvrx menu and sm menu
 		weaverx_put_color( $sout, $id . '_color', $tag );
 		weaverx_put_bgcolor( $sout, $id . '_hover_bgcolor', $tag . ':hover', true); // important to override current item bg
 		weaverx_put_color( $sout, $id . '_hover_color', $tag . ':hover', true );
@@ -514,8 +534,8 @@ $menu_detail = array (              /* can't use multiple selectors here! */
 
 		if ( ($rpad = weaverx_getopt( $id . '_right_padding_dec' )) != '') {
 			$rpad_arrow = $rpad + 1.5;
-			weaverx_f_write( $sout, '.is-desktop ' . $tag . ' .wvrx-menu-container li.default-home-menu-item a{padding-right:' . $rpad . "em;}\n" );
-			weaverx_f_write( $sout, '.is-desktop ' . $tag . ' .wvrx-menu-container{padding-right:' . $rpad . "em;}\n" );
+			weaverx_f_write( $sout, '.is-desktop ' . $tag . ' .wvrx-menu-container li a{padding-right:' . $rpad . "em;}\n" );
+			//weaverx_f_write( $sout, '.is-desktop ' . $tag . ' .wvrx-menu-container{padding-right:' . $rpad . "em;}\n" );
 			weaverx_f_write( $sout, '.is-desktop ' . $tag . ' .menu-hover.menu-arrows .has-submenu > a{padding-right:' . $rpad_arrow . "em;}\n" );
 			weaverx_f_write( $sout, '.is-desktop ' . $tag . ' .menu-arrows.menu-hover .toggle-submenu{margin-right:' . $rpad . "em;}\n" );
 		}
@@ -526,9 +546,12 @@ $menu_detail = array (              /* can't use multiple selectors here! */
 		if ( weaverx_getopt( $id . '_hide_arrows') ) {
 			weaverx_f_write($sout,
 				".is-desktop {$tag} .menu-arrows .toggle-submenu:after{content:'';display:none;}\n");
+//.is-deskotp {$tag} .wvrx-menu a span.sub-arrow:after{display:none;}\n");
 			if ($rpad == '')
 				weaverx_f_write($sout,
 					".is-desktop {$tag} .menu-hover.menu-arrows .has-submenu > a {padding-right:0.75em;}\n" );
+			weaverx_f_write($sout,
+				".is-desktop {$tag} .wvrx-menu a span.sub-arrow:after{display:none;}\n");
 		}
 		$color = weaverx_getopt( $id .'_color');
 

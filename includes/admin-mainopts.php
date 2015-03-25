@@ -403,8 +403,7 @@ function weaverx_mainopts_menus() {
 	array('name' => __('Menu &amp; Info Bars', 'weaver-xtreme' /*adm*/), 'id' => '-menu', 'type' => 'header',
 		'info' => __('Options affecting site Menus and the Info Bar', 'weaver-xtreme' /*adm*/),
 		'help' => 'help.html#MenuBar'),
-##### SmartMenu
-	array('name' => '<span class="i-left dashicons dashicons-menu"></span>' . __('Use Smart Menus', 'weaver-xtreme' /*adm*/), 'id' => 'menu_use_smartmenus', 'type' => 'checkbox',		'info' => __('Use "SmartMenus library rather than native Weaver Xtreme Menus', 'weaver-xtreme' /*adm*/)),
+
 
 
 	array('name' => __('Primary Menu Bar', 'weaver-xtreme' /*adm*/), 'id' => 'm_primary', 'type' => 'menu_opts',
@@ -508,7 +507,6 @@ function weaverx_mainopts_menus() {
 </div>
 <?php
 
-	if (! WEAVERX_SMARTMENUS ) unset($opts[2]);		// kill it for now ###### SmartMenus
 	$all_opts = apply_filters('weaverxplus_menu_inject', $opts);
 
 	weaverx_form_show_options($all_opts);
