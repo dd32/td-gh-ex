@@ -201,3 +201,16 @@ if ( ! function_exists( 'simple_life_add_editor_styles' ) ) :
     }
 endif; // simple_life_add_editor_styles
 add_action( 'init', 'simple_life_add_editor_styles' );
+
+if ( ! function_exists( 'simple_life_add_go_to_top' ) ) :
+    function simple_life_add_go_to_top() {
+
+      $go_to_top = simple_life_get_option( 'go_to_top' );
+      if ( 1 != $go_to_top ) {
+        return;
+      }
+      echo '<a href="#" class="scrollup" id="btn-scrollup"><span class="fa-stack"> <i class="fa fa-square fa-stack-2x"></i><i class="fa fa-angle-up fa-stack-1x fa-inverse"></i></span></a>';
+
+    }
+endif; // simple_life_add_go_to_top
+add_action( 'wp_footer', 'simple_life_add_go_to_top' );

@@ -8,25 +8,30 @@
 	<div id="secondary" <?php echo simple_life_sidebar_class('widget-area container clearfix'); ?> role="complementary">
 		<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 
-			<aside id="search" class="widget widget_search clearfix">
-				<?php get_search_form(); ?>
-			</aside>
+      <?php
 
-			<aside id="archives" class="widget clearfix">
-				<h3 class="widget-title"><?php _e( 'Archives', 'simple-life' ); ?></h3>
-				<ul>
-					<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
-				</ul>
-			</aside>
+        // Search Widget
+        $args = array(
+          'before_title'  => '<h3 class="widget-title">',
+          'after_title'   => '</h3>',
+        );
+        the_widget( 'WP_Widget_Search', array(), $args );
 
-			<aside id="meta" class="widget clearfix">
-				<h3 class="widget-title"><?php _e( 'Meta', 'simple-life' ); ?></h3>
-				<ul>
-					<?php wp_register(); ?>
-					<li><?php wp_loginout(); ?></li>
-					<?php wp_meta(); ?>
-				</ul>
-			</aside>
+        // Archives Widget
+        $args = array(
+          'before_title'  => '<h3 class="widget-title">',
+          'after_title'   => '</h3>',
+        );
+        the_widget( 'WP_Widget_Archives', array(), $args );
+
+        // Meta Widget
+        $args = array(
+          'before_title'  => '<h3 class="widget-title">',
+          'after_title'   => '</h3>',
+        );
+        the_widget( 'WP_Widget_Meta', array(), $args );
+
+       ?>
 
 		<?php endif; // end sidebar widget area ?>
 	</div><!-- #secondary -->

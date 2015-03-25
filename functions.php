@@ -35,6 +35,11 @@ function simple_life_setup() {
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
+  /*
+   * Enable support for Title Tag.
+   */
+  add_theme_support( 'title-tag' );
+
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 */
@@ -70,26 +75,12 @@ function simple_life_setup() {
 
 	// Setup the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'simple_life_custom_background_args', array(
-		'default-color' => 'ffffff',
+		'default-color' => 'f0f3f5',
 		'default-image' => '',
 	) ) );
 
-    global $simple_life_options;
-    $simple_life_options = get_option('simple_life_options');
-
     global $simple_life_default_options;
-
-    $simple_life_default_options = array(
-
-			'site_layout'    => 'content-sidebar',
-			'content_layout' => 'full',
-			'read_more_text' => 'read more',
-			'excerpt_length' => 40,
-			'footer_widgets' => 0,
-			'copyright_text' => '&copy; 2014 All rights reserved',
-			'powered_by'     => 0,
-
-    	);
+    $simple_life_default_options = simple_life_get_theme_option_defaults();
 
 }
 endif; // simple_life_setup
@@ -116,8 +107,8 @@ add_action( 'widgets_init', 'simple_life_widgets_init' );
  */
 function simple_life_scripts() {
   wp_enqueue_style( 'simple-life-style-open-sans', '//fonts.googleapis.com/css?family=Open+Sans' );
-  wp_enqueue_style( 'simple-life-style-bootstrap', get_template_directory_uri().'/css/bootstrap.css', false ,'3.2.0' );
-  wp_enqueue_style( 'simple-life-style-font-awesome', get_template_directory_uri().'/third-party/font-awesome/css/font-awesome.css', false ,'4.2.0' );
+  wp_enqueue_style( 'simple-life-style-bootstrap', get_template_directory_uri().'/css/bootstrap.min.css', false ,'3.3.4' );
+  wp_enqueue_style( 'simple-life-style-font-awesome', get_template_directory_uri().'/third-party/font-awesome/css/font-awesome.min.css', false ,'4.3.0' );
   wp_enqueue_style( 'simple-life-style-meanmenu', get_template_directory_uri().'/third-party/meanmenu/meanmenu.css', false ,'2.0.6' );
 
 	wp_enqueue_style( 'simple-life-style', get_stylesheet_uri() );

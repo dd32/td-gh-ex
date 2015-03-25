@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: simple-life\n"
-"POT-Creation-Date: 2014-11-29 19:59+0545\n"
-"PO-Revision-Date: 2014-11-29 19:59+0545\n"
+"POT-Creation-Date: 2015-03-26 11:09+0545\n"
+"PO-Revision-Date: 2015-03-26 11:09+0545\n"
 "Last-Translator: Nilambar Sharma <nilambar@outlook.com>\n"
 "Language-Team: \n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.7.5\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -81,7 +81,7 @@ msgstr ""
 msgid "Chats"
 msgstr ""
 
-#: ../../simple-life/archive.php:66 ../../simple-life/sidebar.php:16
+#: ../../simple-life/archive.php:66
 msgid "Archives"
 msgstr ""
 
@@ -187,136 +187,117 @@ msgstr ""
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: ../../simple-life/functions.php:43
+#: ../../simple-life/functions.php:49
 msgid "Primary Menu"
 msgstr ""
 
-#: ../../simple-life/functions.php:44
+#: ../../simple-life/functions.php:50
 msgid "Footer Menu"
 msgstr ""
 
-#: ../../simple-life/functions.php:102
+#: ../../simple-life/functions.php:94
 msgid "Sidebar"
 msgstr ""
 
-#: ../../simple-life/header.php:23 ../../simple-life/header.php:41
+#: ../../simple-life/header.php:21 ../../simple-life/header.php:39
 msgid "Skip to content"
 msgstr ""
 
-#: ../../simple-life/search.php:16
-#, php-format
-msgid "Search Results for: %s"
+#: ../../simple-life/inc/customizer.php:28
+#: ../../simple-life/inc/theme-functions.php:31
+msgid "Read more"
 msgstr ""
 
-#: ../../simple-life/sidebar.php:23
-msgid "Meta"
-msgstr ""
-
-#: ../../simple-life/inc/customizer.php:39
-#: ../../simple-life/inc/customizer.php:42
+#: ../../simple-life/inc/customizer.php:41
 msgid "Simple Life Options"
 msgstr ""
 
-#: ../../simple-life/inc/customizer.php:55
-msgid "General Section"
+#: ../../simple-life/inc/customizer.php:50
+msgid "General"
 msgstr ""
 
-#: ../../simple-life/inc/customizer.php:70
+#: ../../simple-life/inc/customizer.php:67
 msgid "Site Layout"
 msgstr ""
 
-#: ../../simple-life/inc/customizer.php:75
+#: ../../simple-life/inc/customizer.php:72
 msgid "Content-Sidebar"
 msgstr ""
 
-#: ../../simple-life/inc/customizer.php:76
+#: ../../simple-life/inc/customizer.php:73
 msgid "Sidebar-Content"
 msgstr ""
 
-#: ../../simple-life/inc/customizer.php:77
+#: ../../simple-life/inc/customizer.php:74
 msgid "Full Width"
 msgstr ""
 
-#: ../../simple-life/inc/customizer.php:91
+#: ../../simple-life/inc/customizer.php:88
 msgid "Content Layout"
 msgstr ""
 
-#: ../../simple-life/inc/customizer.php:96
+#: ../../simple-life/inc/customizer.php:93
 msgid "Full Post"
 msgstr ""
 
-#: ../../simple-life/inc/customizer.php:97
+#: ../../simple-life/inc/customizer.php:94
 msgid "Excerpt"
 msgstr ""
 
-#: ../../simple-life/inc/customizer.php:98
+#: ../../simple-life/inc/customizer.php:95
 msgid "Excerpt with thumbnail"
 msgstr ""
 
-#: ../../simple-life/inc/customizer.php:111
-msgid "Blog Section"
+#: ../../simple-life/inc/customizer.php:102
+msgid "Blog"
 msgstr ""
 
-#: ../../simple-life/inc/customizer.php:126
+#: ../../simple-life/inc/customizer.php:119
 msgid "Read more text"
 msgstr ""
 
-#: ../../simple-life/inc/customizer.php:142
+#: ../../simple-life/inc/customizer.php:135
 msgid "Excerpt Length"
 msgstr ""
 
-#: ../../simple-life/inc/customizer.php:158
-msgid "Footer Section"
+#: ../../simple-life/inc/customizer.php:144
+msgid "Footer"
 msgstr ""
 
-#: ../../simple-life/inc/customizer.php:173
+#: ../../simple-life/inc/customizer.php:161
 msgid "Footer Widgets"
 msgstr ""
 
-#: ../../simple-life/inc/customizer.php:178
+#: ../../simple-life/inc/customizer.php:166
 msgid "No Widget"
 msgstr ""
 
-#: ../../simple-life/inc/customizer.php:179
-msgid "1"
+#: ../../simple-life/inc/customizer.php:167
+#, php-format
+msgid "%s Widget"
 msgstr ""
 
-#: ../../simple-life/inc/customizer.php:179
-msgid "Widget"
+#: ../../simple-life/inc/customizer.php:168
+#: ../../simple-life/inc/customizer.php:169
+#: ../../simple-life/inc/customizer.php:170
+#: ../../simple-life/inc/customizer.php:171
+#, php-format
+msgid "%s Widgets"
 msgstr ""
 
-#: ../../simple-life/inc/customizer.php:180
-msgid "2"
-msgstr ""
-
-#: ../../simple-life/inc/customizer.php:180
-#: ../../simple-life/inc/customizer.php:181
-#: ../../simple-life/inc/customizer.php:182
-#: ../../simple-life/inc/customizer.php:183
-msgid "Widgets"
-msgstr ""
-
-#: ../../simple-life/inc/customizer.php:181
-msgid "3"
-msgstr ""
-
-#: ../../simple-life/inc/customizer.php:182
-msgid "4"
-msgstr ""
-
-#: ../../simple-life/inc/customizer.php:183
-msgid "6"
-msgstr ""
-
-#: ../../simple-life/inc/customizer.php:197
+#: ../../simple-life/inc/customizer.php:186
 msgid "Copyright text"
 msgstr ""
 
-#: ../../simple-life/inc/customizer.php:213
+#: ../../simple-life/inc/customizer.php:202
 msgid "Show Powered By"
 msgstr ""
 
-#: ../../simple-life/inc/extras.php:63
+#: ../../simple-life/inc/customizer.php:218
+msgid "Enable Go To Top"
+msgstr ""
+
+#: ../../simple-life/inc/extras.php:64
 #, php-format
 msgid "Page %s"
 msgstr ""
@@ -335,4 +316,9 @@ msgstr ""
 
 #: ../../simple-life/inc/template-tags.php:52
 msgid "Post navigation"
+msgstr ""
+
+#: ../../simple-life/search.php:16
+#, php-format
+msgid "Search Results for: %s"
 msgstr ""

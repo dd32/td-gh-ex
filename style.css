@@ -4,7 +4,7 @@ Theme URI:
 Author: Nilambar Sharma
 Author URI: http://www.nilambar.net/
 Description: Simple Life is a simple and minimal theme for your awesome WordPress website. It comes with a whole set of interesting, rich features and flexible theme customization. This theme is easily customizable with the Customizer feature of WordPress. It is also translation ready.
-Version: 1.0.5
+Version: 1.0.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: simple-life
@@ -912,7 +912,7 @@ body{
     margin: 2em 0;
 }
 h1.site-title {
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: sans-serif;
 	font-size: 2em; /* 28px */
     font-weight: 700;
     line-height: 1.2;
@@ -921,7 +921,7 @@ h1.site-title {
 
 h1.site-title a {
 	display: inline-block;
-	color: #252525;
+	color: #555;
 }
 
 h1.site-title a:hover {
@@ -936,8 +936,8 @@ h1.site-title a:focus {
 }
 
 .site-description {
-    color: #959595;
-    font-family: 'Source Sans Pro',sans-serif;
+    color: #555;
+    font-family: sans-serif;
     font-size: 1.071em;
     letter-spacing: 1px;
 }
@@ -1084,3 +1084,16 @@ header#masthead{
     font-size: 0.9em;
 }
 /*woocommerce ends*/
+
+/* go to top */
+a.scrollup, a.scrollup:active {
+    float: right;
+    bottom: 50px;
+    color: #444;
+    display: none;
+    font-size: 20px;
+    outline: none;
+    position: fixed;
+    right: 20px;
+    z-index: 9999;
+}

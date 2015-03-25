@@ -39,7 +39,7 @@
 				 		<?php if ( has_post_thumbnail()) : ?>
 				 			<div class="post-thumbnail-wrapper">
 				 				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-				 					<?php the_post_thumbnail(); ?>
+				 					<?php the_post_thumbnail( 'large', array( 'class' => 'aligncenter' ) ); ?>
 				 				</a>
 				 			</div>
 				 		<?php endif; ?>
@@ -52,7 +52,7 @@
 						<?php if ( has_post_thumbnail()) : ?>
 							<div class="post-thumbnail-wrapper">
 								<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-									<?php the_post_thumbnail(); ?>
+									<?php the_post_thumbnail( 'large', array( 'class' => 'aligncenter' ) ); ?>
 								</a>
 							</div>
 						<?php endif; ?>

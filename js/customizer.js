@@ -22,19 +22,6 @@
 			$( '.copyright-text' ).text( to );
 		} );
 	} );
-	// Powered by.
-	wp.customize( 'simple_life_options[powered_by]', function( value ) {
-		value.bind( function( to ) {
-			console.log( to );
-			if('true' == to ){
-				$( '#powered-by-wrap' ).show();
-			}
-			else{
-				$( '#powered-by-wrap' ).hide();
-
-			}
-		} );
-	} );
 	// Header text color.
 	wp.customize( 'header_textcolor', function( value ) {
 		value.bind( function( to ) {

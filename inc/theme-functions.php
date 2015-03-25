@@ -1,17 +1,44 @@
 <?php
 if ( ! function_exists( 'simple_life_get_option' ) ) :
     function simple_life_get_option( $key, $default = '' ){
-      global $simple_life_options, $simple_life_default_options;
-      if ( isset( $simple_life_options[ $key ] ) && '' != $simple_life_options[ $key ] ) {
-        return $simple_life_options[ $key ];
+
+      global $simple_life_default_options;
+
+      if ( empty( $key ) ) {
+        return;
       }
-      if ( ! empty( $default ) ) {
-        return $default;
+      $default = ( isset( $simple_life_default_options[ $key ] ) ) ? $simple_life_default_options[ $key ] : '';
+
+      $theme_options = get_theme_mod( 'simple_life_options', $simple_life_default_options );
+
+      $theme_options = array_merge( $simple_life_default_options, $theme_options );
+
+      $value = '';
+      if ( isset( $theme_options[ $key ] ) ) {
+        $value = $theme_options[ $key ];
       }
-      else{
-        return $simple_life_default_options[ $key ];
-      }
+      return $value;
+
     }
+endif;
+
+if ( ! function_exists( 'simple_life_get_theme_option_defaults' ) ) :
+  function simple_life_get_theme_option_defaults(){
+
+    $defaults = array(
+      'site_layout'    => 'content-sidebar',
+      'content_layout' => 'excerpt-thumb',
+      'read_more_text' => __( 'Read more', 'simple-life' ),
+      'excerpt_length' => 40,
+      'footer_widgets' => 0,
+      'copyright_text' => '&copy; 2014 All rights reserved',
+      'powered_by'     => false,
+      'go_to_top'      => false,
+    );
+    $defaults = apply_filters( 'simple_life_filter_default_theme_options', $defaults );
+    return $defaults;
+
+  }
 endif;
 
 function simple_life_content_class( $class = '' ){
