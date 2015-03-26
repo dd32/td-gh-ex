@@ -20,6 +20,7 @@ if (!function_exists('jobile_setup')) :
 	// Add RSS feed links to <head> for posts and comments.
 	add_theme_support('automatic-feed-links');
 	add_theme_support('post-thumbnails');
+	add_theme_support( 'title-tag' );
 	set_post_thumbnail_size(672, 372, true);
 	add_image_size('jobile-full-width', 1038, 576, true);
 	add_image_size('jobile-blog-image', 100, 86, true);
@@ -63,30 +64,7 @@ function jobile_font_url() {
     return $jobile_font_url;
 }
 
-/*
- * Function for jobile theme title.
- */
 
-function jobile_wp_title($title, $sep) {
-    global $paged, $page;
-    if (is_feed()) {
-	return $title;
-    }
-    // Add the site name.
-    $title .= get_bloginfo('name', 'display');
-    // Add the site description for the home/front page.
-    $jobile_site_description = get_bloginfo('description', 'display');
-    if ($jobile_site_description && ( is_home() || is_front_page() )) {
-	$title = "$title $sep $jobile_site_description";
-    }
-    // Add a page number if necessary.
-    if ($paged >= 2 || $page >= 2) {
-	$title = "$title $sep " . sprintf(__('Page %s', 'jobile'), max($paged, $page));
-    }
-    return $title;
-}
-
-add_filter('wp_title', 'jobile_wp_title', 10, 2);
 /*
  * Register widget areas.
  */
@@ -299,9 +277,7 @@ function jobile_custom_breadcrumbs() {
 
 	echo '</div>';
     }
-}
-
-// end jobile_custom_breadcrumbs()
+} // end jobile_custom_breadcrumbs()
 /*
  * thumbnail list
  */

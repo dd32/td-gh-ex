@@ -25,8 +25,8 @@ function jobile_framework_load_scripts($hook){
 		wp_enqueue_media();
 		wp_enqueue_style( 'jobile_framework', get_template_directory_uri(). '/theme-options/css/jobile_framework.css' ,false, '1.0.0');
 		// Enqueue custom option panel JS
-		wp_enqueue_script( 'options-custom', get_template_directory_uri(). '/theme-options/js/jobile-custom.js', array( 'jquery' ) );
-		wp_enqueue_script( 'media-uploader', get_template_directory_uri(). '/theme-options/js/media-uploader.js', array( 'jquery') );		
+		wp_enqueue_script( 'jobile-options-custom', get_template_directory_uri(). '/theme-options/js/jobile-custom.js', array( 'jquery' ) );
+		wp_enqueue_script( 'jobile-media-uploader', get_template_directory_uri(). '/theme-options/js/media-uploader.js', array( 'jquery') );		
 	}
 }
 function jobile_framework_menu_settings() {
