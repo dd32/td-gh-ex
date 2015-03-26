@@ -71,6 +71,9 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.0.8
+* Updated the screenshot.png
+
 #### 1.0.7
 * WooCommerce styling tweaks
 * Updated language .pot file
