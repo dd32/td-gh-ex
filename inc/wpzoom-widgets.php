@@ -80,7 +80,7 @@
 				endif;
 
 				if ( 'list' == $display ) {
-					the_title( '<h2><a href="' . esc_url( get_permalink() ) . '" title="' . esc_attr( sprintf( __( 'Permanent Link to %s', 'wpzoom' ), the_title_attribute( 'echo=0' ) ) ) . '" rel="bookmark">', '</a></h2>' );
+					the_title( '<h2><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 					$excerpt = get_the_excerpt();
 					if ( ! empty( $excerpt ) ) {
 						echo '<p>' . wp_trim_words( $excerpt, 25 ) . '</p>';

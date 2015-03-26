@@ -13,7 +13,6 @@ get_header(); ?>
 
 	<div class="column column-title">
 		<?php get_template_part( 'breadcrumb' ); ?>
-		<?php the_title( '<h1 class="title-header">', '</h1>' ); ?>
 	</div><!-- end .column-title -->
 
 	<?php if ( 'column-full' != $post_layout ) : ?>

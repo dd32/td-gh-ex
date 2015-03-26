@@ -3,30 +3,19 @@
  * @package Academica
  */
 
-// wp.com theme colors
-if ( ! isset( $themecolors ) ) {
-
-	$themecolors = array(
-		'bg'     => 'ffffff',
-		'text'   => '333333',
-		'link'   => '0c5390',
-		'border' => 'f99734',
-		'url'    => 'f99734',
-	);
-}
-
 if ( ! isset( $content_width ) )
-	$content_width = 500; // pixels
+	$content_width = 600; // pixels
 
-/**
- * Implement the Custom Header feature
- */
-require( get_template_directory() . '/inc/custom-header.php' );
+/* Customizer */
+require get_template_directory() . '/inc/customizer/bootstrap.php';
 
 /**
  * Theme Setup
  */
 function academica_setup() {
+
+	// This theme styles the visual editor to resemble the theme style.
+	add_editor_style( array( 'css/editor-style.css' ) );
 
 	// Custom Background
 	add_theme_support( 'custom-background' );
@@ -39,31 +28,22 @@ function academica_setup() {
 
 	// Featured Image
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 120, 80, true ); // Normal post thumbnails
-	add_image_size( 'academica-featured-thumb', 960, 300, true );
-	add_image_size( 'academica-gallery', 300, 225, true );
+   	add_image_size( 'academica-featured-posts-widget', 75, 50, true );
 
-	// Post Formats
-	add_theme_support( 'post-formats', array( 'aside', 'gallery' ) );
+	// Title Tag
+	add_theme_support( 'title-tag' );
 
 	// Feed Links
 	add_theme_support( 'automatic-feed-links' );
 
-	// Theme Options
-	require( get_template_directory() . '/inc/theme-options.php' );
-
-	add_theme_support( 'featured-content', array(
-		'featured_content_filter' => 'academica_get_featured_posts',
-		'description'             => __( 'The featured content section displays on the front page above the first post in the content area.', 'academica' ),
-		'max_posts'               => 10,
-	) );
-
 	add_theme_support( 'infinite-scroll', array(
-		'footer_widgets' => 'sidebar-9',
+		'footer_widgets' => 'sidebar-3',
 		'container'      => 'column-content',
 		'wrapper'        => false,
 		'footer'         => 'footer',
 	) );
+
+	load_theme_textdomain( 'academica', get_template_directory() . '/languages' );
 }
 add_action( 'after_setup_theme', 'academica_setup' );
 
@@ -72,7 +52,19 @@ add_action( 'after_setup_theme', 'academica_setup' );
  */
 function academica_enqueue_scripts() {
 	wp_enqueue_style( 'academica-style', get_stylesheet_uri() );
-	wp_enqueue_script( 'academica-menu', get_template_directory_uri() . '/js/menu.js', array( 'jquery' ), '20120921', true );
+
+	wp_enqueue_style( 'academica-style-mobile', get_template_directory_uri() . '/media-queries.css', array( 'academica-style' ), '1.0' );
+
+	wp_enqueue_style( 'academica-google-font-default', '//fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto+Condensed:400,700&subset=latin,cyrillic-ext,greek-ext' );
+
+	wp_enqueue_style( 'dashicons' );
+
+ 	wp_enqueue_script( 'mmenu', get_template_directory_uri() . '/js/jquery.mmenu.min.all.js', array( 'jquery' ), '20150325', true );
+
+ 	wp_enqueue_script( 'superfish', get_template_directory_uri() . '/js/superfish.min.js', array( 'jquery' ), '20150325', true );
+
+ 	wp_enqueue_script( 'academica-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20150325', true );
+
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -105,62 +97,8 @@ function academica_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Sidebar: Homepage (Left)', 'academica' ),
-		'id'            => 'sidebar-6',
-		'before_widget' => '<div id="%1$s" class="widget clearfix %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="heading">',
-		'after_title'   => '</h3>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Sidebar: Homepage (Right)', 'academica' ),
-		'id'            => 'sidebar-7',
-		'before_widget' => '<div id="%1$s" class="widget clearfix %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="heading">',
-		'after_title'   => '</h3>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Sidebar: Homepage (Middle)', 'academica' ),
-		'id'            => 'sidebar-8',
-		'before_widget' => '<div id="%1$s" class="widget clearfix %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2>',
-		'after_title'   => '</h2>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Sidebar: Archive Pages', 'academica' ),
-		'id'            => 'sidebar-3',
-		'before_widget' => '<div id="%1$s" class="widget clearfix %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="heading">',
-		'after_title'   => '</h3>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Sidebar: Pages (Left)', 'academica' ),
-		'id'            => 'sidebar-4',
-		'before_widget' => '<div id="%1$s" class="widget clearfix %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="heading">',
-		'after_title'   => '</h3>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Sidebar: Pages (Right)', 'academica' ),
-		'id'            => 'sidebar-5',
-		'before_widget' => '<div id="%1$s" class="widget clearfix %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="heading">',
-		'after_title'   => '</h3>',
-	) );
-
-	register_sidebar( array(
 		'name'          => __( 'Footer', 'academica' ),
-		'id'            => 'sidebar-9',
+		'id'            => 'sidebar-3',
 		'before_widget' => '<div id="%1$s" class="widget clearfix %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="heading">',
@@ -187,43 +125,78 @@ function academica_default_widgets( $theme ) {
 		$sidebars['sidebar-1'] = array( 0 => 'pages-2' );
 	}
 
-	if ( empty( $sidebars['sidebar-6'] ) ) {
-		$pages = get_option( 'widget_pages', array( '_multiwidget' => 1 ) );
-		$pages[3] = array( 'title' => __( 'Start here', 'academica' ) );
-		update_option( 'widget_pages', $pages );
-		$sidebars['sidebar-6'] = array( 0 => 'pages-3' );
-	}
-
-	if ( empty( $sidebars['sidebar-2'] ) ) {
-		$widget = get_option( 'widget_academica-featured-posts-gallery', array( '_multiwidget' => 1 ) );
-		$widget[2] = array(
-			'title' => __( 'Latest Posts', 'academica' ),
-			'category' => 0,
-			'display' => 'list',
-			'amount' => 4,
-		);
-		update_option( 'widget_academica-featured-posts-gallery', $widget );
-		$sidebars['sidebar-2'] = array( 0 => 'academica-featured-posts-gallery-2' );
-	}
-
-	if ( empty( $sidebars['sidebar-7'] ) ) {
-		$widget = get_option( 'widget_academica-featured-posts-gallery', array( '_multiwidget' => 1 ) );
-		$widget[3] = array(
-			'title' => __( 'Latest Posts', 'academica' ),
-			'category' => 0,
-			'display' => 'list',
-			'amount' => 4,
-		);
-		update_option( 'widget_academica-featured-posts-gallery', $widget );
-		$sidebars['sidebar-7'] = array( 0 => 'academica-featured-posts-gallery-3' );
-	}
-
 	$sidebars['wp_inactive_widgets'] = array();
 	$sidebars['array_version'] = 3;
 
 	update_option( 'sidebars_widgets', $sidebars );
 }
 add_action( 'after_switch_theme', 'academica_default_widgets' );
+
+/*
+ * Count number of widgets in a sidebar
+ */
+function academica_widgets_count_class( $index = 1 ) {
+    global $wp_registered_sidebars, $wp_registered_widgets;
+
+    if ( is_int($index) ) {
+        $index = "sidebar-$index";
+    } else {
+        $index = sanitize_title($index);
+        foreach ( (array) $wp_registered_sidebars as $key => $value ) {
+            if ( sanitize_title($value['name']) == $index ) {
+                $index = $key;
+                break;
+            }
+        }
+    }
+
+    $sidebars_widgets = wp_get_sidebars_widgets();
+
+    if ( empty( $wp_registered_sidebars[ $index ] ) || empty( $sidebars_widgets[ $index ] ) || ! is_array( $sidebars_widgets[ $index ] ) ) {
+        return '';
+    }
+
+    $count = 0;
+
+    foreach ( (array) $sidebars_widgets[ $index ] as $id ) {
+        if ( ! isset( $wp_registered_widgets[ $id ] ) ) continue;
+
+        $count++;
+    }
+
+    return ' widgets-' . $count;
+}
+
+/**
+ * Creates a nicely formatted and more specific title element text
+ * for output in head of document, based on current view.
+ *
+ * @param string $title Default title text for current view.
+ * @param string $sep Optional separator.
+ * @return string Filtered title.
+ */
+function academica_wp_title( $title, $sep ) {
+
+	if ( is_feed() )
+		return $title;
+
+	global $paged, $page;
+
+	// Add the site name.
+	$title .= get_bloginfo( 'name' );
+
+	// Add the site description for the home/front page.
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) )
+		$title .= " $sep $site_description";
+
+	// Add a page number if necessary.
+	if ( $paged >= 2 || $page >= 2 )
+		$title .= " $sep " . sprintf( __( 'Page %s', 'academica' ), max( $paged, $page ) );
+
+	return $title;
+}
+add_filter( 'wp_title', 'academica_wp_title', 10, 2 );
 
 /**
  * Get wp_page_menu() to show a home link.
@@ -244,7 +217,7 @@ add_filter( 'wp_page_menu_args', 'academica_page_menu_args' );
  * @return array
  */
 function academica_comment_form_defaults( $args ) {
-	$args['title_reply'] = __( 'Post a Comment', 'academica' );
+	$args['title_reply'] = __( 'Leave a comment', 'academica' );
 	return $args;
 }
 add_filter( 'comment_form_defaults', 'academica_comment_form_defaults' );
@@ -298,10 +271,10 @@ function academica_set_content_width() {
 	$classes = academica_sidebar_classes();
 
 	if ( in_array( 'column-double', $classes ) || is_page_template( 'template-sidebar-left.php' ) || is_page_template( 'template-sidebar-right.php' ) )
-		$content_width = 730;
+		$content_width = 880;
 
 	elseif ( in_array( 'column-full', $classes ) || is_page_template( 'template-full-width.php' ) )
-	$content_width = 960;
+	$content_width = 1170;
 }
 add_action( 'template_redirect', 'academica_set_content_width' );
 
@@ -316,25 +289,6 @@ function academica_comment_form_before() {
 add_action( 'comment_form_before', 'academica_comment_form_before' );
 
 /**
- * Appends an infinity symbol as permalink to Aside posts
- *
- * @param string $content
- * @return string
- */
-function academica_aside_infinity( $content ) {
-
-	if ( has_post_format( 'aside' ) && ! is_singular() ) {
-		$content .= sprintf( ' <a href="%1$s" title="%2$s" rel="bookmark">&#8734;</a>',
-			esc_url( get_permalink() ),
-			esc_attr( sprintf( __( 'Permanent Link to %s', 'academica' ), the_title_attribute( 'echo=0' ) ) )
-		);
-	}
-
-	return $content;
-}
-add_filter( 'the_content', 'academica_aside_infinity', 0 ); // run before wpautop
-
-/**
  * Returns an array with classes, based on the number of active sidebars and the
  * page that is being viewed
  *
@@ -344,40 +298,27 @@ function academica_sidebar_classes() {
 	$classes = array();
 	$sidebar_left = $sidebar_right = '';
 
-	if ( is_front_page() ) {
-		$sidebar_left = 'sidebar-6';
-		$sidebar_right = 'sidebar-7';
-	} elseif ( is_page() ) {
-		$sidebar_left = 'sidebar-4';
-		$sidebar_right = 'sidebar-5';
-	} else{
-		$sidebar_left = 'sidebar-1';
-		$sidebar_right = 'sidebar-2';
-	}
+	$sidebar_left = 'sidebar-1';
+	$sidebar_right = 'sidebar-2';
 
-	if ( // Not an achive and no active sidebars
-		( ! is_archive() && ! is_active_sidebar( $sidebar_left ) && ! is_active_sidebar( $sidebar_right ) )
-
-		// Archive or Search and archive sidebar not active
-		|| ( ( is_archive() || is_search() ) && ! is_active_sidebar( 'sidebar-3' ) )
+	if ( // Not an archive and no active sidebars
 
 		// Single post view and post set to full-width
-		|| ( is_singular( 'post' ) && 'column-full' == get_post_meta( get_the_ID(), '_academica_post_layout', true ) ) )
+		( is_singular( 'post' ) && 'column-full' == get_post_meta( get_the_ID(), '_academica_post_layout', true ) ) )
 		$classes[] = 'column-full';
 
 	elseif (
 		// Just one sidebar active
-		! is_active_sidebar( $sidebar_left ) || ! is_active_sidebar( $sidebar_right ) || ( is_archive() || is_search() )
+		! is_active_sidebar( $sidebar_left ) || ! is_active_sidebar( $sidebar_right )
 
 		// Single post view and post set to only left sidebar
 		|| ( is_singular( 'post' ) && 'column-right' == get_post_meta( get_the_ID(), '_academica_post_layout', true ) ) )
 		$classes[] = 'column-double';
 
-	if ( // No active right sidebar or Archive or Search view with active sidebar
-		! is_active_sidebar( $sidebar_right ) || ( ( is_archive() || is_search() ) && is_active_sidebar( 'sidebar-3' ) )
+	if (
 
 		// Single post view and post set to only left sidebar
-		|| ( is_singular( 'post' ) && 'column-right' == get_post_meta( get_the_ID(), '_academica_post_layout', true ) ) )
+		( is_singular( 'post' ) && 'column-right' == get_post_meta( get_the_ID(), '_academica_post_layout', true ) ) )
 		$classes[] = 'column-right';
 
 	return $classes;
@@ -501,23 +442,6 @@ function academica_save_post( $post_id ){
 }
 add_action( 'save_post', 'academica_save_post' );
 
-/**
- * Returns whether there are featured posts available
- *
- * @return bool
- */
-function academica_has_featured_posts() {
-	return (bool) apply_filters( 'academica_get_featured_posts', false );
-}
-
-/**
- * Returns an array with post objects
- *
- * @return array
- */
-function academica_get_featured_posts() {
-	return apply_filters( 'academica_get_featured_posts', array() );
-}
 
 if ( ! function_exists( 'academica_breadcrumbs' ) ) :
 /**
@@ -535,9 +459,17 @@ function academica_breadcrumbs() {
 
 		if ( is_category() ) {
 			global $wp_query;
+
 			$cat = get_category( $wp_query->get_queried_object()->term_id );
-			if ( 0 < $cat->parent )
-				echo get_category_parents( get_category( $cat->parent ), true, $sep );
+
+			if ( $cat->parent ) {
+				$cat_parents = get_category_parents( get_category( $cat->parent ), true, $sep );
+
+				if ( ! is_wp_error( $cat_parents ) && 0 < $cat->parent ) {
+					echo $cat_parents;
+				}
+			}
+
 			echo $before . single_cat_title() . $after;
 
 		} elseif ( is_day() ) {
@@ -557,8 +489,12 @@ function academica_breadcrumbs() {
 				global $post;
 				echo '<a href="' . get_permalink( $post->post_parent ) . '">' . get_the_title( $post->post_parent ) . '</a>' . $sep . $before . get_the_title() . $after;
 			} else {
-				$cat = get_the_category(); $cat = $cat[0];
-				echo get_category_parents( $cat, true, $sep ) . $before . get_the_title() . $after;
+				$cat = get_the_category();
+				$cat = $cat[0];
+				$cat_parents = get_category_parents( $cat, true, $sep );
+
+				if ( ! is_wp_error( $cat_parents ) )
+					echo $cat_parents . $before . get_the_title() . $after;
 			}
 
 		} elseif ( is_page() ) {
@@ -595,3 +531,19 @@ function academica_breadcrumbs() {
 	}
 }
 endif;
+
+/**
+ * Outputs footer text
+ */
+function academica_the_footer_text( $date_fmt = 'Y', $echo = true ) {
+
+	$text = sprintf( __( 'Powered by <a href="%s">WordPress</a> / Academica WordPress Theme by <a href="%s">WPZOOM</a>', 'academica' ), 'http://wordpress.org', 'http://www.wpzoom.com' );
+
+	$html = apply_filters( 'academica_the_footer_text', $text ) ;
+	$html = apply_filters( 'academica_the_footer_text', $html, $text );
+
+	if ( $echo ) {
+		echo $html;
+	}
+	return $html;
+}

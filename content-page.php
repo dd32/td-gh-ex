@@ -6,6 +6,10 @@
 
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+	<?php
+ 		the_title( '<h1 class="title-header">', '</h1>' );
+ 	?>
+
 	<div class="entry-content clearfix">
 		<?php
 		the_content();
@@ -16,8 +20,6 @@
 		) ); ?>
 	</div><!-- end .entry-content -->
 
-	<div class="entry-meta">
-		<?php edit_post_link( __( 'Edit', 'academica' ), '<span class="edit-link">', '</span>' ); ?>
-	</div><!-- end .entry-meta -->
+	<?php edit_post_link( __( 'Edit', 'academica' ), '<span class="edit-link">', '</span>' ); ?>
 
 </div><!-- end #post-## -->

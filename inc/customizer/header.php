@@ -36,8 +36,8 @@
 function academica_custom_header_setup() {
 	$args = array(
 		'default-image'          => '',
-		'default-text-color'     => '0c5390',
-		'width'                  => 960,
+		'default-text-color'     => 'ffffff',
+		'width'                  => 1600,
 		'height'                 => 300,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'academica_header_style',

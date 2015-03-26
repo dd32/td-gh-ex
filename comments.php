@@ -12,7 +12,7 @@ if ( post_password_required() )
 	<?php if ( have_comments() ) : ?>
 
 		<hr />
-		<h2><?php comments_number( __( 'Leave a Comment', 'academica' ) ); ?></h2>
+		<h2><?php comments_number( __( 'Leave a comment', 'academica' ) ); ?></h2>
 
 		<ol class="commentlist">
 			<?php wp_list_comments( 'avatar_size=40' ); ?>

@@ -33,7 +33,6 @@ class Academica_Featured_Posts_Gallery extends WP_Widget {
 		$title      = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
 		$category   = absint( $instance['category'] );
 		$amount     = absint( $instance['amount'] );
-		$display    = ( 'grid' == $instance['display'] ) ? 'grid' : 'list';
 		$count = 0;
 		$query_args = array(
 			// Get more posts than we need, in case there are not enough post thumbnails
@@ -68,31 +67,21 @@ class Academica_Featured_Posts_Gallery extends WP_Widget {
 
 				<?php while( $r->have_posts() && $count < $amount ) : $r->the_post(); ?>
 
-				<li class="clearfix <?php echo ( 'list' == $display ) ? 'post' : 'grid'; ?>">
+				<li class="clearfix post">
 
 					<?php if ( '' != get_the_post_thumbnail() ) : ?>
 					<div class="thumb">
 						<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo esc_attr( sprintf( __( 'Permanent Link to %s', 'academica' ), the_title_attribute( 'echo=0' ) ) ); ?>">
-							<?php the_post_thumbnail( 'post-thumbnail', array( 'title' => '' ) ); ?>
+							<?php the_post_thumbnail( 'academica-featured-posts-widget', array( 'title' => '' ) ); ?>
 						</a>
 					</div>
 					<?php
-					elseif ( 'grid' == $display ) : ?>
-					<div class="thumb">
-						<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo esc_attr( sprintf( __( 'Permanent Link to %s', 'academica' ), the_title_attribute( 'echo=0' ) ) ); ?>">
-							<span class="thumb-placeholder"></span>
-						</a>
-					</div>
-					<?php
+
 					endif;
 
-					if ( 'list' == $display ) {
-						the_title( '<h2><a href="' . esc_url( get_permalink() ) . '" title="' . esc_attr( sprintf( __( 'Permanent Link to %s', 'academica' ), the_title_attribute( 'echo=0' ) ) ) . '" rel="bookmark">', '</a></h2>' );
-						$excerpt = get_the_excerpt();
-						if ( ! empty( $excerpt ) ) {
-							echo '<p>' . wp_trim_words( $excerpt, 25 ) . '</p>';
-						}
-					} ?>
+					the_title( '<h3><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
+
+					?>
 				</li>
 
 				<?php $count++; endwhile; ?>
@@ -115,7 +104,6 @@ class Academica_Featured_Posts_Gallery extends WP_Widget {
 		$instance['title']    = strip_tags( $new_instance['title'] );
 		$instance['category'] = absint( $new_instance['category'] );
 		$instance['amount']   = absint( $new_instance['amount'] );
-		$instance['display']  = ( 'grid' == $new_instance['display'] ) ? 'grid' : 'list';
 
 		$this->flush_widget_cache();
 
@@ -127,11 +115,10 @@ class Academica_Featured_Posts_Gallery extends WP_Widget {
 	}
 
 	function form( $instance ) {
-		$instance = wp_parse_args( (array) $instance, array( 'title' => '', 'category' => 0, 'amount' => 4, 'display' => 'list' ) );
+		$instance = wp_parse_args( (array) $instance, array( 'title' => '', 'category' => 0, 'amount' => 4 ) );
 		$title    = strip_tags( $instance['title'] );
 		$category = absint( $instance['category'] );
 		$amount   = absint( $instance['amount'] );
-		$display  = ( 'grid' == $instance['display'] ) ? 'grid' : 'list';
 		?>
 
 		<p>
@@ -153,17 +140,6 @@ class Academica_Featured_Posts_Gallery extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id( 'amount' ); ?>"><?php _e( 'Number of posts to show:', 'academica' ); ?></label><br />
 			<input id="<?php echo $this->get_field_id( 'amount' ); ?>" name="<?php echo $this->get_field_name( 'amount' ); ?>" type="text" value="<?php echo esc_attr( $amount ); ?>" size="3" />
-		</p>
-		<p>
-			<label><?php _e( 'Display as:', 'academica' ); ?></label><br />
-			<label>
-				<input name="<?php echo $this->get_field_name( 'display' ); ?>" type="radio" value="<?php echo esc_attr( 'list' ); ?>" <?php checked( $display, 'list' ); ?> />
-				<?php _e( 'Image list', 'academica' ); ?>
-			</label><br />
-			<label>
-				<input name="<?php echo $this->get_field_name( 'display' ); ?>" type="radio" value="<?php echo esc_attr( 'grid' ); ?>" <?php checked( $display, 'grid' ); ?> />
-				<?php _e( 'Image grid', 'academica' ); ?>
-			</label>
 		</p>
 
 		<?php

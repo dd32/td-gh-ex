@@ -13,7 +13,7 @@ get_header(); ?>
 	</div><!-- end .column-title -->
 
 	<div class="column column-narrow">
-		<?php dynamic_sidebar( 'sidebar-3' ); ?>
+		<?php dynamic_sidebar( 'sidebar-1' ); ?>
 	</div><!-- end .column-narrow -->
 
 	<div class="column column-content posts">
@@ -33,6 +33,10 @@ get_header(); ?>
 		<?php endif; ?>
 
 	</div><!-- end .column-content -->
+
+	<div class="column column-narrow column-last">
+		<?php dynamic_sidebar( 'sidebar-2' ); ?>
+	</div><!-- end .column-narrow -->
 
 </div><!-- end #content -->
 
