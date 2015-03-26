@@ -545,7 +545,7 @@ function ct_ignite_add_customizer_content( $wp_customize ) {
     $wp_customize->add_setting( 'ct_ignite_custom_css_setting', array(
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
-        'sanitize_callback' => 'esc_textarea',
+        'sanitize_callback' => 'wp_filter_nohtml_kses',
     ) );
     // control
     $wp_customize->add_control( new ct_ignite_Textarea_Control(
@@ -790,19 +790,6 @@ function ct_ignite_customizer_social_media_array() {
 	return $social_sites;
 }
 
-// set the comment display values on new sites or sites updating to new version with this feature
-function compete_themes_set_comment_display_values() {
-
-    // get the current value
-    $current_settings = get_theme_mod( 'ct_ignite_comments_setting' );
-
-    // if empty, set to all
-    if( empty( $current_settings ) ) {
-        set_theme_mod( 'ct_ignite_comments_setting', array( 'posts', 'pages', 'attachments', 'none' ) );
-    }
-}
-add_action( 'init', 'compete_themes_set_comment_display_values' );
-
 // get the available font weights based on the the font family selection
 function ct_ignite_get_available_font_weights(){
 
@@ -870,59 +857,11 @@ function ct_ignite_get_available_font_weights(){
     return $font_weights;
 }
 
-function ct_ignite_customizer_ad_array() {
-
-    // create array of ad text
-    $ads_array = array(
-        __('Have you seen Ignite Plus?', 'ignite') => 'https://www.competethemes.com/ignite-plus/?utm_source=customizer-ad&utm_medium=ignite&utm_content=have-you-seen-ignite-plus&utm_campaign=customizer-ads',
-        __('Upgrade Ignite', 'ignite') => 'https://www.competethemes.com/ignite-plus/?utm_source=customizer-ad&utm_medium=ignite&utm_content=upgrade-ignite&utm_campaign=customizer-ads',
-        __('View the Ignite Plus upgrade', 'ignite') => 'https://www.competethemes.com/ignite-plus/?utm_source=customizer-ad&utm_medium=ignite&utm_content=view-the-ignite-plus-upgrade&utm_campaign=customizer-ads',
-        __('Check out Ignite Plus', 'ignite') => 'https://www.competethemes.com/ignite-plus/?utm_source=customizer-ad&utm_medium=ignite&utm_content=check-out-ignite-plus&utm_campaign=customizer-ads',
-        __('Ignite Theme Upgrade', 'ignite') => 'https://www.competethemes.com/ignite-plus/?utm_source=customizer-ad&utm_medium=ignite&utm_content=ignite-theme-upgrade&utm_campaign=customizer-ads',
-        __('Premium Upgrade for Ignite', 'ignite') => 'https://www.competethemes.com/ignite-plus/?utm_source=customizer-ad&utm_medium=ignite&utm_content=premium-upgrade-for-ignite&utm_campaign=customizer-ads'
-    );
-    return $ads_array;
-}
-
-function ct_ignite_assign_customizer_ad() {
-
-    // if the ad text isn't set already
-    if( ! get_option('ct_ignite_ad_text') ) {
-
-        $ads_array = ct_ignite_customizer_ad_array();
-
-        // randomly pick one
-        $ad = rand(0,5);
-
-        // get randomly selected ad from array
-        $ad = array_slice($ads_array, $ad, 1);
-
-        // the phrase from the array
-        $ad_text = key($ad);
-
-        // sanitize
-        $ad_text = esc_html($ad_text);
-
-        // update database
-        update_option('ct_ignite_ad_text', $ad_text);
-    }
-}
-add_action('admin_init', 'ct_ignite_assign_customizer_ad');
-
 function ct_ignite_customize_preview_js() {
-
-    // get the ad text
-    $ad = get_option('ct_ignite_ad_text');
-
-    // get the array of ads
-    $ads_array = ct_ignite_customizer_ad_array();
-
-    // get the link based on the ad text
-    $link = $ads_array[$ad];
 
     ?>
 	<script>
-		jQuery('#customize-info').append('<div class="upgrades-ad"><a href="<?php echo esc_url($link);?>" target="_blank"><?php echo esc_html($ad); ?> <span>&rarr;</span></a></div>');
+		jQuery('#customize-info').append('<div class="upgrades-ad"><a href="https://www.competethemes.com/ignite-plus/" target="_blank">View the Ignite Plus Upgrade <span>&rarr;</span></a></div>');
 	</script>
 <?php }
 add_action('customize_controls_print_footer_scripts', 'ct_ignite_customize_preview_js');
