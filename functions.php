@@ -6,10 +6,8 @@ require_once get_template_directory() . '/theme-option/ariniothemes.php';
  
 
 
-if ( ! isset( $content_width ) ) {
-	$content_width = 900;
-}
-
+if ( ! isset( $content_width ) )
+	$content_width = 900; /* pixels */
 
 
 
