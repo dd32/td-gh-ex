@@ -9,9 +9,12 @@
 ?>
 
 	</div></div><!-- #content -->
-
-	<footer id="colophon" class="site-footer" role="contentinfo"><div class="inner">
-		<div class="site-info">
+	<footer id="colophon" class="site-footer" role="contentinfo">
+    	
+		<?php get_sidebar( 'footer' ); ?>
+        
+        
+		<div class="site-info"><div class="inner">
         	<div class="info-copyright">
                 <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'fmi' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'fmi' ), 'WordPress' ); ?></a>
                 <span class="sep"> | </span>
@@ -46,8 +49,8 @@ if( of_get_option( 'vs-social-flickr' ) ) :
         	</div>
 			<div class="clear"></div>
         
-		</div><!-- .site-info -->
-	</div></footer><!-- #colophon -->
+		</div></div><!-- .site-info -->
+	</footer><!-- #colophon -->
     
     <div id="back_top"><i class="fa fa-angle-up"></i></div>
     

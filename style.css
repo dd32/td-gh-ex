@@ -4,7 +4,7 @@ Theme URI: http://forrss.com/themes/fmi/
 Author: Forrss
 Author URI: http://forrss.com/
 Description: Fmi is an elegant blog theme with responsive and easily customizable.
-Version: 1.3.6
+Version: 1.3.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: fmi
@@ -931,7 +931,6 @@ object {
 	font-weight:bold;
 	color:#46A8C8;
 	text-shadow:0 0 20px #4bbee4;
-	font-family:"Roboto",sans-serif;
 }
 .divsearch{
 	width:270px;
@@ -1033,9 +1032,9 @@ object {
 	padding:0 0 50px;
 }
 .content-area{
-	width:70%;
+	width:68%;
 	float:left;
-	padding:5px 20px 20px 0;
+	padding:5px 0 20px 0;
 	display:inline-block;
 }
 
@@ -1229,15 +1228,16 @@ object {
 	font-size:0;
 	line-height:0;
 	margin:0 0 10px;
+	text-align:center;
 }
 
 
 /*sidebar*/
 .widget-area{
-	width:30%;
-	float:left;
+	width:29%;
+	float:right;
 	display:inline-block;
-	padding:35px 0 0 10px;
+	padding:35px 0 0 0;
 }
 .widget-area .widget{
 	margin:0 0 30px;
@@ -1271,6 +1271,16 @@ object {
 }
 .widget-area ul ul{ 
 	padding-left:10px;
+}
+.left-sidebar .content-area{
+	float:right;
+}
+.left-sidebar .widget-area{
+	float:left;
+}
+.no-sidebar-full-width .content-area{
+	float:none;
+	width:100%;
 }
 
 /*comments*/
@@ -1418,11 +1428,13 @@ object {
 .search-submit .fa{ color:#ffffff;}
 .search-submit:hover{opacity: 0.8;filter:alpha(opacity=80);}
 
+
 /*footer*/
 .site-footer{
-	border-top:1px solid #E6E6E6;
+	
 }
 .site-info{
+	border-top:1px solid #E6E6E6;
 	width:100%;
 	height:70px;
 }
@@ -1446,6 +1458,53 @@ object {
 }
 .site-info a:hover .fa{
 	color:#105cb6;
+}
+
+.sidebar-footer{
+	border-top:1px solid #E6E6E6;
+	padding:20px 0;
+}
+.sidebar-footer ul,
+.sidebar-footer ol{
+	list-style:none;
+	margin:0;
+}
+.sfdiv{
+	width: 31.2883%;
+	float: left;
+    margin-right: 3.06749%;
+}
+.sfdiv-last{
+	margin-right: 0;
+}
+.sidebar-footer .widget{
+	margin:0 0 30px;
+	padding:0 10px;
+}
+.sidebar-footer .widget-title{
+	line-height:16px;
+	padding:0 0 10px;
+	font-weight:bold;
+	color:#83AA59;
+	text-transform:uppercase;
+	font-size:16px;
+}
+.sidebar-footer li{
+	line-height:22px;
+	padding:0 0 4px;
+	font-size:13px;
+}
+.sidebar-footer li a:hover{
+	text-decoration:underline;
+}
+.sidebar-footer table{ 
+	width:100%;
+}
+.sidebar-footer select{ 
+	max-width:100%;
+}
+.sidebar-footer ul ul{ 
+	padding-left:10px;
 }
 
 #back_top{
@@ -1647,6 +1706,11 @@ object {
 		width:50%;
 		float:left;
 		padding:0 0 0 10px;
+	}
+	.sidebar-footer .sfdiv{
+		width:100%;
+		margin-right:0;
+		float:none;
 	}
 }
 @media screen and (max-width:479px) {

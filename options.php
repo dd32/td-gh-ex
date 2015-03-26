@@ -4,7 +4,7 @@
  */
 function optionsframework_option_name() {
 	// Change this to use your theme slug
-	return 'options-framework-theme';
+	return 'fmi_options';
 }
 
 /**
@@ -112,37 +112,52 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => __( 'Styling Settings', 'fmi' ),
+		'name' => __( 'Design', 'fmi' ),
 		'type' => 'heading'
 	);
+
+
 	$options[] = array(
-		'name' => __( 'Body font URL', 'fmi' ),
-		'desc' => __( 'Enter ONLY the fonts URL here.', 'fmi' ),
-		'id' => 'vs-body-google-font-url',
-		'std' => '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic',
-		'type' => 'text'
+		'name' 		=> __( 'Default layout', 'fmi' ),
+		'desc' 		=> __( 'Select default layout. This layout will be reflected in whole site archives, search etc. The layout for a single post and page can be controlled from below options.', 'fmi' ),
+		'id' 			=> 'fmi_default_layout',
+		'std' 		=> 'right_sidebar',
+		'type' 		=> 'images',
+		'options' 	=> array(
+								'right_sidebar' 	=> get_template_directory_uri() . '/images/right-sidebar.png',
+								'left_sidebar' 		=> get_template_directory_uri() . '/images/left-sidebar.png',
+								'no_sidebar_full_width'				=> get_template_directory_uri() . '/images/no-sidebar-full-width-layout.png',
+							)
 	);
+
 	$options[] = array(
-		'name' => __( 'Body font name', 'fmi' ),
-		'desc' => __( 'Enter the FULL name.', 'fmi' ),
-		'id' => 'vs-body-google-font-name',
-		'std' => 'font-family: \'Open Sans\', sans-serif;',
-		'type' => 'text'
+		'name' 		=> __( 'Default layout for pages only', 'fmi' ),
+		'desc' 		=> __( 'Select default layout for pages. This layout will be reflected in all pages unless unique layout is set for specific page.', 'fmi' ),
+		'id' 			=> 'fmi_pages_default_layout',
+		'std' 		=> 'right_sidebar',
+		'type' 		=> 'images',
+		'options' 	=> array(
+								'right_sidebar' 	=> get_template_directory_uri() . '/images/right-sidebar.png',
+								'left_sidebar' 		=> get_template_directory_uri() . '/images/left-sidebar.png',
+								'no_sidebar_full_width'				=> get_template_directory_uri() . '/images/no-sidebar-full-width-layout.png',
+							)
 	);
+
 	$options[] = array(
-		'name' => __( 'Heading font URL', 'fmi' ),
-		'desc' => __( 'Enter ONLY the fonts URL here.', 'fmi' ),
-		'id' => 'vs-heading-google-font-url',
-		'std' => '//fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic',
-		'type' => 'text'
+		'name' 		=> __( 'Default layout for single posts only', 'fmi' ),
+		'desc' 		=> __( 'Select default layout for single posts. This layout will be reflected in all single posts unless unique layout is set for specific post.', 'fmi' ),
+		'id' 			=> 'fmi_single_posts_default_layout',
+		'std' 		=> 'right_sidebar',
+		'type' 		=> 'images',
+		'options' 	=> array(
+								'right_sidebar' 	=> get_template_directory_uri() . '/images/right-sidebar.png',
+								'left_sidebar' 		=> get_template_directory_uri() . '/images/left-sidebar.png',
+								'no_sidebar_full_width'				=> get_template_directory_uri() . '/images/no-sidebar-full-width-layout.png',
+							)
 	);
-	$options[] = array(
-		'name' => __( 'Heading font name', 'fmi' ),
-		'desc' => __( 'Enter the FULL name.', 'fmi' ),
-		'id' => 'vs-heading-google-font-name',
-		'std' => 'font-family: \'Roboto\', sans-serif;',
-		'type' => 'text'
-	);
+
+
+
 	$options[] = array(
 		'name' => __( 'Custom CSS', 'fmi' ),
 		'desc' => __( 'Add Custom CSS to add your own styling to the Theme.', 'fmi' ),
@@ -305,3 +320,34 @@ function optionsframework_options() {
 
 	return $options;
 }
+
+add_action( 'optionsframework_after','fmi_options_display_sidebar' );
+/**
+ * admin sidebar
+ */
+function fmi_options_display_sidebar() { ?>
+	<div id="optionsframework-sidebar">
+		<div class="metabox-holder">
+	    	<div class="postbox">
+	    		<h3><?php esc_attr_e( 'About Fmi', 'fmi' ); ?></h3>
+      			<div class="inside">
+					<div class="option-btn"><a class="btn demo" target="_blank" href="<?php echo esc_url( 'http://forrss.com/demo/fmi/' ); ?>"><?php esc_attr_e( 'View Demo' , 'fmi' ); ?></a></div>
+
+	      			<div align="center" style="padding:5px; background-color:#fafafa;border: 1px solid #CCC;margin-bottom: 10px;">
+	      				<strong><?php esc_attr_e( 'If you like my work. Buy me a coffee.', 'fmi' ); ?></strong>
+	      				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+							<input type="hidden" name="cmd" value="_s-xclick">
+							<input type="hidden" name="hosted_button_id" value="EZZUACHETUBXW">
+							<input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal">
+							<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+						</form>
+					</div>
+      			</div>
+	    	</div>
+	  	</div>
+	</div>
+<?php
+}
+
+
+?>

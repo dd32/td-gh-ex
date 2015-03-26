@@ -82,42 +82,12 @@ endif; // fmi_setup
 add_action( 'after_setup_theme', 'fmi_setup' );
 
 /**
- * Register widget area.
- *
- * @link http://codex.wordpress.org/Function_Reference/register_sidebar
- */
-function fmi_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'fmi' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
-}
-add_action( 'widgets_init', 'fmi_widgets_init' );
-
-/**
  * Enqueue scripts and styles.
  */
 function fmi_theme_scripts() {
 	wp_enqueue_style( 'fmi-style', get_stylesheet_uri() );
-	
-	wp_enqueue_style('fmi-font-awesome',get_template_directory_uri().'/font-awesome/css/font-awesome.min.css',array() );
-	
-	if(of_get_option( 'vs-body-google-font-url' ) ) {
-        wp_enqueue_style( 'fmi-google-fonts-body', of_get_option( 'vs-body-google-font-url' ),array() );
-    } else {
-        wp_enqueue_style( 'fmi-google-body-fonts-default', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic',array() );
-    }
-	
-	if( of_get_option( 'vs-heading-google-font-url' ) ) {
-        wp_enqueue_style( 'fmi-google-fonts-heading', of_get_option('vs-heading-google-font-url'), array() );
-    } else {
-        wp_enqueue_style( 'fmi-google-heading-fonts-default', '//fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic', array() );
-    }
+	wp_enqueue_style( 'fmi-font-awesome',get_template_directory_uri().'/font-awesome/css/font-awesome.min.css',array() );
+	wp_enqueue_style( 'fmi-google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic',array() );
 
 	wp_enqueue_script( 'fmi-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
@@ -159,8 +129,6 @@ add_action( 'wp_enqueue_scripts', 'fmi_theme_scripts' );
 
 function fmi_theme_styles(){
 	echo '<style type="text/css" media="screen">';
-	if(of_get_option('vs-body-google-font-name') <> ""){echo "body{".of_get_option('vs-body-google-font-name')."}";}
-	if( of_get_option('vs-heading-google-font-name') <> ""){echo "#title a{".of_get_option('vs-heading-google-font-name')."}";}
 	echo of_get_option( 'vs-custom-css' );
 	echo '</style>';
 }
@@ -196,4 +164,6 @@ load_template( $optionsfile );
 
 
 require_once( get_template_directory() . '/inc/header-functions.php' );
+require_once( get_template_directory() . '/inc/functions.php' );
+require_once( get_template_directory() . '/inc/widgets/widgets.php' );
 ?>

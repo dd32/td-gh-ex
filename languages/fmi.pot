@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: fmi\n"
-"POT-Creation-Date: 2015-03-18 02:24+0800\n"
-"PO-Revision-Date: 2015-03-18 02:24+0800\n"
+"POT-Creation-Date: 2015-03-26 08:32+0800\n"
+"PO-Revision-Date: 2015-03-26 08:33+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh\n"
@@ -50,7 +50,8 @@ msgstr ""
 
 #: content-none.php:20
 #, php-format
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
 #: content-page.php:20 inc/template-tags.php:33 inc/template-tags.php:195
@@ -67,70 +68,66 @@ msgstr ""
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: footer.php:16
+#: footer.php:19
 msgid "http://wordpress.org/"
 msgstr ""
 
-#: footer.php:16
+#: footer.php:19
 #, php-format
 msgid "Proudly powered by %s"
 msgstr ""
 
-#: footer.php:18
+#: footer.php:21
 #, php-format
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: footer.php:24
+#: footer.php:27
 msgid "Send Us an Email"
 msgstr ""
 
-#: footer.php:26
+#: footer.php:29
 msgid "Contact Us on Skype"
 msgstr ""
 
-#: footer.php:28
+#: footer.php:31
 msgid "Find Us on Facebook"
 msgstr ""
 
-#: footer.php:30
+#: footer.php:33
 msgid "Follow Us on Twitter"
 msgstr ""
 
-#: footer.php:32
+#: footer.php:35
 msgid "Find Us on Google Plus"
 msgstr ""
 
-#: footer.php:34
+#: footer.php:37
 msgid "View our YouTube Channel"
 msgstr ""
 
-#: footer.php:36
+#: footer.php:39
 msgid "Follow Us on Instagram"
 msgstr ""
 
-#: footer.php:38
+#: footer.php:41
 msgid "Pin Us on Pinterest"
 msgstr ""
 
-#: footer.php:40
+#: footer.php:43
 msgid "Find Us on LinkedIn"
 msgstr ""
 
-#: footer.php:42
+#: footer.php:45
 msgid "Find Us on Tumblr"
 msgstr ""
 
-#: footer.php:44
+#: footer.php:47
 msgid "Find Us on Flickr"
 msgstr ""
 
 #: functions.php:53 header.php:40
 msgid "Menu"
-msgstr ""
-
-#: functions.php:91
-msgid "Sidebar"
 msgstr ""
 
 #: header.php:23
@@ -404,6 +401,38 @@ msgstr ""
 msgid "Newer posts"
 msgstr ""
 
+#: inc/widgets/widgets.php:13
+msgid "Right Sidebar"
+msgstr ""
+
+#: inc/widgets/widgets.php:23
+msgid "Left Sidebar"
+msgstr ""
+
+#: inc/widgets/widgets.php:34
+msgid "Footer Sidebar One"
+msgstr ""
+
+#: inc/widgets/widgets.php:36
+msgid "Shows widgets at footer sidebar one."
+msgstr ""
+
+#: inc/widgets/widgets.php:45
+msgid "Footer Sidebar Two"
+msgstr ""
+
+#: inc/widgets/widgets.php:47
+msgid "Shows widgets at footer sidebar two."
+msgstr ""
+
+#: inc/widgets/widgets.php:56
+msgid "Footer Sidebar Three"
+msgstr ""
+
+#: inc/widgets/widgets.php:58
+msgid "Shows widgets at footer sidebar three."
+msgstr ""
+
 #: options.php:23
 msgid "One"
 msgstr ""
@@ -453,7 +482,8 @@ msgid "Favicon"
 msgstr ""
 
 #: options.php:102
-msgid "Upload a favicon to your website, this needs to be 16 pixels by 16 pixels."
+msgid ""
+"Upload a favicon to your website, this needs to be 16 pixels by 16 pixels."
 msgstr ""
 
 #: options.php:107
@@ -465,147 +495,154 @@ msgid "Select this to show the search in the header."
 msgstr ""
 
 #: options.php:115
-msgid "Styling Settings"
+msgid "Design"
 msgstr ""
 
-#: options.php:119
-msgid "Body font URL"
+#: options.php:121
+msgid "Default layout"
 msgstr ""
 
-#: options.php:120 options.php:134
-msgid "Enter ONLY the fonts URL here."
+#: options.php:122
+msgid ""
+"Select default layout. This layout will be reflected in whole site archives, "
+"search etc. The layout for a single post and page can be controlled from "
+"below options."
 msgstr ""
 
-#: options.php:126
-msgid "Body font name"
+#: options.php:134
+msgid "Default layout for pages only"
 msgstr ""
 
-#: options.php:127 options.php:141
-msgid "Enter the FULL name."
-msgstr ""
-
-#: options.php:133
-msgid "Heading font URL"
-msgstr ""
-
-#: options.php:140
-msgid "Heading font name"
+#: options.php:135
+msgid ""
+"Select default layout for pages. This layout will be reflected in all pages "
+"unless unique layout is set for specific page."
 msgstr ""
 
 #: options.php:147
-msgid "Custom CSS"
+msgid "Default layout for single posts only"
 msgstr ""
 
 #: options.php:148
+msgid ""
+"Select default layout for single posts. This layout will be reflected in all "
+"single posts unless unique layout is set for specific post."
+msgstr ""
+
+#: options.php:162
+msgid "Custom CSS"
+msgstr ""
+
+#: options.php:163
 msgid "Add Custom CSS to add your own styling to the Theme."
 msgstr ""
 
-#: options.php:155
+#: options.php:170
 msgid "Social Links"
 msgstr ""
 
-#: options.php:159
+#: options.php:174
 msgid "Email Address"
 msgstr ""
 
-#: options.php:166
+#: options.php:181
 msgid "Skype"
 msgstr ""
 
-#: options.php:173
+#: options.php:188
 msgid "Facebook"
 msgstr ""
 
-#: options.php:180
+#: options.php:195
 msgid "Twitter"
 msgstr ""
 
-#: options.php:187
+#: options.php:202
 msgid "Google Plus"
 msgstr ""
 
-#: options.php:194
+#: options.php:209
 msgid "YouTube"
 msgstr ""
 
-#: options.php:201
+#: options.php:216
 msgid "Instagram"
 msgstr ""
 
-#: options.php:208
+#: options.php:223
 msgid "Pinterest"
 msgstr ""
 
-#: options.php:215
+#: options.php:230
 msgid "LinkedIn"
 msgstr ""
 
-#: options.php:222
+#: options.php:237
 msgid "Tumblr"
 msgstr ""
 
-#: options.php:229
+#: options.php:244
 msgid "Flickr"
 msgstr ""
 
-#: options.php:237
+#: options.php:252
 msgid "Website Text"
 msgstr ""
 
-#: options.php:241
+#: options.php:256
 msgid "404 Error Page Heading"
 msgstr ""
 
-#: options.php:242
+#: options.php:257
 msgid "Enter the heading for the 404 Error page."
 msgstr ""
 
-#: options.php:248
+#: options.php:263
 msgid "Error 404 Message"
 msgstr ""
 
-#: options.php:249
+#: options.php:264
 msgid "Enter the default text on the 404 error page (Page not found)."
 msgstr ""
 
-#: options.php:255
+#: options.php:270
 msgid "No Search Results"
 msgstr ""
 
-#: options.php:256
+#: options.php:271
 msgid "Enter the default text for when no search results are found."
 msgstr ""
 
-#: options.php:265
+#: options.php:280
 msgid "Slider"
 msgstr ""
 
-#: options.php:271
+#: options.php:286
 msgid "Activate slider"
 msgstr ""
 
-#: options.php:272
+#: options.php:287
 msgid "Check to activate slider."
 msgstr ""
 
-#: options.php:281
+#: options.php:296
 #, php-format
 msgid "Image Upload #%1$s"
 msgstr ""
 
-#: options.php:282
+#: options.php:297
 msgid "Upload slider image."
 msgstr ""
 
-#: options.php:287
+#: options.php:302
 msgid "Enter title for your slider."
 msgstr ""
 
-#: options.php:293
+#: options.php:308
 msgid "Enter your slider description."
 msgstr ""
 
-#: options.php:299
+#: options.php:314
 msgid "Enter link to redirect slider when clicked"
 msgstr ""
 

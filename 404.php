@@ -33,9 +33,6 @@ get_header(); ?>
 
         
 	</div><!-- #primary -->
-    
-	<?php get_sidebar();?>
 
-	<div class="clear"></div>
-
+<?php fmi_sidebar_select();?>
 <?php get_footer(); ?>

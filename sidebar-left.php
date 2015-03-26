@@ -7,5 +7,5 @@
 ?>
 
 <div id="secondary" class="widget-area" role="complementary">
-	<?php dynamic_sidebar( 'fmi_right_sidebar' ); ?>
+	<?php dynamic_sidebar( 'fmi_left_sidebar' ); ?>
 </div><!-- #secondary -->

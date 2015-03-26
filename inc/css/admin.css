@@ -1,0 +1,45 @@
+/* Admin CSS*/
+#optionsframework-sidebar {
+    float: left;
+    margin-left: 20px;
+    width: 320px;
+}
+#optionsframework {
+	float: left;
+	width: 800px;
+}
+#optionsframework-sidebar .metabox-holder{
+	padding-top: 0px;
+
+}
+#optionsframework-sidebar .postbox{
+	text-align: center;
+
+}
+#optionsframework .section .heading {
+    border-bottom: 1px solid #DFDFDF;
+    margin: 0 0 15px;
+    padding: 10px 0;
+}
+a.btn {
+    color: #FFFFFF;
+    display: block;
+    font-size: 22px;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+}
+.demo {
+	background: none repeat scroll 0 0 #46a8c8;
+}
+#optionsframework-sidebar a:hover{
+	opacity: 0.9;
+	-webkit-opacity: 0.9;
+	-moz-opacity: 0.9;
+	filter:alpha(opacity=90);
+}
+.option-btn {
+    margin-bottom: 12px;
+}
+/* FONTS */
+.fontawesome { font-family: 'fontawesome'; }
