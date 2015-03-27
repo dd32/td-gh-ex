@@ -1,3 +1,3 @@
-	<nav>	
-			<?php dynamic_sidebar('sidebar') ?>
+	<nav>	
+			<?php dynamic_sidebar('sidebar') ?>
 	</nav>
