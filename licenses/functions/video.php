@@ -13,14 +13,19 @@ function ct_tracks_add_video_meta_box() {
 		return false;
 	}
 
-	add_meta_box(
-		'ct_tracks_video',
-		__( 'Featured Video', 'tracks' ),
-		'ct_tracks_video_callback',
-		'post',
-		'normal',
-		'high'
-	);
+	$screens = array('post', 'page');
+
+	foreach( $screens as $screen ) {
+
+		add_meta_box(
+			'ct_tracks_video',
+			__( 'Featured Video', 'tracks' ),
+			'ct_tracks_video_callback',
+			$screen,
+			'normal',
+			'high'
+		);
+	}
 }
 add_action( 'add_meta_boxes', 'ct_tracks_add_video_meta_box' );
 
@@ -73,17 +78,19 @@ function ct_tracks_video_callback( $post ) {
 	echo '</div>';
 
 	// Display option
-	echo '<div class="ct_tracks_video_display_container">';
-		echo '<p>' . __("Choose where to display the video:", "tracks") . '</p>';
-		echo '<label for="ct_tracks_video_display_post">';
-			echo '<input type="radio" name="ct_tracks_video_display" id="ct_tracks_video_display_post" value="post" ' . checked( $display_value, "post", false ) . '>';
-			_e( 'Display on Post', 'tracks' );
-		echo '</label> ';
-		echo '<label for="ct_tracks_video_display_both">';
-			echo '<input type="radio" name="ct_tracks_video_display" id="ct_tracks_video_display_both" value="both" ' . checked( $display_value, "both", false ) . '>';
-			_e( 'Display on Post and Blog', 'tracks' );
-		echo '</label> ';
-	echo '</div>';
+	if( $post->post_type == 'post' ) {
+		echo '<div class="ct_tracks_video_display_container">';
+			echo '<p>' . __( 'Choose where to display the video:', 'tracks' ) . '</p>';
+			echo '<label for="ct_tracks_video_display_post">';
+				echo '<input type="radio" name="ct_tracks_video_display" id="ct_tracks_video_display_post" value="post" ' . checked( $display_value, "post", false ) . '>';
+				_e( 'Display on Post', 'tracks' );
+			echo '</label> ';
+			echo '<label for="ct_tracks_video_display_both">';
+				echo '<input type="radio" name="ct_tracks_video_display" id="ct_tracks_video_display_both" value="both" ' . checked( $display_value, "both", false ) . '>';
+				_e( 'Display on Post and Blog', 'tracks' );
+			echo '</label> ';
+		echo '</div>';
+	}
 }
 
 // ajax callback to return video embed content
