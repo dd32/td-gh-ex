@@ -8,7 +8,7 @@ Copyright: none
 ---
 Author: Robert Toth
 Author URL: http://toth-illustration.com
-Version: 1.3.1
+Version: 1.3.2
 Theme URL: http://tioreo.com
 Requires: WordPress 4.1
 License: GNU General Public License
@@ -17,7 +17,7 @@ Tags: gray, white, black, right-sidebar, three-columns, flexible-width, custom-b
 
 Overview:
 ---
-Description: Redesign is a simple, clean and highly visible theme. It has transparent graphic elements and colored post formats. Responsive, liquid layout makes it easy to read in handheld units. Max width is 1366 px, adapted for modern desktop computers. The theme is suitable for blogging, news or businesses. Not based on any other WP theme. It's made from scratch.
+Description: Redesign is a simple, clean and highly visible theme. It has transparent graphic elements and colored post formats. Responsive, liquid layout makes it easy to read in handheld units. Max width is 1366 px, adapted for modern desktop computers. The theme is suitable for blogging, news or businesses. Not based on any other WP theme. It is made from scratch.
 
 There are two navigation menus, custom header, custom background, header widget, two sidebar widgets, footer widget, and transparent graphic elements. The suggested measures for the custom header are 1366px x 200px.
 

@@ -3,7 +3,7 @@ Theme Name: Redesign
 
 Theme URI: http://tioreo.com
 
-Description: Redesign is a simple, clean and highly visible theme. It has transparent graphic elements and colored post formats. Responsive, liquid layout makes it equally easy to read in handheld units or modern desktop computers (max width 1366 px). It's an all round theme suitable for blogging/news, business, culture or organizations. Not based on any other WP theme. It's made from scratch.
+Description: Redesign is a simple, clean and highly visible theme. It has transparent graphic elements and colored post formats. Responsive, liquid layout makes it equally easy to read in handheld units or modern desktop computers (max width 1366 px). It is an all round theme suitable for blogging/news, business, culture or organizations. Not based on any other WP theme, it is made from scratch.
 
 - Transparent graphics.
 - Choose from several transparent color post formats.
@@ -19,7 +19,7 @@ Resource All graphic objects, example: img/background.png, img/favicon.ico
 
 Author: Robert Toth
 Author URI: http://toth-illustration.com
-Version: 1.3.1
+Version: 1.3.2
 Copyright: Robert Toth, http://toth-illustration.com
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -316,7 +316,7 @@ body{
 }
 
 .site-title{
-	font-size:260%;
+	font-size:220%;
 	line-height:120%;
 	text-transform: uppercase;
 	font-weight:bold;
@@ -342,15 +342,55 @@ a:hover{
 }
 
 /*HEADINGS*/
-
-
+ 
 h1,
+h1 a,
+h1 a:visited,
 h2,
+h2 a,
+h2 a:visited,
 h3,
+h3 a,
+h3 a:visited,
 h4,
+h4 a,
+h4 a:hover,
+h4 a:visited,
 h5,
-h6{
+h5 a,
+h5 a:visited,
+h6,
+h6 a,
+h6 a:visited{
+	font-weight:bold;
 	line-height:120%;
+	margin: 0 0 15px 0;
+	color:#444 !important;
+	text-decoration:none;
+}
+
+h1{
+	font-size:160%;
+}
+
+h2{
+	font-size:140%;
+}
+
+h3{
+	font-size:130%;
+}
+
+h4{
+	font-size:120%;
+}
+
+h5{
+	font-size:110%;
+}
+
+h6{
+	font-size:100%;
 }
 
 .post h1{
@@ -478,8 +518,10 @@ h6{
 }
 
 blockquote{
-	margin:10px 0px;
-	padding:10px 10px 40px 10px;
+	padding: 20px 10px;
+	margin:10px 0 10px 0;
+	font-size:110%;
+	line-height: 160%;
         font-style:italic;
 	background-image:url('img/btbg10.png');
 }
@@ -488,14 +530,17 @@ blockquote:before{
 	display: block; 
 	float: left;
 	margin:5px;
-	content: url(img/quote2.png);
+	font-size:400%;
+	/*content: "\201D";*/
+	content: "\201C";
 } 
 
 blockquote:after{ 
 	display: block; 
 	margin:5px;
 	float: right; 
-	content: url(img/quote.png);
+	content: "\201D";
+	font-size:400%;
 }
 
 address{
@@ -543,8 +588,6 @@ pre{
 }
 
 .format-quote blockquote{
-        font-style:italic;
-	font-size:150%;
 	background-image: none;
 }
 
