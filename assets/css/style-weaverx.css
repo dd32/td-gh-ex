@@ -1184,9 +1184,6 @@ ul.sm-wvrx {
 
 
 @media screen and (min-width: 768px) {		/* desktop */
-.wvrx-menu-container {
-	line-height:	0;
-}
 
 .wvrx-menu-html,
 .m-font-size .wvrx-menu-html {
@@ -1645,10 +1642,6 @@ li.mega-normal ul.mega-menu li a:hover {
 }
 
 .mega-noarrow a span.sub-arrow:after{content:'';display:none;margin:0;padding:0;}
-
-.wvrx-menu-container {
-	line-height:0;
-}
 
 } /* desktop */
 

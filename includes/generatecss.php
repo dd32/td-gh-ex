@@ -87,7 +87,7 @@ function weaverx_output_style( $sout ) {
 
 		foreach ( $menus as $id => $tag ) {
 			if ( weaverx_getopt("{$id}_sub_border") )
-			weaverx_f_write($sout, sprintf("{$tag} ul ul{border:%dpx %s %s;}\n", $b_w, $b_s, $b_c));
+			weaverx_f_write($sout, sprintf(".is-desktop {$tag} ul ul{border:%dpx %s %s;}\n", $b_w, $b_s, $b_c));
 		}
 
 	}
@@ -119,7 +119,7 @@ function weaverx_output_style( $sout ) {
 
 		weaverx_f_write( $sout, str_replace('8',$rm,$rounded) );
 	}
-	
+
 	/*  fadebody_bg  */
 
 	if (weaverx_getopt('fadebody_bg')) {
@@ -535,7 +535,6 @@ $menu_detail = array (              /* can't use multiple selectors here! */
 		if ( ($rpad = weaverx_getopt( $id . '_right_padding_dec' )) != '') {
 			$rpad_arrow = $rpad + 1.5;
 			weaverx_f_write( $sout, '.is-desktop ' . $tag . ' .wvrx-menu-container li a{padding-right:' . $rpad . "em;}\n" );
-			//weaverx_f_write( $sout, '.is-desktop ' . $tag . ' .wvrx-menu-container{padding-right:' . $rpad . "em;}\n" );
 			weaverx_f_write( $sout, '.is-desktop ' . $tag . ' .menu-hover.menu-arrows .has-submenu > a{padding-right:' . $rpad_arrow . "em;}\n" );
 			weaverx_f_write( $sout, '.is-desktop ' . $tag . ' .menu-arrows.menu-hover .toggle-submenu{margin-right:' . $rpad . "em;}\n" );
 		}

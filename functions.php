@@ -455,9 +455,9 @@ function weaverx_enqueue_scripts() {	// action definition
 	$local = array(
 		'menuPrimaryTrigger' => weaverx_getopt_default('menu_primary_trigger_int','768'),
 		'menuSecondaryTrigger' => weaverx_getopt_default('menu_secondary_trigger_int','768'),
-		'useSmartMenusPrimary' => weaverx_getopt('m_primary_smartmenus') ? '1' : '0',
-		'useSmartMenusSecondary' => weaverx_getopt('m_secondary_smartmenus') ? '1' : '0',
-		'useSmartMenusExtra' => weaverx_getopt('m_extra_smartmenus') ? '1' : '0'
+		'useSmartMenusPrimary' => weaverx_getopt('m_primary_smartmenus') && function_exists('weaverxplus_plugin_installed') ? '1' : '0',
+		'useSmartMenusSecondary' => weaverx_getopt('m_secondary_smartmenus') && function_exists('weaverxplus_plugin_installed') ? '1' : '0',
+		'useSmartMenusExtra' => weaverx_getopt('m_extra_smartmenus') && function_exists('weaverxplus_plugin_installed') ? '1' : '0'
 	);
 
 	wp_localize_script('weaverxJSLib', 'wvrxOpts', $local );
