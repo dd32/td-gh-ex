@@ -38,7 +38,7 @@
 
       <?php } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
 
-	<h2 class="entry"><?php _e('News archives:', redesign'); ?></h2>
+	<h2 class="entry"><?php _e('News archives:', 'redesign'); ?></h2>
 
     <?php } ?>
 
@@ -78,7 +78,7 @@
 	<?php endwhile; endif; ?>
 
     		<div class="navigation">
-		<?php posts_nav_link( ' ', '&#9668 Newer', 'Older &#9658' ); ?>
+		<?php posts_nav_link( ' ', '&#9668', '&#9658' ); ?>
 		</div>
  
 	</div>

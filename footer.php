@@ -8,9 +8,9 @@
 
 		<div id="credits">
 
-		<?php _e('Powered by ','magtheme'); ?><a href="http://wordpress.org/">Wordpress</a>
+		<?php _e('Powered by ','redesign'); ?><a href="http://wordpress.org/">Wordpress</a>,
 
-		<?php _e('MagTheme by ','magtheme'); ?><a href="http://tioreo.com">Tioreo</a>
+		<?php _e('Redesign Theme by ','redesign'); ?><a href="http://tioreo.com">Tioreo</a>
 		
 		</div>
 

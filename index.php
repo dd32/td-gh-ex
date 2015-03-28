@@ -51,7 +51,7 @@
         <?php endif; ?>
 
    		<div class="navigation">
-		<?php posts_nav_link( ' ', '&#9668 Newer', 'Older &#9658' ); ?>
+		<?php posts_nav_link( ' ', '&#9668', '&#9658' ); ?>
 		</div>
 
     </div>
