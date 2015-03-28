@@ -63,8 +63,16 @@ Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank y
 
 Appointment WordPress Theme bundles the following third-party resources:
 
-Screenshot Image
+Slider Image
 URL: http://pixabay.com/en/office-home-office-creative-apple-581131/
+Source:http://pixabay.com
+License: CC0 Public Domain
+
+URL: http://pixabay.com/en/startup-start-up-notebooks-creative-593354/
+Source:http://pixabay.com
+License: CC0 Public Domain
+
+URL: http://pixabay.com/en/iphone-6-apple-ios-iphone-ios-8-458159/
 Source:http://pixabay.com
 License: CC0 Public Domain
 
@@ -73,18 +81,27 @@ URL: http://pixabay.com/en/home-office-workstation-office-336377/
 Source:http://pixabay.com
 License: CC0 Public Domain
 
-Slider Banner Image
-URL: http://pixabay.com/en/office-home-office-creative-apple-581131
-Source:http://pixabay.com
-License: CC0 Public Domain
-
 Home call out Overlay Image
 URL: http://pixabay.com/en/office-meeting-business-partners-336368/
 Source:http://pixabay.com
 License: CC0 Public Domain
 
+Font Awesome 4.0.3 by @davegandy - http://fontawesome.io - @fontawesome
+License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+Source: http://fontawesome.io
+
+
+
 # --- EOF --- #
 ============================Change Log================================
+
+@version 1.5.4
+1. Add a feature to select number of posts on index news section.
+2. feature to select category of post to show on front page in the news section.
+3. Add demo slider.
+4. Fix style issue. 
+5. Update pot file.
+ 
 @version 1.5.3
 1. Add slider using post and Category.
 2. Add widget.

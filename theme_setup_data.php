@@ -73,7 +73,8 @@ function theme_data_setup()
 			'blog_heading' => 'Latest News',
 			'blog_description' => 'ipsum therefore always',
 			'home_meta_section_settings' => 'on',
-			
+			'post_display_count' => 2,
+			'blog_selected_category_id' => array(get_option('default_category')),
 			
 			// Social media links
 			'header_social_media_enabled'=> 'on',

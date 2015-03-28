@@ -10,17 +10,31 @@
 			
 			if($current_options['slider_radio']=='demo')
 			{
-			$query_args =''; ?>
+			$query_args =''; 
+			$slider_default_title = array('Powerful Bootstrap Theme', 'Unique Design', 'Creative Business Design', 'Unique Design', 'Designed for Any Website', 'Unique Design');
+			
+			?>
+		<ol class="carousel-indicators">
+		<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+		<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+		<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+		</ol>
 		<div class="carousel-inner" role="listbox">
-			<div class="item active">
-				<img src="<?php echo WEBRITI_TEMPLATE_DIR_URI; ?>/images/slider.jpg" alt="img">
+		<?php for($i=1; $i<=3; $i++) {  ?>
+			<div class="item <?php if($i==1) { echo "active";} ?>" >
+				<img src="<?php echo WEBRITI_TEMPLATE_DIR_URI; ?>/images/slide<?php echo $i; ?>.jpg">
 				<div class="slide-caption">
-					<div class="slide-text-bg1"><h2><?php _e('Powerful Bootstrap Theme','appointment'); ?></h2></div>
-					<div class="slide-text-bg2"><span><i class="check"></i><?php _e('Unique Design','appointment');?></span></div>
+					<div class="slide-text-bg1"><h2><?php echo $slider_default_title[$i-1]; ?></h2></div>
+					<div class="slide-text-bg2"><span><?php _e('Unique Design','appointment');?></span></div>
 					<div class="blog-btn-area-sm"><a href="#" class="blog-btn-sm"><?php _e('Read More','appointment'); ?></a></div>
 				</div>
 			</div>
-		</div>  
+			<?php } ?>
+		</div> 
+		<ul class="carou-direction-nav">
+			<li><a class="carou-prev" href="#carousel-example-generic" data-slide="prev"></a></li>
+			<li><a class="carou-next" href="#carousel-example-generic" data-slide="next"></a></li>
+		</ul>  
 		<?php
 			}
 			else if($current_options['slider_radio']=='post')

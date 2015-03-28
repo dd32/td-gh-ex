@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: appointment\n"
-"POT-Creation-Date: 2015-03-04 12:59+0530\n"
-"PO-Revision-Date: 2015-03-04 13:03+0530\n"
+"POT-Creation-Date: 2015-03-26 18:33+0530\n"
+"PO-Revision-Date: 2015-03-26 18:33+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -169,12 +169,12 @@ msgstr ""
 
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/content.php:19
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/fullwidth.php:36
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/index-slider.php:24
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/index-slider.php:29
 msgid "Read More"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/fullwidth.php:29
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/index-news.php:53
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/index-news.php:52
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/template-tag.php:24
 msgid "By"
 msgstr ""
@@ -208,11 +208,7 @@ msgstr ""
 msgid "Toggle navigation"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/index-slider.php:22
-msgid "Powerful Bootstrap Theme"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/index-slider.php:23
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/index-slider.php:28
 msgid "Unique Design"
 msgstr ""
 
@@ -314,27 +310,27 @@ msgstr ""
 msgid "Customizable"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/theme_setup_data.php:99
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/theme_setup_data.php:100
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/home_call_out_settings.php:38
 msgid "Want to say Hey or find out more?"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/theme_setup_data.php:100
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/theme_setup_data.php:101
 msgid ""
 "Reprehen derit in voluptate velit cillum dolore eu fugiat nulla pariaturs  "
 "sint occaecat proidentse."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/theme_setup_data.php:101
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/theme_setup_data.php:102
 msgid "Purshase Now!"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/theme_setup_data.php:104
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/theme_setup_data.php:105
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/home_call_out_settings.php:43
 msgid "Get in touch!"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/theme_setup_data.php:109
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/theme_setup_data.php:110
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/footer_copyright_settings.php:52
 msgid ""
 "<p>Copyright 2014 appointment <a href=\"#\">Wordpress Theme</a>. All rights "
@@ -566,19 +562,19 @@ msgstr ""
 msgid "Sorry, your nonce did not verify."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:36
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:49
 msgid "Latest News"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:37
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:50
 msgid "Aipsum therefore always"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:50
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:64
 msgid "Blog  Settings"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:53
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:67
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/footer_copyright_settings.php:74
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/home_call_out_settings.php:54
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/home_page_header_setting.php:64
@@ -588,7 +584,7 @@ msgstr ""
 msgid "Options data successfully Saved"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:54
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:68
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/footer_copyright_settings.php:75
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/home_call_out_settings.php:55
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/home_page_header_setting.php:65
@@ -598,39 +594,51 @@ msgstr ""
 msgid "Options data successfully reset"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:66
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:80
 msgid "Enable Blog on HOME Section"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:67
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:81
 msgid "Enable Blog section in front page."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:68
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:82
 msgid "Blog Heading"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:70
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:84
 msgid "Blog Section Heading"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:72
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:86
 msgid "Enter Latest News Description"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:74
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:88
 msgid "Enter Latest News Description."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:80
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:94
+msgid "Number of News on News section"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:106
+msgid "Select number of News"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:109
+msgid "Select News Category"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:123
 msgid "Enable Meta on Home page:"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:81
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:124
 msgid "Enable Meta On Home page."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:82
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:125
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/home_page_header_setting.php:104
 msgid "If you only want to remove Author, Date and Category from the posts."
 msgstr ""

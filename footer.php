@@ -1,4 +1,4 @@
-<?php $current_options=get_option('appointment_lite_options'); ?>
+<?php $current_options=get_option('appointment_options'); ?>
 <!-- Footer Section -->
 <?php 
 if ( is_active_sidebar( 'footer-widget-area' ) ) { ?>
@@ -31,7 +31,7 @@ if($current_options['webrit_custom_css']!='') {  ?>
 			</div>
 			
 			<div class="col-md-4">
-			<?php $current_options=get_option('appointment_lite_options'); ?>
+			<?php $current_options=get_option('appointment_options'); ?>
 			<?php if($current_options['footer_social_media_enabled']=='on') { ?>
 				<ul class="footer-contact-social">
 				   <?php if($current_options['footer_social_media_facebook_link']!='') { ?>
