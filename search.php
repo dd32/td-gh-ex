@@ -30,7 +30,7 @@
 
 <?php the_excerpt(); ?>
 <?php endwhile; else: ?>
-<div class="entry"><?php _e('Try again, no articles matched your criteria.', redesign'); ?></div>
+<div class="entry"><?php _e('Try again, no articles matched your criteria.', 'redesign'); ?></div>
 
 <?php endif; ?>
 
