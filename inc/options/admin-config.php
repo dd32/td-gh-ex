@@ -422,6 +422,31 @@
                 );
 
                 $this->sections[] = array(
+                    'title'  => __( 'Post Options', 'redux-framework-demo' ),
+                    'desc'   => __( 'Use this tab to set the post settings of the site', 'redux-framework-demo' ),
+                    'icon'   => 'el-icon-pencil-alt',
+                    // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
+                    'fields' => array(
+                        array(
+                            'id'       => 'featured-image-switch',
+                            'type'     => 'switch',
+                            'title'    => __( 'Display featured image in single post article.', 'redux-framework-demo' ),
+                            'subtitle' => __( 'Switch on if you want to display featured images in single posts.', 'redux-framework-demo' ),
+                            //'options' => array('on', 'off'),
+                            'default'  => true,
+                        ),      
+                        array(
+                            'id'    => 'pro-general',
+                            'type'  => 'info',
+                            'style' => 'success',
+                            'title' => __('<a href="http://www.themezhut.com/themes/awaken-pro" target="_blank">Upgrade to Pro</a>', 'awaken'),
+                            'desc'  => __('Pro version comes with more post options.',  'awaken')
+                        ),                                          
+                    ),
+                );
+
+
+                $this->sections[] = array(
                     'title'  => __( 'Social Media', 'awaken' ),
                     'desc'   => __( 'Use this tab to set the social media settings of the site', 'awaken' ),
                     'icon'   => 'el-icon-link',

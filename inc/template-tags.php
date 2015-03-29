@@ -156,14 +156,17 @@ add_action( 'save_post',     'awaken_category_transient_flusher' );
 * @return void
 */
 function awaken_featured_image() {
+	global $awaken_options;
 	if ( post_password_required() || ! has_post_thumbnail() ) {
 		return;
 	}
 
-	if ( is_singular() ) : ?>
-		<div class="article-featured-image">
-			<?php the_post_thumbnail( 'featured-slider' ); ?>
-		</div>
+	if ( is_singular() ) : 
+		if ( $awaken_options['featured-image-switch'] == '1' ) { ?>
+			<div class="article-featured-image">
+				<?php the_post_thumbnail( 'featured-slider' ); ?>
+			</div>
+		<?php } ?>
 	<?php else : ?>
 		<div class="article-preview-image">
 			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'featured' ); ?></a>

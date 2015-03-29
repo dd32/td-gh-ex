@@ -1,5 +1,5 @@
 Theme Name : Awaken
-Version    : 1.0.8
+Version    : 1.0.9
 Theme URL  : http://www.themezhut.com/themes/awaken
 Theme Documentation  : http://www.themezhut.com/awaken-theme-documentation
 License: GNU General Public License v2 or later
@@ -141,3 +141,6 @@ Added Editor Stylesheet to the theme.
 
 - Version 1.0.8
 Added Right to left language support to the theme.
+
+- Version 1.0.9
+Added post options section to awaken options panel.
