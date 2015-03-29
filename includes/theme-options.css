@@ -114,31 +114,30 @@ input.color {width: 100px;}
 
 .select {width: 180px;}
 
-#donate {
-	background: #EEE;
-    text-align: center;
-    left: 735px;
-    margin-top: 150px;
-	display: inline-block;
+
+#wpbody-content .theme-meta-wrap {
+    float: left;
+	left: 735px;
+	margin-top: 150px;
+    margin-left: 8px;
+	margin-right: 8px;
 	position: absolute;
-	border: 1px solid #666;
-	border-radius: 4px;
-	box-shadow: 0px 0px 2px #222;
+    width: 22%;
 }
-#donate-title {
-	background: #CCC;
-	background: linear-gradient(to bottom, #EEE 0%,#BBB 100%);
-    border-radius: 4px 4px 0 0;
-	border-bottom: 1px solid #CCC;
+
+#donate, #theme-info {
+	background-color: #EEE;
+	border: 1px solid #888;
+	border-radius: 3px;
+	box-shadow: 0 0 2px #888;
 }
-#donate-title h4 {
-	margin: 0 !important; 
-	padding: 6px !important;
-	font: bold 14px arial, sans-serif;
+
+.postbox h4 {
+    font-size: 14px;
+    margin: 12px 0 15px;
+	text-align: center;
 }
-#donate-content {
-	width: 210px;
-	border-top: 1px solid #888;
-    border-radius: 0 0 4px 4px;
-}
-#donate-content p {margin: 0; padding: 10px 4px 8px;}
+
+#donate .inside {text-align: center;}
+
+#theme-info .inside {padding-left: 22px;}

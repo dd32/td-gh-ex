@@ -4,7 +4,7 @@
  * @package Asteroid
  *
  */
-$ast_version = "1.1.9";
+$ast_version = "1.2.0";
 /*-------------------------------------
 	Setup Theme Options
 --------------------------------------*/
@@ -18,13 +18,13 @@ function asteroid_enqueue_styles() {
 	global $ast_version;
 	wp_enqueue_style( 'asteroid-main', get_stylesheet_uri(), array(), $ast_version );
 
-	if ( asteroid_option('ast_responsive_disable', 0) != 1 ) {
+	if ( asteroid_option('ast_responsive_disable', 0) != 1 )
 		wp_enqueue_style( 'asteroid-responsive', get_template_directory_uri() . '/responsive.css', array(), $ast_version );
-		wp_enqueue_script( 'asteroid-nav', get_template_directory_uri() . '/includes/nav-toggle.js', array( 'jquery' ), $ast_version, true );
-	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
+
+	wp_enqueue_script( 'jquery' );
 }
 add_action( 'wp_enqueue_scripts', 'asteroid_enqueue_styles' );
 
@@ -40,6 +40,8 @@ function asteroid_theme_setup() {
 	register_nav_menu( 'ast-menu-primary', 'Primary' );
 
 	add_theme_support( 'automatic-feed-links' );
+
+	add_theme_support( 'title-tag' );
 
 	add_theme_support( 'post-thumbnails' );
 
@@ -67,7 +69,12 @@ function asteroid_theme_setup() {
 
 	add_filter( 'widget_text', 'do_shortcode' );
 
-	if ( asteroid_option('ast_responsive_disable', 0) != 1 ) add_action( 'wp_head', 'asteroid_responsive_meta', 1 );
+	if ( asteroid_option('ast_responsive_disable', 0) != 1 )
+		add_action( 'wp_head', 'asteroid_meta_viewport', 1 );
+
+	add_action( 'wp_head', 'asteroid_meta_charset', 0 );
+	add_action( 'wp_head', 'asteroid_link_profile', 1 );
+	add_action( 'wp_head', 'asteroid_link_pingback', 1 );
 
 	if ( !isset( $content_width ) ) $content_width = asteroid_option('ast_content_width') - 20;
 
@@ -78,12 +85,28 @@ function asteroid_theme_setup() {
 	add_action( 'wp_head', 'asteroid_header_text_color' );
 
 	if ( asteroid_option('ast_custom_css') ) add_action( 'wp_head', 'asteroid_print_custom_css', 990 );
+
 	if ( asteroid_option('ast_post_editor_style') == 0 ) asteroid_wp_editor_style();
 
 	if ( asteroid_option('ast_menu_search') == 1 ) add_filter( 'wp_nav_menu_items', 'asteroid_menu_search_form', 10, 2 );
+
+	if ( asteroid_option('ast_responsive_disable', 0) != 1 ) add_action( 'wp_footer', 'asteroid_menu_style_script', 18 );
 }
 add_action( 'after_setup_theme', 'asteroid_theme_setup' );
 
+
+/*----------------------------------------
+	Asteroid WP Title
+-----------------------------------------*/
+if ( ! function_exists( '_wp_render_title_tag' ) ) {
+	add_action( 'wp_head', 'asteroid_wp_title_render', 1 );
+}
+
+function asteroid_wp_title_render() {
+?>
+<title><?php wp_title( '|', true, 'right' ); ?></title>
+<?php
+}
 
 /*----------------------------------------
 	Register Sidebars
@@ -208,33 +231,24 @@ add_action( 'widgets_init', 'asteroid_register_sidebars' );
 
 
 /*-------------------------------------
-	Site Title
+	Add Common <head> Items
 --------------------------------------*/
-function asteroid_wp_title( $title, $sep ) {
-	global $paged, $page;
-
-	if ( is_feed() )
-		return $title;
-
-	$title .= get_bloginfo( 'name' );
-
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
-
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'asteroid' ), max( $paged, $page ) );
-
-	return $title;
+function asteroid_meta_charset() {
+	echo '<meta charset="' . get_bloginfo( 'charset' ) . '" />' . "\n";
 }
-add_filter( 'wp_title', 'asteroid_wp_title', 10, 2 );
 
-
-function asteroid_responsive_meta() {
-?>
-<meta name="viewport" content="initial-scale=1.0" />
-<?php
+function asteroid_meta_viewport() {
+	echo '<meta name="viewport" content="initial-scale=1.0" />' . "\n";
 }
+
+function asteroid_link_profile() {
+	echo '<link rel="profile" href="http://gmpg.org/xfn/11" />' . "\n";
+}
+
+function asteroid_link_pingback() {
+	echo '<link rel="pingback" href="' . get_bloginfo( 'pingback_url' ) . '" />' . "\n";
+}
+
 
 /*-------------------------------------
 	Print Head Codes - Theme Setup
@@ -320,7 +334,7 @@ echo '
 	Add Custom CSS to Post Editor
 -----------------------------------------*/
 function asteroid_wp_editor_style() {
-	add_editor_style( 'includes/editor-style.css' );
+	add_editor_style();
 	add_action( 'before_wp_tiny_mce', 'asteroid_tinymce_width' );
 }
 
@@ -342,6 +356,28 @@ jQuery( document ).ready( function() {
 } );
 </script>
 <?php
+}
+
+function asteroid_menu_style_script() {
+	if ( asteroid_option('ast_menu_style', 'stack') == 'stack' ) : ?>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	$('.menu-item-has-children').click(function(){
+		$('.menu > .menu-item-has-children').not(this).removeClass('toggle-on');
+		$(this).not().parents().removeClass('toggle-on');
+		$(this).toggleClass('toggle-on');
+	});
+});
+</script>
+<?php else : ?>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	$('#nav .drop-toggle').click(function(){
+		$('#nav').toggleClass('dropped');
+	});
+});
+</script>
+<?php endif;
 }
 
 function asteroid_menu_search_form( $items, $args ) {

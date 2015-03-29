@@ -100,11 +100,10 @@ class Asteroid_Theme_Options {
 	public function display_page() {
 
 		echo '<div class="wrap">
-		<div id="donate">
-			<div id="donate-title">
-				<h4>Support the Developer</h4>
-			</div>
-			<div id="donate-content">
+		<div class="theme-meta-wrap">
+		<div id="donate" class="postbox">
+			<h4>Support the Developer</h4>
+			<div class="inside">
 				<p>If you liked this theme, please consider donating a small amount.</p>
 				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 					<input type="hidden" name="cmd" value="_donations">
@@ -117,6 +116,18 @@ class Asteroid_Theme_Options {
 					<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 				</form>	
 			</div>
+		</div>
+
+		<div id="theme-info" class="postbox">
+			<h4>About Asteroid Theme</h4>
+			<div class="inside">
+				<div>&#9679;&nbsp;&nbsp;<a href="' . esc_url( 'http://ronangelo.com/asteroid/' ) . '" target="_blank">Asteroid Theme Page</a></div>
+				<div>&#9679;&nbsp;&nbsp;<a href="' . esc_url( 'http://ronangelo.com/asteroid/theme-documentation/' ) . '" target="_blank">Asteroid Documentation</a></div>
+				<div>&#9679;&nbsp;&nbsp;<a href="' . esc_url( 'http://ronangelo.com/asteroid/theme-changelog/' ) . '" target="_blank">Asteroid Changelog</a></div>
+				<p>Have any questions or suggestions? Post them here on the theme\'s <a href="' . esc_url( 'http://ronangelo.com/theme-forum/' ) . '" target="_blank">support forum</a> or on <a href="' . esc_url( 'http://wordpress.org/support/theme/asteroid/' ) . '" target="_blank">wordpress.org</a></p>
+				<p>Note: Check the theme changelog page linked above before updating to a newer version of the theme.</p>
+			</div>
+		</div>
 		</div>
 
 	<div class="icon32" id="icon-themes"></div>
@@ -339,6 +350,18 @@ class Asteroid_Theme_Options {
 			'desc'    => __( 'Display a Search box on the Main Menu.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 1 // Set to 1 to be checked by default, 0 to be unchecked by default.
+		);
+
+		$this->settings['ast_menu_style'] = array(
+			'section' => 'general',
+			'title'   => __( 'Responsive Menu Style', 'asteroid' ),
+			'desc'    => __( 'Menu style to show on small screens. Responsive Layout must be enabled.', 'asteroid' ),
+			'type'    => 'radio',
+			'std'     => 'stack',
+			'choices' => array(
+				'stack' => __( 'Stacked', 'asteroid' ),
+				'drop' 	=> __( 'Drop-down', 'asteroid' )
+				)
 		);
 
 		$this->settings['ast_post_display_type'] = array(

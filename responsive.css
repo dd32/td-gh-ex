@@ -22,7 +22,7 @@
 	.rtl #content, .rtl #sidebar  {float: right;}
 }
 
-@media screen and (max-width:480px){
+@media screen and (max-width:640px){
 	#header-info-wrap {
 		float: none;
 		text-align: center;
@@ -92,6 +92,43 @@
 	.rtl #nav .sub-menu .sub-menu a {padding-left: 20px; padding-right: 40px;}
 	.rtl #nav .sub-menu .sub-menu .sub-menu a {padding-left: 20px; padding-right: 60px;}
 	.rtl #nav .sub-menu .sub-menu .sub-menu .sub-menu a {padding-left: 20px; padding-right: 80px;}
+	
+	#nav .drop-toggle {
+		display: block;
+		text-align: center;
+	}
+
+	#nav.drop .menu {
+		display: none;
+	}
+
+	#nav.dropped {
+		background-color: #484848;
+	}
+
+	#nav.dropped .menu {
+		background-color: #303030;
+		display: block;
+		margin: 0 20px 20px;
+	}
+
+	#nav.dropped .sub-menu {
+		display: block;
+		padding: 0 10px;
+		position: relative;
+	}
+
+	#nav.dropped .menu li,
+	#nav.dropped .menu a,
+	#nav.dropped .menu .sub-menu {
+		border: none;
+		width: 100%;
+	}
+
+	#nav.dropped .menu a {
+		text-align: inherit;
+		text-shadow: 0 1px 1px #000;
+	}
 }
 
 @media screen and (max-width:320px){

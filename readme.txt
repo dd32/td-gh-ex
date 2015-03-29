@@ -18,6 +18,12 @@ custom header images, backgrounds, menus, full-width page templates and more.
 JSColor - A lightweight Javascript color-picker maintained by Jan Odvárko.
 
 == CHANGELOG ==
+Version 1.2.0
+	* Moved editor-style.css to theme root.
+	* Added 'title-tag' support.
+	* Added CSS for Print media.
+	* Added option for a drop-down menu.
+
 Version 1.1.9
 	* Removed obsolete file.
 	* CSS changes.

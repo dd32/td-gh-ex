@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>" />
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
-	<link rel="profile" href="http://gmpg.org/xfn/11" />
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-	<?php wp_head(); ?>
+<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -29,7 +25,8 @@
 			<?php else : ?>
 				<?php if (! ('blank' == get_header_textcolor() )) : ?>
 					<div id="header-text" class="cf">
-						<h1 id="site-title"><a href="<?php echo esc_url( home_url('/') ); ?>"><?php echo get_bloginfo( 'name' ); ?></a></h1>
+						<?php $htag = is_singular() ? 'h2' : 'h1'; ?>
+						<?php echo '<' . $htag . ' id="site-title">'; ?><a href="<?php echo esc_url( home_url('/') ); ?>"><?php echo get_bloginfo( 'name' ); ?></a><?php echo '</' . $htag . '>'; ?>
 						<h4 id="site-description"><?php bloginfo( 'description' ); ?></h4>		
 					</div>
 				<?php endif; ?>
@@ -42,15 +39,23 @@
 		<?php do_action('ast_hook_after_header'); ?>
 	</div>
 
-	<nav id="nav" class="cf">
+	<?php $menu_style = asteroid_option('ast_menu_style', 'stack'); ?>
+
+	<nav id="nav" class="cf <?php echo $menu_style; ?>">
 		<?php do_action('ast_hook_before_nav'); ?>
-		<!-- Menu -->
-		<?php wp_nav_menu( array(
-			'theme_location' 	=> 	'ast-menu-primary',
-			'container' 		=> 	false,
-			'fallback_cb'		=>	'wp_page_menu' )
+
+		<?php if ( $menu_style == 'drop' ) : ?>
+			<a href="#" class="drop-toggle">&#9776;</a>
+		<?php endif; ?>
+
+		<?php 
+			wp_nav_menu( array(
+				'theme_location' 	=> 	'ast-menu-primary',
+				'container' 		=> 	false,
+				'fallback_cb'		=>	'wp_page_menu' )
 			); 
 		?>
+
 		<?php do_action('ast_hook_after_nav'); ?>
 	</nav>
 
