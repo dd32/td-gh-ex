@@ -1,5 +1,8 @@
 *** discover Changelog ***
 
+30-03-2015 - version 1.7.28
+*Options.php updated with translation...
+
 03-12-2014 - version 1.7.27
 *register_post_type function removed from options-medialibrary-uploader.php file...
 
