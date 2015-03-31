@@ -30,11 +30,17 @@ function beta_site_description($desc) {
 	$desc = "";
 	return $desc;
 }
+
 /**
  * Enqueue scripts and styles
  */
 function beta_scripts() {
-	//wp_enqueue_style('lato-font', 'http://fonts.googleapis.com/css?family=Ubuntu:400,700');
+	$query_args = array(
+	 'family' => 'Ubuntu:400'
+	);
+ 	wp_enqueue_style('google-fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), null  );
+ 	wp_enqueue_script('beta-init', get_stylesheet_directory_uri() . '/js/init.js', array('jquery'));
+
 }
 
 add_action( 'wp_enqueue_scripts', 'beta_scripts' );

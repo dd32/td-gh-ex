@@ -20,6 +20,9 @@ Install
 
 Changelog
 ---------
+0.5.0 - 2015-3-31
+- Introduce Full Width and left sidebar page template to replace theme Layout option
+
 0.4.1 - 2013-11-22
 - add omega 0.9.0 awesomeness
 
