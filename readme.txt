@@ -3,8 +3,8 @@
 Contributors: Iceable
 Tags: gray, green, white, light, one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
-Tested up to: 4.0
-Stable tag: 1.1.2
+Tested up to: 4.1.1
+Stable tag: 1.1.3
 
 == ABOUT WORTEX LITE ==
 
@@ -40,7 +40,7 @@ This theme bundles some third party javascript/jQuery plugins and font, all open
 * superfish: Copyright 2013 Joel Birch. Dual licensed under the MIT and GPL licenses. http://users.tpg.com.au/j_birch/plugins/superfish/
 * Font Awesome: Copyright Dave Gandy. Font licensed under SIL OFL 1.1. CSS code licensed under MIT License. http://fortawesome.github.io/Font-Awesome/
 
-All other files are copyright 2014 Iceable Media.
+All other files are Copyright 2014-2015 Iceable Media.
 
 == TRANSLATIONS ==
 
@@ -55,6 +55,25 @@ If you have translated this theme into your own language and are willing to shar
 Your translation files will be added to the next update. Don't forget to leave your name, email address and/or website link so credits can be given to you!
 
 == CHANGELOG ==
+
+= 1.1.3 =
+March 31th, 2015
+* Tested with WP 4.1.1
+* Updated Font Awesome from 4.2.0 to 4.3.0
+* Now bundling Font Awesome
+* Removed 'Open Sans' webfont enqueuing (no longer useful, was left there for compatibility with WP 3.8 and lesser)
+* Removed content filters
+* Renamed and moved /page-full-width.php to /page-templates/full-width.php
+* Appropriately prefixed 'wortex-style' handle when registering style.css
+* Now using core bundled version of hoverIntent
+* Removed analytics tagging on external links in Theme Options
+* Removed obsolete code in comments.php
+* Reviewed and enhanced permission check, validation, sanitation and escaping in theme options
+* Moved admin notice to theme options page only and removed wortex_notice_ignore()
+* Made all text strings translatable in front-end and back-end
+* Updated .POT file
+* Updated fr_FR translation
+* Updated copyright date to 2015
 
 = 1.1.2 =
 September 24th, 2014

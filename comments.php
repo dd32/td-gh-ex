@@ -3,15 +3,11 @@
  *
  * Wortex Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
  *
- * Copyright 2014 Mathieu Sarrasin - Iceable Media
+ * Copyright 2014-2015 Mathieu Sarrasin - Iceable Media
  *
  * Comments template
  *
  */
-
-// Do not delete these lines
-	if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
-		die ('Please do not load this page directly. Thanks!');
 
 	if ( post_password_required() ):
 		?><p class="nocomments"><?php _e('This post is password protected. Enter the password to view comments.', 'wortex'); ?></p><?php

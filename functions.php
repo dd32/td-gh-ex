@@ -3,7 +3,7 @@
  *
  * Wortex Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
  *
- * Copyright 2014 Mathieu Sarrasin - Iceable Media
+ * Copyright 2014-2015 Mathieu Sarrasin - Iceable Media
  *
  * Theme's Function
  *
@@ -120,32 +120,6 @@ function wortex_add_menu_parent_class( $items ) {
 add_filter( 'wp_nav_menu_objects', 'wortex_add_menu_parent_class' );
 
 /*
- * The automatically generated fallback menu doesn't play well with all features
- * Add an admin notice to warn users who did not set a primary menu
- * and make this notice dismissable so it is less intrusive.
- */
-function wortex_admin_notices(){
-	global $current_user;
-	$user_id = $current_user->ID;
-	/* Display notice if primary menu is not set and user did not dismiss the notice */
-    if  ( !has_nav_menu( 'primary' ) && !get_user_meta($user_id, 'wortex_ignore_notice' ) ):
-	    echo '<div class="updated"><p><strong>Wortex Lite Notice:</strong> you have not set your primary menu yet, and your site is currently using a fallback menu which is missing some functionalities. Please take a minute to <a href="'.admin_url('nav-menus.php').'">set your menu now</a>!';
-	    printf('<a href="%1$s" style="float:right">' . __('Dismiss', 'wortex') . '</a>', '?wortex_notice_ignore=0');
-	    echo '</p></div>';
-    endif;}
-add_action('admin_notices', 'wortex_admin_notices');
-
-function wortex_notice_ignore() {
-	global $current_user;
-	$user_id = $current_user->ID;
-	/* If user clicks to ignore the notice, add that to their user meta */
-	if ( isset($_GET['wortex_notice_ignore']) && '0' == $_GET['wortex_notice_ignore'] ):		
-		add_user_meta($user_id, 'wortex_ignore_notice', true, true);
-	endif;
-}
-add_action('admin_init', 'wortex_notice_ignore');
-
-/*
  * Register Sidebar and Footer widgetized areas
  */
 function wortex_widgets_init() {
@@ -202,18 +176,14 @@ function wortex_styles() {
 		wp_register_style( 'wortex', $template_directory_uri . $stylesheet );	
 
 	// Always enqueue style.css from the current theme
-	wp_register_style( 'style', $stylesheet_directory_uri . '/style.css');
+	wp_register_style( 'wortex-style', $stylesheet_directory_uri . '/style.css');
 
 	wp_enqueue_style( 'wortex' );
-	wp_enqueue_style( 'style' );
-
-	// Open Sans webfont
-	/* Note: Using the same handle (open-sans) as core to avoid double enqueuing.
-	Leaving this here for compatibility with WP < 3.8 */
-	wp_enqueue_style( 'open-sans', "//fonts.googleapis.com/css?family=Open+Sans:300italic,,400italic,700italic,300,400,700&subset=latin,latin-ext", array(), null );
+	wp_enqueue_style( 'wortex-style' );
 
 	// Font Awesome
-	wp_enqueue_style( 'font-awesome', "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css", array(), null );
+	wp_enqueue_style( 'font-awesome', $template_directory_uri . "/css/font-awesome/css/font-awesome.min.css" );
+
 }
 add_action('wp_enqueue_scripts', 'wortex_styles');
 
@@ -229,7 +199,7 @@ add_action( 'init', 'wortex_editor_styles' );
  * Enqueue javascripts
  */
 function wortex_scripts() {
-	wp_enqueue_script('wortex', get_template_directory_uri() . '/js/wortex.min.js', array('jquery'));
+	wp_enqueue_script('wortex', get_template_directory_uri() . '/js/wortex.min.js', array('jquery','hoverIntent'));
     /* Threaded comments support */
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
@@ -256,41 +226,6 @@ function wortex_remove_rel_cat( $text ) {
 	return $text;
 }
 add_filter( 'the_category', 'wortex_remove_rel_cat' ); 
-
-/*
- * Fix for a known issue with enclosing shortcodes and wpautop
- * (wpautop tends to add empty <p> or <br> tags before and/or after enclosing shortcodes)
- * Thanks to Johann Heyne
- */
-function wortex_shortcode_empty_paragraph_fix($content) {
-	$array = array (
-		'<p>['    => '[', 
-		']</p>'   => ']', 
-		']<br />' => ']',
-	);
-	$content = strtr($content, $array);
-	return $content;
-}
-add_filter('the_content', 'wortex_shortcode_empty_paragraph_fix');
-
-/*
- * Improved version of clean_pre
- * Based on a work by Emrah Gunduz
- */
-function wortex_protect_pre($pee) {
-	$pee = preg_replace_callback('!(<pre[^>]*>)(.*?)</pre>!is', 'wortex_eg_clean_pre', $pee );
-	return $pee;
-}
-
-function wortex_eg_clean_pre($matches) {
-	if ( is_array($matches) )
-		$text = $matches[1] . $matches[2] . "</pre>";
-	else
-		$text = $matches;
-	$text = str_replace('<br />', '', $text);
-	return $text;
-}
-add_filter( 'the_content', 'wortex_protect_pre' );
 
 /*
  * Customize "read more" links on index view
