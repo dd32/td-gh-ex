@@ -82,6 +82,13 @@ Featured Images look best at 732 pixels wide or larger.
 
 
 = Changelog =
+
+### Version 2.0
+- Updated swipebox.css
+- Fixed Social media links for 'Github and Google Plus URL'
+- Added Theme Option - Other Settings Tab for Swipebox, Sticky Header and Enable Scroll to Top
+- Added Sticky Header 
+
 ### Version 1.0.9
 - Added 'main.css', Moved all css from style.css to 'includes/css/main.css'(Fixing child theme style issue)
 - Fixed translation issue on 'content-single.php' and '404.php' page.

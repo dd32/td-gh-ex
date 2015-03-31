@@ -30,7 +30,9 @@
         </div>
     </div>
 </footer><!-- close #colophon -->
-<a href="#top" id="scroll-top"></a>
+<?php if(of_get_option('enable_scroll_to_top')): ?>
+    <a href="#top" id="scroll-top"></a>
+<?php endif; ?>
 
 <?php wp_footer(); ?>
 

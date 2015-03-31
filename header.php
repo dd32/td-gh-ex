@@ -54,7 +54,7 @@
             </div>
         </div>
      </div>
-    <div class="header-bottom">
+    <div id="header-main" class="header-bottom">
         <div class="header-bottom-inner">
             <div class="container">
                 <div class="row">

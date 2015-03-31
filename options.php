@@ -176,6 +176,13 @@ function optionsframework_options() {
 		'type' => 'text');
 	
 	$options[] = array(
+		'name' => __('Skype', 'ascent'),
+		'desc' => __('Provide Skype url.', 'ascent'),
+		'id' => 'skype_url',
+		'placeholder' => 'Skype',
+		'type' => 'text');
+	
+	$options[] = array(
 		'name' => __('Dribbble', 'ascent'),
 		'desc' => __('Provide dribbble url.', 'ascent'),
 		'id' => 'dribbble_url',
@@ -192,7 +199,7 @@ function optionsframework_options() {
 	$options[] = array(
 		'name' => __('Github', 'ascent'),
 		'desc' => __('Provide github url.', 'ascent'),
-		'id' => 'hithub_url',
+		'id' => 'github_url',
 		'placeholder' => 'Github',
 		'type' => 'text');
 	
@@ -312,6 +319,37 @@ function optionsframework_options() {
 		'desc' => __('slider description 5.', 'ascent'),
 		'id' => 'slider_description_5',
 		'type' => 'textarea');
+	
+	
+	/*  Tab 5: Other Settings
+	============================================================================================*/	
+	$options[] = array(
+		'name' => __('Other Settings', 'ascent'),
+		'type' => 'heading');
+	
+	/* Enable/Disable Swipebox */
+	$options[] = array(
+		'name' => __('Enable Swipebox- A touchable jQuery lightbox ', 'ascent'),
+		'desc' => __('Do you want to enable the Swipebox plugin?', 'ascent'),
+		'id' => 'enable_swipebox',
+		'std' => '1',
+		'type' => 'checkbox');
+	
+	/* Enable/Disable Sticky Header */
+	$options[] = array(
+		'name' => __('Enable Sticky Header ', 'ascent'),
+		'desc' => __('Do you want to enable the sticky header?', 'ascent'),
+		'id' => 'enable_sticky_header',
+		'std' => '1',
+		'type' => 'checkbox');
+
+	/* Enable/Disable Scroll to Top Feature */
+	$options[] = array(
+		'name' => __('Enable Scroll to Top ', 'ascent'),
+		'desc' => __('Do you want to enable scroll to top feature?', 'ascent'),
+		'id' => 'enable_scroll_to_top',
+		'std' => '1',
+		'type' => 'checkbox');
 
 	return $options;
 }

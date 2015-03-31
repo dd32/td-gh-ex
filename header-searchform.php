@@ -1,5 +1,5 @@
 <?php //if( get_setting( 'search_disable', false ) ) return; ?>
-<div class="header-search-form-wrap">
+<div id="header-search-form-wrap" class="header-search-form-wrap">
    <div class="container">
       <form role="search" method="get" class="header-search-form search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
          <div class="control-group">
