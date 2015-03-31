@@ -3,11 +3,11 @@ Theme Name: Barista
 Theme URI: http://www.benluwp.com/themes/barista/
 Author: Benjamin Lu
 Author URI: http://www.benluwp.com
-Description: No Description at the moment.
+Description: Barista is a simple and yet easy to navigate with multiple navigation menu as well as multiple sidebars included!
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: brown
-Version: 1.0
+Tags: custom-colors, custom-header, custom-background, custom-menu, editor-style, featured-images, fixed-layout, one-column, right-sidebar, sticky-post, translation-ready, threaded-comments, two-columns
+Version: 1.1
 Text Domain: barista
 */
 
@@ -672,6 +672,18 @@ hgroup {
 
 .gallery-caption {
     
+}
+
+.small-post-thumbnail {
+    float: left;
+    margin-top: 18px;
+    margin-right: 15px;
+    margin-bottom: 0;
+    position: relative;
+}
+
+.medium-post-thumbnail img {
+    max-width: 100%;
 }
 
 /*******************************************************************************

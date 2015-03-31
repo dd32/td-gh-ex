@@ -42,19 +42,30 @@ if (!function_exists('barista_theme_setup')){
         
         /***********************************************************************
          * Custom Background Feature
-        **********************************************************************/
+        ***********************************************************************/
         add_theme_support('custom-background', array(
             'default-color' => '#E6E3D4'
         ));
 
-        // Support Search Form in HTML5 format
+        /***********************************************************************
+         * Suppot HTML5 Search Form
+        ***********************************************************************/
         add_theme_support( 'html5', array( 'search-form' ) );
         
-        // Register Navigation Menu
+        /***********************************************************************
+         * Register Navigation Menus
+        ***********************************************************************/
         register_nav_menus(array(
         'primary-navigation' => __('Primary Navigation', 'barista'),
         ));
-
+        
+        /***********************************************************************
+         * Enable Thumbnails for Feature Images
+        ***********************************************************************/
+        add_theme_support('post-thumbnails');
+        add_image_size('barista-small-thumbnail', 150, 150, true);
+        add_image_size('barista-medium-thumbnail', 600, 150, true);
+        
         /***********************************************************************
         * Editor Styles
         **********************************************************************/
