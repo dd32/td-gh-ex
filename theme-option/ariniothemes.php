@@ -80,7 +80,7 @@ function arinio_framework_page(){
 ?>
 
 <div class="tnotify">
-        <h1><?php _e( 'Get Avnii PRO Theme!  Just $29', 'avnii' ); ?></h1>
+        <h1><?php _e( 'Get Avnii PRO Theme!  Just $25', 'avnii' ); ?></h1>
         <p style="font-size:15px; line-height: 20px;"><?php _e( 'You are using the Avnii, Free Version of Avnii Pro Theme. Upgrade to Pro for extra features like Home Page Unlimited Slider, Work Gallery, Team section, Client Section and many more Page Templates, Social Link Section, Life time theme support and much more.', 'avnii' ); ?></p>
         <a href="<?php echo esc_url( 'http://arinio.com/avnii-responsive-multipurpose-wordpress-theme/' ); ?>" target="blank"><?php _e( 'Upgrade to Avnii PRO Theme here >>', 'avnii' ); ?></a>
     </div>

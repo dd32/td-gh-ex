@@ -6,9 +6,7 @@ require_once get_template_directory() . '/theme-option/ariniothemes.php';
  
 
 
-if ( ! isset( $content_width ) )
-	$content_width = 900; /* pixels */
-
+ 
 
 
 /* avnii Theme Starts */
@@ -24,7 +22,9 @@ function avnii_setup() {
 	// Add RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
 	// Enable support for Post Thumbnails, and declare two sizes.
-	 
+	 global $content_width;
+if ( ! isset( $content_width ) )
+     $content_width = 900; /* pixels */
 	
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 798, 398, true );
