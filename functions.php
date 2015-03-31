@@ -44,8 +44,8 @@ function spacious_setup() {
 
 	// Registering navigation menus.
 	register_nav_menus( array(
-		'primary' 	=> 'Primary Menu',
-		'footer' 	=> 'Footer Menu'
+		'primary' 	=> __( 'Primary Menu','spacious' ),
+		'footer' 	=> __( 'Footer Menu','spacious' )
 	) );
 
 	// Cropping the images to different sizes to be used in the theme
@@ -115,7 +115,9 @@ require_once( SPACIOUS_WIDGETS_DIR . '/widgets.php' );
 if ( !function_exists( 'optionsframework_init' ) ) {
 	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/admin/options/' );
 	require_once( SPACIOUS_ADMIN_DIR . '/options/options-framework.php' );
-	require_once( SPACIOUS_PARENT_DIR . '/options.php' );
+	// Loads options.php from child or parent theme
+   $optionsfile = locate_template( 'options.php' );
+   load_template( $optionsfile );
 }
 
 ?>

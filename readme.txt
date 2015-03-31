@@ -46,6 +46,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.2.5 =
+* Options framework updated to 1.9.1
+* Missed strings added for translation.
+
 = Version 1.2.4 =
 * Custom CSS option sanitized using wp_filter_nohtml_kses().
 * Adding the support for the entry-title tag for Google Rich Snippets in single post view.
