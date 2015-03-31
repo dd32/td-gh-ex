@@ -4,7 +4,7 @@
  *
  * @package topshop
  */
-define( 'TOPSHOP_THEME_VERSION' , '1.0.8' );
+define( 'TOPSHOP_THEME_VERSION' , '1.0.9' );
 
 if ( ! function_exists( 'topshop_theme_setup' ) ) :
 /**
