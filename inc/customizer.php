@@ -5,7 +5,6 @@ add_action( 'customize_register', 'ct_author_add_customizer_content' );
 
 function ct_author_add_customizer_content( $wp_customize ) {
 
-
 	/***** Reorder default sections *****/
 
 	$wp_customize->get_section('title_tagline')->priority     = 1;
@@ -13,7 +12,6 @@ function ct_author_add_customizer_content( $wp_customize ) {
 	$wp_customize->get_section('static_front_page')->title = __('Front Page', 'author');
 	$wp_customize->get_section('nav')->priority = 10;
 	$wp_customize->get_section('nav')->title = __('Menus', 'author');
-	
 	
 	/***** Add PostMessage Support *****/
 	
@@ -387,10 +385,9 @@ function ct_author_sanitize_yes_no_settings($input){
 	}
 }
 
-function ct_author_customize_preview_js() { ?>
+function ct_author_customize_preview_js() {
 
-	<script>
-		jQuery('#customize-info').append('<div class="upgrades-ad"><a href="https://www.competethemes.com/author-pro/" target="_blank">View the Author Pro Upgrade <span>&rarr;</span></a></div>');
-	</script>
-<?php }
+	$content = "<script>jQuery('#customize-info').append('<div class=\"upgrades-ad\"><a href=\"https://www.competethemes.com/author-pro/\" target=\"_blank\">View the Author Pro Upgrade <span>&rarr;</span></a></div>')</script>";
+	echo apply_filters('ct_author_customizer_ad', $content);
+}
 add_action('customize_controls_print_footer_scripts', 'ct_author_customize_preview_js');
