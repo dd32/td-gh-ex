@@ -20,6 +20,10 @@ Install
 
 Changelog
 ---------
+0.5.1 - 2015-3-31
+- update css
+- add new mobile menu
+
 0.5.0 - 2015-3-31
 - Introduce Full Width and left sidebar page template to replace theme Layout option
 
