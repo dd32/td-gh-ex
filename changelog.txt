@@ -1,5 +1,9 @@
 Changelog
 
+Hiero 1.7 - 31 Mar 2014
+-----------------------------
+- regenerated pot file;
+
 Hiero 1.6 - 18 Feb 2014
 -----------------------------
 - bug fix for post date;
