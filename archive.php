@@ -11,7 +11,7 @@ get_header(); ?>
 
 				<?php while( have_posts() ): the_post(); ?>
 
-					<article id="post-<?php the_ID(); ?>" <?php post_class('blog-style1'); ?>>
+					<article id="post-<?php the_ID(); ?>" <?php post_class('blog-article'); ?>>
 
 						<?php if ( has_post_thumbnail() ) {
 							$column1 = ' two_fifth';

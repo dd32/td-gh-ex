@@ -9,9 +9,9 @@
 if ( ! isset( $content_width ) )
 	$content_width = 960;
 
-/* ----------------------------------------------------------------------------------
-	Add Theme Options Panel & Assign Variable Values
----------------------------------------------------------------------------------- */
+// ----------------------------------------------------------------------------------
+//	Add Theme Options Panel & Assign Variable Values
+// ----------------------------------------------------------------------------------
 
 	// Add Redux Framework - Credits attributable to http://reduxframework.com/
 	require_once (get_template_directory() . '/admin/main/framework.php');
@@ -33,23 +33,23 @@ if ( ! isset( $content_width ) )
 //	include_once( get_template_directory() . '/lib/widgets/searchfield.php' ); 
 //	include_once( get_template_directory() . '/lib/widgets/tagscloud.php' );
 
-/* ----------------------------------------------------------------------------------
-	Assign Theme Specific Functions
----------------------------------------------------------------------------------- */
+// ----------------------------------------------------------------------------------
+//	Assign Theme Specific Functions
+// ----------------------------------------------------------------------------------
 
-/* Setup theme features, register menus and scripts.  */
+// Setup theme features, register menus and scripts.
 if ( ! function_exists( 'thinkup_themesetup' ) ) {
 
 	function thinkup_themesetup() {
 
-		/* Load required files */
+		// Load required files
 		require_once ( get_template_directory() . '/lib/functions/extras.php' );
 		require_once ( get_template_directory() . '/lib/functions/template-tags.php' );
 
-		/* Make theme translation ready. */
+		// Make theme translation ready.
 		load_theme_textdomain( 'lan-thinkupthemes', get_template_directory() . '/languages' );
 
-		/* Add default theme functions. */
+		// Add default theme functions.
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'custom-background' );
@@ -71,17 +71,17 @@ if ( ! function_exists( 'thinkup_themesetup' ) ) {
 add_action( 'after_setup_theme', 'thinkup_themesetup' );
 
 
-/* ----------------------------------------------------------------------------------
-	Register Front-End Styles And Scripts
----------------------------------------------------------------------------------- */
+// ----------------------------------------------------------------------------------
+//	Register Front-End Styles And Scripts
+// ----------------------------------------------------------------------------------
 
 function thinkup_frontscripts() {
 
-	/* Add jQuery library. */
+	// Add jQuery library.
 	wp_enqueue_script('jquery');
 
-	/* Register theme stylesheets. */
-	wp_register_style( 'style', get_stylesheet_uri(), '', '1.1.5' );
+	// Register theme stylesheets.
+	wp_register_style( 'style', get_stylesheet_uri(), '', '1.1.6' );
 	wp_register_style( 'shortcodes', get_template_directory_uri() . '/styles/style-shortcodes.css', '', '1.1' );
 	wp_register_style( 'responsive', get_template_directory_uri() . '/styles/style-responsive.css', '', '1.1' );
 	wp_register_style( 'sidebarleft', get_template_directory_uri() . '/styles/layouts/thinkup-left-sidebar.css', '', '1.1' );
@@ -89,30 +89,30 @@ function thinkup_frontscripts() {
 	wp_register_style( 'bootstrap', get_template_directory_uri() . '/lib/extentions/bootstrap/css/bootstrap.min.css', '', '2.3.2' );
 	wp_register_style( 'prettyPhoto', get_template_directory_uri().'/lib/extentions/prettyPhoto/css/prettyPhoto.css', '', '3.1.5' ); 
 
-	/* Register Font Packages. */
+	// Register Font Packages.
 	wp_register_style( 'font-awesome-min', get_template_directory_uri() . '/lib/extentions/font-awesome/css/font-awesome.min.css', '', '3.2.1' );
 	wp_register_style( 'font-awesome-cdn', get_template_directory_uri() . '/lib/extentions/font-awesome-4.2.0/css/font-awesome.min.css', '', '4.2.0' );
 	wp_register_style( 'dashicons-css', get_template_directory_uri() . '/lib/extentions/dashicons/css/dashicons.css', '', '2.0' );
 	
-	/* Register theme scripts. */
+	// Register theme scripts.
 	wp_register_script( 'frontend', get_template_directory_uri() . '/lib/scripts/main-frontend.js', array( 'jquery' ), '1.1', true );
 	wp_register_script( 'modernizr', get_template_directory_uri() . '/lib/scripts/modernizr.js', array( 'jquery' ), '', true );
 	wp_register_script( 'retina', get_template_directory_uri() . '/lib/scripts/retina.js', array( 'jquery' ), '', true );
 	wp_register_script( 'bootstrap', get_template_directory_uri() . '/lib/extentions/bootstrap/js/bootstrap.js', array( 'jquery' ), '2.3.2', true );
 	wp_register_script( 'prettyPhoto', ( get_template_directory_uri()."/lib/extentions/prettyPhoto/jquery.prettyPhoto.js" ), array( 'jquery' ), '3.1.5', true );
 
-		/* Add Font Packages */
+		// Add Font Packages
 		wp_enqueue_style( 'font-awesome-min' );
 		wp_enqueue_style( 'font-awesome-cdn' );
 		wp_enqueue_style( 'dashicons-css' );
 
-		/* Add theme stylesheets */
+		// Add theme stylesheets
 		wp_enqueue_style( 'bootstrap' );
 		wp_enqueue_style( 'prettyPhoto' );
 		wp_enqueue_style( 'style' );
 		wp_enqueue_style( 'shortcodes' );
 
-		/* Add theme scripts */
+		// Add theme scripts
 		wp_enqueue_script( 'prettyPhoto' );
 		wp_enqueue_script( 'frontend' );
 		wp_enqueue_script( 'bootstrap' );
@@ -131,22 +131,22 @@ function thinkup_frontscripts() {
 add_action( 'wp_enqueue_scripts', 'thinkup_frontscripts', 10 );
 
 
-/* ----------------------------------------------------------------------------------
-	Register Back-End Styles And Scripts
----------------------------------------------------------------------------------- */
+// ----------------------------------------------------------------------------------
+//	Register Back-End Styles And Scripts
+// ----------------------------------------------------------------------------------
 
 function thinkup_adminscripts() {
 
-	/* Register theme stylesheets. */
+	// Register theme stylesheets.
 	wp_register_style( 'backend', get_template_directory_uri() . '/styles/backend/style-backend.css', '', 1.3 );
 
-	/* Register theme scripts. */
+	// Register theme scripts.
 	wp_register_script( 'backend', get_template_directory_uri() . '/lib/scripts/main-backend.js', array( 'jquery' ), '1.1' );
 
-		/* Add theme stylesheets */
+		// Add theme stylesheets
 		wp_enqueue_style( 'backend' );
 
-		/* Add theme scripts */
+		// Add theme scripts
 		wp_enqueue_script( 'backend' );
 }
 add_action( 'admin_enqueue_scripts', 'thinkup_adminscripts' );
@@ -169,9 +169,9 @@ function thinkup_shortcodescripts() {
 add_action( 'wp_enqueue_scripts', 'thinkup_shortcodescripts', 10 );
 
 
-/* ----------------------------------------------------------------------------------
-	Register Theme Widgets
----------------------------------------------------------------------------------- */
+// ----------------------------------------------------------------------------------
+//	Register Theme Widgets
+// ----------------------------------------------------------------------------------
 
 function thinkup_widgets_init() {
 	register_sidebar( array(
