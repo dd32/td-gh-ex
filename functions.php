@@ -93,13 +93,6 @@ function rubine_setup() {
 		'width'	=> 1320,
 		'height' => 240,
 		'flex-height' => true));
-		
-	// Add theme support for Jetpack Featured Content
-	add_theme_support( 'featured-content', array(
-		'featured_content_filter' => 'rubine_get_featured_content',
-		'max_posts'  => 8
-		)
-	);
 	
 	// Add Theme Support for Rubine Pro Plugin
 	add_theme_support( 'rubine-pro' );
@@ -287,8 +280,7 @@ require( get_template_directory() . '/inc/customizer/frontend/custom-layout.php'
 require( get_template_directory() . '/inc/template-tags.php' );
 
 // Include Featured Content class in case it does not exist yet (e.g. user has not Jetpack installed)
-if ( ! class_exists( 'Featured_Content' ) && 'plugins.php' !== $GLOBALS['pagenow'] ) {
-	require get_template_directory() . '/inc/featured-content.php';
-}
+require get_template_directory() . '/inc/featured-content.php';
+
 
 ?>
