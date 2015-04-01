@@ -1,5 +1,9 @@
 Changelog
 
+1 Apr 2015 - 1.28
+--------------------------------------
+- a quick fix to match the new Page Builder by SiteOrigin changes.
+
 26 Mar 2015 - 1.27
 --------------------------------------
 - added some more filters for the Page Builder plugin;

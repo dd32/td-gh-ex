@@ -4,7 +4,7 @@ Theme URI: http://athemes.com/theme/moesia
 Author: aThemes
 Author URI: http://athemes.com
 Description: Moesia is the business theme you need in order to build your presence on the Internet. Choose from eleven predefined blocks and build the homepage that best suits your company. Each of the homepage blocks can have a parallax background image and its own set of colors. Moesia also features a selection of Google Fonts, two types of layouts for the blog page, cool animations and effects, a parallax header and much more.
-Version: 1.27
+Version: 1.28
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: moesia
@@ -1530,7 +1530,7 @@ Welcome area
 }
 
 /* Better support for third party widgets */
-.panel.widget .widget-title {
+.so-panel.widget .widget-title {
 	position: relative;
 	margin-bottom: 60px;
 	padding: 0;
@@ -1539,7 +1539,7 @@ Welcome area
 	font-size: 56px;
 	text-transform: uppercase;
 }
-.panel.widget .widget-title:after {
+.so-panel.widget .widget-title:after {
 	position: absolute;
 	left: calc(50% - 35px);
 	width: 70px;
@@ -1547,7 +1547,7 @@ Welcome area
 	border-bottom: 6px double #ff6b53;
 	bottom: -10px;
 }
-.panel.widget {
+.so-panel.widget {
 	margin: 0 auto;
 	padding: 80px 30px;
 }
@@ -1740,7 +1740,7 @@ Responsive
 		display: none;
 	}
 	.panel-grid-cell section,   
-	.panel.widget {
+	.so-panel.widget {
 		padding-top: 40px;
 		padding-bottom: 40px;
 	}
@@ -1923,7 +1923,7 @@ section .container {
 }
 @media (max-width: 499px) {
 	section .widget-title,
-	.panel.widget .widget-title {
+	.so-panel.widget .widget-title {
 		font-size: 36px;
 	}
 }
