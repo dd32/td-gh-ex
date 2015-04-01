@@ -92,7 +92,7 @@ add_action( 'after_setup_theme', 'thinkup_themesetup' );
 
 function thinkup_frontscripts() {
 
-	/* Add jQuery library. */
+	// Add jQuery library.
 	wp_enqueue_script( 'jquery-masonry' );
 
 	// Register theme stylesheets.
@@ -102,7 +102,7 @@ function thinkup_frontscripts() {
 
 	// Add theme stylesheets.
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/lib/extentions/bootstrap/css/bootstrap.min.css', '', '2.3.2' );
-	wp_enqueue_style( 'style', get_stylesheet_uri(), '', '1.6.2' );
+	wp_enqueue_style( 'style', get_stylesheet_uri(), '', '1.6.3' );
 	wp_enqueue_style( 'shortcodes', get_template_directory_uri() . '/styles/style-shortcodes.css', '', '1.1' );
 
 	// Add Font Packages.

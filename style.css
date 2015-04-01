@@ -4,7 +4,7 @@ Theme URI: http://www.thinkupthemes.com/free/engrave-lite/
 Author: ThinkUpThemes
 Author URI: http://www.ThinkUpThemes.com
 Description: Engrave Lite is the free version of the multi-purpose professional theme ideal for a business or blog website. The theme has a responsive layout, HD retina ready and comes with a powerful theme options panel with can be used to make awesome changes without touching any code. The theme also comes with a full width easy to use slider. Easily add a logo to your site and create a beautiful homepage using the built-in homepage layout.
-Version: 1.6.2
+Version: 1.6.3
 License: GNU General Public License
 License URI: /licenses/license.txt
 Tags: black, dark, red, one-column, two-columns, three-columns, right-sidebar, left-sidebar, fixed-layout, responsive-layout, fluid-layout, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, editor-style, featured-images, post-formats, sticky-post, translation-ready, flexible-header, gray, light, white, custom-background
@@ -1047,7 +1047,7 @@ li.pag-next {
 ----------------------------------------------------------------------------- */
 #notification {
 	position: relative;
-	z-index:99999;
+	z-index:999999;
 	width: 100%;
 	background: #364BE6;
 	border-bottom: 2px solid white;
@@ -2247,10 +2247,10 @@ padding: 0;
 .blog-icon i:hover {
 	background: #333;
 }
-.blog-style1 .more-link {
+.blog-article .more-link {
 	padding: 5px 10px;
 }
-.blog-style1 .more-link:after {
+.blog-article .more-link:after {
 	font-family: FontAwesome;
 	content: '\f054';
 	font-size: 70%;
@@ -2259,7 +2259,7 @@ padding: 0;
 
 /* =Blog - Style 1
 --------------------------------------------------------------------------------------- */
-.blog-style1 {
+.blog-article {
 	background: #FFF;
 	border: 1px solid #EEE;
 	margin-bottom: 20px;
@@ -2268,23 +2268,23 @@ padding: 0;
 	width: 50%;
 	padding: 0 1.25%;
 }
-.blog-style1 .entry-meta {
+.blog-article .entry-meta {
 	border-top: 1px solid #EEE;
 	padding: 20px 0 15px;
 	margin: 0 20px;
 }
-.blog-style1 .entry-header {
+.blog-article .entry-header {
 	position: relative;
 }
-.blog-style1 .blog-icon {
+.blog-article .blog-icon {
 	position: absolute;
 	top: 0;
 	left: 0;
 }
-.blog-style1 .blog-thumb {
+.blog-article .blog-thumb {
 	margin-bottom: 0; 
 }
-.blog-style1 .blog-title {
+.blog-article .blog-title {
 	position: relative;
 	margin: 0 0 1px;
 	font-size: 14px;
@@ -2298,25 +2298,25 @@ padding: 0;
 	-o-box-shadow: 0 0 0 1px #DDD;
 	box-shadow: 0 0 0 1px #DDD;
 }
-.blog-style1 .blog-title a {
+.blog-article .blog-title a {
 	color: inherit; 
 }
-.blog-style1 .entry-content {
+.blog-article .entry-content {
 	padding: 20px 20px 0;
 }
-.blog-style1 .entry-footer {
+.blog-article .entry-footer {
 	padding: 20px 20px 15px;
 }
-.blog-style1 .entry-meta > span {
+.blog-article .entry-meta > span {
 	padding-right: 10px
 }
-.blog-style1 .entry-meta a {
+.blog-article .entry-meta a {
 	color: inherit;
 }
-.blog-style1 .entry-meta a:hover {
+.blog-article .entry-meta a:hover {
 	color: #EC4C4C;
 }
-.blog-style1 .entry-meta i {
+.blog-article .entry-meta i {
 	padding-right: 5px
 }
 
@@ -2703,7 +2703,7 @@ li.pingback a {
 
 /* =Search Results
 --------------------------------------------------------------------------------------- */
-.search-results .blog-style1 .entry-meta {
+.search-results .blog-article .entry-meta {
 	margin: 0;
 }
 

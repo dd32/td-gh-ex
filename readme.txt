@@ -12,7 +12,7 @@ Engrave Lite is the free version of the multi-purpose professional theme ideal f
 	Support
 -----------------------------------------------------------------------------
 
-- For setup and use instructions please refer to file "ThinkUpThemes - Lite Documentation.pdf" in licensing folder.
+- For support for Engrave Lite please post a support ticket over at the https://wordpress.org/support/theme/engrave-lite.
 
 
 -----------------------------------------------------------------------------
@@ -97,6 +97,13 @@ The following opensource projects, graphics, fonts, API's or other files as list
 -----------------------------------------------------------------------------
 	Changelog
 -----------------------------------------------------------------------------
+
+Version 1.6.3
+- Updated: Change blog-style class to blog-article.
+- Updated: Link to support forum updated in readme file.
+- Updated: Change readme file to ensure support article link is correct.
+- Updated: Coments in functions.php now applied using single line exclusions to make debugging easier.
+- Updated: Add class="clearboth" after #slider so that it works correctly with all 3rd party shortcodes.
 
 Version 1.6.2
 - New:     Page title is now output using add_theme_support( 'title-tag' ) to ensure compliance with WordPress 4.1.1 guidelines.

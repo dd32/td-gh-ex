@@ -6,7 +6,7 @@
  */
 ?>
 
-					<article id="post-<?php the_ID(); ?>" <?php post_class('blog-style1'); ?>>
+					<article id="post-<?php the_ID(); ?>" <?php post_class('blog-article'); ?>>
 
 						<?php thinkup_input_blogformat(); ?>
 

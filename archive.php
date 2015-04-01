@@ -15,7 +15,7 @@ get_header(); ?>
 
 					<div class="blog-grid element column-2">
 
-					<article id="post-<?php the_ID(); ?>" <?php post_class('blog-style1'); ?>>
+					<article id="post-<?php the_ID(); ?>" <?php post_class('blog-article'); ?>>
 
 						<?php think_input_blogtitle(); ?>
 
