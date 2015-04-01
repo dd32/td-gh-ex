@@ -5,6 +5,8 @@
  * @package The Adler
  */
 
+
+
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
@@ -57,6 +59,12 @@ if ( ! function_exists( 'the_adler_setup' ) ) :
 				'caption',
 			)
 		);
+
+		/*
+		 * Add editor custom style to make it look more like the frontend
+		 * Also enqueue the custom Google Fonts also
+		 */
+		add_editor_style( array( 'editor-style.css', adler_fonts_url() ) );
 	}
 endif; // the_adler_setup
 add_action( 'after_setup_theme', 'the_adler_setup' );
@@ -67,7 +75,7 @@ add_action( 'after_setup_theme', 'the_adler_setup' );
 function the_adler_scripts() {
 
 	//FontAwesome Stylesheet
-	wp_enqueue_style( 'the-adler-font-awesome-style', get_stylesheet_directory_uri() . '/assets/css/font-awesome.css', array(), '4.2.0' );
+	wp_enqueue_style( 'the-adler-font-awesome-style', get_stylesheet_directory_uri() . '/assets/css/font-awesome.css', array(), '4.3.0' );
 
 	wp_enqueue_style( 'the-adler-style', get_stylesheet_uri(), array('the-adler-font-awesome-style') );
 
@@ -84,6 +92,22 @@ function the_adler_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'the_adler_scripts' );
+
+//Registering Sidebar
+
+function adler_widgets_init() {
+	register_sidebar( array(
+		'name' => __( 'Main Sidebar', 'adler_txtd' ),
+		'id' => 'sidebar-1',
+		'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'adler_txtd' ),
+		'before_widget' => '<li id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</li>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+}
+
+add_action( 'widgets_init', 'adler_widgets_init' );
 
 /**
  * Implement the Custom Header feature.
@@ -108,4 +132,20 @@ require get_template_directory() . '/inc/extras.php';
 /**
  * Load Jetpack compatibility file.
  */
-require get_template_directory() . '/inc/jetpack.php';
+//require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load Adler Class
+ */
+require get_template_directory() . '/inc/adler.php';
+
+/**
+ * Load Customify plugin configuration
+ */
+require get_template_directory() . '/inc/customify_config.php';
+
+/**
+ * Load Recommended/Required plugins notification
+ */
+require get_template_directory() . '/inc/required-plugins/required-plugins.php';
+
