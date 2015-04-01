@@ -120,3 +120,15 @@ with testing and feature suggestions.
 * Fix: multi-column post class fixes
 * Fix: issue with <head> content option
 * Fix: clear issue with right aligned header widget area
+
+= Version 1.1.1 =
+* New: Rounded corners for submenus
+* Change: All menus must be either Smart Menus or Standard Weaver Xtreme menus - no per menu choice
+* Removed: Support for changing the Mobile/Desktop menu toggle point no longer supported - sorry!
+* Tweak: Added release notes to help tab
+* Tweak: italic no longer applied to menu arrows - should not have been applied
+* Tweak: menu handling on some touch devices / browsers - iOS, IE
+* Fix: minimized css/js
+* Fix: MegaMenu border (X-Plus)
+
+= *** Release Notes also found on Help Tab  *** =

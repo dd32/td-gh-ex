@@ -449,10 +449,6 @@ function weaverx_form_menu_opts( $value, $submit = false ) {
 
 		array( 'name' => $name,  'id' => '-menu', 'type' => 'header_area',
 			  'info' => $value['info']),
-		##### SmartMenu
-		array('name' => '<span class="i-left dashicons dashicons-menu"></span>' . __('Use SmartMenus', 'weaver-xtreme' /*adm*/),
-			  'id' => $id . '_smartmenus', 'type' => '+checkbox',
-			'info' => __('Use <em>SmartMenus</em> rather than default Weaver Xtreme Menus. <em>SmartMenus</em> provide enhanced menu support, including auto-visibility, transition effects, and MegaMenus. (&starf;Plus)', 'weaver-xtreme' /*adm*/)),
 
 		array( 'name' => __('Menu Bar', 'weaver-xtreme' /*adm*/),
 			'id' => $id, 'type' => 'titles_menu',    // includes color, font size, font family
@@ -523,13 +519,17 @@ function weaverx_form_menu_opts( $value, $submit = false ) {
 			'id' => $id . '_sub_border', 'type' => 'checkbox',
 			'info' => '<em>' . $name . '</em>' . ': Add the "standard" border to Submenus' ),
 
+		array( 'name' => '<span class="i-left dashicons dashicons-marker"></span><small>' . __('Rounded Submenu Corners', 'weaver-xtreme' /*adm*/) . '</small>',
+			'id' => $id . '_sub_rounded', 'type' => 'checkbox',
+			'info' => '<em>' . $name . '</em>' . ': Add rounded corners to Submenus' ),
+
 		array( 'name' => '<span class="i-left dashicons dashicons-admin-page"></span><small>' . __('Shadow', 'weaver-xtreme' /*adm*/) . '</small>',
 			'id' => $id .'_shadow', 'type' => 'shadows',
 			'info' => '<em>' . $name . '</em>' . __(': Wrap Menu Bar with Shadow.', 'weaver-xtreme' /*adm*/) ),
 		array( 'name' => '<span class="i-left dashicons dashicons-marker"></span><small>' . __('Rounded Corners', 'weaver-xtreme' /*adm*/) . '</small>',
 			'id' => $id .'_rounded', 'type' => 'rounded',
 			'info' => '<em>' . $name . '</em>' . __(': Add rounded corners to menu. <em>You might need to set overlapping corners Header/Wrapper areas also!</em>', 'weaver-xtreme' /*adm*/) ),
-		
+
 	);
 
 	weaverx_form_show_options($opts, false, false);

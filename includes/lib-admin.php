@@ -181,7 +181,7 @@ function weaverx_validate_all_options($in) {
 
 			case 'menu_primary_trigger_int':
 			case 'menu_secondary_trigger_int':
-				if ($value >= 768) {
+				if ($value >= 9999) {	// @@@@@@@@@@@@@
 					$err_msg = __('Menu trigger value must be less than 768.', 'weaver-xtreme' /*adm*/) . '<br />';
 					$value = '';
 				}

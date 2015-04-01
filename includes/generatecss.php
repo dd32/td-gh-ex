@@ -56,7 +56,6 @@ function weaverx_output_style( $sout ) {
 
 	weaverx_f_write($sout,sprintf("/* Weaver Xtreme styles - Version %s */\n", weaverx_getopt('style_version')));
 
-
 // =========================== LINKS ===============================
 //	Important. Links must come before any other rules that might define a tag - such as the menu bars, so just
 //	put them here, near the top.
@@ -84,12 +83,12 @@ function weaverx_output_style( $sout ) {
 
 	if ( $b_c != '#222' || $b_w != 1 || $b_s != 'solid' ) {
 		weaverx_f_write($sout, sprintf(".border {border:%dpx %s %s;}.border-bottom{border-bottom:%dpx %s %s;}\n", $b_w, $b_s, $b_c, $b_w, $b_s, $b_c));
-
-		foreach ( $menus as $id => $tag ) {
-			if ( weaverx_getopt("{$id}_sub_border") )
-			weaverx_f_write($sout, sprintf(".is-desktop {$tag} ul ul{border:%dpx %s %s;}\n", $b_w, $b_s, $b_c));
+	}
+	foreach ( $menus as $id => $tag ) {
+		if ( weaverx_getopt("{$id}_sub_border") ) {
+			weaverx_f_write($sout, sprintf(".is-desktop {$tag} ul ul,.is-desktop {$tag} ul.mega-menu li {border:%dpx %s %s;}
+.is-desktop {$tag} ul ul.mega-menu{border:none;}\n", $b_w, $b_s, $b_c));
 		}
-
 	}
 
 
@@ -106,7 +105,7 @@ function weaverx_output_style( $sout ) {
 
 		// It's time: no -moz or -webkit
 
-		$rounded = '.rounded,.rounded-all,.rounded-custom{	-moz-border-radius:8px !important;
+		$rounded = '.rounded,.rounded-all,.rounded-custom{-moz-border-radius:8px !important;
  -webkit-border-radius:8px !important;border-radius:8px !important;}
 .rounded-top{-moz-border-radius-topleft:8px; -moz-border-radius-topright:8px;-webkit-border-top-left-radius:8px;
 -webkit-border-top-right-radius:8px;border-top-left-radius:8px; border-top-right-radius: 8px;}
@@ -117,8 +116,30 @@ function weaverx_output_style( $sout ) {
 .rounded-right{-moz-border-radius-topright:8px;-moz-border-radius-bottomright:8px;-webkit-border-top-right-radius:8px;
  -webkit-border-bottom-right-radius:8px;border-top-right-radius:8px;border-bottom-right-radius:8px;}';
 
-		weaverx_f_write( $sout, str_replace('8',$rm,$rounded) );
+		weaverx_f_write( $sout, str_replace('8',$rm,$rounded) . "\n" );
 	}
+
+
+
+	foreach ( $menus as $id => $tag ) {
+		if ( weaverx_getopt("{$id}_sub_rounded") ) {
+
+			// 3 kinds of rounding: whole box + hover, top sub-item, bottom sub-item
+			$round_sub = str_replace('8', $r, "{-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px;z-index:90;");
+			$menu = ".is-desktop {$tag} ul.sub-menu,.is-desktop {$tag} ul.children";
+			$mega = ".is-desktop {$tag} ul.mega-menu li";
+
+			$pad = (int) ($r - ($r*.25));	// pad it to avoid anchor bg from overwriting rounding
+			$bg = weaverx_getopt("{$id}_sub_bgcolor");
+			if ($bg == '')
+				$bg = 'transparent';
+
+			$round_end = "padding-top:{$pad}px;padding-bottom:{$pad}px;background-color:{$bg};}";
+			weaverx_f_write($sout, $menu . $round_sub . $round_end);
+			weaverx_f_write($sout, $mega . $round_sub . "}\n");
+		}
+	}
+
 
 	/*  fadebody_bg  */
 
@@ -438,13 +459,6 @@ $menu_links = array (
 	'm_primary_sub' => '.menu-primary .wvrx-menu ul li a',
 	'm_secondary_sub' => '.menu-secondary .wvrx-menu ul li a',
 	'm_extra_sub' => '.menu-extra .wvrx-menu ul li a',
-
-	'm_primary_sm' => '.menu-primary .sm-wvrx > li > a',
-	'm_secondary_sm' => '.menu-secondary .sm-wvrx > li > a',
-	'm_extra_sm' => '.menu-extra .sm-wvrx > li > a',
-	'm_primary_sub_sm' => '.menu-primary .sm-wvrx ul li a',
-	'm_secondary_sub_sm' => '.menu-secondary .sm-wvrx ul li a',
-	'm_extra_sub_sm' => '.menu-extra .sm-wvrx ul li a',
 	);
 
 $menu_detail = array (              /* can't use multiple selectors here! */
@@ -466,7 +480,6 @@ $menu_detail = array (              /* can't use multiple selectors here! */
 	}
 
 	foreach ($menu_links as $id => $tag) {
-		$id = str_replace('_sm', '', $id);									// share value for wvrx menu and sm menu
 		weaverx_put_color( $sout, $id . '_color', $tag );
 		weaverx_put_bgcolor( $sout, $id . '_hover_bgcolor', $tag . ':hover', true); // important to override current item bg
 		weaverx_put_color( $sout, $id . '_hover_color', $tag . ':hover', true );
@@ -683,14 +696,14 @@ $menu_detail = array (              /* can't use multiple selectors here! */
 	foreach ( $max_w_areas as $id => $tag ) {
 		$w = weaverx_getopt( $id . '_max_width_int' );
 		if ( $w )
-			weaverx_f_write( $sout, '.is-desktop ' . $tag . "{max-width:{$w}px;}\n" );
+			weaverx_f_write( $sout, "{$tag}" . "{max-width:{$w}px;}\n" );
 
 		if ( ( $xbg = weaverx_getopt( $id . '_extend_bgcolor' ) ) ) {
-			$cname = '.is-desktop ' . $tag;
+			$cname = "{$tag}";
 			weaverx_f_write( $sout,
-$cname . '{position:relative;overflow:visible;}' .
-$cname . ':before{content:"";position:absolute;top:0;bottom:0;left:-9998px;right:0;border-left:9999px solid ' .
-$xbg . ';box-shadow:9999px 0 0 ' . $xbg . ";z-index:-1;}\n"
+"{$cname}{position:relative;overflow:visible;}
+{$cname}:before{content:'';position:absolute;top:0;bottom:0;left:-9998px;right:0;
+border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 			);
 		}
 	}
@@ -881,6 +894,8 @@ $xbg . ';box-shadow:9999px 0 0 ' . $xbg . ";z-index:-1;}\n"
 
 
 // ************************************ SUPPORT FUNCTIONS **************************
+
+
 
 function weaverx_css_style($sout, $name, $style) {
 	/* output a css rule style (include {}'s in style) */

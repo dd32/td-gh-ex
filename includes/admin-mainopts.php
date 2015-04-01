@@ -326,7 +326,7 @@ function weaverx_mainopts_header() {
 
 	array('name' => '<span class="i-left dashicons dashicons-editor-code"></span><small>' . __('Site Logo/HTML', 'weaver-xtreme' /*adm*/) . '</small>',
 				'id' => '_site_logo', 'type' => '+textarea',
-				'info' => __('HTML for Site Title area. (example: &lt;img src="url" style="position:absolute;top:20px;left:20px;"&nbsp;/&gt; (&starf;Plus) (&diams;)', 'weaver-xtreme' /*adm*/)),
+				'info' => __('HTML for Site Title area. (example: &lt;img src="url" style="position:absolute;top:20px;left:20px;"&nbsp;/&gt; + Custom CSS: #site-logo{min-height:123px;} (&starf;Plus) (&diams;)', 'weaver-xtreme' /*adm*/)),
 	array('name' => '<span class="i-left dashicons dashicons-visibility"></span><small>' . __('Hide Site Logo/HTML', 'weaver-xtreme' /*adm*/) . '</small>',
 		'id' => '_hide_site_logo', 'type' => '+select_hide',
 		'info' => __('Hide Site Logo/HTML by device (&starf;Plus) (&diams;)', 'weaver-xtreme' /*adm*/)),
@@ -405,24 +405,36 @@ function weaverx_mainopts_menus() {
 		'help' => 'help.html#MenuBar'),
 
 
+##### SmartMenu
+		array('name' => '<span class="i-left dashicons dashicons-menu"></span>' . __('Use SmartMenus', 'weaver-xtreme' /*adm*/),
+			  'id' => 'use_smartmenus', 'type' => 'checkbox',
+			'info' => __('Use <em>SmartMenus</em> rather than default Weaver Xtreme Menus. <em>SmartMenus</em> provide enhanced menu support, including auto-visibility, and transition effects. Applies to all menus. Additional options for SmartMenus on the <em>Xtreme Plus:SmartMenus</em> tab. (&starf;Plus)', 'weaver-xtreme' /*adm*/)),
+
+		array('name' => __('Mega Menus:', 'weaver-xtreme' /*adm*/), 'type' => 'note',
+		'info' => __('Weaver Xtreme Plus allows you to define Mega Menu style dropdown menu items with arbitrary HTML content. (&starf;Plus)', 'weaver-xtreme' /*adm*/)),
+
+
 
 	array('name' => __('Primary Menu Bar', 'weaver-xtreme' /*adm*/), 'id' => 'm_primary', 'type' => 'menu_opts',
 		'info' => __('Attributes for the Primary Menu Bar (Default Location: Bottom of Header)', 'weaver-xtreme' /*adm*/)),
 
 	array('name' => '<small>' . __('No Home Menu Item', 'weaver-xtreme' /*adm*/) . '</small>', 'id' => 'menu_nohome', 'type' => 'checkbox',
 		'info' => __('Don\'t automatically add Home menu item for home page (as defined in Settings->Reading)', 'weaver-xtreme' /*adm*/)),
-	array('name' => '<span class="i-left" style="font-size:150%;">&harr;</span><small> ' . __('Mobile Menu Trigger', 'weaver-xtreme' /*adm*/). '</small>',
-		'id' => 'menu_primary_trigger_int', 'type' => 'val_px',
-		'info' => __('Set trigger width where Primary Menu changes to/from Mobile Menu (Default: 768px, value must be &lt; 768)', 'weaver-xtreme' /*adm*/)),
+
+
+//	array('name' => '<span class="i-left" style="font-size:150%;">&harr;</span><small> ' . __('Mobile Menu Trigger', 'weaver-xtreme' /*adm*/). '</small>',
+//		'id' => 'menu_primary_trigger_int', 'type' => 'val_px',
+//		'info' => __('Set trigger width where Primary Menu changes to/from Mobile Menu (Default: 768px, value must be &lt; 768)', 'weaver-xtreme' /*adm*/)),
 
 
 	array( 'type' => 'submit'),
 
 	array('name' => __('Secondary Menu Bar', 'weaver-xtreme' /*adm*/), 'id' => 'm_secondary', 'type' => 'menu_opts',
 		'info' => __('Attributes for the Secondary Menu Bar (Default Location: Top of Header)', 'weaver-xtreme' /*adm*/)),
-	array('name' => '<span class="i-left" style="font-size:150%;">&harr;</span><small> ' . __('Mobile Menu Trigger', 'weaver-xtreme' /*adm*/). '</small>',
-		'id' => 'menu_secondary_trigger_int', 'type' => 'val_px',
-		'info' => __('Set trigger width where Secondary Menu changes to/from Mobile Menu (Default: 768px, value must be &lt; 768)', 'weaver-xtreme' /*adm*/)),
+
+//	array('name' => '<span class="i-left" style="font-size:150%;">&harr;</span><small> ' . __('Mobile Menu Trigger', 'weaver-xtreme' /*adm*/). '</small>',
+//		'id' => 'menu_secondary_trigger_int', 'type' => 'val_px',
+//		'info' => __('Set trigger width where Secondary Menu changes to/from Mobile Menu (Default: 768px, value must be &lt; 768)', 'weaver-xtreme' /*adm*/)),
 
 
 	array( 'type' => 'submit'),

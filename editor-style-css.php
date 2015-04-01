@@ -21,15 +21,16 @@ function weaverx_mce_opt($opt) {
 
 header( 'Content-type: text/css' ); // gotta honor HTTP protocol for css
 
-if (($val=weaverx_mce_opt('fontsize'))) {
+if (($val= weaverx_mce_opt('fontsize'))) {
 	echo "label,th,thead th,tr,td,.mceContentBody,body{font-size:" . $val . "em;}\n";
 }
 
-if (($val = weaverx_mce_opt('twidth'))) {
+if (($val = (int) weaverx_mce_opt('twidth'))) {
 	echo "html .mceContentBody {max-width:96%;width:" . $val . "px;}\n";
 }
+echo "#content html .mceContentBody {max-width:96%;width:96%;}\n";
 
-if (($val=weaverx_mce_opt('fontfamily'))) {
+if (($val = weaverx_mce_opt('fontfamily'))) {
 	echo ".mceContentBody,body,tr,td {font-family:" . $val . ";}\n";
 }
 

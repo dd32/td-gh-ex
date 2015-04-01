@@ -68,7 +68,7 @@ function weaverx_page_menu( $args = array() ) {
 		$left = '<span class="wvrx-menu-html wvrx-menu-left' . $hide .'">' . do_shortcode( $left ) . '</span>';
 	}
 
-	if ( weaverx_getopt('m_primary_smartmenus')  && function_exists('weaverxplus_plugin_installed')) {
+	if ( weaverx_getopt('use_smartmenus')  && function_exists('weaverxplus_plugin_installed')) {
 		$hamburger = weaverx_getopt('m_primary_hamburger');
 		if ( $hamburger == '' )
 			$hamburger = '<span class="genericon genericon-menu"></span>';

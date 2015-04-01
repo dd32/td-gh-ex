@@ -23,7 +23,7 @@ if (weaverx_getopt( 'm_secondary_hide') != 'hide' && has_nav_menu( $menu )  && !
 		$right = str_replace('%','%%',$right);	// wp_nav_menu uses sprintf!
 	}
 
-	$use_smart = weaverx_getopt('m_secondary_smartmenus') && function_exists('weaverxplus_plugin_installed');
+	$use_smart = weaverx_getopt('use_smartmenus') && function_exists('weaverxplus_plugin_installed');
 
 	if ( $use_smart ) {							// ==================  SMART MENUS
 		$hamburger = weaverx_getopt('m_secondary_hamburger');
@@ -44,9 +44,9 @@ if (weaverx_getopt( 'm_secondary_hide') != 'hide' && has_nav_menu( $menu )  && !
 	}
 
 	if ( weaverx_getopt ('m_secondary_move') )
-		echo "\n\n<div id=\"nav-secondary\" class=\"menu-secondary menu-secondary-moved\">\n";
+		echo "\n\n<div id=\"nav-secondary\" class=\"menu-secondary menu-secondary-moved menu-type-standard\">\n";
 	else
-		echo "\n\n<div id=\"nav-secondary\" class=\"menu-secondary menu-secondary-standard\">\n";
+		echo "\n\n<div id=\"nav-secondary\" class=\"menu-secondary menu-secondary-standard menu-type-standard\">\n";
 
 	wp_nav_menu( array(
 		'fallback_cb'     => '',

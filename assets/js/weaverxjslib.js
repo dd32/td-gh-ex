@@ -428,9 +428,13 @@ http://snippets.webaware.com.au/snippets/make-css-drop-down-menus-work-on-touch-
 
 (function($) {
 	/* Detect device in use  */
-	var weaverx_isTouch = ("ontouchstart" in window);
+	if (wvrxOpts.useSmartMenus != '0')
+		return;
+	var weaverx_isTouch = ("ontouchstart" in window)
+		|| (navigator.MaxTouchPoints > 0)
+		|| (navigator.msMaxTouchPoints > 0);
 	var weaverx_isIOS5 = /iPad|iPod|iPhone/.test(navigator.platform) && "matchMedia" in window;
-	var weaverx_touch_dropdown_menu_apply = weaverx_isTouch && ! weaverx_isIOS5;
+	var weaverx_touch_dropdown_menu_apply = weaverx_isTouch || weaverx_isIOS5; //&& ! weaverx_isIOS5;
 	var selector = 'li:has(ul) > a';                    // set these to work with weaver x
 	var selector_leaf = 'li li li:not(:has(ul)) > a';
 
@@ -482,7 +486,8 @@ http://snippets.webaware.com.au/snippets/make-css-drop-down-menus-work-on-touch-
 
 function weaverxOnResize() {
 	// this function is called on initial window load, and again on resizes
-	var width;;
+	var width;
+	//var menuTrigger = 768;
 	width = weaverxBrowserWidth();
 
 	var device = 'is-desktop';
@@ -498,6 +503,17 @@ function weaverxOnResize() {
 		jQuery('body').removeClass("is-desktop is-smalltablet");
 		device = 'is-phone is-mobile';
 	}
+
+	//if ( wvrxOpts.menuPrimaryTrigger != 768 )
+	//	menuTrigger = wvrxOpts.menuPrimaryTrigger;
+
+	/*if ( width >= menuTrigger ) {
+		jQuery('body').removeClass("menu-mobile");
+		device = device + ' menu-desktop';
+	} else {
+		jQuery('body').removeClass("menu-desktop");
+		device = device + ' menu-mobile';
+	} */
 
 	var agent = navigator.userAgent;
 	if ( agent.match(/iPad/i) || agent.match( /iPhone/i ) || agent.match( /iPod/i ) ) {
@@ -527,7 +543,7 @@ function weaverxOnResize() {
 // handle mobile menus...
 
 jQuery(function($) {
-	var triggerPrimary = '768';
+	/* var triggerPrimary = '768';
 	var triggerSecondary = '768';
 
 	if ( wvrxOpts.menuPrimaryTrigger < '768')  {
@@ -535,19 +551,16 @@ jQuery(function($) {
 	}
 	if (wvrxOpts.menuSecondaryTrigger  < '768') {
 		triggerSecondary = wvrxOpts.menuSecondaryTrigger;
-	}
+	} */
 
 	$('.wrapper').resizeX(weaverxOnResize);
-	if (wvrxOpts.useSmartMenusPrimary == '0') {			// SmartMenus handled inline
+	if (wvrxOpts.useSmartMenus == '0') {			// SmartMenus handled inline
 		$('#nav-primary .weaverx-theme-menu').thmfdnMenu({
-			toggleButtonID: 'primary-toggle-button',
-			mobileBreakpoint: triggerPrimary
+			toggleButtonID: 'primary-toggle-button'
 		});
-	}
 
-	if (wvrxOpts.useSmartMenusSecondary == '0') {
 		$('#nav-secondary .weaverx-theme-menu').thmfdnMenu({
-			toggleButtonID: 'secondary-toggle-button',
-			mobileBreakpoint: triggerSecondary});
+			toggleButtonID: 'secondary-toggle-button'
+		});
 	}
 });

@@ -46,6 +46,36 @@ function weaverx_admin_help() {
 <p>
 <?php _e('Example of Font Families supported by Weaver Xtreme and Weaver Xtreme Plus.', 'weaver-xtreme' /*adm*/); ?>
 </p>
+
+<h3 style="text-decoration:underline;font-weight:bold;")>
+	<?php _e('Release Notes', 'weaver-xtreme' /*adm*/); ?>
+</h3>
+<p>
+<pre>
+= Version 1.1 =
+* New: Alternative SmartMenus - X-Plus
+* New: Border around submenus
+* Tweak: Submenu styling (inline-block -> block)
+* Tweak: z-index for full page width
+* Tweak: show Weaver Xtreme Plus version in HTML
+* Tweak: menu layout speeded up
+* Tweak: added .author wrap to single page author info for Google tools
+* Fix: Desktop Menu Spacing
+* Fix: multi-column post class fixes
+* Fix: issue with &lthead&gt; content option
+* Fix: clear issue with right aligned header widget area
+
+= Version 1.1.1 =
+* New: Rounded corners for submenus
+* Change: All menus must be either Smart Menus or Standard Weaver Xtreme menus - no per menu choice
+* Removed: Support for changing the Mobile/Desktop menu toggle point no longer supported - sorry!
+* Tweak: Added release notes to help tab
+* Tweak: italic no longer applied to menu arrows - should not have been applied
+* Tweak: menu handling on some touch devices / browsers - iOS, IE
+* Fix: minimized css/js
+* Fix: MegaMenu border (X-Plus)
+</pre>
+</p>
 	</div>
 </div>
 <div style="float:right;width:40%;padding-right:1%">
@@ -58,12 +88,12 @@ function weaverx_admin_help() {
 <li><a href="//wordpress.org/plugins/weaverx-theme-support/" target="_blank"><?php _e('Weaver Xtreme Theme Support', 'weaver-xtreme' /*adm*/); ?></a>
 <?php _e('- provides additional Weaver Xtreme theme options and useful shortcodes', 'weaver-xtreme' /*adm*/); ?>
 </li>
-<li><a href="//wordpress.org/plugins/show-posts/" target="_blank"><?php _e('Aspen Themeworks Show Posts', 'weaver-xtreme' /*adm*/); ?></a>
+<li><a href="//wordpress.org/plugins/show-posts/" target="_blank"><?php _e('Weaver Posts', 'weaver-xtreme' /*adm*/); ?></a>
 <?php _e('- adds the [show_posts] shortcode to selectively display posts.
 Adds additional filtering options to the Weaver Xtreme Page with Posts page template.', 'weaver-xtreme' /*adm*/); ?>
 </li>
-<li><a href="//wordpress.org/plugins/show-sliders/" target="_blank"><?php _e('Aspen Themeworks Show Sliders', 'weaver-xtreme' /*adm*/); ?></a>
-<?php __('- good for any kind of slideshows - images, posts, [gallery] replacement', 'weaver-xtreme' /*adm*/);?>
+<li><a href="//wordpress.org/plugins/show-sliders/" target="_blank"><?php _e('Weaver Show Sliders', 'weaver-xtreme' /*adm*/); ?></a>
+<?php _e('- good for any kind of slideshows - images, posts, [gallery] replacement', 'weaver-xtreme' /*adm*/);?>
 </li>
 <li><a href="https://wordpress.org/plugins/wp-retina-2x/" target="_blank"><?php _e('WP Retina 2x', 'weaver-xtreme' /*adm*/); ?></a>
 <?php _e('- Weaver Xtreme is Retina Ready - this plugin makes your Media Library Retina Ready, too.', 'weaver-xtreme' /*adm*/); ?>

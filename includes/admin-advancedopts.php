@@ -234,7 +234,7 @@ Technically, these features	are not part of the theme styling, but cover other a
    <?php
 	if ( weaverx_f_file_access_available() ) {
 ?>
-   <h3><?php _e('Inline CSS - (X-Plus Option)', 'weaver-xtreme' /*adm*/);?></h3>
+   <h3><?php _e('Inline CSS - (Xtreme-Plus Option)', 'weaver-xtreme' /*adm*/);?></h3>
 
 	<label><input type="checkbox" name="<?php weaverx_sapi_main_name('_inline_style'); ?>" id="_inline_style" <?php checked(weaverx_getopt_checked( '_inline_style' )); ?> />
 <?php _e('Generate inline CSS code rather than using style-weaverxt.css file.

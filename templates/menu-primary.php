@@ -6,7 +6,7 @@ $menu = apply_filters('weaverx_menu_name','primary');
 if (weaverx_getopt( 'm_primary_hide') != 'hide'
 	&& !weaverx_is_checked_page_opt('_pp_hide_menus') ) {
 
-	$use_smart = weaverx_getopt('m_primary_smartmenus') && function_exists('weaverxplus_plugin_installed');
+	$use_smart = weaverx_getopt('use_smartmenus') && function_exists('weaverxplus_plugin_installed');
 
 	weaverx_clear_both('menu-primary');
 
@@ -49,9 +49,9 @@ if (weaverx_getopt( 'm_primary_hide') != 'hide'
 	}
 
 	if ( weaverx_getopt ('m_primary_move') )
-		echo "\n\n<div id=\"nav-primary\" class=\"menu-primary menu-primary-moved\">\n";
+		echo "\n\n<div id=\"nav-primary\" class=\"menu-primary menu-primary-moved menu-type-standard\">\n";
 	else
-		echo "\n\n<div id=\"nav-primary\" class=\"menu-primary menu-primary-standard\">\n";
+		echo "\n\n<div id=\"nav-primary\" class=\"menu-primary menu-primary-standard menu-type-standard\">\n";
 
 	$args = array(
 		'fallback_cb' 	  => 'weaverx_page_menu',

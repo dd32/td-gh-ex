@@ -136,7 +136,7 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 
 		?>
 		<h2 id="site-tagline" class="<?php echo $hide_tag; ?>"><span<?php echo weaverx_title_class('tagline'); ?>><?php echo $tagline; ?></span></h2>
-		<span id="site-logo" class="site-logo <?php echo $hide_logo; ?>"><?php echo $logo; ?></span>
+		<div id="site-logo" class="site-logo <?php echo $hide_logo; ?>"><?php echo $logo; ?></div>
 		<?php get_template_part( 'templates/menu', 'header-mini' ); ?>
 
 	</div><!-- /.title-tagline -->
