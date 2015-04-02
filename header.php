@@ -53,9 +53,7 @@ endif; ?>
         </div>
         <?php endif; ?>
         
-    </div>
-    <div class="site-info">
-        <?php echo wp_kses_post( 'Electa theme, by <a href="http://kairaweb.com/">Kaira</a>', 'electa' ) ?>
+        <?php printf( __( '</div><div class="site-info">Theme: %1$s by %2$s', 'electa' ), 'Electa', '<a href="http://www.kairaweb.com/">Kaira</a>' ); ?>
     </div>
 </header><!-- #masthead -->
 

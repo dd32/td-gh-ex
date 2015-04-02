@@ -61,8 +61,12 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.2.1
+* Style tweaks.
+* Upgrade text change.
+
 #### 1.2.0
-** Add support for add_theme_support( 'title-tag' ).
+* Add support for add_theme_support( 'title-tag' ).
 
 #### 1.1.11
 * Added Theme URI link to stylesheet.
