@@ -665,7 +665,7 @@
 .woocommerce #order_review,
 .woocommerce-page #order_review {
     border-top: 0;
-    padding: 20px 20px 4px;
+    padding: 20px 20px 15px;
 }
 
 .woocommerce form .form-row,

@@ -71,6 +71,10 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.0
+* Styling tweaks to WooCommerce
+* Updated the screenshot.png
+
 #### 1.0.9
 * Styling tweaks added to WooCommerce shop & checkout
 * Updated the screenshot.png

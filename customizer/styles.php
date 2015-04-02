@@ -71,6 +71,7 @@ function customizer_library_topshop_build_styles() {
                 .woocommerce-page input.button,
                 .woocommerce #review_form #respond .form-submit input,
                 .woocommerce-page #review_form #respond .form-submit input,
+                .woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
                 .single-product span.onsale,
                 .header-cart:hover .header-cart-checkout .fa,
                 .main-navigation a:hover,
@@ -185,6 +186,7 @@ function customizer_library_topshop_build_styles() {
                 .woocommerce-page button.button.alt:hover,
                 .woocommerce #review_form #respond .form-submit input:hover,
                 .woocommerce-page #review_form #respond .form-submit input:hover,
+                .woocommerce-cart .wc-proceed-to-checkout a.checkout-button:hover,
                 .wpcf7-submit:hover'
             ),
             'declarations' => array(

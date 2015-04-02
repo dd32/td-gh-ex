@@ -4,7 +4,7 @@ Theme URI: http://kairaweb.com/theme/topshop/
 Author: Kaira
 Author URI: http://www.kairaweb.com/
 Description: TopShop is the perfect theme to easily build an eCommerce store for yourself or for your clients. Integrating with the best plugins such as WooCommerce, SiteOrigin's Page Builder, Meta Slider and more, TopShop is easily scalable and very customizable, fitting to your online needs. Not only for eCommerce, TopShop is also great for building the basic business website and blog. With a clean simple design, developers too will love how customizable TopShop is. Go on... give it a try!
-Version: 1.0.9
+Version: 1.1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: topshop
@@ -1800,6 +1800,7 @@ input[type="submit"],
 .woocommerce-page input.button,
 .woocommerce #review_form #respond .form-submit input,
 .woocommerce-page #review_form #respond .form-submit input,
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
 .single-product span.onsale,
 .header-cart:hover .header-cart-checkout .fa,
 .main-navigation a:hover,
@@ -1868,6 +1869,7 @@ input[type="submit"],
 .woocommerce-page button.button.alt:hover,
 .woocommerce #review_form #respond .form-submit input:hover,
 .woocommerce-page #review_form #respond .form-submit input:hover,
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button:hover,
 .wpcf7-submit:hover {
     background: inherit;
     background-color: #266ee4;

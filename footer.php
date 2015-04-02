@@ -17,12 +17,8 @@
                 <?php dynamic_sidebar( 'topshop-site-footer' ); ?>
             </ul>
             <div class="clearboth"></div>
-        </div>
-    </div>
-	
-	<div class="site-footer-bottom-bar">
-	
-		<?php printf( __( '<div class="site-container"><div class="site-footer-bottom-bar-left">Theme: %1$s by %2$s', 'topshop' ), 'TopShop', '<a href="http://www.kairaweb.com/" rel="designer">Kaira</a></div><div class="site-footer-bottom-bar-right">' ); ?>
+        
+			<?php printf( __( '</div></div><div class="site-footer-bottom-bar"><div class="site-container"><div class="site-footer-bottom-bar-left">Theme: %1$s by %2$s', 'topshop' ), 'TopShop', '<a href="http://www.kairaweb.com/" rel="designer">Kaira</a></div><div class="site-footer-bottom-bar-right">' ); ?>
             
             <?php _e( 'Proudly powered by ', 'TopShop' ); ?><a href="<?php echo esc_url( __( 'http://wordpress.org/', 'topshop' ) ); ?>"><?php printf( __( '%s', 'topshop' ), 'WordPress' ); ?></a>
                 
