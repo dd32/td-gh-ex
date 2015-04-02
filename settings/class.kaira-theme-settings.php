@@ -248,7 +248,7 @@ class Kaira_theme_settings {
                 
             case 'upsell':
                 echo '<a href="' . esc_url( $desc ) . '" class="kaira-upsell-btn" target="_blank">Upgrade to Albar Premium</a>';
-                echo '<br /><span class="description">' . __( 'Upgrade to premium to get all features', 'albar' ) . '</span></label>';
+                echo '<br /><span class="description">' . __( 'Upgrade to premium only <b>$15</b>', 'albar' ) . '</span></label>';
                 break;
 						
 			case 'text':

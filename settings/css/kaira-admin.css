@@ -228,6 +228,9 @@ td.kaira-heading-td {
     font-style: normal;
     color: #838383;
 }
+.kaira-theme-options-wrap span.description b {
+    color: #000;
+}
 .kaira-theme-options-wrap span.description big {
     color: #111;
 }

@@ -68,6 +68,10 @@ View the settings under Appearance -> ALBAR Settings.
 
 == Changelog ==
 
+#### 1.6.4
+** Styling tweaks
+** Changed text on setting in dashboard
+
 #### 1.6.3
 ** Updated language .pot file.
 
