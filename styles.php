@@ -198,10 +198,10 @@ function quill_custom_styles($custom) {
         $custom .= ".contact-area { background-color: {$contact_bg}; }"."\n";
     }
     if ( isset($contact_title) && ( $contact_title != '#2E2E2E' ) ) {
-        $custom .= ".contact .widget-title { color: {$contact_title}; }"."\n";
+        $custom .= ".contact-area .widget-title { color: {$contact_title}; }"."\n";
     }
     if ( isset($contact_title_dec) && ( $contact_title_dec != '#2E2E2E' ) ) {
-        $custom .= ".contact .widget-title { border-color: {$contact_title_dec}; }"."\n";
+        $custom .= ".contact-area .widget-title { border-color: {$contact_title_dec}; }"."\n";
     } 
     if ( isset($contact_info) && ( $contact_info != '#2E2E2E' ) ) {
         $custom .= ".contact_info div { background-color: {$contact_info}; }"."\n";

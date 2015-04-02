@@ -1,5 +1,8 @@
 Changelog
 
+Quill 1.05
+----------------------
+- compatibility with the new Page Builder by Site Origin;
 
 Quill 1.04
 ----------------------

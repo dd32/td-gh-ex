@@ -4,7 +4,7 @@ Theme URI: http://athemes.com/theme/quill
 Author: aThemes
 Author URI: http://athemes.com/
 Description: Quill is designed with law firms in mind. Use it to create a great online presence for your firm and show your potential clients what you're all about by using the many available front page blocks. You can brag with your latest cases, show off your most valuable employees, present facts about your firm and much more. Also, Quill provides a high level of customization options.
-Version: 1.04
+Version: 1.05
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: quill
@@ -831,6 +831,7 @@ Front page blocks
 	overflow: hidden;
 	margin: 0 auto;
 }
+.so-panel.widget,
 .panel.widget {
 	padding: 0 30px 90px;
 	overflow: hidden;
@@ -1454,6 +1455,7 @@ Responsive
 	.home.page section {
 		padding: 0 0 60px;
 	}
+	.so-panel.widget,
 	.panel.widget {
 		padding: 0 30px 60px;
 	}	
