@@ -9,7 +9,6 @@
 <!--[if IE 9 ]><html <?php language_attributes(); ?> class="no-js ie9"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
 <head>
-	<title><?php wp_title( ' &raquo; ', true, 'right' ); ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=<?php bloginfo('charset'); ?>" />
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<?php 
@@ -36,8 +35,23 @@
 			<header role="banner">
 				<?php echo apply_filters( 'universal_top_of_header', '' ); ?>								
 				<div class="text-header">
-					<div class='site-title'><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo('name'); ?></a></div>
-					<div class='site-description'><?php bloginfo('description'); ?></div>
+					<?php 
+					/**
+					 * If somebody sets their blog name to an empty string, they're intent is probably to hide the site title on the home page.
+					 * This results in an empty link with no text, so this pattern inserts a text and hides the link.
+					 */
+					if ( get_bloginfo( 'name' ) == '' ) {
+						$class = 'site-title screen-reader-text';
+						$name = 'Home';
+					} else {
+						$class = 'site-title';
+						$name = get_bloginfo( 'name' );
+					}
+					?>
+					<div class='<?php echo $class; ?>'><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo $name; ?></a></div>
+					<?php if ( get_bloginfo( 'description' ) != '' ) { ?>
+						<div class='site-description'><?php bloginfo('description'); ?></div>
+					<?php } ?>
 				</div>
 				<?php echo apply_filters( 'universal_end_of_header', '' ); ?>	
 			</header>
@@ -52,7 +66,7 @@
 			?>
 			<nav role="navigation" aria-label='<?php _e( 'Primary Menu ', 'universal' ); ?>'>
 			<h1 class="screen-reader-text"><?php _e( 'Primary Menu', 'universal' ); ?></h1>
-			<button class='menu-toggle' title='<?php _e( 'Open Menu', 'universal' ); ?>'><span class="screen-reader-text"><?php _e( 'Open Menu','universal' ); ?></span></button>			
+			<button class='menu-toggle' title='<?php _e( 'Toggle Menu', 'universal' ); ?>'><span class="screen-reader-text"><?php _e( 'Toggle Menu','universal' ); ?></span></button>			
 			<?php wp_nav_menu( array( 'theme_location'=>'primary' ) ); ?>
 			</nav>
 		</div>
