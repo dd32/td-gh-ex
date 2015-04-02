@@ -1020,7 +1020,7 @@ function interface_theme_options_validate( $options ) { //validate individual op
 
 	//Custom CSS Style Validation
 	if ( isset( $input['custom_css'] ) ) {
-		$validated_input_values['custom_css'] = wp_kses_stripslashes($input['custom_css']);
+		$validated_input_values['custom_css'] = wp_filter_nohtml_kses($input['custom_css']);
 	}
 
 	if( isset( $input[ 'site_design' ] ) ) {

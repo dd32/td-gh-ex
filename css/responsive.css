@@ -110,10 +110,16 @@
 	input[type="email"],
 	input[type="search"],
 	input[type="password"],
+	input[type="tel"],
+	input[type="url"],
+	input[type="date"],
 	textarea,
 	input[type="reset"],
 	input[type="button"],
-	input[type="submit"] {
+	input[type="submit"],
+	input[type="radio"],
+	input[type="checkbox"],
+	input[type="file"] {
 		margin-bottom: 20px;
 	}
 	input.s {

@@ -61,6 +61,10 @@ https://wordpress.org/themes/simple-catch
 
 == CHANGE LOG ==
 
+= 1.7 =
+ - Update - Custom CSS sanitized with wp_filter_nohtml_kses()
+ - Update - Some CSS added to support contact form 7
+
 = 1.6 =
  - Update - html5 updated to version 3.7.2
  - Fix - Empty Tagline display issue fixed

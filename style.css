@@ -4,7 +4,7 @@ Theme URI: http://themehorse.com/themes/interface
 Author: Theme Horse
 Author URI: http://themehorse.com
 Description: Interface is a Simple, Clean and Flat Responsive Retina Ready WordPress Theme. It is easily customizable with numerous theme options. Some of the highlighted options are two site layout (Narrow and Wide), 4 layouts for every post/page, 5 Page Templates, 8 widget areas, 6 custom widgets, featured slider to highlight your post/page, 10 social icons, top and bottom info bar to hightlight your contact/email/location and many more. Also has custom background, header, menu, favicon, CSS, webclip icon, and logo. Supports popular plugins like Breadcrumb NavXT, WP-PageNavi and Contact Form 7. It is also translation ready. Available Translation: Russian. Get free support at http://themehorse.com/support-forum/ and View beautiful demo site at http://themehorse.com/preview/interface
-Version: 1.6
+Version: 1.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, light, green, two-columns, left-sidebar, right-sidebar, fluid-layout, custom-menu, custom-background, custom-header, featured-images, full-width-template, theme-options, threaded-comments, translation-ready, sticky-post
@@ -315,6 +315,9 @@ input[type="text"],
 input[type="email"],
 input[type="search"],
 input[type="password"],
+input[type="tel"],
+input[type="url"],
+input[type="date"],
 textarea,
 input[type="reset"],
 input[type="button"],
@@ -330,6 +333,9 @@ input[type="text"],
 input[type="email"],
 input[type="search"],
 input[type="password"],
+input[type="tel"],
+input[type="url"],
+input[type="date"],
 textarea {
 	padding: 10px;
 	border: 1px solid rgba(0, 0, 0, 0.05);
@@ -344,6 +350,9 @@ input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="search"]:focus,
 input[type="password"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="date"]:focus,
 textarea:focus {
 	border-color: rgba(0, 0, 0, 0.15);
 }
@@ -385,6 +394,38 @@ input.s {
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
 	border-radius: 0;
+}
+select {
+	padding: 10px;
+	border: 1px solid rgba(0, 0, 0, 0.05);
+	margin: 0 0 30px;
+	width: 50%;
+	background-color: #f9f9f9;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+input[type="radio"],
+input[type="checkbox"],
+input[type="file"] {
+	margin-bottom: 30px;
+}
+input[type="file"] {
+	border: 0 none;
+	cursor: pointer;
+	font-weight: bold;
+	text-transform: uppercase;
+	display: block;
+	text-align: center;
+	height: 40px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-ms-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-webkit-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
 }
 
 /* Links */
@@ -1056,10 +1097,9 @@ a.more-link:hover {
 }
 #search-box {
 	position: absolute;
-	padding: 15px;
+	padding: 10px;
 	background-color: #fff;
 	border: 1px solid rgba(0, 0, 0, 0.1);
-	width: 221px;
 	-webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 	-moz-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
@@ -1096,6 +1136,7 @@ a.more-link:hover {
 	-moz-border-radius: 0;
 	border-radius: 0;
 	margin: 0;
+	float: right;
 }
 
 /* =Content
