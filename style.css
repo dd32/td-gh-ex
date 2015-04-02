@@ -2,7 +2,7 @@
 Theme Name: activetab
 Theme URI: http://web-profile.com.ua/wordpress/themes/activetab/
 Description: Responsive clean theme. More info at http://web-profile.com.ua/activetab/
-Version: 2.2
+Version: 2.3
 Author: webvitaly
 Author URI: http://web-profile.com.ua/wordpress/
 Tags: gray, white, light, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -51,10 +51,6 @@ body {
 .smaller-text {
 	font-size: 12px;
 }
-.nowrap {
-	white-space: nowrap;
-}
-
 
 
 blockquote:before, blockquote:after,
@@ -135,7 +131,7 @@ table td.label { /* WordPress sample data fix */
 }
 
 /* ========== links ========== */
-a:link {
+a {
 	text-decoration: underline;
 }
 a:visited {
@@ -410,7 +406,10 @@ input[type="tel"], input[type="url"], select {
 textarea {
 	height: auto;
 }
-input[type="submit"], input[type="button"], input[type="reset"], button {
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+button {
 	display: inline-block;
 	margin-bottom: 0;
 	text-align: center;
@@ -826,6 +825,9 @@ body.admin-bar .navbar-fixed-top { /* move menu below admin-bar */
 }
 .widget-area .widget_calendar table td#next {
 	text-align: right;
+}
+#wp-calendar #prev {
+	text-align: left;
 }
 #wp-calendar #next {
 	text-align: right;

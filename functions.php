@@ -1,6 +1,6 @@
 <?php
 
-define('ACTIVETAB_VERSION', '2.2');
+define('ACTIVETAB_VERSION', '2.3');
 
 
 if ( ! isset( $content_width ) ) {
@@ -20,8 +20,7 @@ if ( ! function_exists( 'activetab_enqueue_scripts_and_styles' ) ) :
 
 		wp_enqueue_style( 'activetab-bootstrap-style', get_template_directory_uri() . '/bootstrap/css/bootstrap.css', array(), ACTIVETAB_VERSION, 'all' );
 		wp_enqueue_style( 'activetab-bootstrap-theme-style', get_template_directory_uri() . '/bootstrap/css/bootstrap-theme.css', array(), ACTIVETAB_VERSION, 'all' );
-		wp_enqueue_style( 'activetab-font-awesome-style', get_template_directory_uri() . '/font-awesome/css/font-awesome.css', array(), ACTIVETAB_VERSION, 'all' );
-		wp_enqueue_style( 'activetab-style', get_stylesheet_uri(), array( 'activetab-bootstrap-style' ), ACTIVETAB_VERSION, 'all' ); // get_stylesheet_directory_uri() . '/style.css'
+		wp_enqueue_style( 'activetab-style', get_stylesheet_uri(), array( 'activetab-bootstrap-style', 'dashicons' ), ACTIVETAB_VERSION, 'all' ); // get_stylesheet_directory_uri() . '/style.css'
 	}
 	add_action( 'wp_enqueue_scripts', 'activetab_enqueue_scripts_and_styles' );
 endif; // activetab_enqueue_scripts_and_styles()
@@ -154,7 +153,7 @@ if ( ! function_exists( 'activetab_comments' ) ) :
 							}
 						?>
 						<?php comment_author_link(); ?>
-						<?php edit_comment_link( '<span class="btn btn-default btn-small"><i class="fa fa-pencil"></i> '.__( 'Edit', 'activetab' ).'</span>', '<span class="edit-link '.$comment->comment_type.'-edit-link">', '</span>' ); ?>
+						<?php edit_comment_link( '<span class="btn btn-default btn-xs"><i class="dashicons dashicons-edit"></i> '.__( 'Edit', 'activetab' ).'</span>', '<span class="edit-link '.$comment->comment_type.'-edit-link">', '</span>' ); ?>
 					</p>
 					<?php
 				break;
@@ -187,10 +186,10 @@ if ( ! function_exists( 'activetab_comments' ) ) :
 								echo '<div class="comment-avatar">'.$comment_avatar_url_before.get_avatar( $comment, $avatar_size ).$comment_avatar_url_after.'</div>';
 
 								echo '<div class="comment-meta">';
-								echo '<span class="comment-meta-item comment-meta-item-author fn"><i class="fa fa-user" title="'.esc_attr( __( 'Author', 'activetab' ) ).'"></i> '.get_comment_author_link().$post_author_label.'</span> ';
-								echo '<span class="comment-meta-item comment-meta-item-date"><i class="fa fa-calendar" title="'.esc_attr( __( 'Published', 'activetab' ) ).'"></i> <a href="'.esc_url( get_comment_link( $comment->comment_ID ) ).'"><time datetime="'.get_comment_time( 'c' ).'" title="'.get_comment_time().'">'.get_comment_date().'</time></a></span>';
+								echo '<span class="comment-meta-item comment-meta-item-author fn"><i class="dashicons dashicons-admin-users" title="'.esc_attr( __( 'Author', 'activetab' ) ).'"></i> '.get_comment_author_link().$post_author_label.'</span> ';
+								echo '<span class="comment-meta-item comment-meta-item-date"><i class="dashicons dashicons-calendar-alt" title="'.esc_attr( __( 'Published', 'activetab' ) ).'"></i> <a href="'.esc_url( get_comment_link( $comment->comment_ID ) ).'"><time datetime="'.get_comment_time( 'c' ).'" title="'.get_comment_time().'">'.get_comment_date().'</time></a></span>';
 
-								edit_comment_link( '<span class="btn btn-default btn-small"><i class="fa fa-pencil"></i> '.__( 'Edit', 'activetab' ).'</span>', '<span class="edit-link comment-edit-link">', '</span>' );
+								edit_comment_link( '<span class="btn btn-default btn-xs"><i class="dashicons dashicons-edit"></i> '.__( 'Edit', 'activetab' ).'</span>', '<span class="edit-link comment-edit-link">', '</span>' );
 
 								echo '</div> <!-- /.comment-meta -->';
 								?>
@@ -205,7 +204,7 @@ if ( ! function_exists( 'activetab_comments' ) ) :
 						<div class="comment-content"><?php comment_text(); ?></div>
 
 						<div class="reply">
-							<?php comment_reply_link( array_merge( $args, array( 'reply_text' => '<span class="btn btn-default btn-small"><i class="fa fa-comment"></i> '.__( 'Reply', 'activetab' ).'</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+							<?php comment_reply_link( array_merge( $args, array( 'reply_text' => '<span class="btn btn-default"><i class="dashicons dashicons-admin-comments"></i> '.__( 'Reply', 'activetab' ).'</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 						</div> <!-- /.reply -->
 					</article> <!-- /#comment-<?php comment_ID(); ?> -->
 
@@ -218,7 +217,7 @@ endif; // activetab_comments()
 
 if ( ! function_exists( 'activetab_post_date' ) ) :
 	function activetab_post_date() {
-		$post_date = '<span class="entry-meta-item entry-meta-date"><i class="fa fa-calendar" title="'.esc_attr( __( 'Published', 'activetab' ) ).'"></i> '.'<a href="'.esc_url( get_permalink() ).'" title="'.get_the_time().'"><time class="entry-date" datetime="'.get_the_date( 'c' ).'" title="'.get_the_time().'">'.get_the_date().'</time></a></span>'."\n";
+		$post_date = '<span class="entry-meta-item entry-meta-date"><i class="dashicons dashicons-calendar-alt" title="'.esc_attr( __( 'Published', 'activetab' ) ).'"></i> '.'<a href="'.esc_url( get_permalink() ).'" title="'.get_the_time().'"><time class="entry-date" datetime="'.get_the_date( 'c' ).'" title="'.get_the_time().'">'.get_the_date().'</time></a></span>'."\n";
 		return $post_date;
 	}
 endif; // activetab_post_date()
@@ -229,7 +228,7 @@ if ( ! function_exists( 'activetab_post_sticky' ) ) :
 		$post_sticky = '';
 
 		if( is_sticky() ) { // add 'sticky' label to sticky post
-			$sticky = ' <span class="label label-info">'.__( 'Sticky', 'activetab' ).'</span>';
+			$sticky = ' <span class="label label-info"><i class="dashicons dashicons-admin-post"></i>'.__( 'Sticky', 'activetab' ).'</span>';
 			$post_sticky = '<span class="entry-meta-item entry-meta-sticky">'.$sticky.'</span>'."\n";
 		}
 
@@ -243,7 +242,7 @@ if ( ! function_exists( 'activetab_post_author' ) ) :
 		global $authordata;
 		if ( !is_object( $authordata ) )
 			return false;
-		$post_author = '<span class="entry-meta-item entry-meta-author"><i class="fa fa-user" title="'.esc_attr( __( 'Author', 'activetab' ) ).'"></i> <a href="'.esc_url( get_author_posts_url( $authordata->ID, $authordata->user_nicename ) ).'" title="'.esc_attr(  __( 'Author', 'activetab' ) ).'">'.get_the_author().'</a></span>'."\n";
+		$post_author = '<span class="entry-meta-item entry-meta-author"><i class="dashicons dashicons-admin-users" title="'.esc_attr( __( 'Author', 'activetab' ) ).'"></i> <a href="'.esc_url( get_author_posts_url( $authordata->ID, $authordata->user_nicename ) ).'" title="'.esc_attr(  __( 'Author', 'activetab' ) ).'">'.get_the_author().'</a></span>'."\n";
 		return $post_author;
 	}
 endif; // activetab_post_author()
@@ -253,7 +252,7 @@ if ( ! function_exists( 'activetab_comments_count' ) ) :
 	function activetab_comments_count() {
 		$post_comments_count = '';
 		if ( get_comments_number() != '0' ) {
-			$post_comments_count = '<span class="entry-meta-item entry-meta-comments-count"><i class="fa fa-comment" title="'.esc_attr( __( 'Comments', 'activetab' ) ).'"></i> <a href="'.esc_url( get_permalink() ).'#comments" title="'.__( 'Comments', 'activetab' ).'">'.get_comments_number().'</a></span>'."\n";
+			$post_comments_count = '<span class="entry-meta-item entry-meta-comments-count"><i class="dashicons dashicons-admin-comments" title="'.esc_attr( __( 'Comments', 'activetab' ) ).'"></i> <a href="'.esc_url( get_permalink() ).'#comments" title="'.__( 'Comments', 'activetab' ).'">'.get_comments_number().'</a></span>'."\n";
 		}
 		return $post_comments_count;
 	}
@@ -264,7 +263,7 @@ if ( ! function_exists( 'activetab_post_categories' ) ) :
 	function activetab_post_categories() { // list of categories
 		$post_categories = get_the_category_list( __( ', ', 'activetab' ) );
 		if ( !empty( $post_categories ) ) {
-			return '<span class="entry-meta-item entry-meta-categories"><i class="fa fa-folder-open" title="'.esc_attr( __( 'Categories', 'activetab' ) ).'"></i> '.$post_categories.'</span>'."\n";
+			return '<span class="entry-meta-item entry-meta-categories"><i class="dashicons dashicons-category" title="'.esc_attr( __( 'Categories', 'activetab' ) ).'"></i> '.$post_categories.'</span>'."\n";
 		} else {
 			return ''; // no categories
 		}
@@ -276,7 +275,7 @@ if ( ! function_exists( 'activetab_post_tags' ) ) :
 	function activetab_post_tags() { // list of tags
 		$post_tags = get_the_tag_list( '', __( ', ', 'activetab' ), '' );
 		if( !empty( $post_tags ) ){
-			return '<span class="entry-meta-item entry-meta-tags"><i class="fa fa-tag" title="'.esc_attr( __( 'Tags', 'activetab' ) ).'"></i> '.$post_tags.'</span>'."\n";
+			return '<span class="entry-meta-item entry-meta-tags"><i class="dashicons dashicons-tag" title="'.esc_attr( __( 'Tags', 'activetab' ) ).'"></i> '.$post_tags.'</span>'."\n";
 		}else{
 			return ''; // no tags
 		}

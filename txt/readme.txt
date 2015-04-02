@@ -4,7 +4,7 @@ Donate link: http://web-profile.com.ua/donate/
 Tags: gray, white, light, one-column, two-columns, right-sidebar, flexible-width, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, clean
 Requires at least: 3.4
 Tested up to: 4.1
-Stable tag: 2.2
+Stable tag: 2.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -49,10 +49,10 @@ activetab theme is distributed under the terms of the GNU GPL
 
 = Bundled Resources: =
 
-* [Bootstrap](http://getbootstrap.com/) licensed under [Apache License v2.0](http://www.apache.org/licenses/LICENSE-2.0)
+* [Bootstrap](http://getbootstrap.com/) licensed under [MIT](http://opensource.org/licenses/MIT)
 * [Options Framework](http://wptheming.com/options-framework-theme/) licensed under [GPL](https://github.com/devinsays/options-framework-theme/blob/master/license.txt)
 * [Pixabay](http://pixabay.com/) public domain images
-* [Font Awesome](http://fortawesome.github.io/Font-Awesome/) licensed under [open source and GPL compatible license](http://fortawesome.github.io/Font-Awesome/license/)
+* [Dashicons](https://developer.wordpress.org/resource/dashicons/) licensed under [GPLv2](http://www.gnu.org/licenses/gpl-2.0.html)
 
 
 = Images used: =
