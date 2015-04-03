@@ -504,7 +504,7 @@ function weaverx_form_menu_opts( $value, $submit = false ) {
 
 		array ('name' => '<span class="i-left dashicons dashicons-editor-alignleft"></span>' . __('Align Menu', 'weaver-xtreme' /*adm*/),
 			'id' => $id . '_align', 'type' => 'select_id',
-			'info' => __('Align this menu on desktop view. Mobile menus always left aligned.', 'weaver-xtreme' /*adm*/),
+			'info' => __('Align this menu on desktop view. Mobile, accordion, and vertical menus always left aligned.', 'weaver-xtreme' /*adm*/),
 			'value' => array(
 				array('val' => 'left', 'desc' => 'Left'),
 				array('val' => 'center', 'desc' => 'Center'),

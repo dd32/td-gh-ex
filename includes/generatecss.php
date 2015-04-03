@@ -582,8 +582,11 @@ $menu_detail = array (              /* can't use multiple selectors here! */
 		}
 
 		// special case - generate a .wvrx-menu text align for main menus to get rid of initial menu jumping
-		$align = weaverx_getopt_default( "{$id}_align" , 'align-left');
-		weaverx_f_write($sout, "@media(min-width:768px) {{$tag} .wvrx-menu,{$tag} .wvrx-menu-container{text-align:{$align};}}\n");
+		$align = weaverx_getopt_default( "{$id}_align" , 'left');
+		$lh = '';
+		if ( $align == 'center')		// compensate for centered display:inline-block
+			$lh = 'line-height:0;';
+		weaverx_f_write($sout, "@media(min-width:768px) {{$tag} .wvrx-menu,{$tag} .wvrx-menu-container{text-align:{$align};{$lh}}}\n");
 
 
 		// alternative mobile menu arrow clickable
