@@ -6,7 +6,7 @@ For updated FAQs and informatin on latest version visit official theme page
 
 http://themonic.com/iconic-one/
 
-For theme support visit 
+For support visit 
 
 https://wordpress.org/support/theme/iconic-one
 
