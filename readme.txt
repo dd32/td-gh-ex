@@ -60,6 +60,12 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.43
+* Minor adjustment in theme option panel
+* New .pot file created
+* Translation bug fixed
+* Screenshot changed
+
 Version 2.42
 * Translation Issue fixed for the month name for event date metabox
 * Minor adjustment in theme option panel

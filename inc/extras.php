@@ -596,3 +596,5 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 	}
 
 	add_action('accesspresslite_call_to_action','accesspresslite_call_to_action_cb', 10);
+
+	add_filter('widget_text', 'do_shortcode');

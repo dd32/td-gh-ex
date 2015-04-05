@@ -92,7 +92,7 @@ wp_nonce_field( basename( __FILE__ ), 'accesspresslite_sidebar_layout_nonce' );
 </td>
 </tr>
 <tr>
-    <td><em class="f13">You can set up the sidebar content <a href="<?php echo admin_url('/themes.php?page=theme_options'); ?>">here</a></em></td>
+    <td><em class="f13"><?php echo sprintf(__('You can set up the sidebar content <a href="%s" target="_blank">here</a> in Sidebar tab','accesspresslite'), admin_url('/themes.php?page=theme_options')); ?></em></td>
 </tr>
 </table>
 

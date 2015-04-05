@@ -1093,7 +1093,7 @@ function accesspresslite_theme_options_page() {
 						<br />
 
 						<?php _e('For Queries Regading Pro Themes','accesspresslite'); ?><br/>
-						<?php _e('Support:','accesspresslite'); ?> <a href="mailto:support@accesspressthemes.com">support@accesspressthemes.com</a><br/>
+						<a href="mailto:support@accesspressthemes.com">support@accesspressthemes.com</a><br/>
 						</p>
 
 						<hr />
