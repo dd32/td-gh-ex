@@ -1,4 +1,4 @@
-              <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+              <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="" itemtype="http://schema.org/BlogPosting">
                   <div class="row">
                       <?php global $post, $virtue;
                           $postsummery  = get_post_meta( $post->ID, '_kad_post_summery', true );
@@ -183,10 +183,10 @@
                       <div class="<?php echo esc_attr($textsize);?> postcontent">
                           <?php get_template_part('templates/post', 'date'); ?> 
                           <header>
-                              <a href="<?php the_permalink() ?>"><h2 class="entry-title"><?php the_title(); ?></h2></a>
+                              <a href="<?php the_permalink() ?>"><h2 class="entry-title" itemprop="name headline"><?php the_title(); ?></h2></a>
                                <?php get_template_part('templates/entry', 'meta-subhead'); ?>  
                           </header>
-                          <div class="entry-content">
+                          <div class="entry-content" itemprop="articleBody">
                               <?php the_excerpt(); ?>
                           </div>
                           <footer>

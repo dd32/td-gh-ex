@@ -12,7 +12,9 @@ Template Name: Portfolio Grid
     <div id="content" class="container">
    		<div class="row">
       		<div class="main <?php echo kadence_main_class(); ?>" role="main">
-			<?php get_template_part('templates/content', 'page'); ?>
+			<div class="entry-content" itemprop="mainContentOfPage">
+					<?php get_template_part('templates/content', 'page'); ?>
+				</div>
       			<?php global $post; 
       			$portfolio_category 	= get_post_meta( $post->ID, '_kad_portfolio_type', true ); 
 			   	$portfolio_items 		= get_post_meta( $post->ID, '_kad_portfolio_items', true );

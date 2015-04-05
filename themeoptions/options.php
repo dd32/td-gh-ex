@@ -1666,6 +1666,16 @@ $this->sections[] = array(
             'title' => 'Follow Kadence Themes on Facebook', 
             'icon' => 'icon-facebook',
             );
+           $this->args['share_icons']['twitter'] = array(
+            'link' => 'https://www.twitter.com/KadenceThemes',
+            'title' => 'Follow Kadence Themes on Twitter', 
+            'icon' => 'icon-twitter',
+            );
+           $this->args['share_icons']['instagram'] = array(
+            'link' => 'https://www.instagram.com/KadenceThemes',
+            'title' => 'Follow Kadence Themes on Instagram', 
+            'icon' => 'icon-instagram',
+            );
 
           }
      }

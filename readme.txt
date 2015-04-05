@@ -49,6 +49,13 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version 2.4.4 | 4th March 2015 =
+* Update: Theme Options (Faster)
+* Update: Schema.
+* Fix: Woocommerce tracking.
+* Fix: WPML portfolio navigation.
+* Fix: Secondary Nav Background.
+
 = Version 2.4.3 | 17th March 2015 =
 * Remove: "to the top" title tag.
 * Fix: Validator alerts with mobile menu.

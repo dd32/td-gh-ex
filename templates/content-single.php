@@ -25,7 +25,7 @@
         $slidewidth = $slide_sidebar;
       } ?>
   <div id="content" class="container">
-    <div class="row single-article">
+    <div class="row single-article" itemscope="" itemtype="http://schema.org/BlogPosting">
       <div class="main <?php echo esc_attr( kadence_main_class() ); ?>" role="main">
         <?php while (have_posts()) : the_post(); ?>
           <article <?php post_class(); ?>>
@@ -71,7 +71,7 @@
                     $image = aq_resize( $img_url, $slidewidth, $slideheight, true ); //resize & crop the image
                     if(empty($image)) { $image = $img_url; }
                     if($image) : ?>
-                      <div class="imghoverclass postfeat post-single-img">
+                      <div class="imghoverclass postfeat post-single-img" itemprop="image">
                         <a href="<?php echo esc_url($img_url); ?>" data-rel="lightbox" class="lightboxhover">
                           <img src="<?php echo esc_url($image); ?>" alt="<?php the_title(); ?>" />
                         </a>
@@ -80,10 +80,10 @@
         <?php } ?>
     <?php get_template_part('templates/post', 'date'); ?> 
     <header>
-      <h1 class="entry-title"><?php the_title(); ?></h1>
+      <h1 class="entry-title" itemprop="name headline"><?php the_title(); ?></h1>
       <?php get_template_part('templates/entry', 'meta-subhead'); ?>  
     </header>
-    <div class="entry-content">
+    <div class="entry-content" itemprop="description articleBody">
       <?php the_content(); ?>
     </div>
     <footer class="single-footer">

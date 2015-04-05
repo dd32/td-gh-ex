@@ -12,7 +12,7 @@
     } else {
       $slidewidth = 848;
     } ?>
-        <article <?php post_class(); ?>>
+        <article <?php post_class(); ?> itemscope="" itemtype="http://schema.org/BlogPosting">
            <?php if ($headcontent == 'flex') { ?>
                <section class="postfeat">
                 <div class="flexslider kt-flexslider" style="max-width:<?php echo esc_attr($slidewidth);?>px;" data-flex-speed="7000" data-flex-anim-speed="400" data-flex-animation="fade" data-flex-auto="true">
@@ -66,10 +66,10 @@
         <?php } ?>
     <?php get_template_part('templates/post', 'date'); ?>             
     <header>
-      <a href="<?php the_permalink() ?>"><h1 class="entry-title"><?php the_title(); ?></h1></a>
+      <a href="<?php the_permalink() ?>"><h1 class="entry-title" itemprop="name headline"><?php the_title(); ?></h1></a>
       <?php get_template_part('templates/entry', 'meta-subhead'); ?>
     </header>
-    <div class="entry-content">
+    <div class="entry-content" itemprop="articleBody">
       <?php global $more; $more = 0; ?>
       <?php $readmore =  __('Continued', 'virtue');
       the_content($readmore); ?>

@@ -52,6 +52,7 @@
     <div id="content" class="container homepagecontent">
    		<div class="row">
           	<div class="main <?php echo esc_attr(kadence_main_class()); ?>" role="main">
+          	<div class="entry-content" itemprop="mainContentOfPage">
 
       		<?php if(isset($virtue['homepage_layout']['enabled'])) { 
       			$layout = $virtue['homepage_layout']['enabled']; 
@@ -131,6 +132,7 @@
 						break;  
 					}
 				}
-			endif; ?>   
+			endif; ?>  
+			</div>
 
 		</div><!-- /.main -->

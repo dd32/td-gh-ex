@@ -174,8 +174,8 @@ $menu_bg_color = $virtue['menu_bg_color'];
 } else {
   $menu_bg_color = '';
 }
-if(!empty($virtue['menu_bg_img']['url'])) {
- $menu_bg_img = 'url('.$virtue['menu_bg_img']['url'].')'; 
+if(!empty($virtue['bg_menu_bg_img']['url'])) {
+ $menu_bg_img = 'url('.$virtue['bg_menu_bg_img']['url'].')'; 
 } else {
   $menu_bg_img = '';
 }

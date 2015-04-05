@@ -38,7 +38,7 @@
 				 if ( $wp_query ) : 
 					while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
 				<div class="<?php echo $itemsize;?>">
-                	<div <?php post_class('blog_item grid_item'); ?>>
+                	<div <?php post_class('blog_item grid_item'); ?> itemscope="" itemtype="http://schema.org/BlogPosting">
 	                    		<?php if (has_post_thumbnail( $post->ID ) ) {
 										$image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); 
 										$thumbnailURL = $image_url[0]; 
@@ -56,12 +56,12 @@
                     <?php $image = null; $thumbnailURL = null; ?>	
               <a href="<?php the_permalink() ?>" class="bcarousellink">
 				<header>
-			        <h5 class="entry-title"><?php the_title(); ?></h5>
-			        <div class="subhead">
+			        <h5 class="entry-title" itemprop="name headline"><?php the_title(); ?></h5>
+			        <div class="subhead" itemprop="datePublished">
 			        <span class="postday"><?php echo get_the_date(get_option( 'date_format' )); ?></span>
 			        </div>
 				</header>
-		       	<div class="entry-content">
+		       	<div class="entry-content" itemprop="articleBody">
 		        <p><?php echo virtue_excerpt(16); ?></p>
 		        </div>
 				 </a>

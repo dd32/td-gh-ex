@@ -491,6 +491,14 @@ function kadence_adjacent_post_link_plus($args = '', $format = '%link &raquo;', 
 
   return true;
 }
+if (class_exists('SitePress')) {
+global $sitepress;
+add_filter('get_previous_post_plus_join', array($sitepress,'get_adjacent_post_join'));
+add_filter('get_next_post_plus_join', array($sitepress,'get_adjacent_post_join'));
+add_filter('get_previous_post_plus_where', array($sitepress,'get_adjacent_post_where'));
+add_filter('get_next_post_plus_where', array($sitepress,'get_adjacent_post_where'));
+}
+
 //User Addon
 add_action( 'show_user_profile', 'kadence_show_extra_profile_fields' );
 add_action( 'edit_user_profile', 'kadence_show_extra_profile_fields' );

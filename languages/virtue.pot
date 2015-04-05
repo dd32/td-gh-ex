@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lite Virtue\n"
-"POT-Creation-Date: 2015-03-17 15:27-0700\n"
-"PO-Revision-Date: 2015-03-17 15:27-0700\n"
+"POT-Creation-Date: 2015-04-05 00:04-0700\n"
+"PO-Revision-Date: 2015-04-05 00:04-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.4\n"
+"X-Generator: Poedit 1.7.5\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;esc_attr__;esc_attr_e\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -362,7 +362,7 @@ msgstr ""
 
 #: ../lib/cmb/init.php:244 ../lib/metaboxes.php:98 ../lib/metaboxes.php:123
 #: ../lib/metaboxes.php:154 ../lib/metaboxes.php:165
-#: ../themeoptions/framework.php:2153
+#: ../themeoptions/framework.php:1762
 msgid "Default"
 msgstr ""
 
@@ -407,47 +407,47 @@ msgstr ""
 msgid "Next Post"
 msgstr ""
 
-#: ../lib/custom.php:504
+#: ../lib/custom.php:512
 msgid "Occupation"
 msgstr ""
 
-#: ../lib/custom.php:507
+#: ../lib/custom.php:515
 msgid "Please enter your Occupation."
 msgstr ""
 
-#: ../lib/custom.php:514
+#: ../lib/custom.php:522
 msgid "Please enter your Twitter username."
 msgstr ""
 
-#: ../lib/custom.php:521
+#: ../lib/custom.php:529
 msgid "Please enter your Facebook url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:528
+#: ../lib/custom.php:536
 msgid "Please enter your Google Plus url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:535
+#: ../lib/custom.php:543
 msgid "Please enter your YourTube url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:542
+#: ../lib/custom.php:550
 msgid "Please enter your Flickr url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:549
+#: ../lib/custom.php:557
 msgid "Please enter your Linkedin url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:556
+#: ../lib/custom.php:564
 msgid "Please enter your Dribbble url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:563
+#: ../lib/custom.php:571
 msgid "Please enter your Pinterest url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:570
+#: ../lib/custom.php:578
 msgid "Please enter your Instagram url. (be sure to include http://)"
 msgstr ""
 
@@ -937,7 +937,7 @@ msgstr ""
 msgid "Sorry, no blog entries found."
 msgstr ""
 
-#: ../page-portfolio.php:130 ../templates/home/portfolio-carousel.php:86
+#: ../page-portfolio.php:132 ../templates/home/portfolio-carousel.php:86
 #: ../templates/recentportfolio-carousel.php:54
 msgid "Sorry, no portfolio entries found."
 msgstr ""
@@ -1087,75 +1087,106 @@ msgstr ""
 msgid "Similar Posts"
 msgstr ""
 
-#: ../themeoptions/extensions/customizer/extension_customizer.php:531
-#: ../themeoptions/framework.php:1850
+#: ../themeoptions/core/enqueue.php:397
 msgid "You have changes that are not saved. Would you like to save them now?"
 msgstr ""
 
-#: ../themeoptions/extensions/customizer/extension_customizer.php:532
-#: ../themeoptions/framework.php:1858
+#: ../themeoptions/core/enqueue.php:405
 msgid "Are you sure? Resetting will lose all custom values."
 msgstr ""
 
-#: ../themeoptions/extensions/customizer/extension_customizer.php:533
-#: ../themeoptions/framework.php:1874
+#: ../themeoptions/core/enqueue.php:413
+msgid "Are you sure? Resetting will lose all custom values in this section."
+msgstr ""
+
+#: ../themeoptions/core/enqueue.php:421
 msgid ""
 "Your current options will be replaced with the values of this preset. Would "
 "you like to proceed?"
 msgstr ""
 
-#: ../themeoptions/extensions/customizer/extension_customizer.php:566
-msgid "You have changes that are not saved.  Would you like to save them now?"
+#: ../themeoptions/core/enqueue.php:428
+msgid "Please Wait"
 msgstr ""
 
-#: ../themeoptions/extensions/customizer/extension_customizer.php:567
-msgid "Are you sure?  Resetting will lose all custom values."
+#: ../themeoptions/core/enqueue.php:439
+msgid "There was an error saving. Here is the result of your action:"
 msgstr ""
 
-#: ../themeoptions/extensions/customizer/extension_customizer.php:568
+#: ../themeoptions/core/enqueue.php:440
 msgid ""
-"Your current options will be replaced with the values of this preset.  Would "
-"you like to proceed?"
+"There was a problem with your action. Please try again or reload the page."
 msgstr ""
 
-#: ../themeoptions/framework.php:209
+#: ../themeoptions/core/panel.php:65
+msgid "Warning- This options panel will not work properly without javascript!"
+msgstr ""
+
+#: ../themeoptions/core/panel.php:141
+msgid "Settings Imported!"
+msgstr ""
+
+#: ../themeoptions/core/panel.php:156
+msgid "All Defaults Restored!"
+msgstr ""
+
+#: ../themeoptions/core/panel.php:170
+msgid "Section Defaults Restored!"
+msgstr ""
+
+#: ../themeoptions/core/panel.php:184
+msgid "Settings Saved!"
+msgstr ""
+
+#: ../themeoptions/core/panel.php:204
+msgid "Settings have changed, you should save them!"
+msgstr ""
+
+#: ../themeoptions/core/panel.php:212
+msgid "error(s) were found!"
+msgstr ""
+
+#: ../themeoptions/core/panel.php:220
+msgid "warning(s) were found!"
+msgstr ""
+
+#: ../themeoptions/core/panel.php:326
+msgid ""
+"<strong>Your panel has bundled outdated copies of Redux Framework template "
+"files</strong> &#8211; if you encounter functionality issues this could be "
+"the reason. Ensure you update or remove them."
+msgstr ""
+
+#: ../themeoptions/framework.php:218
 #, php-format
 msgid "Options panel created using %1$s"
 msgstr ""
 
-#: ../themeoptions/framework.php:209
+#: ../themeoptions/framework.php:218
 msgid "Redux Framework"
 msgstr ""
 
-#: ../themeoptions/framework.php:213 ../themeoptions/framework.php:217
+#: ../themeoptions/framework.php:222 ../themeoptions/framework.php:226
 msgid "Options"
 msgstr ""
 
-#: ../themeoptions/framework.php:1866
-msgid "Are you sure? Resetting will lose all custom values in this section."
-msgstr ""
-
-#: ../themeoptions/framework.php:1881
-msgid "Please Wait"
-msgstr ""
-
-#: ../themeoptions/framework.php:2006
+#: ../themeoptions/framework.php:1613
 msgid "Enable"
 msgstr ""
 
-#: ../themeoptions/framework.php:2011
+#: ../themeoptions/framework.php:1618
 msgid "Disable"
 msgstr ""
 
-#: ../themeoptions/framework.php:2017
+#: ../themeoptions/framework.php:1624
 msgid "moving the mouse over"
 msgstr ""
 
-#: ../themeoptions/framework.php:2019
+#: ../themeoptions/framework.php:1626
 msgid "clicking"
 msgstr ""
 
-#: ../themeoptions/framework.php:2023
+#: ../themeoptions/framework.php:1630
 #, php-format
 msgid ""
 "Hints are tooltips that popup when %d the hint icon, offering addition "
@@ -1163,68 +1194,16 @@ msgid ""
 "the link below."
 msgstr ""
 
-#: ../themeoptions/framework.php:2028
+#: ../themeoptions/framework.php:1635
 msgid "Hints"
 msgstr ""
 
-#: ../themeoptions/framework.php:3256
-msgid "Warning- This options panel will not work properly without javascript!"
+#: ../themeoptions/framework.php:2601
+msgid "Invalid security credential, please reload the page and try again."
 msgstr ""
 
-#: ../themeoptions/framework.php:3307
-msgid "Developer Mode Enabled"
-msgstr ""
-
-#: ../themeoptions/framework.php:3336
-msgid "Expand"
-msgstr ""
-
-#: ../themeoptions/framework.php:3338 ../themeoptions/framework.php:3648
-msgid "Save Changes"
-msgstr ""
-
-#: ../themeoptions/framework.php:3342 ../themeoptions/framework.php:3652
-msgid "Reset Section"
-msgstr ""
-
-#: ../themeoptions/framework.php:3344 ../themeoptions/framework.php:3654
-msgid "Reset All"
-msgstr ""
-
-#: ../themeoptions/framework.php:3349 ../themeoptions/framework.php:3659
-msgid "Working..."
-msgstr ""
-
-#: ../themeoptions/framework.php:3369
-msgid "Settings Imported!"
-msgstr ""
-
-#: ../themeoptions/framework.php:3384
-msgid "All Defaults Restored!"
-msgstr ""
-
-#: ../themeoptions/framework.php:3398
-msgid "Section Defaults Restored!"
-msgstr ""
-
-#: ../themeoptions/framework.php:3412
-msgid "Settings Saved!"
-msgstr ""
-
-#: ../themeoptions/framework.php:3432
-msgid "Settings have changed, you should save them!"
-msgstr ""
-
-#: ../themeoptions/framework.php:3440
-msgid "error(s) were found!"
-msgstr ""
-
-#: ../themeoptions/framework.php:3448
-msgid "warning(s) were found!"
-msgstr ""
-
-#: ../themeoptions/framework.php:3512 ../themeoptions/framework.php:3591
-msgid "System Info"
+#: ../themeoptions/framework.php:2687
+msgid "Your panel has no fields. Nothing to save."
 msgstr ""
 
 #: ../themeoptions/options.php:56
@@ -2243,36 +2222,41 @@ msgid ""
 "\" target=\"_blank\">Kadence Themes</a>."
 msgstr ""
 
+#: ../themeoptions/templates/panel/footer.tpl.php:43
+#: ../themeoptions/templates/panel/header_stickybar.tpl.php:20
+msgid "Save Changes"
+msgstr ""
+
+#: ../themeoptions/templates/panel/footer.tpl.php:46
+#: ../themeoptions/templates/panel/header_stickybar.tpl.php:22
+msgid "Reset Section"
+msgstr ""
+
+#: ../themeoptions/templates/panel/footer.tpl.php:47
+#: ../themeoptions/templates/panel/header_stickybar.tpl.php:23
+msgid "Reset All"
+msgstr ""
+
+#: ../themeoptions/templates/panel/footer.tpl.php:52
+#: ../themeoptions/templates/panel/header_stickybar.tpl.php:26
+msgid "Working..."
+msgstr ""
+
+#: ../themeoptions/templates/panel/header.tpl.php:18
+msgid "Developer Mode Enabled"
+msgstr ""
+
+#: ../themeoptions/templates/panel/header_stickybar.tpl.php:16
+msgid "Expand"
+msgstr ""
+
+#: ../themeoptions/templates/panel/menu_container.tpl.php:63
+msgid "System Info"
+msgstr ""
+
 #: ../woocommerce/loop/sale-flash.php:16
 #: ../woocommerce/single-product/sale-flash.php:16
 msgid "Sale!"
-msgstr ""
-
-#: ../woocommerce/order/form-tracking.php:17
-msgid ""
-"To track your order please enter your Order ID in the box below and press "
-"return. This was given to you on your receipt and in the confirmation email "
-"you should have received."
-msgstr ""
-
-#: ../woocommerce/order/form-tracking.php:19
-msgid "Order ID"
-msgstr ""
-
-#: ../woocommerce/order/form-tracking.php:19
-msgid "Found in your order confirmation email."
-msgstr ""
-
-#: ../woocommerce/order/form-tracking.php:20
-msgid "Billing Email"
-msgstr ""
-
-#: ../woocommerce/order/form-tracking.php:20
-msgid "Email you used during checkout."
-msgstr ""
-
-#: ../woocommerce/order/form-tracking.php:23
-msgid "Track"
 msgstr ""
 
 #: ../woocommerce/single-product.php:27 ../woocommerce/single-product.php:29
