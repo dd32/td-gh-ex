@@ -1422,6 +1422,13 @@ $this->sections[] = array(
             'subtitle' => __('Choose to show or hide previous and next post links in the footer of a single post.', 'pinnacle'),
             "default" => 0,
             ),
+        array(
+            'id'=>'postexcerpt_hard_crop',
+            'type' => 'switch', 
+            'title' => __('Hard Crop excerpt images to the same height.', 'pinnacle'),
+            'subtitle' => __('Makes the excerpt images the same size instead of whatever ratio was uploaded.', 'pinnacle'),
+            "default"=> 0,
+            ),
        array(
             'id'=>'info_blog_defaults',
             'type' => 'info',
@@ -1706,7 +1713,7 @@ $this->sections[] = array(
       array(
         'id'        => 'header_background',
         'type'      => 'background',
-        'output'    => array('.is_sticky .headerclass', '.none-trans-header .headerclass'),
+        'output'    => array('.is-sticky .headerclass', '.none-trans-header .headerclass'),
         'title'     => __('Header Background', 'pinnacle'),
         'required' => array('header_background_choice','=','full'),
         ),
@@ -2190,7 +2197,7 @@ $this->sections[] = array(
 
 function kadence_override_redux_icons_css() {
   wp_dequeue_style( 'redux-css' );
-  wp_register_style('redux-custom-css', get_template_directory_uri() . '/themeoptions/options_assets/css/style.css', false, 100);    
+  wp_register_style('redux-custom-css', get_template_directory_uri() . '/themeoptions/options_assets/css/style.css', false, 123);    
   wp_enqueue_style('redux-custom-css');
   wp_dequeue_style( 'redux-elusive-icon' );
   wp_dequeue_style( 'redux-elusive-icon-ie7' );

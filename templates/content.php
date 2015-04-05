@@ -2,7 +2,11 @@
         $slide_sidebar = 848;
         $portraittext = 'col-md-7';
         $portraitimg = 'col-md-5';
-         
+         if(isset($pinnacle['postexcerpt_hard_crop']) && $pinnacle['postexcerpt_hard_crop'] == 1) {
+              $hardcrop = true;
+            } else {
+              $hardcrop = false;
+            }
         // Get summary setting
         if ( has_post_format( 'video' )) {
             $postsummery = get_post_meta( $post->ID, '_kad_video_post_summery', true );
@@ -18,7 +22,8 @@
                   $slidewidth = $swidth;
                 } else { 
                   $slidewidth = $slide_sidebar;
-                }            
+                }
+                $slideheight = 400;            
         } else if (has_post_format( 'gallery' )) {
             $postsummery = get_post_meta( $post->ID, '_kad_gallery_post_summery', true );
               if(empty($postsummery) || $postsummery == 'default') {
@@ -55,6 +60,7 @@
                 } else {
                   $slidewidth = $slide_sidebar;
                 }
+                $slideheight = 400;
         } else {
                 if(!empty($pinnacle['post_summery_default'])) {
                   $postsummery = $pinnacle['post_summery_default'];
@@ -62,6 +68,7 @@
                   $postsummery = 'img_landscape';
                 }
                 $slidewidth = $slide_sidebar;
+                $slideheight = 400;
             
         } ?>
           <article id="post-<?php the_ID(); ?>" <?php post_class('kad_blog_item postclass kad-animation'); ?> data-animation="fade-in" data-delay="0" itemscope="" itemtype="http://schema.org/BlogPosting">
@@ -71,7 +78,11 @@
                             if (has_post_thumbnail( $post->ID ) ) {
                               $image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); 
                               $thumbnailURL = $image_url[0];
-                              $image = aq_resize($thumbnailURL,$slidewidth, false);
+                              if($hardcrop) {
+                                $image = aq_resize($thumbnailURL, $slidewidth, $slideheight, true);
+                              } else {
+                                $image = aq_resize($thumbnailURL,$slidewidth, false);
+                              }
                               if(empty($image)) { $image = $thumbnailURL; } ?>
                                 <div class="col-md-12">
                                     <div class="imghoverclass img-margin-center" itemprop="image">
@@ -88,7 +99,7 @@
                               $thumbnailURL = $image_url[0]; 
                               $image = aq_resize($thumbnailURL, 360, 360, true);
                               if(empty($image)) { $image = $thumbnailURL; } ?>
-                                <div class="<?php echo $portraitimg;?>">
+                                <div class="<?php echo esc_attr($portraitimg);?>">
                                     <div class="imghoverclass img-margin-center" itemprop="image">
                                         <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">
                                             <img src="<?php echo esc_url($image); ?>" alt="<?php the_title(); ?>" class="iconhover" style="display:block;">

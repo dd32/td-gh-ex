@@ -52,6 +52,14 @@ Pinnacle Theme Uses:
 
 = Theme Name: Pinnacle =
 
+= Version 1.2.3 | 5th April 2015 = 
+* Add: Hard crop option for post excerpts.
+* Update: Theme options (Faster).
+* Fix: title-tag two titles.
+* Fix: p tag in category description.
+* Fix: Home page header when no page title.
+* Fix: CSS for category menu widget.
+
 = Version 1.2.2 | 25th March 2015 = 
 * Add title-tag support.
 * Update: Theme options (Faster).

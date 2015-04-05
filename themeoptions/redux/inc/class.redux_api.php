@@ -56,7 +56,7 @@
             }
 
             public static function loadExtensions( $ReduxFramework ) {
-                if ( $instanceExtensions = self::getExtensions( '', $ReduxFramework->args['opt_name'] ) ) {
+                if ( $instanceExtensions = self::getExtensions( $ReduxFramework->args['opt_name'], "" ) ) {
                     foreach ( $instanceExtensions as $name => $extension ) {
                         if ( ! class_exists( $extension['class'] ) ) {
                             // In case you wanted override your override, hah.
@@ -77,7 +77,25 @@
                 }
             }
 
+            public static function extensionPath( $extension, $folder = true ) {
+                if ( ! isset( Redux::$extensions[ $extension ] ) ) {
+                    return;
+                }
+                $path = end( Redux::$extensions[ $extension ] );
+                if ( ! $folder ) {
+                    return $path;
+                }
+
+                return str_replace( 'extension_' . $extension . '.php', '', $path );
+            }
+
+
             public static function loadRedux( $opt_name = "" ) {
+
+                if ( empty( $opt_name ) ) {
+                    return;
+                }
+
                 $check = ReduxFrameworkInstances::get_instance( $opt_name );
                 if ( isset( $check->apiHasRun ) ) {
                     return;
@@ -94,8 +112,13 @@
                     add_action( "redux/extensions/{$opt_name}/before", array( 'Redux', 'loadExtensions' ), 0 );
                 }
 
-                $redux            = new ReduxFramework( $sections, $args );
-                $redux->apiHasRun = 1;
+                $redux                   = new ReduxFramework( $sections, $args );
+                $redux->apiHasRun        = 1;
+                self::$init[ $opt_name ] = 1;
+                if ( isset( $redux->args['opt_name'] ) && $redux->args['opt_name'] != $opt_name ) {
+                    self::$init[ $redux->args['opt_name'] ] = 1;
+                }
+
             }
 
             public static function createRedux() {
@@ -107,7 +130,8 @@
             }
 
             public static function constructArgs( $opt_name ) {
-                $args             = self::$args[ $opt_name ];
+                $args = isset( self::$args[ $opt_name ] ) ? self::$args[ $opt_name ] : array();
+
                 $args['opt_name'] = $opt_name;
                 if ( ! isset( $args['menu_title'] ) ) {
                     $args['menu_title'] = ucfirst( $opt_name ) . ' Options';
@@ -124,6 +148,10 @@
 
             public static function constructSections( $opt_name ) {
                 $sections = array();
+                if ( ! isset( self::$sections[ $opt_name ] ) ) {
+                    return $sections;
+
+                }
                 foreach ( self::$sections[ $opt_name ] as $section_id => $section ) {
                     $section['fields'] = self::constructFields( $opt_name, $section_id );
                     $p                 = $section['priority'];
@@ -166,6 +194,15 @@
                 }
 
                 return false;
+            }
+
+            public static function setSections( $opt_name = '', $sections = array() ) {
+                self::check_opt_name( $opt_name );
+                if ( ! empty( $sections ) ) {
+                    foreach ( $sections as $section ) {
+                        Redux::setSection( $opt_name, $section );
+                    }
+                }
             }
 
             public static function setSection( $opt_name = '', $section = array() ) {
@@ -328,7 +365,6 @@
              * @return string
              */
             public static function getFileVersion( $file, $size = 8192 ) {
-
                 return '3.4.3';
             }
 
@@ -374,7 +410,7 @@
                 }
             }
 
-            public static function getExtensions( $key = "", $opt_name = "" ) {
+            public static function getExtensions( $opt_name = "", $key = "" ) {
                 if ( empty( $opt_name ) ) {
                     if ( empty( $key ) ) {
                         return self::$extension_paths[ $key ];

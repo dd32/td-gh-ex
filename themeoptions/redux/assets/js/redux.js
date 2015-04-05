@@ -1,4 +1,4 @@
-/* global confirm, relid:true, jsonView */
+/* global redux, confirm, relid:true, jsonView */
 
 (function( $ ) {
     'use strict';
@@ -614,7 +614,7 @@
             function() {
                 var type = $( this ).attr( 'data-type' );
                 //console.log(type);
-                if ( redux.field_objects[type] ) {
+                if ( typeof redux.field_objects != 'undefined' && redux.field_objects[type] && redux.field_objects[type] ) {
                     redux.field_objects[type].init();
                 }
                 if ( $( this ).hasClass( 'redux_remove_th' ) ) {
@@ -630,7 +630,7 @@
     };
 
     $.redux.notices = function() {
-        if ( redux.errors !== undefined ) {
+        if ( redux.errors && redux.errors.errors ) {
             $.each(
                 redux.errors.errors, function( sectionID, sectionArray ) {
                     $.each(
@@ -638,6 +638,8 @@
                             $( "#" + redux.args.opt_name + '-' + value.id ).addClass( "redux-field-error" );
                             if ( $( "#" + redux.args.opt_name + '-' + value.id ).parent().find( '.redux-th-error' ).length === 0 ) {
                                 $( "#" + redux.args.opt_name + '-' + value.id ).append( '<div class="redux-th-error">' + value.msg + '</div>' );
+                            } else {
+                                $( "#" + redux.args.opt_name + '-' + value.id ).parent().find( '.redux-th-error' ).html(value.msg).css('display', 'block');
                             }
                         }
                     );
@@ -671,7 +673,7 @@
                 }
             );
         }
-        if ( redux.warnings !== undefined ) {
+        if ( redux.warnings && redux.warnings.warnings ) {
             $.each(
                 redux.warnings.warnings, function( sectionID, sectionArray ) {
                     $.each(
@@ -679,6 +681,8 @@
                             $( "#" + redux.args.opt_name + '-' + value.id ).addClass( "redux-field-warning" );
                             if ( $( "#" + redux.args.opt_name + '-' + value.id ).parent().find( '.redux-th-warning' ).length === 0 ) {
                                 $( "#" + redux.args.opt_name + '-' + value.id ).append( '<div class="redux-th-warning">' + value.msg + '</div>' );
+                            } else {
+                                $( "#" + redux.args.opt_name + '-' + value.id ).parent().find( '.redux-th-warning' ).html(value.msg ).css('display', 'block');
                             }
                         }
                     );

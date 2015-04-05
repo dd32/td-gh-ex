@@ -5,9 +5,9 @@
 	if(is_page()) {
 		$bsub = get_post_meta( $post->ID, '_kad_subtitle', true );
 	} else if(is_category()) {
-		$bsub = category_description();
+		$bsub = strip_tags( category_description() );
 	} else if(is_tag()) {
-		$bsub = tag_description();
+		$bsub = strip_tags( tag_description() );
 	} ?>
 <div id="pageheader" class="titleclass">
 <div class="header-color-overlay"></div>

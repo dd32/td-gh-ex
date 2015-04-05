@@ -34,6 +34,13 @@ function pinnacle_lightbox_text() {
 }
 add_action('wp_head', 'pinnacle_lightbox_text');
 
+// Clean Up the count on category widgets
+add_filter('wp_list_categories', 'cat_count_inline');
+function cat_count_inline($links) {
+$links = str_replace('</a> (', '</a><span class="count">(', $links);
+$links = str_replace(')', ')</span>', $links);
+return $links;
+}
 
 function kt_hex2rgb($hex) {
    $hex = str_replace("#", "", $hex);

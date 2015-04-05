@@ -18,7 +18,11 @@
               $image_height = 226;
               $titletag = "h5";
             }
-            
+            if(isset($pinnacle['postexcerpt_hard_crop']) && $pinnacle['postexcerpt_hard_crop'] == 1) {
+              $hardcrop = true;
+            } else {
+              $hardcrop = false;
+            }
             if ( has_post_format( 'video' )) {
               $postsummery = get_post_meta( $post->ID, '_kad_video_post_summery', true );
               if(empty($postsummery) || $postsummery == 'default') {
@@ -57,7 +61,11 @@
                 <div id="post-<?php the_ID(); ?>" class="blog_item postclass kad_blog_fade_in grid_item" itemscope="" itemtype="http://schema.org/BlogPosting">
                     <?php $image_url = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'full' ); 
                           $thumbnailURL = $image_url[0];
-                          $image = aq_resize($thumbnailURL, $image_width, false);
+                          if($hardcrop) {
+                                    $image = aq_resize($thumbnailURL, $image_width, $image_height, true);
+                                  } else {
+                                    $image = aq_resize($thumbnailURL, $image_width, false);
+                                  }
                           if(empty($image)) { $image = $thumbnailURL; } ?>
                               <div class="imghoverclass img-margin-center">
                                 <a href="<?php the_permalink()  ?>" title="<?php the_title(); ?>">

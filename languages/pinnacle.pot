@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pinnacle\n"
-"POT-Creation-Date: 2015-03-25 17:31-0700\n"
-"PO-Revision-Date: 2015-03-25 17:32-0700\n"
+"POT-Creation-Date: 2015-04-05 01:42-0700\n"
+"PO-Revision-Date: 2015-04-05 01:42-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -320,7 +320,7 @@ msgstr ""
 msgid "Return to the Dashboard"
 msgstr ""
 
-#: ../lib/cleanup.php:97 ../lib/custom.php:102
+#: ../lib/cleanup.php:83 ../lib/custom.php:109
 #: ../templates/content-post-grid-carousel.php:42
 msgid "Read More"
 msgstr ""
@@ -436,55 +436,55 @@ msgstr ""
 msgid "The Image could not be loaded."
 msgstr ""
 
-#: ../lib/custom.php:419 ../templates/entry-post-links.php:3
+#: ../lib/custom.php:426 ../templates/entry-post-links.php:3
 msgid "Previous Post"
 msgstr ""
 
-#: ../lib/custom.php:419 ../templates/entry-post-links.php:6
+#: ../lib/custom.php:426 ../templates/entry-post-links.php:6
 msgid "Next Post"
 msgstr ""
 
-#: ../lib/custom.php:513
+#: ../lib/custom.php:520
 msgid "Occupation"
 msgstr ""
 
-#: ../lib/custom.php:516
+#: ../lib/custom.php:523
 msgid "Please enter your Occupation."
 msgstr ""
 
-#: ../lib/custom.php:523
+#: ../lib/custom.php:530
 msgid "Please enter your Twitter username."
 msgstr ""
 
-#: ../lib/custom.php:530
+#: ../lib/custom.php:537
 msgid "Please enter your Facebook url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:537
+#: ../lib/custom.php:544
 msgid "Please enter your Google Plus url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:544
+#: ../lib/custom.php:551
 msgid "Please enter your Flickr url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:551
+#: ../lib/custom.php:558
 msgid "Please enter your Vimeo url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:558
+#: ../lib/custom.php:565
 msgid "Please enter your Linkedin url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:565
+#: ../lib/custom.php:572
 msgid "Please enter your Dribbble url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:572
+#: ../lib/custom.php:579
 msgid "Please enter your Pinterest url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:579
+#: ../lib/custom.php:586
 msgid "Please enter your Instagram url. (be sure to include http://)"
 msgstr ""
 
@@ -521,26 +521,26 @@ msgid "Standard Post Default"
 msgstr ""
 
 #: ../lib/metaboxes.php:164 ../lib/metaboxes.php:205
-#: ../themeoptions/theme_options.php:1503
-#: ../themeoptions/theme_options.php:1516
-#: ../themeoptions/theme_options.php:1537
-#: ../themeoptions/theme_options.php:1558
+#: ../themeoptions/theme_options.php:1510
+#: ../themeoptions/theme_options.php:1523
+#: ../themeoptions/theme_options.php:1544
+#: ../themeoptions/theme_options.php:1565
 msgid "Text"
 msgstr ""
 
 #: ../lib/metaboxes.php:165 ../lib/metaboxes.php:206
-#: ../themeoptions/theme_options.php:1503
-#: ../themeoptions/theme_options.php:1516
-#: ../themeoptions/theme_options.php:1537
-#: ../themeoptions/theme_options.php:1558
+#: ../themeoptions/theme_options.php:1510
+#: ../themeoptions/theme_options.php:1523
+#: ../themeoptions/theme_options.php:1544
+#: ../themeoptions/theme_options.php:1565
 msgid "Portrait Image"
 msgstr ""
 
 #: ../lib/metaboxes.php:166 ../lib/metaboxes.php:207
-#: ../themeoptions/theme_options.php:1503
-#: ../themeoptions/theme_options.php:1516
-#: ../themeoptions/theme_options.php:1537
-#: ../themeoptions/theme_options.php:1558
+#: ../themeoptions/theme_options.php:1510
+#: ../themeoptions/theme_options.php:1523
+#: ../themeoptions/theme_options.php:1544
+#: ../themeoptions/theme_options.php:1565
 msgid "Landscape Image"
 msgstr ""
 
@@ -556,15 +556,15 @@ msgstr ""
 msgid "Image Post Default"
 msgstr ""
 
-#: ../lib/metaboxes.php:188 ../themeoptions/theme_options.php:1524
+#: ../lib/metaboxes.php:188 ../themeoptions/theme_options.php:1531
 msgid "Image"
 msgstr ""
 
 #: ../lib/metaboxes.php:189 ../themeoptions/theme_options.php:360
 #: ../themeoptions/theme_options.php:519
-#: ../themeoptions/theme_options.php:1524
-#: ../themeoptions/theme_options.php:1545
-#: ../themeoptions/theme_options.php:1566
+#: ../themeoptions/theme_options.php:1531
+#: ../themeoptions/theme_options.php:1552
+#: ../themeoptions/theme_options.php:1573
 msgid "None"
 msgstr ""
 
@@ -620,11 +620,11 @@ msgstr ""
 msgid "Display a carousel with similar or recent posts?"
 msgstr ""
 
-#: ../lib/metaboxes.php:256 ../themeoptions/theme_options.php:1490
+#: ../lib/metaboxes.php:256 ../themeoptions/theme_options.php:1497
 msgid "Yes - Display Recent Posts"
 msgstr ""
 
-#: ../lib/metaboxes.php:257 ../themeoptions/theme_options.php:1490
+#: ../lib/metaboxes.php:257 ../themeoptions/theme_options.php:1497
 msgid "Yes - Display Similar Posts"
 msgstr ""
 
@@ -660,7 +660,7 @@ msgstr ""
 msgid "Summary"
 msgstr ""
 
-#: ../lib/metaboxes.php:317 ../themeoptions/theme_options.php:1702
+#: ../lib/metaboxes.php:317 ../themeoptions/theme_options.php:1709
 msgid "Full"
 msgstr ""
 
@@ -1343,7 +1343,7 @@ msgstr ""
 #: ../themeoptions/theme_options.php:1176
 #: ../themeoptions/theme_options.php:1183
 #: ../themeoptions/theme_options.php:1268
-#: ../themeoptions/theme_options.php:1434
+#: ../themeoptions/theme_options.php:1441
 msgid "This can be overridden on each page."
 msgstr ""
 
@@ -1492,8 +1492,8 @@ msgid "Carousel Slider"
 msgstr ""
 
 #: ../themeoptions/theme_options.php:360 ../themeoptions/theme_options.php:519
-#: ../themeoptions/theme_options.php:1558
-#: ../themeoptions/theme_options.php:1566
+#: ../themeoptions/theme_options.php:1565
+#: ../themeoptions/theme_options.php:1573
 msgid "Video"
 msgstr ""
 
@@ -1747,7 +1747,7 @@ msgid "Dark"
 msgstr ""
 
 #: ../themeoptions/theme_options.php:776
-#: ../themeoptions/theme_options.php:1634
+#: ../themeoptions/theme_options.php:1641
 msgid "Primary Color"
 msgstr ""
 
@@ -1930,17 +1930,17 @@ msgid "If Latest Post page is front page. Choose how to show the posts."
 msgstr ""
 
 #: ../themeoptions/theme_options.php:986
-#: ../themeoptions/theme_options.php:1579
+#: ../themeoptions/theme_options.php:1586
 msgid "Normal Post Excerpt"
 msgstr ""
 
 #: ../themeoptions/theme_options.php:986
-#: ../themeoptions/theme_options.php:1579
+#: ../themeoptions/theme_options.php:1586
 msgid "Normal Full Post"
 msgstr ""
 
 #: ../themeoptions/theme_options.php:986
-#: ../themeoptions/theme_options.php:1579
+#: ../themeoptions/theme_options.php:1586
 msgid "Grid Post"
 msgstr ""
 
@@ -1949,17 +1949,17 @@ msgid "Post Grid Columns"
 msgstr ""
 
 #: ../themeoptions/theme_options.php:994
-#: ../themeoptions/theme_options.php:1587
+#: ../themeoptions/theme_options.php:1594
 msgid "Two"
 msgstr ""
 
 #: ../themeoptions/theme_options.php:994
-#: ../themeoptions/theme_options.php:1587
+#: ../themeoptions/theme_options.php:1594
 msgid "Three"
 msgstr ""
 
 #: ../themeoptions/theme_options.php:994
-#: ../themeoptions/theme_options.php:1587
+#: ../themeoptions/theme_options.php:1594
 msgid "Four"
 msgstr ""
 
@@ -2134,13 +2134,13 @@ msgstr ""
 
 #: ../themeoptions/theme_options.php:1190
 #: ../themeoptions/theme_options.php:1281
-#: ../themeoptions/theme_options.php:1441
+#: ../themeoptions/theme_options.php:1448
 msgid "Custom"
 msgstr ""
 
 #: ../themeoptions/theme_options.php:1197
 #: ../themeoptions/theme_options.php:1288
-#: ../themeoptions/theme_options.php:1455
+#: ../themeoptions/theme_options.php:1462
 msgid "Post Default Title"
 msgstr ""
 
@@ -2151,7 +2151,7 @@ msgstr ""
 
 #: ../themeoptions/theme_options.php:1204
 #: ../themeoptions/theme_options.php:1295
-#: ../themeoptions/theme_options.php:1462
+#: ../themeoptions/theme_options.php:1469
 msgid "Post Default Subtitle"
 msgstr ""
 
@@ -2351,440 +2351,450 @@ msgid ""
 msgstr ""
 
 #: ../themeoptions/theme_options.php:1428
+msgid "Hard Crop excerpt images to the same height."
+msgstr ""
+
+#: ../themeoptions/theme_options.php:1429
+msgid ""
+"Makes the excerpt images the same size instead of whatever ratio was "
+"uploaded."
+msgstr ""
+
+#: ../themeoptions/theme_options.php:1435
 msgid "Blog Post Page Header"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1433
+#: ../themeoptions/theme_options.php:1440
 msgid "Show the post title in head by default"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1440
+#: ../themeoptions/theme_options.php:1447
 msgid "Blog Post Default Head Title"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1441
+#: ../themeoptions/theme_options.php:1448
 msgid "Category"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1441
+#: ../themeoptions/theme_options.php:1448
 msgid "Post Title"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1448
+#: ../themeoptions/theme_options.php:1455
 msgid "Show the post title below the header"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1456
+#: ../themeoptions/theme_options.php:1463
 msgid "Example: Blog"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1468
+#: ../themeoptions/theme_options.php:1475
 msgid "Blog Post Defaults"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1473
+#: ../themeoptions/theme_options.php:1480
 msgid "Blog Post Sidebar Default"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1474
-#: ../themeoptions/theme_options.php:1482
+#: ../themeoptions/theme_options.php:1481
+#: ../themeoptions/theme_options.php:1489
 msgid "Yes, Show"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1474
-#: ../themeoptions/theme_options.php:1482
-#: ../themeoptions/theme_options.php:1490
+#: ../themeoptions/theme_options.php:1481
+#: ../themeoptions/theme_options.php:1489
+#: ../themeoptions/theme_options.php:1497
 msgid "No, Do not Show"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1481
+#: ../themeoptions/theme_options.php:1488
 msgid "Blog Post Author Box Default"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1489
+#: ../themeoptions/theme_options.php:1496
 msgid "Blog Post Bottom Carousel Default"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1497
+#: ../themeoptions/theme_options.php:1504
 msgid "Blog Post Defaults Standard"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1502
+#: ../themeoptions/theme_options.php:1509
 msgid "Standard Blog Post Summary Default"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1510
+#: ../themeoptions/theme_options.php:1517
 msgid "Blog Post Defaults Image"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1515
+#: ../themeoptions/theme_options.php:1522
 msgid "Image Blog Post Summary Default"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1523
+#: ../themeoptions/theme_options.php:1530
 msgid "Single Image Post Head Content"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1531
+#: ../themeoptions/theme_options.php:1538
 msgid "Blog Post Defaults gallery"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1536
+#: ../themeoptions/theme_options.php:1543
 msgid "Gallery Blog Post Summary Default"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1537
+#: ../themeoptions/theme_options.php:1544
 msgid "Portrait Slider"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1537
+#: ../themeoptions/theme_options.php:1544
 msgid "Landscape Slider"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1544
+#: ../themeoptions/theme_options.php:1551
 msgid "Single Gallery Post Head Content"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1545
+#: ../themeoptions/theme_options.php:1552
 msgid "Image Slider (Flex Slider)"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1545
+#: ../themeoptions/theme_options.php:1552
 msgid "Carousel Slider (Caroufedsel Slider)"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1552
+#: ../themeoptions/theme_options.php:1559
 msgid "Blog Post Defaults Video"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1557
+#: ../themeoptions/theme_options.php:1564
 msgid "Video Blog Post Summary Default"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1565
+#: ../themeoptions/theme_options.php:1572
 msgid "Single Video Post Head Content"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1573
+#: ../themeoptions/theme_options.php:1580
 msgid "Blog Category/Archive Defaults"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1578
+#: ../themeoptions/theme_options.php:1585
 msgid "Category Display Type"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1586
+#: ../themeoptions/theme_options.php:1593
 msgid "Category Grid Columns"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1596
+#: ../themeoptions/theme_options.php:1603
 msgid "Display the sidebar on blog archives?"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1597
+#: ../themeoptions/theme_options.php:1604
 msgid "This determines if there is a sidebar on the blog category pages."
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1607
+#: ../themeoptions/theme_options.php:1614
 msgid "Choose a Sidebar for your Category/Archive Pages"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1618
+#: ../themeoptions/theme_options.php:1625
 msgid "Basic Styling"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1619
+#: ../themeoptions/theme_options.php:1626
 msgid "Basic Stylng"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1624
+#: ../themeoptions/theme_options.php:1631
 msgid "Theme Skin Stylesheet"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1625
+#: ../themeoptions/theme_options.php:1632
 msgid ""
 "Note* changes made in options panel will override this stylesheet. Example: "
 "Colors set in typography."
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1635
+#: ../themeoptions/theme_options.php:1642
 msgid "Choose the default Highlight color for your site."
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1643
+#: ../themeoptions/theme_options.php:1650
 msgid "Primary Hover Color"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1644
+#: ../themeoptions/theme_options.php:1651
 msgid "Recomended to be 20% lighter than primary color"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1653
+#: ../themeoptions/theme_options.php:1660
 msgid "Sitewide Gray Fonts"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1662
+#: ../themeoptions/theme_options.php:1669
 msgid "Footer Font Color"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1673
+#: ../themeoptions/theme_options.php:1680
 msgid "Advanced Styling"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1674
+#: ../themeoptions/theme_options.php:1681
 msgid "Main Content Background"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1680
+#: ../themeoptions/theme_options.php:1687
 msgid "Content Background"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1685
-#: ../themeoptions/theme_options.php:1691
+#: ../themeoptions/theme_options.php:1692
+#: ../themeoptions/theme_options.php:1698
 msgid "Topbar Background"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1696
-#: ../themeoptions/theme_options.php:1710
+#: ../themeoptions/theme_options.php:1703
+#: ../themeoptions/theme_options.php:1717
 msgid "Header Background"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1701
+#: ../themeoptions/theme_options.php:1708
 msgid "Header Background Style"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1702
+#: ../themeoptions/theme_options.php:1709
 msgid "Simple"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1716
+#: ../themeoptions/theme_options.php:1723
 msgid "Header Background Color"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1725
+#: ../themeoptions/theme_options.php:1732
 msgid "If background is color, select Transparency"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1734
-#: ../themeoptions/theme_options.php:1740
+#: ../themeoptions/theme_options.php:1741
+#: ../themeoptions/theme_options.php:1747
 msgid "Menu Background"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1745
-#: ../themeoptions/theme_options.php:1751
+#: ../themeoptions/theme_options.php:1752
+#: ../themeoptions/theme_options.php:1758
 msgid "Mobile Menu Background"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1756
+#: ../themeoptions/theme_options.php:1763
 msgid "Post and Page Content area Background"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1762
+#: ../themeoptions/theme_options.php:1769
 msgid "Post Background"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1767
-#: ../themeoptions/theme_options.php:1773
+#: ../themeoptions/theme_options.php:1774
+#: ../themeoptions/theme_options.php:1780
 msgid "Footer Background"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1778
-#: ../themeoptions/theme_options.php:1784
+#: ../themeoptions/theme_options.php:1785
+#: ../themeoptions/theme_options.php:1791
 msgid "Body Background"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1785
+#: ../themeoptions/theme_options.php:1792
 msgid "This shows if site is using the boxed layout option."
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1792
+#: ../themeoptions/theme_options.php:1799
 msgid "Typography"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1793
+#: ../themeoptions/theme_options.php:1800
 msgid "Header Font Options"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1798
+#: ../themeoptions/theme_options.php:1805
 msgid "H1 Headings"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1810
+#: ../themeoptions/theme_options.php:1817
 msgid "Choose Size and Style for h1 (This Styles Your Page Titles)"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1821
+#: ../themeoptions/theme_options.php:1828
 msgid "H2 Headings"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1836
+#: ../themeoptions/theme_options.php:1843
 msgid "Choose Size and Style for h2"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1847
+#: ../themeoptions/theme_options.php:1854
 msgid "H3 Headings"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1862
+#: ../themeoptions/theme_options.php:1869
 msgid "Choose Size and Style for h3"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1873
+#: ../themeoptions/theme_options.php:1880
 msgid "H4 Headings"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1888
+#: ../themeoptions/theme_options.php:1895
 msgid "Choose Size and Style for h4"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1899
+#: ../themeoptions/theme_options.php:1906
 msgid "H5 Headings"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1912
+#: ../themeoptions/theme_options.php:1919
 msgid "Choose Size and Style for h5"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1923
+#: ../themeoptions/theme_options.php:1930
 msgid "Page Subtitle"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1935
+#: ../themeoptions/theme_options.php:1942
 msgid "Choose Size and Style for Page Subtitle"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1946
+#: ../themeoptions/theme_options.php:1953
 msgid "Body Font Options"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1951
+#: ../themeoptions/theme_options.php:1958
 msgid "Body Font"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1966
+#: ../themeoptions/theme_options.php:1973
 msgid "Choose Size and Style for paragraphs"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1979
+#: ../themeoptions/theme_options.php:1986
 msgid "Menu Settings"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1980
+#: ../themeoptions/theme_options.php:1987
 msgid "Primary Menu Options"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:1985
+#: ../themeoptions/theme_options.php:1992
 msgid "Primary Menu Font"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2000
+#: ../themeoptions/theme_options.php:2007
 msgid "Choose Size and Style for primary menu"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2010
+#: ../themeoptions/theme_options.php:2017
 msgid "Mobile Menu Options"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2015
+#: ../themeoptions/theme_options.php:2022
 msgid "Mobile Menu Font"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2030
+#: ../themeoptions/theme_options.php:2037
 msgid "Choose Size and Style for Mobile Menu"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2041
+#: ../themeoptions/theme_options.php:2048
 msgid "Topbar Menu Options"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2046
+#: ../themeoptions/theme_options.php:2053
 msgid "Topbar Menu Font"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2058
+#: ../themeoptions/theme_options.php:2065
 msgid "Choose Size and Style for topbar menu"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2070
-#: ../themeoptions/theme_options.php:2071
+#: ../themeoptions/theme_options.php:2077
+#: ../themeoptions/theme_options.php:2078
 msgid "Misc Settings"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2077
+#: ../themeoptions/theme_options.php:2084
 msgid "Custom Favicon"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2078
+#: ../themeoptions/theme_options.php:2085
 msgid ""
 "Upload a 16px x 16px png/gif/ico image that will represent your website "
 "favicon."
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2083
+#: ../themeoptions/theme_options.php:2090
 msgid "Footer Copyright Text"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2084
+#: ../themeoptions/theme_options.php:2091
 msgid ""
 "Write your own copyright text here. You can use the following shortcodes in "
 "your footer text: [copyright] [site-name] [the-year]"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2090
+#: ../themeoptions/theme_options.php:2097
 msgid "Search Results Sidebars"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2095
+#: ../themeoptions/theme_options.php:2102
 msgid "Search Results - choose Sidebar"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2103
+#: ../themeoptions/theme_options.php:2110
 msgid "Create Sidebars"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2108
+#: ../themeoptions/theme_options.php:2115
 msgid "Create Custom Sidebars"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2109
+#: ../themeoptions/theme_options.php:2116
 msgid "Type new sidebar name into textbox"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2110
+#: ../themeoptions/theme_options.php:2117
 msgid "Extra Sidebar"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2115
+#: ../themeoptions/theme_options.php:2122
 msgid "WordPress Galleries"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2120
+#: ../themeoptions/theme_options.php:2127
 msgid "Enable Pinnacle Galleries to override WordPress"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2121
+#: ../themeoptions/theme_options.php:2128
 msgid "You must have virtue/pinnacle toolkit installed to use."
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2129
-#: ../themeoptions/theme_options.php:2135
+#: ../themeoptions/theme_options.php:2136
+#: ../themeoptions/theme_options.php:2142
 msgid "Custom CSS"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2130
+#: ../themeoptions/theme_options.php:2137
 msgid "Custom CSS Box"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2136
+#: ../themeoptions/theme_options.php:2143
 msgid "Quickly add some CSS to your theme by adding it to this block."
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2157
-#: ../themeoptions/theme_options.php:2158
+#: ../themeoptions/theme_options.php:2164
+#: ../themeoptions/theme_options.php:2165
 msgid "Theme Options"
 msgstr ""
 
-#: ../themeoptions/theme_options.php:2166
+#: ../themeoptions/theme_options.php:2173
 msgid ""
 "Thank you for using the Pinnacle Theme by <a href=\"http://kadencethemes.com/"
 "\" target=\"_blank\">Kadence Themes</a>."

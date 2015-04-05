@@ -213,7 +213,14 @@ function pinnacle_display_topbar_widget() {
   return $topbarwidget;
   }
 function pinnacle_hide_pagetitle() {
-  if(is_page() && !is_front_page() ) {
+  if( is_front_page() ) {
+    global $pinnacle;
+    if(isset($pinnacle['choose_home_header']) && $pinnacle['choose_home_header'] == 'none') {
+        $pagetitledisplay = false;
+    } else {
+        $pagetitledisplay = true;
+    }
+  } else if(is_page() && !is_front_page() ) {
     global $post, $pinnacle;
     $hidepagetitle = get_post_meta( $post->ID, '_kad_pagetitle_hide', true );
       if(isset($hidepagetitle) && $hidepagetitle == 'hide') {
