@@ -49,7 +49,11 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version 2.4.5 | 4th March 2015 =
+* Update: Script version number.
+
 = Version 2.4.4 | 4th March 2015 =
+* Add: Accessibility skip to content link.
 * Update: Theme Options (Faster)
 * Update: Schema.
 * Fix: Woocommerce tracking.

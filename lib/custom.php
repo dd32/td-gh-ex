@@ -59,6 +59,10 @@ function virtue_lightbox_off() {
 }
 add_action('wp_footer', 'virtue_lightbox_off');
 
+add_action('get_header', 'virtue_skip_link', 1);
+function virtue_skip_link() {
+ echo '<div id="kt-skip-link"><a href="#content">Skip to Main Content</a></div>';
+}
 
 function kadence_hex2rgb($hex) {
    $hex = str_replace("#", "", $hex);

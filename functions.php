@@ -27,8 +27,3 @@ require_once locate_template('/lib/authorbox.php');         		// Author box
 require_once locate_template('/lib/custom-woocommerce.php'); 		// Woocommerce functions
 require_once locate_template('/lib/virtuetoolkit-activate.php'); 	// Plugin Activation
 require_once locate_template('/lib/custom-css.php'); 			    // Fontend Custom CSS
-
-add_action('get_header', 'virtue_skip_link', 1);
-function virtue_skip_link() {
- echo '<div id="kt-skip-link"><a href="#content">Skip to Main Content</a></div>';
-}
