@@ -5,7 +5,7 @@ Consider weblizar PRE-Fix for function-name and as a slug of the Theme Enigma.
 Enigma
 
 CHANGE-LOG:
-@Version: 1.8.7[/03/2015]
+@Version: 1.8.8[/03/2015]
 1.Minor Translation added.
 
 @Version: 1.8.6[23/03/2015]
