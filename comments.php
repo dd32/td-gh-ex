@@ -17,8 +17,8 @@
 <?php if ( comments_open() ) : ?>
 	<div class="enigma_comment_form_section">
 	<?php $fields=array(
-		'author' => '<div class="enigma_form_group"><label for="exampleInputEmail1">Name<small>*</small></label><input name="author" id="name" type="text" id="exampleInputEmail1" class="enigma_con_input_control"></div>',
-		'email' => '<div class="enigma_form_group"><label for="exampleInputPassword1">Email<small>*</small></label><input  name="email" id="email" type="text" class="enigma_con_input_control"></div>',
+		'author' => '<div class="enigma_form_group"><label for="exampleInputEmail1">"'.<?php esc_attr_e( 'Name','weblizar');>.'"<small>*</small></label><input name="author" id="name" type="text" id="exampleInputEmail1" class="enigma_con_input_control"></div>',
+		'email' => '<div class="enigma_form_group"><label for="exampleInputPassword1">"'.<?php esc_attr_e( 'Email','weblizar');>.'"<small>*</small></label><input  name="email" id="email" type="text" class="enigma_con_input_control"></div>',
 	);
 	function my_fields($fields) { 
 		return $fields;
