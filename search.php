@@ -7,6 +7,12 @@
 
 get_header(); ?>
 <div class="apmag-container">
+     <?php   
+        $accesspress_mag_show_breadcrumbs = of_get_option('show_hide_breadcrumbs');
+        if ((function_exists('accesspress_breadcrumbs') && $accesspress_mag_show_breadcrumbs == 1)) {
+			    accesspress_breadcrumbs();
+            }
+    ?>
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 

@@ -19,7 +19,7 @@ function the_posts_navigation() {
 		return;
 	}
 	?>
-	<nav class="navigation posts-navigation" role="navigation">
+	<nav class="navigation posts-navigation clearfix" role="navigation">
 		<h2 class="screen-reader-text"><?php _e( 'Posts navigation', 'accesspress-mag' ); ?></h2>
 		<div class="nav-links">
 
@@ -37,13 +37,13 @@ function the_posts_navigation() {
 }
 endif;
 
-if ( ! function_exists( 'the_post_navigation' ) ) :
+if ( ! function_exists( 'accesspress_mag_post_navigation' ) ) :
 /**
  * Display navigation to next/previous post when applicable.
  *
  * @todo Remove this function when WordPress 4.3 is released.
  */
-function the_post_navigation() {
+function accesspress_mag_post_navigation() {
 	// Don't print empty markup if there's nowhere to navigate.
 	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
 	$next     = get_adjacent_post( false, '', false );
@@ -52,12 +52,12 @@ function the_post_navigation() {
 		return;
 	}
 	?>
-	<nav class="navigation post-navigation" role="navigation">
+	<nav class="navigation post-navigation clearfix" role="navigation">
 		<h2 class="screen-reader-text"><?php _e( 'Post navigation', 'accesspress-mag' ); ?></h2>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', '%title' );
-				next_post_link( '<div class="nav-next">%link</div>', '%title' );
+				previous_post_link( '<div class="nav-previous"><div class="link-caption"><i class="fa fa-angle-left"></i>Previous article</div>%link</div>', '%title' );
+				next_post_link( '<div class="nav-next"><div class="link-caption">Next article<i class="fa fa-angle-right"></i></div>%link</div>', '%title' );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -163,7 +163,7 @@ function accesspress_mag_entry_footer() {
 }
 endif;
 
-if ( ! function_exists( 'the_archive_title' ) ) :
+if ( ! function_exists( 'apmag_the_archive_title' ) ) :
 /**
  * Shim for `the_archive_title()`.
  *
@@ -174,9 +174,9 @@ if ( ! function_exists( 'the_archive_title' ) ) :
  * @param string $before Optional. Content to prepend to the title. Default empty.
  * @param string $after  Optional. Content to append to the title. Default empty.
  */
-function the_archive_title( $before = '', $after = '' ) {
+function apmag_the_archive_title( $before = '', $after = '' ) {
 	if ( is_category() ) {
-		$title = sprintf( __( 'Category: %s', 'accesspress-mag' ), single_cat_title( '', false ) );
+		$title = sprintf( __( '%s', 'accesspress-mag' ), single_cat_title( '', false ) );
 	} elseif ( is_tag() ) {
 		$title = sprintf( __( 'Tag: %s', 'accesspress-mag' ), single_tag_title( '', false ) );
 	} elseif ( is_author() ) {

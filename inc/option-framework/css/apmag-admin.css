@@ -17,3 +17,9 @@
     padding-left: 10px;
     width: 150px;
 }
+.section-input .post-videourl {
+    width: 690px;
+}
+.audiourl-sec input[type="text"] {
+  width: 690px;
+}

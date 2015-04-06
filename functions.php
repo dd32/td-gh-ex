@@ -52,7 +52,7 @@ function accesspress_mag_setup() {
     add_image_size( 'slider-small-thumb', 364, 164, true); //Small image for homepage slider
     add_image_size( 'block-big-thumb', 364, 200, true ); //Big thumb for homepage block
     add_image_size( 'block-small-thumb', 114, 76, true ); //Small thumb for homepage block
-    add_image_size( 'singlepost-default', 747, 336, true); //Default image size for single post
+    add_image_size( 'singlepost-default', 792, 356, true); //Default image size for single post 792x356
     add_image_size( 'singlepost-style1', 326, 235, true); //Style1 image size for single post 
 
 	// This theme uses wp_nav_menu() in one location.
@@ -73,7 +73,7 @@ function accesspress_mag_setup() {
 	 * See http://codex.wordpress.org/Post_Formats
 	 */
 	add_theme_support( 'post-formats', array(
-		'aside', 'image', 'video', 'quote', 'link',
+		'aside', 'image', 'video', 'quote', 'link', 'audio',
 	) );
 
 	// Set up the WordPress core custom background feature.
@@ -162,6 +162,16 @@ function accesspress_mag_widgets_init() {
 	) );
     
     register_sidebar( array(
+		'name'          => __( 'Footer 4', 'accesspress-mag' ),
+		'id'            => 'footer-4',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title"><span>',
+		'after_title'   => '</span></h1>',
+	) );
+    
+    register_sidebar( array(
 		'name'          => __( 'Right Sidebar', 'accesspress-mag' ),
 		'id'            => 'sidebar-right',
 		'description'   => '',
@@ -189,13 +199,15 @@ add_action( 'widgets_init', 'accesspress_mag_widgets_init' );
 function accesspress_mag_scripts() {
     $my_theme = wp_get_theme();
     $theme_version = $my_theme->get('Version'); 
+    wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.css');
     wp_enqueue_style( 'accesspress-mag-style', get_stylesheet_uri(), array(), esc_attr($theme_version) );
     
     wp_enqueue_style( 'accesspress-mag-fontawesome-font', get_template_directory_uri(). '/css/font-awesome.min.css' );
     wp_enqueue_style( 'accesspress-mag-opensans-font', 'http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' );	
     wp_enqueue_style( 'accesspress-mag-oswald-font', 'http://fonts.googleapis.com/css?family=Oswald:400,700,300' );
     wp_enqueue_style( 'accesspress-mag-dosis-font', 'http://fonts.googleapis.com/css?family=Dosis:400,300,500,600,700' );	
-    
+    wp_enqueue_style( 'responsive', get_template_directory_uri() . '/css/responsive.css');
+
     wp_enqueue_script( 'jquery' );
     
     wp_enqueue_script( 'accesspress-mag-bxslider-js', get_template_directory_uri(). '/js/jquery.bxslider.min.js', array(), '4.1.2', true );
@@ -203,6 +215,8 @@ function accesspress_mag_scripts() {
     wp_enqueue_script( 'accesspress-mag-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'accesspress-mag-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+
+	wp_enqueue_script( 'accesspress-mag-wow', get_template_directory_uri() . '/js/wow.min.js', array(), '1.0.1');
 
 	wp_enqueue_script( 'accesspress-mag-custom-scripts', get_template_directory_uri() . '/js/custom-scripts.js', array('jquery'), '1.0.1' );
     

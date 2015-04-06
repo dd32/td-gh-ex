@@ -24,10 +24,16 @@
 	<div class="entry-summary">
         <?php 
             if(has_post_thumbnail()){
+                $archive_template = of_get_option( 'global_archive_template' );
                 $image_id = get_post_thumbnail_id();
                 $image_path = wp_get_attachment_image_src($image_id,'singlepost-style1',true);
+                $big_image_path = wp_get_attachment_image_src( $image_id, 'singlepost-default' ,true );
                 $image_alt = get_post_meta($image_id,'_wp_attachment_image_alt',true);
-                echo '<div class="post_image"><img src="'.$image_path[0].'" alt="'.$image_alt.'" /></div>';
+                if($archive_template=='default-template'){
+                    echo '<div class="post_image"><img src="'.$big_image_path[0].'" alt="'.esc_attr( $image_alt ).'" /></div>';   
+                } else {
+                    echo '<div class="post_image"><img src="'.$image_path[0].'" alt="'.esc_attr( $image_alt ).'" /></div>';
+                }
             }
         ?>
 		<?php the_excerpt(); ?>

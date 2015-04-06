@@ -20,6 +20,13 @@ require get_template_directory() . '/inc/widgets/widget-fields.php';
 require get_template_directory() . '/inc/widgets/widget-random-posts.php';
 
 /**
+ * Latest posts
+ *
+ * @since accesspress Widget Pack 1.0
+ */
+require get_template_directory() . '/inc/widgets/widget-latest-posts.php';
+
+/**
  * Latest reivew posts
  *
  * @since accesspress Widget Pack 1.0

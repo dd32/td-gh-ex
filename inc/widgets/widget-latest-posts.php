@@ -1,28 +1,28 @@
 <?php
 
 /**
- * Random Posts Widgets
+ * Latest Posts Widgets
  *
  * @package Accesspress Mag
  */
 /**
- * Adds accesspress_mag_random_posts widget.
+ * Adds accesspress_mag_latest_posts widget.
  */
-add_action('widgets_init', 'register_random_posts_widget');
+add_action( 'widgets_init', 'register_latest_posts_widget' );
 
-function register_random_posts_widget() {
-    register_widget('accesspress_mag_register_random_posts');
+function register_latest_posts_widget() {
+    register_widget( 'accesspress_mag_register_latest_posts' );
 }
 
-class Accesspress_mag_register_random_posts extends WP_Widget {
+class Accesspress_mag_register_latest_posts extends WP_Widget {
 
     /**
      * Register widget with WordPress.
      */
     public function __construct() {
         parent::__construct(
-            'accesspress_mag_register_random_posts', 'AP-Mag :  Random Posts', array(
-            'description' => __('A widget that shows Random posts', 'accesspress-mag')
+            'accesspress_mag_register_latest_posts', 'AP-Mag :  Latest Posts', array(
+            'description' => __( 'A widget that shows latest posts', 'accesspress-mag' )
                 )
         );
     }
@@ -33,8 +33,8 @@ class Accesspress_mag_register_random_posts extends WP_Widget {
      */
     private function widget_fields() {
         $fields = array(
-            'random_posts_title' => array(
-                'accesspress_mag_widgets_name' => 'random_posts_title',
+            'latest_posts_title' => array(
+                'accesspress_mag_widgets_name' => 'latest_posts_title',
                 'accesspress_mag_widgets_title' => __('Title', 'accesspress-mag'),
                 'accesspress_mag_widgets_field_type' => 'title',
             ),            
@@ -51,24 +51,24 @@ class Accesspress_mag_register_random_posts extends WP_Widget {
      * @param array $args     Widget arguments.
      * @param array $instance Saved values from database.
      */
-    public function widget($args, $instance) {
+    public function widget( $args, $instance ) {
         extract($args);
-        $random_posts_title = $instance['random_posts_title'];
+        $latest_posts_title = $instance[ 'latest_posts_title' ];
         echo $before_widget; ?>
-        <div class="random-posts clearfix">
-           <h1 class="widget-title"><span><?php echo esc_attr($random_posts_title); ?></span></h1>     
-           <div class="random-posts-wrapper">
+        <div class="latest-posts clearfix">
+           <h1 class="widget-title"><span><?php echo esc_attr( $latest_posts_title ); ?></span></h1>     
+           <div class="latest-posts-wrapper">
                 <?php
-                    $rand_posts_args = array('post_type'=>'post','post_status'=>'publish','posts_per_page'=>3,'orderby'=>'rand');
-                    $rand_posts_query = new WP_Query($rand_posts_args);
-                    if($rand_posts_query->have_posts()){
-                        while($rand_posts_query->have_posts()){
-                            $rand_posts_query->the_post();
+                    $latest_posts_args = array( 'post_type'=>'post', 'post_status'=>'publish', 'posts_per_page'=>3, 'order'=>'DESC' );
+                    $latest_posts_query = new WP_Query( $latest_posts_args );
+                    if($latest_posts_query->have_posts()){
+                        while($latest_posts_query->have_posts()){
+                            $latest_posts_query->the_post();
                             $image_id = get_post_thumbnail_id();
-                            $image_path = wp_get_attachment_image_src($image_id,'block-small-thumb',true);
-                            $image_alt = get_post_meta($image_id,'_wp_attachment_image_alt',true);
+                            $image_path = wp_get_attachment_image_src( $image_id, 'block-small-thumb', true );
+                            $image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
                 ?>
-                    <div class="rand-single-post clearfix">
+                    <div class="latest-single-post clearfix">
                         <div class="post-img"><a href="<?php the_permalink();?>">
                             <?php if(has_post_thumbnail()): ?>
                             <img src="<?php echo $image_path[0];?>" alt="<?php echo esc_attr( $image_alt );?>" />
@@ -85,7 +85,7 @@ class Accesspress_mag_register_random_posts extends WP_Widget {
                                     ?>
                                 </a>
                             </h3>
-                            <div class="block-poston"><?php do_action('accesspress_mag_home_posted_on');?></div>
+                            <div class="block-poston"><?php do_action( 'accesspress_mag_home_posted_on' );?></div>
                         </div>                    
                     </div>
                 <?php
@@ -110,18 +110,18 @@ class Accesspress_mag_register_random_posts extends WP_Widget {
      *
      * @return	array Updated safe values to be saved.
      */
-    public function update($new_instance, $old_instance) {
+    public function update( $new_instance, $old_instance ) {
         $instance = $old_instance;
 
         $widget_fields = $this->widget_fields();
 
         // Loop through fields
-        foreach ($widget_fields as $widget_field) {
+        foreach ( $widget_fields as $widget_field ) {
 
             extract($widget_field);
 
             // Use helper function to get updated field values
-            $instance[$accesspress_mag_widgets_name] = accesspress_mag_widgets_updated_field_value($widget_field, $new_instance[$accesspress_mag_widgets_name]);
+            $instance[ $accesspress_mag_widgets_name ] = accesspress_mag_widgets_updated_field_value( $widget_field, $new_instance[ $accesspress_mag_widgets_name ] );
         }
 
         return $instance;

@@ -92,10 +92,15 @@ class Accesspress_mag_latest_review_posts extends WP_Widget {
                             $review_image_alt = get_post_meta($review_image_id,'_wp_attachment_image_alt',true); 
                             if($p_count==1):
                     ?>
-                        <div class="single-review top-post clearfix">
-                            <?php if(has_post_thumbnail()):?>
-                                <div class="post-image"><img src="<?php echo $review_big_image_path[0];?>" alt="<?php echo esc_attr($review_image_alt);?>" /></div>
-                            <?php endif ;?>
+                        <div class="single-review top-post non-zoomin clearfix">
+                                <div class="post-image">
+                                    <?php if(has_post_thumbnail()):?>
+                                    <img src="<?php echo $review_big_image_path[0];?>" alt="<?php echo esc_attr($review_image_alt);?>" />
+                                    <?php else :?>
+                                    <img src="<?php echo get_template_directory_uri();?>/images/no-image-medium.jpg" alt="<?php _e( 'No image', 'accesspress-mag' );?>" />
+                                    <?php endif ;?>
+                                    <span class="big-image-overlay"><a href="<?php the_permalink();?>"><i class="fa fa-external-link"></i></a></span>
+                                </div>
                                 
                                     <h1 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
                                     <div class="stars-ratings"><?php do_action('accesspress_mag_post_review');?></div>
@@ -105,9 +110,13 @@ class Accesspress_mag_latest_review_posts extends WP_Widget {
                         </div>
                     <?php else:?>
                         <div class="single-review clearfix">
-                            <?php if(has_post_thumbnail()):?>
-                                <div class="post-image"><img src="<?php echo $review_small_image_path[0];?>" alt="<?php echo esc_attr($review_image_alt);?>" /></div>
-                            <?php endif ;?>
+                                <div class="post-image"><a href="<?php the_permalink();?>">
+                                    <?php if(has_post_thumbnail()):?>
+                                    <img src="<?php echo $review_small_image_path[0];?>" alt="<?php echo esc_attr($review_image_alt);?>" />
+                                    <?php else: ?>
+                                    <img src="<?php echo get_template_directory_uri();?>/images/no-image-small.jpg" alt="<?php _e( 'No image', 'accesspress-mag' );?>" />
+                                    <?php endif ;?>
+                                    </a></div>
                                 <div class="post-desc-wrapper">
                                     <h1 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
                                     <div class="stars-ratings"><?php do_action('accesspress_mag_post_review');?></div>

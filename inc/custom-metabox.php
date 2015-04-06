@@ -17,10 +17,10 @@ function accesspress_mag_add_sidebar_layout_box()
                  'post', // $page
                  'normal', // $context
                  'high'); // $priority
-                 
+    
     add_meta_box(
                  'accesspress_mag_post_settings', // $id
-                 'Product settings', // $title
+                 'Post settings', // $title
                  'accesspress_mag_post_settings_callback', // $callback
                  'post', // $page
                  'normal', // $context
@@ -431,7 +431,6 @@ function accesspress_mag_save_product_review( $post_id ) {
         } elseif ('' == $stz_rate_description && $post_rate_description) {  
             delete_post_meta($post_id,'product_rate_description', $post_rate_description);  
         }
-    
     }
 add_action('save_post', 'accesspress_mag_save_product_review');
 
@@ -453,9 +452,8 @@ function accesspress_mag_save_post_settings( $post_id ) {
             return $post_id;  
     } elseif (!current_user_can( 'edit_post', $post_id ) ) {  
             return $post_id;  
-    }  
+    }
     
-
     foreach ($accesspress_mag_post_template_layout as $field) {  
         //Execute this saving function
         $old = get_post_meta( $post_id, 'accesspress_mag_post_template_layout', true); 
@@ -464,7 +462,7 @@ function accesspress_mag_save_post_settings( $post_id ) {
             update_post_meta($post_id, 'accesspress_mag_post_template_layout', $new);  
         } elseif ('' == $new && $old) {  
             delete_post_meta($post_id,'accesspress_mag_post_template_layout', $old);  
-        } 
+        }
      } // end foreach  
      
    foreach ($accesspress_mag_sidebar_layout as $field) {  
@@ -475,7 +473,7 @@ function accesspress_mag_save_post_settings( $post_id ) {
             update_post_meta($post_id, 'accesspress_mag_sidebar_layout', $new);  
         } elseif ('' == $new && $old) {  
             delete_post_meta($post_id,'accesspress_mag_sidebar_layout', $old);  
-        } 
+        }
      } // end foreach   
      
        $post_source_name = get_post_meta($post->ID, 'post_source_name', true);
@@ -518,8 +516,7 @@ function accesspress_mag_save_post_settings( $post_id ) {
             update_post_meta($post_id, 'post_via_url', $stz_via_url);  
         } elseif ('' == $stz_via_url && $post_via_url) {  
             delete_post_meta($post_id,'post_via_url', $post_via_url);  
-        } 
-     
+        }
 }
 add_action('save_post', 'accesspress_mag_save_post_settings');
 
@@ -555,6 +552,5 @@ function accesspress_mag_save_page_settings( $post_id ) {
      } // end foreach 
     
 }
-add_action('save_post', 'accesspress_mag_save_page_settings');  
-
+add_action('save_post', 'accesspress_mag_save_page_settings');
 ?>

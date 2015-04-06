@@ -318,10 +318,10 @@ add_filter( 'of_font_face', 'of_sanitize_font_face' );
  */
 function of_recognized_background_repeat() {
 	$default = array(
-		'no-repeat' => __( 'No Repeat', 'theme-textdomain' ),
-		'repeat-x'  => __( 'Repeat Horizontally', 'theme-textdomain' ),
-		'repeat-y'  => __( 'Repeat Vertically', 'theme-textdomain' ),
-		'repeat'    => __( 'Repeat All', 'theme-textdomain' ),
+		'no-repeat' => __( 'No Repeat', 'accesspress-mag' ),
+		'repeat-x'  => __( 'Repeat Horizontally', 'accesspress-mag' ),
+		'repeat-y'  => __( 'Repeat Vertically', 'accesspress-mag' ),
+		'repeat'    => __( 'Repeat All', 'accesspress-mag' ),
 		);
 	return apply_filters( 'of_recognized_background_repeat', $default );
 }
@@ -333,15 +333,15 @@ function of_recognized_background_repeat() {
  */
 function of_recognized_background_position() {
 	$default = array(
-		'top left'      => __( 'Top Left', 'theme-textdomain' ),
-		'top center'    => __( 'Top Center', 'theme-textdomain' ),
-		'top right'     => __( 'Top Right', 'theme-textdomain' ),
-		'center left'   => __( 'Middle Left', 'theme-textdomain' ),
-		'center center' => __( 'Middle Center', 'theme-textdomain' ),
-		'center right'  => __( 'Middle Right', 'theme-textdomain' ),
-		'bottom left'   => __( 'Bottom Left', 'theme-textdomain' ),
-		'bottom center' => __( 'Bottom Center', 'theme-textdomain' ),
-		'bottom right'  => __( 'Bottom Right', 'theme-textdomain')
+		'top left'      => __( 'Top Left', 'accesspress-mag' ),
+		'top center'    => __( 'Top Center', 'accesspress-mag' ),
+		'top right'     => __( 'Top Right', 'accesspress-mag' ),
+		'center left'   => __( 'Middle Left', 'accesspress-mag' ),
+		'center center' => __( 'Middle Center', 'accesspress-mag' ),
+		'center right'  => __( 'Middle Right', 'accesspress-mag' ),
+		'bottom left'   => __( 'Bottom Left', 'accesspress-mag' ),
+		'bottom center' => __( 'Bottom Center', 'accesspress-mag' ),
+		'bottom right'  => __( 'Bottom Right', 'accesspress-mag')
 		);
 	return apply_filters( 'of_recognized_background_position', $default );
 }
@@ -353,8 +353,8 @@ function of_recognized_background_position() {
  */
 function of_recognized_background_attachment() {
 	$default = array(
-		'scroll' => __( 'Scroll Normally', 'theme-textdomain' ),
-		'fixed'  => __( 'Fixed in Place', 'theme-textdomain')
+		'scroll' => __( 'Scroll Normally', 'accesspress-mag' ),
+		'fixed'  => __( 'Fixed in Place', 'accesspress-mag')
 		);
 	return apply_filters( 'of_recognized_background_attachment', $default );
 }
@@ -426,10 +426,10 @@ function of_recognized_font_faces() {
  */
 function of_recognized_font_styles() {
 	$default = array(
-		'normal'      => __( 'Normal', 'theme-textdomain' ),
-		'italic'      => __( 'Italic', 'theme-textdomain' ),
-		'bold'        => __( 'Bold', 'theme-textdomain' ),
-		'bold italic' => __( 'Bold Italic', 'theme-textdomain' )
+		'normal'      => __( 'Normal', 'accesspress-mag' ),
+		'italic'      => __( 'Italic', 'accesspress-mag' ),
+		'bold'        => __( 'Bold', 'accesspress-mag' ),
+		'bold italic' => __( 'Bold Italic', 'accesspress-mag' )
 		);
 	return apply_filters( 'of_recognized_font_styles', $default );
 }

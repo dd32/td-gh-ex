@@ -21,12 +21,13 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'accesspress-mag' ); ?></a>
     <?php 
-        $apmag_transparent_header = of_get_option('logo_upload');
-        $apmag_logo = of_get_option('logo_upload');
-        $apmag_top_menu_switch = of_get_option('top_menu_switch');
-        $apmag_top_menu = of_get_option('top_menu_select');
-        $apmag_logo_alt = of_get_option('logo_alt');
-        $apmag_logo_title = of_get_option('logo_title');
+        $apmag_transparent_header = of_get_option( 'logo_upload' );
+        $apmag_logo = of_get_option( 'logo_upload' );
+        $apmag_top_menu_switch = of_get_option( 'top_menu_switch' );
+        $apmag_top_menu = of_get_option( 'top_menu_select' );
+        $apmag_top_menu_right = of_get_option( 'top_right_menu_select' );
+        $apmag_logo_alt = of_get_option( 'logo_alt' );
+        $apmag_logo_title = of_get_option( 'logo_title' );
         //var_dump($apmag_top_menu); 
     ?>  
 	
@@ -43,22 +44,30 @@
                     </ul>
                 </div>
                 </div>
-            <?php else: ?>       
-                <nav id="top-navigation" class="top-main-navigation" role="navigation">
-                        <div class="apmag-container">
-                            <button class="menu-toggle hide" aria-controls="menu" aria-expanded="false"><?php _e( 'Top Menu', 'accesspress-mag' ); ?></button>
-                            <?php wp_nav_menu( array( 'menu' => $apmag_top_menu ) ); ?>
-                        </div>
-                </nav><!-- #site-navigation -->
-            <?php endif;?>            
-            <?php endif ;?>
+            <?php else: ?>  
+            <div class="top-menu-wrapper clearfix">
+                <div class="apmag-container">     
+                    <nav id="top-navigation" class="top-main-navigation" role="navigation">
+                                <button class="menu-toggle hide" aria-controls="menu" aria-expanded="false"><?php _e( 'Top Menu', 'accesspress-mag' ); ?></button>
+                                <?php wp_nav_menu( array( 'menu' => $apmag_top_menu ) ); ?>
+                    </nav><!-- #site-navigation -->
+                <?php endif;?> 
+                <?php if(!empty($apmag_top_menu_right)): ?>
+                    <nav id="top-right-navigation" class="top-right-main-navigation" role="navigation">
+                                <button class="menu-toggle hide" aria-controls="menu" aria-expanded="false"><?php _e( 'Top Menu Right', 'accesspress-mag' ); ?></button>
+                                <?php wp_nav_menu( array( 'menu' => $apmag_top_menu_right ) ); ?>
+                    </nav><!-- #site-navigation -->
+                <?php endif ;?>           
+                <?php endif ;?>
+                </div>
+            </div>
         <div class="logo-ad-wrapper clearfix">
             <div class="apmag-container">
         		
                             <?php if (!empty($apmag_logo)): ?>
                                 <div class="site-branding site-logo">
-                                    <a itemprop="url" href="<?php echo home_url(); ?>"><img src="<?php echo $apmag_logo?>" alt="<?php echo $apmag_logo_alt ?>"<?php echo $apmag_logo_title ?>/></a>
-                                    <meta itemprop="name" content="<?php bloginfo('name')?>" />
+                                    <a itemprop="url" href="<?php echo home_url(); ?>"><img src="<?php echo $apmag_logo?>" alt="<?php echo $apmag_logo_alt ?>" title="<?php echo $apmag_logo_title ?>" /></a>
+                                    <meta itemprop="name" content="<?php bloginfo( 'name' )?>" />
                                 </div><!-- .site-branding -->
                             <?php else :?>
                                 <div class="site-branding">
@@ -70,7 +79,7 @@
                 
                 <div class="header-ad">
                     <?php 
-                        $apmag_header_ad = of_get_option('value_header_ad');
+                        $apmag_header_ad = of_get_option( 'value_header_ad' );
                         if(!empty($apmag_header_ad)){
                             echo $apmag_header_ad;
                         } else {
@@ -83,8 +92,14 @@
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<div class="apmag-container">
-                <button class="menu-toggle hide" aria-controls="menu" aria-expanded="false"><?php _e( 'Primary Menu', 'accesspress-mag' ); ?></button>
-    			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+                <div class="nav-wrapper">
+                    <div class="nav-toggle hide">
+                        <span> </span>
+                        <span> </span>
+                        <span> </span>
+                    </div>
+        			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+                </div>
 
                 <div class="search-icon">
                     <i class="fa fa-search"></i>

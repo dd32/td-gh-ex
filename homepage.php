@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Home page
+ * Template Name: Home Template
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
@@ -21,7 +21,7 @@ get_header();
     <div class="apmag-container">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-              <section class="first-block clearfix">
+              <section class="first-block wow fadeInUp clearfix" data-wow-delay="0.5s">
                     <?php 
                         $block1_cat = of_get_option('featured_block_1');
                         if(!empty( $block1_cat )):
@@ -49,9 +49,11 @@ get_header();
                                     $b1_image_alt = get_post_meta($b1_image_id,'_wp_attachment_image_alt',true);
                     ?>
                         <?php if($b_counter==1){echo '<div class="toppost-wrapper">';} if($b_counter> 2 && $b_counter==3){echo '<div class="bottompost-wrapper">';}?>
-                        <div class="single_post clearfix <?php if($b_counter <= 2){echo 'top-post';}?>">
+                        <div class="single_post clearfix <?php if($b_counter <= 2){echo 'top-post non-zoomin';}?>">
                             <?php if(has_post_thumbnail()): ?>   
-                                <div class="post-image"><a href="<?php the_permalink();?>"><img src="<?php if($b_counter <=2){echo $b1_big_image_path[0];}else{ echo $b1_small_image_path[0] ;}?>" alt="<?php echo esc_attr($b1_image_alt);?>" /></a></div>                                
+                                <div class="post-image"><a href="<?php the_permalink();?>"><img src="<?php if($b_counter <=2){echo $b1_big_image_path[0];}else{ echo $b1_small_image_path[0] ;}?>" alt="<?php echo esc_attr($b1_image_alt);?>" /></a>
+                                    <?php if($b_counter<=2):?> <a class="big-image-overlay" href="<?php the_permalink();?>"><i class="fa fa-external-link"></i></a><?php endif ;?>
+                                </div>                                
                             <?php endif ; ?>
                                 <div class="post-desc-wrapper">
                                     <h3 class="post-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
@@ -76,7 +78,7 @@ get_header();
                     ?>
               </section>
                     
-              <section class="second-block clearfix">
+              <section class="second-block clearfix wow fadeInLeft" data-wow-delay="0.5s">
                     <?php 
                         $block2_cat = of_get_option('featured_block_2');
                         if(!empty($block2_cat)):
@@ -104,15 +106,18 @@ get_header();
                                     $b2_image_alt = get_post_meta($b2_image_id,'_wp_attachment_image_alt',true);
                     ?>
                                 <?php if($b_counter==1){echo '<div class="leftposts-wrapper">';} if($b_counter>1 && $b_counter==2){echo '<div class="rightposts-wrapper">';}?>
-                                <div class="single_post clearfix <?php if($b_counter==1){echo 'first-post';}?>">
+                                <div class="single_post clearfix <?php if($b_counter==1){echo 'first-post non-zoomin';}?>">
                                     <?php if(has_post_thumbnail()): ?>   
-                                        <div class="post-image"><a href="<?php the_permalink();?>"><img src="<?php if($b_counter <=1){echo $b2_big_image_path[0];}else{ echo $b2_small_image_path[0] ;}?>" alt="<?php echo esc_attr($b2_image_alt);?>" /></a></div>                                
+                                        <div class="post-image"><a href="<?php the_permalink();?>"><img src="<?php if($b_counter <=1){echo $b2_big_image_path[0];}else{ echo $b2_small_image_path[0] ;}?>" alt="<?php echo esc_attr($b2_image_alt);?>" /></a>
+                                            <?php if($b_counter==1):?> <a class="big-image-overlay" href="<?php the_permalink();?>"><i class="fa fa-external-link"></i></a><?php endif ;?>
+                                        </div>                                
+                                            
                                     <?php endif ; ?>
                                         <div class="post-desc-wrapper">
                                             <h3 class="post-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
                                             <div class="block-poston"><?php do_action('accesspress_mag_home_posted_on');?></div>
                                         </div>
-                                        <?php if($b_counter <=1 ):?><div class="post-content"><?php echo '<p>'. accesspress_word_count(get_the_content(),25) .'</p>' ;?></div><?php endif ;?>
+                                        <?php if($b_counter ==1 ):?><div class="post-content"><?php echo '<p>'. accesspress_word_count(get_the_content(),25) .'</p>' ;?></div><?php endif ;?>
                                 </div>
                                 <?php if($b_counter==1){echo '</div>';} if($b_counter>1 && $b_counter==$total_posts_block2){echo '</div>';}?>                    
                     <?php                    
@@ -128,14 +133,14 @@ get_header();
               <?php 
                     $home_inline_ad = of_get_option('value_homepage_inline_ad');
                     if(!empty($home_inline_ad)){
-                        echo '<div class="homepage-middle-ad">'.$home_inline_ad.'</div>';                        
+                        echo '<div class="homepage-middle-ad wow flipInX" data-wow-delay="1s">'.$home_inline_ad.'</div>';                        
                     } else {
-                        echo '<div class="homepage-middle-ad"><img src="http://placehold.it/728x90&text=Advertisement 728x90" /></div>';
+                        echo '<div class="homepage-middle-ad wow flipInX" data-wow-delay="1s"><img src="http://placehold.it/728x90&text=Advertisement 728x90" /></div>';
                     }
                     
               ?> 
               
-              <section class="third-block clearfix">
+              <section class="third-block clearfix wow fadeInUp" data-wow-delay="0.5s">
                     <?php 
                         $block3_cat = of_get_option('featured_block_3');
                         if(!empty($block3_cat)):
@@ -166,9 +171,11 @@ get_header();
                                     $b3_image_alt = get_post_meta($b3_image_id,'_wp_attachment_image_alt',true);
                     ?>
                         <?php if($b_counter==1){echo '<div class="toppost-wrapper">';} if($b_counter> 2 && $b_counter==3){echo '<div class="bottompost-wrapper">';}?>
-                        <div class="single_post clearfix <?php if($b_counter <= 2){echo 'top-post';}?>">
+                        <div class="single_post clearfix <?php if($b_counter <= 2){echo 'top-post non-zoomin';}?>">
                             <?php if(has_post_thumbnail()): ?>   
-                                <div class="post-image"><a href="<?php the_permalink();?>"><img src="<?php if($b_counter <=2){echo $b3_big_image_path[0];}else{ echo $b3_small_image_path[0] ;}?>" alt="<?php echo esc_attr($b3_image_alt);?>" /></a></div>                                
+                                <div class="post-image"><a href="<?php the_permalink();?>"><img src="<?php if($b_counter <=2){echo $b3_big_image_path[0];}else{ echo $b3_small_image_path[0] ;}?>" alt="<?php echo esc_attr($b3_image_alt);?>" /></a>
+                                    <?php if($b_counter<=2):?> <a class="big-image-overlay" href="<?php the_permalink();?>"><i class="fa fa-external-link"></i></a><?php endif ;?>
+                                </div>                               
                             <?php endif ; ?>
                                 <div class="post-desc-wrapper">
                                     <h3 class="post-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
@@ -192,7 +199,7 @@ get_header();
                     ?>
               </section>
               
-              <section class="forth-block clearfix">
+              <section class="forth-block clearfix wow fadeInRight" data-wow-delay="0.5s">
                     <?php 
                         $block4_cat = of_get_option('featured_block_4');
                         if(!empty($block4_cat)):
@@ -218,9 +225,12 @@ get_header();
                                     $b4_big_image_path = wp_get_attachment_image_src($b4_image_id,'block-big-thumb',true);
                                     $b4_image_alt = get_post_meta($b4_image_id,'_wp_attachment_image_alt',true);
                     ?>
-                                <div class="single_post clearfix">
+                                <div class="single_post non-zoomin clearfix">
                                     <?php if(has_post_thumbnail()): ?>   
-                                        <div class="post-image"><a href="<?php the_permalink();?>"><img src="<?php echo $b4_big_image_path[0];?>" alt="<?php echo esc_attr($b4_image_alt);?>" /></a></div>                                
+                                        <div class="post-image">
+                                            <a href="<?php the_permalink();?>"><img src="<?php echo $b4_big_image_path[0];?>" alt="<?php echo esc_attr($b4_image_alt);?>" /></a>
+                                            <a class="big-image-overlay" href="<?php the_permalink();?>"><i class="fa fa-external-link"></i></a>
+                                        </div>                                
                                     <?php endif ; ?>
                                         <h3 class="post-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
                                         <div class="block-poston"><?php do_action('accesspress_mag_home_posted_on');?></div>

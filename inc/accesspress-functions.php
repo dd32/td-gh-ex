@@ -145,7 +145,7 @@ function accesspress_mag_slider_cb(){
                 endif ;
                 if($slide_counter%4==1):
             ?>
-                        <div class="big_slide">
+                        <div class="big_slide wow fadeInLeft">
                             <div class="big-cat-box">
                                 <span class="cat-name"><?php $cat_name = get_the_category(); echo $cat_name[0]->name; ?></span>
                                 <?php do_action('accesspress_mag_post_meta');?>
@@ -154,18 +154,18 @@ function accesspress_mag_slider_cb(){
                             <?php if($slide_info==1):?>
                             <div class="mag-slider-caption">
                               <h3 class="slide-title"><?php the_title();?></h3>
-                              <div class="slide-excerpt"><?php echo '<p>'. accesspress_word_count(get_the_content(),40) .'</p>' ;?></div>
+                              <div class="slide-excerpt"><?php echo '<p>'. accesspress_word_count(get_the_content(),27) .'</p>' ;?></div>
                               <span class="cnt-reading"><a href="<?php echo the_permalink();?>"><?php _e( 'Continue Reading', 'accesspress-mag' );?></a></span>
                             </div>
                             <?php endif;?>
                         </div>
-            <?php else : if($slide_counter%4==2){echo '<div class="small-slider-wrapper">';}?>                
+            <?php else : if($slide_counter%4==2){echo '<div class="small-slider-wrapper wow fadeInRight">';}?>                
                         <div class="small_slide">
                             <span class="cat-name"><?php $cat_name = get_the_category(); echo $cat_name[0]->name; ?></span>
                             <div class="slide-image"><img src="<?php echo $post_small_image_path[0];?>" alt="<?php echo esc_attr($post_image_alt);?>" /></div>
                             <div class="mag-small-slider-caption">
                               <?php if($slide_info==1):?><h3 class="slide-title"><a href="<?php echo the_permalink();?>"><?php the_title();?></a></h3><?php endif; ?>
-                              <div class="home-posted"><?php do_action( 'accesspress_mag_home_posted_on' );?></div>
+                              <div class="home-posted clearfix"><?php do_action( 'accesspress_mag_home_posted_on' );?></div>
                             </div>                            
                         </div>
             <?php 
@@ -392,7 +392,10 @@ function accesspress_mag_sidebar_layout_class($classes){
     	} elseif(is_archive()){
     	   $archive_sidebar = of_get_option( 'global_archive_sidebar' );
             $classes[] = 'archive-'.$archive_sidebar;
-        } else{
+        } elseif(is_search()){
+            $archive_sidebar = of_get_option( 'global_archive_sidebar' );
+            $classes[] = 'archive-'.$archive_sidebar;
+        }else{
     	$classes[] = 'page-right-sidebar';	
     	}
     	return $classes;
@@ -419,7 +422,10 @@ function accesspress_mag_template_layout_class($classes){
     	} elseif(is_archive()){
             $archive_template = of_get_option( 'global_archive_template' );
             $classes[] = 'archive-page-'.$archive_template;
-        } else{
+        } elseif(is_search()){
+            $archive_template = of_get_option( 'global_archive_template' );
+            $classes[] = 'archive-page-'.$archive_template;
+        }else{
     	$classes[] = 'page-default-template';	
     	}
     	return $classes;
@@ -556,7 +562,7 @@ function accesspress_mag_excerpt(){
 	  global $post;
 
         $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
-        $delimiter = '&raquo;'; // delimiter between crumbs
+        $delimiter = '<span class="bread_arrow"> > </span>'; // delimiter between crumbs
         $home = 'Home'; // text for the 'Home' link
         $showHomeLink = of_get_option('show_home_link_breadcrumbs');
 
@@ -572,15 +578,15 @@ function accesspress_mag_excerpt(){
 	  
 	  } else {
 	       if($showHomeLink == 1){ 
-	           echo '<div id="accesspres-mag-breadcrumbs"><div class="ak-container"><a href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
+	           echo '<div id="accesspres-mag-breadcrumbs" class="clearfix"><span class="bread-you">'.__( 'You are here', 'accesspress-mag').'</span><div class="ak-container"><a href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
              } else {
-	           echo '<div id="accesspres-mag-breadcrumbs"><div class="ak-container">' . $home . ' ' . $delimiter . ' ';
+	           echo '<div id="accesspres-mag-breadcrumbs" class="clearfix"><span class="bread-you">'.__( 'You are here', 'accesspress-mag').'</span><div class="ak-container">' . $home . ' ' . $delimiter . ' ';
             }
 	  
 	    if ( is_category() ) {
 	      $thisCat = get_category(get_query_var('cat'), false);
 	      if ($thisCat->parent != 0) echo get_category_parents($thisCat->parent, TRUE, ' ' . $delimiter . ' ');
-	      echo $before . 'Archive by category "' . single_cat_title('', false) . '"' . $after;
+	      echo $before .  single_cat_title('', false) . $after;
 	  
 	    } elseif ( is_search() ) {
 	      echo $before . 'Search results for "' . get_search_query() . '"' . $after;
@@ -646,7 +652,7 @@ function accesspress_mag_excerpt(){
 	    } elseif ( is_author() ) {
 	       global $author;
 	      $userdata = get_userdata($author);
-	      echo $before . 'Articles posted by ' . $userdata->display_name . $after;
+	      echo $before . 'Author: ' . $userdata->display_name . $after;
 	  
 	    } elseif ( is_404() ) {
 	      echo $before . 'Error 404' . $after;
@@ -749,12 +755,38 @@ function accesspress_required_plugins() {
 }
 add_action( 'tgmpa_register', 'accesspress_required_plugins' );
 //add_filter('show_admin_bar', '__return_false'); 
+
 /*------For shordcode in widget text-----------------*/
 add_filter('widget_text', 'do_shortcode');
 
-
+/*---------Enqueue admin css---------------*/
 function accesspress_mag_admin_css(){
     wp_enqueue_style('apmag-admin', get_template_directory_uri(). '/inc/option-framework/css/apmag-admin.css');    
 }
 add_action('admin_head','accesspress_mag_admin_css');
+
+/*---------Check audio file--------------*/
+/*
+function check_file_is_audio( $tmp ) 
+{
+    $allowed = array(
+        'audio/mpeg', 'audio/x-mpeg', 'audio/mpeg3', 'audio/x-mpeg-3', 'audio/aiff', 
+        'audio/mid', 'audio/x-aiff', 'audio/x-mpequrl','audio/midi', 'audio/x-mid', 
+        'audio/x-midi','audio/wav','audio/x-wav','audio/xm','audio/x-aac','audio/basic',
+        'audio/flac','audio/mp4','audio/x-matroska','audio/ogg','audio/s3m','audio/x-ms-wax',
+        'audio/xm'
+    );
+    
+    // check REAL MIME type
+    $finfo = finfo_open(FILEINFO_MIME_TYPE);
+    $type = finfo_file($finfo, $tmp );
+    finfo_close($finfo);
+    
+    // check to see if REAL MIME type is inside $allowed array
+    if( in_array($type, $allowed) ) {
+        return true;
+    } else {
+        return false;
+    }
+}*/
  

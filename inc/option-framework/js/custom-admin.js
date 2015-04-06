@@ -13,7 +13,6 @@
             //alert(cur_selection);
         }
     }
- 
  jQuery(document).ready(function($) {
         td_updateMetaboxes();
         $('#reviewSelector').change(function() {
@@ -94,5 +93,4 @@
     $(document).on('click', '.delete-review-stars', function(){
         $(this).parent('.review_section_group').remove();
     });
-        
 });

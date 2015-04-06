@@ -72,6 +72,31 @@ if ( post_password_required() ) {
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'accesspress-mag' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form(); ?>
+	<?php 
+        $args = array(
+		'fields' => apply_filters(        
+		'comment_form_default_fields', array(
+		'author' =>'<div class="cmm-box-left"><div class="control-group"><div class="controls">'. '<input id="author" placeholder="Name *" name="author" type="text" value="' .
+		esc_attr( $commenter['comment_author'] ) . '" size="30" aria-required="true" />'.
+		'</div></div>',
+
+		'email'  => '<div class="control-group"><div class="controls">' . '<input id="email" placeholder="Email Address *" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+		'" size="30" aria-required="true" />'  .
+		'</div></div>',
+
+		'url'    => '<div class="control-group"><div class="controls">' .
+		'<input id="url" name="url" placeholder="Website" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /> ' .
+		'</div></div></div>'
+		)
+		),
+
+		'comment_field' => '<div class="cmm-box-right"><div class="control-group"><div class="controls">' .
+		'<textarea id="comment" name="comment" placeholder="Comment *" cols="45" rows="8" aria-required="true"></textarea>' .
+		'</div></div></div> <div class="clearfix"> </div>',
+		'comment_notes_after' => '',
+		'comment_notes_before' => '',
+		);
+        comment_form($args); 
+    ?>
 
 </div><!-- #comments -->

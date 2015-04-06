@@ -790,10 +790,10 @@ function optionsframework_media_scriptss($hook) {
         'remove' => __('Remove', 'textdomain')
     ));
 
-    wp_enqueue_style( 'accesspress_parallax-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
-    wp_enqueue_style( 'ap-admin-css', get_template_directory_uri() . '/inc/css/ap-admin.css' );
-    wp_enqueue_script('ap-admin-js', get_template_directory_uri() . '/inc/js/ap-admin.js', array('jquery'));
-    wp_enqueue_script('ap-admin-js');
+    wp_enqueue_style( 'accesspress-mag-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
+    //wp_enqueue_style( 'ap-admin-css', get_template_directory_uri() . '/inc/css/ap-admin.css' );
+    //wp_enqueue_script('ap-admin-js', get_template_directory_uri() . '/inc/js/ap-admin.js', array('jquery'));
+    //wp_enqueue_script('ap-admin-js');
 }
 
 add_action('admin_enqueue_scripts', 'optionsframework_media_scriptss');

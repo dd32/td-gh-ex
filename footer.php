@@ -21,25 +21,30 @@
     
         <?php 
             if($apmag_show_footer_switch!='0'){
-            if ( is_active_sidebar( 'footer-1' ) ||  is_active_sidebar( 'footer-2' )  || is_active_sidebar( 'footer-3' )  ) : ?>
+            if ( is_active_sidebar( 'footer-1' ) ||  is_active_sidebar( 'footer-2' )  || is_active_sidebar( 'footer-3' ) || is_active_sidebar( 'footer-4' )  ) : ?>
 			<div class="top-footer footer-<?php echo esc_attr($apmag_footer_layout); ?>">
     			<div class="apmag-container">
                     <div class="footer-block-wrapper clearfix">
-        				<div class="footer-block-1 footer-block">
+        				<div class="footer-block-1 footer-block wow fadeInLeft" data-wow-delay="0.5s">
         					<?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
         						<?php dynamic_sidebar( 'footer-1' ); ?>
         					<?php endif; ?>
         				</div>
         
-        				<div class="footer-block-2 footer-block" style="display: <?php if($apmag_footer_layout=='column1'){echo 'none';}else{echo 'block';}?>;">
+        				<div class="footer-block-2 footer-block wow fadeInLeft" data-wow-delay="0.8s" style="display: <?php if( $apmag_footer_layout == 'column1' ){ echo 'none'; } else { echo 'block'; }?>;">
         					<?php if ( is_active_sidebar( 'footer-2' ) ) : ?>
         						<?php dynamic_sidebar( 'footer-2' ); ?>
         					<?php endif; ?>	
         				</div>
         
-        				<div class="footer-block-3 footer-block" style="display: <?php if ($apmag_footer_layout=='column1' || $apmag_footer_layout=='column2'){echo 'none';}else{echo 'block';}?>;">
+        				<div class="footer-block-3 footer-block wow fadeInLeft" data-wow-delay="1.2s" style="display: <?php if ( $apmag_footer_layout == 'column1' || $apmag_footer_layout == 'column2' ){ echo 'none'; } else { echo 'block'; } ?>;">
         					<?php if ( is_active_sidebar( 'footer-3' ) ) : ?>
         						<?php dynamic_sidebar( 'footer-3' ); ?>
+        					<?php endif; ?>	
+        				</div>
+                        <div class="footer-block-4 footer-block wow fadeInLeft" data-wow-delay="1.2s" style="display: <?php if ( $apmag_footer_layout != 'column4' ){ echo 'none'; } else { echo 'block'; }?>;">
+        					<?php if ( is_active_sidebar( 'footer-4' ) ) : ?>
+        						<?php dynamic_sidebar( 'footer-4' ); ?>
         					<?php endif; ?>	
         				</div>
                     </div> <!-- footer-block-wrapper -->
@@ -74,7 +79,10 @@
                 </div>
             </div>
         </div>
-	</footer><!-- #colophon -->   
+	</footer><!-- #colophon -->
+    <div id="back-top">
+        <a href="#top"><i class="fa fa-arrow-up"></i> <span> Top </span></a>
+    </div>   
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

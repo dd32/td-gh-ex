@@ -101,10 +101,11 @@ function optionsframework_options() {
     
     
     //Footer Pattern
-	$footer_pattern = array( 
-        'column3' => $imagepath . 'footers/footer-1.png',
+	$footer_pattern = array(
+        'column4' => $imagepath . 'footers/footer-4.png',
+        'column3' => $imagepath . 'footers/footer-3.png',
 		'column2' => $imagepath . 'footers/footer-2.png', 
-        'column1' => $imagepath . 'footers/footer-4.png',
+        'column1' => $imagepath . 'footers/footer-1.png',
 		   
 		);
         
@@ -256,6 +257,13 @@ function optionsframework_options() {
             'id' => 'top_menu_select',
             'type' => 'select',
             'options' => $options_menus
+            );
+    $options[] = array(
+            'name' => __( 'Top Menu (right)', 'accesspress-mag' ),
+            'desc' => __( 'Select a menu for the top section on right side. It`s optional menu.', 'accesspress-mag' ),    
+            'id' => 'top_right_menu_select',
+            'type' => 'select',
+            'options' => $options_menus
             );		
 
     $options[] = array(
@@ -333,9 +341,9 @@ function optionsframework_options() {
     
     $options[] = array(
             'name' => __( 'Layout', 'accesspress-mag' ),
-            'desc' => __( 'Set footer layout', 'accesspress-mag' ),
+            'desc' => __( 'Choose image for footer widget layout.', 'accesspress-mag' ),
             'id' => 'footer_layout',
-            'std' => 'column3',
+            'std' => 'column4',
             'type' => 'images',
             'options' => $footer_pattern
             );
@@ -917,7 +925,8 @@ function optionsframework_options() {
             'name' => __( 'Excerpt Lenght', 'accesspress-mag' ),
             'desc' => __( '', 'accesspress-mag' ),
             'id' => 'excerpt_lenght',
-            'type' => 'text', 
+            'type' => 'text',
+            'std' => 50, 
             );
     $options[] = array(
             'type' => 'groupend'

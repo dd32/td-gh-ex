@@ -7,14 +7,8 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-    <?php 
-        $accesspress_mag_show_breadcrumbs = of_get_option('show_hide_breadcrumbs');
-            if ((function_exists('accesspress_breadcrumbs') && $accesspress_mag_show_breadcrumbs == 1)) {
-				    accesspress_breadcrumbs();
-                }
-    ?>
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+	<header class="page-header">
+		<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">

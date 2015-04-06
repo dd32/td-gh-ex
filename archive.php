@@ -9,15 +9,29 @@
 
 get_header(); ?>
 <div class="apmag-container">
+    <?php   
+        $accesspress_mag_show_breadcrumbs = of_get_option('show_hide_breadcrumbs');
+        if ((function_exists('accesspress_breadcrumbs') && $accesspress_mag_show_breadcrumbs == 1)) {
+			    accesspress_breadcrumbs();
+            }
+    ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<?php if ( have_posts() ) : ?>
+		<?php
+            $archive_template = of_get_option( 'global_archive_template' );
+            if($archive_template=='default-template'){
+                $archive_template = 'archive-default';
+            } else {
+                $archive_template = 'archive-style1';
+            } 
+            if ( have_posts() ) : 
+        ?>
 
 			<header class="page-header">
 				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
+					apmag_the_archive_title( '<h1 class="page-title">', '</h1>' );
+					//the_archive_description( '<div class="taxonomy-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
 
@@ -29,7 +43,7 @@ get_header(); ?>
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
-                    get_template_part( 'content', get_post_format() );
+                    get_template_part( 'content', $archive_template );
 				?>
 
 			<?php endwhile; wp_reset_query(); ?>

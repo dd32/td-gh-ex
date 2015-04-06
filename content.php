@@ -23,19 +23,20 @@
 
 	<div class="entry-content">
         <?php 
+            $post_format = get_post_format();
+            $video_url = get_post_meta( $post->ID, 'post_embed_videourl', true );
+            $audio_url = get_post_meta( $post->ID, 'post_embed_audiourl', true );
             if(has_post_thumbnail()){
-                $archive_template = of_get_option( 'global_archive_template' );
                 $image_id = get_post_thumbnail_id();
                 $image_path = wp_get_attachment_image_src( $image_id, 'singlepost-style1' ,true );
                 $big_image_path = wp_get_attachment_image_src( $image_id, 'singlepost-default' ,true );
-                $image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );                
-                if($archive_template=='default-template'){
-                    echo '<div class="post_image"><img src="'.$big_image_path[0].'" alt="'.esc_attr( $image_alt ).'" /></div>';   
-                } else {
-                    echo '<div class="post_image"><img src="'.$image_path[0].'" alt="'.esc_attr( $image_alt ).'" /></div>';
-                }
-            }
-        ?>
+                $image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
+         ?>
+                <div class="post-image non-zoomin">
+                    <a href="<?php the_permalink();?>"><img src="<?php echo $big_image_path[0];?>" alt="<?php echo esc_attr( $image_alt );?>" /></a>
+                    <span class="big-image-overlay"><a href="<?php the_permalink();?>"><i class="fa fa-external-link"></i></a></span>
+                </div>
+        <?php } ?>
 		<?php
 			/* translators: %s: Name of current post */
 			/*the_content( sprintf(
