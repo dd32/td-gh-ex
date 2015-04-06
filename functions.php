@@ -37,8 +37,10 @@ function athenea_setup() {
 	//add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'audio', 'quote', 'link' ) );
 	
 	// Enable support for title-tag.
-	add_theme_support( 'title-tag' );
-
+    function spi_setup() {
+       add_theme_support( 'title-tag' );
+      }
+    add_action( 'after_setup_theme', 'spi_setup' );
 	// Setup the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'athenea_custom_background_args', array(
 		'default-color' => 'ffffff',
