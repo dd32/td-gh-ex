@@ -109,7 +109,7 @@ function optionsframework_options() {
     $about_content .= __('If you have any question/feedback regarding theme, please post in our forum','accesspress_parallax')."<br /><br />"; 
     $about_content .= __('Forum:','accesspress_parallax')." <a target='_blank' href='".esc_url('http://accesspressthemes.com/support/')."'>http://accesspressthemes.com/support/</a><br /><br /><br />";
     $about_content .= __('For Queries Regading Pro Themes:','accesspress_parallax')."<br/><br />";
-    $about_content .= __('Support:','accesspress_parallax')." <a href='mailto:support@accesspressthemes.com'>support@accesspressthemes.com</a><br /><br />";
+    $about_content .= "<a href='mailto:support@accesspressthemes.com'>support@accesspressthemes.com</a><br /><br />";
     
     $about_content .= "<hr />";
 

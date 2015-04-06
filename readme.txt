@@ -89,6 +89,12 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.21
+* Main Navigation Bug fixed
+* Minor Changes in Theme Option Panel
+* New pot file generated for translation
+* Jquery bug fixed while adding multiple team section
+
 Version 1.20
 * Archive page Title link fixed
 * ScreenShot Changed

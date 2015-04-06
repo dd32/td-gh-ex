@@ -217,7 +217,7 @@ class Options_Framework_Admin {
     			</div>
     
     			<div class="any-question">
-    				Any question!! Click <a href="<?php echo esc_url('https://accesspressthemes.com/contact/'); ?>" target="_blank">here</a> for Live Chat.
+    				<?php echo sprintf(__('Any question!! Click <a href="%s" target="_blank">here</a> for Live Chat.','accesspress_parallax'), esc_url('https://accesspressthemes.com/contact/')); ?>
     			</div>
     		</div>
 		</div>

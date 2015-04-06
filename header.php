@@ -6,7 +6,8 @@
  *
  * @package accesspress_parallax
  */
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -41,30 +42,32 @@
 					
 			<?php 
 			$sections = of_get_option('parallax_section');
-			if(of_get_option('enable_parallax')==1 && of_get_option('enable_parallax_nav')==1 && !empty($sections) ): ?>
-			<ul class="nav single-page-nav">
-			<?php
-			$home_text = of_get_option('home_text');
-				if(of_get_option('show_slider')== "yes" && !empty($home_text)) : ?>
-					<li class="current"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#main-slider"><?php echo esc_attr($home_text); ?></a></li>
-				<?php endif;
-				
-				foreach ($sections as $single_sections): 
-					if($single_sections['layout'] != "action_template" && $single_sections['layout'] != "blank_template" && $single_sections['layout'] != "googlemap_template" && !empty($single_sections['page'])) :
-					$title = get_the_title($single_sections['page']); ?>
-					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>#section-<?php echo $single_sections['page']; ?>"><?php echo $title; ?></a></li>
-					<?php 
-					endif;
-				endforeach; ?>
-			</ul>
-
-			<?php else: 
+			if(of_get_option('enable_parallax')!=1 && of_get_option('enable_parallax_nav')!=1): 
 				wp_nav_menu( array( 
 					'theme_location' => 'primary' , 
 					'container'      => '',
 					'menu_class'      => 'nav',
 					'fallback_cb'     => '',
 					) );
+			else: ?>
+				<ul class="nav single-page-nav">
+				<?php
+				$home_text = of_get_option('home_text');
+					if(of_get_option('show_slider')== "yes" && !empty($home_text)) : ?>
+						<li class="current"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#main-slider"><?php echo esc_attr($home_text); ?></a></li>
+					<?php endif;
+					
+					if(!empty($sections)):
+					foreach ($sections as $single_sections): 
+						if($single_sections['layout'] != "action_template" && $single_sections['layout'] != "blank_template" && $single_sections['layout'] != "googlemap_template" && !empty($single_sections['page'])) :
+						$title = get_the_title($single_sections['page']); ?>
+						<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>#section-<?php echo $single_sections['page']; ?>"><?php echo $title; ?></a></li>
+						<?php 
+						endif;
+					endforeach; 
+					endif; ?>
+				</ul>
+			<?php
 			endif; ?>
 		
 		</nav><!-- #site-navigation -->

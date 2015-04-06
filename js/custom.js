@@ -62,8 +62,13 @@ jQuery(document).ready(function($){
         hideControlOnEnd: true
     });
 
-    $('.team-content .team-list:first').show();
-    $('.team-tab .team-image:first').addClass('active');
+    $('.team-content').each(function(){
+        $('.team-content .team-list:first').show();
+    });
+    
+    $('.team-tab').each(function(){
+        $('.team-tab .team-image:first').addClass('active');
+    });
 
     $('.team-tab .team-image').on('click', function(){
         $('.team-image').removeClass('active');
