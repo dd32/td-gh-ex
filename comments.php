@@ -1,12 +1,3 @@
-<?php
-  /*
-   * @file           comment.php
-   * @package        Busiprof
-   * @author         Priyanshu Mittal
-   * @copyright      2013 Webrit
-   * @license        license.txt
-   * @filesource     wp-content/themes/Busiprof/comment.php
-  */	?>
 <?php if ( post_password_required() ) : ?>
 <p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'busi_prof' ); ?></p>
 <?php return;endif;?>

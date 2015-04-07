@@ -57,6 +57,11 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.5.1
+1.Fixed slider image issue.
+2.All enqueue script and style name change
+3.enqueue style.css in function.php
+
 @version 1.5
 1. Fix styling issues of Sidebar-widgets.
 2. Fix styling issues of Footer-widgets. 

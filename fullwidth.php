@@ -1,15 +1,4 @@
 <?php 			
-/*
-	*Theme Name	: BusiProf
-	
- * @file           page.php
- * @package        Busiprof
- * @author         Priyanshu Mittal
- * @copyright      2013 Webriti
- * @license        license.txt
- * @filesource     wp-content/themes/Busiprof/page.php
-		Template Name: Full-Width 
- */	
 	get_template_part('banner','header');
 	$image_uri=get_template_directory_uri(). '/images' ;
 ?>

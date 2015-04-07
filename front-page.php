@@ -1,15 +1,4 @@
 <?php
-  /*
-   *Theme Name	: BusiProf
-   * @file           front-page.php
-   * @package        Busiprof
-   * @author         Priyanshu Mittal
-   * @copyright      2013 Webriti
-   * @license        license.txt
-   * @filesource     wp-content/themes/Busiprof/front-page.php
-   *
-   *					Template Name: Home
-   */
   $is_front_page = get_option('busiprof_theme_options');
   
   if (  $is_front_page['front_page'] != 'yes' ) {

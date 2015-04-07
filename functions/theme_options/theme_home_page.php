@@ -1,4 +1,5 @@
 <?php
+  $template_uri=get_template_directory_uri(). '/images/default' ;
   global $front_page;
   $current_options = get_option( 'busiprof_theme_options' );
   if(isset($_POST['busiprof_settings_save_1']))
@@ -10,6 +11,7 @@
   	print 'Sorry, your nonce did not verify.';
   	exit;
   }
+ 
   
   else  
   {
@@ -18,7 +20,8 @@
   	$current_options['upload_image']=sanitize_text_field($_POST['upload_image']);
   	$current_options['upload_image_favicon']=sanitize_text_field($_POST['upload_image_favicon']);
   	
-  	$current_options['slider_head_title'] = sanitize_text_field($_POST['slider_head_title']);$current_options['slider_image'] = sanitize_text_field($_POST['slider_image']);
+  	$current_options['slider_head_title'] = sanitize_text_field($_POST['slider_head_title']);
+	$current_options['slider_image'] = sanitize_text_field($_POST['slider_image']);
   	$current_options['caption_head'] = sanitize_text_field($_POST['caption_head']);
   	$current_options['caption_text'] = sanitize_text_field($_POST['caption_text']);
   	$current_options['service_heading_one'] = sanitize_text_field($_POST['service_heading_one']);
@@ -59,7 +62,48 @@
      }	
   if($_POST['busiprof_settings_save_1'] == 2) 
   {
-  do_action('Busiprof_restore_data','1');
+  $page; 
+  	$current_options['front_page'] = 'yes';
+  	$current_options['upload_image']='';
+  	$current_options['upload_image_favicon']='';
+  	
+  	$current_options['slider_head_title'] = __('Backend as a Service Plateform for Any App Developer','busi_prof');
+	$current_options['slider_image'] =  $template_uri .'/slider.jpg';
+  	$current_options['caption_head'] = __('Busiprof With Responsive Design','busi_prof');
+  	$current_options['caption_text'] = __('We are a group of passionate designers and developers who really love to create awesome wordpress themes with amazing support and ..','busi_prof');
+  	$current_options['service_heading_one'] = __('Awesome','busi_prof');
+  	$current_options['service_heading_two'] = __('Services','busi_prof');
+  	$current_options['service_tagline'] = __('We are a group of passionate designers and developers who really love to create awesome wordpress themes & support','busi_prof'); 
+  	
+  	$current_options['service_link_btn'] = '#';
+  	$current_options['service_button_value'] = __('More Services','busi_prof');
+  	$current_options['busiprof_custom_css'] = '';
+  	
+  	$current_options['service_icon_one'] = $template_uri .'/services_ic1.png';
+  	$current_options['service_title_one'] = __('Web Design','busi_prof');
+  	$current_options['service_text_one'] = __('We are a group of passionate designers and developers who really love to create awesome wordpress themes','busi_prof');
+  	
+  	$current_options['service_icon_two'] = $template_uri .'/services_ic2.png';
+  	$current_options['service_title_two'] = __('Web Design','busi_prof');
+  	$current_options['service_text_two'] = __('We are a group of passionate designers and developers who really love to create awesome wordpress themes','busi_prof');
+  	
+  	$current_options['service_icon_three'] = $template_uri .'/services_ic3.png';
+  	$current_options['service_title_three'] = __('Web Design','busi_prof');
+  	$current_options['service_text_three'] = __('We are a group of passionate designers and developers who really love to create awesome wordpress themes','busi_prof');
+  	
+  	$current_options['service_icon_four'] =  $template_uri .'/services_ic4.png';
+  	$current_options['service_title_four'] = __('Web Design','busi_prof');
+  	$current_options['service_text_four'] = __('We are a group of passionate designers and developers who really love to create awesome wordpress themes','busi_prof');
+  	
+	
+	$current_options['service_link_btn'] = 
+	$current_options['service_button_value'] = 
+
+	// services  section enabled yes ya no
+  	$current_options['enable_services']= 'on';
+  		
+  
+  update_option('busiprof_theme_options' , stripslashes_deep($current_options));
   }
   }
   

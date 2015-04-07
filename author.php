@@ -1,13 +1,5 @@
 <?php
-  /***Theme Name	: BusiProf
-   * @file           author.php
-   * @package        Busiprof
-   * @author         Priyanshu Mittal
-   * @copyright      2013 Webriti
-   * @license        license.txt
-   * @filesource     wp-content/themes/Busiprof/author.php
-   **/
-   get_template_part('banner', 'header') ; ?>
+  get_template_part('banner', 'header') ; ?>
 <div class="container">
   <!---main-->
   <div class="row-fluid">

@@ -1,17 +1,8 @@
 <?php
-  /*
-   * Theme Name	: BusiProf
-   * Theme Core Functions and Codes
-   * @file           functions.php
-   * @package        Busiprof
-   * @author         Priyanshu Mittal
-   * @copyright      2013 Webriti
-   * @license        license.txt
-   * @filesource     wp-content/themes/Busiprof/functions.php
-  */
-  define('WEBRITI_TEMPLATE_DIR',get_template_directory());
-  define('WEBRITI_THEME_FUNCTIONS_PATH',WEBRITI_TEMPLATE_DIR.'/functions');
-  /**Includes reqired resources here**/
+  
+	define('WEBRITI_TEMPLATE_DIR',get_template_directory());
+	define('WEBRITI_THEME_FUNCTIONS_PATH',WEBRITI_TEMPLATE_DIR.'/functions');
+	/**Includes reqired resources here**/
   
   	//Files for custom - defaults menus
   	require( WEBRITI_THEME_FUNCTIONS_PATH. '/menu/busiprof_nav_walker.php' );
@@ -52,18 +43,19 @@
   
   	if ( is_singular() ) wp_enqueue_script( "comment-reply" );
   	
-  	wp_enqueue_script('boot-business',get_template_directory_uri().'/js/menu/boot-business.js',array('jquery')); //Menu JS	
-  	wp_enqueue_script('bootstrap.min',get_template_directory_uri().'/js/menu/bootstrap.min.js'); //Responsive JS
-  	wp_enqueue_script('menu',get_template_directory_uri().'/js/menu/menu.js'); //Menu JS
-  	wp_enqueue_script('bootstrap',get_template_directory_uri().'/js/bootstrap.js'); //Responsive JS
-  	wp_enqueue_script('bootstrap-tab',get_template_directory_uri().'/js/bootstrap-tab.js'); 
-  	wp_enqueue_script('bootstrap-transition',get_template_directory_uri().'/js/bootstrap-transition.js');
+  	wp_enqueue_script('busiprof-boot-business',get_template_directory_uri().'/js/menu/boot-business.js',array('jquery')); //Menu JS	
+  	wp_enqueue_script('busiprof-bootstrap.min',get_template_directory_uri().'/js/menu/bootstrap.min.js'); //Responsive JS
+  	wp_enqueue_script('busiprof-menu',get_template_directory_uri().'/js/menu/menu.js'); //Menu JS
+  	wp_enqueue_script('busiprof-bootstrap',get_template_directory_uri().'/js/bootstrap.js'); //Responsive JS
+  	wp_enqueue_script('busiprof-bootstrap-tab',get_template_directory_uri().'/js/bootstrap-tab.js'); 
+  	wp_enqueue_script('busiprof-bootstrap-transition',get_template_directory_uri().'/js/bootstrap-transition.js');
   	
   	//CSS Links 	
   
-  	wp_enqueue_style('font', get_template_directory_uri().'/css/font/font.css');
-  	wp_enqueue_style('bootstrap', get_template_directory_uri().'/css/bootstrap.css');
-  	wp_enqueue_style('bootstrap-responsive', get_template_directory_uri().'/css/bootstrap-responsive.css');
+  	wp_enqueue_style('busiprof-style', get_stylesheet_uri() );
+	wp_enqueue_style('busiprof-font', get_template_directory_uri().'/css/font/font.css');
+  	wp_enqueue_style('busiprof-bootstrap', get_template_directory_uri().'/css/bootstrap.css');
+  	wp_enqueue_style('busiprof-bootstrap-responsive', get_template_directory_uri().'/css/bootstrap-responsive.css');
   	//wp_enqueue_style('docs',get_template_directory_uri().'/css/docs.css');	
   }
   add_action( 'wp_enqueue_scripts', 'busiprof_scripts' );

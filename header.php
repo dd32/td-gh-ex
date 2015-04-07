@@ -1,13 +1,3 @@
-<?php
-  /*
-   * @file           header.php
-   * @package        Busiprof
-   * @author         Priyanshu Mittal
-   * @copyright      2013 Webrit
-   * @license        license.txt
-   * @filesource     wp-content/themes/Busiprof/header.php
-  */	
-  ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
   <head>
@@ -29,7 +19,6 @@
     <link rel="shortcut icon" href="<?php  echo esc_url($busiprof_current_options['upload_image_favicon']); ?>" />
     <?php } ?>	
     <link rel="profile" href="http://gmpg.org/xfn/11" />
-    <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" media="screen" />
     <?php wp_head(); ?>
   </head>
   <body <?php body_class(); ?>>
