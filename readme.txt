@@ -131,4 +131,7 @@ with testing and feature suggestions.
 * Fix: minimized css/js
 * Fix: MegaMenu border (X-Plus)
 
+= Version 1.1.2 =
+* Fix: missing <div> for author-link, extra </span>
+
 = *** Release Notes also found on Help Tab  *** =

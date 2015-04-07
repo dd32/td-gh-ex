@@ -451,8 +451,6 @@ function weaverx_enqueue_scripts() {	// action definition
 	wp_enqueue_script('weaverxJSLib', get_template_directory_uri().'/assets/js/weaverxjslib'.WEAVERX_MINIFY.'.js',array('jquery'), WEAVERX_VERSION);
 
 	$local = array(
-		//'menuPrimaryTrigger' => weaverx_getopt_default('menu_primary_trigger_int','768'),
-		//'menuSecondaryTrigger' => weaverx_getopt_default('menu_secondary_trigger_int','768'),
 		'useSmartMenus' => weaverx_getopt('use_smartmenus') && function_exists('weaverxplus_plugin_installed') ? '1' : '0'
 	);
 
