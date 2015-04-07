@@ -8,62 +8,13 @@
 		
 			<?php $post_format = get_post_format(); ?>
 			
-			<?php if ( $post_format == 'video' ) : ?>
-			
-				<?php $video_url = get_post_meta($post->ID, 'video_url', true); if ( $video_url != '' ) : ?>
-				
-					<div class="featured-media">
-					
-						<?php if (strpos($video_url,'.mp4') !== false) : ?>
-							
-							<video controls>
-							  <source src="<?php echo $video_url; ?>" type="video/mp4">
-							</video>
-																					
-						<?php else : ?>
-							
-							<?php 
-							
-								$embed_code = wp_oembed_get($video_url); 
-								
-								echo $embed_code;
-								
-							?>
-								
-						<?php endif; ?>
-						
-					</div>
-				
-				<?php endif; ?>
-				
-			<?php elseif ( $post_format == 'gallery' ) : ?>
+			<?php if ( $post_format == 'gallery' ) : ?>
 			
 				<div class="featured-media">	
 	
 					<?php hoffman_flexslider('post-image'); ?>
 					
 				</div> <!-- /featured-media -->
-				
-			<?php elseif ( $post_format == 'quote' ) : ?>
-			
-				<?php $quote_content = get_post_meta($post->ID, 'quote_content', true); ?>
-				<?php $quote_attribution = get_post_meta($post->ID, 'quote_attribution', true); ?>
-					
-				<div class="post-quote">
-				
-					<div class="section-inner thin">
-						
-						<blockquote><?php echo $quote_content; ?></blockquote>
-					
-						<?php if ( $quote_attribution != '' ) : ?>
-						
-							<cite><?php echo $quote_attribution; ?></cite>
-						
-						<?php endif; ?>
-					
-					</div> <!-- /section-inner -->
-				
-				</div> <!-- /post-quote -->
 			
 			<?php elseif ( has_post_thumbnail() ) : ?>
 					

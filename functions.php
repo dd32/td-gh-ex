@@ -14,7 +14,7 @@ function hoffman_setup() {
 	add_image_size( 'thumbnail-square', 100, 100, true );
 	
 	// Post formats
-	add_theme_support( 'post-formats', array( 'gallery', 'quote', 'video' ) );
+	add_theme_support( 'post-formats', array( 'gallery' ) );
 	
 	// Custom background
 	$defaults = array( 'default-color' => 'F9F9F9' );
@@ -64,7 +64,7 @@ add_action( 'wp_enqueue_scripts', 'hoffman_load_javascript_files' );
 function hoffman_load_style() {
 	if ( !is_admin() ) {
 	    wp_enqueue_style( 'hoffman_googleFonts', '//fonts.googleapis.com/css?family=Raleway:400,600,700,800|Vollkorn:400,400italic,700,700italic' );
-	    wp_enqueue_style( 'hoffman_genericons', get_stylesheet_directory_uri() . '/genericons/genericons.css' );
+	    wp_enqueue_style( 'hoffman_genericons', get_template_directory_uri() . '/genericons/genericons.css' );
 	    wp_enqueue_style( 'hoffman_style', get_stylesheet_uri() );
 	}
 }
@@ -115,11 +115,9 @@ function hoffman_widget_areas_reg() {
 }
 
 // Add theme widgets
-require_once (get_template_directory() . "/widgets/dribbble.php");  
 require_once (get_template_directory() . "/widgets/flickr.php");  
 require_once (get_template_directory() . "/widgets/recent-comments.php");
 require_once (get_template_directory() . "/widgets/recent-posts.php");
-require_once (get_template_directory() . "/widgets/video.php");
 
 
 // Delist the WordPress widgets replaced by custom theme widgets
@@ -207,37 +205,6 @@ function hoffman_if_custom_background_set($classes) {
 		$classes[] = 'has-custom-background';
 	}
 	return $classes;
-}
-
-
-
-// Remove inline styling of attachment
-add_shortcode('wp_caption', 'hoffman_fixed_img_caption_shortcode');
-add_shortcode('caption', 'hoffman_fixed_img_caption_shortcode');
-
-function hoffman_fixed_img_caption_shortcode($attr, $content = null) {
-	if ( ! isset( $attr['caption'] ) ) {
-		if ( preg_match( '#((?:<a [^>]+>\s*)?<img [^>]+>(?:\s*</a>)?)(.*)#is', $content, $matches ) ) {
-			$content = $matches[1];
-			$attr['caption'] = trim( $matches[2] );
-		}
-	}
-	
-	$output = apply_filters('img_caption_shortcode', '', $attr, $content);
-	
-	if ( $output != '' ) return $output;
-	extract(shortcode_atts(array(
-		'id' => '',
-		'align' => 'alignnone',
-		'width' => '',
-		'caption' => ''
-	), $attr));
-	
-	if ( 1 > (int) $width || empty($caption) )
-	return $content;
-	if ( $id ) $id = 'id="' . esc_attr($id) . '" ';
-	return '<div ' . $id . 'class="wp-caption ' . esc_attr($align) . '" >' 
-	. do_shortcode( $content ) . '<p class="wp-caption-text">' . $caption . '</p></div>';
 }
 
 
@@ -441,127 +408,6 @@ function hoffman_comment( $comment, $args, $depth ) {
 endif;
 
 
-// Add and save meta boxes for posts
-add_action( 'add_meta_boxes', 'hoffman_cd_meta_box_add' );
-function hoffman_cd_meta_box_add() {
-	add_meta_box( 'post-video-url', __('Video URL', 'hoffman'), 'hoffman_cd_meta_box_video_url', 'post', 'side', 'high' );
-	add_meta_box( 'post-quote-content-box', __('Quote content', 'hoffman'), 'hoffman_cd_meta_box_quote_content', 'post', 'normal', 'core' );
-	add_meta_box( 'post-quote-attribution-box', __('Quote attribution', 'hoffman'), 'hoffman_cd_meta_box_quote_attribution', 'post', 'normal', 'core' );
-}
-
-function hoffman_cd_meta_box_video_url( $post ) {
-	$values = get_post_custom( $post->ID );
-	$video_url = isset( $values['video_url'] ) ? esc_attr( $values['video_url'][0] ) : '';
-	wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
-	?>
-		<p>
-			<input type="text" class="widefat" name="video_url" id="video_url" value="<?php echo $video_url; ?>" />
-		</p>
-	<?php		
-}
-
-function hoffman_cd_meta_box_quote_content( $post ) {
-	$values = get_post_custom( $post->ID );
-	$quote_content = isset( $values['quote_content'] ) ? esc_attr( $values['quote_content'][0] ) : '';
-	wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
-	?>
-		<p>
-			<textarea name="quote_content" id="quote_content" class="widefat" rows="5"><?php echo $quote_content; ?></textarea>
-		</p>
-	<?php		
-}
-
-function hoffman_cd_meta_box_quote_attribution( $post ) {
-	$values = get_post_custom( $post->ID );
-	$quote_attribution = isset( $values['quote_attribution'] ) ? esc_attr( $values['quote_attribution'][0] ) : '';
-	wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
-	?>
-		<p>
-			<input name="quote_attribution" id="quote_attribution" class="widefat" value="<?php echo $quote_attribution; ?>" />
-		</p>
-	<?php		
-}
-
-add_action( 'save_post', 'hoffman_cd_meta_box_save' );
-function hoffman_cd_meta_box_save( $post_id ) {
-	// Bail if we're doing an auto save
-	if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
-	
-	// if our nonce isn't there, or we can't verify it, bail
-	if( !isset( $_POST['meta_box_nonce'] ) || !wp_verify_nonce( $_POST['meta_box_nonce'], 'my_meta_box_nonce' ) ) return;
-	
-	// if our current user can't edit this post, bail
-	if( !current_user_can( 'edit_post' ) ) return;
-	
-	// now we can actually save the data
-	$allowed = array( 
-		'a' => array( // on allow a tags
-			'href' => array() // and those anchords can only have href attribute
-		)
-	);
-	
-	// Probably a good idea to make sure the data is set		
-	if( isset( $_POST['video_url'] ) ) {
-		update_post_meta( $post_id, 'video_url', wp_kses( $_POST['video_url'], $allowed ) );
-	}
-	
-	if( isset( $_POST['quote_content'] ) ) {
-		update_post_meta( $post_id, 'quote_content', wp_kses( $_POST['quote_content'], $allowed ) );
-	}
-	
-	if( isset( $_POST['quote_attribution'] ) ) {
-		update_post_meta( $post_id, 'quote_attribution', wp_kses( $_POST['quote_attribution'], $allowed ) );
-	}
-
-}
-
-
-// Hide/show meta boxes depending on the post format selected
-function hoffman_meta_box_post_format_toggle()
-{
-    wp_enqueue_script( 'jquery' );
-
-    $script = '
-    <script type="text/javascript">
-        jQuery( document ).ready( function($)
-            {
-            
-                $( "#post-video-url" ).hide();
-                $( "#post-quote-content-box" ).hide();
-                $( "#post-quote-attribution-box" ).hide();
-            	
-            	if($("#post-format-video").is(":checked"))
-	                $( "#post-video-url" ).show();
-                
-            	if($("#post-format-quote").is(":checked")) {
-	                $( "#post-quote-content-box" ).show();
-	                $( "#post-quote-attribution-box" ).show();
-				}
-                
-                $( "input[name=\"post_format\"]" ).change( function() {
-	                $( "#post-video-url" ).hide();
-	                $( "#post-quote-content-box" ).hide();
-	                $( "#post-quote-attribution-box" ).hide();
-                } );
-
-                $( "input#post-format-video" ).change( function() {
-                    $( "#post-video-url" ).show();
-				});
-				
-                $( "input#post-format-quote" ).change( function() {
-                    $( "#post-quote-content-box" ).show();
-                    $( "#post-quote-attribution-box" ).show();
-                });
-
-            }
-        );
-    </script>';
-
-    return print $script;
-}
-add_action( 'admin_footer', 'hoffman_meta_box_post_format_toggle' );
-
-
 // Hoffman theme options
 class hoffman_Customize {
 
@@ -589,10 +435,15 @@ class hoffman_Customize {
             'default' => '#928452', //Default setting/value to save
             'type' => 'theme_mod', //Is this an 'option' or a 'theme_mod'?
             'transport' => 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+            'sanitize_callback' => 'sanitize_hex_color'
          ) 
       );
       
-      $wp_customize->add_setting( 'hoffman_logo' );
+      $wp_customize->add_setting( 'hoffman_logo', 
+      	array( 
+      		'sanitize_callback' => 'esc_url_raw'
+      	) 
+      );
                   
       //3. Finally, we define the control itself (which links a setting to a section and renders the HTML controls)...
       $wp_customize->add_control( new WP_Customize_Color_Control( //Instantiate the color control class
@@ -637,8 +488,6 @@ class hoffman_Customize {
 	           <?php self::hoffman_generate_css('.sticky .is-sticky:hover:after', 'border-left-color', 'accent_color'); ?>
 	           <?php self::hoffman_generate_css('.sticky .is-sticky:hover:after', 'border-bottom-color', 'accent_color'); ?>
 	           <?php self::hoffman_generate_css('.flex-direction-nav a:hover', 'background-color', 'accent_color'); ?>
-	           <?php self::hoffman_generate_css('.post-quote cite', 'color', 'accent_color'); ?>
-	           <?php self::hoffman_generate_css('a.post-quote:hover cite', 'border-bottom-color', 'accent_color'); ?>
 	           <?php self::hoffman_generate_css('.post-title a:hover', 'color', 'accent_color'); ?>
 	           <?php self::hoffman_generate_css('.post-header:after', 'background', 'accent_color'); ?>
 	           <?php self::hoffman_generate_css('.post-content a', 'color', 'accent_color'); ?>
@@ -682,8 +531,6 @@ class hoffman_Customize {
 	           <?php self::hoffman_generate_css('.comment-form input[type="submit"]:hover', 'background-color', 'accent_color'); ?>
 	           <?php self::hoffman_generate_css('.comment-form input[type="submit"]:hover', 'background-color', 'accent_color'); ?>
 	           <?php self::hoffman_generate_css('.archive-nav a', 'color', 'accent_color'); ?>
-	           <?php self::hoffman_generate_css('.archive-nav a', 'border', 'accent_color'); ?>
-	           <?php self::hoffman_generate_css('.archive-nav a:hover', 'background', 'accent_color'); ?>
 	           <?php self::hoffman_generate_css('.tagcloud a:hover', 'background', 'accent_color'); ?>
 	           <?php self::hoffman_generate_css('.search-form .search-button:hover:before', 'color', 'accent_color'); ?>
 	           <?php self::hoffman_generate_css('.widget_hoffman_recent_posts a:hover .title', 'color', 'accent_color'); ?>

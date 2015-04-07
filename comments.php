@@ -15,7 +15,11 @@
 				
 			</h2>
 			
-			<h4 class="comments-subtitle fright"><a href="#respond"><?php _e('Add yours','hoffman'); ?> &rarr;</a></h4>
+			<?php if ( comments_open() ) : ?>
+			
+				<h4 class="comments-subtitle fright"><a href="#respond"><?php _e('Add yours','hoffman'); ?> &rarr;</a></h4>
+			
+			<?php endif; ?>
 			
 			<div class="clear"></div>
 		

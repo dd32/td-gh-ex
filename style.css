@@ -2,8 +2,8 @@
 
 	Theme Name: Hoffman
 	Theme URI: http://www.andersnoren.se/teman/hoffman-wordpress-theme/
-	Version: 1.09
-	Description: Hoffman is a beautifully minimal, responsive and retina-ready theme for bloggers. It features a social icon menu, Jetpack support for infinite scroll, five custom widgets, two page templates, editor styling, translation-ready code, custom accent color support, custom background support, support for the gallery, quote and video post formats and much more. Included translations: Swedish/svenska.
+	Version: 1.10
+	Description: Hoffman is a beautifully minimal, responsive and retina-ready theme for bloggers. It features a social icon menu, Jetpack support for infinite scroll, five custom widgets, two page templates, editor styling, translation-ready code, custom accent color support, custom background support, support for the gallery post format and much more. Included translations: Swedish/svenska.
 	Tags: gray, white, light, silver, one-column, fluid-layout, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
 	Author: Anders Norén
 	Author URI: http://www.andersnoren.se
@@ -171,7 +171,6 @@ body a,
 .widget_hoffman_recent_comments a .genericon,
 #infinite-handle span,
 .flickr_badge_image a,
-.dribbble-shot,
 .sticky .is-sticky,
 .sticky .is-sticky:before,
 .sticky .is-sticky:after,
@@ -270,8 +269,6 @@ body a,
 	top: 0;
 	right: 0;
 }
-
-.has-custom-background .wrapper:after { display: none; }
 
 
 /* gridiriffic */
@@ -920,51 +917,6 @@ body a,
 	position: relative;
 	z-index: 1000;
 }
-
-
-/* Format quote --------------------------------------- */
-
-
-.post.format-quote + .post { border-top: none; }
-
-.post-quote {
-	display: block;
-	background: #333;
-	color: #fff;
-	padding: 120px 0;
-}
-
-.post-quote .section-inner { text-align: center; }
-
-.post-quote blockquote {
-	font-family: 'Vollkorn', serif;
-	font-size: 2em;
-	line-height: 140%;
-	font-style: italic;
-	text-align: center;
-}
-
-.post-quote cite {
-	display: inline-block;
-	margin-top: 40px;
-	font-size: 1.1em;
-	font-weight: 700;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	text-align: center;
-	color: #928452;
-}
-
-.post-quote cite:before { content: "— "; }
-
-.post-quote:hover { color: #fff; }
-
-a.post-quote cite {
-	padding-bottom: 4px;
-	border-bottom: 2px solid #444;
-}
-
-a.post-quote:hover cite { border-bottom-color: #928452; }
 
 
 /* -------------------------------------------------------------------------------- */
@@ -2377,15 +2329,13 @@ a.search-button:hover:before { color: #928452; }
 /* Widget recent posts & widget recent comments --------------------------------------- */
 
 
-.widget_hoffman_recent_posts a,
-.widget_hoffman_recent_comments a {
+.hoffman-widget-list a {
 	display: block;
 	position: relative;
 	min-height: 50px;
 }
 
-.widget_hoffman_recent_posts .thumbnail,
-.widget_hoffman_recent_comments .avatar {
+.hoffman-widget-list .post-icon {
 	display: block;
 	width: 50px;
 	height: 50px;
@@ -2393,10 +2343,14 @@ a.search-button:hover:before { color: #928452; }
 	position: absolute;
 	top: 50%;
 	left: 0;
-	margin-top: -25px;
+	margin-top: -25px;	
 }
 
-.widget_hoffman_recent_posts .genericon {
+.hoffman-widget-list .post-icon img {
+	display: block;
+}
+
+.hoffman-widget-list .genericon {
 	position: absolute;
 	z-index: 1;
 	font-size: 32px;
@@ -2409,30 +2363,18 @@ a.search-button:hover:before { color: #928452; }
 	color: #ccc;
 }
 
-.widget_hoffman_recent_posts img,
-.widget_hoffman_recent_comments img { 
-	display: block; 
-	position: relative;
-	z-index: 2;
-}
-
-.widget_hoffman_recent_posts .inner,
-.widget_hoffman_recent_comments .inner { 
-	margin-left: 60px;
-}
-
+.hoffman-widget-list .inner { margin-left: 60px; }
 .widget_hoffman_recent_posts .inner { padding-top: 8px; }
 
-.widget_hoffman_recent_posts .title,
-.widget_hoffman_recent_comments .title {
+.hoffman-widget-list .title {
 	font-size: 1em;
 	line-height: 110%;
 	font-weight: 700;
 	color: #333;
 }
 
-.widget_hoffman_recent_posts .meta,
-.widget_hoffman_recent_comments .meta {
+.hoffman-widget-list .meta,
+.hoffman-widget-list .excerpt {
 	font-size: 0.9em;
 	line-height: 140%;
 	font-weight: 400;
@@ -2440,40 +2382,29 @@ a.search-button:hover:before { color: #928452; }
 	margin-top: 4px;
 }
 
-.widget_hoffman_recent_posts .sep {
+.hoffman-widget-list .sep {
 	margin: 0 3px;
 	color: #ddd;
 }
 
-.widget_hoffman_recent_posts a:hover,
-.widget_hoffman_recent_comments a:hover { text-decoration: none; }
+.hoffman-widget-list a:hover { text-decoration: none; }
 
-.widget_hoffman_recent_posts a:hover .title,
-.widget_hoffman_recent_comments a:hover .title span { 
+.hoffman-widget-list a:hover .title { 
 	color: #928452; 
 	text-decoration: underline;
 }
 
-.widget_hoffman_recent_posts a:hover .genericon { color: #928452; }
+.hoffman-widget-list a:hover .genericon { color: #928452; }
 
 
-/* Widget Dribbble & Widget Flickr --------------------------------------- */
+/* Widget Flickr --------------------------------------- */
 
 
-.dribbble-container,
-.flickr-container { 
-	margin: -5px 0 0 -5px;
-}
+.flickr-container {  margin: -5px 0 0 -5px; }
 
-.dribbble-shot,
 .flickr_badge_image {
 	display: inline-block;
 	margin: 5px 5px 2px 5px;
-}
-
-.dribbble-shot {
-	width: 88px;
-	height: auto;
 }
 
 .flickr_badge_image {
@@ -2481,14 +2412,12 @@ a.search-button:hover:before { color: #928452; }
 	width: auto;
 }
 
-.dribbble-shot img,
 .flickr_badge_image a,
 .flickr_badge_image img {
 	display: block;
 }
 
-.flickr_badge_image a:hover,
-.dribbble-shot:hover { 
+.flickr_badge_image a:hover { 
 	-webkit-opacity: 0.8;
 	-moz-opacity: 0.8;
 	opacity: 0.8; 
@@ -2659,11 +2588,6 @@ img#wpstats { display: none !important; } /* silly wp stats */
 	/* Post formats --------------------------------------- */
 	
 	
-	/* format quote */
-	
-	.post-quote { padding: 80px 0; }
-
-
 	/* Footer --------------------------------------- */
 
 
@@ -2832,20 +2756,7 @@ img#wpstats { display: none !important; } /* silly wp stats */
 		border-radius: 2px 2px 0 0;
 	}
 	
-	/* format quote */
-	
-	.post-quote { padding: 40px 0; }
-	
-	.post-quote blockquote { font-size: 1.5em; }
-	
-	.post-quote cite { 
-		font-size: 0.9em; 
-		margin-top: 20px;
-	}
-	
-	a.post-quote cite { border-bottom-width: 1px; }
-	
-	
+
 	/* Post content --------------------------------------- */
 	
 	
