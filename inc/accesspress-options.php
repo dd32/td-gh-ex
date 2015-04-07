@@ -59,11 +59,11 @@ function optionsframework_options() {
 		'color' => false
 	);
     
-    
+     
 	// Pull all the categories into an array
 	$options_categories = array();
 	$options_categories_obj = get_categories();
-        $options_categories[]="-- Select Category --";
+        $options_categories[]= __( 'Select category', 'accesspress-mag' );
 	foreach ($options_categories_obj as $category) {
 		$options_categories[$category->slug] = $category->cat_name;
 	}
@@ -78,14 +78,14 @@ function optionsframework_options() {
         //Pull all menus into an array
         $options_menus = array();
         $options_menus_obj = get_terms( 'nav_menu', array( 'hide_empty' => true ) );
-        $options_menus[] = "-- Select Menu --";
+        $options_menus[] = __( 'Select Menu', 'accesspress-mag' );
         foreach($options_menus_obj as $menu) {
             $options_menus[$menu->slug] = $menu->name;
         }
         
         //Slide options for homepage slider
         $options_slides = array();
-        $options_slides[0] = "-- Select no.of slides --" ;
+        $options_slides[0] = __( 'Select no.of slides', 'accesspress-mag' );
         for($i=1;$i<=6;$i++)
         {
             $options_slides[$i] = $i ;
@@ -130,10 +130,17 @@ function optionsframework_options() {
 	// Pull all the pages into an array
 	$options_pages = array();
 	$options_pages_obj = get_pages( 'sort_column=post_parent,menu_order' );
-	$options_pages[''] = 'Select a page:';
+	$options_pages[''] = __( 'Select a page', 'accesspress-mag' );
 	foreach ($options_pages_obj as $page) {
 		$options_pages[$page->ID] = $page->post_title;
 	}
+    
+    // Logo settings
+    $logo_options = array(
+            		'image' => __('Image', 'accesspress-mag'),
+            		'text' => __('Text', 'accesspress-mag'),
+            		'image_text' => __('Image & Text', 'accesspress-mag'),
+            		);
 
 	// If using image radio buttons, define a directory path
 	$imagepath =  get_template_directory_uri() . '/images/';
@@ -153,14 +160,21 @@ function optionsframework_options() {
             );
     $options[] = array(
             'name' => __( 'Site Background', 'accesspress-mag' ),
-            'desc' => __( 'Upload a background image, the site will automatically switch to boxed version', 'accesspress-mag' ),
+            'desc' => __( 'Upload a image for background', 'accesspress-mag' ),
             'id' => 'site_background',
             'class' =>'sub-option',
             'type' => 'upload', 
             );
     $options[] = array(
+            'name' => __( 'Site Background Color', 'accesspress-mag' ),
+            'desc' => __( 'Choose color for site background', 'accesspress-mag' ),
+            'id' => 'site_background_color',
+            'class' =>'sub-option-color',
+            'type' =>'color'
+            );
+    $options[] = array(
             'name' => __( 'Repeat', 'accesspress-mag' ),
-            'desc' => __( 'How the site background image will be displayed', 'accesspress-mag' ),
+            'desc' => __( 'Define - how the site background image will be displayed here', 'accesspress-mag' ),
             'id' => 'repeat_background',            
             'options' => array(
                     ' ' => 'No Repeat',
@@ -173,7 +187,7 @@ function optionsframework_options() {
             );
     $options[] = array(
             'name' => __( 'Position', 'accesspress-mag' ),
-            'desc' => __( 'Position your background image', 'accesspress-mag' ),
+            'desc' => __( 'Define - Position your background image here', 'accesspress-mag' ),
             'id' => 'position_background',            
             'options' => array(
                     ' ' => 'Left',
@@ -185,7 +199,7 @@ function optionsframework_options() {
             );
     $options[] = array(
             'name' => __( 'Background Attachment', 'accesspress-mag' ),
-            'desc' => __( 'Background attachment', 'accesspress-mag' ),
+            'desc' => __( 'Define - Background attachment option here', 'accesspress-mag' ),
             'id' => 'attached_background',            
             'options' => array(
                     'fixed' => 'Fixed',
@@ -196,7 +210,7 @@ function optionsframework_options() {
             );
     $options[] = array(
             'name' => __( 'Stretch Background', 'accesspress-mag' ),                
-            'desc' => __( 'Background image stretching( Leave this option disabled if you are using background click ad)', 'accesspress-mag' ),
+            'desc' => __( 'Switch - Background image stretching', 'accesspress-mag' ),
             'id' => 'stretch_background',
             'on' => __( 'Yes', 'accesspress-mag'),
             'off' => __( 'No', 'accesspress-mag'),
@@ -277,8 +291,16 @@ function optionsframework_options() {
             );
     
     $options[] = array(
+            'name' => __( 'Logo Setting', 'accesspress-mag' ),
+            'desc' => __( 'Select option for site logo settings', 'accesspress-mag' ),    
+            'id' => 'logo_setting',
+            'std' => 'image',
+            'type' => 'select',
+            'options' => $logo_options
+            );
+    $options[] = array(
             'name' => __( 'Logo Upload', 'accesspress-mag' ),
-            'desc' => __( 'Upload your logo (300 x 100px) .png', 'accesspress-mag' ),
+            'desc' => __( 'Upload your logo (Standard size of the logo is 300 x 100px)', 'accesspress-mag' ),
             'id' => 'logo_upload',
             'class' =>'sub-option',
             'type' => 'upload', 
@@ -286,7 +308,7 @@ function optionsframework_options() {
             
      $options[] = array(
             'name' => __( 'Favicon', 'accesspress-mag' ),
-            'desc' => __( 'Upload a favicon image (16 x 16px) .png', 'accesspress-mag' ),
+            'desc' => __( 'Upload a favicon image (Standard size of the favicon is 16 x 16px)', 'accesspress-mag' ),
             'id' => 'favicon_upload',
             'class' =>'sub-option',
             'type' => 'upload', 
@@ -333,15 +355,8 @@ function optionsframework_options() {
             );
     
     $options[] = array(
-            'name' => __( 'More information:', 'accesspress-mag' ),
-            'desc' => __( 'The footer uses sidebars to show information. Here you can customize the number of sidebars and the layout. To add content to the footer head go to the widgets section and drag widget to the Footer 1, Footer 2 and Footer 3 sidebars ', 'accesspress-mag' ),
-            'id' => 'more_info_footer',
-            'type' => 'info', 
-            );
-    
-    $options[] = array(
             'name' => __( 'Layout', 'accesspress-mag' ),
-            'desc' => __( 'Choose image for footer widget layout.', 'accesspress-mag' ),
+            'desc' => __( 'Choose footer widget layout', 'accesspress-mag' ),
             'id' => 'footer_layout',
             'std' => 'column4',
             'type' => 'images',
@@ -411,43 +426,12 @@ function optionsframework_options() {
 
     $options[] = array(
             'name' => __( 'Your Header Ad', 'accesspress-mag' ),
-            'desc' => __( 'Paste your ad code here. Google adsense will be made responsive automatically. To add non adsense responsive ads,<a href="#" target="_blank">click here</a> (last paragraph)', 'accesspress-mag' ),
+            'desc' => __( 'Paste your ad code here. Google adsense will be made responsive automatically', 'accesspress-mag' ),
             'id' => 'value_header_ad',
             'std' => __('', 'accesspress-mag'),
             'type' => 'textarea' 
             );
             
-    $options[] = array(
-            'type' => 'groupend'
-            );
-    
-    $options[] = array(
-            'name' => __( 'Sidebar ad', 'accesspress-mag' ),
-            'id'   => 'sidebar_ad',
-            'type' => 'groupstart'
-            );
-
-    $options[] = array(
-            'name' => __( 'Your Sidebar Top Ad', 'accesspress-mag' ),
-            'desc' => __( 'Paste your ad code here. Google adsense will be made responsive automatically. To add non adsense responsive ads,<a href="#" target="_blank">click here</a> (last paragraph)', 'accesspress-mag' ),
-            'id' => 'value_sidebar_top_ad',
-            'std' => __('', 'accesspress-mag'),
-            'type' => 'textarea' 
-            );
-    $options[] = array(
-            'name' => __( 'Your Sidebar Middle Ad', 'accesspress-mag' ),
-            'desc' => __( 'Paste your ad code here. Google adsense will be made responsive automatically. To add non adsense responsive ads,<a href="#" target="_blank">click here</a> (last paragraph)', 'accesspress-mag' ),
-            'id' => 'value_sidebar_middle_ad',
-            'std' => __('', 'accesspress-mag'),
-            'type' => 'textarea' 
-            );
-    $options[] = array(
-            'name' => __( 'Your Sidebar Bottom Ad', 'accesspress-mag' ),
-            'desc' => __( 'Paste your ad code here. Google adsense will be made responsive automatically. To add non adsense responsive ads,<a href="#" target="_blank">click here</a> (last paragraph)', 'accesspress-mag' ),
-            'id' => 'value_sidebar_bottom_ad',
-            'std' => __('', 'accesspress-mag'),
-            'type' => 'textarea' 
-            );            
     $options[] = array(
             'type' => 'groupend'
             );
@@ -459,7 +443,7 @@ function optionsframework_options() {
             );
     $options[] = array(
             'name' => __( 'Your Article Ad', 'accesspress-mag' ),
-            'desc' => __( 'Paste your ad code here. Google adsense will be made responsive automatically. To add non adsense responsive ads,<a href="#" target="_blank">click here</a> (last paragraph)', 'accesspress-mag' ),
+            'desc' => __( 'Paste your ad code here. Google adsense will be made responsive automatically', 'accesspress-mag' ),
             'id' => 'value_article_ad',
             'std' => __('', 'accesspress-mag'),
             'type' => 'textarea' 
@@ -474,11 +458,32 @@ function optionsframework_options() {
             );
     $options[] = array(
             'name' => __( 'Your Homepage Inline Ad', 'accesspress-mag' ),
-            'desc' => __( 'Paste your ad code here. Google adsense will be made responsive automatically. To add non adsense responsive ads,<a href="#" target="_blank">click here</a> (last paragraph)', 'accesspress-mag' ),
+            'desc' => __( 'Paste your ad code here. Google adsense will be made responsive automatically', 'accesspress-mag' ),
             'id' => 'value_homepage_inline_ad',
             'std' => __('', 'accesspress-mag'),
             'type' => 'textarea' 
-            ); 
+            );
+    $options[] = array(
+            'name' => __( 'Your Homepage Sidebar Top Ad', 'accesspress-mag' ),
+            'desc' => __( 'Paste your ad code here. Google adsense will be made responsive automatically', 'accesspress-mag' ),
+            'id' => 'value_sidebar_top_ad',
+            'std' => __('', 'accesspress-mag'),
+            'type' => 'textarea' 
+            );
+    $options[] = array(
+            'name' => __( 'Your Homepage Sidebar Middle Ad', 'accesspress-mag' ),
+            'desc' => __( 'Paste your ad code here. Google adsense will be made responsive automatically', 'accesspress-mag' ),
+            'id' => 'value_sidebar_middle_ad',
+            'std' => __('', 'accesspress-mag'),
+            'type' => 'textarea' 
+            );
+    $options[] = array(
+            'name' => __( 'Your Homepage Sidebar Bottom Ad', 'accesspress-mag' ),
+            'desc' => __( 'Paste your ad code here. Google adsense will be made responsive automatically', 'accesspress-mag' ),
+            'id' => 'value_sidebar_bottom_ad',
+            'std' => __('', 'accesspress-mag'),
+            'type' => 'textarea' 
+            );  
     $options[] = array(
             'type' => 'groupend'
             );
@@ -512,7 +517,7 @@ function optionsframework_options() {
             );   
     $options[] = array(
             'name' => __( 'Show Pager', 'accesspress-mag' ),                
-            'desc' => __( 'Hide or show the pager', 'accesspress-mag' ),
+            'desc' => __( 'Hide or show the slider pager', 'accesspress-mag' ),
             'id' => 'slider_pager',
             'on' => __( 'Yes', 'accesspress-mag'),
             'off' => __( 'No', 'accesspress-mag'),
@@ -521,7 +526,7 @@ function optionsframework_options() {
             );
     $options[] = array(
             'name' => __( 'Show Controls', 'accesspress-mag' ),                
-            'desc' => __( 'Hide or show the controls', 'accesspress-mag' ),
+            'desc' => __( 'Hide or show the slider controls', 'accesspress-mag' ),
             'id' => 'slider_controls',
             'on' => __( 'Yes', 'accesspress-mag'),
             'off' => __( 'No', 'accesspress-mag'),
@@ -530,7 +535,7 @@ function optionsframework_options() {
             );
     $options[] = array(
             'name' => __( 'Auto Transition', 'accesspress-mag' ),                
-            'desc' => __( 'On or off the auto transition', 'accesspress-mag' ),
+            'desc' => __( 'On or off the slider auto transition', 'accesspress-mag' ),
             'id' => 'slider_auto_transition',
             'on' => __( 'Yes', 'accesspress-mag'),
             'off' => __( 'No', 'accesspress-mag'),
@@ -636,7 +641,7 @@ function optionsframework_options() {
             );
     $options[] = array(
             'name' => __( 'Number of posts', 'accesspress-mag' ),
-            'desc' => __( 'Choose number of posts in editor pick section @ sidebar', 'accesspress-mag' ),
+            'desc' => __( 'Choose number of posts for editor pick section', 'accesspress-mag' ),
             'id' => 'posts_for_editor_pick', 
             'type' => 'select',
             'options' => $options_block_posts
@@ -749,7 +754,7 @@ function optionsframework_options() {
             'type' => 'groupstart'
             );
     $options[] = array(
-            'name' => __( 'Defalt Site Post Template', 'accesspress-mag' ),
+            'name' => __( 'Default Site Post Template', 'accesspress-mag' ),
             'desc' => __( "Setting this option will make all post pages, that don't have a post template associated to them, to be displayed using this template. This option is OVERWRITTEN by the `Post template` option from the backend - post add / edit page.", 'accesspress-mag' ),
             'id' => 'global_post_template',
             'class'=>'post_template_image',
@@ -758,8 +763,8 @@ function optionsframework_options() {
             'options' => $post_template
             );
     $options[] = array(
-            'name' => __( 'Defalt Post Sidebar', 'accesspress-mag' ),
-            'desc' => __( "Setting this option will make all post pages, that don't have a post sidebar associated to them, to be displayed using this sidebar. This option is OVERWRITTEN by the `Post/Page sidebar` option from the backend - post add / edit page.", 'accesspress-mag' ),
+            'name' => __( 'Default Post Sidebar', 'accesspress-mag' ),
+            'desc' => __( "Setting this option will make all post pages, that don't have a post sidebar associated to them, to be displayed using this sidebar. This option is OVERWRITTEN by the `Post sidebar` option from the backend - post add / edit page.", 'accesspress-mag' ),
             'id' => 'global_post_sidebar',
             'class'=>'post_sidebar_image',
             'std' => 'right-sidebar',
@@ -822,7 +827,7 @@ function optionsframework_options() {
             );
     $options[] = array(
             'name' => __( 'Show Featured Image', 'accesspress-mag' ),                
-            'desc' => __( 'Show or hide featured image', 'accesspress-mag' ),
+            'desc' => __( 'Show or hide featured image in post`s single page', 'accesspress-mag' ),
             'id' => 'featured_image',
             'on' => __( 'Yes', 'accesspress-mag'),
             'off' => __( 'No', 'accesspress-mag'),
@@ -856,7 +861,7 @@ function optionsframework_options() {
             );
     $options[] = array(
             'name' => __( 'Archive page template', 'accesspress-mag' ),
-            'desc' => __( "Setting this option will make all archive pages.", 'accesspress-mag' ),
+            'desc' => __( "Define - Choose template for all archive pages", 'accesspress-mag' ),
             'id' => 'global_archive_template',
             'class'=>'archive_post_template_image',
             'std' => 'default-template',
@@ -865,7 +870,7 @@ function optionsframework_options() {
             );
     $options[] = array(
             'name' => __( 'Archive page sidebar', 'accesspress-mag' ),
-            'desc' => __( "Setting this option will make all archive pages.", 'accesspress-mag' ),
+            'desc' => __( "Define - Choose sidebar for all archive pages", 'accesspress-mag' ),
             'id' => 'global_archive_sidebar',
             'class'=>'archive_page_sidebar_image',
             'std' => 'right-sidebar',
@@ -903,7 +908,7 @@ function optionsframework_options() {
             );
     $options[] = array(
             'name' => __( 'Excerpts Type', 'accesspress-mag' ),
-            'desc' => __( 'Set the excerpt type', 'accesspress-mag' ),
+            'desc' => __( 'Define - type of excerpt for archives pages', 'accesspress-mag' ),
             'id' => 'excerpt_type',            
             'options' => array(
                     ' '     => 'On Words',
@@ -922,8 +927,8 @@ function optionsframework_options() {
             'type' => 'groupstart'
             );
     $options[] = array(
-            'name' => __( 'Excerpt Lenght', 'accesspress-mag' ),
-            'desc' => __( '', 'accesspress-mag' ),
+            'name' => __( 'Excerpt Length', 'accesspress-mag' ),
+            'desc' => __( 'Define - Excerpt length of words/letters for archive pages', 'accesspress-mag' ),
             'id' => 'excerpt_lenght',
             'type' => 'text',
             'std' => 50, 

@@ -2,8 +2,11 @@
     <h3 class="block-cat-name"> <span>Tech and Gadgets </span></h3>
     <div class="block-post-wrapper clearfix">                                
         <div class="leftposts-wrapper">                                
-            <div class="single_post clearfix first-post">                                       
-                <div class="post-image"><a href="#"><img src="<?php echo get_template_directory_uri();?>/images/demo-images/photo-1416339306562-f3d12fefd36f-364x200.jpg" alt="Network-technologies"></a></div>                                
+            <div class="single_post clearfix first-post non-zoomin">                                       
+                <div class="post-image">
+                    <a href="#"><img src="<?php echo get_template_directory_uri();?>/images/demo-images/photo-1416339306562-f3d12fefd36f-364x200.jpg" alt="Network-technologies"></a>
+                    <a class="big-image-overlay" href="#"><i class="fa fa-external-link"></i></a>
+                </div>                                
                 <div class="post-desc-wrapper">
                     <h3 class="post-title"><a href="#">Network technologies would give us more powerfull servers</a></h3>
                     <div class="block-poston"><span class="posted-on"><a href="#" rel="bookmark"><time class="entry-date published" datetime="2015-03-08T09:48:43+00:00">March 8, 2015</time><time class="updated" datetime="2015-03-17T06:33:29+00:00">March 17, 2015</time></a></span><span class="comment_count"><i class="fa fa-comments"></i>0</span><span class="apmag-post-views"><i class="fa fa-eye"></i>3</span></div>

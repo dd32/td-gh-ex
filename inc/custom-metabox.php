@@ -237,7 +237,7 @@ function accesspress_mag_post_settings_callback()
         
         <table class="form-table">
             <tr>
-            <td colspan="4"><em class="f13"><?php _e('Choose Sidebar Template','accesspress-mag'); ?></em></td>
+            <td colspan="4"><em class="f13"><?php _e( 'Post Sidebar', 'accesspress-mag' ); ?></em></td>
             </tr>
             
             <tr>
@@ -270,21 +270,21 @@ function accesspress_mag_post_settings_callback()
         $apmag_post_via_url = get_post_meta($post->ID, 'post_via_url', true);  
     ?>
     <p class="single-source-field">
-        <span class="field-label">Source Name: </span>
+        <span class="field-label"><?php _e( 'Source Name :', 'accesspress-mag' );?></span>
         <input type="text" name="post_source_name" value="<?php if(!empty($apmag_post_source_name)){echo $apmag_post_source_name;}?>" />
-        <span class="field-info">- name of the source</span>
+        <span class="field-info"><?php _e( ' Name of the source', 'accesspress-mag' );?></span>
     </p>
     <p class="single-source-field">
-        <span class="field-label">Source Url: </span>
+        <span class="field-label"><?php _e( 'Source URL :', 'accesspress-mag' );?></span>
         <input type="text" name="post_source_url" value="<?php if(!empty($apmag_post_source_url)){echo $apmag_post_source_url;}?>" />
-        <span class="field-info">- url of the source</span>
+        <span class="field-info"><?php _e( ' URL of the source', 'accesspress-mag' );?></span>
     </p>
     <p class="single-source-field">
-        <span class="field-label">Via Name: </span>
+        <span class="field-label"><?php _e( 'Via Name :', 'accesspress-mag' );?></span>
         <input type="text" name="post_via_name" value="<?php if(!empty($apmag_post_via_name)){echo $apmag_post_via_name;}?>" />
     </p>
     <p class="single-source-field">
-        <span class="field-label">Via Url: </span>
+        <span class="field-label"><?php _e( 'Via Url :', 'accesspress-mag' );?></span>
         <input type="text" name="post_via_url" value="<?php if(!empty($apmag_post_via_url)){echo $apmag_post_via_url;}?>" />
     </p>
     
@@ -302,7 +302,7 @@ function accesspress_mag_page_settings_callback()
 ?>
         <table class="form-table">
             <tr>
-            <td colspan="4"><em class="f13"><?php _e('Choose Sidebar Template','accesspress-mag'); ?></em></td>
+            <td colspan="4"><em class="f13"><?php _e('Page Sidebar','accesspress-mag'); ?></em></td>
             </tr>
             
             <tr>

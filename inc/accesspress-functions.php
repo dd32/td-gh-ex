@@ -15,38 +15,7 @@
  */
  
 if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
-	/**
-	 * Filters wp_title to print a neat <title> tag based on what is being viewed.
-	 *
-	 * @param string $title Default title text for current view.
-	 * @param string $sep Optional separator.
-	 * @return string The filtered title.
-	 */
-	function accesspress_mag_wp_title( $title, $sep ) {
-		if ( is_feed() ) {
-			return $title;
-		}
-
-		global $page, $paged;
-
-		// Add the blog name
-		$title .= get_bloginfo( 'name', 'display' );
-
-		// Add the blog description for the home/front page.
-		$site_description = get_bloginfo( 'description', 'display' );
-		if ( $site_description && ( is_home() || is_front_page() ) ) {
-			$title .= " $sep $site_description";
-		}
-
-		// Add a page number if necessary:
-		if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-			$title .= " $sep " . sprintf( __( 'Page %s', 'accesspress-mag' ), max( $paged, $page ) );
-		}
-
-		return $title;
-	}
-	add_filter( 'wp_title', 'accesspress_mag_wp_title', 10, 2 );
-
+	
 	/**
 	 * Title shim for sites older than WordPress 4.1.
 	 *
@@ -355,19 +324,24 @@ remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 
 function accesspress_pro_custom_css(){
     $apmag_bg_image = of_get_option( 'site_background' );
+    $apmag_bg_color = of_get_option( 'site_background_color' );
     $apmag_bg_reapet = of_get_option( 'repeat_background' );
     $apmag_bg_position = of_get_option( 'position_background' );
     $apmag_bg_attachment = of_get_option( 'attached_background' );
     $apmag_bg_size = of_get_option( 'stretch_background' );
 		echo '<style type="text/css">';
-			echo "body{background:url(".$apmag_bg_image.") ".$apmag_bg_reapet." ".$apmag_bg_attachment." ".$apmag_bg_position."}";
+            if( !empty ( $apmag_bg_image )){
+                echo "body{background:url(".$apmag_bg_image.") ".$apmag_bg_reapet." ".$apmag_bg_attachment." ".$apmag_bg_position."}";    
+            } elseif( !empty ( $apmag_bg_color ) ) {
+                echo "body{background-color:".$apmag_bg_color." !important}";
+            } else {
+                
+            }
             if($apmag_bg_size==1){
                 echo "body{background-size:cover}";
-            }
-                        
+            }  
 		echo '</style>';
 	}
-
 	add_action('wp_head','accesspress_pro_custom_css');
 
 /*--------------Sidebar layout for post & pages----------------------*/

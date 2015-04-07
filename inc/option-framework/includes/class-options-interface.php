@@ -190,14 +190,14 @@ class Options_Framework_Interface {
 				$output .= '<label class="explain" for="' . esc_attr( $value['id'] ) . '">' . wp_kses( $explain_value, $allowedtags) . '</label>';
 				break;
                             
-                        // Switch
-                        case "switch":
-                            $output .= '<div class="switch_options">';
-                            $output .= '<span class="switch_enable">' . esc_attr($value['on']) . '</span>';
-                            $output .= '<span class="switch_disable">' . esc_attr($value['off']) . '</span>';
-                            $output .= '<input id="' . esc_attr($value['id']) . '" type="hidden" class="switch_val" name="' . esc_attr($option_name . '[' . $value['id'] . ']') . '" value="' . esc_attr($val) . '"/>';
-                            $output .= '</div>';
-                            break;
+            // Switch
+            case "switch":
+                $output .= '<div class="switch_options">';
+                $output .= '<span class="switch_enable">' . esc_attr($value['on']) . '</span>';
+                $output .= '<span class="switch_disable">' . esc_attr($value['off']) . '</span>';
+                $output .= '<input id="' . esc_attr($value['id']) . '" type="hidden" class="switch_val" name="' . esc_attr($option_name . '[' . $value['id'] . ']') . '" value="' . esc_attr($val) . '"/>';
+                $output .= '</div>';
+                break;
 
 			// Multicheck
 			case "multicheck":

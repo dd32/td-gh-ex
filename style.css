@@ -1,10 +1,10 @@
 /*
-Theme Name: Accesspress Mag
+Theme Name: AccessPress Mag
 Theme URI: http://accesspressthemes.com/accesspress-mag/
 Author: Accesspress Theme
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Mag is clean & modern WordPress magazine theme. It is ideal for newspaper, editorial, online magazine, review site, blog or personal website. It is a cutting-edge, feature-rich FREE Wordpress theme and is fully-responsive. Its feature includes: xx page templates, xx post layout, author block, in built rating system, large featured images for page/post, social media integration for wider social reach. 
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: accesspress-mag
@@ -594,18 +594,16 @@ article.hentry .entry-footer > span {
 	font-size: 13px;
 }
 
-.page-header .page-title,
-.entry-title {
+.page-header .page-title {
   background: none repeat scroll 0 0 #f1f1f1;
   color: #3d3d3d;
   font-family: "Open Sans",sans-serif;
   font-size: 30px;
   font-weight: 700;
-  margin-bottom: 30px;
+  margin-bottom: 18px;
   padding: 8px 10px;
+  text-transform: uppercase;
 }
-
-
 
 .cat-links:before {
 	content: "\f07c";
@@ -1073,6 +1071,16 @@ body.boxed-layout {
 	font-size: 14px;
 	line-height: 14px;
 	padding: 0 23px;
+}
+
+#top-navigation .menu li a:hover,
+#top-right-navigation .menu li a:hover,
+#top-right-navigation .menu li.current-menu-item a,
+#top-right-navigation .menu li.current-menu-ancestor a,
+#footer-navigation ul li a:hover,
+#footer-navigation ul li.current-menu-ancestor a,
+#footer-navigation ul li.current-menu-item a   {
+	color: #cccccc;
 }
 
 #top-navigation .menu > li:first-child > a,
@@ -1702,7 +1710,7 @@ body.boxed-layout {
 .mag-small-slider-caption .home-posted{
 	background: none repeat scroll 0 0 rgba(250, 53, 34, 0.5);
 	margin-bottom: 5px;
-	padding: 6px 10px;
+	padding: 2px 10px;
 }
 
 .mag-small-slider-caption .slide-title a{
@@ -1751,7 +1759,7 @@ body.boxed-layout {
 }
 
 .mag-small-slider-caption {
-	bottom: 5px;
+	bottom: 2px;
 	left: 20px;
 	position: absolute;
 	z-index: 99;
@@ -2228,8 +2236,8 @@ body.boxed-layout {
 
 .top-footer.footer-column4 .footer-block{
 	float: left;
-	margin-left: 2%;
-	width: 23%;
+	margin-left: 1.5%;
+	width: 23.5%;
 } 
 
 .footer-column4 .block-poston .comment_count i, 
@@ -2444,7 +2452,7 @@ body.boxed-layout {
 }
 
 .widget-area {
-  margin-top: 40px;
+  margin-top: 5px;
 }
 
 .widget-area:first-child{
@@ -2761,9 +2769,8 @@ body.boxed-layout {
 .single-post .entry-title, 
 .archive .entry-title, 
 .search-results .entry-title {
-	font-family: "Open Sans",sans-serif;
 	font-size: 26px;
-	font-weight: 400;
+	font-weight: 300;
 }
 
 .archive .post-image,
