@@ -79,7 +79,7 @@ function lovecraft_load_javascript_files() {
 
 
 // Register and enqueue styles
-add_action('wp_print_styles', 'lovecraft_load_style');
+add_action('wp_enqueue_scripts', 'lovecraft_load_style');
 
 function lovecraft_load_style() {
 	if ( !is_admin() ) {

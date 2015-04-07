@@ -1,6 +1,12 @@
 *** Lovecraft changelog ***
 
 
+Version 1.15 (2014-04-07)
+------------------------- 
+- Replaced wp_print_styles() with wp_enqueue_styles() in functions.php
+
+
+
 Version 1.14 (2014-03-23)
 ------------------------- 
 - Renamed xx_XX.pot to lovecraft.pot
