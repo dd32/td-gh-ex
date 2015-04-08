@@ -140,12 +140,11 @@ ul.products {
 		margin-left: 0;
 		margin-bottom: 4.236em;
 		text-align: center;
-		overflow: hidden;
 		position: relative;
 
 		.star-rating,
 		.price {
-			margin:0 auto 1em;
+			margin: 0 auto 1em;
 		}
 
 		.price {
@@ -158,6 +157,14 @@ ul.products {
 				margin-left: .618em;
 				background-color: transparent;
 			}
+		}
+
+		h3 {
+			font-size: 1.1em;
+		}
+
+		.star-rating {
+			font-size: .857em;
 		}
 
 		img {
@@ -285,6 +292,18 @@ ul.products {
 
 		.product_meta {
 			font-size: .857em;
+
+			.sku_wrapper,
+			.posted_in,
+			.tagged_as {
+				border-bottom: 1px dotted $color_border;
+				display: block;
+				padding: .53em 0;
+
+				&:last-child {
+					border-bottom: 0;
+				}
+			}
 		}
 
 		p.stock {
@@ -391,13 +410,10 @@ ul.products {
 
 		.quantity {
 			display: block;
-			color: lighten( $color_body, 20% );
 		}
 	}
 
 	a {
-		color: darken( $color_body, 10% );
-
 		&:hover {
 			color: $color_links;
 		}
@@ -484,14 +500,19 @@ ul.products {
 .widget_layered_nav {
 	li {
 		margin-bottom: .618em;
+
+		&:before {
+			font-family: "FontAwesome";
+			margin-right: .53em;
+			display: inline-block;
+			opacity: 0.35;
+			content: "\f0c8";
+		}
 	}
 
 	.chosen {
 		&:before {
-			font-family: "FontAwesome";
-			content: "\f00d";
-			margin-right: .53em;
-			color: $error;
+			content: "\f14a";
 		}
 	}
 }
@@ -946,7 +967,7 @@ ul.digital-downloads {
 	height: 1em;
 	line-height: 1;
 	font-size: 1em;
-	width: 5.3em;
+	width: 5.5em;
 	font-family: 'star';
 
 	&:before {
@@ -1099,8 +1120,7 @@ p.stars {
 	}
 }
 
-.woocommerce-result-count,
-.woocommerce-ordering {
+.storefront-sorting {
 	font-size: .857em;
 	margin-bottom: 2.618em;
 }
@@ -1340,7 +1360,8 @@ dl.variation {
 			}
 		}
 
-		&:hover {
+		&:hover,
+		&.focus {
 			.widget_shopping_cart {
 				left: 0;
 			}
@@ -1565,15 +1586,38 @@ dl.variation {
 		margin-bottom: 1.618em;
 	}
 
+	.storefront-sorting {
+		@include clearfix;
+		margin-bottom: 2.618em;
+		border: 1px solid $color_border;
+		border-width: 1px 0;
+		padding: 1em 0;
+
+		select {
+			width: 9.505em;
+		}
+	}
+
 	.woocommerce-result-count {
 		float: left;
 		position: relative;
-		padding-bottom: 1em;
-		clear: both;
+		margin-bottom: 0;
+		padding: .327em 0;
 	}
 
 	.woocommerce-ordering {
+		float: left;
+		margin-right: 1em;
+		margin-bottom: 0;
+		padding: .327em 0;
+	}
+
+	.woocommerce-pagination {
 		float: right;
+		border: 0;
+		clear: none;
+		padding: 0;
+		margin-bottom: 0;
 	}
 
 	/**
@@ -1738,19 +1782,28 @@ dl.variation {
 		border-width: 0 3px 3px 3px;
 	}
 
-	// Changing a payment method for a subscription
-	.woocommerce-info + #order_review {
-		border-width: 3px;
-		width: 100%;
-		float: none;
-
-		.payment_methods + .form-row {
-			padding: 1em;
-		}
-
-		.button#place_order {
-			display: block;
+	// Payment forms in account
+	.woocommerce-order-pay {
+		#order_review {
+			border-width: 3px;
 			width: 100%;
+			float: none;
+
+			#payment {
+				h3 {
+					padding-left: 1em;
+					padding-top: 1em;
+				}
+			}
+
+			.payment_methods + .form-row {
+				padding: 1em;
+			}
+
+			.button#place_order {
+				display: block;
+				width: 100%;
+			}
 		}
 	}
 
