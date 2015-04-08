@@ -69,31 +69,6 @@
 	add_action( 'after_setup_theme', 'privatebusiness_setup' ); 
 
 
-// Add blogname to document title for WP 4.0 and older 
-function privatebusiness_wp_title( $title ) {
-	global $paged, $page;
-
-	if ( is_feed() )
-		return $title;
-
-	$title .= get_bloginfo( 'name' );
-
-	return $title;
-}
-add_filter( 'wp_title', 'privatebusiness_wp_title' );
-
-
-// Add document title for WP 4.0 and older 
-if ( ! function_exists( '_wp_render_title_tag' ) ) :
-	function privatebusiness_render_title() {
-		?> 
-		<title><?php wp_title( '|', true, 'right' ); ?></title> 
-		<?php
-	}
-	add_action( 'wp_head', 'privatebusiness_render_title' );
-endif;
-
-
 // Add html5 support for IE 8 and older 
 	function privatebusiness_html5() { 
 		echo '<!--[if lt IE 9]>'. "\n"; 
