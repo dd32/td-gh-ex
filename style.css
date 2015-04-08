@@ -1,7 +1,7 @@
 /*
 Theme Name: MultiColors
 Theme URI: http://www.guidovanderleest.nl/multicolors
-Version: 2.3
+Version: 2.4
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: MultiColors is a colorful free, basic, clean, minimalistic, responsive, mobile friendly WordPress theme. Default theme language is English but Dutch, German, Spanish and French are supported too. Primary sidebar, homepage sidebar, 3 widget-areas underneath header-image, 3 widget-area's in footer, custom header-image, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
@@ -68,7 +68,7 @@ table {
 
 /* BODY AND CONTAINER */
 body {background:#333; font-family:'Open Sans', sans-serif; font-size:1em; color:#eee; line-height:1.5em;}
-#container {width:100%; margin:0; padding:0; word-wrap:break-word;}
+#container {width:100%; margin:0 auto 0; padding:0; word-wrap:break-word;}
 #main-content-container {width:100%; background:#00aaff;}
 #main-content-container:after {content:''; display:block; clear:both;}
 #main-content {max-width:1160px; margin:0 auto 0; padding:0 20px; text-align:left; word-wrap:break-word;}
@@ -148,11 +148,11 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 /* HEADER SECOND MENU */
 .nav-head {clear:both; max-width:1160px; margin:0 auto 0; padding:0 20px;}
 .nav-head select {display:none;}
-.nav-head ul {max-width:100%; margin:0 auto 0; padding:0;}
+.nav-head ul {max-width:100%; margin:0 auto 0; padding:0; z-index:999;}
 .nav-head ul li {list-style-type:none; display:inline-block; position:relative; margin:0;}
 .nav-head ul li a {text-decoration:none; color:#eee; background:none; padding:10px 20px 10px 0; display:inline-block;}
 .nav-head ul li a:hover {text-decoration:underline;}
-.menu .current_page_item > a, .menu .current_page_parent > a {text-decoration:underline;}
+.nav-head .current_page_item > a, .nav-head .current_page_parent > a {text-decoration:underline;}
 
 
 /* HEADER SECOND SUBMENU */
@@ -307,9 +307,8 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 /* MOBILE */
 @media screen and (max-width:767px) { 
 	/* BODY AND CONTAINER */
-	body {font-size:1em; line-height:1.2em;}
+	body {line-height:1.2em;}
 	body.custom-background {background-image:none !important;}
-	#container {margin:0 auto 0;}
 	#main-content {width:96%; padding:0;}
 	#content, #content-full {width:100%; padding:10px 0;}
 
@@ -324,14 +323,14 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	.home-right, .home-middle, .home-left {width:100%; margin:0; float:left;} 
 
 	/* CONTENT */
-	.post-home, .post-home.left {width:100%; float:left; margin:0 0 10px;}
+	.post-home, .post-home.left {width:100%; clear:none; float:left; margin:0 0 10px;}
 
 	/* SIDEBAR */
 	#sidebar {width:100%; padding:0; float:left;}
 	.widget {padding:5px 2%; margin:0 0 10px;} 
 
 	/* FOOTER */
-	#footer {width:94%; margin:0 auto 0; padding:10px 3%;}
+	#footer {width:96%; margin:0 auto 0; padding:10px 2%;}
 	#footer .site-info {padding:10px 0;}
 	#footer-widgets {width:100%; padding:0;}
 	#footer .widget {padding:5px 0;} 
