@@ -38,19 +38,27 @@ function catcheverest_content_width() {
 	if ( $page_id == $page_for_posts ) {
 		$layout = get_post_meta( $page_for_posts,'catcheverest-sidebarlayout', true );
 	}	
+	// Front Page setting in Reading Settings
+	elseif ( $page_id == $page_on_front ) {
+		$layout = get_post_meta( $page_on_front,'catcheverest-sidebarlayout', true );
+	}	
 	// Settings for page/post/attachment
-	elseif ( $post) {
- 		if ( is_attachment() ) { 
+	elseif ( is_singular() ) {
+		if ( is_attachment() ) { 
 			$parent = $post->post_parent;
-			$layout = get_post_meta( $parent,'catcheverest-sidebarlayout', true );
+			$layout = get_post_meta( $parent, 'catcheverest-sidebarlayout', true );
 		} else {
-			$layout = get_post_meta( $post->ID,'catcheverest-sidebarlayout', true ); 
+			$layout = get_post_meta( $post->ID, 'catcheverest-sidebarlayout', true ); 
 		}
 	}
+	else {
+		$layout = 'default';	
+	}
 	
-	if ( empty( $layout ) || ( !is_page() && !is_single() ) ) {
-		$layout='default';
-	}	
+	//check empty and load default
+	if ( empty( $layout ) ) {
+		$layout = 'default';	
+	}
 
 	if( ( $layout == 'no-sidebar-full-width' || ( $layout=='default' && $themeoption_layout == 'no-sidebar-full-width') ) ) {
 		$content_width = 1040; /* pixels */	

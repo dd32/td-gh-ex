@@ -308,31 +308,48 @@ add_action('template_redirect', 'catcheverest_rss_redirect');
  * @since Catch Everest 1.0
  */
 function catcheverest_body_classes( $classes ) {
-	global $post;
+	//Getting Ready to load data from Theme Options Panel
+	global $post, $wp_query, $catcheverest_options_settings;
+	$options = $catcheverest_options_settings;
+	$themeoption_layout = $options['sidebar_layout'];
 	
+	// Front page displays in Reading Settings
+	$page_on_front = get_option('page_on_front') ;
+	$page_for_posts = get_option('page_for_posts'); 
+
+	// Get Page ID outside Loop
+	$page_id = $wp_query->get_queried_object_id();
+		
 	// Adds a class of group-blog to blogs with more than 1 published author
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
 	}
 	
-	if( $post) {
- 		if ( is_attachment() ) { 
+	// Blog Page setting in Reading Settings
+	if ( $page_id == $page_for_posts ) {
+		$layout = get_post_meta( $page_for_posts,'catcheverest-sidebarlayout', true );
+	}	
+	// Front Page setting in Reading Settings
+	elseif ( $page_id == $page_on_front ) {
+		$layout = get_post_meta( $page_on_front,'catcheverest-sidebarlayout', true );
+	}		
+	// Settings for page/post/attachment
+	elseif ( is_singular() ) {
+		if ( is_attachment() ) { 
 			$parent = $post->post_parent;
-			$layout = get_post_meta( $parent,'catcheverest-sidebarlayout', true );
+			$layout = get_post_meta( $parent, 'catcheverest-sidebarlayout', true );
 		} else {
-			$layout = get_post_meta( $post->ID,'catcheverest-sidebarlayout', true ); 
+			$layout = get_post_meta( $post->ID, 'catcheverest-sidebarlayout', true ); 
 		}
 	}
-
-	if( empty( $layout ) || ( !is_page() && !is_single() ) ) {
-		$layout='default';
+	else {
+		$layout = 'default';	
 	}
-	
-	// Getting data from Theme Options
-	global $catcheverest_options_settings;
-   	$options = $catcheverest_options_settings;
-		
-	$themeoption_layout = $options['sidebar_layout'];
+
+	//check empty and load default
+	if ( empty( $layout ) ) {
+		$layout = 'default';	
+	}
 	
 	if( ( $layout == 'no-sidebar' || ( $layout=='default' && $themeoption_layout == 'no-sidebar') ) ) {
 		$classes[] = 'no-sidebar';

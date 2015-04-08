@@ -1,5 +1,9 @@
 == Changelog ==
 
+version 2.3
+* Added Bosnian translation bs_BA.po and bs_BA.mo
+* Bug Fixed: Sidebar layout option (Reported by notjustblack )
+
 version 2.2.1
 * Bug Fixed: Sidebar widget issue in mobile devices
 * Bug Fixed: Gallery page not showing images (Reported by michellebergmann )
