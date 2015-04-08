@@ -28,12 +28,10 @@ get_header();
                         <div class="blog-head">
                             <ul><?php advent_entry_meta(); ?></ul>
                         </div>
-                        <?php $advent_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()), 'large'); ?>
-                        <?php if ($advent_image[0] != "") { ?>
-                            <div class="blog-img">
-                                <img src="<?php echo esc_url($advent_image[0]); ?>" width="<?php echo $advent_image[1]; ?>" height="<?php echo $advent_image[2]; ?>" alt="<?php echo get_the_title(); ?>" class="img-responsive" />
-                            </div>
-                        <?php } ?>
+                        
+                        <?php if ( has_post_thumbnail() ) : ?>
+							<?php the_post_thumbnail( 'large', array( 'alt' => get_the_title(), 'class' => 'img-responsive') ); ?>
+						<?php endif; ?> 
                         <div class="blog-info">
                             <?php
                                 the_content();

@@ -84,11 +84,6 @@ function advent_header_bg()
 	}	
 }
 
-/* thumbnail list */ 
-function advent_thumbnail_image($content) {
-   if (has_post_thumbnail())
-       return the_post_thumbnail('thumbnail');
-}
 
 /* Set size of characher in excerpt */
 function advent_excerpt_length( $length ) {

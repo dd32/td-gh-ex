@@ -72,7 +72,7 @@ $advent_options = get_option('advent_theme_options');
                 </div>
             <?php } ?>
             <?php
-            $advent_args = array('posts_per_page' => -1,
+            $advent_args = array(
                 'cat' => $advent_options['post-category'],
                 'meta_query' => array(
                     array(
@@ -104,10 +104,10 @@ $advent_options = get_option('advent_theme_options');
                             ?>
                             <div class="item home-gallery-box">               
                                 <div class="home-gallery-img">
-                                    <?php $advent_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'advent-home-thumbnail-image', true); ?>
-                                    <?php if ($advent_image[0] != '') { ?>
-                                        <img class="img-responsive" src="<?php echo esc_url($advent_image[0]); ?>" width="<?php echo $advent_image[1]; ?>" height="<?php echo $advent_image[2]; ?>" alt="<?php echo get_the_title(); ?>" />
-                                    <?php } ?>
+									
+                                    <?php if ( has_post_thumbnail() ) : ?>
+											<?php the_post_thumbnail( 'advent-home-thumbnail-image', array( 'alt' => get_the_title(), 'class' => 'img-responsive') ); ?>
+									<?php endif; ?>
 
                                     <div class="home-gallery-img-hover">
                                         <div class="mask"></div>

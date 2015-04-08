@@ -12,7 +12,7 @@ License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 == Copyright ==
-Advent Theme, Copyright 2014 fruitthemes.com
+Advent WordPress Theme, Copyright 2014 fruitthemes.com
 Advent is distributed under the terms of the GNU GPL
 
 
@@ -69,9 +69,12 @@ License: GNU General Public License v2
 
 iii)Fonts
 ===========
-http://fonts.googleapis.com/css?family=Open+Sans
-http://fonts.googleapis.com/css?family=Cabin
-They are under SIL Open Font.
+http://fonts.googleapis.com/css?family=Open+Sans 
+License: Apache Open Font
+
+http://fonts.googleapis.com/css?family=Cabin 
+License: SIL Open Font
+
 	
 iv)Bootstrap files
 ===========

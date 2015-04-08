@@ -275,7 +275,8 @@ function advent_framework_page() {
         echo 'fa-inr'; ?>" id="faicon-<?php echo $advent_section_i; ?>" class="of-input" name="advent_theme_options[faicon-<?php echo $advent_section_i; ?>]" size="32"  value="<?php if (!empty($advent_options['faicon-' . $advent_section_i])) {
             echo esc_attr($advent_options['faicon-' . $advent_section_i]);
         } ?>">
-                                            <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank"><?php _e('View all icons', 'advent'); ?></a>
+											<?php $link_font = 'http://fortawesome.github.io/Font-Awesome/icons/'; ?>
+                                            <a href="<?php echo $link_font; ?>" target="_blank"><?php _e('View all icons', 'advent'); ?></a>
                                         </div>
                                         <div class="ft-control">
                                             <div class="explain"><?php _e('Enter secion title for your home template , you would like to display in the Home Page.', 'advent');

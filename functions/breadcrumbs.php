@@ -32,11 +32,11 @@ function advent_custom_breadcrumbs() {
         } elseif (is_search()) {
             echo $advent_before . __('Search Results For ', 'advent') . ' "' . get_search_query() . '"' . $advent_after;
         } elseif (is_day()) {
-            echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $advent_delimiter . ' ';
-            echo '<a href="' . get_month_link(get_the_time('Y'), get_the_time('m')) . '">' . get_the_time('F') . '</a> ' . $advent_delimiter . ' ';
+            echo '<a href="' . esc_url(get_year_link(get_the_time('Y'))) . '">' . get_the_time('Y') . '</a> ' . $advent_delimiter . ' ';
+            echo '<a href="' . esc_url(get_month_link(get_the_time('Y'), get_the_time('m'))) . '">' . get_the_time('F') . '</a> ' . $advent_delimiter . ' ';
             echo $advent_before . get_the_time('d') . $advent_after;
         } elseif (is_month()) {
-            echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $advent_delimiter . ' ';
+            echo '<a href="' . esc_url(get_year_link(get_the_time('Y'))) . '">' . get_the_time('Y') . '</a> ' . $advent_delimiter . ' ';
             echo $advent_before . get_the_time('F') . $advent_after;
         } elseif (is_year()) {
             echo $advent_before . get_the_time('Y') . $advent_after;
@@ -76,8 +76,8 @@ function advent_custom_breadcrumbs() {
             $advent_parent_id = $post->post_parent;
             $advent_breadcrumbs = array();
             while ($advent_parent_id) {
-                $advent_page = get_page($advent_parent_id);
-                $advent_breadcrumbs[] = '<a href="' . get_permalink($advent_page->ID) . '">' . get_the_title($advent_page->ID) . '</a>';
+                $advent_page = get_post($advent_parent_id);
+                $advent_breadcrumbs[] = '<a href="' . get_permalink($advent_page) . '">' . get_the_title($advent_page) . '</a>';
                 $advent_parent_id = $advent_page->post_parent;
             }
             $advent_breadcrumbs = array_reverse($advent_breadcrumbs);
