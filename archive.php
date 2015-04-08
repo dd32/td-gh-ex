@@ -45,14 +45,16 @@
 		<a class="readmore" href="<?php the_permalink() ?>" rel="bookmark"><?php _e( 'Read More &raquo;', 'leftside' ); ?></a>
 	</div>
 
-	<?php endwhile; else: ?>
-		<p><?php _e('Sorry, no posts matched your criteria.', 'leftside'); ?></p>
-	<?php endif; ?>
-				
+	<?php endwhile; ?>
+
 	<div class="post-nav">
 		<?php next_posts_link(__( '&laquo; Older posts', 'leftside' )); ?>
 		<?php previous_posts_link(__( 'Newer posts &raquo;', 'leftside' )); ?>
 	</div>
 
+	<?php else: ?>
+		<p><?php _e('Sorry, no posts matched your criteria.', 'leftside'); ?></p>
+	<?php endif; ?>
+				
 </div>
 <?php get_footer(); ?>
