@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-PrivateBusiness version 3.2 - april 2015
+PrivateBusiness version 3.3 - april 2015
 - several small adjustment in stylesheet
 - removed support for document title in older WP versions 
 - files index and archive: pagination inside loop
