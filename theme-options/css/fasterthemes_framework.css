@@ -344,7 +344,21 @@
     top: 40%;
     width: auto;
 }
-
+.fasterthemes-pro-image img {
+	max-width:100%;
+	height:auto;
+}
+.fasterthemes-pro-buynow {
+    float:right;
+	width:190px;
+	margin:0px 40px 0px 0px;
+}
+.faster-inner-tabs h3 {
+    border-bottom: 1px solid #ccc;
+    margin-top: 0;
+    padding-bottom: 10px;
+    width: 100%;
+}
 @media (max-width:992px){
 	.logo{
 		width:100%;

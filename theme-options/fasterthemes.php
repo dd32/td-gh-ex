@@ -82,7 +82,7 @@ function fastertheme_framework_page(){
             <li><a id="options-group-1-tab" class="nav-tab basicsettings-tab" title="Basic Settings" href="#options-group-1"><?php _e('Basic Settings','multishop'); ?></a></li>
   			<li><a id="options-group-2-tab" class="nav-tab socialsettings-tab" title="Social Settings" href="#options-group-2"><?php _e('Social Settings','multishop'); ?></a></li>
             <li><a id="options-group-3-tab" class="nav-tab homepagesettings-tab" title="Homepage Settings" href="#options-group-3"><?php _e('Home Page Settings','multishop'); ?></a></li>
-       
+            <li><a id="options-group-4-tab" class="nav-tab profeatures-tab" title="Pro Settings" href="#options-group-4"><?php _e('PRO Theme Features','multishop'); ?></a></li>
   		  </ul>
         </div>
       </div>
@@ -191,6 +191,16 @@ function fastertheme_framework_page(){
           </div> 
           <?php endfor; ?>
         </div>
+		  
+		   <div id="options-group-4" class="group faster-inner-tabs fasterthemes-pro-image">
+          	<div class="fasterthemes-pro-header">
+              <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/multishop_logopro_features.png" class="fasterthemes-pro-logo" />
+              <a href="http://fasterthemes.com/checkout/get_checkout_details?theme=multishop" target="_blank">
+			  <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/buy-now.png" class="fasterthemes-pro-buynow" /></a>
+              </div>
+          	<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/multishop_pro_features.png" />
+          </div> 	
+        
         <!--======================== F I N A L - - T H E M E - - O P T I O N S ===================--> 
       </div>
      </div>

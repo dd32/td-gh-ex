@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Multishop V1.1.9\n"
+"Project-Id-Version: Multishop V1.2\n"
 "POT-Creation-Date: 2014-11-27 14:33+0530\n"
 "PO-Revision-Date: 2014-11-27 14:34+0530\n"
 "Last-Translator: FasterThemes <support@fasterthemes.com>\n"

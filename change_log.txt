@@ -58,3 +58,6 @@ Version: 1.1.8 (24 March 2015)
 	
 Version: 1.1.9 (26 March 2015)	
 	i)  Fixed 404 error from "bootstrap.css.map".
+	
+Version: 1.2 (8 April 2015)	
+	i) Add PRO Theme Features tab in theme options.
