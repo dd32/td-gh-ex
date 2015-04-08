@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+DarkElements version 2.4 - april 2015
+- several small adjustment in stylesheet
+- removed support for document title in older WP versions 
+- files index and archive: pagination inside loop
+
 DarkElements version 2.3 - february 2015
 - added Spanish translation (thanks Miquel)
 - added German translation (thanks Frank)
