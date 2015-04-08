@@ -1,7 +1,7 @@
 /*
 Theme Name: OneColumn
 Theme URI: http://www.guidovanderleest.nl/onecolumn
-Version: 3.0
+Version: 3.1
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: OneColumn is a free, basic, clean, responsive, mobile friendly, one-column WordPress theme. Default theme language is English but Dutch, German, Spanish and French are supported too. 2 widget-areas underneath header-image, 2 widget-areas in footer, custom header-image, custom background, display logo or blogname and description and dropdown navigation are included. Besides this no theme settings page, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
@@ -68,7 +68,7 @@ table {
 
 /* BODY AND CONTAINER */
 body {background:#fff; font-family:'Open Sans', sans-serif; font-size:1em; line-height:1.5em; color:#333;}
-#container {width:100%; padding:0; margin:0; background:none; text-align:left; word-wrap:break-word;}
+#container {width:100%; padding:0; margin:0 auto 0; background:none; text-align:left; word-wrap:break-word;}
 #content {max-width:880px; margin:0 auto 0; padding:20px 40px; background:#f8f8f8; word-wrap:break-word;}
 #content:after {content:''; display:block; clear:both;}
 
@@ -143,11 +143,11 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 /* HEADER MENU */
 .nav-head {clear:both; background:none; padding:10px 0; margin:0; font-size:1.1em;}
 .nav-head select {display:none;}
-.nav-head ul {padding:0; margin:0;}
+.nav-head ul {padding:0; margin:0; z-index:999;}
 .nav-head ul li {list-style-type:none; display:inline-block; position:relative;}
 .nav-head ul li a {text-decoration:none; color:#fff; background:none; padding:10px 10px; display:inline-block;}
 .nav-head ul li a:hover {text-decoration:underline;}
-.menu .current_page_item > a, .menu .current_page_parent > a {text-decoration:underline;}
+.nav-head .current_page_item > a, .nav-head .current_page_parent > a {text-decoration:underline;}
 
 
 /* HEADER SUBMENU */
@@ -253,9 +253,8 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 /* MOBILE */
 @media screen and (max-width:767px) { 
 	/* BODY AND CONTAINER */
-	body {font-size:1em; line-height:1.2em;}
+	body {line-height:1.2em;}
 	body.custom-background {background-image:none !important;}
-	#container {margin:0 auto 0;}
 	#content {width:96%; padding:10px 2%;}
 
 	/* HEADER */
