@@ -182,20 +182,8 @@ jQuery(document).ready(function($){
         return menuHeight;
     }
 
-    // enable double-click menu parent items right away
-    if( $(window).width() < 800 ) {
-        enableTouchDropdown();
-    } else {
-        // otherwise wait to see if a touch event is fired
-        $(window).on('touchstart', enableTouchDropdown, false );
-    }
-
-    // add the double-click if the menu is made smaller again
-    $(window).resize(function(){
-        if( $(window).width() < 800 ) {
-            enableTouchDropdown();
-        }
-    });
+    // enforce double-click for parent menu items when a touch event is registered
+    $(window).on('touchstart', enableTouchDropdown );
 
     // require a second click to visit parent navigation items
     function enableTouchDropdown(){
@@ -214,60 +202,56 @@ jQuery(document).ready(function($){
     // open the dropdown without visiting parent link on first click
     function openDropdown(e){
 
-        // don't enforce if screen resized over 800px
-        if( $(window).width() < 800 ) {
+        // if the menu item is not showing children
+        if ($(this).hasClass('closed')) {
 
-            // if the menu item is not showing children
-            if ($(this).hasClass('closed')) {
+            // prevent link from being visited
+            e.preventDefault();
 
-                // prevent link from being visited
-                e.preventDefault();
+            // add an open class
+            $(this).addClass('open');
 
-                // add an open class
-                $(this).addClass('open');
+            // remove 'closed' class to enable link
+            $(this).removeClass('closed');
 
-                // remove 'closed' class to enable link
-                $(this).removeClass('closed');
+            // get the submenu
+            var submenu = $(this).children('ul');
 
-                // get the submenu
-                var submenu = $(this).children('ul');
+            // set variable
+            var submenuHeight = 0;
 
-                // set variable
-                var submenuHeight = 0;
+            // get height of all menu items in submenu combined
+            submenu.children('li').each(function () {
+                submenuHeight = submenuHeight + $(this).height();
+            });
 
-                // get height of all menu items in submenu combined
-                submenu.children('li').each(function () {
-                    submenuHeight = submenuHeight + $(this).height();
-                });
+            // set ul max-height to the height of all it's children li
+            submenu.css('max-height', submenuHeight);
 
-                // set ul max-height to the height of all it's children li
-                submenu.css('max-height', submenuHeight);
+            var listItem = $(this);
 
-                var listItem = $(this);
+            // get the containing ul if it exists
+            var parentList = listItem.parent('.sub-menu, .children');
 
-                // get the containing ul if it exists
-                var parentList = listItem.parent('.sub-menu, .children');
+            // get the height
+            var parentListHeight = parentList.height();
 
-                // get the height
-                var parentListHeight = parentList.height();
+            // expand the height of the parent ul so that it's child can show
+            parentList.css('max-height', parseInt(parentListHeight + submenuHeight));
 
-                // expand the height of the parent ul so that it's child can show
-                parentList.css('max-height', parseInt(parentListHeight + submenuHeight));
+            // only open the primary menu if clicked menu item is in primary menu
+            if( $(this).parents().hasClass('menu-primary-items') || $(this).parents().hasClass('menu-unset') ) {
 
-                // only open the primary menu if clicked menu item is in primary menu
-                if( $(this).parents().hasClass('menu-primary-items') || $(this).parents().hasClass('menu-unset') ) {
+                // just needs long enough for the 0.15s animation fo play out
+                setTimeout(function () {
 
-                    // just needs long enough for the 0.15s animation fo play out
-                    setTimeout(function () {
+                    // adjust containing .menu-primary to fit newly expanded list
+                    var menuHeight = calculateMenuHeight();
 
-                        // adjust containing .menu-primary to fit newly expanded list
-                        var menuHeight = calculateMenuHeight();
+                    // adjust to the height
+                    $('#menu-primary').css('max-height', menuHeight + 48);
 
-                        // adjust to the height
-                        $('#menu-primary').css('max-height', menuHeight + 48);
-
-                    }, 200)
-                }
+                }, 200)
             }
         }
     }
