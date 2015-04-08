@@ -36,14 +36,16 @@
 		<a class="readmore" href="<?php the_permalink() ?>" rel="bookmark"><?php _e( 'Read More &raquo;', 'simplyblack' ); ?></a>
 	</div>
 
-	<?php endwhile; else: ?>
-		<p><?php _e('Sorry, no posts matched your criteria.', 'simplyblack'); ?></p>
-	<?php endif; ?>
+	<?php endwhile; ?>
 
 	<div class="post-nav">
 		<?php next_posts_link(__( '&laquo; Older posts', 'simplyblack' )); ?>
 		<?php previous_posts_link(__( 'Newer posts &raquo;', 'simplyblack' )); ?>
 	</div>
+
+	<?php else: ?>
+		<p><?php _e('Sorry, no posts matched your criteria.', 'simplyblack'); ?></p>
+	<?php endif; ?>
 
 </div>
 <?php get_sidebar(); ?>
