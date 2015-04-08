@@ -1,5 +1,9 @@
 Changelog
 
+Quill 1.06
+----------------------
+- fp-services.php fix for Service READ MORE link not displaying custom URL;
+
 Quill 1.05
 ----------------------
 - compatibility with the new Page Builder by Site Origin;

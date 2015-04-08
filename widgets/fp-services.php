@@ -148,7 +148,12 @@ class Quill_Services extends WP_Widget {
 					<?php endif; ?>
 						<h4 class="service-title"><?php the_title(); ?></h4>
 						<div class="service-desc"><?php the_excerpt(); ?></div>
-						<a class="read-more buttons" href="<?php the_permalink(); ?>"><?php echo __('Read More', 'quill'); ?></a>
+						<?php $service_link = get_post_meta( get_the_ID(), 'wpcf-service-link', true ); ?>
+						<?php if ($service_link) : ?>
+							<a class="read-more buttons" href="<?php echo esc_url($service_link); ?>"><?php echo __('Read More', 'quill'); ?></a>
+						<?php else : ?>
+							<a class="read-more buttons" href="<?php the_permalink(); ?>"><?php echo __('Read More', 'quill'); ?></a>
+						<?php endif; ?>
 					</div>
 				<?php endwhile; ?>
 				</div>
