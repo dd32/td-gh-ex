@@ -47,21 +47,27 @@ if ( ! function_exists( 'catchbase_content_width' ) ) :
 		// Get Page ID outside Loop
 		$page_id = $wp_query->get_queried_object_id();
 
-		// Blog Page setting in Reading Settings
-		if ( $page_id == $page_for_posts ) {
-			$layout = get_post_meta( $page_for_posts,'catchbase-layout-option', true );
-		}
-		elseif ( $post)  {
-			if ( is_attachment() ) {
+		// Blog Page or Front Page setting in Reading Settings
+		if ( $page_id == $page_for_posts || $page_id == $page_on_front ) {
+	        $layout 		= get_post_meta( $page_id,'catchbase-layout-option', true );
+	    }
+    	elseif ( is_singular() ) {
+	 		if ( is_attachment() ) { 
 				$parent = $post->post_parent;
+				
 				$layout = get_post_meta( $parent,'catchbase-layout-option', true );
-			} else {
-				$layout = get_post_meta( $post->ID,'catchbase-layout-option', true );
+			} 
+			else {
+				$layout = get_post_meta( $post->ID,'catchbase-layout-option', true ); 
 			}
 		}
-
-		if ( empty( $layout ) || ( !is_page() && !is_single() ) ) {
+		else {
 			$layout='default';
+		}
+
+		//check empty and load default
+		if( empty( $layout ) ) {
+			$layout = 'default';
 		}
 
 		if ( $layout == 'right-sidebar' || $layout == 'left-sidebar' || $layout == 'no-sidebar' || ( $layout=='default' && $themeoption_layout == 'right-sidebar' ) || ( $layout=='default' && $themeoption_layout == 'left-sidebar' ) || ( $layout=='default' && $themeoption_layout == 'no-sidebar' ) ) {
@@ -216,7 +222,7 @@ function catchbase_scripts() {
 	wp_enqueue_style( 'catchbase-responsive', get_template_directory_uri() . '/css/responsive.css' );
 
 	//Responsive Menu		
-	wp_enqueue_script('sidr', get_template_directory_uri() . '/js/jquery.sidr.min.js', array('jquery'), '1.2.1 - 2013-11-06', false );	
+	wp_enqueue_script( 'sidr', get_template_directory_uri() . '/js/jquery.sidr.min.js', array('jquery'), '1.2.1', false );	
 
 	wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/js/fitvids.min.js', array( 'jquery' ), '1.1', true );
 	
@@ -1050,14 +1056,25 @@ if ( ! function_exists( 'catchbase_body_classes' ) ) :
 	 * @since Catch Base 1.0
 	 */
 	function catchbase_body_classes( $classes ) {
-		global $post;
+		global $post, $wp_query;
 
 		// Adds a class of group-blog to blogs with more than 1 published author
 		if ( is_multi_author() ) {
 			$classes[] = 'group-blog';
 		}
 
-		if ( $post ) {
+		// Front page displays in Reading Settings
+	    $page_on_front 	= get_option('page_on_front') ;
+	    $page_for_posts = get_option('page_for_posts');
+	
+		// Get Page ID outside Loop
+	    $page_id = $wp_query->get_queried_object_id();
+		
+		// Blog Page or Front Page setting in Reading Settings
+		if ( $page_id == $page_for_posts || $page_id == $page_on_front ) {
+	        $layout 		= get_post_meta( $page_id,'catchbase-layout-option', true );
+	    }
+    	elseif ( is_singular() ) {
 	 		if ( is_attachment() ) { 
 				$parent = $post->post_parent;
 				
@@ -1066,11 +1083,15 @@ if ( ! function_exists( 'catchbase_body_classes' ) ) :
 				$layout = get_post_meta( $post->ID,'catchbase-layout-option', true ); 
 			}
 		}
-
-		if ( empty( $layout ) || ( !is_page() && !is_single() ) ) {
-			$layout='default';
+		else {
+			$layout = 'default';
 		}
 
+		//check empty and load default
+		if( empty( $layout ) ) {
+			$layout = 'default';
+		}
+		
 		$options 		= catchbase_get_theme_options();
 			
 		$current_layout = $options['theme_layout'];

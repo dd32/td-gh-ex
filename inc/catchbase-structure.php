@@ -211,24 +211,26 @@ if ( ! function_exists( 'catchbase_layout_condition_check' ) ) :
 		// Get Page ID outside Loop
 		$page_id = $wp_query->get_queried_object_id();	
 		
-		// Post /Page /General Layout
-		if ( $post) {
+		// Blog Page or Front Page setting in Reading Settings
+		if ( $page_id == $page_for_posts || $page_id == $page_on_front ) {
+	        $layout 		= get_post_meta( $page_id,'catchbase-layout-option', true );
+	    }
+		else if ( is_singular() ) {
 			if ( is_attachment() ) { 
 				$parent = $post->post_parent;
-				$layout = get_post_meta( $parent, 'catchbase-layout-option', true );
-				$sidebaroptions = get_post_meta( $parent, 'catchbase-sidebar-options', true );
-				
-			} else {
-				$layout = get_post_meta( $post->ID, 'catchbase-layout-option', true ); 
-				$sidebaroptions = get_post_meta( $post->ID, 'catchbase-sidebar-options', true ); 
+				$layout = get_post_meta( $parent, 'catchbase-layout-option', true );				
+			} 
+			else {
+				$layout = get_post_meta( $post->ID, 'catchbase-layout-option', true );
 			}
 		}
 		else {
-			$sidebaroptions = '';
+			$layout = 'default';
 		}
-				
-		if( empty( $layout ) || ( !is_page() && !is_single() ) ) {
-			$layout='default';
+
+		//check empty and load default
+		if( empty( $layout ) ) {
+			$layout = 'default';
 		}
 		
 		if ( $layout == 'three-columns' || ( $layout=='default' && ( $themeoption_layout == 'three-columns' ) ) ){
@@ -296,11 +298,13 @@ if ( ! function_exists( 'catchbase_header_right' ) ) :
  */
 function catchbase_header_right() { ?>
 	<aside class="sidebar sidebar-header-right widget-area">
-		<section class="widget widget_catchbase_social_icons" id="header-right-social-icons">
-			<div class="widget-wrap">
-				<?php echo catchbase_get_social_icons(); ?>
-			</div>
-		</section>		
+		<?php if ( '' != ( $catchbase_social_icons = catchbase_get_social_icons() ) ) { ?>
+			<section class="widget widget_catchbase_social_icons" id="header-right-social-icons">
+				<div class="widget-wrap">
+					<?php echo $catchbase_social_icons; ?>
+				</div>
+			</section>
+		<?php } ?>
 	</aside><!-- .sidebar .header-sidebar .widget-area -->	
 <?php	
 }

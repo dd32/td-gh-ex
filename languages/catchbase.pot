@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Catch Base\n"
 "Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/catch-base-"
 "free/\n"
-"POT-Creation-Date: 2015-03-24 08:38+0545\n"
-"PO-Revision-Date: 2015-03-24 08:38+0545\n"
+"POT-Creation-Date: 2015-04-08 14:34+0545\n"
+"PO-Revision-Date: 2015-04-08 14:34+0545\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: en\n"
@@ -97,7 +97,7 @@ msgstr ""
 msgid "Chats"
 msgstr ""
 
-#: ../archive.php:69 ../sidebar-secondary.php:45 ../sidebar.php:90
+#: ../archive.php:69 ../sidebar-secondary.php:45 ../sidebar.php:92
 msgid "Archives"
 msgstr ""
 
@@ -150,8 +150,8 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: ../content-page.php:35 ../inc/catchbase-core.php:624
-#: ../inc/catchbase-core.php:643 ../inc/catchbase-core.php:769
+#: ../content-page.php:35 ../inc/catchbase-core.php:630
+#: ../inc/catchbase-core.php:649 ../inc/catchbase-core.php:775
 msgid "Edit"
 msgstr ""
 
@@ -183,101 +183,101 @@ msgstr ""
 msgid "Error 404"
 msgstr ""
 
-#: ../inc/catchbase-breadcrumb.php:222 ../inc/catchbase-core.php:895
+#: ../inc/catchbase-breadcrumb.php:222 ../inc/catchbase-core.php:901
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: ../inc/catchbase-core.php:121 ../inc/catchbase-menus.php:27
+#: ../inc/catchbase-core.php:127 ../inc/catchbase-menus.php:27
 msgid "Primary Menu"
 msgstr ""
 
-#: ../inc/catchbase-core.php:122 ../inc/catchbase-menus.php:69
+#: ../inc/catchbase-core.php:128 ../inc/catchbase-menus.php:69
 msgid "Secondary Menu"
 msgstr ""
 
-#: ../inc/catchbase-core.php:590
+#: ../inc/catchbase-core.php:596
 msgid "Post navigation"
 msgstr ""
 
-#: ../inc/catchbase-core.php:599
+#: ../inc/catchbase-core.php:605
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: ../inc/catchbase-core.php:600
+#: ../inc/catchbase-core.php:606
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: ../inc/catchbase-core.php:624
+#: ../inc/catchbase-core.php:630
 msgid "Pingback:"
 msgstr ""
 
-#: ../inc/catchbase-core.php:634
+#: ../inc/catchbase-core.php:640
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr ""
 
-#: ../inc/catchbase-core.php:640
+#: ../inc/catchbase-core.php:646
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: ../inc/catchbase-core.php:647
+#: ../inc/catchbase-core.php:653
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../inc/catchbase-core.php:750
+#: ../inc/catchbase-core.php:756
 msgctxt "Used before publish date."
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
 msgstr ""
 
-#: ../inc/catchbase-core.php:757
+#: ../inc/catchbase-core.php:763
 msgctxt "Used before post author name."
 msgid "<span class=\"screen-reader-text\">Author</span>"
 msgstr ""
 
-#: ../inc/catchbase-core.php:765
+#: ../inc/catchbase-core.php:771
 msgid "Leave a comment"
 msgstr ""
 
-#: ../inc/catchbase-core.php:765
+#: ../inc/catchbase-core.php:771
 msgid "1 Comment"
 msgstr ""
 
-#: ../inc/catchbase-core.php:765
+#: ../inc/catchbase-core.php:771
 msgid "% Comments"
 msgstr ""
 
-#: ../inc/catchbase-core.php:786 ../inc/catchbase-core.php:794
+#: ../inc/catchbase-core.php:792 ../inc/catchbase-core.php:800
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ""
 
-#: ../inc/catchbase-core.php:789
+#: ../inc/catchbase-core.php:795
 msgctxt "Used before category names."
 msgid "<span class=\"screen-reader-text\">Categories</span>"
 msgstr ""
 
-#: ../inc/catchbase-core.php:797
+#: ../inc/catchbase-core.php:803
 msgctxt "Used before tag names."
 msgid "<span class=\"screen-reader-text\">Tags</span>"
 msgstr ""
 
-#: ../inc/catchbase-core.php:991
+#: ../inc/catchbase-core.php:997
 #, php-format
 msgid "%s"
 msgstr ""
 
-#: ../inc/catchbase-core.php:1474
+#: ../inc/catchbase-core.php:1495
 msgid "Scroll Up"
 msgstr ""
 
-#: ../inc/catchbase-core.php:1491
+#: ../inc/catchbase-core.php:1512
 msgid "Posted on"
 msgstr ""
 
-#: ../inc/catchbase-core.php:1492
+#: ../inc/catchbase-core.php:1513
 msgid "By"
 msgstr ""
 
@@ -638,7 +638,7 @@ msgstr ""
 #: ../inc/catchbase-featured-content.php:267
 #: ../inc/catchbase-featured-content.php:276
 #: ../inc/catchbase-featured-content.php:287
-#: ../inc/catchbase-featured-content.php:298
+#: ../inc/catchbase-featured-content.php:300
 #: ../inc/catchbase-featured-slider.php:176
 #: ../inc/catchbase-featured-slider.php:183
 #: ../inc/catchbase-featured-slider.php:199
@@ -1145,7 +1145,7 @@ msgid ""
 "layout option."
 msgstr ""
 
-#: ../sidebar-secondary.php:32 ../sidebar.php:77
+#: ../sidebar-secondary.php:32 ../sidebar.php:79
 #, php-format
 msgid ""
 "By default it will load Search and Archives widgets as shown below. You can add "
@@ -1153,11 +1153,11 @@ msgid ""
 "replace default widgets."
 msgstr ""
 
-#: ../sidebar.php:73
+#: ../sidebar.php:75
 msgid "Primary Sidebar Widget Area"
 msgstr ""
 
-#: ../sidebar.php:76
+#: ../sidebar.php:78
 msgid ""
 "This is the Primary Sidebar Widget Area if you are using a two or three column "
 "site layout option."

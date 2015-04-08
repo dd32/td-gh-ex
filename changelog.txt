@@ -1,5 +1,11 @@
 == Change log ==
 
+= 1.7 =
+* Added Brazilian Portuguese translation pt_BR.po and pt_BR.mo
+* Bug Fixed: Sidebar layout option 
+* Bug Fixed: Social icon wrap
+* Bug Fixed: Featured page content showing full content instead of excerpt
+
 = 1.6 =
 * Added French translation fr_FR.po and fr_FR.mo
 * Bug Fixed: Content Layout issue with content_width

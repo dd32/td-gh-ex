@@ -294,7 +294,9 @@ function catchbase_page_content( $options ) {
 				$catchbase_page_content .= '
 					<div class="entry-container">';
 						$catchbase_page_content .= the_title( '<header class="entry-header"><h1 class="entry-title">','</h1></header>', false );
-						$catchbase_page_content .= '<p>'. get_the_content( $more_link_text , true ) .'</p>';
+						if( $excerpt !='') {
+							$catchbase_page_content .= '<div class="entry-content">'. $excerpt.'</div>';
+						}
 						$catchbase_page_content .= '<a href="' . get_permalink() . '" title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'catchbase' ), 'echo' => false ) ) . '"></a>';
 					$catchbase_page_content .= '
 					</div><!-- .entry-container -->

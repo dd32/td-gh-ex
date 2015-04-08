@@ -1,7 +1,6 @@
 === Catch Base ===
 
-If you are looking to tailor-make a unique site without having to spend time coding a strong base for a theme that is smooth and displays well in all mobile and desktop devices, Catch Base is where your search ends. Catch Base is a simple, clean and responsive WordPress Theme. Use this as a base for your theme development or custom site development, and you will be thrilled with its ease and efficiency! Catch Base is built in HTML5, CSS3 and WordPress Theme Customizer for real time customization. This theme is translation ready and also currently translated in Swedish and French. Check out Theme Instructions at http://catchthemes.com/theme-instructions/catch-base/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/catch-base/
-
+If you are looking to tailor-make a unique site without having to spend time coding a strong base for a theme that is smooth and displays well in all mobile and desktop devices, Catch Base is where your search ends. Catch Base is a simple, clean and responsive WordPress Theme. Use this as a base for your theme development or custom site development, and you will be thrilled with its ease and efficiency! Catch Base is built in HTML5, CSS3 and WordPress Theme Customizer for real time customization. This theme is translation ready and also currently translated in Swedish, French and Brazilian Portuguese. Check out Theme Instructions at http://catchthemes.com/theme-instructions/catch-base/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/catch-base/
 
 == Support ==
 
@@ -14,13 +13,14 @@ Support Forum: http://catchthemes.com/support-forum/forum/catch-base-free/
 Catch Base theme is translation ready.
 Added Translation for Swedish by Anders Paulcén ( Email: anderspaulcen@gmail.com )
 Added Translation for French by Jérôme Joseph ( Email: jerome.joseph28@hotmail.com )
+Added Translation for Brazilian Portuguese by Valdir Trombini ( Email: valdir.trombini@gmail.com )
 
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Catch Base WordPress Theme, Copyright 2014 Catchthemes.com
+Catch Base WordPress Theme, Copyright 2015 Catchthemes.com
 Catch Base is distributed under the terms of the GNU General Public License v3
 
 Catchbase is based on Underscores http://underscores.me/, (C) Automattic, Inc.
