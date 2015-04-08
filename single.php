@@ -32,13 +32,14 @@
 		<?php comments_template(); ?>
 
 	<?php endwhile; ?>
-	<?php endif; ?>
-	
+
 	<div class="post-nav">
 		<div class="nav-next"><?php previous_post_link(); ?></div>
 		<div class="nav-prev"><?php next_post_link(); ?></div>
 	</div>
 
+	<?php endif; ?>
+	
 	<?php edit_post_link( __( 'Edit', 'gridbulletin' ), '<div class="edit-link">', '</div>' ) ?>
 
 </div>

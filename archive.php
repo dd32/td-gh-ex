@@ -52,14 +52,16 @@
 
 	</div>
 
-	<?php endwhile; else: ?>
-		<p><?php _e('Sorry, no posts matched your criteria.', 'gridbulletin'); ?></p>
-	<?php endif; ?>
-				
+	<?php endwhile; ?>
+
 	<div class="post-nav">
 		<?php next_posts_link(__( '&laquo; Older posts', 'gridbulletin' )); ?>
 		<?php previous_posts_link(__( 'Newer posts &raquo;', 'gridbulletin' )); ?>
 	</div>
+
+	<?php else: ?>
+		<p><?php _e('Sorry, no posts matched your criteria.', 'gridbulletin'); ?></p>
+	<?php endif; ?>
 
 </div>
 <?php get_sidebar(); ?>
