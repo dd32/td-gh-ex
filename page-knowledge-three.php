@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Knowledge Base sidebar
+ * Template Name: Knowledge Base Sidebar
  * Description: Template for displaying Posts from WP dashboard.
  */
 ?>

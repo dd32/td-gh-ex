@@ -1,7 +1,7 @@
 /*
 Theme Name: MyKnowledgeBase
 Theme URI: http://www.guidovanderleest.nl/myknowledgebase
-Version: 2.0
+Version: 2.1
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: MyKnowledgeBase is a free, basic, clean, minimalistic, responsive, mobile friendly WordPress theme for a 3 or 4 column Knowledge Base, Bulletin Board, FAQ, Wiki or Weblink Portal. It uses the default WP categories and posts. Please check readme file how to set up such a website. Default theme language is English but Dutch, German, Spanish and French are supported too. Primary sidebar, homepage sidebar, 3 widget-area's in footer, custom header-image, custom background, display logo or blogname and description, full width page-template and dropdown navigation are included. Besides this no theme settingspage, no fancy options, no slideshow, this one only has the basic options. Enjoy. 
@@ -139,11 +139,11 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 /* HEADER FIRST MENU */
 .nav-head {width:65%; float:right; text-align:right; background:none; margin:25px 0 0; padding:0; border:0;}
 .nav-head select {display:none;}
-.nav-head ul {padding:0; margin:0;}
+.nav-head ul {padding:0; margin:0; z-index:999;}
 .nav-head ul li {list-style-type:none; display:inline-block; position:relative; margin:0 0 0 10px;}
 .nav-head ul li a {text-decoration:none; background:none; padding:0 0 5px; display:inline-block;}
 .nav-head ul li a:hover {text-decoration:underline;}
-.menu .current_page_item > a, .menu .current_page_parent > a {text-decoration:underline;}
+.nav-head .current_page_item > a, .nav-head .current_page_parent > a {text-decoration:underline;}
 
 
 /* HEADER FIRST SUBMENU */
@@ -311,7 +311,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	/* BODY AND CONTAINER */
 	body {font-size:1em; line-height:1.2em;}
 	body.custom-background {background-image:none !important;}
-	#container {width:96%; padding:0;}
+	#container {width:98%;}
 	#content, #content-full {width:100%; padding:10px 0;}
 
 	/* HEADER */
@@ -352,7 +352,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	.footer-right, .footer-middle, .footer-left {width:100%; margin:0; float:left;}
 
 	/* HEADINGS */
-	.post-title, .page-title, #header-third .search-title, .widgettitle, #footer .widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.3em;}
+	.post-title, .page-title, #header-third .search-title, .widgettitle, #header-second .widgettitle, #footer .widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.3em;}
 
 	/* IMAGES */
 	.wp-post-image, .single-image {width:50%; margin:0.3em 0.5em 0.3em 0;}
