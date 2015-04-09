@@ -277,3 +277,4 @@ require get_template_directory() . '/inc/accesspress-widgets.php';
  * Load Options Plugin Activation
  */
 require get_template_directory() . '/inc/accesspress-plugin-activation.php';
+

@@ -29,6 +29,19 @@
         $apmag_top_menu_right = of_get_option( 'top_right_menu_select' );
         $apmag_logo_alt = of_get_option( 'logo_alt' );
         $apmag_logo_title = of_get_option( 'logo_title' );
+        switch($apmag_logo_setting){
+            case 'image':
+            $branding_class = 'logo_only';
+            break;
+            
+            case 'text':
+            $branding_class = 'text_only';
+            break;
+            
+            case 'image_text':
+            $branding_class = "logo_with_text";
+            break;
+        }
         //var_dump($apmag_top_menu); 
     ?>  
 	
@@ -64,35 +77,25 @@
             </div>
         <div class="logo-ad-wrapper clearfix">
             <div class="apmag-container">
-        		
+        		<div class="site-branding <?php echo $branding_class ;?>">
                             <?php 
                                 if( $apmag_logo_setting == 'image' || $apmag_logo_setting == 'image_text') :
                                 if (!empty($apmag_logo)): ?>
-                                <div class="site-branding site-logo">
+                                  <div class="sitelogo-wrap">  
                                     <a itemprop="url" href="<?php echo home_url(); ?>"><img src="<?php echo $apmag_logo?>" alt="<?php echo $apmag_logo_alt ?>" title="<?php echo $apmag_logo_title ?>" /></a>
                                     <meta itemprop="name" content="<?php bloginfo( 'name' )?>" />
-                                </div><!-- .site-branding -->
-                            <?php 
-                                else :
-                            ?>
-                                <div class="site-branding">
-                                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                        			<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-                        			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-                                    </a>
-                                </div><!-- .site-branding -->
-                            <?php
-                                endif; 
-                                endif;
+                                  </div>
+                            <?php endif; endif;
                                 if( $apmag_logo_setting == 'text' || $apmag_logo_setting == 'image_text' ):
-                            ?>
-                                <div class="site-branding">
+                            ?> 
+                                 <div class="sitetext-wrap">  
                                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
                         			<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
                         			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
                                     </a>
-                                </div><!-- .site-branding -->
+                                </div>
                             <?php endif;?>
+                 </div><!-- .site-branding -->
         		
                 
                 <div class="header-ad">

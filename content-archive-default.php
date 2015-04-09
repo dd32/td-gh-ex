@@ -23,20 +23,6 @@
 
 	<div class="entry-content">
         <?php 
-            $post_format = get_post_format();
-            $video_url = get_post_meta( $post->ID, 'post_embed_videourl', true );
-            $audio_url = get_post_meta( $post->ID, 'post_embed_audiourl', true );
-            if( $post_format == 'video' && !empty( $video_url ) )
-            {
-                $embed_args = array(
-                                'Height'=>'792',
-                                'Width'=>'356'
-                                );
-                $embed_code = wp_oembed_get( $video_url );
-                echo '<div class="archive-videothumb">'. $embed_code .'</div>';
-            } elseif( $post_format == 'audio' && !empty( $audio_url ) ) {
-                echo '<div class="archive-audiotumb">'.do_shortcode('[audio src="'.$audio_url.'"]').'</div>';
-            } else {
             if(has_post_thumbnail()){
                 $image_id = get_post_thumbnail_id();
                 $big_image_path = wp_get_attachment_image_src( $image_id, 'singlepost-default' ,true );
@@ -46,7 +32,7 @@
                     <a href="<?php the_permalink();?>"><img src="<?php echo $big_image_path[0];?>" alt="<?php echo esc_attr( $image_alt );?>" /></a>
                     <a class="big-image-overlay" href="<?php the_permalink();?>"><i class="fa fa-external-link"></i></a>
                 </div>
-        <?php } } ?>
+        <?php } ?>
 		<?php
 			/* translators: %s: Name of current post */
 			/*the_content( sprintf(

@@ -9,6 +9,10 @@
 $sidebar_top_ad = of_get_option('value_sidebar_top_ad');
 $sidebar_middle_ad = of_get_option('value_sidebar_middle_ad');
 $sidebar_bottom_ad = of_get_option('value_sidebar_bottom_ad'); 
+$trans_ads = of_get_option( 'trans_advertisement' );
+if( empty( $trans_ads ) ){ $trans_ads = 'Advertisement'; }
+$trans_editor = of_get_option( 'trans_editor_picks' );
+if( empty( $trans_editor ) ){ $trans_editor = "Editor Pick's"; }
 ?>
 <div id="secondary-right-sidebar">
     <div id="secondary" class="secondary-wrapper">
@@ -25,14 +29,14 @@ $sidebar_bottom_ad = of_get_option('value_sidebar_bottom_ad');
     <?php if(!empty($sidebar_top_ad)){
     ?>
     <div class="sidebar-top-ad widget-area wow fadeInUp" data-wow-delay="0.5s">
-        <h1 class="sidebar-title"><span><?php _e( 'Advertisement', 'accesspress-mage' );?></span></h1>
+        <h1 class="sidebar-title"><span><?php echo $trans_ads ;?></span></h1>
         <div class="ad_content"><?php echo $sidebar_top_ad;?></div>
     </div>
     <?php    
     } else {
     ?>
     <div class="sidebar-top-ad widget-area wow fadeInUp" data-wow-delay="0.5s">
-        <h1 class="sidebar-title"><span><?php _e( 'Advertisement', 'accesspress-mage' );?></span></h1>
+        <h1 class="sidebar-title"><span><?php echo $trans_ads ;?></span></h1>
         <div class="ad_content"><img src="http://placehold.it/300x250&text=Advertisement 300x250" /></div>
     </div>
     <?php } ?>
@@ -54,7 +58,7 @@ $sidebar_bottom_ad = of_get_option('value_sidebar_bottom_ad');
             $editor_posts_per_page = of_get_option('posts_for_editor_pick');
             if(!empty($editor_cat)):
         ?>
-            <h1 class="sidebar-title"><span><?php _e( 'Editor Pick`s', 'accesspress-mage' );?></span></h1>
+            <h1 class="sidebar-title"><span><?php echo $trans_editor ;?></span></h1>
         <?php
             echo '<div class="sidebar-posts-wrapper">';
             $editor_args = array(
@@ -108,14 +112,14 @@ $sidebar_bottom_ad = of_get_option('value_sidebar_bottom_ad');
     <?php if(!empty($sidebar_middle_ad)){
     ?>
     <div class="sidebar-top-ad widget-area wow fadeInUp" data-wow-delay="0.5s">
-        <h1 class="sidebar-title"><span><?php _e( 'Advertisement', 'accesspress-mage' );?></span></h1>
+        <h1 class="sidebar-title"><span><?php echo $trans_ads ;?></span></h1>
         <div class="ad_content"><?php echo $sidebar_middle_ad;?></div>
     </div>
     <?php    
     }else {
     ?>
     <div class="sidebar-top-ad widget-area wow fadeInUp" data-wow-delay="0.5s">
-        <h1 class="sidebar-title"><span><?php _e( 'Advertisement', 'accesspress-mage' );?></span></h1>
+        <h1 class="sidebar-title"><span><?php echo $trans_ads ;?></span></h1>
         <div class="ad_content"><img src="http://placehold.it/300x250&text=Advertisement 300x250" /></div>
     </div>
     <?php } ?>

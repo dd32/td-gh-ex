@@ -44,6 +44,10 @@ if ( ! function_exists( 'accesspress_mag_post_navigation' ) ) :
  * @todo Remove this function when WordPress 4.3 is released.
  */
 function accesspress_mag_post_navigation() {
+    $trans_next = of_get_option( 'trans_next_article' );
+    if( empty( $trans_next ) ){ $trans_next = 'Next article'; }
+    $trans_prev = of_get_option( 'trans_previous_article' );
+    if( empty( $trans_prev ) ){ $trans_prev = 'Previous article' ; }
 	// Don't print empty markup if there's nowhere to navigate.
 	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
 	$next     = get_adjacent_post( false, '', false );
@@ -56,8 +60,8 @@ function accesspress_mag_post_navigation() {
 		<h2 class="screen-reader-text"><?php _e( 'Post navigation', 'accesspress-mag' ); ?></h2>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous"><div class="link-caption"><i class="fa fa-angle-left"></i>Previous article</div>%link</div>', '%title' );
-				next_post_link( '<div class="nav-next"><div class="link-caption">Next article<i class="fa fa-angle-right"></i></div>%link</div>', '%title' );
+				previous_post_link( '<div class="nav-previous"><div class="link-caption"><i class="fa fa-angle-left"></i>'.$trans_prev.'</div>%link</div>', '%title' );
+				next_post_link( '<div class="nav-next"><div class="link-caption">'.$trans_next.'<i class="fa fa-angle-right"></i></div>%link</div>', '%title' );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -128,18 +132,34 @@ function accesspress_mag_entry_footer() {
     			printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'accesspress-mag' ) . '</span>', $categories_list );
     		}
     	}*/
-        
+        $trans_via = of_get_option( 'trans_via' );
+        if( empty( $trans_via ) ){ $trans_via = 'Via'; }
+        $trans_source = of_get_option( 'trans_source' );
+        if( empty( $trans_source ) ){ $trans_source = 'Source'; }
         $post_source_name   = get_post_meta($post->ID, 'post_source_name', true);
         $post_source_url    = get_post_meta($post->ID, 'post_source_url', true);
         $post_via_name      = get_post_meta($post->ID, 'post_via_name', true);
         $post_via_url       = get_post_meta($post->ID, 'post_via_url', true);
         if(!empty($post_via_name)){
-            echo '<div class="post-via-wrapper"><label class="via">Via</label><a href="'.esc_attr($post_via_url).'" target="_blank"><span class="via-name">'.esc_attr($post_via_name).'</span></a></div>';
+        ?>
+            <div class="post-via-wrapper">
+                <label class="via"><?php echo $trans_via;?></label>
+                <a href="<?php echo esc_attr( $post_via_url );?>" target="_blank">
+                    <span class="via-name"><?php echo esc_attr( $post_via_name ); ?></span>
+                </a> 
+            </div>
+        <?php
         }
         if(!empty($post_source_name)){
-            echo '<div class="post-source-wrapper"><label class="source">Source</label><a href="'.esc_attr($post_source_url).'" target="_blank"><span class="source-name">'.esc_attr($post_source_name).'</span></a></div>';
+        ?>
+            <div class="post-source-wrapper">
+                <label class="source"><?php echo $trans_source ;?></label>
+                <a href="<?php echo esc_attr( $post_source_url ); ?>" target="_blank">
+                    <span class="source-name"><?php echo esc_attr( $post_source_name ); ?></span>
+                </a>
+            </div>
+        <?php
         }
-       
         /*
     	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
     		echo '<span class="comments-link">';
@@ -149,12 +169,17 @@ function accesspress_mag_entry_footer() {
         */
     }
     if('post'==get_post_type() && !is_tag() ){
+        $trans_tagged = of_get_option( 'trans_tagged' );
         $apmag_show_tags = of_get_option('show_tags_post');
          if($apmag_show_tags!='0'){
             /* translators: used between list items, there is a space after the comma */
     		$tags_list = get_the_tag_list( '', __( ' ', 'accesspress-mag' ) );
     		if ( $tags_list ) {
-    			printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'accesspress-mag' ) . '</span>', $tags_list );
+    		  if( empty( $trans_tagged ) ){
+    		      printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'accesspress-mag' ) . '</span>', $tags_list );
+    		  } else {
+    		      printf( '<span class="tags-links">' .$trans_tagged.' %1$s </span>', $tags_list );
+    		  }
     		}
         }
     }

@@ -19,7 +19,7 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'accesspress-mag' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<h1 class="page-title"><span><?php printf( __( 'Search Results for: %s', 'accesspress-mag' ), '</span><span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>
@@ -38,7 +38,7 @@ get_header(); ?>
 
 			<?php 
                 $show_post_navigation = of_get_option('show_post_nextprev');
-                if($show_post_navigation!='0'){the_post_navigation();}
+                if($show_post_navigation!='0'){the_posts_navigation();}
              ?>
 
 		<?php else : ?>

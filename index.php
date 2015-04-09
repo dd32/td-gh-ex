@@ -42,7 +42,7 @@ else
 
 			<?php 
                 $show_post_navigation = of_get_option('show_post_nextprev');
-                if($show_post_navigation!='0'){the_post_navigation();}
+                if($show_post_navigation!='0'){the_posts_navigation();}
              ?>
 
 		<?php else : ?>

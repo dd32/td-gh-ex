@@ -4,7 +4,7 @@ Theme URI: http://accesspressthemes.com/accesspress-mag/
 Author: Accesspress Theme
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Mag is clean & modern WordPress magazine theme. It is ideal for newspaper, editorial, online magazine, review site, blog or personal website. It is a cutting-edge, feature-rich FREE Wordpress theme and is fully-responsive. Its feature includes: xx page templates, xx post layout, author block, in built rating system, large featured images for page/post, social media integration for wider social reach. 
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: accesspress-mag
@@ -595,14 +595,20 @@ article.hentry .entry-footer > span {
 }
 
 .page-header .page-title {
-  background: none repeat scroll 0 0 #f1f1f1;
+  background: url("images/slight-border.png") repeat-x left bottom;
   color: #3d3d3d;
-  font-family: "Open Sans",sans-serif;
+  /*font-family: "Open Sans",sans-serif;*/
   font-size: 30px;
   font-weight: 700;
   margin-bottom: 18px;
-  padding: 8px 10px;
+  padding: 8px 0 0 0;
+  line-height: 28px;
   text-transform: uppercase;
+}
+
+.page-header .page-title span{
+background: none repeat scroll 0 0 #ffffff;
+  padding-right: 12px;
 }
 
 .cat-links:before {
@@ -1220,6 +1226,12 @@ body.boxed-layout {
 	line-height: 24px;
 	margin-bottom: 0;
 }
+
+.logo_with_text .sitelogo-wrap{
+	margin-bottom: 10px;
+}
+
+
 
 /*--------------------------------------------------------------
 	NAV css 
@@ -2505,7 +2517,7 @@ body.boxed-layout {
 	Breadcrumb css 
 --------------------------------------------------------------*/
 
-#accesspres-mag-breadcrumbs {
+#accesspres-mag-breadcrumbs,.woocommerce-breadcrumb {
   background: none repeat scroll 0 0 #f1f1f1;
   margin-bottom: 20px;
   padding: 0;
@@ -2532,7 +2544,7 @@ body.boxed-layout {
 	height: 0;
 }
 
-#accesspres-mag-breadcrumbs .ak-container {
+#accesspres-mag-breadcrumbs .ak-container, .woocommerce-breadcrumb .ak-container {
   float: left;
   padding: 5px 0 5px 20px ;
 }

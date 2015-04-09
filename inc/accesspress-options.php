@@ -144,6 +144,16 @@ function optionsframework_options() {
 
 	// If using image radio buttons, define a directory path
 	$imagepath =  get_template_directory_uri() . '/images/';
+    
+    //Traslations Array
+    $translation_name = array(
+                            __( "Continue Reading", "accesspess-mag" ),__( "You are here", "accesspess-mag" ),__( "Editor Pick`s", "accesspess-mag" ),__( "Home", "accesspess-mag" ),__( "Share This Article", "accesspess-mag" ),__( "Review overview", "accesspess-mag" ),__( "Summary", "accesspess-mag" ),
+                            __( "Search results for", "accesspess-mag" ),__( "Tagged", "accesspess-mag" ),__( "Next article", "accesspess-mag" ),__( "Previous article", "accesspess-mag" ),__( "Via", "accesspess-mag" ),__( "Source", "accesspess-mag" ),__( "Advertisement", "accesspress-mag" )
+                            );
+    $translation_id = array(
+                            'continue_reading','you_are_here','editor_picks','home','share_this_article','review_overview','summary','search_results_for','tagged','next_article','previous_article','via','source','advertisement'
+                            );
+    $trans_count = count($translation_id);
 
 	$options = array();
 
@@ -933,6 +943,35 @@ function optionsframework_options() {
             'type' => 'text',
             'std' => 50, 
             );
+    $options[] = array(
+            'type' => 'groupend'
+            );
+
+/*------------------------Translations------------------------*/
+    $options[] = array(
+            'name' => __( 'Translations', 'accesspress-mag' ),
+            'type' => 'heading'
+            );
+    $options[] = array(
+            'name' => __( 'Translations', 'accesspress-mag' ),
+            'id'   => 'translations',
+            'type' => 'groupstart'
+            );
+    $options[] = array(
+            'name' => __( 'Translate Your Theme', 'accesspress-mag' ),
+            'desc' => __( 'Translate your frontend easily without any external plugins. While you leave the box empty and the theme will load the default string', 'accesspress-mag' ),
+            'id' => 'translate_notice',
+            'type' => 'info', 
+            );
+     for($i=0;$i<$trans_count;$i++)
+     {
+        $options[] = array(
+            'name' => $translation_name[$i],
+            'desc' => __( '', 'accesspress-mag' ),
+            'id' => 'trans_'.$translation_id[$i],
+            'type' => 'text', 
+            );
+     }       
     $options[] = array(
             'type' => 'groupend'
             );

@@ -23,3 +23,10 @@
 .audiourl-sec input[type="text"] {
   width: 690px;
 }
+.apmag-themeoption .option .controls a.wp-color-result{
+    padding: 0 0 0 30px;
+}
+.iris-palette-container a{
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+}

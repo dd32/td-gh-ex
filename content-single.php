@@ -9,8 +9,10 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
         <?php 
-            $article_ad = of_get_option('value_article_ad');
-            $show_featured_image = of_get_option('featured_image');
+            $article_ad = of_get_option( 'value_article_ad' );
+            $show_featured_image = of_get_option( 'featured_image' );
+            $trans_share = of_get_option( 'trans_share_this_article' );
+            if( empty( $trans_share ) ){ $trans_share = 'Share This Article'; }
         ?>
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
@@ -23,21 +25,6 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-    <?php 
-        $post_format = get_post_format();
-        $video_url = get_post_meta( $post->ID, 'post_embed_videourl', true );
-        $audio_url = get_post_meta( $post->ID, 'post_embed_audiourl', true );
-        if( $post_format == 'video' && !empty( $video_url )){
-            $embed_args = array(
-                            'Height'=>'792',
-                            'Width'=>'356'
-                            );
-            $embed_code = wp_oembed_get( $video_url );
-            echo '<div class="singlepost-videotumb">'.$embed_code.'</div>';
-        } elseif( $post_format == 'audio' && !empty( $audio_url ) ){
-            echo '<div class="singlepost-audiotumb">'.do_shortcode('[audio src="'.$audio_url.'"]').'</div>';
-        } else {
-    ?>
             <div class="post_image">
                 <?php 
                     $image_id = get_post_thumbnail_id();
@@ -52,13 +39,9 @@
                     }
                 ?>
             </div>
-    <?php   
-        }
-    ?>
-        
         <div class="post_content"><?php the_content(); ?></div>	
         <div class="postshare-wrapper">
-            <span><?php _e( 'Share This Article', 'accesspress-mag' );?></span>
+            <span><?php echo $trans_share ;?></span>
             <?php echo do_shortcode( '[apss-share]' );?>
         </div>	
         <?php if( !empty( $article_ad )):?> <div class="article-ad-section"><?php echo $article_ad; ?></div> <?php endif ;?>
