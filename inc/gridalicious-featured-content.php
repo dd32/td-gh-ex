@@ -79,10 +79,10 @@ function gridalicious_featured_content_display() {
 						if ( !empty( $headline ) || !empty( $subheadline ) ) {
 							$gridalicious_featured_content .='<div class="featured-heading-wrap">';
 								if ( !empty( $headline ) ) {
-									$gridalicious_featured_content .='<h1 id="featured-heading" class="entry-title">'. esc_attr( $headline ) .'</h1>';
+									$gridalicious_featured_content .='<h1 id="featured-heading" class="entry-title">'. $headline .'</h1>';
 								}
 								if ( !empty( $subheadline ) ) {
-									$gridalicious_featured_content .='<p>'. esc_attr( $subheadline ) .'</p>';
+									$gridalicious_featured_content .='<p>'. $subheadline .'</p>';
 								}
 							$gridalicious_featured_content .='</div><!-- .featured-heading-wrap -->';
 						}
@@ -154,48 +154,48 @@ function gridalicious_demo_content( $options ) {
 	$gridalicious_demo_content = '
 		<article id="featured-post-1" class="post hentry post-demo">
 			<figure class="featured-content-image">
-				<img alt="Durbar Square" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured1-400x225.jpg" />
+				<img alt="Central Park" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured1-400x225.jpg" />
 			</figure>
 			<div class="entry-container">
 				<header class="entry-header">
 					<h1 class="entry-title">
-						Durbar Square
+						Central Park
 					</h1>
 				</header>
 				<div class="entry-content">
-					The Kathmandu Durbar Square holds the palaces of the Malla and Shah kings who ruled over the city. Along with these palaces, the square surrounds quadrangles revealing courtyards and temples.
+					Central Park is is the most visited urban park in the United States as well as one of the most filmed locations in the world. It was opened in 1857 and is expanded in 843 acres of city-owned land.
 				</div>
 			</div><!-- .entry-container -->			
 		</article>
 
 		<article id="featured-post-2" class="post hentry post-demo">
 			<figure class="featured-content-image">
-				<img alt="Seto Ghumba" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured2-400x225.jpg" />
+				<img alt="Antique Clock" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured2-400x225.jpg" />
 			</figure>
 			<div class="entry-container">
 				<header class="entry-header">
 					<h1 class="entry-title">
-						Seto Ghumba
+						Antique Clock
 					</h1>
 				</header>
 				<div class="entry-content">
-					Situated western part in the outskirts of the Kathmandu valley, Seto Gumba also known as Druk Amitabh Mountain or White Monastery, is one of the most popular Buddhist monasteries of Nepal.
+					Antique clocks increase in value with the rarity of the design, their condition, and appeal in the market place. Many different materials were used in antique clocks.
 				</div>
 			</div><!-- .entry-container -->			
 		</article>
 		
 		<article id="featured-post-3" class="post hentry post-demo">
 			<figure class="featured-content-image">
-				<img alt="Swayambhunath" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured3-400x225.jpg" />
+				<img alt="Vespa Scooter" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured3-400x225.jpg" />
 			</figure>
 			<div class="entry-container">
 				<header class="entry-header">
 					<h1 class="entry-title">
-						Swayambhunath
+						Vespa Scooter
 					</h1>
 				</header>
 				<div class="entry-content">
-					Swayambhunath is an ancient religious site up in the hill around Kathmandu Valley. It is also known as the Monkey Temple as there are holy monkeys living in the north-west parts of the temple.
+					The Vespa has evolved from a single model motor scooter manufactured in 1946 by Piaggio & Co. S.p.A. of Pontedera, Italy-to a full line of scooters, today owned by Piaggio.
 				</div>
 			</div><!-- .entry-container -->			
 		</article>';
@@ -264,7 +264,7 @@ function gridalicious_page_content( $options ) {
 
 		$i=0; 
 		while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post(); $i++;
-			$title_attribute = apply_filters( 'the_title', get_the_title( $post->ID ) );
+			$title_attribute = the_title_attribute( array( 'before' => __( 'Permalink to:', 'gridalicious' ), 'echo' => false ) );
 			
 			$excerpt = get_the_excerpt();
 			
@@ -273,7 +273,7 @@ function gridalicious_page_content( $options ) {
 				if ( has_post_thumbnail() ) {
 					$gridalicious_page_content .= '
 					<figure class="featured-homepage-image">
-						<a href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">
+						<a href="' . get_permalink() . '" title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'gridalicious' ), 'echo' => false ) ) . '">
 						'. get_the_post_thumbnail( $post->ID, 'medium', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class' => 'pngfix' ) ) .'
 						</a>
 					</figure>';
@@ -284,19 +284,23 @@ function gridalicious_page_content( $options ) {
 					if ( '' != $gridalicious_first_image ) {
 						$gridalicious_page_content .= '
 						<figure class="featured-homepage-image">
-							<a href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">
+							<a href="' . get_permalink() . '" title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'gridalicious' ), 'echo' => false ) ) . '">
 								'. $gridalicious_first_image .'
 							</a>
 						</figure>';
 					}
 				}
-
 				$gridalicious_page_content .= '
-					<div class="entry-container">';
-						$gridalicious_page_content .= the_title( '<header class="entry-header"><h1 class="entry-title">','</h1></header>', false );
-						$gridalicious_page_content .= '<p>'. get_the_content( $more_link_text , true ) .'</p>';
-						$gridalicious_page_content .= '<a href="' . get_permalink() . '" title="Permalink to '.the_title( '', '', false ).'"></a>';
-					$gridalicious_page_content .= '
+					<div class="entry-container">
+						<header class="entry-header">
+							<h1 class="entry-title">
+								<a href="' . get_permalink() . '" rel="bookmark">' . the_title( '','', false ) . '</a>
+							</h1>
+						</header>';
+						if( $excerpt !='') {
+							$gridalicious_page_content .= '<div class="entry-content">'. $excerpt.'</div>';
+						}	
+						$gridalicious_page_content .= '
 					</div><!-- .entry-container -->
 				</article><!-- .featured-post-'. $i .' -->';
 		endwhile;

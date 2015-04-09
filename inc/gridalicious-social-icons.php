@@ -53,15 +53,21 @@ function gridalicious_get_social_icons(){
 		$social_icons['Spotify']		= isset( $options['spotify_link'] ) ? $options['spotify_link'] : '' ;
 		$social_icons['Twitch']			= isset( $options['twitch_link'] ) ? $options['twitch_link'] : '' ;
 
-		foreach ( $social_icons as $key => $value )
-			if( $value !='' ){
+		foreach ( $social_icons as $key => $value ) {
+			if( '' != $value ){
 				$title	=	explode( '-', $key );
-				if ( $key == 'Mail' )  
-					$output .= '<a class="genericon_parent genericon genericon-'. strtolower( $key ) .'" target="_blank" title="'. __( 'Email', 'gridalicious') . '" href="mailto:'. $value .'"><span class="screen-reader-text">'. __( 'Email', 'gridalicious') . '</span> </a>';
-				else
+				if ( 'Mail' == $key  ) { 
+					$output .= '<a class="genericon_parent genericon genericon-'. strtolower( $key ) .'" title="'. __( 'Email', 'gridalicious') . '" href="mailto:'. sanitize_email( $value ) .'"><span class="screen-reader-text">'. __( 'Email', 'gridalicious') . '</span> </a>';
+				}
+				else if ( 'Skype' == $key  ) { 
+					$output .= '<a class="genericon_parent genericon genericon-'. strtolower( $key ) .'" title="'. $title[ 0 ] . '" href="'. esc_attr( $value ) .'"><span class="screen-reader-text">'.$title[ 0 ] . '</span> </a>';
+				}
+				else {
 					$output .= '<a class="genericon_parent genericon genericon-'. strtolower( $key ) .'" target="_blank" title="'. $title[ 0 ] .'" href="'. esc_url( $value ) .'"><span class="screen-reader-text">'. $title[ 0 ] .'</span> </a>';
+				}
 			}
-
+		}
+		
 		$gridalicious_social_icons = $output;
 		
 		set_transient( 'gridalicious_social_icons', $gridalicious_social_icons, 86940 );	

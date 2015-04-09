@@ -38,7 +38,7 @@ function gridalicious_customize_register( $wp_customize ) {
 	$defaults = gridalicious_get_default_theme_options();
 
 	//Custom Controls
-	require_once( get_template_directory() . '/inc/customizer-includes/gridalicious-customizer-custom-controls.php' );
+	require get_template_directory() . '/inc/customizer-includes/gridalicious-customizer-custom-controls.php';
 
 	// Custom Logo (added to Site Title and Tagline section in Theme Customizer)
 	$wp_customize->add_setting( 'gridalicious_theme_options[logo]', array(
@@ -123,19 +123,19 @@ function gridalicious_customize_register( $wp_customize ) {
 	//End Color Scheme
 
 	// Header Options (added to Header section in Theme Customizer)
-	require_once( get_template_directory() . '/inc/customizer-includes/gridalicious-customizer-header-options.php' );
+	require get_template_directory() . '/inc/customizer-includes/gridalicious-customizer-header-options.php';
 
 	//Theme Options
-	require_once( get_template_directory() . '/inc/customizer-includes/gridalicious-customizer-theme-options.php' );
+	require get_template_directory() . '/inc/customizer-includes/gridalicious-customizer-theme-options.php';
 	
 	//Featured Content Setting
-	require_once( get_template_directory() . '/inc/customizer-includes/gridalicious-customizer-featured-content-setting.php' );
+	require get_template_directory() . '/inc/customizer-includes/gridalicious-customizer-featured-content-setting.php';
    	
 	//Featured Grid Content
-	require_once( get_template_directory() . '/inc/customizer-includes/gridalicious-customizer-featured-grid-content.php' );
+	require get_template_directory() . '/inc/customizer-includes/gridalicious-customizer-featured-grid-content.php';
 
 	//Social Links
-	require_once( get_template_directory() . '/inc/customizer-includes/gridalicious-customizer-social-icons.php' );
+	require get_template_directory() . '/inc/customizer-includes/gridalicious-customizer-social-icons.php';
 	
 	// Reset all settings to default
 	$wp_customize->add_section( 'gridalicious_reset_all_settings', array(

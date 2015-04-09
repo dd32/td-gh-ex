@@ -1,20 +1,37 @@
 == Change log ==
 
-= 0.5 =
-* Fixed header text condition for Sidebar
+= 1.0 =
+* Bug Fixed: Html is now allowed in Featured Content Headline and Sub-headline
+* Bug Fixed: Header Right Social Icon
+* Bug fixed: Check class logo left or logo right only when there is logo and logo is not disabled
+* Bug Fixed: Featured Content Layout Type css issue
+* Bug Fixed: added missing keyword _nx:1,2,4c and esc_html__ in language file gridalicious.pot
+* Bug Fixed: Skype Social icon and open link in new window for email issues
+* Bug Fixed: Sidebar layout option 
+* Bug Fixed: Social icon wrap
+* Removed unnecessary file gridalicious-menu.js
+* Removed duplicate class site-­header as ID found
+* Replaced the_title() with the_title_attribute() where title is used as attribute
+* Replaced all require_once with require
+* Replaced demo featured content text
 
-= 0.4=
+= 0.5 =
+* Added Option in Enable Header Image: Excluding Home, Page/Post Featured Image
+* Fixed header text condition for Sidebar
+* Removed jquery cookie and its dependencies
+
+= 0.4 =
 * Added gridalicious- prefix to some js handles
 * Bug Fixed: undefined index $page_for_posts for Featured Header Image
 * Bug Fixed: featured-heading-wrap, $headline and $subheadline empty check in featured content
 * Bug Fixed: Featured Content missing classes entry-header and entry-title
 * Bug Fixed: Html is now allowed in Promotion Headline
 * Bug Fixed: Breadcrumb undefined index issue
-* Changed get_page to get_post as get_page is depriciated
+* Changed get_page to get_post as get_page is depreciated
 * Renamed "custom_meta_box_nonce" renamed to  "gridalicious_custom_meta_box_nonce"
 * Sanitized custom metabox settings
 
-= 0.3=
+= 0.3 =
 * Bug Fixed: Homepage Category Options ( missing function gridalicious_sanitize_category_list ) 
 
 = 0.2 =

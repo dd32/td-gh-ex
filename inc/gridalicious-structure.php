@@ -94,7 +94,7 @@ if ( ! function_exists( 'gridalicious_header_start' ) ) :
 	 */
 	function gridalicious_header_start() {
 		?>
-		<header id="masthead" class="site-header" role="banner">
+		<header id="masthead" role="banner">
     		<div class="wrapper">
 		<?php
 	}
@@ -243,11 +243,15 @@ if ( ! function_exists( 'gridalicious_header_right' ) ) :
  */
 function gridalicious_header_right() { ?>
 	<aside class="sidebar sidebar-header-right widget-area">
-	<?php
-		//Header Right Widgets Sidebar
-		the_widget( 'Gridalicious_social_icons_widget' );
-	?>
-	</aside><!-- .sidebar .header-sidebar .widget-area -->
+		<?php if ( '' != ( $gridalicious_social_icons = gridalicious_get_social_icons() ) ) { ?>
+			<section class="widget widget_gridalicious_social_icons" id="header-right-social-icons">
+				<div class="widget-wrap">
+					<?php echo $gridalicious_social_icons; ?>
+				</div><!-- .widget-wrap -->
+			</section><!-- #header-right-social-icons -->
+		<?php 
+		} ?>		
+	</aside><!-- .sidebar .header-sidebar .widget-area -->	
 <?php	
 }
 endif;

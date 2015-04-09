@@ -222,7 +222,7 @@ if ( ! function_exists( 'gridalicious_site_branding' ) ) :
 			$gridalicious_header_text = '';
 		}
 
-		if ( '' != $options['logo'] ) {
+		if ( '' != $options['logo'] && !$options['logo_disable'] ) {
 			if( ! $options['move_title_tagline'] ) {
 				$gridalicious_site_branding  = '<div id="site-branding" class="logo-left">';
 				$gridalicious_site_branding .= $gridalicious_site_logo;
@@ -449,6 +449,17 @@ if ( ! function_exists( 'gridalicious_featured_overall_image' ) ) :
 			}
 			else {
 				gridalicious_featured_image();	
+			}
+		}
+		elseif ( $enableheaderimage == 'exclude-home-page-post' ) {
+			if ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) {
+				return false;
+			}
+			elseif ( is_page() || is_single() ) {
+				gridalicious_featured_page_post_image();
+			}
+			else {
+				gridalicious_featured_image();
 			}
 		}
 		// Check Entire Site

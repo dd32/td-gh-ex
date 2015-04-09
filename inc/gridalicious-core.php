@@ -165,7 +165,7 @@ function gridalicious_scripts() {
 	 * Enqueue the styles for the current color scheme for gridalicious.
 	 */
 	if ( $options['color_scheme'] != 'light' )
-		wp_enqueue_style( 'dark', get_template_directory_uri() . '/css/colors/'. $options['color_scheme'] .'.css', array(), null );
+		wp_enqueue_style( 'gricalicious-dark', get_template_directory_uri() . '/css/colors/'. $options['color_scheme'] .'.css', array(), null );
 	
 	/**
 	 * Loads up Responsive stylesheet and Menu JS
@@ -200,8 +200,7 @@ add_action( 'wp_enqueue_scripts', 'gridalicious_scripts' );
  */
 function gridalicious_enqueue_metabox_scripts() {
     //Scripts
-	wp_register_script( 'jquery-cookie', get_template_directory_uri() . '/js/jquery.cookie.min.js' );
-	wp_enqueue_script( 'gridalicious-metabox', get_template_directory_uri() . '/js/gridalicious-metabox.min.js', array( 'jquery-ui-tabs', 'jquery-cookie' ), '2013-10-05' );
+	wp_enqueue_script( 'gridalicious-metabox', get_template_directory_uri() . '/js/gridalicious-metabox.min.js', array( 'jquery', 'jquery-ui-tabs' ), '2013-10-05' );
 	
 	//CSS Styles
 	wp_enqueue_style( 'gridalicious-metabox-tabs', get_template_directory_uri() . '/css/gridalicious-metabox-tabs.css' );
@@ -954,14 +953,25 @@ if ( ! function_exists( 'gridalicious_body_classes' ) ) :
 	 * @since Gridalicious 0.1
 	 */
 	function gridalicious_body_classes( $classes ) {
-		global $post;
+		global $post, $wp_query;
 
 		// Adds a class of group-blog to blogs with more than 1 published author
 		if ( is_multi_author() ) {
 			$classes[] = 'group-blog';
 		}
 
-		if ( $post ) {
+		// Front page displays in Reading Settings
+	    $page_on_front 	= get_option('page_on_front') ;
+	    $page_for_posts = get_option('page_for_posts');
+	
+		// Get Page ID outside Loop
+	    $page_id = $wp_query->get_queried_object_id();
+		
+		// Blog Page or Front Page setting in Reading Settings
+		if ( $page_id == $page_for_posts || $page_id == $page_on_front ) {
+	        $layout = get_post_meta( $page_id,'gridalicious-layout-option', true );
+	    }
+    	else if ( is_singular() ) {
 	 		if ( is_attachment() ) { 
 				$parent = $post->post_parent;
 				
@@ -970,9 +980,13 @@ if ( ! function_exists( 'gridalicious_body_classes' ) ) :
 				$layout = get_post_meta( $post->ID,'gridalicious-layout-option', true ); 
 			}
 		}
+		else {
+			$layout = 'default';
+		}
 
-		if ( empty( $layout ) || ( !is_page() && !is_single() ) ) {
-			$layout='default';
+		//check empty and load default
+		if( empty( $layout ) ) {
+			$layout = 'default';
 		}
 
 		$options 		= gridalicious_get_theme_options();

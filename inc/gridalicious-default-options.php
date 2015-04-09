@@ -177,6 +177,10 @@ function gridalicious_enable_featured_header_image_options() {
 			'value'	=> 'exclude-home',
 			'label' => __( 'Excluding Homepage', 'gridalicious' ),
 		),
+		'exclude-home-page-post' 	=> array(
+			'value' => 'exclude-home-page-post',
+			'label' => __( 'Excluding Homepage, Page/Post Featured Image', 'gridalicious' ),
+		),
 		'entire-site' 	=> array(
 			'value' => 'entire-site',
 			'label' => __( 'Entire Site', 'gridalicious' ),

@@ -24,7 +24,7 @@ if( !function_exists( 'gridalicious_featured_grid_content' ) ) :
  */
 function gridalicious_featured_grid_content() {
 	global $post, $wp_query;
-	gridalicious_flush_transients();
+	//gridalicious_flush_transients();
 	// get data value from options
 	$options 		= gridalicious_get_theme_options();
 	$enablegrid_content 	= $options['featured_grid_content_option'];
@@ -162,7 +162,7 @@ function gridalicious_page_grid_content( $options ) {
 
 			$get_featured_posts->the_post();			
 			
-			$title_attribute = apply_filters( 'the_title', get_the_title( $post->ID ) );
+			$title_attribute = the_title_attribute( array( 'before' => __( 'Permalink to:', 'gridalicious' ), 'echo' => false ) );
 			
 			$classes = 'page pageid-' . $post->ID;
 
@@ -174,7 +174,7 @@ function gridalicious_page_grid_content( $options ) {
 			}
 
 			$gridalicious_page_grid_content .= 
-			'<a class="grid-box '. $classes .'" title="Permalink to '. esc_attr( the_title('', '', false) ) . '" href="' . esc_url( get_permalink() ) . '">';
+			'<a class="grid-box '. $classes .'" title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'gridalicious' ), 'echo' => false ) ) . '" href="' . esc_url( get_permalink() ) . '">';
 				
 			if ( has_post_thumbnail() ) {
 				$gridalicious_page_grid_content .= get_the_post_thumbnail( $post->ID, 'gridalicious-featured-grid', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class'	=> 'pngfix' ) );

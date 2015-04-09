@@ -28,23 +28,30 @@ do_action( 'gridalicious_before_secondary' );?>
 	// Get Page ID outside Loop
 	$page_id = $wp_query->get_queried_object_id();	
 	
-	// Post /Page /General Layout
-	if ( $post) {
+	// Blog Page or Front Page setting in Reading Settings
+	if ( $page_id == $page_for_posts || $page_id == $page_on_front ) {
+        $layout 		= get_post_meta( $page_id,'gridalicious-layout-option', true );
+        $sidebaroptions = get_post_meta( $page_id, 'gridalicious-sidebar-options', true );
+    }
+	else if ( is_singular() ) {
 		if ( is_attachment() ) { 
 			$parent = $post->post_parent;
-			$layout = get_post_meta( $parent, 'gridalicious-layout-option', true );
+			$layout 		= get_post_meta( $parent, 'gridalicious-layout-option', true );
 			$sidebaroptions = get_post_meta( $parent, 'gridalicious-sidebar-options', true );
 			
-		} else {
-			$layout = get_post_meta( $post->ID, 'gridalicious-layout-option', true ); 
+		} 
+		else {
+			$layout 		= get_post_meta( $post->ID, 'gridalicious-layout-option', true ); 
 			$sidebaroptions = get_post_meta( $post->ID, 'gridalicious-sidebar-options', true ); 
 		}
 	}
 	else {
 		$sidebaroptions = '';
+		$layout = 'default';
 	}
-			
-	if( empty( $layout ) || ( !is_page() && !is_single() ) ) {
+
+	//check empty and load default
+	if( empty( $layout ) ) {
 		$layout = 'default';
 	}
 	

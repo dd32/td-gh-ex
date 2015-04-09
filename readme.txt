@@ -80,13 +80,65 @@ To add featured page grid,
 4. Then you can change the number of slides and select your pages in "Featured Page #"
 4. Finally, click on "Save & Publish"
 
-= Featured Icons =
+= Social Icons =
 
-Gridalicious has custom social icons for various social networking sites. 
+Gridalicious has social icons for various social networking sites. 
 1. Go to "Appearance -> Customize -> Social Links" form your WordPress Dashboard
 2. Add in your social profile links and click on "Save & Publish" 
 
 Note: By default social links will be added in Header Right Section. You can also add that in your sidebar from "Appearance -> Widgets"
+
+Available icons:
+* Codepen
+* Digg
+* Dribbble
+* Dropbox
+* Facebook
+* Flickr
+* Foursquare
+* GitHub
+* Google+
+* Instagram
+* LinkedIn
+* Email
+* Pinterest
+* Pocket
+* PollDaddy
+* Reddit
+* RSS Feed
+* Spotify
+* StumbleUpon
+* Tumblr
+* Twitch
+* Twitter
+* Vimeo
+* WordPress
+* YouTube
+
+Skype Link:
+Skype link can have several formats which are documented below:
+Username:
+    skype:profile_name?action 
+
+    Examples of such actions are
+    * call        to call
+    * chat        to chat
+    * voicemail   to leave a voice mail
+    * sendfile    to send a file
+    * add         to add to contacts
+    * userinfo    to view profile
+
+    E.g: skype:echo123?call
+    This will initiate test call use skype usenarme echo123
+
+Number:
+    callto://+*********** 
+
+    E.g: callto://+14044627491
+    This will initiate Skype to call phone number 14044627491
+
+Number:
+    callto://+*********** : Link will initiate Skype to call my Skype username!
 
 = Theme Instructions =
 

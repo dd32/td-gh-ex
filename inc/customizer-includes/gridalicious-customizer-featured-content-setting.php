@@ -115,7 +115,7 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'gridalicious_theme_options[featured_content_headline]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['featured_content_headline'],
-		'sanitize_callback'	=> 'sanitize_text_field',
+		'sanitize_callback'	=> 'wp_kses_post',
 	) );
 
 	$wp_customize->add_control( 'gridalicious_theme_options[featured_content_headline]' , array(
@@ -131,7 +131,7 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'gridalicious_theme_options[featured_content_subheadline]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['featured_content_subheadline'],
-		'sanitize_callback'	=> 'sanitize_text_field',
+		'sanitize_callback'	=> 'wp_kese_post',
 	) );
 
 	$wp_customize->add_control( 'gridalicious_theme_options[featured_content_subheadline]' , array(

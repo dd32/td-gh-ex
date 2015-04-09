@@ -13,7 +13,7 @@
 
 //define theme version
 if ( !defined( 'GRIDALICIOUS_THEME_VERSION' ) )
-define ( 'GRIDALICIOUS_THEME_VERSION', '0.4' );
+define ( 'GRIDALICIOUS_THEME_VERSION', '1.0' );
 
 /**
  * Implement the core functions
