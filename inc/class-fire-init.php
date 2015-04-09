@@ -728,7 +728,16 @@ if ( ! class_exists( 'TC_init' ) ) :
             return $_title;
           }
 
-          //
+          //allow slider in the woocommerce shop page
+          add_filter('tc_show_slider', 'tc_woocommerce_enable_shop_slider');
+          function tc_woocommerce_enable_shop_slider( $bool ){
+            return ( function_exists('is_woocommerce') && is_woocommerce() && function_exists('is_shop') && is_shop() ) ? true : $bool;
+          }
+          //to allow the slider in the woocommerce shop page we need the shop page id
+          add_filter('tc_slider_get_real_id', 'tc_woocommerce_shop_page_id');
+          function tc_woocommerce_shop_page_id( $id ){
+            return ( function_exists('is_woocommerce') && is_woocommerce() && function_exists('is_shop') && is_shop() && function_exists('wc_get_page_id') ) ? wc_get_page_id('shop') : $id;
+          }
 
           //handles the woocomerce sidebar : removes action if sidebars not active
           if ( !is_active_sidebar( 'shop') ) {
@@ -744,7 +753,7 @@ if ( ! class_exists( 'TC_init' ) ) :
 
 
           //removes post comment action on after_loop hook
-          add_filter( 'tc_show_comments', 'tc_woocommerce_disable_comments' );
+          add_filter( 'tc_are_comments_enabled', 'tc_woocommerce_disable_comments' );
           function tc_woocommerce_disable_comments($bool) {
              return ( function_exists('is_woocommerce') && is_woocommerce() ) ? false : $bool;
           }
