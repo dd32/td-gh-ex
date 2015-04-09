@@ -236,7 +236,7 @@ function fullframe_header_right() { ?>
 		<?php if ( '' != ( $fullframe_social_icons = fullframe_get_social_icons() ) ) { ?>
 			<section class="widget widget_fullframe_social_icons" id="header-right-social-icons">
 				<div class="widget-wrap">
-					<?php echo fullframe_get_social_icons(); ?>
+					<?php echo $fullframe_social_icons; ?>
 				</div>
 			</section>
 		<?php } ?>

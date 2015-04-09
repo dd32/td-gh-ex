@@ -1,5 +1,11 @@
 == Change log ==
 
+= 1.4 =
+* Added Brazilian Portuguese translation pt_BR.po and pt_BR.mo
+* Bug Fixed: Responsive css issue with iPhone5 and below
+* Bug Fixed: Sidebar layout option 
+* Bug Fixed: Featured content issues
+
 = 1.3 =
 * Added French translation fr_FR.po and fr_FR.mo
 * Bug Fixed: Responsive css issue with iPhone4

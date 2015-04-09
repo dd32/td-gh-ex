@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Full Frame\n"
 "Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/catch-base-pro-"
 "premium/pro-premium/\n"
-"POT-Creation-Date: 2015-03-28 11:50+0545\n"
-"PO-Revision-Date: 2015-03-28 11:50+0545\n"
+"POT-Creation-Date: 2015-04-09 22:13+0545\n"
+"PO-Revision-Date: 2015-04-09 22:13+0545\n"
 "Last-Translator: Anders <anders@paulcen.se>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: sv\n"
@@ -98,7 +98,7 @@ msgstr "Ljud"
 msgid "Chats"
 msgstr "Chatt"
 
-#: ../archive.php:69 ../sidebar.php:90
+#: ../archive.php:69 ../sidebar.php:91
 msgid "Archives"
 msgstr "Arkiv"
 
@@ -749,15 +749,15 @@ msgstr "<span class=\"screen-reader-text\">Taggar</span>"
 msgid "%s"
 msgstr "%s"
 
-#: ../inc/fullframe-core.php:1380
+#: ../inc/fullframe-core.php:1394
 msgid "Scroll Up"
 msgstr "Scrolla upp"
 
-#: ../inc/fullframe-core.php:1397
+#: ../inc/fullframe-core.php:1411
 msgid "Posted on"
 msgstr "﻿Publicerat den"
 
-#: ../inc/fullframe-core.php:1398
+#: ../inc/fullframe-core.php:1412
 msgid "By"
 msgstr "Av"
 
@@ -1161,11 +1161,11 @@ msgctxt "label"
 msgid "Search for:"
 msgstr "Sök efter:[label]"
 
-#: ../sidebar.php:73
+#: ../sidebar.php:74
 msgid "Primary Sidebar Widget Area"
 msgstr "Primära sidofältet Widget område"
 
-#: ../sidebar.php:76
+#: ../sidebar.php:77
 msgid ""
 "This is the Primary Sidebar Widget Area if you are using a two column site "
 "layout option."
@@ -1173,7 +1173,7 @@ msgstr ""
 "Detta är den primära sidopanelen om du använder en två eller tre kolumn "
 "webbplats layoutalternativ."
 
-#: ../sidebar.php:77
+#: ../sidebar.php:78
 #, php-format
 msgid ""
 "By default it will load Search and Archives widgets as shown below. You can add "

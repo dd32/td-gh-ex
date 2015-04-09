@@ -28,23 +28,24 @@ do_action( 'fullframe_before_secondary' );?>
 	// Get Page ID outside Loop
 	$page_id = $wp_query->get_queried_object_id();	
 	
-	// Post /Page /General Layout
-	if ( $post) {
+	// Blog Page or Front Page setting in Reading Settings
+	if ( $page_id == $page_for_posts || $page_id == $page_on_front ) {
+        $layout 		= get_post_meta( $page_id,'fullframe-layout-option', true );
+    }
+	else if ( is_singular() ) {
 		if ( is_attachment() ) { 
 			$parent = $post->post_parent;
 			$layout = get_post_meta( $parent, 'fullframe-layout-option', true );
-			$sidebaroptions = get_post_meta( $parent, 'fullframe-sidebar-options', true );
-			
-		} else {
-			$layout = get_post_meta( $post->ID, 'fullframe-layout-option', true ); 
-			$sidebaroptions = get_post_meta( $post->ID, 'fullframe-sidebar-options', true ); 
+		} 
+		else {
+			$layout = get_post_meta( $post->ID, 'fullframe-layout-option', true );
 		}
 	}
 	else {
-		$sidebaroptions = '';
+		$layout = 'default';
 	}
-			
-	if( empty( $layout ) || ( !is_page() && !is_single() ) ) {
+
+	if( empty( $layout ) ) {
 		$layout = 'default';
 	}
 	

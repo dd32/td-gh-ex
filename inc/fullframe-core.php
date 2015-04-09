@@ -1011,25 +1011,39 @@ if ( ! function_exists( 'fullframe_body_classes' ) ) :
 	 * @since Fullframe 1.0
 	 */
 	function fullframe_body_classes( $classes ) {
-		global $post;
+		global $post, $wp_query;
 
 		// Adds a class of group-blog to blogs with more than 1 published author
 		if ( is_multi_author() ) {
 			$classes[] = 'group-blog';
 		}
 
-		if ( $post ) {
+		// Front page displays in Reading Settings
+	    $page_on_front 	= get_option('page_on_front') ;
+	    $page_for_posts = get_option('page_for_posts');
+	
+		// Get Page ID outside Loop
+	    $page_id = $wp_query->get_queried_object_id();
+		
+		// Blog Page or Front Page setting in Reading Settings
+		if ( $page_id == $page_for_posts || $page_id == $page_on_front ) {
+	        $layout = get_post_meta( $page_id,'fullframe-layout-option', true );
+	    }
+    	else if ( is_singular() ) {
 	 		if ( is_attachment() ) { 
-				$parent = $post->post_parent;
-				
+				$parent = $post->post_parent;				
 				$layout = get_post_meta( $parent,'fullframe-layout-option', true );
-			} else {
+			} 
+			else {
 				$layout = get_post_meta( $post->ID,'fullframe-layout-option', true ); 
 			}
 		}
+		else {
+			$layout = 'default';
+		}
 
-		if ( empty( $layout ) || ( !is_page() && !is_single() ) ) {
-			$layout='default';
+		if( empty( $layout ) ) {
+			$layout = 'default';
 		}
 
 		$options 		= fullframe_get_theme_options();

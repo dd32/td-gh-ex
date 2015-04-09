@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Full Frame\n"
 "Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/full-frame-pro-"
 "premium/pro-premium/\n"
-"POT-Creation-Date: 2015-03-28 11:49+0545\n"
-"PO-Revision-Date: 2015-03-28 11:49+0545\n"
+"POT-Creation-Date: 2015-04-09 22:12+0545\n"
+"PO-Revision-Date: 2015-04-09 22:12+0545\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: en\n"
@@ -97,7 +97,7 @@ msgstr ""
 msgid "Chats"
 msgstr ""
 
-#: ../archive.php:69 ../sidebar.php:90
+#: ../archive.php:69 ../sidebar.php:91
 msgid "Archives"
 msgstr ""
 
@@ -726,15 +726,15 @@ msgstr ""
 msgid "%s"
 msgstr ""
 
-#: ../inc/fullframe-core.php:1380
+#: ../inc/fullframe-core.php:1394
 msgid "Scroll Up"
 msgstr ""
 
-#: ../inc/fullframe-core.php:1397
+#: ../inc/fullframe-core.php:1411
 msgid "Posted on"
 msgstr ""
 
-#: ../inc/fullframe-core.php:1398
+#: ../inc/fullframe-core.php:1412
 msgid "By"
 msgstr ""
 
@@ -1131,17 +1131,17 @@ msgctxt "label"
 msgid "Search for:"
 msgstr ""
 
-#: ../sidebar.php:73
+#: ../sidebar.php:74
 msgid "Primary Sidebar Widget Area"
 msgstr ""
 
-#: ../sidebar.php:76
+#: ../sidebar.php:77
 msgid ""
 "This is the Primary Sidebar Widget Area if you are using a two column site "
 "layout option."
 msgstr ""
 
-#: ../sidebar.php:77
+#: ../sidebar.php:78
 #, php-format
 msgid ""
 "By default it will load Search and Archives widgets as shown below. You can add "

@@ -185,7 +185,7 @@ function fullframe_demo_content( $options ) {
 			<div class="entry-container">
 				<header class="entry-header">
 					<h1 class="entry-title">
-						Central Park
+						<a href="#" rel="bookmark">Central Park</a>
 					</h1>
 				</header>
 				<div class="entry-content">
@@ -201,7 +201,7 @@ function fullframe_demo_content( $options ) {
 			<div class="entry-container">
 				<header class="entry-header">
 					<h1 class="entry-title">
-						Antique Clock
+						<a href="#" rel="bookmark">Antique Clock</a>
 					</h1>
 				</header>
 				<div class="entry-content">
@@ -217,7 +217,7 @@ function fullframe_demo_content( $options ) {
 			<div class="entry-container">
 				<header class="entry-header">
 					<h1 class="entry-title">
-						Vespa Scooter
+						<a href="#" rel="bookmark">Vespa Scooter</a>
 					</h1>
 				</header>
 				<div class="entry-content">
@@ -235,7 +235,7 @@ function fullframe_demo_content( $options ) {
 			<div class="entry-container">
 				<header class="entry-header">
 					<h1 class="entry-title">
-						Dhulikhel
+						<a href="#" rel="bookmark">Dhulikhel</a>
 					</h1>
 				</header>
 			</div><!-- .entry-container -->			
@@ -335,11 +335,16 @@ function fullframe_page_content( $options ) {
 				if ( '1' == $options['featured_content_enable_title'] || '1'== $options['featured_content_enable_excerpt_content'] ) {
 				$fullframe_page_content .= '
 					<div class="entry-container">';
-					if ( '1' == $options['featured_content_enable_title'] ) {		
-							$fullframe_page_content .= the_title( '<header class="entry-header"><h1 class="entry-title">','</h1></header>', false );
+					if ( '1' == $options['featured_content_enable_title'] ) {
+						$fullframe_page_content .= '
+							<header class="entry-header">
+								<h1 class="entry-title">
+									<a href="' . get_permalink() . '" rel="bookmark">' . the_title( '','', false ) . '</a>
+								</h1>
+							</header>';		
 					}
 					if ( '1'== $options['featured_content_enable_excerpt_content'] ) {
-							$fullframe_page_content .= '<div class="entry-content">'. get_the_excerpt() . '</div>';
+						$fullframe_page_content .= '<div class="entry-content">'. get_the_excerpt() . '</div>';
 					}
 					$fullframe_page_content .= '
 					</div><!-- .entry-container -->';
