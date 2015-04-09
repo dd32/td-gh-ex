@@ -61,7 +61,7 @@ jQuery(window).load(function($) {
 	// When we resize the browser, check to see which dropdown type we should use
     jQuery(window).resize(function() {
         clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(generateResizeNavigation, 150);
+        resizeTimer = setTimeout(generateResizeNavigation, 250);
     });
 	
 	// Check to see which dropdown type we should use

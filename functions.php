@@ -5,7 +5,7 @@
  * @package Generate
  */
 	
-define( 'GENERATE_VERSION', '1.2.9.2');
+define( 'GENERATE_VERSION', '1.2.9.3');
 define( 'GENERATE_URI', get_template_directory_uri() );
 define( 'GENERATE_DIR', get_template_directory() );
 
@@ -234,7 +234,6 @@ function generate_scripts() {
 		generate_get_defaults() 
 	);
 
-	// Generate stylesheets
 	wp_enqueue_style( 'generate-style-grid', get_template_directory_uri() . '/css/unsemantic-grid.css', false, GENERATE_VERSION, 'all' );
 	wp_enqueue_style( 'generate-style', get_template_directory_uri() . '/style.css', false, GENERATE_VERSION, 'all' );
 	wp_enqueue_style( 'generate-mobile-style', get_template_directory_uri() . '/css/mobile.css', false, GENERATE_VERSION, 'all' );
@@ -369,7 +368,6 @@ function generate_base_css()
 		get_option( 'generate_settings', array() ), 
 		generate_get_defaults() 
 	);
-	$space = ' ';
 	
 	// Start the magic
 	$visual_css = array (

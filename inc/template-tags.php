@@ -34,7 +34,7 @@ if ( ! function_exists( 'generate_paging_nav' ) ) :
 			'format'   => $format,
 			'total'    => $GLOBALS['wp_query']->max_num_pages,
 			'current'  => $paged,
-			'mid_size' => 1,
+			'mid_size' => apply_filters( 'generate_pagination_mid_size', 1 ),
 			'add_args' => array_map( 'urlencode', $query_args ),
 			'prev_text' => __( '&larr; Previous', 'generate' ),
 			'next_text' => __( 'Next &rarr;', 'generate' ),
@@ -264,7 +264,7 @@ endif;
 
 if ( ! function_exists( 'generate_content_more' ) ) :
 /**
- * Prints the read more HTML to post excerpts
+ * Prints the read more HTML to post content using the more tag
  */
 	add_filter( 'the_content_more_link', 'generate_content_more' );
 	function generate_content_more( $more ) {

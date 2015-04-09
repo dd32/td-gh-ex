@@ -219,7 +219,7 @@ if ( !function_exists('generate_spacing_css') ) :
 			'.both-right.separate-containers .inside-right-sidebar' => array(
 				'margin-left' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] / 2 . 'px' : null,
 				'padding-left' => '0px'
-			),
+			)
 			
 		);
 		

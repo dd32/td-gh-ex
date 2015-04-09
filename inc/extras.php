@@ -42,6 +42,7 @@ function generate_body_classes( $classes )
 	$classes[] = ( $generate_settings['nav_position_setting'] ) ? $generate_settings['nav_position_setting'] : 'nav-below-header';
 	$classes[] = ( $generate_settings['header_layout_setting'] ) ? $generate_settings['header_layout_setting'] : 'fluid-header';
 	$classes[] = ( $generate_settings['content_layout_setting'] ) ? $generate_settings['content_layout_setting'] : 'separate-containers';
+	$classes[] = ( '' !== $generate_settings['footer_widget_setting'] ) ? 'active-footer-widgets-' . $generate_settings['footer_widget_setting'] : 'active-footer-widgets-3';
 	
 	// Navigation alignment class
 	if ( $generate_settings['nav_alignment_setting'] == 'left' ) :

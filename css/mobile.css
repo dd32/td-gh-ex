@@ -1,4 +1,4 @@
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
 
 	/* GeneratePress specific */
 	.menu-toggle,
@@ -110,6 +110,15 @@
 		float: none;
 		margin: 2em 0;
 		text-align: center;
+	}
+	
+	.sf-menu .menu-item-has-children > a:first-child,
+	.sf-menu .page-item-has-children > a:first-child {
+		padding-right: 1em;
+	}
+	.sf-menu .menu-item-has-children > a:first-child:after,
+	.sf-menu .page-item-has-children > a:first-child:after {
+		display: none;
 	}
 	
 	/* Unsemantic Framework*/

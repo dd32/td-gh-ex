@@ -94,21 +94,10 @@
 	vertical-align: middle;
 }
 
-.column-addon_name {
-	width: 225px;
-}
-
-.appearance_page_generate-options .updated {
-	display: inline-block;
+.appearance_page_generate-options .updated,
+.appearance_page_generate-options .error {
+	max-width: 1071px;
 	margin-right: 5px;
-}
-
-@media screen and (min-width: 1050px) {
-	.addon-metabox {
-		max-width:30%;
-		float: right;
-	}
-	.form-metabox {
-		max-width: 68%;
-	}
+	margin-top: 25px;
+	margin-left: 12px;
 }
