@@ -20,3 +20,8 @@ i) Change all image function and use post thumbnail function.
 ii) set font license in readme.txt
 iii) Fixed css issue
 iv) Use esc_url for get_year_link and get_month_link
+
+Version 1.0.4
+i) set font license in readme.txt
+ii) Enqueue Scripts properly in options page
+iii) Add a theme slug as prefix in themeoptions.php

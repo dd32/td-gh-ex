@@ -57,10 +57,17 @@ $advent_options = get_option('advent_theme_options');
                         <div class="col-sm-12 col-md-2">
                             <div  class="menu-logo">
                                 <?php if (empty($advent_options['logo'])) { ?>
-                                    <a href="<?php echo esc_url(home_url('/')); ?>"><?php echo get_bloginfo('name'); ?></a>
+									<div class='site-title-text' >
+										<a href="<?php echo esc_url(home_url('/')); ?>" class="site-title">
+											<?php bloginfo( 'name' ); ?>
+										</a>		
+										<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+									  </div>
                                 <?php } else { ?>
                                     <a href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo esc_url($advent_options['logo']); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="img-responsive" /></a>
                                     <?php } ?>
+                                    
+                                    
                                 <div class="navbar-header res-nav-header toggle-respon">
 <?php if (has_nav_menu('primary')) { ?>
                                         <button type="button" class="navbar-toggle menu_toggle" data-toggle="collapse" data-target=".navbar-collapse">

@@ -12,7 +12,7 @@ $advent_options = get_option('advent_theme_options');
         <?php if (!empty($advent_options['home-title']) OR !empty($advent_options['home-content'])) { ?>
             <div class="pro-features text-center">
                 <?php if (!empty($advent_options['home-title'])) { ?> <h2> <?php echo esc_attr($advent_options['home-title']); ?></h2> <?php } ?>
-                <?php if (!empty($advent_options['home-content'])) { ?> <p> <?php echo esc_attr($advent_options['home-content']); ?></p> <?php } ?>
+                <?php if (!empty($advent_options['home-content'])) { ?> <p> <?php echo esc_textarea($advent_options['home-content']); ?></p> <?php } ?>
             </div>        
         <?php } ?>    
         <div class="pro-features-icon row">
@@ -28,10 +28,10 @@ $advent_options = get_option('advent_theme_options');
                         <?php if (!empty($advent_options['section-title-' . $advent_section_i])) { ?>		
                             <div class="pro-features-info">
                                 <?php if (!empty($advent_options['section-title-' . $advent_section_i])) { ?>
-                                    <h2><?php echo $advent_options['section-title-' . $advent_section_i]; ?></h2>
+                                    <h2><?php echo esc_attr($advent_options['section-title-' . $advent_section_i]); ?></h2>
                                 <?php } ?>
                                 <?php if (!empty($advent_options['section-content-' . $advent_section_i])) { ?>
-                                    <p><?php echo $advent_options['section-content-' . $advent_section_i]; ?></p>
+                                    <p><?php echo esc_textarea($advent_options['section-content-' . $advent_section_i]); ?></p>
                                 <?php } ?>
                             </div>
                         <?php } ?>
@@ -49,7 +49,7 @@ $advent_options = get_option('advent_theme_options');
                     <?php if (!empty($advent_options['howitwork'])) { ?><h2> <?php echo esc_attr($advent_options['howitwork']); ?></h2><?php } ?>
                     <div class="<?php echo $advent_options['howitwork-img'] ? 'col-sm-6 col-md-8' : 'col-sm-12 col-md-12' ?> works-left">
                         <?php if (!empty($advent_options['howitworktitle'])) { ?><h2><?php echo esc_attr($advent_options['howitworktitle']); ?></h2><?php } ?>
-                        <?php if (!empty($advent_options['howitworkdesc'])) { ?><p><?php echo esc_attr($advent_options['howitworkdesc']); ?></p> <?php } ?>
+                        <?php if (!empty($advent_options['howitworkdesc'])) { ?><p><?php echo esc_textarea($advent_options['howitworkdesc']); ?></p> <?php } ?>
                     </div>
                     <?php if (!empty($advent_options['howitwork-img'])) { ?>
                         <div class="col-sm-6 col-md-4 chart-img">
@@ -118,6 +118,7 @@ $advent_options = get_option('advent_theme_options');
                                 </div>
                             </div>
                         <?php } ?>
+                        <?php wp_reset_postdata(); ?>
                     </div>        	
                 </div>
             </div> 

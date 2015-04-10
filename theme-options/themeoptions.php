@@ -52,15 +52,15 @@ function advent_image_validation($advent_imge_url) {
     }
 }
 
-function advent_framework_load_scripts() {
+function advent_framework_load_scripts($hook) {
+	if($GLOBALS['advent_menu'] == $hook){
     wp_enqueue_media();
-    wp_enqueue_style('themeoptions_framework', get_template_directory_uri() . '/theme-options/css/themeoptions_framework.css', false, '1.0.0');
+    wp_enqueue_style('advent_themeoptions_framework', get_template_directory_uri() . '/theme-options/css/themeoptions_framework.css', false, '1.0.0');
     // Enqueue custom option panel JS
-    wp_enqueue_script('options-custom', get_template_directory_uri() . '/theme-options/js/themeoptions-custom.js', array('jquery'));
-    wp_enqueue_script('media-uploader', get_template_directory_uri() . '/theme-options/js/media-uploader.js', array('jquery'));
+    wp_enqueue_script('advent-options-custom', get_template_directory_uri() . '/theme-options/js/themeoptions-custom.js', array('jquery'));
+    wp_enqueue_script('advent-media-uploader', get_template_directory_uri() . '/theme-options/js/media-uploader.js', array('jquery'));
+	}
 }
-
-add_action('admin_enqueue_scripts', 'advent_framework_load_scripts');
 
 function advent_framework_menu_settings() {
     $advent_menu = array(
@@ -74,10 +74,10 @@ function advent_framework_menu_settings() {
 }
 
 add_action('admin_menu', 'advent_add_page');
-
 function advent_add_page() {
     $advent_menu = advent_framework_menu_settings();
-    add_theme_page($advent_menu['page_title'], $advent_menu['menu_title'], $advent_menu['capability'], $advent_menu['menu_slug'], $advent_menu['callback']);
+    $GLOBALS['advent_menu']=add_theme_page($advent_menu['page_title'], $advent_menu['menu_title'], $advent_menu['capability'], $advent_menu['menu_slug'], $advent_menu['callback']);
+    add_action( 'admin_enqueue_scripts', 'advent_framework_load_scripts' );
 }
 
 function advent_framework_page() {

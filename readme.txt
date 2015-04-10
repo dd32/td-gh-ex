@@ -8,8 +8,11 @@ Advent is a lightweight, clean, super flexible and bootstrap based responsive th
 left-sidebar, right-sidebar, responsive-layout, custom-background, red, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments , translation-ready, custom-header
 
 == License ==
-License: GNU General Public License v3 or later
+Resource URI: http://underscores.me/
+Copyright: Automattic, automattic.com
+License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
+
 
 == Copyright ==
 Advent WordPress Theme, Copyright 2014 fruitthemes.com
@@ -46,11 +49,11 @@ Advent is distributed under the terms of the GNU GPL
 		ii) Title Bar : You can set home page title and description.
 		iii) Feature Section : you can insert font-awesome icon class, title and short description. 
 		iv) How it work Section : you can upload image, title, heading and short description. 
-                v) Recent post Section : you can select category of posts and add title of posts slider.
+        v) Recent post Section : you can select category of posts and add title of posts slider.
 		
 	c) Social Settings:
 
-            You can add here social media links.	
+           You can add here social media links.	
 		
 ---------------------------------------------------------
 License and Copyrights for Resources used in this theme
@@ -58,43 +61,65 @@ License and Copyrights for Resources used in this theme
 
 i) Fontawesome
 ===========
-License URI:  http://fontawesome.io/license/
-Resource Name: fontawesome
-License Name: Open Font License (OFL) Version 4.0.1
-	
+	Copyright: Dave Gandy
+	Resource URI: http://fontawesome.io
+	License: SIL Open Font License, Version 1.1
+	License URI: https://scripts.sil.org/OFL?
+
 ii)Administration Panel
 ===========
-Options Framework Theme -  For the Administration Panel, we have used our own custom options panel.
-License: GNU General Public License v2
+	Options Framework Theme -  For the Administration Panel, we have used our own custom options panel.
+	License: GNU General Public License v3
 
-iii)Fonts
+iii) Fonts
 ===========
-http://fonts.googleapis.com/css?family=Open+Sans 
-License: Apache Open Font
+	(a).
+		Open Sans
+		Copyright: Multiple Designers
+		Resource URI: http://fonts.googleapis.com/css?family=Open+Sans 
+		License: Apache License, version 2.0
+		License URI: http://www.apache.org/licenses/LICENSE-2.0
 
-http://fonts.googleapis.com/css?family=Cabin 
-License: SIL Open Font
+	(b).
+		Cabin
+		Copyright: Multiple Designers
+		Resource URI: http://fonts.googleapis.com/css?family=Cabin 
+		License: SIL Open Font License, 1.1
+		License URI: http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OF
 
-	
-iv)Bootstrap files
+iv) Bootstrap files
 ===========
-we used are licensed under the Apache License v3.3.1
-Bootstrap - http://getbootstrap.com
-Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+	Resource URI: http://getbootstrap.com/
+	Copyright: 2011-2014 Twitter, Inc
+	License: MIT
+	License URI: http://opensource.org/licenses/MIT
 
 vi) html5 js file
 ============
-we used are licensed under MIT/GPL2.
-Version - v3.7.0
+	Copyright: Alexander Farkas, Jonathan Neal, Paul Irish
+	Resource URI: https://code.google.com/p/html5shiv/
+	License: MIT/GPLv2
+	License URI: http://opensource.org/licenses/MIT
+	License URI: http://www.gnu.org/licenses/gpl-2.0.html 
 
 vii) slider
 ============
-OwlCarousel - (https://github.com/OwlFonk/OwlCarousel/blob/master/LICENSE) Copyright (c) 2014 The MIT License (MIT) 
+	OwlCarousel 
+	jQuery OwlCarousel v1.3.3  
+	Licensed under MIT
+	http://www.owlgraphic.com/owlcarousel/
+	Copyright (c) 2014 Bartosz Wojciechowski
 
 ---------------------------------------------------------
 Image
 ---------------------------------------------------------
-
-http://pixabay.com/en/philadelphia-urban-pennsylvania-231580/ - Public Domain CC0 License
-http://pixabay.com/en/car-fashion-hand-style-watch-407165/  - Public Domain CC0 License
-
+1).
+	Copyright: BruceEmmerling
+	Resource URI: http://pixabay.com/en/philadelphia-urban-pennsylvania-231580/
+	License: CC0 1.0
+	License URI: http://creativecommons.org/publicdomain/zero/1.0/deed.en
+2).
+	Copyright: SplitShire
+	Resource URI: http://pixabay.com/en/car-fashion-hand-style-watch-407165/
+	License: CC0 1.0
+	License URI: http://creativecommons.org/publicdomain/zero/1.0/deed.en
