@@ -37,7 +37,7 @@ if( empty( $trans_editor ) ){ $trans_editor = "Editor Pick's"; }
     ?>
     <div class="sidebar-top-ad widget-area wow fadeInUp" data-wow-delay="0.5s">
         <h1 class="sidebar-title"><span><?php echo $trans_ads ;?></span></h1>
-        <div class="ad_content"><img src="http://placehold.it/300x250&text=Advertisement 300x250" /></div>
+        <div class="ad_content"><img src="<?php echo get_template_directory_uri();?>/images/demo-images/300-250.png" /></div>
     </div>
     <?php } ?>
     
@@ -120,7 +120,7 @@ if( empty( $trans_editor ) ){ $trans_editor = "Editor Pick's"; }
     ?>
     <div class="sidebar-top-ad widget-area wow fadeInUp" data-wow-delay="0.5s">
         <h1 class="sidebar-title"><span><?php echo $trans_ads ;?></span></h1>
-        <div class="ad_content"><img src="http://placehold.it/300x250&text=Advertisement 300x250" /></div>
+        <div class="ad_content"><img src="<?php echo get_template_directory_uri();?>/images/demo-images/300-250.png" /></div>
     </div>
     <?php } ?>
     

@@ -148,10 +148,10 @@ function optionsframework_options() {
     //Traslations Array
     $translation_name = array(
                             __( "Continue Reading", "accesspess-mag" ),__( "You are here", "accesspess-mag" ),__( "Editor Pick`s", "accesspess-mag" ),__( "Home", "accesspess-mag" ),__( "Share This Article", "accesspess-mag" ),__( "Review overview", "accesspess-mag" ),__( "Summary", "accesspess-mag" ),
-                            __( "Search results for", "accesspess-mag" ),__( "Tagged", "accesspess-mag" ),__( "Next article", "accesspess-mag" ),__( "Previous article", "accesspess-mag" ),__( "Via", "accesspess-mag" ),__( "Source", "accesspess-mag" ),__( "Advertisement", "accesspress-mag" )
+                            __( "Search results for", "accesspess-mag" ),__( "Tagged", "accesspess-mag" ),__( "Next article", "accesspess-mag" ),__( "Previous article", "accesspess-mag" ),__( "Via", "accesspess-mag" ),__( "Source", "accesspess-mag" ),__( "Advertisement", "accesspress-mag" ),__( "Top arrow", "accesspress-mag" )
                             );
     $translation_id = array(
-                            'continue_reading','you_are_here','editor_picks','home','share_this_article','review_overview','summary','search_results_for','tagged','next_article','previous_article','via','source','advertisement'
+                            'continue_reading','you_are_here','editor_picks','home','share_this_article','review_overview','summary','search_results_for','tagged','next_article','previous_article','via','source','advertisement','top_arrow'
                             );
     $trans_count = count($translation_id);
 
@@ -304,7 +304,7 @@ function optionsframework_options() {
             'name' => __( 'Logo Setting', 'accesspress-mag' ),
             'desc' => __( 'Select option for site logo settings', 'accesspress-mag' ),    
             'id' => 'logo_setting',
-            'std' => 'image',
+            'std' => 'text',
             'type' => 'select',
             'options' => $logo_options
             );
@@ -385,7 +385,7 @@ function optionsframework_options() {
             
     $options[] = array(
             'name' => __( 'Sub Footer', 'accesspress-mag' ),                
-            'desc' => __( 'Hide or show the sub-footer', 'accesspress-mag' ),
+            'desc' => __( 'Hide or show copy right and footer menu section', 'accesspress-mag' ),
             'id' => 'sub_footer_switch',
             'on' => __( 'Yes', 'accesspress-mag'),
             'off' => __( 'No', 'accesspress-mag'),
@@ -397,17 +397,17 @@ function optionsframework_options() {
             'name' => __( 'Footer Copyright text', 'accesspress-mag' ),
             'desc' => __( 'Set footer copyright text', 'accesspress-mag' ),
             'id' => 'mag_footer_copyright',
-            'std' => __('Copyright 2015- your text', 'accesspress-mag'),
+            'std' => __('AccessPress Mag', 'accesspress-mag'),
             'type' => 'text' 
             );
     
     $options[] = array(
-            'name' => __( 'Copyright Symbol', 'accesspress-mag' ),                
-            'desc' => __( 'Show or hide the footer copyright symbol', 'accesspress-mag' ),
+            'name' => __( 'Copyright', 'accesspress-mag' ),                
+            'desc' => __( 'Show or hide the footer copyright example( Copyright &copy; current year )', 'accesspress-mag' ),
             'id' => 'copyright_symbol',
             'on' => __( 'Yes', 'accesspress-mag'),
             'off' => __( 'No', 'accesspress-mag'),
-            'std' => '0',
+            'std' => '1',
             'type' => 'switch'
             );
     $options[] = array(

@@ -66,11 +66,10 @@ ScreenShot Images
     For latest review widget at right sidebar
     https://unsplash.com/photos/YIN4xUBaqnk/download
     
-    For no-image available
-    GPL     
+    GPL compatible for own images   
     accesspress-mag/images/no-image-medium.jpg             
-    
-    
+    accesspress-mag/images/demo-images/728-90.png
+    accesspress-mag/images/demo-images/300-250.png
 
 ---------------------------------------------
 

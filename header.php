@@ -24,6 +24,7 @@
         $apmag_transparent_header = of_get_option( 'logo_upload' );
         $apmag_logo = of_get_option( 'logo_upload' );
         $apmag_logo_setting = of_get_option( 'logo_setting' );
+        $branding_class = '';
         $apmag_top_menu_switch = of_get_option( 'top_menu_switch' );
         $apmag_top_menu = of_get_option( 'top_menu_select' );
         $apmag_top_menu_right = of_get_option( 'top_right_menu_select' );
@@ -95,6 +96,17 @@
                                     </a>
                                 </div>
                             <?php endif;?>
+                            <?php 
+                                $apmag_theme_option = get_option( 'accesspress-mag-theme' );
+                                if( empty( $apmag_theme_option )){
+                            ?>
+                                <div class="sitetext-wrap">  
+                                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                        			<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+                        			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+                                    </a>
+                                </div>
+                            <?php } ?>
                  </div><!-- .site-branding -->
         		
                 
@@ -104,7 +116,7 @@
                         if(!empty($apmag_header_ad)){
                             echo $apmag_header_ad;
                         } else {
-                            echo '<img src="http://placehold.it/728x90&text=Advertisement 728x90" />';
+                            echo '<img src="'. get_template_directory_uri().'/images/demo-images/728-90.png" />';
                         } 
                     ?>
                 </div><!--header ad-->

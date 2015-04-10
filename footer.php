@@ -11,11 +11,13 @@
 	</div><!-- #content -->
     
 	<?php
-        $apmag_show_footer_switch = of_get_option('footer_switch');
-        $apmag_footer_layout = of_get_option('footer_layout');
-        $apmag_sub_footer_switch = of_get_option('sub_footer_switch');
-        $apmag_copyright_text = of_get_option('mag_footer_copyright');
-        $apmag_copyright_symbol = of_get_option('copyright_symbol');
+        $apmag_show_footer_switch = of_get_option( 'footer_switch' );
+        $apmag_footer_layout = of_get_option( 'footer_layout' );
+        $apmag_sub_footer_switch = of_get_option( 'sub_footer_switch' );
+        $apmag_copyright_text = of_get_option( 'mag_footer_copyright' );
+        $apmag_copyright_symbol = of_get_option( 'copyright_symbol' );
+        $trans_top = of_get_option( 'top_arrow' );
+        if( empty( $trans_top ) ){ $trans_top = 'Top'; }
     ?>
     <footer id="colophon" class="site-footer" role="contentinfo">
     
@@ -54,20 +56,30 @@
         	         
         <div class="bottom-footer clearfix">
             <div class="apmag-container">
+            <?php if( $apmag_sub_footer_switch == 1 ){ ?>
         		<div class="site-info">
-                    <?php 
-                        if($apmag_sub_footer_switch!='0'){
-                            if($apmag_copyright_symbol!='0'){echo '<span class="copyright-symbol">&copy;</span>';}
-                            if($apmag_copyright_text!=''){echo '<span class="copyright-text">'.$apmag_copyright_text.' - </span>';}
-                        }
-                        _e('Accesspress Mag', 'accesspress-mag'); 
-                    ?>            
+                    <?php if( $apmag_copyright_symbol == 1 ){ ?>
+                        <span class="copyright-symbol"><?php _e( 'Copyright', 'accesspress-mag' ); ?> &copy; <?php echo date( 'Y' ) ?></span>
+                    <?php } ?> 
+                    <a href="<?php echo home_url(); ?>">
+                    <?php
+                        if( !empty( $apmag_copyright_text ) ){ 
+                            echo '<span class="copyright-text">'.$apmag_copyright_text.'</span>'; 
+                        } else { echo bloginfo( 'name' ); }
+                    ?> 
+                    </a>           
         		</div><!-- .site-info -->
-                <div class="ak-info"><?php _e( 'WordPress Theme by', 'accesspress-mag' ); ?> <a title="AccessPress Themes" href="<?php echo esc_url( 'http://accesspressthemes.com', 'accesspress-mag' ); ?>">AccessPress Themes</a></div>
+            <?php } ?>
+                <div class="ak-info">
+                    <?php _e( 'Powered by ', 'accesspress-mag' );  ?><a href="<?php echo esc_url( __( 'http://wordpress.org/', 'accesspress-mag' ) ); ?>"><?php _e( 'WordPress', 'accesspress-mag' ); ?> </a>
+                    <?php _e( '| Theme: ' );?>
+                    <a title="AccessPress Themes" href="<?php echo esc_url( 'http://accesspressthemes.com', 'accesspress-mag' ); ?>">AccessPress Mag</a>
+                </div>
+             <?php if( $apmag_sub_footer_switch == 1 ){ ?>   
                 <div class="subfooter-menu">
                     <?php 
-                        $apmag_footer_menu = of_get_option('footer_menu_select');
-                        if(!empty($apmag_footer_menu)){
+                        $apmag_footer_menu = of_get_option( 'footer_menu_select' );
+                        if( !empty( $apmag_footer_menu ) ){
                     ?>
                         <nav id="footer-navigation" class="footer-main-navigation" role="navigation">
                                 <button class="menu-toggle hide" aria-controls="menu" aria-expanded="false"><?php _e( 'Footer Menu', 'accesspress-mag' ); ?></button>
@@ -77,15 +89,14 @@
                         }
                     ?>
                 </div>
+             <?php } ?>
             </div>
         </div>
 	</footer><!-- #colophon -->
     <div id="back-top">
-        <a href="#top"><i class="fa fa-arrow-up"></i> <span> Top </span></a>
+        <a href="#top"><i class="fa fa-arrow-up"></i> <span> <?php echo $trans_top; ?> </span></a>
     </div>   
 </div><!-- #page -->
-
 <?php wp_footer(); ?>
-
 </body>
 </html>

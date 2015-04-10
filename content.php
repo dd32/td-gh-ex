@@ -11,7 +11,7 @@
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
             <?php 
-                if( is_author() || is_tag() || is_archive() ){
+                if( is_author() || is_tag() || is_archive() || is_home() ){
                     echo $post_categories = get_the_category_list();
                 }
             ?>

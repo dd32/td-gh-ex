@@ -29,7 +29,7 @@
                 <div class="slide-image"><img src="<?php echo get_template_directory_uri();?>/images/demo-images/2c0343f7-364x164.jpg" alt="dell-monitors" /></div>
                 <div class="mag-small-slider-caption">
                   <h3 class="slide-title"><a href="#">Make travel fun.</a></h3>
-                  <div class="home-posted"><span class="posted-on"><a href="#" rel="bookmark"><time class="entry-date published" datetime="2015-03-08T08:54:53+00:00">March 8, 2015</time><time class="updated" datetime="2015-03-17T05:47:46+00:00">March 17, 2015</time></a></span><span class="comment_count"><i class="fa fa-comments"></i>3</span><span class="apmag-post-views"><i class="fa fa-eye"></i>15</span></div>
+                  <div class="home-posted clearfix"><span class="posted-on"><a href="#" rel="bookmark"><time class="entry-date published" datetime="2015-03-08T08:54:53+00:00">March 8, 2015</time><time class="updated" datetime="2015-03-17T05:47:46+00:00">March 17, 2015</time></a></span><span class="comment_count"><i class="fa fa-comments"></i>3</span><span class="apmag-post-views"><i class="fa fa-eye"></i>15</span></div>
                 </div>                
             </div>
                 
@@ -38,7 +38,7 @@
                 <div class="slide-image"><img src="<?php echo get_template_directory_uri();?>/images/demo-images/photo-1421916780003-47d5a692d999-364x164.jpg" alt="the-rider" /></div>
                 <div class="mag-small-slider-caption">
                   <h3 class="slide-title"><a href="#">Basics of HDR Photography Tutorials HD </a></h3>
-                  <div class="home-posted"><span class="posted-on"><a href="#" rel="bookmark"><time class="entry-date published" datetime="2015-03-08T07:45:57+00:00">March 8, 2015</time><time class="updated" datetime="2015-03-17T05:45:09+00:00">March 17, 2015</time></a></span><span class="comment_count"><i class="fa fa-comments"></i>9</span><span class="apmag-post-views"><i class="fa fa-eye"></i>42</span></div>
+                  <div class="home-posted clearfix"><span class="posted-on"><a href="#" rel="bookmark"><time class="entry-date published" datetime="2015-03-08T07:45:57+00:00">March 8, 2015</time><time class="updated" datetime="2015-03-17T05:45:09+00:00">March 17, 2015</time></a></span><span class="comment_count"><i class="fa fa-comments"></i>9</span><span class="apmag-post-views"><i class="fa fa-eye"></i>42</span></div>
                 </div>                
             </div>
                 
@@ -47,7 +47,7 @@
                 <div class="slide-image"><img src="<?php echo get_template_directory_uri();?>/images/demo-images/x6YzbWWRq2sRhAacMjnl_Bangkok-364x164.jpg" alt="iphone-4" /></div>
                 <div class="mag-small-slider-caption">
                   <h3 class="slide-title"><a href="#">Best Work-space design of 2015</a></h3>
-                  <div class="home-posted"><span class="posted-on"><a href="#" rel="bookmark"><time class="entry-date published" datetime="2015-03-03T07:33:34+00:00">March 3, 2015</time><time class="updated" datetime="2015-03-16T11:54:25+00:00">March 16, 2015</time></a></span><span class="comment_count"><i class="fa fa-comments"></i>3</span><span class="apmag-post-views"><i class="fa fa-eye"></i>24</span></div>
+                  <div class="home-posted clearfix"><span class="posted-on"><a href="#" rel="bookmark"><time class="entry-date published" datetime="2015-03-03T07:33:34+00:00">March 3, 2015</time><time class="updated" datetime="2015-03-16T11:54:25+00:00">March 16, 2015</time></a></span><span class="comment_count"><i class="fa fa-comments"></i>3</span><span class="apmag-post-views"><i class="fa fa-eye"></i>24</span></div>
                 </div>
             </div>
         </div>

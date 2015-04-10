@@ -135,7 +135,7 @@ get_header();
                     if(!empty($home_inline_ad)){
                         echo '<div class="homepage-middle-ad wow flipInX" data-wow-delay="1s">'.$home_inline_ad.'</div>';                        
                     } else {
-                        echo '<div class="homepage-middle-ad wow flipInX" data-wow-delay="1s"><img src="http://placehold.it/728x90&text=Advertisement 728x90" /></div>';
+                        echo '<div class="homepage-middle-ad wow flipInX" data-wow-delay="1s"><img src="'. get_template_directory_uri().'/images/demo-images/728-90.png" /></div>';
                     }
                     
               ?> 
