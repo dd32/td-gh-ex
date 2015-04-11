@@ -1027,7 +1027,7 @@ array('name' => __('Post Layout', 'weaver-xtreme' /*adm*/), 'id' => '-schedule',
 			'info' => __('Background color used for Author Bio.', 'weaver-xtreme' /*adm*/)),
 	array('name' => '<span class="i-left dashicons dashicons-visibility"></span><small>' . __('Hide Author Bio', 'weaver-xtreme' /*adm*/) . '</small>',
 		'id' => 'hide_author_bio', 'type' => 'checkbox',
-		'info' => __('Hide display of author bio box on single post page view.', 'weaver-xtreme' /*adm*/)),
+		'info' => __('Hide display of author bio box on Author Archive and Single Post page views.', 'weaver-xtreme' /*adm*/)),
 	array('name' => '<small>' . __('Allow comments for attachments', 'weaver-xtreme' /*adm*/) . '</small>',
 		'id' => 'allow_attachment_comments', 'type' => 'checkbox',
 		'info' => __('Allow visitors to leave comments for attachments (usually full size media image - only if comments allowed).', 'weaver-xtreme' /*adm*/))

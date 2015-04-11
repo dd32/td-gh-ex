@@ -74,6 +74,13 @@ function weaverx_admin_help() {
 * Tweak: menu handling on some touch devices / browsers - iOS, IE
 * Fix: minimized css/js
 * Fix: MegaMenu border (X-Plus)
+
+= Version 1.1.2 =
+* Fix: missing &lt;div> for author-link, extra &lt;/span>
+
+= Version 1.1.3 =
+* Tweak: Wording for Hide Author Bio option
+* Fix: JavaScript incompatibility with Safari browser
 </pre>
 </p>
 	</div>

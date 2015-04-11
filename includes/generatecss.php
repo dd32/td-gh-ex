@@ -521,64 +521,57 @@ $menu_detail = array (              /* can't use multiple selectors here! */
 
 		// padding
 
-		if (($val = weaverx_getopt($id . '_menu_pad_dec')) != '') {
-			weaverx_f_write($sout,sprintf('.is-desktop ' . $tag . " .wvrx-menu a{padding-top:%.5fem;padding-bottom:%.5fem;}\n",$val,$val));
+		$pad = weaverx_getopt($id . '_menu_pad_dec');
+		$dcolor = weaverx_getopt( $id . '_dividers_color' );
+		$rpad = weaverx_getopt( $id . '_right_padding_dec' );
+		$hide_arrows = weaverx_getopt( $id . '_hide_arrows');
 
-			if ( $val > 1.9 )       // arrows need adjustments - these are for Genericons
-				weaverx_f_write($sout,sprintf('.is-desktop ' . $tag . " .menu-arrows .toggle-submenu:after{top:%.5fem;}\n", ($val + 1.2)) );
-			else if ( $val > 0.6 )
-				weaverx_f_write($sout,sprintf('.is-desktop ' . $tag . " .menu-arrows .toggle-submenu:after{top:%.5fem;}\n", ($val + 0.75)) );
-			else if ( $val < 0.6 )
-				weaverx_f_write($sout,sprintf('.is-desktop ' . $tag . " .menu-arrows .toggle-submenu:after{top:%.5fem;}\n", ($val + 0.5)) );
+		weaverx_f_write($sout, "@media(min-width:768px) {\n");	// following are really .is-desktop. Note last align rule has closing }
+
+
+		if ($pad != '') {
+			weaverx_f_write($sout,sprintf("{$tag} .wvrx-menu a{padding-top:%.5fem;padding-bottom:%.5fem;}\n",$pad,$pad));
+
+			if ( $pad > 1.9 )       // arrows need adjustments - these are for Genericons
+				weaverx_f_write($sout,sprintf("{$tag} .menu-arrows .toggle-submenu:after{top:%.5fem;}\n", ($pad + 1.2)) );
+			else if ( $pad > 0.6 )
+				weaverx_f_write($sout,sprintf("{$tag} .menu-arrows .toggle-submenu:after{top:%.5fem;}\n", ($pad + 0.75)) );
+			else if ( $pad < 0.6 )
+				weaverx_f_write($sout,sprintf("{$tag} .menu-arrows .toggle-submenu:after{top:%.5fem;}\n", ($pad + 0.5)) );
 		}
 
 		// dividers
 
-		if ( ($color = weaverx_getopt( $id . '_dividers_color' )) != '') {
+		if ( $dcolor != '') {
 
-			weaverx_f_write( $sout, '.is-desktop ' . $tag . ' .wvrx-menu a{border-right:1px solid ' . $color . ";}\n" );
-			weaverx_f_write( $sout, '.is-desktop ' . $tag . ' ul.wvrx-menu > li:first-child {border-left:1px solid ' . $color . ";}\n" );
-
-			weaverx_f_write( $sout, $tag . ' .wvrx-menu ul > li:first-child{border-top:1px solid ' . $color . ";}\n" );
-			weaverx_f_write( $sout, $tag . ' .wvrx-menu ul a {border-top:none;border-left:none;border-right:none;border-bottom:1px solid ' . $color . ";}\n" );
+			weaverx_f_write( $sout, "{$tag} .wvrx-menu a{border-right:1px solid {$dcolor};}\n" );
+			weaverx_f_write( $sout, "{$tag} ul.wvrx-menu > li:first-child {border-left:1px solid {$dcolor};}\n" );
+			// only desktop?
+			weaverx_f_write( $sout, "{$tag} .wvrx-menu ul > li:first-child{border-top:1px solid {$dcolor};}\n" );
+			weaverx_f_write( $sout, "{$tag} .wvrx-menu ul a {border-top:none;border-left:none;border-right:none;border-bottom:1px solid {$dcolor};}\n" );
 		}
 
 		// menu padding
 
-		if ( ($rpad = weaverx_getopt( $id . '_right_padding_dec' )) != '') {
+		if ( $rpad != '') {
 			$rpad_arrow = $rpad + 1.5;
-			weaverx_f_write( $sout, '.is-desktop ' . $tag . ' .wvrx-menu-container li a{padding-right:' . $rpad . "em;}\n" );
-			weaverx_f_write( $sout, '.is-desktop ' . $tag . ' .menu-hover.menu-arrows .has-submenu > a{padding-right:' . $rpad_arrow . "em;}\n" );
-			weaverx_f_write( $sout, '.is-desktop ' . $tag . ' .menu-arrows.menu-hover .toggle-submenu{margin-right:' . $rpad . "em;}\n" );
+			weaverx_f_write( $sout, "{$tag} .wvrx-menu-container li a{padding-right:{$rpad}em;}\n" );
+			weaverx_f_write( $sout, "{$tag} .menu-hover.menu-arrows .has-submenu > a{padding-right:{$rpad_arrow}em;}\n" );
+			weaverx_f_write( $sout, "{$tag} .menu-arrows.menu-hover .toggle-submenu{margin-right:{$rpad}em;}\n" );
 		}
 
 
 		// Menu Arrows
 
-		if ( weaverx_getopt( $id . '_hide_arrows') ) {
+		if ( $hide_arrows ) {
 			weaverx_f_write($sout,
-				".is-desktop {$tag} .menu-arrows .toggle-submenu:after{content:'';display:none;}\n");
+				"{$tag} .menu-arrows .toggle-submenu:after{content:'';display:none;}\n");
 //.is-deskotp {$tag} .wvrx-menu a span.sub-arrow:after{display:none;}\n");
 			if ($rpad == '')
 				weaverx_f_write($sout,
-					".is-desktop {$tag} .menu-hover.menu-arrows .has-submenu > a {padding-right:0.75em;}\n" );
+					"{$tag} .menu-hover.menu-arrows .has-submenu > a {padding-right:0.75em;}\n" );
 			weaverx_f_write($sout,
-				".is-desktop {$tag} .wvrx-menu a span.sub-arrow:after{display:none;}\n");
-		}
-		$color = weaverx_getopt( $id .'_color');
-
-		if ($color) {
-			weaverx_f_write($sout,
-				sprintf("$tag .menu-arrows .toggle-submenu:after{color:$color;}\n"));
-			weaverx_f_write($sout,
-				sprintf("$tag .menu-arrows ul .toggle-submenu:after{color:{$color};}\n"));
-			weaverx_f_write($sout,
-				sprintf("$tag .menu-arrows.is-mobile-menu.menu-arrows ul a .toggle-submenu:after{color:$color;}\n"));
-		}
-
-		$color = weaverx_getopt($id . '_sub_color');    // sub-menu arrow takes special handling to override
-		if ( $color ) {
-			weaverx_f_write($sout, sprintf("{$tag} .menu-arrows ul .toggle-submenu:after{color:{$color};}\n"));
+				"{$tag} .wvrx-menu a span.sub-arrow:after{display:none;}\n");
 		}
 
 		// special case - generate a .wvrx-menu text align for main menus to get rid of initial menu jumping
@@ -586,11 +579,28 @@ $menu_detail = array (              /* can't use multiple selectors here! */
 		$lh = '';
 		if ( $align == 'center')		// compensate for centered display:inline-block
 			$lh = 'line-height:0;';
-		weaverx_f_write($sout, "@media(min-width:768px) {{$tag} .wvrx-menu,{$tag} .wvrx-menu-container{text-align:{$align};{$lh}}}\n");
 
+		weaverx_f_write($sout, "{$tag} .wvrx-menu,{$tag} .wvrx-menu-container{text-align:{$align};{$lh}}\n}\n");	// NOTE! Has @media close }
+
+
+		$color = weaverx_getopt( $id .'_color');
+
+		if ($color) {
+			weaverx_f_write($sout,
+				sprintf("{$tag} .menu-arrows .toggle-submenu:after{color:{$color};}\n"));
+			weaverx_f_write($sout,
+				sprintf("{$tag} .menu-arrows ul .toggle-submenu:after{color:{$color};}\n"));
+			weaverx_f_write($sout,
+				sprintf("{$tag} .menu-arrows.is-mobile-menu.menu-arrows ul a .toggle-submenu:after{color:{$color};}\n"));
+		}
+
+		$color = weaverx_getopt("{$id}_sub_color");    // sub-menu arrow takes special handling to override
+		if ( $color ) {
+			weaverx_f_write($sout, sprintf("{$tag} .menu-arrows ul .toggle-submenu:after{color:{$color};}\n"));
+		}
 
 		// alternative mobile menu arrow clickable
-		weaverx_put_bgcolor($sout, $id . '_clickable_bgcolor', $tag . ' .is-mobile-menu.menu-arrows .toggle-submenu');
+		weaverx_put_bgcolor($sout, $id . '_clickable_bgcolor', "{$tag} .is-mobile-menu.menu-arrows .toggle-submenu");
 	}
 
 // End of Menus

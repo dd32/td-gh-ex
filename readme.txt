@@ -134,4 +134,8 @@ with testing and feature suggestions.
 = Version 1.1.2 =
 * Fix: missing <div> for author-link, extra </span>
 
+= Version 1.1.3 =
+* Tweak: Wording for Hide Author Bio option
+* Fix: JavaScript incompatibility with Safari browser
+
 = *** Release Notes also found on Help Tab  *** =
