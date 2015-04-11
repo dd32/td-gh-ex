@@ -228,7 +228,7 @@ function Themeora_Customize_Register($wp_customize) {
 
     $wp_customize->add_setting('footer_copyright', array(
         'default' => '',
-        'sanitize_callback' => 'themeora_sanitize_text_field',
+        'sanitize_callback' => 'themeora_sanitize_text',
     ));
     $wp_customize->add_control(new Themeora_Customize_Textarea_Control($wp_customize, 'footer_copyright', array(
         'label' => __('Footer Copyright Text', 'themeora'),
@@ -666,7 +666,7 @@ function Themeora_Customize_Register($wp_customize) {
         'label' => __('Show author block under post', 'themeora'),
         'section' => 'blog_settings',
         'priority' => 3,
-            )
+        )
     );
 
     /* Transport for live previews

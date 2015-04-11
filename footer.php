@@ -19,6 +19,7 @@
             <div class="col-md-12 aligncenter footer-bottom">
                 <p><?php 
                     if ( get_theme_mod( 'footer_copyright') ) {  
+                        echo 'sdfs';
                         echo html_entity_decode(get_theme_mod( 'footer_copyright')); 
                     } else {
                         echo '&copy; '.date("Y").'. WordPress Theme - ' . THEMEORA_THEME_NAME . ' by <a href="http://themeora.com">Themeora</a>';
