@@ -2,7 +2,7 @@
 
 Theme Name: Unite
 Theme URI: http://colorlib.com/wp/unite/
-Version: 1.5.9
+Version: 1.6.0
 Tested up to: WP 4.1
 
 #Copyright notice#
@@ -59,6 +59,19 @@ If you dismiss this notice, you can install this plugin later via Appearance->In
 Theme documentation is available on http://colorlib.com/wp/support/unite
 
 #Changelog#
+
+####1.6.0 - 04.04.2015 ####
+
+* Updated Options Framework
+* Improved translation support
+* Other small code tweaks and improvements
+
+####1.5.10 - 01.04.2015 ####
+
+* Updated Bootstrap framework to 3.3.4
+* Added extra class name "header-area" to provide more flexibility when customizing this theme.
+* Fixed problem with invisible label for color variations in WooCommerce
+* Other minor CSS fixed for WooCommerce
 
 ####1.5.9 - 11.02.2015 ####
 
