@@ -1,5 +1,7 @@
 <?php
 
+function lookilite_add_widgets() {
+
 	register_sidebar(array(
 	
 		'name' => 'Sidebar',
@@ -46,5 +48,9 @@
 		'after_title'   => '</h3>'
 	
 	));
+
+}
+
+add_action( 'widgets_init', 'lookilite_add_widgets' );
 
 ?>

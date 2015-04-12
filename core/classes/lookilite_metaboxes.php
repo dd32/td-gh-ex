@@ -43,6 +43,8 @@
 						}
 						
 						?>
+                        
+                        <li class="clear"></li>
 					   
 					</ul>
 					   

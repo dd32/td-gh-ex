@@ -35,7 +35,8 @@ function lookilite_add_script() {
 
 	 wp_enqueue_style ( 'lookilite_panel', $file_dir.'/css/wip_panel.css' ); 
 	 wp_enqueue_style ( 'lookilite_on_off', $file_dir.'/css/wip_on_off.css' );
-	
+	 wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Roboto');
+
 	 wp_enqueue_script( 'lookilite_panel', $file_dir.'/js/wip_panel.js',array('jquery','media-upload','thickbox'),'1.0',TRUE ); 
 	 wp_enqueue_script( 'lookilite_on_off', $file_dir.'/js/wip_on_off.js','3.5', '', TRUE); 
 	
@@ -100,7 +101,7 @@ function lookilite_message () {
 		
 		if (isset($message_action)):
 		
-			echo '<div id="message" class="updated fade message_save voobis_message"><p><strong>'.$message_action.'</strong></p></div>';
+			echo '<div id="message" class="updated fade message_save wip_message"><p><strong>'.$message_action.'</strong></p></div>';
 		
 		endif;
 		

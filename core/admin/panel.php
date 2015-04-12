@@ -25,13 +25,42 @@
 		
 			case 'navigation': ?>
 				
-				<div class="header">
-                    <h2 class="maintitle settings"> <?php _e( 'General Settings','lookilite'); ?> </h2> 
-                    <div class="right">
-                        <h2 class="maintitle"> <?php echo lookilite_theme_data('Name') . " " . lookilite_theme_data('Version');  ?> </h2>
-                    </div>
-                    <div class="clear"></div>
+                <div class="banner">
+
+				<h2> <?php echo lookilite_theme_data('Name') . " " . lookilite_theme_data('Version');  ?> </h2>
+
+                <h1> <?php _e( 'To Activate All Features, Please Upgrade to Premium version!','seanlite'); ?> </h1>
+                
+                <div class="big-button"> <a href="https://www.themeinprogress.com/looki/?ref=panel" target="_blank"> GET PREMIUM VERSION </a></div>
+                
                 </div>
+                
+				<div class="header">
+						
+					<div class="left">
+						
+						<a href="https://www.themeinprogress.com/" target="_blank">
+						
+							<img src="<?php echo get_template_directory_uri(); ?>/core/admin/include/images/logo.png">
+								
+						</a>
+						
+					</div>
+						
+					<div class="theme_desc">
+						
+						<h2 class="maintitle"> 
+							
+							<?php echo lookilite_theme_data('Name'); _e( ' Settings','wip'); ?><br />
+							<span><?php _e( 'Version ','wip'); echo lookilite_theme_data('Version'); ?></span>
+								
+						</h2>
+						
+					</div>
+						
+					<div class="clear"></div>
+					
+				</div>
                 
 				<?php lookilite_message($panel); ?>
                 
@@ -39,14 +68,19 @@
 
                 <ul>
     
-   				<?php 
-				
-   				foreach ($element['item'] as $option => $name ) {
-					if (str_replace(" ", "", $option) == $_GET['tab'] ) $class = "class='ui-state-active'"; else $class = ""; 
-					echo "<li ".$class."><a href='themes.php?page=lookilite_option&tab=".str_replace(" ", "", $option)."'>".$name."</a></li>";
-				}
-				?>
-               		<li> <a href="<?php echo esc_url('themes.php?page=getpremium'); ?>"> <?php _e('Get premium version','lookilite'); ?> </a> </li>
+					<?php 
+                    
+                    foreach ($element['item'] as $option => $name ) {
+                        if (str_replace(" ", "", $option) == $_GET['tab'] ) $class = "class='ui-state-active'"; else $class = ""; 
+                        echo "<li ".$class."><a href='themes.php?page=lookilite_option&tab=".str_replace(" ", "", $option)."'>".$name."</a></li>";
+                    }
+                    
+                    ?>
+               		
+                    <li> <a href="<?php echo esc_url('themes.php?page=getpremium'); ?>"> <?php _e('Get premium version','lookilite'); ?> </a> </li>
+                	
+                    <li class="clear"></li>
+                
                 </ul>
                
                 <?php	
@@ -56,8 +90,6 @@
 			case 'endpanel':  ?>
 				
 				</div>
-				
-                <div style="margin:10px 0; font-size:11px">Icons by: <a href="<?php echo esc_url('http://www.woothemes.com/2009/09/woofunction/'); ?>" target="_blank">WooFunction</a> </div>
 			
 			<?php break;
 			
@@ -110,10 +142,9 @@
 						case 'startopen':  ?>
 				
 							<div class="wip_container">
-			
-							<h5 class="element-open"><?php echo $value['name']; ?></h5>
-				   
-							<div class="wip_mainbox2"> 
+				
+                                <h5 class="element-open"><?php echo $value['name']; ?></h5>
+                                <div class="wip_mainbox wip_openbox"> 
 			
 						<?php break;
 				
