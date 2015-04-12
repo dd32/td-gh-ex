@@ -1,103 +1,119 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sparkling Theme\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-04-04 15:02+0200\n"
 "PO-Revision-Date: 2015-04-04 15:02+0200\n"
 "Last-Translator: Aigars Silkalns <a.silkalns@gmail.com>\n"
 "Language-Team: colorlib <info@colorlib.com>\n"
-"Language: en_US\n"
+"Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 &&(n"
+"%100<10||n%100 >= 20)? 1 : 2);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 1.7.5\n"
 "X-Poedit-Basepath: .\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-KeywordsList: _e;__;esc_attr__;_nx:4c,1,2;_n:1,2\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3\n"
+"X-Loco-Target-Locale: lt_LT\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: ..\n"
 
 #: ../404.php:15
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "Oeps! Deze pagina kon niet gevonden worden."
+msgstr "Oi! Puslapis nerastas."
 
 #: ../404.php:19
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
-"Het lijkt er dat er niks is gevonden. Probeer één van onderstaande links of "
-"de zoekfunctie."
+"Panašu, kad čia nieko nėra. Galbūt jums padės paieškos galimybė arba viena "
+"iš žemiau esančių nuorodų?"
 
 #: ../404.php:25
-#, fuzzy
 msgid "Recent Posts"
-msgstr "Berichten navigatie"
+msgstr "Naujausi įrašai"
 
 #: ../404.php:31
 msgid "Most Used Categories"
-msgstr "Meest gebruikte categorieên"
+msgstr "Įrašų kategorijos"
 
 #: ../404.php:52
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
-msgstr "Probeer eens te kijken in de maandelijkse archieven. %1$s"
+msgstr "Pabandykite paieškoti mėnesių archyvuose. %1$s"
 
 #: ../404.php:53 ../archive.php:66 ../sidebar.php:19
 msgid "Archives"
-msgstr "Archieven"
+msgstr "Archyvai"
 
 #: ../404.php:58
-#, fuzzy
 msgid "Tags"
-msgstr "Gebruik P tags"
+msgstr "Žymos"
 
 #: ../archive.php:27
 #, php-format
 msgid "Author: %s"
-msgstr "Auteur: %s"
+msgstr "Autorius: %s"
 
 #: ../archive.php:30
 #, php-format
 msgid "Day: %s"
-msgstr "Dag: %s"
+msgstr "Diena: %s"
 
 #: ../archive.php:33
 #, php-format
 msgid "Month: %s"
-msgstr "Maand: %s"
+msgstr "Mėnuo: %s"
+
+#: ../archive.php:33
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "Y F"
 
 #: ../archive.php:36
 #, php-format
 msgid "Year: %s"
-msgstr "Jaar: %s"
+msgstr "Metai: %s"
+
+#: ../archive.php:36
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
 
 #: ../archive.php:39
 msgid "Asides"
-msgstr "Asides"
+msgstr "Be pavadinimo"
 
 #: ../archive.php:42
 msgid "Galleries"
-msgstr "Gallerijen"
+msgstr "Galerijos"
 
 #: ../archive.php:45
 msgid "Images"
-msgstr "Afbeeldingen"
+msgstr "Paveikslėliai"
 
 #: ../archive.php:48
 msgid "Videos"
-msgstr "Videos"
+msgstr "Video"
 
 #: ../archive.php:51
 msgid "Quotes"
-msgstr "Quotes"
+msgstr "Citatos"
 
 #: ../archive.php:54
 msgid "Links"
-msgstr "Links"
+msgstr "Nuorodos"
 
 #: ../archive.php:57
 msgid "Statuses"
-msgstr "Status"
+msgstr "Būsenos"
 
 #: ../archive.php:60
 msgid "Audios"
@@ -105,672 +121,688 @@ msgstr "Audio"
 
 #: ../archive.php:63
 msgid "Chats"
-msgstr "Chats"
+msgstr "Pokalbiai"
 
 #: ../comments.php:30
-#, php-format
+#, fuzzy, php-format
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "Een gedachte over &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s gedachten over &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s komentaras<!--%2$s-->"
+msgstr[1] "%1$s komentarai<!--%2$s-->"
+msgstr[2] "%1$s komentarų<!--%2$s-->"
 
 #: ../comments.php:37 ../comments.php:55
 msgid "Comment navigation"
-msgstr "Reactie navigatie"
+msgstr "Komentarų navigacija"
 
 #: ../comments.php:38 ../comments.php:56
 msgid "&larr; Older Comments"
-msgstr "&larr; Oudere Reacties"
+msgstr "&larr; Senesni komentarai"
 
 #: ../comments.php:39 ../comments.php:57
 msgid "Newer Comments &rarr;"
-msgstr "Nieuwere Reacties &rarr;"
+msgstr "Naujesni komentarai &rarr;"
 
 #: ../comments.php:67
 msgid "Comments are closed."
-msgstr "Reacties zijn gesloten."
+msgstr "Komentavimo galimybė išjungta."
 
 #: ../content-none.php:13
 msgid "Nothing Found"
-msgstr "Niks gevonden"
+msgstr "Nerasta"
 
 #: ../content-none.php:19
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
-"Klaar om je eerste bericht te plaatsen? <a href=\"%1$s\">Begin hier</a>."
+"Pasirengę paskelbti pirmąjį įrašą? <a href=\"%1$s\">Pradėkite nuo čia</a>."
 
 #: ../content-none.php:23
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
-"Sorry, we hebben niks kunnen vinden met deze zoekterm. Probeer het nog eens."
+"Deja, nieko panašaus rasti nepavyko. Pabandykite įvesti kitokį paieškos "
+"raktažodį."
 
 #: ../content-none.php:28
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
-"Het lijkt er op dat we niet kunnen vinden waar je naar zocht. Probeer de "
-"zoekfunctie eens."
+"Panašu, kad nepavyko rasti jūsų ieškomo puslapio. Galbūt jums padės paieškos "
+"galimybė."
 
 #: ../content-page.php:21 ../content-single.php:35 ../content.php:43
 #: ../image.php:79
 msgid "Pages:"
-msgstr "Pagina&rsquo;s"
+msgstr "Puslapiai:"
 
 #: ../content-page.php:32 ../content-single.php:26 ../content.php:23
 msgid "Edit"
-msgstr "Wijzigen"
+msgstr "Redaguoti"
 
 #: ../content-single.php:19
 msgid ", "
-msgstr ", "
+msgstr ","
 
 #: ../content-single.php:23
 #, php-format
 msgid " %1$s"
-msgstr " %1$s"
+msgstr "%1$s"
 
 #: ../content.php:20
 msgid "Leave a comment"
-msgstr "Reageer"
+msgstr "Komentarų: 0"
 
 #: ../content.php:20
 msgid "1 Comment"
-msgstr "1 Reactie"
+msgstr "Komentarų: 1"
 
 #: ../content.php:20
 msgid "% Comments"
-msgstr "% Reacties"
+msgstr "Komentarų: %"
 
 #: ../content.php:32 ../content.php:39
 msgid "Read More"
-msgstr "Lees meer"
+msgstr "Skaityti toliau"
 
 #: ../functions.php:69
 msgid "Primary Menu"
-msgstr "Hoofdmenu"
+msgstr "Pagrindinis meniu"
 
 #: ../functions.php:70 ../inc/extras.php:226
 msgid "Footer Links"
-msgstr "Footer Links"
+msgstr "Poraštės nuorodos"
 
 #: ../functions.php:108
 msgid "Sidebar"
-msgstr "Sidebar"
+msgstr "Valdiklių sritis"
 
 #: ../functions.php:118
 msgid "Homepage Widget 1"
-msgstr "Voorpagina Widget 1"
+msgstr "Pagrindinio puslapio valdiklis 1"
 
 #: ../functions.php:119 ../functions.php:129 ../functions.php:139
 msgid "Displays on the Home Page"
-msgstr "Weergeven op de Voorpagina"
+msgstr "Rodomas pagrindiniame puslapyje"
 
 #: ../functions.php:128
 msgid "Homepage Widget 2"
-msgstr "Voorpagina Widget 2"
+msgstr "Pagrindinio puslapio valdiklis 2"
 
 #: ../functions.php:138
 msgid "Homepage Widget 3"
-msgstr "Voorpagina Widget 3"
+msgstr "Pagrindinio puslapio valdiklis 3"
 
 #: ../functions.php:148
 msgid "Footer Widget 1"
-msgstr "Footer Widget 1"
+msgstr "Poraštės valdiklis 1"
 
 #: ../functions.php:149 ../functions.php:159 ../functions.php:169
 msgid "Used for footer widget area"
-msgstr "Gebruikt voor footer widget area"
+msgstr "Naudojamas poraštės valdiklių srityje"
 
 #: ../functions.php:158
 msgid "Footer Widget 2"
-msgstr "Footer Widget 2"
+msgstr "Poraštės valdiklis 2"
 
 #: ../functions.php:168
 msgid "Footer Widget 3"
-msgstr "Footer Widget 3"
+msgstr "Poraštės valdiklis 3"
 
 #: ../image.php:22
 msgid "<i class=\"fa fa-chevron-left\"></i> Previous"
-msgstr "<i class=\"fa fa-chevron-left\"></i> Vorige"
+msgstr "<i class=\"fa fa-chevron-left\"></i> Ankstesnis"
 
 #: ../image.php:23
 msgid "Next <i class=\"fa fa-chevron-right\"></i>"
-msgstr "Volgende <i class=\"fa fa-chevron-right\"></i>"
+msgstr "Kitas <i class=\"fa fa-chevron-right\"></i>"
 
 #: ../inc/admin/includes/class-options-framework-admin.php:91
 #: ../inc/admin/includes/class-options-framework-admin.php:92
 msgid "Theme Options"
-msgstr "Thema opties"
+msgstr "Temos nustatymai"
+
+#: ../inc/admin/includes/class-options-framework-admin.php:203
+msgid "Save Options"
+msgstr "Išsaugoti nustatymus"
+
+#: ../inc/admin/includes/class-options-framework-admin.php:204
+msgid "Restore Defaults"
+msgstr "Atkurti numatytuosius"
 
 #: ../inc/admin/includes/class-options-framework-admin.php:204
 msgid "Click OK to reset. Any theme settings will be lost!"
-msgstr ""
-"Klik op OK om te resetten. Alle thema instellingen zullen verloren gaan!"
+msgstr "Ar tikrai norite atkurti numatytuosius parametrus?"
 
 #: ../inc/admin/includes/class-options-framework-admin.php:235
 msgid "Default options restored."
-msgstr "Standaard instellingen hersteld."
+msgstr "Numatytieji nustatymai atkurti."
 
 #: ../inc/admin/includes/class-options-framework-admin.php:289
 msgid "Options saved."
-msgstr "Instellingen opgeslagen."
+msgstr "Nustatymai išsaugoti."
 
 #: ../inc/admin/includes/class-options-media-uploader.php:62
 msgid "No file chosen"
-msgstr "Geen bestand geselecteerd"
+msgstr "Pasirinkite failą"
 
 #: ../inc/admin/includes/class-options-media-uploader.php:65
 #: ../inc/admin/includes/class-options-media-uploader.php:118
 msgid "Upload"
-msgstr "Uploaden"
+msgstr "Nusiųsti"
 
 #: ../inc/admin/includes/class-options-media-uploader.php:67
 #: ../inc/admin/includes/class-options-media-uploader.php:119
 msgid "Remove"
-msgstr "Verwijderen"
+msgstr "Pašalinti"
 
 #: ../inc/admin/includes/class-options-media-uploader.php:70
 msgid "Upgrade your version of WordPress for full media support."
-msgstr "Upgrade je WordPress versie voor volledige media ondersteuning."
+msgstr ""
+"Jei norite turėti pilną media palaikymą, atnaujinkite savo WordPress versija."
 
 #: ../inc/admin/includes/class-options-media-uploader.php:94
 msgid "View File"
-msgstr "Bekijk bestand"
+msgstr "Peržiūrėti failą"
 
 #: ../inc/admin/includes/class-options-sanitization.php:316
 msgid "No Repeat"
-msgstr "Niet Herhalen"
+msgstr "Be kopijų"
 
 #: ../inc/admin/includes/class-options-sanitization.php:317
 msgid "Repeat Horizontally"
-msgstr "Herhaal Horizontaal"
+msgstr "Padengti horizontaliai"
 
 #: ../inc/admin/includes/class-options-sanitization.php:318
 msgid "Repeat Vertically"
-msgstr "Herhaal Verticaal"
+msgstr "Padengti vertikaliai"
 
 #: ../inc/admin/includes/class-options-sanitization.php:319
 msgid "Repeat All"
-msgstr "Herhaal Alles"
+msgstr "Padengti kopijuojant"
 
 #: ../inc/admin/includes/class-options-sanitization.php:331
 msgid "Top Left"
-msgstr "Boven Links"
+msgstr "Viršuje kairėje"
 
 #: ../inc/admin/includes/class-options-sanitization.php:332
 msgid "Top Center"
-msgstr "Boven Midden"
+msgstr "Viršuje centre"
 
 #: ../inc/admin/includes/class-options-sanitization.php:333
 msgid "Top Right"
-msgstr "Boven Rechts"
+msgstr "Viršuje dešinėje"
 
 #: ../inc/admin/includes/class-options-sanitization.php:334
 msgid "Middle Left"
-msgstr "Midden Links"
+msgstr "Viduryje kairėje"
 
 #: ../inc/admin/includes/class-options-sanitization.php:335
 msgid "Middle Center"
-msgstr "Midden Midden"
+msgstr "Viduryje centre"
 
 #: ../inc/admin/includes/class-options-sanitization.php:336
 msgid "Middle Right"
-msgstr "Midden Rechts"
+msgstr "Viduryje dešinėje"
 
 #: ../inc/admin/includes/class-options-sanitization.php:337
 msgid "Bottom Left"
-msgstr "Onder Links"
+msgstr "Apačioje kairėje"
 
 #: ../inc/admin/includes/class-options-sanitization.php:338
 msgid "Bottom Center"
-msgstr "Onder Midden"
+msgstr "Apačioje centre"
 
 #: ../inc/admin/includes/class-options-sanitization.php:339
 msgid "Bottom Right"
-msgstr "Onder Rechts"
+msgstr "Apačioje dešinėje"
 
 #: ../inc/admin/includes/class-options-sanitization.php:351
 msgid "Scroll Normally"
-msgstr "Scroll normaal"
+msgstr "Įprastinė slinktis"
 
 #: ../inc/admin/includes/class-options-sanitization.php:352
 msgid "Fixed in Place"
-msgstr "Vaste plaats"
+msgstr "Pritvirtinta vietoje"
 
 #: ../inc/admin/includes/class-options-sanitization.php:424
 msgid "Normal"
-msgstr "Normaal"
+msgstr "Įprastasis"
 
 #: ../inc/admin/includes/class-options-sanitization.php:425
 msgid "Italic"
-msgstr "Schuin"
+msgstr "Kursyvas"
 
 #: ../inc/admin/includes/class-options-sanitization.php:426
 msgid "Bold"
-msgstr "Dik"
+msgstr "Paryškintasis"
 
 #: ../inc/admin/includes/class-options-sanitization.php:427
 msgid "Bold Italic"
-msgstr "Dik Schuin"
+msgstr "Paryškintasis kursyvas"
 
 #: ../inc/extras.php:61
 #, php-format
 msgid "Page %s"
-msgstr "Pagina %s"
+msgstr "Puslapis %s"
 
 #: ../inc/extras.php:121
 msgid "Search..."
-msgstr "Zoeken..."
+msgstr "Paieška..."
 
 #: ../inc/extras.php:142
 msgid ""
 "<p>This post is password protected. To view it please enter your password "
 "below:</p>"
 msgstr ""
-"<p>Dit bericht is beveiligd met een wachtwoord. Om hem te bekijken gelieve "
-"je wachtwoord in te voeren:</p>"
+"<p>Įrašas apsaugotas slaptažodžiu. Įveskite jį, jei norite peržiūrėti:</p>"
 
 #: ../inc/extras.php:143
 msgid "Password:"
-msgstr "Wachtwoord:"
+msgstr "Slaptažodis:"
 
 #: ../inc/extras.php:146
 msgid "Submit"
-msgstr "Toevoegen"
+msgstr "Pateikti"
 
 #: ../inc/extras.php:190
 msgid "Follow us on "
-msgstr "Volg ons op"
+msgstr "Sekite mus"
 
 #: ../inc/extras.php:301
 #, php-format
 msgid "Theme by %1$s Powered by %2$s"
-msgstr "Thema van %1$s, draait op %2$s"
+msgstr "%1$s tema sukurta %2$s sistemai"
 
 #: ../inc/extras.php:405
 msgid "Support and Documentation"
-msgstr "Support en Documentatie"
+msgstr "Pagalba ir dokumentacija"
 
 #: ../inc/extras.php:411
 msgid "Sparkling Documentation"
-msgstr "Sparkling Documentatie"
+msgstr "Sparkling dokumentacija"
 
 #: ../inc/extras.php:412
 msgid ""
 "The best way to contact us with <b>support questions</b> and <b>bug reports</"
 "b> is via"
 msgstr ""
-"De beste manier om ons te contacteren voor <b>support vragen</b> en <b>bug "
-"meldingen</b> is via"
+"Geriausias būdas susisiekti su mumis <b>pagalbos klausimais</b> ir "
+"<b>pranešti apie klaidas</b> yra čia"
 
 #: ../inc/extras.php:412
 msgid "Colorlib support forum"
-msgstr "Colorlib support forum"
+msgstr "Colorlib pagalbos forumai"
 
 #: ../inc/extras.php:413
 msgid "If you like this theme, I'd appreciate any of the following:"
-msgstr "Als je dit thema leuk vind dan waardeer het volgende:"
+msgstr "Jei jums patinka ši tema, pasirinkite vieną iš būdų ją įvertinti:"
 
 #: ../inc/extras.php:415
 msgid "Rate this Theme"
-msgstr "Waardeer dit Thema"
+msgstr "Įvertinkite temą"
 
 #: ../inc/extras.php:416
 msgid "Like on Facebook"
-msgstr "Like ons op Facebook"
+msgstr "Patinka Facebook"
 
 #: ../inc/extras.php:417
 msgid "Follow on Twitter"
-msgstr "Volg ons op Twitter"
+msgstr "Sekite Twitter"
 
 #: ../inc/template-tags.php:23
 msgid "Posts navigation"
-msgstr "Berichten navigatie"
+msgstr "Įrašų navigacija"
 
 #: ../inc/template-tags.php:27
 msgid "<i class=\"fa fa-chevron-left\"></i> Older posts"
-msgstr "<i class=\"fa fa-chevron-left\"></i> Oudere berichten"
+msgstr "<i class=\"fa fa-chevron-left\"></i> Senesni įrašai"
 
 #: ../inc/template-tags.php:31
 msgid "Newer posts <i class=\"fa fa-chevron-right\"></i>"
-msgstr "Nieuwere berichten<i class=\"fa fa-chevron-right\"></i>"
+msgstr "Naujesni įrašai <i class=\"fa fa-chevron-right\"></i>"
 
 #: ../inc/template-tags.php:56
 msgid "Post navigation"
-msgstr "Bericht navigatie"
+msgstr "Įrašo navigacija"
+
+#: ../inc/template-tags.php:59
+msgctxt "Previous post link"
+msgid "<i class=\"fa fa-chevron-left\"></i> %title"
+msgstr "<i class=\"fa fa-chevron-left\"></i> %title"
+
+#: ../inc/template-tags.php:60
+msgctxt "Next post link"
+msgid "%title <i class=\"fa fa-chevron-right\"></i>"
+msgstr "%title <i class=\"fa fa-chevron-right\"></i>"
 
 #: ../inc/widgets/widget-categories.php:11
 #: ../inc/widgets/widget-categories.php:12
 msgid "Sparkling Categories"
-msgstr "Sparkling Categoriën"
+msgstr "Sparkling kategorijos"
 
 #: ../inc/widgets/widget-categories.php:17
 #: ../inc/widgets/widget-categories.php:76
 msgid "Categories"
-msgstr "Categoriën"
+msgstr "Kategorijos"
 
 #: ../inc/widgets/widget-categories.php:83 ../inc/widgets/widget-social.php:49
 msgid "Title "
-msgstr "Titel"
+msgstr "Pavadinimas"
 
 #: ../inc/widgets/widget-categories.php:91
 msgid "Limit Categories "
-msgstr "Limiteer Categoriën"
+msgstr "Rodomų kategorijų skaičius"
 
 #: ../inc/widgets/widget-categories.php:104
 msgid "Enable Posts Count"
-msgstr "Schakel Berichten teller in"
+msgstr "Rodyti įrašų skaičių"
 
 #: ../inc/widgets/widget-popular-posts.php:11
 #: ../inc/widgets/widget-popular-posts.php:12
 msgid "Sparkling Popular Posts Widget"
-msgstr "Sparkling Populaire Berichten Widget"
+msgstr "Sparkling populiariausi įrašai"
 
 #: ../inc/widgets/widget-popular-posts.php:17
 #: ../inc/widgets/widget-popular-posts.php:94
 msgid "Popular Posts"
-msgstr "Populaire Berichten"
+msgstr "Populiariausi įrašai"
 
 #: ../inc/widgets/widget-popular-posts.php:99
 msgid "Title"
-msgstr "Titel"
+msgstr "Pavadinimas"
 
 #: ../inc/widgets/widget-popular-posts.php:107
 msgid "Limit Posts Number"
-msgstr "Limiteer Berichten Aantal"
+msgstr "Rodomų įrašų skaičius"
 
 #: ../inc/widgets/widget-social.php:11 ../inc/widgets/widget-social.php:12
 msgid "Sparkling Social Widget"
-msgstr "Sparkling Social Widget"
+msgstr "Sparkling socialinės nuorodos"
 
 #: ../inc/widgets/widget-social.php:17 ../inc/widgets/widget-social.php:46
 msgid "Follow us"
-msgstr "Volg Ons"
+msgstr "Sekite mus"
 
 #: ../options.php:23
 msgid "Right Sidebar"
-msgstr "Sidebar Rechts"
+msgstr "Valdiklių sritis dešinėje"
 
 #: ../options.php:23
 msgid "Left Sidebar"
-msgstr "Sidebar Links"
+msgstr "Valdiklių sritis kairėje"
 
 #: ../options.php:27
 msgid "One"
-msgstr "Eén"
+msgstr "Vienas"
 
 #: ../options.php:28
 msgid "Two"
-msgstr "Twee"
+msgstr "Du"
 
 #: ../options.php:29
 msgid "Three"
-msgstr "Drie"
+msgstr "Trys"
 
 #: ../options.php:30
 msgid "Four"
-msgstr "Vier"
+msgstr "Keturi"
 
 #: ../options.php:31
 msgid "Five"
-msgstr "Vijf"
+msgstr "Penki"
 
 #: ../options.php:36
 msgid "French Toast"
-msgstr "Franse Toast"
+msgstr "Skrudinta duona"
 
 #: ../options.php:37
 msgid "Pancake"
-msgstr "Pannenkoeken"
+msgstr "Blynas"
 
 #: ../options.php:38
 msgid "Omelette"
-msgstr "Omelet"
+msgstr "Omletas"
 
 #: ../options.php:39
 msgid "Crepe"
-msgstr "Crepe"
+msgstr "Krepas"
 
 #: ../options.php:40
 msgid "Waffle"
-msgstr "Wafel"
+msgstr "Vaflis"
 
 #: ../options.php:110
 msgid "Main"
-msgstr "Algemeen"
+msgstr "Pagrindiniai"
 
 #: ../options.php:115
 msgid "Do You want to display image slider on the Home Page?"
-msgstr "Wil je de afbeeldings slider op de Voorpagina weergeven?"
+msgstr "Ar norite pagrindiniame puslapyje rodyti skaidrių peržiūrą?"
 
 #: ../options.php:116
 msgid "Check if you want to enable slider"
-msgstr "Vink aan om te activeren"
+msgstr "Pažymėkite jei norite įjungti skaidrių peržiūrą"
 
 #: ../options.php:123
 msgid "Slider Category"
-msgstr "Slider Categorie"
+msgstr "Skaidrių kategorija"
 
 #: ../options.php:124
 msgid "Select a category for the featured post slider"
-msgstr "Selecteer een categorie voor de uitgelichte berichten"
+msgstr "Kategorija su įrašais, kuriems yra priskirti specialieji paveikslėliai"
 
 #: ../options.php:132
 msgid "Number of slide items"
-msgstr "Aantal uitgelichte berichten"
+msgstr "Rodomų skaidrių skaičius"
 
 #: ../options.php:133
 msgid "Enter the number of slide items"
-msgstr "Voor het aantal uitgelichte berichten in"
+msgstr "Įveskite rodomų skaidrių skaičių"
 
 #: ../options.php:141
 msgid "Website Layout Options"
-msgstr "Website Layout Opties"
+msgstr "Svetainės išdėstymas"
 
 #: ../options.php:142
 msgid "Choose between Left and Right sidebar options to be used as default"
 msgstr ""
-"Maak een keuze tussen een Linker of Rechter sidebar als standaard keuze"
+"Pasirinkite kairiąją arba dešiniąją valdiklių sritį numatytajam naudojimui"
 
 #: ../options.php:151
 msgid "Element color"
-msgstr "Element kleur"
+msgstr "Elemento spalva"
 
 #: ../options.php:152 ../options.php:160 ../options.php:205 ../options.php:213
 #: ../options.php:221 ../options.php:229 ../options.php:259 ../options.php:267
 #: ../options.php:280 ../options.php:382 ../options.php:390
 msgid "Default used if no color is selected"
-msgstr "Standaard gebruikt indien geen kleur gekozen"
+msgstr "Numatytasis nustatymas jei nėra pasirinkta spalva"
 
 #: ../options.php:159
 msgid "Element color on hover"
-msgstr "Element kleur bij hover"
+msgstr "Elemento spalva užvedus pelę"
 
 #: ../options.php:167
 msgid "Custom Favicon"
-msgstr "Aangepast Favicon"
+msgstr "Svetainės ikona"
 
 #: ../options.php:168
 msgid ""
 "Upload a 32px x 32px PNG/GIF image that will represent your websites favicon"
-msgstr "Upload een PNG/GIF afbeelding van 32pxx32px als website icoon."
+msgstr "Nusiųskite 32px x 32px PNG/GIF svetainės ikoną"
 
 #: ../options.php:175
 msgid "Action Button"
-msgstr "Actie Button"
+msgstr "Veiksmo iškvietimo mygtukas"
 
 #: ../options.php:180
 msgid "Call For Action Text"
-msgstr "Tekst voor het actie veld"
+msgstr "Veiksmo iškvietimo tekstas"
 
 #: ../options.php:181
 msgid "Enter the text for call for action section"
-msgstr "Voer de tekst in die je wilt weergeven"
+msgstr "Įveskite veiksmo iškvietimo tekstą"
 
 #: ../options.php:188
 msgid "Call For Action Button Title"
-msgstr "Actie knop Titel"
+msgstr "Veiksmo iškvietimo mygtuko pavadinimas"
 
 #: ../options.php:189
 msgid "Enter the title for Call For Action button"
-msgstr "Voer de Titel in voor de actie knop"
+msgstr "Įveskite veiksmo iškvietimo mygtuko pavadinimą"
 
 #: ../options.php:196
 msgid "CFA button link"
-msgstr "Link voor de actie knop"
+msgstr "Veiksmo iškvietimo mygtuko nuoroda"
 
 #: ../options.php:197
 msgid "Enter the link for Call For Action button"
-msgstr "Voer de link in voor de actie knop"
+msgstr "Įveskite veiksmo iškvietimo mygtuko nuorodą"
 
 #: ../options.php:204
 msgid "Call For Action Text Color"
-msgstr "Actie veld tekst kleur"
+msgstr "Veiksmo iškvietimo teksto spalva"
 
 #: ../options.php:212
 msgid "Call For Action Background Color"
-msgstr "Actie knop achtergrond kleur"
+msgstr "Veiksmo iškvietimo fono spalva"
 
 #: ../options.php:220
 msgid "Call For Action Button Border Color"
-msgstr "Actie knop rand kleur"
+msgstr "Veiksmo iškvietimo mygtuko rėmelio spalva"
 
 #: ../options.php:228
 msgid "Call For Action Button Text Color"
-msgstr "Actie knop kleur"
+msgstr "Veiksmo iškvietimo mygtuko teksto spalva"
 
 #: ../options.php:236
 msgid "Typography"
-msgstr "Opmaak"
+msgstr "Tipografija "
 
 #: ../options.php:241
 msgid "Main Body Text"
-msgstr "Hoofd tekst"
+msgstr "Pagrindo (angl. body) tekstas"
 
 #: ../options.php:242
 msgid "Used in P tags"
-msgstr "Gebruik P tags"
+msgstr "Naudojama P žymoms"
 
 #: ../options.php:250
 msgid "Heading Color"
-msgstr "Titel kleur"
+msgstr "Antraštės spalva"
 
 #: ../options.php:251
 msgid "Color for all headings (h1-h6)"
-msgstr "Kleur voor alle titels (h1-h6)"
+msgstr "Spalva visoms antraštėms (h1-h6)"
 
 #: ../options.php:258
 msgid "Link Color"
-msgstr "Link kleur"
+msgstr "Nuorodų spalva"
 
 #: ../options.php:266
 msgid "Link:hover Color"
-msgstr "Link:hover kleur"
+msgstr "Nuorodų spalva užvedus pelę"
 
 #: ../options.php:274
 msgid "Header"
-msgstr "Header"
+msgstr "Antraštė"
 
 #: ../options.php:279
 msgid "Top nav background color"
-msgstr "Top navigatie achtergrond kleur"
+msgstr "Viršutinio menių fono spalva"
 
 #: ../options.php:287
 msgid "Top nav item color"
-msgstr "Top navigatie tekst kleur"
+msgstr "Viršutinio menių punkto spalva"
 
 #: ../options.php:288
 msgid "Link color"
-msgstr "Link kleur"
+msgstr "Nuorodų spalva"
 
 #: ../options.php:295
 msgid "Top nav item hover color"
-msgstr "Top naviatie tekst hover kleur"
+msgstr "Viršutinio menių punkto spalva užvedus pelę"
 
 #: ../options.php:296
 msgid "Link:hover color"
-msgstr "Link:hover kleur"
+msgstr "Nuorodų spalva užvedus pelę"
 
 #: ../options.php:303
 msgid "Top nav dropdown background color"
-msgstr "Top navigatie dropdown achtergrond kleur"
+msgstr "Viršutinio išskleidžiamo menių fono spalva"
 
 #: ../options.php:304 ../options.php:328
 msgid "Background of dropdown item hover color"
-msgstr "Top navigatie dropdown tekst hover kleur"
+msgstr "Išskleidžiamo menių punkto spalva užvedus pelę"
 
 #: ../options.php:311
 msgid "Top nav dropdown item color"
-msgstr "Top navigatie dropdown tekst kleur"
+msgstr "Viršutinio išskleidžiamo menių punkto spalva"
 
 #: ../options.php:312
 msgid "Dropdown item color"
-msgstr "Dropdown tekst kleur"
+msgstr "Išskleidžiamo menių spalva"
 
 #: ../options.php:319
-#, fuzzy
 msgid "Top nav dropdown item hover color"
-msgstr "Top naviatie tekst hover kleur"
+msgstr "Viršutinio išskleidžiamo menių punkto spalva užvedus pelę"
 
 #: ../options.php:320
-#, fuzzy
 msgid "Dropdown item hover color"
-msgstr "Couleur Survol Fond Menu Déroulant Haut"
+msgstr "Išskleidžiamo menių punkto fono spalva užvedus pelę"
 
 #: ../options.php:327
-#, fuzzy
 msgid "Top nav dropdown item background hover color"
-msgstr "Couleur Survol Fond Menu Déroulant Haut"
+msgstr "Viršutinio išskleidžiamo menių punkto fono spalva užvedus pelę"
 
 #: ../options.php:335
 msgid "Footer"
-msgstr "Footer"
+msgstr "Poraštė"
 
 #: ../options.php:340
 msgid "Footer widget area background color"
-msgstr "Footer widget achtergrond kleur"
+msgstr "Poraštės valdiklių srities fono spalva"
 
 #: ../options.php:347
 msgid "Footer background color"
-msgstr "Footer achtergrond kleur"
+msgstr "Poraštės fono spalva"
 
 #: ../options.php:354
 msgid "Footer text color"
-msgstr "Footer tekst kleur"
+msgstr "Poraštės teksto spalva"
 
 #: ../options.php:361
 msgid "Footer link color"
-msgstr "Footer link kleur"
+msgstr "Poraštės nuorodų spalva"
 
 #: ../options.php:368
 msgid "Footer information"
-msgstr "Footer informatie"
+msgstr "Poraštės informacija"
 
 #: ../options.php:369
 msgid "Copyright text in footer"
-msgstr "Copyright tekst in de footer"
+msgstr "Autorinių teisių tekstas poraštėje"
 
 #: ../options.php:376
 msgid "Social"
-msgstr "Social"
+msgstr "Socialiniai"
 
 #: ../options.php:381
 msgid "Social icon color"
-msgstr "Social icoon kleur"
+msgstr "Socialinių ikonų spalva"
 
 #: ../options.php:389
 msgid "Footer social icon color"
-msgstr "Footer social icoon kleur"
+msgstr "Poraštės socialinių ikonų spalva"
 
 #: ../options.php:397
 msgid "Add full URL for your social network profiles"
-msgstr "Voeg de volledige URL van je sociale netwerken toe"
+msgstr "Pridėkite pilną URL į savo socialinį profilį"
 
 #: ../options.php:398
 msgid "Facebook"
@@ -790,7 +822,7 @@ msgstr "Youtube"
 
 #: ../options.php:431
 msgid "Vimeo"
-msgstr ""
+msgstr "Vimeo"
 
 #: ../options.php:439
 msgid "LinkedIn"
@@ -802,7 +834,7 @@ msgstr "Pinterest"
 
 #: ../options.php:455
 msgid "RSS Feed"
-msgstr "RSS Feed"
+msgstr "RSS srautas"
 
 #: ../options.php:463
 msgid "Tumblr"
@@ -830,30 +862,44 @@ msgstr "Foursquare"
 
 #: ../options.php:511
 msgid "SoundCloud"
-msgstr ""
+msgstr "SoundCloud"
 
 #: ../options.php:519
-#, fuzzy
 msgid "GitHub"
-msgstr "Github"
+msgstr "GitHub"
 
 #: ../options.php:526
 msgid "Other"
-msgstr "Overige"
+msgstr "Kita"
 
 #: ../options.php:531
 msgid "Custom CSS"
-msgstr "Aangepaste CSS"
+msgstr "Pasirinktinis CSS"
 
 #: ../options.php:532
 msgid "Additional CSS"
-msgstr "Extra CSS"
+msgstr "Papildomas CSS"
 
 #: ../search.php:16
 #, php-format
 msgid "Search Results for: %s"
-msgstr "Zoek resultaten voor: %s"
+msgstr "Paieškos rezultatai: %s"
+
+#: ../searchform.php:10
+msgctxt "label"
+msgid "Search for:"
+msgstr "Ieškoti:"
+
+#: ../searchform.php:11
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr "Paieška &hellip;"
+
+#: ../searchform.php:13
+msgctxt "submit button"
+msgid "Search"
+msgstr "Paieška"
 
 #: ../sidebar.php:26
 msgid "Meta"
-msgstr "Meta"
+msgstr "Metainformacija"

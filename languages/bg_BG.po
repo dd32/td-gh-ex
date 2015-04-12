@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sparkling Theme\n"
-"POT-Creation-Date: 2015-04-04 15:02+0200\n"
-"PO-Revision-Date: 2015-04-04 15:02+0200\n"
+"POT-Creation-Date: 2015-04-04 15:01+0200\n"
+"PO-Revision-Date: 2015-04-04 15:01+0200\n"
 "Last-Translator: Aigars Silkalns <a.silkalns@gmail.com>\n"
-"Language-Team: colorlib <info@colorlib.com>\n"
-"Language: en_US\n"
+"Language-Team: Petko Bossakov <petko@bossakov.eu>\n"
+"Language: bg_BG\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,157 +18,155 @@ msgstr ""
 
 #: ../404.php:15
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "Oeps! Deze pagina kon niet gevonden worden."
+msgstr "Опа! Не мога да намеря тази страница."
 
 #: ../404.php:19
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
-"Het lijkt er dat er niks is gevonden. Probeer één van onderstaande links of "
-"de zoekfunctie."
+"Май на този адрес няма нищо. Пробвай някоя от връзките долу, или пък опцията "
+"за търсене."
 
 #: ../404.php:25
-#, fuzzy
 msgid "Recent Posts"
-msgstr "Berichten navigatie"
+msgstr "Нови статии"
 
 #: ../404.php:31
 msgid "Most Used Categories"
-msgstr "Meest gebruikte categorieên"
+msgstr "Най-използвани категории"
 
 #: ../404.php:52
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
-msgstr "Probeer eens te kijken in de maandelijkse archieven. %1$s"
+msgstr "Опитай да погледнеш в архива по месеци. %1$s"
 
 #: ../404.php:53 ../archive.php:66 ../sidebar.php:19
 msgid "Archives"
-msgstr "Archieven"
+msgstr "Архив"
 
 #: ../404.php:58
-#, fuzzy
 msgid "Tags"
-msgstr "Gebruik P tags"
+msgstr "Етикети"
 
 #: ../archive.php:27
 #, php-format
 msgid "Author: %s"
-msgstr "Auteur: %s"
+msgstr "Автор: %s"
 
 #: ../archive.php:30
 #, php-format
 msgid "Day: %s"
-msgstr "Dag: %s"
+msgstr "Ден: %s"
 
 #: ../archive.php:33
 #, php-format
 msgid "Month: %s"
-msgstr "Maand: %s"
+msgstr "Месец: %s"
 
 #: ../archive.php:36
 #, php-format
 msgid "Year: %s"
-msgstr "Jaar: %s"
+msgstr "Година: %s"
 
 #: ../archive.php:39
 msgid "Asides"
-msgstr "Asides"
+msgstr "Странични"
 
 #: ../archive.php:42
 msgid "Galleries"
-msgstr "Gallerijen"
+msgstr "Галерии"
 
 #: ../archive.php:45
 msgid "Images"
-msgstr "Afbeeldingen"
+msgstr "Изображения"
 
 #: ../archive.php:48
 msgid "Videos"
-msgstr "Videos"
+msgstr "Видео"
 
 #: ../archive.php:51
 msgid "Quotes"
-msgstr "Quotes"
+msgstr "Цитати"
 
 #: ../archive.php:54
 msgid "Links"
-msgstr "Links"
+msgstr "Връзки"
 
 #: ../archive.php:57
 msgid "Statuses"
-msgstr "Status"
+msgstr "Статуси"
 
 #: ../archive.php:60
 msgid "Audios"
-msgstr "Audio"
+msgstr "Аудио"
 
 #: ../archive.php:63
 msgid "Chats"
-msgstr "Chats"
+msgstr "Лафче"
 
 #: ../comments.php:30
 #, php-format
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "Een gedachte over &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s gedachten over &ldquo;%2$s&rdquo;"
+msgstr[0] "Една мисъл по темата &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s мисли по темата &ldquo;%2$s&rdquo;"
 
 #: ../comments.php:37 ../comments.php:55
 msgid "Comment navigation"
-msgstr "Reactie navigatie"
+msgstr "Навигация в коментарите"
 
 #: ../comments.php:38 ../comments.php:56
 msgid "&larr; Older Comments"
-msgstr "&larr; Oudere Reacties"
+msgstr "&larr; По-стари коментари"
 
 #: ../comments.php:39 ../comments.php:57
 msgid "Newer Comments &rarr;"
-msgstr "Nieuwere Reacties &rarr;"
+msgstr "По-нови коментари &rarr;"
 
 #: ../comments.php:67
 msgid "Comments are closed."
-msgstr "Reacties zijn gesloten."
+msgstr "Коментарите са затворени."
 
 #: ../content-none.php:13
 msgid "Nothing Found"
-msgstr "Niks gevonden"
+msgstr "Няма резултати"
 
 #: ../content-none.php:19
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
-"Klaar om je eerste bericht te plaatsen? <a href=\"%1$s\">Begin hier</a>."
+"Готов ли си да публикуваш първата си статия? <a href=\"%1$s\">Започни оттук</"
+"a>."
 
 #: ../content-none.php:23
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
-msgstr ""
-"Sorry, we hebben niks kunnen vinden met deze zoekterm. Probeer het nog eens."
+msgstr "Съжалявам, няма резултати. Пробвай пак с различни ключови думи."
 
 #: ../content-none.php:28
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
-"Het lijkt er op dat we niet kunnen vinden waar je naar zocht. Probeer de "
-"zoekfunctie eens."
+"Изглежда не можем да открием това, което търсиш. Функцията за търсене може "
+"да помогне."
 
 #: ../content-page.php:21 ../content-single.php:35 ../content.php:43
 #: ../image.php:79
 msgid "Pages:"
-msgstr "Pagina&rsquo;s"
+msgstr "Страници:"
 
 #: ../content-page.php:32 ../content-single.php:26 ../content.php:23
 msgid "Edit"
-msgstr "Wijzigen"
+msgstr "Редакция"
 
 #: ../content-single.php:19
 msgid ", "
-msgstr ", "
+msgstr ","
 
 #: ../content-single.php:23
 #, php-format
@@ -177,361 +175,362 @@ msgstr " %1$s"
 
 #: ../content.php:20
 msgid "Leave a comment"
-msgstr "Reageer"
+msgstr "Остави коментар"
 
 #: ../content.php:20
 msgid "1 Comment"
-msgstr "1 Reactie"
+msgstr "1 коментар"
 
 #: ../content.php:20
 msgid "% Comments"
-msgstr "% Reacties"
+msgstr "% коментара"
 
 #: ../content.php:32 ../content.php:39
 msgid "Read More"
-msgstr "Lees meer"
+msgstr "Повече"
 
 #: ../functions.php:69
 msgid "Primary Menu"
-msgstr "Hoofdmenu"
+msgstr "Главно меню"
 
 #: ../functions.php:70 ../inc/extras.php:226
 msgid "Footer Links"
-msgstr "Footer Links"
+msgstr "Връзки в долната част"
 
 #: ../functions.php:108
 msgid "Sidebar"
-msgstr "Sidebar"
+msgstr "Странична част"
 
 #: ../functions.php:118
 msgid "Homepage Widget 1"
-msgstr "Voorpagina Widget 1"
+msgstr "Джаджи заглавна страница 1"
 
 #: ../functions.php:119 ../functions.php:129 ../functions.php:139
 msgid "Displays on the Home Page"
-msgstr "Weergeven op de Voorpagina"
+msgstr "Показва се на заглавната страница"
 
 #: ../functions.php:128
 msgid "Homepage Widget 2"
-msgstr "Voorpagina Widget 2"
+msgstr "Джаджи заглавна страница 2"
 
 #: ../functions.php:138
 msgid "Homepage Widget 3"
-msgstr "Voorpagina Widget 3"
+msgstr "Джаджи заглавна страница 3"
 
 #: ../functions.php:148
 msgid "Footer Widget 1"
-msgstr "Footer Widget 1"
+msgstr "Джаджи долна част 1"
 
 #: ../functions.php:149 ../functions.php:159 ../functions.php:169
 msgid "Used for footer widget area"
-msgstr "Gebruikt voor footer widget area"
+msgstr "Използва се за долния колонтитул"
 
 #: ../functions.php:158
 msgid "Footer Widget 2"
-msgstr "Footer Widget 2"
+msgstr "Джаджи долна част 2"
 
 #: ../functions.php:168
 msgid "Footer Widget 3"
-msgstr "Footer Widget 3"
+msgstr "Джаджи долна част 3"
 
 #: ../image.php:22
 msgid "<i class=\"fa fa-chevron-left\"></i> Previous"
-msgstr "<i class=\"fa fa-chevron-left\"></i> Vorige"
+msgstr "<i class=\"fa fa-chevron-left\"></i> Назад"
 
 #: ../image.php:23
 msgid "Next <i class=\"fa fa-chevron-right\"></i>"
-msgstr "Volgende <i class=\"fa fa-chevron-right\"></i>"
+msgstr "Напред <i class=\"fa fa-chevron-right\"></i>"
 
 #: ../inc/admin/includes/class-options-framework-admin.php:91
 #: ../inc/admin/includes/class-options-framework-admin.php:92
 msgid "Theme Options"
-msgstr "Thema opties"
+msgstr "Настройки на темата"
 
 #: ../inc/admin/includes/class-options-framework-admin.php:204
 msgid "Click OK to reset. Any theme settings will be lost!"
 msgstr ""
-"Klik op OK om te resetten. Alle thema instellingen zullen verloren gaan!"
+"Натисни OK, за да възстановиш настройките по подразбиране. Всички настройки "
+"на темата ще бъдат изгубени!"
 
 #: ../inc/admin/includes/class-options-framework-admin.php:235
 msgid "Default options restored."
-msgstr "Standaard instellingen hersteld."
+msgstr "Настройите по подразбиране са възстановени."
 
 #: ../inc/admin/includes/class-options-framework-admin.php:289
 msgid "Options saved."
-msgstr "Instellingen opgeslagen."
+msgstr "Настройките са запазени."
 
 #: ../inc/admin/includes/class-options-media-uploader.php:62
 msgid "No file chosen"
-msgstr "Geen bestand geselecteerd"
+msgstr "Няма избран файл"
 
 #: ../inc/admin/includes/class-options-media-uploader.php:65
 #: ../inc/admin/includes/class-options-media-uploader.php:118
 msgid "Upload"
-msgstr "Uploaden"
+msgstr "Качване"
 
 #: ../inc/admin/includes/class-options-media-uploader.php:67
 #: ../inc/admin/includes/class-options-media-uploader.php:119
 msgid "Remove"
-msgstr "Verwijderen"
+msgstr "Премахване"
 
 #: ../inc/admin/includes/class-options-media-uploader.php:70
 msgid "Upgrade your version of WordPress for full media support."
-msgstr "Upgrade je WordPress versie voor volledige media ondersteuning."
+msgstr "Обнови версията на WordPress за пълна поддръжка на мултимедия."
 
 #: ../inc/admin/includes/class-options-media-uploader.php:94
 msgid "View File"
-msgstr "Bekijk bestand"
+msgstr "Преглед на файла"
 
 #: ../inc/admin/includes/class-options-sanitization.php:316
 msgid "No Repeat"
-msgstr "Niet Herhalen"
+msgstr "Без повтаряне"
 
 #: ../inc/admin/includes/class-options-sanitization.php:317
 msgid "Repeat Horizontally"
-msgstr "Herhaal Horizontaal"
+msgstr "Хоризонтално повтаряне"
 
 #: ../inc/admin/includes/class-options-sanitization.php:318
 msgid "Repeat Vertically"
-msgstr "Herhaal Verticaal"
+msgstr "Вертикално повтаряне"
 
 #: ../inc/admin/includes/class-options-sanitization.php:319
 msgid "Repeat All"
-msgstr "Herhaal Alles"
+msgstr "Повтаряне"
 
 #: ../inc/admin/includes/class-options-sanitization.php:331
 msgid "Top Left"
-msgstr "Boven Links"
+msgstr "Горе вляво"
 
 #: ../inc/admin/includes/class-options-sanitization.php:332
 msgid "Top Center"
-msgstr "Boven Midden"
+msgstr "Горе в средата"
 
 #: ../inc/admin/includes/class-options-sanitization.php:333
 msgid "Top Right"
-msgstr "Boven Rechts"
+msgstr "Горе вдясно"
 
 #: ../inc/admin/includes/class-options-sanitization.php:334
 msgid "Middle Left"
-msgstr "Midden Links"
+msgstr "Централно вляво"
 
 #: ../inc/admin/includes/class-options-sanitization.php:335
 msgid "Middle Center"
-msgstr "Midden Midden"
+msgstr "Централно в средата"
 
 #: ../inc/admin/includes/class-options-sanitization.php:336
 msgid "Middle Right"
-msgstr "Midden Rechts"
+msgstr "Централно вдясно"
 
 #: ../inc/admin/includes/class-options-sanitization.php:337
 msgid "Bottom Left"
-msgstr "Onder Links"
+msgstr "Долу вляво"
 
 #: ../inc/admin/includes/class-options-sanitization.php:338
 msgid "Bottom Center"
-msgstr "Onder Midden"
+msgstr "Долу в средата"
 
 #: ../inc/admin/includes/class-options-sanitization.php:339
 msgid "Bottom Right"
-msgstr "Onder Rechts"
+msgstr "Долу вдясно"
 
 #: ../inc/admin/includes/class-options-sanitization.php:351
 msgid "Scroll Normally"
-msgstr "Scroll normaal"
+msgstr "Нормално скролиране"
 
 #: ../inc/admin/includes/class-options-sanitization.php:352
 msgid "Fixed in Place"
-msgstr "Vaste plaats"
+msgstr "Фиксирана позиция"
 
 #: ../inc/admin/includes/class-options-sanitization.php:424
 msgid "Normal"
-msgstr "Normaal"
+msgstr "Нормален"
 
 #: ../inc/admin/includes/class-options-sanitization.php:425
 msgid "Italic"
-msgstr "Schuin"
+msgstr "Курсив"
 
 #: ../inc/admin/includes/class-options-sanitization.php:426
 msgid "Bold"
-msgstr "Dik"
+msgstr "Получер "
 
 #: ../inc/admin/includes/class-options-sanitization.php:427
 msgid "Bold Italic"
-msgstr "Dik Schuin"
+msgstr "Получер Курсив"
 
 #: ../inc/extras.php:61
 #, php-format
 msgid "Page %s"
-msgstr "Pagina %s"
+msgstr "Страница %s"
 
 #: ../inc/extras.php:121
 msgid "Search..."
-msgstr "Zoeken..."
+msgstr "Търсене..."
 
 #: ../inc/extras.php:142
 msgid ""
 "<p>This post is password protected. To view it please enter your password "
 "below:</p>"
 msgstr ""
-"<p>Dit bericht is beveiligd met een wachtwoord. Om hem te bekijken gelieve "
-"je wachtwoord in te voeren:</p>"
+"<p>Тази статия е защитена с парола. За да я прочетеш, въведи паролата тук:</"
+"p>"
 
 #: ../inc/extras.php:143
 msgid "Password:"
-msgstr "Wachtwoord:"
+msgstr "Парола:"
 
 #: ../inc/extras.php:146
 msgid "Submit"
-msgstr "Toevoegen"
+msgstr "Изпрати"
 
 #: ../inc/extras.php:190
 msgid "Follow us on "
-msgstr "Volg ons op"
+msgstr "Следвай ни: "
 
 #: ../inc/extras.php:301
 #, php-format
 msgid "Theme by %1$s Powered by %2$s"
-msgstr "Thema van %1$s, draait op %2$s"
+msgstr "Дизайн: %1$s Работи с %2$s"
 
 #: ../inc/extras.php:405
 msgid "Support and Documentation"
-msgstr "Support en Documentatie"
+msgstr "Поддръжка и документация"
 
 #: ../inc/extras.php:411
 msgid "Sparkling Documentation"
-msgstr "Sparkling Documentatie"
+msgstr "Документация на Sparkling"
 
 #: ../inc/extras.php:412
 msgid ""
 "The best way to contact us with <b>support questions</b> and <b>bug reports</"
 "b> is via"
 msgstr ""
-"De beste manier om ons te contacteren voor <b>support vragen</b> en <b>bug "
-"meldingen</b> is via"
+"Най-добрият начин да се свържете с нас за <b>поддръжка</b> и <b>докладване "
+"на проблеми</b> е чрез"
 
 #: ../inc/extras.php:412
 msgid "Colorlib support forum"
-msgstr "Colorlib support forum"
+msgstr "Форум за поддръжка на Colorlib"
 
 #: ../inc/extras.php:413
 msgid "If you like this theme, I'd appreciate any of the following:"
-msgstr "Als je dit thema leuk vind dan waardeer het volgende:"
+msgstr "Ако харесваш тази тема, ще съм благодарен, ако:"
 
 #: ../inc/extras.php:415
 msgid "Rate this Theme"
-msgstr "Waardeer dit Thema"
+msgstr "Гласуваш за тази тема"
 
 #: ../inc/extras.php:416
 msgid "Like on Facebook"
-msgstr "Like ons op Facebook"
+msgstr "Харесаш във Facebook"
 
 #: ../inc/extras.php:417
 msgid "Follow on Twitter"
-msgstr "Volg ons op Twitter"
+msgstr "Последваш в Twitter"
 
 #: ../inc/template-tags.php:23
 msgid "Posts navigation"
-msgstr "Berichten navigatie"
+msgstr "Навигация статии"
 
 #: ../inc/template-tags.php:27
 msgid "<i class=\"fa fa-chevron-left\"></i> Older posts"
-msgstr "<i class=\"fa fa-chevron-left\"></i> Oudere berichten"
+msgstr "<i class=\"fa fa-chevron-left\"></i> По-стари статии"
 
 #: ../inc/template-tags.php:31
 msgid "Newer posts <i class=\"fa fa-chevron-right\"></i>"
-msgstr "Nieuwere berichten<i class=\"fa fa-chevron-right\"></i>"
+msgstr "По-нови статии <i class=\"fa fa-chevron-right\"></i>"
 
 #: ../inc/template-tags.php:56
 msgid "Post navigation"
-msgstr "Bericht navigatie"
+msgstr "Навигация статии"
 
 #: ../inc/widgets/widget-categories.php:11
 #: ../inc/widgets/widget-categories.php:12
 msgid "Sparkling Categories"
-msgstr "Sparkling Categoriën"
+msgstr "Категории Sparkling"
 
 #: ../inc/widgets/widget-categories.php:17
 #: ../inc/widgets/widget-categories.php:76
 msgid "Categories"
-msgstr "Categoriën"
+msgstr "Категории"
 
 #: ../inc/widgets/widget-categories.php:83 ../inc/widgets/widget-social.php:49
 msgid "Title "
-msgstr "Titel"
+msgstr "Заглавие"
 
 #: ../inc/widgets/widget-categories.php:91
 msgid "Limit Categories "
-msgstr "Limiteer Categoriën"
+msgstr "Ограничение на категориите"
 
 #: ../inc/widgets/widget-categories.php:104
 msgid "Enable Posts Count"
-msgstr "Schakel Berichten teller in"
+msgstr "Брой статии"
 
 #: ../inc/widgets/widget-popular-posts.php:11
 #: ../inc/widgets/widget-popular-posts.php:12
 msgid "Sparkling Popular Posts Widget"
-msgstr "Sparkling Populaire Berichten Widget"
+msgstr "Sparkling - най-популярни статии"
 
 #: ../inc/widgets/widget-popular-posts.php:17
 #: ../inc/widgets/widget-popular-posts.php:94
 msgid "Popular Posts"
-msgstr "Populaire Berichten"
+msgstr "Популярни статии"
 
 #: ../inc/widgets/widget-popular-posts.php:99
 msgid "Title"
-msgstr "Titel"
+msgstr "Заглавие"
 
 #: ../inc/widgets/widget-popular-posts.php:107
 msgid "Limit Posts Number"
-msgstr "Limiteer Berichten Aantal"
+msgstr "Ограничи броя статии"
 
 #: ../inc/widgets/widget-social.php:11 ../inc/widgets/widget-social.php:12
 msgid "Sparkling Social Widget"
-msgstr "Sparkling Social Widget"
+msgstr "Sparkling социална джаджа"
 
 #: ../inc/widgets/widget-social.php:17 ../inc/widgets/widget-social.php:46
 msgid "Follow us"
-msgstr "Volg Ons"
+msgstr "Последвай ни"
 
 #: ../options.php:23
 msgid "Right Sidebar"
-msgstr "Sidebar Rechts"
+msgstr "Дясна странична колона"
 
 #: ../options.php:23
 msgid "Left Sidebar"
-msgstr "Sidebar Links"
+msgstr "Лява странична колона"
 
 #: ../options.php:27
 msgid "One"
-msgstr "Eén"
+msgstr "Една"
 
 #: ../options.php:28
 msgid "Two"
-msgstr "Twee"
+msgstr "Две"
 
 #: ../options.php:29
 msgid "Three"
-msgstr "Drie"
+msgstr "Три"
 
 #: ../options.php:30
 msgid "Four"
-msgstr "Vier"
+msgstr "Четири"
 
 #: ../options.php:31
 msgid "Five"
-msgstr "Vijf"
+msgstr "Пет"
 
 #: ../options.php:36
 msgid "French Toast"
-msgstr "Franse Toast"
+msgstr "Пържена филийка"
 
 #: ../options.php:37
 msgid "Pancake"
-msgstr "Pannenkoeken"
+msgstr "Палачинки"
 
 #: ../options.php:38
 msgid "Omelette"
-msgstr "Omelet"
+msgstr "Омлет"
 
 #: ../options.php:39
 msgid "Crepe"
@@ -539,238 +538,239 @@ msgstr "Crepe"
 
 #: ../options.php:40
 msgid "Waffle"
-msgstr "Wafel"
+msgstr "Гофрета"
 
 #: ../options.php:110
 msgid "Main"
-msgstr "Algemeen"
+msgstr "Основни"
 
 #: ../options.php:115
 msgid "Do You want to display image slider on the Home Page?"
-msgstr "Wil je de afbeeldings slider op de Voorpagina weergeven?"
+msgstr "Показване на плъзгащи се изображения на главната страница?"
 
 #: ../options.php:116
 msgid "Check if you want to enable slider"
-msgstr "Vink aan om te activeren"
+msgstr "Избери, ако искаш да включиш плъзгащите изображения"
 
 #: ../options.php:123
 msgid "Slider Category"
-msgstr "Slider Categorie"
+msgstr "Категория"
 
 #: ../options.php:124
 msgid "Select a category for the featured post slider"
-msgstr "Selecteer een categorie voor de uitgelichte berichten"
+msgstr "Избери категория за избраните статии"
 
 #: ../options.php:132
 msgid "Number of slide items"
-msgstr "Aantal uitgelichte berichten"
+msgstr "Брой елементи"
 
 #: ../options.php:133
 msgid "Enter the number of slide items"
-msgstr "Voor het aantal uitgelichte berichten in"
+msgstr "Въведи броя на плъзгащите се елементи"
 
 #: ../options.php:141
 msgid "Website Layout Options"
-msgstr "Website Layout Opties"
+msgstr "Вид на страницата"
 
 #: ../options.php:142
 msgid "Choose between Left and Right sidebar options to be used as default"
 msgstr ""
-"Maak een keuze tussen een Linker of Rechter sidebar als standaard keuze"
+"Избери между лява и дясна странична колона като настройка по подразбиране"
 
 #: ../options.php:151
 msgid "Element color"
-msgstr "Element kleur"
+msgstr "Цвят на елемента"
 
 #: ../options.php:152 ../options.php:160 ../options.php:205 ../options.php:213
 #: ../options.php:221 ../options.php:229 ../options.php:259 ../options.php:267
 #: ../options.php:280 ../options.php:382 ../options.php:390
 msgid "Default used if no color is selected"
-msgstr "Standaard gebruikt indien geen kleur gekozen"
+msgstr "Ако няма избран цвят, ще се използва цветът по подразбиране"
 
 #: ../options.php:159
 msgid "Element color on hover"
-msgstr "Element kleur bij hover"
+msgstr "Цвят, когато курсорът е отгоре"
 
 #: ../options.php:167
 msgid "Custom Favicon"
-msgstr "Aangepast Favicon"
+msgstr "Икона на сайта"
 
 #: ../options.php:168
 msgid ""
 "Upload a 32px x 32px PNG/GIF image that will represent your websites favicon"
-msgstr "Upload een PNG/GIF afbeelding van 32pxx32px als website icoon."
+msgstr "Качи картинка PNG/GIF 32x32px която ще представлява иконата на сайта"
 
 #: ../options.php:175
 msgid "Action Button"
-msgstr "Actie Button"
+msgstr "Call For Action бутон"
 
 #: ../options.php:180
 msgid "Call For Action Text"
-msgstr "Tekst voor het actie veld"
+msgstr "Call For Action текст"
 
 #: ../options.php:181
 msgid "Enter the text for call for action section"
-msgstr "Voer de tekst in die je wilt weergeven"
+msgstr "Въведи текст за раздела Call For Action"
 
 #: ../options.php:188
 msgid "Call For Action Button Title"
-msgstr "Actie knop Titel"
+msgstr "Заглавие на бутона Call For Action"
 
 #: ../options.php:189
 msgid "Enter the title for Call For Action button"
-msgstr "Voer de Titel in voor de actie knop"
+msgstr "Въведи заглавие за бутона Call For Action"
 
 #: ../options.php:196
 msgid "CFA button link"
-msgstr "Link voor de actie knop"
+msgstr "CFA връзка"
 
 #: ../options.php:197
 msgid "Enter the link for Call For Action button"
-msgstr "Voer de link in voor de actie knop"
+msgstr "Въведи Интернет адрес за бутона Call For Action"
 
 #: ../options.php:204
 msgid "Call For Action Text Color"
-msgstr "Actie veld tekst kleur"
+msgstr "Цвят на текста Call For Action"
 
 #: ../options.php:212
 msgid "Call For Action Background Color"
-msgstr "Actie knop achtergrond kleur"
+msgstr "Цвят на фона Call For Action"
 
 #: ../options.php:220
 msgid "Call For Action Button Border Color"
-msgstr "Actie knop rand kleur"
+msgstr "Цвят на ръба на бутона Call For Action"
 
 #: ../options.php:228
 msgid "Call For Action Button Text Color"
-msgstr "Actie knop kleur"
+msgstr "Цвят на текста на бутона Call For Action"
 
 #: ../options.php:236
 msgid "Typography"
-msgstr "Opmaak"
+msgstr "Шрифтове"
 
 #: ../options.php:241
 msgid "Main Body Text"
-msgstr "Hoofd tekst"
+msgstr "Текст на главната част"
 
 #: ../options.php:242
 msgid "Used in P tags"
-msgstr "Gebruik P tags"
+msgstr "Използва се за таговете P"
 
 #: ../options.php:250
 msgid "Heading Color"
-msgstr "Titel kleur"
+msgstr "Цвят на заглавията"
 
 #: ../options.php:251
 msgid "Color for all headings (h1-h6)"
-msgstr "Kleur voor alle titels (h1-h6)"
+msgstr "Цвят за всичките заглавия (h1-h6)"
 
 #: ../options.php:258
 msgid "Link Color"
-msgstr "Link kleur"
+msgstr "Цвят на връзките"
 
 #: ../options.php:266
 msgid "Link:hover Color"
-msgstr "Link:hover kleur"
+msgstr "Цвят на връзките, когато курсорът е отгоре"
 
 #: ../options.php:274
 msgid "Header"
-msgstr "Header"
+msgstr "Заглавна част"
 
 #: ../options.php:279
 msgid "Top nav background color"
-msgstr "Top navigatie achtergrond kleur"
+msgstr "Фон на горната навигация"
 
 #: ../options.php:287
 msgid "Top nav item color"
-msgstr "Top navigatie tekst kleur"
+msgstr "Цвят за елементите на горната навигация"
 
 #: ../options.php:288
 msgid "Link color"
-msgstr "Link kleur"
+msgstr "Цвят на връзките"
 
 #: ../options.php:295
 msgid "Top nav item hover color"
-msgstr "Top naviatie tekst hover kleur"
+msgstr "Цвят за елементите на горната навигация, когато курсорът е отгоре"
 
 #: ../options.php:296
 msgid "Link:hover color"
-msgstr "Link:hover kleur"
+msgstr "Цвят на връзките, когато курсорът е отгоре"
 
 #: ../options.php:303
 msgid "Top nav dropdown background color"
-msgstr "Top navigatie dropdown achtergrond kleur"
+msgstr "Фон на падащото меню в горната навигация"
 
 #: ../options.php:304 ../options.php:328
 msgid "Background of dropdown item hover color"
-msgstr "Top navigatie dropdown tekst hover kleur"
+msgstr "Фон на елементите от падащото меню в горната навигация"
 
 #: ../options.php:311
 msgid "Top nav dropdown item color"
-msgstr "Top navigatie dropdown tekst kleur"
+msgstr "Цвят на текста на елементите от падащото меню в горната навигация"
 
 #: ../options.php:312
 msgid "Dropdown item color"
-msgstr "Dropdown tekst kleur"
+msgstr "Цвят на елементите от падащото меню"
 
 #: ../options.php:319
-#, fuzzy
 msgid "Top nav dropdown item hover color"
-msgstr "Top naviatie tekst hover kleur"
+msgstr ""
+"Цвят на елементите от падащото меню в горната навигация, когато курсорът е "
+"отгоре"
 
 #: ../options.php:320
-#, fuzzy
 msgid "Dropdown item hover color"
-msgstr "Couleur Survol Fond Menu Déroulant Haut"
+msgstr "Цвят на елементите от падащото меню, когато курсорът е отгоре"
 
 #: ../options.php:327
-#, fuzzy
 msgid "Top nav dropdown item background hover color"
-msgstr "Couleur Survol Fond Menu Déroulant Haut"
+msgstr ""
+"Фон на елементите от падащото меню в горната навигация, когато курсорът е "
+"отгоре"
 
 #: ../options.php:335
 msgid "Footer"
-msgstr "Footer"
+msgstr "Долен колонтитул"
 
 #: ../options.php:340
 msgid "Footer widget area background color"
-msgstr "Footer widget achtergrond kleur"
+msgstr "Фон на джаджите в долната част на страницата"
 
 #: ../options.php:347
 msgid "Footer background color"
-msgstr "Footer achtergrond kleur"
+msgstr "Фон на долната част на страницата"
 
 #: ../options.php:354
 msgid "Footer text color"
-msgstr "Footer tekst kleur"
+msgstr "Цвят на текста в долната част на страницата"
 
 #: ../options.php:361
 msgid "Footer link color"
-msgstr "Footer link kleur"
+msgstr "Цвят на връзките в долната част на страницата"
 
 #: ../options.php:368
 msgid "Footer information"
-msgstr "Footer informatie"
+msgstr "Информация в долната част на страницата"
 
 #: ../options.php:369
 msgid "Copyright text in footer"
-msgstr "Copyright tekst in de footer"
+msgstr "Текст за авторските права в долната част на страницата"
 
 #: ../options.php:376
 msgid "Social"
-msgstr "Social"
+msgstr "Социални"
 
 #: ../options.php:381
 msgid "Social icon color"
-msgstr "Social icoon kleur"
+msgstr "Цвят на социалните икони"
 
 #: ../options.php:389
 msgid "Footer social icon color"
-msgstr "Footer social icoon kleur"
+msgstr "Цвят на социалните икони в долната част на страницата"
 
 #: ../options.php:397
 msgid "Add full URL for your social network profiles"
-msgstr "Voeg de volledige URL van je sociale netwerken toe"
+msgstr "Добави пълния URL към твоите профили в социалните мрежи"
 
 #: ../options.php:398
 msgid "Facebook"
@@ -790,7 +790,7 @@ msgstr "Youtube"
 
 #: ../options.php:431
 msgid "Vimeo"
-msgstr ""
+msgstr "Vimeo"
 
 #: ../options.php:439
 msgid "LinkedIn"
@@ -830,30 +830,32 @@ msgstr "Foursquare"
 
 #: ../options.php:511
 msgid "SoundCloud"
-msgstr ""
+msgstr "SoundCloud"
 
 #: ../options.php:519
-#, fuzzy
 msgid "GitHub"
-msgstr "Github"
+msgstr "GitHub"
 
 #: ../options.php:526
 msgid "Other"
-msgstr "Overige"
+msgstr "Други"
 
 #: ../options.php:531
 msgid "Custom CSS"
-msgstr "Aangepaste CSS"
+msgstr "Добавяне на CSS"
 
 #: ../options.php:532
 msgid "Additional CSS"
-msgstr "Extra CSS"
+msgstr "Допълнителен CSS код"
 
 #: ../search.php:16
 #, php-format
 msgid "Search Results for: %s"
-msgstr "Zoek resultaten voor: %s"
+msgstr "Резултати от търсенето за: %s"
 
 #: ../sidebar.php:26
 msgid "Meta"
-msgstr "Meta"
+msgstr "Мета"
+
+#~ msgid "Default used if no color is selected."
+#~ msgstr "Valore predefinito usato se nessun colore è selezionato"

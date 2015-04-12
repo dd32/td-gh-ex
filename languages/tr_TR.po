@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sparkling Theme\n"
-"POT-Creation-Date: 2015-04-04 15:02+0200\n"
-"PO-Revision-Date: 2015-04-04 15:02+0200\n"
+"POT-Creation-Date: 2015-04-04 15:03+0200\n"
+"PO-Revision-Date: 2015-04-04 15:03+0200\n"
 "Last-Translator: Aigars Silkalns <a.silkalns@gmail.com>\n"
 "Language-Team: colorlib <info@colorlib.com>\n"
-"Language: en_US\n"
+"Language: tr_TR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,157 +18,156 @@ msgstr ""
 
 #: ../404.php:15
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "Oeps! Deze pagina kon niet gevonden worden."
+msgstr "Hoop! Bu sayfa bulunamıyor."
 
 #: ../404.php:19
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
-"Het lijkt er dat er niks is gevonden. Probeer één van onderstaande links of "
-"de zoekfunctie."
+"Görünen o'ki bu adreste bir şey bulunamadı. Belki aşağıdaki linklerden "
+"birini denemek yada arama yapmak isteyebilirsiniz?"
 
 #: ../404.php:25
-#, fuzzy
 msgid "Recent Posts"
-msgstr "Berichten navigatie"
+msgstr "Son Mesajlar"
 
 #: ../404.php:31
 msgid "Most Used Categories"
-msgstr "Meest gebruikte categorieên"
+msgstr "En sık kullanılan kategoriler"
 
 #: ../404.php:52
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
-msgstr "Probeer eens te kijken in de maandelijkse archieven. %1$s"
+msgstr "Aylık arşivlere bakmayı dene. %1$s"
 
 #: ../404.php:53 ../archive.php:66 ../sidebar.php:19
 msgid "Archives"
-msgstr "Archieven"
+msgstr "Arşivler"
 
 #: ../404.php:58
-#, fuzzy
 msgid "Tags"
-msgstr "Gebruik P tags"
+msgstr "Etiketler"
 
 #: ../archive.php:27
 #, php-format
 msgid "Author: %s"
-msgstr "Auteur: %s"
+msgstr "Yazar: %s"
 
 #: ../archive.php:30
 #, php-format
 msgid "Day: %s"
-msgstr "Dag: %s"
+msgstr "Gün:  %s"
 
 #: ../archive.php:33
 #, php-format
 msgid "Month: %s"
-msgstr "Maand: %s"
+msgstr "Ay: %s"
 
 #: ../archive.php:36
 #, php-format
 msgid "Year: %s"
-msgstr "Jaar: %s"
+msgstr "Yıl: %s"
 
 #: ../archive.php:39
 msgid "Asides"
-msgstr "Asides"
+msgstr "Yan yorumlar"
 
 #: ../archive.php:42
 msgid "Galleries"
-msgstr "Gallerijen"
+msgstr "Galeriler"
 
 #: ../archive.php:45
 msgid "Images"
-msgstr "Afbeeldingen"
+msgstr "Görüntüler"
 
 #: ../archive.php:48
 msgid "Videos"
-msgstr "Videos"
+msgstr "Videolar"
 
 #: ../archive.php:51
 msgid "Quotes"
-msgstr "Quotes"
+msgstr "Alıntılar"
 
 #: ../archive.php:54
 msgid "Links"
-msgstr "Links"
+msgstr "Bağlantılar"
 
 #: ../archive.php:57
 msgid "Statuses"
-msgstr "Status"
+msgstr "Durumlar"
 
 #: ../archive.php:60
 msgid "Audios"
-msgstr "Audio"
+msgstr "Sesler"
 
 #: ../archive.php:63
 msgid "Chats"
-msgstr "Chats"
+msgstr "Sohbetler"
 
 #: ../comments.php:30
 #, php-format
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "Een gedachte over &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s gedachten over &ldquo;%2$s&rdquo;"
+msgstr[0] "&ldquo;%2$s&rdquo; üzerine yorum"
+msgstr[1] "&ldquo;%2$s&rdquo; üzerine %1$s yorumlar"
 
 #: ../comments.php:37 ../comments.php:55
 msgid "Comment navigation"
-msgstr "Reactie navigatie"
+msgstr "Yorum navigasyonu"
 
 #: ../comments.php:38 ../comments.php:56
 msgid "&larr; Older Comments"
-msgstr "&larr; Oudere Reacties"
+msgstr "&larr; Daha Eski Yorumlar"
 
 #: ../comments.php:39 ../comments.php:57
 msgid "Newer Comments &rarr;"
-msgstr "Nieuwere Reacties &rarr;"
+msgstr " Daha Yeni Yorumlar &rarr;"
 
 #: ../comments.php:67
 msgid "Comments are closed."
-msgstr "Reacties zijn gesloten."
+msgstr "Yorumlar Kapalıdır."
 
 #: ../content-none.php:13
 msgid "Nothing Found"
-msgstr "Niks gevonden"
+msgstr "Bir şey bulunamadı"
 
 #: ../content-none.php:19
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
-"Klaar om je eerste bericht te plaatsen? <a href=\"%1$s\">Begin hier</a>."
+"İlk mesajını yayınlamaya hazır mısın? <a href=\"%1$s\">Buradan başla</a>."
 
 #: ../content-none.php:23
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
-"Sorry, we hebben niks kunnen vinden met deze zoekterm. Probeer het nog eens."
+"Pardon, ama malesef arama terimlerinizle eşleşen bir şey bulunamadı. Lütfen "
+"farklı anahtar kelimelerle tekrar deneyin."
 
 #: ../content-none.php:28
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
-"Het lijkt er op dat we niet kunnen vinden waar je naar zocht. Probeer de "
-"zoekfunctie eens."
+"Görünüyorki istediğinizi bulamadık. Muhtemelen arama yapmak yardımcı "
+"olabilir."
 
 #: ../content-page.php:21 ../content-single.php:35 ../content.php:43
 #: ../image.php:79
 msgid "Pages:"
-msgstr "Pagina&rsquo;s"
+msgstr "Sayfalar:"
 
 #: ../content-page.php:32 ../content-single.php:26 ../content.php:23
 msgid "Edit"
-msgstr "Wijzigen"
+msgstr "Düzenle"
 
 #: ../content-single.php:19
 msgid ", "
-msgstr ", "
+msgstr ","
 
 #: ../content-single.php:23
 #, php-format
@@ -177,501 +176,503 @@ msgstr " %1$s"
 
 #: ../content.php:20
 msgid "Leave a comment"
-msgstr "Reageer"
+msgstr "Yorum Bırak"
 
 #: ../content.php:20
 msgid "1 Comment"
-msgstr "1 Reactie"
+msgstr "1 Yorum"
 
 #: ../content.php:20
 msgid "% Comments"
-msgstr "% Reacties"
+msgstr "% yorum"
 
 #: ../content.php:32 ../content.php:39
 msgid "Read More"
-msgstr "Lees meer"
+msgstr "Fazlasını Oku"
 
 #: ../functions.php:69
 msgid "Primary Menu"
-msgstr "Hoofdmenu"
+msgstr "Birincil Menü"
 
 #: ../functions.php:70 ../inc/extras.php:226
 msgid "Footer Links"
-msgstr "Footer Links"
+msgstr "Sayfa Altı Bağlantıları"
 
 #: ../functions.php:108
 msgid "Sidebar"
-msgstr "Sidebar"
+msgstr "Kenar çubuğu"
 
 #: ../functions.php:118
 msgid "Homepage Widget 1"
-msgstr "Voorpagina Widget 1"
+msgstr "Ana sayfa Widget 1"
 
 #: ../functions.php:119 ../functions.php:129 ../functions.php:139
 msgid "Displays on the Home Page"
-msgstr "Weergeven op de Voorpagina"
+msgstr "Ana sayfada gösterilir"
 
 #: ../functions.php:128
 msgid "Homepage Widget 2"
-msgstr "Voorpagina Widget 2"
+msgstr "Ana sayfa Widget 2"
 
 #: ../functions.php:138
 msgid "Homepage Widget 3"
-msgstr "Voorpagina Widget 3"
+msgstr "Ana sayfa Widget 3"
 
 #: ../functions.php:148
 msgid "Footer Widget 1"
-msgstr "Footer Widget 1"
+msgstr "Sayfa Altı Widget 1"
 
 #: ../functions.php:149 ../functions.php:159 ../functions.php:169
 msgid "Used for footer widget area"
-msgstr "Gebruikt voor footer widget area"
+msgstr "Sayfa altı widget alanı için kullanıldı"
 
 #: ../functions.php:158
 msgid "Footer Widget 2"
-msgstr "Footer Widget 2"
+msgstr "Sayfa Altı Widget 2"
 
 #: ../functions.php:168
 msgid "Footer Widget 3"
-msgstr "Footer Widget 3"
+msgstr "Sayfa Altı Widget 3"
 
 #: ../image.php:22
 msgid "<i class=\"fa fa-chevron-left\"></i> Previous"
-msgstr "<i class=\"fa fa-chevron-left\"></i> Vorige"
+msgstr "<i class=\"fa fa-chevron-left\"></i> Önceki"
 
 #: ../image.php:23
 msgid "Next <i class=\"fa fa-chevron-right\"></i>"
-msgstr "Volgende <i class=\"fa fa-chevron-right\"></i>"
+msgstr "Sonraki <i class=\"fa fa-chevron-right\"></i>"
 
 #: ../inc/admin/includes/class-options-framework-admin.php:91
 #: ../inc/admin/includes/class-options-framework-admin.php:92
 msgid "Theme Options"
-msgstr "Thema opties"
+msgstr "Tema Ayarları"
 
 #: ../inc/admin/includes/class-options-framework-admin.php:204
 msgid "Click OK to reset. Any theme settings will be lost!"
 msgstr ""
-"Klik op OK om te resetten. Alle thema instellingen zullen verloren gaan!"
+"Sıfırlamak (Reset) için tamama tıklayın. Bütün tema ayarları kaybolacak "
+"(sıfırlanacak)!"
 
 #: ../inc/admin/includes/class-options-framework-admin.php:235
 msgid "Default options restored."
-msgstr "Standaard instellingen hersteld."
+msgstr "Öntanımlı ayarlara dönüldü."
 
 #: ../inc/admin/includes/class-options-framework-admin.php:289
 msgid "Options saved."
-msgstr "Instellingen opgeslagen."
+msgstr "Ayarlar kaydedildi"
 
 #: ../inc/admin/includes/class-options-media-uploader.php:62
 msgid "No file chosen"
-msgstr "Geen bestand geselecteerd"
+msgstr "Dosya seçilmedi"
 
 #: ../inc/admin/includes/class-options-media-uploader.php:65
 #: ../inc/admin/includes/class-options-media-uploader.php:118
 msgid "Upload"
-msgstr "Uploaden"
+msgstr "Yükle"
 
 #: ../inc/admin/includes/class-options-media-uploader.php:67
 #: ../inc/admin/includes/class-options-media-uploader.php:119
 msgid "Remove"
-msgstr "Verwijderen"
+msgstr "Kaldır"
 
 #: ../inc/admin/includes/class-options-media-uploader.php:70
 msgid "Upgrade your version of WordPress for full media support."
-msgstr "Upgrade je WordPress versie voor volledige media ondersteuning."
+msgstr "Tam medya desteği için WordPress sürümünüzü yükseltin."
 
 #: ../inc/admin/includes/class-options-media-uploader.php:94
 msgid "View File"
-msgstr "Bekijk bestand"
+msgstr "Dosyayı görüntüle"
 
 #: ../inc/admin/includes/class-options-sanitization.php:316
 msgid "No Repeat"
-msgstr "Niet Herhalen"
+msgstr "Tekrar yok"
 
 #: ../inc/admin/includes/class-options-sanitization.php:317
 msgid "Repeat Horizontally"
-msgstr "Herhaal Horizontaal"
+msgstr "Yatay Tekrar"
 
 #: ../inc/admin/includes/class-options-sanitization.php:318
 msgid "Repeat Vertically"
-msgstr "Herhaal Verticaal"
+msgstr "Dikey Tekrar"
 
 #: ../inc/admin/includes/class-options-sanitization.php:319
 msgid "Repeat All"
-msgstr "Herhaal Alles"
+msgstr "Hepsini Tekrarla"
 
 #: ../inc/admin/includes/class-options-sanitization.php:331
 msgid "Top Left"
-msgstr "Boven Links"
+msgstr "Sol Üst"
 
 #: ../inc/admin/includes/class-options-sanitization.php:332
 msgid "Top Center"
-msgstr "Boven Midden"
+msgstr "Merkez Üst"
 
 #: ../inc/admin/includes/class-options-sanitization.php:333
 msgid "Top Right"
-msgstr "Boven Rechts"
+msgstr "Sağ üst"
 
 #: ../inc/admin/includes/class-options-sanitization.php:334
 msgid "Middle Left"
-msgstr "Midden Links"
+msgstr "Orta Sol"
 
 #: ../inc/admin/includes/class-options-sanitization.php:335
 msgid "Middle Center"
-msgstr "Midden Midden"
+msgstr "Orta Merkez"
 
 #: ../inc/admin/includes/class-options-sanitization.php:336
 msgid "Middle Right"
-msgstr "Midden Rechts"
+msgstr "Orta Sağ"
 
 #: ../inc/admin/includes/class-options-sanitization.php:337
 msgid "Bottom Left"
-msgstr "Onder Links"
+msgstr "Alt Sol"
 
 #: ../inc/admin/includes/class-options-sanitization.php:338
 msgid "Bottom Center"
-msgstr "Onder Midden"
+msgstr "Alt Merkez"
 
 #: ../inc/admin/includes/class-options-sanitization.php:339
 msgid "Bottom Right"
-msgstr "Onder Rechts"
+msgstr "Alt Sağ"
 
 #: ../inc/admin/includes/class-options-sanitization.php:351
 msgid "Scroll Normally"
-msgstr "Scroll normaal"
+msgstr "Normal Kaydır"
 
 #: ../inc/admin/includes/class-options-sanitization.php:352
 msgid "Fixed in Place"
-msgstr "Vaste plaats"
+msgstr "Yerinde Sabit"
 
 #: ../inc/admin/includes/class-options-sanitization.php:424
 msgid "Normal"
-msgstr "Normaal"
+msgstr "Normal"
 
 #: ../inc/admin/includes/class-options-sanitization.php:425
 msgid "Italic"
-msgstr "Schuin"
+msgstr "İtalik"
 
 #: ../inc/admin/includes/class-options-sanitization.php:426
 msgid "Bold"
-msgstr "Dik"
+msgstr "Kalın"
 
 #: ../inc/admin/includes/class-options-sanitization.php:427
 msgid "Bold Italic"
-msgstr "Dik Schuin"
+msgstr "Kalın İtalik"
 
 #: ../inc/extras.php:61
 #, php-format
 msgid "Page %s"
-msgstr "Pagina %s"
+msgstr "Sayfa  %s"
 
 #: ../inc/extras.php:121
 msgid "Search..."
-msgstr "Zoeken..."
+msgstr "Ara..."
 
 #: ../inc/extras.php:142
 msgid ""
 "<p>This post is password protected. To view it please enter your password "
 "below:</p>"
 msgstr ""
-"<p>Dit bericht is beveiligd met een wachtwoord. Om hem te bekijken gelieve "
-"je wachtwoord in te voeren:</p>"
+"<p>Bu gönderi şifre korumalıdır. Görüntülemek için şifrenizi aşağıya girin:</"
+"p>"
 
 #: ../inc/extras.php:143
 msgid "Password:"
-msgstr "Wachtwoord:"
+msgstr "Şifre:"
 
 #: ../inc/extras.php:146
 msgid "Submit"
-msgstr "Toevoegen"
+msgstr "Teslim et"
 
 #: ../inc/extras.php:190
 msgid "Follow us on "
-msgstr "Volg ons op"
+msgstr "Bizi takip edin"
 
 #: ../inc/extras.php:301
 #, php-format
 msgid "Theme by %1$s Powered by %2$s"
-msgstr "Thema van %1$s, draait op %2$s"
+msgstr "Temayı yapan %1$s Çalışmasını sağlayan %2$s"
 
 #: ../inc/extras.php:405
 msgid "Support and Documentation"
-msgstr "Support en Documentatie"
+msgstr "Destek ve Dökümanlar"
 
 #: ../inc/extras.php:411
 msgid "Sparkling Documentation"
-msgstr "Sparkling Documentatie"
+msgstr "Sparkling Dökümanları"
 
 #: ../inc/extras.php:412
 msgid ""
 "The best way to contact us with <b>support questions</b> and <b>bug reports</"
 "b> is via"
 msgstr ""
-"De beste manier om ons te contacteren voor <b>support vragen</b> en <b>bug "
-"meldingen</b> is via"
+"Bizimle temas kurmanın en iyi yolu <b>destek soruları</b> ve <b>hata "
+"raporları</b> ile"
 
 #: ../inc/extras.php:412
 msgid "Colorlib support forum"
-msgstr "Colorlib support forum"
+msgstr "Colorlib destek forumu"
 
 #: ../inc/extras.php:413
 msgid "If you like this theme, I'd appreciate any of the following:"
-msgstr "Als je dit thema leuk vind dan waardeer het volgende:"
+msgstr ""
+"Eğer bu temayı sevdiysen, Takip edenlerden herhangi biri makbule geçer:"
 
 #: ../inc/extras.php:415
 msgid "Rate this Theme"
-msgstr "Waardeer dit Thema"
+msgstr "Temayı derecelendir"
 
 #: ../inc/extras.php:416
 msgid "Like on Facebook"
-msgstr "Like ons op Facebook"
+msgstr "Facebookda beğen"
 
 #: ../inc/extras.php:417
 msgid "Follow on Twitter"
-msgstr "Volg ons op Twitter"
+msgstr " Twitterda takip et"
 
 #: ../inc/template-tags.php:23
 msgid "Posts navigation"
-msgstr "Berichten navigatie"
+msgstr "Gönderiler navigasyonu"
 
 #: ../inc/template-tags.php:27
 msgid "<i class=\"fa fa-chevron-left\"></i> Older posts"
-msgstr "<i class=\"fa fa-chevron-left\"></i> Oudere berichten"
+msgstr "<i class=\"fa fa-chevron-left\"></i> Daha eski gönderiler"
 
 #: ../inc/template-tags.php:31
 msgid "Newer posts <i class=\"fa fa-chevron-right\"></i>"
-msgstr "Nieuwere berichten<i class=\"fa fa-chevron-right\"></i>"
+msgstr "Daha yeni gönderiler <i class=\"fa fa-chevron-right\"></i>"
 
 #: ../inc/template-tags.php:56
 msgid "Post navigation"
-msgstr "Bericht navigatie"
+msgstr "Gönderi navigasyonu"
 
 #: ../inc/widgets/widget-categories.php:11
 #: ../inc/widgets/widget-categories.php:12
 msgid "Sparkling Categories"
-msgstr "Sparkling Categoriën"
+msgstr "Sparkling Bölümleri"
 
 #: ../inc/widgets/widget-categories.php:17
 #: ../inc/widgets/widget-categories.php:76
 msgid "Categories"
-msgstr "Categoriën"
+msgstr "Bölümler"
 
 #: ../inc/widgets/widget-categories.php:83 ../inc/widgets/widget-social.php:49
 msgid "Title "
-msgstr "Titel"
+msgstr "Başlık"
 
 #: ../inc/widgets/widget-categories.php:91
 msgid "Limit Categories "
-msgstr "Limiteer Categoriën"
+msgstr "Bölümleri Sınırla"
 
 #: ../inc/widgets/widget-categories.php:104
 msgid "Enable Posts Count"
-msgstr "Schakel Berichten teller in"
+msgstr "Gönderi Sayacını Aktifleştir"
 
 #: ../inc/widgets/widget-popular-posts.php:11
 #: ../inc/widgets/widget-popular-posts.php:12
 msgid "Sparkling Popular Posts Widget"
-msgstr "Sparkling Populaire Berichten Widget"
+msgstr "Sparkling Popüler Gönderiler Widget ı"
 
 #: ../inc/widgets/widget-popular-posts.php:17
 #: ../inc/widgets/widget-popular-posts.php:94
 msgid "Popular Posts"
-msgstr "Populaire Berichten"
+msgstr "Pöpüler Gönderiler"
 
 #: ../inc/widgets/widget-popular-posts.php:99
 msgid "Title"
-msgstr "Titel"
+msgstr "Başlık"
 
 #: ../inc/widgets/widget-popular-posts.php:107
 msgid "Limit Posts Number"
-msgstr "Limiteer Berichten Aantal"
+msgstr "Gönderi Sayısını Sınırla"
 
 #: ../inc/widgets/widget-social.php:11 ../inc/widgets/widget-social.php:12
 msgid "Sparkling Social Widget"
-msgstr "Sparkling Social Widget"
+msgstr "Sparkling Sosyal Widget ı"
 
 #: ../inc/widgets/widget-social.php:17 ../inc/widgets/widget-social.php:46
 msgid "Follow us"
-msgstr "Volg Ons"
+msgstr "Bizi takip et"
 
 #: ../options.php:23
 msgid "Right Sidebar"
-msgstr "Sidebar Rechts"
+msgstr "Sağ Kenar Çubuğu"
 
 #: ../options.php:23
 msgid "Left Sidebar"
-msgstr "Sidebar Links"
+msgstr "Sol Kenar Çubuğu"
 
 #: ../options.php:27
 msgid "One"
-msgstr "Eén"
+msgstr "Bir"
 
 #: ../options.php:28
 msgid "Two"
-msgstr "Twee"
+msgstr "İki"
 
 #: ../options.php:29
 msgid "Three"
-msgstr "Drie"
+msgstr "Üç"
 
 #: ../options.php:30
 msgid "Four"
-msgstr "Vier"
+msgstr "Dört"
 
 #: ../options.php:31
 msgid "Five"
-msgstr "Vijf"
+msgstr "Beş"
 
 #: ../options.php:36
 msgid "French Toast"
-msgstr "Franse Toast"
+msgstr "Fransız Tostu"
 
 #: ../options.php:37
 msgid "Pancake"
-msgstr "Pannenkoeken"
+msgstr "Pankek"
 
 #: ../options.php:38
 msgid "Omelette"
-msgstr "Omelet"
+msgstr "Omlet"
 
 #: ../options.php:39
 msgid "Crepe"
-msgstr "Crepe"
+msgstr "Krep"
 
 #: ../options.php:40
 msgid "Waffle"
-msgstr "Wafel"
+msgstr "Waffle"
 
 #: ../options.php:110
 msgid "Main"
-msgstr "Algemeen"
+msgstr "Ana"
 
 #: ../options.php:115
 msgid "Do You want to display image slider on the Home Page?"
-msgstr "Wil je de afbeeldings slider op de Voorpagina weergeven?"
+msgstr "Ana Sayfada görüntü slaytçısının gözükmesini istiyorumusun?"
 
 #: ../options.php:116
 msgid "Check if you want to enable slider"
-msgstr "Vink aan om te activeren"
+msgstr "Slaytçıyı aktive etmek için işaretle"
 
 #: ../options.php:123
 msgid "Slider Category"
-msgstr "Slider Categorie"
+msgstr "Slaytçı bölümü"
 
 #: ../options.php:124
 msgid "Select a category for the featured post slider"
-msgstr "Selecteer een categorie voor de uitgelichte berichten"
+msgstr "En son gönderi slaytçısı için bölüm seç"
 
 #: ../options.php:132
 msgid "Number of slide items"
-msgstr "Aantal uitgelichte berichten"
+msgstr "Slayt nesnelerinin sayısı"
 
 #: ../options.php:133
 msgid "Enter the number of slide items"
-msgstr "Voor het aantal uitgelichte berichten in"
+msgstr "Slayt nesnelerinin sayısını gir"
 
 #: ../options.php:141
 msgid "Website Layout Options"
-msgstr "Website Layout Opties"
+msgstr "Website Düzen Ayarları"
 
 #: ../options.php:142
 msgid "Choose between Left and Right sidebar options to be used as default"
-msgstr ""
-"Maak een keuze tussen een Linker of Rechter sidebar als standaard keuze"
+msgstr "Sağ ve Sol kenar çubuğu arasından ön ayarlı olarak kullanılacağı seç"
 
 #: ../options.php:151
 msgid "Element color"
-msgstr "Element kleur"
+msgstr "Element rengi"
 
 #: ../options.php:152 ../options.php:160 ../options.php:205 ../options.php:213
 #: ../options.php:221 ../options.php:229 ../options.php:259 ../options.php:267
 #: ../options.php:280 ../options.php:382 ../options.php:390
 msgid "Default used if no color is selected"
-msgstr "Standaard gebruikt indien geen kleur gekozen"
+msgstr "Ren seçilmediyse ön ayarlı renk kullanılır"
 
 #: ../options.php:159
 msgid "Element color on hover"
-msgstr "Element kleur bij hover"
+msgstr "Vurgulanmmış alanda element rengi"
 
 #: ../options.php:167
 msgid "Custom Favicon"
-msgstr "Aangepast Favicon"
+msgstr "Özel Favicon"
 
 #: ../options.php:168
 msgid ""
 "Upload a 32px x 32px PNG/GIF image that will represent your websites favicon"
-msgstr "Upload een PNG/GIF afbeelding van 32pxx32px als website icoon."
+msgstr ""
+"Websitenin faviconunu temsil edicek 32px x 32px PNG/GIF görselini yükle"
 
 #: ../options.php:175
 msgid "Action Button"
-msgstr "Actie Button"
+msgstr "Eylem Butonu"
 
 #: ../options.php:180
 msgid "Call For Action Text"
-msgstr "Tekst voor het actie veld"
+msgstr "Eylem yazısını cağır"
 
 #: ../options.php:181
 msgid "Enter the text for call for action section"
-msgstr "Voer de tekst in die je wilt weergeven"
+msgstr "Eylem bölümümün çağırmak için gereken yazıyı gir"
 
 #: ../options.php:188
 msgid "Call For Action Button Title"
-msgstr "Actie knop Titel"
+msgstr "Eylem çağırma butonu başlığı"
 
 #: ../options.php:189
 msgid "Enter the title for Call For Action button"
-msgstr "Voer de Titel in voor de actie knop"
+msgstr "Eylem için çağır butonunun başlığını gir"
 
 #: ../options.php:196
 msgid "CFA button link"
-msgstr "Link voor de actie knop"
+msgstr "Eylem için çağır butonu bağlantısı"
 
 #: ../options.php:197
 msgid "Enter the link for Call For Action button"
-msgstr "Voer de link in voor de actie knop"
+msgstr "Eylem için çağır butonu bağlantısını gir"
 
 #: ../options.php:204
 msgid "Call For Action Text Color"
-msgstr "Actie veld tekst kleur"
+msgstr "Eylem için çağır yazı rengi"
 
 #: ../options.php:212
 msgid "Call For Action Background Color"
-msgstr "Actie knop achtergrond kleur"
+msgstr "Eylem için çağır arkaplan rengi"
 
 #: ../options.php:220
 msgid "Call For Action Button Border Color"
-msgstr "Actie knop rand kleur"
+msgstr "Eylem için çağır butonu kenar rengi"
 
 #: ../options.php:228
 msgid "Call For Action Button Text Color"
-msgstr "Actie knop kleur"
+msgstr "Eylem için çağır butonu yazı rengi"
 
 #: ../options.php:236
 msgid "Typography"
-msgstr "Opmaak"
+msgstr "Basımcılık"
 
 #: ../options.php:241
 msgid "Main Body Text"
-msgstr "Hoofd tekst"
+msgstr "Ana gövde metni"
 
 #: ../options.php:242
 msgid "Used in P tags"
-msgstr "Gebruik P tags"
+msgstr "P etiketlerinde kullanılır"
 
 #: ../options.php:250
 msgid "Heading Color"
-msgstr "Titel kleur"
+msgstr "Heading rengi"
 
 #: ../options.php:251
 msgid "Color for all headings (h1-h6)"
-msgstr "Kleur voor alle titels (h1-h6)"
+msgstr "Bütün (h1-h6)headingler için renk"
 
 #: ../options.php:258
 msgid "Link Color"
-msgstr "Link kleur"
+msgstr "Bağlantı rengi"
 
 #: ../options.php:266
 msgid "Link:hover Color"
-msgstr "Link:hover kleur"
+msgstr "Bağlantı:vurgulanmış rengi"
 
 #: ../options.php:274
 msgid "Header"
@@ -679,98 +680,95 @@ msgstr "Header"
 
 #: ../options.php:279
 msgid "Top nav background color"
-msgstr "Top navigatie achtergrond kleur"
+msgstr "Üst navigason arkaplan rengi"
 
 #: ../options.php:287
 msgid "Top nav item color"
-msgstr "Top navigatie tekst kleur"
+msgstr "Üst navigasyon nesne rengi"
 
 #: ../options.php:288
 msgid "Link color"
-msgstr "Link kleur"
+msgstr "Bağlantı rengi"
 
 #: ../options.php:295
 msgid "Top nav item hover color"
-msgstr "Top naviatie tekst hover kleur"
+msgstr "Üst navigasyon nesne vurgulanmış rengi"
 
 #: ../options.php:296
 msgid "Link:hover color"
-msgstr "Link:hover kleur"
+msgstr "Link:vurgulanmış rengi"
 
 #: ../options.php:303
 msgid "Top nav dropdown background color"
-msgstr "Top navigatie dropdown achtergrond kleur"
+msgstr "Üst navigasyon aşağı düşen arkaplan rengi"
 
 #: ../options.php:304 ../options.php:328
 msgid "Background of dropdown item hover color"
-msgstr "Top navigatie dropdown tekst hover kleur"
+msgstr "Aşağı düşen nesnenin vurgulanmış arkaplan rengi"
 
 #: ../options.php:311
 msgid "Top nav dropdown item color"
-msgstr "Top navigatie dropdown tekst kleur"
+msgstr "Üst navigasyon nesne rengi"
 
 #: ../options.php:312
 msgid "Dropdown item color"
-msgstr "Dropdown tekst kleur"
+msgstr "Aşağı düşen nesne rengi"
 
 #: ../options.php:319
-#, fuzzy
 msgid "Top nav dropdown item hover color"
-msgstr "Top naviatie tekst hover kleur"
+msgstr "Üst navigasyon aşağı düşen vurgulanmış nesne rengi"
 
 #: ../options.php:320
-#, fuzzy
 msgid "Dropdown item hover color"
-msgstr "Couleur Survol Fond Menu Déroulant Haut"
+msgstr "Aşağı düşen vurgulanmış nesne rengi"
 
 #: ../options.php:327
-#, fuzzy
 msgid "Top nav dropdown item background hover color"
-msgstr "Couleur Survol Fond Menu Déroulant Haut"
+msgstr "Üst navigasyon aşağı düşen vurgulanmış nesnenin arkaplan rengi"
 
 #: ../options.php:335
 msgid "Footer"
-msgstr "Footer"
+msgstr "Site altı(ayakçı)"
 
 #: ../options.php:340
 msgid "Footer widget area background color"
-msgstr "Footer widget achtergrond kleur"
+msgstr "Site altı widget alanı arkaplan rengi"
 
 #: ../options.php:347
 msgid "Footer background color"
-msgstr "Footer achtergrond kleur"
+msgstr "Site altı arkaplan rengi"
 
 #: ../options.php:354
 msgid "Footer text color"
-msgstr "Footer tekst kleur"
+msgstr "Site altı yazı rengi"
 
 #: ../options.php:361
 msgid "Footer link color"
-msgstr "Footer link kleur"
+msgstr "Site altı bağlantı rengi"
 
 #: ../options.php:368
 msgid "Footer information"
-msgstr "Footer informatie"
+msgstr "Site altı bilgisi"
 
 #: ../options.php:369
 msgid "Copyright text in footer"
-msgstr "Copyright tekst in de footer"
+msgstr "Site altındaki telif hakkı yazısı"
 
 #: ../options.php:376
 msgid "Social"
-msgstr "Social"
+msgstr "Sosyal"
 
 #: ../options.php:381
 msgid "Social icon color"
-msgstr "Social icoon kleur"
+msgstr "Sosyak ikon rengi"
 
 #: ../options.php:389
 msgid "Footer social icon color"
-msgstr "Footer social icoon kleur"
+msgstr "Site altı sosyal ikon rengi"
 
 #: ../options.php:397
 msgid "Add full URL for your social network profiles"
-msgstr "Voeg de volledige URL van je sociale netwerken toe"
+msgstr "Sosyal ağ profillerinizin tam URL sini ekleyin"
 
 #: ../options.php:398
 msgid "Facebook"
@@ -790,7 +788,7 @@ msgstr "Youtube"
 
 #: ../options.php:431
 msgid "Vimeo"
-msgstr ""
+msgstr "Vimeo"
 
 #: ../options.php:439
 msgid "LinkedIn"
@@ -802,7 +800,7 @@ msgstr "Pinterest"
 
 #: ../options.php:455
 msgid "RSS Feed"
-msgstr "RSS Feed"
+msgstr "RSS Besleme"
 
 #: ../options.php:463
 msgid "Tumblr"
@@ -830,29 +828,28 @@ msgstr "Foursquare"
 
 #: ../options.php:511
 msgid "SoundCloud"
-msgstr ""
+msgstr "SoundCloud"
 
 #: ../options.php:519
-#, fuzzy
 msgid "GitHub"
-msgstr "Github"
+msgstr "GitHub"
 
 #: ../options.php:526
 msgid "Other"
-msgstr "Overige"
+msgstr "Diğer"
 
 #: ../options.php:531
 msgid "Custom CSS"
-msgstr "Aangepaste CSS"
+msgstr "Özel CSS"
 
 #: ../options.php:532
 msgid "Additional CSS"
-msgstr "Extra CSS"
+msgstr "Fazladan CSS"
 
 #: ../search.php:16
 #, php-format
 msgid "Search Results for: %s"
-msgstr "Zoek resultaten voor: %s"
+msgstr ": %s için arama sonuçları"
 
 #: ../sidebar.php:26
 msgid "Meta"
