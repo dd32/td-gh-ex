@@ -1,6 +1,12 @@
 === Changelog ===
 
-**TBD**
+**April 12, 2015**
+
+Release: Version 1.1.5
+
+* Fix date in changelog.txt file.
+
+**April 12, 2015**
 
 Release: Version 1.1.4
 
