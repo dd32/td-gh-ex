@@ -1,105 +1,102 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Accessible Zen\n"
-"POT-Creation-Date: 2014-06-21 15:52-0500\n"
-"PO-Revision-Date: 2014-06-24 06:46+0100\n"
-"Last-Translator: Brieuc <brieuc@me.com>\n"
+"POT-Creation-Date: 2015-01-20 09:27:43+0100\n"
+"PO-Revision-Date: 2015-01-20 09:27:43+0100\n"
+"Last-Translator: Lutz Donnerhacke <lutz@donnerhacke.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.5\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"Language: fr\n"
-"X-Poedit-SearchPath-0: .\n"
+"Language: de\n"
 
 #: 404.php:16
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "Oups ! La page n'existe pas."
+msgstr "Huch! Die Seite existiert nicht."
 
 #: 404.php:20
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
-msgstr "Il n'y a rien à cet endroit. Essayez un des liens ci-dessous ?"
+msgstr "Nichts gefunden. Vielleicht helfen die Links hier unten oder eine Suche?"
 
 #: 404.php:27
 msgid "Most Used Categories"
-msgstr "Catégories les plus utilisées"
+msgstr "H&auml;ufigste Kategorien"
 
 #. translators: %1$s: smilie
 #: 404.php:35
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
-msgstr "Essayez les archives mensuelles. %1$s"
+msgstr "Schau mal in die monatlichen Archive. %1$s"
 
-# erreur de format pour un argument
 #: comments.php:30
-#, php-format
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "Une idée sur &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s idées sur &ldquo;%2$s&rdquo;"
+msgstr[0] "Ein Kommentar zu &bdquo;%2$s&rdquo;"
+msgstr[1] "%1$s Kommentare zu &bdquo;%2$s&rdquo;"
+
+#: template-tags:93
+msgctxt "comments teaser"
+msgid "%s comment"
+msgid_plural "%s comments"
+msgstr[0] "%s Kommentar"
+msgstr[1] "%s Kommentare"
 
 #: comments.php:50
 msgid "Comment navigation"
-msgstr "Commentaires"
+msgstr "Kommentare"
 
 #: comments.php:51
 msgid "&larr; Older Comments"
-msgstr "&larr; Anciens commentaires"
+msgstr "&larr; &Auml;ltere Kommentare"
 
 #: comments.php:52
 msgid "Newer Comments &rarr;"
-msgstr "Nouveaux commentaires &rarr;"
+msgstr "Neuere Kommentare &rarr;"
 
 #: comments.php:57
 msgid "Comments are closed."
-msgstr "Les commentaires sont désactivés."
+msgstr "Keine Kommentare, bitte."
 
 #: footer.php:18
 msgid "Main Menu"
-msgstr "Menu principal"
+msgstr "Hauptmen&uuml;"
 
 #: footer.php:26 functions.php:89
 msgid "Secondary Menu"
-msgstr "Menu secondaire"
+msgstr "Untermen&uuml;"
 
 #: footer.php:37
 msgid "&uarr; Back to the Top"
-msgstr "&uarr; Retour en haut de page"
+msgstr "&uarr; Zur&uuml;ck zum Anfang"
 
 #: functions.php:88
 msgid "Primary Menu"
-msgstr "Menu principal"
+msgstr "Prim&auml;res Men&uuml;"
 
 #: functions.php:118
 msgid "Footer Widget Area One"
-msgstr "Widget pour le Footer Un"
+msgstr "Widgets im 1. Fu&szlig;breich"
 
 #: functions.php:128
 msgid "Footer Widget Area Two"
-msgstr "Widget pour le Footer Deux"
+msgstr "Widgets im 2. Fu&szlig;bereich"
 
 #: functions.php:156
 msgctxt "Merriweather Sans font: on or off"
 msgid "on"
-msgstr "activé"
+msgstr "an"
 
 #: functions.php:162
 msgctxt "Merriweather font: on or off"
 msgid "on"
-msgstr "activé"
+msgstr "an"
 
 #: header.php:32
 msgid "&darr; Skip to Main Content"
-msgstr "&darr; passer au contenu principal"
+msgstr "&darr; Zum zentralen Inhalt"
 
 #: image.php:24
 #, php-format
@@ -109,8 +106,8 @@ msgid ""
 "image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" "
 "rel=\"gallery\">%8$s</a>"
 msgstr ""
-"Publié <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s"
-"\">%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-size image\">"
+"Ver&ouml;ffentlicht am <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s"
+"\">%2$s</time></span> auf <a href=\"%3$s\" title=\"Link to full-size image\">"
 "%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel="
 "\"gallery\">%8$s</a>"
 
@@ -122,20 +119,20 @@ msgstr ""
 #: partials/content-single.php:28 partials/content-status.php:29
 #: partials/content-video.php:29 partials/content.php:46
 msgid "Edit"
-msgstr "Édition"
+msgstr "Edit"
 
 #: image.php:39
 msgid "&larr; Previous"
-msgstr "&larr; Précédent"
+msgstr "&larr; Voriger"
 
 #: image.php:40
 msgid "Next &rarr;"
-msgstr "Suivant &rarr;"
+msgstr "N&auml;chster &rarr;"
 
 #: image.php:87 partials/content-archives.php:33 partials/content-page.php:17
 #: partials/content-single.php:22 partials/content.php:40
 msgid "Pages:"
-msgstr "Pages :"
+msgstr "Seiten:"
 
 #: image.php:93
 #, php-format
@@ -144,8 +141,8 @@ msgid ""
 "comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" "
 "title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
 msgstr ""
-"<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a "
-"comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" "
+"<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Schreibe "
+"einen Kommentar</a> oder hinterlasse einen Verwendungsnachweis: <a class=\"trackback-link\" href=\"%s\" "
 "title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
 
 #: image.php:95
@@ -155,7 +152,7 @@ msgid ""
 "\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback"
 "\">Trackback URL</a>."
 msgstr ""
-"Les commentaires sont désactivés, mais vous pouvez laisser une trace ici :<a "
+"Kommentare sind nicht erlaubt, aber Du kannst einen Verwendungsnachweis hinterlassen:<a "
 "class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" "
 "rel=\"trackback\">Trackback URL</a>."
 
@@ -164,12 +161,12 @@ msgid ""
 "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond"
 "\" title=\"Post a comment\">post a comment</a>."
 msgstr ""
-"Les traces sont désactivées, mais vous pouvez <a class=\"comment-link\" href="
-"\"#respond\" title=\"Post a comment\">post a comment</a>."
+"Verwendungsnachweise sind nicht erlaubt, aber Du kannst <a class=\"comment-link\" href="
+"\"#respond\" title=\"Post a comment\">kommentieren</a>."
 
 #: image.php:99
 msgid "Both comments and trackbacks are currently closed."
-msgstr "Commentaires et traces sont désactivés."
+msgstr "R&uuml;ckmeldungen sind nicht erlaubt."
 
 #: inc/back-compat.php:37 inc/back-compat.php:49 inc/back-compat.php:64
 #, php-format
@@ -177,24 +174,24 @@ msgid ""
 "Accessible Zen requires at least WordPress version 3.6. You are running "
 "version %s. Please upgrade and try again."
 msgstr ""
-"Accessible Zen nécessite au moins la version 3.6 de WordPress. Vous utilisez "
-"la version %s. Merci de faire la mise à jour. et de réessayer."
+"Accessible Zen ben&ouml;tigt mindestens WordPress version 3.6. Hier l&auml;uft "
+"version %s. Bitte aktualisiere zuerst."
 
 #: inc/customizer.php:27
 msgid "Hide Site Tagline"
-msgstr "Cacher la description du site"
+msgstr "Verstecke die Seitenleiste"
 
 #: inc/customizer.php:44
 msgid "Content"
-msgstr "Contenu"
+msgstr "Inhalt"
 
 #: inc/customizer.php:54
 msgid "Post content"
-msgstr "Contenu de l'article"
+msgstr "Kommentieren"
 
 #: inc/customizer.php:89
 msgid "Link to this page in Read More Posts on Front Page Template"
-msgstr "Lien sur cette page dans Lire plus d'articles sur le modèle de page"
+msgstr "Link to this page in Read More Posts on Front Page Template"
 
 #: inc/customizer.php:142 inc/template-tags.php:331
 msgid "Accessible Zen"
@@ -208,11 +205,10 @@ msgid ""
 "excerpts and much more. Get started customizing the theme under <a href=\"%s"
 "\">Appearance &rarr; Customize</a>."
 msgstr ""
-"Accessible Zen utilise le générateur de thèmes WordPress pour vous permettre "
-"d'ajuster les réglages, tels que montrer/cacher la description du site "
-"tagline, activer les extraits d'articles, et bien d'autres fonctionnalités. "
-"Personnalisez votre thème avec <a href=\"%s\">Appearance &rarr; Customize</"
-"a>."
+"Accessible Zen benutzt die WordPress Theme Einstellungen um verschiedene "
+"Vorgaben zu &auml;ndern, einschlie&szlig;lich der Seitenleiste, Anzeige von "
+"Anrissen und vieles mehr. &Uuml;berarbeite die Einstellungen unter "
+"<a href=\"%s\">Anpassungen</a>."
 
 #: inc/customizer.php:146
 #, php-format
@@ -220,9 +216,8 @@ msgid ""
 "If you have questions about the theme, want to suggest a new feature or need "
 "support, visit the <a href=\"%s\">Accessible Zen support forum</a>."
 msgstr ""
-"Si vous avez des questions, ou si vous souhaitez de nouvelles "
-"fonctionnalités, ou si vous avez besoin d'aide, consultez le forum <a href="
-"\"%s\">Accessible Zen support forum</a>."
+"Bei Fragen zu diesem Theme, Vorschl&auml;gen oder bei Hilfeersuchen, "
+"besuche das <a href=\"%s\">Accessible Zen support forum</a>."
 
 #: inc/customizer.php:147
 #, php-format
@@ -237,61 +232,61 @@ msgstr ""
 
 #: inc/template-tags.php:26
 msgid "Post navigation"
-msgstr "Navigation des articles"
+msgstr "Artikelnavigation"
 
 #: inc/template-tags.php:30
 msgctxt "Previous post link"
 msgid "Previous Post: "
-msgstr "Article précédent :"
+msgstr "Voriger Artikel: "
 
 #: inc/template-tags.php:31
 msgctxt "Next post link"
 msgid "Next Post: "
-msgstr "Article suivant :"
+msgstr "N&auml;chster Artikel: "
 
 #: inc/template-tags.php:36
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</span> Articles anciens"
+msgstr "<span class=\"meta-nav\">&larr;</span> &Auml;ltere Artikel"
 
 #: inc/template-tags.php:40
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Nouveau articles <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Neuere Artikel <span class=\"meta-nav\">&rarr;</span>"
 
 #: inc/template-tags.php:58
 #, php-format
 msgctxt "post author"
 msgid "By %s"
-msgstr "Par %s"
+msgstr "Von %s"
 
 #: inc/template-tags.php:86
 #, php-format
 msgctxt "post date"
 msgid "Posted: %s"
-msgstr "Date de mise en ligne : %s"
+msgstr "Geschrieben am: %s"
 
 #: inc/template-tags.php:112
 #, php-format
 msgid "Author: %s"
-msgstr "Auteur : %s"
+msgstr "Autor: %s"
 
 #: inc/template-tags.php:120
 #, php-format
 msgid "Day: %s"
-msgstr "Jour : %s"
+msgstr "Tag: %s"
 
 #: inc/template-tags.php:123
 #, php-format
 msgid "Month: %s"
-msgstr "Mois : %s"
+msgstr "Monat: %s"
 
 #: inc/template-tags.php:126
 #, php-format
 msgid "Year: %s"
-msgstr "Année : %s"
+msgstr "Jahr: %s"
 
 #: inc/template-tags.php:129
 msgid "Asides"
-msgstr "À-côtés"
+msgstr "Kurzmeldungen"
 
 #: inc/template-tags.php:132
 msgid "Audios"
@@ -299,19 +294,19 @@ msgstr "Audios"
 
 #: inc/template-tags.php:135
 msgid "Chats"
-msgstr "Chats"
+msgstr "Gespr&auml;che"
 
 #: inc/template-tags.php:138
 msgid "Galleries"
-msgstr "Galleries"
+msgstr "Galerien"
 
 #: inc/template-tags.php:141
 msgid "Images"
-msgstr "Images"
+msgstr "Bilder"
 
 #: inc/template-tags.php:144
 msgid "Statuses"
-msgstr "Statuts"
+msgstr "Statusmeldungen"
 
 #: inc/template-tags.php:147
 msgid "Videos"
@@ -319,11 +314,11 @@ msgstr "Videos"
 
 #: inc/template-tags.php:150
 msgid "Quotes"
-msgstr "Citations"
+msgstr "Zitate"
 
 #: inc/template-tags.php:153
 msgid "Links"
-msgstr "Liens"
+msgstr "Verweise"
 
 #: inc/template-tags.php:156 inc/template-tags.php:160
 #, php-format
@@ -332,7 +327,7 @@ msgstr "%s"
 
 #: inc/template-tags.php:163
 msgid "Archives"
-msgstr "Archives"
+msgstr "Archive"
 
 #. translators: used between list items, there is a space after the comma
 #: inc/template-tags.php:196 inc/template-tags.php:199
@@ -392,37 +387,37 @@ msgstr "WordPress"
 #: inc/tweaks.php:115
 #, php-format
 msgid "Page %s"
-msgstr "Page %s"
+msgstr "Seite %s"
 
 #: partials/author-bio.php:15
 #, php-format
 msgid "About %s"
-msgstr "À propos de %s"
+msgstr "&Uuml;ber %s"
 
 #: partials/author-bio.php:19
 #, php-format
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Voir tous les articles par %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Zeige alle Artikel von %s <span class=\"meta-nav\">&rarr;</span>"
 
 #: partials/content-archives.php:18
 msgid "Try searching to find something."
-msgstr "Rechercher."
+msgstr "Suche, so wirst Du finden."
 
 #: partials/content-archives.php:21
 msgid "Archives by Month"
-msgstr "Archives mensuelles"
+msgstr "Monatliche Archive"
 
 #: partials/content-archives.php:25
 msgid "Archives by Category"
-msgstr "Archives par Catégorie"
+msgstr "Archive nach Kategorien"
 
 #: partials/content-archives.php:29
 msgid "Archives by Tag"
-msgstr "Archives par marqueur"
+msgstr "Archive nach Schlagworten/Tags"
 
 #: partials/content-aside.php:14
 msgid "Aside"
-msgstr "À-côté"
+msgstr "Kurzmeldung"
 
 #: partials/content-aside.php:20 partials/content-audio.php:20
 #: partials/content-chat.php:20 partials/content-gallery.php:20
@@ -430,7 +425,11 @@ msgstr "À-côté"
 #: partials/content-quote.php:20 partials/content-status.php:20
 #: partials/content-video.php:20
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Lire la suite de <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Weiterlesen <span class=\"meta-nav\">&rarr;</span>"
+
+#: partials/content.php
+msgid "Continue reading "
+msgstr "Weiterlesen bei "
 
 #: partials/content-audio.php:14
 msgid "Audio"
@@ -438,67 +437,65 @@ msgstr "Audio"
 
 #: partials/content-chat.php:14
 msgid "Chat"
-msgstr "Chat"
+msgstr "Gespr&auml;ch"
 
 #: partials/content-gallery.php:14
 msgid "Gallery"
-msgstr "Gallerie"
+msgstr "Galerie"
 
 #: partials/content-image.php:14
 msgid "Image"
-msgstr "Image"
+msgstr "Bild"
 
 #: partials/content-link.php:14
 msgid "Link"
-msgstr "Lien"
+msgstr "Verweis"
 
 #: partials/content-quote.php:14
 msgid "Quote"
-msgstr "Citation"
+msgstr "Zitat"
 
 #: partials/content-status.php:14
 msgid "Status"
-msgstr "Statut"
+msgstr "Statusmeldung"
 
 #: partials/content-video.php:14
 msgid "Video"
-msgstr "Vidéo"
+msgstr "Video"
 
 #: partials/content.php:14
 msgid "Featured"
-msgstr "Figuré"
+msgstr "Hervorgehoben"
 
 #: partials/no-results.php:14
 msgid "Nothing Found"
-msgstr "Aucun résultat"
+msgstr "Nichts gefunden"
 
 #: partials/no-results.php:20
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
-"Prêt pour la publication de votre premier article ? <a href=\"%1$s\">Get "
-"started here</a>."
+"Fertig f&uml;r den ersten Beitrag? <a href=\"%1$s\">Starte hier</a>."
 
 #: partials/no-results.php:24
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
-"Désolé, rien ne correspond à votre recherche. Merci d'essayer avec d'autres "
-"mots-clés."
+"Leider keine Fundstellen. Bitte versuche es mit anderen Suchbegriffen."
 
 #: partials/no-results.php:29
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
-msgstr "Il semble que votre recherche ne donne rien."
+msgstr "Das gibt es hier offenbar nicht. Vielleicht hilft eine Suche."
 
 #: search.php:17
 #, php-format
 msgid "Search Results for: %s"
-msgstr "Résultats de la recherche pour : %s"
+msgstr "Suchergnisse f&uml;r: %s"
 
 #: templates/front-page-template.php:53
 msgid "Read more posts"
-msgstr "Autres articles"
+msgstr "Weitere Artikel"
