@@ -14,9 +14,9 @@ function fmi_slider() { ?>
 				$fmi_slider_link = of_get_option( 'fmi_slider_link'.$i , '#' );
 
 				if( !empty( $fmi_slider_image ) ) {
-					if ( $i == 1 ) { $classes = "slides displayblock"; } else { $classes = "slides displaynone"; }
+					if ( $i == 1 ) { $fmi_classes = "slides displayblock"; } else { $fmi_classes = "slides displaynone"; }
 					?>
-					<section id="featured-slider" class="<?php echo $classes; ?>">
+					<section id="featured-slider" class="<?php echo $fmi_classes; ?>">
 						<figure class="slider-image-wrap">
 							<img alt="<?php echo esc_attr( $fmi_slider_title ); ?>" src="<?php echo esc_url( $fmi_slider_image ); ?>">
 					    </figure>

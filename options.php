@@ -155,16 +155,6 @@ function optionsframework_options() {
 								'no_sidebar_full_width'				=> get_template_directory_uri() . '/images/no-sidebar-full-width-layout.png',
 							)
 	);
-
-
-
-	$options[] = array(
-		'name' => __( 'Custom CSS', 'fmi' ),
-		'desc' => __( 'Add Custom CSS to add your own styling to the Theme.', 'fmi' ),
-		'id' => 'vs-custom-css',
-		'std' => '',
-		'type' => 'textarea'
-	);
 	
 	$options[] = array(
 		'name' => __( 'Social Links', 'fmi' ),
@@ -334,7 +324,7 @@ function fmi_options_display_sidebar() { ?>
 					<div class="option-btn"><a class="btn demo" target="_blank" href="<?php echo esc_url( 'http://forrss.com/demo/fmi/' ); ?>"><?php esc_attr_e( 'View Demo' , 'fmi' ); ?></a></div>
 
 	      			<div align="center" style="padding:5px; background-color:#fafafa;border: 1px solid #CCC;margin-bottom: 10px;">
-	      				<strong><?php esc_attr_e( 'If you like my work. Buy me a coffee.', 'fmi' ); ?></strong>
+	      				<strong><?php esc_attr_e( 'If you like our work. Buy us a beer.', 'fmi' ); ?></strong>
 	      				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 							<input type="hidden" name="cmd" value="_s-xclick">
 							<input type="hidden" name="hosted_button_id" value="EZZUACHETUBXW">

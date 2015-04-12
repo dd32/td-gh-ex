@@ -4,7 +4,7 @@ Theme URI: http://forrss.com/themes/fmi/
 Author: Forrss
 Author URI: http://forrss.com/
 Description: Fmi is an elegant blog theme with responsive and easily customizable.
-Version: 1.3.7
+Version: 1.3.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: fmi
@@ -941,40 +941,38 @@ object {
 
 /*navigation*/
 .main-navigation{
-	background:url(images/nbg.png) repeat;
+	background: #07b2e5;
 	font-size:13px;
+	line-height:35px;
+	border-bottom:1px solid #8b8b8b;
 }
-.main-navigation .menu{
-	width:100%;
-	line-height:34px;
-}
-.main-navigation .menu ul{
+.main-navigation ul{
 	letter-spacing:-4px;
 	word-spacing:-4px;
 }
-.main-navigation .menu li{
+.main-navigation li{
 	display:inline-block;
 	position:relative;
 	letter-spacing:normal;
 	word-spacing:normal;
 }
-.main-navigation .menu .current_page_item{
-	background:url(images/nli.png) repeat-x;
+.main-navigation .current_page_item a{
+	background: url(images/nav_li.png) repeat;
 }
-.main-navigation .mr li:first-child{
-	background:url(images/nli.png) repeat-x;
+.main-navigation .mr li:first-child a{
+	background: url(images/nav_li.png) repeat;
 }
-.main-navigation .menu li a{
+.main-navigation li a{
 	display:block;
-	line-height:34px;
-	padding:0 10px;
+	line-height:35px;
+	padding:0 15px;
 	color:#ffffff;
 }
-.main-navigation .menu li a:hover{
-	background:url(images/nli2.png) repeat-x;
+.main-navigation li a:hover{
+	background:url(images/nav_li.png) repeat;
 }
-.main-navigation .menu .sub-menu,
-.main-navigation .menu .children{
+.main-navigation .sub-menu,
+.main-navigation .children{
 	height:0;
 	left:0;
 	overflow:hidden;
@@ -982,31 +980,31 @@ object {
 	position:absolute;
 	width:0;
 	z-index:99999;
-	top:33px;
+	top:35px;
 }
-.main-navigation .menu li:hover > ul, 
-.main-navigation .menu .focus > ul{
+.main-navigation li:hover > ul, 
+.main-navigation .focus > ul{
 	clip:inherit;
 	overflow:inherit;
 	height:inherit;
 	width:inherit;
 }
-.main-navigation .menu ul ul a{
-	padding:10px 10px;
+.main-navigation ul ul a{
+	padding:10px 15px;
 	margin:0;
-	width:180px;
-	background:#07a9da;
+	width:200px;
 	line-height:15px;
 }
-.main-navigation .menu ul ul a:hover{
-	background:#28b6e1;
+.main-navigation ul ul a:hover{
+	background:url(images/nav_li.png) repeat;
 }
-.main-navigation .menu ul ul li{
+.main-navigation ul ul li{
 	padding:0;
 	border-top:1px solid #6aceec;
+	background:#07a9da;
 }
-.main-navigation .menu ul .sub-menu ul,
-.main-navigation .menu ul .children ul{
+.main-navigation ul .sub-menu ul,
+.main-navigation ul .children ul{
 	border-left:0 none;
 	left:100%;
 	top:-1px;
@@ -1161,6 +1159,7 @@ object {
 }
 .entry-title a{
 	color:#46A8C8;
+	word-wrap: break-word;
 }
 .entry-title a:hover{
 	color:#83aa59;
@@ -1259,6 +1258,9 @@ object {
 	line-height:22px;
 	padding:0 0 4px;
 	font-size:13px;
+}
+.widget-area li a{
+	word-wrap: break-word;
 }
 .widget-area li a:hover{
 	text-decoration:underline;
@@ -1431,7 +1433,6 @@ object {
 
 /*footer*/
 .site-footer{
-	
 }
 .site-info{
 	border-top:1px solid #E6E6E6;
@@ -1553,9 +1554,7 @@ object {
 	color:#46A8C8;
 }
 
-
-/* =FEATURED SLIDER
------------------------------------------------ */
+/*slider*/
 #slider-text-box {
 	color: #ffffff;
 }
@@ -1609,8 +1608,6 @@ object {
 .slider-wrap .displaynone {
     display: none;
 }
-/* =SLIDER CONTROLLERS
------------------------------------------------ */
 #controllers {
     bottom: 15px;
     line-height: 0;
@@ -1674,7 +1671,7 @@ object {
 	}
 	.main-navigation .menu li a:hover{
 		background-image:none;
-		background:#28b6e1;
+		background:url(images/nav_li.png) repeat;
 	}
 	.main-navigation .menu .sub-menu,
 	.main-navigation .menu .children{

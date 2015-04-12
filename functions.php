@@ -101,38 +101,8 @@ function fmi_theme_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-	
-	/**
-	 * Register JQuery cycle js file for slider.
-	 */
-	wp_register_script( 'jquery_cycle', get_template_directory_uri() . '/js/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
-
-	/**
-	 * Enqueue Slider setup js file.
-	 */	
-	if( of_get_option( 'fmi_activate_slider', '0' ) == '1' ) { 
-		if ( is_home() || is_front_page() ) {
-			wp_enqueue_script( 'fmi_slider', get_template_directory_uri() . '/js/slider-setting.js', array( 'jquery_cycle' ), false, true );
-
-		}
-	}
-	
-	/**
-    * Browser specific queuing i.e
-    */
-	$fmi_user_agent = strtolower($_SERVER['HTTP_USER_AGENT']);
-	if(preg_match('/(?i)msie [1-8]/',$fmi_user_agent)) {
-		wp_enqueue_script( 'html5', get_template_directory_uri() . '/js/html5shiv.min.js', true );
-	}
 }
 add_action( 'wp_enqueue_scripts', 'fmi_theme_scripts' );
-
-function fmi_theme_styles(){
-	echo '<style type="text/css" media="screen">';
-	echo of_get_option( 'vs-custom-css' );
-	echo '</style>';
-}
-add_action('wp_head', 'fmi_theme_styles', 11);
 
 /**
  * Custom template tags for this theme.
