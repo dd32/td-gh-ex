@@ -37,12 +37,12 @@
 				<div class="text-header">
 					<?php 
 					/**
-					 * If somebody sets their blog name to an empty string, they're intent is probably to hide the site title on the home page.
-					 * This results in an empty link with no text, so this pattern inserts a text and hides the link.
+					 * If somebody sets their blog name to an empty string, their intent is probably to hide the site title on the home page.
+					 * This results in an empty link with no text, so this pattern inserts text and hides the link.
 					 */
 					if ( get_bloginfo( 'name' ) == '' ) {
 						$class = 'site-title screen-reader-text';
-						$name = 'Home';
+						$name = __( 'Home', 'universal' );
 					} else {
 						$class = 'site-title';
 						$name = get_bloginfo( 'name' );
@@ -66,7 +66,7 @@
 			?>
 			<nav role="navigation" aria-label='<?php _e( 'Primary Menu ', 'universal' ); ?>'>
 			<h1 class="screen-reader-text"><?php _e( 'Primary Menu', 'universal' ); ?></h1>
-			<button class='menu-toggle' title='<?php _e( 'Toggle Menu', 'universal' ); ?>'><span class="screen-reader-text"><?php _e( 'Toggle Menu','universal' ); ?></span></button>			
+			<button class='menu-toggle' title='<?php _e( 'Toggle Menu', 'universal' ); ?>' aria-controls='menu-main-menu' aria-expanded='false'><span class="maybe-hide"><?php _e( 'Toggle Menu','universal' ); ?></span></button>			
 			<?php wp_nav_menu( array( 'theme_location'=>'primary' ) ); ?>
 			</nav>
 		</div>
