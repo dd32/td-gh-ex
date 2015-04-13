@@ -11,7 +11,7 @@ Renden (Pro) is a multi-purpose professional Premium WordPress Theme ideal for a
 	Support
 -----------------------------------------------------------------------------
 
-- For setup and use instructions please refer to the getting started section at www.thinkupthemes.com/support/.
+- For support for Renden (free) please post a support ticket over at the https://wordpress.org/support/theme/renden.
 
 -----------------------------------------------------------------------------
 	Frequently Asked Questions
@@ -92,6 +92,13 @@ The following opensource projects, graphics, fonts, API's or other files as list
 -----------------------------------------------------------------------------
 	Changelog
 -----------------------------------------------------------------------------
+
+Version 1.0.6
+- Updated: Link to support forum updated in readme file.
+- Updated: Change readme file to ensure support article link is correct.
+- Updated: thinkup_check_currentpage() now checks for www. prefix on site.
+- Updated: Coments in functions.php now applied using single line exclusions to make debugging easier.
+- Updated: Add class="clearboth" after #slider so that it works correctly with all 3rd party shortcodes.
 
 Version 1.0.5
 - New:     Add WooCommerce compatibility to allow users to customize WooCommerce from theme folder.

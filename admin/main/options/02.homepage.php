@@ -61,13 +61,13 @@ $thinkup_class_fullwidth = NULL;
 					}
 				}
 			echo '</ul></div></div>',
-			     '</div></div>';
+			     '</div></div><div class="clearboth"></div>';
 		} else if ( $thinkup_homepage_sliderswitch !== 'option2' or empty( $thinkup_homepage_slidername ) ) {
 			echo '';
 		} else {
 			echo	'<div id="slider"><div id="slider-core">',
 				do_shortcode( $thinkup_homepage_slidername ),
-				'</div></div>';
+				'</div></div><div class="clearboth"></div>';
 		}
 	}
 }

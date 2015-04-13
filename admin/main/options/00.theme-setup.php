@@ -358,7 +358,14 @@ function thinkup_check_currentpage() {
 	}
 	$pageURL = rtrim($pageURL, '/') . '/';
 
-	$pageURL = str_replace( "www.", "", $pageURL );
+	$currentURL = get_permalink();
+
+	// Add www. to current page url if present in permalink
+	if (strpos( $currentURL, 'www.' ) !== false) {
+		$pageURL = $pageURL;
+	} else {
+		$pageURL = str_replace( "www.", "", $pageURL );
+	}
 
 	return $pageURL;
 }

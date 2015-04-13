@@ -273,6 +273,12 @@ float: left;
 	width: 100%;
 	position: relative;
 	display: inline-block;
+	overflow: hidden;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
 }
 .sc-carousel .entry-header img {
 	display: block;
@@ -839,10 +845,12 @@ div.pp_pic_holder {
 	z-index: 999999;
 }
 .prettyPhoto { 
+	max-width: 100%;
 	position: relative; 
 	display: inline-block; 
 }
 .sc-lightbox {
+	max-width: 100%;
 	position: relative;
 	display: inline-block;
 	margin-bottom: 20px;
