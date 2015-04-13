@@ -16,11 +16,12 @@ function suevafree_add_script() {
      add_thickbox();
 
 	 $file_dir = get_template_directory_uri()."/core/admin/include";
-	 
-	 wp_enqueue_script( 'jquery.custom', $file_dir.'/js/jquery.custom.js',array('jquery','media-upload','thickbox'),'1.0',true ); 
-	 wp_enqueue_script( 'wip_on_off', $file_dir.'/js/wip_on_off.js','3.5', true); 
-	 wp_enqueue_style ( 'custom.style', $file_dir.'/css/custom.style.css' ); 
-	 wp_enqueue_style ( 'wip_on_off', $file_dir.'/css/wip_on_off.css' );
+	 wp_enqueue_style ( 'google-fonts', '//fonts.googleapis.com/css?family=Roboto');
+	 wp_enqueue_style ( 'suevafree_panel', $file_dir.'/css/wip_panel.css' ); 
+
+	 wp_enqueue_script ( 'jquery.custom', $file_dir.'/js/jquery.custom.js',array('jquery','media-upload','thickbox'),'1.0',true ); 
+	 wp_enqueue_script ( 'wip_on_off', $file_dir.'/js/wip_on_off.js','3.5', true); 
+	 wp_enqueue_style  ( 'wip_on_off', $file_dir.'/css/wip_on_off.css' );
 }
 
 add_action('admin_init', 'suevafree_add_script');
@@ -43,10 +44,7 @@ function suevafree_save_option ( $panel ) {
 			$suevafree_setting = array();
 		}      
 		
-	if ( "Save" == suevafree_request('action') )
-
-	{
-				
+	if ( "Save" == suevafree_request('action') ) {
 
 		foreach ($panel as $element ) {
 			
@@ -91,7 +89,7 @@ function suevafree_save_option ( $panel ) {
 function suevafree_message () {
 		global $suevafree_message_action;
 		if (isset($suevafree_message_action))
-		echo '<div id="message" class="updated fade message_save voobis_message"><p><strong>'.$suevafree_message_action.'</strong></p></div>';
+		echo '<div id="message" class="updated fade message_save wip_message"><p><strong>'.$suevafree_message_action.'</strong></p></div>';
 	}
 
 

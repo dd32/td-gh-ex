@@ -1,6 +1,6 @@
 jQuery(document).ready(function($){ 
 
-jQuery('.voobis_message').delay(1000).fadeOut(1000);
+jQuery('.wip_message').delay(1000).fadeOut(1000);
 
 jQuery('.wip_mainbox').css({'display':'none'});
 jQuery('.inactive').next('.wip_mainbox').css({'display':'block'});

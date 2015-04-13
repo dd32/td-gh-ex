@@ -12,25 +12,62 @@
 
 		switch ( $element['type'] ) { 
 		
-			case 'navigation':
-			
-				suevafree_message($panel); ?>
-	
-    			<h2 class="voobis"> <?php _e( 'General Settings','wip'); ?>  </h2>
+			case 'navigation': ?>
+
+                <div class="banner">
+
+				<h2> <?php echo suevafree_theme_data('Name') . " " . suevafree_theme_data('Version');  ?> </h2>
+
+                <h1> <?php _e( 'To Activate All Features, Please Upgrade to Premium version!','seanlite'); ?> </h1>
+                
+                <div class="big-button"> <a href="https://www.themeinprogress.com/sueva/?ref=panel" target="_blank"> GET PREMIUM VERSION </a></div>
+                
+                </div>
+                
+				<div class="header">
+						
+					<div class="left">
+						
+						<a href="https://www.themeinprogress.com/" target="_blank">
+						
+							<img src="<?php echo get_template_directory_uri(); ?>/core/admin/include/images/logo.png">
+								
+						</a>
+						
+					</div>
+						
+					<div class="theme_desc">
+						
+						<h2 class="maintitle"> 
+							
+							<?php echo suevafree_theme_data('Name'); _e( ' Settings','wip'); ?><br />
+							<span><?php _e( 'Version ','wip'); echo suevafree_theme_data('Version'); ?></span>
+								
+						</h2>
+						
+					</div>
+						
+					<div class="clear"></div>
+					
+				</div>
+
+				<?php suevafree_message($panel); ?>
 
 				<div id="tabs">
                 
-                <ul>
-    
-   				<?php 
-				
-   				foreach ($element['item'] as $option => $name ) {
-					if (str_replace(" ", "", $option) == $_GET['tab'] ) $class = "class='ui-state-active'"; else $class = ""; 
-					echo "<li ".$class."><a href='themes.php?page=themeoption&tab=".str_replace(" ", "", $option)."'>".$name."</a></li>";
-				}
-				?>
-               
-                </ul>
+                    <ul>
+        
+                        <?php 
+                        
+                        foreach ($element['item'] as $option => $name ) {
+                            if (str_replace(" ", "", $option) == $_GET['tab'] ) $class = "class='ui-state-active'"; else $class = ""; 
+                            echo "<li ".$class."><a href='themes.php?page=themeoption&tab=".str_replace(" ", "", $option)."'>".$name."</a></li>";
+                        }
+                        ?>
+                    
+                        <li class="clear"></li>
+                    
+                    </ul>
                
                 <?php	
 			
@@ -39,7 +76,6 @@
 			case 'endpanel':  ?>
 				
 				</div>
-				<div style="margin:10px 0; font-size:11px">Icons by: <a href="http://www.woothemes.com/2009/09/woofunction/" target="_blank">WooFunction</a> </div>
 			
 			<?php break;
 			

@@ -1,5 +1,9 @@
 SuevaFree Changelog
 
+- Version 1.2.7.7 - Released: 13.04.2015
+
+-- Updated : Option panel layout.
+
 - Version 1.2.7.6 - Released: 16.03.2015
 
 -- Fixed : Gallery items with caption, for mobile version.
