@@ -86,3 +86,5 @@ Version 1.1.8
 Version 1.1.9
 	* Fix PATH to languages directory
 	
+Version 1.2.0
+	* Elusive Font Update

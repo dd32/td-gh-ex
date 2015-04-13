@@ -11,5 +11,5 @@
 		<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'abaris' ); ?>" value="<?php echo esc_attr( get_search_query() ); ?>" name="s">
 	</label>
 	<input type="submit" class="search-submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'abaris' ); ?>">
-	<i class="el-icon-search"></i>
+	<i class="el el-search"></i>
 </form>

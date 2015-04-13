@@ -7,7 +7,7 @@ function abaris_scripts() {
 	wp_enqueue_style( 'abaris-font-bree-serif', '//fonts.googleapis.com/css?family=Bree+Serif');
 	wp_enqueue_style( 'abaris-bootstrap', ABARIS_PARENT_URL . '/css/bootstrap.css' );
 	wp_enqueue_style( 'abaris-bootstrap-responsive', ABARIS_PARENT_URL . '/css/bootstrap-responsive.css' );
-	wp_enqueue_style( 'abaris-elusive', ABARIS_PARENT_URL . '/css/elusive-webfont.css' );
+	wp_enqueue_style( 'abaris-elusive', ABARIS_PARENT_URL . '/css/elusive-icons.css' );
 	wp_enqueue_style( 'abaris-flexslider', ABARIS_PARENT_URL . '/css/flexslider.css' );
 	wp_enqueue_style( 'abaris-slicknav', ABARIS_PARENT_URL . '/css/slicknav.css' );
 	wp_enqueue_style( 'abaris-style', get_stylesheet_uri() );
