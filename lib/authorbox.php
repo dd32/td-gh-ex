@@ -13,39 +13,43 @@ function pinnacle_author_box() { ?>
           <div class="author-follow"><span class="followtext"><?php _e('Follow', 'pinnacle'); ?> <?php the_author_meta( 'display_name' ); ?>:</span>
           <?php if ( get_the_author_meta( 'facebook' ) ) { ?>
   			<span class="facebooklink">
-  				<a href="<?php esc_url(the_author_meta( 'facebook' )); ?>" title="<?php _e('Follow', 'pinnacle'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on Facebook', 'pinnacle');?>"><i class="icon-facebook"></i></a>
+  				<a href="<?php esc_url(the_author_meta( 'facebook' )); ?>" target="_blank" title="<?php _e('Follow', 'pinnacle'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on Facebook', 'pinnacle');?>"><i class="icon-facebook"></i></a>
   			</span>
               <?php } if ( get_the_author_meta( 'twitter' ) ) { ?>
               <span class="twitterlink">
-  				<a href="http://twitter.com/<?php esc_url(the_author_meta( 'twitter' )); ?>" title="<?php _e('Follow', 'pinnacle'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on Twitter', 'pinnacle');?>"><i class="icon-twitter"></i></a>
+  				<a href="http://twitter.com/<?php esc_url(the_author_meta( 'twitter' )); ?>" target="_blank" title="<?php _e('Follow', 'pinnacle'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on Twitter', 'pinnacle');?>"><i class="icon-twitter"></i></a>
   			</span>
               <?php } if ( get_the_author_meta( 'google' ) ) { ?>
               <span class="googlepluslink">
-  				<a href="<?php esc_url(the_author_meta( 'google' )); ?>" title="<?php _e('Follow', 'pinnacle'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on Google Plus', 'pinnacle');?>"><i class="icon-google-plus"></i></a>
+  				<a href="<?php esc_url(the_author_meta( 'google' )); ?>" target="_blank" title="<?php _e('Follow', 'pinnacle'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on Google Plus', 'pinnacle');?>"><i class="icon-google-plus"></i></a>
   			</span>
+              <?php } if ( get_the_author_meta( 'youtube' ) ) { ?>
+              <span class="youtubelink">
+          <a href="<?php esc_url(the_author_meta( 'youtube' )); ?>" target="_blank" title="<?php _e('Follow', 'pinnacle'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on YouTube', 'pinnacle');?>"><i class="icon-youtube"></i></a>
+        </span>
               <?php } if ( get_the_author_meta( 'flickr' ) ) { ?>
               <span class="flickrlink">
-  				<a href="<?php esc_url(the_author_meta( 'flickr' )); ?>" title="<?php _e('Follow', 'pinnacle'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on Flickr', 'pinnacle');?>"><i class="icon-flickr2"></i></a>
+  				<a href="<?php esc_url(the_author_meta( 'flickr' )); ?>" target="_blank" title="<?php _e('Follow', 'pinnacle'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on Flickr', 'pinnacle');?>"><i class="icon-flickr2"></i></a>
   			</span>
               <?php } if ( get_the_author_meta( 'vimeo' ) ) { ?>
               <span class="vimeolink">
-  				<a href="<?php esc_url(the_author_meta( 'vimeo' )); ?>" title="<?php _e('Follow', 'pinnacle'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on Vimeo', 'pinnacle');?>"><i class="icon-vimeo"></i></a>
+  				<a href="<?php esc_url(the_author_meta( 'vimeo' )); ?>" target="_blank" title="<?php _e('Follow', 'pinnacle'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on Vimeo', 'pinnacle');?>"><i class="icon-vimeo"></i></a>
   			</span>
               <?php } if ( get_the_author_meta( 'linkedin' ) ) { ?>
               <span class="linkedinlink">
-  				<a href="<?php esc_url(the_author_meta( 'linkedin' )); ?>" title="<?php _e('Follow', 'pinnacle'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on linkedin', 'pinnacle');?>"><i class="icon-linkedin"></i></a>
+  				<a href="<?php esc_url(the_author_meta( 'linkedin' )); ?>" target="_blank" title="<?php _e('Follow', 'pinnacle'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on linkedin', 'pinnacle');?>"><i class="icon-linkedin"></i></a>
   			</span>
               <?php } if ( get_the_author_meta( 'dribbble' ) ) { ?>
               <span class="dribbblelink">
-  				<a href="<?php esc_url(the_author_meta( 'dribbble' )); ?>" title="<?php _e('Follow', 'pinnacle'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on Dribbble', 'pinnacle');?>"><i class="icon-dribbble"></i></a>
+  				<a href="<?php esc_url(the_author_meta( 'dribbble' )); ?>" target="_blank" title="<?php _e('Follow', 'pinnacle'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on Dribbble', 'pinnacle');?>"><i class="icon-dribbble"></i></a>
   			</span>
         <?php } if ( get_the_author_meta( 'pinterest' ) ) { ?>
               <span class="pinterestlink">
-  				<a href="<?php esc_url(the_author_meta( 'pinterest' )); ?>" title="<?php _e('Follow', 'pinnacle'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on Pinterest', 'pinnacle');?>"><i class="icon-pinterest"></i></a>
+  				<a href="<?php esc_url(the_author_meta( 'pinterest' )); ?>" target="_blank" title="<?php _e('Follow', 'pinnacle'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on Pinterest', 'pinnacle');?>"><i class="icon-pinterest"></i></a>
   			</span>
         <?php } if ( get_the_author_meta( 'instagram' ) ) { ?>
         <span class="instagramlink">
-          <a href="<?php esc_url(the_author_meta( 'instagram' )); ?>" title="<?php _e('Follow', 'pinnacle'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on Instagram', 'pinnacle');?>"><i class="icon-instagram"></i></a>
+          <a href="<?php esc_url(the_author_meta( 'instagram' )); ?>" target="_blank" title="<?php _e('Follow', 'pinnacle'); ?>  <?php the_author_meta( 'display_name' ); ?> <?php _e('on Instagram', 'pinnacle');?>"><i class="icon-instagram"></i></a>
         </span>
   		<?php } ?>
           </div><!--Author Follow-->

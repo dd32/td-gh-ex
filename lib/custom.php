@@ -77,7 +77,7 @@ function pinnacle_html_tag_schema() {
         $type = 'WebPage';
     }
 
-    echo 'itemscope="itemscope" itemtype="' .  esc_attr( $schema ) . esc_attr( $type ) . '"';
+    echo apply_filters('kadence_html_schema','itemscope="itemscope" itemtype="' .  esc_attr( $schema ) . esc_attr( $type ) . '"');
 }
 
 ///Page Navigation
@@ -545,6 +545,13 @@ function pinnacle_show_extra_profile_fields( $user ) { ?>
     </td>
   </tr>
     <tr>
+    <th><label for="youtube">Youtube</label></th>
+    <td>
+      <input type="text" name="youtube" id="youtube" value="<?php echo esc_attr( get_the_author_meta( 'youtube', $user->ID ) ); ?>" class="regular-text" /><br />
+      <span class="description"><?php _e('Please enter your YouTube url. (be sure to include http://)', 'pinnacle'); ?></span>
+    </td>
+  </tr>
+    <tr>
     <th><label for="flickr">Flickr</label></th>
     <td>
       <input type="text" name="flickr" id="flickr" value="<?php echo esc_attr( get_the_author_meta( 'flickr', $user->ID ) ); ?>" class="regular-text" /><br />
@@ -598,6 +605,7 @@ function pinnacle_save_extra_profile_fields( $user_id ) {
     update_user_meta( $user_id, 'twitter', $_POST['twitter'] );
   update_user_meta( $user_id, 'facebook', $_POST['facebook'] );
   update_user_meta( $user_id, 'google', $_POST['google'] );
+  update_user_meta( $user_id, 'youtube', $_POST['youtube'] );
   update_user_meta( $user_id, 'flickr', $_POST['flickr'] );
   update_user_meta( $user_id, 'vimeo', $_POST['vimeo'] );
   update_user_meta( $user_id, 'linkedin', $_POST['linkedin'] );

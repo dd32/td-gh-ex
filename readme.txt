@@ -52,6 +52,13 @@ Pinnacle Theme Uses:
 
 = Theme Name: Pinnacle =
 
+= Version 1.2.4 | 13th April 2015 = 
+* Add: Page Title Filter.
+* Add: YouTube option for author box.
+* Fix: Theme options control of home page slider.
+* Update: Add color control to customizer.
+* Update: Theme Options.
+
 = Version 1.2.3 | 5th April 2015 = 
 * Add: Hard crop option for post excerpts.
 * Update: Theme options (Faster).

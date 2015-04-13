@@ -26,4 +26,3 @@ require_once locate_template('/lib/admin_scripts.php');    								// Admin Scri
 require_once locate_template('/lib/authorbox.php');         							// Author box
 require_once locate_template('/lib/custom-woocommerce.php'); 							// Woocommerce functions
 require_once locate_template('/lib/output_css.php'); 									// Fontend Custom CSS
-

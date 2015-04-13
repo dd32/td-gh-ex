@@ -72,7 +72,7 @@
             // Please update the build number with each push, no matter how small.
             // This will make for easier support when we ask users what version they are using.
 
-            public static $_version = '3.5.0.2';
+            public static $_version = '3.5.2.1';
             public static $_dir;
             public static $_url;
             public static $_upload_dir;
@@ -101,7 +101,7 @@
 
                         $is_plugin = false;
                         foreach ( get_plugins() as $key => $value ) {
-                            if ( strpos( $key, 'redux-framework.php' ) !== false ) {
+                            if ( is_plugin_active( $key ) && strpos( $key, 'redux-framework.php' ) !== false ) {
                                 self::$_dir = trailingslashit( Redux_Helpers::cleanFilePath( WP_CONTENT_DIR . '/plugins/' . plugin_dir_path( $key ) . 'ReduxCore/' ) );
                                 $is_plugin  = true;
                             }
@@ -322,6 +322,7 @@
                     // Grab database values
                     $this->get_options();
 
+
                     // Options page
                     add_action( 'admin_menu', array( $this, '_options_page' ) );
 
@@ -394,21 +395,6 @@
                     // Ajax saving!!!
                     add_action( "wp_ajax_" . $this->args['opt_name'] . '_ajax_save', array( $this, "ajax_save" ) );
 
-                    include_once 'core/dashboard.php';
-
-                    if ( $this->args['dev_mode'] == true || Redux_Helpers::isLocalHost() === true ) {
-                        if ( ! isset ( $GLOBALS['redux_notice_check'] ) ) {
-
-                            $params = array(
-                                'dir_name'    => 'notice',
-                                'server_file' => 'http://www.reduxframework.com/' . 'wp-content/uploads/redux/redux_notice.json',
-                                'interval'    => 3,
-                                'cookie_id'   => 'redux_blast',
-                            );
-
-                            $GLOBALS['redux_notice_check'] = 1;
-                        }
-                    }
                 }
 
                 /**
@@ -530,7 +516,7 @@
                         ),
                     ),
                     'show_import_export'        => true,
-                    'dev_mode'                  => true,
+                    'dev_mode'                  => false,
                     'system_info'               => false,
                     'disable_tracking'          => true,
                     'templates_path'            => '',
@@ -1303,7 +1289,6 @@
                 if ( $this->args['menu_type'] == 'hidden' ) {
 
                     // No menu to add!
-
                 } else {
                     $this->page = add_theme_page(
                         $this->args['page_title'], $this->args['menu_title'], $this->args['page_permissions'], $this->args['page_slug'], array(
@@ -1311,6 +1296,7 @@
                         'generate_panel'
                     ), $this->args['menu_icon'], $this->args['page_priority']
                     );
+
                 }
 
                 add_action( "load-{$this->page}", array( &$this, '_load_page' ) );

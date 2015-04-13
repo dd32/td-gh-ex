@@ -72,7 +72,7 @@ $this->sections[] = array(
                                     <p>".__('This theme was developed by', 'pinnacle')." <a href=\"http://kadencethemes.com/\" target=\"_blank\">Kadence Themes</a></p>
                                     <p>".__('For theme documentation visit', 'pinnacle').": <a href=\"http://docs.kadencethemes.com/pinnacle/\" target=\"_blank\">docs.kadencethemes.com/pinnacle/</a>
                                     <br />
-                                    ".__('For support please visit', 'pinnacle').": <a href=\"http://wordpress.org/support/\" target=\"_blank\">http://wordpress.org/support/</a></p></div>",
+                                    ".__('For support please visit', 'pinnacle').": <a href=\"https://wordpress.org/support/theme/pinnacle\" target=\"_blank\">https://wordpress.org/support/theme/pinnacle</a></p></div>",
     'icon_class' => 'icon-large',
     'icon' => 'icon-desktop',
     'fields' => array(
@@ -367,7 +367,6 @@ $this->sections[] = array(
             'title' => __('Place behind Header', 'pinnacle'),
             'subtitle'=> __('This enabled the transparent header on the home page.', 'pinnacle'),
             "default" => 1,
-            'required' => array('choose_home_header','=',array('flex','pagetitle')), 
             ),
         array(
             'id'=>'home_page_title',
