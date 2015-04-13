@@ -62,6 +62,7 @@ $this->sections[] = array(
                                     ".__('For support please visit', 'virtue').": <a href=\"http://wordpress.org/support/theme/virtue\" target=\"_blank\">wordpress.org/support/theme/virtue</a></p></div>",
     'icon_class' => 'icon-large',
     'icon' => 'icon-dashboard',
+    'customizer' => true,
     'fields' => array(
         array(
             'id'=>'boxed_layout',
@@ -111,7 +112,6 @@ $this->sections[] = array(
             'type' => 'media', 
             'url'=> true,
             'title' => __('Logo', 'virtue'),
-            'compiler' => 'true',
             'subtitle' => __('Upload your Logo. If left blank theme will use site name.', 'virtue'),
             ),
         array(
@@ -151,7 +151,7 @@ $this->sections[] = array(
         array(
             'id'=>'logo_below_text',
             'type' => 'textarea',
-            'title' => __('Site Tagline - Below Logo"', 'virtue'), 
+            'title' => __('Site Tagline - Below Logo', 'virtue'), 
             'subtitle' => __('An optional line of text below your logo', 'virtue'),
             //'desc' => __('This is the description field, again good for additional info.', 'virtue'),
             'validate' => 'html', //see http://codex.wordpress.org/Function_Reference/wp_kses_post
@@ -310,7 +310,7 @@ $this->sections[] = array(
 $this->sections[] = array(
     'icon' => 'icon-picture',
     'icon_class' => 'icon-large',
-    'title' => __('Slider Settings', 'virtue'),
+    'title' => __('Home Slider Settings', 'virtue'),
     'desc' => "<div class='redux-info-field'><h3>".__('Home Page Slider Options', 'virtue')."</h3></div>",
     'fields' => array(
         array(
@@ -405,7 +405,7 @@ $this->sections[] = array(
 $this->sections[] = array(
     'icon' => 'icon-tablet',
     'icon_class' => 'icon-large',
-    'title' => __('Mobile Slider', 'virtue'),
+    'title' => __('Home Mobile Slider', 'virtue'),
     'desc' => "<div class='redux-info-field'><h3>".__('Create a more lightweight home slider for your mobile visitors.', 'virtue')."</h3></div>",
     'fields' => array(
     	array(
@@ -817,6 +817,7 @@ $this->sections[] = array(
             'title' => __('Display product tabs?', 'virtue'),
             'subtitle'=> __('This determines if product tabs are displayed', 'virtue'),
             "default"       => 1,
+            'customizer' => true,
             ),
         array(
             'id'=>'related_products',
@@ -842,6 +843,7 @@ $this->sections[] = array(
             'options' => $alt_stylesheets,
             'default' => 'default.css',
             'width' => 'width:60%',
+            'customizer' => true,
             ),
     	  array(
             'id'=>'primary_color',
@@ -1642,6 +1644,8 @@ $this->sections[] = array(
             $theme = wp_get_theme();
             $this->args = array(
             'dev_mode' => false,
+            'update_notice' => false,
+            'customizer'           => false,
             'dev_mode_icon_class' => 'icon-large',
             'opt_name' => 'virtue',
             'system_info_icon_class' => 'icon-large',
@@ -1655,7 +1659,9 @@ $this->sections[] = array(
             'page_slug' => 'kad_options',
             'default_show' => false,
             'default_mark' => '',
-            'admin_bar' => false,  
+            'admin_bar' => false, 
+            'ajax_save' => true,
+            'disable_tracking' => true,
             'page_type' => 'submenu',
             'page_icon' => "kad_logo_header",
             'footer_credit' => __('Thank you for using the Virtue Theme by <a href="http://kadencethemes.com/" target="_blank">Kadence Themes</a>.', 'virtue'),

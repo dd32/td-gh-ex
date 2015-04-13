@@ -263,8 +263,8 @@
              * @return string
              */
             public function get_file_version( $file ) {
-                
-                $version = '3.4.3';
+
+                $version = '3.5.0.6';
 
                 return $version;
             }

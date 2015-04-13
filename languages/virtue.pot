@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lite Virtue\n"
-"POT-Creation-Date: 2015-04-05 00:04-0700\n"
-"PO-Revision-Date: 2015-04-05 00:04-0700\n"
+"POT-Creation-Date: 2015-04-13 15:25-0700\n"
+"PO-Revision-Date: 2015-04-13 15:25-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -362,7 +362,7 @@ msgstr ""
 
 #: ../lib/cmb/init.php:244 ../lib/metaboxes.php:98 ../lib/metaboxes.php:123
 #: ../lib/metaboxes.php:154 ../lib/metaboxes.php:165
-#: ../themeoptions/framework.php:1762
+#: ../themeoptions/framework.php:1748
 msgid "Default"
 msgstr ""
 
@@ -399,55 +399,55 @@ msgstr ""
 msgid "Your Cart"
 msgstr ""
 
-#: ../lib/custom.php:412 ../templates/entry-post-links.php:3
+#: ../lib/custom.php:416 ../templates/entry-post-links.php:3
 msgid "Previous Post"
 msgstr ""
 
-#: ../lib/custom.php:412 ../templates/entry-post-links.php:6
+#: ../lib/custom.php:416 ../templates/entry-post-links.php:6
 msgid "Next Post"
 msgstr ""
 
-#: ../lib/custom.php:512
+#: ../lib/custom.php:516
 msgid "Occupation"
 msgstr ""
 
-#: ../lib/custom.php:515
+#: ../lib/custom.php:519
 msgid "Please enter your Occupation."
 msgstr ""
 
-#: ../lib/custom.php:522
+#: ../lib/custom.php:526
 msgid "Please enter your Twitter username."
 msgstr ""
 
-#: ../lib/custom.php:529
+#: ../lib/custom.php:533
 msgid "Please enter your Facebook url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:536
+#: ../lib/custom.php:540
 msgid "Please enter your Google Plus url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:543
+#: ../lib/custom.php:547
 msgid "Please enter your YourTube url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:550
+#: ../lib/custom.php:554
 msgid "Please enter your Flickr url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:557
+#: ../lib/custom.php:561
 msgid "Please enter your Linkedin url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:564
+#: ../lib/custom.php:568
 msgid "Please enter your Dribbble url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:571
+#: ../lib/custom.php:575
 msgid "Please enter your Pinterest url. (be sure to include http://)"
 msgstr ""
 
-#: ../lib/custom.php:578
+#: ../lib/custom.php:582
 msgid "Please enter your Instagram url. (be sure to include http://)"
 msgstr ""
 
@@ -499,20 +499,20 @@ msgstr ""
 msgid "Head Content"
 msgstr ""
 
-#: ../lib/metaboxes.php:99 ../themeoptions/options.php:1502
+#: ../lib/metaboxes.php:99 ../themeoptions/options.php:1504
 msgid "None"
 msgstr ""
 
-#: ../lib/metaboxes.php:100 ../themeoptions/options.php:1502
+#: ../lib/metaboxes.php:100 ../themeoptions/options.php:1504
 msgid "Image Slider"
 msgstr ""
 
 #: ../lib/metaboxes.php:101 ../lib/metaboxes.php:129
-#: ../themeoptions/options.php:1502
+#: ../themeoptions/options.php:1504
 msgid "Video"
 msgstr ""
 
-#: ../lib/metaboxes.php:102 ../themeoptions/options.php:1502
+#: ../lib/metaboxes.php:102 ../themeoptions/options.php:1504
 msgid "Image"
 msgstr ""
 
@@ -595,11 +595,11 @@ msgstr ""
 msgid "Display a carousel with similar or recent posts?"
 msgstr ""
 
-#: ../lib/metaboxes.php:167 ../themeoptions/options.php:1532
+#: ../lib/metaboxes.php:167 ../themeoptions/options.php:1534
 msgid "Yes - Display Recent Posts"
 msgstr ""
 
-#: ../lib/metaboxes.php:168 ../themeoptions/options.php:1532
+#: ../lib/metaboxes.php:168 ../themeoptions/options.php:1534
 msgid "Yes - Display Similar Posts"
 msgstr ""
 
@@ -674,12 +674,12 @@ msgstr ""
 msgid "Author Archives: %s"
 msgstr ""
 
-#: ../lib/utils.php:81
+#: ../lib/utils.php:80
 #, php-format
 msgid "Search Results for %s"
 msgstr ""
 
-#: ../lib/utils.php:84
+#: ../lib/utils.php:82
 msgid "Not Found"
 msgstr ""
 
@@ -1170,23 +1170,23 @@ msgstr ""
 msgid "Options"
 msgstr ""
 
-#: ../themeoptions/framework.php:1613
+#: ../themeoptions/framework.php:1599
 msgid "Enable"
 msgstr ""
 
-#: ../themeoptions/framework.php:1618
+#: ../themeoptions/framework.php:1604
 msgid "Disable"
 msgstr ""
 
-#: ../themeoptions/framework.php:1624
+#: ../themeoptions/framework.php:1610
 msgid "moving the mouse over"
 msgstr ""
 
-#: ../themeoptions/framework.php:1626
+#: ../themeoptions/framework.php:1612
 msgid "clicking"
 msgstr ""
 
-#: ../themeoptions/framework.php:1630
+#: ../themeoptions/framework.php:1616
 #, php-format
 msgid ""
 "Hints are tooltips that popup when %d the hint icon, offering addition "
@@ -1194,15 +1194,15 @@ msgid ""
 "the link below."
 msgstr ""
 
-#: ../themeoptions/framework.php:1635
+#: ../themeoptions/framework.php:1621
 msgid "Hints"
 msgstr ""
 
-#: ../themeoptions/framework.php:2601
+#: ../themeoptions/framework.php:2587
 msgid "Invalid security credential, please reload the page and try again."
 msgstr ""
 
-#: ../themeoptions/framework.php:2687
+#: ../themeoptions/framework.php:2673
 msgid "Your panel has no fields. Nothing to save."
 msgstr ""
 
@@ -1226,35 +1226,35 @@ msgstr ""
 msgid "For support please visit"
 msgstr ""
 
-#: ../themeoptions/options.php:70
+#: ../themeoptions/options.php:71
 msgid "Site Layout Style"
 msgstr ""
 
-#: ../themeoptions/options.php:71
+#: ../themeoptions/options.php:72
 msgid "Select Boxed or Wide Site Layout Style"
 msgstr ""
 
-#: ../themeoptions/options.php:82
+#: ../themeoptions/options.php:83
 msgid "Footer Widget Layout"
 msgstr ""
 
-#: ../themeoptions/options.php:83
+#: ../themeoptions/options.php:84
 msgid "Select how many columns for footer widgets"
 msgstr ""
 
-#: ../themeoptions/options.php:94
+#: ../themeoptions/options.php:95
 msgid "Logo Options"
 msgstr ""
 
-#: ../themeoptions/options.php:100
+#: ../themeoptions/options.php:101
 msgid "Logo Layout"
 msgstr ""
 
-#: ../themeoptions/options.php:101
+#: ../themeoptions/options.php:102
 msgid "Choose how you want your logo to be laid out"
 msgstr ""
 
-#: ../themeoptions/options.php:113
+#: ../themeoptions/options.php:114
 msgid "Logo"
 msgstr ""
 
@@ -1279,7 +1279,7 @@ msgid "Choose size and style your sitename, if you don't use an image logo."
 msgstr ""
 
 #: ../themeoptions/options.php:154
-msgid "Site Tagline - Below Logo\""
+msgid "Site Tagline - Below Logo"
 msgstr ""
 
 #: ../themeoptions/options.php:155
@@ -1390,7 +1390,7 @@ msgid "This moves the left items to the right and right items to the left."
 msgstr ""
 
 #: ../themeoptions/options.php:313
-msgid "Slider Settings"
+msgid "Home Slider Settings"
 msgstr ""
 
 #: ../themeoptions/options.php:314
@@ -1475,7 +1475,7 @@ msgid "If your using a video on the home page place video embed code here."
 msgstr ""
 
 #: ../themeoptions/options.php:408
-msgid "Mobile Slider"
+msgid "Home Mobile Slider"
 msgstr ""
 
 #: ../themeoptions/options.php:409
@@ -1768,476 +1768,476 @@ msgstr ""
 msgid "This determines if product tabs are displayed"
 msgstr ""
 
-#: ../themeoptions/options.php:824
+#: ../themeoptions/options.php:825
 msgid "Display related products?"
 msgstr ""
 
-#: ../themeoptions/options.php:825
+#: ../themeoptions/options.php:826
 msgid "This determines related products are displayed"
 msgstr ""
 
-#: ../themeoptions/options.php:833
+#: ../themeoptions/options.php:834
 msgid "Basic Styling"
 msgstr ""
 
-#: ../themeoptions/options.php:834
+#: ../themeoptions/options.php:835
 msgid "Basic Stylng"
 msgstr ""
 
-#: ../themeoptions/options.php:839
+#: ../themeoptions/options.php:840
 msgid "Theme Skin Stylesheet"
 msgstr ""
 
-#: ../themeoptions/options.php:840
+#: ../themeoptions/options.php:841
 msgid ""
 "Note* changes made in options panel will override this stylesheet. Example: "
 "Colors set in typography."
 msgstr ""
 
-#: ../themeoptions/options.php:849
+#: ../themeoptions/options.php:851
 msgid "Primary Color"
 msgstr ""
 
-#: ../themeoptions/options.php:850
+#: ../themeoptions/options.php:852
 msgid "Choose the default Highlight color for your site."
 msgstr ""
 
-#: ../themeoptions/options.php:859
+#: ../themeoptions/options.php:861
 msgid "20% lighter than Primary Color"
 msgstr ""
 
-#: ../themeoptions/options.php:860
+#: ../themeoptions/options.php:862
 msgid "This is used for hover effects"
 msgstr ""
 
-#: ../themeoptions/options.php:869
+#: ../themeoptions/options.php:871
 msgid "Sitewide Gray Fonts"
 msgstr ""
 
-#: ../themeoptions/options.php:879
+#: ../themeoptions/options.php:881
 msgid "Footer Font Color"
 msgstr ""
 
-#: ../themeoptions/options.php:891
+#: ../themeoptions/options.php:893
 msgid "Advanced Styling"
 msgstr ""
 
-#: ../themeoptions/options.php:892
+#: ../themeoptions/options.php:894
 msgid "Main Content Background"
 msgstr ""
 
-#: ../themeoptions/options.php:897
+#: ../themeoptions/options.php:899
 msgid "Content Background Color"
 msgstr ""
 
-#: ../themeoptions/options.php:906 ../themeoptions/options.php:946
-#: ../themeoptions/options.php:986 ../themeoptions/options.php:1026
-#: ../themeoptions/options.php:1066 ../themeoptions/options.php:1106
-#: ../themeoptions/options.php:1146
+#: ../themeoptions/options.php:908 ../themeoptions/options.php:948
+#: ../themeoptions/options.php:988 ../themeoptions/options.php:1028
+#: ../themeoptions/options.php:1068 ../themeoptions/options.php:1108
+#: ../themeoptions/options.php:1148
 msgid "Upload background image or texture"
 msgstr ""
 
-#: ../themeoptions/options.php:911 ../themeoptions/options.php:951
-#: ../themeoptions/options.php:991 ../themeoptions/options.php:1031
-#: ../themeoptions/options.php:1071 ../themeoptions/options.php:1111
-#: ../themeoptions/options.php:1151
+#: ../themeoptions/options.php:913 ../themeoptions/options.php:953
+#: ../themeoptions/options.php:993 ../themeoptions/options.php:1033
+#: ../themeoptions/options.php:1073 ../themeoptions/options.php:1113
+#: ../themeoptions/options.php:1153
 msgid "Image repeat options"
 msgstr ""
 
-#: ../themeoptions/options.php:918 ../themeoptions/options.php:958
-#: ../themeoptions/options.php:998 ../themeoptions/options.php:1038
-#: ../themeoptions/options.php:1078 ../themeoptions/options.php:1118
-#: ../themeoptions/options.php:1158
+#: ../themeoptions/options.php:920 ../themeoptions/options.php:960
+#: ../themeoptions/options.php:1000 ../themeoptions/options.php:1040
+#: ../themeoptions/options.php:1080 ../themeoptions/options.php:1120
+#: ../themeoptions/options.php:1160
 msgid "X image placement options"
 msgstr ""
 
-#: ../themeoptions/options.php:925 ../themeoptions/options.php:965
-#: ../themeoptions/options.php:1005 ../themeoptions/options.php:1045
-#: ../themeoptions/options.php:1085 ../themeoptions/options.php:1125
-#: ../themeoptions/options.php:1165
+#: ../themeoptions/options.php:927 ../themeoptions/options.php:967
+#: ../themeoptions/options.php:1007 ../themeoptions/options.php:1047
+#: ../themeoptions/options.php:1087 ../themeoptions/options.php:1127
+#: ../themeoptions/options.php:1167
 msgid "Y image placement options"
 msgstr ""
 
-#: ../themeoptions/options.php:932
+#: ../themeoptions/options.php:934
 msgid "Topbar Background"
 msgstr ""
 
-#: ../themeoptions/options.php:937
+#: ../themeoptions/options.php:939
 msgid "Topbar Background Color"
 msgstr ""
 
-#: ../themeoptions/options.php:972
+#: ../themeoptions/options.php:974
 msgid "Header Background"
 msgstr ""
 
-#: ../themeoptions/options.php:977
+#: ../themeoptions/options.php:979
 msgid "Header Background Color"
 msgstr ""
 
-#: ../themeoptions/options.php:1012
+#: ../themeoptions/options.php:1014
 msgid "Secondary Menu Background"
 msgstr ""
 
-#: ../themeoptions/options.php:1017
+#: ../themeoptions/options.php:1019
 msgid "Secondary menu Background Color"
 msgstr ""
 
-#: ../themeoptions/options.php:1052
+#: ../themeoptions/options.php:1054
 msgid "Mobile Menu Background"
 msgstr ""
 
-#: ../themeoptions/options.php:1057
+#: ../themeoptions/options.php:1059
 msgid "Mobile Background Color"
 msgstr ""
 
-#: ../themeoptions/options.php:1092
+#: ../themeoptions/options.php:1094
 msgid "Footer Background"
 msgstr ""
 
-#: ../themeoptions/options.php:1097
+#: ../themeoptions/options.php:1099
 msgid "Footer Background Color"
 msgstr ""
 
-#: ../themeoptions/options.php:1132
+#: ../themeoptions/options.php:1134
 msgid "Body Background"
 msgstr ""
 
-#: ../themeoptions/options.php:1137
+#: ../themeoptions/options.php:1139
 msgid "Body Background Color"
 msgstr ""
 
-#: ../themeoptions/options.php:1172
+#: ../themeoptions/options.php:1174
 msgid "Fixed or Scroll"
 msgstr ""
 
-#: ../themeoptions/options.php:1181
+#: ../themeoptions/options.php:1183
 msgid "Typography"
 msgstr ""
 
-#: ../themeoptions/options.php:1182
+#: ../themeoptions/options.php:1184
 msgid "Header Font Options"
 msgstr ""
 
-#: ../themeoptions/options.php:1187
+#: ../themeoptions/options.php:1189
 msgid "H1 Headings"
 msgstr ""
 
-#: ../themeoptions/options.php:1202
+#: ../themeoptions/options.php:1204
 msgid "Choose Size and Style for h1 (This Styles Your Page Titles)"
 msgstr ""
 
-#: ../themeoptions/options.php:1213
+#: ../themeoptions/options.php:1215
 msgid "H2 Headings"
 msgstr ""
 
-#: ../themeoptions/options.php:1228
+#: ../themeoptions/options.php:1230
 msgid "Choose Size and Style for h2"
 msgstr ""
 
-#: ../themeoptions/options.php:1239
+#: ../themeoptions/options.php:1241
 msgid "H3 Headings"
 msgstr ""
 
-#: ../themeoptions/options.php:1254
+#: ../themeoptions/options.php:1256
 msgid "Choose Size and Style for h3"
 msgstr ""
 
-#: ../themeoptions/options.php:1265
+#: ../themeoptions/options.php:1267
 msgid "H4 Headings"
 msgstr ""
 
-#: ../themeoptions/options.php:1280
+#: ../themeoptions/options.php:1282
 msgid "Choose Size and Style for h4"
 msgstr ""
 
-#: ../themeoptions/options.php:1291
+#: ../themeoptions/options.php:1293
 msgid "H5 Headings"
 msgstr ""
 
-#: ../themeoptions/options.php:1306
+#: ../themeoptions/options.php:1308
 msgid "Choose Size and Style for h5"
 msgstr ""
 
-#: ../themeoptions/options.php:1317
+#: ../themeoptions/options.php:1319
 msgid "Body Font Options"
 msgstr ""
 
-#: ../themeoptions/options.php:1322
+#: ../themeoptions/options.php:1324
 msgid "Body Font"
 msgstr ""
 
-#: ../themeoptions/options.php:1337
+#: ../themeoptions/options.php:1339
 msgid "Choose Size and Style for paragraphs"
 msgstr ""
 
-#: ../themeoptions/options.php:1350
+#: ../themeoptions/options.php:1352
 msgid "Menu Settings"
 msgstr ""
 
-#: ../themeoptions/options.php:1351
+#: ../themeoptions/options.php:1353
 msgid "Primary Menu Options"
 msgstr ""
 
-#: ../themeoptions/options.php:1356
+#: ../themeoptions/options.php:1358
 msgid "Primary Menu Font"
 msgstr ""
 
-#: ../themeoptions/options.php:1371
+#: ../themeoptions/options.php:1373
 msgid "Choose Size and Style for primary menu"
 msgstr ""
 
-#: ../themeoptions/options.php:1382
+#: ../themeoptions/options.php:1384
 msgid "Secondary Menu Options"
 msgstr ""
 
-#: ../themeoptions/options.php:1387
+#: ../themeoptions/options.php:1389
 msgid "Secondary Menu Font"
 msgstr ""
 
-#: ../themeoptions/options.php:1402
+#: ../themeoptions/options.php:1404
 msgid "Choose Size and Style for secondary menu"
 msgstr ""
 
-#: ../themeoptions/options.php:1413
+#: ../themeoptions/options.php:1415
 msgid "Mobile Menu Options"
 msgstr ""
 
-#: ../themeoptions/options.php:1418
+#: ../themeoptions/options.php:1420
 msgid "Mobile Menu Font"
 msgstr ""
 
-#: ../themeoptions/options.php:1433
+#: ../themeoptions/options.php:1435
 msgid "Choose Size and Style for Mobile Menu"
 msgstr ""
 
-#: ../themeoptions/options.php:1446
+#: ../themeoptions/options.php:1448
 msgid "Page/Post Settings"
 msgstr ""
 
-#: ../themeoptions/options.php:1447
+#: ../themeoptions/options.php:1449
 msgid "Page and Post Settings"
 msgstr ""
 
-#: ../themeoptions/options.php:1452
+#: ../themeoptions/options.php:1454
 msgid "Allow Comments on Pages"
 msgstr ""
 
-#: ../themeoptions/options.php:1453
+#: ../themeoptions/options.php:1455
 msgid "Turn on to allow comments on pages"
 msgstr ""
 
-#: ../themeoptions/options.php:1461
+#: ../themeoptions/options.php:1463
 msgid "All Projects Portfolio Page"
 msgstr ""
 
-#: ../themeoptions/options.php:1462
+#: ../themeoptions/options.php:1464
 msgid ""
 "This sets the link in every single portfolio page. *note: You still have to "
 "set the page template to portfolio."
 msgstr ""
 
-#: ../themeoptions/options.php:1467
+#: ../themeoptions/options.php:1469
 msgid "Allow Comments on Portfolio Posts"
 msgstr ""
 
-#: ../themeoptions/options.php:1468
+#: ../themeoptions/options.php:1470
 msgid "Turn on to allow comments on Portfolio posts"
 msgstr ""
 
-#: ../themeoptions/options.php:1474
+#: ../themeoptions/options.php:1476
 msgid "Show Comments Closed Text?"
 msgstr ""
 
-#: ../themeoptions/options.php:1475
+#: ../themeoptions/options.php:1477
 msgid "Choose to show or hide comments closed alert below posts."
 msgstr ""
 
-#: ../themeoptions/options.php:1481
+#: ../themeoptions/options.php:1483
 msgid "Blog Post Defaults"
 msgstr ""
 
-#: ../themeoptions/options.php:1486
+#: ../themeoptions/options.php:1488
 msgid "Blog Post Summary Default"
 msgstr ""
 
-#: ../themeoptions/options.php:1495
+#: ../themeoptions/options.php:1497
 msgid "Default post summary feature Image"
 msgstr ""
 
-#: ../themeoptions/options.php:1496
+#: ../themeoptions/options.php:1498
 msgid "Replace theme default feature image for posts without a featured image"
 msgstr ""
 
-#: ../themeoptions/options.php:1501
+#: ../themeoptions/options.php:1503
 msgid "Blog Post Head Content Default"
 msgstr ""
 
-#: ../themeoptions/options.php:1509
+#: ../themeoptions/options.php:1511
 msgid "Show Previous and Next posts links?"
 msgstr ""
 
-#: ../themeoptions/options.php:1510
+#: ../themeoptions/options.php:1512
 msgid ""
 "Choose to show or hide previous and next post links in the footer of a "
 "single post."
 msgstr ""
 
-#: ../themeoptions/options.php:1516
+#: ../themeoptions/options.php:1518
 msgid "Show Author Icon with posts?"
 msgstr ""
 
-#: ../themeoptions/options.php:1517
+#: ../themeoptions/options.php:1519
 msgid "Choose to show or hide author icon under post title."
 msgstr ""
 
-#: ../themeoptions/options.php:1523
+#: ../themeoptions/options.php:1525
 msgid "Blog Post Author Box Default"
 msgstr ""
 
-#: ../themeoptions/options.php:1524 ../themeoptions/options.php:1532
+#: ../themeoptions/options.php:1526 ../themeoptions/options.php:1534
 msgid "No, Do not Show"
 msgstr ""
 
-#: ../themeoptions/options.php:1524
+#: ../themeoptions/options.php:1526
 msgid "Yes, Show"
 msgstr ""
 
-#: ../themeoptions/options.php:1531
+#: ../themeoptions/options.php:1533
 msgid "Blog Post Bottom Carousel Default"
 msgstr ""
 
-#: ../themeoptions/options.php:1539
+#: ../themeoptions/options.php:1541
 msgid "Blog Category/Archive Defaults"
 msgstr ""
 
-#: ../themeoptions/options.php:1544
+#: ../themeoptions/options.php:1546
 msgid "Blog Archive"
 msgstr ""
 
-#: ../themeoptions/options.php:1545
+#: ../themeoptions/options.php:1547
 msgid "Choose to show full post or post excerpt."
 msgstr ""
 
-#: ../themeoptions/options.php:1556 ../themeoptions/options.php:1557
+#: ../themeoptions/options.php:1558 ../themeoptions/options.php:1559
 msgid "Misc Settings"
 msgstr ""
 
-#: ../themeoptions/options.php:1562
+#: ../themeoptions/options.php:1564
 msgid "Hide Image Border"
 msgstr ""
 
-#: ../themeoptions/options.php:1563
+#: ../themeoptions/options.php:1565
 msgid "Choose to show or hide image border for images added in pages or posts"
 msgstr ""
 
-#: ../themeoptions/options.php:1570
+#: ../themeoptions/options.php:1572
 msgid "Custom Favicon"
 msgstr ""
 
-#: ../themeoptions/options.php:1571
+#: ../themeoptions/options.php:1573
 msgid ""
 "Upload a 16px x 16px png/gif/ico image that will represent your website "
 "favicon."
 msgstr ""
 
-#: ../themeoptions/options.php:1576
+#: ../themeoptions/options.php:1578
 msgid "Contact Form Email"
 msgstr ""
 
-#: ../themeoptions/options.php:1577
+#: ../themeoptions/options.php:1579
 msgid "Sets the email for the contact page email form."
 msgstr ""
 
-#: ../themeoptions/options.php:1583
+#: ../themeoptions/options.php:1585
 msgid "Footer Copyright Text"
 msgstr ""
 
-#: ../themeoptions/options.php:1584
+#: ../themeoptions/options.php:1586
 msgid ""
 "Write your own copyright text here. You can use the following shortcodes in "
 "your footer text: [copyright] [site-name] [the-year]"
 msgstr ""
 
-#: ../themeoptions/options.php:1590
+#: ../themeoptions/options.php:1592
 msgid "Create Sidebars"
 msgstr ""
 
-#: ../themeoptions/options.php:1595
+#: ../themeoptions/options.php:1597
 msgid "Create Custom Sidebars"
 msgstr ""
 
-#: ../themeoptions/options.php:1596
+#: ../themeoptions/options.php:1598
 msgid "Type new sidebar name into textbox"
 msgstr ""
 
-#: ../themeoptions/options.php:1597
+#: ../themeoptions/options.php:1599
 msgid "Extra Sidebar"
 msgstr ""
 
-#: ../themeoptions/options.php:1602
+#: ../themeoptions/options.php:1604
 msgid "Wordpress Galleries"
 msgstr ""
 
-#: ../themeoptions/options.php:1607
+#: ../themeoptions/options.php:1609
 msgid "Enable Virtue Galleries to override Wordpress"
 msgstr ""
 
-#: ../themeoptions/options.php:1608
+#: ../themeoptions/options.php:1610
 msgid ""
 "Disable this if using a plugin to customize galleries, for example jetpack "
 "tiled gallery."
 msgstr ""
 
-#: ../themeoptions/options.php:1614
+#: ../themeoptions/options.php:1616
 msgid "Theme Lightbox"
 msgstr ""
 
-#: ../themeoptions/options.php:1619
+#: ../themeoptions/options.php:1621
 msgid "Turn Off Theme Lightbox?"
 msgstr ""
 
-#: ../themeoptions/options.php:1627
+#: ../themeoptions/options.php:1629
 msgid "Advanced Settings"
 msgstr ""
 
-#: ../themeoptions/options.php:1628
+#: ../themeoptions/options.php:1630
 msgid "Custom CSS Box"
 msgstr ""
 
-#: ../themeoptions/options.php:1633
+#: ../themeoptions/options.php:1635
 msgid "Custom CSS"
 msgstr ""
 
-#: ../themeoptions/options.php:1634
+#: ../themeoptions/options.php:1636
 msgid "Quickly add some CSS to your theme by adding it to this block."
 msgstr ""
 
-#: ../themeoptions/options.php:1653 ../themeoptions/options.php:1654
+#: ../themeoptions/options.php:1657 ../themeoptions/options.php:1658
 msgid "Theme Options"
 msgstr ""
 
-#: ../themeoptions/options.php:1661
+#: ../themeoptions/options.php:1667
 msgid ""
 "Thank you for using the Virtue Theme by <a href=\"http://kadencethemes.com/"
 "\" target=\"_blank\">Kadence Themes</a>."
 msgstr ""
 
-#: ../themeoptions/templates/panel/footer.tpl.php:43
+#: ../themeoptions/templates/panel/footer.tpl.php:47
 #: ../themeoptions/templates/panel/header_stickybar.tpl.php:20
 msgid "Save Changes"
 msgstr ""
 
-#: ../themeoptions/templates/panel/footer.tpl.php:46
+#: ../themeoptions/templates/panel/footer.tpl.php:50
 #: ../themeoptions/templates/panel/header_stickybar.tpl.php:22
 msgid "Reset Section"
 msgstr ""
 
-#: ../themeoptions/templates/panel/footer.tpl.php:47
+#: ../themeoptions/templates/panel/footer.tpl.php:51
 #: ../themeoptions/templates/panel/header_stickybar.tpl.php:23
 msgid "Reset All"
 msgstr ""
 
-#: ../themeoptions/templates/panel/footer.tpl.php:52
+#: ../themeoptions/templates/panel/footer.tpl.php:56
 #: ../themeoptions/templates/panel/header_stickybar.tpl.php:26
 msgid "Working..."
 msgstr ""

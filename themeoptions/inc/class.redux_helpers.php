@@ -65,11 +65,13 @@
                 }
             }
 
-            public static function isLocalHost(){
-                return ($_SERVER['REMOTE_ADDR'] === '127.0.0.1' || $_SERVER['REMOTE_ADDR'] === 'localhost' ) ? 1 : 0;
+            public static function isLocalHost() {
+                return ( $_SERVER['REMOTE_ADDR'] === '127.0.0.1' || $_SERVER['REMOTE_ADDR'] === 'localhost' ) ? 1 : 0;
             }
-            
+
             public static function getTrackingObject() {
+                global $wpdb;
+
                 $hash = md5( network_site_url() . '-' . $_SERVER['REMOTE_ADDR'] );
 
                 global $blog_id, $wpdb;
@@ -173,16 +175,18 @@
                         $software[ strtolower( $chunk[0] ) ] = $chunk[1];
                     }
                 }
-                $software['full']    = $_SERVER['SERVER_SOFTWARE'];
-                $data['environment'] = $software;
-                if ( function_exists( 'mysqli_get_server_info' ) ) {
-                    $link = mysqli_connect() or die( "Error " . mysqli_error( $link ) );
-                    $data['environment']['mysql'] = mysqli_get_server_info( $link );
-                } else if ( class_exists( 'PDO' ) && method_exists( 'PDO', 'getAttribute' ) ) {
-                    $data['environment']['mysql'] = PDO::getAttribute( PDO::ATTR_SERVER_VERSION );
-                } else {
-                    $data['environment']['mysql'] = mysql_get_server_info();
-                }
+                $software['full']             = $_SERVER['SERVER_SOFTWARE'];
+                $data['environment']          = $software;
+                $data['environment']['mysql'] = $wpdb->db_version();
+//                if ( function_exists( 'mysqli_get_server_info' ) ) {
+//                    $link = mysqli_connect() or die( "Error " . mysqli_error( $link ) );
+//                    $data['environment']['mysql'] = mysqli_get_server_info( $link );
+//                } else if ( class_exists( 'PDO' ) && method_exists( 'PDO', 'getAttribute' ) ) {
+//                    $data['environment']['mysql'] = PDO::getAttribute( PDO::ATTR_SERVER_VERSION );
+//                } else {
+//                    $data['environment']['mysql'] = mysql_get_server_info();
+//                }
+
                 if ( empty( $data['developer'] ) ) {
                     unset( $data['developer'] );
                 }
@@ -356,7 +360,6 @@
                 }
             }
 
-
             private static function getReduxTemplates( $custom_template_path ) {
                 $template_paths     = array( 'ReduxFramework' => ReduxFramework::$_dir . 'templates/panel' );
                 $scanned_files      = array();
@@ -419,7 +422,9 @@
 
             private static function get_template_version( $file ) {
 
-                return '3.4.3';
+               $version = '3.5.0.6';
+
+                return $version;
             }
 
             private static function let_to_num( $size ) {

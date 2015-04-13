@@ -49,10 +49,16 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
-= Version 2.4.5 | 4th March 2015 =
+= Version 2.4.6 | 13th April 2015 =
+* Add: Page Title Filter.
+* Update: Show color options in customizer. 
+* Update: Theme options.
+* Fix: YouTube link in author box.
+
+= Version 2.4.5 | 4th April 2015 =
 * Update: Script version number.
 
-= Version 2.4.4 | 4th March 2015 =
+= Version 2.4.4 | 4th April 2015 =
 * Add: Accessibility skip to content link.
 * Update: Theme Options (Faster)
 * Update: Schema.

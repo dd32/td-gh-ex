@@ -1,6 +1,6 @@
 <div class="page-header">
 	<h1 class="entry-title" itemprop="name">
-		<?php echo kadence_title(); ?>
+		<?php echo apply_filters('kadence_page_title', kadence_title() ); ?>
 	</h1>
    	<?php global $post; 
   	if(is_page()) {

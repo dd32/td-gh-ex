@@ -55,35 +55,33 @@ add_filter('template_include', array('Kadence_Wrapping', 'wrap'), 99);
 function kadence_title() {
   if (is_home()) {
     if (get_option('page_for_posts', true)) {
-      echo get_the_title(get_option('page_for_posts', true));
+      return get_the_title(get_option('page_for_posts', true));
     } else {
-      _e('Latest Posts', 'virtue');
+      return __('Latest Posts', 'virtue');
     }
   } elseif (is_archive()) {
     $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
     if ($term) {
-      echo $term->name;
+      return $term->name;
     } elseif (is_post_type_archive()) {
-      echo get_queried_object()->labels->name;
+      return get_queried_object()->labels->name;
     } elseif (is_day()) {
-      printf(__('Daily Archives: %s', 'virtue'), get_the_date());
+      return sprintf(__('Daily Archives: %s', 'virtue'), get_the_date());
     } elseif (is_month()) {
-      printf(__('Monthly Archives: %s', 'virtue'), get_the_date('F Y'));
+      return sprintf(__('Monthly Archives: %s', 'virtue'), get_the_date('F Y'));
     } elseif (is_year()) {
-      printf(__('Yearly Archives: %s', 'virtue'), get_the_date('Y'));
+      return sprintf(__('Yearly Archives: %s', 'virtue'), get_the_date('Y'));
     } elseif (is_author()) {
-      printf(__('Author Archives: %s', 'virtue'), get_the_author());
+      return sprintf(__('Author Archives: %s', 'virtue'), get_the_author());
     } else {
-      single_cat_title();
+      return single_cat_title("", false);
     }
   } elseif (is_search()) {
-
-    printf(__('Search Results for %s', 'virtue'), get_search_query());
-      
+    return sprintf(__('Search Results for %s', 'virtue'), get_search_query());   
   } elseif (is_404()) {
-    _e('Not Found', 'virtue');
+    return __('Not Found', 'virtue');
   } else {
-    the_title();
+    return get_the_title();
   }
 }
 
