@@ -52,6 +52,9 @@ Pinnacle Theme Uses:
 
 = Theme Name: Pinnacle =
 
+= Version 1.2.5 | 13th April 2015 = 
+* Fix: CSS Validate.
+
 = Version 1.2.4 | 13th April 2015 = 
 * Add: Page Title Filter.
 * Add: YouTube option for author box.
