@@ -346,7 +346,29 @@
 {
     vertical-align:middle;
 }
-
+.advent-pro-header {
+    background-color: #ffffff;
+    padding: 8px 0 0;
+    width: 100%;
+}
+.advent-pro-image img {
+    height: auto;
+    max-width: 100%;
+}
+.advent-pro-logo {
+    margin-bottom: 15px;
+    margin-left: 30px;
+  /*  width: 200px; */
+	  margin-top: 10px;	
+}
+.advent-pro-buynow {
+    float: right;
+    margin: 8px 20px 7px;
+    width: 190px;
+}
+.advent-pro-image {
+    width: 98%;
+}
 
 
 @media (max-width:992px){

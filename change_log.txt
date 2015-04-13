@@ -25,3 +25,6 @@ Version 1.0.4
 i) set font license in readme.txt
 ii) Enqueue Scripts properly in options page
 iii) Add a theme slug as prefix in themeoptions.php
+
+Version 1.0.5
+i) Add PRO Theme Features tab in theme options.
