@@ -9,9 +9,7 @@ function rambo_post_meta_content()
     <a href="<?php the_permalink(); ?>"><i class="fa fa-comments icon-spacing"></i><?php comments_popup_link(__('leave a comment','rambo') ); ?></a>
     <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) );?>"><i class="fa fa-user icon-spacing"></i> <?php _e("By",'rambo');?>&nbsp;<?php the_author();?></a>
 </div>
-<?php } endif; ?>
-
-<?php
+<?php } endif; 
 // check weither the function with the same name exsist or not
 if(!function_exists( 'rambo_post_pagination' )) :
 
@@ -26,9 +24,7 @@ function rambo_post_pagination()
 	</ul>
 	</div>
     </div>
-<?php } endif; ?>
-
-<?php 
+<?php } endif; 
 // this function fetch the post featured images also you can specify the class
 if(!function_exists( 'rambo_post_thumbnail' )) :
 
@@ -40,27 +36,18 @@ if(has_post_thumbnail()):?>
 			</a>
 			<?php endif;
 } endif;
-?>
 
-<?php
 // This Function Check whether Sidebar active or Not
 if(!function_exists( 'rambo_post_layout_class' )) :
 
 function rambo_post_layout_class(){
 if( is_active_sidebar('sidebar-primary')) echo "span8"; else echo "span12";
 } endif;
-?>
 
-<?php
 //Call Permalink Exerpt 
 if(!function_exists( 'rambo_post_parmalink_excerpt' )) :
  
 function rambo_post_parmalink_excerpt(){ ?>
 <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 			<p><?php the_excerpt();?></p><br>
-<?php } endif;
-?>
-
-
-
-
+<?php } endif; ?>

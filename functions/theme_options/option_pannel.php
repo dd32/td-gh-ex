@@ -3,7 +3,6 @@ add_action('admin_menu', 'rambo_admin_menu_pannel');
 function rambo_admin_menu_pannel()
  {	add_theme_page( __('theme','rambo'), __('Option Panel','rambo'), 'edit_theme_options', 'rambo', 'rambo_option_panal_function' ); 
 	add_action('admin_enqueue_scripts', 'webriti_admin_enqueue_script');
- 	add_theme_page( __('Webriti Themes','rambo'), __('Webriti Themes','rambo'), 'edit_theme_options', 'webriti_themes', 'webriti_themes_function' );
 	}
 function webriti_admin_enqueue_script($hook)
 {    
@@ -23,10 +22,6 @@ function rambo_option_panal_function()
 	require_once('webriti_option_pannel.php');
 }
 
-function webriti_themes_function ()
-	{	
-		require_once('webriti_theme.php');
-	}
 //Theme pages css and js
 
 ?>

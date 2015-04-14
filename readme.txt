@@ -131,6 +131,12 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
+@version 1.2.9
+1. Removed unwanted extra white spaces.
+2. Removed webriti themes tab.
+3. Corrected Typo
+4. Introduces TGM recommending custom instagram feed plugin.
+5. Corrected Theme documentation link.
 @version 1.2.8
 Fixed header cannot modified by removing the extra white spaces from the woocommerce.php file.
 @veriosn 1.2.7

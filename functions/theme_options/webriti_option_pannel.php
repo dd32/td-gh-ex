@@ -8,7 +8,7 @@
 				<div class="webriti-submenu-links">
 					<a target="_blank" href="https://www.facebook.com/webriti" class="btn btn-primary"><?php _e('Support Webriti on  Facebook ','rambo'); ?></a>
 					<a target="_blank" href="http://wordpress.org/support/theme/rambo" class="btn btn-primary"><?php _e('Support Desk','rambo'); ?></a>
-					<a target="_blank" href="<?php echo get_template_directory_uri(); ?>/readme.txt" class="btn btn-info"> <?php _e('Theme Documentation','rambo'); ?></a>
+					<a target="_blank" href="http://webriti.com/themes/documentation/rambo/" class="btn btn-info"> <?php _e('Pro Theme Documentation','rambo'); ?></a>
 				</div><!-- webriti-submenu-links -->
 			</h2>
           <div class="clear"></div>

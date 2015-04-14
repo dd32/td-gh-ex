@@ -28,7 +28,7 @@ line-height:1.8;
 	color: #707070;
 	text-align: center;"><?php _e('Rambo is designed with Readability Flexibility in mind. Customize it to your hearts content with Sortable Project Areas, Services Areas and Call Out Section. . Use these great features to build an effective online presence for your business.'.'rambo');?> <br><br>
 	<a class="btn btn-danger  btn-large" href="http://webriti.com/rambo/" target="_new">Upgrade To Pro Version</a>
-	<a class="btn btn-success  btn-large" href="http://www.webriti.com/demo/wp/rambo/" target="_new">View Live demo</a>  
+	<a class="btn btn-success  btn-large" href="http://webriti.com/demo/wp/preview/?prev=rambo/" target="_new">View Live demo</a>  
 	</p></div>	
 	</div>
 	<div class="row tab_one">	
@@ -175,7 +175,7 @@ line-height:1.8;
 	color: #707070;
 	text-align: center;">
 	<a class="btn btn-danger  btn-large" href="http://webriti.com/rambo/" target="_new"><?php _e('Upgrade To Premium Version','rambo');?></a>&nbsp;
-	<a class="btn btn-success  btn-large" href="http://webriti.com/demo/wp/rambo/" target="_new"><?php _e('View Live demo','rambo');?></a> 
+	<a class="btn btn-success  btn-large" href="http://webriti.com/demo/wp/preview/?prev=rambo/" target="_new"><?php _e('View Live demo','rambo');?></a> 
 	</p><br />
 	</div>		
 	</div><br /><br />
