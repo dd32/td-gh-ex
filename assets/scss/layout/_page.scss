@@ -5,3 +5,34 @@
     }
   }
 }
+
+.content-area {
+  .site-main {
+    .posts-navigation {
+      @extend .entry-wrapper;
+      margin-top: 40px;
+    }
+
+    nav {
+      .nav-links {
+        display: block;
+        max-width: 600px;
+        margin: 0 auto;
+
+        .nav-previous {
+          float: left;
+          margin-bottom: 40px;
+        }
+
+        .nav-next {
+          float: right;
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+}
+
+.blog .site-main {
+  text-align: center;
+}

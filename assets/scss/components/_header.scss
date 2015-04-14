@@ -31,7 +31,7 @@
     .site-title {
 
       a {
-        color: $black;
+        color: $dark;
       }
 
     }
@@ -42,8 +42,10 @@
 
     .menu {
 
-      a {
-        color: $black;
+      li {
+          a {
+            color: $dark;
+          }
       }
 
     }
@@ -59,6 +61,28 @@
 
   .menu-toggle {
     display: none;
+    font-family: 'FontAwesome';
+    color: #0E3650;
+
+    @include query-below ($lap) {
+      display: block !important;
+      float: right !important;
+      background-color: transparent;
+      border: none;
+      font-size: 20px;
+
+
+      &::after {
+        content:"\f0c9";
+        width:100%;
+        height:100%;
+        background-color: transparent;
+      }
+    }
+   &::focus {
+     border-color: none !important;
+
+   }
   }
 
   .menu {
@@ -71,6 +95,10 @@
       }
 
       a {
+
+        @include query-below($lap){
+          color: #0E3650;
+        }
         color: $lightest;
         text-decoration: none;
         @extend %gama;
@@ -189,6 +217,15 @@
   @extend .nav;
   @extend .nav--stacked;
 
+  @include query-below($lap){
+    top:0;
+    left:50%;
+    padding-left: 10px;
+    z-index: 1;
+    background-color: #FFF;
+    border: 1px solid #0E3650;
+
+  }
   position: absolute;
   top: 100%;
   left: 50%;
@@ -220,14 +257,18 @@
 
     &:after {
       right: 10px;
-
+      @include query-below($lap){
+        color: #0E3650;
+        display: block;
+        right: 0;
+      }
       transform: rotate(-45deg);
     }
   }
 
   .sub-menu {
-    left: 100%;
-    top: 0;
+    left: 0;
+    top: 5%;
     transform: translateX(0);
   }
 }
@@ -262,3 +303,40 @@
     display: block;
   }
 }
+
+  #primary-menu {
+    @include query-below($lap) {
+
+      display: none;
+    }
+  }
+
+  .menu-all-pages-container {
+
+    @include query-below($lap) {
+      background-color: #FFFFFF;
+      width: 100% !important;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+  }
+  #site-navigation {
+
+    &.toggled {
+
+      #primary-menu li {
+        display: block;
+
+      }
+      #primary-menu {
+        display: block;
+        padding-top: 45px !important;
+        height: 80% !important;
+        margin-right: 15px;
+        text-align: center;
+      }
+    }
+  }

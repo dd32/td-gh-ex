@@ -327,6 +327,7 @@ h5,
 h6,
 p,
 blockquote,
+.blockquote,
 pre,
 dl,
 dd,
@@ -380,12 +381,14 @@ h2,
 h3,
 h4,
 h5,
+h6,
 .title
 {
     font-family: 'Droid Serif', serif;
 }
 
 .sub-title,
+blockquote,
 .blockquote
 {
     font-family: 'Permanent Marker', cursive;
@@ -412,7 +415,8 @@ body
     color: #45525a;
 }
 
-.entry-wrapper
+.entry-wrapper,
+.content-area .site-main .posts-navigation
 {
         word-break: break-all;
         word-break: break-word;
@@ -445,7 +449,8 @@ h1,
 h2,
 h3,
 h4,
-h5
+h5,
+h6
 {
     font-weight: bold;
 
@@ -601,11 +606,11 @@ li
 }
 .no-thumbnail .site-branding .site-title a
 {
-    color: black;
+    color: #0e364f;
 }
-.no-thumbnail .main-navigation .menu a
+.no-thumbnail .main-navigation .menu li a
 {
-    color: black;
+    color: #0e364f;
 }
 
 .main-navigation
@@ -618,7 +623,37 @@ li
 }
 .main-navigation .menu-toggle
 {
+    font-family: 'FontAwesome';
+
     display: none;
+
+    color: #0e3650;
+}
+@media not screen and (min-width: 900px)
+{
+    .main-navigation .menu-toggle
+    {
+        font-size: 20px;
+
+        display: block !important;
+        float: right !important;
+
+        border: none;
+        background-color: transparent;
+    }
+    .main-navigation .menu-toggle::after
+    {
+        width: 100%;
+        height: 100%;
+
+        content: '\f0c9';
+
+        background-color: transparent;
+    }
+}
+.main-navigation .menu-toggle::focus
+{
+    border-color: none !important;
 }
 .main-navigation .menu li
 {
@@ -638,6 +673,13 @@ li
     border-bottom-width: 0;
     border-bottom-style: solid;
     border-bottom-color: #68f3c8;
+}
+@media not screen and (min-width: 900px)
+{
+    .main-navigation .menu li a
+    {
+        color: #0e3650;
+    }
 }
 .main-navigation .menu li a:hover
 {
@@ -775,6 +817,21 @@ li
 
     background: transparent;
 }
+@media not screen and (min-width: 900px)
+{
+    .sub-menu,
+    .children
+    {
+        z-index: 1;
+        top: 0;
+        left: 50%;
+
+        padding-left: 10px;
+
+        border: 1px solid #0e3650;
+        background-color: #fff;
+    }
+}
 .lt-ie9 .sub-menu,
 .lt-ie9 .children
 {
@@ -807,11 +864,25 @@ li
         -ms-transform: rotate(-45deg);
             transform: rotate(-45deg);
 }
+@media not screen and (min-width: 900px)
+{
+    .sub-menu .menu-item-has-children:after,
+    .sub-menu .page_item_has_children:after,
+    .children .menu-item-has-children:after,
+    .children .page_item_has_children:after
+    {
+        right: 0;
+
+        display: block;
+
+        color: #0e3650;
+    }
+}
 .sub-menu .sub-menu,
 .children .sub-menu
 {
-    top: 0;
-    left: 100%;
+    top: 5%;
+    left: 0;
 
     -webkit-transform: translateX(0);
         -ms-transform: translateX(0);
@@ -855,6 +926,44 @@ li
 .page_item_has_children:hover > .children
 {
     display: block;
+}
+
+@media not screen and (min-width: 900px)
+{
+    #primary-menu
+    {
+        display: none;
+    }
+}
+
+@media not screen and (min-width: 900px)
+{
+    .menu-all-pages-container
+    {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+
+        width: 100% !important;
+
+        background-color: #fff;
+    }
+}
+
+#site-navigation.toggled #primary-menu li
+{
+    display: block;
+}
+#site-navigation.toggled #primary-menu
+{
+    display: block;
+
+    height: 80% !important;
+    margin-right: 15px;
+    padding-top: 45px !important;
+
+    text-align: center;
 }
 
 .hero__content
@@ -1031,6 +1140,8 @@ a.arrow-wrap
     padding: 12px;
 
     -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
 
     -webkit-box-shadow: 1px 1px white;
             box-shadow: 1px 1px white;
@@ -1081,8 +1192,227 @@ label[for=comment]
     left: 0;
 }
 
+.widgets-area .left-sidebar h2,
+.widgets-area .center-sidebar h2,
+.widgets-area .right-sidebar h2
+{
+    margin-bottom: 0;
+}
+
+.widgets-area li::before,
+.widgets-area .left-sidebar .widget_meta ul li::before,
+.widgets-area .center-sidebar .widget_meta ul li::before,
+.widgets-area .right-sidebar .widget_meta ul li::before,
+.widgets-area .left-sidebar .widget_recent_entries ul li::before,
+.widgets-area .center-sidebar .widget_recent_entries ul li::before,
+.widgets-area .right-sidebar .widget_recent_entries ul li::before
+{
+    content: none;
+}
+
+.widgets-area .left-sidebar .widget_nav_menu .menu-main-menu-container ul.menu li.menu-item a,
+.widgets-area .center-sidebar .widget_nav_menu .menu-main-menu-container ul.menu li.menu-item a,
+.widgets-area .right-sidebar .widget_nav_menu .menu-main-menu-container ul.menu li.menu-item a,
+.widgets-area .left-sidebar .widget_recent_comments ul li.recentcomments a,
+.widgets-area .center-sidebar .widget_recent_comments ul li.recentcomments a,
+.widgets-area .right-sidebar .widget_recent_comments ul li.recentcomments a,
+.widgets-area .left-sidebar .widget_pages ul li a,
+.widgets-area .center-sidebar .widget_pages ul li a,
+.widgets-area .right-sidebar .widget_pages ul li a,
+.widgets-area .left-sidebar .widget_calendar #calendar_wrap table#wp-calendar tbody tr td a,
+.widgets-area .center-sidebar .widget_calendar #calendar_wrap table#wp-calendar tbody tr td a,
+.widgets-area .right-sidebar .widget_calendar #calendar_wrap table#wp-calendar tbody tr td a,
+.widgets-area .left-sidebar .widget_meta ul li a,
+.widgets-area .center-sidebar .widget_meta ul li a,
+.widgets-area .right-sidebar .widget_meta ul li a,
+.widgets-area .left-sidebar .widget_meta ul li a abbr[title],
+.widgets-area .center-sidebar .widget_meta ul li a abbr[title],
+.widgets-area .right-sidebar .widget_meta ul li a abbr[title],
+.widgets-area .left-sidebar .widget_recent_entries ul li a,
+.widgets-area .center-sidebar .widget_recent_entries ul li a,
+.widgets-area .right-sidebar .widget_recent_entries ul li a,
+.widgets-area .left-sidebar .widget_rss h2 a,
+.widgets-area .center-sidebar .widget_rss h2 a,
+.widgets-area .right-sidebar .widget_rss h2 a,
+.widgets-area .left-sidebar .widget_rss ul li a,
+.widgets-area .center-sidebar .widget_rss ul li a,
+.widgets-area .right-sidebar .widget_rss ul li a,
+.widgets-area .left-sidebar .widget_tag_cloud .tagcloud a,
+.widgets-area .center-sidebar .widget_tag_cloud .tagcloud a,
+.widgets-area .right-sidebar .widget_tag_cloud .tagcloud a
+{
+    border-bottom: none;
+}
+.widgets-area .left-sidebar .widget_nav_menu .menu-main-menu-container ul.menu li.menu-item a:hover,
+.widgets-area .center-sidebar .widget_nav_menu .menu-main-menu-container ul.menu li.menu-item a:hover,
+.widgets-area .right-sidebar .widget_nav_menu .menu-main-menu-container ul.menu li.menu-item a:hover,
+.widgets-area .left-sidebar .widget_recent_comments ul li.recentcomments a:hover,
+.widgets-area .center-sidebar .widget_recent_comments ul li.recentcomments a:hover,
+.widgets-area .right-sidebar .widget_recent_comments ul li.recentcomments a:hover,
+.widgets-area .left-sidebar .widget_pages ul li a:hover,
+.widgets-area .center-sidebar .widget_pages ul li a:hover,
+.widgets-area .right-sidebar .widget_pages ul li a:hover,
+.widgets-area .left-sidebar .widget_calendar #calendar_wrap table#wp-calendar tbody tr td a:hover,
+.widgets-area .center-sidebar .widget_calendar #calendar_wrap table#wp-calendar tbody tr td a:hover,
+.widgets-area .right-sidebar .widget_calendar #calendar_wrap table#wp-calendar tbody tr td a:hover,
+.widgets-area .left-sidebar .widget_meta ul li a:hover,
+.widgets-area .center-sidebar .widget_meta ul li a:hover,
+.widgets-area .right-sidebar .widget_meta ul li a:hover,
+.widgets-area .left-sidebar .widget_meta ul li a abbr[title]:hover,
+.widgets-area .center-sidebar .widget_meta ul li a abbr[title]:hover,
+.widgets-area .right-sidebar .widget_meta ul li a abbr[title]:hover,
+.widgets-area .left-sidebar .widget_recent_entries ul li a:hover,
+.widgets-area .center-sidebar .widget_recent_entries ul li a:hover,
+.widgets-area .right-sidebar .widget_recent_entries ul li a:hover,
+.widgets-area .left-sidebar .widget_rss h2 a:hover,
+.widgets-area .center-sidebar .widget_rss h2 a:hover,
+.widgets-area .right-sidebar .widget_rss h2 a:hover,
+.widgets-area .left-sidebar .widget_rss ul li a:hover,
+.widgets-area .center-sidebar .widget_rss ul li a:hover,
+.widgets-area .right-sidebar .widget_rss ul li a:hover,
+.widgets-area .left-sidebar .widget_tag_cloud .tagcloud a:hover,
+.widgets-area .center-sidebar .widget_tag_cloud .tagcloud a:hover,
+.widgets-area .right-sidebar .widget_tag_cloud .tagcloud a:hover
+{
+    color: #68f3c8;
+}
+
+.widgets-area
+{
+    list-style: none;
+
+    text-align: center;
+}
+.widgets-area .widget-area
+{
+    float: left;
+
+    width: 33.3%;
+}
+.widgets-area .left-sidebar .widget_nav_menu .menu-main-menu-container ul.menu,
+.widgets-area .center-sidebar .widget_nav_menu .menu-main-menu-container ul.menu,
+.widgets-area .right-sidebar .widget_nav_menu .menu-main-menu-container ul.menu
+{
+    margin: 0 auto;
+    margin-left: -40px;
+}
+.widgets-area .left-sidebar .widget_recent_comments ul,
+.widgets-area .center-sidebar .widget_recent_comments ul,
+.widgets-area .right-sidebar .widget_recent_comments ul
+{
+    margin-bottom: 0;
+    margin-left: -40px;
+}
+.widgets-area .left-sidebar .widget_pages ul,
+.widgets-area .center-sidebar .widget_pages ul,
+.widgets-area .right-sidebar .widget_pages ul
+{
+    margin-left: -40px;
+}
+.widgets-area .left-sidebar .widget_calendar #calendar_wrap table#wp-calendar,
+.widgets-area .center-sidebar .widget_calendar #calendar_wrap table#wp-calendar,
+.widgets-area .right-sidebar .widget_calendar #calendar_wrap table#wp-calendar
+{
+    margin: 0 auto;
+
+    background-color: #f7f7f7;
+}
+.widgets-area .left-sidebar .widget_calendar #calendar_wrap table#wp-calendar caption,
+.widgets-area .center-sidebar .widget_calendar #calendar_wrap table#wp-calendar caption,
+.widgets-area .right-sidebar .widget_calendar #calendar_wrap table#wp-calendar caption
+{
+    font-size: 15px;
+
+    color: black;
+}
+.widgets-area .left-sidebar .widget_calendar #calendar_wrap table#wp-calendar thead,
+.widgets-area .center-sidebar .widget_calendar #calendar_wrap table#wp-calendar thead,
+.widgets-area .right-sidebar .widget_calendar #calendar_wrap table#wp-calendar thead
+{
+    color: #0e364f;
+}
+.widgets-area .left-sidebar .widget_calendar #calendar_wrap table#wp-calendar tbody tr td,
+.widgets-area .center-sidebar .widget_calendar #calendar_wrap table#wp-calendar tbody tr td,
+.widgets-area .right-sidebar .widget_calendar #calendar_wrap table#wp-calendar tbody tr td
+{
+    padding-left: 5px;
+}
+.widgets-area .left-sidebar .widget_calendar #calendar_wrap table#wp-calendar tbody tr td a,
+.widgets-area .center-sidebar .widget_calendar #calendar_wrap table#wp-calendar tbody tr td a,
+.widgets-area .right-sidebar .widget_calendar #calendar_wrap table#wp-calendar tbody tr td a
+{
+    color: #68f3c8;
+}
+.widgets-area .left-sidebar .widget_calendar #calendar_wrap table#wp-calendar tfoot,
+.widgets-area .center-sidebar .widget_calendar #calendar_wrap table#wp-calendar tfoot,
+.widgets-area .right-sidebar .widget_calendar #calendar_wrap table#wp-calendar tfoot
+{
+    display: none;
+}
+.widgets-area .left-sidebar .widget_calendar #calendar_wrap table#wp-calendar tfoot tr td .pad,
+.widgets-area .center-sidebar .widget_calendar #calendar_wrap table#wp-calendar tfoot tr td .pad,
+.widgets-area .right-sidebar .widget_calendar #calendar_wrap table#wp-calendar tfoot tr td .pad
+{
+    color: #0e364f;
+}
+.widgets-area .left-sidebar .widget_meta ul,
+.widgets-area .center-sidebar .widget_meta ul,
+.widgets-area .right-sidebar .widget_meta ul
+{
+    margin: 0 auto;
+    margin-left: -40px;
+}
+.widgets-area .left-sidebar .widget_meta ul li a abbr[title],
+.widgets-area .center-sidebar .widget_meta ul li a abbr[title],
+.widgets-area .right-sidebar .widget_meta ul li a abbr[title]
+{
+    color: black;
+}
+.widgets-area .left-sidebar .widget_recent_entries ul,
+.widgets-area .center-sidebar .widget_recent_entries ul,
+.widgets-area .right-sidebar .widget_recent_entries ul
+{
+    margin: 0 auto;
+    margin-left: -40px;
+}
+.widgets-area .left-sidebar .widget_recent_entries ul li span.post-date,
+.widgets-area .center-sidebar .widget_recent_entries ul li span.post-date,
+.widgets-area .right-sidebar .widget_recent_entries ul li span.post-date
+{
+    background-color: #f7f7f7;
+}
+.widgets-area .left-sidebar .widget_rss ul,
+.widgets-area .center-sidebar .widget_rss ul,
+.widgets-area .right-sidebar .widget_rss ul
+{
+    margin: 0 auto;
+    margin-left: -40px;
+}
+.widgets-area .left-sidebar .widget_rss ul li,
+.widgets-area .center-sidebar .widget_rss ul li,
+.widgets-area .right-sidebar .widget_rss ul li
+{
+    margin-bottom: 5px;
+
+    background-color: #f7f7f7;
+}
+.widgets-area .left-sidebar .widget_rss ul li a,
+.widgets-area .center-sidebar .widget_rss ul li a,
+.widgets-area .right-sidebar .widget_rss ul li a
+{
+    color: black;
+}
+.widgets-area .left-sidebar .widget_tag_cloud .tagcloud a,
+.widgets-area .center-sidebar .widget_tag_cloud .tagcloud a,
+.widgets-area .right-sidebar .widget_tag_cloud .tagcloud a
+{
+    background-color: #f7f7f7;
+}
+
 .site-footer
 {
+    display: inline-block;
+
     width: 100%;
     padding: 80px 40px 40px 40px;
 }
@@ -1415,13 +1745,44 @@ figure img
     margin-bottom: 40px;
 }
 
+.content-area .site-main .posts-navigation
+{
+    margin-top: 40px;
+}
+.content-area .site-main nav .nav-links
+{
+    display: block;
+
+    max-width: 600px;
+    margin: 0 auto;
+}
+.content-area .site-main nav .nav-links .nav-previous
+{
+    float: left;
+
+    margin-bottom: 40px;
+}
+.content-area .site-main nav .nav-links .nav-next
+{
+    float: right;
+
+    margin-bottom: 40px;
+}
+
+.blog .site-main
+{
+    text-align: center;
+}
+
 /* Extends */
-.entry-wrapper
+.entry-wrapper,
+.content-area .site-main .posts-navigation
 {
     max-width: 600px;
     margin: 0 auto;
 }
 
+blockquote,
 .blockquote
 {
     font-size: 45px;
@@ -1437,6 +1798,7 @@ figure img
 
     color: #0e364f;
 }
+blockquote:after,
 .blockquote:after
 {
     position: absolute;
@@ -1457,7 +1819,8 @@ figure img
             background-size: 50px 62px;
 }
 
-.site-main .entry-wrapper .entry-header h1
+.site-main .entry-wrapper .entry-header h1,
+.content-area .site-main .posts-navigation .entry-header h1
 {
     z-index: 5;
 }
@@ -1529,11 +1892,15 @@ p a[href$='.gif']
 {
     display: none;
 }
-.single .post .entry-wrapper
+.single .post .entry-wrapper,
+.single .post .content-area .site-main .posts-navigation,
+.content-area .site-main .single .post .posts-navigation
 {
     margin-bottom: 40px;
 }
-.single .post .entry-wrapper .entry-footer .tags-links
+.single .post .entry-wrapper .entry-footer .tags-links,
+.single .post .content-area .site-main .posts-navigation .entry-footer .tags-links,
+.content-area .site-main .single .post .posts-navigation .entry-footer .tags-links
 {
     float: right;
 }
@@ -1555,24 +1922,32 @@ p a[href$='.gif']
 {
     padding-top: 0;
 }
-.post .entry-wrapper
+.post .entry-wrapper,
+.post .content-area .site-main .posts-navigation,
+.content-area .site-main .post .posts-navigation
 {
     position: relative;
 }
 @media not screen and (min-width: 740px)
 {
-    .post .entry-wrapper
+    .post .entry-wrapper,
+    .post .content-area .site-main .posts-navigation,
+    .content-area .site-main .post .posts-navigation
     {
         padding: 0 1%;
     }
 }
-.post .entry-wrapper .entry-header h1
+.post .entry-wrapper .entry-header h1,
+.post .content-area .site-main .posts-navigation .entry-header h1,
+.content-area .site-main .post .posts-navigation .entry-header h1
 {
     position: relative;
 
     margin-bottom: 50px;
 }
-.post .entry-wrapper .entry-thumbnail
+.post .entry-wrapper .entry-thumbnail,
+.post .content-area .site-main .posts-navigation .entry-thumbnail,
+.content-area .site-main .post .posts-navigation .entry-thumbnail
 {
     margin-top: -60px;
     margin-right: -100px;
@@ -1582,12 +1957,16 @@ p a[href$='.gif']
 }
 @media not screen and (min-width: 740px)
 {
-    .post .entry-wrapper .entry-thumbnail
+    .post .entry-wrapper .entry-thumbnail,
+    .post .content-area .site-main .posts-navigation .entry-thumbnail,
+    .content-area .site-main .post .posts-navigation .entry-thumbnail
     {
         margin: 0;
     }
 }
-.post .entry-wrapper .main-wrapper
+.post .entry-wrapper .main-wrapper,
+.post .content-area .site-main .posts-navigation .main-wrapper,
+.content-area .site-main .post .posts-navigation .main-wrapper
 {
     position: relative;
 
@@ -1598,13 +1977,17 @@ p a[href$='.gif']
 }
 @media not screen and (min-width: 740px)
 {
-    .post .entry-wrapper .main-wrapper
+    .post .entry-wrapper .main-wrapper,
+    .post .content-area .site-main .posts-navigation .main-wrapper,
+    .content-area .site-main .post .posts-navigation .main-wrapper
     {
         margin: 0;
         padding: 15px;
     }
 }
-.post .entry-wrapper .main-wrapper .entry__read-more
+.post .entry-wrapper .main-wrapper .entry__read-more,
+.post .content-area .site-main .posts-navigation .main-wrapper .entry__read-more,
+.content-area .site-main .post .posts-navigation .main-wrapper .entry__read-more
 {
     width: 100px;
     margin-right: auto;
@@ -1617,46 +2000,67 @@ p a[href$='.gif']
 }
 @media not screen and (min-width: 740px)
 {
-    .post .entry-wrapper .main-wrapper .entry__read-more
+    .post .entry-wrapper .main-wrapper .entry__read-more,
+    .post .content-area .site-main .posts-navigation .main-wrapper .entry__read-more,
+    .content-area .site-main .post .posts-navigation .main-wrapper .entry__read-more
     {
         margin-bottom: 15px;
     }
 }
-.post .entry-wrapper .main-wrapper .entry__read-more a
+.post .entry-wrapper .main-wrapper .entry__read-more a,
+.post .content-area .site-main .posts-navigation .main-wrapper .entry__read-more a,
+.content-area .site-main .post .posts-navigation .main-wrapper .entry__read-more a
 {
     color: #0e364f;
     border-bottom: none;
 }
-.post .entry-wrapper .main-wrapper .entry-footer .entry-meta
+.post .entry-wrapper .main-wrapper .entry-footer,
+.post .content-area .site-main .posts-navigation .main-wrapper .entry-footer,
+.content-area .site-main .post .posts-navigation .main-wrapper .entry-footer
 {
     display: -webkit-flex;
     display: -ms-flexbox;
     display:         flex;
-    float: left;
+
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+            justify-content: space-between;
 }
-.post .entry-wrapper .main-wrapper .entry-footer .entry-meta .posted-on a
+.post .entry-wrapper .main-wrapper .entry-footer .entry-meta > *,
+.post .content-area .site-main .posts-navigation .main-wrapper .entry-footer .entry-meta > *,
+.content-area .site-main .post .posts-navigation .main-wrapper .entry-footer .entry-meta > *
+{
+    display: inline-block;
+}
+.post .entry-wrapper .main-wrapper .entry-footer .entry-meta .posted-on a,
+.post .content-area .site-main .posts-navigation .main-wrapper .entry-footer .entry-meta .posted-on a,
+.content-area .site-main .post .posts-navigation .main-wrapper .entry-footer .entry-meta .posted-on a
 {
     border-bottom: none;
 }
-.post .entry-wrapper .main-wrapper .entry-footer .comments-link
-{
-    float: right;
-}
-.post .entry-wrapper .main-wrapper .entry-footer .comments-link i
+.post .entry-wrapper .main-wrapper .entry-footer .comments-link i,
+.post .content-area .site-main .posts-navigation .main-wrapper .entry-footer .comments-link i,
+.content-area .site-main .post .posts-navigation .main-wrapper .entry-footer .comments-link i
 {
     padding-right: 5px;
 }
-.post .entry-wrapper .main-wrapper .entry-footer .comments-link a
+.post .entry-wrapper .main-wrapper .entry-footer .comments-link a,
+.post .content-area .site-main .posts-navigation .main-wrapper .entry-footer .comments-link a,
+.content-area .site-main .post .posts-navigation .main-wrapper .entry-footer .comments-link a
 {
     border-bottom: none;
 }
-.post .entry-wrapper .main-wrapper .entry-footer .cat-links
+.post .entry-wrapper .main-wrapper .entry-footer .cat-links,
+.post .content-area .site-main .posts-navigation .main-wrapper .entry-footer .cat-links,
+.content-area .site-main .post .posts-navigation .main-wrapper .entry-footer .cat-links
 {
     display: none;
 }
 @media not screen and (min-width: 740px)
 {
-    .post .entry-wrapper .main-wrapper .entry-footer
+    .post .entry-wrapper .main-wrapper .entry-footer,
+    .post .content-area .site-main .posts-navigation .main-wrapper .entry-footer,
+    .content-area .site-main .post .posts-navigation .main-wrapper .entry-footer
     {
         padding-bottom: 30px;
     }
@@ -1683,14 +2087,20 @@ p a[href$='.gif']
     display: none;
 }
 
+.screen-reader-text
+{
+    position: absolute;
+    left: -1000em;
+}
+
 #page
 {
     position: relative;
 }
 
-.primary-sidebar
+.edit-link > a
 {
-    display: none;
+    float: right;
 }
 
 /**

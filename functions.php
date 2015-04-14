@@ -2,9 +2,8 @@
 /**
  * The Adler functions and definitions
  *
- * @package The Adler
+ * @package Adler
  */
-
 
 
 /**
@@ -22,7 +21,7 @@ if ( ! function_exists( 'the_adler_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function the_adler_setup() {
+	function adler_setup() {
 
 		/*
 		 * Make theme available for translation.
@@ -36,15 +35,13 @@ if ( ! function_exists( 'the_adler_setup' ) ) :
 		 * Enable support for Post Thumbnails on posts and pages.
 		 */
 		add_theme_support( 'post-thumbnails' );
-
 		add_theme_support( "title-tag" );
 		add_theme_support( 'automatic-feed-links' );
 
-
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'primary' => __( 'Primary Menu', 'adler_txtd' ),
-			'footer'  => __( 'Footer Menu', 'adler_txtd' )
+			'primary' => __( 'Primary Menu', 'adler' ),
+			'footer'  => __( 'Footer Menu', 'adler' )
 		) );
 
 		/*
@@ -65,14 +62,19 @@ if ( ! function_exists( 'the_adler_setup' ) ) :
 		 * Also enqueue the custom Google Fonts also
 		 */
 		add_editor_style( array( 'editor-style.css', adler_fonts_url() ) );
+
+		$defaults = array(
+			'default-color' => '#FFF'
+		);
+		add_theme_support( 'custom-background', $defaults );
 	}
 endif; // the_adler_setup
-add_action( 'after_setup_theme', 'the_adler_setup' );
+add_action( 'after_setup_theme', 'adler_setup' );
 
 /**
  * Enqueue scripts and styles.
  */
-function the_adler_scripts() {
+function adler_scripts() {
 
 	//FontAwesome Stylesheet
 	wp_enqueue_style( 'the-adler-font-awesome-style', get_stylesheet_directory_uri() . '/assets/css/font-awesome.css', array(), '4.3.0' );
@@ -88,18 +90,36 @@ function the_adler_scripts() {
 	}
 
 	//Default Fonts
-	wp_enqueue_style( 'hive-fonts', adler_fonts_url(), array(), null );
+	wp_enqueue_style( 'the-adler-fonts', adler_fonts_url(), array(), null );
 }
 
-add_action( 'wp_enqueue_scripts', 'the_adler_scripts' );
+add_action( 'wp_enqueue_scripts', 'adler_scripts' );
 
 //Registering Sidebar
 
 function adler_widgets_init() {
 	register_sidebar( array(
-		'name' => __( 'Main Sidebar', 'adler_txtd' ),
-		'id' => 'sidebar-1',
-		'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'adler_txtd' ),
+		'name' => __( 'Left Footer', 'adler' ),
+		'id' => 'sidebar-left',
+		'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'adler' ),
+		'before_widget' => '<li id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</li>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name' => __( 'Right Footer', 'adler' ),
+		'id' => 'sidebar-right',
+		'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'adler' ),
+		'before_widget' => '<li id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</li>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name' => __( 'Center Footer', 'adler' ),
+		'id' => 'sidebar-center',
+		'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'adler' ),
 		'before_widget' => '<li id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</li>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -108,6 +128,29 @@ function adler_widgets_init() {
 }
 
 add_action( 'widgets_init', 'adler_widgets_init' );
+
+
+/**
+* Filters wp_title to print a neat <title> tag based on what is being viewed.
+*
+* @param string $title Default title text for current view.
+* @param string $sep Optional separator.
+* @return string The filtered title.
+*/
+function adler_wp_title( $title, $sep ) {
+    if ( is_feed() ) {
+        return $title;
+   }
+   global $page, $paged;
+
+   // Add a page number if necessary:
+   if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
+	   	$title .= " $sep " . sprintf( __( 'Page %s', 'adler' ), max( $paged, $page ) );
+   }
+   return $title;
+}
+
+add_filter( 'wp_title', 'adler_wp_title', 10, 2 );
 
 /**
  * Implement the Custom Header feature.
@@ -123,16 +166,6 @@ require get_template_directory() . '/inc/template-tags.php';
  * Custom functions that act independently of the theme templates.
  */
 require get_template_directory() . '/inc/extras.php';
-
-/**
- * Customizer additions.
- */
-//require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-//require get_template_directory() . '/inc/jetpack.php';
 
 /**
  * Load Adler Class
