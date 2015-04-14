@@ -52,6 +52,9 @@ Pinnacle Theme Uses:
 
 = Theme Name: Pinnacle =
 
+= Version 1.2.6 | 14th April 2015 = 
+* Fix: Shop page not responding to header options.
+
 = Version 1.2.5 | 13th April 2015 = 
 * Fix: CSS Validate.
 

@@ -327,13 +327,20 @@ function pinnacle_pagetitle_behind_header() {
 function pinnacle_shop_behindheader($pageheaderbg) {
    if (class_exists('woocommerce'))  {
       if(is_shop()) {
+              global $pinnacle;
               $shop_page_id = woocommerce_get_page_id('shop');
-              $hide = get_post_meta( $shop_page_id, '_kad_pagetitle_hide', true );
-                if(isset($hide) && $hide == 'hide') {
-                  $pageheaderbg = false;
-                } else {
+              $hs_behind = get_post_meta( $shop_page_id, '_kad_pagetitle_behind_head', true );
+                if(isset($hs_behind) && $hs_behind == 'true') {
                   $pageheaderbg = true;
-                }
+                } else if(isset($hs_behind) && $hs_behind == 'false') {
+                 $pageheaderbg = false;
+                } else {
+                     if(isset($pinnacle['pagetitle_intoheader']) && $pinnacle['pagetitle_intoheader'] == '0') {
+                      $pageheaderbg = false;
+                    } else {
+                      $pageheaderbg = true;
+                    }
+              }
 
       }
     }
