@@ -7,20 +7,20 @@
 	?>
 			<article <?php  post_class()  ?> id="post-<?php  the_ID(); ?>">
 				<header>
-				  <h2><a href="<?php  the_permalink()  ?>" rel="bookmark" title="Permanent Link to <?php  the_title_attribute(); ?>"><?php  the_title(); ?></a></h2>
+				  <h2><a href="<?php  the_permalink()  ?>" rel="bookmark" title="<?php the_title_attribute( array( 'before' => __( 'Permanent Link to', 'Commodore' ))); ?>"><?php the_title(); ?></a></h2>
 				  <h3 class="index-date"><?php  the_time(get_option('date_format'))  ?></h3><br>
 		    		</header>
 		    <section>
-				  <?php  the_content('Read the rest of this entry &raquo;'); ?>
+				  <?php  the_content(__('Read the rest of this entry &raquo;','Commodore')); ?>
 				  <hr class="clearfix" />
           <?php  wp_link_pages('before=<p>&after=</p>&next_or_number=number&pagelink=page %'); ?>
-				  <p class="postmetadata"><?php  edit_post_link('Edit', '', ' | '); ?>  <?php  comments_popup_link('Share your thoughts', '1 Comment', '% Comments'); ?></p>
+				  <p class="postmetadata"><?php  edit_post_link(__('Edit','Commodore'),'',' | '); ?>  <?php  comments_popup_link(__('Share your thoughts','Commodore'),__('1 Comment','Commodore'),__('% Comments','Commodore')); ?></p>
 			  </section>
 			</article>
 		<?php  endwhile; ?>
 			<ul class="prevnext">
-				<li><?php  next_posts_link('&lt; Older Entries')  ?></li>
-				<li><?php  previous_posts_link('Newer Entries &gt;')  ?></li>
+				<li><?php  next_posts_link(__('&lt; Older Entries','Commodore'))  ?></li>
+				<li><?php  previous_posts_link(__('Newer Entries &gt;','Commodore'))  ?></li>
 			</ul>
 	<?php  else : ?>
 		<article class="noposts">

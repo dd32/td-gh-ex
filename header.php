@@ -27,8 +27,8 @@
 	<body onload="flipcursor(0);initWrite();" <?php  body_class(); ?>>
 <div id="container">
   		<header class="header">
-  			<h1>**** <a href="<?php  echo home_url(); ?>/"><?php  bloginfo('name'); ?></a> ****</h1>
-  			<p><?php  bloginfo('description'); ?></p>
+  			<h1>**** <a href="<?php  echo home_url(); ?>/"><?php  bloginfo(__('name','Commodore')); ?></a> ****</h1>
+  			<p><?php  bloginfo(__('description','Commodore')); ?></p>
   			<h3><?php  wp_nav_menu( array( 'theme_location' => 'header-menu', 'fallback_cb' => '' ) ); ?></h3>
   		</header>
 	  <div id="wrapper">

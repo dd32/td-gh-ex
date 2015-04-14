@@ -12,11 +12,11 @@
 				  <h3 class="post-date"><?php  the_time(get_option('date_format'))  ?></h3><br>
 		    		</header>
 				<section>
-				<?php  the_content('Read the rest of this entry &raquo;'); ?>
+				<?php  the_content(__('Read the rest of this entry &raquo;','Commodore')); ?>
 					<hr class="clearfix" />
         			<?php  the_tags('<p class="post_tags"><mark>Tagged with:</mark> ', ' | ' ,  '</p>'); ?>
 			        <p class="post_categories"><mark>Categorized as:</mark> <?php  the_category(' | '); ?> </p>
-					  <?php  edit_post_link('Edit This Post', '<p class="postmetadata">', '</p>'); ?>
+					  <?php  edit_post_link(__('Edit This Post','Commodore'), '<p class="postmetadata">', '</p>'); ?>
   				  <?php  if(!comments_open()) { ?>
               <p>Comments are disabled on this post</p>
             <?php  } ?>

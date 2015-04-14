@@ -7,13 +7,13 @@
 	the_post();
 	?>
 			<div <?php  post_class()  ?>>
-				<h3 id="post-<?php  the_ID(); ?>">&bull; <a href="<?php  the_permalink()  ?>" rel="bookmark" title="Permanent Link to <?php  the_title_attribute(); ?>"><?php  the_title(); ?></a></h3>
+				<h3 id="post-<?php  the_ID(); ?>">&bull; <a href="<?php  the_permalink()  ?>" rel="bookmark" title="<?php the_title_attribute( array( 'before' => __( 'Permanent Link to', 'Commodore' ))); ?>"><?php the_title(); ?></a></h3>
 				<small><?php  the_time(get_option('date_format'))  ?></small>
 			</div>
 		<?php  endwhile; ?>
 		<div class="navigation">
-			<div class="alignleft"><?php  next_posts_link('&laquo; Older Entries')  ?></div>
-			<div class="alignright"><?php  previous_posts_link('Newer Entries &raquo;')  ?></div>
+			<div class="alignleft"><?php  next_posts_link(__('&laquo; Older Entries','Commodore'))  ?></div>
+			<div class="alignright"><?php  previous_posts_link(__('Newer Entries &raquo;','Commodore'))  ?></div>
 		</div>
 	<?php  else : ?>
 		<h2>READY.<br><?php  the_search_query(); ?></h2>

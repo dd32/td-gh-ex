@@ -23,7 +23,7 @@
 			<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
 				
 				<header>
-				  <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+				  <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute( array( 'before' => __( 'Permanent Link to', 'Commodore' ))); ?>"><?php the_title(); ?></a></h2>
 				  <br><h3 style="padding: 0 0 0 25px; margin: -20px;"><time><?php the_time(get_option('date_format')) ?></time></h3>
 		    	</header>
 		
@@ -54,8 +54,8 @@
 				?>  
 				
 				<div>
-					<?php the_excerpt('Read the rest of this entry &raquo;'); ?>
-					<p class="postmetadata"><?php edit_post_link('Edit', '', ' | '); ?>  <?php comments_popup_link('Share your thoughts on this', '1 Comment', '% Comments'); ?></p>
+					<?php the_excerpt( __('Read the rest of this entry &raquo;','Commodore')); ?>
+					<p class="postmetadata"><?php edit_post_link(__('Edit','Commodore'),'',' | '); ?>  <?php comments_popup_link(__('Share your thoughts on this','Commodore'),__('1 Comment','Commodore'),__('% Comments','Commodore')); ?></p>
 				</div>
 				
 			  </section>
@@ -65,8 +65,8 @@
 		<?php endwhile; ?>
 
 			<ul class="prevnext">
-				<li><?php next_posts_link('&lt; Older Entries') ?></li>
-				<li><?php previous_posts_link('Newer Entries &gt;') ?></li>
+				<li><?php next_posts_link(__('&lt; Older Entries','Commodore')) ?></li>
+				<li><?php previous_posts_link(__('Newer Entries &gt;','Commodore')) ?></li>
 			</ul>
 			
 	<?php else : ?>
@@ -81,9 +81,9 @@
 			echo("<h2>Sorry, but there aren't any posts with this date.</h2>");
 		} else if ( is_author() ) { // If this is a category archive
 			$userdata = get_userdatabylogin(get_query_var('author_name'));
-			printf("<h2 class='center'>Sorry, but there aren't any posts by %s yet.</h2>", $userdata->display_name);
+			printf(__("<h2 class='center'>Sorry, but there aren't any posts by %s yet.</h2>","Commodore"), $userdata->display_name);
 		} else {
-			echo("<h2 class='center'>No posts found.</h2>");
+			echo(__("<h2 class='center'>No posts found.</h2>","Commodore"));
 		}
 		get_search_form();
 

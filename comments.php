@@ -9,7 +9,7 @@
 <?php  if ( have_comments() ) : ?>
   <section class="comments">
     <header>
-      <h2><?php  comments_number('No Comments', 'One Comment', '% Comments' ); ?> </h2>
+      <h2><?php  comments_number(__('No Comments','Commodore'),__('One Comment','Commodore'),__('% Comments','Commodore') ); ?> </h2>
     </header>
     <ol class="commentlist">
       <?php  wp_list_comments(array('avatar_size' => 70)); ?>

@@ -18,10 +18,10 @@
 						} 
 					?>
 
-				  <?php  the_content('Read the rest of this entry &raquo;'); ?>
+				  <?php  the_content(__('Read the rest of this entry &raquo;','Commodore')); ?>
           <hr class="clearfix" />
           <?php  wp_link_pages('before=<p>&after=</p>&next_or_number=number&pagelink=page %'); ?>
-				  <?php  edit_post_link('Edit', '<p>', '</p>'); ?>
+				  <?php  edit_post_link(__('Edit','Commodore'), '<p>', '</p>'); ?>
 			  </section>
 				<hr class="clearfix" />
 			</article>
