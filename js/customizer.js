@@ -239,17 +239,17 @@
     //About us
     wp.customize('about_bg',function( value ) {
         value.bind( function( newval ) {
-            $('.about-area').css('background-color', newval );
+            $('.about_text-area').css('background-color', newval );
         } );
     });
     wp.customize('about_title',function( value ) {
         value.bind( function( newval ) {
-            $('.about-area .widget-title').css('color', newval );
+            $('.about_text-area .widget-title').css('color', newval );
         } );
     });
     wp.customize('about_title_dec',function( value ) {
         value.bind( function( newval ) {
-            $('.about-area .widget-title').css('border-color', newval );
+            $('.about_text-area .widget-title').css('border-color', newval );
         } );
     });
     wp.customize('about_text',function( value ) {

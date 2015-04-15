@@ -213,13 +213,13 @@ function quill_custom_styles($custom) {
     $about_text = esc_html(get_theme_mod( 'about_text' ));
 
     if ( isset($about_bg) && ( $about_bg != '#fff' ) ) {
-        $custom .= ".contact-area { background-color: {$about_bg}; }"."\n";
+        $custom .= ".about_text-area { background-color: {$about_bg}; }"."\n";
     }
     if ( isset($about_title) && ( $about_title != '#2E2E2E' ) ) {
-        $custom .= ".contact .widget-title { color: {$about_title}; }"."\n";
+        $custom .= ".about_text-area .widget-title { color: {$about_title}; }"."\n";
     }
     if ( isset($about_title_dec) && ( $about_title_dec != '#2E2E2E' ) ) {
-        $custom .= ".contact .widget-title { border-color: {$about_title_dec}; }"."\n";
+        $custom .= ".about_text-area .widget-title { border-color: {$about_title_dec}; }"."\n";
     } 
     if ( isset($about_text) && ( $about_text != '#6B6B6B' ) ) {
         $custom .= ".about-text { color: {$about_text}; }"."\n";
