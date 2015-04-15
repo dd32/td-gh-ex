@@ -1,11 +1,5 @@
 <?php
-/*
- * thumbnail list
-*/ 
-function avocation_thumbnail_image($content) {
-    if( has_post_thumbnail() )
-         return the_post_thumbnail( 'thumbnail' ); 
-}
+
 /*
 * Register Raleway Regular Google font for avocation
 */

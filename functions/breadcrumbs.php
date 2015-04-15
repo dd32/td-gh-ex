@@ -12,7 +12,7 @@ function avocation_custom_breadcrumbs() {
   $avocation_after = ' '; // tag after the current crumb
 
   global $post;
-  $avocation_homelink = home_url('/');
+  $avocation_homelink = esc_url(home_url('/'));
 
   if (is_home() || is_front_page()) {
 

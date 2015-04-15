@@ -5,7 +5,7 @@ Avocation Theme by FruitThemes http://fruitthemes.com/
 Avocation is a lightweight, clean, super flexible and bootstrap based responsive theme for business or personal websites. Avocation Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, theme-options etc in order to get it customized as per your needs.
 
 === Tags ===
-left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, theme-options, threaded-comments , translation-ready
+left-sidebar, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, theme-options, threaded-comments , translation-ready
 
 == License ==
 License: GNU General Public License v3 or later
@@ -73,12 +73,17 @@ License: GNU General Public License v2
 
 iii)Fonts
 ===========
-Raleway
+Open Sans
 	Copyright: Multiple Designers
+	Resource URI: http://fonts.googleapis.com/css?family=Open+Sans 
+	License: Apache License, version 2.0
+	License URI: http://www.apache.org/licenses/LICENSE-2.0
+
+Raleway
 	Resource URI: http://www.google.com/fonts/specimen/Raleway
 	License: SIL Open Font License, 1.1
+
 Lato Regular
-	Copyright: Multiple Designers
 	Resource URI: http://www.google.com/fonts/specimen/Lato
 	License: SIL Open Font License, 1.1
 	
@@ -107,36 +112,9 @@ Image
 ---------------------------------------------------------
 
 ------------------- slider bg ----------------------------
- 1. Kmuto
-	Resource URI: http://pixabay.com/en/hong-kong-cityscape-buildings-water-205968/
-	License: CC0 1.0
-	License URI: http://creativecommons.org/publicdomain/zero/1.0/deed.en
- 
-
-----------------------Leftsidebar-------------------------------
-1. StartupStockPhotos
+3. StartupStockPhotos
 	Resource URI: http://pixabay.com/en/startup-meeting-brainstorming-594090/
 	License: CC0 1.0
 	License URI: http://creativecommons.org/publicdomain/zero/1.0/deed.en
-
-----------------------Fullwidth and Pages----------------------------
-1. rlobes
-	Resource URI:http://pixabay.com/en/skyline-chicago-city-chicago-night-75287/
-	License: CC0 1.0
-	License URI: http://creativecommons.org/publicdomain/zero/1.0/deed.en
-
-------------------------our-blog-------------------------
-
-1. ThePixelman 	 
-	Resource URI:http://pixabay.com/en/woman-kids-girls-properties-546207/
-	License: CC0 1.0
-	License URI: http://creativecommons.org/publicdomain/zero/1.0/deed.en
-2. JESHOOTS
-	Resource URI:http://pixabay.com/en/iphone-template-mockup-mock-up-500291/
-	License: CC0 1.0
-	License URI: http://creativecommons.org/publicdomain/zero/1.0/deed.en
-3. JeongGuHyeok 
-	Resource URI:http://pixabay.com/en/keyboard-pen-plan-success-online-621831/
-	License: CC0 1.0
-	License URI: http://creativecommons.org/publicdomain/zero/1.0/deed.en
+ 
 

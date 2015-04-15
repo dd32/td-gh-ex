@@ -5,13 +5,13 @@ Theme URI: http://fruitthemes.com/wordpress-themes/avocation
 Author: FruitThemes
 Author URI: http://fruitthemes.com/
 Description: Avocation is a lightweight, clean, super flexible and bootstrap based responsive theme for business or personal websites. Avocation Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, theme-options etc in order to get it customized as per your need.
-Version: 1.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Copyright :
 Avocation Wordpress Theme, Copyright 2014 fruitthemes.com
 Avocation is distributed under the terms of the GNU GPL
-Tags: left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: left-sidebar, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Text Domain: avocation
 */
 
@@ -54,6 +54,9 @@ body{
 }
 .color-text{
     color: #cd1f07;
+}
+.space{
+margin-bottom:80px;
 }
 a {
     text-decoration: none;
@@ -120,7 +123,7 @@ img{
     text-transform: capitalize;
 }
 .mask-overlay {    
-    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.7);
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.6);
     bottom: 0;
     left: 0;
     position: absolute;
@@ -148,7 +151,7 @@ img{
     -webkit-backface-visibility: hidden;
     -webkit-transform: translateZ(0px);
     -webkit-transition-duration: 0.6s;
-    -webkit-transition-timing-function: linear;
+    -webkit-transition-timing-function: ease-in;
     -webkit-transition-property: color;
     vertical-align: middle;
 }
@@ -169,9 +172,9 @@ img{
 
     -webkit-transform: scaleY(0);
     -webkit-transform-origin: 50% 50% 0;
-    -webkit-transition-duration: 0.6s;
+    -webkit-transition-duration: 0.3s;
     -webkit-transition-property: -webkit-transform;
-    -webkit-transition-timing-function: linear;
+    -webkit-transition-timing-function: ease-out;
 
     z-index: -1;
 }
@@ -262,9 +265,6 @@ section {
     }
 }
 
-.transparent-menubar .scroll-header {
-    position: absolute;
-}
 .main-sidebar .tagcloud{  
     padding-bottom: 13px;
 }
@@ -325,7 +325,7 @@ section {
     -webkit-backface-visibility: hidden;
     -webkit-transform: translateZ(0px);
     -webkit-transition-duration: 0.6s;
-    -webkit-transition-timing-function: linear;
+    -webkit-transition-timing-function: ease-in;
     -webkit-transition-property: color;
     vertical-align: middle;
 }
@@ -347,9 +347,9 @@ section {
 
     -webkit-transform: scaleY(0);
     -webkit-transform-origin: 50% 50% 0;
-    -webkit-transition-duration: 0.6s;
+    -webkit-transition-duration: 0.3s;
     -webkit-transition-property: -webkit-transform;
-    -webkit-transition-timing-function: linear;
+    -webkit-transition-timing-function: ease-out;
 }
 .amenu-list li a:hover:before, .amenu-list li a:focus:before, li.current-menu-item > a:before{
     transform: scaleY(1);  
@@ -366,19 +366,19 @@ section {
     right: 100%;
     top: 0;
 }
-.amenu-list ul li {
-    background-color: #202020;
-    border-bottom: 1px solid #464646;
+.amenu-list ul li {   
     margin: 0;
     width: 100%;   
 }
-.amenu-list ul li:last-child{
+.amenu-list ul li:last-child a:link, .amenu-list ul li:last-child a:visited{
     border-bottom: none;
 }
 .amenu-list ul li.parent > a {
     background: url(../images/left_arrow.jpg) no-repeat 5% 50%;   
 }
 .amenu-list ul li a:link, .amenu-list ul li a:visited {  
+    background-color: #202020;
+    border-bottom: 1px solid #464646;
     color: #fbfbfb;
     display: block;
     font-size: 14px;
@@ -392,7 +392,7 @@ section {
     background-color: #cd1f07;
 }
 .current-menu-item > a {
-    color: #ffff !important;
+    color: #fff !important;
 }
 
 /**************************menu-bar end*********************/
@@ -464,11 +464,15 @@ section {
     margin-top:2px;
     display:block;
 }
-
+.site-description{
+font-size:14px;
+display:block;
+}
 /**************************header end*********************/
 /**************************footer start*********************/
 .footer-bg{
-    /*background: url(images/texture.jpg);*/  
+    /*background:url("images/texture.jpg") !important;*/
+    background-color:#000000 !important;  
     display: inline-block;
     position: relative;
     width: 100%;
@@ -563,8 +567,7 @@ section {
 .footer-bg a:hover {
     color: #cd1f07;
 }
-footer-sidebar
-.textwidget {
+.textwidget p{
     font-size: 13px;
     line-height: 1.8;
     margin-bottom: 15px;
@@ -617,7 +620,7 @@ footer-sidebar
 .tagcloud > a:hover{
     background: #fff;
     color: #cd1f07;
-    border-color: #fff;
+    border-color: #cd1f07;
 }
 .get-in-touch li {
     font-size: 13px;
@@ -638,7 +641,7 @@ footer-sidebar
 
 /**************************breadcrumb start*********************/
 .breadcrumb-bg{
-    /* background-image:url(images/breadcrumb-bg.jpg);*/
+    /*background-image:url(images/breadcrumb-bg.jpg);*/
     margin-bottom: 50px;
     border-bottom: 1px solid #cccccc;
 }
@@ -686,12 +689,20 @@ footer-sidebar
     border: 1px solid #bdbdbd;
     font-weight: normal;
     padding: 7px 15px;
-
+    width:40%;
     color: #212121;   
 }
-.search-width input {
+.main-sidebar .search-width input {
     width: 100%;
 }
+.footer-sidebar .search-form .search-field {
+    border: 1px solid #bdbdbd;
+    font-weight: normal;
+    padding: 7px 15px;
+    width:100%;
+    color: #212121;   
+}
+
 .search-form .search-submit {
     display: none;
 }
@@ -1548,7 +1559,6 @@ a.comment-reply-link{
 
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
-
     ::i-block-chrome, .blog-box-img {   
         padding-bottom: 15px;
     }
@@ -1596,9 +1606,9 @@ embed, iframe, object, video {
 }
 /* media */
 @media (min-width:1024px) {
-	.page-template-homepage .scroll-header {
-    		position: absolute;
-	}
+    .page-template-homepage .scroll-header {
+        position: absolute;
+    }
 }
 
 @media (max-width:1200px) {
@@ -1673,7 +1683,9 @@ embed, iframe, object, video {
         border-bottom: 0 none;
     }
     .amenu-list ul li a:link, .amenu-list ul li a:visited{
-        font-family: 'Lato-Regular';
+        background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+        border-bottom: medium none;
+        font-family: "Lato-Regular";
         text-align: left;
     }
     .amenu-list ul li a:hover, .amenu-list ul li a.active {
@@ -1711,7 +1723,7 @@ embed, iframe, object, video {
         left: 10%;
         right: 13%;
         text-align: center;
-        top: 10%;
+        top: 5%;
     }
     .carousel-caption h3{
         font-size: 22px;
@@ -1870,7 +1882,7 @@ embed, iframe, object, video {
         left: 10%;
         right: 13%;
         text-align: center;
-        top: 10%;
+        top: 5%;
     }
     .carousel-caption p{
         display: none;
@@ -1901,4 +1913,3 @@ embed, iframe, object, video {
 dd{
     margin-bottom:15px;
 }
-

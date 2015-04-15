@@ -10,8 +10,8 @@ get_header(); ?>
             <div class="breadcrumb-bg">
                 <div class="royals-container container">
                     <div class="site-breadcumb">
-                        <h1><?php if(!empty($avocation_options['blogtitle'])) { 
-					echo esc_attr($avocation_options['blogtitle']);
+                        <h1><?php if(!empty($avocation_options['avocation-blogtitle'])) { 
+					echo esc_attr($avocation_options['avocation-blogtitle']);
 				 } else { 	
 					echo _e('Our Blog','avocation');
 				} ?></h1>

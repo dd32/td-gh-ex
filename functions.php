@@ -9,7 +9,7 @@ function avocation_setup() {
 	register_nav_menus( array(
 		'primary'   => __( 'Main Menu', 'avocation' ),	
 	) );
-	global $content_width;
+	global $avocation_content_width;
 	if ( ! isset( $content_width ) ) $content_width = 900;
 			/*
 		 * Make avocation theme available for translation.
@@ -22,6 +22,7 @@ function avocation_setup() {
 	add_theme_support('automatic-feed-links');
 	add_theme_support( 'title-tag' );
 	add_theme_support('post-thumbnails');
+	add_theme_support('post-formats');
 	set_post_thumbnail_size( 640, 428, true );
 	add_image_size( 'avocation-latest-post', 748, 500, true );
 	add_image_size( 'avocation-latest-post-homepage', 640, 428, true );	
@@ -52,40 +53,42 @@ function avocation_setup() {
 	) ) );
 	// This theme uses its own gallery styles.       
 	add_filter('use_default_gallery_style', '__return_false');
+	
 	  	
 }
 
 endif; // avocation_setup
 add_action( 'after_setup_theme', 'avocation_setup' );
-/* fonts*/
-add_action( 'wp_enqueue_scripts', 'my_google_font' );
-function my_google_font() {
- wp_enqueue_style( $handle = 'my-google-font', $src = 'http://fonts.googleapis.com/css?family=Raleway', $deps = array(), $ver = null, $media = null );
-}
+
 /* css */
 add_action('wp_head','avocation_purpose_bg_img_css');
 function avocation_purpose_bg_img_css()
 {
 	$avocation_options = get_option('avocation_theme_options');
-	$avocation_purpose_bg_img = esc_url($avocation_options['purposebg-bg']);
+	$avocation_purpose_bg_img = esc_url($avocation_options['avocation-purposebg-bg']);
 	$avocation_purpose_output="<style> .business-wrap { background :url('".$avocation_purpose_bg_img."');
     background-position: center;} </style>";
-	$avocation_header_bg_img = esc_url($avocation_options['breadcrumbsbg-bg']);
+	$avocation_header_bg_img = esc_url($avocation_options['avocation-breadcrumbsbg-bg']);
 	$avocation_header_output="<style>  .breadcrumb-bg { background :url('".$avocation_header_bg_img."'); } </style>";
-	$avocation_footer_bg_img = esc_url($avocation_options['footerbg-bg']);
+	$avocation_footer_bg_img = esc_url($avocation_options['avocation-footerbg-bg']);
 	$avocation_footer_output="<style>  .footer-bg{ background :url('".$avocation_footer_bg_img."'); } </style>";
 	echo $avocation_purpose_output;
 	echo $avocation_header_output;
 	echo $avocation_footer_output;
 }
 
-
+// retrieves the attachment ID from the file URL
+function avocation_get_image_id($avocation_image_url) {
+	global $avocation_wpdb;
+	$avocation_attachment = $avocation_wpdb->get_col($avocation_wpdb->prepare("SELECT ID FROM $avocation_wpdb->posts WHERE guid='%s';", $avocation_image_url )); 
+        return $avocation_attachment[0]; 
+}
 /***  excerpt Length ***/ 
-function avocation_change_excerpt_more( $more ) {
+function avocation_change_excerpt_more( $avocation_more ) {
     return '<div class="read-more"><a class="theme-btn" href="'. get_permalink() . '" >'.__('READ MORE','avocation').'</a></div>';
 }
 add_filter('excerpt_more', 'avocation_change_excerpt_more');
-function avocation_excerpt_length( $length ) {
+function avocation_excerpt_length( $avocation_length ) {
     return 30;
 }
 add_filter( 'excerpt_length', 'avocation_excerpt_length', 999 );

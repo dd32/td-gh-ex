@@ -23,8 +23,8 @@ $avocation_options = get_option('avocation_theme_options');
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 	
-	<?php if (!empty($avocation_options['favicon'])) { ?>
-		<link rel="shortcut icon" href="<?php echo esc_url($avocation_options['favicon']); ?>"> 
+	<?php if (!empty($avocation_options['avocation-favicon'])) { ?>
+		<link rel="shortcut icon" href="<?php echo esc_url($avocation_options['avocation-favicon']); ?>"> 
 	<?php } ?>	
 	<?php wp_head(); ?>
 	
@@ -37,17 +37,17 @@ $avocation_options = get_option('avocation_theme_options');
             <div class="scroll-header">  
                 <div class="avocation-container  container">                 
                     <div class="col-md-3 logo col-sm-12">
-                         <?php if (!empty($avocation_options['logo'])) { ?>
-                                    <a href="<?php echo esc_url(home_url('/')); ?>"><img alt="<?php _e('logo', 'avocation') ?>" src="<?php echo esc_url($avocation_options['logo']); ?>" class="img-responsive"></a> 
+                         <?php if (!empty($avocation_options['avocation-logo'])) { ?>
+                                    <a href="<?php echo esc_url(home_url('/')); ?>"><img alt="<?php _e('avocation-logo', 'avocation') ?>" src="<?php echo esc_url($avocation_options['avocation-logo']); ?>" class="img-responsive"></a> 
                                 <?php } else { ?>		  
                                   <a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 				<h2 class="site-title logo-box"><?php bloginfo( 'name' ); ?></h2>
-				<span class="site-description logo-box"><?php bloginfo( 'description' ); ?></h2>
+				<span class="site-description"><?php bloginfo( 'description' ); ?></span>
 			</a>
                                 <?php } ?>
                     </div>
                     <div class="col-md-9 center-content  ">
-						<?php if(!empty($avocation_options['fburl']) || !empty($avocation_options['twitter']) || !empty($avocation_options['youtube']) ||!empty($avocation_options['rss']) || !empty($avocation_options['pinterest']) )
+						<?php if(!empty($avocation_options['avocation-fburl']) || !empty($avocation_options['avocation-twitter']) || !empty($avocation_options['avocation-youtube']) ||!empty($avocation_options['avocation-rss']) || !empty($avocation_options['avocation-pinterest']) )
 			{
 				$class="col-sm-9 col-md-9";
 			}
@@ -73,7 +73,7 @@ $avocation_options = get_option('avocation_theme_options');
 								'container_class' => 'collapse navbar-collapse no-padding main-menu',
 								'container_id'    => 'example-navbar-collapse',
 								'menu_class'      => 'nav navbar-nav menu',
-								'menu_id'         => 'example-navbar-collapse',
+								'menu_id'         => '',
 								'echo'            => true,
 								'items_wrap'      => '<ul id="%1$s" class="%2$s  amenu-list">%3$s</ul>',
 								'depth'           => 0,
@@ -88,23 +88,23 @@ $avocation_options = get_option('avocation_theme_options');
                                   
                         </div>
                         
-                            <?php if (!empty($avocation_options['fburl']) || !empty($avocation_options['twitter']) || !empty($avocation_options['youtube']) || !empty($avocation_options['rss'])) { ?>
+                            <?php if (!empty($avocation_options['avocation-fburl']) || !empty($avocation_options['avocation-twitter']) || !empty($avocation_options['avocation-youtube']) || !empty($avocation_options['avocation-rss'])) { ?>
                         <div class="col-md-3 col-sm-3 social-icon  no-padding">	
                             <ul>
-                                        <?php if (!empty($avocation_options['fburl'])) { ?>
-                                            <li > <a href="<?php echo esc_url($avocation_options['fburl']); ?>" class="facebook-icon"> <span class="fa fa-facebook"></span> </a> </li>
+                                        <?php if (!empty($avocation_options['avocation-fburl'])) { ?>
+                                            <li > <a href="<?php echo esc_url($avocation_options['avocation-fburl']); ?>" class="facebook-icon"> <span class="fa fa-facebook"></span> </a> </li>
                                         <?php } ?>
-                                        <?php if (!empty($avocation_options['twitter'])) { ?>
-                                            <li> <a href="<?php echo esc_url($avocation_options['twitter']); ?>" class="twitter-icon"> <span class="fa fa-twitter"></span> </a> </li>
+                                        <?php if (!empty($avocation_options['avocation-twitter'])) { ?>
+                                            <li> <a href="<?php echo esc_url($avocation_options['avocation-twitter']); ?>" class="twitter-icon"> <span class="fa fa-twitter"></span> </a> </li>
                                         <?php } ?>
-                                        <?php if (!empty($avocation_options['youtube'])) { ?>
-                                            <li> <a href="<?php echo esc_url($avocation_options['youtube']); ?>" class="youtube-icon"> <span class="fa fa-youtube"></span> </a> </li>
+                                        <?php if (!empty($avocation_options['avocation-youtube'])) { ?>
+                                            <li> <a href="<?php echo esc_url($avocation_options['avocation-youtube']); ?>" class="youtube-icon"> <span class="fa fa-youtube"></span> </a> </li>
                                         <?php } ?>
-                                        <?php if (!empty($avocation_options['rss'])) { ?>
-                                            <li> <a href="<?php echo esc_url($avocation_options['rss']); ?>" class="rss-icon"> <span class="fa fa-rss"></span> </a> </li>
+                                        <?php if (!empty($avocation_options['avocation-rss'])) { ?>
+                                            <li> <a href="<?php echo esc_url($avocation_options['avocation-rss']); ?>" class="rss-icon"> <span class="fa fa-rss"></span> </a> </li>
                                         <?php } ?>
-                                        <?php if (!empty($avocation_options['pinterest'])) { ?>
-                                            <li> <a href="<?php echo esc_url($avocation_options['pinterest']); ?>" class="pinterest-icon"> <span class="fa fa-pinterest"></span> </a> </li>
+                                        <?php if (!empty($avocation_options['avocation-pinterest'])) { ?>
+                                            <li> <a href="<?php echo esc_url($avocation_options['avocation-pinterest']); ?>" class="pinterest-icon"> <span class="fa fa-pinterest"></span> </a> </li>
                                         <?php } ?>
                                     </ul>
                                 </div>
@@ -113,11 +113,11 @@ $avocation_options = get_option('avocation_theme_options');
                 </div>
             </div>
              <?php
-            $header_image = get_header_image();
-            if (!empty($header_image)) {
+            $avocation_header_image = get_header_image();
+            if (!empty($avocation_header_image)) {
                 ?>
                 <div class="container">
-                    <img src="<?php echo esc_url($header_image); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php _e('custom-header', 'avocation') ?>" />
+                    <img src="<?php echo esc_url($avocation_header_image); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php _e('custom-header', 'avocation') ?>" />
                 </div>
             <?php } ?>
         </header>    

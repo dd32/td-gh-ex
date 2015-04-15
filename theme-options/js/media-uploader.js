@@ -38,6 +38,15 @@
 				if ( attachment.attributes.type == 'image' ) {
 					selector.find('.screenshot').empty().hide().append('<img src="' + attachment.attributes.url + '"><a class="remove-image"></a>').slideDown('fast');
 				}
+				else{
+					 selector.find('.upload').css('border-color',"#F00");
+					 selector.find('.upload').before('<span class="error-msg">Please upload image only!!</span>');
+					 selector.find('.upload').val("");
+					 selector.find('.remove-image, .remove-file').trigger("click");
+					return false;
+				}
+				selector.find('.upload').prev('.error-msg').remove();
+				selector.find('.upload').css('border-color',"#ddd")
 				selector.find('.upload-button').unbind().addClass('remove-file').removeClass('upload-button');
 				selector.find('.of-background-properties').slideDown();
 				selector.find('.remove-image, .remove-file').on('click', function() {

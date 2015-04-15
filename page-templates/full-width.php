@@ -32,7 +32,7 @@ get_header(); ?>
 				<?php endif; ?>
                                 </div>
                               <a href="<?php echo get_permalink(); ?>" class="blog-title"><?php esc_attr(the_title()); ?></a>  
-                                <?php avocation_entry_meta(); ?> 
+                                <?php  esc_attr_e(avocation_entry_meta());?> 
                                 <div class="our-blog-details">
                                     <?php the_content(); ?>
                                     

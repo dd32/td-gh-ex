@@ -1,3 +1,9 @@
-Version 1.0
+Version 1.0	
+   i)   Theme Submitted for approval
 
-i)   Theme Submitted for approval
+version 1.0.1
+   1) Fixed css issue.
+   2) Fixed "Translation ready"
+   3) Set sanitization in all pages.
+   4) Set customizer option like Display Header Text,background color.
+   5) Set image validation in theme-options.php

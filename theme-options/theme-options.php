@@ -3,66 +3,58 @@ function avocation_options_init(){
  register_setting( 'avocation_option', 'avocation_theme_options','avocation_option_validate');
 } 
 add_action( 'admin_init', 'avocation_options_init' );
-function avocation_option_validate($input)
+function avocation_option_validate($avocation_input)
 {
-	 $input['logo'] = avocation_image_validation(esc_url_raw( $input['logo'] ));
-	 $input['favicon'] = avocation_image_validation(esc_url_raw( $input['favicon'] ));
-	 $input['footertext'] = sanitize_text_field( $input['footertext'] );
-	 $input['blogtitle'] = sanitize_text_field( $input['blogtitle'] );
-	 $input['breadcrumbsbg-bg'] = avocation_image_validation(esc_url_raw( $input['breadcrumbsbg-bg'] ));
-	  $input['footerbg-bg'] = avocation_image_validation(esc_url_raw( $input['footerbg-bg'] ));
+	 $avocation_input['avocation-logo'] = esc_url_raw( $avocation_input['avocation-logo'] );
+	 $avocation_input['avocation-favicon'] = esc_url_raw( $avocation_input['avocation-favicon'] );
+	 $avocation_input['avocation-footertext'] = sanitize_text_field( $avocation_input['avocation-footertext'] );
+	 $avocation_input['avocation-blogtitle'] = sanitize_text_field( $avocation_input['avocation-blogtitle'] );
+	 $avocation_input['avocation-breadcrumbsbg-bg'] = esc_url_raw( $avocation_input['avocation-breadcrumbsbg-bg'] );
+	  $avocation_input['avocation-footerbg-bg'] = esc_url_raw( $avocation_input['avocation-footerbg-bg'] );
 	 
 	 
-	 $input['fburl'] = esc_url_raw( $input['fburl'] );
-	 $input['twitter'] = esc_url_raw( $input['twitter'] );
-	 $input['rss'] = esc_url_raw( $input['rss'] );	
-	 $input['youtube'] = esc_url_raw( $input['youtube'] ); 
-	  $input['pinterest'] = esc_url_raw( $input['pinterest'] ); 
-	 $input['headertop-bg'] = avocation_image_validation(esc_url_raw( $input['headertop-bg'] ));
+	 $avocation_input['avocation-fburl'] = esc_url_raw( $avocation_input['avocation-fburl'] );
+	 $avocation_input['avocation-twitter'] = esc_url_raw( $avocation_input['avocation-twitter'] );
+	 $avocation_input['avocation-rss'] = esc_url_raw( $avocation_input['avocation-rss'] );	
+	 $avocation_input['avocation-youtube'] = esc_url_raw( $avocation_input['avocation-youtube'] ); 
+	  $avocation_input['avocation-pinterest'] = esc_url_raw( $avocation_input['avocation-pinterest'] ); 
+	 
 	
 	 
 	  for($avocation_i=1; $avocation_i <=5 ;$avocation_i++ ):
-	 $input['slider-img-'.$avocation_i] = avocation_image_validation(esc_url_raw( $input['slider-img-'.$avocation_i] ));
-	 $input['slider-title-'.$avocation_i] = sanitize_text_field( $input['slider-title-'.$avocation_i]);
-	 $input['slidercontent-'.$avocation_i] = sanitize_text_field( $input['slidercontent-'.$avocation_i]);
-	 $input['home-button-title-'.$avocation_i] = sanitize_text_field( $input['home-button-title-'.$avocation_i]);
-	 $input['home-button-link-'.$avocation_i] = esc_url_raw( $input['home-button-link-'.$avocation_i]);
+	 $avocation_input['avocation-slider-img-'.$avocation_i] = esc_url_raw( $avocation_input['avocation-slider-img-'.$avocation_i] );
+	 $avocation_input['avocation-slider-title-'.$avocation_i] = sanitize_text_field( $avocation_input['avocation-slider-title-'.$avocation_i]);
+	 $avocation_input['avocation-slidercontent-'.$avocation_i] = sanitize_text_field( $avocation_input['avocation-slidercontent-'.$avocation_i]);
+	 $avocation_input['avocation-home-button-title-'.$avocation_i] = sanitize_text_field( $avocation_input['avocation-home-button-title-'.$avocation_i]);
+	 $avocation_input['avocation-home-button-link-'.$avocation_i] = esc_url_raw( $avocation_input['avocation-home-button-link-'.$avocation_i]);
 	 endfor;
 	 
-	 $input['home-title'] = sanitize_text_field( $input['home-title'] );
-	 $input['home-sub-title'] = sanitize_text_field( $input['home-sub-title'] );
-	 $input['purposebg-bg'] = avocation_image_validation(esc_url_raw( $input['purposebg-bg'] ));
+	 $avocation_input['avocation-home-title'] = sanitize_text_field( $avocation_input['avocation-home-title'] );
+	 $avocation_input['avocation-home-sub-title'] = sanitize_text_field( $avocation_input['avocation-home-sub-title'] );
+	 $avocation_input['avocation-purposebg-bg'] = esc_url_raw( $avocation_input['avocation-purposebg-bg'] );
 	 for($avocation_l=1; $avocation_l <= 3 ;$avocation_l++ ):
-	 	$input['section-icon-'.$avocation_l] = sanitize_text_field( $input['section-icon-'.$avocation_l] );
-	 	$input['sectiontitle-'.$avocation_l] = sanitize_text_field( $input['sectiontitle-'.$avocation_l] );
-	 	$input['sectiondesc-'.$avocation_l] = sanitize_text_field( $input['sectiondesc-'.$avocation_l] );
-	 	$input['sectionurl-'.$avocation_l] = esc_url_raw( $input['sectionurl-'.$avocation_l] );
+	 	$avocation_input['avocation-section-icon-'.$avocation_l] = sanitize_text_field( $avocation_input['avocation-section-icon-'.$avocation_l] );
+	 	$avocation_input['avocation-sectiontitle-'.$avocation_l] = sanitize_text_field( $avocation_input['avocation-sectiontitle-'.$avocation_l] );
+	 	$avocation_input['avocation-sectiondesc-'.$avocation_l] = sanitize_text_field( $avocation_input['avocation-sectiondesc-'.$avocation_l] );
+	 	$avocation_input['avocation-sectionurl-'.$avocation_l] = esc_url_raw( $avocation_input['avocation-sectionurl-'.$avocation_l] );
 	 endfor;
 
-	  $input['home-button-link'] = esc_url_raw( $input['home-button-link'] );
-	  $input['home-blog-title'] = sanitize_text_field( $input['home-blog-title'] );
-	  $input['home-blog-sub-title'] = sanitize_text_field( $input['home-blog-sub-title'] );
+	  $avocation_input['avocation-home-button-link'] = esc_url_raw( $avocation_input['avocation-home-button-link'] );
+	  $avocation_input['avocation-home-blog-title'] = sanitize_text_field( $avocation_input['avocation-home-blog-title'] );
+	  $avocation_input['avocation-home-blog-sub-title'] = sanitize_text_field( $avocation_input['avocation-home-blog-sub-title'] );
 	  
-	  $input['contact-info-title'] = sanitize_text_field( $input['contact-info-title'] );
-	  $input['contact-info'] = sanitize_text_field( $input['contact-info'] );
-	  $input['contact-telephone'] = wp_filter_nohtml_kses( $input['contact-telephone'] );
+	  $avocation_input['avocation-contact-info-title'] = sanitize_text_field( $avocation_input['avocation-contact-info-title'] );
+	  $avocation_input['avocation-contact-info'] = sanitize_text_field( $avocation_input['avocation-contact-info'] );
+	  $avocation_input['avocation-contact-telephone'] = wp_filter_nohtml_kses( $avocation_input['avocation-contact-telephone'] );
 	
-	  $input['contact-email'] = sanitize_email( $input['contact-email'] );
-	  $input['contact-web'] = esc_url_raw( $input['contact-web'] );
-	  $input['contact-code'] = sanitize_text_field( $input['contact-code'] );
-	   $input['contact-code'] = sanitize_text_field( $input['contact-code'] );
+	  $avocation_input['avocation-contact-email'] = sanitize_email( $avocation_input['avocation-contact-email'] );
+	  $avocation_input['avocation-contact-web'] = esc_url_raw( $avocation_input['avocation-contact-web'] );
+	  $avocation_input['avocation-contact-code'] = sanitize_text_field( $avocation_input['avocation-contact-code'] );
+	   $avocation_input['avocation-contact-code'] = sanitize_text_field( $avocation_input['avocation-contact-code'] );
 		
-    return $input;
+    return $avocation_input;
 }
-function avocation_image_validation($avocation_imge_url){
-	$avocation_filetype = wp_check_filetype($avocation_imge_url);
-	$avocation_supported_image = array('gif','jpg','jpeg','png','ico');
-	if (in_array($avocation_filetype['ext'], $avocation_supported_image)) {
-		return $avocation_imge_url;
-	} else {
-	return '';
-	}
-}
+
 function avocation_framework_load_scripts($hook){
 	  if($GLOBALS['avocation_menu'] == $hook){ 
 	wp_enqueue_media();
@@ -135,12 +127,12 @@ function avocation_framework_page(){
             <div class="theme-option-inner-tab-group active">
 				<div class="explain"><?php _e('Size of Logo should be exactly 182x39px for best results.','avocation'); ?></div>
               	<div class="ft-control">
-                <input id="logo-img" class="upload" type="text" name="avocation_theme_options[logo]" 
-                            value="<?php if(!empty($avocation_options['logo'])) { echo esc_url_raw($avocation_options['logo']); } ?>" placeholder="<?php _e('No file chosen','avocation'); ?>" />
+                <input id="logo-img" class="upload" type="text" name="avocation_theme_options[avocation-logo]" 
+                            value="<?php if(!empty($avocation_options['avocation-logo'])) { echo esc_attr($avocation_options['avocation-logo']); } ?>" placeholder="<?php _e('No file chosen','avocation'); ?>" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload','avocation'); ?>" />
                 <div class="screenshot" id="logo-image">
-                  <?php if(!empty($avocation_options['logo'])) { ?>
-					  <img src="<?php echo esc_url($avocation_options['logo']) ?>" alt="<?php _e('logo','avocation'); ?>" />
+                  <?php if(!empty($avocation_options['avocation-logo'])) { ?>
+					  <img src="<?php echo esc_url($avocation_options['avocation-logo']) ?>" alt="<?php _e('Avocation logo','avocation'); ?>" />
 					  <a class='remove-image'> </a>
 				  <?php } ?>
                 </div>
@@ -148,67 +140,67 @@ function avocation_framework_page(){
             </div>
             </div>
               <?php /** new */?>	
-	       <div id="breadcrumbsbg-bg" class="section theme-tabs">
+	       <div id="avocation-breadcrumbsbg-bg" class="section theme-tabs">
             	<a class="heading theme-option-inner-tab" href="javascript:void(0)"><?php _e('Breadcrumbs Backgroung Image (Recommended Size : 1329px * 89px)','avocation'); ?></a>
               <div class="theme-option-inner-tab-group">
               		<div class="ft-control">
-                <input id="breadcrumbsbg-bg" class="upload" type="text" name="avocation_theme_options[breadcrumbsbg-bg]" 
-                            value="<?php if(!empty($avocation_options['breadcrumbsbg-bg'])) { echo esc_url($avocation_options['breadcrumbsbg-bg']); } ?>" placeholder="<?php _e('No file chosen','avocation'); ?>" />
+                <input id="avocation-breadcrumbsbg-bg" class="upload" type="text" name="avocation_theme_options[avocation-breadcrumbsbg-bg]" 
+                            value="<?php if(!empty($avocation_options['avocation-breadcrumbsbg-bg'])) { echo esc_attr($avocation_options['avocation-breadcrumbsbg-bg']); } ?>" placeholder="<?php _e('No file chosen','avocation'); ?>" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload','avocation'); ?>" />
-                <div class="screenshot" id="breadcrumbsbg-bg">
-                  <?php if(!empty($avocation_options['breadcrumbsbg-bg'])) { echo "<img src='".esc_url($avocation_options['breadcrumbsbg-bg'])."' /><a class='remove-image'></a>"; } ?>
+                <div class="screenshot" id="avocation-breadcrumbsbg-bg">
+                  <?php if(!empty($avocation_options['avocation-breadcrumbsbg-bg'])) { echo "<img src='".esc_url($avocation_options['avocation-breadcrumbsbg-bg'])."' /><a class='remove-image'></a>"; } ?>
                 </div>
               </div>
               </div>
             </div>
 	<?php /** end **/ ?>
 	 <?php /** new for footer background*/?>	
-	       <div id="footerbg-bg" class="section theme-tabs">
+	       <div id="avocation-footerbg-bg" class="section theme-tabs">
             	<a class="heading theme-option-inner-tab" href="javascript:void(0)"><?php _e('Footer Backgroung Image (Recommended Size : 1329px * 1035px)','avocation'); ?></a>
               <div class="theme-option-inner-tab-group">
               		<div class="ft-control">
-                <input id="footerbg-bg" class="upload" type="text" name="avocation_theme_options[footerbg-bg]" 
-                            value="<?php if(!empty($avocation_options['footerbg-bg'])) { echo esc_url($avocation_options['footerbg-bg']); } ?>" placeholder="<?php _e('No file chosen','avocation'); ?>" />
+                <input id="avocation-footerbg-bg" class="upload" type="text" name="avocation_theme_options[avocation-footerbg-bg]" 
+                            value="<?php if(!empty($avocation_options['avocation-footerbg-bg'])) { echo esc_attr($avocation_options['avocation-footerbg-bg']); } ?>" placeholder="<?php _e('No file chosen','avocation'); ?>" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload','avocation'); ?>" />
-                <div class="screenshot" id="footerbg-bg">
-                  <?php if(!empty($avocation_options['footerbg-bg'])) { echo "<img src='".esc_url($avocation_options['footerbg-bg'])."' /><a class='remove-image'></a>"; } ?>
+                <div class="screenshot" id="avocation-footerbg-bg">
+                  <?php if(!empty($avocation_options['avocation-footerbg-bg'])) { echo "<img src='".esc_url($avocation_options['avocation-footerbg-bg'])."' /><a class='remove-image'></a>"; } ?>
                 </div>
               </div>
               </div>
             </div>
 	<?php /** end **/ ?>
 	
-            <div class="section theme-tabs theme-favicon">
-              <a class="heading theme-option-inner-tab" href="javascript:void(0)"><?php _e('Favicon (Recommended Size : 32px * 32px)','avocation'); ?></a>
+            <div class="section theme-tabs theme-avocation-favicon">
+              <a class="heading theme-option-inner-tab" href="javascript:void(0)"><?php _e('avocation-favicon (Recommended Size : 32px * 32px)','avocation'); ?></a>
               <div class="theme-option-inner-tab-group">
               	<div class="explain"><?php _e('Size of favicon should be exactly 32x32px for best results.','avocation'); ?></div>
                 <div class="ft-control">
-                  <input id="favicon-img" class="upload" type="text" name="avocation_theme_options[favicon]" 
-                            value="<?php if(!empty($avocation_options['favicon'])) { echo esc_url_raw($avocation_options['favicon']); } ?>" placeholder="<?php _e('No file chosen','avocation'); ?>" />
+                  <input id="avocation-favicon-img" class="upload" type="text" name="avocation_theme_options[avocation-favicon]" 
+                            value="<?php if(!empty($avocation_options['avocation-favicon'])) { echo esc_attr($avocation_options['avocation-favicon']); } ?>" placeholder="<?php _e('No file chosen','avocation'); ?>" />
                   <input id="upload_image_button1" class="upload-button button" type="button" value="<?php _e('Upload','avocation'); ?>" />
-                  <div class="screenshot" id="favicon-image">
-                    <?php  if(!empty($avocation_options['favicon'])) { ?>
-						<img src="<?php echo esc_url($avocation_options['favicon']) ?>" alt="<?php _e('favicon','avocation'); ?>" />	<a class='remove-image'> </a>
+                  <div class="screenshot" id="avocation-favicon-image">
+                    <?php  if(!empty($avocation_options['avocation-favicon'])) { ?>
+						<img src="<?php echo esc_url($avocation_options['avocation-favicon']) ?>" alt="<?php _e('avocation-favicon','avocation'); ?>" />	<a class='remove-image'> </a>
 					<?php } ?>
                   </div>
                 </div>
               </div>
             </div>
            
-             <div id="section-blogtitle" class="section theme-tabs">
+             <div id="section-avocation-blogtitle" class="section theme-tabs">
             	<a class="heading theme-option-inner-tab" href="javascript:void(0)"><?php _e('Blog Title','avocation'); ?></a>
               <div class="theme-option-inner-tab-group">
               	<div class="ft-control">
-                  	<input type="text" id="blogtitle" class="of-input" name="avocation_theme_options[blogtitle]" maxlength="30" size="32"  value="<?php if(!empty($avocation_options['blogtitle'])) { echo sanitize_text_field($avocation_options['blogtitle']); } ?>">
+                  	<input type="text" id="avocation-blogtitle" class="of-input" name="avocation_theme_options[avocation-blogtitle]" maxlength="30" size="32"  value="<?php if(!empty($avocation_options['avocation-blogtitle'])) { echo esc_attr($avocation_options['avocation-blogtitle']); } ?>">
                 </div>                
               </div>
             </div> 
-            <div id="section-footertext" class="section theme-tabs">
+            <div id="section-avocation-footertext" class="section theme-tabs">
             	<a class="heading theme-option-inner-tab" href="javascript:void(0)"><?php _e('Copyright Text','avocation'); ?></a>
               <div class="theme-option-inner-tab-group">
               	<div class="ft-control">
               		<div class="explain"><?php _e('Some text regarding copyright of your site, you would like to display in the footer.','avocation'); ?></div>                
-                  	<input type="text" id="footertext" class="of-input" maxlength="100" name="avocation_theme_options[footertext]" size="32"  value="<?php if(!empty($avocation_options['footertext'])) { echo sanitize_text_field($avocation_options['footertext']); } ?>">
+                  	<input type="text" id="avocation-footertext" class="of-input" maxlength="100" name="avocation_theme_options[avocation-footertext]" size="32"  value="<?php if(!empty($avocation_options['avocation-footertext'])) { echo esc_html($avocation_options['avocation-footertext']); } ?>">
                 </div>                
               </div>
             </div> 
@@ -224,32 +216,32 @@ function avocation_framework_page(){
             <a class="heading theme-option-inner-tab" href="javascript:void(0)"><?php _e('Slider','avocation'); ?><?php echo $avocation_i;?><?php  _e(' (Recommended Size : 1350px * 667px)','avocation');?></a>
             <div class="theme-option-inner-tab-group">
                 <div class="ft-control">
-                <input id="slider-img-<?php echo $avocation_i;?>" class="upload" type="text" name="avocation_theme_options[slider-img-<?php echo $avocation_i;?>]" 
-                            value="<?php if(!empty($avocation_options['slider-img-'.$avocation_i])) { echo esc_url($avocation_options['slider-img-'.$avocation_i]); } ?>" placeholder="<?php _e('No file chosen','avocation'); ?>" />
+                <input id="avocation-slider-img-<?php echo $avocation_i;?>" class="upload" type="text" name="avocation_theme_options[avocation-slider-img-<?php echo $avocation_i;?>]" 
+                            value="<?php if(!empty($avocation_options['avocation-slider-img-'.$avocation_i])) { echo esc_url($avocation_options['avocation-slider-img-'.$avocation_i]); } ?>" placeholder="<?php _e('No file chosen','avocation'); ?>" />
                 <input id="1upload_image_button" class="upload-button button" type="button" value="<?php _e( 'Upload', 'avocation' ); ?>" />
-                <div class="screenshot" id="slider-img-<?php echo $avocation_i;?>">
-                  <?php if(!empty($avocation_options['slider-img-'.$avocation_i])) { echo "<img src='".esc_url($avocation_options['slider-img-'.$avocation_i])."' /><a class='remove-image'></a>"; } ?>
+                <div class="screenshot" id="avocation-slider-img-<?php echo $avocation_i;?>">
+                  <?php if(!empty($avocation_options['avocation-slider-img-'.$avocation_i])) { echo "<img src='".esc_attr($avocation_options['avocation-slider-img-'.$avocation_i])."' /><a class='remove-image'></a>"; } ?>
                 </div>
               </div>
 				<div class="ft-control">
-                    <input type="text" placeholder="<?php _e('Slide Tiltle','avocation'); ?><?php echo $avocation_i; ?> <?php _e('Title','avocation'); ?>" id="slider-title-<?php echo $avocation_i;?>" class="of-input" name="avocation_theme_options[slider-title-<?php echo $avocation_i;?>]" size="32"  value="<?php if(!empty($avocation_options['slider-title-'.$avocation_i])) { echo esc_attr($avocation_options['slider-title-'.$avocation_i]); } ?>">
+                    <input type="text" placeholder="<?php _e('Slide Tiltle','avocation'); ?><?php echo $avocation_i; ?> <?php _e('Title','avocation'); ?>" id="avocation-slider-title-<?php echo $avocation_i;?>" class="of-input" name="avocation_theme_options[avocation-slider-title-<?php echo $avocation_i;?>]" size="32"  value="<?php if(!empty($avocation_options['avocation-slider-title-'.$avocation_i])) { echo esc_attr($avocation_options['avocation-slider-title-'.$avocation_i]); } ?>">
               </div>
               
             
                 <div class="ft-control">
-                    <input type="text" placeholder="<?php _e('Slide','avocation'); ?><?php echo $avocation_i; ?> <?php _e('Content','avocation'); ?>" id="slidercontent-<?php echo $avocation_i;?>" class="of-input" name="avocation_theme_options[slidercontent-<?php echo $avocation_i;?>]" size="32"  value="<?php if(!empty($avocation_options['slidercontent-'.$avocation_i])) { echo esc_attr($avocation_options['slidercontent-'.$avocation_i]); } ?>">
+                    <input type="text" placeholder="<?php _e('Slide','avocation'); ?><?php echo $avocation_i; ?> <?php _e('Content','avocation'); ?>" id="avocation-slidercontent-<?php echo $avocation_i;?>" class="of-input" name="avocation_theme_options[avocation-slidercontent-<?php echo $avocation_i;?>]" size="32"  value="<?php if(!empty($avocation_options['avocation-slidercontent-'.$avocation_i])) { echo esc_attr($avocation_options['avocation-slidercontent-'.$avocation_i]); } ?>">
               </div>
 					<div class="ft-control">	
-					<input id="home-button-title-<?php echo $avocation_i;?>" class="of-input" maxlength="50" name="avocation_theme_options[home-button-title-<?php echo $avocation_i;?>]" type="text" size="46" value="<?php if(!empty($avocation_options['home-button-title-'.$avocation_i])) { echo esc_attr($avocation_options['home-button-title-'.$avocation_i]); } ?>"  placeholder="<?php _e('Button Title','avocation'); ?><?php echo $avocation_i; ?> <?php _e('Button Title','avocation'); ?>" />
+					<input id="avocation-home-button-title-<?php echo $avocation_i;?>" class="of-input" maxlength="50" name="avocation_theme_options[avocation-home-button-title-<?php echo $avocation_i;?>]" type="text" size="46" value="<?php if(!empty($avocation_options['avocation-home-button-title-'.$avocation_i])) { echo esc_attr($avocation_options['avocation-home-button-title-'.$avocation_i]); } ?>"  placeholder="<?php _e('Button Title','avocation'); ?><?php echo $avocation_i; ?> <?php _e('Button Title','avocation'); ?>" />
 				  </div>
 					
 					<div class="ft-control">	
-					<input id="home-button-link-<?php echo $avocation_i;?>" class="of-input" name="avocation_theme_options[home-button-link-<?php echo $avocation_i;?>]" type="text" size="46" value="<?php if(!empty($avocation_options['home-button-link-'.$avocation_i])) { echo esc_attr($avocation_options['home-button-link-'.$avocation_i]); } ?>"  placeholder="<?php _e('Button Link','avocation'); ?><?php echo $avocation_i; ?> <?php _e('Button Link','avocation'); ?>" />
+					<input id="avocation-home-button-link-<?php echo $avocation_i;?>" class="of-input" name="avocation_theme_options[avocation-home-button-link-<?php echo $avocation_i;?>]" type="text" size="46" value="<?php if(!empty($avocation_options['avocation-home-button-link-'.$avocation_i])) { echo esc_attr($avocation_options['avocation-home-button-link-'.$avocation_i]); } ?>"  placeholder="<?php _e('Button Link','avocation'); ?><?php echo $avocation_i; ?> <?php _e('Button Link','avocation'); ?>" />
 				  </div>
 				  <div style="display: block;">
 				<div class="ft-control">
-					<input type="checkbox" id="avocation-remove-slider-url-<?php echo $avocation_i; ?>" name="avocation_theme_options[remove-slider-url-<?php echo $avocation_i;?>]" <?php if(!empty($avocation_options['remove-slider-url-'.$avocation_i])) { ?> checked="checked" <?php } ?> value="yes">
-					<label class="remove-slider-class" for="avocation-remove-slider-url-<?php $avocation_i;?>"><?php _e('Check this if you  want to open in new tab.','avocation') ?></label>
+					<input type="checkbox" id="avocation-remove-slider-url-<?php echo $avocation_i; ?>" name="avocation_theme_options[remove-slider-url-<?php echo $avocation_i;?>]" <?php if(!empty($avocation_options['avocation-remove-slider-url-'.$avocation_i])) { ?> checked="checked" <?php } ?> value="yes">
+					<label class="remove-slider-class" for="avocation-remove-slider-url-<?php $avocation_i;?>"><?php _e('Check this if you donot want to open in new tab.','avocation') ?></label>
                </div>
 			   </div>
                               
@@ -262,15 +254,15 @@ function avocation_framework_page(){
             <a class="heading theme-option-inner-tab" href="javascript:void(0)"><?php _e('About Us Title Bar','avocation');?> </a>
                <div class="theme-option-inner-tab-group">
 				  <div class="ft-control">
-					<input id="home-title" class="of-input" name="avocation_theme_options[home-title]" type="text" maxlength="30" size="46" value="<?php if(!empty($avocation_options['home-title'])) { echo esc_attr($avocation_options['home-title']); } ?>"  placeholder="<?php _e('About Title ','avocation'); ?>" />
+					<input id="avocation-home-title" class="of-input" name="avocation_theme_options[avocation-home-title]" type="text" maxlength="30" size="46" value="<?php if(!empty($avocation_options['avocation-home-title'])) { echo esc_attr($avocation_options['avocation-home-title']); } ?>"  placeholder="<?php _e('About Title ','avocation'); ?>" />
 				  </div>
 				  
 				  <div class="ft-control">	
 					<?php 				
-						 $avocation_content = wpautop($avocation_options['homedesc']);
-						 $avocation_editor_id = 'homedesc';
+						 $avocation_content = wpautop($avocation_options['avocation-homedesc']);
+						 $avocation_editor_id = 'avocation-homedesc';
 						 $avocation_settings = array(
-								'textarea_name' => 'avocation_theme_options[homedesc]',
+								'textarea_name' => 'avocation_theme_options[avocation-homedesc]',
 								'textarea_rows' => 20,
 								'media_buttons' => false,
 								);
@@ -287,23 +279,23 @@ function avocation_framework_page(){
                <div class="theme-option-inner-tab-group">
 				  <div class="ft-control">
 					  <div class="explain"><?php _e('You have to enter the class name like this way fa fa-icon','avocation');?> </div>
-					<input id="section-icon-<?php echo $avocation_j; ?>" class="of-input" maxlength="30" name="avocation_theme_options[section-icon-<?php echo $avocation_j; ?>]" type="text" size="46" value="<?php if(!empty($avocation_options['section-icon-'.$avocation_j])) { echo  esc_attr($avocation_options['section-icon-'.$avocation_j]); } ?>"  placeholder="<?php _e('Section Icon','avocation'); ?>" />
+					<input id="avocation-section-icon-<?php echo $avocation_j; ?>" class="of-input" maxlength="30" name="avocation_theme_options[avocation-section-icon-<?php echo $avocation_j; ?>]" type="text" size="46" value="<?php if(!empty($avocation_options['avocation-section-icon-'.$avocation_j])) { echo  esc_attr($avocation_options['avocation-section-icon-'.$avocation_j]); } ?>"  placeholder="<?php _e('Section Icon','avocation'); ?>" />
 					<span><?php _e('Font Awesome icon names','avocation'); ?> <a target="_blank" href="http://fortawesome.github.io/Font-Awesome/icons/"><?php _e('[View all]','avocation'); ?></a></span>
 				  </div>
 				  <div class="ft-control">	
-					<input id="sectiontitle-<?php echo $avocation_j; ?>" class="of-input" maxlength="50" name="avocation_theme_options[sectiontitle-<?php echo $avocation_j; ?>]" type="text" size="46" value="<?php if(!empty($avocation_options['sectiontitle-'.$avocation_j])) { echo esc_attr($avocation_options['sectiontitle-'.$avocation_j]); } ?>"  placeholder="<?php _e('Section Title','avocation'); ?>" />
+					<input id="avocation-sectiontitle-<?php echo $avocation_j; ?>" class="of-input" maxlength="50" name="avocation_theme_options[avocation-sectiontitle-<?php echo $avocation_j; ?>]" type="text" size="46" value="<?php if(!empty($avocation_options['avocation-sectiontitle-'.$avocation_j])) { echo esc_attr($avocation_options['avocation-sectiontitle-'.$avocation_j]); } ?>"  placeholder="<?php _e('Section Title','avocation'); ?>" />
 				  </div>
 				  <div class="ft-control">	
-					<textarea name="avocation_theme_options[sectiondesc-<?php echo $avocation_j; ?>]" id="sectiondesc-<?php echo $avocation_j; ?>" class="of-input" placeholder="<?php _e('Section Description','avocation'); ?>" maxlength="150" rows="5" ><?php if(!empty($avocation_options['sectiondesc-'.$avocation_j])) { echo esc_textarea($avocation_options['sectiondesc-'.$avocation_j]); } ?></textarea>
+					<textarea name="avocation_theme_options[avocation-sectiondesc-<?php echo $avocation_j; ?>]" id="avocation-sectiondesc-<?php echo $avocation_j; ?>" class="of-input" placeholder="<?php _e('Section Description','avocation'); ?>" maxlength="150" rows="5" ><?php if(!empty($avocation_options['avocation-sectiondesc-'.$avocation_j])) { echo esc_textarea($avocation_options['avocation-sectiondesc-'.$avocation_j]); } ?></textarea>
                   </div>
                   <div class="ft-control">	
-					<input id="sectionurl-<?php echo $avocation_j; ?>" class="of-input" maxlength="50" name="avocation_theme_options[sectionurl-<?php echo $avocation_j; ?>]" type="text" size="46" value="<?php if(!empty($avocation_options['sectionurl-'.$avocation_j])) { echo esc_attr($avocation_options['sectionurl-'.$avocation_j]); } ?>"  placeholder="<?php _e('Section Url','avocation'); ?>" />
+					<input id="avocation-sectionurl-<?php echo $avocation_j; ?>" class="of-input" maxlength="50" name="avocation_theme_options[avocation-sectionurl-<?php echo $avocation_j; ?>]" type="text" size="46" value="<?php if(!empty($avocation_options['avocation-sectionurl-'.$avocation_j])) { echo esc_attr($avocation_options['avocation-sectionurl-'.$avocation_j]); } ?>"  placeholder="<?php _e('Section Url','avocation'); ?>" />
 				  </div>
 				  
 				<div style="display: block;">
 				<div class="ft-control">
-					<input type="checkbox" id="avocation-remove-url-<?php echo $avocation_j; ?>" name="avocation_theme_options[remove-url-<?php echo $avocation_j;?>]" <?php if(!empty($avocation_options['remove-url-'.$avocation_j])) { ?> checked="checked" <?php } ?> value="yes">
-					<label class="remove-slider-class" for="avocation-remove-url-<?php $avocation_l;?>"><?php _e('Check this if you  want to open in new tab.','avocation') ?></label>
+					<input type="checkbox" id="avocation-remove-url-<?php echo $avocation_j; ?>" name="avocation_theme_options[remove-url-<?php echo $avocation_j;?>]" <?php if(!empty($avocation_options['avocation-remove-url-'.$avocation_j])) { ?> checked="checked" <?php } ?> value="yes">
+					<label class="remove-slider-class" for="avocation-remove-url-<?php $avocation_l;?>"><?php _e('Check this if you donot want to open in new tab.','avocation') ?></label>
                </div>
 			   </div>
 			
@@ -316,15 +308,15 @@ function avocation_framework_page(){
             <a class="heading theme-option-inner-tab" href="javascript:void(0)"><?php _e('Purpose Business Title Bar','avocation');?> </a>
                <div class="theme-option-inner-tab-group">
 				  <div class="ft-control">
-					<input id="perfect-title" class="of-input" name="avocation_theme_options[perfect-title]" type="text" maxlength="50" size="46" value="<?php if(!empty($avocation_options['perfect-title'])) { echo esc_attr($avocation_options['perfect-title']); } ?>"  placeholder="<?php _e('Perfect Title ','avocation'); ?>" />
+					<input id="avocation-perfect-title" class="of-input" name="avocation_theme_options[avocation-perfect-title]" type="text" maxlength="50" size="46" value="<?php if(!empty($avocation_options['avocation-perfect-title'])) { echo esc_attr($avocation_options['avocation-perfect-title']); } ?>"  placeholder="<?php _e('Perfect Title ','avocation'); ?>" />
 				  </div>
 				  
 				  <div class="ft-control">	
 					<?php 				
-						 $avocation_content = wpautop($avocation_options['perfectdesc']);
-						 $avocation_editor_id = 'perfectdesc';
+						 $avocation_content = wpautop($avocation_options['avocation-perfectdesc']);
+						 $avocation_editor_id = 'avocation-perfectdesc';
 						 $avocation_settings = array(
-								'textarea_name' => 'avocation_theme_options[perfectdesc]',
+								'textarea_name' => 'avocation_theme_options[avocation-perfectdesc]',
 								'textarea_rows' => 20,
 								'media_buttons' => false,
 								);
@@ -333,11 +325,11 @@ function avocation_framework_page(){
                   </div>
                   <div class="ft-control">
 					  <div class="explain"><?php _e('Here background image 1280 x 853 set in the purpose section ','avocation');?> </div>
-                <input id="purposebg-bg" class="upload" type="text" name="avocation_theme_options[purposebg-bg]" 
-                            value="<?php if(!empty($avocation_options['purposebg-bg'])) { echo esc_url($avocation_options['purposebg-bg']); } ?>" placeholder="<?php _e('No file chosen','avocation'); ?>" />
+                <input id="avocation-purposebg-bg" class="upload" type="text" name="avocation_theme_options[avocation-purposebg-bg]" 
+                            value="<?php if(!empty($avocation_options['avocation-purposebg-bg'])) { echo esc_attr($avocation_options['avocation-purposebg-bg']); } ?>" placeholder="<?php _e('No file chosen','avocation'); ?>" />
                 <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload','avocation'); ?>" />
-                <div class="screenshot" id="purposebg-bg">
-                  <?php if(!empty($avocation_options['purposebg-bg'])) { echo "<img src='".esc_url($avocation_options['purposebg-bg'])."' /><a class='remove-image'></a>"; } ?>
+                <div class="screenshot" id="avocation-purposebg-bg">
+                  <?php if(!empty($avocation_options['avocation-purposebg-bg'])) { echo "<img src='".esc_attr($avocation_options['avocation-purposebg-bg'])."' /><a class='remove-image'></a>"; } ?>
                 </div>
               </div>
                 </div>
@@ -350,51 +342,51 @@ function avocation_framework_page(){
             <a class="heading theme-option-inner-tab" href="javascript:void(0)"><?php _e('Blog Section','avocation');?> </a>
                <div class="theme-option-inner-tab-group">
 				   <div class="ft-control">
-					<input id="home-blog-title" class="of-input" name="avocation_theme_options[home-blog-title]" type="text" maxlength="30" size="46" value="<?php if(!empty($avocation_options['home-blog-title'])) { echo esc_attr($avocation_options['home-blog-title']); } ?>"  placeholder="<?php _e('Blog Title','avocation'); ?>" />
+					<input id="avocation-home-blog-title" class="of-input" name="avocation_theme_options[avocation-home-blog-title]" type="text" maxlength="30" size="46" value="<?php if(!empty($avocation_options['avocation-home-blog-title'])) { echo esc_attr($avocation_options['avocation-home-blog-title']); } ?>"  placeholder="<?php _e('Blog Title','avocation'); ?>" />
 				  </div>		
 				  <div class="ft-control">
-					<textarea name="avocation_theme_options[home-blog-sub-title]" id="home-blog-sub-title" class="of-input" placeholder="<?php _e('Blog Sub Title','avocation'); ?>" maxlength="300" rows="5" ><?php if(!empty($avocation_options['home-blog-sub-title'])) { echo esc_textarea($avocation_options['home-blog-sub-title']); } ?></textarea>  
+					<textarea name="avocation_theme_options[avocation-home-blog-sub-title]" id="avocation-home-blog-sub-title" class="of-input" placeholder="<?php _e('Blog Sub Title','avocation'); ?>" maxlength="300" rows="5" ><?php if(!empty($avocation_options['avocation-home-blog-sub-title'])) { echo esc_textarea($avocation_options['avocation-home-blog-sub-title']); } ?></textarea>  
 					
 				  </div>
 				  	<div class="ft-control">
-                <select name="avocation_theme_options[post-category]" id="category">
-                  <option value=""><?php echo esc_attr(__('Select Category','avocation')); ?></option>
-                  <?php 
-				$avocation_args = array(
-				'meta_query' => array(
-									array(
-									'key' => '_thumbnail_id',
-									'compare' => 'EXISTS'
-										),
-									)
-								);  
-				$avocation_post = new WP_Query( $avocation_args );
-				$avocation_cat_id=array();
-				while($avocation_post->have_posts()){
-				$avocation_post->the_post();
-				$avocation_post_categories = wp_get_post_categories( get_the_id());   
-				$avocation_cat_id[]=$avocation_post_categories[0];
-				}
-				$avocation_cat_id=array_unique($avocation_cat_id);
-				$avocation_args = array(
-				'orderby' => 'name',
-				'parent' => 0,
-				'include'=>$avocation_cat_id
-				);
-				$avocation_categories = get_categories($avocation_args); 
-                  foreach ($avocation_categories as $avocation_category) {
-					  if($avocation_category->term_id == $avocation_options['post-category'])
-					  	$avocation_selected="selected=selected";
-					  else
-					  	$avocation_selected='';
-                    $avocation_option = '<option value="'.$avocation_category->term_id .'" '.$avocation_selected.'>';
-                    $avocation_option .= $avocation_category->cat_name;
-                    $avocation_option .= '</option>';
-                    echo $avocation_option;
-                  }
-                 ?>
-                </select>
-                </div>   
+                <select name="avocation_theme_options[avocation-post-category]" id="category">
+                <option value=""><?php echo esc_attr(__('Select Category', 'avocation')); ?></option>
+                                           <?php
+												$avocation_args = array(
+												'meta_query' => array(
+													array(
+														'key' => '_thumbnail_id',
+														'compare' => 'EXISTS'
+													),
+												)
+												);
+												$avocation_post = new WP_Query($avocation_args);
+												$avocation_cat_id = array();
+												while ($avocation_post->have_posts()) {
+												$avocation_post->the_post();
+												$avocation_post_categories = wp_get_post_categories(get_the_id());
+												foreach ($avocation_post_categories as $avocation_post_category)
+													$avocation_cat_id[] = $avocation_post_category;
+												}
+												$avocation_cat_id = array_unique($avocation_cat_id);
+												$avocation_args = array(
+												'orderby' => 'name',
+												'parent' => 0,
+												'include' => $avocation_cat_id
+												);
+												$avocation_categories = get_categories($avocation_args);
+												foreach ($avocation_categories as $avocation_category) {
+												if ($avocation_category->term_id == $avocation_options['avocation-post-category'])
+													$avocation_selected = "selected=selected";
+												else
+													$avocation_selected = '';
+												$avocation_option = '<option value="' . $avocation_category->term_id . '" ' . $avocation_selected . '>';
+												$avocation_option .= $avocation_category->cat_name;
+												$avocation_option .= '</option>';
+												echo $avocation_option;
+												}
+												?>
+                </select>        </div>   
 				 
               </div>
          </div>
@@ -405,43 +397,43 @@ function avocation_framework_page(){
             	<a class="heading theme-option-inner-tab active" href="javascript:void(0)"><?php _e('Facebook','avocation'); ?></a>
               <div class="theme-option-inner-tab-group active">
               	<div class="ft-control">
-              		<div class="explain"><?php _e('Facebook profile or page URL ','avocation'); ?>i.e. http://facebook.com/username/ </div>      	<input id="facebook" class="of-input" name="avocation_theme_options[fburl]" size="30" type="text" value="<?php if(!empty($avocation_options['fburl'])) { echo esc_url_raw($avocation_options['fburl']); } ?>" />
+              		<div class="explain"><?php _e('Facebook profile or page URL ','avocation'); ?>i.e. http://facebook.com/username/ </div>      	<input id="facebook" class="of-input" name="avocation_theme_options[avocation-fburl]" size="30" type="text" value="<?php if(!empty($avocation_options['avocation-fburl'])) { echo esc_attr($avocation_options['avocation-fburl']); } ?>" />
                 </div>                
               </div>
             </div>
-            <div id="section-twitter" class="section theme-tabs">
-            	<a class="heading theme-option-inner-tab" href="javascript:void(0)"><?php _e('Twitter','avocation'); ?></a>
+            <div id="section-avocation-twitter" class="section theme-tabs">
+            	<a class="heading theme-option-inner-tab" href="javascript:void(0)"><?php _e('twitter','avocation'); ?></a>
               <div class="theme-option-inner-tab-group">
               	<div class="ft-control">
-              		<div class="explain"><?php _e('Twitter profile or page URL ','avocation'); ?>i.e. http://www.twitter.com/username/</div>                
-                  	<input id="twitter" class="of-input" name="avocation_theme_options[twitter]" type="text" size="30" value="<?php if(!empty($avocation_options['twitter'])) { echo esc_url_raw($avocation_options['twitter']); } ?>" />
+              		<div class="explain"><?php _e('twitter profile or page URL ','avocation'); ?>i.e. http://www.twitter.com/username/</div>                
+                  	<input id="avocation-twitter" class="of-input" name="avocation_theme_options[avocation-twitter]" type="text" size="30" value="<?php if(!empty($avocation_options['avocation-twitter'])) { echo esc_attr($avocation_options['avocation-twitter']); } ?>" />
                 </div>                
               </div>
             </div>
-            <div id="section-youtube" class="section theme-tabs">
-            	<a class="heading theme-option-inner-tab" href="javascript:void(0)"><?php _e('Youtube','avocation'); ?></a>
+            <div id="section-avocation-youtube" class="section theme-tabs">
+            	<a class="heading theme-option-inner-tab" href="javascript:void(0)"><?php _e('youtube','avocation'); ?></a>
               <div class="theme-option-inner-tab-group">
               	<div class="ft-control">
-              		<div class="explain"><?php _e('youtube profile or page URL ','avocation'); ?>i.e. https://youtube.com/username/</div>                
-                  	 <input id="youtube" class="of-input" name="avocation_theme_options[youtube]" type="text" size="30" value="<?php if(!empty($avocation_options['youtube'])) { echo esc_url_raw($avocation_options['youtube']); } ?>" />
+              		<div class="explain"><?php _e('youtube profile or page URL ','avocation'); ?>i.e. https://www.youtube.com/username/</div>                
+                  	 <input id="avocation-youtube" class="of-input" name="avocation_theme_options[avocation-youtube]" type="text" size="30" value="<?php if(!empty($avocation_options['avocation-youtube'])) { echo esc_attr($avocation_options['avocation-youtube']); } ?>" />
                 </div>                
               </div>
             </div>
-			<div id="section-rss" class="section theme-tabs">
-            	<a class="heading theme-option-inner-tab" href="javascript:void(0)"><?php _e('RSS','avocation'); ?></a>
+			<div id="section-avocation-rss" class="section theme-tabs">
+            	<a class="heading theme-option-inner-tab" href="javascript:void(0)"><?php _e('rss','avocation'); ?></a>
               <div class="theme-option-inner-tab-group">
               	<div class="ft-control">
-              		<div class="explain"><?php _e('RSS profile or page URL ','avocation'); ?>i.e. https://www.rss.com/username/</div>                
-                  	<input id="rss" class="of-input" name="avocation_theme_options[rss]" type="text" size="30" value="<?php if(!empty($avocation_options['rss'])) { echo esc_url_raw($avocation_options['rss']); } ?>" />
+              		<div class="explain"><?php _e('rss profile or page URL ','avocation'); ?>i.e. https://www.rss.com/username/</div>                
+                  	<input id="avocation-rss" class="of-input" name="avocation_theme_options[avocation-rss]" type="text" size="30" value="<?php if(!empty($avocation_options['avocation-rss'])) { echo esc_attr($avocation_options['avocation-rss']); } ?>" />
                 </div>                
               </div>
             </div>
-            <div id="section-pinterest" class="section theme-tabs">
-            	<a class="heading theme-option-inner-tab" href="javascript:void(0)"><?php _e('Pinterest','avocation'); ?></a>
+            <div id="section-avocation-pinterest" class="section theme-tabs">
+            	<a class="heading theme-option-inner-tab" href="javascript:void(0)"><?php _e('pinterest','avocation'); ?></a>
               <div class="theme-option-inner-tab-group">
               	<div class="ft-control">
-              		<div class="explain"><?php _e('Pinterest profile or page URL ','avocation'); ?>i.e. https://www.pinterest.com/username/</div>                
-                  	<input id="pinterest" class="of-input" name="avocation_theme_options[pinterest]" type="text" size="30" value="<?php if(!empty($avocation_options['pinterest'])) { echo esc_url_raw($avocation_options['pinterest']); } ?>" />
+              		<div class="explain"><?php _e('pinterest profile or page URL ','avocation'); ?>i.e. https://www.pinterest.com/username/</div>                
+                  	<input id="avocation-pinterest" class="of-input" name="avocation_theme_options[avocation-pinterest]" type="text" size="30" value="<?php if(!empty($avocation_options['avocation-pinterest'])) { echo esc_attr($avocation_options['avocation-pinterest']); } ?>" />
                 </div>                
               </div>
             </div>
@@ -452,7 +444,7 @@ function avocation_framework_page(){
             	<a class="heading theme-option-inner-tab" href="javascript:void(0)"><?php _e('Contact Info Title','avocation'); ?></a>
               <div class="theme-option-inner-tab-group">
               	<div class="ft-control">
-                  	<input type="text" id="contactinfotitle" class="of-input" name="avocation_theme_options[contact-info-title]" maxlength="30" size="32"  value="<?php if(!empty($avocation_options['contact-info-title'])) { echo sanitize_text_field($avocation_options['contact-info-title']); } ?>">
+                  	<input type="text" id="avocation-contactinfotitle" class="of-input" name="avocation_theme_options[avocation-contact-info-title]" maxlength="30" size="32"  value="<?php if(!empty($avocation_options['avocation-contact-info-title'])) { echo esc_attr($avocation_options['avocation-contact-info-title']); } ?>">
                 </div>                
               </div>
             </div>
@@ -460,7 +452,7 @@ function avocation_framework_page(){
             	<a class="heading theme-option-inner-tab" href="javascript:void(0)"><?php _e('Contact Info','avocation'); ?></a>
               <div class="theme-option-inner-tab-group">
               	<div class="ft-control">
-                  	<textarea name="avocation_theme_options[contact-info]" id="contact-info" class="of-input" placeholder="<?php _e('Description','avocation'); ?>" maxlength="200" rows="5" ><?php if(!empty($avocation_options['contact-info'])) { echo esc_textarea($avocation_options['contact-info']); } ?></textarea>
+                  	<textarea name="avocation_theme_options[avocation-contact-info]" id="avocation-contact-info" class="of-input" placeholder="<?php _e('Description','avocation'); ?>" maxlength="200" rows="5" ><?php if(!empty($avocation_options['avocation-contact-info'])) { echo esc_textarea($avocation_options['avocation-contact-info']); } ?></textarea>
                 </div>                
               </div>
             </div>
@@ -468,7 +460,7 @@ function avocation_framework_page(){
             	<a class="heading theme-option-inner-tab" href="javascript:void(0)"><?php _e('Contact Telephone','avocation'); ?></a>
               <div class="theme-option-inner-tab-group">
               	<div class="ft-control">
-                  	<input type="text" id="contact-telephone" class="of-input" name="avocation_theme_options[contact-telephone]" maxlength="30" size="32"  value="<?php if(!empty($avocation_options['contact-telephone'])) { echo sanitize_text_field($avocation_options['contact-telephone']); } ?>">
+                  	<input type="text" id="avocation-contact-telephone" class="of-input" name="avocation_theme_options[avocation-contact-telephone]" maxlength="30" size="32"  value="<?php if(!empty($avocation_options['avocation-contact-telephone'])) { echo esc_attr($avocation_options['avocation-contact-telephone']); } ?>">
                 </div>                
               </div>
             </div>
@@ -477,7 +469,7 @@ function avocation_framework_page(){
             	<a class="heading theme-option-inner-tab" href="javascript:void(0)"><?php _e('Contact Email','avocation'); ?></a>
               <div class="theme-option-inner-tab-group">
               	<div class="ft-control">
-                  	<input type="text" id="contact-fax" class="of-input" name="avocation_theme_options[contact-email]" maxlength="30" size="32"  value="<?php if(!empty($avocation_options['contact-email'])) { echo sanitize_text_field($avocation_options['contact-email']); } ?>">
+                  	<input type="text" id="avocation-contact-fax" class="of-input" name="avocation_theme_options[avocation-contact-email]" maxlength="30" size="32"  value="<?php if(!empty($avocation_options['avocation-contact-email'])) { echo esc_attr($avocation_options['avocation-contact-email']); } ?>">
                 </div>                
               </div>
             </div>
@@ -485,7 +477,7 @@ function avocation_framework_page(){
             	<a class="heading theme-option-inner-tab" href="javascript:void(0)"><?php _e('Contact web','avocation'); ?></a>
               <div class="theme-option-inner-tab-group">
               	<div class="ft-control">
-                  	<input type="text" id="contactweb" class="of-input" name="avocation_theme_options[contact-web]" maxlength="30" size="32"  value="<?php if(!empty($avocation_options['contact-web'])) { echo esc_url_raw($avocation_options['contact-web']); } ?>">
+                  	<input type="text" id="avocation-contactweb" class="of-input" name="avocation_theme_options[avocation-contact-web]" maxlength="30" size="32"  value="<?php if(!empty($avocation_options['avocation-contact-web'])) { echo esc_html($avocation_options['avocation-contact-web']); } ?>">
                 </div>                
               </div>
             </div>
@@ -493,7 +485,7 @@ function avocation_framework_page(){
             	<a class="heading theme-option-inner-tab" href="javascript:void(0)"><?php _e('Contact Address','avocation'); ?></a>
               <div class="theme-option-inner-tab-group">
               	<div class="ft-control">
-                  	<textarea name="avocation_theme_options[contact-address]" id="contactaddress" class="of-input" placeholder="<?php _e('Contact Address','avocation'); ?>" maxlength="150" rows="5"><?php if(!empty($avocation_options['contact-address'])) { echo esc_textarea($avocation_options['contact-address']); } ?></textarea>
+                  	<textarea name="avocation_theme_options[avocation-contact-address]" id="contactaddress" class="of-input" placeholder="<?php _e('Contact Address','avocation'); ?>" maxlength="150" rows="5"><?php if(!empty($avocation_options['avocation-contact-address'])) { echo esc_textarea($avocation_options['avocation-contact-address']); } ?></textarea>
                 </div>                
               </div>
             </div>
@@ -502,7 +494,7 @@ function avocation_framework_page(){
               <div class="theme-option-inner-tab-group">
 				  <div class="explain"><?php _e('here you have to write the shortcode ','avocation'); ?>i.e. [contact-form-7 id="60" title="Contact form 1"]</div>
               	<div class="ft-control">
-                  	<input name="avocation_theme_options[contact-code]" id="contactcode" class="of-input" placeholder="<?php _e('Shortcode','avocation'); ?>" size="40" maxlength="130" value="<?php if(!empty($avocation_options['contact-code'])) { echo esc_attr($avocation_options['contact-code']); } ?>"/>
+                  	<input name="avocation_theme_options[avocation-contact-code]" id="avocation-contactcode" class="of-input" placeholder="<?php _e('Shortcode','avocation'); ?>" size="40" maxlength="130" value="<?php if(!empty($avocation_options['avocation-contact-code'])) { echo esc_attr($avocation_options['avocation-contact-code']); } ?>"/>
                 </div>                
               </div>
             </div>

@@ -1,4 +1,4 @@
-jQuery(document).ready(function () {
+jQuery(document).ready(function () {  
 
     if (window.matchMedia('(min-width: 768px)').matches) {
         jQuery(".amenu-list li").hover(

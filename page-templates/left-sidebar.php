@@ -23,7 +23,8 @@ get_header();
     <!--Our-Blog  Start-->
     <div class="avocation-container  container"> 
 
-        <div class="blog-wrap">
+        <div class="blog-wrap row">
+
             <?php get_sidebar(); ?>
 
             <div class="blog-page col-md-offset-1 col-md-8 col-sm-8">                        
@@ -37,7 +38,7 @@ get_header();
                             <?php endif; ?>
                         </div>
                         <a href="<?php echo get_permalink(); ?>" class="blog-title"><?php esc_attr(the_title()); ?></a>  
-                        <?php avocation_entry_meta(); ?> 
+                        <?php  esc_attr_e(avocation_entry_meta()); ?> 
                         <div class="our-blog-details">
                             <?php the_content(); ?>
 

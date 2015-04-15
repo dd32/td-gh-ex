@@ -42,9 +42,9 @@ function update($avocation_lp_new_instance, $avocation_lp_old_instance)
 
 }
 
-function widget($args, $avocation_lp_instance)
+function widget($avocation_args, $avocation_lp_instance)
 {
-extract($args, EXTR_SKIP);
+extract($avocation_args, EXTR_SKIP);
 
 echo $before_widget;
 $avocation_lp_title = empty($avocation_lp_instance['title']) ? ' ' : apply_filters('widget_title', $avocation_lp_instance['title']);
@@ -55,27 +55,33 @@ echo $before_title . $avocation_lp_title . $after_title;;
   $avocation_lp_number = ( ! empty( $avocation_lp_instance['number'] ) ) ? absint( $avocation_lp_instance['number'] ) : 10;
 
 
-$query = new WP_Query( apply_filters( 'widget_posts_args', array( 'posts_per_page' => $avocation_lp_number, 'no_found_rows' => true, 'post_status' => 'publish', 'ignore_sticky_posts' => true ) ) );?>
+$avocation_query = new WP_Query( apply_filters( 'widget_posts_args', 
+										array( 'posts_per_page' => $avocation_lp_number, 
+										'no_found_rows' => true, 
+										'post_status' => 'publish', 
+										'ignore_sticky_posts' => true,
+										'meta_query' => array(
+												array(
+												'key' => '_thumbnail_id',
+												'compare' => 'EXISTS'
+													),
+												)
+										 ) ) );?>
 <ul>
-		<?php if ($query->have_posts()) :
-			while ( $query->have_posts() ) : $query->the_post(); ?>
+		<?php if ($avocation_query->have_posts()) :
+			while ( $avocation_query->have_posts() ) : $avocation_query->the_post(); ?>
 			<li>
 				<div class="popular-post">
 				
-						<a href="<?php echo get_permalink(); ?>">
-            	
-							<?php $avocation_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()),'avocation-latest-posts-widget'); ?>
-				
-							<?php if($avocation_image != "") 
-								  { ?>
-								<img src="<?php echo esc_url($avocation_image[0]); ?>" width="50" height="50" class="img-responsive" alt="<?php the_title(); ?>"/>
-							<?php } 
-							else
-							{ ?>
-								<img src="<?php echo get_template_directory_uri(); ?>/images/image.jpeg" height="50px" width="50px" alt="<?php echo get_the_title(); ?>" class="img-responsive" />
-							<?php } ?>
+						
+            		<a href="<?php echo get_permalink(); ?>">
+            	 <?php if ( has_post_thumbnail() ) : ?>
+						 <?php the_post_thumbnail( 'avocation-latest-posts-widget', array( 'alt' => get_the_title(), 'class' => 'img-responsive') ); ?>
+					<?php endif; ?>	
+					
              	
 						</a>
+						
 						
 					
 					<div class="blog-date">					
