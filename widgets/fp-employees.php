@@ -134,7 +134,9 @@ class Moesia_Employees extends WP_Widget {
 					?>
 					<div class="employee col-md-4 col-sm-6 col-xs-6">
 						<?php if ($photo != '') : ?>
-							<img class="employee-photo wow zoomInDown" src="<?php echo esc_url($photo); ?>" alt="<?php the_title(); ?>">
+							<?php $image_id  = moesia_get_image_id($photo); ?>
+							<?php $image_src = wp_get_attachment_image_src($image_id, 'moesia-employees-thumb'); ?>
+							<img class="employee-photo wow zoomInDown" src="<?php echo esc_url($image_src[0]); ?>" alt="<?php the_title(); ?>">
 						<?php endif; ?>
 						<h4 class="employee-name wow fadeInUp"><?php the_title(); ?></h4>
 						<?php if ($position != '') : ?>

@@ -245,7 +245,7 @@ function moesia_custom_styles($custom) {
     $action_area_title_dec = esc_html(get_theme_mod( 'action_area_title_dec' ));
     $action_area_message = esc_html(get_theme_mod( 'action_area_message' ));
     $action_area_btn = esc_html(get_theme_mod( 'action_area_btn' ));
-    $action_area_btn_bs = esc_html(get_theme_mod( 'action_area_btn_bs' ));
+    $action_area_btn_bs = esc_html(get_theme_mod( 'action_area_btn_bs', '#c2503d' ));
 
     if ( isset($action_area_bg) && ( $action_area_bg != '#ffffff' ) ) {
         $custom .= ".action-area { background-color: {$action_area_bg}; }"."\n";
@@ -262,9 +262,8 @@ function moesia_custom_styles($custom) {
     if ( isset($action_area_btn) && ( $action_area_btn != '#ff6b53' ) ) {
         $custom .= ".call-to-action { background-color: {$action_area_btn}; }"."\n";
     }
-    if ( isset($action_area_btn_bs) && ( $action_area_btn_bs != '#C2503D' ) ) {
-        $custom .= ".call-to-action { box-shadow: 0 5px 0 {$action_area_btn_bs}; }"."\n";
-    }
+    $custom .= ".call-to-action { box-shadow: 0 5px 0 {$action_area_btn_bs}; }"."\n";
+
     //Welcome area
     $header_title_color = esc_html(get_theme_mod( 'header_title_color' ));
     $header_desc_color = esc_html(get_theme_mod( 'header_desc_color' ));
@@ -294,6 +293,7 @@ function moesia_custom_styles($custom) {
 	if ( isset($primary_color) && ( $primary_color != '#ff6b53' )) {
 		$custom .= ".post-navigation .nav-previous, .post-navigation .nav-next, .paging-navigation .nav-previous, .paging-navigation .nav-next, .comment-respond input[type=\"submit\"], ::selection { background-color: {$primary_color}; }"."\n";
 		$custom .= ".main-navigation a:hover, .entry-title a:hover, .entry-meta a:hover, .entry-footer a:hover, .social-widget li a::before, .author-social a, .widget a:hover, blockquote:before { color: {$primary_color}; }"."\n";
+		$custom .= ".panel.widget .widget-title:after, .so-panel.widget .widget-title:after { border-color: {$primary_color}; }"."\n";	
 	}
 	//Site title
 	$site_title = esc_html(get_theme_mod( 'site_title_color' ));

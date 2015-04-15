@@ -115,7 +115,7 @@ class Moesia_Clients extends WP_Widget {
 							<?php if ($link) : ?>	
 								<a href="<?php echo esc_url($link); ?>" target="_blank"><?php the_post_thumbnail(); ?></a>
 							<?php else : ?>
-								<?php the_post_thumbnail(); ?>
+								<?php the_post_thumbnail('moesia-clients-thumb'); ?>
 							<?php endif; ?>
 						</div>
 					<?php endwhile; ?>

@@ -132,7 +132,7 @@ class Moesia_Latest_News extends WP_Widget {
 							<?php if ( has_post_thumbnail() ) : ?>
 								<div class="entry-thumb wow fadeInDown">
 									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" >
-										<?php the_post_thumbnail('moesia-thumb'); ?>
+										<?php the_post_thumbnail('moesia-news-thumb'); ?>
 									</a>			
 								</div>	
 							<?php endif; ?>						
@@ -143,10 +143,16 @@ class Moesia_Latest_News extends WP_Widget {
 				</div>
 				<?php $cat = get_term_by('slug', $category, 'category') ?>
 				<?php if ($category) : //Link to the category page instead of blog page if a category is selected ?>
-					<a href="<?php echo esc_url(get_category_link(get_cat_ID($cat -> name))); ?>" class="all-news"><?php echo $see_all_text; ?></a>
+				<a href="<?php echo esc_url(get_category_link(get_cat_ID($cat -> name))); ?>" class="all-news">
 				<?php else : ?>
-					<a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>" class="all-news"><?php echo $see_all_text; ?></a>
+				<a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>" class="all-news">
 				<?php endif; ?>
+					<?php if (!$see_all_text) : ?>
+						<?php echo __( 'See all our news', 'moesia' ); ?>					
+					<?php else : ?>
+						<?php echo $see_all_text; ?>
+					<?php endif; ?>
+				</a>
 			</div>
 		<?php if ($image_uri != '') : ?>
 			<style type="text/css">

@@ -1,5 +1,12 @@
 Changelog
 
+15 Apr 2015 - 1.30
+--------------------------------------
+- added new image sizes;
+- changed content_width;
+- fixed read more button for latest news widget;
+- small dynamic styles changes.
+
 1 Apr 2015 - 1.28
 --------------------------------------
 - a quick fix to match the new Page Builder by SiteOrigin changes.

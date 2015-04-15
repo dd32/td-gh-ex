@@ -140,7 +140,9 @@ class Moesia_Testimonials extends WP_Widget {
 					<div class="testimonial col-md-6 col-sm-6 fadeInUp">
 						<div class="testimonial-body"><?php the_content(); ?></div>
 						<?php if ($photo != '') : ?>
-							<img class="client-photo col-md-4" src="<?php echo esc_url($photo); ?>" alt="<?php the_title(); ?>">
+							<?php $image_id  = moesia_get_image_id($photo); ?>
+							<?php $image_src = wp_get_attachment_image_src($image_id, 'moesia-testimonials-thumb'); ?>
+							<img class="client-photo col-md-4" src="<?php echo esc_url($image_src[0]); ?>" alt="<?php the_title(); ?>">
 						<?php endif; ?>
 						<h4 class="client-name col-md-8"><?php the_title(); ?></h4>
 						<?php if ($function != '') : ?>

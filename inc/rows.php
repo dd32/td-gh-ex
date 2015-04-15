@@ -24,10 +24,10 @@ function moesia_panels_row_style_fields($fields) {
 		'type' => 'url',
 	);
 
-
 	return $fields;
 }
 add_filter('siteorigin_panels_row_style_fields', 'moesia_panels_row_style_fields');
+remove_filter('siteorigin_panels_row_style_fields', array('SiteOrigin_Panels_Default_Styling', 'row_style_fields' ) );
 
 function moesia_panels_panels_row_style_attributes($attr, $style) {
 	$attr['style'] = '';

@@ -30,7 +30,7 @@ function moesia_setup() {
 	// Set the content width based on the theme's design and stylesheet.
 	global $content_width;
 	if ( ! isset( $content_width ) ) {
-		$content_width = 640; /* pixels */
+		$content_width = 1140; /* pixels */
 	}	
 
 	/*
@@ -41,6 +41,10 @@ function moesia_setup() {
 	add_theme_support( 'post-thumbnails' );
 	add_image_size('project-image', 350, 250, true);
 	add_image_size('moesia-thumb', 750);
+	add_image_size('moesia-news-thumb', 400);
+	add_image_size('moesia-employees-thumb', 430);
+	add_image_size('moesia-clients-thumb', 150);
+	add_image_size('moesia-testimonials-thumb', 100);
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -342,6 +346,15 @@ if (get_theme_mod('moesia_menu_top', 0) == 0) {
 	add_action('tha_header_after', 'moesia_nav_bar');
 } else {
 	add_action('tha_header_before', 'moesia_nav_bar');
+}
+
+/**
+ * Get image IDs
+ */
+function moesia_get_image_id($photo) {
+	global $wpdb;
+	$attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE guid='%s';", $photo )); 
+    return $attachment[0]; 
 }
 
 /**
