@@ -50,10 +50,10 @@ Fonts
 ScreenShot Images
 
     Slider Image
-    https://unsplash.com/photos/39f997mmLvQ/download
-    https://unsplash.com/photos/eOLpJytrbsQ/download
-    https://unsplash.com/photos/kG71BXh8KFw/download
-    https://unsplash.com/photos/29SqSdfvN_A/download
+    http://pixabay.com/en/girl-young-female-happy-face-689137/
+    http://pixabay.com/en/tablet-computer-woman-reading-690032/
+    http://pixabay.com/en/model-fashion-glamour-girl-female-600238/
+    http://pixabay.com/en/camera-video-camera-lens-technology-408258/
     
     For all four section
     https://unsplash.com/photos/29SqSdfvN_A/download

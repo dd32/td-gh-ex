@@ -36,27 +36,6 @@ function accesspress_header_scripts(){
     if (!empty($apmag_favicon)) {
         echo '<link rel="icon" type="image/png" href="' . $apmag_favicon . '">';
     }
-    /*
-    $page_background_option = of_get_option('page_background_option');
-    $show_slider = of_get_option('show_slider');  
-    echo "<style>";
-    echo "html body{";
-    if($page_background_option == 'image'): 
-    $background = of_get_option('page_background_image');
-        echo 'background:url('.esc_url($background["image"]).') '.esc_attr($background["repeat"]).' '.esc_attr($background["position"]).' '.esc_attr($background["attachment"]).' '.esc_attr($background["color"]);
-    elseif($page_background_option == 'color'): 
-        echo 'background:'.esc_attr(of_get_option('page_background_color'));
-    elseif($page_background_option == 'pattern'):
-        echo 'background:url('.get_template_directory_uri().'/inc/panel/images/patterns/'.esc_attr(of_get_option("page_background_pattern")).'.png)';
-    endif;
-    echo "}";
-    
-    if($show_slider == '0'):
-        echo '#masthead{margin-bottom:40px}';
-    endif;
-    echo "</style>";
-*/
-
 }
 
 add_action('wp_head', 'accesspress_header_scripts');
@@ -125,8 +104,6 @@ function accesspress_mag_slider_cb(){
                             <?php if($slide_info==1):?>
                             <div class="mag-slider-caption">
                               <h3 class="slide-title"><?php the_title();?></h3>
-                              <div class="slide-excerpt"><?php echo '<p>'. accesspress_word_count(get_the_content(),27) .'</p>' ;?></div>
-                              <span class="cnt-reading"><a href="<?php echo the_permalink();?>"><?php echo $trans_continue ;?></a></span>
                             </div>
                             <?php endif;?>
                         </div>
@@ -136,7 +113,6 @@ function accesspress_mag_slider_cb(){
                             <div class="slide-image"><img src="<?php echo $post_small_image_path[0];?>" alt="<?php echo esc_attr($post_image_alt);?>" /></div>
                             <div class="mag-small-slider-caption">
                               <?php if($slide_info==1):?><h3 class="slide-title"><a href="<?php echo the_permalink();?>"><?php the_title();?></a></h3><?php endif; ?>
-                              <div class="home-posted clearfix"><?php do_action( 'accesspress_mag_home_posted_on' );?></div>
                             </div>                            
                         </div>
             <?php 

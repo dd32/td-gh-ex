@@ -208,16 +208,10 @@ function accesspress_mag_scripts() {
     wp_enqueue_style( 'accesspress-mag-dosis-font', 'http://fonts.googleapis.com/css?family=Dosis:400,300,500,600,700' );	
     wp_enqueue_style( 'responsive', get_template_directory_uri() . '/css/responsive.css');
 
-    wp_enqueue_script( 'jquery' );
-    
     wp_enqueue_script( 'accesspress-mag-bxslider-js', get_template_directory_uri(). '/js/jquery.bxslider.min.js', array(), '4.1.2', true );
-    
     wp_enqueue_script( 'accesspress-mag-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
-
 	wp_enqueue_script( 'accesspress-mag-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-
 	wp_enqueue_script( 'accesspress-mag-wow', get_template_directory_uri() . '/js/wow.min.js', array(), '1.0.1');
-
 	wp_enqueue_script( 'accesspress-mag-custom-scripts', get_template_directory_uri() . '/js/custom-scripts.js', array('jquery'), '1.0.1' );
     
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

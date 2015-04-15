@@ -5,7 +5,6 @@
 
 jQuery(document).ready(function($){
         
-   
 $('.search-icon i.fa-search').click(function() {
     $('.search-icon .ak-search').toggleClass('active');
 });

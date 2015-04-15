@@ -4,7 +4,7 @@ Theme URI: http://accesspressthemes.com/accesspress-mag/
 Author: Accesspress Theme
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Mag is clean & modern WordPress magazine theme. It is ideal for newspaper, editorial, online magazine, review site, blog or personal website. It is a cutting-edge, feature-rich FREE Wordpress theme and is fully-responsive. Its feature includes: xx page templates, xx post layout, author block, in built rating system, large featured images for page/post, social media integration for wider social reach. 
-Version: 1.0.4
+Version: 1.0.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: accesspress-mag
@@ -1609,7 +1609,7 @@ body.boxed-layout {
 }
 
 .big-cat-box {
-	background: none repeat scroll 0 0 #dc3522;
+	background: none repeat scroll 0 0 #3d3d3d;
 	color: #ffffff;
 	padding:10px;
 	position: absolute;
@@ -1641,9 +1641,9 @@ body.boxed-layout {
 
 
 .mag-slider-caption {
-	bottom: 10px;
+	bottom: 0;
 	color: #ffffff;
-	left: 30px;
+	left: 0;
 	position: absolute;
 	width: 92%;
 	z-index: 99;
@@ -1703,23 +1703,25 @@ body.boxed-layout {
 }
 
 .mag-slider-caption .slide-title {
-	background: none repeat scroll 0 0 rgba(250, 53, 34, 0.8);
+	background: none repeat scroll 0 0 rgba(250, 53, 34, 0.5);
 	color: #ffffff;
 	font-family: "Oswald",sans-serif;
 	font-size: 24px;
 	font-weight: 300;
 	line-height: 22px;
-	margin: 0 0 5px;
+	margin: 0 0 0;
 	padding: 8px 10px;
 	text-transform: uppercase;
+	float: left;
 }
 
 .mag-small-slider-caption .slide-title {
 	background: none repeat scroll 0 0 rgba(250, 53, 34, 0.8);
 	font-size: 16px;
-	margin-bottom: 2px;
+	margin-bottom: 0;
 	padding: 8px 10px;
 	font-weight: 300;
+	float: left;
 }
 
 .mag-small-slider-caption .home-posted{
@@ -1774,22 +1776,22 @@ body.boxed-layout {
 }
 
 .mag-small-slider-caption {
-	bottom: 2px;
-	left: 20px;
+	bottom: 0;
+	left:0;
 	position: absolute;
 	z-index: 99;
 	width: 89%;
 }
 
 .small-slider-wrapper .cat-name {
-	background: none repeat scroll 0 0 #dc3522;
+	background: none repeat scroll 0 0 #3d3d3d;
 	color: #ffffff;
 	font-size: 14px;
 	padding: 7px 10px;
 	position: absolute;
 	right: 0;
 	text-transform: uppercase;
-	top: 15px;
+	top: 5px;
 	font-family: 'Oswald', sans-serif;
 	z-index: 99;
 }
