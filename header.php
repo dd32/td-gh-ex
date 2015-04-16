@@ -37,7 +37,7 @@
 	</div></header><!-- #masthead -->
     
     <nav id="site-navigation" class="main-navigation" role="navigation"><div class="inner">
-        <button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Menu', 'fmi' ); ?></button>
+        <button class="menu-toggle" aria-controls="menu" aria-expanded="false"><i class="fa fa-bars"></i></button>
         <?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
         
         <div class="clear"></div>

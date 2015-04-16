@@ -120,7 +120,10 @@ function fmi_body_class( $fmi_classes ) {
 	elseif( $layout_meta == 'left_sidebar' ) { $fmi_classes[] = 'left-sidebar'; }
 	elseif( $layout_meta == 'no_sidebar_full_width' ) { $fmi_classes[] = 'no-sidebar-full-width'; }
 
-
+	if( of_get_option( 'fmi_site_layout', 'wide' ) == 'wide' ) {
+		$fmi_classes[] = 'wide';
+	}
+	
 	return $fmi_classes;
 }
 ?>

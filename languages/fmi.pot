@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: fmi\n"
-"POT-Creation-Date: 2015-03-26 08:32+0800\n"
-"PO-Revision-Date: 2015-03-26 08:33+0800\n"
+"POT-Creation-Date: 2015-04-16 09:28+0800\n"
+"PO-Revision-Date: 2015-04-16 09:28+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh\n"
@@ -59,13 +59,12 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: content-page.php:28 content-single.php:28 content.php:37
+#: content-page.php:28 content-single.php:28 content.php:32
 msgid "Pages:"
 msgstr ""
 
-#: content.php:30
-#, php-format
-msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+#: content.php:28
+msgid "Read more"
 msgstr ""
 
 #: footer.php:19
@@ -126,7 +125,7 @@ msgstr ""
 msgid "Find Us on Flickr"
 msgstr ""
 
-#: functions.php:53 header.php:40
+#: functions.php:53
 msgid "Menu"
 msgstr ""
 
@@ -498,47 +497,55 @@ msgstr ""
 msgid "Design"
 msgstr ""
 
-#: options.php:121
+#: options.php:119
+msgid "Site Layout"
+msgstr ""
+
+#: options.php:120
+msgid "Choose your site layout. The change is reflected in whole site."
+msgstr ""
+
+#: options.php:125
+msgid "Boxed layout"
+msgstr ""
+
+#: options.php:126
+msgid "Wide layout"
+msgstr ""
+
+#: options.php:131
 msgid "Default layout"
 msgstr ""
 
-#: options.php:122
+#: options.php:132
 msgid ""
 "Select default layout. This layout will be reflected in whole site archives, "
 "search etc. The layout for a single post and page can be controlled from "
 "below options."
 msgstr ""
 
-#: options.php:134
+#: options.php:144
 msgid "Default layout for pages only"
 msgstr ""
 
-#: options.php:135
+#: options.php:145
 msgid ""
 "Select default layout for pages. This layout will be reflected in all pages "
 "unless unique layout is set for specific page."
 msgstr ""
 
-#: options.php:147
+#: options.php:157
 msgid "Default layout for single posts only"
 msgstr ""
 
-#: options.php:148
+#: options.php:158
 msgid ""
 "Select default layout for single posts. This layout will be reflected in all "
 "single posts unless unique layout is set for specific post."
 msgstr ""
 
-#: options.php:162
-msgid "Custom CSS"
-msgstr ""
-
-#: options.php:163
-msgid "Add Custom CSS to add your own styling to the Theme."
-msgstr ""
-
 #: options.php:170
-msgid "Social Links"
+msgid "Social"
 msgstr ""
 
 #: options.php:174

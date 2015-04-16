@@ -1,7 +1,7 @@
 === Fmi ===
 Theme Name: Fmi
 Theme URI: http://forrss.com/themes/fmi/
-Version: 1.3.8
+Version: 1.3.9
 Requires at least: 3.7
 Tested up to: 4.1
 Author: Forrss
@@ -24,7 +24,7 @@ Fmi is an elegant blog theme with responsive and easily customizable.
 	SIL OFL 1.1 http://scripts.sil.org/OFL.
 * fitvids.js  @ChrisCoyier, @davatron5000, @TrentWalton, @raygunray
 	Intrinsic Ratio Method by Thierry Koblentz](http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/)
-* Image in the screenshot is from public domain http://unsplash.com/ link: https://unsplash.com/photos/D62hQefhteg
+* Image in the screenshot is from public domain http://unsplash.com/
 * Options Framework by WP Theming licensed under the GPLv2 license (http://www.gnu.org/licenses/gpl-2.0.html)
 * HTML5 Shiv @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
 * The script jquery.cycle.all.js is dual licensed under GPL & MIT
@@ -36,6 +36,8 @@ Fmi WordPress Theme, Copyright 2015 Forrss
 Fmi is distributed under the terms of the GNU GPL
  
 == Changelog ==
+#### 1.3.9
+* Add Site Layout
 #### 1.3.7
 * Add Default layout,Add Footer Sidebar.
 #### 1.3.6

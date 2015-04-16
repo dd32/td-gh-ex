@@ -4,7 +4,7 @@ Theme URI: http://forrss.com/themes/fmi/
 Author: Forrss
 Author URI: http://forrss.com/
 Description: Fmi is an elegant blog theme with responsive and easily customizable.
-Version: 1.3.8
+Version: 1.3.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: fmi
@@ -562,17 +562,16 @@ a:active {
 }
 
 .main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: left;
 	position: absolute;
-	top: 1.5em;
+	top: 35px;
 	left: -999em;
 	z-index: 99999;
 }
 
 .main-navigation ul ul ul {
 	left: -999em;
-	top: 0;
+	top: -1px;
 }
 
 .main-navigation ul ul a {
@@ -906,19 +905,33 @@ object {
 13.0 Custom css
 --------------------------------------------------------------*/
 /*site*/
+body{
+	padding:20px;
+}
 .site{
-	width:100%;
+	max-width:980px;
+	margin:0 auto;
+	background:#ffffff;
+	box-shadow: 0 0 5px #929292;
 	overflow:hidden;
 }
 .inner{
-	max-width:1000px;
+	max-width:980px;
 	margin:0 auto;
+}
+.wide{
+	padding:0;
+}
+.wide .site{
+	max-width:100%;
+	background:none;
+	box-shadow:none;
 }
 
 /*header*/
 .site-branding{
 	min-height:84px;
-	padding:0 10px;
+	padding:0 20px;
 }
 .site-title{
 	line-height:40px;
@@ -946,10 +959,6 @@ object {
 	line-height:35px;
 	border-bottom:1px solid #8b8b8b;
 }
-.main-navigation ul{
-	letter-spacing:-4px;
-	word-spacing:-4px;
-}
 .main-navigation li{
 	display:inline-block;
 	position:relative;
@@ -971,24 +980,6 @@ object {
 .main-navigation li a:hover{
 	background:url(images/nav_li.png) repeat;
 }
-.main-navigation .sub-menu,
-.main-navigation .children{
-	height:0;
-	left:0;
-	overflow:hidden;
-	padding:0;
-	position:absolute;
-	width:0;
-	z-index:99999;
-	top:35px;
-}
-.main-navigation li:hover > ul, 
-.main-navigation .focus > ul{
-	clip:inherit;
-	overflow:inherit;
-	height:inherit;
-	width:inherit;
-}
 .main-navigation ul ul a{
 	padding:10px 15px;
 	margin:0;
@@ -1003,24 +994,20 @@ object {
 	border-top:1px solid #6aceec;
 	background:#07a9da;
 }
-.main-navigation ul .sub-menu ul,
-.main-navigation ul .children ul{
-	border-left:0 none;
-	left:100%;
-	top:-1px;
-}
 .main-navigation .menu-toggle{
-	width:100%;
-	height:34px;
-	line-height:34px;
-	font-weight:bold;
+	width:40px;
+	height:40px;
+	line-height:40px;
 	text-align:center;
-	font-size:22px;
+	font-size:30px;
 	cursor:pointer;
 	color:#ffffff;
-	padding:0 15px;
 	border:none;
 	box-shadow:none;
+	position:fixed;
+	top:20px;
+	right:20px;
+	padding:0;
 }
 
 /*content*/
@@ -1030,9 +1017,9 @@ object {
 	padding:0 0 50px;
 }
 .content-area{
-	width:68%;
+	width:70%;
 	float:left;
-	padding:5px 0 20px 0;
+	padding:5px 20px 20px;
 	display:inline-block;
 }
 
@@ -1086,14 +1073,14 @@ object {
 }
 .pagination .nav-links{
 	width:100%;
-	height:42px;
+	height:40px;
 	line-height:40px;
 	position:relative;
 	text-align:center;
-	background:#ffffff;
-	border:1px solid #EBEAE5;
+	background:#f2f2f2;
 	font-size:14px;
 	font-weight:bold;
+	border-radius: 3px;
 }
 .pagination .nav-links .fa{
 	color:#ffffff;
@@ -1119,7 +1106,8 @@ object {
 	left:0;
 	text-align:center;
 	font-size:16px;
-	background:#cccccc;
+	background:#d5d5d5;
+	border-radius: 3px 0 0 3px;
 }
 .pagination .prev:hover{
 	background:#999999;
@@ -1132,7 +1120,8 @@ object {
 	right:0;
 	text-align:center;
 	font-size:16px;
-	background:#cccccc;
+	background:#d5d5d5;
+	border-radius: 0 3px 3px 0;
 }
 .pagination .next:hover{
 	background:#999999;
@@ -1148,7 +1137,7 @@ object {
 /*post*/
 .site-main .post,
 .site-main .page{
-	padding:30px 10px 30px;
+	padding:30px 0 30px;
 	border-bottom:1px solid #EBEAE5;
 }
 .entry-title{
@@ -1233,14 +1222,13 @@ object {
 
 /*sidebar*/
 .widget-area{
-	width:29%;
+	width:30%;
 	float:right;
 	display:inline-block;
-	padding:35px 0 0 0;
+	padding:35px 20px 0;
 }
 .widget-area .widget{
 	margin:0 0 30px;
-	padding:0 10px;
 }
 .widget-area .widget-title{
 	line-height:16px;
@@ -1416,6 +1404,7 @@ object {
 	height:30px;
 	line-height:20px;
 	font-size:13px;
+	margin-bottom:0;
 }
 .comment #respond{
 	margin:0 0 0 56px;
@@ -1438,16 +1427,17 @@ object {
 	border-top:1px solid #E6E6E6;
 	width:100%;
 	height:70px;
+	padding:0 20px;
 }
 .site-info .info-copyright{
 	font-size:13px;
 	float:left;
-	padding:25px 0 25px 10px;
+	padding:25px 0;
 	line-height:20px;
 }
 .site-info .info-social{
 	float:right;
-	padding:25px 10px 25px 0;
+	padding:25px 0;
 	line-height:20px;
 }
 .site-info .info-social a{
@@ -1463,7 +1453,7 @@ object {
 
 .sidebar-footer{
 	border-top:1px solid #E6E6E6;
-	padding:20px 0;
+	padding:20px 10px 0;
 }
 .sidebar-footer ul,
 .sidebar-footer ol{
@@ -1512,18 +1502,18 @@ object {
 	border-radius: 3px;
 	bottom:20px;
 	cursor:pointer;
-	height:36px;
+	height:40px;
 	opacity:0.8;
 	position:fixed;
 	right:20px;
 	text-align:center;
-	width:36px;
+	width:40px;
 	z-index:100;
 	background:#07b0dc;
 	color:#ffffff;
 }
 #back_top i{
-	line-height:36px;
+	line-height:40px;
 	font-size:24px;
 	color:#ffffff;
 }
@@ -1649,6 +1639,7 @@ object {
 	
 	.main-navigation{
 		background:#07a9da;
+		border-bottom: 1px solid #ebeae5;
 	}
 	.main-navigation .menu{
 		height:auto;
@@ -1691,48 +1682,20 @@ object {
 		width:100%;
 		float:none;
 		margin:0;
-		padding:10px 0 20px 0;
+		padding:10px 20px 20px;
 	}
 	.widget-area{
 		width:100%;
 		float:none;
 		margin:0;
-		padding:40px 0 0 0;
+		padding:40px 20px 0;
 	}
 	.widget-area .widget{
-		width:50%;
-		float:left;
-		padding:0 0 0 10px;
+		width:100%;
+		float:none;
 	}
 	.sidebar-footer .sfdiv{
 		width:100%;
-		margin-right:0;
 		float:none;
-	}
-}
-@media screen and (max-width:479px) {
-	.widget-area .widget{
-		width:100%;
-		float:none;
-		padding:0 10px;
-	}
-	.site-footer{
-		padding:10px 0 30px;
-		height:auto;
-	}
-	.site-footer .info-copyright{
-		width:100%;
-		float:none;
-		padding:0 10px;
-		text-align:center;
-		line-height:20px;
-		padding:5px 0;
-	}
-	.site-footer .info-social{
-		width:100%;
-		float:none;
-		padding:0 10px;
-		text-align:center;
-		line-height:30px;
 	}
 }

@@ -24,13 +24,8 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php
-			/* translators: %s: Name of current post */
-			the_content( sprintf(
-				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'fmi' ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
-		?>
+		<?php the_excerpt(); ?>
+        <div class="readmore-wrap"><a class="readmore" href="<?php the_permalink(); ?>">[<?php echo __( 'Read more', 'fmi' );?>]</a></div>
 
 		<?php
 			wp_link_pages( array(

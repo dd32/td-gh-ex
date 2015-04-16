@@ -94,7 +94,7 @@ function optionsframework_options() {
 	$options = array();
 
 	$options[] = array(
-		'name' => __( 'General Settings', 'fmi' ),
+		'name' => __( 'Header', 'fmi' ),
 		'type' => 'heading'
 	);
 	$options[] = array(
@@ -115,7 +115,17 @@ function optionsframework_options() {
 		'name' => __( 'Design', 'fmi' ),
 		'type' => 'heading'
 	);
-
+	$options[] = array(
+		'name' 		=> __( 'Site Layout', 'fmi' ),
+		'desc' 		=> __( 'Choose your site layout. The change is reflected in whole site.', 'fmi' ),
+		'id' 			=> 'fmi_site_layout',
+		'std' 		=> 'wide',
+		'type' 		=> 'radio',
+		'options' 	=> array(
+							'box' 	=> __( 'Boxed layout', 'fmi' ),
+							'wide' 	=> __( 'Wide layout', 'fmi' )
+						)
+	);
 
 	$options[] = array(
 		'name' 		=> __( 'Default layout', 'fmi' ),
@@ -157,7 +167,7 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => __( 'Social Links', 'fmi' ),
+		'name' => __( 'Social', 'fmi' ),
 		'type' => 'heading'
 	);
 	$options[] = array(
@@ -322,16 +332,6 @@ function fmi_options_display_sidebar() { ?>
 	    		<h3><?php esc_attr_e( 'About Fmi', 'fmi' ); ?></h3>
       			<div class="inside">
 					<div class="option-btn"><a class="btn demo" target="_blank" href="<?php echo esc_url( 'http://forrss.com/demo/fmi/' ); ?>"><?php esc_attr_e( 'View Demo' , 'fmi' ); ?></a></div>
-
-	      			<div align="center" style="padding:5px; background-color:#fafafa;border: 1px solid #CCC;margin-bottom: 10px;">
-	      				<strong><?php esc_attr_e( 'If you like our work. Buy us a beer.', 'fmi' ); ?></strong>
-	      				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-							<input type="hidden" name="cmd" value="_s-xclick">
-							<input type="hidden" name="hosted_button_id" value="EZZUACHETUBXW">
-							<input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal">
-							<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
-						</form>
-					</div>
       			</div>
 	    	</div>
 	  	</div>
