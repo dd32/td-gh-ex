@@ -72,7 +72,7 @@
 
 		<div class="top-section">
 			<?php sparkling_featured_slider(); ?>
-			<?php sparkling_call_for_action(); ?>z
+			<?php sparkling_call_for_action(); ?>
 		</div>
 
 		<div class="container main-content-area">
