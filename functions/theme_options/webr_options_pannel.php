@@ -225,7 +225,7 @@
         <a href="#busiprof-option-testimonials" class="nav-tab" id="busiprof-option-testimonials-tab"><?php _e("Home Testmonials",'busi_prof')?></a>
         <a href="#busiprof-option-footer" class="nav-tab" id="busiprof-option--tab"><?php _e("Footer Customisation",'busi_prof');?></a>
         <a href="#busiprof-option-help" class="nav-tab" id="busiprof-option-help-tab"><?php _e("Help and Support",'busi_prof');?></a>
-        <a href="#busiprof-option-subscriber" class="nav-tab" id="busiprof-option-subscriber-tab"><?php _e("Join Our Newsletter",'busi_prof');?></a>
+		<a href="#busiprof-option-upgrade"  class="nav-tab" id="busiprof-option-homepage-tab"><?php _e("Upgrade To Pro",'busi_prof');?></a>		
       </h2>
       <div id="busiprof_optionsframework-metabox" class="metabox-holder">
         <div id="busiprof_optionsframework" class="postbox">
@@ -255,16 +255,14 @@
             <br>
             <?php require_once('help.php')?>
           </div>
-          <div class="postbox group" style="display: none; background:white" id="busiprof-option-subscriber"  >
-            <h3><?php _e("Join Our Newsletter",'busi_prof');?></h3>
+		   <div class="postbox group" style="display: none; background:white" id="busiprof-option-upgrade"  >
+            <h3><?php _e("Upgrade To Pro",'busi_prof');?></h3>
             <br>
-            <?php require_once('webriti/subscriber.php')?>
+            <?php require_once('UpgradeToPro.php');?>
           </div>
         </div>
       </div>
-      <div id="busiprof_optionsframework-sidebar">
-        <?php require_once('theme_option_sidbar.php');?>
-      </div>
+      
     </div>
   </div>
 </div>

@@ -57,6 +57,9 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.5.2
+1. Information added regarding pro features.
+2. plugin recommendation added.
 @version 1.5.1
 1.Fixed slider image issue.
 2.All enqueue script and style name change

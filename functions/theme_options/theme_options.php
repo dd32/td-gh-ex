@@ -20,5 +20,5 @@
   	require_once('webr_options_pannel.php');
   }
   // Premium theme option panel
-  require_once('webriti/webriti_theme.php');
+  //require_once('webriti/webriti_theme.php');
   ?>
