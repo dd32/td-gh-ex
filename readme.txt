@@ -2,9 +2,9 @@
 Contributors: the BestWebSoft team
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: gray, green, right-sidebar, fixed-layout, custom-menu, featured-images, translation-ready, custom-background, custom-header, editor-style
-Requires at least: 3.7
-Tested up to: 3.9.1
-Stable tag: 1.5
+Requires at least: 3.9
+Tested up to: 4.1.1
+Stable tag: 1.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -92,7 +92,11 @@ You just need go to Dashboard and use the select menu Appearance -> Menus. Then 
 
 = How to change language from English to Russian? =
 
-In main catalog of your WordPress site find wp-config.php file, open it and change define (‘WPLANG’); for define (‘WPLANG’, ‘ru_RU’)
+WordPress v4.0 and above:
+Change the language in the admin settings screen. Settings > General > Site Language.
+
+WordPress v3.9.2 and below:
+In the main catalog of your WordPress site, please find wp-config.php file, open it and change define( 'WPLANG', '' ); for define( 'WPLANG', 'ru_RU' ).
 
 = Ask your questions =
 
@@ -102,7 +106,13 @@ In main catalog of your WordPress site find wp-config.php file, open it and chan
 
 == Changelog ==
 
-= V1.5 - 31.07.2014 = 
+= V1.6 - 16.04.2015 =
+* Update: We updated the theme to WordPress 4.1.1.
+* Update: Theme screenshot was updated.
+* Bugfix: We fixed width of the sidebar.
+* Update: The following files were updated: style.css, header.php, functions.php.
+
+= V1.5 - 31.07.2014 =
 * Bugfix: We fixed bugs in header.php, searchform.php.
 
 = V1.4 - 29.07.2014 = 
@@ -133,6 +143,9 @@ In main catalog of your WordPress site find wp-config.php file, open it and chan
 * NEW: Bicubic theme release.
 
 == Upgrade Notice ==
+
+= V1.6 =
+We updated the theme to WordPress 4.1.1. Theme screenshot was updated. We fixed width of the sidebar. The following files were updated: style.css, header.php, functions.php.
 
 = V1.5 = 
 We fixed bugs in header.php, searchform.php.

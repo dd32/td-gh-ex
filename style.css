@@ -1,9 +1,9 @@
 /*
 Theme Name: Bicubic
-Theme URI: http://bestwebsoft.com/theme/bicubic/
+Theme URI: http://bestwebsoft.com/product/bicubic/
 Description: Bicubic is a beautiful theme built for news and blogging. It was created for easy reading. Each post-type is displayed in the way to give maximum attention to your content. With Bicubic Theme scrolling becomes a pleasurable journey. The design is neither overbearing nor busy. Each element of Bicubic has been designed with meticulous detail to provide you with full control over your page. It allows you to present your content in a clear and structured manner. Bicubic is fully compliant with BestWebSoft products, thus, such plugins, as PDF & Print (http://wordpress.org/plugins/pdf-print/) and Gallery (http://wordpress.org/plugins/gallery-plugin/) will suit your website perfectly. That is why, if you install this Theme you will prevent any possible compatibility troubles as well as extend your site's functionality significantly. Check out this theme's demo at http://bestwebsoft.com/wordpress_demo_theme/bicubic/
 You may change some design elements from Admin UI, like: background of page, header image.
-Version: 1.5
+Version: 1.6
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/
 Author: the BestWebSoft team
@@ -11,7 +11,6 @@ Author URI: https://github.com/bestwebsoft
 Tags: gray, green, right-sidebar, fixed-layout, custom-menu, featured-images, translation-ready, custom-background, custom-header, editor-style
 Text Domain: bicubic
 */
-
 
 /**
  * Table of Contents:
@@ -198,9 +197,9 @@ table {
 .post table,
 .page table,
 .comment table {
-    margin: 0 0 20px;
-    width: 100%;
-    border-spacing: 0;
+	margin: 0 0 20px;
+	width: 100%;
+	border-spacing: 0;
 }
 
 .widget table {
@@ -212,13 +211,15 @@ table {
 .comment tr {
 	border-bottom: 1px solid #dbdbdb;
 }
+
 .post th,
 .page th,
 .comment th {
 	color: #666;
-    letter-spacing: 1px;
-    line-height: 30px;
+	letter-spacing: 1px;
+	line-height: 30px;
 }
+
 .post td,
 .page td,
 .comment td {
@@ -227,7 +228,6 @@ table {
 	vertical-align: middle;
 	text-align: center;
 }
-
 
 /* change border colour to suit your needs */
 hr {
@@ -244,7 +244,6 @@ select {
 	vertical-align: middle;
 }
 
-
 /**
 * 2.0 Fonts
 *------------------------------------------------------------------------------
@@ -256,22 +255,23 @@ select {
 	font-style: normal;
 	src: url('fonts/opensans/OpenSans-Regular.eot?');
 	src: local('test'),
-		 url('fonts/opensans/OpenSans-Regular.woff') format('woff'),
-		 url('fonts/opensans/OpenSans-Regular.ttf') format('truetupe'),
-		 url('fonts/opensans/OpenSans-Regular.svg#OpenSans-Regular') format('svg');
+	url('fonts/opensans/OpenSans-Regular.woff') format('woff'),
+	url('fonts/opensans/OpenSans-Regular.ttf') format('truetupe'),
+	url('fonts/opensans/OpenSans-Regular.svg#OpenSans-Regular') format('svg');
 	font-weight: normal;
 	font-size: normal;
 
 }
+
 @font-face {
 	font-family: "Open Sans Bold";
 	font-weight: normal;
 	font-style: normal;
 	src: url('fonts/opensans/OpenSans-Bold.eot?');
 	src: url('fonts/opensans/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),
-		 url('fonts/opensans/OpenSans-Bold.woff') format('woff'),
-		 url('fonts/opensans/OpenSans-Bold.svg#OpenSans-Bold') format('svg'),
-		 url('fonts/opensans/OpenSans-Bold.ttf') format('truetupe');
+	url('fonts/opensans/OpenSans-Bold.woff') format('woff'),
+	url('fonts/opensans/OpenSans-Bold.svg#OpenSans-Bold') format('svg'),
+	url('fonts/opensans/OpenSans-Bold.ttf') format('truetupe');
 }
 
 @font-face {
@@ -280,9 +280,9 @@ select {
 	font-style: normal;
 	src: url('fonts/droidsans/DroidSans.eot?');
 	src: url('fonts/droidsans/DroidSans.eot?#iefix') format('embedded-opentype'),
-		 url('fonts/droidsans/DroidSans.svg#DroidSans') format('svg'),
-		 url('fonts/droidsans/DroidSans.woff') format('woff'),
-		 url('fonts/droidsans/DroidSans.ttf') format('truetupe');
+	url('fonts/droidsans/DroidSans.svg#DroidSans') format('svg'),
+	url('fonts/droidsans/DroidSans.woff') format('woff'),
+	url('fonts/droidsans/DroidSans.ttf') format('truetupe');
 }
 
 @font-face {
@@ -291,11 +291,10 @@ select {
 	font-style: normal;
 	src: url('fonts/droidsans/DroidSans-Bold.eot?');
 	src: url('fonts/droidsans/DroidSans-Bold.eot?#iefix') format('embedded-opentype'),
-		 url('fonts/droidsans/DroidSans-Bold.woff') format('woff'),
-		 url('fonts/droidsans/DroidSans-Bold.svg#DroidSans-Bold') format('svg'),
-		 url('fonts/droidsans/DroidSans-Bold.ttf') format('truetupe');
+	url('fonts/droidsans/DroidSans-Bold.woff') format('woff'),
+	url('fonts/droidsans/DroidSans-Bold.svg#DroidSans-Bold') format('svg'),
+	url('fonts/droidsans/DroidSans-Bold.ttf') format('truetupe');
 }
-
 
 /**
 * 3.0 Misc tags
@@ -316,7 +315,7 @@ h4,
 h5,
 h6 {
 	padding: 0 0 23px;
-	font-family:  "Open Sans Bold";
+	font-family: "Open Sans Bold";
 	color: #424242;
 	margin: 0;
 	font-weight: 300;
@@ -354,7 +353,7 @@ h6 {
 }
 
 #copyright {
-	max-width: 70%; 
+	max-width: 70%;
 }
 
 p {
@@ -370,7 +369,7 @@ a {
 }
 
 .bicubic-sidebar a:hover {
-	color: #63ac2e ;
+	color: #63ac2e;
 }
 
 h2 a {
@@ -394,7 +393,7 @@ sub {
 	font-size: 89%;
 	position: relative;
 	top: 3px;
-	
+
 }
 
 em {
@@ -420,12 +419,11 @@ big {
 pre {
 	display: block;
 	padding: 14px 14px 12px 20px;
-	margin: 0 0 16px;
 	border: 1px solid #cecece;
 	background-color: #fff;
 	color: #999;
 	font-family: "Courier New", serif;
-	margin-left: -1px;
+	margin: 0 0 16px -1px;
 	line-height: 1.62;
 	overflow: auto;
 }
@@ -456,16 +454,14 @@ blockquote p {
 blockquote p:first-child:before {
 	content: open-quote;
 	padding-left: 29px;
-	background: url(image/sprites.png) no-repeat;
-	background-color: transparent;
-	background-position: 0 -216px;
+	background: transparent url(image/sprites.png) no-repeat 0 -216px;
 	width: 18px;
 	height: 13px;
 }
 
 blockquote p:after {
 	content: close-quote;
-    	padding: 0 0 6px;
+	padding: 0 0 6px;
 }
 
 cite {
@@ -475,7 +471,7 @@ cite {
 	padding-top: 2px;
 }
 
-blockquote cite:before{
+blockquote cite:before {
 	content: "- \0020";
 }
 
@@ -494,7 +490,6 @@ address {
 	line-height: 1.62;
 	margin: 0 0 17px;
 }
-
 
 /**
  * 4.0 Form
@@ -543,11 +538,12 @@ textarea {
 /*Radio-buttons*/
 .bicubic-radio-section,
 .bicubic-checkbox-section {
-	padding: 0px 0 10px 29px;
+	padding: 0 0 10px 29px;
 	position: relative;
 	top: -19px;
 	margin-bottom: -2px;
 }
+
 .bicubic-checkbox-section {
 	top: -16px;
 	margin-bottom: 4px;
@@ -571,31 +567,31 @@ textarea {
 	top: 21px;
 }
 
-.bicubic-radio.bicubic-active{
+.bicubic-radio.bicubic-active {
 	background-position: 0 -36px;
 }
 
-.bicubic-radio.bicubic-hover{
+.bicubic-radio.bicubic-hover {
 	background-position: 0 -72px;
 }
 
 /*Checkboxes*/
 .bicubic-check {
 	display: inline-block;
-	background-position: 0 -108px; 
-	padding: 0px 0px 15px 8px;
+	background-position: 0 -108px;
+	padding: 0 0 15px 8px;
 	width: 18px;
 	height: 18px;
 	cursor: pointer;
 	position: relative;
-	top:19px;
+	top: 19px;
 }
 
 .bicubic-check input[type="checkbox"],
 .bicubic-radio input[type="radio"] {
 	position: absolute;
 	left: -30px;
- 	display: none;
+	display: none;
 
 }
 
@@ -635,7 +631,7 @@ select {
 }
 
 .bicubic-active-opt > div:first-child {
-	float:left;
+	float: left;
 	padding: 16px 0 16px 10px;
 	overflow: hidden;
 	width: 167px;
@@ -646,7 +642,7 @@ select {
 	background: url(image/sprites.png) -55px -250px no-repeat;
 	width: 43px;
 	height: 47px;
-	float:right;
+	float: right;
 }
 
 .bicubic-options {
@@ -659,23 +655,23 @@ select {
 	left: 0;
 }
 
-.bicubic-options .bicubic-optgroup:first-child{
-	padding: 14px 5px 6px 10px;	
+.bicubic-options .bicubic-optgroup:first-child {
+	padding: 14px 5px 6px 10px;
 }
 
 .bicubic-optgroup {
-	padding:8px 5px 8px 10px;
+	padding: 8px 5px 8px 10px;
 	color: #aaa;
 }
 
 .bicubic-option {
-    padding: 9px 5px 9px 30px;
-    cursor: pointer;
-    color: #555;
+	padding: 9px 5px 9px 30px;
+	cursor: pointer;
+	color: #555;
 }
 
 .bicubic-options .bicubic-option:last-child {
-    padding: 9px 5px 19px 30px;
+	padding: 9px 5px 19px 30px;
 }
 
 .bicubic-option:hover {
@@ -690,6 +686,7 @@ select {
 	border-radius: 5px;
 	cursor: pointer;
 }
+
 .bicubic-custom-file-content {
 	height: 100%;
 	width: 220px;
@@ -702,20 +699,21 @@ select {
 .bicubic-custom-file-text {
 	height: 31px;
 	float: left;
-    padding: 17px 0 0 10px;
-    width: 167px;
-    border-radius: 5px 0 0 5px;
+	padding: 17px 0 0 10px;
+	width: 167px;
+	border-radius: 5px 0 0 5px;
 }
+
 .bicubic-custom-file-text,
 .bicubic-select {
 	background-color: #fcfcfc;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#f7f7f7));   
-    background-image: -webkit-linear-gradient(top, #fcfcfc), #f7f7f7);   
-    background-image:    -moz-linear-gradient(top, #fcfcfc), #f7f7f7);   
-    background-image:     -ms-linear-gradient(top, #fcfcfc), #f7f7f7);   
-    background-image:      -o-linear-gradient(top, #fcfcfc), #f7f7f7); 
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#f7f7f7));
+	background-image: -webkit-linear-gradient(top, #fcfcfc), #f7f7f7);
+	background-image: -moz-linear-gradient(top, #fcfcfc), #f7f7f7);
+	background-image: -ms-linear-gradient(top, #fcfcfc), #f7f7f7);
+	background-image: -o-linear-gradient(top, #fcfcfc), #f7f7f7);
 	background: linear-gradient(to bottom, #fcfcfc, #f7f7f7);
- 
+
 }
 
 .bicubic-custom-file-button {
@@ -726,13 +724,13 @@ select {
 }
 
 .bicubic-custom-file-status {
-	float:left;
+	float: left;
 	width: 210px;
-    height: 13px;
-    padding: 18px 0 18px 20px;
+	height: 13px;
+	padding: 18px 0 18px 20px;
 }
 
-.bicubic-custom-file input[type="file"]{
+.bicubic-custom-file input[type="file"] {
 	opacity: 0;
 	clear: both;
 }
@@ -749,11 +747,11 @@ select {
 }
 
 #submit {
-    border: 1px solid #cecece;
-    border-radius: 5px 5px 5px 5px;
-    height: 50px;
-    font-family: "Droid Sans Bold", "Open Sans Bold";
-    background-color: #fcfcfc;
+	border: 1px solid #cecece;
+	border-radius: 5px 5px 5px 5px;
+	height: 50px;
+	font-family: "Droid Sans Bold", "Open Sans Bold";
+	background-color: #fcfcfc;
 }
 
 #submit:hover {
@@ -765,14 +763,14 @@ select {
 .bicubic-reset-form input[type="reset"],
 .bicubic-submit-button input[type="submit"],
 input[type="button"] {
-    border: 1px solid #cecece;
-    border-radius: 5px 5px 5px 5px;
-    height: 49px;
-    padding: 0 16px;
-    font-family: "Droid Sans Bold", "Open Sans Bold";
-    background-color: #fcfcfc;
-    margin: 15px 15px 0 0;
-    cursor: pointer;
+	border: 1px solid #cecece;
+	border-radius: 5px 5px 5px 5px;
+	height: 49px;
+	padding: 0 16px;
+	font-family: "Droid Sans Bold", "Open Sans Bold";
+	background-color: #fcfcfc;
+	margin: 15px 15px 0 0;
+	cursor: pointer;
 }
 
 .bicubic-submit-button input[type="submit"] {
@@ -787,7 +785,6 @@ input[type="button"]:hover {
 	color: #fff;
 	border-color: #63ac2e;
 }
-
 
 /**
 * 5.0 Header
@@ -829,6 +826,7 @@ input[type="button"]:hover {
 	font-size: 29px;
 	max-width: 70%;
 }
+
 #header a {
 	color: inherit;
 
@@ -840,16 +838,16 @@ input[type="button"]:hover {
 
 /* Descriotion of blog */
 #description {
-    padding: 7px 0 24px;
-    position: relative;
-    max-width: 70%;
+	padding: 7px 0 24px;
+	position: relative;
+	max-width: 70%;
 }
 
 /* Search form */
-.bicubic-header #search { 
+.bicubic-header #search {
 	position: absolute;
 	left: 710px;
-    top: 7px;
+	top: 7px;
 }
 
 .entry-content #search-submit {
@@ -871,15 +869,16 @@ input[type="button"]:hover {
 	height: 48px;
 	border: 1px solid #dbdbdb;
 	float: left;
- 	width: 180px;
+	width: 180px;
 	border-radius: 5px 0 0 5px;
 	border-right: none;
 }
+
 #search-div-right {
 	height: 48px;
 	border: 1px solid #63ac2e;
 	float: right;
-	border-radius:  0 5px 5px 0;
+	border-radius: 0 5px 5px 0;
 }
 
 /* Text field in search form */
@@ -898,7 +897,6 @@ input[type="button"]:hover {
 	display: none;
 }
 
-
 /* Placeholder for mozilla and chrome/safari */
 #s::-moz-placeholder {
 	color: #999;
@@ -911,15 +909,16 @@ input[type="button"]:hover {
 /* Submit button in search form */
 #search-submit {
 	height: 100%;
-    width: 47px;
-    border: none;
-    background: url(image/sprites.png) no-repeat;
-    background-position: 0 -250px;
+	width: 47px;
+	border: none;
+	background: url(image/sprites.png) no-repeat;
+	background-position: 0 -250px;
 }
 
-#search-submit:hover{
+#search-submit:hover {
 	cursor: pointer;
 }
+
 #search-submit::-moz-focus-inner {
 	border: none;
 }
@@ -979,10 +978,9 @@ input[type="button"]:hover {
 	color: #fff !important;
 }
 
-#nav .current_page_item a:hover{
+#nav .current_page_item a:hover {
 	color: #fff;
 }
-
 
 /**
 * 5.3 Sub Menu
@@ -1017,7 +1015,8 @@ input[type="button"]:hover {
 	padding: 17px 19px;
 	color: #999;
 }
-#nav ul .sub-menu li a:hover{
+
+#nav ul .sub-menu li a:hover {
 	color: #63ac2e;
 }
 
@@ -1036,11 +1035,11 @@ input[type="button"]:hover {
 #nav .bicubic-nav-menu ul {
 	margin: 0;
 }
+
 /* Class for the last element in sub-menu for remove bottom border */
 .bicubic-no-border-bottom {
 	border-bottom: 0 !important;
 }
-
 
 /**
 * 6.0 Site Content
@@ -1076,7 +1075,6 @@ input[type="button"]:hover {
 #content a:hover {
 	color: #999;
 }
-
 
 /**
 * 6.2 Post
@@ -1170,7 +1168,7 @@ audio {
 }
 
 audio a {
-	display: block;	
+	display: block;
 }
 
 /*attachment*/
@@ -1206,7 +1204,6 @@ body.attachment #respond {
 	text-align: center;
 }
 
-
 /**
 * 6.3 Comments
 * ------------------------------------------------------------------------------
@@ -1220,7 +1217,7 @@ body.attachment #respond {
 }
 
 .nocomments {
- 	padding: 53px 27px 6px 30px;
+	padding: 53px 27px 6px 30px;
 	font-size: 21px;
 	font-family: "Open Sans Bold";
 	border-bottom: 1px solid #dbdbdb;
@@ -1267,7 +1264,6 @@ body.attachment #respond {
 .comment-meta {
 	padding: 0 0 0 15px;
 }
-
 
 .comment-body p {
 	clear: both;
@@ -1389,18 +1385,19 @@ body.attachment #respond {
 	margin: 10px 0;
 	text-align: center;
 }
+
 .gallery_box > ul {
 	padding: 0 !important;
 }
 
 .gallery_box {
 	float: none !important;
-	padding: 0px 27px 0px 30px;
+	padding: 0 27px 0 30px;
 	border-bottom: 1px solid #dbdbdb;
 }
 
 .gallery_box_single {
-	padding: 0px 27px 0px 30px;
+	padding: 0 27px 0 30px;
 	width: inherit !important;
 
 }
@@ -1418,33 +1415,33 @@ body.attachment #respond {
 .page-template-portfolio-php .home_page_title,
 .single-portfolio .home_page_title {
 	padding: 53px 27px 6px 30px;
-    font-family: "Open Sans Bold";
-    font-weight: 300;
+	font-family: "Open Sans Bold";
+	font-weight: 300;
 	font-size: 23px !important;
 	border-bottom: none !important;
 }
 
-.single-portfolio .portfolio_content{
-	padding: 0px 27px 0px 30px;	
+.single-portfolio .portfolio_content {
+	padding: 0 27px 0 30px;
 }
 
-.page-template-portfolio-php .home_page_title a	{
+.page-template-portfolio-php .home_page_title a {
 	color: #555555 !important;
 }
 
 .read_more a {
 	color: #fff !important;
-	width: auto !important; 
+	width: auto !important;
 }
 
 .page-template-portfolio-php .portfolio_content {
-	padding: 0px 27px 0px 30px;
-	width: inherit !important;	
+	padding: 0 27px 0 30px;
+	width: inherit !important;
 }
 
 /*Related posts*/
 .rltdpstsplgn_content {
-	padding: 0px 40px 0px;
+	padding: 0 40px 0;
 }
 
 .rltdpstsplgnwidget p {
@@ -1452,7 +1449,7 @@ body.attachment #respond {
 }
 
 /*Quotes and tips*/
-#quotes_box_and_tips{
+#quotes_box_and_tips {
 	margin: 0;
 	border-bottom: 1px solid #dbdbdb;
 }
@@ -1476,7 +1473,7 @@ img.alignleft,
 }
 
 img.alignright,
-.wp-caption.alignright  {
+.wp-caption.alignright {
 	margin-left: 15px;
 }
 
@@ -1523,7 +1520,6 @@ img,
 	color: #63ac2e;
 }
 
-
 /**
 * 6.6 Lists
 * ------------------------------------------------------------------------------
@@ -1544,8 +1540,7 @@ dd {
 
 ol {
 	padding: 0 10px 13px 48px;
-	list-style: decimal;
-	list-style-position: outside;
+	list-style: decimal outside;
 	margin: 0;
 }
 
@@ -1554,11 +1549,10 @@ ol li {
 	padding: 0 0 14px 3px;
 }
 
-ul { 
+ul {
 	padding: 0 10px 16px 33px;
 	color: #aaa;
-	list-style-position: outside;
-	list-style: none;
+	list-style: none outside none;
 	margin: 0;
 }
 
@@ -1569,17 +1563,17 @@ ul > li {
 
 .post ul,
 .page ul,
-.comment > div  ul { 
+.comment > div ul {
 	padding: 0 10px 0 33px;
 	margin-bottom: 16px;
 }
 
 .post ol ul,
 .page ol ul,
-.comment > div  ol ul,
+.comment > div ol ul,
 .post ul ul,
 .page ul ul,
-.comment > div  ul ul  {
+.comment > div ul ul {
 	padding: 0 10px 0 16px;
 }
 
@@ -1597,19 +1591,18 @@ ul > li {
 	margin: 0;
 }
 
-
-.post ol, 
+.post ol,
 .page ol,
-.comment > div  ol {
+.comment > div ol {
 	padding: 0 10px 0 48px;
 }
 
 .post ul ol,
 .page ul ol,
-.comment > div  ul ol,
+.comment > div ul ol,
 .post ol ol,
 .page ol ol,
-.comment > div  ol ol  {
+.comment > div ol ol {
 	padding: 0 10px 0 24px;
 }
 
@@ -1629,9 +1622,11 @@ ul > li {
 .comment > div li ol {
 	margin: 5px 0 0 0;
 }
+
 ol ol {
 	list-style: upper-alpha;
 }
+
 ol ol ol {
 	list-style: upper-roman;
 }
@@ -1643,18 +1638,19 @@ ol ol ol {
 .widget_text .textwidget ol > li {
 	list-style: decimal inside;
 	color: #999999;
-    padding: 0 0 13px;
+	padding: 0 0 13px;
 }
+
 .widget_text .textwidget ol,
 .widget_text .textwidget ul {
-	padding: 0 10px 13px 0px;
+	padding: 0 10px 13px 0;
 }
 
 .widget_text .textwidget ol ol,
 .widget_text .textwidget ul ul,
 .widget_text .textwidget ol ul,
 .widget_text .textwidget ul ol {
-	padding: 0 10px 0px 20px;
+	padding: 0 10px 0 20px;
 }
 
 .widget_text .textwidget ul > li {
@@ -1676,21 +1672,23 @@ ol ol ol {
 .widget h6 {
 	padding: 0;
 }
-li.widget  {
+
+li.widget {
 	line-height: 1 !important;
 	padding-bottom: 45px !important;
 }
+
 .bicubic-sidebar {
 	float: right;
 	height: 100%;
-	width: 338px;
+	width: 336px;
 }
 
 /*Title if widget*/
 .widgettitle {
 	padding: 18px 40px 17px;
 	color: #b2b2b2;
-	font-size: 12px !important; 
+	font-size: 12px !important;
 	text-transform: uppercase;
 	border-top: 1px solid #dbdbdb;
 	border-bottom: 1px solid #dbdbdb;
@@ -1700,7 +1698,7 @@ li.widget  {
 .widget li,
 .widget li ul {
 	list-style: none;
-	background:  none;
+	background: none;
 	padding: 0;
 	margin: 0;
 	line-height: 1 !important;
@@ -1714,7 +1712,7 @@ li.widget  {
 
 .widget li ul li {
 	padding: 0 0 13px;
-	color: #999;	
+	color: #999;
 }
 
 /*Calendar widget*/
@@ -1808,7 +1806,7 @@ li.widget  {
 	color: #63Ac2e;
 }
 
-.widget .current_page_item a:hover{
+.widget .current_page_item a:hover {
 	color: #333 !important;
 }
 
@@ -1842,7 +1840,6 @@ li.widget  {
 	line-height: 1.68;
 }
 
-
 /**
 * 7.0 Footer
 * ------------------------------------------------------------------------------
@@ -1875,6 +1872,6 @@ li.widget  {
 	color: #333;
 }
 
-#powered a{
+#powered a {
 	color: #63ac2e;
 }

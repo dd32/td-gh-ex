@@ -3,23 +3,22 @@
  * Bicubic functions and definitions
  *
  * @subpackage Bicubic
- * @since Bicubic 1.0
+ * @since      Bicubic 1.0
  */
 
 //set content width
-if ( ! isset( $content_width ) ) $content_width = 540;	
+if ( ! isset( $content_width ) ) {
+	$content_width = 540;
+}
 
 // sets up theme, theme support: custom background, menus, post thumbnails. it is translate-ready.
-function bicubic_setup(){		
-	// theme support 1 sidebar
-	if( function_exists( 'register_sidebar' ) ){
-		register_sidebar( array( 'name' => 'Sidebar' ) ); 
-	}
+function bicubic_setup() {
+	add_theme_support( 'title-tag' );
 	// load_theme_textdomain() for translation/localization support 
 	load_theme_textdomain( 'bicubic', get_template_directory() . '/languages' );
 	// add post-thumbnails with one size
 	add_theme_support( 'post-thumbnails' );
-	add_image_size ( 'bicubic-size', 540, 9999 );
+	add_image_size( 'bicubic-size', 540, 9999 );
 	// add rss feed
 	add_theme_support( 'automatic-feed-links' );
 	// add custom backgroung with default color #eeeeee
@@ -31,10 +30,10 @@ function bicubic_setup(){
 	register_nav_menu( 'primary', __( 'Primary Menu', 'bicubic' ) );
 	//add custom-header support
 	$args = array(
-		'width'  => 940,
-		'height' => 180,
-		'uploads' => true,
-		'header-text' => true,
+		'width'              => 940,
+		'height'             => 180,
+		'uploads'            => true,
+		'header-text'        => true,
 		'default-text-color' => '63ac2e'
 	);
 	add_theme_support( 'custom-header', $args );
@@ -42,12 +41,34 @@ function bicubic_setup(){
 	add_editor_style( get_template_directory_uri() . '/css/editor-style.css' );
 }
 
-// register scripts and styles	 
+function bicubic_admin_menu() {
+	global $bws_theme_info;
+	if ( empty( $bws_theme_info ) ) {
+		if ( ( function_exists( 'wp_get_theme' ) ) ) {
+			$current_theme     = wp_get_theme();
+			$current_theme_ver = $current_theme->get( 'Version' );
+		} else {
+			$current_theme_ver = '';
+		}
+		$bws_theme_info = array( 'id' => '', 'version' => $current_theme_ver, );
+	}
+	require_once( dirname( __FILE__ ) . '/bws_menu/bws_menu.php' );
+	add_theme_page( 'BWS Themes', 'BWS Themes', 'edit_theme_options', 'bws_themes', 'bws_add_themes_menu_render' );
+}
+
+function bicubic_register_sidebar() {
+	/* Right sidebar */
+	register_sidebar( array( 'name' => 'Sidebar' ) );
+}
+
+// register scripts and styles
 function bicubic_scripts_styles() {
 	wp_enqueue_script( 'bicubic-scripts', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ) );
 	wp_enqueue_script( 'bicubic-placeholder', get_template_directory_uri() . '/js/jquery.placeholder.js', array( 'jquery' ) );
 	// load script for comment-reply
-	if ( is_singular() ) wp_enqueue_script( "comment-reply" ); 	
+	if ( is_singular() ) {
+		wp_enqueue_script( "comment-reply" );
+	}
 	// loads main stylesheet.
 	wp_enqueue_style( 'bicubic-style', get_stylesheet_uri() );
 	// loads the internet Explorer specific stylesheet.
@@ -63,18 +84,18 @@ function bicubic_scripts_styles() {
 <?php }
 
 //this function used as callback to wp_list_comments()
-function bicubic_comment( $comment, $args, $depth ) {  
-	$GLOBALS['comment'] = $comment; ?>  
-	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">  
-		<div id="comment-<?php comment_ID(); ?>">  
-			<div class="comment-author vcard"> 
+function bicubic_comment( $comment, $args, $depth ) {
+	$GLOBALS['comment'] = $comment; ?>
+	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
+		<div id="comment-<?php comment_ID(); ?>">
+			<div class="comment-author vcard">
 				<?php $comment_parents = get_comment( $comment, ARRAY_A );
-					// show avatar of commenter smaller if comment is child
-					$comment_parents = $comment_parents['comment_parent'];			
-					if ( $comment_parents == 0 ) {
-						echo get_avatar( $comment, $size = '64' );
-					} else {
-						echo get_avatar( $comment, $size = '32' );
+				// show avatar of commenter smaller if comment is child
+				$comment_parents = $comment_parents['comment_parent'];
+				if ( $comment_parents == 0 ) {
+					echo get_avatar( $comment, $size = '64' );
+				} else {
+					echo get_avatar( $comment, $size = '32' );
 				} ?>
 				<!-- show comment meta information -->
 				<div class="comment-meta alignleft">
@@ -82,57 +103,81 @@ function bicubic_comment( $comment, $args, $depth ) {
 						<a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
 							<?php printf( __( '%1$s at %2$s', 'bicubic' ), get_comment_date(), get_comment_time() ); ?>
 						</a>
-					</div><!-- .commentmetadata -->  
-					<div class="bicubic-says" >
+					</div>
+					<!-- .commentmetadata -->
+					<div class="bicubic-says">
 						<cite class="fn"><?php echo get_comment_author_link(); ?></cite>
-						<span class="says"><?php _e( 'says', 'bicubic' ); ?></span>  
-					</div><!-- .bicubic-says -->
-				</div><!-- .comment-meta -->
+						<span class="says"><?php _e( 'says', 'bicubic' ); ?></span>
+					</div>
+					<!-- .bicubic-says -->
+				</div>
+				<!-- .comment-meta -->
 				<div class="bicubic-clear"></div>
-			</div><!-- comment-author -->  
-			<?php if ( $comment->comment_approved == '0' ) : // show this if comment is not approved ?>  
-				<em><?php _e( 'Your comment is awaiting moderation.', 'bicubic' ) ?></em>  
-				<br />  
-			<?php endif;  
-				comment_text() //show comment text ?>  
+			</div>
+			<!-- comment-author -->
+			<?php if ( $comment->comment_approved == '0' ) : // show this if comment is not approved ?>
+				<em><?php _e( 'Your comment is awaiting moderation.', 'bicubic' ) ?></em>
+				<br />
+			<?php endif;
+			comment_text() //show comment text ?>
 			<!-- reply link -->
-			<div class="reply">  
+			<div class="reply">
 				<?php $args = array(
-					'reply_text' => __( 'Reply' , 'bicubic' ),
-					'max_depth'  => $args[ 'max_depth' ],
-					'depth' 	 => $depth
+					'reply_text' => __( 'Reply', 'bicubic' ),
+					'max_depth'  => $args['max_depth'],
+					'depth'      => $depth
 				);
 				comment_reply_link( $args );
 				// edit link link for trackback and pingback looks differently
 				if ( $comment->comment_type == 'pingback' || $comment->comment_type == 'trackback' ) {
-					edit_comment_link( __( '(Edit)', 'bicubic' ), '', '' ); 		    	
+					edit_comment_link( __( '(Edit)', 'bicubic' ), '', '' );
 				} else {
-					edit_comment_link( __( '(Edit)', 'bicubic' ), ' | ', '' ); 
+					edit_comment_link( __( '(Edit)', 'bicubic' ), ' | ', '' );
 				} ?>
-			</div><!-- .reply -->  
-		</div><!-- #comment -->  
+			</div>
+			<!-- .reply -->
+		</div>
+		<!-- #comment -->
+	</li>
 <?php }
 
-// filter the page title
-function bicubic_wp_title( $title, $sep ) {
+/* backwards compatibility title-tag */
+if ( ! function_exists( '_wp_render_title_tag' ) ) {
+	/*customize title*/
+	function bicubic_wp_title( $title, $sep ) {
 		global $paged, $page;
-		if ( is_feed() )
+		if ( is_feed() ) {
 			return $title;
+		}
 		// add the site name.
 		$title .= get_bloginfo( 'name' );
 		// Add the site description for the home/front page.
 		$site_description = get_bloginfo( 'description', 'display' );
-		if ( $site_description && ( is_home() || is_front_page() ) )
+		if ( $site_description && ( is_home() || is_front_page() ) ) {
 			$title = "$title $sep $site_description";
+		}
 		// Add a page number if necessary.
-		if ( $paged >= 2 || $page >= 2 )
+		if ( $paged >= 2 || $page >= 2 ) {
 			$title = "$title $sep " . sprintf( __( 'Page %s', 'bicubic' ), max( $paged, $page ) );
+		}
 		if ( $title == '' ) {
-		 	return 'Untitled';
-		} else {	
+			return 'Untitled';
+		} else {
 			return $title;
 		}
+	}
+
+	/*customize title*/
+	add_filter( 'wp_title', 'bicubic_wp_title', 10, 2 );
+
+	/* render title in wp_head*/
+	function bicubic_render_title() { ?>
+		<title><?php wp_title( '|', true, 'right' ); ?></title>
+	<?php }
+
+	add_action( 'wp_head', 'bicubic_render_title' );
 }
+/* end backwards compatibility */
 
 // function for ie
 function bicubic_ie() { ?>
@@ -140,37 +185,39 @@ function bicubic_ie() { ?>
 	<script>
 		var e = ( "article, aside, figcaption, figure, footer, header, hgroup, nav, section, time" ).split( ', ' );
 		for ( var i = 0; i < e.length; i++ ) {
-		document.createElement( e[i] );
+			document.createElement( e[i] );
 		}
 	</script>
 	<style type="text/css" media="screen">
-		#search > div, 
-		#search-div-left, 
-		#search-div-right, 
-		input[type="text"], 
-		input[type="password"], 
-		textarea, 
-		.bicubic-select, 
-		.bicubic-custom-file, 
-		.bicubic-custom-file-content, 
-		.bicubic-custom-file-text, 
-		#submit, 
-		.bicubic-reset-form input[type="reset"], 
+		#search > div,
+		#search-div-left,
+		#search-div-right,
+		input[type="text"],
+		input[type="password"],
+		textarea,
+		.bicubic-select,
+		.bicubic-custom-file,
+		.bicubic-custom-file-content,
+		.bicubic-custom-file-text,
+		#submit,
+		.bicubic-reset-form input[type="reset"],
 		.bicubic-submit-button input[type="submit"],
 		.bicubic-active-opt {
-			behavior: url( '<?php echo get_template_directory_uri();?>/js/PIE.htc' );
+			behavior: url('js/PIE.htc');
 		}
+
 		.bicubic-custom-file-text,
 		.bicubic-select,
 		.bicubic-active-opt {
 			-pie-background: url(bg-image.png) no-repeat, linear-gradient(#fcfcfc, #f7f7f7);
 		}
-	</style> 
+	</style>
 	<![endif]-->
 <?php }
 
 // add hooks
 add_action( 'after_setup_theme', 'bicubic_setup' );
-add_filter( 'wp_title', 'bicubic_wp_title', 10, 2 );
+add_action( 'admin_menu', 'bicubic_admin_menu' );
+add_action( 'widgets_init', 'bicubic_register_sidebar' );
 add_action( 'wp_enqueue_scripts', 'bicubic_scripts_styles' );
 add_action( 'wp_print_scripts', 'bicubic_ie', 8 );
