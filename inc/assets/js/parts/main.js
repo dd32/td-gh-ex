@@ -1,21 +1,38 @@
 /* !
  * Customizr WordPress theme Javascript code
- * Copyright (c) 2014-2015 Nicolas GUILLAUME (@nicguillaume), Themes & Co.
+ * Copyright (c) 2014-2015 Nicolas GUILLAUME (@nicguillaume), Press Customizr.
  * GPL2+ Licensed
 */
 //ON DOM READY
 jQuery(function ($) {
     var _p = TCParams;
 
+    //helper to trigger a simple load
+    //=> allow centering when smart load not triggered by smartload
+    var _trigger_simple_load = function( $_imgs ) {
+      if ( 0 === $_imgs.length )
+        return;
+
+      $_imgs.map( function( _ind, _img ) {
+        $(_img).load( function () {
+            $(_img).trigger('simple_load');
+        });//end load
+        if ( $(_img)[0] && $(_img)[0].complete )
+          $(_img).load();
+      } );//end map
+    };//end of fn
+
+
     //CENTER VARIOUS IMAGES
     setTimeout( function() {
       //Featured Pages
-      $('.widget-front .thumb-wrapper, .fpc-widget-front .thumb-wrapper').centerImages( {
+      $('.widget-front .thumb-wrapper').centerImages( {
         enableCentering : 1 == _p.centerAllImg,
         enableGoldenRatio : false,
         disableGRUnder : 0,//<= don't disable golden ratio when responsive
         zeroTopAdjust : 1,
-        leftAdjust : 2.5
+        leftAdjust : 2.5,
+        oncustom : ['smartload', 'simple_load']
       });
       //POST LIST THUMBNAILS + FEATURED PAGES
       //Squared, rounded
@@ -23,14 +40,16 @@ jQuery(function ($) {
         enableCentering : 1 == _p.centerAllImg,
         enableGoldenRatio : false,
         disableGRUnder : 0,//<= don't disable golden ratio when responsive
+        oncustom : ['smartload', 'simple_load']
       });
 
       //rectangulars
       $('.tc-rectangular-thumb').centerImages( {
         enableCentering : 1 == _p.centerAllImg,
         enableGoldenRatio : true,
+        goldenRatioVal : _p.goldenRatio || 1.618,
         disableGRUnder : 0,//<= don't disable golden ratio when responsive
-        oncustom : 'refresh-height', //bind 'refresh-height' event (triggered to the the customizer preview frame)
+        oncustom : ['smartload', 'refresh-height', 'simple_load'] //bind 'refresh-height' event (triggered to the the customizer preview frame)
       });
 
       //SINGLE POST THUMBNAILS
@@ -38,38 +57,115 @@ jQuery(function ($) {
         enableCentering : 1 == _p.centerAllImg,
         enableGoldenRatio : false,
         disableGRUnder : 0,//<= don't disable golden ratio when responsive
-        oncustom : 'refresh-height', //bind 'refresh-height' event (triggered to the the customizer preview frame)
+        oncustom : ['smartload', 'refresh-height', 'simple_load'] //bind 'refresh-height' event (triggered to the the customizer preview frame)
       });
 
       //POST GRID IMAGES
       $('.tc-grid-figure').centerImages( {
         enableCentering : 1 == _p.centerAllImg,
-        oncustom : 'smartload',
+        oncustom : ['smartload', 'simple_load'],
         enableGoldenRatio : true,
+        goldenRatioVal : _p.goldenRatio || 1.618,
         goldenRatioLimitHeightTo : _p.gridGoldenRatioLimit || 350
       } );
     }, 300 );
 
-    //SLIDER
-    //adds a specific class to the carousel when automatic centering is enabled
-    $('#customizr-slider .carousel-inner').addClass('center-slides-enabled');
 
+    //SLIDER
+    //Slider with localized script variables
+    var d = _p.SliderName,
+        e = _p.SliderDelay;
+        j = _p.SliderHover;
+
+    if (0 !== d.length) {
+        if (0 !== e.length && !j) {
+            $("#customizr-slider").carousel({
+                interval: e,
+                pause: "false"
+            });
+        } else if (0 !== e.length) {
+            $("#customizr-slider").carousel({
+                interval: e
+            });
+        } else {
+            $("#customizr-slider").carousel();
+        }
+    }
+
+    //add a class to the slider on hover => used to display the navigation arrow
+    $(".carousel").hover( function() {
+            $(this).addClass('tc-slid-hover');
+        },
+        function() {
+            $(this).removeClass('tc-slid-hover');
+        }
+    );
+
+    //SLIDER ARROWS
+    function _center_slider_arrows() {
+        if ( 0 === $('.carousel').length )
+            return;
+        $('.carousel').each( function() {
+            var _slider_height = $( '.carousel-inner' , $(this) ).height();
+            $('.tc-slider-controls', $(this) ).css("line-height", _slider_height +'px').css("max-height", _slider_height +'px');
+        });
+    }
+    //Recenter the slider arrows
+    $(window).resize(function(){
+        _center_slider_arrows();
+    });
+    _center_slider_arrows();
+
+
+    //Slider swipe support with hammer.js
+    if ( 'function' == typeof($.fn.hammer) ) {
+
+        //prevent propagation event from sensible children
+        $(".carousel input, .carousel button, .carousel textarea, .carousel select, .carousel a").
+            on("touchstart touchmove", function(ev) {
+                ev.stopPropagation();
+        });
+
+        $('.carousel' ).each( function() {
+            $(this).hammer().on('swipeleft tap', function() {
+                $(this).carousel('next');
+            });
+            $(this).hammer().on('swiperight', function(){
+                $(this).carousel('prev');
+            });
+        });
+    }
+
+    //SLIDER IMG + VARIOUS
     setTimeout( function() {
       $( '.carousel .carousel-inner').centerImages( {
         enableCentering : 1 == _p.centerSliderImg,
         imgSel : '.item .carousel-image img',
-        oncustom : ['slid'],
-        defaultCSSVal : { width : '100%' , height : 'auto' }
+        oncustom : ['slid', 'simple_load'],
+        defaultCSSVal : { width : '100%' , height : 'auto' },
+        useImgAttr : true
       } );
       $('.tc-slider-loader-wrapper').hide();
     } , 50);
 
+    _trigger_simple_load( $( '.carousel .carousel-inner').find('img') );
 
-    //Img Smart Load
-    //hentry covers all post / pagecontent : single and list
+
+
+
+    //IMG SMART LOAD
+    //.article-container covers all post / page content : single and list
     //__before_main_wrapper covers the single post thumbnail case
+    //.widget-front handles the featured pages
     if ( 1 == _p.imgSmartLoadEnabled )
-      $( '.hentry, .__before_main_wrapper, .widget-front, .fpc-widget-front' ).imgSmartLoad( _.size( _p.imgSmartLoadOpts ) > 0 ? _p.imgSmartLoadOpts : {} );
+      $( '.article-container, .__before_main_wrapper, .widget-front' ).imgSmartLoad( _.size( _p.imgSmartLoadOpts ) > 0 ? _p.imgSmartLoadOpts : {} );
+    else {
+      //if smart load not enabled => trigger the load event on img load
+      var $_to_center = $( '.article-container, .__before_main_wrapper, .widget-front' ).find('img');
+      _trigger_simple_load($_to_center);
+    }//end else
+
+
 
 
     //DROP CAPS
@@ -83,6 +179,8 @@ jQuery(function ($) {
         }
       });
     }
+
+
 
     //EXT LINKS
     //May be add (check if activated by user) external class + target="_blank" to relevant links
@@ -127,49 +225,32 @@ jQuery(function ($) {
     }
 
 
-    //Slider with localized script variables
-    var d = _p.SliderName,
-        e = _p.SliderDelay;
-        j = _p.SliderHover;
 
-    if (0 !== d.length) {
-        if (0 !== e.length && !j) {
-            $("#customizr-slider").carousel({
-                interval: e,
-                pause: "false"
-            });
-        } else if (0 !== e.length) {
-            $("#customizr-slider").carousel({
-                interval: e
-            });
-        } else {
-            $("#customizr-slider").carousel();
-        }
-    }
+    //SMOOTH SCROLL FOR AUTHORIZED LINK SELECTORS
+    var _maybe_apply_smooth_scroll = function() {
+      if ( ! _p.SmoothScroll || 'easeOutExpo' != _p.SmoothScroll )
+        return;
 
-    //add a class to the slider on hover => used to display the navigation arrow
-    $(".carousel").hover( function() {
-            $(this).addClass('tc-slid-hover');
-        },
-        function() {
-            $(this).removeClass('tc-slid-hover');
-        }
-    );
+      var _excl_sels = ( _p.SmoothScrollExclude && _.isArray( _p.SmoothScrollExclude ) ) ? _p.SmoothScrollExclude.join(',') : '';
+      $('a[href^="#"]', '#content').not( _excl_sels ).click(function () {
+          var anchor_id = $(this).attr("href");
 
-    //Smooth scroll but not on bootstrap buttons. Checks if php localized option is active first.
-    var SmoothScroll = _p.SmoothScroll;
+          //anchor el exists ?
+          if ( ! $(anchor_id).length )
+            return;
 
-    if ('easeOutExpo' == SmoothScroll) {
-        $('a[href^="#"]', '#content').not('[class*=edd], .tc-carousel-control, .carousel-control, [data-toggle="modal"], [data-toggle="dropdown"], [data-toggle="tooltip"], [data-toggle="popover"], [data-toggle="collapse"], [data-toggle="tab"]').click(function () {
-            var anchor_id = $(this).attr("href");
-            if ('#' != anchor_id) {
-                $('html, body').animate({
-                    scrollTop: $(anchor_id).offset().top
-                }, 700, SmoothScroll);
-            }
-            return false;
-        });
-    }
+          if ('#' != anchor_id) {
+              $('html, body').animate({
+                  scrollTop: $(anchor_id).offset().top
+              }, 700, _p.SmoothScroll);
+          }
+          return false;
+      });//end click
+    };
+    //Fire smooth scroll
+    _maybe_apply_smooth_scroll();
+
+
 
     //BACK TO TOP
     function g($) {
@@ -222,7 +303,7 @@ jQuery(function ($) {
 
 
 
-    //Detects browser with CSS
+    //BROWSER DETECTION
     // Chrome is Webkit, but Webkit is also Safari. If browser = ie + strips out the .0 suffix
     if ( $.browser.chrome )
         $("body").addClass("chrome");
@@ -236,7 +317,7 @@ jQuery(function ($) {
         $("body").addClass($.browser.version);
 
 
-    //handle some dynamic hover effects
+    //VARIOUS HOVER ACTION
     $(".widget-front, article").hover(function () {
         $(this).addClass("hover");
     }, function () {
@@ -249,11 +330,17 @@ jQuery(function ($) {
         $(this).removeClass("on");
     });
 
+
+
+    //ATTACHMENT FADE EFFECT
     $("article.attachment img").delay(500).animate({
             opacity: 1
         }, 700, function () {}
     );
 
+
+
+    //COMMENTS
     //Change classes of the comment reply and edit to make the whole button clickable (no filters offered in WP to do that)
     if ( _p.HasComments ) {
        //edit
@@ -273,6 +360,7 @@ jQuery(function ($) {
     }
 
 
+    //DYNAMIC REORDERING
     //Detect layout and reorder content divs
     var LeftSidebarClass    = _p.LeftSidebarClass || '.span3.left.tc-sidebar',
         RightSidebarClass   = _p.RightSidebarClass || '.span3.right.tc-sidebar',
@@ -310,7 +398,6 @@ jQuery(function ($) {
             reordered = true; //this could stay in both if blocks instead
         }
     }//end function
-
     //Enable reordering if option is checked in the customizer.
     if ( 1 == _p.ReorderBlocks ) {
         //trigger the block positioning only when responsive
@@ -324,40 +411,8 @@ jQuery(function ($) {
         });
     }
 
-    //SLIDER ARROWS
-    function _center_slider_arrows() {
-        if ( 0 === $('.carousel').length )
-            return;
-        $('.carousel').each( function() {
-            var _slider_height = $( '.carousel-inner' , $(this) ).height();
-            $('.tc-slider-controls', $(this) ).css("line-height", _slider_height +'px').css("max-height", _slider_height +'px');
-        });
-    }
-    //Recenter the slider arrows
-    $(window).resize(function(){
-        _center_slider_arrows();
-    });
-    _center_slider_arrows();
 
 
-    //Slider swipe support with hammer.js
-    if ( 'function' == typeof($.fn.hammer) ) {
-
-        //prevent propagation event from sensible children
-        $(".carousel input, .carousel button, .carousel textarea, .carousel select, .carousel a").
-            on("touchstart touchmove", function(ev) {
-                ev.stopPropagation();
-        });
-
-        $('.carousel' ).each( function() {
-            $(this).hammer().on('swipeleft tap', function() {
-                $(this).carousel('next');
-            });
-            $(this).hammer().on('swiperight', function(){
-                $(this).carousel('prev');
-            });
-        });
-    }
 
     //Handle dropdown on click for multi-tier menus
     var $dropdown_ahrefs    = $('.tc-open-on-click .menu-item.menu-item-has-children > a[href!="#"]'),
@@ -396,6 +451,7 @@ jQuery(function ($) {
 });
 
 
+
 /* Sticky header since v3.2.0 */
 jQuery(function ($) {
     var   _p              = TCParams,
@@ -404,9 +460,8 @@ jQuery(function ($) {
           isUserLogged    = $('body').hasClass('logged-in') || 0 !== $('#wpadminbar').length,
           isCustomizing   = $('body').hasClass('is-customizing'),
           customOffset    = +_p.stickyCustomOffset,
-          logosH     = [],
-          logosW      = [],
-          logosRatio      = [];
+          $sticky_logo    = $('img.sticky', '.site-logo'),
+          logo            = 0 === $sticky_logo.length ? { _logo: $('img:not(".sticky")', '.site-logo') , _ratio: '' }: false;
 
     function _is_scrolling() {
         return $('body').hasClass('sticky-enabled') ? true : false;
@@ -451,14 +506,11 @@ jQuery(function ($) {
 
 
     function _set_logo_height(){
-        if ( 0 === $('img' , '.site-logo').length )
+        if ( logo && 0 === logo._logo.length || ! logo._ratio )
             return;
-        $.each($('img', '.site-logo'), function( $i ){
-            if ( ! logosRatio[$i] )
-              return;
-            var logoHeight   = $(this).width() / logosRatio[$i];
-            $(this).css('height' , logoHeight );
-        });
+
+        logo._logo.css('height' , logo._logo.width() / logo._ratio );
+
         setTimeout( function() {
             _set_sticky_offsets();
             _set_header_top_offset();
@@ -468,23 +520,21 @@ jQuery(function ($) {
 
     //set site logo width and height if exists
     //=> allow the CSS3 transition to be enabled
-    if ( _is_sticky_enabled() && 0 !== $('img' , '.site-logo').length ) {
-        $.each($('img', '.site-logo'), function( $i ){
-            logosW[$i]  = $(this).attr('width');
-            logosH[$i]  = $(this).attr('height');
+    if ( _is_sticky_enabled() && logo && 0 !== logo._logo.length ) {
+        var logoW = logo._logo.attr('width'),
+            logoH = logo._logo.attr('height');
 
-            //check that all numbers are valid before using division
-            if ( 0 === _.size( _.filter( [ logosW[$i], logosH[$i] ], function(num){ return _.isNumber(num) && 0 !== num; } ) ) )
-              return;
+        //check that all numbers are valid before using division
+        if ( 0 === _.size( _.filter( [ logoW, logoH ], function(num){ return _.isNumber( parseInt(num, 10) ) && 0 !== num; } ) ) )
+          return;
 
-            logosRatio[$i]  = logosW[$i] / logosH[$i];
-            $(this).css('height' , logosH[$i]  ).css('width' , logosW[$i] );
-        });
+        logo._ratio  = logoW / logoH;
+        logo._logo.css('height' , logoH  ).css('width' , logoW );
     }
 
     //LOADING ACTIONS
     if ( _is_sticky_enabled() )
-        setTimeout( function() { _refresh(); } , 20 );
+        setTimeout( function() { _sticky_refresh(); _sticky_header_scrolling_actions(); } , 20 );
 
     //RESIZING ACTIONS
     $(window).resize(function() {
@@ -495,7 +545,7 @@ jQuery(function ($) {
         _set_logo_height();
     });
 
-    function _refresh() {
+    function _sticky_refresh() {
         setTimeout( function() {
             _set_sticky_offsets();
             _set_header_top_offset();
@@ -510,21 +560,21 @@ jQuery(function ($) {
     //var windowHeight = $(window).height();
     var triggerHeight = 20; //0.5 * windowHeight;
 
-    function _scrolling_actions() {
+    function _sticky_header_scrolling_actions() {
         _set_header_top_offset();
         //process scrolling actions
         if ( $(window).scrollTop() > triggerHeight ) {
             $('body').addClass("sticky-enabled").removeClass("sticky-disabled");
         }
-        else {
+        else if ( _is_scrolling() ) {
             $('body').removeClass("sticky-enabled").addClass("sticky-disabled");
-            setTimeout( function() { _refresh();} ,
+            setTimeout( function() { _sticky_refresh();} ,
               $('body').hasClass('is-customizing') ? 100 : 20
             );
             //additional refresh for some edge cases like big logos
-            setTimeout( function() { _refresh(); } , 200 );
+            setTimeout( function() { _sticky_refresh(); } , 200 );
         }
-    }
+    }//end of fn
 
     $(window).scroll(function() {
         if ( ! _is_sticky_enabled() )
@@ -537,11 +587,11 @@ jQuery(function ($) {
 
          if ( 1 == _p.timerOnScrollAllBrowsers ) {
             timer = window.setTimeout(function() {
-                _scrolling_actions();
+                _sticky_header_scrolling_actions();
              }, increment > 5 ? 50 : 0 );
          } else if ( $('body').hasClass('ie') ) {
              timer = window.setTimeout(function() {
-                _scrolling_actions();
+                _sticky_header_scrolling_actions();
              }, increment > 5 ? 50 : 0 );
         }
     });//end of window.scroll()
