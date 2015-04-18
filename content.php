@@ -2,8 +2,8 @@
     <article id = "post-<?php the_ID(); ?> <?php post_class(); ?>">
         <h3 class = "entry-title"><a href = "<?php the_permalink(); ?>"><?php echo ( get_the_title() ) ? get_the_title() : __( '(No Title)', 'barista' ); ?></a></h3>
         <small class = "metadata-posted-on"><?php barista_metadata_posted_on_setup(); ?></small>
-            <div class = "small-post-thumbnail">
-            <?php the_post_thumbnail('small-thumbnail'); ?>
+            <div class = "small-post-thumbnail cf">
+                <?php the_post_thumbnail('barista-small-thumbnail'); ?>
             </div>
         <div class = "entry-content">
             <?php the_content(); ?>

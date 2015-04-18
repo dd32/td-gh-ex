@@ -10,7 +10,8 @@ require(get_template_directory() . '/includes/custom-header.php');
 function barista_scripts_setup(){
     wp_enqueue_style('barista-style', get_stylesheet_uri());
     wp_enqueue_style('barista-font-awesome', get_stylesheet_directory_uri() . '/extras/font-awesome/css/font-awesome.css', '03302015', true);
-    wp_enqueue_style('barista-ubuntu-font', 'http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic');
+    wp_enqueue_style('barista-ubuntu-font', '//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic');
+    wp_enqueue_script('barista-hide-search', get_template_directory_uri() . '/js/hide-search.js', array('jquery'), '04062015', true);
     
     if (is_singular() && comments_open() && get_option('thread_comments'))
         wp_enqueue_script( 'comment-reply' );
@@ -56,7 +57,8 @@ if (!function_exists('barista_theme_setup')){
          * Register Navigation Menus
         ***********************************************************************/
         register_nav_menus(array(
-        'primary-navigation' => __('Primary Navigation', 'barista'),
+        'primary-navigation'    => __('Primary Navigation', 'barista'),
+        'social'                => __('Social Navigation', 'barista'),
         ));
         
         /***********************************************************************

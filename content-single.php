@@ -1,7 +1,7 @@
 <section id = "site-content">
     <article id = "post-<?php the_ID(); ?> <?php post_class(); ?>">
-            <div class = "small-post-thumbnail">
-            <?php the_post_thumbnail('medium-thumbnail'); ?>
+            <div class = "medium-post-thumbnail">
+            <?php the_post_thumbnail('barista-medium-thumbnail'); ?>
             </div>
         <h3 class = "entry-title"><?php echo ( get_the_title() ) ? get_the_title() : __( '(No Title)', 'barista' ); ?></h3>
         <small class = "metadata-posted-on"><?php barista_metadata_posted_on_setup(); ?></small>

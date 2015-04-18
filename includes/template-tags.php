@@ -60,8 +60,8 @@ function barista_widget_sidebar_setup(){
         'name'              =>  __('Posts Content Sidebar', 'barista'),
         'id'                =>  'post-content',
         'description'       =>  __('Appears on Default Sidebar.', 'barista'),
-        'before_widget'  => '<li id = "%1$s class = "%1$s">',
-        'after_widget'   => '</li>',
+        'before_widget'  => '<aside id = "%1$s" class = "widget %2$s">',
+        'after_widget'   => '</aside>',
         'before_title'   => '<h3 class = "widget-title">',
         'after_title'    => '</h3>',
     ));
@@ -70,8 +70,8 @@ function barista_widget_sidebar_setup(){
         'name'              =>  __('Pages Content Sidebar', 'barista'),
         'id'                =>  'page-content',
         'description'       =>  __('Appears on Pages.', 'barista'),
-        'before_widget'  => '<li id = "%1$s class = "%1$s">',
-        'after_widget'   => '</li>',
+        'before_widget'  => '<aside id = "%1$s" class = "widget %2$s">',
+        'after_widget'   => '</aside>',
         'before_title'   => '<h3 class = "widget-title">',
         'after_title'    => '</h3>',
     ));
@@ -80,8 +80,8 @@ function barista_widget_sidebar_setup(){
         'name'              =>  __('Custom Content Sidebar', 'barista'),
         'id'                =>  'custom-content',
         'description'       =>  __('Appears on Pages with "Custom Sidebar" template.', 'barista'),
-        'before_widget'  => '<li id = "%1$s class = "%1$s">',
-        'after_widget'   => '</li>',
+        'before_widget'  => '<aside id = "%1$s" class = "widget %2$s">',
+        'after_widget'   => '</aside>',
         'before_title'   => '<h3 class = "widget-title">',
         'after_title'    => '</h3>',
     ));
@@ -130,4 +130,21 @@ function barista_paging_navigation() {
 	</nav><!-- .navigation -->
 	<?php
 	endif;
+}
+
+function barista_social_menu(){
+    if(has_nav_menu('social')){
+        wp_nav_menu(array(
+            'theme_location'    =>  'social',
+            'container'         =>  'div',
+            'container_id'      => 'menu-social',
+            'container_class'     => 'menu-social',
+            'menu_id'           => 'menu-social-items',
+            'menu_class'        => 'menu-items',
+            'depth'             => 1,
+            'link_before'       => '<span class = "screen-reader-text cf">',
+            'link_after'        => '</span>',
+            'fallback_cb'       => '',
+        ));
+    };
 }
