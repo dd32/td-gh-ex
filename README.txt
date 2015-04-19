@@ -71,3 +71,8 @@ Ares uses various open source libraries, fonts icons as listed blow:
     - URL                   https://github.com/daneden/animate.css#license
     - License               MIT
     - License URL           http://www.opensource.org/licenses/mit-license.php
+
+11. Wow
+    - URL                   https://github.com/matthieua/WOW/blob/master/LICENSE-MIT
+    - License               MIT
+    - License URL           http://www.opensource.org/licenses/mit-license.php

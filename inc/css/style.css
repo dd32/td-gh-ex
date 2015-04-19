@@ -70,7 +70,7 @@ a.button-primary{
 }
 /*-- Logo --*/
 #sc_logo{
-    max-height: 80px;
+    max-height: 60px;
 }
 /*-- Toolbar --*/
 #site-toolbar{
@@ -138,6 +138,9 @@ a.button-primary{
 }
 .logged-in .site-branding{
     top: 72px;
+}
+.logged-in .no_toolbar .site-branding{
+    top: 32px;
 }
 .site-branding{
     /*margin-top: 75px;*/
@@ -278,6 +281,7 @@ a.button-primary{
 .sc-slider-wrapper{
     margin: 0 auto;
     overflow: hidden;
+    /*max-height: 600px;*/
 }
 .sc-slider-wrapper .camera_caption{
     width: 100%;
@@ -376,6 +380,11 @@ a.button-primary{
 
     
 }
+#top-banner .top-banner-text h2{
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+}
 .site-cta{
     position: relative;
     min-height: 230px;
@@ -425,12 +434,11 @@ a.button-primary{
 }
 /*-- Top Banner --*/
 #top-banner{
-    padding: 15px 0 0 0;
     background: #fff;
     min-height: 100px;
     color: rgb(82, 82, 82);
     border: 1px solid rgb(234, 234, 234);
-    padding: 20px;    
+    padding: 50px 0 30px 0;    
 }
 #top-banner .textwidget{
     font-weight: 400;
@@ -495,12 +503,21 @@ a.button-primary{
 #top-banner .top-banner-text .overlay:hover{
     background: rgba(0,0,0,0);
 }
+#top-banner .widget{
+    margin-bottom: 50px;
+}
+#homepage-widget{
+/*    background: url('../images/light_grey.png');*/
+    background: #F2F2F2;
+    padding: 50px 0 30px 0;
+}
 /*-- site content --*/
 article{
     background: rgb(255, 255, 255);
     color: rgb(82, 82, 82);
     border: 1px solid rgb(234, 234, 234);
     padding: 15px;
+    margin-bottom: 20px;
 }
 article.sidebar-off{
     width: 100%;
@@ -529,7 +546,7 @@ article.sidebar-off{
     margin-top: 120px;
     background: rgb(245,245,245);
     /*padding-top: 10px;*/
-    padding-bottom: 20px;
+    /*padding-bottom: 20px;*/
 }
 .site-content-wrapper.skulls{
     background: url('../images/skulls.png');
@@ -567,6 +584,32 @@ article.sidebar-off{
 }
 /*#top-banner #sc_avenue_recent_posts*/
 /*-- Site Footer --*/
+#footer-callout > .row{
+    padding: 40px 0 40px 0;
+}
+#footer-callout h3{
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+}
+#footer-callout .button-cta{
+    background: #fff;
+    color: #000;
+    font-size: 18px;
+    color: #525252;
+    height: 40px;
+    line-height: 40px;
+    font-weight: 600;
+    transition: 0.15s all linear;
+    -moz-transition: 0.15s all linear;
+    -webkit-transition: 0.15s all linear;
+    /*padding: 5px 22px;*/
+}
+#footer-callout .button-cta:hover{
+    transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
 .site-footer{
     width: 100%;
     color: #777;
@@ -593,6 +636,7 @@ article.sidebar-off{
 }
 .site-footer .widget-title{
     color: #fff;
+    margin-bottom: 30px;
 }
 input[type="search"].search-field{ border: 0;}
 input[type="search"].search-field:focus{ outline: none;}
@@ -737,7 +781,7 @@ input[type="search"].search-field:focus{ outline: none;}
 }
 .avenue-sidebar .widget .widget-title{
     padding: 10px 0 0px 0;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 .avenue-sidebar .widget_search{
     padding: 20px;
@@ -838,6 +882,9 @@ ul.social-icons li a:hover{
 }
 #tasty-mobile-toggle{
     display: none;
+}
+#sc_our_team.widget{
+    border: none;
 }
 /*-- Responsive --*/
 @media(min-width: 1170px){
@@ -970,11 +1017,36 @@ ul.social-icons li a:hover{
     .sc-slider-wrapper .camera_caption > div span{
         font-size: 32px;
     }
+    .site-branding{
+        top: 0;
+    }
+    .logged-in .site-branding{
+        top: 46px;
+    }
 }
 @media ( min-width: 601px ) and ( max-width: 800px ){
     
 }
 @media ( max-width: 601px ){
+    #tasty-mobile-toggle .menu{
+        margin-top: -4px;
+    }
+    .site-content-wrapper{
+        margin-top: 80px;
+    }
+    #main-heading h3{
+        font-size: 28px;
+        line-height: 32px;
+        padding: 10px 0;
+    }
+    #secondary-heading h3{
+        font-size: 24px;
+        line-height: 28px;
+        padding: 10px 0;
+    }
+    .sc-slider-wrapper .camera_caption > div span{
+        font-size: 22px;
+    }
     #site-cta .main-heading{
         font-size: 28px;
         line-height: 30px;

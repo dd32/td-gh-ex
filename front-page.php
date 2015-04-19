@@ -11,25 +11,33 @@ get_header(); ?>
 
         <?php if (of_get_option('ares_slider_bool', 'yes') == 'yes') echo ares_slider(); ?>
         
-        <?php if( of_get_option('ares_cta_header_one') ) : ?>
+        <?php if( of_get_option('ares_cta_header_one', TRUE) ) : ?>
         <div class="center relative" id="main-heading">
             <div class="row">
-                <h3 id="" class="animated fadeInLeft"><span><?php echo esc_attr( of_get_option('ares_cta_header_one', 'Tyros: A highly customizable modern online store') );?></span></h3>
+                <h3 id="" class="animated fadeInLeft"><span><?php echo esc_attr( of_get_option('ares_cta_header_one', 'Modern design, Responsive layout') );?></span></h3>
             </div>
         </div>
         <?php endif; ?>        
         
-        <?php if( of_get_option('ares_cta_header_two') ) : ?>
+        <?php if( of_get_option('ares_cta_header_two', TRUE) ) : ?>
         <div class="center relative" id="secondary-heading">
             <div class="row">
-                <h3 id="" class="animated fadeInRight"><span><?php echo esc_attr( of_get_option('ares_cta_header_two', 'Tyros: A highly customizable modern online store') );?></span></h3>
+                <h3 id="" class="animated fadeInRight"><span><?php echo esc_attr( of_get_option('ares_cta_header_two', 'User Friendly, Easily customizable') );?></span></h3>
             </div>
         </div>
         <?php endif; ?>        
         
         
         <?php if (of_get_option('ares_cta_bool', 'yes') == 'yes') echo ares_ctas(); ?>
-        <?php if (of_get_option('ares_banner_bool', 'yes') == 'yes') echo ares_banner(); ?>
+        
+        <?php if( is_active_sidebar('sidebar-banner') ) : ?>
+            <?php echo ares_banner(); ?>
+        <?php endif; ?>
+        
+        <?php if(is_active_sidebar('sidebar-homepage-widget')) :?>
+            <?php echo ares_homepage_widget(); ?>
+        <?php endif; ?>
+        
         
         <div class="frontpage row">
         <?php while (have_posts()) : the_post(); ?>

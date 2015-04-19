@@ -9,13 +9,13 @@ jQuery(document).ready(function($) {
     
     matchColHeights('.site-cta');
     
-    $('.site-cta').css({visibility:'hidden'});
     
-    $(window).scroll(function(){
-        if( $('.site-cta').scrollTop() <= $(window).height() ){
-            $('.site-cta').css({visibility:'visible'}).addClass('animated fadeInUp');
-        }
-    });    
+    smartcat_animate = new WOW({
+        boxClass        :   'smartcat-animate',
+        offset          :   '200'
+    });
+    smartcat_animate.init();
+
     
     
     

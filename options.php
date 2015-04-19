@@ -172,21 +172,35 @@ function optionsframework_options() {
         'name' => __('Twitter URL', 'ares'),
         'desc' => __('Enter the URL for your Facebook Page', 'ares'),
         'id' => 'ares_twitter_url',
-        'std' => '',
+        'std' => '#',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('LinkedIn URL', 'ares'),
         'desc' => __('Enter the URL for your LinkedIn Page', 'ares'),
         'id' => 'ares_linkedin_url',
-        'std' => '',
+        'std' => '#',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('Google Plus URL', 'ares'),
         'desc' => __('Enter the URL for your Google Plus Page', 'ares'),
         'id' => 'ares_gplus_url',
-        'std' => '',
+        'std' => '#',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Instagram URL', 'ares'),
+        'desc' => __('Enter the URL for your Instagram Page', 'ares'),
+        'id' => 'ares_instagram_url',
+        'std' => '#',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Youtube URL', 'ares'),
+        'desc' => __('Enter the URL for your Youtube Page', 'ares'),
+        'id' => 'ares_youtube_url',
+        'std' => '#',
         'type' => 'text');
 
     // ---------------------------------------------------------------------- Design
@@ -244,20 +258,19 @@ function optionsframework_options() {
     
 
     
+    
     $options[] = array(
         'name' => __('Homepage', 'ares'),
         'type' => 'heading');
     
     $options[] = array(
-        'name' => "Select homepage design",
-        'desc' => "Select to show or hide the homepage sidebar",
-        'id' => "ares_homepage_sidebar",
-        'std' => "sidebar-off",
-        'type' => "images",
-        'options' => array(
-            'sidebar-off' => $imagepath . '1col.png',
-            'sidebar-on' => $imagepath . '2cr.png')
-    );   
+        'name' => __('Show homepage page content', 'ares'),
+        'desc' => __('If you do not want to show the default page or blog roll on the home page, turn this off', 'ares'),
+        'id' => 'ares_frontpage_content_bool',
+        'std' => 'yes',
+        'type' => 'radio',
+        'options' => $bool_array);    
+    
     
     $path = get_template_directory_uri() . '/images/ares_demo.jpg';    
     $options[] = array(
@@ -275,6 +288,7 @@ function optionsframework_options() {
         'id' => 'ares_slide1_image',
         'std' => $path,
         'type' => 'upload');
+    
     $options[] = array(
         'name' => __('Slide #1 Text', 'ares'),
         'desc' => __('First Slide Text', 'ares'),
@@ -452,6 +466,17 @@ function optionsframework_options() {
         'type' => 'heading');
     
     $options[] = array(
+        'name' => "Homepage Page Layout",
+        'desc' => "Select to show or hide the homepage sidebar",
+        'id' => "ares_homepage_sidebar",
+        'std' => "sidebar-off",
+        'type' => "images",
+        'options' => array(
+            'sidebar-off' => $imagepath . '1col.png',
+            'sidebar-on' => $imagepath . '2cr.png')
+    );       
+    
+    $options[] = array(
         'name' => "Blog Page Layout",
         'desc' => "Select full-width or right sidebar page layout",
         'id' => "ares_blog_layout",
@@ -522,7 +547,42 @@ function optionsframework_options() {
     /*------------------------------------------------------ Footer -----------*/
     $options[] = array(
         'name' => __('Footer', 'ares'),
-        'type' => 'heading');
+        'type' => 'heading');    
+    
+    $options[] = array(
+        'name' => __('Footer Call-to-action','ares'),
+        'desc' => __('Show or Hide the post author', 'ares'),
+        'id' => 'ares_footer_cta',
+        'std' => 'on',
+        'type' => 'radio',
+        'options' => array(
+            'on' => 'Show',
+            'off' => 'Hide',
+    ) );     
+    
+    $options[] = array(
+        'name' => __('Footer CTA Text', 'ares'),
+        'desc' => __('Footer call-to-action text', 'ares'),
+        'id' => 'ares_footer_cta_text',
+        'std' => 'GET A NO-RISK, FREE CONSULTATION TODAY',
+        'type' => 'text');    
+      
+    $options[] = array(
+        'name' => __('Footer CTA Button Text', 'ares'),
+        'desc' => __('Set the text on the button', 'ares'),
+        'id' => 'ares_footer_button_text',
+        'std' => 'CONTACT US',
+        'type' => 'text');    
+
+    $options[] = array(
+        'name' => __('Footer CTA Button Link', 'ares'),
+        'desc' => __('Set where the button links to', 'ares'),
+        'id' => 'ares_footer_button_url',
+        'std' => '#',
+        'type' => 'text');    
+    
+    
+    
     $options[] = array(
         'name' => __('Number of Columns','ares'),
         'desc' => __('How many columns is the footer', 'ares'),
@@ -552,11 +612,31 @@ function ares_ares_options_display_sidebar() {
             <img class="smartcat-icon" src="<?php echo OPTIONS_FRAMEWORK_DIRECTORY; ?>images/smartcat_wordpress.png"/>
         </div>
 
+        <div>
+            <h3>Ares Pro Features:</h3>
+            <ul>
+                <li>Up to 5 slides in the slider, with height & timer customization and 10 transition effects</li>
+                <li>9 skin colors</li>
+                <li>Animated Ajax contact form</li>
+                <li>Testimonials Section</li>
+                <li>Recent articles carousel</li>
+                <li>and many more features!</li>
+            </ul>
+        </div>
+        
         <div class="sc-tab-option">
             <a href="http://smartcatdesign.net/preview/ares" target="_blank">
                 View Theme Demo
             </a>
-        </div>
+        </div>    
+        <div class="sc-tab-option">
+            <a href="https://smartcatdesign.net/downloads/ares/" target="_blank">
+                Get Ares Pro
+            </a>
+        </div>    
+            
+
+        
         
     </div>
 <?php } ?>
