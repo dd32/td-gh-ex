@@ -1,5 +1,5 @@
 <div class="second-block-wrapper">
-    <h3 class="block-cat-name"><span>Block 4</span></h3>
+    <h3 class="block-cat-name"><span>Latest Blogs</span></h3>
     <div class="block-post-wrapper clearfix">                                
         <div class="single_post clearfix">                                       
             <div class="post-image">

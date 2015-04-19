@@ -5,7 +5,6 @@
  
  global $post;
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
         <?php 
@@ -39,19 +38,14 @@
                     }
                 ?>
             </div>
-        <div class="post_content"><?php the_content(); ?></div>	
-        <div class="postshare-wrapper">
-            <span><?php echo $trans_share ;?></span>
-            <?php echo do_shortcode( '[apss-share]' );?>
-        </div>	
-        <?php if( !empty( $article_ad )):?> <div class="article-ad-section"><?php echo $article_ad; ?></div> <?php endif ;?>
+        <div class="post_content"><?php the_content(); ?></div>	        	
+        <?php if( !empty( $article_ad )):?> <div class="article-ad-section"><?php echo esc_textarea( $article_ad ) ; ?></div> <?php endif ;?>
 		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'accesspress-mag' ),
 				'after'  => '</div>',
 			) );
-		?>
-        
+		?>        
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">

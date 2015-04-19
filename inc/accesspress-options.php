@@ -147,11 +147,12 @@ function optionsframework_options() {
     
     //Traslations Array
     $translation_name = array(
-                            __( "Continue Reading", "accesspess-mag" ),__( "You are here", "accesspess-mag" ),__( "Editor Pick`s", "accesspess-mag" ),__( "Home", "accesspess-mag" ),__( "Share This Article", "accesspess-mag" ),__( "Review overview", "accesspess-mag" ),__( "Summary", "accesspess-mag" ),
-                            __( "Search results for", "accesspess-mag" ),__( "Tagged", "accesspess-mag" ),__( "Next article", "accesspess-mag" ),__( "Previous article", "accesspess-mag" ),__( "Via", "accesspess-mag" ),__( "Source", "accesspess-mag" ),__( "Advertisement", "accesspress-mag" ),__( "Top arrow", "accesspress-mag" )
+                            __( "Continue Reading", "accesspess-mag" ),__( "You are here", "accesspess-mag" ),__( "Editor Pick`s", "accesspess-mag" ),__( "Home", "accesspess-mag" ),__( "Review overview", "accesspess-mag" ),__( "Summary", "accesspess-mag" ),
+                            __( "Search results for", "accesspess-mag" ),__( "Tagged", "accesspess-mag" ),__( "Next article", "accesspess-mag" ),__( "Previous article", "accesspess-mag" ),__( "Via", "accesspess-mag" ),__( "Source", "accesspess-mag" ),__( "Advertisement", "accesspress-mag" ),__( "Top arrow", "accesspress-mag" ),
+                            __( "Copyright", "accesspress-mag" )
                             );
     $translation_id = array(
-                            'continue_reading','you_are_here','editor_picks','home','share_this_article','review_overview','summary','search_results_for','tagged','next_article','previous_article','via','source','advertisement','top_arrow'
+                            'continue_reading','you_are_here','editor_picks','home','review_overview','summary','search_results_for','tagged','next_article','previous_article','via','source','advertisement','top_arrow','copyright'
                             );
     $trans_count = count($translation_id);
 
@@ -266,7 +267,7 @@ function optionsframework_options() {
             );
             
     $options[] = array(
-            'name' => __( 'Top Menu', 'accesspress-mag' ),                
+            'name' => __( 'Top Menu Option', 'accesspress-mag' ),                
             'desc' => __( 'Hide or show the top menu', 'accesspress-mag' ),
             'id' => 'top_menu_switch',
             'on' => __( 'Yes', 'accesspress-mag'),
@@ -276,7 +277,7 @@ function optionsframework_options() {
             );	
 	
     $options[] = array(
-            'name' => __( 'Top Menu', 'accesspress-mag' ),
+            'name' => __( 'Select Top Menu', 'accesspress-mag' ),
             'desc' => __( 'Select a menu for the top section', 'accesspress-mag' ),    
             'id' => 'top_menu_select',
             'type' => 'select',
@@ -295,13 +296,13 @@ function optionsframework_options() {
             );
     
     $options[] = array(
-            'name' => __( 'Logo', 'accesspress-mag' ),
+            'name' => __( 'Logo Settings', 'accesspress-mag' ),
             'id'   => 'logo',
             'type' => 'groupstart'
             );
     
     $options[] = array(
-            'name' => __( 'Logo Setting', 'accesspress-mag' ),
+            'name' => __( 'Logo Type', 'accesspress-mag' ),
             'desc' => __( 'Select option for site logo settings', 'accesspress-mag' ),    
             'id' => 'logo_setting',
             'std' => 'text',
@@ -309,8 +310,8 @@ function optionsframework_options() {
             'options' => $logo_options
             );
     $options[] = array(
-            'name' => __( 'Logo Upload', 'accesspress-mag' ),
-            'desc' => __( 'Upload your logo (Standard size of the logo is 300 x 100px)', 'accesspress-mag' ),
+            'name' => __( 'Header Logo', 'accesspress-mag' ),
+            'desc' => __( 'Upload your header logo', 'accesspress-mag' ),
             'id' => 'logo_upload',
             'class' =>'sub-option',
             'type' => 'upload', 
@@ -355,8 +356,8 @@ function optionsframework_options() {
             );
             
     $options[] = array(
-            'name' => __( 'Footer', 'accesspress-mag' ),                
-            'desc' => __( 'Hide or show the footer', 'accesspress-mag' ),
+            'name' => __( 'Footer Widget Option', 'accesspress-mag' ),                
+            'desc' => __( 'Hide or show the footer widter area', 'accesspress-mag' ),
             'id' => 'footer_switch',
             'on' => __( 'Yes', 'accesspress-mag'),
             'off' => __( 'No', 'accesspress-mag'),
@@ -365,7 +366,7 @@ function optionsframework_options() {
             );
     
     $options[] = array(
-            'name' => __( 'Layout', 'accesspress-mag' ),
+            'name' => __( 'Footer Layout', 'accesspress-mag' ),
             'desc' => __( 'Choose footer widget layout', 'accesspress-mag' ),
             'id' => 'footer_layout',
             'std' => 'column4',
@@ -384,7 +385,7 @@ function optionsframework_options() {
             );    
             
     $options[] = array(
-            'name' => __( 'Sub Footer', 'accesspress-mag' ),                
+            'name' => __( 'Sub Footer Option', 'accesspress-mag' ),                
             'desc' => __( 'Hide or show copy right and footer menu section', 'accesspress-mag' ),
             'id' => 'sub_footer_switch',
             'on' => __( 'Yes', 'accesspress-mag'),
@@ -394,7 +395,7 @@ function optionsframework_options() {
             );
     
     $options[] = array(
-            'name' => __( 'Footer Copyright text', 'accesspress-mag' ),
+            'name' => __( 'Copyright text', 'accesspress-mag' ),
             'desc' => __( 'Set footer copyright text', 'accesspress-mag' ),
             'id' => 'mag_footer_copyright',
             'std' => __('AccessPress Mag', 'accesspress-mag'),
@@ -402,7 +403,7 @@ function optionsframework_options() {
             );
     
     $options[] = array(
-            'name' => __( 'Copyright', 'accesspress-mag' ),                
+            'name' => __( 'Copyright Option', 'accesspress-mag' ),                
             'desc' => __( 'Show or hide the footer copyright example( Copyright &copy; current year )', 'accesspress-mag' ),
             'id' => 'copyright_symbol',
             'on' => __( 'Yes', 'accesspress-mag'),
@@ -488,13 +489,6 @@ function optionsframework_options() {
             'type' => 'textarea' 
             );
     $options[] = array(
-            'name' => __( 'Your Homepage Sidebar Bottom Ad', 'accesspress-mag' ),
-            'desc' => __( 'Paste your ad code here. Google adsense will be made responsive automatically', 'accesspress-mag' ),
-            'id' => 'value_sidebar_bottom_ad',
-            'std' => __('', 'accesspress-mag'),
-            'type' => 'textarea' 
-            );  
-    $options[] = array(
             'type' => 'groupend'
             );
 
@@ -549,7 +543,7 @@ function optionsframework_options() {
             'id' => 'slider_auto_transition',
             'on' => __( 'Yes', 'accesspress-mag'),
             'off' => __( 'No', 'accesspress-mag'),
-            'std' => '0',
+            'std' => '1',
             'type' => 'switch'
             );
     $options[] = array(
@@ -643,7 +637,7 @@ function optionsframework_options() {
             'type' => 'groupstart'
             );
     $options[] = array(
-            'name' => __( 'Select Editor Pick', 'accesspress-mag' ),
+            'name' => __( 'Select Category', 'accesspress-mag' ),
             'desc' => __( 'Select a category for editor pick in homepage sidebar', 'accesspress-mag' ),    
             'id' => 'editor_pick_category',
             'type' => 'select',
@@ -742,7 +736,7 @@ function optionsframework_options() {
             'id' => 'disable_comments_sitewide',
             'on' => __( 'Yes', 'accesspress-mag'),
             'off' => __( 'No', 'accesspress-mag'),
-            'std' => '1',
+            'std' => '0',
             'type' => 'switch'
             );
     $options[] = array(
@@ -791,7 +785,7 @@ function optionsframework_options() {
             'type' => 'groupstart'
             );
     $options[] = array(
-            'name' => __( 'Show/Hide Breadcrumbs', 'accesspress-mag' ),                
+            'name' => __( 'Show/Hide Breadcrumb', 'accesspress-mag' ),                
             'desc' => __( 'Show or hide breadcrumbs on site', 'accesspress-mag' ),
             'id' => 'show_hide_breadcrumbs',
             'on' => __( 'Yes', 'accesspress-mag'),
@@ -800,8 +794,8 @@ function optionsframework_options() {
             'type' => 'switch'
             );
     $options[] = array(
-            'name' => __( 'Show Breadcrumbs on Post', 'accesspress-mag' ),                
-            'desc' => __( 'Show or hide the breadcrumbs', 'accesspress-mag' ),
+            'name' => __( 'Show Breadcrumb on Single Post', 'accesspress-mag' ),                
+            'desc' => __( 'Show or hide the breadcrumbs in single post', 'accesspress-mag' ),
             'id' => 'show_post_breadcrumbs',
             'on' => __( 'Yes', 'accesspress-mag'),
             'off' => __( 'No', 'accesspress-mag'),
@@ -809,8 +803,8 @@ function optionsframework_options() {
             'type' => 'switch'
             );
     $options[] = array(
-            'name' => __( 'Show Breadcrumbs Home Link', 'accesspress-mag' ),                
-            'desc' => __( 'Show or hide the home link in breadcrumbs', 'accesspress-mag' ),
+            'name' => __( 'Enable link on Home', 'accesspress-mag' ),                
+            'desc' => __( 'Enable or disable homepage link at home in breadcrumbs', 'accesspress-mag' ),
             'id' => 'show_home_link_breadcrumbs',
             'on' => __( 'Yes', 'accesspress-mag'),
             'off' => __( 'No', 'accesspress-mag'),
@@ -818,8 +812,8 @@ function optionsframework_options() {
             'type' => 'switch'
             );    
     $options[] = array(
-            'name' => __( 'Show Breadcrumbs Article Title', 'accesspress-mag' ),                
-            'desc' => __( 'Show or hide breadcrumbs article title', 'accesspress-mag' ),
+            'name' => __( 'Show Article Title on Single post', 'accesspress-mag' ),                
+            'desc' => __( 'Show or hide article title on single post', 'accesspress-mag' ),
             'id' => 'show_article_breadcrumbs',
             'on' => __( 'Yes', 'accesspress-mag'),
             'off' => __( 'No', 'accesspress-mag'),

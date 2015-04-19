@@ -1,226 +1,164 @@
 <div id="home-top-sidebar" class="widget-area" role="complementary">
-	<aside id="apsc_widget-2" class="widget widget_apsc_widget"><h1 class="widget-title"><span>Social</span></h1><div class="apsc-icons-wrapper clearfix apsc-theme-3">
-            <div class="apsc-each-profile">
-                            <a class="apsc-facebook-icon clearfix" href="https://www.facebook.com/AccessPressThemes" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="fa fa-facebook apsc-facebook"></i><span class="media-name">Facebook</span></span>
-                        <span class="apsc-count">3,325</span><span class="apsc-media-type">Fans</span></div></a>
-                                    </div>            <div class="apsc-each-profile">
-                            <a class="apsc-twitter-icon clearfix" href="https://twitter.com/apthemes" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="fa fa-twitter apsc-twitter"></i><span class="media-name">Twitter</span></span>
-                    <span class="apsc-count">2658</span><span class="apsc-media-type">Followers</span></div></a>            </div>            <div class="apsc-each-profile">
-                                    <a class="apsc-google-plus-icon clearfix" href="https://plus.google.com/+Accesspressthemesprofile/" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-googlePlus fa fa-google-plus"></i><span class="media-name">google+</span></span>
-                        <span class="apsc-count">154</span><span class="apsc-media-type">Followers</span></div></a>            </div>            <div class="apsc-each-profile">
-                                    <a class="apsc-youtube-icon clearfix" href="https://www.youtube.com/user/accesspressthemes" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-youtube fa fa-youtube"></i><span class="media-name">Youtube</span></span>
-                    <span class="apsc-count">95</span><span class="apsc-media-type">Subscriber</span></div></a>            </div></div>
+	<aside id="apsc_widget-2" class="widget widget_apsc_widget"><h1 class="widget-title"><span>Social</span></h1><div class="apsc-icons-wrapper clearfix apsc-theme-1">
+                <div class="apsc-each-profile">
+                                <a class="apsc-facebook-icon clearfix" href="http://facebook.com/https://www.facebook.com/AccessPressThemes" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="fa fa-facebook apsc-facebook"></i><span class="media-name">Facebook</span></span>
+                            <span class="apsc-count">3,900</span><span class="apsc-media-type">Fans</span></div></a>
+                                        </div>            <div class="apsc-each-profile">
+                                <a class="apsc-twitter-icon clearfix" href="http://twitter.com/apthemes" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="fa fa-twitter apsc-twitter"></i><span class="media-name">Twitter</span></span>
+                        <span class="apsc-count">267</span><span class="apsc-media-type">Followers</span></div></a>            </div>            <div class="apsc-each-profile">
+                                        <a class="apsc-google-plus-icon clearfix" href="https://plus.google.com/+BBCNews" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-googlePlus fa fa-google-plus"></i><span class="media-name">google+</span></span>
+                            <span class="apsc-count">7,494,712</span><span class="apsc-media-type">Followers</span></div></a>            </div>            <div class="apsc-each-profile">
+                                        <a class="apsc-youtube-icon clearfix" href="https://www.youtube.com/user/accesspressthemes" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-youtube fa fa-youtube"></i><span class="media-name">Youtube</span></span>
+                        <span class="apsc-count">431</span><span class="apsc-media-type">Subscriber</span></div></a>            </div><div class="apsc-each-profile">
+                                        <a class="apsc-soundcloud-icon clearfix" href="https://soundcloud.com/" target="_blank"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-soundcloud fa fa-soundcloud"></i><span class="media-name">Soundcloud</span></span>
+                            <span class="apsc-count">548</span><span class="apsc-media-type">Followers</span></div></a>            </div><div class="apsc-each-profile">
+                                        <a class="apsc-comment-icon clearfix" href="javascript:void(0);"><div class="apsc-inner-block"><span class="social-icon"><i class="apsc-comments fa fa-comments"></i><span class="media-name">Comment</span></span>
+                            <span class="apsc-count">15</span><span class="apsc-media-type">Comments</span></div></a>            </div></div>
 
-    </aside>    
+</aside>
 </div>
 
+
 <style>
-/********************************************Theme 3 css*******************************************************/
 
+/********************************************Theme 1 css*******************************************************/
 
-.apsc-theme-3 .apsc-each-profile {
+.apsc-each-profile {
+    font-family: 'MyriadPro-Regular';
+}
+
+.apsc-theme-1 .apsc-each-profile {
     float: left;
+    min-height: 80px;
+    text-align: center;
+    width: 80px;
     margin: 5px;
 }
 
-.apsc-theme-3 .social-icon {
-    display: table-cell;
-    min-width: 97px;
-    padding: 0 0 0 4px;
-    vertical-align: middle;
-    position:relative;
-
-    transition: all 0.5s ease-in-out;
-	-webkit-transition:all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition:all 0.5s ease-in-out;
-    -ms-transition: all 0.5s ease-in-out;
+.apsc-each-profile a{
+    font-weight:normal;
 }
 
-.apsc-theme-3 .apsc-each-profile a{
-	border-radius: 4px;
-    color: #fff;
+.apsc-theme-1 .apsc-each-profile a{
+    padding: 9px;
     display: block;
-    font-weight: normal;
-    padding: 1px;
-    position: relative;
-    text-shadow: none;
-}
-
-.apsc-theme-3 .apsc-count {
-    background-color: #fff;
-}
-
-.apsc-theme-3 .social-icon .fa {
-    display: table-cell;
-    font-size: 18px;
-    vertical-align: middle;
-}
-
-.apsc-theme-3 .media-name {
-    display: table-cell;
-    font-size: 14px;
-    padding: 0 13px 0 5px;
-    text-transform: capitalize;
-    vertical-align: middle;
-    min-width: 77px;
-}
-
-.apsc-theme-3 .apsc-count {
-    border-bottom-right-radius: 4px;
-    border-top-right-radius: 4px;
-    color: #666666;
-    display: table-cell;
-    font-size: 16px;
-    min-width: 52px;
-    padding: 3px 10px;
-    text-align: center;
+    color: #fff;
     position:relative;
-    opacity:1;
+    border-radius: 5px;
+
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=135, Color=#b3b3b3)";/*IE 8*/
+    -moz-box-shadow: 1px 1px 2px #b3b3b3;/*FF 3.5+*/
+    -webkit-box-shadow: 1px 1px 2px #b3b3b3;/*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
+    box-shadow: 1px 1px 2px #b3b3b3;/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=135, Color=#b3b3b3); /*IE 5.5-7*/
 
     transition: all 0.5s ease-in-out;
-	-webkit-transition:all 0.5s ease-in-out;
+    -webkit-transition:all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -o-transition:all 0.5s ease-in-out;
     -ms-transition: all 0.5s ease-in-out;
 }
 
-
-.apsc-theme-3 .apsc-count:before {
-    border-bottom: 4px solid transparent;
-    border-right: 4px solid #fff;
-    border-top: 4px solid transparent;
-    content: "";
-    left: -4px;
-    margin-top: -3px;
-    position: absolute;
-    top: 50%;
+.entry-content  .apsc-each-profile a{
+    border:none;
 }
 
-/*.apsc-theme-3 .apsc-each-profile a:hover .apsc-count{
-    height: 32px;
-    min-width: 0;
-    opacity: 0;
-    padding: 0;
-    width: 0;
-}*/
-
-.apsc-theme-3 .apsc-each-profile a:hover .social-icon{
-	background-color:#fff;
-	border-top-left-radius:4px;
-	border-bottom-left-radius:4px;
+.site-footer .widget .apsc-each-profile a{
+    color: #fff;
+    text-decoration:none;
 }
 
-.apsc-theme-3 .apsc-each-profile a:hover .apsc-count{
-	color:#fff;
+.social-icon {
+    display: block;
 }
 
-.apsc-theme-3 .apsc-each-profile a:hover .social-icon:after {
-    border-bottom: 4px solid transparent;
-    border-left: 4px solid #fff;
-    border-top: 4px solid transparent;
-    content: "";
-    margin-top: -3px;
-    position: absolute;
-    right: -4px;
-    top: 50%;
-    z-index: 2;
-}
-
-.apsc-theme-3 .apsc-media-type {
+.apsc-theme-1 .media-name {
     display: none;
 }
 
-
-.apsc-theme-3 .apsc-each-profile a.apsc-youtube-icon:hover .social-icon{
-	color:#e52d27;
+.apsc-theme-1 .apsc-count {
+    font-size: 16px;
+    display: block;
+    line-height: 15px;
+    padding: 2px 0 0;
 }
 
-.apsc-theme-3 .apsc-each-profile a.apsc-youtube-icon:hover .apsc-count{
-	background-color:#e52d27;
+.entry-content .apsc-each-profile a,.entry-content .apsc-each-profile a:hover,.entry-content .apsc-each-profile a:focus {
+    color: #fff;
+    text-decoration:none;
 }
 
-.apsc-theme-3 .apsc-each-profile a.apsc-soundcloud-icon:hover .social-icon{
-	color:#ff8800;
+.apsc-theme-1 .apsc-each-profile  a:before {
+    background: radial-gradient(ellipse at center center , rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    content: "";
+    height: 10px;
+    left: 5%;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+    transition-duration: 0.3s;
+    -webkit-transition-duration: 0.3s;
+    transition-property: transform, opacity;
+    -webkit-transition-property: transform, opacity;
+    width: 90%;
+    z-index: -1;
 }
 
-.apsc-theme-3 .apsc-each-profile a.apsc-soundcloud-icon:hover .apsc-count{
-	background-color:#ff8800;
+.apsc-theme-1 .apsc-each-profile a:hover:before {
+    opacity: 1;
+    transform: translateY(6px);
+    -webkit-transform: translateY(6px);
+    -ms-transform: translateY(6px);
 }
 
-.apsc-theme-3 .apsc-each-profile a.apsc-dribble-icon:hover .social-icon{
-	color:#ea4c89;
+.apsc-theme-1 .apsc-each-profile a:hover {
+    transform: translateY(-6px);
+    -webkit-transform: translateY(-6px);
+    -ms-transform: translateY(-6px);
 }
 
-.apsc-theme-3 .apsc-each-profile a.apsc-dribble-icon:hover .apsc-count{
-	background-color:#ea4c89;
+.apsc-theme-1 .social-icon .fa {
+    font-size: 45px;
 }
-
-.apsc-theme-3 .apsc-each-profile a.apsc-comment-icon:hover .social-icon{
-	color:#464646;
-}
-
-.apsc-theme-3 .apsc-each-profile a.apsc-comment-icon:hover .apsc-count{
-	background-color:#464646;
-}
-
-.apsc-theme-3 .apsc-each-profile a.apsc-twitter-icon:hover .social-icon{
-	color:#1dcaff;
-}
-
-.apsc-theme-3 .apsc-each-profile a.apsc-twitter-icon:hover .apsc-count{
-	background-color:#1dcaff;
-}
-
-.apsc-theme-3 .apsc-each-profile a.apsc-instagram-icon:hover .social-icon{
-	color:#3f729b;
-}
-
-.apsc-theme-3 .apsc-each-profile a.apsc-instagram-icon:hover .apsc-count{
-	background-color:#3f729b;
-}
-
-.apsc-theme-3 .apsc-each-profile a.apsc-facebook-icon:hover .social-icon{
-	color:#3b5998;
-}
-
-.apsc-theme-3 .apsc-each-profile a.apsc-facebook-icon:hover .apsc-count{
-	background-color:#3b5998;
-}
-
-
-.apsc-theme-3 .apsc-each-profile a.apsc-google-plus-icon:hover .social-icon{
-	color:#dd4b39;
-}
-
-.apsc-theme-3 .apsc-each-profile a.apsc-google-plus-icon:hover .apsc-count{
-	background-color:#dd4b39;
-}
-
-
-.apsc-theme-3 .apsc-each-profile a.apsc-edit-icon:hover .social-icon{
-	color:#837d7d;
-}
-
-.apsc-theme-3 .apsc-each-profile a.apsc-edit-icon:hover .apsc-count{
-	background-color:#837d7d;
-}
-
 
 .apsc-facebook-icon {
-	background-color:#3b5998;
+    background-color:#3b5998;
 }
 
 .apsc-twitter-icon{
-	background-color:#1dcaff;
+    background-color:#1dcaff;
 }
 
 .apsc-youtube-icon{
-	background-color:#e52d27;
+    background-color:#e52d27;
+}
+
+.apsc-soundcloud-icon{
+    background-color:#ff8800;
+}
+
+.apsc-dribble-icon{
+    background-color:#ea4c89;
+}
+
+.apsc-comment-icon{
+    background-color:#464646;
+}
+
+.apsc-edit-icon{
+    background-color:#837d7d;
 }
 
 .apsc-google-plus-icon{
-	background-color:#dd4b39;
+    background-color:#dd4b39;
 }
 
+.apsc-instagram-icon{
+    background-color:#3f729b;
+}
+
+.apsc-theme-1 .apsc-media-type {
+    display: none;
+}
 </style>

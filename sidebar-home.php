@@ -29,14 +29,14 @@ if( empty( $trans_editor ) ){ $trans_editor = "Editor Pick's"; }
     <?php if(!empty($sidebar_top_ad)){
     ?>
     <div class="sidebar-top-ad widget-area wow fadeInUp" data-wow-delay="0.5s">
-        <h1 class="sidebar-title"><span><?php echo $trans_ads ;?></span></h1>
-        <div class="ad_content"><?php echo $sidebar_top_ad;?></div>
+        <h1 class="sidebar-title"><span><?php echo esc_attr( $trans_ads ) ;?></span></h1>
+        <div class="ad_content"><?php echo esc_textarea( $sidebar_top_ad ) ;?></div>
     </div>
     <?php    
-    } else {
+    } else { 
     ?>
     <div class="sidebar-top-ad widget-area wow fadeInUp" data-wow-delay="0.5s">
-        <h1 class="sidebar-title"><span><?php echo $trans_ads ;?></span></h1>
+        <h1 class="sidebar-title"><span><?php echo esc_attr( $trans_ads ) ;?></span></h1>
         <div class="ad_content"><img src="<?php echo get_template_directory_uri();?>/images/demo-images/300-250.png" /></div>
     </div>
     <?php } ?>
@@ -58,7 +58,7 @@ if( empty( $trans_editor ) ){ $trans_editor = "Editor Pick's"; }
             $editor_posts_per_page = of_get_option('posts_for_editor_pick');
             if(!empty($editor_cat)):
         ?>
-            <h1 class="sidebar-title"><span><?php echo $trans_editor ;?></span></h1>
+            <h1 class="sidebar-title"><span><?php echo esc_attr( $trans_editor ) ;?></span></h1>
         <?php
             echo '<div class="sidebar-posts-wrapper">';
             $editor_args = array(
@@ -112,14 +112,14 @@ if( empty( $trans_editor ) ){ $trans_editor = "Editor Pick's"; }
     <?php if(!empty($sidebar_middle_ad)){
     ?>
     <div class="sidebar-top-ad widget-area wow fadeInUp" data-wow-delay="0.5s">
-        <h1 class="sidebar-title"><span><?php echo $trans_ads ;?></span></h1>
-        <div class="ad_content"><?php echo $sidebar_middle_ad;?></div>
+        <h1 class="sidebar-title"><span><?php echo esc_attr( $trans_ads ) ;?></span></h1>
+        <div class="ad_content"><?php echo esc_textarea( $sidebar_middle_ad ) ;?></div>
     </div>
     <?php    
     }else {
     ?>
     <div class="sidebar-top-ad widget-area wow fadeInUp" data-wow-delay="0.5s">
-        <h1 class="sidebar-title"><span><?php echo $trans_ads ;?></span></h1>
+        <h1 class="sidebar-title"><span><?php echo esc_attr( $trans_ads ) ;?></span></h1>
         <div class="ad_content"><img src="<?php echo get_template_directory_uri();?>/images/demo-images/300-250.png" /></div>
     </div>
     <?php } ?>

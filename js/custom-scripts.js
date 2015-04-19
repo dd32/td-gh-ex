@@ -18,7 +18,7 @@ $('.overlay-search').click(function() {
 });
 
 $('.nav-toggle').click(function() {
-    $('.nav-wrapper .menu-menu-1-container').slideToggle('slow');
+    $('.nav-wrapper .mag-primary-menu').slideToggle('slow');
     $(this).parent('.nav-wrapper').toggleClass('active');
 });
 

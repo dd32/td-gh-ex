@@ -59,7 +59,7 @@ class Accesspress_mag_article_contributors extends WP_Widget {
            <h1 class="widget-title"><span><?php echo esc_attr($contributors_title); ?></span></h1>     
            <div class="single-user-wrapper">
                  <?php
-                    $roles = array('Administrator', 'Author');
+                    $roles = array('Administrator', 'Author', 'Editor');
                     foreach($roles as $role)
                     {
                         $user_args = array(
@@ -68,6 +68,9 @@ class Accesspress_mag_article_contributors extends WP_Widget {
                                         'role'=>$role
                                         );
                         $user_query = new WP_User_Query( $user_args );
+                        //echo '<pre>';
+//                        	print_r($user_query);
+//                        echo '</pre>';
                                 if ( ! empty( $user_query->results ) ) {
                                 	foreach ( $user_query->results as $user ) {
                                 		$user_name = $user->display_name;

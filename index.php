@@ -21,7 +21,7 @@ else
 {
 
 ?>
-
+<div class="apmag-container">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
@@ -55,4 +55,5 @@ else
 	</div><!-- #primary -->
 
 <?php get_sidebar(); ?>
+</div>
 <?php  } get_footer(); ?>

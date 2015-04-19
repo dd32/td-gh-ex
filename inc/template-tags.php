@@ -60,8 +60,8 @@ function accesspress_mag_post_navigation() {
 		<h2 class="screen-reader-text"><?php _e( 'Post navigation', 'accesspress-mag' ); ?></h2>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous"><div class="link-caption"><i class="fa fa-angle-left"></i>'.$trans_prev.'</div>%link</div>', '%title' );
-				next_post_link( '<div class="nav-next"><div class="link-caption">'.$trans_next.'<i class="fa fa-angle-right"></i></div>%link</div>', '%title' );
+				previous_post_link( '<div class="nav-previous"><div class="link-caption"><i class="fa fa-angle-left"></i>'.esc_attr( $trans_prev ).'</div>%link</div>', '%title' );
+				next_post_link( '<div class="nav-next"><div class="link-caption">'.esc_attr( $trans_next ).'<i class="fa fa-angle-right"></i></div>%link</div>', '%title' );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -143,7 +143,7 @@ function accesspress_mag_entry_footer() {
         if(!empty($post_via_name)){
         ?>
             <div class="post-via-wrapper">
-                <label class="via"><?php echo $trans_via;?></label>
+                <label class="via"><?php echo esc_attr( $trans_via );?></label>
                 <a href="<?php echo esc_attr( $post_via_url );?>" target="_blank">
                     <span class="via-name"><?php echo esc_attr( $post_via_name ); ?></span>
                 </a> 
@@ -153,7 +153,7 @@ function accesspress_mag_entry_footer() {
         if(!empty($post_source_name)){
         ?>
             <div class="post-source-wrapper">
-                <label class="source"><?php echo $trans_source ;?></label>
+                <label class="source"><?php echo esc_attr( $trans_source  ) ;?></label>
                 <a href="<?php echo esc_attr( $post_source_url ); ?>" target="_blank">
                     <span class="source-name"><?php echo esc_attr( $post_source_name ); ?></span>
                 </a>

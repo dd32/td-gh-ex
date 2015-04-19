@@ -51,7 +51,6 @@ add_action('wp_head', 'accesspress_header_scripts');
  add_action('admin_enqueue_scripts','apmag_admin_scripts');
 
 /*-----------------------Homepage slider--------------------------*/
- 
 function accesspress_mag_slider_cb(){
         $slider_category = of_get_option( 'homepage_slider_category' );
         $trans_continue = of_get_option( 'trans_continue_reading' );
@@ -95,6 +94,7 @@ function accesspress_mag_slider_cb(){
                 endif ;
                 if($slide_counter%4==1):
             ?>
+                        <a href="<?php echo the_permalink();?>">
                         <div class="big_slide wow fadeInLeft">
                             <div class="big-cat-box">
                                 <span class="cat-name"><?php $cat_name = get_the_category(); echo $cat_name[0]->name; ?></span>
@@ -107,14 +107,17 @@ function accesspress_mag_slider_cb(){
                             </div>
                             <?php endif;?>
                         </div>
+                        </a>
             <?php else : if($slide_counter%4==2){echo '<div class="small-slider-wrapper wow fadeInRight">';}?>                
+                       <a href="<?php echo the_permalink();?>">
                         <div class="small_slide">
                             <span class="cat-name"><?php $cat_name = get_the_category(); echo $cat_name[0]->name; ?></span>
                             <div class="slide-image"><img src="<?php echo $post_small_image_path[0];?>" alt="<?php echo esc_attr($post_image_alt);?>" /></div>
                             <div class="mag-small-slider-caption">
-                              <?php if($slide_info==1):?><h3 class="slide-title"><a href="<?php echo the_permalink();?>"><?php the_title();?></a></h3><?php endif; ?>
+                              <?php if($slide_info==1):?><h3 class="slide-title"><?php the_title();?></h3><?php endif; ?>
                             </div>                            
                         </div>
+                       </a>
             <?php 
                  endif;
                  if($slide_counter%4==0):
@@ -128,32 +131,27 @@ function accesspress_mag_slider_cb(){
             }
             else {
                 get_template_part( 'demo-content/demo-slider-content');
-            }       
-    
+            }
  }
 add_action( 'accesspress_mag_slider', 'accesspress_mag_slider_cb', 10 );
 
 
 function accesspress_mag_slider_script(){
-    $slider_category = of_get_option( 'homepage_slider_category' );
-    if( $slider_category!='0' )
-    {
     $slider_controls = ( of_get_option( 'slider_controls' ) == "1" ) ? "true" : "false";
     $slider_auto_transaction = ( of_get_option( 'slider_auto_transition' ) == "1" ) ? "true" : "false";
     $slider_pager = ( of_get_option( 'slider_pager' ) == "1" ) ? "true" : "false";
     ?>
     <script type="text/javascript">
-                jQuery(function($){
-                    $("#homeslider").bxSlider({
-                        controls:<?php echo esc_attr($slider_controls); ?>,
-                        pager:<?php echo esc_attr($slider_pager);?>,
-                        auto:<?php echo esc_attr($slider_auto_transaction);?>
-                                                
-                    });
-                    });
-            </script>
-            <?php
-            }
+        jQuery(function($){
+            $("#homeslider").bxSlider({
+                controls:<?php echo esc_attr($slider_controls); ?>,
+                pager:<?php echo esc_attr($slider_pager);?>,
+                auto:<?php echo esc_attr($slider_auto_transaction);?>
+                                        
+            });
+            });
+    </script>
+    <?php
 }
 add_action( 'wp_head', 'accesspress_mag_slider_script' );
 
@@ -178,6 +176,7 @@ function accesspress_mag_post_review_cb(){
 add_action( 'accesspress_mag_post_review', 'accesspress_mag_post_review_cb', 10 );
 
 /*--------------------- Product Review for single post-----------------------------*/
+
 function accesspress_mag_single_post_review_cb(){
     global $post;
     $trans_summary = of_get_option( 'trans_summary' );
@@ -187,46 +186,49 @@ function accesspress_mag_single_post_review_cb(){
     $post_review_type = get_post_meta( $post -> ID, 'product_review_option', true );
     if($post_review_type!='norate'){
         $product_rating_description = get_post_meta($post->ID, 'product_rate_description', true);
+        $product_rating = get_post_meta($post -> ID, 'product_rating', true);
+        if( !empty ( $product_rating ) ){
     ?>
         <div class="post-review-wrapper">
-            <span class="section-title"><?php echo $trans_review ;?></span>
-            <?php 
-                $product_rating = get_post_meta($post -> ID, 'product_rating', true);
-                $count = count($product_rating);
-                echo '<div class="stars-review-wrapper">';
-                $total_review = 0;
-                foreach ($product_rating as $key => $value) {                    
-                $featured_name = $value['feature_name'];
-                $star_value = $value['feature_star'];
-                if(empty($star_value)) $star_value = 0.5;
-                $total_review = $total_review+$star_value;
-            ?>
-              <div class="review-featured-wrap clearfix">  
-                <span class="review-featured-name"><?php echo esc_attr( $featured_name ); ?></span>
-                <span class="stars-count"><?php display_product_rating( $star_value );?></span>
-              </div>
-            <?php
-                }
-                echo '</div>';
-                 $total_review = $total_review/$count;
-                 //$final_value = round( $total_review, 1);
-                 $final_value = ceiling($total_review, 0.5) ;
-            ?>
+            <span class="section-title"><?php echo esc_attr( $trans_review ) ;?></span>
+                <div class="stars-review-wrapper">
+                    <?php 
+                        $count = count($product_rating);
+                        $total_review = 0;
+                        foreach ($product_rating as $key => $value) {                    
+                        $featured_name = $value['feature_name'];
+                        $star_value = $value['feature_star'];
+                        if(empty($star_value)) $star_value = 0.5;
+                        $total_review = $total_review+$star_value;
+                    ?>
+                      <div class="review-featured-wrap clearfix">  
+                        <span class="review-featured-name"><?php echo esc_attr( $featured_name ); ?></span>
+                        <span class="stars-count"><?php display_product_rating( $star_value );?></span>
+                      </div>
+                    <?php
+                        }
+                         $total_review = $total_review/$count;
+                         //$final_value = round( $total_review, 1);
+                         $final_value = ceiling($total_review, 0.5) ;                     
+                    ?>
+                </div>
             <div class="summary-wrapper clearfix">
                 <div class="summary-details">
-                    <span class="summery-label"><?php echo $trans_summary;?></span>
-                    <span class="summary-comments"><?php echo esc_attr( $product_rating_description ); ?></span>
+                    <span class="summery-label"><?php echo esc_attr( $trans_summary ) ;?></span>
+                    <span class="summary-comments"><?php echo esc_textarea( $product_rating_description ); ?></span>
                 </div>
                 <div class="total-reivew-wrapper">
-                    <span class="total-value"><?php echo $final_value;?></span>
+                    <span class="total-value"><?php echo esc_attr( $final_value ) ;?></span>
                     <span class="stars-count"><?php display_product_rating( $final_value );?></span>
                 </div>
             </div>
         </div>
-    <?php        
-    }  
+    <?php
+        }
+    }
 }
 add_action( 'accesspress_mag_single_post_review', 'accesspress_mag_single_post_review_cb', 10 );
+
 
 if( !function_exists('ceiling') )
 {
@@ -413,33 +415,13 @@ function accesspress_mag_post_meta_cb(){
     $show_comment_count = of_get_option('show_comment_count');
     if($show_comment_count==1){
         $post_comment_count = get_comments_number( $post->ID );
-        echo '<span class="comment_count"><i class="fa fa-comments"></i>'.$post_comment_count.'</span>';
+        echo '<span class="comment_count"><i class="fa fa-comments"></i>'.esc_attr( $post_comment_count ).'</span>';
     }
     if($show_post_views==1){
         echo '<span class="apmag-post-views"><i class="fa fa-eye"></i>'.getPostViews(get_the_ID()).'</span>';
     }
 }
 add_action( 'accesspress_mag_post_meta', 'accesspress_mag_post_meta_cb', 10 );
-
-/*
-function accesspress_mag_block_post_on_cb(){
-    global $post;
-    $show_post_date = of_get_option('post_show_date');
-    $show_post_views = of_get_option('show_post_views');
-    $show_comment_count = of_get_option('show_comment_count');
-    if($show_post_date==1){
-        echo '<span class="apmag-block-post-date">'. get_the_date().'</span>';
-    }
-    if($show_comment_count==1){
-        echo '<span class="apmag-block-post-comments-count">'.get_comments_number( $post->ID ).'</span>';
-    }
-    if($show_post_views==1){
-        echo '<span class="apmag-block-post-views">'.getPostViews(get_the_ID()).'</span>';
-    }
-    
-}
-add_action( 'accesspress_mag_block_post_on', 'accesspress_mag_block_post_on_cb', 10 );
-*/
 
 function accesspress_mag_home_posted_on_cb(){
     global $post;
@@ -470,7 +452,7 @@ function accesspress_mag_home_posted_on_cb(){
     echo '<span class="posted-on">' . $posted_on . '</span>';
     if($show_comment_count==1){
         $post_comment_count = get_comments_number( $post->ID );
-        echo '<span class="comment_count"><i class="fa fa-comments"></i>'.$post_comment_count.'</span>';
+        echo '<span class="comment_count"><i class="fa fa-comments"></i>'.esc_attr( $post_comment_count ).'</span>';
     }
     if($show_post_views==1){
         echo '<span class="apmag-post-views"><i class="fa fa-eye"></i>'.getPostViews(get_the_ID()).'</span>';
@@ -494,7 +476,6 @@ function accesspress_letter_count( $content, $limit ) {
 	$striped_content = strip_tags( $content );
 	$striped_content = strip_shortcodes( $striped_content );
 	$limit_content = mb_substr( $striped_content, 0 , $limit );
-
 	if( $limit_content < $content ){
 		$limit_content .= "..."; 
 	}
@@ -514,7 +495,7 @@ function accesspress_mag_excerpt(){
     } else {
         $excerpt_content = accesspress_word_count( $excerpt_content, $excerpt_length );
     }
-    echo '<p>'.$excerpt_content.'</p>'; 
+    echo '<p>'.esc_html( $excerpt_content ).'</p>';
 }
 
 /*---------------- BreadCrumb --------------------------*/
@@ -545,9 +526,9 @@ function accesspress_mag_excerpt(){
 	  
 	  } else {
 	       if($showHomeLink == 1){ 
-	           echo '<div id="accesspres-mag-breadcrumbs" class="clearfix"><span class="bread-you">'.$trans_here.'</span><div class="ak-container"><a href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
+	           echo '<div id="accesspres-mag-breadcrumbs" class="clearfix"><span class="bread-you">'.esc_attr( $trans_here ).'</span><div class="ak-container"><a href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
              } else {
-	           echo '<div id="accesspres-mag-breadcrumbs" class="clearfix"><span class="bread-you">'.$trans_here.'</span><div class="ak-container">' . $home . ' ' . $delimiter . ' ';
+	           echo '<div id="accesspres-mag-breadcrumbs" class="clearfix"><span class="bread-you">'.esc_attr( $trans_here ).'</span><div class="ak-container">' . $home . ' ' . $delimiter . ' ';
             }
 	  
 	    if ( is_category() ) {
@@ -633,10 +614,8 @@ function accesspress_mag_excerpt(){
 	      if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
 	      echo __('Page' , 'accesspress-mag') . ' ' . get_query_var('paged');
 	      if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
-	    }
-	  
-	    echo '</div></div>';
-	  
+	    }	  
+	    echo '</div></div>';	  
 	  }
 	}
     
@@ -676,13 +655,15 @@ add_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 10, 0 )
 
 /*------------Remove bbpress breadcrumbs-----------------------*/
 
-add_filter('bbp_no_breadcrumb', function($arg) { return true; } );
+function apmag_bbp_no_breadcrumb ($arg){
+    return true ;
+}
 
+add_filter('bbp_no_breadcrumb', 'apmag_bbp_no_breadcrumb' );
 
 /*--------------Install Required Plugins----------------------*/
 
 function accesspress_required_plugins() {
-
     /**
      * Array of plugin arrays. Required keys are name and slug.
      * If the source is NOT from the .org repo, then source is also required.
@@ -757,12 +738,9 @@ function accesspress_required_plugins() {
             'nag_type'                        => 'updated' // Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
         )
     );
-
     tgmpa( $plugins, $config );
-
 }
 add_action( 'tgmpa_register', 'accesspress_required_plugins' );
-//add_filter('show_admin_bar', '__return_false'); 
 
 /*------For shordcode in widget text-----------------*/
 add_filter('widget_text', 'do_shortcode');
@@ -772,29 +750,3 @@ function accesspress_mag_admin_css(){
     wp_enqueue_style('apmag-admin', get_template_directory_uri(). '/inc/option-framework/css/apmag-admin.css');    
 }
 add_action('admin_head','accesspress_mag_admin_css');
-
-/*---------Check audio file--------------*/
-/*
-function check_file_is_audio( $tmp ) 
-{
-    $allowed = array(
-        'audio/mpeg', 'audio/x-mpeg', 'audio/mpeg3', 'audio/x-mpeg-3', 'audio/aiff', 
-        'audio/mid', 'audio/x-aiff', 'audio/x-mpequrl','audio/midi', 'audio/x-mid', 
-        'audio/x-midi','audio/wav','audio/x-wav','audio/xm','audio/x-aac','audio/basic',
-        'audio/flac','audio/mp4','audio/x-matroska','audio/ogg','audio/s3m','audio/x-ms-wax',
-        'audio/xm'
-    );
-    
-    // check REAL MIME type
-    $finfo = finfo_open(FILEINFO_MIME_TYPE);
-    $type = finfo_file($finfo, $tmp );
-    finfo_close($finfo);
-    
-    // check to see if REAL MIME type is inside $allowed array
-    if( in_array($type, $allowed) ) {
-        return true;
-    } else {
-        return false;
-    }
-}*/
- 

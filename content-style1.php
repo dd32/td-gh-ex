@@ -9,8 +9,6 @@
         <?php 
             $article_ad = of_get_option('value_article_ad');
             $show_featured_image = of_get_option('featured_image');
-            $trans_share = of_get_option( 'trans_share_this_article' );
-            if( empty( $trans_share ) ){ $trans_share = 'Share This Article'; }
         ?>
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
@@ -38,11 +36,8 @@
             ?>
         </div>
 		<div class="post_content"><?php the_content(); ?></div>   
-        <div class="postshare-wrapper">
-            <span><?php echo $trans_share ;?></span>
-            <?php echo do_shortcode( '[apss-share]' );?>
-        </div>	
-        <?php if(!empty($article_ad)):?> <div class="article-ad-section"><?php echo $article_ad; ?></div> <?php endif ;?>
+        
+        <?php if(!empty($article_ad)):?> <div class="article-ad-section"><?php echo esc_textarea( $article_ad ) ; ?></div> <?php endif ;?>
 		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'accesspress-mag' ),

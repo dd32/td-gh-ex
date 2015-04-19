@@ -48,3 +48,17 @@
         </div>
         </div>
 </div>
+<?php
+$apmag_theme_option = get_option( 'accesspress-mag-theme' );
+if( empty( $apmag_theme_option )){
+?>
+
+<script type="text/javascript">
+        jQuery(function($){
+            $("#homeslider").bxSlider({ 
+                auto: true
+            });
+        });
+</script>
+
+<?php } ?>

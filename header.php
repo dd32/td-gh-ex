@@ -131,7 +131,7 @@
                         <span> </span>
                         <span> </span>
                     </div>
-        			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+        			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'mag-primary-menu' ) ); ?>
                 </div>
 
                 <div class="search-icon">

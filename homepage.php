@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Home Template
+ * Template Name: Home Page
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
@@ -155,9 +155,6 @@ get_header();
                                                     'posts_per_page'=>$posts_for_block3,
                                                     'order'=>'DESC'
                                                     );
-                           // echo '<pre>';
-//                            	print_r($block1_args);
-//                            echo '</pre>';
                             $block3_query = new WP_Query($block3_args);
                             $b_counter = 0;
                             $total_posts_block3 = $block3_query->found_posts;
