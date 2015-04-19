@@ -89,7 +89,7 @@ get_header(); ?>
 							<div class="service-block">
 								<div class="service-image">
 									<?php if(has_post_thumbnail()):
-									$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'service-thumbnail' );
+									$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'accesspress-root-service-thumbnail' );
 									?>
 									<a href="<?php the_permalink(); ?>" class="image-wrap"> 
 									<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
@@ -237,7 +237,7 @@ get_header(); ?>
 								<div class="blog-image">
 									<?php if(has_post_thumbnail()):
 										$big_image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
-										$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'blog-thumbnail' );
+										$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'accesspress-root-blog-thumbnail' );
 									?>
 									<a class="blog-img-wrap" href="<?php the_permalink(); ?>">
 									<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
@@ -312,7 +312,7 @@ get_header(); ?>
 							<div class="info-block-wrap">
 								<div class="info-title"><?php the_title(); ?></div>
 								<?php if(has_post_thumbnail()):
-									$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'project-big-thumbnail' );
+									$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'accesspress-root-project-big-thumbnail' );
 								?>
 								<div class="info-img"> 
 								<a href="<?php the_permalink(); ?>">
@@ -353,7 +353,7 @@ get_header(); ?>
 								$big_image[0] = "";
 							if(has_post_thumbnail()):
 								$big_image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
-								$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'project-thumbnail' );
+								$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'accesspress-root-project-thumbnail' );
 							?>
 							<img src="<?php echo $image[0]; ?>">
 							<?php 

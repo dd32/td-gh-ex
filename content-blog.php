@@ -9,23 +9,23 @@ $blog_post_layout = of_get_option('blog_post_layout');
 if(has_post_thumbnail()):
 switch ($blog_post_layout) {
 	case 'blog_layout1':
-		$image_size = 'blog-big-thumbnail';
+		$image_size = 'accesspress-root-blog-big-thumbnail';
 		break;
 
 	case 'blog_layout2':
-		$image_size = 'service-thumbnail';
+		$image_size = 'accesspress-root-service-thumbnail';
 		break;
 
 	case 'blog_layout3':
-		$image_size = 'service-thumbnail';
+		$image_size = 'accesspress-root-service-thumbnail';
 		break;
 
 	case 'blog_layout4':
-		$image_size = 'blog-big-thumbnail';
+		$image_size = 'accesspress-root-blog-big-thumbnail';
 		break;
 	
 	default:
-		$image_size = 'blog-big-thumbnail';
+		$image_size = 'accesspress-root-blog-big-thumbnail';
 		break;
 }
 

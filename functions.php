@@ -53,11 +53,11 @@ function accesspress_root_setup() {
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
-	add_image_size('service-thumbnail', 380, 252, true);
-	add_image_size('blog-thumbnail', 558, 237, true);
-	add_image_size('project-thumbnail', 264, 200, true);
-	add_image_size('project-big-thumbnail', 558, 160, true);
-	add_image_size('blog-big-thumbnail', 760, 300, true);
+	add_image_size('accesspress-root-service-thumbnail', 380, 252, true);
+	add_image_size('accesspress-root-blog-thumbnail', 558, 237, true);
+	add_image_size('accesspress-root-project-thumbnail', 264, 200, true);
+	add_image_size('accesspress-root-project-big-thumbnail', 558, 160, true);
+	add_image_size('accesspress-root-blog-big-thumbnail', 760, 300, true);
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(

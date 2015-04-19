@@ -3,10 +3,8 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 AccessPress Root WordPress Theme, Copyright 2014 AccessPress Themes
 AccessPress Root is distributed under the terms of the GNU GPL v3
 
-
 Install Steps:
 --------------
-
 1. Activate the theme
 2. Go to the Theme Option page
 3. Setup theme options
@@ -20,49 +18,51 @@ Activate Home Page
 4. Set up the home page in Appearance - Theme Options
 
 
-------------------------------------------
+-----------------------------------------------------------------------------
+AccessPress Root WordPress Theme bundles the following third-party resources:
+-----------------------------------------------------------------------------
 
 JS Files 
-    bxSlider: WTFPL and MIT license
+    bxSlider by Steven Wanderski: WTFPL and MIT license
     https://github.com/stevenwanderski/bxslider-4
     
-    Nivo Lightbox: MIT licenses
+    Nivo Lightbox, Copyright © 2015 Dev7studios: MIT licenses
     http://dev7studios.com/plugins/nivo-lightbox/
 
-    jQuery Actual: MIT licenses
+    jQuery Actual, Copyright © 2012 Ben Lin: MIT licenses
     https://github.com/dreamerslab/jquery.actual/
     
-    Responsive Off Canvas Menu : BSD and MIT license
+    Responsive Off Canvas Menu, Copyright © David Bushell: BSD and MIT license
     https://github.com/dbushell/Responsive-Off-Canvas-Menu
     
-    Modernizr : BSD and MIT license
+    Modernizr, Copyright © 2009—2015. Modernizr: BSD and MIT license
     http://modernizr.com/
     
 ------------------------------------------
 
 CSS Files 
-    Font Awesome: MIT and GPL licenses
+    Font Awesome, Created by Dave Gandy: MIT and GPL licenses
     http://fontawesome.io/license/
 
-    BxSlider: WTFPL and MIT license
+    BxSlider by Steven Wanderski: WTFPL and MIT license
     https://github.com/stevenwanderski/bxslider-4
     
-    Nivo Lightbox: MIT licenses
+    Nivo Lightbox, Copyright © 2015 Dev7studios: MIT licenses
     http://dev7studios.com/plugins/nivo-lightbox/
     
-    Responsive Off Canvas Menu : BSD and MIT license
+    Responsive Off Canvas Menu, Copyright © David Bushell: BSD and MIT license
     https://github.com/dbushell/Responsive-Off-Canvas-Menu
 
 -------------------------------------------
 Fonts
-    Font Awesome: MIT and GPL licenses
+    Font Awesome: SIL OFL 1.1
     http://fontawesome.io/license/
     
-    Oswald
+    Oswald by Vernon Adams
     https://www.google.com/fonts/specimen/Oswald
     SIL Open Font License, 1.1
     
-    Open Sans
+    Open Sans by Steve Matteson
     http://www.google.com/fonts/specimen/Open+Sans
     Apache License, version 2.0
 
@@ -79,13 +79,7 @@ ScreenShot Images
     http://www.pexels.com/photo/915/
 
 Pattern Images
-    All pattern used are from http://subtlepatterns.com/
-    http://subtlepatterns.com/notebook/
-    http://subtlepatterns.com/noisy-grid/
-    http://subtlepatterns.com/skeletal-weave/
-    http://subtlepatterns.com/diamond-upholstery/
-    http://subtlepatterns.com/purty-wood/
-    http://subtlepatterns.com/bo-play/
+    All pattern used are self created and are licensed under GNU GPL v3
 
 
 ---------------------------------------------

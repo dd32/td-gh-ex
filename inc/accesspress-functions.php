@@ -260,7 +260,6 @@ function accesspress_letter_count($content, $limit) {
 	}
 	return $limit_content;
 }
-add_filter('widget_text', 'do_shortcode');
 
 function accesspress_bodyclass($classes){
     $classes[]= of_get_option('web_layout');
@@ -294,6 +293,7 @@ function accesspress_breadcrumbs() {
     $after = '</span>'; // tag after the current crumb
 
     $homeLink = home_url();
+    $homeLink = esc_url($homeLink);
 
     if (is_home() || is_front_page()) {
 
@@ -412,7 +412,7 @@ function accesspress_header_scripts(){
     $show_slider = of_get_option('show_slider');
     if(!empty($fav_icon)):
     ?>
-    <link rel="icon" type="image/png" href="<?php echo $fav_icon; ?>"> 
+    <link rel="icon" type="image/png" href="<?php echo esc_url($fav_icon); ?>"> 
     <?php    
     endif;
     echo "<style>";
