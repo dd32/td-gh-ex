@@ -289,7 +289,7 @@ function generate_featured_page_header_area($class)
 		
 	?>
 	<div class="<?php echo $class; ?> grid-container grid-parent">
-		<?php the_post_thumbnail( 'full', array('itemprop' => 'image') ); ?>
+		<?php the_post_thumbnail( apply_filters( 'generate_page_header_default_size', 'full' ), array('itemprop' => 'image') ); ?>
 	</div>
 	<?php
 }
@@ -350,7 +350,7 @@ function generate_post_image()
 	if ( ! is_singular() && ! is_404() ) {
 	?>
 		<div class="post-image">
-			<a href="<?php the_permalink();?>" title="<?php the_title(); ?>"><?php the_post_thumbnail( 'full', array('itemprop' => 'image') ); ?></a>
+			<a href="<?php the_permalink();?>" title="<?php the_title(); ?>"><?php the_post_thumbnail( apply_filters( 'generate_page_header_default_size', 'full' ), array('itemprop' => 'image') ); ?></a>
 		</div>
 	<?php
 	}

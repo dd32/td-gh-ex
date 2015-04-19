@@ -39,6 +39,7 @@ function generate_addons_available()
 		!function_exists('generate_blog_get_defaults') ||
 		!function_exists('generate_hooks_setup') ||
 		!function_exists('generate_secondary_nav_setup') ||
+		!function_exists('generate_sections_styles') ||
 		!function_exists('generate_spacing_setup')) :
 			return true;
 		else :
@@ -65,6 +66,7 @@ function generate_no_addons()
 		!function_exists('generate_blog_get_defaults') &&
 		!function_exists('generate_hooks_setup') &&
 		!function_exists('generate_secondary_nav_setup') &&
+		!function_exists('generate_sections_styles') &&
 		!function_exists('generate_spacing_setup')) :
 			return true;
 		else :

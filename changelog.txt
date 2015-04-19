@@ -10,6 +10,15 @@ Changelog Legend:
 
 ----
 
+(4/19/2015) - 1.2.9.4
+[+] Add filter to page header size: generate_page_header_default_size
+[*] Screenshot updated
+[*] Add Sections add-on to options page
+[*] Add SiteOrigin Page Builder compatibility 
+[+] Greek language added (thanks Manolis!!)
+
+----
+
 (4/8/2015) - 1.2.9.3
 [*] Admin option messages improved
 [*] Menu dropdown arrows built in to avoid javascript jump

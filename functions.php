@@ -5,7 +5,7 @@
  * @package Generate
  */
 	
-define( 'GENERATE_VERSION', '1.2.9.3');
+define( 'GENERATE_VERSION', '1.2.9.4');
 define( 'GENERATE_URI', get_template_directory_uri() );
 define( 'GENERATE_DIR', get_template_directory() );
 

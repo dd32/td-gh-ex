@@ -144,16 +144,16 @@ function generate_settings_page()
 												'img' => get_template_directory_uri() . '/images/admin/colors.png'
 							
 										),
-										// '1' => array(
-												// 'name' => __('Sections','generate'),
-												// 'version' => ( function_exists('generate_sections_init') ) ? GENERATE_SECTIONS_VERSION : '',
-												// 'id' => 'generate_sections_init',
-												// 'license' => 'gen_sections_license_key_status',
-												// 'package' => 'generate_package_sections',
-												// 'url' => esc_url('http://www.generatepress.com/downloads/generate-sections/'),
-												// 'img' => get_template_directory_uri() . '/images/admin/sections.png'
+										'1' => array(
+												'name' => __('Sections','generate'),
+												'version' => ( function_exists('generate_sections_init') ) ? GENERATE_SECTIONS_VERSION : '',
+												'id' => 'generate_sections_init',
+												'license' => 'gen_sections_license_key_status',
+												'package' => 'generate_package_sections',
+												'url' => esc_url('http://www.generatepress.com/downloads/generate-sections/'),
+												'img' => get_template_directory_uri() . '/images/admin/sections.png'
 							
-										// ),
+										),
 										'2' => array(
 												'name' => __('Typography','generate'),
 												'version' => ( function_exists('generate_fonts_setup') ) ? GENERATE_FONT_VERSION : '',
