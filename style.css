@@ -4,9 +4,9 @@ Theme URI: http://accesspressthemes.com/wordpress-themes/accesspress-parallax/
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Parallax is a beautiful WordPress theme with Parallax design. Parallax design has become popular and is being adopted because 3D effects are possible with it, you can add some sphere to your product, it is the best way of storytelling, you can draw your visitors in, it is interactive, engaging, makes your visitors curious, fun, surprise, effective to trigger action, invite your visitors in great Call to Action, great conversion rates and many more. This is probably the most beautiful, feature rich and complete free WordPress parallax theme with features like: fully responsive, advance theme option panel, featured slider, advance post settings, services/team/blog/portfolio/testimonial layout, Google map integration, custom logo/fav icon, call to action, CSS animation, SEO friendly, translation ready, RTL support, custom CSS/JS and more! Demo: http://accesspressthemes.com/accesspress-parallax/ Support forum:https://accesspressthemes.com/support/ Pro version:https://accesspressthemes.com/wordpress-themes/accesspress-parallax-pro/ 
-Version: 1.21
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.22
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: accesspress_parallax
 Domain Path: /languages/
 Tags: black, blue, custom-background, custom-colors, custom-header, custom-menu, dark, featured-images, fluid-layout, gray, light, one-column, orange, right-sidebar, theme-options, threaded-comments, translation-ready, two-columns, white
@@ -14,7 +14,7 @@ Tags: black, blue, custom-background, custom-colors, custom-header, custom-menu,
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-Access Press Parallax is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+AccessPress Parallax is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
 */
 
 /*--------------------------------------------------------------
@@ -1450,6 +1450,7 @@ Team Section
 --------------------------------------------------------------*/
 .team-tab{
 	text-align: center;
+	padding: 0 50px;
 }
 .team-image{
 	width: 140px;

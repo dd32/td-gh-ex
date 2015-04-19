@@ -173,6 +173,10 @@ Responsive CSS
 	.main-navigation ul ul{
 		box-shadow: none;
 	}
+	.parallax-section{
+        background-attachment: scroll !important;
+        background-repeat: repeat !important;
+    }
 }
 @media screen and (max-width: 480px){
 	.parallax-section h1{

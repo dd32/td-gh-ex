@@ -489,10 +489,10 @@ function of_recognized_layout() {
 function of_recognized_background_overlay() {
 	$default = array(
 		'overlay0' => __( 'No Overlay', 'accesspress_parallax' ),
-		'overlay1' => __( 'Overlay 1', 'accesspress_parallax' ),
-		'overlay2'  => __( 'Overlay 2', 'accesspress_parallax'),
-		'overlay3'  => __( 'Overlay 3', 'accesspress_parallax'),
-		'overlay4'  => __( 'Overlay 4', 'accesspress_parallax')
+		'overlay1' => __( 'Small Dotted', 'accesspress_parallax' ),
+		'overlay2'  => __( 'Large Dotted', 'accesspress_parallax'),
+		'overlay3'  => __( 'Light Black', 'accesspress_parallax'),
+		'overlay4'  => __( 'Black Dotted', 'accesspress_parallax')
 		);
 	return apply_filters( 'of_recognized_background_overlay', $default );
 }

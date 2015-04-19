@@ -35,10 +35,11 @@ function optionsframework_options() {
 	);
 
 	$overlay = array(
-		'overlay1' => __('Overlay 1', 'accesspress_parallax'),
-		'overlay2' => __('Overlay 2', 'accesspress_parallax'),
-		'overlay3' => __('Overlay 3', 'accesspress_parallax'),
-		'overlay4'  => __( 'Overlay 4', 'options-framework')
+		'overlay0' => __( 'No Overlay', 'accesspress_parallax' ),
+		'overlay1' => __( 'Small Dotted', 'accesspress_parallax' ),
+		'overlay2'  => __( 'Large Dotted', 'accesspress_parallax'),
+		'overlay3'  => __( 'Light Black', 'accesspress_parallax'),
+		'overlay4'  => __( 'Black Dotted', 'accesspress_parallax')
 	);
 
 	$section_template = array(

@@ -57,7 +57,7 @@ jQuery(document).ready(function($){
         minSlides: 2,
         maxSlides: 7,
         slideWidth: 140,
-        slideMargin: 20,
+        slideMargin: 15,
         infiniteLoop: false,
         hideControlOnEnd: true
     });

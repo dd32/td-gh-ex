@@ -113,10 +113,10 @@
 <label><?php _e('Overlay', 'accesspress_parallax') ?></label>
 <select id="parallax_section_overlay" class="of-background of-background-overlay" name="accesspress_parallax[parallax_section][<?php echo $countsettings; ?>][overlay]">
 <option value="overlay0"><?php _e('No Overlay', 'accesspress_parallax') ?></option>
-<option value="overlay1"><?php _e('Overlay 1', 'accesspress_parallax') ?></option>
-<option value="overlay2"><?php _e('Overlay 2', 'accesspress_parallax') ?></option>
-<option value="overlay3"><?php _e('Overlay 3', 'accesspress_parallax') ?></option>
-<option value="overlay4"><?php _e('Overlay 4', 'accesspress_parallax') ?></option>
+<option value="overlay1"><?php _e('Small Dotted', 'accesspress_parallax') ?></option>
+<option value="overlay2"><?php _e('Large Dotted', 'accesspress_parallax') ?></option>
+<option value="overlay3"><?php _e('Light Black', 'accesspress_parallax') ?></option>
+<option value="overlay4"><?php _e('Black Dotted', 'accesspress_parallax') ?></option>
 </select>
 </div>
 </div>
