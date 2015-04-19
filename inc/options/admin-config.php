@@ -422,16 +422,32 @@
                 );
 
                 $this->sections[] = array(
-                    'title'  => __( 'Post Options', 'redux-framework-demo' ),
-                    'desc'   => __( 'Use this tab to set the post settings of the site', 'redux-framework-demo' ),
+                    'title'  => __( 'Post / Page Options', 'awaken' ),
+                    'desc'   => __( 'Use this tab to set the post settings of the site', 'awaken' ),
                     'icon'   => 'el-icon-pencil-alt',
                     // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
                     'fields' => array(
                         array(
+                            'id'       => 'awaken-post-comments',
+                            'type'     => 'switch',
+                            'title'    => __( 'Comment area on posts.', 'awaken' ),
+                            'subtitle' => __( 'Switch on if you want to display comments and comment form in posts.', 'awaken' ),
+                            //'options' => array('on', 'off'),
+                            'default'  => true,
+                        ),
+                        array(
+                            'id'       => 'awaken-page-comments',
+                            'type'     => 'switch',
+                            'title'    => __( 'Comment area on pages.', 'awaken' ),
+                            'subtitle' => __( 'Switch on if you want to display comments and comment form in pages.', 'awaken' ),
+                            //'options' => array('on', 'off'),
+                            'default'  => true,
+                        ),
+                        array(
                             'id'       => 'featured-image-switch',
                             'type'     => 'switch',
-                            'title'    => __( 'Display featured image in single post article.', 'redux-framework-demo' ),
-                            'subtitle' => __( 'Switch on if you want to display featured images in single posts.', 'redux-framework-demo' ),
+                            'title'    => __( 'Display featured image in single post article.', 'awaken' ),
+                            'subtitle' => __( 'Switch on if you want to display featured images in single posts.', 'awaken' ),
                             //'options' => array('on', 'off'),
                             'default'  => true,
                         ),      
@@ -558,7 +574,16 @@
                             'id'   => 'opt-info-field',
                             'type' => 'info',
                             'style' => 'success',
-                            'desc' => __( '<h4><a class="button-primary" href="http://www.themezhut.com/themes/awaken" target="_blank">Theme Details</a></h4> <h4><a class="button-primary" href="http://www.themezhut.com/awaken-wordpress-theme-documentation" target="_blank">Theme Setup Guide</a></h4> <h4><a class="button-primary" href="http://www.themezhut.com/demo/awaken" target="_blank">Theme Demo</a></h4> <h4><a class="button-primary" href="http://wordpress.org/themes/awaken" target="_blank">Rate Awaken Theme</a></h4> <h4><a class="button-primary" href="http://www.themezhut.com/themes/awaken-pro" target="_blank">Awaken Pro Details</a></h4> <h4><a class="button-primary" href="http://www.themezhut.com/demo/awaken-pro" target="_blank">Awaken Pro Demo</a></h4>', 'awaken' )
+                            'desc' => __( '<h4><a class="thgreen" href="http://www.themezhut.com/themes/awaken" target="_blank">Theme Details</a></h4> <h4><a class="thred" href="http://www.themezhut.com/awaken-wordpress-theme-documentation" target="_blank">Theme Setup Guide</a></h4> <h4><a class="thblue" href="http://www.themezhut.com/demo/awaken" target="_blank">Theme Demo</a></h4> <h4><a class="thlgreen" href="http://wordpress.org/themes/awaken" target="_blank">Rate Awaken Theme</a></h4> <h4><a class="thbrown" href="http://www.themezhut.com/themes/awaken-pro" target="_blank">Awaken Pro Details</a></h4> <h4><a class="thpurple" href="http://www.themezhut.com/demo/awaken-pro" target="_blank">Awaken Pro Demo</a></h4>', 'awaken' )
+                        ),
+
+                        array(
+                            'id'    => 'th-opt-info-rate',
+                            'type'  => 'info',
+                            'style' => 'success',
+                            'icon'  => 'el el-star',
+                            'title' => __( '<h4>Support Us.</h4>', 'awaken' ),
+                            'desc'  => __( 'The best way to thank us is, by rating our theme with 5 stars. <a href="http://wordpress.org/themes/awaken" target="_blank">Click here to rate our theme.</a>', 'awaken' )
                         ),
                     ),
                 );

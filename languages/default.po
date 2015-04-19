@@ -1,10 +1,10 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: awaken.1.0.9\n"
-"POT-Creation-Date: 2015-03-29 21:26+0530\n"
-"PO-Revision-Date: 2015-03-29 21:27+0530\n"
+"Project-Id-Version: awaken.1.1.0\n"
+"POT-Creation-Date: 2015-04-20 00:44+0530\n"
+"PO-Revision-Date: 2015-04-20 00:44+0530\n"
 "Last-Translator: \n"
-"Language-Team: ThemezHut\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -134,9 +134,9 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: content-search.php:31 content.php:28 inc/widgets/dual-category.php:204
-#: inc/widgets/dual-category.php:260 inc/widgets/single-category.php:123
-#: inc/widgets/three-block-posts.php:147
+#: content-search.php:31 content.php:28 inc/widgets/dual-category.php:205
+#: inc/widgets/dual-category.php:262 inc/widgets/single-category.php:124
+#: inc/widgets/three-block-posts.php:149
 msgid "Comment"
 msgstr ""
 
@@ -297,8 +297,8 @@ msgid ""
 msgstr ""
 
 #: inc/options/admin-config.php:265 inc/options/admin-config.php:384
-#: inc/options/admin-config.php:401 inc/options/admin-config.php:442
-#: inc/options/admin-config.php:539
+#: inc/options/admin-config.php:401 inc/options/admin-config.php:458
+#: inc/options/admin-config.php:555
 msgid ""
 "<a href=\"http://www.themezhut.com/themes/awaken-pro\" target=\"_blank"
 "\">Upgrade to Pro</a>"
@@ -453,7 +453,7 @@ msgid "Add your CSS code here."
 msgstr ""
 
 #: inc/options/admin-config.php:425
-msgid "Post Options"
+msgid "Post / Page Options"
 msgstr ""
 
 #: inc/options/admin-config.php:426
@@ -461,130 +461,156 @@ msgid "Use this tab to set the post settings of the site"
 msgstr ""
 
 #: inc/options/admin-config.php:433
-msgid "Display featured image in single post article."
+msgid "Comment area on posts."
 msgstr ""
 
 #: inc/options/admin-config.php:434
-msgid "Switch on if you want to display featured images in single posts."
+msgid "Switch on if you want to display comments and comment form in posts."
 msgstr ""
 
-#: inc/options/admin-config.php:443
-msgid "Pro version comes with more post options."
+#: inc/options/admin-config.php:441
+msgid "Comment area on pages."
+msgstr ""
+
+#: inc/options/admin-config.php:442
+msgid "Switch on if you want to display comments and comment form in pages."
+msgstr ""
+
+#: inc/options/admin-config.php:449
+msgid "Display featured image in single post article."
 msgstr ""
 
 #: inc/options/admin-config.php:450
-msgid "Social Media"
-msgstr ""
-
-#: inc/options/admin-config.php:451
-msgid "Use this tab to set the social media settings of the site"
-msgstr ""
-
-#: inc/options/admin-config.php:458
-msgid "Display social media icons."
+msgid "Switch on if you want to display featured images in single posts."
 msgstr ""
 
 #: inc/options/admin-config.php:459
-msgid "Check the checkbox to activate social icons."
+msgid "Pro version comes with more post options."
 msgstr ""
 
 #: inc/options/admin-config.php:466
-msgid "Facebook Link"
+msgid "Social Media"
 msgstr ""
 
-#: inc/options/admin-config.php:467 inc/options/admin-config.php:476
-#: inc/options/admin-config.php:485 inc/options/admin-config.php:494
-#: inc/options/admin-config.php:503 inc/options/admin-config.php:512
-#: inc/options/admin-config.php:521 inc/options/admin-config.php:530
-msgid "This must be a URL. Start with http://"
+#: inc/options/admin-config.php:467
+msgid "Use this tab to set the social media settings of the site"
+msgstr ""
+
+#: inc/options/admin-config.php:474
+msgid "Display social media icons."
 msgstr ""
 
 #: inc/options/admin-config.php:475
+msgid "Check the checkbox to activate social icons."
+msgstr ""
+
+#: inc/options/admin-config.php:482
+msgid "Facebook Link"
+msgstr ""
+
+#: inc/options/admin-config.php:483 inc/options/admin-config.php:492
+#: inc/options/admin-config.php:501 inc/options/admin-config.php:510
+#: inc/options/admin-config.php:519 inc/options/admin-config.php:528
+#: inc/options/admin-config.php:537 inc/options/admin-config.php:546
+msgid "This must be a URL. Start with http://"
+msgstr ""
+
+#: inc/options/admin-config.php:491
 msgid "Twitter Link"
 msgstr ""
 
-#: inc/options/admin-config.php:484
+#: inc/options/admin-config.php:500
 msgid "Google Plus Link"
 msgstr ""
 
-#: inc/options/admin-config.php:493
+#: inc/options/admin-config.php:509
 msgid "Linkedin Link"
 msgstr ""
 
-#: inc/options/admin-config.php:502
+#: inc/options/admin-config.php:518
 msgid "RSS Link"
 msgstr ""
 
-#: inc/options/admin-config.php:511
+#: inc/options/admin-config.php:527
 msgid "Instagram Link"
 msgstr ""
 
-#: inc/options/admin-config.php:520
+#: inc/options/admin-config.php:536
 msgid "Flickr Link"
 msgstr ""
 
-#: inc/options/admin-config.php:529
+#: inc/options/admin-config.php:545
 msgid "Youtube Link"
 msgstr ""
 
-#: inc/options/admin-config.php:540
+#: inc/options/admin-config.php:556
 msgid "Pro Version comes with more social media link options."
 msgstr ""
 
-#: inc/options/admin-config.php:553
+#: inc/options/admin-config.php:569
 msgid "<span class=\"sp-menu\">Theme Support</span>"
 msgstr ""
 
-#: inc/options/admin-config.php:554
+#: inc/options/admin-config.php:570
 msgid ""
 "<p class=\"description\">Follow these links to get more details about Awaken "
 "WordPress Theme.</p>"
 msgstr ""
 
-#: inc/options/admin-config.php:561
+#: inc/options/admin-config.php:577
 msgid ""
-"<h4><a class=\"button-primary\" href=\"http://www.themezhut.com/themes/awaken"
-"\" target=\"_blank\">Theme Details</a></h4> <h4><a class=\"button-primary\" "
-"href=\"http://www.themezhut.com/awaken-wordpress-theme-documentation\" "
-"target=\"_blank\">Theme Setup Guide</a></h4> <h4><a class=\"button-primary\" "
-"href=\"http://www.themezhut.com/demo/awaken\" target=\"_blank\">Theme Demo</"
-"a></h4> <h4><a class=\"button-primary\" href=\"http://wordpress.org/themes/"
-"awaken\" target=\"_blank\">Rate Awaken Theme</a></h4> <h4><a class=\"button-"
-"primary\" href=\"http://www.themezhut.com/themes/awaken-pro\" target=\"_blank"
-"\">Awaken Pro Details</a></h4> <h4><a class=\"button-primary\" href=\"http://"
-"www.themezhut.com/demo/awaken-pro\" target=\"_blank\">Awaken Pro Demo</a></"
-"h4>"
+"<h4><a class=\"thgreen\" href=\"http://www.themezhut.com/themes/awaken\" "
+"target=\"_blank\">Theme Details</a></h4> <h4><a class=\"thred\" href="
+"\"http://www.themezhut.com/awaken-wordpress-theme-documentation\" target="
+"\"_blank\">Theme Setup Guide</a></h4> <h4><a class=\"thblue\" href=\"http://"
+"www.themezhut.com/demo/awaken\" target=\"_blank\">Theme Demo</a></h4> <h4><a "
+"class=\"thlgreen\" href=\"http://wordpress.org/themes/awaken\" target="
+"\"_blank\">Rate Awaken Theme</a></h4> <h4><a class=\"thbrown\" href=\"http://"
+"www.themezhut.com/themes/awaken-pro\" target=\"_blank\">Awaken Pro Details</"
+"a></h4> <h4><a class=\"thpurple\" href=\"http://www.themezhut.com/demo/"
+"awaken-pro\" target=\"_blank\">Awaken Pro Demo</a></h4>"
 msgstr ""
 
-#: inc/options/admin-config.php:571
+#: inc/options/admin-config.php:585
+msgid "<h4>Support Us.</h4>"
+msgstr ""
+
+#: inc/options/admin-config.php:586
+msgid ""
+"The best way to thank us is, by rating our theme with 5 stars. <a href="
+"\"http://wordpress.org/themes/awaken\" target=\"_blank\">Click here to rate "
+"our theme.</a>"
+msgstr ""
+
+#: inc/options/admin-config.php:596
 msgid "Import / Export"
 msgstr ""
 
-#: inc/options/admin-config.php:572
+#: inc/options/admin-config.php:597
 msgid "Import and Export your Redux Framework settings from file, text or URL."
 msgstr ""
 
-#: inc/options/admin-config.php:587
+#: inc/options/admin-config.php:612
 msgid "Theme Information"
 msgstr ""
 
-#: inc/options/admin-config.php:605
+#: inc/options/admin-config.php:630
 msgid "Theme Information 1"
 msgstr ""
 
-#: inc/options/admin-config.php:606 inc/options/admin-config.php:612
+#: inc/options/admin-config.php:631 inc/options/admin-config.php:637
 msgid "<p>This is the tab content, HTML is allowed.</p>"
 msgstr ""
 
-#: inc/options/admin-config.php:611
+#: inc/options/admin-config.php:636
 msgid "Theme Information 2"
 msgstr ""
 
-#: inc/options/admin-config.php:616
+#: inc/options/admin-config.php:641
 msgid "<p>This is the sidebar content, HTML is allowed.</p>"
 msgstr ""
 
-#: inc/options/admin-config.php:639 inc/options/admin-config.php:640
+#: inc/options/admin-config.php:664 inc/options/admin-config.php:665
 msgid "Awaken Options"
 msgstr ""
 

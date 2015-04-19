@@ -19,10 +19,13 @@ get_header(); ?>
 			<?php awaken_post_nav(); ?>
 
 			<?php
-				// If comments are open or we have at least one comment, load up the comment template
-				if ( comments_open() || '0' != get_comments_number() ) :
-					comments_template();
-				endif;
+                if ( $awaken_options['awaken-post-comments'] == '1' ) :
+                    // If comments are open or we have at least one comment, load up the comment template
+                    if ( comments_open() || '0' != get_comments_number() ) :
+                        comments_template();
+                    endif;
+
+                endif;
 			?>
 
 		<?php endwhile; // end of the loop. ?>

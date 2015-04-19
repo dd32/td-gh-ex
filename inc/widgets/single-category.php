@@ -102,6 +102,7 @@ class Awaken_Single_Category_Posts extends WP_Widget {
 		<div class="awaken-one-category">
 			<div class="row">
 				<?php $i = 1 ?>
+                <?php global $awaken_options; ?>
 				<?php 
 					if ( $latest_posts -> have_posts() ) :
 					while ( $latest_posts -> have_posts() ) : $latest_posts -> the_post(); ?>
@@ -119,7 +120,7 @@ class Awaken_Single_Category_Posts extends WP_Widget {
 						<?php if ( 'post' == get_post_type() ) : ?>
 							<div class="genpost-entry-meta">
 								<?php awaken_posted_on(); ?>
-								<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
+								<?php if ( $awaken_options['awaken-post-comments'] == '1' && ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
 									<span class="comments-link"><?php comments_popup_link( __( 'Comment', 'awaken' ), '1', '%' ); ?></span>
 								<?php endif; ?>
 							</div><!-- .entry-meta -->
