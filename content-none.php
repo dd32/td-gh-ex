@@ -1,4 +1,4 @@
-<section id = "site-content-full" class="<?php if ( is_404() ) { echo 'error-404'; } else { echo 'no-results'; } ?> not-found">
+<section id="site-content-full" class="<?php if ( is_404() ) { echo 'error-404'; } else { echo 'no-results'; } ?> not-found">
 	<h3 class="entry-title">
 		<?php 
 			if ( is_404() ) { _e( 'Page not available', 'barista' ); }
@@ -36,11 +36,11 @@
 </section>
     <?php
 
-        $args = array(
+        $args=array(
             'posts_per_page' => 6
         );
 
-        $latest_posts_query = new WP_Query( $args );
+        $latest_posts_query=new WP_Query( $args );
 		
         if ( $latest_posts_query->have_posts() ) {
                 while ( $latest_posts_query->have_posts() ) {

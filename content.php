@@ -1,11 +1,11 @@
-<section id = "site-content">
-    <article id = "post-<?php the_ID(); ?> <?php post_class(); ?>">
-        <h3 class = "entry-title"><a href = "<?php the_permalink(); ?>"><?php echo ( get_the_title() ) ? get_the_title() : __( '(No Title)', 'barista' ); ?></a></h3>
-        <small class = "metadata-posted-on"><?php barista_metadata_posted_on_setup(); ?></small>
-            <div class = "small-post-thumbnail cf">
+<section id="site-content">
+    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php echo ( get_the_title() ) ? get_the_title() : __( '(No Title)', 'barista' ); ?></a></h3>
+        <small class="metadata-posted-on"><?php barista_metadata_posted_on_setup(); ?></small>
+            <div class="small-post-thumbnail cf">
                 <?php the_post_thumbnail('barista-small-thumbnail'); ?>
             </div>
-        <div class = "entry-content">
+        <div class="entry-content">
             <?php the_content(); ?>
                 <?php
                         $defaults = array(
@@ -25,7 +25,7 @@
 
                 ?>
         </div>
-        <small class = "metadata-posted-in"><?php barista_metadata_posted_in_setup(); ?></small>
+        <small class="metadata-posted-in"><?php barista_metadata_posted_in_setup(); ?></small>
     </article>
 </section>
 <?php get_sidebar('post-content'); ?>
