@@ -60,6 +60,10 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.44
+* Font Awesome updated to latest version.
+* Minor bug in Home page slider fixed.
+
 Version 2.43
 * Minor adjustment in theme option panel
 * New .pot file created

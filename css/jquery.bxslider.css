@@ -13,6 +13,9 @@
 
 /** RESET AND LAYOUT
 ===================================*/
+.bx-wrapper *{
+	direction: ltr;
+}
 
 .bx-wrapper {
 	position: relative;
@@ -30,7 +33,12 @@
 ===================================*/
 
 .bx-wrapper .bx-viewport {
-
+	/*fix other elements on the page moving (on Chrome)*/
+	-webkit-transform: translatez(0);
+	-moz-transform: translatez(0);
+	-ms-transform: translatez(0);
+	-o-transform: translatez(0);
+	transform: translatez(0);
 }
 
 .bx-wrapper .bx-pager,
@@ -216,4 +224,3 @@
 	font-weight: 300;
 	color: #FFF;
 }
-

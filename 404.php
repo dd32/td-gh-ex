@@ -19,7 +19,7 @@ get_header(); ?>
 				</div><!-- .page-content -->
                 
                 <div class="number404">
-                404 
+                <?php _e('404' , 'accesspresslite' ); ?> 
                 <span><?php _e('error' , 'accesspresslite' ); ?></span>   
                 </div>
 			</section><!-- .error-404 -->
