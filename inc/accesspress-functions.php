@@ -742,8 +742,6 @@ function accesspress_required_plugins() {
 }
 add_action( 'tgmpa_register', 'accesspress_required_plugins' );
 
-/*------For shordcode in widget text-----------------*/
-add_filter('widget_text', 'do_shortcode');
 
 /*---------Enqueue admin css---------------*/
 function accesspress_mag_admin_css(){

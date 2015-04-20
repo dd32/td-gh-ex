@@ -661,7 +661,7 @@ function optionsframework_options() {
             ); 
             
     $options[] = array(
-            'name' => __( 'Post Settings', 'accesspress-mag' ),
+            'name' => __( 'Additional Settings', 'accesspress-mag' ),
             'id'   => 'post_settings',
             'type' => 'groupstart'
             );
@@ -704,7 +704,7 @@ function optionsframework_options() {
             'type' => 'switch'
             );
     $options[] = array(
-            'name' => __( 'Show Tags on Post', 'accesspress-mag' ),                
+            'name' => __( 'Show Tags on Site', 'accesspress-mag' ),                
             'desc' => __( 'Enable or disable the post tags', 'accesspress-mag' ),
             'id' => 'show_tags_post',
             'on' => __( 'Yes', 'accesspress-mag'),
@@ -722,7 +722,7 @@ function optionsframework_options() {
             'type' => 'switch'
             );
     $options[] = array(
-            'name' => __( 'Show Next and Previous Posts', 'accesspress-mag' ),                
+            'name' => __( 'Show Navigation in Posts', 'accesspress-mag' ),                
             'desc' => __( 'Show or hide `next` and `previous` posts', 'accesspress-mag' ),
             'id' => 'show_post_nextprev',
             'on' => __( 'Yes', 'accesspress-mag'),
@@ -753,12 +753,12 @@ function optionsframework_options() {
             );
       /*------------------------Default site post template------------------------*/ 
     $options[] = array(
-            'name' => __( 'Default site post template', 'accesspress-mag' ),
+            'name' => __( 'Post Layout', 'accesspress-mag' ),
             'id'   => 'post_template',
             'type' => 'groupstart'
             );
     $options[] = array(
-            'name' => __( 'Default Site Post Template', 'accesspress-mag' ),
+            'name' => __( 'Default Post Template', 'accesspress-mag' ),
             'desc' => __( "Setting this option will make all post pages, that don't have a post template associated to them, to be displayed using this template. This option is OVERWRITTEN by the `Post template` option from the backend - post add / edit page.", 'accesspress-mag' ),
             'id' => 'global_post_template',
             'class'=>'post_template_image',
@@ -921,15 +921,7 @@ function optionsframework_options() {
             'type' => 'radio',
             'std' => ' ' 
             );
-    $options[] = array(
-            'type' => 'groupend'
-            );
-            
-    $options[] = array(
-            'name' => __( 'Wordpress default', 'accesspress-mag' ),
-            'id'   => 'wordpress-default',
-            'type' => 'groupstart'
-            );
+    
     $options[] = array(
             'name' => __( 'Excerpt Length', 'accesspress-mag' ),
             'desc' => __( 'Define - Excerpt length of words/letters for archive pages', 'accesspress-mag' ),

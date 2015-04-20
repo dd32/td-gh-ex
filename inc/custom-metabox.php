@@ -263,6 +263,7 @@ function accesspress_mag_post_settings_callback()
         </table>
 </div>
 <div class="source-section">
+    <h3><?php _e( 'Article source section', 'accesspress-mag' );?></h3>
     <?php 
         $apmag_post_source_name = get_post_meta($post->ID, 'post_source_name', true);
         $apmag_post_source_url = get_post_meta($post->ID, 'post_source_url', true); 
