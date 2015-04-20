@@ -356,6 +356,7 @@ body {
 	background: #fcfcfc;
 	padding: 0 35px 0 35px;
 	.box-sizing(border-box);
+	.clearfix();
 
 	.hgroup {
 		.clearfix();
@@ -443,9 +444,14 @@ body {
 	}
 
 	&.masthead-logo-in-menu {
+
+		.main-navigation {
+			.clearfix();
+		}
+
 		.logo {
 			float: left;
-			padding: 12px 0;
+			padding: 10px 0;
 			margin-right: 15px;
 
 			> * {
@@ -453,7 +459,7 @@ body {
 			}
 
 			> img {
-				max-height: 35px;
+				max-height: 33px;
 				width: auto;
 
 				height: auto;
@@ -536,6 +542,19 @@ body.sidebar-position-none #secondary {
 	display: none;
 }
 
+.siteorigin-panels-home #primary,
+.page-template-templatestemplate-full-php #primary,
+.page-template-home-panels-php #primary,
+.page-template-templatestemplate-full-notitle-php #primary{
+	width: auto;
+	float: none;
+}
+
+.page-template-default #primary {
+	float: left;
+	width: 71.287%;
+}
+
 #main {
 	background: #fcfcfc;
 	padding: 35px;
@@ -586,6 +605,7 @@ body.sidebar-position-none #secondary {
 			}
 
 			&.masthead-logo-in-menu {
+
 				.logo {
 					margin-left: 20px;
 				}
@@ -720,6 +740,7 @@ body.responsive {
 	margin: 0 -35px;
 	background: #343538;
 	position: relative;
+	font-size: 0;
 
 	/* Font awesome icons */
 	[class^="fa fa-"] {
@@ -735,7 +756,6 @@ body.responsive {
 	}
 
 	ul {
-		display: flex;
 		text-align: left;
 		list-style: none;
 		margin: 0;
