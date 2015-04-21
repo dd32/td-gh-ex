@@ -185,10 +185,8 @@ class Options_Framework_Admin {
             </div>
 
             <div class="ak-socials">
-                <p><?php _e('Follow us for new updates', 'accesspress-root') ?></p>
+                <p></p>
                 <div class="social-bttns">
-                    
-                       
                 </div>
             </div>
         </div>

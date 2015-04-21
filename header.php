@@ -28,9 +28,10 @@
 			<?php if(of_get_option('logo_setting') == 'image' || of_get_option('logo_setting') == 'image_text') : 
 				if(of_get_option('logo')): ?>
 				<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url(of_get_option('logo')); ?>" alt="<?php bloginfo( 'name' ); ?>"/> </a> 
-			<?php endif;
+				<?php 
+				endif;
 			endif;
-			if(of_get_option('logo_setting') == 'text' || of_get_option('logo_setting') == 'image_text'): ?>
+			if(of_get_option('logo_setting') == NUll || of_get_option('logo_setting') == 'text' || of_get_option('logo_setting') == 'image_text'): ?>
 				<a class="site-text" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 				<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
 				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
@@ -43,7 +44,7 @@
 					<a class="menu-toggle"><?php _e( 'Menu', 'accesspress-root' ); ?></a>
 					<?php wp_nav_menu( array( 
 					'theme_location' => 'primary',
-					'container'       => '', 
+					'container'       => false, 
 					) ); ?>
 				</nav><!-- #site-navigation -->
 
@@ -72,7 +73,7 @@
 		<div class="block">
 			<?php wp_nav_menu( array( 
 			'theme_location' => 'primary',
-			'container'       => '', 
+			'container'       => false, 
 			) ); ?>
 			<a href="#top" id="nav-close-btn" class="close-btn">&times;</a>
 		</div>

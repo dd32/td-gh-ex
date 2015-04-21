@@ -73,19 +73,6 @@ function accesspress_root_setup() {
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
 	) );
 
-	/*
-	 * Enable support for Post Formats.
-	 * See http://codex.wordpress.org/Post_Formats
-	 */
-	/*add_theme_support( 'post-formats', array(
-		'aside', 'image', 'video', 'quote', 'link',
-	) );*/
-
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'accesspress_root_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
 }
 endif; // accesspress_root_setup
 add_action( 'after_setup_theme', 'accesspress_root_setup' );
@@ -170,7 +157,7 @@ function accesspress_root_scripts() {
     wp_enqueue_style('accesspress-root-font-awesome-css', get_template_directory_uri() . '/css/font-awesome.min.css');
     wp_enqueue_style('accesspress-root-bx-slider-css', get_template_directory_uri() . '/css/jquery.bxslider.css');
     wp_enqueue_style('accesspress-root-nivo-lightbox-css', get_template_directory_uri() . '/css/nivo-lightbox.css');
-    wp_enqueue_style( 'accesspress-root-style', get_stylesheet_uri() );
+    wp_enqueue_style('accesspress-root-style', get_stylesheet_uri() );
     if(of_get_option('responsive') == '1') :
 		wp_enqueue_style( 'accesspress-root-responsive', get_template_directory_uri() . '/css/responsive.css' );
 	endif;
@@ -179,7 +166,7 @@ function accesspress_root_scripts() {
 	wp_enqueue_script( 'accesspress-root-actual-js', get_template_directory_uri() . '/js/jquery.actual.min.js', array('jquery'), '1.0.16', true );
 	wp_enqueue_script( 'accesspress-root-lightbox-js', get_template_directory_uri() . '/js/nivo-lightbox.min.js', array('jquery'), '1.2.0', true );
 	wp_enqueue_script( 'accesspress-root-modernizr', get_template_directory_uri() . '/js/modernizr.min.js', array('jquery'), '1.2.0', false );
-    wp_enqueue_script('accesspress-root-custom-js', get_template_directory_uri() . '/js/custom.js', array('jquery'), '1.0', true);
+    wp_enqueue_script( 'accesspress-root-custom-js', get_template_directory_uri() . '/js/custom.js', array('jquery'), '1.0', true);
     wp_enqueue_script( 'accesspress-root-off-canvas-menu-js', get_template_directory_uri() . '/js/off-canvas-menu.js', array(), '1.0.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -187,11 +174,6 @@ function accesspress_root_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'accesspress_root_scripts' );
-
-/**
- * Implement the Custom Header feature.
- */
-//require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -213,10 +195,9 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-
-define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/panel/' );
 /**
  * Load Option Framework.
  */
 require get_template_directory() . '/inc/panel/options-framework.php';
 
+define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/panel/' );

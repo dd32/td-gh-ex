@@ -1,4 +1,7 @@
 /* Options Framework Admin Styles */
+img{
+    max-width: 100%;
+}
 .clearfix{
 	zoom:1;
 }
@@ -519,4 +522,55 @@
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
     margin: 0 0 15px;
     padding: 1px 12px; 
+}
+
+
+.accesspressthemes-products > div{
+    width: 32.33%;
+    display: inline-block;
+    margin-left: 1%;
+    text-align: center;
+    font-size: 13px;
+}
+
+.accesspressthemes-products > div .ap-themes-img{
+    border:1px solid #CCC;
+    padding: 5px;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.accesspressthemes-products > div .ap-themes-img img{
+    width:100%;
+    display: block;
+}
+
+.accesspressthemes-products > div a{
+    text-decoration: none;
+}
+
+.ap-themes-img span{
+    position: absolute;
+    background: rgba(0,0,0,0.6);
+    color:#FFF;
+    vertical-align: middle;
+    height: 100%;
+    width: 100%;
+    font-size: 14px;
+    left: 0;
+    top: 0;
+    line-height: 190px;
+    opacity: 0;
+    transition:all 0.3s ease;
+    -moz-transition:all 0.3s ease;
+    -webkit-transition:all 0.3s ease;
+}
+
+.ap-themes-img:hover span{
+    opacity: 1;
+}
+
+.about-accesspress img{
+    display: block;
+    margin: 0 auto
 }

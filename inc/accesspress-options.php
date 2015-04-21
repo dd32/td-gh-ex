@@ -114,9 +114,52 @@ function optionsframework_options() {
 		$options_pages[$page->ID] = $page->post_title;
 	}
 
-	$about_content = __("AccessPress Themes is an online WordPress themes store, that provides beautiful and useful themes. All of our themes are crafted with our years of experience. Our theme don't lack the basics and don't have a lot of non-sense features which you might never use. <br /><br /> AccessPress Themes has beautiful and elegant, fully responsive, multipurpose themes to meet your need for free and premium basis. Our themes have bunch of easily customizable options and features, someone with no programming knowledge can use our easy theme options panel and configure/setup the theme as needed. Our support is 24/7, even for the free themes! Turn around times are as less as 1 hour!","accesspress-root");
+	$theme = wp_get_theme();
 
-	
+	$about_content = '<div class="about-accesspress">
+          <img src="'.esc_url($theme->get_screenshot()).'" /><br/>'
+          .$theme->get('Description').
+          '<br/><br/>
+          <a class="button" target="_blank" href="'.esc_url('https://accesspressthemes.com/accesspress-root-documentation/').'">'. __('View Documentaion','accesspress-root').'</a>
+          <a class="button" target="_blank" href="'.esc_url('https://accesspressthemes.com/accesspress-root').'">'.__('View Demo','accesspress-root').'</a>
+        </div>';
+    $for_support =  __("Forum:","accesspress-root").' <a target="_blank" href="'. esc_url("http://accesspressthemes.com/support").'">accesspressthemes.com/support</a><br/>';
+	$for_customization = __('We offer WordPress Themes/Plugins development, customization, design integration, WordPress setup, fixes etc.','accesspress-root').'<br/>'
+        .__('Email:','accesspress-root').' <a href="mailto:support@accesspressthemes.com">support@accesspressthemes.com</a>';
+    $get_social = '<p>'.__('Get connected with us on Social Media.','accesspress-root').'</p>
+        <a target="_blank" class="facebook" href="https://www.facebook.com/pages/AccessPress-Themes/1396595907277967"><img src="'.get_template_directory_uri().'/inc/panel/images/facebook.png"></a>
+        <a target="_blank" class="twitter" href="https://twitter.com/apthemes"><img src="'. get_template_directory_uri().'/inc/panel/images/twitter.png"></a>
+        <a target="_blank" class="youtube" href="https://www.youtube.com/user/accesspressthemes"><img src="'. get_template_directory_uri().'/inc/panel/images/youtube.png"></a>';
+    $about_accesspress_themes = 'AccessPress Themes is an online WordPress themes store, that provides beautiful and useful themes. All of our themes are crafted with our years of experience. Our theme don’t lack the basics and don’t have a lot of non-sense features which you might never use. AccessPress Themes has beautiful and elegant, fully responsive, multipurpose themes to meet your need for free and premium basis. Our themes have bunch of easily customizable options and features, someone with no programming knowledge can use our easy theme options panel and configure/setup the theme as needed.';        
+    $from_accesspress_thems = '<div class="accesspressthemes-products"><div class="ap-themes">
+        <a target="_blank" href="https://accesspressthemes.com/themes/">
+        <div class="ap-themes-img">
+        <img src="'.get_template_directory_uri().'/inc/panel/images/wordpress-themes.png">
+        <span>'.__('View all Themes','accesspress-root').' <i class="fa fa-external-link"></i></span>
+        </div>'
+        .__('WordPress Themes','accesspress-root'). 
+        '</a>
+        </div>';
+
+    $from_accesspress_thems .= '<div class="ap-plugins">
+        <a target="_blank" href="https://accesspressthemes.com/plugins/">
+        <div class="ap-themes-img">
+        <img src="'.get_template_directory_uri().'/inc/panel/images/wordpress-plugins.png">
+        <span>'. __('View all Plugins','accesspress-root').' <i class="fa fa-external-link"></i></span>
+        </div>'
+        .__('WordPress Plugins','accesspress-root').  
+        '</a>
+        </div>';
+
+    $from_accesspress_thems .= '<div class="ap-customization">
+        <a target="_blank" href="https://accesspressthemes.com/request-customization/">
+        <div class="ap-themes-img">
+        <img src="'. get_template_directory_uri().'/inc/panel/images/wordpress-customization.png">
+        <span>'. __('Request Customization','accesspress-root').' <i class="fa fa-external-link"></i></span>
+        </div>'
+        .__('WordPress Customization','accesspress-root').  
+        '</a>
+        </div></div>';
 
 	$options = array();
 /* --------------------------GENERAL SETTINGS-------------------------- */
@@ -673,12 +716,49 @@ function optionsframework_options() {
 /* --------------------------ABOUT SECTION-------------------------- */
 
 	$options[] = array(
-		'name' => __('About', 'accesspress-root'),
+		'name' => __('About AccessPress Root', 'accesspress-root'),
+		'icon' => 'fa fa-globe',
+		'type' => 'heading');
+
+	$options[] = array(
+		'name' => __('About AccessPress Pro', 'accesspress-root'),
+		'desc' => $about_content,
+		'type' => 'info');
+
+	$options[] = array(
+		'name' => __('For Support', 'accesspress-root'),
+		'desc' => $for_support,
+		'type' => 'info');
+
+	$options[] = array(
+		'name' => __('For Customization', 'accesspress-root'),
+		'desc' => $for_customization,
+		'type' => 'info');
+
+	$options[] = array(
+		'name' => __('Get Social', 'accesspress-root'),
+		'desc' => $get_social,
+		'type' => 'info');
+
+/* --------------------------ABOUT SECTION-------------------------- */
+
+	$options[] = array(
+		'name' => __('About AccessPress Themes', 'accesspress-root'),
 		'type' => 'heading');
 
 	$options[] = array(
 		'name' => __('About AccessPress Themes', 'accesspress-root'),
-		'desc' => $about_content,
+		'desc' => $about_accesspress_themes,
+		'type' => 'info');
+
+	$options[] = array(
+		'name' => __('More from AccessPress Themes', 'accesspress-root'),
+		'desc' => $from_accesspress_thems,
+		'type' => 'info');
+
+	$options[] = array(
+		'name' => __('Get Social', 'accesspress-root'),
+		'desc' => $get_social,
 		'type' => 'info');
 
 	$options[] = array( 

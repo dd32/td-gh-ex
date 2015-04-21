@@ -79,7 +79,7 @@ function accesspress_bxsliderscript(){
 	$accesspress_slider_transition = (!of_get_option('slider_transition')) ? "fade" : of_get_option('slider_transition');
 	$accesspress_slider_speed = (!of_get_option('slider_speed')) ? "5000" : of_get_option('slider_speed');
 	$accesspress_slider_pause = (!of_get_option('slider_pause')) ? "5000" : of_get_option('slider_pause');
-    if( $accesspress_show_slider == "1") : 
+    if( $accesspress_show_slider == "1" ) : 
     ?>
     <script type="text/javascript">
         jQuery(function($){
@@ -427,7 +427,7 @@ function accesspress_header_scripts(){
     endif;
     echo "}";
     
-    if($show_slider == '0'):
+    if($show_slider == '0' && !empty($show_slider)):
         echo '#masthead{margin-bottom:40px}';
     endif;
     echo "</style>";

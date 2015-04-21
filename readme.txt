@@ -71,12 +71,24 @@ ScreenShot Images
 
     Slider Image
     http://www.pexels.com/photo/2738/
+    http://www.pexels.com/photo/593/
 
     Service Image
     http://www.pexels.com/photo/1171/
     http://www.pexels.com/photo/3080/
     http://www.pexels.com/photo/2693/
     http://www.pexels.com/photo/915/
+
+    Project Image
+    http://www.pexels.com/photo/2059/
+    http://www.pexels.com/photo/3521/
+
+    Latest Post Image
+    http://www.pexels.com/photo/374/
+    http://www.pexels.com/photo/3424/
+
+    What we do Image
+    http://www.pexels.com/photo/154/
 
 Pattern Images
     All pattern used are self created and are licensed under GNU GPL v3
@@ -85,5 +97,11 @@ Pattern Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.08
+* Added Demo Content.
+* Minor changes in theme Option Panel
+* Screen Shot Change
+* New .pot file added
+
 Version 1.0
 * Submitted theme for review in http://wordpress.org

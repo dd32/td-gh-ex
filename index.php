@@ -13,6 +13,14 @@
 
 get_header(); ?>
 
+<?php 
+if(of_get_option('web_layout') == NULL){
+	get_template_part('demo');
+	get_footer();
+	return;
+}
+?>
+
 <main id="main" class="site-main clearfix blog-post">
 	<div id="primary" class="content-area">
 		<?php if ( have_posts() ) : ?>
@@ -41,4 +49,5 @@ get_header(); ?>
 
 	<?php get_sidebar('right'); ?>
 </main><!-- #main -->
+
 <?php get_footer(); ?>
