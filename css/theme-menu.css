@@ -122,6 +122,7 @@
 	border-bottom: 1px solid #c64412;
 	transition: all 0.3s ease-in-out 0s;
 	letter-spacing: 0.5px;
+	white-space: normal !important;
 }
 .dropdown-menu > li > a:last-chlid {
 	border-bottom: 0px;
@@ -158,6 +159,12 @@
 .navbar-right .dropdown-menu {
     left: 0;
     right: 0;
+}
+
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus
+{
+background-color:#ee591f !important ; 
+
 }
 
 @media only screen and (max-width: 767px) and (min-width: 480px)

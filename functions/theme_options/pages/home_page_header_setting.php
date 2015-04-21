@@ -64,10 +64,12 @@
 					<div class="webriti_settings_massage" id="webriti_settings_save_22_success" ><?php _e('Options data successfully Saved','appointment');?></div>
 					<div class="webriti_settings_massage" id="webriti_settings_save_22_reset" ><?php _e('Options data successfully reset','appointment');?></div>
 				</td>
+				
 				<td style="text-align:right;">
-					<input type="button" name="reset" value="Restore Defaults" onclick="webriti_option_data_reset('22');">
-					<input class="button button-primary button-large" type="button" value="Save Options" onclick="webriti_option_data_save('22')" >
-				</td>
+                                        <input class="reset-button btn" type="button" name="reset" value="Restore Defaults" onclick="webriti_option_data_reset('22');">
+                                        <input class="button button-primary button-large" type="button" value="Save Options" onclick="webriti_option_data_save('22')" >
+                 </td>
+				
 				</tr>
 			</table>	
 		</div>		
@@ -105,7 +107,7 @@
 	</div>
 		<div id="button_section">
 			<input type="hidden" value="1" id="webriti_settings_save_22" name="webriti_settings_save_22" />
-			<input type="button" name="reset" value="Restore Defaults" onclick="webriti_option_data_reset('22');">
+			 <input class="reset-button btn" type="button" name="reset" value="Restore Defaults" onclick="webriti_option_data_reset('22');">
 			<input class="button button-primary button-large" type="button" value="Save Options" onclick="webriti_option_data_save('22')" >
 		</div>
 		

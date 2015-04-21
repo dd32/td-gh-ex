@@ -1,12 +1,12 @@
 /*
 Theme Name: Appointment
-Theme URI: https://wordpress.org/themes/
+Theme URI: https://WordPress.org/themes/
 Author: Webriti.com
-Author URI: https://wordpress.org/
+Author URI: https://WordPress.org/
 Description: A responsive theme for all type of business that uses multiple nav menus, several sidebars etc etc . 
  It has a pixel-perfect design that's great for any blogger who wants a new look for their site. The theme is built using twitter bootstrap.
 Tags: orange, white, full-width-template, threaded-comments, microformats,two-columns,  right-sidebar, responsive-layout, sticky-post, custom-background, custom-menu,translation-ready
-Version: 1.5.4
+Version: 1.5.6
 License URI: https://webriti.com
 License: GNU General Public License v3 or later
 */
@@ -294,7 +294,7 @@ h6, .h6      {
 	font-weight:600;
     font-size: 20px;
     letter-spacing: 1px;
-    line-height: 20px;
+    line-height: 26px;
     margin: 0 0 0px;
 }
 
@@ -1926,6 +1926,7 @@ p.wp-caption-text a {
     margin-top: 0;
     overflow: hidden;
     padding: 0px;
+	
 }
 .sidebar-widget:last-child {
     margin-bottom: 0px;
@@ -2388,11 +2389,11 @@ a.error-btn:before {
 	color: #ffffff;
 }
 
-/*Wordpress Default Classes----------------------------------------------------------------------------------*/
+/*WordPress Default Classes----------------------------------------------------------------------------------*/
 .sticky{}
 cite{ font-style: italic !important; }
 .bypostauthor{}
-img.alignnone{ display: block; margin: 0 auto; height: auto; width: 100%; }
+img.alignnone{ display: block; margin: 0 auto; height: auto; max-width: 100%; }
 #attachment_907 { width: 100% !important; }
 .alignnone img{ display: block; height: auto; max-width: 100%; }
 img.alignleft, .wp-caption.alignleft{ margin-right: 30px; }
@@ -2792,7 +2793,7 @@ color: #ffffff;
     margin: 0;
     outline: medium none;
     padding: 8px 50px 8px 10px;
-    width: 250px !important;
+    width: 100% !important;
 }
 address 
 {font-style:italic !important;}
@@ -2828,3 +2829,237 @@ address
 .carousel-fade .carousel-control {
   z-index: 2;
 }
+.sidebar-widget i , .sidebar-widget h4
+{
+color: hsl(208, 6%, 59%);
+}
+
+.sidebar-widget h6
+{
+color:#242526;
+}
+.orange-widget-column
+{
+margin:20px;
+}
+.orange-widget-column ul {
+    margin: 10px 0 0;
+    overflow: hidden;
+    padding: 0;
+}
+.orange-widget-column ul li {
+    display: block;
+    font-family: 'Open Sans';
+	font-weight:400;
+    font-size: 15px;
+    line-height: 22px;
+	letter-spacing: 0.2px;
+    margin: 0 0 10px;
+    overflow: hidden;
+    padding: 0;
+	color:#fff;
+}
+.orange-widget-column ul li a {
+    color: #fff;
+	transition: all 0.3s ease 0s;
+}
+.orange-widget-column > ul > li > a:before {
+    
+    margin-right: 10px;
+	font-size: 15px;
+}
+.orange-widget-column input {
+	padding: 6px 12px;
+	height: 45px;
+	border-radius: 2px;
+	border: 1px solid #e9e9e9;
+	font-family: 'Open Sans';
+	font-weight:400;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border-color: #e9e9e9;
+	outline: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	color:#000;
+}
+.orange-widget-column label
+{display:none;}
+
+/*Sidebar Search*/
+.orange-widget-column > .input-group > .form-control {
+	padding: 6px 12px;
+	height: 45px;
+	border-radius: 2px;
+	border: 1px solid #e9e9e9;
+	font-family: 'Open Sans';
+	font-weight:400;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.orange-widget-column > .input-group > .form-control:focus {
+	border-color: #e9e9e9;
+	outline: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.orange-widget-column > .input-group > .input-group-addon {
+    background-color: #ee591f;
+    border: 1px solid #ee591f;
+    border-bottom-right-radius: 2px;
+	border-top-right-radius: 2px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+	font-family: 'Open Sans';
+	font-weight:600;
+	letter-spacing: 0.2px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1;
+    padding: 6px 12px;
+    text-align: center;
+}
+/*Sidebar Calendar*/
+#calendar_wrap {}
+.orange-widget-column div#calendar_wrap table#wp-calendar {
+	border: 1px solid #e9e9e9;
+	background-color: #fcfcfc;
+	padding: 0px;
+	width: 100%;
+	max-width: 100%;
+}
+
+.orange-widget-column div#calendar_wrap table > caption {
+	color:#fff;
+    font-family: 'Open Sans';
+	font-weight:600;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    padding: 0;
+    text-align: center;
+}
+.orange-widget-column div#calendar_wrap table#wp-calendar thead > tr { background: #fcfcfc; }
+.orange-widget-column div#calendar_wrap table > thead > tr > th { 
+	padding: 8px 10px; 
+	margin: 0px;
+	font-size: 18px;
+	text-align: center;
+	line-height: 20px;
+}
+.orange-widget-column div#calendar_wrap table > thead > tr > th {
+	color: #ee591f;
+    font-family: 'Open Sans';
+	font-weight:600;
+    font-size: 15px;
+    line-height: 20px;
+    margin: 0;
+    padding: 10px;
+    text-align: center;;
+}
+.orange-widget-column div#calendar_wrap table > tfoot > tr > td {
+	border: 1px solid #e9e9e9;
+	padding: 2px;
+	margin: 0px;
+	font-size: 20px;
+	text-align: center;
+}
+#calendar_wrap a {
+	color: #242526;
+    font-family: 'Open Sans';
+	font-weight:600;
+    font-size: 14px;
+    letter-spacing: 0px;
+    line-height: 20px;
+}
+.orange-widget-column div#calendar_wrap table > tbody > tr > td {
+	padding: 8px 10px;
+	margin: 0px;
+	color: #727272;
+	font-size: 14px;
+	text-align: center;
+	font-family: 'Open Sans';
+	font-weight:600;
+}
+/*Sidebar Tags*/
+.orange-widget-column-tags {
+    margin: 0 0 10px;
+    overflow: hidden;
+    padding: 4px 0;
+}
+.orange-widget-column-tags a {
+	background-color: #fcfcfc;
+	border: 1px solid #dadada;
+    color: #45494b;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Open Sans';
+	font-weight:400;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 5px 10px 0;
+    padding: 6px 14px;
+    transition: all 0.3s ease 0s;
+    vertical-align: baseline;
+    white-space: nowrap;
+}
+.orange-widget-column-tags a:hover {
+    background-color: #ee591f;
+	border: 1px solid #ee591f;
+	color: #ffffff;
+}
+.orange-widget-column .textwidget p ,.rssSummary ,.orange-widget-title,.orange-widget-column cite,.orange-widget-column span ,.orange-widget-title h3 a,.orange-widget-column,.textwidget,.orange-widget-column .textwidget a
+{color:#fff;}
+.orange-widget-column select,.footer-widget-column select
+{
+width:100%;
+color:#000;
+}
+.orange-widget-column select option
+{color:#000;}
+.tagcloud ul {
+    margin: 10px 0 0;
+    overflow: hidden;
+    padding: 0;
+}
+.orange-widget-column > .tagcloud{
+margin: 0 0 10px;overflow: hidden; padding: 4px 0; }
+
+.orange-widget-column > .tagcloud a {
+background-color: #fcfcfc;
+border: 1px solid #dadada;
+color: #45494b;
+cursor: pointer;
+display: inline-block;
+font-family: 'Open Sans';
+	font-weight:400;
+font-size: 14px !important;
+line-height: 20px;
+margin: 0 5px 10px 0;
+padding: 6px 14px;
+transition: all 0.3s ease 0s;
+vertical-align: baseline;
+white-space: nowrap;}
+.footer-widget-column rssSummary,.footer-widget-column cite ,.footer-widget-column span {
+    color: #727272 !important;
+	transition: all 0.3s ease 0s;
+}
+.footer-widget-column ul li
+{ color: #000 !important;}
+.orange-widget-column rssSummary,.orange-widget-column cite ,.orange-widget-column span {
+    color: #fff !important;
+	transition: all 0.3s ease 0s;
+}
+.footer-widget-column .rssSummary,.footer-widget-column .textwidget a {color:#727272;}
+.footer-widget-column .textwidget a:hover
+{color:#ee591f;}
+.sidebar-widget .textwidget p {color:#727272;}
+.footer-widget-column .contact-icon i 
+{color:#727272;}
+.footer-widget-column h6
+{color:#000;}
+.footer-widget-column h4
+{color:#727272;}
+.sidebar-widget .textwidget,.footer-widget-column .textwidget
+{color:#727272;}

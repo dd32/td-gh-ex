@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: appointment\n"
-"POT-Creation-Date: 2015-03-26 18:33+0530\n"
-"PO-Revision-Date: 2015-03-26 18:33+0530\n"
+"POT-Creation-Date: 2015-03-28 16:47+0530\n"
+"PO-Revision-Date: 2015-03-28 16:47+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -175,7 +175,7 @@ msgstr ""
 
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/fullwidth.php:29
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/index-news.php:52
-#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/template-tag.php:24
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/template-tag.php:22
 msgid "By"
 msgstr ""
 
@@ -571,7 +571,7 @@ msgid "Aipsum therefore always"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:64
-msgid "Blog  Settings"
+msgid "Home News Settings"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:67
@@ -595,19 +595,19 @@ msgid "Options data successfully reset"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:80
-msgid "Enable Blog on HOME Section"
+msgid "Enable News on HOME Section"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:81
-msgid "Enable Blog section in front page."
+msgid "Enable News section in front page."
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:82
-msgid "Blog Heading"
+msgid "News Heading"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:84
-msgid "Blog Section Heading"
+msgid "News Section Heading"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/blog_settings.php:86
@@ -1138,6 +1138,10 @@ msgstr ""
 
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/theme_options/pages/home_slider_settings.php:115
 msgid "Featured Category slider section"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/widgets/appointment_info_widget.php:17
+msgid "Appointment theme information widget."
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress_elegent\wp-content\themes\appointment-lite/functions/widgets/appointment_info_widget.php:60

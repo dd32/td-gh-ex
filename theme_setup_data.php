@@ -107,7 +107,7 @@ function theme_data_setup()
 			'home_call_out_btn2_link_target'=>'on',
 			
 			//Footer Copyright custmization
-			'footer_copyright_text' => __('<p>Copyright 2014 appointment <a href="#">Wordpress Theme</a>. All rights reserved</p>','appointment'),
+			'footer_copyright_text' => __('<p>Copyright 2014 appointment <a href="#">WordPress Theme</a>. All rights reserved</p>','appointment'),
 			
 			//Footer Social LInks
 			'footer_social_media_enabled'=> 'on',

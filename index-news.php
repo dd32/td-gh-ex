@@ -1,5 +1,5 @@
 <?php $current_options = get_option('appointment_options',theme_data_setup()); 
-if($current_options['home_blog_enabled']=='on') {
+if($current_options['blog_section_enabled']=='on') {
 ?>
 <div class="blog-section">
 	<div class="container">
@@ -40,7 +40,6 @@ if($current_options['home_blog_enabled']=='on') {
 				<div class="blog-sm-area">
 					<div class="media">
 						<div class="blog-sm-box">
-						<?php $defalt_arg =array('class' => "img-responsive"); ?>
 							<?php $defalt_arg =array('class' => "img-responsive"); ?>
 							<?php if(has_post_thumbnail()): ?>
 							<?php the_post_thumbnail('appointment_latest_news_img', $defalt_arg); ?>
@@ -48,15 +47,15 @@ if($current_options['home_blog_enabled']=='on') {
 						</div>
 						<div class="media-body">
 							<div class="blog-post-sm">
-							<?php if($current_options['home_meta_section_settings']=='on') { ?>
+								<?php if($current_options['home_meta_section_settings']=='on') { ?>
 								<?php _e('By','appointment');?><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) );?>"><?php echo get_the_author();?></a>
 								<?php echo get_the_date('j'); ?> <?php echo get_the_date('M'); ?>,<?php echo get_the_date('Y'); ?>
 								<?php 	$tag_list = get_the_tag_list();
 								if(!empty($tag_list)) { ?>
 								<div class="blog-tags-sm"><?php the_tags('', ', ', ''); ?></div>
-							</div>
 							<?php } } ?>
 							</div>
+							
 							<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 							<p><?php echo get_home_blog_excerpt(); ?></p>
 						</div>
@@ -75,5 +74,3 @@ if($current_options['home_blog_enabled']=='on') {
 	</div>
 </div>
 <?php } ?>
-<!-- /Blog Section -->
-<div class="clearfix"></div>

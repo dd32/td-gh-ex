@@ -19,15 +19,15 @@
                 </li>
 				<li id="tab_slider_setting"><a href="#section_slider"><?php _e('Slider Settings','appointment'); ?></a>
                 </li>
-				<li id="tab_service_setting"><a href="#section_service"><?php _e('Service Setting','appointment'); ?></a>
+				<li id="tab_service_setting"><a href="#section_service"><?php _e('Service Settings','appointment'); ?></a>
                 </li>
 				<li id="tab_callout_setting"><a href="#section_callout"><?php _e('Home Call-out','appointment'); ?></a>
                 </li>
-				<li id="tab_news_setting"><a href="#section_news"><?php _e('Home News Setting','appointment'); ?></a>
+				<li id="tab_news_setting"><a href="#section_news"><?php _e('Home News Settings','appointment'); ?></a>
                 </li>
-				<li id="tab_import"><a href="#section_design" ><?php _e('Social link and meta setting','appointment'); ?></a>
+				<li id="tab_import"><a href="#section_design" ><?php _e('Social link and meta Settings','appointment'); ?></a>
                 </li>
-                <li id="tab_export"><a href="#section_misc"><?php _e('Footer Custmization setting','appointment'); ?></a>
+                <li id="tab_export"><a href="#section_misc"><?php _e('Footer customization Settings','appointment'); ?></a>
                 </li>
                
             </ul>

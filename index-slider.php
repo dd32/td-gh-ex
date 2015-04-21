@@ -76,9 +76,7 @@
 		<div class="item <?php if($t==true){echo 'active';}$t=false; ?>">
 			<?php $default_arg =array('class' => "img-responsive"); ?>
 			<?php if(has_post_thumbnail()): ?>
-			<a  href="<?php the_permalink(); ?>">
 				<?php the_post_thumbnail('', $default_arg); ?>
-			</a>
 			<?php endif; ?>
 			
 		<div class="slide-caption">

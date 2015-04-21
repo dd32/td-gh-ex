@@ -26,28 +26,28 @@ register_sidebar( array(
 		'name' => __( 'Homepage Orange Sidebar Left', 'appointment' ),
 		'id' => 'home-orange-sidebar_left',
 		'description' => __( 'Appointment Orange Sidebar Area', 'appointment' ),
-		'before_widget' => '',
-		'after_widget' => '<div class="clearfix"></div>',
-		'before_title' => '',
-		'after_title' => '',
+		'before_widget' => '<div class="orange-widget-column">',
+		'after_widget' => '</div>',
+		'before_title' => '<div class="orange-widget-title"><h3>',
+		'after_title' => '</h3></div>',
 	) );
-	register_sidebar( array(
+register_sidebar( array(
 		'name' => __( 'Homepage Orange Sidebar Right', 'appointment' ),
 		'id' => 'home-orange-sidebar_right',
 		'description' => __( 'Appointment Orange Sidebar Area', 'appointment' ),
-		'before_widget' => '',
-		'after_widget' => '<div class="clearfix"></div>',
-		'before_title' => '',
-		'after_title' => '',
+		'before_widget' => '<div class="orange-widget-column">',
+		'after_widget' => '</div>',
+		'before_title' => '<div class="orange-widget-title"><h3>',
+		'after_title' => '</h3></div>',
 	) );
-	register_sidebar( array(
+register_sidebar( array(
 		'name' => __( 'Homepage Orange Sidebar Center', 'appointment' ),
 		'id' => 'home-orange-sidebar_center',
 		'description' => __( 'Appointment Orange Sidebar Area', 'appointment' ),
-		'before_widget' => '',
-		'after_widget' => '<div class="clearfix"></div>',
-		'before_title' => '',
-		'after_title' => '',
+		'before_widget' => '<div class="orange-widget-column">',
+		'after_widget' => '</div>',
+		'before_title' => '<div class="orange-widget-title"><h3>',
+		'after_title' => '</h3></div>',
 	) );
 }	                     
 ?>

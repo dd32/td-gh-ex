@@ -8,6 +8,7 @@
 			{  printf (__('Sorry, your nonce did not verify.','appointment'));	exit; }
 			else  
 			{	
+			
 				$current_options['upload_image_favicon']=esc_url($_POST['upload_image_favicon']);
 				$current_options['webrit_custom_css'] = wp_strip_all_tags($_POST['webrit_custom_css']);
 				// Logo Section Enable in header page
@@ -52,14 +53,16 @@
 					<div class="webriti_settings_massage" id="webriti_settings_save_1_success" ><?php _e('Options data successfully Saved','appointment');?></div>
 					<div class="webriti_settings_massage" id="webriti_settings_save_1_reset" ><?php _e('Options data successfully reset','appointment');?></div>
 				</td>
-				<td style="text-align:right;">					
-					<input type="button" name="reset" value="Restore Defaults" onclick="webriti_option_data_reset('1');">
-					<input class="button button-primary button-large" type="button" value="Save Options" onclick="webriti_option_data_save('1')" >
-				</td>
+				
+				<td style="text-align:right;">
+                                        <input class="reset-button btn" type="button" name="reset" value="Restore Defaults" onclick="webriti_option_data_reset('1');">
+                                        <input class="button button-primary button-large" type="button" value="Save Options" onclick="webriti_option_data_save('1')" >
+                 </td>
 				</tr>
 			</table>			
 		</div>	
 		<?php wp_nonce_field('webriti_customization_nonce_gernalsetting','webriti_gernalsetting_nonce_customization'); ?>
+		
 		<div class="section">
 			<h3><?php _e('Custom Favicon','appointment'); ?>
 				<span class="icons help"><span class="tooltip"><?php  _e('Make sure you upload .icon image type which is not more then 25X25 px.','appointment');?></span></span>
@@ -109,7 +112,7 @@
 		</div>		
 		<div id="button_section">
 			<input type="hidden" value="1" id="webriti_settings_save_1" name="webriti_settings_save_1" />
-			<input type="button" name="reset" value="Restore Defaults" onclick="webriti_option_data_reset('1');">
+			 <input class="reset-button btn" type="button" name="reset" value="Restore Defaults" onclick="webriti_option_data_reset('1');">
 			<input class="button button-primary button-large" type="button" value="Save Options" onclick="webriti_option_data_save('1')" >
 			<!--  alert massage when data saved and reset -->
 		</div>

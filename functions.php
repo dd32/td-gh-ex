@@ -91,19 +91,34 @@ function appointment_add_to_author_profile( $contactmethods ) {
 	}
 	
 	function appointment_excerpt_length($length ) {
-	return 25;
-	}
-	add_filter( 'excerpt_length', 'appointment_excerpt_length', 999 );
-	
-	add_filter('get_the_excerpt','appointment_post_slider_excerpt');
-	add_filter('excerpt_more','__return_false');
-	function appointment_post_slider_excerpt($output){
-	
-		return '<div class="slide-text-bg2">' .'<span>'.$output.'</span>'.'</div>'.
-		       '<div class="blog-btn-area-sm"><a href="' . get_permalink() . '" class="blog-btn-sm">Read More</a></div>';
-			}
-			
-	function get_home_blog_excerpt()
+	        return 25;
+	        }
+	        add_filter( 'excerpt_length', 'appointment_excerpt_length', 999 );
+	       
+	        add_filter('get_the_excerpt','appointment_post_slider_excerpt');
+	        add_filter('excerpt_more','__return_false');
+        function appointment_post_slider_excerpt($output){
+		
+		     if(empty($output))
+			 {
+			 }
+			 else
+			 {
+			      if(str_word_count($output) < 25)
+				{
+					return '<div class="slide-text-bg2">' .'<span>'.$output.'</span>'.'</div>';
+				}
+				else
+				{
+					return '<div class="slide-text-bg2">' .'<span>'.$output.'</span>'.'</div>'.
+	                       '<div class="blog-btn-area-sm"><a href="' . get_permalink() . '" class="blog-btn-sm">Read More</a></div>';
+				}
+			 }
+				
+                
+        }
+						
+		function get_home_blog_excerpt()
 	{
 		global $post;
 		$excerpt = get_the_content();
@@ -112,8 +127,11 @@ function appointment_add_to_author_profile( $contactmethods ) {
 		$original_len = strlen($excerpt);
 		$excerpt = substr($excerpt, 0, 145);		
 		$len=strlen($excerpt);	 
-		if($original_len>275)
+		if($original_len>275) {
 		$excerpt = $excerpt;
 		return $excerpt . '<div class="blog-btn-area-sm"><a href="' . get_permalink() . '" class="blog-btn-sm">Read More</a></div>';
+		}
+		else
+		{ return $excerpt; }
 	}
 ?>

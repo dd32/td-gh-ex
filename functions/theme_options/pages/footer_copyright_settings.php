@@ -49,7 +49,7 @@
 		if($_POST['webriti_settings_save_23'] == 2) 
 		{
 			$current_options['footer_menu_bar_enabled'] = 'on';
-			$current_options['footer_copyright_text']= __('<p>Copyright 2014 appointment <a href="#">Wordpress Theme</a>. All rights reserved</p>','appointment');
+			$current_options['footer_copyright_text']= __('<p>Copyright 2014 appointment <a href="#">WordPress Theme</a>. All rights reserved</p>','appointment');
 			$current_options['footer_social_media_enabled']="on";
 			$current_options['footer_facebook_media_enabled']="on";
 			$current_options['footer_twitter_media_enabled']="on";
@@ -69,15 +69,16 @@
 	<form method="post" id="webriti_theme_options_23">
 		<div id="heading">
 			<table style="width:100%;"><tr>
-				<td><h2><?php _e('Footer Customizations','appointment');?></h2></td>
+				<td><h2><?php _e('Footer customization','appointment');?></h2></td>
 				<td><div class="webriti_settings_loding" id="webriti_loding_23_image"></div>
 					<div class="webriti_settings_massage" id="webriti_settings_save_23_success" ><?php _e('Options data successfully Saved','appointment');?></div>
 					<div class="webriti_settings_massage" id="webriti_settings_save_23_reset" ><?php _e('Options data successfully reset','appointment');?></div>
 				</td>
+				
 				<td style="text-align:right;">
-					<input type="button" name="reset" value="Restore Defaults" onclick="webriti_option_data_reset('23');">
-					<input class="button button-primary button-large" type="button" value="Save Options" onclick="webriti_option_data_save('23')" >
-				</td>
+                                        <input class="reset-button btn" type="button" name="reset" value="Restore Defaults" onclick="webriti_option_data_reset('23');">
+                                        <input class="button button-primary button-large" type="button" value="Save Options" onclick="webriti_option_data_save('23')" >
+                 </td>
 				</tr>
 			</table>	
 		</div>		
@@ -125,7 +126,7 @@
 		</div>
 		<div id="button_section">
 			<input type="hidden" value="1" id="webriti_settings_save_23" name="webriti_settings_save_23" />
-			<input type="button" name="reset" value="Restore Defaults" onclick="webriti_option_data_reset('23');">
+			 <input class="reset-button btn" type="button" name="reset" value="Restore Defaults" onclick="webriti_option_data_reset('23');">
 			<input class="button button-primary button-large" type="button" value="Save Options" onclick="webriti_option_data_save('23')" >
 		</div>
 	</form>

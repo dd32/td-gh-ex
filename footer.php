@@ -1,4 +1,4 @@
-<?php $current_options=get_option('appointment_options'); ?>
+<?php $current_options = get_option('appointment_options',theme_data_setup()); ?>
 <!-- Footer Section -->
 <?php 
 if ( is_active_sidebar( 'footer-widget-area' ) ) { ?>

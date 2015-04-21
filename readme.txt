@@ -95,6 +95,13 @@ Source: http://fontawesome.io
 # --- EOF --- #
 ============================Change Log================================
 
+@version 1.5.6
+1. Fixed Spelling mistake issue.
+
+@version 1.5.5
+1. Fixed styling issue.
+2. Fixed slider Button issue.
+
 @version 1.5.4
 1. Add a feature to select number of posts on index news section.
 2. feature to select category of post to show on front page in the news section.
