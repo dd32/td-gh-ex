@@ -8,8 +8,8 @@
  */
  
  global $apbasic_options;
- $settings = get_option('apbasic_options',$apbasic_options);
- $show_footer_featured_section = $settings['show_footer_featured_section'];
+ $apbasic_settings = get_option('apbasic_options',$apbasic_options);
+ $show_footer_featured_section = $apbasic_settings['show_footer_featured_section'];
 ?>
 
 	</div><!-- #content -->
@@ -46,11 +46,22 @@
 		<div class="site-info">
             <div class="ap-container clearfix">
                 <div class="copyright-info">
-                    Copyright &copy; <?php the_date( 'Y' ); ?> <a href="<?php get_home_url(); ?>"><?php _e('Accesspress Basic','accesspress-basic'); ?></a>. <?php _e('All Rights Reserved','accesspress-basic'); ?>
+                    Copyright &copy; <?php the_date( 'Y' ); ?> <a href="<?php get_home_url(); ?>">
+                        <?php if(!empty($apbasic_settings['footer_text'])){
+                            echo $apbasic_settings['footer_text'];                              
+                        }
+                        ?>
+                    </a>
+                    <span class="sep"> | </span>
+                        <a target="_blank" href="<?php echo esc_url( __( 'http://wordpress.org/', 'smp' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'accesspres-basic' ), 'WordPress' ); ?></a>
+        			<span class="sep"> | </span>
+                        <?php _e( 'Theme: ', 'accesspress-basic' ); ?><a href="<?php esc_url('http://www.accesspressthemes.com/'); ?>" target="_blank" rel="designer">AccessPress Basic</a>
                 </div>
+                <?php if(is_active_sidebar('apbasic_footer_social_links')) : ?>
                 <div class="footer-socials">
-                    <?php do_action('accesspress_basic_header_socials'); ?>    
+                    <?php dynamic_sidebar('apbasic_footer_social_links'); ?>
                 </div>
+                <?php endif; ?>    
             </div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

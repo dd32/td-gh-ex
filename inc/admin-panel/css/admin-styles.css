@@ -1,4 +1,12 @@
 
+.clearfix:after,
+.clearfix:before{
+	content: '';
+	display: table;
+}
+.clearfix:after{
+	clear: both;
+}
 
 #optionsframework-wrap h3{
 	font-size: 23px;
@@ -29,8 +37,8 @@
 }
 
 .nav-tab-active, .nav-tab:hover {
-	background: #5ac9e8;
-	color: #fff;
+	background: #dc3522;
+	color: #fff !important;
 	border-bottom: 1px solid transparent;
 }
 
@@ -41,7 +49,7 @@
 	width: 0;
 	border-top: 15px solid transparent;
 	border-bottom: 15px solid transparent;
-	border-left: 15px solid #5ac9e8;
+	border-left: 15px solid #dc3522;
 	left: 100%;
 	top: 50%;
 	margin-top: -15px;
@@ -252,4 +260,33 @@
 	visibility: hidden;	
 }
 
+.apbasic-header{ 
+	background: #222;  
+	border-bottom:5px solid #01AEFD;
+	color: #FFF;
+	margin-bottom: 20px;
+	position: relative;
+    padding-bottom: 0px;
+}
 
+.accesspress_pro-logo{ 
+	float: left;  
+	width: auto; 
+	padding: 15px 0 0 20px;
+    color: #fff;
+    font-size: 13pt;
+}
+.accesspress_pro-logo img{ 
+	width: auto;
+}
+
+.ak-socials{ 
+	float: right;
+	text-align: right;
+	white-space: nowrap;
+	margin-right: 20px;
+}
+
+.ak-socials p{
+	margin:10px 0;
+}

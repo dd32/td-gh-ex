@@ -12,7 +12,7 @@ get_header(); ?>
 		<div class="ap-container">
 			<section class="error-404 not-found">
 				<header class="page-header">
-					<h1 class="page-title"><span class="oops"><?php _e( 'Oops!! ', 'accesspress-basic' ); ?></span><span class="pg-cannot"><?php _e( 'That page can&rsquo;t be found.', 'accesspress-basic' ); ?></span></h1>
+					<h1 class="page-title"><span class="oops"><?php _e( 'Oops! ', 'accesspress-basic' ); ?></span><span class="pg-cannot"><?php _e( 'That page can&rsquo;t be found.', 'accesspress-basic' ); ?></span></h1>
 				</header><!-- .page-header -->
 
 				<div class="page-content">

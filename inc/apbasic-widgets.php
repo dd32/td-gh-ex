@@ -107,7 +107,40 @@
 		'after_title'   	=> '</span></h3>'
 	) );
     
-    // Registering testimonial section
+    // Registering Header Text Widget
+	register_sidebar( array(
+		'name' 				=> __( 'Header Text Section', 'accesspress-basic' ),
+		'id' 					=> 'apbasic_header_text',
+		'description'   	=> __( 'Shows widgets at Header Text Section.', 'accesspress-basic' ),
+		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  	=> '</aside>',
+		'before_title'  	=> '<h3 class="widget-title"><span>',
+		'after_title'   	=> '</span></h3>'
+	) );
+    
+    // Registering Header Social Links Widget
+	register_sidebar( array(
+		'name' 				=> __( 'Header Social Links Section', 'accesspress-basic' ),
+		'id' 					=> 'apbasic_header_social_links',
+		'description'   	=> __( 'Shows widgets at Header Text Section.', 'accesspress-basic' ),
+		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  	=> '</aside>',
+		'before_title'  	=> '<h3 class="widget-title"><span>',
+		'after_title'   	=> '</span></h3>'
+	) );
+    
+    // Registering Footer Social Links Widget
+	register_sidebar( array(
+		'name' 				=> __( 'Footer Social Links Section', 'accesspress-basic' ),
+		'id' 					=> 'apbasic_footer_social_links',
+		'description'   	=> __( 'Shows widgets at Footer.', 'accesspress-basic' ),
+		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  	=> '</aside>',
+		'before_title'  	=> '<h3 class="widget-title"><span>',
+		'after_title'   	=> '</span></h3>'
+	) );
+    
+    // Registering footer one section
 	register_sidebar( array(
 		'name' 				=> __( 'Footer One', 'accesspress-basic' ),
 		'id' 					=> 'apbasic_footer_one',
@@ -118,7 +151,7 @@
 		'after_title'   	=> '</span></h3>'
 	) );
     
-    // Registering testimonial section
+    // Registering footer two section
 	register_sidebar( array(
 		'name' 				=> __( 'Footer Two', 'accesspress-basic' ),
 		'id' 					=> 'apbasic_footer_two',
@@ -129,7 +162,7 @@
 		'after_title'   	=> '</span></h3>'
 	) );
     
-    // Registering testimonial section
+    // Registering footer three section
 	register_sidebar( array(
 		'name' 				=> __( 'Footer Three', 'accesspress-basic' ),
 		'id' 					=> 'apbasic_footer_three',
@@ -140,7 +173,7 @@
 		'after_title'   	=> '</span></h3>'
 	) ); 
     
-    // Registering testimonial section
+    // Registering footer four section
 	register_sidebar( array(
 		'name' 				=> __( 'Footer Four', 'accesspress-basic' ),
 		'id' 					=> 'apbasic_footer_four',

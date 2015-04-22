@@ -1,26 +1,5 @@
 <?php
-    if(is_admin()) :
-    
-    function accesspress_basic_admin_scripts(){
-        wp_enqueue_media();
-        wp_enqueue_script('media-upload');
-        wp_enqueue_script('accesspress_custom_js', get_template_directory_uri().'/inc/admin-panel/js/custom.js', array('jquery','wp-color-picker'));
-        wp_enqueue_script('of-media-uploader', get_template_directory_uri().'/inc/admin-panel/js/media-uploader.js', array('jquery'));
-        
-        wp_enqueue_style('font-awesome-css', get_template_directory_uri().'/css/fawesome/css/font-awesome.css');
-        wp_enqueue_style('admin-styles', get_template_directory_uri().'/inc/admin-panel/css/admin-styles.css');
-        wp_enqueue_style('wp-color-picker');
-    }
-    
-    add_action('admin_print_styles-appearance_page_theme_options','accesspress_basic_admin_scripts');
-    
-    function accesspress_basic_other_admin_scripts(){
-        wp_enqueue_style('other-admin-styles', get_template_directory_uri().'/inc/admin-panel/css/admin.css');
-    }
-    
-    add_action('admin_enqueue_scripts','accesspress_basic_other_admin_scripts');
-    
-    global $apbasic_options, $aplayout;
+    global $apbasic_options;
     
     $apbasic_options = array(
         //Header Options
@@ -31,6 +10,7 @@
         'show_search' => 1,
         'show_social_links' => 1,
         'header_text' => 'Call Us: +1-123-123-45-78',
+        'footer_text' => 'AccessPress Themes',
         
         //Design Options
         'site_layout' => 'full_width',
@@ -45,7 +25,7 @@
         'enable_comments_post' => '',
         
         //Slider Settings
-        'show_slider' => 'yes',
+        'show_slider' => 'no',
         'show_slider_in_post' => 1,
         'slider_mode' => 'horizontal',
         'slide1' => '',
@@ -73,24 +53,37 @@
         'slide4_readmore_link' => '',
         'slide4_readmore_button_icon' => '',
         
-        //Social Link Settings
-        'facebook' => '',
-        'twitter' => '',
-        'gplus' => '',
-        'youtube' => '',
-        'pinterest' => '',
-        'linkedin' => '',
-        'flickr' => '',
-        'vimeo' => '',
-        'stumbleupon' => '',
-        'instagram' => '',
-        'sound_cloud' => '',
-        'skype' => '',
-        'rss' => '',
-        'tumblr' => '',
-        'myspace' => '',
-        'vk' => ''        
+        // Translation Settings
+        'features_readmore_text' => '',
+        'services_readmore_text' => '',
+        'blog_readmore_text' => '',
+        'search_results_for_text' => '',
+        'tagged_text' => '',
+        'posted_on_text' => '',
+        'by_text' => '',
+        'posted_in_text' => ''        
     );
+    
+    if(is_admin()) :
+    
+    function accesspress_basic_admin_scripts(){
+        wp_enqueue_media();
+        wp_enqueue_script('media-upload');
+        wp_enqueue_script('accesspress_custom_js', get_template_directory_uri().'/inc/admin-panel/js/custom.js', array('jquery','wp-color-picker'));
+        wp_enqueue_script('of-media-uploader', get_template_directory_uri().'/inc/admin-panel/js/media-uploader.js', array('jquery'));
+        
+        wp_enqueue_style('font-awesome-css', get_template_directory_uri().'/css/fawesome/css/font-awesome.css');
+        wp_enqueue_style('admin-styles', get_template_directory_uri().'/inc/admin-panel/css/admin-styles.css');
+        wp_enqueue_style('wp-color-picker');
+    }
+    
+    add_action('admin_print_styles-appearance_page_theme_options','accesspress_basic_admin_scripts');
+    
+    function accesspress_basic_other_admin_scripts(){
+        wp_enqueue_style('other-admin-styles', get_template_directory_uri().'/inc/admin-panel/css/admin.css');
+    }
+    
+    add_action('admin_enqueue_scripts','accesspress_basic_other_admin_scripts');
     
     add_action( 'admin_init', 'accesspress_basic_register_settings');
     add_action( 'admin_menu', 'accesspress_basic_theme_options');
@@ -111,8 +104,29 @@
         }
         ?>
             <div class="wrap" id="optionsframework-wrap">
-                <div class="">
-                    <h3><?php _e('Theme Options','accesspress_basic'); ?></h3>
+                <div class="apbasic-header clearfix">
+                    <div class="accesspress_pro-logo">
+                  		<img src="<?php echo get_template_directory_uri();?>/inc/admin-panel/images/logo.png" alt="AccessPress Lite" />
+                     
+                      <div class="theme-name">
+                        <?php 
+                        $theme = wp_get_theme();
+                        echo $theme->get( 'Name' )." V". $theme->get( 'Version' ) . __(' - Theme Option Panel','accesspress-basic'); ?>
+                      </div>
+                    </div>
+                
+                		<div class="ak-socials">
+                    <p><?php _e('Like/Follow us for New Updates','accesspress-basic'); ?></p>
+                      <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FAccessPress-Themes%2F1396595907277967&amp;width&amp;layout=button&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=35&amp;appId=1411139805828592" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:20px; width:50px " allowTransparency="true"></iframe>
+                      &nbsp;&nbsp;
+                      <a href="https://twitter.com/apthemes" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @apthemes</a>
+                      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                    <p>
+                      <a target="_blank" href="<?php echo esc_url('https://accesspressthemes.com/accesspress-basic-documentation/'); ?>"><?php _e('Online Documentation', 'accesspress-basic'); ?></a> | 
+                      <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/support'); ?>"><?php _e('Support Forum', 'accesspress-basic'); ?></a>
+                    </p>
+                    </div>
+                	<div class="clear"></div>
                 </div>
                 <?php if(false !== $_REQUEST['settings-updated']) : ?>
                     <div class="updated fade"><p><strong><?php _e( 'Options Saved','accesspress-basic'); ?></strong></p></div>
@@ -128,8 +142,8 @@
                     <a id="options-group-3-tab" class="nav-tab" disp="#options-group-3" href="#"><?php _e('Slider Settings','accesspress-basic'); ?>
                         <i class="fa fa-file-image-o"></i>
                     </a>
-                    <a id="options-group-4-tab" class="nav-tab" disp="#options-group-4" href="#"><?php _e('Social Links','accesspress-basic'); ?>
-                        <i class="fa fa-external-link"></i>
+                    <a id="options-group-4-tab" class="nav-tab" disp="#options-group-4" href="#"><?php _e('Translation','accesspress-basic'); ?>
+                        <i class="fa fa-language"></i>
                     </a>
                     <a id="options-group-5-tab" class="nav-tab" disp="#options-group-5" href="#"><?php _e('About Accesspress Basic','accesspress-basic'); ?>
                         <i class="fa fa-info"></i>
@@ -192,7 +206,8 @@
                                 <tr>
                                     <th><label for="header_text"><?php _e('Header Text','accesspress-basic'); ?></label></th>
                                     <td>
-                                        <textarea name="apbasic_options[header_text]"><?php echo $settings['header_text']; ?></textarea>
+                                        <textarea name="apbasic_options[header_text]"><?php echo $settings['header_text']; ?></textarea><br />
+                                        <p><?php echo __('Use Contents From Instead','accesspress-basic').'<a target="_blank" href="'.admin_url('widgets.php').'">'.__(' Header Text Widget ','accesspress-basic').'</a>'.__('Instead','accesspress-basic'); ?></p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -205,6 +220,12 @@
                                             <img src="<?php echo $favicon; ?>" />
                                             <span class="remove_favicon_preview" >Remove</span>
                                         </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><label for="ap_footer_text"><?php _e('Footer Text','accesspress-basic'); ?></label></th>
+                                    <td>
+                                        <input type="text" name="apbasic_options[footer_text]" id="ap_footer_text" value="<?php echo $settings['footer_text']; ?>" />
                                     </td>
                                 </tr>
                                 <tr>
@@ -607,137 +628,126 @@
                             </table> 
                         </div>
                         
-                        <!-- Social Settings -->
-                            <div id="options-group-4" class="group">
-                                <h3><?php _e('Social Settings','accesspress-basic'); ?></h3>
-                                <table class="form-table">
-                                    <?php
-                                        $socials = array(
-                                            array(
-                                                'label' => 'Facebook',
-                                                'id' => 'facebook'
-                                            ),
-                                            array(
-                                                'label' => 'Twitter',
-                                                'id' => 'twitter',
-                                            ),
-                                            array(
-                                                'label' => 'Google Plus',
-                                                'id' => 'gplus'
-                                            ),
-                                            array(
-                                                'label' => 'Pinterest',
-                                                'id' => 'pinterest',
-                                            ),
-                                            array(
-                                                'label' => 'LinkedIn',
-                                                'id' => 'linkedin'
-                                            ),
-                                            array(
-                                                'label' => 'Flickr',
-                                                'id' => 'flickr',
-                                            ),
-                                            array(
-                                                'label' => 'Vimeo',
-                                                'id' => 'vimeo'
-                                            ),
-                                            array(
-                                                'label' => 'Stumbleupon',
-                                                'id' => 'stumbleupon',
-                                            ),
-                                            array(
-                                                'label' => 'Instagram',
-                                                'id' => 'instagram',
-                                            ),
-                                            array(
-                                                'label' => 'Sound Cloud',
-                                                'id' => 'sound_cloud'
-                                            ),
-                                            array(
-                                                'label' => 'Skype',
-                                                'id' => 'skype',
-                                            ),
-                                            array(
-                                                'label' => 'RSS',
-                                                'id' => 'rss'
-                                            ),
-                                            array(
-                                                'label' => 'Tumblr',
-                                                'id' => 'tumblr',
-                                            ),
-                                            array(
-                                                'label' => 'Myspace',
-                                                'id' => 'myspace'
-                                            ),
-                                            array(
-                                                'label' => 'VK',
-                                                'id' => 'vk',
-                                            ),
-                                        );
-                                    ?>
-                                    <?php foreach($socials as $social) : ?>
-                                    <tr>
-                                        <th><label for="<?php echo $social['id']; ?>"><?php echo $social['label'] ?></label></th>
-                                        <td>
-                                            <input type="text" name="apbasic_options[<?php echo $social['id']; ?>]" id="<?php echo $social['id']; ?>" value="<?php echo $settings[$social['id']] ?>" />
-                                        </td>
-                                    </tr>
-                                    <?php endforeach; ?>
-                                </table>
-                            </div>
-                            
-                            <!-- About Accesspress Lite -->
-                			<div id="options-group-5" class="group" style="display: none;">
-                			<h3><?php _e('Know more about AccessPress Themes','accesspress-basic'); ?></h3>
-                				<table class="form-table">
-                					<tr>
-                					<td colspan="2">
-                						<p><?php _e('AccessPress Basic - is a FREE WordPress theme by','accesspress-basic'); ?> <a target="_blank" href="<?php echo esc_url('http://www.accesspressthemes.com/'); ?>">AccessPress Themes</a> <?php _e('- A WordPress Division of Access Keys.','accesspress-basic'); ?>
-                						<?php _e(' Access Keys - has developed more than 350 WordPress websites for its clients.','accesspress-basic'); ?></p>
-                
-                						<p><?php _e('We want to give "a little beautiful thing" - back to the community.<br />With our experience, we are creating "AccessPress Basic", a free WordPress theme, which includes the most useful features for a generic business website!','accesspress-basic'); ?></p>
-                						<hr />
-                						
-                						<p><?php _e('For documentation, click','accesspress-basic'); ?> <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/theme-instruction-accesspress-basic/'); ?>"><?php _e('here','accesspress-basic'); ?></a></p>
-                						<p><?php _e('For Video tutorials, click','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('https://www.youtube.com/watch?v=Mi60ORm_VMI&list=PLdSqn2S_qFxEzeboBioXZdAg5P4l32Hm3'); ?>"><?php _e('here','accesspress-basic'); ?></a></p>
-                						<hr />
-                						
-                                        <div>
-                						<h4><?php _e('Our other Products','accesspress-basic'); ?></h4>
-                						<p><?php _e('Themes - ','accesspress-basic'); ?><a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/themes'); ?>"><?php echo esc_url('http://accesspressthemes.com/themes'); ?></a></p>
-                						<p><?php _e('Plugins - ','accesspress-basic'); ?><a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/plugins'); ?>"><?php echo esc_url('http://accesspressthemes.com/plugins'); ?></a></p>
+                        <div id="options-group-4" class="group">
+                            <h3><?php _e('Translations','accesspress-basic'); ?></h3>
+                            <table class="form-table">
+                                <tr>
+                                    <th>
+                                        <label>Home Page</label>
+                                    </th>
+                                    <td>
+                                        <div class="trans-row">
+                                            <label><?php _e('Read More... (Features)','accesspress-basic'); ?></label>
+                                            <span><input type="text" name="apbasic_options[features_readmore_text]" value="<?php echo $settings['features_readmore_text']; ?>" /></span>
                                         </div>
-                						
-                                        <div>
-                						<h4><?php _e('Get in touch','accesspress-basic'); ?></h4>
-                						<p>
-                						<?php _e('If you have any question/feedback regarding theme, please post in our forum','accesspress-basic'); ?><br/>
-                						<?php _e('Forum:','accesspress-basic'); ?> <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/support/'); ?>"><?php echo esc_url('http://accesspressthemes.com/support/'); ?></a><br/>
-                						
-                						<br />
-                
-                						<?php _e('For Queries Regading Themes','accesspress-basic'); ?><br/>
-                						<?php _e('Support:','accesspress-basic'); ?> <a href="mailto:<?php echo esc_url('support@accesspressthemes.com'); ?>">support@accesspressthemes.com</a><br/>
-                						</p>
-                						</div>
+                                        <div class="trans-row">
+                                            <label><?php _e('More Info... (Services)','accesspress-basic'); ?></label>
+                                            <span><input type="text" name="apbasic_options[services_readmore_text]" value="<?php echo $settings['services_readmore_text']; ?>" /></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <label>Blog/Archive</label>
+                                    </th>
+                                    <td>
+                                        <div class="trans-row">
+                                            <label><?php _e('Read More...','accesspress-basic'); ?></label>
+                                            <span><input type="text" name="apbasic_options[blog_readmore_text]" value="<?php echo $settings['blog_readmore_text']; ?>" /></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <label>Single Post Page</label>
+                                    </th>
+                                    <td class="single-post-page clearfix">
+                                        <div class="trans-row clearfix">
+                                            <label><?php _e('Tagged','accesspress-basic'); ?></label>
+                                            <span><input type="text" name="apbasic_options[tagged_text]" value="<?php echo $settings['tagged_text']; ?>" /></span>
+                                        </div>
+                                        <div class="trans-row clearfix">
+                                            <label><?php _e('Posted On .. by ..','accesspress-basic'); ?></label>
+                                            <span>
+                                                <input class="posted_on_text" type="text" name="apbasic_options[posted_on_text]" value="<?php echo $settings['posted_on_text']; ?>" placeholder="Posted On" />
+                                                <em><?php _e('Jan, 1, 2015','accesspress-basic'); ?></em>
+                                                <input class="by_text" type="text" name="apbasic_options[by_text]" value="<?php echo $settings['by_text']; ?>" placeholder="by" />
+                                                <em><?php _e('Dummy User','accesspress-basic'); ?></em>
+                                            </span>
+                                        </div>
+                                        <div class="trans-row clearfix">
+                                            <label><?php _e('Posted In','accesspress-basic'); ?></label>
+                                            <span><input type="text" name="apbasic_options[posted_in_text]" value="<?php echo $settings['posted_in_text']; ?>" /></span>
+                                        </div>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <th>
+                                        <label>Search Page</label>
+                                    </th>
+                                    <td>       
+                                        <div class="trans-row">
+                                            <label><?php _e('Search Results For','accesspress-basic'); ?></label>
+                                            <span><input type="text" name="apbasic_options[search_results_for_text]" value="<?php echo $settings['search_results_for_text']; ?>" /></span>
+                                        </div>
                                         
-                                        <div>
-                						<h4><?php _e('Get social','accesspress-basic'); ?></h4>
-                
-                						<p><?php _e('Get connected with us on social media. It is the best place to find updates on our themes/plugins:','accesspress-basic'); ?></p>
-                
-                						<a title="Facebook" target="_blank" href="https://www.facebook.com/pages/AccessPress-Themes/1396595907277967"><img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/facebook.png"></a>
-                						<a target="_blank" title="Twitter" href="https://twitter.com/apthemes"><img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/twitter.png"></a>
-                						<a target="_blank" title="Youtube" href="https://www.youtube.com/user/accesspressthemes"><img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/youtube.png"></i></a>
-                                        </div>
-                						</td>
-                					</tr>
-                				</table>
-                			</div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
                             
-                            <div id="optionsframework-submit">
-                                <input type="submit" class="button-primary" value="<?php esc_attr_e('Save Options','accesspress-basic'); ?>" />
-                            </div>
+                        <!-- About Accesspress Lite -->
+            			<div id="options-group-5" class="group">
+            			<h3><?php _e('Know more about AccessPress Themes','accesspress-basic'); ?></h3>
+            				<table class="form-table">
+            					<tr>
+            					<td colspan="2">
+            						<p><?php _e('AccessPress Basic - is a FREE WordPress theme by','accesspress-basic'); ?> <a target="_blank" href="<?php echo esc_url('http://www.accesspressthemes.com/'); ?>">AccessPress Themes</a> <?php _e('- A WordPress Division of Access Keys.','accesspress-basic'); ?>
+            						<?php _e(' Access Keys - has developed more than 350 WordPress websites for its clients.','accesspress-basic'); ?></p>
+            
+            						<p><?php _e('We want to give "a little beautiful thing" - back to the community.<br />With our experience, we are creating "AccessPress Basic", a free WordPress theme, which includes the most useful features for a generic business website!','accesspress-basic'); ?></p>
+            						<hr />
+            						
+            						<p><?php _e('For documentation, click','accesspress-basic'); ?> <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/theme-instruction-accesspress-basic/'); ?>"><?php _e('here','accesspress-basic'); ?></a></p>
+            						<p><?php _e('For Video tutorials, click','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('https://www.youtube.com/watch?v=Mi60ORm_VMI&list=PLdSqn2S_qFxEzeboBioXZdAg5P4l32Hm3'); ?>"><?php _e('here','accesspress-basic'); ?></a></p>
+            						<hr />
+            						
+                                    <div>
+            						<h4><?php _e('Our other Products','accesspress-basic'); ?></h4>
+            						<p><?php _e('Themes - ','accesspress-basic'); ?><a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/themes'); ?>"><?php echo esc_url('http://accesspressthemes.com/themes'); ?></a></p>
+            						<p><?php _e('Plugins - ','accesspress-basic'); ?><a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/plugins'); ?>"><?php echo esc_url('http://accesspressthemes.com/plugins'); ?></a></p>
+                                    </div>
+            						
+                                    <div>
+            						<h4><?php _e('Get in touch','accesspress-basic'); ?></h4>
+            						<p>
+            						<?php _e('If you have any question/feedback regarding theme, please post in our forum','accesspress-basic'); ?><br/>
+            						<?php _e('Forum:','accesspress-basic'); ?> <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/support/'); ?>"><?php echo esc_url('http://accesspressthemes.com/support/'); ?></a><br/>
+            						
+            						<br />
+            
+            						<?php _e('For Queries Regading Themes','accesspress-basic'); ?><br/>
+            						<?php _e('Support:','accesspress-basic'); ?> <a href="mailto:<?php echo esc_url('support@accesspressthemes.com'); ?>">support@accesspressthemes.com</a><br/>
+            						</p>
+            						</div>
+                                    
+                                    <div>
+            						<h4><?php _e('Get social','accesspress-basic'); ?></h4>
+            
+            						<p><?php _e('Get connected with us on social media. It is the best place to find updates on our themes/plugins:','accesspress-basic'); ?></p>
+            
+            						<a title="Facebook" target="_blank" href="https://www.facebook.com/pages/AccessPress-Themes/1396595907277967"><img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/facebook.png"></a>
+            						<a target="_blank" title="Twitter" href="https://twitter.com/apthemes"><img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/twitter.png"></a>
+            						<a target="_blank" title="Youtube" href="https://www.youtube.com/user/accesspressthemes"><img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/youtube.png"></i></a>
+                                    </div>
+            						</td>
+            					</tr>
+            				</table>
+            			</div>
+                            
+                        <div id="optionsframework-submit">
+                            <input type="submit" class="button-primary" value="<?php esc_attr_e('Save Options','accesspress-basic'); ?>" />
+                        </div>
                     </form> 
                 </div> <!-- optionsframework-metabox -->
             </div>
@@ -748,6 +758,7 @@
         global $allowedtags;
         $cus_allowed_tags = array(
             'h2' => array(),
+            'p' => array(),
             'span' => array()
         );
         $al_tags = array_merge($allowedtags,$cus_allowed_tags);
@@ -756,7 +767,12 @@
             'b' => array(),
             'em' => array(),
             'strong' => array(),
-            'i' => array()
+            'i' => array(
+                'class' => array(),
+            ),
+            'a' => array(
+                'href' => array(),
+            )
         );
         
         // BASIC SETTINGS
@@ -791,6 +807,8 @@
         }
         
         $input['site_layout'] = sanitize_text_field($input['site_layout']);
+        
+        $input['footer_text'] = sanitize_text_field($input['footer_text']);
         
         //Design Options
         $input['background_image'] = sanitize_text_field($input['background_image']);
@@ -874,55 +892,15 @@
             $input['slide4_readmore_link'] = esc_url_raw($input['slide4_readmore_link']);
         }
         
-        //Social Link Settings
-        if(isset($input['facebook'])){
-            $input['facebook'] = esc_url_raw($input['facebook']);
-        }
-        if(isset($input['twitter'])){
-            $input['twitter'] = esc_url_raw($input['twitter']);
-        }
-        if(isset($input['gplus'])){
-            $input['gplus'] = esc_url_raw($input['gplus']);
-        }
-        if(isset($input['youtube'])){
-            $input['youtube'] = esc_url_raw($input['youtube']);
-        }
-        if(isset($input['pinterest'])){
-            $input['pinterest'] = esc_url_raw($input['pinterest']);
-        }
-        if(isset($input['linkedin'])){
-            $input['linkedin'] = esc_url_raw($input['linkedin']);
-        }
-        if(isset($input['flickr'])){
-            $input['flickr'] = esc_url_raw($input['flickr']);
-        }
-        if(isset($input['vimeo'])){
-            $input['vimeo'] = esc_url_raw($input['vimeo']);
-        }
-        if(isset($input['stumbleupon'])){
-            $input['stumbleupon'] = esc_url_raw($input['stumbleupon']);
-        }
-        if(isset($input['instagram'])){
-            $input['instagram'] = esc_url_raw($input['instagram']);
-        }
-        if(isset($input['sound_cloud'])){
-            $input['sound_cloud'] = esc_url_raw($input['sound_cloud']);
-        }
-        if(isset($input['skype'])){
-            $input['skype'] = esc_url_raw($input['skype']);
-        }
-        if(isset($input['rss'])){
-            $input['rss'] = esc_url_raw($input['rss']);
-        }
-        if(isset($input['tumblr'])){
-            $input['tumblr'] = esc_url_raw($input['tumblr']);
-        }
-        if(isset($input['myspace'])){
-            $input['myspace'] = esc_url_raw($input['myspace']);
-        }
-        if(isset($input['vk'])){
-            $input['vk'] = esc_url_raw($input['vk']);
-        }
+        // Translation Settings
+        $input['features_readmore_text'] = sanitize_text_field($input['features_readmore_text']); 
+        $input['services_readmore_text'] = sanitize_text_field($input['services_readmore_text']);
+        $input['blog_readmore_text'] = sanitize_text_field($input['blog_readmore_text']); 
+        $input['search_results_for_text'] = sanitize_text_field($input['search_results_for_text']);
+        $input['tagged_text'] = sanitize_text_field($input['tagged_text']); 
+        $input['posted_on_text'] = sanitize_text_field($input['posted_on_text']);
+        $input['by_text'] = sanitize_text_field($input['by_text']); 
+        $input['posted_in_text'] = sanitize_text_field($input['posted_in_text']);
         
         return $input;
     }

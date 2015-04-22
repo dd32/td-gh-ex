@@ -1,13 +1,10 @@
 <?php
 /**
- * The sidebar containing the main widget area.
+ * The sidebar containing Services contents.
  *
  * @package Accesspress Basic
  */
 
-if ( ! is_active_sidebar( 'apbasic_services_section' ) ) {
-	return;
-}
 ?>
 
 <div id="secondary" class="widget-area" role="complementary">

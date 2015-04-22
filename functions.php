@@ -110,12 +110,13 @@ function accesspress_basic_scripts() {
 	wp_enqueue_style( 'accesspress-basic-superfish-css', get_template_directory_uri() . '/css/superfish.css');
 	wp_enqueue_style( 'accesspress-basic-lato-font', 'http://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic' );
 	wp_enqueue_style( 'accesspress-basic-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'accesspress-basic-responsive-css', get_template_directory_uri() . '/css/responsive.css');
 	
-	wp_enqueue_script( 'accesspress-basic-hover-intent', get_template_directory_uri() . '/js/hoverIntent.js');
-	wp_enqueue_script( 'accesspress-basic-superfish', get_template_directory_uri() . '/js/superfish.js');
-	wp_enqueue_script( 'accesspress-basic-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'accesspress-basic-hover-intent', get_template_directory_uri() . '/js/hoverIntent.js', array('jquery'));
+	wp_enqueue_script( 'accesspress-basic-superfish', get_template_directory_uri() . '/js/superfish.js', array('jquery'));
+	wp_enqueue_script( 'accesspress-basic-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20120206', true );
 
-	wp_enqueue_script( 'accesspress-basic-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'accesspress-basic-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array('jquery'), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

@@ -4,7 +4,9 @@
  *
  * @package Accesspress Basic
  */
-
+global $apbasic_options;
+$apbasic_settings = get_option('apbasic_options',$apbasic_options);
+$search_results_for_text = $apbasic_settings['search_results_for_text'];
 get_header(); ?>
 
 	<section id="primary" class="content-area">
@@ -14,7 +16,11 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'accesspress-basic' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+                <?php if(empty($search_results_for_text)) : ?>
+				    <h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'accesspress-basic' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+                <?php else : ?>
+                    <h1 class="page-title"><?php echo $search_results_for_text . ': <span>' . get_search_query() . '</span>'; ?></h1>                    
+                <?php endif; ?>
 			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>

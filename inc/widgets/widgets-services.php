@@ -65,6 +65,10 @@ class Accesspress_Basic_Services_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
         //print_r($args);
 		extract( $args );
+        
+        global $apbasic_options;
+        $apbasic_settings = get_option('apbasic_options',$apbasic_options);
+        $services_readmore_text = $apbasic_settings['services_readmore_text'];
 
 		$service_posts = array_values($instance);
 
@@ -102,13 +106,21 @@ class Accesspress_Basic_Services_Widget extends WP_Widget {
                                  <a href="<?php the_permalink(); ?>"><i class="fa fa-chain-broken"></i></a>
                             </figcaption>
                         </figure>
+                        <a href="<?php the_permalink(); ?>">
                         <h5 class="services-post-title">
                             <?php echo get_the_title(); ?>
                         </h5>
+                        </a>
                         <div class="services-post-excerpt">
-                            <?php echo the_excerpt(); ?>
+                            <?php echo wp_trim_words(get_the_content(),24); ?>
                         </div>
-                        <a class="services_readmore-button readmore-button" href="<?php the_permalink(); ?>"><?php _e('More Info','accesspress-basic'); ?></a>
+                        <a class="services_readmore-button readmore-button" href="<?php the_permalink(); ?>">
+                            <?php if(empty($services_readmore_text)) : ?>
+                                <?php _e('More Info...','accesspress-basic'); ?>
+                            <?php else : ?>
+                                <?php echo $services_readmore_text; ?>
+                            <?php endif; ?>
+                        </a>
                     </div>
                     <?php
                 endwhile;

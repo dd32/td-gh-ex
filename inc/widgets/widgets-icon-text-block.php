@@ -92,7 +92,9 @@ class Accesspress_Basic_Icon_Text_Widget extends WP_Widget {
                     </a>
                     
                     <?php if(!empty($icon_title)) : ?>
+                    <a href="<?php echo $icon_readmore_link; ?>">
                     <h5 class="icon-block-title"><?php echo $icon_title; ?></h5>
+                    </a>
                     <?php endif; ?>
                     
                     <?php if(!empty($icon_detail)) : ?>

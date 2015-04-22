@@ -80,6 +80,9 @@ class Accesspress_Basic_Features_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
         //print_r($args);
 		extract( $args );
+        global $apbasic_options;
+        $apbasic_settings = get_option('apbasic_options',$apbasic_options);
+        $features_readmore_text = $apbasic_settings['features_readmore_text'];
 
 		$feature_posts = array_values($instance);
 
@@ -122,9 +125,15 @@ class Accesspress_Basic_Features_Widget extends WP_Widget {
                             <h2><?php echo get_the_title(); ?></h2>
                         </a>
                         <div class="feature-post-excerpt">
-                            <?php echo the_excerpt(); ?>
+                            <?php echo wp_trim_words(get_the_content(),35,'...'); ?>
                         </div>
-                        <a class="feat_readmore-button readmore-button" href="<?php the_permalink(); ?>"><?php _e('Read More','accesspress-basic'); ?></a>
+                        <a class="feat_readmore-button readmore-button" href="<?php the_permalink(); ?>">
+                            <?php if(empty($features_readmore_text)) : ?>
+                                <?php _e('Read More...','accesspress-basic'); ?>
+                            <?php else : ?>
+                                <?php echo $features_readmore_text; ?>
+                            <?php endif; ?>
+                        </a>
                     </div>
                     <?php if($count%3 == 0) : ?>
                         <div class="clearfix"></div>

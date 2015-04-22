@@ -81,18 +81,30 @@ function accesspress_basic_posted_on() {
 		esc_attr( get_the_modified_date( 'c' ) ),
 		esc_html( get_the_modified_date() )
 	);
+    
+    global $apbasic_options;
+    $apbasic_settings = get_option('apbasic_options',$apbasic_options);
+    $posted_on_text = $apbasic_settings['posted_on_text'];
+    $by_text = $apbasic_settings['by_text'];
+    
+    $posted_on_custom = $posted_on_text.' '.'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 
 	$posted_on = sprintf(
 		_x( 'Posted on %s', 'post date', 'accesspress-basic' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
+    
+    $byline_custom = $by_text.' '.'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>';
 
 	$byline = sprintf(
 		_x( 'by %s', 'post author', 'accesspress-basic' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
+    
+    $posted_on1 = ($posted_on_text == '') ? $posted_on : $posted_on_custom;
+    $by1 = ($by_text == '') ? $byline : $byline_custom;
 
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
+	echo '<span class="posted-on">' . $posted_on1 . '</span><span class="byline"> ' . $by1 . '</span>';
 
 }
 endif;
@@ -102,18 +114,31 @@ if ( ! function_exists( 'accesspress_basic_entry_footer' ) ) :
  * Prints HTML with meta information for the categories, tags and comments.
  */
 function accesspress_basic_entry_footer() {
+    global $apbasic_options;
+    $apbasic_settings = get_option('apbasic_options',$apbasic_options);
+    $posted_in_text = $apbasic_settings['posted_in_text'];
+    $tagged_text = $apbasic_settings['tagged_text'];
+    
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( __( ', ', 'accesspress-basic' ) );
 		if ( $categories_list && accesspress_basic_categorized_blog() ) {
-			printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'accesspress-basic' ) . '</span>', $categories_list );
+            if(empty($posted_in_text)){
+                printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'accesspress-basic' ) . '</span>', $categories_list );
+            }else{
+                echo '<span class="cat-links">' . $posted_in_text .' '. $categories_list.'</span>';                
+            }
 		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', __( ', ', 'accesspress-basic' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'accesspress-basic' ) . '</span>', $tags_list );
+            if(empty($tagged_text)){
+                printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'accesspress-basic' ) . '</span>', $tags_list );
+            }else{
+                echo '<span class="tags-links">' . $tagged_text . ' ' . $tags_list.'</span>';
+            }
 		}
 	}
 

@@ -12,7 +12,9 @@
 
 global $apbasic_options;
 $apbasic_settings = get_option('apbasic_options', $apbasic_options);
-extract($apbasic_settings);
+if ( is_array( $apbasic_settings ) && ! empty( $apbasic_settings )) {
+    extract($apbasic_settings);
+}
 get_header(); ?>
 
 <?php 

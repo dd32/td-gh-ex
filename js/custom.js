@@ -50,4 +50,17 @@ $(function() {
     });
 });
 
+$('.menu-trigger').click(function(){
+  $('.main-navigation-responsive').slideToggle('slow');
+
+});
+
+$('.main-navigation-responsive .menu-item-has-children').append('<span class="sub-toggle"> <i class="fa fa-angle-right"></i> </span>');
+
+$('.main-navigation-responsive .sub-toggle').click(function() {
+    $(this).parent('.menu-item-has-children').children('ul.sub-menu').first().slideToggle('slow');
+    $(this).children('.fa-angle-right').first().toggleClass('fa-angle-down');
+});
+
+
 });

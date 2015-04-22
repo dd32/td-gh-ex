@@ -69,97 +69,6 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	}
 	add_action( 'wp_head', 'accesspress_basic_render_title' );
 endif;
-
-/**
- * 
- * Custom Extra Functions
- */
-    /**
-     * 
-     * Function to Show Social Icons in Header
-     */ 
-    function accesspress_basic_header_socialscb(){
-        global $apbasic_options;
-        $apbasic_settings = get_option('apbasic_options',$apbasic_options);
-        
-        $socials = array(
-            array(
-                'fa_icon' => 'fa-facebook',
-                'id' => 'facebook'
-            ),
-            array(
-                'fa_icon' => 'fa-twitter',
-                'id' => 'twitter',
-            ),
-            array(
-                'fa_icon' => 'fa-google-plus',
-                'id' => 'gplus'
-            ),
-            array(
-                'fa_icon' => 'fa-pinterest-p',
-                'id' => 'pinterest',
-            ),
-            array(
-                'fa_icon' => 'fa-linkedin',
-                'id' => 'linkedin'
-            ),
-            array(
-                'fa_icon' => 'fa-flickr',
-                'id' => 'flickr',
-            ),
-            array(
-                'fa_icon' => 'fa-vimeo-square',
-                'id' => 'vimeo'
-            ),
-            array(
-                'fa_icon' => 'fa-stumbleupon',
-                'id' => 'stumbleupon',
-            ),
-            array(
-                'fa_icon' => 'fa-instagram',
-                'id' => 'instagram',
-            ),
-            array(
-                'fa_icon' => 'fa-soundcloud',
-                'id' => 'sound_cloud'
-            ),
-            array(
-                'fa_icon' => 'fa-skype',
-                'id' => 'skype',
-            ),
-            array(
-                'fa_icon' => 'fa-rss',
-                'id' => 'rss'
-            ),
-            array(
-                'fa_icon' => 'fa-tumblr',
-                'id' => 'tumblr',
-            ),
-            array(
-                'fa_icon' => 'fa-my-space',
-                'id' => 'myspace'
-            ),
-            array(
-                'fa_icon' => 'fa-vk',
-                'id' => 'vk',
-            ),
-        );
-        
-        ?>
-            <ul>
-                <?php foreach($socials as $social) : ?>
-                    <?php //echo $apbasic_settings[$social['id']]; ?>
-                    <?php if($apbasic_settings[$social['id']] != '') : ?>
-                        <li><a href="<?php esc_url($apbasic_settings[$social['id']]); ?>" target="_blank" class="fa <?php echo $social['fa_icon'] ?>"></a></li>
-                    <?php endif; ?>
-                <?php endforeach; ?>
-            </ul>
-        <?php 
-        
-                
-    }
-    
-    add_action('accesspress_basic_header_socials','accesspress_basic_header_socialscb');
  
     function accesspress_basic_slidercb(){
         global $apbasic_options;
@@ -179,22 +88,22 @@ endif;
             endif;
         endfor;
         //print_r($slides);
-        echo empty($slides);
         ?>
             <script type="text/javascript">
                 jQuery(document).ready(function ($){
                     $("#apbasic-slider").bxSlider({
                         pager: true,
-                        auto: false,
+                        auto: true,
                         mode: '<?php echo $mode; ?>'
                     });
                 });
             </script>
             <?php if(!empty($slides)) : ?>
                 <div id="apbasic-slider">
+                    <?php $slide_id = 1; ?>
                     <?php foreach($slides as $slide) : ?>
                         <?php if(!empty($slide['slide'])) : ?>
-                            <div class="slide">
+                            <div class="slide slider-<?php echo $slide_id; ?>">
                                 <div class="slider-image-container">
                                     <?php   
                                         $img_id = accesspress_basic_get_attachment_id_from_url($slide['slide']);
@@ -217,6 +126,7 @@ endif;
                                 <?php endif; ?>
                             </div>
                         <?php endif; ?>
+                        <?php $slide_id++; ?>
                     <?php endforeach; ?>
                 </div>
             <?php endif; ?>

@@ -10,7 +10,9 @@
 <?php
     global $apbasic_options;
     $apbasic_settings = get_option('apbasic_options',$apbasic_options);
-    extract($apbasic_settings);
+    if ( is_array( $apbasic_settings ) && ! empty( $apbasic_settings )) {
+        extract($apbasic_settings);
+    }
     
     $site_class = null;
     if($site_layout == 'boxed'){
@@ -80,14 +82,18 @@
                         <?php endif; ?>
             		</div><!-- .site-branding -->
                     <div class="right-top-head">
-                        <?php if(!empty($header_text)) : ?>
-                            <div class="call-us"><?php echo $header_text; ?></div>
+                        <?php if(is_active_sidebar('apbasic_header_text')) : ?>
+                            <div class="call-us"><?php dynamic_sidebar('apbasic_header_text'); ?></div>
+                        <?php else : ?>
+                            <?php if(!empty($header_text)) : ?>
+                                <div class="call-us"><?php echo $header_text; ?></div>
+                            <?php endif; ?>
                         <?php endif; ?>
-                        <?php if($show_social_links == 1) : ?>
+                        <?php if($show_social_links == 1 && is_active_sidebar('apbasic_header_social_links')) : ?>
                         <div class="social-icons-head">
-                                <div class="social-container">
-                                    <?php do_action('accesspress_basic_header_socials'); ?>
-                                </div>
+                            <div class="social-container">
+                                <?php dynamic_sidebar('apbasic_header_social_links'); ?>
+                            </div>
                         </div>
                         <?php endif; ?>
                     </div>
@@ -95,7 +101,8 @@
             </div> <!-- top-header -->
             
             <div class="menu-wrapper clearfix"> 
-                <div class="ap-container">   
+                <div class="ap-container">
+                    <a class="menu-trigger"><span></span><span></span><span></span></a>   
             		<nav id="site-navigation" class="main-navigation" role="navigation">
             			<button class="menu-toggle hide" aria-controls="primary-menu" aria-expanded="false"><?php _e( 'Primary Menu', 'accesspress-basic' ); ?></button>
             			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
@@ -118,15 +125,17 @@
                 <?php endif; ?>
                 </div>
             </div>
+            <nav id="site-navigation-responsive" class="main-navigation-responsive">
+    			<button class="menu-toggle hide" aria-controls="primary-menu" aria-expanded="false"><?php _e( 'Primary Menu', 'accesspress-basic' ); ?></button>
+    			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+    		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
     <?php
-        //echo $show_slider."<br/>".$show_slider_in_post;
-        
         if($show_slider == 'yes') :
             if($show_slider_in_post == 1) :
-                 if(is_home() || is_single() || is_front_page()) :
+                 if(is_front_page() || is_home() || is_single()) :
                  ?>
                 <div class="ap-basic-slider-wrapper">
                 <div class="ap-container">
@@ -141,7 +150,7 @@
                 if(is_home() || is_front_page()) :
                 ?>
                 <div class="ap-basic-slider-wrapper">
-                <div class="ap-container">
+                <div class="ap-container">sdfsdf
                 <?php
                     do_action('accesspress_basic_slider');
                 ?>

@@ -6,9 +6,6 @@
  *
  * @package Accesspress Basic
  */
- global $apbasic_options;
- $apbasic_settings = get_option('apbasic_options',$apbasic_options);
- extract($apbasic_settings);
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

@@ -83,7 +83,7 @@ jQuery(document).ready(function($){
 			// Let's assign the url value to the input field
 			$this.prev('.upload').val(image_url);
             
-            var img = "<img src='"+image_url+"' width='280px' height='175px' /><a class='remove-image remove-screenshot'>Remove</a>";
+            var img = "<img src='"+image_url+"' width='125px' height='125px' /><a class='remove-image remove-screenshot'>Remove</a>";
             $this.next('.screenshot').html(img);
 		});
 	});
