@@ -9,7 +9,7 @@
 		
 		<div class="post-content">
 
-			<h2 class="post-title">
+			<h2 class="post-title entry-title">
 				<?php rubine_display_subtitle(); ?>
 				<?php the_title('<span>', '</span>'); ?>
 			</h2>

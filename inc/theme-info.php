@@ -44,12 +44,6 @@ function rubine_display_theme_info_page() {
 				<a href="http://preview.themezee.com/rubine/" target="_blank"><?php _e('Theme Demo', 'rubine-lite'); ?></a>
 				<a href="http://themezee.com/docs/rubine-documentation/" target="_blank"><?php _e('Theme Documentation', 'rubine-lite'); ?></a>
 				<a href="http://wordpress.org/support/view/theme-reviews/rubine-lite?filter=5" target="_blank"><?php _e('Rate this theme', 'rubine-lite'); ?></a>
-				
-				<span class="social-icons">
-					<a href="http://themezee.com/newsletter/" target="_blank"><span class="genericon-mail"></span></a>
-					<a href="https://www.facebook.com/ThemeZee" target="_blank"><span class="genericon-facebook"></span></a>
-					<a href="https://twitter.com/ThemeZee" target="_blank"><span class="genericon-twitter"></a>
-				</span>
 			</p>
 		</div>
 		<hr>
@@ -127,9 +121,6 @@ function rubine_theme_info_page_css() {
 		
 		// Embed theme info css style
 		wp_enqueue_style('rubine-lite-theme-info-css', get_template_directory_uri() .'/css/theme-info.css');
-		
-		// Register Genericons
-		wp_enqueue_style('rubine-lite-genericons', get_template_directory_uri() . '/css/genericons.css');
 		
 	endif;
 }
