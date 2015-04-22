@@ -49,6 +49,11 @@ Virtue Theme Uses:
 
 = Theme Name: Virtue =
 
+= Version 2.4.7 | 21st April 2015 =
+* Add: Mobile Submenu Collapse Option.
+* Update: Woocommerce Template.
+* Update: Output WooCommerce messages on all pages.
+
 = Version 2.4.6 | 13th April 2015 =
 * Add: Page Title Filter.
 * Update: Show color options in customizer. 

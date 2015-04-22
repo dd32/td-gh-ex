@@ -1414,6 +1414,12 @@ $this->sections[] = array(
             'type' => 'info',
             'desc' => __('Mobile Menu Options', 'virtue'),
             ),
+        array(
+            'id'=>'mobile_submenu_collapse',
+            'type' => 'switch', 
+            'title' => __('Submenu items collapse until opened', 'virtue'),
+            "default" => 0,
+            ),
 		array(
             'id'=>'font_mobile_menu',
             'type' => 'typography', 

@@ -25,6 +25,20 @@ if (class_exists('woocommerce')) {
 }
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+add_action('kt_afterheader', 'kt_wc_print_notices');
+function kt_wc_print_notices() {
+  if (class_exists('woocommerce')) {
+    if(!is_shop() || !is_woocommerce() || !is_cart() || !is_checkout() || !is_account_page() ) {
+      echo '<div class="container">';
+      echo do_shortcode( '[woocommerce_messages]' );
+      echo '</div>';
+    }
+  }
+}
 
 // Set the number of columns to 3
 function kad_woocommerce_cross_sells_columns( $columns ) {

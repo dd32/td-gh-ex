@@ -1,73 +1,67 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lite Virtue\n"
-"POT-Creation-Date: 2015-04-20 23:26-0700\n"
-"PO-Revision-Date: 2015-04-20 23:26-0700\n"
+"POT-Creation-Date: 2015-04-13 15:25-0700\n"
+"PO-Revision-Date: 2015-04-15 12:40-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: en\n"
+"Language: hr_HR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.7.5\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;esc_attr__;esc_attr_e\n"
 "X-Poedit-Basepath: .\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SearchPath-0: ..\n"
-"X-Poedit-SearchPathExcluded-0: ../themeoptions/assets\n"
-"X-Poedit-SearchPathExcluded-1: ../themeoptons/framework.php\n"
-"X-Poedit-SearchPathExcluded-2: ../themeoptions/inc\n"
-"X-Poedit-SearchPathExcluded-3: ../themeoptions/options\n"
-"X-Poedit-SearchPathExcluded-4: ../themeoptions/redux-extensions\n"
-"X-Poedit-SearchPathExcluded-5: ../assets/js\n"
 
 #: ../404.php:11
 msgid "Sorry, but the page you were trying to view does not exist."
-msgstr ""
+msgstr "Nažalost, stranica koju pokušavate posjetiti ne postoji."
 
 #: ../404.php:14
 msgid "It looks like this was the result of either:"
-msgstr ""
+msgstr "Uzrok može biti nešto od slijedećeg:"
 
 #: ../404.php:16
 msgid "a mistyped address"
-msgstr ""
+msgstr "krivo upisane web adrese"
 
 #: ../404.php:17
 msgid "an out-of-date link"
-msgstr ""
+msgstr "zastarjelog linka"
 
 #: ../archive.php:22 ../home.php:22 ../index.php:13
 #: ../taxonomy-portfolio-type.php:13
 msgid "Sorry, no results were found."
-msgstr ""
+msgstr "Nažalost, ništa nije pronađeno."
 
 #: ../lib/authorbox.php:5
 msgid "About Author"
-msgstr ""
+msgstr "O autoru"
 
 #: ../lib/authorbox.php:6 ../lib/utils.php:60
 msgid "Latest Posts"
-msgstr ""
+msgstr "Najnoviji Postovi"
 
 #: ../lib/authorbox.php:13 ../lib/authorbox.php:16 ../lib/authorbox.php:20
 #: ../lib/authorbox.php:24 ../lib/authorbox.php:28 ../lib/authorbox.php:32
 #: ../lib/authorbox.php:36 ../lib/authorbox.php:40 ../lib/authorbox.php:44
 #: ../lib/authorbox.php:48 ../lib/authorbox.php:52
 msgid "Follow"
-msgstr ""
+msgstr "Pratite nas"
 
 #: ../lib/authorbox.php:16
 msgid "on Facebook"
-msgstr ""
+msgstr "na Facebooku"
 
 #: ../lib/authorbox.php:20
 msgid "on Twitter"
-msgstr ""
+msgstr "na Twitteru"
 
 #: ../lib/authorbox.php:24
 msgid "on Google Plus"
-msgstr ""
+msgstr "na Google Plusu"
 
 #: ../lib/authorbox.php:28
 msgid "on YouTube"
@@ -75,86 +69,86 @@ msgstr ""
 
 #: ../lib/authorbox.php:32
 msgid "on Flickr"
-msgstr ""
+msgstr "na Flickeru"
 
 #: ../lib/authorbox.php:36
 msgid "on Vimeo"
-msgstr ""
+msgstr "na Vimeu"
 
 #: ../lib/authorbox.php:40
 msgid "on linkedin"
-msgstr ""
+msgstr "na LinkedIn"
 
 #: ../lib/authorbox.php:44
 msgid "on Dribbble"
-msgstr ""
+msgstr "na Dribbble"
 
 #: ../lib/authorbox.php:48
 msgid "on Pinterest"
-msgstr ""
+msgstr "na Pinterestu"
 
 #: ../lib/authorbox.php:52
 msgid "on Instagram"
-msgstr ""
+msgstr "na Instagramu"
 
 #: ../lib/authorbox.php:69
 msgid "Latest posts from"
-msgstr ""
+msgstr "Najnoviji Postovi"
 
 #: ../lib/class-tgm-plugin-activation.php:155
 #: ../lib/virtuetoolkit-activate.php:34
 msgid "Install Required Plugins"
-msgstr ""
+msgstr "Instalirajte potrebne dodatke"
 
 #: ../lib/class-tgm-plugin-activation.php:156
 #: ../lib/virtuetoolkit-activate.php:35
 msgid "Install Plugins"
-msgstr ""
+msgstr "Instaliraj dodatak"
 
 #: ../lib/class-tgm-plugin-activation.php:157
 #: ../lib/virtuetoolkit-activate.php:36
 #, php-format
 msgid "Installing Plugin: %s"
-msgstr ""
+msgstr "Instaliram dodatak: %s"
 
 #: ../lib/class-tgm-plugin-activation.php:158
 msgid "Something went wrong."
-msgstr ""
+msgstr "Nešto je pošlo po zlu."
 
 #: ../lib/class-tgm-plugin-activation.php:169
 #: ../lib/virtuetoolkit-activate.php:48
 msgid "Return to Required Plugins Installer"
-msgstr ""
+msgstr "Povratak na obveznu instalaciju dodataka."
 
 #: ../lib/class-tgm-plugin-activation.php:170
 msgid "Return to the dashboard"
-msgstr ""
+msgstr "Povratak na Kontrolnu Ploču"
 
 #: ../lib/class-tgm-plugin-activation.php:171
 #: ../lib/class-tgm-plugin-activation.php:1838
 #: ../lib/virtuetoolkit-activate.php:49
 msgid "Plugin activated successfully."
-msgstr ""
+msgstr "Ažurirannje dodatka uspješno."
 
 #: ../lib/class-tgm-plugin-activation.php:172
 #: ../lib/class-tgm-plugin-activation.php:1536
 msgid "The following plugin was activated successfully:"
 msgid_plural "The following plugins were activated successfully:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Sljedeći dodatak je uspješno aktiviran :"
+msgstr[1] "Sljedeći dodaci su uspješno aktiviran :"
 
 #: ../lib/class-tgm-plugin-activation.php:173
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
-msgstr ""
+msgstr "Svi dodaci instalirani su  i uspješno aktivirani. %1$s"
 
 #: ../lib/class-tgm-plugin-activation.php:174
 msgid "Dismiss this notice"
-msgstr ""
+msgstr "Odbacite ovuobavijest"
 
 #: ../lib/class-tgm-plugin-activation.php:1084
 msgid "External Link"
-msgstr ""
+msgstr "Vanjska poveznica"
 
 #: ../lib/class-tgm-plugin-activation.php:1089
 msgid "Private Repository"
@@ -306,16 +300,16 @@ msgstr ""
 
 #: ../lib/class-tgm-plugin-activation.php:2050
 msgid "Return to the Dashboard"
-msgstr ""
+msgstr "Povratak na Kontrolnu Ploču"
 
 #: ../lib/cleanup.php:104 ../templates/content-fullpost.php:74
 #: ../templates/content-fullpostfull.php:75
 msgid "Continued"
-msgstr ""
+msgstr "pročitajte više"
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_ajax.php:47
 msgid "Please Try Again"
-msgstr ""
+msgstr "Pokušajte ponovo..."
 
 #: ../lib/cmb/helpers/cmb_Meta_Box_ajax.php:131
 msgid "Remove Embed"
@@ -391,11 +385,11 @@ msgstr ""
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../lib/custom-woocommerce.php:98 ../templates/header.php:39
+#: ../lib/custom-woocommerce.php:95 ../templates/header.php:39
 msgid "View your shopping cart"
 msgstr ""
 
-#: ../lib/custom-woocommerce.php:99 ../templates/header.php:40
+#: ../lib/custom-woocommerce.php:96 ../templates/header.php:40
 msgid "Your Cart"
 msgstr ""
 
@@ -499,20 +493,20 @@ msgstr ""
 msgid "Head Content"
 msgstr ""
 
-#: ../lib/metaboxes.php:99 ../themeoptions/options.php:1510
+#: ../lib/metaboxes.php:99 ../themeoptions/options.php:1504
 msgid "None"
 msgstr ""
 
-#: ../lib/metaboxes.php:100 ../themeoptions/options.php:1510
+#: ../lib/metaboxes.php:100 ../themeoptions/options.php:1504
 msgid "Image Slider"
 msgstr ""
 
 #: ../lib/metaboxes.php:101 ../lib/metaboxes.php:129
-#: ../themeoptions/options.php:1510
+#: ../themeoptions/options.php:1504
 msgid "Video"
 msgstr ""
 
-#: ../lib/metaboxes.php:102 ../themeoptions/options.php:1510
+#: ../lib/metaboxes.php:102 ../themeoptions/options.php:1504
 msgid "Image"
 msgstr ""
 
@@ -595,11 +589,11 @@ msgstr ""
 msgid "Display a carousel with similar or recent posts?"
 msgstr ""
 
-#: ../lib/metaboxes.php:167 ../themeoptions/options.php:1540
+#: ../lib/metaboxes.php:167 ../themeoptions/options.php:1534
 msgid "Yes - Display Recent Posts"
 msgstr ""
 
-#: ../lib/metaboxes.php:168 ../themeoptions/options.php:1540
+#: ../lib/metaboxes.php:168 ../themeoptions/options.php:1534
 msgid "Yes - Display Similar Posts"
 msgstr ""
 
@@ -677,11 +671,11 @@ msgstr ""
 #: ../lib/utils.php:80
 #, php-format
 msgid "Search Results for %s"
-msgstr ""
+msgstr "Rezultati tpretrage za %s"
 
 #: ../lib/utils.php:82
 msgid "Not Found"
-msgstr ""
+msgstr "Nažalost, ništa nije pronađeno."
 
 #: ../lib/virtuetoolkit-activate.php:37
 msgid "Something went wrong with the plugin API."
@@ -948,7 +942,7 @@ msgstr ""
 
 #: ../searchform.php:3
 msgid "Search"
-msgstr ""
+msgstr "Traži"
 
 #: ../templates/account-sidebar.php:18
 msgid "Edit Account"
@@ -1057,7 +1051,7 @@ msgstr ""
 
 #: ../templates/entry-meta-subhead.php:5
 msgid "posted in:"
-msgstr ""
+msgstr "objavljeno u:"
 
 #: ../templates/entry-meta.php:2
 msgid "By"
@@ -2003,224 +1997,220 @@ msgid "Mobile Menu Options"
 msgstr ""
 
 #: ../themeoptions/options.php:1420
-msgid "Submenu items collapse until opened"
-msgstr ""
-
-#: ../themeoptions/options.php:1426
 msgid "Mobile Menu Font"
 msgstr ""
 
-#: ../themeoptions/options.php:1441
+#: ../themeoptions/options.php:1435
 msgid "Choose Size and Style for Mobile Menu"
 msgstr ""
 
-#: ../themeoptions/options.php:1454
+#: ../themeoptions/options.php:1448
 msgid "Page/Post Settings"
 msgstr ""
 
-#: ../themeoptions/options.php:1455
+#: ../themeoptions/options.php:1449
 msgid "Page and Post Settings"
 msgstr ""
 
-#: ../themeoptions/options.php:1460
+#: ../themeoptions/options.php:1454
 msgid "Allow Comments on Pages"
 msgstr ""
 
-#: ../themeoptions/options.php:1461
+#: ../themeoptions/options.php:1455
 msgid "Turn on to allow comments on pages"
 msgstr ""
 
-#: ../themeoptions/options.php:1469
+#: ../themeoptions/options.php:1463
 msgid "All Projects Portfolio Page"
 msgstr ""
 
-#: ../themeoptions/options.php:1470
+#: ../themeoptions/options.php:1464
 msgid ""
 "This sets the link in every single portfolio page. *note: You still have to "
 "set the page template to portfolio."
 msgstr ""
 
-#: ../themeoptions/options.php:1475
+#: ../themeoptions/options.php:1469
 msgid "Allow Comments on Portfolio Posts"
 msgstr ""
 
-#: ../themeoptions/options.php:1476
+#: ../themeoptions/options.php:1470
 msgid "Turn on to allow comments on Portfolio posts"
 msgstr ""
 
-#: ../themeoptions/options.php:1482
+#: ../themeoptions/options.php:1476
 msgid "Show Comments Closed Text?"
 msgstr ""
 
-#: ../themeoptions/options.php:1483
+#: ../themeoptions/options.php:1477
 msgid "Choose to show or hide comments closed alert below posts."
 msgstr ""
 
-#: ../themeoptions/options.php:1489
+#: ../themeoptions/options.php:1483
 msgid "Blog Post Defaults"
 msgstr ""
 
-#: ../themeoptions/options.php:1494
+#: ../themeoptions/options.php:1488
 msgid "Blog Post Summary Default"
 msgstr ""
 
-#: ../themeoptions/options.php:1503
+#: ../themeoptions/options.php:1497
 msgid "Default post summary feature Image"
 msgstr ""
 
-#: ../themeoptions/options.php:1504
+#: ../themeoptions/options.php:1498
 msgid "Replace theme default feature image for posts without a featured image"
 msgstr ""
 
-#: ../themeoptions/options.php:1509
+#: ../themeoptions/options.php:1503
 msgid "Blog Post Head Content Default"
 msgstr ""
 
-#: ../themeoptions/options.php:1517
+#: ../themeoptions/options.php:1511
 msgid "Show Previous and Next posts links?"
 msgstr ""
 
-#: ../themeoptions/options.php:1518
+#: ../themeoptions/options.php:1512
 msgid ""
 "Choose to show or hide previous and next post links in the footer of a "
 "single post."
 msgstr ""
 
-#: ../themeoptions/options.php:1524
+#: ../themeoptions/options.php:1518
 msgid "Show Author Icon with posts?"
 msgstr ""
 
-#: ../themeoptions/options.php:1525
+#: ../themeoptions/options.php:1519
 msgid "Choose to show or hide author icon under post title."
 msgstr ""
 
-#: ../themeoptions/options.php:1531
+#: ../themeoptions/options.php:1525
 msgid "Blog Post Author Box Default"
 msgstr ""
 
-#: ../themeoptions/options.php:1532 ../themeoptions/options.php:1540
+#: ../themeoptions/options.php:1526 ../themeoptions/options.php:1534
 msgid "No, Do not Show"
 msgstr ""
 
-#: ../themeoptions/options.php:1532
+#: ../themeoptions/options.php:1526
 msgid "Yes, Show"
 msgstr ""
 
-#: ../themeoptions/options.php:1539
+#: ../themeoptions/options.php:1533
 msgid "Blog Post Bottom Carousel Default"
 msgstr ""
 
-#: ../themeoptions/options.php:1547
+#: ../themeoptions/options.php:1541
 msgid "Blog Category/Archive Defaults"
 msgstr ""
 
-#: ../themeoptions/options.php:1552
+#: ../themeoptions/options.php:1546
 msgid "Blog Archive"
 msgstr ""
 
-#: ../themeoptions/options.php:1553
+#: ../themeoptions/options.php:1547
 msgid "Choose to show full post or post excerpt."
 msgstr ""
 
-#: ../themeoptions/options.php:1564 ../themeoptions/options.php:1565
+#: ../themeoptions/options.php:1558 ../themeoptions/options.php:1559
 msgid "Misc Settings"
 msgstr ""
 
-#: ../themeoptions/options.php:1570
+#: ../themeoptions/options.php:1564
 msgid "Hide Image Border"
 msgstr ""
 
-#: ../themeoptions/options.php:1571
+#: ../themeoptions/options.php:1565
 msgid "Choose to show or hide image border for images added in pages or posts"
 msgstr ""
 
-#: ../themeoptions/options.php:1578
+#: ../themeoptions/options.php:1572
 msgid "Custom Favicon"
 msgstr ""
 
-#: ../themeoptions/options.php:1579
+#: ../themeoptions/options.php:1573
 msgid ""
 "Upload a 16px x 16px png/gif/ico image that will represent your website "
 "favicon."
 msgstr ""
 
-#: ../themeoptions/options.php:1584
+#: ../themeoptions/options.php:1578
 msgid "Contact Form Email"
 msgstr ""
 
-#: ../themeoptions/options.php:1585
+#: ../themeoptions/options.php:1579
 msgid "Sets the email for the contact page email form."
 msgstr ""
 
-#: ../themeoptions/options.php:1591
+#: ../themeoptions/options.php:1585
 msgid "Footer Copyright Text"
 msgstr ""
 
-#: ../themeoptions/options.php:1592
+#: ../themeoptions/options.php:1586
 msgid ""
 "Write your own copyright text here. You can use the following shortcodes in "
 "your footer text: [copyright] [site-name] [the-year]"
 msgstr ""
 
-#: ../themeoptions/options.php:1598
+#: ../themeoptions/options.php:1592
 msgid "Create Sidebars"
 msgstr ""
 
-#: ../themeoptions/options.php:1603
+#: ../themeoptions/options.php:1597
 msgid "Create Custom Sidebars"
 msgstr ""
 
-#: ../themeoptions/options.php:1604
+#: ../themeoptions/options.php:1598
 msgid "Type new sidebar name into textbox"
 msgstr ""
 
-#: ../themeoptions/options.php:1605
+#: ../themeoptions/options.php:1599
 msgid "Extra Sidebar"
 msgstr ""
 
-#: ../themeoptions/options.php:1610
+#: ../themeoptions/options.php:1604
 msgid "Wordpress Galleries"
 msgstr ""
 
-#: ../themeoptions/options.php:1615
+#: ../themeoptions/options.php:1609
 msgid "Enable Virtue Galleries to override Wordpress"
 msgstr ""
 
-#: ../themeoptions/options.php:1616
+#: ../themeoptions/options.php:1610
 msgid ""
 "Disable this if using a plugin to customize galleries, for example jetpack "
 "tiled gallery."
 msgstr ""
 
-#: ../themeoptions/options.php:1622
+#: ../themeoptions/options.php:1616
 msgid "Theme Lightbox"
 msgstr ""
 
-#: ../themeoptions/options.php:1627
+#: ../themeoptions/options.php:1621
 msgid "Turn Off Theme Lightbox?"
 msgstr ""
 
-#: ../themeoptions/options.php:1635
+#: ../themeoptions/options.php:1629
 msgid "Advanced Settings"
 msgstr ""
 
-#: ../themeoptions/options.php:1636
+#: ../themeoptions/options.php:1630
 msgid "Custom CSS Box"
 msgstr ""
 
-#: ../themeoptions/options.php:1641
+#: ../themeoptions/options.php:1635
 msgid "Custom CSS"
 msgstr ""
 
-#: ../themeoptions/options.php:1642
+#: ../themeoptions/options.php:1636
 msgid "Quickly add some CSS to your theme by adding it to this block."
 msgstr ""
 
-#: ../themeoptions/options.php:1663 ../themeoptions/options.php:1664
+#: ../themeoptions/options.php:1657 ../themeoptions/options.php:1658
 msgid "Theme Options"
 msgstr ""
 
-#: ../themeoptions/options.php:1673
+#: ../themeoptions/options.php:1667
 msgid ""
 "Thank you for using the Virtue Theme by <a href=\"http://kadencethemes.com/"
 "\" target=\"_blank\">Kadence Themes</a>."

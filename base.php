@@ -6,7 +6,9 @@
     ?>
       <div class="wrap contentclass" role="document">
 
-          <?php include kadence_template_path(); ?>
+      <?php do_action('kt_afterheader');
+
+          include kadence_template_path(); ?>
             
           <?php if (kadence_display_sidebar()) : ?>
             <aside class="<?php echo esc_attr(kadence_sidebar_class()); ?> kad-sidebar" role="complementary">

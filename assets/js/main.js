@@ -40,6 +40,17 @@ jQuery(document).ready(function ($) {
 					}
 				}
 		});
+			$('.collapse-next').click(function (e) {
+			//e.preventDefault();
+		    var $target = $(this).siblings('.sf-dropdown-menu');
+		     if($target.hasClass('in') ) {
+		    	$target.collapse('toggle');
+		    	$(this).removeClass('toggle-active');
+		    } else {
+		    	$target.collapse('toggle');
+		    	$(this).addClass('toggle-active');
+		    }
+		});
 		$("a[rel^='lightbox']").magnificPopup({type:'image'});
 	    $("a[data-rel^='lightbox']").magnificPopup({type:'image'});
 			$('.kad-light-gallery').each(function(){
