@@ -306,6 +306,10 @@ if ( ! function_exists( 'generate_admin_errors' ) ) :
 add_action( 'admin_notices', 'generate_admin_errors' );
 function generate_admin_errors() 
 {
+	$screen = get_current_screen();
+	if ( 'appearance_page_generate-options' !== $screen->base )
+		return;
+		
 	if ( isset( $_GET['settings-updated'] ) && 'true' == $_GET['settings-updated'] ) {
 		 add_settings_error( 'generate-notices', 'true', __( 'Settings saved.', 'generate' ), 'updated' );
 	}

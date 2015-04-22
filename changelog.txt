@@ -10,6 +10,11 @@ Changelog Legend:
 
 ----
 
+(4/22/2015) - 1.2.9.5
+[!] Fix bug where save notices were showing up 3 times
+
+----
+
 (4/19/2015) - 1.2.9.4
 [+] Add filter to page header size: generate_page_header_default_size
 [*] Screenshot updated
