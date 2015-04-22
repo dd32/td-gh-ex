@@ -89,6 +89,9 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.23
+* Main Navigation Bug fixed
+
 Version 1.22
 * Team section slides bug fixed
 * Background Image bug in Mobile device fixed
