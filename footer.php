@@ -22,6 +22,7 @@
 			<?php printf( __( 'Theme: %1$s by %2$s.', 'radiate' ), 'Radiate', '<a href="'.esc_url('http://themegrill.com/').'" rel="designer">ThemeGrill</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
+   <a href="#masthead" id="scroll-up"><span class="genericon genericon-collapse"></span></a>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

@@ -64,6 +64,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.1.5 =
+* Added latest version of genericons(3.3).
+* Added scroll-to-top button feature as per users request.
+
 = Version 1.1.4 =
 * Custom CSS option sanitized using wp_filter_nohtml_kses().
 * Some theme useful links added in customizer panel.

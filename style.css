@@ -4,7 +4,7 @@ Theme URI: http://themegrill.com/themes/radiate/
 Author: ThemeGrill
 Author URI: http://themegrill.com/
 Description: Radiate is a clean, creative and light retina ready responsive blogging theme supporting parallax header image. It integrates primary color option, custom background, custom css and few other features through WordPress customizer. The theme is translation ready and you can get free support on http://themegrill.com/support-forum. View demo at http://demo.themegrill.com/radiate. Available Translations: French, German, Russian, Swedish, Dutch, Norwegian, Brazilian Portuguese and Spanish.
-Version: 1.1.4
+Version: 1.1.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: radiate
@@ -96,19 +96,6 @@ a:active { /* Improves readability when focused and also mouse hovered in all br
 }
 a img {
 	border: 0;
-}
-
-/* =Genericons
------------------------------------------------ */
-@font-face {
-    font-family: 'Genericons';
-    src: url('font/genericons-regular-webfont.eot');
-    src: url('font/genericons-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('font/genericons-regular-webfont.woff') format('woff'),
-         url('font/genericons-regular-webfont.ttf') format('truetype'),
-         url('font/genericons-regular-webfont.svg#genericonsregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
 }
 
 /* =Global
@@ -577,6 +564,7 @@ img.header-image {
 	color: #632E9B;
 	display: inline-block;
 	-webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
 	font: normal 40px/1 'Genericons';
 	vertical-align: top;
 }
@@ -776,6 +764,7 @@ img.header-image {
 .entry-meta .edit-link:before {
 	display: inline-block;
 	-webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
 	font: normal 22px/1 'Genericons';
 	vertical-align: top;
 }
@@ -1040,6 +1029,7 @@ object {
 .comments-area article header .comment-date-time:before {
 	display: inline-block;
 	-webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
 	font: normal 22px/1 'Genericons';
 	vertical-align: top;
 }
@@ -1073,6 +1063,7 @@ object {
 	content: '\f412';
 	display: inline-block;
 	-webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
 	font: normal 22px/1 'Genericons';
 	vertical-align: top;
 }
@@ -1207,6 +1198,25 @@ object {
 	font-size: 1.4rem;
 }
 
+/* =SCROLL UP
+----------------------------------------------- */
+a#scroll-up {
+   bottom: -5px;
+   position: fixed;
+   right: 20px;
+   display: none;
+   opacity: 0.5;
+   filter:alpha(opacity=50); /* For IE8 and earlier */
+}
+a#scroll-up span {
+   font-size: 80px;
+   color: #632E9B;
+}
+a#scroll-up:hover {
+   opacity: 1;
+   filter:alpha(opacity=100); /* For IE8 and earlier */
+}
+
 /* Small menu */
 .menu-toggle {
 	display: none;
@@ -1229,6 +1239,7 @@ object {
 	content: '\f419';
 	display: inline-block;
 	-webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
 	font: normal 22px/1 'Genericons';
 	vertical-align: top;
 	padding-top: 8px;
