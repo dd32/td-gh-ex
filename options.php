@@ -595,7 +595,7 @@ function optionsframework_options() {
         'name' => __('Footer Text', 'ares'),
         'desc' => __('Enter text for the footer', 'ares'),
         'id' => 'ares_footer_text',
-        'std' => '&#169; 2014 Your company name',
+        'std' => '&#169; 2015 Your company name',
         'type' => 'textarea');
 
     return $options;
@@ -613,25 +613,26 @@ function ares_ares_options_display_sidebar() {
         </div>
 
         <div>
-            <h3>Ares Pro Features:</h3>
+            <h3><?php _e('Ares Pro Features:', 'ares'); ?></h3>
             <ul>
-                <li>Up to 5 slides in the slider, with height & timer customization and 10 transition effects</li>
-                <li>9 skin colors</li>
-                <li>Animated Ajax contact form</li>
-                <li>Testimonials Section</li>
-                <li>Recent articles carousel</li>
-                <li>and many more features!</li>
+                <li><?php _e('Up to 5 slides in the slider, with height & timer customization and 10 transition effects','ares'); ?></li>
+                <li><?php _e('9 skin colors', 'ares'); ?></li>
+                <li><?php _e('Animated Ajax contact form', 'ares' ); ?></li>
+                <li><?php _e('Testimonials carousel Widget','ares'); ?></li>
+                <li><?php _e('Recent articles Widget','ares');?></li>
+                <li><?php _e('Woocommerce support', 'ares'); ?></li>
+                <li><?php _e('and many more features!', 'ares'); ?></li>
             </ul>
         </div>
         
         <div class="sc-tab-option">
             <a href="http://smartcatdesign.net/preview/ares" target="_blank">
-                View Theme Demo
+                <?php _e('View Theme Demo', 'ares'); ?>
             </a>
         </div>    
         <div class="sc-tab-option">
             <a href="https://smartcatdesign.net/downloads/ares/" target="_blank">
-                Get Ares Pro
+                <?php _e('Get Ares Pro', 'ares'); ?>
             </a>
         </div>    
             

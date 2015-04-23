@@ -385,7 +385,7 @@ function ares_close() { ?>
         <div class="site-info">
             <div class="row ">
                 <div class="col-xs-6 text-left">
-                    <?php echo of_get_option('ares_footer_text');?>
+                    <?php echo of_get_option('ares_footer_text', '&#169; 2015 Your company name');?>
                 </div>
                 <div class="col-xs-6 text-right">
                     <a href="http://smartcatdesign.net/" rel="designer">

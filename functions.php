@@ -19,6 +19,7 @@ if (!function_exists('ares_setup')) :
         add_theme_support('automatic-feed-links');
         add_theme_support('post-thumbnails');
         add_editor_style('');
+        add_theme_support( 'title-tag' );
         /*
          * Enable support for Post Thumbnails on posts and pages.
          *
