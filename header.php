@@ -77,6 +77,14 @@
 					<a href="<?php echo $options['flickrurl']; ?>" class="flickr" alt="flickr upon"><span class="icon-flickr"></span></a>
 				<?php endif; ?>
 				
+				<?php if ( $options['tumblrurl'] != '' ) : ?>
+					<a href="<?php echo $options['tumblrurl']; ?>" class="tumblr" alt="tumblr"><span class="icon-tumblr"></span></a>
+				<?php endif; ?>
+				
+				<?php if ( $options['mediumurl'] != '' ) : ?>
+					<a href="<?php echo $options['mediumurl']; ?>" class="medium" alt="medium"><span class="icon-medium"></span></a>
+				<?php endif; ?>
+				
 				<?php if ( ! $options['hiderss'] ) : ?>
 					<a href="<?php bloginfo( 'rss2_url' ); ?>" class="rss"><span class="icon-rss" alt="rss"></span></a>
 				<?php endif; ?>

@@ -190,6 +190,28 @@ function thebox_options_do_page() {
 					</td>
 				</tr>
 				
+				<?php
+				/**
+				 * Tumblr
+				 */
+				?>
+				<tr valign="top"><th scope="row"><?php _e( 'Tumblr URL', 'thebox' ); ?></th>
+					<td>
+						<input id="thebox_theme_options[tumblrurl]" class="regular-text" type="text" name="thebox_theme_options[tumblrurl]" value="<?php echo esc_attr( $options['tumblrurl'] ); ?>" />
+					</td>
+				</tr>
+				
+				<?php
+				/**
+				 * Medium
+				 */
+				?>
+				<tr valign="top"><th scope="row"><?php _e( 'Medium URL', 'thebox' ); ?></th>
+					<td>
+						<input id="thebox_theme_options[mediumurl]" class="regular-text" type="text" name="thebox_theme_options[mediumurl]" value="<?php echo esc_attr( $options['mediumurl'] ); ?>" />
+					</td>
+				</tr>
+				
 			</table>
 
 			<p class="submit">
@@ -224,6 +246,8 @@ function thebox_options_validate( $input ) {
 	$input['pinteresturl'] = wp_filter_nohtml_kses( $input['pinteresturl'] );
 	$input['stumbleuponurl'] = wp_filter_nohtml_kses( $input['stumbleuponurl'] );
 	$input['flickrurl'] = wp_filter_nohtml_kses( $input['flickrurl'] );
+	$input['tumblrurl'] = wp_filter_nohtml_kses( $input['tumblrurl'] );
+	$input['mediumurl'] = wp_filter_nohtml_kses( $input['mediumurl'] );
 	
 	// Encode URLs
 	$input['twitterurl'] = esc_url_raw( $input['twitterurl'] );
@@ -235,6 +259,8 @@ function thebox_options_validate( $input ) {
 	$input['pinteresturl'] = esc_url_raw( $input['pinteresturl'] );
 	$input['stumbleuponurl'] = esc_url_raw( $input['stumbleuponurl'] );
 	$input['flickrurl'] = esc_url_raw( $input['flickrurl'] );
+	$input['tumblrurl'] = esc_url_raw( $input['tumblrurl'] );
+	$input['mediumurl'] = esc_url_raw( $input['mediumurl'] );
 	
 	return $input;
 }

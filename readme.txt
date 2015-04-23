@@ -44,19 +44,23 @@ Please visit https://wordpress.org/support/theme/the-box if you have any questio
 - initial release
 
 1.3.3
-- Updated Mobile Menu js
-- Added New Social Icons
-- Added Dutch translation by Theo Muys
+- Update: Mobile Menu
+- New: StumbleUpon Social Icon
+- New: Dutch translation by Theo Muys
 
 1.3.5
-- Fix Preview Live
-- Added LinkedIn to Social Icons
-- Added Editor Styles
+- Fix: Preview Live
+- New: LinkedIn Social Icon
+- New: Editor Styles
 
 1.3.6
-- Fix Menu on Tablet
-- Added Flickr to Social Icons
+- Fix: Menu on Tablet
+- New: Flickr Social Icon
 
 1.3.9
-- Fix Menu on Tablet and Mobile
-- No Sidebar Template
+- Fix: Menu on Tablet and Mobile
+- New: No Sidebar Template
+
+1.3.9.2
+- New: Tumblr Social Icon
+- New: Medium Social Icon

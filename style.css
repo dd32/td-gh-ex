@@ -4,7 +4,7 @@ Theme URI: http://design.altervista.org/thebox/
 Author: Design Lab
 Author URI: http://design.altervista.org
 Description: Simple and minimal two columns Theme: custom header, custom background, custom colors, post thumbnails, post formats
-Version: 1.3.9.1
+Version: 1.3.9.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: thebox
@@ -34,7 +34,8 @@ Index:
 12: Widget
 13: Footer
 14: Comments
-15: Media Queries
+15: Additional Styles
+16: Media Queries
 
 */
 
@@ -793,7 +794,7 @@ a:hover {
 }
 
 hgroup {
-	width: 30%;
+	width: 40%;
 	float: left;
 	margin: 0;
     padding: 0;
@@ -828,52 +829,6 @@ hgroup h1 a {
 	display: block;
 	max-width: 100%;
 	height: auto;
-}
-
-/* Site Logo */
-
-.site-logo {
-	margin: 0;
-	padding: 0;
-	line-height: 1;
-}
-
-.site-logo img {
-	display: block;
-	width: auto;
-	max-height: 70px;
-}
-
-.logo-large hgroup {
-	float: none;
-	margin: auto;
-	width: 100%;
-}
-
-.logo-large h1 {
-	text-align: center;
-}
-
-.logo-large img {
-	max-width: 30%;
-	height: auto;
-	margin: auto;
-	max-height: inherit;
-}
-
-.one-column .logo-large img {
-	max-width: 40%;
-}
-
-.logo-large .site-description {
-	display: block;
-	text-align: center;
-}
-
-.logo-large .social-links {
-	width: 100%;
-	float: none;
-	text-align: center;
 }
 
 /* 07: Header > Menu */
@@ -1198,30 +1153,37 @@ button.menu-toggle .icon-font:before {
 	background: #dd4b39;
 }
 
-.social-links .linkedin:hover{
+.social-links .linkedin:hover {
 	background: #007bb6;
 }
 
-.social-links .instagram:hover{
+.social-links .instagram:hover {
 	background: #517fa4;
 }
 
-.social-links .youtube:hover{
+.social-links .youtube:hover {
 	background: #bb0000;
 }
 
-.social-links .pinterest:hover{
+.social-links .pinterest:hover {
 	background: #cb2027;
 }
 
-.social-links .stumbleupon:hover{
+.social-links .stumbleupon:hover {
 	background: #ea4b24;
 }
 
-.social-links .flickr:hover{
+.social-links .flickr:hover {
 	background: #ff0084;
 }
 
+.social-links .tumblr:hover {
+	background: #32506d;
+}
+
+.social-links .medium:hover {
+	background: #000;
+}
 
 /* 08: Content */
 
@@ -1968,6 +1930,7 @@ textarea {
 	margin: 0;
 }
 
+
 /* 15: Additional Styles */
 
 
@@ -2004,16 +1967,14 @@ textarea {
 /* 16: Media Queries */
 
 @media screen and (min-width: 769px) and (max-width: 1023px) {   
-	#page,
-	.site-paged #page {
+	#page {
 	max-width: 740px;
 	}
 	hgroup {
 	width: 40%;
 	}
 	.content-area,
-	.widget-area,
-	.site-paged .content-area {
+	.widget-area {
 	float: none;
 	width: 100%;
 	margin: auto;
@@ -2025,10 +1986,6 @@ textarea {
 	margin-bottom: 0;
 	padding: 3.125%;
 	border-bottom: 1px solid rgba(0,0,0,0.07);
-	}
-	.site-paged .widget {
-	padding: 0;
-	border: 0;
 	}
 }
 
@@ -2045,8 +2002,7 @@ textarea {
 	.author-info {
 	font-size: 0.875em; /* 14px */
 	}
-	#page,
-	.site-paged #page {
+	#page {
 	max-width: 90%;
     width: 90%;
     padding: 0 5%;
@@ -2074,8 +2030,7 @@ textarea {
 	float: none;
 	margin: 2% 0 0;
 	}
-	.site-brand,
-	.site-paged .site-brand {
+	.site-brand {
 	float: none;
 	padding: 0;
 	margin: 5% 0;
@@ -2089,9 +2044,6 @@ textarea {
 	}
 	.header-image {
 	margin: 0 0 5% 0;
-	}
-	.logo-large img {
-	max-width: 40%;
 	}
 	/* Layout */
 	.site-main {
@@ -2149,8 +2101,7 @@ textarea {
 	height: auto;
 	}
 	/* Meta */
-	.entry-header h2,
-	.site-paged .entry-header h2 {
+	.entry-header h2 {
 	width: 100%;
 	max-width: 100%;
 	float: none;
@@ -2193,10 +2144,6 @@ textarea {
 	}
 	.entry-format-icon:before {
 	content: none !important;
-	}
-	.site-paged .entry-time,
-	.site-paged .entry-time-month {
-	border: none !important;
 	}
 	.entry-meta {
 	margin-left: 0.5em;
@@ -2253,20 +2200,14 @@ textarea {
 	.social-links a {
 	margin-left: 0.25em;
 	}
-	.site-brand,
-	.site-paged .site-brand {
+	.site-brand {
 	margin-bottom: 10%;
-	}
-	.logo-large img,
-	.one-column .logo-large img {
-	max-width: 60%;
 	}
 	.page-header {
 	padding: 5%;
 	}
 	/* Layout */
-	.site-footer,
-	.site-paged .site-footer {
+	.site-footer {
 	padding: 5%;
 	margin-top: 5%;
 	}
