@@ -5,6 +5,9 @@ Consider weblizar PRE-Fix for function-name and as a slug of the Theme Enigma.
 Enigma
 
 CHANGE-LOG:
+@Version: 1.8.9[23/04/2015]
+1. Mobile Slider Text Fixed.
+
 @Version: 1.8.8[/03/2015]
 1.Minor Translation added.
 
