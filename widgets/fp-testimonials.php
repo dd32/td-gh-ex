@@ -20,7 +20,7 @@ class Moesia_Testimonials extends WP_Widget {
 		$title     		= isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
 		$image_uri 		= isset( $instance['image_uri'] ) ? esc_url_raw( $instance['image_uri'] ) : '';	
 		$number    		= isset( $instance['number'] ) ? intval( $instance['number'] ) : -1;
-		$category   	= isset( $instance['category '] ) ? esc_attr( $instance['category '] ) : '';
+		$category   	= isset( $instance['category'] ) ? esc_attr( $instance['category'] ) : '';
 		$see_all   		= isset( $instance['see_all'] ) ? esc_url_raw( $instance['see_all'] ) : '';
 		$see_all_text  	= isset( $instance['see_all_text'] ) ? esc_html( $instance['see_all_text'] ) : '';
 		$random 		= isset( $instance['random'] ) ? (bool) $instance['random'] : false;				
@@ -140,9 +140,9 @@ class Moesia_Testimonials extends WP_Widget {
 					<div class="testimonial col-md-6 col-sm-6 fadeInUp">
 						<div class="testimonial-body"><?php the_content(); ?></div>
 						<?php if ($photo != '') : ?>
-							<?php $image_id  = moesia_get_image_id($photo); ?>
-							<?php $image_src = wp_get_attachment_image_src($image_id, 'moesia-testimonials-thumb'); ?>
-							<img class="client-photo col-md-4" src="<?php echo esc_url($image_src[0]); ?>" alt="<?php the_title(); ?>">
+							<img class="client-photo col-md-4" src="<?php echo esc_url($photo); ?>" alt="<?php the_title(); ?>">
+						<?php elseif ( has_post_thumbnail() ) : ?>
+							<div class="client-photo col-md-4"><?php the_post_thumbnail('moesia-testimonials-thumb'); ?></div>
 						<?php endif; ?>
 						<h4 class="client-name col-md-8"><?php the_title(); ?></h4>
 						<?php if ($function != '') : ?>

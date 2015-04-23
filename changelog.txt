@@ -1,5 +1,12 @@
 Changelog
 
+23 Apr 2015 - 1.31
+--------------------------------------
+- updated TGM Plugin Activation to the latest version;
+- changed image logic for some widgets;
+- expanded integration with the Page Builder by SiteOrigin plugin.
+
+
 15 Apr 2015 - 1.30
 --------------------------------------
 - added new image sizes;

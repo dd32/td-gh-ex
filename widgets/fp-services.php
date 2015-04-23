@@ -20,7 +20,7 @@ class Moesia_Services extends WP_Widget {
 		$title     		= isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
 		$image_uri 		= isset( $instance['image_uri'] ) ? esc_url_raw( $instance['image_uri'] ) : '';
 		$number    		= isset( $instance['number'] ) ? intval( $instance['number'] ) : -1;
-		$category   	= isset( $instance['category '] ) ? esc_attr( $instance['category '] ) : '';
+		$category   	= isset( $instance['category'] ) ? esc_attr( $instance['category'] ) : '';
 		$see_all   		= isset( $instance['see_all'] ) ? esc_url_raw( $instance['see_all'] ) : '';
 		$see_all_text  	= isset( $instance['see_all_text'] ) ? esc_html( $instance['see_all_text'] ) : '';			
 	?>

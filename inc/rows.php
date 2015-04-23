@@ -12,18 +12,29 @@ function moesia_panels_row_style_fields($fields) {
 	$fields['color'] = array(
 		'name' => __('Color', 'moesia'),
 		'type' => 'color',
-	);	
-
+	);
 	$fields['background'] = array(
 		'name' => __('Background Color', 'moesia'),
 		'type' => 'color',
 	);
-
 	$fields['background_image'] = array(
 		'name' => __('Background Image', 'moesia'),
 		'type' => 'url',
 	);
-
+	$fields['class'] = array(
+			'name' => __('Row Class', 'moesia'),
+			'type' => 'text',
+			'group' => 'attributes',
+			'description' => __('A CSS class', 'moesia'),
+			'priority' => 5,
+	);
+	$fields['cell_class'] = array(
+			'name' => __('Cell Class', 'moesia'),
+			'type' => 'text',
+			'group' => 'attributes',
+			'description' => __('Class added to all cells in this row.', 'moesia'),
+			'priority' => 6,
+	);
 	return $fields;
 }
 add_filter('siteorigin_panels_row_style_fields', 'moesia_panels_row_style_fields');
