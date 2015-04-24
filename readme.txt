@@ -46,6 +46,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.2.6 =
+* Added latest version of genericons(3.3).
+* JQuery Cycle js updated to latest version(3.0.3).
+
 = Version 1.2.5 =
 * Options framework updated to 1.9.1
 * Missed strings added for translation.

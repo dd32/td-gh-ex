@@ -26,6 +26,9 @@ function spacious_scripts_styles_method() {
 		wp_enqueue_style( 'spacious_dark_style', SPACIOUS_CSS_URL. '/dark.css' );
 	}
 
+   // Add Genericons, used in the main stylesheet.
+   wp_enqueue_style( 'spacious-genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.3' );
+
 	/**
 	 * Adds JavaScript to pages with the comment form to support
 	 * sites with threaded comments (when in use).
