@@ -98,6 +98,11 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.6.4
+- New:     Variable $thinkup_general_fixedlayoutswitch used to assign responsive layouy for default settings.
+- Updated: Theme now displays responsive layout on default settings. 
+- Removed: Variable $thinkup_general_responsiveswitch was used to set fixed layout by default.
+
 Version 1.6.3
 - Updated: Change blog-style class to blog-article.
 - Updated: Link to support forum updated in readme file.
