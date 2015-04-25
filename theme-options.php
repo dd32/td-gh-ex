@@ -80,7 +80,7 @@ including a nonce, a unique number used to ensure the form has been submitted fr
 <table class="form-table">
 <tr valign="top"><th scope="row"><label for="featured_title">Featured Heading Title</label></th>
 <td>
-<input id="featured_title" name="badeyes_options[featured_title]" type="text" value="<?php  echo esc_attr($settings['featured_title']); ?>" />
+<input id="featured_title" name="badeyes_options[featured_title]" type="text" value="<?php  echo esc_attr_e($settings['featured_title']); ?>" />
 </td>
 </tr>
 <tr valign="top"><th scope="row"><label for="blog_title">Blog Heading Title</label></th>

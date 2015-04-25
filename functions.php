@@ -3,6 +3,15 @@ require_once ( get_stylesheet_directory() . '/theme-options.php' );
 if ( ! class_exists( 'WP_List_Table' ) ) {
     require_once( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' );
 }
+	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
+	add_theme_support( 'title-tag' );
+
+
 // Add support for featured content.
 function twentyfourteen_child_setup () {
   // This will remove support for featured content in the parent theme  
