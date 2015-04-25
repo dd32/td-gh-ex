@@ -368,6 +368,7 @@
                             'title'    => __( 'Select the slider category', 'awaken' ),
                             'subtitle' => __( 'Post thumbnails of the posts from selected category will be displayed in the slider', 'awaken' ),
                             'desc'     => __( 'Do not select a category or close the current category if you want to display latest posts.', 'awaken' ),
+                            'default'  => ''
                         ),
                         array(
                             'id'       => 'fposts-category',
@@ -376,6 +377,7 @@
                             'title'    => __( 'Select the featured posts category', 'awaken' ),
                             'subtitle' => __( 'Post thumbnails of the posts from selected category will be displayed as featured posts', 'awaken' ),
                             'desc'     => __( 'Do not select a category or close the current category if you want to display latest posts.', 'awaken' ),
+                            'default'  => ''
                         ),
                         array(
                             'id'    => 'pro-home',
