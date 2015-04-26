@@ -1,5 +1,9 @@
 Changelog
 
+26 Apr 2015 - 1.32
+--------------------------------------
+- removed filter for user_contactmethod.
+
 23 Apr 2015 - 1.31
 --------------------------------------
 - updated TGM Plugin Activation to the latest version;

@@ -278,21 +278,6 @@ function moesia_html5shiv() {
 add_action( 'wp_head', 'moesia_html5shiv' ); 
 
 /**
- * Adds more contact methods in the User profile screen (links used for the author bio).
- */
-function moesia_contactmethods( $contactmethods ) {
-	
-	$contactmethods['moesia_facebook'] = __( 'Author Bio: Facebook', 'moesia' );
-	$contactmethods['moesia_twitter'] = __( 'Author Bio: Twitter', 'moesia' );	
-	$contactmethods['moesia_googleplus'] = __( 'Author Bio: Google Plus', 'moesia' );
-	$contactmethods['moesia_linkedin'] = __( 'Author Bio: Linkedin', 'moesia' );
-	
-	return $contactmethods;
-}
-add_filter( 'user_contactmethods', 'moesia_contactmethods', 10, 1);
-
-
-/**
  * Change the excerpt length
  */
 function moesia_excerpt_length( $length ) {
