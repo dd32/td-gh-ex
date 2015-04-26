@@ -72,6 +72,8 @@ if (!function_exists('barista_theme_setup')){
         * Editor Styles
         **********************************************************************/
         add_editor_style();
+        
+        load_theme_textdomain( 'barista', get_template_directory() . '/languages' );
     }
     add_action('after_setup_theme', 'barista_theme_setup');
 }

@@ -17,11 +17,11 @@ function barista_metadata_posted_on_setup(){
 
     // This function will only display when sticky post is enabled!
     if (is_sticky()){
-        echo '&nbsp;&nbsp;&nbsp; <i class="fa fa-thumb-tack sticky"></i>&nbsp;&nbsp;Sticky Post', 'barista';
+        echo '&nbsp;&nbsp;&nbsp; <i class="fa fa-thumb-tack sticky"></i>&nbsp;&nbsp;' . __('Sticky Post', 'barista');
     } 
 
     if (has_post_thumbnail()){
-        echo'&nbsp;&nbsp;&nbsp; <i class="fa fa-bookmark"></i>&nbsp;&nbsp; Featured Image', 'barista';
+        echo '&nbsp;&nbsp;&nbsp; <i class = "fa fa-comments"></i>&nbsp;&nbsp;' . __('Featured Image', 'barista');
     }
 
     // This function will call and output Comments
