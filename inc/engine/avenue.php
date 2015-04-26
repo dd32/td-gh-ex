@@ -267,7 +267,7 @@ function sc_slider() { ?>
         <div class="camera_wrap" id="camera_wrap_1">
 
                 <?php if ('' != of_get_option('sc_slide1_image', get_template_directory_uri() . '/images/avenue-background.jpg')) { ?>
-                    <div data-thumb="<?php echo esc_attr( of_get_option('sc_slide1_image', get_template_directory_uri() ) . '/images/avenue-background.jpg') ?>" data-src="<?php echo esc_attr( of_get_option('sc_slide1_image', get_template_directory_uri() ) . '/images/avenue-background.jpg') ?>">
+                    <div data-thumb="<?php echo esc_attr( of_get_option('sc_slide1_image', get_template_directory_uri() . '/images/avenue-background.jpg' ) )  ?>" data-src="<?php echo esc_attr( of_get_option('sc_slide1_image', get_template_directory_uri() . '/images/avenue-background.jpg' ) ) ?>">
                         <div class="camera_caption fadeFromBottom">
                             <div class="row">
                                 
@@ -284,7 +284,7 @@ function sc_slider() { ?>
                 <?php } ?>            
             
                 <?php if ('' != of_get_option('sc_slide2_image', get_template_directory_uri() . '/images/avenue-background.jpg')) { ?>
-                      <div data-thumb="<?php echo esc_attr( of_get_option('sc_slide2_image', get_template_directory_uri() ) . '/images/avenue-background.jpg') ?>" data-src="<?php echo esc_attr( of_get_option('sc_slide2_image', get_template_directory_uri() ) . '/images/avenue-background.jpg') ?>">
+                      <div data-thumb="<?php echo esc_attr( of_get_option('sc_slide2_image', get_template_directory_uri() . '/images/avenue-background.jpg' ) ) ?>" data-src="<?php echo esc_attr( of_get_option('sc_slide2_image', get_template_directory_uri()  . '/images/avenue-background.jpg' ) ); ?>">
                         <div class="camera_caption fadeFromBottom">
                             <div class="row">
                                 
@@ -301,7 +301,7 @@ function sc_slider() { ?>
                 <?php } ?>   
             
                 <?php if ('' != of_get_option('sc_slide3_image', get_template_directory_uri() . '/images/avenue-background.jpg')) { ?>     
-                    <div data-thumb="<?php echo esc_attr( of_get_option('sc_slide3_image', get_template_directory_uri() ) . '/images/avenue-background.jpg') ?>" data-src="<?php echo esc_attr( of_get_option('sc_slide3_image', get_template_directory_uri() ) . '/images/avenue-background.jpg') ?>">
+                    <div data-thumb="<?php echo esc_attr( of_get_option('sc_slide3_image', get_template_directory_uri() . '/images/avenue-background.jpg') ) ?>" data-src="<?php echo esc_attr( of_get_option('sc_slide3_image', get_template_directory_uri() . '/images/avenue-background.jpg' ) ) ?>">
                         <div class="camera_caption fadeFromBottom">
                             <div class="row">
                                 

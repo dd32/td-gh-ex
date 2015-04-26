@@ -11,7 +11,7 @@ if (!function_exists('avenue_setup')) :
             $content_width = 1060;
         }
 
-        define('SC_AVENUE_VERSION', '2.0');
+        define('SC_AVENUE_VERSION', '2.01');
         load_theme_textdomain('avenue', get_template_directory() . '/languages');
 
         // Add default posts and comments RSS feed links to head.

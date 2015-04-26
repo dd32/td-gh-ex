@@ -86,8 +86,8 @@ are licensed under GNU General Public License version 2, see file license.txt.
     - License               BSD
     - License URL           http://opensource.org/licenses/BSD-2-Clause
 
-7. Google Fonts - Josefin
-    - URL                   https://www.google.com/fonts/specimen/Josefin+Sans
+7. Google Fonts - Source Sans Pro
+    - URL                   http://www.google.com/fonts/specimen/Source+Sans+Pro
     - License               SIL Open Font
     - License URL           http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
 
@@ -97,10 +97,10 @@ are licensed under GNU General Public License version 2, see file license.txt.
     - License URL           http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
 
 9. Slider Image & Screenshot Image
-    - URL                   http://pixabay.com/en/macbook-apple-imac-computer-screen-606763/
+    - URL                   http://pixabay.com/en/model-fashion-glamour-girl-female-600238/
     - License               CC0
     - License URL           http://creativecommons.org/publicdomain/zero/1.0/deed.en
-    - Photographer          FirmBeee                 
+    - Photographer          Nissor                 
 
 10. Animate
     - URL                   https://github.com/daneden/animate.css#license
