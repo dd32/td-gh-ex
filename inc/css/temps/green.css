@@ -49,7 +49,7 @@ fieldset[disabled] .btn-primary.active {
     border-color: #0FAF97;
 }
 #site-toolbar{
-    border-bottom: 4px solid #0FAF97;
+    /*border-bottom: 4px solid #0FAF97;*/
 }
 
 
@@ -62,4 +62,22 @@ fieldset[disabled] .btn-primary.active {
 .main-navigation .current_page_item a,
 .main-navigation .current-menu-item a{
     color: rgb(15, 175, 151);
+}
+#top-banner{
+    background: #0FAF97;
+}
+#site-toolbar .social-bar a:hover{
+    background: #0FAF97;
+}
+.nav-menu > li a:hover{
+    border-color: #0FAF97;
+}
+.main-navigation .current_page_parent .current-menu-item a,
+.main-navigation .current_page_item > a,
+.main-navigation .current_page_parent > a{
+    border-bottom: 5px solid #0FAF97;
+}
+.sc-slider-wrapper .camera_caption .secondary-caption{
+    background: #0FAF97;
+    background: rgba(15, 175, 151, 0.75);
 }

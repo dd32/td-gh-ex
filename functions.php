@@ -11,13 +11,14 @@ if (!function_exists('avenue_setup')) :
             $content_width = 1060;
         }
 
-        define('SC_AVENUE_VERSION', '1.1.1');
+        define('SC_AVENUE_VERSION', '2.0');
         load_theme_textdomain('avenue', get_template_directory() . '/languages');
 
         // Add default posts and comments RSS feed links to head.
         add_theme_support('automatic-feed-links');
         add_theme_support('post-thumbnails');
-
+        add_editor_style('');
+        add_theme_support( 'title-tag' );
         /*
          * Enable support for Post Thumbnails on posts and pages.
          *
@@ -54,4 +55,5 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 define('OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/');
 require_once dirname(__FILE__) . '/inc/options-framework.php';
+require_once dirname(__FILE__) . '/inc/engine/tgm.php';
 require_once dirname(__FILE__) . '/inc/engine/avenue.php';

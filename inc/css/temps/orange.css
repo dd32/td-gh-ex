@@ -6,14 +6,14 @@
         Purpose of the stylesheet follows.
 */
 a,a:visited {
-  color: #ff6600;
+  color: #FF6131;
 }
 a:hover{
     color: #D85904;
 }
-.primary-color{ color: #ff6600;}
+.primary-color{ color: #FF6131;}
 .btn-primary {
-    background-color: #ff6600;
+    background-color: #FF6131;
     border-color: #EB5E00;
     color: #ffffff !important;    
 }
@@ -26,37 +26,58 @@ a:hover{
   border-color: #EB5E00;
 }
 fieldset[disabled] .btn-primary.active {
-  background-color: #ff6600;
+  background-color: #FF6131;
 }
 .btn-primary .badge {
-  color: #ff6600;
+  color: #FF6131;
 }
 .btn-link {
-  color: #ff6600;
+  color: #FF6131;
 }
-.sc-primary-color{ color: #ff6600;}
-.sc-primary-border{ border-color: #ff6600;}
+.sc-primary-color{ color: #FF6131;}
+.sc-primary-border{ border-color: #FF6131;}
 .site-branding .search-bar .search-field:focus{
-    border-bottom: 1px solid #ff6600;
+    border-bottom: 1px solid #FF6131;
 }
 .icon404{
-    color: #ff6600;
+    color: #FF6131;
 }
 .nav-menu > li a:hover{
-    color: #ff6600;
+    color: #FF6131;
 }
 .scroll-top:hover{
-    border-color: #ff6600;
+    border-color: #FF6131;
 }
 #site-toolbar{
-    border-bottom: 4px solid #ff6600;
+    /*border-bottom: 4px solid #FF6131;*/
 }
 @media(max-width: 600px){
     .nav-menu > li.current_page_item a{
-        color: #ff6600;
+        color: #FF6131;
     }      
 }
 .main-navigation .current_page_item a,
-.main-navigation .current-menu-item a{
+.main-navigation .current-menu-item a,
+.main-navigation .current_page_parent > a{
     color: rgb(255, 102, 0);
+}
+#top-banner{
+    background: #FF6131;
+}
+#site-toolbar .social-bar a:hover{
+    background: #FF6131;
+}
+
+.nav-menu > li a:hover{
+    border-color: #FF6131;
+}
+.main-navigation .current_page_parent .current-menu-item a,
+.main-navigation .current_page_item > a,
+.main-navigation .current_page_parent > a{
+    border-bottom: 5px solid #FF6131;
+}
+.sc-slider-wrapper .camera_caption .secondary-caption{
+    background: #FF6131;
+    background: rgba(255, 97, 49, 0.75);
+    
 }

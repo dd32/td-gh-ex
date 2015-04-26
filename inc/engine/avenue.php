@@ -7,8 +7,9 @@ function avenue_scripts() {
     wp_enqueue_style('avenue-style', get_stylesheet_uri());
     wp_enqueue_style('bootstrap', get_template_directory_uri() . '/inc/css/bootstrap.css', array(), SC_AVENUE_VERSION);
     wp_enqueue_style('fontawesome', get_template_directory_uri() . '/inc/css/font-awesome.min.css', array(), SC_AVENUE_VERSION);
+    wp_enqueue_style('avenue-animations', get_template_directory_uri() . '/inc/css/animate.css', array(), SC_AVENUE_VERSION);    
     wp_enqueue_style('avenue-main-style', get_template_directory_uri() . '/inc/css/style.css', array(), SC_AVENUE_VERSION);
-    if('Source Sans Pro, sans-serif' == of_get_option('sc_font_family')) 
+    if('Source Sans Pro, sans-serif' == of_get_option('sc_font_family', 'Source Sans Pro, sans-serif') ) 
         wp_enqueue_style('avenue-font-sans', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600', array(), SC_AVENUE_VERSION);
     if('Lato, sans-serif' == of_get_option('sc_font_family')) 
         wp_enqueue_style('avenue-font-lato', 'http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic,400italic', array(), SC_AVENUE_VERSION);
@@ -17,13 +18,14 @@ function avenue_scripts() {
     wp_enqueue_style('avenue-slider-style', get_template_directory_uri() . '/inc/css/camera.css', array(), SC_AVENUE_VERSION);
 
 
-    wp_enqueue_script('avenue-navigation', get_template_directory_uri() . '/js/navigation.js', array(), SC_AVENUE_VERSION, true);
-    wp_enqueue_script('avenue-bootstrapjs', get_template_directory_uri() . '/inc/js/bootstrap.js', array(), SC_AVENUE_VERSION, true);
+    wp_enqueue_script('avenue-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), SC_AVENUE_VERSION, true);
+    wp_enqueue_script('avenue-sticky', get_template_directory_uri() . '/inc/js/jquery.sticky.js', array('jquery'), SC_AVENUE_VERSION, true);
+    wp_enqueue_script('avenue-bootstrapjs', get_template_directory_uri() . '/inc/js/bootstrap.js', array('jquery'), SC_AVENUE_VERSION, true);
     wp_enqueue_script('avenue-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), SC_AVENUE_VERSION, true);
 
-    wp_enqueue_script('avenue-easing', get_template_directory_uri() . '/inc/js/jquery.easing.1.3.js', array(), SC_AVENUE_VERSION, true);
-    wp_enqueue_script('avenue-uslider', get_template_directory_uri() . '/inc/js/camera.js', array(), SC_AVENUE_VERSION, true);
-
+    wp_enqueue_script('avenue-easing', get_template_directory_uri() . '/inc/js/jquery.easing.1.3.js', array('jquery'), SC_AVENUE_VERSION, true);
+    wp_enqueue_script('avenue-cameraslider', get_template_directory_uri() . '/inc/js/camera.js', array('jquery'), SC_AVENUE_VERSION, true);
+    wp_enqueue_script('avenue-wow', get_template_directory_uri() . '/inc/js/wow.min.js', array('jquery'), SC_AVENUE_VERSION, true);
     wp_enqueue_script('avenue-script', get_template_directory_uri() . '/inc/js/script.js', array('jquery', 'jquery-ui-core'), SC_AVENUE_VERSION);
 
 
@@ -43,20 +45,30 @@ add_action('wp_enqueue_scripts', 'avenue_scripts');
 function avenue_widgets_init() {
 
     register_sidebar(array(
-        'name' => __('Header Right', 'avenue'),
-        'id' => 'sidebar-header-right',
+        'name' => __('Homepage Top Widget A', 'avenue'),
+        'id' => 'sidebar-banner',
         'description' => '',
-        'before_widget' => '<aside id="%1$s" class="' . of_get_option('sc_footer_columns') . ' widget %2$s">',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s animated avenue-animate fadeIn">',
         'after_widget' => '</aside>',
-        'before_title' => '<h2 class="hidden">',
+        'before_title' => '<h2>',
         'after_title' => '</h2>',
     ));
 
     register_sidebar(array(
-        'name' => __('Fullwidth Banner', 'avenue'),
-        'id' => 'sidebar-banner',
+        'name' => __('Homepage Top Widget B', 'avenue'),
+        'id' => 'sidebar-bannerb',
         'description' => '',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s animated avenue-animate fadeIn">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h2>',
+        'after_title' => '</h2>',
+    ));
+
+    register_sidebar(array(
+        'name' => __('Homepage Top Widget C', 'avenue'),
+        'id' => 'sidebar-bannerc',
+        'description' => '',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s animated avenue-animate fadeIn">',
         'after_widget' => '</aside>',
         'before_title' => '<h2>',
         'after_title' => '</h2>',
@@ -76,7 +88,7 @@ function avenue_widgets_init() {
         'name' => __('Footer', 'avenue'),
         'id' => 'sidebar-footer',
         'description' => '',
-        'before_widget' => '<aside id="%1$s" class="' . of_get_option('sc_footer_columns') . ' widget %2$s">',
+        'before_widget' => '<aside id="%1$s" class="' . esc_attr( of_get_option('sc_footer_columns', 'col-md-4') ) . ' widget %2$s animated avenue-animate fadeIn">',
         'after_widget' => '</aside>',
         'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2>',
@@ -107,7 +119,7 @@ function optionsframework_custom_scripts() { ?>
 
 function sc_smartcat_add_favicon(){
     if( of_get_option( 'sc_favicon' ) ) :
-        echo '<link rel="shortcut icon" type="image/png" href="'. of_get_option( 'sc_favicon' ) . '"/>';
+        echo '<link rel="shortcut icon" type="image/png" href="'. esc_attr( of_get_option( 'sc_favicon' ) ) . '"/>';
     endif;
 }
 add_action('wp_head', 'sc_smartcat_add_favicon');
@@ -125,13 +137,8 @@ function sc_avenue_css() {
     ?>
     <style type="text/css">
         body{
-            font-size: <?php echo of_get_option('sc_font_size'); ?>;
-            font-family: <?php echo of_get_option('sc_font_family'); ?>;
-        }
-        .sc-slider ul li{
-            background-size: <?php echo of_get_option('sc_slider_style'); ?>;
-            -webkit-background-size: <?php echo of_get_option('sc_slider_style'); ?>;
-            -moz-background-size: <?php echo of_get_option('sc_slider_style'); ?>;
+            font-size: <?php echo esc_attr( of_get_option('sc_font_size') ); ?>;
+            font-family: <?php echo esc_attr( of_get_option('sc_font_family') ); ?>;
         }
     </style>
     <?php
@@ -228,17 +235,29 @@ function avenue_recent_posts() {
     </div>
 <?php
 }
+
+function sc_footer() {
+    echo of_get_option('sc_footer_text', '2015 - Your Company Name');?>
+    <br>
+    <!-- Before you delete the link, please make a donation! Links & donations are the only way i get credit for the days it took to make this theme -->
+    <a href="http://smartcatdesign.net/" rel="designer">
+        <img src="<?php echo get_template_directory_uri() . '/inc/images/cat_logo.png'; ?>" width="20px"/>
+        <?php _e('Design by SmartCat','avenue'); ?>
+    </a>
+<?php }
+
 function sc_slider() { ?>
 <script>
     jQuery(document).ready(function($){
         jQuery('#camera_wrap_1').camera({
-            height: '400px',
+            height: '30%',
             loader: 'pie',
             pagination: false,
             thumbnails: false,
             fx: 'simpleFade',
             time: 4000,
             overlayer: true,
+            playPause : false
         });            
     });
 
@@ -247,26 +266,53 @@ function sc_slider() { ?>
 	<div class="fluid_container">
         <div class="camera_wrap" id="camera_wrap_1">
 
-                <?php if ('' != of_get_option('sc_slide1_image', get_template_directory_uri() . '/images/demo-orange.png')) { ?>
-                    <div data-thumb="<?php echo of_get_option('sc_slide1_image', get_template_directory_uri() . '/images/demo-orange.png') ?>" data-src="<?php echo of_get_option('sc_slide1_image', get_template_directory_uri() . '/images/demo-orange.png') ?>">
+                <?php if ('' != of_get_option('sc_slide1_image', get_template_directory_uri() . '/images/avenue-background.jpg')) { ?>
+                    <div data-thumb="<?php echo esc_attr( of_get_option('sc_slide1_image', get_template_directory_uri() ) . '/images/avenue-background.jpg') ?>" data-src="<?php echo esc_attr( of_get_option('sc_slide1_image', get_template_directory_uri() ) . '/images/avenue-background.jpg') ?>">
                         <div class="camera_caption fadeFromBottom">
-                            <?php echo of_get_option('sc_slide1_text','Clean & Modern Design');?>
+                            <div class="row">
+                                
+                                <div>
+                                    <span class="primary-caption fadeInLeft animated"><?php echo ( of_get_option('sc_slide1_text','Welcome to Avenue') );?></span>
+                                </div>
+                                <div>
+                                    <span class="secondary-caption fadeInUp animated"><?php echo ( of_get_option('sc_slide1_text2','WordPress Responsive Multi Purpose Theme') );?></span>
+                                </div>
+                                
+                            </div>
                         </div>
                     </div>
                 <?php } ?>            
             
-                <?php if ('' != of_get_option('sc_slide2_image', get_template_directory_uri() . '/images/demo-orange.png')) { ?>
-                      <div data-thumb="<?php echo of_get_option('sc_slide2_image', get_template_directory_uri() . '/images/demo-orange.png') ?>" data-src="<?php echo of_get_option('sc_slide2_image', get_template_directory_uri() . '/images/demo-orange.png') ?>">
+                <?php if ('' != of_get_option('sc_slide2_image', get_template_directory_uri() . '/images/avenue-background.jpg')) { ?>
+                      <div data-thumb="<?php echo esc_attr( of_get_option('sc_slide2_image', get_template_directory_uri() ) . '/images/avenue-background.jpg') ?>" data-src="<?php echo esc_attr( of_get_option('sc_slide2_image', get_template_directory_uri() ) . '/images/avenue-background.jpg') ?>">
                         <div class="camera_caption fadeFromBottom">
-                            <?php echo of_get_option('sc_slide2_text','Clean & Modern Design');?>
+                            <div class="row">
+                                
+                                <div>
+                                    <span class="primary-caption fadeInLeft animated"><?php echo of_get_option('sc_slide2_text','Attract Your Clients');?></span>
+                                </div>
+                                <div>
+                                    <span class="secondary-caption fadeInUp animated"><?php echo of_get_option('sc_slide2_text2','With Avenue Unique Call Outs');?></span>
+                                </div>                                
+                                
+                            </div>
                         </div>
                     </div>
                 <?php } ?>   
             
-                <?php if ('' != of_get_option('sc_slide3_image', get_template_directory_uri() . '/images/demo-orange.png')) { ?>     
-                    <div data-thumb="<?php echo of_get_option('sc_slide3_image', get_template_directory_uri() . '/images/demo-orange.png') ?>" data-src="<?php echo of_get_option('sc_slide3_image', get_template_directory_uri() . '/images/demo-orange.png') ?>">
+                <?php if ('' != of_get_option('sc_slide3_image', get_template_directory_uri() . '/images/avenue-background.jpg')) { ?>     
+                    <div data-thumb="<?php echo esc_attr( of_get_option('sc_slide3_image', get_template_directory_uri() ) . '/images/avenue-background.jpg') ?>" data-src="<?php echo esc_attr( of_get_option('sc_slide3_image', get_template_directory_uri() ) . '/images/avenue-background.jpg') ?>">
                         <div class="camera_caption fadeFromBottom">
-                            <?php echo of_get_option('sc_slide3_text','Clean & Modern Design');?>
+                            <div class="row">
+                                
+                                <div>
+                                    <span class="primary-caption fadeInLeft animated"><?php echo of_get_option('sc_slide3_text','Designed with Care');?></span>
+                                </div>
+                                <div>
+                                    <span class="secondary-caption fadeInUp animated"><?php echo of_get_option('sc_slide3_text2','Easy to Use');?></span>
+                                </div>                                    
+                                
+                            </div>
                         </div>
                     </div>
                 <?php } ?>      
@@ -278,52 +324,52 @@ function sc_slider() { ?>
 
 function sc_ctas() {
     ?>
-    <div id="site-cta" class="row <?php echo of_get_option('sc_container_width'); ?>"><!-- #CTA boxes -->
+    <div id="site-cta" class="row"><!-- #CTA boxes -->
         <div class="col-md-12">
             <div class="col-md-4 site-cta">
                 <div class="col-md-2">
-                    <i class="<?php echo of_get_option('sc_cta1_icon', 'fa fa-desktop'); ?>"></i>
+                    <i class="<?php echo esc_attr( of_get_option('sc_cta1_icon', 'fa fa-star') ); ?>"></i>
                 </div>
                 <div class="col-md-10">
                     <div>
-                        <h3><?php echo of_get_option('sc_cta1_title', 'Box 1 Title') ?></h3>
+                        <h3><?php echo of_get_option('sc_cta1_title', 'Unique Design') ?></h3>
                         <p>
-                            <?php echo of_get_option('sc_cta1_text', 'Box 1 Text. Input anything you want here'); ?>
+                            <?php echo of_get_option('sc_cta1_text', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus earum atque sit minus labore quaerat.'); ?>
                         </p>
                         <p class="text-right">
-                            <a href="<?php echo of_get_option('sc_cta1_url') ?>" class="btn btn-default btn-primary"><?php echo of_get_option('sc_cta1_button_text', 'Click Here');  ?></a>
+                            <a href="<?php echo esc_attr( of_get_option('sc_cta1_url') ); ?>" class="btn btn-default btn-primary"><?php echo of_get_option('sc_cta1_button_text', 'Click Here');  ?></a>
                         </p>                                
                     </div>                            
                 </div>
             </div>
             <div class="col-md-4 site-cta">
                 <div class="col-md-2">
-                    <i class="<?php echo of_get_option('sc_cta2_icon', 'fa fa-tachometer'); ?>"></i>
+                    <i class="<?php echo esc_attr( of_get_option('sc_cta2_icon', 'fa fa-mobile') ); ?>"></i>
                 </div>
                 <div class="col-md-10">
                     <div>
-                        <h3><?php echo of_get_option('sc_cta2_title', 'Box 2 Title') ?></h3>
+                        <h3><?php echo of_get_option('sc_cta2_title', 'Responsive') ?></h3>
                         <p>
-                            <?php echo of_get_option('sc_cta2_text', 'Box 2 Text. Input anything you want here'); ?>
+                            <?php echo of_get_option('sc_cta2_text', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus earum atque sit minus labore quaerat.'); ?>
                         </p>
                         <p class="text-right">
-                            <a href="<?php echo of_get_option('sc_cta2_url') ?>" class="btn btn-default btn-primary"><?php echo of_get_option('sc_cta2_button_text', 'Click Here');  ?></a>
+                            <a href="<?php echo esc_attr( of_get_option('sc_cta2_url') );?>" class="btn btn-default btn-primary"><?php echo of_get_option('sc_cta2_button_text', 'Click Here');  ?></a>
                         </p>                                
                     </div>                            
                 </div>
             </div>
             <div class="col-md-4 site-cta">
                 <div class="col-md-2">
-                    <i class="<?php echo of_get_option('sc_cta3_icon', 'fa fa-rocket'); ?>"></i>
+                    <i class="<?php echo esc_attr( of_get_option('sc_cta3_icon', 'fa fa-gears') ); ?>"></i>
                 </div>
                 <div class="col-md-10">
                     <div>
-                        <h3><?php echo of_get_option('sc_cta3_title', 'Box 3 Title') ?></h3>
+                        <h3><?php echo of_get_option('sc_cta3_title', 'Easy to Use') ?></h3>
                         <p>
-                            <?php echo of_get_option('sc_cta3_text', 'Box 3 Text. Input anything you want here') ?>
+                            <?php echo of_get_option('sc_cta3_text', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus earum atque sit minus labore quaerat.') ?>
                         </p>
                         <p class="text-right">
-                            <a href="<?php echo of_get_option('sc_cta3_url') ?>" class="btn btn-default btn-primary"><?php echo of_get_option('sc_cta3_button_text', 'Click Here');  ?></a>
+                            <a href="<?php echo esc_attr( of_get_option('sc_cta3_url') );?>" class="btn btn-default btn-primary"><?php echo of_get_option('sc_cta3_button_text', 'Click Here');  ?></a>
                         </p>
                     </div>                            
                 </div>
@@ -337,15 +383,40 @@ function sc_ctas() {
 function sc_banner() {
     ?>
     <div id="top-banner" class="full-banner col-md-12">
-        <div class="row <?php echo of_get_option('sc_container_width'); ?>">
-            <div class="col-md-12 center">
+        <div class="row">
+            <div class="center">
                 <div class="top-banner-text">
                     <?php get_sidebar('banner'); ?>
-                    <!--<span class="primary-color"><?php echo of_get_option('sc_banner_text', 'Banner Call Out Text'); ?></span>-->
                 </div>
-<!--                <p>
-                    <a href="<?php echo of_get_option('sc_banner_url'); ?>" class="btn btn-default btn-primary"><?php echo of_get_option('sc_banner_button_text', 'Learn More'); ?></a>
-                </p>-->
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <?php
+}
+
+function sc_bannerb() {
+    ?>
+    <div id="mid-banner" class="full-banner col-md-12">
+        <div class="row">
+            <div class="center">
+                <div class="top-banner-text animated avenue-animate fadeIn">
+                    <?php get_sidebar('bannerb'); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <?php
+}
+function sc_bannerc() {
+    ?>
+    <div id="bottom-banner" class="full-banner col-md-12">
+        <div class="row">
+            <div class="center">
+                <div class="top-banner-text animated avenue-animate fadeIn">
+                    <?php get_sidebar('bannerc'); ?>
+                </div>
             </div>
         </div>
     </div>
@@ -354,23 +425,23 @@ function sc_banner() {
 }
 
 function sc_toolbar() {
-    if ('no' != of_get_option('sc_headerbar_bool', 'yes')) {
+    if ('yes' == of_get_option('sc_headerbar_bool', 'yes')) {
         ?>
         <div id="site-toolbar">
-            <div class="row <?php echo of_get_option('sc_container_width'); ?>">
+            <div class="row">
                 <div class="col-md-12">
                     <div class="col-xs-6 contact-bar">
-                        <?php if ('' != of_get_option('sc_phone_url')) { ?>
-                            <a href="tel:+<?php echo of_get_option('sc_phone_url'); ?>" class="icon-phone">
-                                <i class="fa fa-phone"></i>
-                                <span><?php echo of_get_option('sc_phone_url'); ?></span>
+                        <?php if ('' != of_get_option('sc_phone_url', '#')) { ?>
+                            <a href="tel:+<?php echo esc_attr( of_get_option('sc_phone_url', '6131231322') ); ?>" class="icon-phone">
+                                <i class="fa fa-mobile"></i>
+                                <span><?php echo of_get_option('sc_phone_url', '6131231322'); ?></span>
                             </a>
                         <?php } ?>
 
-                        <?php if ('' != of_get_option('sc_address_url')) { ?>
+                        <?php if ('' != of_get_option('sc_address_url', '123 main street, Kingston, Ontario')) { ?>
                             <a href="#" class="icon-map">
                                 <i class="fa fa-map-marker"></i>
-                                <span><?php echo of_get_option('sc_address_url') ?></span>
+                                <span><?php echo of_get_option('sc_address_url', '123 main street, Kingston, Ontario') ?></span>
                             </a>
                         <?php } ?>
 
@@ -379,29 +450,41 @@ function sc_toolbar() {
 
                     <div class="col-xs-6 social-bar">
 
-                        <?php if ('' != of_get_option('sc_facebook_url')) { ?>
-                            <a href="<?php echo of_get_option('sc_facebook_url') ?>" target="_blank" class="icon-facebook">
+                        <?php if ('' != of_get_option('sc_facebook_url', '#')) { ?>
+                            <a href="<?php echo esc_attr( of_get_option('sc_facebook_url') ); ?>" target="_blank" class="icon-facebook">
                                 <i class="fa fa-facebook"></i>
                             </a>
                         <?php } ?>
 
-                        <?php if ('' != of_get_option('sc_twitter_url')) { ?>
-                            <a href="<?php echo of_get_option('sc_twitter_url') ?>" target="_blank" class="icon-twitter">
+                        <?php if ('' != of_get_option('sc_twitter_url', '#')) { ?>
+                            <a href="<?php echo esc_attr( of_get_option('sc_twitter_url') ); ?>" target="_blank" class="icon-twitter">
                                 <i class="fa fa-twitter"></i>                            
                             </a>
                         <?php } ?>
 
 
-                        <?php if ('' != of_get_option('sc_linkedin_url')) { ?>
-                            <a href="<?php echo of_get_option('sc_linkedin_url') ?>" target="_blank" class="icon-linkedin">
+                        <?php if ('' != of_get_option('sc_linkedin_url', '#')) { ?>
+                            <a href="<?php echo esc_attr( of_get_option('sc_linkedin_url') ); ?>" target="_blank" class="icon-linkedin">
                                 <i class="fa fa-linkedin"></i>                            
                             </a>
                         <?php } ?>
 
 
-                        <?php if ('' != of_get_option('sc_gplus_url')) { ?>
-                            <a href="<?php echo of_get_option('sc_gplus_url') ?>" target="_blank" class="icon-gplus">
+                        <?php if ('' != of_get_option('sc_gplus_url', '#')) { ?>
+                            <a href="<?php echo esc_attr( of_get_option('sc_gplus_url') ); ?>" target="_blank" class="icon-gplus">
                                 <i class="fa fa-google-plus"></i>                            
+                            </a>
+                        <?php } ?>
+
+                        <?php if ('' != of_get_option('sc_youtube_url', '#')) { ?>
+                            <a href="<?php echo esc_attr( of_get_option('sc_youtube_url') ); ?>" target="_blank" class="icon-gplus">
+                                <i class="fa fa-youtube"></i>                            
+                            </a>
+                        <?php } ?>
+
+                        <?php if ('' != of_get_option('sc_pinterest_url', '#')) { ?>
+                            <a href="<?php echo esc_attr( of_get_option('sc_pinterest_url') ); ?>" target="_blank" class="icon-gplus">
+                                <i class="fa fa-pinterest"></i>                            
                             </a>
                         <?php } ?>
 
@@ -413,12 +496,29 @@ function sc_toolbar() {
     }
 }
 
-function sc_footer() {
-    echo of_get_option('sc_footer_text');?>
-    <br>
-    <!-- Before you delete the link, please make a donation! Links & donations are the only way i get credit for the days it took to make this theme -->
-    <a href="http://smartcatdesign.net/" rel="designer">
-        <img src="<?php echo get_template_directory_uri() . '/inc/images/cat_logo.png'; ?>" width="20px"/>
-        Design by SmartCat
-    </a>
+function avenue_close(){ ?>
+    
+    <footer id="colophon" class="site-footer" role="contentinfo">
+        <div class="footer-boxes">
+            <div class="row">
+                <div class="col-md-12">
+                    <?php get_sidebar('footer'); ?>
+
+                </div>            
+            </div>        
+        </div>
+        <div class="site-info">
+            <div class="row">
+
+                <div class="col-xs-6 text-left">
+                    <i class="scroll-top fa fa-chevron-circle-up"></i>
+                </div>
+                <div class="col-xs-6 text-right">
+                    <?php echo sc_footer(); ?>
+                </div>
+
+            </div>
+        </div><!-- .site-info -->
+    </footer><!-- #colophon -->    
+    
 <?php }

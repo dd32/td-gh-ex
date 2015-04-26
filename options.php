@@ -193,35 +193,49 @@ function optionsframework_options() {
         'name' => __('Twitter URL', 'options_framework_theme'),
         'desc' => __('Enter the URL for your Facebook Page', 'options_framework_theme'),
         'id' => 'sc_twitter_url',
-        'std' => '',
+        'std' => '#',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('LinkedIn URL', 'options_framework_theme'),
         'desc' => __('Enter the URL for your LinkedIn Page', 'options_framework_theme'),
         'id' => 'sc_linkedin_url',
-        'std' => '',
+        'std' => '#',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('Google Plus URL', 'options_framework_theme'),
         'desc' => __('Enter the URL for your Google Plus Page', 'options_framework_theme'),
         'id' => 'sc_gplus_url',
-        'std' => '',
+        'std' => '#',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Youtube URL', 'options_framework_theme'),
+        'desc' => __('Enter the URL for your Youtube Page', 'options_framework_theme'),
+        'id' => 'sc_youtube_url',
+        'std' => '#',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Pinterest URL', 'options_framework_theme'),
+        'desc' => __('Enter the URL for your Pinterest Page', 'options_framework_theme'),
+        'id' => 'sc_pinterest_url',
+        'std' => '#',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('Phone Number', 'options_framework_theme'),
         'desc' => __('A text input field.', 'options_framework_theme'),
         'id' => 'sc_phone_url',
-        'std' => '',
+        'std' => '6139991111',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('Address', 'options_framework_theme'),
         'desc' => __('A text input field.', 'options_framework_theme'),
         'id' => 'sc_address_url',
-        'std' => '',
+        'std' => '123 Main St.',
         'type' => 'text');
 
     $options[] = array(
@@ -254,17 +268,7 @@ function optionsframework_options() {
     // ---------------------------------------------------------------------- Design
     $options[] = array(
         'name' => __('Design', 'options_framework_theme'),
-        'type' => 'heading');
-
-    $options[] = array(
-        'name' => __('Container Width', 'options_framework_theme'),
-        'desc' => __('Width of the site content container', 'options_framework_theme'),
-        'id' => 'sc_container_width',
-        'std' => '1060px',
-        'type' => 'select',
-        'class' => 'mini', //mini, tiny, small
-        'options' => $width_array);    
-    
+        'type' => 'heading');    
     
     $options[] = array(
         'name' => "Select theme skin color",
@@ -383,10 +387,18 @@ function optionsframework_options() {
         'id' => 'sc_slide1_image',
         'std' => $path,
         'type' => 'upload');
+    
     $options[] = array(
         'name' => __('Slide #1 Text', 'options_framework_theme'),
         'desc' => __('First Slide Text', 'options_framework_theme'),
         'id' => 'sc_slide1_text',
+        'std' => 'Clean & Modern Design',
+        'type' => 'text');
+    
+    $options[] = array(
+        'name' => __('Slide #2 Text', 'options_framework_theme'),
+        'desc' => __('First Slide Text', 'options_framework_theme'),
+        'id' => 'sc_slide1_text2',
         'std' => 'Clean & Modern Design',
         'type' => 'text');
 
@@ -396,10 +408,18 @@ function optionsframework_options() {
         'id' => 'sc_slide2_image',
         'std' => $path,
         'type' => 'upload');
+    
     $options[] = array(
         'name' => __('Slide #2 Text', 'options_framework_theme'),
         'desc' => __('Second Slide Text', 'options_framework_theme'),
         'id' => 'sc_slide2_text',
+        'std' => 'Reponsive with Bootstrap',
+        'type' => 'text');
+    
+    $options[] = array(
+        'name' => __('Slide #2 Text', 'options_framework_theme'),
+        'desc' => __('Second Slide Text', 'options_framework_theme'),
+        'id' => 'sc_slide2_text2',
         'std' => 'Reponsive with Bootstrap',
         'type' => 'text');
 
@@ -409,6 +429,8 @@ function optionsframework_options() {
         'id' => 'sc_slide3_image',
         'std' => $path,
         'type' => 'upload');
+    
+    
     $options[] = array(
         'name' => __('Slide #3 Text', 'options_framework_theme'),
         'desc' => __('Third Slide Text', 'options_framework_theme'),
@@ -417,12 +439,12 @@ function optionsframework_options() {
         'type' => 'text');    
     
     $options[] = array(
-        'name' => __('Show Banner', 'options_framework_theme'),
-        'desc' => __('Toggle the banner on or off', 'options_framework_theme'),
-        'id' => 'sc_banner_bool',
-        'std' => 'yes',
-        'type' => 'radio',
-        'options' => $bool_array);
+        'name' => __('Slide #3 Text', 'options_framework_theme'),
+        'desc' => __('Third Slide Text', 'options_framework_theme'),
+        'id' => 'sc_slide3_text2',
+        'std' => 'Comes with 600 Icons',
+        'type' => 'text');    
+
     
     $options[] = array(
         'name' => __('Show 3 CTA Boxes', 'options_framework_theme'),
@@ -572,198 +594,6 @@ function optionsframework_options() {
             'off' => 'Hide',
         ));    
     
-    //-------------------- Add ons
-//    $options[] = array(
-//        'name' => __('Add Ons', 'options_framework_theme'),
-//        'type' => 'heading');
-    
-    
-//    $options[] = array(
-//        'name' => __('Add Ons', 'options_framework_theme'),
-//        'type' => 'heading');
-
-
-//    $options[] = array(
-//        'name' => __('Text Editor', 'options_framework_theme'),
-//        'type' => 'heading');
-//    $options[] = array(
-//        'name' => __('Input Text Mini', 'options_framework_theme'),
-//        'desc' => __('A mini text input field.', 'options_framework_theme'),
-//        'id' => 'example_text_mini',
-//        'std' => 'Default',
-//        'class' => 'mini',
-//        'type' => 'text');
-//
-//    $options[] = array(
-//        'name' => __('Input Text', 'options_framework_theme'),
-//        'desc' => __('A text input field.', 'options_framework_theme'),
-//        'id' => 'example_text',
-//        'std' => 'Default Value',
-//        'type' => 'text');
-//
-//    $options[] = array(
-//        'name' => __('Textarea', 'options_framework_theme'),
-//        'desc' => __('Textarea description.', 'options_framework_theme'),
-//        'id' => 'example_textarea',
-//        'std' => 'Default Text',
-//        'type' => 'textarea');
-//
-//    $options[] = array(
-//        'name' => __('Input Select Small', 'options_framework_theme'),
-//        'desc' => __('Small Select Box.', 'options_framework_theme'),
-//        'id' => 'example_select',
-//        'std' => 'three',
-//        'type' => 'select',
-//        'class' => 'mini', //mini, tiny, small
-//        'options' => $test_array);
-//
-//    $options[] = array(
-//        'name' => __('Input Select Wide', 'options_framework_theme'),
-//        'desc' => __('A wider select box.', 'options_framework_theme'),
-//        'id' => 'example_select_wide',
-//        'std' => 'two',
-//        'type' => 'select',
-//        'options' => $test_array);
-//
-//    if ($options_categories) {
-//        $options[] = array(
-//            'name' => __('Select a Category', 'options_framework_theme'),
-//            'desc' => __('Passed an array of categories with cat_ID and cat_name', 'options_framework_theme'),
-//            'id' => 'example_select_categories',
-//            'type' => 'select',
-//            'options' => $options_categories);
-//    }
-//
-//    if ($options_tags) {
-//        $options[] = array(
-//            'name' => __('Select a Tag', 'options_check'),
-//            'desc' => __('Passed an array of tags with term_id and term_name', 'options_check'),
-//            'id' => 'example_select_tags',
-//            'type' => 'select',
-//            'options' => $options_tags);
-//    }
-//
-//    $options[] = array(
-//        'name' => __('Select a Page', 'options_framework_theme'),
-//        'desc' => __('Passed an pages with ID and post_title', 'options_framework_theme'),
-//        'id' => 'example_select_pages',
-//        'type' => 'select',
-//        'options' => $options_pages);
-//
-//    $options[] = array(
-//        'name' => __('Input Radio (one)', 'options_framework_theme'),
-//        'desc' => __('Radio select with default options "one".', 'options_framework_theme'),
-//        'id' => 'example_radio',
-//        'std' => 'one',
-//        'type' => 'radio',
-//        'options' => $test_array);
-//
-//    $options[] = array(
-//        'name' => __('Example Info', 'options_framework_theme'),
-//        'desc' => __('This is just some example information you can put in the panel.', 'options_framework_theme'),
-//        'type' => 'info');
-//
-//    $options[] = array(
-//        'name' => __('Input Checkbox', 'options_framework_theme'),
-//        'desc' => __('Example checkbox, defaults to true.', 'options_framework_theme'),
-//        'id' => 'example_checkbox',
-//        'std' => '1',
-//        'type' => 'checkbox');
-//    
-//
-//    $options[] = array(
-//        'name' => __('Check to Show a Hidden Text Input', 'options_framework_theme'),
-//        'desc' => __('Click here and see what happens.', 'options_framework_theme'),
-//        'id' => 'example_showhidden',
-//        'type' => 'checkbox');
-//
-//    $options[] = array(
-//        'name' => __('Hidden Text Input', 'options_framework_theme'),
-//        'desc' => __('This option is hidden unless activated by a checkbox click.', 'options_framework_theme'),
-//        'id' => 'example_text_hidden',
-//        'std' => 'Hello',
-//        'class' => 'hidden',
-//        'type' => 'text');
-//
-//    $options[] = array(
-//        'name' => __('Uploader Test', 'options_framework_theme'),
-//        'desc' => __('This creates a full size uploader that previews the image.', 'options_framework_theme'),
-//        'id' => 'example_uploader',
-//        'type' => 'upload');
-//
-//    $options[] = array(
-//        'name' => "Example Image Selector",
-//        'desc' => "Images for layout.",
-//        'id' => "example_images",
-//        'std' => "2c-l-fixed",
-//        'type' => "images",
-//        'options' => array(
-//            '1col-fixed' => $imagepath . '1col.png',
-//            '2c-l-fixed' => $imagepath . '2cl.png',
-//            '2c-r-fixed' => $imagepath . '2cr.png')
-//    );
-//
-//    $options[] = array(
-//        'name' => __('Example Background', 'options_framework_theme'),
-//        'desc' => __('Change the background CSS.', 'options_framework_theme'),
-//        'id' => 'example_background',
-//        'std' => $background_defaults,
-//        'type' => 'background');
-//
-//    $options[] = array(
-//        'name' => __('Multicheck', 'options_framework_theme'),
-//        'desc' => __('Multicheck description.', 'options_framework_theme'),
-//        'id' => 'example_multicheck',
-//        'std' => $multicheck_defaults, // These items get checked by default
-//        'type' => 'multicheck',
-//        'options' => $multicheck_array);
-//
-//    $options[] = array(
-//        'name' => __('Colorpicker', 'options_framework_theme'),
-//        'desc' => __('No color selected by default.', 'options_framework_theme'),
-//        'id' => 'example_colorpicker',
-//        'std' => '',
-//        'type' => 'color');
-//
-//    $options[] = array('name' => __('Typography', 'options_framework_theme'),
-//        'desc' => __('Example typography.', 'options_framework_theme'),
-//        'id' => "example_typography",
-//        'std' => $typography_defaults,
-//        'type' => 'typography');
-//
-//    $options[] = array(
-//        'name' => __('Custom Typography', 'options_framework_theme'),
-//        'desc' => __('Custom typography options.', 'options_framework_theme'),
-//        'id' => "custom_typography",
-//        'std' => $typography_defaults,
-//        'type' => 'typography',
-//        'options' => $typography_options);
-
-
-    /**
-     * For $settings options see:
-     * http://codex.wordpress.org/Function_Reference/wp_editor
-     *
-     * 'media_buttons' are not supported as there is no post to attach items to
-     * 'textarea_name' is set by the 'id' you choose
-     
-    
-      $wp_editor_settings = array(
-      'wpautop' => true, // Default
-      'textarea_rows' => 5,
-      'tinymce' => array('plugins' => 'wordpress')
-      );
-
-      $options[] = array(
-      'name' => __('Default Text Editor', 'options_framework_theme'),
-      'desc' => sprintf(__('You can also pass settings to the editor.  Read more about wp_editor in <a href="%1$s" target="_blank">the WordPress codex</a>', 'options_framework_theme'), 'http://codex.wordpress.org/Function_Reference/wp_editor'),
-      'id' => 'example_editor',
-      'type' => 'editor',
-      'settings' => $wp_editor_settings);
-      */
-      
-     
-
     return $options;
 }
 
@@ -790,7 +620,7 @@ function sc_avenue_options_display_sidebar() {
             </a>
         </div>    
         
-        <p>The Pro Version includes
+<!--        <p>The Pro Version includes
         <ol>
             <li>An additional boxed template</li>
             <li>up to 5 slides</li>
@@ -802,7 +632,7 @@ function sc_avenue_options_display_sidebar() {
             <a href="http://smartcatdesign.net/downloads/avenue/" target="_blank">
                 Upgrade to Pro Version
             </a>
-        </div>
+        </div>-->
 
         <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FSmartcatDesign&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21&amp;appId=233286813420319" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>
     </div>

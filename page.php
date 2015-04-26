@@ -17,12 +17,12 @@ get_header();
         <?php // get_template_part('content', 'page'); ?>
         <div class="col-md-12">
             <div class="page-title">
-                <div class="row text-left <?php echo of_get_option('sc_container_width'); ?>">
+                <div class="row text-left">
                     <?php the_title(); ?>
                 </div>
             </div>
-            <div class="page-content row <?php echo of_get_option('sc_container_width'); ?>">
-                <div class="col-md-12">
+            <div class="page-content row">
+                <div class="">
                     <div class="col-md-9 item-page">
                         <?php
                         the_content();

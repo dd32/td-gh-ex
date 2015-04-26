@@ -13,7 +13,7 @@
 get_header();
 ?>
 
-<div id="content" class="site-content row blogroll <?php echo of_get_option('sc_container_width'); ?>">
+<div id="content" class="site-content row blogroll">
     <div class="col-md-9 site-content item-page <?php echo of_get_option('sc_blog_layout'); ?>">
         <?php if (have_posts()) : ?>
             <?php /* Start the Loop */ ?>

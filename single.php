@@ -11,17 +11,23 @@ get_header();
     <?php while (have_posts()) : the_post(); ?>
         <div class="col-md-12">
             <div class="page-title single-title">
-                <div class="row text-left <?php echo of_get_option('sc_container_width'); ?>">
+                <div class="row text-left">
                     <?php the_title(); ?>
+                    <div class="post-details">
+                    <?php
+                        echo 'on' == of_get_option('sc_single_date', 'on') ? ' Posted on: ' .  esc_html( get_the_date() ) : '';
+                        echo 'on' == of_get_option('sc_single_author', 'on') ? ', by : ' . esc_attr(get_the_author() ) : '';  
+                    ?>                    
+                    </div>
                 </div>
             </div>
-            <div class="page-content row <?php echo of_get_option('sc_container_width'); ?>">
-                <div class="col-md-9 item-page <?php echo of_get_option('sc_single_layout'); ?>">
+            
+            <div class="page-content row">
+                <div class="col-md-9 item-page <?php echo esc_attr( of_get_option('sc_single_layout') ); ?>">
                     <?php
                     'on' == of_get_option('sc_single_featured', 'on') ? the_post_thumbnail('medium') : '';
                     the_content();
-                    echo 'on' == of_get_option('sc_single_date', 'on') ? 'Posted on: ' .  esc_html( get_the_date() ) : '';
-                    echo 'on' == of_get_option('sc_single_author', 'on') ? ', by : ' . esc_attr(get_the_author() ) : '';                    
+                  
                     wp_link_pages(array(
                         'before' => '<div class="page-links">' . __('Pages:', 'avenue'),
                         'after' => '</div>',

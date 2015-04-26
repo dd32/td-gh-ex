@@ -3,11 +3,11 @@ Theme Name: avenue
 Theme URI: http://smartcatdesign.net/avenue
 Author: SmartCat
 Author URI: http://smartcatdesign.net
-Description: A unique and modern lightweight responsive WordPress theme that is ready out of the box to make your website appealing while being easy to use. Avenue comes loaded with over 600 icons with cool animationm a light weight custom slider and 3 color skins(orange, blue and green) as well as 5 widget placeholders including a sidebar, full width banner, footer, and header.
-Version: 1.1.4
+Description: Avenue is a responsive multi-purpose theme that can be used by a business, individual or agency. Avenue looks great on mobile. It is very easy to setup even for beginners and offers a bautiful and unique design that is built to attract your site viewers attention. Avenue focuses on call out boxes and widgets that are very effective at highlighting your products, services or blog. Avenue comes loaded with over 600 icons with cool animations, a sticky nav bar, a header with links to your social network pages, address and phone number with a click-to-call functionality, a light weight custom responsive slider and 3 color skins(orange, blue and green) as well as 6 widget placeholders including a sidebar, full width banner, footer, and 3 unique homepage widgets. View the theme demo here: https://smartcatdesign.net/preview/avenue/
+Version: 2.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: orange,black,green,full-width-template,featured-images,fixed-layout,responsive-layout,post-formats,featured-images,theme-options,right-sidebar,three-columns,one-column
+Tags: orange,black,green,blue,full-width-template,featured-images,fixed-layout,responsive-layout,post-formats,theme-options,right-sidebar,three-columns,one-column,translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -413,16 +413,7 @@ a:active {
 .menu-toggle {
 	display: none;
 }
-@media screen and (max-width: 600px) {
-	.menu-toggle,
-	.main-navigation.toggled .nav-menu {
-		display: block;
-	}
 
-	.main-navigation ul {
-		display: none;
-	}
-}
 .site-main .comment-navigation,
 .site-main .paging-navigation,
 .site-main .post-navigation {

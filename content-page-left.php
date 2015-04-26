@@ -11,7 +11,7 @@
             <?php the_title(); ?>
         </div>
     </div>
-    <div class="row <?php echo of_get_option('sc_container_width'); ?>">
+    <div class="row">
         <div class=" page-content col-md-12">
             <div class="col-md-3">
                 <?php get_sidebar('left'); ?>
