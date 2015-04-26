@@ -39,7 +39,7 @@ class atout_Walker_Comment extends Walker_Comment {
 
       <?php if ($comment->comment_approved == '0') : ?>
       <div class="alert alert-grey">
-        <?php _e('Your comment is awaiting moderation.', 'coeur'); ?>
+        <?php _e('Your comment is awaiting moderation.', 'atout'); ?>
       </div>
     <?php endif; ?>
 

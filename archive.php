@@ -29,14 +29,7 @@ endif; ?>
 			<div class="searchpage">
 				<header class="search-header">
 					<h3 class="headtitle"><?php echo __('Archives', 'atout'); ?></h3>
-					<form role="search" method="get" id="searchform" action="<?php echo home_url() ?>">
-					  <div class="filtersearch">
-					  	<select name="archive-menu" onChange="document.location.href=this.options[this.selectedIndex].value;">
-						<option value=""><?php echo __('Select month', 'atout'); ?></option>
-						<?php wp_get_archives('type=monthly&format=option'); ?>
-						</select>
-					  </div>
-					</form>
+					<?php get_search_form(); ?>
 				</header><!-- .page-header -->
 				<?php if ( have_posts() ) : ?>
 

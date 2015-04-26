@@ -22,5 +22,5 @@
 	<?php if(has_tag()): ?>
 		<p class="post-tags"><?php the_tags(); ?></p>
 	<?php endif; ?>
-	<?php  wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
+	<?php  wp_link_pages(array('before' => '<p><strong>'. __('Pages: ', 'atout').'</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
 </article>

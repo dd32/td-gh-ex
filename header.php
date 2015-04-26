@@ -7,6 +7,10 @@
  * @package Atout
  * @author Frenchtastic.eu
  */
+$atout_favicon = get_theme_mod( 'atout_favicon');
+$atout_bookmark_other = get_theme_mod( 'atout_bookmark_other');
+$atout_bookmark_iphone = get_theme_mod( 'atout_bookmark_iphone');
+$atout_bookmark_ipad = get_theme_mod( 'atout_bookmark_ipad');
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -16,19 +20,19 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	
-	<?php if(!empty(get_theme_mod( 'atout_favicon'))): ?>
+	<?php if(!empty($atout_favicon)): ?>
 	<link rel="shortcut icon" href="<?php echo esc_url( get_theme_mod( 'atout_favicon' ) ); ?>" type="image/png" />
 	<?php endif; ?>
 
-	<?php if(!empty(get_theme_mod( 'atout_bookmark_other'))): ?>
+	<?php if(!empty($atout_bookmark_other)): ?>
 	<link rel="apple-touch-icon" href="<?php echo esc_url( get_theme_mod( 'atout_bookmark_other' ) ); ?>">
 	<?php endif; ?>
 
-	<?php if(!empty(get_theme_mod( 'atout_bookmark_iphone'))): ?>
+	<?php if(!empty($atout_bookmark_iphone)): ?>
 	<link rel="apple-touch-icon" sizes="120x120" href="<?php echo esc_url( get_theme_mod( 'atout_bookmark_iphone' ) ); ?>">
 	<?php endif; ?>
 	
-	<?php if(!empty(get_theme_mod( 'atout_bookmark_ipad'))): ?>
+	<?php if(!empty($atout_bookmark_ipad)): ?>
 	<link rel="apple-touch-icon" sizes="152x152" href="<?php echo esc_url( get_theme_mod( 'atout_bookmark_ipad' ) ); ?>">
 	<?php endif; ?>
 
@@ -52,9 +56,15 @@
 			                'menu_class'        => 'topbarnav-menu',)
 			            );
 			   		?>
+			   		<?php if ( is_user_logged_in() ): ?>
+					<ul class="pull-right">
+						<li><a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="Login"><?php echo __('Logout', 'atout'); ?></a></li>
+					</ul>
+					<?php else: ?>
 					<ul class="pull-right">
 						<li><a href="<?php echo wp_login_url( esc_url( home_url( '/' ) ) ); ?>" title="Login"><?php echo __('Login', 'atout'); ?></a></li>
 					</ul>
+					<?php endif; ?>
 				</div>
 			</div>
 		</div>

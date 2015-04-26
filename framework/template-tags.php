@@ -128,7 +128,7 @@ function atout_footer(){
   if(get_theme_mod('footer_copyright') != ''){
     return get_theme_mod('footer_copyright');
   } else {
-    return 'Design by <a href="http://frenchtastic.eu/">Frenchtastic.eu</a>';
+    return __('Design by ', 'atout'). '<a href="http://frenchtastic.eu/">Frenchtastic.eu</a>';
   }
 }
 

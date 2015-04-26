@@ -165,7 +165,7 @@ textarea.field { height: auto; }
 
 .navbar { min-height: 80px; font-family: "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial; margin-bottom: 35px; box-shadow: 0 0 3px #E1DEDE; }
 
-.navbar-default { background-color: #FFF; border-bottom: 0; }
+.navbar-default { background-color: #FFF; border-bottom: 0; border-radius: 0 }
 
 .navbar-fixed-top { border-bottom: 0; }
 
@@ -197,7 +197,7 @@ textarea.field { height: auto; }
 
 .navbar-nav { margin-top: 0; margin-bottom: 0; }
 
-.topbar { background-color: #000; height: 32px; }
+.topbar { background-color: #000; height: 32px; display: none; }
 
 .topbarnav ul { list-style: none; margin: 0 0 0; }
 .topbarnav ul li { float: left; display: inline-block; height: 32px; line-height: 32px; margin-right: 7px; font-size: 14px; }
@@ -284,6 +284,7 @@ footer.footer p { margin-bottom: 0; }
 .searchpage .search-header { border-bottom: 1px solid #ececec; margin-bottom: 20px; padding-bottom: 15px; color: #777; overflow: hidden; }
 
 .search-header h3.headtitle { margin-bottom: 0; margin-top: 3px; float: left; }
+.search-header .search-form { float: right; }
 
 .filtersearch input { width: auto; max-width: 172px; height: 32px; padding: 6px 12px; font-size: 14px; line-height: 1.42857143; color: #555; background-color: #fff; background-image: none; border: 1px solid #ececec; border-radius: 3px; -webkit-box-shadow: none; box-shadow: none; -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s; -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 300; }
 .filtersearch select { padding-right: 35px !important; max-width: 160px; width: auto; float: right; height: 32px; padding: 6px 12px; font-size: 14px; line-height: 1.42857143; color: #555; background-color: #fff; outline: 0; display: inline-block; -webkit-appearance: none; -moz-appearance: none; appearance: none; cursor: pointer; text-indent: .01px; border: 1px solid #ececec; border-radius: 3px; -webkit-box-shadow: none; box-shadow: none; -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s; -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 300; background: url("../img/select-arrow.png") 100% 50% no-repeat; }
