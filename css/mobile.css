@@ -6,7 +6,7 @@ Author URI: http://hjyl.org/
 Description: Blue WordPress Theme based as HTML5 + CSS3.
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Version: 2.5
+Version: 2.6
 */
 @import url("font-awesome.min.css");
 /* =Reset CSS.= */
@@ -466,7 +466,7 @@ body > header{
 .oloPosts:before,
 #olo article:before,
 .oloEntry:before ,
-#comments > .depth-1 > .comment:before ,
+.commentlist > .depth-1 > .comment:before ,
 #comments-title span:before,
 #pings-title span:before,
 #pinglist li:before ,
@@ -486,7 +486,7 @@ body > header{
 	padding: 0 0 1em;
 }
 #olo article:before ,
-#comments > .depth-1 > .comment:before,
+.commentlist > .depth-1 > .comment:before,
 #comments-title span:before ,
 #pings-title span:before ,
 #pinglist li:before ,
@@ -501,7 +501,7 @@ body > header{
 	width: 9px;
 }
 #olo article:hover:before,
-#comments > .depth-1:hover > .comment:before,
+.commentlist > .depth-1:hover > .comment:before,
 #comments-title:hover:before,
 #comments-title:hover span:before,
 #pings-title:hover:before,
@@ -591,7 +591,7 @@ body > header{
 	transform:			rotate(45deg);
 }
 .oloEntry,
-#comments li.depth-1{
+.commentlist li.depth-1{
 	background:#FFF;
 	border-radius:5px;
 	margin-left:120px;
@@ -647,25 +647,15 @@ body > header{
 	margin: 10px 0 0 -16px;
 }
 
-/*ad
---------------------*/
-#adx{
-	float:right;
-	margin:10px 0 10px 10px;
-}
-#adxx{
-	text-align:center;
-}
-
 /*Comments*/
-#comments li.depth-1{
+.commentlist li.depth-1{
 	position:relative;
 	padding:10px;
 	margin-bottom:10px;
 	border:1px solid #ccc;
 	border-radius:5px;
 }
-#comments li.depth-1:before{
+.commentlist li.depth-1:before{
 	content:" ";
 	border-left:1px solid #ccc;
 	border-bottom:1px solid #ccc;
@@ -681,14 +671,14 @@ body > header{
 	transform:			rotate(45deg);
 	background:#FFF;
 }
-#comments > .depth-1 > .comment:before{
+.commentlist > .depth-1 > .comment:before{
 	margin:20px 0 0 -139px;
 }
 /*IE9 hack
-:root #comments li.depth-1:before{
+:root .commentlist li.depth-1:before{
 	filter:none\9;
 }*/
-#comments li.depth-1 > .comment div.comment-author .avatar{
+.commentlist li.depth-1 > .comment div.comment-author .avatar{
 	position:absolute;
 	top:0;
 	left:-115px;
@@ -700,8 +690,12 @@ body > header{
 	position:absolute;
 	top:10px;
 	right:10px;
-	font-size:3.5em;
+	font-size:2.5em;
 	color:#EBEBEB;
+}
+.comment-author{
+	position:relative;
+	z-index:1;
 }
 ul.children li.comment{
 	clear:both;
@@ -717,7 +711,7 @@ ul.children .avatar{
 ul.children .comment-body{
 	margin-left:40px;
 }
-#comments .comment-body{
+.commentlist .comment-body{
 	position:relative;
 	z-index:1;
 }
@@ -777,7 +771,7 @@ ul.children .comment-body{
 #reply-title:before{
 	margin-left:-136px;
 }
-#comments-nav{
+.commentlist-nav{
 	display:inline-block;
 	float:right;
 }

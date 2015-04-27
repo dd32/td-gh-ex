@@ -7,10 +7,10 @@ $('#oloUp').click(function(){
 
 //control height
 	var h1 = $(".oloPosts").height();
-	var h2 = $("#oloContainer #oloWidget").height();
+	var h2 = $("#oloWidget").height();
 
 	if(h2 < h1){
-		$("#oloContainer #oloWidget").height(h1);
+		$("#oloWidget").height(h1);
 		}else {
 		$(".oloPosts").height(h2);
 		}

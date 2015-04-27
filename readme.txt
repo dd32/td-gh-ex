@@ -33,3 +33,4 @@ olo has theme options page:Go into your Wordpress Admin, navigate to 'Appearance
 			Fix alipay donate image.
 2014.05.11	Del ICP option, and Add Twitter and RSS Options.
 2014.05.12	Modify theme for 4-level menu or more.
+2015.04.27	Fix comments style on mobile, and a few bugs, and update font-awesome plugin.

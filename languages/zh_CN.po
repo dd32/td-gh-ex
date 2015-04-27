@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-11 23:34+0800\n"
-"PO-Revision-Date: 2014-05-11 23:40+0800\n"
+"POT-Creation-Date: 2015-04-27 19:43+0800\n"
+"PO-Revision-Date: 2015-04-27 19:43+0800\n"
 "Last-Translator: 皇家元林 <i@hjyl.org>\n"
 "Language-Team: hjyl.org <i@hjyl.org>\n"
 "Language: zh_CN\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.7.6\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../archive.php:10 ../index.php:10 ../single.php:10
@@ -201,34 +201,6 @@ msgstr "文章页"
 #: ../functions.php:162
 msgid "Other"
 msgstr "其他页"
-
-#: ../page.php:21 ../single.php:26
-msgid "Pages:"
-msgstr "页面："
-
-#: ../page.php:29
-msgid "Last Updated"
-msgstr "Last Updated"
-
-#: ../searchform.php:2
-msgid "Search..."
-msgstr "搜索..."
-
-#: ../sidebar.php:60
-msgid "Archives"
-msgstr "归档"
-
-#: ../sidebar.php:67
-msgid "Meta"
-msgstr "管理"
-
-#: ../single.php:46
-msgid "Previous: %title"
-msgstr "上一篇: %title"
-
-#: ../single.php:47
-msgid "Next: %title"
-msgstr "下一篇: %title"
 
 #: ../inc/oloComment.php:23
 #, php-format
@@ -430,6 +402,34 @@ msgstr "重置所有设置"
 #: ../inc/theme_inc.php:265
 msgid "Click OK to reset. Any settings will be lost!"
 msgstr "点击‘确定’重置。所有设置将被丢失！"
+
+#: ../page.php:21 ../single.php:26
+msgid "Pages:"
+msgstr "页面："
+
+#: ../page.php:29
+msgid "Last Updated"
+msgstr "Last Updated"
+
+#: ../searchform.php:2
+msgid "Search..."
+msgstr "搜索..."
+
+#: ../sidebar.php:60
+msgid "Archives"
+msgstr "归档"
+
+#: ../sidebar.php:67
+msgid "Meta"
+msgstr "管理"
+
+#: ../single.php:46
+msgid "Previous: %title"
+msgstr "上一篇: %title"
+
+#: ../single.php:47
+msgid "Next: %title"
+msgstr "下一篇: %title"
 
 #~ msgid "Show ICP No."
 #~ msgstr "显示备案号"

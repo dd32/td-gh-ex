@@ -144,7 +144,7 @@ function olo_theme_options_do_page() {
 			.form-table, .form-table td, .form-table th, .form-table td p, .form-wrap label{font-size:12px;}
 		</style>
 
-		<?php screen_icon(); ?>
+		<?php add_theme_support( "title-tag" ); ?>
 		<h2><?php echo sprintf( __( '%1$s Theme Options', 'olo' ), wp_get_theme() ); ?></h2>
 		<?php settings_errors(); ?>
 		<div id="poststuff" class="metabox-holder has-right-sidebar">
