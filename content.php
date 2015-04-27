@@ -11,7 +11,7 @@
 				</h1>
 			<?php endif; ?>
 			<small class = "entry-metadata">
-			Posted On <a href = "<?php the_permalink(); ?>"><?php the_date(); ?></a> |
+			Posted On <a href = "<?php the_permalink(); ?>"><?php the_time(); ?></a> |
 				<?php if ( comments_open()) : ?> 
 					<?php comments_popup_link('Add Comment','1 Comment','% Comments'); ?>
 				<?php else : ?>
