@@ -97,9 +97,9 @@ function olo_ajax_comment(){
 		if ( $user->exists() ) {
 			if ( empty( $user->display_name ) )
 				$user->display_name=$user->user_login;
-			$comment_author       = $wpdb->escape($user->display_name);
-			$comment_author_email = $wpdb->escape($user->user_email);
-			$comment_author_url   = $wpdb->escape($user->user_url);
+			$comment_author       = esc_sql($user->display_name);
+			$comment_author_email = esc_sql($user->user_email);
+			$comment_author_url   = esc_sql($user->user_url);
 			if ( current_user_can('unfiltered_html') ) {
 				if ( wp_create_nonce('unfiltered-html-comment_' . $comment_post_ID) != $_POST['_wp_unfiltered_html_comment'] ) {
 					kses_remove_filters(); // start with a clean slate
@@ -171,14 +171,16 @@ function olo_ajax_comment(){
 		?>
 			<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 				<div id="comment-<?php comment_ID(); ?>">
-					<div class="comment-author vcard">
-						<?php echo get_avatar( $comment,$size='40'); ?>
-						<?php printf( __( '<cite class="fn">%s</cite> <span class="says">says:</span>', 'olo'), get_comment_author_link() ); ?>
-					</div>
 					<?php if ( $comment->comment_approved == '0' ) : ?>
 						<em><?php _e( 'Your comment is awaiting moderation.', 'olo' ); ?></em><br />
 					<?php endif; ?>
-					<div class="comment-meta commentmetadata"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php printf( __( '%1$s at %2$s', 'olo' ), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Edit)', 'olo' ), ' ' ); ?></div>
+					<div class="comment-author vcard">
+						<?php echo get_avatar( $comment,$size='40'); ?>
+						<div class="comment-meta">
+							<h3><?php printf( __( '%s ', 'olo'), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?></h3>
+							<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php printf( __( '%1$s at %2$s', 'olo' ), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Edit)', 'olo' ), ' ' ); ?>
+						</div>
+					</div>
 					<div class="comment-body"><?php comment_text(); ?></div>
 				</div>
 

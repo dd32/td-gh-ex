@@ -3,7 +3,7 @@
 <?php return;endif; ?>
 <?php if ( have_comments() ) : ?>
 		<h3 id="comments-title"><span><?php comments_popup_link(__( 'Leave a reply', 'olo' ), __( '<b>1</b> Reply', 'olo' ), __( '<b>%</b> Replies', 'olo' ) ); ?></span></h3>
-	<ol class="commentlist">
+	<ol class="commentlist" id="comments">
 		<?php wp_list_comments( array( 'callback' => 'olo_comment' ) );?>
 			<p id="comments-nav">
 				<?php paginate_comments_links('prev_text='.__('Previous', 'olo').'&next_text='.__('Next', 'olo').'');?>
