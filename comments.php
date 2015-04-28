@@ -1,12 +1,3 @@
-<?php
-/**
-* @Theme Name	:	Corpbiz
-* @file         :	comments.php
-* @package      :	Corpbiz
-* @author       :	Priyanshu Mittal
-* @filesource   :	wp-content/themes/corpbiz/comments.php
-*/
-?>
 <?php if ( post_password_required() ) : ?>
 	<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'corpbiz' ); ?></p>
 <?php return; endif; ?>	
@@ -29,7 +20,7 @@
 			</a>
 			<div class="media-body">
 				<div class="comment_detail">
-					<h4 class="comment_detail_title"><?php the_author(); ?><span class="comment_date"><?php echo get_the_date('M j, Y \a\t g:i A') ?></span></h4>
+					<h4 class="comment_detail_title"><?php the_author(); ?><span class="comment_date"><?php echo comment_date('M j, Y \a\t g:i A') ?></span></h4>
 					<?php comment_text(); ?>
 				
 					<div class="reply">

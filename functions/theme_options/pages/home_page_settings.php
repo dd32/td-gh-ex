@@ -1,5 +1,5 @@
 <div class="block ui-tabs-panel active" id="option-ui-id-1" >
-<?php $current_options = get_option('corpbiz_options');
+<?php $current_options = wp_parse_args(  get_option( 'corpbiz_options', array() ), theme_data_setup() );
 	if(isset($_POST['webriti_settings_save_1']))
 	{	
 		if($_POST['webriti_settings_save_1'] == 1) 
@@ -8,19 +8,12 @@
 			{  print 'Sorry, your nonce did not verify.';	exit; }
 			else  
 			{
-            	 if(isset($_POST['front_page']))
-				{ 
-				echo $current_options['front_page']="on"; 
-				} 
-				else
-				{ echo $current_options['front_page']="off"; 
-				}
-				
+            	
 				$current_options['upload_image_logo']=sanitize_text_field($_POST['upload_image_logo']);			
 				$current_options['height']=sanitize_text_field($_POST['height']);
 				$current_options['width']=sanitize_text_field($_POST['width']);
 				$current_options['upload_image_favicon']=sanitize_text_field($_POST['upload_image_favicon']);
-				$current_options['webrit_custom_css'] =$_POST['webrit_custom_css'];				
+				$current_options['webrit_custom_css'] = wp_strip_all_tags($_POST['webrit_custom_css']);				
 				$current_options['text_title']=sanitize_text_field(isset($_POST['text_title']));
 				
 				
@@ -28,8 +21,7 @@
 			}
 		}	
 		if($_POST['webriti_settings_save_1'] == 2) 
-		{
-			$current_options['front_page'] = "on" ;			
+		{	
 			$current_options['upload_image_logo']="";
 			$current_options['height']=50;
 			$current_options['width']=100;
@@ -51,16 +43,12 @@
 				</td>
 				<td style="text-align:right;">					
 					<input class="reset-button btn" type="button" name="reset" value="Restore Defaults" onclick="webriti_option_data_reset('1');">
-					<input class="btn btn-primary" type="button" value="Save Options" onclick="webriti_option_data_save('1')" >
+					<input class="button button-primary button-large" type="button" value="Save Options" onclick="webriti_option_data_save('1')" >
 				</td>
 				</tr>
 			</table>			
 		</div>	
 		<?php wp_nonce_field('webriti_customization_nonce_gernalsetting','webriti_gernalsetting_nonce_customization'); ?>
-		<div class="section">
-			<h3><?php _e('Enable Front Page','corpbiz'); ?>  </h3>
-			<input type="checkbox" <?php if($current_options['front_page']=='on') echo "checked='checked'"; ?> id="front_page" name="front_page" > <span class="explain"><?php _e('Enable front page .','corpbiz'); ?></span>
-		</div>
 		<div class="section">
 			<h3><?php _e('Custom Logo','corpbiz'); ?>
 				<span class="icons help"><span class="tooltip"><?php  _e('Add custom logo from here suggested size is 150X50 px','corpbiz');?></span></span>
@@ -106,7 +94,7 @@
 		<div id="button_section">
 			<input type="hidden" value="1" id="webriti_settings_save_1" name="webriti_settings_save_1" />
 			<input class="reset-button btn" type="button" name="reset" value="Restore Defaults" onclick="webriti_option_data_reset('1');">
-			<input class="btn btn-primary" type="button" value="Save Options" onclick="webriti_option_data_save('1')" >
+			<input class="button button-primary button-large" type="button" value="Save Options" onclick="webriti_option_data_save('1')" >
 			<!--  alert massage when data saved and reset -->
 		</div>
 	</form>	

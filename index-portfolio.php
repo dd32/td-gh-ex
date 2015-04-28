@@ -1,4 +1,4 @@
-<?php $current_options = get_option('corpbiz_options'); ?>
+<?php $current_options = get_option('corpbiz_options',theme_data_setup()); ?>
 <div class="portfolio_section">
 	<div class="container">
 		<div class="row">
@@ -14,7 +14,9 @@
 	</div>
 	
 	<div class="col-md-3 col-sm-6 corpo_col_padding">
+	<?php if($current_options['portfolio_image_one'] !='') { ?>
 		<div class="corpo_portfolio_image">
+			<a href="<?php echo $current_options['home_image_one_link']; ?>"<?php if($current_options['home_image_one_link_target'] =="on") { echo "target='_blank'"; } ?>>
 			<img class="img-responsive" style="width:396px; height:336px;" src="<?php echo esc_url($current_options['portfolio_image_one']); ?>">
 			<div class="corpo_home_portfolio_showcase_overlay">
 				<div class="corpo_home_portfolio_showcase_overlay_inner">
@@ -23,11 +25,15 @@
 					</div>
 				</div>
 			</div>
+			</a>
 		</div>
+		<?php } ?>
 	</div>
 	
 	<div class="col-md-3 col-sm-6 corpo_col_padding">
+		<?php if($current_options['portfolio_image_two'] !='') { ?>
 		<div class="corpo_portfolio_image">
+			<a href="<?php echo $current_options['home_image_two_link']; ?>"<?php if($current_options['home_image_two_link_target'] =="on") { echo "target='_blank'"; } ?>>
 			<img class="img-responsive" style="width:396px; height:336px;" src="<?php echo esc_url($current_options['portfolio_image_two']); ?>">
 			<div class="corpo_home_portfolio_showcase_overlay">
 				<div class="corpo_home_portfolio_showcase_overlay_inner">
@@ -36,11 +42,15 @@
 					</div>
 				</div>
 			</div>
+			</a>
 		</div>
+		<?php } ?>
 	</div>
 	
 	<div class="col-md-3 col-sm-6 corpo_col_padding">
+		<?php if($current_options['portfolio_image_three'] !='') { ?>
 		<div class="corpo_portfolio_image">
+			<a href="<?php echo $current_options['home_image_three_link']; ?>"<?php if($current_options['home_image_three_link_target'] =="on") { echo "target='_blank'"; } ?>>
 			<img class="img-responsive" style="width:396px; height:336px;" src="<?php echo esc_url($current_options['portfolio_image_three']); ?>">
 			<div class="corpo_home_portfolio_showcase_overlay">
 				<div class="corpo_home_portfolio_showcase_overlay_inner">
@@ -49,11 +59,15 @@
 					</div>
 				</div>
 			</div>
+			</a>
 		</div>
+		<?php } ?>
 	</div>
 	
 	<div class="col-md-3 col-sm-6 corpo_col_padding">
+		<?php if($current_options['portfolio_image_four'] !='') { ?>
 		<div class="corpo_portfolio_image">
+		<a href="<?php echo $current_options['home_image_four_link']; ?>"<?php if($current_options['home_image_four_link_target'] =="on") { echo "target='_blank'"; } ?>>
 			<img class="img-responsive" style="width:396px; height:336px;" src="<?php echo esc_url($current_options['portfolio_image_four']); ?>">
 			<div class="corpo_home_portfolio_showcase_overlay">
 				<div class="corpo_home_portfolio_showcase_overlay_inner">
@@ -61,7 +75,10 @@
 						<h4><?php echo esc_html($current_options['portfolio_title_four']); ?></h4>							
 					</div>
 				</div>
+				
 			</div>
+			</a>
+			<?php } ?>
 		</div>
 	</div>
 	

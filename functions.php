@@ -7,6 +7,8 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/menu/default_menu_walker.php'); 
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/menu/webriti_nav_walker.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/woo/woocommerce.php' );
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/template-tag.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/font/font.php');
 	//wp title tag starts here
 	function webriti_head( $title, $sep )
 	{	global $paged, $page;		
@@ -45,18 +47,6 @@
 		add_theme_support( 'automatic-feed-links');
 		
 		require_once('theme_setup_data.php');
-		// setup admin pannel defual data for index page		
-		$corpbiz_options=theme_data_setup();
-		
-		$current_theme_options = get_option('corpbiz_options'); // get existing option data 		
-		if($current_theme_options)
-		{ 	$corpbiz_options = array_merge($corpbiz_options, $current_theme_options);
-			update_option('corpbiz_options',$corpbiz_options);	// Set existing and new option data			
-		}
-		else
-		{
-			add_option('corpbiz_options', $corpbiz_options);
-		}
 		require( WEBRITI_THEME_FUNCTIONS_PATH . '/theme_options/option_pannel.php' ); // for Option Panel Settings		
 		
 	} 
@@ -93,13 +83,6 @@
 	}
 	
 	/********** Image Resize *************/
-	if ( function_exists( 'add_image_size' ) ) 
-	{ 
-		add_image_size('webriti_page_thumb',750,345,true);
-		add_image_size('webriti_blog_thumb',750,345,true);
-		add_image_size('webriti_sidebar_thumb',100,100,true);
-	}
-	
 	// code for home slider post types 
 	add_filter( 'intermediate_image_sizes', 'webriti_image_presets');
 	function webriti_image_presets($sizes){
@@ -117,10 +100,10 @@
 	/*******corpbiz css and js *******/
 	function webriti_scripts()
 	{	
+		wp_enqueue_style('corpbiz-style', get_stylesheet_uri() );
 		wp_enqueue_style('corpbiz-bootstrap-css', WEBRITI_TEMPLATE_DIR_URI . '/css/bootstrap.css');
-		wp_enqueue_style('corpbiz-theme-menu', WEBRITI_TEMPLATE_DIR_URI . '/css/theme-menu.css');
-		wp_enqueue_style('corpbiz-font', WEBRITI_TEMPLATE_DIR_URI . '/css/font/font.css');	
-		wp_enqueue_style('corpbiz-font-awesome-min', WEBRITI_TEMPLATE_DIR_URI . '/css/font-awesome-4.0.3/css/font-awesome.min.css');	
+		wp_enqueue_style('corpbiz-theme-menu', WEBRITI_TEMPLATE_DIR_URI . '/css/theme-menu.css');	
+		wp_enqueue_style('corpbiz-font-awesome-min', WEBRITI_TEMPLATE_DIR_URI . '/css/font-awesome/css/font-awesome.min.css');	
 		wp_enqueue_style('corpbiz-media-responsive', WEBRITI_TEMPLATE_DIR_URI . '/css/media-responsive.css');	
 		
 		wp_enqueue_script('corpbiz-menu', WEBRITI_TEMPLATE_DIR_URI .'/js/menu/menu.js',array('jquery'));
@@ -130,11 +113,25 @@
 	}
 	add_action('wp_enqueue_scripts', 'webriti_scripts');
 	
+	
+	function slider_js_function() {
+			wp_enqueue_script('jquerya4e6', WEBRITI_TEMPLATE_DIR_URI .'/js/flexslider/jquery.js');
+			wp_enqueue_script('superfish-js', WEBRITI_TEMPLATE_DIR_URI .'/js/flexslider/superfish.js');
+			wp_enqueue_script('custom-js', WEBRITI_TEMPLATE_DIR_URI .'/js/flexslider/custom.js');
+			wp_enqueue_script('jquery-flexslider-min-js', WEBRITI_TEMPLATE_DIR_URI .'/js/flexslider/jquery.flexslider-min.js');		
+		
+		}
+		add_action('wp_footer', 'slider_js_function');
+		add_action('wp_enqueue_scripts', 'webriti_scripts');
+	
+	
 	// Read more tag to formatting in blog page 	
 	function webriti_content_more($more)
 	{  global $post;
 		return '<div class="blog-btn-col"><a href="' . get_permalink() . "\" class=\"blog-btn\">Read More</a></div>";
 	}   
 	add_filter( 'the_content_more_link', 'webriti_content_more' );
+	
+	
 
 ?>

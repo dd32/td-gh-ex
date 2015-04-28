@@ -1,5 +1,5 @@
-<div class="block ui-tabs-panel deactive" id="option-ui-id-3" >	
-	<?php $current_options = get_option('corpbiz_options');
+<div class="block ui-tabs-panel " id="option-ui-id-3" >	
+	<?php $current_options = wp_parse_args(  get_option( 'corpbiz_options', array() ), theme_data_setup() );
 	if(isset($_POST['webriti_settings_save_3']))
 	{	
 		if($_POST['webriti_settings_save_3'] == 1) 
@@ -21,10 +21,10 @@
 		if($_POST['webriti_settings_save_3'] == 2) 
 		{
 			$current_options['site_title_one']='40+';
-			$current_options['site_title_two']='Sample Pages';
-			$current_options['site_description']='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque faucibus risus non iaculis. Fusce a augue ante, pellentesque pretium erat. Fusce in turpis in velit tempor pretium. Integer a leo libero';
-			$current_options['siteinfo_button_one_text']='Buy it now';
-			$current_options['siteinfo_button_two_text']='View Portfolio';			
+			$current_options['site_title_two']= __('Sample Pages','corpbiz');
+			$current_options['site_description']= __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque faucibus risus non iaculis. Fusce a augue ante, pellentesque pretium erat. Fusce in turpis in velit tempor pretium. Integer a leo libero','corpbiz');
+			$current_options['siteinfo_button_one_text']= __('Buy it now','corpbiz');
+			$current_options['siteinfo_button_two_text']= __('View Portfolio','corpbiz');			
 			update_option('corpbiz_options',$current_options);
 		}
 	}  ?>
@@ -38,8 +38,9 @@
 				</td>
 				<td style="text-align:right;">
 					<input class="reset-button btn" type="button" name="reset" value="Restore Defaults" onclick="webriti_option_data_reset('3');">
-					<input class="btn btn-primary" type="button" value="Save Options" onclick="webriti_option_data_save('3')" >
+					<input class="button button-primary button-large" type="button" value="Save Options" onclick="webriti_option_data_save('3')" >
 				</td>
+				
 				</tr>
 			</table>	
 		</div>		
@@ -79,7 +80,7 @@
 		<div id="button_section">
 			<input type="hidden" value="1" id="webriti_settings_save_3" name="webriti_settings_save_3" />
 			<input class="reset-button btn" type="button" name="reset" value="Restore Defaults" onclick="webriti_option_data_reset('3');">
-			<input class="btn btn-primary" type="button" value="Save Options" onclick="webriti_option_data_save('3')" >
+			<input class="button button-primary button-large" type="button" value="Save Options" onclick="webriti_option_data_save('3')" >
 		</div>
 	</form>
 </div>

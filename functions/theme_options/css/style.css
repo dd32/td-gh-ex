@@ -1,0 +1,23 @@
+/* Browser weighs rules containing IDs higher than those that target classes or attributes.
+   So it might be a good idea to wrap complete html in a div with plugin specific id.
+   
+*/
+
+
+.wff-fb-item {border-bottom: 1px solid #ddd; padding: 22px 0 18px 0}
+wff-fb-author-data a {text-decoration:none;}
+.wff-fb-item .wff-post-text{ clear:both; }
+.wff-post-text{margin:8px 0;}
+.wff-post-text p{ margin-bottom:10px; }
+.wff-author-image{ width: 50px;margin-right: 10px;display: inline;float: left; }
+.wff-author-name p{ margin-bottom:0px !important; text-decoration:none; font-weight:bold;}
+p.wff-date{ font-size:11px; color:grey;font-weight:normal; }
+.wff-view-on-facebook{ margin-bottom:10px; }
+.wff-view-on-facebook a{ font-size:12px; }
+.wff-shared-link-wrapper{border:1px solid #ddd;padding:10px;}
+.wff-shared-link-wrapper { background-color: #F5F5F5;margin-top:10px; }
+.wff-link-title{ font-weight:bolder; }
+.wff-post-description span{ font-size:16px; }
+.wff-post-description span a{ font-size:18px; display:block; word-wrap:break-word; }
+.wff-shared-link-wrapper p{ margin-top:5px; margin-bottom:5px; word-wrap:break-word;}
+.wff-author-wrapper a {text-decoration:none;}

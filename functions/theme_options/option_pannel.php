@@ -14,6 +14,14 @@ function webriti_admin_enqueue_script($hook)
 	wp_enqueue_style('corpbiz-option-panel',get_template_directory_uri().'/functions/theme_options/css/corpbizoption_pannel.css');
 	wp_enqueue_style('corpbiz-optionpanal-dragdrop',get_template_directory_uri().'/functions/theme_options/css/optionpanal-dragdrop.css');
 	wp_enqueue_style('corpbiz-option-panel3',get_template_directory_uri().'/functions/theme_options/css/corpbiz-bootstrap.css');
+	
+	//Custom plugin
+	wp_enqueue_script('corpbiz_admin_js',get_template_directory_uri().'/functions/theme_options/js/my-custom.js');
+	wp_enqueue_script ('wff_custom_wp_admin_js');
+	wp_enqueue_script('eif_custom_wp_admin_js',get_template_directory_uri().'/functions/theme_options/js/my-custom.js',array('jquery','jquery-ui-tabs'));
+	//css
+	wp_register_style ('wff_custom_wp_admin_css',get_template_directory_uri(). '/functions/theme_options/css/wff-admin.css');
+        wp_enqueue_style( 'wff_custom_wp_admin_css' );
 }
 }
 function webriti_option_panal_function()

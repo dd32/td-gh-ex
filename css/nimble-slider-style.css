@@ -1,0 +1,468 @@
+
+/**************** Nimble Slider *********************/
+/*------------------------------------------------*/
+/*---------------[MAIN LAYOUT INFO]---------------*/
+/*------------------------------------------------*/
+
+#main-header { 
+	background: #143745; 
+	overflow: hidden;
+    width: 100%;
+	/* Old browsers  
+	background: -moz-linear-gradient(top,  rgba(241,108,73,1) 0%, rgba(230,104,71,1) 100%); 
+	/* FF3.6+ 
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(241,108,73,1)), color-stop(100%,rgba(230,104,71,1))); 
+	/* Chrome,Safari4+  
+	background: -webkit-linear-gradient(top,  rgba(241,108,73,1) 0%,rgba(230,104,71,1) 100%); 
+	/* Chrome10+,Safari5.1+  
+	background: -o-linear-gradient(top,  rgba(241,108,73,1) 0%,rgba(230,104,71,1) 100%); 
+	/* Opera 11.10+ 
+	background: -ms-linear-gradient(top,  rgba(241,108,73,1) 0%,rgba(230,104,71,1) 100%); 
+	/* IE10+ 
+	background: linear-gradient(to bottom,  rgba(241,108,73,1) 0%,rgba(230,104,71,1) 100%); 
+	/* W3C  
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f16c49', endColorstr='#e66847',GradientType=0 ); 
+	/* IE6-9 */
+}
+/*.container { text-align: left; margin: 0 auto; width: 960px; position: relative; } */
+#featured { position: relative; }
+/*#featured:after { content: ''; position: absolute; height: 13px; bottom: 0; left: 0; background: url(images/featured-shadow.png) no-repeat bottom center; width: 100%; } */
+#featured .container { text-align: center; line-height: 0; }
+#featured h2, #featured p { color: #ffffff; text-shadow: 1px 1px 1px rgba(0,0,0,0.2); }
+#featured h2 { /*
+	font-size: 50px; 
+	font-weight: 800;
+	margin-bottom: 14px; 
+	letter-spacing: -4px;*/
+	border-top: 1px solid #405a63; 
+    color: #ffffff;
+    display: inline-block;
+    font-family: 'RobotoBlack';
+    font-size: 49px;
+    font-weight: normal;
+    letter-spacing: 0;
+    line-height: 52px;
+    margin: 0;
+    padding: 10px 0 0;
+    text-align: center;
+    /* text-transform: uppercase; */
+	margin-top:10px;
+	
+	}
+#featured h2 span, #featured .description { /*font-weight: 300;  */
+	border-bottom: 1px solid #405a63;
+    color: #ffffff;
+    display: inline-block;
+    font-family: 'RobotoLight';
+    font-size: 36px;
+    font-weight: normal;
+    letter-spacing: 0;
+    line-height: 52px;
+    margin: 0 0 20px;
+    padding: 0 30px 10px;
+    text-align: center;
+    /* text-transform: uppercase; */
+	
+	}
+#featured .description { 
+	font-size: 36px;  
+	color: #fff; letter-spacing: -1px; 
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.2); 
+	margin-bottom:65px;
+	}
+
+
+/*------------------------------------------------*/
+/*--------------[FEATURED SLIDER]-----------------*/
+/*------------------------------------------------*/
+
+/* Browser Resets */
+.flex-container a:active,
+.flexslider a:active {outline: none;}
+.slides,
+.flex-control-nav,
+.flex-direction-nav {margin: 0; padding: 0; list-style: none;}
+
+/* FlexSlider Necessary Styles
+*********************************/
+.flexslider {width: 100%; margin: 0; padding: 0;}
+.flexslider .slides > li { display: none; } /* Hide the slides before the JS is loaded. Avoids image jumping */
+img { max-width: 100%; height: auto; width: auto; }
+.flexslider  img { vertical-align: bottom; width: auto; }
+
+/* Clearfix for the .slides element */
+.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
+html[xmlns] .slides {display: block; }
+* html .slides {height: 1%;}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {display: block;}
+
+/* FlexSlider Default Theme
+*********************************/
+
+#featured { overflow: hidden; }
+#featured.flexslider { position: relative; zoom: 1; }
+#featured.flexslider .slides { zoom: 1; width: 960px; margin: 0 auto; }
+#featured.flexslider .slides > li {position: relative;}
+/* Suggested container for "Slide" animation setups. Can replace this with your own, if you wish */
+#featured .flex-container {zoom: 1; position: relative;}
+
+#featured .flex-direction-nav a { position: absolute; text-indent: -9999px; top: 50%; margin-top: -22px; width: 42px; height: 90px; -moz-transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; opacity: 0; }
+#featured .flex-direction-nav a.flex-prev { left: 0px; background: url(images/prev.png) no-repeat;  }
+#featured .flex-direction-nav a.flex-next  { right: 0px; background: url(images/next.png) no-repeat; outline:none; }
+
+#featured:hover .flex-direction-nav a { opacity: 1; }
+#featured:hover .flex-direction-nav a.flex-prev { left: 0px; }
+#featured:hover .flex-direction-nav a.flex-next { right: 0px; }
+
+#featured .flex-control-nav { display: none; }
+
+@-webkit-keyframes bounceIn {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale(.3);
+	}
+
+	50% {
+		opacity: 1;
+		-webkit-transform: scale(1.05);
+	}
+
+	70% {
+		-webkit-transform: scale(.9);
+	}
+
+	100% {
+		-webkit-transform: scale(1);
+	}
+}
+
+@-moz-keyframes bounceIn {
+	0% {
+		opacity: 0;
+		-moz-transform: scale(.3);
+	}
+
+	50% {
+		opacity: 1;
+		-moz-transform: scale(1.05);
+	}
+
+	70% {
+		-moz-transform: scale(.9);
+	}
+
+	100% {
+		-moz-transform: scale(1);
+	}
+}
+
+@-o-keyframes bounceIn {
+	0% {
+		opacity: 0;
+		-o-transform: scale(.3);
+	}
+
+	50% {
+		opacity: 1;
+		-o-transform: scale(1.05);
+	}
+
+	70% {
+		-o-transform: scale(.9);
+	}
+
+	100% {
+		-o-transform: scale(1);
+	}
+}
+
+@keyframes bounceIn {
+	0% {
+		opacity: 0;
+		transform: scale(.3);
+	}
+
+	50% {
+		opacity: 1;
+		transform: scale(1.05);
+	}
+
+	70% {
+		transform: scale(.9);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+.bounceIn {
+	-webkit-animation-name: bounceIn;
+	-moz-animation-name: bounceIn;
+	-o-animation-name: bounceIn;
+	animation-name: bounceIn;
+}
+
+@-webkit-keyframes bounceIn_custom {
+	0% {
+		-webkit-transform: scale(1);
+	}
+
+	25% {
+		-webkit-transform: scale(.8);
+	}
+
+	50% {
+		-webkit-transform: scale(1.05);
+	}
+
+	70% {
+		-webkit-transform: scale(.9);
+	}
+
+	100% {
+		-webkit-transform: scale(1);
+	}
+}
+
+@-moz-keyframes bounceIn_custom {
+	0% {
+		-moz-transform: scale(1);
+	}
+
+	25% {
+		-moz-transform: scale(.8);
+	}
+
+	50% {
+		-moz-transform: scale(1.05);
+	}
+
+	70% {
+		-moz-transform: scale(.9);
+	}
+
+	100% {
+		-moz-transform: scale(1);
+	}
+}
+
+@-o-keyframes bounceIn_custom {
+	0% {
+		-o-transform: scale(1);
+	}
+
+	25% {
+		-o-transform: scale(.8);
+	}
+
+	50% {
+		-o-transform: scale(1.05);
+	}
+
+	70% {
+		-o-transform: scale(.9);
+	}
+
+	100% {
+		-o-transform: scale(1);
+	}
+}
+
+@keyframes bounceIn_custom {
+	0% {
+		transform: scale(1);
+	}
+
+	25% {
+		transform: scale(.8);
+	}
+
+	50% {
+		transform: scale(1.05);
+	}
+
+	70% {
+		transform: scale(.9);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+@-webkit-keyframes fadeInUp_custom {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(270px);
+	}
+
+	100% {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+	}
+}
+
+@-moz-keyframes fadeInUp_custom {
+	0% {
+		opacity: 0;
+		-moz-transform: translateY(270px);
+	}
+
+	100% {
+		opacity: 1;
+		-moz-transform: translateY(0);
+	}
+}
+
+@-o-keyframes fadeInUp_custom {
+	0% {
+		opacity: 0;
+		-o-transform: translateY(270px);
+	}
+
+	100% {
+		opacity: 1;
+		-o-transform: translateY(0);
+	}
+}
+
+@keyframes fadeInUp_custom {
+	0% {
+		opacity: 0;
+		transform: translateY(270px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+#featured .slide { text-align: center; -webkit-transform: translate3d(0,0,0); }
+	/* .cssanimations.csstransitions #featured .slide { padding-bottom: 295px; } */
+	#featured .slide h2 a { color: inherit; text-decoration: none; }
+
+	#featured .slide img, #featured .slide h2, #featured .slide .description { -webkit-backface-visibility: hidden; -moz-backface-visibility: hidden; -o-backface-visibility: hidden; backface-visibility: hidden; -webkit-transform: translate3d(0,0,0); }
+
+	.home-section, #main-footer, #quote, .blog-post-image, .comments_count { -webkit-transform: translate3d(0,0,0); }
+
+	#featured .slide.flex-active-slide img {
+		-webkit-animation-duration: .7s;
+		-webkit-animation-delay: .4s;
+		-webkit-animation-timing-function: ease-in-out;
+		-webkit-animation-fill-mode: both;
+		-moz-animation-duration: .7s;
+		-moz-animation-delay: .4s;
+		-moz-animation-timing-function: ease-in-out;
+		-moz-animation-fill-mode: both;
+		-o-animation-duration: .7s;
+		-o-animation-delay: .4s;
+		-o-animation-timing-function: ease-in-out;
+		-o-animation-fill-mode: both;
+		-ms-animation-duration: .7s;
+		-ms-animation-delay: .4s;
+		-ms-animation-timing-function: ease-in-out;
+		-ms-animation-fill-mode: both;
+		animation-duration: .7s;
+		animation-delay: .4s;
+		animation-timing-function: ease-in-out;
+		animation-fill-mode: both;
+
+		-webkit-animation-name: fadeInUp_custom;
+		-moz-animation-name: fadeInUp_custom;
+		-o-animation-name: fadeInUp_custom;
+		-ms-animation-name: fadeInUp_custom;
+		animation-name: fadeInUp_custom;
+	}
+
+	#featured .slide.flex-active-slide .description {
+		-webkit-animation-duration: .7s;
+		-webkit-animation-delay: .9s;
+		-webkit-animation-timing-function: ease-in-out;
+		-webkit-animation-fill-mode: both;
+		-moz-animation-duration: .7s;
+		-moz-animation-delay: .9s;
+		-moz-animation-timing-function: ease-in-out;
+		-moz-animation-fill-mode: both;
+		-o-animation-duration: .7s;
+		-o-animation-delay: .9s;
+		-o-animation-timing-function: ease-in-out;
+		-o-animation-fill-mode: both;
+		-ms-animation-duration: .7s;
+		-ms-animation-delay: .9s;
+		-ms-animation-timing-function: ease-in-out;
+		-ms-animation-fill-mode: both;
+		animation-duration: .7s;
+		animation-delay: .9s;
+		animation-timing-function: ease-in-out;
+		animation-fill-mode: both;
+
+		-webkit-animation-name: bounceIn;
+		-moz-animation-name: bounceIn;
+		-ms-animation-name: bounceIn;
+		-o-animation-name: bounceIn;
+		animation-name: bounceIn;
+	}
+
+	#featured .slide.flex-active-slide h2 {
+		-webkit-animation-duration: .7s;
+		-webkit-animation-delay: 1.4s;
+		-webkit-animation-timing-function: ease-in-out;
+		-webkit-animation-fill-mode: both;
+		-moz-animation-duration: .7s;
+		-moz-animation-delay: 1.4s;
+		-moz-animation-timing-function: ease-in-out;
+		-moz-animation-fill-mode: both;
+		-o-animation-duration: .7s;
+		-o-animation-delay: 1.4s;
+		-o-animation-timing-function: ease-in-out;
+		-o-animation-fill-mode: both;
+		-ms-animation-duration: .7s;
+		-ms-animation-delay: 1.4s;
+		-ms-animation-timing-function: ease-in-out;
+		-ms-animation-fill-mode: both;
+		animation-duration: .7s;
+		animation-delay: 1.4s;
+		animation-timing-function: ease-in-out;
+		animation-fill-mode: both;
+
+		-webkit-animation-name: bounceIn;
+		-moz-animation-name: bounceIn;
+		-ms-animation-name: bounceIn;
+		-o-animation-name: bounceIn;
+		animation-name: bounceIn;
+	}
+
+@media only screen and ( min-width: 768px ) and ( max-width: 960px ) {
+	.container, #featured.flexslider .slides { width: 728px; }
+		#featured h2 { font-size: 60px; }
+			#featured .description { font-size: 30px; }
+		
+}
+
+@media only screen and ( max-width: 767px ) {
+	.container, #featured.flexslider .slides { width: 440px; }
+	#top-area { text-align: center; margin-bottom: 12px; }
+	#logo { float: none; padding-left: 0; }
+	#featured h2 { font-size: 48px; }
+	#featured .description { font-size: 24px; padding-bottom: 22px; }
+	#featured .flex-direction-nav a.flex-prev { background: url(images/prev-sl.png) no-repeat; }
+	#featured .flex-direction-nav a.flex-next  { background: url(images/next-sl.png) no-repeat; }
+	#featured .flex-direction-nav a {	height: 47px; width: 22px;}	
+}
+
+@media only screen and ( max-width: 479px ) {
+	.container, #featured.flexslider .slides { width: 280px; }
+		#top-area { text-align: center; margin-bottom: 6px; }
+		#logo { float: none; padding-left: 0; }
+		#featured h2 { font-size: 32px; letter-spacing: -2px; }
+		#featured .description { font-size: 16px; }
+		#featured .flex-direction-nav a.flex-prev { background: url(images/prev-sl.png) no-repeat; }
+		#featured .flex-direction-nav a.flex-next  { background: url(images/next-sl.png) no-repeat; }
+		#featured .flex-direction-nav a {	height: 47px; width: 22px;}
+}

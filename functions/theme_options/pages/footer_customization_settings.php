@@ -1,5 +1,5 @@
-<div class="block ui-tabs-panel deactive" id="option-ui-id-11" >	
-	<?php $current_options = get_option('corpbiz_options');
+<div class="block ui-tabs-panel" id="option-ui-id-11" >	
+	<?php $current_options = wp_parse_args(  get_option( 'corpbiz_options', array() ), theme_data_setup() );
 	//print_r($current_options);
 	if(isset($_POST['webriti_settings_save_11']))
 	{	
@@ -33,7 +33,7 @@
 				</td>
 				<td style="text-align:right;">
 					<input class="reset-button btn" type="button" name="reset" value="Restore Defaults" onclick="webriti_option_data_reset('11');">
-					<input class="btn btn-primary" type="button" value="Save Options" onclick="webriti_option_data_save('11')" >
+					<input class="button button-primary button-large" type="button" value="Save Options" onclick="webriti_option_data_save('11')" >
 				</td>
 				</tr>
 			</table>	
@@ -59,7 +59,7 @@
 		<div id="button_section">
 			<input type="hidden" value="1" id="webriti_settings_save_11" name="webriti_settings_save_11" />
 			<input class="reset-button btn" type="button" name="reset" value="Restore Defaults" onclick="webriti_option_data_reset('11');">
-			<input class="btn btn-primary" type="button" value="Save Options" onclick="webriti_option_data_save('11')" >
+			<input class="button button-primary button-large" type="button" value="Save Options" onclick="webriti_option_data_save('11')" >
 		</div>
 	</form>
 </div>

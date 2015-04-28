@@ -1,4 +1,4 @@
-<?php  $current_options = get_option('corpbiz_options'); ?>
+<?php $current_options = get_option('corpbiz_options',theme_data_setup()); ?>
 <div class="homepage_top_callout">
 	<div class="container">
 		<div class="row">

@@ -108,7 +108,7 @@ textarea { width: 50%; height: auto;}
 #framework_wrap .ui-tabs .ui-tabs-nav li.active a {
 	color: #fff;
 	//background: #598dc1;
-	background:#006DCC;
+	background:#0074a2;
 	font-weight: 100px;
 }
 
@@ -240,7 +240,7 @@ textarea { width: 50%; height: auto;}
     vertical-align: middle;
 }
 .btn-primary {
-    background-color: #006DCC;
+    background-color: #0074a2;
     background-image: -moz-linear-gradient(center top , #0088CC, #0044CC);  
     border-color: rgba(0, 0, 0, 0.25);
     color: #FFFFFF;

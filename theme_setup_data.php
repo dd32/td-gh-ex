@@ -16,9 +16,24 @@ function theme_data_setup()
 			'upload_image_favicon'=>'',
 			'webrit_custom_css'=>'',
 			
-			'slider_title'=>__('Clean Elegant','corpbiz'),					
-			'slider_description'=>__('Multi-Purpose Theme','corpbiz'),
-			'slider_image'=> $imag_url,
+			//Slider
+			'home_slider_enabled'=>'on',
+			'animation' => 'fade',
+			'animationSpeed' => '1500',
+			'slideshowSpeed' => '2500',
+			'slider_list'=>'',
+			'total_slide'=>'',
+			
+			
+			
+			'home_banner_enabled'=>'on',
+			'home_post_enabled' => 'on',
+			'slider_total' => 4,
+			'slider_radio' => 'demo',
+			'slider_options'=> 'fade',
+			'slider_transition_delay'=> '2000',
+			'slider_select_category' => 'Uncategorized',
+			'featured_slider_post' => '',
 			
 			//Site info
 			'site_title_one'=>'40+',
@@ -30,18 +45,26 @@ function theme_data_setup()
 			'service_icon_one'=> "fa-mobile",
 			'service_title_one'=> __('Responsive Design','corpbiz'),
 			'service_description_one'=> __('Lorem ipsum dolor sit amet, consect adipiscing elit.ivamus eget cvdn fdjnv','corpbiz'),
+			'home_service_one_link' => '#',
+			'home_service_one_link_target' => "on",
 				
 			'service_icon_two'=> "fa-rocket",
 			'service_title_two'=>__('Power full Admin','corpbiz'),
 			'service_description_two'=> __('Lorem ipsum dolor sit amet, consect adipiscing elit.ivamus eget cvdn fdjnv','corpbiz'),
+			'home_service_two_link' => '#',
+			'home_service_two_link_target' => "on",
 			
 			'service_icon_three'=> "fa-thumbs-o-up",
 			'service_title_three'=> __('Great Support','corpbiz'),
 			'service_description_three'=>__('Lorem ipsum dolor sit amet, consect adipiscing elit.ivamus eget cvdn fdjnv','corpbiz'),
+			'home_service_third_link' => '#',
+			'home_service_third_link_target' => "on",
 			
 			'service_icon_four'=> "fa-laptop",
 			'service_title_four'=> __('Clean Minimal Design','corpbiz'),
 			'service_description_four'=>__('Lorem ipsum dolor sit amet, consect adipiscing elit.ivamus eget cvdn fdjnv','corpbiz'),
+			'home_service_fourth_link' => '#',
+			'home_service_fourth_link_target' => "on",
 			
 			// portfolio 
 			'portfolio_title' =>__('Our Work Speaks Thousand Words','corpbiz'),
@@ -49,15 +72,23 @@ function theme_data_setup()
 			
 			'portfolio_title_one'=> __('Portfolio One','corpbiz'),
 			'portfolio_image_one'=> $port_image1,
+			'home_image_one_link'=>"#",
+			'home_image_one_link_target'=>"on",
 			
 			'portfolio_title_two'=> __('Portfolio Two','corpbiz'),
 			'portfolio_image_two'=> $port_image2,
+			'home_image_two_link'=>"#",
+			'home_image_two_link_target'=>"on",
 			
 			'portfolio_title_three'=> __('Portfolio Three','corpbiz'),
 			'portfolio_image_three'=> $port_image1,
+			'home_image_three_link'=>"#",
+			'home_image_three_link_target'=>"on",
 			
 			'portfolio_title_four'=> __('Portfolio Four','corpbiz'),
 			'portfolio_image_four'=> $port_image2,
+			'home_image_four_link'=>"#",
+			'home_image_four_link_target'=>"on",
 			
 			// Service
 			'home_service_title'=>__('Our Nice Services','corpbiz'),
@@ -66,6 +97,10 @@ function theme_data_setup()
 			'footer_customizations' => __('@ Copyright 2014  Corpbiz Design & Developed by','corpbiz'),
 			'created_by_webriti_text' => __('Webriti','corpbiz'),
 			'created_by_link' => 'http://www.webriti.com',
+			
+			//blog meta section settings
+			'blog_meta_section_settings' => "on",
+		
 		);
 }
 ?>

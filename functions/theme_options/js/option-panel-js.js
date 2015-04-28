@@ -73,13 +73,13 @@
 		var webriti_loding_image = loding_image +"_image";
 		
 		jQuery(webriti_loding_image).show();
-		jQuery(webriti_settings_save).val("1");        
+		jQuery(webriti_settings_save).val("1");      	
 	    jQuery.ajax({
 				   url:'admin.php?page=webriti',
 				   type:'post',
 				   data : jQuery(webriti_theme_options).serialize(),
 				   success : function(data)
-					{  					
+					{  				
 						jQuery(webriti_loding_image).fadeOut();						
 						jQuery(webriti_settings_save_success).show();
 						jQuery(webriti_settings_save_success).fadeOut(5000);
@@ -108,4 +108,4 @@
 		  {
 			alert("Cancel! reset theme setting process")
 		  }		
-	}
+	}	

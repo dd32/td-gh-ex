@@ -53,9 +53,22 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
-@version 1.0.2.5
-1.Fix header already send issue and remove whole white spaces from woocommerce.php file.
 
+@version 1.1
+1. Add Post slider.
+2. Add Google Font.
+3. Add Content.php.
+4. Remove Resize image funcionality.
+5. Style Change option panel.
+6. Remove front.php.
+7. Sanitizaion custom css.
+8. Add Default Theme Data setup.
+9. Add Meta enable/disable setting.
+10.Update pot file.
+
+@version 1.0.2.6
+1.Add link on home page service icons and title.
+2.Add Link on home page portfolio image and title. 
 @version 1.0.2.4
 1. Translated some untranslated strings
 2. Option Panel scripts properly hooked.

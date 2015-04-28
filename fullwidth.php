@@ -21,7 +21,7 @@ get_header(); ?>
 			<?php if(has_post_thumbnail()): ?>
 			<?php $defalt_arg =array('class' => "img-responsive"); ?>
 			<div class="blog_post_img">
-				<?php the_post_thumbnail('webriti_page_thumb', $defalt_arg); ?>	
+				<?php the_post_thumbnail('', $defalt_arg); ?>	
 			</div>
 			<?php endif; ?>
 			<div class="blog_post_content">

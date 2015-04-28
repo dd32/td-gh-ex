@@ -1,14 +1,5 @@
-<?php
-/**
-* @Theme Name	:	Corpbiz
-* @file         :	footer.php
-* @package      :	Corpbiz
-* @author       :	Priyanshu Mittal
-* @filesource   :	wp-content/themes/corpbiz/footer.php
-*/
-?>
 <!--Footer Section-->
-<?php $current_options=get_option('corpbiz_options'); ?>
+<?php $current_options = get_option('corpbiz_options',theme_data_setup()); ?>
 <div class="footer_section">
 	<div class="container">
 		<div class="row">
