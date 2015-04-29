@@ -1,10 +1,23 @@
 <?php
+/**
+ * Barista - Template Tags
+ *
+ * This file is the WordPress template-tags.php file, which contains many of features
+ * and functions for set up and operation of the theme and is included as part of
+ * functions.php as a require.
+ * 
+ * @package         Barista WordPress Theme
+ * @copyright       Copyright (C) 2015  Benjamin Lu
+ * @license         GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
+ * @author          Benjamin Lu (http://www.benluwp.com/contact/
+ */
+
 /*******************************************************************************
- 1.0 - Meta Posted On and Meta Posted In
+ * 1.0 Metadata Posted On                                                *
  ******************************************************************************/
 function barista_metadata_posted_on_setup(){
     // This function will call and output The Date and Author
-    printf( __( '<i class="fa fa-calendar"></i>&nbsp;&nbsp;%2$s &nbsp;&nbsp;&nbsp; <i class = "fa fa-user"></i>&nbsp;&nbsp;%3$s', 'barista' ), 'meta-prep meta-prep-author',
+    printf( __( '<i class="fa fa-calendar"></i>&nbsp;&nbsp;%2$s &nbsp;&nbsp;&nbsp; <i class = "fa fa-user"></i>&nbsp;&nbsp;%3$s'), 'meta-prep meta-prep-author',
     sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
         get_permalink(),
         esc_attr( get_the_time() ),
@@ -33,10 +46,13 @@ function barista_metadata_posted_on_setup(){
         _e('Comments Closed', 'barista');
     }
 }
-
+/*******************************************************************************
+ * 2.0 Metadta Posted in                                                       *
+ ******************************************************************************/
 function barista_metadata_posted_in_setup() {
 	// Retrieves tag list of current post, separated by commas.
 	$tag_list = get_the_tag_list( '', ', ' );
+        $posted_in = '';
 	if ( $tag_list ) {
 			$posted_in = __( '<i class = "fa fa-archive"></i>&nbsp;&nbsp; %1$s &nbsp;&nbsp;&nbsp;<i class="fa fa-tags"></i>&nbsp; %2$s', 'barista' );
 	} elseif ( is_object_in_taxonomy( get_post_type(), 'category' ) ) {
@@ -53,7 +69,7 @@ function barista_metadata_posted_in_setup() {
 }
 
 /*******************************************************************************
- 2.0 - Sidebar Widget Configuration
+ * 3.0 Social Menu Navigation                                                  *
  ******************************************************************************/
 function barista_widget_sidebar_setup(){
     register_sidebar(array(
@@ -88,6 +104,30 @@ function barista_widget_sidebar_setup(){
 }
 add_action('widgets_init', 'barista_widget_sidebar_setup');
 
+
+/*******************************************************************************
+ * 4.0 Social Menu Navigation                                                  *
+ ******************************************************************************/
+function barista_social_menu(){
+    if(has_nav_menu('social')){
+        wp_nav_menu(array(
+            'theme_location'    =>  'social',
+            'container'         =>  'div',
+            'container_id'      => 'menu-social',
+            'container_class'     => 'menu-social',
+            'menu_id'           => 'menu-social-items',
+            'menu_class'        => 'menu-items',
+            'depth'             => 1,
+            'link_before'       => '<span class = "screen-reader-text cf">',
+            'link_after'        => '</span>',
+            'fallback_cb'       => '',
+        ));
+    };
+}
+
+/*******************************************************************************
+ * 5.0 Pagination                                                              *
+ ******************************************************************************/
 function barista_paging_navigation() {
 	// Don't print empty markup if there's only one page.
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
@@ -130,21 +170,4 @@ function barista_paging_navigation() {
 	</nav><!-- .navigation -->
 	<?php
 	endif;
-}
-
-function barista_social_menu(){
-    if(has_nav_menu('social')){
-        wp_nav_menu(array(
-            'theme_location'    =>  'social',
-            'container'         =>  'div',
-            'container_id'      => 'menu-social',
-            'container_class'     => 'menu-social',
-            'menu_id'           => 'menu-social-items',
-            'menu_class'        => 'menu-items',
-            'depth'             => 1,
-            'link_before'       => '<span class = "screen-reader-text cf">',
-            'link_after'        => '</span>',
-            'fallback_cb'       => '',
-        ));
-    };
 }

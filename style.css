@@ -7,7 +7,7 @@ Description: Barista is a simple and yet easy to navigate with multiple navigati
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-colors, custom-header, custom-background, custom-menu, editor-style, featured-images, fixed-layout, one-column, right-sidebar, sticky-post, translation-ready, threaded-comments, two-columns
-Version: 1.4
+Version: 1.5
 Text Domain: barista
 */
 
@@ -481,53 +481,6 @@ body {
     font-size: 14px;
 }
 
-#container {
-    background: #FFF;
-    border: 1px solid #000;
-    border-radius: 10px 10px;
-    box-shadow: 0 0 10px 0;
-    margin: 25px auto 5px auto;
-    width: 900px;
-}
-
-#site-header {
-    background: url(images/header-image.png);
-    border-radius: 10px 10px 0 0;
-    height: 200px;
-}
-
-#site-navigation {
-    background: #916A31;
-    height: 36px;
-}
-
-#site-content {
-    float: left;
-    margin: 10px 10px 25px 10px;
-    padding-bottom: 10px;
-    width: 600px;
-}
-
-#site-content-full {
-    margin: 10px 10px 25px 10px;
-}
-
-#site-sidebar {
-    float: right;
-    margin: 10px 10px 0 10px;
-    width: 250px;   
-}
-
-#site-footer {
-    margin: 0 auto;
-    margin-bottom: 20px;
-    text-align: center;
-    width: 900px;
-}
-
-/*******************************************************************************
-4.0 - Navigation Links
-*******************************************************************************/
 a {
     color: #0088D0;
     text-decoration: none;
@@ -537,9 +490,24 @@ a:hover {
     color: #666666;
 }
 
+#container {
+    background: #FFF;
+    border: 1px solid #000;
+    border-radius: 10px 10px;
+    box-shadow: 0 0 10px 0;
+    margin: 25px auto 5px auto;
+    width: 960px;
+}
+
 /*******************************************************************************
-5.0 - Header
+4.0 - Header
 *******************************************************************************/
+.site-header {
+    background: url(images/header-image.jpg);
+    border-radius: 10px 10px 0 0;
+    height: 200px;
+}
+
 .header-image {
     border-radius: 10px 10px 0 0;
     height: 200px;
@@ -553,7 +521,9 @@ a:hover {
     text-align: center;
     max-width: 900px;
 }
-.site-title {
+.site-title,
+.site-description {
+    font-weight: normal;
     margin: 0;
     padding: 0;
 }
@@ -562,13 +532,8 @@ a:hover {
     color: #FFF;
 }
 
-.site-description {
-    margin: 0;
-    padding: 0;
-}
-
 /*******************************************************************************
-6.0 - Navigation Menu
+5   5.0 - Navigation Menu
 *******************************************************************************/
 .primary-navigation {
     background: #D5973C;
@@ -714,10 +679,15 @@ input[type = "search"] {
     background: #916A31;
 }
 
+.search-box span.screen-reader-text {
+    display: none;
+}
+
 .search-box .search-field {
     background: #FFF;
     float: right;
-    margin: 10px 10px;
+    margin: 8px 8px;
+    padding: 5px;
     width: 250px;
 }
 
@@ -744,141 +714,10 @@ input[type = "search"] {
 }
 
 /*******************************************************************************
-7.0 - Content
-*******************************************************************************/
-.entry-title {
-    border-bottom: 1px solid #CCC;
-    margin: 0;
-    padding: 0;
-}
-
-.metadata-posted-on {
-    display: block;
-    margin: 2px 2px;
-}
-
-.metadata-posted-in {
-    display: block; 
-    margin: 2px 2px;
-}
-
-.sticky {
-    
-}
-
-.gallery-caption {
-    
-}
-
-.small-post-thumbnail img {
-    clear: both;
-    display: block;
-    float: left;
-    margin-top: 15px;
-    margin-right: 15px;
-    margin-bottom: 15px;
-    position: relative;
-}
-
-.medium-post-thumbnail {
-    text-align: center;
-}
-
-.medium-post-thumbnail img {
-    margin-bottom: 10px;
-    max-width: 100%;
-}
-
-/*******************************************************************************
-8.0 - Sidebar Content
-*******************************************************************************/
-#site-sidebar {
-    float: righ;
-    width: 250px;
-}
-
-.widget {
-    margin: 0 0 30px 0;
-    
-}
-
-.widget ul,
-.widget ol {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.widget li {
-    margin: 10px 0 0 0;
-}
-
-.widget li li {
-    margin-left: 18px;
-}
-
-.widget select {
-    padding: 5px 5px;
-    max-width: 100%;
-}
-
-
-
-.widget-title {
-    border-bottom: 1px solid #CCC;
-    margin: 0;
-    padding: 0;
-}
-
-#wp-calendar {
-    background: #ebebeb;
-    border: 1px solid #cccccc;
-    margin: 0;
-    margin-bottom: 20px;
-    text-align: center;
-    width: 100%;
-}
-
-#wp-calendar caption {
-    font-weight: bold;
-    margin: 5px 0;
-    text-align: center;
-}
-
-#wp-calendar #today {
-    background: #cccccc;
-}
-
-#wp-calendar th, td {
-    padding: 6px 0;
-}
-
-span.screen-reader-text {
-    display: none;
-}
-
-input.search-submit {
-    display: none;
-}
-
-input.search-field {
-    margin: 5px 0 20px 0;
-    padding: 4px 5px;
-    width: 94%;
-}
-
-.content-search {
-    text-align: center;
-}
-
-.content-archive {
-    text-align: center;
-}
-
-/*******************************************************************************
-9.0 - Images and Alignment
+ *   6.0 - Alignment and Images
 *******************************************************************************/
 img {
+    height: auto;
     max-width: 100%;
 }
 
@@ -942,10 +781,179 @@ p.wp-caption-text {
     width: 100%;
 }
 
+.sticky {
+    
+}
 
+.screen-reader-text {
+    
+}
+
+.gallery-caption {
+    
+}
 
 /*******************************************************************************
-10.0 - Comments
+ *   7.0 - Navigation Menu
+*******************************************************************************/
+.site-content {
+    float: left;
+    margin: 10px 10px 30px 10px;
+    padding-bottom: 10px;
+    width: 650px;
+}
+
+.site-content-full {
+    clear: both;
+    padding: 10px 10px 0 10px;
+}
+
+.site-content-full span.screen-reader-text,
+.site-content-full input.search-submit {
+    display: none;
+}
+
+.site-content-full input.search-field {
+    padding: 5px;
+    width: 250px;
+}
+
+.entry-title {
+    font-size: 20px;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+.post-small-thumbnail img {
+    float: left;
+    margin-right: 10px;
+}
+
+.metadta-posted-in {
+    display: block;
+}
+
+.read-more {
+    margin: 0 0 0 5px;
+}
+
+.content-search {
+    border: 1px solid #000;
+    clear: both;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/*******************************************************************************
+ *   7.0 - Sidebar Menu
+*******************************************************************************/
+.site-sidebar {
+    float: right;
+    margin: 10px 10px 0 10px;
+    width: 260px;   
+}
+
+.widget {
+    margin: 0 0 30px 0;
+    
+}
+
+.widget ul,
+.widget ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.widget li {
+    margin: 10px 0 0 0;
+}
+
+.widget li li {
+    margin-left: 18px;
+}
+
+.widget select {
+    padding: 5px 5px;
+    max-width: 100%;
+}
+
+
+
+.widget-title {
+    font-size: 20px;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+#wp-calendar {
+    background: #ebebeb;
+    border: 1px solid #cccccc;
+    margin: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+#wp-calendar caption {
+    font-weight: bold;
+    margin: 5px 0;
+    text-align: center;
+}
+
+#wp-calendar #today {
+    background: #cccccc;
+}
+
+#wp-calendar th, td {
+    padding: 6px 0;
+}
+
+.widget_archive li:before,
+.widget_categories li:before {
+    font-family: 'fontawesome';
+    margin-right: 10px;
+}
+
+.widget_archive li:before,
+.widget_categories li:before {
+    content: '\f187'
+}
+
+/*******************************************************************************
+8.0 - Pagination
+*******************************************************************************/
+.post-navigation {
+    margin-bottom: 20px;
+    width: 600px;
+}
+
+.paging-navigation ul {
+    margin: 0;
+    text-align: center;
+}
+
+.paging-navigation li { display: inline; }
+
+a.page-numbers,
+span.page-numbers {
+     padding: 0 5px;
+     color: #0195C5;
+}
+
+a:hover.page-numbers {
+    color: #999999;
+}
+
+.paging-navigation .current {
+    font-weight: bold;
+    color: #000;
+}
+
+/*******************************************************************************
+9.0 - Comments
 *******************************************************************************/
 .comments-title {
     border-bottom: 1px solid #CCCCCC;
@@ -1097,31 +1105,4 @@ ol.children {
 #respond textarea#comment{
 	height: 200px;
 	width: 600px;	
-}
-
-.post-navigation {
-    margin-bottom: 20px;
-    width: 600px;
-}
-
-.paging-navigation ul {
-    margin: 0;
-    text-align: center;
-}
-
-.paging-navigation li { display: inline; }
-
-a.page-numbers,
-span.page-numbers {
-     padding: 0 5px;
-     color: #0195C5;
-}
-
-a:hover.page-numbers {
-    color: #999999;
-}
-
-.paging-navigation .current {
-    font-weight: bold;
-    color: #000;
 }

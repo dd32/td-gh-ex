@@ -1,4 +1,4 @@
-<section id="site-content-full" class="<?php if ( is_404() ) { echo 'error-404'; } else { echo 'no-results'; } ?> not-found">
+<section class="site-content-full <?php if ( is_404() ) { echo 'error-404'; } else { echo 'no-results'; } ?> not-found cf">
 	<h3 class="entry-title">
 		<?php 
 			if ( is_404() ) { _e( 'Page not available', 'barista' ); }

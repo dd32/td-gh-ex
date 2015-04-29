@@ -1,4 +1,16 @@
 <?php
+/**
+ * Barista - Comment Page
+ *
+ * This file contains the functionality of comments. 
+ *
+ * Learn more: {@link https://codex.wordpress.org/Template_Hierarchy}
+ * 
+ * @package         Barista WordPress Theme
+ * @copyright       Copyright (C) 2015  Benjamin Lu
+ * @license         GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
+ * @author          Benjamin Lu (http://www.benluwp.com/contact/
+ */
 if ( post_password_required() ) {
 	return;
 }
