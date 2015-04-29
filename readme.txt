@@ -50,5 +50,5 @@ Source: http://fortawesome.github.io/Font-Awesome/
 
 Screenshot
 ====================================================
-Licensed Under CC0 by André Freitas
-https://unsplash.com/andrekerygma
+Licensed and Copyright by Jose Castaneda (Public Domain)
+http://blog.josemcastaneda.com/downloads/coffee-beans-and-scoop/

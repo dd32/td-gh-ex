@@ -12,7 +12,10 @@
 ?>
 </section>
     <footer class="site-footer">
-        
+        <div class="siteinfo">
+            <?php _e('Theme By: Benajmin Lu', 'barista'); ?> <br />
+        <a href ="<?php echo esc_url(home_url('/')); ?>"><?php _e('Powered By: WordPress', 'barista'); ?></a>
+        </div>
     </footer>
     <?php wp_footer(); ?>
 </body>

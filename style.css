@@ -7,7 +7,7 @@ Description: Barista is a simple and yet easy to navigate with multiple navigati
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-colors, custom-header, custom-background, custom-menu, editor-style, featured-images, fixed-layout, one-column, right-sidebar, sticky-post, translation-ready, threaded-comments, two-columns
-Version: 1.5
+Version: 1.6
 Text Domain: barista
 */
 
@@ -1105,4 +1105,10 @@ ol.children {
 #respond textarea#comment{
 	height: 200px;
 	width: 600px;	
+}
+
+.site-footer {
+    margin: 10px auto 20px auto;
+    text-align: center;
+    width: 960px;
 }
