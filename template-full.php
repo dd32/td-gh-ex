@@ -4,8 +4,8 @@ Template Name: Full Width
 *
 * This template is used to display full-width pages.
 *
-* @package Swell
-* @since Swell 1.0
+* @package Swell Lite
+* @since Swell Lite 1.0
 *
 */
 get_header(); ?>
@@ -34,7 +34,7 @@ get_header(); ?>
 				<!-- BEGIN .postarea full -->
 				<div class="postarea full">
 		
-					<?php get_template_part( 'loop', 'page' ); ?>
+					<?php get_template_part( 'content/loop', 'page' ); ?>
 		
 				<!-- END .postarea full -->
 				</div>

@@ -3,8 +3,8 @@
 * This template is used to display archive posts, e.g. tag post indexes.
 * This template is also the fallback template to 'category.php'.
 *
-* @package Swell
-* @since Swell 1.0
+* @package Swell Lite
+* @since Swell Lite 1.0
 *
 */
 get_header(); ?>
@@ -17,64 +17,8 @@ get_header(); ?>
 	
 		<!-- BEGIN .content -->
 		<div class="content">
-		
-		<?php if ( is_active_sidebar( 'blog-sidebar' ) && is_active_sidebar( 'left-sidebar' ) ) { ?>
-			
-			<!-- BEGIN .three columns -->
-			<div class="three columns">
-			
-				<?php get_sidebar('left'); ?>
 				
-			<!-- END .three columns -->
-			</div>
-			
-			<!-- BEGIN .eight columns -->
-			<div class="eight columns">
-				
-				<!-- BEGIN .postarea middle -->
-				<div class="postarea middle">
-				
-					<?php get_template_part( 'loop', 'archive' ); ?>
-					
-				<!-- END .postarea middle -->
-				</div>
-			
-			<!-- END .eight columns -->
-			</div>
-			
-			<!-- BEGIN .five columns -->
-			<div class="five columns">
-			
-				<?php get_sidebar('blog'); ?>
-				
-			<!-- END .five columns -->
-			</div>
-		
-		<?php } elseif ( is_active_sidebar( 'left-sidebar' ) ) { ?>
-		
-			<!-- BEGIN .three columns -->
-			<div class="three columns">
-			
-				<?php get_sidebar('left'); ?>
-				
-			<!-- END .three columns -->
-			</div>
-				
-			<!-- BEGIN .thirteen columns -->
-			<div class="thirteen columns">
-		
-				<!-- BEGIN .postarea -->
-				<div class="postarea right">
-				
-					<?php get_template_part( 'loop', 'archive' ); ?>
-				
-				<!-- END .postarea -->
-				</div>
-			
-			<!-- END .thirteen columns -->
-			</div>
-		
-		<?php } elseif ( is_active_sidebar( 'blog-sidebar' ) ) { ?>
+		<?php if ( is_active_sidebar( 'blog-sidebar' ) ) { ?>
 			
 			<!-- BEGIN .eleven columns -->
 			<div class="eleven columns">
@@ -82,7 +26,7 @@ get_header(); ?>
 				<!-- BEGIN .postarea -->
 				<div class="postarea">
 				
-					<?php get_template_part( 'loop', 'archive' ); ?>
+					<?php get_template_part( 'content/loop', 'archive' ); ?>
 				
 				<!-- END .postarea -->
 				</div>
@@ -106,7 +50,7 @@ get_header(); ?>
 				<!-- BEGIN .postarea full -->
 				<div class="postarea full">
 				
-					<?php get_template_part( 'loop', 'archive' ); ?>
+					<?php get_template_part( 'content/loop', 'archive' ); ?>
 				
 				<!-- END .postarea full -->
 				</div>

@@ -2,8 +2,8 @@
 /**
 * This template displays the default page content.
 *
-* @package Swell
-* @since Swell 1.0
+* @package Swell Lite
+* @since Swell Lite 1.0
 *
 */
 get_header(); ?>
@@ -34,7 +34,7 @@ get_header(); ?>
 				<!-- BEGIN .postarea -->
 				<div class="postarea">
 				
-					<?php get_template_part( 'loop', 'page' ); ?>
+					<?php get_template_part( 'content/loop', 'page' ); ?>
 				
 				<!-- END .postarea -->
 				</div>
@@ -58,7 +58,7 @@ get_header(); ?>
 				<!-- BEGIN .postarea full -->
 				<div class="postarea full">
 		
-					<?php get_template_part( 'loop', 'page' ); ?>
+					<?php get_template_part( 'content/loop', 'page' ); ?>
 				
 				<!-- END .postarea full -->
 				</div>
