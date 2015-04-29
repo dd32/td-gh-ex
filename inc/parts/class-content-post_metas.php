@@ -39,6 +39,14 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
         */
         function tc_set_visibility_options() {
           //if customizing context, always render. Will be hidden in the DOM with a body class filter is disabled.
+          if ( 0 == esc_attr( TC_utils::$inst->tc_opt( 'tc_show_post_metas' ) ) ) {
+            if ( TC___::$instance -> tc_is_customizing() )
+              add_filter( 'body_class' , array( $this , 'tc_hide_all_post_metas') );
+            else{
+              add_filter( 'tc_show_post_metas' , '__return_false' );
+              return;
+            }
+          }
           if ( is_singular() && ! is_page() && ! tc__f('__is_home') ) {
               if ( 0 != esc_attr( TC_utils::$inst->tc_opt( 'tc_show_post_metas_single_post' ) ) ) {
                   add_filter( 'tc_show_post_metas' , '__return_true' );
@@ -51,7 +59,7 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
               }
               else
                   add_filter( 'tc_show_post_metas' , '__return_false' );
-
+              return;
           }
           if ( ! is_singular() && ! tc__f('__is_home') && ! is_page() ) {
               if ( 0 != esc_attr( TC_utils::$inst->tc_opt( 'tc_show_post_metas_post_lists' ) ) ) {
@@ -59,12 +67,13 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
                   return;
               }
 
-                  if ( TC___::$instance -> tc_is_customizing() ) {
-                      add_filter( 'body_class' , array( $this , 'tc_hide_post_metas') );
-                      add_filter( 'tc_show_post_metas' , '__return_true' );
-                  }
-                  else
-                      add_filter( 'tc_show_post_metas' , '__return_false' );
+              if ( TC___::$instance -> tc_is_customizing() ) {
+                  add_filter( 'body_class' , array( $this , 'tc_hide_post_metas') );
+                  add_filter( 'tc_show_post_metas' , '__return_true' );
+              }
+              else
+                  add_filter( 'tc_show_post_metas' , '__return_false' );
+              return;
           }
           if ( tc__f('__is_home') ) {
               if ( 0 != esc_attr( TC_utils::$inst->tc_opt( 'tc_show_post_metas_home' ) ) ) {
@@ -384,7 +393,8 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
           //filter the post taxonomies
           while ( $el = current($tax_list) ) {
               //skip the post format taxinomy
-              if ( in_array( key($tax_list) , apply_filters_ref_array ( 'tc_exclude_taxonomies_from_metas' , array( array('post_format') , $post_type , TC_utils::tc_id() ) ) ) ) {
+              if ( in_array( key($tax_list) , apply_filters_ref_array ( 'tc_exclude_taxonomies_from_metas' , array( array('post_format') , $post_type , TC_utils::tc_id() ) ) )  || 
+                 ( false === (bool) $el -> public && apply_filters_ref_array( 'tc_exclude_private_taxonomies', array( true, $el -> public, TC_utils::tc_id() ) ) ) ){
                   next($tax_list);
                   continue;
               }
@@ -478,6 +488,18 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
           return $_metas_html;
         }
 
+
+
+
+        /**
+        * hook body_class filter
+        *
+        * @package Customizr
+        * @since Customizr 3.2.0
+        */
+        function tc_hide_all_post_metas( $_classes ) {
+          return array_merge($_classes , array('hide-all-post-metas') );
+        }
 
 
         /**
