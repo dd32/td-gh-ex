@@ -48,6 +48,12 @@ two-columns, right-sidebar, responsive-layout, custom-background, custom-menu, c
 3. Log into your WP admin panel and click on the Design tab. Now click on the Annina theme to activate it.
 
 == Changelog ==
+Version 1.2.6
+* Fixed Previous and Next Post translation bug
+* Added VK Social Network button
+* Improved masonry structure
+* Minor bug fixes
+
 Version 1.2.5
 * Fixed problem with email link
 

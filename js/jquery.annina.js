@@ -1,8 +1,8 @@
 (function($) {
 	"use strict";
 	
-	$(window).load(function() {
-	
+	$(document).ready(function() {
+		
 		/*-----------------------------------------------------------------------------------*/
 		/*  If the Tagcloud widget exist or Edit Comments Link exist
 		/*-----------------------------------------------------------------------------------*/ 
@@ -15,15 +15,12 @@
 			if ( $( '.form-allowed-tags' ).length ) {
 				$('.form-allowed-tags').addClass('smallPart');
 			}
-	});
-	
-	$(document).ready(function() {
 	
 		/*-----------------------------------------------------------------------------------*/
 		/*  Masonry & ImagesLoaded
 		/*-----------------------------------------------------------------------------------*/ 	
 		if ( $( '#mainAnnina' ).length ) {
-			var $container = $('#mainAnnina');
+			var $container = $('#mainAnnina').masonry();
 			$container.imagesLoaded(function(){
 				$container.masonry({
 				  columnWidth: '.grid-sizer',
@@ -32,6 +29,7 @@
 				});
 			});
 		}
+
 		var $featImage = $('.entry-featuredImg');
 		$featImage.imagesLoaded(function(){
 			$('.entry-featuredImg img').css({

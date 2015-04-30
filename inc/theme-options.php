@@ -13,6 +13,7 @@ $annina_theme_options = array(
 	'instagramurl' => '#', 
 	'youtubeurl' => '#', 
 	'pinteresturl' => '#', 
+	'vkurl' => '#', 
 	'emailurl' => '#'
 );
 
@@ -207,6 +208,18 @@ function annina_options_do_page() {
 				
 				<?php
 				/**
+				 * VK
+				 */
+				?>
+				<tr valign="top"><th scope="row"><?php _e( 'Enter your VK URL', 'annina' ); ?></th>
+					<td>
+						<input id="annina_theme_options[vkurl]" class="regular-text" type="text" name="annina_theme_options[vkurl]" value="<?php if( isset( $se_options[ 'vkurl' ] ) ) echo esc_url( $se_options[ 'vkurl' ] ); ?>" />
+						<label class="description" for="annina_theme_options[vkurl]"><?php _e( 'Leave blank to hide VK Icon', 'annina' ); ?></label>
+					</td>
+				</tr>
+				
+				<?php
+				/**
 				 * Email
 				 */
 				?>
@@ -260,6 +273,8 @@ function annina_options_validate( $input ) {
 		$input['youtubeurl'] = esc_url_raw( $input['youtubeurl'] );
 	if( isset( $se_options[ 'pinteresturl' ] ) )
 		$input['pinteresturl'] = esc_url_raw( $input['pinteresturl'] );
+	if( isset( $se_options[ 'vkurl' ] ) )
+		$input['vkurl'] = esc_url_raw( $input['vkurl'] );
 	if( isset( $se_options[ 'emailurl' ] ) )
 		$input['emailurl'] = sanitize_email( $input['emailurl'] );
 

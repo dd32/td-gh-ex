@@ -232,7 +232,7 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:83
+#: functions.php:91
 msgid "Sidebar"
 msgstr ""
 
@@ -298,10 +298,7 @@ msgid "Previous Post"
 msgstr ""
 
 #: inc/template-tags.php:55
-msgctxt "Previous post link"
-msgid ""
-"<div class=\"meta-nav\" title=\"%title\"><i class=\"fa fa-angle-left "
-"spaceRight\"></i><span>"
+msgid "Previous post:"
 msgstr ""
 
 #: inc/template-tags.php:56
@@ -309,8 +306,7 @@ msgid "Next Post"
 msgstr ""
 
 #: inc/template-tags.php:56
-msgctxt "Next post link"
-msgid "<div class=\"meta-nav\" title=\"%title\"><span>"
+msgid "Next Post:"
 msgstr ""
 
 #: inc/template-tags.php:82
@@ -351,192 +347,200 @@ msgstr ""
 msgid "<i class=\"fa fa-tags spaceRight\"></i>%1$s"
 msgstr ""
 
-#: inc/theme-options.php:21 inc/theme-options.php:44
+#: inc/theme-options.php:24 inc/theme-options.php:48
 msgid "Annina Theme Options"
 msgstr ""
 
-#: inc/theme-options.php:57
+#: inc/theme-options.php:61
 msgid " Free Theme Options"
 msgstr ""
 
-#: inc/theme-options.php:60
+#: inc/theme-options.php:64
 msgid "Need more features and options? Upgrade to PRO!"
 msgstr ""
 
-#: inc/theme-options.php:61
+#: inc/theme-options.php:65
 msgid "Get"
 msgstr ""
 
-#: inc/theme-options.php:61
+#: inc/theme-options.php:65
 msgid "Annina PRO"
 msgstr ""
 
-#: inc/theme-options.php:61
+#: inc/theme-options.php:65
 msgid "WordPress Theme for only"
 msgstr ""
 
-#: inc/theme-options.php:61
-msgid "(One Time Fee)"
-msgstr ""
-
-#: inc/theme-options.php:63
+#: inc/theme-options.php:67
 msgid "Demo (Annina PRO)"
 msgstr ""
 
-#: inc/theme-options.php:65
+#: inc/theme-options.php:69
 msgid "Get The Pro Version"
 msgstr ""
 
-#: inc/theme-options.php:69
+#: inc/theme-options.php:73
 msgid "Advanced Theme Options"
 msgstr ""
 
-#: inc/theme-options.php:69
+#: inc/theme-options.php:73
 msgid ""
 "(Manage Loading Page, Additional Custom Code, Font switcher and much more...)"
 msgstr ""
 
-#: inc/theme-options.php:70
+#: inc/theme-options.php:74
 msgid "Logo and Favicon Upload"
 msgstr ""
 
-#: inc/theme-options.php:71
+#: inc/theme-options.php:75
 msgid "Unlimited Colors and Skin"
 msgstr ""
 
-#: inc/theme-options.php:72
+#: inc/theme-options.php:76
 msgid "Post views counter"
 msgstr ""
 
-#: inc/theme-options.php:73
+#: inc/theme-options.php:77
 msgid "Infinite Scroll"
 msgstr ""
 
-#: inc/theme-options.php:74
+#: inc/theme-options.php:78
 msgid "Breadcrumb"
 msgstr ""
 
-#: inc/theme-options.php:75
-msgid "Post format"
-msgstr ""
-
-#: inc/theme-options.php:75
-msgid "(Standard, Audio, Link, Video, Quote)"
-msgstr ""
-
-#: inc/theme-options.php:76
+#: inc/theme-options.php:79
 msgid "7 Shortcodes"
 msgstr ""
 
-#: inc/theme-options.php:76
+#: inc/theme-options.php:79
 msgid "(Toggle, Tabs, Boxes, Columns, Highlights, Buttons and Drop Cap)"
 msgstr ""
 
-#: inc/theme-options.php:77
-msgid "10 Exclusive Widgets"
+#: inc/theme-options.php:80
+msgid "11 Exclusive Widgets"
 msgstr ""
 
-#: inc/theme-options.php:77
+#: inc/theme-options.php:80
 msgid ""
 "(Latest Tweet, Instagram, Social Buttons, Recent Posts with Thumbnail and "
 "Most Commented Posts...)"
 msgstr ""
 
-#: inc/theme-options.php:78
+#: inc/theme-options.php:81
 msgid "Related Posts Box"
 msgstr ""
 
-#: inc/theme-options.php:79
+#: inc/theme-options.php:82
 msgid "Information About Author Box"
 msgstr ""
 
-#: inc/theme-options.php:80
+#: inc/theme-options.php:83
+msgid "Advertising system"
+msgstr ""
+
+#: inc/theme-options.php:84
 msgid "And much more..."
 msgstr ""
 
-#: inc/theme-options.php:85
+#: inc/theme-options.php:89
 msgid ""
 "These options will let you setup the social icons at the bottom of the "
 "theme. You can enter the URLs of your profiles to have the icons show up."
 msgstr ""
 
-#: inc/theme-options.php:87
+#: inc/theme-options.php:91
 msgid "Options saved"
 msgstr ""
 
-#: inc/theme-options.php:102
+#: inc/theme-options.php:106
 msgid "Last post box big?"
 msgstr ""
 
-#: inc/theme-options.php:105
+#: inc/theme-options.php:109
 msgid "Enable it if you want the last post box big"
 msgstr ""
 
-#: inc/theme-options.php:114
+#: inc/theme-options.php:118
 msgid "Hide Search Button?"
 msgstr ""
 
-#: inc/theme-options.php:117
+#: inc/theme-options.php:121
 msgid "Hide the Search button?"
 msgstr ""
 
-#: inc/theme-options.php:126
+#: inc/theme-options.php:130
 msgid "Enter your Facebook URL"
 msgstr ""
 
-#: inc/theme-options.php:129
+#: inc/theme-options.php:133
 msgid "Leave blank to hide Facebook Icon"
 msgstr ""
 
-#: inc/theme-options.php:138
+#: inc/theme-options.php:142
 msgid "Enter your Twitter URL"
 msgstr ""
 
-#: inc/theme-options.php:141
+#: inc/theme-options.php:145
 msgid "Leave blank to hide Twitter Icon"
 msgstr ""
 
-#: inc/theme-options.php:150
+#: inc/theme-options.php:154
 msgid "Enter your Google + URL"
 msgstr ""
 
-#: inc/theme-options.php:153
+#: inc/theme-options.php:157
 msgid "Leave blank to hide Google + Icon"
 msgstr ""
 
-#: inc/theme-options.php:162
+#: inc/theme-options.php:166
 msgid "Enter your Linkedin URL"
 msgstr ""
 
-#: inc/theme-options.php:165
+#: inc/theme-options.php:169
 msgid "Leave blank to hide Linkedin Icon"
 msgstr ""
 
-#: inc/theme-options.php:174
+#: inc/theme-options.php:178
 msgid "Enter your Instagram URL"
 msgstr ""
 
-#: inc/theme-options.php:177
+#: inc/theme-options.php:181
 msgid "Leave blank to hide Instagram Icon"
 msgstr ""
 
-#: inc/theme-options.php:186
+#: inc/theme-options.php:190
 msgid "Enter your YouTube URL"
 msgstr ""
 
-#: inc/theme-options.php:189
+#: inc/theme-options.php:193
 msgid "Leave blank to hide YouTube Icon"
 msgstr ""
 
-#: inc/theme-options.php:198
+#: inc/theme-options.php:202
 msgid "Enter your Pinterest URL"
 msgstr ""
 
-#: inc/theme-options.php:201
+#: inc/theme-options.php:205
 msgid "Leave blank to hide Pinterest Icon"
 msgstr ""
 
-#: inc/theme-options.php:208
+#: inc/theme-options.php:214
+msgid "Enter your VK URL"
+msgstr ""
+
+#: inc/theme-options.php:217
+msgid "Leave blank to hide VK Icon"
+msgstr ""
+
+#: inc/theme-options.php:226
+msgid "Enter your Email"
+msgstr ""
+
+#: inc/theme-options.php:229
+msgid "Leave blank to hide Email Icon"
+msgstr ""
+
+#: inc/theme-options.php:236
 msgid "Save Options"
 msgstr ""
 

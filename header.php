@@ -84,6 +84,10 @@
 					<a href="<?php echo esc_url($se_options['pinteresturl']); ?>" title="Pinterest" target="_blank"><i class="fa spaceRightDouble fa-pinterest"></i></a>
 				<?php endif; ?>
 				
+				<?php if ( $se_options['vkurl'] != '' ) : ?>
+					<a href="<?php echo esc_url($se_options['vkurl']); ?>" title="VK" target="_blank"><i class="fa spaceRightDouble fa-vk"></i></a>
+				<?php endif; ?>
+				
 				<?php if ( $se_options['emailurl'] != '' ) : ?>
 					<a href="mailto:<?php echo sanitize_email($se_options['emailurl']); ?>" title="Email"><i class="fa spaceRightDouble fa-envelope"></i></a>
 				<?php endif; ?>

@@ -52,8 +52,8 @@ function annina_post_nav() {
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'annina' ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<div class="meta-nav" title="%title"><i class="fa fa-angle-left spaceRight"></i><span>'. __('Previous Post', 'annina') .'</span></div>', 'Previous post link', 'annina' ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '<div class="meta-nav" title="%title"><span>'. __('Next Post', 'annina') .'</span><i class="fa fa-angle-right spaceLeft"></i></div>', 'Next post link',     'annina' ) );
+				previous_post_link( '<div class="nav-previous">%link</div>', '<div class="meta-nav" title="%title" aria-hidden="true"><i class="fa fa-angle-left spaceRight"></i><span>' . __( 'Previous Post', 'annina' ) . '</span></div> ' . '<span class="screen-reader-text">' . __( 'Previous post:', 'annina' ) . '</span> ' );
+				next_post_link( '<div class="nav-next">%link</div>', '<div class="meta-nav" title="%title" aria-hidden="true"><span>' . __( 'Next Post', 'annina' ) . '</span><i class="fa fa-angle-right spaceLeft"></i></div> ' . '<span class="screen-reader-text">' . __( 'Next Post:', 'annina' ) . '</span> ' );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
