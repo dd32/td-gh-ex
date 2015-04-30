@@ -2,19 +2,16 @@
 Theme Name: Silver Quantum
 Author: Benjamin Lu
 Description: This Silver Quantum has an easy fixed top navigation so that when users scrolls down, the navigation stays in its place. It also comes with custom sidebar and full width without no sidebar. Custom Background and Header is available. 
-Version: 0.2.0
+Version: 0.2.1
 License: Silver Quantum is distributed under the terms of the GNU GPL.
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: custom-colors, custom-header, custom-background, custom-menu, editor-style, featured-images, fixed-layout, gray, one-column, post-formats, right-sidebar, sticky-post, translation-ready, threaded-comments, two-columns
+Tags: silver, one-column, two-columns, right-sidebar, custom-header, custom-menu, custom-background
 Text Domain: silverquantum
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
-/*******************************************************************************
-0.0.1 - Normalize Reset
-*******************************************************************************/
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 
 /**
@@ -443,538 +440,377 @@ th {
   padding: 0;
 }
 
-/*******************************************************************************
-0.0.2 - Micro Clearfix Hack
-*******************************************************************************/
-/**
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    contenteditable attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that are clearfixed.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-.cf:before,
-.cf:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+
+
+
+/* micro-clearfix by Niclas Gallagher */
+.cf:before, .cf:after {
+  content: "";
+  display: table;
 }
 
 .cf:after {
-    clear: both;
+  clear: both;
 }
 
-/**
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
-.cf {
-    *zoom: 1;
-}
-
-/*******************************************************************************
-0.0.3 - Main Layout Content
-*******************************************************************************/
+/* Basic Structure
+-----------------------------------------------------------*/
 body {
-    background: #CCC;
-    font-family: 'Ubuntu', 'sans-serif';
-    font-size: 14px; 
+  background: #cccccc;	
+  font-family: 'Ubuntu', 'sans-serif';
+  font-size: 11pt;
+  margin: 0;
+  padding: 0;
 }
 
 a {
-    color: #0195C5;
-    text-decoration: none;
+  color: #0195c5;
+  text-decoration: none;
 }
 
 a:hover {
-    color: #666;
+  color: #999999;
 }
 
 #height {
-    height: 60px;
+  height: 60px;
 }
 
 #container {
-    background: #FFF;
-    border: 1px solid #000;
-    box-shadow: 0 0 10px 0;
-    margin: 0 auto;
-    margin-bottom: 5px;
-    width: 960px;
+  background: #ffffff;
+  border: 2px solid #999999;
+  margin: 0 auto;
+  width: 960px
 }
 
-/*******************************************************************************
-0.0.4 - Primary Navigation
-*******************************************************************************/
-#site-navigation {
-    background: #666666;
-    border-bottom: 1px solid #ffffff;
-    height: 32px;
-    position: fixed;
-    width: 100%;
-    z-index: 1;
-}
-
-.primary-navigation {
-    display: block;
-    height: 32px;
-    margin: 0 auto;
-    position: relative;
-    width: 960px;
-}
-.primary-navigation ul {
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
-}
-.primary-navigation li {
-    float: left;
-    position: relative;
-}
-.primary-navigation a {
-    color: #FFFFFF;
-    display: block;
-    line-height: 1.3em;
-    padding: 0.5em 1em;
-    text-decoration: none;
-}
-.primary-navigation ul ul {
-    background: #4D4D4D;    
-    display: none;
-    float: left;
-    position: absolute;
-    left: 0;
-    padding: 0;
-    z-index: 99999;
-}
-
-.primary-navigation ul ul ul {
-    left: 100%;
-    top: 0;
-}
-
-.primary-navigation ul ul a {
-    width: 200px;
-}
-
-.primary-navigation ul ul li {
-    
-}
-
-.primary-navigation li:hover > a {
-    color: #FFFFFF;
-    background: #4d4d4d;
-}
-.primary-navigation ul ul :hover > a {
-
-}
-
-.primary-navigation ul ul a:hover {
-    background: #313131;
-}
-.primary-navigation ul li:hover > ul {
-	display: block;
-}
-.primary-navigation .current_page_item > a,
-.primary-navigation .current-menu-item > a,
-.primary-navigation .current_page_item > a:hover,
-.primary-navigation .current-menu-item > a:hover {
-    background: #000000;
-    color: #FFF;
-}
-
-.primary-navigation .current_page_ancestor {
-    background: #4d4d4d;
-    color: #FFFFFF;
-}
-
-.primary-navigation ul ul .current_page_parent,
-.primary-navigation .current_page_parent .current_page_item > a {
-    color: #FFFFFF;
-    background: #313131;
-} 
-
-/*******************************************************************************
-0.0.5 - Header Content
-*******************************************************************************/
-#site-header {
-    background: url(images/header-image.jpg);
-    height: 200px;
-}
-
-hgroup {
-    color: #FFF;
-    margin: 10px 10px;
-    position: absolute;
-    text-align: center;
+.site-header {
+  background: url(images/header.jpg	);
+  height: 200px;
 }
 
 .site-title {
-    font-size: 32px;
-    margin: 0;
-    padding: 0;
-}
-
-.site-title a {
-    color: #FFF;
+  background: #fff;
+  font-size: 24pt;
+  height: auto;
+  margin: 20px 0 0 20px;
+  padding: 10px 10px 22px 10px;
+  position: absolute;
+  text-align: center;
+  width: auto;
+  z-index: 0;
 }
 
 .site-description {
-    line-height: 10px;
-    margin: 0;
-    padding: 0;
+  background: #fff;
+  font-size: 12pt;
+  height: auto;
+  margin: 65px 0 0 20px;
+  padding: 0 10px 5px 10px;
+  position: absolute;
+  text-align: center;
+  width: auto;
+  z-index: 0;
 }
 
-/*******************************************************************************
-0.0.6 - Footer Content
-*******************************************************************************/
-#site-footer {
-    margin: 0 auto;
-    text-align: center;
-    width: 960px;
+.header-image {
+  max-width: 100%;
+  height: auto;
 }
 
-/*******************************************************************************
-0.0.7 - Site Content
-*******************************************************************************/
-#site-content {
-    float: left; 
-    margin: 10px 10px 20px 10px;
-    width: 650px;
+#main-content {
+  float: left;
+  margin: 10px 0 20px 10px;
+  width: 680px;
 }
 
-#site-content-full {
-    margin: 10px 10px 20px 10px;
+#main-content table {
+  margin-top: 20px;
+}
+
+#full-content {
+	margin: 23px 10px 20px 10px;
+}
+
+#full-content table {
+  margin-top: 20px;
 }
 
 .entry-title {
-    border-bottom: 1px solid #CCC;
-    margin: 0;
-    padding: 0;
+  border-bottom: 1px solid #cccccc;
+  font-size: 12pt;
+  margin-bottom: 0;
 }
 
-.content-archive {
-	padding-bottom: 0;
-	text-align: center;
+.entry-title a {
+  color: #0195c5;
+  text-decoration: none;
 }
 
-.content-search {
-	padding-bottom: 0;
-	text-align: center;
+.entry-metadata {
+  margin: 0 0 0 0;
 }
 
-.entry-content {
-    
+.entry-meta {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
-.wp-caption {
-    
+#widget-area {
+  float: right;
+  margin: 10px 10px 20px 0;
+  width: 220px;
 }
 
-.wp-caption-text {
-    
-}
-
-.alignleft {
-    float: left;
-}
-
-.aligncenter {
-    
-}
-
-.alignright {
-    float: right;
-}
-
-.alignnone {
-    
-}
-
-.sticky {
-    
-}
-
-.gallery-caption {
-    
-}
-
-.wp-caption.alignnone {
-    max-width: 100%;
-    
-}
-
-
-
-
-.post-navigation {
-    width: 650px
-}
-
-.paging-navigation ul {
-    margin: 0;
-    text-align: center;
-}
-
-.paging-navigation li { display: inline; }
-
-a.page-numbers,
-span.page-numbers {
-     padding: 0 5px;
-     color: #0195C5;
-}
-
-a:hover.page-numbers {
-    color: #999999;
-}
-
-.paging-navigation .current {
-    font-weight: bold;
-    color: #000;
-}
-
-.not-found {
-    margin: 10px 10px;
-}
-
-img {
-    max-width: 100%;
-}
-
-/*******************************************************************************
-0.0.8 - Comments
-*******************************************************************************/
-.comments-title {
-    border-bottom: 1px solid #CCCCCC;
-    font-size: 20px;
-    margin-bottom: 5px;
-}
-
-.comment-list {
-    margin: 0;
-    padding: 0;
-}
-
-.comment-body {
-    margin-bottom: 20px;
-    padding: 10px;
-    border-bottom: 1px solid #CCCCCC;
-}
-
-.comments-area > ol  {
-    list-style-type: none;
-}
-
-.comment-author .avatar {
-    float: left; 
-    display: block;
-    margin-right: 10px;
-}
-
-.comment-author .fn {
-    font-size: 16px;
-    margin: 0;
-    padding: 0;
-}
-
-.comment-meta {
-    font-size: 14px;
-}
-
-.comments-area p {
-    margin-top: 20px;
-}
-
-.reply {
-    font-size: 12px;
-    margin-bottom: 20px;
-}
-
-.comment-list ol {
-    margin-top: 20px;
-  margin-left: 20px;
-}
-
-ol.children {
-    list-style-type: none;
-}
-
-.content-meta {
-    margin-left: 70px;
-}
-
-.comment-navigation {
-    border-top: 1px solid #999;
-    border-bottom: 1px solid #999;
-}
-
-.comment-navigation i {
-    padding: 10px;
-}
-
-.comment-previous {
-    float: left;
-}
-.comment-next {
-    float: right;
-}
-
-.bypostauthor > .comment-body {
-   background: #F0F0F0; 
-   border-bottom: none;
-   padding: 10px;
-   position: relative;
-}
-
-.comment-reply-title {
-	border-top: 1px dotted #CCCCCC;
-    font-size: 20px;
-    margin: 0;
-	margin-top: 10px;
-    padding: 0;
-	padding-top: 10px;
-}
-.comment-form label {
-    display: block;
-}
-
-.required {
-    color: #FF0000;
-    font-size: 10px;
-}
-
-.comment-awaiting-moderation {
-    background: #84BD68;
-    font-size: 12px;
-    padding: 3px 4px;
-}
-
-.form-allowed-tags {
-    font-size: 13px;
-	width: 600px;
-}
-
-.form-submit .submit {
-    -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
-    -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
-    box-shadow:inset 0px 1px 0px 0px #ffffff;
-    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9));
-    background:-moz-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
-    background:-webkit-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
-    background:-o-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
-    background:-ms-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
-    background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9',GradientType=0);
-    background-color:#f9f9f9;
-    -moz-border-radius:6px;
-    -webkit-border-radius:6px;
-    border-radius:6px;
-    border:1px solid #dcdcdc;
-    display:inline-block;
-    cursor:pointer;
-    color:#666666;
-    font-size:14px;
-    font-weight:bold;
-    padding:6px 24px;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #ffffff;
-}
-
-.form-submit .submit:hover {
-    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9));
-    background:-moz-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
-    background:-webkit-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
-    background:-o-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
-    background:-ms-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
-    background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e9e9', endColorstr='#f9f9f9',GradientType=0);
-    background-color:#e9e9e9;
-}
-
-#respond textarea#comment{
-	height: 200px;
-	width: 600px;	
-}
-
-/*******************************************************************************
-0.0.9 - Site Sidebar
-*******************************************************************************/
-
-#site-sidebar {
-    float: right;
-    list-style: none;
-    margin: 10px 10px 20px 10px;
-    width: 250px;
-}
-
-#site-sidebar ul {
-    margin: 0;
-    margin-bottom: 10px;
-    padding: 5px 0;
-}
-
-#site-sidebar li {
-    list-style: none;
-    margin: 0;
+#widget-area ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .widget-title {
-    border-bottom: 1px solid #CCCCCC;    
-    margin: 0;
-    padding: 0;
+  border-bottom: 1px solid #cccccc;
+  font-size: 12pt;
 }
 
 #wp-calendar {
-    background: #ebebeb;
-    border: 1px solid #cccccc;
-    margin: 0;
-    margin-bottom: 20px;
-    text-align: center;
-    width: 100%;
-}
-
-#wp-calendar a {
-    font-weight: bold;
+  text-align: center;
+  width: 100%;
 }
 
 #wp-calendar caption {
-    font-weight: bold;
-    margin: 5px 0;
-    text-align: center;
+  font-weight: bold;
 }
 
 #wp-calendar #today {
-    background: #cccccc;
+  font-weight: bold;
 }
 
-#wp-calendar th, td {
-    padding: 6px 0;
+.alignleft {
+  float: left;
+  padding: 0 10px 0 0;
 }
 
-span.screen-reader-text {
-    display: none;
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 0 10px 0;
+
 }
 
-input.search-field {
-    margin: 5px 0 20px 0;
-    padding: 5px 5px;
-    width: 237px;
+.alignright {
+  float: right;
+  margin: 0 0 0 10px;
 }
 
-input.search-submit {
-    display: none;
+.wp-caption {
+
 }
 
-.textwidget {
-    margin: 5px 0 20px 0;
+.wp-caption-text {
+
 }
 
-.tagcloud {
-    margin: 5px 0 20px 0;
+.sticky {
+
+}
+
+.gallery-caption {
+
+}
+
+.bypostauthor {
+
+}
+
+.site-footer {
+  font-size: 10pt;
+  margin: 0 auto;
+  padding: 5px 0 30px 0;
+  text-align: center;
+  width: 960px;
+}
+
+.form-allowed-tags {
+  font-size: 10pt;
+}
+
+/* Top Navigation Structure
+-----------------------------------------------------------*/
+#top-navigation {
+  background: #666666;
+  border-bottom: 1px solid #ffffff;
+  height: 30px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.top-menu {
+  color: #ffffff;
+  font-size: 12pt;
+  display: block;
+  height: 29px;
+  margin: 0 auto;
+  width: 960px;
+}
+
+.top-menu ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+.top-menu li {
+  float: left;
+  position: relative;
+}
+
+.top-menu a {
+  color: #ffffff;
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
+.top-menu ul ul {
+  display: none;
+  float: left;
+  left: -40px;
+  position: absolute;
+  top: 28px;
+  width: 100px;
+}
+
+.top-menu ul ul a {
+  background: #999999;
+  display: block;
+  height: auto;
+  line-height: 1em;
+  padding: 10px;
+  width: 250px;
+}
+
+.top-menu ul ul li {
+  width: auto;
+}
+
+.top-menu ul ul ul {
+  left: 230px;
+  top: 0;
+  width: 250px;
+}
+
+.top-menu li:hover > a, .top-menu ul ul :hover > a {
+  background: #000;	
+  color: #fff;
+  display: block;
+
+}
+
+.top-menu ul li:hover > ul {
+  display: block;	
+}
+
+.top-menu ul li.current_page_item > a,
+.top-menu ul li.current-menu-ancestor > a,
+.top-menu ul li.current-menu-item > a,
+.top-menu ul li.current-menu-parent > a {
+  background: #333;
+  color: #fff;	
+  cursor: default;
+}
+
+/* Images
+--------------------------------------------------------*/
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 select {
-    margin: 5px 0 20px 0;
-    max-width: 100%;
+	max-width: 100%;
+}
+
+/* =Comments
+-------------------------------------------------------------- */
+.comment-list {
+  background: #cccccc;
+  list-style-type: none;
+  margin: 0 0 0 0;
+  padding: 20px 0 10px 20px;
+}
+
+.comment-list li {
+  list-style-type: none;
+}
+
+.comments-title {
+	margin-bottom: 40px;
+	font-size: 13pt;
+	line-height: 1;
+	font-weight: normal;
+}
+
+.comments-area article header {
+	margin: 0 0 10px;
+}
+.comments-area article header img {
+	float: left;
+	padding: 0;
+	line-height: 0;
+}
+.comments-area article header cite,
+.comments-area article header time {
+	margin-left: 55px;
+}
+.comments-area article header cite {
+	font-size: 50pt;
+}
+
+.comments-area article header time {
+	text-decoration: none;
+	font-size: 9pt;
+	color: #5e5e5e;
+}
+.comments-area article header a {
+	text-decoration: none;
+	color: #0195c5;
+}
+.comments-area article header a:hover {
+	color: #21759b;
+}
+.comments-area article header cite a {
+	color: #0195c5;
+}
+.comments-area article header cite a:hover {
+	text-decoration: none;
+}
+
+.avatar {
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+.reply {
+  margin-bottom: 20px;
+}
+.comment-form-author label {
+  display: block;
+}
+
+.comment-form-email label {
+  display: block;
+}
+
+.comment-form-url label {
+  display: block;
+}
+ 
+.comment-form-comment  label{
+  display: block;
+}
+
+.wp-caption.alignnone {
+	max-width: 100%;
+	height: auto;
 }

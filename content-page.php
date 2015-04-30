@@ -1,9 +1,24 @@
-<section id = "site-content">
-    <article id = "post-<?php the_ID(); ?> <?php post_class(); ?>">
-            <h3 class = "entry-title"><?php echo ( get_the_title() ) ? get_the_title() : __( '(No Title)', 'silverquantum' ); ?></h3>
-            <div class = "entry-content">
-                <?php the_content(); ?>            
-            </div>
-            <?php comments_template(); ?>
-    </article>
-</section>
+<article id = "post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<header class="entry-header">
+		<h1 class = "entry-title"><?php the_title(); ?></h1>
+	</header>
+
+	<div class="entry-content">
+			<small class = "entry-metadata">
+				| <?php if ( comments_open()) : ?> 
+					<?php comments_popup_link('Add Comment','1 Comment','% Comments'); ?>
+				<?php else : ?>
+					<?php if (!comments_open() && get_comments_number() )?>
+						<?php _e('Comments Closed', 'silverquantum'); ?>
+				<?php endif; ?> | 
+			<?php edit_post_link(); ?>
+			</small>
+		<?php the_content(); ?>
+		<?php comments_template(); ?>
+		
+	</div>
+	
+	<footer class="entry-meta">
+	<?php edit_post_link( __( 'Edit', 'silverquantum' )); ?>
+	</footer>
+</article>
