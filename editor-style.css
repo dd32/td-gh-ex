@@ -505,7 +505,7 @@ strong
 {
     font-weight: 800;
 
-    color: black;
+    color: #000;
 }
 
 /* Lists */
@@ -611,6 +611,11 @@ li
 .no-thumbnail .main-navigation .menu li a
 {
     color: #0e364f;
+}
+
+button:focus
+{
+    outline: none !important;
 }
 
 .main-navigation
@@ -822,13 +827,17 @@ li
     .sub-menu,
     .children
     {
+        position: relative;
         z-index: 1;
-        top: 0;
-        left: 50%;
+        top: 100%;
+        left: 51%;
 
+        display: block;
+
+        width: 100%;
+        margin-bottom: 0;
         padding-left: 10px;
 
-        border: 1px solid #0e3650;
         background-color: #fff;
     }
 }
@@ -858,7 +867,7 @@ li
 .children .menu-item-has-children:after,
 .children .page_item_has_children:after
 {
-    right: 10px;
+    right: 10%;
 
     -webkit-transform: rotate(-45deg);
         -ms-transform: rotate(-45deg);
@@ -871,17 +880,37 @@ li
     .children .menu-item-has-children:after,
     .children .page_item_has_children:after
     {
-        right: 0;
+        right: 10%;
 
         display: block;
 
         color: #0e3650;
     }
 }
+@media not screen and (min-width: 900px)
+{
+    .sub-menu .menu-item-has-children .sub-menu .menu-item,
+    .sub-menu .page_item_has_children .sub-menu .menu-item,
+    .children .menu-item-has-children .sub-menu .menu-item,
+    .children .page_item_has_children .sub-menu .menu-item
+    {
+        font-size: 10px;
+    }
+}
+@media not screen and (min-width: 900px)
+{
+    .sub-menu .menu-item-has-children,
+    .sub-menu .page_item_has_children,
+    .children .menu-item-has-children,
+    .children .page_item_has_children
+    {
+        font-size: 10px;
+    }
+}
 .sub-menu .sub-menu,
 .children .sub-menu
 {
-    top: 5%;
+    top: 100%;
     left: 0;
 
     -webkit-transform: translateX(0);
@@ -917,8 +946,8 @@ li
         -ms-transform: translateY(-50%) rotate(45deg);
             transform: translateY(-50%) rotate(45deg);
 
-    border-right: 1px solid white;
-    border-bottom: 1px solid white;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
 }
 .menu-item-has-children:hover > .sub-menu,
 .menu-item-has-children:hover > .children,
@@ -936,9 +965,13 @@ li
     }
 }
 
+.main-menu-container
+{
+    display: block;
+}
 @media not screen and (min-width: 900px)
 {
-    .menu-all-pages-container
+    .main-menu-container
     {
         position: absolute;
         z-index: -1;
@@ -1323,7 +1356,7 @@ label[for=comment]
 {
     font-size: 15px;
 
-    color: black;
+    color: #000;
 }
 .widgets-area .left-sidebar .widget_calendar #calendar_wrap table#wp-calendar thead,
 .widgets-area .center-sidebar .widget_calendar #calendar_wrap table#wp-calendar thead,
@@ -1366,7 +1399,7 @@ label[for=comment]
 .widgets-area .center-sidebar .widget_meta ul li a abbr[title],
 .widgets-area .right-sidebar .widget_meta ul li a abbr[title]
 {
-    color: black;
+    color: #000;
 }
 .widgets-area .left-sidebar .widget_recent_entries ul,
 .widgets-area .center-sidebar .widget_recent_entries ul,
@@ -1400,7 +1433,7 @@ label[for=comment]
 .widgets-area .center-sidebar .widget_rss ul li a,
 .widgets-area .right-sidebar .widget_rss ul li a
 {
-    color: black;
+    color: #000;
 }
 .widgets-area .left-sidebar .widget_tag_cloud .tagcloud a,
 .widgets-area .center-sidebar .widget_tag_cloud .tagcloud a,
@@ -1866,7 +1899,7 @@ blockquote:after,
 .sticky .hero__content .hero__content-wrap .hero__title .title,
 .sticky .hero__content .hero__content-wrap .hero__title .sub-title
 {
-    color: white;
+    color: #fff;
 }
 
 .separator
@@ -2067,11 +2100,11 @@ p a[href$='.gif']
 }
 .post.even-post
 {
-    background-color: white;
+    background-color: #fff;
 }
 .post.even-post .main-wrapper
 {
-    background-color: white;
+    background-color: #fff;
 }
 
 .single-post .post-navigation
@@ -2130,3 +2163,5 @@ body.wp-editor
 {
     z-index: 2;
 }
+
+/*# sourceMappingURL=editor-style.css.map */
