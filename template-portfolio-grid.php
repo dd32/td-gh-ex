@@ -214,6 +214,7 @@ Template Name: Portfolio Grid
 		                $wp_query = $temp;
 		                wp_reset_query(); 
 		            }?>
+		            <?php do_action('kt_after_pagecontent'); ?>
 			</div><!-- /.main -->
 			<?php get_sidebar(); ?>
       	</div><!-- /.row-->

@@ -76,6 +76,7 @@ Template Name: Blog Grid
 					endif; 
 					$wp_query = null; $wp_query = $temp;
 					wp_reset_query(); ?>
+					<?php do_action('kt_after_pagecontent'); ?>
 				</div><!-- /.main -->
 				<?php get_sidebar(); ?>
       		</div><!-- /.row-->

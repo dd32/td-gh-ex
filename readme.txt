@@ -1,9 +1,12 @@
+=== Pinnacle ===
+Requires at least: 4.0
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-    Thank you for downloading Pinnacle Theme!
+== Description ==
+Pinnacle is a bold theme with versatile options and multiple styles. This theme is loaded with features and tools that allow full creativity to be released into a unique site. Built with a modern flat design, its fully responsive layout make for easy navigation on mobile/tablet displays. Pinnacle is perfect for any kind of business, online store, portfolio, or personal site. It is fully compatible with woocommerce and gives you a unique layout for an ecommerce site. Pinnacle was built and designed by <a href="http://kadencethemes.com/">Kadence Themes</a>.
 
--------------------------------------------------------
-    Pinnacle Theme Features:
--------------------------------------------------------
+== Features ==
 * Woocommerce
 * Translation-Ready
 * Responsive
@@ -11,13 +14,128 @@
 * Unlimited Colors
 * Flex Sliders
 * Retina Ready Graphics
-* And Much more.
+* Options Panel
 
+== Frequently Asked Questions ==
 
--------------------------------------------------------
-    Credits:
--------------------------------------------------------
-Pinnacle Theme Uses:
+= Is there theme documentation? =
+
+Yes, go here: http://docs.kadencethemes.com/pinnacle/
+
+= Is there demo content available? =
+
+Yes, go here: http://www.kadencethemes.com/kadence-themes-demo-content/
+
+= Is there a free support form for this theme? =
+
+Yes, go here: https://wordpress.org/support/theme/pinnacle
+
+== Changelog ==
+
+= 1.2.7 | 30th April 2015 = 
+* Add: Comments on pages option.
+* Update: TGM script for recommending plugins.
+* Update: Image size attributes for grid. 
+* Update Readme file.
+
+= 1.2.6 | 14th April 2015 = 
+* Fix: Shop page not responding to header options.
+
+= 1.2.5 | 13th April 2015 = 
+* Fix: CSS Validate.
+
+= 1.2.4 | 13th April 2015 = 
+* Add: Page Title Filter.
+* Add: YouTube option for author box.
+* Fix: Theme options control of home page slider.
+* Update: Add color control to customizer.
+* Update: Theme Options.
+
+= 1.2.3 | 5th April 2015 = 
+* Add: Hard crop option for post excerpts.
+* Update: Theme options (Faster).
+* Fix: title-tag two titles.
+* Fix: p tag in category description.
+* Fix: Home page header when no page title.
+* Fix: CSS for category menu widget.
+
+= 1.2.2 | 25th March 2015 = 
+* Add title-tag support.
+* Update: Theme options (Faster).
+* Update: Schema code.
+* Fix: CSS next and previous button issue.
+
+= 1.2.1 = 
+* Update: Better theme preview.
+* Update: Slight css improvement in cart.
+* Update: Language files.
+* Fix: Single post portfolio carousel issue
+
+= 1.2.0 = 
+* Update: CSS validation to redux.
+* Update: Woocommerce 2.3 support.
+* Add: quantity input buttons back. (woocomerce removed in 2.3).
+
+= 1.1.9 = 
+* Update two strings with correct WordPress
+* Update notice of woocmmerce and pinnacle toolkit in the theme options
+* Update CSS validator with jetpacks solution.
+* Update Theme Options perissions to "edit_theme_options"
+* Update a few css styles for mobile.
+* Update the woocommerce ajax function.
+
+= 1.1.8 = 
+* remove some code per theme review request.
+
+= 1.1.7 = 
+* Fix/add some esc_*.
+
+= 1.1.6 = 
+* Fix/add some esc_*.
+* Move some inline scripts to main js file.
+* Remove contact template.
+* Remove metaboxes with gallery option.
+* Restructure all pages.
+
+= 1.0.5 = 
+* Remove mobile check.
+* Move response.js to function.
+* Remove some things in cleanup.php
+* Remove shortcodes.php
+* Move some inline scripts to main js file.
+
+= 1.0.4 = 
+* Fix/add some esc_attr.
+
+= 1.0.3 = 
+* Few small changes in home page title.
+* Update for page selected as latest post page.
+* Fix header background color.
+* Fix language/translation issues.
+* Remove template wrapper.
+* Fix/add some esc_attr.
+* Fix home blog undefined index.
+
+= 1.0.2 =
+* Update responsive layout tag.
+
+= 1.0.1 =
+* Update Theme options.
+* Fix small css issue in IE for menu.
+* Fix some page title issues.
+* Update languages.
+* Fix sidebar issues.
+* Few updates for new theme check.
+
+= 1.0.0 =
+* Initial Release
+
+== Upgrade Notice ==
+
+= 1.2.7 =
+* This version includes an option to turn comments on for pages.
+
+== Resources ==
 
 * Photos on example_slider by Benjamin Ritner (licensed under GNU General Public License v2.0 or later)
 * Photos on in the screenshot (licensed under Public Domain) http://publicdomainarchive.com/category/modern/, http://unsplash.com/
@@ -45,101 +163,3 @@ Pinnacle Theme Uses:
 * Masonry (http://masonry.desandro.com/) licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
 * imagesLoaded (https://github.com/desandro/imagesloaded) licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
 * SmartResize (https://github.com/louisremi/jquery-smartresize) licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
-
--------------------------------------------------------
-    Changelog:
--------------------------------------------------------
-
-= Theme Name: Pinnacle =
-
-= Version 1.2.6 | 14th April 2015 = 
-* Fix: Shop page not responding to header options.
-
-= Version 1.2.5 | 13th April 2015 = 
-* Fix: CSS Validate.
-
-= Version 1.2.4 | 13th April 2015 = 
-* Add: Page Title Filter.
-* Add: YouTube option for author box.
-* Fix: Theme options control of home page slider.
-* Update: Add color control to customizer.
-* Update: Theme Options.
-
-= Version 1.2.3 | 5th April 2015 = 
-* Add: Hard crop option for post excerpts.
-* Update: Theme options (Faster).
-* Fix: title-tag two titles.
-* Fix: p tag in category description.
-* Fix: Home page header when no page title.
-* Fix: CSS for category menu widget.
-
-= Version 1.2.2 | 25th March 2015 = 
-* Add title-tag support.
-* Update: Theme options (Faster).
-* Update: Schema code.
-* Fix: CSS next and previous button issue.
-
-= Version 1.2.1 = 
-* Update: Better theme preview.
-* Update: Slight css improvement in cart.
-* Update: Language files.
-* Fix: Single post portfolio carousel issue
-
-= Version 1.2.0 = 
-* Update: CSS validation to redux.
-* Update: Woocommerce 2.3 support.
-* Add: quantity input buttons back. (woocomerce removed in 2.3).
-
-= Version 1.1.9 = 
-* Update two strings with correct WordPress
-* Update notice of woocmmerce and pinnacle toolkit in the theme options
-* Update CSS validator with jetpacks solution.
-* Update Theme Options perissions to "edit_theme_options"
-* Update a few css styles for mobile.
-* Update the woocommerce ajax function.
-
-= Version 1.1.8 = 
-* remove some code per theme review request.
-
-= Version 1.1.7 = 
-* Fix/add some esc_*.
-
-= Version 1.1.6 = 
-* Fix/add some esc_*.
-* Move some inline scripts to main js file.
-* Remove contact template.
-* Remove metaboxes with gallery option.
-* Restructure all pages.
-
-= Version 1.0.5 = 
-* Remove mobile check.
-* Move response.js to function.
-* Remove some things in cleanup.php
-* Remove shortcodes.php
-* Move some inline scripts to main js file.
-
-= Version 1.0.4 = 
-* Fix/add some esc_attr.
-
-= Version 1.0.3 = 
-* Few small changes in home page title.
-* Update for page selected as latest post page.
-* Fix header background color.
-* Fix language/translation issues.
-* Remove template wrapper.
-* Fix/add some esc_attr.
-* Fix home blog undefined index.
-
-= Version 1.0.2 =
-* Update responsive layout tag.
-
-= Version 1.0.1 =
-* Update Theme options.
-* Fix small css issue in IE for menu.
-* Fix some page title issues.
-* Update languages.
-* Fix sidebar issues.
-* Few updates for new theme check.
-
-= Version 1.0.0 =
-* Initial Release

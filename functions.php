@@ -24,5 +24,6 @@ require_once locate_template('/lib/scripts.php');        								// Scripts and 
 require_once locate_template('/lib/custom.php');          								// Custom functions
 require_once locate_template('/lib/admin_scripts.php');    								// Admin Scripts functions
 require_once locate_template('/lib/authorbox.php');         							// Author box
+require_once locate_template('/lib/template-actions.php');         					    // Template actions
 require_once locate_template('/lib/custom-woocommerce.php'); 							// Woocommerce functions
 require_once locate_template('/lib/output_css.php'); 									// Fontend Custom CSS

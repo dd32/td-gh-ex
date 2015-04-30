@@ -37,6 +37,7 @@ Template Name: Feature
 					     		 	<div class="postclass pageclass clearfix entry-content" temprop="mainContentOfPage">
 										<?php get_template_part('templates/content', 'page'); ?>
 									</div>
+									<?php do_action('kt_after_pagecontent'); ?>
 								</div><!-- /.main -->
 
 								<?php get_sidebar(); ?>

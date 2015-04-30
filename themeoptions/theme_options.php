@@ -1617,7 +1617,21 @@ $this->sections[] = array(
             ),    
       ),
 );
-
+$this->sections[] = array(
+    'icon' => 'icon-file-text',
+    'icon_class' => 'icon-large',
+    'title' => __('Page Options', 'pinnacle'),
+    'desc' => "<div class='redux-info-field'><h3>".__('Page Options', 'pinnacle')."</h3></div>",
+    'fields' => array(
+        array(
+            'id'=>'page_comments',
+            'type' => 'switch', 
+            'title' => __('Allow Comments on Pages', 'pinnacle'),
+            'subtitle' => __('Turn on to allow comments on pages.', 'pinnacle'),
+            "default" => 0,
+            ),
+        ),
+);
 $this->sections[] = array(
     'icon' => 'icon-edit',
     'icon_class' => 'icon-large',
