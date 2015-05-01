@@ -1,0 +1,518 @@
+# Copyright (C) 2015 Kyle Gabriel
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Atomic 1.3\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/theme/atomic\n"
+"POT-Creation-Date: 2015-04-28 21:13:25+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location."
+msgstr ""
+
+#: archive.php:27
+msgid "Author: %s"
+msgstr ""
+
+#: archive.php:30
+msgid "Day: %s"
+msgstr ""
+
+#: archive.php:33
+msgid "Month: %s"
+msgstr ""
+
+#: archive.php:33
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: archive.php:36
+msgid "Year: %s"
+msgstr ""
+
+#: archive.php:36
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: archive.php:39
+msgid "Asides"
+msgstr ""
+
+#: archive.php:42
+msgid "Galleries"
+msgstr ""
+
+#: archive.php:45
+msgid "Images"
+msgstr ""
+
+#: archive.php:48
+msgid "Videos"
+msgstr ""
+
+#: archive.php:51
+msgid "Quotes"
+msgstr ""
+
+#: archive.php:54
+msgid "Links"
+msgstr ""
+
+#: archive.php:57
+msgid "Statuses"
+msgstr ""
+
+#: archive.php:60
+msgid "Audios"
+msgstr ""
+
+#: archive.php:63
+msgid "Chats"
+msgstr ""
+
+#: archive.php:66
+msgid "Archives"
+msgstr ""
+
+#: comments.php:28
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:35 comments.php:53
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:36 comments.php:54
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:37 comments.php:55
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:65
+msgid "Comments are closed."
+msgstr ""
+
+#: content-none.php:13
+msgid "Nothing Found"
+msgstr ""
+
+#: content-none.php:19
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: content-none.php:23
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: content-none.php:28
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#. translators: %s: Name of current post
+#: content-page.php:20 content-single.php:35 content.php:36
+msgid "Pages:"
+msgstr ""
+
+#: content.php:46
+msgid " Sticked"
+msgstr ""
+
+#: functions.php:47
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:87
+msgid "Footer Widget One"
+msgstr ""
+
+#: functions.php:89 functions.php:99 functions.php:109
+msgid "Found at the bottom of every page."
+msgstr ""
+
+#: functions.php:97
+msgid "Footer Widget Two"
+msgstr ""
+
+#: functions.php:107
+msgid "Footer Widget Three"
+msgstr ""
+
+#: header.php:22
+msgid "Skip to content"
+msgstr ""
+
+#: inc/customizer.php:113
+msgid "Typography"
+msgstr ""
+
+#: inc/customizer.php:122
+msgid "Post Options"
+msgstr ""
+
+#: inc/customizer.php:139
+msgid "Links & Accent Color"
+msgstr ""
+
+#: inc/customizer.php:157
+msgid "Upload your custom logo."
+msgstr ""
+
+#: inc/customizer.php:190
+msgid "Body Font"
+msgstr ""
+
+#: inc/customizer.php:215
+msgid "Headings Font"
+msgstr ""
+
+#: inc/customizer.php:248
+msgid "Bold Entry Titles"
+msgstr ""
+
+#: inc/customizer.php:266
+msgid "Overlay pattern options"
+msgstr ""
+
+#: inc/customizer.php:302
+msgid "Use the featured image as header background image."
+msgstr ""
+
+#: inc/customizer.php:312
+msgid "Show sidebar on single posts and pages."
+msgstr ""
+
+#: inc/includes/class-options-framework-admin.php:91
+#: inc/includes/class-options-framework-admin.php:92
+msgid "Atomic Options"
+msgstr ""
+
+#: inc/includes/class-options-framework-admin.php:203
+msgid "Save Options"
+msgstr ""
+
+#: inc/includes/class-options-framework-admin.php:204
+msgid "Restore Defaults"
+msgstr ""
+
+#: inc/includes/class-options-framework-admin.php:204
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+
+#: inc/includes/class-options-framework-admin.php:235
+msgid "Default options restored."
+msgstr ""
+
+#: inc/includes/class-options-framework-admin.php:289
+msgid "Options saved."
+msgstr ""
+
+#: inc/includes/class-options-media-uploader.php:62
+msgid "No file chosen"
+msgstr ""
+
+#: inc/includes/class-options-media-uploader.php:65
+#: inc/includes/class-options-media-uploader.php:118
+msgid "Upload"
+msgstr ""
+
+#: inc/includes/class-options-media-uploader.php:67
+#: inc/includes/class-options-media-uploader.php:119
+msgid "Remove"
+msgstr ""
+
+#: inc/includes/class-options-media-uploader.php:70
+msgid "Upgrade your version of WordPress for full media support."
+msgstr ""
+
+#: inc/includes/class-options-media-uploader.php:94
+msgid "View File"
+msgstr ""
+
+#: inc/includes/class-options-sanitization.php:316
+msgid "No Repeat"
+msgstr ""
+
+#: inc/includes/class-options-sanitization.php:317
+msgid "Repeat Horizontally"
+msgstr ""
+
+#: inc/includes/class-options-sanitization.php:318
+msgid "Repeat Vertically"
+msgstr ""
+
+#: inc/includes/class-options-sanitization.php:319
+msgid "Repeat All"
+msgstr ""
+
+#: inc/includes/class-options-sanitization.php:331
+msgid "Top Left"
+msgstr ""
+
+#: inc/includes/class-options-sanitization.php:332
+msgid "Top Center"
+msgstr ""
+
+#: inc/includes/class-options-sanitization.php:333
+msgid "Top Right"
+msgstr ""
+
+#: inc/includes/class-options-sanitization.php:334
+msgid "Middle Left"
+msgstr ""
+
+#: inc/includes/class-options-sanitization.php:335
+msgid "Middle Center"
+msgstr ""
+
+#: inc/includes/class-options-sanitization.php:336
+msgid "Middle Right"
+msgstr ""
+
+#: inc/includes/class-options-sanitization.php:337
+msgid "Bottom Left"
+msgstr ""
+
+#: inc/includes/class-options-sanitization.php:338
+msgid "Bottom Center"
+msgstr ""
+
+#: inc/includes/class-options-sanitization.php:339
+msgid "Bottom Right"
+msgstr ""
+
+#: inc/includes/class-options-sanitization.php:351
+msgid "Scroll Normally"
+msgstr ""
+
+#: inc/includes/class-options-sanitization.php:352
+msgid "Fixed in Place"
+msgstr ""
+
+#: inc/includes/class-options-sanitization.php:424
+msgid "Normal"
+msgstr ""
+
+#: inc/includes/class-options-sanitization.php:425
+msgid "Italic"
+msgstr ""
+
+#: inc/includes/class-options-sanitization.php:426
+msgid "Bold"
+msgstr ""
+
+#: inc/includes/class-options-sanitization.php:427
+msgid "Bold Italic"
+msgstr ""
+
+#: inc/template-tags.php:21
+msgid "Posts navigation"
+msgstr ""
+
+#: inc/template-tags.php:25
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: inc/template-tags.php:29
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: inc/template-tags.php:52
+msgid "Post navigation"
+msgstr ""
+
+#: inc/template-tags.php:55
+msgctxt "Previous post link"
+msgid "<span class=\"meta-nav\">&larr;</span>&nbsp;%title"
+msgstr ""
+
+#: inc/template-tags.php:56
+msgctxt "Next post link"
+msgid "%title&nbsp;<span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: inc/template-tags.php:87 inc/template-tags.php:131
+msgid "Leave a comment"
+msgstr ""
+
+#: inc/template-tags.php:87 inc/template-tags.php:131
+msgid "1 Comment"
+msgstr ""
+
+#: inc/template-tags.php:87 inc/template-tags.php:131
+msgid "% Comments"
+msgstr ""
+
+#: inc/template-tags.php:87 inc/template-tags.php:131
+msgid "Comments Off"
+msgstr ""
+
+#: inc/template-tags.php:100 inc/template-tags.php:115
+msgid " "
+msgstr ""
+
+#: inc/template-tags.php:131
+msgid "comments-link"
+msgstr ""
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr ""
+
+#: theme-options.php:23
+msgid "One"
+msgstr ""
+
+#: theme-options.php:24
+msgid "Two"
+msgstr ""
+
+#: theme-options.php:25
+msgid "Three"
+msgstr ""
+
+#: theme-options.php:26
+msgid "Four"
+msgstr ""
+
+#: theme-options.php:27
+msgid "Five"
+msgstr ""
+
+#: theme-options.php:32
+msgid "French Toast"
+msgstr ""
+
+#: theme-options.php:33
+msgid "Pancake"
+msgstr ""
+
+#: theme-options.php:34
+msgid "Omelette"
+msgstr ""
+
+#: theme-options.php:35
+msgid "Crepe"
+msgstr ""
+
+#: theme-options.php:36
+msgid "Waffle"
+msgstr ""
+
+#: theme-options.php:97
+msgid "Header and Footer"
+msgstr ""
+
+#: theme-options.php:102
+msgid "Header Top-Left Corner Text (Site-wide)"
+msgstr ""
+
+#: theme-options.php:103
+msgid "Text (clear to disable)"
+msgstr ""
+
+#: theme-options.php:110
+msgid "Header Text (Front Page"
+msgstr ""
+
+#: theme-options.php:111
+msgid "First Line (clear to disable)"
+msgstr ""
+
+#: theme-options.php:119
+msgid "Second Line (clear to disable)"
+msgstr ""
+
+#: theme-options.php:126
+msgid "First Header Link (Front Page)"
+msgstr ""
+
+#: theme-options.php:127 theme-options.php:143
+msgid "Link Text (clear to disable)"
+msgstr ""
+
+#: theme-options.php:135 theme-options.php:151
+msgid "Link Address"
+msgstr ""
+
+#: theme-options.php:142
+msgid "Second Header Link (Front Page)"
+msgstr ""
+
+#: theme-options.php:158
+msgid "Custom Post Title and Date Typography"
+msgstr ""
+
+#: theme-options.php:159
+msgid ""
+"Enable custom typography of post title and date that appears in the header "
+"when viewing a single post."
+msgstr ""
+
+#: theme-options.php:185
+msgid "Typography of Post Date"
+msgstr ""
+
+#: theme-options.php:194
+msgid "Typography of Post Title"
+msgstr ""
+
+#: theme-options.php:202 theme-options.php:211
+msgid "Copyright Text"
+msgstr ""
+
+#: theme-options.php:203
+msgid "Enable copyright text in the footer"
+msgstr ""
+
+#: theme-options.php:219
+msgid "Typography of Copyright Text"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Atomic"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://KyleGabriel.com/mytheme"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Atomic is a WordPress theme I developed for my personal website to showcase "
+"my resume, portfolio, and travel. With so many themes cluttered with "
+"features that are never used, Atomic brings a refreshingly minimal full-width "
+"responsive and fluid layout that is also mobile friendly. Many complex "
+"aspects have been stripped so you may pick and choose which features you "
+"would like to use, as plugins. There is also a way to customize under "
+"Appearance -> Atomic Options."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Kyle Gabriel"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://KyleGabriel.com/"
+msgstr ""
