@@ -15,9 +15,9 @@
 /*******************************************************************************
  * 1.0 Metadata Posted On                                                *
  ******************************************************************************/
-function barista_metadata_posted_on_setup(){
+ function barista_metadata_posted_on_setup(){
     // This function will call and output The Date and Author
-    printf( __( '<i class="fa fa-calendar"></i>&nbsp;&nbsp;%2$s &nbsp;&nbsp;&nbsp; <i class = "fa fa-user"></i>&nbsp;&nbsp;%3$s'), 'meta-prep meta-prep-author',
+    printf(('<i class="fa fa-calendar"></i>&nbsp;&nbsp;%2$s &nbsp;&nbsp;&nbsp; <i class = "fa fa-user"></i>&nbsp;&nbsp;%3$s'), 'meta-prep meta-prep-author',
     sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
         get_permalink(),
         esc_attr( get_the_time() ),
@@ -54,9 +54,9 @@ function barista_metadata_posted_in_setup() {
 	$tag_list = get_the_tag_list( '', ', ' );
         $posted_in = '';
 	if ( $tag_list ) {
-			$posted_in = __( '<i class = "fa fa-archive"></i>&nbsp;&nbsp; %1$s &nbsp;&nbsp;&nbsp;<i class="fa fa-tags"></i>&nbsp; %2$s', 'barista' );
+			$posted_in = '<i class = "fa fa-archive"></i>&nbsp;&nbsp; %1$s &nbsp;&nbsp;&nbsp;<i class="fa fa-tags"></i>&nbsp; %2$s';
 	} elseif ( is_object_in_taxonomy( get_post_type(), 'category' ) ) {
-			$posted_in = __( '<i class = "fa fa-archive"></i> %1$s', 'barista' );
+			$posted_in = '<i class = "fa fa-archive"></i> %1$s';
 	}
 	// Prints the string, replacing the placeholders.
 	printf(

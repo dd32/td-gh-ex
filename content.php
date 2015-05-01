@@ -13,11 +13,11 @@
  */
 ?>
 <div class="site-content cf">
-    <article class="<?php if(has_post_thumbnail()) { ?>has-thumbnail <?php } ?>" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <div class="post-small-thumbnail">
-            <a href = "<?php the_permalink(); ?>"><?php the_post_thumbnail('barista-small-thumbnail'); ?></a>
+            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('barista-small-thumbnail'); ?></a>
         </div>
-        <h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php echo ( get_the_title() ) ? get_the_title() : __( '(No Title)', 'barista' ); ?></a></h3>
+        <h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php echo (get_the_title()) ? get_the_title() : __('(No Title)', 'barista'); ?></a></h3>
         <small class="metadata-posted-on"><?php barista_metadata_posted_on_setup(); ?></small>
         <div class="entry-content">
             <?php the_excerpt(); ?>

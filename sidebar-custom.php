@@ -11,5 +11,5 @@
  */
 ?>
 <section class="site-sidebar">
-    <?php dynamic_sidebar('page-content'); ?>   
+    <?php dynamic_sidebar('custom-content'); ?>   
 </section>

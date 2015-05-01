@@ -43,6 +43,11 @@ if (!function_exists('barista_theme_setup')){
         if (!isset($content_width)) {
             $content_width = 650;
         }
+		
+        /***********************************************************************
+         * Translation Ready 
+         **********************************************************************/
+		load_theme_textdomain( 'barista', get_template_directory() . '/languages' );
 
         /***********************************************************************
          * Let WordPress manage the document's title. 

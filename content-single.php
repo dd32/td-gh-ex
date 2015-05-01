@@ -17,7 +17,7 @@
         <div class="post-medium-thumbnail">
             <?php the_post_thumbnail('barista-medium-thumbnail'); ?>
         </div>
-        <h3 class="entry-title"><?php echo ( get_the_title() ) ? get_the_title() : __( '(No Title)', 'barista' ); ?></h3>
+        <h3 class="entry-title"><?php echo (get_the_title()) ? get_the_title() : __('(No Title)', 'barista'); ?></h3>
         <small class="metadata-posted-on"></small>
         <div class="entry-content">
             <?php the_content(); ?>

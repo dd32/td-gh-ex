@@ -1,0 +1,154 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Barista\n"
+"POT-Creation-Date: 2015-04-30 20:23-0800\n"
+"PO-Revision-Date: 2015-04-30 20:24-0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: comments.php:26
+#, php-format
+msgctxt "comments title"
+msgid "One Comment"
+msgid_plural "%1$s Comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:43
+msgid "<i class=\"fa fa-arrow-circle-o-left\"></i> Older Comments"
+msgstr ""
+
+#: comments.php:44
+msgid "Newer Comments <i class=\"fa fa-arrow-circle-o-right\"></i>"
+msgstr ""
+
+#: content-full-width.php:11 content-page.php:17 content-sidebar.php:11
+#: content-single.php:20 content.php:20
+msgid "(No Title)"
+msgstr ""
+
+#: content-none.php:4
+msgid "Page not available"
+msgstr ""
+
+#: content-none.php:5
+msgid "Nothing found for: <small>"
+msgstr ""
+
+#: content-none.php:6
+msgid "Nothing Found"
+msgstr ""
+
+#: content-none.php:12
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: content-none.php:16
+msgid ""
+"You seem to be lost. To find what you are looking for check out the most "
+"recent articles below or try a search:"
+msgstr ""
+
+#: content-none.php:21
+msgid ""
+"Nothing matched your search terms. Check out the most recent articles below "
+"or try searching for something else:"
+msgstr ""
+
+#: content-none.php:26
+msgid ""
+"It seems we cannot find what you are looking for. Perhaps searching can help."
+msgstr ""
+
+#: content-none.php:35
+msgid "Most Recent Posts."
+msgstr ""
+
+#: footer.php:16
+msgid "Theme By: Benajmin Lu <br />"
+msgstr ""
+
+#: footer.php:17
+msgid "Powered By: WordPress"
+msgstr ""
+
+#: functions.php:73
+msgid "Primary Navigation"
+msgstr ""
+
+#: functions.php:74
+msgid "Social Navigation"
+msgstr ""
+
+#: header.php:35
+msgid "Search"
+msgstr ""
+
+#: includes/template-tags.php:27
+#, php-format
+msgid "View all posts by %s"
+msgstr ""
+
+#: includes/template-tags.php:33
+msgid "Sticky Post"
+msgstr ""
+
+#: includes/template-tags.php:37
+msgid "Featured Image"
+msgstr ""
+
+#: includes/template-tags.php:46
+msgid "Comments Closed"
+msgstr ""
+
+#: includes/template-tags.php:76
+msgid "Posts Content Sidebar"
+msgstr ""
+
+#: includes/template-tags.php:78
+msgid "Appears on Default Sidebar."
+msgstr ""
+
+#: includes/template-tags.php:86
+msgid "Pages Content Sidebar"
+msgstr ""
+
+#: includes/template-tags.php:88
+msgid "Appears on Pages."
+msgstr ""
+
+#: includes/template-tags.php:96
+msgid "Custom Content Sidebar"
+msgstr ""
+
+#: includes/template-tags.php:98
+msgid "Appears on Pages with \"Custom Sidebar\" template."
+msgstr ""
+
+#: includes/template-tags.php:160
+msgid "Previous"
+msgstr ""
+
+#: includes/template-tags.php:161
+msgid "Next"
+msgstr ""
+
+#: search.php:16
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
