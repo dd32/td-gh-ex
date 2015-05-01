@@ -112,16 +112,6 @@ function optionsframework_options() {
     $about_content .= __('For Queries Regading Pro Themes:','accesspress_parallax')."<br/><br />";
     $about_content .= "<a href='mailto:support@accesspressthemes.com'>support@accesspressthemes.com</a><br /><br />";
     
-    $about_content .= "<hr />";
-
-	$about_content .="<h4>".__('Get social','accesspress_parallax')."</h4>";
-
-	$about_content .="<p>".__('Get connected with us on social media. Facebook is the best place to find updates on our themes/plugins:','accesspress_parallax')."</p>";
-
-    $about_content .="<p>".__('Like us on facebook:','accesspress_parallax')."</p>";
-	$about_content .='<iframe style="border: none; overflow: hidden; width: 740px; height: 230px;" src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FAccessPress-Themes%2F1396595907277967&amp;width=740&amp;height=230&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=true&amp;appId=1411139805828592" width="740" height="230" frameborder="0" scrolling="no"></iframe>';	
-
-
 	// Pull all the categories into an array
 	$options_categories = array();
 	$options_categories_obj = get_categories();
@@ -172,7 +162,7 @@ function optionsframework_options() {
 	$options[] = array(
 		'name' => __('Home Menu Text - Single Page Nav(Menu)', 'accesspress_parallax'),
 		'id' => 'home_text',
-		'desc' => 'Leave blank if you do not want to show',
+		'desc' => __('Leave blank if you do not want to show', 'accesspress_parallax'),
 		'std' => 'Home',
 		'type' => 'text');
 
@@ -211,26 +201,6 @@ function optionsframework_options() {
 			'logo-side' => $imagepath . 'logo-side.jpg',
 			'logo-top' => $imagepath . 'logo-top.jpg')
 	);
-
-	$options[] = array(
-		'name' => __('Google Map', 'accesspress_parallax'),
-		'desc' => sprintf(__('To get Values of Latitude and Longitude by Location name, click on <a href="%s">http://www.latlong.net</a>', 'accesspress_parallax'),esc_url("http://www.latlong.net")),
-		'id' => 'latlng',
-		'type' => 'info');	
-
-	$options[] = array(
-		'name' => __('Enter the latitude', 'accesspress_parallax'),
-		'id' => 'map_latitude',
-		'std' => '27.695401',
-		'class' => 'mini',
-		'type' => 'text');
-
-	$options[] = array(
-		'name' => __('Enter the longitude', 'accesspress_parallax'),
-		'id' => 'map_longitude',
-		'std' => '85.291604',
-		'class' => 'mini',
-		'type' => 'text');
 
 	$options[] = array(
 		'name' => __('Parallax Sections', 'accesspress_parallax'),
@@ -438,13 +408,7 @@ function optionsframework_options() {
 		'name' => __('Custom CSS', 'accesspress_parallax'),
 		'id' => 'custom_css',
 		'type' => 'textarea',
-		'desc' => 'Put your custom CSS here');
-
-	$options[] = array(
-		'name' => __('Custom JS', 'accesspress_parallax'),
-		'id' => 'custom_js',
-		'type' => 'textarea',
-		'desc' => 'Put your analytics code/custom JS here');
+		'desc' => __('Put your custom CSS here', 'accesspress_parallax') );
 
 	$options[] = array(
 		'name' => __('About', 'accesspress_parallax'),

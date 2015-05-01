@@ -419,7 +419,7 @@ class Options_Framework_Interface {
 
 				$parallaxsection_array = array();
 
-				if(is_array($settings['parallax_section'])) {
+				if(!empty($settings['parallax_section'])) {
 				foreach ($settings['parallax_section'] as $i => $ival) { 
 				$parallaxsection_array[] = $i;
 				$background = $val;
@@ -487,7 +487,7 @@ class Options_Framework_Interface {
 				}
 
 				$output .='<div class="inline-label">';
-				$output .='<label class="">Background Image</label>';
+				$output .='<label class="">'.__('Background Image','accesspress_parallax').'</label>';
 				$output .= Options_Framework_Media_Uploader::optionsframework_uploader( $value['id'], $background[$i]['image'], null, esc_attr( $option_name . '[' . $value['id'] . ']['.$i.'][image]' ) );
 				$output .='</div>';
 
