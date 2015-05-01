@@ -32,24 +32,28 @@
   	$current_options['service_button_value'] = sanitize_text_field($_POST['service_button_value']);
   	$current_options['busiprof_custom_css'] = sanitize_text_field($_POST['busiprof_custom_css']);
   	
-  	$current_options['service_icon_one'] = sanitize_text_field($_POST['service_icon_one']);
+  	$current_options['service_image_one'] = sanitize_text_field($_POST['service_image_one']);
   	$current_options['service_title_one'] = sanitize_text_field($_POST['service_title_one']);
   	$current_options['service_text_one'] = sanitize_text_field($_POST['service_text_one']);
   	
-  	$current_options['service_icon_two'] = sanitize_text_field($_POST['service_icon_two']);
+  	$current_options['service_image_two'] = sanitize_text_field($_POST['service_image_two']);
   	$current_options['service_title_two'] = sanitize_text_field($_POST['service_title_two']);
   	$current_options['service_text_two'] = sanitize_text_field($_POST['service_text_two']);
   	
-  	$current_options['service_icon_three'] = sanitize_text_field($_POST['service_icon_three']);
+  	$current_options['service_image_three'] = sanitize_text_field($_POST['service_image_three']);
   	$current_options['service_title_three'] = sanitize_text_field($_POST['service_title_three']);
   	$current_options['service_text_three'] = sanitize_text_field($_POST['service_text_three']);
   	
-  	$current_options['service_icon_four'] = sanitize_text_field($_POST['service_icon_four']);
+  	$current_options['service_image_four'] = sanitize_text_field($_POST['service_image_four']);
   	$current_options['service_title_four'] = sanitize_text_field($_POST['service_title_four']);
   	$current_options['service_text_four'] = sanitize_text_field($_POST['service_text_four']);
-  	
 	
-	$current_options['service_link_btn'] = sanitize_text_field($_POST['service_link_btn']);
+	$current_options['service_icon_one']	=sanitize_text_field($_POST['service_icon_one']);
+	$current_options['service_icon_two']	=sanitize_text_field($_POST['service_icon_two']);
+	$current_options['service_icon_three']	=sanitize_text_field($_POST['service_icon_three']);
+	$current_options['service_icon_four']	=sanitize_text_field($_POST['service_icon_four']);
+	
+  	$current_options['service_link_btn'] = sanitize_text_field($_POST['service_link_btn']);
 	$current_options['service_button_value'] = sanitize_text_field($_POST['service_button_value']);
 
 	// services  section enabled yes ya no
@@ -79,21 +83,26 @@
   	$current_options['service_button_value'] = __('More Services','busi_prof');
   	$current_options['busiprof_custom_css'] = '';
   	
-  	$current_options['service_icon_one'] = $template_uri .'/services_ic1.png';
+  	$current_options['service_image_one'] = '';
   	$current_options['service_title_one'] = __('Web Design','busi_prof');
   	$current_options['service_text_one'] = __('We are a group of passionate designers and developers who really love to create awesome wordpress themes','busi_prof');
   	
-  	$current_options['service_icon_two'] = $template_uri .'/services_ic2.png';
+  	$current_options['service_image_two'] = '';
   	$current_options['service_title_two'] = __('Web Design','busi_prof');
   	$current_options['service_text_two'] = __('We are a group of passionate designers and developers who really love to create awesome wordpress themes','busi_prof');
   	
-  	$current_options['service_icon_three'] = $template_uri .'/services_ic3.png';
+  	$current_options['service_image_three'] = '';
   	$current_options['service_title_three'] = __('Web Design','busi_prof');
   	$current_options['service_text_three'] = __('We are a group of passionate designers and developers who really love to create awesome wordpress themes','busi_prof');
   	
-  	$current_options['service_icon_four'] =  $template_uri .'/services_ic4.png';
+  	$current_options['service_image_four'] = '';
   	$current_options['service_title_four'] = __('Web Design','busi_prof');
   	$current_options['service_text_four'] = __('We are a group of passionate designers and developers who really love to create awesome wordpress themes','busi_prof');
+	
+	$current_options['service_icon_one']	='fa-group';
+	$current_options['service_icon_two']	='fa-truck';
+	$current_options['service_icon_three']	='fa-camera';
+	$current_options['service_icon_four']	='fa-fighter-jet';
   	
 	
 	$current_options['service_link_btn'] = 
@@ -245,8 +254,12 @@
   <h3 class="hndle"><span><?php _e('Home Page Service One','busi_prof');?><span class="postbox-title-action">
   </h3>
   <div class="inside">
-  <p><h4 class="heading"><?php _e('Home Page Service One Icon','busi_prof');?></h4>
+  <p><h4 class="heading"><?php _e('Service One Icon','busi_prof');?></h4>
   <input class="inputwidth" type="text" value="<?php if($current_options['service_icon_one']!='') { echo esc_attr($current_options['service_icon_one']); } ?>" id="service_icon_one" name="service_icon_one" size="36" />
+  <h4 class="heading"><?php _e('Use font awesome icons as service icon, like: fa-group .','busi_prof');?><a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank" ><?php _e("Get your fontawesome icons.","busi_prof"); ?></a></h4>
+  </p>
+  <p><h4 class="heading"><?php _e('Service one Custom Icon/Image','busi_prof');?></h4>
+  <input class="inputwidth" type="text" value="<?php if($current_options['service_image_one']!='') { echo esc_attr($current_options['service_image_one']); } ?>" id="service_image_one" name="service_image_one" size="36" />
   <input  type="button" id="upload_button" value="Select Image" class="upload_image_button"  />
   <span class="icon help">
   <span class="tooltip"><?php  _e('Insert Icon for Service One [35X34 px]','busi_prof');?></span></span>
@@ -271,14 +284,19 @@
   <h3 class="hndle"><span><?php _e('Home Page Service Two','busi_prof');?><span class="postbox-title-action">
   </h3>
   <div class="inside">
-  <p><h4 class="heading"><?php _e('Home Page Service Two Icon','busi_prof');?></h4>
+  <p><h4 class="heading"><?php _e('Service two Icon','busi_prof');?></h4>
   <input class="inputwidth" type="text" value="<?php if($current_options['service_icon_two']!='') { echo esc_attr($current_options['service_icon_two']); } ?>" id="service_icon_two" name="service_icon_two" size="36" />
+  <h4 class="heading"><?php _e('Service Icon (Using Font Awesome icons name) like: fa-group .','busi_prof');?><a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank" ><?php _e("Get your fontawesome icons.","busi_prof"); ?></a></h4>
+  </p>
+  <p><h4 class="heading"><?php _e('Service two Custom Icon/Image','busi_prof');?></h4>
+  <input class="inputwidth" type="text" value="<?php if($current_options['service_image_two']!='') { echo esc_attr($current_options['service_image_two']); } ?>" id="service_image_two" name="service_image_two" size="36" />
   <input  type="button" id="upload_button" value="Select Image" class="upload_image_button"  />
   <span class="icon help">
   <span class="tooltip"><?php  _e('Insert Icon for Service Two [35X34 px]','busi_prof');?></span></span>
   </span>
   </p>
-  <p><h4 class="heading"><?php _e('Home Page Service two Title','busi_prof');?></h4>				
+   
+ <p><h4 class="heading"><?php _e('Home Page Service two Title','busi_prof');?></h4>				
   <input class="inputwidth" type="text" value="<?php if($current_options['service_title_two']!='') { echo esc_attr($current_options['service_title_two']); } ?>" id="service_title_two" name="service_title_two" size="36" />
   <span class="icon help">
   <span class="tooltip"><?php  _e('Enter the service two title','busi_prof');?></span></span>
@@ -297,8 +315,12 @@
   <h3 class="hndle"><span><?php _e('Home Page Service three','busi_prof');?><span class="postbox-title-action">
   </h3>
   <div class="inside">
-  <p><h4 class="heading"><?php _e('Home Page Service Three Icon','busi_prof');?></h4>
+  <p><h4 class="heading"><?php _e('Service Three Icon','busi_prof');?></h4>
   <input class="inputwidth" type="text" value="<?php if($current_options['service_icon_three']!='') { echo esc_attr($current_options['service_icon_three']); } ?>" id="service_icon_three" name="service_icon_three" size="36" />
+  <h4 class="heading"><?php _e('Service Icon (Using Font Awesome icons name) like: fa-group .','busi_prof');?><a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank" ><?php _e("Get your fontawesome icons.","busi_prof"); ?></a></h4>
+  </p>
+  <p><h4 class="heading"><?php _e('Service Three Custom Icon/Image','busi_prof');?></h4>
+  <input class="inputwidth" type="text" value="<?php if($current_options['service_image_three']!='') { echo esc_attr($current_options['service_image_three']); } ?>" id="service_image_three" name="service_image_three" size="36" />
   <input  type="button" id="upload_button" value="Select Image" class="upload_image_button"  />
   <span class="icon help">
   <span class="tooltip"><?php  _e('Insert Icon for Service Three [35X34 px]','busi_prof');?></span></span>
@@ -323,8 +345,12 @@
   <h3 class="hndle"><span><?php _e('Home Page Service four','busi_prof');?><span class="postbox-title-action">
   </h3>
   <div class="inside">
-  <p><h4 class="heading"><?php _e('Home Page Service four Icon','busi_prof');?></h4>
+  <p><h4 class="heading"><?php _e('Service four Icon','busi_prof');?></h4>
   <input class="inputwidth" type="text" value="<?php if($current_options['service_icon_four']!='') { echo esc_attr($current_options['service_icon_four']); } ?>" id="service_icon_four" name="service_icon_four" size="36" />
+  <h4 class="heading"><?php _e('Service Icon (Using Font Awesome icons name) like: fa-group .','busi_prof');?><a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank" ><?php _e("Get your fontawesome icons.","busi_prof"); ?></a></h4>
+  </p>
+  <p><h4 class="heading"><?php _e('Service fourth Custom Icon/Image','busi_prof');?></h4>
+  <input class="inputwidth" type="text" value="<?php if($current_options['service_image_four']!='') { echo esc_attr($current_options['service_image_four']); } ?>" id="service_image_four" name="service_image_four" size="36" />
   <input  type="button" id="upload_button" value="Select Image" class="upload_image_button"  />
   <span class="icon help">
   <span class="tooltip"><?php  _e('Insert Icon for Service Four [35X34 px]','busi_prof');?></span></span>
@@ -333,7 +359,7 @@
   <p><h4 class="heading"><?php _e('Home Page Service Four Title','busi_prof');?></h4>				
   <input class="inputwidth" type="text" value="<?php if($current_options['service_title_four']!='') { echo esc_attr($current_options['service_title_four']); } ?>" id="service_title_four" name="service_title_four" size="36" />
   <span class="icon help">
-  <span class="tooltip"><?php  _e('Enter the serive four title','busi_prof');?></span></span>
+  <span class="tooltip"><?php  _e('Enter the service four title','busi_prof');?></span></span>
   </span>
   </p>			
   <p><h4 class="heading"><?php _e('Service Four Description','busi_prof');?></h4>
@@ -348,6 +374,7 @@
   <span class="tooltip"><?php  _e('More Service Button Text','busi_prof');?></span></span>
   </span>
   </p>
+
   <p><h4 class="heading"><?php _e('More Services Link','busi_prof');?></h4>
   <input class="inputwidth" type="text" value="<?php if($current_options['service_link_btn']!='') { echo esc_attr($current_options['service_link_btn']); } ?>" id="service_link_btn" name="service_link_btn" size="36" />
   <span class="icon help">

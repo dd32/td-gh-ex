@@ -20,12 +20,17 @@
   				'service_heading_two' =>__('Services','busi_prof'),//Service heading Two
   				'service_tagline'  => __('We are a group of passionate designers and developers who really love to create awesome wordpress themes & support','busi_prof'),//Service Tagline
   				
-  				'service_icon_one' => $template_uri .'/services_ic1.png',//Service Icon First
-  				'service_icon_two' => $template_uri .'/services_ic2.png',//Service Icon Second	
-  				'service_icon_three' => $template_uri .'/services_ic3.png',	//Service Icon Third
-  				'service_icon_four' => $template_uri .'/services_ic4.png',//Service Icon Fourth
-  				
-  				'service_title_one' => __('Web Design','busi_prof'),//Service Title One
+  				'service_image_one' => '',//Service Icon First
+  				'service_image_two' => '',//Service Icon Second	
+  				'service_image_three' => '',	//Service Icon Third
+  				'service_image_four' => '',//Service Icon Fourth
+				
+				'service_icon_one' => 'fa-group',
+  				'service_icon_two' =>'fa-truck',
+  				'service_icon_three' => 'fa-camera',
+  				'service_icon_four' => 'fa-fighter-jet',
+				
+				'service_title_one' => __('Web Design','busi_prof'),//Service Title One
   				'service_title_two' =>__('Web Design','busi_prof'),//Service Title Two
   				'service_title_three' =>__('Web Design','busi_prof'),//Service Title Three
   				'service_title_four' =>__('Web Design','busi_prof'),//Service Title Four

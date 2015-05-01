@@ -21,8 +21,11 @@
     <div class="span3">
       <div class="services_cols_mn">
         <?php if($current_options['service_icon_one']!='') {?>
-        <span><img class="services_cols_mn_icon" alt="Web Design" src="<?php echo esc_url($current_options['service_icon_one']); ?>"></span>
-        <?php } ?>	
+        <span><i class="fa <?php echo $current_options['service_icon_one']; ?>"></i></span>
+        <?php } else { ?>
+		<?php if($current_options['service_image_one']!='') {?>
+        <span><img class="services_cols_mn_icon" alt="Web Design" src="<?php echo esc_url($current_options['service_image_one']); ?>"></span>
+        <?php } } ?>
         <?php if($current_options['service_title_one']!='') {?>
         <h2><?php echo esc_html($current_options['service_title_one']); ?></h2>
         <?php } ?>		
@@ -34,8 +37,11 @@
     <div class="span3">
       <div class="services_cols_mn">
         <?php if($current_options['service_icon_two']!='') {?>
-        <span><img class="services_cols_mn_icon" alt="Web Design" src="<?php echo esc_url($current_options['service_icon_two']); ?>"></span>
-        <?php } ?>	
+        <span><i class="fa <?php echo $current_options['service_icon_two']; ?>"></i></span>
+        <?php } else { ?>
+		<?php if($current_options['service_image_two']!='') {?>
+        <span><img class="services_cols_mn_icon" alt="Web Design" src="<?php echo esc_url($current_options['service_image_two']); ?>"></span>
+        <?php } } ?>	
         <?php if($current_options['service_title_two']!='') {?>
         <h2><?php echo esc_html($current_options['service_title_two']); ?></h2>
         <?php } ?>		
@@ -47,8 +53,11 @@
     <div class="span3">
       <div class="services_cols_mn">
         <?php if($current_options['service_icon_three']!='') {?>
-        <span><img class="services_cols_mn_icon" alt="Web Design" src="<?php echo esc_url($current_options['service_icon_three']); ?>"></span>
-        <?php } ?>	
+        <span><i class="fa <?php echo $current_options['service_icon_three']; ?>"></i></span>
+        <?php } else { ?>
+		<?php if($current_options['service_image_three']!='') {?>
+        <span><img class="services_cols_mn_icon" alt="Web Design" src="<?php echo esc_url($current_options['service_image_three']); ?>"></span>
+        <?php } } ?>	
         <?php if($current_options['service_title_three']!='') {?>
         <h2><?php echo esc_html($current_options['service_title_three']); ?></h2>
         <?php } ?>		
@@ -57,11 +66,14 @@
         <?php } ?>	
       </div>
     </div>
-    <div class="span3">
+	 <div class="span3">
       <div class="services_cols_mn">
         <?php if($current_options['service_icon_four']!='') {?>
-        <span><img class="services_cols_mn_icon" alt="Web Design" src="<?php echo esc_url($current_options['service_icon_four']); ?>"></span>
-        <?php } ?>	
+        <span><i class="fa <?php echo $current_options['service_icon_four']; ?>"></i></span>
+        <?php } else { ?>
+		<?php if($current_options['service_image_four']!='') {?>
+        <span><img class="services_cols_mn_icon" alt="Web Design" src="<?php echo esc_url($current_options['service_image_four']); ?>"></span>
+        <?php } } ?>	
         <?php if($current_options['service_title_four']!='') {?>
         <h2><?php echo esc_html($current_options['service_title_four']); ?></h2>
         <?php } ?>		
@@ -70,6 +82,7 @@
         <?php } ?>	
       </div>
     </div>
+    
     
     <div class="services_more_btn">
 	<?php if($current_options['service_link_btn']!='') {?>

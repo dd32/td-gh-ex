@@ -10,6 +10,7 @@
   	
   	require( WEBRITI_THEME_FUNCTIONS_PATH .'/resize_image/resize_image.php' );	
   	require_once( WEBRITI_THEME_FUNCTIONS_PATH .'/commentbox/comment-function.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH .'/font/font.php' );
  
   
   
@@ -49,11 +50,11 @@
   	wp_enqueue_script('busiprof-bootstrap',get_template_directory_uri().'/js/bootstrap.js'); //Responsive JS
   	wp_enqueue_script('busiprof-bootstrap-tab',get_template_directory_uri().'/js/bootstrap-tab.js'); 
   	wp_enqueue_script('busiprof-bootstrap-transition',get_template_directory_uri().'/js/bootstrap-transition.js');
+	wp_enqueue_style('font-awesome','//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
   	
   	//CSS Links 	
   
   	wp_enqueue_style('busiprof-style', get_stylesheet_uri() );
-	wp_enqueue_style('busiprof-font', get_template_directory_uri().'/css/font/font.css');
   	wp_enqueue_style('busiprof-bootstrap', get_template_directory_uri().'/css/bootstrap.css');
   	wp_enqueue_style('busiprof-bootstrap-responsive', get_template_directory_uri().'/css/bootstrap-responsive.css');
   	//wp_enqueue_style('docs',get_template_directory_uri().'/css/docs.css');	

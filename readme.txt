@@ -57,6 +57,11 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.6
+1. Add font-awesome icons in service section.
+2. Add Goolge font.
+3. Add max-width porperty on home project section.
+
 @version 1.5.2
 1. Information added regarding pro features.
 2. plugin recommendation added.

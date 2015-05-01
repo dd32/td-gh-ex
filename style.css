@@ -2,7 +2,7 @@
 * Theme Name: Busiprof
 * Theme URI: http://www.webriti.com/index.php/lite/busiprof-premium-wordpress-theme/
 * Description: A Blue colored Business theme which is ideal for creating a corporate / business website. It boasts of 2 beautifully designed page templates , Home and Blog Page. It supports custom widgets and comes with a widgetized Footer Area.  
-* Version: 1.5.2
+* Version: 1.6
 * Author: webriti
 * Author URI: http://www.webriti.com
 * Tags: white,blue, full-width-template, threaded-comments,custom-menu,two-columns,translation-ready, theme-options, sticky-post
@@ -21,7 +21,9 @@
 
 /* Navbar Menus Style */
 input, select, textarea
-{	font-family: 'DroidSansRegular'; outline:none; 
+{	font-family: 'Droid Sans'; 
+	font-weight:400;
+	outline:none; 
 }
 .navbar-inner {
   min-height: 40px;
@@ -35,7 +37,8 @@ input, select, textarea
   border-left: 1px solid #E4E8EA;
 }
 .navbar .nav > li > a {
-font-family: OpenSans-Regular;
+  font-family: 'Droid Sans'; 
+  font-weight:400;
   float: none;
   padding: 12px 20px;
   color: #74838B;
@@ -75,7 +78,8 @@ font-family: OpenSans-Regular;
   padding: 17px 15px;
   color: #74838B;
   text-decoration: none;
-  font-family: 'DroidSansRegular';
+  font-family: 'Droid Sans'; 
+  font-weight:400;
   transition: all 250ms ease-out 0s;
 }
 .dropdown-menu {
@@ -190,7 +194,8 @@ font-family: OpenSans-Regular;
 }
 .slide_content h2{
 	color: #FFFFFF;
-    font-family: 'montserratregular';
+    font-family: 'Montserrat'; 
+	font-weight:400;
     font-size: 24px;
     font-weight: normal;
     letter-spacing: 0;
@@ -212,18 +217,21 @@ font-family: OpenSans-Regular;
 }
 .services_top_mn h2 {
     color: #354656;
-    font-family: 'DroidSansBold';
+    font-family: 'Droid Sans'; 
+	font-weight:700;
     font-size: 36px;
-    font-weight: normal;
     text-align: center;
 	margin: 0px;
 }
 .services_top_mn h2 span {
-    font-family: 'DroidSansRegular';
+    font-family: 'Droid Sans'; 
+	font-weight:400;
 }
 .services_top_mn p {
     color: #9EA5A1;
-    font-family: 'DroidSerifItalic';
+    font-family: 'Droid Serif'; 
+	font-weight:400;
+	font-style:italic;
     font-size: 13px;
     margin: 5px 0px 5px;
 }
@@ -254,7 +262,8 @@ font-family: OpenSans-Regular;
 }
 .services_cols_mn h2 {
     color: #737F85;
-    font-family: 'montserratregular';
+    font-family: 'Montserrat';
+	font-weight:400;
     font-size: 18px;
     font-weight: normal;
     letter-spacing: 0;
@@ -268,7 +277,7 @@ font-family: OpenSans-Regular;
     margin: 15px 22px 22px;
     text-align: center;
 }
-.services_cols_mn_icon{height:45px;width:34px;}
+.services_cols_mn_icon{/* height:45px;width:34px; */}
 .services_more_btn {
     margin: 0 auto;
     width: 170px;
@@ -276,7 +285,8 @@ font-family: OpenSans-Regular;
 .services_more_btn a {
 	color: #FFFFFF;
 	float: left;
-	font-family: 'montserratregular';
+	 font-family: 'Montserrat';
+	font-weight:400;
 	font-size: 12px;
 	line-height: 30px;
 	margin-bottom: 20px;
@@ -357,9 +367,9 @@ font-family: OpenSans-Regular;
 }
 .rec_cols_mn h3{
     color: #737F85;
-    font-family: 'montserratregular';
+     font-family: 'Montserrat';
+	font-weight:400;
     font-size: 18px;
-    font-weight: normal;
     letter-spacing: 0;
     line-height: 30px;
     margin: 5px 15px;
@@ -387,16 +397,18 @@ font-family: OpenSans-Regular;
 }
 .testimonial_mn h2 , .recent_blog h2{
     color: #737F85;
-    font-family: 'montserratregular';
+    font-family: 'Montserrat';
+	font-weight:400;
     font-size: 21px;
-    font-weight: normal;
     letter-spacing: 0;
 	margin: 0px 0px 15px;
 	line-height: 25px;
 }
 .testimonial_mn h2 span, .recent_blog h2 span{
     color: #8B9194;
-    font-family: 'DroidSerifItalic';
+	font-family: 'Droid Serif';
+	font-weight: 400;
+	font-style:italic;
     font-size: 12px;
 }
 #testimonial_mn_cols,{
@@ -432,7 +444,9 @@ font-family: OpenSans-Regular;
 }
 #recent_blog_cols span {
     color: #B4BABE;
-    font-family: 'DroidSerifItalic';
+    font-family: 'Droid Serif'; 
+	font-weight:400;
+	font-style:italic;
     font-size: 11px;
     line-height: 19px;
 }
@@ -444,7 +458,8 @@ font-family: OpenSans-Regular;
 }
 .widget_section h2 {
     color: #FFFFFF;
-    font-family: 'montserratregular';
+    font-family: 'Montserrat'; 
+	font-weight:400;
     font-size: 18px;
     font-weight: normal;
     margin: 0px 0 35px;
@@ -472,7 +487,9 @@ font-family: OpenSans-Regular;
 }
 .widget_section ul li p {
     color: #667B8D;
-    font-family: 'DroidSerifItalic';
+    font-family: 'Droid Serif'; 
+	font-weight:400;
+	font-style:italic;
     font-size: 13px;
 	margin: 0px;
 }
@@ -511,7 +528,8 @@ font-family: OpenSans-Regular;
 #submit_btn {
 	color: white;
 	float: left;
-	font-family: 'montserratregular';
+	font-family: 'Montserrat'; 
+	font-weight:400;
 	font-size: 12px;
 	line-height: 20px;
 	margin-bottom: 5px;
@@ -551,7 +569,8 @@ font-family: OpenSans-Regular;
 .submit_btn {
 	color: #FFFFFF;
 	float: right;
-	font-family: 'montserratregular';
+	font-family: 'Montserrat'; 
+	font-weight:400;
 	font-size: 12px;
 	line-height: 20px;
 	margin-bottom: 5px;
@@ -591,7 +610,8 @@ font-family: OpenSans-Regular;
 .widget_section .span3 .submit_search {background-color: #5ca2e0; margin-top: 10px; }
 .submit_search{
 	color: #FFFFFF;
-	font-family: 'montserratregular';
+	font-family: 'Montserrat'; 
+	font-weight:400;
 	font-size: 12px;
 	line-height: 20px;
 	margin-bottom: 0px;
@@ -730,7 +750,8 @@ li {list-style-type: none;}
 .inner_top_mn h2 a {
     color: #515A5E;
     float: left;
-    font-family: 'montserratregular';
+    font-family: 'Montserrat'; 
+	font-weight:400;
     font-size: 27px;
     font-weight: normal;
     letter-spacing: 0;
@@ -739,7 +760,9 @@ li {list-style-type: none;}
 }
 .inner_top_mn h2 span {
     color: #8B9194;
-    font-family: 'DroidSerifItalic';
+    font-family: 'Droid Serif'; 
+	font-weight:400;
+	font-style:italic;
     font-size: 12px;
     line-height: 20px;
 	font-weight: normal;
@@ -758,7 +781,8 @@ li {list-style-type: none;}
     border: 0 none;
     color: #878686;
     float: left;
-    font-family: 'montserratregular' !important;
+    font-family: 'Montserrat' !important; 
+	font-weight:400;
     font-size: 11px !important;
     height: 25px !important;
     line-height: 33px;
@@ -822,7 +846,8 @@ li {list-style-type: none;}
 .blog_section_title  a{
     color: #737F85;
     float: left;
-    font-family: 'montserratregular';
+    font-family: 'Montserrat'; 
+	font-weight:400;
     font-size: 20px;
     font-weight: normal;
     line-height: 25px;
@@ -870,7 +895,7 @@ li {list-style-type: none;}
 }
 .blog_con_mn p {
 	color: #8b9194;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 25px;
 }
 
@@ -904,7 +929,8 @@ li {list-style-type: none;}
     box-shadow: 0 0 0 inset;
     color: #909395;
     float: left;
-    font-family: 'DroidSansRegular';
+    font-family: 'Droid Sans'; 
+	font-weight:400;
     font-size: 11px;
     font-weight: normal;
     height: 19px;
@@ -930,7 +956,8 @@ li {list-style-type: none;}
 .blog_post_section h2 {
     color: #737F85;
     float: left;
-    font-family: 'montserratregular';
+    font-family: 'Montserrat'; 
+	font-weight:400;
     font-size: 20px;
     font-weight: normal;
     line-height: 25px;
@@ -944,7 +971,9 @@ li {list-style-type: none;}
 .blog_con_mn_ita {
     color: #6A757A;
     float: left;
-    font-family: 'DroidSerifItalic';
+    font-family: 'Droid Serif'; 
+	font-weight:400;
+	font-style:italic;
     font-size: 13px;
     line-height: 20px;
     margin-top: 15px;
@@ -996,7 +1025,8 @@ li {list-style-type: none;}
 .blog_bot_mn a {
     color: #FFFFFF;
     cursor: pointer;
-    font-family: 'montserratregular';
+    font-family: 'Montserrat'; 
+	font-weight:400;
     font-size: 11px;
     height: 30px;
     line-height: 30px;
@@ -1020,7 +1050,8 @@ li {list-style-type: none;}
 .comment_mn h3 {
     color: #737F85;
     float: left;
-    font-family: 'montserratregular';
+    font-family: 'Montserrat'; 
+	font-weight:400;
     font-size: 20px;
     font-weight: normal;
     width: 100%;
@@ -1112,7 +1143,8 @@ li {list-style-type: none;}
     }
 .leave_comment_mn h2 {
     color: #737F85;
-    font-family: 'montserratregular';
+    font-family: 'Montserrat'; 
+	font-weight:400;
     font-size: 18px;
     font-weight: normal;
     line-height: 20px;
@@ -1161,7 +1193,8 @@ li {list-style-type: none;}
 .contact_top_mn h2 {
     border-bottom: 4px double #E2E2E2;
     color: #3884C5;
-    font-family: 'montserratregular';
+    font-family: 'Montserrat'; 
+	font-weight:400;
     font-size: 18px;
     font-weight: normal;
     line-height: 20px;
@@ -1294,7 +1327,8 @@ li {list-style-type: none;}
 
 .contact_right h2 {
     color: #8A8A8A;
-    font-family: 'montserratregular';
+    font-family: 'Montserrat'; 
+	font-weight:400;
     font-size: 18px;
     font-weight: normal;
     line-height: 20px;
@@ -1305,7 +1339,8 @@ li {list-style-type: none;}
 .cont_btn /* input[type="button"], .cont_btn input[type="submit"] */ {
 	color: #FFFFFF !important;
 	float: left;
-	font-family: 'montserratregular';
+	font-family: 'Montserrat'; 
+	font-weight:400;
 	font-size: 12px;
 	line-height: 20px;
 	margin-bottom: 5px;
@@ -1393,7 +1428,8 @@ height: 40px !important;
     color: #FFFFFF !important;
     display: inline-block;
     float: right;
-    font-family: 'montserratregular';
+    font-family: 'Montserrat'; 
+	font-weight:400;
     font-size: 12px !important;
     line-height: 20px;
     margin-bottom: 5px;
@@ -1408,7 +1444,8 @@ height: 40px !important;
 }
 .sidebar .widgettitle {
 	  color: #737F85;
-    font-family: 'montserratregular';
+    font-family: 'Montserrat'; 
+	font-weight:400;
     font-size: 20px;
     font-weight: normal;
     line-height: 40px;
@@ -1439,6 +1476,7 @@ height: 40px !important;
     list-style: none outside none;
     width: 100%;
     float: left;
+	font-size: 13px;
 }
 .span3  ul li a {line-height: 20px;}
 
@@ -1648,7 +1686,8 @@ article.sticky .featured-post {
 .tagcloud a { color:#737F85;}
 .comment-reply-title{
 	color: #737F85;
-    font-family: 'montserratregular';
+    font-family: 'Montserrat'; 
+	font-weight:400;
     font-size: 18px;
     font-weight: normal;
     line-height: 20px;
@@ -1658,7 +1697,8 @@ article.sticky .featured-post {
 }
 .widget div#calendar_wrap table > caption {
     color: #242526;
-    font-family: "montserratregular";
+    font-family: 'Montserrat'; 
+	font-weight:400;
     font-size: 16px;
     letter-spacing: 0.5px;
     margin-bottom: 10px;
@@ -1706,7 +1746,7 @@ border: 0px;
     margin: 0 0 1.71429rem;
     width: 100%;
 }
-table a{color:#8B9194;}
+.table a{color:#8B9194;}
 /*Css For diff html formats */
 .blog_con_mn h2{	font-size:26px;line-height:30px;}
 .blog_con_mn h1{	font-size:28px;line-height:30px;}
@@ -1736,14 +1776,15 @@ dd {margin-left: 10px;font-size: 17.5px;}
 #recentcomments li a { float: none; border: 0px; text-decoration: none; background: none; color: #549cda;	}
 #mailsent{	display:none;height:348px;	}
 .recent_blog_thumb{	width:80px; height:80px;}
-.project_feature_img{	width:100%;	}
+.project_feature_img{	/* width:100%; */	}
 .blog_con_mn h2 a {color: #545A5D;}
 .widget_section ul li a {color: #A5A9AC;}
 .widget_section ul li a:hover { color: #549cda; }
 #wp-calendar thead tr th {
 border: 0px;
 padding: 5px 5px 5px 5px;
-font-family: 'DroidSansRegular';
+font-family: 'Droid Sans'; 
+font-weight:400;
 font-size: 14px;
 }
 .sidebar .tagcloud, .sidebar .textwidget{padding-left: 20px;}
@@ -1756,7 +1797,8 @@ border-collapse: separate;
 -moz-border-radius: 4px;
 border-radius: 4px;
 width: 100%;
-font-family: 'DroidSansRegular';
+font-family: 'Droid Sans'; 
+font-weight:400;
 font-size:14px;
 }
 table td {
@@ -1778,7 +1820,8 @@ border: 1px solid #dddddd;
     color: #45494b;
     cursor: pointer;
     display: inline-block;
-    font-family: "montserratregular";
+    font-family: 'Montserrat'; 
+    font-weight:400;
     font-size: 14px;
     line-height: 20px;
     margin: 0 5px 10px 0;
@@ -1794,7 +1837,8 @@ border: 1px solid #dddddd;
 }
 .textwidget {
     color: #99a0a4;
-    font-family: "montserratregular";
+    font-family: 'Montserrat'; 
+    font-weight:400;
     font-size: 13px;
     font-weight: normal;
     line-height: 20px;
@@ -1802,7 +1846,8 @@ border: 1px solid #dddddd;
 .sidebar .widget #searchform { padding-left: 18px; }
 .blog_section h2 > a {
     color: #737f85;
-    font-family: "montserratregular";
+    font-family: 'Montserrat'; 
+    font-weight:400;
     font-size: 20px;
     font-weight: normal;
     line-height: 25px;
@@ -1817,7 +1862,8 @@ border: 1px solid #dddddd;
 .blog_img img { margin-top: 15px; }
 .cate-archive {
     color: #737f85;
-    font-family: "montserratregular";
+    font-family: 'Montserrat'; 
+    font-weight:400;
     font-size: 20px;
     font-weight: normal;
     line-height: 25px;
@@ -1828,7 +1874,8 @@ border: 1px solid #dddddd;
 .widget_section .span3 { margin: 0 0 30px; }
 .widget_section div#calendar_wrap table > caption {
 color: #ffffff;
-font-family: "montserratregular";
+font-family: 'Montserrat'; 
+font-weight:400;
 font-size: 16px;
 letter-spacing: 0.5px;
 margin-bottom: 10px;
@@ -1874,6 +1921,11 @@ text-align: center;
 .sidebar .tagcloud, .sidebar .textwidget { padding-left: 0px; }
 .sidebar .widget #searchform { padding-left: 0px; }
 .widget_section .span3 { float: left !important; }
-
-
 }
+
+.services_cols_mn i {
+  font-size: 34px;
+  color: #5ca2e0;
+  transition: all 0.3s ease-in-out 0s;
+  margin-top:20px;
+  }
