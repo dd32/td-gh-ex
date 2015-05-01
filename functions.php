@@ -282,42 +282,53 @@ function ct_tracks_post_navigation() {
 if( ! function_exists( 'ct_tracks_featured_image' ) ) {
     function ct_tracks_featured_image() {
 
+	    // get post object
         global $post;
+
+	    // set default to no image
         $has_image = false;
 
+	    // final output
+	    $featured_image = '';
+
+	    // image url
+	    $image = '';
+
+	    // get the current layout
         $premium_layout = get_theme_mod( 'premium_layouts_setting' );
 
+	    // if the post has a featured image
         if ( has_post_thumbnail( $post->ID ) ) {
 
+			// get the large version if on archive and not one of the full-width layouts
             if ( ( is_archive() || is_home() ) && $premium_layout != 'full-width' && $premium_layout != 'full-width-images' ) {
                 $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
-            } else {
+            }
+            // otherwise get the full-size version
+            else {
                 $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
             }
+	        // set to image URL
             $image     = $image[0];
+	        // post has an image
             $has_image = true;
         }
+	    // if the post has a featured image
         if ( $has_image == true ) {
-
-            // for layouts using img
-            if ( $premium_layout == 'two-column-images' ) { ?>
-                <img class="featured-image" src='<?php echo $image; ?>' /><?php
-            } elseif (
-                ( ( is_archive() || is_home() ) && $premium_layout == 'full-width-images' && get_theme_mod( 'premium_layouts_full_width_image_height' ) == 'image' )
-                || is_singular() && $premium_layout == 'full-width-images' && get_theme_mod( 'premium_layouts_full_width_image_height_post' ) == 'image'
-            ) { ?>
-                <img class="featured-image" src='<?php echo $image; ?>' /><?php
-            } // otherwise, output the src as a bg image
+            // if lazy loading is enabled
+            if ( get_theme_mod( 'additional_options_lazy_load_settings' ) == 'yes' ) {
+	            $featured_image = "<div class='featured-image lazy lazy-bg-image' data-background='$image'></div>";
+            } // if lazy loading is NOT enabled
             else {
-                // if lazy loading is enabled
-                if ( get_theme_mod( 'additional_options_lazy_load_settings' ) == 'yes' ) {
-                    echo "<div class='featured-image lazy lazy-bg-image' data-background='$image'></div>";
-                } // if lazy loading is NOT enabled
-                else {
-                    echo "<div class='featured-image' style=\"background-image: url('" . $image . "')\"></div>";
-                }
+	            $featured_image = "<div class='featured-image' style=\"background-image: url('" . $image . "')\"></div>";
             }
         }
+	    // allow videos to be added
+	    $featured_image = apply_filters( 'ct_tracks_featured_image', $featured_image, $image, $has_image );
+
+	    if( $featured_image ) {
+		    echo $featured_image;
+	    }
     }
 }
 
@@ -343,8 +354,11 @@ function ct_tracks_body_class( $classes ) {
         }
     }
     elseif( $premium_layout_setting == 'full-width-images'){
-        $classes[] = 'full-width-images';
 
+	    // maintain standard layout on search pages
+	    if( !is_search() ) {
+		    $classes[] = 'full-width-images';
+	    }
         if( ( is_home() || is_archive() ) && get_theme_mod('premium_layouts_full_width_image_height') == '2:1-ratio'){
             $classes[] = 'ratio';
         }
@@ -359,7 +373,12 @@ function ct_tracks_body_class( $classes ) {
         $classes[] = 'two-column';
     }
     elseif( $premium_layout_setting == 'two-column-images'){
-        $classes[] = 'two-column-images';
+
+	    // maintain standard layout on search pages
+	    if( !is_search() ) {
+		    $classes[] = 'two-column-images';
+	    }
+
     }
     if(get_theme_mod( 'ct_tracks_background_image_setting')){
         $classes[] = 'background-image-active';
@@ -593,87 +612,6 @@ function ct_tracks_loading_indicator_svg() {
 	return $svg;
 }
 
-// set the date format for new users
-function ct_tracks_set_date_format() {
-
-	// immediately set the date format
-	if( get_option('ct_tracks_date_format_origin') != 'updated' ) {
-		update_option('date_format', 'F j');
-
-		// add option so never updates date format again. Allows users to change format.
-		add_option('ct_tracks_date_format_origin', 'updated');
-	}
-}
-add_action( 'after_switch_theme', 'ct_tracks_set_date_format' );
-
-function ct_tracks_toolbar_link( $wp_admin_bar ) {
-
-	global $wp;
-
-	// create argument array
-	$args = array();
-
-	// if front-end, customize and return to this page
-	if( ! is_admin() ) {
-
-		// get the current url
-		$current_url = add_query_arg( $wp->query_string, '', home_url( $wp->request ) );
-
-		// add url to args array with template parameter
-		$args['url'] = $current_url;
-
-		// add the return url for when customizer closed
-		$args['return'] = $current_url;
-
-		// construct new url for preview
-		$url = admin_url( 'customize.php' ) . '?' . http_build_query( $args );
-	} else {
-
-		// back-end, take to default customize page and return to admin
-		$url = admin_url( 'customize.php' );
-	}
-
-	// Create parent nod
-	$args = array(
-		'id'    => 'ct_tracks_dashboard',
-		'title' => 'Tracks Dashboard',
-		'href'  => admin_url() . 'themes.php?page=tracks-options',
-		'meta'  => array( 'class' => 'tracks-dashboard' )
-	);
-	$wp_admin_bar->add_node( $args );
-
-	// Customize
-	$args = array(
-		'id'    => 'ct_tracks_dashboard_customize',
-		'title' => 'Customize',
-		'parent' => 'ct_tracks_dashboard',
-		'href'  => $url,
-		'meta'  => array( 'class' => 'tracks-dashboard-customize' )
-	);
-	$wp_admin_bar->add_node( $args );
-
-	// Support
-	$args = array(
-		'id'    => 'ct_tracks_dashboard_support',
-		'title' => 'Support',
-		'parent' => 'ct_tracks_dashboard',
-		'href'  => 'https://www.competethemes.com/documentation/tracks-support-center/',
-		'meta'  => array( 'class' => 'tracks-dashboard-support', 'target' => '_blank' )
-	);
-	$wp_admin_bar->add_node( $args );
-
-	// Upgrades
-	$args = array(
-		'id'    => 'ct_tracks_dashboard_upgrades',
-		'title' => 'Upgrades',
-		'parent' => 'ct_tracks_dashboard',
-		'href'  => 'https://www.competethemes.com/tracks-theme-upgrades/',
-		'meta'  => array( 'class' => 'tracks-dashboard-upgrades', 'target' => '_blank' )
-	);
-	$wp_admin_bar->add_node( $args );
-}
-add_action( 'admin_bar_menu', 'ct_tracks_toolbar_link', 999 );
-
 function ct_tracks_wp_backwards_compatibility() {
 
 	// not using this function, simply remove it so use of "has_image_size" doesn't break < 3.9
@@ -691,3 +629,55 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) :
     }
     add_action( 'wp_head', 'ct_tracks_add_title_tag' );
 endif;
+
+function ct_tracks_two_column_images_featured_image($featured_image, $image, $has_image) {
+
+	// if there is a featured image and two column images layout is active
+	if( $has_image && get_theme_mod( 'premium_layouts_setting' ) == 'two-column-images' ) {
+
+		// setup vars for content surrounding image
+		$pre = '';
+		$post = '';
+
+		// if singular, add container
+		if( is_singular() ) {
+			$pre = "<div class='featured-image-container'>";
+			$post = "</div>";
+		}
+		$featured_image = $pre . '<img class="featured-image" src="' . $image . '" />' . $post;
+	}
+	return $featured_image;
+}
+add_filter( 'ct_tracks_featured_image', 'ct_tracks_two_column_images_featured_image', 10, 3 );
+
+function ct_tracks_full_width_images_featured_image($featured_image, $image, $has_image) {
+
+	// if there is a featured image and two column images layout is active
+	if( $has_image && get_theme_mod( 'premium_layouts_setting' ) == 'full-width-images' ) {
+
+		// setup vars for content surrounding image
+		$pre = '';
+		$post = '';
+
+		// if singular, add container
+		if( is_singular() ) {
+			$pre = "<div class='featured-image-container'>";
+			$post = "</div>";
+		}
+
+		// get image type to check if img will be needed
+		$blog_image_type = get_theme_mod( 'premium_layouts_full_width_image_height' );
+		$post_image_type = get_theme_mod( 'premium_layouts_full_width_image_height_post' );
+
+		// if blog/archive and image-based height, or post/page and image-based height
+		if(
+			( ( is_archive() || is_home() ) && $blog_image_type == 'image' )
+			|| ( is_singular() && $post_image_type == 'image' )
+		){
+			$featured_image = '<img class="featured-image" src="' . $image . '" />';
+		}
+		$featured_image = $pre . $featured_image . $post;
+	}
+	return $featured_image;
+}
+add_filter( 'ct_tracks_featured_image', 'ct_tracks_full_width_images_featured_image', 10, 3 );

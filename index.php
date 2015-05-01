@@ -2,31 +2,7 @@
 
 <?php
 
-// get user's comment display setting
-$comments_display = get_theme_mod('ct_tracks_comments_setting');
-
-/* Category header */
-if(is_category()){ ?>
-    <div class='archive-header'>
-    <p><?php _e('Category:', 'tracks'); ?></p>
-    <h2><?php single_cat_title(); ?></h2>
-    </div><?php
-}
-/* Tag header */
-elseif(is_tag()){ ?>
-    <div class='archive-header'>
-    <p><?php _e('Tag:', 'tracks'); ?></p>
-    <h2><?php single_tag_title(); ?></h2>
-    </div><?php
-}
-/* Author header */
-elseif(is_author()){ ?>
-	<div class='archive-header'>
-	<p><?php _e('These Posts are by:', 'tracks'); ?></p><?php
-	$author = get_userdata(get_query_var('author')); ?>
-	<h2><?php echo $author->nickname; ?></h2>
-	</div><?php
-}
+get_template_part('content/archive-header');
 
 // The loop
 if ( have_posts() ) :
@@ -46,7 +22,7 @@ if ( have_posts() ) :
             }
             /* Blog - No Premium Layout */
             else {
-                get_template_part('content');
+                get_template_part('content', 'archive');
             }
         }
         /* Post */
@@ -76,7 +52,7 @@ if ( have_posts() ) :
                 }
                 /* normal archive */
                 else {
-                    get_template_part('content');
+                    get_template_part('content', 'archive');
                 }
             }
             elseif(get_theme_mod('premium_layouts_setting') == 'two-column-images'){
@@ -86,7 +62,7 @@ if ( have_posts() ) :
                 get_template_part('licenses/content/content-full-width-images');
             }
             else {
-                get_template_part('content');
+                get_template_part('content', 'archive');
             }
         }
         /* bbPress */
