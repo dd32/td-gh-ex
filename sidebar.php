@@ -2,7 +2,8 @@
 /**
  * The sidebar containing the main widget area.
  *
- * @package health
+ * @package Bakery
+
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {

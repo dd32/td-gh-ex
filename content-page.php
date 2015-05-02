@@ -2,7 +2,8 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package health
+ * @package Bakery
+
  */
 ?>
 
@@ -17,7 +18,7 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
         
         <div class="entry-meta">
-        <?php edit_post_link( __( 'Edit', 'health' ), '<span class="edit-link"><i class="fa fa-edit"></i> ', '</span>' ); ?>
+        <?php edit_post_link( __( 'Edit', 'bakery' ), '<span class="edit-link"><i class="fa fa-edit"></i> ', '</span>' ); ?>
         </div>
 	</header><!-- .entry-header -->
 
@@ -25,7 +26,7 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'health' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'bakery' ),
 				'after'  => '</div>',
 			) );
 		?>

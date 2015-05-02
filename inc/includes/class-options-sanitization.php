@@ -313,10 +313,10 @@ add_filter( 'of_font_face', 'of_sanitize_font_face' );
  */
 function of_recognized_background_repeat() {
 	$default = array(
-		'no-repeat' => __( 'No Repeat', 'health' ),
-		'repeat-x'  => __( 'Repeat Horizontally', 'health' ),
-		'repeat-y'  => __( 'Repeat Vertically', 'health' ),
-		'repeat'    => __( 'Repeat All', 'health' ),
+		'no-repeat' => __( 'No Repeat', 'bakery' ),
+		'repeat-x'  => __( 'Repeat Horizontally', 'bakery' ),
+		'repeat-y'  => __( 'Repeat Vertically', 'bakery' ),
+		'repeat'    => __( 'Repeat All', 'bakery' ),
 		);
 	return apply_filters( 'of_recognized_background_repeat', $default );
 }
@@ -328,15 +328,15 @@ function of_recognized_background_repeat() {
  */
 function of_recognized_background_position() {
 	$default = array(
-		'top left'      => __( 'Top Left', 'health' ),
-		'top center'    => __( 'Top Center', 'health' ),
-		'top right'     => __( 'Top Right', 'health' ),
-		'center left'   => __( 'Middle Left', 'health' ),
-		'center center' => __( 'Middle Center', 'health' ),
-		'center right'  => __( 'Middle Right', 'health' ),
-		'bottom left'   => __( 'Bottom Left', 'health' ),
-		'bottom center' => __( 'Bottom Center', 'health' ),
-		'bottom right'  => __( 'Bottom Right', 'health')
+		'top left'      => __( 'Top Left', 'bakery' ),
+		'top center'    => __( 'Top Center', 'bakery' ),
+		'top right'     => __( 'Top Right', 'bakery' ),
+		'center left'   => __( 'Middle Left', 'bakery' ),
+		'center center' => __( 'Middle Center', 'bakery' ),
+		'center right'  => __( 'Middle Right', 'bakery' ),
+		'bottom left'   => __( 'Bottom Left', 'bakery' ),
+		'bottom center' => __( 'Bottom Center', 'bakery' ),
+		'bottom right'  => __( 'Bottom Right', 'bakery')
 		);
 	return apply_filters( 'of_recognized_background_position', $default );
 }
@@ -348,8 +348,8 @@ function of_recognized_background_position() {
  */
 function of_recognized_background_attachment() {
 	$default = array(
-		'scroll' => __( 'Scroll Normally', 'health' ),
-		'fixed'  => __( 'Fixed in Place', 'health')
+		'scroll' => __( 'Scroll Normally', 'bakery' ),
+		'fixed'  => __( 'Fixed in Place', 'bakery')
 		);
 	return apply_filters( 'of_recognized_background_attachment', $default );
 }
@@ -421,10 +421,10 @@ function of_recognized_font_faces() {
  */
 function of_recognized_font_styles() {
 	$default = array(
-		'normal'      => __( 'Normal', 'health' ),
-		'italic'      => __( 'Italic', 'health' ),
-		'bold'        => __( 'Bold', 'health' ),
-		'bold italic' => __( 'Bold Italic', 'health' )
+		'normal'      => __( 'Normal', 'bakery' ),
+		'italic'      => __( 'Italic', 'bakery' ),
+		'bold'        => __( 'Bold', 'bakery' ),
+		'bold italic' => __( 'Bold Italic', 'bakery' )
 		);
 	return apply_filters( 'of_recognized_font_styles', $default );
 }

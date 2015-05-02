@@ -1,6 +1,7 @@
 <?php
 /**
- * @package health
+ * @package Bakery
+
  */
 ?>
 
@@ -16,7 +17,7 @@
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php health_posted_on(); ?>
+			<?php bakery_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
@@ -25,20 +26,20 @@
 		<?php
 			/* translators: %s: Name of current post */
 			the_content( sprintf(
-				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'health' ),
+				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'bakery' ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
 		?>
 
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'health' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'bakery' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php health_entry_footer(); ?>
+		<?php bakery_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

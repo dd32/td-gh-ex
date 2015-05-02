@@ -1,6 +1,6 @@
 (function($){
 	jQuery(document).ready(function($){
-		
+		// nav
 		$("#site-navigation .menu-toggle").click(function(){					   
 			var term = $("#site-navigation .menu").css("display");
 			if(term == "none"){$("#site-navigation .menu").css("display","block");

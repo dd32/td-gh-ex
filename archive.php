@@ -4,7 +4,8 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package health
+ * @package Bakery
+
  */
 
 get_header(); ?>
@@ -16,8 +17,8 @@ get_header(); ?>
 
 			<header class="page-header">
 				<?php
-					health_archive_title( '<h1 class="page-title">', '</h1>' );
-					health_archive_description( '<div class="taxonomy-description">', '</div>' );
+					bakery_archive_title( '<h1 class="page-title">', '</h1>' );
+					bakery_archive_description( '<div class="taxonomy-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
 
@@ -34,7 +35,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php health_posts_navigation(); ?>
+			<?php bakery_posts_navigation(); ?>
 
 		<?php else : ?>
 

@@ -2,7 +2,8 @@
 /**
  * The template for displaying all single posts.
  *
- * @package health
+ * @package Bakery
+
  */
 
 get_header(); ?>
@@ -14,7 +15,7 @@ get_header(); ?>
 
 			<?php get_template_part( 'content', 'single' ); ?>
 
-			<?php health_post_navigation(); ?>
+			<?php bakery_post_navigation(); ?>
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template

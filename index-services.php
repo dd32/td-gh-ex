@@ -1,7 +1,7 @@
 <!-- Service Section -->
 <?php
-$mst = esc_attr(of_get_option( 'health_main_service_title' ));
-$msd = esc_attr(of_get_option( 'health_main_service_desc' ));
+$mst = esc_attr(of_get_option( 'bakery_main_service_title' ));
+$msd = esc_attr(of_get_option( 'bakery_main_service_desc' ));
 ?>
 <div class="container" id="service_section">	
     <div class="hc_service_title">
@@ -17,7 +17,7 @@ $msd = esc_attr(of_get_option( 'health_main_service_desc' ));
 <div class="hc_home_border"></div>
 <div class="container">
 <?php
-	$count = of_get_option( 'health_services_count', 4 );
+	$count = of_get_option( 'bakery_services_count', 4 );
 	//
 	$w = 25;
 	switch ($count) {
@@ -37,10 +37,10 @@ $msd = esc_attr(of_get_option( 'health_main_service_desc' ));
         <div class="hc_service_area <?php echo "sw-$w"; ?>">
         <?php
 		// values
-		$icon = esc_attr(of_get_option( 'health_service_icon'.$i ));
-		$title = esc_attr(of_get_option( 'health_service_title'.$i ));
-		$desc = esc_attr(of_get_option( 'health_service_desc'.$i ));
-		$link = esc_url(of_get_option( 'health_service_link'.$i ));
+		$icon = esc_attr(of_get_option( 'bakery_service_icon'.$i ));
+		$title = esc_attr(of_get_option( 'bakery_service_title'.$i ));
+		$desc = esc_attr(of_get_option( 'bakery_service_desc'.$i ));
+		$link = esc_url(of_get_option( 'bakery_service_link'.$i ));
 		//
 		if ($link):
 		?>

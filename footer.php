@@ -4,7 +4,8 @@
  *
  * Contains the closing of the #content div and all content after
  *
- * @package health
+ * @package Bakery
+
  */
 ?>
 
@@ -12,12 +13,12 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<?php printf( __( 'Proudly powered by %s', 'health' ), 'WordPress' ); ?>
+			<?php printf( __( 'Proudly powered by %s', 'bakery' ), 'WordPress' ); ?>
 			<span class="sep"> &amp; </span>
 			<?php printf(
-			__( '%1$s by %2$s.', 'health' ),
-			__('Health WordPress Theme', 'health'),
-			'<strong><a href="http://dinozoom.com/">'.__('Dinozoom', 'health' ).'</a></strong>' ); ?>
+			__( '%1$s by %2$s.', 'bakery' ),
+			__('Bakery WordPress Theme', 'bakery'),
+			'<strong><a href="http://dinozoom.com/">'.__('Dinozoom', 'bakery' ).'</a></strong>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
     
