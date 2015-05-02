@@ -107,31 +107,16 @@
 		wp_enqueue_style('corpbiz-media-responsive', WEBRITI_TEMPLATE_DIR_URI . '/css/media-responsive.css');	
 		
 		wp_enqueue_script('corpbiz-menu', WEBRITI_TEMPLATE_DIR_URI .'/js/menu/menu.js',array('jquery'));
-		wp_enqueue_script('corpbiz-bootstrap-min', WEBRITI_TEMPLATE_DIR_URI .'/js/bootstrap.min.js');
+		wp_enqueue_script('jquery-flexslider-min-js', WEBRITI_TEMPLATE_DIR_URI .'/js/flexslider/jquery.flexslider-min.js');
+		wp_enqueue_script( 'jquery' );
 		
 		if ( is_singular() ){ wp_enqueue_script( "comment-reply" );	}
 	}
 	add_action('wp_enqueue_scripts', 'webriti_scripts');
-	
-	
-	function slider_js_function() {
-			wp_enqueue_script('jquerya4e6', WEBRITI_TEMPLATE_DIR_URI .'/js/flexslider/jquery.js');
-			wp_enqueue_script('superfish-js', WEBRITI_TEMPLATE_DIR_URI .'/js/flexslider/superfish.js');
-			wp_enqueue_script('custom-js', WEBRITI_TEMPLATE_DIR_URI .'/js/flexslider/custom.js');
-			wp_enqueue_script('jquery-flexslider-min-js', WEBRITI_TEMPLATE_DIR_URI .'/js/flexslider/jquery.flexslider-min.js');		
-		
-		}
-		add_action('wp_footer', 'slider_js_function');
-		add_action('wp_enqueue_scripts', 'webriti_scripts');
-	
-	
 	// Read more tag to formatting in blog page 	
 	function webriti_content_more($more)
 	{  global $post;
 		return '<div class="blog-btn-col"><a href="' . get_permalink() . "\" class=\"blog-btn\">Read More</a></div>";
 	}   
 	add_filter( 'the_content_more_link', 'webriti_content_more' );
-	
-	
-
 ?>

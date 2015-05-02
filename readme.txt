@@ -54,6 +54,10 @@ Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
+@version 1.1.1
+1. Remove jquery-1.11.0 in js folder
+2. Enqueue jquery in function.php
+
 @version 1.1
 1. Add Post slider.
 2. Add Google Font.
