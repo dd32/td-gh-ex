@@ -35,14 +35,12 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 <link rel="pingback" href="<?php esc_url(bloginfo( 'pingback_url' )); ?>" />
 <?php
 
-
 	// Now we need to polyfill IE8. We need 2 scripts loaded AFTER the .css stylesheets. wp_enqueue_script
 	// does not work because it can't add the test for < IE9. And you can't just include the code directly
 	// right here because it ends up before the .css enqueues. So we use a little trick as an action for
 	// wp_head which lets us put the code here, but have it emitted after the .css files.
 
 	add_action( 'wp_head', 'weaverx_add_ie_scripts' );
-
 	// ++++ FAVICON - only if option has been set ++++
 	$icon = weaverx_getopt('_favicon_url');
 	if ($icon != '') {
@@ -228,4 +226,5 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 
 	weaverx_header_widget_area( 'after_menu' );           // show header widget area if set to this position
 	echo "\n</div><div class='clear-header-end' style='clear:both;'></div><!-- #header -->\n";
+	do_action('weaverx_post_header');
 ?>

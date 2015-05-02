@@ -205,7 +205,7 @@ function weaverx_add_html_field($title, $name, $info, $help='', $icon = '') {
 	 echo '<table style="width:90%;">'; weaverx_form_ctext($val,true); weaverx_form_text($classes);echo '</table>';
 ?>
 	<label><span class="dashicons dashicons-visibility"></span>
-	<?php __('Hide on front page:', 'weaver-xtreme' /*adm*/);?>
+	<?php _e('Hide on front page:', 'weaver-xtreme' /*adm*/);?>
 	<input type="checkbox" name="<?php weaverx_sapi_main_name($hide_front); ?>" id="<?php echo $hide_front; ?>" <?php checked(weaverx_getopt_checked($hide_front)); ?> /></label>
 
 	<small><?php _e('If you check this box, then the code from this area will not be displayed on the front (home) page.', 'weaver-xtreme' /*adm*/);?></small><br />

@@ -8,8 +8,8 @@ fixed-width, three-columns, two-columns, black, blue, brown, green, orange, red,
 translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1015 Bruce E Wampler
 Requires at least: 3.9
-Tested up to: 4.1
-Stable tag: 1.0.1
+Tested up to: 4.2
+Stable tag: 1.2
 
 == Description ==
 
@@ -137,5 +137,18 @@ with testing and feature suggestions.
 = Version 1.1.3 =
 * Tweak: Wording for Hide Author Bio option
 * Fix: JavaScript incompatibility with Safari browser
+
+= Version 1.2 =
+* New: Multiple Column option for Page content
+* New: Full Width Subthemes - Dark and Light plus Demo versions
+* New: Set menu bar switch desktop/mobile point (Plus)
+* Tweak: additional support for Plus
+* Tweak: Recommend Plugins - added WP Edit and WP Retina 2x
+* Tweak: A few documentation changes
+* Tweak: removed auto-generation of media library header sized image. This generated image was
+         never actually used - cropping the header image when adding is an independent action.
+* Fix: IE8 compatibility script loading
+* Fix: Fatal error bug when Page with Post compact post option set
+* Fix: Infobar centering
 
 = *** Release Notes also found on Help Tab  *** =

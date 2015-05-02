@@ -17,6 +17,7 @@ Table of Contents
 =Fonts
 =Menus
 =Menus - size
+=Parallax
 =Header
 =Comments
 =Footer
@@ -146,6 +147,57 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 
 /* multiple columns */
+.cols-1 {
+
+}
+
+.cols-2 {
+	-webkit-column-count: 	2;
+	-webkit-column-gap: 	1.5em;
+    -moz-column-count: 		2;
+	-moz-column-gap: 		1.25em;
+    column-count: 			2;
+    column-gap: 			1.25em;
+}
+
+.cols-3 {
+	-webkit-column-count: 	3;
+	-webkit-column-gap: 	1.25em;
+    -moz-column-count: 		3;
+	-moz-column-gap: 		1.25em;
+    column-count: 			3;
+    column-gap: 			1.25em;
+}
+
+.cols-4 {
+	-webkit-column-count: 	4;
+	-webkit-column-gap: 	1.0em;
+    -moz-column-count: 		4;
+	-moz-column-gap: 		1.0em;
+    column-count: 			4;
+    column-gap: 			1.0em;
+}
+
+@media (min-width:581px) and (max-width:767px) { /* tablets */
+.cols-2,
+.cols-3,
+.cols-4 {
+	-webkit-column-count: 	2;
+    -moz-column-count: 		2;
+    column-count: 			2;
+}
+}
+
+@media (max-width:580px) {   /* =phones */
+.cols-2,
+.cols-3,
+.cols-4 {
+	-webkit-column-count: 	1;
+    -moz-column-count: 		1;
+    column-count: 			1;
+}
+}
+
 .content-2-col,
 .content-3-col,
 .content-2-col-left,
@@ -1032,16 +1084,18 @@ a {
 
 /* =Menus ======================================================================================= */
 
-@media screen and (min-width: 768px) {		/* desktop */
-.menu-alignright {
+.is-menu-desktop .menu-alignright {
 	float:				right;
 	padding-right:      1.25em;
 }
 
-ul.sm.wvrx-center-menu,
-.wvrx-center-menu {
-	display:		inline-block;
+.is-menu-desktop .wvrx-center-menu {
+	display:			inline-block;
 }
+
+.is-menu-mobile ul.sm.menu-alignright li a,	 /* for smart menu shift trigger point */
+.is-menu-mobile ul.sm.wvrx-center-menu li a{
+	text-align:			left;
 }
 
 .menu-horizontal {
@@ -1118,8 +1172,7 @@ ul.sm.wvrx-center-menu,
 	white-space:	normal;
 }
 
-ul.wvrx-menu,
-ul.sm-wvrx {
+ul.wvrx-menu {
 	margin-left:	1.0em;
 }
 
@@ -1353,39 +1406,39 @@ ul.sm-wvrx {
 	color:				#eee;           /* non-menu text color on the menu bar */
 }
 
-.is-mobile .wvrx-menu-container {
+@media screen and (max-width: 767px) {	/* is-mobile */
+.is-menu-default .wvrx-menu-container {
+	padding-bottom:		.5em;
+}
+}
+
+.is-menu-mobile .wvrx-menu-container {
 	padding-bottom:		.5em;
 }
 
 
-.wvrx-menu a,
-.sm-wvrx a {
+.wvrx-menu a {
 	background-color:   transparent;    /* main menu link bg */
 	color:				#bbb;           /* link color */
 }
 
 
 .menu-type-accordion .wvrx-menu,		/* needs to be left */
-.menu-type-accordion .sm-wvrx,
 .menu-type-accordion .wvrx-menu-container {
 	text-align:			left !important;
 }
 
-.wvrx-menu ul li a,
-.sm-wvrx ul li a {                    /* submenu bg */
+.wvrx-menu ul li a {                    /* submenu bg */
 	background-color:   #444;
 	color:				#bbb;           /* submenu bg */
 }
 
-.wvrx-menu li ul,
-.sm-wvrx li ul {
+.wvrx-menu li ul {
   line-height:		1;
 }
 
 .wvrx-menu a,
-.wvrx-menu ul,
-.sm-wvrx a,
-.sm-wvrx ul {
+.wvrx-menu ul {
 	line-height:	1;
 }
 
@@ -1395,10 +1448,7 @@ ul.sm-wvrx {
 }
 
 .wvrx-menu ul li a:hover,
-.wvrx-menu a:hover,                /* the color of menu items when hover4ng */
-.sm-wvrx ul li a:hover,
-.sm-wvrx a:hover
-{
+.wvrx-menu a:hover {
   background-color:     #666;      /* generate CSS */
   color:inherit;
 }
@@ -1421,15 +1471,17 @@ ul.sm-wvrx {
 	background:		rgba(255, 255, 255, 0.25);       /* generate CSS  - mobile menu clicklable arrow bg - this is okay default */
 }
 
-.is-mobile .wvrx-menu-container ul li.menu-item:first-child,
-.is-mobile .wvrx-menu-container ul.weaverx-theme-menu li:first-child{
+.is-mobile.is-menu-default .wvrx-menu-container ul li.menu-item:first-child,
+.is-mobile.is-menu-default .wvrx-menu-container ul.weaverx-theme-menu li:first-child,
+.is-menu-mobile .wvrx-menu-container ul li.menu-item:first-child,
+.is-menu-mobile .wvrx-menu-container ul.weaverx-theme-menu li:first-child {
 	margin-top:		0.5em;
 }
 
 /* special per-device rules */
 
-@media screen and (min-width: 768px) {		/* desktop */
-.wvrx-menu > li {
+@media screen and (min-width: 768px) { }		/* desktop */
+.is-menu-default .wvrx-menu > li {
 	display:		block;
 	float:			left;
 }
@@ -1438,20 +1490,18 @@ ul.sm-wvrx {
 	float:			none;
 }
 
-.wvrx-menu > li > a {
+.is-menu-default .is-menu-default .wvrx-menu > li > a {
 	margin:			0;
 	max-width:		100%;
 	word-wrap:		break-word;
 }
 
-.wvrx-menu ul,
-.sm-wvrx ul {
+.is-menu-default .wvrx-menu ul {
 	margin-top:		0;
 }
-}
 
-.menu-type-accordion .wvrx-menu,
-.menu-type-accordion .sm-wvrx {
+
+.menu-type-accordion .wvrx-menu {
 	margin:			0;
 }
 
@@ -1462,11 +1512,13 @@ ul.sm-wvrx {
 }
 
 .menu-type-accordion .wvrx-menu-clear,
-.is-mobile .wvrx-menu-clear {                              /* make the mobile menu work right for left/right add-on HTML */
+.is-mobile.is-menu-desktop .wvrx-menu-clear,
+.is-menu-mobile .wvrx-menu-clear {          /* make the mobile menu work right for left/right add-on HTML */
 	clear:			both;
 }
 
-.is-mobile .wvrx-menu-html {
+.is-mobile.is-menu-desktop .wvrx-menu-html,
+.is-menu-mobile .wvrx-menu-html {
 	margin-top:			0.7em;
 	margin-bottom:		0;
 }
@@ -1574,10 +1626,14 @@ ul.sm{-webkit-tap-highlight-color:rgba(0,0,0,0);}
 
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {	/* is-mobile */
 .mega-normal ul.mega-menu li {
 	width:			100% !important;
 }
+}
+
+.is-menu-mobile .mega-normal ul.mega-menu li {
+	width:			100% !important;
 }
 
 li.mega-normal ul.mega-menu li a {
@@ -1620,16 +1676,15 @@ li.mega-normal ul.mega-menu li a:hover {
 	display:			inline-block !important;
 }
 
-@media screen and (min-width: 768px) {		/* desktop */
 
-.mega-noarrow .wvrx-menu.sm ul a span.sub-arrow:after,
-.mega-noarrow .wvrx-menu.sm a span.sub-arrow:after {
+.is-menu-desktop .mega-noarrow .wvrx-menu.sm ul a span.sub-arrow:after,
+.is-menu-desktop .mega-noarrow .wvrx-menu.sm a span.sub-arrow:after {
 	display:none !important;
 	padding: 0;
 	margin: 0;
 }
 
-.wvrx-menu.sm ul a span.sub-arrow:after {     	/* right arrow on right side of submenus */
+.is-menu-desktop .wvrx-menu.sm ul a span.sub-arrow:after {     	/* right arrow on right side of submenus */
 	content:			"\f501";
 	font-family:		"Genericons";
 	font-size:			85%;
@@ -1641,13 +1696,13 @@ li.mega-normal ul.mega-menu li a:hover {
 	border:				none;
 }
 
-.wvrx-menu.sm .has-submenu {
+.is-menu-desktop .wvrx-menu.sm .has-submenu {
 	padding-right:		2.0em;
 }
 
-.mega-noarrow a span.sub-arrow:after{content:'';display:none;margin:0;padding:0;}
+.is-menu-desktop .mega-noarrow a span.sub-arrow:after{content:'';display:none;margin:0;padding:0;}
 
-} /* desktop */
+/* } */ /* desktop */
 
 
 /* Scrolling arrows containers for tall sub menus - test sub menu: "Sub test" -> "more..." -> "more..." in the default download package
@@ -1723,15 +1778,14 @@ li.mega-normal ul.mega-menu li a:hover {
 }
 
 
-
-@media screen and (max-width: 767px) {			/* ---- SmartMenus is-mobile ------ */
+@media screen and (max-width: 767px) {			/* ---- SmartMenus is-mobile - 767 ------ */
 
 /* The following will make the sub menus collapsible for small screen devices (it's not recommended editing these) */
-ul.wvrx-menu.sm{width:auto !important;}
-ul.wvrx-menu.sm ul{display:none;position:static !important;top:auto !important;left:auto !important;margin-left:0 !important;margin-top:0 !important;width:auto !important;min-width:0 !important;max-width:none !important;}
-ul.wvrx-menu.sm>li{float:none;}
-ul.wvrx-menu.sm>li>a,ul.wvrx-menu ul.sm-nowrap>li>a{white-space:normal;}
-ul.wvrx-menu.sm iframe{display:none;}
+.is-menu-default ul.wvrx-menu.sm{width:auto !important;}
+.is-menu-default ul.wvrx-menu.sm ul{display:none;position:static !important;top:auto !important;left:auto !important;margin-left:0 !important;margin-top:0 !important;width:auto !important;min-width:0 !important;max-width:none !important;}
+.is-menu-default ul.wvrx-menu.sm>li{float:none;}
+.is-menu-default ul.wvrx-menu.sm>li>a, .is-menu-default ul.wvrx-menu ul.sm-nowrap>li>a{white-space:normal;}
+.is-menu-default ul.wvrx-menu.sm iframe{display:none;}
 
 /* Uncomment this rule to disable completely the sub menus for small screen devices */
 /*.wvrx-menu ul, .wvrx-menu span.sub-arrow, .wvrx-menu iframe {
@@ -1742,37 +1796,37 @@ ul.wvrx-menu.sm iframe{display:none;}
 /* Items separators
 ===================*/
 
-.wvrx-menu.sm li {
+.is-menu-desktop .wvrx-menu.sm li {
 	border-top:		1px solid rgba(255, 255, 255, 0.4); /* 1px solid rgba(0,0,0,.05); */
 }
-.wvrx-menu.sm > li:first-child {
+.is-menu-default .wvrx-menu.sm > li:first-child {
 	margin-top:		.75em;
 }
-.menu-type-accordion .wvrx-menu.sm > li:first-child {
+.is-menu-default .menu-type-accordion .wvrx-menu.sm > li:first-child {
 	margin-top:		.75em;
 }
 /* indent submenus */
-.wvrx-menu.sm ul a {
+.is-menu-default .wvrx-menu.sm ul a {
 	border-left:	1em solid transparent;
 }
-.wvrx-menu.sm ul ul a {
+.is-menu-default .wvrx-menu.sm ul ul a {
 	border-left:	2em solid transparent;
 }
-.wvrx-menu.sm ul ul ul a {
+.is-menu-default .wvrx-menu.sm ul ul ul a {
 	border-left:	3em solid transparent;
 }
-.wvrx-menu.sm ul ul ul ul a {
+.is-menu-default .wvrx-menu.sm ul ul ul ul a {
 	border-left:	3.75em solid transparent;
 }
-.wvrx-menu.sm ul ul ul ul ul a {
+.is-menu-default .wvrx-menu.sm ul ul ul ul ul a {
 	border-left:	4.5em solid transparent;
 }
-.wvrx-menu.sm ul ul ul ul ul ul a {
+.is-menu-default .wvrx-menu.sm ul ul ul ul ul ul a {
 	border-left:	5.25em solid transparent;
 }
 
 /* ------------------------- The Mobile Menu Button ------------------------------- */
-.wvrx-menu-button {
+.is-menu-default .wvrx-menu-button {
 	cursor:				pointer;
 	float:				left;			/* change for RTL */
 	display:			inline;
@@ -1780,11 +1834,11 @@ ul.wvrx-menu.sm iframe{display:none;}
 	margin-right:		.75em;
 }
 
-.wvrx-menu-button span {
+.is-menu-default .wvrx-menu-button span {
 	font-size:			120%;
 }
 
-.wvrx-menu-container ul.collapsed {	/* tricky - start ALL menus collapsed, but uncollapse individually in script */
+.is-menu-default .wvrx-menu-container ul.collapsed {	/* tricky - start ALL menus collapsed, but uncollapse individually in script */
 	display:			none;
 }
 } /* mobile */
@@ -1793,6 +1847,105 @@ ul.wvrx-menu.sm iframe{display:none;}
 /* .mobile-menu-open:after {content: ' close';font-size:120%}
 .mobile-menu-closed:after {content: ' open';font-size:120%;}
 */
+
+
+/* The following will make the sub menus collapsible for small screen devices (it's not recommended editing these) */
+.is-menu-mobile ul.wvrx-menu.sm{width:auto !important;}
+.is-menu-mobile ul.wvrx-menu.sm ul{display:none;position:static !important;top:auto !important;left:auto !important;margin-left:0 !important;margin-top:0 !important;width:auto !important;min-width:0 !important;max-width:none !important;}
+.is-menu-mobile ul.wvrx-menu.sm>li{float:none;}
+.is-menu-mobile ul.wvrx-menu.sm>li>a,.is-menu-mobile ul.wvrx-menu ul.sm-nowrap>li>a{white-space:normal;}
+.is-menu-mobile ul.wvrx-menu.sm iframe{display:none;}
+
+/* Uncomment this rule to disable completely the sub menus for small screen devices */
+/*.wvrx-menu ul, .wvrx-menu span.sub-arrow, .wvrx-menu iframe {
+	display:none !important;
+}*/
+
+
+/* Items separators
+===================*/
+
+.is-menu-mobile .wvrx-menu.sm li {
+	border-top:		1px solid rgba(255, 255, 255, 0.4); /* 1px solid rgba(0,0,0,.05); */
+}
+.is-menu-mobile .wvrx-menu.sm > li:first-child {
+	margin-top:		.75em;
+}
+.is-menu-mobile .menu-type-accordion .wvrx-menu.sm > li:first-child {
+	margin-top:		.75em;
+}
+/* indent submenus */
+.is-menu-mobile .wvrx-menu.sm ul a {
+	border-left:	1em solid transparent;
+}
+.is-menu-mobile .wvrx-menu.sm ul ul a {
+	border-left:	2em solid transparent;
+}
+.is-menu-mobile .wvrx-menu.sm ul ul ul a {
+	border-left:	3em solid transparent;
+}
+.is-menu-mobile .wvrx-menu.sm ul ul ul ul a {
+	border-left:	3.75em solid transparent;
+}
+.is-menu-mobile .wvrx-menu.sm ul ul ul ul ul a {
+	border-left:	4.5em solid transparent;
+}
+.is-menu-mobile .wvrx-menu.sm ul ul ul ul ul ul a {
+	border-left:	5.25em solid transparent;
+}
+
+/* ------------------------- The Mobile Menu Button ------------------------------- */
+.is-menu-mobile .wvrx-menu-button {
+	cursor:				pointer;
+	float:				left;			/* change for RTL */
+	display:			inline;
+	margin-left:		.75em;
+	margin-right:		.75em;
+}
+
+.is-menu-mobile .wvrx-menu-button span {
+	font-size:			120%;
+}
+
+.is-menu-mobile .wvrx-menu-container ul.collapsed {	/* tricky - start ALL menus collapsed, but uncollapse individually in script */
+	display:			none;
+}
+
+
+/* =Parallax ======================================================================================= */
+
+.parallax-content {
+	padding-top:	1.0em;
+	font-size:		130%;
+	color:			rgba(255,255,255,0.8);
+	text-shadow: 	3px 3px 8px rgba(150, 150, 150, 0.5);
+}
+
+.parallax-contentx h1 {
+	font-size:		180%;
+
+}
+
+.parallax-base {
+	background-position:	50% 50%;
+	background-repeat:		no-repeat;
+	background-attachment:	fixed;
+	-webkit-background-size:cover;
+	-moz-background-size:	cover;
+	background-size:		cover;
+}
+
+.is-mobile .parallax-content {
+	font-size:		110%;
+}
+
+.is-mobile .parallax-content h1 {
+	font-size:		160%;
+}
+
+.ie8 .parallax-content {
+	color: 			#F0F0F0;
+}
 
 /* =Header ======================================================================================= */
 
@@ -3255,6 +3408,7 @@ dl.gallery-item {
 .ie8 .end-of-row {margin:0;}
 
 .widget-area.center,
+#infobar.center,
 .center {
 	margin-left:    auto;
 	margin-right:   auto;

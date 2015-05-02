@@ -865,7 +865,7 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 	$htmls = array ('preheader', 'header', 'prewrapper', 'container_top',
 					'precontent', 'postpostcontent', 'precomments', 'pagecontentbottom',
 					'postcomments', 'prefooter', 'postfooter', 'presidebar',
-					'fixedtop', 'fixedbottom'
+					'fixedtop', 'fixedbottom', 'postheader'
 					);
 	foreach ( $htmls as $val) {             // includes areas from Weaver Xtreme Plus, too.
 		$prefix =  ($val == 'postpostcontent') ? '.' : '#';

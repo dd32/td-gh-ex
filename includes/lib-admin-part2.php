@@ -306,7 +306,7 @@ function weaverx_form_widget_area( $value, $submit = false ) {
 		weaverx_form_val( array(
 			'name' => '<span class="i-left" style="font-size:150%;">&harr;</span> ' . __('Width', 'weaver-xtreme' /*adm*/),
 			'id' => $id . '_width_int', 'type' => '',
-			'info' => '<em>' . $name . '</em>' . __(': Set Width of Area in percent of enclosing area on desktop and small tablet (Default: 100%)', 'weaver-xtreme' /*adm*/),
+			'info' => '<em>' . $name . '</em>' . __(': Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Center align. (Default: 100%)', 'weaver-xtreme' /*adm*/),
 			'value' => array() ), '%' );
 
 		weaverx_form_align(array(
@@ -321,7 +321,7 @@ function weaverx_form_widget_area( $value, $submit = false ) {
 
 	if ( $id == 'wrapper' ) {       // setting #wrapper sets theme width.
 
-		$info = __('<em>Change Theme Width.</em> Standard width is 940px. Widths less than 768px may give unexpected results on mobile devices. Weaver Xtreme can not create a fixed-width site.', 'weaver-xtreme' /*adm*/);
+		$info = __('<em>Change Theme Width.</em> Standard width is 940px. Use 9999 for full screen width. Widths less than 768px may give unexpected results on mobile devices. Weaver Xtreme can not create a fixed-width site.', 'weaver-xtreme' /*adm*/);
 
 		weaverx_form_val( array(
 			'name' => '<span class="i-left" style="font-size:150%;">&harr;</span><em style="color:red;">' . __('Theme Width', 'weaver-xtreme' /*adm*/) . '</em>',
@@ -470,9 +470,9 @@ function weaverx_form_menu_opts( $value, $submit = false ) {
 			'info' => '<em>' . $name . '</em>' . __(': Hover Text Color', 'weaver-xtreme' /*adm*/) ),
 
 
-		array( 'name' => '<small>' . __('<em>Mobile</em> Open Submenu Arrow BG', 'weaver-xtreme' /*adm*/) . '</small>',
+		array( 'name' => '<small>' . __('<em>Mobile</em> Open Submenu Arrow BG -<br /><em>Not used by SmarMenus</em>', 'weaver-xtreme' /*adm*/) . '</small>',
 			'id' => $id . '_clickable_bgcolor', 'type' => 'ctext',
-			'info' => '<em>' . $name . '</em>' . __(': Clickable mobile open submenu arrow BG. Contrasting BG color required for proper user interface. (Default: rgba(255,255,255,0.2), N/A: SmartMenus)', 'weaver-xtreme' /*adm*/) ),
+			'info' => '<em>' . $name . '</em>' . __(': Clickable mobile open submenu arrow BG. Contrasting BG color required for proper user interface. <em>Not used by SmartMenus</em>. (Default: rgba(255,255,255,0.2))', 'weaver-xtreme' /*adm*/) ),
 
 
 
@@ -872,17 +872,18 @@ function weaverx_check_version() {
 
 	$version = WEAVERX_VERSION;
 
-	$check_site = 'http://weaverxtra.wordpress.com';
-	$home_site = 'http://weavertheme.com';
+	$check_site = 'https://weaverxtra.wordpress.com';
+	$home_site = '//weavertheme.com';
 	$msg = __(' - Available at:', 'weaver-xtreme' /*adm*/) . ' ' .
-	'<a href="http://weavertheme.com/download/" target="_blank">WeaverTheme.com/download/</a>';
+	'<a href="//weavertheme.com/download/" target="_blank">WeaverTheme.com/download/</a>';
 
 	$latest = weaverx_latest_version($check_site);     // check if newer version is available
-	if ( $latest != 'unavailable' && version_compare($version,$latest,'<') ) {
-		$saveme = WEAVERX_THEMENAME . __(' Current version: ', 'weaver-xtreme' /*adm*/) . $version . __(' Newer version: ', 'weaver-xtreme' /*adm*/) . $latest .
+	if ( $latest[0] != 'unavailable' && version_compare($version,$latest[0],'<') ) {
+		if ( ! empty($latest[1]) ) {
+			$msg = $msg . '<p>' . $latest[1] . '</p>';		}
+		$saveme = WEAVERX_THEMENAME . __(' Current version: ', 'weaver-xtreme' /*adm*/) . $version . __(' Newer version: ', 'weaver-xtreme' /*adm*/) . $latest[0] .
 			$msg;
-		weaverx_save_msg($saveme);
-		// xxx('. A newer version (', 'weaver-xtreme' /*adm*/)
+			weaverx_save_msg($saveme);
 	}
 	return '';
 }
@@ -890,7 +891,7 @@ function weaverx_check_version() {
 function weaverx_latest_version($check_site) {
 	$rss = fetch_feed($check_site. '/feed/');
 	 if (is_wp_error($rss) ) {
-		return 'unavailable';
+		return array('unavailable', '');
 	}
 	$out = '';
 	$items = 1;
@@ -899,13 +900,14 @@ function weaverx_latest_version($check_site) {
 		$out .= 'unavailable';
 		$rss->__destruct();
 		unset($rss);
-		return $out;
+		return array($out, '');
 	}
 	$rss_items = $rss->get_items(0, $items);
 	foreach ($rss_items as $item ) {
 		$title = esc_attr(strip_tags($item->get_title()));
 		if ( empty($title) )
 			$title = 'unavailable';
+		$content = esc_attr(strip_tags($item->get_content()));
 	}
 	if (stripos($title,'announcement') === false) {
 		$blank = strpos($title,' ');    // find blank
@@ -918,7 +920,7 @@ function weaverx_latest_version($check_site) {
 	$out .= $title;
 	$rss->__destruct();
 	unset($rss);
-	return $out;
+	return array( $out, $content );
 }
 
 function weaverx_elink( $href, $title, $label, $before='', $after='') {

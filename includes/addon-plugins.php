@@ -20,14 +20,25 @@ function weaverx_install_tgm_plugins() {
 		),
 
 		array(
-			'name'     => __('ATW Show Posts', 'weaver-xtreme' /*adm*/), // The plugin name
+			'name'     => __('Weaver Show Posts', 'weaver-xtreme' /*adm*/), // The plugin name
 			'slug'     => 'show-posts', // The plugin slug (typically the folder name)
+			'required' => false
+		),
+
+		array(
+			'name'     => __('WP Edit', 'weaver-xtreme' /*adm*/), // The plugin name
+			'slug'     => 'wp-edit', // The plugin slug (typically the folder name)
+			'required' => false
+		),
+		array(
+			'name'     => __('WP Retina 2x', 'weaver-xtreme' /*adm*/), // The plugin name
+			'slug'     => 'wp-retina-2x', // The plugin slug (typically the folder name)
 			'required' => false
 		),
 	);
 
 
-	// Change this to your theme text domain, used for internationalising strings
+	// Change this to your theme text domain, used for internationalizing strings
 	$theme_text_domain = 'weaver-xtreme';
 
 	/**
@@ -46,15 +57,21 @@ function weaverx_install_tgm_plugins() {
 		'menu'             => 'install-weaverx-addons', // Menu slug
 		'has_notices'      => true, // Show admin notices or not
 		'is_automatic'     => true, // Automatically activate plugins after installation or not
-		'message'          => __('<p>The following plugins are highly recommended for full functioning of the Weaver Xtreme theme.
-The <em>Weaver Xtreme Theme Support</em> plugin provides important extra theme functionality, including several shortcodes
-that help you customize your content for desktop or mobile device appearance.</p>
-<p>The <em>ATW Show Posts</em> plugin provides an extremely useful shortcode, [show_posts], that allows you to display
-any number of selected posts on pages, the header, the footer, or in sidebars. This capability was formerly part of the
-Theme Support plugin, but has been separated because of its general usefulness for other themes.</p>', 'weaver-xtreme' /*adm*/),
+		'message'          =>
+		__('<p>The following plugins are highly recommended for an optimal Weaver Xtreme theme experience.</p>
+<p>The <em><strong>Weaver Xtreme Theme Support</strong></em> plugin provides Per Page and Per Post options (this fuctionality is
+essential for full theme capability, but was not allowed to be integrated with the theme by WordPress).
+It also includes several shortcodes that help you customize your content for desktop or mobile device appearance.</p>
+<p>The <em><strong>Weaver Show Posts</strong></em> plugin provides [show_posts] shortcode which allows you to display
+any number of posts on pages, selected by filtering conditions, in the header, the footer, or in sidebars.
+This capability was formerly part of the Theme Support plugin, but has been separated because of
+WordPress.org requirements and its general usefulness for other themes.</p>
+<p><em><strong>WP Edit</strong></em> is not essential, but provides enhanced page and post editing, including Manual Excerpts.</p>
+<p><em><strong>WP Retina 2x</strong></em> provides automatic support for high and standard resolution images in the
+Media Library, and is essential if you want optimal high resolution (Retina) image management.</p>', 'weaver-xtreme' /*adm*/),
 			// Message to output right before the plugins table
 		'strings'          => array(
-			'page_title'                      => __( 'The <em>Weaver X</em> Theme Recommended Plugins', $theme_text_domain ),
+			'page_title'                      => __( 'The <em>Weaver Xtreme</em> Theme Recommended Plugins', $theme_text_domain ),
 			'menu_title'                      => __( '<small>&times;Recommended Plugins</small>', $theme_text_domain ),
 			'installing'                      => __( 'Installing Plugin: %s', $theme_text_domain ), // %1$s = plugin name
 			'oops'                            => __( 'Something went wrong with the plugin API.', $theme_text_domain ),

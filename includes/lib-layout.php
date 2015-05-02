@@ -27,7 +27,7 @@ function weaverx_inject_area( $name ) {
 	if (!empty($html) || !empty($per_page_code)) {
 		if ( $name !='postpostcontent') {
 			if ($add_class != '')
-			echo("\t<div id=\"{$idinj}\" class=\"{$add_class}\">\n");
+				echo("\t<div id=\"{$idinj}\" class=\"{$add_class}\">\n");
 			else
 				echo("\t<div id=\"{$idinj}\">\n");
 		}
@@ -41,13 +41,12 @@ function weaverx_inject_area( $name ) {
 			}
 		}
 		if (!empty($per_page_code)) {
-			echo  do_shortcode($per_page_code) ;
+			echo do_shortcode($per_page_code) ;
 		}
 		echo("\t</div><!-- #{$idinj} -->\n");
 	}
 }
 //--
-
 
 // >>>>> weaverx_area_class <<<<<
 function weaverx_area_class( $area, $p_default = 'pad', $sides = '', $margin = '') {
@@ -141,6 +140,15 @@ function weaverx_area_class( $area, $p_default = 'pad', $sides = '', $margin = '
 		$class .= ' ' . trim($val);
 	}
 
+
+	// add classes
+	$val = weaverx_get_per_page_value( "_pp_{$area}_add_class" );
+	if ( $val  ) {
+		$val = trim( $val );
+		str_replace( '.', '', $val );   // no .'s allowed, so kill them hoping it will fix user errors
+		str_replace(',', ' ', $val );   // and allow , separators instead of blanks
+		$class .= ' ' . trim($val);
+	}
 	return trim($class);
 }
 //--

@@ -32,7 +32,7 @@ you can save it from the Save/Restore tab. The <em>Help</em> tab has much more <
 			$len = strlen($m_file);
 			$base = substr( $m_file, 0, $len-4 );
 			$ext = $len > 4 ? substr( $m_file, $len-4, 4 ) : '';
-			if ( $ext == '.wxt' ) {
+			if ( $ext == '.wxt' || $ext == '.wxb' ) {
 				$theme_list[] = $base;
 			}
 		}
@@ -72,7 +72,7 @@ function weaverx_st_pick_theme($list_in) {
 	</strong></span>
 
 	<br /><br /><span class='submit'><input name="set_subtheme" type="submit" value="<?php _e('Set to Selected Subtheme', 'weaver-xtreme' /*adm*/);?>" /></span>
-	<small style="color:#b00;"><br /><?php _e('<strong>Note:</strong> Selecting a new subtheme will change only theme related settings.
+	<small style="color:#b00;"><br /><?php _e('<strong>Note:</strong> Selecting a <em>non-Demo</em> subtheme will change only theme related settings.
 	Options labelled with (&diams;) will be retained. You can use the Save/Restore tab to save a copy of all your current settings first.', 'weaver-xtreme' /*adm*/);?></small><br /><br />
 <?php
 	weaverx_nonce_field('set_subtheme');
@@ -181,17 +181,26 @@ function weaverx_activate_subtheme($theme) {
 	is really the same as the 'theme' section of weaverx_upload_theme() in the pro library
 	*/
 
-	$filename = get_template_directory() . '/subthemes/' . $theme . '.wxt';
+	$ext = '.wxt';
 
-	if ( ! weaverx_f_exists( $filename ) )
-		return false;
+	$filename = get_template_directory() . '/subthemes/' . $theme . $ext;
+
+	if ( ! weaverx_f_exists( $filename ) ) {
+		$filename = str_replace('.wxt', '.wxb', $filename);
+		if ( ! weaverx_f_exists( $filename ) )
+			return false;
+		else
+			$ext = '.wxb';
+	}
 
 	$contents = weaverx_f_get_contents($filename);	// use either real (pro) or file (standard) version of function
 
 	if (empty($contents)) return false;
 
-	if ( substr($contents,0,10) != 'WXT-V01.00' )
-		return false;
+	if ( substr($contents,0,10) != 'WXT-V01.00' ) {
+		if ($ext == '.wxb' && substr($contents,0,10) != 'WXB-V01.00' )
+			return false;
+	}
 
 	$restore = array();
 	$restore = unserialize(substr($contents,10));
@@ -202,11 +211,14 @@ function weaverx_activate_subtheme($theme) {
 	// need to clear some settings
 	// first, pickup the per-site settings that aren't theme related...
 	$new_cache = array();
-	foreach ($weaverx_opts_cache as $key => $val) {
-		if ($key[0] == '_') {	// these are non-theme specific settings
-			$new_cache[$key] = $weaverx_opts_cache[$key];	// clear
+	if ( $ext == '.wxt' ) {
+		foreach ($weaverx_opts_cache as $key => $val) {
+			if ($key[0] == '_') {	// these are non-theme specific settings
+				$new_cache[$key] = $weaverx_opts_cache[$key];	// clear
+			}
 		}
 	}
+
 	$opts = $restore['weaverx_base'];	// fetch base opts
 	weaverx_delete_all_options();
 
@@ -214,7 +226,7 @@ function weaverx_activate_subtheme($theme) {
 		weaverx_setopt($key,$new_cache[$key],false);
 	}
 	foreach ($opts as $key => $val) {
-		if ($key[0] == '_')
+		if ($key[0] == '_' && $ext != '.wxb' )
 			continue;	// should be here
 		weaverx_setopt($key, $val, false);	// overwrite with saved theme values
 	}

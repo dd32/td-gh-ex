@@ -2,7 +2,7 @@
  * Weaver Xtreme JavaScript support Library
  *
  * Author: WeaverTheme - www.weavertheme.com
- * @version 1.2.8
+ * @version 1.2.9
  * @license GNU Lesser General Public License, http://www.gnu.org/copyleft/lesser.html
  * @author  Bruce Wampler
  *
@@ -487,8 +487,24 @@ http://snippets.webaware.com.au/snippets/make-css-drop-down-menus-work-on-touch-
 function weaverxOnResize() {
 	// this function is called on initial window load, and again on resizes
 	var width;
-	//var menuTrigger = 768;
+	if ( typeof( wvrxOpts.menuAltswitch ) == 'undefined' || wvrxOpts.menuAltswitch == null )
+		wvrxOpts.menuAltswitch = 767;
 	width = weaverxBrowserWidth();
+
+	if ( width <= wvrxOpts.menuAltswitch ) {		// check for switch point for changing mobile menu
+		jQuery('body').addClass("is-menu-mobile");
+		jQuery('body').removeClass("is-menu-desktop");
+	} else {
+		jQuery('body').addClass("is-menu-desktop");
+		jQuery('body').removeClass("is-menu-mobile");
+	}
+	if (wvrxOpts.menuAltswitch <= 767 && width > wvrxOpts.menuAltswitch ) {
+		jQuery('body').removeClass("is-menu-default"); // remove class for space where needs to say full
+	}
+	if (width > 767 )
+		jQuery('body').addClass('is-menu-default');
+
+
 
 	var device = 'is-desktop';
 
@@ -504,8 +520,6 @@ function weaverxOnResize() {
 		device = 'is-phone is-mobile';
 	}
 
-	//if ( wvrxOpts.menuPrimaryTrigger != 768 )
-	//	menuTrigger = wvrxOpts.menuPrimaryTrigger;
 
 	/*if ( width >= menuTrigger ) {
 		jQuery('body').removeClass("menu-mobile");

@@ -140,7 +140,7 @@ function weaverx_body_classes( $classes ) {
 	if (!is_user_logged_in())
 		$classes[] = 'not-logged-in';
 
-	$classes[] = 'weaverx-theme-body';
+	$classes[] = 'weaverx-theme-body is-menu-desktop is-menu-default';
 
 	if (weaverx_get_per_page_value('_pp_bodyclass') != '')	// add body class per page
 		$classes[] = weaverx_get_per_page_value('_pp_bodyclass');

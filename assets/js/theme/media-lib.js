@@ -8,7 +8,7 @@
 var weaverx_fillin;
 function weaverx_media_lib(fillarea) {
     weaverx_fillin = fillarea;
-    tb_show('', 'media-upload.php?post_id=0&amp;type=image&amp;TB_iframe=true&amp;width=640&amp;height=600');
+    tb_show('', 'media-upload.php?post_id=0&amp;type=image&amp;TB_iframe=true&amp;width=800&amp;height=600');
     return;
 }
 

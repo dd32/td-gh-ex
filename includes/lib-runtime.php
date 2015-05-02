@@ -306,6 +306,7 @@ function weaverx_get_page_categories() {
 
 function weaverx_cat_slugs_to_ids($cats) {
 	if (empty($cats)) return '';
+
 	// now convert slugs to numbers
 	$cats = str_replace(' ','',$cats);
 	$clist = explode(',',$cats);	// break into a list
@@ -322,7 +323,7 @@ function weaverx_cat_slugs_to_ids($cats) {
 		else $cat_list .= ','.strval($cat_id);
 	} else {
 		$cur_cat = get_category_by_slug($slug);
-		if ($cur_cat) {
+		if (is_object($cur_cat)) {
 			$cat_id = $neg * (int)$cur_cat->cat_ID;
 			if ($cat_list == '') $cat_list = strval($cat_id);
 			else $cat_list .= ','.strval($cat_id);
@@ -474,7 +475,7 @@ function weaverx_header_widget_area( $where_now ) {	// header.php support
 
 function weaverx_add_ie_scripts() {
 	echo '<!--[if lt IE 9]>
-<script src="' . esc_url(get_template_directory_uri()) . '/assets/js/html5.min.js" type="text/javascript"></script>
+<script src="' . esc_url(get_template_directory_uri()) . '/assets/js/html5.js" type="text/javascript"></script>
 <script src="' . esc_url(get_template_directory_uri()) . '/assets/js/respond.min.js" type="text/javascript"></script>
 <![endif]-->';
 }
@@ -486,8 +487,8 @@ function weaverx_media_lib_button($fillin = '') {
 }
 
 
-function weaverx_site($sub='', $site = 'http://weavertheme.com', $title = '') {
-	if ($site == '') $site = 'http://weavertheme.com';
+function weaverx_site($sub='', $site = '//weavertheme.com', $title = '') {
+	if ($site == '') $site = '//weavertheme.com';
 	if ($title == '') $title = $site;
 	echo '<a href="' . esc_url($site . $sub) . '" target="_blank" title="' . $title . '">';
 }

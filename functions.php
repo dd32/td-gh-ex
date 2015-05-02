@@ -141,12 +141,11 @@ function weaverx_setup() {
 	// We'll be using post thumbnails for custom header images on posts and pages.
 	// We want them to be the size of the header image that we just defined
 	// Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php.
-	set_post_thumbnail_size( $weaverx_header['width'], $weaverx_header['height'], true );
+	// CHANGE NOTE: This call was removed from Weaver Xtreme 1.1. The semantics of WP have changed
+	// since this was first added and was causing the unnecessary auto-generation of a pretty large
+	// file for each and every image added to the media library.
 
-	// Add Weaver Xtreme's custom image sizes
-	//add_image_size( 'large-feature',
-	//	$weaverx_header['width'], $weaverx_header['height'], true ); // Used for large feature (header) images
-	//add_image_size( 'small-feature', 500, 300 ); // Used for featured posts if a large-feature doesn't exist
+	// set_post_thumbnail_size( $weaverx_header['width'], $weaverx_header['height'], true );
 
 
 	// ... and thus ends the changeable header business.
@@ -356,7 +355,6 @@ function weaverx_wp_head_early() {
 	// Only add style.css if a child theme
 
 	if ( is_child_theme() ) {  // don't bother with empty main style.css
-
 		$sheet_dev = get_stylesheet_directory_uri() . '/style.css';	// get style.css
 		$sheet = str_replace('.css', WEAVERX_MINIFY.'.css',$sheet_dev); // default sheet
 		$sheet_file = get_stylesheet_directory() . '/style' . WEAVERX_MINIFY . '.css';
@@ -450,8 +448,13 @@ function weaverx_enqueue_scripts() {	// action definition
 
 	wp_enqueue_script('weaverxJSLib', get_template_directory_uri().'/assets/js/weaverxjslib'.WEAVERX_MINIFY.'.js',array('jquery'), WEAVERX_VERSION);
 
+	$altsw = weaverx_getopt('mobile_alt_switch');
+	if ($altsw < 10 )
+		$altsw = '767';
+
 	$local = array(
-		'useSmartMenus' => weaverx_getopt('use_smartmenus') && function_exists('weaverxplus_plugin_installed') ? '1' : '0'
+		'useSmartMenus' => weaverx_getopt('use_smartmenus') && function_exists('weaverxplus_plugin_installed') ? '1' : '0',
+		'menuAltswitch' => $altsw
 	);
 
 	wp_localize_script('weaverxJSLib', 'wvrxOpts', $local );

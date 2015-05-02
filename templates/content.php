@@ -27,10 +27,8 @@ if (weaverx_is_checked_page_opt('_pp_pwp_compact_posts')
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('post-content content-default content-compact-post ' . weaverx_post_class() ); ?>>
 
-
-
 <header class="entry-header">
-	<?php wvrx_entry_header( true ); // compact header ?>
+	<?php weaverx_entry_header( '' ); // compact header ?>
 </header><!-- .entry-header -->
 	<div class="entry-compact"> <!-- Compact Post -->
 	<a href="<?php esc_url(the_permalink()); ?>" title="<?php printf( esc_attr(__( 'Permalink to %s','weaver-xtreme')),

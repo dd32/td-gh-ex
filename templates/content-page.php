@@ -9,8 +9,14 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
  */
 
 weaverx_fi( 'page', 'post-before' );
+$pclass = 'content-page';
+$cols  = weaverx_get_per_page_value('_pp_page_cols');
+if ($cols == '')
+	$cols = weaverx_getopt('page_cols');
+if ($cols != '' && $cols != '1')
+	$pclass .= " cols-{$cols}";
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class('content-page'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class($pclass); ?>>
 <?php weaverx_page_title(); ?>
 	<div class="entry-content clearfix">
 

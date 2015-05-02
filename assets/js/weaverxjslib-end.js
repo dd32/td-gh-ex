@@ -563,7 +563,7 @@ function weaverxMonitorContent(class2Mon) {
 // Finds the extra menus using accordion type and launches resizeX using the extra menu container ID for monitoring
 
 weaverxMonitorContent('.menu-type-accordion');
-//weaverxMonitorContent('.menu-type-standard'); // why was this here?
+weaverxMonitorContent('.extra-menu-xplus.menu-type-standard'); // why was this here?
 weaverxMonitorContent('.dynamic-content');
 weaverxMonitorContent('.header-image'); // need this to handle slow loading header image
 

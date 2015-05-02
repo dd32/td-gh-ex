@@ -148,7 +148,7 @@ function weaverx_mainopts_custom() {
 
 	array('name' => '<span class="i-left dashicons dashicons-align-none"></span>' . __('Smart Margin Width', 'weaver-xtreme' /*adm*/),
 		'id' => 'smart_margin_int', 'type' => '+val_percent',
-		'info' => __('Width used for smart margins for Sidebars and Content Area. (Default: 1%) (&starf;Plus)', 'weaver-xtreme' /*adm*/)),
+		'info' => __('Width used for smart column margins for Sidebars and Content Area. (Default: 1%) (&starf;Plus)', 'weaver-xtreme' /*adm*/)),
 
 	array('name' => __('Border Color', 'weaver-xtreme' /*adm*/), 'id' => 'border_color', 'type' => 'color',
 		'info' => __('Global color of borders. (Default: #222)', 'weaver-xtreme' /*adm*/)),
@@ -407,8 +407,12 @@ function weaverx_mainopts_menus() {
 
 ##### SmartMenu
 		array('name' => '<span class="i-left dashicons dashicons-menu"></span>' . __('Use SmartMenus', 'weaver-xtreme' /*adm*/),
-			  'id' => 'use_smartmenus', 'type' => 'checkbox',
+			  'id' => 'use_smartmenus', 'type' => '+checkbox',
 			'info' => __('Use <em>SmartMenus</em> rather than default Weaver Xtreme Menus. <em>SmartMenus</em> provide enhanced menu support, including auto-visibility, and transition effects. Applies to all menus. Additional options for SmartMenus on the <em>Xtreme Plus:SmartMenus</em> tab. (&starf;Plus)', 'weaver-xtreme' /*adm*/)),
+
+		array( 'name' =>  '<small>' . __('Menu Mobile/Desktop Switch Point', 'weaver-xtreme' /*adm*/) . '</small>',
+			'id' => 'mobile_alt_switch', 'type' => '+val_px',
+			'info' => __('<em>SmartMenus Only:</em> Set when menu bars switch from desktop to mobile. (Default: 767px. Hint: use 768 to force mobile menu on iPad portrait.) (&starf;Plus)', 'weaver-xtreme' /*adm*/) ),
 
 		array('name' => __('Mega Menus:', 'weaver-xtreme' /*adm*/), 'type' => 'note',
 		'info' => __('Weaver Xtreme Plus allows you to define Mega Menu style dropdown menu items with arbitrary HTML content. (&starf;Plus)', 'weaver-xtreme' /*adm*/)),
@@ -573,6 +577,14 @@ function weaverx_mainopts_content() {
 	array('name' => '<small>' . __('Auto Hyphenation', 'weaver-xtreme' /*adm*/) . '</small>', 'id' => 'hyphenate', 'type' => 'checkbox',
 		'info' => __('Allow browsers to automatically hyphenate text for appearance.', 'weaver-xtreme' /*adm*/)),
 
+	array('name' => '<span class="i-left" style=font-size:120%;">&nbsp;&#9783;</span>' . __('Columns', 'weaver-xtreme' /*adm*/), 'id' => 'page_cols', 'type' => 'select_id',	//code
+		'info' => __('Automatically split all page content into columns using CSS column rules. Also can use Per Page option. (Always 1 column on IE&lt;=9.)', 'weaver-xtreme' /*adm*/),
+		'value' => array(
+			array('val' => '1', 'desc' => __('1 Column', 'weaver-xtreme' /*adm*/)),
+			array('val' => '2', 'desc' => __('2 Columns', 'weaver-xtreme' /*adm*/)),
+			array('val' => '3', 'desc' => __('3 Columns', 'weaver-xtreme' /*adm*/)),
+			array('val' => '4', 'desc' => __('4 Columns', 'weaver-xtreme' /*adm*/)))
+	  ),
 
 
 	array('name' => __('Search Boxes', 'weaver-xtreme' /*adm*/), 'id' => '-search', 'type'=>'subheader_alt',

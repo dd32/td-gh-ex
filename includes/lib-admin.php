@@ -360,7 +360,7 @@ function weaverx_clear_messages() {
 <?php
 	if (!function_exists('weaverxplus_plugin_installed')) {
 		echo '<strong style="border:1px solid blue;background:yellow;padding:4px;margin:5px;">';
-		weaverx_site('','http://plus.weavertheme.com/',__('Weaver Xtreme Plus', 'weaver-xtreme' /*adm*/));
+		weaverx_site('','//plus.weavertheme.com/',__('Weaver Xtreme Plus', 'weaver-xtreme' /*adm*/));
 		echo __('Get Weaver Xtreme Plus!','weaverx-xtreme' /*adm*/) . '</a> </strong>';
 	}
 	do_action('weaverx_check_licenses');
