@@ -105,7 +105,7 @@ class Accesspress_Basic_Features_Widget extends WP_Widget {
                 <div class="feature-post-wrap-block clearfix">
                 <?php
                 while($feat_query->have_posts()) : $feat_query->the_post();
-                    $img = wp_get_attachment_image_src(get_post_thumbnail_id(),'features-post-thumbnail');
+                    $img = wp_get_attachment_image_src(get_post_thumbnail_id(),'accesspress-basic-features-post-thumbnail');
                     $img_src = $img[0];
                     ?>
                     <div class="feature-post-wrap">

@@ -90,7 +90,7 @@ class Accesspress_Basic_Services_Widget extends WP_Widget {
                 <div class="service-post-wrapper-block clearfix">
                 <?php
                 while($feat_query->have_posts()) : $feat_query->the_post();
-                    $img = wp_get_attachment_image_src(get_post_thumbnail_id(),'services-thumbnail');
+                    $img = wp_get_attachment_image_src(get_post_thumbnail_id(),'accesspress-basic-services-thumbnail');
                     $img_src = $img[0];
                     ?>
                     <div class="service-post-wrap">

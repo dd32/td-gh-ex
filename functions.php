@@ -109,7 +109,7 @@ add_action( 'widgets_init', 'accesspress_basic_widgets_init' );
 function accesspress_basic_scripts() {
 	wp_enqueue_style( 'accesspress-basic-superfish-css', get_template_directory_uri() . '/css/superfish.css');
 	wp_enqueue_style( 'accesspress-basic-lato-font', 'http://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic' );
-	wp_enqueue_style( 'accesspress-basic-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'accesspress-basic-style', get_template_directory_uri() . '/style.css' );
 	wp_enqueue_style( 'accesspress-basic-responsive-css', get_template_directory_uri() . '/css/responsive.css');
 	
 	wp_enqueue_script( 'accesspress-basic-hover-intent', get_template_directory_uri() . '/js/hoverIntent.js', array('jquery'));
@@ -127,12 +127,11 @@ add_action( 'wp_enqueue_scripts', 'accesspress_basic_scripts' );
 /**
  * Custom Image Sizes
  */
- add_image_size('features-post-thumbnail',375,250,true);
- add_image_size('services-thumbnail',200,120,true);
- add_image_size('testimonial-thumbnail', 125, 125, true);
- add_image_size('services-thumbnail', 233, 156, true);
- add_image_size('blog-medium-thumbnail', 380, 252, true);
- add_image_size('blog-large-thumbnail', 840, 370, true);
+ add_image_size('accesspress-basic-features-post-thumbnail',375,250,true);
+ add_image_size('accesspress-basic-testimonial-thumbnail', 125, 125, true);
+ add_image_size('accesspress-basic-services-thumbnail', 233, 156, true);
+ add_image_size('accesspress-basic-blog-medium-thumbnail', 380, 252, true);
+ add_image_size('accesspress-basic-blog-large-thumbnail', 840, 370, true);
 
 /**
  * Implement the Custom Header feature.

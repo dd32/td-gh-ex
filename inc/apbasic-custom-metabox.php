@@ -15,9 +15,9 @@
         add_meta_box( 'page-layout', __('Select Layout','accesspress-basic'),'accesspress_basic_page_layout','post','normal','default');
     }
  
-    global $page_layout;
+    global $accesspress_basic_page_layout;
     
-    $page_layout = array(
+    $accesspress_basic_page_layout = array(
         'default-layout' => array(
             'id' => 'apbasic_page_layout',
             'value' => 'default_layout',
@@ -60,10 +60,10 @@
      * Displays option to select Page Layout
      */
      function accesspress_basic_page_layout(){
-        global $page_layout, $post;
+        global $accesspress_basic_page_layout, $post;
         wp_nonce_field( basename( __FILE__ ), 'custom_meta_box_nonce' );
 
-    	foreach ($page_layout as $field) :  
+    	foreach ($accesspress_basic_page_layout as $field) :  
     		$layout_meta = get_post_meta( $post->ID, $field['id'], true );
     		if( empty( $layout_meta ) ) { $layout_meta = 'default_layout'; }
     		?>
@@ -84,7 +84,7 @@
       */
       
       function accesspress_basic_save_sidebar_layout($post_id){
-        global $page_layout, $post;
+        global $accesspress_basic_page_layout, $post;
         
         // Verify the nonce before proceeding.
         if ( !isset( $_POST[ 'custom_meta_box_nonce' ] ) || !wp_verify_nonce( $_POST[ 'custom_meta_box_nonce' ], basename( __FILE__ ) ) )
@@ -102,7 +102,7 @@
                 return $post_id;  
             }  
         
-        foreach ($page_layout as $field) {  
+        foreach ($accesspress_basic_page_layout as $field) {  
             //Execute this saving function
             $old = get_post_meta( $post_id, $field['id'], true); 
             $new = $_POST[$field['id']];

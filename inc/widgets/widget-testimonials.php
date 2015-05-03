@@ -71,7 +71,7 @@ class Accesspress_Basic_Testimonial_Widget extends WP_Widget {
 		extract( $args );
         extract($instance);
         $img_id = accesspress_basic_get_attachment_id_from_url($client_image);
-        $image = wp_get_attachment_image_src($img_id,'testimonial-thumbnail');
+        $image = wp_get_attachment_image_src($img_id,'accesspress-basic-testimonial-thumbnail');
         
         echo $before_widget;
             ?>

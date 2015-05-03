@@ -114,8 +114,8 @@
                             <div class="close">&times;</div>
                                  <form action="<?php echo site_url(); ?>" class="search-form" method="get" role="search">
                                     <label>
-                                        <span class="screen-reader-text">Search for:</span>
-                                        <input type="search" title="Search for:" name="s" value="" placeholder="Search content..." class="search-field">
+                                        <span class="screen-reader-text"><?php _e('Search for:', 'accesspress-basic'); ?></span>
+                                        <input type="search" title="Search for:" name="s" value="" placeholder="<?php _e('Search content...', 'accesspress-basic'); ?>" class="search-field">
                                     </label>
                                     <input type="submit" value="Search" class="search-submit">
                                  </form>
@@ -150,7 +150,7 @@
                 if(is_home() || is_front_page()) :
                 ?>
                 <div class="ap-basic-slider-wrapper">
-                <div class="ap-container">sdfsdf
+                <div class="ap-container">
                 <?php
                     do_action('accesspress_basic_slider');
                 ?>

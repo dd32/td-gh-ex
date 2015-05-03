@@ -13,13 +13,13 @@
     switch($blog_layout){
         case 'blog_image_large' :
         case 'blog_full_content' :
-            $image_size = 'blog-large-thumbnail';
+            $image_size = 'accesspress-basic-blog-large-thumbnail';
             $no_image = 'no-blog-large-image.png';
             break;
             
         case 'blog_image_medium' :
         case 'blog_image_alternate_medium' :
-            $image_size = 'blog-medium-thumbnail';
+            $image_size = 'accesspress-basic-blog-medium-thumbnail';
             $no_image = 'no-blog-medium-image.png';
             break;  
     }

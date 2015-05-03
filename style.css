@@ -1,10 +1,10 @@
 /*
-Theme Name: AccessPress Basic
+Theme Name: Accesspress Basic
 Theme URI: http://accesspressthemes.com/wordpress-themes/accesspress-basic/
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com
 Description: AccessPress Basic is a simple, basic & clean.  It is beautifully designed responsive free WordPress business theme. It has useful features to setup your website fast and make your website operate smoothly. It doesn’t have much features which you probably won’t use at all!Full width and boxed layout, featured slider, featured posts, services/features/projects layout, testimonial layout, blog layout, social media integration, call to action and many other page layouts. Fully responsive, WooCommerce compatible, bbPress compatible, translation ready, cross-browser compatible, SEO friendly, RTL support. AccessPress Basic is multi-purpose and is suitable for any type of business. Highest level of compatibility with mostly used WP plugins.  Great customer support via online chat, email, support forum. Official support forum: http://accesspressthemes.com/support/ Video tutorials: http://bit.ly/aptytube View full demo here: https://accesspressthemes.com/accesspress-basic/
-Version: 1.1.1
+Version: 1.1.2
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: accesspress-basic
@@ -2183,10 +2183,14 @@ Footer CSS
     background: none repeat scroll 0 0 #374140;
 }
 
+.site-info .ap-container {
+  padding: 5px 0;
+}
+
 .copyright-info {
     color: #ffffff;
     float: left;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 37px;
     margin-left: 3%;
 }
@@ -2558,6 +2562,21 @@ Footer CSS
     }
 
     .category-blogs .entry-footer i {
+        padding-right: 8px;
+    }
+    
+    .category-post-list .entry-title a:hover {
+        color: #DC3522;
+    }
+
+    .category-post-list .entry-footer {
+        border: 1px solid #ccc;
+        padding: 6px 0 6px 10px;
+        border-right: none;
+        border-left: none;
+    }
+
+    .category-post-list .entry-footer i {
         padding-right: 8px;
     }
 
