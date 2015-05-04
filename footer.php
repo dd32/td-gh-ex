@@ -18,7 +18,7 @@
 					<div class="span12">
 						<?php
 							global $abaris;
-							if( isset( $abaris['footer-widget'] ) && $abaris['footer-widgets'] ) {
+							if( isset( $abaris['footer-widgets'] ) && $abaris['footer-widgets'] ) {
 								get_template_part('footer','widgets');
 							} 
 						?>

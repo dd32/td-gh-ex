@@ -88,3 +88,6 @@ Version 1.1.9
 	
 Version 1.2.0
 	* Elusive Font Update
+
+Version 1.2.1
+	* Footer Widget Area Fix
