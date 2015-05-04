@@ -13,20 +13,23 @@ $storto_theme_options = array(
 	'instagramurl' => '#', 
 	'youtubeurl' => '#', 
 	'pinteresturl' => '#', 
-	'tumblrurl' => '#'
+	'tumblrurl' => '#',
+	'vkurl' => '#'
 );
 
-if ( is_admin() ) : // Load only if we are viewing an admin page
-
-function storto_toolbar_link_to_mypage( $wp_admin_bar ) {
-	$args = array(
-		'id'    => 'storto_theme_options',
-		'title' => __('Storto Theme Options', 'storto' ),
-		'href'  => admin_url('themes.php?page=theme_options')
-	);
-	$wp_admin_bar->add_node( $args );
+if ( current_user_can('manage_options') ) {
+	function storto_toolbar_link_to_mypage( $wp_admin_bar ) {
+		$args = array(
+			'id'    => 'storto_theme_options',
+			'title' => __('Storto Theme Options', 'storto' ),
+			'href'  => admin_url('themes.php?page=theme_options')
+		);
+		$wp_admin_bar->add_node( $args );
+	}
+	add_action( 'admin_bar_menu', 'storto_toolbar_link_to_mypage', 999 );
 }
-add_action( 'admin_bar_menu', 'storto_toolbar_link_to_mypage', 999 );
+
+if ( is_admin() ) : // Load only if we are viewing an admin page
 
 add_action( 'admin_init', 'storto_options_init' );
 add_action( 'admin_menu', 'storto_options_add_page' );
@@ -213,6 +216,18 @@ function storto_options_do_page() {
 					</td>
 				</tr>
 				
+				<?php
+				/**
+				 * VK
+				 */
+				?>
+				<tr valign="top"><th scope="row"><?php _e( 'Enter your VK URL', 'storto' ); ?></th>
+					<td>
+						<input id="storto_theme_options[vkurl]" class="regular-text" type="text" name="storto_theme_options[vkurl]" value="<?php if( isset( $se_options[ 'vkurl' ] ) ) echo esc_url( $se_options[ 'vkurl' ] ); ?>" />
+						<label class="description" for="storto_theme_options[vkurl]"><?php _e( 'Leave blank to hide VK Icon', 'storto' ); ?></label>
+					</td>
+				</tr>
+				
 			</table>
 
 			<p class="submit">
@@ -258,6 +273,8 @@ function storto_options_validate( $input ) {
 		$input['pinteresturl'] = esc_url_raw( $input['pinteresturl'] );
 	if( isset( $se_options[ 'tumblrurl' ] ) )
 		$input['tumblrurl'] = esc_url_raw( $input['tumblrurl'] );
+	if( isset( $se_options[ 'vkurl' ] ) )
+		$input['vkurl'] = esc_url_raw( $input['vkurl'] );
 
 	return $input;
 }

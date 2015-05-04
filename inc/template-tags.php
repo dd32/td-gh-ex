@@ -52,8 +52,8 @@ function storto_post_nav() {
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'storto' ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav"><i class="fa spaceRight fa-angle-double-left"></i></span>&nbsp;%title', 'Previous post link', 'storto' ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title&nbsp;<span class="meta-nav"><i class="fa spaceLeft fa-angle-double-right"></i></span>', 'Next post link',     'storto' ) );
+				previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav" aria-hidden="true"><i class="fa spaceRight fa-angle-double-left"></i></span>&nbsp;%title' . '<span class="screen-reader-text">' . __( 'Previous post:', 'storto' ) . '</span> ' );
+				next_post_link( '<div class="nav-next">%link</div>', '%title&nbsp;<span class="meta-nav" aria-hidden="true"><i class="fa spaceLeft fa-angle-double-right"></i></span> ' . '<span class="screen-reader-text">' . __( 'Next Post:', 'storto' ) . '</span> ' );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->

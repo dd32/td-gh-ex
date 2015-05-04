@@ -70,3 +70,8 @@ Version 1.3.2
 * Update sticky post
 * Added title-tag support for WordPress 4.1
 * Minor bug fixes
+
+Version 1.3.3
+* Added VK social button
+* Fixed Previous and Next Post translation bug
+* Minor bug fixes

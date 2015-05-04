@@ -214,7 +214,7 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: content-page.php:31 content-search.php:37 content-single.php:68
+#: content-page.php:33 content-search.php:37 content-single.php:68
 #: content.php:39
 msgid "Edit"
 msgstr ""
@@ -249,23 +249,31 @@ msgstr ""
 msgid "%1$s by %2$s."
 msgstr ""
 
-#: functions.php:46
+#: functions.php:55
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:81
+#: functions.php:90
 msgid "Sidebar"
 msgstr ""
 
-#: header.php:83
+#: functions.php:135
+#, php-format
+msgid ""
+"Thank you for installing <b>Storto</b> WordPress Theme! <a href=\"%2$s"
+"\"><b>Click here to go to the Theme Options</b></a>  | <a href=\"%1$s\">Hide "
+"Notice</a>"
+msgstr ""
+
+#: header.php:86
 msgid "Type and hit enter..."
 msgstr ""
 
-#: header.php:88
+#: header.php:91
 msgid "Select a page..."
 msgstr ""
 
-#: inc/extras.php:63
+#: inc/extras.php:64
 #, php-format
 msgid "Page %s"
 msgstr ""
@@ -299,160 +307,136 @@ msgid "Post navigation"
 msgstr ""
 
 #: inc/template-tags.php:55
-msgctxt "Previous post link"
-msgid ""
-"<span class=\"meta-nav\"><i class=\"fa spaceRight fa-angle-double-left\"></"
-"i></span>&nbsp;%title"
+msgid "Previous post:"
 msgstr ""
 
 #: inc/template-tags.php:56
-msgctxt "Next post link"
-msgid ""
-"%title&nbsp;<span class=\"meta-nav\"><i class=\"fa spaceLeft fa-angle-double-"
-"right\"></i></span>"
+msgid "Next Post:"
 msgstr ""
 
 #: inc/template-tags.php:82
 #, php-format
 msgctxt "post date"
-msgid "<i class=\"fa fa-clock-o spaceRight\"></i> %s"
+msgid "<i class=\"fa fa-clock-o spaceRight\"></i>%s"
 msgstr ""
 
 #: inc/template-tags.php:87
 #, php-format
 msgctxt "post author"
-msgid "<i class=\"fa fa-user spaceRight\"></i> %s"
+msgid "<i class=\"fa fa-user spaceRight\"></i>%s"
 msgstr ""
 
-#: inc/theme-options.php:36
+#: inc/theme-options.php:24 inc/theme-options.php:48
+msgid "Storto Theme Options"
+msgstr ""
+
+#: inc/theme-options.php:48
 msgid "Theme Options"
 msgstr ""
 
-#: inc/theme-options.php:45
-msgid "Sidebar Right"
-msgstr ""
-
-#: inc/theme-options.php:49
-msgid "Sidebar Left"
-msgstr ""
-
-#: inc/theme-options.php:53
-msgid "No Sidebar"
-msgstr ""
-
-#: inc/theme-options.php:67
+#: inc/theme-options.php:61
 msgid " Theme Options"
 msgstr ""
 
-#: inc/theme-options.php:68
+#: inc/theme-options.php:87
 msgid ""
 "These options will let you setup the social icons at the top of the theme. "
 "You can enter the URLs of your profiles to have the icons show up."
 msgstr ""
 
-#: inc/theme-options.php:70
+#: inc/theme-options.php:89
 msgid "Options saved"
 msgstr ""
 
-#: inc/theme-options.php:75
-msgid "Support Storto Theme"
-msgstr ""
-
-#: inc/theme-options.php:77
-msgid ""
-"If you enjoy <strong>Storto Theme</strong>, please consider making a secure "
-"<strong>donation</strong> using the PayPal button. Anything is appreciated!"
-msgstr ""
-
-#: inc/theme-options.php:101
+#: inc/theme-options.php:104
 msgid "Hide RSS Icon?"
 msgstr ""
 
-#: inc/theme-options.php:104
+#: inc/theme-options.php:107
 msgid "Hide the RSS feed icon?"
 msgstr ""
 
-#: inc/theme-options.php:113
+#: inc/theme-options.php:116
 msgid "Hide Search Icon?"
 msgstr ""
 
-#: inc/theme-options.php:116
+#: inc/theme-options.php:119
 msgid "Hide the Search icon?"
 msgstr ""
 
-#: inc/theme-options.php:125
+#: inc/theme-options.php:128
 msgid "Enter your Facebook URL"
 msgstr ""
 
-#: inc/theme-options.php:128
+#: inc/theme-options.php:131
 msgid "Leave blank to hide Facebook Icon"
 msgstr ""
 
-#: inc/theme-options.php:137
+#: inc/theme-options.php:140
 msgid "Enter your Twitter URL"
 msgstr ""
 
-#: inc/theme-options.php:140
+#: inc/theme-options.php:143
 msgid "Leave blank to hide Twitter Icon"
 msgstr ""
 
-#: inc/theme-options.php:149
+#: inc/theme-options.php:152
 msgid "Enter your Google + URL"
 msgstr ""
 
-#: inc/theme-options.php:152
+#: inc/theme-options.php:155
 msgid "Leave blank to hide Google + Icon"
 msgstr ""
 
-#: inc/theme-options.php:161
+#: inc/theme-options.php:164
 msgid "Enter your Linkedin URL"
 msgstr ""
 
-#: inc/theme-options.php:164
+#: inc/theme-options.php:167
 msgid "Leave blank to hide Linkedin Icon"
 msgstr ""
 
-#: inc/theme-options.php:173
+#: inc/theme-options.php:176
 msgid "Enter your Instagram URL"
 msgstr ""
 
-#: inc/theme-options.php:176
+#: inc/theme-options.php:179
 msgid "Leave blank to hide Instagram Icon"
 msgstr ""
 
-#: inc/theme-options.php:185
+#: inc/theme-options.php:188
 msgid "Enter your YouTube URL"
 msgstr ""
 
-#: inc/theme-options.php:188
+#: inc/theme-options.php:191
 msgid "Leave blank to hide YouTube Icon"
 msgstr ""
 
-#: inc/theme-options.php:197
+#: inc/theme-options.php:200
 msgid "Enter your Pinterest URL"
 msgstr ""
 
-#: inc/theme-options.php:200
+#: inc/theme-options.php:203
 msgid "Leave blank to hide Pinterest Icon"
 msgstr ""
 
-#: inc/theme-options.php:209
+#: inc/theme-options.php:212
 msgid "Enter your Tumblr URL"
 msgstr ""
 
-#: inc/theme-options.php:212
+#: inc/theme-options.php:215
 msgid "Leave blank to hide Tumblr Icon"
 msgstr ""
 
-#: inc/theme-options.php:221
-msgid "Tracking Code"
+#: inc/theme-options.php:224
+msgid "Enter your VK URL"
 msgstr ""
 
-#: inc/theme-options.php:223
-msgid "Enter your analytics tracking code"
+#: inc/theme-options.php:227
+msgid "Leave blank to hide VK Icon"
 msgstr ""
 
-#: inc/theme-options.php:233
+#: inc/theme-options.php:234
 msgid "Save Options"
 msgstr ""
 
