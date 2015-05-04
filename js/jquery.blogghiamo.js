@@ -6,7 +6,7 @@
 		/*-----------------------------------------------------------------------------------*/
 		/*  Home icon in main menu
 		/*-----------------------------------------------------------------------------------*/ 
-			$('.main-navigation .menu-item-home a').prepend('<i class="fa fa-lg fa-home spaceRight"></i>');
+			$('.main-navigation .menu-item-home > a').prepend('<i class="fa fa-lg fa-home spaceRight"></i>');
 			
 		/*-----------------------------------------------------------------------------------*/
 		/*  If the Tagcloud widget exist or Edit Comments Link exist

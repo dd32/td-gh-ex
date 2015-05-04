@@ -68,6 +68,10 @@
 					<a href="<?php echo esc_url($se_options['tumblrurl']); ?>" title="Tumblr"><i class="fa spaceRightDouble fa-tumblr"><span class="screen-reader-text">Tumblr</span></i></a>
 				<?php endif; ?>
 				
+				<?php if ( $se_options['vkurl'] != '' ) : ?>
+					<a href="<?php echo esc_url($se_options['vkurl']); ?>" title="VK"><i class="fa spaceRightDouble fa-vk"><span class="screen-reader-text">VK</span></i></a>
+				<?php endif; ?>
+				
 				<?php if ( $se_options['emailurl'] != '' ) : ?>
 					<a href="mailto:<?php echo sanitize_email($se_options['emailurl']); ?>" title="Email"><i class="fa spaceRightDouble fa-envelope"><span class="screen-reader-text">Email</span></i></a>
 				<?php endif; ?>

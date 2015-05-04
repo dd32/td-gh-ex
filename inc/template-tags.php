@@ -52,8 +52,8 @@ function blogghiamo_post_nav() {
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'blogghiamo' ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<div class="meta-nav" title="%title"><i class="fa fa-angle-left spaceRight"></i><span>'. __('Previous Post', 'blogghiamo') .'</span></div>', 'Previous post link', 'blogghiamo' ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '<div class="meta-nav" title="%title"><span>'. __('Next Post', 'blogghiamo') .'</span><i class="fa fa-angle-right spaceLeft"></i></div>', 'Next post link',     'blogghiamo' ) );
+				previous_post_link( '<div class="nav-previous">%link</div>', '<div class="meta-nav" title="%title" aria-hidden="true"><i class="fa fa-angle-left spaceRight"></i><span>' . __( 'Previous Post', 'blogghiamo' ) . '</span></div> ' . '<span class="screen-reader-text">' . __( 'Previous post:', 'blogghiamo' ) . '</span> ' );
+				next_post_link( '<div class="nav-next">%link</div>', '<div class="meta-nav" title="%title" aria-hidden="true"><span>' . __( 'Next Post', 'blogghiamo' ) . '</span><i class="fa fa-angle-right spaceLeft"></i></div> ' . '<span class="screen-reader-text">' . __( 'Next Post:', 'blogghiamo' ) . '</span> ' );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -91,7 +91,7 @@ function blogghiamo_posted_on() {
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
 	
 	if ( 'post' == get_post_type() ) {
-		$categories_list = get_the_category_list( __( ' / ', 'blogghiamo' ) );
+		$categories_list = get_the_category_list( ' / ' );
 		if ( $categories_list && blogghiamo_categorized_blog() ) {
 			printf( '<span class="cat-links smallPart"><i class="fa fa-folder-open spaceRight" aria-hidden="true"></i>%1$s</span>', $categories_list );
 		}
@@ -113,8 +113,7 @@ if ( ! function_exists( 'blogghiamo_entry_footer' ) ) :
 function blogghiamo_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
-		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', __( ' / ', 'blogghiamo' ) );
+		$tags_list = get_the_tag_list( '', ' / ' );
 		if ( $tags_list ) {
 			printf( '<span class="tags-links"><i class="fa fa-tags spaceRight" aria-hidden="true"></i>%1$s</span>', $tags_list );
 		}

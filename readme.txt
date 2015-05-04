@@ -89,3 +89,8 @@ Version 1.2.7
 Version 1.2.8
 * Added link to email
 * Minor bug fixes
+
+Version 1.2.9
+* Added VK social button
+* Fixed Previous and Next Post translation bug
+* Minor bug fixes
