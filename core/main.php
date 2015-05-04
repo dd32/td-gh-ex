@@ -27,6 +27,20 @@ function suevafree_admin_body_class( $classes ) {
 add_filter( 'admin_body_class', 'suevafree_admin_body_class' );
 
 /*-----------------------------------------------------------------------------------*/
+/* Body class */
+/*-----------------------------------------------------------------------------------*/   
+
+function suevafree_body_class($classes) {
+
+	$classes[] = 'custombody';
+		
+	return $classes;
+	
+}
+
+add_filter('body_class', 'suevafree_body_class');
+
+/*-----------------------------------------------------------------------------------*/
 /* Post formats */
 /*-----------------------------------------------------------------------------------*/   
 
@@ -47,7 +61,6 @@ function suevafree_setup() {
 
 	add_theme_support( 'custom-background', array(
 		'default-color' => 'f3f3f3',
-		'default-image' => get_template_directory_uri() . suevafree_setting('suevafree_body_background'),
 	) );
 
 }

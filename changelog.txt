@@ -1,5 +1,9 @@
 SuevaFree Changelog
 
+- Version 1.2.7.8 - Released: 04.05.2015
+
+-- Fixed : Theme background.
+
 - Version 1.2.7.7 - Released: 13.04.2015
 
 -- Updated : Option panel layout.
