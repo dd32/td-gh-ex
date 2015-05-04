@@ -45,9 +45,9 @@ if ( ! function_exists( 'accesspress_mag_post_navigation' ) ) :
  */
 function accesspress_mag_post_navigation() {
     $trans_next = of_get_option( 'trans_next_article' );
-    if( empty( $trans_next ) ){ $trans_next = 'Next article'; }
+    if( empty( $trans_next ) ){ $trans_next = __( 'Next article', 'accesspress-mag' ); }
     $trans_prev = of_get_option( 'trans_previous_article' );
-    if( empty( $trans_prev ) ){ $trans_prev = 'Previous article' ; }
+    if( empty( $trans_prev ) ){ $trans_prev = __( 'Previous article', 'accesspress-mag' ) ; }
 	// Don't print empty markup if there's nowhere to navigate.
 	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
 	$next     = get_adjacent_post( false, '', false );
@@ -133,9 +133,9 @@ function accesspress_mag_entry_footer() {
     		}
     	}*/
         $trans_via = of_get_option( 'trans_via' );
-        if( empty( $trans_via ) ){ $trans_via = 'Via'; }
+        if( empty( $trans_via ) ){ $trans_via = __( 'Via', 'accesspress-mag' ); }
         $trans_source = of_get_option( 'trans_source' );
-        if( empty( $trans_source ) ){ $trans_source = 'Source'; }
+        if( empty( $trans_source ) ){ $trans_source = __( 'Source', 'accesspress-mag' ); }
         $post_source_name   = get_post_meta($post->ID, 'post_source_name', true);
         $post_source_url    = get_post_meta($post->ID, 'post_source_url', true);
         $post_via_name      = get_post_meta($post->ID, 'post_via_name', true);

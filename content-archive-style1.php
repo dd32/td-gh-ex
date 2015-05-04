@@ -25,11 +25,11 @@
         <?php 
             if(has_post_thumbnail()){
                 $image_id = get_post_thumbnail_id();
-                $image_path = wp_get_attachment_image_src( $image_id, 'singlepost-style1' ,true );
+                $image_path = wp_get_attachment_image_src( $image_id, 'accesspress-mag-singlepost-style1' ,true );
                 $image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
          ?>
                 <div class="post-image non-zoomin">
-                    <a href="<?php the_permalink();?>"><img src="<?php echo $image_path[0];?>" alt="<?php echo esc_attr( $image_alt );?>" /></a>
+                    <a href="<?php the_permalink();?>"><img src="<?php echo esc_url( $image_path[0] );?>" alt="<?php echo esc_attr( $image_alt );?>" /></a>
                     <a class="big-image-overlay" href="<?php the_permalink();?>"><i class="fa fa-external-link"></i></a>
                 </div>
         <?php } ?>

@@ -16,10 +16,7 @@ get_header();
 $apmag_theme_option = get_option( 'accesspress-mag-theme' );
 if( empty( $apmag_theme_option )){
     get_template_part('homepage');
-}
-else
-{
-
+} else {
 ?>
 <div class="apmag-container">
 	<div id="primary" class="content-area">

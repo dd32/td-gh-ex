@@ -17,9 +17,9 @@
         $apmag_copyright_text = of_get_option( 'mag_footer_copyright' );
         $apmag_copyright_symbol = of_get_option( 'copyright_symbol' );
         $trans_top = of_get_option( 'top_arrow' );
-        if( empty( $trans_top ) ){ $trans_top = 'Top'; }
+        if( empty( $trans_top ) ){ $trans_top = __( 'Top', 'accesspress-mag' ); }
         $trans_copyright = of_get_option( 'trans_copyright' );
-        if( empty( $trans_copyright ) ){ $trans_copyright = 'Copyright'; }
+        if( empty( $trans_copyright ) ){ $trans_copyright = __( 'Copyright', 'accesspress-mag' ); }
     ?>
     <footer id="colophon" class="site-footer" role="contentinfo">
     
@@ -63,7 +63,7 @@
                     <?php if( $apmag_copyright_symbol == 1 ){ ?>
                         <span class="copyright-symbol"><?php echo esc_attr( $trans_copyright ) ; ?> &copy; <?php echo date( 'Y' ) ?></span>
                     <?php } ?> 
-                    <a href="<?php echo home_url(); ?>">
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
                     <?php
                         if( !empty( $apmag_copyright_text ) ){ 
                             echo '<span class="copyright-text">'.esc_attr( $apmag_copyright_text ).'</span>'; 
@@ -96,7 +96,7 @@
         </div>
 	</footer><!-- #colophon -->
     <div id="back-top">
-        <a href="#top"><i class="fa fa-arrow-up"></i> <span> <?php echo esc_attr( $trans_top ) ;?> </span></a>
+        <a href="#top"><i class="fa fa-arrow-up"></i> <span> <?php echo $trans_top ;?> </span></a>
     </div>   
 </div><!-- #page -->
 <?php wp_footer(); ?>

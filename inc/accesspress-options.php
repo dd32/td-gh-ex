@@ -11,54 +11,6 @@
 function optionsframework_options() {
     
     $imagepath =  get_template_directory_uri() . '/inc/option-framework/images/';
-
-	// Test data
-	$test_array = array(
-		'one' => __( 'One', 'accesspress-mag' ),
-		'two' => __( 'Two', 'accesspress-mag' ),
-		'three' => __( 'Three', 'accesspress-mag' ),
-		'four' => __( 'Four', 'accesspress-mag' ),
-		'five' => __( 'Five', 'accesspress-mag' )
-	);
-
-	// Multicheck Array
-	$multicheck_array = array(
-		'one' => __( 'French Toast', 'accesspress-mag' ),
-		'two' => __( 'Pancake', 'accesspress-mag' ),
-		'three' => __( 'Omelette', 'accesspress-mag' ),
-		'four' => __( 'Crepe', 'accesspress-mag' ),
-		'five' => __( 'Waffle', 'accesspress-mag' )
-	);
-
-	// Multicheck Defaults
-	$multicheck_defaults = array(
-		'one' => '1',
-		'five' => '1'
-	);
-
-	// Background Defaults
-	$background_defaults = array(
-		'color' => '',
-		'image' => '',
-		'repeat' => 'repeat',
-		'position' => 'top center',
-		'attachment'=>'scroll' );
-
-	// Typography Defaults
-	$typography_defaults = array(
-		'size' => '15px',
-		'face' => 'georgia',
-		'style' => 'bold',
-		'color' => '#bada55' );
-
-	// Typography Options
-	$typography_options = array(
-		'sizes' => array( '6','12','14','16','20' ),
-		'faces' => array( 'Helvetica Neue' => 'Helvetica Neue','Arial' => 'Arial' ),
-		'styles' => array( 'normal' => 'Normal','bold' => 'Bold' ),
-		'color' => false
-	);
-    
      
 	// Pull all the categories into an array
 	$options_categories = array();
@@ -93,7 +45,7 @@ function optionsframework_options() {
         
         //No.of posts for homepage blocks
         $options_block_posts = array();
-        $options_block_posts[-1]="-- All posts --";
+        $options_block_posts[-1]= __( '-- All posts --', 'accesspress-mag' );
         for($i=4;$i<=10;$i++)
         {
             $options_block_posts[$i] = $i ;
@@ -113,10 +65,6 @@ function optionsframework_options() {
     $post_template = array(
         'default-template' => $imagepath.'post_template/post-templates-icons-0.png',
         'style1-template' => $imagepath.'post_template/post-templates-icons-1.png', 
-        //'style2-template' => $imagepath.'post_template/post-templates-icons-2.png',
-        //'style3-template' => $imagepath.'post_template/post-templates-icons-3.png',
-        //'style4-template' => $imagepath.'post_template/post-templates-icons-4.png',
-        //'style5-template' => $imagepath.'post_template/post-templates-icons-5.png',
         );
     
     //Post sidebar
@@ -137,9 +85,9 @@ function optionsframework_options() {
     
     // Logo settings
     $logo_options = array(
-            		'image' => __('Image', 'accesspress-mag'),
-            		'text' => __('Text', 'accesspress-mag'),
-            		'image_text' => __('Image & Text', 'accesspress-mag'),
+            		'image' => __( 'Image', 'accesspress-mag' ),
+            		'text' => __( 'Text', 'accesspress-mag' ),
+            		'image_text' => __( 'Image & Text', 'accesspress-mag' ),
             		);
 
 	// If using image radio buttons, define a directory path
@@ -147,12 +95,12 @@ function optionsframework_options() {
     
     //Traslations Array
     $translation_name = array(
-                            __( "Continue Reading", "accesspess-mag" ),__( "You are here", "accesspess-mag" ),__( "Editor Pick`s", "accesspess-mag" ),__( "Home", "accesspess-mag" ),__( "Review overview", "accesspess-mag" ),__( "Summary", "accesspess-mag" ),
+                            __( "You are here", "accesspess-mag" ),__( "Editor Pick`s", "accesspess-mag" ),__( "Home", "accesspess-mag" ),__( "Review overview", "accesspess-mag" ),__( "Summary", "accesspess-mag" ),
                             __( "Search results for", "accesspess-mag" ),__( "Tagged", "accesspess-mag" ),__( "Next article", "accesspess-mag" ),__( "Previous article", "accesspess-mag" ),__( "Via", "accesspess-mag" ),__( "Source", "accesspess-mag" ),__( "Advertisement", "accesspress-mag" ),__( "Top arrow", "accesspress-mag" ),
                             __( "Copyright", "accesspress-mag" )
                             );
     $translation_id = array(
-                            'continue_reading','you_are_here','editor_picks','home','review_overview','summary','search_results_for','tagged','next_article','previous_article','via','source','advertisement','top_arrow','copyright'
+                            'you_are_here','editor_picks','home','review_overview','summary','search_results_for','tagged','next_article','previous_article','via','source','advertisement','top_arrow','copyright'
                             );
     $trans_count = count($translation_id);
 
@@ -188,10 +136,10 @@ function optionsframework_options() {
             'desc' => __( 'Define - how the site background image will be displayed here', 'accesspress-mag' ),
             'id' => 'repeat_background',            
             'options' => array(
-                    ' ' => 'No Repeat',
-                    'repeat' => 'Tile',
-                    'repeat-x' => 'Tile Horizontally',
-                    'repeat-y' => 'Tile Vertically',
+                    ' ' => __( 'No Repeat', 'accesspress-mag' ),
+                    'repeat' => __( 'Tile', 'accesspress-mag' ),
+                    'repeat-x' => __( 'Tile Horizontally', 'accesspress-mag' ),
+                    'repeat-y' => __( 'Tile Vertically', 'accesspress-mag' ),
                     ),
             'type' => 'radio',
             'std' => ' ' 
@@ -202,8 +150,8 @@ function optionsframework_options() {
             'id' => 'position_background',            
             'options' => array(
                     ' ' => 'Left',
-                    'center' => 'Center',
-                    'right' => 'Right',
+                    'center' => __( 'Center', 'accesspress-mag' ),
+                    'right' => __( 'Right', 'accesspress-mag' ),
                     ),
             'type' => 'radio',
             'std' => ' ' 
@@ -213,8 +161,8 @@ function optionsframework_options() {
             'desc' => __( 'Define - Background attachment option here', 'accesspress-mag' ),
             'id' => 'attached_background',            
             'options' => array(
-                    'fixed' => 'Fixed',
-                    ' '     => 'Scroll',
+                    'fixed' => __( 'Fixed', 'accesspress-mag' ),
+                    ' '     => __( 'Scroll', 'accesspress-mag' ),
                     ),
             'type' => 'radio',
             'std' => ' ' 
@@ -242,8 +190,8 @@ function optionsframework_options() {
             'name' => __( 'Website layout', 'accesspress-mag' ),
             'id' => 'website_layout_option',            
             'options' => array(
-                    ' ' => 'Fullwidth',
-                    'boxed' => 'Boxed',
+                    ' ' => __( 'Fullwidth', 'accesspress-mag' ),
+                    'boxed' => __( 'Boxed', 'accesspress-mag' ),
                     ),
             'type' => 'radio',
             'std' => ' ' 
@@ -915,8 +863,8 @@ function optionsframework_options() {
             'desc' => __( 'Define - type of excerpt for archives pages', 'accesspress-mag' ),
             'id' => 'excerpt_type',            
             'options' => array(
-                    ' '     => 'On Words',
-                    'letters' => 'On Letters',                    
+                    ' '     => __( 'On Words', 'accesspress-mag' ),
+                    'letters' => __( 'On Letters', 'accesspress-mag' ),                    
                     ),
             'type' => 'radio',
             'std' => ' ' 

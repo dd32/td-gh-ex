@@ -48,12 +48,12 @@ function accesspress_mag_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
     
-    add_image_size( 'slider-big-thumb', 765, 496, true); //Big image for homepage slider
-    add_image_size( 'slider-small-thumb', 364, 164, true); //Small image for homepage slider
-    add_image_size( 'block-big-thumb', 364, 200, true ); //Big thumb for homepage block
-    add_image_size( 'block-small-thumb', 114, 76, true ); //Small thumb for homepage block
-    add_image_size( 'singlepost-default', 792, 356, true); //Default image size for single post 792x356
-    add_image_size( 'singlepost-style1', 326, 235, true); //Style1 image size for single post 
+    add_image_size( 'accesspress-mag-slider-big-thumb', 765, 496, true); //Big image for homepage slider
+    add_image_size( 'accesspress-mag-slider-small-thumb', 364, 164, true); //Small image for homepage slider
+    add_image_size( 'accesspress-mag-block-big-thumb', 364, 200, true ); //Big thumb for homepage block
+    add_image_size( 'accesspress-mag-block-small-thumb', 114, 76, true ); //Small thumb for homepage block
+    add_image_size( 'accesspress-mag-singlepost-default', 792, 356, true); //Default image size for single post 792x356
+    add_image_size( 'accesspress-mag-singlepost-style1', 326, 235, true); //Style1 image size for single post 
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -77,10 +77,12 @@ function accesspress_mag_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'accesspress_mag_custom_background_args', array(
+	/*
+    add_theme_support( 'custom-background', apply_filters( 'accesspress_mag_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+    */
 }
 endif; // accesspress_mag_setup
 add_action( 'after_setup_theme', 'accesspress_mag_setup' );
@@ -103,7 +105,7 @@ function accesspress_mag_widgets_init() {
     
     register_sidebar( array(
 		'name'          => __( 'Home top sidebar', 'accesspress-mag' ),
-		'id'            => 'apmag-home-top-sidebar',
+		'id'            => 'accesspress-mag-home-top-sidebar',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -113,7 +115,7 @@ function accesspress_mag_widgets_init() {
     
     register_sidebar( array(
    	    'name'          => __( 'Home middle sidebar', 'accesspress-mag' ),
-    	'id'            => 'apmag-home-middle-sidebar',
+    	'id'            => 'accesspress-mag-home-middle-sidebar',
     	'description'   => '',
     	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
     	'after_widget'  => '</aside>',
@@ -123,7 +125,7 @@ function accesspress_mag_widgets_init() {
     
     register_sidebar( array(
    	    'name'          => __( 'Home bottom sidebar', 'accesspress-mag' ),
-    	'id'            => 'apmag-home-bottom-sidebar',
+    	'id'            => 'accesspress-mag-home-bottom-sidebar',
     	'description'   => '',
     	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
     	'after_widget'  => '</aside>',

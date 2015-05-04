@@ -44,14 +44,14 @@ get_header();
                                     $b_counter++;
                                     $block1_query->the_post();
                                     $b1_image_id = get_post_thumbnail_id();
-                                    $b1_big_image_path = wp_get_attachment_image_src($b1_image_id,'block-big-thumb',true);
-                                    $b1_small_image_path = wp_get_attachment_image_src($b1_image_id,'block-small-thumb',true);
+                                    $b1_big_image_path = wp_get_attachment_image_src($b1_image_id,'accesspress-mag-block-big-thumb',true);
+                                    $b1_small_image_path = wp_get_attachment_image_src($b1_image_id,'accesspress-mag-block-small-thumb',true);
                                     $b1_image_alt = get_post_meta($b1_image_id,'_wp_attachment_image_alt',true);
                     ?>
                         <?php if($b_counter==1){echo '<div class="toppost-wrapper">';} if($b_counter> 2 && $b_counter==3){echo '<div class="bottompost-wrapper">';}?>
                         <div class="single_post clearfix <?php if($b_counter <= 2){echo 'top-post non-zoomin';}?>">
                             <?php if(has_post_thumbnail()): ?>   
-                                <div class="post-image"><a href="<?php the_permalink();?>"><img src="<?php if($b_counter <=2){echo $b1_big_image_path[0];}else{ echo $b1_small_image_path[0] ;}?>" alt="<?php echo esc_attr($b1_image_alt);?>" /></a>
+                                <div class="post-image"><a href="<?php the_permalink();?>"><img src="<?php if($b_counter <=2){echo esc_url( $b1_big_image_path[0] );}else{ echo esc_url( $b1_small_image_path[0] ) ;}?>" alt="<?php echo esc_attr($b1_image_alt);?>" /></a>
                                     <?php if($b_counter<=2):?> <a class="big-image-overlay" href="<?php the_permalink();?>"><i class="fa fa-external-link"></i></a><?php endif ;?>
                                 </div>                                
                             <?php endif ; ?>
@@ -101,14 +101,14 @@ get_header();
                                     $b_counter++;
                                     $block2_query->the_post();
                                     $b2_image_id = get_post_thumbnail_id();
-                                    $b2_big_image_path = wp_get_attachment_image_src($b2_image_id,'block-big-thumb',true);
-                                    $b2_small_image_path = wp_get_attachment_image_src($b2_image_id,'block-small-thumb',true);
+                                    $b2_big_image_path = wp_get_attachment_image_src($b2_image_id,'accesspress-mag-block-big-thumb',true);
+                                    $b2_small_image_path = wp_get_attachment_image_src($b2_image_id,'accesspress-mag-block-small-thumb',true);
                                     $b2_image_alt = get_post_meta($b2_image_id,'_wp_attachment_image_alt',true);
                     ?>
                                 <?php if($b_counter==1){echo '<div class="leftposts-wrapper">';} if($b_counter>1 && $b_counter==2){echo '<div class="rightposts-wrapper">';}?>
                                 <div class="single_post clearfix <?php if($b_counter==1){echo 'first-post non-zoomin';}?>">
                                     <?php if(has_post_thumbnail()): ?>   
-                                        <div class="post-image"><a href="<?php the_permalink();?>"><img src="<?php if($b_counter <=1){echo $b2_big_image_path[0];}else{ echo $b2_small_image_path[0] ;}?>" alt="<?php echo esc_attr($b2_image_alt);?>" /></a>
+                                        <div class="post-image"><a href="<?php the_permalink();?>"><img src="<?php if($b_counter <=1){echo esc_url( $b2_big_image_path[0] );}else{ echo esc_url( $b2_small_image_path[0] ) ;}?>" alt="<?php echo esc_attr($b2_image_alt);?>" /></a>
                                             <?php if($b_counter==1):?> <a class="big-image-overlay" href="<?php the_permalink();?>"><i class="fa fa-external-link"></i></a><?php endif ;?>
                                         </div>                                
                                             
@@ -135,7 +135,7 @@ get_header();
                     if(!empty($home_inline_ad)){
                         echo '<div class="homepage-middle-ad wow flipInX" data-wow-delay="1s">'.$home_inline_ad.'</div>';                        
                     } else {
-                        echo '<div class="homepage-middle-ad wow flipInX" data-wow-delay="1s"><img src="'. get_template_directory_uri().'/images/demo-images/728-90.png" /></div>';
+                        echo '<div class="homepage-middle-ad wow flipInX" data-wow-delay="1s"><img src="'. esc_url ( get_template_directory_uri().'/images/demo-images/728-90.png' ).'" /></div>';
                     }
                     
               ?> 
@@ -163,14 +163,14 @@ get_header();
                                     $b_counter++;
                                     $block3_query->the_post();
                                     $b3_image_id = get_post_thumbnail_id();
-                                    $b3_big_image_path = wp_get_attachment_image_src($b3_image_id,'block-big-thumb',true);
-                                    $b3_small_image_path = wp_get_attachment_image_src($b3_image_id,'block-small-thumb',true);
+                                    $b3_big_image_path = wp_get_attachment_image_src($b3_image_id,'accesspress-mag-block-big-thumb',true);
+                                    $b3_small_image_path = wp_get_attachment_image_src($b3_image_id,'accesspress-mag-block-small-thumb',true);
                                     $b3_image_alt = get_post_meta($b3_image_id,'_wp_attachment_image_alt',true);
                     ?>
                         <?php if($b_counter==1){echo '<div class="toppost-wrapper">';} if($b_counter> 2 && $b_counter==3){echo '<div class="bottompost-wrapper">';}?>
                         <div class="single_post clearfix <?php if($b_counter <= 2){echo 'top-post non-zoomin';}?>">
                             <?php if(has_post_thumbnail()): ?>   
-                                <div class="post-image"><a href="<?php the_permalink();?>"><img src="<?php if($b_counter <=2){echo $b3_big_image_path[0];}else{ echo $b3_small_image_path[0] ;}?>" alt="<?php echo esc_attr($b3_image_alt);?>" /></a>
+                                <div class="post-image"><a href="<?php the_permalink();?>"><img src="<?php if($b_counter <=2){echo esc_url( $b3_big_image_path[0] );}else{ echo esc_url( $b3_small_image_path[0] ) ;}?>" alt="<?php echo esc_attr($b3_image_alt);?>" /></a>
                                     <?php if($b_counter<=2):?> <a class="big-image-overlay" href="<?php the_permalink();?>"><i class="fa fa-external-link"></i></a><?php endif ;?>
                                 </div>                               
                             <?php endif ; ?>
@@ -219,13 +219,13 @@ get_header();
                                     $b_counter++;
                                     $block4_query->the_post();
                                     $b4_image_id = get_post_thumbnail_id();
-                                    $b4_big_image_path = wp_get_attachment_image_src($b4_image_id,'block-big-thumb',true);
+                                    $b4_big_image_path = wp_get_attachment_image_src($b4_image_id,'accesspress-mag-block-big-thumb',true);
                                     $b4_image_alt = get_post_meta($b4_image_id,'_wp_attachment_image_alt',true);
                     ?>
                                 <div class="single_post non-zoomin clearfix">
                                     <?php if(has_post_thumbnail()): ?>   
                                         <div class="post-image">
-                                            <a href="<?php the_permalink();?>"><img src="<?php echo $b4_big_image_path[0];?>" alt="<?php echo esc_attr($b4_image_alt);?>" /></a>
+                                            <a href="<?php the_permalink();?>"><img src="<?php echo esc_url( $b4_big_image_path[0] );?>" alt="<?php echo esc_attr($b4_image_alt);?>" /></a>
                                             <a class="big-image-overlay" href="<?php the_permalink();?>"><i class="fa fa-external-link"></i></a>
                                         </div>                                
                                     <?php endif ; ?>

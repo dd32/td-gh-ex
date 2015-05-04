@@ -9,18 +9,10 @@ add_action('add_meta_boxes', 'accesspress_mag_add_sidebar_layout_box');
  
 function accesspress_mag_add_sidebar_layout_box()
 {
-                 
-    add_meta_box(
-                 'accesspress_mag_product_review', // $id
-                 'Product review', // $title
-                 'accesspress_mag_product_review_callback', // $callback
-                 'post', // $page
-                 'normal', // $context
-                 'high'); // $priority
     
     add_meta_box(
                  'accesspress_mag_post_settings', // $id
-                 'Post settings', // $title
+                 __( 'Post settings', 'accesspress-mag' ), // $title
                  'accesspress_mag_post_settings_callback', // $callback
                  'post', // $page
                  'normal', // $context
@@ -28,7 +20,7 @@ function accesspress_mag_add_sidebar_layout_box()
 
     add_meta_box(
                  'accesspress_mag_page_settings', // $id
-                 'Sidebar Layout', // $title
+                 __( 'Sidebar Layout', 'accesspress-mag' ), // $title
                  'accesspress_mag_page_settings_callback', // $callback
                  'page', // $page
                  'normal', // $context
@@ -126,79 +118,6 @@ $accesspress_mag_post_template_layout = array(
                     )  
 
     );
-/*---------Function for Product Review meta box----------------------------*/
-
-function accesspress_mag_product_review_callback()
-{
-    global $post ;
-    wp_nonce_field( basename( __FILE__ ), 'accesspress_mag_product_review_nonce' );
-?>
-<div class="my_meta_control td-not-portfolio td-not-home">
-<?php
-        $apmag_review_option = get_post_meta($post->ID, 'product_review_option', true); 
-        $product_rating = get_post_meta($post->ID, 'product_rating', true);
-        $review_count = get_post_meta($post->ID, 'review_count', true);
-        $apmag_rate_description = get_post_meta($post->ID, 'product_rate_description', true);
-    ?>
-
-    <p class="apmag_help_section apmag-help-select">
-        <span class="apmag_custom_label"><?php _e( 'Is product review? :','accesspress-mag' );?></span>        
-
-        <div class="apmag-select-review-option">
-            <select id="reviewSelector" name="product_review_option" class="apmag-panel-dropdown">
-                <option value="norate" <?php selected( $apmag_review_option, 'norate' ); ?>><?php _e( 'No', 'accesspress-mag' ); ?></option>
-                <option value="rate_stars" <?php selected( $apmag_review_option, 'rate_stars' ); ?>><?php _e( 'Stars', 'accesspress-mag' ); ?></option>
-            </select>
-        </div>
-    </p>
-    
-    <div class="rating_type rate_Stars">
-        <div><strong><?php _e( 'Add star ratings for this product:', 'accesspress-mag' );?></strong></div>
-        <div class="product_reivew_section apmag-not-home">
-            <?php 
-            $count = 0;
-            if(!empty($product_rating)){
-            foreach ($product_rating as $key => $value) {
-                $count++;
-            ?>
-
-            <div class="review_section_group">               
-                <span class="apmag_custom_label"><?php _e( 'Feature Name:', 'accesspress-mag' );?></span>
-                <input style="width: 200px;" type="text" name="product_ratings[<?php echo $count; ?>][feature_name]" value="<?php echo $value['feature_name']; ?>"/>
-                <select name="product_ratings[<?php echo $count; ?>][feature_star]">
-                    <option value=""><?php _e( 'Select rating', 'accesspress-mag' );?></option>
-                    <option value="5"<?php selected( $value['feature_star'], 5 ); ?>><?php _e( '5 stars', 'accesspress-mag' );?></option>
-                    <option value="4.5"<?php selected( $value['feature_star'], 4.5 ); ?>><?php _e( '4.5 stars', 'accesspress-mag' );?></option>
-                    <option value="4"<?php selected( $value['feature_star'], 4 ); ?>><?php _e( '4 stars', 'accesspress-mag' );?></option>
-                    <option value="3.5"<?php selected( $value['feature_star'], 3.5 ); ?>><?php _e( '3.5 stars', 'accesspress-mag' );?></option>
-                    <option value="3"<?php selected( $value['feature_star'], 3 ); ?>><?php _e( '3 stars', 'accesspress-mag' );?></option>
-                    <option value="2.5"<?php selected( $value['feature_star'], 2.5 ); ?>><?php _e( '2.5 stars', 'accesspress-mag' );?></option>
-                    <option value="2"<?php selected( $value['feature_star'], 2 ); ?>><?php _e( '2 stars', 'accesspress-mag' );?></option>
-                    <option value="1.5"<?php selected( $value['feature_star'], 1.5 ); ?>><?php _e( '1.5 stars', 'accesspress-mag' );?></option>
-                    <option value="1"<?php selected( $value['feature_star'], 1 ); ?>><?php _e( '1 star', 'accesspress-mag' );?></option>
-                    <option value="0.5"<?php selected( $value['feature_star'], 0.5 ); ?>><?php _e( '0.5 star', 'accesspress-mag' );?></option>
-                </select>
-                <a href="javascript:void(0)" class="delete-review-stars button">Delete</a>
-            </div> 
-
-            <?php
-            } 
-            }
-            ?>           
-        </div>
-        <input id="post_review_count" type="hidden" name="review_count" value="<?php echo $count; ?>">
-        <a href="javascript:void(0)" class="docopy-revirew-stars button"><?php _e( 'Add rating category', 'accesspress-mag' );?></a>
-    </div>
-    <div class="review_desc">
-        <div><strong><?php _e( 'Review description:', 'accesspress-mag' );?></strong></div>
-        <p class="apmag_help_section">
-            <textarea style="width: 500px; height: 100px;" type="text" name="product_rate_description"><?php if(!empty($apmag_rate_description)){echo $apmag_rate_description;} ?></textarea>
-        </p>
-    </div>
-
-</div>
-<?php     
-}
 
 /*-------------------Function for Post settings meta box----------------------------*/
 
@@ -258,7 +177,7 @@ function accesspress_mag_post_settings_callback()
             </td>
             </tr>
             <tr>
-                <td><em class="f13">You can set up the sidebar content <a href="<?php echo admin_url('/themes.php?page=options-framework'); ?>">here</a></em></td>
+                <td><em class="f13"><?php _e( 'You can set up the sidebar content ', 'accesspress-mag' );?> <a href="<?php echo admin_url('/themes.php?page=options-framework'); ?>"><?php _e( 'here', 'accesspress-mag' )?></a></em></td>
             </tr>
         </table>
 </div>
@@ -335,105 +254,6 @@ function accesspress_mag_page_settings_callback()
  * save the custom metabox data
  * @hooked to save_post hook
  */
-
-/*--------------------Save function for product review-------------------------*/
-
-function accesspress_mag_save_product_review( $post_id ) { 
-    global  $post;
-    
-    // Verify the nonce before proceeding.
-    if ( !isset( $_POST[ 'accesspress_mag_product_review_nonce' ] ) || !wp_verify_nonce( $_POST[ 'accesspress_mag_product_review_nonce' ], basename( __FILE__ ) ) )
-        return;
-
-    // Stop WP from clearing custom fields on autosave
-    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE)  
-        return;
-        
-    if ('page' == $_POST['post_type']) {  
-        if (!current_user_can( 'edit_page', $post_id ) )  
-            return $post_id;  
-    } elseif (!current_user_can( 'edit_post', $post_id ) ) {  
-            return $post_id;  
-    } 
-    
-    //Execute this saving function
-    $apmag_allowed_textarea = array(
-                                'a' => array(
-                                    'href' => array(),
-                                    'title' => array()
-                                ),
-                                'br' => array(),
-                                'em' => array(),
-                                'strong' => array(),
-                            );
-    $post_review_option = get_post_meta($post->ID, 'product_review_option', true); 
-    $post_feature_rate_name = get_post_meta($post->ID, 'product_rating_feature_name', true);
-    $product_rating = get_post_meta($post->ID, 'product_rating', true);
-    $post_star_rate_value = get_post_meta($post->ID, 'product_rate_value', true);
-    $post_rate_description = get_post_meta($post->ID, 'product_rate_description', true);
-    $review_count = get_post_meta($post->ID, 'review_count', true);
-    
-    $stz_product_rating = $_POST['product_ratings'];
-    //var_dump($stz_product_rating); die();
-    $stz_review_option = sanitize_text_field($_POST['product_review_option']);
-    $stz_feature_rate_name = sanitize_text_field($_POST['product_rating_feature_name']);
-    $stz_star_rate_value = floatval($_POST['product_rate_value']);
-    $stz_rate_description = wp_kses($_POST['product_rate_description'],$apmag_allowed_textarea);
-    $stz_review_count = sanitize_text_field($_POST['review_count']);
-    
-        //if ( $product_rating && '' == $product_rating ){
-        //    add_post_meta( $post_id, 'product_rating', $stz_product_rating );
-        //}elseif ($product_rating && $stz_product_rating != $product_rating) {  
-            update_post_meta($post_id, 'product_rating', $stz_product_rating);  
-        //} elseif ('' == $stz_product_rating && $product_rating) {  
-        //delete_post_meta($post_id,'product_rating');  
-        //}
-
-        if ( $stz_review_count && '' == $stz_review_count ){
-            add_post_meta( $post_id, 'review_count', $stz_review_count );
-        }elseif ($stz_review_count && $stz_review_count != $review_count) {  
-            update_post_meta($post_id, 'review_count', $stz_review_count);  
-        } elseif ('' == $stz_review_count && $review_count) {  
-            delete_post_meta($post_id,'review_count');  
-        }
-
-        //update data for Review Option 
-        if ( $stz_review_option && '' == $stz_review_option ){
-            add_post_meta( $post_id, 'product_review_option', $stz_review_option );
-        }elseif ($stz_review_option && $stz_review_option != $post_review_option) {  
-            update_post_meta($post_id, 'product_review_option', $stz_review_option);  
-        } elseif ('' == $stz_review_option && $post_review_option) {  
-            delete_post_meta($post_id,'product_review_option', $post_review_option);  
-        }
-        
-        //update data for Feature name
-        if ( $stz_feature_rate_name && '' == $stz_feature_rate_name ){
-            add_post_meta( $post_id, 'product_rating_feature_name', $stz_feature_rate_name );
-        }elseif ($stz_feature_rate_name && $stz_feature_rate_name != $post_feature_rate_name) {  
-            update_post_meta($post_id, 'product_rating_feature_name', $stz_feature_rate_name);  
-        } elseif ('' == $stz_feature_rate_name && $post_feature_rate_name) {  
-            delete_post_meta($post_id,'product_rating_feature_name', $post_feature_rate_name);  
-        }
-        
-        //update data for Rating stars
-        if ( $stz_star_rate_value && '' == $stz_star_rate_value ){
-            add_post_meta( $post_id, 'product_rate_value', $stz_star_rate_value );
-        }elseif ($stz_star_rate_value && $stz_star_rate_value != $post_star_rate_value) {  
-            update_post_meta($post_id, 'product_rate_value', $stz_star_rate_value);  
-        } elseif ('' == $stz_star_rate_value && $post_star_rate_value) {  
-            delete_post_meta($post_id,'product_rate_value', $post_star_rate_value);  
-        }
-        
-        //update data for Reveiw descriptions
-        if ( $stz_rate_description && '' == $stz_rate_description ){
-            add_post_meta( $post_id, 'product_rate_description', $stz_rate_description );
-        }elseif ($stz_rate_description && $stz_rate_description != $post_rate_description) {  
-            update_post_meta($post_id, 'product_rate_description', $stz_rate_description);  
-        } elseif ('' == $stz_rate_description && $post_rate_description) {  
-            delete_post_meta($post_id,'product_rate_description', $post_rate_description);  
-        }
-    }
-add_action('save_post', 'accesspress_mag_save_product_review');
 
 /*-------------------Save function for Post Setting-------------------------*/
 

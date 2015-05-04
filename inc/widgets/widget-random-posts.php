@@ -22,7 +22,7 @@ class Accesspress_mag_register_random_posts extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'accesspress_mag_register_random_posts', 'AP-Mag :  Random Posts', array(
-            'description' => __('A widget that shows Random posts', 'accesspress-mag')
+            'description' => __( 'A widget that shows Random posts', 'accesspress-mag' )
                 )
         );
     }
@@ -35,7 +35,7 @@ class Accesspress_mag_register_random_posts extends WP_Widget {
         $fields = array(
             'random_posts_title' => array(
                 'accesspress_mag_widgets_name' => 'random_posts_title',
-                'accesspress_mag_widgets_title' => __('Title', 'accesspress-mag'),
+                'accesspress_mag_widgets_title' => __( 'Title', 'accesspress-mag' ),
                 'accesspress_mag_widgets_field_type' => 'title',
             ),            
         );
@@ -51,29 +51,29 @@ class Accesspress_mag_register_random_posts extends WP_Widget {
      * @param array $args     Widget arguments.
      * @param array $instance Saved values from database.
      */
-    public function widget($args, $instance) {
-        extract($args);
+    public function widget( $args, $instance ) {
+        extract( $args );
         $random_posts_title = $instance['random_posts_title'];
         echo $before_widget; ?>
         <div class="random-posts clearfix">
-           <h1 class="widget-title"><span><?php echo esc_attr($random_posts_title); ?></span></h1>     
+           <h1 class="widget-title"><span><?php echo esc_attr( $random_posts_title ); ?></span></h1>     
            <div class="random-posts-wrapper">
                 <?php
-                    $rand_posts_args = array('post_type'=>'post','post_status'=>'publish','posts_per_page'=>3,'orderby'=>'rand');
+                    $rand_posts_args = array( 'post_type'=>'post','post_status'=>'publish','posts_per_page'=>3,'orderby'=>'rand' );
                     $rand_posts_query = new WP_Query($rand_posts_args);
                     if($rand_posts_query->have_posts()){
                         while($rand_posts_query->have_posts()){
                             $rand_posts_query->the_post();
                             $image_id = get_post_thumbnail_id();
-                            $image_path = wp_get_attachment_image_src($image_id,'block-small-thumb',true);
-                            $image_alt = get_post_meta($image_id,'_wp_attachment_image_alt',true);
+                            $image_path = wp_get_attachment_image_src( $image_id, 'accesspress-mag-block-small-thumb', true );
+                            $image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
                 ?>
                     <div class="rand-single-post clearfix">
                         <div class="post-img"><a href="<?php the_permalink();?>">
                             <?php if(has_post_thumbnail()): ?>
-                            <img src="<?php echo $image_path[0];?>" alt="<?php echo esc_attr( $image_alt );?>" />
+                            <img src="<?php echo esc_url( $image_path[0] );?>" alt="<?php echo esc_attr( $image_alt );?>" />
                             <?php else: ?>
-                            <img src="<?php echo get_template_directory_uri();?>/images/no-image-small.jpg" alt="<?php _e( 'No image', 'accesspress-mag' );?>" />                            
+                            <img src="<?php echo esc_url( get_template_directory_uri(). '/images/no-image-small.jpg' );?>" alt="<?php _e( 'No image', 'accesspress-mag' );?>" />                            
                             <?php endif ;?>
                         </a></div>
                         <div class="post-desc-wrapper">
@@ -85,7 +85,7 @@ class Accesspress_mag_register_random_posts extends WP_Widget {
                                     ?>
                                 </a>
                             </h3>
-                            <div class="block-poston"><?php do_action('accesspress_mag_home_posted_on');?></div>
+                            <div class="block-poston"><?php do_action( 'accesspress_mag_home_posted_on' );?></div>
                         </div>                    
                     </div>
                 <?php

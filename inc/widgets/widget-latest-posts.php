@@ -52,7 +52,7 @@ class Accesspress_mag_register_latest_posts extends WP_Widget {
      * @param array $instance Saved values from database.
      */
     public function widget( $args, $instance ) {
-        extract($args);
+        extract( $args );
         $latest_posts_title = $instance[ 'latest_posts_title' ];
         echo $before_widget; ?>
         <div class="latest-posts clearfix">
@@ -65,15 +65,15 @@ class Accesspress_mag_register_latest_posts extends WP_Widget {
                         while($latest_posts_query->have_posts()){
                             $latest_posts_query->the_post();
                             $image_id = get_post_thumbnail_id();
-                            $image_path = wp_get_attachment_image_src( $image_id, 'block-small-thumb', true );
+                            $image_path = wp_get_attachment_image_src( $image_id, 'accesspress-mag-block-small-thumb', true );
                             $image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
                 ?>
                     <div class="latest-single-post clearfix">
                         <div class="post-img"><a href="<?php the_permalink();?>">
                             <?php if(has_post_thumbnail()): ?>
-                            <img src="<?php echo $image_path[0];?>" alt="<?php echo esc_attr( $image_alt );?>" />
+                            <img src="<?php echo esc_url( $image_path[0] );?>" alt="<?php echo esc_attr( $image_alt );?>" />
                             <?php else: ?>
-                            <img src="<?php echo get_template_directory_uri();?>/images/no-image-small.jpg" alt="<?php _e( 'No image', 'accesspress-mag' );?>" />                            
+                            <img src="<?php echo esc_url( get_template_directory_uri(). '/images/no-image-small.jpg' );?>" alt="<?php _e( 'No image', 'accesspress-mag' );?>" />                            
                             <?php endif ;?>
                         </a></div>
                         <div class="post-desc-wrapper">

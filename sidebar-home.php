@@ -10,15 +10,15 @@ $sidebar_top_ad = of_get_option('value_sidebar_top_ad');
 $sidebar_middle_ad = of_get_option('value_sidebar_middle_ad');
 $sidebar_bottom_ad = of_get_option('value_sidebar_bottom_ad'); 
 $trans_ads = of_get_option( 'trans_advertisement' );
-if( empty( $trans_ads ) ){ $trans_ads = 'Advertisement'; }
+if( empty( $trans_ads ) ){ $trans_ads = __( 'Advertisement', 'accesspress-mag' ); }
 $trans_editor = of_get_option( 'trans_editor_picks' );
-if( empty( $trans_editor ) ){ $trans_editor = "Editor Pick's"; }
+if( empty( $trans_editor ) ){ $trans_editor = __( "Editor Pick's", "accesspress-mag" ); }
 ?>
 <div id="secondary-right-sidebar">
     <div id="secondary" class="secondary-wrapper">
-    <?php if ( is_active_sidebar( 'apmag-home-top-sidebar' )) : ?>
+    <?php if ( is_active_sidebar( 'accesspress-mag-home-top-sidebar' )) : ?>
     <div id="home-top-sidebar" class="widget-area wow fadeInUp" data-wow-delay="0.5s" role="complementary">
-    	<?php dynamic_sidebar( 'apmag-home-top-sidebar' ); ?>
+    	<?php dynamic_sidebar( 'accesspress-mag-home-top-sidebar' ); ?>
     </div><!-- #secondary -->
     <?php 
         else:
@@ -30,20 +30,20 @@ if( empty( $trans_editor ) ){ $trans_editor = "Editor Pick's"; }
     ?>
     <div class="sidebar-top-ad widget-area wow fadeInUp" data-wow-delay="0.5s">
         <h1 class="sidebar-title"><span><?php echo esc_attr( $trans_ads ) ;?></span></h1>
-        <div class="ad_content"><?php echo esc_textarea( $sidebar_top_ad ) ;?></div>
+        <div class="ad_content"><?php echo  $sidebar_top_ad  ;?></div>
     </div>
     <?php    
     } else { 
     ?>
     <div class="sidebar-top-ad widget-area wow fadeInUp" data-wow-delay="0.5s">
         <h1 class="sidebar-title"><span><?php echo esc_attr( $trans_ads ) ;?></span></h1>
-        <div class="ad_content"><img src="<?php echo get_template_directory_uri();?>/images/demo-images/300-250.png" /></div>
+        <div class="ad_content"><img src="<?php echo esc_url( get_template_directory_uri().'/images/demo-images/300-250.png' );?>" /></div>
     </div>
     <?php } ?>
     
-    <?php if ( is_active_sidebar( 'apmag-home-middle-sidebar' )) : ?>
+    <?php if ( is_active_sidebar( 'accesspress-mag-home-middle-sidebar' )) : ?>
     <div id="home-top-sidebar" class="widget-area wow fadeInRight" data-wow-delay="0.5s" role="complementary">
-    	<?php dynamic_sidebar( 'apmag-home-middle-sidebar' ); ?>
+    	<?php dynamic_sidebar( 'accesspress-mag-home-middle-sidebar' ); ?>
     </div><!-- #secondary -->
     <?php 
         else:
@@ -113,20 +113,20 @@ if( empty( $trans_editor ) ){ $trans_editor = "Editor Pick's"; }
     ?>
     <div class="sidebar-top-ad widget-area wow fadeInUp" data-wow-delay="0.5s">
         <h1 class="sidebar-title"><span><?php echo esc_attr( $trans_ads ) ;?></span></h1>
-        <div class="ad_content"><?php echo esc_textarea( $sidebar_middle_ad ) ;?></div>
+        <div class="ad_content"><?php echo  $sidebar_middle_ad  ;?></div>
     </div>
     <?php    
     }else {
     ?>
     <div class="sidebar-top-ad widget-area wow fadeInUp" data-wow-delay="0.5s">
         <h1 class="sidebar-title"><span><?php echo esc_attr( $trans_ads ) ;?></span></h1>
-        <div class="ad_content"><img src="<?php echo get_template_directory_uri();?>/images/demo-images/300-250.png" /></div>
+        <div class="ad_content"><img src="<?php echo esc_url( get_template_directory_uri().'/images/demo-images/300-250.png' );?>" /></div>
     </div>
     <?php } ?>
     
-    <?php if ( is_active_sidebar( 'apmag-home-bottom-sidebar' )) : ?>
+    <?php if ( is_active_sidebar( 'accesspress-mag-home-bottom-sidebar' )) : ?>
     <div id="home-top-sidebar" class="widget-area wow fadeInUp" data-wow-delay="0.5s" role="complementary">
-    	<?php dynamic_sidebar( 'apmag-home-bottom-sidebar' ); ?>
+    	<?php dynamic_sidebar( 'accesspress-mag-home-bottom-sidebar' ); ?>
     </div><!-- #secondary -->
     <?php 
         else:

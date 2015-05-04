@@ -54,7 +54,7 @@
                 <div class="apmag-container">
                     <ul class="">
                         <li class="menu-item-first">
-                            <a href="<?php echo home_url();?>/wp-admin/nav-menus.php?action=locations">Click here - to select or create a menu</a>
+                            <a href="<?php echo esc_url( home_url( '/' ) );?>/wp-admin/nav-menus.php?action=locations"><?php _e( 'Click here - to select or create a menu', 'accesspress-mag' );?></a>
                         </li>
                     </ul>
                 </div>
@@ -66,16 +66,18 @@
                                 <button class="menu-toggle hide" aria-controls="menu" aria-expanded="false"><?php _e( 'Top Menu', 'accesspress-mag' ); ?></button>
                                 <?php wp_nav_menu( array( 'menu' => $apmag_top_menu ) ); ?>
                     </nav><!-- #site-navigation -->
-                <?php endif;?> 
+               
                 <?php if(!empty($apmag_top_menu_right)): ?>
                     <nav id="top-right-navigation" class="top-right-main-navigation" role="navigation">
                                 <button class="menu-toggle hide" aria-controls="menu" aria-expanded="false"><?php _e( 'Top Menu Right', 'accesspress-mag' ); ?></button>
                                 <?php wp_nav_menu( array( 'menu' => $apmag_top_menu_right ) ); ?>
                     </nav><!-- #site-navigation -->
                 <?php endif ;?>           
-                <?php endif ;?>
+                
                 </div>
             </div>
+             <?php endif;?> 
+             <?php endif ;?>
         <div class="logo-ad-wrapper clearfix">
             <div class="apmag-container">
         		<div class="site-branding <?php echo $branding_class ;?>">
@@ -83,7 +85,7 @@
                                 if( $apmag_logo_setting == 'image' || $apmag_logo_setting == 'image_text') :
                                 if (!empty($apmag_logo)): ?>
                                   <div class="sitelogo-wrap">  
-                                    <a itemprop="url" href="<?php echo home_url(); ?>"><img src="<?php echo $apmag_logo?>" alt="<?php echo $apmag_logo_alt ?>" title="<?php echo $apmag_logo_title ?>" /></a>
+                                    <a itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo $apmag_logo?>" alt="<?php echo $apmag_logo_alt ?>" title="<?php echo $apmag_logo_title ?>" /></a>
                                     <meta itemprop="name" content="<?php bloginfo( 'name' )?>" />
                                   </div>
                             <?php endif; endif;
@@ -116,7 +118,7 @@
                         if(!empty($apmag_header_ad)){
                             echo $apmag_header_ad;
                         } else {
-                            echo '<img src="'. get_template_directory_uri().'/images/demo-images/728-90.png" />';
+                            echo '<img src="'. esc_url( get_template_directory_uri().'/images/demo-images/728-90.png' ).'" />';
                         } 
                     ?>
                 </div><!--header ad-->
@@ -134,20 +136,7 @@
         			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'mag-primary-menu' ) ); ?>
                 </div>
 
-                <div class="search-icon">
-                    <i class="fa fa-search"></i>
-                    <div class="ak-search">
-                        <div class="close">&times;</div>
-                     <form action="<?php echo site_url(); ?>" class="search-form" method="get" role="search">
-                        <label>
-                            <span class="screen-reader-text">Search for:</span>
-                            <input type="search" title="Search for:" name="s" value="" placeholder="Search content..." class="search-field">
-                        </label>
-                        <input type="submit" value="Search" class="search-submit">
-                     </form>
-                     <div class="overlay-search"> </div> 
-                    </div>
-                </div> 
+                <?php get_search_form(); ?> 
             </div>
 		</nav><!-- #site-navigation -->
         

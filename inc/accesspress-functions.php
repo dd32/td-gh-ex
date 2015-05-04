@@ -40,21 +40,23 @@ function accesspress_header_scripts(){
 
 add_action('wp_head', 'accesspress_header_scripts');
 
- function apmag_admin_scripts(){
+ function accesspress_mag_admin_scripts(){
     // Enqueue custom admin panel JS
 		wp_enqueue_script(
-			'apmag-custom-admin',
+			'accesspress-mag-custom-admin',
 			OPTIONS_FRAMEWORK_DIRECTORY . 'js/custom-admin.js',
 			array( 'jquery')
 			);    
  }
- add_action('admin_enqueue_scripts','apmag_admin_scripts');
+ add_action('admin_enqueue_scripts','accesspress_mag_admin_scripts');
 
 /*-----------------------Homepage slider--------------------------*/
 function accesspress_mag_slider_cb(){
         $slider_category = of_get_option( 'homepage_slider_category' );
+        /*
         $trans_continue = of_get_option( 'trans_continue_reading' );
         if( empty( $trans_continue ) ){ $trans_continue = 'Continue Reading'; }
+        */
         if(empty($slider_category)){
             $slider_category=''; }    
         $slide_count = of_get_option( 'count_slides' );
@@ -180,9 +182,9 @@ add_action( 'accesspress_mag_post_review', 'accesspress_mag_post_review_cb', 10 
 function accesspress_mag_single_post_review_cb(){
     global $post;
     $trans_summary = of_get_option( 'trans_summary' );
-    if( empty( $trans_summary ) ){ $trans_summary = 'Summary'; }
+    if( empty( $trans_summary ) ){ $trans_summary = __( 'Summary', 'accesspress-mag' ); }
     $trans_review = of_get_option( 'trans_review_overview' );
-    if( empty( $trans_review ) ){ $trans_review = 'Review overview' ; }
+    if( empty( $trans_review ) ){ $trans_review = _( 'Review overview', 'accesspress-mag' ) ; }
     $post_review_type = get_post_meta( $post -> ID, 'product_review_option', true );
     if($post_review_type!='norate'){
         $product_rating_description = get_post_meta($post->ID, 'product_rate_description', true);
@@ -495,7 +497,7 @@ function accesspress_mag_excerpt(){
     } else {
         $excerpt_content = accesspress_word_count( $excerpt_content, $excerpt_length );
     }
-    echo '<p>'.esc_html( $excerpt_content ).'</p>';
+    echo '<p>'. $excerpt_content .'</p>';
 }
 
 /*---------------- BreadCrumb --------------------------*/
@@ -503,9 +505,9 @@ function accesspress_mag_excerpt(){
 	function accesspress_breadcrumbs() {
 	  global $post;
       $trans_here = of_get_option( 'trans_you_are_here' );
-      if( empty( $trans_here ) ){ $trans_here = 'You are here'; }
+      if( empty( $trans_here ) ){ $trans_here = __( 'You are here', 'accesspress-mag' ); }
       $trans_home = of_get_option( 'trans_home' );
-      if( empty( $trans_home ) ){ $trans_home = 'Home'; }
+      if( empty( $trans_home ) ){ $trans_home = __( 'Home', 'accesspress-mag' ); }
       $trans_search = of_get_option( '' );
       //if( empty() )
 
@@ -628,11 +630,11 @@ function accesspress_woocommerce_breadcrumbs() {
 $seperator = ' <span class="bread_arrow"> > </span> ';    
 //$seperator =of_get_option( 'breadcrumb_seperator' ); 
 $trans_home = of_get_option( 'trans_home' );
-if( empty( $trans_home ) ){ $trans_home = 'Home'; }
+if( empty( $trans_home ) ){ $trans_home = __( 'Home', 'accesspress-mag' ); }
 $home_text = $trans_home ;
 
 $trans_here = of_get_option( 'trans_you_are_here' );
-if( empty( $trans_here ) ){ $trans_here = 'You are here'; }
+if( empty( $trans_here ) ){ $trans_here = __( 'You are here', 'accesspress-mag' ); }
 //$home_text =of_get_option( 'breadcrumb_home' ); 
 return array( 
 'delimiter' => " ".$seperator." ", 
@@ -673,28 +675,28 @@ function accesspress_required_plugins() {
         // This is an example of how to include a plugin pre-packaged with a theme.
         
          array(
-            'name'      => 'Newsletter', //The plugin name
+            'name'      => __( 'Newsletter', 'accesspress-mag' ), //The plugin name
             'slug'      => 'newsletter',  // The plugin slug (typically the folder name)
             'required'  => true,  // If false, the plugin is only 'recommended' instead of required.
             'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
             'force_deactivation' => true, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
             ),
          array(
-            'name'      => 'AccessPress Social Icons', //The plugin name
+            'name'      => __( 'AccessPress Social Icons', 'accesspress-mag' ), //The plugin name
             'slug'      => 'accesspress-social-icons',  // The plugin slug (typically the folder name)
             'required'  => true,  // If false, the plugin is only 'recommended' instead of required.
             'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
             'force_deactivation' => true, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
             ),
          array(
-            'name'      => 'AccessPress Social Counter', //The plugin name
+            'name'      => __( 'AccessPress Social Counter', 'accesspress-mag' ), //The plugin name
             'slug'      => 'accesspress-social-counter',  // The plugin slug (typically the folder name)
             'required'  => true,  // If false, the plugin is only 'recommended' instead of required.
             'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
             'force_deactivation' => true, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
             ),
          array(
-            'name'      => 'AccessPress Social Share', //The plugin name
+            'name'      => __( 'AccessPress Social Share', 'accesspress-mag' ), //The plugin name
             'slug'      => 'accesspress-social-share',  // The plugin slug (typically the folder name)
             'required'  => true,  // If false, the plugin is only 'recommended' instead of required.
             'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
@@ -745,6 +747,6 @@ add_action( 'tgmpa_register', 'accesspress_required_plugins' );
 
 /*---------Enqueue admin css---------------*/
 function accesspress_mag_admin_css(){
-    wp_enqueue_style('apmag-admin', get_template_directory_uri(). '/inc/option-framework/css/apmag-admin.css');    
+    wp_enqueue_style('accesspress-mag-admin', get_template_directory_uri(). '/inc/option-framework/css/accesspress-mag-admin.css');    
 }
 add_action('admin_head','accesspress_mag_admin_css');
