@@ -91,8 +91,7 @@ function zenzero_posted_on() {
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
 	
 	if ( 'post' == get_post_type() ) {
-		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( __( ' / ', 'zenzero' ) );
+		$categories_list = get_the_category_list( ' / ' );
 		if ( $categories_list && zenzero_categorized_blog() ) {
 			printf( '<span class="cat-links">' . __( '<i class="fa fa-folder-open-o spaceLeftRight"></i>%1$s', 'zenzero' ) . '</span>', $categories_list );
 		}
@@ -114,7 +113,6 @@ if ( ! function_exists( 'zenzero_entry_footer' ) ) :
 function zenzero_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
-		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', '' );
 		if ( $tags_list ) {
 			printf( '<span class="tags-links">' . __( '<i class="fa fa-tags spaceRight"></i>%1$s', 'zenzero' ) . '</span>', $tags_list );

@@ -53,6 +53,10 @@
 					<a href="<?php echo esc_url($zenzero_options['tumblrurl']); ?>" title="Tumblr" target="_blank" rel="nofollow"><i class="fa spaceLeftRight fa-tumblr"></i></a>
 				<?php endif; ?>
 				
+				<?php if ( $zenzero_options['vkurl'] != '' ) : ?>
+					<a href="<?php echo esc_url($zenzero_options['vkurl']); ?>" title="VK" target="_blank" rel="nofollow"><i class="fa spaceLeftRight fa-vk"></i></a>
+				<?php endif; ?>
+				
 				<?php if ( ! $zenzero_options['hiderss'] ) : ?>
 					<a href="<?php bloginfo( 'rss2_url' ); ?>" title="RSS"><i class="fa spaceLeftRight fa-rss"></i></a>
 				<?php endif; ?>

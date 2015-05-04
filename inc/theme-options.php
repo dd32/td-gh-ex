@@ -13,7 +13,8 @@ $zenzero_theme_options = array(
 	'instagramurl' => '', 
 	'youtubeurl' => '', 
 	'pinteresturl' => '', 
-	'tumblrurl' => ''
+	'tumblrurl' => '',
+	'vkurl' => ''
 );
 
 if ( current_user_can('manage_options') ) {
@@ -215,6 +216,18 @@ function zenzero_options_do_page() {
 					</td>
 				</tr>
 				
+				<?php
+				/**
+				 * VK
+				 */
+				?>
+				<tr valign="top"><th scope="row"><?php _e( 'Enter your VK URL', 'zenzero' ); ?></th>
+					<td>
+						<input id="zenzero_theme_options[vkurl]" class="regular-text" type="text" name="zenzero_theme_options[vkurl]" value="<?php if( isset( $zenzero_options[ 'vkurl' ] ) ) echo esc_url( $zenzero_options[ 'vkurl' ] ); ?>" />
+						<label class="description" for="zenzero_theme_options[vkurl]"><?php _e( 'Leave blank to hide VK Icon', 'zenzero' ); ?></label>
+					</td>
+				</tr>
+				
 			</table>
 
 			<p class="submit">
@@ -260,6 +273,8 @@ function zenzero_options_validate( $input ) {
 		$input['pinteresturl'] = esc_url_raw( $input['pinteresturl'] );
 	if( isset( $zenzero_options[ 'tumblrurl' ] ) )
 		$input['tumblrurl'] = esc_url_raw( $input['tumblrurl'] );
+	if( isset( $zenzero_options[ 'vkurl' ] ) )
+		$input['vkurl'] = esc_url_raw( $input['vkurl'] );
 
 	return $input;
 }
