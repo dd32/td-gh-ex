@@ -1,8 +1,12 @@
-== Arunachala 1.4 ==
-
+== Arunachala ==
 Designed and developed by http://cvani.in 
-Demo: http://cvani.in/arunachala
-License: GNU General Public License v2 or later
+Demo: http://demo.cvani.in/arunachala/
+Contributors: rajeshcvani
+Tags: Tags: black, blue, white, light, two-columns, right-sidebar, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
+Requires at least: 4.0
+Tested up to: 4.2.1
+Stable tag: 1.5
+License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Arunachala is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
@@ -29,12 +33,25 @@ By default latest posts from all categories are displayed in a grid format on ho
     - From Dashboard, go to Appearance > Customize > Homepage Content Category
     - Select a category for homepage.
 
-For more details, visit http://cvani.in/blog/arunachala/
+For more details, visit http://cvani.in/themes/arunachala/
 
 == Theme Support ==
 For support, please visit: http://wordpress.org/support/theme/arunachala
 
-== Licenses ==
+== Changelog ==
+
+= 1.5 =
+* Aligned image left/right margin bug fix
+* Site content background transparency removed for better legibility
+* Minor fix to support title-tag introduced in WordPress 4.1 
+* Minor fix to replace depreciated functions
+
+== Upgrade Notice ==
+
+= 1.5 =
+* This version fixes minor bugs and supports new WordPress features.
+
+== Resources ==
 
 The resources used in Arunachala Theme are all GPL-compatible:
 

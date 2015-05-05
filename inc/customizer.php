@@ -39,7 +39,7 @@ add_action( 'customize_register', 'arunachala_customize_register' );
  * Sanitize the Featured Content Category input. 
  */
 function arunachala_sanitize_category( $input ) {
-	$cat_list = get_all_category_ids();
+	$cat_list = get_terms('category', 'fields=ids');
 	if ( ! in_array( $input, $cat_list )) {
 		$input = '-1';
 		}

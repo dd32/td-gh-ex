@@ -1,10 +1,10 @@
 /*
 Theme Name: Arunachala
-Theme URI: http://cvani.in/blog/arunachala/
+Theme URI: http://cvani.in/themes/arunachala/
 Author: Rajesh Gupta
 Author URI: http://www.cvani.in
 Description: The Arunachala theme is a simple, light, responsive WordPress theme designed to look great on any screen size from mobile devices to large desktops. It's main features are (1) Responsive Slider on homepage to highlight featured contents (2) The three-column grid view on homepage can be customized to show posts from a selected category (3) Full width image & gallery post formats. Other features include - widgets ready sidebar, custom background, custom header image, custom site title color, custom menu, post format support, translation ready and RTL (Right to left) language support. 
-Version: 1.4
+Version: 1.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: arunachala
@@ -1116,7 +1116,7 @@ img[class*="wp-image-"],
 .entry-content img,
 .widget img,
 img.size-full {
-	margin: 0 0 1.5em 0;
+	margin-bottom: 1.5em;
 	max-width: 100%;
 	width: auto; /* Prevent stretching of full-size images with height and width attributes in IE8 */
 }
@@ -1204,7 +1204,7 @@ object {
 13.0 Structure
 --------------------------------------------------------------*/
 .site-content {
-	background: rgba(255, 255, 255, 0.9);
+	background: rgb(255, 255, 255);
 	margin: 0 auto;
 	max-width: 980px;
 	padding: 2em 0.8em;
