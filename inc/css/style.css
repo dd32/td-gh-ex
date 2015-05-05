@@ -241,9 +241,11 @@ h3{ font-size: 22px;line-height: 26px;}
 }
 .site-title{
     margin: 5px 0 0 0;
+    overflow: hidden;
 }
 .site-description{
     font-size: 14px;
+    display: none;
 }
 /*-- Slider --*/
 .sc-slider-wrapper{
@@ -330,7 +332,7 @@ h3{ font-size: 22px;line-height: 26px;}
     line-height: 75px;
 } 
 .site-branding .row{
-    overflow: initial;
+    overflow: visible;
 }
 .main-navigation ul ul{
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
