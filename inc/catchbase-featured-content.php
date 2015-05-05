@@ -292,8 +292,12 @@ function catchbase_page_content( $options ) {
 				}
 
 				$catchbase_page_content .= '
-					<div class="entry-container">';
-						$catchbase_page_content .= the_title( '<header class="entry-header"><h1 class="entry-title">','</h1></header>', false );
+					<div class="entry-container">
+						<header class="entry-header">
+							<h1 class="entry-title">
+								<a href="' . get_permalink() . '" rel="bookmark">' . the_title( '','', false ) . '</a>
+							</h1>
+						</header>';
 						if( $excerpt !='') {
 							$catchbase_page_content .= '<div class="entry-content">'. $excerpt.'</div>';
 						}

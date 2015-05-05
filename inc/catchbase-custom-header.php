@@ -210,20 +210,16 @@ if ( ! function_exists( 'catchbase_site_branding' ) ) :
 			$catchbase_site_logo = '';
 		}
 
-		if ( display_header_text() ){
-			// Show header text if display_header_text is checked
-			$catchbase_header_text = '
-			<div id="site-header">
-				<h1 class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '">' . get_bloginfo( 'name' ) . '</a></h1>
-				<h2 class="site-description">' . get_bloginfo( 'description' ) . '</h2>
-			</div><!-- #site-header -->';
-		}
-		else {
-			$catchbase_header_text = '';
-		}
+		$catchbase_header_text = '
+		<div id="site-header">
+			<h1 class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '">' . get_bloginfo( 'name' ) . '</a></h1>
+			<h2 class="site-description">' . get_bloginfo( 'description' ) . '</h2>
+		</div><!-- #site-header -->';
+		
 
+		$text_color = get_header_textcolor();
 		if ( '' != $options['logo'] && !$options['logo_disable'] ) {
-			if( ! $options['move_title_tagline'] ) {
+			if ( ! $options['move_title_tagline'] && 'blank' != $text_color ) {
 				$catchbase_site_branding  = '<div id="site-branding" class="logo-left">';
 				$catchbase_site_branding .= $catchbase_site_logo;
 				$catchbase_site_branding .= $catchbase_header_text;

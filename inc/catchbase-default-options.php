@@ -85,6 +85,7 @@ function catchbase_get_default_theme_options() {
 
 		//Featured Slider Options
 		'featured_slider_option'							=> 'homepage',
+		'featured_slider_image_loader'						=> 'true',
 		'featured_slide_transition_effect'					=> 'fadeout',
 		'featured_slide_transition_delay'					=> '4',
 		'featured_slide_transition_length'					=> '1',
@@ -98,6 +99,30 @@ function catchbase_get_default_theme_options() {
 	return apply_filters( 'catchbase_default_theme_options', $default_theme_options );
 }
 
+
+/**
+ * Returns an array of featured slider image loader options
+ *
+ * @since Catch Base 2.3.1
+ */
+function catchbase_featured_slider_image_loader() {
+	$color_scheme_options = array(
+		'true' => array(
+			'value' 				=> 'true',
+			'label' 				=> __( 'True', 'catchbase' ),
+		),
+		'wait' => array(
+			'value' 				=> 'wait',
+			'label' 				=> __( 'Wait', 'catchbase' ),
+		),
+		'false' => array(
+			'value' 				=> 'false',
+			'label' 				=> __( 'False', 'catchbase' ),
+		),		
+	);
+
+	return apply_filters( 'catchbase_color_schemes', $color_scheme_options );
+}
 
 /**
  * Returns an array of color schemes registered for catchbase.
