@@ -24,7 +24,7 @@ $cat_portfolio = $accesspresslite_settings['portfolio_cat'];
 			$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumbnail', false ); 
 		?>
 		<div class="cat-event-image">
-		<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
+		<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
 		</div>
 		<?php } ?>
 		<div class="cat-event-excerpt <?php if(! has_post_thumbnail() ) { echo "full-width"; }?>">
@@ -33,7 +33,7 @@ $cat_portfolio = $accesspresslite_settings['portfolio_cat'];
 		$accesspresslite_event_month = get_post_meta( $post->ID, 'accesspresslite_event_month', true );
 		$accesspresslite_event_year = get_post_meta( $post->ID, 'accesspresslite_event_year', true );
 		?>
-		<div class="event-date-archive"><?php echo get_cat_name( $cat_event )?> on <?php echo $accesspresslite_event_day." ".$accesspresslite_event_month." , ".$accesspresslite_event_year ?></div>
+		<div class="event-date-archive"><?php echo get_cat_name( $cat_event )?> on <?php echo esc_html($accesspresslite_event_day)." ".esc_html($accesspresslite_event_month)." , ".esc_html($accesspresslite_event_year) ?></div>
 		    <div><?php echo accesspresslite_excerpt( get_the_content() , 400 ) ?></div>
 		</div>
 		<a href="<?php the_permalink(); ?>" class="cat-event-more bttn"><?php _e('More','accesspresslite');?></a>
@@ -49,9 +49,9 @@ $cat_portfolio = $accesspresslite_settings['portfolio_cat'];
 		if( has_post_thumbnail() ){
 			$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumbnail', false ); 
 		?>
-		<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
+		<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
 		<?php }else {?>	
-		<img src="<?php echo get_template_directory_uri(); ?>/images/testimonial-fallback.png" alt="<?php the_title(); ?>">
+		<img src="<?php echo get_template_directory_uri(); ?>/images/testimonial-fallback.jpg" alt="<?php the_title(); ?>">
 		<?php }?>
 	</div>
 		
@@ -72,7 +72,7 @@ $cat_portfolio = $accesspresslite_settings['portfolio_cat'];
 $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'portfolio-thumbnail', false ); 
 $full_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large', false ); 
 ?>
-	<a class="fancybox-gallery" href="<?php echo $full_image[0]; ?>" data-lightbox-gallery="gallery">
+	<a class="fancybox-gallery" href="<?php echo esc_url($full_image[0]); ?>" data-lightbox-gallery="gallery">
     <div class="cat-portfolio-image">
 		<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
     </div>

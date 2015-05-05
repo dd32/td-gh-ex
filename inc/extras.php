@@ -232,20 +232,19 @@ function accesspresslite_scripts() {
 		'family' => 'Open+Sans:400,400italic,300italic,300,600,600italic|Lato:400,100,300,700',
 	);
 	
-	wp_enqueue_style( 'google-fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ) );
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
-	wp_enqueue_style( 'fancybox-css', get_template_directory_uri() . '/css/nivo-lightbox.css' );
-	wp_enqueue_style( 'bx-slider-style', get_template_directory_uri() . '/css/jquery.bxslider.css' );
-	wp_enqueue_style( 'woo-commerce-style', get_template_directory_uri() . '/css/woocommerce.css' );
-	wp_enqueue_style( 'font-style', get_template_directory_uri() . '/css/fonts.css' );
+	wp_enqueue_style( 'accesspresslite-google-fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ) );
+	wp_enqueue_style( 'accesspresslite-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
+	wp_enqueue_style( 'accesspresslite-fancybox-css', get_template_directory_uri() . '/css/nivo-lightbox.css' );
+	wp_enqueue_style( 'accesspresslite-bx-slider-style', get_template_directory_uri() . '/css/jquery.bxslider.css' );
+	wp_enqueue_style( 'accesspresslite-woo-commerce-style', get_template_directory_uri() . '/css/woocommerce.css' );
+	wp_enqueue_style( 'accesspresslite-font-style', get_template_directory_uri() . '/css/fonts.css' );
 	wp_enqueue_style( 'accesspresslite-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'jquery'); 
-	wp_enqueue_script( 'bx-slider', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array('jquery'), '4.1', true );
-	wp_enqueue_script( 'fancybox', get_template_directory_uri() . '/js/nivo-lightbox.min.js', array('jquery'), '2.1', true );
-	wp_enqueue_script( 'jquery-actual', get_template_directory_uri() . '/js/jquery.actual.min.js', array('jquery'), '1.0.16', true );
+	wp_enqueue_script( 'accesspresslite-bx-slider-js', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array('jquery'), '4.1', true );
+	wp_enqueue_script( 'accesspresslite-fancybox-js', get_template_directory_uri() . '/js/nivo-lightbox.min.js', array('jquery'), '2.1', true );
+	wp_enqueue_script( 'accesspresslite-jquery-actual-js', get_template_directory_uri() . '/js/jquery.actual.min.js', array('jquery'), '1.0.16', true );
 	wp_enqueue_script( 'accesspresslite-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-	wp_enqueue_script( 'custom', get_template_directory_uri() . '/js/custom.js', array('jquery'), '1.1', true );
+	wp_enqueue_script( 'accesspresslite-custom', get_template_directory_uri() . '/js/custom.js', array('jquery'), '1.1', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -255,7 +254,7 @@ function accesspresslite_scripts() {
 * Loads up responsive css if it is not disabled
 */
 	if ( $accesspresslite_settings[ 'responsive_design' ] == 0 ) {	
-		wp_enqueue_style( 'responsive', get_template_directory_uri() . '/css/responsive.css' );
+		wp_enqueue_style( 'accesspresslite-responsive', get_template_directory_uri() . '/css/responsive.css' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
@@ -268,7 +267,7 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 		
 		if( !empty($accesspresslite_settings[ 'media_upload' ])){
-		echo '<link rel="shortcut icon" type="image/png" href="'. $accesspresslite_settings[ 'media_upload' ].'"/>';
+		echo '<link rel="shortcut icon" type="image/png" href="'. esc_url($accesspresslite_settings[ 'media_upload' ]).'"/>';
 		}
 	}
 	add_action('wp_head', 'accesspresslite_add_favicon');
@@ -348,7 +347,7 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 		global $accesspresslite_options;
 		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 		if(!empty($accesspresslite_settings['header_text'])){
-		echo '<div class="header-text">'.wpautop($accesspresslite_settings['header_text']).'</div>';
+		echo '<div class="header-text">'.wpautop(wp_kses_post($accesspresslite_settings['header_text'])).'</div>';
 		}
 	}
 
@@ -366,7 +365,7 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 		}else{
 			$accesspresslite_alignment_class="";
 		}
-		echo $accesspresslite_alignment_class;
+		echo esc_attr($accesspresslite_alignment_class);
 	}
 
 	add_action('accesspresslite_menu_alignment','accesspresslite_menu_alignment_cb', 10);
@@ -405,13 +404,13 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
             jQuery(function(){
 				jQuery('.bx-slider').bxSlider({
 					adaptiveHeight:true,
-					pager:<?php echo $a; ?>,
-					controls:<?php echo $b; ?>,
-					mode:'<?php echo $c; ?>',
-					auto :<?php echo $d; ?>,
-					pause: '<?php echo $e; ?>',
+					pager:<?php esc_attr_e($a); ?>,
+					controls:<?php esc_attr_e($b); ?>,
+					mode:'<?php esc_attr_e($c); ?>',
+					auto :<?php esc_attr_e($d); ?>,
+					pause: '<?php esc_attr_e($e); ?>',
 					<?php if($accesspresslite_settings['slider_speed']) {?>
-					speed:'<?php echo $accesspresslite_settings['slider_speed']; ?>'
+					speed:'<?php esc_attr_e($accesspresslite_settings['slider_speed']); ?>'
 					<?php } ?>
 				});
 			});
@@ -438,7 +437,7 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 						?>
 						<div class="slides">
 							
-								<img alt="<?php echo get_the_title(); ?>" src="<?php echo $image[0]; ?>">
+								<img alt="<?php echo get_the_title(); ?>" src="<?php echo esc_url($image[0]); ?>">
 								
 								<?php if($accesspresslite_settings['slider_caption']=='yes4'):?>
 								<div class="slider-caption">
@@ -470,7 +469,7 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 					?>
 					<div class="slides">
 							
-						<img alt="<?php echo get_the_title(); ?>" src="<?php echo $image[0]; ?>">
+						<img alt="<?php echo get_the_title(); ?>" src="<?php echo esc_url($image[0]); ?>">
 								
 						<?php if($accesspresslite_settings['slider_caption']=='yes4'):?>
 						<div class="slider-caption">
@@ -492,13 +491,13 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
         	<script type="text/javascript">
             jQuery(function(){
 				jQuery('.bx-slider').bxSlider({
-					pager:<?php echo $a; ?>,
-					controls:<?php echo $b; ?>,
-					mode:'<?php echo $c; ?>',
-					auto :<?php echo $d; ?>,
-					pause: '<?php echo $e; ?>',
+					pager:<?php esc_attr_e($a); ?>,
+					controls:<?php esc_attr_e($b); ?>,
+					mode:'<?php esc_attr_e($c); ?>',
+					auto :<?php esc_attr_e($d); ?>,
+					pause: '<?php esc_attr_e($e); ?>',
 					<?php if($accesspresslite_settings['slider_speed']) {?>
-					speed:'<?php echo $accesspresslite_settings['slider_speed']; ?>'
+					speed:'<?php esc_attr_e($accesspresslite_settings['slider_speed']); ?>'
 					<?php } ?>
 				});
 			});
@@ -566,19 +565,11 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 		global $accesspresslite_options;
 		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 		echo '<style type="text/css">';
-			echo $accesspresslite_settings['custom_css'];
+			echo esc_html($accesspresslite_settings['custom_css']);
 		echo '</style>';
 	}
 
 	add_action('wp_head','accesspresslite_custom_css');
-
-	function accesspresslite_custom_code(){
-		global $accesspresslite_options;
-		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-			echo $accesspresslite_settings['custom_code'];
-	}
-
-	add_action('wp_head','accesspresslite_custom_code');
 
 	function accesspresslite_call_to_action_cb(){
 		global $accesspresslite_options;
@@ -588,7 +579,7 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 		<section id="call-to-action">
 		<div class="ak-container">
 			<h4><?php echo $accesspresslite_settings['action_text']; ?></h4>
-			<a class="action-btn" href="<?php echo $accesspresslite_settings['action_btn_link']; ?>"><?php echo $accesspresslite_settings['action_btn_text']; ?></a>
+			<a class="action-btn" href="<?php echo esc_url($accesspresslite_settings['action_btn_link']); ?>"><?php esc_attr_e($accesspresslite_settings['action_btn_text']); ?></a>
 		</div>
 		</section>
 		<?php
@@ -596,5 +587,3 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 	}
 
 	add_action('accesspresslite_call_to_action','accesspresslite_call_to_action_cb', 10);
-
-	add_filter('widget_text', 'do_shortcode');

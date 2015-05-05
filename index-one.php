@@ -23,7 +23,7 @@ if($disable_event == 1){
 if( $accesspresslite_layout !== 'Layout2') { ?>
 <?php do_action('accesspresslite_call_to_action');?>			
 <section id="top-section" class="ak-container">
-<div id="welcome-text" class="clearfix <?php echo $welcome_class; ?>">
+<div id="welcome-text" class="clearfix <?php echo esc_attr($welcome_class); ?>">
 	<?php
 		
 			if(!empty($accesspresslite_welcome_post_id)){
@@ -45,7 +45,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 
 					<figure class="welcome-text-image">
 						<a href="<?php the_permalink(); ?>">
-						<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
+						<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
 						</a>
 					</figure>	
 					<?php } ?>
@@ -55,7 +55,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 					<?php if($accesspresslite_settings['welcome_post_content'] == 0 || empty($accesspresslite_settings['welcome_post_content'])){ ?>
 						<p><?php echo accesspresslite_excerpt( get_the_content() , $accesspresslite_welcome_post_char ) ?></p>
 						<?php if(!empty($accesspresslite_settings['welcome_post_readmore'])){?>
-							<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo $accesspresslite_settings['welcome_post_readmore']; ?></a>
+							<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo esc_attr($accesspresslite_settings['welcome_post_readmore']); ?></a>
 						<?php } 
 					}else{ 
 						the_content();
@@ -118,7 +118,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 						if( has_post_thumbnail() ){
 						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'event-thumbnail', false ); 
 						?>
-						<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
+						<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
 						<?php } else { ?>
 						<img src="<?php echo get_template_directory_uri(); ?>/images/demo/event-fallback.jpg" alt="<?php the_title(); ?>">
 						<?php } ?>
@@ -127,8 +127,8 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 						if($accesspresslite_settings['show_eventdate'] == 1){
 						if(!empty($accesspresslite_event_day) || !empty($accesspresslite_event_month) || !empty($accesspresslite_event_year)){ ?>
 						<div class="event-date">
-							<span class="event-date-day"><?php echo $accesspresslite_event_day; ?> <?php echo $accesspresslite_event_month; ?></span>
-							<span class="event-date-month"><?php echo $accesspresslite_event_year; ?></span>
+							<span class="event-date-day"><?php echo esc_html($accesspresslite_event_day); ?> <?php echo esc_html($accesspresslite_event_month); ?></span>
+							<span class="event-date-month"><?php echo esc_html($accesspresslite_event_year); ?></span>
 						</div>
 						<?php }else {?>
 							<div class="event-date">
@@ -212,7 +212,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 							if( has_post_thumbnail()){
 							$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumbnail', false ); 
 							?>
-							<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
+							<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
 							<?php }else { ?>
 							<img src="<?php echo get_template_directory_uri(); ?>/images/demo/featured-fallback.jpg" alt="<?php the_title(); ?>">
 							<?php } 
@@ -226,7 +226,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 					<?php 
 					if($show_fontawesome_icon == 1){ ?>
 
-					<i class="fa <?php echo $accesspresslite_settings['featured_post1_icon'] ?>"></i>
+					<i class="fa <?php echo esc_attr($accesspresslite_settings['featured_post1_icon']) ?>"></i>
 							
 					<?php } ?>
 					<span><?php the_title(); ?></span>
@@ -236,7 +236,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 					<div class="featured-content">
 						<p><?php echo accesspresslite_excerpt( get_the_content() , 260 ) ?></p>
 						<?php if(!empty($accesspresslite_settings['featured_post_readmore'])){?>
-						<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo $accesspresslite_settings['featured_post_readmore']; ?></a>
+						<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo esc_attr($accesspresslite_settings['featured_post_readmore']); ?></a>
 						<?php } ?>
 					</div>
 				<?php endwhile;
@@ -270,7 +270,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 							if( has_post_thumbnail()){
 							$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumbnail', false ); 
 							?>
-							<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
+							<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
 							<?php }else { ?>
 							<img src="<?php echo get_template_directory_uri(); ?>/images/demo/featured-fallback.jpg" alt="<?php the_title(); ?>">
 							<?php } 
@@ -284,7 +284,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 					<?php 
 					if($show_fontawesome_icon == 1){ ?>
 
-					<i class="fa <?php echo $accesspresslite_settings['featured_post2_icon'] ?>"></i>
+					<i class="fa <?php echo esc_attr($accesspresslite_settings['featured_post2_icon']) ?>"></i>
 							
 					<?php } ?>
 					<span><?php the_title(); ?></span>
@@ -294,7 +294,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 					<div class="featured-content">
 						<p><?php echo accesspresslite_excerpt( get_the_content() , 260 ) ?></p>
 						<?php if(!empty($accesspresslite_settings['featured_post_readmore'])){?>
-						<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo $accesspresslite_settings['featured_post_readmore']; ?></a>
+						<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo esc_attr($accesspresslite_settings['featured_post_readmore']); ?></a>
 						<?php } ?>
 					</div>
 				<?php endwhile;
@@ -326,7 +326,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 							if( has_post_thumbnail()){
 							$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumbnail', false ); 
 							?>
-							<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
+							<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
 							<?php }else { ?>
 							<img src="<?php echo get_template_directory_uri(); ?>/images/demo/featured-fallback.jpg" alt="<?php the_title(); ?>">
 							<?php } 
@@ -340,7 +340,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 					<?php 
 					if($show_fontawesome_icon == 1){ ?>
 
-					<i class="fa <?php echo $accesspresslite_settings['featured_post3_icon'] ?>"></i>
+					<i class="fa <?php echo esc_attr($accesspresslite_settings['featured_post3_icon']) ?>"></i>
 							
 					<?php } ?>
 					<span><?php the_title(); ?></span>
@@ -350,7 +350,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 					<div class="featured-content">
 						<p><?php echo accesspresslite_excerpt( get_the_content() , 260 ) ?></p>
 						<?php if(!empty($accesspresslite_settings['featured_post_readmore'])){?>
-						<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo $accesspresslite_settings['featured_post_readmore']; ?></a>
+						<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo esc_attr($accesspresslite_settings['featured_post_readmore']); ?></a>
 						<?php } ?>
 					</div>
 				<?php endwhile;
@@ -559,7 +559,7 @@ wp_reset_query(); ?>
                 <?php endwhile; ?>
 				</div>
 			</div>
-			<a class="all-testimonial" href="<?php echo get_category_link( $testimonial_category ) ?>"><?php echo $accesspresslite_settings['view_all_text']; ?> <?php echo get_cat_name($testimonial_category); ?></a>
+			<a class="all-testimonial" href="<?php echo get_category_link( $testimonial_category ) ?>"><?php echo esc_html($accesspresslite_settings['view_all_text']); ?> <?php echo get_cat_name($testimonial_category); ?></a>
 	        
 	        
 	        <?php wp_reset_postdata(); 

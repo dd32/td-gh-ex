@@ -19,7 +19,7 @@ $cat_event = $accesspresslite_settings['event_cat'];
 		$accesspresslite_event_month = get_post_meta( $post->ID, 'accesspresslite_event_month', true );
 		$accesspresslite_event_year = get_post_meta( $post->ID, 'accesspresslite_event_year', true );
 		?>
-		<div class="event-date-archive"><?php echo get_cat_name( $cat_event )?> on <?php echo $accesspresslite_event_day." ".$accesspresslite_event_month." , ".$accesspresslite_event_year ?></div>
+		<div class="event-date-archive"><?php echo get_cat_name( $cat_event )?> on <?php echo esc_html($accesspresslite_event_day)." ".esc_html($accesspresslite_event_month)." , ".esc_html($accesspresslite_event_year) ?></div>
 		<?php 
 			}else if(has_category( $cat_blog) && !empty($cat_blog)){?>
 			<div class="entry-meta">

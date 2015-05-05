@@ -37,8 +37,8 @@ $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspressl
 				<?php if ( get_header_image() ) { ?>
 					<img src="<?php header_image(); ?>" alt="<?php bloginfo('name') ?>">
 				<?php }else{ ?>
-					<h1><?php echo bloginfo('title'); ?></h1>
-					<div class="tagline"><?php echo bloginfo('description'); ?></div>
+					<h1 class="site-title"><?php echo bloginfo('title'); ?></h1>
+					<div class="tagline site-description"><?php echo bloginfo('description'); ?></div>
 				<?php } ?>		
 				</a>
 				
@@ -92,4 +92,4 @@ $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspressl
 	}else{
 	$accesspresslite_content_id ="content";
 	} ?>
-	<div id="<?php echo $accesspresslite_content_id; ?>" class="site-content">
+	<div id="<?php echo esc_attr($accesspresslite_content_id); ?>" class="site-content">

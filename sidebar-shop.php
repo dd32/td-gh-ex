@@ -14,12 +14,16 @@ $show_events = $accesspresslite_settings['rightsidebar_show_latest_events'];
 $testimonial_category = $accesspresslite_settings['testimonial_cat'];
 $blog_category = $accesspresslite_settings['blog_cat'];
 $show_testimonials = $accesspresslite_settings['rightsidebar_show_testimonials'];
-if(is_front_page()){
-	$post_id = get_option('page_on_front');
-}else{
-	$post_id = $post->ID;
+$post_class = "";
+
+if(!empty($post)){
+	if(is_front_page()){
+		$post_id = get_option('page_on_front');
+	}else{
+		$post_id = $post->ID;
+	}
+	$post_class = get_post_meta( $post_id, 'accesspresslite_sidebar_layout', true );
 }
-$post_class = get_post_meta( $post_id, 'accesspresslite_sidebar_layout', true );
 
 if($post_class=='right-sidebar' || $post_class=='both-sidebar' || empty($post_class) || is_archive()){
 ?>
@@ -60,8 +64,8 @@ if($post_class=='right-sidebar' || $post_class=='both-sidebar' || empty($post_cl
 						
 						<?php if(!empty($accesspresslite_event_day) || !empty($accesspresslite_event_month) || !empty($accesspresslite_event_year)){ ?>
 							<div class="event-date">
-								<span class="event-date-day"><?php echo $accesspresslite_event_day; ?> <?php echo $accesspresslite_event_month; ?></span>
-								<span class="event-date-month"><?php echo $accesspresslite_event_year; ?></span>
+								<span class="event-date-day"><?php echo esc_html($accesspresslite_event_day); ?> <?php echo esc_html($accesspresslite_event_month); ?></span>
+								<span class="event-date-month"><?php echo esc_html($accesspresslite_event_year); ?></span>
 							</div>
 						<?php }else {?>
 							<div class="event-date">
@@ -84,7 +88,7 @@ if($post_class=='right-sidebar' || $post_class=='both-sidebar' || empty($post_cl
 	        	</div>
 	        <?php endwhile; ?>
 	        <?php if(!empty($accesspresslite_settings['view_all_text'])){ ?>
-	        <a class="all-events" href="<?php echo get_category_link( $event_category ) ?>"><?php echo $accesspresslite_settings['view_all_text']; ?></a>
+	        <a class="all-events" href="<?php echo get_category_link( $event_category ) ?>"><?php echo esc_html($accesspresslite_settings['view_all_text']); ?></a>
 	        <?php } ?>
 	        <?php wp_reset_postdata(); ?>
 	        </aside>
@@ -155,7 +159,7 @@ if($post_class=='right-sidebar' || $post_class=='both-sidebar' || empty($post_cl
 			<?php endwhile; ?>
 	        </div>
             <?php if(!empty($accesspresslite_settings['view_all_text'])){ ?>
-            <a class="all-testimonial" href="<?php echo get_category_link( $testimonial_category ) ?>"><?php echo $accesspresslite_settings['view_all_text']; ?></a>
+            <a class="all-testimonial" href="<?php echo get_category_link( $testimonial_category ) ?>"><?php echo esc_html($accesspresslite_settings['view_all_text']); ?></a>
             <?php } ?>
             
 	        <?php wp_reset_postdata(); 
