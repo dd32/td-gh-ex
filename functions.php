@@ -12,7 +12,7 @@ if (!function_exists('ares_setup')) :
             $content_width = 1060;
         }
 
-        define('ARES_VERSION', '1.5');
+        define('ARES_VERSION', '1.52');
         load_theme_textdomain('ares', get_template_directory() . '/languages');
 
         // Add default posts and comments RSS feed links to head.

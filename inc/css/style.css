@@ -156,7 +156,7 @@ a.button-primary{
 .site-branding .row{
     height: 100%;
     line-height: 80px;
-    overflow: initial;
+    overflow: visible;
 }
 .site-branding .row .col-xs-3{
     overflow: hidden;
