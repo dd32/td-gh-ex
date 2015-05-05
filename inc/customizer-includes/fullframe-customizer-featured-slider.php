@@ -107,6 +107,28 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		)
 	);
 
+	$wp_customize->add_setting( 'fullframe_theme_options[featured_slider_image_loader]', array(
+		'capability'		=> 'edit_theme_options',
+		'default'			=> $defaults['featured_slider_image_loader'],
+		'sanitize_callback' => 'sanitize_key',
+	) );
+
+	$featured_slider_image_loader_options = fullframe_featured_slider_image_loader();
+	$choices = array();
+	foreach ( $featured_slider_image_loader_options as $featured_slider_image_loader_option ) {
+		$choices[$featured_slider_image_loader_option['value']] = $featured_slider_image_loader_option['label'];
+	}
+
+	$wp_customize->add_control( 'fullframe_featured_slider_image_loader', array(
+		'description'	=> __( 'True: Fixes the height overlap issue. Slideshow will start as soon as two slider are available. Slide may display in random, as image is fetch.<br>Wait: Fixes the height overlap issue.<br> Slideshow will start only after all images are available.', 'fullframe' ),
+		'choices'   => $choices,
+		'label'    	=> __( 'Image Loader', 'fullframe' ),
+		'priority'	=> '2.1.3',
+		'section'  	=> 'fullframe_featured_slider',
+		'settings' 	=> 'fullframe_theme_options[featured_slider_image_loader]',
+		'type'    	=> 'select',
+	) );
+
 	$wp_customize->add_section( 'fullframe_featured_slider_type', array(
 		'panel'			=> 'fullframe_featured_slider',
 		'priority'		=> 2,

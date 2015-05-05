@@ -209,20 +209,16 @@ if ( ! function_exists( 'fullframe_site_branding' ) ) :
 			$fullframe_site_logo = '';
 		}
 
-		if ( display_header_text() ){
-			// Show header text if display_header_text is checked
-			$fullframe_header_text = '
-			<div id="site-header">
-				<h1 class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '">' . get_bloginfo( 'name' ) . '</a></h1>
-				<h2 class="site-description">' . get_bloginfo( 'description' ) . '</h2>
-			</div><!-- #site-header -->';
-		}
-		else {
-			$fullframe_header_text = '';
-		}
+		$fullframe_header_text = '
+		<div id="site-header">
+			<h1 class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '">' . get_bloginfo( 'name' ) . '</a></h1>
+			<h2 class="site-description">' . get_bloginfo( 'description' ) . '</h2>
+		</div><!-- #site-header -->';
+		
 
+		$text_color = get_header_textcolor();
 		if ( '' != $options['logo'] && !$options['logo_disable'] ) {
-			if( ! $options['move_title_tagline'] ) {
+			if ( ! $options['move_title_tagline'] && 'blank' != $text_color ) {
 				$fullframe_site_branding  = '<div id="site-branding" class="logo-left">';
 				$fullframe_site_branding .= $fullframe_site_logo;
 				$fullframe_site_branding .= $fullframe_header_text;

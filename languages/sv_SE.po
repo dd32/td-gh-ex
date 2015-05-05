@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Full Frame\n"
 "Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/catch-base-pro-"
 "premium/pro-premium/\n"
-"POT-Creation-Date: 2015-04-09 22:13+0545\n"
-"PO-Revision-Date: 2015-04-09 22:13+0545\n"
+"POT-Creation-Date: 2015-05-05 22:07+0545\n"
+"PO-Revision-Date: 2015-05-05 22:07+0545\n"
 "Last-Translator: Anders <anders@paulcen.se>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: sv\n"
@@ -152,8 +152,8 @@ msgstr "Det verkar som att vi inte kan hitta det du letar efter. Testa att söka
 msgid "Pages:"
 msgstr "Sidor:"
 
-#: ../content-page.php:35 ../inc/fullframe-core.php:585
-#: ../inc/fullframe-core.php:604 ../inc/fullframe-core.php:730
+#: ../content-page.php:35 ../inc/fullframe-core.php:590
+#: ../inc/fullframe-core.php:609 ../inc/fullframe-core.php:735
 msgid "Edit"
 msgstr "Redigera"
 
@@ -184,12 +184,12 @@ msgid "Review"
 msgstr "Review"
 
 #: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:90
-#: ../inc/fullframe-default-options.php:438
+#: ../inc/fullframe-default-options.php:464
 msgid "Facebook"
 msgstr "Facebook"
 
 #: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:94
-#: ../inc/fullframe-default-options.php:439
+#: ../inc/fullframe-default-options.php:465
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -198,7 +198,7 @@ msgid "Google+"
 msgstr "Google+"
 
 #: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:102
-#: ../inc/fullframe-default-options.php:446
+#: ../inc/fullframe-default-options.php:472
 msgid "Pinterest"
 msgstr "Pinterest"
 
@@ -275,7 +275,7 @@ msgid "Check to Enable Excerpt Content"
 msgstr "Check to Enable Excerpt Content"
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:217
-#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:167
+#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:189
 msgid "Featured Page"
 msgstr "Utvald sida"
 
@@ -317,20 +317,32 @@ msgstr "Fördröjning"
 msgid "Transition Length"
 msgstr "Övergången längd"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:113
+#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:123
+msgid ""
+"True: Fixes the height overlap issue. Slideshow will start as soon as two slider "
+"are available. Slide may display in random, as image is fetch.<br>Wait: Fixes "
+"the height overlap issue.<br> Slideshow will start only after all images are "
+"available."
+msgstr ""
+
+#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:125
+msgid "Image Loader"
+msgstr ""
+
+#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:135
 msgid "Featured Slider Type"
 msgstr "Utvald inlägg bildspel"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:130
+#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:152
 msgid "Select Slider Type"
 msgstr "Välj bildspelstyp"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:144
+#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:166
 msgid ""
 "Save and refresh the page if No. of Slides is changed (Max no of slides is 20)"
 msgstr "Spara och uppdatera sidan om nej. bilder ändras (Max inte är 20 bilder)"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:151
+#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:173
 msgid "No of Slides"
 msgstr "Antal bilder"
 
@@ -481,7 +493,7 @@ msgid "Select/Add Logo Icon"
 msgstr "Select/Add Logo Icon"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:218
-#: ../inc/fullframe-metabox.php:65
+#: ../inc/fullframe-metabox.php:92
 msgid "Layout Options"
 msgstr "Layoutalternativ"
 
@@ -494,7 +506,7 @@ msgid "Archive Content Layout"
 msgstr "Arkivet innehåll Layout"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:275
-#: ../inc/fullframe-metabox.php:67
+#: ../inc/fullframe-metabox.php:94
 msgid "Single Page/Post Image Layout "
 msgstr "Enda sida/inlägg bildlayouten"
 
@@ -667,7 +679,7 @@ msgstr "Visa alla inlägg av %s"
 msgid "Error 404"
 msgstr "Fel 404"
 
-#: ../inc/fullframe-breadcrumb.php:222 ../inc/fullframe-core.php:856
+#: ../inc/fullframe-breadcrumb.php:222 ../inc/fullframe-core.php:861
 #, php-format
 msgid "Page %s"
 msgstr "Sida %s"
@@ -676,88 +688,88 @@ msgstr "Sida %s"
 msgid "Primary Menu"
 msgstr "Primär meny"
 
-#: ../inc/fullframe-core.php:551
+#: ../inc/fullframe-core.php:556
 msgid "Post navigation"
 msgstr "Inläggsnavigering"
 
-#: ../inc/fullframe-core.php:560
+#: ../inc/fullframe-core.php:565
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Äldre inlägg"
 
-#: ../inc/fullframe-core.php:561
+#: ../inc/fullframe-core.php:566
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Nyare inlägg <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../inc/fullframe-core.php:585
+#: ../inc/fullframe-core.php:590
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../inc/fullframe-core.php:595
+#: ../inc/fullframe-core.php:600
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">skriver:</span>"
 
-#: ../inc/fullframe-core.php:601
+#: ../inc/fullframe-core.php:606
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr "%1$s kl. %2$s"
 
-#: ../inc/fullframe-core.php:608
+#: ../inc/fullframe-core.php:613
 msgid "Your comment is awaiting moderation."
 msgstr "Din kommentar inväntar granskning."
 
-#: ../inc/fullframe-core.php:711
+#: ../inc/fullframe-core.php:716
 msgctxt "Used before publish date."
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
 msgstr "<span class=\"screen-reader-text\">Postades den</span>"
 
-#: ../inc/fullframe-core.php:718
+#: ../inc/fullframe-core.php:723
 msgctxt "Used before post author name."
 msgid "<span class=\"screen-reader-text\">Author</span>"
 msgstr "<span class=\"screen-reader-text\">Författare</span>"
 
-#: ../inc/fullframe-core.php:726
+#: ../inc/fullframe-core.php:731
 msgid "Leave a comment"
 msgstr "Lämna en kommentar"
 
-#: ../inc/fullframe-core.php:726
+#: ../inc/fullframe-core.php:731
 msgid "1 Comment"
 msgstr "1 Kommentar"
 
-#: ../inc/fullframe-core.php:726
+#: ../inc/fullframe-core.php:731
 msgid "% Comments"
 msgstr "% Kommentarer"
 
-#: ../inc/fullframe-core.php:747 ../inc/fullframe-core.php:755
+#: ../inc/fullframe-core.php:752 ../inc/fullframe-core.php:760
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ", "
 
-#: ../inc/fullframe-core.php:750
+#: ../inc/fullframe-core.php:755
 msgctxt "Used before category names."
 msgid "<span class=\"screen-reader-text\">Categories</span>"
 msgstr "<span class=\"screen-reader-text\">Kategorier</span>"
 
-#: ../inc/fullframe-core.php:758
+#: ../inc/fullframe-core.php:763
 msgctxt "Used before tag names."
 msgid "<span class=\"screen-reader-text\">Tags</span>"
 msgstr "<span class=\"screen-reader-text\">Taggar</span>"
 
-#: ../inc/fullframe-core.php:952
+#: ../inc/fullframe-core.php:957
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: ../inc/fullframe-core.php:1394
+#: ../inc/fullframe-core.php:1399
 msgid "Scroll Up"
 msgstr "Scrolla upp"
 
-#: ../inc/fullframe-core.php:1411
+#: ../inc/fullframe-core.php:1416
 msgid "Posted on"
 msgstr "﻿Publicerat den"
 
-#: ../inc/fullframe-core.php:1412
+#: ../inc/fullframe-core.php:1417
 msgid "By"
 msgstr "Av"
 
@@ -785,295 +797,307 @@ msgstr "Reviews"
 msgid "Search..."
 msgstr "Sök..."
 
-#: ../inc/fullframe-default-options.php:114
+#: ../inc/fullframe-default-options.php:115
 msgid "Light"
 msgstr "Ljus"
 
-#: ../inc/fullframe-default-options.php:118
+#: ../inc/fullframe-default-options.php:119
 msgid "Dark"
 msgstr "Mörk"
 
-#: ../inc/fullframe-default-options.php:135
-#: ../inc/fullframe-default-options.php:486
+#: ../inc/fullframe-default-options.php:136
+#: ../inc/fullframe-default-options.php:512
 msgid "Primary Sidebar, Content"
 msgstr "Primär sidofältet, innehåll"
 
-#: ../inc/fullframe-default-options.php:139
-#: ../inc/fullframe-default-options.php:491
+#: ../inc/fullframe-default-options.php:140
+#: ../inc/fullframe-default-options.php:517
 msgid "Content, Primary Sidebar"
 msgstr "Innehåll, primär sidopanel"
 
-#: ../inc/fullframe-default-options.php:143
-#: ../inc/fullframe-default-options.php:496
+#: ../inc/fullframe-default-options.php:144
+#: ../inc/fullframe-default-options.php:522
 msgid "No Sidebar ( Content Width )"
 msgstr "Ingen sidpanel (innehållets bredd)"
 
-#: ../inc/fullframe-default-options.php:159
+#: ../inc/fullframe-default-options.php:160
 msgid "Show Excerpt"
 msgstr "Visa utdrag"
 
-#: ../inc/fullframe-default-options.php:163
+#: ../inc/fullframe-default-options.php:164
 msgid "Show Full Content (No Featured Image)"
 msgstr "Visa fullständiga innehåll (ingen utvald bild)"
 
-#: ../inc/fullframe-default-options.php:180
-#: ../inc/fullframe-default-options.php:246
+#: ../inc/fullframe-default-options.php:181
+#: ../inc/fullframe-default-options.php:247
 msgid "Homepage / Frontpage"
 msgstr "Hemsida / startsida"
 
-#: ../inc/fullframe-default-options.php:184
+#: ../inc/fullframe-default-options.php:185
 msgid "Excluding Homepage"
 msgstr "Exkludera hemsida"
 
-#: ../inc/fullframe-default-options.php:188
+#: ../inc/fullframe-default-options.php:189
 msgid "Excluding Homepage, Page/Post Featured Image"
 msgstr "Exkludera hemsida, Sida/Lagrad utvald bild"
 
-#: ../inc/fullframe-default-options.php:192
-#: ../inc/fullframe-default-options.php:250
+#: ../inc/fullframe-default-options.php:193
+#: ../inc/fullframe-default-options.php:251
 msgid "Entire Site"
 msgstr "Hela sajten"
 
-#: ../inc/fullframe-default-options.php:196
+#: ../inc/fullframe-default-options.php:197
 msgid "Entire Site, Page/Post Featured Image"
 msgstr "Hela sajten, dagens sida/inlägg bild"
 
-#: ../inc/fullframe-default-options.php:200
+#: ../inc/fullframe-default-options.php:201
 msgid "Pages and Posts"
 msgstr "Sidor och inlägg"
 
-#: ../inc/fullframe-default-options.php:204
-#: ../inc/fullframe-default-options.php:254
-#: ../inc/fullframe-default-options.php:424
+#: ../inc/fullframe-default-options.php:205
+#: ../inc/fullframe-default-options.php:255
+#: ../inc/fullframe-default-options.php:450
 msgid "Disabled"
 msgstr "Inaktiverad"
 
-#: ../inc/fullframe-default-options.php:221
+#: ../inc/fullframe-default-options.php:222
 msgid "Full Image"
 msgstr "Fullständig bild"
 
-#: ../inc/fullframe-default-options.php:225
+#: ../inc/fullframe-default-options.php:226
 msgid "Large Image"
 msgstr "Stor bild"
 
-#: ../inc/fullframe-default-options.php:229
+#: ../inc/fullframe-default-options.php:230
 msgid "Slider Image"
 msgstr "Bildspelsbild"
 
-#: ../inc/fullframe-default-options.php:271
+#: ../inc/fullframe-default-options.php:272
 msgid "Demo Featured Content"
 msgstr "Visa utvalt Innehåll"
 
-#: ../inc/fullframe-default-options.php:275
+#: ../inc/fullframe-default-options.php:276
 msgid "Featured Page Content"
 msgstr "Visa utvalt sidoinnehåll"
 
-#: ../inc/fullframe-default-options.php:292
+#: ../inc/fullframe-default-options.php:293
 msgid "3 columns"
 msgstr "3 kolumner"
 
-#: ../inc/fullframe-default-options.php:296
+#: ../inc/fullframe-default-options.php:297
 msgid "4 columns"
 msgstr "4 kolumner"
 
-#: ../inc/fullframe-default-options.php:313
+#: ../inc/fullframe-default-options.php:314
 msgid "Demo Featured Slider"
 msgstr "Visa utvalt Innehåll"
 
-#: ../inc/fullframe-default-options.php:317
+#: ../inc/fullframe-default-options.php:318
 msgid "Featured Page Slider"
 msgstr "Visa utvalt sidoinnehåll"
 
-#: ../inc/fullframe-default-options.php:334
+#: ../inc/fullframe-default-options.php:335
 msgid "Fade"
 msgstr "Tona"
 
-#: ../inc/fullframe-default-options.php:338
+#: ../inc/fullframe-default-options.php:339
 msgid "Fade Out"
 msgstr "Tona ut"
 
-#: ../inc/fullframe-default-options.php:342
+#: ../inc/fullframe-default-options.php:343
 msgid "None"
 msgstr "Ingen"
 
-#: ../inc/fullframe-default-options.php:346
+#: ../inc/fullframe-default-options.php:347
 msgid "Scroll Horizontal"
 msgstr "Scrolla horisontellt"
 
-#: ../inc/fullframe-default-options.php:350
+#: ../inc/fullframe-default-options.php:351
 msgid "Scroll Vertical"
 msgstr "Scrolla vertikalt"
 
-#: ../inc/fullframe-default-options.php:354
+#: ../inc/fullframe-default-options.php:355
 msgid "Flip Horizontal"
 msgstr "Vänd horisontellt"
 
-#: ../inc/fullframe-default-options.php:358
+#: ../inc/fullframe-default-options.php:359
 msgid "Flip Vertical"
 msgstr "Vänd vertikalt"
 
-#: ../inc/fullframe-default-options.php:362
+#: ../inc/fullframe-default-options.php:363
 msgid "Tile Slide"
 msgstr "Brick bild"
 
-#: ../inc/fullframe-default-options.php:366
+#: ../inc/fullframe-default-options.php:367
 msgid "Tile Blind"
 msgstr "Dummy bricka"
 
-#: ../inc/fullframe-default-options.php:370
+#: ../inc/fullframe-default-options.php:371
 msgid "Suffle"
 msgstr "SUFFLE"
 
-#: ../inc/fullframe-default-options.php:387
+#: ../inc/fullframe-default-options.php:388
+msgid "True"
+msgstr ""
+
+#: ../inc/fullframe-default-options.php:392
+msgid "Wait"
+msgstr ""
+
+#: ../inc/fullframe-default-options.php:396
+msgid "False"
+msgstr ""
+
+#: ../inc/fullframe-default-options.php:413
 msgid "Default(Older Posts/Newer Posts)"
 msgstr "Standard (äldre inlägg/nyare inlägg)"
 
-#: ../inc/fullframe-default-options.php:391
+#: ../inc/fullframe-default-options.php:417
 msgid "Numeric"
 msgstr "﻿Numerisk"
 
-#: ../inc/fullframe-default-options.php:395
+#: ../inc/fullframe-default-options.php:421
 msgid "Infinite Scroll (Click)"
 msgstr "Oändlig scroll (klicka)"
 
-#: ../inc/fullframe-default-options.php:399
+#: ../inc/fullframe-default-options.php:425
 msgid "Infinite Scroll (Scroll)"
 msgstr "Oändlig scroll (scroll)"
 
-#: ../inc/fullframe-default-options.php:416
+#: ../inc/fullframe-default-options.php:442
 msgid "Featured"
 msgstr "Utvalt"
 
-#: ../inc/fullframe-default-options.php:420
-#: ../inc/fullframe-default-options.php:549
+#: ../inc/fullframe-default-options.php:446
+#: ../inc/fullframe-default-options.php:575
 msgid "Full Size"
 msgstr "Full storlek"
 
-#: ../inc/fullframe-default-options.php:440
+#: ../inc/fullframe-default-options.php:466
 msgid "Googleplus"
 msgstr "Googleplus"
 
-#: ../inc/fullframe-default-options.php:441 ../inc/fullframe-social-icons.php:60
+#: ../inc/fullframe-default-options.php:467 ../inc/fullframe-social-icons.php:60
 msgid "Email"
 msgstr "Email"
 
-#: ../inc/fullframe-default-options.php:442
+#: ../inc/fullframe-default-options.php:468
 msgid "Feed"
 msgstr "Feed"
 
-#: ../inc/fullframe-default-options.php:443
+#: ../inc/fullframe-default-options.php:469
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../inc/fullframe-default-options.php:444
+#: ../inc/fullframe-default-options.php:470
 msgid "GitHub"
 msgstr "GitHub"
 
-#: ../inc/fullframe-default-options.php:445
+#: ../inc/fullframe-default-options.php:471
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: ../inc/fullframe-default-options.php:447
+#: ../inc/fullframe-default-options.php:473
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/fullframe-default-options.php:448
+#: ../inc/fullframe-default-options.php:474
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/fullframe-default-options.php:449
+#: ../inc/fullframe-default-options.php:475
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../inc/fullframe-default-options.php:450
+#: ../inc/fullframe-default-options.php:476
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/fullframe-default-options.php:451
+#: ../inc/fullframe-default-options.php:477
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/fullframe-default-options.php:452
+#: ../inc/fullframe-default-options.php:478
 msgid "PollDaddy"
 msgstr "PollDaddy"
 
-#: ../inc/fullframe-default-options.php:453
+#: ../inc/fullframe-default-options.php:479
 msgid "CodePen"
 msgstr "CodePen"
 
-#: ../inc/fullframe-default-options.php:454
+#: ../inc/fullframe-default-options.php:480
 msgid "Path"
 msgstr "Path"
 
-#: ../inc/fullframe-default-options.php:455
+#: ../inc/fullframe-default-options.php:481
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/fullframe-default-options.php:456
+#: ../inc/fullframe-default-options.php:482
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/fullframe-default-options.php:457
+#: ../inc/fullframe-default-options.php:483
 msgid "Digg"
 msgstr "Digg"
 
-#: ../inc/fullframe-default-options.php:458
+#: ../inc/fullframe-default-options.php:484
 msgid "Reddit"
 msgstr "Reddit"
 
-#: ../inc/fullframe-default-options.php:459
+#: ../inc/fullframe-default-options.php:485
 msgid "StumbleUpon"
 msgstr "StumbleUpon"
 
-#: ../inc/fullframe-default-options.php:460
+#: ../inc/fullframe-default-options.php:486
 msgid "Pocket"
 msgstr "Pocket"
 
-#: ../inc/fullframe-default-options.php:461
+#: ../inc/fullframe-default-options.php:487
 msgid "DropBox"
 msgstr "DropBox"
 
-#: ../inc/fullframe-default-options.php:462
+#: ../inc/fullframe-default-options.php:488
 msgid "Foursquare"
 msgstr "Foursquare"
 
-#: ../inc/fullframe-default-options.php:463
+#: ../inc/fullframe-default-options.php:489
 msgid "Spotify"
 msgstr "Spotify"
 
-#: ../inc/fullframe-default-options.php:464
+#: ../inc/fullframe-default-options.php:490
 msgid "Twitch"
 msgstr "Twitch"
 
-#: ../inc/fullframe-default-options.php:481
-#: ../inc/fullframe-default-options.php:512
-#: ../inc/fullframe-default-options.php:539
+#: ../inc/fullframe-default-options.php:507
+#: ../inc/fullframe-default-options.php:538
+#: ../inc/fullframe-default-options.php:565
 msgid "Default"
 msgstr "Förvald"
 
-#: ../inc/fullframe-default-options.php:517
+#: ../inc/fullframe-default-options.php:543
 msgid "Enable"
 msgstr "Aktivera"
 
-#: ../inc/fullframe-default-options.php:522
+#: ../inc/fullframe-default-options.php:548
 msgid "Disable"
 msgstr "Inaktivera"
 
-#: ../inc/fullframe-default-options.php:544
+#: ../inc/fullframe-default-options.php:570
 msgid "Featured Image"
 msgstr "Utvald bild"
 
-#: ../inc/fullframe-default-options.php:554
+#: ../inc/fullframe-default-options.php:580
 msgid "Disable Image"
 msgstr "Inaktivera bild"
 
-#: ../inc/fullframe-default-options.php:569
+#: ../inc/fullframe-default-options.php:595
 #, php-format
 msgctxt "1: Year, 2: Site Title with home URL"
 msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
 msgstr "Copyright © %1$s %2$s. Alla rättigheter reserverade."
 
-#: ../inc/fullframe-default-options.php:571
+#: ../inc/fullframe-default-options.php:597
 msgid "by"
 msgstr "av"
 
@@ -1093,9 +1117,9 @@ msgstr ""
 
 #: ../inc/fullframe-featured-content.php:313
 #: ../inc/fullframe-featured-content.php:330
-#: ../inc/fullframe-featured-slider.php:183
-#: ../inc/fullframe-featured-slider.php:199
-#: ../inc/fullframe-featured-slider.php:209
+#: ../inc/fullframe-featured-slider.php:185
+#: ../inc/fullframe-featured-slider.php:201
+#: ../inc/fullframe-featured-slider.php:211
 msgid "Permalink to:"
 msgstr "Permalänk till:"
 
@@ -1111,13 +1135,13 @@ msgstr "meny"
 msgid "Header Toggle"
 msgstr "Header Toggle"
 
-#: ../inc/fullframe-metabox.php:32 ../inc/fullframe-metabox.php:38
-msgid "Fullframe Options"
-msgstr "Fullframe Options"
-
-#: ../inc/fullframe-metabox.php:66
+#: ../inc/fullframe-metabox.php:93
 msgid "Header Featured Image Options"
 msgstr "Rubrik utvald bild alternativ"
+
+#: ../inc/fullframe-metabox.php:220
+msgid "Fullframe Options"
+msgstr "Fullframe Options"
 
 #: ../inc/fullframe-widgets.php:25
 msgid "Primary Sidebar"

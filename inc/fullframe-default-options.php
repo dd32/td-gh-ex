@@ -88,6 +88,7 @@ function fullframe_get_default_theme_options() {
 
 		//Featured Slider Options
 		'featured_slider_option'							=> 'homepage',
+		'featured_slider_image_loader'						=> 'true',
 		'featured_slide_transition_effect'					=> 'fadeout',
 		'featured_slide_transition_delay'					=> '4',
 		'featured_slide_transition_length'					=> '1',
@@ -372,6 +373,31 @@ function fullframe_featured_slide_transition_effects() {
 	);
 
 	return apply_filters( 'fullframe_featured_slide_transition_effects', $featured_slide_transition_effects );
+}
+
+
+/**
+ * Returns an array of featured slider image loader options
+ *
+ * @since Full Frame 2.3
+ */
+function fullframe_featured_slider_image_loader() {
+	$color_scheme_options = array(
+		'true' => array(
+			'value' 				=> 'true',
+			'label' 				=> __( 'True', 'fullframe' ),
+		),
+		'wait' => array(
+			'value' 				=> 'wait',
+			'label' 				=> __( 'Wait', 'fullframe' ),
+		),
+		'false' => array(
+			'value' 				=> 'false',
+			'label' 				=> __( 'False', 'fullframe' ),
+		),		
+	);
+
+	return apply_filters( 'fullframe_color_schemes', $color_scheme_options );
 }
 
 

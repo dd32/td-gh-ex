@@ -479,6 +479,11 @@ if ( ! function_exists( 'fullframe_custom_css' ) ) :
 		if ( ( !$fullframe_custom_css = get_transient( 'fullframe_custom_css' ) ) ) {		
 			$fullframe_custom_css ='';
 
+			// Has the text been hidden?
+			if ( ! display_header_text() ) {
+				$fullframe_custom_css    .=  ".site-title a, .site-description { position: absolute !important; clip: rect(1px 1px 1px 1px); clip: rect(1px, 1px, 1px, 1px); }". "\n";
+			}
+
 			// Featured Content Background Image Options
 			if( $defaults['featured_content_background_image'] != $options['featured_content_background_image'] ) {
 				$fullframe_custom_css .= "#featured-content {". "\n";

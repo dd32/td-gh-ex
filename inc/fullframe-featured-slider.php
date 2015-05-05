@@ -29,6 +29,7 @@ function fullframe_featured_slider() {
 	$options 		= fullframe_get_theme_options();
 	$enableslider 	= $options['featured_slider_option'];
 	$sliderselect 	= $options['featured_slider_type'];
+	$imageloader	= isset ( $options['featured_slider_image_loader'] ) ? $options['featured_slider_image_loader'] : 'true';
 
 	// Get Page ID outside Loop
 	$page_id = $wp_query->get_queried_object_id();
@@ -52,6 +53,7 @@ function fullframe_featured_slider() {
 						    data-cycle-fx="'. $options['featured_slide_transition_effect'] .'"
 							data-cycle-speed="'. $options['featured_slide_transition_length'] * 1000 .'"
 							data-cycle-timeout="'. $options['featured_slide_transition_delay'] * 1000 .'"
+							data-cycle-loader="'. $imageloader .'"
 							data-cycle-slides="> article"
 							>
 						    
