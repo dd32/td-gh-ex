@@ -22,11 +22,11 @@ function semplicemente_paging_nav() {
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav"><i class="fa spaceRight fa-angle-double-left"></i></span>Older posts', 'semplicemente' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( '<span class="meta-nav"><i class="fa spaceRight fa-angle-double-left"></i></span>'. __('Older Posts', 'semplicemente') ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts<span class="meta-nav"><i class="fa spaceLeft fa-angle-double-right"></i></span>', 'semplicemente' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts', 'semplicemente') . '<span class="meta-nav"><i class="fa spaceLeft fa-angle-double-right"></i></span>' ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -52,8 +52,8 @@ function semplicemente_post_nav() {
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'semplicemente' ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav"><i class="fa spaceRight fa-angle-double-left"></i></span>&nbsp;%title', 'Previous post link', 'semplicemente' ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title&nbsp;<span class="meta-nav"><i class="fa spaceLeft fa-angle-double-right"></i></span>', 'Next post link',     'semplicemente' ) );
+				previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav" aria-hidden="true"><i class="fa spaceRight fa-angle-double-left"></i></span>&nbsp;%title' . '<span class="screen-reader-text">' . __( 'Previous post:', 'semplicemente' ) . '</span> ' );
+				next_post_link( '<div class="nav-next">%link</div>', '%title&nbsp;<span class="meta-nav" aria-hidden="true"><i class="fa spaceLeft fa-angle-double-right"></i></span>' . '<span class="screen-reader-text">' . __( 'Next Post:', 'semplicemente' ) . '</span> ' );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -79,12 +79,12 @@ function semplicemente_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		_x( '<i class="fa fa-clock-o spaceRight"></i> %s', 'post date', 'semplicemente' ),
+		_x( '<i class="fa fa-clock-o spaceRight"></i>%s', 'post date', 'semplicemente' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
-		_x( '<i class="fa fa-user spaceRight"></i> %s', 'post author', 'semplicemente' ),
+		_x( '<i class="fa fa-user spaceRight"></i>%s', 'post author', 'semplicemente' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 

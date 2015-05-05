@@ -69,6 +69,10 @@
 					<a href="<?php echo esc_url($se_options['tumblrurl']); ?>" title="Tumblr" target="_blank" rel="nofollow"><i class="fa spaceLeftDouble fa-tumblr"></i></a>
 				<?php endif; ?>
 				
+				<?php if ( $se_options['vkurl'] ) : ?>
+					<a href="<?php echo esc_url($se_options['vkurl']); ?>" title="VK" target="_blank" rel="nofollow"><i class="fa spaceLeftDouble fa-vk"></i></a>
+				<?php endif; ?>
+				
 				<?php if ( ! $se_options['hiderss'] ) : ?>
 					<a href="<?php bloginfo( 'rss2_url' ); ?>" title="RSS"><i class="fa spaceLeftDouble fa-rss"></i></a>
 				<?php endif; ?>

@@ -76,3 +76,8 @@ Version 1.5.2
 * Fixed some CSS bug
 * Improved viewing in the mobile
 * Add RTL support
+
+Version 1.5.3
+* Fixed Previous and Next Post translation bug
+* Added VK Social Network button
+* Minor bug fixes

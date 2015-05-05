@@ -13,7 +13,8 @@ $semplicemente_theme_options = array(
 	'instagramurl' => '#', 
 	'youtubeurl' => '#', 
 	'pinteresturl' => '#', 
-	'tumblrurl' => '#'
+	'tumblrurl' => '#',
+	'vkurl' => '#'
 );
 
 if ( current_user_can('manage_options') ) {
@@ -214,6 +215,18 @@ function semplicemente_options_do_page() {
 					</td>
 				</tr>
 				
+				<?php
+				/**
+				 * VK
+				 */
+				?>
+				<tr valign="top"><th scope="row"><?php _e( 'Enter your VK URL', 'semplicemente' ); ?></th>
+					<td>
+						<input id="semplicemente_theme_options[vkurl]" class="regular-text" type="text" name="semplicemente_theme_options[vkurl]" value="<?php if( isset( $se_options[ 'vkurl' ] ) ) echo esc_url( $se_options[ 'vkurl' ] ); ?>" />
+						<label class="description" for="semplicemente_theme_options[vkurl]"><?php _e( 'Leave blank to hide VK Icon', 'semplicemente' ); ?></label>
+					</td>
+				</tr>
+				
 			</table>
 
 			<p class="submit">
@@ -259,6 +272,8 @@ function semplicemente_options_validate( $input ) {
 		$input['pinteresturl'] = esc_url_raw( $input['pinteresturl'] );
 	if( isset( $se_options[ 'tumblrurl' ] ) )
 		$input['tumblrurl'] = esc_url_raw( $input['tumblrurl'] );
+	if( isset( $se_options[ 'vkurl' ] ) )
+		$input['vkurl'] = esc_url_raw( $input['vkurl'] );
 
 	return $input;
 }
