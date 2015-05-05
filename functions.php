@@ -109,6 +109,7 @@ add_action( 'after_setup_theme', 'optimize_theme_setup' );
 	    'after_widget' => '</div></div>',
 	    'before_title' => '<h4 class="widgettitle">',
 	    'after_title' => '</h4>',
+	    'id' => 'opsidebar',
 	));	
 }
 add_action('widgets_init', 'optimize_widgets_init');

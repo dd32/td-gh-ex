@@ -154,25 +154,22 @@ $options[] = array(
 		'desc' => __('Paste Ad Code for top banner.', 'optimize'),
             'id' => 'optimize_ad1',
             'std' => '',
-            'type' => 'editor',
-			'settings' => $wp_editor_settings= array(
-		'wpautop' => true, // Default
-		'textarea_rows' => 5)
+            'type' => 'textarea'
+			
 	);
 	$options[] = array(
 		'name' => __('Paste Ads code below navigation', 'optimize'),
 		'desc' => __('Activate Ads Space Below Navigation and put code in below test field.', 'optimize'),
 		'id' => 'optimize_banner_top',
 		'std' => '',
-		'type' => 'editor',
-		'settings' => $wp_editor_settings);
+		'type' => 'textarea');
 	$options[] = array(
 		 'name' => __( 'AD Code For Single Post', 'optimize' ),
             'desc' => __('Paste Ad code for single post it show ads below post title and before content.','optimize'),
             'id' => 'optimize_ad2',
             'std' => '',
-            'type' => 'editor',
-			'settings' => $wp_editor_settings);
+            'type' => 'textarea'
+			);
    	
 		
 $options[] = array(
@@ -411,7 +408,9 @@ $options[] = array(
             'id' => 'optimize_ftarea',
             'std' => '&#169; 2013 Designed by: <a href="http://www.wrock.org/seo-optimized-wordpress-theme/" title="wRock.Org">wRock.Org</a> | Powered by <a href="http://wordpress.org/">WordPress</a>',
             'type' => 'editor',
-			'settings' => $wp_editor_settings);				
+			'settings' => $wp_editor_settings= array(
+		'wpautop' => true, // Default
+		'textarea_rows' => 5));				
 
 	return $options;
 }

@@ -15,11 +15,11 @@ function optimize_core_style() {
 // Add core page to the menu.
 function optimize_add_core() {
 	$page = add_theme_page(
-		'MORE Themes',
-		'MORE Themes',
-		'administrator',
-		'optimize-themes',
-		'optimize_display_core'
+		__('MORE Themes','optimize'), 
+		__('MORE Themes','optimize'),
+		__('administrator','optimize'),
+		__('optimize-themes','optimize'),
+		__('optimize_display_core','optimize')
 	);
 
 	add_action( 'admin_print_styles-' . $page, 'optimize_core_style' );
@@ -79,8 +79,8 @@ function optimize_display_core() {
 									</div>
 								</div>
 								<div class="theme-details active">
-									<span class="theme-name"><?php echo $theme->name; ?>: Current</span>
-									<a class="button button-secondary customize right" target="_blank" href="<?php echo get_site_url(). '/wp-admin/customize.php' ?>">Customize</a>
+									<span class="theme-name"><?php echo $theme->name; ?><?php _e(': Current','optimize'); ?></span>
+									<a class="button button-secondary customize right" target="_blank" href="<?php echo get_site_url(). '/wp-admin/customize.php' ?>"><?php _e('Customize','optimize'); ?></a>
 								</div>
 							</div>
 
@@ -129,7 +129,7 @@ function optimize_display_core() {
 
 										<!-- Activate Button -->
 										<a  class="button button-primary activate right"
-											href="<?php echo wp_nonce_url( admin_url( 'themes.php?action=activate&amp;stylesheet=' . urlencode( $theme->slug ) ), 'switch-theme_' . $theme->slug );?>" >Activate</a>
+											href="<?php echo wp_nonce_url( admin_url( 'themes.php?action=activate&amp;stylesheet=' . urlencode( $theme->slug ) ), 'switch-theme_' . $theme->slug );?>" ><?php _e('Activate','optimize'); ?></a>
 									<?php }
 									else {
 
@@ -140,11 +140,11 @@ function optimize_display_core() {
 											), self_admin_url( 'update.php' ) );
 									?>
 										<!-- Install Button -->
-										<a data-toggle="tooltip" data-placement="bottom" title="<?php echo 'Downloaded ' . number_format( $theme_details->downloaded ) . ' times'; ?>" class="button button-primary install right" href="<?php echo esc_url( wp_nonce_url( $install_url, 'install-theme_' . $theme->slug ) ); ?>" >Install Now</a>
+										<a data-toggle="tooltip" data-placement="bottom" title="<?php echo 'Downloaded ' . number_format( $theme_details->downloaded ) . ' times'; ?>" class="button button-primary install right" href="<?php echo esc_url( wp_nonce_url( $install_url, 'install-theme_' . $theme->slug ) ); ?>" ><?php _e('Install Now','optimize'); ?></a>
 									<?php } ?>
 
 									<!-- Preview button -->
-									<a class="button button-secondary preview right" target="_blank" href="<?php echo $theme->preview_url; ?>">Live Preview</a>
+									<a class="button button-secondary preview right" target="_blank" href="<?php echo $theme->preview_url; ?>"><?php _e('Live Preview','optimize'); ?></a>
 								</div>
 							</div>
 							<?php

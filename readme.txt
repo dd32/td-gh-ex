@@ -30,6 +30,10 @@ Custom Css:
 
 == Change log ==
 
+= 1.6.1 =
+* Missing Id issue fixed in widgets
+* Other minor issue fixed
+
 = 1.6 =
 * Updated Option Framework
 * Added Title Tag
