@@ -14,7 +14,7 @@ define( 'BOXY_INCLUDES_URL', BOXY_PARENT_URL . '/includes' );
 	If not present, use parent theme's languages dir
 	*/
 if ( ! defined( 'BOXY_LANGUAGES_URL' ) ) /** So we can predefine to child theme */
-	define( 'BOXY_LANGUAGES_URL', BOXY_INCLUDES_URL . '/languages' );
+	define( 'BOXY_LANGUAGES_URL', BOXY_PARENT_URL . '/languages' );
 
 if ( ! defined( 'BOXY_LANGUAGES_DIR' ) ) /** So we can predefine to child theme */
-	define( 'BOXY_LANGUAGES_DIR', BOXY_INCLUDES_DIR . '/languages' );
+	define( 'BOXY_LANGUAGES_DIR', BOXY_PARENT_DIR . '/languages' );
