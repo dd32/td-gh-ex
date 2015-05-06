@@ -18,7 +18,7 @@
 			<?php printf(
 			__( '%1$s by %2$s.', 'bakery' ),
 			__('Bakery WordPress Theme', 'bakery'),
-			'<strong><a href="http://dinozoom.com/">'.__('Dinozoom', 'bakery' ).'</a></strong>' ); ?>
+			'<strong><a href="'. esc_url( 'http://dinozoom.com/' ) .'">'.__('Dinozoom', 'bakery' ).'</a></strong>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
     

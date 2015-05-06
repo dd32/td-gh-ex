@@ -123,7 +123,7 @@ function optionsframework_options() {
 	);
 	$options[] = array(
 		'name' => __( 'Header Icon and Size', 'bakery' ),
-		'desc' => __( 'Example:"<strong>fa-3x fa-child</strong>". All icons list http://fortawesome.github.io/Font-Awesome/icons/#search', 'bakery' ),
+		'desc' => __( 'Example:"<strong>fa-3x fa-child</strong>". All icons list '. esc_url( 'http://fortawesome.github.io/Font-Awesome/icons/#search'), 'bakery' ),
 		'id' => 'bakery_header_text_icon',
 		'std' 	=> 'fa-3x fa-birthday-cake',
 		'type' 	=> 'text'
@@ -287,7 +287,7 @@ function optionsframework_options() {
 		$options[] = array(
 			'name' 	=>	sprintf( __( 'Service #%1$s', 'bakery' ), $i ),
 			'desc' 	=> __( 'Service Icon<br />
-			Service Icon (Using Font Awesome icons name) like: fa-medkit. <a href="http://fortawesome.github.io/Font-Awesome/icons/">Get your fontawesome icons.</a>', 'bakery' ),
+			Service Icon (Using Font Awesome icons name) like: fa-medkit. <a href="'.esc_url( 'http://fortawesome.github.io/Font-Awesome/icons/' ) . '">Get your fontawesome icons.</a>', 'bakery' ),
 			'id' 		=> 'bakery_service_icon'.$i,
 			'std' 	=> "fa-".$rand_icons[0],
 			'type' 	=> 'text'

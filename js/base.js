@@ -8,7 +8,13 @@
 				$("#site-navigation .menu").removeAttr( "style" );
 			}		   
 		});
-											
+		// nav anim
+		var x = 0;
+        setInterval(function(){
+            x+=1;
+            $('.main-navigation ').css('background-position', x + 'px bottom');
+        }, 20);
+		//	
 		jQuery('#back_top').click(function(){
 			jQuery('html, body').animate({scrollTop:0}, 'normal');return false;
 		});	

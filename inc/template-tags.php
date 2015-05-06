@@ -199,7 +199,7 @@ function bakery_theme_comment($comment,$args,$depth){
 
 	<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
 		<div class="comment-body">
-			<?php echo __( 'Pingback:', 'sin' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'sin' ), '<span class="edit-link">', '</span>' ); ?>
+			<?php echo __( 'Pingback:', 'bakery' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'bakery' ), '<span class="edit-link">', '</span>' ); ?>
 		</div>
 
 <?php
@@ -211,11 +211,11 @@ function bakery_theme_comment($comment,$args,$depth){
         
 			<div class="comment-meta">
             	<span class="fn"><?php echo get_comment_author_link();?></span>
-				<span><?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'sin' ), get_comment_date(), get_comment_time() ); ?></span>
-                <?php edit_comment_link( __( 'Edit', 'sin' ), '<span><i class="fa fa-edit"></i> ', '</span>' ); ?>
+				<span><?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'bakery' ), get_comment_date(), get_comment_time() ); ?></span>
+                <?php edit_comment_link( __( 'Edit', 'bakery' ), '<span><i class="fa fa-edit"></i> ', '</span>' ); ?>
 
 				<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation"><?php echo __( 'Your comment is awaiting moderation.', 'sin' ); ?></p>
+				<p class="comment-awaiting-moderation"><?php echo __( 'Your comment is awaiting moderation.', 'bakery' ); ?></p>
 				<?php endif; ?>
 			</div>
 

@@ -80,9 +80,9 @@ $commenter = wp_get_current_commenter();
 $req = get_option( 'require_name_email' );
 $aria_req = ( $req ? " aria-required='true'" : '' );
 $fields =  array(
-	'author' => '<div class="input-container"><input id="author" type="text" aria-required="true" tabindex="1" size="22" value="'.esc_attr($commenter['comment_author']).'" name="author" '.$aria_req.' autocomplete="off" /><span>'.__('Name').' '.($req?'*':'').'</span></div>',
-	'email' => '<div class="input-container"><input id="email" type="text" aria-required="true" tabindex="2" size="22" value="'.esc_attr($commenter['comment_author_email']).'" name="email" '.$aria_req.' autocomplete="off" /><span>'.__('Email').' '.($req?'*':'').'</span></div>',
-	'url' => '<div class="input-container"><input id="url" type="text" aria-required="true" tabindex="3" size="22" value="'.esc_url($commenter['comment_author_url']).'" name="url" autocomplete="off" /><span>'.__('Website').'</span></div>'
+	'author' => '<div class="input-container"><input id="author" type="text" aria-required="true" tabindex="1" size="22" value="'.esc_attr($commenter['comment_author']).'" name="author" '.$aria_req.' autocomplete="off" /><span>'.__('Name', 'bakery').' '.($req?'*':'').'</span></div>',
+	'email' => '<div class="input-container"><input id="email" type="text" aria-required="true" tabindex="2" size="22" value="'.esc_attr($commenter['comment_author_email']).'" name="email" '.$aria_req.' autocomplete="off" /><span>'.__('Email', 'bakery').' '.($req?'*':'').'</span></div>',
+	'url' => '<div class="input-container"><input id="url" type="text" aria-required="true" tabindex="3" size="22" value="'.esc_url($commenter['comment_author_url']).'" name="url" autocomplete="off" /><span>'.__('Website', 'bakery').'</span></div>'
 );
 $comments_args = array(
 	'comment_notes_before' => '',
