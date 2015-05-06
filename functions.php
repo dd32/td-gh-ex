@@ -147,17 +147,6 @@ function atout_admin_styles() {
 add_action('admin_enqueue_scripts', 'atout_admin_styles');
 
 /**
-* Add onation link to WP Customizer
-*
-* @since Atout 1.0
-*/
-function atout_admin_scripts() {
-  // Admin JS
-  wp_enqueue_script('admin_js', get_template_directory_uri() . "/framework/js/admin-js.js", array( 'jquery', 'customize-controls' ), false, true);
-}
-add_action( 'customize_controls_enqueue_scripts', 'atout_admin_scripts' );
-
-/**
 * Add editor styles
 *
 * @since Atout 1.0
@@ -175,6 +164,17 @@ function atout_trim_excerpt( $more ) {
      return ' ...';
 }
 add_filter('excerpt_more', 'atout_trim_excerpt');
+
+/**
+ * Change the excerpt length
+ */
+function atout_excerpt_length( $length ) {
+	
+	$excerpt = get_theme_mod('excerpt_lenght', '55');
+	return $excerpt;
+
+}
+add_filter( 'excerpt_length', 'atout_excerpt_length', 999 );
 
 /**
 * Backwards compatibility for wp_title

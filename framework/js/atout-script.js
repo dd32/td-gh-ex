@@ -11,4 +11,5 @@ jQuery(document).ready(function($) { //noconflict wrapper
 
     // Target your .container, .wrapper, .post, etc.
     $("#video-frame").fitVids();
+
 });//end noconflict

@@ -20,6 +20,13 @@
 		} );
 	} );
 
+	// Update the site description in real time...
+	wp.customize( 'footer_copyright', function( value ) {
+		value.bind( function( newval ) {
+			$( '.footer-copy b' ).html( newval );
+		} );
+	} );
+
 	// Update site title color in real time...
 	wp.customize( 'navbar_namecolor', function( value ) {
 		value.bind( function( newval ) {

@@ -62,17 +62,17 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: #060606; font-weight: 300; font-styl
 
 h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover { color: #060606; font-weight: 300; font-style: normal; font-weight: 300; line-height: 1.17em; }
 
-h1 { font-size: 3.15em; text-transform: uppercase; letter-spacing: 0.20em; }
+h1 { font-size: 2.2em; text-transform: uppercase; letter-spacing: 0.20em; }
 
-h2 { font-size: 2.15em; text-transform: uppercase; letter-spacing: 0.20em; }
+h2 { font-size: 1.7em; text-transform: uppercase; letter-spacing: 0.20em; }
 
-h3 { font-size: 1.7em; text-transform: uppercase; letter-spacing: 0.20em; }
+h3 { font-size: 1.4em; text-transform: uppercase; letter-spacing: 0.20em; }
 
-h4 { font-size: 1.4em; text-transform: uppercase; font-weight: 400; }
+h4 { font-size: 1.2em; text-transform: uppercase; font-weight: 400; }
 
-h5 { font-size: 1.1em; font-weight: 400; }
+h5 { font-size: 1em; font-weight: 400; }
 
-h6 { font-size: 1em; text-transform: uppercase; font-weight: 400; }
+h6 { font-size: 0.9em; text-transform: uppercase; font-weight: 400; }
 
 a { color: #4671fb; text-decoration: none; cursor: pointer; }
 

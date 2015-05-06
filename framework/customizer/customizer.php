@@ -24,8 +24,24 @@ class Atout_Customize {
     // =============================================================================
     // Register Sections
     // =============================================================================
+
+    $wp_customize->add_section( 'atout_frenchtastic', array(
+      'priority'       => 10,
+      'capability'     => 'edit_theme_options',
+      'theme_supports' => '',
+      'title'          => __('Support & More', 'atout'),
+      'description'    => '<p><a href="https://wordpress.org/support/theme/atout" target="_blank">Ask for support</a></p> <p><a href="http://frenchtastic.eu" target="_blank">Check out my other themes <br> (they\'re all free).</a></p><p>If you like Atout, please consider making a donation to its developer. It will help fixing bugs and bringing new features to the theme. Thank You!</p><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="8Q9QZCFX84GY4">
+<input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+',
+    ));
+
+    // -----------------------------------------------------------------------------
     
-  $wp_customize->add_section( 'atout_logo', array(
+    $wp_customize->add_section( 'atout_logo', array(
       'priority'       => 20,
       'capability'     => 'edit_theme_options',
       'theme_supports' => '',
@@ -104,6 +120,7 @@ class Atout_Customize {
     */
     $wp_customize->add_setting( 'logo', array(
         'sanitize_callback' => 'esc_url_raw',
+        'default'           => get_template_directory_uri() .'/framework/img/atout-logo.png',
     ));
 
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'atout_logo_option', array(
@@ -302,7 +319,7 @@ class Atout_Customize {
     */
     $wp_customize->add_setting( 'primary_color',
     array(
-      'default' => '4671fb',
+      'default' => '#29d9c2',
       'type' => 'theme_mod',
       'capability' => 'edit_theme_options',
       'transport' => 'postMessage',
@@ -382,26 +399,8 @@ class Atout_Customize {
 
     // -----------------------------------------------------------------------------
 
-    /**
-    * Body Font
-    * @author Frenchtastic
-    * @since Atout 1.0
-    */
-    $wp_customize->add_setting('body_font', array(
-      'default'        => 'Helvetica Neue',
-      'capability'     => 'edit_theme_options',
-      'type'           => 'theme_mod',
-      'transport' => 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
-      'sanitize_callback' => 'atout_sanitize_fontfamily',
-    ));
-
-    $wp_customize->add_control('atout_body_font', array(
-      'label'      => __('Body Font', 'atout'),
-      'section'    => 'atout_fonts',
-      'settings'   => 'body_font',
-      'description' => __('Pick a font for body text. <b>Default is Helvetic Neue.</b>', 'atout'),
-      'type'       => 'select',
-      'choices'    => array(
+    $font_choices = 
+        array(
           'Helvetica Neue' => __('Helvetica Neue', 'atout'),
           'Open Sans' => __('Open Sans', 'atout'),
           'Arial' => __('Arial', 'atout'),
@@ -413,8 +412,29 @@ class Atout_Customize {
           'Cursive' => __('Cursive', 'atout'),
           'Serif' => __('Serif', 'atout'),
           'Courier' => __('Courier', 'atout'),
-          'Monaco' => __('Monaco', 'atout')
-          ),
+          'Monaco' => __('Monaco', 'atout'),
+        );
+
+    /**
+    * Body Font
+    * @author Frenchtastic
+    * @since Atout 1.0
+    */
+    $wp_customize->add_setting('body_font', array(
+      'default'        => 'Open Sans',
+      'capability'     => 'edit_theme_options',
+      'type'           => 'theme_mod',
+      'transport' => 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+      'sanitize_callback' => 'atout_sanitize_body_fontfamily',
+    ));
+
+    $wp_customize->add_control('atout_body_font', array(
+      'label'      => __('Body Font', 'atout'),
+      'section'    => 'atout_fonts',
+      'settings'   => 'body_font',
+      'description' => __('Pick a font for body text. <b>Default is Open Sans.</b>', 'atout'),
+      'type'       => 'select',
+      'choices'    => $font_choices,
     ));
 
     // -----------------------------------------------------------------------------
@@ -438,20 +458,7 @@ class Atout_Customize {
         'settings'   => 'headings_font',
         'description' => __('Pick a font for all headings. <b>Default is Helvetic Neue.</b>', 'atout'),
         'type'       => 'select',
-        'choices'    => array(
-          'Helvetica Neue' => __('Helvetica Neue', 'atout'),
-          'Open Sans' => __('Open Sans', 'atout'),
-          'Arial' => __('Arial', 'atout'),
-          'Comic Sans MS' => __('Comic Sans MS', 'atout'),
-          'Times New Roman' => __('Times New Roman', 'atout'),
-          'Verdana' => __('Verdana', 'atout'),
-          'Fantasy' => __('Fantasy', 'atout'),
-          'Monospace' => __('Monospace', 'atout'),
-          'Cursive' => __('Cursive', 'atout'),
-          'Serif' => __('Serif', 'atout'),
-          'Courier' => __('Courier', 'atout'),
-          'Monaco' => __('Monaco', 'atout')
-          ),
+        'choices'    => $font_choices,
     ));
 
     // -----------------------------------------------------------------------------
@@ -547,11 +554,11 @@ class Atout_Customize {
     * @since Atout 1.0
     */
     $wp_customize->add_setting('atout_sidebar_mobile', array(
-        'default'        => 'block',
+        'default'        => 'none',
         'capability'     => 'edit_theme_options',
         'type'           => 'theme_mod',
         'transport'      => 'refresh',
-        'sanitize_callback' => 'atout_sanitize_display_block',
+        'sanitize_callback' => 'atout_sanitize_display_none',
         ));
 
     $wp_customize->add_control('atout_sidebar_mobile', array(
@@ -582,15 +589,15 @@ class Atout_Customize {
     ));
 
     $wp_customize->add_control('atout_blog_layout_opt', array(
-      'label'      => __('Index', 'atout'),
+      'label'      => __('Blog', 'atout'),
       'section'    => 'atout_layout',
       'settings'   => 'atout_blog_layout_opt',
       'description' => '',
       'type'       => 'radio',
       'choices'    => array(
-        'left' => 'Left sidebar',
+        'left' => __('Left sidebar', 'atout'),
         'full_width' => __('Content Full Width / No sidebar', 'atout'),
-        'right'   => __('Right sidebar', 'atout')
+        'right'   => __('Right sidebar', 'atout'),
         ),
     ));
 
@@ -660,6 +667,7 @@ class Atout_Customize {
     $wp_customize->add_setting( 'footer_copyright', array(
         'default' => '',
         'type' => 'theme_mod',
+        'transport' =>  'postMessage',
         'sanitize_callback' => 'sanitize_text_field',
     ));
 
@@ -670,6 +678,41 @@ class Atout_Customize {
     ));
 
     // -----------------------------------------------------------------------------
+
+    $wp_customize->add_setting( 'excerpt_lenght', array(
+            'sanitize_callback' => 'absint',
+            'default'           => '55',
+    ));
+    $wp_customize->add_control( 'excerpt_lenght', array(
+        'type'        => 'number',
+        'section'     => 'atout_post_options',
+        'label'       => __('Excerpt lenght', 'atout'),
+        'description' => __('Choose the excerpt length (in words). Default is 55', 'atout'),
+        'input_attrs' => array(
+            'min'   => 10,
+            'max'   => 200,
+            'step'  => 5,
+            'style' => 'padding: 12px;',
+        ),
+    ) );  
+
+    // -----------------------------------------------------------------------------
+
+    //Pro
+    $wp_customize->add_setting('atout_frenchtastic_info', array(
+      'sanitize_callback' => 'atout_no_sanitize',
+            'type' => 'info_control',
+            'capability' => 'edit_theme_options',
+        )
+    );
+    $wp_customize->add_control( 'atout_frenchtastic_info', array(
+        'section' => 'atout_frenchtastic',
+        'settings' => 'atout_frenchtastic_info',
+        'priority' => 10,
+        )
+    );
+
+    // -----------------------------------------------------------------------------
       
     //4. We can also change built-in settings by modifying properties. For instance, let's make some stuff use live preview JS...
     $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
@@ -678,6 +721,7 @@ class Atout_Customize {
     $wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
     $wp_customize->get_setting( 'body_font' )->transport = 'postMessage';
     $wp_customize->get_setting( 'spacing_headings' )->transport = 'postMessage';
+    $wp_customize->get_setting( 'footer_copyright' )->transport = 'postMessage';
    }
 
    /**
@@ -729,6 +773,7 @@ class Atout_Customize {
     </style> 
     <!--/Customizer CSS-->
     <?php
+
    }
    
    /**

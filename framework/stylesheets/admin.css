@@ -18,3 +18,13 @@ table th span, .form-table th{
 	color: #777;
 	font-weight: 400;
 }
+
+#customize-controls img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+
+#customize-control-atout_frenchtastic_info > label > input {
+	display: none;
+}

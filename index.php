@@ -46,6 +46,7 @@ endif; ?>
 					?>
 
 				<?php endwhile; ?>
+				
 				<?php atout_paging_nav(); ?>
 
 			<?php else : ?>
@@ -53,10 +54,13 @@ endif; ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 
 		<?php endif; ?>
+
 	</main>
+
 	<aside class="sidebar col-md-3 col-sm-4 col-xs-12 <?php echo $atout_sidebar_float; ?>">
 		<?php dynamic_sidebar(); ?>
 	</aside>
+	
 </div>
 </div>
 

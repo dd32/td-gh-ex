@@ -151,6 +151,24 @@ function atout_sanitize_display_block( $navbar_search ) {
 // -----------------------------------------------------------------------------
 
 /**
+* Sanitize navbar search
+*
+* @since Atout 1.0.4
+*
+* @param string $navbar_search Navbar spacing type.
+* @return string Filtered navbar type (block|none).
+*/
+function atout_sanitize_display_none( $navbar_search ) {
+    if ( ! in_array( $navbar_search, array( 'block', 'none' ) ) ) {
+        $navbar_search = 'none';
+    }
+
+    return $navbar_search;
+}
+
+// -----------------------------------------------------------------------------
+
+/**
 * Sanitize topbar
 *
 * @since Atout 1.0
@@ -220,3 +238,27 @@ function atout_sanitize_fontfamily( $font ) {
 
     return $font;
 }
+
+/**
+* Sanitize site font
+*
+* @since Atout 1.0
+*
+* @param string $font font type.
+* @return string Filtered font type (Helvetica Neue|Open Sans|Arial|Comic Sans MS|Times New Roman|Verdana|Fantasy|Monospace|Cursive|Serif|Courier|Monaco).
+*/
+function atout_sanitize_body_fontfamily( $font ) {
+    if ( ! in_array( $font, array( 'Helvetica Neue', 'Open Sans', 'Arial', 'Comic Sans MS', 'Times New Roman', 'Verdana', 'Fantasy', 'Monospace', 'Cursive', 'Serif', 'Courier', 'Monaco' ) ) ) {
+        $font = 'Open Sans';
+    }
+
+    return $font;
+}
+
+// ---------------------------------------------------------------------------
+
+//No sanitize - empty function for options that do not require sanitization
+function atout_no_sanitize( $input ) {
+}
+
+// ---------------------------------------------------------------------------

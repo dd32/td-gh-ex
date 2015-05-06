@@ -2,7 +2,7 @@
 Contributors: frenchtastic
 Tags: black, gray, one-column, two-columns, theme-options, light, white, right-sidebar, left-sidebar ,responsive-layout, custom-background, custom-colors, custom-menu ,editor-style, featured-images, post-formats ,sticky-post, threaded-comments, translation-ready, fluid-layout
 Tested up to: 4.2
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 
 
 == Description ==
@@ -10,6 +10,11 @@ Stable tag: 1.0.2
 Atout is a free WordPress theme developed with bloggers in mind. It includes all the post formats you might need as well as many awesome theme options available right from the theme customizer. 
 
 == Changelog ==
+
+= 1.0.3 May 6th 2015 =
+New customizer options
+Optimized customizer 
+Fixed minor issues
 
 = 1.0.2 April 26th 2015 =
 Fixed PHP issues occuring with PHP versions prior to 5.5
@@ -36,4 +41,4 @@ Atout uses Fitvids http://fitvidsjs.com/, licensed under the WTFP license which 
 
 Atout uses Prism http://prismjs.com/, licensed under the MIT license. Copyright (C) Lea Verou
 
-The photo used in the theme screenshot was taken by Shannon Richards, https://shannonkayrichards.wordpress.com/ . It is licensed under CC0 which is GPL compatible.
+The photo used in the theme screenshot was taken by Joshua Earle, http://www.joshuaearlephotography.com/ . It is licensed under CC0 which is GPL compatible.

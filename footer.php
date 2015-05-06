@@ -28,7 +28,7 @@
 
 <footer class="footer">
 	<div class="container text-center">
-		<p>&copy; <?php echo date('Y'); ?> - <?php echo atout_footer(); ?></p>
+		<p class="footer-copy">&copy; <?php echo date('Y'); ?> - <b><?php echo atout_footer(); ?></b></p>
 	</div>
 </footer>
 </div> <!-- #wrap -->

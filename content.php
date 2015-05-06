@@ -26,4 +26,8 @@
 			the_excerpt();
 		endif; ?>
 	</div>
+	<?php if(has_tag() && is_single() ): ?>
+		<p class="post-tags"><?php the_tags(); ?></p>
+	<?php endif; ?>
+	<?php  wp_link_pages(array('before' => '<p><strong>'. __('Pages: ', 'atout').'</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
 </article>
