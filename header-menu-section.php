@@ -23,11 +23,11 @@
 					)
 				);	
 			?>
-	<?php if($current_options['header_search_bar_enabled']=='on') { ?>	
-	<form class="menu-box" id="top-menu-search" class="navbar-form navbar-left" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
-				<input type="text" placeholder="Search" name="s">
-	</form>
-	<?php }  ?>	
+			<?php if($current_options['header_search_bar_enabled']=='on') { ?>	
+			<form class="menu-box" id="top-menu-search" class="navbar-form navbar-left" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
+						<input type="text" placeholder="Search" name="s">
+			</form>
+			<?php }  ?>	
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>

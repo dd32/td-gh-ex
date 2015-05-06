@@ -169,16 +169,9 @@
     background: none repeat scroll 0 0 #f36557;
 }
 .btn1 {
-    border: 2px solid #f36557;
-    color: #ffffff;
-    text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
-    background: none repeat scroll 0 0 transparent;
-}
-.flex-btn:hover, 
-.flex-btn:active {
-	color: #ffffff;
-}
-
+   
+    background-color: #f36557;
+	color: #ffffff; }
 /*Homepage Top Callout Css------------------------------------------------------------------------------------------------*/
 .top-callout-section {
 	background: #22262c;

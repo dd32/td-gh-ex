@@ -6,7 +6,7 @@ Author URI: http://webriti.com/
 Description: A Premium Business theme that supports Primary menu's , Primary sidebar,Four widgets area at the footer region  etc. 
 It has a perfect design that's great for any Business/Firms. Theme supports featured slider managed from Theme Option Panel. Additional fullwidth template  added with the theme. We have added one beautifully designed front page in the form of Business Front Page Template.
 In order to make use of this template you need to create a page, assign the Business Front Page Template to it and make this page as a front page from the WordPress reading settings.
-Version:  1.0
+Version:  1.2
 Tags: white, red , full-width-template, threaded-comments, custom-menu, two-columns,translation-ready , custom-background , sticky-post,theme-options,responsive-layout, right-sidebar, featured-images
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -177,16 +177,6 @@ h6, .h6 {
 	width: 100%;
 	float: left;
 }
-.flex-btn:after {
-    height: 0;
-    left: 0;
-    top: 0;
-    width: 100%;
-	-moz-transition: all 0.3s ease 0s;
-    content: "";
-    position: absolute;
-    z-index: -1;
-}
 .btn1 {
 	-webkit-transform: translateZ(0);
 	-moz-transform: translateZ(0);
@@ -210,10 +200,7 @@ h6, .h6 {
     padding: 10px 25px;
     text-align: center;
 }
-.flex-btn:hover:after, 
-.flex-btn:active:after {
-	height: 100%;
-}
+
 
 /*Homepage Top Callout Css------------------------------------------------------------------------------------------------*/
 .top-callout-section {

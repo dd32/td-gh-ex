@@ -59,7 +59,7 @@ wp_enqueue_style('responsive',get_template_directory_uri().'/css/bootstrap-respo
 					<div class="theme-info span9">
 						<a target="_blank" href="http://webriti.com/wallstreet/" class="theme-name"><h4><?php _e('wallstreet Pro','elitepress'); ?></h4></a>								
 						<div class="theme-description">
-							<p><?php _e('wallstreet is a Responsive Multi-Purpose Wordpress Theme. It is ideal for creating a corporate website. It boasts of a highy functional Home Page .Very Cleaned Design.','elitepress'); ?></p>
+							<p><?php _e('wallstreet is a Responsive Multi-Purpose WordPress Theme. It is ideal for creating a corporate website. It boasts of a highy functional Home Page .Very Cleaned Design.','elitepress'); ?></p>
 							<p><?php _e('wallstreet is designed with Readability Flexibility in mind. Customize it to your hearts content with Sortable Project Areas, Services Areas and Call Out Section.Use these great features to build an effective online presence for your business.','elitepress'); ?></p>
 							<p><?php _e('All of our Theme contain Responsive frameworks that adapt to Mobile Devices.','elitepress'); ?> </p>
 						</div>						

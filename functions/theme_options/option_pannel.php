@@ -16,6 +16,13 @@ function elitepress_admin_menu_pannel()
 	wp_enqueue_style('elitepress-option',get_template_directory_uri().'/functions/theme_options/css/style-option.css');
 	wp_enqueue_style('elitepress-optionpanal-dragdrop',get_template_directory_uri().'/functions/theme_options/css/optionpanal-dragdrop.css');
 	wp_enqueue_style('elitepress-upgrade', get_template_directory_uri(). '/functions/theme_options/css/upgrade-pro.css');
+	
+	wp_enqueue_script('appointment_admin_js',get_template_directory_uri().'/functions/theme_options/js/my-custom.js');
+	wp_enqueue_script ('wff_custom_wp_admin_js');
+	wp_enqueue_script('eif_custom_wp_admin_js',get_template_directory_uri().'/functions/theme_options/js/my-custom.js',array('jquery','jquery-ui-tabs'));
+	//css
+	wp_register_style ('wff_custom_wp_admin_css',get_template_directory_uri(). '/functions/theme_options/css/wff-admin.css');
+    wp_enqueue_style( 'wff_custom_wp_admin_css' );	
 	}	
 }
 function elitepress_option_panal_function()

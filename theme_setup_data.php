@@ -10,11 +10,26 @@ function theme_data_setup()
 			'upload_image_favicon'=>'',
 			'webrit_custom_css'=>'',
 			
-			//Featured Image Setting
+			
+			//Slider
+			'home_slider_enabled'=>'on',
+			'animation' => 'slide',
+			'animationSpeed' => '1500',
+			'slide_direction' => 'horizontal',
+			'slideshowSpeed' => '2500',
+			'slider_list'=>'',
+			'total_slide'=>'',
+			
+			
+			
 			'home_banner_enabled'=>'on',
-			'slider_title_one' => __('ELITEPRESS BY WEBRITI THEMES','elitepress'),
-			'slider_description' => __('Create Fresh Website fast with us!','elitepress'),
-			'slider_image' => $slider_image,
+			'home_post_enabled' => 'on',
+			'slider_total' => 4,
+			'slider_radio' => 'demo',
+			'slider_options'=> 'slide',
+			'slider_transition_delay'=> '2000',
+			'slider_select_category' => 'Uncategorized',
+			'featured_slider_post' => '',
 			
 			// Social media links
 			'header_social_media_enabled'=> 'on',
@@ -64,7 +79,7 @@ function theme_data_setup()
 			
 			
 			//Footer Copyright custmization
-			'footer_copyright_text' => __('<p>Copyright 2014 ElitePress <a href="#">Wordpress Theme</a>. All rights reserved</p>','elitepress'),
+			'footer_copyright_text' => __('<p>Copyright 2014 ElitePress <a href="#">WordPress Theme</a>. All rights reserved</p>','elitepress'),
 			
 			//Footer Menu bar Setting			
 			'footer_menu_bar_enabled' => 'on',

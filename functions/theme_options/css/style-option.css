@@ -439,7 +439,7 @@ textarea { width: 50%; height: auto;}
 }
 /*Options pane home page settigns*/
 
-		input[type=radio] {	display:none; margin:10px; }
+		input[type=radio] {	margin:10px; }
 		input[type=radio] + label {	display:inline-block;	margin:-2px;
 			padding: 4px 12px;	background-color: #e7e7e7;	border-color: #ddd; }
 

@@ -1,4 +1,4 @@
-<div class="block ui-tabs-panel deactive" id="option-ui-id-8">
+<div class="block ui-tabs-panel " id="option-ui-id-8">
 <style>
 .span6 h3{
 font: 33px/29px "Helvetica Neue","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -74,7 +74,7 @@ line-height:1.8;
 		</div>
 		<div class="span6" style="width:45%;margin-top: auto;">
 				<h3><?php _e('Multiple Color Schemes','elitepress'); ?></h3>
-				<p><?php _e('You can use multiple color schemes in your elitepress wordpress theme.','elitepress'); ?></p>
+				<p><?php _e('You can use multiple color schemes in your elitepress WordPress theme.','elitepress'); ?></p>
 		</div>	
 	</div>
 	<div class="row buy_now">
@@ -139,7 +139,7 @@ line-height:1.8;
 						<tr>
 						<td><p><b><?php _e('9','elitepress'); ?></b></p></td>
 						<td><p><b><?php _e('Theme Support ','elitepress'); ?></b></p></td>
-						<td><p><b><?php _e('Via Wordpress Forums','elitepress'); ?></b></p></td>
+						<td><p><b><?php _e('Via WordPress Forums','elitepress'); ?></b></p></td>
 						<td><p><b><?php _e('Private Forums with Email Support','elitepress'); ?></b></p></td>
 						</tr>
 						</tbody>

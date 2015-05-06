@@ -3,15 +3,15 @@
 		<?php 
 				// Check Image size for fullwidth template
 				if( is_page_template('blog-full-width.php'))
-				elitepress_image_thumbnail('blog-area-full','img-responsive'); 
+				elitepress_image_thumbnail('','img-responsive'); 
 				
 				
 				// Check Image size for Different format like Single post,page
 				elseif(is_single() || is_page())
-				elitepress_post_thumbnail('webriti_blog_thumb','img-responsive');
+				elitepress_post_thumbnail('','img-responsive');
 				
 				else
-				elitepress_post_thumbnail('blog-area-full','img-responsive');	
+				elitepress_post_thumbnail('','img-responsive');	
 		
 				// Close div if page is call
 				if(is_page() )  echo "</div>";

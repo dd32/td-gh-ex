@@ -54,37 +54,28 @@
 		add_theme_support( 'automatic-feed-links');
 		
 		require_once('theme_setup_data.php');
-		// setup admin pannel defual data for index page		
-		//$elitepress_lite_options=theme_data_setup();
-		
-		/* $current_theme_options = get_option('elitepress_lite_options'); */ // get existing option data 		
-		/* if($current_theme_options)
-		{ 	$elitepress_lite_options = array_merge($elitepress_lite_options, $current_theme_options);
-			//update_option('elitepress_lite_options',$elitepress_lite_options);	// Set existing and new option data			
-		} */
-		/* else
-		{
-			//add_option('elitepress_lite_options', $elitepress_lite_options);
-		} */
 		require( WEBRITI_THEME_FUNCTIONS_PATH . '/theme_options/option_pannel.php' ); // for Option Panel Settings		
 	}
 	
-	function elitepress_content_more($more)
-	{  global $post;
-		return '<div class="blog-btn-div"><a href="' . get_permalink() . "#more-{$post->ID}\" class=\"blog-btn\">Read More</a></div>";
-	}   
-	add_filter( 'the_content_more_link', 'elitepress_content_more' );
-
 	function elitepress_add_gravatar_class($class) {
 		$class = str_replace("class='avatar", "class='img-responsive comment-img", $class);
 		return $class;
 	}
 	add_filter('get_avatar','elitepress_add_gravatar_class');
 
-function elitepress_excerpt_length( $length ) {	return 50; }
-		add_filter( 'excerpt_length', 'elitepress_excerpt_length', 999 );
-		function elitepress_excerpt_more( $more ) {	return '';}
-		add_filter('excerpt_more', 'elitepress_excerpt_more');
+	function elitepress_excerpt_length($length ) {
+	return 20;
+	}
+	add_filter( 'excerpt_length', 'elitepress_excerpt_length', 999 );
+	
+	add_filter('get_the_excerpt','elitepress_post_slider_excerpt');
+	add_filter('excerpt_more','__return_false');
+	function elitepress_post_slider_excerpt($output){
+	
+		return '<div class="slide-text-bg2">' .'<h3>'.$output.'</h3>'.'</div>'.
+		       '<div class="flex-btn-div"><a href="' . get_permalink() . '" class="btn1 flex-btn">Read More</a></div>';
+			}
+		
 
 function elitepress_get_custom_link($url,$target,$title)
 {

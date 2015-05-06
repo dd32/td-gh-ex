@@ -58,6 +58,18 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+
+@Version 1.2
+1. Change option panel stylling.
+2. Remove unused space
+3. Enqueue Style.css
+4. Enqueue Jquery
+5. Remove font awesome icons folder.
+6. Add Home.php
+
+@version 1.1
+1. Add Post slider.
+2. Update pot file.
 @version 1.0 
 1. Solve Font issue.
 2. Enable Copyright section on server.
@@ -66,7 +78,7 @@ Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank y
 @version 0.2.5
 1. Add unminified version bootstrap.min.js for unless provide origianl profile.
 @Version 0.2.4
-1. Remove Dot(.) in eliptepress option panel file.
+1. Remove Dot(.) in elitpress option panel file.
 @Version 0.2.3
 1. Add some escape tags, missing banner_header.php , footer.php , home_page_header_setting.php
 2. Add  sanitizing for custom css box.
@@ -122,9 +134,18 @@ Source:http://pixabay.com
 LIcense: CC0 Public Domain
 
 Slider Image
-URL: http://pixabay.com/en/macbook-mac-apple-ipad-iphone-577758/
+URL: http://pixabay.com/en/startup-start-up-notebooks-creative-593354/
 Source:http://pixabay.com
 LIcense: CC0 Public Domain
+
+URL: http://pixabay.com/en/bar-local-cong-ireland-irish-pub-621033/
+Source:http://pixabay.com
+LIcense: CC0 Public Domain
+
+URL: http://pixabay.com/en/home-office-computer-mac-workspace-593380/
+Source:http://pixabay.com
+LIcense: CC0 Public Domain
+
 
 Page Header Image
 URL: http://pixabay.com/en/home-office-workstation-office-336377/

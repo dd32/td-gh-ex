@@ -1,7 +1,7 @@
 <?php
-/**
-Template Name: Business Front Page
-*/
+		if('page' == get_option('show_on_front')){ get_template_part('index');}
+		else {get_header();
+		
 		get_header();
 		
 		//****** get index static banner  ********
@@ -18,4 +18,5 @@ Template Name: Business Front Page
 				
 		get_footer(); 
 		
+		}
 ?>

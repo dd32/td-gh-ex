@@ -1,4 +1,4 @@
-<div class="block ui-tabs-panel deactive" id="option-ui-id-23" >	
+<div class="block ui-tabs-panel " id="option-ui-id-23" >	
 	<?php $current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), theme_data_setup() );
 	if(isset($_POST['webriti_settings_save_23']))
 	{	
@@ -22,7 +22,7 @@
 		if($_POST['webriti_settings_save_23'] == 2) 
 		{
 			$current_options['footer_menu_bar_enabled'] = 'on';
-			$current_options['footer_copyright_text']= __('<p>Copyright 2014 elitepress <a href="#">Wordpress Theme</a>. All rights reserved</p>','elitepress');
+			$current_options['footer_copyright_text']= __('<p>Copyright 2014 elitepress <a href="#">WordPress Theme</a>. All rights reserved</p>','elitepress');
 			update_option('elitepress_lite_options',$current_options);
 		}
 	}  ?>
