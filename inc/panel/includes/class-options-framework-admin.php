@@ -191,9 +191,9 @@ class Options_Framework_Admin {
             </div>
         </div>
 
-        <h2 class="nav-tab-wrapper">
+        <div class="nav-tab-wrapper">
 	        <?php echo Options_Framework_Interface::optionsframework_tabs(); ?>
-	    </h2>
+	    </div>
 
 	    <div id="optionsframework-metabox" class="metabox-holder">
 	    	<?php settings_errors( 'options-framework' ); ?>

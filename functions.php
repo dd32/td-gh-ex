@@ -200,4 +200,9 @@ require get_template_directory() . '/inc/jetpack.php';
  */
 require get_template_directory() . '/inc/panel/options-framework.php';
 
+/**
+ * Load TGM_Plugin_Activation class.
+ */
+require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+
 define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/panel/' );

@@ -65,7 +65,7 @@ get_header(); ?>
 
 						<?php if(of_get_option('service_desc')): ?>
 						<div class="sub-desc">
-							<?php echo esc_textarea(of_get_option('service_desc')); ?>
+							<?php echo wp_kses_post(of_get_option('service_desc')); ?>
 						</div>
 						<?php endif; ?>
 					</div>
@@ -128,7 +128,7 @@ get_header(); ?>
 				<div class="ak-container">
 					<div class="cta-banner-text <?php echo esc_attr($class); ?>">
 						<h1 class="cta-banner-title color-bold"><?php echo esc_attr($call_to_action_title); ?></h1>
-						<div class="cta-banner-desc"><?php echo esc_textarea($call_to_action_desc); ?></div>
+						<div class="cta-banner-desc"><?php echo wp_kses_post($call_to_action_desc); ?></div>
 					</div>
 
 					<?php if(!empty($call_to_action_button_text)): ?>
@@ -151,7 +151,7 @@ get_header(); ?>
 						<?php endif; ?>
 						<?php if(of_get_option('feature_desc')): ?>
 						<div class="sub-desc">
-							<?php echo esc_textarea(of_get_option('feature_desc')); ?>
+							<?php echo wp_kses_post(of_get_option('feature_desc')); ?>
 						</div>
 						<?php endif; ?>
 					</div>
@@ -208,7 +208,7 @@ get_header(); ?>
 						
 						<?php if(of_get_option('latest_post_desc')): ?>
 							<div class="sub-desc">
-								<?php echo esc_textarea(of_get_option('latest_post_desc'));?>
+								<?php echo wp_kses_post(of_get_option('latest_post_desc'));?>
 							</div>
 						<?php endif; ?>
 					</div>
@@ -355,7 +355,7 @@ get_header(); ?>
 								$big_image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 								$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'accesspress-root-project-thumbnail' );
 							?>
-							<img src="<?php echo $image[0]; ?>">
+							<img src="<?php echo esc_url($image[0]); ?>">
 							<?php 
 							endif; ?>
 							<div class="project-title"><?php the_title(); ?></div>
@@ -364,7 +364,7 @@ get_header(); ?>
 							<div class="project-title"><?php the_title(); ?></div>
 							<div class="project-content"><?php echo accesspress_letter_count(get_the_content(),'120'); ?></div>
 							<div class="project-link-wrap">
-								<a class="project-search fancybox-gallery" data-lightbox-gallery="gallery1" href="<?php echo $big_image[0]; ?>"> <i class="fa fa-search"> </i> </a>
+								<a class="project-search fancybox-gallery" data-lightbox-gallery="gallery1" href="<?php echo esc_url($big_image[0]); ?>"> <i class="fa fa-search"> </i> </a>
 								<a class="project-link" href="<?php the_permalink(); ?>"><i class="fa fa-link"></i></a>
 							</div>
 						</div>
@@ -395,7 +395,7 @@ get_header(); ?>
 
 						<?php if(of_get_option('testimonial_desc')): ?>
 						<div class="sub-desc">
-							<?php echo esc_textarea(of_get_option('testimonial_desc'));?>
+							<?php echo wp_kses_post(of_get_option('testimonial_desc'));?>
 						</div>
 						<?php endif; ?>
 					</div>

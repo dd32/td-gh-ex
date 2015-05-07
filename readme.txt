@@ -97,6 +97,11 @@ Pattern Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.10
+* Plugins Added via TGM-Plugin-Activation
+* Minor changes in the escaping of the outputs
+* Gap between slider and content for a static page removed.
+
 Version 1.08
 * Added Demo Content.
 * Minor changes in theme Option Panel
