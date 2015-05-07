@@ -1,4 +1,4 @@
-# Translation of Dynamic News in Spanish (Spain)
+# Translation of Dynamic News in German
 # This file is distributed under the same license as the Dynamic News package.
 msgid ""
 msgstr ""
@@ -94,33 +94,33 @@ msgstr ""
 #: inc/widgets/widget-category-posts-grid.php:254
 #: inc/widgets/widget-category-posts-single.php:179
 msgid "View all posts from category %s"
-msgstr ""
+msgstr "Zeige alle Beiträge der Kategorie %s"
 
 #: inc/widgets/widget-category-posts-boxed.php:295
 #: inc/widgets/widget-category-posts-grid.php:334
 #: inc/widgets/widget-category-posts-single.php:250
 msgid "Link Widget Title to Category Archive page"
-msgstr ""
+msgstr "Verlinke den Widget Titel mit dem Kategorie Archiv"
 
 #: inc/widgets/widget-category-posts-columns.php:341
 msgid "Highlight First Post (Big Image + Excerpt)"
-msgstr ""
+msgstr "Heben den ersten Beitrag hervor (Großes Thumbnail + Textauszug)"
 
 #: inc/widgets/widget-category-posts-columns.php:348
 msgid "Display Category Titles"
-msgstr ""
+msgstr "Zeige Kategorie Namen als Titel an"
 
 #: inc/widgets/widget-category-posts-grid.php:327
 msgid "Display as small posts grid with thumbnails"
-msgstr ""
+msgstr "Verwende ein Raster mit kleinen Thumbnails"
 
 #: inc/theme-info.php:73
 msgid "Customize Theme"
-msgstr ""
+msgstr "Design anpassen"
 
 #: inc/widgets/widget-category-posts-boxed.php:13
 msgid "Category Posts Boxed (Dynamic News)"
-msgstr ""
+msgstr "Kategorie-Beiträge Box-Layout (Dynamic News)"
 
 #: inc/widgets/widget-category-posts-boxed.php:281
 #: inc/widgets/widget-category-posts-columns.php:306
@@ -128,75 +128,75 @@ msgstr ""
 #: inc/widgets/widget-category-posts-grid.php:306
 #: inc/widgets/widget-category-posts-single.php:230
 msgid "All Categories"
-msgstr ""
+msgstr "Alle Kategorien"
 
 #: inc/widgets/widget-category-posts-columns.php:13
 msgid "Category Posts Columns (Dynamic News)"
-msgstr ""
+msgstr "Kategorie-Beiträge Spaltenanzahl (Dynamic News)"
 
 #: inc/widgets/widget-category-posts-grid.php:13
 msgid "Category Posts Grid (Dynamic News)"
-msgstr ""
+msgstr "Kategorie-Beiträge Tabelle (Dynamic News)"
 
 #: inc/customizer/sections/customizer-general.php:14
 msgid "General Settings"
-msgstr "Opciones Generales"
+msgstr "Grundeinstellungen"
 
 #: inc/customizer/sections/customizer-post.php:14
 msgid "Post Settings"
-msgstr "Opciones de Entradas"
+msgstr "Einstellungen für Beiträge"
 
 #: inc/customizer/sections/customizer-post.php:51
 msgid "Post Images"
-msgstr "Imágenes de Entradas"
+msgstr "Beitragsbilder"
 
 #: inc/customizer/sections/customizer-post.php:100
 msgid "Excerpt More Text"
-msgstr "Extracto Texto de Más"
+msgstr "Auszug mehr Text"
 
 #: inc/customizer/sections/customizer-post.php:115
 msgid "Display [...] after text excerpts."
-msgstr "Mostrar [...] después del extracto"
+msgstr "Zeige [...] nach Auszug."
 
 #: inc/customizer/sections/customizer-slider.php:14
 msgid "Post Slider"
-msgstr "Deslizador de Entradas"
+msgstr "Beitrag-Diashow"
 
 #: inc/customizer/sections/customizer-slider.php:15
 msgid ""
 "The slideshow displays your featured posts, which you can configure on the "
 "\"Featured Content\" section above."
 msgstr ""
-"La presentación de diapositivas muestra tus mensajes destacados, que se "
-"pueden configurar en la sección \"Contenido Destacado\" más arriba."
+"Die Diashow zeigt Ihre empfohlenen Beiträge, die Sie unter \"Featured Content"
+"\" konfigurieren können weiter oben."
 
 #: 404.php:9
 msgid "404 Error: Not found"
-msgstr "Error 404: No se ha encontrado la página"
+msgstr "404 Error: Seite konnte nicht gefunden werden."
 
 #: 404.php:12
 msgid ""
 "The page you trying to reach does not exist, or has been moved. Please use "
 "the menus or the search box to find what you are looking for"
 msgstr ""
-"La página que está tratando de acceder no existe, o ha sido movida. Por "
-"favor, utilice los menús o el Buscador para encontrar lo que está buscando."
+"Die gewünschte Seite existiert nicht oder wurde verschoben. Bitte verwenden "
+"Sie die Menüs oder das Suchfeld um zu finden, was Sie suchen."
 
 #: 404.php:14
 msgid "Search"
-msgstr "Buscar"
+msgstr "Suche"
 
 #: 404.php:17
 msgid "Recent Posts"
-msgstr "Entradas Recientes"
+msgstr "Aktuelle Beiträge"
 
 #: 404.php:27
 msgid "Pages"
-msgstr "Páginas"
+msgstr "Seiten"
 
 #: archive.php:14
 msgid "Monthly Archives: %s"
-msgstr "Archivos del mes: %s"
+msgstr "Monatliches Archiv: %s"
 
 #: archive.php:14
 msgid "F Y"
@@ -204,88 +204,87 @@ msgstr "F Y"
 
 #: archive.php:16
 msgid "Archives"
-msgstr "Archivos"
+msgstr "Archive"
 
 #: author.php:16
 msgid "Author Archives: %s"
-msgstr "Archivos del Autor: %s"
+msgstr "Autor Archive: %s"
 
 #: category.php:12
 msgid "Category Archives: %s"
-msgstr "Archivos de la Categoría: %s"
+msgstr "Kategorie Archive: %s"
 
 #: comments.php:11
 msgid "Enter password to view comments."
-msgstr "Ingrese la contraseña para ver los comentarios."
+msgstr "Sie müssen angemeldet sein um Kommentare zu sehen."
 
 #: comments.php:21 inc/template-tags.php:77
 #: inc/widgets/widget-category-posts-boxed.php:190
 #: inc/widgets/widget-category-posts-columns.php:221
 #: inc/widgets/widget-category-posts-grid.php:213
 msgid "One comment"
-msgstr "Un comentario"
+msgstr "ein Kommentar"
 
 #: comments.php:21 inc/template-tags.php:77
 #: inc/widgets/widget-category-posts-boxed.php:190
 #: inc/widgets/widget-category-posts-columns.php:221
 #: inc/widgets/widget-category-posts-grid.php:213
 msgid "% comments"
-msgstr "% comentarios"
+msgstr "% Kommentare"
 
 #: content-excerpt.php:12 content-search.php:8 content.php:11
 #: inc/widgets/widget-category-posts-single.php:130
 msgid "Read more"
-msgstr "Leer más"
+msgstr "Weiterlesen"
 
 #: featured-content-slider.php:48
 msgid "Read more &raquo;"
-msgstr "Leer más &raquo;"
+msgstr "Weiterlesen &raquo;"
 
 #: functions.php:132
 msgid "Main Navigation"
-msgstr "Navegación Principal"
+msgstr "Hauptnavigation"
 
 #: functions.php:133
 msgid "Footer Navigation"
-msgstr "Navegación de Pie de Página"
+msgstr "Fußnavigation"
 
 #: functions.php:136
 msgid "Social Icons"
-msgstr "Iconos Sociales"
+msgstr "Social-Media-Symbole"
 
 #: functions.php:176 inc/customizer/sections/customizer-general.php:49
 msgid "Sidebar"
-msgstr "Barra lateral"
+msgstr "Seitenleiste"
 
 #: functions.php:178
 msgid "Appears on posts and pages except front page and fullwidth template."
 msgstr ""
-"Aparecer en entradas y páginas excepto la página principal y el tema de "
-"ancho completo."
+"Erscheint in Beiträgen und Seiten außer Startseite und Vollbild-Vorlage"
 
 #: functions.php:185
 msgid "Magazine Front Page"
-msgstr "Página Principal de Revista"
+msgstr "Magazin Startseite"
 
 #: functions.php:187
 msgid ""
 "Appears on Magazine Front Page page template only. You can use the Category "
 "Posts widgets here."
 msgstr ""
-"Aparecer on la Página Principal Revista únicamente. Puede utilizar los "
-"widget de Categorías aquí."
+"Erscheint nur auf der Magazin-Startseiten-Vorlage. Sie können das Kategorie-"
+"Beiträge-Widget hier verwenden."
 
 #: inc/template-tags.php:205
 msgid "Powered by %1$s and %2$s."
-msgstr "Desarrollado por %1$s y %2$s."
+msgstr "Präsentiert von %1$s und %2$s."
 
 #: inc/template-tags.php:206
 msgid "WordPress"
-msgstr "Wordpress"
+msgstr "WordPress"
 
 #: inc/template-tags.php:207
 msgid "Dynamic News"
-msgstr "Noticias Dinámicas"
+msgstr "Dynamic News"
 
 #: functions.php:267
 msgid "Pingback:"
@@ -293,81 +292,82 @@ msgstr "Pingback:"
 
 #: functions.php:268 functions.php:284
 msgid "(Edit)"
-msgstr "(Editar)"
+msgstr "(Bearbeiten)"
 
 #: functions.php:294
 msgid "Your comment is awaiting moderation."
-msgstr "Su comentario está pendiente de moderación"
+msgstr "Ihr Kommentar wurde noch nicht genehmigt."
 
 #: image.php:19
 msgid "Previous"
-msgstr "Anterior"
+msgstr "vorherige"
 
 #: image.php:20
 msgid "Next"
-msgstr "Siguiente"
+msgstr "nächste"
 
 #: image.php:26
 msgid "Return to Gallery"
-msgstr "Volver a Gallería"
+msgstr "Zurück zur Galerie"
 
 #: image.php:27
 msgid "Return to"
-msgstr "Volver a"
+msgstr "Zurück zu"
 
 #: search.php:13 search.php:35
 msgid "Search Results for: %s"
-msgstr "Resultados de búsqueda para: %s"
+msgstr "Suchergebnisse für %s"
 
 #: search.php:41
 msgid ""
 "No matches. Please try again, or use the navigation menus to find what you "
 "search for."
 msgstr ""
-"Sin resultados. Por favor intente nuevamente, o utilice el menú de "
-"navegación para encontrar lo que busca."
+"Keine Übereinstimmungen gefunden: Bitte versuchen Sie es erneut oder nutzen "
+"Sie die Navigation um zu finden, wonach Sie suchen."
 
 #: searchform.php:4
 msgid "Search for:"
-msgstr "Buscar por:"
+msgstr "Suche nach:"
 
 #: sidebar.php:14
 msgid "Widget Area"
-msgstr "Area de Widgets"
+msgstr "Widget-Bereich"
 
 #: sidebar.php:16
 msgid ""
 "There are no active widgets to be displayed. Please go to Appearance -> "
 "Widgets to setup your sidebar."
 msgstr ""
-"No hay widgets activos para mostrar. Por favor, vaya a Apariencias -> "
-"Widgets para configurar la barra lateral."
+"Es gibt keine aktiven Widgets die angzeigt werden können. Bitte Gehen zum "
+"Menüpunkt Design ->Widgets auf dem Dashboard um die Seitenleiste "
+"einzurichten."
 
 #: tag.php:12
 msgid "Tag Archives: %s"
-msgstr "Archivos de Etiquetas: %s"
+msgstr "Tag Archive: %s"
 
 #: inc/featured-content.php:350
 msgid "Featured Content"
-msgstr "Contenido Destacado"
+msgstr "Empfohlener Inhalt"
 
 #: inc/template-tags.php:77 inc/widgets/widget-category-posts-boxed.php:190
 #: inc/widgets/widget-category-posts-columns.php:221
 #: inc/widgets/widget-category-posts-grid.php:213
 msgid "Leave a comment"
-msgstr "Deje un comentario"
+msgstr "Hinterlasse einen Kommentar"
 
 #: inc/template-tags.php:68
 msgid "View all posts by %s"
-msgstr "Ver todas las entradas por %s"
+msgstr "Zeige alle Beiträge von %s"
 
 #: inc/template-tags.php:83
 msgid "Edit Post"
-msgstr "Editar Entrada"
+msgstr "(Bearbeiten)"
 
 #: inc/template-tags.php:147
 msgid "tagged with %1$s"
-msgstr "etiquetado con %1$s"
+msgstr "mit %1$s getaggt"
 
 #: inc/template-tags.php:239
 msgid ""
@@ -375,270 +375,261 @@ msgid ""
 "custom links to all your social networks. Then click on \"Manage Locations\" "
 "tab and assign your created menu to the \"Social Icons\" theme location."
 msgstr ""
-"Por favor, vaya a WP-Admin-> Apariencia -> Menus y cree un nuevo menu "
-"personalizado con links personalizados a sus redes sociales. Luego, haga "
-"click en \"Administrar Posiciones\" y asigne su menu creado a la posición "
-"\"Iconos Sociales\""
+"Bitte gehen Sie im Dashboard auf Design-> Menüs und erstellen Sie ein "
+"benutzerdefiniertes Menü mit Links zu ihren Seiten in sozialen Netzwerken. "
+"Dann klicken Sie unter \"Position im Theme\" auf \"Social Icons\" um ihr "
+"gerade erstelltes Menü diesem Bereich zuzuweisen."
 
 #: inc/theme-info.php:15
 msgid "Welcome to Dynamic News Lite"
-msgstr "Bienvenido a Dynamic News Lite"
+msgstr ""
 
 #: inc/theme-info.php:16
 msgid "Theme Info"
-msgstr "Información del Tema"
+msgstr "Design-Info"
 
 #: inc/theme-info.php:35
 msgid "Welcome to %1s %2s"
-msgstr "Bienvenido a %1s %2s"
+msgstr "Willkommen bei %1s %2s"
 
 #: inc/theme-info.php:41
 msgid "Important Links:"
-msgstr "Enlaces Importantes:"
+msgstr "wichtige Links:"
 
 #: inc/theme-info.php:42
 msgid "Theme Info Page"
-msgstr "Página de Información del Tema"
+msgstr "Design-Infoseite"
 
 #: inc/theme-info.php:43
 msgid "Changelog"
-msgstr "Changelog"
+msgstr "Änderungsprotokoll"
 
 #: inc/theme-info.php:44
 msgid "Theme Demo"
-msgstr "Demo del Tema"
+msgstr "Design-Demo"
 
 #: inc/theme-info.php:45 inc/theme-info.php:60
 msgid "Theme Documentation"
-msgstr "Documentación del Tema"
+msgstr "Designdokumentation"
 
 #: inc/theme-info.php:46
 msgid "Rate this theme"
-msgstr "Clasifique este tema"
+msgstr ""
 
 #: inc/theme-info.php:57
 msgid "Getting Started with %s"
-msgstr "Comenzando con %s"
+msgstr "Erste Schritte mit %s"
 
 #: inc/theme-info.php:62
 msgid ""
 "Need any help to setup and configure this theme? We got you covered with an "
 "extensive theme documentation on our website."
 msgstr ""
-"Necesita ayuda para configurar este tema? Tenemos una extensa documentación "
-"del tema en nuestro sitio web."
+"Benötigen Sie Hilfe zur Einrichtung und Konfiguration dieser Vorlage? Eine "
+"ausführliche Vorlagendokumentation finden Sie auf unserer Internetseite."
 
 #: inc/theme-info.php:64
 msgid "Visit Dynamic News Documentation"
-msgstr "Visita la Documentación de Dynamic News"
+msgstr "Dynamic News Dokumentation ansehen"
 
 #: inc/theme-info.php:69 inc/customizer/customizer.php:29
 msgid "Theme Options"
-msgstr "Opciones del Tema"
+msgstr "Designoptionen"
 
 #: inc/theme-info.php:71
 msgid ""
 "Dynamic News supports the awesome Theme Customizer for all theme settings. "
 "Click \"Customize Theme\" to open the Customizer now."
 msgstr ""
-"Dynamic News supports the awesome Theme Customizer for all theme settings. "
-"Click \"Customize Theme\" to open the Customizer now.\n"
-"Dynamic News soporta el sorprendente Personalizador de Tema para todos los "
-"ajustes de tema. Haga clic en \"Personalizar Tema\" para abrir el "
-"Personalizador ahora."
+"Dynamic News bietet umfangreiche Anpassungsmöglichkeiten. Klicken Sie auf "
+"\"Anpassen\" um die Vorlage einzurichten."
 
 #: inc/theme-info.php:78 inc/customizer/sections/customizer-upgrade.php:14
 msgid "PRO Version"
-msgstr "Version PRO"
+msgstr ""
 
 #: inc/theme-info.php:80
 msgid ""
 "Need more features? Check out the PRO version which comes with additional "
 "features and advanced customization options."
 msgstr ""
-"Necesita más características? Revise la versión PRO que viene con "
-"características adicionales y opciones de personalización avanzadas."
 
 #: inc/theme-info.php:82
 msgid "Learn more about the PRO Version of Dynamic News"
-msgstr "Aprende sobre la versión PRO de Dynamic News"
+msgstr ""
 
 #: inc/theme-info.php:102
 msgid ""
 "Dynamic News is proudly brought to you by %1s. If you like this theme, "
 "%2s :) "
 msgstr ""
-"Dynamic News es orgullosamente traído a usted por% 1s. Si te gusta este tema,"
-"% 2s :)"
 
 #: inc/theme-info.php:104
 msgid "rate it"
-msgstr "clasificar"
+msgstr ""
 
 #: inc/customizer/sections/customizer-general.php:29
 msgid "Site Layout"
-msgstr "Disposición del Sitio"
+msgstr "Seiten Layout"
 
 #: inc/customizer/sections/customizer-general.php:35
 msgid "Boxed Layout Width"
-msgstr "Ancho de Disposición de caja"
+msgstr "Boxed Layout-Breite"
 
 #: inc/customizer/sections/customizer-general.php:36
 msgid "Wide Layout (Fullwidth)"
-msgstr "Disposición ancha (ancho completo)"
+msgstr "breites Layout (voll Breite)"
 
 #: inc/customizer/sections/customizer-general.php:55
 msgid "Left Sidebar"
-msgstr "Barra lateral izquierda"
+msgstr "Seitenleiste Links"
 
 #: inc/customizer/sections/customizer-general.php:56
 msgid "Right Sidebar"
-msgstr "Barra lateral derecha"
+msgstr "Seitenleiste rechts"
 
 #: inc/customizer/sections/customizer-header.php:14
 #: inc/customizer/sections/customizer-header.php:30
 msgid "Header Content"
-msgstr "Contenido del Encabezamiento"
+msgstr "Kopfzeileninhalt"
 
 #: inc/customizer/sections/customizer-header.php:46
 msgid ""
 "The Header Content configured below will be displayed on the right hand side "
 "of the header area."
 msgstr ""
-"El contenido de cabecera configurado a continuación se mostrará en la parte "
-"derecha de la zona de cabecera."
+"Der unten eingerichtete Kopfzeileninhalt wird auf der rechten Seite im "
+"Kopfzeilenbereich angezeigt."
 
 #: inc/customizer/sections/customizer-header.php:63
 msgid "Display search field on header area"
-msgstr "Mostrar campo de búsqueda en el área de cabecera"
+msgstr "Suchfeld im Kopfzeilenbereich anzeigen"
 
 #: inc/customizer/sections/customizer-header.php:79
 msgid "Display Social Icons on header area"
-msgstr "Mostrar Iconos Sociales en el área de cabecera"
+msgstr "Social-Media-Symbole im Kopfzeilenbereich anzeigen"
 
 #: inc/customizer/sections/customizer-header.php:95
 msgid "Header Text Line"
-msgstr "Linea de texto de Cabecera"
+msgstr "Kopfzeilentext"
 
 #: inc/customizer/sections/customizer-post.php:29
 msgid "Post Length on archives"
-msgstr "Largo de Entrada en archivos"
+msgstr "Beitragslänge in Archiven"
 
 #: inc/customizer/sections/customizer-post.php:35
 msgid "Show full posts"
-msgstr "Mostrar entradas completas"
+msgstr "Beiträge vollständig anzeigen"
 
 #: inc/customizer/sections/customizer-post.php:36
 msgid "Show post summaries (excerpt)"
-msgstr "Mostrar los resúmenes de entradas (extracto)"
+msgstr "Beitragsauszug anzeigen"
 
 #: inc/customizer/sections/customizer-post.php:66
 msgid "Display featured images on archive pages"
-msgstr "Mostrar imágenes destacadas en páginas de archivo"
+msgstr "Zeige empfohlene Bilder auf Archiv-Seiten"
 
 #: inc/customizer/sections/customizer-post.php:82
 msgid "Display featured images on single posts"
-msgstr "Mostrar imágenes destacadas en entradas individuales"
+msgstr "Zeige empfohlene Bilder auf einzelnen Beiträgen"
 
 #: inc/customizer/sections/customizer-slider.php:31
 msgid "Activate Featured Post Slider"
-msgstr "Activar Deslizador de Entradas Destacadas"
+msgstr "Beitrag-Diashow aktivieren"
 
 #: inc/customizer/sections/customizer-slider.php:46
 msgid "Display Slider on Magazine Front Page template."
-msgstr "Mostrar Deslizador en Página Principal del tema de Revista"
+msgstr "Diashow auf der Magazin-Startseiten-Vorlage anzeigen."
 
 #: inc/customizer/sections/customizer-slider.php:61
 msgid "Display Slider on normal blog index."
-msgstr "Mostrar Deslizador en índice del blog normal."
+msgstr "Diashow auf Blog-Übersicht anzeigen."
 
 #: inc/customizer/sections/customizer-slider.php:77
 msgid "Slider Animation"
-msgstr "Animación del Deslizador"
+msgstr "Diashow Animation"
 
 #: inc/customizer/sections/customizer-slider.php:83
 msgid "Horizontal Slider"
-msgstr "Deslizador Horizontal"
+msgstr "Diashow horizontal"
 
 #: inc/customizer/sections/customizer-slider.php:84
 msgid "Fade Slider"
-msgstr "Deslizador Fundido"
+msgstr "Diashow Einblenden"
 
 #: inc/customizer/sections/customizer-upgrade.php:30
 msgid "Need more features?"
-msgstr "¿Necesita más características?"
+msgstr ""
 
 #: inc/customizer/sections/customizer-upgrade.php:46
 msgid ""
 "Check out the PRO version which comes with additional features and advanced "
 "customization options."
 msgstr ""
-"Echa un vistazo a la versión PRO que viene con características adicionales y "
-"opciones de personalización avanzadas."
 
 #: inc/customizer/sections/customizer-upgrade.php:62
 msgid "Learn more about the PRO Version"
-msgstr "Aprende más de la versión PRO"
+msgstr ""
 
 #: inc/customizer/customizer.php:50
 msgid "Display Tagline below site title."
-msgstr "Mostrar Lema debajo del título del sitio."
+msgstr "Zeige Untertitel unterhalb Seitentitel."
 
 #: header.php:46
 msgid "Menu"
-msgstr "Menú"
+msgstr "Menü"
 
 #: inc/widgets/widget-category-posts-boxed.php:11
 msgid ""
 "Display latest posts from category in boxed layout. Please use this widget "
 "ONLY on Frontpage Magazine widget area."
 msgstr ""
-"Mostrar todos los mensajes de la categoría de diseño en caja. Por favor, use "
-"este widget SOLAMENTE en área de widget de Frontpage Revista."
+"Letzte Beiträge aus Kategorie in Box-Layout anzeigen. Bitte nur für den "
+"Magazin-Startseiten-Widget-Bereich nutzen."
 
 #: inc/widgets/widget-category-posts-boxed.php:272
 #: inc/widgets/widget-category-posts-columns.php:297
 #: inc/widgets/widget-category-posts-grid.php:297
 #: inc/widgets/widget-category-posts-single.php:221
 msgid "Title:"
-msgstr "Título:"
+msgstr "Titel:"
 
 #: inc/widgets/widget-category-posts-boxed.php:278
 #: inc/widgets/widget-category-posts-grid.php:303
 #: inc/widgets/widget-category-posts-single.php:227
 msgid "Category:"
-msgstr "Categoría:"
+msgstr "﻿Kategorie:"
 
 #: inc/widgets/widget-category-posts-columns.php:11
 msgid ""
 "Display latest posts from two specified categories. Please use this widget "
 "ONLY on Frontpage Magazine widget area."
 msgstr ""
-"Mostrar todos los mensajes de dos categorías especificadas. Por favor, use "
-"este widget SOLAMENTE en área de widget de Frontpage Revista."
+"Letzte Beiträge aus 2 gewählten Kategorien in Box-Layout anzeigen. Bitte nur "
+"für den Magazin-Startseiten-Widget-Bereich nutzen."
 
 #: inc/widgets/widget-category-posts-columns.php:303
 msgid "Left Category:"
-msgstr "Categoría de la Izquierda:"
+msgstr "linke Kategorie:"
 
 #: inc/widgets/widget-category-posts-columns.php:318
 msgid "Right Category:"
-msgstr "Categoría de la Derecha:"
+msgstr "rechte Kategorie:"
 
 #: inc/widgets/widget-category-posts-grid.php:11
 msgid ""
 "Display latest posts from category in a grid layout. Please use this widget "
 "ONLY on Frontpage Magazine widget area."
 msgstr ""
-"Mostrar todos los mensajes de la categoría en un diseño de cuadrícula. Por "
-"favor, use este widget SOLAMENTE en área de widget de Frontpage Revista."
+"Letzte Beiträge aus der Kategorie im Tabellen-Layout anzeigen. Bitte nur für "
+"den Magazin-Startseiten-Widget-Bereich nutzen."
 
 #: inc/widgets/widget-category-posts-columns.php:333
 #: inc/widgets/widget-category-posts-grid.php:318
 #: inc/widgets/widget-category-posts-single.php:242
 msgid "Number of posts:"
-msgstr "Cantidad de entradas:"
+msgstr "Anzahl Beiträge:"
 
 #: inc/widgets/widget-category-posts-grid.php:320
 msgid "Please chose an even number (2, 4, 6, 8)."
-msgstr "Por favor, elija un número par (2,4,6,8)."
+msgstr "Bitte wählen Sie eine gerade Anzahl (2, 4, 6, 8)."
