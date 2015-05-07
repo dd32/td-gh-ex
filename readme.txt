@@ -95,6 +95,12 @@ Source: http://fontawesome.io
 # --- EOF --- #
 ============================Change Log================================
 
+@version 1.6
+1. Add Upgrade to pro option.
+2. Enqueue Style.css
+3. Enqueue jQuery
+4. Remove font awesome icons Folder.
+
 @version 1.5.6
 1. Fixed Spelling mistake issue.
 

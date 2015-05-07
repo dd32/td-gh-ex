@@ -29,6 +29,8 @@
                 </li>
                 <li id="tab_export"><a href="#section_misc"><?php _e('Footer customization Settings','appointment'); ?></a>
                 </li>
+				<li id="tab_pro"><a href="#section_pro"><?php _e('Upgrade to Pro','elitepress'); ?></a>
+                </li>
                
             </ul>
     <div id="poststuff" class="metabox-holder">
@@ -138,6 +140,22 @@
             </div>
         </div>
     </div>
+	
+	
+		
+	<div id="section_pro" class = "postbox" >
+        <div class="inside">
+            <div id="setting_export_settings_file_text" class="format-settings">
+                <div class="format-setting-wrap">
+                    <div class="format-setting-label">
+					<?php  load_template( dirname( __FILE__ ) . '/pages/UpgradeToPro.php' ); ?>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+	
+	
 		</div>
     </div>
     </div>

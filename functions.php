@@ -111,7 +111,8 @@ function appointment_add_to_author_profile( $contactmethods ) {
 				else
 				{
 					return '<div class="slide-text-bg2">' .'<span>'.$output.'</span>'.'</div>'.
-	                       '<div class="blog-btn-area-sm"><a href="' . get_permalink() . '" class="blog-btn-sm">Read More</a></div>';
+	                       '<div class="blog-btn-area-sm"><a href="' . get_permalink() . '" class="blog-btn-sm">'.__("
+						   Read more","appointment").'</a></div>';
 				}
 			 }
 				
