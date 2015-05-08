@@ -19,7 +19,7 @@ If you have any questions, accessibility issues or feature requests for this the
 
 
 == Change log ==
-Version 1.6, 2015-05-06
+Version 1.7, 2015-05-08
 Added an option to change the text color of the Call to Action button.
 Added an additional widget area to the footer below the social menu, where you can add a copyright text.
 

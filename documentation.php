@@ -50,7 +50,7 @@ function aaron_docs() {
 	<div class="doc-box" id="aaron-widgets">
 		<h3><?php _e('Widget areas','aaron' ); ?></h3>
 		<?php _e('The theme has two widget areas that can hold <b>any number of widgets</b>. Both areas are empty unless they have widgets in them. The footer widget area is shown on all pages.','aaron' ); ?><br>
-		<?php _e('There is also one additional widget area in the footer below the social menu, where you can place a text widget and add your copyright text.');?> <br><br>
+		<?php _e('There is also one additional widget area in the footer below the social menu, where you can place a text widget and add your copyright text.','aaron' );?> <br><br>
 		<b><?php _e('Advanced','aaron' ); ?></b><br>
 		<?php _e('By default, the sidebar is shown on the right hand side in single post view, archives, the search page and the 404 page.<br>
 		If you open the customizer and go to the Advanced settings, you will find options for showing the sidebar on more pages.','aaron' ); ?>
