@@ -216,13 +216,13 @@ It will be saved in the both \'.wxt\' and \'.wxb\' settings files.', 'weaver-xtr
 
 // ===================================== include other stuff ==========================
 
-require_once( get_template_directory() . '/includes/lib-admin.php' );
-require_once( get_template_directory() . '/includes/lib-admin-part2.php' );
+require_once( get_template_directory().WEAVERX_ADMIN_DIR.'/lib-admin.php' );
+require_once( get_template_directory().WEAVERX_ADMIN_DIR.'/lib-admin-part2.php' );
 
-require_once( get_template_directory() . '/includes/admin-subthemes.php' );
-require_once( get_template_directory() . '/includes/admin-mainopts.php' );
-require_once( get_template_directory() . '/includes/admin-advancedopts.php' );
-require_once( get_template_directory() . '/includes/admin-plus.php' );
-require_once( get_template_directory() . '/includes/admin-saverestore.php' );
-require_once( get_template_directory() . '/includes/admin-help.php' );
+require_once( get_template_directory().WEAVERX_ADMIN_DIR.'/admin-subthemes.php' );
+require_once( get_template_directory().WEAVERX_ADMIN_DIR.'/admin-mainopts.php' );
+require_once( get_template_directory().WEAVERX_ADMIN_DIR.'/admin-advancedopts.php' );
+require_once( get_template_directory().WEAVERX_ADMIN_DIR.'/admin-plus.php' );
+require_once( get_template_directory().WEAVERX_ADMIN_DIR.'/admin-saverestore.php' );
+require_once( get_template_directory().WEAVERX_ADMIN_DIR.'/admin-help.php' );
 ?>

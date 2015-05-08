@@ -18,7 +18,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
 /* Version Information */
 
-define ('WEAVERX_VERSION','1.2');
+define ('WEAVERX_VERSION','1.2.1');
 define ('WEAVERX_VERSION_ID', 100);
 define ('WEAVERX_THEMENAME', 'Weaver Xtreme');
 define ('WEAVERX_THEMEVERSION', WEAVERX_THEMENAME . ' ' . WEAVERX_VERSION);
@@ -33,6 +33,7 @@ else
 
 
 /* utility definitions - should not be edited */
+define ('WEAVERX_ADMIN_DIR', '/admin');
 define ('WEAVERX_DEFAULT_THEME','plain');
 define ('WEAVERX_SLUG', 'weaver-xtreme');
 define ('WEAVERX_MINIFY','.min');	// dev: '', production: '.min'

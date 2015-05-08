@@ -151,4 +151,8 @@ with testing and feature suggestions.
 * Fix: Fatal error bug when Page with Post compact post option set
 * Fix: Infobar centering
 
+= Version 1.2.1 =
+* Tweak: Beginning of Admin code reorganization - moved admin files to new directories
+* Fix: Mobile menu bug on non-SmartMenus
+
 = *** Release Notes also found on Help Tab  *** =

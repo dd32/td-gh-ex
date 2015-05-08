@@ -94,6 +94,10 @@ function weaverx_admin_help() {
 * Fix: IE8 compatibility script loading
 * Fix: Fatal error bug when Page with Post compact post option set
 * Fix: Infobar centering
+
+= Version 1.2.1 =
+* Tweak: Beginning of Admin code reorganization - moved admin files to new directories
+* Fix: Mobile menu bug on non-SmartMenus
 </pre>
 </p>
 	</div>

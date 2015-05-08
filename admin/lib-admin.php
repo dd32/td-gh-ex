@@ -25,6 +25,57 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
    do not change individual settings, but take actions such as save/restore or setting a subtheme.
 */
 
+// # RUNTIME SAPI HELPER FUNCTIONS ============================================
+
+function weaverx_sapi_options_init() {
+	/* this will initialize the SAPI stuff, must be called from the admin_init cb function .
+	In reality, we really only need to register one setting - 'weaverx_main_settings_group',
+	and the settings will be saved in the WP DB as 'weaverx_main_settings'. The SAPI uses
+	the name param of any <input> fields to figure out where to store the input value.
+
+	The validation will have to scan the ENTIRE list of options and lookup the kind of
+	validation each parameter needs.
+	*/
+
+	register_setting('weaverx_settings_group',	/* the group name of our settings */
+	apply_filters('weaverx_options','weaverx_settings'),	/* the get_option name */
+	'weaverx_validate_cb');			/* a validation call back */
+}
+
+function weaverx_validate_cb($in) {
+	// keep the definition in runtime, load as needed at admin time
+	//require_once( get_template_directory() . '/includes/lib-admin.php' );
+	//require_once( get_template_directory() . '/includes/lib-admin-part2.php' );
+
+	return weaverx_validate_all_options($in);
+}
+
+/*
+	================= nonce helpers =====================
+*/
+function weaverx_submitted($submit_name) {
+	// do a nonce check for each form submit button
+	// pairs 1:1 with weaverx_nonce_field
+	$nonce_act = $submit_name.'_act';
+	$nonce_name = $submit_name.'_nonce';
+
+	if (isset($_POST[$submit_name])) {
+		if (isset($_POST[$nonce_name]) && wp_verify_nonce($_POST[$nonce_name],$nonce_act)) {
+			return true;
+		} else {
+			die(__('WARNING: invalid form submit detected. Probably caused by session time-out, or, rarely, a failed security check. Please contact WeaverTheme.com if you continue to receive this message.', 'weaver-xtreme' /*adm*/) . '(' . $submit_name . ')');
+		}
+	} else {
+		return false;
+	}
+}
+
+function weaverx_nonce_field($submit_name,$echo = true) {
+	// pairs 1:1 with sumbitted
+	// will be one for each form submit button
+
+	return wp_nonce_field($submit_name.'_act',$submit_name.'_nonce',$echo);
+}
 
 /*
 	================= Main SAPI helper functions =================
