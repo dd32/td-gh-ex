@@ -24,8 +24,8 @@
 			</ul>
 	<?php  else : ?>
 		<article class="noposts">
-			<h2>404 - Content Not Found</h2>
-			<p>We don't seem to be able to find the content you have requested - why not try a search below?</p>
+			<h2><?php _e("404 - Content Not Found","Commodore"); ?></h2>
+			<p><?php _e("We don't seem to be able to find the content you have requested - why not try a search below?","Commodore"); ?></p>
 			<?php  get_search_form(); ?>
 		</article>
 	<?php  endif; ?>

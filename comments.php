@@ -1,5 +1,5 @@
 <?php  if (post_password_required() ) { ?>
-  <p class="nocomments">This post is password protected. Enter the password to view comments.</p>
+  <p class="nocomments"><?php _e("This post is password protected. Enter the password to view comments.","Commodore"); ?></p>
 <?php 
 		return;
 	}
@@ -24,7 +24,7 @@
   <?php  else :// comments are closed  ?>
     <?php  if(!is_page()) { ?>
       <!-- If comments are closed. -->
-      <p class="nocomments">Comments are closed.</p>
+      <p class="nocomments"><?php _e("Comments are closed.","Commodore"); ?></p>
     <?php  } ?>
   <?php  endif; ?>
     <hr class="clearfix" />

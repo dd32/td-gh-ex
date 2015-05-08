@@ -33,6 +33,6 @@
 
 	?>
 	<?php  endwhile; else : ?>
-		<p>Sorry, no posts matched your criteria.</p>
+		<p><?php _e("Sorry, no posts matched your criteria.","Commodore"); ?></p>
 	<?php  endif; ?>
 <?php  get_footer(); ?>

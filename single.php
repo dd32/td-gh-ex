@@ -15,10 +15,10 @@
 				<?php  the_content(__('Read the rest of this entry &raquo;','Commodore')); ?>
 					<hr class="clearfix" />
         			<?php  the_tags('<p class="post_tags"><mark>Tagged with:</mark> ', ' | ' ,  '</p>'); ?>
-			        <p class="post_categories"><mark>Categorized as:</mark> <?php  the_category(' | '); ?> </p>
+			        <p class="post_categories"><mark><?php _e("Categorized as:","Commodore"); ?></mark> <?php  the_category(' | '); ?> </p>
 					  <?php  edit_post_link(__('Edit This Post','Commodore'), '<p class="postmetadata">', '</p>'); ?>
   				  <?php  if(!comments_open()) { ?>
-              <p>Comments are disabled on this post</p>
+              <p><?php _e("Comments are disabled on this post","Commodore"); ?></p>
             <?php  } ?>
 					<hr class="clearfix" />
 			        <?php  wp_link_pages('before=<p class="pagination">&after=</p>&next_or_number=number&pagelink=page %'); ?>
@@ -26,6 +26,6 @@
 			</article>
 			<?php  comments_template(); ?>
 	<?php  endwhile; else : ?>
-		<p>Sorry, no posts matched your criteria.</p>
+		<p><?php _e("Sorry, no posts matched your criteria.","Commodore"); ?></p>
 	<?php  endif; ?>
 <?php  get_footer(); ?>

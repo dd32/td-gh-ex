@@ -1,7 +1,7 @@
 <?php  get_header(); ?>
 	<article id="search-results">
 	<?php  if (have_posts()) : ?>
-		<h2 class="pagetitle">Search Results for &quot;<?php  the_search_query(); ?>&quot;</h2>
+		<h2 class="pagetitle"><?php _e("Search Results for","Commodore"); ?> &quot;<?php  the_search_query(); ?>&quot;</h2>
 		<?php 
 	while (have_posts()) :
 	the_post();
@@ -16,8 +16,8 @@
 			<div class="alignright"><?php  previous_posts_link(__('Newer Entries &raquo;','Commodore'))  ?></div>
 		</div>
 	<?php  else : ?>
-		<h2>READY.<br><?php  the_search_query(); ?></h2>
-		<h2 class="center">?SYNTAX&nbsp;&nbsp;ERROR<br>READY.</h2>
+		<h2><?php _e("READY.","Commodore"); ?><br><?php  the_search_query(); ?></h2>
+		<h2 class="center"><?php _e("SYNTAX&nbsp;&nbsp;ERROR<br>READY.","Commodore"); ?></h2>
 	<?php  endif; ?>
 <?php 
 	
