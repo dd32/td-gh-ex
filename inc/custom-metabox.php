@@ -163,51 +163,23 @@ function accesspress_mag_post_settings_callback()
             <td>
             <?php  
                foreach ($accesspress_mag_sidebar_layout as $field) {  
-                            $accesspress_mag_sidebar_metalayout = get_post_meta( $post->ID, 'accesspress_mag_sidebar_layout', true ); ?>
-            
-                            <div class="radio-image-wrapper" style="float:left; margin-right:30px;">
-                            <label class="description">
-                            <span><img src="<?php echo esc_url( $field['thumbnail'] ); ?>" alt="" /></span></br>
-                            <input type="radio" name="accesspress_mag_sidebar_layout" value="<?php echo $field['value']; ?>" <?php checked( $field['value'], $accesspress_mag_sidebar_metalayout ); if(empty($accesspress_mag_sidebar_metalayout) && $field['value']=='global-sidebar'){ echo "checked='checked'";} ?>/>&nbsp;<?php echo $field['label']; ?>
-                            </label>
-                            </div>
-                            <?php } // end foreach 
-                            ?>
-                            <div class="clear"></div>
+                $accesspress_mag_sidebar_metalayout = get_post_meta( $post->ID, 'accesspress_mag_sidebar_layout', true ); ?>
+
+                <div class="radio-image-wrapper" style="float:left; margin-right:30px;">
+                <label class="description">
+                <span><img src="<?php echo esc_url( $field['thumbnail'] ); ?>" alt="" /></span></br>
+                <input type="radio" name="accesspress_mag_sidebar_layout" value="<?php echo $field['value']; ?>" <?php checked( $field['value'], $accesspress_mag_sidebar_metalayout ); if(empty($accesspress_mag_sidebar_metalayout) && $field['value']=='global-sidebar'){ echo "checked='checked'";} ?>/>&nbsp;<?php echo $field['label']; ?>
+                </label>
+                </div>
+                <?php } // end foreach 
+                ?>
+                <div class="clear"></div>
             </td>
             </tr>
             <tr>
                 <td><em class="f13"><?php _e( 'You can set up the sidebar content ', 'accesspress-mag' );?> <a href="<?php echo admin_url('/themes.php?page=options-framework'); ?>"><?php _e( 'here', 'accesspress-mag' )?></a></em></td>
             </tr>
         </table>
-</div>
-<div class="source-section">
-    <h3><?php _e( 'Article source section', 'accesspress-mag' );?></h3>
-    <?php 
-        $apmag_post_source_name = get_post_meta($post->ID, 'post_source_name', true);
-        $apmag_post_source_url = get_post_meta($post->ID, 'post_source_url', true); 
-        $apmag_post_via_name = get_post_meta($post->ID, 'post_via_name', true); 
-        $apmag_post_via_url = get_post_meta($post->ID, 'post_via_url', true);  
-    ?>
-    <p class="single-source-field">
-        <span class="field-label"><?php _e( 'Source Name :', 'accesspress-mag' );?></span>
-        <input type="text" name="post_source_name" value="<?php if(!empty($apmag_post_source_name)){echo $apmag_post_source_name;}?>" />
-        <span class="field-info"><?php _e( ' Name of the source', 'accesspress-mag' );?></span>
-    </p>
-    <p class="single-source-field">
-        <span class="field-label"><?php _e( 'Source URL :', 'accesspress-mag' );?></span>
-        <input type="text" name="post_source_url" value="<?php if(!empty($apmag_post_source_url)){echo $apmag_post_source_url;}?>" />
-        <span class="field-info"><?php _e( ' URL of the source', 'accesspress-mag' );?></span>
-    </p>
-    <p class="single-source-field">
-        <span class="field-label"><?php _e( 'Via Name :', 'accesspress-mag' );?></span>
-        <input type="text" name="post_via_name" value="<?php if(!empty($apmag_post_via_name)){echo $apmag_post_via_name;}?>" />
-    </p>
-    <p class="single-source-field">
-        <span class="field-label"><?php _e( 'Via Url :', 'accesspress-mag' );?></span>
-        <input type="text" name="post_via_url" value="<?php if(!empty($apmag_post_via_url)){echo $apmag_post_via_url;}?>" />
-    </p>
-    
 </div>
 
 <?php
@@ -243,7 +215,7 @@ function accesspress_mag_page_settings_callback()
             </td>
             </tr>
             <tr>
-                <td><em class="f13">You can set up the sidebar content <a href="<?php echo admin_url('/themes.php?page=options-framework'); ?>">here</a></em></td>
+                <td><em class="f13"><?php __e( 'You can set up the sidebar content', 'accesspress-mag' );?> <a href="<?php echo esc_url( admin_url('/themes.php?page=options-framework') ); ?>"><?php _e( 'here', 'accesspress-mag' );?></a></em></td>
             </tr>
         </table>
 
@@ -297,47 +269,7 @@ function accesspress_mag_save_post_settings( $post_id ) {
         }
      } // end foreach   
      
-       $post_source_name = get_post_meta($post->ID, 'post_source_name', true);
-       $post_source_url = get_post_meta($post->ID, 'post_source_url', true); 
-       $post_via_name = get_post_meta($post->ID, 'post_via_name', true); 
-       $post_via_url = get_post_meta($post->ID, 'post_via_url', true); 
-       $stz_source_name = sanitize_text_field($_POST['post_source_name']);  
-       $stz_source_url = esc_url($_POST['post_source_url']);
-       $stz_via_name = sanitize_text_field($_POST['post_via_name']);
-       $stz_via_url = esc_url($_POST['post_via_url']); 
-   
-   //update data for source name
-        if ( $stz_source_name && '' == $stz_source_name ){
-            add_post_meta( $post_id, 'post_source_name', $stz_source_name );
-        }elseif ($stz_source_name && $stz_source_name != $post_source_name) {  
-            update_post_meta($post_id, 'post_source_name', $stz_source_name);  
-        } elseif ('' == $stz_source_name && $post_source_name) {  
-            delete_post_meta($post_id,'post_source_name', $post_source_name);  
-        }
-   //update data for source url
-        if ( $stz_source_url && '' == $stz_source_url ){
-            add_post_meta( $post_id, 'post_source_url', $stz_source_url );
-        }elseif ($stz_source_url && $stz_source_url != $post_source_url) {  
-            update_post_meta($post_id, 'post_source_url', $stz_source_url);  
-        } elseif ('' == $stz_source_url && $post_source_url) {  
-            delete_post_meta($post_id,'post_source_url', $post_source_url);  
-        }
-    //update data for via name
-        if ( $stz_via_name && '' == $stz_via_name ){
-            add_post_meta( $post_id, 'post_via_name', $stz_via_name );
-        }elseif ($stz_via_name && $stz_via_name != $post_via_name) {  
-            update_post_meta($post_id, 'post_via_name', $stz_via_name);  
-        } elseif ('' == $stz_via_name && $post_via_name) {  
-            delete_post_meta($post_id,'post_via_name', $post_via_name);  
-        }
-   //update data for via url
-        if ( $stz_via_url && '' == $stz_via_url ){
-            add_post_meta( $post_id, 'post_via_url', $stz_via_url );
-        }elseif ($stz_via_url && $stz_via_url != $post_via_url) {  
-            update_post_meta($post_id, 'post_via_url', $stz_via_url);  
-        } elseif ('' == $stz_via_url && $post_via_url) {  
-            delete_post_meta($post_id,'post_via_url', $post_via_url);  
-        }
+       
 }
 add_action('save_post', 'accesspress_mag_save_post_settings');
 

@@ -49,8 +49,8 @@
         </div>
 </div>
 <?php
-$apmag_theme_option = get_option( 'accesspress-mag-theme' );
-if( empty( $apmag_theme_option )){
+$accesspress_mag_theme_option = get_option( 'accesspress-mag-theme' );
+if( empty( $accesspress_mag_theme_option )){
 ?>
 
 <script type="text/javascript">

@@ -21,16 +21,16 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'accesspress-mag' ); ?></a>
     <?php 
-        $apmag_transparent_header = of_get_option( 'logo_upload' );
-        $apmag_logo = of_get_option( 'logo_upload' );
-        $apmag_logo_setting = of_get_option( 'logo_setting' );
+        $accesspress_mag_transparent_header = of_get_option( 'logo_upload' );
+        $accesspress_mag_logo = of_get_option( 'logo_upload' );
+        $accesspress_mag_logo_setting = of_get_option( 'logo_setting' );
         $branding_class = '';
-        $apmag_top_menu_switch = of_get_option( 'top_menu_switch' );
-        $apmag_top_menu = of_get_option( 'top_menu_select' );
-        $apmag_top_menu_right = of_get_option( 'top_right_menu_select' );
-        $apmag_logo_alt = of_get_option( 'logo_alt' );
-        $apmag_logo_title = of_get_option( 'logo_title' );
-        switch($apmag_logo_setting){
+        $accesspress_mag_top_menu_switch = of_get_option( 'top_menu_switch' );
+        $accesspress_mag_top_menu = of_get_option( 'top_menu_select' );
+        $accesspress_mag_top_menu_right = of_get_option( 'top_right_menu_select' );
+        $accesspress_mag_logo_alt = of_get_option( 'logo_alt' );
+        $accesspress_mag_logo_title = of_get_option( 'logo_title' );
+        switch($accesspress_mag_logo_setting){
             case 'image':
             $branding_class = 'logo_only';
             break;
@@ -43,13 +43,13 @@
             $branding_class = "logo_with_text";
             break;
         }
-        //var_dump($apmag_top_menu); 
+        //var_dump($accesspress_mag_top_menu); 
     ?>  
 	
     <header id="masthead" class="site-header" role="banner">
     
-            <?php if ($apmag_top_menu_switch=='1'):?> 
-            <?php if(empty($apmag_top_menu)):?>
+            <?php if ($accesspress_mag_top_menu_switch=='1'):?> 
+            <?php if(empty($accesspress_mag_top_menu)):?>
                 <div class="top-header-menu"> 
                 <div class="apmag-container">
                     <ul class="">
@@ -64,13 +64,13 @@
                 <div class="apmag-container">     
                     <nav id="top-navigation" class="top-main-navigation" role="navigation">
                                 <button class="menu-toggle hide" aria-controls="menu" aria-expanded="false"><?php _e( 'Top Menu', 'accesspress-mag' ); ?></button>
-                                <?php wp_nav_menu( array( 'menu' => $apmag_top_menu ) ); ?>
+                                <?php wp_nav_menu( array( 'menu' => $accesspress_mag_top_menu ) ); ?>
                     </nav><!-- #site-navigation -->
                
-                <?php if(!empty($apmag_top_menu_right)): ?>
+                <?php if(!empty($accesspress_mag_top_menu_right)): ?>
                     <nav id="top-right-navigation" class="top-right-main-navigation" role="navigation">
                                 <button class="menu-toggle hide" aria-controls="menu" aria-expanded="false"><?php _e( 'Top Menu Right', 'accesspress-mag' ); ?></button>
-                                <?php wp_nav_menu( array( 'menu' => $apmag_top_menu_right ) ); ?>
+                                <?php wp_nav_menu( array( 'menu' => $accesspress_mag_top_menu_right ) ); ?>
                     </nav><!-- #site-navigation -->
                 <?php endif ;?>           
                 
@@ -80,16 +80,16 @@
              <?php endif ;?>
         <div class="logo-ad-wrapper clearfix">
             <div class="apmag-container">
-        		<div class="site-branding <?php echo $branding_class ;?>">
+        		<div class="site-branding <?php echo esc_attr( $branding_class ) ;?>">
                             <?php 
-                                if( $apmag_logo_setting == 'image' || $apmag_logo_setting == 'image_text') :
-                                if (!empty($apmag_logo)): ?>
+                                if( $accesspress_mag_logo_setting == 'image' || $accesspress_mag_logo_setting == 'image_text') :
+                                if (!empty($accesspress_mag_logo)): ?>
                                   <div class="sitelogo-wrap">  
-                                    <a itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo $apmag_logo?>" alt="<?php echo $apmag_logo_alt ?>" title="<?php echo $apmag_logo_title ?>" /></a>
+                                    <a itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo $accesspress_mag_logo?>" alt="<?php echo $accesspress_mag_logo_alt ?>" title="<?php echo $accesspress_mag_logo_title ?>" /></a>
                                     <meta itemprop="name" content="<?php bloginfo( 'name' )?>" />
                                   </div>
                             <?php endif; endif;
-                                if( $apmag_logo_setting == 'text' || $apmag_logo_setting == 'image_text' ):
+                                if( $accesspress_mag_logo_setting == 'text' || $accesspress_mag_logo_setting == 'image_text' ):
                             ?> 
                                  <div class="sitetext-wrap">  
                                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
@@ -99,8 +99,8 @@
                                 </div>
                             <?php endif;?>
                             <?php 
-                                $apmag_theme_option = get_option( 'accesspress-mag-theme' );
-                                if( empty( $apmag_theme_option )){
+                                $accesspress_mag_theme_option = get_option( 'accesspress-mag-theme' );
+                                if( empty( $accesspress_mag_theme_option )){
                             ?>
                                 <div class="sitetext-wrap">  
                                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
@@ -114,9 +114,9 @@
                 
                 <div class="header-ad">
                     <?php 
-                        $apmag_header_ad = of_get_option( 'value_header_ad' );
-                        if(!empty($apmag_header_ad)){
-                            echo $apmag_header_ad;
+                        $accesspress_mag_header_ad = of_get_option( 'value_header_ad' );
+                        if(!empty($accesspress_mag_header_ad)){
+                            echo esc_html( $accesspress_mag_header_ad );
                         } else {
                             echo '<img src="'. esc_url( get_template_directory_uri().'/images/demo-images/728-90.png' ).'" />';
                         } 

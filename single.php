@@ -11,12 +11,12 @@ $accesspress_mag_show_breadcrumbs = of_get_option( 'show_hide_breadcrumbs' );
 $accesspress_mag_show_breadcrumbs_on_post = of_get_option( 'show_post_breadcrumbs' );
 $post_template_value =( of_get_option( 'global_post_template' ) == 'default-template' ) ? 'single' : 'style1';
 
-$apmag_post_template = get_post_meta( $post -> ID, 'accesspress_mag_post_template_layout', true );
-if($apmag_post_template=='global-template'){
+$accesspress_mag_post_template = get_post_meta( $post -> ID, 'accesspress_mag_post_template_layout', true );
+if($accesspress_mag_post_template=='global-template'){
     $content_value = $post_template_value;
 } 
 else {
-    if( $apmag_post_template == 'default-template' ){
+    if( $accesspress_mag_post_template == 'default-template' ){
         $content_value = 'single';
     } else {
         $content_value = 'style1';
@@ -62,8 +62,8 @@ else {
              ?>
 
 			<?php
-                $apmag_disable_comment_post = of_get_option( 'disable_comments_sitewide' );
-                if($apmag_disable_comment_post!='1'){
+                $accesspress_mag_disable_comment_post = of_get_option( 'disable_comments_sitewide' );
+                if($accesspress_mag_disable_comment_post!='1'){
 				// If comments are open or we have at least one comment, load up the comment template
 				if ( comments_open() || get_comments_number() ) :
 					comments_template();

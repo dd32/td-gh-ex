@@ -32,9 +32,9 @@ endif;
 
 function accesspress_header_scripts(){
     
-    $apmag_favicon = of_get_option('favicon_upload');
-    if (!empty($apmag_favicon)) {
-        echo '<link rel="icon" type="image/png" href="' . $apmag_favicon . '">';
+    $accesspress_mag_favicon = of_get_option('favicon_upload');
+    if (!empty($accesspress_mag_favicon)) {
+        echo '<link rel="icon" type="image/png" href="' . esc_url( $accesspress_mag_favicon ) . '">';
     }
 }
 
@@ -53,10 +53,6 @@ add_action('wp_head', 'accesspress_header_scripts');
 /*-----------------------Homepage slider--------------------------*/
 function accesspress_mag_slider_cb(){
         $slider_category = of_get_option( 'homepage_slider_category' );
-        /*
-        $trans_continue = of_get_option( 'trans_continue_reading' );
-        if( empty( $trans_continue ) ){ $trans_continue = 'Continue Reading'; }
-        */
         if(empty($slider_category)){
             $slider_category=''; }    
         $slide_count = of_get_option( 'count_slides' );
@@ -86,9 +82,9 @@ function accesspress_mag_slider_cb(){
                 $slide_counter++;                                                            
                 $slider_query->the_post();
                 $post_image_id = get_post_thumbnail_id();
-                $post_big_image_path = wp_get_attachment_image_src($post_image_id,'slider-big-thumb',true);
-                $post_small_image_path = wp_get_attachment_image_src($post_image_id,'slider-small-thumb',true);
-                $post_image_alt = get_post_meta($post_image_id,'_wp_attachment_image_alt',true);
+                $post_big_image_path = wp_get_attachment_image_src( $post_image_id, 'accesspress-mag-slider-big-thumb', true );
+                $post_small_image_path = wp_get_attachment_image_src( $post_image_id, 'accesspress-mag-slider-small-thumb', true );
+                $post_image_alt = get_post_meta( $post_image_id, '_wp_attachment_image_alt', true );
                 if($slide_counter%4==1):
             ?>                        
                     <div class="slider">
@@ -99,10 +95,10 @@ function accesspress_mag_slider_cb(){
                         <a href="<?php echo the_permalink();?>">
                         <div class="big_slide wow fadeInLeft">
                             <div class="big-cat-box">
-                                <span class="cat-name"><?php $cat_name = get_the_category(); echo $cat_name[0]->name; ?></span>
+                                <span class="cat-name"><?php $cat_name = get_the_category(); echo esc_attr( $cat_name[0]->name ); ?></span>
                                 <?php do_action('accesspress_mag_post_meta');?>
                             </div>
-                            <div class="slide-image"><img src="<?php echo $post_big_image_path[0];?>" alt="<?php echo esc_attr($post_image_alt);?>" /></div>
+                            <div class="slide-image"><img src="<?php echo esc_url( $post_big_image_path[0] );?>" alt="<?php echo esc_attr($post_image_alt);?>" /></div>
                             <?php if($slide_info==1):?>
                             <div class="mag-slider-caption">
                               <h3 class="slide-title"><?php the_title();?></h3>
@@ -113,8 +109,8 @@ function accesspress_mag_slider_cb(){
             <?php else : if($slide_counter%4==2){echo '<div class="small-slider-wrapper wow fadeInRight">';}?>                
                        <a href="<?php echo the_permalink();?>">
                         <div class="small_slide">
-                            <span class="cat-name"><?php $cat_name = get_the_category(); echo $cat_name[0]->name; ?></span>
-                            <div class="slide-image"><img src="<?php echo $post_small_image_path[0];?>" alt="<?php echo esc_attr($post_image_alt);?>" /></div>
+                            <span class="cat-name"><?php $cat_name = get_the_category(); echo esc_attr( $cat_name[0]->name ); ?></span>
+                            <div class="slide-image"><img src="<?php echo esc_url( $post_small_image_path[0] );?>" alt="<?php echo esc_attr($post_image_alt);?>" /></div>
                             <div class="mag-small-slider-caption">
                               <?php if($slide_info==1):?><h3 class="slide-title"><?php the_title();?></h3><?php endif; ?>
                             </div>                            
@@ -172,7 +168,7 @@ function accesspress_mag_post_review_cb(){
         $total_review = $total_review/$count;
         //$final_value = round( $total_review, 1, PHP_ROUND_HALF_UP);
         $final_value = ceiling($total_review, 0.5) ;
-        echo display_product_rating($final_value);
+        echo esc_html( display_product_rating($final_value) );
     }
 }
 add_action( 'accesspress_mag_post_review', 'accesspress_mag_post_review_cb', 10 );
@@ -184,7 +180,7 @@ function accesspress_mag_single_post_review_cb(){
     $trans_summary = of_get_option( 'trans_summary' );
     if( empty( $trans_summary ) ){ $trans_summary = __( 'Summary', 'accesspress-mag' ); }
     $trans_review = of_get_option( 'trans_review_overview' );
-    if( empty( $trans_review ) ){ $trans_review = _( 'Review overview', 'accesspress-mag' ) ; }
+    if( empty( $trans_review ) ){ $trans_review = __( 'Review overview', 'accesspress-mag' ) ; }
     $post_review_type = get_post_meta( $post -> ID, 'product_review_option', true );
     if($post_review_type!='norate'){
         $product_rating_description = get_post_meta($post->ID, 'product_rate_description', true);
@@ -205,7 +201,7 @@ function accesspress_mag_single_post_review_cb(){
                     ?>
                       <div class="review-featured-wrap clearfix">  
                         <span class="review-featured-name"><?php echo esc_attr( $featured_name ); ?></span>
-                        <span class="stars-count"><?php display_product_rating( $star_value );?></span>
+                        <span class="stars-count"><?php esc_html( display_product_rating( $star_value ) );?></span>
                       </div>
                     <?php
                         }
@@ -221,7 +217,7 @@ function accesspress_mag_single_post_review_cb(){
                 </div>
                 <div class="total-reivew-wrapper">
                     <span class="total-value"><?php echo esc_attr( $final_value ) ;?></span>
-                    <span class="stars-count"><?php display_product_rating( $final_value );?></span>
+                    <span class="stars-count"><?php esc_html( display_product_rating( $final_value ) );?></span>
                 </div>
             </div>
         </div>
@@ -314,21 +310,21 @@ remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 /*-----------------Dynamic Css-------------------*/
 
 function accesspress_pro_custom_css(){
-    $apmag_bg_image = of_get_option( 'site_background' );
-    $apmag_bg_color = of_get_option( 'site_background_color' );
-    $apmag_bg_reapet = of_get_option( 'repeat_background' );
-    $apmag_bg_position = of_get_option( 'position_background' );
-    $apmag_bg_attachment = of_get_option( 'attached_background' );
-    $apmag_bg_size = of_get_option( 'stretch_background' );
+    $accesspress_mag_bg_image = of_get_option( 'site_background' );
+    $accesspress_mag_bg_color = of_get_option( 'site_background_color' );
+    $accesspress_mag_bg_reapet = of_get_option( 'repeat_background' );
+    $accesspress_mag_bg_position = of_get_option( 'position_background' );
+    $accesspress_mag_bg_attachment = of_get_option( 'attached_background' );
+    $accesspress_mag_bg_size = of_get_option( 'stretch_background' );
 		echo '<style type="text/css">';
-            if( !empty ( $apmag_bg_image )){
-                echo "body{background:url(".$apmag_bg_image.") ".$apmag_bg_reapet." ".$apmag_bg_attachment." ".$apmag_bg_position."}";    
-            } elseif( !empty ( $apmag_bg_color ) ) {
-                echo "body{background-color:".$apmag_bg_color." !important}";
+            if( !empty ( $accesspress_mag_bg_image )){
+                echo "body{background:url(".esc_url( $accesspress_mag_bg_image) .") ".esc_html( $accesspress_mag_bg_reapet )." ".esc_html( $accesspress_mag_bg_attachment )." ".esc_html( $accesspress_mag_bg_position )."}";    
+            } elseif( !empty ( $accesspress_mag_bg_color ) ) {
+                echo "body{background-color:".esc_html( $accesspress_mag_bg_color )." !important}";
             } else {
                 
             }
-            if($apmag_bg_size==1){
+            if($accesspress_mag_bg_size==1){
                 echo "body{background-size:cover}";
             }  
 		echo '</style>';
@@ -420,7 +416,7 @@ function accesspress_mag_post_meta_cb(){
         echo '<span class="comment_count"><i class="fa fa-comments"></i>'.esc_attr( $post_comment_count ).'</span>';
     }
     if($show_post_views==1){
-        echo '<span class="apmag-post-views"><i class="fa fa-eye"></i>'.getPostViews(get_the_ID()).'</span>';
+        echo '<span class="apmag-post-views"><i class="fa fa-eye"></i>'.esc_html( getPostViews(get_the_ID()) ).'</span>';
     }
 }
 add_action( 'accesspress_mag_post_meta', 'accesspress_mag_post_meta_cb', 10 );
@@ -457,7 +453,7 @@ function accesspress_mag_home_posted_on_cb(){
         echo '<span class="comment_count"><i class="fa fa-comments"></i>'.esc_attr( $post_comment_count ).'</span>';
     }
     if($show_post_views==1){
-        echo '<span class="apmag-post-views"><i class="fa fa-eye"></i>'.getPostViews(get_the_ID()).'</span>';
+        echo '<span class="apmag-post-views"><i class="fa fa-eye"></i>'.esc_html( getPostViews(get_the_ID()) ).'</span>';
     }
 }
 add_action( 'accesspress_mag_home_posted_on', 'accesspress_mag_home_posted_on_cb', 10 );
@@ -657,11 +653,11 @@ add_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 10, 0 )
 
 /*------------Remove bbpress breadcrumbs-----------------------*/
 
-function apmag_bbp_no_breadcrumb ($arg){
+function accesspress_mag_bbp_no_breadcrumb ($arg){
     return true ;
 }
 
-add_filter('bbp_no_breadcrumb', 'apmag_bbp_no_breadcrumb' );
+add_filter('bbp_no_breadcrumb', 'accesspress_mag_bbp_no_breadcrumb' );
 
 /*--------------Install Required Plugins----------------------*/
 

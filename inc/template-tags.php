@@ -170,15 +170,15 @@ function accesspress_mag_entry_footer() {
     }
     if('post'==get_post_type() && !is_tag() ){
         $trans_tagged = of_get_option( 'trans_tagged' );
-        $apmag_show_tags = of_get_option('show_tags_post');
-         if($apmag_show_tags!='0'){
+        $accesspress_mag_show_tags = of_get_option('show_tags_post');
+         if($accesspress_mag_show_tags!='0'){
             /* translators: used between list items, there is a space after the comma */
     		$tags_list = get_the_tag_list( '', __( ' ', 'accesspress-mag' ) );
     		if ( $tags_list ) {
     		  if( empty( $trans_tagged ) ){
     		      printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'accesspress-mag' ) . '</span>', $tags_list );
     		  } else {
-    		      printf( '<span class="tags-links">' .$trans_tagged.' %1$s </span>', $tags_list );
+    		      printf( '<span class="tags-links">' .esc_attr( $trans_tagged ).' %1$s </span>', $tags_list );
     		  }
     		}
         }
@@ -188,7 +188,7 @@ function accesspress_mag_entry_footer() {
 }
 endif;
 
-if ( ! function_exists( 'apmag_the_archive_title' ) ) :
+if ( ! function_exists( 'accesspress_mag_the_archive_title' ) ) :
 /**
  * Shim for `the_archive_title()`.
  *
@@ -199,7 +199,7 @@ if ( ! function_exists( 'apmag_the_archive_title' ) ) :
  * @param string $before Optional. Content to prepend to the title. Default empty.
  * @param string $after  Optional. Content to append to the title. Default empty.
  */
-function apmag_the_archive_title( $before = '', $after = '' ) {
+function accesspress_mag_the_archive_title( $before = '', $after = '' ) {
 	if ( is_category() ) {
 		$title = sprintf( __( '%s', 'accesspress-mag' ), single_cat_title( '', false ) );
 	} elseif ( is_tag() ) {

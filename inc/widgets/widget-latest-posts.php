@@ -81,7 +81,7 @@ class Accesspress_mag_register_latest_posts extends WP_Widget {
                                 <a href="<?php the_permalink();?>">
                                     <?php 
                                         $post_title = get_the_title();
-                                            echo accesspress_letter_count( $post_title, 20 )
+                                            echo esc_html( accesspress_letter_count( $post_title, 20 ) );
                                     ?>
                                 </a>
                             </h3>

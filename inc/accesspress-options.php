@@ -385,7 +385,7 @@ function optionsframework_options() {
 
     $options[] = array(
             'name' => __( 'Your Header Ad', 'accesspress-mag' ),
-            'desc' => __( 'Paste your ad code here. Google adsense will be made responsive automatically', 'accesspress-mag' ),
+            'desc' => __( 'Use your banner image (728x90) ( &lt; a href="(your image link)"&gt; &lt; img scr="(your image source)" /&gt; &lt;/a&gt; )', 'accesspress-mag' ),
             'id' => 'value_header_ad',
             'std' => __('', 'accesspress-mag'),
             'type' => 'textarea' 
@@ -402,7 +402,7 @@ function optionsframework_options() {
             );
     $options[] = array(
             'name' => __( 'Your Article Ad', 'accesspress-mag' ),
-            'desc' => __( 'Paste your ad code here. Google adsense will be made responsive automatically', 'accesspress-mag' ),
+            'desc' => __( 'Use your banner image (728x90) ( &lt; a href="(your image link)"&gt; &lt; img scr="(your image source)" /&gt; &lt;/a&gt; )', 'accesspress-mag' ),
             'id' => 'value_article_ad',
             'std' => __('', 'accesspress-mag'),
             'type' => 'textarea' 
@@ -417,21 +417,21 @@ function optionsframework_options() {
             );
     $options[] = array(
             'name' => __( 'Your Homepage Inline Ad', 'accesspress-mag' ),
-            'desc' => __( 'Paste your ad code here. Google adsense will be made responsive automatically', 'accesspress-mag' ),
+            'desc' => __( 'Use your banner image (728x90) ( &lt; a href="(your image link)"&gt; &lt; img scr="(your image source)" /&gt; &lt;/a&gt; )', 'accesspress-mag' ),
             'id' => 'value_homepage_inline_ad',
             'std' => __('', 'accesspress-mag'),
             'type' => 'textarea' 
             );
     $options[] = array(
             'name' => __( 'Your Homepage Sidebar Top Ad', 'accesspress-mag' ),
-            'desc' => __( 'Paste your ad code here. Google adsense will be made responsive automatically', 'accesspress-mag' ),
+            'desc' => __( 'Use your banner image (300x250) ( &lt; a href="(your image link)"&gt; &lt; img scr="(your image source)" /&gt; &lt;/a&gt; )', 'accesspress-mag' ),
             'id' => 'value_sidebar_top_ad',
             'std' => __('', 'accesspress-mag'),
             'type' => 'textarea' 
             );
     $options[] = array(
             'name' => __( 'Your Homepage Sidebar Middle Ad', 'accesspress-mag' ),
-            'desc' => __( 'Paste your ad code here. Google adsense will be made responsive automatically', 'accesspress-mag' ),
+            'desc' => __( 'Use your banner image (300x250) ( &lt; a href="(your image link)"&gt; &lt; img scr="(your image source)" /&gt; &lt;/a&gt; )', 'accesspress-mag' ),
             'id' => 'value_sidebar_middle_ad',
             'std' => __('', 'accesspress-mag'),
             'type' => 'textarea' 

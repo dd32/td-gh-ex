@@ -12,7 +12,8 @@
 		<div class="entry-meta">
             <?php 
                 if( is_author() || is_tag() || is_archive() || is_home() ){
-                    echo $post_categories = get_the_category_list();
+                    $post_categories = get_the_category_list();
+                    echo esc_attr( $post_categories );
                 }
             ?>
 			<?php accesspress_mag_posted_on(); ?>
@@ -24,8 +25,6 @@
 	<div class="entry-content">
         <?php 
             $post_format = get_post_format();
-            $video_url = get_post_meta( $post->ID, 'post_embed_videourl', true );
-            $audio_url = get_post_meta( $post->ID, 'post_embed_audiourl', true );
             if(has_post_thumbnail()){
                 $image_id = get_post_thumbnail_id();
                 $image_path = wp_get_attachment_image_src( $image_id, 'accesspress-mag-singlepost-style1' ,true );
