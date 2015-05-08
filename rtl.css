@@ -1,0 +1,625 @@
+/*
+Theme Name: Avien
+Theme URI: http://themeofwp.com/avien/
+Author: <a href="http://themeofwp.com" title="Visit author homepage">themeofwp.com</a>
+Author URI: http://themeofwp.com/
+Description: Avien WordPress Theme
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: themeofwp
+Domain Path: /languages/
+Tags: black, green, white, light, dark, two-columns, three-columns, left-sidebar
+*/
+
+#boxed #header {
+	right: auto;
+	left: auto;
+}
+
+.topheader .contact a {
+	border-right: 1px dotted #ccc;
+	margin-right: 15px;
+	padding-right: 15px;
+	padding-left: 0;
+	margin-left: auto;
+	border-left: none;
+}
+
+.topheader .social a, #footer .social a {
+	padding-left:10px;
+	padding-right: 0;
+}
+
+/* Headings */
+
+/* .btn */
+
+.btn-xlg [class^="icon-"],
+.btn-xlg [class*=" icon-"] {
+	margin-left: 10px;
+	margin-right: auto;
+}
+
+/* Anchor Link */
+
+/* iFrame */
+
+.iframe-container iframe,
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+	right: 0;
+	left: auto;
+}
+
+/* Edit button */
+
+.post-format {
+	padding-left:20px;
+	float: right;
+	padding-right: 0;
+}
+
+/*.post-format {
+	border-right: 1px solid #EDEDED;
+	float: right;
+	margin-right: -55px;
+	margin-left: auto;
+	border-left: none;
+}
+
+/*--------------------------------------------------------------
+4.0 Inputs and buttons
+--------------------------------------------------------------*/
+
+textarea {
+	padding-right: 3px;
+	padding-left: 0;
+}
+
+/* =WordPress Core
+-------------------------------------------------------------- */
+
+.alignleft {
+	float: left;
+	margin: 20px 20px 20px 0;
+}
+
+.alignright {
+	float: right;
+	margin: 0px 0 20px 20px;
+}
+
+.gallery-item {
+	float: right;
+	margin: 0 0 4px 4px;
+}
+
+.gallery-columns-1 .gallery-item:nth-of-type(1n),
+.gallery-columns-2 .gallery-item:nth-of-type(2n),
+.gallery-columns-3 .gallery-item:nth-of-type(3n),
+.gallery-columns-4 .gallery-item:nth-of-type(4n),
+.gallery-columns-5 .gallery-item:nth-of-type(5n),
+.gallery-columns-6 .gallery-item:nth-of-type(6n),
+.gallery-columns-7 .gallery-item:nth-of-type(7n),
+.gallery-columns-8 .gallery-item:nth-of-type(8n),
+.gallery-columns-9 .gallery-item:nth-of-type(9n) {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+.gallery-caption {
+	right: 0;
+	text-align: right;
+	left: auto;
+}
+
+.gallery-caption:before {
+	right: 0;
+	left: auto;
+}
+
+/*===========================
+  Portfolio
+============================ */
+
+/* ------- */
+
+nav#filter li {
+	margin:0 5px 0 0;
+}
+
+/* Portfolio Item */
+
+.portfolio-item .portfolio-desc {
+	right: 0;
+	left: auto;
+}
+
+/* Blog Grid Item */
+
+.blog-item .blog-desc {
+	right: 0;
+	left: auto;
+}
+
+/* Navigation */
+
+.navbar > .container .navbar-brand {
+	margin-right: 0;
+	margin-left: auto;
+}
+
+/*==================================================
+ * Shadow Effect 1
+ * ===============================================*/
+
+/*==================================================
+ * Shadow Effect 2
+ * ===============================================*/
+
+.effect2:before, .effect2:after {
+	right: 10px;
+	left: auto;
+}
+
+.effect2:after {
+	left: 10px;
+	right: auto;
+}
+
+/*==================================================
+ * Shadow Effect 3
+ * ===============================================*/
+
+.effect3:before {
+	right: 10px;
+	left: auto;
+}
+
+/*==================================================
+ * Shadow Effect 4
+ * ===============================================*/
+
+.effect4:after {
+	left: 10px;
+	right: auto;
+}
+
+/*==================================================
+ * Shadow Effect 5
+ * ===============================================*/
+
+.effect5:before, .effect5:after {
+	right: 10px;
+	left: auto;
+}
+
+.effect5:after {
+	left: 10px;
+	right: auto;
+}
+
+/*==================================================
+ * Shadow Effect 6
+ * ===============================================*/
+
+.effect6:before, .effect6:after {
+	right:10px;
+	left:10px;
+}
+
+.effect6:after {
+	left:10px;
+	right:auto;
+}
+
+/*==================================================
+ * Shadow Effect 7
+ * ===============================================*/
+
+.effect7:before, .effect7:after {
+	right:10px;
+	left:10px;
+}
+
+.effect7:after {
+	left:10px;
+	right:auto;
+}
+
+/*==================================================
+ * Shadow Effect 8
+ * ===============================================*/
+
+.effect8:before, .effect8:after {
+	right:0;
+	left:0;
+}
+
+.effect8:after {
+	left:10px;
+	right:auto;
+}
+
+/*Logo*/
+
+.navbar .brand-left {
+	float:left;
+}
+
+.navbar .navbar-main {
+	float: left;
+}
+
+.navbar .navbar-main li i {
+	padding-right: 7px;
+	padding-left: 0;
+}
+
+.dropdown li i {
+	float: left;
+	padding-right: 7px;
+	left: 20px;
+	right: auto;
+	padding-left: 0;
+}
+
+.navbar .navbar-right {
+	float: right;
+}
+
+.navbar .navbar-main > li {
+	margin-right: 5px;
+	margin-left: auto;
+}
+
+.navbar .navbar-main .dropdown-menu > li {
+	text-align:right;
+}
+
+.navbar .navbar-main .sub-menu .dropdown-menu {
+	right: 100%;
+	left: auto;
+}
+
+ul li span.menu-toggler {
+	left: 0;
+	right: auto;
+}
+
+ul {
+	padding-right: 20px;
+	padding-left: 0;
+}
+
+/*Timeline*/
+
+.timeline:before {
+	right: 50%;
+	margin-right: -1.5px;
+	left: auto;
+	margin-left: auto;
+}
+
+.timeline > li > .timeline-panel {
+	float: right;
+}
+
+.timeline > li > .timeline-panel:before {
+	left: -15px;
+	border-right: 15px solid #ccc;
+	border-left: 0 solid #ccc;
+	right: auto;
+}
+
+.timeline > li > .timeline-panel:after {
+	left: -14px;
+	border-right: 14px solid #fff;
+	border-left: 0 solid #fff;
+	right: auto;
+}
+
+.timeline > li > .timeline-badge {
+	right: 50%;
+	margin-right: -25px;
+	border-top-left-radius: 50%;
+	border-top-right-radius: 50%;
+	border-bottom-left-radius: 50%;
+	border-bottom-right-radius: 50%;
+	left: auto;
+	margin-left: auto;
+}
+
+.timeline > li.timeline-inverted > .timeline-panel {
+	float: left;
+}
+
+.timeline > li.timeline-inverted > .timeline-panel:before {
+	border-right-width: 0;
+	border-left-width: 15px;
+	right: -15px;
+	left: auto;
+}
+
+.timeline > li.timeline-inverted > .timeline-panel:after {
+	border-right-width: 0;
+	border-left-width: 14px;
+	right: -14px;
+	left: auto;
+}
+
+/*Footer*/
+#toTop {
+	left: 15px;
+	right: auto;
+}
+
+/*Footermain*/
+
+#bottom li:before {
+	margin-left:5px;
+	margin-right: auto;
+}
+
+/* Portfolio */
+
+.portfolio-items,
+.portfolio-filter {
+	margin: 0 0 20px -20px;
+}
+
+.portfolio-items > li {
+	float: right;
+}
+
+.portfolio-item .item-inner {
+	margin: 0 0 20px 20px;
+}
+
+.portfolio-item .overlay {
+	right: 0;
+	left: auto;
+}
+
+/* Start: Recommended Isotope styles */
+/**** Isotope Filtering ****/
+
+/**** Isotope CSS3 transitions ****/
+
+/**** disabling Isotope CSS3 transitions ****/
+
+/* End: Recommended Isotope styles */
+/* disable CSS transitions for containers with infinite scrolling*/
+
+/* Title */
+
+/* Media */
+
+/* Breadcrumb */
+
+.icon-md {
+	margin-left: 10px;
+	margin-right: auto;
+}
+
+.modal#loginForm {
+	margin-right: -300px;
+	margin-left: auto;
+}
+
+.modal input[type="text"],
+.modal input[type="password"] {
+	margin-left: 10px;
+	margin-right: auto;
+}
+
+.modal .icon-remove {
+	left: -5px;
+	right: auto;
+}
+
+.modal button {
+	margin-right: 10px;
+	margin-left: auto;
+}
+
+.media-body:before {
+	float:right;
+}
+
+/*Unordered Lists*/
+
+ul.arrow li::before,
+ul.arrow-double li::before,
+ul.tick li::before,
+ul.cross li::before,
+ul.star li::before,
+ul.rss li::before {
+	margin-left: 5px;
+	margin-right: auto;
+}
+
+/*Woocommerce*/
+
+.woocommerce form .form-row label.inline, .woocommerce-page form .form-row label.inline {
+	margin-right: 20px;
+	margin-left: auto;
+}
+
+/*Widgets*/
+
+li.rpwe-clearfix a {
+	margin-right: 0px !important;
+	margin-left: auto;
+}
+
+/*BBPress*/
+
+.bbp-author-avatar {
+	float:right;
+	margin-left:5px;
+	margin-right: auto;
+}
+
+.topic .bbp-author-avatar {
+	margin-left:5px;
+	margin-right: auto;
+}
+
+/*Footer*/
+
+#footer ul > li {
+	margin-right: 15px;
+	margin-left: auto;
+}
+
+#flickr_wrapper img {
+	float: right;
+}
+
+/*shortcode*/
+
+.dropcap:first-letter {
+	float: right;
+	padding: 4px 0 0 8px;
+}
+
+/*block*/
+
+/* Block number */
+.blocknumber {
+	padding:10px 60px 5px 0;
+}
+
+.blocknumber span {
+	right: 0;
+	left: auto;
+}
+
+/*core*/
+
+/*right side widget area*/
+
+/*search*/
+
+/*calender*/
+
+.widget-area #calendar_wrap #prev {
+	text-align: right;
+}
+
+.widget-area #calendar_wrap #next {
+	text-align: left;
+}
+
+/*Widgets*/
+
+.widget-area ul li a {
+	margin-right: 10px;
+	margin-left: auto;
+}
+
+.widget-area ul.children li {
+	margin-right: 15px;
+	margin-left: auto;
+}
+
+/* Blog */
+
+/* Captions */
+
+/*paser paginaton,breadcrumbs*/
+
+ul.breadcrumb {
+	text-align: left;
+}
+
+/*portfolio*/
+
+/*Visual Composer*/
+
+.upb_video-bg, .upb_video-bg utube {
+	right: 0 !important;
+	left: auto;
+}
+
+/*Divider*/
+
+/*faq*/
+li.faq span.number {
+	margin-left: 20px;
+	margin-right: auto;
+}
+
+/*logo*/
+
+/*download btn*/
+
+/*pinterest btn*/
+
+/*admin bar*/
+
+/*responsive menu*/
+
+/*testimonial*/
+
+/*responsive menu*/
+
+.header-center .navbar-toggle {
+	margin-left:0px;
+	margin-right: auto;
+}
+
+.header-center .nav > li {
+	text-align: right;
+}
+
+.navbar-toggle {
+	margin-left:0px;
+	margin-right: auto;
+}
+
+/*bottom*/
+ul#menu-company-menu {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+ul#menu-company-menu li:before {
+	margin-left: 5px;
+	margin-right: auto;
+}
+
+@media(min-width:767px) {
+
+}
+
+@media(max-width:767px) {
+
+.header-center .nav > li {
+	text-align: right;
+}
+
+.navbar-toggle {
+	margin-left:0px;
+	margin-right: auto;
+}
+
+/*bottom*/
+ul#menu-company-menu {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+ul#menu-company-menu li:before {
+	margin-left: 5px;
+	margin-right: auto;
+}
+
+@media(min-width:767px) 
+}
+
+
+/* Generated by the RTLer - http://wordpress.org/extend/plugins/rtler/ */

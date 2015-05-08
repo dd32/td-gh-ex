@@ -1,0 +1,521 @@
+@font-face {
+    font-family: 'si';
+    src: url('socicon/socicon.eot');
+    src: url('socicon/socicon.eot?#iefix') format('embedded-opentype'),
+         url('socicon/socicon.woff') format('woff'),
+         url('socicon/socicon.ttf') format('truetype'),
+         url('socicon/socicon.svg#icomoonregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+ 
+}
+ 
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family:si;
+        src: url(socicon/socicon.svg) format(svg);
+    }
+}
+
+.soc {
+    overflow:hidden;
+    margin:0; 
+	padding:0;
+    list-style:none;
+	text-align:center;
+}
+
+.soc li {
+    display:inline-table;
+	margin: 0px !important;
+	padding: 0px !important;
+	text-align:center;
+	line-height: 20px;
+}
+
+.soc li a {
+    font-family:si!important;
+    font-style:normal;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+-o-transition:.1s; -ms-transition:.1s; -moz-transition:.1s; -webkit-transition:.1s; transition:.1s; -webkit-transition-property: transform; transition-property: transform; -webkit-transform: translateZ(0); transform: translateZ(0);
+
+    text-decoration:none;
+    text-align:center;
+    display:block;
+    position: relative;
+    z-index: 1;
+    width: 22px;
+	height:22px;
+    line-height: 22px;
+    font-size: 13px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    margin-right: 1px;
+    background-color: none;
+	
+}
+.soc a:hover { z-index: 2; color:#fff !important;}
+
+.soc-icon-last{
+    margin:0 !important;
+}
+
+.soc-facebook:hover {
+    background-color: #3e5b98;
+}
+.soc-facebook:before {
+    content:'b';
+}
+.soc-google:hover {
+    background-color: #d93e2d;
+}
+.soc-google:before {
+    content:'c';
+}
+.soc-pinterest:hover {
+    background-color: #c92619;
+}
+.soc-pinterest:before {
+    content:'d';
+}
+.soc-foursquare:hover {
+    background-color: #23b7e0;
+}
+.soc-foursquare:before {
+    content:'e';
+}
+.soc-yahoo:hover {
+    background-color: #6E2A85;
+}
+.soc-yahoo:before {
+    content:'f';
+}
+.soc-skype:hover {
+    background-color: #28abe3;
+}
+.soc-skype:before {
+    content:'g';
+}
+.soc-yelp:hover {
+    background-color: #c83218;
+}
+.soc-yelp:before {
+    content:'h';
+}
+.soc-feedburner:hover {
+    background-color: #FFCC00;
+}
+.soc-feedburner:before {
+    content:'i';
+}
+.soc-linkedin:hover {
+    background-color: #3371b7;
+}
+.soc-linkedin:before {
+    content:'j';
+}
+.soc-viadeo:hover {
+    background-color: #e4a000;
+}
+.soc-viadeo:before {
+    content:'k';
+}
+.soc-xing:hover {
+    background-color: #005a60;
+}
+.soc-xing:before {
+    content:'l';
+}
+.soc-myspace:hover {
+    background-color: #323232;
+}
+.soc-myspace:before {
+    content:'m';
+}
+.soc-soundcloud:hover {
+    background-color: #fe3801;
+}
+.soc-soundcloud:before {
+    content:'n';
+}
+.soc-grooveshark:hover {
+    background-color: #000000;
+}
+.soc-grooveshark:before {
+    content:'p';
+}
+.soc-lastfm:hover {
+    background-color: #d41316;
+}
+.soc-lastfm:before {
+    content:'q';
+}
+.soc-youtube:hover {
+    background-color: #e02a20;
+}
+.soc-youtube:before {
+    content:'r';
+}
+.soc-vimeo:hover {
+    background-color: #51b5e7;
+}
+.soc-vimeo:before {
+    content:'s';
+}
+.soc-dailymotion:hover {
+    background-color: #004e72;
+}
+.soc-dailymotion:before {
+    content:'t';
+}
+.soc-vine:hover {
+    background-color: #00b389;
+}
+.soc-vine:before {
+    content:'u';
+}
+.soc-flickr:hover {
+    background-color: #1e1e1b;
+}
+.soc-flickr:before {
+    content:'v';
+}
+.soc-500px:hover {
+    background-color: #58a9de;
+}
+.soc-500px:before {
+    content:'w';
+}
+.soc-instagram:hover {
+    background-color: #9c7c6e;
+}
+.soc-instagram:before {
+    content:'x';
+}
+.soc-wordpress:hover {
+    background-color: #464646;
+}
+.soc-wordpress:before {
+    content:'y';
+}
+.soc-tumblr:hover {
+    background-color: #45556c;
+}
+.soc-tumblr:before {
+    content:'z';
+}
+.soc-blogger:hover {
+    background-color: #ec661c;
+}
+.soc-blogger:before {
+    content:'A';
+}
+.soc-technorati:hover {
+    background-color: #5cb030;
+}
+.soc-technorati:before {
+    content:'B';
+}
+.soc-reddit:hover {
+    background-color: #e74a1e;
+}
+.soc-reddit:before {
+    content:'C';
+}
+.soc-stumbleupon:hover {
+    background-color: #e64011;
+}
+.soc-stumbleupon:before {
+    content:'E';
+}
+.soc-digg:hover {
+    background-color: #1d1d1b;
+}
+.soc-digg:before {
+    content:'F';
+}
+.soc-envato:hover {
+    background-color: #597c3a;
+}
+.soc-envato:before {
+    content:'G';
+}
+.soc-behance:hover {
+    background-color: #000000;
+}
+.soc-behance:before {
+    content:'H';
+}
+.soc-deviantart:hover {
+    background-color: #c5d200;
+}
+.soc-deviantart:before {
+    content:'J';
+}
+.soc-forrst:hover {
+    background-color: #5B9A68;
+}
+.soc-forrst:before {
+    content:'K';
+}
+.soc-play:hover {
+    background-color: #000000;
+}
+.soc-play:before {
+    content:'L';
+}
+.soc-zerply:hover {
+    background-color: #9DBC7A;
+}
+.soc-zerply:before {
+    content:'M';
+}
+.soc-wikipedia:hover {
+    background-color: #000000;
+}
+.soc-wikipedia:before {
+    content:'N';
+}
+.soc-apple:hover {
+    background-color: #B9BFC1;
+}
+.soc-apple:before {
+    content:'O';
+}
+.soc-flattr:hover {
+    background-color: #F67C1A;
+}
+.soc-flattr:before {
+    content:'P';
+}
+.soc-github:hover {
+    background-color: #5380c0;
+}
+.soc-github:before {
+    content:'Q';
+}
+.soc-chimein {
+    background-color: #888688;
+}
+.soc-chimein:before {
+    content:'R';
+}
+.soc-friendfeed:hover {
+    background-color: #2F72C4;
+}
+.soc-friendfeed:before {
+    content:'S';
+}
+.soc-newsvine:hover {
+    background-color: #075B2F;
+}
+.soc-newsvine:before {
+    content:'T';
+}
+.soc-identica:hover {
+    background-color: #000000;
+}
+.soc-identica:before {
+    content:'U';
+}
+.soc-bebo:hover {
+    background-color: #EF1011;
+}
+.soc-bebo:before {
+    content:'V';
+}
+.soc-zynga:hover {
+    background-color: #DC0606;
+}
+.soc-zynga:before {
+    content:'W';
+}
+.soc-steam:hover {
+    background-color: #8F8D8A;
+}
+.soc-steam:before {
+    content:'X';
+}
+.soc-windows:hover {
+    background-color: #00BDF6;
+}
+.soc-windows:before {
+    content:'Z';
+}
+.soc-outlook:hover {
+    background-color: #0072C6;
+}
+.soc-outlook:before {
+    content:'1';
+}
+.soc-coderwall:hover {
+    background-color: #3E8DCC;
+}
+.soc-coderwall:before {
+    content:'2';
+}
+.soc-tripadvisor:hover {
+    background-color: #000000;
+}
+.soc-tripadvisor:before {
+    content:'3';
+}
+.soc-netcodes:hover {
+    background-color: #2E3436;
+}
+.soc-netcodes:before {
+    content:'4';
+}
+.soc-lanyrd:hover {
+    background-color: #3c80c9;
+}
+.soc-lanyrd:before {
+    content:'7';
+}
+.soc-slideshare:hover {
+    background-color: #4ba3a6;
+}
+.soc-slideshare:before {
+    content:'8';
+}
+.soc-rss:hover {
+    background-color: #f26109;
+}
+.soc-rss:before {
+    content:',';
+}
+.soc-vkontakte:hover {
+    background-color: #5a7fa6;
+}
+.soc-vkontakte:before {
+    content:';';
+}
+.soc-disqus:hover {
+    background-color: #2e9fff;
+}
+.soc-disqus:before {
+    content:':';
+}
+.soc-joomla:hover {
+    background-color: #ED2E38;
+}
+.soc-joomla:before {
+    content:'>';
+}
+.soc-email1:hover {
+    background-color: #578AD6;
+}
+.soc-email1:before {
+    content:'<';
+}
+.soc-email2:hover {
+    background-color: #578AD6;
+}
+.soc-email2:before {
+    content:'.';
+}
+.soc-dribbble:hover {
+    background-color: #e84d88;
+}
+.soc-dribbble:before {
+    content:'D';
+}
+.soc-twitter:hover {
+    background-color: #4da7de;
+}
+.soc-twitter:before {
+    content:'a';
+}
+
+/*Social Share Buttons*/
+#social-more-button {
+  display: inline-block;
+  margin-left: 15px;
+  width: 70%;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  padding:15px 0;
+}
+#social-more-button:before {
+  content: '\f1e0';
+  font-family: "FontAwesome";
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  display: inline-block;
+  cursor: pointer;
+  color: #cccccc;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+#social-more-button:hover:before,
+#social-more-button:active:before {
+  color: #595959;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.socialcontainer {
+	position:absolute; 
+	visibility:hidden; 
+	background: #fff; 
+	border:1px solid #efefef; 
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+	background:#fff;
+	margin: 0;
+	padding: 5px; 
+	text-align: left;
+	z-index:1000;
+	width:auto;
+	top:10px;
+	left:30px;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.socialcontainer:before {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #fff;
+    border-color: #ededed;
+    border-image: none;
+    border-style: solid none none solid;
+    border-width: 1px 0 0 1px;
+    content: "";
+    display: block;
+    height: 10px;
+    position: absolute;
+    top: 5px;
+	left:-5px;
+    transform: rotate(-45deg);
+    width: 10px;
+    z-index: 8;
+}
+.socialcontainer .share-btn {
+  font-size: 14px;
+  padding: 0 10px;
+  color: #b0b0b0;
+}
+.socialcontainer .share-btn:hover,
+.socialcontainer .share-btn:active {
+  text-shadow: 0 0 5px rgba(85, 190, 235, 0.45);
+  color: #55beeb;
+}
