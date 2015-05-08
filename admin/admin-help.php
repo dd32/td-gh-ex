@@ -95,9 +95,10 @@ function weaverx_admin_help() {
 * Fix: Fatal error bug when Page with Post compact post option set
 * Fix: Infobar centering
 
-= Version 1.2.1 =
+= Version 1.2.2 =
 * Tweak: Beginning of Admin code reorganization - moved admin files to new directories
 * Fix: Mobile menu bug on non-SmartMenus
+* Fix: ignore mobile toggle set point if not SmartMenu
 </pre>
 </p>
 	</div>

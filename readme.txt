@@ -155,4 +155,7 @@ with testing and feature suggestions.
 * Tweak: Beginning of Admin code reorganization - moved admin files to new directories
 * Fix: Mobile menu bug on non-SmartMenus
 
+= Version 1.2.2 =
+* Fix: ignore mobile toggle set point if not SmartMenu
+
 = *** Release Notes also found on Help Tab  *** =
