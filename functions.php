@@ -87,7 +87,7 @@ if( ! function_exists( 'unlimited_customize_comments' ) ) {
 					if ( $comment->user_id === $post->post_author ) {
 						unlimited_profile_image_output();
 					} else {
-						echo get_avatar( get_comment_author_email(), 48 );
+						echo get_avatar( get_comment_author_email(), 48, '', get_comment_author() );
 					}
 					?>
 					<div class="author-name"><span><?php comment_author_link(); ?></span> <?php _x('said:', 'unlimited', 'the commenter said the following:'); ?></div>
@@ -266,8 +266,12 @@ if( ! function_exists( 'unlimited_featured_image' ) ) {
 
 		// get post object
 		global $post;
+
 		// default to no featured image
 		$has_image = false;
+
+		// establish featured image var
+		$featured_image = '';
 
 		// if post has an image
 		if ( has_post_thumbnail( $post->ID ) ) {
@@ -282,24 +286,34 @@ if( ! function_exists( 'unlimited_featured_image' ) ) {
 			$image = wp_get_attachment_image_src( $image_id, 'single-post-thumbnail' );
 
 			// set $image = the url
-			$image     = $image[0];
+			$image = $image[0];
+
+			// if alt text is empty, nothing else equal to title string
+			$title = empty($image_alt_text) ? '' : "title='$image_alt_text'";
+
+			// set to true
 			$has_image = true;
 		}
 		if ( $has_image == true ) {
 
 			// on posts/pages display the featued image
 			if ( is_singular() ) {
-				echo "<div class='featured-image' style=\"background-image: url('" . $image . "')\">
-					    <span class='screen-reader-text'>$image_alt_text</span>
-					  </div>";
+				$featured_image = "<div class='featured-image' style=\"background-image: url('" . $image . "')\" $title></div>";
 			} // on blog/archives display with a link
 			else {
-				echo "
-	                <div class='featured-image' style=\"background-image: url('" . $image . "')\">
-	                    <a href='" . get_permalink() . "'><span class='screen-reader-text'>" . get_the_title() . "</span></a>
+				$featured_image = "
+	                <div class='featured-image' style=\"background-image: url('" . $image . "')\" $title>
+	                    <a href='" . get_permalink() . "'>" . get_the_title() . "</a>
 	                </div>
 	                ";
 			}
+		}
+
+		// allow videos to be added
+		$featured_image = apply_filters( 'ct_unlimited_featured_image', $featured_image );
+
+		if( $featured_image ) {
+			echo $featured_image;
 		}
 	}
 }
@@ -393,22 +407,19 @@ if( ! function_exists('unlimited_social_icons_output') ) {
 					?>
 					<li>
 						<a class="email" target="_blank" href="mailto:<?php echo antispambot( is_email( unlimited_get_social_url( $source, $key ) ) ); ?>">
-							<span class="screen-reader-text">email icon</span>
-							<i class="fa fa-envelope"></i>
+							<i class="fa fa-envelope" title="<?php _e('email icon', 'unlimited'); ?>"></i>
 						</a>
 					</li>
 				<?php } elseif ( $active_site == "flickr" || $active_site == "dribbble" || $active_site == "instagram" || $active_site == "soundcloud" || $active_site == "spotify" || $active_site == "vine" || $active_site == "yahoo" || $active_site == "codepen" || $active_site == "delicious" || $active_site == "stumbleupon" || $active_site == "deviantart" || $active_site == "digg" || $active_site == "hacker-news" || $active_site == "vk" || $active_site == 'weibo' || $active_site == 'tencent-weibo' ) { ?>
 					<li>
 						<a class="<?php echo $active_site; ?>" target="_blank" href="<?php echo esc_url( unlimited_get_social_url( $source, $key ) ); ?>">
-							<span class="screen-reader-text"><?php echo $active_site; ?> icon</span>
-							<i class="fa fa-<?php echo esc_attr( $active_site ); ?>"></i>
+							<i class="fa fa-<?php echo esc_attr( $active_site ); ?>" title="<?php printf( __('%s icon', 'unlimited'), $active_site ); ?>"></i>
 						</a>
 					</li>
 				<?php } else { ?>
 					<li>
 						<a class="<?php echo $active_site; ?>" target="_blank" href="<?php echo esc_url( unlimited_get_social_url( $source, $key ) ); ?>">
-							<span class="screen-reader-text"><?php echo $active_site; ?> icon</span>
-							<i class="fa fa-<?php echo esc_attr( $active_site ); ?>-square"></i>
+							<i class="fa fa-<?php echo esc_attr( $active_site ); ?>-square" title="<?php printf( __('%s icon', 'unlimited'), $active_site ); ?>"></i>
 						</a>
 					</li>
 				<?php
@@ -453,13 +464,13 @@ function unlimited_profile_image_output(){
         $image_id = unlimited_get_image_id(get_the_author_meta('unlimited_user_profile_image'));
 
         // retrieve the thumbnail size of profile image (60px)
-        $image_thumb = wp_get_attachment_image($image_id, array(60,60));
+        $image_thumb = wp_get_attachment_image($image_id, array(60,60), false, array('alt' => get_the_author() ) );
 
         // display the image
         echo $image_thumb;
 
     } else {
-        echo get_avatar( get_the_author_meta( 'ID' ), 60 );
+        echo get_avatar( get_the_author_meta( 'ID' ), 60, '', get_the_author() );
     }
 }
 
@@ -471,23 +482,6 @@ function unlimited_wp_backwards_compatibility() {
 	}
 }
 add_action('init', 'unlimited_wp_backwards_compatibility');
-
-/*
- * Set the date format for new users.
- * Needs to be done this way so that the date defaults to the right format, but can
- * still be changed from the Settings menu
- */
-function unlimited_set_date_format() {
-
-	// if the date format has never been set by Unlimited, set it
-	if( get_option('unlimited_date_format_origin') != 'updated' ) {
-		update_option('date_format', 'F j, Y');
-
-		// add option so never updates date format again. Allows users to change format.
-		add_option('unlimited_date_format_origin', 'updated');
-	}
-}
-add_action( 'after_switch_theme', 'unlimited_set_date_format' );
 
 /*
  * WP will apply the ".menu-primary-items" class & id to the containing <div> instead of <ul>

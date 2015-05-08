@@ -40,8 +40,9 @@
 
 			<?php get_template_part( 'menu', 'primary' ); ?>
 
-			<button id="toggle-navigation" class="toggle-navigation">
-				<i class="fa fa-bars"></i>
+			<button id="toggle-navigation" class="toggle-navigation" aria-expanded="false">
+				<span class="screen-reader-text"><?php _e('open menu', 'unlimited'); ?></span>
+				<i class="fa fa-bars" title="<?php _e('primary menu icon', 'unlimited'); ?>"></i>
 			</button>
 
 			<?php hybrid_do_atomic( 'header_after' ); ?>
