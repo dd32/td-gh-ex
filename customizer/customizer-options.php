@@ -88,7 +88,7 @@ function customizer_library_topshop_options() {
         'label'   => __( 'Show Top Bar', 'topshop' ),
         'section' => $section,
         'type'    => 'checkbox',
-        'description' => __( 'This will show/hide the top bar in the header', 'topshop' ),
+        'description' => __( 'This will show/hide the top bar in the header<br .><a href="http://support.kairaweb.com/knowledgebase/top-bar-not-showing/" target="_blank">Not working? See here</a>', 'topshop' ),
         'default' => 1,
     );
     
@@ -120,7 +120,7 @@ function customizer_library_topshop_options() {
         'label'   => __( 'Slider Categories', 'topshop' ),
         'section' => $section,
         'type'    => 'text',
-        'description' => __( 'Enter the ID\'s of the post categories you want to display in the slider. Eg: "13,17,19" (no spaces and only comma\'s)', 'topshop' )
+        'description' => __( 'Enter the ID\'s of the post categories you want to display in the slider. Eg: "13,17,19" (no spaces and only comma\'s)<br /><a href="http://support.kairaweb.com/knowledgebase/setup-the-topshop-default-slider/" target="_blank"><b>Follow instructions here</b></a>', 'topshop' )
     );
     $options['topshop-meta-slider-shortcode'] = array(
         'id' => 'topshop-meta-slider-shortcode',

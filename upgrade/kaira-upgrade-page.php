@@ -52,6 +52,28 @@
         </tr>
         <tr>
             <th scope="row">
+                <?php _e( 'Blog Width', 'topshop' ); ?>
+            </th>
+            <td>
+                <a href="<?php echo $topshop_premium_link; ?>" target="_blank">
+                    <img src="<?php echo get_template_directory_uri() . '/upgrade/images/blog-full-width.jpg'; ?>" alt="" class="kaira-page-img" />
+                </a>
+                <p class="description"><?php _e( 'Enable the option to make the blog (and archive/search pages) full width.', 'topshop' ); ?></p>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <?php _e( 'Slider Options', 'topshop' ); ?>
+            </th>
+            <td>
+                <a href="<?php echo $topshop_premium_link; ?>" target="_blank">
+                    <img src="<?php echo get_template_directory_uri() . '/upgrade/images/extra-slider-settings.jpg'; ?>" alt="" class="kaira-page-img" />
+                </a>
+                <p class="description"><?php _e( 'Enable extra settings on the default slider.', 'topshop' ); ?></p>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
                 <?php _e( 'Social Links', 'topshop' ); ?>
             </th>
             <td>

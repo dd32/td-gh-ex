@@ -71,6 +71,12 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.1
+* Styling tweaks
+* Added extra settings for slider and blog
+* update TopShop 'upgrade page'
+* Added help links to support site in WP customizer
+
 #### 1.1.0
 * Styling tweaks to WooCommerce
 * Updated the screenshot.png
