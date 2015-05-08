@@ -11,10 +11,9 @@ function aaron_docs() {
 <h1 class="doc-title"><?php _e('Aaron Setup Help', 'aaron'); ?></h1>
 <div class="doc-thanks">
 <b><?php _e('Thank you for downloading and trying out Aaron!', 'aaron'); ?></b><br><br>
+<?php printf( __('If you like the theme, please review it on <a href="%s">WordPress.org</a>', 'aaron'), esc_url('https://wordpress.org/support/view/theme-reviews/aaron') );?><br>
 
-<?php printf( __('If you like the theme, please review it on %s', 'aaron'), '<a href="https://wordpress.org/support/view/theme-reviews/aaron">WordPress.org</a>' );?><br>
-
-<b><?php _e('If you have any questions, accessibility issues or feature requests for this theme, please visit ', 'aaron'); ?><a href="http://wptema.se/Aaron">http://wptema.se/Aaron</a></b>.<br>
+<b><?php printf( __('If you have any questions, accessibility issues or feature requests for this theme, please visit <a href="%s">http://wptema.se/Aaron</a>.', 'aaron'), esc_url('http://wptema.se/Aaron') ); ?></b><br>
 <?php _e('Your feedback is essential for the future developement of the theme.', 'aaron'); ?>
 </div>
 
@@ -50,7 +49,8 @@ function aaron_docs() {
 
 	<div class="doc-box" id="aaron-widgets">
 		<h3><?php _e('Widget areas','aaron' ); ?></h3>
-		<?php _e('The theme has two widget areas that can hold <b>any number of widgets</b>. Both areas are empty unless they have widgets in them. The footer widget area is shown on all pages.','aaron' ); ?><br><br>
+		<?php _e('The theme has two widget areas that can hold <b>any number of widgets</b>. Both areas are empty unless they have widgets in them. The footer widget area is shown on all pages.','aaron' ); ?><br>
+		<?php _e('There is also one additional widget area in the footer below the social menu, where you can place a text widget and add your copyright text.');?> <br><br>
 		<b><?php _e('Advanced','aaron' ); ?></b><br>
 		<?php _e('By default, the sidebar is shown on the right hand side in single post view, archives, the search page and the 404 page.<br>
 		If you open the customizer and go to the Advanced settings, you will find options for showing the sidebar on more pages.','aaron' ); ?>
@@ -60,18 +60,19 @@ function aaron_docs() {
 			<h3><?php _e('Frontpage','aaron' ); ?></h3>
 			<?php _e('The standard frontpage has the following features:','aaron' ); ?><br>
 			<?php _e('<b>Site title:</b> You will find an option to hide or change the color of your site title in the customizer.','aaron' ); ?><br>
-			<?php _e('<b>Call to action:</b> The Call to action is a great way to get your visitors attention. In the customizer you can:','aaron' ); ?>
+			<?php _e('<b>Call to action:</b> The Call to Action is a great way to get your visitors attention. In the customizer you can:','aaron' ); ?>
 			<ul>
 				<li><?php _e('Add your own text','aaron' ); ?></li>
 				<li><?php _e('Add a link','aaron' ); ?></li>	
-				<li><?php _e('Hide the button','aaron' ); ?></li>
+				<li><?php _e('Change the color of the text','aaron' ); ?></li>
+				<li><?php _e('Hide the button','aaron' ); ?></li>		
 			</ul>
 
-			<?php _e('<b>Highlights:</b> The themes displays three highlights by default. This is a flexible way for you to feature different sections of your website. In the customizer you can:','aaron' ); ?>
+			<?php _e('<b>Highlights:</b> This is a flexible way for you to feature different sections of your website. You can add upp to nine highlights. In the customizer you can:','aaron' ); ?>
 			<ul>
 				<li><?php _e('Add your own text','aaron' )?></li>
 				<li><?php _e('Add a link','aaron' )?></li>	
-				<li><?php _e('Add an icon','aaron' )?></li>	
+				<li><?php _e('Add an icon or upload an image','aaron' )?></li>	
 				<li><?php _e('Hide the highlights','aaron' )?></li>
 			</ul>
 			<?php _e('<b>Tagline:</b> You will find an option to hide your tagline in the customizer.','aaron' )?><br>
@@ -124,7 +125,7 @@ function aaron_docs() {
 					</li>
 					<li><b><?php _e('Custom Content Type: Portfolio','aaron' )?></b><br>
 						<?php _e('Aaron also supports Jetpack','aaron' )?> 
-						<b><?php _e('Portfolios','aaron' )?></b>. <a href="http://en.support.wordpress.com/portfolios/">
+						<b><?php _e('Portfolios','aaron' )?></b>. <a href="<?php esc_url('http://en.support.wordpress.com/portfolios/');?>">
 						<i><?php _e('Read more about how to setup your Portfolio on Jetpacks support site.','aaron' )?></i></a><br><br>
 						<img src="<?php echo get_template_directory_uri() . '/images/doc-portfolio.jpg';?>" alt="<?php _e('An image describing two portfolio items.','aaron' )?>"><br>
 					</li>

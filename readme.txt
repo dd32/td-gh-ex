@@ -19,6 +19,23 @@ If you have any questions, accessibility issues or feature requests for this the
 
 
 == Change log ==
+Version 1.6, 2015-05-06
+Added an option to change the text color of the Call to Action button.
+Added an additional widget area to the footer below the social menu, where you can add a copyright text.
+
+Highlights:
+You can now add upto 9 Highlights.
+You can also display the Highlights without icons, or upload your own image.
+The minimum height of the Highlights have been adjusted.
+
+Only link to to the customizer if the user has access to it.
+Only load the admin stylesheet on the specific page.
+Minor css improvements.
+Escaped some forgotten urls
+Updated the documentation and language file.
+
+
+Version 1.5
 Set the minimum height of the header to the viewport height.
 Removed the recommended image size for the header.
 Removed social icons from the header meny.

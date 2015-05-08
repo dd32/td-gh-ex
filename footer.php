@@ -37,9 +37,14 @@
 
 
 		<div class="site-info">
+			<?php
+			if ( is_active_sidebar( 'sidebar-copyright' ) ) {
+				 dynamic_sidebar( 'sidebar-copyright' ); 
+			}
+			?>
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'aaron' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'aaron' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<a href="<?php echo esc_url( __( 'http://wptema.se/aaron', 'aaron' ) ); ?>" rel="nofollow"><?php printf( __( 'Theme: %1$s by Carolina', 'aaron' ), 'Aaron'); ?></a>
+			<a href="<?php echo esc_url('http://wptema.se/aaron'); ?>" rel="nofollow"><?php printf( __( 'Theme: %1$s by Carolina', 'aaron' ), 'Aaron'); ?></a>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

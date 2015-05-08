@@ -129,6 +129,17 @@ function aaron_widgets_init() {
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Footer copyright area', 'aaron' ),
+		'id'            => 'sidebar-copyright',
+		'description'   => __( 'Place a text widget in this area and add your copyright text', 'aaron'),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
+
 }
 add_action( 'widgets_init', 'aaron_widgets_init' );
 
@@ -189,8 +200,12 @@ add_action( 'wp_enqueue_scripts', 'aaron_scripts' );
 
 /*
  * Enqueue styles for the setup help page.
- */
-function aaron_admin_scripts() {
+ */ 
+
+function aaron_admin_scripts($hook) {
+	if ( 'appearance_page_aaron-theme' !== $hook ){
+		return;
+	}
 	wp_enqueue_style( 'aaron-admin-style', get_template_directory_uri() .'/admin.css');
 }
 add_action( 'admin_enqueue_scripts', 'aaron_admin_scripts' );
@@ -297,6 +312,12 @@ function aaron_customize_css() {
 		}
 
 	}
+
+	//Call to Action text color
+	if( get_theme_mod( 'aaron_action_color' ) <> ' ') {
+		echo '#action, #action a{ color:' . esc_attr( get_theme_mod('aaron_action_color', '#000000') ) . ';}';
+	}
+
 
 	echo '</style>' . "\n";
 }

@@ -99,6 +99,10 @@ function aaron_customize_register( $wp_customize ) {
 					<input type="radio" value="dashicons-format-audio"  name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), 'dashicons-format-audio' ); ?> />
 					<i class="dashicons dashicons-format-audio"></i> Audio
 				</label>
+					<label>
+					<input type="radio" value="no-icon"  name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link(); checked( $this->value(), 'no-icon' ); ?> />
+					No icon
+				</label>
 				</fieldset>
 			</div>
 			<?php
@@ -232,9 +236,9 @@ function aaron_customize_register( $wp_customize ) {
 			'section' => 'aaron_section_hide',
 		)
 	);
+
 	
-	
-	for ($i = 1; $i < 4; $i++) {
+	for ($i = 1; $i < 10; $i++) {
 	
 		$wp_customize->add_section( 'aaron_section_'. $i, array(
 			 'title' => __( 'Highlight number', 'aaron' ) . ' ' . $i,
@@ -276,9 +280,24 @@ function aaron_customize_register( $wp_customize ) {
 				'section'  => 'aaron_section_'. $i,
 				'settings' => 'aaron_highlight' . $i . '_icon',
 				'priority' => 1,
-			) ) );
+		) ) );
 		
 		
+
+		$wp_customize->add_setting( 'aaron_highlight' . $i . '_image',		array(
+				'sanitize_callback' => 'esc_url_raw',
+			)
+		);
+		
+ 
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'aaron_highlight' . $i . '_image', array(
+		        'label' => __( 'Upload an image for your highlight:', 'aaron' ),
+		        'description'    => __( 'Uploading an image will overwrite your icon settings.', 'aaron' ),
+		     	'section'  => 'aaron_section_'. $i,
+		 ) ) );
+
+
+
 		$wp_customize->add_setting( 'aaron_highlight' . $i . '_link',		array(
 				'sanitize_callback' => 'esc_url_raw',
 			)
@@ -336,6 +355,20 @@ function aaron_customize_register( $wp_customize ) {
 			'section' => 'aaron_section_one',
 		)
 	);
+
+
+	$wp_customize->add_setting( 'aaron_action_color', array(
+		'default'        => '#000000',
+		'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'aaron_action_color', array(
+	'label'        => __( 'Call to Action text color:', 'aaron' ),
+	'section' => 'aaron_section_one',
+	'settings'  => 'aaron_action_color',
+	) ) );
+
+
 
 
 	/*Advanced settings*/

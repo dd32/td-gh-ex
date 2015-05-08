@@ -42,7 +42,8 @@
 	 if ( is_home() || is_front_page() ) {?>
 		<header id="masthead" class="site-header" role="banner">
 			<div class="site-branding">	
-				<?php aaron_the_site_logo(); ?>
+				<?php 
+				aaron_the_site_logo(); ?>
 				<?php if (display_header_text() ) {	?>
 					<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
 				<?php }else{
