@@ -35,3 +35,4 @@ olo has theme options page:Go into your Wordpress Admin, navigate to 'Appearance
 2014.05.12	Modify theme for 4-level menu or more.
 2015.04.27	Fix comments style on mobile, and a few bugs, and update font-awesome plugin.
 2015.04.28	update some functions.
+2015.05.09	Fix the function add_theme_support( 'title-tag' ).
