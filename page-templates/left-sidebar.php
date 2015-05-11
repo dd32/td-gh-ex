@@ -2,8 +2,10 @@
 /**
  * Template Name: Left Sidebar
  * */
-get_header(); ?>
+get_header();
+?>
 <section>
+
     <!--Breadcrumb Start-->
     <div class="breadcrumb-bg">
         <div class="royals-container container">
@@ -15,11 +17,16 @@ get_header(); ?>
             </div>  
         </div>
     </div>
-    <!--Breadcrumb End-->
+    <!--Breadcrumb End-->   
+
+
     <!--Our-Blog  Start-->
-    <div class="avocation-container  container">
+    <div class="avocation-container  container"> 
+
         <div class="blog-wrap row">
+
             <?php get_sidebar(); ?>
+
             <div class="blog-page col-md-offset-1 col-md-8 col-sm-8">                        
                 <?php while (have_posts()) : the_post(); ?>
                     <div class="blog-box">
@@ -30,20 +37,29 @@ get_header(); ?>
                                 </div>
                             <?php endif; ?>
                         </div>
-                        <a href="<?php echo esc_url(get_permalink()); ?>" class="blog-title"><?php esc_attr(get_the_title()); ?></a>
-                        <?php  avocation_entry_meta(); ?> 
+                        <a href="<?php echo esc_url(get_permalink()); ?>" class="blog-title"><?php esc_attr(get_the_title()); ?></a>  
+                        <?php  esc_attr_e(avocation_entry_meta()); ?> 
                         <div class="our-blog-details">
                             <?php the_content(); ?>
+
                         </div>
                     </div> 
-                <?php endwhile; ?>
+                <?php endwhile; ?>   
+
                 <div class="comments-article">
                     <?php comments_template('', true); ?>
                 </div>
+
+
             </div>
+
+
+
         </div>
     </div>
 </div>
 <!--Our-Blog End-->
+
 </section>
+
 <?php get_footer(); ?>

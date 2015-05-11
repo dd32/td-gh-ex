@@ -3,6 +3,7 @@
  * avocation Breadcrumbs
 */
 function avocation_custom_breadcrumbs() {
+
   $avocation_showonhome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
   $avocation_delimiter = '/'; // avocation_delimiter between crumbs
   $avocation_home = __('Home','avocation'); // text for the 'Home' link
@@ -11,13 +12,15 @@ function avocation_custom_breadcrumbs() {
   $avocation_after = ' '; // tag after the current crumb
 
   global $post;
-  $avocation_homelink = home_url('/');
+  $avocation_homelink = esc_url(home_url('/'));
+
   if (is_home() || is_front_page()) {
-    if ($avocation_showonhome == 1) echo '<li><a href="' . esc_url ( $avocation_homelink . '/' . $avocation_slug['slug'] ). '">' . $avocation_home . '</a></li>';
+
+    if ($avocation_showonhome == 1) echo '<li><a href="' . $avocation_homelink . '">' . $avocation_home . '</a></li>';
     
   }  else {
 
-    echo '<li><a href="' . esc_url ( $avocation_homelink . '/' . $avocation_slug['slug'] ) . '">' . esc_attr($avocation_home) . '</a> ' . $avocation_delimiter . '';
+    echo '<li><a href="' . $avocation_homelink . '">' . $avocation_home . '</a> ' . $avocation_delimiter . '';
     
    if ( is_category() ) {
       $avocation_thisCat = get_category(get_query_var('cat'), false);
@@ -43,7 +46,7 @@ function avocation_custom_breadcrumbs() {
       if ( get_post_type() != 'post' ) {
         $avocation_post_type = get_post_type_object(get_post_type());
         $avocation_slug = $avocation_post_type->rewrite;
-        echo '<a href="' . esc_url ( $avocation_homelink . '/' . $avocation_slug['slug'] ) . '/' . $avocation_slug['slug'] . '/">' . $avocation_post_type->labels->singular_name . '</a>';
+        echo '<a href="' . $avocation_homelink . '/' . $avocation_slug['slug'] . '/">' . $avocation_post_type->labels->singular_name . '</a>';
         if ($avocation_showcurrent == 1) echo ' ' . $avocation_delimiter . ' ' . $avocation_before . esc_attr(get_the_title()) . $avocation_after;
       } else {
         $avocation_cat = get_the_category(); $avocation_cat = $avocation_cat[0];
@@ -100,5 +103,6 @@ function avocation_custom_breadcrumbs() {
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
     }
     echo '</li>';
+
   }
-} ?>
+} 

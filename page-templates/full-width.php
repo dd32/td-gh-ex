@@ -4,6 +4,7 @@
 **/
 get_header(); ?>
 <section>
+
             <!--Breadcrumb Start-->
             <div class="breadcrumb-bg">
                 <div class="royals-container container">
@@ -15,9 +16,12 @@ get_header(); ?>
                     </div>  
                 </div>
             </div>
-            <!--Breadcrumb End-->
+            <!--Breadcrumb End-->   
+
+
             <!--Our-Blog  Start-->
-            <div class="avocation-container  container">
+            <div class="avocation-container  container"> 
+				
                            <?php while ( have_posts() ) : the_post(); ?>
                             <div class="blog-box">
                                 <div class="item">
@@ -28,16 +32,21 @@ get_header(); ?>
 				<?php endif; ?>
                                 </div>
                               <a href="<?php echo esc_url(get_permalink()); ?>" class="blog-title"><?php esc_attr(the_title()); ?></a>  
-                                <?php  avocation_entry_meta();?> 
+                                <?php  esc_attr_e(avocation_entry_meta());?> 
                                 <div class="our-blog-details">
                                     <?php the_content(); ?>
+                                    
                                 </div>
                             </div> 
-                              <?php endwhile;  ?>
+                              <?php endwhile;  ?>   
+                          
                             <div class="comments-article">
 							<?php comments_template( '', true ); ?>
 							</div>
+                 
+
             </div>
             <!--Our-Blog End-->
+            
         </section>
 <?php get_footer(); ?>

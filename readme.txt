@@ -5,14 +5,14 @@ Avocation Theme by FruitThemes http://fruitthemes.com/
 Avocation is a lightweight, clean, super flexible and bootstrap based responsive theme for business or personal websites. Avocation Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, theme-options etc in order to get it customized as per your needs.
 
 === Tags ===
-left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, full-width-template,  sticky-post, theme-options, threaded-comments, translation-ready
+left-sidebar, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, theme-options, threaded-comments , translation-ready
 
 == License ==
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 == Copyright ==
-Avocation Wordpress Theme, Copyright 2017 fruitthemes.com
+Avocation Wordpress Theme, Copyright 2014 fruitthemes.com
 Avocation is distributed under the terms of the GNU GPL
 
 
@@ -38,25 +38,23 @@ Avocation is distributed under the terms of the GNU GPL
 	i) Avocation latest post widget for display latest post in sidebar or footer.
 	ii) Avocation Get in touch widget for display the contact information in footer
 	
-6. Theme Customization  Path:- (Dashboard/Appearance/Customize/)
+6. Theme Options :
+
+	a) Basic Settings: You can manage your site logo and favicon in this.
 	
-	a) Hompage Settings:- In this section we have add the settings of the home page.
-	   
-           1) Slider Section :- In this you have to just pass the id of the slider shortcode which you want to display in the homepage.
-	   2) Purpose Business Section :- In this you can add the title, description and background image which you want to display in the homepage.
-	   3) Blog Section :- In this you can add title,description and select the specific category which you want to display in the homepage.
+	b) Footer Settings: You can manage your copyright text here.
+
+	c) Home Page Settings	
+		i) Banner Slider : Here you can manage home page slider and here we have put the checkbox to call the url in new browser or in the same browser. 
+		ii) About Us Section : You can set home page Abput Us title, description and you can manage your icon, title and description here
+and here we have put the checkbox to call the url in new browser or in the same browser.
+		iv)Purpose Business Section : you can manage your title and short description. 
+		v) Blog Section : You can set home page Blog Section title and description and select the category type as per the category type it will dispaly in the blog section.
 	
-	b) Basic Settings  :- In these section you add your basic needs.
-	   
-            1) Logo:- you can choose your logo which you want to display in the header portion of the theme.
-	    2) Favicon :- You can choose your favicon for your site.
-	    3) Blog Title:- You write your blog heading for the index.php page i.e. blog page.
-	    4) Copyright Text :- You write the copyright text here which will be display in the footer section.
-	
-	c) Social Settings :- here we pass the url of the social icons which will be display in the top of the header
-		1) Facebook , 2) Twitter, 3) Youtube, 4) rss and 5) Pinterest.  
-		 	
-	 	
+	d)Social Settings  : You can manage here Social Media
+
+	e)Contact Us Settings: You can manage your title, short description,address,phone,fax,email and web address
+		i) in contact settings : one plugin is used to get the contact person information i.e. contact-form7 plug in and i have set the shortcode so a person can use that dynamically.  
 
 ---------------------------------------------------------
 License and Copyrights for Resources used in this theme
@@ -113,7 +111,8 @@ I) Intro provides support for the following plugins:
 Image
 ---------------------------------------------------------
 
-1. StartupStockPhotos
+------------------- slider bg ----------------------------
+3. StartupStockPhotos
 	Resource URI: http://pixabay.com/en/startup-meeting-brainstorming-594090/
 	License: CC0 1.0
 	License URI: http://creativecommons.org/publicdomain/zero/1.0/deed.en
