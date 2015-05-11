@@ -41,7 +41,7 @@ function silverquantum_widgets_init() {
 	register_sidebar( array (
 		'name' 				=> __('Main Sidebar', 'silverquantum'),
 		'id'				=> 'sidebar-1',	
-		'description' 		=>__('Appear on Posts Only'),
+		'description' 		=>__('Appear on Posts Only', 'silverquantum'),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' 		=> '</aside>',
 		'before_title' 		=> '<h2 class="widget-title">',
@@ -51,7 +51,7 @@ function silverquantum_widgets_init() {
 	register_sidebar( array (
 		'name' 				=> __('Secondary Sidebar', 'silverquantum'),
 		'id'				=> 'sidebar-2',	
-		'description' 		=>__('Appear on Pages Only'),
+		'description' 		=>__('Appear on Pages Only', 'silverquantum'),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' 		=> '</aside>',
 		'before_title' 		=> '<h2 class="widget-title">',
@@ -61,7 +61,7 @@ function silverquantum_widgets_init() {
 	register_sidebar( array (
 		'name' 				=> __('Custom Sidebar', 'silverquantum'),
 		'id'				=> 'sidebar-3',	
-		'description' 		=>__('Appear on Custom Pages Only'),
+		'description' 		=>__('Appear on Custom Pages Only', 'silverquantum'),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' 		=> '</aside>',
 		'before_title' 		=> '<h2 class="widget-title">',

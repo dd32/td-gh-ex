@@ -16,7 +16,7 @@
 	<div id = "container" class = "cf">
 		<header class = "site-header">
 			<hgroup>
-				<h1 class = "site-title"><a href = "<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+				<h1 class = "site-title"><a href = "<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
 				<h2 class = "site-description"><?php bloginfo('description'); ?></h2>
 			<hgroup>
 				<?php if ( get_header_image() ) : ?>
