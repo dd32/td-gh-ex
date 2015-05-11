@@ -228,7 +228,11 @@ function cryout_setting_mobile_fn() {
 		echo ">$itemsare[$id]</option>";
 	}
 	echo "</select>";
-	$checkedClass = ($mantra_options['mantra_hcontain']=='1') ? ' checkedClass' : '';
+
+	echo " <label style='border:none;margin-left:10px;' for='mantra_zoom' class='socialsdisplay'><input ";
+		 checked($mantra_options['mantra_zoom'],'1');
+	echo " value='". $mantra_options['mantra_zoom'] ."' id='mantra_zoom' name='ma_options[mantra_zoom]' type='checkbox' /> Allow zoom </label>";	
+	
 	echo "<div><small>".__("Enable to make Mantra fully responsive. The layout and general sizes of your blog will adjust depending on what device and what resolution it is viewed in.<br> Do not disable unless you have a good reason to.","mantra")."</small></div>";
 }
 

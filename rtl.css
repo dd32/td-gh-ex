@@ -16,6 +16,11 @@ body {
 	float:left;
 }
 
+ol {margin-left:0;margin-right:1.5em;}
+
+.entry-content ul > li {padding-left:0;padding-right:20px;}
+.entry-content ul, .entry-summary ul {margin-right:0;}
+
 /*
 LAYOUT: Two-Column (Right)
 DESCRIPTION: Two-column fixed layout with one sidebar right of content
@@ -157,7 +162,7 @@ margin-right:0;
 }
 
 #content ul > li {
-background-position:right 10px;
+	background-position: right 51%;
 }
 
 .entry-title,
@@ -165,6 +170,15 @@ background-position:right 10px;
 	clear: right;
 	float: right;
 }
+
+.entry-meta {
+	width: 100%;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+.entry-meta .comments-link {float: left;}
 
 #content .format-status .entry-meta2 {
 clear:left;
@@ -182,6 +196,9 @@ float:right;
 	padding-left:3px;
 }
 
+.entry-meta2 .edit-link, .entry-meta3 .edit-link, .edit-link {
+	float: left;
+}
 
 .entry-meta span .bl_sep, .entry-meta2 span .bl_sep  {
 	float: left ;
@@ -233,6 +250,18 @@ margin-left:10px;
 	margin: 0 104px 0 0;
 }
 
+.continue-reading-link {
+	display:inline-block;
+}
+
+.continue-reading-link .meta-nav {
+	display:inline-block;
+	float:left;
+	-webkit-transform:rotate(180deg);
+	-moz-transform:rotate(180deg);
+	transform:rotate(180deg);
+}
+
 .sticky hgroup {
     background: url("images/icon-featured.png") no-repeat scroll right 10px transparent;
     padding-right: 35px;
@@ -240,6 +269,15 @@ margin-left:10px;
 
 .pagination span, .pagination a {
 float:right;
+}
+
+article.format-link, article.format-quote, article.format-image, article.format-chat, article.format-aside {
+	background-position: right 10px;
+}
+
+article.format-link header, article.format-quote header, article.format-image header, article.format-chat header, article.format-aside header {
+	padding-left: 0;
+	padding-right: 60px;
 }
 
 
@@ -284,7 +322,7 @@ text-align:right;
 }
 
 #content .entry-title {
-float:none;
+	float:none;
 }
 
 /* =Navigation
@@ -295,6 +333,10 @@ float:none;
 .nav-next {
 	float: left;
 	text-align:left;
+}
+
+.theme-default .nivo-controlNav {
+	direction:ltr;
 }
 
 /* =Comments

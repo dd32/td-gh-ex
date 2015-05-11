@@ -10,10 +10,9 @@
 
 function mantra_mobile_meta() {
 global $mantra_options;
-foreach ($mantra_options as $key => $value) {
-    							 ${"$key"} = $value ;
-									}
- return '<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">';
+if ($mantra_options['mantra_zoom'] == 1) 
+	return '<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0, maximum-scale=3.0">';
+else return '<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">';
 }
 
 

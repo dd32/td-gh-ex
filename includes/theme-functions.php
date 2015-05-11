@@ -230,7 +230,7 @@ foreach ($mantra_options as $key => $value) { ${"$key"} = $value; }
 global $post;
 echo '<div class="breadcrumbs">';
 if (is_page() && !is_front_page() || is_single() || is_category() || is_archive()) {
-        echo '<a href="'.get_bloginfo('url').'">'.get_bloginfo('name').' &raquo; </a>';
+        echo '<a href="'.esc_url( home_url() ) .'">'.get_bloginfo('name').' &raquo; </a>';
 
         if (is_page()) {
             $ancestors = get_post_ancestors($post);
@@ -255,7 +255,9 @@ if (is_page() && !is_front_page() || is_single() || is_category() || is_archive(
             echo ''.$category[0]->cat_name.'';
         }
 
-
+		if (is_tag()) {
+			echo ''.__('Tag','mantra').' &raquo; '.single_tag_title('', false);
+		} 
 
         // Current page
         if (is_page() || is_single()) {
@@ -265,7 +267,7 @@ if (is_page() && !is_front_page() || is_single() || is_category() || is_archive(
     } elseif (is_home() && $mantra_frontpage!="Enable" ) {
         // Front page
         echo '';
-        echo '<a href="'.get_bloginfo('url').'">'.get_bloginfo('name').'</a> '."&raquo; ";
+        echo '<a href="'.esc_url( home_url() ) .'">'.get_bloginfo('name').'</a> '."&raquo; ";
         _e('Home Page','mantra');
         echo '';
     }

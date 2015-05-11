@@ -29,7 +29,7 @@ add_filter( 'excerpt_length', 'mantra_excerpt_length' );
  */
 function mantra_continue_reading_link() {
 	global $mantra_excerptcont;
-	return ' <a href="'. get_permalink() . '">' .$mantra_excerptcont.' <span class="meta-nav">&rarr; </span>' . '</a>';
+	return ' <a class="continue-reading-link" href="'. get_permalink() . '">' .$mantra_excerptcont.' <span class="meta-nav">&rarr; </span>' . '</a>';
 }
 
 /**

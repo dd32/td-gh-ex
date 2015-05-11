@@ -23,7 +23,7 @@ function mantra_filter_wp_title( $title ) {
 	// Add pagination if that's the case
 	global $page, $paged;
 	if ( $paged >= 2 || $page >= 2 )
-	$filtered_title .=	 ' | ' . sprintf( __( 'Page %s', 'parabola' ), max( $paged, $page ) );
+	$filtered_title .=	 ' | ' . sprintf( __( 'Page %s', 'mantra' ), max( $paged, $page ) );
 
     // Return the modified title
     return $filtered_title;
@@ -81,17 +81,11 @@ function mantra_seo_name() {
      ${"$key"} = $value ;}
 echo '<meta name="author" content="'.$mantra_seo_author.'" />';
 }
- /**
- * Meta Theme 
- */
-function mantra_seo_template() {
-echo PHP_EOL.'<meta property="template" content="mantra" />'.PHP_EOL;
-}
+
 /**
  * Meta Title 
  */
 function mantra_seo_title() {
-echo "<title>".wp_title( '', false, 'right' )."</title>".PHP_EOL;
 echo '<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />';
 }
 
@@ -106,9 +100,8 @@ add_action ('cryout_seo_hook','mantra_seo_description');
 
 if($mantra_seo_author && $mantra_seo_author!="Do not use") 
 	add_action ('cryout_seo_hook','mantra_seo_name');
-	
-add_action ('cryout_seo_hook','mantra_seo_template');
 }
+
 if($mantra_seo=="Enable") mantra_seo_generator() ; 
 	else add_action ('cryout_seo_hook','mantra_seo_title',0);
 

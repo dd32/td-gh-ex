@@ -49,10 +49,11 @@
 
 /* Social media links */
 
-	$socialNetworks = array ("Amazon", "Delicious", "DeviantArt", "Digg", "Etsy", "Facebook", "Flickr", "Google", "GoodReads", "GooglePlus",
-                              "IMDb", "Instagram", "LastFM", "LinkedIn", "Mail", "MySpace", "Picasa", "Pinterest", "Reddit", "RSS", "Skype",
-                              "Steam", "SoundCloud", "StumbleUpon", "Technorati", "Tumblr", "Twitch", "Twitter", "Vimeo", "VK", "WordPress",
-                              "Xing", "Yahoo", "Yelp", "YouTube" );
+	$socialNetworks = array ("Amazon", "Dailymotion", "Delicious", "DeviantArt", "Digg", "Etsy", "Facebook", "Flickr", 
+							"Google", "GoodReads", "GooglePlus", "IMDb", "Instagram", "LastFM", "LinkedIn", "Mail", 
+							"MySpace", "Picasa", "Pinterest", "Reddit", "RSS", "Skype", "Steam", "SoundCloud", 
+							"StumbleUpon", "Technorati", "Tumblr", "Twitch", "Twitter", "Vimeo", "VK", "WordPress",
+                            "Xing", "Yahoo", "Yelp", "YouTube" );
 
 
 
@@ -74,6 +75,7 @@ global $mantra_defaults;
 	if(isset($input['mantra_sidewidthRel']) && is_numeric($input['mantra_sidewidthRel']) && $input['mantra_sidewidthRel']>=40 && $input['mantra_sidewidthRel'] <=80) {} else {$input['mantra_sidewidthRel']=$mantra_defaults['mantra_sidewidthRel']; }
 	if(isset($input['mantra_sidebarRel']) && is_numeric($input['mantra_sidebarRel']) && $input['mantra_sidebarRel']>=20 && $input['mantra_sidebarRel'] <=50) {} else {$input['mantra_sidebarRel']=$mantra_defaults['mantra_sidebarRel']; }
 
+	if (isset($input['mantra_zoom'])) $input['mantra_zoom'] = "1"; else $input['mantra_zoom'] = 0;
 
 	$input['mantra_hheight'] =  intval(wp_kses_data($input['mantra_hheight']));
 

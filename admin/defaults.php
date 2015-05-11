@@ -13,6 +13,7 @@ $mantra_defaults = array(
 "mantra_sidewidthRel" => 60,
 "mantra_sidebarRel" => 20,
 "mantra_mobile" => "Enable",
+"mantra_zoom" => 0,
 "mantra_hcontain" => "",
 
 

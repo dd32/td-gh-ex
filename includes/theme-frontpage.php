@@ -90,7 +90,7 @@ foreach ($mantra_options as $key => $value) {
 			effect: '<?php  echo $mantra_fpslideranim; ?>',
        		animSpeed: <?php echo $mantra_fpslidertime ?>,
 			<?php	if($mantra_fpsliderarrows=="Hidden") { ?> directionNav: false, <?php }
-   			if($mantra_fpsliderarrows=="Always Visible") { ?>  directionNavHide: false, <?php } ?>
+   			if($mantra_fpsliderarrows=="Always Visible") { ?>  directionNav: true, <?php } ?>
 			pauseTime: <?php echo $mantra_fpsliderpause ?>
 
 						});
@@ -145,7 +145,7 @@ break;
  case 'Specific Posts' :
  // Transofm string separated by commas into array
 $pieces_array = explode(",", $mantra_slideSpecific);
-$custom_query->query(array( 'post_type' => 'any', 'post__in' => $pieces_array, 'ignore_sticky_posts' => 1,'orderby' => 'post__in' ));
+$custom_query->query(array( 'post_type' => 'any', 'showposts' => -1, 'post__in' => $pieces_array, 'ignore_sticky_posts' => 1, 'orderby' => 'post__in' ));
 break;
 
 }
@@ -153,7 +153,7 @@ break;
 $i=0;	$j=0;?>
  <div class="slider-wrapper theme-default">
             <div class="ribbon"></div>
-  <div id="slider" class="nivoSlider">
+  <div id="slider" class="nivoSlider <?php if($mantra_fpsliderarrows=="Visible on Hover"): ?>slider-navhover<?php endif; ?>">
 
 	<?php
 	 // Loop for creating the slides
@@ -185,7 +185,7 @@ $i=0;	$j=0;?>
 ?>
  <div class="slider-wrapper theme-default">
             <div class="ribbon"></div>
-            <div id="slider" class="nivoSlider">
+            <div id="slider" class="nivoSlider <?php if($mantra_fpsliderarrows=="Visible on Hover"): ?>slider-navhover<?php endif; ?>">
 				<?php  for ($i=1;$i<=5;$i++)
 					if(${"mantra_sliderimg$i"}) {?>    <a href='<?php echo esc_url(${"mantra_sliderlink$i"}) ?>'><img  src='<?php echo esc_url(${"mantra_sliderimg$i"}) ?>'  alt="" <?php if (${"mantra_slidertitle$i"} || ${"mantra_slidertext$i"} ) { ?>title="#caption<?php echo $i;?>" <?php }?> /></a><?php }  ?>
             </div>

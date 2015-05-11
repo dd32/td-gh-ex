@@ -312,6 +312,10 @@ border:2px solid #CCC;
 width:60px;
 }
 
+.layouts img, .images img {
+pointer-events: none;
+}
+
 
 .borderful {
 border-color:#F6A828 ;
