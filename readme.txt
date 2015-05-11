@@ -17,8 +17,14 @@ If you have any questions, accessibility issues or feature requests for this the
 2. Activate the theme through the 'Appearance' menu in WordPress
 
 
+Please note that changing the colors of the theme can affect accessibility.
+
 
 == Change log ==
+Version 1.8, 2015-05-11
+Added options to change the text-and background color of the Highlights.
+
+
 Version 1.7, 2015-05-08
 Added an option to change the text color of the Call to Action button.
 Added an additional widget area to the footer below the social menu, where you can add a copyright text.

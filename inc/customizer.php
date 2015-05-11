@@ -298,6 +298,31 @@ function aaron_customize_register( $wp_customize ) {
 
 
 
+			$wp_customize->add_setting( 'aaron_highlight' . $i . '_bgcolor', array(
+				'default'        => '#fafafa',
+				'sanitize_callback' => 'sanitize_hex_color',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'aaron_highlight' . $i . '_bgcolor', array(
+			'label'        => __( 'Hightlight background color:', 'aaron' ),
+			'section'  => 'aaron_section_'. $i,
+			'settings' => 'aaron_highlight' . $i . '_bgcolor',
+			) ) );
+
+
+			$wp_customize->add_setting( 'aaron_highlight' . $i . '_textcolor', array(
+				'default'        => '#333333',
+				'sanitize_callback' => 'sanitize_hex_color',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'aaron_highlight' . $i . '_textcolor', array(
+			'label'        => __( 'Hightlight text and icon color:', 'aaron' ),
+			'section'  => 'aaron_section_'. $i,
+			'settings' => 'aaron_highlight' . $i . '_textcolor',
+			) ) );
+
+
+
 		$wp_customize->add_setting( 'aaron_highlight' . $i . '_link',		array(
 				'sanitize_callback' => 'esc_url_raw',
 			)

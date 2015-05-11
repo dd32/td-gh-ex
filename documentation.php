@@ -72,7 +72,8 @@ function aaron_docs() {
 			<ul>
 				<li><?php _e('Add your own text','aaron' )?></li>
 				<li><?php _e('Add a link','aaron' )?></li>	
-				<li><?php _e('Add an icon or upload an image','aaron' )?></li>	
+				<li><?php _e('Add an icon or upload an image','aaron' )?></li>
+				<li><?php _e('Change colors','aaron' )?></li>	
 				<li><?php _e('Hide the highlights','aaron' )?></li>
 			</ul>
 			<?php _e('<b>Tagline:</b> You will find an option to hide your tagline in the customizer.','aaron' )?><br>
