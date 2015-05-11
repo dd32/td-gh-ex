@@ -679,24 +679,6 @@ function optionsframework_options() {
             'type' => 'switch'
             );
     $options[] = array(
-            'name' => __( 'Disable Comments Sitewide', 'accesspress-mag' ),                
-            'desc' => __( 'Enable or disable the comments on the entire site, default this option is disabled', 'accesspress-mag' ),
-            'id' => 'disable_comments_sitewide',
-            'on' => __( 'Yes', 'accesspress-mag'),
-            'off' => __( 'No', 'accesspress-mag'),
-            'std' => '0',
-            'type' => 'switch'
-            );
-    $options[] = array(
-            'name' => __( 'Disable Comments on Pages', 'accesspress-mag' ),                
-            'desc' => __( 'Enable or disable the comments on the pages, default this option is disabled', 'accesspress-mag' ),
-            'id' => 'disable_comments_page',
-            'on' => __( 'Yes', 'accesspress-mag'),
-            'off' => __( 'No', 'accesspress-mag'),
-            'std' => '1',
-            'type' => 'switch'
-            );
-    $options[] = array(
             'type' => 'groupend'
             );
       /*------------------------Default site post template------------------------*/ 

@@ -62,13 +62,10 @@ else {
              ?>
 
 			<?php
-                $accesspress_mag_disable_comment_post = of_get_option( 'disable_comments_sitewide' );
-                if($accesspress_mag_disable_comment_post!='1'){
-				// If comments are open or we have at least one comment, load up the comment template
+                // If comments are open or we have at least one comment, load up the comment template
 				if ( comments_open() || get_comments_number() ) :
 					comments_template();
 				endif;
-                }
 			?>
             
             <?php setPostViews(get_the_ID()); ?>

@@ -12,7 +12,7 @@
 		<div class="entry-meta">
             <?php 
                 if( is_author() || is_tag() || is_archive() ){
-                    echo $post_categories = get_the_category_list();
+                    echo get_the_category_list();
                 }
             ?>
 			<?php accesspress_mag_posted_on(); ?>

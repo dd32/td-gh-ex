@@ -16,7 +16,7 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 		<div class="entry-meta clearfix">
-            <?php echo $post_categories = get_the_category_list();  ?>
+            <?php echo get_the_category_list();  ?>
             <?php accesspress_mag_posted_on(); ?>
 			<?php do_action( 'accesspress_mag_post_meta' );?>
 		</div><!-- .entry-meta -->
@@ -39,7 +39,7 @@
                 ?>
             </div>
         <div class="post_content"><?php the_content(); ?></div>	        	
-        <?php if( !empty( $article_ad )):?> <div class="article-ad-section"><?php echo  esc_html( $article_ad ) ; ?></div> <?php endif ;?>
+        <?php if( !empty( $article_ad )):?> <div class="article-ad-section"><?php echo  wp_kses_post( $article_ad ) ; ?></div> <?php endif ;?>
 		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'accesspress-mag' ),

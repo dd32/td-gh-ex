@@ -85,7 +85,7 @@
                                 if( $accesspress_mag_logo_setting == 'image' || $accesspress_mag_logo_setting == 'image_text') :
                                 if (!empty($accesspress_mag_logo)): ?>
                                   <div class="sitelogo-wrap">  
-                                    <a itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo $accesspress_mag_logo?>" alt="<?php echo $accesspress_mag_logo_alt ?>" title="<?php echo $accesspress_mag_logo_title ?>" /></a>
+                                    <a itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( $accesspress_mag_logo ) ;?>" alt="<?php echo esc_attr( $accesspress_mag_logo_alt ); ?>" title="<?php echo esc_attr( $accesspress_mag_logo_title ); ?>" /></a>
                                     <meta itemprop="name" content="<?php bloginfo( 'name' )?>" />
                                   </div>
                             <?php endif; endif;
@@ -116,7 +116,7 @@
                     <?php 
                         $accesspress_mag_header_ad = of_get_option( 'value_header_ad' );
                         if(!empty($accesspress_mag_header_ad)){
-                            echo esc_html( $accesspress_mag_header_ad );
+                            echo wp_kses_post( $accesspress_mag_header_ad );
                         } else {
                             echo '<img src="'. esc_url( get_template_directory_uri().'/images/demo-images/728-90.png' ).'" />';
                         } 

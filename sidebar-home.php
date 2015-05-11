@@ -30,7 +30,7 @@ if( empty( $trans_editor ) ){ $trans_editor = __( "Editor Pick's", "accesspress-
     ?>
     <div class="sidebar-top-ad widget-area wow fadeInUp" data-wow-delay="0.5s">
         <h1 class="sidebar-title"><span><?php echo esc_attr( $trans_ads ) ;?></span></h1>
-        <div class="ad_content"><?php echo  esc_html( $sidebar_top_ad )  ;?></div>
+        <div class="ad_content"><?php echo  wp_kses_post( $sidebar_top_ad )  ;?></div>
     </div>
     <?php    
     } else { 
@@ -113,7 +113,7 @@ if( empty( $trans_editor ) ){ $trans_editor = __( "Editor Pick's", "accesspress-
     ?>
     <div class="sidebar-top-ad widget-area wow fadeInUp" data-wow-delay="0.5s">
         <h1 class="sidebar-title"><span><?php echo esc_attr( $trans_ads ) ;?></span></h1>
-        <div class="ad_content"><?php echo  esc_html( $sidebar_middle_ad )  ;?></div>
+        <div class="ad_content"><?php echo  wp_kses_post( $sidebar_middle_ad )  ;?></div>
     </div>
     <?php    
     }else {

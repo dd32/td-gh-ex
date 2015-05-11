@@ -14,7 +14,7 @@
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
-            <?php echo $post_categories = get_the_category_list();  ?>
+            <?php echo get_the_category_list();  ?>
 			<?php accesspress_mag_posted_on(); ?>
             <?php do_action('accesspress_mag_post_meta');?>
 		</div><!-- .entry-meta -->

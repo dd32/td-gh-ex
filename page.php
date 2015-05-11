@@ -26,13 +26,10 @@ get_header(); ?>
 					<?php get_template_part( 'content', 'page' ); ?>
 
 					<?php
-	                    $accesspress_mag_disable_comment_page = of_get_option('disable_comments_page');
-	                    if($accesspress_mag_disable_comment_page!='1'){
 						// If comments are open or we have at least one comment, load up the comment template
 						if ( comments_open() || get_comments_number() ) :
 							comments_template();
 						endif;
-	                    }
 					?>
 
 				<?php endwhile; // end of the loop. ?>
