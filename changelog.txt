@@ -1,5 +1,9 @@
 Changelog
 
+Quill 1.08
+----------------------
+- Display Header Text checkbox removed from customizer (user should choose between logo or text);
+
 Quill 1.07
 ----------------------
 - small fix ABOUT US SECTION not changing colors (styles.php, customizer.js);
