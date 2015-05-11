@@ -110,7 +110,7 @@ $full_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '
 		</div>
 		<?php } ?>
 		<div class="short-content">
-		<?php echo accesspresslite_excerpt( get_the_content() , 600 ) ?>
+		<?php echo accesspresslite_excerpt( get_the_content() , 500 ) ?>
 		</div>
 		<a href="<?php the_permalink(); ?>" class="bttn"><?php _e('More','accesspresslite')?></a>
 		<?php
@@ -145,7 +145,6 @@ $full_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
 
-		<?php //edit_post_link( __( 'Edit', 'accesspresslite' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
 <?php endif; ?>

@@ -8,7 +8,6 @@
 get_header();
 global $accesspresslite_options, $post;
 $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-$cat_blog = $accesspresslite_settings['blog_cat'];
 $post_class = get_post_meta( $post -> ID, 'accesspresslite_sidebar_layout', true );
 ?>
 
@@ -28,11 +27,9 @@ $post_class = get_post_meta( $post -> ID, 'accesspresslite_sidebar_layout', true
 			<?php // accesspresslite_post_nav(); ?>
 
             <?php
-			if(has_category( $cat_blog, $post )):
-				// If comments are open or we have at least one comment, load up the comment template
-				if ( comments_open() || '0' != get_comments_number() ) :
-					comments_template();
-				endif;
+			// If comments are open or we have at least one comment, load up the comment template
+			if ( comments_open() || '0' != get_comments_number() ) :
+				comments_template();
 			endif;
 			?>
 

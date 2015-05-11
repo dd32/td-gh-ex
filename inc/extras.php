@@ -262,328 +262,352 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 /**
 * Loads up favicon
 */
-	function accesspresslite_add_favicon(){
-		global $accesspresslite_options;
-		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-		
-		if( !empty($accesspresslite_settings[ 'media_upload' ])){
-		echo '<link rel="shortcut icon" type="image/png" href="'. esc_url($accesspresslite_settings[ 'media_upload' ]).'"/>';
-		}
+function accesspresslite_add_favicon(){
+	global $accesspresslite_options;
+	$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
+	
+	if( !empty($accesspresslite_settings[ 'media_upload' ])){
+	echo '<link rel="shortcut icon" type="image/png" href="'. esc_url($accesspresslite_settings[ 'media_upload' ]).'"/>';
 	}
-	add_action('wp_head', 'accesspresslite_add_favicon');
+}
+add_action('wp_head', 'accesspresslite_add_favicon');
 
 
-	function accesspresslite_social_cb(){ 
-		global $accesspresslite_options;
-		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-		?>
-		<div class="socials">
-		<?php if(!empty($accesspresslite_settings['accesspresslite_facebook'])){ ?>
-		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_facebook']); ?>" class="facebook" title="Facebook" target="_blank"><span class="font-icon-social-facebook"></span></a>
-		<?php } ?>
+function accesspresslite_social_cb(){ 
+	global $accesspresslite_options;
+	$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
+	?>
+	<div class="socials">
+	<?php if(!empty($accesspresslite_settings['accesspresslite_facebook'])){ ?>
+	<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_facebook']); ?>" class="facebook" title="Facebook" target="_blank"><span class="font-icon-social-facebook"></span></a>
+	<?php } ?>
 
-		<?php if(!empty($accesspresslite_settings['accesspresslite_twitter'])){ ?>
-		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_twitter']); ?>" class="twitter" title="Twitter" target="_blank"><span class="font-icon-social-twitter"></span></a>
-		<?php } ?>
+	<?php if(!empty($accesspresslite_settings['accesspresslite_twitter'])){ ?>
+	<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_twitter']); ?>" class="twitter" title="Twitter" target="_blank"><span class="font-icon-social-twitter"></span></a>
+	<?php } ?>
 
-		<?php if(!empty($accesspresslite_settings['accesspresslite_gplus'])){ ?>
-		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_gplus']); ?>" class="gplus" title="Google Plus" target="_blank"><span class="font-icon-social-google-plus"></span></a>
-		<?php } ?>
+	<?php if(!empty($accesspresslite_settings['accesspresslite_gplus'])){ ?>
+	<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_gplus']); ?>" class="gplus" title="Google Plus" target="_blank"><span class="font-icon-social-google-plus"></span></a>
+	<?php } ?>
 
-		<?php if(!empty($accesspresslite_settings['accesspresslite_youtube'])){ ?>
-		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_youtube']); ?>" class="youtube" title="Youtube" target="_blank"><span class="font-icon-social-youtube"></span></a>
-		<?php } ?>
+	<?php if(!empty($accesspresslite_settings['accesspresslite_youtube'])){ ?>
+	<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_youtube']); ?>" class="youtube" title="Youtube" target="_blank"><span class="font-icon-social-youtube"></span></a>
+	<?php } ?>
 
-		<?php if(!empty($accesspresslite_settings['accesspresslite_pinterest'])){ ?>
-		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_pinterest']); ?>" class="pinterest" title="Pinterest" target="_blank"><span class="font-icon-social-pinterest"></span></a>
-		<?php } ?>
+	<?php if(!empty($accesspresslite_settings['accesspresslite_pinterest'])){ ?>
+	<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_pinterest']); ?>" class="pinterest" title="Pinterest" target="_blank"><span class="font-icon-social-pinterest"></span></a>
+	<?php } ?>
 
-		<?php if(!empty($accesspresslite_settings['accesspresslite_linkedin'])){ ?>
-		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_linkedin']); ?>" class="linkedin" title="Linkedin" target="_blank"><span class="font-icon-social-linkedin"></span></a>
-		<?php } ?>
+	<?php if(!empty($accesspresslite_settings['accesspresslite_linkedin'])){ ?>
+	<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_linkedin']); ?>" class="linkedin" title="Linkedin" target="_blank"><span class="font-icon-social-linkedin"></span></a>
+	<?php } ?>
 
-		<?php if(!empty($accesspresslite_settings['accesspresslite_flickr'])){ ?>
-		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_flickr']); ?>" class="flickr" title="Flickr" target="_blank"><span class="font-icon-social-flickr"></span></a>
-		<?php } ?>
+	<?php if(!empty($accesspresslite_settings['accesspresslite_flickr'])){ ?>
+	<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_flickr']); ?>" class="flickr" title="Flickr" target="_blank"><span class="font-icon-social-flickr"></span></a>
+	<?php } ?>
 
-		<?php if(!empty($accesspresslite_settings['accesspresslite_vimeo'])){ ?>
-		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_vimeo']); ?>" class="vimeo" title="Vimeo" target="_blank"><span class="font-icon-social-vimeo"></span></a>
-		<?php } ?>
+	<?php if(!empty($accesspresslite_settings['accesspresslite_vimeo'])){ ?>
+	<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_vimeo']); ?>" class="vimeo" title="Vimeo" target="_blank"><span class="font-icon-social-vimeo"></span></a>
+	<?php } ?>
 
-		<?php if(!empty($accesspresslite_settings['accesspresslite_stumbleupon'])){ ?>
-		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_stumbleupon']); ?>" class="stumbleupon" title="Stumbleupon" target="_blank"><span class="font-icon-social-stumbleupon"></span></a>
-		<?php } ?>
+	<?php if(!empty($accesspresslite_settings['accesspresslite_stumbleupon'])){ ?>
+	<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_stumbleupon']); ?>" class="stumbleupon" title="Stumbleupon" target="_blank"><span class="font-icon-social-stumbleupon"></span></a>
+	<?php } ?>
 
-		<?php if(!empty($accesspresslite_settings['accesspresslite_instagram'])){ ?>
-		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_instagram']); ?>" class="instagram" title="instagram" target="_blank"><span class="fa fa-instagram"></span></a>
-		<?php } ?>
+	<?php if(!empty($accesspresslite_settings['accesspresslite_instagram'])){ ?>
+	<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_instagram']); ?>" class="instagram" title="instagram" target="_blank"><span class="fa fa-instagram"></span></a>
+	<?php } ?>
 
-		<?php if(!empty($accesspresslite_settings['accesspresslite_sound_cloud'])){ ?>
-		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_sound_cloud']); ?>" class="sound-cloud" title="sound-cloud" target="_blank"><span class="font-icon-social-soundcloud"></span></a>
-		<?php } ?>
+	<?php if(!empty($accesspresslite_settings['accesspresslite_sound_cloud'])){ ?>
+	<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_sound_cloud']); ?>" class="sound-cloud" title="sound-cloud" target="_blank"><span class="font-icon-social-soundcloud"></span></a>
+	<?php } ?>
 
-		<?php if(!empty($accesspresslite_settings['accesspresslite_skype'])){ ?>
-		<a href="<?php echo "skype:".esc_attr($accesspresslite_settings['accesspresslite_skype']); ?>" class="skype" title="Skype"><span class="font-icon-social-skype"></span></a>
-		<?php } ?>
+	<?php if(!empty($accesspresslite_settings['accesspresslite_skype'])){ ?>
+	<a href="<?php echo "skype:".esc_attr($accesspresslite_settings['accesspresslite_skype']); ?>" class="skype" title="Skype"><span class="font-icon-social-skype"></span></a>
+	<?php } ?>
 
-		<?php if(!empty($accesspresslite_settings['accesspresslite_tumblr'])){ ?>
-		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_tumblr']); ?>" class="tumblr" title="Tumblr"><span class="font-icon-social-tumblr"></span></a>
-		<?php } ?>
+	<?php if(!empty($accesspresslite_settings['accesspresslite_tumblr'])){ ?>
+	<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_tumblr']); ?>" class="tumblr" title="Tumblr"><span class="font-icon-social-tumblr"></span></a>
+	<?php } ?>
 
-		<?php if(!empty($accesspresslite_settings['accesspresslite_myspace'])){ ?>
-		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_myspace']); ?>" class="myspace" title="Myspace"><span class="font-icon-social-myspace"></span></a>
-		<?php } ?>
+	<?php if(!empty($accesspresslite_settings['accesspresslite_myspace'])){ ?>
+	<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_myspace']); ?>" class="myspace" title="Myspace"><span class="font-icon-social-myspace"></span></a>
+	<?php } ?>
 
-		<?php if(!empty($accesspresslite_settings['accesspresslite_rss'])){ ?>
-		<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_rss']); ?>" class="rss" title="RSS" target="_blank"><span class="font-icon-rss"></span></a>
-		<?php } ?>
-		</div>
-	<?php } 
+	<?php if(!empty($accesspresslite_settings['accesspresslite_rss'])){ ?>
+	<a href="<?php echo esc_url($accesspresslite_settings['accesspresslite_rss']); ?>" class="rss" title="RSS" target="_blank"><span class="font-icon-rss"></span></a>
+	<?php } ?>
+	</div>
+<?php } 
 
-	add_action( 'accesspresslite_social_links', 'accesspresslite_social_cb', 10 );	
+add_action( 'accesspresslite_social_links', 'accesspresslite_social_cb', 10 );	
 
 
-	function accesspresslite_header_text_cb(){
-		global $accesspresslite_options;
-		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-		if(!empty($accesspresslite_settings['header_text'])){
-		echo '<div class="header-text">'.wpautop(wp_kses_post($accesspresslite_settings['header_text'])).'</div>';
-		}
+function accesspresslite_header_text_cb(){
+	global $accesspresslite_options;
+	$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
+	if(!empty($accesspresslite_settings['header_text'])){
+	echo '<div class="header-text">'.wpautop(wp_kses_post($accesspresslite_settings['header_text'])).'</div>';
 	}
+}
 
-	add_action('accesspresslite_header_text','accesspresslite_header_text_cb', 10);
+add_action('accesspresslite_header_text','accesspresslite_header_text_cb', 10);
 
-	function accesspresslite_menu_alignment_cb(){
-		global $accesspresslite_options;
-		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-		if($accesspresslite_settings['menu_alignment'] =="Left"){
-			$accesspresslite_alignment_class="menu-left";
-		}elseif($accesspresslite_settings['menu_alignment'] == "Center"){
-			$accesspresslite_alignment_class="menu-center";
-		}elseif($accesspresslite_settings['menu_alignment'] == "Right"){
-			$accesspresslite_alignment_class="menu-right";
-		}else{
-			$accesspresslite_alignment_class="";
-		}
-		echo esc_attr($accesspresslite_alignment_class);
+function accesspresslite_menu_alignment_cb(){
+	global $accesspresslite_options;
+	$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
+	if($accesspresslite_settings['menu_alignment'] =="Left"){
+		$accesspresslite_alignment_class="menu-left";
+	}elseif($accesspresslite_settings['menu_alignment'] == "Center"){
+		$accesspresslite_alignment_class="menu-center";
+	}elseif($accesspresslite_settings['menu_alignment'] == "Right"){
+		$accesspresslite_alignment_class="menu-right";
+	}else{
+		$accesspresslite_alignment_class="";
 	}
+	echo esc_attr($accesspresslite_alignment_class);
+}
 
-	add_action('accesspresslite_menu_alignment','accesspresslite_menu_alignment_cb', 10);
+add_action('accesspresslite_menu_alignment','accesspresslite_menu_alignment_cb', 10);
 
 
-	function accesspresslite_excerpt( $accesspresslite_content , $accesspresslite_letter_count ){
-		$accesspresslite_striped_content = strip_shortcodes($accesspresslite_content);
-		$accesspresslite_striped_content = strip_tags($accesspresslite_striped_content);
-		$accesspresslite_excerpt = mb_substr($accesspresslite_striped_content, 0, $accesspresslite_letter_count );
-		if($accesspresslite_striped_content > $accesspresslite_excerpt){
-			$accesspresslite_excerpt .= "...";
-		}
-		return $accesspresslite_excerpt;
+function accesspresslite_excerpt( $accesspresslite_content , $accesspresslite_letter_count ){
+	$accesspresslite_striped_content = strip_shortcodes($accesspresslite_content);
+	$accesspresslite_striped_content = strip_tags($accesspresslite_striped_content);
+	$accesspresslite_excerpt = mb_substr($accesspresslite_striped_content, 0, $accesspresslite_letter_count );
+	if($accesspresslite_striped_content > $accesspresslite_excerpt){
+		$accesspresslite_excerpt .= "...";
 	}
+	return $accesspresslite_excerpt;
+}
 
 
-	function accesspresslite_bxslidercb(){
-		global $accesspresslite_options, $post;
-		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-        ($accesspresslite_settings['slider_show_pager'] == 'yes1' || empty($accesspresslite_settings['slider_show_pager'])) ? ($a='true') : ($a='false');
-        ($accesspresslite_settings['slider_show_controls'] == 'yes2' || empty($accesspresslite_settings['slider_show_controls'])) ? ($b='true') : ($b='false');
-        ($accesspresslite_settings['slider_mode'] == 'slide' || empty($accesspresslite_settings['slider_mode'])) ? ($c='horizontal') : ($c='fade');
-        ($accesspresslite_settings['slider_auto'] == 'yes3' || empty($accesspresslite_settings['slider_auto'])) ? ($d='true') : ($d='false');
-		empty($accesspresslite_settings['slider_pause']) ? ($e ='5000') : ($e = $accesspresslite_settings['slider_pause']);
+function accesspresslite_bxslidercb(){
+	global $accesspresslite_options, $post;
+	$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
+    ($accesspresslite_settings['slider_show_pager'] == 'yes1' || empty($accesspresslite_settings['slider_show_pager'])) ? ($a='true') : ($a='false');
+    ($accesspresslite_settings['slider_show_controls'] == 'yes2' || empty($accesspresslite_settings['slider_show_controls'])) ? ($b='true') : ($b='false');
+    ($accesspresslite_settings['slider_mode'] == 'slide' || empty($accesspresslite_settings['slider_mode'])) ? ($c='horizontal') : ($c='fade');
+    ($accesspresslite_settings['slider_auto'] == 'yes3' || empty($accesspresslite_settings['slider_auto'])) ? ($d='true') : ($d='false');
+	empty($accesspresslite_settings['slider_pause']) ? ($e ='5000') : ($e = $accesspresslite_settings['slider_pause']);
 
-		if( $accesspresslite_settings['show_slider'] !='no') { 
-		if((isset($accesspresslite_settings['slider1']) && !empty($accesspresslite_settings['slider1'])) 
-			|| (isset($accesspresslite_settings['slider2']) && !empty($accesspresslite_settings['slider2'])) 
-			|| (isset($accesspresslite_settings['slider3']) && !empty($accesspresslite_settings['slider3']))
-			|| (isset($accesspresslite_settings['slider4']) && !empty($accesspresslite_settings['slider4'])) 
-			|| (isset($accesspresslite_settings['slider_cat']) && !empty($accesspresslite_settings['slider_cat']))
-		){
+	if( $accesspresslite_settings['show_slider'] !='no') { 
+	if((isset($accesspresslite_settings['slider1']) && !empty($accesspresslite_settings['slider1'])) 
+		|| (isset($accesspresslite_settings['slider2']) && !empty($accesspresslite_settings['slider2'])) 
+		|| (isset($accesspresslite_settings['slider3']) && !empty($accesspresslite_settings['slider3']))
+		|| (isset($accesspresslite_settings['slider4']) && !empty($accesspresslite_settings['slider4'])) 
+		|| (isset($accesspresslite_settings['slider_cat']) && !empty($accesspresslite_settings['slider_cat']))
+	){
 
-		?>
- 		<script type="text/javascript">
-            jQuery(function(){
-				jQuery('.bx-slider').bxSlider({
-					adaptiveHeight:true,
-					pager:<?php esc_attr_e($a); ?>,
-					controls:<?php esc_attr_e($b); ?>,
-					mode:'<?php esc_attr_e($c); ?>',
-					auto :<?php esc_attr_e($d); ?>,
-					pause: '<?php esc_attr_e($e); ?>',
-					<?php if($accesspresslite_settings['slider_speed']) {?>
-					speed:'<?php esc_attr_e($accesspresslite_settings['slider_speed']); ?>'
-					<?php } ?>
-				});
+	?>
+		<script type="text/javascript">
+        jQuery(function(){
+			jQuery('.bx-slider').bxSlider({
+				adaptiveHeight:true,
+				pager:<?php esc_attr_e($a); ?>,
+				controls:<?php esc_attr_e($b); ?>,
+				mode:'<?php esc_attr_e($c); ?>',
+				auto :<?php esc_attr_e($d); ?>,
+				pause: '<?php esc_attr_e($e); ?>',
+				<?php if($accesspresslite_settings['slider_speed']) {?>
+				speed:'<?php esc_attr_e($accesspresslite_settings['slider_speed']); ?>'
+				<?php } ?>
 			});
-        </script>
-        <?php 
+		});
+    </script>
+    <?php 
 
-            if($accesspresslite_settings['slider_options'] == 'single_post_slider'){
-            	if(!empty($accesspresslite_settings['slider1']) || !empty($accesspresslite_settings['slider2']) || !empty($accesspresslite_settings['slider3']) || !empty($accesspresslite_settings['slider4'])){
-            		$sliders = array($accesspresslite_settings['slider1'],$accesspresslite_settings['slider2'],$accesspresslite_settings['slider3'],$accesspresslite_settings['slider4']);
-					$remove = array(0);
-				    $sliders = array_diff($sliders, $remove);  ?>
+        if($accesspresslite_settings['slider_options'] == 'single_post_slider'){
+        	if(!empty($accesspresslite_settings['slider1']) || !empty($accesspresslite_settings['slider2']) || !empty($accesspresslite_settings['slider3']) || !empty($accesspresslite_settings['slider4'])){
+        		$sliders = array($accesspresslite_settings['slider1'],$accesspresslite_settings['slider2'],$accesspresslite_settings['slider3'],$accesspresslite_settings['slider4']);
+				$remove = array(0);
+			    $sliders = array_diff($sliders, $remove);  ?>
 
-				    <div class="bx-slider">
-				    <?php
-				    foreach ($sliders as $slider){
-					$args = array (
-					'p' => $slider
-					);
+			    <div class="bx-slider">
+			    <?php
+			    foreach ($sliders as $slider){
+				$args = array (
+				'p' => $slider
+				);
 
-						$loop = new WP_query( $args );
-						if($loop->have_posts()){ 
-						while($loop->have_posts()) : $loop-> the_post(); 
-						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full', false ); 
-						?>
-						<div class="slides">
-							
-								<img alt="<?php echo get_the_title(); ?>" src="<?php echo esc_url($image[0]); ?>">
-								
-								<?php if($accesspresslite_settings['slider_caption']=='yes4'):?>
-								<div class="slider-caption">
-									<div class="ak-container">
-										<h1 class="caption-title"><?php the_title();?></h1>
-										<h2 class="caption-description"><?php echo get_the_content();?></h2>
-									</div>
-								</div>
-								<?php  endif; ?>
-				
-			            </div>
-						<?php endwhile;
-						}
-					} ?>
-				    </div>
-            	<?php
-            	}
-
-            }elseif ($accesspresslite_settings['slider_options'] == 'cat_post_slider') { ?>
-            	<div class="bx-slider">
-				<?php
-				$loop = new WP_Query(array(
-						'cat' => $accesspresslite_settings['slider_cat'],
-						'posts_per_page' => -1
-					));
+					$loop = new WP_query( $args );
 					if($loop->have_posts()){ 
 					while($loop->have_posts()) : $loop-> the_post(); 
 					$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full', false ); 
 					?>
 					<div class="slides">
-							
-						<img alt="<?php echo get_the_title(); ?>" src="<?php echo esc_url($image[0]); ?>">
-								
-						<?php if($accesspresslite_settings['slider_caption']=='yes4'):?>
-						<div class="slider-caption">
-							<div class="ak-container">
-								<h1 class="caption-title"><?php the_title();?></h1>
-								<h2 class="caption-description"><?php echo get_the_content();?></h2>
-							</div>
-						</div>
-						<?php  endif; ?>
-				
-			            </div>
-						<?php endwhile;
-						} ?>
-				</div>
-            <?php
-        	}
-        	}else{ ?>
-
-        	<script type="text/javascript">
-            jQuery(function(){
-				jQuery('.bx-slider').bxSlider({
-					pager:<?php esc_attr_e($a); ?>,
-					controls:<?php esc_attr_e($b); ?>,
-					mode:'<?php esc_attr_e($c); ?>',
-					auto :<?php esc_attr_e($d); ?>,
-					pause: '<?php esc_attr_e($e); ?>',
-					<?php if($accesspresslite_settings['slider_speed']) {?>
-					speed:'<?php esc_attr_e($accesspresslite_settings['slider_speed']); ?>'
-					<?php } ?>
-				});
-			});
-            </script>
-            <div class="bx-slider">
-				<div class="slides">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/demo/slider1.jpg" alt="slider1">
-                    <?php if($accesspresslite_settings['slider_caption']=='yes4' || empty($accesspresslite_settings['slider_caption'])):?>
-					<div class="slider-caption">
-						<div class="ak-container">
-							<h1 class="caption-title">AccessPress Lite</h1>
-							<h2 class="caption-description">Free Responsive, multi-purpose, business wordpress theme, perfect for any business on any device.</h2>
-						</div>
-					</div>
-                    <?php  endif; ?>
-				</div>
 						
+							<img alt="<?php echo get_the_title(); ?>" src="<?php echo esc_url($image[0]); ?>">
+							
+							<?php if($accesspresslite_settings['slider_caption']=='yes4'):?>
+							<div class="slider-caption">
+								<div class="ak-container">
+									<h1 class="caption-title"><?php the_title();?></h1>
+									<h2 class="caption-description"><?php echo get_the_content();?></h2>
+								</div>
+							</div>
+							<?php  endif; ?>
+			
+		            </div>
+					<?php endwhile;
+					}
+				} ?>
+			    </div>
+        	<?php
+        	}
+
+        }elseif ($accesspresslite_settings['slider_options'] == 'cat_post_slider') { ?>
+        	<div class="bx-slider">
+			<?php
+			$loop = new WP_Query(array(
+					'cat' => $accesspresslite_settings['slider_cat'],
+					'posts_per_page' => -1
+				));
+				if($loop->have_posts()){ 
+				while($loop->have_posts()) : $loop-> the_post(); 
+				$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full', false ); 
+				?>
 				<div class="slides">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/demo/slider2.jpg" alt="slider2">
-                    <?php if($accesspresslite_settings['slider_caption']=='yes4' || empty($accesspresslite_settings['slider_caption'])):?>
+						
+					<img alt="<?php echo get_the_title(); ?>" src="<?php echo esc_url($image[0]); ?>">
+							
+					<?php if($accesspresslite_settings['slider_caption']=='yes4'):?>
 					<div class="slider-caption">
 						<div class="ak-container">
-							<h1 class="caption-title">Easy Customization</h1>
-							<h2 class="caption-description">A free theme with powerful theme options for customization. Style your wordpress and see changes live!</h2>
+							<h1 class="caption-title"><?php the_title();?></h1>
+							<h2 class="caption-description"><?php echo get_the_content();?></h2>
 						</div>
 					</div>
-                    <?php  endif; ?>
-				</div>
+					<?php  endif; ?>
+			
+		            </div>
+					<?php endwhile;
+					} ?>
 			</div>
-		<?php
-		}
-	}
-	}
+        <?php
+    	}
+    	}else{ ?>
 
-   add_action('accesspresslite_bxslider','accesspresslite_bxslidercb', 10);
-
-   function accesspresslite_layout_class($classes){
-   	global $post;
-   		if( is_404()){
-		$classes[] = ' ';
-		}elseif(is_singular()){
-		$post_class = get_post_meta( $post -> ID, 'accesspresslite_sidebar_layout', true );
-		$classes[] = $post_class;
-		}else{
-		$classes[] = 'right-sidebar';	
-		}
-		return $classes;
-	}
-
-   add_filter( 'body_class', 'accesspresslite_layout_class' );
-   
-   function accesspresslite_web_layout($classes){
-    global $accesspresslite_options, $post;
-	$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-    $weblayout = $accesspresslite_settings['accesspresslite_webpage_layout'];
-    if($weblayout =='Boxed'){
-        $classes[]= 'boxed-layout';
-    }
-    return $classes;
-   }
-   
-   add_filter( 'body_class', 'accesspresslite_web_layout' );
-
-	function accesspresslite_custom_css(){
-		global $accesspresslite_options;
-		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-		echo '<style type="text/css">';
-			echo esc_html($accesspresslite_settings['custom_css']);
-		echo '</style>';
-	}
-
-	add_action('wp_head','accesspresslite_custom_css');
-
-	function accesspresslite_call_to_action_cb(){
-		global $accesspresslite_options;
-		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-		if(!empty($accesspresslite_settings['action_text'])){
-		?>
-		<section id="call-to-action">
-		<div class="ak-container">
-			<h4><?php echo $accesspresslite_settings['action_text']; ?></h4>
-			<a class="action-btn" href="<?php echo esc_url($accesspresslite_settings['action_btn_link']); ?>"><?php esc_attr_e($accesspresslite_settings['action_btn_text']); ?></a>
+    	<script type="text/javascript">
+        jQuery(function(){
+			jQuery('.bx-slider').bxSlider({
+				pager:<?php esc_attr_e($a); ?>,
+				controls:<?php esc_attr_e($b); ?>,
+				mode:'<?php esc_attr_e($c); ?>',
+				auto :<?php esc_attr_e($d); ?>,
+				pause: '<?php esc_attr_e($e); ?>',
+				<?php if($accesspresslite_settings['slider_speed']) {?>
+				speed:'<?php esc_attr_e($accesspresslite_settings['slider_speed']); ?>'
+				<?php } ?>
+			});
+		});
+        </script>
+        <div class="bx-slider">
+			<div class="slides">
+				<img src="<?php echo get_template_directory_uri(); ?>/images/demo/slider1.jpg" alt="slider1">
+                <?php if($accesspresslite_settings['slider_caption']=='yes4' || empty($accesspresslite_settings['slider_caption'])):?>
+				<div class="slider-caption">
+					<div class="ak-container">
+						<h1 class="caption-title">AccessPress Lite</h1>
+						<h2 class="caption-description">Free Responsive, multi-purpose, business wordpress theme, perfect for any business on any device.</h2>
+					</div>
+				</div>
+                <?php  endif; ?>
+			</div>
+					
+			<div class="slides">
+				<img src="<?php echo get_template_directory_uri(); ?>/images/demo/slider2.jpg" alt="slider2">
+                <?php if($accesspresslite_settings['slider_caption']=='yes4' || empty($accesspresslite_settings['slider_caption'])):?>
+				<div class="slider-caption">
+					<div class="ak-container">
+						<h1 class="caption-title">Easy Customization</h1>
+						<h2 class="caption-description">A free theme with powerful theme options for customization. Style your wordpress and see changes live!</h2>
+					</div>
+				</div>
+                <?php  endif; ?>
+			</div>
 		</div>
-		</section>
-		<?php
-		}
+	<?php
 	}
+}
+}
 
-	add_action('accesspresslite_call_to_action','accesspresslite_call_to_action_cb', 10);
+add_action('accesspresslite_bxslider','accesspresslite_bxslidercb', 10);
+
+function accesspresslite_layout_class($classes){
+	global $post;
+		if( is_404()){
+	$classes[] = ' ';
+	}elseif(is_singular()){
+	$post_class = get_post_meta( $post -> ID, 'accesspresslite_sidebar_layout', true );
+	$classes[] = $post_class;
+	}else{
+	$classes[] = 'right-sidebar';	
+	}
+	return $classes;
+}
+
+add_filter( 'body_class', 'accesspresslite_layout_class' );
+
+function accesspresslite_web_layout($classes){
+global $accesspresslite_options, $post;
+$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
+$weblayout = $accesspresslite_settings['accesspresslite_webpage_layout'];
+if($weblayout =='Boxed'){
+    $classes[]= 'boxed-layout';
+}
+return $classes;
+}
+
+add_filter( 'body_class', 'accesspresslite_web_layout' );
+
+function accesspresslite_custom_css(){
+	global $accesspresslite_options;
+	$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
+	echo '<style type="text/css">';
+		echo esc_html($accesspresslite_settings['custom_css']);
+	echo '</style>';
+}
+
+add_action('wp_head','accesspresslite_custom_css');
+
+function accesspresslite_call_to_action_cb(){
+	global $accesspresslite_options;
+	$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
+	if(!empty($accesspresslite_settings['action_text'])){
+	?>
+	<section id="call-to-action">
+	<div class="ak-container">
+		<h4><?php echo $accesspresslite_settings['action_text']; ?></h4>
+		<a class="action-btn" href="<?php echo esc_url($accesspresslite_settings['action_btn_link']); ?>"><?php esc_attr_e($accesspresslite_settings['action_btn_text']); ?></a>
+	</div>
+	</section>
+	<?php
+	}
+}
+
+add_action('accesspresslite_call_to_action','accesspresslite_call_to_action_cb', 10);
+
+function accesspresslite_exclude_cat_from_blog($query) {
+	global $accesspresslite_options;
+	$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
+	$accesspresslite_exclude_cat = array($accesspresslite_settings['event_cat'],$accesspresslite_settings['testimonial_cat'], $accesspresslite_settings['slider_cat'], $accesspresslite_settings['portfolio_cat']);
+
+	if(!empty($accesspresslite_exclude_cat)):
+	$cats = array();
+	foreach($accesspresslite_exclude_cat as $value){
+	    if(!empty($value) && $value != 0){
+	        $cats[] = -$value; 
+	    }
+	}
+	if(!empty($cats)){
+	    $category = join( "," , $cats);
+	    if ( $query->is_home() ) {
+	    $query->set('cat', $category);
+	    }
+	}
+	return $query;
+	endif;
+}
+
+add_filter('pre_get_posts', 'accesspresslite_exclude_cat_from_blog');

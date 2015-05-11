@@ -38,11 +38,7 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
 	        <h3 class="widget-title"><?php echo get_cat_name(esc_attr($event_category)); ?></h3>
 
 	        <?php while ($loop->have_posts()) : $loop->the_post(); ?>
-	        	<?php 
-				$accesspresslite_event_day = get_post_meta( $post->ID, 'accesspresslite_event_day', true );
-				$accesspresslite_event_month = get_post_meta( $post->ID, 'accesspresslite_event_month', true );
-				$accesspresslite_event_year = get_post_meta( $post->ID, 'accesspresslite_event_year', true );
-				?>
+
 	        	<div class="event-list clearfix">
 	        		
 	        		<figure class="event-thumbnail">
@@ -56,17 +52,10 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
 						<img src="<?php echo get_template_directory_uri(); ?>/images/demo/event-fallback.jpg" alt="<?php the_title(); ?>">
 						<?php } ?>
 						
-						<?php if(!empty($accesspresslite_event_day) || !empty($accesspresslite_event_month) || !empty($accesspresslite_event_year)){ ?>
-							<div class="event-date">
-								<span class="event-date-day"><?php echo esc_html($accesspresslite_event_day); ?> <?php echo esc_html($accesspresslite_event_month); ?></span>
-								<span class="event-date-month"><?php echo esc_html($accesspresslite_event_year); ?></span>
-							</div>
-						<?php }else {?>
-							<div class="event-date">
-								<span class="event-date-day"><?php echo get_the_date('j'); ?></span>
-								<span class="event-date-month"><?php echo get_the_date('M'); ?></span>
-							</div>
-						<?php } ?>
+						<div class="event-date">
+							<span class="event-date-day"><?php echo get_the_date('j'); ?></span>
+							<span class="event-date-month"><?php echo get_the_date('M'); ?></span>
+						</div>
 						</a>
 					</figure>	
 

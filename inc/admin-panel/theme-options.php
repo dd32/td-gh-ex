@@ -40,7 +40,6 @@ $accesspresslite_options = array(
 	'show_event_number' => '3',
 	'event_cat' => '',
 	'testimonial_cat' => '',
-	'blog_cat' => '',
 	'portfolio_cat' => '',
 	'footer_copyright' => get_bloginfo('name'),
 
@@ -83,7 +82,7 @@ $accesspresslite_options = array(
 
 	'google_map' => '',
 	'contact_address' => '',
-	'accesspresslite_home_page_layout' => 'Default',
+	'accesspresslite_home_page_layout' => 'Layout2',
     'accesspresslite_webpage_layout' => 'Fullwidth',
     'gallery_code' => '',
 
@@ -393,20 +392,6 @@ function accesspresslite_theme_options_page() {
 					foreach ( $accesspresslite_catlist as $single_cat ) :
 						$label = $single_cat['label']; ?>
 						<option value="<?php esc_attr_e($single_cat['value']) ?>" <?php selected( $single_cat['value'], $settings['testimonial_cat'] ); ?>><?php esc_attr_e($label); ?></option>
-					<?php 
-					endforeach;
-					?>
-					</select>
-					</td>
-					</tr>
-
-					<tr><th scope="row"><label for="blog_cat"><?php _e('Select the category to display as Blog','accesspresslite'); ?></label></th>
-					<td>
-					<select id="blog_cat" name="accesspresslite_options[blog_cat]">
-					<?php
-					foreach ( $accesspresslite_catlist as $single_cat ) :
-						$label = $single_cat['label']; ?>
-						<option value="<?php esc_attr_e($single_cat['value']) ?>" <?php selected( $single_cat['value'], $settings['blog_cat'] ); ?>><?php esc_attr_e($label); ?></option>
 					<?php 
 					endforeach;
 					?>
@@ -1136,7 +1121,6 @@ function accesspresslite_validate_options( $input ) {
     $input['featured_post2_icon'] = sanitize_text_field( $input['featured_post2_icon'] );
     $input['featured_post3_icon'] = sanitize_text_field( $input['featured_post3_icon'] );
     $input['event_cat'] = wp_filter_nohtml_kses( $input['event_cat'] );
-    $input['blog_cat'] = wp_filter_nohtml_kses( $input['blog_cat'] );
     $input['testimonial_cat'] = wp_filter_nohtml_kses( $input['testimonial_cat'] );
     $input['portfolio_cat'] = wp_filter_nohtml_kses( $input['portfolio_cat'] );
     $input['slider_cat'] = wp_filter_nohtml_kses( $input['slider_cat'] );

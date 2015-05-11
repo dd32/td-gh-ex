@@ -2,7 +2,6 @@
 global $accesspresslite_options;
 $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 $accesspresslite_layout = $accesspresslite_settings['accesspresslite_home_page_layout'];
-$accesspresslite_blog_cat = $accesspresslite_settings['blog_cat'];
 $accesspresslite_welcome_post_id = $accesspresslite_settings['welcome_post'];
 $accesspresslite_event_category = $accesspresslite_settings['event_cat'];
 $featured_post1 = $accesspresslite_settings['featured_post1'];
@@ -104,12 +103,6 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 
 	        <?php while ($loop->have_posts()) : $loop->the_post(); ?>
 
-	        	<?php 
-				$accesspresslite_event_day = get_post_meta( $post->ID, 'accesspresslite_event_day', true );
-				$accesspresslite_event_month = get_post_meta( $post->ID, 'accesspresslite_event_month', true );
-				$accesspresslite_event_year = get_post_meta( $post->ID, 'accesspresslite_event_year', true );
-				?>
-
 	        	<div class="event-list clearfix">
 	        		
 	        		<figure class="event-thumbnail">
@@ -124,18 +117,12 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 						<?php } ?>
 						
 						<?php 
-						if($accesspresslite_settings['show_eventdate'] == 1){
-						if(!empty($accesspresslite_event_day) || !empty($accesspresslite_event_month) || !empty($accesspresslite_event_year)){ ?>
-						<div class="event-date">
-							<span class="event-date-day"><?php echo esc_html($accesspresslite_event_day); ?> <?php echo esc_html($accesspresslite_event_month); ?></span>
-							<span class="event-date-month"><?php echo esc_html($accesspresslite_event_year); ?></span>
-						</div>
-						<?php }else {?>
+						if($accesspresslite_settings['show_eventdate'] == 1){ ?>
 							<div class="event-date">
 							<span class="event-date-day"><?php echo get_the_date('j'); ?></span>
 							<span class="event-date-month"><?php echo get_the_date('M'); ?></span>
 							</div>
-						<?php } 
+						<?php
 						}?>
 						</a>
 					</figure>	
@@ -388,48 +375,38 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 <?php } 
 ?>
 
-<?php if( $accesspresslite_layout !== 'Default' && !empty($accesspresslite_blog_cat) ){?>
+<?php if( $accesspresslite_layout !== 'Default' || empty($accesspresslite_layout) ){?>
 <section id="ak-blog">
 	<section class="ak-container" id="ak-blog-post">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<?php 
-		$no_of_posts = get_option('posts_per_page');
-		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-		$query5 = new WP_Query(array(
-	                'cat' => $accesspresslite_blog_cat,
-	                'posts_per_page' => $no_of_posts,
-	                'paged' => $paged
-	            ));
-		if ( $query5->have_posts() ) : ?>
-			<?php while ( $query5->have_posts() ) : $query5->the_post(); ?>
+		<?php if ( have_posts() ) : ?>
 
-				<?php
-					get_template_part( 'content' );
-				?>
+			<?php 
+			while ( have_posts() ) : the_post(); 
+			get_template_part( 'content' );
+			endwhile;
+			?>
 
-			<?php endwhile; ?>
-
-		<nav class="navigation paging-navigation">
-		<div class="nav-links">
-	   		<div class="nav-previous"><?php previous_posts_link( __('Newer posts', 'accesspresslite')) ?></div>
-			<div class="nav-next"><?php next_posts_link( __('Older posts', 'accesspresslite')) ?></div>
-		</div>
-		</nav>
+			<?php accesspresslite_paging_nav(); ?>
 
 		<?php else : ?>
 
 			<?php get_template_part( 'content', 'none' ); ?>
 
-		<?php endif; 
-		wp_reset_postdata();
+		<?php endif; ?>
+		<?php wp_reset_query();
 		?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
-	<?php get_sidebar('right'); ?>
+	
+	<div id="secondary-right" class="widget-area right-sidebar sidebar">
+		<?php if ( is_active_sidebar( 'blog-sidebar' ) ) : ?>
+			<?php dynamic_sidebar( 'blog-sidebar' ); ?>
+		<?php endif; ?>
+	</div>
 	</section>
 </section>
 
