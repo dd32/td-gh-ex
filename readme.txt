@@ -89,6 +89,11 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.23.3
+* Compatibility issues with multilingual plugin (polylang) fixed.
+* Issue with Google Map Section fixed.
+* Removed the unused script from the demo content.
+
 Version 1.23
 * Main Navigation Bug fixed
 

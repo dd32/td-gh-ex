@@ -37,7 +37,7 @@ get_header();
 					<div class="parallax-content">
 					<?php if($page->post_content != "") : ?>
 						<div class="page-content">
-						<?php echo do_shortcode(wpautop($page->post_content)); ?>
+						<?php the_content(); ?>
 						</div>
 					<?php endif; ?>
 					</div> 

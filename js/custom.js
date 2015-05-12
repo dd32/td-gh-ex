@@ -87,7 +87,6 @@ jQuery(document).ready(function($){
     $('.googlemap-toggle').on('click', function(){
         if(!open){
         open = true;
-        initialize();
         }
         $('.googlemap-content').slideToggle();
         $(this).toggleClass('active');

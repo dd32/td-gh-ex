@@ -167,7 +167,6 @@ function accesspress_parallax_scripts() {
         wp_enqueue_script('accesspress_parallax-wow', get_template_directory_uri() . '/js/wow.js', array('jquery'), '1.0', true);
     endif;
 
-	wp_enqueue_script('accesspress_parallax-googlemap', '//maps.googleapis.com/maps/api/js?v=3.exp?sensor=false', array('jquery'), '3.0', false);
 	wp_enqueue_script( 'accesspress_parallax-smoothscroll', get_template_directory_uri() . '/js/SmoothScroll.js', array('jquery'), '1.2.1', true );
     wp_enqueue_script( 'accesspress_parallax-parallax', get_template_directory_uri() . '/js/parallax.js', array('jquery'), '1.1.3', true );
 	wp_enqueue_script( 'accesspress_parallax-ScrollTo', get_template_directory_uri() . '/js/jquery.scrollTo.min.js', array('jquery'), '1.4.14', true );
