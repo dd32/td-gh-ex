@@ -1,9 +1,6 @@
 .kaira-upgrade-page-wrap {
     max-width: 1300px;
 }
-.kaira-upgrade-page-wrap table td a {
-    display: block;
-}
 .kaira-upgrade-page-wrap table td a img {
     display: block;
     margin: 0;
