@@ -3,8 +3,8 @@ Theme Name: Author
 Theme URI: https://www.competethemes.com/author/
 Author: Compete Themes
 Author URI: https://www.competethemes.com
-Description: Author is designed for publishers who want readers. That's why Author is fast, responsive, accessibility-ready, and optimally designed for reading. All scripts and stylesheets are minified, concatenated, and conditionally loaded to maximize performance. The layout adapts fluidly to all screen sizes to enhance usability. As one of few accessibility-ready themes, it performs well for users with wide ranges of disabilities. Lastly, based on the ancient Van de Graaf canon, Author is optimally designed for reading. Author is the theme your content deserves.
-Version: 1.06
+Description: Author is designed for publishers who want readers. That's why Author is fast, responsive, accessibility-ready, and optimally designed for reading. All scripts and stylesheets are minified, concatenated, and conditionally loaded to maximize performance. The layout adapts fluidly to all screen sizes to enhance usability. As one of few accessibility-ready themes, it performs well for users with wide ranges of disabilities. Lastly, based on the ancient Van de Graaf canon, Author is optimally designed for reading. Author is the theme your content deserves. See our fully setup live demo here: https://www.competethemes.com/author-live-demo/
+Version: 1.07
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, blue, gray, silver, tan, white, dark, light, one-column, two-columns, left-sidebar, fluid-layout, responsive-layout, accessibility-ready, custom-menu, featured-images, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -410,6 +410,7 @@ a img {
     float: left;
     width: 27.775%;
     padding: 3em 1.85185%;
+    min-height: 100%;
   }
 
   .sidebar-primary {
@@ -1455,6 +1456,20 @@ a img {
 @media all and (min-width: 71.875em) {
   .site-footer {
     width: 77.77%;
+  }
+}
+@media all and (min-width: 87.5em) {
+  .site-footer {
+    position: relative;
+  }
+  .site-footer:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -999px;
+    bottom: 0;
+    left: 100%;
+    background: #d9d9d9;
   }
 }
 .error-404 .entry article {

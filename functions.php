@@ -93,9 +93,9 @@ if( !function_exists('ct_author_customize_comments' ) ) {
 				if ( $comment_type !== 'pingback' ) {
 					// if site admin and avatar uploaded
 					if ( $comment->comment_author_email === get_option( 'admin_email' ) && get_theme_mod( 'avatar_method' ) == 'upload' ) {
-						echo '<img alt="Comment author\'s Gravatar" class="avatar avatar-48 photo" src="' . ct_author_output_avatar() . '" height="48" width="48" />';
+						echo '<img alt="' . get_comment_author() . '" class="avatar avatar-48 photo" src="' . ct_author_output_avatar() . '" height="48" width="48" />';
 					} else {
-						echo get_avatar( get_comment_author_email(), 48, '', "Comment author's Gravatar" );
+						echo get_avatar( get_comment_author_email(), 48, '', get_comment_author() );
 					}
 				}
 				?>
@@ -285,25 +285,39 @@ if( !function_exists('ct_author_featured_image' ) ) {
 		// default to no featured image
 		$has_image = false;
 
+		// establish featured image var
 		$featured_image = '';
 
 		// if post has an image
 		if ( has_post_thumbnail( $post->ID ) ) {
+
+			// get the featured image ID
+			$image_id = get_post_thumbnail_id( $post->ID );
+
+			// get the image's alt text
+			$image_alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+
 			// get the full-size version of the image
 			$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+
 			// set $image = the url
-			$image     = $image[0];
+			$image = $image[0];
+
+			// if alt text is empty, nothing else equal to title string
+			$title = empty($image_alt_text) ? '' : "title='$image_alt_text'";
+
+			// set to true
 			$has_image = true;
 		}
 		if ( $has_image == true ) {
 
-			// on posts/pages display the featued image
+			// on posts/pages display the featured image
 			if ( is_singular() ) {
-				$featured_image = "<div class='featured-image' style=\"background-image: url('" . $image . "')\"></div>";
+				$featured_image = "<div class='featured-image' style=\"background-image: url('" . $image . "')\" $title></div>";
 			} // on blog/archives display with a link
 			else {
 				$featured_image = "
-                <div class='featured-image' style=\"background-image: url('" . $image . "')\">
+                <div class='featured-image' style=\"background-image: url('" . $image . "')\" $title>
                     <a href='" . get_permalink() . "'>" . get_the_title() . "</a>
                 </div>
                 ";
@@ -408,22 +422,19 @@ if( ! function_exists('ct_author_social_icons_output') ) {
                     ?>
                     <li>
                         <a class="email" target="_blank" href="mailto:<?php echo antispambot( is_email( ct_author_get_social_url( $source, $key ) ) ); ?>">
-                            <span class="screen-reader-text">email icon</span>
-                            <i class="fa fa-envelope"></i>
+                            <i class="fa fa-envelope" title="<?php _e('email icon', 'author'); ?>"></i>
                         </a>
                     </li>
                 <?php } elseif ( $active_site == "flickr" || $active_site == "dribbble" || $active_site == "instagram" || $active_site == "soundcloud" || $active_site == "spotify" || $active_site == "vine" || $active_site == "yahoo" || $active_site == "codepen" || $active_site == "delicious" || $active_site == "stumbleupon" || $active_site == "deviantart" || $active_site == "digg" || $active_site == "hacker-news" || $active_site == "vk" || $active_site == 'weibo' || $active_site == 'tencent-weibo' ) { ?>
                     <li>
                         <a class="<?php echo $active_site; ?>" target="_blank" href="<?php echo esc_url( ct_author_get_social_url( $source, $key ) ); ?>">
-                            <span class="screen-reader-text"><?php echo $active_site; ?> icon</span>
-                            <i class="fa fa-<?php echo esc_attr( $active_site ); ?>"></i>
+                            <i class="fa fa-<?php echo esc_attr( $active_site ); ?>" title="<?php printf( __('%s icon', 'author'), $active_site ); ?>"></i>
                         </a>
                     </li>
                 <?php } else { ?>
                     <li>
                         <a class="<?php echo $active_site; ?>" target="_blank" href="<?php echo esc_url( ct_author_get_social_url( $source, $key ) ); ?>">
-                            <span class="screen-reader-text"><?php echo $active_site; ?> icon</span>
-                            <i class="fa fa-<?php echo esc_attr( $active_site ); ?>-square"></i>
+                            <i class="fa fa-<?php echo esc_attr( $active_site ); ?>-square" title="<?php printf( __('%s icon', 'author'), $active_site ); ?>"></i>
                         </a>
                     </li>
                 <?php
@@ -449,28 +460,11 @@ function ct_author_wp_page_menu() {
 function ct_author_wp_backwards_compatibility() {
 
 	// not using this function, simply remove it so use of "has_image_size" doesn't break < 3.9
-	if( get_bloginfo('version') < 3.9 ) {
+	if( version_compare( get_bloginfo('version'), '3.9', '<') ) {
 		remove_filter( 'image_size_names_choose', 'hybrid_image_size_names_choose' );
 	}
 }
 add_action('init', 'ct_author_wp_backwards_compatibility');
-
-/*
- * Set the date format for new users.
- * Needs to be done this way so that the date defaults to the right format, but can
- * still be changed from the Settings menu
- */
-function ct_author_set_date_format() {
-
-	// if the date format has never been set by Unlimited, set it
-	if( get_option('ct_author_date_format_origin') != 'updated' ) {
-		update_option('date_format', 'F j, Y');
-
-		// add option so never updates date format again. Allows users to change format.
-		add_option('ct_author_date_format_origin', 'updated');
-	}
-}
-add_action( 'after_switch_theme', 'ct_author_set_date_format' );
 
 // used in header.php for primary avatar and comments
 function ct_author_output_avatar() {
@@ -589,7 +583,7 @@ endif;
 function ct_author_sticky_post_marker() {
 
     if( is_sticky() && !is_archive() ) {
-        echo '<span class="sticky-status">Featured Post</span>';
+        echo '<span class="sticky-status">' . __("Featured Post", "author") . '</span>';
     }
 }
 add_action( 'archive_post_before', 'ct_author_sticky_post_marker' );
