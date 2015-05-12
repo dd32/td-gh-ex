@@ -15,7 +15,7 @@
 		global $accesspresslite_options;
 		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 
-		if ( is_active_sidebar( 'footer-1' ) ||  is_active_sidebar( 'footer-2' )  || is_active_sidebar( 'footer-3' )  || is_active_sidebar( 'footer-4' ) || !empty($accesspresslite_settings['google_map']) || !empty($accesspresslite_settings['contact_address'])) : ?>
+		if ( is_active_sidebar( 'footer-1' ) ||  is_active_sidebar( 'footer-2' )  || is_active_sidebar( 'footer-3' )  || is_active_sidebar( 'footer-4' ) ) : ?>
 		<div id="top-footer">
 		<div class="ak-container">
 			<div class="footer1 footer">
@@ -41,26 +41,7 @@
 			<div class="footer4 footer">
 				<?php if ( is_active_sidebar( 'footer-4' ) ) : ?>
 					<?php dynamic_sidebar( 'footer-4' ); ?>
-				<?php else:
-                if(!empty($accesspresslite_settings['google_map']) || !empty($accesspresslite_settings['contact_address'])){ ?>
-                    
-                    <h3 class="widget-title"><?php _e('Find Us','accesspresslite')?></h3>
-				    <?php if(!empty($accesspresslite_settings['google_map'])) { ?>
-
-                        <div class="ak-google-map"><?php echo $accesspresslite_settings['google_map']; ?></div>
-						
-						<?php }
-						if(!empty($accesspresslite_settings['contact_address'])) { ?>
-						
-						<div class="ak-contact-address"><?php echo wpautop($accesspresslite_settings['contact_address']); ?></div>
-
-						<?php }
-					
-						if($accesspresslite_settings['show_social_footer'] == 0){
-						do_action( 'accesspresslite_social_links' ); 
-						}
-					 }
-				endif; ?>	
+				<?php endif; ?>	
 			</div>
 		</div>
 		</div>

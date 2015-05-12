@@ -80,8 +80,6 @@ $accesspresslite_options = array(
 	'show_social_header'=>'',
 	'show_social_footer'=>'',
 
-	'google_map' => '',
-	'contact_address' => '',
 	'accesspresslite_home_page_layout' => 'Layout2',
     'accesspresslite_webpage_layout' => 'Fullwidth',
     'gallery_code' => '',
@@ -1017,20 +1015,6 @@ function accesspresslite_theme_options_page() {
 			<div id="options-group-6" class="group" style="display: none;">
 			<h3><?php _e('Footer Contact','accesspresslite'); ?></h3>
 				<table class="form-table">
-					<tr><th scope="row"><label for="google_map"><?php _e('Google Map Iframe','accesspresslite'); ?></label></th>
-						<td>
-						<textarea id="google_map" name="accesspresslite_options[google_map]" rows="5" cols="40"><?php echo wp_kses_post($settings['google_map']); ?></textarea>
-						<p class="f13"><em><?php _e('Enter the Iframe of the google map to show in last column of the footer of the home page.<br />Leave Blank if you don\'t want to show','accesspresslite'); ?></em></p>
-						</td>
-					</tr>
-
-					<tr><th scope="row"><label for="contact_address"><?php _e('Contact Address','accesspresslite'); ?></label></th>
-						<td>
-						<textarea id="contact_address" name="accesspresslite_options[contact_address]" rows="5" cols="40"><?php echo wp_kses_post($settings['contact_address']); ?></textarea>
-						<p class="f13"><em><?php _e('Enter the Contact Address to show below the google map<br />Leave Blank if you don\'t want to show','accesspresslite'); ?></em></p>
-						</td>
-					</tr>
-
 					<tr><th scope="row"><label for="custom_css"><?php _e('Custom CSS','accesspresslite'); ?></label></th>
 						<td>
 						<textarea id="custom_css" name="accesspresslite_options[custom_css]" rows="8" cols="60"><?php if(isset($settings['custom_css'])){ echo esc_textarea($settings['custom_css']); } ?></textarea>
@@ -1312,20 +1296,6 @@ function accesspresslite_validate_options( $input ) {
 
     if( isset( $input[ 'header_text' ] ) ) {
 	   $input[ 'header_text' ] = wp_kses_post( $input[ 'header_text' ] );
-    }
-    
-    if( isset( $input[ 'google_map' ] ) ) {
-    	$allowed_tags=array(
-    		'iframe' => array(
-    			'src' => array(),
-    			'height' => array(),
-    			'width' => array()
-    			)
-    		);
-	   $input[ 'google_map' ] = wp_kses( $input[ 'google_map' ],$allowed_tags );
-    }
-    if( isset( $input[ 'contact_address' ] ) ) {
-	   $input[ 'contact_address' ] = wp_kses_post( $input[ 'contact_address' ] );
     }
     
     if( isset( $input[ 'gallery_code' ] ) ) {

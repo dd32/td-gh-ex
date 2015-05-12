@@ -127,6 +127,5 @@ if($post_class=='right-sidebar' || $post_class=='both-sidebar' || empty($post_cl
 		<?php if ( is_active_sidebar( 'right-sidebar' ) ) : ?>
 			<?php dynamic_sidebar( 'right-sidebar' ); ?>
 		<?php endif; ?>
-        <?php } ?>
 	</div><!-- #secondary -->
 <?php } ?>
