@@ -57,11 +57,22 @@ Google Fonts - http://www.google.com/fonts/
 License: [[http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL|SIL Open Font License]]
 
 Stock Images - http://unsplash.com/
-License: Public domain/No copyright
+Licensed under the terms of CC0
 
 == CHANGELOG ==
 
-20/02/2015 v1.0.5
+05/12/2015 v1.0.6
+* Fix for post meta
+* Fix for custom menu widget
+* Added constant for 'See More' button
+* Updated license for images
+* CSS tweaks
+* Updated preview and about page
+* Fixed customizer default settings issue
+* Added filter hook for Post Block template
+* Updated language file
+
+02/20/2015 v1.0.5
 * Fixed pre_get_post function
 * Updated fittext script
 * Updated preview pro

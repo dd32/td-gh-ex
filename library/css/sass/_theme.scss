@@ -123,6 +123,7 @@ input, textarea {
 		position: absolute;
 		z-index: 0;
 		left: -9999px;
+		max-width: none;
 	}
 }
 
@@ -1233,6 +1234,8 @@ iframe {
 	@extend .well;
 
 	margin-bottom: 40px;
+	float: left;
+	width: 100%;
 }
 
 .page-title {
@@ -1416,19 +1419,20 @@ iframe {
 	#footer-content {
 		padding-top: 15px;
 		padding-bottom: 15px;
-
-		span {
-			@include breakpoint(tablet) {
-				display: block;
-				float: none !important;
-				text-align: center;
-			}
-		}
 	}
 
 	.copyright {
 		a {
 			color: #aaa;
+		}
+
+		span,
+		aside {
+			@include breakpoint(tablet) {
+				display: block;
+				float: none !important;
+				text-align: center;
+			}
 		}
 	}
 

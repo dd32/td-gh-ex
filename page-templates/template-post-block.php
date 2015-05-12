@@ -18,11 +18,17 @@ if ( ! is_front_page() )
 
 				<div class="row">
 					<?php
-					$bavotasan_post_block_query = new WP_Query( array(
+					/**
+					 * You can overwrite the following arguments in your child theme's functions.php by
+					 * hooking into the 'bavotasan_post_block_query' and returning a custom array.
+					 *
+				 	 * https://codex.wordpress.org/Function_Reference/add_filter
+					 */
+					$bavotasan_post_block_query = new WP_Query( apply_filters( 'bavotasan_post_block_query', array(
 						'posts_per_page' => 4,
 						'ignore_sticky_posts' => 1,
 						'no_found_rows' => true,
-					) );
+					) ) );
 
 					while ( $bavotasan_post_block_query->have_posts() ) : $bavotasan_post_block_query->the_post();
 						global $bavotasan_custom_excerpt_length;

@@ -4,7 +4,7 @@ Theme URI: http://themes.bavotasan.com/themes/arcade/
 Author: c.bavota
 Author URI: http://bavotasan.com/
 Description: Create a truly unique design with Arcade, a lightweight and fully responsive HTML5 theme. Use the theme customizer to add your own header image, page layout, site width and more. Distinguish each post with one of the eight supported post formats, such as: Video, Image, Aside, Status, Audio, Quote, Link and Gallery. Install JetPack to display each of your galleries through a tiled view and jQuery carousel. Compatible with bbPress, BuddyPress, WPML & Woocommerce. Uses Google Fonts for improved typeface readability and works perfectly in desktop browsers, tablets and handheld devices.
-Version: 1.0.5
+Version: 1.0.6
 Text Domain: arcade
 Domain Path: /library/languages/
 Tags: black, blue, gray, silver, white, light, one-column, two-columns, left-sidebar, right-sidebar, fluid-layout, responsive-layout, buddypress, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -3799,7 +3799,8 @@ input, textarea {
   .title-card > img.header-img {
     position: absolute;
     z-index: 0;
-    left: -9999px; }
+    left: -9999px;
+    max-width: none; }
 
 #site-meta {
   display: table-cell;
@@ -4614,7 +4615,9 @@ iframe {
 /* =Archives
 -------------------------------------------------------------- */
 #archive-header {
-  margin-bottom: 40px; }
+  margin-bottom: 40px;
+  float: left;
+  width: 100%; }
 
 .page-title {
   margin: auto;
@@ -4742,13 +4745,14 @@ iframe {
   #footer #footer-content {
     padding-top: 15px;
     padding-bottom: 15px; }
-    @media (max-width: 768px) {
-      #footer #footer-content span {
-        display: block;
-        float: none !important;
-        text-align: center; } }
   #footer .copyright a {
     color: #aaa; }
+  @media (max-width: 768px) {
+    #footer .copyright span,
+    #footer .copyright aside {
+      display: block;
+      float: none !important;
+      text-align: center; } }
   #footer .credit-link {
     position: relative; }
   #footer .fa-leaf {
@@ -5035,7 +5039,7 @@ a img.aligncenter {
 .wp-caption p.wp-caption-text {
   font-size: 14px;
   margin: 0;
-  padding: 5px; }
+  padding: 6px 6px 0; }
 
 .sticky {
   display: block; }

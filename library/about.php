@@ -2,7 +2,34 @@
 class Bavotasan_Documentation {
 	public function __construct() {
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
+		add_action( 'load-themes.php', array( $this, 'activation_admin_notice' ) );
 	}
+
+	/**
+	 * Adds an admin notice upon successful activation.
+	 * @since 1.0.3
+	 */
+	public function activation_admin_notice() {
+		global $pagenow;
+
+		if ( is_admin() && 'themes.php' == $pagenow && isset( $_GET['activated'] ) )
+			add_action( 'admin_notices', array( $this, 'welcome_admin_notice' ), 99 );
+	}
+
+	/**
+	 * Display an admin notice linking to the welcome screen
+	 * @since 1.0.3
+	 */
+	public function welcome_admin_notice() {
+		?>
+		<div class="updated fade">
+			<p><?php echo sprintf( esc_html__( 'Thanks for choosing %s! You can learn how to use the available theme options on the %sabout page%s.', 'arcade' ), BAVOTASAN_THEME_NAME, '<a href="' . esc_url( admin_url( 'themes.php?page=bavotasan_documentation' ) ) . '">', '</a>' ); ?></p>
+
+			<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=bavotasan_documentation' ) ); ?>" class="button" style="text-decoration: none;"><?php printf( __( 'Learn more about %s', 'arcade' ), BAVOTASAN_THEME_NAME ); ?></a></p>
+		</div>
+		<?php
+	}
+
 
 	/**
 	 * Add a 'Documentation' menu item to the Appearance panel
@@ -22,18 +49,19 @@ class Bavotasan_Documentation {
 			margin: 20px auto !important;
 		}
 
+		.about-wrap .headline-feature h2 {
+			text-align: center;
+		}
+
 		.about-wrap .dfw h3 {
 			text-align: left;
 		}
 
-		.about-wrap .dfw h3,
-		.about-wrap ul,
-		.featured-image {
+		.changelog.headline-feature.dfw {
 			max-width: 68%;
 		}
 
-		.about-wrap .dfw h3,
-		.about-wrap ul {
+		.changelog.headline-feature.dfw {
 			margin-left: auto;
 			margin-right: auto;
 		}
@@ -50,11 +78,14 @@ class Bavotasan_Documentation {
 			right: 0;
 		}
 
-		@media only screen and (max-width: 500px) {
-			.featured-image,
-			.about-wrap .dfw h3,
-			.about-wrap ul {
-				max-width: 90%;
+		.about-wrap .feature-section {
+			border: 0;
+			padding: 0;
+		}
+
+		@media only screen and (max-width: 768px) {
+			.changelog.headline-feature.dfw {
+				max-width: 100%;
 			}
 
 			.about-wrap .theme-badge {
@@ -100,6 +131,18 @@ class Bavotasan_Documentation {
 			<hr />
 
 			<div class="changelog headline-feature dfw">
+				<h2><?php _e( 'Custom Menus', 'arcade' ); ?></h2>
+
+				<p><?php printf( __( '<em>%s</em> includes one Custom Menu locations: the Primary top menu.', 'arcade' ), BAVOTASAN_THEME_NAME ); ?></p>
+
+				<p><?php printf( __( 'To add a navigation menu to the header, go to %sAppearance &rarr; Menus%s. By default, a list of categories will appear in this location if no custom menu is set.', 'arcade' ), '<a href="' . admin_url( 'nav-menus.php' ) . '">', '</a>' ); ?></p>
+
+				<p><?php _e( 'Clicking on a top-level link in the primary navigation will open up the first dropdown list of sub-menu links.', 'arcade' ); ?></p>
+
+			</div>
+			<hr />
+
+			<div class="changelog headline-feature dfw">
 				<h2><?php _e( 'Jumbo Headline', 'arcade' ); ?></h2>
 
 				<div class="featured-image dfw-container">
@@ -122,14 +165,26 @@ class Bavotasan_Documentation {
 			<hr />
 
 			<div class="changelog headline-feature dfw">
-				<h2><?php _e( 'Custom Menus', 'arcade' ); ?></h2>
+				<h2><?php _e( 'Post Block Page Template', 'arcade' ); ?></h2>
 
-				<p><?php printf( __( '<em>%s</em> includes one Custom Menu locations: the Primary top menu.', 'arcade' ), BAVOTASAN_THEME_NAME ); ?></p>
+				<div class="featured-image dfw-container">
+					<img src="<?php echo BAVOTASAN_THEME_URL; ?>/library/images/post-block.jpg" />
+				</div>
 
-				<p><?php printf( __( 'To add a navigation menu to the header, go to %sAppearance &rarr; Menus%s. By default, a list of categories will appear in this location if no custom menu is set.', 'arcade' ), '<a href="' . admin_url( 'nav-menus.php' ) . '">', '</a>' ); ?></p>
+				<p><?php _e( 'On the homepage of the demo, the lower section is comprised of four posts displayed in a grid block. You can create this look on your homepage by creating a static front page and assigning the Post Block page template to it.', 'arcade' ); ?></p>
+			</div>
+			<hr />
 
-				<p><?php _e( 'Clicking on a top-level link in the primary navigation will open up the first dropdown list of sub-menu links.', 'arcade' ); ?></p>
+			<div class="changelog headline-feature dfw">
+				<h2><?php _e( 'Custom Header Image', 'arcade' ); ?></h2>
 
+				<p><?php _e( 'You have an option to display a custom header image on each of your posts and pages, through the Custom Header Image panel. Click <strong>Set Image</strong> to open the media library and select an image or upload a new one. Click <strong>Update</strong> or <strong>Publish</strong> when you&rsquo;re done.', 'arcade' ); ?></p>
+
+				<div class="featured-image dfw-container">
+					<img src="<?php echo BAVOTASAN_THEME_URL; ?>/library/images/custom-header.jpg" />
+				</div>
+
+				<p><?php _e( 'If you don&rsquo;t set a custom header on a page or post, your default header image will be displayed instead, if you selected one.', 'arcade' ); ?></p>
 			</div>
 			<hr />
 

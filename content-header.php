@@ -16,7 +16,7 @@ global $paged;
 		<?php endif; // is_single() ?>
 	</h1>
 
-	<?php if ( ! is_front_page() || 1 < $paged ) { ?>
+	<?php if ( ! is_page_template( 'page-templates/template-post-block.php') ) { ?>
 	<div class="entry-meta">
 		<?php
 		$display_author = $bavotasan_theme_options['display_author'];
@@ -43,7 +43,7 @@ global $paged;
 
 		$display_comments = $bavotasan_theme_options['display_comment_count'];
 		if( $display_comments && comments_open() ) {
-			if ( $display_author || $display_date )
+			if ( $display_author || $display_date || $display_categories )
 				echo '&nbsp;&bull;&nbsp;';
 
 			comments_popup_link( __( '0 Comments', 'arcade' ), __( '1 Comment', 'arcade' ), __( '% Comments', 'arcade' ) );

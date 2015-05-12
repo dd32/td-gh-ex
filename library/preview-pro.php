@@ -28,22 +28,19 @@ class Bavotasan_Preview_Pro {
 			margin: 20px auto !important;
 		}
 
-		.featured-image img {
-			width: 100%;
+		.about-wrap .headline-feature h2 {
+			text-align: center;
 		}
 
 		.about-wrap .dfw h3 {
 			text-align: left;
 		}
 
-		.about-wrap .dfw h3,
-		.about-wrap ul,
-		.featured-image {
+		.changelog.headline-feature.dfw {
 			max-width: 68%;
 		}
 
-		.about-wrap .dfw h3,
-		.about-wrap ul {
+		.changelog.headline-feature.dfw {
 			margin-left: auto;
 			margin-right: auto;
 		}
@@ -60,11 +57,14 @@ class Bavotasan_Preview_Pro {
 			right: 0;
 		}
 
-		@media only screen and (max-width: 500px) {
-			.featured-image,
-			.about-wrap .dfw h3,
-			.about-wrap ul {
-				max-width: 90%;
+		.about-wrap .feature-section {
+			border: 0;
+			padding: 0;
+		}
+
+		@media only screen and (max-width: 768px) {
+			.changelog.headline-feature.dfw {
+				max-width: 100%;
 			}
 
 			.about-wrap .theme-badge {
@@ -105,7 +105,7 @@ class Bavotasan_Preview_Pro {
 				<div class="featured-image dfw-container">
 					<img alt="" src="<?php echo BAVOTASAN_THEME_URL; ?>/library/images/social-menu.jpg" />
 				</div>
-				<p><?php _e( 'Establish your online presense by letting your visitors join your social network. Help them stay up to date on everything you&rsquo;re doing', 'arcade' ); ?></p>
+				<p><?php _e( 'Establish your online presence by letting your visitors join your social network. Help them stay up to date on everything you&rsquo;re doing', 'arcade' ); ?></p>
 				<p><?php _e( 'Easily add a social menu by creating links to the most popular social media websites.', 'arcade' ); ?></p>
 			</div>
 			<hr />

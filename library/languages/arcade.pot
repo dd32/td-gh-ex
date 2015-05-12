@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Arcade Basic\n"
-"POT-Creation-Date: 2015-02-20 10:32-0500\n"
-"PO-Revision-Date: 2015-02-20 10:32-0500\n"
+"POT-Creation-Date: 2015-05-12 10:09-0500\n"
+"PO-Revision-Date: 2015-05-12 10:09-0500\n"
 "Language: en_EN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -188,7 +188,7 @@ msgid ""
 "static front page."
 msgstr ""
 
-#: functions.php:216 library/about.php:103
+#: functions.php:216 library/about.php:146
 msgid "Jumbo Headline"
 msgstr ""
 
@@ -198,7 +198,7 @@ msgid ""
 "for one text widget. "
 msgstr ""
 
-#: functions.php:226 library/about.php:114
+#: functions.php:226 library/about.php:157
 msgid "Home Page Top Area"
 msgstr ""
 
@@ -237,15 +237,15 @@ msgstr ""
 msgid "Read more &rarr;"
 msgstr ""
 
-#: header.php:35
+#: header.php:33
 msgid "Main menu"
 msgstr ""
 
-#: header.php:36
+#: header.php:34
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:71
+#: header.php:74
 msgid "See More"
 msgstr ""
 
@@ -261,47 +261,59 @@ msgstr ""
 msgid "Next Image &rarr;"
 msgstr ""
 
-#: library/about.php:15 library/preview-pro.php:18 library/preview-pro.php:77
+#: library/about.php:26
+#, php-format
+msgid ""
+"Thanks for choosing %s! You can learn how to use the available theme options "
+"on the %sabout page%s."
+msgstr ""
+
+#: library/about.php:28
+#, php-format
+msgid "Learn more about %s"
+msgstr ""
+
+#: library/about.php:42 library/preview-pro.php:18 library/preview-pro.php:77
 #, php-format
 msgid "Welcome to %s %s"
 msgstr ""
 
-#: library/about.php:15
+#: library/about.php:42
 #, php-format
 msgid "About %s"
 msgstr ""
 
-#: library/about.php:69
+#: library/about.php:100
 #, php-format
 msgid ""
 "Read through the following documentation to learn more about <em>%s</em> and "
 "how to use the available theme options."
 msgstr ""
 
-#: library/about.php:76 library/preview-pro.php:87
+#: library/about.php:107 library/preview-pro.php:87
 msgid "Documentation"
 msgstr ""
 
-#: library/about.php:77 library/preview-pro.php:88
+#: library/about.php:108 library/preview-pro.php:88
 msgid "Upgrade"
 msgstr ""
 
-#: library/about.php:81
+#: library/about.php:112
 msgid "The Customizer"
 msgstr ""
 
-#: library/about.php:87
+#: library/about.php:118
 #, php-format
 msgid ""
 "All theme options for <em>%s</em> are controlled under %sAppearance &rarr; "
 "Customize%s. From there, you can modify layout, custom menus, and more."
 msgstr ""
 
-#: library/about.php:89
+#: library/about.php:120
 msgid "Site Title Arc"
 msgstr ""
 
-#: library/about.php:90
+#: library/about.php:121
 #, php-format
 msgid ""
 "<em>%s</em> uses Arctext.js to create a cool curved effect on your site "
@@ -310,28 +322,51 @@ msgid ""
 "title to arc, leave the field blank."
 msgstr ""
 
-#: library/about.php:92
+#: library/about.php:123
 msgid "Site &amp; Main Content Width"
 msgstr ""
 
-#: library/about.php:94
+#: library/about.php:125
 msgid ""
 "There are two width options for your site: 1200px &amp; 992px. You can "
 "select the width of your main content, based on a 12 column grid. Resizing "
 "your main content will also resize your sidebar."
 msgstr ""
 
-#: library/about.php:96 library/customizer.php:245
+#: library/about.php:127 library/customizer.php:230
 msgid "Sidebar Layout"
 msgstr ""
 
-#: library/about.php:98
+#: library/about.php:129
 msgid ""
 "With the sidebar layout option, you can decide whether to display your "
 "sidebar on the left or right of your main content."
 msgstr ""
 
-#: library/about.php:109
+#: library/about.php:134
+msgid "Custom Menus"
+msgstr ""
+
+#: library/about.php:136
+#, php-format
+msgid "<em>%s</em> includes one Custom Menu locations: the Primary top menu."
+msgstr ""
+
+#: library/about.php:138
+#, php-format
+msgid ""
+"To add a navigation menu to the header, go to %sAppearance &rarr; Menus%s. "
+"By default, a list of categories will appear in this location if no custom "
+"menu is set."
+msgstr ""
+
+#: library/about.php:140
+msgid ""
+"Clicking on a top-level link in the primary navigation will open up the "
+"first dropdown list of sub-menu links."
+msgstr ""
+
+#: library/about.php:152
 #, php-format
 msgid ""
 "The Jumbo Headline is a widgetized area on the home page designed for a Text "
@@ -339,7 +374,7 @@ msgid ""
 "the text."
 msgstr ""
 
-#: library/about.php:120
+#: library/about.php:163
 #, php-format
 msgid ""
 "The section where the four widgets appear on the homepage will only display "
@@ -349,38 +384,47 @@ msgid ""
 "and text link to a page or a post, by adding a URL in the field provided."
 msgstr ""
 
-#: library/about.php:125
-msgid "Custom Menus"
+#: library/about.php:168
+msgid "Post Block Page Template"
 msgstr ""
 
-#: library/about.php:127
-#, php-format
-msgid "<em>%s</em> includes one Custom Menu locations: the Primary top menu."
-msgstr ""
-
-#: library/about.php:129
-#, php-format
+#: library/about.php:174
 msgid ""
-"To add a navigation menu to the header, go to %sAppearance &rarr; Menus%s. "
-"By default, a list of categories will appear in this location if no custom "
-"menu is set."
+"On the homepage of the demo, the lower section is comprised of four posts "
+"displayed in a grid block. You can create this look on your homepage by "
+"creating a static front page and assigning the Post Block page template to "
+"it."
 msgstr ""
 
-#: library/about.php:131
+#: library/about.php:179 library/custom-metaboxes.php:29
+#: library/custom-metaboxes.php:30
+msgid "Custom Header Image"
+msgstr ""
+
+#: library/about.php:181
 msgid ""
-"Clicking on a top-level link in the primary navigation will open up the "
-"first dropdown list of sub-menu links."
+"You have an option to display a custom header image on each of your posts "
+"and pages, through the Custom Header Image panel. Click <strong>Set Image</"
+"strong> to open the media library and select an image or upload a new one. "
+"Click <strong>Update</strong> or <strong>Publish</strong> when you&rsquo;re "
+"done."
 msgstr ""
 
-#: library/about.php:137
+#: library/about.php:187
+msgid ""
+"If you don&rsquo;t set a custom header on a page or post, your default "
+"header image will be displayed instead, if you selected one."
+msgstr ""
+
+#: library/about.php:192
 msgid "Jetpack"
 msgstr ""
 
-#: library/about.php:143
+#: library/about.php:198
 msgid "Infinite Scroll"
 msgstr ""
 
-#: library/about.php:145
+#: library/about.php:200
 #, php-format
 msgid ""
 "%sJetpack&rsquo;s Infinite Scroll%s allows your visitors to view all your "
@@ -388,22 +432,22 @@ msgid ""
 "posts will be added. To activate go to %sJetpack &rarr; Settings%s. "
 msgstr ""
 
-#: library/about.php:147
+#: library/about.php:202
 msgid "Tiled Galleries"
 msgstr ""
 
-#: library/about.php:149
+#: library/about.php:204
 #, php-format
 msgid ""
 "%sJetpack&rsquo;s Tiled Galleries%s will display your images in a beautiful "
 "mosaic layout. Go to %sJetpack &rarr; Settings%s to turn it on. "
 msgstr ""
 
-#: library/about.php:151
+#: library/about.php:206
 msgid "Carousel"
 msgstr ""
 
-#: library/about.php:153
+#: library/about.php:208
 #, php-format
 msgid ""
 "With %sJetpack&rsquo;s Carousel%s, clicking on one of your gallery images "
@@ -411,41 +455,37 @@ msgid ""
 "&rarr; Settings%s. "
 msgstr ""
 
-#: library/about.php:158
+#: library/about.php:213
 msgid "Pull Quotes"
 msgstr ""
 
-#: library/about.php:164
+#: library/about.php:219
 msgid ""
 "You can easily include a pull quote within your text by using the following "
 "code within the Text/HTML editor:"
 msgstr ""
 
-#: library/about.php:166
+#: library/about.php:221
 msgid ""
 "&lt;blockquote class=\"pullquote\"&gt;This is a pull quote that will appear "
 "within your text.&lt;/blockquote&gt;"
 msgstr ""
 
-#: library/about.php:167
+#: library/about.php:222
 msgid "You can also align it to the right with this code:"
 msgstr ""
 
-#: library/about.php:169
+#: library/about.php:224
 msgid ""
 "&lt;blockquote class=\"pullquote alignright\"&gt;This is a pull quote that "
 "will appear within your text.&lt;/blockquote&gt;"
 msgstr ""
 
-#: library/about.php:173
+#: library/about.php:228
 #, php-format
 msgid ""
 "For more information, check out the %sDocumentation &amp; FAQs%s section on "
 "my site."
-msgstr ""
-
-#: library/custom-metaboxes.php:29 library/custom-metaboxes.php:30
-msgid "Custom Header Image"
 msgstr ""
 
 #: library/custom-metaboxes.php:42
@@ -462,19 +502,19 @@ msgid ""
 "the featured image."
 msgstr ""
 
-#: library/customizer.php:64 library/widgets/widget-image-icon.php:94
+#: library/customizer.php:70 library/widgets/widget-image-icon.php:94
 msgid "View Icons"
 msgstr ""
 
-#: library/customizer.php:64 library/widgets/widget-image-icon.php:94
+#: library/customizer.php:70 library/widgets/widget-image-icon.php:94
 msgid "Remove Icon"
 msgstr ""
 
-#: library/customizer.php:92
+#: library/customizer.php:97
 msgid "The sidebar will not appear on the Post Block page template."
 msgstr ""
 
-#: library/customizer.php:129
+#: library/customizer.php:132
 msgid "Arc Radius"
 msgstr ""
 
@@ -482,93 +522,93 @@ msgstr ""
 msgid "Arc Radius (Inner Pages)"
 msgstr ""
 
-#: library/customizer.php:146
+#: library/customizer.php:145
 msgid ""
 "The space and rotation for each letter will be calculated using the arc "
 "radius and the width of the site title. Leave blank for no arc."
 msgstr ""
 
-#: library/customizer.php:158
+#: library/customizer.php:155
 msgid "Use Fittext for long site title"
 msgstr ""
 
-#: library/customizer.php:173
+#: library/customizer.php:167
 msgid "Header Icon"
 msgstr ""
 
-#: library/customizer.php:181
+#: library/customizer.php:174
 msgid "Layout"
 msgstr ""
 
-#: library/customizer.php:193
+#: library/customizer.php:184
 msgid "Site Width"
 msgstr ""
 
-#: library/customizer.php:199
+#: library/customizer.php:189
 msgid "1200px"
 msgstr ""
 
-#: library/customizer.php:200
+#: library/customizer.php:190
 msgid "992px"
 msgstr ""
 
-#: library/customizer.php:224
+#: library/customizer.php:212
 msgid "Main Content Width"
 msgstr ""
 
-#: library/customizer.php:240
+#: library/customizer.php:225
 msgid "Left"
 msgstr ""
 
-#: library/customizer.php:241
+#: library/customizer.php:226
 msgid "Right"
 msgstr ""
 
-#: library/customizer.php:254 library/widgets/widget-image-icon.php:108
+#: library/customizer.php:238 library/widgets/widget-image-icon.php:108
 msgid "Default"
 msgstr ""
 
-#: library/customizer.php:255 library/widgets/widget-image-icon.php:109
+#: library/customizer.php:239 library/widgets/widget-image-icon.php:109
 msgid "Light Blue"
 msgstr ""
 
-#: library/customizer.php:256 library/widgets/widget-image-icon.php:110
+#: library/customizer.php:240 library/widgets/widget-image-icon.php:110
 msgid "Blue"
 msgstr ""
 
-#: library/customizer.php:257 library/widgets/widget-image-icon.php:111
+#: library/customizer.php:241 library/widgets/widget-image-icon.php:111
 msgid "Red"
 msgstr ""
 
-#: library/customizer.php:258 library/widgets/widget-image-icon.php:112
+#: library/customizer.php:242 library/widgets/widget-image-icon.php:112
 msgid "Yellow"
 msgstr ""
 
-#: library/customizer.php:259 library/widgets/widget-image-icon.php:113
+#: library/customizer.php:243 library/widgets/widget-image-icon.php:113
 msgid "Green"
 msgstr ""
 
-#: library/customizer.php:264
+#: library/customizer.php:248
 msgid "Posts"
 msgstr ""
 
-#: library/customizer.php:266
+#: library/customizer.php:250
 msgid "These options do not affect the Post Block page template."
 msgstr ""
 
-#: library/customizer.php:277
+#: library/customizer.php:259
 msgid "Display Author"
 msgstr ""
 
-#: library/customizer.php:292
+#: library/customizer.php:271
 msgid "Display Date"
 msgstr ""
 
-#: library/customizer.php:307
+#: library/customizer.php:283
 msgid "Display Categories"
 msgstr ""
 
-#: library/customizer.php:322
+#: library/customizer.php:295
 msgid "Display Comment Count"
 msgstr ""
 
@@ -604,7 +644,7 @@ msgstr ""
 
 #: library/preview-pro.php:108
 msgid ""
-"Establish your online presense by letting your visitors join your social "
+"Establish your online presence by letting your visitors join your social "
 "network. Help them stay up to date on everything you&rsquo;re doing"
 msgstr ""
 
