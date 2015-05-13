@@ -1,5 +1,11 @@
 Changelog
 
+13 May 2015 - 1.33
+--------------------------------------
+- updated niceScroll to the latest version;
+- fixed font size issue;
+- improved styling for 404 page.
+
 26 Apr 2015 - 1.32
 --------------------------------------
 - removed filter for user_contactmethod.
