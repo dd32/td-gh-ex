@@ -91,3 +91,6 @@ Version 1.2.0
 
 Version 1.2.1
 	* Footer Widget Area Fix
+
+Version 1.2.2
+	* TGM Plugin Activation Update to fix XSS vulnerability
