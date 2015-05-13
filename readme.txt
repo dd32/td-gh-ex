@@ -2,9 +2,9 @@
 
 Theme Name: Athenea
 Theme URI: http://www.ibermega.com/themes/athenea
-Version: 1.2.4
+Version: 1.2.5
 Requires at least: 3.0.1
-Tested up to: 4.1.1
+Tested up to: 4.2.2
 Author: Miguel Angel Rico
 Author URI: http://www.ibermega.com
 License: GNU General Public License v3.0
@@ -62,9 +62,12 @@ To view the tutorials for use http://www.ibermega.com/tutoriales/plantilla-athen
 
 == Changelog ==
 
+= 1.2.5 - 13.05.2015 =
+* The colors are set in the subtitle of the templates.
+
 = 1.2.4 - 06.04.2015 =
 * Backward compatibility is added with the title-tag support to prevent duplicate title.
-* Se añade etiqueta responsive-layout.
+* Added responsive-layout on labels.
 
 = 1.2.3 - 27.01.2015 =
 * Enable support for title-tag.
