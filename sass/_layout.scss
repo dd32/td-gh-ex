@@ -4,8 +4,12 @@
 $susy: (
   columns: 12,  
   gutters: .5, 
+  use-custom: (
+    box-sizing: false,
+  ),  
 );
 $small: max-width 30rem;
+$min-medium: min-width 48rem;
 $medium: max-width 48rem;
 $large: max-width 64rem;
 
@@ -16,6 +20,9 @@ $large: max-width 64rem;
 	@include container(67.5rem);
 	padding: 0 5%;
 }
+body:not(.resp) #page {
+	width: 67.5rem;
+}
 #primary {
 	@include box-sizing(border-box);
 	float: left;
@@ -25,12 +32,14 @@ $large: max-width 64rem;
 	border-style: solid;
 	border-width: 0 0.0625em 0 0;
 	padding-right: 3.5%;
-	width: 75%;	 	
+	width: 75%;	 		
 	@include breakpoint($medium) {
-		border: none;
-		padding-right: 0;
-		padding-left: 0; 
-		width: 100%; 	
+		@at-root .resp#{&} {
+			border: none;
+			padding-right: 0;
+			padding-left: 0; 
+			width: 100%;
+		}
 	} 	
 }
 #secondary {
@@ -41,8 +50,17 @@ $large: max-width 64rem;
 	padding-left: 3.5%;
 	width: 25%;	
 	@include breakpoint($medium) {
-		width: 100%; 
-	} 
+		.resp & {
+			width: 100%; 
+		} 
+	}
+}
+@include breakpoint($medium) {
+	.resp.sidebar #secondary {
+		@include leading-border(1px, 2);
+		@include leader(2);
+		border-color: $border-color;					
+	}
 }
 
 /*--------------------------------------------------------------

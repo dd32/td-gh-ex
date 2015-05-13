@@ -64,12 +64,23 @@ function puro_premium_upgrade_content($content){
 
 	$content['testimonials'] = array(
 		array(
+			'gravatar' => '69d81ec04f082b1c3437e8473d78e63b',
+			'name' => 'Rob Hope',
+			'title' => 'Clean, minimal, to the point',
+			'content' => __("<p>Solid theme. Clean, minimal, to the point, zero clutter, fast, does what it says. Found video post types useful for a client project and works well.</p>", 'puro'),
+		),
+		array(
+			'gravatar' => 'bbbd2d0fa2d500e1931265ada3d62382',
+			'name' => 'Li-An',
+			'title' => 'Impressive',
+			'content' => __("<p>Very clean and well documented theme. I'm very curious to work with it. Thanks for sharing.</p>", 'puro'),
+		),
+		array(
 			'gravatar' => 'a30fb6758139a02d700c273d79a0877d',
 			'name' => 'Kerstie',
 			'title' => 'Minimalist Theme Ideal for Portfolio.',
 			'content' => __("<p>Great theme. Neat, simple, and modern. It suits my needs and preferences, and the small modification that I want was easily solved by Support. Highly recommended.</p> <p>My favorite feature was the option to move the logo to the center without adjusting the layout using CSS. I've been looking for minimalist portfolio-friendly themes with such feature and this is the only one that I've found so far.</p> <p>Thank you so much for sharing such a wonderful theme.</p>", 'puro'),
-		),
-
+		),		
 	);	
 
 	return $content;

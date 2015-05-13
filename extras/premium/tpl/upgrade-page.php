@@ -17,7 +17,7 @@ $theme = basename( get_template_directory() );
 				);
 				printf(
 					__( "Use <a href='%s' target='_blank'>this form</a> if you don't receive your order number in the next 15 minutes. ", 'puro' ) ,
-					'http://puro.fetchapp.com/orders'
+					'http://purothemes.com/orders/'
 				);
 				_e( 'To be sure, check your spam folder.', 'puro' );
 				?>

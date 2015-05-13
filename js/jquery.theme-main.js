@@ -2,11 +2,7 @@
  * Main theme Javascript - (c) Greg Priday, freely distributable under the terms of the GPL 2.0 license.
  */
 
-/* Setup fitvids for entry content and panels */
 jQuery( document ).ready( function ($) {
-    if ( $.fn.fitVids) {
-        $('.entry-content, .entry-content .panel, .post-video' ).fitVids();
-    }
 
     // Substitute any retina images
     var pixelRatio = !!window.devicePixelRatio ? window.devicePixelRatio : 1;
@@ -25,6 +21,11 @@ jQuery( document ).ready( function ($) {
             }
         })
     }
+
+    // Setup fitvids for entry content and panels
+    if(typeof $.fn.fitVids != 'undefined') {
+        $('.entry-content, .entry-content .panel' ).fitVids();
+    }       
     
 });
 

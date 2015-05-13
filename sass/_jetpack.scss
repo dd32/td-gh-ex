@@ -96,7 +96,7 @@ div[id*="contact-form"] {
 	text-align: center;
 	span {
 		@include border-radius(3px);
-		@include single-box-shadow($highlight-color-dark, 0, 1px, 0);
+		@include box-shadow($highlight-color-dark 0 1px 0);
 		@include transition(0.3s);
 		border: none;
 		background: rgba(42, 193, 118, 0.8);

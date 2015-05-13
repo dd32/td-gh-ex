@@ -16,6 +16,7 @@ function puro_theme_settings(){
 
 	siteorigin_settings_add_section( 'header', __('Header', 'puro' ) );
 	siteorigin_settings_add_section( 'navigation', __('Navigation', 'puro' ) );
+	siteorigin_settings_add_section( 'layout', __('Layout', 'puro' ) );
 	siteorigin_settings_add_section( 'home', __('Home', 'puro' ) );
 	siteorigin_settings_add_section( 'pages', __('Pages', 'puro' ) );
 	siteorigin_settings_add_section( 'blog', __('Blog', 'puro' ) );
@@ -63,7 +64,19 @@ function puro_theme_settings(){
 	siteorigin_settings_add_teaser('navigation', 'responsive_menu', __('Responsive Menu', 'puro'), array(
 		'description' => __('Use a special responsive menu for small screen devices.', 'puro'),
 		'teaser-image' => get_template_directory_uri().'/upgrade/teasers/responsive-menu.png',
-	));				
+	));			
+
+	/**
+	 * Layout
+	 */
+
+	siteorigin_settings_add_field( 'layout', 'responsive', 'checkbox', __('Responsive Layout', 'puro'), array(
+		'description' => __('Adapt the site layout for mobile devices.', 'puro')
+	) );	
+
+	siteorigin_settings_add_field('layout', 'fitvids', 'checkbox', __('Enable FitVids.js', 'puro'), array(
+		'description' => __('Include FitVids.js for fluid width video embeds.', 'puro')
+	));			
 
 	/**
 	 * Home
@@ -72,9 +85,10 @@ function puro_theme_settings(){
 	siteorigin_settings_add_field('home', 'slider', 'select', __('Home Page Slider', 'puro'), array(
 		'options' => siteorigin_metaslider_get_options(true),
 		'description' => sprintf(
-			__('This theme supports <a href="%s" target="_blank">Meta Slider</a>. <a href="%s">Install it</a> for free to create beautiful responsive sliders.', 'puro'),
+			__('This theme supports <a href="%s" target="_blank">Meta Slider</a>. <a href="%s">Install it</a> for free to easily build beautiful responsive sliders - <a href="%s" target="_blank">read more</a>.', 'puro'),
 			'http://bit.ly/meta-slider',
-			siteorigin_metaslider_install_link()
+			siteorigin_metaslider_install_link(),
+			'http://purothemes.com/documentation/puro-theme/theme-settings/home/'
 		)
 	));
 
@@ -118,6 +132,10 @@ function puro_theme_settings(){
 		'description' => __('Display the featured image on the blog archive pages.', 'puro')
 	) );
 
+	siteorigin_settings_add_field('blog', 'read_more', 'text', __('Read More Text', 'puro'), array(
+		'description' => __('The link text displayed when posts are split using the "more" quicktag.', 'puro')
+	));	
+
 	siteorigin_settings_add_field( 'blog', 'edit_link', 'checkbox', __( 'Post Edit Link', 'puro' ), array(
 		'description' => __( 'Display an Edit link below post content. Visible if a user is logged in and allowed to edit the content. Also applies to Pages.', 'puro' )
 	) );	
@@ -140,7 +158,7 @@ function puro_theme_settings(){
 	 */		
 
 	siteorigin_settings_add_teaser('social', 'share_post', __('Post Sharing', 'puro'), array(
-		'description' => __('Show icons to share your posts on Facebook, Twitter and Google+.', 'puro'),
+		'description' => __('Show icons to share your posts on Facebook, Twitter, Google+ and LinkedIn.', 'puro'),
 		'teaser-image' => get_template_directory_uri().'/upgrade/teasers/share.png',
 	));
 
@@ -154,12 +172,16 @@ function puro_theme_settings(){
 	 */
 
 	siteorigin_settings_add_field( 'footer', 'copyright_text', 'text', __( 'Footer Copyright Text', 'puro' ), array(
-		'description' => __( '{site-title} and {year} can be used to display your website title and the current year.', 'puro' )
+		'description' => __( '{site-title}, {copyright} and {year} can be used to display your website title, a copyright symbol and the current year.', 'puro' )
 	) );
 
 	siteorigin_settings_add_teaser('footer', 'attribution', __('Footer Attribution Link', 'puro'), array(
 		'description' => __('Remove the theme attribution link from your footer without editing any code.', 'puro'),
 		'teaser-image' => get_template_directory_uri().'/upgrade/teasers/attribution.png',
+	));	
+
+	siteorigin_settings_add_field('footer', 'js_enqueue', 'checkbox', __('Enqueue JavaScript in Footer', 'puro'), array(
+		'description' => __('Enqueue theme JavaScript files in the footer. Doing so can improve site load time.', 'puro'),
 	));	
 
 }
@@ -182,6 +204,9 @@ function puro_theme_setting_defaults($defaults){
 	$defaults['navigation_header_menu'] = true;
 	$defaults['navigation_responsive_menu'] = true;
 
+	$defaults['layout_responsive'] = true;
+	$defaults['layout_fitvids'] = true;
+
 	$defaults['home_slider'] = '';
 
 	$defaults['pages_page_featured_image'] = true;		
@@ -193,6 +218,7 @@ function puro_theme_setting_defaults($defaults){
 	$defaults['blog_post_comment_count'] = true;	
 	$defaults['blog_post_featured_image'] = true;		
 	$defaults['blog_archive_featured_image'] = true;
+	$defaults['blog_read_more'] = __('Continue reading', 'puro');
 	$defaults['blog_edit_link'] = true;
 
 	$defaults['comments_comment_form_tags'] = true;		
@@ -203,6 +229,7 @@ function puro_theme_setting_defaults($defaults){
 
 	$defaults['footer_copyright_text'] = __('Copyright {year}', 'puro');
 	$defaults['footer_attribution'] = true;
+	$defaults['footer_js_enqueue'] = false;
 
 	return $defaults;
 }

@@ -33,7 +33,7 @@
 
 	<?php if ( empty( $post->post_excerpt ) ) : ?>
 	<div class="entry-content">
-		<?php the_content( __( 'Continue reading', 'puro' ) ); ?>
+		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'puro' ) . '</span>',
@@ -50,7 +50,7 @@
 	<?php endif; ?>
 	
 	<footer class="entry-footer">
-		<?php if( is_single() ) { do_action('puro_entry_main_bottom'); }  ?>
-		<?php if ( siteorigin_setting( 'blog_edit_link' ) ) { echo edit_post_link( __( 'Edit', 'puro' ), '<span class="edit-link">', '</span>' ); } ?>
+		<?php do_action('puro_entry_main_bottom') ?>
+		<?php if ( siteorigin_setting( 'blog_edit_link' ) ) { edit_post_link( __( 'Edit', 'puro' ), '<span class="edit-link">', '</span>' ); } ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

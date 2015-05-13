@@ -35,7 +35,7 @@
 		<?php
 		// Display the content, but remove any videos
 		add_filter( 'the_content', 'puro_filter_video' );
-		the_content( __( 'Continue reading', 'puro' ) );
+		the_content();
 		remove_filter( 'the_content', 'puro_filter_video' );
 		?>
 		<?php

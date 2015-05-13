@@ -31,12 +31,12 @@ textarea {
 	color: #FFF; 
 }
 h1, h2, h3, h4, h5, h6 {
-	@include word-break(break-all);
 	font-family: $arial;
 	margin: rhythm(0.5) 0;	
 	clear: both;
 	color: $heading-color; 
-	font-weight: 600;	
+	font-weight: 600;
+    word-break: normal;
 }
 h1 {
 	@include adjust-font-size-to(29px);

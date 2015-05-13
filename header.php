@@ -12,26 +12,23 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
 
+<body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-	<header id="masthead" class="site-header<?php if( siteorigin_setting( 'header_center_logo' ) ) { echo ' center-logo'; } if( !siteorigin_setting( 'header_display_tagline' ) ) { echo ' no-tagline'; } if( siteorigin_setting( 'navigation_responsive_menu' ) ) { echo ' responsive-menu'; } ?>" role="banner">
+
+	<header id="masthead" class="site-header<?php if( siteorigin_setting( 'header_center_logo' ) ) { echo ' center-logo'; } if( ! siteorigin_setting( 'header_display_tagline' ) ) { echo ' no-tagline'; } if( siteorigin_setting( 'navigation_responsive_menu' ) ) { echo ' responsive-menu'; } ?>" role="banner">
 		<div class="site-branding">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php puro_display_logo(); ?></a>
 			<?php if( siteorigin_setting( 'header_display_tagline' ) ) { ?>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 			<?php } ?>				
-		</div>			
-
+		</div><!-- .site-branding-->			
 		<?php do_action('puro_before_nav') ?>
-
 		<?php if( siteorigin_setting( 'navigation_header_menu' ) ) { ?>
 			<nav id="site-navigation" class="main-navigation" role="navigation">
 				<?php do_action('puro_before_nav_menu') ?>
@@ -44,4 +41,4 @@
 	
 	<div id="content" class="site-content">
 
-	<?php puro_render_slider() ?>
+	<?php puro_render_slider(); ?>

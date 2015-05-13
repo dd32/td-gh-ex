@@ -3,8 +3,8 @@ Theme Name: Puro
 Author: Puro
 Author URI: http://purothemes.com/
 Theme URI: http://purothemes.com/themes/puro-wordpress-theme/
-Description: A content focussed minimalist theme, perfect for your blog, portfolio or small business site. We've closely integrated SiteOrigin's Page Builder for responsive layouts and Meta Slider for smooth, easy to build sliders. Puro is responsive, Retina ready and fully compatible with Jetpack, Contact Form 7, Gravity Forms and WP PageNavi. Included is a .rtl CSS file for right to left languages. For assistance, check out our <a href="http://purothemes.com/documentation/puro-theme/">theme documentation</a> or ask a question on our <a href="http://purothemes.com/support/forum/puro/">support forum</a>.
-Version: 1.0.5
+Description: A content focussed minimalist theme, perfect for your blog, portfolio or small business site. We've closely integrated SiteOrigin's Page Builder for responsive layouts and Meta Slider for smooth, easy to build sliders. Puro is responsive, Retina ready and fully compatible with Jetpack, Contact Form 7, Gravity Forms and WP PageNavi. Included is a .rtl CSS file for right to left languages. For assistance, check out our <a href="http://purothemes.com/documentation/">theme documentation</a> (http://purothemes.com/documentation/) or ask a question on our <a href="http://purothemes.com/support/">support forum</a> (http://purothemes.com/support/).
+Version: 1.0.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: puro
@@ -22,7 +22,6 @@ Tags: gray, green, white, light, one-column, right-sidebar, fluid-layout, custom
 3.0 - Typography
 4.0 - Elements
 5.0 - Forms
-
 6.0 - Navigation
 	6.1 - Links
 	6.2 - Main Menu
@@ -62,6 +61,8 @@ Tags: gray, green, white, light, one-column, right-sidebar, fluid-layout, custom
 	17.8 - WordPress Posts
 18.0 - Contact Form 7
 19.0 - Gravity Forms
+20.0 - SiteOrigin Page Builder and Widgets Bundle
+	20.1 - SiteOrigin Post Carousel Widget
 --------------------------------------------------------------*/
 
 // Vendor Dependencies
@@ -69,6 +70,7 @@ Tags: gray, green, white, light, one-column, right-sidebar, fluid-layout, custom
 @import "compass/css3/border-radius";
 @import "compass/css3/box-shadow";
 @import "compass/css3/box-sizing";
+@import "compass/css3/flexbox";
 @import "compass/css3/hyphenation";
 @import "compass/css3/opacity";
 @import "compass/css3/transition";
@@ -100,3 +102,4 @@ Tags: gray, green, white, light, one-column, right-sidebar, fluid-layout, custom
 @import "jetpack";
 @import "contact-form-7";
 @import "gravity-forms";
+@import "page-builder";

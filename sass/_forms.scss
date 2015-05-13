@@ -27,7 +27,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	@include border-radius(3px);
-	@include single-box-shadow($highlight-color-dark, 0, 1px, 0);
+	@include box-shadow($highlight-color-dark 0 1px 0);
 	@include transition(0.3s);
 	border: none;
 	background: rgba(42, 193, 118, 0.8);
@@ -97,7 +97,7 @@ textarea {
 	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
 	padding: 0.625em;
 	vertical-align: top; /* Improves readability and alignment in all browsers */
-	width: 100%;
+	width: 80%;
 }
 input[type="file"] {
 	@include adjust-font-size-to(14px);

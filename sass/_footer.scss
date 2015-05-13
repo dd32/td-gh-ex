@@ -40,8 +40,10 @@
 		@include span(1.2 of 12); 
 	}	
 	@include breakpoint($small) {
-		.widget-count-1, .widget-count-2, .widget-count-3, .widget-count-4, .widget-count-5, .widget-count-6, .widget-count-7, .widget-count-8, .widget-count-9, .widget-count-10 {
-			width: 100%; 
+		.resp & {
+			.widget-count-1, .widget-count-2, .widget-count-3, .widget-count-4, .widget-count-5, .widget-count-6, .widget-count-7, .widget-count-8, .widget-count-9, .widget-count-10 {
+				width: 100%; 
+			}
 		}
 	}
 	ul {
@@ -60,7 +62,7 @@
 			color: $highlight-color;
 		}
 	}
-	.menu-social-menu-container {
+	.social-links-menu {
 		float: right;
 		margin-top: rhythm(1); 
 	}

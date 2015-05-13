@@ -35,6 +35,6 @@
 	
 	<footer class="entry-footer">
 		<?php do_action('puro_entry_main_bottom') ?>
-		<?php if ( siteorigin_setting( 'blog_edit_link' ) ) { echo edit_post_link( __( 'Edit', 'puro' ), '<span class="edit-link">', '</span>' ); } ?>
+		<?php if ( siteorigin_setting( 'blog_edit_link' ) ) { edit_post_link( __( 'Edit', 'puro' ), '<span class="edit-link">', '</span>' ); } ?>
 	</footer><!-- .entry-footer -->		
 </article><!-- #post-## -->

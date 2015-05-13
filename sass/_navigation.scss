@@ -20,35 +20,42 @@ a {
 .main-navigation {
 	@include adjust-font-size-to(14px);
 	float: right;
-	margin: 0;
-	max-width: 70%; 
+	margin: 0 0 0 auto;
+	max-width: 69%; 
 	position: relative;
 	text-align: left;
 	width: auto;	
 	@include breakpoint($medium) {
-		text-align: center;
-		margin: 0 0 0.1875em; 
-		max-width: 100%; 
-		width: 100%; 		
+		.resp & {
+			margin: 0 0 0.1875em; 
+		}
+		.resp .site-header:not(.responsive-menu) & {
+			text-align: center;
+			margin: 1.5804em 0 0.1875em; 
+			max-width: 100%; 
+			width: 100%; 		
+		}
 	}  	
 	a {
 		@include nowrap;
 		display: block;
 		color: $text-color; 		
 	}
-	.current_page_item a, .current-menu-item a {
+	.current_page_item > a, .current-menu-item > a {
 		color: $highlight-color; 
 	}	
  	ul {
  		display: block;
 		list-style: none;
 		margin: 0;
+		padding: 0;
 		@include breakpoint($medium) {
-			text-align: center;
+			.resp & {
+				text-align: center;
+			}
 		}		
 		li {
 			display: inline-block;
-			margin-top: 1.5804em;
 			padding: 0 1.6518em 0 0; 
 			position: relative;
 			&:hover > a {
@@ -66,7 +73,9 @@ a {
 			text-align: left;
 			z-index: 2;  
 			@include breakpoint($large) {
-				display: none;
+				.resp & {
+					display: none;
+				}
 			}  				
 			li {
 				background: $background-color; 
@@ -104,7 +113,9 @@ a {
 	        right: -1.5625em;
 	        top: 0.1875em; 
 			@include breakpoint($large) {
-				display: none; 
+				.resp & {
+					display: none; 
+				}
 			}  				
 		}
 		.sub-menu .menu-item-has-children {
@@ -116,24 +127,29 @@ a {
 	}
 }
 .center-logo .main-navigation {
-	margin: 0 0 0.1875em;
+	margin: 1.5804em 0 0.1875em;
 	max-width: 100%; 
 	text-align: center;
 	width: 100%; 
+	@include breakpoint($medium) {
+		@at-root .resp .responsive-menu#{&} {
+			margin-top: 0;
+		}
+	}
 }
 
 /*--------------------------------------------------------------
 6.3 - Comment, Post and Page Navigation
 --------------------------------------------------------------*/
-.site-main .comment-navigation {
-	@include trailer(2);
-}
 .site-main .comment-navigation,
 .site-main .post-navigation {
 	@include leader(2);
 	margin-right: auto;
 	margin-left: auto;
 	overflow: hidden;
+}
+.site-main .comment-navigation {
+	@include trailer(2);
 }
 .comment-navigation .nav-links,
 .paging-navigation .nav-links,
@@ -146,9 +162,11 @@ a {
 	float: left;
 	position: relative;
 	@include breakpoint($medium) {
-		@include trailer;
-		float: none;
-		width: 100%; 
+		.resp & {
+			@include trailer;
+			float: none;
+			width: 100%; 
+		}
 	} 		
 }
 .comment-navigation .nav-next,
@@ -157,8 +175,10 @@ a {
 	float: right;
 	position: relative;
 	@include breakpoint($medium) {
-		float: none;
-		width: 100%; 
+		.resp & {
+			float: none;
+			width: 100%; 
+		}
 	} 	
 }
 .comment-navigation, .post-navigation {
@@ -189,7 +209,9 @@ a {
 		margin-right: 0.3125em; 
 		padding: 0.4375em 1.0625em 0.375em;
 		@include breakpoint($large) {
-			display: none;		
+			.resp & {
+				display: none;		
+			}
 		} 		
 		&:hover {
 			color: $highlight-color;
@@ -232,10 +254,12 @@ a {
 /*--------------------------------------------------------------
 6.5 - Social Menu
 --------------------------------------------------------------*/
-.menu-social-menu-container {
+.social-links-menu {
 	@include breakpoint($medium) {
-		float: left;
-		width: 100%; 
+		.resp & {
+			float: left;
+			width: 100%; 
+		}
 	} 	
 	.screen-reader-text {
 		left: -9999rem;
@@ -261,6 +285,7 @@ a {
 			a:before {
 				display: block;
 				color: $text-secondary-color; 
+				content: "\f08e";
 				font-family: "FontAwesome"; 
 				font-size: 1.125rem;
 				vertical-align: top;

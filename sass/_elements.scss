@@ -45,7 +45,9 @@ table {
 		border: 1px solid $border-color;  
 		padding: 0.5em;
 		@include breakpoint($small) {
-			padding: 2%;
+			.resp & {
+				padding: 2%;
+			}
 		}
 	}
 	th {

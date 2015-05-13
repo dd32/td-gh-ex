@@ -12,7 +12,7 @@ function siteorigin_settings_admin_init_action(){
 add_action('admin_init', 'siteorigin_settings_admin_init_action');
 
 /**
- * Intialize the theme settings page
+ * Intialize the theme settings. Load settings from the database etc.
  *
  * @param $theme_name
  * @action after_setup_theme
@@ -33,11 +33,14 @@ function siteorigin_settings_init( $theme_name = null ) {
 
 	$settings = get_option( $theme_name . '_theme_settings', array() );
 	// Remove any settings with a -1 value
-	foreach($settings as $name => $value) {
-		if (intval($value) === -1) {
-			unset($settings[$name]);
+	if( !empty($settings) && is_array($settings) ) {
+		foreach($settings as $name => $value) {
+			if (intval($value) === -1) {
+				unset($settings[$name]);
+			}
 		}
 	}
+
 	$GLOBALS['siteorigin_settings'] = wp_parse_args( $settings, $GLOBALS['siteorigin_settings_defaults'] );
 	$GLOBALS['siteorigin_settings'] = apply_filters('siteorigin_settings_values', $GLOBALS['siteorigin_settings']);
 
@@ -57,8 +60,9 @@ add_action('after_setup_theme', 'siteorigin_settings_init', 5);
  */
 function siteorigin_settings_admin_init() {
 	register_setting( 'theme_settings', $GLOBALS['siteorigin_settings_name'], 'siteorigin_settings_validate' );
-	if(get_theme_mod('version_activated', false) === false)
+	if(get_theme_mod('version_activated', false) === false) {
 		set_theme_mod('version_activated', SITEORIGIN_THEME_VERSION);
+	}
 }
 
 /**
@@ -129,11 +133,13 @@ function siteorigin_settings_render() {
 function siteorigin_settings_enqueue_scripts( $prefix ) {
 	if ( $prefix != 'appearance_page_theme_settings_page' ) return;
 
-	wp_enqueue_script( 'siteorigin-settings', get_template_directory_uri() . '/extras/settings/js/settings.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
+	$js_suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+
+	wp_enqueue_script( 'siteorigin-settings', get_template_directory_uri() . '/extras/settings/js/settings' . $js_suffix . '.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
 	wp_enqueue_style( 'siteorigin-settings', get_template_directory_uri() . '/extras/settings/css/settings.css', array(), SITEORIGIN_THEME_VERSION );
 
 	if( has_filter('siteorigin_settings_tour_content') ) {
-		wp_enqueue_script( 'siteorigin-settings-tour', get_template_directory_uri() . '/extras/settings/js/tour.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
+		wp_enqueue_script( 'siteorigin-settings-tour', get_template_directory_uri() . '/extras/settings/js/tour' . $js_suffix . '.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
 		wp_enqueue_style( 'siteorigin-settings-tour', get_template_directory_uri() . '/extras/settings/css/tour.css', array(  ), SITEORIGIN_THEME_VERSION );
 	}
 
@@ -188,7 +194,10 @@ function siteorigin_settings_adminbar( $bar ) {
  * @param $name
  */
 function siteorigin_settings_add_section( $id, $name ) {
-	add_settings_section( $id, $name, '__return_false', 'theme_settings' );
+	// This is to prevent issues when adding settings that will only be used in the preview.
+	if( is_admin() ) {
+		add_settings_section( $id, $name, '__return_false', 'theme_settings' );
+	}
 }
 
 /**
@@ -224,12 +233,23 @@ function siteorigin_settings_add_field( $section, $id, $type, $title = null, $ar
 		else return;
 	}
 
+	// Skip fields that don't have a title
+	if( empty($title) ) return;
+
 	$args = wp_parse_args( $args, array(
 		'section' => $section,
 		'field' => $id,
 		'type' => $type,
 	) );
-	add_settings_field( $id, $title, 'siteorigin_settings_field', 'theme_settings', $section, $args );
+
+	if( is_admin() ) {
+		// Add the settings field if it's available (we're in the admin)
+		add_settings_field( $id, $title, 'siteorigin_settings_field', 'theme_settings', $section, $args );
+	}
+	else {
+		global $siteorigin_theme_settings_preview;
+		if( empty($siteorigin_theme_settings_preview) ) $siteorigin_theme_settings_preview = array();
+	}
 
 	if ( is_admin() && $type == 'editor' && !empty($args['editor_style_formats']) ) {
 		global $siteorigin_settings_editor_style_formats;
@@ -255,27 +275,73 @@ function siteorigin_settings_add_teaser( $section, $id, $name, $args = array() )
 		'type' => 'teaser',
 	) );
 
-	add_settings_field( $id, $name, 'siteorigin_settings_field', 'theme_settings', $section, $args );
+	if( is_admin() ) {
+		add_settings_field( $id, $name, 'siteorigin_settings_field', 'theme_settings', $section, $args );
+	}
+}
+
+/**
+ * Remove a setting.
+ *
+ * @param $section
+ * @param $id
+ */
+function siteorigin_settings_remove_field( $section, $id ){
+	global $wp_settings_fields;
+	unset( $wp_settings_fields[ 'theme_settings' ][$section][$id] );
 }
 
 /**
  * Get the value of a setting, or the default value.
  *
- * @param string $name The setting name
- * @param mixed $default The default setting
+ * @param string $name The setting name.
+ * @param mixed $default The default setting.
+ *
  * @return mixed
  */
 function siteorigin_setting( $name , $default = null) {
 	$value = null;
 	
 	if ( !is_null( $default ) && ( !is_bool( $GLOBALS[ 'siteorigin_settings' ][ $name ] ) && empty( $GLOBALS[ 'siteorigin_settings' ][ $name ] ) ) ) {
-		return apply_filters('siteorigin_setting_'.$name, $default);
+		return apply_filters( 'siteorigin_setting_'.$name, $default );
 	}
 	
 	if ( !isset( $GLOBALS[ 'siteorigin_settings' ][ $name ] ) ) $value = null;
-	else $value = $GLOBALS['siteorigin_settings'][ $name ];
+	else $value = $GLOBALS[ 'siteorigin_settings' ][ $name ];
 
 	return apply_filters('siteorigin_setting_'.$name, $value);
+}
+
+/**
+ * @param $name
+ * @param null $default
+ *
+ * @return mixed
+ */
+function siteorigin_settings_get($name, $default = null){
+	return siteorigin_setting($name, $default);
+}
+
+/**
+ * Sets and a theme setting. Will attempt to validate if in the admin.
+ *
+ * @param $name
+ * @param $value
+ */
+function siteorigin_settings_set($name, $value) {
+	global $siteorigin_settings;
+	$theme_name = basename( get_template_directory() );
+
+	// Update settings in the database
+	$settings = get_option( $theme_name . '_theme_settings', array() );
+	$settings[$name] = $value;
+	update_option( $theme_name . '_theme_settings', $settings );
+
+	// Update the temporary value
+	if( empty( $siteorigin_settings ) ) {
+		$siteorigin_settings = array();
+	}
+	$siteorigin_settings[$name] = $value;
 }
 
 /**
@@ -288,7 +354,19 @@ function siteorigin_settings_field( $args ) {
 	$field_id = $args['section'] . '_' . $args['field'];
 	$current = isset( $GLOBALS['siteorigin_settings'][ $field_id ] ) ? $GLOBALS['siteorigin_settings'][ $field_id ] : null;
 
-	?><div class="siteorigin-settings-field" data-type="<?php echo esc_attr($args['type']) ?>" data-field="<?php echo esc_attr($field_id) ?>"><?php
+
+	$container_attr = array(
+		'id' => 'siteorigin-settings-field-' . $args['section'] . '_' . $args['field'],
+		'class' => 'siteorigin-settings-field',
+		'data-type' => $args['type'],
+		'data-field' => $field_id,
+		'data-setting' => $args['section'] . '_' . $args['field'],
+	);
+	if( !empty($args['conditional']) ) {
+		$container_attr['data-conditional'] = json_encode($args['conditional']);
+	}
+
+	?><div <?php foreach( $container_attr as $key => $val ) echo $key . '="' . esc_attr($val) . '"'; ?>><?php
 
 	switch ( $args['type'] ) {
 		case 'checkbox' :
@@ -477,8 +555,16 @@ function siteorigin_settings_field( $args ) {
 				$exp = str_replace('____', '(.*?)', $exp);
 				$form = preg_replace( '/'.$exp.'/', 'siteorigin_settings_widget['.preg_quote($field_id).'][$1]', $form );
 
-				echo '<div class="so-settings-widget-form"><a href="#" class="so-settings-widget-edit" data-is-setup="0" data-form="'.esc_attr($form).'">' . __('Edit', 'puro') . '</a></div>';
-				?><input type="hidden" id="<?php echo esc_attr( $field_id ) ?>" name="<?php echo esc_attr( $field_name ) ?>" value="<?php echo esc_attr( serialize( $current ) ) ?>" /><?php
+
+				?>
+				<div class="so-settings-widget-form">
+					<script type="text/template" class="so-settings-widget-form-template">
+						<?php echo $form ?>
+					</script>
+					<a href="#" class="so-settings-widget-edit" data-is-setup="0"><?php _e('Edit', 'siteorgin') ?></a>
+				</div>
+				<input type="hidden" id="<?php echo esc_attr( $field_id ) ?>" name="<?php echo esc_attr( $field_name ) ?>" value="<?php echo esc_attr( serialize( $current ) ) ?>" />
+				<?php
 			}
 			break;
 
@@ -501,7 +587,15 @@ function siteorigin_settings_field( $args ) {
  * @return array
  */
 function siteorigin_settings_validate( $values, $set_tab = true ) {
-	global $wp_settings_fields;
+	if( is_admin() ) {
+		global $wp_settings_fields;
+		$theme_settings = !empty($wp_settings_fields['theme_settings']) ? $wp_settings_fields['theme_settings'] : array();
+	}
+	else {
+		global $siteorigin_theme_settings_preview;
+		$theme_settings = !empty($siteorigin_theme_settings_preview) ? $siteorigin_theme_settings_preview : array();
+	}
+
 
 	$theme_name = basename( get_template_directory() );
 	$current = get_option( $theme_name . '_theme_settings', array() );
@@ -509,15 +603,25 @@ function siteorigin_settings_validate( $values, $set_tab = true ) {
 	if($set_tab) set_theme_mod( '_theme_settings_current_tab', isset( $_REQUEST['theme_settings_current_tab'] ) ? $_REQUEST['theme_settings_current_tab'] : 0 );
 
 	$changed = false;
-	foreach ( $wp_settings_fields['theme_settings'] as $section_id => $fields ) {
+	foreach ( $theme_settings as $section_id => $fields ) {
 		foreach ( $fields as $field_id => $field ) {
 			$name = $section_id . '_' . $field_id;
+
+			if( !isset($values[$name]) ) {
+				$values[$name] = false;
+				continue;
+			}
 
 			if( !empty($field['args']['options']) ){
 				$field['args']['options'] = apply_filters('siteorigin_setting_options_'.$name, $field['args']['options']);
 			}
 
 			switch($field['args']['type']){
+				case 'text' :
+					$values[ $name ] = wp_kses_post( $values[ $name ] );
+					$values[ $name ] = balanceTags( $values[ $name ] , true );
+					break;
+
 				case 'checkbox' :
 					// Only allow true or false values
 					$values[ $name ] = !empty( $values[ $name ] );
@@ -555,11 +659,20 @@ function siteorigin_settings_validate( $values, $set_tab = true ) {
 					else {
 						$values[ $name ] = unserialize( $values[ $name ] );
 					}
+					break;
 
+				case 'editor':
+				case 'text':
+					$values[ $name ] = sanitize_text_field( $values[ $name ] );
 					break;
 			}
-			
-			if ( !isset( $current[ $name ] ) || ( isset( $values[ $name ] ) && isset( $current[ $name ] ) && $values[ $name ] != $current[ $name ] ) ) $changed = true;
+
+			if ( !isset( $current[ $name ] ) || ( isset( $values[ $name ] ) && isset( $current[ $name ] ) && $values[ $name ] != $current[ $name ] ) ) {
+				// Trigger an action that a field has changed
+				do_action('siteorigin_settings_changed_field_changed', $name, isset($values[$name]) ? $values[$name] : null, isset($current[$name]) ? $current[$name] : null);
+				do_action('siteorigin_settings_changed_field_changed_'.$name, isset($values[$name]) ? $values[$name] : null, isset($current[$name]) ? $current[$name] : null);
+				$changed = true;
+			}
 
 			// See if this needs any special validation
 			if ( !empty( $field['args']['validator'] ) && method_exists( 'SiteOrigin_Settings_Validator', $field['args']['validator'] ) ) {
@@ -608,7 +721,7 @@ function siteorigin_settings_theme_help(){
 	$text = sprintf(
 		__( "Read %s's <a href='%s' target='_blank'>theme documentation</a> for help with these settings.", 'puro' ),
 		ucfirst($theme_name),
-		'http://purothemes.com/documentation/'.$theme_name.'-theme'
+		'http://purothemes.com/documentation/'
 	); 
 	
 	$screen->add_help_tab( array(
@@ -678,7 +791,7 @@ function siteorigin_settings_add_editor_formats( $init_array ){
 
 	// Make sure we're on the theme settings page
 	$screen = get_current_screen();
-	if( $screen->base == 'appearance_page_theme_settings_page' ) {
+	if( !empty($screen) && $screen->base == 'appearance_page_theme_settings_page' && !empty($init_array) ) {
 		global $siteorigin_settings_editor_style_formats;
 		if( isset( $siteorigin_settings_editor_style_formats[ $init_array['body_class'] ] ) ) {
 			$init_array['style_formats'] = json_encode( $siteorigin_settings_editor_style_formats[ $init_array['body_class'] ] );
@@ -695,7 +808,7 @@ function siteorigin_settings_add_editor_styles_button($buttons){
 
 	// Make sure we're on the theme settings page
 	$screen = get_current_screen();
-	if( $screen->base == 'appearance_page_theme_settings_page' ) {
+	if( !empty($screen) && $screen->base == 'appearance_page_theme_settings_page' && is_array($buttons) ) {
 		array_unshift($buttons, 'styleselect');
 	}
 
@@ -777,8 +890,9 @@ class SiteOrigin_Settings_Validator {
 	}
 }
 
-// This is the code for the preview
-
+/**
+ * Initialize the theme settings preview.
+ */
 function siteorigin_settings_preview_init(){
 
 	if( !is_admin() &&
@@ -789,16 +903,19 @@ function siteorigin_settings_preview_init(){
 	) {
 		// We're in a preview mode, so filter the settings and hide the admin bar
 		add_filter('siteorigin_settings_values', 'siteorigin_settings_preview_values');
-		// Hide the admin bar - this is only involved when an administrator is previewing the theme settings (see previous if statement).
+		// Hide the admin bar - this is only involved when an administrator is previewing the theme settings (see previous IF statement).
 		add_filter('show_admin_bar', '__return_false');
 	}
 }
 add_action('after_setup_theme', 'siteorigin_settings_preview_init', 4); // This must run before we initialize the settings
 
+/**
+ * Filter SiteOrigin settings for the preview.
+ * @param $values
+ * @return array
+ */
 function siteorigin_settings_preview_values($values){
-	require_once(ABSPATH . 'wp-admin/includes/template.php');
-
 	do_action('siteorigin_settings_init');
-	$post_values = siteorigin_settings_validate($_POST[basename( get_template_directory() ) . '_theme_settings'], false);
+	$post_values = siteorigin_settings_validate( stripslashes_deep( $_POST[basename( get_template_directory() ) . '_theme_settings'] ) , false );
 	return $post_values;
 }

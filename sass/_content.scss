@@ -10,8 +10,9 @@ article {
 	border-color: $border-color; 
 	display: block;
 	&:last-of-type {
-		@include trailing-border(0, 0);
+		border-bottom: none;
 		margin-bottom: 0; 
+		padding-bottom: 0;
 	}
 }
 .hentry { 
@@ -46,8 +47,9 @@ article {
 		}	
 	}
 	@include breakpoint($small) {
-		h1.entry-title {
+		.resp & h1.entry-title {
 			@include adjust-font-size-to(23px);
+			line-height: normal;
 		}
 	}
 	.entry-meta {
@@ -94,9 +96,11 @@ article {
 			content: "\f0e5"; 	
 		}						
 		@include breakpoint($small) {
-			.author, .cat-links, .tags-links, .comments-link, .edit-link {
-				display: none;
-			}									
+			.resp & {
+				.author, .cat-links, .tags-links, .comments-link, .edit-link {
+					display: none;
+				}		
+			}							
 		}
 	}			
 }
@@ -132,7 +136,9 @@ article {
 		display: block;
 		margin: rhythm(1) 0 0;
 		@include breakpoint($medium) {
-			display: none;
+			.resp & {
+				display: none;
+			}
 		}
 		a:before {
 			content: "\f044"; 
@@ -190,7 +196,7 @@ article {
 		margin: 0; 
 	}
 	@include breakpoint($small) {
-		h1 {
+		.resp & h1 {
 			@include adjust-font-size-to(23px);
 		}
 	}	
@@ -209,18 +215,9 @@ article {
 	}
 }
 @include breakpoint($small) {
-	.post-password-form {
-		label input {
-			display: block;
-			margin-top: 0.8438em; 
-		}
-	}	
-}
-.sidebar #secondary {
-	@include breakpoint($medium) {
-		@include leading-border(1px, 2);
-		@include leader(2);
-		border-color: $border-color;					
+	.resp .post-password-form label input  {
+		display: block;
+		margin-top: 0.8438em; 
 	}	
 }
 
@@ -237,8 +234,8 @@ article {
 --------------------------------------------------------------*/
 .comments-area {
 	.comments-title {
-		@include leader(2);
-		@include leading-border(1px, 2);
+		@include leader(1.5);
+		@include leading-border(1px, 1.5);
 		border-color: $border-color;
 	}
 	.comment-list {
@@ -257,6 +254,10 @@ article {
 			&:only-of-type {
 				@include leader(1.5);
 				@include trailer(1.5);
+			}
+			article {
+				border: none;
+				margin: 0;
 			}
 		}
 		.pingback {
@@ -317,7 +318,9 @@ article {
 		}
 		.edit-link {
 			@include breakpoint($large) {
-				display: none; 
+				.resp & {
+					display: none; 
+				}
 			}
 			&:before {
 				content: "\0020\007c\0020";
@@ -337,7 +340,12 @@ article {
 		list-style: none;
 		margin: 0 0 0 1.5em;
 		@include breakpoint($small) {
-			margin: 0 0 0 0.75em;
+			.resp & {
+				margin: 0 0 0 0.75em;
+			}
+		}
+		.comment:first-of-type {
+			@include leader(1.5);
 		}
 	}	
 	.comment-reply-link, .comment-reply-login  {

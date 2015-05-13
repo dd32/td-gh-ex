@@ -156,8 +156,8 @@ jQuery( function ( $ ) {
     } );
     
     // Autofill
-    $('.input-field-select')
-        .change(function(){
+    $('body')
+        .on('change', '.input-field-select', function(){
             var c = $(this ).closest('td').find('input');
             c.val( $(this ).val() );
         });
@@ -218,7 +218,7 @@ jQuery( function ( $ ) {
 
         var $$ = $(this);
         var widget_form = $$.closest('td').find('.so-settings-widget-form');
-        widget_form.html( $$.data('form') );
+        widget_form.html( widget_form.find('.so-settings-widget-form-template').html() );
 
         return false;
     }).click();
@@ -275,11 +275,12 @@ jQuery( function ( $ ) {
                 e.preventDefault();
 
                 // Ignore this click if it's going outside the current site.
-                if( $(this).prop('href').indexOf( iframe.data('home') ) != 0) {
+                var linkUrl = $(this).prop('href').split('#')[0];
+                if( linkUrl.indexOf( iframe.data( 'home' ) ) != 0 || linkUrl == iframe.attr( 'src' ) ) {
                     return false;
                 }
 
-                iframe.attr( 'src', $(this).prop('href') );
+                iframe.attr( 'src', linkUrl );
                 submitToIframe();
             })
         });
@@ -290,5 +291,76 @@ jQuery( function ( $ ) {
         });
     } );
 
+    // Set up conditionals
+    $optionsForm.find('[data-conditional]').each(function(){
+        var
+            $$ = $(this),
+            $tr = $$.closest('tr'),
+            conditional = $$.data('conditional');
+
+        if( typeof conditional.show === 'undefined' ) {
+            conditional.show = 'else';
+        }
+        if( typeof conditional.hide === 'undefined' ) {
+            conditional.hide = 'else';
+        }
+        if( conditional.hide === 'else' && conditional.show === 'else' ) {
+            return;
+        }
+
+        // The test that decides if we should show/hide this field
+        var runTest = function(type){
+            if( typeof conditional[type] === 'undefined' || conditional[type] === 'else' ) {
+                return null;
+            }
+
+            var pass = true;
+            var vals = null, $f = null;
+
+            for( var k in conditional[type] ) {
+                $f = $optionsForm.find("[data-field=" + k + "]").find('input,select,textarea');
+                vals = conditional[type][k].split('|');
+
+                if( vals.indexOf( $f.val() ) === -1 && pass ){
+                    pass = false;
+                }
+            }
+
+            return pass;
+        };
+
+        // This function shows/hides the given field
+        var showHide = function(){
+            if( conditional.show === 'else' ) {
+                if( runTest('hide') ) {
+                    $tr.hide();
+                }
+                else {
+                    $tr.show();
+                }
+            }
+            else if( conditional.hide === 'else' ) {
+                if( runTest('show') ) {
+                    $tr.show();
+                }
+                else {
+                    $tr.hide();
+                }
+            }
+            else {
+                if( runTest('hide') ) {
+                    $tr.hide();
+                }
+                if( runTest('show') ) {
+                    $tr.show();
+                }
+            }
+        }
+
+        // When a settings field changes, run a show/hide test
+        $optionsForm.find('input,select').on('change keyup', showHide);
+        showHide();
+
+    });
 
 } );

@@ -30,6 +30,6 @@
 			?>
 		</div><!-- .entry-content -->
 		<footer class="entry-footer">
-			<?php if ( siteorigin_setting( 'blog_edit_link' ) ) { echo edit_post_link( __( 'Edit', 'puro' ), '<span class="edit-link">', '</span>' ); } ?>
+			<?php if ( siteorigin_setting( 'blog_edit_link' ) ) { edit_post_link( __( 'Edit', 'puro' ), '<span class="edit-link">', '</span>' ); } ?>
 		</footer><!-- .entry-footer -->	
 </article><!-- #post-## -->

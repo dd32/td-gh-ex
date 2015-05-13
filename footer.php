@@ -17,8 +17,8 @@
 		
 		<div class="clear"></div>
 		
-		<?php wp_nav_menu( array( 'theme_location' => 'social', 'depth' => 1, 'link_before' => '<span class="screen-reader-text">', 'link_after' => '</span>', 'fallback_cb' => '' ) ); ?>
-		
+		<?php wp_nav_menu( array( 'theme_location' => 'social', 'container_class' => 'social-links-menu', 'depth' => 1, 'link_before' => '<span class="screen-reader-text">', 'link_after' => '</span>', 'fallback_cb' => '' ) ); ?>
+
 		<?php $copyright_text = apply_filters('puro_copyright_text', siteorigin_setting('footer_copyright_text') ); ?>
 		<div class="site-info">
 			<?php 
