@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Storefront\n"
 "Report-Msgid-Bugs-To: https://github.com/woothemes/storefront/issues\n"
-"POT-Creation-Date: 2015-04-23 10:33:15+00:00\n"
-"PO-Revision-Date: 2015-04-23 10:33+0000\n"
+"POT-Creation-Date: 2015-05-14 15:20:54+00:00\n"
+"PO-Revision-Date: 2015-05-14 15:20+0000\n"
 "Last-Translator: James Koster <jay@woothemes.com>\n"
 "Language-Team: Portuguese (Portugal) (http://www.transifex.com/projects/p/storefront-1/language/pt_PT/)\n"
 "MIME-Version: 1.0\n"
@@ -79,23 +79,23 @@ msgstr "Melhore o seu site"
 msgid ""
 "Below you will find a selection of free and commercial Storefront extensions"
 " that could help improve your online store."
-msgstr ""
+msgstr "Abaixo pode encontrar uma seleção de extensões livres e comerciais para o Storefront que podem ajuda-lo a melhorar a sua loja online."
 
 #: inc/admin/welcome-screen/sections/add-ons.php:14
 msgid "Make your site instantly recognisable by adding your logo"
-msgstr ""
+msgstr "Torne o seu site reconhecido instantaneamente adicionando o seu logo"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:14
 #: inc/admin/welcome-screen/sections/add-ons.php:105
 msgid "Free (Third Party)"
-msgstr ""
+msgstr "Livre (Third Party)"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:16
 msgid ""
 "Jetpack is probably a plugin you're already familiar with. Storefront fully "
 "supports Jetpacks site logo feature making it easy to upload and display "
 "your logo via the Customizer. %sMore info &rarr;%s"
-msgstr ""
+msgstr "O Jetpack é provavelmente um plugin com que está familiarizado. O Storefront é compatível com o recurso logo do site do Jetpack permitindo facilmente o envio e apresentação do seu logo através do item Personalizar. %sMais informações &rarr;%s"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:19
 #: inc/admin/welcome-screen/sections/add-ons.php:32
@@ -106,29 +106,29 @@ msgstr ""
 #: inc/admin/welcome-screen/sections/add-ons.php:97
 #: inc/admin/welcome-screen/sections/add-ons.php:110
 msgid "Activated"
-msgstr ""
+msgstr "Ativado"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:21
 #: inc/admin/welcome-screen/sections/getting-started.php:39
 msgid "Install Jetpack"
-msgstr ""
+msgstr "Instalar o Jetpack"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:27
 msgid "Further customise your store with the Storefront Designer"
-msgstr ""
+msgstr "Personalize a sua loja com o Storefront Designer"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:27
 #: inc/admin/welcome-screen/sections/add-ons.php:40
 #: inc/admin/welcome-screen/sections/add-ons.php:92
 msgid "Premium"
-msgstr ""
+msgstr "Premium"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:29
 msgid ""
 "Storefront Designer adds a bunch of additional appearance settings allowing "
 "you to further tweak and perfect your Storefront design by changing the "
 "header layout, button styles, typographical schemes/scales and more."
-msgstr ""
+msgstr "O Storefront Designer adiciona uma série de configurações de aparência permitindo-lhe alterar e afinar o seu design alterando o layout do cabeçalho, estilos de botão, esquemas de tipografia / escalas e mais."
 
 #: inc/admin/welcome-screen/sections/add-ons.php:34
 msgid "Buy %sStorefront Designer%s now"
@@ -136,81 +136,81 @@ msgstr "Compre agora o %sStorefront Designer%s"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:40
 msgid "Highlight a product of your choosing with the Storefront Product Hero"
-msgstr ""
+msgstr "Destaque um produto à sua escolha com o Storefront Product Hero"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:42
 msgid ""
 "The Storefront Product Hero extension adds a parallax hero component to your"
 " homepage highlighting a specific product at your store. Use the shortcode "
 "to add attractive hero components to posts, pages or widgets."
-msgstr ""
+msgstr "A extensão Storefront Product Hero adiciona um componente em parallax na sua página inicial dando destaque a um produto específico da sua loja. Use o shortcode para adicionar um atraente destaque em artigos, páginas ou em widgets."
 
 #: inc/admin/welcome-screen/sections/add-ons.php:47
 msgid "Buy %sStorefront Product Hero%s now"
-msgstr ""
+msgstr "Compre o %sStorefront Product Hero%s agora"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:53
 msgid ""
 "Have your visitors market your store for you with Storefront Product Sharing"
-msgstr ""
+msgstr "Permita aos seus visitantes divulgar a sua loja e produtos com o Storefront Product Sharing"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:53
 #: inc/admin/welcome-screen/sections/add-ons.php:66
 #: inc/admin/welcome-screen/sections/add-ons.php:79
 msgid "Free"
-msgstr ""
+msgstr "Livre"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:55
 msgid ""
 "Storefront Product Sharing adds attractive social sharing icons for "
 "Facebook, Twitter, Pinterest and Email to your product pages. %sMore info "
 "&rarr;%s"
-msgstr ""
+msgstr "O Storefront Product Sharing adiciona ícones para partilha em redes sociais para o Facebook, Twitter, Pinterest e Email nas páginas de produto. %sMais informações &rarr;%s"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:60
 msgid "Install Storefront Product Sharing"
-msgstr ""
+msgstr "Instalar o Storefront Product Sharing"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:66
 msgid "Add a site-wide call out to your footer with Storefront Footer Bar"
-msgstr ""
+msgstr "Adicione uma zona de destaque no rodapé com o Storefront Footer Bar"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:68
 msgid ""
 "Storefront Footer Bar adds a full width widgetised region above the default "
 "Storefront footer widget area. %sMore info &rarr;%s"
-msgstr ""
+msgstr "O Storefront Footer Bar adiciona uma zona a toda a largura com suporte de widgets acima da zona de widgets padrão no rodapé do Storefront. %sMais informações &rarr;%s"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:73
 msgid "Install Storefront Footer Bar"
-msgstr ""
+msgstr "Instalar o Storefront Footer Bar"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:79
 msgid "Storefront Product Pagination"
-msgstr ""
+msgstr "Storefront Product Pagination"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:81
 msgid ""
 "Storefront Product Pagination adds unobtrusive links to next/previous "
 "products on your WooCommerce single product pages. %sMore info &rarr;%s"
-msgstr ""
+msgstr "O Storefront Product Pagination adiciona ligações discretas para o produto anterior/seguinte nas páginas individuais de produtos do WooCommerce. %sMais informações &rarr;%s"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:86
 msgid "Install Storefront Product Pagination"
-msgstr ""
+msgstr "Instalar o Storefront Product Pagination"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:92
 msgid ""
 "Refine your shop archives and product pages with the Storefront WooCommerce "
 "Customiser"
-msgstr ""
+msgstr "Alteres os seus arquivos de loja e páginas de produtos com o Storefront WooCommerce Customiser"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:94
 msgid ""
 "The Storefront WooCommerce Customiser extension gives you further control "
 "over the look and feel of your shop. Change the product archive and single "
 "layouts, toggle various shop components and more."
-msgstr ""
+msgstr "A extensão Storefront WooCommerce Customiser permite o controlo adicional sobre o aspecto da sua loja. Altere o arquivo de produtos e layout de produtos individuais, ative/desative diferentes componentes na loja e mais."
 
 #: inc/admin/welcome-screen/sections/add-ons.php:99
 msgid "Buy %sStorefront WooCommerce Customiser%s now"
@@ -218,17 +218,17 @@ msgstr "Compre agora o %sStorefront WooCommerce Customiser%s"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:105
 msgid "Add practical information to your pages with Storefront Top Bar"
-msgstr ""
+msgstr "Adicione Informações úteis nas suas páginas com o Storefront Top Bar"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:107
 msgid ""
 "Storefront Top Bar adds a widgetised content area at the top of your site "
 "and customise it's appearance in the Customizer. %sMore info &rarr;%s"
-msgstr ""
+msgstr "O Storefront Top Bar adiciona uma zona de widgets no topo do seu site e pode alterar o seu aspeto no item Personalisar. %sMais informação &rarr;%s"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:112
 msgid "Install Storefront Top Bar"
-msgstr ""
+msgstr "Instalar o Storefront Top Bar"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:120
 msgid ""
@@ -239,37 +239,56 @@ msgstr "Há, literalmente, centenas de extensões impressionantes disponíveis p
 
 #: inc/admin/welcome-screen/sections/child-themes.php:11
 msgid "Get a whole new look"
-msgstr ""
+msgstr "Obtenha uma aparência nova"
 
 #: inc/admin/welcome-screen/sections/child-themes.php:14
 msgid ""
 "Below you will find a selection of Storefront child themes that will "
 "transform the look and feel of your site while retaining the rock solid "
 "Storefront foundation."
-msgstr ""
+msgstr "Abaixo irá encontrar uma seleção de child themes para o Storefront que permitem alterar o aspeto do seu site mantendo a estabilidade e base sólida do Storefront"
 
-#: inc/admin/welcome-screen/sections/child-themes.php:18
+#: inc/admin/welcome-screen/sections/child-themes.php:20
 msgid "Boutique Child Theme"
 msgstr "Boutique Child Theme"
 
-#: inc/admin/welcome-screen/sections/child-themes.php:19
+#: inc/admin/welcome-screen/sections/child-themes.php:21
 msgid "Boutique"
 msgstr "Boutique"
 
-#: inc/admin/welcome-screen/sections/child-themes.php:20
+#: inc/admin/welcome-screen/sections/child-themes.php:22
 msgid ""
 "Boutique is a simple, traditionally designed Storefront child theme, ideal "
 "for small stores or boutiques. Add your logo, create a unique color scheme "
 "and start selling!"
 msgstr "Boutique é um child theme do Storefront simples com um design tradicional, ideal para lojas pequenas ou boutiques. Adicione o seu logo, crie um esquema de cores único e comece a vender!"
 
-#: inc/admin/welcome-screen/sections/child-themes.php:23
+#: inc/admin/welcome-screen/sections/child-themes.php:25
+#: inc/admin/welcome-screen/sections/child-themes.php:37
 msgid "Install %s now"
 msgstr "Instale %s agora"
 
-#: inc/admin/welcome-screen/sections/child-themes.php:25
+#: inc/admin/welcome-screen/sections/child-themes.php:27
 msgid "Read more %sabout Boutique%s &rarr;"
 msgstr "Leia mais %ssobre o Boutique%s &rarr;"
+
+#: inc/admin/welcome-screen/sections/child-themes.php:32
+msgid "Deli Child Theme"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/child-themes.php:33
+msgid "Deli"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/child-themes.php:34
+msgid ""
+"Deli features a texturised, earthy design, perfect for stores selling "
+"natural, organic or hand made goods."
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/child-themes.php:39
+msgid "Read more %sabout Deli%s &rarr;"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:15
 msgid "Using Storefront"
@@ -305,7 +324,7 @@ msgid ""
 "lower traffic pages such as terms and conditions. The handheld navigation "
 "gives you complete control over what menu items to serve to handheld "
 "devices."
-msgstr ""
+msgstr "O Storefront inclui três zonas de menu para navegação primária, secundária e dispositivos móveis. A navegação primária é perfeita para as páginas principais como da loja e categorias de produtos. A navegação secundária é mais adequada a páginas de menor tráfego como os termos e condições. A navegação em dispositivos móveis dá-lhe o controlo completo sobre que itens do menu são apresentados nesses dispositivos."
 
 #: inc/admin/welcome-screen/sections/getting-started.php:28
 msgid "Configure menus"
@@ -333,7 +352,7 @@ msgstr "Adicionar o seu logo"
 msgid ""
 "Install and activate either %sJetpack%s or the to enable a custom logo "
 "option in the Customizer."
-msgstr ""
+msgstr "Instalar e ativar o %sJetpack%s para permitir a opção logo personalizado no item Personalizar"
 
 #: inc/admin/welcome-screen/sections/getting-started.php:46
 msgid "Configure homepage template"
@@ -360,7 +379,7 @@ msgstr "Depois de configurar pode alterar e reordenar os componentes da homepage
 
 #: inc/admin/welcome-screen/sections/getting-started.php:52
 msgid "Install Homepage Control"
-msgstr ""
+msgstr "Instalar o plugin Homepage Control"
 
 #: inc/admin/welcome-screen/sections/getting-started.php:55
 msgid "View documentation"
@@ -374,7 +393,7 @@ msgstr "Pode ler informação detalhada sobre as características do Storefront 
 
 #: inc/admin/welcome-screen/sections/getting-started.php:57
 msgid "View documentation &rarr;"
-msgstr ""
+msgstr "Ver documentação &rarr;"
 
 #: inc/admin/welcome-screen/sections/intro.php:14
 msgid ""
@@ -392,11 +411,11 @@ msgstr "Caso seja um dono de uma loja, um developer no Wordpress, ou ambos - esp
 
 #: inc/admin/welcome-screen/sections/tabs.php:2
 msgid "Getting Started"
-msgstr ""
+msgstr "Como começar"
 
 #: inc/admin/welcome-screen/sections/tabs.php:3
 msgid "Enhance Storefront"
-msgstr ""
+msgstr "Melhore o Storefront"
 
 #: inc/admin/welcome-screen/sections/tabs.php:4
 msgid "Storefront Child Themes"
@@ -512,81 +531,85 @@ msgid ""
 "Why not leave us a review on %sWordPress.org%s?  We'd really appreciate it!"
 msgstr "Por que não deixar um comentário no %sWordPress.org%s? Gostaríamos realmente que o fizesse! :-)"
 
-#: inc/customizer/controls.php:25
+#: inc/customizer/controls.php:24
 msgid "Background"
 msgstr "Fundo"
 
-#: inc/customizer/controls.php:29 inc/functions/setup.php:114
+#: inc/customizer/controls.php:28 inc/functions/setup.php:114
 msgid "Header"
 msgstr "Cabeçalho"
 
-#: inc/customizer/controls.php:49
-msgid "Looking to add a logo? Install the %sJetpack%s plugin!"
-msgstr ""
-
-#: inc/customizer/controls.php:58
+#: inc/customizer/controls.php:45
 msgid "Typography"
 msgstr "Tipografia"
 
-#: inc/customizer/controls.php:71
+#: inc/customizer/controls.php:58
 msgid "Link / accent color"
 msgstr "Cor de destaque / ligação"
 
-#: inc/customizer/controls.php:87 inc/customizer/controls.php:135
-#: inc/customizer/controls.php:191 inc/customizer/controls.php:259
+#: inc/customizer/controls.php:74 inc/customizer/controls.php:147
+#: inc/customizer/controls.php:203 inc/customizer/controls.php:271
 msgid "Text color"
 msgstr "Cor do texto"
 
-#: inc/customizer/controls.php:103 inc/customizer/controls.php:176
+#: inc/customizer/controls.php:90 inc/customizer/controls.php:188
 msgid "Heading color"
 msgstr "Cor do Cabeçalho"
 
-#: inc/customizer/controls.php:119 inc/customizer/controls.php:221
-#: inc/customizer/controls.php:244
+#: inc/customizer/controls.php:103
+msgid "Logo"
+msgstr ""
+
+#: inc/customizer/controls.php:110
+msgid "Looking to add a logo? Install the %sJetpack%s plugin! %sRead more%s."
+msgstr ""
+
+#: inc/customizer/controls.php:131 inc/customizer/controls.php:233
+#: inc/customizer/controls.php:256
 msgid "Background color"
 msgstr "Cor de fundo"
 
-#: inc/customizer/controls.php:151 inc/customizer/controls.php:206
+#: inc/customizer/controls.php:163 inc/customizer/controls.php:218
 msgid "Link color"
 msgstr "Cor da ligação"
 
-#: inc/customizer/controls.php:161
+#: inc/customizer/controls.php:173
 msgid "Footer"
 msgstr "Rodapé"
 
-#: inc/customizer/controls.php:163
+#: inc/customizer/controls.php:175
 msgid "Customise the look & feel of your web site footer."
 msgstr "Altere o aspeto do rodapé do seu site."
 
-#: inc/customizer/controls.php:230
+#: inc/customizer/controls.php:242
 msgid "Buttons"
 msgstr "Botões"
 
-#: inc/customizer/controls.php:232
+#: inc/customizer/controls.php:244
 msgid "Customise the look & feel of your web site buttons."
 msgstr "Altere o aspeto dos botões do seu site."
 
-#: inc/customizer/controls.php:274
+#: inc/customizer/controls.php:286
 msgid "Alternate button background color"
 msgstr "Cor de fundo do botão alternativo"
 
-#: inc/customizer/controls.php:289
+#: inc/customizer/controls.php:301
 msgid "Alternate button text color"
 msgstr "Cor do texto"
 
-#: inc/customizer/controls.php:299
+#: inc/customizer/controls.php:311
 msgid "Layout"
 msgstr "Layout"
 
-#: inc/customizer/controls.php:309
+#: inc/customizer/controls.php:321
 msgid "General layout"
 msgstr "Layout Genérico"
 
-#: inc/customizer/controls.php:326
+#: inc/customizer/controls.php:338
 msgid "More"
 msgstr "Mais"
 
-#: inc/customizer/controls.php:336
+#: inc/customizer/controls.php:348
 msgid "Looking for more options?"
 msgstr "À procura de mais opções?"
 
@@ -630,23 +653,23 @@ msgstr "Editar"
 msgid "%1$s designed by %2$s."
 msgstr "%1$s desenhado por %2$"
 
-#: inc/structure/header.php:52
+#: inc/structure/header.php:54
 msgid "Primary Navigation"
 msgstr "Navegação Principal"
 
-#: inc/structure/header.php:53
+#: inc/structure/header.php:55
 msgid "Navigation"
 msgstr "Navegação"
 
-#: inc/structure/header.php:82
+#: inc/structure/header.php:84
 msgid "Secondary Navigation"
 msgstr "Navegação Secundária"
 
-#: inc/structure/header.php:104
+#: inc/structure/header.php:106
 msgid "Skip to navigation"
 msgstr "Ir para a navegação"
 
-#: inc/structure/header.php:105
+#: inc/structure/header.php:107
 msgid "Skip to content"
 msgstr "Ir para o conteúdo"
 
@@ -685,29 +708,29 @@ msgstr "% Comentários"
 
 #: inc/structure/post.php:117
 msgid "Next"
-msgstr ""
+msgstr "Seguinte"
 
 #: inc/structure/post.php:118
 msgid "Previous"
-msgstr ""
+msgstr "Anterior"
 
 #: inc/structure/template-tags.php:26
 msgid "Product Categories"
 msgstr "Categorias de Produto"
 
-#: inc/structure/template-tags.php:54
+#: inc/structure/template-tags.php:58
 msgid "Recent Products"
 msgstr "Produtos Recentes"
 
-#: inc/structure/template-tags.php:82
+#: inc/structure/template-tags.php:92
 msgid "Featured Products"
 msgstr "Produtos em Destaque"
 
-#: inc/structure/template-tags.php:110
+#: inc/structure/template-tags.php:124
 msgid "Top Rated Products"
 msgstr "Produtos Mais Votados"
 
-#: inc/structure/template-tags.php:138
+#: inc/structure/template-tags.php:156
 msgid "On Sale"
 msgstr "Em Promoção"
 

@@ -1,5 +1,18 @@
 # Storefront Changelog
 
+### *2015.05.14* - 1.4.5
+* **Fix** - Use the correct escaping function in `storefront_product_categories()`.
+* **Fix** - Pagination when only showing product categories / subcategories on archives.
+* **Tweak** - Logo prompt in Header section in Customizer.
+* **Tweak** - Only output description paragraph in header if one is set.
+* **Tweak** - Updated header image dimension recommendation.
+* **Tweak** - Dismissible notices.
+* **Tweak** - Debug notices in WooCommerce message. Props @WPprodigy.
+* **Dev** - Bump npm susy to 2.2.3.
+* **Dev** - Made `Layout_Picker_Storefront_Control` class pluggable. Props @niravmehta
+* **Dev** - Added order and orderby parameters to homepage featured products template tag.
+* **Dev** - Added before/after hooks inside homepage product sections.
+
 ### *2015.04.23* - 1.4.4
 * **Fix** - Post author styles applied to incorrect child comments. Props @ibndawood.
 * **Fix** - Third level dropdowns (and beyond) are now revealed in the correct situation.

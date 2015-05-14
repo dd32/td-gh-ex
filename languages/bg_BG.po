@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Storefront\n"
 "Report-Msgid-Bugs-To: https://github.com/woothemes/storefront/issues\n"
-"POT-Creation-Date: 2015-04-23 10:33:15+00:00\n"
-"PO-Revision-Date: 2015-04-23 10:33+0000\n"
+"POT-Creation-Date: 2015-05-14 15:20:54+00:00\n"
+"PO-Revision-Date: 2015-05-14 15:20+0000\n"
 "Last-Translator: James Koster <jay@woothemes.com>\n"
 "Language-Team: Bulgarian (Bulgaria) (http://www.transifex.com/projects/p/storefront-1/language/bg_BG/)\n"
 "MIME-Version: 1.0\n"
@@ -79,23 +79,23 @@ msgstr "Подобрете сайта си"
 msgid ""
 "Below you will find a selection of free and commercial Storefront extensions"
 " that could help improve your online store."
-msgstr ""
+msgstr "По-надолу ще намерите списък с избрани безплатни и платени разширения за Storefront които могат да ви помогнат да подобрите онлайн магазина си."
 
 #: inc/admin/welcome-screen/sections/add-ons.php:14
 msgid "Make your site instantly recognisable by adding your logo"
-msgstr ""
+msgstr "Направете сайта си моментално разпознаваем като добавите логото си"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:14
 #: inc/admin/welcome-screen/sections/add-ons.php:105
 msgid "Free (Third Party)"
-msgstr ""
+msgstr "Безплатно (от трети страни)"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:16
 msgid ""
 "Jetpack is probably a plugin you're already familiar with. Storefront fully "
 "supports Jetpacks site logo feature making it easy to upload and display "
 "your logo via the Customizer. %sMore info &rarr;%s"
-msgstr ""
+msgstr "Jetpack е разширение, което най-вероятно познавате. Storefront напълно поддържа възможността за добавяне на лого чрез Jetpack което прави лесно качването и визуализирането на вашето лого чрез Персонализатора. %sПовече информация &rarr;%s"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:19
 #: inc/admin/welcome-screen/sections/add-ons.php:32
@@ -106,22 +106,22 @@ msgstr ""
 #: inc/admin/welcome-screen/sections/add-ons.php:97
 #: inc/admin/welcome-screen/sections/add-ons.php:110
 msgid "Activated"
-msgstr ""
+msgstr "Активирано"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:21
 #: inc/admin/welcome-screen/sections/getting-started.php:39
 msgid "Install Jetpack"
-msgstr ""
+msgstr "Инсталирай Jetpack"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:27
 msgid "Further customise your store with the Storefront Designer"
-msgstr ""
+msgstr "Допълнително персонализирайте вашият магазин със Storefront Designer"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:27
 #: inc/admin/welcome-screen/sections/add-ons.php:40
 #: inc/admin/welcome-screen/sections/add-ons.php:92
 msgid "Premium"
-msgstr ""
+msgstr "Платен"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:29
 msgid ""
@@ -158,7 +158,7 @@ msgstr ""
 #: inc/admin/welcome-screen/sections/add-ons.php:66
 #: inc/admin/welcome-screen/sections/add-ons.php:79
 msgid "Free"
-msgstr ""
+msgstr "Безплатно"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:55
 msgid ""
@@ -248,28 +248,47 @@ msgid ""
 "Storefront foundation."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/child-themes.php:18
+#: inc/admin/welcome-screen/sections/child-themes.php:20
 msgid "Boutique Child Theme"
 msgstr "Под-тема Бутик"
 
-#: inc/admin/welcome-screen/sections/child-themes.php:19
+#: inc/admin/welcome-screen/sections/child-themes.php:21
 msgid "Boutique"
 msgstr "Ботик"
 
-#: inc/admin/welcome-screen/sections/child-themes.php:20
+#: inc/admin/welcome-screen/sections/child-themes.php:22
 msgid ""
 "Boutique is a simple, traditionally designed Storefront child theme, ideal "
 "for small stores or boutiques. Add your logo, create a unique color scheme "
 "and start selling!"
 msgstr "Botique е проста под-тема на Storefront, с традиционен дизайн и идеална за малки магазини и бутици. Добавете вашето лого, създайте уникална цветова схема и започнете да продавате!"
 
-#: inc/admin/welcome-screen/sections/child-themes.php:23
+#: inc/admin/welcome-screen/sections/child-themes.php:25
+#: inc/admin/welcome-screen/sections/child-themes.php:37
 msgid "Install %s now"
 msgstr "Инсталирайте %s сега"
 
-#: inc/admin/welcome-screen/sections/child-themes.php:25
+#: inc/admin/welcome-screen/sections/child-themes.php:27
 msgid "Read more %sabout Boutique%s &rarr;"
 msgstr "Прочетете още %sза Бутик%s &rarr;"
+
+#: inc/admin/welcome-screen/sections/child-themes.php:32
+msgid "Deli Child Theme"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/child-themes.php:33
+msgid "Deli"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/child-themes.php:34
+msgid ""
+"Deli features a texturised, earthy design, perfect for stores selling "
+"natural, organic or hand made goods."
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/child-themes.php:39
+msgid "Read more %sabout Deli%s &rarr;"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:15
 msgid "Using Storefront"
@@ -360,7 +379,7 @@ msgstr "След като ги настроите ще може да включ�
 
 #: inc/admin/welcome-screen/sections/getting-started.php:52
 msgid "Install Homepage Control"
-msgstr ""
+msgstr "Инсталирайте Homepage Control"
 
 #: inc/admin/welcome-screen/sections/getting-started.php:55
 msgid "View documentation"
@@ -374,7 +393,7 @@ msgstr "Може да прочетете подробна информация �
 
 #: inc/admin/welcome-screen/sections/getting-started.php:57
 msgid "View documentation &rarr;"
-msgstr ""
+msgstr "Вижте документацията &rarr;"
 
 #: inc/admin/welcome-screen/sections/intro.php:14
 msgid ""
@@ -392,11 +411,11 @@ msgstr "Независимо дали сте притежател на мага�
 
 #: inc/admin/welcome-screen/sections/tabs.php:2
 msgid "Getting Started"
-msgstr ""
+msgstr "Къде да започна"
 
 #: inc/admin/welcome-screen/sections/tabs.php:3
 msgid "Enhance Storefront"
-msgstr ""
+msgstr "Разширете Storefront"
 
 #: inc/admin/welcome-screen/sections/tabs.php:4
 msgid "Storefront Child Themes"
@@ -512,81 +531,85 @@ msgid ""
 "Why not leave us a review on %sWordPress.org%s?  We'd really appreciate it!"
 msgstr "Защо не напишете ревю на %sWordPress.org%s? Ще сме ви много благодарни!"
 
-#: inc/customizer/controls.php:25
+#: inc/customizer/controls.php:24
 msgid "Background"
 msgstr "Фон"
 
-#: inc/customizer/controls.php:29 inc/functions/setup.php:114
+#: inc/customizer/controls.php:28 inc/functions/setup.php:114
 msgid "Header"
 msgstr "Хедър"
 
-#: inc/customizer/controls.php:49
-msgid "Looking to add a logo? Install the %sJetpack%s plugin!"
-msgstr ""
-
-#: inc/customizer/controls.php:58
+#: inc/customizer/controls.php:45
 msgid "Typography"
 msgstr "Типография"
 
-#: inc/customizer/controls.php:71
+#: inc/customizer/controls.php:58
 msgid "Link / accent color"
-msgstr ""
+msgstr "Линк / акцент цвят"
 
-#: inc/customizer/controls.php:87 inc/customizer/controls.php:135
-#: inc/customizer/controls.php:191 inc/customizer/controls.php:259
+#: inc/customizer/controls.php:74 inc/customizer/controls.php:147
+#: inc/customizer/controls.php:203 inc/customizer/controls.php:271
 msgid "Text color"
-msgstr ""
+msgstr "Цвят на текста"
 
-#: inc/customizer/controls.php:103 inc/customizer/controls.php:176
+#: inc/customizer/controls.php:90 inc/customizer/controls.php:188
 msgid "Heading color"
+msgstr "Цвят на заглавията"
+
+#: inc/customizer/controls.php:103
+msgid "Logo"
 msgstr ""
 
-#: inc/customizer/controls.php:119 inc/customizer/controls.php:221
-#: inc/customizer/controls.php:244
+#: inc/customizer/controls.php:110
+msgid "Looking to add a logo? Install the %sJetpack%s plugin! %sRead more%s."
+msgstr ""
+
+#: inc/customizer/controls.php:131 inc/customizer/controls.php:233
+#: inc/customizer/controls.php:256
 msgid "Background color"
-msgstr ""
+msgstr "Цвят на фона"
 
-#: inc/customizer/controls.php:151 inc/customizer/controls.php:206
+#: inc/customizer/controls.php:163 inc/customizer/controls.php:218
 msgid "Link color"
-msgstr ""
+msgstr "Цвят на линковете"
 
-#: inc/customizer/controls.php:161
+#: inc/customizer/controls.php:173
 msgid "Footer"
 msgstr "Футър"
 
-#: inc/customizer/controls.php:163
+#: inc/customizer/controls.php:175
 msgid "Customise the look & feel of your web site footer."
 msgstr "Персонализирайте изгледа на фуутъра на вашия сайт."
 
-#: inc/customizer/controls.php:230
+#: inc/customizer/controls.php:242
 msgid "Buttons"
 msgstr "Бутони"
 
-#: inc/customizer/controls.php:232
+#: inc/customizer/controls.php:244
 msgid "Customise the look & feel of your web site buttons."
 msgstr "Персонализирайте изгледа на бутоните във вашия сайт."
 
-#: inc/customizer/controls.php:274
+#: inc/customizer/controls.php:286
 msgid "Alternate button background color"
-msgstr ""
+msgstr "Променете цвета на фона на бутоните"
 
-#: inc/customizer/controls.php:289
+#: inc/customizer/controls.php:301
 msgid "Alternate button text color"
-msgstr ""
+msgstr "Променете цвета на текста в бутоните"
 
-#: inc/customizer/controls.php:299
+#: inc/customizer/controls.php:311
 msgid "Layout"
 msgstr "Изглед"
 
-#: inc/customizer/controls.php:309
+#: inc/customizer/controls.php:321
 msgid "General layout"
 msgstr "Общ изглед"
 
-#: inc/customizer/controls.php:326
+#: inc/customizer/controls.php:338
 msgid "More"
 msgstr "Още"
 
-#: inc/customizer/controls.php:336
+#: inc/customizer/controls.php:348
 msgid "Looking for more options?"
 msgstr "Търсите още опции?"
 
@@ -630,23 +653,23 @@ msgstr "Редактирай"
 msgid "%1$s designed by %2$s."
 msgstr "%1$s дизайн от %2$s."
 
-#: inc/structure/header.php:52
+#: inc/structure/header.php:54
 msgid "Primary Navigation"
 msgstr "Главна навигация"
 
-#: inc/structure/header.php:53
+#: inc/structure/header.php:55
 msgid "Navigation"
 msgstr "Навигация"
 
-#: inc/structure/header.php:82
+#: inc/structure/header.php:84
 msgid "Secondary Navigation"
 msgstr "Второстепенна навигация"
 
-#: inc/structure/header.php:104
+#: inc/structure/header.php:106
 msgid "Skip to navigation"
 msgstr "Прескочете към навигацията"
 
-#: inc/structure/header.php:105
+#: inc/structure/header.php:107
 msgid "Skip to content"
 msgstr "Прескочете към съдържанието"
 
@@ -665,11 +688,11 @@ msgstr ","
 
 #: inc/structure/post.php:79
 msgid "Categories: "
-msgstr ""
+msgstr "Категории:"
 
 #: inc/structure/post.php:92
 msgid "Tags: "
-msgstr ""
+msgstr "Етикети:"
 
 #: inc/structure/post.php:101
 msgid "Leave a comment"
@@ -685,29 +708,29 @@ msgstr "% Коментара"
 
 #: inc/structure/post.php:117
 msgid "Next"
-msgstr ""
+msgstr "Следващ"
 
 #: inc/structure/post.php:118
 msgid "Previous"
-msgstr ""
+msgstr "Предишен"
 
 #: inc/structure/template-tags.php:26
 msgid "Product Categories"
 msgstr "Категории продукти"
 
-#: inc/structure/template-tags.php:54
+#: inc/structure/template-tags.php:58
 msgid "Recent Products"
 msgstr "Нови продукти"
 
-#: inc/structure/template-tags.php:82
+#: inc/structure/template-tags.php:92
 msgid "Featured Products"
 msgstr "Препоръчани продукти"
 
-#: inc/structure/template-tags.php:110
+#: inc/structure/template-tags.php:124
 msgid "Top Rated Products"
 msgstr "Най-добри продукти"
 
-#: inc/structure/template-tags.php:138
+#: inc/structure/template-tags.php:156
 msgid "On Sale"
 msgstr "Разпродажба"
 

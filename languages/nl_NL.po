@@ -1,7 +1,6 @@
 # Copyright (C) 2015 WooThemes
 # This file is distributed under the GNU General Public License v2 or later.
 # Translators:
-# Marius Arlund <marius.arlund@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Storefront\n"
@@ -9,93 +8,93 @@ msgstr ""
 "POT-Creation-Date: 2015-05-14 15:20:54+00:00\n"
 "PO-Revision-Date: 2015-05-14 15:20+0000\n"
 "Last-Translator: James Koster <jay@woothemes.com>\n"
-"Language-Team: Norwegian Bokmål (http://www.transifex.com/projects/p/storefront-1/language/nb/)\n"
+"Language-Team: Dutch (Netherlands) (http://www.transifex.com/projects/p/storefront-1/language/nl_NL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: nb\n"
+"Language: nl_NL\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: grunt-wp-i18n 0.4.9\n"
 
 #: 404.php:15
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "Ups, vi kan ikke finne den siden."
+msgstr ""
 
 #: 404.php:19
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links"
 " below or a search?"
-msgstr "Fant ikke noe innhold på denne plasseringen. Du kan prøve linkene under eller søke."
+msgstr ""
 
 #: 404.php:27
 msgid "Most Used Categories"
-msgstr "Mest brukte kategorier"
+msgstr ""
 
 #: 404.php:43
 msgid "Try looking in the monthly archives."
-msgstr "Du kan lete i de månedlige arkivene."
+msgstr ""
 
 #: comments.php:33 comments.php:51
 msgid "Comment navigation"
-msgstr "Naviger i kommentarer"
+msgstr ""
 
 #: comments.php:34 comments.php:52
 msgid "&larr; Older Comments"
-msgstr "&larr; Eldre kommentarer"
+msgstr ""
 
 #: comments.php:35 comments.php:53
 msgid "Newer Comments &rarr;"
-msgstr "Nyere kommentarer &rarr;"
+msgstr ""
 
 #: comments.php:60
 msgid "Comments are closed."
-msgstr "Stengt for kommentarer."
+msgstr ""
 
 #: content-none.php:13
 msgid "Nothing Found"
-msgstr "Ingenting ble funnet"
+msgstr ""
 
 #: content-none.php:19
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr "Klar for å publisere ditt første innlegg? <a href=\"%1$s\">Kom i gang her</a>."
+msgstr ""
 
 #: content-none.php:23
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
-msgstr "Beklager, vi fant ingen treff på dette søket. Prøv igjen med andre søkeord."
+msgstr ""
 
 #: content-none.php:28
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
-msgstr "Vi finner dessverre ikke det du leter etter. Kanskje et søk kan hjelpe?"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:7
 msgid "Enhance your site"
-msgstr "Forbedre siden din"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:10
 msgid ""
 "Below you will find a selection of free and commercial Storefront extensions"
 " that could help improve your online store."
-msgstr "Under finner du et utvalg av gratis og betalte tillegg som kan bidra til å gjøre nettstedet ditt bedre."
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:14
 msgid "Make your site instantly recognisable by adding your logo"
-msgstr "Gjør din side lett gjenkjennelig ved å legge til en logo"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:14
 #: inc/admin/welcome-screen/sections/add-ons.php:105
 msgid "Free (Third Party)"
-msgstr "Gratis (tredjeparts)"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:16
 msgid ""
 "Jetpack is probably a plugin you're already familiar with. Storefront fully "
 "supports Jetpacks site logo feature making it easy to upload and display "
 "your logo via the Customizer. %sMore info &rarr;%s"
-msgstr "Jetpack er trolig en plugin du allerede er kjent med. Storefront støtter Jetpacks logo funksjon, som gjør det lett å laste opp og forhåndsvise din logo på tilpass siden. %sMore info &rarr;%s"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:19
 #: inc/admin/welcome-screen/sections/add-ons.php:32
@@ -106,37 +105,37 @@ msgstr "Jetpack er trolig en plugin du allerede er kjent med. Storefront støtte
 #: inc/admin/welcome-screen/sections/add-ons.php:97
 #: inc/admin/welcome-screen/sections/add-ons.php:110
 msgid "Activated"
-msgstr "Aktivert"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:21
 #: inc/admin/welcome-screen/sections/getting-started.php:39
 msgid "Install Jetpack"
-msgstr "Installer Jetpack"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:27
 msgid "Further customise your store with the Storefront Designer"
-msgstr "Tilpass ditt nettsted med Storefront Designer"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:27
 #: inc/admin/welcome-screen/sections/add-ons.php:40
 #: inc/admin/welcome-screen/sections/add-ons.php:92
 msgid "Premium"
-msgstr "Premium"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:29
 msgid ""
 "Storefront Designer adds a bunch of additional appearance settings allowing "
 "you to further tweak and perfect your Storefront design by changing the "
 "header layout, button styles, typographical schemes/scales and more."
-msgstr "Storefront designer legger til mange nye utseende innstillinger som lar deg tilpasse og perfeksjonere ditt storefront design. Du kan endre bannere, layout, knapper, stiler, tekst, temaer med mer."
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:34
 msgid "Buy %sStorefront Designer%s now"
-msgstr "Kjøp %sStorefront Designer%s nå"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:40
 msgid "Highlight a product of your choosing with the Storefront Product Hero"
-msgstr "Fremhev et produkt etter ditt ønske med Storefront Produck Hero"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:42
 msgid ""
@@ -147,29 +146,29 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:47
 msgid "Buy %sStorefront Product Hero%s now"
-msgstr "Kjøp %sStorefront Product Hero%s nå"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:53
 msgid ""
 "Have your visitors market your store for you with Storefront Product Sharing"
-msgstr "Besøkende kan dele ditt budskap for deg, med Storefront produktdeling"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:53
 #: inc/admin/welcome-screen/sections/add-ons.php:66
 #: inc/admin/welcome-screen/sections/add-ons.php:79
 msgid "Free"
-msgstr "Gratis"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:55
 msgid ""
 "Storefront Product Sharing adds attractive social sharing icons for "
 "Facebook, Twitter, Pinterest and Email to your product pages. %sMore info "
 "&rarr;%s"
-msgstr "Storefront produktdeling legger til ikoner for deling på sosiale medier som Facebook, Twitter, Printerest og e-post.. %sMore info &rarr;%s"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:60
 msgid "Install Storefront Product Sharing"
-msgstr "Installer Storefront produktdeling"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:66
 msgid "Add a site-wide call out to your footer with Storefront Footer Bar"
@@ -183,7 +182,7 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:73
 msgid "Install Storefront Footer Bar"
-msgstr "Installer Storefront Footer Bar"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:79
 msgid "Storefront Product Pagination"
@@ -266,7 +265,7 @@ msgstr ""
 #: inc/admin/welcome-screen/sections/child-themes.php:25
 #: inc/admin/welcome-screen/sections/child-themes.php:37
 msgid "Install %s now"
-msgstr "Installer %s nå"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/child-themes.php:27
 msgid "Read more %sabout Boutique%s &rarr;"
@@ -292,7 +291,7 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:15
 msgid "Using Storefront"
-msgstr "Bruker Storefront"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:16
 msgid ""
@@ -303,18 +302,18 @@ msgstr ""
 #: inc/admin/welcome-screen/sections/getting-started.php:20
 #: inc/admin/welcome-screen/sections/getting-started.php:23
 msgid "Install WooCommerce"
-msgstr "Installer WooCommerce"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:21
 msgid ""
 "Although Storefront works fine as a standard WordPress theme, it really "
 "shines when used for an online store. Install WooCommerce and start selling "
 "now."
-msgstr "Selv om Storefront virker som et standard WordPress tema, så kommer det virkelig til sin nytte som en nettbutikk. Installer WooCommerce og start din butikk nå."
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:26
 msgid "Configure menu locations"
-msgstr "Konfigurer meny plasseringer"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:27
 msgid ""
@@ -328,25 +327,25 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:28
 msgid "Configure menus"
-msgstr "Konfigurere menyer"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:30
 msgid "Create a color scheme"
-msgstr "Opprett et fargetema"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:31
 msgid ""
 "Using the WordPress Customizer you can tweak Storefront's appearance to "
 "match your brand."
-msgstr "Ved å bruke Wordpress tilpassinger, kan du få Storefront til å passe til din merkevare"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:32
 msgid "Open the Customizer"
-msgstr "Åpne tilpassinger"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:35
 msgid "Add your logo"
-msgstr "Legg til logo"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:36
 msgid ""
@@ -356,13 +355,13 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:46
 msgid "Configure homepage template"
-msgstr "Konfigurere hjemmeside tema"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:47
 msgid ""
 "Storefront includes a homepage template that displays a selection of "
 "products from your store."
-msgstr "Storefront inkluderer et hjemmeside tema som viser et utvalg av produktene fra din nettbutikk"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:48
 msgid ""

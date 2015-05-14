@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Storefront\n"
 "Report-Msgid-Bugs-To: https://github.com/woothemes/storefront/issues\n"
-"POT-Creation-Date: 2015-04-23 10:33:15+00:00\n"
-"PO-Revision-Date: 2015-04-23 10:33+0000\n"
+"POT-Creation-Date: 2015-05-14 15:20:54+00:00\n"
+"PO-Revision-Date: 2015-05-14 15:20+0000\n"
 "Last-Translator: James Koster <jay@woothemes.com>\n"
 "Language-Team: Finnish (http://www.transifex.com/projects/p/storefront-1/language/fi/)\n"
 "MIME-Version: 1.0\n"
@@ -81,23 +81,23 @@ msgstr "Tehosta sivustoasi laajennuksilla (englanninkielisiä, maksullisia)"
 msgid ""
 "Below you will find a selection of free and commercial Storefront extensions"
 " that could help improve your online store."
-msgstr ""
+msgstr "Alla on valikoima maksuttomia ja maksullisia Storefront lisäosia jotka voivat auttaa verkkokaupan parantamisessa."
 
 #: inc/admin/welcome-screen/sections/add-ons.php:14
 msgid "Make your site instantly recognisable by adding your logo"
-msgstr ""
+msgstr "Tee kaupasta nopeammin tunnistettava - lisää kauppaan logo."
 
 #: inc/admin/welcome-screen/sections/add-ons.php:14
 #: inc/admin/welcome-screen/sections/add-ons.php:105
 msgid "Free (Third Party)"
-msgstr ""
+msgstr "Maksuton (kolmas osapuoli)"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:16
 msgid ""
 "Jetpack is probably a plugin you're already familiar with. Storefront fully "
 "supports Jetpacks site logo feature making it easy to upload and display "
 "your logo via the Customizer. %sMore info &rarr;%s"
-msgstr ""
+msgstr "Tunnet ehkä jo Jetpack-lisäosan. Storefront tukee Jetpackin logo toimintoa joten logo on helppo siirtää Customizer-toiminnolla. %sLisätietoja &rarr;%s"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:19
 #: inc/admin/welcome-screen/sections/add-ons.php:32
@@ -108,22 +108,22 @@ msgstr ""
 #: inc/admin/welcome-screen/sections/add-ons.php:97
 #: inc/admin/welcome-screen/sections/add-ons.php:110
 msgid "Activated"
-msgstr ""
+msgstr "Käytössä"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:21
 #: inc/admin/welcome-screen/sections/getting-started.php:39
 msgid "Install Jetpack"
-msgstr ""
+msgstr "Asenna Jetpack"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:27
 msgid "Further customise your store with the Storefront Designer"
-msgstr ""
+msgstr "Storefront Designer:illa voit vielä enemmän mukauttaa kauppaa kuten haluat."
 
 #: inc/admin/welcome-screen/sections/add-ons.php:27
 #: inc/admin/welcome-screen/sections/add-ons.php:40
 #: inc/admin/welcome-screen/sections/add-ons.php:92
 msgid "Premium"
-msgstr ""
+msgstr "Maksullinen"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:29
 msgid ""
@@ -160,7 +160,7 @@ msgstr ""
 #: inc/admin/welcome-screen/sections/add-ons.php:66
 #: inc/admin/welcome-screen/sections/add-ons.php:79
 msgid "Free"
-msgstr ""
+msgstr "Maksuton"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:55
 msgid ""
@@ -250,28 +250,47 @@ msgid ""
 "Storefront foundation."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/child-themes.php:18
+#: inc/admin/welcome-screen/sections/child-themes.php:20
 msgid "Boutique Child Theme"
 msgstr "Boutique lapsiteema"
 
-#: inc/admin/welcome-screen/sections/child-themes.php:19
+#: inc/admin/welcome-screen/sections/child-themes.php:21
 msgid "Boutique"
 msgstr "Boutique"
 
-#: inc/admin/welcome-screen/sections/child-themes.php:20
+#: inc/admin/welcome-screen/sections/child-themes.php:22
 msgid ""
 "Boutique is a simple, traditionally designed Storefront child theme, ideal "
 "for small stores or boutiques. Add your logo, create a unique color scheme "
 "and start selling!"
 msgstr "Boutique on yksinkertainen, perinteisen näköinen Storefront-teeman lapsiteema; erinomainen pienille kaupoille tai butiikeille. Lisää logo, luo oma väri-ilme ja aloita myyminen!"
 
-#: inc/admin/welcome-screen/sections/child-themes.php:23
+#: inc/admin/welcome-screen/sections/child-themes.php:25
+#: inc/admin/welcome-screen/sections/child-themes.php:37
 msgid "Install %s now"
 msgstr "Asenna %s nyt"
 
-#: inc/admin/welcome-screen/sections/child-themes.php:25
+#: inc/admin/welcome-screen/sections/child-themes.php:27
 msgid "Read more %sabout Boutique%s &rarr;"
 msgstr "Lue lisää %sBoutique-lapsiteemasta%s &rarr;"
+
+#: inc/admin/welcome-screen/sections/child-themes.php:32
+msgid "Deli Child Theme"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/child-themes.php:33
+msgid "Deli"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/child-themes.php:34
+msgid ""
+"Deli features a texturised, earthy design, perfect for stores selling "
+"natural, organic or hand made goods."
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/child-themes.php:39
+msgid "Read more %sabout Deli%s &rarr;"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:15
 msgid "Using Storefront"
@@ -514,81 +533,85 @@ msgid ""
 "Why not leave us a review on %sWordPress.org%s?  We'd really appreciate it!"
 msgstr "Mitä jos antaisit tuotearvion meille %sWordPress.org%s -sivustolla? Todella arvostaisimme sitä! :)"
 
-#: inc/customizer/controls.php:25
+#: inc/customizer/controls.php:24
 msgid "Background"
 msgstr "Tausta"
 
-#: inc/customizer/controls.php:29 inc/functions/setup.php:114
+#: inc/customizer/controls.php:28 inc/functions/setup.php:114
 msgid "Header"
 msgstr "Sivun otsake"
 
-#: inc/customizer/controls.php:49
-msgid "Looking to add a logo? Install the %sJetpack%s plugin!"
-msgstr "Haluatko lisätä logon? Asenna %sJetpack%s lisäosa!"
-
-#: inc/customizer/controls.php:58
+#: inc/customizer/controls.php:45
 msgid "Typography"
 msgstr "Kirjasintyyli"
 
-#: inc/customizer/controls.php:71
+#: inc/customizer/controls.php:58
 msgid "Link / accent color"
 msgstr "Linkin / korostuksen väri"
 
-#: inc/customizer/controls.php:87 inc/customizer/controls.php:135
-#: inc/customizer/controls.php:191 inc/customizer/controls.php:259
+#: inc/customizer/controls.php:74 inc/customizer/controls.php:147
+#: inc/customizer/controls.php:203 inc/customizer/controls.php:271
 msgid "Text color"
 msgstr "Tekstin väri"
 
-#: inc/customizer/controls.php:103 inc/customizer/controls.php:176
+#: inc/customizer/controls.php:90 inc/customizer/controls.php:188
 msgid "Heading color"
 msgstr "Otsikon väri"
 
-#: inc/customizer/controls.php:119 inc/customizer/controls.php:221
-#: inc/customizer/controls.php:244
+#: inc/customizer/controls.php:103
+msgid "Logo"
+msgstr ""
+
+#: inc/customizer/controls.php:110
+msgid "Looking to add a logo? Install the %sJetpack%s plugin! %sRead more%s."
+msgstr ""
+
+#: inc/customizer/controls.php:131 inc/customizer/controls.php:233
+#: inc/customizer/controls.php:256
 msgid "Background color"
 msgstr "Taustaväri"
 
-#: inc/customizer/controls.php:151 inc/customizer/controls.php:206
+#: inc/customizer/controls.php:163 inc/customizer/controls.php:218
 msgid "Link color"
 msgstr "Linkin väri"
 
-#: inc/customizer/controls.php:161
+#: inc/customizer/controls.php:173
 msgid "Footer"
 msgstr "Alapalkki"
 
-#: inc/customizer/controls.php:163
+#: inc/customizer/controls.php:175
 msgid "Customise the look & feel of your web site footer."
 msgstr "Muokkaa verkkokaupan alapalkin ulkoasua."
 
-#: inc/customizer/controls.php:230
+#: inc/customizer/controls.php:242
 msgid "Buttons"
 msgstr "Painikkeet"
 
-#: inc/customizer/controls.php:232
+#: inc/customizer/controls.php:244
 msgid "Customise the look & feel of your web site buttons."
 msgstr "Muokkaa painikkeiden ulkoasua"
 
-#: inc/customizer/controls.php:274
+#: inc/customizer/controls.php:286
 msgid "Alternate button background color"
 msgstr "Vaihtoehtoinen painikkeen taustaväri"
 
-#: inc/customizer/controls.php:289
+#: inc/customizer/controls.php:301
 msgid "Alternate button text color"
 msgstr "Vaihtoehtoinen painikkeen tekstin väri"
 
-#: inc/customizer/controls.php:299
+#: inc/customizer/controls.php:311
 msgid "Layout"
 msgstr "Asettelu"
 
-#: inc/customizer/controls.php:309
+#: inc/customizer/controls.php:321
 msgid "General layout"
 msgstr "Sivun asettelu"
 
-#: inc/customizer/controls.php:326
+#: inc/customizer/controls.php:338
 msgid "More"
 msgstr "Lisää"
 
-#: inc/customizer/controls.php:336
+#: inc/customizer/controls.php:348
 msgid "Looking for more options?"
 msgstr "Etsitkö lisää muokkausvaihtoehtoja?"
 
@@ -632,23 +655,23 @@ msgstr "Muokkaa"
 msgid "%1$s designed by %2$s."
 msgstr "%2$s on suunnitellut: %1$s"
 
-#: inc/structure/header.php:52
+#: inc/structure/header.php:54
 msgid "Primary Navigation"
 msgstr "Ensisijainen navigointi"
 
-#: inc/structure/header.php:53
+#: inc/structure/header.php:55
 msgid "Navigation"
 msgstr "Navigointi"
 
-#: inc/structure/header.php:82
+#: inc/structure/header.php:84
 msgid "Secondary Navigation"
 msgstr "Toissijainen navigointi"
 
-#: inc/structure/header.php:104
+#: inc/structure/header.php:106
 msgid "Skip to navigation"
 msgstr "Siirry navigointiin"
 
-#: inc/structure/header.php:105
+#: inc/structure/header.php:107
 msgid "Skip to content"
 msgstr "Siirry sisältöön"
 
@@ -697,19 +720,19 @@ msgstr "Edellinen"
 msgid "Product Categories"
 msgstr "Tuoteosastot"
 
-#: inc/structure/template-tags.php:54
+#: inc/structure/template-tags.php:58
 msgid "Recent Products"
 msgstr "Uudet tuotteet"
 
-#: inc/structure/template-tags.php:82
+#: inc/structure/template-tags.php:92
 msgid "Featured Products"
 msgstr "Esitelyssä olevat tuotteet"
 
-#: inc/structure/template-tags.php:110
+#: inc/structure/template-tags.php:124
 msgid "Top Rated Products"
 msgstr "Parhaaksi arvioidut tuotteet"
 
-#: inc/structure/template-tags.php:138
+#: inc/structure/template-tags.php:156
 msgid "On Sale"
 msgstr "Alennettu hinta"
 

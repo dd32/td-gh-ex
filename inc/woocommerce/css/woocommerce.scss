@@ -885,6 +885,7 @@ ul.digital-downloads {
 	.button {
 		padding: .53em 1em;
 		font-size: .857em;
+		margin-right: .236em;
 	}
 }
 
@@ -1206,6 +1207,24 @@ p.no-comments {
 			background: none;
 			color: #fff;
 			opacity: 0.7;
+		}
+	}
+
+	pre {
+		background-color: rgba(0,0,0,.1);
+	}
+}
+
+.site-content {
+	> .col-full {
+		> .woocommerce {
+			> .woocommerce-message,
+			> .woocommerce-info,
+			> .woocommerce-error {
+				&:first-child {
+					margin-top: 2.618em;
+				}
+			}
 		}
 	}
 }
@@ -1589,9 +1608,6 @@ dl.variation {
 	.storefront-sorting {
 		@include clearfix;
 		margin-bottom: 2.618em;
-		border: 1px solid $color_border;
-		border-width: 1px 0;
-		padding: 1em 0;
 
 		select {
 			width: 9.505em;

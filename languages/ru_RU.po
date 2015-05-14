@@ -3,26 +3,27 @@
 # Translators:
 # Andrew Berdov <andrew.berdov@gmail.com>, 2015
 # Artem Dubrovsky <art.dubrovsky@gmail.com>, 2015
+# tivnet <gregory@tiv.net>, 2015
 # Konstantin Dubovik <kodubovik@gmail.com>, 2015
 # Ruslan <tomaevruslan@yandex.ru>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Storefront\n"
 "Report-Msgid-Bugs-To: https://github.com/woothemes/storefront/issues\n"
-"POT-Creation-Date: 2015-04-23 10:33:15+00:00\n"
-"PO-Revision-Date: 2015-04-23 10:33+0000\n"
+"POT-Creation-Date: 2015-05-14 15:20:54+00:00\n"
+"PO-Revision-Date: 2015-05-14 15:20+0000\n"
 "Last-Translator: James Koster <jay@woothemes.com>\n"
 "Language-Team: Russian (Russia) (http://www.transifex.com/projects/p/storefront-1/language/ru_RU/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ru_RU\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 "X-Generator: grunt-wp-i18n 0.4.9\n"
 
 #: 404.php:15
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "Ой! Эта страница &rsquo;t не найдена."
+msgstr "Ой! Эта страница не найдена."
 
 #: 404.php:19
 msgid ""
@@ -72,21 +73,21 @@ msgstr "Извините, но ничего не соответствуют ус
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
-msgstr "Кажется мы можем&rsquo;t найти что Вы&rsquo;re ищите. Возможно поиск поможет Вам."
+msgstr "Похоже, мы не можем предложить Вам что-либо, соответствующее Вашему запросу. Попробуйте использовать поиск по сайту."
 
 #: inc/admin/welcome-screen/sections/add-ons.php:7
 msgid "Enhance your site"
-msgstr "Улучшить свой сайт "
+msgstr "Улучшите Ваш сайт"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:10
 msgid ""
 "Below you will find a selection of free and commercial Storefront extensions"
 " that could help improve your online store."
-msgstr ""
+msgstr "Ниже Вы найдете широкий выбор бесплатных и коммерческих расширений для темы Storefront, которые могли бы помочь улучшить Ваш интернет-магазин."
 
 #: inc/admin/welcome-screen/sections/add-ons.php:14
 msgid "Make your site instantly recognisable by adding your logo"
-msgstr ""
+msgstr "Сделайте ваш сайт узнаваемым, добавив свой логотип"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:14
 #: inc/admin/welcome-screen/sections/add-ons.php:105
@@ -109,44 +110,44 @@ msgstr ""
 #: inc/admin/welcome-screen/sections/add-ons.php:97
 #: inc/admin/welcome-screen/sections/add-ons.php:110
 msgid "Activated"
-msgstr ""
+msgstr "Активирован"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:21
 #: inc/admin/welcome-screen/sections/getting-started.php:39
 msgid "Install Jetpack"
-msgstr ""
+msgstr "Установить Jetpack"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:27
 msgid "Further customise your store with the Storefront Designer"
-msgstr ""
+msgstr "Настройте Ваш магазин с помощью Storefront Designer"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:27
 #: inc/admin/welcome-screen/sections/add-ons.php:40
 #: inc/admin/welcome-screen/sections/add-ons.php:92
 msgid "Premium"
-msgstr ""
+msgstr "Премиум"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:29
 msgid ""
 "Storefront Designer adds a bunch of additional appearance settings allowing "
 "you to further tweak and perfect your Storefront design by changing the "
 "header layout, button styles, typographical schemes/scales and more."
-msgstr ""
+msgstr "Storefront Designer добавляет множество дополнительных настроек внешнего вида, позволяющее в дальнейшем настроить и совершенствовать свой дизайн темы Storefront изменяя макет заголовка, стили кнопок, типографские схемы и многое другое."
 
 #: inc/admin/welcome-screen/sections/add-ons.php:34
 msgid "Buy %sStorefront Designer%s now"
-msgstr "Купить %sStorefront Designer%s сайчас"
+msgstr "Купить %sStorefront Designer%s сейчас"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:40
 msgid "Highlight a product of your choosing with the Storefront Product Hero"
-msgstr ""
+msgstr "Выделите продукт по вашему выбору с Storefront Product Hero"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:42
 msgid ""
 "The Storefront Product Hero extension adds a parallax hero component to your"
 " homepage highlighting a specific product at your store. Use the shortcode "
 "to add attractive hero components to posts, pages or widgets."
-msgstr ""
+msgstr "Расширение Storefront Product Hero добавляет компонент parallax hero для главной страницы, это позволяет выделить товар в Вашем магазине. Используйте шорткод, чтобы добавить компонент hero в записи, страницы и виджеты."
 
 #: inc/admin/welcome-screen/sections/add-ons.php:47
 msgid "Buy %sStorefront Product Hero%s now"
@@ -161,7 +162,7 @@ msgstr ""
 #: inc/admin/welcome-screen/sections/add-ons.php:66
 #: inc/admin/welcome-screen/sections/add-ons.php:79
 msgid "Free"
-msgstr ""
+msgstr "Бесплатно"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:55
 msgid ""
@@ -172,7 +173,7 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:60
 msgid "Install Storefront Product Sharing"
-msgstr ""
+msgstr "Установить Storefront Product Sharing"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:66
 msgid "Add a site-wide call out to your footer with Storefront Footer Bar"
@@ -186,11 +187,11 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:73
 msgid "Install Storefront Footer Bar"
-msgstr ""
+msgstr "Установить Storefront Footer Bar"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:79
 msgid "Storefront Product Pagination"
-msgstr ""
+msgstr "Storefront Product Pagination"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:81
 msgid ""
@@ -200,7 +201,7 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:86
 msgid "Install Storefront Product Pagination"
-msgstr ""
+msgstr "Установить Storefront Product Pagination"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:92
 msgid ""
@@ -217,7 +218,7 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:99
 msgid "Buy %sStorefront WooCommerce Customiser%s now"
-msgstr "Купить %sStorefront WooCommerce Customiser%s сайчас"
+msgstr "Купить %sStorefront WooCommerce Customiser%s сейчас"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:105
 msgid "Add practical information to your pages with Storefront Top Bar"
@@ -231,7 +232,7 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:112
 msgid "Install Storefront Top Bar"
-msgstr ""
+msgstr "Установить Storefront Top Bar"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:120
 msgid ""
@@ -251,28 +252,47 @@ msgid ""
 "Storefront foundation."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/child-themes.php:18
+#: inc/admin/welcome-screen/sections/child-themes.php:20
 msgid "Boutique Child Theme"
 msgstr "Дочерняя тема Boutique"
 
-#: inc/admin/welcome-screen/sections/child-themes.php:19
+#: inc/admin/welcome-screen/sections/child-themes.php:21
 msgid "Boutique"
 msgstr "Boutique"
 
-#: inc/admin/welcome-screen/sections/child-themes.php:20
+#: inc/admin/welcome-screen/sections/child-themes.php:22
 msgid ""
 "Boutique is a simple, traditionally designed Storefront child theme, ideal "
 "for small stores or boutiques. Add your logo, create a unique color scheme "
 "and start selling!"
 msgstr "Boutique это простая дочерняя Storefront тема с традиционным дизайном, идеальная для небольших магазинов и бутиков. Добавьте свое лого, создайте уникальную цветовую схему и начните продавать!"
 
-#: inc/admin/welcome-screen/sections/child-themes.php:23
+#: inc/admin/welcome-screen/sections/child-themes.php:25
+#: inc/admin/welcome-screen/sections/child-themes.php:37
 msgid "Install %s now"
 msgstr "Установить %s сайчас"
 
-#: inc/admin/welcome-screen/sections/child-themes.php:25
+#: inc/admin/welcome-screen/sections/child-themes.php:27
 msgid "Read more %sabout Boutique%s &rarr;"
 msgstr "Узнать больше %sо Boutique%s &rarr;"
+
+#: inc/admin/welcome-screen/sections/child-themes.php:32
+msgid "Deli Child Theme"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/child-themes.php:33
+msgid "Deli"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/child-themes.php:34
+msgid ""
+"Deli features a texturised, earthy design, perfect for stores selling "
+"natural, organic or hand made goods."
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/child-themes.php:39
+msgid "Read more %sabout Deli%s &rarr;"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:15
 msgid "Using Storefront"
@@ -294,7 +314,7 @@ msgid ""
 "Although Storefront works fine as a standard WordPress theme, it really "
 "shines when used for an online store. Install WooCommerce and start selling "
 "now."
-msgstr "Хотя витрина отлично работает в качестве стандартной темы WordPress. Но весь её потенциал раскрывается, при использовании в интернет-магазине. Установите WooCommerce и начните продавать сейчас."
+msgstr "Storefront отлично работает в качестве стандартной темы WordPress. Но весь её потенциал раскрывается при использовании в интернет-магазине. Установите WooCommerce и начните продавать сейчас."
 
 #: inc/admin/welcome-screen/sections/getting-started.php:26
 msgid "Configure menu locations"
@@ -322,7 +342,7 @@ msgstr "Создание цветовой схемы"
 msgid ""
 "Using the WordPress Customizer you can tweak Storefront's appearance to "
 "match your brand."
-msgstr "Используя WordPress Customizer Вы сможете настроить Storefront's в соответствии с Вашим брендом."
+msgstr "Используя WordPress Customizer Вы сможете настроить Storefront в соответствии с Вашим брендом."
 
 #: inc/admin/welcome-screen/sections/getting-started.php:32
 msgid "Open the Customizer"
@@ -359,11 +379,11 @@ msgstr "Чтобы это установить , вам понадобится �
 msgid ""
 "Once set up you can toggle and re-order the homepage components using the "
 "%sHomepage Control%s plugin."
-msgstr "После установки вы сможете переключать и изменить порядок компонентов главной страницы используя плагин %sHomepage Control%s."
+msgstr "После установки Вы сможете переключать и изменять порядок компонентов главной страницы, используя плагин %sHomepage Control%s."
 
 #: inc/admin/welcome-screen/sections/getting-started.php:52
 msgid "Install Homepage Control"
-msgstr ""
+msgstr "Установить Homepage Control"
 
 #: inc/admin/welcome-screen/sections/getting-started.php:55
 msgid "View documentation"
@@ -373,11 +393,11 @@ msgstr "Посмотреть документацию"
 msgid ""
 "You can read detailed information on Storefronts features and how to develop"
 " on top of it in the documentation."
-msgstr "Из документации вы можете получить подробную информацию о возможностях Storefront и о том, как с ним работать."
+msgstr "Из документации Вы можете получить подробную информацию о возможностях темы Storefront и о том, как с ней работать."
 
 #: inc/admin/welcome-screen/sections/getting-started.php:57
 msgid "View documentation &rarr;"
-msgstr ""
+msgstr "Просмотреть документацию &rarr;"
 
 #: inc/admin/welcome-screen/sections/intro.php:14
 msgid ""
@@ -395,7 +415,7 @@ msgstr "Вы владелец магазина или разработчик Wor
 
 #: inc/admin/welcome-screen/sections/tabs.php:2
 msgid "Getting Started"
-msgstr ""
+msgstr "Начинаем"
 
 #: inc/admin/welcome-screen/sections/tabs.php:3
 msgid "Enhance Storefront"
@@ -515,83 +535,87 @@ msgid ""
 "Why not leave us a review on %sWordPress.org%s?  We'd really appreciate it!"
 msgstr "Почему бы не оставить о нас отзыв на %sWordPress.org%s? Мы будем очень признательны!"
 
-#: inc/customizer/controls.php:25
+#: inc/customizer/controls.php:24
 msgid "Background"
 msgstr "Фон"
 
-#: inc/customizer/controls.php:29 inc/functions/setup.php:114
+#: inc/customizer/controls.php:28 inc/functions/setup.php:114
 msgid "Header"
 msgstr "Заголовок"
 
-#: inc/customizer/controls.php:49
-msgid "Looking to add a logo? Install the %sJetpack%s plugin!"
-msgstr "Хотите добавить логотип? Установите %sJetpack%s плагин!"
-
-#: inc/customizer/controls.php:58
+#: inc/customizer/controls.php:45
 msgid "Typography"
 msgstr "Типографика"
 
-#: inc/customizer/controls.php:71
+#: inc/customizer/controls.php:58
 msgid "Link / accent color"
 msgstr "Цвет ссылки / выделения"
 
-#: inc/customizer/controls.php:87 inc/customizer/controls.php:135
-#: inc/customizer/controls.php:191 inc/customizer/controls.php:259
+#: inc/customizer/controls.php:74 inc/customizer/controls.php:147
+#: inc/customizer/controls.php:203 inc/customizer/controls.php:271
 msgid "Text color"
 msgstr "Цвет текста"
 
-#: inc/customizer/controls.php:103 inc/customizer/controls.php:176
+#: inc/customizer/controls.php:90 inc/customizer/controls.php:188
 msgid "Heading color"
 msgstr "Цвет заголовка"
 
-#: inc/customizer/controls.php:119 inc/customizer/controls.php:221
-#: inc/customizer/controls.php:244
+#: inc/customizer/controls.php:103
+msgid "Logo"
+msgstr ""
+
+#: inc/customizer/controls.php:110
+msgid "Looking to add a logo? Install the %sJetpack%s plugin! %sRead more%s."
+msgstr ""
+
+#: inc/customizer/controls.php:131 inc/customizer/controls.php:233
+#: inc/customizer/controls.php:256
 msgid "Background color"
 msgstr "Цвет фона"
 
-#: inc/customizer/controls.php:151 inc/customizer/controls.php:206
+#: inc/customizer/controls.php:163 inc/customizer/controls.php:218
 msgid "Link color"
 msgstr "Цвет ссылки"
 
-#: inc/customizer/controls.php:161
+#: inc/customizer/controls.php:173
 msgid "Footer"
 msgstr "Нижний колонтитул"
 
-#: inc/customizer/controls.php:163
+#: inc/customizer/controls.php:175
 msgid "Customise the look & feel of your web site footer."
 msgstr "Настроить нижний колонтитул вашего сайта."
 
-#: inc/customizer/controls.php:230
+#: inc/customizer/controls.php:242
 msgid "Buttons"
 msgstr "Кнопки"
 
-#: inc/customizer/controls.php:232
+#: inc/customizer/controls.php:244
 msgid "Customise the look & feel of your web site buttons."
 msgstr "Настроить кнопоки вашего сайта."
 
-#: inc/customizer/controls.php:274
+#: inc/customizer/controls.php:286
 msgid "Alternate button background color"
 msgstr "Цвет фона альтернативной кнопки"
 
-#: inc/customizer/controls.php:289
+#: inc/customizer/controls.php:301
 msgid "Alternate button text color"
 msgstr "Цвет текста альтернативной кнопки"
 
-#: inc/customizer/controls.php:299
+#: inc/customizer/controls.php:311
 msgid "Layout"
 msgstr "Макет"
 
-#: inc/customizer/controls.php:309
+#: inc/customizer/controls.php:321
 msgid "General layout"
 msgstr "Основной макет"
 
-#: inc/customizer/controls.php:326
+#: inc/customizer/controls.php:338
 msgid "More"
 msgstr "Далее"
 
-#: inc/customizer/controls.php:336
+#: inc/customizer/controls.php:348
 msgid "Looking for more options?"
-msgstr "Ищете больше вариантов?"
+msgstr "Ищете дополнительные варианты?"
 
 #: inc/functions/setup.php:60
 msgid "Primary Menu"
@@ -633,23 +657,23 @@ msgstr "Изменить"
 msgid "%1$s designed by %2$s."
 msgstr "%1$s разработано в %2$s."
 
-#: inc/structure/header.php:52
+#: inc/structure/header.php:54
 msgid "Primary Navigation"
 msgstr "Главная навигация"
 
-#: inc/structure/header.php:53
+#: inc/structure/header.php:55
 msgid "Navigation"
 msgstr "Навигация"
 
-#: inc/structure/header.php:82
+#: inc/structure/header.php:84
 msgid "Secondary Navigation"
 msgstr "Вторичная навигация"
 
-#: inc/structure/header.php:104
+#: inc/structure/header.php:106
 msgid "Skip to navigation"
 msgstr "Перейти к навигации"
 
-#: inc/structure/header.php:105
+#: inc/structure/header.php:107
 msgid "Skip to content"
 msgstr "Перейти к содержимому"
 
@@ -672,7 +696,7 @@ msgstr "Категории:"
 
 #: inc/structure/post.php:92
 msgid "Tags: "
-msgstr "Теги:"
+msgstr "Метки"
 
 #: inc/structure/post.php:101
 msgid "Leave a comment"
@@ -698,19 +722,19 @@ msgstr "Предыдущий"
 msgid "Product Categories"
 msgstr "Категории товаров"
 
-#: inc/structure/template-tags.php:54
+#: inc/structure/template-tags.php:58
 msgid "Recent Products"
 msgstr "Последние товары"
 
-#: inc/structure/template-tags.php:82
+#: inc/structure/template-tags.php:92
 msgid "Featured Products"
 msgstr "Рекомендуемые товары"
 
-#: inc/structure/template-tags.php:110
+#: inc/structure/template-tags.php:124
 msgid "Top Rated Products"
 msgstr "Лучшие товары"
 
-#: inc/structure/template-tags.php:138
+#: inc/structure/template-tags.php:156
 msgid "On Sale"
 msgstr "Распродажа"
 
@@ -724,6 +748,7 @@ msgid_plural "%d items"
 msgstr[0] "%d шт."
 msgstr[1] "%d шт."
 msgstr[2] "%d шт."
+msgstr[3] "%d шт."
 
 #: search.php:16
 msgid "Search Results for: %s"
@@ -770,6 +795,7 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] "Одно мнение о &ldquo;%2$s&rdquo;"
 msgstr[1] "%1$s мнений о &ldquo;%2$s&rdquo;"
 msgstr[2] "%1$s мнений о &ldquo;%2$s&rdquo;"
+msgstr[3] "%1$s мнений о &ldquo;%2$s&rdquo;"
 
 #: inc/structure/post.php:156
 msgctxt "post date"
