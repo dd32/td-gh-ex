@@ -18,50 +18,11 @@ function optionsframework_option_name() {
 
 function optionsframework_options() {
 
-	// Test data
-	$test_array = array(
-		'one' => __( 'One', 'atomic' ),
-		'two' => __( 'Two', 'atomic' ),
-		'three' => __( 'Three', 'atomic' ),
-		'four' => __( 'Four', 'atomic' ),
-		'five' => __( 'Five', 'atomic' )
-	);
-
-	// Multicheck Array
-	$multicheck_array = array(
-		'one' => __( 'French Toast', 'atomic' ),
-		'two' => __( 'Pancake', 'atomic' ),
-		'three' => __( 'Omelette', 'atomic' ),
-		'four' => __( 'Crepe', 'atomic' ),
-		'five' => __( 'Waffle', 'atomic' )
-	);
-
-	// Multicheck Defaults
-	$multicheck_defaults = array(
-		'one' => '1',
-		'five' => '1'
-	);
-
-	// Background Defaults
-	$background_defaults = array(
-		'color' => '',
-		'image' => '',
-		'repeat' => 'repeat',
-		'position' => 'top center',
-		'attachment'=>'scroll' );
-
-	// Typography Defaults
-	$typography_defaults = array(
-		'size' => '15px',
-		'face' => 'georgia',
-		'style' => 'bold',
-		'color' => '#bada55' );
-
 	// Typography Options
 	$typography_options = array(
 		'sizes' => array( '6','12','14','16','20','22','24','26','28','30','32','34','36','38','40','42','44','46','48','50' ),
 		'faces' => array( 'Helvetica' => 'Helvetica','Helvetica Neue' => 'Helvetica Neue','Arial' => 'Arial','proxima-nova' => 'proxima-nova' ),
-		'styles' => array( 'normal' => 'Normal','bold' => 'Bold' ),
+		'styles' => array( 'normal' => 'Normal','bold' => 'Bold','italic' => 'Italic' ),
 		'color' => array( '#FFFFFF' )
 	);
 
@@ -97,34 +58,94 @@ function optionsframework_options() {
 		'name' => __( 'Header and Footer', 'atomic' ),
 		'type' => 'heading'
 	);
+    
+    $options[] = array(
+        'name' => __( 'Header Notes', 'atomic' ),
+		'desc' => __( 'The header image(s) can be changed under Appearance -> Customize -> Header Image. The site title and tagline that appears in the browser title is changed under Appearance -> Customize -> Site Title and Tagline.', 'atomic' ),
+		'type' => 'info'
+	);
 	
-	$options['header_topleft_text'] = array(
-		'name' => __( 'Header Top-Left Corner Text (Site-wide)', 'atomic' ),
-		'desc' => __( 'Text (clear to disable)', 'atomic' ),
-		'id' => 'header_topleft_text',
+	$options['header_title_text'] = array(
+		'name' => __( 'Header Title (top-left corner text, site-wide)', 'atomic' ),
+		'desc' => __( 'Title Text (leave blank to disable)', 'atomic' ),
+		'id' => 'header_title_text',
 		'std' => 'MySite',
+		'type' => 'text'
+	);
+
+        $options['header_title_size'] = array(
+		'desc' => __( 'Header Title Size (Default: 2.5)', 'atomic' ),
+		'id' => 'header_title_size',
+		'std' => '2.5',
+		'class' => 'mini',
+		'type' => 'text'
+	);
+    
+    $options['header_description_text'] = array(
+		'name' => __( 'Header Description (top-left corner text, site-wide)', 'atomic' ),
+		'desc' => __( 'Description Text (leave blank to disable)', 'atomic' ),
+		'id' => 'header_description_text',
+		'std' => 'MyDescription',
+		'type' => 'text'
+	);
+
+        $options['header_description_size'] = array(
+		'desc' => __( 'Header Description Size (Default: 1.75)', 'atomic' ),
+		'id' => 'header_description_size',
+		'std' => '1.75',
+		'class' => 'mini',
 		'type' => 'text'
 	);
 	
 	$options['header_top_text'] = array(
-		'name' => __( 'Header Text (Front Page', 'atomic' ),
-		'desc' => __( 'First Line (clear to disable)', 'atomic' ),
+		'name' => __( 'Header Text (Front Page)', 'atomic' ),
+		'desc' => __( 'First Line (leave blank to disable)', 'atomic' ),
 		'id' => 'header_top_text',
 		'std' => 'A top row of text',
 		'type' => 'text'
 	);
+
+        $typography_top_text_defaults = array(
+		'size' => '24px',
+		'face' => 'proxima-nova',
+		'style' => 'italic',
+		'color' => '#FFFFFF' );
+		
+	$options['header_top_text_typography'] = array(
+		'name' => __( '', 'atomic' ),
+		'desc' => __( 'Typography of First Line', 'atomic' ),
+		'id' => 'header_top_text_typography',
+		'std' => $typography_top_text_defaults,
+		'type' => 'typography',
+		'options' => $typography_options
+	);
 	
 	$options['header_bottom_text'] = array(
 		'name' => __( '', 'atomic' ),
-		'desc' => __( 'Second Line (clear to disable)', 'atomic' ),
+		'desc' => __( 'Second Line (leave blank to disable)', 'atomic' ),
 		'id' => 'header_bottom_text',
 		'std' => 'A second row of text',
 		'type' => 'text'
 	);
+
+        $typography_bottom_text_defaults = array(
+		'size' => '32px',
+		'face' => 'proxima-nova',
+		'style' => 'bold',
+		'color' => '#FFFFFF' );
+		
+	$options['header_bottom_text_typography'] = array(
+		'name' => __( '', 'atomic' ),
+		'desc' => __( 'Typography of Second Line', 'atomic' ),
+		'id' => 'header_bottom_text_typography',
+		'std' => $typography_bottom_text_defaults,
+		'type' => 'typography',
+		'options' => $typography_options
+	);
 	
 	$options['header_linkone_text'] = array(
 		'name' => __( 'First Header Link (Front Page)', 'atomic' ),
-		'desc' => __( 'Link Text (clear to disable)', 'atomic' ),
+		'desc' => __( 'Link Text (leave blank to disable)', 'atomic' ),
 		'id' => 'header_linkone_text',
 		'std' => 'A Link',
 		'type' => 'text'
@@ -140,7 +161,7 @@ function optionsframework_options() {
 	
 	$options['header_linktwo_text'] = array(
 		'name' => __( 'Second Header Link (Front Page)', 'atomic' ),
-		'desc' => __( 'Link Text (clear to disable)', 'atomic' ),
+		'desc' => __( 'Link Text (leave blank to disable)', 'atomic' ),
 		'id' => 'header_linktwo_text',
 		'std' => 'Another Link',
 		'type' => 'text'

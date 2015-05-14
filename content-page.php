@@ -10,10 +10,6 @@
 	
 
 	<div class="entry-content">
-		<!-- Get the featured image -->
-		<?php if ( ( '' != get_the_post_thumbnail() ) && ( '' == get_theme_mod( 'featured_header' ) ) ) { ?>
-			<p><a class="featured-image" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'large-image' ); ?></a></p>
-		<?php } ?>
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(

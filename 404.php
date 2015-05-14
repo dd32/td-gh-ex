@@ -16,7 +16,7 @@ get_header(); ?>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
-					<p><?php _e( 'It looks like nothing was found at this location.', 'atomic' ); ?></p>
+					<p><?php _e( 'It looks like nothing was found at this location.<br>If you think this is in error, please contact the site administrator or use the search bar below.', 'atomic' ); ?></p>
 
 					<?php get_search_form(); ?>
 
