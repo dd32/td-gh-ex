@@ -120,28 +120,13 @@
             /* End custom text on front page of site */
                 
             /* Custom header text of category */
-            if ( is_category( 'Latin America' ) ) {
-                echo '<div class="header-text-first"></div><div class="header-text-second">En Moto Al Sur</div>';
-            }
-            else if ( is_category() ) {
+            if ( is_category() ) {
                 echo '<div class="header-text-first">Category</div><div class="header-text-second">' . single_cat_title("", false) . '</div>';
             }
             /* End custom header text of category */
 
             /* Custom header text of page */
-            if ( is_page( 'Resume' ) ) {
-                echo '<div class="header-text-first">What I\'ve done and</div><div class="header-text-second">my skillset</div><br><a href="http://kylegabriel.com/wp-content/uploads/2015/03/Kyle-Gabriel-Resume-2015.pdf" onclick="__gaTracker(\'send\', \'event\', \'download\', \'http://kylegabriel.com/wp-content/uploads/2015/03/Kyle-Gabriel-Resume-2015.pdf\');" class="header-link" target="_blank">download Resume</a>';
-            }
-            else if ( is_page( 'Contact Me' ) ) {
-                echo '<div class="header-text-first">Send a friendly</div><div class="header-text-second"  style="font-style: italic;">HELLO</div>';
-            }
-            else if ( is_page( 'About Me') ) {
-                echo '<div class="header-text-first"></div><div class="header-text-second" style="font-style: italic;">Who I Am</div>';
-            }
-            else if ( is_page( 'mytheme' ) ) {
-                echo '<div class="header-text-first"  style="font-style: italic;">Simple, minimal</div><div class="header-text-second">atomic</div>';
-            }
-            else if ( is_page() && !is_front_page() ) {
+            if ( is_page() && !is_front_page() ) {
                 echo '<div class="header-page-title">' . get_the_title() . '</div>';
             }
             /* End custom header text of page */
