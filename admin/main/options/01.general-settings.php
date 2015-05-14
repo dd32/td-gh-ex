@@ -515,9 +515,9 @@ function thinkup_input_responsivefall() {
 }
 
 function thinkup_input_responsivehtml1() {
-global $thinkup_general_responsiveswitch;
+global $thinkup_general_fixedlayoutswitch;
 
-	if ( $thinkup_general_responsiveswitch == '1' ) {
+	if ( $thinkup_general_fixedlayoutswitch !== '1' ) {
 
 		echo '<div id="header-nav">',
 		     '<a class="btn-navbar" data-toggle="collapse" data-target=".nav-collapse">',
@@ -530,9 +530,9 @@ global $thinkup_general_responsiveswitch;
 }
 
 function thinkup_input_responsivehtml2() {
-global $thinkup_general_responsiveswitch;
+global $thinkup_general_fixedlayoutswitch;
 
-	if ( $thinkup_general_responsiveswitch == '1' ) {
+	if ( $thinkup_general_fixedlayoutswitch !== '1' ) {
 
 		$args =  array(
 			'container_class' => 'responsive-links nav-collapse collapse', 
@@ -550,18 +550,18 @@ global $thinkup_general_responsiveswitch;
 }
 
 function thinkup_input_responsivecss() {
-global $thinkup_general_responsiveswitch;
+global $thinkup_general_fixedlayoutswitch;
 	
-	if ( $thinkup_general_responsiveswitch == '1' ) {
+	if ( $thinkup_general_fixedlayoutswitch !== '1' ) {
 		wp_enqueue_style ( 'thinkup-responsive' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'thinkup_input_responsivecss', '12' );
 
 function thinkup_input_responsiveclass($classes){
-global $thinkup_general_responsiveswitch;
+global $thinkup_general_fixedlayoutswitch;
 
-	if ( $thinkup_general_responsiveswitch !== '1' ) {
+	if ( $thinkup_general_fixedlayoutswitch == '1' ) {
 		$classes[] = 'layout-fixed';
 	} else {
 		$classes[] = 'layout-responsive';	

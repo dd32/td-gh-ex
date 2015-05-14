@@ -398,9 +398,9 @@ function redux_setup_framework_options(){
 				),
 
 			array(
-				'title' => __('Enable Responsive Layout', 'redux-framework'), 
-				'subtitle' => __('Check to enable responsive layout.', 'redux-framework'),
-				'id'=>'thinkup_general_responsiveswitch',
+				'title' => __('Enable Fixed Layout', 'redux-framework'), 
+				'subtitle' => __('Check to enable fixed layout.<br />(i.e. Disable responsive layout)', 'redux-framework'),
+				'id'=>'thinkup_general_fixedlayoutswitch',
 				'type' => 'switch',
 				),
 

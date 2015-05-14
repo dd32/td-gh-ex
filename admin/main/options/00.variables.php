@@ -25,7 +25,7 @@ function thinkup_reduxvariables() {
 	$GLOBALS['thinkup_general_faviconlink']                 = thinkup_var ( 'thinkup_general_faviconlink', 'url' );
 	$GLOBALS['thinkup_general_layout']                      = thinkup_var ( 'thinkup_general_layout' );
 	$GLOBALS['thinkup_general_sidebars']                    = thinkup_var ( 'thinkup_general_sidebars' );
-	$GLOBALS['thinkup_general_responsiveswitch']            = thinkup_var ( 'thinkup_general_responsiveswitch' );
+	$GLOBALS['thinkup_general_fixedlayoutswitch']           = thinkup_var ( 'thinkup_general_fixedlayoutswitch' );
 	$GLOBALS['thinkup_general_customcss']                   = thinkup_var ( 'thinkup_general_customcss' );
 	$GLOBALS['thinkup_general_customjavafront']             = thinkup_var ( 'thinkup_general_customjavafront' );
 
