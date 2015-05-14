@@ -30,7 +30,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	add_action( 'wp_head', 'accesspress_mag_render_title' );
 endif;
 
-function accesspress_header_scripts(){
+function accesspress_mag_header_scripts(){
     
     $accesspress_mag_favicon = of_get_option('favicon_upload');
     if (!empty($accesspress_mag_favicon)) {
@@ -38,17 +38,19 @@ function accesspress_header_scripts(){
     }
 }
 
-add_action('wp_head', 'accesspress_header_scripts');
+add_action('wp_head', 'accesspress_mag_header_scripts');
 
- function accesspress_mag_admin_scripts(){
-    // Enqueue custom admin panel JS
-		wp_enqueue_script(
-			'accesspress-mag-custom-admin',
-			OPTIONS_FRAMEWORK_DIRECTORY . 'js/custom-admin.js',
-			array( 'jquery')
-			);    
+/*---------Enqueue custom admin panel JS---------------*/
+function accesspress_mag_admin_scripts(){
+    wp_enqueue_script('accesspress-mag-custom-admin', get_template_directory_uri(). '/inc/option-framework/js/custom-admin.js', array( 'jquery'));    
  }
- add_action('admin_enqueue_scripts','accesspress_mag_admin_scripts');
+add_action('admin_enqueue_scripts','accesspress_mag_admin_scripts');
+
+/*---------Enqueue admin css---------------*/
+function accesspress_mag_admin_css(){
+    wp_enqueue_style('accesspress-mag-admin', get_template_directory_uri(). '/inc/option-framework/css/accesspress-mag-admin.css');    
+}
+add_action('admin_head','accesspress_mag_admin_css');
 
 /*-----------------------Homepage slider--------------------------*/
 function accesspress_mag_slider_cb(){
@@ -153,136 +155,9 @@ function accesspress_mag_slider_script(){
 }
 add_action( 'wp_head', 'accesspress_mag_slider_script' );
 
-/*--------------------- Product Review for default posts in home page---------------------------*/
-function accesspress_mag_post_review_cb(){
-    global $post;
-    $post_review_type = get_post_meta( $post -> ID, 'product_review_option', true );
-    if( $post_review_type != 'norate' ){
-        $product_rating = get_post_meta($post -> ID, 'product_rating', true);
-        $count = count($product_rating);
-        $total_review = 0;
-        foreach ($product_rating as $key => $value) {
-            $star_value = $value[ 'feature_star' ];
-            $total_review = $total_review+$star_value;
-        }
-        $total_review = $total_review/$count;
-        //$final_value = round( $total_review, 1, PHP_ROUND_HALF_UP);
-        $final_value = ceiling($total_review, 0.5) ;
-        echo esc_html( display_product_rating($final_value) );
-    }
-}
-add_action( 'accesspress_mag_post_review', 'accesspress_mag_post_review_cb', 10 );
-
-/*--------------------- Product Review for single post-----------------------------*/
-
-function accesspress_mag_single_post_review_cb(){
-    global $post;
-    $trans_summary = of_get_option( 'trans_summary' );
-    if( empty( $trans_summary ) ){ $trans_summary = __( 'Summary', 'accesspress-mag' ); }
-    $trans_review = of_get_option( 'trans_review_overview' );
-    if( empty( $trans_review ) ){ $trans_review = __( 'Review overview', 'accesspress-mag' ) ; }
-    $post_review_type = get_post_meta( $post -> ID, 'product_review_option', true );
-    if($post_review_type!='norate'){
-        $product_rating_description = get_post_meta($post->ID, 'product_rate_description', true);
-        $product_rating = get_post_meta($post -> ID, 'product_rating', true);
-        if( !empty ( $product_rating ) ){
-    ?>
-        <div class="post-review-wrapper">
-            <span class="section-title"><?php echo esc_attr( $trans_review ) ;?></span>
-                <div class="stars-review-wrapper">
-                    <?php 
-                        $count = count($product_rating);
-                        $total_review = 0;
-                        foreach ($product_rating as $key => $value) {                    
-                        $featured_name = $value['feature_name'];
-                        $star_value = $value['feature_star'];
-                        if(empty($star_value)) $star_value = 0.5;
-                        $total_review = $total_review+$star_value;
-                    ?>
-                      <div class="review-featured-wrap clearfix">  
-                        <span class="review-featured-name"><?php echo esc_attr( $featured_name ); ?></span>
-                        <span class="stars-count"><?php esc_html( display_product_rating( $star_value ) );?></span>
-                      </div>
-                    <?php
-                        }
-                         $total_review = $total_review/$count;
-                         //$final_value = round( $total_review, 1);
-                         $final_value = ceiling($total_review, 0.5) ;                     
-                    ?>
-                </div>
-            <div class="summary-wrapper clearfix">
-                <div class="summary-details">
-                    <span class="summery-label"><?php echo esc_attr( $trans_summary ) ;?></span>
-                    <span class="summary-comments"><?php echo esc_textarea( $product_rating_description ); ?></span>
-                </div>
-                <div class="total-reivew-wrapper">
-                    <span class="total-value"><?php echo esc_attr( $final_value ) ;?></span>
-                    <span class="stars-count"><?php esc_html( display_product_rating( $final_value ) );?></span>
-                </div>
-            </div>
-        </div>
-    <?php
-        }
-    }
-}
-add_action( 'accesspress_mag_single_post_review', 'accesspress_mag_single_post_review_cb', 10 );
-
-
-if( !function_exists('ceiling') )
-{
-    function ceiling( $number, $significance = 1 )
-    {
-        return ( is_numeric( $number ) && is_numeric( $significance ) ) ? (ceil( $number/$significance )*$significance ) : false;
-    }
-}
-
-/**
- * 
- * Rating fuction
- * 
-*/
-function display_product_rating ( $number ) {
-    // Convert any entered number into a float
-    // Because the rating can be a decimal e.g. 4.5
-    if( empty( $number ) ){
-        $number = 0.5;
-    } else {
-        $number = number_format ( $number, 1 );
-    
-        // Get the integer part of the number
-        $intpart = floor ( $number );
-    
-        // Get the fraction part
-        $fraction = $number - $intpart;
-    
-        // Rating is out of 5
-        // Get how many stars should be left blank
-        $unrated = 5 - ceil ( $number );
-    
-        // Populate the full-rated stars
-        if ( $intpart <= 5 ) {
-            for ( $i=0; $i<$intpart; $i++ )
-    	    echo '<span class="star-value"><i class="fa fa-star"></i></span>';
-        }
-        
-        // Populate the half-rated star, if any
-        if ( $fraction == 0.5 ) {
-            echo '<span class="star-value"><i class="fa fa-star-half-o"></i></span>';        
-        }
-        
-        
-        // Populate the unrated stars, if any
-        if ( $unrated > 0 ) {
-            for ( $j=0; $j<$unrated; $j++ )
-    	    echo '<span class="star-value"><i class="fa fa-star-o"></i></span>';
-        }
-    }
-}
-
-
 /*--------------------- Post Views-------------------*/
 
-function getPostViews($postID){
+function accesspress_mag_getPostViews($postID){
     $count_key = 'post_views_count';
     $count = get_post_meta($postID, $count_key, true);
     if($count==''){
@@ -292,7 +167,8 @@ function getPostViews($postID){
     }
     return $count;
 }
-function setPostViews($postID) {
+
+function accesspress_mag_setPostViews($postID) {
     $count_key = 'post_views_count';
     $count = get_post_meta($postID, $count_key, true);
     if($count==''){
@@ -304,12 +180,13 @@ function setPostViews($postID) {
         update_post_meta($postID, $count_key, $count);
     }
 }
+
 // Remove issues with prefetching adding extra views
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0); 
 
 /*-----------------Dynamic Css-------------------*/
 
-function accesspress_pro_custom_css(){
+function accesspress_mag_custom_css(){
     $accesspress_mag_bg_image = of_get_option( 'site_background' );
     $accesspress_mag_bg_color = of_get_option( 'site_background_color' );
     $accesspress_mag_bg_reapet = of_get_option( 'repeat_background' );
@@ -329,7 +206,7 @@ function accesspress_pro_custom_css(){
             }  
 		echo '</style>';
 	}
-	add_action('wp_head','accesspress_pro_custom_css');
+	add_action('wp_head','accesspress_mag_custom_css');
 
 /*--------------Sidebar layout for post & pages----------------------*/
 function accesspress_mag_sidebar_layout_class($classes){
@@ -416,7 +293,7 @@ function accesspress_mag_post_meta_cb(){
         echo '<span class="comment_count"><i class="fa fa-comments"></i>'.esc_attr( $post_comment_count ).'</span>';
     }
     if($show_post_views==1){
-        echo '<span class="apmag-post-views"><i class="fa fa-eye"></i>'.esc_html( getPostViews(get_the_ID()) ).'</span>';
+        echo '<span class="apmag-post-views"><i class="fa fa-eye"></i>'.esc_html( accesspress_mag_getPostViews(get_the_ID()) ).'</span>';
     }
 }
 add_action( 'accesspress_mag_post_meta', 'accesspress_mag_post_meta_cb', 10 );
@@ -453,24 +330,24 @@ function accesspress_mag_home_posted_on_cb(){
         echo '<span class="comment_count"><i class="fa fa-comments"></i>'.esc_attr( $post_comment_count ).'</span>';
     }
     if($show_post_views==1){
-        echo '<span class="apmag-post-views"><i class="fa fa-eye"></i>'.esc_html( getPostViews(get_the_ID()) ).'</span>';
+        echo '<span class="apmag-post-views"><i class="fa fa-eye"></i>'.esc_html( accesspress_mag_getPostViews(get_the_ID()) ).'</span>';
     }
 }
 add_action( 'accesspress_mag_home_posted_on', 'accesspress_mag_home_posted_on_cb', 10 );
 
 /*-------------------Excerpt length---------------------*/
 
-function accesspress_customize_excerpt_more( $more ) {
+function accesspress_mag_customize_excerpt_more( $more ) {
 	return '...';
 }
-add_filter( 'excerpt_more', 'accesspress_customize_excerpt_more' );
+add_filter( 'excerpt_more', 'accesspress_mag_customize_excerpt_more' );
 
-function accesspress_word_count( $string, $limit ) {
+function accesspress_mag_word_count( $string, $limit ) {
 	$words = explode( ' ', $string );
 	return implode( ' ', array_slice( $words, 0, $limit ));
 }
 
-function accesspress_letter_count( $content, $limit ) {
+function accesspress_mag_letter_count( $content, $limit ) {
 	$striped_content = strip_tags( $content );
 	$striped_content = strip_shortcodes( $striped_content );
 	$limit_content = mb_substr( $striped_content, 0 , $limit );
@@ -489,16 +366,16 @@ function accesspress_mag_excerpt(){
     $excerpt_content = get_the_content($post -> ID);
     //$excerpt_content = get_post_field('post_content', $post -> ID);
     if( $excerpt_type == 'letters' ){
-        $excerpt_content = accesspress_letter_count( $excerpt_content, $excerpt_length );
+        $excerpt_content = accesspress_mag_letter_count( $excerpt_content, $excerpt_length );
     } else {
-        $excerpt_content = accesspress_word_count( $excerpt_content, $excerpt_length );
+        $excerpt_content = accesspress_mag_word_count( $excerpt_content, $excerpt_length );
     }
     echo '<p>'. $excerpt_content .'</p>';
 }
 
 /*---------------- BreadCrumb --------------------------*/
 
-	function accesspress_breadcrumbs() {
+	function accesspress_mag_breadcrumbs() {
 	  global $post;
       $trans_here = of_get_option( 'trans_you_are_here' );
       if( empty( $trans_here ) ){ $trans_here = __( 'You are here', 'accesspress-mag' ); }
@@ -617,12 +494,10 @@ function accesspress_mag_excerpt(){
 	  }
 	}
     
-
 /*--------------WooCommerce breadcrumbs---------------------*/
+add_filter( 'woocommerce_breadcrumb_defaults', 'accesspress_mag_woocommerce_breadcrumbs' ); 
 
-add_filter( 'woocommerce_breadcrumb_defaults', 'accesspress_woocommerce_breadcrumbs' ); 
-
-function accesspress_woocommerce_breadcrumbs() { 
+function accesspress_mag_woocommerce_breadcrumbs() { 
 $seperator = ' <span class="bread_arrow"> > </span> ';    
 //$seperator =of_get_option( 'breadcrumb_seperator' ); 
 $trans_home = of_get_option( 'trans_home' );
@@ -642,12 +517,13 @@ return array(
 ); 
 } 
 
-add_action( 'init', 'accesspress_remove_wc_breadcrumbs' ); 
-function accesspress_remove_wc_breadcrumbs() { 
+add_action( 'init', 'accesspress_mag_remove_wc_breadcrumbs' ); 
+function accesspress_mag_remove_wc_breadcrumbs() { 
 remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 ); 
 } 
+
 $accesspress_show_breadcrumb = of_get_option( 'show_hide_breadcrumbs' ); 
-if((function_exists('accesspress_woocommerce_breadcrumbs') && $accesspress_show_breadcrumb == 1)) { 
+if((function_exists('accesspress_mag_woocommerce_breadcrumbs') && $accesspress_show_breadcrumb == 1)) { 
 add_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 10, 0 ); 
 } 
 
@@ -656,12 +532,11 @@ add_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 10, 0 )
 function accesspress_mag_bbp_no_breadcrumb ($arg){
     return true ;
 }
-
 add_filter('bbp_no_breadcrumb', 'accesspress_mag_bbp_no_breadcrumb' );
 
 /*--------------Install Required Plugins----------------------*/
 
-function accesspress_required_plugins() {
+function accesspress_mag_required_plugins() {
     /**
      * Array of plugin arrays. Required keys are name and slug.
      * If the source is NOT from the .org repo, then source is also required.
@@ -674,29 +549,29 @@ function accesspress_required_plugins() {
             'name'      => __( 'Newsletter', 'accesspress-mag' ), //The plugin name
             'slug'      => 'newsletter',  // The plugin slug (typically the folder name)
             'required'  => true,  // If false, the plugin is only 'recommended' instead of required.
-            'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-            'force_deactivation' => true, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+            'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+            'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
             ),
          array(
             'name'      => __( 'AccessPress Social Icons', 'accesspress-mag' ), //The plugin name
             'slug'      => 'accesspress-social-icons',  // The plugin slug (typically the folder name)
             'required'  => true,  // If false, the plugin is only 'recommended' instead of required.
-            'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-            'force_deactivation' => true, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+            'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+            'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
             ),
          array(
             'name'      => __( 'AccessPress Social Counter', 'accesspress-mag' ), //The plugin name
             'slug'      => 'accesspress-social-counter',  // The plugin slug (typically the folder name)
             'required'  => true,  // If false, the plugin is only 'recommended' instead of required.
-            'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-            'force_deactivation' => true, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+            'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+            'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
             ),
          array(
             'name'      => __( 'AccessPress Social Share', 'accesspress-mag' ), //The plugin name
             'slug'      => 'accesspress-social-share',  // The plugin slug (typically the folder name)
             'required'  => true,  // If false, the plugin is only 'recommended' instead of required.
-            'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-            'force_deactivation' => true, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+            'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+            'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
             ),         
     );
 
@@ -738,11 +613,4 @@ function accesspress_required_plugins() {
     );
     tgmpa( $plugins, $config );
 }
-add_action( 'tgmpa_register', 'accesspress_required_plugins' );
-
-
-/*---------Enqueue admin css---------------*/
-function accesspress_mag_admin_css(){
-    wp_enqueue_style('accesspress-mag-admin', get_template_directory_uri(). '/inc/option-framework/css/accesspress-mag-admin.css');    
-}
-add_action('admin_head','accesspress_mag_admin_css');
+add_action( 'tgmpa_register', 'accesspress_mag_required_plugins' );

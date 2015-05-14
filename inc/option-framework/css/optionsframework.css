@@ -293,17 +293,14 @@
 	margin-bottom: 0;
 }
 .apmag-themeoption .theme-header {
-    background: none repeat scroll 0 0 #808080;
+    background: #808080;
     border: 1px solid #eee;
     border-left: none;
     border-right: none;
-    float: left;
     padding: 20px;
-    width: calc(100% - 40px);
 }
 .apmag-themeoption .accesspress-mag-logo {
 	float: left;
-    padding-top: 19px; 
 }
 .apmag-themeoption .theme-name{
 	color: #EEE;
@@ -321,9 +318,7 @@
 }
 
 .wrap.apmag-themeoption {
-    background: none repeat scroll 0 0 #555;
-    float: left;
-    width: 1135px;
+    width: auto;
     clear: both;
 }
 .apmag-themeoption #optionsframework{
@@ -430,7 +425,8 @@
 	float: left;
 	line-height: 28px;
 	margin: 0;
-	width: 200px;
+	width: 180px;
+	padding-right: 20px;
 }
 .apmag-themeoption .group h3{
 	display: none;
@@ -470,6 +466,9 @@
 	margin-bottom: 10px;
 	max-width: 100%;
 }
+.apmag-themeoption #optionsframework .section .explain br{
+	margin-bottom: 5px;
+}
 .apmag-themeoption #optionsframework .section .controls{
 	width: 100%;
 }
@@ -487,4 +486,17 @@
     border-top: 1px solid #CCC;
     box-shadow: 1px 0 4px 0 rgba(0, 0, 0, 0.1);
     padding: 20px;
+}
+.appearance_page_ap-theme-options div.error, 
+.appearance_page_ap-theme-options div.updated{
+	margin-left: 0;
+}
+.clearfix:after,
+.clearfix:before{
+	display: table;
+	content: "";
+
+}
+.clearfix:after{
+	clear: both;
 }

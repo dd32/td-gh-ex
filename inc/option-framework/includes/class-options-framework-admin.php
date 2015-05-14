@@ -91,7 +91,7 @@ class Options_Framework_Admin {
 			'page_title' => __( 'Theme Options', 'accesspress-mag' ),
 			'menu_title' => __( 'Theme Options', 'accesspress-mag' ),
 			'capability' => 'edit_theme_options',
-			'menu_slug' => 'options-framework',
+			'menu_slug' => 'ap-theme-options',
 			'parent_slug' => 'themes.php',
 
             // Menu default settings

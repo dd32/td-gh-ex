@@ -47,6 +47,14 @@ class Options_Framework_Interface {
 	static function optionsframework_fields() {
 
 		global $allowedtags;
+		
+		$allowedtags['a'] = array(
+			'href' => true,
+			'title' => true,
+			'target' => true
+			); 
+
+		$allowedtags['br'] = true;
 
 		$options_framework = new Options_Framework;
 		$option_name = $options_framework->get_option_name();

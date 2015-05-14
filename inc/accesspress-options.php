@@ -54,10 +54,10 @@ function optionsframework_options() {
     
     //Footer Pattern
 	$footer_pattern = array(
-        'column4' => $imagepath . 'footers/footer-4.png',
-        'column3' => $imagepath . 'footers/footer-3.png',
-		'column2' => $imagepath . 'footers/footer-2.png', 
-        'column1' => $imagepath . 'footers/footer-1.png',
+        'column4' => $imagepath . 'footers/accesspress-mag-footer-4.png',
+        'column3' => $imagepath . 'footers/accesspress-mag-footer-3.png',
+		'column2' => $imagepath . 'footers/accesspress-mag-footer-2.png', 
+        'column1' => $imagepath . 'footers/accesspress-mag-footer-1.png',
 		   
 		);
         
@@ -385,10 +385,9 @@ function optionsframework_options() {
 
     $options[] = array(
             'name' => __( 'Your Header Ad', 'accesspress-mag' ),
-            'desc' => __( 'Use your banner image (728x90) ( &lt; a href="(your image link)"&gt; &lt; img scr="(your image source)" /&gt; &lt;/a&gt; )', 'accesspress-mag' ),
+            'desc' => sprintf(__( 'Go to <a href="%s" target="_blank">Widget Page</a> to add Header Ads <br> Ads Size : 728x90px <br> Sidebar Name: Header Ad ', 'accesspress-mag' ), esc_url(admin_url('/widgets.php'))),
             'id' => 'value_header_ad',
-            'std' => __('', 'accesspress-mag'),
-            'type' => 'textarea' 
+            'type' => 'info' 
             );
             
     $options[] = array(
@@ -402,10 +401,9 @@ function optionsframework_options() {
             );
     $options[] = array(
             'name' => __( 'Your Article Ad', 'accesspress-mag' ),
-            'desc' => __( 'Use your banner image (728x90) ( &lt; a href="(your image link)"&gt; &lt; img scr="(your image source)" /&gt; &lt;/a&gt; )', 'accesspress-mag' ),
+            'desc' => sprintf(__( 'Go to <a href="%s" target="_blank">Widget Page</a> to add Article Ad <br> Ads Size : 728x90px <br> Sidebar Name: Article Ad ', 'accesspress-mag' ), esc_url(admin_url('/widgets.php'))),
             'id' => 'value_article_ad',
-            'std' => __('', 'accesspress-mag'),
-            'type' => 'textarea' 
+            'type' => 'info' 
             );            
     $options[] = array(
             'type' => 'groupend'
@@ -417,24 +415,21 @@ function optionsframework_options() {
             );
     $options[] = array(
             'name' => __( 'Your Homepage Inline Ad', 'accesspress-mag' ),
-            'desc' => __( 'Use your banner image (728x90) ( &lt; a href="(your image link)"&gt; &lt; img scr="(your image source)" /&gt; &lt;/a&gt; )', 'accesspress-mag' ),
+            'desc' => sprintf(__( 'Go to <a href="%s" target="_blank">Widget Page</a> to add Homepage Inline Ad <br> Ads Size : 728x90px <br> Sidebar Name: Homepage Inline Ad ', 'accesspress-mag' ), esc_url(admin_url('/widgets.php'))),
             'id' => 'value_homepage_inline_ad',
-            'std' => __('', 'accesspress-mag'),
-            'type' => 'textarea' 
+            'type' => 'info' 
             );
     $options[] = array(
             'name' => __( 'Your Homepage Sidebar Top Ad', 'accesspress-mag' ),
-            'desc' => __( 'Use your banner image (300x250) ( &lt; a href="(your image link)"&gt; &lt; img scr="(your image source)" /&gt; &lt;/a&gt; )', 'accesspress-mag' ),
+            'desc' => sprintf(__( 'Go to <a href="%s" target="_blank">Widget Page</a> to add Homepage Sidebar Top Ad <br> Ads Size : 300x250px <br> Sidebar Name: Homepage Sidebar Top Ad ', 'accesspress-mag' ), esc_url(admin_url('/widgets.php'))),
             'id' => 'value_sidebar_top_ad',
-            'std' => __('', 'accesspress-mag'),
-            'type' => 'textarea' 
+            'type' => 'info' 
             );
     $options[] = array(
             'name' => __( 'Your Homepage Sidebar Middle Ad', 'accesspress-mag' ),
-            'desc' => __( 'Use your banner image (300x250) ( &lt; a href="(your image link)"&gt; &lt; img scr="(your image source)" /&gt; &lt;/a&gt; )', 'accesspress-mag' ),
+            'desc' => sprintf(__( 'Go to <a href="%s" target="_blank">Widget Page</a> to add Homepage Sidebar Middle Ad <br> Ads Size : 300x250px <br> Sidebar Name: Homepage Sidebar Middle Ad ', 'accesspress-mag' ), esc_url(admin_url('/widgets.php'))),
             'id' => 'value_sidebar_middle_ad',
-            'std' => __('', 'accesspress-mag'),
-            'type' => 'textarea' 
+            'type' => 'info' 
             );
     $options[] = array(
             'type' => 'groupend'

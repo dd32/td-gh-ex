@@ -7,7 +7,6 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
         <?php 
-            $article_ad = of_get_option('value_article_ad');
             $show_featured_image = of_get_option('featured_image');
         ?>
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
@@ -37,7 +36,12 @@
         </div>
 		<div class="post_content"><?php the_content(); ?></div>   
         
-        <?php if(!empty($article_ad)):?> <div class="article-ad-section"><?php echo  wp_kses_post( $article_ad ) ; ?></div> <?php endif ;?>
+        <?php if ( is_active_sidebar( 'accesspress-mag-article-ad' ) ) : ?>
+            <div class="article-ad-section">
+                <?php dynamic_sidebar( 'accesspress-mag-article-ad' ); ?> 
+            </div>
+        <?php endif; ?>
+
 		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'accesspress-mag' ),

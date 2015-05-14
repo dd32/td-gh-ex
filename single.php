@@ -25,8 +25,8 @@ else {
 ?>
 <div class="apmag-container">
     <?php
-        if ( (function_exists( 'accesspress_breadcrumbs' ) && $accesspress_mag_show_breadcrumbs == 1 && $accesspress_mag_show_breadcrumbs_on_post == 1 ) ) {
-    	    accesspress_breadcrumbs();
+        if ( (function_exists( 'accesspress_mag_breadcrumbs' ) && $accesspress_mag_show_breadcrumbs == 1 && $accesspress_mag_show_breadcrumbs_on_post == 1 ) ) {
+    	    accesspress_mag_breadcrumbs();
         }
     ?>
 	<div id="primary" class="content-area">
@@ -68,7 +68,7 @@ else {
 				endif;
 			?>
             
-            <?php setPostViews(get_the_ID()); ?>
+            <?php accesspress_mag_setPostViews(get_the_ID()); ?>
 
 		<?php endwhile; // end of the loop. ?>
 

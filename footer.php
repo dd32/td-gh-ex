@@ -25,30 +25,30 @@
     
         <?php 
             if($accesspress_mag_show_footer_switch!='0'){
-            if ( is_active_sidebar( 'footer-1' ) ||  is_active_sidebar( 'footer-2' )  || is_active_sidebar( 'footer-3' ) || is_active_sidebar( 'footer-4' )  ) : ?>
+            if ( is_active_sidebar( 'accesspress-mag-footer-1' ) ||  is_active_sidebar( 'accesspress-mag-footer-2' )  || is_active_sidebar( 'accesspress-mag-footer-3' ) || is_active_sidebar( 'accesspress-mag-footer-4' )  ) : ?>
 			<div class="top-footer footer-<?php echo esc_attr($accesspress_mag_footer_layout); ?>">
     			<div class="apmag-container">
                     <div class="footer-block-wrapper clearfix">
         				<div class="footer-block-1 footer-block wow fadeInLeft" data-wow-delay="0.5s">
-        					<?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
-        						<?php dynamic_sidebar( 'footer-1' ); ?>
+        					<?php if ( is_active_sidebar( 'accesspress-mag-footer-1' ) ) : ?>
+        						<?php dynamic_sidebar( 'accesspress-mag-footer-1' ); ?>
         					<?php endif; ?>
         				</div>
         
         				<div class="footer-block-2 footer-block wow fadeInLeft" data-wow-delay="0.8s" style="display: <?php if( $accesspress_mag_footer_layout == 'column1' ){ echo 'none'; } else { echo 'block'; }?>;">
-        					<?php if ( is_active_sidebar( 'footer-2' ) ) : ?>
-        						<?php dynamic_sidebar( 'footer-2' ); ?>
+        					<?php if ( is_active_sidebar( 'accesspress-mag-footer-2' ) ) : ?>
+        						<?php dynamic_sidebar( 'accesspress-mag-footer-2' ); ?>
         					<?php endif; ?>	
         				</div>
         
         				<div class="footer-block-3 footer-block wow fadeInLeft" data-wow-delay="1.2s" style="display: <?php if ( $accesspress_mag_footer_layout == 'column1' || $accesspress_mag_footer_layout == 'column2' ){ echo 'none'; } else { echo 'block'; } ?>;">
-        					<?php if ( is_active_sidebar( 'footer-3' ) ) : ?>
-        						<?php dynamic_sidebar( 'footer-3' ); ?>
+        					<?php if ( is_active_sidebar( 'accesspress-mag-footer-3' ) ) : ?>
+        						<?php dynamic_sidebar( 'accesspress-mag-footer-3' ); ?>
         					<?php endif; ?>	
         				</div>
                         <div class="footer-block-4 footer-block wow fadeInLeft" data-wow-delay="1.2s" style="display: <?php if ( $accesspress_mag_footer_layout != 'column4' ){ echo 'none'; } else { echo 'block'; }?>;">
-        					<?php if ( is_active_sidebar( 'footer-4' ) ) : ?>
-        						<?php dynamic_sidebar( 'footer-4' ); ?>
+        					<?php if ( is_active_sidebar( 'accesspress-mag-footer-4' ) ) : ?>
+        						<?php dynamic_sidebar( 'accesspress-mag-footer-4' ); ?>
         					<?php endif; ?>	
         				</div>
                     </div> <!-- footer-block-wrapper -->

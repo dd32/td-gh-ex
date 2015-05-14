@@ -91,7 +91,7 @@ if ( post_password_required() ) {
 		),
 
 		'comment_field' => '<div class="cmm-box-right"><div class="control-group"><div class="controls">' .
-		'<textarea id="comment" name="comment" placeholder="'._( 'Comment *', 'accesspress-mag' ).'" cols="45" rows="8" aria-required="true"></textarea>' .
+		'<textarea id="comment" name="comment" placeholder="'.__( 'Comment *', 'accesspress-mag' ).'" cols="45" rows="8" aria-required="true"></textarea>' .
 		'</div></div></div> <div class="clearfix"> </div>',
 		'comment_notes_after' => '',
 		'comment_notes_before' => '',

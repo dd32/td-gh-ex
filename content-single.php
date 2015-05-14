@@ -8,7 +8,6 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
         <?php 
-            $article_ad = of_get_option( 'value_article_ad' );
             $show_featured_image = of_get_option( 'featured_image' );
             $trans_share = of_get_option( 'trans_share_this_article' );
             if( empty( $trans_share ) ){ $trans_share = __( 'Share This Article', 'accesspress-mag' ); }
@@ -39,7 +38,11 @@
                 ?>
             </div>
         <div class="post_content"><?php the_content(); ?></div>	        	
-        <?php if( !empty( $article_ad )):?> <div class="article-ad-section"><?php echo  wp_kses_post( $article_ad ) ; ?></div> <?php endif ;?>
+        <?php if ( is_active_sidebar( 'article_ad' ) ) : ?>
+            <div class="article-ad-section">
+            <?php dynamic_sidebar( 'article_ad' ); ?> 
+            </div> 
+        <?php endif ;?>
 		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'accesspress-mag' ),

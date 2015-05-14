@@ -112,16 +112,13 @@
                  </div><!-- .site-branding -->
         		
                 
-                <div class="header-ad">
-                    <?php 
-                        $accesspress_mag_header_ad = of_get_option( 'value_header_ad' );
-                        if(!empty($accesspress_mag_header_ad)){
-                            echo wp_kses_post( $accesspress_mag_header_ad );
-                        } else {
-                            echo '<img src="'. esc_url( get_template_directory_uri().'/images/demo-images/728-90.png' ).'" />';
-                        } 
-                    ?>
-                </div><!--header ad-->
+                
+                <?php if ( is_active_sidebar( 'accesspress-mag-header-ad' ) ) : ?>
+                    <div class="header-ad">
+                        <?php dynamic_sidebar( 'accesspress-mag-header-ad' ); ?> 
+                    </div><!--header ad-->
+                <?php endif; ?>
+                
             </div>
         </div>
 

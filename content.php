@@ -13,7 +13,7 @@
             <?php 
                 if( is_author() || is_tag() || is_archive() || is_home() ){
                     $post_categories = get_the_category_list();
-                    echo esc_attr( $post_categories );
+                    echo $post_categories;
                 }
             ?>
 			<?php accesspress_mag_posted_on(); ?>

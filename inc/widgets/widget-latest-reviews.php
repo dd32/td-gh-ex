@@ -106,7 +106,7 @@ class Accesspress_mag_latest_review_posts extends WP_Widget {
                                     <div class="stars-ratings"><?php do_action('accesspress_mag_post_review');?></div>
                             
                                 <div class="block-poston"><?php do_action('accesspress_mag_home_posted_on');?></div>
-                                <div class="post-content"><?php echo '<p>'. accesspress_word_count(get_the_content(),25) .'</p>' ;?></div>
+                                <div class="post-content"><?php echo '<p>'. accesspress_mag_word_count(get_the_content(),25) .'</p>' ;?></div>
                         </div>
                     <?php else:?>
                         <div class="single-review clearfix">

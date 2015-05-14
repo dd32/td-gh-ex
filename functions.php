@@ -75,14 +75,6 @@ function accesspress_mag_setup() {
 	add_theme_support( 'post-formats', array(
 		'aside', 'image', 'video', 'quote', 'link', 'audio',
 	) );
-
-	// Set up the WordPress core custom background feature.
-	/*
-    add_theme_support( 'custom-background', apply_filters( 'accesspress_mag_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
-    */
 }
 endif; // accesspress_mag_setup
 add_action( 'after_setup_theme', 'accesspress_mag_setup' );
@@ -95,7 +87,7 @@ add_action( 'after_setup_theme', 'accesspress_mag_setup' );
 function accesspress_mag_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'accesspress-mag' ),
-		'id'            => 'sidebar-1',
+		'id'            => 'accesspress-mag-sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -135,7 +127,7 @@ function accesspress_mag_widgets_init() {
     
     register_sidebar( array(
 		'name'          => __( 'Footer 1', 'accesspress-mag' ),
-		'id'            => 'footer-1',
+		'id'            => 'accesspress-mag-footer-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -145,7 +137,7 @@ function accesspress_mag_widgets_init() {
     
     register_sidebar( array(
 		'name'          => __( 'Footer 2', 'accesspress-mag' ),
-		'id'            => 'footer-2',
+		'id'            => 'accesspress-mag-footer-2',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -155,7 +147,7 @@ function accesspress_mag_widgets_init() {
     
     register_sidebar( array(
 		'name'          => __( 'Footer 3', 'accesspress-mag' ),
-		'id'            => 'footer-3',
+		'id'            => 'accesspress-mag-footer-3',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -165,17 +157,7 @@ function accesspress_mag_widgets_init() {
     
     register_sidebar( array(
 		'name'          => __( 'Footer 4', 'accesspress-mag' ),
-		'id'            => 'footer-4',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title"><span>',
-		'after_title'   => '</span></h1>',
-	) );
-    
-    register_sidebar( array(
-		'name'          => __( 'Right Sidebar', 'accesspress-mag' ),
-		'id'            => 'sidebar-right',
+		'id'            => 'accesspress-mag-footer-4',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -185,7 +167,67 @@ function accesspress_mag_widgets_init() {
     
     register_sidebar( array(
 		'name'          => __( 'Left Sidebar', 'accesspress-mag' ),
-		'id'            => 'sidebar-left',
+		'id'            => 'accesspress-mag-sidebar-left',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title"><span>',
+		'after_title'   => '</span></h1>',
+	) );
+	
+    register_sidebar( array(
+		'name'          => __( 'Right Sidebar', 'accesspress-mag' ),
+		'id'            => 'accesspress-mag-sidebar-right',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title"><span>',
+		'after_title'   => '</span></h1>',
+	) );
+    
+    register_sidebar( array(
+		'name'          => __( 'Header Ad ', 'accesspress-mag' ),
+		'id'            => 'accesspress-mag-header-ad ',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title"><span>',
+		'after_title'   => '</span></h1>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Article Ad', 'accesspress-mag' ),
+		'id'            => 'accesspress-mag-article-ad',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title"><span>',
+		'after_title'   => '</span></h1>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Homepage Inline Ad', 'accesspress-mag' ),
+		'id'            => 'accesspress-mag-homepage-inline-ad',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title"><span>',
+		'after_title'   => '</span></h1>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Homepage Sidebar Top Ad', 'accesspress-mag' ),
+		'id'            => 'accesspress-mag-homepage-sidebar-top-ad',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title"><span>',
+		'after_title'   => '</span></h1>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Homepage Sidebar Middle Ad', 'accesspress-mag' ),
+		'id'            => 'accesspress-mag-homepage-sidebar-middle-ad',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -222,17 +264,11 @@ function accesspress_mag_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'accesspress_mag_scripts' );
 
-/**
- * Implement the Custom Header feature.
- */
-//require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Framework path
  */
 require get_template_directory().'/inc/option-framework/options-framework.php';
-
-define('OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri(). '/inc/option-framework/');
 
 /**
  * Custom functions that act independently of the theme templates.
@@ -274,3 +310,4 @@ require get_template_directory() . '/inc/accesspress-widgets.php';
  */
 require get_template_directory() . '/inc/accesspress-plugin-activation.php';
 
+define('OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri(). '/inc/option-framework/');
