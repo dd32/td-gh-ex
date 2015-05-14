@@ -72,6 +72,30 @@ function ct_ignite_add_customizer_content( $wp_customize ) {
         <?php }
     }
 
+	// create ad controls
+	class ignite_description_color_control extends WP_Customize_Control {
+
+		public function render_content() {
+			$link = 'https://www.competethemes.com/ignite-plus/';
+			echo "<p>" . sprintf( __('Activate <a target="_blank" href="%s">Ignite Plus</a> to change your colors.', 'ignite'), $link ) . "</p>";
+		}
+	}
+	class ignite_description_header_image_control extends WP_Customize_Control {
+
+		public function render_content() {
+			$link = 'https://www.competethemes.com/ignite-plus/';
+			echo "<p>" . sprintf( __('Activate <a target="_blank" href="%s">Ignite Plus</a> to add a header image.', 'ignite'), $link ) . "</p>";
+		}
+	}
+	class ignite_description_navigation_style_control extends WP_Customize_Control {
+
+		public function render_content() {
+			$link = 'https://www.competethemes.com/ignite-plus/';
+			echo "<p>" . sprintf( __('Activate <a target="_blank" href="%s">Ignite Plus</a> to change your menu style.', 'ignite'), $link ) . "</p>";
+		}
+	}
+
+
     /***** Add Panels *****/
 
 	if( method_exists( 'WP_Customize_Manager', 'add_panel' ) ) {
@@ -266,9 +290,15 @@ function ct_ignite_add_customizer_content( $wp_customize ) {
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'ct_ignite_sanitize_layout_settings',
     ) );
+
+	$ignite_plus = 'https://www.competethemes.com/ignite-plus/';
+
+	$description_layout = sprintf( __('Want more layouts? <a target="_blank" href="%s">Check out Ignite Plus</a>', 'ignite'), $ignite_plus );
+
     // control
     $wp_customize->add_control( 'ct_ignite_sidebar_layout', array(
         'label'          => __( 'Pick Your Layout:', 'ignite' ),
+	    'description'    => $description_layout,
         'section'        => 'ct-layout',
         'settings'       => 'ct_ignite_layout_settings',
         'type'           => 'radio',
@@ -295,15 +325,19 @@ function ct_ignite_add_customizer_content( $wp_customize ) {
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'ct_ignite_sanitize_google_font_family'
     ) );
+
+	$description_font = sprintf( __('Want more fonts? <a target="_blank" href="%s">Check out Ignite Plus</a>', 'ignite'), $ignite_plus );
+
     // control
     $wp_customize->add_control( 'ct_ignite_font_family_settings', array(
-        'type'     => 'select',
-        'label'    => __( 'Site Font Family', 'ignite' ),
-        'section'  => 'ct-font-family',
-        'choices'  => array(
-            'Lusitana' => 'Lusitana',
-            'Roboto' => 'Roboto',
-            'Lato' => 'Lato',
+        'type'        => 'select',
+        'label'       => __( 'Site Font Family', 'ignite' ),
+	    'description' => $description_font,
+        'section'     => 'ct-font-family',
+        'choices'     => array(
+            'Lusitana'    => 'Lusitana',
+            'Roboto'      => 'Roboto',
+            'Lato'        => 'Lato',
             'Droid Serif' => 'Droid Serif',
             'Roboto Slab' => 'Roboto Slab'
         )
@@ -352,13 +386,17 @@ function ct_ignite_add_customizer_content( $wp_customize ) {
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_hex_color',
     ) );
+
+	$description_background = sprintf( __('Want background textures and images? <a target="_blank" href="%s">Check out Ignite Plus</a>', 'ignite'), $ignite_plus );
+
     // control
     $wp_customize->add_control( new WP_Customize_Color_Control(
         $wp_customize, 'ct_ignite_background_color', array(
-            'label'      => __( 'Background Color', 'ignite' ),
-            'section'    => 'ct-background',
-            'settings'   => 'ct_ignite_background_color_setting',
-            'priority'       => 10,
+            'label'       => __( 'Background Color', 'ignite' ),
+		    'description' => $description_background,
+            'section'     => 'ct-background',
+            'settings'    => 'ct_ignite_background_color_setting',
+            'priority'    => 10,
         )
     ) );
 
@@ -652,6 +690,76 @@ function ct_ignite_add_customizer_content( $wp_customize ) {
             'type' => 'number',
         )
     ) );
+
+	/*
+	 * PRO only sections
+	 */
+
+	/***** Colors *****/
+
+	// section
+	$wp_customize->add_section( 'ignite_colors', array(
+		'title'      => __( 'Colors', 'ignite' ),
+		'priority'   => 35,
+		'capability' => 'edit_theme_options'
+	) );
+	// setting
+	$wp_customize->add_setting( 'colors_ad', array(
+		'type'              => 'theme_mod',
+		'capability'        => 'edit_theme_options',
+		'sanitize_callback' => 'absint',
+	) );
+	// control
+	$wp_customize->add_control( new ignite_description_color_control(
+		$wp_customize, 'colors_ad', array(
+			'section'        => 'ignite_colors',
+			'settings'       => 'colors_ad'
+		)
+	) );
+
+	/***** Header Image *****/
+
+	// section
+	$wp_customize->add_section( 'ignite_header_image', array(
+		'title'      => __( 'Header Image', 'ignite' ),
+		'priority'   => 34,
+		'capability' => 'edit_theme_options'
+	) );
+	// setting
+	$wp_customize->add_setting( 'header_image_ad', array(
+		'type'              => 'theme_mod',
+		'capability'        => 'edit_theme_options',
+		'sanitize_callback' => 'absint',
+	) );
+	// control
+	$wp_customize->add_control( new ignite_description_header_image_control(
+		$wp_customize, 'header_image_ad', array(
+			'section'        => 'ignite_header_image',
+			'settings'       => 'header_image_ad'
+		)
+	) );
+
+	/***** Navigation Style *****/
+
+	// section
+	$wp_customize->add_section( 'ignite_navigation_style', array(
+		'title'      => __( 'Navigation Style', 'ignite' ),
+		'priority'   => 90,
+		'capability' => 'edit_theme_options'
+	) );
+	// setting
+	$wp_customize->add_setting( 'navigation_style_ad', array(
+		'type'              => 'theme_mod',
+		'capability'        => 'edit_theme_options',
+		'sanitize_callback' => 'absint',
+	) );
+	// control
+	$wp_customize->add_control( new ignite_description_navigation_style_control(
+		$wp_customize, 'navigation_style_ad', array(
+			'section'        => 'ignite_navigation_style',
+			'settings'       => 'navigation_style_ad'
+		)
+	) );
 }
 
 /***** Custom Sanitization Functions *****/
@@ -861,7 +969,7 @@ function ct_ignite_customize_preview_js() {
 
     ?>
 	<script>
-		jQuery('#customize-info').append('<div class="upgrades-ad"><a href="https://www.competethemes.com/ignite-plus/" target="_blank">View the Ignite Plus Upgrade <span>&rarr;</span></a></div>');
+		jQuery('#customize-info').prepend('<div class="upgrades-ad"><a href="https://www.competethemes.com/ignite-plus/" target="_blank">View the Ignite Plus Upgrade <span>&rarr;</span></a></div>');
 	</script>
 <?php }
 add_action('customize_controls_print_footer_scripts', 'ct_ignite_customize_preview_js');
