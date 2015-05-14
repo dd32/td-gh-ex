@@ -21,3 +21,5 @@ bb10 has theme options page:Go into your Wordpress Admin, navigate to 'Appearanc
 == Changelog ==
 2015.04.30	bb10 is comming.
 2015.05.09	bb10 for WordPress official Theme comming.
+2015.05.13	Fix wp-caption CSS.
+2015.05.14	Add default background.

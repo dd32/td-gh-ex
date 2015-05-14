@@ -6,7 +6,7 @@ Author URI: http://hjyl.org/
 Description: The theme from blackberry 10. simple and beautiful.based on HTML5 and CSS3.
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Version: 1.0
+Version: 1.1
 Tags: black, two-columns, theme-options, custom-menu, right-sidebar, editor-style, sticky-post, fixed-layout
 */
 @import url("font-awesome.min.css");
@@ -100,7 +100,7 @@ body{
 	color:#FFF;
 	word-wrap: break-word;
 	position:relative;
-	background:#000;
+	background:url("../images/bb10.png") repeat fixed center top #000;
 }
 article,
 aside,
@@ -195,13 +195,11 @@ img.aligncenter {
 	margin-bottom: 12px;
 }
 .wp-caption {
-	background-color: #F3F3F3;
-	border: 1px solid #DDDDDD;
-	border-radius: 3px 3px 3px 3px;
 	box-shadow:inset 0px 0px 1px #fff;
 	max-width: 100%;
 	padding-top: 4px;
 	text-align: center;
+	position:relative;
 }
 .wp-caption img {
 	margin: 5px 5px 0;
@@ -285,6 +283,8 @@ blockquote{
 	margin:10px 5px;
 	position:relative;
 }
+.wp-caption:before,
+.wp-caption:after,
 blockquote:before,
 blockquote:after{
 	content: "";
@@ -294,12 +294,14 @@ blockquote:after{
 	position: absolute;
 	z-index:-1;
 }
+.wp-caption:before,
 blockquote:before{
     border-top: 1px solid #FFF;
     border-left: 1px solid #FFF;
 	top: 0;
 	left: 0;	
 }
+.wp-caption:after,
 blockquote:after{
     border-bottom: 1px solid #FFF;
     border-right: 1px solid #FFF;
@@ -342,7 +344,6 @@ pre{
 #hjyl_header h1{
 	font-size:90px;
 	font-weight:bold;
-	text-shadow:1px 1px 1px #000;
 }
 #hjyl_header h1 a{
 	text-decoration:none;
@@ -380,7 +381,7 @@ pre{
 	-moz-transform:rotate(135deg); 	/* Firefox */
 	-webkit-transform:rotate(135deg); /* Safari 和 Chrome */
 	-o-transform:rotate(135deg); 	/* Opera */
-    background: none repeat scroll 0 0 #000;
+    background: #464D57;
     border-bottom: 1px solid #FFF;
     border-right: 1px solid #FFF;
 	width:13px;
