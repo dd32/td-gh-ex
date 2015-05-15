@@ -21,6 +21,12 @@ Please note that changing the colors of the theme can affect accessibility.
 
 
 == Change log ==
+Version 1.9, 2015-05-15
+Added new settings to help you position the header background image.
+Added a new landing page template that only displays the header ( Note: this template does not display your page content).
+Updated the documentation and language files.
+
+
 Version 1.8, 2015-05-11
 Added options to change the text-and background color of the Highlights.
 
@@ -57,6 +63,7 @@ languages/ -contains language files.
 inc/ -contains the template tag and customizer files.
 fonts/ -contains Font Awesome files.
 js/ -contains javscript
+templates/ -contains page templates
 
 == Resources Used In This Theme ==
 Aaron is a derivative work of:

@@ -77,7 +77,10 @@ function aaron_docs() {
 				<li><?php _e('Hide the highlights','aaron' )?></li>
 			</ul>
 			<?php _e('<b>Tagline:</b> You will find an option to hide your tagline in the customizer.','aaron' )?><br>
-			<?php _e('<b>Background:</b> You can change the background image or background color in the customizer.','aaron' )?> <br><br>
+			<?php _e('<b>Header Background:</b> You can change the background image or background color in the customizer.','aaron' )?> <br><br>
+			<?php _e('<b>Custom Landing page:</b> To use the custom landing page template, create a new page and select the template under Page Attributes. Then set your new page as your static front page in the customizer or under Settings > Reading.','aaron' )?><br>
+			<?php _e('<b>Please note:</b> The landing page template only shows your header, it does NOT display your featured content, post content or page content. ','aaron' )?><br>
+
 	</div>
 
 	<div class="doc-box" id="aaron-advanced">
@@ -126,7 +129,7 @@ function aaron_docs() {
 					</li>
 					<li><b><?php _e('Custom Content Type: Portfolio','aaron' )?></b><br>
 						<?php _e('Aaron also supports Jetpack','aaron' )?> 
-						<b><?php _e('Portfolios','aaron' )?></b>. <a href="<?php esc_url('http://en.support.wordpress.com/portfolios/');?>">
+						<b><?php _e('Portfolios','aaron' )?></b>. <a href="<?php echo 'http://en.support.wordpress.com/portfolios/'; ?>">
 						<i><?php _e('Read more about how to setup your Portfolio on Jetpacks support site.','aaron' )?></i></a><br><br>
 						<img src="<?php echo get_template_directory_uri() . '/images/doc-portfolio.jpg';?>" alt="<?php _e('An image describing two portfolio items.','aaron' )?>"><br>
 					</li>

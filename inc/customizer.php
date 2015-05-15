@@ -158,6 +158,62 @@ function aaron_customize_register( $wp_customize ) {
 	) ) );
 
 
+	$wp_customize->add_setting( 'aaron_header_bgpos',		 array(
+		'sanitize_callback' => 'aaron_sanitize_bgpos',
+	) );
+
+	$wp_customize->add_control( 'aaron_header_bgpos',		array(
+	'type' => 'select',
+	'label'        => __( 'Header background image position:', 'aaron' ),
+	'choices' => array(
+			'left top'		=>  __('left top','aaron'),
+			'left center'	=>	__('left center','aaron'),
+			'left bottom'	=>	__('left bottom','aaron'),
+			'right top'		=>	__('right top','aaron'),
+			'right center'	=>	__('right center','aaron'),
+			'right bottom'	=>	__('right bottom','aaron'),
+			'center top'	=>	__('center top','aaron'),
+			'center center'	=>	__('center center','aaron'),
+			'center bottom'	=>	__('center bottom','aaron'),
+        ),
+	'section' => 'header_image',
+	) );
+
+
+	$wp_customize->add_setting( 'aaron_header_bgsize',		 array(
+		'sanitize_callback' => 'aaron_sanitize_bgsize',
+	) );
+
+	$wp_customize->add_control( 'aaron_header_bgsize',		array(
+	'type' => 'select',
+	'label'        => __( 'Header background image size:', 'aaron' ),
+	'choices' => array(
+			'cover'		=>  __('cover','aaron'),
+			'contain'	=>	__('contain','aaron'),
+			'auto'		=>	__('auto','aaron'),
+        ),
+	'section' => 'header_image',
+	) );
+
+	$wp_customize->add_setting( 'aaron_header_bgrepeat',		 array(
+		'sanitize_callback' => 'aaron_sanitize_bgrepeat',
+	) );
+
+	$wp_customize->add_control( 'aaron_header_bgrepeat',		array(
+	'type' => 'select',
+	'label'        => __( 'Header background image repeat:', 'aaron' ),
+	'choices' => array(
+			'repeat'		=>  __('repeat','aaron'),
+			'repeat-x'	=>	__('repeated only horizontally','aaron'),
+			'repeat-y'		=>	__('repeated only vertically','aaron'),
+			'no-repeat'		=>  __(' no repeat','aaron'),
+        ),
+	'section' => 'header_image',
+	) );
+
+
+
+
 	//Hide meta
 	$wp_customize->add_setting( 'aaron_hide_meta',		array(
 			'sanitize_callback' => 'aaron_sanitize_checkbox',
@@ -518,4 +574,59 @@ function aaron_sanitize_reset( $input ) {
 		return;
 	}
 }
+
+//Sanitize bg position
+function aaron_sanitize_bgpos( $input ) {
+    $valid = array(
+       	'left top'		=>  __('left top','aaron'),
+		'left center'	=>	__('left center','aaron'),
+		'left bottom'	=>	__('left bottom','aaron'),
+		'right top'		=>	__('right top','aaron'),
+		'right center'	=>	__('right center','aaron'),
+		'right bottom'	=>	__('right bottom','aaron'),
+		'center top'	=>	__('center top','aaron'),
+		'center center'	=>	__('center center','aaron'),
+		'center bottom'	=>	__('center bottom','aaron'),
+    );
+ 
+    if ( array_key_exists( $input, $valid ) ) {
+        return $input;
+    } else {
+        return '';
+    }
+}
+
+//Sanitize bg size
+function aaron_sanitize_bgsize( $input ) {
+    $valid = array(
+		'cover'		=>  __('cover','aaron'),
+		'contain'	=>	__('contain','aaron'),
+		'auto'		=>	__('auto','aaron'),
+    );
+ 
+    if ( array_key_exists( $input, $valid ) ) {
+        return $input;
+    } else {
+        return '';
+    }
+}
+
+//Sanitize bg repeat
+function aaron_sanitize_bgrepeat( $input ) {
+    $valid = array(
+		'repeat'		=>  __('repeat','aaron'),
+		'repeat-x'	=>	__('repeated only horizontally','aaron'),
+		'repeat-y'		=>	__('repeated only vertically','aaron'),
+		'no-repeat'		=>  __(' no repeat','aaron'),
+    );
+ 
+    if ( array_key_exists( $input, $valid ) ) {
+        return $input;
+    } else {
+        return '';
+    }
+}
+
+
+
 ?>

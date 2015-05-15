@@ -296,11 +296,8 @@ function aaron_customize_css() {
 	if ( ! empty( $header_image ) ) {
 	?>
 		.site-header {
-		background: url(<?php header_image(); ?>) no-repeat center center;
-		-webkit-background-size: cover;
-		-moz-background-size:    cover;
-		-o-background-size:      cover;
-		background-size:         cover;
+		background: <?php esc_attr_e( get_theme_mod('aaron_header_bgcolor', '#fafafa') ) ?> url(<?php header_image(); ?>) <?php esc_attr_e( get_theme_mod('aaron_header_bgrepeat', 'no-repeat') ); ?> <?php esc_attr_e( get_theme_mod('aaron_header_bgpos', 'center top') ); ?>;
+		background-size: <?php esc_attr_e( get_theme_mod('aaron_header_bgsize', 'cover') ); ?>;
 		}
 
 	<?php
