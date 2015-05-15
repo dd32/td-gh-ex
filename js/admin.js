@@ -2,7 +2,9 @@ jQuery(function($) {
 
     // add fitvid to Post Video preview
     if( typeof $.fn.fitVids === 'function' ) {
-        $('#ct_tracks_video_preview_container').fitVids();
+        $('#ct_tracks_video_preview_container').fitVids({
+            customSelector: 'iframe[src*="dailymotion.com"]'
+        });
     }
 
     // if there is a video saved already, add has-vid class
@@ -54,12 +56,22 @@ jQuery(function($) {
                 $('#ct_tracks_video_preview_container').append(response);
 
                 // reapply fitvids to Post Video preview div
-                $('#ct_tracks_video_preview_container').fitVids();
+                $('#ct_tracks_video_preview_container').fitVids({
+                    customSelector: 'iframe[src*="dailymotion.com"]'
+                });
+
+                // show youtube options if youtube video
+                if( response.includes('youtube.com') ) {
+                    $('.ct_tracks_video_youtube_controls_container.hide').removeClass('hide');
+                }
 
             }
             // else remove the has-vid class in case already had video
             else {
                 $('#ct_tracks_video_preview_container, .ct_tracks_video_input_container').removeClass('has-vid');
+
+                // hide youtube options
+                $('.ct_tracks_video_youtube_controls_container').addClass('hide');
             }
         });
     }
