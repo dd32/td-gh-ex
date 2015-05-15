@@ -29,6 +29,8 @@
                 </li>
 				<li id="tab_meta"><a href="#section_meta"><?php _e('Meta Setting','corpbiz'); ?></a>
                 </li>
+				<li id="tab_pro"><a href="#section_pro"><?php _e('Upgrade to Pro','corpbiz'); ?></a>
+                </li>
                
             </ul>
     <div id="poststuff" class="metabox-holder">
@@ -135,6 +137,19 @@
         </div>
     </div>
 	
+	
+	<div id="section_pro" class = "postbox" >
+        <div class="inside">
+            <div id="setting_export_settings_file_text" class="format-settings">
+                <div class="format-setting-wrap">
+                    <div class="format-setting-label">
+					<?php  load_template( dirname( __FILE__ ) . '/pages/UpgradeToPro.php' ); ?>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+	
 		</div>
     </div>
     </div>
@@ -154,7 +169,7 @@
 // Restore all defaults
 if(isset($_POST['restore_all_defaults'])) 
 	{
-		$corpbiz_pro_theme_options = theme_data_setup();	
-		update_option('corpbiz_options',$corpbiz_pro_theme_options);
+		$corpbiz_theme_options = theme_data_setup();	
+		update_option('corpbiz_options',$corpbiz_theme_options);
 	}
 ?>

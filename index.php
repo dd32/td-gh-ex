@@ -1,8 +1,8 @@
 <?php
 
-	   $current_options = get_option('corpbiz_options',theme_data_setup());
-	
+	    
 		get_header();
+		//***** get Slider *****
 		get_template_part('index', 'slider');
 		
 		//****** get index service  ********

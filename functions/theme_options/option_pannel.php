@@ -13,7 +13,10 @@ function webriti_admin_enqueue_script($hook)
 	wp_enqueue_style('corpbiz-option',get_template_directory_uri().'/functions/theme_options/css/style-option.css');
 	wp_enqueue_style('corpbiz-option-panel',get_template_directory_uri().'/functions/theme_options/css/corpbizoption_pannel.css');
 	wp_enqueue_style('corpbiz-optionpanal-dragdrop',get_template_directory_uri().'/functions/theme_options/css/optionpanal-dragdrop.css');
-	wp_enqueue_style('corpbiz-option-panel3',get_template_directory_uri().'/functions/theme_options/css/corpbiz-bootstrap.css');
+	wp_enqueue_style('corpbiz-option-panel3',get_template_directory_uri().'/functions/theme_options/css/corpbiz-bootstrap.css');	
+	wp_enqueue_style('corpbiz-comp-chart',get_template_directory_uri().'/functions/theme_options/css/comp-chart.css');
+	wp_enqueue_style('corpbiz-optionpanal-dragdrop',get_template_directory_uri().'/functions/theme_options/css/optionpanal-dragdrop.css');
+	wp_enqueue_style('corpbiz-upgrade', get_template_directory_uri(). '/functions/theme_options/css/upgrade-pro.css');
 	
 	//Custom plugin
 	wp_enqueue_script('corpbiz_admin_js',get_template_directory_uri().'/functions/theme_options/js/my-custom.js');

@@ -103,7 +103,7 @@
 		wp_enqueue_style('corpbiz-style', get_stylesheet_uri() );
 		wp_enqueue_style('corpbiz-bootstrap-css', WEBRITI_TEMPLATE_DIR_URI . '/css/bootstrap.css');
 		wp_enqueue_style('corpbiz-theme-menu', WEBRITI_TEMPLATE_DIR_URI . '/css/theme-menu.css');	
-		wp_enqueue_style('corpbiz-font-awesome-min', WEBRITI_TEMPLATE_DIR_URI . '/css/font-awesome/css/font-awesome.min.css');	
+		wp_enqueue_style('font-awesome-min','//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');	
 		wp_enqueue_style('corpbiz-media-responsive', WEBRITI_TEMPLATE_DIR_URI . '/css/media-responsive.css');	
 		
 		wp_enqueue_script('corpbiz-menu', WEBRITI_TEMPLATE_DIR_URI .'/js/menu/menu.js',array('jquery'));

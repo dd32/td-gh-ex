@@ -54,6 +54,11 @@ Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
+@version 1.1.2
+1. Add Upgrade to pro Files.
+2. Remove font-awesome icon folder.
+3. Update pot file.
+
 @version 1.1.1
 1. Remove jquery-1.11.0 in js folder
 2. Enqueue jquery in function.php
