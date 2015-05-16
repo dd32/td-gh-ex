@@ -35,6 +35,8 @@ function miranda_setup() {
 
 	add_editor_style();
 	
+	add_theme_support( "title-tag" );
+
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *

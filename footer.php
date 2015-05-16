@@ -22,7 +22,7 @@
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'miranda' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'miranda' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s', 'miranda' ), 'miranda'); ?>
+			<a href="<?php echo esc_url('http://wptema.se/miranda'); ?>" rel="nofollow"><?php printf( __( 'Theme: %1$s by Carolina', 'miranda' ), 'Miranda'); ?></a>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
