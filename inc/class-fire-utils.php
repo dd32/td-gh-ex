@@ -58,9 +58,8 @@ if ( ! class_exists( 'TC_utils' ) ) :
       function tc_wp_filters() {
         add_filter( 'the_content'                         , array( $this , 'tc_fancybox_content_filter' ) );
         if ( esc_attr( TC_utils::$inst->tc_opt( 'tc_img_smart_load' ) ) ) {
-          add_filter( 'the_content'                       , array( $this , 'tc_parse_imgs' ) );
+          add_filter( 'the_content'                       , array( $this , 'tc_parse_imgs' ), 20 );
           add_filter( 'tc_thumb_html'                     , array( $this , 'tc_parse_imgs' ) );
-          add_filter( 'post_gallery'                      , array( $this , 'tc_parse_imgs' ), 30 );
         }
         add_filter( 'wp_title'                            , array( $this , 'tc_wp_title' ), 10, 2 );
       }
@@ -102,12 +101,11 @@ if ( ! class_exists( 'TC_utils' ) ) :
             $matches[3]
           );
         else
-          return sprintf('<img %1$s src="%2$s" data-src="%3$s" %4$s><noscript><img %1$s src="%5$s" %4$s></noscript>',
+          return sprintf('<img %1$s src="%2$s" data-src="%3$s" %4$s>',
             $matches[1],
             $_placeholder,
             $matches[2],
-            $matches[3],
-            $matches[0]
+            $matches[3]
           );
       }
 

@@ -38,6 +38,25 @@ The exceptions to this license are as follows:
 
 
 #######################  Changelog ######################
+= 3.3.24 May 15th 2015 =
+fix: store empty() function bool in a var to fix a PHP version compatibility issue
+fix: use proper priority for tc_parse_imgs callback of the_content filter
+fix: when deleting retina images don't forget the original attachment's retina version
+fix: remove btt-arrow inline style, rule moved in the skin css
+fix : fancybox in post images is 100% independant of fancybox in galleries
+added : japanese translation (ja). Thanks to Toshiyuki Tsuchiya.
+fix : remove smartload noscript tag
+fix : theme switcher visibility issue on preview frame ready event
+fix: properly filter get_the_content() for special post formats
+fix : localized params assigned to wrong script handle in dev mode
+fix : hide donate button ajax action not triggered
+fix : change order of elements on RTL sites. using is_rtl() to determine the order of specific elements, instead of creating dedicated rules in CSSFIX : correcting the left/right css rules for RTL sited. Thanks to Yaacov Glezer.
+added : less files updated with new rtl vars and conditional statements
+improved : code handling RTL priority for colophon blocks
+updated : Spanish es_ES translation. Thanks to Angel Calzado.
+improved : donate customizer call to action visibility
+improved : widget placeholder code
+
 = 3.3.23 May 4th 2015 =
 fix : don't show slider in home when no home slider is set
 
