@@ -4,7 +4,7 @@ Tags:light, white, blue, pink, custom-colors, threaded-comments, custom-menu, st
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
-Copyright 2014 Carolina Nymark
+Copyright 2014-2015 Carolina Nymark
 
 = Description ==
 Cherish is an accessible, full width responsive theme with a fixed top menu. 
@@ -25,6 +25,12 @@ hide your post meta and upload your own logo. Includes Swedish translation.
 -The theme aims to be compatible with Woocommerce. It does not adress issues within Woocommerce such as missing labels and screenreader texts, but increases it's contrasts. 
 
 == Changelog ==
+=1.2 2015-05-16=
+Added 	add_theme_support( "title-tag" );
+Fixed sidebar id bug
+Minor changes to the customizer
+Removed the jump down button since it caused some issues in firefox.
+
 
 =1.0=
 Improved styling for bbPress and Woocommerce.

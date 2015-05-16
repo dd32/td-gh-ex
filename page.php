@@ -7,7 +7,7 @@
 				the_content();
 					wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages: ', 'cherish' ), 'after' => '</div>' ) );
 				?>					
-				<div class="page-link"><?php edit_post_link( __( 'Edit', 'cherish' ) . '<span class="screen-reader-text">' . get_the_title( $id ) . '</span>'); ?></div>
+				<div class="page-link"><?php edit_post_link( __( 'Edit', 'cherish' ) . ' <span class="screen-reader-text">' . get_the_title( $id ) . '</span>'); ?></div>
 	<?php
 	endwhile;
 	comments_template( '', true );

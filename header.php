@@ -5,18 +5,12 @@
 <meta name="viewport" content="width=device-width" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<title><?php wp_title( '|', true, 'right' ); ?></title>
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?> >
-<a href="#wrapper" class="keyboard-shortcut"><?php _e('Skip to content', 'cherish' );?></a>
+<a href="#wrapper" class="skip-link screen-reader-text"><?php _e('Skip to content', 'cherish' );?></a>
 <?php
-if ( is_home() || is_front_page() ) {?>
-	<div class="jump-down fa" title="<?php esc_attr_e( 'Skip to content', 'cherish' ); ?>"></div>
-<?php
-}
 if ( has_nav_menu( 'header' ) ) {
-
 	echo '<a href="#" id="mobile-menu"><span class="screen-reader-text">' . esc_attr( 'Show and hide menu', 'cherish' ) . '</span></a>';
 	wp_nav_menu( array( 'theme_location' => 'header', 'menu_class' => 'nav-menu', 'items_wrap' => '<nav role="navigation"><ul id="%1$s" class="%2$s">%3$s</ul></nav>', 'fallback_cb' => false) ); 
 ?>

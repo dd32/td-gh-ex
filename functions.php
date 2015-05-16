@@ -18,6 +18,7 @@ if ( ! function_exists( 'cherish_setup' ) ) {
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'html5', array( 'gallery', 'caption' ) );
+		add_theme_support( "title-tag" );
 		
 		add_theme_support( 'woocommerce' );
 		
@@ -108,30 +109,12 @@ echo '<style type="text/css">
 add_action( 'wp_head', 'cherish_customize_css');
 
 
-function cherish_skip(){
-?>
-	<script type="text/javascript">
-	<!--//--><![CDATA[//><!--
-	jQuery(document).ready(function($){
-		$(".jump-down").click(function(){
-			window.scrollTo(0,<?php echo get_custom_header()->height;?>);
-		});	
-	});
-	//--><!]]>
-	 </script>
-<?php
-}
-add_action('wp_footer', 'cherish_skip');
-
-
 /* Enqueue fonts and scripts*/
  function cherish_styles_scripts() {
-    wp_register_style( 'cherish_Font','//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic' );
-	wp_register_style( 'cherish_Font2','//fonts.googleapis.com/css?family=Lily+Script+One' );
+    wp_enqueue_style( 'cherish_Font','//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic' );
+    wp_enqueue_style( 'cherish_Font2','//fonts.googleapis.com/css?family=Lily+Script+One' );
 
 	wp_enqueue_style( 'cherish_style', get_stylesheet_uri() );
-    wp_enqueue_style( 'cherish_Font' );
-	wp_enqueue_style( 'cherish_Font2' );
 	
 	wp_enqueue_style( 'cherish_woo', get_template_directory_uri() . '/inc/woocommerce.css');
 	 
@@ -196,6 +179,7 @@ function cherish_widgets_init() {
 		'description'  => __( 'Widgets in this area will be shown on the left-hand side.', 'cherish' ),
 		'before_title' => '<h1 class="widgettitle">',
 		'after_title'  => '</h1>',
+		'id'            => 'sidebar-1',
 	) );
 	
 	register_sidebar( array(
@@ -203,6 +187,7 @@ function cherish_widgets_init() {
 		'description'  => __( 'Widgets in this area will be shown in the middle', 'cherish' ),
 		'before_title' => '<h1 class="widgettitle">',
 		'after_title'  => '</h1>',
+		'id'            => 'sidebar-2',
 	));
 	
 	register_sidebar( array(
@@ -210,36 +195,11 @@ function cherish_widgets_init() {
 		'description'  => __( 'Widgets in this area will be shown on the right-hand side.', 'cherish' ),
 		'before_title' => '<h1 class="widgettitle">',
 		'after_title'  => '</h1>',
+		'id'            => 'sidebar-3',
 	) );
 }
 add_action( 'widgets_init', 'cherish_widgets_init' );
 
-
-/**
- * Filters wp_title to print a neat <title> tag based on what is being viewed.
- */
-function cherish_wp_title( $title, $sep ) {
-	global $page, $paged;
-	if ( is_feed() ){
-		return $title;
-	}
-	// Add the blog name
-	$title .= get_bloginfo( 'name' );
-	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) ){
-		$title .= " $sep $site_description";
-	}
-	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 ){
-		$title .= " $sep " . sprintf( __( 'Page %s', 'cherish' ), max( $paged, $page ) );
-	}	
-	if ( is_404() ) {
-        $title .=  " $sep " . sprintf( __( 'Page not found', 'cherish' ) );
-    }
-	return $title;
-}
-add_filter( 'wp_title', 'cherish_wp_title', 11, 2 );
 
 //Customizer and metabox
 require get_template_directory() . '/inc/customizer.php';
@@ -330,7 +290,7 @@ function cherish_meta(){
 		
 		echo '&nbsp; ';
 		
-		edit_post_link( __( 'Edit', 'cherish' ) . '<span class="screen-reader-text">' . get_the_title( $id ) . '</span>');
+		edit_post_link( __( 'Edit', 'cherish' ) . ' <span class="screen-reader-text">' . get_the_title( $id ) . '</span>');
 	}
 	if ( get_theme_mod( 'cherish_details' ) == '' ) {
 		if ( get_theme_mod( 'cherish_details_black' ) <> '' ) {

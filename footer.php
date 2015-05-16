@@ -45,7 +45,7 @@
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a><span class="sep"> | </span>
 	<a href="http://wordpress.org/"><?php printf( __( 'Proudly powered by %s', 'cherish' ), 'WordPress' ); ?></a>
 	<span class="sep"> | </span>
-	<a href="http://gratistema.se/cherish/"><?php printf( __( 'Theme: %1$s', 'cherish' ), 'Cherish'); ?></a>
+	<a href="<?php echo esc_url('http://wptema.se/cherish'); ?>" rel="nofollow"><?php printf( __( 'Theme: %1$s by Carolina', 'cherish' ), 'Cherish'); ?></a>
 	</div> <!--End Footer Credit -->
 	
 <span class="fa-angle-up fa" title="<?php esc_attr_e( 'Back to the top', 'cherish' ); ?>"></span>

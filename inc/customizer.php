@@ -37,26 +37,10 @@ function cherish_customizer( $wp_customize ) {
         )
     );
 
-	/** Accessibility info*/
-	$wp_customize->add_section( 'cherish_info', 			array(
-			'title'      => __( 'Accessibility and Support', 'cherish'),
-			'description' => sprintf( __( 'Please note that changing the colors can impact the accessibility of the theme.<br/><br/>If you have any questions or suggestions for this theme, please visit <a href="http://wordpress.org/support/theme/cherish">the theme support page.</a>', 'cherish' ) ),
-			'priority'   => 30
-	)
-	);
 	
 	$wp_customize->get_section('colors')->title = __( 'Text Colors', 'cherish');
 	
 	//-------------------------------------------------------
-	
-	$wp_customize->add_setting( 'cherish_info' );
-	
-	$wp_customize->add_control('cherish_info',			    array(
-			'section' => 'cherish_info',
-			'type'  => 'read-only',
-		)
-	);
-	
 	
 	/** Display title and description in the footer */
 	$wp_customize->add_setting( 'cherish_footer_title',		array(
@@ -111,7 +95,11 @@ function cherish_customizer( $wp_customize ) {
 	
 		
 	/** Logo settings */
-	$wp_customize->add_setting( 'cherish_logo' );
+	$wp_customize->add_setting( 'cherish_logo',	array(
+			'sanitize_callback' => 'esc_url_raw',
+		)	
+	);
+
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'cherish_logo', array(
 		'label'    => __( 'Choose a logo to be displayed in the footer: ', 'cherish' ),
 		'section' => 'cherish_section_one',
