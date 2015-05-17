@@ -54,10 +54,10 @@ function optionsframework_options() {
     
     //Footer Pattern
 	$footer_pattern = array(
-        'column4' => $imagepath . 'footers/accesspress-mag-footer-4.png',
-        'column3' => $imagepath . 'footers/accesspress-mag-footer-3.png',
-		'column2' => $imagepath . 'footers/accesspress-mag-footer-2.png', 
-        'column1' => $imagepath . 'footers/accesspress-mag-footer-1.png',
+        'column4' => $imagepath . 'footers/footer-4.png',
+        'column3' => $imagepath . 'footers/footer-3.png',
+		'column2' => $imagepath . 'footers/footer-2.png', 
+        'column1' => $imagepath . 'footers/footer-1.png',
 		   
 		);
         
