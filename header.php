@@ -19,9 +19,17 @@
 
 <body <?php body_class(); ?>>
 <div class="mw-go-top"><i class="fa fa-angle-up fa-2x"></i></div>
+<?php
+	$hp = get_theme_mod( 'mwsmall_header_position' );
+	if ( $hp == 'center' ) {
+		$class_header = ' center text-center';
+	}else{
+		$class_header = '';
+	}
+?>
 <div id="page" class="hfeed site">
 	<div class="pusty">
-		<header id="masthead" class="site-header" role="banner">
+		<header id="masthead" class="site-header<?php echo $class_header; ?>" role="banner">
 			<div class="header-main container">
 				<h1 class="site-title">
 					<?php 
@@ -55,7 +63,51 @@
 						if ( get_theme_mod('icon_google') !="") { ?>
 							<a target="_blank" href="<?php echo esc_url($igp); ?>"><i class="fa fa-google-plus"></i></a>
 					<?php } ?>
-					<a href="#"><i class="fa fa-search"></i></a>	
+					<?php 
+						$icon_in = get_theme_mod('icon_linkedin');
+						if ( get_theme_mod('icon_linkedin') !="") { ?>
+							<a target="_blank" href="<?php echo esc_url($icon_in); ?>"><i class="fa fa-linkedin"></i></a>
+					<?php } ?>
+					<?php 
+						$icon_instagram = get_theme_mod('icon_instagram');
+						if ( get_theme_mod('icon_instagram') !="") { ?>
+							<a target="_blank" href="<?php echo esc_url($icon_instagram); ?>"><i class="fa fa-instagram"></i></a>
+					<?php } ?>
+					<?php 
+						$icon_flickr = get_theme_mod('icon_flickr');
+						if ( get_theme_mod('icon_flickr') !="") { ?>
+							<a target="_blank" href="<?php echo esc_url($icon_flickr); ?>"><i class="fa fa-flickr"></i></a>
+					<?php } ?>
+					<?php 
+						$icon_pinterest = get_theme_mod('icon_pinterest');
+						if ( get_theme_mod('icon_pinterest') !="") { ?>
+							<a target="_blank" href="<?php echo esc_url($icon_pinterest); ?>"><i class="fa fa-pinterest"></i></a>
+					<?php } ?>
+					<?php 
+						$icon_vimeo = get_theme_mod('icon_vimeo');
+						if ( get_theme_mod('icon_vimeo') !="") { ?>
+							<a target="_blank" href="<?php echo esc_url($icon_vimeo); ?>"><i class="fa fa-vimeo-square"></i></a>
+					<?php } ?>
+					<?php 
+						$icon_tumblr = get_theme_mod('icon_tumblr');
+						if ( get_theme_mod('icon_tumblr') !="") { ?>
+							<a target="_blank" href="<?php echo esc_url($icon_tumblr); ?>"><i class="fa fa-tumblr"></i></a>
+					<?php } ?>
+					<?php 
+						$icon_dribbble = get_theme_mod('icon_dribbble');
+						if ( get_theme_mod('icon_dribbble') !="") { ?>
+							<a target="_blank" href="<?php echo esc_url($icon_dribbble); ?>"><i class="fa fa-dribbble"></i></a>
+					<?php } ?>
+					<?php 
+						$icon_rss = get_theme_mod('icon_rss');
+						if ( get_theme_mod('icon_rss') !="") { ?>
+							<a target="_blank" href="<?php echo esc_url($icon_rss); ?>"><i class="fa fa-rss"></i></a>
+					<?php } ?>
+					<?php 
+						$hide_search = get_theme_mod('mwsmall_head_search');
+						if ( $hide_search == '' ) { ?>
+							<a href="#"><i class="fa fa-search"></i></a>
+					<?php } ?>					
 				</div>
 
 				<div id="navbarCollapse" class="collapse navbar-collapse">
@@ -81,5 +133,12 @@
 			<?php endif; ?>
 		</div><!-- .mw_header_image -->
 		<?php endif; ?>
-		
-		<div id="mw_full" class="container">
+		<?php 
+			$sid_l_r = get_theme_mod( 'mwsmall_sidebar_position' );
+			if( $sid_l_r == 'left' ) {
+				$sid_class = 'mw_left_sidebar';
+				}else{
+				$sid_class = '';
+			}
+		?> 
+		<div id="mw_full" class="container <?php echo $sid_class; ?>">

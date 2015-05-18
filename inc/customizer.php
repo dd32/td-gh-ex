@@ -33,9 +33,104 @@ function mwsmall_customize_register($wp_customize){
         'settings' => 'logo_mwsmall',
     )));
 	
+	// page option 
+	$wp_customize->add_section( 'mwsmall_general' , array(
+		'title'       => __( 'Options', 'mwsmall' ),
+		'priority'    => 41,
+		'description' => '',
+	) );
+	
+ 	$wp_customize->add_setting( 'mwsmall_head_search', array (
+		'default'        => '',
+		'sanitize_callback' => 'mwsmall_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control('hide_search', array(
+		'label' => __('Hide top icon search', 'mwsmall'),
+		'section' => 'mwsmall_general',
+		'settings' => 'mwsmall_head_search',
+		'type' => 'checkbox',
+	));
+
+	$wp_customize->add_setting('mwsmall_header_position', array(
+		'default' => 'default',
+		'sanitize_callback' => 'mwsmall_sanitize_header_position',
+	));
+	
+	$wp_customize->add_control('header_position', array(
+		'label'      => __('Header position', 'mwsmall'),
+		'section'    => 'mwsmall_general',
+		'settings'   => 'mwsmall_header_position',
+		'type'       => 'radio',
+		'choices'    => array(
+			'default'   => 'Default',
+			'center'  => 'Center',
+			),
+	));
+	
+	$wp_customize->add_setting('mwsmall_sidebar_position', array(
+		'default' => 'right',
+		'sanitize_callback' => 'mwsmall_sanitize_sidebar_position',
+	));
+	
+	$wp_customize->add_control('sidebar_position', array(
+		'label'      => __('Sidebar position', 'mwsmall'),
+		'section'    => 'mwsmall_general',
+		'settings'   => 'mwsmall_sidebar_position',
+		'type'       => 'radio',
+		'choices'    => array(
+			'left'   => 'Left',
+			'right'  => 'Right',
+			),
+	));	
+	
+	$wp_customize->add_setting('mwsmall_color_theme', array(
+		'default' => 'default',
+		'sanitize_callback' => 'mwsmall_sanitize_color',
+	));
+	
+	$wp_customize->add_control('color_theme', array(
+		'label'      => __('Color scheme', 'mwsmall'),
+		'section'    => 'mwsmall_general',
+		'settings'   => 'mwsmall_color_theme',
+		'type'       => 'select',
+		'choices'    => array(
+			'default'  => 'Default',
+			'dark'   => 'Dark',
+			),
+	));
+	
+	// Home Box
+	$wp_customize->add_section( 'mwsmall_homepage_settings', array(
+		'title' => __( 'Homepage Settings', 'mwsmall' ),
+		'priority' => 42
+	));
+	
+	$wp_customize->add_setting( 'mwsmall_home_title', array(
+		'sanitize_callback' => 'mwsmall_sanitize_text',
+	));
+	
+	$wp_customize->add_control( 'home_title', array(
+		'label' => __('Title Box Home', 'mwsmall'),
+		'section' => 'mwsmall_homepage_settings',
+		'settings' => 'mwsmall_home_title',
+		'type' => 'text',		
+	));
+	$wp_customize->add_setting( 'mwsmall_home_text', array(
+		'sanitize_callback' => 'mwsmall_sanitize_text',
+	));
+	
+	$wp_customize->add_control( 'home_text', array(
+		'label' => __('Text Box Home', 'mwsmall'),
+		'section' => 'mwsmall_homepage_settings',
+		'settings' => 'mwsmall_home_text',
+		'type' => 'textarea',		
+	));
+	
+	// Icon
 	$wp_customize->add_section('mwsmall_social', array(
-        'title'    => __('Social icon profiles', 'mwsmall'),
-        'priority' => 40,
+        'title'    => __('Social Media Links', 'mwsmall'),
+        'priority' => 42,
     ));
 	
     $wp_customize->add_setting('icon_facebook', array(
@@ -71,6 +166,95 @@ function mwsmall_customize_register($wp_customize){
         'settings'   => 'icon_google',
     ));
 	
+	$wp_customize->add_setting('icon_linkedin', array(
+        'default'        => '',
+		'sanitize_callback' => 'esc_url_raw',
+	));
+	   
+	$wp_customize->add_control('mwsmall_icon_linkedin', array(
+        'label'      => __('LinkedIn', 'mwsmall'),
+        'section'    => 'mwsmall_social',
+        'settings'   => 'icon_linkedin',
+    ));
+	
+	$wp_customize->add_setting('icon_instagram', array(
+        'default'        => '',
+		'sanitize_callback' => 'esc_url_raw',
+	));
+	   
+	$wp_customize->add_control('mwsmall_icon_instagram', array(
+        'label'      => __('Instagram', 'mwsmall'),
+        'section'    => 'mwsmall_social',
+        'settings'   => 'icon_instagram',
+    ));
+	
+	$wp_customize->add_setting('icon_flickr', array(
+        'default'        => '',
+		'sanitize_callback' => 'esc_url_raw',
+	));
+	   
+	$wp_customize->add_control('mwsmall_icon_flickr', array(
+        'label'      => __('Flickr', 'mwsmall'),
+        'section'    => 'mwsmall_social',
+        'settings'   => 'icon_flickr',
+    ));
+	
+	$wp_customize->add_setting('icon_pinterest', array(
+        'default'        => '',
+		'sanitize_callback' => 'esc_url_raw',
+	));
+	   
+	$wp_customize->add_control('mwsmall_icon_pinterest', array(
+        'label'      => __('Pinterest', 'mwsmall'),
+        'section'    => 'mwsmall_social',
+        'settings'   => 'icon_pinterest',
+    ));
+	
+	$wp_customize->add_setting('icon_vimeo', array(
+        'default'        => '',
+		'sanitize_callback' => 'esc_url_raw',
+	));
+	   
+	$wp_customize->add_control('mwsmall_icon_vimeo', array(
+        'label'      => __('Vimeo', 'mwsmall'),
+        'section'    => 'mwsmall_social',
+        'settings'   => 'icon_vimeo',
+    ));
+	
+	$wp_customize->add_setting('icon_tumblr', array(
+        'default'        => '',
+		'sanitize_callback' => 'esc_url_raw',
+	));
+	   
+	$wp_customize->add_control('mwsmall_icon_tumblr', array(
+        'label'      => __('Tumblr', 'mwsmall'),
+        'section'    => 'mwsmall_social',
+        'settings'   => 'icon_tumblr',
+    ));
+	
+	$wp_customize->add_setting('icon_dribbble', array(
+        'default'        => '',
+		'sanitize_callback' => 'esc_url_raw',
+	));
+	   
+	$wp_customize->add_control('mwsmall_icon_dribbble', array(
+        'label'      => __('Dribbble', 'mwsmall'),
+        'section'    => 'mwsmall_social',
+        'settings'   => 'icon_dribbble',
+    ));
+	
+	$wp_customize->add_setting('icon_rss', array(
+        'default'        => '',
+		'sanitize_callback' => 'esc_url_raw',
+	));
+	   
+	$wp_customize->add_control('mwsmall_icon_rss', array(
+        'label'      => __('RSS', 'mwsmall'),
+        'section'    => 'mwsmall_social',
+        'settings'   => 'icon_rss',
+    ));
+	
+	// Setting Color
     $wp_customize->add_setting('header_bg_color', array(
         'default'           => '#3E4A57',
         'sanitize_callback' => 'sanitize_hex_color',
@@ -105,10 +289,76 @@ function mwsmall_customize_register($wp_customize){
 	$wp_customize->add_control( 'more_info_mwthemes', array(
 		'section' => 'mwsmall_info'
 	) );
+	
+	// footer
+	$wp_customize->add_section( 'mwsmall_footer', array(
+        'title'    => __('Footer', 'mwsmall'),
+        'priority' => 43,
+    ));
+	
+ 	$wp_customize->add_setting('mwsmall_text_footer', array(
+		'sanitize_callback' => 'mwsmall_sanitize_text',
+	));
+
+	$wp_customize->add_control( 'footer_text', array(
+		'label' => __( 'Your text in footer.', 'mwsmall' ),
+		'section' => 'mwsmall_footer',
+		'settings' => 'mwsmall_text_footer',
+		'priority' => 1
+	)); 
 }
 
 add_action('customize_register', 'mwsmall_customize_register');
 
+/**
+ * Sanitize checkbox
+ */
+if (!function_exists( 'mwsmall_sanitize_checkbox' ) ) :
+	function mwsmall_sanitize_checkbox( $input ) {
+		if ( $input == 1 ) {
+			return 1;
+		} else {
+			return '';
+		}
+	}
+endif;
+/**
+ * Text
+ */
+function mwsmall_sanitize_text( $input ) {
+    return wp_kses_post( force_balance_tags( $input ) );
+}
+/**
+ * Choices
+ */
+function mwsmall_sanitize_header_position( $input ) {
+	$valid = array(
+		'default'   => 'Default',
+		'center'  => 'Center',
+	);
+ 
+	if ( array_key_exists( $input, $valid  ) ) {
+		return $input;
+	} else {
+		return '';
+	}
+}
+// Sidebar
+function mwsmall_sanitize_sidebar_position( $content ) {
+	if ( 'left' == $content ) {
+		return 'left';
+	} else {
+		return 'right';
+	}
+}
+// Color
+function mwsmall_sanitize_color( $content ) {
+	if ( 'dark' == $content ) {
+		return 'dark';
+	} else {
+		return 'default';
+	}
+}
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */

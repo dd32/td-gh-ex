@@ -13,7 +13,18 @@
  */
  
  get_header(); ?>
- 
+<?php 
+	$home_text = get_theme_mod( 'mwsmall_home_text' );
+	$htitle = get_theme_mod( 'mwsmall_home_title' );
+	if ( !empty( $home_text ) ) { 
+?>
+<section class="home_text text-center col-lg-12 col-md-12 col-sm-12">
+	<?php if ( !empty( $htitle ) ) { ?>
+	<h2><?php echo get_theme_mod( 'mwsmall_home_title' ); ?></h2>
+	<?php } ?>
+	<p><?php echo get_theme_mod( 'mwsmall_home_text' ); ?></p>
+</section>
+<?php } ?>
 <section id="primary" class="container content-area col-lg-9 col-md-9 col-sm-8">
 	<div id="content" class="site-content" role="main">
 		

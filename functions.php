@@ -49,11 +49,14 @@ add_action( 'after_setup_theme', 'mwsmall_setup' );
  * Enqueue scripts and styles
  */
 function mwsmall_scripts() {
-	
 	wp_enqueue_style( 'blog-icons', get_template_directory_uri() . '/css/font-awesome.min.css' );
 	wp_enqueue_style( 'flexslider', get_template_directory_uri() . '/css/flexslider.css' );
 	wp_enqueue_style( 'bootstrap-framework', get_template_directory_uri() . '/css/bootstrap.min.css' );
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
+	
+	$color_scheme = get_theme_mod( 'mwsmall_color_theme' );
+	if ( $color_scheme == 'dark' )
+		wp_enqueue_style( 'dark', get_template_directory_uri() . '/css/dark.css', array(), null );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -174,7 +177,7 @@ function mwsmall_comment($comment, $args, $depth) {
 			
 			<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 				<time datetime="<?php comment_time( 'c' ); ?>">
-					<?php printf( _x( '%1$s', '1: date', 'aldehyde' ), get_comment_date() ); ?>
+					<?php printf( _x( '%1$s', '1: date', 'mwsmall' ), get_comment_date() ); ?>
 				</time>
 			</a>
 

@@ -29,7 +29,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="f_left col-lg-6 col-md-6 col-sm-6">
-							<?php _e('Copyright', 'mwsmall'); ?> &copy; <?php echo date("Y") ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> <?php _e('All Rights Reserved.', 'mwsmall'); ?>
+							<?php _e('Copyright', 'mwsmall'); ?> &copy; <?php echo date("Y") ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a>. <?php $txtfoo = get_theme_mod( 'mwsmall_text_footer' ); ?><?php if( $txtfoo != '') { echo esc_html( $txtfoo ); } else { _e('All Rights Reserved.', 'mwsmall'); } ?>
 						</div>
 						<div class="f_right col-lg-6 col-md-6 col-sm-6">
 							<?php _e( 'Proudly powered by', 'mwsmall' ); ?> <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'mwsmall' ) ); ?>" rel="generator" target="_blank">WordPress</a> 

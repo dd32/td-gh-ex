@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: mwsmall1.0.4\n"
-"POT-Creation-Date: 2015-01-25 20:08+0100\n"
-"PO-Revision-Date: 2015-01-25 20:08+0100\n"
+"POT-Creation-Date: 2015-05-19 01:09+0100\n"
+"PO-Revision-Date: 2015-05-19 01:09+0100\n"
 "Last-Translator: MW Themes <info@mwthemes.net>\n"
 "Language-Team: MW Themes <info@mwthemes.net>\n"
 "Language: en\n"
@@ -161,35 +161,35 @@ msgstr ""
 msgid "Main Navigation"
 msgstr ""
 
-#: ../functions.php:107
+#: ../functions.php:110
 msgid "Blog Widget"
 msgstr ""
 
-#: ../functions.php:115
+#: ../functions.php:118
 msgid "Footer Widget 1"
 msgstr ""
 
-#: ../functions.php:123
+#: ../functions.php:126
 msgid "Footer Widget 2"
 msgstr ""
 
-#: ../functions.php:131
+#: ../functions.php:134
 msgid "Footer Widget 3"
 msgstr ""
 
-#: ../functions.php:147
+#: ../functions.php:150
 msgid "Older posts"
 msgstr ""
 
-#: ../functions.php:151
+#: ../functions.php:154
 msgid "Newer posts"
 msgstr ""
 
-#: ../functions.php:183
+#: ../functions.php:186
 msgid "Your comment is awaiting approval"
 msgstr ""
 
-#: ../functions.php:232
+#: ../functions.php:235
 #, php-format
 msgid "Page %s"
 msgstr ""
@@ -202,31 +202,95 @@ msgstr ""
 msgid "Upload logo"
 msgstr ""
 
-#: ../inc/customizer.php:37
-msgid "Social icon profiles"
+#: ../inc/customizer.php:38
+msgid "Options"
 msgstr ""
 
-#: ../inc/customizer.php:47
+#: ../inc/customizer.php:49
+msgid "Hide top icon search"
+msgstr ""
+
+#: ../inc/customizer.php:61
+msgid "Header position"
+msgstr ""
+
+#: ../inc/customizer.php:77
+msgid "Sidebar position"
+msgstr ""
+
+#: ../inc/customizer.php:93
+msgid "Color scheme"
+msgstr ""
+
+#: ../inc/customizer.php:105
+msgid "Homepage Settings"
+msgstr ""
+
+#: ../inc/customizer.php:114
+msgid "Title Box Home"
+msgstr ""
+
+#: ../inc/customizer.php:124
+msgid "Text Box Home"
+msgstr ""
+
+#: ../inc/customizer.php:132
+msgid "Social Media Links"
+msgstr ""
+
+#: ../inc/customizer.php:142
 msgid "Facebook"
 msgstr ""
 
-#: ../inc/customizer.php:58
+#: ../inc/customizer.php:153
 msgid "Twitter"
 msgstr ""
 
-#: ../inc/customizer.php:69
+#: ../inc/customizer.php:164
 msgid "Google+"
 msgstr ""
 
-#: ../inc/customizer.php:81
+#: ../inc/customizer.php:175
+msgid "LinkedIn"
+msgstr ""
+
+#: ../inc/customizer.php:186
+msgid "Instagram"
+msgstr ""
+
+#: ../inc/customizer.php:197
+msgid "Flickr"
+msgstr ""
+
+#: ../inc/customizer.php:208
+msgid "Pinterest"
+msgstr ""
+
+#: ../inc/customizer.php:219
+msgid "Vimeo"
+msgstr ""
+
+#: ../inc/customizer.php:230
+msgid "Tumblr"
+msgstr ""
+
+#: ../inc/customizer.php:241
+msgid "Dribbble"
+msgstr ""
+
+#: ../inc/customizer.php:252
+msgid "RSS"
+msgstr ""
+
+#: ../inc/customizer.php:265
 msgid "Header Background Color"
 msgstr ""
 
-#: ../inc/customizer.php:88
+#: ../inc/customizer.php:272
 msgid "Info Theme"
 msgstr ""
 
-#: ../inc/customizer.php:89
+#: ../inc/customizer.php:273
 #, php-format
 msgid ""
 "<a target=\"_blank\" href=\"%1$s\">%2$s</a><br/><br/><a target=\"_blank\" "
@@ -236,26 +300,34 @@ msgid ""
 "a>"
 msgstr ""
 
-#: ../inc/customizer.php:90
+#: ../inc/customizer.php:274
 msgid "http://mwthemes.net"
 msgstr ""
 
-#: ../inc/customizer.php:91
+#: ../inc/customizer.php:275
 msgid "If you need assistance, please do not hesitate to contact us"
 msgstr ""
 
-#: ../inc/customizer.php:92
+#: ../inc/customizer.php:276
 msgid "http://facebook.com/mwthemes"
 msgstr ""
 
-#: ../inc/customizer.php:93
+#: ../inc/customizer.php:277
 msgid "https://twitter.com/mwthemes"
 msgstr ""
 
-#: ../inc/customizer.php:94
+#: ../inc/customizer.php:278
 msgid ""
 "https://www.paypal.com/cgi-bin/webscr?cmd=_s-"
 "xclick&hosted_button_id=UEV9GM57HQUHA"
+msgstr ""
+
+#: ../inc/customizer.php:295
+msgid "Footer"
+msgstr ""
+
+#: ../inc/customizer.php:304
+msgid "Your text in footer."
 msgstr ""
 
 #: ../search.php:13
