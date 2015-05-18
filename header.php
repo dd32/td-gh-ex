@@ -23,7 +23,6 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
-<title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://microformats.org/profile/specs" />
 <link rel="profile" href="http://microformats.org/profile/hatom" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -44,7 +43,7 @@
 
     <nav id="access" role="navigation">
       <h1 class="assistive-text section-heading"><a href="#access" title="<?php esc_attr_e( 'Main menu', 'sempress' ); ?>"><?php _e( 'Main menu', 'sempress' ); ?></a></h1>
-      <div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'sempress' ); ?>"><?php _e( 'Skip to content', 'sempress' ); ?></a></div>
+      <a class="skip-link screen-reader-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'sempress' ); ?>"><?php _e( 'Skip to content', 'sempress' ); ?></a>
 
       <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
     </nav><!-- #access -->

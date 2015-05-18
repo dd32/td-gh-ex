@@ -71,7 +71,7 @@ function sempress_setup() {
   add_image_size( 'sempress-image-post', 668, 1288 );
 
   // Switches default core markup for search form to output valid HTML5.
-  add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
+  add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'widgets' ) );
 
   // This theme uses wp_nav_menu() in one location.
   register_nav_menus( array(
@@ -80,7 +80,6 @@ function sempress_setup() {
 
   // Add support for the Aside, Gallery Post Formats...
   add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'status', 'image', 'video', 'audio', 'quote' ) );
-  //add_theme_support( 'structured-post-formats', array( 'image', 'video', 'audio', 'quote' ) );
 
   /**
    * This theme supports jetpacks "infinite-scroll"
@@ -89,7 +88,21 @@ function sempress_setup() {
    */
   add_theme_support( 'infinite-scroll', array('container' => 'content', 'footer' => 'colophon') );
 
-  if (get_theme_mod( 'sempress_columns', 'single' ) == "single") {
+  /**
+   * This theme supports the "title-tag" feature
+   *
+   * @see https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
+   */
+  add_theme_support( 'title-tag' );
+
+  /**
+   * Draw attention to supported WebSemantics
+   */
+  add_theme_support( 'microformats2' );
+  add_theme_support( 'microformats' );
+  add_theme_support( 'microdata' );
+
+  if (get_theme_mod( 'sempress_columns', 'multi' ) == 'single') {
     $width = 670;
   } else {
     $width = 950;
@@ -109,9 +122,6 @@ function sempress_setup() {
     'default-image' => get_template_directory_uri() . '/img/noise.png',
   );
   add_theme_support( 'custom-background', $custom_background_args );
-
-  // This theme uses its own gallery styles.
-  //add_filter( 'use_default_gallery_style', '__return_false' );
 
   // Nicer WYSIWYG editor
   add_editor_style( 'css/editor-style.css' );
@@ -134,24 +144,24 @@ add_action( 'after_setup_theme', 'sempress_setup' );
  * @return string Filtered title.
  */
 function sempress_wp_title( $title, $sep ) {
-	global $paged, $page;
+  global $paged, $page;
 
-	if ( is_feed() )
-		return $title;
+  if ( is_feed() )
+    return $title;
 
-	// Add the site name.
-	$title .= get_bloginfo( 'name' );
+  // Add the site name.
+  $title .= get_bloginfo( 'name' );
 
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
+  // Add the site description for the home/front page.
+  $site_description = get_bloginfo( 'description', 'display' );
+  if ( $site_description && ( is_home() || is_front_page() ) )
+    $title = "$title $sep $site_description";
 
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'sempress' ), max( $paged, $page ) );
+  // Add a page number if necessary.
+  if ( $paged >= 2 || $page >= 2 )
+    $title = "$title $sep " . sprintf( __( 'Page %s', 'sempress' ), max( $paged, $page ) );
 
-	return $title;
+  return $title;
 }
 add_filter( 'wp_title', 'sempress_wp_title', 10, 2 );
 
@@ -172,6 +182,7 @@ function sempress_customize_register( $wp_customize ) {
   $wp_customize->add_setting( 'sempress_textcolor' , array(
     'default'     => '#'.$themecolors['text'],
     'transport'   => 'refresh',
+    'sanitize_callback' => 'sanitize_hex_color',
   ) );
 
   $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'sempress_textcolor', array(
@@ -183,6 +194,7 @@ function sempress_customize_register( $wp_customize ) {
   $wp_customize->add_setting( 'sempress_shadowcolor' , array(
     'default'     => '#'.$themecolors['shadow'],
     'transport'   => 'refresh',
+    'sanitize_callback' => 'sanitize_hex_color',
   ) );
 
   $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'sempress_shadowcolor', array(
@@ -194,6 +206,7 @@ function sempress_customize_register( $wp_customize ) {
   $wp_customize->add_setting( 'sempress_bordercolor' , array(
     'default'     => '#'.$themecolors['border'],
     'transport'   => 'refresh',
+    'sanitize_callback' => 'sanitize_hex_color',
   ) );
 
   $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'sempress_bordercolor', array(
@@ -205,6 +218,7 @@ function sempress_customize_register( $wp_customize ) {
   $wp_customize->add_setting( 'sempress_columns' , array(
     'default'     => 'multi',
     'transport'   => 'refresh',
+    'sanitize_callback' => 'sanitize_key',
   ) );
 
   $wp_customize->add_control( 'sempress_columns', array(
@@ -281,7 +295,7 @@ function sempress_widgets_init() {
     'after_title' => '</h3>',
   ) );
 }
-add_action( 'init', 'sempress_widgets_init' );
+add_action( 'widgets_init', 'sempress_widgets_init' );
 
 if ( ! function_exists( 'sempress_enqueue_scripts' ) ) :
 /**
@@ -306,6 +320,8 @@ function sempress_enqueue_scripts() {
 
     wp_enqueue_script('html5', get_template_directory_uri() . '/js/html5.js', false, '3.7.2');
   }
+
+  wp_enqueue_script( 'sempress-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '1.5.1', true );
 
   // Loads our main stylesheet.
   wp_enqueue_style( 'sempress-style', get_stylesheet_uri() );
@@ -364,12 +380,12 @@ function sempress_comment( $comment, $args, $depth ) {
   $GLOBALS['comment'] = $comment;
 
   switch ( $comment->comment_type ) :
-  	case 'pingback' :
-  	case 'trackback' :
+    case 'pingback' :
+    case 'trackback' :
     case 'webmention' :
   ?>
   <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-  	<article id="comment-<?php comment_ID(); ?>" class="comment <?php $comment->comment_type; ?>" itemprop="comment" itemscope itemtype="http://schema.org/UserComments">
+    <article id="comment-<?php comment_ID(); ?>" class="comment <?php $comment->comment_type; ?>" itemprop="comment" itemscope itemtype="http://schema.org/UserComments">
       <div class="comment-content p-summary p-name" itemprop="commentText name description"><?php comment_text(); ?></div>
       <footer>
         <div class="comment-meta commentmetadata">
@@ -387,8 +403,8 @@ function sempress_comment( $comment, $args, $depth ) {
       </footer>
     </article>
   <?php
-  		break;
-  	default :
+      break;
+    default :
   ?>
   <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
     <article id="comment-<?php comment_ID(); ?>" class="comment <?php $comment->comment_type; ?>" itemprop="comment" itemscope itemtype="http://schema.org/UserComments">
