@@ -1238,5 +1238,55 @@ function raindrops_theme_mod( $name = '', $property = 'default' ) {
 	}
 }
 
+function raindrops_filter_page_column_control() {
 
+	global $raindrops_current_column, $post, $template;
+	
+	if( isset( $template ) && !empty( $template ) ) {
+		$template = basename( $template,'.php' );
+	} else {
+		$template = 'index';
+	}
+	if ( 'list-of-post' == $template ) {
+		$raindrops_current_column = ( int ) raindrops_warehouse_clone( 'raindrops_sidebar_list_of_post' );
+		return;
+	}
+
+	if ( is_singular() && isset( $post ) ) {
+
+		$raindrops_content_check = get_post( $post->ID );
+		$raindrops_content_check = $raindrops_content_check->post_content;
+
+		if ( preg_match( "!\[raindrops[^\]]+(col)=(\"|')*?([^\"' ]+)(\"|')*?[^\]]*\]!si", $raindrops_content_check, $regs ) ) {
+
+			$raindrops_current_column = absint( $regs[ 3 ] );
+			return;
+		} else {
+			if( is_single() ) {
+				$raindrops_current_column = ( int ) raindrops_warehouse_clone( 'raindrops_sidebar_single' );
+			} else {
+				$raindrops_current_column = ( int ) raindrops_warehouse_clone( 'raindrops_sidebar_page' );
+			}
+			return;
+		}
+	} 
+	if ( is_home() ) {
+		$raindrops_current_column = (int) raindrops_warehouse_clone( 'raindrops_sidebar_index' );
+		return;
+	}
+	if ( is_date() ) {
+		$raindrops_current_column = (int) raindrops_warehouse_clone( 'raindrops_sidebar_date' );
+		return;
+	}
+
+	if ( is_search() ) {
+		$raindrops_current_column = (int) raindrops_warehouse_clone( 'raindrops_sidebar_search' );
+		return;
+	}
+	if ( is_404() ) {
+		$raindrops_current_column = (int) raindrops_warehouse_clone( 'raindrops_sidebar_404' );
+		return;
+	}
+
+}
 ?>
