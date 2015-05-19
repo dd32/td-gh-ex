@@ -42,7 +42,14 @@
 				
 					<nav id="topnav" class="clearfix" role="navigation">
 						<?php // Display Top Navigation
-							wp_nav_menu(array('theme_location' => 'secondary', 'container' => false, 'menu_id' => 'topnav-menu', 'echo' => true, 'fallback_cb' => '', 'before' => '', 'after' => '', 'link_before' => '', 'link_after' => '', 'depth' => 1));
+							wp_nav_menu( array(
+								'theme_location' => 'secondary', 
+								'container' => false, 
+								'menu_id' => 'topnav-menu', 
+								'echo' => true, 
+								'fallback_cb' => '',
+								'depth' => 1)
+							);
 						?>
 					</nav>
 					
@@ -85,11 +92,15 @@
 	<div id="mainnav-wrap">
 		
 		<nav id="mainnav" class="container clearfix" role="navigation">
-			
 			<?php // Display Main Navigation
-				wp_nav_menu(array('theme_location' => 'primary', 'container' => false, 'menu_id' => 'mainnav-menu', 'echo' => true, 'fallback_cb' => 'rubine_default_menu', 'before' => '', 'after' => '', 'link_before' => '', 'link_after' => '', 'depth' => 0));
+				wp_nav_menu( array(
+					'theme_location' => 'primary', 
+					'container' => false, 
+					'menu_id' => 'mainnav-menu', 
+					'echo' => true, 
+					'fallback_cb' => 'rubine_default_menu')
+				);
 			?>
-			
 		</nav>
 		
 	</div>

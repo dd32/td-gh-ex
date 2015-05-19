@@ -2,7 +2,7 @@
 Theme Name: Rubine Lite
 Theme URI: http://themezee.com/themes/rubine/
 Description: Rubine Lite is a clean and retina-ready magazine theme created with usability and simplicity in mind. The theme offers a gorgeous featured content area on the home page to highlight your most important posts. Of course the design is fully responsive and makes your content readable on every device.
-Version: 1.1.1
+Version: 1.1.2
 Author: ThemeZee
 Author URI: http://themezee.com
 Tags: two-columns, light, red, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, fluid-layout, responsive-layout, one-column, left-sidebar, right-sidebar, three-columns, four-columns, black, blue, silver, white, green, gray
@@ -211,7 +211,7 @@ input, textarea, select {
 #topheader #header-search {
 	float: right;
 }
-#topnav-icon {
+#topnav-toggle {
 	display: none;
 }
 #topnav-menu {
@@ -244,7 +244,7 @@ input, textarea, select {
 
 /* Navigation Menu
 -------------------------------------------------------------- */
-#mainnav-icon {
+#mainnav-toggle {
 	display: none;
 }
 #mainnav-wrap {
@@ -1482,20 +1482,22 @@ embed, iframe, object, video {
 	#topnav {
 		float: none;
 	}
-	#topnav-icon {
+	#topnav-toggle {
 		float: left;
 		display: inline-block;
-		padding: 0.7em 1em;
+		margin: 0;
+		padding: 0.6em 0.8em 0.7em;
 		text-decoration: none;
 		font-size: 0.8em;
 		color: #fff;
-		text-transform: uppercase;
+		background: none;
+		border: none;
 	}
-	#topnav-icon:hover {
+	#topnav-toggle:hover {
 		cursor: pointer;
 		background: rgba(0,0,0,0.2); 
 	}
-	#topnav-icon:after {
+	#topnav-toggle:after {
 		float: left;
 		margin: 0;
 		-webkit-font-smoothing: antialiased;
@@ -1555,22 +1557,30 @@ embed, iframe, object, video {
 		margin: 1.5em 0;
 		float: none;
 	}
-	#mainnav-icon {
+	#mainnav-toggle {
 		display: block;
-		padding: 1.3em;
+		margin: 0;
+		padding: 1em;
+		width: 100%;
 		text-decoration: none;
 		font-size: 1.0em;
 		font-weight: bold;
 		font-family: 'Carme', Tahoma, Verdana, Arial;
+		text-align: left;
+		line-height: 1.5;
 		background: #f8f8f8;
+		border: none;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
 	}
-	#mainnav-icon:hover {
+	#mainnav-toggle:hover {
 		cursor: pointer;
 		background: #fff;
 	}
-	#mainnav-icon:after {
+	#mainnav-toggle:after {
 		float: right;
-		margin: -0.15em 0 0;
+		margin: 0;
 		-webkit-font-smoothing: antialiased;
 		display: inline-block;
 		content: '\f419';
@@ -1642,6 +1652,39 @@ embed, iframe, object, video {
 	}
 	#mainnav-menu ul li.current_page_item a, #mainnav-menu ul li.current-menu-item a {
 		text-decoration: underline;
+	}
+	
+	#mainnav-menu .submenu-dropdown-toggle {
+		float: right;
+		display: block;
+		margin: 0;
+		padding: 1.15em 1.5em;
+	}
+	#mainnav-menu .submenu-dropdown-toggle:hover {
+		cursor: pointer;
+	}
+	#mainnav-menu .submenu-dropdown-toggle:hover:before {
+		color: #777;
+	}
+	#mainnav-menu .submenu-dropdown-toggle:before {
+		font-size: 20px;
+		line-height: 1;
+		font-family: 'Genericons';
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-decoration: inherit;
+		vertical-align: middle;
+		content: '\f510';
+		color: #222;
+	}
+	#mainnav-menu .submenu-dropdown-toggle.active:before {
+		content: '\f50e';
+	}
+	#mainnav-menu ul .submenu-dropdown-toggle {
+		padding: 0.55em 1.2em;
+	}
+	#mainnav-menu ul .submenu-dropdown-toggle:before {
+		font-size: 16px;
 	}
 }
 

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Rubine Lite\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-17 11:07+0100\n"
-"PO-Revision-Date: 2015-03-17 11:07+0100\n"
+"POT-Creation-Date: 2015-04-30 10:25+0100\n"
+"PO-Revision-Date: 2015-04-30 10:25+0100\n"
 "Last-Translator: Ulrich Pogson <grapplerulrich@gmail.com>\n"
 "Language-Team: ThemeZee <contact@themezee.com>\n"
 "MIME-Version: 1.0\n"
@@ -80,35 +80,35 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: functions.php:109
+#: functions.php:102
 msgid "Main Navigation"
 msgstr ""
 
-#: functions.php:110
+#: functions.php:103
 msgid "Top Navigation"
 msgstr ""
 
-#: functions.php:111
+#: functions.php:104
 msgid "Social Icons"
 msgstr ""
 
-#: functions.php:142
+#: functions.php:135
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:144
+#: functions.php:137
 msgid "Appears on posts and pages except front page and fullwidth template."
 msgstr ""
 
-#: functions.php:226
+#: functions.php:219
 msgid "Pingback:"
 msgstr ""
 
-#: functions.php:227 functions.php:246
+#: functions.php:220 functions.php:239
 msgid "(Edit)"
 msgstr ""
 
-#: functions.php:257
+#: functions.php:250
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
@@ -158,28 +158,28 @@ msgstr ""
 msgid "Tag Archives: %s"
 msgstr ""
 
-#: inc/featured-content.php:419
+#: inc/featured-content.php:348
 msgid "Featured Content"
 msgstr ""
 
-#: inc/featured-content.php:420
+#: inc/featured-content.php:349
 #, php-format
 msgid ""
-"Use a <a href=\"%1$s\">tag</a> to feature your posts. If no posts match the "
-"tag, <a href=\"%2$s\">sticky posts</a> will be displayed instead."
+"Easily feature all posts with the <a href=\"%1$s\">\"featured\" tag</a> or a "
+"tag of your choice. Your theme supports up to %2$s posts in its featured "
+"content area."
 msgstr ""
 
-#: inc/featured-content.php:421 inc/featured-content.php:430
-#: inc/featured-content.php:490
-msgid "featured"
+#: inc/featured-content.php:376
+msgid "Tag name"
 msgstr ""
 
-#: inc/featured-content.php:442
-msgid "Tag Name"
+#: inc/featured-content.php:381
+msgid "Hide tag from displaying in post meta and tag clouds."
 msgstr ""
 
-#: inc/featured-content.php:447
-msgid "Don&rsquo;t display tag on front end."
+#: inc/featured-content.php:387
+msgid "Display featured posts in latest blog post listing."
 msgstr ""
 
 #: inc/template-tags.php:79
@@ -240,7 +240,7 @@ msgstr ""
 msgid "Theme Demo"
 msgstr ""
 
-#: inc/theme-info.php:45 inc/theme-info.php:66
+#: inc/theme-info.php:45 inc/theme-info.php:60
 msgid "Theme Documentation"
 msgstr ""
 
@@ -248,60 +248,60 @@ msgstr ""
 msgid "Rate this theme"
 msgstr ""
 
-#: inc/theme-info.php:63
+#: inc/theme-info.php:57
 #, php-format
 msgid "Getting Started with %s"
 msgstr ""
 
-#: inc/theme-info.php:68
+#: inc/theme-info.php:62
 msgid ""
 "Need any help to setup and configure this theme? We got you covered with an "
 "extensive theme documentation on our website."
 msgstr ""
 
-#: inc/theme-info.php:70
+#: inc/theme-info.php:64
 msgid "Visit Rubine Documentation"
 msgstr ""
 
-#: inc/theme-info.php:75 inc/customizer/customizer.php:28
+#: inc/theme-info.php:69 inc/customizer/customizer.php:28
 msgid "Theme Options"
 msgstr ""
 
-#: inc/theme-info.php:77
+#: inc/theme-info.php:71
 msgid ""
 "Rubine supports the awesome Theme Customizer for all theme settings. Click "
 "\"Customize Theme\" to open the Customizer now."
 msgstr ""
 
-#: inc/theme-info.php:79
+#: inc/theme-info.php:73
 msgid "Customize Theme"
 msgstr ""
 
-#: inc/theme-info.php:84 inc/customizer/sections/customizer-upgrade.php:14
+#: inc/theme-info.php:78 inc/customizer/sections/customizer-upgrade.php:14
 msgid "PRO Version"
 msgstr ""
 
-#: inc/theme-info.php:86
+#: inc/theme-info.php:80
 msgid ""
 "Need more features? Check out the PRO version which comes with additional "
 "features and advanced customization options."
 msgstr ""
 
-#: inc/theme-info.php:88
+#: inc/theme-info.php:82
 msgid "Learn more about the PRO Version of Rubine"
 msgstr ""
 
-#: inc/theme-info.php:108
+#: inc/theme-info.php:102
 #, php-format
 msgid ""
 "Rubine is proudly brought to you by %1s. If you like this theme, %2s :) "
 msgstr ""
 
-#: inc/theme-info.php:110
+#: inc/theme-info.php:104
 msgid "rate it"
 msgstr ""
 
-#: inc/customizer/customizer.php:53
+#: inc/customizer/customizer.php:49
 msgid "Display Tagline below site title."
 msgstr ""
 

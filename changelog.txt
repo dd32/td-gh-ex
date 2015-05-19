@@ -2,6 +2,12 @@
 Rubine Lite Changelog
 ===================================
 
+Version 1.1.2
+-----------------------------------
+[changed] navigation.js to use our new developed responsiveMenu function
+[added] dropdown icons and animations for nested submenus on mobile navigation
+[added] language files for German
+
 Version 1.1.1
 -----------------------------------
 [added] new classes entry-title, updated and author for google microformats structure
