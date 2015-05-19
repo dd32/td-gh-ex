@@ -72,12 +72,13 @@ ScreenShot Images
     accesspress-mag/images/demo-images/300-250.png
 
 ----------------------------------------------------
-
 == Changelog ==
+Version 1.1.5
+ * Added demo and support url
+
 Version 1.1.4
  * Changed theme description 
  * Fixed demo content
-
 
 Version 1.0.1
 * Added latest posts widget
