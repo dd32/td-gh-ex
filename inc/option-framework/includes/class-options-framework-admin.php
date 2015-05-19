@@ -198,8 +198,10 @@ class Options_Framework_Admin {
         </div>
         <div class="ak-socials">
             <p>
-              <a target="_blank" href="<?php echo esc_url( 'https://accesspressthemes.com/documentation/theme-instruction-accesspress-pro/' ); ?>"><?php _e( 'Online Documentation', 'accesspress-mag' ); ?></a> | 
-              <a target="_blank" href="<?php echo esc_url( 'http://accesspressthemes.com/support'); ?>"><?php _e( 'Support Forum', 'accesspress-mag'); ?></a>
+              <a target="_blank" href="<?php echo esc_url( 'http://accesspressthemes.com/accesspress-mag/' ); ?>"><?php _e( 'Demo', 'accesspress-mag' ); ?></a> |
+              <a target="_blank" href="<?php echo esc_url( 'https://accesspressthemes.com/accesspress-mag-documentation' ); ?>"><?php _e( 'Documentation', 'accesspress-mag' ); ?></a> |  
+              <!--<a target="_blank" href="<?php //echo esc_url( 'https://wordpress.org/support/theme/accesspress-mag'); ?>"><?php //_e( 'Support', 'accesspress-mag'); ?></a>-->
+              <?php echo sprintf(__('Any question!! Click <a href="%s" target="_blank">here</a> for Live Chat.','accesspresslite'),esc_url('https://accesspressthemes.com/contact/')); ?>  
             </p>
         </div>
         

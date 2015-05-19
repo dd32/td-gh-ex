@@ -71,9 +71,14 @@ ScreenShot Images
     accesspress-mag/images/demo-images/728-90.png
     accesspress-mag/images/demo-images/300-250.png
 
----------------------------------------------
+----------------------------------------------------
 
 == Changelog ==
+Version 1.1.4
+ * Changed theme description 
+ * Fixed demo content
+
+
 Version 1.0.1
 * Added latest posts widget
 * Added default no-image available

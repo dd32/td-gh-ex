@@ -15,7 +15,7 @@ get_header();
 
 $accesspress_mag_theme_option = get_option( 'accesspress-mag-theme' );
 if( empty( $accesspress_mag_theme_option )){
-    get_template_part('homepage');
+    get_template_part('home-page');
 } else {
 ?>
 <div class="apmag-container">
