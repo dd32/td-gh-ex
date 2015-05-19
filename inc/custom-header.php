@@ -1,5 +1,4 @@
-<?php 
-function arzine_custom_header_setup() {
+<?php function arzine_custom_header_setup() {
     $args = array(
         'default-text-color' => '515151',
         'default-image' => '',
@@ -22,65 +21,64 @@ function arzine_header_style() {
     if ( $text_color == get_theme_support( 'custom-header', 'default-text-color' ) )
         return; ?>
     <style type="text/css">
-    <?php if ( ! display_header_text() ) : ?>
-        .blog-title,
-        .site-description {
-            position: absolute !important;
-            clip: rect(1px 1px 1px 1px); /* IE7 */
-            clip: rect(1px, 1px, 1px, 1px);
-        }
-    <?php else : ?>
-        .blog-title a,
-        .site-description {
-            color: #<?php echo $text_color; ?> !important;
-        }
-    <?php endif; ?>
+        <?php if ( ! display_header_text() ) : ?>
+            .blog-title,
+            .site-description {
+                position: absolute !important;
+                clip: rect(1px 1px 1px 1px); /* IE7 */
+                clip: rect(1px, 1px, 1px, 1px);
+            }
+        <?php else : ?>
+            .blog-title a,
+            .site-description {
+                color: #<?php echo $text_color; ?> !important;
+            }
+        <?php endif; ?>
     </style>
     <?php }
 
 function arzine_admin_header_style() { ?>
     <style type="text/css">
-    .appearance_page_custom-header #headimg {
-        border: 0;
-    }
+        .appearance_page_custom-header #headimg {
+            border: 0;
+        }
 
-    #headimg h1, 
-    #headimg h2 {
-        line-height: 1.6;
-        margin: 0;
-        padding: 0;
-    }
+        #headimg h1, 
+        #headimg h2 {
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
 
-    #headimg h1 {
-        font-size: 30px;
-    }
+        #headimg h1 {
+            font-size: 30px;
+        }
 
-    #headimg h1 a,
-    #headimg h1 a:visited {
-        color: #111111;
-        text-decoration: none;
-    }
+        #headimg h1 a,
+        #headimg h1 a:visited {
+            color: #111111;
+            text-decoration: none;
+        }
 
-    #headimg h1 a:hover {
-        color: #444444;
-    }
+        #headimg h1 a:hover {
+            color: #444444;
+        }
 
-    #headimg h2 {
-        color: #333333;
-        font: normal 16px/1.8 Open Sans, verdana, sans-serif;
-        margin-bottom: 24px;
-    }
+        #headimg h2 {
+            color: #333333;
+            font: normal 16px/1.8 Open Sans, verdana, sans-serif;
+            margin-bottom: 24px;
+        }
 
-    #headimg img {
-        max-width: <?php echo get_theme_support( 'custom-header', 'max-width' ); ?>px;
-    }
+        #headimg img {
+            max-width: <?php echo get_theme_support( 'custom-header', 'max-width' ); ?>px;
+        }
     </style>
 <?php }
 
 function arzine_admin_header_image() { ?>
     <div id="headimg">
-        <?php 
-        if ( ! display_header_text() )
+        <?php if ( ! display_header_text() )
             $style = ' style="display:none;"';
         else 
             $style = ' style="color:#' . get_header_textcolor() . ';"'; ?>

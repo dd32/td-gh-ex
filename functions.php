@@ -116,19 +116,18 @@ endif;
 if ( ! function_exists( 'arzine_comment' ) ) : 
 function arzine_comment( $comment, $args, $depth ) {
     $GLOBALS['comment'] = $comment;
-    switch ( $comment->comment_type ) :
-        case 'pingback' :
+    switch ( $comment->comment_type ) : 
+        case 'pingback' : 
         case 'trackback' : ?>
     <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-        <p><?php _e( 'Pingback:', 'arzine' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'arzine' ), '<span class="edit-link">', '</span>' ); ?></p>
+        <p><?php _e( 'Pingback:', 'arzine' ); comment_author_link(); edit_comment_link( __( '(Edit)', 'arzine' ), '<span class="edit-link">', '</span>' ); ?></p>
     <?php break;
         default :
             global $post; ?>
     <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
         <article id="comment-<?php comment_ID(); ?>" class="comment">
             <header class="comment-meta comment-author vcard">
-                <?php
-                    echo get_avatar( $comment, 44 );
+                <?php echo get_avatar( $comment, 44 );
                     printf( '<cite class="fn">%1$s %2$s</cite>',
                         get_comment_author_link(),
                         ( $comment->user_id === $post->post_author ) ? '<span> ' . __( 'Post author', 'arzine' ) . '</span>' : ''
@@ -155,7 +154,7 @@ function arzine_comment( $comment, $args, $depth ) {
 }
 endif;
 
-if ( ! function_exists( 'arzine_entry_meta' ) ) :
+if ( ! function_exists( 'arzine_entry_meta' ) ) : 
 function arzine_entry_meta() {
     $categories_list = get_the_category_list( __( ', ', 'arzine' ) );
     $tag_list = get_the_tag_list( '', __( ', ', 'arzine' ) );
