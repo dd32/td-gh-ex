@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Base\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-05 22:14+0545\n"
-"PO-Revision-Date: 2015-05-05 22:14+0545\n"
+"POT-Creation-Date: 2015-05-20 08:21+0545\n"
+"PO-Revision-Date: 2015-05-20 08:21+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: pt_BR\n"
@@ -168,29 +168,29 @@ msgstr ""
 
 #: ../inc/catchbase-breadcrumb.php:58
 #, php-format
-msgid "Archive for %s"
+msgid "%1$s Archive for %2$s"
 msgstr ""
 
 #: ../inc/catchbase-breadcrumb.php:59
 #, php-format
-msgid "Search results for: %s"
-msgstr "Resultados da Pesquisa para: %s"
+msgid "%1$sSearch results for: %2$s"
+msgstr ""
 
 #: ../inc/catchbase-breadcrumb.php:60
 #, php-format
-msgid "Posts tagged %s"
+msgid "%1$sPosts tagged %2$s"
 msgstr ""
 
 #: ../inc/catchbase-breadcrumb.php:61
 #, php-format
-msgid "View all posts by %s"
-msgstr "Ver todas as postagens de: %s"
+msgid "%1$sView all posts by %2$s"
+msgstr ""
 
 #: ../inc/catchbase-breadcrumb.php:62
 msgid "Error 404"
 msgstr "Erro 404"
 
-#: ../inc/catchbase-breadcrumb.php:222 ../inc/catchbase-core.php:906
+#: ../inc/catchbase-breadcrumb.php:223 ../inc/catchbase-core.php:906
 #, php-format
 msgid "Page %s"
 msgstr "Página %s"
@@ -1102,7 +1102,7 @@ msgid "Promotion Headline Button Text "
 msgstr "Texto do botão"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:406
-msgid "Promotion Headine Link"
+msgid "Promotion Headline Link"
 msgstr "Link do botão"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:430
@@ -1207,3 +1207,9 @@ msgid ""
 "This is the Primary Sidebar Widget Area if you are using a two or three column "
 "site layout option."
 msgstr "Esta é a área de Widget da Barra Lateral Primária."
+
+#~ msgid "Search results for: %s"
+#~ msgstr "Resultados da Pesquisa para: %s"
+
+#~ msgid "View all posts by %s"
+#~ msgstr "Ver todas as postagens de: %s"

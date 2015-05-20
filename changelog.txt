@@ -1,5 +1,10 @@
 == Change log ==
 
+= 1.9 = 
+* Added: Support for Random Header Image
+* Bug Fixed: Removal of extra '/' in sub-categories in breadcrumb and updates in breadcrumb
+* Bug Fixed: Blog page featured image not overwriting default header image
+
 = 1.8 =
 * Added link in Featured page content title
 * Added German translation de_DE.po and de_DE.mo

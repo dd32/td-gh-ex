@@ -403,7 +403,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	) );
 
 	$wp_customize->add_control( 'catchbase_theme_options[promotion_headline_url]', array(
-		'label'    	=> __( 'Promotion Headine Link', 'catchbase' ),
+		'label'    	=> __( 'Promotion Headline Link', 'catchbase' ),
 		'priority'	=> '4',
 		'section' 	=> 'catchbase_promotion_headline_options',
 		'settings'	=> 'catchbase_theme_options[promotion_headline_url]',

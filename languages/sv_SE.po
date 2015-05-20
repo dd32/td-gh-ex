@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Catch Base\n"
 "Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/catch-base-pro-"
 "premium/pro-premium/\n"
-"POT-Creation-Date: 2015-05-05 22:14+0545\n"
-"PO-Revision-Date: 2015-05-05 22:14+0545\n"
+"POT-Creation-Date: 2015-05-20 08:21+0545\n"
+"PO-Revision-Date: 2015-05-20 08:21+0545\n"
 "Last-Translator: Anders <anders@paulcen.se>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: sv\n"
@@ -163,29 +163,29 @@ msgstr "Hem"
 
 #: ../inc/catchbase-breadcrumb.php:58
 #, php-format
-msgid "Archive for %s"
-msgstr "Arkiv för% s"
+msgid "%1$s Archive for %2$s"
+msgstr ""
 
 #: ../inc/catchbase-breadcrumb.php:59
 #, php-format
-msgid "Search results for: %s"
-msgstr "Sökresultat för: %s"
+msgid "%1$sSearch results for: %2$s"
+msgstr ""
 
 #: ../inc/catchbase-breadcrumb.php:60
 #, php-format
-msgid "Posts tagged %s"
-msgstr "Inlägg taggade: %s"
+msgid "%1$sPosts tagged %2$s"
+msgstr ""
 
 #: ../inc/catchbase-breadcrumb.php:61
 #, php-format
-msgid "View all posts by %s"
-msgstr "Visa alla inlägg av %s"
+msgid "%1$sView all posts by %2$s"
+msgstr ""
 
 #: ../inc/catchbase-breadcrumb.php:62
 msgid "Error 404"
 msgstr "Fel 404"
 
-#: ../inc/catchbase-breadcrumb.php:222 ../inc/catchbase-core.php:906
+#: ../inc/catchbase-breadcrumb.php:223 ../inc/catchbase-core.php:906
 #, php-format
 msgid "Page %s"
 msgstr "Sida %s"
@@ -1105,7 +1105,7 @@ msgid "Promotion Headline Button Text "
 msgstr "Utvald rubrik knapptext"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:406
-msgid "Promotion Headine Link"
+msgid "Promotion Headline Link"
 msgstr "Utvald rubrik länk"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:430
@@ -1219,6 +1219,18 @@ msgid ""
 msgstr ""
 "Detta är den primära sidopanelen om du använder en två eller tre kolumn "
 "webbplats layoutalternativ."
+
+#~ msgid "Archive for %s"
+#~ msgstr "Arkiv för% s"
+
+#~ msgid "Search results for: %s"
+#~ msgstr "Sökresultat för: %s"
+
+#~ msgid "Posts tagged %s"
+#~ msgstr "Inlägg taggade: %s"
+
+#~ msgid "View all posts by %s"
+#~ msgstr "Visa alla inlägg av %s"
 
 #~ msgid "Header Right Menu"
 #~ msgstr "Sidhuvud till höger"

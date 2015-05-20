@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Catch Base\n"
 "Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/catch-base-"
 "free/\n"
-"POT-Creation-Date: 2015-05-05 22:13+0545\n"
-"PO-Revision-Date: 2015-05-05 22:13+0545\n"
+"POT-Creation-Date: 2015-05-20 08:21+0545\n"
+"PO-Revision-Date: 2015-05-20 08:21+0545\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: en\n"
@@ -161,29 +161,29 @@ msgstr ""
 
 #: ../inc/catchbase-breadcrumb.php:58
 #, php-format
-msgid "Archive for %s"
+msgid "%1$s Archive for %2$s"
 msgstr ""
 
 #: ../inc/catchbase-breadcrumb.php:59
 #, php-format
-msgid "Search results for: %s"
+msgid "%1$sSearch results for: %2$s"
 msgstr ""
 
 #: ../inc/catchbase-breadcrumb.php:60
 #, php-format
-msgid "Posts tagged %s"
+msgid "%1$sPosts tagged %2$s"
 msgstr ""
 
 #: ../inc/catchbase-breadcrumb.php:61
 #, php-format
-msgid "View all posts by %s"
+msgid "%1$sView all posts by %2$s"
 msgstr ""
 
 #: ../inc/catchbase-breadcrumb.php:62
 msgid "Error 404"
 msgstr ""
 
-#: ../inc/catchbase-breadcrumb.php:222 ../inc/catchbase-core.php:906
+#: ../inc/catchbase-breadcrumb.php:223 ../inc/catchbase-core.php:906
 #, php-format
 msgid "Page %s"
 msgstr ""
@@ -1081,7 +1081,7 @@ msgid "Promotion Headline Button Text "
 msgstr ""
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:406
-msgid "Promotion Headine Link"
+msgid "Promotion Headline Link"
 msgstr ""
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:430

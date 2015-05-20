@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Base\n"
-"POT-Creation-Date: 2015-05-05 22:14+0545\n"
+"POT-Creation-Date: 2015-05-20 08:21+0545\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -163,29 +163,29 @@ msgstr "Maison"
 
 #: ../inc/catchbase-breadcrumb.php:58
 #, php-format
-msgid "Archive for %s"
-msgstr "Archives pour %s"
+msgid "%1$s Archive for %2$s"
+msgstr ""
 
 #: ../inc/catchbase-breadcrumb.php:59
 #, php-format
-msgid "Search results for: %s"
-msgstr "Résultat pour votre recherche: %s"
+msgid "%1$sSearch results for: %2$s"
+msgstr ""
 
 #: ../inc/catchbase-breadcrumb.php:60
 #, php-format
-msgid "Posts tagged %s"
-msgstr "Articles étiquetés %s"
+msgid "%1$sPosts tagged %2$s"
+msgstr ""
 
 #: ../inc/catchbase-breadcrumb.php:61
 #, php-format
-msgid "View all posts by %s"
-msgstr "Voir tout les articles de %s"
+msgid "%1$sView all posts by %2$s"
+msgstr ""
 
 #: ../inc/catchbase-breadcrumb.php:62
 msgid "Error 404"
 msgstr "Erreur 404"
 
-#: ../inc/catchbase-breadcrumb.php:222 ../inc/catchbase-core.php:906
+#: ../inc/catchbase-breadcrumb.php:223 ../inc/catchbase-core.php:906
 #, php-format
 msgid "Page %s"
 msgstr "Page %s"
@@ -1113,7 +1113,7 @@ msgid "Promotion Headline Button Text "
 msgstr "Promotion Bouton global Text␣ "
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:406
-msgid "Promotion Headine Link"
+msgid "Promotion Headline Link"
 msgstr "Promotion titre Lien "
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:430
@@ -1228,6 +1228,18 @@ msgid ""
 msgstr ""
 "C'est la première barre latérale de zone de widgets  si vous utilisez l'option "
 "deux ou trois colonnes: réaménagement du site."
+
+#~ msgid "Archive for %s"
+#~ msgstr "Archives pour %s"
+
+#~ msgid "Search results for: %s"
+#~ msgstr "Résultat pour votre recherche: %s"
+
+#~ msgid "Posts tagged %s"
+#~ msgstr "Articles étiquetés %s"
+
+#~ msgid "View all posts by %s"
+#~ msgstr "Voir tout les articles de %s"
 
 #~ msgctxt "Open Sans font: on or off"
 #~ msgid "on"
