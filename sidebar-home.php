@@ -4,6 +4,7 @@
  *
  * @package Accesspress Mag
  */
+$accesspress_mag_theme_option = get_option( 'accesspress-mag-theme' );
 $sidebar_bottom_ad = of_get_option('value_sidebar_bottom_ad'); 
 $trans_ads = of_get_option( 'trans_advertisement' );
 if( empty( $trans_ads ) ){ $trans_ads = __( 'Advertisement', 'accesspress-mag' ); }
@@ -27,6 +28,13 @@ if( empty( $trans_editor ) ){ $trans_editor = __( "Editor Pick's", "accesspress-
             <h1 class="sidebar-title"><span><?php echo esc_attr( $trans_ads ) ;?></span></h1>
             <div class="ad_content">
             <?php dynamic_sidebar( 'accesspress-mag-homepage-sidebar-top-ad' ); ?> 
+            </div>
+        </div><!--header ad-->
+    <?php elseif( empty( $accesspress_mag_theme_option ) ):?>
+        <div class="sidebar-top-ad widget-area wow fadeInUp" data-wow-delay="0.5s">
+            <h1 class="sidebar-title"><span><?php echo esc_attr( $trans_ads ) ;?></span></h1>
+            <div class="ad_content">
+                <img src="<?php echo esc_url( get_template_directory_uri().'/images/demo-images/300-250.png' );?>" /> 
             </div>
         </div><!--header ad-->
     <?php endif; ?>
@@ -103,6 +111,13 @@ if( empty( $trans_editor ) ){ $trans_editor = __( "Editor Pick's", "accesspress-
         <div class="sidebar-top-ad widget-area wow fadeInUp" data-wow-delay="0.5s">
             <h1 class="sidebar-title"><span><?php echo esc_attr( $trans_ads ) ;?></span></h1>
             <div class="ad_content"><?php dynamic_sidebar( 'accesspress-mag-homepage-sidebar-middle-ad' ); ?></div>
+        </div><!--header ad-->
+    <?php elseif( empty( $accesspress_mag_theme_option ) ):?>
+        <div class="sidebar-top-ad widget-area wow fadeInUp" data-wow-delay="0.5s">
+            <h1 class="sidebar-title"><span><?php echo esc_attr( $trans_ads ) ;?></span></h1>
+            <div class="ad_content">
+                <img src="<?php echo esc_url( get_template_directory_uri().'/images/demo-images/300-250.png' );?>" /> 
+            </div>
         </div><!--header ad-->
     <?php endif; ?>
     

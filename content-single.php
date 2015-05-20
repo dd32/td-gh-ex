@@ -38,9 +38,9 @@
                 ?>
             </div>
         <div class="post_content"><?php the_content(); ?></div>	        	
-        <?php if ( is_active_sidebar( 'article_ad' ) ) : ?>
+        <?php if ( is_active_sidebar( 'accesspress-mag-article-ad' ) ) : ?>
             <div class="article-ad-section">
-            <?php dynamic_sidebar( 'article_ad' ); ?> 
+                <?php dynamic_sidebar( 'accesspress-mag-article-ad' ); ?> 
             </div> 
         <?php endif ;?>
 		<?php

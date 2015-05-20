@@ -131,10 +131,16 @@ get_header();
                     ?>
               </section>
 
-            <?php if ( is_active_sidebar( 'accesspress-mag-homepage-inline-ad' ) ) : ?>
+            <?php 
+                $accesspress_mag_theme_option = get_option( 'accesspress-mag-theme' );
+                if ( is_active_sidebar( 'accesspress-mag-homepage-inline-ad' ) ) : ?>
                 <div class="homepage-middle-ad wow flipInX" data-wow-delay="1s">
                     <?php dynamic_sidebar( 'accesspress-mag-homepage-inline-ad' ); ?> 
                 </div>
+            <?php elseif( empty( $accesspress_mag_theme_option ) ) :?>
+                    <div class="homepage-middle-ad wow flipInX" data-wow-delay="1s">
+                        <img src="<?php echo esc_url( get_template_directory_uri().'/images/demo-images/728-90.png' );?>" />
+                    </div>
             <?php endif; ?>
 
               <section class="third-block clearfix wow fadeInUp" data-wow-delay="0.5s">

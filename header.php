@@ -117,7 +117,12 @@
                     <div class="header-ad">
                         <?php dynamic_sidebar( 'accesspress-mag-header-ad' ); ?> 
                     </div><!--header ad-->
+                <?php elseif( empty( $accesspress_mag_theme_option ) ) :?>
+                    <div class="header-ad">
+                        <img src="<?php echo esc_url( get_template_directory_uri().'/images/demo-images/728-90.png' );?>" />
+                    </div>
                 <?php endif; ?>
+                
                 
             </div>
         </div>

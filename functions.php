@@ -187,7 +187,7 @@ function accesspress_mag_widgets_init() {
     
     register_sidebar( array(
 		'name'          => __( 'Header Ad ', 'accesspress-mag' ),
-		'id'            => 'accesspress-mag-header-ad ',
+		'id'            => 'accesspress-mag-header-ad',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',

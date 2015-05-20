@@ -73,6 +73,11 @@ ScreenShot Images
 
 ----------------------------------------------------
 == Changelog ==
+Version 1.1.6
+ * Added demo content for advertisement area in header.php , sidebar-home.php and home-page.php
+ * Changed status of “force-activation” in accesspress-function.php	
+ * Fixed id of “header ad widget” in function.php
+
 Version 1.1.5
  * Added demo and support url
 
