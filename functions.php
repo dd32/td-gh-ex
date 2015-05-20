@@ -69,7 +69,12 @@ function catchflames_content_width() {
 	if ( $page_id == $page_for_posts ) {
 		$layout = get_post_meta( $page_for_posts,'catchflames-sidebarlayout', true );
 	}	
-	elseif ( $post)  {
+	// Front Page setting in Reading Settings
+	elseif ( $page_id == $page_on_front ) {
+		$layout = get_post_meta( $page_on_front,'catchflames-sidebarlayout', true );
+	}		
+	// Settings for page/post/attachment
+	elseif ( is_singular() ) {
 		if ( is_attachment() ) { 
 			$parent = $post->post_parent;
 			$layout = get_post_meta( $parent,'catchflames-sidebarlayout', true );
@@ -77,9 +82,13 @@ function catchflames_content_width() {
 			$layout = get_post_meta( $post->ID,'catchflames-sidebarlayout', true ); 
 		}
 	}
+	else {
+		$layout = 'default';	
+	}
 	
-	if ( empty( $layout ) || ( !is_page() && !is_single() ) ) {
-		$layout='default';
+	//check empty and load default
+	if ( empty( $layout ) ) {
+		$layout = 'default';	
 	}
 	
 	// Two Colums: Left and Right Sidebar & One Column: No Sidbear, No Sidebar One Column

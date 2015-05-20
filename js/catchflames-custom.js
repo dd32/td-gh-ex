@@ -58,13 +58,15 @@ jQuery(document).ready(function() {
 	});	
 
 	//sidr
-	jQuery('#fixed-header-menu').sidr({
-		name: 'mobile-top-nav',
-		side: 'left' // By default
-	});
-	jQuery('#header-left-menu').sidr({
-		name: 'mobile-header-left-nav',
-		side: 'left' // By default
-	});
+	if ( jQuery.isFunction( jQuery.fn.sidr ) ) {
+			jQuery('#fixed-header-menu').sidr({
+			name: 'mobile-top-nav',
+			side: 'left' // By default
+		});
+		jQuery('#header-left-menu').sidr({
+			name: 'mobile-header-left-nav',
+			side: 'left' // By default
+		});
+	}
 
 });

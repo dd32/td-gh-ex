@@ -25,30 +25,38 @@ do_action( 'catchflames_before_secondary' );
 
 	// Get Page ID outside Loop
 	$page_id = $wp_query->get_queried_object_id();	
-	
+
 	// Blog Page setting in Reading Settings
 	if ( $page_id == $page_for_posts ) {
 		$layout = get_post_meta( $page_for_posts,'catchflames-sidebarlayout', true );
 		$sidebaroptions = get_post_meta( $page_for_posts, 'catchflames-sidebar-options', true );
-	}
+	}	
+	// Front Page setting in Reading Settings
+	elseif ( $page_id == $page_on_front ) {
+		$layout = get_post_meta( $page_on_front,'catchflames-sidebarlayout', true );
+		$sidebaroptions = get_post_meta( $page_on_front, 'catchflames-sidebar-options', true );
+	}	
 	// Settings for page/post/attachment
-	elseif ( $post ) {
- 		if ( is_attachment() ) { 
+	elseif ( is_singular() ) {
+		if ( is_attachment() ) { 
 			$parent = $post->post_parent;
-			$layout = get_post_meta( $parent,'catchflames-sidebarlayout', true );
+			$layout = get_post_meta( $parent, 'catchflames-sidebarlayout', true );
 			$sidebaroptions = get_post_meta( $parent, 'catchflames-sidebar-options', true );
 		} else {
-			$layout = get_post_meta( $post->ID,'catchflames-sidebarlayout', true ); 
-			$sidebaroptions = get_post_meta( $post->ID, 'catchflames-sidebar-options', true );
+			$layout = get_post_meta( $post->ID, 'catchflames-sidebarlayout', true ); 
+			$sidebaroptions = get_post_meta( $post->ID, 'catchflames-sidebar-options', true );  
 		}
 	}
 	else {
+		$layout = 'default';	
 		$sidebaroptions = '';
-	}
-	// Default Settings
-	if ( empty( $layout ) || ( !is_page() && !is_single() ) ) {
-		$layout = 'default';
-	}
+	}	
+
+	//check empty and load default
+	if ( empty( $layout ) ) {
+		$layout = 'default';	
+	}	
+
 	// WooCommerce Settings
 	if ( !is_active_sidebar( 'catchflames_woocommerce_sidebar' ) && ( class_exists( 'Woocommerce' ) && is_woocommerce() ) ) {
 		$layout = 'no-sidebar';

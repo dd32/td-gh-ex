@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Flames\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-13 20:24+0545\n"
-"PO-Revision-Date: 2015-03-13 20:24+0545\n"
+"POT-Creation-Date: 2015-05-20 08:15+0545\n"
+"PO-Revision-Date: 2015-05-20 08:15+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes Team <info@catchthemes.com>\n"
 "Language: fr_FR\n"
@@ -142,7 +142,7 @@ msgstr "Commentaires fermés"
 #: ../content-gallery.php:18 ../content-gallery.php:50 ../content-image.php:18
 #: ../content-link.php:18 ../content-page.php:13 ../content-quote.php:16
 #: ../content-status.php:17 ../content.php:31 ../content.php:35
-#: ../inc/catchflames-functions.php:894
+#: ../inc/catchflames-functions.php:903
 #, php-format
 msgid "Permalink to %s"
 msgstr "Permalien pour %s"
@@ -323,11 +323,11 @@ msgstr "Statut"
 msgid "Featured"
 msgstr "Représenté"
 
-#: ../functions.php:190 ../inc/panel/theme-options.php:264
+#: ../functions.php:199 ../inc/panel/theme-options.php:264
 msgid "Fixed Header Top Menu"
 msgstr "Menu d'En-tête fixé"
 
-#: ../functions.php:191
+#: ../functions.php:200
 msgid "Primary Menu"
 msgstr "Premier menu"
 
@@ -414,102 +414,102 @@ msgstr ""
 "<span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s"
 "\" rel=\"author\">%7$s</a></span></span>"
 
-#: ../inc/catchflames-functions.php:596
+#: ../inc/catchflames-functions.php:605
 msgid "ID"
 msgstr "ID"
 
-#: ../inc/catchflames-functions.php:742 ../inc/panel/theme-options.php:115
+#: ../inc/catchflames-functions.php:751 ../inc/panel/theme-options.php:115
 #: ../inc/panel/theme-options.php:842
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../inc/catchflames-functions.php:747 ../inc/panel/theme-options.php:116
+#: ../inc/catchflames-functions.php:756 ../inc/panel/theme-options.php:116
 #: ../inc/panel/theme-options.php:850
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../inc/catchflames-functions.php:752 ../inc/panel/theme-options.php:117
+#: ../inc/catchflames-functions.php:761 ../inc/panel/theme-options.php:117
 #: ../inc/panel/theme-options.php:858
 msgid "Google+"
 msgstr "Google+"
 
-#: ../inc/catchflames-functions.php:757 ../inc/panel/theme-options.php:890
+#: ../inc/catchflames-functions.php:766 ../inc/panel/theme-options.php:890
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: ../inc/catchflames-functions.php:762 ../inc/panel/theme-options.php:866
+#: ../inc/catchflames-functions.php:771 ../inc/panel/theme-options.php:866
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/catchflames-functions.php:767
+#: ../inc/catchflames-functions.php:776
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../inc/catchflames-functions.php:772 ../inc/panel/theme-options.php:882
+#: ../inc/catchflames-functions.php:781 ../inc/panel/theme-options.php:882
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/catchflames-functions.php:777 ../inc/panel/theme-options.php:898
+#: ../inc/catchflames-functions.php:786 ../inc/panel/theme-options.php:898
 msgid "AIM"
 msgstr "AIM"
 
-#: ../inc/catchflames-functions.php:782 ../inc/panel/theme-options.php:906
+#: ../inc/catchflames-functions.php:791 ../inc/panel/theme-options.php:906
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../inc/catchflames-functions.php:787 ../inc/panel/theme-options.php:915
+#: ../inc/catchflames-functions.php:796 ../inc/panel/theme-options.php:915
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/catchflames-functions.php:792 ../inc/panel/theme-options.php:923
+#: ../inc/catchflames-functions.php:801 ../inc/panel/theme-options.php:923
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/catchflames-functions.php:797 ../inc/panel/theme-options.php:931
+#: ../inc/catchflames-functions.php:806 ../inc/panel/theme-options.php:931
 msgid "deviantART"
 msgstr "deviantART"
 
-#: ../inc/catchflames-functions.php:802 ../inc/panel/theme-options.php:939
+#: ../inc/catchflames-functions.php:811 ../inc/panel/theme-options.php:939
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/catchflames-functions.php:807 ../inc/panel/theme-options.php:948
+#: ../inc/catchflames-functions.php:816 ../inc/panel/theme-options.php:948
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../inc/catchflames-functions.php:812 ../inc/panel/theme-options.php:956
+#: ../inc/catchflames-functions.php:821 ../inc/panel/theme-options.php:956
 msgid "RSS"
 msgstr "RSS"
 
-#: ../inc/catchflames-functions.php:817 ../inc/panel/theme-options.php:964
+#: ../inc/catchflames-functions.php:826 ../inc/panel/theme-options.php:964
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../inc/catchflames-functions.php:822 ../inc/panel/theme-options.php:972
+#: ../inc/catchflames-functions.php:831 ../inc/panel/theme-options.php:972
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/catchflames-functions.php:827 ../inc/panel/theme-options.php:980
+#: ../inc/catchflames-functions.php:836 ../inc/panel/theme-options.php:980
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/catchflames-functions.php:832 ../inc/panel/theme-options.php:988
+#: ../inc/catchflames-functions.php:841 ../inc/panel/theme-options.php:988
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
-#: ../inc/catchflames-functions.php:837 ../inc/panel/theme-options.php:996
+#: ../inc/catchflames-functions.php:846 ../inc/panel/theme-options.php:996
 msgid "Email"
 msgstr "E-mail"
 
-#: ../inc/catchflames-functions.php:842 ../inc/panel/theme-options.php:1004
+#: ../inc/catchflames-functions.php:851 ../inc/panel/theme-options.php:1004
 msgid "Contact"
 msgstr "Contact"
 
-#: ../inc/catchflames-functions.php:847 ../inc/panel/theme-options.php:1012
+#: ../inc/catchflames-functions.php:856 ../inc/panel/theme-options.php:1012
 msgid "Xing"
 msgstr "Xing"
 
-#: ../inc/catchflames-functions.php:852
+#: ../inc/catchflames-functions.php:861
 msgid "SpecificFeeds"
 msgstr "SpecificFeeds"
 
@@ -1283,7 +1283,7 @@ msgstr ""
 "This is the Secondary Sidebar Widget Area if you are using a three column "
 "site layout option."
 
-#: ../sidebar-third.php:60 ../sidebar.php:77
+#: ../sidebar-third.php:60 ../sidebar.php:85
 #, php-format
 msgid ""
 "You can add content to this area by visiting your <a href=\"%s\">Widgets "
@@ -1292,11 +1292,11 @@ msgstr ""
 "You can add content to this area by visiting your <a href=\"%s\">Widgets "
 "Panel</a> and adding new widgets to this area."
 
-#: ../sidebar.php:74
+#: ../sidebar.php:82
 msgid "Primary Sidebar Widget Area"
 msgstr "Primary Sidebar Widget Area"
 
-#: ../sidebar.php:76
+#: ../sidebar.php:84
 msgid ""
 "This is the Primary Sidebar Widget Area if you are using a two or three "
 "column site layout option."

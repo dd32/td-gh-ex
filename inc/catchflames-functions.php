@@ -23,7 +23,7 @@ function catchflames_scripts_method() {
 	wp_enqueue_style( 'catchflames', get_stylesheet_uri() );
 	
 	// Add Genericons font, used in the main stylesheet.
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.0.3' );		
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/css/genericons/genericons.css', false, '3.3' );		
 	
 	
 	/**
@@ -551,17 +551,26 @@ function catchflames_body_classes( $classes ) {
 	if ( $page_id == $page_for_posts ) {
 		$layout = get_post_meta( $page_for_posts,'catchflames-sidebarlayout', true );
 	}	
-	elseif ( $post)  {
- 		if ( is_attachment() ) { 
+	// Front Page setting in Reading Settings
+	elseif ( $page_id == $page_on_front ) {
+		$layout = get_post_meta( $page_on_front,'catchflames-sidebarlayout', true );
+	}	
+	// Settings for page/post/attachment
+	elseif ( is_singular() ) {
+		if ( is_attachment() ) { 
 			$parent = $post->post_parent;
-			$layout = get_post_meta( $parent,'catchflames-sidebarlayout', true );
+			$layout = get_post_meta( $parent, 'catchflames-sidebarlayout', true );
 		} else {
-			$layout = get_post_meta( $post->ID,'catchflames-sidebarlayout', true ); 
+			$layout = get_post_meta( $post->ID, 'catchflames-sidebarlayout', true ); 
 		}
 	}
-	
-	if ( empty( $layout ) || ( !is_page() && !is_single() && 'product' != get_post_type() ) ) {
-		$layout='default';
+	else {
+		$layout = 'default';	
+	}
+
+	//check empty and load default
+	if ( empty( $layout ) ) {
+		$layout = 'default';	
 	}	
 
 	if ( $layout == 'three-columns' || ( $layout=='default' && $themeoption_layout == 'three-columns' ) ) {

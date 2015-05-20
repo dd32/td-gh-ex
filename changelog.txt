@@ -1,5 +1,10 @@
 == Changelog ==
 
+Version 2.5
+* Bug Fixed: Sidebar layout option (Reported by notjustblack )
+* Bug Fixed: Sidebar Option in page/post
+* Updated Genericion to version 3.3
+
 Version 2.4.1
 * Added Spanish translation es_ES.po and es_ES.mo
 * Bug Fixed: Header featured image enable options (Reported by Pam)
