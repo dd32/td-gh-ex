@@ -1,3 +1,9 @@
+Changelog 3.7.24:
+- Fixed a wrong META title when Front Page is a static page
+- Fixed the cause of messages 'Notice: register_sidebar was called incorrectly' showing
+- Fixed lack of a space in the <body..> when using 'HTML Inserts: Body Tag'
+- Fix issue in CSS where there are two ';' when there should be one
+
 Changelog 3.7.23:
 - Fixed an error which caused feeds to stop working
 - Fixed an error which caused META data not to work using Atahualpa's SEO

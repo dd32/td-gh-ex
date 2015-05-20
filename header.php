@@ -59,7 +59,7 @@ if ($bfa_ata['favicon_file'] != "") {
 <?php if ( function_exists('wp_list_comments') AND is_singular() AND (comments_open( $post_id ))) { 	wp_enqueue_script( 'comment-reply' ); } ?>
 <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?><?php bfa_incl('html_inserts_body_tag'); ?>>
+<body <?php body_class(); ?> <?php bfa_incl('html_inserts_body_tag'); ?>>
 <?php bfa_incl('html_inserts_body_top'); ?>
 
 <?php if ($bfa_ata['full_width_header'] == "Yes") { ?>

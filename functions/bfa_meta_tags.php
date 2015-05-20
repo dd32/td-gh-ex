@@ -72,14 +72,10 @@ function bfa_title_tag( $title, $sep ) {
 		
 	} else { 
 
-		#if ( is_home() ) {
-		if ( is_front_page() ) {
-
+		if ( is_home() ) {
 			return get_bloginfo('name');
-
 		} else {
-
-			if ( is_single() OR is_page() ) {
+			if ( is_single() OR is_page() OR is_front_page() ) {
 				// post and page titles get their own filter from WP
 				$bfa_meta_title = get_post_meta( $post->ID, 'bfa_ata_meta_title', true );
 				if ( $bfa_meta_title != '' ) {

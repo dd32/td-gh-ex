@@ -1267,7 +1267,7 @@ table#wp-calendar {
 table#wp-calendar caption {
 	width: auto;
 	background: #eeeeee;
-	border: none;;
+	border: none;
 	padding: 3px;
 	margin: 0 auto;
 	font-size: 1em;

@@ -1,5 +1,5 @@
 <?php
-$bfa_ata_version = "3.7.23";
+$bfa_ata_version = "3.7.24";
 
 // Load translation file above
 load_theme_textdomain('atahualpa');
@@ -19,6 +19,7 @@ function bfa_widgets_init() {
 
 	register_sidebar(array(
 		'name'=>'Left Sidebar',
+		'id'=> 'bfa-ata-left-sidebar',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<div class="widget-title"><h3>',
@@ -26,6 +27,7 @@ function bfa_widgets_init() {
 	));
 	register_sidebar(array(
 		'name'=>'Right Sidebar',
+		'id'=> 'bfa-ata-right-sidebar',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<div class="widget-title"><h3>',
@@ -33,6 +35,7 @@ function bfa_widgets_init() {
 	));
 	register_sidebar(array(
 		'name'=>'Left Inner Sidebar',
+		'id'=> 'bfa-ata-left-inner-sidebar',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<div class="widget-title"><h3>',
@@ -40,6 +43,7 @@ function bfa_widgets_init() {
 	));
 	register_sidebar(array(
 		'name'=>'Right Inner Sidebar',
+		'id'=> 'bfa-ata-right-inner-sidebar',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<div class="widget-title"><h3>',
@@ -52,9 +56,13 @@ function bfa_widgets_init() {
 	else $bfa_ata_extra_widget_areas = '';
 	
 	if ($bfa_ata_extra_widget_areas != '') {
-		foreach ($bfa_ata_extra_widget_areas as $widget_area) { 
+		$n = 0;
+		foreach ($bfa_ata_extra_widget_areas as $widget_area) {
+			$n++; 
+			$id_name = 'bfa-ata-extra-widget-area-'.$n;
 			register_sidebar(array(
 				'name' => $widget_area['name'],
+				'id'=> $id_name,
 				'before_widget' => $widget_area['before_widget'],
 				'after_widget' => $widget_area['after_widget'],
 				'before_title' => $widget_area['before_title'],
