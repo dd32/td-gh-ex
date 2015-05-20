@@ -1,13 +1,13 @@
 === rockers Theme ===
-Contributors: Alberto Ramacciotti ( http://ramacciotti.altervista.org )
+Contributors: Alberto Ramacciotti ( http://albertoramacciotti.com )
 Tags: two-columns, left-sidebar, light, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, threaded-comments, featured-images, sticky-post, translation-ready, post-formats, rtl-language-support, threaded-comments
 Requires at least: 3.0
-Tested up to: 4.0.1
-Version: 2.4
+Tested up to: 4.2.2
+Version: 2.5
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Rockers WordPress theme, Copyright (C) 2013-2014 Alberto Ramacciotti.
+Rockers WordPress theme, Copyright (C) 2013-2015 Alberto Ramacciotti.
 Rockers theme is licensed under the GPL.
 
 Rockers is a responsive HTML5 WordPress theme.
@@ -81,4 +81,7 @@ None yet
 * Fixed bugs
 
 = 2.4 =
+* Fixed bugs
+
+= 2.5 =
 * Fixed bugs
