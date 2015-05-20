@@ -2,7 +2,7 @@
 Theme Name: Commodore
 Description: Simple and lightweight responsive theme in the style of the good old Commodore 64. The search box has been modified - just type and press Return to search - classic blinking cursor included!
 Author: United Networks
-Version: 1.60
+Version: 1.61
 Tags: blue, light, two-columns, one-column, right-sidebar, fixed-layout, custom-menu
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -402,4 +402,13 @@ body.has_sidebar .content { width: 100%; }
 nav { float: none; padding: 5px; width: 100%; }
 #commentform p input, #commentform p textarea { width: 100%; }
 .prevnext { padding-bottom: 50px; }
- }
+}
+
+@media only screen and (min-width:737px) and (max-width:1065px) {
+#wrapper,.content,nav { box-sizing:border-box; }
+#wrapper { width:100%; }
+.content { width:75% !important;padding:10px 15px; }
+nav { width:25% !important;float:left !important; }
+}
+
+img.wp-image-4 { max-width:100%;height:auto;box-sizing:border-box;padding:10px 20px 10px 15px; }
