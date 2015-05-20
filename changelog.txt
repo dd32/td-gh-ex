@@ -1,6 +1,11 @@
 == Change log ==
 
-=  1.5 =
+= 1.6 = 
+* Added: Support for Random Header Image
+* Bug Fixed: Removal of extra '/' in sub-categories in breadcrumb and updates in breadcrumb
+* Bug Fixed: Blog page featured image not overwriting default header image
+
+= 1.5 =
 * Bug Fixed: Header Text only CSS change when not displaying site title and tagline
 * Bug Fixed: Metabox Options not saving properly
 * Bug Fixed: Fixed Slider height overlaps issue. Added Image Loader option on Featured Slider that specifies image-loading support

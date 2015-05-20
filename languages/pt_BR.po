@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Full Frame\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-05 22:07+0545\n"
-"PO-Revision-Date: 2015-05-05 22:07+0545\n"
+"POT-Creation-Date: 2015-05-20 08:28+0545\n"
+"PO-Revision-Date: 2015-05-20 08:28+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: pt_BR\n"
@@ -574,7 +574,7 @@ msgid "Promotion Headline Button Text "
 msgstr "Texto do botão"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:418
-msgid "Promotion Headine Link"
+msgid "Promotion Headline Link"
 msgstr "Link do botão"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:442
@@ -644,23 +644,23 @@ msgstr ""
 
 #: ../inc/fullframe-breadcrumb.php:58
 #, php-format
-msgid "Archive for %s"
+msgid "%1$s Archive for %2$s"
 msgstr ""
 
 #: ../inc/fullframe-breadcrumb.php:59
 #, php-format
-msgid "Search results for: %s"
-msgstr "Resultados da Pesquisa para: %s"
+msgid "%1$sSearch results for: %2$s"
+msgstr ""
 
 #: ../inc/fullframe-breadcrumb.php:60
 #, php-format
-msgid "Posts tagged %s"
+msgid "%1$sPosts tagged %2$s"
 msgstr ""
 
 #: ../inc/fullframe-breadcrumb.php:61
 #, php-format
-msgid "View all posts by %s"
-msgstr "Ver todas as postagens de: %s"
+msgid "%1$sView all posts by %2$s"
+msgstr ""
 
 #: ../inc/fullframe-breadcrumb.php:62
 msgid "Error 404"
@@ -1185,3 +1185,9 @@ msgid ""
 "widget to this area by visiting your <a href=\"%s\">Widgets Panel</a> which will "
 "replace default widgets."
 msgstr ""
+
+#~ msgid "Search results for: %s"
+#~ msgstr "Resultados da Pesquisa para: %s"
+
+#~ msgid "View all posts by %s"
+#~ msgstr "Ver todas as postagens de: %s"

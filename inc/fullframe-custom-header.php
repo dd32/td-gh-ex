@@ -257,6 +257,11 @@ if ( ! function_exists( 'fullframe_featured_image' ) ) :
 		$options				= fullframe_get_theme_options();	
 		
 		$header_image 			= get_header_image();
+
+		//Support Random Header Image
+		if ( is_random_header_image() ) {
+			delete_transient( 'fullframe_featured_image' );
+		}
 			
 		if ( !$fullframe_featured_image = get_transient( 'fullframe_featured_image' ) ) {
 			
@@ -329,9 +334,20 @@ if ( ! function_exists( 'fullframe_featured_page_post_image' ) ) :
 	 * @since Fullframe 1.0
 	 */
 	function fullframe_featured_page_post_image() {
-		global $post;
+		global $post, $wp_query;
 
-		if( has_post_thumbnail( ) ) {
+		// Get Page ID outside Loop
+		$page_id = $wp_query->get_queried_object_id();
+		$page_for_posts = get_option('page_for_posts');
+
+		if ( is_home() && $page_for_posts == $page_id ) {
+			$header_page_id = $page_id;
+		}
+		else {
+			$header_page_id = $post->ID;
+		}
+
+		if( has_post_thumbnail( $header_page_id ) ) {
 		   	$options					= fullframe_get_theme_options();	
 			$featured_header_image_url	= $options['featured_header_image_url'];
 			$featured_header_image_base	= $options['featured_header_image_base'];

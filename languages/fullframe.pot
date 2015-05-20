@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Full Frame\n"
 "Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/full-frame-pro-"
 "premium/pro-premium/\n"
-"POT-Creation-Date: 2015-05-05 22:07+0545\n"
-"PO-Revision-Date: 2015-05-05 22:07+0545\n"
+"POT-Creation-Date: 2015-05-20 08:28+0545\n"
+"PO-Revision-Date: 2015-05-20 08:28+0545\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: en\n"
@@ -564,7 +564,7 @@ msgid "Promotion Headline Button Text "
 msgstr ""
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:418
-msgid "Promotion Headine Link"
+msgid "Promotion Headline Link"
 msgstr ""
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:442
@@ -634,22 +634,22 @@ msgstr ""
 
 #: ../inc/fullframe-breadcrumb.php:58
 #, php-format
-msgid "Archive for %s"
+msgid "%1$s Archive for %2$s"
 msgstr ""
 
 #: ../inc/fullframe-breadcrumb.php:59
 #, php-format
-msgid "Search results for: %s"
+msgid "%1$sSearch results for: %2$s"
 msgstr ""
 
 #: ../inc/fullframe-breadcrumb.php:60
 #, php-format
-msgid "Posts tagged %s"
+msgid "%1$sPosts tagged %2$s"
 msgstr ""
 
 #: ../inc/fullframe-breadcrumb.php:61
 #, php-format
-msgid "View all posts by %s"
+msgid "%1$sView all posts by %2$s"
 msgstr ""
 
 #: ../inc/fullframe-breadcrumb.php:62

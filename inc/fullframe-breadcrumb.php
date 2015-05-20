@@ -55,10 +55,10 @@ if( !function_exists( 'fullframe_custom_breadcrumbs' ) ) :
 
 		/* === OPTIONS === */
 		$text['home']     = __( 'Home', 'fullframe' ); // text for the 'Home' link
-		$text['category'] = __( 'Archive for %s', 'fullframe' ); // text for a category page
-		$text['search']   = __( 'Search results for: %s', 'fullframe' ); // text for a search results page
-		$text['tag']      = __( 'Posts tagged %s', 'fullframe' ); // text for a tag page
-		$text['author']   = __( 'View all posts by %s', 'fullframe' ); // text for an author page
+		$text['category'] = __( '%1$s Archive for %2$s', 'fullframe' ); // text for a category page
+		$text['search']   = __( '%1$sSearch results for: %2$s', 'fullframe' ); // text for a search results page
+		$text['tag']      = __( '%1$sPosts tagged %2$s', 'fullframe' ); // text for a tag page
+		$text['author']   = __( '%1$sView all posts by %2$s', 'fullframe' ); // text for an author page
 		$text['404']      = __( 'Error 404', 'fullframe' ); // text for the 404 page
 
 		$showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
@@ -102,16 +102,16 @@ if( !function_exists( 'fullframe_custom_breadcrumbs' ) ) :
 			elseif( is_category() ) {
 				$thisCat = get_category( get_query_var( 'cat' ), false );
 				if( $thisCat->parent != 0 ) {
-					$cats = get_category_parents( $thisCat->parent, true );
+					$cats = get_category_parents( $thisCat->parent, true, false );
 					$cats = str_replace( '<a', $linkBefore . '<a' . $linkAttr, $cats );
-					$cats = str_replace( '</a>', '</a>' . $linkAfter, $cats );
+					$cats = str_replace( '</a>', $delimiter .'</a>' . $linkAfter, $cats );
 					echo $cats;
 				}
-				echo $before . sprintf( $text['category'], single_cat_title( '', false ) ) . $after;
+				echo $before . sprintf( $text['category'], '<span class="archive-text">', '&nbsp</span>' . single_cat_title( '', false ) ) . $after;
 
 			}
 			elseif( is_search() ) {
-				echo $before . sprintf( $text['search'], get_search_query() ) . $after;
+				echo $before . sprintf( $text['search'], '<span class="search-text">', '&nbsp</span>' . get_search_query() ) . $after;
 
 			}
 			elseif( is_day() ) {
@@ -146,7 +146,7 @@ if( !function_exists( 'fullframe_custom_breadcrumbs' ) ) :
 						$cats = preg_replace( "#^(.+)$#", "$1", $cats );
 					}
 					$cats = str_replace( '<a', $linkBefore . '<a' . $linkAttr, $cats );
-					$cats = str_replace( '</a>', '</a>' . $linkAfter, $cats );
+					$cats = str_replace( '</a>', $delimiter .'</a>' . $linkAfter, $cats );
 					echo $cats;
 					if( $showCurrent == 1 ) {
 						echo $before . get_the_title() . $after;
@@ -168,7 +168,7 @@ if( !function_exists( 'fullframe_custom_breadcrumbs' ) ) :
 				if( $cat ) {
 					$cats = get_category_parents( $cat, true );
 					$cats = str_replace( '<a', $linkBefore . '<a' . $linkAttr, $cats );
-					$cats = str_replace( '</a>', '</a>' . $linkAfter, $cats );
+					$cats = str_replace( '</a>', $delimiter .'</a>' . $linkAfter, $cats );
 					echo $cats;
 				}
 
@@ -202,13 +202,13 @@ if( !function_exists( 'fullframe_custom_breadcrumbs' ) ) :
 
 			}
 			elseif( is_tag() ) {
-				echo $before . sprintf( $text['tag'], single_tag_title( '', false ) ) . $after;
+				echo $before . sprintf( $text['tag'], '<span class="tag-text">', '&nbsp</span>' . single_tag_title( '', false ) ) . $after;
 
 			}
 			elseif( is_author() ) {
 				global $author;
 				$userdata = get_userdata( $author );
-				echo $before . sprintf( $text['author'], $userdata->display_name ) . $after;
+				echo $before . sprintf( $text['author'], '<span class="author-text">', '&nbsp</span>' . $userdata->display_name ) . $after;
 
 			}
 			elseif( is_404() ) {

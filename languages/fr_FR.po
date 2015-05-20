@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Responsive\n"
-"POT-Creation-Date: 2015-05-05 22:07+0545\n"
+"POT-Creation-Date: 2015-05-20 08:28+0545\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -589,7 +589,7 @@ msgid "Promotion Headline Button Text "
 msgstr "Promotion Bouton global Text␣ "
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:418
-msgid "Promotion Headine Link"
+msgid "Promotion Headline Link"
 msgstr "Promotion titre Lien "
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:442
@@ -664,23 +664,23 @@ msgstr "Maison"
 
 #: ../inc/fullframe-breadcrumb.php:58
 #, php-format
-msgid "Archive for %s"
-msgstr "Archives pour %s"
+msgid "%1$s Archive for %2$s"
+msgstr ""
 
 #: ../inc/fullframe-breadcrumb.php:59
 #, php-format
-msgid "Search results for: %s"
-msgstr "Résultat pour votre recherche: %s"
+msgid "%1$sSearch results for: %2$s"
+msgstr ""
 
 #: ../inc/fullframe-breadcrumb.php:60
 #, php-format
-msgid "Posts tagged %s"
-msgstr "Articles étiquetés %s"
+msgid "%1$sPosts tagged %2$s"
+msgstr ""
 
 #: ../inc/fullframe-breadcrumb.php:61
 #, php-format
-msgid "View all posts by %s"
-msgstr "Voir tout les articles de %s"
+msgid "%1$sView all posts by %2$s"
+msgstr ""
 
 #: ../inc/fullframe-breadcrumb.php:62
 msgid "Error 404"
@@ -1214,3 +1214,15 @@ msgstr ""
 "Par défaut,  chargement de widget  Recherche et d' Archives comme indiqué ci-"
 "dessous. Vous pouvez ajouter un widget à cette région en visitant votre <a href="
 "\"%s\"> Panneau Widgets </a> qui remplacera widgets par défaut."
+
+#~ msgid "Archive for %s"
+#~ msgstr "Archives pour %s"
+
+#~ msgid "Search results for: %s"
+#~ msgstr "Résultat pour votre recherche: %s"
+
+#~ msgid "Posts tagged %s"
+#~ msgstr "Articles étiquetés %s"
+
+#~ msgid "View all posts by %s"
+#~ msgstr "Voir tout les articles de %s"

@@ -4,7 +4,7 @@ Theme URI: http://catchthemes.com/themes/full-frame
 Author: Catch Themes
 Author URI: http://catchthemes.com/
 Description: Full Frame is a Simple, Clean and Spacious Full Width Responsive WordPress Theme based on Catch Base Theme. Built on HTML5, CSS3 and Theme Customizer for real time customization, it comes with a whole set of interesting and rich features which makes this theme highly customizable and flexible. Make your beautiful yet professional website in no time. Full Frame WordPress Theme will be best suited for photography, portfolio and blogging sites. This theme is translation ready and also currently translated in Swedish, French and Brazilian Portuguese. Check out Theme Instructions at http://catchthemes.com/theme-instructions/full-frame/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/full-frame/
-Version: 1.5
+Version: 1.6
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: fullframe
@@ -1881,10 +1881,17 @@ caption {
 }
 
 #breadcrumb-list span.sep {
-	border: none;
-	float: right;
-	margin-left: 0;
-	padding: 0 0 0 5px;
+       float: right;
+       margin-left: 0;
+       padding: 0 0 0 5px;
+}
+
+#breadcrumb-list span.sep,
+#breadcrumb-list span.archive-text,
+#breadcrumb-list span.search-text,
+#breadcrumb-list span.tag-text,
+#breadcrumb-list span.author-text {
+       border: none;
 }
 
 #breadcrumb-list a,

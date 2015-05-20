@@ -415,7 +415,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	) );
 
 	$wp_customize->add_control( 'fullframe_theme_options[promotion_headline_url]', array(
-		'label'    	=> __( 'Promotion Headine Link', 'fullframe' ),
+		'label'    	=> __( 'Promotion Headline Link', 'fullframe' ),
 		'priority'	=> '4',
 		'section' 	=> 'fullframe_promotion_headline_options',
 		'settings'	=> 'fullframe_theme_options[promotion_headline_url]',
