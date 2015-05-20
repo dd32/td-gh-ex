@@ -1,12 +1,12 @@
 === Content Theme ===
-Contributors: Alberto Ramacciotti ( http://ramacciotti.altervista.org )
+Contributors: Alberto Ramacciotti ( http://albertoramacciotti.com )
 Tags: one-column, dark, flexible-width, custom-menu, editor-style, threaded-comments, featured-images, translation-ready
 Requires at least: 3.0
-Tested up to: 3.5.2
-Version: 1.0.7
+Tested up to: 4.2.2
+Version: 1.0.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Content WordPress theme, Copyright (C) 2013 Alberto Ramacciotti, AR Web Dev Studio
+Content WordPress theme, Copyright (C) 2013-2015 Alberto Ramacciotti
 Content WordPress theme is licensed under the GPL.
 
 Content is a responsive HTML5 WordPress theme.
@@ -73,5 +73,9 @@ None
 * Fix bugs
 
 = 1.0.7 =
+
+* Fix bugs
+
+= 1.0.8 =
 
 * Fix bugs
