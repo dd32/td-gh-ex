@@ -1,5 +1,12 @@
 == Change log ==
 
+= 1.1 =
+* Added: Support for Random Header Image
+* Bug Fixed: Removal of extra '/' in sub-categories in breadcrumb and updates in breadcrumb
+* Bug Fixed: Blog page featured image not overwriting default header image
+* Bug Fixed: Header Text only CSS change when not displaying site title and tagline
+* Bug Fixed: Metabox Options not saving properly
+
 = 1.0 =
 * Bug Fixed: Html is now allowed in Featured Content Headline and Sub-headline
 * Bug Fixed: Header Right Social Icon

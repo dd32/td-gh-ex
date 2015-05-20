@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Gridalicious\n"
 "Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/gridalicious-"
 "free/\n"
-"POT-Creation-Date: 2015-04-09 22:52+0545\n"
-"PO-Revision-Date: 2015-04-09 22:52+0545\n"
+"POT-Creation-Date: 2015-05-20 08:31+0545\n"
+"PO-Revision-Date: 2015-05-20 08:31+0545\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: en\n"
@@ -150,8 +150,8 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: ../content-page.php:35 ../inc/gridalicious-core.php:550
-#: ../inc/gridalicious-core.php:569 ../inc/gridalicious-core.php:695
+#: ../content-page.php:35 ../inc/gridalicious-core.php:556
+#: ../inc/gridalicious-core.php:575 ../inc/gridalicious-core.php:701
 msgid "Edit"
 msgstr ""
 
@@ -439,7 +439,7 @@ msgid "Select/Add Web Clip Icon"
 msgstr ""
 
 #: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:206
-#: ../inc/gridalicious-metabox.php:65
+#: ../inc/gridalicious-metabox.php:93
 msgid "Layout Options"
 msgstr ""
 
@@ -452,7 +452,7 @@ msgid "Archive Content Layout"
 msgstr ""
 
 #: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:263
-#: ../inc/gridalicious-metabox.php:67
+#: ../inc/gridalicious-metabox.php:95
 msgid "Single Page/Post Image Layout "
 msgstr ""
 
@@ -522,7 +522,7 @@ msgid "Promotion Headline Button Text "
 msgstr ""
 
 #: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:406
-msgid "Promotion Headine Link"
+msgid "Promotion Headline Link"
 msgstr ""
 
 #: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:430
@@ -588,29 +588,29 @@ msgstr ""
 
 #: ../inc/gridalicious-breadcrumb.php:58
 #, php-format
-msgid "Archive for %s"
+msgid "%1$s Archive for %2$s"
 msgstr ""
 
 #: ../inc/gridalicious-breadcrumb.php:59
 #, php-format
-msgid "Search results for: %s"
+msgid "%1$sSearch results for: %2$s"
 msgstr ""
 
 #: ../inc/gridalicious-breadcrumb.php:60
 #, php-format
-msgid "Posts tagged %s"
+msgid "%1$sPosts tagged %2$s"
 msgstr ""
 
 #: ../inc/gridalicious-breadcrumb.php:61
 #, php-format
-msgid "View all posts by %s"
+msgid "%1$sView all posts by %2$s"
 msgstr ""
 
 #: ../inc/gridalicious-breadcrumb.php:62
 msgid "Error 404"
 msgstr ""
 
-#: ../inc/gridalicious-breadcrumb.php:222 ../inc/gridalicious-core.php:815
+#: ../inc/gridalicious-breadcrumb.php:222 ../inc/gridalicious-core.php:821
 #, php-format
 msgid "Page %s"
 msgstr ""
@@ -623,88 +623,88 @@ msgstr ""
 msgid "Secondary Menu"
 msgstr ""
 
-#: ../inc/gridalicious-core.php:516
+#: ../inc/gridalicious-core.php:522
 msgid "Post navigation"
 msgstr ""
 
-#: ../inc/gridalicious-core.php:525
+#: ../inc/gridalicious-core.php:531
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: ../inc/gridalicious-core.php:526
+#: ../inc/gridalicious-core.php:532
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: ../inc/gridalicious-core.php:550
+#: ../inc/gridalicious-core.php:556
 msgid "Pingback:"
 msgstr ""
 
-#: ../inc/gridalicious-core.php:560
+#: ../inc/gridalicious-core.php:566
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr ""
 
-#: ../inc/gridalicious-core.php:566
+#: ../inc/gridalicious-core.php:572
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: ../inc/gridalicious-core.php:573
+#: ../inc/gridalicious-core.php:579
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../inc/gridalicious-core.php:676
+#: ../inc/gridalicious-core.php:682
 msgctxt "Used before publish date."
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
 msgstr ""
 
-#: ../inc/gridalicious-core.php:683
+#: ../inc/gridalicious-core.php:689
 msgctxt "Used before post author name."
 msgid "<span class=\"screen-reader-text\">Author</span>"
 msgstr ""
 
-#: ../inc/gridalicious-core.php:691
+#: ../inc/gridalicious-core.php:697
 msgid "Leave a comment"
 msgstr ""
 
-#: ../inc/gridalicious-core.php:691
+#: ../inc/gridalicious-core.php:697
 msgid "1 Comment"
 msgstr ""
 
-#: ../inc/gridalicious-core.php:691
+#: ../inc/gridalicious-core.php:697
 msgid "% Comments"
 msgstr ""
 
-#: ../inc/gridalicious-core.php:712 ../inc/gridalicious-core.php:720
+#: ../inc/gridalicious-core.php:718 ../inc/gridalicious-core.php:726
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ""
 
-#: ../inc/gridalicious-core.php:715
+#: ../inc/gridalicious-core.php:721
 msgctxt "Used before category names."
 msgid "<span class=\"screen-reader-text\">Categories</span>"
 msgstr ""
 
-#: ../inc/gridalicious-core.php:723
+#: ../inc/gridalicious-core.php:729
 msgctxt "Used before tag names."
 msgid "<span class=\"screen-reader-text\">Tags</span>"
 msgstr ""
 
-#: ../inc/gridalicious-core.php:894
+#: ../inc/gridalicious-core.php:900
 #, php-format
 msgid "%s"
 msgstr ""
 
-#: ../inc/gridalicious-core.php:1377
+#: ../inc/gridalicious-core.php:1383
 msgid "Scroll Up"
 msgstr ""
 
-#: ../inc/gridalicious-core.php:1394
+#: ../inc/gridalicious-core.php:1400
 msgid "Posted on"
 msgstr ""
 
-#: ../inc/gridalicious-core.php:1395
+#: ../inc/gridalicious-core.php:1401
 msgid "By"
 msgstr ""
 
@@ -1011,12 +1011,12 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: ../inc/gridalicious-metabox.php:32 ../inc/gridalicious-metabox.php:38
-msgid "Gridalicious Options"
+#: ../inc/gridalicious-metabox.php:94
+msgid "Header Featured Image Options"
 msgstr ""
 
-#: ../inc/gridalicious-metabox.php:66
-msgid "Header Featured Image Options"
+#: ../inc/gridalicious-metabox.php:221
+msgid "Gridalicious Options"
 msgstr ""
 
 #: ../inc/gridalicious-widgets.php:30

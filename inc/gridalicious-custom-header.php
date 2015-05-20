@@ -210,20 +210,16 @@ if ( ! function_exists( 'gridalicious_site_branding' ) ) :
 			$gridalicious_site_logo = '';
 		}
 
-		if ( display_header_text() ){
-			// Show header text if display_header_text is checked
-			$gridalicious_header_text = '
-			<div id="site-header">
-				<h1 class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '">' . get_bloginfo( 'name' ) . '</a></h1>
-				<h2 class="site-description">' . get_bloginfo( 'description' ) . '</h2>
-			</div><!-- #site-header -->';
-		}
-		else {
-			$gridalicious_header_text = '';
-		}
+		$gridalicious_header_text = '
+		<div id="site-header">
+			<h1 class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '">' . get_bloginfo( 'name' ) . '</a></h1>
+			<h2 class="site-description">' . get_bloginfo( 'description' ) . '</h2>
+		</div><!-- #site-header -->';
+		
 
+		$text_color = get_header_textcolor();
 		if ( '' != $options['logo'] && !$options['logo_disable'] ) {
-			if( ! $options['move_title_tagline'] ) {
+			if ( ! $options['move_title_tagline'] && 'blank' != $text_color ) {
 				$gridalicious_site_branding  = '<div id="site-branding" class="logo-left">';
 				$gridalicious_site_branding .= $gridalicious_site_logo;
 				$gridalicious_site_branding .= $gridalicious_header_text;
@@ -263,6 +259,11 @@ if ( ! function_exists( 'gridalicious_featured_image' ) ) :
 		
 		$header_image 			= get_header_image();
 			
+		//Support Random Header Image
+		if ( is_random_header_image() ) {
+			delete_transient( 'gridalicious_featured_image' );
+		}
+
 		if ( !$gridalicious_featured_image = get_transient( 'gridalicious_featured_image' ) ) {
 			
 			echo '<!-- refreshing cache -->';
@@ -334,9 +335,20 @@ if ( ! function_exists( 'gridalicious_featured_page_post_image' ) ) :
 	 * @since Gridalicious 0.1
 	 */
 	function gridalicious_featured_page_post_image() {
-		global $post;
+		global $post, $wp_query;
 
-		if( has_post_thumbnail( ) ) {
+		// Get Page ID outside Loop
+		$page_id = $wp_query->get_queried_object_id();
+		$page_for_posts = get_option('page_for_posts');
+
+		if ( is_home() && $page_for_posts == $page_id ) {
+			$header_page_id = $page_id;
+		}
+		else {
+			$header_page_id = $post->ID;
+		}
+
+		if( has_post_thumbnail( $header_page_id ) ) {
 		   	$options					= gridalicious_get_theme_options();	
 			$featured_header_image_url	= $options['featured_header_image_url'];
 			$featured_header_image_base	= $options['featured_header_image_base'];

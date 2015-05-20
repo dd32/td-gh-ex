@@ -451,6 +451,12 @@ if ( ! function_exists( 'gridalicious_custom_css' ) ) :
 		if ( ( !$gridalicious_custom_css = get_transient( 'gridalicious_custom_css' ) ) ) {		
 			$gridalicious_custom_css ='';
 
+			// Has the text been hidden?
+			if ( ! display_header_text() ) {
+				$gridalicious_custom_css    .=  ".site-title a, .site-description { position: absolute !important; clip: rect(1px 1px 1px 1px); clip: rect(1px, 1px, 1px, 1px); }". "\n";
+			}
+
+
 			//Custom CSS Option		
 			if( !empty( $options[ 'custom_css' ] ) ) {
 				$gridalicious_custom_css	.=  $options['custom_css'] . "\n";

@@ -403,7 +403,7 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 	) );
 
 	$wp_customize->add_control( 'gridalicious_theme_options[promotion_headline_url]', array(
-		'label'    	=> __( 'Promotion Headine Link', 'gridalicious' ),
+		'label'    	=> __( 'Promotion Headline Link', 'gridalicious' ),
 		'priority'	=> '4',
 		'section' 	=> 'gridalicious_promotion_headline_options',
 		'settings'	=> 'gridalicious_theme_options[promotion_headline_url]',

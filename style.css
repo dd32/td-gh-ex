@@ -4,7 +4,7 @@ Theme URI: http://catchthemes.com/themes/gridalicious
 Author: Catch Themes
 Author URI: http://catchthemes.com/
 Description: Gridalicious is a Simple, Clean, Grid Base Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and WordPress Theme Customizer for real time customization. This theme is translation ready. Check out Theme Instructions at http://catchthemes.com/theme-instructions/gridalicious/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/gridalicious/
-Version: 1.0
+Version: 1.1
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: gridalicious
@@ -2098,10 +2098,17 @@ caption {
 }
 
 #breadcrumb-list span.sep {
-	border: none;
-	float: right;
-	margin-left: 0;
-	padding: 0 0 0 5px;
+       float: right;
+       margin-left: 0;
+       padding: 0 0 0 5px;
+}
+
+#breadcrumb-list span.sep,
+#breadcrumb-list span.archive-text,
+#breadcrumb-list span.search-text,
+#breadcrumb-list span.tag-text,
+#breadcrumb-list span.author-text {
+       border: none;
 }
 
 #breadcrumb-list a,
