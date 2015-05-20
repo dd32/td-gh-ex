@@ -89,6 +89,11 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.23.4
+* Loop Issue fixed in Parallax Section.
+* Missing Translation text fixed.
+* Plugins recomemded via TGM Plugin Activation
+
 Version 1.23.3
 * Compatibility issues with multilingual plugin (polylang) fixed.
 * Issue with Google Map Section fixed.

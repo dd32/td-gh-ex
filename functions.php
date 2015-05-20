@@ -212,6 +212,11 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
+ * Load Plugin installation file.
+ */
+require get_template_directory() . '/inc/accesspress-plugin-activation.php';
+
+/**
  * Load Theme Option Frame work files
  */
 require get_template_directory() . '/inc/options-framework/options-framework.php';

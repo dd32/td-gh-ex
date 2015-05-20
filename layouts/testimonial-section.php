@@ -27,7 +27,7 @@
 			$image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'thumbnail');
 			?>
 			<div class="testimonial-image">
-				<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
+				<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
 			</div>
 			<?php endif; ?>
 

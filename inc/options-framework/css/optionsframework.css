@@ -5,8 +5,14 @@
     background:#fff;
     float: left;
 }
-#optionsframework-wrap h2.nav-tab-wrapper{
+#optionsframework-wrap .nav-tab-wrapper{
 	padding: 10px 0 0;
+}
+#optionsframework-wrap .nav-tab-wrapper .nav-tab {
+  padding: 6px 10px;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 24px;
 }
 #optionsframework h3 {
 	cursor: default;
@@ -385,4 +391,7 @@
 	margin: 2px 0 10px;
 	color: #E66432;
 	line-height:16px;
+}
+.appearance_page_theme-options div.updated{
+	margin-left: 0;
 }
