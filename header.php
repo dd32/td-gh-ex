@@ -35,6 +35,7 @@ endif;
 	<?php if( get_header_image() ) : ?>
 		<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" style="position: absolute;" />
 	<?php endif; ?>
+	<div class="logo-wrapper">
 		<div class="container">
 			<div class="sixteen columns">
 					<div class="logo site-branding">
@@ -47,8 +48,9 @@ endif;
 							<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 						<?php endif; ?>
 					</div>
-				</div>
+			</div>
 		</div>
+	</div>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<div class="container">

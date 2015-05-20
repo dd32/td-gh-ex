@@ -310,10 +310,11 @@ FEATURES;
                     array(
                         'id'=>'color',
                         'type' => 'select',
-                        'title' => __( 'Color Scheme', 'boxy' ),
-                        'options' => array('1' => 'Grey',  '2' => 'Red'),
+                        'title' => __('Color Scheme', 'boxy'),
+                        'subtitle'=> __('Select your color scheme.', 'boxy'),
+                        'options' => array( '1' => 'default', '2' => 'red', '3' => 'blue', '4' => 'More color schemes in Boxy Pro Version.' ),
                         'default' => '1'
-                    ),
+                        ),
 
                     array(
                         'id'=>'breadcrumb',

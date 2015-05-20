@@ -10,7 +10,9 @@ are licensed under GPLv2
 6. {CAR IMAGE} is CC0 Public Domain License. http://pixabay.com/en/car-sports-car-wedding-car-49278/
 7. Sun Rise image is CC0 Public Domain License.
 https://unsplash.imgix.net/photo-1414446483597-8d8f792bfe39?q=75&fm=jpg&s=2756ab87b786786b9e689b6204d99c90
-7. All other images are created by me and is licensed under GPLv2 or later
+https://unsplash.com/photos/vD3L-rN_qNw/download
+http://pixabay.com/static/uploads/photo/2010/12/20/16/02/child-3853_640.jpg
+8. All other images are created by me and is licensed under GPLv2 or later
 
 
 
@@ -40,6 +42,9 @@ https://unsplash.imgix.net/photo-1414446483597-8d8f792bfe39?q=75&fm=jpg&s=2756ab
 16. Other theme options are self explanatory.
 
 == Change Log ==
+v. 1.1.2
+	* Added a new color scheme
+	
 v. 1.1.1
 	* Langugages directory fix
 	

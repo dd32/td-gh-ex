@@ -25,10 +25,23 @@ function boxy_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
 	global $boxy;
-	if( $boxy['color'] == '2' ) {
-		wp_enqueue_style( 'boxy-red', BOXY_PARENT_URL . '/css/red.css' );
-	}
+	if( isset( $boxy['color'] ) ) {
+		switch ($boxy['color']) {
+			case '2':
+				wp_enqueue_style( 'boxy-red', BOXY_PARENT_URL . '/css/red.css' );
+				break;
+			case '3':
+				wp_enqueue_style( 'boxy-blue', BOXY_PARENT_URL . '/blue.css');
+				break;
+			default:
+				wp_enqueue_style( 'boxy-style', get_stylesheet_uri() );
+				break;
+		}		
+	} else {
+		wp_enqueue_style( 'boxy-style', get_stylesheet_uri() );
+	}	
 }
 add_action( 'wp_enqueue_scripts', 'boxy_scripts' );
 
