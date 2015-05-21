@@ -3,8 +3,8 @@ Theme Name: AccessPress Root
 Theme URI: http://accesspressthemes.com/wordpress-themes/accesspress-root/
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com/
-Description: AccessPress Root is a simple, clean, beautifully designed responsive WordPress business theme. Its minimal but mostly used features will help you setup your website easily and quickly. Full width and boxed layout, featured slider, featured posts, services/features/projects layout, testimonial layout, blog layout, social media integration,call to action and many other page layouts. Fully responsive, WooCommerce compatible, bbPress compatible, translation ready, cross-browser compatible, SEO friendly, RTL support. AccessPress Root is multi-purpose and is suitable for any type of business. Highest level of compatibility with mostly used WP plugins.  Great customer support via online chat, email, support forum. Official support forum: http://accesspressthemes.com/support/ View full demo here: https://accesspressthemes.com/accesspress-root/
-Version: 1.10
+Description: AccessPress Root is a simple, clean, beautifully designed responsive WordPress business theme with drag and drop homepage sections. Its minimal but mostly used features will help you setup your website easily and quickly. Full width and boxed layout, featured slider, featured posts, services/features/projects layout, testimonial layout, blog layout, social media integration, call to action and many other page layouts. Fully responsive, WooCommerce compatible, bbPress compatible, translation ready, cross-browser compatible, SEO friendly, RTL support. AccessPress Root is multi-purpose and is suitable for any type of business. Highest level of compatibility with mostly used WP plugins.  Great customer support via online chat, email, support forum. Official support forum: http://accesspressthemes.com/support/ View full demo here: https://accesspressthemes.com/accesspress-root/
+Version: 1.11
 License: GNU General Public License, version 3 (GPLv3) or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: accesspress-root
@@ -1143,7 +1143,6 @@ body {
 
 #main-slider .bx-controls .bx-controls-direction a{
 	float: left;
-	font: 0/0 a;
 	color: transparent;
 	background: url("images/slider-prev-next.png") no-repeat scroll 0 0;
 	display: block;
@@ -1164,7 +1163,7 @@ body {
 --------------------------------------------------------------*/
 
 #message-slider {
-	margin-bottom: 70px;
+	margin-bottom: 50px;
 	text-align: center;
 }
 
@@ -1173,10 +1172,6 @@ body {
 	color: #1eb0bc;
 	font-weight: 600;
 }
-
-/*.message-title {
-  font-size: 30px;
-}*/
 
 .message-content {
 	font-size: 16px;
@@ -1206,11 +1201,15 @@ body {
 	background: #f2f2f2;
 }
 
+#message-slider .bx-controls .bx-pager-item a{
+    border-radius: 0;
+}
+
 /*--------------------------------------------------------------
 	Service section css
 --------------------------------------------------------------*/
 #service-section {
-	margin-bottom: 65px;
+	margin-bottom: 60px;
 }
 
 .section-title-wrap {
@@ -1238,13 +1237,13 @@ body {
 .service-title,
 .feature-title {
 	font-size: 18px;
-	font-weight: 600;
+	font-weight: 400;
 	line-height: 24px;
 	margin: 15px 0 5px;
 }
 
 .service-title a{
-	color: #141414;
+	color: #222;
 }
 
 .service-title a:hover{
@@ -1385,7 +1384,7 @@ body {
 	Feature section css
 --------------------------------------------------------------*/
 #features{
-	margin-bottom: 40px;
+	margin-bottom: 50px;
 }
 
 .feature-block{
@@ -1404,7 +1403,7 @@ body {
 	font-size: 36px;
 	height: 89px;
 	line-height: 89px;
-	margin: 20px auto 30px;
+	margin: 10px auto 30px;
 	text-align: center;
 	width: 89px;
 	cursor: pointer;
@@ -1427,7 +1426,7 @@ body {
 
 .feature-title a{
 	text-transform: uppercase;
-	color: #141414;
+	color: #222;
 }
 
 .feature-title a:hover{
@@ -1450,6 +1449,10 @@ body {
 /*--------------------------------------------------------------
 	Blog section css
 --------------------------------------------------------------*/
+#blog{
+    margin-bottom: 50px;
+}
+
 .blog-block-wrapper {
 	background: none repeat scroll 0 0 #f1f1f1;
 	padding: 45px 0 20px;
@@ -1577,13 +1580,13 @@ body {
 
 #blog .blog-title {
 	font-size: 18px;
-	font-weight: 700;
+	font-weight: 400;
 	line-height: 26px;
 	margin: 0;
 }
 
 #blog .blog-title a{
-	color: #141414;
+	color: #222;
 }
 
 #blog .blog-title a:hover{
@@ -1650,8 +1653,7 @@ body {
 }
 
 #widgets .widget-container {
-	padding-top: 66px;
-    padding-bottom: 66px;
+    padding-bottom: 45px;
 	border-bottom: 1px solid #f2f2f2;
 }
 

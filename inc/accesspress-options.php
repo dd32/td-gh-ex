@@ -33,7 +33,10 @@ function optionsframework_options() {
 	$background_pattern = array( 
 		'pattern1' => $imagepath . 'patterns/80X80/pattern1.png',  
 		'pattern2' => $imagepath . 'patterns/80X80/pattern2.png', 
-		'pattern3' => $imagepath . 'patterns/80X80/pattern3.png'
+		'pattern3' => $imagepath . 'patterns/80X80/pattern3.png',
+        'pattern4' => $imagepath . 'patterns/80X80/pattern4.png',  
+		'pattern5' => $imagepath . 'patterns/80X80/pattern5.png', 
+		'pattern6' => $imagepath . 'patterns/80X80/pattern6.png'
 		);
 
 	//Sidebar layout

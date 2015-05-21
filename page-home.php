@@ -58,6 +58,7 @@ get_header(); ?>
 		}elseif($key == 'service_block'){ ?>
 			<section id="service-section" class="clearfix">
 				<div class="ak-container">
+                <?php if(of_get_option('service_title') || of_get_option('service_desc') ): ?>
 					<div class="section-title-wrap">
 						<?php if(of_get_option('service_title')): ?>
 							<h1 class="main-title"><?php echo esc_attr(of_get_option('service_title')); ?></h1>
@@ -69,6 +70,7 @@ get_header(); ?>
 						</div>
 						<?php endif; ?>
 					</div>
+                    <?php endif; ?>
 
 					<?php 
 					$service_array = array(of_get_option('service1') , of_get_option('service2'), of_get_option('service3'), of_get_option('service4'));
@@ -102,7 +104,7 @@ get_header(); ?>
 								</div>
 								<div class="service-content">
 									<h1 class="service-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-									<div class="service-desc"><?php echo accesspress_letter_count(get_the_content(),'200'); ?></div>
+									<div class="service-desc"><?php echo accesspress_letter_count(get_the_content(),'120'); ?></div>
 								</div>
 							</div>
 					<?php
@@ -145,6 +147,7 @@ get_header(); ?>
 		}elseif($key == 'feature_block'){ ?>
 			<section id="features" class="clearfix">
 				<div class="ak-container">
+                <?php if(of_get_option('feature_title') || of_get_option('feature_desc')): ?>
 					<div class="section-title-wrap">
 						<?php if(of_get_option('feature_title')): ?>
 							<h1 class="main-title"><?php echo esc_attr(of_get_option('feature_title')); ?></h1>
@@ -155,6 +158,7 @@ get_header(); ?>
 						</div>
 						<?php endif; ?>
 					</div>
+                <?php endif; ?>
 
 					<?php 
 					$feature_array = array(of_get_option('feature1') , of_get_option('feature2'), of_get_option('feature3'), of_get_option('feature4'));
@@ -167,8 +171,8 @@ get_header(); ?>
 					$query = new WP_Query($args);					
 					if($query->have_posts()): ?>
 
-					<div class="feature-block-wrapper clearfix">
-						<div class="feature-block-wrap">
+					<div class="feature-block-wrapper">
+						<div class="feature-block-wrap clearfix">
 							<?php
 								while($query->have_posts()):
 									$query->the_post();
@@ -181,7 +185,7 @@ get_header(); ?>
 									<?php endif; ?>
 									<div class="feature-content">
 										<h1 class="feature-title"> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> </h1>
-										<div class="feature-desc"><?php echo accesspress_letter_count(get_the_content(),'200'); ?></div>
+										<div class="feature-desc"><?php echo accesspress_letter_count(get_the_content(),'90'); ?></div>
 										<a class="feature-read-more" href="<?php the_permalink(); ?>"><?php echo of_get_option('feature_readmore'); ?></a>
 									</div>
 								</div>

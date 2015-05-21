@@ -97,6 +97,10 @@ Pattern Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.11
+* Design bug Fixed
+* Screenshot Changed
+
 Version 1.10
 * Plugins Added via TGM-Plugin-Activation
 * Minor changes in the escaping of the outputs
