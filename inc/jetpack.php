@@ -16,8 +16,9 @@ function aaron_jetpack_setup() {
 		'footer'    => 'page',
 	) );
 
-	// Create a custom image size for Site Logo.
+	// Create custom image sizes for Site Logo and Testimonials.
 	add_image_size( 'aaron-jetpack-logo', 200, 200 );
+	add_image_size( 'aaron-jetpack-testimonial', 100, 100 );
 
 	/*Support for Jetpack logo*/
 	 add_theme_support( 'site-logo', array( 'size' => 'aaron-jetpack-logo',) );

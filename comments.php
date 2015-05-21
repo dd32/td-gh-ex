@@ -32,7 +32,7 @@ if ( post_password_required() ) {
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-above" class="comment-navigation" role="navigation">
-			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'aaron' ); ?></h1>
+			<h2 class="screen-reader-text"><?php _e( 'Comment navigation', 'aaron' ); ?></h2>
 			<div class="nav-previous"><?php previous_comments_link( __( 'Older Comments', 'aaron' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'aaron' ) ); ?></div>
 		</nav><!-- #comment-nav-above -->
@@ -50,7 +50,7 @@ if ( post_password_required() ) {
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below" class="comment-navigation" role="navigation">
-			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'aaron' ); ?></h1>
+			<h2 class="screen-reader-text"><?php _e( 'Comment navigation', 'aaron' ); ?></h2>
 			<div class="nav-previous"><?php previous_comments_link( __( 'Older Comments', 'aaron' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'aaron' ) ); ?></div>
 		</nav><!-- #comment-nav-below -->
@@ -74,7 +74,7 @@ if ( post_password_required() ) {
 	'author' => '<p class="comment-form-author">' . '<label for="author">' . __( 'Name', 'aaron' ) . 
                 ( $req ? ' <span class="required">(' . __( 'required', 'aaron' )  . ')</span>' : '' ) . 
                 '</label> ' .
-                '<input id="author" name="author"  aria-required="true" type="text" value="' .
+                '<input id="author" name="author" aria-required="true" type="text" value="' .
                 esc_attr( $commenter['comment_author'] ) . '"  />' .
                 '</p>',
   
@@ -91,7 +91,7 @@ if ( post_password_required() ) {
    
     'comment_field' => '<p class="comment-form-comment">' .
                 '<label for="comment" id="comment-label">' . __( 'Comment', 'aaron' ) . ' <span class="required">(' . __( 'required', 'aaron' )  . ')</span>' . '</label> ' .
-                '<textarea id="comment" name="comment" aria-required="true" required required aria-labelledby="comment-label, html-tags" rows="8"></textarea>' .
+                '<textarea id="comment" name="comment" aria-required="true" required aria-labelledby="comment-label, html-tags" rows="8"></textarea>' .
                 '</p>',
 
     'comment_notes_after' => '<p class="form-allowed-tags" id="html-tags">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', 'aaron' ), ' <code>' . allowed_tags() . '</code>' ) . '</p>',

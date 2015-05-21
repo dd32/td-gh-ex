@@ -5,7 +5,6 @@
  * @package aaron
  */
 
-
 /**
  * Enqueue the customizer stylesheet for our radio buttons.
  */
@@ -116,11 +115,10 @@ function aaron_customize_register( $wp_customize ) {
 		'priority'       => 80,
 		'capability'     => 'edit_theme_options',
 		'theme_supports' => '',
-		'title'          => __( 'Frontpage Highlights', 'aaron' ),
-		'description'    => __( 'Frontpage Highlights are displayed in the lower part of the header.', 'aaron' ),
+		'title'          => __( 'Front page Highlights', 'aaron' ),
+		'description'    => __( 'Front page Highlights are displayed in the lower part of the header.', 'aaron' ),
 	) );
 	
-
 	$wp_customize->add_panel( 'aaron_action_panel', array(
 		'priority'       => 70,
 		'capability'     => 'edit_theme_options',
@@ -128,21 +126,32 @@ function aaron_customize_register( $wp_customize ) {
 		'title' => __( 'Call to Action', 'aaron' ),
 		'description'    => __( 'The Call to Action is displayed below the site title in the header.', 'aaron' ),
 	) );
-
-
+	
+	$wp_customize->add_panel( 'aaron_sections_panel', array(
+		'priority'       => 70,
+		'capability'     => 'edit_theme_options',
+		'theme_supports' => '',
+		'title' => __( 'Front page sections', 'aaron' ),
+		'description'    => __( 'Display pages as different sections of the front page.', 'aaron' ),
+	) );
 
 	$wp_customize->add_section('aaron_section_advanced',      array(
             'title' => __( 'Advanced settings', 'aaron' ),
             'priority' => 100
         )
     );
-	
+
+    $wp_customize->add_section('aaron_section_accessibility',      array(
+            'title' => __( 'Accessibility settings', 'aaron' ),
+            'priority' => 100
+        )
+    );
+		
 	$wp_customize->add_section('aaron_section_reset',      array(
             'title' => __( 'Reset', 'aaron' ),
             'priority' => 220
         )
     );
-
 
 	$wp_customize->get_section('header_image')->title = __( 'Header background', 'aaron');
 
@@ -179,7 +188,6 @@ function aaron_customize_register( $wp_customize ) {
 	'section' => 'header_image',
 	) );
 
-
 	$wp_customize->add_setting( 'aaron_header_bgsize',		 array(
 		'sanitize_callback' => 'aaron_sanitize_bgsize',
 	) );
@@ -210,9 +218,6 @@ function aaron_customize_register( $wp_customize ) {
         ),
 	'section' => 'header_image',
 	) );
-
-
-
 
 	//Hide meta
 	$wp_customize->add_setting( 'aaron_hide_meta',		array(
@@ -249,14 +254,13 @@ function aaron_customize_register( $wp_customize ) {
 		)
 	);
 
-
 	$wp_customize->add_setting( 'aaron_front_sidebar',		array(
 			'sanitize_callback' => 'aaron_sanitize_checkbox',
 		)
 	);
 	$wp_customize->add_control('aaron_front_sidebar',		array(
 			'type' => 'checkbox',
-			'label' =>  __( 'Check this box to show the sidebar on the frontpage.', 'aaron' ),
+			'label' =>  __( 'Check this box to show the sidebar on the front page.', 'aaron' ),
 			'section' => 'aaron_section_advanced',
 		)
 	);
@@ -393,6 +397,22 @@ function aaron_customize_register( $wp_customize ) {
 	}//End loop
 	
 	
+	$wp_customize->add_section( 'aaron_section_hide', array(
+			 'title' => __( 'Hide the highlights', 'aaron' ),
+			'panel'  => 'aaron_custom_high',
+	) );
+		
+	$wp_customize->add_setting( 'aaron_hide_highlight',		array(
+			'sanitize_callback' => 'aaron_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control('aaron_hide_highlight',		array(
+			'type' => 'checkbox',
+			'label' =>  __( 'Check this box to hide the highlights.', 'aaron' ),
+			'section' => 'aaron_section_hide',
+		)
+	);
+
 	/* Call to action text **/
 
 	$wp_customize->add_section('aaron_section_one',      array(
@@ -437,19 +457,28 @@ function aaron_customize_register( $wp_customize ) {
 		)
 	);
 
-
 	$wp_customize->add_setting( 'aaron_action_color', array(
 		'default'        => '#000000',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'aaron_action_color', array(
-	'label'        => __( 'Call to Action text color:', 'aaron' ),
-	'section' => 'aaron_section_one',
-	'settings'  => 'aaron_action_color',
+		'label'        => __( 'Call to Action text color:', 'aaron' ),
+		'section' => 'aaron_section_one',
+		'settings'  => 'aaron_action_color',
 	) ) );
 
+	$wp_customize->add_setting( 'aaron_action_bgcolor', array(
+	    'default' => '',
+	    'sanitize_callback' => 'sanitize_hex_color_no_hash',
 
+	) );
+	 
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'aaron_action_bgcolor', array(
+	    'label'   => __('Call to Action background color:','aaron'),
+	    'section' => 'aaron_section_one',
+	    'settings'   => 'aaron_action_bgcolor',
+	) ) );
 
 
 	/*Advanced settings*/
@@ -457,13 +486,13 @@ function aaron_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'aaron_sanitize_checkbox',
 		)
 	);
+
 	$wp_customize->add_control('aaron_hide_search',		array(
 			'type' => 'checkbox',
 			'label' =>  __( 'Check this box to hide the search form in the header menu.', 'aaron' ),
 			'section' => 'aaron_section_advanced',
 		)
 	);
-
 
 	$wp_customize->add_setting( 'aaron_hide_title',		array(
 			'sanitize_callback' => 'aaron_sanitize_checkbox',
@@ -476,9 +505,8 @@ function aaron_customize_register( $wp_customize ) {
 		)
 	);
 
-
 	/* if jetpack is installed, add the featured heading to the customizer. */
-		$wp_customize->add_setting( 'aaron_featured_headline',		array(
+	$wp_customize->add_setting( 'aaron_featured_headline',		array(
 				'sanitize_callback' => 'aaron_sanitize_text',
 				'default'        => __( 'Featured', 'aaron' ),
 			)
@@ -490,6 +518,49 @@ function aaron_customize_register( $wp_customize ) {
 			)
 		);
 
+	/*Frontpage sections*/
+
+	/* Top Section */
+	$wp_customize->add_section( 'aaron_top_section', array(
+			'title' => __( 'Top Section', 'aaron' ),
+			'panel'  => 'aaron_sections_panel',
+			'description' => __('Choose upto 3 pages that will be displayed above your blog content.', 'aaron'),
+	) );
+
+	for ($i = 1; $i < 4; $i++) {
+			$wp_customize->add_setting( 'aaron_top_section' . $i,	 array(
+				'sanitize_callback' => 'aaron_sanitize_page',
+
+			) );
+
+			$wp_customize->add_control( 'aaron_top_section' . $i,		array(
+				'default' => 0,
+			    'type' => 'dropdown-pages',
+		        'label' => __( 'Choose a page:','aaron'),
+				'section' => 'aaron_top_section',
+			) );
+	}
+
+	/* Bottom Section */
+	$wp_customize->add_section( 'aaron_bottom_section', array(
+			'title' => __( 'Bottom Section', 'aaron' ),
+			'panel'  => 'aaron_sections_panel',
+			'description' => __('Choose upto 3 pages that will be displayed below your blog content, but above the footer.', 'aaron'),
+	) );
+
+	for ($i = 1; $i < 4; $i++) {
+			$wp_customize->add_setting( 'aaron_bottom_section' . $i,		 array(
+				'sanitize_callback' => 'aaron_sanitize_page',
+
+			) );
+
+			$wp_customize->add_control( 'aaron_bottom_section' . $i,		array(
+				'default' => 0,
+			    'type' => 'dropdown-pages',
+		        'label' => __( 'Choose a page:','aaron'),
+				'section' => 'aaron_bottom_section',
+			) );
+	}
 
 	/*Add a better screen reader text for the two widget areas depending on your content*/
 
@@ -500,7 +571,7 @@ function aaron_customize_register( $wp_customize ) {
 	$wp_customize->add_control('aaron_footer_screen_reader',		array(
 			'type' => 'text',
 			'label' =>  __( 'Add a descriptive screen reader text for the footer.', 'aaron' ),
-			'section' => 'aaron_section_advanced',
+			'section' => 'aaron_section_accessibility',
 		)
 	);
 
@@ -511,12 +582,25 @@ function aaron_customize_register( $wp_customize ) {
 	$wp_customize->add_control('aaron_sidebar_screen_reader',		array(
 			'type' => 'text',
 			'label' =>  __( 'Add a descriptive screen reader text for the sidebar.', 'aaron' ),
-			'section' => 'aaron_section_advanced',
+			'section' => 'aaron_section_accessibility',
+		)
+	);
+
+	$wp_customize->add_setting( 'aaron_caps',		array(
+			'sanitize_callback' => 'aaron_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control('aaron_caps',		array(
+			'type' => 'checkbox',
+			'label' =>  __( 'Check this box to change the text displayed as UPPERCASE to Capitalized.', 'aaron' ),
+			'section' => 'aaron_section_accessibility',
 		)
 	);
 
 
-	/** Reset */
+/*********************************************************************************************************************************
+ Reset 
+ */
 	$wp_customize->add_setting( 'aaron_reset',		array(
 			'sanitize_callback' => 'aaron_sanitize_reset',
 		)
@@ -527,7 +611,6 @@ function aaron_customize_register( $wp_customize ) {
 			'section' => 'aaron_section_reset',
 		)
 	);
-
 
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
@@ -562,7 +645,6 @@ function aaron_sanitize_checkbox( $input ) {
         return '';
     }
 }
-
 
 //Reset the theme settings
 function aaron_sanitize_reset( $input ) {
@@ -615,7 +697,7 @@ function aaron_sanitize_bgsize( $input ) {
 function aaron_sanitize_bgrepeat( $input ) {
     $valid = array(
 		'repeat'		=>  __('repeat','aaron'),
-		'repeat-x'	=>	__('repeated only horizontally','aaron'),
+		'repeat-x'		=>	__('repeated only horizontally','aaron'),
 		'repeat-y'		=>	__('repeated only vertically','aaron'),
 		'no-repeat'		=>  __(' no repeat','aaron'),
     );
@@ -627,6 +709,25 @@ function aaron_sanitize_bgrepeat( $input ) {
     }
 }
 
+function aaron_sanitize_action_radio( $input ) {
+    $valid = array(
+	    'a' =>  __('Transparent (Default)','aaron'),
+	    'b' =>  __('Pick a color','aaron'),
+    );
+ 
+    if ( array_key_exists( $input, $valid ) ) {
+        return $input;
+    } else {
+        return '';
+    }
+}
 
+
+// Sanitize the page select lists
+function aaron_sanitize_page( $input ) {
+    if( is_numeric( $input ) ) {
+        return intval( $input );
+    }
+}
 
 ?>

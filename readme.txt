@@ -19,8 +19,23 @@ If you have any questions, accessibility issues or feature requests for this the
 
 Please note that changing the colors of the theme can affect accessibility.
 
-
 == Change log ==
+Version 2.0, 2015-05-21
+Fixed a bug where the example highlights were showing even if the highlights had been edited. 
+Added options to display pages as separate sections of the front page.
+Added an additional template that you can use with the new page sections if you want to use a static front page.
+Added an option to replace UPPERCASE with Capitalized. This setting can be found under accessibility.
+Added support for Jetpack testimonials.
+Increased the width of pages and posts (when the meta is hidden).
+Added an option to change the Call to Action background color.
+The header now has no forced height and will instead fit your content.
+Fixed html errors and a bug with comments and avatars.
+
+
+
+Updated documentation and language files, and added attribution for Sela WordPress theme by Automattic, for help with testimonials :)
+
+
 Version 1.9, 2015-05-15
 Added new settings to help you position the header background image.
 Added a new landing page template that only displays the header ( Note: this template does not display your page content).
@@ -69,6 +84,7 @@ templates/ -contains page templates
 Aaron is a derivative work of:
 Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc. License: GNU General Public License v2 or later
 Universal http://themes.joedolson.com/universal/ (C) Joseph C Dolson. License: GNU General Public License v2 or later
+Sela https://wordpress.com/themes/sela/, based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc. License: GNU General Public License v2 or later
 
 Header image by Ian Prince. Source: https://tookapic.com/ianprince/5613-les-dents-du-midi, License: CC0.
 Image used in the documentation: Karolina Grabowska. Source: https://tookapic.com/kaboompics/3311-dead-flower, License: CC0.

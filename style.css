@@ -5,7 +5,7 @@ Author: Carolina Nymark
 Author URI: http://wptema.se
 Description: Aaron is a responsive, accessibility-ready multi-purpose theme. Features include Call to action and frontpage Highlights that will grab your visitors attention and help you feature different parts of your website. The theme has two optional menus (including a social menu) and two widget areas that will hold any number of widgets. Want to run Aaron on a company website rather than a blog? No problem, just hide the meta, the sidebars, and turn off your comments. We recommend that you install the Jetpack plugin to make full use of supported features like logos, featured content, contact forms, social sharing and favicon. To create a portfolio, install Jetpack and create your projects, all the templates are already shipped with the theme. Aaron also works well with Woocommerce and bbPress.
 If you have any questions, accessibility issues or feature requests for this theme, please visit http://wptema.se/Aaron.
-Version: 1.9
+Version: 2.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Copyright: Carolina Nymark 2015
@@ -474,7 +474,7 @@ textarea {
 .site-main .comment-navigation,
 .site-main .posts-navigation,
 .site-main .post-navigation {
-	margin: 0 0 1.5em;
+	margin: 0 0 45px;
 	overflow: hidden;
 }
 
@@ -746,7 +746,6 @@ content:'';
 	}
 
 }
-
 
 /*--------------
 Social menu
@@ -1316,7 +1315,22 @@ table#wp-calendar,
 	line-height:1.8;
 }
 
+.home .type-page{
+	width:100%; 
+	display:inline-block;
+ 	margin-bottom:40px;
+ 	padding:10px 10px 45px 10px;
+}
+
 .page .type-page{box-shadow:none;}
+
+
+.home .type-page .entry-content,
+.page .type-page .entry-content {
+	width:100%;
+	background: url(images/border.png) repeat-x bottom;
+ 	padding-bottom:45px;
+}
 
 .sticky {
 	display: block;
@@ -1406,6 +1420,10 @@ table#wp-calendar,
 	float:left;
 	position:relative; 
 	display: block;
+}
+
+.no-meta .type-post .entry-content{
+	width:100%;
 }
 
 .entry-content a{text-decoration: underline;}
@@ -1590,16 +1608,11 @@ table#wp-calendar,
 .comment-metadata{
 	font-size:14px;
 	font-size:1.4rem;
-	margin:15px 15px 15px 0;
-	display:block;
+	margin:0px 15px 15px 15px;
+	display:inline-block;
 }
 
 .comment-metadata .edit-link{margin-left:10px;}
-
-.comment-metadata{
-	margin-left:70px;
-	margin-top:-25px;
-}
 
 .comment-metadata a{text-decoration:none; }
 .comment-metadata a:hover{text-decoration:underline; }
@@ -1627,6 +1640,7 @@ table#wp-calendar,
 	font-size:18px;
 	font-size:1.8rem;
 }
+
 .comment-meta .fn .url{
 	vertical-align:top;
 	font-size:18px;
@@ -1801,6 +1815,82 @@ table#wp-calendar,
 	vertical-align: middle;
 }
 
+.post-type-archive-jetpack-testimonial .content-area,
+.single-jetpack-testimonial .content-area{
+	margin: 0 auto;
+	width:100%;
+}
+
+.post-type-archive-jetpack-testimonial .page-header{
+	text-align:center;
+}
+
+.testimonial-entry-title,
+.jetpack-testimonial .entry-title{
+	background:none;
+	text-align:center;
+	font-size:14px;
+	margin-top:15px;
+	text-decoration:none;
+	padding-bottom:4px;
+	font-family: 'Montserrat', sans-serif;	
+	text-transform:uppercase;
+	letter-spacing: 2px; 
+	display:block;
+}
+
+.testimonial-entry-title a:focus,
+.testimonial-entry-title a:hover{ text-decoration:underline!important; /*We need to overwrite Jetpacks styling here...*/}
+
+
+.testimonial-entry-content,
+.jetpack-testimonial .entry-content{
+	width:100%;
+	font-size:2em;
+	text-align:center;
+	font-style:italic;
+}
+
+.testimonial-entry,
+.post-type-archive-jetpack-testimonial .type-jetpack-testimonial{
+	display:inline-block;
+	margin:0px 40px 15px 40px;
+	padding:12px;
+	width:26%;
+	vertical-align:top;
+}
+
+
+.post-type-archive-jetpack-testimonial .attachment-aaron-jetpack-logo{
+	clear:both;
+	margin:0 auto;
+	display:block;
+}
+
+.testimonial-featured-image{	
+	margin:20px auto !important; /*We need to overwrite Jetpacks styling here...*/
+	text-align:center;
+	display:block;
+}
+
+.testimonial-featured-image img:focus,
+.testimonial-featured-image img:hover{
+	border:4px solid #333 !important; /*We need to overwrite Jetpacks styling here...*/
+}
+
+
+.testimonial-featured-image img,
+.attachment-aaron-jetpack-testimonial{
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+
+	background:url(images/border.png) repeat-x bottom;
+	border:4px solid #fff !important; /*We need to overwrite Jetpacks styling here...*/
+	box-shadow: 0px 1px 6px rgba(0,0,0,0.2);
+	margin:0 auto;
+	display:block;
+}
 
 /*--------------------------------------------------------------
 12.0 Media
@@ -1855,7 +1945,6 @@ object {
 	vertical-align: top;
 	width: 100%;
 	margin:0.4%;
-	border:3px solid #fafafa;
 }
 
 .gallery-columns-2 .gallery-item {
@@ -1899,6 +1988,7 @@ object {
 	display :none;
 }
 
+.gallery-icon a img{padding:4px;}
 
 /*--------------------------------------------------------------
 13.0 BBpress
@@ -2131,11 +2221,18 @@ span.bbp-admin-links a,
 
 	.post{ 
 		width: 100%;
-		margin:0 0 45px 0;
+		margin:25px 0 45px 0;
 	}
 
 	.type-post{width:100%;}
 
+	.post-type-archive-jetpack-testimonial .type-jetpack-testimonial{
+		width: 100%;
+		margin:25px 0 45px 0;
+	}
+
+	.jetpack-testimonial,
+	.jetpack-testimonial .entry-content,
 	.single-jetpack-portfolio .content-area, 
 	.no-sidebar .content-area, 
 	.entry-footer, 
@@ -2144,6 +2241,12 @@ span.bbp-admin-links a,
 	}
 
 	.page-title{text-align:center;}
+
+	.home .type-page{
+		margin-top:5px; 
+		margin-bottom:25px;
+		padding-bottom:0px;
+	}
 }
 
 @media screen and (max-width: 600px) {

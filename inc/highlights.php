@@ -9,39 +9,44 @@ function aaron_highlights() {
 
 		if ( current_user_can( 'edit_theme_options' ) ) {
 
-			if (get_theme_mod( 'aaron_highlight1_headline' ) =="" OR get_theme_mod( 'aaron_highlight1_text' ) ==""){
-				echo '<div class="highlights">';
-				echo '<i class="dashicons dashicons-admin-generic"></i>';
-				echo '<a class="hll1" href="' . esc_url( home_url( '/wp-admin/customize.php' ) ) . '">';
-				echo '<h2>' . __( 'Easy setup', 'aaron') . '</h2>';
-				echo '<p>' . __( 'You will find all your options in the <i>Customizer</i> and setup help under <i>Appearance</i>.', 'aaron') .  '</p>';
-				echo '</a>';
-				echo '</div>';
+			$aaron_show_fallback=array();
+			//The example Highlights should only show if the user is logged in and the highlights have not been edited.
+
+			for ($i = 1; $i < 10; $i++) {
+				if (get_theme_mod( 'aaron_highlight' . $i . '_headline' ) OR get_theme_mod( 'aaron_highlight' . $i . '_text' ) OR get_theme_mod( 'aaron_highlight' . $i . '_image' ) OR get_theme_mod( 'aaron_highlight' . $i . '_icon' ) ){
+					array_push($aaron_show_fallback,"no");
+				}else{
+					array_push($aaron_show_fallback,"yes");
+				}
 			}
 
-			if (get_theme_mod( 'aaron_highlight2_headline' ) =="" OR get_theme_mod( 'aaron_highlight2_text' ) ==""){
-				echo '<div class="highlights">';
-				echo '<i class="dashicons dashicons-smartphone"></i>';
-				echo '<a class="hll2" href="' . esc_url( home_url( '/wp-admin/customize.php' ) ) . '">';
-				echo '<h2>' . __( 'Accessible and responsive', 'aaron' ) . '</h2>';
-				echo '<p>' . __( 'Keyboard friendly menus, aria roles and helpful screen reader texts', 'aaron' ) . '</p>';
-				echo '</a>';
-				echo '</div>';
-			}
+			if (! in_array("no", $aaron_show_fallback)) {
+			 		echo '<div class="highlights">';
+					echo '<i class="dashicons dashicons-admin-generic"></i>';
+					echo '<a class="hll1" href="' . esc_url( home_url( '/wp-admin/customize.php' ) ) . '">';
+					echo '<h2>' . __( 'Easy setup', 'aaron') . '</h2>';
+					echo '<p>' . __( 'You will find all your options in the <i>Customizer</i> and setup help under <i>Appearance</i>.', 'aaron') .  '</p>';
+					echo '</a>';
+					echo '</div>';
 
-			if (get_theme_mod( 'aaron_highlight3_headline' ) =="" OR get_theme_mod( 'aaron_highlight3_text' ) ==""){
-				echo '<div class="highlights">';
-				echo '<i class="dashicons dashicons-admin-plugins"></i>';
-				echo '<a  class="hll3" href="' . esc_url( home_url( '/wp-admin/customize.php' ) ) . '">';
-				echo '<h2>' . __( 'Jetpack compatible','aaron' ) . '</h2>';
-				echo '<p>' . __( 'Install Jetpack for additional featured content, portfolio, logo and more','aaron' ) . '</p>';
-				echo '</a>';
-				echo '</div>';
-			}
+					echo '<div class="highlights">';
+					echo '<i class="dashicons dashicons-smartphone"></i>';
+					echo '<a class="hll2" href="' . esc_url( home_url( '/wp-admin/customize.php' ) ) . '">';
+					echo '<h2>' . __( 'Accessible and responsive', 'aaron' ) . '</h2>';
+					echo '<p>' . __( 'Keyboard friendly menus, aria roles and helpful screen reader texts', 'aaron' ) . '</p>';
+					echo '</a>';
+					echo '</div>';
 
+					echo '<div class="highlights">';
+					echo '<i class="dashicons dashicons-admin-plugins"></i>';
+					echo '<a  class="hll3" href="' . esc_url( home_url( '/wp-admin/customize.php' ) ) . '">';
+					echo '<h2>' . __( 'Jetpack compatible','aaron' ) . '</h2>';
+					echo '<p>' . __( 'Install Jetpack for additional featured content, portfolio, logo and more','aaron' ) . '</p>';
+					echo '</a>';
+					echo '</div>';
+			}
 		}
 
-	
 	for ($i = 1; $i < 10; $i++) {
 
 		if (get_theme_mod( 'aaron_highlight' . $i . '_headline' ) OR get_theme_mod( 'aaron_highlight' . $i . '_text' ) OR get_theme_mod( 'aaron_highlight' . $i . '_icon' ) AND get_theme_mod( 'aaron_highlight' . $i . '_icon' ) <>"no-icon" OR get_theme_mod( 'aaron_highlight' . $i . '_image' ) ){

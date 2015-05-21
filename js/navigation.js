@@ -26,7 +26,6 @@
 	}
 
 	menu.setAttribute( 'aria-expanded', 'false' );
-
 	if ( -1 === menu.className.indexOf( 'nav-menu' ) ) {
 		menu.className += ' nav-menu';
 	}
@@ -97,20 +96,4 @@ jQuery(document).ready(function($){ $('img[title]').not(':has([alt])').each(func
         var theTitle = $(this).attr('title');
         $(this).attr('alt', theTitle).removeAttr('title');
     } );
-});
-
-//Set the header (hero unit) to full height
-jQuery(document).ready(function($){
-	var winHeight = $(window).height();
-	// set initial div height
-	$('.site-header').css({
-		'min-height': winHeight,
-	});
-
-	// make sure div stays full height on resize
-	$(window).resize(function(){
-	    $('.site-header').css({
-	    'min-height': winHeight,
-	});
-	});
 });

@@ -36,6 +36,10 @@ function aaron_setup() {
 	
 	add_theme_support( 'jetpack-responsive-videos' ); 
 
+	add_theme_support( 'jetpack-testimonial' );
+	
+	add_theme_support( 'jetpack-portfolio' );
+
 	add_editor_style();
 	
 	add_theme_support( 'post-thumbnails' );	
@@ -257,16 +261,18 @@ function aaron_post_title( $title ) {
 	}
 }
 
-
 function aaron_no_sidebars($classes) {
 	 /* 	Are sidebars hidden on the frontpage?
 	 *		Is the sidebar activated?
 	 *		Add 'no-sidebar' to the $classes array
 	 */		
-	if ( is_front_page() && get_theme_mod('aaron_front_sidebar') ==""  || is_page() && get_theme_mod('aaron_show_sidebar_on_pages')=="" || ! is_active_sidebar( 'sidebar-1' ) ) {
+	if ( is_front_page() && get_theme_mod('aaron_front_sidebar') =="" || is_home() && get_theme_mod('aaron_front_sidebar') =="" || is_page() && get_theme_mod('aaron_show_sidebar_on_pages')=="" || ! is_active_sidebar( 'sidebar-1' ) ) {
 		$classes[] = 'no-sidebar';
 	}
 
+	if( get_theme_mod('aaron_hide_meta')){
+		$classes[] = 'no-meta';
+	}
 
 	return $classes;
 }
@@ -301,7 +307,7 @@ function aaron_customize_css() {
 		}
 
 	<?php
-	/* No image has been chosen, check for background color: */
+	/* No header image has been chosen, check for background color: */
 	}else{
 		if( get_theme_mod('aaron_header_bgcolor') ){
 			echo '.site-header { background:' . esc_attr( get_theme_mod('aaron_header_bgcolor', '#fafafa') ) . ';}';
@@ -315,6 +321,38 @@ function aaron_customize_css() {
 		echo '#action, #action a{ color:' . esc_attr( get_theme_mod('aaron_action_color', '#000000') ) . ';}';
 	}
 
+	//Call to Action background color
+	if( get_theme_mod( 'aaron_action_bgcolor_radio' ) ==='b' && get_theme_mod( 'aaron_action_bgcolor' ) <> '') {
+		echo '#action, #action a{background:#' . esc_attr( get_theme_mod('aaron_action_bgcolor', 'none') ) . ';}';
+	}
+
+	//Change UPPERCASE to Capitalized Text Instead
+	if( get_theme_mod( 'aaron_caps' )) {
+		echo '.main-navigation,
+			.widget-title,
+			.widgettitle,
+			.entry-title,
+			.entry-title a,
+			.site-title,
+			.site-info,
+			.site-description,
+			.page-links,
+			.page-title,
+			.comments-title,
+			.comment-reply-title,
+			.featured-headline,
+			.testimonial-entry-title,
+			.featured-post h2{text-transform:capitalize;}';
+	}
+
+	// If avatars are enabled, alter the css:
+	if ( get_option( 'show_avatars' ) ) {
+		echo '.comment-metadata{
+			margin-left:70px;
+			display:block;
+			margin-top:-25px;
+		}';
+	}
 
 	echo '</style>' . "\n";
 }

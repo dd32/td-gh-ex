@@ -48,6 +48,26 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+		<?php
+		/*The front page sections should not display on the blog listing page*/
+		if ( is_front_page() && is_home() ) {
+
+			if( get_theme_mod('aaron_top_section1') <>"" OR get_theme_mod('aaron_top_section2') <>"" OR get_theme_mod('aaron_top_section3') <>"" ) {
+
+					$args = array('post_type' => 'page', 'orderby' => 'post__in', 'post__in' => array(get_theme_mod('aaron_top_section1'), get_theme_mod('aaron_top_section2'), get_theme_mod('aaron_top_section3')));
+
+	     		    query_posts($args);
+					  while ( have_posts() ) : the_post();
+
+						get_template_part( 'content', 'page' );
+
+					  endwhile; 
+				 wp_reset_query();
+			}
+		}
+		?>
+
+
 		<?php if ( have_posts() ) : ?>
 		
 			<?php /* Start the Loop */ ?>
@@ -70,6 +90,26 @@ get_header();
 			<?php get_template_part( 'content', 'none' ); ?>
 
 		<?php endif; ?>
+
+
+		<?php
+		/*The front page sections should not display on the blog listing page*/
+		if ( is_front_page() && is_home() ) {
+			if( get_theme_mod('aaron_bottom_section1') <>"" OR get_theme_mod('aaron_bottom_section2') <>"" OR get_theme_mod('aaron_bottom_section3') <>"") {
+
+					$args = array('post_type' => 'page', 'orderby' => 'post__in', 'post__in' => array(get_theme_mod('aaron_bottom_section1'), get_theme_mod('aaron_bottom_section2'), get_theme_mod('aaron_bottom_section3')));
+
+	     		    query_posts($args);
+					  while ( have_posts() ) : the_post();
+
+						get_template_part( 'content', 'page' );
+
+					  endwhile; 
+				 wp_reset_query();
+			}
+		}
+		?>
+
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
