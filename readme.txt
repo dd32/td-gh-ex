@@ -73,6 +73,11 @@ ScreenShot Images
 
 ----------------------------------------------------
 == Changelog ==
+Version 1.1.7
+ * Fixed sidebar option for homepage.
+ * Fixed bug (removed esc_url at user avatar) on Article contributor widget.
+ * Added css for gallery inside post.
+
 Version 1.1.6
  * Added demo content for advertisement area in header.php , sidebar-home.php and home-page.php
  * Changed status of “force-activation” in accesspress-function.php	
@@ -82,7 +87,7 @@ Version 1.1.5
  * Added demo and support url
 
 Version 1.1.4
- * Changed theme description 
+ * Changed theme description
  * Fixed demo content
 
 Version 1.0.1

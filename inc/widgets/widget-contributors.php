@@ -80,7 +80,7 @@ class Accesspress_mag_article_contributors extends WP_Widget {
                 ?>
                             <div class="single-user">
                                 <a href="<?php echo esc_url( get_author_posts_url( $user_id, $user_nickname ) ) ;?>">
-                                    <div class="user-image"><?php echo esc_url( $user_avatar );?></div>
+                                    <div class="user-image"><?php echo  $user_avatar ;?></div>
                                     <h3 class="user-name"><?php echo esc_attr( $user_name );?></h3>
                                 </a>
                             </div>

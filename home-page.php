@@ -248,7 +248,11 @@ get_header();
               </section>      			
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
-<?php get_sidebar('home');?>
+<?php 
+$page_sidebar = get_post_meta( $post -> ID, 'accesspress_mag_page_sidebar_layout', true);
+    if($page_sidebar!='no-sidebar'){
+        get_sidebar('home');
+    } 
+?>
 </div>
 <?php get_footer(); ?>
