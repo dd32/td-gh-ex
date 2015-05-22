@@ -1,5 +1,4 @@
 Version 1.0
-
 	i)   Theme Submitted for approval
 
 Version 1.0.1
@@ -21,5 +20,9 @@ Version 1.0.5
 	i)	Added Open Sans font in licenses.
     
 Version 1.0.6	
-    	i)	Add PRO Theme Features tab in theme options.
-	ii)	Fix css issues
+    i)	Add PRO Theme Features tab in theme options.
+	ii)	Fixed css issues
+	
+Version 1.0.7
+	i)	Add home page first section title link.
+	ii)	Fixed css issue.

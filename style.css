@@ -4,7 +4,7 @@ Theme URI: http://fruitthemes.com/wordpress-themes/deserve
 Author: FruitThemes
 Author URI: http://fruitthemes.com/
 Description: Deserve is a lightweight, faster, clean, super flexible and bootstrap based responsive theme for business or personal websites. Deserve Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, theme-options etc in order to get it customized as per your need.
-Version: 1.0.6
+Version: 1.0.7
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Deserve Theme, Copyright 2014 fruitthemes.com
@@ -1154,7 +1154,7 @@ input[type="submit"]
 .main-sidebar .tagcloud a {
     border: 1px solid #000;
     color: #000;
-    font-size: 100% !important;
+ /*   font-size: 100% !important; */
 }
 #recentcomments li a:before{
     content:"";
@@ -1320,7 +1320,7 @@ input[type="submit"]
 .footer-menu .tagcloud a {
     border: 1px solid #f4f4f4;
     color: #f4f4f4;
-    font-size: 100% !important;
+ /*   font-size: 100% !important; */
 }
 .footer-menu .tagcloud a:hover {
     border: 1px solid #ee4b3a;
@@ -1374,12 +1374,12 @@ input[type="submit"]
     clear: both;
 }
 .wp-caption-text {
-    color: rgb(255, 255, 255) !important;
-    font-size: 12px !important;
+    color: rgb(255, 255, 255);
+    font-size: 12px ;
     font-weight: bold;
-    margin: 0 auto !important;
+    margin: 0 auto ;
     padding: 8px 0;
-    text-align: center !important;
+    text-align: center;
 }
 .wp-caption-text a
 {
@@ -1524,7 +1524,7 @@ embed, iframe, object, video {
 .alignright {
     display: inline;
     float: right;
-    margin-left: 1.5em !important;
+  /*  margin-left: 1.5em !important; */
 }
 .alignleft {
     display: inline;
@@ -1536,11 +1536,11 @@ embed, iframe, object, video {
     display: block;
     margin: 0 auto;
 }
-.nav .current_page_item > a
+.nav > .current_page_item > a
 {
     background-color:#084d54;
-    color:#f8f8f8 !important;
-    border-bottom:2px solid #ee4b3a !important;	
+    color:#f8f8f8;
+    border-bottom:2px solid #ee4b3a ;	
 }
 
 .gallery-pagination ul li span

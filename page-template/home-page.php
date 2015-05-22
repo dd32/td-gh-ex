@@ -78,6 +78,7 @@ get_header();
         $deserve_id = deserve_get_image_id_by_url($deserve_image);
         $deserve_image = wp_get_attachment_image_src($deserve_id, 'deserve-home-tab-size');
         ?>
+        
                     <div class="col-md-4 col-sm-6 col-sm-offset-3 col-md-offset-0">
                         <div class="process-detail">
                             
@@ -86,12 +87,19 @@ get_header();
                                 </div>
                            
                             <div class="process">
-                                <h2><?php if (!empty($deserve_options['section-title-' . $deserve_l])) echo sanitize_text_field($deserve_options['section-title-' . $deserve_l]); ?></h2>
+								<?php if(!empty($deserve_options['section-link-' . $deserve_l])) { ?>
+								<a href="<?php echo esc_url($deserve_options['section-link-' . $deserve_l]) ?>" >
+									<h2><?php if (!empty($deserve_options['section-title-' . $deserve_l])) echo sanitize_text_field($deserve_options['section-title-' . $deserve_l]); ?></h2>
+                                </a>
+                                <?php } else { ?>
+								<h2><?php if (!empty($deserve_options['section-title-' . $deserve_l])) echo sanitize_text_field($deserve_options['section-title-' . $deserve_l]); ?></h2>
+								<?php } ?>	
+                                
                                 <p><?php if (!empty($deserve_options['section-content-' . $deserve_l])) echo sanitize_text_field($deserve_options['section-content-' . $deserve_l]); ?></p>
                             </div>
                         </div>
                     </div>
-
+		
         <?php
     endif;
 endfor;

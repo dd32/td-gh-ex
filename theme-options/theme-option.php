@@ -35,6 +35,7 @@ function deserve_options_validate($input)
 	 $input['home-icon-'.$deserve_section_i] = esc_url_raw( $input['home-icon-'.$deserve_section_i]);
 	 $input['section-title-'.$deserve_section_i] = sanitize_text_field($input['section-title-'.$deserve_section_i]);
 	 $input['section-content-'.$deserve_section_i] = sanitize_text_field($input['section-content-'.$deserve_section_i]);
+	 $input['section-link-'.$deserve_section_i] = esc_url_raw($input['section-link-'.$deserve_section_i]);
 	 endfor;
     return $input;
 }
@@ -239,6 +240,12 @@ function deserve_framework_page(){
               <textarea maxlength="110" name="deserve_theme_options[section-content-<?php echo $deserve_section_i; ?>]" rows="3" id="content-<?php echo $deserve_section_i; ?>" placeholder="<?php _e('Enter Content here','deserve'); ?>" class="of-input"><?php if(!empty($deserve_options['section-content-'.$deserve_section_i])) { echo $deserve_options['section-content-'.$deserve_section_i]; } ?></textarea>
               
               </div>                              
+				
+				<div class="ft-control">
+                <div class="explain"><?php _e('Enter section link for your home template , you would like to display in the home page.','deserve'); ?></div>
+                    <input type="text" placeholder="<?php _e('Enter Link here','deserve'); ?>"  maxlength="50" id="title-<?php echo $deserve_section_i;?>" class="of-input" name="deserve_theme_options[section-link-<?php echo $deserve_section_i;?>]" size="32"  value="<?php if(!empty($deserve_options['section-link-'.$deserve_section_i])) { echo esc_attr($deserve_options['section-link-'.$deserve_section_i]); } ?>">
+			</div>
+            
             </div>
             
             </div>
