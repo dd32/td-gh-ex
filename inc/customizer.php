@@ -111,8 +111,8 @@ function add_color_styles() { ?>
 		}
 		.site-header .main-navigation ul ul a:hover,
 	    .site-header .main-navigation ul ul a:focus,
-	    .site-header h1.site-title a:hover,
-	    .site-header h1.site-title a:focus,
+	    .site-header .site-title a:hover,
+	    .site-header .site-title a:focus,
 	    .page-title a:hover,
 	    .entry-title a:hover,
 	    .entry-content a,

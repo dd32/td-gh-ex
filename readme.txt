@@ -64,3 +64,10 @@ Please visit https://wordpress.org/support/theme/the-box if you have any questio
 1.3.9.2
 - New: Tumblr Social Icon
 - New: Medium Social Icon
+
+1.4.0
+- New: Title Tag support
+- New: Footer Menu
+- New: Github Social Icon
+- New: Year in the date of Single Post
+- Update: Seo Optimization

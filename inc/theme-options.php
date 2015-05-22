@@ -212,6 +212,16 @@ function thebox_options_do_page() {
 					</td>
 				</tr>
 				
+				<?php
+				/**
+				 * Github
+				 */
+				?>
+				<tr valign="top"><th scope="row"><?php _e( 'Github URL', 'thebox' ); ?></th>
+					<td>
+						<input id="thebox_theme_options[githuburl]" class="regular-text" type="text" name="thebox_theme_options[githuburl]" value="<?php echo esc_attr( $options['githuburl'] ); ?>" />
+					</td>
+				</tr>
 			</table>
 
 			<p class="submit">
@@ -248,6 +258,7 @@ function thebox_options_validate( $input ) {
 	$input['flickrurl'] = wp_filter_nohtml_kses( $input['flickrurl'] );
 	$input['tumblrurl'] = wp_filter_nohtml_kses( $input['tumblrurl'] );
 	$input['mediumurl'] = wp_filter_nohtml_kses( $input['mediumurl'] );
+	$input['githuburl'] = wp_filter_nohtml_kses( $input['githuburl'] );
 	
 	// Encode URLs
 	$input['twitterurl'] = esc_url_raw( $input['twitterurl'] );
@@ -261,6 +272,7 @@ function thebox_options_validate( $input ) {
 	$input['flickrurl'] = esc_url_raw( $input['flickrurl'] );
 	$input['tumblrurl'] = esc_url_raw( $input['tumblrurl'] );
 	$input['mediumurl'] = esc_url_raw( $input['mediumurl'] );
+	$input['githuburl'] = esc_url_raw( $input['githuburl'] );
 	
 	return $input;
 }

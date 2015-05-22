@@ -9,16 +9,25 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
 	<header class="entry-header">
+		<?php
+			if ( is_single() ) :
+				the_title( '<h1 class="entry-title">', '</h1>' );
+			else :
+				the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+			endif;
+		?>
 		<div class="entry-time">
 			<span class="entry-time-day"><?php the_time('j') ?></span>
 			<span class="entry-time-month"><?php the_time('M') ?></span>
 			<span class="entry-format-icon"></span>
 		</div>
-		<h2 class="entry-title">
-			<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'thebox' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
-				<?php the_title(); ?>
-			</a>
-		</h2>		
+		
+	<?php if ( is_single() ) : ?>
+		<div class="entry-meta">
+			<?php the_date(); ?>
+		</div>
+	<?php endif; // is_single ?>	
+	
 	</header><!-- .entry-header -->
 	
 	<?php if ( is_single() ) : ?>

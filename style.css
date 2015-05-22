@@ -4,11 +4,11 @@ Theme URI: http://design.altervista.org/thebox/
 Author: Design Lab
 Author URI: http://design.altervista.org
 Description: Simple and minimal two columns Theme: custom header, custom background, custom colors, post thumbnails, post formats
-Version: 1.3.9.2
+Version: 1.4.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: thebox
-Tags: two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, custom-background, custom-menu, custom-colors, sticky-post, featured-images, post-formats, theme-options, translation-ready
+Tags: two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, custom-background, custom-menu, custom-colors, sticky-post, featured-images, post-formats, full-width-template, translation-ready
 
 FontAwesome License: SIL Open Font License - http://scripts.sil.org/OFL
 This Theme is licensed under the GPL.
@@ -362,7 +362,7 @@ h5 {
 	margin: 0 0 0.5em;
 }
 
-h1.site-title {
+.site-title {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 2em; /* 28px */
     font-weight: 700;
@@ -370,18 +370,18 @@ h1.site-title {
     margin: 0;
 }
 
-h1.site-title a {
+.site-title a {
 	display: inline-block;
 	color: #252525;
 }
 
-h1.site-title a:hover {
+.site-title a:hover {
 	text-decoration: none;
 	color: #0fa5d9;
 }
 
-h1.site-title a:active,
-h1.site-title a:focus {
+.site-title a:active,
+.site-title a:focus {
 	outline: 0;
 	text-decoration: none;
 }
@@ -390,20 +390,17 @@ h1.site-title a:focus {
 	font-size: 1em;
 }
 
-.entry-header h1,
-.entry-header h2 {
+.entry-title {
+	float: left;
+	max-width: 90%;
+	width: 90%;
 	margin: 0.25em 0 0;
+	clear: none;
 	font-weight: 400;
 	color: #252525;
 	font-size: 1.714em; /* 24px */
 }
 
-.entry-header h2 {
-	float: left;
-	width: 90%;
-	max-width: 90%;
-	clear: none;
-}
 
 /* 04: Text elements */
 
@@ -1265,30 +1262,19 @@ button.menu-toggle .icon-font:before {
     padding: 3px 0 0;
 }
 
+.hentry img {
+	max-width: 100%;
+	height: auto;
+}
+
 .post-thumbnail {
 	margin: 0 0 1em 0;
 	max-width: 100%;
 }
 
-.post-thumbnail.thumbnail,
-.post-thumbnail.medium {
-	margin: 0 1em 0 0;
-	float: left;
-}
-
-.post-thumbnail.thumbnail {
-	max-width: 150px;	
-}
-
-.post-thumbnail.medium {
-	max-width: 220px;	
-}
-
 .post-thumbnail img {
 	display: block;
 	margin: auto;
-	max-width: 100%;
-	height: auto;
 }
 
 .byline {
@@ -1330,8 +1316,14 @@ button.menu-toggle .icon-font:before {
 	margin: 1em 0;
 }
 
-#av-social-share {
-	margin-top: 0 !important;
+.single .entry-title {
+	margin: 0;
+}
+
+.single .entry-header .entry-meta {
+	float: left;
+	width: 90%;
+	max-width: 90%;
 }
 
 /* 08: Content > Archive */
@@ -1783,8 +1775,37 @@ ul.page-numbers span {
 	color: #fff;
 }
 
-.site-footer .credits {
+.credits,
+.footer-navigation {
+	width: 45%;
 	margin: 1.0639% 0;
+}
+
+.credits {
+	float: left;
+}
+
+.footer-navigation {
+	float: right;
+	text-align: right;
+}
+
+.footer-navigation .menu li,
+.footer-navigation .menu li a {
+	display: inline-block;
+}
+
+.footer-navigation .menu {
+	margin: 0;
+	padding: 0;
+}
+
+.footer-navigation .menu li {
+	margin: 0 0 0 0.5em;
+}
+
+.footer-navigation .menu li:first-child {
+	margin-left: 0;
 }
 
 /* 13: Footer > #tertiary */
@@ -2059,7 +2080,26 @@ textarea {
 	padding: 3%;
 	margin-top: 5%;
 	}
+	#tertiary,
+	.credits,
+	.footer-navigation {
+	margin: 0 0 2.5% 0;
+	}
+	.credits,
+	.footer-navigation {
+	width: 100%;
+	float: none;
+	text-align: left;
+	}
 	/* Hentry */
+	.entry-title {
+	width: 100%;
+	max-width: 100%;
+	float: none;
+	clear: left;
+	line-height: 1.3;
+	margin: 0;
+	}
 	.hentry,
 	#content .flexslider {
 	margin-bottom: 5%;
@@ -2096,21 +2136,23 @@ textarea {
 	.post-thumbnail img {
 	float: none;
 	margin: auto;
-	width: 100%;
 	max-width: 100%;
+	width: 100%;
 	height: auto;
 	}
 	/* Meta */
-	.entry-header h2 {
-	width: 100%;
-	max-width: 100%;
-	float: none;
-	clear: left;
-	line-height: 1.3;
-	margin: 0;
+	.entry-time {
+	display: none;
+	text-transform: none;
+	color: #959595 !important;
 	}
 	.entry-time:before {
 	content: none;
+	}
+	.single .entry-header .entry-meta {
+	width: 100%;
+	max-width: 100%;
+	float: none;
 	}
 	.sticky .entry-time,
 	.entry-time {
@@ -2144,14 +2186,6 @@ textarea {
 	}
 	.entry-format-icon:before {
 	content: none !important;
-	}
-	.entry-meta {
-	margin-left: 0.5em;
-	}
-	.entry-time {
-	float: left;
-	text-transform: none;
-	color: #959595 !important;
 	}
 	/* Widget */
 	.widget {
@@ -2256,18 +2290,13 @@ textarea {
 	text-align: center;
 	display: block;
 	}
-	.post-thumbnail,
-	.post-thumbnail.medium,
-	.post-thumbnail.thumbnail {
-	margin: 0 auto 3%;
+	.post-thumbnail {
+	float: none;
+	max-width: 100%;
+	margin: 0 auto 5%;
 	}
 	.post-thumbnail img {
 	margin: auto;
-	}
-	.post-thumbnail.medium,
-	.post-thumbnail.thumbnail {
-	float: none;
-	max-width: inherit;
 	}
 	/* Flexslider */
 	.flex-caption {

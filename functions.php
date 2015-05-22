@@ -26,6 +26,9 @@ function thebox_setup() {
 	// Make theme available for translation. Translations can be filed in the /languages/ directory
 	load_theme_textdomain( 'thebox', get_template_directory() . '/languages' );	
 	
+	// Supporting title tag via add_theme_support (since WordPress 4.1)
+	add_theme_support( 'title-tag' );
+   
 	// This theme styles the visual editor to resemble the theme style.
 	add_editor_style( array( 'inc/editor-style.css', thebox_fonts_url() ) );
 	
@@ -38,7 +41,8 @@ function thebox_setup() {
 	
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'thebox' )
+		'primary' => __( 'Primary Menu', 'thebox' ),
+		'secondary' => __( 'Footer Menu', 'thebox' )
 	) );
 
 	// Enable support for Post Formats
@@ -61,7 +65,7 @@ function thebox_scripts() {
 	wp_enqueue_style( 'thebox-icons', get_template_directory_uri() . '/fonts/icons-font.css', array(), '1.6' );
 		
 	// Loads main stylesheet.
-	wp_enqueue_style( 'thebox-style', get_stylesheet_uri(), array(), '1.3.9.2' );
+	wp_enqueue_style( 'thebox-style', get_stylesheet_uri(), array(), '1.4.0' );
 	
 	wp_enqueue_script( 'thebox-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
@@ -153,6 +157,20 @@ function thebox_widgets_init() {
 	
 }
 add_action( 'widgets_init', 'thebox_widgets_init' );
+
+
+/**
+ * Title Tag backwards compatibility for older versions
+ *
+ */
+if ( ! function_exists( '_wp_render_title_tag' ) ) {
+	function theme_slug_render_title() {
+?>
+<title><?php wp_title( '|', true, 'right' ); ?></title>
+<?php
+	}
+	add_action( 'wp_head', 'theme_slug_render_title' );
+}
 
 
 /**
