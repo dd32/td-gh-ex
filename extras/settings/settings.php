@@ -47,7 +47,6 @@ function siteorigin_settings_init( $theme_name = null ) {
 	// Register all the actions for the settings page
 	add_action( 'admin_menu', 'siteorigin_settings_admin_menu' );
 	add_action( 'admin_init', 'siteorigin_settings_admin_init', 8 );
-	add_action( 'siteorigin_adminbar', 'siteorigin_settings_adminbar' );
 
 	add_action( 'admin_enqueue_scripts', 'siteorigin_settings_enqueue_scripts' );
 }
@@ -170,21 +169,6 @@ function siteorigin_settings_enqueue_scripts( $prefix ) {
 	
 	// This is for the media uploader
 	if ( function_exists( 'wp_enqueue_media' ) ) wp_enqueue_media();
-}
-
-/**
- * Add the admin bar to the settings page
- *
- * @param $bar
- * @return object|null
- */
-function siteorigin_settings_adminbar( $bar ) {
-	$screen = get_current_screen();
-	if ( $screen->id == 'appearance_page_theme_settings_page' ) {
-		$bar = (object) array( 'id' => $GLOBALS['siteorigin_settings_name'], 'message' => array( 'extras/settings/message' ) );
-	}
-
-	return $bar;
 }
 
 /**
@@ -474,7 +458,7 @@ function siteorigin_settings_field( $args ) {
 		case 'teaser' :
 			$theme = get_option( 'template' );
 			?>
-			<a class="premium-teaser siteorigin-premium-teaser" href="<?php echo admin_url( 'themes.php?page=premium_upgrade' ) ?>" target="_blank">
+			<a class="premium-teaser siteorigin-premium-teaser" href="<?php echo admin_url( 'themes.php?page=premium_upgrade' ) ?>">
 				<em></em>
 				<?php printf( __( 'Only available in <strong>%s</strong> - <strong class="upgrade">Upgrade Now</strong>', 'puro' ), apply_filters('siteorigin_premium_theme_name', ucfirst($theme) . ' ' . __( 'Premium', 'puro' ) ) ) ?>
 				<?php if(!empty($args['teaser-image'])) : ?>

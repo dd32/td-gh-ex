@@ -4,7 +4,7 @@ Contributors: Misplon
 Tags: gray, green, white, light, one-column, right-sidebar, fluid-layout, custom-menu, featured-images, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 
 Requires at least: 4.1
-Tested up to: 4.3-alpha
+Tested up to: 4.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -46,6 +46,11 @@ Released under the MIT License.
 This theme makes use of the SiteOrigin Extras Framework contained in the folder extras/. All code is licensed under GPL 2.0 and copyright 2013 Greg Priday unless otherwise stated in the file header. 
 
 == Changelog ==
+
+= 1.0.6.1 =
+* Added supporting styles for JW Player to ensure theme button styles don't change the player's buttons.
+* Removed newsletter admin bar.
+* Updated /languanges/puro.pot.
 
 = 1.0.6 =
 * Fixed issue with current-menu-item color CSS specificity.

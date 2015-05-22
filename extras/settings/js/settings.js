@@ -228,12 +228,6 @@ jQuery( function ( $ ) {
         $( '#setting-updated' ).slideUp();
     }, 5000 );
 
-    // Add a Go Premium button
-    if( !siteoriginSettings.premium.isPremium && siteoriginSettings.premium.hasPremium ) {
-        var upgradeLink = $('<div id="upgrade-to-premium" class="screen-meta-toggle"><a href="' + siteoriginSettings.premium.premiumUrl + '" target="_blank">' + siteoriginSettings.premium.name + '</a></div>');
-        $('#screen-meta-links').append(upgradeLink);
-    }
-
     // Now, lets handle the preview
     var previewModal;
     $('#siteorigin-settings-form .siteorigin-settings-preview-button').click( function(e){

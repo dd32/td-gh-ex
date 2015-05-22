@@ -7,7 +7,7 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.0.6' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.0.6.1' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://updates.purothemes.com' ); 
 
 if( file_exists( get_template_directory() . '/premium/functions.php' ) ){
@@ -22,7 +22,6 @@ include get_template_directory() . '/extras/plugin-activation/plugin-activation.
 include get_template_directory() . '/extras/premium/premium.php';
 include get_template_directory() . '/extras/settings/settings.php';
 include get_template_directory() . '/extras/update/update.php';
-include get_template_directory() . '/extras/adminbar/adminbar.php';
 
 // Load the theme specific files
 include get_template_directory() . '/inc/extras.php';
