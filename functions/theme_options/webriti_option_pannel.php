@@ -30,6 +30,7 @@
 				<li id="tab_meta"><a href="#section_meta"><?php _e('Meta Setting','corpbiz'); ?></a>
                 </li>
 				<li id="tab_pro"><a href="#section_pro"><?php _e('Upgrade to Pro','corpbiz'); ?></a>
+				<li id="tab_pro"><a href="#show_love"><?php _e('Show some love','corpbiz'); ?></a>
                 </li>
                
             </ul>
@@ -144,6 +145,18 @@
                 <div class="format-setting-wrap">
                     <div class="format-setting-label">
 					<?php  load_template( dirname( __FILE__ ) . '/pages/UpgradeToPro.php' ); ?>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+	
+	<div id="show_love" class = "postbox" >
+        <div class="inside">
+            <div id="setting_export_settings_file_text" class="format-settings">
+                <div class="format-setting-wrap">
+                    <div class="format-setting-label">
+					<?php  load_template( dirname( __FILE__ ) . '/pages/showlove.php' ); ?>
 					</div>
 				</div>
             </div>

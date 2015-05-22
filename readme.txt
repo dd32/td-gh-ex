@@ -54,6 +54,8 @@ Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
+@Version 1.1.3
+1. Added Theme Uri
 @version 1.1.2
 1. Add Upgrade to pro Files.
 2. Remove font-awesome icon folder.

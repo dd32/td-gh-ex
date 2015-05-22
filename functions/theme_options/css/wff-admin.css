@@ -1162,7 +1162,7 @@
   margin: 0 20px;
 }
 #option-tree-settings-api .inside {
-  margin: 0px !important;
+    margin: 0px 0px 37px !important;
   padding: 0px !important;
 }
 #option-tree-settings-api > .ui-tabs {
@@ -4056,4 +4056,44 @@ padding-left: 21px;
 height: auto;
 min-height: 150px;
 width: 200px;
+}
+/* Show some love css Added by sunil */
+.buy-button {
+  background: #f9866b;
+  text-decoration: none;
+  border-radius: 3px;
+  display: inline-block;
+  height: 34px;
+  border-radius: 3px;
+  font-family: "Open Sans", sans-serif;
+  color: #fff !important;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 34px;
+  padding-right: 10px;
+  display: inline-block;
+  margin: 14px 20px 0px 0px;
+}
+.buy-button i {
+  background: #f16848;
+  width: 30px;
+  line-height: 34px;
+  height: 34px;
+  display: block;
+  float: left;
+  border-radius: 3px 0px 0px 3px;
+  margin-right: 10px;
+  text-align: center;
+}
+.gray-btn {
+  background: #707070;
+}
+.gray-btn i {
+  background: #464646;
+}
+.blue-btn {
+  background: #52c4ef;
+}
+.blue-btn i {
+  background: #3eaed8;
 }
