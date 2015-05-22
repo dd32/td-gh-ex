@@ -23,6 +23,7 @@ function advent_setup() {
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 672, 372, true );
 	add_image_size( 'advent-full-width', 1038, 576, true );
+	add_image_size('headertop-logo', 155, 155, true);
 
 	
 	register_nav_menus( array(
@@ -33,10 +34,32 @@ function advent_setup() {
 	add_theme_support( 'html5', array(
 		'search-form', 'comment-form', 'comment-list',
 	) );
-        
+	
+	// Add support for featured content.
+	add_theme_support('featured-content', array(
+	   'featured_content_filter' => 'advent_get_featured_posts',
+	   'max_posts' => 6,
+	));
+	
+	add_theme_support( 'custom-header', apply_filters( 'advent_custom_header_args', array(
+	'uploads'       => true,
+	'flex-height'   => true,
+	'default-text-color' => '#000',
+	'header-text' => true,
+	'height' => '120',
+	'width'  => '1260'
+ 	) ) );
 	add_theme_support( 'custom-background', apply_filters( 'advent_custom_background_args', array(
 	'default-color' => 'f5f5f5',
 	) ) );
+	
+	// This theme uses its own gallery styles.       
+	add_filter('use_default_gallery_style', '__return_false'); 
+	add_editor_style('css/editor-style.css');	
+	
+	
+        
+	
         
 	// Add support for featured content.
 	add_theme_support( 'featured-content', array(
@@ -159,6 +182,11 @@ add_filter( 'comment_form_defaults', 'advent_textarea_insert' );
 	return $fields;
 	}
 
+function advent_get_image_id($advent_image_url) {
+	global $wpdb;
+	$advent_attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE guid='%s';", $advent_image_url )); 
+    return $advent_attachment[0]; 
+}
 
 /*** Enqueue css and js files ***/
 require_once('functions/enqueue-files.php');

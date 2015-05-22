@@ -28,3 +28,8 @@ iii) Add a theme slug as prefix in themeoptions.php
 
 Version 1.0.5
 i) Add PRO Theme Features tab in theme options.
+
+Version 1.0.6
+i) 	 Remove the fix logo height and width.
+ii)	 Fixed css issue
+iii) fixed customize header image. 

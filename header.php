@@ -30,8 +30,12 @@ $advent_options = get_option('advent_theme_options');
                         <div class="col-sm-6 col-md-6 col-sm-offset-1 text-center center-block">
                                 <?php if (!empty($advent_options['headertop-logo'])) { ?>
                                 <div class="logo">
-                                    <?php if (!empty($advent_options['headertop-logo'])) { ?>
-                                        <img src="<?php echo esc_url($advent_options['headertop-logo']); ?>" class="img-responsive" alt="<?php echo esc_attr(get_the_title()); ?>">
+                                    <?php if (!empty($advent_options['headertop-logo'])) { 
+										 $advent_image = esc_url($advent_options['headertop-logo']); 
+										 $advent_id = advent_get_image_id($advent_image);
+										 $advent_image = wp_get_attachment_image_src($advent_id, 'headertop-logo');
+									?>
+										<img class="img-circle img-responsive" alt="<?php echo esc_attr($advent_options['headertop-logo']); ?>" src="<?php echo esc_url($advent_image[0]); ?>" width="<?php echo $advent_image[1]; ?>" height="<?php echo $advent_image[2]; ?>">
                                 <?php } ?>
                                 </div>
                             <?php } ?>
@@ -63,8 +67,12 @@ $advent_options = get_option('advent_theme_options');
 										</a>		
 										<p class="site-description"><?php bloginfo( 'description' ); ?></p>
 									  </div>
-                                <?php } else { ?>
-                                    <a href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo esc_url($advent_options['logo']); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" class="img-responsive" /></a>
+                                <?php } else { 
+										$advent_options_image = getimagesize($advent_options['logo']) ;	
+									?>
+                                    <a href="<?php echo esc_url(home_url('/')); ?>">
+                                    <img alt="<?php _e('logo', 'advent') ?>" src="<?php echo esc_url($advent_options['logo']); ?>" height= "<?php echo $advent_options_image[1]; ?>" width="<?php echo $advent_options_image[0]; ?>" class="img-responsive" >
+                                    </a>
                                     <?php } ?>
                                     
                                     
