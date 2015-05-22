@@ -4,7 +4,7 @@ Theme URI: http://www.tenman.info/wp3/raindrops/
 Description: This theme can change freely fonts,layout,color scheme and header image for each post,page. The google fonts, you can use freely in the post more than 90percent of the fonts.Color scheme and layout, you can freely change from theme customizer.For more updates, please make sure to open the link of the changelog from the help tab of this theme page.Add new post, so also to help tab of edit post page has been described how to use tips, please visit
 Author: Tenman
 Author URI: http://www.tenman.info/wp3/
-Version: 1.291
+Version: 1.292
 Tags: black, blue, gray, brown, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, post-formats, featured-images, full-width-template, fixed-layout, fluid-layout, responsive-layout, rtl-language-support, microformats
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -28,6 +28,7 @@ http://developer.yahoo.com/yui/fonts/
 22px = 167%    23px = 174%    24px = 182%    25px = 189%
 26px = 197%
 ------------------------------------------------------*/
+body.rd-pw-doc5,
 body.rd-pw-doc3{
     max-width:100%;
     overflow-x: hidden;
@@ -1133,7 +1134,9 @@ ul.index li .edit {
 }
 .topsidebar li{
     list-style:none;
+    margin-left:0;
 }
+
 .topsidebar ul li ul li a,
 #bigbanner ul li ul li a,
 .lsidebar ul li ul li a,
@@ -1163,6 +1166,7 @@ ul.index li .edit {
     margin:0;
     padding:0;
 }
+#doc5 #container.yui-gc > .yui-u:not(.first),
 #doc4 #container.yui-gc > .yui-u:not(.first),
 #doc3 #container.yui-gc > .yui-u:not(.first){
     width:33%;/* 1.254 change from 35% to 33% */
@@ -3380,6 +3384,12 @@ ol.list-of-post-list .entry-title{
         width:auto;
         vertical-align:top;
     }
+    .page-template-blank_front-php #doc5 .yui-ge .raindrops-category-posts li,
+    .page-template-blank_front-php #doc5 .yui-gc .raindrops-category-posts li,
+    .page-template-blank_front-php #doc5 .yui-ge .raindrops-tag-posts li,
+    .page-template-blank_front-php #doc5 .yui-gc .raindrops-tag-posts li,
+    .page-template-blank_front-php #doc5 .yui-ge .raindrops-recent-posts li, /* 25% */
+    .page-template-blank_front-php #doc5 .yui-gc .raindrops-recent-posts li,
     .page-template-blank_front-php #doc3 .yui-ge .raindrops-category-posts li,
     .page-template-blank_front-php #doc3 .yui-gc .raindrops-category-posts li,
     .page-template-blank_front-php #doc3 .yui-ge .raindrops-tag-posts li,
@@ -3400,6 +3410,9 @@ ol.list-of-post-list .entry-title{
         width:auto;
         vertical-align:top;
     }
+    .page-template-blank_front-php #doc5 .raindrops-category-posts li,
+    .page-template-blank_front-php #doc5 .raindrops-tag-posts li,
+    .page-template-blank_front-php #doc5 .raindrops-recent-posts li,
     .page-template-blank_front-php #doc3 .raindrops-category-posts li,
     .page-template-blank_front-php #doc3 .raindrops-tag-posts li,
     .page-template-blank_front-php #doc3 .raindrops-recent-posts li{
@@ -3407,22 +3420,33 @@ ol.list-of-post-list .entry-title{
         width:100%;
         vertical-align:top;
     }
+    .page-template-blank_front-php #doc5 .raindrops-category-posts ul > li,
+    .page-template-blank_front-php #doc5 .raindrops-tag-posts ul > li,
+    .page-template-blank_front-php #doc5 #raindrops-recent-posts > ul > li,
     .page-template-blank_front-php #doc3 .raindrops-category-posts ul > li,
     .page-template-blank_front-php #doc3 .raindrops-tag-posts ul > li,
     .page-template-blank_front-php #doc3 #raindrops-recent-posts > ul > li{
         margin:1em 0;
     }
+    .page-template-blank_front-php #doc5 .raindrops-category-posts ul > li .thumb img,
+    .page-template-blank_front-php #doc5 .raindrops-tag-posts ul > li .thumb img ,
+    .page-template-blank_front-php #doc5 #raindrops-recent-posts > ul > li .thumb img,
     .page-template-blank_front-php #doc3 .raindrops-category-posts ul > li .thumb img,
     .page-template-blank_front-php #doc3 .raindrops-tag-posts ul > li .thumb img ,
-
     .page-template-blank_front-php #doc3 #raindrops-recent-posts > ul > li .thumb img{
         width:64px!important;
     }
+    .page-template-blank_front-php #doc5 .raindrops-category-posts ul > li article,
+    .page-template-blank_front-php #doc5 .raindrops-tag-posts ul > li article,
+    .page-template-blank_front-php #doc5 #raindrops-recent-posts > ul > li article,
     .page-template-blank_front-php #doc3 .raindrops-category-posts ul > li article,
     .page-template-blank_front-php #doc3 .raindrops-tag-posts ul > li article,
     .page-template-blank_front-php #doc3 #raindrops-recent-posts > ul > li article{
         margin-left:72px!important;
     }
+    .page-template-blank_front-php #doc5 .raindrops-category-posts ul > li .posted-on,
+    .page-template-blank_front-php #doc5 .raindrops-tag-posts ul > li .posted-on,
+    .page-template-blank_front-php #doc5 #raindrops-recent-posts > ul > li .posted-on,
     .page-template-blank_front-php #doc3 .raindrops-category-posts ul > li .posted-on,
     .page-template-blank_front-php #doc3 .raindrops-tag-posts ul > li .posted-on,
     .page-template-blank_front-php #doc3 #raindrops-recent-posts > ul > li .posted-on{
