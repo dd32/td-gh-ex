@@ -4,7 +4,7 @@ Theme URI: http://fruitthemes.com/wordpress-themes/avocation
 Author: FruitThemes
 Author URI: http://fruitthemes.com/
 Description: Avocation is a lightweight, clean, super flexible and bootstrap based responsive theme for business or personal websites. Avocation Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, theme-options etc in order to get it customized as per your need.
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Copyright :
@@ -470,8 +470,7 @@ display:block;
 /**************************header end*********************/
 /**************************footer start*********************/
 .footer-bg{
-    /*background:url("images/texture.jpg") !important;*/
-    background-color:#000000 !important;  
+    background:url("images/texture.jpg");  
     display: inline-block;
     position: relative;
     width: 100%;
@@ -640,7 +639,7 @@ display:block;
 
 /**************************breadcrumb start*********************/
 .breadcrumb-bg{
-    /*background-image:url(images/breadcrumb-bg.jpg);*/
+    background-image:url(images/breadcrumb-bg.jpg);
     margin-bottom: 50px;
     border-bottom: 1px solid #cccccc;
 }
@@ -1363,7 +1362,7 @@ a.comment-reply-link{
 
 /**************Purpose-Business  Start**************/
 .business-wrap {
-    /*background: url("images/business-bg.jpg");*/
+    background: url("images/business-bg.jpg");
     background-repeat: no-repeat;   
     padding: 100px 0;
     background-size: cover;

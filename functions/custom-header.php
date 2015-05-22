@@ -18,10 +18,6 @@ function avocation_custom_header_setup() {
 }
 add_action( 'after_setup_theme', 'avocation_custom_header_setup', 11 );
 
-
-add_action( 'admin_print_styles-appearance_page_custom-header', 'avocation_custom_header_fonts' );
-
-
 function avocation_header_style() {
 	$avocation_header_image = get_header_image();
 	$avocation_text_color   = get_header_textcolor();

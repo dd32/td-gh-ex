@@ -40,21 +40,16 @@ Avocation is distributed under the terms of the GNU GPL
 	
 6. Theme Options :
 
-	a) Basic Settings: You can manage your site logo and favicon in this.
-	
-	b) Footer Settings: You can manage your copyright text here.
+	a) Home Page Settings	
+		i) Slider Setting : Here you can add soliloqu slider id. 
+		ii)Purpose Business Section : you can manage your title,short description and background image. 
+		iii) Blog Section : You can set home page Blog Section title and description and select the category type as per the category type it will dispaly in the blog section.
 
-	c) Home Page Settings	
-		i) Banner Slider : Here you can manage home page slider and here we have put the checkbox to call the url in new browser or in the same browser. 
-		ii) About Us Section : You can set home page Abput Us title, description and you can manage your icon, title and description here
-and here we have put the checkbox to call the url in new browser or in the same browser.
-		iv)Purpose Business Section : you can manage your title and short description. 
-		v) Blog Section : You can set home page Blog Section title and description and select the category type as per the category type it will dispaly in the blog section.
+	b) Basic Settings: You can manage your site logo,favicon,breadcrumbs background image,footer background image,blog title and copyright text.
 	
-	d)Social Settings  : You can manage here Social Media
+	c) Social Settings  : You can manage here Social Media.
 
-	e)Contact Us Settings: You can manage your title, short description,address,phone,fax,email and web address
-		i) in contact settings : one plugin is used to get the contact person information i.e. contact-form7 plug in and i have set the shortcode so a person can use that dynamically.  
+	d) Contact Us Settings: You can manage your title, short description,address,phone,fax,email and web address.
 
 ---------------------------------------------------------
 License and Copyrights for Resources used in this theme

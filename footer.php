@@ -28,8 +28,9 @@
 					    <span>
 		<?php printf( __( 'Powered by %1$s and %2$s.', 'avocation' ), '<a href="http://wordpress.org" target="_blank">WordPress</a>', '<a href="http://fruitthemes.com/wordpress-themes/avocation" target="_blank">Avocation</a>' ); ?>
 		</span>                   
-                       <?php if(!empty($avocation_options['avocation-footertext'])) { ?>
-						<p><?php echo esc_html($avocation_options['avocation-footertext']).' ';  ?></p> <?php } 
+                       <?php $copyright_check = get_theme_mod( 'copyright_url_setting' );
+    if( $copyright_check != '' ) { ?>
+						<p><?php echo esc_html( get_theme_mod('copyright_url_setting', '') );  ?></p> <?php } 
 						 ?>
 						
        

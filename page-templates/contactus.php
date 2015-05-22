@@ -1,6 +1,6 @@
 <?php
 /* Template Name: ContactUs page */
-$avocation_options = get_option('avocation_theme_options');
+
 ?>
 <?php get_header();?>
         <!--==============================Section=================================-->
@@ -23,42 +23,45 @@ $avocation_options = get_option('avocation_theme_options');
                 
          
             <div class="avocation-container container">   
-				<div class="col-lg-6 col-md-6 col-sm-6 contact-form">
-					 <?php while (have_posts()) : the_post(); ?>
-					
-                    <?php the_content(); ?>
-                    <?php endwhile; ?> 
-                </div>            
+				           
                 <div class="contact-wrap row">   
                     <div class="title-box">
-						<?php if(!empty($avocation_options['avocation-contact-info-title'])){?>
-                        <h2 class="content-heading"> <?php echo esc_attr($avocation_options['avocation-contact-info-title']); ?> </h2><?php }?>
+						<?php $contact_info_title_check = get_theme_mod( 'contact_info_title_setting' );
+						if(!empty($contact_info_title_check)) {?>
+							<h2 class="content-heading"> <?php echo esc_attr( get_theme_mod('contact_info_title_setting', '') ); ?> </h2>
+                        <?php }?>
                     </div>
-                  
+
                     <div class="col-lg-6 col-md-6 col-sm-6">
-						  <?php if(!empty($avocation_options['avocation-contact-info'])){?>
-                        <p class="textwidget"> <?php echo esc_textarea($avocation_options['avocation-contact-info']);?> </p>
-							<?php }?>
+						<?php $contact_info_check = get_theme_mod( 'contact_info_setting' );
+						if(!empty($contact_info_check)) {?>
+							<p class="textwidget"> <?php echo esc_textarea( get_theme_mod('contact_info_setting', '') );?> </p>
+						<?php }?>
                         <ul>
-							<?php if(!empty($avocation_options['avocation-contact-address'])){?>
-                            <li><i class="fa fa-map-marker"></i> <span><?php echo esc_textarea($avocation_options['avocation-contact-address']);?></span> </li><?php }?>
-                            <?php if(!empty($avocation_options['avocation-contact-email'])){?>
-                            <li><i class="fa fa-envelope"></i> <span><?php echo esc_attr($avocation_options['avocation-contact-email']);?></span></li><?php }?>
-                            <?php if(!empty($avocation_options['avocation-contact-telephone'])){?>
-                            <li><i class="fa fa-phone"></i> <span><?php echo esc_attr($avocation_options['avocation-contact-telephone']);?></span></li><?php }?>
-                            <?php if(!empty($avocation_options['avocation-contact-web'])){?>
-                            <li><i class="fa fa-globe"></i> <span><a href="#"><?php echo esc_attr($avocation_options['avocation-contact-web']);?></a></span> </li><?php }?>
+							<?php $contact_add_check = get_theme_mod( 'contact_add_setting' );
+								if(!empty($contact_add_check)) {?>
+									<li><i class="fa fa-map-marker"></i> <span><?php echo esc_textarea( get_theme_mod('contact_add_setting', '') );?></span> </li>
+								<?php }?>
+							<?php $contact_email_check = get_theme_mod( 'contact_email_setting' );
+								if(!empty($contact_email_check)) {?>
+									<li><i class="fa fa-envelope"></i> <span><a href="mailto:<?php echo esc_attr( get_theme_mod('contact_email_setting', '') );?>"><?php echo esc_attr( get_theme_mod('contact_email_setting', '') );?></a></span></li>
+								<?php }?>
+							<?php $contact_telephone_check = get_theme_mod( 'contact_telephone_setting' );
+								if(!empty($contact_telephone_check)) {?>
+									<li><i class="fa fa-phone"></i> <span><?php echo esc_url( get_theme_mod('contact_telephone_setting', '') );?></span></li>
+								<?php }?>
+							<?php $contact_web_check = get_theme_mod( 'contact_web_setting' );
+								if(!empty($contact_web_check)) {?>
+									<li><i class="fa fa-globe"></i> <span><a href="<?php echo esc_html( get_theme_mod('contact_web_setting', '') );?>" ><?php echo esc_html( get_theme_mod('contact_web_setting', '') );?></a></span> </li>
+								<?php }?>
                         </ul>                  
                     </div>
-                    
-                    
-                    <?php if(!empty($avocation_options['avocation-contact-code'])) {?>
-                <div class="col-lg-6 col-md-6 col-sm-6 contact-form">
-                    <?php echo do_shortcode($avocation_options['avocation-contact-code']); ?> 
-                </div>
-            <?php } ?>
-						
-                    
+
+					<div class="col-lg-6 col-md-6 col-sm-6 contact-form">
+						 <?php while (have_posts()) : the_post(); ?>
+						<?php the_content(); ?>
+						<?php endwhile; ?> 
+					</div> 
             </div>
             <!--contact Us- end-->   
         </section>

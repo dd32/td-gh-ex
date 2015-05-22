@@ -60,35 +60,29 @@ function avocation_setup() {
 endif; // avocation_setup
 add_action( 'after_setup_theme', 'avocation_setup' );
 
-/* css */
 add_action('wp_head','avocation_purpose_bg_img_css');
 function avocation_purpose_bg_img_css()
 {
-	$avocation_options = get_option('avocation_theme_options');
-	if (array_key_exists('avocation-purposebg-bg',$avocation_options)){
-		$avocation_purpose_bg_img = esc_url($avocation_options['avocation-purposebg-bg']);
+	if (!empty(get_theme_mod('avocation_purpose_image'))){
+		$avocation_purpose_bg_img = esc_url(get_theme_mod('avocation_purpose_image'));
 		$avocation_purpose_output="<style> .business-wrap { background :url('".$avocation_purpose_bg_img."');
 		background-position: center;} </style>";
 		echo $avocation_purpose_output;		
 	}
-	if (array_key_exists('avocation-breadcrumbsbg-bg',$avocation_options)){	
-		$avocation_header_bg_img = esc_url($avocation_options['avocation-breadcrumbsbg-bg']);
+	if (!empty(get_theme_mod('avocation-breadcrumbsbg-bg'))){
+		$avocation_header_bg_img = esc_url(get_theme_mod('avocation-breadcrumbsbg-bg'));
 		$avocation_header_output="<style>  .breadcrumb-bg { background :url('".$avocation_header_bg_img."'); } </style>";
 		echo $avocation_header_output;		
 	}
-	if (array_key_exists('avocation-footerbg-bg',$avocation_options)){	
-		$avocation_footer_bg_img = esc_url($avocation_options['avocation-footerbg-bg']);
+	if (!empty(get_theme_mod('avocation-footerbg-bg'))){
+		$avocation_footer_bg_img = esc_url(get_theme_mod('avocation-footerbg-bg'));
 		$avocation_footer_output="<style>  .footer-bg{ background :url('".$avocation_footer_bg_img."'); } </style>";
 		echo $avocation_footer_output;	
 	}
 }
 
-// retrieves the attachment ID from the file URL
-function avocation_get_image_id($avocation_image_url) {
-	global $avocation_wpdb;
-	$avocation_attachment = $avocation_wpdb->get_col($avocation_wpdb->prepare("SELECT ID FROM $avocation_wpdb->posts WHERE guid='%s';", $avocation_image_url )); 
-        return $avocation_attachment[0]; 
-}
+
+
 /***  excerpt Length ***/ 
 function avocation_change_excerpt_more( $avocation_more ) {
     return '<div class="read-more"><a class="theme-btn" href="'. get_permalink() . '" >'.__('READ MORE','avocation').'</a></div>';
@@ -102,13 +96,8 @@ add_filter( 'excerpt_length', 'avocation_excerpt_length', 999 );
 /* CUSTOM POST WIDGET FOR LATEST POST */
 require get_template_directory() . '/functions/popularpost.php';
 
-/* CUSTOM POST WIDGET FOR LATEST POST END */
-
 /* get in touch start */
-
 require get_template_directory() . '/functions/getintouch.php';
-
-/* get in touch end */
 
 /*** Enqueue css and js files ***/
 require get_template_directory() . '/functions/enqueue-files.php';
@@ -119,8 +108,11 @@ require get_template_directory() . '/functions/theme-default-setup.php';
 /*** Breadcrumbs ***/
 require get_template_directory() . '/functions/breadcrumbs.php';
 
-/*** Theme Option ***/
-require get_template_directory() . '/theme-options/theme-options.php';
-
 /*** Custom Header ***/
 require get_template_directory() . '/functions/custom-header.php';
+
+/*** tgm-plugins ***/
+require get_template_directory() . '/functions/tgm-plugins.php';
+
+/*** Customizer ***/
+require get_template_directory() . '/functions/theme-customizer.php';
