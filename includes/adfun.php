@@ -1,15 +1,15 @@
 <div id="bottom-menu">
 <div id="bottom-menu-inner" class="clearfix">
 <div id="bottom-menu-1">
-<?php if (!dynamic_sidebar('Bottom Menu 1') ) : ?>
+<?php if (!dynamic_sidebar('probottom1') ) : ?>
 		<?php endif; ?>
 </div> <!-- end div #bottom-menu-left -->
 <div id="bottom-menu-2">
-	<?php if (!dynamic_sidebar('Bottom Menu 2') ) : ?>
+	<?php if (!dynamic_sidebar('probottom2') ) : ?>
 			<?php endif; ?>
 </div> <!-- end div #bottom-menu-center -->
 <div id="bottom-menu-4">
-	<?php if ( !dynamic_sidebar('Bottom Menu 4') ) : ?>
+	<?php if ( !dynamic_sidebar('probottom3') ) : ?>
 	<?php endif; ?>
 </div> </div> </div>
 	<div id="footer">

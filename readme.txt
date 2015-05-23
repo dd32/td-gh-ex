@@ -36,6 +36,14 @@ Custom Css:
 
 == Change log ==
 
+= 1.5.2 =
+* Body font change fix
+* Added widget id for latest WP requirement
+* Social profile button show only when you want
+* Fixed untranslatable strings 
+* Searchform code updated
+* Fixed other minor issue
+
 = 1.5 =
 * Updated Option Framework
 * Added Title tag support

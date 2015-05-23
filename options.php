@@ -267,9 +267,25 @@ $options[] = array(
 		'type' => 'color' );
 		
 		$options[] = array(	
+		'name' => __('Footer Area Color Customization', 'promax'),
 		'desc' => __('Footer Widget background color.', 'promax'),
 		'id' => 'promax_ftwidget',
 		'std' => '#343434',
+		'type' => 'color' );
+		$options[] = array(	
+		'desc' => __('Footer Widget Title Color.', 'promax'),
+		'id' => 'promax_footerwidtitle',
+		'std' => '#dddddd',
+		'type' => 'color' );
+		$options[] = array(	
+		'desc' => __('Footer widget links color.', 'promax'),
+		'id' => 'promax_footerwidgetlinks',
+		'std' => '#2D89A7',
+		'type' => 'color' );
+		$options[] = array(	
+		'desc' => __('Footer copyright background color.', 'promax'),
+		'id' => 'promax_footercopyright',
+		'std' => '#000000',
 		'type' => 'color' );
 		
 	
