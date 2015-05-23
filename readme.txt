@@ -54,6 +54,11 @@ Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
+@Version 1.1.4
+1. Removed Twitter link from the option panel
+2. Removed CDN font awesome icons 
+3. Added font awesome icons in the package.
+
 @Version 1.1.3
 1. Added Theme Uri
 @version 1.1.2
