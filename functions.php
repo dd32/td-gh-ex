@@ -63,18 +63,21 @@ add_action( 'after_setup_theme', 'avocation_setup' );
 add_action('wp_head','avocation_purpose_bg_img_css');
 function avocation_purpose_bg_img_css()
 {
-	if (!empty(get_theme_mod('avocation_purpose_image'))){
-		$avocation_purpose_bg_img = esc_url(get_theme_mod('avocation_purpose_image'));
-		$avocation_purpose_output="<style> .business-wrap { background :url('".$avocation_purpose_bg_img."');
+	$avocation_purpose_image=get_theme_mod('avocation_purpose_image');
+	$avocation_header_bg_img=get_theme_mod('avocation-breadcrumbsbg-bg');
+	$avocation_footer_bg_img=get_theme_mod('avocation-footerbg-bg');
+	if (!empty($avocation_purpose_image)){
+		$avocation_purpose_image = esc_url(get_theme_mod('avocation_purpose_image'));
+		$avocation_purpose_output="<style> .business-wrap { background :url('".$avocation_purpose_image."');
 		background-position: center;} </style>";
 		echo $avocation_purpose_output;		
 	}
-	if (!empty(get_theme_mod('avocation-breadcrumbsbg-bg'))){
+	if (!empty($avocation_header_bg_img)){
 		$avocation_header_bg_img = esc_url(get_theme_mod('avocation-breadcrumbsbg-bg'));
 		$avocation_header_output="<style>  .breadcrumb-bg { background :url('".$avocation_header_bg_img."'); } </style>";
 		echo $avocation_header_output;		
 	}
-	if (!empty(get_theme_mod('avocation-footerbg-bg'))){
+	if (!empty($avocation_footer_bg_img)){
 		$avocation_footer_bg_img = esc_url(get_theme_mod('avocation-footerbg-bg'));
 		$avocation_footer_output="<style>  .footer-bg{ background :url('".$avocation_footer_bg_img."'); } </style>";
 		echo $avocation_footer_output;	

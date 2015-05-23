@@ -18,3 +18,5 @@ version 1.0.3
 	1) Fixed issue of customization
 	2) add tgm for slider and contact form 7
 
+version 1.0.4
+	1) Fixed fatal error in functions.php
