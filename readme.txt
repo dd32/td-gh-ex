@@ -3,8 +3,8 @@ Contributors: joedolson
 Donate link: https://www.joedolson.com/donate/
 Tags: accessibility-ready, translation-ready, responsive-layout, two-columns, black, blue, gray, white, light, custom-header, custom-menu, custom-background, custom-colors, featured-images, sticky-post
 Requires at least: 3.8.2
-Tested up to: 4.1
-Stable tag: 0.9.8
+Tested up to: 4.2
+Stable tag: 0.9.9
 License: GPLv2 or later
 
 Universal: ready for accessibility, responsive, and waiting for your content. 
@@ -25,7 +25,7 @@ Custom Icon Font Icons: https://github.com/Keyamoon/IcoMoon--limited- [GPL set]
  
 == Translations ==
  
-Translations are always appreciated. Visit <a href="http://translate.joedolson.com">my translations site</a> to start getting your language into shape!
+Translations are always appreciated. Visit <a href="http://translate.joedolson.com/projects/universal/">my translations site</a> to start getting your language into shape!
 
 Available languages (in order of completeness):
 Nothing yet!
@@ -37,6 +37,14 @@ Nothing yet!
 3. Go to Appearance > Customize to customize features of the theme.
 
 == Changelog ==
+
+= 0.9.9 =
+
+* Appends screen reader text and visible icon for menu items pointing at external sites
+* Appends screen reader text and visible icon for links opening in new tabs or windows.
+* Added full translation site URL.
+* Bug fix: Duplicate ID between headers and post IDs.
+* Missing post-content classes.
 
 = 0.9.8 =
 
