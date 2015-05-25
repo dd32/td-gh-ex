@@ -368,16 +368,31 @@
 } 
 
 @media only screen and (min-width: 200px) and (max-width: 600px) {
-/*
+
+	/*.carousel-list li {	display:none; } */	
 .carousel-text h1 {
-	font-size: 1.2em;
-	padding:10px;
-	}
-	
-	*/
-	/*.carousel-list li {	display:none; } */
-	
+margin: 0 0 0px 0;
+padding: 5px;
+font-size: 7px;
+font-family: 'Open Sans', sans-serif;
+color: #fff;
+text-transform: uppercase;
+text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+line-height: .line-height: 8px;;
+}
+.carousel-text .enigma_blog_read_btn {
+font-size: 7px;
+display: inline-block;
+padding: 3px;;
+}
+
+
 	.carousel-list li {
+	font-size: 7px;
+overflow: hidden;
+padding: 5px;
+line-height: 8px;
+display: block;
 	color: #fff;
 	font-size: 8px;
 	line-height:8px;
@@ -387,12 +402,10 @@
 	text-transform: uppercase;
 	}
 	
-	.carousel-caption{
+	/* .carousel-caption{
 	top:10px;
-	}
-	.carousel-text h1 {
-	font-size: 0.8em;
-	}
+	} */
+	
 	
 	/*** blog full width **/
 	.enigma_sidebar_left_side{
