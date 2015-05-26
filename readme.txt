@@ -1,9 +1,8 @@
+=== Virtue ===
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-    Thank you for downloading Virtue Theme!
-
--------------------------------------------------------
-    Virtue Theme Features:
--------------------------------------------------------
+== Features ==
 * Woocommerce
 * Translation-Ready
 * Responsive
@@ -11,45 +10,32 @@
 * Unlimited Colors
 * Flex Sliders
 * Retina Ready Graphics
-* And Much more.
+* Options Panel
 
--------------------------------------------------------
-    Credits:
--------------------------------------------------------
-Virtue Theme Uses:
+== Frequently Asked Questions ==
 
-* Photos on example_slider by Benjamin Ritner (licensed under GNU General Public License v2.0 or later)
-* Photos on in the screenshot (licensed under Public Domain) http://publicdomainarchive.com/category/modern/
-* FontAwesome by Dave Gandy (http://fontawesome.io) licensed under the SIL OFL 1.1 (http://scripts.sil.org/OFL)
-* FlexSlider by WooThemes under the GPLv2 license (http://www.gnu.org/licenses/gpl-2.0.html)
-* Star Font, icons image folder and Woocommerce Templates by Woothemes for Woocommerce (licensed under GNU General Public License v2.0 or later)
-* Theme aspects derived from RootsTheme (http://www.rootstheme.com/) licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
-* Redux Options Framework (http://reduxframework.com/) licensed under GNU General Public License v3.0
-* Google Fonts (available through Google web Fonts: http://www.google.com/fonts/), licensed under Apache License Version 2
-* Aqua Resizer (https://github.com/syamilmj/Aqua-Resizer), licensed under WTFPL http://www.wtfpl.net/
-* Twitter Bootstrap (https://github.com/twbs/bootstrap), licensed under Apache License Version 2
-* Custom Metaboxes and Fields for Wordpress (https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress), licensed under GNU General Public License v2.0 or later
-* Magnific Popup (http://dimsemenov.com/plugins/magnific-popup/) licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
-* carouFredSel (https://github.com/gilbitron/carouFredSel), licensed under GNU General Public License v2.0 or later 
-* Select2 (http://ivaynberg.github.io/select2/), licensed under GNU General Public License v2.0 or later
-* hoverIntent (https://github.com/briancherne/jquery-hoverIntent), licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
-* Superfish (https://github.com/joeldbirch/superfish) Dual licensed under the MIT and GPL licenses: http://www.opensource.org/licenses/mit-license.php, http://www.gnu.org/licenses/gpl.html
-* Fitvids (https://github.com/davatron5000/FitVids.js/blob/master/jquery.fitvids.js), Released under the WTFPL license - http://sam.zoy.org/wtfpl/
-* touchSwipe, (https://github.com/mattbryson/TouchSwipe-Jquery-Plugin), Dual licensed under the MIT or GPL Version 2 licenses
-* jquery.customSelect (http://adam.co/lab/jquery/customselect/), Dual licensed under the MIT or GPL Version 2 licenses
-* GMAP3 Plugin for JQuery (http://gmap3.net/), licensed under GNU General Public License v3.0
-* jQuery Scroll to Top Control script (http://www.dynamicdrive.com/) Custom license: http://www.dynamicdrive.com/notice.htm
-* Masonry (http://masonry.desandro.com/) licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
-* TGM Plugin Activation library (https://github.com/thomasgriffin/TGM-Plugin-Activation) licensed under GNU General Public License v2.0 or later
-* jQuery Validation ( http://bassistance.de/jquery-plugins/jquery-plugin-validation/), Dual licensed under the MIT or GPL Version 2 licenses
+= Is there theme documentation? =
 
--------------------------------------------------------
-    Changelog:
--------------------------------------------------------
+Yes, go here: http://docs.kadencethemes.com/virtue/
+
+= Is there demo content available? =
+
+Yes, go here: http://www.kadencethemes.com/kadence-themes-demo-content/
+
+= Is there a free support form for this theme? =
+
+Yes, go here: https://wordpress.org/support/theme/virtue
+
+== Changelog ==
 
 = Theme Name: Virtue =
 
-= Version 2.4.7 | 21st April 2015 =
+= Version 2.4.8 | 26nd May 2015 =
+* Update: TGM.
+* Update: Image edit script.
+* Update: CSS fixes. 
+
+= Version 2.4.7 | 22nd April 2015 =
 * Add: Mobile Submenu Collapse Option.
 * Update: Woocommerce Template.
 * Update: Output WooCommerce messages on all pages.
@@ -618,3 +604,30 @@ Virtue Theme Uses:
 = Version: 1.0.0 =
 
 * Initial Version
+
+== Resources ==
+
+* Photos on example_slider by Benjamin Ritner (licensed under GNU General Public License v2.0 or later)
+* Photos on in the screenshot (licensed under Public Domain) http://publicdomainarchive.com/category/modern/
+* FontAwesome by Dave Gandy (http://fontawesome.io) licensed under the SIL OFL 1.1 (http://scripts.sil.org/OFL)
+* FlexSlider by WooThemes under the GPLv2 license (http://www.gnu.org/licenses/gpl-2.0.html)
+* Star Font, icons image folder and Woocommerce Templates by Woothemes for Woocommerce (licensed under GNU General Public License v2.0 or later)
+* Theme aspects derived from RootsTheme (http://www.rootstheme.com/) licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
+* Redux Options Framework (http://reduxframework.com/) licensed under GNU General Public License v3.0
+* Google Fonts (available through Google web Fonts: http://www.google.com/fonts/), licensed under Apache License Version 2
+* Aqua Resizer (https://github.com/syamilmj/Aqua-Resizer), licensed under WTFPL http://www.wtfpl.net/
+* Twitter Bootstrap (https://github.com/twbs/bootstrap), licensed under Apache License Version 2
+* Custom Metaboxes and Fields for Wordpress (https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress), licensed under GNU General Public License v2.0 or later
+* Magnific Popup (http://dimsemenov.com/plugins/magnific-popup/) licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
+* carouFredSel (https://github.com/gilbitron/carouFredSel), licensed under GNU General Public License v2.0 or later 
+* Select2 (http://ivaynberg.github.io/select2/), licensed under GNU General Public License v2.0 or later
+* hoverIntent (https://github.com/briancherne/jquery-hoverIntent), licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
+* Superfish (https://github.com/joeldbirch/superfish) Dual licensed under the MIT and GPL licenses: http://www.opensource.org/licenses/mit-license.php, http://www.gnu.org/licenses/gpl.html
+* Fitvids (https://github.com/davatron5000/FitVids.js/blob/master/jquery.fitvids.js), Released under the WTFPL license - http://sam.zoy.org/wtfpl/
+* touchSwipe, (https://github.com/mattbryson/TouchSwipe-Jquery-Plugin), Dual licensed under the MIT or GPL Version 2 licenses
+* jquery.customSelect (http://adam.co/lab/jquery/customselect/), Dual licensed under the MIT or GPL Version 2 licenses
+* GMAP3 Plugin for JQuery (http://gmap3.net/), licensed under GNU General Public License v3.0
+* jQuery Scroll to Top Control script (http://www.dynamicdrive.com/) Custom license: http://www.dynamicdrive.com/notice.htm
+* Masonry (http://masonry.desandro.com/) licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
+* TGM Plugin Activation library (https://github.com/thomasgriffin/TGM-Plugin-Activation) licensed under GNU General Public License v2.0 or later
+* jQuery Validation ( http://bassistance.de/jquery-plugins/jquery-plugin-validation/), Dual licensed under the MIT or GPL Version 2 licenses

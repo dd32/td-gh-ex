@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Lite Virtue\n"
-"POT-Creation-Date: 2015-04-20 23:26-0700\n"
-"PO-Revision-Date: 2015-04-20 23:26-0700\n"
+"POT-Creation-Date: 2015-05-26 17:23-0700\n"
+"PO-Revision-Date: 2015-05-26 17:23-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -101,211 +101,254 @@ msgstr ""
 msgid "Latest posts from"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:155
+#: ../lib/class-tgm-plugin-activation.php:303
 #: ../lib/virtuetoolkit-activate.php:34
 msgid "Install Required Plugins"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:156
+#: ../lib/class-tgm-plugin-activation.php:304
 #: ../lib/virtuetoolkit-activate.php:35
 msgid "Install Plugins"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:157
+#: ../lib/class-tgm-plugin-activation.php:305
 #: ../lib/virtuetoolkit-activate.php:36
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:158
-msgid "Something went wrong."
+#: ../lib/class-tgm-plugin-activation.php:306
+#: ../lib/virtuetoolkit-activate.php:37
+msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:169
+#: ../lib/class-tgm-plugin-activation.php:368
 #: ../lib/virtuetoolkit-activate.php:48
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:170
+#: ../lib/class-tgm-plugin-activation.php:369
 msgid "Return to the dashboard"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:171
-#: ../lib/class-tgm-plugin-activation.php:1838
+#: ../lib/class-tgm-plugin-activation.php:370
+#: ../lib/class-tgm-plugin-activation.php:3052
 #: ../lib/virtuetoolkit-activate.php:49
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:172
-#: ../lib/class-tgm-plugin-activation.php:1536
+#: ../lib/class-tgm-plugin-activation.php:371
+#: ../lib/class-tgm-plugin-activation.php:2873
 msgid "The following plugin was activated successfully:"
 msgid_plural "The following plugins were activated successfully:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../lib/class-tgm-plugin-activation.php:173
+#: ../lib/class-tgm-plugin-activation.php:372
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:373
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:374
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:174
+#: ../lib/class-tgm-plugin-activation.php:375
 msgid "Dismiss this notice"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1084
-msgid "External Link"
+#: ../lib/class-tgm-plugin-activation.php:376
+msgid "Please contact the administrator of this site for help."
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1089
-msgid "Private Repository"
+#: ../lib/class-tgm-plugin-activation.php:494
+msgid "This plugin needs to be updated to be compatible with your theme."
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1092
-msgid "Pre-Packaged"
-msgstr ""
-
-#: ../lib/class-tgm-plugin-activation.php:1096
-msgid "WordPress Repository"
-msgstr ""
-
-#: ../lib/class-tgm-plugin-activation.php:1099
+#: ../lib/class-tgm-plugin-activation.php:2218
 msgid "Required"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1099
+#: ../lib/class-tgm-plugin-activation.php:2221
 msgid "Recommended"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1102
+#: ../lib/class-tgm-plugin-activation.php:2238
+msgid "WordPress Repository"
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:2242
+msgid "External Source"
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:2246
+msgid "Pre-Packaged"
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:2265
 msgid "Not Installed"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1104
+#: ../lib/class-tgm-plugin-activation.php:2269
 msgid "Installed But Not Activated"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1274
-#, php-format
-msgid ""
-"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
-"Dashboard\">Return to the Dashboard</a>"
+#: ../lib/class-tgm-plugin-activation.php:2271
+msgid "Active"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1290
+#: ../lib/class-tgm-plugin-activation.php:2277
+msgid "Required Update not Available"
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:2280
+msgid "Requires Update"
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:2283
+msgid "Update recommended"
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:2344
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../lib/class-tgm-plugin-activation.php:2348
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../lib/class-tgm-plugin-activation.php:2352
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../lib/class-tgm-plugin-activation.php:2453
+msgid "Installed version:"
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:2461
+msgid "Minimum required version:"
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:2473
+msgid "Available version:"
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:2497
+#, php-format
+msgid ""
+"No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
+"Dashboard</a>"
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:2513
 msgid "Plugin"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1291
+#: ../lib/class-tgm-plugin-activation.php:2514
 msgid "Source"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1292
+#: ../lib/class-tgm-plugin-activation.php:2515
 msgid "Type"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1293
+#: ../lib/class-tgm-plugin-activation.php:2519
+msgid "Version"
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:2520
 msgid "Status"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1311
+#: ../lib/class-tgm-plugin-activation.php:2660
 msgid "Install"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1312
+#: ../lib/class-tgm-plugin-activation.php:2666
+msgid "Update"
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:2669
 msgid "Activate"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1821
-msgid "Install package not available."
+#: ../lib/class-tgm-plugin-activation.php:2730
+msgid "No plugins are available to be installed at this time."
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1822
-#, php-format
-msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+#: ../lib/class-tgm-plugin-activation.php:2732
+msgid "No plugins are available to be updated at this time."
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1823
-msgid "Unpacking the package&#8230;"
-msgstr ""
-
-#: ../lib/class-tgm-plugin-activation.php:1824
-msgid "Installing the plugin&#8230;"
-msgstr ""
-
-#: ../lib/class-tgm-plugin-activation.php:1825
-msgid "Plugin install failed."
-msgstr ""
-
-#: ../lib/class-tgm-plugin-activation.php:1826
-msgid "Plugin installed successfully."
-msgstr ""
-
-#: ../lib/class-tgm-plugin-activation.php:1837
+#: ../lib/class-tgm-plugin-activation.php:3051
 msgid "Plugin activation failed."
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1947
+#: ../lib/class-tgm-plugin-activation.php:3390
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:3394
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:3395
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: ../lib/class-tgm-plugin-activation.php:3399
 msgid ""
 "The installation and activation process is starting. This process may take a "
 "while on some hosts, so please be patient."
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1948
+#: ../lib/class-tgm-plugin-activation.php:3400
 #, php-format
 msgid "%1$s installed and activated successfully."
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1948
-#: ../lib/class-tgm-plugin-activation.php:1957
-msgid "Show Details"
-msgstr ""
-
-#: ../lib/class-tgm-plugin-activation.php:1948
-#: ../lib/class-tgm-plugin-activation.php:1957
-msgid "Hide Details"
-msgstr ""
-
-#: ../lib/class-tgm-plugin-activation.php:1949
+#: ../lib/class-tgm-plugin-activation.php:3401
 msgid "All installations and activations have been completed."
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1950
+#: ../lib/class-tgm-plugin-activation.php:3402
 #, php-format
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1954
+#: ../lib/class-tgm-plugin-activation.php:3406
 msgid ""
 "The installation process is starting. This process may take a while on some "
 "hosts, so please be patient."
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1955
-#, php-format
-msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr ""
-
-#: ../lib/class-tgm-plugin-activation.php:1956
-#, php-format
-msgid "The installation of %1$s failed."
-msgstr ""
-
-#: ../lib/class-tgm-plugin-activation.php:1957
-#, php-format
-msgid "%1$s installed successfully."
-msgstr ""
-
-#: ../lib/class-tgm-plugin-activation.php:1958
+#: ../lib/class-tgm-plugin-activation.php:3408
 msgid "All installations have been completed."
 msgstr ""
 
-#: ../lib/class-tgm-plugin-activation.php:1959
+#: ../lib/class-tgm-plugin-activation.php:3409
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: ../lib/class-tgm-plugin-activation.php:2050
-msgid "Return to the Dashboard"
 msgstr ""
 
 #: ../lib/cleanup.php:104 ../templates/content-fullpost.php:74
@@ -391,11 +434,11 @@ msgstr ""
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../lib/custom-woocommerce.php:98 ../templates/header.php:39
+#: ../lib/custom-woocommerce.php:109 ../templates/header.php:39
 msgid "View your shopping cart"
 msgstr ""
 
-#: ../lib/custom-woocommerce.php:99 ../templates/header.php:40
+#: ../lib/custom-woocommerce.php:110 ../templates/header.php:40
 msgid "Your Cart"
 msgstr ""
 
@@ -681,10 +724,6 @@ msgstr ""
 
 #: ../lib/utils.php:82
 msgid "Not Found"
-msgstr ""
-
-#: ../lib/virtuetoolkit-activate.php:37
-msgid "Something went wrong with the plugin API."
 msgstr ""
 
 #: ../lib/virtuetoolkit-activate.php:50
