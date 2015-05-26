@@ -3,8 +3,8 @@
 Contributors: Iceable
 Tags: brown, pink, tan, light, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, fixed-width, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
-Tested up to: 3.7.1
-Stable tag: 1.1.1
+Tested up to: 4.2.2
+Stable tag: 1.1.10
 
 == ABOUT CHOOKO LITE ==
 
@@ -35,12 +35,89 @@ Please refer to license.txt for more information.
 == CREDITS ==
 
 This theme bundles some third party javascript and jQuery plugins, released under GPL or GPL compatible licenses:
-* hoverIntent: Copyright 2007, 2013 Brian Cherne. MIT License. http://cherne.net/brian/resources/jquery.hoverIntent.html
 * superfish: Copyright 2013 Joel Birch. Dual licensed under the MIT and GPL licenses. http://users.tpg.com.au/j_birch/plugins/superfish/
+* HTML5 Shiv v3.6 | @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed. Source: https://github.com/aFarkas/html5shiv
 
-All other files are copyright 2013 Iceable Media.
+All other files are copyright 2013-2015 Iceable Media and released under the terms of the GNU GPLv2 License.
 
 == CHANGELOG ==
+
+= 1.1.10 =
+May 26th, 2015
+
+* Tested with WP 4.2.2
+* Enhanced menu items: the whole item area is now clickable, not just the text
+* Added option to display tagline
+* Added option to chose between "excerpt" or "full content" for the blog index page  
+* Added option to switch off responsiveness
+* Made all strings translatable, including the backend
+* Updated POT file
+* Added french (fr_FR) translation
+* Added admin notice when menu is not set (on theme option page only)
+* Various PHP/HTML optimizations
+* Removed obsolete code from comments.php
+* Added extra user permission check in icefit-options
+* Enhanced validation and sanitation in icefit-options
+* Renamed and moved /page-full-width.php to /page-templates/full-width.php
+* Prefixed hook (chooko-style) to enqueue style.css
+* Now using core version of hoverintent
+* Merged all front-end css in silverclean.dev.css and minified in silverclean.min.css
+* Merged all front-end javascripts in silverclean.dev.js and minified in silverclean.min.js
+* Removed content filters
+* Appropriately use the_title_attribute() to escape title attributes in index.php
+* Update copyright dates
+* Updated description
+* Updated credits
+
+= 1.1.9 =
+September 24th, 2014
+* Tested with WP 4.0
+* Fixed hAtom structured data (Errors like Missing required field "entry-title" / "updated" / hCard "author" in Google Webmaster tools)
+* Removed hentry class from pages (hentry is irrelevant for static content)
+* Fixed glitch in blog index: if several posts were made on the same date, the date only displayed for the first one.
+* Updated: display date according to the user-defined "date format" in Settings.
+
+= 1.1.8 =
+September 1st, 2014
+* Added ellipsis (...) to the end of truncated excerpts when displaying the "read more" button (based on user feedback).
+* Fixed W3C validator error caused by the "X-UA-Compatible" meta tag. The theme now fully validates as HTML5.
+* Replaced (has_post_thumbnail()) with ('' != get_the_post_thumbnail()) in single.php (as per codex recommendation - fixes an occasional issue)
+* Fixed an odd glitch with footer widgets columns
+* Fixed CSS glitch in Firefox with large logo and featured images
+
+= 1.1.7 =
+June 16th, 2014
+* Removed unused function chooko_get_settings()
+* Removed unnecessary function that updated chooko_settings in the database upon activation. Now saving/updating only upon user action (when user clicks "save changes" in Theme options)
+* Using sane defaults (No setting is saved in the database without explicit user action)
+
+= 1.1.6 =
+May 19th, 2014
+* Moved $content_width definition into a callback function (hooked to after_setup_theme)
+* Updated copyright (2013-2014)
+* Tested with WP 3.9.1
+
+= 1.1.5 =
+March 31th, 2014
+* Loading webfonts with latin + latin extended subset to improve support for some foreign languages
+* Webfonts loading (SSL/Non-SSL): removed is_ssl() check and let browsers determine which protocol to use
+* Added paginated pages support
+
+= 1.1.4 =
+February 4th, 2014
+* Added "Support and Feedback" in theme options
+* Tested with WordPress 3.8.1
+
+= 1.1.3 =
+January 2nd, 2013
+* Updated tags for WordPress 3.8: fixed-layout and responsive-layout
+* Updated screenshot to 880x660px for WordPress 3.8
+
+= 1.1.2 =
+November 18th, 2013
+* Child theme and customization support: enqueuing style.css
+* Child theme support: stylesheets in child's /css folder override parent's version if they exist
+* Updated screenshot.png
 
 = 1.1.1 =
 November 15th, 2013
