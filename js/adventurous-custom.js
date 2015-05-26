@@ -15,17 +15,26 @@ jQuery(document).ready(function() {
 			jQueryform.toggleClass( 'displaynone' );
 		} );
 		
-		jQuery( "#main-wrapper" )
-		.waypoint( function( direction ) {
-			if( direction == 'down' ) {
-			   jQuery('#masthead').addClass( 'fixed-header' );
-			}
+
+		var waypoint = new Waypoint({
+		  element: document.getElementById('page'),
+		  handler: function(direction) {
+		    if (direction === 'down') {
+		      jQuery('#masthead').addClass( 'fixed-header' );
+		    }
+		  },
+		  offset: -50
 		})
-		.waypoint( function( direction ) { // has offset on the way up
-			if( direction == 'up' ) {
-				jQuery('#masthead').removeClass( 'fixed-header' );
-			}
-		}, {offset: -1});
+
+		var waypoint = new Waypoint({
+		  element: document.getElementById('page'),
+		  handler: function(direction) {
+		    if (direction === 'up') {
+		      jQuery('#masthead').removeClass( 'fixed-header' );
+		    }
+		  }
+		})		
+		
 		
 		adventurous_mobile_menu( jQuery('#header-menu ul.menu'), jQuery('#header-mobile-menu .mobile-nav'), 'header-mobile-menu-block', 'mobile-menu' );
 		adventurous_mobile_menu( jQuery('#access-secondary ul.menu'), jQuery('#secondary-mobile-menu .mobile-nav'), 'secondary-mobile-menu-block', 'mobile-menu' );
@@ -53,16 +62,18 @@ jQuery(document).ready(function() {
 			} );
 		}		
 
-		//Scroll Up
-		jQuery("#scrollup").hide();
+
+		jQuery("#scrollup").hide();	
 		jQuery(function () {
 			jQuery(window).scroll(function () {
-				if (jQuery(this).scrollTop() > 1000) {
+				if (jQuery(this).scrollTop() > 100) {
 					jQuery('#scrollup').fadeIn();
 				} else {
 					jQuery('#scrollup').fadeOut();
 				}
 			});
+
+			// scroll body to 0px on click
 			jQuery('#scrollup').click(function () {
 				jQuery('body,html').animate({
 					scrollTop: 0
@@ -70,5 +81,5 @@ jQuery(document).ready(function() {
 				return false;
 			});
 		});
-	
-});		
+
+});

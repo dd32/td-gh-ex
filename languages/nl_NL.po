@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Adventurous\n"
-"POT-Creation-Date: 2015-02-02 00:18+0545\n"
+"POT-Creation-Date: 2015-05-26 12:00-0500\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: \n"
@@ -98,8 +98,8 @@ msgstr "Reacties zijn gesloten."
 #: ../content-aside.php:21 ../content-audio.php:21 ../content-chat.php:22
 #: ../content-gallery.php:25 ../content-gallery.php:42
 #: ../content-gallery.php:43 ../content-image.php:23 ../content-page.php:18
-#: ../content-single.php:18 ../content-video.php:24 ../content.php:32
-#: ../inc/adventurous-functions.php:183
+#: ../content-search.php:16 ../content-single.php:18 ../content-video.php:24
+#: ../content.php:32 ../inc/adventurous-functions.php:183
 #, php-format
 msgid "Permalink to %s"
 msgstr "Link naar %s"
@@ -134,9 +134,10 @@ msgstr "% reacties;"
 
 #: ../content-aside.php:42 ../content-audio.php:48 ../content-chat.php:49
 #: ../content-gallery.php:65 ../content-image.php:50 ../content-link.php:44
-#: ../content-page.php:33 ../content-quote.php:40 ../content-single.php:49
-#: ../content-status.php:48 ../content-video.php:51 ../content.php:69
-#: ../image.php:47 ../image.php:120 ../inc/adventurous-template-tags.php:190
+#: ../content-page.php:33 ../content-quote.php:40 ../content-search.php:24
+#: ../content-single.php:49 ../content-status.php:48 ../content-video.php:51
+#: ../content.php:69 ../image.php:47 ../image.php:120
+#: ../inc/adventurous-template-tags.php:190
 msgid "Edit"
 msgstr "Bewerken"
 

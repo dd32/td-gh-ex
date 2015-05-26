@@ -41,7 +41,7 @@ $moretag = $options[ 'more_tag_text' ];
 		//Get Excerpt
 		$adventurous_excerpt = get_the_excerpt();
 		
-		if ( is_search() || ( !is_single() && $current_content_layout=='excerpt' && !empty( $adventurous_excerpt ) ) ) : ?>
+		if ( $current_content_layout=='excerpt' && !empty( $adventurous_excerpt ) ) : ?>
             <div class="entry-summary">
                 <?php the_excerpt(); ?>
             </div><!-- .entry-summary -->     

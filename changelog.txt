@@ -1,5 +1,13 @@
 == Changelog ==
 
+Version 1.6
+* Added search result template for better search result display
+* Bug Fixed: Style for WP-PageNavi plugin
+* Updated jquery waypoint to version 3.1.1
+** Added jquery.waypoints.js and jquery.waypoints.min.js
+** Removed waypoints.js and waypoints.min.js
+** Updated adventurous-custom.js and adventurous-custom.min.js
+
 Version 1.5
 * Added Polish translation pl_PL.po and pl_PL.mo
 * Added More theme options button in Customizer

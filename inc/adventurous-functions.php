@@ -31,7 +31,7 @@ function adventurous_scripts() {
 	wp_enqueue_style( 'adventurous-style', get_stylesheet_uri() );		
 	
 	// Add Genericons font, used in the main stylesheet.
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.0.3' );	
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/css/genericons/genericons.css', false, '3.3' );	
 
 	/**
 	 * Loads up Responsive stylesheet
@@ -46,8 +46,8 @@ function adventurous_scripts() {
 	/**
 	 * Loads up jQuery Waypoints and Custom Scripts
 	 */	
-	wp_register_script( 'waypoints', get_template_directory_uri() . '/js/waypoints.min.js', array('jquery'), '2.0.5', true);
-	wp_enqueue_script( 'adventurous-custom', get_template_directory_uri() . '/js/adventurous-custom.min.js', array( 'waypoints' ), '20140317', true );	
+	wp_register_script( 'waypoints', get_template_directory_uri() . '/js/jquery.waypoints.js', array('jquery'), '3.1.1', true);
+	wp_enqueue_script( 'adventurous-custom', get_template_directory_uri() . '/js/adventurous-custom.js', array( 'waypoints' ), '20150330', true );	
 	
 	/**
 	 * Adds JavaScript to pages with the comment form to support
