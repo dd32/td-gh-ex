@@ -462,7 +462,7 @@ function interface_featured_sliders() {
 							<div class="container">
 							<article class="featured-text">';
 							if( $title_attribute !='' ) {
-									$interface_featured_sliders .= '<div class="featured-title"><a href="' . get_permalink() . '" title="'.the_title('','',false).'">'. get_the_title() . '</a></div><!-- .featured-title -->';
+									$interface_featured_sliders .= '<h2 class="featured-title"><a href="' . get_permalink() . '" title="'.the_title('','',false).'">'. get_the_title() . '</a></h2><!-- .featured-title -->';
 							}
 							if( $excerpt !='' ) {	
 							
