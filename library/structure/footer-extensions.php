@@ -26,7 +26,7 @@ add_action( 'attitude_footer', 'attitude_open_sitegenerator_div', 20 );
  * Opens the site generator div.
  */
 function attitude_open_sitegenerator_div() {
-	echo '<div id="site-generator">
+	echo '<div id="site-generator" class="clearfix">
 				<div class="container">';
 }
 
@@ -52,8 +52,7 @@ add_action( 'attitude_footer', 'attitude_close_sitegenerator_div', 35 );
  * Closes the site generator div.
  */
 function attitude_close_sitegenerator_div() {
-	echo '<div style="clear:both;"></div>
-			</div><!-- .container -->
+	echo '</div><!-- .container -->
 			</div><!-- #site-generator -->';
 }
 

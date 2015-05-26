@@ -391,7 +391,7 @@ function attitude_featured_post_slider() {
 						$attitude_featured_post_slider .= '
 							<article class="featured-text">';
 							if( $title_attribute !='' ) {
-									$attitude_featured_post_slider .= '<div class="featured-title"><a href="' . get_permalink() . '" title="'.the_title('','',false).'">'. get_the_title() . '</a></div><!-- .featured-title -->';
+									$attitude_featured_post_slider .= '<h2 class="featured-title"><a href="' . get_permalink() . '" title="'.the_title('','',false).'">'. get_the_title() . '</a></h2><!-- .featured-title -->';
 							}
 							if( $excerpt !='' ) {								
 								$attitude_featured_post_slider .= '<div class="featured-content">'.$excerpt.'</div><!-- .featured-content -->';
