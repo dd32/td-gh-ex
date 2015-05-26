@@ -1,13 +1,13 @@
 /*
-Theme Name: Adamos
-Theme URI: http://www.templateexpress.com/adamos-theme/
+Theme Name: Adamos pro
+Theme URI: http://www.templateexpress.com/adamos-pro-theme/
 Author: Ossie Heffell
 Author URI: http://www.templateexpress.com/
-Description: Adamos is a full-width, fully responsive and highly customizable WordPress Theme. Add and edit your own logo, header, featured slider, featured areas and much more. This theme is WPML compatible.
-Version: 2.1
+Description: adamos pro is a full-width, fully responsive and highly customizable WordPress Theme. Add your own logo, header, featured areas and much more.
+Version: 1.9
 License: GNU General Public License v2.0
 License URI: ​http://www.gnu.org/licenses/gpl-2.0.html
-Tags: light, white, one-column, two-columns, right-sidebar, fluid-layout, custom-header, custom-menu, featured-images, flexible-header, microformats, post-formats, rtl-language-support, threaded-comments, translation-ready, theme-options, full-width-template, responsive-layout, black
+Tags: light, white, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-header, custom-menu, featured-images, flexible-header, microformats, post-formats, rtl-language-support, threaded-comments, translation-ready, theme-options, full-width-template, black
 
 This theme, like WordPress, is licensed under the GPL.
 
@@ -18,14 +18,8 @@ and Blueprint http://www.blueprintcss.org/
 */
 
 /*
-adamos WordPress Theme, Copyright 2013 Ossie Heffell
-adamos Theme is distributed under the terms of the GNU GPL
-*/
-
-/*
-Adamos Theme based on Underscores (_s) Theme
-_s ("Underscores") WordPress Theme, Copyright 2012 Automattic, Inc.
-_s ("Underscores") WordPress Theme is distributed under the terms of the GNU GPL
+adamos pro WordPress Theme, Copyright 2014 Ossie Heffell
+adamos pro Theme is distributed under the terms of the GNU GPL
 */
 
 /* =Reset
@@ -468,32 +462,18 @@ a:active {
 #tertiary li a:hover{
 	color: #333;
 }
-.blog-image {
-	padding-top: 22px;
-	padding-bottom: 0;
-	margin: 0;
+#sidebar-left li a{
+	color: #999;
 }
-.imagerct {
-	width: 100%;
+#sidebar-left li a:hover{
+	color: #333;
 }
-#smoothup { 
-	height: 40px; 
-	width: 50px; 
-	position:fixed;
-	bottom:10px;
-	right:20px;
-	text-indent:-9999px;
-	display:none;
-	background: #666 url(images/top_button.png) no-repeat center; 
-	-webkit-transition-duration: 0.4s; 
-	-moz-transition-duration: 0.4s; transition-duration: 0.4s; 
-	border-radius: 0.2em;
+#sidebar-left li{
+	border-bottom: 1px solid #EFEFEF;
 }
-
-#smoothup:hover {
-	background-color: #999;
+#sidebar-left h4{
+	font-family: 'open_sansbold', sans-serif;
 }
-
 
 /* =Structure
 ----------------------------------------------- */
@@ -549,6 +529,29 @@ a:active {
 	clear: left;
 	padding-top: 0;
 }
+#primary-right {
+	float: left;
+	margin: 0 -27% 0 0;
+	padding: 0.7em;
+	width: 98.2%;
+}
+
+#content-right {
+	margin: 0 27% 0 0;
+}
+#sidebar-left {
+	background: #F7F7F7;
+   	float: right;
+   	margin: 0.4em 0.2em 0.4em;
+    padding: 1em 1em 0;
+    position: relative;
+    width: 22%;
+	border-radius:0.4em;
+}
+#tertiary-left {
+	clear: right;
+	padding-top: 0;
+}
 .site-footer {
 	clear: both;
 	margin: 0 auto;
@@ -569,6 +572,9 @@ a:active {
 	padding-top: 0;
 	background-color: #222;
 	border-bottom: 1px solid #666;
+}
+.topbar .contact-info{
+	text-align: left;
 }
 .site-header .site-introduction {
 	float: right;
@@ -619,6 +625,7 @@ a:active {
 	padding-right: 16px;
 	padding-left: 16px;
 	float: left;
+	
 }
 .main-navigation li {
 	float: right;
@@ -631,6 +638,7 @@ a:active {
     font-size: 1.1rem;
 	font-size: 11px;
     font-weight: normal;
+
     margin-left: 1em;
     text-decoration: none;
 	text-transform: uppercase;
@@ -641,8 +649,8 @@ a:active {
 	display: none;
 	float: right;
 	position: absolute;
-		top: 1.8em;
-		right: -0.2em;
+	top: 1.8em;
+	left: -0.2em;
 	z-index: 99999;
 	padding: 0.4em;
 	border-radius: 0.2em;
@@ -760,6 +768,7 @@ a:active {
 	color: #FFF;
 	padding: 8px;
 	border-radius:0.2em 0 0 0.2em;
+
 	text-transform: uppercase;
 }
 .recent {
@@ -868,13 +877,91 @@ body.archive .page-title {
 	clear: none;
 }
 .entry-content dfn, cite, em, i {
-	font-style:italic;
+	font-style: italic;
 }
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
 }
 
+/* Meet the Team Layout */
+.authorlist{
+	min-height: 240px;
+	width: 50%;
+	margin-top:30px;
+	margin-bottom:30px;
+	float: right;
+}
+.authorAvatar{
+	float: right;
+	width: 138px;
+}
+.authorAvatar img{
+	border-radius: 80px;
+	border: 4px solid #666;
+}
+.authorInfo{
+	float: right;
+	width: 60%;
+	padding-right: 6px;
+	font-size: 12px;
+}
+.authorDescrption {
+	min-height: 100px;
+	padding: 4px 0;
+	margin: 0;
+	border-bottom: 1px solid #EFEFEF;
+}
+.authorName{
+	padding: 4px 0;
+	margin: 0;
+	border-bottom: 1px solid #EFEFEF;
+	color:#333;
+	font-size: 14px;
+	font-family: 'open_sansbold', sans-serif;
+}
+.authorLinks{
+	padding: 10px 2px;
+	margin: 0;
+	float:left;
+	clear: both;
+}
+.authorLinks a{
+	color: #666;
+	font-size: 11px;
+	text-decoration: none;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-family: 'open_sansbold', sans-serif; 
+}
+.authorLinks a:hover{
+	color: #000;
+}
+.blog-image {
+	padding-top: 22px;
+	padding-bottom: 0;
+	margin: 0;
+}
+.imagerct {
+	width: 100%;
+}
+#smoothup { 
+	height: 40px; 
+	width: 50px; 
+	position:fixed;
+	bottom:10px;
+	right:20px;
+	text-indent:-9999px;
+	display:none;
+	background: #666 url(images/top_button.png) no-repeat center; 
+	-webkit-transition-duration: 0.4s; 
+	-moz-transition-duration: 0.4s; transition-duration: 0.4s; 
+	border-radius: 0.2em;
+}
+
+#smoothup:hover {
+	background-color: #999;
+}
 
 /* =Aside Post Format
 ----------------------------------------------- */
@@ -1195,7 +1282,6 @@ p.nocomments {
 	padding: 8px;
 }
 
-
 /* Open Sans
 This Font Software is licensed under the Apache License v2.00
 More info available with at http://www.apache.org/licenses/
@@ -1339,7 +1425,7 @@ More info available with at http://www.apache.org/licenses/
 }
 
 .col:first-child { margin-right: 0; } /* all browsers except IE6 and lower */
-
+.col.box-1{margin-left:0;margin-right: 0;}
 .post-thumbnail {
 	position: relative;
 	margin-top: 4px;
@@ -1441,9 +1527,12 @@ MEDIA QUERIES
 		float: none;
 		width: 100%;
 	}
+	#content {
+		padding-right:4px; 	
+	}
 }
 
-/* for 800px or less */
+/* for 860px or less */
 @media only screen and (max-width: 860px) {
 	.header_container {
 	height: 100%;
@@ -1460,7 +1549,8 @@ MEDIA QUERIES
 	#content,
 	#primary,
 	#secondary,
-	#tertiary {
+	#tertiary,
+	#sidebar-left {
 		background: none;
 		float: none;
 		margin: 0;
@@ -1468,8 +1558,22 @@ MEDIA QUERIES
 	}
 	#primary,
 	#secondary,
-	#tertiary {
+	#tertiary,
+	#sidebar-left {
 		width: 100%;
+	}
+	#content-right,
+	#primary-right {
+		background: none;
+		float: none;
+		margin: 0;
+		padding: 0;
+	}
+	#primary-right{
+		width: 100%;
+	}
+	#primary-right {
+		border-top: 0;
 	}
 	.site-header site-introduction,
 	#main {
@@ -1478,8 +1582,10 @@ MEDIA QUERIES
 	.header_container {
 	height: 100%;
 	width: 100%;
-}
-	
+	}
+	.authorlist {
+		width: 100%;
+	}
 }
 
 /* for 600px or less */
@@ -1521,7 +1627,10 @@ MEDIA QUERIES
 	.header_container {
 	height: 100%;
 	width: 100%;
-}
+	}
+	.authorInfo{
+		width: 98%;
+	}
 
 }
 

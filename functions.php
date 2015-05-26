@@ -60,17 +60,28 @@ function adamos_setup() {
 	 * Add support for post thumbnails
 	 */
 	add_theme_support('post-thumbnails');
-	add_image_size( 'frontpage-thumbnail', 460, 160, true);
-	add_image_size( 100, 300, true);
 	add_image_size( 'featured', 650, 300, true );
+	add_image_size( 100, 300, true);
+	add_image_size( 'frontpage-thumbnail', 460, 160, true);
 
 	/**
 	 * Add support for the Aside Post Formats
 	 */
 	add_theme_support( 'post-formats', array( 'aside', ) );
+
+	// Add support for a custom header image
+	add_theme_support( 'custom-header' );
+
+	// Display Title in theme
+	add_theme_support( 'title-tag' );
+
+	// link a custom stylesheet file to the TinyMCE visual editor
+    $font_url = str_replace( ',', '%2C', '//fonts.googleapis.com/css?family=Open+Sans' );
+	add_editor_style( array('style.css', 'css/editor-style.css', $font_url) );
 }
 endif; // adamos_setup
 add_action( 'after_setup_theme', 'adamos_setup' );
+
 
 /**
  * Setup the WordPress core custom background feature.
@@ -125,6 +136,15 @@ function adamos_widgets_init() {
 		'after_title' => '</h1>',
 	) );
 	
+	register_sidebar( array(
+		'name' => __( 'Left Sidebar', 'adamos' ),
+		'id' => 'sidebar-3',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h1 class="widget-title">',
+		'after_title' => '</h1>',
+	) );
+	
 	register_sidebar(array(
 			'name' => 'Left Footer Column',
 			'id'   => 'left_column',
@@ -156,342 +176,84 @@ function adamos_widgets_init() {
 }
 add_action( 'widgets_init', 'adamos_widgets_init' );
 
-
-/**
-	 * Customizer additions
-	 */
-	require( get_template_directory() . '/inc/customizer.php' );
-
-
-
 /**
  * Enqueue scripts and styles
  */
 function adamos_scripts() {
-	wp_enqueue_style( 'style', get_stylesheet_uri() );
+
+	wp_enqueue_style( 'adamos-style', get_stylesheet_uri() );
+
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', '', '2.0');
+
+	wp_enqueue_style( 'jquery-flexslider', get_template_directory_uri() . '/css/flexslider.css', '', '2.0');
+
+
 	
-	wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/js/small-menu.js', array( 'jquery' ), '20120206', true );
+	wp_enqueue_script( 'jquery-small-menu', get_template_directory_uri() . '/js/small-menu.js', array( 'jquery' ), '2.0', true );
+
+	wp_enqueue_script( 'jquery-smoothup', get_template_directory_uri() . '/js/smoothscroll.js', array( 'jquery' ), '2.0',  true );
+	
+	wp_enqueue_script( 'jquery-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '2.0', true );
+
+ 	wp_enqueue_script( 'jquery-flexslider', get_template_directory_uri() .'/js/jquery.flexslider-min.js', array('jquery'), '2.0', true);
+    
+    wp_enqueue_script( 'jquery-flexslider-init', get_template_directory_uri() .'/js/flexslider-init.js', array('jquery-flexslider'), '2.0', true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+
 		wp_enqueue_script( 'comment-reply' );
+
 	}
 
-	if ( is_singular() && wp_attachment_is_image() ) {
-		wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
-	}
-	
-	wp_enqueue_script( 'smoothup', get_template_directory_uri() . '/js/smoothscroll.js', array( 'jquery' ), '',  true );
-		
-	wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 }
 add_action( 'wp_enqueue_scripts', 'adamos_scripts' );
 
 
-/**
- * Implement home slider
- */
-
-function adamos_add_scripts() {
-    wp_enqueue_script('flexslider', get_template_directory_uri('stylesheet_directory').'/js/jquery.flexslider-min.js', array('jquery'));
-    wp_enqueue_script('flexslider-init', get_template_directory_uri('stylesheet_directory').'/js/flexslider-init.js', array('jquery', 'flexslider'));
-}
-add_action('wp_enqueue_scripts', 'adamos_add_scripts');
-
-function adamos_add_styles() {
-    wp_enqueue_style('flexslider', get_template_directory_uri('stylesheet_directory').'/js/flexslider.css');
-}
-add_action('wp_enqueue_scripts', 'adamos_add_styles');
-
-/**
- * Implement the Custom Logo feature
- */
-function adamos_theme_customizer( $wp_customize ) {
-   
-   $wp_customize->add_section( 'adamos_logo_section' , array(
-    'title'       => __( 'Logo', 'adamos' ),
-    'priority'    => 30,
-    'description' => 'Upload a logo to replace the default site name and description in the header',
-) );
-
-   $wp_customize->add_setting( 
-   		'adamos_logo',
-		array(
-			'sanitize_callback' => 'adamos_sanitize_upload',
-		)
-	);
-
-$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'adamos_logo', array(
-    'label'    => __( 'Logo', 'adamos' ),
-    'section'  => 'adamos_logo_section',
-    'settings' => 'adamos_logo',
-) ) );
-
-
-}
-add_action('customize_register', 'adamos_theme_customizer');
-
-
-/**
- * Adds the individual section for featured text box top
- */
-function adamos_customizer( $wp_customize ) {
-    $wp_customize->add_section(
-        'featured_section_top',
-        array(
-			'title'       => __( 'Featured Text Area', 'adamos' ),
-    		'description' => __( 'This is a settings section to change the homepage featured text area.', 'adamos' ),
-            'priority' => 150,
-        )
-    );
-	
-	$wp_customize->add_setting(
-    'featured_textbox',
-    array(
-        'default' => __( 'Default Featured Text', 'adamos' ),
-		'sanitize_callback' => 'adamos_sanitize_text',
-    )
-);
-
-$wp_customize->add_control(
-    'featured_textbox',
-    array(
-		'label'    => __( 'Featured Text Header', 'adamos' ),
-        'section' => 'featured_section_top',
-        'type' => 'text',
-    )
-);
-
-$wp_customize->add_setting(
-		'featured_textbox_text',
-		array(
-			'default' => __( 'Default Featured Text', 'adamos' ),
-			'sanitize_callback' => 'adamos_sanitize_text',
-		)
-	);
-	
-	$wp_customize->add_control(
-		'featured_textbox_text',
-		array(
-			'label'    => __( 'Featured sub text', 'adamos' ),
-			'section' => 'featured_section_top',
-			'type' => 'text',
-		)
-	);
-	
-	$wp_customize->add_setting( 'header_one_url',
-    array(
-        'default' => __( 'Featured sub text url', 'adamos' ),
-		'sanitize_callback' => 'adamos_sanitize_url',
-    ) );
-	
-	$wp_customize->add_control(
-		'header_one_url',
-		array(
-			'label'    => __( 'Featured sub text url', 'adamos' ),
-			'section' => 'featured_section_top',
-			'type' => 'text',
-		)
-	);
-}
-add_action( 'customize_register', 'adamos_customizer' );
-
-
-/**
- * Adds the individual section for featured text box 1
- */
-function featured_text_one_customizer( $wp_customize ) {
-    $wp_customize->add_section(
-        'featured_section_one',
-        array(
-			'title' => __( 'Featured Text Box 1', 'adamos' ),
-            'description' => __( 'This is a settings section to change the homepage featured text area.', 'adamos' ),
-            'priority' => 155,
-        )
-    );
-	
-	$wp_customize->add_setting(
-    'featured_textbox_header_one',
-    array(
-        'default' => __( 'Default featured text Header', 'adamos' ),
-		'sanitize_callback' => 'adamos_sanitize_text',
-    )
-	);
-	
-	$wp_customize->add_control(
-		'featured_textbox_header_one',
-		array(
-			'label' => __( 'Featured Header Text', 'adamos' ),
-			'section' => 'featured_section_one',
-			'type' => 'text',
-		)
-	);
-	
-	$wp_customize->add_setting(
-		'featured_textbox_text_one',
-		array(
-			'default' => __( 'Default featured text', 'adamos' ),
-			'sanitize_callback' => 'adamos_sanitize_text',
-		)
-	);
-	
-	$wp_customize->add_control(
-		'featured_textbox_text_one',
-		array(
-			'label' => __( 'Featured Text', 'adamos' ),
-			'section' => 'featured_section_one',
-			'type' => 'text',
-		)
-	);
-
-}
-add_action( 'customize_register', 'featured_text_one_customizer' );
-
-/**
- * Adds the individual section for featured text box 2
- */
-function featured_text_two_customizer( $wp_customize ) {
-    $wp_customize->add_section(
-        'featured_section_two',
-        array(
-			'title' => __( 'Featured Text Box 2', 'adamos' ),
-            'description' => __( 'This is a settings section to change the homepage featured text area.', 'adamos' ),
-            'priority' => 160,
-        )
-    );
-	
-	$wp_customize->add_setting(
-    'featured_textbox_header_two',
-    array(
-       'default' => __( 'Default featured text Header', 'adamos' ),
-		'sanitize_callback' => 'adamos_sanitize_text',
-    )
-	);
-	
-	$wp_customize->add_control(
-		'featured_textbox_header_two',
-		array(
-			'label' => __( 'Featured Header text', 'adamos' ),
-			'section' => 'featured_section_two',
-			'type' => 'text',
-		)
-	);
-	
-	$wp_customize->add_setting(
-		'featured_textbox_text_two',
-		array(
-			'default' => __( 'Default featured text', 'adamos' ),
-			'sanitize_callback' => 'adamos_sanitize_text',
-		)
-	);
-	
-	$wp_customize->add_control(
-		'featured_textbox_text_two',
-		array(
-			'label' => __( 'Featured text', 'adamos' ),
-			'section' => 'featured_section_two',
-			'type' => 'text',
-		)
-	);
-}
-add_action( 'customize_register', 'featured_text_two_customizer' );
-
-/**
- * Adds the individual section for featured text box 3
- */
-function featured_text_three_customizer( $wp_customize ) {
-    $wp_customize->add_section(
-        'featured_section_three',
-        array(
-			'title' => __( 'Featured Text Box 3', 'adamos' ),
-            'description' => __( 'This is a settings section to change the homepage featured text area.', 'adamos' ),
-            'priority' => 165,
-        )
-    );
-	
-	$wp_customize->add_setting(
-    'featured_textbox_header_three',
-    array(
-		'default' => __( 'Default featured text Header', 'adamos' ),
-		'sanitize_callback' => 'adamos_sanitize_text',
-    )
-	);
-	
-	$wp_customize->add_control(
-		'featured_textbox_header_three',
-		array(
-			'label' => __( 'Featured Header text', 'adamos' ),
-			'section' => 'featured_section_three',
-			'type' => 'text',
-		)
-	);
-	
-	$wp_customize->add_setting(
-		'featured_textbox_text_three',
-		array(
-			'default' => __( 'Default featured text', 'adamos' ),
-			'sanitize_callback' => 'adamos_sanitize_text',
-		)
-	);
-	
-	$wp_customize->add_control(
-		'featured_textbox_text_three',
-		array(
-			'label' => __( 'Featured text', 'adamos' ),
-			'section' => 'featured_section_three',
-			'type' => 'text',
-		)
-	);
-}
-add_action( 'customize_register', 'featured_text_three_customizer' );
 
 
 /**
  * Implement excerpt for homepage slider
  */
 function adamos_get_slider_excerpt(){
-$excerpt = get_the_content();
-$excerpt = preg_replace(" (\[.*?\])",'',$excerpt);
-$excerpt = strip_shortcodes($excerpt);
-$excerpt = strip_tags($excerpt);
-$excerpt = substr($excerpt, 0, 150);
-$excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
-return $excerpt;
+	$excerpt = get_the_content();
+	$excerpt = preg_replace(" (\[.*?\])",'',$excerpt);
+	$excerpt = strip_shortcodes($excerpt);
+	$excerpt = strip_tags($excerpt);
+	$excerpt = substr($excerpt, 0, 150);
+	$excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
+	return $excerpt;
 }
 
-/**
- * sanitize customizer text input
- */
- function adamos_sanitize_text( $input ) {
-    return wp_kses_post( force_balance_tags( $input ) );
-}
-
-function adamos_sanitize_url( $input ) {
-    return wp_kses_post( force_balance_tags( $input ) );
-}
-
-function adamos_sanitize_upload($input){
-	return esc_url_raw($input);	
-}
+// Theme Options
+include('functions/customizer_controller.php');
+include('functions/customizer_settings.php');
+include('functions/customizer_styles.php');
 
 
-add_filter( 'wp_title', 'adamos_wp_title' );
+
 
 /**
  * Implement excerpt for homepage thumbnails
  */
-function adamos_content($limit) {
+function adamos_content( $limit ) {
+
   $content = explode(' ', get_the_content(), $limit);
-  if (count($content)>=$limit) {
+
+  if ( count( $content )>=$limit ) {
     array_pop($content);
-    $content = implode(" ",$content).'...';
+    $content = implode( " ", $content ).'...';
   } else {
-    $content = implode(" ",$content);
+    $content = implode( " ", $content );
   }	
-  $content = preg_replace('/\[.+\]/','', $content);
-  $content = apply_filters('the_content', $content); 
-  $content = str_replace(']]>', ']]&gt;', $content);
+
+  $content = preg_replace( '/\[.+\]/','', $content );
+  $content = apply_filters( 'the_content', $content ); 
+  $content = str_replace( ']]>', ']]&gt;', $content );
+
   return $content;
+
 }
+
 
 /**
  * Filters the page title appropriately depending on the current page
@@ -516,30 +278,51 @@ function adamos_wp_title( $title ) {
 
 	return $filtered_title;
 }
+add_filter( 'wp_title', 'adamos_wp_title' );
+
+
+/**
+ * Social Media Links on Contributors template
+ */
+function author_social_media( $socialmedialinks ) {
+
+	$socialmedialinks['alternate_image']	= __('Alternate Profile Image Url', 'adamos');
+    $socialmedialinks['google_profile'] 	= 'Google+ URL';
+    $socialmedialinks['twitter_profile'] 	= 'Twitter URL';
+    $socialmedialinks['facebook_profile'] 	= 'Facebook URL';
+    $socialmedialinks['linkedin_profile'] 	= 'Linkedin URL';
+
+ 	return $socialmedialinks;
+
+}
+add_filter( 'user_contactmethods', 'author_social_media', 10, 1);
+
 
 /**
  * Implement the Custom Header feature
  */
-add_theme_support( 'custom-header' );
 function adamos_custom_header_setup() {
-$args = array(
-		'default-image'          => '',
-		'default-text-color'     => 'FFF',
-		'width'                  => 1400,
-		'height'                 => 500,
-		'flex-height'            => true,
-		'wp-head-callback'       => 'adamos_header_style',
-		'admin-head-callback'    => 'adamos_admin_header_style',
-		'admin-preview-callback' => 'adamos_admin_header_image',
-	);
 
-	$args = apply_filters( 'adamos_custom_header_args', $args );
+	$args = array(
+			'default-image'          => '',
+			'default-text-color'     => 'FFF',
+			'width'                  => 1400,
+			'height'                 => 500,
+			'flex-height'            => true,
+			'wp-head-callback'       => 'adamos_header_style',
+			'admin-head-callback'    => 'adamos_admin_header_style',
+			'admin-preview-callback' => 'adamos_admin_header_image',
+		);
 
-	if ( function_exists( 'wp_get_theme' ) ) {
-		add_theme_support( 'custom-header', $args );
-}
+		$args = apply_filters( 'adamos_custom_header_args', $args );
+
+		if ( function_exists( 'wp_get_theme' ) ) {
+			add_theme_support( 'custom-header', $args );
+	}
+
 }
 add_action( 'after_setup_theme', 'adamos_custom_header_setup' );
+
 
 
 if ( ! function_exists( 'adamos_header_style' ) ) :
@@ -565,6 +348,7 @@ function adamos_header_style() {
 	?>
 		.site-header img {
 			display: block;
+			margin: 0.5em auto 0;
 		}
 	<?php endif;
 
