@@ -158,4 +158,11 @@ with testing and feature suggestions.
 = Version 1.2.2 =
 * Fix: ignore mobile toggle set point if not SmartMenu
 
+= Version 1.2.3 =
+* New: Plain - Full Width subtheme
+* Tweak: Moved Edit button inside .entry-content on Pages
+* Tweak: Updated to new TGM library (for installing recommended plugins)
+* Fix: 3-column Post display on small tablets
+* Fix: z-index for Smart Menu HTML areas
+
 = *** Release Notes also found on Help Tab  *** =

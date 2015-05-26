@@ -292,14 +292,7 @@ function weaverx_widgets_init() {
 
 if ( ! function_exists('weaverx_register_sidebar')) {
 /**
- * Register widgetized areas: two default sidebars, two content areq sidebars,
- * a top area for specialized post pages, alternative sidebar for template pages,
- * and a header widget area.
- *
- * To override weaverx_widgets_init() in a child theme, remove the action hook and add your own
- * function tied to the init hook.
- *
- * @uses register_sidebar
+ * Register widgetized areas
  */
 function weaverx_register_sidebar($name, $id, $desc, $altclass='') {
 	if ($altclass != '') $altclass .= ' ';
@@ -484,11 +477,7 @@ function weaverx_render_infinite_scroll() {
 
 			case 2:
 				$col++;
-				$style = '';
-				if ( ($col % 2) == 1 ) {	// force stuff to be even
-					$style = ' style="clear:left;"';
-				}
-				echo ('<div class="content-2-col clearfix"' . $style . '>' . "\n");
+				echo ('<div class="content-2-col clearfix">' . "\n");
 
 				get_template_part( 'templates/content', get_post_format() );
 				echo ("</div> <!-- content-2-col -->\n");
@@ -498,11 +487,7 @@ function weaverx_render_infinite_scroll() {
 
 			case 3:
 				$col++;
-				$style = '';
-				if ( ($col % 3) == 1 ) {	// force stuff to be even
-					$style = ' style="clear:left;"';
-				}
-				echo ('<div class="content-3-col clearfix"' . $style . '>' . "\n");
+				echo ('<div class="content-3-col clearfix">' . "\n");
 				get_template_part( 'templates/content', get_post_format() );
 				echo ("</div> <!-- content-3-col -->\n");
 

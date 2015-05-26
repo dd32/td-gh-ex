@@ -179,11 +179,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 						break;
 					case 2:
 						$col++;
-						$style = '';
-						if ( ($col % 2) == 1 ) {	// force stuff to be even
-							$style = ' style="clear:left;"';
-						}
-						echo ('<div class="content-2-col clearfix"' . $style . '>' . "\n");
+						echo ('<div class="content-2-col clearfix">' . "\n");
 						get_template_part( 'templates/content', get_post_format() );
 						echo ("</div> <!-- content-2-col -->\n");
 
@@ -191,11 +187,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 						break;
 					case 3:
 						$col++;
-						$style = '';
-						if ( ($col % 3) == 1 ) {	// force stuff to be even
-							$style = ' style="clear:left;"';
-						}
-						echo ('<div class="content-3-col clearfix"' . $style . '>' . "\n");
+						echo ('<div class="content-3-col clearfix">' . "\n");
 						get_template_part( 'templates/content', get_post_format() );
 						echo ("</div> <!-- content-3-col -->\n");
 

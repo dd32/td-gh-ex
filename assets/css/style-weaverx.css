@@ -241,6 +241,17 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	padding-left:   1%;
 }
 
+.content-2-col:nth-of-type(2n),
+.content-3-col:nth-of-type(3n+1)
+{
+	clear:			left;
+}
+
+.is-mobile .content-3-col:nth-of-type(2n) {
+	clear:			left !important;
+}
+
+
 .is-phone .content-2-col {
 	width:			100%;
 	padding-right:  0;
@@ -1224,12 +1235,16 @@ ul.wvrx-menu {
 	float:			left;
 	margin-left:	1em;
 	margin-right:	.5em;
+	position:		relative;
+	z-index:		30;
 }
 
 .wvrx-menu-right {
 	float:			right;
 	margin-right:	1em;
 	margin-left:	.5em;
+	position:		relative;
+	z-index:		30;
 }
 
 /* Centered Menu - pretty messy, but it works... */
@@ -1924,7 +1939,7 @@ li.mega-normal ul.mega-menu li a:hover {
 	text-shadow: 	3px 3px 8px rgba(150, 150, 150, 0.5);
 }
 
-.parallax-contentx h1 {
+.parallax-content h1 {
 	font-size:		180%;
 
 }

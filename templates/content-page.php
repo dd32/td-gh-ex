@@ -21,9 +21,9 @@ if ($cols != '' && $cols != '1')
 	<div class="entry-content clearfix">
 
 	<?php weaverx_the_page_content( 'page' ); ?>
-
-	</div><!-- .entry-content -->
 	<?php weaverx_edit_link(); ?>
+	</div><!-- .entry-content -->
+
 
 </article><!-- #post-<?php the_ID(); ?> -->
 <?php weaverx_inject_area('pagecontentbottom'); ?>

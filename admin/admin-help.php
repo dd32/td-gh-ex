@@ -52,36 +52,6 @@ function weaverx_admin_help() {
 </h3>
 <p>
 <pre>
-= Version 1.1 =
-* New: Alternative SmartMenus - X-Plus
-* New: Border around submenus
-* Tweak: Submenu styling (inline-block -> block)
-* Tweak: z-index for full page width
-* Tweak: show Weaver Xtreme Plus version in HTML
-* Tweak: menu layout speeded up
-* Tweak: added .author wrap to single page author info for Google tools
-* Fix: Desktop Menu Spacing
-* Fix: multi-column post class fixes
-* Fix: issue with &lthead&gt; content option
-* Fix: clear issue with right aligned header widget area
-
-= Version 1.1.1 =
-* New: Rounded corners for submenus
-* Change: All menus must be either Smart Menus or Standard Weaver Xtreme menus - no per menu choice
-* Removed: Support for changing the Mobile/Desktop menu toggle point no longer supported - sorry!
-* Tweak: Added release notes to help tab
-* Tweak: italic no longer applied to menu arrows - should not have been applied
-* Tweak: menu handling on some touch devices / browsers - iOS, IE
-* Fix: minimized css/js
-* Fix: MegaMenu border (X-Plus)
-
-= Version 1.1.2 =
-* Fix: missing &lt;div> for author-link, extra &lt;/span>
-
-= Version 1.1.3 =
-* Tweak: Wording for Hide Author Bio option
-* Fix: JavaScript incompatibility with Safari browser
-
 = Version 1.2 =
 * New: Multiple Column option for Page content
 * New: Full Width Subthemes - Dark and Light plus Demo versions
@@ -99,6 +69,13 @@ function weaverx_admin_help() {
 * Tweak: Beginning of Admin code reorganization - moved admin files to new directories
 * Fix: Mobile menu bug on non-SmartMenus
 * Fix: ignore mobile toggle set point if not SmartMenu
+
+= Version 1.2.3 =
+* New: Plain - Full Width subtheme
+* Tweak: Moved Edit button inside .entry-content on Pages
+* Tweak: Updated to new TGM library (for installing recommended plugins)
+* Fix: 3-column Post display on small tablets
+* Fix: z-index for Smart Menu HTML areas
 </pre>
 </p>
 	</div>

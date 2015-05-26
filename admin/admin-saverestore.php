@@ -39,7 +39,7 @@ function weaverx_admin_saverestore() {
 
 	weaverx_saverestore();      // download/upload to computer
 
-	do_action('weaverx_child_saverestore');	// allow additional save/restore in child */
+	do_action('weaverx_child_saverestore');	// allow additional save/restore in child
 
 	do_action('weaverx_child_update');
 ?>

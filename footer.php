@@ -15,7 +15,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
 	weaverx_inject_area('prefooter');		// put the prefooter optional area
 
-	if ( weaverx_getopt( 'footer_hide') != 'hide' && !weaverx_is_checked_page_opt('_pp_hide_footer') ) {
+	if ( weaverx_getopt( 'footer_hide' ) != 'hide' && !weaverx_is_checked_page_opt('_pp_hide_footer') ) {
 		$f_class = weaverx_area_class('footer', 'pad', '-trbl', 'margin-none');
 	?>
 <footer id="colophon" <?php echo 'class="colophon ' . $f_class . '"'; ?> role="contentinfo">

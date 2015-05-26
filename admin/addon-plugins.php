@@ -38,9 +38,7 @@ function weaverx_install_tgm_plugins() {
 	);
 
 
-	// Change this to your theme text domain, used for internationalizing strings
-	$theme_text_domain = 'weaver-xtreme';
-
+	
 	/**
 	 * Array of configuration settings. Amend each line as needed.
 	 * If you want the default strings to be available under your own theme domain,
@@ -50,7 +48,6 @@ function weaverx_install_tgm_plugins() {
 	 */
 
 	$config = array(
-		'domain'           => $theme_text_domain, // Text domain - likely want to be the same as your theme.
 		'default_path'     => '', // Default absolute path to pre-packaged plugins
 		'parent_menu_slug' => 'themes.php', // Default parent menu slug
 		'parent_url_slug'  => 'themes.php', // Default parent URL slug
@@ -71,10 +68,10 @@ WordPress.org requirements and its general usefulness for other themes.</p>
 Media Library, and is essential if you want optimal high resolution (Retina) image management.</p>', 'weaver-xtreme' /*adm*/),
 			// Message to output right before the plugins table
 		'strings'          => array(
-			'page_title'                      => __( 'The <em>Weaver Xtreme</em> Theme Recommended Plugins', $theme_text_domain ),
-			'menu_title'                      => __( '<small>&times;Recommended Plugins</small>', $theme_text_domain ),
-			'installing'                      => __( 'Installing Plugin: %s', $theme_text_domain ), // %1$s = plugin name
-			'oops'                            => __( 'Something went wrong with the plugin API.', $theme_text_domain ),
+			'page_title'                      => __( 'The <em>Weaver Xtreme</em> Theme Recommended Plugins', 'weaver-xtreme' ),
+			'menu_title'                      => __( '<small>&times;Recommended Plugins</small>', 'weaver-xtreme' ),
+			'installing'                      => __( 'Installing Plugin: %s', 'weaver-xtreme' ), // %1$s = plugin name
+			'oops'                            => __( 'Something went wrong with the plugin API.', 'weaver-xtreme' ),
 			'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.' ), // %1$s = plugin name(s)
 			'notice_can_install_recommended'  => _n_noop( 'The <em>Weaver Xtreme Theme</em> recommends this plugin, %1$s, to enhance your theme experience.', 'The <em>Weaver Xtreme Theme</em> recommends these plugins, %1$s,  to enhance your theme experience.' ), // %1$s = plugin name(s)
 			'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.' ), // %1$s = plugin name(s)
@@ -85,9 +82,9 @@ Media Library, and is essential if you want optimal high resolution (Retina) ima
 			'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.' ), // %1$s = plugin name(s)
 			'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins' ),
 			'activate_link'                   => _n_noop( 'Open Plugins Admin Page to Activate', 'Open Plugins Admin Page to Activate' ),
-			'return'                          => __( 'Return to Required Plugins Installer', $theme_text_domain ),
-			'plugin_activated'                => __( 'Plugin activated successfully.', $theme_text_domain ),
-			'complete'                        => __( 'All plugins installed and activated successfully. %s', $theme_text_domain ) // %1$s = dashboard link
+			'return'                          => __( 'Return to Required Plugins Installer', 'weaver-xtreme' ),
+			'plugin_activated'                => __( 'Plugin activated successfully.', 'weaver-xtreme' ),
+			'complete'                        => __( 'All plugins installed and activated successfully. %s', 'weaver-xtreme' ) // %1$s = dashboard link
 		)
 	);
 

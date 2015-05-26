@@ -186,10 +186,10 @@ function weaverx_edit_link($echo = 'echo') {
 	$id = 0;
 
 	if ( !$post = get_post( $id ) )
-	return;
+		return;
 
 	if ( !$url = get_edit_post_link( $post->ID ) )
-	return;
+		return;
 
 	$post_type_obj = get_post_type_object( $post->post_type );
 	$link = '<a class="post-edit-link" href="' . $url . '" title="' . esc_attr( $post_type_obj->labels->edit_item ) . '">' . $link . '</a>';

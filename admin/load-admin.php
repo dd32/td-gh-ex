@@ -1,12 +1,19 @@
 <?php
+/* This loads the Admin stuff. It is invoked from functions.php.
+ *
+ * This ultimately will be used to load different admin interfaces -
+ * like the a default Customizer version for WP.org, or the traditional Theme Options version (which it does now)
+ */
 
 if (current_user_can('edit_posts')) {
 
 	add_action('admin_menu', 'weaverx_add_admin',5);
 	weaverx_load_admin_aux();
 
+	do_action('weaverx_check_updates');
 
-function weaverx_add_admin() {	// action definition
+
+	function weaverx_add_admin() {	// action definition
 	/* adds our admin panel  (add_action: admin_menu) */
 	// 'edit_theme_options' works for both single and multisite
 	$page = add_theme_page('WeaverX',  __('Theme Options', 'weaver-xtreme' /*adm*/), 'edit_theme_options', 'WeaverX', 'weaverx_admin_theme_page');
@@ -70,6 +77,7 @@ add_action('admin_head', 'weaverx_admin_head');
 
 function weaverx_admin_head() {	// action definition
 }
+
 }	// END IF CAN EDIT POSTS ---------------------------------------------------------------------
 
 function weaverx_load_admin_aux() {
