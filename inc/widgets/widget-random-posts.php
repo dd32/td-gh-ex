@@ -81,7 +81,7 @@ class Accesspress_mag_register_random_posts extends WP_Widget {
                                 <a href="<?php the_permalink();?>">
                                     <?php 
                                         $post_title = get_the_title();
-                                            echo esc_html( accesspress_mag_letter_count( $post_title, 20 ) );
+                                            echo accesspress_mag_letter_count( $post_title, 20 ) ;
                                     ?>
                                 </a>
                             </h3>

@@ -73,6 +73,10 @@ ScreenShot Images
 
 ----------------------------------------------------
 == Changelog ==
+Version 1.1.8
+ * Fixed bug on homepage sidebar
+ * Fixed bug on excerpt area at homepage
+ 
 Version 1.1.7
  * Fixed sidebar option for homepage.
  * Fixed bug (removed esc_url at user avatar) on Article contributor widget.

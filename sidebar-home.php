@@ -93,7 +93,7 @@ $page_sidebar = get_post_meta( $post -> ID, 'accesspress_mag_page_sidebar_layout
                     <h3 class="post-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
                     <div class="block-poston"><?php do_action('accesspress_mag_home_posted_on');?></div>
                     <div class="block-poston"><?php do_action('accesspress_mag_block_post_on');?></div>
-                    <?php if($e_counter>1){echo '</div>';} if($e_counter ==1 ):?><div class="post-content"><?php echo '<p>'. esc_html( accesspress_mag_word_count(get_the_content(),25) ) .'</p>' ;?></div><?php endif ;?>
+                    <?php if($e_counter>1){echo '</div>';} if($e_counter ==1 ):?><div class="post-content"><?php echo '<p>'. accesspress_mag_word_count( get_the_content(), 25) .'</p>' ;?></div><?php endif ;?>
             </div>
         <?php
                 }

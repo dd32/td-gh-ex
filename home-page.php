@@ -59,7 +59,7 @@ get_header();
                                     <h3 class="post-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
                                     <div class="block-poston"><?php do_action('accesspress_mag_home_posted_on');?></div>
                                 </div>
-                                <?php if($b_counter <=2 ):?><div class="post-content"><?php echo '<p>'. esc_html( accesspress_mag_word_count(get_the_content(),25) ) .'</p>' ;?></div><?php endif ;?>
+                                <?php if($b_counter <=2 ):?><div class="post-content"><?php echo '<p>'. accesspress_mag_word_count( get_the_content(), 25 ) .'</p>' ;?></div><?php endif ;?>
                         </div>
                         <?php 
                             if($b_counter%2==0){echo '<div class="clearfix"></div>';}
@@ -117,7 +117,7 @@ get_header();
                                             <h3 class="post-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
                                             <div class="block-poston"><?php do_action('accesspress_mag_home_posted_on');?></div>
                                         </div>
-                                        <?php if($b_counter ==1 ):?><div class="post-content"><?php echo '<p>'. esc_html( accesspress_mag_word_count(get_the_content(),25) ) .'</p>' ;?></div><?php endif ;?>
+                                        <?php if($b_counter ==1 ):?><div class="post-content"><?php echo '<p>'. accesspress_mag_word_count( get_the_content(), 25 ) .'</p>' ;?></div><?php endif ;?>
                                 </div>
                                 <?php if($b_counter==1){echo '</div>';} if($b_counter>1 && $b_counter==$total_posts_block2){echo '</div>';}?>                    
                     <?php                    
@@ -181,7 +181,7 @@ get_header();
                                     <h3 class="post-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
                                     <div class="block-poston"><?php do_action('accesspress_mag_home_posted_on');?></div>
                                 </div>
-                                <?php if($b_counter <=2 ):?><div class="post-content"><?php echo '<p>'. esc_html( accesspress_mag_word_count(get_the_content(),25) ) .'</p>' ;?></div><?php endif ;?>
+                                <?php if($b_counter <=2 ):?><div class="post-content"><?php echo '<p>'. accesspress_mag_word_count( get_the_content(), 25) .'</p>' ;?></div><?php endif ;?>
                         </div>
                         <?php 
                             if($b_counter%2==0){echo '<div class="clearfix"></div>';}
@@ -249,6 +249,7 @@ get_header();
 		</main><!-- #main -->
 	</div><!-- #primary -->
 <?php 
+wp_reset_query();
 $page_sidebar = get_post_meta( $post -> ID, 'accesspress_mag_page_sidebar_layout', true);
     if($page_sidebar!='no-sidebar'){
         get_sidebar('home');
