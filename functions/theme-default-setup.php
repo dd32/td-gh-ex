@@ -180,7 +180,7 @@ add_filter( 'comment_form_defaults', 'avocation_textarea_insert' );
 	return $fields;
 	}
 	 
-	function avocation_pagination() {
+function avocation_pagination() {
 	if(is_single()){
 		the_post_navigation( array(
 			'prev_text' => '<div class="avocation_previous_pagination alignleft">%title</div>',

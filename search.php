@@ -25,7 +25,7 @@ get_header(); ?>
                     <div class="row">
                         <div class="blog-page col-md-8 col-sm-8">              
 				<?php if ( have_posts() ) : ?>   	 
-				<?php get_template_part( 'content', get_post_format() ); ?>
+				<?php get_template_part( 'content' ); ?>
 			
 			<?php else : ?>
 		<div class="blog-box">

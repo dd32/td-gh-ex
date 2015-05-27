@@ -76,7 +76,7 @@ $avocation_query = new WP_Query( apply_filters( 'widget_posts_args',
 						
             		<a href="<?php echo get_permalink(); ?>">
             	 <?php if ( has_post_thumbnail() ) : ?>
-						 <?php the_post_thumbnail( 'avocation-latest-posts-widget', array( 'alt' => esc_attr(get_the_title()), 'class' => 'img-responsive') ); ?>
+						 <?php the_post_thumbnail( 'avocation-latest-posts-widget', array( 'alt' => the_title_attribute(), 'class' => 'img-responsive') ); ?>
 					<?php endif; ?>	
 					
              	
@@ -85,7 +85,7 @@ $avocation_query = new WP_Query( apply_filters( 'widget_posts_args',
 						
 					
 					<div class="blog-date">					
-						 <a href="<?php echo esc_url(get_the_permalink()); ?>" title="<?php echo  get_the_title() ? esc_attr(get_the_title()) : get_the_ID(); ?>"><?php if ( get_the_title() ) the_title(); else the_ID(); ?></a> 
+						 <a href="<?php echo esc_url(get_the_permalink()); ?>" title="<?php the_title_attribute(); ?>"><?php if ( get_the_title() ) the_title(); else the_ID(); ?></a> 
 						    <?php if ( $avocation_lp_show_date ) : ?>          
 								<a href="<?php echo esc_url(get_the_permalink()); ?>"><?php echo get_the_date(); ?></a>
 								

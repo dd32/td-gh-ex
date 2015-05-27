@@ -106,8 +106,7 @@ I) Intro provides support for the following plugins:
 Image
 ---------------------------------------------------------
 
-------------------- slider bg ----------------------------
-3. StartupStockPhotos
+1. StartupStockPhotos
 	Resource URI: http://pixabay.com/en/startup-meeting-brainstorming-594090/
 	License: CC0 1.0
 	License URI: http://creativecommons.org/publicdomain/zero/1.0/deed.en

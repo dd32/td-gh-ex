@@ -17,14 +17,11 @@ get_header(); ?>
             </div>
             <!--Breadcrumb End-->   
   
-    <div class="avocation-container  container"> 
+			<div class="avocation-container  container"> 
                 <div class="blog-wrap">
                     <div class="row">
                         <div class="blog-page col-md-8 col-sm-8">                        
-                          
-                           <?php get_template_part( 'content', get_post_format() ); ?>
-                          
-                
+                           <?php get_template_part( 'content' ); ?>
                             <div class="site-pagination">
                                 <?php avocation_pagination();?>			
                             </div>

@@ -9,7 +9,7 @@ function avocation_setup() {
 	register_nav_menus( array(
 		'primary'   => __( 'Main Menu', 'avocation' ),	
 	) );
-	global $avocation_content_width;
+	global $content_width;
 	if ( ! isset( $content_width ) ) $content_width = 900;
 			/*
 		 * Make avocation theme available for translation.

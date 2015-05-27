@@ -48,11 +48,11 @@
 								<?php }?>
 							<?php $contact_telephone_check = get_theme_mod( 'contact_telephone_setting' );
 								if(!empty($contact_telephone_check)) {?>
-									<li><i class="fa fa-phone"></i> <span><?php echo esc_url( get_theme_mod('contact_telephone_setting', '') );?></span></li>
+									<li><i class="fa fa-phone"></i> <span><?php echo esc_attr( get_theme_mod('contact_telephone_setting', '') );?></span></li>
 								<?php }?>
 							<?php $contact_web_check = get_theme_mod( 'contact_web_setting' );
 								if(!empty($contact_web_check)) {?>
-									<li><i class="fa fa-globe"></i> <span><a href="<?php echo esc_html( get_theme_mod('contact_web_setting', '') );?>" ><?php echo esc_html( get_theme_mod('contact_web_setting', '') );?></a></span> </li>
+									<li><i class="fa fa-globe"></i> <span><a href="<?php echo esc_url( get_theme_mod('contact_web_setting', '') );?>" ><?php echo esc_url( get_theme_mod('contact_web_setting', '') );?></a></span> </li>
 								<?php }?>
                         </ul>                  
                     </div>

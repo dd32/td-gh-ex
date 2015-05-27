@@ -1,5 +1,4 @@
  <?php /* Footer Template */?>
-  <?php $avocation_options = get_option( 'avocation_theme_options' ); ?>
    <!--==============================Footer start=================================-->
         <footer>
             <div class="footer-bg">
@@ -24,21 +23,20 @@
                         </aside><?php } ?>
                     </div>
                    <?php }?>
-                    <div class="copyright">  
-					    <span>
-		<?php printf( __( 'Powered by %1$s and %2$s.', 'avocation' ), '<a href="http://wordpress.org" target="_blank">WordPress</a>', '<a href="http://fruitthemes.com/wordpress-themes/avocation" target="_blank">Avocation</a>' ); ?>
-		</span>                   
-                       <?php $copyright_check = get_theme_mod( 'copyright_url_setting' );
-    if( $copyright_check != '' ) { ?>
-						<p><?php echo esc_html( get_theme_mod('copyright_url_setting', '') );  ?></p> <?php } 
-						 ?>
-						
-       
-                    </div>
-                </div>              	
-            </div>
-        </footer>
-      
+					<div class="copyright">  
+						<span>
+							<?php printf( __( 'Powered by %1$s and %2$s.', 'avocation' ), '<a href="http://wordpress.org" target="_blank">WordPress</a>', '<a href="http://fruitthemes.com/wordpress-themes/avocation" target="_blank">Avocation</a>' ); ?>
+							</span>                   
+						<?php $copyright_check = get_theme_mod( 'copyright_url_setting' );
+						if(!empty($copyright_check)) { ?>
+							<p><?php echo esc_html( get_theme_mod('copyright_url_setting', '') );  ?></p> 
+						<?php } ?>
+					</div>
+
+				</div>              	
+			</div>
+		</footer>
+	  
     <?php wp_footer(); ?>
 
     </body>

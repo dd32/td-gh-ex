@@ -56,7 +56,6 @@
                 
                 $avocation_args = array(
                     'ignore_sticky_posts' => '1',
-                    
                     'meta_query' => array(
                         array(
                             'key' => '_thumbnail_id',
@@ -74,7 +73,7 @@
 
                             <?php if (has_post_thumbnail()) : ?>
                                 <div class="blog-box-img">
-                                    <?php the_post_thumbnail('avocation-latest-post-homepage', array('alt' => get_the_title(), 'class' => 'img-responsive')); ?>
+                                    <?php the_post_thumbnail('avocation-latest-post-homepage', array('alt' => esc_attr(get_the_title()), 'class' => 'img-responsive')); ?>
                                 </div>
                             <?php endif; ?>
 

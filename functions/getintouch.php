@@ -51,7 +51,7 @@ class avocation_info_widget extends WP_Widget {
     <?php } ?>
 
     <?php if(!empty($avocation_instance['email'])) { ?>
-        <p><?php _e('Email:','avocation');?> <a href="mailto:<?php echo esc_url($avocation_instance['email']); ?>"><?php echo $avocation_instance['email']; ?></a></p>
+        <p><?php _e('Email:','avocation');?> <a href="mailto:<?php echo $avocation_instance['email']; ?>"><?php echo $avocation_instance['email']; ?></a></p>
     <?php } ?>
 
     <?php if(!empty($avocation_instance['website'])) { ?>
@@ -85,38 +85,38 @@ class avocation_info_widget extends WP_Widget {
   <label for="<?php echo $this->get_field_id( 'title' ); ?>">
     <?php _e('Widget Title:', 'avocation'); ?>
   </label>
-  <input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php if(!empty($avocation_instance['title'])) { echo $avocation_instance['title']; } ?>"  type="text" class="widefat" />
+  <input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php if(!empty($avocation_instance['title'])) { echo esc_attr($avocation_instance['title']); } ?>"  type="text" class="widefat" />
 </p>
 <p>
   <label for="<?php echo $this->get_field_id( 'address' ); ?>">
     <?php _e('Address:', 'avocation'); ?>
   </label>
-  <textarea id="<?php echo $this->get_field_id( 'address' ); ?>" name="<?php echo $this->get_field_name( 'address' ); ?>"  class="widefat" ><?php if(!empty($avocation_instance['address'])) { echo $avocation_instance['address']; } ?> </textarea> 
+  <textarea id="<?php echo $this->get_field_id( 'address' ); ?>" name="<?php echo $this->get_field_name( 'address' ); ?>"  class="widefat" ><?php if(!empty($avocation_instance['address'])) { echo esc_attr($avocation_instance['address']); } ?> </textarea> 
 </p>
 
 <p>
   <label for="<?php echo $this->get_field_id( 'phone' ); ?>">
     <?php _e('Phone:', 'avocation'); ?>
   </label>
-  <input id="<?php echo $this->get_field_id( 'phone' ); ?>" name="<?php echo $this->get_field_name( 'phone' ); ?>" value="<?php if(!empty($avocation_instance['phone'])) { echo $avocation_instance['phone']; } ?>" type="text" class="widefat" />
+  <input id="<?php echo $this->get_field_id( 'phone' ); ?>" name="<?php echo $this->get_field_name( 'phone' ); ?>" value="<?php if(!empty($avocation_instance['phone'])) { echo esc_attr($avocation_instance['phone']); } ?>" type="text" class="widefat" />
 </p>
 <p>
   <label for="<?php echo $this->get_field_id( 'fax' ); ?>">
     <?php _e('Fax:', 'avocation'); ?>
   </label>
-  <input id="<?php echo $this->get_field_id( 'fax' ); ?>" name="<?php echo $this->get_field_name( 'fax' ); ?>" value="<?php if(!empty($avocation_instance['fax'])) { echo $avocation_instance['fax']; } ?>" type="text" class="widefat" />
+  <input id="<?php echo $this->get_field_id( 'fax' ); ?>" name="<?php echo $this->get_field_name( 'fax' ); ?>" value="<?php if(!empty($avocation_instance['fax'])) { echo esc_attr($avocation_instance['fax']); } ?>" type="text" class="widefat" />
 </p>
 <p>
   <label for="<?php echo $this->get_field_id( 'email' ); ?>">
     <?php _e('Email Address:', 'avocation'); ?>
   </label>
-  <input id="<?php echo $this->get_field_id( 'email' ); ?>" name="<?php echo $this->get_field_name( 'email' ); ?>" value="<?php if(!empty($avocation_instance['email'])) { echo $avocation_instance['email']; } ?>" type="text" class="widefat" />
+  <input id="<?php echo $this->get_field_id( 'email' ); ?>" name="<?php echo $this->get_field_name( 'email' ); ?>" value="<?php if(!empty($avocation_instance['email'])) { echo esc_attr($avocation_instance['email']); } ?>" type="text" class="widefat" />
 </p>
 <p>
   <label for="<?php echo $this->get_field_id( 'website' ); ?>">
     <?php _e('Website:', 'avocation'); ?>
   </label>
-  <input id="<?php echo $this->get_field_id( 'website' ); ?>" name="<?php echo $this->get_field_name( 'website' ); ?>" value="<?php if(!empty($avocation_instance['website'])) { echo $avocation_instance['website']; } ?>" type="text" class="widefat" />
+  <input id="<?php echo $this->get_field_id( 'website' ); ?>" name="<?php echo $this->get_field_name( 'website' ); ?>" value="<?php if(!empty($avocation_instance['website'])) { echo esc_url($avocation_instance['website']); } ?>" type="text" class="widefat" />
 </p>
 
 <?php

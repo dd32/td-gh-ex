@@ -2,8 +2,6 @@
 /**
  * The Header template file
  */
- 
-$avocation_options = get_option('avocation_theme_options');
 ?>
 <!DOCTYPE html>
 <!--[if IE 7]>
@@ -86,27 +84,27 @@ $avocation_options = get_option('avocation_theme_options');
 							} ?>        
 						</div>
                       
-                          
-                        <div class="col-md-3 col-sm-3 social-icon  no-padding">	
-                            <ul>
-								<?php if(!empty($facebook_check)) { ?>
-									<li > <a href="<?php echo esc_url($facebook_check); ?>" class="facebook-icon"> <span class="fa fa-facebook"></span> </a> </li>
-								<?php }?>    
-								<?php if(!empty($twitter_check)) { ?>
-									<li> <a href="<?php echo esc_url($twitter_check); ?>" class="twitter-icon"> <span class="fa fa-twitter"></span> </a> </li>
-								<?php } ?>
-								 <?php if(!empty($youtube_check)) { ?>
-									<li> <a href="<?php esc_url($youtube_check); ?>" class="youtube-icon"> <span class="fa fa-youtube"></span> </a> </li>
-								<?php } ?>
-								<?php if(!empty($rss_check)) {  ?>
-									<li> <a href="<?php echo esc_url($rss_check); ?>" class="rss-icon"> <span class="fa fa-rss"></span> </a> </li>
-								<?php } ?>
-								<?php if(!empty($pinterest_check)) {  ?>
-									<li> <a href="<?php echo  esc_url($pinterest_check); ?>" class="pinterest-icon"> <span class="fa fa-pinterest"></span> </a> </li>
-								<?php } ?>
-                            </ul>
-                        </div>
-                                                                      
+                         <?php if(!empty($facebook_check) || !empty($twitter_check) || !empty($rss_check) || !empty($pinterest_check) || !empty($youtube_check)){ ?> 
+							<div class="col-md-3 col-sm-3 social-icon  no-padding">	
+								<ul>
+									<?php if(!empty($facebook_check)) { ?>
+										<li > <a href="<?php echo esc_url($facebook_check); ?>" class="facebook-icon"> <span class="fa fa-facebook"></span> </a> </li>
+									<?php }?>    
+									<?php if(!empty($twitter_check)) { ?>
+										<li> <a href="<?php echo esc_url($twitter_check); ?>" class="twitter-icon"> <span class="fa fa-twitter"></span> </a> </li>
+									<?php } ?>
+									 <?php if(!empty($youtube_check)) { ?>
+										<li> <a href="<?php esc_url($youtube_check); ?>" class="youtube-icon"> <span class="fa fa-youtube"></span> </a> </li>
+									<?php } ?>
+									<?php if(!empty($rss_check)) {  ?>
+										<li> <a href="<?php echo esc_url($rss_check); ?>" class="rss-icon"> <span class="fa fa-rss"></span> </a> </li>
+									<?php } ?>
+									<?php if(!empty($pinterest_check)) {  ?>
+										<li> <a href="<?php echo  esc_url($pinterest_check); ?>" class="pinterest-icon"> <span class="fa fa-pinterest"></span> </a> </li>
+									<?php } ?>
+								</ul>
+							</div>
+                        <?php } ?>                                              
                     </div>                    
                 </div>
             </div>
