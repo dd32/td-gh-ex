@@ -302,8 +302,8 @@ function accesspresslite_theme_options_page() {
 					<?php $accesspresslite_webpage_layouts = array('Fullwidth' => __('Fullwidth','accesspresslite'),'Boxed' => __('Boxed','accesspresslite')); ?>
 					<?php
 					foreach ( $accesspresslite_webpage_layouts as $accesspresslite_webpage_layout_key => $accesspresslite_webpage_layout ) : ?>
-						<input type="radio" id="<?php esc_attr_e($accesspresslite_webpage_layout); ?>" name="accesspresslite_options[accesspresslite_webpage_layout]" value="<?php esc_attr_e($accesspresslite_webpage_layout_key); ?>" <?php checked( $settings['accesspresslite_webpage_layout'], $accesspresslite_webpage_layout_key ); ?> />
-						<label for="<?php esc_attr_e($accesspresslite_webpage_layout) ?>"><?php esc_attr_e($accesspresslite_webpage_layout); ?></label><br />
+						<input type="radio" id="<?php echo esc_attr($accesspresslite_webpage_layout); ?>" name="accesspresslite_options[accesspresslite_webpage_layout]" value="<?php echo esc_attr($accesspresslite_webpage_layout_key); ?>" <?php checked( $settings['accesspresslite_webpage_layout'], $accesspresslite_webpage_layout_key ); ?> />
+						<label for="<?php echo esc_attr($accesspresslite_webpage_layout) ?>"><?php echo esc_attr($accesspresslite_webpage_layout); ?></label><br />
 					<?php endforeach;
 					?>
 					</td>
@@ -360,7 +360,7 @@ function accesspresslite_theme_options_page() {
 					<select id="menu_alignment" name="accesspresslite_options[menu_alignment]">
 					<?php
 					foreach ( $accesspresslite_menu_alignments as $accesspresslite_menu_alignment_key=>$accesspresslite_menu_alignment ) : ?>
-						<option value="<?php esc_attr_e($accesspresslite_menu_alignment_key); ?>" <?php selected( $accesspresslite_menu_alignment_key , $settings['menu_alignment'] ); ?>><?php esc_attr_e($accesspresslite_menu_alignment);?></option>
+						<option value="<?php echo esc_attr($accesspresslite_menu_alignment_key); ?>" <?php selected( $accesspresslite_menu_alignment_key , $settings['menu_alignment'] ); ?>><?php echo esc_attr($accesspresslite_menu_alignment);?></option>
 					<?php
 					endforeach;
 					?>
@@ -375,7 +375,7 @@ function accesspresslite_theme_options_page() {
 					<?php
 					foreach ( $accesspresslite_catlist as $single_cat ) :
 						$label = $single_cat['label']; ?>
-						<option value="<?php esc_attr_e($single_cat['value']) ?>" <?php selected( $single_cat['value'], $settings['event_cat'] ); ?>><?php esc_attr_e($label); ?></option>
+						<option value="<?php echo esc_attr($single_cat['value']) ?>" <?php selected( $single_cat['value'], $settings['event_cat'] ); ?>><?php echo esc_attr($label); ?></option>
 					<?php 
 					endforeach;
 					?>
@@ -389,7 +389,7 @@ function accesspresslite_theme_options_page() {
 					<?php
 					foreach ( $accesspresslite_catlist as $single_cat ) :
 						$label = $single_cat['label']; ?>
-						<option value="<?php esc_attr_e($single_cat['value']) ?>" <?php selected( $single_cat['value'], $settings['testimonial_cat'] ); ?>><?php esc_attr_e($label); ?></option>
+						<option value="<?php echo esc_attr($single_cat['value']) ?>" <?php selected( $single_cat['value'], $settings['testimonial_cat'] ); ?>><?php echo esc_attr($label); ?></option>
 					<?php 
 					endforeach;
 					?>
@@ -403,7 +403,7 @@ function accesspresslite_theme_options_page() {
 					<?php
 					foreach ( $accesspresslite_catlist as $single_cat ) :
 						$label = $single_cat['label']; ?>
-						<option value="<?php esc_attr_e($single_cat['value']) ?>" <?php selected( $single_cat['value'], $settings['portfolio_cat'] ); ?>><?php esc_attr_e($label); ?></option>
+						<option value="<?php echo esc_attr($single_cat['value']) ?>" <?php selected( $single_cat['value'], $settings['portfolio_cat'] ); ?>><?php echo esc_attr($label); ?></option>
 					<?php 
 					endforeach;
 					?>
@@ -422,7 +422,7 @@ function accesspresslite_theme_options_page() {
 					<tr>
 					<th scope="row"><label for="footer_copyright"><?php _e('Footer Copyright Text','accesspresslite'); ?></label></th>
 					<td>
-					<input id="footer_copyright" name="accesspresslite_options[footer_copyright]" type="text" value="<?php esc_attr_e($settings['footer_copyright']); ?>" />
+					<input id="footer_copyright" name="accesspresslite_options[footer_copyright]" type="text" value="<?php echo esc_attr($settings['footer_copyright']); ?>" />
 					</td>
 					</tr>
 				</table>
@@ -439,11 +439,11 @@ function accesspresslite_theme_options_page() {
 					foreach ( $accesspresslite_home_page_layouts as $accesspresslite_home_page_layout_key => $accesspresslite_home_page_layout ) : ?>
                     <div class="layout-img">
 						
-						<label for="<?php esc_attr_e($accesspresslite_home_page_layout); ?>">
+						<label for="<?php echo esc_attr($accesspresslite_home_page_layout); ?>">
                         <img src="<?php echo get_template_directory_uri().'/images/demo/'.$accesspresslite_home_page_layout_key.'.jpg'; ?>"/>
                         <div class="">
-                        <input type="radio" id="<?php esc_attr_e($accesspresslite_home_page_layout); ?>" name="accesspresslite_options[accesspresslite_home_page_layout]" value="<?php esc_attr_e($accesspresslite_home_page_layout_key); ?>" <?php checked( $settings['accesspresslite_home_page_layout'], $accesspresslite_home_page_layout_key ); ?> />
-                        <?php esc_attr_e($accesspresslite_home_page_layout);?></div>
+                        <input type="radio" id="<?php echo esc_attr($accesspresslite_home_page_layout); ?>" name="accesspresslite_options[accesspresslite_home_page_layout]" value="<?php echo esc_attr($accesspresslite_home_page_layout_key); ?>" <?php checked( $settings['accesspresslite_home_page_layout'], $accesspresslite_home_page_layout_key ); ?> />
+                        <?php echo esc_attr($accesspresslite_home_page_layout);?></div>
                         </label>
                     </div>
 					<?php endforeach; ?>
@@ -458,7 +458,7 @@ function accesspresslite_theme_options_page() {
 					<?php
 					foreach ( $accesspresslite_postpagelist as $single_post ) :
 						$label = $single_post['label']; ?>
-						<option value="<?php esc_attr_e($single_post['value']) ?>" <?php selected( $single_post['value'], $settings['welcome_post'] ); ?>><?php esc_attr_e($label); ?></option>
+						<option value="<?php echo esc_attr($single_post['value']) ?>" <?php selected( $single_post['value'], $settings['welcome_post'] ); ?>><?php echo esc_attr($label); ?></option>
 					<?php endforeach;
 					?>
 					</select>
@@ -475,12 +475,12 @@ function accesspresslite_theme_options_page() {
 
 					<tr>
 						<th><label for="welcome_post_char"><?php _e('Welcome Post Excerpt Character','accesspresslite'); ?></label></th>
-						<td><input id="welcome_post_char" type="text" name="accesspresslite_options[welcome_post_char]" value="<?php if (isset($settings['welcome_post_char'])){ esc_attr_e($settings['welcome_post_char']); } ?>"> <?php _e('Characters','accesspresslite'); ?></td>
+						<td><input id="welcome_post_char" type="text" name="accesspresslite_options[welcome_post_char]" value="<?php if (isset($settings['welcome_post_char'])){ echo esc_attr($settings['welcome_post_char']); } ?>"> <?php _e('Characters','accesspresslite'); ?></td>
 					</tr>
 
 					<tr>
 						<th><label for="welcome_post_readmore"><?php _e('Read More Text','accesspresslite'); ?></label></th>
-						<td><input id="welcome_post_readmore" type="text" name="accesspresslite_options[welcome_post_readmore]" value="<?php if (isset($settings['welcome_post_readmore'])){ esc_attr_e($settings['welcome_post_readmore']); } ?>"><br /><em class="f13"><?php _e('Leave blank if you don\'t want to show read more','accesspresslite'); ?></em></td>
+						<td><input id="welcome_post_readmore" type="text" name="accesspresslite_options[welcome_post_readmore]" value="<?php if (isset($settings['welcome_post_readmore'])){ echo esc_attr($settings['welcome_post_readmore']); } ?>"><br /><em class="f13"><?php _e('Leave blank if you don\'t want to show read more','accesspresslite'); ?></em></td>
 					</tr>
 
 					<tr><td colspan="2" class="seperator">&nbsp;</td></tr>
@@ -496,7 +496,7 @@ function accesspresslite_theme_options_page() {
 
 					<tr>
 						<th><label for="show_event_number"><?php _e('No of Items to display in Event/News Category beside Welcome Post','accesspresslite'); ?></label></th>
-						<td><input id="show_event_number" type="text" name="accesspresslite_options[show_event_number]" value="<?php if (isset($settings['show_event_number'])){ esc_attr_e($settings['show_event_number']); } ?>"></td>
+						<td><input id="show_event_number" type="text" name="accesspresslite_options[show_event_number]" value="<?php if (isset($settings['show_event_number'])){ echo esc_attr($settings['show_event_number']); } ?>"></td>
 					</tr>
 
 					<tr>
@@ -536,12 +536,12 @@ function accesspresslite_theme_options_page() {
 					<?php
 					foreach ( $accesspresslite_postpagelist as $single_post ) :
 						$label = $single_post['label']; ?>
-						<option value="<?php esc_attr_e($single_post['value']) ?>" <?php selected( $single_post['value'], $settings['featured_post1'] ); ?>><?php esc_attr_e($label); ?></option>
+						<option value="<?php echo esc_attr($single_post['value']) ?>" <?php selected( $single_post['value'], $settings['featured_post1'] ); ?>><?php echo esc_attr($label); ?></option>
 					<?php 
 					endforeach;
 					?>
 					</select>
-					<input id="featured_post1_icon" name="accesspresslite_options[featured_post1_icon]" type="text" value="<?php esc_attr_e($settings['featured_post1_icon']); ?>" placeholder="<?php _e('Font Awesome icon name','accesspresslite'); ?>" /><em class="f13">&nbsp;&nbsp;<?php _e('Example:','accesspresslite'); ?> fa-bell</em>
+					<input id="featured_post1_icon" name="accesspresslite_options[featured_post1_icon]" type="text" value="<?php echo esc_attr($settings['featured_post1_icon']); ?>" placeholder="<?php _e('Font Awesome icon name','accesspresslite'); ?>" /><em class="f13">&nbsp;&nbsp;<?php _e('Example:','accesspresslite'); ?> fa-bell</em>
 					</td>
 					</tr>
 
@@ -551,12 +551,12 @@ function accesspresslite_theme_options_page() {
 					<?php
 					foreach ( $accesspresslite_postpagelist as $single_post ) :
 						$label = $single_post['label']; ?>
-						<option value="<?php esc_attr_e($single_post['value']) ?>" <?php selected( $single_post['value'], $settings['featured_post2'] ); ?>><?php esc_attr_e($label); ?></option>
+						<option value="<?php echo esc_attr($single_post['value']) ?>" <?php selected( $single_post['value'], $settings['featured_post2'] ); ?>><?php echo esc_attr($label); ?></option>
 					<?php
 					endforeach;
 					?>
 					</select>
-					<input id="featured_post2_icon" name="accesspresslite_options[featured_post2_icon]" type="text" value="<?php esc_attr_e($settings['featured_post2_icon']); ?>" placeholder="<?php _e('Font Awesome icon name','accesspresslite'); ?>" /><em class="f13">&nbsp;&nbsp;<?php _e('Example:','accesspresslite'); ?> fa-bell</em>
+					<input id="featured_post2_icon" name="accesspresslite_options[featured_post2_icon]" type="text" value="<?php echo esc_attr($settings['featured_post2_icon']); ?>" placeholder="<?php _e('Font Awesome icon name','accesspresslite'); ?>" /><em class="f13">&nbsp;&nbsp;<?php _e('Example:','accesspresslite'); ?> fa-bell</em>
 					</td>
 					</tr>
 
@@ -566,18 +566,18 @@ function accesspresslite_theme_options_page() {
 					<?php
 					foreach ( $accesspresslite_postpagelist as $single_post ) :
 						$label = $single_post['label']; ?>
-						<option value="<?php esc_attr_e($single_post['value']) ?>" <?php selected( $single_post['value'], $settings['featured_post3'] ); ?>><?php esc_attr_e($label); ?></option>
+						<option value="<?php echo esc_attr($single_post['value']) ?>" <?php selected( $single_post['value'], $settings['featured_post3'] ); ?>><?php echo esc_attr($label); ?></option>
 					<?php 
 					endforeach;
 					?>
 					</select>
-					<input id="featured_post3_icon" name="accesspresslite_options[featured_post3_icon]" type="text" value="<?php esc_attr_e($settings['featured_post3_icon']); ?>" placeholder="<?php _e('Font Awesome icon name','accesspresslite'); ?>" /><em class="f13">&nbsp;&nbsp;<?php _e('Example:','accesspresslite'); ?> fa-bell</em>
+					<input id="featured_post3_icon" name="accesspresslite_options[featured_post3_icon]" type="text" value="<?php echo esc_attr($settings['featured_post3_icon']); ?>" placeholder="<?php _e('Font Awesome icon name','accesspresslite'); ?>" /><em class="f13">&nbsp;&nbsp;<?php _e('Example:','accesspresslite'); ?> fa-bell</em>
 					</td>
 					</tr>
 
 					<tr>
 						<th><label for="featured_post_readmore"><?php _e('Read More Text','accesspresslite'); ?></label></th>
-						<td><input id="featured_post_readmore" type="text" name="accesspresslite_options[featured_post_readmore]" value="<?php if ( isset($settings['featured_post_readmore'])){esc_attr_e($settings['featured_post_readmore']); } ?>"><br /><em class="f13"><?php _e('Leave blank if you don\'t want to show read more','accesspresslite'); ?></em></td>
+						<td><input id="featured_post_readmore" type="text" name="accesspresslite_options[featured_post_readmore]" value="<?php if ( isset($settings['featured_post_readmore'])){echo esc_attr($settings['featured_post_readmore']); } ?>"><br /><em class="f13"><?php _e('Leave blank if you don\'t want to show read more','accesspresslite'); ?></em></td>
 					</tr>
                     
                     <tr><td colspan="2" class="seperator">&nbsp;</td></tr>
@@ -585,7 +585,7 @@ function accesspresslite_theme_options_page() {
                     <tr>
 					<th scope="row"><label for="gallery_code"><?php _e('Gallery Short Code','accesspresslite'); ?></label></th>
 					<td>
-					<textarea id="gallery_code" name="accesspresslite_options[gallery_code]" rows="3" cols="30" placeholder='[gallery link="file" ids="203,204,205,206,207,208"]'><?php esc_attr_e($settings['gallery_code']); ?></textarea>
+					<textarea id="gallery_code" name="accesspresslite_options[gallery_code]" rows="3" cols="30" placeholder='[gallery link="file" ids="203,204,205,206,207,208"]'><?php echo esc_attr($settings['gallery_code']); ?></textarea>
                     </td>
 					</tr>
                     
@@ -623,7 +623,7 @@ function accesspresslite_theme_options_page() {
 					<tr>
 						<th><label for="call_to_action"><?php _e('Read More Button Text','accesspresslite'); ?></label></th>
 						<td>
-							<input type="text" name="accesspresslite_options[action_btn_text]" value="<?php if(!empty($settings['action_btn_text'])) esc_attr_e($settings['action_btn_text']); ?>">
+							<input type="text" name="accesspresslite_options[action_btn_text]" value="<?php if(!empty($settings['action_btn_text'])) echo esc_attr($settings['action_btn_text']); ?>">
 						</td>
 					</tr>
 
@@ -678,7 +678,7 @@ function accesspresslite_theme_options_page() {
 					<?php
 					foreach ( $accesspresslite_postlist as $single_post ) :
 						$label = $single_post['label']; ?>
-						<option value="<?php esc_attr_e($single_post['value']); ?>" <?php selected($single_post['value'] , $settings['slider1'] ) ?>><?php esc_attr_e($label); ?></option>
+						<option value="<?php echo esc_attr($single_post['value']); ?>" <?php selected($single_post['value'] , $settings['slider1'] ) ?>><?php echo esc_attr($label); ?></option>
 					<?php
 					endforeach;
 					?>
@@ -692,7 +692,7 @@ function accesspresslite_theme_options_page() {
 					<?php
 					foreach ( $accesspresslite_postlist as $single_post ) :
 						$label = $single_post['label']; ?>
-                        <option value="<?php esc_attr_e($single_post['value']); ?>" <?php selected($single_post['value'] , $settings['slider2'] ) ?>><?php esc_attr_e($label); ?></option>
+                        <option value="<?php echo esc_attr($single_post['value']); ?>" <?php selected($single_post['value'] , $settings['slider2'] ) ?>><?php echo esc_attr($label); ?></option>
 					<?php
 					endforeach;
 					?>
@@ -706,7 +706,7 @@ function accesspresslite_theme_options_page() {
 					<?php
 					foreach ( $accesspresslite_postlist as $single_post ) :
 						$label = $single_post['label']; ?>
-						<option value="<?php esc_attr_e($single_post['value']); ?>" <?php selected($single_post['value'] , $settings['slider3'] ) ?>><?php esc_attr_e($label); ?></option>
+						<option value="<?php echo esc_attr($single_post['value']); ?>" <?php selected($single_post['value'] , $settings['slider3'] ) ?>><?php echo esc_attr($label); ?></option>
 					<?php
 					endforeach;
 					?>
@@ -721,7 +721,7 @@ function accesspresslite_theme_options_page() {
 					<?php
 					foreach ( $accesspresslite_postlist as $single_post ) :
 						$label = $single_post['label']; ?>
-						<option value="<?php esc_attr_e($single_post['value']); ?>" <?php selected($single_post['value'] , $settings['slider4'] ) ?>><?php esc_attr_e($label); ?></option>
+						<option value="<?php echo esc_attr($single_post['value']); ?>" <?php selected($single_post['value'] , $settings['slider4'] ) ?>><?php echo esc_attr($label); ?></option>
 					<?php
 					endforeach;
 					?>
@@ -743,7 +743,7 @@ function accesspresslite_theme_options_page() {
 						<?php
 						foreach ( $accesspresslite_catlist as $single_cat ) :
 							$label = $single_cat['label']; ?>
-							<option value="<?php esc_attr_e($single_cat['value']) ?>" <?php selected( $single_cat['value'] , $settings['slider_cat'] )  ?>><?php esc_attr_e($label); ?></option>
+							<option value="<?php echo esc_attr($single_cat['value']) ?>" <?php selected( $single_cat['value'] , $settings['slider_cat'] )  ?>><?php echo esc_attr($label); ?></option>
 						<?php
 						endforeach;
 						?>
@@ -762,8 +762,8 @@ function accesspresslite_theme_options_page() {
 					<tr><th scope="row"><?php _e('Show Slider','accesspresslite'); ?></th>
 					<td>
 					<?php foreach( $accesspresslite_slider as $slider ) : ?>
-					<input type="radio" id="<?php esc_attr_e($slider['value']); ?>" name="accesspresslite_options[show_slider]" value="<?php esc_attr_e($slider['value']); ?>" <?php checked( $settings['show_slider'], $slider['value'] ); ?> />
-					<label for="<?php esc_attr_e($slider['value']); ?>"><?php esc_attr_e($slider['label']); ?></label><br />
+					<input type="radio" id="<?php echo esc_attr($slider['value']); ?>" name="accesspresslite_options[show_slider]" value="<?php echo esc_attr($slider['value']); ?>" <?php checked( $settings['show_slider'], $slider['value'] ); ?> />
+					<label for="<?php echo esc_attr($slider['value']); ?>"><?php echo esc_attr($slider['label']); ?></label><br />
 					<?php endforeach; ?>
 					</td>
 					</tr>
@@ -771,8 +771,8 @@ function accesspresslite_theme_options_page() {
 					<tr><th scope="row"><?php _e('Show Slider Pager (Navigation dots)','accesspresslite'); ?></th>
 					<td>
 					<?php foreach( $accesspresslite_slider_show_pager as $slider_pager ) : ?>
-					<input type="radio" id="<?php esc_attr_e($slider_pager['value']); ?>" name="accesspresslite_options[slider_show_pager]" value="<?php esc_attr_e($slider_pager['value']); ?>" <?php checked( $settings['slider_show_pager'], $slider_pager['value'] ); ?> />
-					<label for="<?php esc_attr_e($slider_pager['value']); ?>"><?php esc_attr_e($slider_pager['label']); ?></label><br />
+					<input type="radio" id="<?php echo esc_attr($slider_pager['value']); ?>" name="accesspresslite_options[slider_show_pager]" value="<?php echo esc_attr($slider_pager['value']); ?>" <?php checked( $settings['slider_show_pager'], $slider_pager['value'] ); ?> />
+					<label for="<?php echo esc_attr($slider_pager['value']); ?>"><?php echo esc_attr($slider_pager['label']); ?></label><br />
 					<?php endforeach; ?>
 					</td>
 					</tr>
@@ -780,8 +780,8 @@ function accesspresslite_theme_options_page() {
 					<tr><th scope="row"><?php _e('Show Slider Controls (Arrows)','accesspresslite'); ?></th>
 					<td>
 					<?php foreach( $accesspresslite_slider_show_controls as $slider_controls ) : ?>
-					<input type="radio" id="<?php esc_attr_e($slider_controls['value']); ?>" name="accesspresslite_options[slider_show_controls]" value="<?php esc_attr_e($slider_controls['value']); ?>" <?php checked( $settings['slider_show_controls'], $slider_controls['value'] ); ?> />
-					<label for="<?php esc_attr_e($slider_controls['value']); ?>"><?php esc_attr_e($slider_controls['label']); ?></label><br />
+					<input type="radio" id="<?php echo esc_attr($slider_controls['value']); ?>" name="accesspresslite_options[slider_show_controls]" value="<?php echo esc_attr($slider_controls['value']); ?>" <?php checked( $settings['slider_show_controls'], $slider_controls['value'] ); ?> />
+					<label for="<?php echo esc_attr($slider_controls['value']); ?>"><?php echo esc_attr($slider_controls['label']); ?></label><br />
 					<?php endforeach; ?>
 					</td>
 					</tr>
@@ -789,8 +789,8 @@ function accesspresslite_theme_options_page() {
 					<tr><th scope="row"><?php _e('Slider Transition - fade/slide','accesspresslite'); ?></th>
 					<td>
 					<?php foreach( $accesspresslite_slider_mode as $slider_modes) : ?>
-					<input type="radio" id="<?php echo $slider_modes['value']; ?>" name="accesspresslite_options[slider_mode]" value="<?php esc_attr_e($slider_modes['value']); ?>" <?php checked( $settings['slider_mode'], $slider_modes['value'] ); ?> />
-					<label for="<?php esc_attr_e($slider_modes['value']); ?>"><?php esc_attr_e($slider_modes['label']); ?></label><br />
+					<input type="radio" id="<?php echo $slider_modes['value']; ?>" name="accesspresslite_options[slider_mode]" value="<?php echo esc_attr($slider_modes['value']); ?>" <?php checked( $settings['slider_mode'], $slider_modes['value'] ); ?> />
+					<label for="<?php echo esc_attr($slider_modes['value']); ?>"><?php echo esc_attr($slider_modes['label']); ?></label><br />
 					<?php endforeach; ?>
 					</td>
 					</tr>
@@ -798,29 +798,29 @@ function accesspresslite_theme_options_page() {
 					<tr><th scope="row"><?php _e('Slider auto Transition','accesspresslite'); ?></th>
 					<td>
 					<?php foreach( $accesspresslite_slider_auto as $slider_autos) : ?>
-					<input type="radio" id="<?php esc_attr_e($slider_autos['value']); ?>" name="accesspresslite_options[slider_auto]" value="<?php esc_attr_e($slider_autos['value']); ?>" <?php checked( $settings['slider_auto'], $slider_autos['value'] ); ?> />
-					<label for="<?php esc_attr_e($slider_autos['value']); ?>"><?php esc_attr_e($slider_autos['label']); ?></label><br />
+					<input type="radio" id="<?php echo esc_attr($slider_autos['value']); ?>" name="accesspresslite_options[slider_auto]" value="<?php echo esc_attr($slider_autos['value']); ?>" <?php checked( $settings['slider_auto'], $slider_autos['value'] ); ?> />
+					<label for="<?php echo esc_attr($slider_autos['value']); ?>"><?php echo esc_attr($slider_autos['label']); ?></label><br />
 					<?php endforeach; ?>
 					</td>
 					</tr>
 
 					<tr><th scope="row"><?php _e('Slider Speed','accesspresslite'); ?></th>
 					<td>
-					<input id="slider_speed" name="accesspresslite_options[slider_speed]" type="text" value="<?php esc_attr_e($settings['slider_speed']); ?>" />
+					<input id="slider_speed" name="accesspresslite_options[slider_speed]" type="text" value="<?php echo esc_attr($settings['slider_speed']); ?>" />
 					</td>
 					</tr>
 
 					<tr><th scope="row"><?php _e('Slider Pause','accesspresslite'); ?></th>
 					<td>
-					<input id="slider_pause" name="accesspresslite_options[slider_pause]" type="text" value="<?php esc_attr_e($settings['slider_pause']); ?>" />
+					<input id="slider_pause" name="accesspresslite_options[slider_pause]" type="text" value="<?php echo esc_attr($settings['slider_pause']); ?>" />
 					</td>
 					</tr>
 
 					<tr><th scope="row"><?php _e('Show Slider Captions','accesspresslite'); ?></th>
 					<td>
 					<?php foreach( $accesspresslite_slider_caption as $slider_captions) : ?>
-					<input type="radio" id="<?php esc_attr_e($slider_captions['value']); ?>" name="accesspresslite_options[slider_caption]" value="<?php esc_attr_e($slider_captions['value']); ?>" <?php checked( $settings['slider_caption'], $slider_captions['value'] ); ?> />
-					<label for="<?php esc_attr_e($slider_captions['value']); ?>"><?php esc_attr_e($slider_captions['label']); ?></label><br />
+					<input type="radio" id="<?php echo esc_attr($slider_captions['value']); ?>" name="accesspresslite_options[slider_caption]" value="<?php echo esc_attr($slider_captions['value']); ?>" <?php checked( $settings['slider_caption'], $slider_captions['value'] ); ?> />
+					<label for="<?php echo esc_attr($slider_captions['value']); ?>"><?php echo esc_attr($slider_captions['label']); ?></label><br />
 					<?php endforeach; ?>
 					</td>
 					</tr>
@@ -889,7 +889,7 @@ function accesspresslite_theme_options_page() {
 				<tbody>
 					<tr>
 						<td colspan="2"><?php _e('View All Text','accesspresslite'); ?>&nbsp;&nbsp;
-						<input type="text" name="accesspresslite_options[view_all_text]" value="<?php if (isset($settings['view_all_text'])){ esc_attr_e($settings['view_all_text']); } ?>" />&nbsp;&nbsp;<em class="f13"><?php _e('Leave blank if you don\'t want to show View All Text','accesspresslite'); ?></em></td>
+						<input type="text" name="accesspresslite_options[view_all_text]" value="<?php if (isset($settings['view_all_text'])){ echo esc_attr($settings['view_all_text']); } ?>" />&nbsp;&nbsp;<em class="f13"><?php _e('Leave blank if you don\'t want to show View All Text','accesspresslite'); ?></em></td>
 					</tr>
 				</tbody>
 				</table>
@@ -987,19 +987,19 @@ function accesspresslite_theme_options_page() {
 
 					<tr><th scope="row"><label for="accesspresslite_skype">Skype</label></th>
 					<td>
-					<input id="accesspresslite_skype" name="accesspresslite_options[accesspresslite_skype]" type="text" value="<?php esc_attr_e($settings['accesspresslite_skype']); ?>" />
+					<input id="accesspresslite_skype" name="accesspresslite_options[accesspresslite_skype]" type="text" value="<?php echo esc_attr($settings['accesspresslite_skype']); ?>" />
 					</td>
 					</tr>
 
 					<tr><th scope="row"><label for="accesspresslite_skype">Tumblr</label></th>
 					<td>
-					<input id="accesspresslite_tumblr" name="accesspresslite_options[accesspresslite_tumblr]" type="text" value="<?php esc_attr_e($settings['accesspresslite_tumblr']); ?>" />
+					<input id="accesspresslite_tumblr" name="accesspresslite_options[accesspresslite_tumblr]" type="text" value="<?php echo esc_attr($settings['accesspresslite_tumblr']); ?>" />
 					</td>
 					</tr>
 
 					<tr><th scope="row"><label for="accesspresslite_skype">Myspace</label></th>
 					<td>
-					<input id="accesspresslite_myspace" name="accesspresslite_options[accesspresslite_myspace]" type="text" value="<?php esc_attr_e($settings['accesspresslite_myspace']); ?>" />
+					<input id="accesspresslite_myspace" name="accesspresslite_options[accesspresslite_myspace]" type="text" value="<?php echo esc_attr($settings['accesspresslite_myspace']); ?>" />
 					</td>
 					</tr>
 

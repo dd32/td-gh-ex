@@ -404,13 +404,13 @@ function accesspresslite_bxslidercb(){
         jQuery(function(){
 			jQuery('.bx-slider').bxSlider({
 				adaptiveHeight:true,
-				pager:<?php esc_attr_e($a); ?>,
-				controls:<?php esc_attr_e($b); ?>,
-				mode:'<?php esc_attr_e($c); ?>',
-				auto :<?php esc_attr_e($d); ?>,
-				pause: '<?php esc_attr_e($e); ?>',
+				pager:<?php echo esc_attr($a); ?>,
+				controls:<?php echo esc_attr($b); ?>,
+				mode:'<?php echo esc_attr($c); ?>',
+				auto :<?php echo esc_attr($d); ?>,
+				pause: '<?php echo esc_attr($e); ?>',
 				<?php if($accesspresslite_settings['slider_speed']) {?>
-				speed:'<?php esc_attr_e($accesspresslite_settings['slider_speed']); ?>'
+				speed:'<?php echo esc_attr($accesspresslite_settings['slider_speed']); ?>'
 				<?php } ?>
 			});
 		});
@@ -491,13 +491,13 @@ function accesspresslite_bxslidercb(){
     	<script type="text/javascript">
         jQuery(function(){
 			jQuery('.bx-slider').bxSlider({
-				pager:<?php esc_attr_e($a); ?>,
-				controls:<?php esc_attr_e($b); ?>,
-				mode:'<?php esc_attr_e($c); ?>',
-				auto :<?php esc_attr_e($d); ?>,
-				pause: '<?php esc_attr_e($e); ?>',
+				pager:<?php echo esc_attr($a); ?>,
+				controls:<?php echo esc_attr($b); ?>,
+				mode:'<?php echo esc_attr($c); ?>',
+				auto :<?php echo esc_attr($d); ?>,
+				pause: '<?php echo esc_attr($e); ?>',
 				<?php if($accesspresslite_settings['slider_speed']) {?>
-				speed:'<?php esc_attr_e($accesspresslite_settings['slider_speed']); ?>'
+				speed:'<?php echo esc_attr($accesspresslite_settings['slider_speed']); ?>'
 				<?php } ?>
 			});
 		});
@@ -579,7 +579,7 @@ function accesspresslite_call_to_action_cb(){
 	<section id="call-to-action">
 	<div class="ak-container">
 		<h4><?php echo $accesspresslite_settings['action_text']; ?></h4>
-		<a class="action-btn" href="<?php echo esc_url($accesspresslite_settings['action_btn_link']); ?>"><?php esc_attr_e($accesspresslite_settings['action_btn_text']); ?></a>
+		<a class="action-btn" href="<?php echo esc_url($accesspresslite_settings['action_btn_link']); ?>"><?php echo esc_attr($accesspresslite_settings['action_btn_text']); ?></a>
 	</div>
 	</section>
 	<?php
