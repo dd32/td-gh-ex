@@ -46,6 +46,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.2.7 =
+* Italian language file added. Thanks to Mr. Davide Doliana for providing the language files.
+
 = Version 1.2.6 =
 * Added latest version of genericons(3.3).
 * JQuery Cycle js updated to latest version(3.0.3).
