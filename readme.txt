@@ -15,30 +15,29 @@ Install Steps:
 ------------------------------------------
 
 JS Files
-    HTML5-Shiv: MIT and GPL licenses
+    HTML5-Shiv, maintained by Alexander Farkas, Jonathan Neal and Paul Irish, with many contributions from John-David Dalton: MIT and GPL licenses
     https://code.google.com/p/html5shiv/
     
-    bxSlider: WTFPL and MIT license
+    bxSlider, by Steven Wanderski: WTFPL and MIT license: WTFPL and MIT license
     https://github.com/stevenwanderski/bxslider-4
 	
-	HoverIntent: 
-	https://github.com/briancherne/jquery-hoverIntent
-	
-	Superfish: MIT and GPL licenses
+	Superfish,  jQuery menu plugin by Joel Birch MIT and GPL licenses
 	http://www.opensource.org/licenses/mit-license.php
 
 
 -------------------------------------------
 Fonts
-    Font Awesome: MIT and GPL licenses
+    Font Awesome, maintained by Dave Gandy: SIL OFL 1.1
     http://fontawesome.io/license/
     
-    Lato: 
+    Lato, by Warsaw-based designer Lukasz Dziedzic: SIL Open Font License, 1.1  
     https://www.google.com/fonts/specimen/Lato
-    License: SIL Open Font License, 1.1
 
 -------------------------------------------
 Images
+    http://pixabay.com/en/macbook-laptop-ipad-apple-computer-624707/
+    http://pixabay.com/en/apple-pie-woman-holding-pie-fall-635241/
+    http://pixabay.com/en/seo-search-engines-optimization-592747/
    
 ---------------------------------------------
 

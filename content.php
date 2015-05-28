@@ -72,7 +72,7 @@
                 <?php if(empty($blog_readmore_text)) : ?>
                     <?php _e('Read More...','accesspress-basic'); ?>
                 <?php else : ?>
-                    <?php echo $blog_readmore_text; ?>
+                    <?php echo esc_attr($blog_readmore_text); ?>
                 <?php endif; ?>
             </a></span>
         <?php endif; ?>

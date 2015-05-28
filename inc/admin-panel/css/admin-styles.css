@@ -266,7 +266,13 @@
 	color: #FFF;
 	margin-bottom: 20px;
 	position: relative;
+    padding-bottom: 20px;
+}
+
+.ak-socials h3{
+    color: white;
     padding-bottom: 0px;
+    margin-bottom: 4px;
 }
 
 .accesspress_pro-logo{ 

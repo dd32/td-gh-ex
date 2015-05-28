@@ -77,10 +77,10 @@ class Accesspress_Basic_Toggle_Widget extends WP_Widget {
         <?php if(!empty($toggle_title)) : ?>
             <div class="ap_toggle <?php echo $toggle_status; ?>">
                 <?php if(!empty($toggle_title)) : ?>
-                    <div class="ap_toggle_title"><?php echo $toggle_title; ?></div>           
+                    <div class="ap_toggle_title"><?php echo esc_attr($toggle_title); ?></div>           
                 <?php endif; ?>
                 <?php if(!empty($toggle_content)) : ?>   
-                    <div class="ap_toggle_content"><?php echo $toggle_content; ?></div>
+                    <div class="ap_toggle_content"><?php echo esc_textarea($toggle_content); ?></div>
                 <?php endif; ?>
             </div>
         <?php endif; ?>

@@ -87,23 +87,23 @@ class Accesspress_Basic_Icon_Text_Widget extends WP_Widget {
                 <div class="icon-text-wrap">
                 
                     <?php if(empty($icon_fa_class)) : $icon_fa_class = 'fa-globe'; endif; ?>
-                    <a href="<?php echo $icon_readmore_link; ?>" class="icon-image">
-                        <i class="fa <?php echo $icon_fa_class; ?>"></i>                                            
+                    <a href="<?php echo esc_url($icon_readmore_link); ?>" class="icon-image">
+                        <i class="fa <?php echo esc_attr($icon_fa_class); ?>"></i>                                            
                     </a>
                     
                     <?php if(!empty($icon_title)) : ?>
-                    <a href="<?php echo $icon_readmore_link; ?>">
-                    <h5 class="icon-block-title"><?php echo $icon_title; ?></h5>
+                    <a href="<?php echo esc_url($icon_readmore_link); ?>">
+                    <h5 class="icon-block-title"><?php echo esc_attr($icon_title); ?></h5>
                     </a>
                     <?php endif; ?>
                     
                     <?php if(!empty($icon_detail)) : ?>
                     <div class="icon-details">
-                        <?php echo $icon_detail; ?>
+                        <?php echo esc_textarea($icon_detail); ?>
                     </div>
                     <?php endif; ?>
                     <?php if(!empty($icon_readmore_link) && !empty($icon_readmore_text)) : ?>
-                        <a class="icon_readmore-button readmore-button" href="<?php echo $icon_readmore_link; ?>" target="_blank"><?php echo $icon_readmore_text; ?></a>
+                        <a class="icon_readmore-button readmore-button" href="<?php echo esc_url($icon_readmore_link); ?>" target="_blank"><?php echo esc_attr($icon_readmore_text); ?></a>
                     <?php endif; ?>
                 </div>
             <?php endif; ?>

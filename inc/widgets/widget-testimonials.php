@@ -70,7 +70,7 @@ class Accesspress_Basic_Testimonial_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		extract( $args );
         extract($instance);
-        $img_id = accesspress_basic_get_attachment_id_from_url($client_image);
+        $img_id = attachment_url_to_postid($client_image);
         $image = wp_get_attachment_image_src($img_id,'accesspress-basic-testimonial-thumbnail');
         
         echo $before_widget;
@@ -84,11 +84,11 @@ class Accesspress_Basic_Testimonial_Widget extends WP_Widget {
                                 <img src="<?php echo get_template_directory_uri().'/images/no-testimonial-thumbnail.png'; ?>" />
                             <?php endif; ?>
                         </div>
-                        <span class="client-name"><?php echo $client_name; ?></span>
-                        <span class="client-designation"><?php echo $client_designation; ?></span>                            
+                        <span class="client-name"><?php echo esc_attr($client_name); ?></span>
+                        <span class="client-designation"><?php echo esc_attr($client_designation); ?></span>                            
                     </figure>
                     <div class="testimonial">
-                        <?php echo $client_testimonial; ?>
+                        <?php echo esc_textarea($client_testimonial); ?>
                     </div>
                 </div>
             <?php

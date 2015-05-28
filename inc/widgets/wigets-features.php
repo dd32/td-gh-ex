@@ -131,7 +131,7 @@ class Accesspress_Basic_Features_Widget extends WP_Widget {
                             <?php if(empty($features_readmore_text)) : ?>
                                 <?php _e('Read More...','accesspress-basic'); ?>
                             <?php else : ?>
-                                <?php echo $features_readmore_text; ?>
+                                <?php echo esc_attr($features_readmore_text); ?>
                             <?php endif; ?>
                         </a>
                     </div>

@@ -8,9 +8,9 @@
      $apbasic_settings = get_option('apbasic_options',$apbasic_options);
      
      function accesspress_basic_additional_scripts() {
-    	wp_enqueue_style( 'font-awesome-icons', get_template_directory_uri().'/css/fawesome/css/font-awesome.css' );
-        wp_enqueue_script('custom js', get_template_directory_uri().'/js/custom.js', array('jquery'));
-    	wp_enqueue_script( 'bxslider-js', get_template_directory_uri() . '/js/jquery.bxslider.js', array('jquery') );
+    	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/css/fawesome/css/font-awesome.css' );
+        wp_enqueue_script('accesspress-basic-custom-js', get_template_directory_uri().'/js/custom.js', array('jquery'));
+    	wp_enqueue_script( 'jquery-bxslider-js', get_template_directory_uri() . '/js/jquery.bxslider.js', array('jquery') );
     }
     add_action( 'wp_enqueue_scripts', 'accesspress_basic_additional_scripts' );
     

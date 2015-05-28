@@ -118,7 +118,7 @@ class Accesspress_Basic_Services_Widget extends WP_Widget {
                             <?php if(empty($services_readmore_text)) : ?>
                                 <?php _e('More Info...','accesspress-basic'); ?>
                             <?php else : ?>
-                                <?php echo $services_readmore_text; ?>
+                                <?php echo esc_attr($services_readmore_text); ?>
                             <?php endif; ?>
                         </a>
                     </div>

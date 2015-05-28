@@ -84,16 +84,16 @@ class Accesspress_Basic_Cta_Widget extends WP_Widget {
 	                <div class="ap-container">
 	                	<div class="cta-desc-wrap">
                         <h2 class="cta_title">
-                            <?php echo $cta_title; ?>
+                            <?php echo esc_attr($cta_title); ?>
                         </h2>
                         <div class="cta_descr">
-                            <?php echo $cta_descr; ?>
+                            <?php echo esc_textarea($cta_descr); ?>
                         </div>
                     	</div>
                         <div class="cta-btn-wrap">
-                        	<a href="<?php echo $cta_readmore_link; ?>" target="_blank">
+                        	<a href="<?php echo esc_url($cta_readmore_link); ?>" target="_blank">
                                 <?php if(!empty($cta_fa_icon)) : ?>
-                                    <i class="fa <?php echo $cta_fa_icon; ?>"></i><?php echo $cta_readmore_text; ?>
+                                    <i class="fa <?php echo esc_attr($cta_fa_icon); ?>"></i><?php echo esc_attr($cta_readmore_text); ?>
                                 <?php endif; ?>
                             </a>
                    	 	</div>

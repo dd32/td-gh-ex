@@ -47,13 +47,16 @@
             <div class="ap-container clearfix">
                 <div class="copyright-info">
                     Copyright &copy; <?php the_date( 'Y' ); ?> <a href="<?php get_home_url(); ?>">
-                        <?php if(!empty($apbasic_settings['footer_text'])){
-                            echo $apbasic_settings['footer_text'];                              
+                        <?php 
+                        if(!empty($apbasic_settings['footer_text'])){
+                            echo esc_attr__($apbasic_settings['footer_text']);                              
+                        }else{
+                            echo bloginfo('name');
                         }
                         ?>
                     </a>
                     <span class="sep"> | </span>
-                        <a target="_blank" href="<?php echo esc_url( __( 'http://wordpress.org/', 'smp' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'accesspres-basic' ), 'WordPress' ); ?></a>
+                        <a target="_blank" href="<?php echo esc_url( __( 'http://wordpress.org/', 'accesspress-basic' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'accesspres-basic' ), 'WordPress' ); ?></a>
         			<span class="sep"> | </span>
                         <?php _e( 'Theme: ', 'accesspress-basic' ); ?><a href="<?php esc_url('http://www.accesspressthemes.com/'); ?>" target="_blank" rel="designer">AccessPress Basic</a>
                 </div>

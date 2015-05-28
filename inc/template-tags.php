@@ -84,8 +84,8 @@ function accesspress_basic_posted_on() {
     
     global $apbasic_options;
     $apbasic_settings = get_option('apbasic_options',$apbasic_options);
-    $posted_on_text = $apbasic_settings['posted_on_text'];
-    $by_text = $apbasic_settings['by_text'];
+    $posted_on_text = esc_attr($apbasic_settings['posted_on_text']);
+    $by_text = esc_attr($apbasic_settings['by_text']);
     
     $posted_on_custom = $posted_on_text.' '.'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 
@@ -116,8 +116,8 @@ if ( ! function_exists( 'accesspress_basic_entry_footer' ) ) :
 function accesspress_basic_entry_footer() {
     global $apbasic_options;
     $apbasic_settings = get_option('apbasic_options',$apbasic_options);
-    $posted_in_text = $apbasic_settings['posted_in_text'];
-    $tagged_text = $apbasic_settings['tagged_text'];
+    $posted_in_text = esc_attr($apbasic_settings['posted_in_text']);
+    $tagged_text = esc_attr($apbasic_settings['tagged_text']);
     
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {

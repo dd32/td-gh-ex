@@ -68,8 +68,8 @@
     		if( empty( $layout_meta ) ) { $layout_meta = 'default_layout'; }
     		?>
             <div class="pplayout">
-                <img src="<?php echo get_template_directory_uri().'/inc/admin-panel/images/'.$field['img']; ?>" />
-    			<input id="<?php echo $field['value']; ?>" class="post-format" type="radio" name="<?php echo $field['id']; ?>" value="<?php echo $field['value']; ?>" <?php checked( $field['value'], $layout_meta ); ?>/>
+                <img src="<?php echo esc_url(get_template_directory_uri().'/inc/admin-panel/images/'.$field['img']); ?>" />
+    			<input id="<?php echo $field['value']; ?>" class="post-format" type="radio" name="<?php echo $field['id']; ?>" value="<?php echo esc_attr($field['value']); ?>" <?php checked( $field['value'], $layout_meta ); ?>/>
     			<label for="<?php echo $field['value']; ?>" class="post-format-icon"><?php echo $field['label']; ?></label><br/>
             </div>
     		<?php
@@ -105,7 +105,7 @@
         foreach ($accesspress_basic_page_layout as $field) {  
             //Execute this saving function
             $old = get_post_meta( $post_id, $field['id'], true); 
-            $new = $_POST[$field['id']];
+            $new = sanitize_text_field($_POST[$field['id']]);
             
             if ($new && $new != $old) {  
             	update_post_meta($post_id, $field['id'], $new);  

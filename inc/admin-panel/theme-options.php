@@ -5,12 +5,12 @@
         //Header Options
         'header_logo' => '',
         'show_header' => 'header_text_only',
-        'activate_favicon' => 1,
+        'activate_favicon' => 0,
         'favicon' => '',
         'show_search' => 1,
         'show_social_links' => 1,
         'header_text' => 'Call Us: +1-123-123-45-78',
-        'footer_text' => 'AccessPress Themes',
+        'footer_text' => '',
         
         //Design Options
         'site_layout' => 'full_width',
@@ -115,17 +115,14 @@
                       </div>
                     </div>
                 
-                		<div class="ak-socials">
-                    <p><?php _e('Like/Follow us for New Updates','accesspress-basic'); ?></p>
-                      <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FAccessPress-Themes%2F1396595907277967&amp;width&amp;layout=button&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=35&amp;appId=1411139805828592" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:20px; width:50px " allowTransparency="true"></iframe>
-                      &nbsp;&nbsp;
-                      <a href="https://twitter.com/apthemes" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @apthemes</a>
-                      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                    <p>
-                      <a target="_blank" href="<?php echo esc_url('https://accesspressthemes.com/accesspress-basic-documentation/'); ?>"><?php _e('Online Documentation', 'accesspress-basic'); ?></a> | 
-                      <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/support'); ?>"><?php _e('Support Forum', 'accesspress-basic'); ?></a>
-                    </p>
+                	<div class="ak-socials">
+                        <h3>Need Support</h3>
+                        <p>
+                          <a target="_blank" href="<?php echo esc_url('https://accesspressthemes.com/accesspress-basic-documentation/'); ?>"><?php _e('Online Documentation', 'accesspress-basic'); ?></a> | 
+                          <a target="_blank" href="<?php echo esc_url('https://accesspressthemes.com/support/forum/theme-accesspress-basic/'); ?>"><?php _e('Support Forum', 'accesspress-basic'); ?></a>
+                        </p>
                     </div>
+                    
                 	<div class="clear"></div>
                 </div>
                 <?php if(false !== $_REQUEST['settings-updated']) : ?>
@@ -162,8 +159,8 @@
                                     <th><label for="header_logo"><?php _e('Header Logo','accesspress-basic'); ?></label></th>
                                     <td>
                                         <div class="header-logo-upload-section">
-                                            <input id="header_logo" type="text" name="apbasic_options[header_logo]" value="<?php echo $settings['header_logo']; ?>" />
-                                            <input class="button" type="button" name="header_logo_upload_button" id="header_logo_upload_button" value="<?php _e('Upload','accesspress_basic'); ?>" />
+                                            <input id="header_logo" type="text" name="apbasic_options[header_logo]" value="<?php echo esc_url(get_header_image()); ?>" />
+                                            <a href="<?php echo admin_url('/themes.php?page=custom-header'); ?>"><input class="button" type="button" name="header_logo_upload_button" id="header_logo_upload_button" value="<?php _e('Upload','accesspress-basic'); ?>" /></a>
                                             <?php $logo_preview = $settings['header_logo']; ?>
                                             <div class="logo-preview" style="<?php if(empty($logo_preview)){echo "display: none;";} ?>">
                                                 <img src="<?php echo $logo_preview; ?>" />
@@ -197,7 +194,7 @@
                                     <td>
                                         <?php foreach($show_headers as $show_header) : ?>
                                             <div class="radio">
-                                                <input type="radio" name="apbasic_options[show_header]" id="<?php echo $show_header['value']; ?>" value="<?php echo $show_header['value']; ?>" <?php checked($show_header['value'],$settings['show_header']); ?> />
+                                                <input type="radio" name="apbasic_options[show_header]" id="<?php echo $show_header['value']; ?>" value="<?php echo esc_attr($show_header['value']); ?>" <?php checked($show_header['value'],$settings['show_header']); ?> />
                                                 <label for="<?php echo $show_header['value']; ?>"><?php echo $show_header['label']; ?></label><br />
                                             </div>
                                         <?php endforeach; ?>
@@ -206,14 +203,14 @@
                                 <tr>
                                     <th><label for="header_text"><?php _e('Header Text','accesspress-basic'); ?></label></th>
                                     <td>
-                                        <textarea name="apbasic_options[header_text]"><?php echo $settings['header_text']; ?></textarea><br />
+                                        <textarea name="apbasic_options[header_text]"><?php echo esc_attr($settings['header_text']); ?></textarea><br />
                                         <p><?php echo __('Use Contents From Instead','accesspress-basic').'<a target="_blank" href="'.admin_url('widgets.php').'">'.__(' Header Text Widget ','accesspress-basic').'</a>'.__('Instead','accesspress-basic'); ?></p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th><label for="favicon"><?php _e('Favicon','accesspress-basic'); ?></label></th>
                                     <td>
-                                        <input type="text" name="apbasic_options[favicon]" id="favicon" value="<?php echo $settings['favicon']; ?>" />
+                                        <input type="text" name="apbasic_options[favicon]" id="favicon" value="<?php echo esc_url($settings['favicon']); ?>" />
                                         <input type="button" id="favicon_upload_btn" name="favicon_upload_btn" class="button" value="<?php _e('Upload','accesspress-basic'); ?>" />
                                         <?php $favicon = $settings['favicon']; ?>
                                         <div class="favicon_preview" style="<?php if(empty($favicon)){echo "display: none;";} ?>">
@@ -225,7 +222,7 @@
                                 <tr>
                                     <th><label for="ap_footer_text"><?php _e('Footer Text','accesspress-basic'); ?></label></th>
                                     <td>
-                                        <input type="text" name="apbasic_options[footer_text]" id="ap_footer_text" value="<?php echo $settings['footer_text']; ?>" />
+                                        <input type="text" name="apbasic_options[footer_text]" id="ap_footer_text" value="<?php echo esc_attr($settings['footer_text']); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
@@ -262,14 +259,6 @@
                         <div id="options-group-2" class="group">
                             <h3><?php _e('Design Settings','accesspress-basic'); ?></h3>
                             <table class="form-table">
-                                <?php /*
-                                <tr>
-                                    <th><label for="template_color"><?php _e('Template Color','accesspress-basic'); ?></label></th>
-                                    <td>
-                                        <input type="text" name="apbasic_options[template_color]" class="apbasic-color wp-color-picker" id="template_color" value="<?php echo $settings['template_color']; ?>" />
-                                    </td>
-                                </tr>
-                                */ ?>
                                 <?php
                                     $site_layouts = array(
                                         array(
@@ -287,7 +276,7 @@
                                     <td>
                                         <?php foreach($site_layouts as $site_layout) : ?>
                                             <div class="radio">
-                                                <input class="sel_site_layout" type="radio" id="<?php echo $site_layout['value']; ?>" name="apbasic_options[site_layout]" value="<?php echo $site_layout['value']; ?>" <?php checked($site_layout['value'],$settings['site_layout']); ?> />
+                                                <input class="sel_site_layout" type="radio" id="<?php echo $site_layout['value']; ?>" name="apbasic_options[site_layout]" value="<?php echo esc_attr($site_layout['value']); ?>" <?php checked($site_layout['value'],$settings['site_layout']); ?> />
                                                 <label for="<?php echo $site_layout['value']; ?>"><?php echo $site_layout['label']; ?></label>
                                             </div>
                                         <?php endforeach; ?>
@@ -301,7 +290,7 @@
                                     <td>
                                         <?php foreach($background_image as $pat) : ?>
                                             <div class="pattern-img hide-radio">
-                                                <input type="radio" id="<?php echo $pat; ?>" value="<?php echo $pat; ?>" name="apbasic_options[background_image]" <?php checked($pat,$settings['background_image']); ?> />
+                                                <input type="radio" id="<?php echo $pat; ?>" value="<?php echo esc_attr($pat); ?>" name="apbasic_options[background_image]" <?php checked($pat,$settings['background_image']); ?> />
                                                 <label class="inline-block" for="<?php echo $pat; ?>">
                                                     <img src="<?php echo get_template_directory_uri().'/inc/admin-panel/images/'.$pat.'.png'; ?>" />
                                                 </label>
@@ -351,7 +340,7 @@
                                                 <label for="<?php echo $ap_layout['value']; ?>">
                                                     <img src="<?php echo get_template_directory_uri().'/inc/admin-panel/images/'.$ap_layout['image']; ?>" />
                                                     <div>
-                                                        <input type="radio" name="apbasic_options[default_layout]" id="<?php echo $ap_layout['value']; ?>" value="<?php echo $ap_layout['value']; ?>" <?php checked($ap_layout['value'],$settings['default_layout']); ?> />
+                                                        <input type="radio" name="apbasic_options[default_layout]" id="<?php echo esc_attr($ap_layout['value']); ?>" value="<?php echo $ap_layout['value']; ?>" <?php checked($ap_layout['value'],$settings['default_layout']); ?> />
                                                         <label><?php echo $ap_layout['label']; ?></label>
                                                     </div>
                                                 </label>
@@ -401,7 +390,7 @@
                                                 <label>
                                                     <img src="<?php echo get_template_directory_uri().'/inc/admin-panel/images/'.$ap_layout['image']; ?>" />
                                                     <div>
-                                                        <input type="radio" id="<?php echo $ap_layout['id']; ?>" name="apbasic_options[default_page_layout]" value="<?php echo $ap_layout['value']; ?>" <?php checked($ap_layout['value'],$settings['default_page_layout']); ?> />
+                                                        <input type="radio" id="<?php echo $ap_layout['id']; ?>" name="apbasic_options[default_page_layout]" value="<?php echo esc_attr($ap_layout['value']); ?>" <?php checked($ap_layout['value'],$settings['default_page_layout']); ?> />
                                                         <label for="<?php echo $ap_layout['id']; ?>"><?php echo $ap_layout['label']; ?></label>
                                                     </div> 
                                                 </label>
@@ -451,7 +440,7 @@
                                                 <label>
                                                     <img src="<?php echo get_template_directory_uri().'/inc/admin-panel/images/'.$ap_layout['image']; ?>" />
                                                     <div>
-                                                        <input type="radio" name="apbasic_options[default_post_layout]" id="<?php echo $ap_layout['id']; ?>" value="<?php echo $ap_layout['value']; ?>" <?php checked($ap_layout['value'],$settings['default_post_layout']); ?> />
+                                                        <input type="radio" name="apbasic_options[default_post_layout]" id="<?php echo $ap_layout['id']; ?>" value="<?php echo esc_attr($ap_layout['value']); ?>" <?php checked($ap_layout['value'],$settings['default_post_layout']); ?> />
                                                         <label for="<?php $ap_layout['id']; ?>"><?php echo $ap_layout['label']; ?></label>
                                                     </div>
                                                 </label>
@@ -484,7 +473,7 @@
                                     <td>
                                         <?php foreach($blog_displays as $display) : ?>
                                             <div class="radio">
-                                                <input type="radio" name="apbasic_options[blog_post_display_type]" id="<?php echo $display['value']; ?>" value="<?php echo $display['value']; ?>" <?php checked($display['value'],$settings['blog_post_display_type']); ?> />
+                                                <input type="radio" name="apbasic_options[blog_post_display_type]" id="<?php echo $display['value']; ?>" value="<?php echo esc_attr($display['value']); ?>" <?php checked($display['value'],$settings['blog_post_display_type']); ?> />
                                                 <label for="<?php echo $display['value']; ?>"><?php echo $display['label']; ?></label><br />
                                             </div>
                                         <?php endforeach; ?>
@@ -541,7 +530,7 @@
                                     <td>
                                         <?php foreach($show_sliders as $show_slider) : ?>
                                             <div class="radio">
-                                                <input id="<?php echo $show_slider['value']; ?>" type="radio" name="apbasic_options[show_slider]" value="<?php echo $show_slider['value']; ?>" <?php checked($show_slider['value'],$settings['show_slider']); ?> />
+                                                <input id="<?php echo $show_slider['value']; ?>" type="radio" name="apbasic_options[show_slider]" value="<?php echo esc_attr($show_slider['value']); ?>" <?php checked($show_slider['value'],$settings['show_slider']); ?> />
                                                 <label for="<?php echo $show_slider['value']; ?>"><?php echo $show_slider['label']; ?></label>
                                             </div>
                                         <?php endforeach; ?>
@@ -573,7 +562,7 @@
                                     <td>
                                         <?php foreach($modes as $mode) : ?>
                                             <div class="radio">
-                                                <input id="<?php echo $mode['value']; ?>" type="radio" name="apbasic_options[slider_mode]" value="<?php echo $mode['value']; ?>" <?php checked($mode['value'],$settings['slider_mode']); ?> />
+                                                <input id="<?php echo $mode['value']; ?>" type="radio" name="apbasic_options[slider_mode]" value="<?php echo esc_attr($mode['value']); ?>" <?php checked($mode['value'],$settings['slider_mode']); ?> />
                                                 <label for="<?php echo $mode['value']; ?>"><?php echo $mode['label']; ?></label>
                                             </div>
                                         <?php endforeach; ?>
@@ -583,7 +572,7 @@
                                 <tr>
                                     <th><label for="<?php echo 'slide'.$i; ?>"><?php echo 'Slide-'.$i; ?></label></th>
                                     <td>
-                                        <input class="slide-image-url" id="<?php echo 'slide'.$i; ?>" type="text" name="apbasic_options[slide<?php echo $i; ?>]" value="<?php echo $settings['slide'.$i]; ?>" />
+                                        <input class="slide-image-url" id="<?php echo 'slide'.$i; ?>" type="text" name="apbasic_options[slide<?php echo $i; ?>]" value="<?php echo esc_url($settings['slide'.$i]); ?>" />
                                         <input type="button" class="button slide-upload-button" id="slide<?php echo $i; ?>_upload_btn" name="slide<?php echo $i; ?>_upload_btn" value="<?php _e('Upload','accesspress-basic'); ?>" />
                                         <?php $slide_preview = $settings['slide'.$i]; ?>
                                         
@@ -596,31 +585,31 @@
                                 <tr>
                                     <th><label for="<?php echo 'slide'.$i.'_title'; ?>"><?php echo 'Slide-'.$i.__(' Title','accesspress-basic'); ?></label></th>
                                     <td>
-                                        <input type="text" name="apbasic_options[slide<?php echo $i; ?>_title]" id="<?php echo 'slide'.$i.'_title'; ?>" value="<?php echo $settings['slide'.$i.'_title']; ?>" />
+                                        <input type="text" name="apbasic_options[slide<?php echo $i; ?>_title]" id="<?php echo 'slide'.$i.'_title'; ?>" value="<?php echo esc_attr($settings['slide'.$i.'_title']); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <th><label for="<?php echo 'slide'.$i.'_description'; ?>"><?php echo 'Slide-'.$i.__(' Description','accesspress-basic'); ?></label></th>
                                     <td>
-                                        <textarea name="apbasic_options[<?php echo 'slide'.$i.'_description'; ?>]" id="<?php echo 'slide'.$i.'_description'; ?>" rows="6" cols="35"><?php if(isset($settings['slide'.$i.'_description'])){echo $settings['slide'.$i.'_description'];} ?></textarea>
+                                        <textarea name="apbasic_options[<?php echo 'slide'.$i.'_description'; ?>]" id="<?php echo 'slide'.$i.'_description'; ?>" rows="6" cols="35"><?php if(isset($settings['slide'.$i.'_description'])){echo esc_textarea($settings['slide'.$i.'_description']);} ?></textarea>
                                     </td>
                                 </tr>    
                                 <tr>
                                     <th><label for="<?php echo 'slide'.$i.'_readmore_text'; ?>"><?php echo 'Slide-'.$i.__(' Read More Text','accesspress-basic'); ?></label></th>
                                     <td>
-                                        <input type="text" name="apbasic_options[slide<?php echo $i; ?>_readmore_text]" id="<?php echo 'slide'.$i.'_readmore_text'; ?>" value="<?php echo $settings['slide'.$i.'_readmore_text']; ?>" />
+                                        <input type="text" name="apbasic_options[slide<?php echo $i; ?>_readmore_text]" id="<?php echo 'slide'.$i.'_readmore_text'; ?>" value="<?php echo esc_attr($settings['slide'.$i.'_readmore_text']); ?>" />
                                     </td> 
                                 </tr>
                                 <tr>
                                     <th><label for="<?php echo 'slide'.$i.'_readmore_link'; ?>"><?php echo 'Slide-'.$i.__(' Read More Link','accesspress-basic'); ?></label></th>
                                     <td>
-                                        <input type="text" name="apbasic_options[slide<?php echo $i; ?>_readmore_link]" id="<?php echo 'slide'.$i.'_readmore_link'; ?>" value="<?php echo $settings['slide'.$i.'_readmore_link']; ?>" />
+                                        <input type="text" name="apbasic_options[slide<?php echo $i; ?>_readmore_link]" id="<?php echo 'slide'.$i.'_readmore_link'; ?>" value="<?php echo esc_url($settings['slide'.$i.'_readmore_link']); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <th><label for="<?php echo 'slide'.$i.'_readmore_button_icon'; ?>"><?php echo 'Slide-'.$i.__(' Read More Button Icon','accesspress-basic'); ?></label></th>
                                     <td>
-                                        <input type="text" name="apbasic_options[slide<?php echo $i; ?>_readmore_button_icon]" id="<?php echo 'slide'.$i.'_readmore_button_icon'; ?>" value="<?php echo $settings['slide'.$i.'_readmore_button_icon']; ?>" />
+                                        <input type="text" name="apbasic_options[slide<?php echo $i; ?>_readmore_button_icon]" id="<?php echo 'slide'.$i.'_readmore_button_icon'; ?>" value="<?php echo esc_attr($settings['slide'.$i.'_readmore_button_icon']); ?>" />
                                         <em>e.g. fa-train ref link: <a href="<?php esc_url('http://fortawesome.github.io/Font-Awesome/icons/'); ?>" target="_blank"><?php _e('Get Fa-Icon','accesspress-basic'); ?></a></em>
                                     </td>
                                 </tr>    
@@ -638,11 +627,11 @@
                                     <td>
                                         <div class="trans-row">
                                             <label><?php _e('Read More... (Features)','accesspress-basic'); ?></label>
-                                            <span><input type="text" name="apbasic_options[features_readmore_text]" value="<?php echo $settings['features_readmore_text']; ?>" /></span>
+                                            <span><input type="text" name="apbasic_options[features_readmore_text]" value="<?php echo esc_attr($settings['features_readmore_text']); ?>" /></span>
                                         </div>
                                         <div class="trans-row">
                                             <label><?php _e('More Info... (Services)','accesspress-basic'); ?></label>
-                                            <span><input type="text" name="apbasic_options[services_readmore_text]" value="<?php echo $settings['services_readmore_text']; ?>" /></span>
+                                            <span><input type="text" name="apbasic_options[services_readmore_text]" value="<?php echo esc_attr($settings['services_readmore_text']); ?>" /></span>
                                         </div>
                                     </td>
                                 </tr>
@@ -653,7 +642,7 @@
                                     <td>
                                         <div class="trans-row">
                                             <label><?php _e('Read More...','accesspress-basic'); ?></label>
-                                            <span><input type="text" name="apbasic_options[blog_readmore_text]" value="<?php echo $settings['blog_readmore_text']; ?>" /></span>
+                                            <span><input type="text" name="apbasic_options[blog_readmore_text]" value="<?php echo esc_attr($settings['blog_readmore_text']); ?>" /></span>
                                         </div>
                                     </td>
                                 </tr>
@@ -664,20 +653,20 @@
                                     <td class="single-post-page clearfix">
                                         <div class="trans-row clearfix">
                                             <label><?php _e('Tagged','accesspress-basic'); ?></label>
-                                            <span><input type="text" name="apbasic_options[tagged_text]" value="<?php echo $settings['tagged_text']; ?>" /></span>
+                                            <span><input type="text" name="apbasic_options[tagged_text]" value="<?php echo esc_attr($settings['tagged_text']); ?>" /></span>
                                         </div>
                                         <div class="trans-row clearfix">
                                             <label><?php _e('Posted On .. by ..','accesspress-basic'); ?></label>
                                             <span>
-                                                <input class="posted_on_text" type="text" name="apbasic_options[posted_on_text]" value="<?php echo $settings['posted_on_text']; ?>" placeholder="Posted On" />
+                                                <input class="posted_on_text" type="text" name="apbasic_options[posted_on_text]" value="<?php echo esc_attr($settings['posted_on_text']); ?>" placeholder="Posted On" />
                                                 <em><?php _e('Jan, 1, 2015','accesspress-basic'); ?></em>
-                                                <input class="by_text" type="text" name="apbasic_options[by_text]" value="<?php echo $settings['by_text']; ?>" placeholder="by" />
+                                                <input class="by_text" type="text" name="apbasic_options[by_text]" value="<?php echo esc_attr($settings['by_text']); ?>" placeholder="by" />
                                                 <em><?php _e('Dummy User','accesspress-basic'); ?></em>
                                             </span>
                                         </div>
                                         <div class="trans-row clearfix">
                                             <label><?php _e('Posted In','accesspress-basic'); ?></label>
-                                            <span><input type="text" name="apbasic_options[posted_in_text]" value="<?php echo $settings['posted_in_text']; ?>" /></span>
+                                            <span><input type="text" name="apbasic_options[posted_in_text]" value="<?php echo esc_attr($settings['posted_in_text']); ?>" /></span>
                                         </div>
                                     </td>
                                 </tr> 
@@ -688,7 +677,7 @@
                                     <td>       
                                         <div class="trans-row">
                                             <label><?php _e('Search Results For','accesspress-basic'); ?></label>
-                                            <span><input type="text" name="apbasic_options[search_results_for_text]" value="<?php echo $settings['search_results_for_text']; ?>" /></span>
+                                            <span><input type="text" name="apbasic_options[search_results_for_text]" value="<?php echo esc_attr($settings['search_results_for_text']); ?>" /></span>
                                         </div>
                                         
                                     </td>
@@ -730,16 +719,6 @@
             						<?php _e('Support:','accesspress-basic'); ?> <a href="mailto:<?php echo esc_url('support@accesspressthemes.com'); ?>">support@accesspressthemes.com</a><br/>
             						</p>
             						</div>
-                                    
-                                    <div>
-            						<h4><?php _e('Get social','accesspress-basic'); ?></h4>
-            
-            						<p><?php _e('Get connected with us on social media. It is the best place to find updates on our themes/plugins:','accesspress-basic'); ?></p>
-            
-            						<a title="Facebook" target="_blank" href="https://www.facebook.com/pages/AccessPress-Themes/1396595907277967"><img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/facebook.png"></a>
-            						<a target="_blank" title="Twitter" href="https://twitter.com/apthemes"><img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/twitter.png"></a>
-            						<a target="_blank" title="Youtube" href="https://www.youtube.com/user/accesspressthemes"><img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/youtube.png"></i></a>
-                                    </div>
             						</td>
             					</tr>
             				</table>
@@ -775,134 +754,142 @@
             )
         );
         
+        $apbasic_inputs = array();
+        
         // BASIC SETTINGS
         if(isset($input['header_logo'])){
-            $input['header_logo'] = esc_url_raw($input['header_logo']);
+            $apbasic_inputs['header_logo'] = esc_url_raw($input['header_logo']);
         }
         
-        $input['show_header'] = sanitize_text_field($input['show_header']);
+        $apbasic_inputs['show_header'] = sanitize_text_field($input['show_header']);
         
         if(!isset($input['show_search'])){
-            $input['show_search'] = null; 
+            $apbasic_inputs['show_search'] = null; 
         }else{
-            $input['show_search'] = 1;
+            $apbasic_inputs['show_search'] = 1;
         }
         
         if(!isset($input['show_social_links'])){
-            $input['show_social_links'] = null; 
+            $apbasic_inputs['show_social_links'] = null; 
         }else{
-            $input['show_social_links'] = 1;
+            $apbasic_inputs['show_social_links'] = 1;
         }
         
-        $input['header_text'] = wp_kses($input['header_text'],$header_text_al_tags);
+        $apbasic_inputs['header_text'] = wp_kses($input['header_text'],$header_text_al_tags);
         
         if(!isset($input['activate_favicon'])){
-            $input['activate_favicon'] = null;
+            $apbasic_inputs['activate_favicon'] = null;
         }else{
-            $input['activate_favicon'] = 1;
+            $apbasic_inputs['activate_favicon'] = 1;
         }
         
         if(isset($input['favicon'])){
-            $input['favicon'] = esc_url_raw($input['favicon']);
+            $apbasic_inputs['favicon'] = esc_url_raw($input['favicon']);
         }
         
-        $input['site_layout'] = sanitize_text_field($input['site_layout']);
+        $apbasic_inputs['site_layout'] = sanitize_text_field($input['site_layout']);
         
-        $input['footer_text'] = sanitize_text_field($input['footer_text']);
+        $apbasic_inputs['footer_text'] = sanitize_text_field($input['footer_text']);
         
         //Design Options
-        $input['background_image'] = sanitize_text_field($input['background_image']);
-        $input['default_layout'] = sanitize_text_field($input['default_layout']);
-        $input['default_page_layout'] = sanitize_text_field($input['default_page_layout']);
-        $input['default_post_layout'] = sanitize_text_field($input['default_post_layout']);
-        $input['blog_post_display_type'] = sanitize_text_field($input['blog_post_display_type']);
-        //$input['template_color'] = sanitize_text_field($input['template_color']);
+        $apbasic_inputs['background_image'] = sanitize_text_field($input['background_image']);
+        $apbasic_inputs['default_layout'] = sanitize_text_field($input['default_layout']);
+        $apbasic_inputs['default_page_layout'] = sanitize_text_field($input['default_page_layout']);
+        $apbasic_inputs['default_post_layout'] = sanitize_text_field($input['default_post_layout']);
+        $apbasic_inputs['blog_post_display_type'] = sanitize_text_field($input['blog_post_display_type']);
         
         if(!isset($input['show_footer_featured_section'])){
-            $input['show_footer_featured_section'] = null;
+            $apbasic_inputs['show_footer_featured_section'] = null;
         }else{
-            $input['show_footer_featured_section'] = 1;
+            $apbasic_inputs['show_footer_featured_section'] = 1;
         }
         
         if(!isset($input['enable_comments_page'])){
-            $input['enable_comments_page'] = null;
+            $apbasic_inputs['enable_comments_page'] = null;
         }else{
-            $input['enable_comments_page'] = 1;
+            $apbasic_inputs['enable_comments_page'] = 1;
         }
         
         if(!isset($input['enable_comments_post'])){
-            $input['enable_comments_post'] = null;
+            $apbasic_inputs['enable_comments_post'] = null;
         }else{
-            $input['enable_comments_post'] = 1;
+            $apbasic_inputs['enable_comments_post'] = 1;
         }          
         
         //Slider Settings
-        $input['show_slider'] = sanitize_text_field($input['show_slider']);
+        $apbasic_inputs['show_slider'] = sanitize_text_field($input['show_slider']);
+        
+        if(!isset($input['show_slider_in_post'])){
+            $apbasic_inputs['show_slider_in_post'] = null;
+        }else{
+            $apbasic_inputs['show_slider_in_post'] = 1;
+        }
+        
+        $apbasic_inputs['slider_mode'] = sanitize_text_field($input['slider_mode']);
+        
         if(isset($input['slide1'])){
-            $input['slide1'] = esc_url_raw($input['slide1']);
+            $apbasic_inputs['slide1'] = esc_url_raw($input['slide1']);
         }
         if(isset($input['slide2'])){
-            $input['slide2'] = esc_url_raw($input['slide2']);
+            $apbasic_inputs['slide2'] = esc_url_raw($input['slide2']);
         }
         if(isset($input['slide3'])){
-            $input['slide3'] = esc_url_raw($input['slide3']);
+            $apbasic_inputs['slide3'] = esc_url_raw($input['slide3']);
         }
         if(isset($input['slide4'])){
-            $input['slide4'] = esc_url_raw($input['slide4']);
+            $apbasic_inputs['slide4'] = esc_url_raw($input['slide4']);
         }
         
         if(!isset($input['show_slider_in_post'])){
-            $input['show_silder_in_post'] = null;
+            $apbasic_inputs['show_silder_in_post'] = null;
         }else{
-            $input['show_silder_in_post'] = 1;
+            $apbasic_inputs['show_silder_in_post'] = 1;
         }
         
-        $input['show_slider'] = sanitize_text_field($input['show_slider']);
+        $apbasic_inputs['slide1_title'] = wp_kses($input['slide1_title'],$al_tags);
+        $apbasic_inputs['slide2_title'] = wp_kses($input['slide2_title'],$al_tags);
+        $apbasic_inputs['slide3_title'] = wp_kses($input['slide3_title'],$al_tags);
+        $apbasic_inputs['slide4_title'] = wp_kses($input['slide4_title'],$al_tags);
         
-        $input['slide1_title'] = wp_kses($input['slide1_title'],$al_tags);
-        $input['slide2_title'] = wp_kses($input['slide2_title'],$al_tags);
-        $input['slide3_title'] = wp_kses($input['slide3_title'],$al_tags);
-        $input['slide4_title'] = wp_kses($input['slide4_title'],$al_tags);
+        $apbasic_inputs['slide1_description'] = wp_kses($input['slide1_description'],$al_tags);
+        $apbasic_inputs['slide2_description'] = wp_kses($input['slide2_description'],$al_tags);
+        $apbasic_inputs['slide3_description'] = wp_kses($input['slide3_description'],$al_tags);
+        $apbasic_inputs['slide4_description'] = wp_kses($input['slide4_description'],$al_tags);
         
-        $input['slide1_description'] = wp_kses($input['slide1_description'],$al_tags);
-        $input['slide2_description'] = wp_kses($input['slide2_description'],$al_tags);
-        $input['slide3_description'] = wp_kses($input['slide3_description'],$al_tags);
-        $input['slide4_description'] = wp_kses($input['slide4_description'],$al_tags);
+        $apbasic_inputs['slide1_readmore_text'] = sanitize_text_field($input['slide1_readmore_text']);
+        $apbasic_inputs['slide2_readmore_text'] = sanitize_text_field($input['slide2_readmore_text']);
+        $apbasic_inputs['slide3_readmore_text'] = sanitize_text_field($input['slide3_readmore_text']);
+        $apbasic_inputs['slide4_readmore_text'] = sanitize_text_field($input['slide4_readmore_text']);
         
-        $input['slide1_readmore_text'] = sanitize_text_field($input['slide1_readmore_text']);
-        $input['slide2_readmore_text'] = sanitize_text_field($input['slide2_readmore_text']);
-        $input['slide3_readmore_text'] = sanitize_text_field($input['slide3_readmore_text']);
-        $input['slide4_readmore_text'] = sanitize_text_field($input['slide4_readmore_text']);
-        
-        $input['slide1_readmore_button_icon'] = sanitize_text_field($input['slide1_readmore_button_icon']);
-        $input['slide2_readmore_button_icon'] = sanitize_text_field($input['slide2_readmore_button_icon']);
-        $input['slide3_readmore_button_icon'] = sanitize_text_field($input['slide3_readmore_button_icon']);
-        $input['slide4_readmore_button_icon'] = sanitize_text_field($input['slide4_readmore_button_icon']);
+        $apbasic_inputs['slide1_readmore_button_icon'] = sanitize_text_field($input['slide1_readmore_button_icon']);
+        $apbasic_inputs['slide2_readmore_button_icon'] = sanitize_text_field($input['slide2_readmore_button_icon']);
+        $apbasic_inputs['slide3_readmore_button_icon'] = sanitize_text_field($input['slide3_readmore_button_icon']);
+        $apbasic_inputs['slide4_readmore_button_icon'] = sanitize_text_field($input['slide4_readmore_button_icon']);
         
         if(isset($input['slide1_readmore_link'])){
-            $input['slide1_readmore_link'] = esc_url_raw($input['slide1_readmore_link']);
+            $apbasic_inputs['slide1_readmore_link'] = esc_url_raw($input['slide1_readmore_link']);
         }
         if(isset($input['slide2_readmore_link'])){
-            $input['slide2_readmore_link'] = esc_url_raw($input['slide2_readmore_link']);
+            $apbasic_inputs['slide2_readmore_link'] = esc_url_raw($input['slide2_readmore_link']);
         }
         if(isset($input['slide3_readmore_link'])){
-            $input['slide3_readmore_link'] = esc_url_raw($input['slide3_readmore_link']);
+            $apbasic_inputs['slide3_readmore_link'] = esc_url_raw($input['slide3_readmore_link']);
         }
         if(isset($input['slide4_readmore_link'])){
-            $input['slide4_readmore_link'] = esc_url_raw($input['slide4_readmore_link']);
+            $apbasic_inputs['slide4_readmore_link'] = esc_url_raw($input['slide4_readmore_link']);
         }
         
         // Translation Settings
-        $input['features_readmore_text'] = sanitize_text_field($input['features_readmore_text']); 
-        $input['services_readmore_text'] = sanitize_text_field($input['services_readmore_text']);
-        $input['blog_readmore_text'] = sanitize_text_field($input['blog_readmore_text']); 
-        $input['search_results_for_text'] = sanitize_text_field($input['search_results_for_text']);
-        $input['tagged_text'] = sanitize_text_field($input['tagged_text']); 
-        $input['posted_on_text'] = sanitize_text_field($input['posted_on_text']);
-        $input['by_text'] = sanitize_text_field($input['by_text']); 
-        $input['posted_in_text'] = sanitize_text_field($input['posted_in_text']);
+        $apbasic_inputs['features_readmore_text'] = sanitize_text_field($input['features_readmore_text']); 
+        $apbasic_inputs['services_readmore_text'] = sanitize_text_field($input['services_readmore_text']);
+        $apbasic_inputs['blog_readmore_text'] = sanitize_text_field($input['blog_readmore_text']); 
+        $apbasic_inputs['search_results_for_text'] = sanitize_text_field($input['search_results_for_text']);
+        $apbasic_inputs['tagged_text'] = sanitize_text_field($input['tagged_text']); 
+        $apbasic_inputs['posted_on_text'] = sanitize_text_field($input['posted_on_text']);
+        $apbasic_inputs['by_text'] = sanitize_text_field($input['by_text']); 
+        $apbasic_inputs['posted_in_text'] = sanitize_text_field($input['posted_in_text']);
         
-        return $input;
+        return $apbasic_inputs;
     }
      
     endif;

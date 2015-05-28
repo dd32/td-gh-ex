@@ -86,34 +86,16 @@ endif; // accesspress_basic_setup
 add_action( 'after_setup_theme', 'accesspress_basic_setup' );
 
 /**
- * Register widget area.
- *
- * @link http://codex.wordpress.org/Function_Reference/register_sidebar
-
-function accesspress_basic_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'accesspress-basic' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
-}
-add_action( 'widgets_init', 'accesspress_basic_widgets_init' );
-
-/**
  * Enqueue scripts and styles.
  */
 function accesspress_basic_scripts() {
 	wp_enqueue_style( 'accesspress-basic-superfish-css', get_template_directory_uri() . '/css/superfish.css');
-	wp_enqueue_style( 'accesspress-basic-lato-font', 'http://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic' );
-	wp_enqueue_style( 'accesspress-basic-style', get_template_directory_uri() . '/style.css' );
+	wp_enqueue_style( 'accesspress-basic-lato-font', '//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic' );
+	wp_enqueue_style( 'accesspress-basic-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'accesspress-basic-responsive-css', get_template_directory_uri() . '/css/responsive.css');
 	
-	wp_enqueue_script( 'accesspress-basic-hover-intent', get_template_directory_uri() . '/js/hoverIntent.js', array('jquery'));
-	wp_enqueue_script( 'accesspress-basic-superfish', get_template_directory_uri() . '/js/superfish.js', array('jquery'));
+
+	wp_enqueue_script( 'accesspress-basic-superfish', get_template_directory_uri() . '/js/superfish.js', array('jquery','hoverIntent'));
 	wp_enqueue_script( 'accesspress-basic-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20120206', true );
 
 	wp_enqueue_script( 'accesspress-basic-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array('jquery'), '20130115', true );
@@ -136,7 +118,7 @@ add_action( 'wp_enqueue_scripts', 'accesspress_basic_scripts' );
 /**
  * Implement the Custom Header feature.
  */
-//require get_template_directory() . '/inc/custom-header.php';
+require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.

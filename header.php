@@ -40,7 +40,7 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php if(!empty($favicon)) : ?>
     <?php if($activate_favicon == 1) : ?>
-        <link rel="icon" type="image/png" href="<?php echo $favicon; ?>">
+        <link rel="icon" type="image/png" href="<?php echo esc_url($favicon); ?>">
     <?php endif; ?>
 <?php endif; ?>
 <?php wp_head(); ?>
@@ -57,9 +57,9 @@
                         <?php if($show_header != 'disable') : ?>
                             
                             <?php if($show_header == 'header_logo_only') : ?>
-                                <?php if($header_logo != '') : ?>
+                                <?php if(get_header_image()) : ?>
                                     <div class="header-logo-container">
-                                        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $header_logo; ?>" /></a></h1>
+                                        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo header_image(); ?>" /></a></h1>
                                     </div>
                                 <?php endif; ?>
                             <?php elseif($show_header == 'header_text_only') : ?>
@@ -68,7 +68,7 @@
                         			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
                                 </div>
                             <?php else : ?>
-                                <?php if($header_logo != '') : ?>
+                                <?php if(get_header_image()) : ?>
                                     <div class="header-logo-container">
                                         <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $header_logo; ?>" /></a></h1>
                                     </div>
@@ -86,7 +86,7 @@
                             <div class="call-us"><?php dynamic_sidebar('apbasic_header_text'); ?></div>
                         <?php else : ?>
                             <?php if(!empty($header_text)) : ?>
-                                <div class="call-us"><?php echo $header_text; ?></div>
+                                <div class="call-us"><?php echo esc_attr($header_text); ?></div>
                             <?php endif; ?>
                         <?php endif; ?>
                         <?php if($show_social_links == 1 && is_active_sidebar('apbasic_header_social_links')) : ?>
