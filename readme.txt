@@ -5,6 +5,10 @@ Consider weblizar PRE-Fix for function-name and as a slug of the Theme Enigma.
 Enigma
 
 CHANGE-LOG:
+@Version: 1.9.1[29/05/2015]
+1. WPML Competible
+
+
 @Version: 1.9[25/05/2015]
 1. Russian mo file.
 2. Slider - Text -Button viewable in Mob.
