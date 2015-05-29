@@ -10,6 +10,13 @@ Changelog Legend:
 
 ----
 
+(5/29/2015) - 1.2.9.8
+[*] Adjust superfish menu dropdown selector
+[*] Update superfish.js menu
+[*] Update HTML5Shiv.js
+
+----
+
 (5/28/2015) - 1.2.9.7
 [+] Romanian translation added (thanks, Adrian!!)
 [+] Add warning to delete customizer settings button
