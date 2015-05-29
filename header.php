@@ -20,12 +20,12 @@
 <div id="page" class="site <?php echo ( has_post_thumbnail() ) ? 'has-thumbnail' : 'no-thumbnail'; ?>">
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
-			<a class="logo" href="<?php echo home_url(); ?>">
+			<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 				<?php
 				$main_logo_url = adler::get_customify_option( 'main_logo' );
 				?>
 				<?php if ( ! empty( $main_logo_url ) ) { ?>
-					<?php echo '<img src="' . $main_logo_url . '"/>'; ?>
+					<img src="<?php echo esc_url($main_logo_url); ?>"/>
 				<?php } else { ?>
 					<h1 class="site-title">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
