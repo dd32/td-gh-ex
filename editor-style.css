@@ -397,7 +397,7 @@ blockquote,
 body,
 .no-thumbnail .site-header a,
 .main-navigation .menu li a,
-.site-branding a,
+.site-title a,
 .footer-navigation .menu li a
 {
     font-family: 'Droid Sans Mono', serif;
@@ -719,7 +719,8 @@ button:focus
 {
     display: none;
 }
-.site-branding a
+
+.site-title a
 {
     text-decoration: none;
 
