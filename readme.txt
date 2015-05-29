@@ -28,8 +28,6 @@ This is fully responsive WordPress theme.
 * fitvids.js     @ChrisCoyier, @davatron5000, @TrentWalton, @raygunray
  - Intrinsic Ratio Method by Thierry Koblentz](http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/)
 
-* Options Framework by WP Theming licensed under the GPLv2 license (http://www.gnu.org/licenses/gpl-2.0.html)
-
 * HTML5 Shiv @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
 
 * The script jquery.cycle.all.js is dual licensed under GPL & MIT

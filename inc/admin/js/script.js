@@ -1,13 +1,13 @@
 ( function( $ ) {
 	// Add Make Plus message
-		/*upgrade = $('<a class="stronghold-buy-pro"></a>')
-			.attr('href', 'http://www.webulousthemes.com/?add-to-cart=33')
+		/*upgrade = $('<a class="buy-pro"></a>')
+			.attr('href', 'http://www.dinozoom.com/?add-to-cart=33')
 			.attr('target', '_blank')
-			.text(stronghold_upgrade.message)
+			.text(bakery_upgrade.message)
 		;
 		$('.preview-notice').append(upgrade);
 		// Remove accordion click event
-		$('.stronghold-buy-pro').on('click', function(e) {
+		$('.buy-pro').on('click', function(e) {
 			e.stopPropagation();
 		});*/
 		

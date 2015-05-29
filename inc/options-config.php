@@ -8,13 +8,13 @@ $qty = array( '1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' =>
 $bakery_slider_array = array(
                             'enable_slider' => array(
                                 'type' => 'checkbox',
-                                'label' => __('Enable this section', 'stronghold'),
+                                'label' => __('Enable this section', 'bakery'),
                                 'default' => 0,
                                 'sanitize_callback' => 'boolean',
                             ),
 							'slider_quantity' => array(
                                 'type' => 'disabled-select',
-                                'label' => __('Quantity', 'stronghold'),
+                                'label' => __('Quantity', 'bakery'),
                                 'default' => 4,
 								'choices' => $qty,
                                 'sanitize_callback' => 'absint',
@@ -24,28 +24,28 @@ for ($i=1;$i<=4;$i++) {
 	$bakery_slider_item = array();
 	$bakery_slider_item = array(							
 							'sep'.$i => array(
-								'label' => __("Slider", 'stronghold') . "#$i",
+								'label' => __("Slider", 'bakery') . "#$i",
                                 'type' => 'sep-title',
                             ),
                             'slider_title'.$i => array(
                                 'type' => 'text',
-                                'label' => __('Title', 'stronghold'),
+                                'label' => __('Title', 'bakery'),
                                 'sanitize_callback' => 'esc_attr',
                             ),
 							'slider_desc'.$i => array(
                                 'type' => 'text',
-                                'label' => __('Description', 'stronghold'),
+                                'label' => __('Description', 'bakery'),
                                 'sanitize_callback' => 'esc_attr',
                             ),
 							'slider_link'.$i => array(
                                 'type' => 'text',
-                                'label' => __('Link', 'stronghold'),
+                                'label' => __('Link', 'bakery'),
                                 'sanitize_callback' => 'esc_url',
                             ),
 							'slider_image'.$i => array(
 								'default' => get_template_directory_uri() . "/images/slider/slider-$i.jpg",
                                 'type' => 'image',
-                                'label' => __('Image', 'stronghold'),
+                                'label' => __('Image', 'bakery'),
                                 'sanitize_callback' => 'esc_url_raw',
                             )
 							);
@@ -56,26 +56,26 @@ for ($i=1;$i<=4;$i++) {
 $bakery_services_array = array(
                             'enable_services' => array(
                                 'type' => 'checkbox',
-                                'label' => __('Enable this section', 'stronghold'),
+                                'label' => __('Enable this section', 'bakery'),
                                 'default' => 0,
                                 'sanitize_callback' => 'boolean',
                             ),
 							'services_quantity' => array(
                                 'type' => 'disabled-select',
-                                'label' => __('Quantity', 'stronghold'),
+                                'label' => __('Quantity', 'bakery'),
                                 'default' => 4,
 								'choices' => $qty,
                                 'sanitize_callback' => 'absint',
                             ),
 							'services_title' => array(
                                 'type' => 'text',
-                                'label' => __('Title', 'stronghold'),
+                                'label' => __('Title', 'bakery'),
                                 'default' => "Nunc porta lectus dolor",
                                 'sanitize_callback' => 'esc_attr',
                             ),
 							'services_desc' => array(
                                 'type' => 'textarea',
-                                'label' => __('Description', 'stronghold'),
+                                'label' => __('Description', 'bakery'),
                                 'default' => '"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."',
                                 'sanitize_callback' => 'esc_textarea',
                             )
@@ -91,38 +91,38 @@ for ($i=1;$i<=4;$i++) {
 	$bakery_services_item = array();
 	$bakery_services_item = array(							
 							'sep_services'.$i => array(
-								'label' => __("Service", 'stronghold') . "#$i",
+								'label' => __("Service", 'bakery') . "#$i",
                                 'type' => 'sep-title',
                             ),
                             'service_title'.$i => array(
 								'default' => "Lorem ipsum",
                                 'type' => 'text',
-                                'label' => __('Title', 'stronghold'),
+                                'label' => __('Title', 'bakery'),
                                 'sanitize_callback' => 'esc_attr',
                             ),
 							'service_desc'.$i => array(
 								'default' => "Nullam fringilla lorem sed ante pharetra, et ultrices nisl rhoncus!",
                                 'type' => 'text',
-                                'label' => __('Description', 'stronghold'),
+                                'label' => __('Description', 'bakery'),
                                 'sanitize_callback' => 'esc_attr',
                             ),
 							'service_link'.$i => array(
 								'default' => esc_url( home_url( '/' ) ),
                                 'type' => 'text',
-                                'label' => __('Link', 'stronghold'),
+                                'label' => __('Link', 'bakery'),
                                 'sanitize_callback' => 'esc_url',
                             ),
 							'service_icon'.$i => array(
 								'default' => "fa-birthday-cake",
                                 'type' => 'select',
-                                'label' => __('Icon', 'stronghold'),
+                                'label' => __('Icon', 'bakery'),
                                 'sanitize_callback' => 'esc_attr',
 								'choices' => $fa_choices
                             ),
 							'service_color'.$i => array(
 								'default' => "#645F54",
                                 'type' => 'color',
-                                'label' => __('Color', 'stronghold'),
+                                'label' => __('Color', 'bakery'),
                                 'sanitize_callback' => 'sanitize_hex_color',
                             )
 							);
@@ -132,26 +132,26 @@ for ($i=1;$i<=4;$i++) {
 $bakery_projects_array = array(
                             'enable_projects' => array(
                                 'type' => 'checkbox',
-                                'label' => __('Enable this section', 'stronghold'),
+                                'label' => __('Enable this section', 'bakery'),
                                 'default' => 0,
                                 'sanitize_callback' => 'boolean',
                             ),
 							'projects_quantity' => array(
                                 'type' => 'disabled-select',
-                                'label' => __('Quantity', 'stronghold'),
+                                'label' => __('Quantity', 'bakery'),
                                 'default' => 4,
 								'choices' => $qty,
                                 'sanitize_callback' => 'absint',
                             ),
 							'projects_title' => array(
                                 'type' => 'text',
-                                'label' => __('Title', 'stronghold'),
+                                'label' => __('Title', 'bakery'),
                                 'default' => "Nunc porta lectus dolor",
                                 'sanitize_callback' => 'esc_attr',
                             ),
 							'projects_desc' => array(
                                 'type' => 'textarea',
-                                'label' => __('Description', 'stronghold'),
+                                'label' => __('Description', 'bakery'),
                                 'default' => '"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."',
                                 'sanitize_callback' => 'esc_textarea',
                             )
@@ -161,31 +161,31 @@ for ($i=1;$i<=4;$i++) {
 	$bakery_projects_item = array();
 	$bakery_projects_item = array(							
 							'sep_projects'.$i => array(
-								'label' => __("Project", 'stronghold') . "#$i",
+								'label' => __("Project", 'bakery') . "#$i",
                                 'type' => 'sep-title',
                             ),
                             'project_title'.$i => array(
 								'default' => "Lorem ipsum",
                                 'type' => 'text',
-                                'label' => __('Title', 'stronghold'),
+                                'label' => __('Title', 'bakery'),
                                 'sanitize_callback' => 'esc_attr',
                             ),
 							'project_desc'.$i => array(
 								'default' => "Nullam fringilla lorem sed ante pharetra, et ultrices nisl rhoncus!",
                                 'type' => 'text',
-                                'label' => __('Description', 'stronghold'),
+                                'label' => __('Description', 'bakery'),
                                 'sanitize_callback' => 'esc_attr',
                             ),
 							'project_link'.$i => array(
 								'default' => esc_url( home_url( '/' ) ),
                                 'type' => 'text',
-                                'label' => __('Link', 'stronghold'),
+                                'label' => __('Link', 'bakery'),
                                 'sanitize_callback' => 'esc_url',
                             ),
 							'project_image'.$i => array(
 								'default' => get_template_directory_uri() . '/images/thumbnail.png',
                                 'type' => 'upload',
-                                'label' => __('Image', 'stronghold'),
+                                'label' => __('Image', 'bakery'),
                                 'sanitize_callback' => 'esc_url_raw',
                             )
 							);
@@ -198,7 +198,7 @@ for ($i=1;$i<=4;$i++) {
         'root' => array(
             'sections' => array(
 				'pro' => array(
-						'title' => __('Upgrade to Pro', 'stronghold'),
+						'title' => __('Upgrade to Pro', 'bakery'),
 						'fields' => array(
 								'primary_colors' => array(
                                 'type' => 'info',
@@ -211,74 +211,74 @@ for ($i=1;$i<=4;$i++) {
             ),
         ),
         'panels' => array(
-            'stronghold' => array(
+            'bakery' => array(
                 'priority'       => 9,
-                'title'          => __('Bakery Options', 'stronghold'),
-                'description'    => __('Bakery Theme Options', 'stronghold'),
+                'title'          => __('Bakery Theme Options', 'bakery'),
+                'description'    => __('Bakery Theme Options', 'bakery'),
                 'sections' => array(
                     'header' => array(
-                        'title' => __('Header', 'stronghold'),
-                        'description' => __('Header options', 'stronghold'),
+                        'title' => __('Header', 'bakery'),
+                        'description' => __('Header options', 'bakery'),
                         'fields' => array(
                             'logo' => array(
 								'default' => get_template_directory_uri() . '/images/logo.png',
                                 'type' => 'image',
-                                'label' => __('Logo Image', 'stronghold'),
+                                'label' => __('Logo Image', 'bakery'),
                                 'sanitize_callback' => 'esc_url_raw',
                             ),
 							'adress' => array(
                                 'type' => 'text',
-                                'label' => __('Adress', 'stronghold'),
+                                'label' => __('Adress', 'bakery'),
 								'default' => '77 Massachusetts Ave, Cambridge, MA, USA',
                                 'sanitize_callback' => 'esc_attr',
                             ),
 							'mail' => array(
                                 'type' => 'text',
-                                'label' => __('Adress', 'stronghold'),
+                                'label' => __('Adress', 'bakery'),
 								'default' => 'info@example.com',
                                 'sanitize_callback' => 'esc_attr',
                             ),
 							'phone' => array(
                                 'type' => 'text',
-                                'label' => __('Adress', 'stronghold'),
+                                'label' => __('Adress', 'bakery'),
 								'default' => '+1 617-253-1000',
                                 'sanitize_callback' => 'esc_attr',
                             )
                         ),
                     ),
                     'general' => array(
-                        'title' => __('General', 'stronghold'),
+                        'title' => __('General', 'bakery'),
                         'fields' => array(
                             'primary_color' => array(
                                 'type' => 'color',
-                                'label' => __('Primary Color', 'stronghold'),
+                                'label' => __('Primary Color', 'bakery'),
                                 'default' => '#ff8800',
                                 'sanitize_callback' => 'sanitize_hex_color',
                             ),
 							'enable_homepage' => array(
                                 'type' => 'checkbox',
-                                'label' => __('Show recent posts on homepage', 'stronghold'),
+                                'label' => __('Show recent posts on homepage', 'bakery'),
                                 'default' => 1,
                                 'sanitize_callback' => 'boolean',
                             ),
 							'color_scheme' => array(
                             	'type' => 'disabled-select',
-                            	'label' => __('Color Scheme', 'stronghold'),
+                            	'label' => __('Color Scheme', 'bakery'),
                             	'choices' => array(
-									'1' => __('Red', 'stronghold'),
-									'2' => __('Green', 'stronghold'),
-									'3' => __('Blue', 'stronghold'),
+									'1' => __('Red', 'bakery'),
+									'2' => __('Green', 'bakery'),
+									'3' => __('Blue', 'bakery'),
                             	),
                             	'default' => 0,
                             
                         	),
 							'color_scheme' => array(
                             	'type' => 'disabled-select',
-                            	'label' => __('Color Scheme', 'stronghold'),
+                            	'label' => __('Color Scheme', 'bakery'),
                             	'choices' => array(
-									'1' => __('Orange', 'stronghold'),
-									'2' => __('Green', 'stronghold'),
-									'3' => __('Blue', 'stronghold'),
+									'1' => __('Orange', 'bakery'),
+									'2' => __('Green', 'bakery'),
+									'3' => __('Blue', 'bakery'),
                             	),
                             	'default' => 0,
                             
@@ -286,15 +286,15 @@ for ($i=1;$i<=4;$i++) {
                         ),
                     ),
 					'slider' => array(
-                        'title' => __('Slider', 'stronghold'),
+                        'title' => __('Slider', 'bakery'),
                         'fields' => $bakery_slider_array,
                     ),
 					'services' => array(
-                        'title' => __('Services Section', 'stronghold'),
+                        'title' => __('Services Section', 'bakery'),
                         'fields' => $bakery_services_array,
                     ),
 					'projects' => array(
-                        'title' => __('Projects Section', 'stronghold'),
+                        'title' => __('Projects Section', 'bakery'),
                         'fields' => $bakery_projects_array,
                     ),
                 )

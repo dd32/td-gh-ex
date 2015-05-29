@@ -67,7 +67,7 @@
 		 */
 		public function enqueue_scripts() {
 			wp_enqueue_style( 
-				'stronghold-cutomizer-css', 
+				'bakery-cutomizer-css', 
 				get_template_directory_uri() . '/inc/admin/css/customizer.css', 
 				array(), 
 				'1.0.0', 
@@ -85,7 +85,7 @@
 				$this->_version,
 				true
 			);
-			wp_localize_script( 'customizer-js', 'stronghold_upgrade', array( 'message' => __( 'Upgrade To StrongHold Pro', 'stronghold' ) ) );
+			wp_localize_script( 'customizer-js', 'bakery_upgrade', array( 'message' => __( 'Upgrade to Pro', 'bakery' ) ) );
 		}
 
 		/**

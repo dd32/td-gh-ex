@@ -15,7 +15,7 @@ if( ! class_exists('Wbls_Customize_Disabled_Select_Control')) {
 				__( 'Premium', 'bakery' )
 				);?>
 				<select <?php $this->link(); ?>>
-					<?php //printf( '<option value="0">%1$s</option>', __( 'Select Color Scheme', 'stronghold' ) );
+					<?php //printf( '<option value="0">%1$s</option>', __( 'Select Color Scheme', 'bakery' ) );
 						foreach ( $this->choices as $value => $label )
 							printf( '<option disabled="disabled" value="%1$s" %2$s>%3$s</option>', esc_attr( $value ), selected( $this->value(), $value, false ), $label );
 					?>
