@@ -254,7 +254,7 @@ function bakery_posts_navigation(){
 				}
 	}
 }
-
+//
 function bakery_post_navigation(){
 	global $post;
 	$previous = ( is_attachment() ) ? get_post( $post->post_parent ) : get_adjacent_post( false, '', true );
@@ -267,4 +267,51 @@ function bakery_post_navigation(){
 	echo '<div class="clear"></div>';
 	echo '</div>';
 }
+//
+function bakery_post_box () { ?>
+<div <?php post_class("post-box"); ?>>
+
+	<?php if ( has_post_thumbnail() ):?> 
+	<div class="post-box-media">
+    	<a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><?php the_post_thumbnail();?></a>
+    </div>
+    <?php endif;?> 
+	<div class="post-box-title">
+    	<a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><?php the_title( '<h3 class="entry-title">', '</h3>' ); ?></a>
+    </div>
+    <div class="post-box-date">
+    	<?php bakery_posted_on(); ?>
+    </div>
+    <div class="post-box-excerpt">
+    	<?php the_excerpt(); ?>
+    </div>
+    <div class="post-box-more">
+    	<a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><?php _e( 'Read More', 'bakery' ); ?> <i class="fa fa-arrow-right"></i></a>
+    </div>
+</div><!-- #post-box -->
+
+<?php
+} // end of bakery_post_box
+
+// SiteFoter Function
+// Contains the closing of the #content div and all content after
+function bakery_wp_footer () { ?>
+	</div><!-- #content -->
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-info">
+			<?php printf( __( 'Proudly powered by %s', 'bakery' ), 'WordPress' ); ?>
+			<span class="sep"> &amp; </span>
+			<?php printf(
+			__( '%1$s by %2$s.', 'bakery' ),
+			'<strong>
+			<a href="'. esc_url( 'http://dinozoom.com/themes/bakery-wordpress-theme-for-bakeries-food-bloggers-coffee-shops-and-cupcakes/' ) .'">
+			'.__('Bakery WordPress Theme', 'bakery' ).'</a></strong>',
+			'<strong>Dinozoom</strong>' ); ?>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+    
+    <div id="back_top"><i class="fa fa-angle-up"></i></div>
+</div><!-- #page -->
+<?php
+} // end of bakery_wp_footer
 ?>

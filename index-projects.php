@@ -1,7 +1,7 @@
 <!--Projects Section-->
 <?php
-$mst = esc_attr(of_get_option( 'bakery_main_project_title' ));
-$msd = esc_attr(of_get_option( 'bakery_main_project_desc' ));
+$mst = esc_attr (get_theme_mod( 'projects_title' ));
+$msd = esc_attr (get_theme_mod( 'projects_desc' ));
 ?>
 <div class="container" id="service_section">	
     <div class="hc_service_title">
@@ -18,7 +18,8 @@ $msd = esc_attr(of_get_option( 'bakery_main_project_desc' ));
 
 <div class="container" id="project_section">
 <?php
-	$count = of_get_option( 'bakery_projects_count', 4 );
+	//$count = of_get_option( 'bakery_projects_count', 4 );
+	$count = 4;
 	//
 	$w = 25;
 	switch ($count) {
@@ -38,10 +39,10 @@ $msd = esc_attr(of_get_option( 'bakery_main_project_desc' ));
         <div class="hc_project_area <?php echo "sw-$w"; ?>">
         <?php
 		// values
-		$image = esc_url(of_get_option( 'bakery_project_image'.$i ));
-		$title = esc_attr(of_get_option( 'bakery_project_title'.$i ));
-		$desc = esc_attr(of_get_option( 'bakery_project_desc'.$i ));
-		$link = esc_url(of_get_option( 'bakery_project_link'.$i ));
+		$image = esc_url(get_theme_mod( 'project_image'.$i, get_template_directory_uri() . '/images/thumbnail.png' ));
+		$title = esc_attr(get_theme_mod( 'project_title'.$i, "Lorem ipsum" ));
+		$desc = esc_attr(get_theme_mod( 'project_desc'.$i, "Nullam fringilla lorem sed ante pharetra, et ultrices nisl rhoncus!" ));
+		$link = esc_url(get_theme_mod( 'project_link'.$i ));
 		//
 		if ($link):
 		?>
@@ -58,3 +59,4 @@ $msd = esc_attr(of_get_option( 'bakery_main_project_desc' ));
 	}
 ?>
 </div><!--container-->
+<div class="clear"></div>

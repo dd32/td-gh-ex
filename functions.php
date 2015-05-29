@@ -117,9 +117,7 @@ function bakery_theme_scripts() {
 	
 	wp_enqueue_script( 'bakery-fitvids', get_template_directory_uri() . '/js/jquery.fitvids.js', array('jquery'), '' );
 	wp_enqueue_script( 'bakery-fitvids-doc-ready', get_template_directory_uri() . '/js/fitvids-doc-ready.js', array('jquery'), '' );
-	
-	wp_enqueue_script( 'bakery-jQueryRotate', get_template_directory_uri() . '/js/jQueryRotate.min.js', array('jquery'), '' );
-	
+		
 	wp_enqueue_script( 'bakery-basejs',get_template_directory_uri().'/js/base.js',array('jquery'),'' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -134,7 +132,7 @@ function bakery_theme_scripts() {
 	/**
 	 * Enqueue Slider setup js file.
 	 */	
-	if( of_get_option( 'bakery_activate_slider', '0' ) == '1' ) { 
+	if( get_theme_mod( 'enable_slider' ) ) { 
 		if ( is_home() || is_front_page() ) {
 			wp_enqueue_script( 'bakery_slider', get_template_directory_uri() . '/js/slider-setting.js', array( 'jquery_cycle' ), false, true );
 
@@ -155,8 +153,8 @@ add_action( 'wp_enqueue_scripts', 'bakery_theme_scripts' );
  * Fav icon for the site
  */
 function bakery_favicon() {
-	if ( of_get_option( 'bakery_activate_favicon', '0' ) == '1' ) {
-		$bakery_favicon = of_get_option( 'bakery_favicon', '' );
+	if ( get_theme_mod( 'favicon', false ) ) {
+		$bakery_favicon = get_theme_mod( 'favicon', "" );
 		$bakery_favicon_output = '';
 		if ( !empty( $bakery_favicon ) ) {
 			$bakery_favicon_output .= '<link rel="shortcut icon" href="'.esc_url( $bakery_favicon ).'" type="image/x-icon" />';
@@ -174,9 +172,21 @@ function bakery_custom_css() {
 
 	$bakery_internal_css = '';
 
-	$primary_color = esc_attr(of_get_option( 'bakery_primary_color', '#ff8800' ));	
+	$primary_color = esc_attr( get_theme_mod( 'primary_color', '#ff8800' ) );	
 	if( $primary_color != '#ff8800' ) {
-		$bakery_internal_css .= 'blockquote{border-left:2px solid '.$primary_color.';}pre{border-left:2px solid '.$primary_color.';}button,input[type="button"],input[type="reset"],input[type="submit"]{background:'.$primary_color.';}a:hover,a:focus,a:active{color:'.$primary_color.';}.main-navigation .current_page_item,.main-navigation .current-menu-item{background:'.$primary_color.';}.mr li:first-child{background:'.$primary_color.';}.main-navigation li a:hover{background:'.$primary_color.';}.main-navigation .sub-menu,.main-navigation .children{background:'.$primary_color.';}.nav-foot{background:'.$primary_color.';}.pagination .nav-links a:hover{color:'.$primary_color.';}.pagination .current{color:'.$primary_color.';}.entry-content a{color:'.$primary_color.';}.search-form .search-submit{background-color:'.$primary_color.';}.wp-pagenavi span.current{color:'.$primary_color.';}.main-navigation li a:hover{background:'.$primary_color.';}#controllers a:hover, #controllers a.active{color:'.$primary_color.';}#slider-title a{background:'.$primary_color.';}#controllers a:hover, #controllers a.active{background-color:'.$primary_color.';}';
+		$bakery_internal_css .= '
+		blockquote{border-left:2px solid '.$primary_color.';}
+		pre{border-left:2px solid '.$primary_color.';}
+		button,input[type="button"],input[type="reset"],input[type="submit"]{background:'.$primary_color.';}
+		a:hover,a:focus,a:active{color:'.$primary_color.';}
+		.pagination .nav-links a:hover{color:'.$primary_color.';}
+		.pagination .current{color:'.$primary_color.';}
+		.entry-content a{color:'.$primary_color.';}
+		.wp-pagenavi span.current{color:'.$primary_color.';}
+		.entry-title, .entry-title a, .widget-area .widget-title{color:'.$primary_color.';}
+		#controllers a:hover, #controllers a.active{color:'.$primary_color.';}
+		#controllers a:hover, #controllers a.active{background-color:'.$primary_color.';}
+		#slider-title a{background:'.$primary_color.';}';
 	}
 
 	if( !empty( $bakery_internal_css ) ) {
@@ -207,13 +217,13 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+/**
+ * Load Theme Options Panel
+ */
+require get_template_directory() . '/inc/theme-options.php';
 
-define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
-require_once dirname( __FILE__ ) . '/inc/options-framework.php';
-
-// Loads options.php from child or parent theme
-$optionsfile = locate_template( 'options.php' );
-load_template( $optionsfile );
-
+/**
+ * Slider
+ */
 require_once( get_template_directory() . '/inc/header-functions.php' );
 ?>

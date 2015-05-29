@@ -24,6 +24,17 @@ function bakery_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'bakery_body_classes' );
 
+// Bakery theme excerpt Lenght & More Filter
+function bakery_excerpt_length( $length ) {
+	return 20;
+}
+function bakery_excerpt_more( $more ) {
+	return '...';
+}
+add_filter( 'excerpt_more', 'bakery_excerpt_more' );
+add_filter( 'excerpt_length', 'bakery_excerpt_length', 999 );
+
+//
 if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	/**
 	 * Filters wp_title to print a neat <title> tag based on what is being viewed.

@@ -24,18 +24,18 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
 		<?php
-        if( ( of_get_option( 'bakery_show_header_logo_text', 'text_only' ) == 'both' || of_get_option( 'bakery_show_header_logo_text', 'text_only' ) == 'logo_only' ) && of_get_option( 'bakery_header_logo_image', '' ) != '' ) {
+        if ( get_theme_mod('logo' , get_template_directory_uri() . '/images/logo.png') ) {
         ?>
             <div class="header-logo-image">
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url(of_get_option( 'bakery_header_logo_image', '' )); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+                <img src="<?php echo esc_url( get_theme_mod('logo' , get_template_directory_uri() . '/images/logo.png') ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+                </a>
             </div><!-- #header-logo-image -->
         <?php
-        }
-
-        if( of_get_option( 'bakery_show_header_logo_text', 'text_only' ) == 'both' || of_get_option( 'bakery_show_header_logo_text', 'text_only' ) == 'text_only' ) {
+        } else {
         ?>
         	<div class="header-text">
-			<h1 class="site-title"><i class="fa <?php echo esc_attr( of_get_option( 'bakery_header_text_icon', 'fa-3x fa-birthday-cake' ) ); ?>"></i><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
         	</div>
 
         <?php
@@ -45,9 +45,9 @@
             	<?php get_search_form(); ?>
             	<div class="site-description">
                 	<?php
-                    $adress = of_get_option( 'bakery_header_adress', 'Massachusetts Ave, Cambridge, MA, USA' );
-					$mail = of_get_option( 'bakery_header_mail', 'info@example.com' );
-					$phone = of_get_option( 'bakery_header_phone', '+1 617-253-1000' );
+                    $adress = get_theme_mod( 'adress', 'Massachusetts Ave, Cambridge, MA, USA' );
+					$mail = get_theme_mod( 'mail', 'info@example.com' );
+					$phone = get_theme_mod( 'phone', '+1 617-253-1000' );
 					
 					if ($mail) echo '<i class="fa fa-envelope-o"></i>'.$mail.'<br />';
 					if ($phone) echo '<i class="fa fa-phone"></i>'.$phone.'<br />';
@@ -68,7 +68,7 @@
     </nav><!-- #site-navigation -->
     
 <?php
-if( of_get_option( 'bakery_activate_slider', '0' ) == '1' ) {
+if( get_theme_mod( 'enable_slider' ) ) {
 	if ( is_front_page() ) {
 ?>
 		<div class="site-slider"><div class="inner">

@@ -4,7 +4,7 @@ Theme URI: http://dinozoom.com/themes/bakery-wordpress-theme-for-bakeries-food-b
 Author: Dinozoom
 Author URI: http://dinozoom.com/
 Description: Bakery theme is a beautifully designed responsive Wordpress Theme for your bakery, coffee shop, bar, bistro, restaurant, food blogger and other similar websites. It supports and comes with custom widgets, drop-down menus, javascript slideshow and lots of other useful features.
-Version: 0.07
+Version: 0.08
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bakery
@@ -356,8 +356,8 @@ html {
 }
 
 body {
-	background-color: #59cff4;
-	background-image: url(images/bg.jpg);
+	background-color: #FFFFCC;
+	/*background-image: url(images/bg.jpg);*/
 	background-repeat: repeat;
 }
 
@@ -994,6 +994,7 @@ header.site-header {
 }
 .header-logo-image {
 	margin-top:30px;
+	float:left;
 }
 .header-text{
 	color:#FFF;
@@ -1002,10 +1003,6 @@ header.site-header {
 .site-title{
 	display:inline-block;
 	padding:10px 20px 0 5px;
-}
-.site-title .fa{
-	padding:10px 20px 0 5px;
-	color: #565656;
 }
 .site-title a {
 	font-size:50px;
@@ -1901,6 +1898,46 @@ article.page {
 	text-align: center;
 }
 
+/* Homepage Post Box CSS */
+.post-box {
+	float: left;
+	width: 30%;
+	margin-right: 3%;
+	margin-bottom: 20px;
+	background-color: rgba(255,255,255,0.4);
+	border-radius: 4px;
+}
+.post-box div {
+	display:block;
+}
+.post-box .post-box-media img {
+	width:100%;
+	height:auto;
+}
+.post-box .post-box-title h3 {
+	font-size:14px;
+	padding-bottom:5px;
+}
+.post-box .post-box-date span {
+	display:inline-block;
+	font-size:12px;
+	padding-right:10px;
+}
+.post-box .post-box-excerpt p {
+	margin: 0 5px;
+}
+.post-box .post-box-more {
+	float:right;
+	display:inline-block;
+	border-radius: 5px;
+	background-image:url(images/menu_bg.png);
+	border:#999 1px solid;
+	margin:5px;
+	padding:5px;
+}
+
+	
+
 /* responsive css------------------------------------------------------------ */
 @media only screen and (max-width: 799px) {
 	.site-branding {
@@ -1998,6 +2035,11 @@ article.page {
 	#project_section .hc_project_area img{
 		width:98%;
 	}
+		/* home recent post box */
+		.post-box {
+			width:100%;
+			float:left;
+		}
 }
 @media only screen and (max-width: 479px) {
 	.widget-area .widget {

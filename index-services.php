@@ -1,8 +1,9 @@
-<!-- Service Section -->
+<!-- Services Section -->
 <?php
-$mst = esc_attr(of_get_option( 'bakery_main_service_title' ));
-$msd = esc_attr(of_get_option( 'bakery_main_service_desc' ));
+$mst = esc_attr (get_theme_mod( 'services_title' ));
+$msd = esc_attr (get_theme_mod( 'services_desc' ));
 ?>
+<div class="clear"></div>
 <div class="container" id="service_section">	
     <div class="hc_service_title">
         <?php if($mst!='') { ?>
@@ -17,7 +18,8 @@ $msd = esc_attr(of_get_option( 'bakery_main_service_desc' ));
 <div class="hc_home_border"></div>
 <div class="container">
 <?php
-	$count = of_get_option( 'bakery_services_count', 4 );
+	//$count = get_theme_mod( 'services_quantity', 4 );
+	$count = 4;
 	//
 	$w = 25;
 	switch ($count) {
@@ -37,18 +39,21 @@ $msd = esc_attr(of_get_option( 'bakery_main_service_desc' ));
         <div class="hc_service_area <?php echo "sw-$w"; ?>">
         <?php
 		// values
-		$icon = esc_attr(of_get_option( 'bakery_service_icon'.$i ));
-		$title = esc_attr(of_get_option( 'bakery_service_title'.$i ));
-		$desc = esc_attr(of_get_option( 'bakery_service_desc'.$i ));
-		$link = esc_url(of_get_option( 'bakery_service_link'.$i ));
+		$icon = esc_attr(get_theme_mod( 'service_icon'.$i, "birthday-cake"));
+		$title = esc_attr(get_theme_mod( 'service_title'.$i, "Lorem ipsum" ));
+		$desc = esc_attr(get_theme_mod( 'service_desc'.$i, "Nullam fringilla lorem sed ante pharetra, et ultrices nisl rhoncus!" ));
+		$link = esc_url(get_theme_mod( 'service_link'.$i ));
+		$color = esc_attr(get_theme_mod( 'service_color'.$i ));
+		// style
+		$color = str_replace("#999",$color,'style="border-color:#999; color:#999;"');
 		//
 		if ($link):
 		?>
-        <a href="<?php echo $link; ?>"><i class=" fa <?php echo $icon; ?>"></i></a>
+        <a href="<?php echo $link; ?>"><i class=" fa <?php echo $icon; ?>" <?php echo $color;?>></i></a>
         <h2><a href="<?php echo $link; ?>"><?php echo $title; ?></a></h2>
         <p><?php echo $desc; ?> </p>
         <?php else: ?>
-        <i class="fa <?php echo $icon; ?>"></i>
+        <i class="fa <?php echo $icon; ?>" <?php echo $color;?>></i>
         <h2><?php echo $title; ?></h2>
         <p><?php echo $desc; ?> </p>
         <?php endif; ?>
@@ -58,4 +63,5 @@ $msd = esc_attr(of_get_option( 'bakery_main_service_desc' ));
 ?>
 </div><!--container-->
 <div class="hc_home_border"></div>
+<div class="clear"></div>
 	
