@@ -436,21 +436,6 @@ function redux_setup_framework_options(){
 				'validate' => 'html',
 				),
 
-			array(
-				'id'=>'demo-intro',
-				'type'=>'info',
-				'style'=>'help',
-				'header'=> __( 'This is a header.', 'redux-framework' ),
-				'desc' => __( '<span class="redux-title">Demo Content</span>', 'redux-framework')
-				),
-
-			array(
-				'title' => __('Enable Demo Content?', 'redux-framework'), 
-				'desc' => __('Check to enable demo content.', 'redux-framework'),
-				'id'=>'thinkup_general_democontent',
-				'type' => 'checkbox',
-				'default' => '0'// 1 = on | 0 = off
-				),
 		)
 	);
 

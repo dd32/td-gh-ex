@@ -337,10 +337,6 @@ border-bottom: none;
 	HIDE IN-DEVELOPMENT FEATURES
 ---------------------------------------------------- */
 
-#demo-intro,
-#section-thinkup_general_democontent {
-	display: none;
-}
 #section-thinkup_portfolio_style fieldset ul li:nth-child(2),
 #section-thinkup_project_navigationswitch,
 section-thinkup_portfolio_textcheck {

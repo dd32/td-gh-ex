@@ -127,8 +127,13 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.1.8
+- New:     Tag "three-columns" added to style.css.
+- Fixed:   Fix jQuery code used to add tr tags in main-backend.js. Improves compatibility with 3rd party code.
+- Removed: Unnecessary placeholder theme options removed.
+
 Version 1.1.7
-- New:     Variable $thinkup_general_fixedlayoutswitch used to assign responsive layouy for default settings.
+- New:     Variable $thinkup_general_fixedlayoutswitch used to assign responsive layout for default settings.
 - Updated: Theme now displays responsive layout on default settings. 
 - Removed: Variable $thinkup_general_responsiveswitch was used to set fixed layout by default.
 
