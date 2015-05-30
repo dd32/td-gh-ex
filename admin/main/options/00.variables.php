@@ -30,7 +30,6 @@ function thinkup_reduxvariables() {
 	$GLOBALS['thinkup_general_breadcrumbdelimeter']         = thinkup_var ( 'thinkup_general_breadcrumbdelimeter' );
 	$GLOBALS['thinkup_general_customcss']                   = thinkup_var ( 'thinkup_general_customcss' );
 	$GLOBALS['thinkup_general_customjavafront']             = thinkup_var ( 'thinkup_general_customjavafront' );
-	$GLOBALS['thinkup_general_democontent']                 = thinkup_var ( 'thinkup_general_democontent' );
 
 	//  1.2.     Homepage.
 	$GLOBALS['thinkup_homepage_layout']                     = thinkup_var ( 'thinkup_homepage_layout' );

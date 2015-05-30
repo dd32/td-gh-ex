@@ -204,7 +204,7 @@
 	.element.column-2 ,
 	.element.column-3 ,
 	.element.column-4 {
-		width: auto;
+		width: auto !important;
 	}
 	#filter.portfolio-filter li {
 		display: block;

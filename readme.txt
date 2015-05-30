@@ -98,6 +98,11 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.6.5
+- Fixed:   Blog grid layout now displays correctly (full-width) on mobile devices.
+- Fixed:   Fix jQuery code used to add tr tags in main-backend.js. Improves compatibility with 3rd party code.
+- Removed: Unnecessary placeholder theme options removed.
+
 Version 1.6.4
 - New:     Variable $thinkup_general_fixedlayoutswitch used to assign responsive layouy for default settings.
 - Updated: Theme now displays responsive layout on default settings. 
