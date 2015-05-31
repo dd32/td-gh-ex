@@ -1,0 +1,2509 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: zxc\n"
+"POT-Creation-Date: 2015-05-31 16:52+0300\n"
+"PO-Revision-Date: 2015-05-31 18:14+0300\n"
+"Last-Translator: Елена <layka99@mail.ru>\n"
+"Language-Team: \n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.7\n"
+"X-Poedit-Basepath: ./\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-KeywordsList: __;_n:1,2;_x:1,2c;_e;esc_attr_x;_x;esc_html_e;"
+"esc_html__\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-SearchPath-1: .\n"
+"X-Poedit-SearchPath-2: .\n"
+
+#: ../archive-jetpack-portfolio.php:21 ../inc/widget-portfolio.php:241
+#: ../inc/widget-portfolio.php:256
+msgid "All Projects"
+msgstr "Все проекты"
+
+#: ../archive.php:23
+#, php-format
+msgid "Daily Archives: %s"
+msgstr "Архив за день: %s"
+
+#: ../archive.php:26
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr "Архив за месяц: %s"
+
+#: ../archive.php:26
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: ../archive.php:29
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr "Архив за год: %s"
+
+#: ../archive.php:29
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Год"
+
+#: ../archive.php:32
+msgid "Archives"
+msgstr "Архивы"
+
+#: ../author.php:25
+#, php-format
+msgid "All posts by %s"
+msgstr "Все записи автора %s"
+
+#: ../category.php:21
+#, php-format
+msgid "Category Archives: %s"
+msgstr "Архивы категории: %s"
+
+#: ../comments.php:22
+#, php-format
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s комментарий к &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s комментария к &ldquo;%2$s&rdquo;"
+msgstr[2] "%1$s комментариев к &ldquo;%2$s&rdquo;"
+
+#: ../comments.php:39
+msgid "Comment navigation"
+msgstr "Навигация по комментариям"
+
+#: ../comments.php:40
+msgid "&larr; Older Comments"
+msgstr "&larr; Предыдущие комментарии"
+
+#: ../comments.php:41
+msgid "Newer Comments &rarr;"
+msgstr "Следующие комментарии &rarr;"
+
+#: ../comments.php:46
+msgid "Comments are closed."
+msgstr "Комментарии закрыты"
+
+#: ../content-archive.php:26 ../content-jetpack-portfolio-archive.php:29
+#: ../content-page-archive.php:25
+msgid "Read more.."
+msgstr "Читать далее..."
+
+#: ../content-archive.php:46
+msgid "<div class=\"meta-nav\">Continue reading... &rarr;</div>"
+msgstr "<div class=\"meta-nav\">Читать далее... &rarr;</div>"
+
+#: ../content-archive.php:65 ../content-jetpack-portfolio-archive.php:67
+#: ../content-jetpack-portfolio.php:79 ../content-page-archive.php:56
+#: ../content-page.php:43 ../content.php:79 ../inc/widget-page-2.php:218
+msgid "Edit"
+msgstr "Редактировать"
+
+#: ../content-jetpack-portfolio.php:61
+msgid "<div class=\"meta-nav\">Continue Reading... &rarr;</div>"
+msgstr "<div class=\"meta-nav\">Читать далее... &rarr;</div>"
+
+#: ../content-jetpack-portfolio.php:62
+msgid "Portfolio:"
+msgstr "Портфолио"
+
+#: ../content-none.php:15
+msgid "Nothing Found"
+msgstr "Ничего не найдено"
+
+#: ../content-none.php:23
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Готовы опубликовать свою первую запись? <a href=\"%1$s\">Get started here</"
+"a>."
+
+#: ../content-none.php:27
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Извините, но по Вашему запросу ничего не найдено. Пожалйста, попробуйте "
+"использовать другой запрос."
+
+#: ../content-none.php:32
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr "Мы не нашли то, что вы запросили. Вам может поиск по сайту."
+
+#: ../content-page.php:34 ../content.php:56
+msgid "Pages:"
+msgstr "Страницы:"
+
+#: ../content.php:55
+msgid "<div class=\"meta-nav\">Read more... &rarr;</div>"
+msgstr "<div class=\"meta-nav\">Читать далее... &rarr;</div>"
+
+#: ../functions.php:56
+msgid "First Top Menu"
+msgstr "Первое верхнее меню"
+
+#: ../functions.php:58
+msgid "Second Top Menu"
+msgstr "Второе верхнее меню"
+
+#: ../functions.php:60
+msgid "Footer Menu"
+msgstr "Меню в футере"
+
+#: ../functions.php:144
+#, php-format
+msgid "Page %s"
+msgstr "Страница %s"
+
+#. translators: If there are characters in your language that are not supported
+#. * by Open Sans, Alegreya Sans, Allerta Stencil fonts, translate this to 'off'. Do not translate into your own language.
+#.
+#: ../functions.php:179
+msgctxt "Open Sans, Allerta Stencil, Alegreya Sans fonts: on or off"
+msgid "on"
+msgstr "on"
+
+#. translators: To add an additional Open Sans character subset specific to your language,
+#. * translate this to 'greek', 'cyrillic' or 'vietnamese'. Do not translate into your own language.
+#.
+#: ../functions.php:186
+msgctxt "Font: add new subset (greek, cyrillic, vietnamese)"
+msgid "no-subset"
+msgstr "cyrillic"
+
+#: ../functions.php:396
+msgid "Post navigation"
+msgstr "Навигация по записям"
+
+#: ../functions.php:400
+msgid "<span class=\"meta-nav\">Published In</span>%title"
+msgstr "<span class=\"meta-nav\">Опубликовано в </span>%title"
+
+#: ../functions.php:402
+msgid "<span class=\"nav-next\">%title &rarr;</span>"
+msgstr "<span class=\"nav-next\">%title &rarr;</span>"
+
+#: ../functions.php:404
+msgid "<span class=\"nav-previous\">&larr; %title</span>"
+msgstr "<span class=\"nav-previous\">&larr; %title</span>"
+
+#: ../functions.php:407
+msgid "<span class=\"nav-previous-one\">&larr; %title</span>"
+msgstr "<span class=\"nav-previous-one\">&larr; %title</span>"
+
+#: ../functions.php:453
+msgid "&larr; Previous"
+msgstr "&larr; Предыдущие"
+
+#: ../functions.php:454
+msgid "Next &rarr;"
+msgstr "Следующие &rarr;"
+
+#: ../functions.php:461
+msgid "Posts navigation"
+msgstr "Навигация по записям"
+
+#: ../functions.php:544
+msgid "Leave a comment"
+msgstr "Комментировать"
+
+#: ../functions.php:544
+msgid "1 Comment"
+msgstr "1 комментарий"
+
+#: ../functions.php:544
+msgid "% Comments"
+msgstr "% комментариев"
+
+#: ../inc/admin-page.php:8
+msgid "About theme"
+msgstr "О теме"
+
+#: ../inc/admin-page.php:8
+msgid "About Aladdin"
+msgstr "О Aladdin"
+
+#: ../inc/admin-page.php:24 ../inc/customize-info.php:123
+msgid "Help"
+msgstr "Помощь"
+
+#: ../inc/admin-page.php:27
+msgid "Need help with Aladdin? Click here!"
+msgstr "Нужна помощь с Aladdin? Нажимайте сюда!"
+
+#: ../inc/admin-page.php:69
+msgid "Main Info"
+msgstr "Основная информация"
+
+#: ../inc/admin-page.php:71
+msgid "Theme Options"
+msgstr "Настройки темы"
+
+#: ../inc/admin-page.php:72
+msgid "Widgets"
+msgstr "Виджеты"
+
+#: ../inc/admin-page.php:73 ../inc/customize-info.php:130
+msgid "http://wpblogs.ru/themes/documentation-aladdin/"
+msgstr "http://wpblogs.ru/themes/documentation-aladdin/"
+
+#: ../inc/admin-page.php:73
+msgid "How to use a theme"
+msgstr "Как использовать тему"
+
+#: ../inc/admin-page.php:74
+msgid "Support forum"
+msgstr "Открыть форум поддержки"
+
+#: ../inc/admin-page.php:75 ../inc/customize-info.php:98
+msgid "Rate on WordPress.org"
+msgstr "Оценить на WordPress.org"
+
+#: ../inc/admin-page.php:77 ../inc/customize-info.php:147
+#: ../inc/customize-info.php:182
+msgid "Update to Pro"
+msgstr "Обновить до Pro"
+
+#: ../inc/admin-page.php:87
+msgid ""
+"You are using light version of Aladdin. Update to Aladdin Pro to have even "
+"more features. For Example:"
+msgstr ""
+"Вы используете облегченную версию Aladdin. Обновите до Aladdin Pro, в Pro "
+"версии еще больше настроек. К примеру:"
+
+#: ../inc/admin-page.php:89
+msgid "Unlimited custom colors."
+msgstr "Произвольные цвета;"
+
+#: ../inc/admin-page.php:90
+msgid "Site/content width."
+msgstr "Произвольная ширина контента и сайта;"
+
+#: ../inc/admin-page.php:91
+msgid "More widgets."
+msgstr "Больше виджетов."
+
+#: ../inc/admin-page.php:92
+msgid "Footer copyright text options."
+msgstr "Произвольный копирайт в футере;"
+
+#: ../inc/admin-page.php:102 ../inc/widget-image.php:405
+#: ../inc/widget-items-category.php:371 ../inc/widget-portfolio.php:708
+msgid "More Info"
+msgstr "Больше информации"
+
+#: ../inc/customize-colors.php:21
+msgid "Blue"
+msgstr "Синяя"
+
+#: ../inc/customize-colors.php:22
+msgid "Green"
+msgstr "Зеленая"
+
+#: ../inc/customize-colors.php:28
+msgid "Main Colors"
+msgstr "Основные цвета"
+
+#: ../inc/customize-colors.php:28
+msgid "Main website colors"
+msgstr "Основные  цвета"
+
+#: ../inc/customize-colors.php:34
+msgid "Link"
+msgstr "Ссылка"
+
+#: ../inc/customize-colors.php:40
+msgid "H1-H6 heading"
+msgstr "H1-H6 заголовки"
+
+#: ../inc/customize-colors.php:46
+msgid "H1-H6 Link"
+msgstr "H1-H6  ссылки"
+
+#: ../inc/customize-colors.php:52
+msgid "Description"
+msgstr "Описание"
+
+#: ../inc/customize-colors.php:58
+msgid "Link Hover"
+msgstr "Hover ссылки"
+
+#: ../inc/customize-colors.php:219
+msgid "Colors"
+msgstr "Цвета"
+
+#: ../inc/customize-colors.php:220
+msgid "In this section you can change colors for different elements."
+msgstr "В этой секции вы можете изменитьц вета различных элементов"
+
+#: ../inc/customize-colors.php:224 ../inc/customize-colors.php:237
+msgid "Color Scheme"
+msgstr "Схема цветов"
+
+#: ../inc/customize-colors.php:225
+msgid "This option refresh theme colors."
+msgstr "Этот параметр задает цвета темы."
+
+#: ../inc/customize-colors.php:283
+msgid "Opacity for the "
+msgstr "Прозрачность для"
+
+#: ../inc/customize-fonts.php:36
+msgid "Fonts"
+msgstr "Шрифты"
+
+#: ../inc/customize-fonts.php:37
+msgid "Selecting a google fonts."
+msgstr "Выбор шрифтов google"
+
+#: ../inc/customize-fonts.php:44
+msgid "Google Fonts"
+msgstr "Шрифты Google"
+
+#: ../inc/customize-fonts.php:56
+msgid "Body Font"
+msgstr "Шрифт для всего сайта"
+
+#: ../inc/customize-fonts.php:72
+msgid "Header Font"
+msgstr "Шрифт для заголовка"
+
+#: ../inc/customize-fonts.php:82 ../inc/customize-fonts.php:105
+msgid "Font Size"
+msgstr "Размер шрифта"
+
+#: ../inc/customize-fonts.php:95
+msgid "Heading Font"
+msgstr "Шрифт для заголовков"
+
+#: ../inc/customize-fonts.php:119
+msgid "(px)"
+msgstr "(px)"
+
+#: ../inc/customize-fonts.php:133
+msgid "Heading font size(px)"
+msgstr "Шрифт для заголовков (h1-h6)"
+
+#: ../inc/customize-fonts.php:146
+msgid "Heading Font Weight"
+msgstr "Вес шрифта заголовков"
+
+#: ../inc/customize-fonts.php:156 ../inc/customize-fonts.php:164
+msgid "Reset"
+msgstr "Сбросить"
+
+#: ../inc/customize-fonts.php:157
+msgid "Reset font settings to default"
+msgstr "Восстановить настройки шрифтов по умолчанию"
+
+#: ../inc/customize-fonts.php:185
+msgid "Lighter"
+msgstr "Тонкий"
+
+#: ../inc/customize-fonts.php:186
+msgid "Normal"
+msgstr "Нормальный"
+
+#: ../inc/customize-fonts.php:187
+msgid "Bold"
+msgstr "Жирный"
+
+#: ../inc/customize-fonts.php:253 ../inc/customize-other.php:112
+#: ../inc/customize-other.php:130
+msgid "None"
+msgstr "Не показывать"
+
+#: ../inc/customize-info.php:45
+msgid ""
+"Development of this theme takes a lot of time and efforts to makes it all "
+"easy in use for you and works correctly. If you find this theme useful "
+"please consider supporting it by donation."
+msgstr ""
+"Разработка и тестирование этой темы занимает немало времени. Если тема "
+"оказалась для вас полезной - поддержите проект пожертвованием."
+
+#: ../inc/customize-info.php:56
+msgid "You will be transferred to PayPal secure site."
+msgstr "Эта ссылка веден на защищенный сайт PayPal."
+
+#: ../inc/customize-info.php:66
+msgid "Info"
+msgstr "Информация"
+
+#: ../inc/customize-info.php:67
+msgid "Info and Links."
+msgstr "Информаци я и ссылки"
+
+#: ../inc/customize-info.php:74
+msgid "Support"
+msgstr "Поддержка"
+
+#: ../inc/customize-info.php:75
+msgid "Got something to say? Need help?"
+msgstr "Есть вопросы? Нужна помощь?"
+
+#: ../inc/customize-info.php:89 ../inc/customize-info.php:90
+msgid "View Support forum"
+msgstr "Открыть форум поддержки."
+
+#: ../inc/customize-info.php:99
+msgid ""
+"Share your thoughts about this theme. Your opinion is important for further "
+"improvement."
+msgstr ""
+"Поделитесь своими мыслями об этой теме. Ваше мнение поможет улучшить тему!"
+
+#: ../inc/customize-info.php:113 ../inc/customize-info.php:114
+msgid "Rate"
+msgstr "Голосовать"
+
+#: ../inc/customize-info.php:136
+msgid "How to use."
+msgstr "Как использовать"
+
+#: ../inc/customize-info.php:137
+msgid "Open"
+msgstr "Открыть"
+
+#: ../inc/customize-info.php:154 ../inc/customize-info.php:176
+msgid "http://wpblogs.ru/themes/aladdin-pro/"
+msgstr "http://wpblogs.ru/themes/aladdin-pro/"
+
+#: ../inc/customize-info.php:160 ../inc/customize-info.php:161
+#: ../inc/customize-info.php:183
+msgid "Update Now"
+msgstr "Обновить до Pro"
+
+#: ../inc/customize-info.php:169
+msgid "More Colors"
+msgstr "Другие цвета"
+
+#: ../inc/customize-info.php:192 ../inc/customize-info.php:204
+#: ../inc/customize-info.php:205
+msgid "Donate"
+msgstr "Пожертвовать"
+
+#: ../inc/customize-layout.php:16
+msgid "Layout"
+msgstr "Расположение"
+
+#: ../inc/customize-layout.php:17
+msgid "In this section you can choose layout settings."
+msgstr "В этой секции можно настроить расположение элементов."
+
+#: ../inc/customize-layout.php:25
+msgid "Site size"
+msgstr "Размер сайта"
+
+#: ../inc/customize-layout.php:26
+msgid "You can control main dimensions of your website from this section"
+msgstr "В этой секции можно настроить основные размеры сайта"
+
+#: ../inc/customize-layout.php:40
+msgid "Max width of the content area (no columns layout)"
+msgstr "Максимальная ширина области содержимого (без колонок)"
+
+#: ../inc/customize-layout.php:52
+msgid "Featured Image"
+msgstr "Миниатюра записи"
+
+#: ../inc/customize-layout.php:53
+msgid "Image Size"
+msgstr "Размер изображения"
+
+#: ../inc/customize-layout.php:65
+msgid ""
+"Width of the Featured Image (Images should be updated with Regenerate "
+"Thumbnails plugin)."
+msgstr "Ширина Миниатюры записи"
+
+#: ../inc/customize-layout.php:77 ../inc/customize-mobile.php:24
+msgid "Columns"
+msgstr "Колонки"
+
+#: ../inc/customize-layout.php:78
+msgid "You can set the size of columns in this section"
+msgstr "В этой секции можно настроить ширину колонок"
+
+#: ../inc/customize-layout.php:90
+msgid "Unit"
+msgstr "Единица измерения"
+
+#: ../inc/customize-layout.php:95
+msgid "%"
+msgstr "%"
+
+#: ../inc/customize-layout.php:110 ../inc/customize-layout.php:146
+#: ../inc/customize-layout.php:183 ../inc/customize-layout.php:219
+msgid "(%)"
+msgstr "(%)"
+
+#: ../inc/customize-layout.php:130
+msgid "Width of the first column (two sidebars layout)"
+msgstr "Ширина первой колонки (2 сайдбара)"
+
+#: ../inc/customize-layout.php:166
+msgid "Width of the second column (two sidebars layout)"
+msgstr "Ширина второй колонки (2 сайдбара)"
+
+#: ../inc/customize-layout.php:203
+msgid "Width of the first column (left sidebar layout)"
+msgstr "Ширина первой колонки (левая колонка)"
+
+#: ../inc/customize-layout.php:239
+msgid "Width of the second column (right sidebar layout)"
+msgstr "Ширина правой колонки (одна правая колонка)"
+
+#: ../inc/customize-layout.php:252
+msgid "Check mark to display content on the static front page"
+msgstr "Чтобы отображать контент на главной странице нужно установить галочку"
+
+#: ../inc/customize-layout.php:265
+msgid "Check mark to display footer sidebar on front page"
+msgstr "Чтобы отображать контент на главной странице нужно установить галочку"
+
+#: ../inc/customize-layout.php:277
+msgid "Post"
+msgstr "Пост"
+
+#: ../inc/customize-layout.php:278
+msgid "Customize posts"
+msgstr "Настроить посты"
+
+#: ../inc/customize-layout.php:290
+msgid "Post style"
+msgstr "Стиль записи"
+
+#: ../inc/customize-layout.php:306 ../inc/customize-layout.php:384
+#: ../inc/customize-layout.php:433
+msgid "Display Featured Image"
+msgstr "Отображать миниатюру записи"
+
+#: ../inc/customize-layout.php:321 ../inc/customize-layout.php:399
+#: ../inc/customize-layout.php:448
+msgid "Display Title"
+msgstr "Отображать заголовок"
+
+#: ../inc/customize-layout.php:336
+msgid "Display Category List"
+msgstr "Отображать категории"
+
+#: ../inc/customize-layout.php:351 ../inc/customize-layout.php:478
+msgid "Display Tag List"
+msgstr "Отображать метки"
+
+#: ../inc/customize-layout.php:368
+msgid "Page style"
+msgstr "Стиль страницы"
+
+#: ../inc/customize-layout.php:417
+msgid "Portfolio Archive/Index style"
+msgstr "Портфоли Архив/Индекс"
+
+#: ../inc/customize-layout.php:463
+msgid "Display Project"
+msgstr "Отображать проекты"
+
+#: ../inc/customize-layout.php:494
+msgid "Excerpt"
+msgstr "Цитата"
+
+#: ../inc/customize-layout.php:495
+msgid "Content"
+msgstr "Содержимое"
+
+#: ../inc/customize-layout.php:496
+msgid "No Content"
+msgstr "Нет содержимого"
+
+#: ../inc/customize-layout.php:516
+msgid "Full Width"
+msgstr "Без боковых колонок, широкий"
+
+#: ../inc/customize-layout.php:517
+msgid "Left Column"
+msgstr "Левая колонка"
+
+#: ../inc/customize-layout.php:518
+msgid "Right Column"
+msgstr "Правая колонка"
+
+#: ../inc/customize-layout.php:519
+msgid "Two Columns"
+msgstr "Две колонки"
+
+#: ../inc/customize-layout.php:531
+msgid "Default (1 column)"
+msgstr "По умолчанию (1 колонка)"
+
+#: ../inc/customize-layout.php:532
+msgid "1 column"
+msgstr "1 колонка"
+
+#: ../inc/customize-layout.php:533
+msgid "2 columns"
+msgstr "2 колонки"
+
+#: ../inc/customize-layout.php:534
+msgid "3 columns"
+msgstr "3 колонки"
+
+#: ../inc/customize-layout.php:535
+msgid "4 columns"
+msgstr "4 колонки"
+
+#: ../inc/customize-layout.php:660 ../inc/theme-options.php:229
+msgid "Home"
+msgstr "Домашняя страница"
+
+#: ../inc/customize-layout.php:668 ../inc/theme-options.php:209
+#: ../inc/theme-options.php:364
+msgid "Blog"
+msgstr "Блог"
+
+#: ../inc/customize-layout.php:676 ../inc/theme-options.php:219
+msgid "Search"
+msgstr "Поиск"
+
+#: ../inc/customize-layout.php:684
+msgid "Shop"
+msgstr "Магазин"
+
+#: ../inc/customize-layout.php:692
+msgid "Shop Page"
+msgstr "Магазин (страница)"
+
+#: ../inc/customize-layout.php:700 ../inc/theme-options.php:177
+msgid "Portfolio (Archive)"
+msgstr "Портфолио (Архив)"
+
+#: ../inc/customize-layout.php:708 ../inc/theme-options.php:167
+msgid "Portfolio (Page)"
+msgstr "Портфолио (Страница)"
+
+#: ../inc/customize-layout.php:716 ../inc/widget-page-2.php:502
+msgid "Page"
+msgstr "Страница"
+
+#: ../inc/customize-layout.php:724 ../inc/theme-options.php:157
+msgid "Archive"
+msgstr "Архивы"
+
+#: ../inc/customize-layout.php:732 ../inc/theme-options.php:136
+msgid "Default"
+msgstr "По умолчанию"
+
+#: ../inc/customize-layout.php:816
+msgid "Layout settings for "
+msgstr "Настройки содержимого для"
+
+#: ../inc/customize-layout.php:828
+msgid " layout"
+msgstr "Расположение"
+
+#: ../inc/customize-layout.php:846
+msgid " layout (content)"
+msgstr "Расположение (содержимое)"
+
+#: ../inc/customize-mobile.php:15
+msgid "Mobile"
+msgstr ""
+
+#: ../inc/customize-mobile.php:16
+msgid "Settings for mobile users."
+msgstr "Настройки для мобильных пользователей"
+
+#: ../inc/customize-mobile.php:25
+msgid "Settings for small screens"
+msgstr "Настройки для маленьких экранов"
+
+#: ../inc/customize-mobile.php:37
+msgid "Switch point"
+msgstr "Точка перехода"
+
+#: ../inc/customize-mobile.php:46
+msgid "Order"
+msgstr "Порядок"
+
+#: ../inc/customize-mobile.php:47
+msgid "Order and visibility for columns on small screens"
+msgstr "Последовательность и видимость колонок на маленьких экранах"
+
+#: ../inc/customize-mobile.php:59
+msgid "Content and column-1, column-2 position for small screens"
+msgstr "Позиция Содержимого и колонок на маленьких экранах"
+
+#: ../inc/customize-mobile.php:64
+msgid "Content-1-2"
+msgstr "Содержимое-1-2"
+
+#: ../inc/customize-mobile.php:65
+msgid "Content-2-1"
+msgstr "Содержимое-2-1"
+
+#: ../inc/customize-mobile.php:66
+msgid "1-Content-2"
+msgstr "1-Содержимое-2"
+
+#: ../inc/customize-mobile.php:67
+msgid "2-Content-1"
+msgstr "2-Содержимое-1"
+
+#: ../inc/customize-mobile.php:68
+msgid "1-2-Content"
+msgstr "1-2-Содержимое"
+
+#: ../inc/customize-mobile.php:69
+msgid "2-1-Content"
+msgstr "2-1-Содержимое"
+
+#: ../inc/customize-mobile.php:80
+msgid "Check mark to display first column on small screens"
+msgstr "Установить галку, чтобы показывать первую колонку"
+
+#: ../inc/customize-mobile.php:94
+msgid "Check mark to display second column on small screens"
+msgstr "Установите галку, чтобы показывать вторую колонку"
+
+#: ../inc/customize-other.php:15
+msgid "Other Settings"
+msgstr "Настроить другие свойства"
+
+#: ../inc/customize-other.php:16
+msgid "All other settings."
+msgstr "Все другие настройки"
+
+#: ../inc/customize-other.php:23
+msgid "Logotype"
+msgstr "Логотип"
+
+#: ../inc/customize-other.php:35
+msgid "Logotype Image"
+msgstr "Логотип"
+
+#: ../inc/customize-other.php:43
+msgid "Navigation menu settings"
+msgstr "Настройки меню"
+
+#: ../inc/customize-other.php:55
+msgid "Switch On First Top Menu"
+msgstr "Включить первое верхнее меню"
+
+#: ../inc/customize-other.php:70
+msgid "Switch On Second Top Menu"
+msgstr "Включить второе верхнее меню"
+
+#: ../inc/customize-other.php:84
+msgid "Switch On Footer Menu"
+msgstr "Включить меню в подвале"
+
+#: ../inc/customize-other.php:93
+msgid "Scroll To Top Button"
+msgstr "Кнопка прокрутки вверх"
+
+#: ../inc/customize-other.php:107
+msgid "How to display the scroll to top button"
+msgstr "Как отображать кнопку прокрутки вверх"
+
+#: ../inc/customize-other.php:113 ../inc/widget-image.php:312
+#: ../inc/widget-items-category.php:346 ../inc/widget-page-2.php:395
+#: ../inc/widget-portfolio.php:683
+msgid "Right"
+msgstr "Справа"
+
+#: ../inc/customize-other.php:114 ../inc/widget-page-2.php:396
+msgid "Left"
+msgstr "Слева"
+
+#: ../inc/customize-other.php:115 ../inc/widget-page-2.php:397
+msgid "Center"
+msgstr "По центру"
+
+#: ../inc/customize-other.php:125
+msgid "How to animate the scroll to top button"
+msgstr "Как анимировать кнопку прокрутки к началу"
+
+#: ../inc/customize-other.php:131
+msgid "Jump"
+msgstr "Прыгает"
+
+#: ../inc/customize-other.php:136 ../inc/customize-other.php:149
+msgid "Favicon"
+msgstr "Favicon"
+
+#: ../inc/customize-other.php:137
+msgid ""
+"You can select an Icon to be shown at the top of browser window by uploading "
+"from your computer. (Size: [16X16] px)"
+msgstr "Загрузить картику с компьютера (размером  [16X16] px))"
+
+#: ../inc/customize-other.php:166
+msgid "Display Header Image on the Front Page only"
+msgstr "Отображать изображение заголовка на главной странице и больше нигде"
+
+#: ../inc/customize-other.php:175
+msgid "Theme Widgets"
+msgstr "Виджеты"
+
+#: ../inc/customize-other.php:176
+#, fuzzy
+msgid "You can hide/show predefined widgets in this section"
+msgstr "В этой секции можно настроить ширину колонок"
+
+#: ../inc/customize-other.php:187
+msgid "Display Widgets On Front Page"
+msgstr "Отображать виджеты на главной странице"
+
+#: ../inc/customize-other.php:201
+msgid "Display Widgets on other pages"
+msgstr "Отображать виджеты на других страницах"
+
+#: ../inc/customize-other.php:224
+msgid "Social Media Icons"
+msgstr "Иконки социальных сетей"
+
+#: ../inc/customize-other.php:225
+msgid ""
+"Add your Social Media Links. Use widget Social Icons to add icons to your "
+"the site."
+msgstr ""
+"Добавить иконки социальных сетей. Для добавления иконок на сайт "
+"воспользуйтесь виджетом."
+
+#: ../inc/customize-sidebars.php:16
+msgid "Sidebars"
+msgstr "Сайдбары"
+
+#: ../inc/customize-sidebars.php:17
+msgid "In this section you can add or remove sidebars for particular pages."
+msgstr ""
+"В этой секции вы можете добавить или убрать сайдбары для определенной "
+"страницу"
+
+#: ../inc/customize-sidebars.php:29
+msgid "You can add custom sidebars for the page(s) \""
+msgstr "Вы моете добавить произвольные сайдбары для страницы \""
+
+#: ../inc/customize-sidebars.php:29
+msgid ""
+"\" by selecting options in this section. Default sidebars won't be shown on "
+"this page(s)."
+msgstr ""
+"\" при помощи настроек в этой секции. Сайдбары по умолчанию не будут "
+"отображаться на этой странице."
+
+#: ../inc/customize-sidebars.php:30
+msgid "Default sidebars for all pages, post and custom post types."
+msgstr "Сайдбары по умолчанию для всех страниц, записей и произвольных типов."
+
+#: ../inc/customize-sidebars.php:45
+msgid "Register default sidebars for all pages"
+msgstr "Зарегистрировать сайдбары по умолчанию для всех страниц"
+
+#: ../inc/customize-sidebars.php:47
+msgid "Override default sidebars by custom sidebars on "
+msgstr "Перезаписывать сайдбары по умолчанию на"
+
+#: ../inc/customize-sidebars.php:47
+msgid ""
+" (must be checked). Please, choose sidebars which you want to use on this "
+"page."
+msgstr ""
+"(должна быть нажата). Выберети сайдбары, которые вы хотите использовать на "
+"данной странице."
+
+#: ../inc/customize-sidebars.php:103
+msgid "Page ["
+msgstr "Страница ["
+
+#: ../inc/customize-sidebars.php:104
+msgid "Per page sidebars for the page ["
+msgstr "Сайдбары для страницы ["
+
+#: ../inc/customize-sidebars.php:119
+msgid "Uncheck this mark to remove section and custom sidebars for the page ["
+msgstr ""
+"Чтобы убрать эту секцию и использовать основные сайдбары для этой страницы "
+"нужно убрать галку"
+
+#: ../inc/customize-sidebars.php:156
+msgid "Custom sidebars"
+msgstr "Произвольные сайдбары"
+
+#: ../inc/customize-sidebars.php:157
+msgid ""
+"In this section you can create a sidebar for a certain page. Select page and "
+"press save. Refresh Customizer to see newly added section for that page."
+msgstr ""
+"В этой секции можно создать сайдбар для конкретной страице. Сначалу нужно "
+"выделить страницу и сохранить изменения. После перезагрузки Настройщика вы "
+"увидите новую секцию с настройками для этой страницы."
+
+#: ../inc/customize-sidebars.php:173
+msgid ""
+"Select a page and save data. Refresh Customizer to customize new section."
+msgstr ""
+"Выделите страницу и сохраните данные. Перезагрузите окно, чтобы настроить "
+"параметры сайдбаров на этой странице."
+
+#: ../inc/customize-sidebars.php:252
+msgid "["
+msgstr "["
+
+#: ../inc/customize-sidebars.php:252
+msgid "] "
+msgstr "] "
+
+#: ../inc/customize-widget-forms.php:27
+msgid "Parallax background"
+msgstr "Параллакс фон"
+
+#: ../inc/customize-widget-forms.php:29
+msgid "Widget Icon:"
+msgstr "Иконка виджета"
+
+#: ../inc/customize-widget-forms.php:30
+msgid "Fixed:"
+msgstr "Зафиксировать"
+
+#: ../inc/customize-widget-forms.php:31
+msgid "Speed (10-100):"
+msgstr "Скорость (10-100):"
+
+#: ../inc/customize-widget-forms.php:32
+msgid "Padding top (%):"
+msgstr "Верхний отступ (%):"
+
+#: ../inc/customize-widget-forms.php:33
+msgid "Padding bottom (%):"
+msgstr "Нижний отступ (%):"
+
+#: ../inc/customize-widget-forms.php:34
+msgid ""
+"Hide widget title (Background does not work without widget title, but you "
+"can hide it here)"
+msgstr ""
+"Спрятать заголовок виджета (фон не будет работать, если нет заголовка у "
+"виджета, но его можно спрятать)"
+
+#: ../inc/customize.php:13
+msgid "Customize Background"
+msgstr "Настроить фон"
+
+#: ../inc/customize.php:14
+msgid "Background."
+msgstr "Фон:"
+
+#: ../inc/customize.php:19
+msgid "Menu"
+msgstr "Меню"
+
+#: ../inc/customize.php:20
+msgid "Navigation settings."
+msgstr "Настройки меню"
+
+#: ../inc/social-media-widget.php:12
+msgid "Display Social Media Links."
+msgstr "Показывать ссылки на социльные сети."
+
+#: ../inc/social-media-widget.php:21
+msgid "AlSocial Media Icons"
+msgstr "AlИконки социальных сетей"
+
+#: ../inc/social-media-widget.php:82 ../inc/widget-image.php:285
+#: ../inc/widget-items-category.php:270 ../inc/widget-page-2.php:371
+#: ../inc/widget-portfolio.php:138 ../inc/widget-portfolio.php:315
+#: ../inc/widget-portfolio.php:606 ../inc/widget-sidebar-navigation.php:139
+msgid "Title: "
+msgstr "Заголовок:"
+
+#: ../inc/social-media-widget.php:84
+msgid "Small Icons."
+msgstr "Маленькие иконки."
+
+#: ../inc/social-media-widget.php:85
+msgid "Vertical Icons."
+msgstr "Вертикальные иконки."
+
+#: ../inc/theme-options.php:82
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+
+#: ../inc/theme-options.php:82
+msgid "Powered by WordPress"
+msgstr "Работает на WordPress"
+
+#: ../inc/theme-options.php:82
+msgid "theme "
+msgstr " тема "
+
+#: ../inc/theme-options.php:82
+msgid "http://wpblogs.ru/themes/blog/theme/aladdin/"
+msgstr "http://wpblogs.ru/theme/aladdin/"
+
+#: ../inc/theme-options.php:95
+msgid "First column"
+msgstr "Первая колонка"
+
+#: ../inc/theme-options.php:99
+msgid "Second column"
+msgstr "Вторая колонка"
+
+#: ../inc/theme-options.php:103
+msgid "First Top Sidebar"
+msgstr "Верхний сайдбар"
+
+#: ../inc/theme-options.php:107
+msgid "Before Footer Sidebar"
+msgstr "Сайдбар перед футером"
+
+#: ../inc/theme-options.php:111
+msgid "Footer Sidebar 1"
+msgstr "Сайдбар в футере 1"
+
+#: ../inc/theme-options.php:115
+msgid "Footer Sidebar 2"
+msgstr "Сайдбар в футере 2"
+
+#: ../inc/theme-options.php:119
+msgid "Footer Sidebar 3"
+msgstr "Сайдбар в футере 3"
+
+#: ../inc/theme-options.php:128
+msgid "Static"
+msgstr "Статический"
+
+#: ../inc/theme-options.php:147
+msgid "Pages"
+msgstr "Страницы"
+
+#: ../inc/theme-options.php:188
+msgid "Shop (Page)"
+msgstr "Магазин (страница)"
+
+#: ../inc/theme-options.php:198
+msgid "Shop (Archive)"
+msgstr "Магазин (архив)"
+
+#: ../inc/theme-options.php:239
+msgid "Page 404"
+msgstr "Страница 404"
+
+#: ../inc/theme-options.php:294
+msgid "About"
+msgstr "О теме"
+
+#: ../inc/theme-options.php:295
+msgid "Aladdin"
+msgstr "Aladdin"
+
+#: ../inc/theme-options.php:302
+msgid ""
+"This is a widget page. This content can be replaced by any page from your "
+"website."
+msgstr ""
+"Это виджет страница. Этот текст может быть заменен на любую страницу с "
+"вашего сайта."
+
+#: ../inc/theme-options.php:309
+msgid "Widget Page"
+msgstr "Виджет страница"
+
+#: ../inc/theme-options.php:310
+msgid "Main features"
+msgstr "Основные особенности"
+
+#: ../inc/theme-options.php:317
+msgid ""
+"<ul><li>Feature number 1</li><li>Second feature</li><li>One more feature</"
+"li><li>Feature number 4</li></ul>"
+msgstr ""
+"<ul><li>Первая опция</li><li>Вторая опция</li><li>Третья опция</"
+"li><li>Четвертая опция</li></ul>"
+
+#: ../inc/theme-options.php:321
+msgid "Widget Image"
+msgstr "Виджет картинка"
+
+#: ../inc/theme-options.php:349
+msgid "Image 1"
+msgstr "Изображение 1"
+
+#: ../inc/theme-options.php:350
+msgid "Image 2"
+msgstr "Изображение 2"
+
+#: ../inc/theme-options.php:351
+msgid "Image 3"
+msgstr "Изображение 3"
+
+#: ../inc/theme-options.php:352
+msgid "Image 4"
+msgstr "Изображение 4"
+
+#: ../inc/theme-options.php:353
+msgid "Image 5"
+msgstr "Изображение 5"
+
+#: ../inc/theme-options.php:354
+msgid "Image 6"
+msgstr "Изображение 6"
+
+#: ../inc/theme-options.php:355
+msgid "Description 1"
+msgstr "Описание 1"
+
+#: ../inc/theme-options.php:356
+msgid "Description 2"
+msgstr "Описание 2"
+
+#: ../inc/theme-options.php:357
+msgid "Description 3"
+msgstr "Описание 3"
+
+#: ../inc/theme-options.php:358
+msgid "Description 4"
+msgstr "Описание 4"
+
+#: ../inc/theme-options.php:359
+msgid "Description 5"
+msgstr "Описание 5"
+
+#: ../inc/theme-options.php:360
+msgid "Description 6"
+msgstr "Описание 6"
+
+#: ../inc/theme-options.php:430
+msgid "Contact us"
+msgstr "Связаться с нами"
+
+#: ../inc/theme-options.php:443 ../inc/theme-options.php:477
+#: ../inc/widget-portfolio.php:329
+msgid "Projects"
+msgstr "Проекты"
+
+#: ../inc/theme-options.php:457
+msgid "Calendar"
+msgstr "Календарь"
+
+#: ../inc/theme-options.php:460 ../inc/widget-items-category.php:360
+msgid "Recent Posts"
+msgstr "Последние записи"
+
+#: ../inc/theme-options.php:479 ../inc/widget-portfolio.php:697
+msgid "Recent Projects"
+msgstr "Последние проекты"
+
+#: ../inc/theme-options.php:498
+msgid "404 Page"
+msgstr "Страница 404"
+
+#: ../inc/theme-options.php:499
+msgid "Ooops!"
+msgstr "Упс!"
+
+#: ../inc/theme-options.php:506
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr "Нам ничего не удалось  найти. Воспользуйтесь поиском."
+
+#: ../inc/theme-options.php:519 ../inc/widget-portfolio.php:151
+msgid "Tags"
+msgstr "Метки"
+
+#: ../inc/widget-functions.php:55
+msgid "Hover Effect Style:"
+msgstr "Эффекты при наведении мышки:"
+
+#: ../inc/widget-functions.php:58
+msgid "Caption (1)"
+msgstr "Надпись (1)"
+
+#: ../inc/widget-functions.php:58
+msgid "50% (2)"
+msgstr "50% (2)"
+
+#: ../inc/widget-functions.php:58
+msgid "Fast (3)"
+msgstr "Быстро (3)"
+
+#: ../inc/widget-functions.php:59
+msgid "Slow (4)"
+msgstr "Медленно (4)"
+
+#: ../inc/widget-functions.php:59
+msgid "Side (5)"
+msgstr "Сторона (5)"
+
+#: ../inc/widget-functions.php:59
+msgid "Round (6)"
+msgstr "Крутится (6)"
+
+#: ../inc/widget-functions.php:60
+msgid "Left To Right (7)"
+msgstr "Слева направо (7)"
+
+#: ../inc/widget-functions.php:61
+msgid "Jump (8)"
+msgstr "Прыгает (8)"
+
+#: ../inc/widget-functions.php:62
+msgid "Fly (9)"
+msgstr "Летает (9)"
+
+#: ../inc/widget-functions.php:63
+msgid "Zoom In (10)"
+msgstr "Увеличивается (10)"
+
+#: ../inc/widget-functions.php:64
+msgid "Hovered (11)"
+msgstr "На картинке (11)"
+
+#: ../inc/widget-functions.php:65
+msgid "Wide Hover (12)"
+msgstr "Широкий (12)"
+
+#: ../inc/widget-functions.php:66
+msgid "Top (14)"
+msgstr "Сверху (14)"
+
+#: ../inc/widget-functions.php:67
+msgid "Right To Left (15)"
+msgstr "Справа налево (15)"
+
+#: ../inc/widget-functions.php:68
+msgid "Bottom (16)"
+msgstr "Снизу (16)"
+
+#: ../inc/widget-functions.php:69
+msgid "Caption Left (17)"
+msgstr "Надпись слева (17)"
+
+#: ../inc/widget-functions.php:70
+msgid "Caption Right (18)"
+msgstr "Надпись справа (18)"
+
+#: ../inc/widget-functions.php:71
+msgid "Caption Left-2 (19)"
+msgstr "Надпись слева (19)"
+
+#: ../inc/widget-functions.php:72
+msgid "Caption Center (20)"
+msgstr "Надпись по центру (20)"
+
+#: ../inc/widget-functions.php:112
+msgid "Image Url or Id:"
+msgstr "ID изображения"
+
+#: ../inc/widget-functions.php:114 ../inc/widget-functions.php:138
+msgid "Upload Image"
+msgstr "Загрузить изображение:"
+
+#: ../inc/widget-functions.php:136
+msgid "Url:"
+msgstr "Ссылка:"
+
+#: ../inc/widget-image.php:21
+msgid "Display Custom Images with CSS3 hover effects."
+msgstr "Показывает проивзольные картинки с CSS3 эффектами."
+
+#: ../inc/widget-image.php:31
+msgid "Al Images (Aladdin)"
+msgstr "Al Картинки"
+
+#: ../inc/widget-image.php:287
+msgid "Main options"
+msgstr "Основные настройки"
+
+#: ../inc/widget-image.php:289 ../inc/widget-items-category.php:309
+#: ../inc/widget-page-2.php:409 ../inc/widget-portfolio.php:645
+msgid "Image Size:"
+msgstr "Размер изображения"
+
+#: ../inc/widget-image.php:292 ../inc/widget-items-category.php:312
+#: ../inc/widget-page-2.php:412 ../inc/widget-portfolio.php:648
+msgid "Post Thumbnail"
+msgstr "Миниатюра записи"
+
+#: ../inc/widget-image.php:292 ../inc/widget-items-category.php:312
+#: ../inc/widget-page-2.php:412 ../inc/widget-portfolio.php:648
+msgid "Thumbnail"
+msgstr "Миниатюра"
+
+#: ../inc/widget-image.php:292 ../inc/widget-items-category.php:312
+#: ../inc/widget-page-2.php:412 ../inc/widget-portfolio.php:648
+msgid "Large"
+msgstr "На весь экран"
+
+#: ../inc/widget-image.php:292 ../inc/widget-items-category.php:312
+#: ../inc/widget-page-2.php:412 ../inc/widget-portfolio.php:648
+msgid "Full"
+msgstr "Полный размер"
+
+#: ../inc/widget-image.php:305
+msgid "Background Image"
+msgstr "Фоновое изображение"
+
+#: ../inc/widget-image.php:306 ../inc/widget-items-category.php:340
+#: ../inc/widget-portfolio.php:672
+msgid "Step Animation"
+msgstr "Пошаговая анимация"
+
+#: ../inc/widget-image.php:307 ../inc/widget-items-category.php:336
+#: ../inc/widget-portfolio.php:673
+msgid "No Margins"
+msgstr "Нет оступов"
+
+#: ../inc/widget-image.php:313
+msgid "Main Title: "
+msgstr "Заголовок:"
+
+#: ../inc/widget-image.php:314
+msgid "Main Description: "
+msgstr "Описание"
+
+#: ../inc/widget-image.php:323 ../inc/widget-image.php:330
+msgid "Image "
+msgstr "Изображение"
+
+#: ../inc/widget-image.php:339
+msgid "Image: "
+msgstr "Изображение"
+
+#: ../inc/widget-image.php:341
+msgid "Header: "
+msgstr "Заголовок"
+
+#: ../inc/widget-image.php:343 ../inc/widget-items-category.php:334
+#: ../inc/widget-page-2.php:425 ../inc/widget-portfolio.php:670
+msgid "More options"
+msgstr "Другие настройки"
+
+#: ../inc/widget-image.php:345
+msgid "Text: "
+msgstr "Текст"
+
+#: ../inc/widget-image.php:346 ../inc/widget-page-2.php:489
+msgid "Link: "
+msgstr "Ссылка"
+
+#: ../inc/widget-image.php:347 ../inc/widget-items-category.php:342
+#: ../inc/widget-portfolio.php:676
+msgid "Animate"
+msgstr "Анимировать"
+
+#: ../inc/widget-image.php:348 ../inc/widget-items-category.php:343
+#: ../inc/widget-portfolio.php:677
+msgid "Once"
+msgstr "Один раз"
+
+#: ../inc/widget-image.php:349 ../inc/widget-items-category.php:341
+#: ../inc/widget-page-2.php:468 ../inc/widget-portfolio.php:675
+msgid "Transparent"
+msgstr "Прозрачный"
+
+#: ../inc/widget-image.php:350
+msgid "Display Link"
+msgstr "Отображать ссылку"
+
+#: ../inc/widget-image.php:351
+msgid "Button caption: "
+msgstr "Текс на кнопке"
+
+#: ../inc/widget-image.php:362 ../inc/widget-items-category.php:293
+#: ../inc/widget-portfolio.php:629
+msgid "Columns:"
+msgstr "Колонки"
+
+#: ../inc/widget-image.php:365 ../inc/widget-items-category.php:297
+#: ../inc/widget-portfolio.php:633
+msgid "1"
+msgstr "1"
+
+#: ../inc/widget-image.php:365 ../inc/widget-items-category.php:297
+#: ../inc/widget-portfolio.php:633
+msgid "2"
+msgstr "2"
+
+#: ../inc/widget-image.php:365 ../inc/widget-items-category.php:297
+#: ../inc/widget-portfolio.php:633
+msgid "3"
+msgstr "3"
+
+#: ../inc/widget-image.php:365 ../inc/widget-items-category.php:297
+#: ../inc/widget-portfolio.php:633
+msgid "4"
+msgstr "4"
+
+#: ../inc/widget-image.php:376
+msgid "Count (press Apply): "
+msgstr "Количество (Нажать применить после изменения):"
+
+#: ../inc/widget-image.php:387
+msgid "Image"
+msgstr "Изображение"
+
+#: ../inc/widget-image.php:395 ../inc/widget-image.php:428
+msgid "Title"
+msgstr "Заголовок"
+
+#: ../inc/widget-image.php:411
+msgid "Description..."
+msgstr "Описание..."
+
+#: ../inc/widget-image.php:412
+msgid "Title..."
+msgstr "Заголовок..."
+
+#: ../inc/widget-image.php:438
+msgid "Read more..."
+msgstr "Читать далее..."
+
+#: ../inc/widget-items-category.php:21
+msgid "Display Items from the Category or latest posts."
+msgstr "Показывать последние записи из текущей категории"
+
+#: ../inc/widget-items-category.php:31
+msgid "Al Items from Category (Aladdin)"
+msgstr "Al Поеследние записи"
+
+#: ../inc/widget-items-category.php:135 ../inc/widget-portfolio.php:470
+msgid "Open Archive"
+msgstr "Открыть архив"
+
+#: ../inc/widget-items-category.php:278 ../inc/widget-portfolio.php:614
+msgid "Category:"
+msgstr "Категория:"
+
+#: ../inc/widget-items-category.php:280 ../inc/widget-portfolio.php:616
+msgid "Any"
+msgstr "Любая"
+
+#: ../inc/widget-items-category.php:326 ../inc/widget-portfolio.php:662
+msgid "Count: "
+msgstr "Количество:"
+
+#: ../inc/widget-items-category.php:337 ../inc/widget-portfolio.php:678
+msgid "Display Button"
+msgstr "Отображает кнопки"
+
+#: ../inc/widget-items-category.php:338 ../inc/widget-portfolio.php:680
+msgid "Display description block"
+msgstr "Отображать  описание"
+
+#: ../inc/widget-page-2.php:21
+msgid "Display styled page"
+msgstr "Отображать страницу"
+
+#: ../inc/widget-page-2.php:31
+msgid "Al Page Styled (Aladdin)"
+msgstr "Al Страница (Aladdin)"
+
+#: ../inc/widget-page-2.php:372
+msgid "No Title"
+msgstr "Нет заголовка"
+
+#: ../inc/widget-page-2.php:373
+msgid "Text align center"
+msgstr "Выравнивание по центру"
+
+#: ../inc/widget-page-2.php:374
+msgid "Display Image"
+msgstr "Показывать Миниатюру:"
+
+#: ../inc/widget-page-2.php:375
+msgid "Add Search"
+msgstr "Добавить поиск"
+
+#: ../inc/widget-page-2.php:379
+msgid "Page:"
+msgstr "Страницы:"
+
+#: ../inc/widget-page-2.php:392
+msgid "Image position:"
+msgstr "Расположение картинки"
+
+#: ../inc/widget-page-2.php:427
+msgid "Max width: "
+msgstr "Максимальная ширина:"
+
+#: ../inc/widget-page-2.php:428
+msgid "Header Font size: "
+msgstr "Размер шрифт для заголовка"
+
+#: ../inc/widget-page-2.php:429
+msgid "Body Font size: "
+msgstr "Размер шрифта для всего сайта"
+
+#: ../inc/widget-page-2.php:433
+msgid "Widget colors"
+msgstr "Цвета виджета"
+
+#: ../inc/widget-page-2.php:437
+msgid "Background color: "
+msgstr "Фон "
+
+#: ../inc/widget-page-2.php:438
+msgid "Background Opacity:"
+msgstr "Прозрачность фона"
+
+#: ../inc/widget-page-2.php:462
+msgid "Background Style:"
+msgstr "Тип фона"
+
+#: ../inc/widget-page-2.php:465
+msgid "Full Width Color"
+msgstr "На всю ширину"
+
+#: ../inc/widget-page-2.php:466
+msgid "Both"
+msgstr "Обе"
+
+#: ../inc/widget-page-2.php:467
+msgid "Small"
+msgstr "Маленькая"
+
+#: ../inc/widget-page-2.php:480
+msgid "Header Font Color: "
+msgstr "Цвет заголовка"
+
+#: ../inc/widget-page-2.php:481
+msgid "Body Font Color: "
+msgstr "Цвет ширфта"
+
+#: ../inc/widget-page-2.php:485 ../inc/widget-page-2.php:520
+msgid "Button"
+msgstr "Кнопка"
+
+#: ../inc/widget-page-2.php:487
+msgid "Add Button"
+msgstr "Добавить кнопку"
+
+#: ../inc/widget-page-2.php:488
+msgid "Caption: "
+msgstr "Текс на кнопке"
+
+#: ../inc/widget-portfolio.php:20
+msgid ""
+"Display portfolio tags navigation on both jetpack portfolio index and "
+"archive pages"
+msgstr "Отображает навигацию по меткам в Jetpack портфолио."
+
+#: ../inc/widget-portfolio.php:29
+msgid "Al Portfolio Tags Nav (Aladdin)"
+msgstr "Al Портфолио навигация по меткам"
+
+#: ../inc/widget-portfolio.php:72
+msgid "All Tags"
+msgstr "Все метки"
+
+#: ../inc/widget-portfolio.php:87
+msgid "Portfolio"
+msgstr "Портфолио"
+
+#: ../inc/widget-portfolio.php:139 ../inc/widget-portfolio.php:316
+msgid "One page navigation (portfolio index)"
+msgstr "Навигация по странице (портволио)"
+
+#: ../inc/widget-portfolio.php:152 ../inc/widget-portfolio.php:330
+msgid "One page navigation"
+msgstr "Показывает навигация по виджетам в верхнем сайдбаре"
+
+#: ../inc/widget-portfolio.php:186
+msgid "Display portfolio navigation on jetpack portfolio category/index page"
+msgstr "Покаывает портфолио навигацию по проектам."
+
+#: ../inc/widget-portfolio.php:195
+msgid "Al Portfolio Project Nav (Aladdin)"
+msgstr "Al Портфолио навигация по проектам"
+
+#: ../inc/widget-portfolio.php:365
+msgid "Display Items from Portfolio."
+msgstr "Показывает проекты из портфолио."
+
+#: ../inc/widget-portfolio.php:375
+msgid "Al Items from Portfolio (Aladdin)"
+msgstr "Al Последние проекты"
+
+#: ../inc/widget-sidebar-navigation.php:20
+msgid "Display one page sidebar navigation"
+msgstr "Показывает навигация по виджетам в верхнем сайдбаре"
+
+#: ../inc/widget-sidebar-navigation.php:29
+msgid "Al One Page Nav (Aladdin)"
+msgstr "Al Навигация по странице (Aladdin)"
+
+#: ../page-templates/full-width.php:9
+msgid "Full Width Template"
+msgstr "Без боковых колонок"
+
+#: ../page-templates/left-sidebar.php:9
+msgid "Left Sidebar"
+msgstr "Левый сайдбар"
+
+#: ../page-templates/right-sidebar.php:9
+msgid "Right Sidebar"
+msgstr "Правый сайдбар"
+
+#: ../page-templates/two-sidebars.php:9
+msgid "Two Sidebars"
+msgstr "2 сайдбара"
+
+#: ../search.php:19
+#, php-format
+msgid "Search results for: %s"
+msgstr "Результаты поиска для: %s"
+
+#: ../tag.php:20
+#, php-format
+msgid "Tag Archives: %s"
+msgstr "Архив метки: %s"
+
+#: ../taxonomy-jetpack-portfolio-type.php:20
+#, php-format
+msgid "Project type: %s"
+msgstr "Тип проекта: %s"
+
+#~ msgid "Customize Layout"
+#~ msgstr "Настроить расположение"
+
+#~ msgid "Width of the site"
+#~ msgstr "Ширина сайта"
+
+#~ msgid "Width of the content area (including columns)"
+#~ msgstr "Ширина области содержимого"
+
+#~ msgid "Content style"
+#~ msgstr "Стиль содержимого"
+
+#~ msgid "Boxed"
+#~ msgstr "С отступами"
+
+#~ msgid "Category"
+#~ msgstr "Категория"
+
+#~ msgid "Tag"
+#~ msgstr "Метка"
+
+#~ msgid "Our Services"
+#~ msgstr "Наши сервисы"
+
+#~ msgid ""
+#~ "Aladdin is a multipurpose WordPress theme: portfolio, e-commerce, "
+#~ "photoblogging and landing page."
+#~ msgstr ""
+#~ "Aladdin - многофункциональная WordPress тема, которая может быть "
+#~ "использована для создания магазина, портфолио, блога и продающих страниц."
+
+#~ msgid "Aladdin Supports WooCommerce."
+#~ msgstr "Aladdin совместима с WooCommerce."
+
+#~ msgid "Aladdin supports portfolio custom post type from Jetpack."
+#~ msgstr "Aladdin совместима с портфолио из  Jetpack."
+
+#~ msgid "Multipurpose WordPress theme"
+#~ msgstr "Многофункциональная тема для WordPress"
+
+#~ msgid "How To Find Us"
+#~ msgstr "Как нас найти"
+
+#~ msgid ""
+#~ "Aladdin is a highly customizable WordPress theme with responsive design. "
+#~ "Front page can include custom blocks and pages with different layouts. "
+#~ "Theme includes one page navigation menu and CSS3&JQuery effects. It has "
+#~ "many options in the theme customizer (per page sidebars, layouts: right "
+#~ "column, left column, two columns, full width; blog: from 1 to 4 columns; "
+#~ "favicon; logo; all google fonts; 2 color schemes, 3 nav menus and other "
+#~ "options). AlWindow has 4 footers, 4 per page sidebars and 10 custom "
+#~ "widgets (Social Media Icons, Buttons, Images, Posts, Pages, Navigation). "
+#~ "It can be used for portfolio, blog, e-commerce, business, landing page "
+#~ "websites. Supports popular plugins: WooCommerce and portfolio from "
+#~ "Jetpack. Translation ready. You can find the demo at http://wpblogs.info/"
+#~ "demo/aladdin/"
+#~ msgstr ""
+#~ "Aladdin - тема с большим количеством настроек с отзывчивым дизайном. На "
+#~ "главную страницу можно добавлять разные произвольные блоки и страницы. "
+#~ "Тема включает меню для навигации по странице и CSS3&JQuery эффекты. Для "
+#~ "настроек используется стандартный настройщик тем. Тема включает "
+#~ "постраничные сайдбары, произвольное расположение и настраиваемую ширину "
+#~ "колонок, 1-4 колонки для блога, все шрифты гугле, 2 цветовые схемы 3 "
+#~ "опциольных меню, 4 футера, 10 виджетов (иконки, кнопки, картинки, "
+#~ "последние записи, портфолио, навигация) и другие настройки.  Тему можно "
+#~ "использовать для портфолио, блога, бизнесс сайта. Совместима с "
+#~ "WooCommerce и Jetpack. Можно переводить на любые языки. Демо наодится по "
+#~ "этой ссылке - http://wpblogs.info/demo/sg-window/"
+
+#~ msgid "http://wpblogs.ru/themes/how-to-video-aladdin-theme/"
+#~ msgstr ""
+#~ "http://wpblogs.ru/%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD"
+#~ "%D1%82%D0%B0%D1%86%D0%B8%D1%8F/"
+
+#~ msgid "Per widget colors with postMessage support;"
+#~ msgstr "Цвета для каждого виджета с мгновенным обновлением;"
+
+#~ msgid "Boxed/Full width layout;"
+#~ msgstr "Можно сделать сайт с отступами"
+
+#~ msgid "WooCommerce layouts;"
+#~ msgstr "Страницы WooCommerce"
+
+#~ msgid ""
+#~ "You are using full version of Aladdin: Aladdin Pro. If you find this "
+#~ "theme useful please consider supporting it by donation."
+#~ msgstr ""
+#~ "Вы используете полную версию Aladdin - Aladdin Pro. Если эта тема "
+#~ "окаалась для вас полезной - поддержите проект пожертвованием."
+
+#~ msgid "Blue-White"
+#~ msgstr "Сине-Белая"
+
+#~ msgid "Customize Colors"
+#~ msgstr "Настроить цвета"
+
+#~ msgid "Customize Fonts"
+#~ msgstr "Настроить шрифты"
+
+#~ msgid "How to use (video instruction)."
+#~ msgstr "Как исплоьзовать (видео инструкция)"
+
+#~ msgid "Customize Mobile Version"
+#~ msgstr "Настроить мобильную версию"
+
+#~ msgid "Fixed Background"
+#~ msgstr "Фиксированный фон"
+
+#~ msgid "Site Background"
+#~ msgstr "Фон сайта"
+
+#~ msgid "Vertical position"
+#~ msgstr "Вертикальная позиция"
+
+#~ msgid "Top"
+#~ msgstr "Сверху"
+
+#~ msgid "Bottom"
+#~ msgstr "Снизу"
+
+#~ msgid "Customize Sidebars"
+#~ msgstr "Настроить сайдбары"
+
+#~ msgid "Customize Menu"
+#~ msgstr "Настроить меню"
+
+#~ msgid "Display Buttons"
+#~ msgstr "Отображать кнопки"
+
+#~ msgid "AlButtons (Aladdin)"
+#~ msgstr "Alкнопки"
+
+#~ msgid "URL: "
+#~ msgstr "URL:"
+
+#~ msgid "Display Shop Items."
+#~ msgstr "Отображает товары"
+
+#~ msgid "AlShop Items (Aladdin)"
+#~ msgstr "AlПоследние товары"
+
+#~ msgid "All Products"
+#~ msgstr "Все продукты"
+
+#~ msgid "Recent Products"
+#~ msgstr "Последние продукты"
+
+#~ msgid "Display one page with sidebars"
+#~ msgstr "Показывает одну страницу с сайдбарами"
+
+#~ msgid "No Sidebars"
+#~ msgstr "Нет сайдбаров"
+
+#~ msgid "No Footer No Content"
+#~ msgstr "Нет футера и нет содержимого"
+
+#~ msgid "No Content "
+#~ msgstr "Нет содержимого"
+
+#~ msgid "Blog Full Width"
+#~ msgstr "Блог, Без боковых колонок, широкий"
+
+#~ msgid "Portfolio Full Width"
+#~ msgstr "Портфолио, Без боковых колонок, широкий"
+
+#~ msgid "Portfolio Left Sidebar"
+#~ msgstr "Портфолио, Левый сайдбар"
+
+#~ msgid "Portfolio Right Sidebar"
+#~ msgstr "Портфолио, Правый сайдбар"
+
+#~ msgid "Portfolio Two Sidebars"
+#~ msgstr "Портфолио, 2 сайдбара"
+
+#~ msgid "Site Name and Description Background"
+#~ msgstr "Цвет фона названия сайта"
+
+#~ msgid "Shadow color"
+#~ msgstr "Цвет тени"
+
+#~ msgid "Top Level Hover"
+#~ msgstr " Hover верхнего уровня"
+
+#~ msgid "Text on Hover"
+#~ msgstr "Текст элемента Hover "
+
+#~ msgid "Hover Background"
+#~ msgstr "Фон Hover"
+
+#~ msgid ""
+#~ "Colors for the Widget Custom Menu in the top and before footer sidebars"
+#~ msgstr "Цвета для Виджета Произвольное меню"
+
+#~ msgid "Top Level Items"
+#~ msgstr "Элементы верхнего уровня"
+
+#~ msgid "Hover"
+#~ msgstr "Hover"
+
+#~ msgid "Border"
+#~ msgstr "Бордюр"
+
+#~ msgid "Widget Buttons"
+#~ msgstr "Виджет кнопки"
+
+#~ msgid "Colors for the Widget Buttons in the top and before footer sidebars"
+#~ msgstr "Цвета для Виджета Кнопки"
+
+#~ msgid "Button Color"
+#~ msgstr "Цвет кнопки"
+
+#~ msgid "Top Sidebar"
+#~ msgstr "Верхний сайдбар"
+
+#~ msgid "Sidebar Colors"
+#~ msgstr "Цвета сайдбара"
+
+#~ msgid "Text"
+#~ msgstr "Текст"
+
+#~ msgid "Widget Title Background"
+#~ msgstr "Фон заголовка виджета"
+
+#~ msgid "Widget Title Text"
+#~ msgstr "Цвет текста заголовка"
+
+#~ msgid "Footer Sidebar"
+#~ msgstr "Сайдбар в футере"
+
+#~ msgid "Sidebar Background Color"
+#~ msgstr "Цвет фона сайдбара"
+
+#~ msgid "Widget Background"
+#~ msgstr "Фон виджета"
+
+#~ msgid "Widget Border"
+#~ msgstr "Бордюр"
+
+#~ msgid "Content Background Color"
+#~ msgstr "Цвет фона содержимого"
+
+#~ msgid "Content Border"
+#~ msgstr "Бордюр контента"
+
+#~ msgid "Your feedback would be greatly appreciated!"
+#~ msgstr "Добавляйте ваши отзывы!"
+
+#~ msgid "Add your review"
+#~ msgstr "Добавьте ваш отзыв"
+
+#~ msgid "Footer text"
+#~ msgstr "Текст в футере"
+
+#~ msgid "Add your Social Media Links"
+#~ msgstr "Добавьте ваши ссылки на социальные сети"
+
+#~ msgid "Customize Widget Colors"
+#~ msgstr "Настроить цвета виджетов"
+
+#~ msgid ""
+#~ "In this section you can change colors for each widget in the Top Sidebar."
+#~ msgstr ""
+#~ "В этой секции вы можете изменить цвета для каждого виджета в верхнем "
+#~ "сайдбаре"
+
+#~ msgid "Widget Number "
+#~ msgstr "Виджет Номер "
+
+#~ msgid "Customize colors for "
+#~ msgstr "Настроить цвета для"
+
+#~ msgid "Check mark to activate custom colors for this Widget"
+#~ msgstr ""
+#~ "Установите галку, чтобы активировать произвольные цвета для этого виджета."
+
+#~ msgid "Opacity"
+#~ msgstr "Прозрачность"
+
+#~ msgid "Title Background"
+#~ msgstr "Фон заголовка"
+
+#~ msgid "Title Text"
+#~ msgstr "Текст заголовка"
+
+#~ msgid "Page Sidebar"
+#~ msgstr "Страницы - сайдбар"
+
+#~ msgid "Header Image"
+#~ msgstr "Изображение заголовка"
+
+#~ msgid "Customize top area"
+#~ msgstr "Настроить верхнюю область"
+
+#~ msgid ""
+#~ "Width of the Header Image (Header image should be updated after changes.)"
+#~ msgstr "Ширина Изображения Заголовка"
+
+#~ msgid "Header Image style"
+#~ msgstr "Стиль изображения заголовка"
+
+#~ msgid "Top and Before Footer Sidebars"
+#~ msgstr "Верхий сайдбар и сайдбар перед футером"
+
+#~ msgid "Width of the Standard Widgets. Note: GL widgets use full-site width."
+#~ msgstr "Ширина стандартных виджетов"
+
+#~ msgid "px"
+#~ msgstr "px"
+
+#~ msgid "Customize icon and link for your blog or any other page."
+#~ msgstr "Эту иконку можно изменить"
+
+#~ msgid "Customize icon and link for your shop or any other page."
+#~ msgstr "Эту иконку можно изменить"
+
+#~ msgid "Customize icon and link for your portfolio or any other page."
+#~ msgstr "Эту иконку можно изменить"
+
+#~ msgid "Rate this theme. It would help to improve it."
+#~ msgstr "Оцените эту тему. Это поможет улучшить тему."
+
+#~ msgid "Documentation."
+#~ msgstr "Документация"
+
+#~ msgid "Main"
+#~ msgstr "Главная"
+
+#~ msgid "Display Portfolio Projects."
+#~ msgstr "Показывает проекты из портфолио."
+
+#~ msgid "GL Portfolio Projects (GLASS)"
+#~ msgstr "GL проект и портфолио"
+
+#~ msgid "Project:"
+#~ msgstr "Проект:"
+
+#~ msgid "Display Custom Items with CSS3 hover effects."
+#~ msgstr "Показывает проивзольные сущности с CSS3 эффектами"
+
+#~ msgid "GL Items (GLASS)"
+#~ msgstr "GL Картика с ссылкой"
+
+#~ msgid "GL Page (GLASS)"
+#~ msgstr "GL Страница"
+
+#~ msgid "Display recent items from a Portfolio post type"
+#~ msgstr "Отображает последние проекты из Портфолио"
+
+#~ msgid "GL Portfolio Projects (5) (GLASS)"
+#~ msgstr "GL Портфолио проекты (5)"
+
+#~ msgid "project:"
+#~ msgstr "проект:"
+
+#~ msgid "Button Caption: "
+#~ msgstr "Текс на кнопке"
+
+#~ msgid "http://wpblogs.info/demo/glass/about/"
+#~ msgstr "http://wpblogs.info/demo/glass/about/"
+
+#~ msgid "Not Found"
+#~ msgstr "Ничего не найдено"
+
+#~ msgid "Pages, Right Sidebar"
+#~ msgstr "Страницы, правый сайдбар"
+
+#~ msgid "Header, Right Sidebar"
+#~ msgstr "Заголовок, правый сайдбар"
+
+#~ msgid "Home Page, Left Sidebar"
+#~ msgstr "Главная, левый сайдбар"
+
+#~ msgid "Home Page, Right Sidebar"
+#~ msgstr "Главная, правый сайдбар"
+
+#~ msgid "Home Page, Top Sidebar"
+#~ msgstr "Главная, верхний сайдбар"
+
+#~ msgid "Home Page, First Content Sidebar"
+#~ msgstr "Главная, первый в содержимом"
+
+#~ msgid "Home Page, Second Content Sidebar"
+#~ msgstr "Главная, второй в содержимом"
+
+#~ msgid "Visible on small screens only"
+#~ msgstr "Видим на маленьких экранах"
+
+#~ msgid "Pages, visible on small screens only"
+#~ msgstr "Страницы, видим на маленьких экранах"
+
+#~ msgid "Home, visible on small screens only"
+#~ msgstr "Главная, видим на маленьких экранах"
+
+#~ msgid "WooCommerce, visible on small screens only"
+#~ msgstr "Сайдбар для WooCommerce, видим на мобильных только"
+
+#~ msgid "Shop, right sidebar"
+#~ msgstr "Магазин, правый сайдбар"
+
+#~ msgid "Shop, left sidebar"
+#~ msgstr "Магазин, левый сайдбар"
+
+#~ msgid "Sticky"
+#~ msgstr "Избранная запись"
+
+#~ msgid "Sample+Widget+1"
+#~ msgstr "Виджет+1"
+
+#~ msgid ""
+#~ "You can select a Widget to be shown at the footer sidebar of your website "
+#~ "by choosing from the page <span style=\"color:red;font-family: 'Lobster', "
+#~ "sans-serif;\">\"Appearance > Widgets\"</span>"
+#~ msgstr ""
+#~ " Вы можете разместить виджеты в нижнем сайдбаре на странице <span style="
+#~ "\"color:red;font-family: 'Lobster', sans-serif;\">\"Виджеты\"</span>"
+
+#~ msgid "Sample+Widget+2"
+#~ msgstr "Виджет+2"
+
+#~ msgid ""
+#~ "You can replace this Text Widget by any other at the page <span style="
+#~ "\"color:red;font-family: 'Lobster', sans-serif;\">\"Appearance > Widgets"
+#~ "\"</span>"
+#~ msgstr ""
+#~ "Вы можете заменить этот виджет на любой другой на странице <span style="
+#~ "\"color:red;font-family: 'Lobster', sans-serif;\">\"Виджеты\"</span>"
+
+#~ msgid "Sample+Widget+3"
+#~ msgstr "Виджет+3"
+
+#~ msgid ""
+#~ "You can add as many Widgets as you want to be shown at the footer sidebar "
+#~ "of your website by choosing from the page <span style=\"color:red;font-"
+#~ "family: 'Lobster', sans-serif;\">\"Appearance > Widgets\"</span>"
+#~ msgstr ""
+#~ "Вы можете добавить в этот сайдбар любое количество виджетов на странице "
+#~ "<span style=\"color:red;font-family: 'Lobster', sans-serif;\">\"Виджеты"
+#~ "\"</span>"
+
+#~ msgid "Sample+Widget+5"
+#~ msgstr "Виджет+5"
+
+#~ msgid "Proudly powered by %s"
+#~ msgstr "Рработает на %s"
+
+#~ msgid "%1$s"
+#~ msgstr "%1$s"
+
+#~ msgid "Previous Image"
+#~ msgstr "Предыдущее изображение"
+
+#~ msgid "Next Image &rarr;"
+#~ msgstr "Следующее изображение &rarr;"
+
+#~ msgid ""
+#~ "Activate sidebars, visible on small screens only (at \"Appearance >> "
+#~ "Widgets\")"
+#~ msgstr "Включить сайдбары видимые только на маленьких экранах"
+
+#~ msgid "Settings for the Shop"
+#~ msgstr "Настройки для магазина"
+
+#~ msgid "Activate sidebars, visible at WooCommerce pages"
+#~ msgstr "Включить сайдбары, видимые на страницах WooCommerce"
+
+#~ msgid "Type of Featured Image"
+#~ msgstr "Тим миниатюры"
+
+#~ msgid "Select one"
+#~ msgstr "Выберите один вариант"
+
+#~ msgid "Big"
+#~ msgstr "Большая"
+
+#~ msgid "Color Scheme "
+#~ msgstr "Схема цветов"
+
+#~ msgid "Number between 500 and 1349. "
+#~ msgstr "Номер между 500 и 1349"
+
+#~ msgid "px is default width."
+#~ msgstr "px - это шиина страницы по умолчанию."
+
+#~ msgid "Content Width while both sidebars are empty"
+#~ msgstr "Ширина содержимого с пустыми боковыми колонками"
+
+#~ msgid "Content Width while left sidebar is empty"
+#~ msgstr "Ширина страницы с пустой левой колонкой"
+
+#~ msgid "Content Width while right sidebar is empty."
+#~ msgstr "Ширина страницы с пустой правой колонкой."
+
+#~ msgid "Page Template Left Sidebar: Content Width"
+#~ msgstr "Шаблон страницы с левой колонкой: ширина содержимого"
+
+#~ msgid "Page Template Right Sidebar: Content Width"
+#~ msgstr "Шаблон страницы с правой колонкой: ширина содержимого"
+
+#~ msgid "Page Template Full Width: Content Width"
+#~ msgstr "Шаблон страницы без колонок: ширина содержимого"
+
+#~ msgid "Page Template Full Width Wide: Content Width"
+#~ msgstr "Шаблон страницы без колонок, широкий: ширина содержимого"
+
+#~ msgid "H1-H6 Color"
+#~ msgstr "Цвет элементов H1-H6"
+
+#~ msgid "Description Color"
+#~ msgstr "Цвет описания"
+
+#~ msgid "First Menu Color"
+#~ msgstr "Цвет первого меню"
+
+#~ msgid "First Menu Link Color"
+#~ msgstr "Цвет ссылок в первом меню"
+
+#~ msgid "First Menu Link Hover Color"
+#~ msgstr "Цвет элемента hover ссылок в первом меню"
+
+#~ msgid "First Menu Link Hover Background"
+#~ msgstr "Цвет фона элемента hover в первом меню"
+
+#~ msgid "Second Menu Color"
+#~ msgstr "Цвет второго меню"
+
+#~ msgid "Second Menu Link Color"
+#~ msgstr "Цвет ссылок во втором меню"
+
+#~ msgid "Second Menu Link Hover Color"
+#~ msgstr "Цвет элемента hover ссылок во втором меню"
+
+#~ msgid "Second Menu Link Hover Background"
+#~ msgstr "Цвет фона элемента hover во втором меню"
+
+#~ msgid "Footer Menu Color"
+#~ msgstr "Цвет меню в футере"
+
+#~ msgid "Footer Menu Link Color"
+#~ msgstr "Цвет ссылок меню в футере"
+
+#~ msgid "Footer Menu Link Hover Color"
+#~ msgstr "Цвет элемента hover ссылок меню в футере"
+
+#~ msgid "Footer Menu Link Hover Background"
+#~ msgstr "Цвет фона элемента hover меню в футере"
+
+#~ msgid "Top Sidebar Link Color"
+#~ msgstr "Ссылка в верхнем сайдбаре"
+
+#~ msgid "Top Sidebar Link Hover Color"
+#~ msgstr "Цвет фона элемента hover в верхних сайдбарах"
+
+#~ msgid "Top Sidebar Text Color"
+#~ msgstr "Текст в верхнем сайдбаре"
+
+#~ msgid "Footer Sidebar Color"
+#~ msgstr "Цвет сайдбара в футере"
+
+#~ msgid "Footer Sidebar Link Color"
+#~ msgstr "Цвет ссылки сайдбара в футере"
+
+#~ msgid "Footer Sidebar Link Hover Color"
+#~ msgstr "Цвет элемента hover ссылки в сайдбаре в футере"
+
+#~ msgid "Footer Sidebar Text Color"
+#~ msgstr "Цвет текста в сайдбаре в футере"
+
+#~ msgid "Column Widget Header Color"
+#~ msgstr "Цвет фона заголовков виджетов в боковых колонках"
+
+#~ msgid "Column Widget Header Text Color"
+#~ msgstr "Цвет текста заголовков виджетов в боковых колонках"
+
+#~ msgid "column Sidebar Color"
+#~ msgstr "Цвет боковых колонок"
+
+#~ msgid "column Sidebar Link Color"
+#~ msgstr "Цвет ссылки в боковых колонках"
+
+#~ msgid "column Sidebar Link Hover Color"
+#~ msgstr "Цвет фона элемента hover в боковых колонках"
+
+#~ msgid "Column Sidebar Text Color"
+#~ msgstr "Цвет текста в боковых колонках"
+
+#~ msgid "Columns Background"
+#~ msgstr "Фон боковых колонок"
+
+#~ msgid "Display Second Menu on the Front Page only"
+#~ msgstr "Отображать второе меню на главной странице и больше нигде"
+
+#~ msgid "Black"
+#~ msgstr "Черная"
+
+#~ msgid ""
+#~ "Display posts, pages, images, slideshow, news, related posts and more."
+#~ msgstr ""
+#~ "Показывает записи, страницы, изображения, слайдшоу, новости и другое."
+
+#~ msgid "News, Related, Slideshow"
+#~ msgstr "Новости, Страницы, Слайдер"
+
+#~ msgid "Number of posts: "
+#~ msgstr "Количество записей:"
+
+#~ msgid "Number of columns:"
+#~ msgstr "Количество колонок:"
+
+#~ msgid "Space Between Elements (%): "
+#~ msgstr "Расстояние между элементами (%):"
+
+#~ msgid ""
+#~ "Post Ids(the value for this field must be a list of integers, separated "
+#~ "by commas):"
+#~ msgstr "ID записей (через запятую)"
+
+#~ msgid ""
+#~ "Page Ids(The value for this field must be a list of integers, separated "
+#~ "by commas):"
+#~ msgstr "ID страниц (через запятую)"
+
+#~ msgid "Exclude current post (Yes/No)."
+#~ msgstr "Не показывать текущую запись"
+
+#~ msgid "Choose how to display an Image:"
+#~ msgstr "Как отображать изображение"
+
+#~ msgid "Image size (%) for images with left and right alignment: "
+#~ msgstr "Размер (%) для миниатюр, отображаемых справа и слева:"
+
+#~ msgid "Display background Image(Yes/No)"
+#~ msgstr "Отображать фоновое изображение"
+
+#~ msgid "Hide on small screen(Yes/No)"
+#~ msgstr "Прятать на маленьких экранах"
+
+#~ msgid "Repeat X"
+#~ msgstr "Повторять горизонтально"
+
+#~ msgid "Repeat Y"
+#~ msgstr "Повторять вертикально"
+
+#~ msgid "Y Position:"
+#~ msgstr "Координаты по вертикали:"
+
+#~ msgid "Title:"
+#~ msgstr "Заголовок:"
+
+#~ msgid "Display the content"
+#~ msgstr "Отображать содержимое"
+
+#~ msgid "Number of characters: "
+#~ msgstr "Количество символов"
+
+#~ msgid "Display custom title"
+#~ msgstr "Отображать произвольный заголовок"
+
+#~ msgid "Display custom content"
+#~ msgstr "Отображать произвольное содержимое"
+
+#~ msgid "Display custom Image"
+#~ msgstr "Отображать произвольные изображения"
+
+#~ msgid "Block  "
+#~ msgstr "Блок"
+
+#~ msgid "Display an Image Border (Yes/No)"
+#~ msgstr "Отображать бордюр вокруг изображения"
+
+#~ msgid "Border color:"
+#~ msgstr "Цвет бордюра:"
+
+#~ msgid "Border radius"
+#~ msgstr "Радиус бордюра:"
+
+#~ msgid "Display the \"Read More\" button (Yes/No)"
+#~ msgstr "Отображать кнопку  \"Читать далее\""
+
+#~ msgid "Button background:"
+#~ msgstr "Фон кнопки:"
+
+#~ msgid "Button text size:"
+#~ msgstr "Размер шрифта кнопки:"
+
+#~ msgid "Button caption text:"
+#~ msgstr "Надпись на копке:"
+
+#~ msgid "Display a custom link (Yes/No):"
+#~ msgstr "Отображать произвольную ссылку"
+
+#~ msgid "Button border color:"
+#~ msgstr "Цвет бордюра кнопки:"
+
+#~ msgid "Button border width:"
+#~ msgstr "Ширина бордюра кнопки:"
+
+#~ msgid "Button border radius"
+#~ msgstr "Радиус борюра кнопки:"
+
+#~ msgid "Top:"
+#~ msgstr "Верхний:"
+
+#~ msgid "Right:"
+#~ msgstr "Правый:"
+
+#~ msgid "Bottom:"
+#~ msgstr "Нижний:"
+
+#~ msgid "Left:"
+#~ msgstr "Левый:"
+
+#~ msgid "Display an Icon (Yes/No)"
+#~ msgstr "Отображать иконку"
+
+#~ msgid "Upload an Image for the Icon:"
+#~ msgstr "Загрузить изображение для иконки"
+
+#~ msgid "Icon Height:"
+#~ msgstr "Высота иконки:"
+
+#~ msgid "Icon Width:"
+#~ msgstr "Ширина  иконки:"
+
+#~ msgid "(Yes/No)."
+#~ msgstr "(Да/Нет)"
+
+#~ msgid "Step"
+#~ msgstr "Пошагово"
+
+#~ msgid "All"
+#~ msgstr "Все сразу"
+
+#~ msgid ""
+#~ "Slideshow(This option may override the options given in earlier fields)"
+#~ msgstr ""
+#~ "Сделать слайдшоу (этот параметр может изменить некоторые предыдущие "
+#~ "настройки)"
+
+#~ msgid "Place Text over an Image(Yes/No)."
+#~ msgstr "Поместить текст поверх изображения."
+
+#~ msgid "Fade In"
+#~ msgstr "Проявляется"
+
+#~ msgid "Enter the desired transition time in milliseconds:"
+#~ msgstr "Время смены кадров в миллесекундах:"
+
+#~ msgid "Enter the desired effect time in milliseconds:"
+#~ msgstr "Время эффекта в миллесекундах:"
+
+#~ msgid "Read More..."
+#~ msgstr "Читать далее.."
+
+#~ msgid "Ttype of Featured Image"
+#~ msgstr "Тип картинки"
+
+#, fuzzy
+#~ msgid ""
+#~ "Include post Ids from this list only (the value for this field must be a "
+#~ "list of integers, separated by commas):"
+#~ msgstr ""
+#~ "Включать записи только из этого списка (в это поле вводятся id записей, "
+#~ "разделенные запятыми)"
+
+#, fuzzy
+#~ msgid ""
+#~ "Include page Ids from this list only (The value for this field must be a "
+#~ "list of integers, separated by commas):"
+#~ msgstr ""
+#~ "Показывать страницы только из этого списка (значение для этого поля - "
+#~ "список чисел, разделенных запятыми)"
+
+#~ msgid "Set background Image(Yes/No)"
+#~ msgstr "Указать фоновое изображение"
+
+#~ msgid "Number of characters to show: "
+#~ msgstr "Сколько символов вывести:"
+
+#~ msgid "Use Image Border (Yes/No)"
+#~ msgstr "Отображать бордюр вокруг миниатюры"
+
+#~ msgid "Use link Read More button (Yes/No)"
+#~ msgstr "Отображать кнопку \"Читать далее..\""
+
+#~ msgid "Use Read More custom link (Yes/No):"
+#~ msgstr "Отображать произвольную ссылку для кнопки:"
+
+#~ msgid "Use custom Icon (for top and empty image styles) (Yes/No)"
+#~ msgstr ""
+#~ "Отображать произвольную иконку (работает только для стилей миниатюра, "
+#~ "расположена сверху и не показывать миниатюру )"
+
+#~ msgid "Upload Image for Icon:"
+#~ msgstr "Загрузить иконку:"
+
+#~ msgid "Primary Menu"
+#~ msgstr "Основоное меню"
+
+#, fuzzy
+#~ msgid "Main Sidebar for Pages"
+#~ msgstr "Основная колонка"
+
+#, fuzzy
+#~ msgid "Home Page Top Sidebar (25%)"
+#~ msgstr "Верхний сайдбар"
+
+#, fuzzy
+#~ msgid "Home Page Second Footer Sidebar"
+#~ msgstr "Сайдбар в футере"
+
+#~ msgid "&#10084; Sticky"
+#~ msgstr "&#10084; Прикрепленная запись"
+
+#~ msgid "Facebook Link"
+#~ msgstr "Ссылка на Facebook"
+
+#~ msgid "Twitter Link"
+#~ msgstr "Ссылка Twitter"
+
+#, fuzzy
+#~ msgid "Switch On Primary Menu"
+#~ msgstr "Основоное меню"
+
+#~ msgid "Extended Widget"
+#~ msgstr "Виджет с настройками"
+
+#~ msgid "Top Menu"
+#~ msgstr "Верхнее меню"
+
+#~ msgid "Appearance"
+#~ msgstr "Отображение"
+
+#~ msgid "Show title"
+#~ msgstr "Отображать"
+
+#~ msgid "Search ..."
+#~ msgstr "Искать ..."
