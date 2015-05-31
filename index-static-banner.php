@@ -1,6 +1,6 @@
 <!-- wallstreet Main Slider --->
 <?php
-$current_options = get_option('wallstreet_lite_options');
+$current_options = get_option('wallstreet_lite_options',theme_data_setup());
 ?>
 <!-- /Slider Section -->
 <div class="homepage_mycarousel">

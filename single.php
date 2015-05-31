@@ -68,27 +68,7 @@
 					<div class="media-body">
 						<h6><?php the_author(); ?></h6>
 						<p> <?php the_author_meta( 'description' ); ?> </p>
-						<ul class="blog-author-social">
-							<?php				
-								$facebook_profile = get_the_author_meta( 'facebook_profile' );
-								if ( $facebook_profile && $facebook_profile != '' ) {
-									echo '<li class="facebook"><a href="' . esc_url($facebook_profile) . '"><i class="fa fa-facebook"></i></a></li>';
-								}
-												
-								$linkedin_profile = get_the_author_meta( 'linkedin_profile' );
-								if ( $linkedin_profile && $linkedin_profile != '' ) {
-									   echo '<li class="linkedin"><a href="' . esc_url($linkedin_profile) . '"><i class="fa fa-linkedin"></i></a></li>';
-								}
-								$twitter_profile = get_the_author_meta( 'twitter_profile' );
-								if ( $twitter_profile && $twitter_profile != '' ) {
-									echo '<li class="twitter"><a href="' . esc_url($twitter_profile) . '"><i class="fa fa-twitter"></i></a></li>';
-								}
-								$google_profile = get_the_author_meta( 'google_profile' );
-								if ( $google_profile && $google_profile != '' ) {
-									echo '<li class="googleplus"><a href="' . esc_url($google_profile) . '" rel="author"><i class="fa fa-google-plus"></i></a></li>';
-								}
-							?>
-						</ul>
+					
 					</div>
 				</div>	
 			</div>

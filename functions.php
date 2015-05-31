@@ -12,7 +12,7 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/breadcrumbs/breadcrumbs.php');
 	
 	//wp title tag starts here
-	function webriti_head( $title, $sep ) {
+	function wallstreet_head( $title, $sep ) {
 	global $paged, $page;
 
 	if ( is_feed() )
@@ -32,10 +32,10 @@
 
 	return $title;
 }
-	add_filter( 'wp_title', 'webriti_head', 10, 2);
+	add_filter( 'wp_title', 'wallstreet_head', 10, 2);
 	
-	add_action( 'after_setup_theme', 'webriti_setup' ); 	
-	function webriti_setup()
+	add_action( 'after_setup_theme', 'wallstreet_setup' ); 	
+	function wallstreet_setup()
 	{
 		global $content_width;
 		if ( ! isset( $content_width ) ) $content_width = 600;//In PX
@@ -52,19 +52,9 @@
 		add_theme_support( 'automatic-feed-links');
 		add_theme_support('woocommerce');
 		require_once('theme_setup_data.php');
-		// setup admin pannel defual data for index page		
-		$wallstreet_lite_options=theme_data_setup();
-		
-		$current_theme_options = get_option('wallstreet_lite_options'); // get existing option data 		
-		if($current_theme_options)
-		{ 	$wallstreet_lite_options = array_merge($wallstreet_lite_options, $current_theme_options);
-			update_option('wallstreet_lite_options',$wallstreet_lite_options);	// Set existing and new option data			
-		}
-		else
-		{
-			add_option('wallstreet_lite_options', $wallstreet_lite_options);
-		}
+
 		require( WEBRITI_THEME_FUNCTIONS_PATH . '/theme_options/option_pannel.php' ); // for Option Panel Settings
+		
 		add_action('wp_enqueue_scripts', 'webriti_scripts');
 		if ( is_singular() ){ wp_enqueue_script( "comment-reply" );	}
 	}
@@ -105,18 +95,7 @@ register_sidebar( array(
 		'after_title' => '</h2>',
 	) );
 }
-/* Added By Harish */
-	/*===================================================================================
-	 * Add Author Links
-	 * =================================================================================*/
-	function webriti_add_to_author_profile( $contactmethods ) {
-		$contactmethods['facebook_profile'] = __('Facebook Profile URL','wallstreet');
-		$contactmethods['twitter_profile'] = __('Twitter Profile URL','wallstreet');
-		$contactmethods['linkedin_profile'] = __('Linkedin Profile URL','wallstreet');
-		$contactmethods['google_profile'] = __('Google Profile URL','wallstreet');
-		return $contactmethods;
-	}
-	add_filter( 'user_contactmethods', 'webriti_add_to_author_profile', 10, 1);
+
 	
 	function webriti_add_gravatar_class($class) {
 		$class = str_replace("class='avatar", "class='img-responsive comment-img img-circle", $class);
@@ -127,16 +106,17 @@ register_sidebar( array(
 
 function webriti_scripts()
 {	
-	$current_options = get_option('wallstreet_lite_options');	
-	wp_enqueue_style('bootstrap', WEBRITI_TEMPLATE_DIR_URI . '/css/bootstrap.css');	
-	wp_enqueue_style('theme-menu', WEBRITI_TEMPLATE_DIR_URI . '/css/theme-menu.css');
-	wp_enqueue_style('media-responsive', WEBRITI_TEMPLATE_DIR_URI . '/css/media-responsive.css');
-	wp_enqueue_style('font', WEBRITI_TEMPLATE_DIR_URI . '/css/font/font.css');	
-	wp_enqueue_style('font-awesome-min', WEBRITI_TEMPLATE_DIR_URI . '/css/font-awesome-4.0.3/css/font-awesome.min.css');
-	wp_enqueue_style('tool-tip', WEBRITI_TEMPLATE_DIR_URI . '/css/css-tooltips.css');
+	$current_options = get_option('wallstreet_lite_options');
+	wp_enqueue_style('wallstreet-style', get_stylesheet_uri() );
+	wp_enqueue_style('wallstreet-bootstrap', WEBRITI_TEMPLATE_DIR_URI . '/css/bootstrap.css');	
+	wp_enqueue_style('wallstreet-theme-menu', WEBRITI_TEMPLATE_DIR_URI . '/css/theme-menu.css');
+	wp_enqueue_style('wallstreet-media-responsive', WEBRITI_TEMPLATE_DIR_URI . '/css/media-responsive.css');
+	wp_enqueue_style('wallstreet-font', WEBRITI_TEMPLATE_DIR_URI . '/css/font/font.css');	
+	wp_enqueue_style('wallstreet-font-awesome-min', WEBRITI_TEMPLATE_DIR_URI . '/css/font-awesome-4.0.3/css/font-awesome.min.css');
+	wp_enqueue_style('wallstreet-tool-tip', WEBRITI_TEMPLATE_DIR_URI . '/css/css-tooltips.css');
 	
-	wp_enqueue_script('menu', WEBRITI_TEMPLATE_DIR_URI .'/js/menu/menu.js',array('jquery'));
-	wp_enqueue_script('bootstrap', WEBRITI_TEMPLATE_DIR_URI .'/js/bootstrap.min.js');
+	wp_enqueue_script('wallstreet-menu', WEBRITI_TEMPLATE_DIR_URI .'/js/menu/menu.js',array('jquery'));
+	wp_enqueue_script('wallstreet-bootstrap', WEBRITI_TEMPLATE_DIR_URI .'/js/bootstrap.min.js');
 }	
 		// code for comment
 		if ( ! function_exists( 'wallstreet_comment' ) ) {

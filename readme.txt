@@ -53,6 +53,9 @@ Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
+@Version 1.1
+1. Removed plugin territory code. ie social icons removed from the user account.
+2. Removed extra check code for option settings.
 @version 1.0
 1. Add Theme URI.
 

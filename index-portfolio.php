@@ -1,5 +1,5 @@
 <!-- AddThis Button END -->
-<?php $current_options=get_option('wallstreet_lite_options'); ?>
+<?php $current_options=get_option('wallstreet_lite_options',theme_data_setup()); ?>
 <?php if($current_options['portfolio_section_enabled'] == 'on') { ?>
 <div class="portfolio-section">
 	<div class="container">

@@ -1,4 +1,4 @@
-<?php $current_options=get_option('wallstreet_lite_options'); ?>
+<?php $current_options=get_option('wallstreet_lite_options',theme_data_setup()); ?>
 <?php if($current_options['service_section_enabled'] == 'on') { ?>
 <!-- wallstreet Service Section ---->
 <div class="service-section">

@@ -8,11 +8,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
-	<?php $current_options = get_option('wallstreet_lite_options'); ?>
+	<?php $current_options = get_option('wallstreet_lite_options',theme_data_setup()); ?>
 	<?php if($current_options['upload_image_favicon']!=''){ ?>
 	<link rel="shortcut icon" href="<?php  echo esc_url( $current_options['upload_image_favicon'] ); ?>" /> 
 	<?php } ?>
-	<link href="<?php echo get_stylesheet_uri(); ?>" rel="stylesheet" />
 	<?php wp_head(); ?>	
 </head>
 <body <?php body_class(); ?>>
@@ -46,7 +45,7 @@
 			<?php if($current_options['contact_header_settings']=="on") { ?>
 				<ul class="head-contact-info">
 					<?php if($current_options['contact_phone_number']!=''){ ?>
-					<li><i class="fa fa-phone-square"></i>+<?php echo esc_html( $current_options['contact_phone_number'] ); ?></li>
+					<li><i class="fa fa-phone-square"></i><?php echo esc_html( $current_options['contact_phone_number'] ); ?></li>
 					<?php } ?>
 					<?php if($current_options['contact_email']!=''){ ?>
 					<li><i class="fa fa-envelope"></i><?php echo sanitize_email( $current_options['contact_email'] ); ?></li>

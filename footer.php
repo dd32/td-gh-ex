@@ -1,5 +1,5 @@
 <!-- Footer Widget Secton -->
-<?php $current_options=get_option('wallstreet_lite_options'); ?>
+<?php $current_options=get_option('wallstreet_lite_options',theme_data_setup()); ?>
 <div class="footer_section">
 
 	<?php if($current_options['footer_social_media_enabled']=='on') { ?>
