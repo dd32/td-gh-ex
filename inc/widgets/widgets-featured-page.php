@@ -70,11 +70,12 @@ class Accesspress_Basic_Featured_Page_Widget extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
         extract($args);
-        extract($instance);
-        
+        $feat_page_id = empty($instance['feat_page_id']) ? false : $instance['feat_page_id']; 
         $feat_page_query = new WP_Query('page_id='.$feat_page_id);
         
-        //$display_title = (empty($feat_page_title)) ? $feat_page->post_title : $feat_page_title;
+        $feat_page_title = empty($instance['feat_page_title']) ? false : $instance['feat_page_title'];
+        $feat_readmore_text = empty($instance['feat_readmore_text']) ? false : $instance['feat_readmore_text'];
+        $feat_readmore_link = empty($instance['feat_readmore_link']) ? false : $instance['feat_readmore_link'];
 
         echo $before_widget;
             ?>

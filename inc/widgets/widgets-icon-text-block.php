@@ -75,11 +75,11 @@ class Accesspress_Basic_Icon_Text_Widget extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 		extract( $args );
-        $icon_title = $instance['icon_title'];
-        $icon_detail = wp_trim_words($instance['icon_detail'],34);
-        $icon_fa_class = $instance['icon_fa_class'];
-        $icon_readmore_text = (!empty($instance['icon_readmore_text'])) ? $instance['icon_readmore_text'] : __('Read More','accesspress-basic'); 
-        $icon_readmore_link = $instance['icon_readmore_link'];
+        $icon_title = empty($instance['icon_title']) ? false : $instance['icon_title'];
+        $icon_detail = empty($instance['icon_detail']) ? false : wp_trim_words($instance['icon_detail'],34);
+        $icon_fa_class = empty($instance['icon_fa_class']) ? false : $instance['icon_fa_class'];
+        $icon_readmore_text = empty($instance['icon_readmore_text']) ? __('Read More','accesspress-basic') : $instance['icon_readmore_text']; 
+        $icon_readmore_link = empty($instance['icon_readmore_link']) ? false : $instance['icon_readmore_link'];
         static $ic_count = 1;
         echo $before_widget;
             ?>

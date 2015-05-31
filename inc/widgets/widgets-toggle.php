@@ -70,7 +70,8 @@ class Accesspress_Basic_Toggle_Widget extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 		extract( $args );
-		extract($instance);
+		$toggle_title = empty($instance['toggle_title']) ? false : $instance['toggle_title'];
+        $toggle_content = empty($instance['toggle_content']) ? false : $instance['toggle_content'];
         
         echo $before_widget;
         ?>

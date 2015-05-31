@@ -35,9 +35,20 @@ Fonts
 
 -------------------------------------------
 Images
+    http://pixabay.com/en/entrepreneur-start-start-up-career-696976/
     http://pixabay.com/en/macbook-laptop-ipad-apple-computer-624707/
+    http://pixabay.com/en/office-flowers-apple-computer-605503/
     http://pixabay.com/en/apple-pie-woman-holding-pie-fall-635241/
+    http://pixabay.com/en/woman-portrait-face-model-canon-659354/
+    http://pixabay.com/en/startup-business-businessman-594126/
     http://pixabay.com/en/seo-search-engines-optimization-592747/
+    http://pixabay.com/en/border-collie-running-dog-playful-672633/
+    http://pixabay.com/en/church-tree-sky-landscape-692722/
+    http://pixabay.com/en/diary-calendar-filler-leave-time-684750/
+    http://pixabay.com/en/peach-fruit-nature-615125/
+    http://pixabay.com/en/border-collie-hybrid-playing-dogs-672770/
+    http://pixabay.com/en/children-win-success-video-game-593313/
+    http://pixabay.com/en/sunset-silhouette-landscape-plant-546370/
    
 ---------------------------------------------
 

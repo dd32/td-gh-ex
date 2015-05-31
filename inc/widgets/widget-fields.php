@@ -193,7 +193,7 @@ function accesspress_basic_widgets_show_widget_field( $instance = '', $widget_fi
 
             if ($value != '') {
                 $remove = '<a class="remove-image remove-screenshot">Remove</a>';
-                $attachment_id = accesspress_basic_get_attachment_id_from_url($value);
+                $attachment_id = attachment_url_to_postid($value);
 
                 $image_array = wp_get_attachment_image_src($attachment_id, 'medium');
                 $image = preg_match('/(^.*\.jpg|jpeg|png|gif|ico*)/i', $value);

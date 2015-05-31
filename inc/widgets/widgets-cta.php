@@ -75,33 +75,37 @@ class Accesspress_Basic_Cta_Widget extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
         extract($args);
-        extract($instance);
         
-        if(false != $cta_descr) :
-            echo $before_widget;
-                ?>
-                <div class="cta-wrap clearfix">
-	                <div class="ap-container">
-	                	<div class="cta-desc-wrap">
-                        <h2 class="cta_title">
-                            <?php echo esc_attr($cta_title); ?>
-                        </h2>
-                        <div class="cta_descr">
-                            <?php echo esc_textarea($cta_descr); ?>
-                        </div>
-                    	</div>
-                        <div class="cta-btn-wrap">
-                        	<a href="<?php echo esc_url($cta_readmore_link); ?>" target="_blank">
-                                <?php if(!empty($cta_fa_icon)) : ?>
-                                    <i class="fa <?php echo esc_attr($cta_fa_icon); ?>"></i><?php echo esc_attr($cta_readmore_text); ?>
-                                <?php endif; ?>
-                            </a>
-                   	 	</div>
+        $cta_title = empty($instance['cta_title']) ? false : $instance['cta_title'];
+        $cta_descr = empty($instance['cta_descr']) ? false : $instance['cta_descr'];
+        $cta_readmore_link = empty($instance['cta_readmore_link']) ? false : $instance['cta_readmore_link'];
+        $cta_readmore_text = empty($instance['cta_readmore_text']) ? false : $instance['cta_readmore_text'];
+        $cta_fa_icon = empty($instance['cta_fa_icon']) ? false : $instance['cta_fa_icon'];
+        
+        echo $before_widget;
+            ?>
+            <div class="cta-wrap clearfix">
+                <div class="ap-container">
+                	<div class="cta-desc-wrap">
+                    <h2 class="cta_title">
+                        <?php echo esc_attr($cta_title); ?>
+                    </h2>
+                    <div class="cta_descr">
+                        <?php echo esc_textarea($cta_descr); ?>
                     </div>
+                	</div>
+                    <div class="cta-btn-wrap">
+                    	<a href="<?php echo esc_url($cta_readmore_link); ?>" target="_blank">
+                            <?php if(!empty($cta_fa_icon)) : ?>
+                                <i class="fa <?php echo esc_attr($cta_fa_icon); ?>"></i>
+                            <?php endif; ?>
+                            <?php echo esc_attr($cta_readmore_text); ?>
+                        </a>
+               	 	</div>
                 </div>
-                <?php
-            echo $after_widget;
-        endif;
+            </div>
+            <?php
+        echo $after_widget;
 	}
 
 	/**

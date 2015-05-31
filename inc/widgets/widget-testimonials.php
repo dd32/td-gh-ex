@@ -70,6 +70,11 @@ class Accesspress_Basic_Testimonial_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		extract( $args );
         extract($instance);
+        $client_image = empty($instance['client_image']) ? false : $instance['client_image'];
+        $client_name = empty($instance['client_name']) ? false : $instance['client_name'];
+        $client_designation = empty($instance['client_designation']) ? false : $instance['client_designation'];
+        $client_testimonial = empty($instance['client_testimonial']) ? false : $instance['client_testimonial'];
+        
         $img_id = attachment_url_to_postid($client_image);
         $image = wp_get_attachment_image_src($img_id,'accesspress-basic-testimonial-thumbnail');
         
