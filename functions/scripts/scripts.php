@@ -4,7 +4,7 @@ function elitepress_scripts()
 	$current_options = get_option('elitepress_lite_options');
 	$webriti_stylesheet = $current_options['webriti_stylesheet'];
 	wp_enqueue_style('elitepress-style', get_stylesheet_uri() );
-	wp_enqueue_style('font-awesome-min','//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');	
+	wp_enqueue_style('font-awesome-min', WEBRITI_TEMPLATE_DIR_URI . '/css/font-awesome/css/font-awesome.min.css');
 	wp_enqueue_style('elitepress-bootstrap', WEBRITI_TEMPLATE_DIR_URI . '/css/bootstrap.css');
 	wp_enqueue_style('elitepress-default', WEBRITI_TEMPLATE_DIR_URI . '/css/default.css');
 	wp_enqueue_style('elitepress-theme-menu', WEBRITI_TEMPLATE_DIR_URI . '/css/theme-menu.css');

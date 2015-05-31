@@ -59,6 +59,10 @@ Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
+@Version 1.2.1
+1. Add Theme URI.
+2. Remove Font awesome CDN.
+
 @Version 1.2
 1. Change option panel stylling.
 2. Remove unused space
