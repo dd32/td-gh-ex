@@ -440,7 +440,7 @@ msgstr "Antworten <span>&darr;</span>"
 #. Text in function
 #: weaver-ii-pro/search.php:29
 msgid "Search Results for: %s"
-msgstr "Suchergebnisse für &#8220;%s&#8221;"
+msgstr "Suchergebnisse für %s"
 
 #. Text in function
 #: weaver-ii-pro/includes/lib-runtime.php:1603

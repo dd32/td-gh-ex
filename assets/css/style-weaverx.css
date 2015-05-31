@@ -241,18 +241,23 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	padding-left:   1%;
 }
 
-.content-2-col:nth-of-type(2n),
+.content-2-col:nth-of-type(2n+1),
 .content-3-col:nth-of-type(3n+1)
 {
 	clear:			left;
 }
 
-.is-mobile .content-3-col:nth-of-type(2n) {
+
+.is-mobile .content-3-col:nth-of-type(3n+1) {
+	clear:			none;
+}
+
+.is-mobile .content-3-col:nth-of-type(2n+1) {
 	clear:			left !important;
 }
 
-
-.is-phone .content-2-col {
+.is-phone .content-2-col,
+.is-phone .content-3-col {
 	width:			100%;
 	padding-right:  0;
 	padding-left:   0;

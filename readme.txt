@@ -165,4 +165,8 @@ with testing and feature suggestions.
 * Fix: 3-column Post display on small tablets
 * Fix: z-index for Smart Menu HTML areas
 
+= Version 1.2.4 =
+* Fix: problem with 2 and 3 column post layout
+* Fix: Failure to translate Post Comment and Leave a Reply
+
 = *** Release Notes also found on Help Tab  *** =

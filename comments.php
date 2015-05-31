@@ -82,11 +82,13 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
 	<?php
 
+		// Translation note on Comment form: These phrases are included in the default WP translation,
+		// so do NOT use 'weaver-xtreme' since that breaks things!!
 		if ( comments_open() ) {
 			$args = array (
-				'title_reply'       => apply_filters('weaverx_leave_reply_form', __( 'Leave a Reply','weaver-xtreme' )),
-				'cancel_reply_link' => apply_filters('weaverx_cancel_reply_form',__( 'Cancel Reply','weaver-xtreme' )),
-				'label_submit'      => apply_filters('weaverx_post_comment_form',__( 'Post Comment','weaver-xtreme' ))
+				'title_reply'       => apply_filters('weaverx_leave_reply_form', __( 'Leave a Reply' )),
+				'cancel_reply_link' => apply_filters('weaverx_cancel_reply_form',__( 'Cancel Reply' )),
+				'label_submit'      => apply_filters('weaverx_post_comment_form',__( 'Post Comment'))
 			);
 			comment_form($args);
 		}

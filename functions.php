@@ -62,17 +62,7 @@ function weaverx_setup() {
 	 * wp-content/languages/ (to avoid the update overwrite problem), then load the theme's files.
 	*/
 
-	$locale = apply_filters('theme_locale', get_locale(), 'weaver-xtreme');
-	load_textdomain('weaver-xtreme', WP_LANG_DIR . '/weaver-xtreme/' . $locale . '.mo');
-
-	$tpath = trailingslashit(get_template_directory());
-
-	load_theme_textdomain('weaver-xtreme' , $tpath . 'languages' );		// now theme's translations as fallback
-
-	$locale = get_locale();
-	$locale_file = $tpath . "languages/$locale.php";
-	if ( is_readable( $locale_file ) )
-		require_once( $locale_file );
+	load_theme_textdomain('weaver-xtreme' , get_template_directory() . '/languages' );		// now theme's translations as fallback
 
 	// This theme styles the visual editor with editor-style.css to match the theme style.
 	add_editor_style();
@@ -458,6 +448,7 @@ function weaverx_render_infinite_scroll() {
 	/* Start the Loop */
 
 	weaverx_post_count_clear();
+	echo ("<div class=\"wvrx-posts\">\n");
 
 	while ( have_posts() ) {
 		the_post();
@@ -501,6 +492,8 @@ function weaverx_render_infinite_scroll() {
 		weaverx_masonry('end-post');
 	}	// end while have posts
 	weaverx_masonry('end-posts');
+	echo ("</div>\n");
+
 }
 
 

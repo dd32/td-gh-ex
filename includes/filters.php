@@ -76,7 +76,7 @@ function weaverx_page_menu( $args = array() ) {
 	}
 
 	if ( $right ) {
-		$hide = ' ' . weaverx_getopt('m_primary_hide_right');
+		$hide = weaverx_getopt('m_primary_hide_right');
 		$right = '<span class="wvrx-menu-html wvrx-menu-right ' . $hide . '">' . do_shortcode( $right ) . '</span>';
 	} else {
 		$right = '<span class="wvrx-menu-clear"></span>';

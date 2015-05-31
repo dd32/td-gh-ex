@@ -144,6 +144,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 			$hide_n_posts = 0;
 
 		weaverx_post_count_clear();
+		echo ("<div class=\"wvrx-posts\">\n");
 		while ( have_posts() ) {
 			the_post();
 			weaverx_post_count_bump();
@@ -179,7 +180,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 						break;
 					case 2:
 						$col++;
-						echo ('<div class="content-2-col clearfix">' . "\n");
+						echo ('<div class="content-2-col">' . "\n");
 						get_template_part( 'templates/content', get_post_format() );
 						echo ("</div> <!-- content-2-col -->\n");
 
@@ -187,7 +188,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 						break;
 					case 3:
 						$col++;
-						echo ('<div class="content-3-col clearfix">' . "\n");
+						echo ('<div class="content-3-col">' . "\n");
 						get_template_part( 'templates/content', get_post_format() );
 						echo ("</div> <!-- content-3-col -->\n");
 
@@ -201,6 +202,8 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 			}
 		}	// end while have posts
 		weaverx_masonry('end-posts');
+		echo ("</div>\n");
+
 		weaverx_content_nav( 'nav-below' );
 	} else {
 		weaverx_not_found_search(__FILE__);
