@@ -609,30 +609,27 @@ function sc_avenue_options_display_sidebar() {
         </div>
 
         <div class="sc-tab-option">
-            <a href="https://wordpress.org/support/theme/avenue" target="_blank">
-                Support Forum
+            <a href="http://smartcatdesign.net/preview/avenue/" target="_blank">
+                View Theme Demo
             </a>
         </div>    
 
         <div class="sc-tab-option">
-            <a href="http://smartcatdesign.net/products/#.wordpress-themes" target="_blank">
-                More Themes
+            <a href="https://smartcatdesign.net/downloads/Avenue/" target="_blank">
+                Get Avenue Pro
             </a>
         </div>    
         
-<!--        <p>The Pro Version includes
-        <ol>
-            <li>An additional boxed template</li>
-            <li>up to 5 slides</li>
-            <li>3 additional theme skin colors (red, pink and light blue)</li>
-            <li>the option to remove the smartcat branding</li>
-        </ol>
-
-        <div class="sc-tab-option">
-            <a href="http://smartcatdesign.net/downloads/avenue/" target="_blank">
-                Upgrade to Pro Version
-            </a>
-        </div>-->
+        <h2>Avenue Pro Features:</h2>
+        <ul>
+            <li>- 10 Skin Colors</li>
+            <li>- Up to 5 slides in the slider</li>
+            <li>- Customize Slider Height, Timer, transition effects and more</li>
+            <li>- 10 Slider transition effects</li>
+            <li>- Animated Ajax Contact Form</li>
+            <li>- Upload Favicon</li>
+            <li>- Remove Smartcat Branding</li>
+        </ul>
 
         <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FSmartcatDesign&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21&amp;appId=233286813420319" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>
     </div>

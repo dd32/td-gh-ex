@@ -11,7 +11,7 @@ if (!function_exists('avenue_setup')) :
             $content_width = 1060;
         }
 
-        define('SC_AVENUE_VERSION', '2.02');
+        define('SC_AVENUE_VERSION', '2.03');
         load_theme_textdomain('avenue', get_template_directory() . '/languages');
 
         // Add default posts and comments RSS feed links to head.
@@ -45,7 +45,7 @@ if (!function_exists('avenue_setup')) :
             'gallery',
             'caption',
         ));
-        add_filter('widget_text', 'do_shortcode');
+        
     }
 endif; 
 add_action('after_setup_theme', 'avenue_setup');
