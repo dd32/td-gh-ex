@@ -18,7 +18,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		    'capability'     => 'edit_theme_options',
 			'description'    => __( 'Options for Featured Content', 'catchbase' ),
 		    'priority'       => 400,
-		    'title'    		 => __( 'Featured Content Options', 'catchbase' ),
+		    'title'    		 => __( 'Featured Content', 'catchbase' ),
 		) );
 	}
 
@@ -26,7 +26,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	$wp_customize->add_section( 'catchbase_featured_content_settings', array(
 		'panel'			=> 'catchbase_featured_content_options',
 		'priority'		=> 1,
-		'title'			=> __( 'Featured Content Settings', 'catchbase' ),
+		'title'			=> __( 'Featured Content Options', 'catchbase' ),
 	) );
 
 	$wp_customize->add_setting( 'catchbase_theme_options[featured_content_option]', array(
@@ -83,12 +83,6 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'section'  	=> 'catchbase_featured_content_settings',
 		'settings'	=> 'catchbase_theme_options[featured_content_position]',
 		'type'		=> 'checkbox',
-	) );  
-
-	$wp_customize->add_section( 'catchbase_featured_content_type', array(
-		'panel'			=> 'catchbase_featured_content_options',
-		'priority'		=> 2,
-		'title'			=> __( 'Featured Content Type', 'catchbase' ),
 	) );
 
 	$wp_customize->add_setting( 'catchbase_theme_options[featured_content_type]', array(
@@ -106,8 +100,8 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	$wp_customize->add_control( 'catchbase_theme_options[featured_content_type]', array(
 		'choices'  	=> $choices,
 		'label'    	=> __( 'Select Content Type', 'catchbase' ),
-		'priority'	=> '3',
-		'section'  	=> 'catchbase_featured_content_type',
+		'priority'	=> '4',
+		'section'  	=> 'catchbase_featured_content_settings',
 		'settings' 	=> 'catchbase_theme_options[featured_content_type]',
 		'type'	  	=> 'select',
 	) );
@@ -121,8 +115,8 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	$wp_customize->add_control( 'catchbase_theme_options[featured_content_headline]' , array(
 		'description'	=> __( 'Leave field empty if you want to remove Headline', 'catchbase' ),
 		'label'    		=> __( 'Headline for Featured Content', 'catchbase' ),
-		'priority'		=> '4',
-		'section'  		=> 'catchbase_featured_content_type',
+		'priority'		=> '5',
+		'section'  		=> 'catchbase_featured_content_settings',
 		'settings' 		=> 'catchbase_theme_options[featured_content_headline]',
 		'type'	   		=> 'text',
 		)
@@ -137,8 +131,8 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	$wp_customize->add_control( 'catchbase_theme_options[featured_content_subheadline]' , array(
 		'description'	=> __( 'Leave field empty if you want to remove Sub-headline', 'catchbase' ),
 		'label'    		=> __( 'Sub-headline for Featured Content', 'catchbase' ),
-		'priority'		=> '5',
-		'section'  		=> 'catchbase_featured_content_type',
+		'priority'		=> '6',
+		'section'  		=> 'catchbase_featured_content_settings',
 		'settings' 		=> 'catchbase_theme_options[featured_content_subheadline]',
 		'type'	   		=> 'text',
 		) 
@@ -159,13 +153,33 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
             'step'  => 1,
         	),
 		'label'    		=> __( 'No of Featured Content', 'catchbase' ),
-		'priority'		=> '6',
-		'section'  		=> 'catchbase_featured_content_type',
+		'priority'		=> '7',
+		'section'  		=> 'catchbase_featured_content_settings',
 		'settings' 		=> 'catchbase_theme_options[featured_content_number]',
 		'type'	   		=> 'number',
 		) 
 	);
 
+	$wp_customize->add_setting( 'catchbase_theme_options[featured_content_show]', array(
+		'capability'		=> 'edit_theme_options',
+		'default'			=> $defaults['featured_content_show'],
+		'sanitize_callback'	=> 'sanitize_key',
+	) ); 
+
+	$catchbase_featured_content_show = catchbase_featured_content_show();
+	$choices = array();
+	foreach ( $catchbase_featured_content_show as $catchbase_featured_content_shows ) {
+		$choices[$catchbase_featured_content_shows['value']] = $catchbase_featured_content_shows['label'];
+	}
+
+	$wp_customize->add_control( 'catchbase_theme_options[featured_content_show]', array(
+		'choices'  	=> $choices,
+		'label'    	=> __( 'Display Content', 'catchbase' ),
+		'priority'	=> '8',
+		'section'  	=> 'catchbase_featured_content_settings',
+		'settings' 	=> 'catchbase_theme_options[featured_content_show]',
+		'type'	  	=> 'select',
+	) );
 
 	//loop for featured page content
 	for ( $i=1; $i <= $options['featured_content_number'] ; $i++ ) {
@@ -176,8 +190,8 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 
 		$wp_customize->add_control( 'catchbase_featured_content_page_'. $i .'', array(
 			'label'    	=> __( 'Featured Page', 'catchbase' ) . ' ' . $i ,
-			'priority'	=> '7' . $i,
-			'section'  	=> 'catchbase_featured_content_type',
+			'priority'	=> '9' . $i,
+			'section'  	=> 'catchbase_featured_content_settings',
 			'settings' 	=> 'catchbase_theme_options[featured_content_page_'. $i .']',
 			'type'	   	=> 'dropdown-pages',
 		) );

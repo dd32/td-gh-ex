@@ -1,6 +1,6 @@
 /**
  * Theme Customizer custom scripts
- * Control of show/hide events on feature slider type selection
+ * Control of show/hide events for Customizer
  */
 (function($) {
 
@@ -27,16 +27,14 @@
             $('#customize-control-catchbase_theme_options-featured_content_number').hide();
             $('#customize-control-catchbase_theme_options-featured_content_headline').hide();
             $('#customize-control-catchbase_theme_options-featured_content_subheadline').hide();
+            $('#customize-control-catchbase_theme_options-featured_content_show').hide();
+            $('[id*=customize-control-catchbase_featured_content_page]').hide();
         } else {
             $('#customize-control-catchbase_theme_options-featured_content_number').show();
             $('#customize-control-catchbase_theme_options-featured_content_headline').show();
             $('#customize-control-catchbase_theme_options-featured_content_subheadline').show();
-        }
-
-        if (value == 'featured-page-content') {
+            $('#customize-control-catchbase_theme_options-featured_content_show').show();
             $('[id*=customize-control-catchbase_featured_content_page]').show();
-        } else {
-            $('[id*=customize-control-catchbase_featured_content_page]').hide();
         }
     });
 
@@ -45,45 +43,20 @@
      */
     $('#accordion-panel-catchbase_featured_content_options .accordion-section-title').live( "click", function() {
         var value = $("#customize-control-catchbase_theme_options-featured_content_type label select").val();
-        if (value == 'demo-featured-content') {
+         if (value == 'demo-featured-content') {
             $('#customize-control-catchbase_theme_options-featured_content_number').hide();
             $('#customize-control-catchbase_theme_options-featured_content_headline').hide();
             $('#customize-control-catchbase_theme_options-featured_content_subheadline').hide();
+            $('#customize-control-catchbase_theme_options-featured_content_show').hide();
+            $('[id*=customize-control-catchbase_featured_content_page]').hide();
         } else {
             $('#customize-control-catchbase_theme_options-featured_content_number').show();
             $('#customize-control-catchbase_theme_options-featured_content_headline').show();
             $('#customize-control-catchbase_theme_options-featured_content_subheadline').show();
-        }
-
-        if (value == 'featured-page-content') {
+            $('#customize-control-catchbase_theme_options-featured_content_show').show();
             $('[id*=customize-control-catchbase_featured_content_page]').show();
-        } else {
-            $('[id*=customize-control-catchbase_featured_content_page]').hide();
         }
     });
-
-    /**
-     * Control of show/hide events on feature content type selection on page load if prevously value has been saved
-     * For WordPress versions less than 4.0
-     */
-    var catchbase_featured_content_layout_value = $("#customize-control-catchbase_theme_options-featured_content_type label select").val();
-
-    if (catchbase_featured_content_layout_value == 'demo-content') {
-        $('#customize-control-catchbase_theme_options-featured_content_number').hide();
-        $('#customize-control-catchbase_theme_options-featured_content_headline').hide();
-        $('#customize-control-catchbase_theme_options-featured_content_subheadline').hide();
-    } else {
-        $('#customize-control-catchbase_theme_options-featured_content_number').show();
-        $('#customize-control-catchbase_theme_options-featured_content_headline').show();
-        $('#customize-control-catchbase_theme_options-featured_content_subheadline').show();
-    }
-
-    if (catchbase_featured_content_layout_value == 'featured-page-content') {
-        $('[id*=customize-control-catchbase_featured_content_page]').show();
-    } else {
-        $('[id*=customize-control-catchbase_featured_content_page]').hide();
-    }
-
 
     /*
      * For Feature Slider on featured_slider_type change event
@@ -94,14 +67,10 @@
 
         if (value == 'demo-featured-slider') {
             $('#customize-control-catchbase_featured_slide_number').hide();
+            $('[id*=customize-control-catchbase_featured_slider_page]').hide();
         } else {
             $('#customize-control-catchbase_featured_slide_number').show();
-        }
-
-        if (value == 'featured-page-slider') {
             $('[id*=customize-control-catchbase_featured_slider_page]').show();
-        } else {
-            $('[id*=customize-control-catchbase_featured_slider_page]').hide();
         }
     });
 
@@ -110,37 +79,16 @@
 
         if (value == 'demo-featured-slider') {
             $('#customize-control-catchbase_featured_slide_number').hide();
+            $('[id*=customize-control-catchbase_featured_slider_page]').hide();
         } else {
             $('#customize-control-catchbase_featured_slide_number').show();
-        }
-
-        if (value == 'featured-page-slider') {
             $('[id*=customize-control-catchbase_featured_slider_page]').show();
-        } else {
-            $('[id*=customize-control-catchbase_featured_slider_page]').hide();
         }
     });
 
 
-    /**
-     * Control of show/hide events on feature slider type selection on page load if prevously value has been saved
-     * For WordPress versions less than 4.0
-     */
-    var catchbase_featured_slider_layout_value = $("#customize-control-catchbase_featured_slider_type label select").val();
-
-    if (catchbase_featured_slider_layout_value == 'demo-featured-slider') {
-        $('#customize-control-catchbase_featured_slide_number').hide();
-    } else {
-        $('#customize-control-catchbase_featured_slide_number').show();
-    }
-
-    if (catchbase_featured_slider_layout_value == 'featured-page-slider') {
-        $('[id*=customize-control-catchbase_featured_slider_page]').show();
-    } else {
-        $('[id*=customize-control-catchbase_featured_slider_page]').hide();
-    }
-
-     $("#customize-control-catchbase_theme_options-color_scheme").live( "change", function() {
+    //For Color Scheme
+    $("#customize-control-catchbase_theme_options-color_scheme").live( "change", function() {
         //var name = $('#customize-control-catchbase_theme_options-color_scheme input').attr('name');
         var value = $('#customize-control-catchbase_theme_options-color_scheme input:checked').val();
         if ( 'dark' == value ){

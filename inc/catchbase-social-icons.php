@@ -14,6 +14,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 }
 
 
+if ( ! function_exists( 'catchbase_get_social_icons' ) ) :
 /**
  * Generate social icons.
  *
@@ -74,5 +75,5 @@ function catchbase_get_social_icons(){
 		set_transient( 'catchbase_social_icons', $catchbase_social_icons, 86940 );	
 	}
 	return $catchbase_social_icons;
-}
-
+} // catchbase_get_social_icons
+endif;

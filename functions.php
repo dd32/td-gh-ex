@@ -13,7 +13,7 @@
 
 //define theme version
 if ( !defined( 'CATCHBASE_THEME_VERSION' ) )
-define ( 'CATCHBASE_THEME_VERSION', '1.9' );
+define ( 'CATCHBASE_THEME_VERSION', '2.0' );
 
 /**
  * Implement the core functions

@@ -238,6 +238,8 @@ function catchbase_page_content( $options ) {
 	$quantity 					= $options [ 'featured_content_number' ];
 
 	$more_link_text				= $options['excerpt_more_text'];
+
+	$show_content				= isset( $options['featured_content_show'] ) ? $options['featured_content_show'] : 'excerpt';
 	
 	$catchbase_page_content 	= '';
 
@@ -298,10 +300,14 @@ function catchbase_page_content( $options ) {
 								<a href="' . get_permalink() . '" rel="bookmark">' . the_title( '','', false ) . '</a>
 							</h1>
 						</header>';
-						if( $excerpt !='') {
-							$catchbase_page_content .= '<div class="entry-content">'. $excerpt.'</div>';
+						if ( 'excerpt' == $show_content ) {
+							$catchbase_page_content .= '<div class="entry-excerpt"><p>' . $excerpt . '</p></div><!-- .entry-excerpt -->';
 						}
-						$catchbase_page_content .= '<a href="' . get_permalink() . '" title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'catchbase' ), 'echo' => false ) ) . '"></a>';
+						elseif ( 'full-content' == $show_content ) { 
+							$content = apply_filters( 'the_content', get_the_content() );
+							$content = str_replace( ']]>', ']]&gt;', $content );
+							$catchbase_page_content .= '<div class="entry-content">' . $content . '</div><!-- .entry-content -->';
+						}
 					$catchbase_page_content .= '
 					</div><!-- .entry-container -->
 				</article><!-- .featured-post-'. $i .' -->';

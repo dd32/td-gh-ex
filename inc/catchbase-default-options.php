@@ -82,6 +82,7 @@ function catchbase_get_default_theme_options() {
 		'featured_content_subheadline'						=> '',
 		'featured_content_type'								=> 'demo-featured-content',
 		'featured_content_number'							=> '4',
+		'featured_content_show'								=> 'excerpt',
 
 		//Featured Slider Options
 		'featured_slider_option'							=> 'homepage',
@@ -326,6 +327,29 @@ function catchbase_featured_content_layout_options() {
 	return apply_filters( 'catchbase_featured_content_layout_options', $featured_content_layout_option );
 }
 
+/**
+ * Returns an array of featured content show registered for catchbase.
+ *
+ * @since Catch Base 1.9.1
+ */
+function catchbase_featured_content_show() {
+	$featured_content_show_option = array(
+		'excerpt' 		=> array(
+			'value'	=> 'excerpt',
+			'label' => __( 'Show Excerpt', 'catchbase' ),
+		),
+		'full-content' 	=> array(
+			'value' => 'full-content',
+			'label' => __( 'Show Full Content', 'catchbase' ),
+		),
+		'hide-content' 	=> array(
+			'value' => 'hide-content',
+			'label' => __( 'Hide Content', 'catchbase' ),
+		),
+	);
+
+	return apply_filters( 'catchbase_featured_content_show', $featured_content_show_option );
+}
 
 /**
  * Returns an array of feature slider types registered for catchbase.

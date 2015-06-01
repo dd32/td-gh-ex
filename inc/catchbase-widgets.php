@@ -77,7 +77,7 @@ class Catchbase_social_icons_widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'catchbase_social_icons', // Base ID
-			'Catchbase Social Icons', // Name
+			__( 'CT: Social Icons', 'catchbase' ), // Name
 			array( 'description' => __( 'Use this widget to add Social Icons as a widget. ', 'catchbase' ) ) // Args
 		);
 	}

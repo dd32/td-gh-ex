@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Catch Base\n"
 "Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/catch-base-pro-"
 "premium/pro-premium/\n"
-"POT-Creation-Date: 2015-05-20 08:21+0545\n"
-"PO-Revision-Date: 2015-05-20 08:21+0545\n"
+"POT-Creation-Date: 2015-06-01 10:01-0500\n"
+"PO-Revision-Date: 2015-06-01 10:01-0500\n"
 "Last-Translator: Anders <anders@paulcen.se>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: sv\n"
@@ -307,340 +307,350 @@ msgstr "Reviews"
 msgid "Search..."
 msgstr "Sök..."
 
-#: ../inc/catchbase-default-options.php:112
+#: ../inc/catchbase-default-options.php:113
 msgid "True"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:116
+#: ../inc/catchbase-default-options.php:117
 msgid "Wait"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:120
+#: ../inc/catchbase-default-options.php:121
 msgid "False"
 msgstr ""
 
-#: ../inc/catchbase-default-options.php:136
+#: ../inc/catchbase-default-options.php:137
 msgid "Light"
 msgstr "Ljus"
 
-#: ../inc/catchbase-default-options.php:140
+#: ../inc/catchbase-default-options.php:141
 msgid "Dark"
 msgstr "Mörk"
 
-#: ../inc/catchbase-default-options.php:157
-#: ../inc/catchbase-default-options.php:520
+#: ../inc/catchbase-default-options.php:158
+#: ../inc/catchbase-default-options.php:544
 msgid "Primary Sidebar, Content"
 msgstr "Primär sidofältet, innehåll"
 
-#: ../inc/catchbase-default-options.php:161
-#: ../inc/catchbase-default-options.php:525
+#: ../inc/catchbase-default-options.php:162
+#: ../inc/catchbase-default-options.php:549
 msgid "Content, Primary Sidebar"
 msgstr "Innehåll, primär sidopanel"
 
-#: ../inc/catchbase-default-options.php:165
-#: ../inc/catchbase-default-options.php:530
+#: ../inc/catchbase-default-options.php:166
+#: ../inc/catchbase-default-options.php:554
 msgid "Three Columns ( Secondary Sidebar, Content, Primary Sidebar )"
 msgstr "Tre kolumner (sekundär sidopanel innehåll, primär sidopanel)"
 
-#: ../inc/catchbase-default-options.php:169
-#: ../inc/catchbase-default-options.php:535
+#: ../inc/catchbase-default-options.php:170
+#: ../inc/catchbase-default-options.php:559
 msgid "No Sidebar ( Content Width )"
 msgstr "Ingen sidpanel (innehållets bredd)"
 
-#: ../inc/catchbase-default-options.php:185
+#: ../inc/catchbase-default-options.php:186
+#: ../inc/catchbase-default-options.php:339
 msgid "Show Excerpt"
 msgstr "Visa utdrag"
 
-#: ../inc/catchbase-default-options.php:189
+#: ../inc/catchbase-default-options.php:190
 msgid "Show Full Content (No Featured Image)"
 msgstr "Visa fullständiga innehåll (ingen utvald bild)"
 
-#: ../inc/catchbase-default-options.php:206
-#: ../inc/catchbase-default-options.php:272
+#: ../inc/catchbase-default-options.php:207
+#: ../inc/catchbase-default-options.php:273
 msgid "Homepage / Frontpage"
 msgstr "Hemsida / startsida"
 
-#: ../inc/catchbase-default-options.php:210
+#: ../inc/catchbase-default-options.php:211
 msgid "Excluding Homepage"
 msgstr "Exkludera hemsida"
 
-#: ../inc/catchbase-default-options.php:214
+#: ../inc/catchbase-default-options.php:215
 msgid "Excluding Homepage, Page/Post Featured Image"
 msgstr "Exkludera hemsida, Sida/Lagrad utvald bild"
 
-#: ../inc/catchbase-default-options.php:218
-#: ../inc/catchbase-default-options.php:276
+#: ../inc/catchbase-default-options.php:219
+#: ../inc/catchbase-default-options.php:277
 msgid "Entire Site"
 msgstr "Hela sajten"
 
-#: ../inc/catchbase-default-options.php:222
+#: ../inc/catchbase-default-options.php:223
 msgid "Entire Site, Page/Post Featured Image"
 msgstr "Hela sajten, dagens sida/inlägg bild"
 
-#: ../inc/catchbase-default-options.php:226
+#: ../inc/catchbase-default-options.php:227
 msgid "Pages and Posts"
 msgstr "Sidor och inlägg"
 
-#: ../inc/catchbase-default-options.php:230
-#: ../inc/catchbase-default-options.php:280
-#: ../inc/catchbase-default-options.php:458
+#: ../inc/catchbase-default-options.php:231
+#: ../inc/catchbase-default-options.php:281
+#: ../inc/catchbase-default-options.php:482
 msgid "Disabled"
 msgstr "Inaktiverad"
 
-#: ../inc/catchbase-default-options.php:247
-#: ../inc/catchbase-default-options.php:588
+#: ../inc/catchbase-default-options.php:248
+#: ../inc/catchbase-default-options.php:612
 msgid "Full Image"
 msgstr "Fullständig bild"
 
-#: ../inc/catchbase-default-options.php:251
+#: ../inc/catchbase-default-options.php:252
 msgid "Large Image"
 msgstr "Stor bild"
 
-#: ../inc/catchbase-default-options.php:255
-#: ../inc/catchbase-default-options.php:593
+#: ../inc/catchbase-default-options.php:256
+#: ../inc/catchbase-default-options.php:617
 msgid "Slider Image"
 msgstr "Bildspelsbild"
 
-#: ../inc/catchbase-default-options.php:297
+#: ../inc/catchbase-default-options.php:298
 msgid "Demo Featured Content"
 msgstr "Visa utvalt Innehåll"
 
-#: ../inc/catchbase-default-options.php:301
+#: ../inc/catchbase-default-options.php:302
 msgid "Featured Page Content"
 msgstr "Visa utvalt sidoinnehåll"
 
-#: ../inc/catchbase-default-options.php:318
+#: ../inc/catchbase-default-options.php:319
 msgid "3 columns"
 msgstr "3 kolumner"
 
-#: ../inc/catchbase-default-options.php:322
+#: ../inc/catchbase-default-options.php:323
 msgid "4 columns"
 msgstr "4 kolumner"
 
-#: ../inc/catchbase-default-options.php:339
+#: ../inc/catchbase-default-options.php:343
+msgid "Show Full Content"
+msgstr ""
+
+#: ../inc/catchbase-default-options.php:347
+msgid "Hide Content"
+msgstr ""
+
+#: ../inc/catchbase-default-options.php:363
 msgid "Demo Featured Slider"
 msgstr "Visa utvalt Innehåll"
 
-#: ../inc/catchbase-default-options.php:343
+#: ../inc/catchbase-default-options.php:367
 msgid "Featured Page Slider"
 msgstr "Visa utvalt sidoinnehåll"
 
-#: ../inc/catchbase-default-options.php:360
+#: ../inc/catchbase-default-options.php:384
 msgid "Fade"
 msgstr "Tona"
 
-#: ../inc/catchbase-default-options.php:364
+#: ../inc/catchbase-default-options.php:388
 msgid "Fade Out"
 msgstr "Tona ut"
 
-#: ../inc/catchbase-default-options.php:368
+#: ../inc/catchbase-default-options.php:392
 msgid "None"
 msgstr "Ingen"
 
-#: ../inc/catchbase-default-options.php:372
+#: ../inc/catchbase-default-options.php:396
 msgid "Scroll Horizontal"
 msgstr "Scrolla horisontellt"
 
-#: ../inc/catchbase-default-options.php:376
+#: ../inc/catchbase-default-options.php:400
 msgid "Scroll Vertical"
 msgstr "Scrolla vertikalt"
 
-#: ../inc/catchbase-default-options.php:380
+#: ../inc/catchbase-default-options.php:404
 msgid "Flip Horizontal"
 msgstr "Vänd horisontellt"
 
-#: ../inc/catchbase-default-options.php:384
+#: ../inc/catchbase-default-options.php:408
 msgid "Flip Vertical"
 msgstr "Vänd vertikalt"
 
-#: ../inc/catchbase-default-options.php:388
+#: ../inc/catchbase-default-options.php:412
 msgid "Tile Slide"
 msgstr "Brick bild"
 
-#: ../inc/catchbase-default-options.php:392
+#: ../inc/catchbase-default-options.php:416
 msgid "Tile Blind"
 msgstr "Dummy bricka"
 
-#: ../inc/catchbase-default-options.php:396
+#: ../inc/catchbase-default-options.php:420
 msgid "Suffle"
 msgstr "SUFFLE"
 
-#: ../inc/catchbase-default-options.php:413
+#: ../inc/catchbase-default-options.php:437
 msgid "Default(Older Posts/Newer Posts)"
 msgstr "Standard (äldre inlägg/nyare inlägg)"
 
-#: ../inc/catchbase-default-options.php:417
+#: ../inc/catchbase-default-options.php:441
 msgid "Numeric"
 msgstr "﻿Numerisk"
 
-#: ../inc/catchbase-default-options.php:421
+#: ../inc/catchbase-default-options.php:445
 msgid "Infinite Scroll (Click)"
 msgstr "Oändlig scroll (klicka)"
 
-#: ../inc/catchbase-default-options.php:425
+#: ../inc/catchbase-default-options.php:449
 msgid "Infinite Scroll (Scroll)"
 msgstr "Oändlig scroll (scroll)"
 
-#: ../inc/catchbase-default-options.php:442
+#: ../inc/catchbase-default-options.php:466
 msgid "Large"
 msgstr "Stor"
 
-#: ../inc/catchbase-default-options.php:446
+#: ../inc/catchbase-default-options.php:470
 msgid "Medium"
 msgstr "Medel"
 
-#: ../inc/catchbase-default-options.php:450
+#: ../inc/catchbase-default-options.php:474
 msgid "Full size"
 msgstr "Full storlek"
 
-#: ../inc/catchbase-default-options.php:454
+#: ../inc/catchbase-default-options.php:478
 msgid "Slider Image Size"
 msgstr "Bildspel bildstorlek"
 
-#: ../inc/catchbase-default-options.php:472
+#: ../inc/catchbase-default-options.php:496
 #: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:90
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../inc/catchbase-default-options.php:473
+#: ../inc/catchbase-default-options.php:497
 #: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:94
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../inc/catchbase-default-options.php:474
+#: ../inc/catchbase-default-options.php:498
 msgid "Googleplus"
 msgstr "Googleplus"
 
-#: ../inc/catchbase-default-options.php:475 ../inc/catchbase-social-icons.php:61
+#: ../inc/catchbase-default-options.php:499 ../inc/catchbase-social-icons.php:62
 msgid "Email"
 msgstr "Email"
 
-#: ../inc/catchbase-default-options.php:476
+#: ../inc/catchbase-default-options.php:500
 msgid "Feed"
 msgstr "Feed"
 
-#: ../inc/catchbase-default-options.php:477
+#: ../inc/catchbase-default-options.php:501
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../inc/catchbase-default-options.php:478
+#: ../inc/catchbase-default-options.php:502
 msgid "GitHub"
 msgstr "GitHub"
 
-#: ../inc/catchbase-default-options.php:479
+#: ../inc/catchbase-default-options.php:503
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: ../inc/catchbase-default-options.php:480
+#: ../inc/catchbase-default-options.php:504
 #: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:102
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/catchbase-default-options.php:481
+#: ../inc/catchbase-default-options.php:505
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/catchbase-default-options.php:482
+#: ../inc/catchbase-default-options.php:506
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/catchbase-default-options.php:483
+#: ../inc/catchbase-default-options.php:507
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../inc/catchbase-default-options.php:484
+#: ../inc/catchbase-default-options.php:508
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/catchbase-default-options.php:485
+#: ../inc/catchbase-default-options.php:509
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/catchbase-default-options.php:486
+#: ../inc/catchbase-default-options.php:510
 msgid "PollDaddy"
 msgstr "PollDaddy"
 
-#: ../inc/catchbase-default-options.php:487
+#: ../inc/catchbase-default-options.php:511
 msgid "CodePen"
 msgstr "CodePen"
 
-#: ../inc/catchbase-default-options.php:488
+#: ../inc/catchbase-default-options.php:512
 msgid "Path"
 msgstr "Path"
 
-#: ../inc/catchbase-default-options.php:489
+#: ../inc/catchbase-default-options.php:513
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/catchbase-default-options.php:490
+#: ../inc/catchbase-default-options.php:514
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/catchbase-default-options.php:491
+#: ../inc/catchbase-default-options.php:515
 msgid "Digg"
 msgstr "Digg"
 
-#: ../inc/catchbase-default-options.php:492
+#: ../inc/catchbase-default-options.php:516
 msgid "Reddit"
 msgstr "Reddit"
 
-#: ../inc/catchbase-default-options.php:493
+#: ../inc/catchbase-default-options.php:517
 msgid "StumbleUpon"
 msgstr "StumbleUpon"
 
-#: ../inc/catchbase-default-options.php:494
+#: ../inc/catchbase-default-options.php:518
 msgid "Pocket"
 msgstr "Pocket"
 
-#: ../inc/catchbase-default-options.php:495
+#: ../inc/catchbase-default-options.php:519
 msgid "DropBox"
 msgstr "DropBox"
 
-#: ../inc/catchbase-default-options.php:496
+#: ../inc/catchbase-default-options.php:520
 msgid "Foursquare"
 msgstr "Foursquare"
 
-#: ../inc/catchbase-default-options.php:497
+#: ../inc/catchbase-default-options.php:521
 msgid "Spotify"
 msgstr "Spotify"
 
-#: ../inc/catchbase-default-options.php:498
+#: ../inc/catchbase-default-options.php:522
 msgid "Twitch"
 msgstr "Twitch"
 
-#: ../inc/catchbase-default-options.php:515
-#: ../inc/catchbase-default-options.php:551
-#: ../inc/catchbase-default-options.php:578
+#: ../inc/catchbase-default-options.php:539
+#: ../inc/catchbase-default-options.php:575
+#: ../inc/catchbase-default-options.php:602
 msgid "Default"
 msgstr "Förvald"
 
-#: ../inc/catchbase-default-options.php:556
+#: ../inc/catchbase-default-options.php:580
 msgid "Enable"
 msgstr "Aktivera"
 
-#: ../inc/catchbase-default-options.php:561
+#: ../inc/catchbase-default-options.php:585
 msgid "Disable"
 msgstr "Inaktivera"
 
-#: ../inc/catchbase-default-options.php:583
+#: ../inc/catchbase-default-options.php:607
 msgid "Featured Image"
 msgstr "Utvald bild"
 
-#: ../inc/catchbase-default-options.php:598
+#: ../inc/catchbase-default-options.php:622
 msgid "Disable Image"
 msgstr "Inaktivera bild"
 
-#: ../inc/catchbase-default-options.php:613
+#: ../inc/catchbase-default-options.php:637
 #, php-format
 msgctxt "1: Year, 2: Site Title with home URL"
 msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
 msgstr "Copyright © %1$s %2$s. Alla rättigheter reserverade."
 
-#: ../inc/catchbase-default-options.php:615
+#: ../inc/catchbase-default-options.php:639
 msgid "by"
 msgstr "av"
 
 #: ../inc/catchbase-featured-content.php:56
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:21
 msgid "Featured Content"
 msgstr "Utvalt innehåll"
 
@@ -654,10 +664,9 @@ msgstr ""
 "Underrubrik och utvalt innehåll från \"Utseende-> anpassa-> utseende "
 "innehållsalternativ\"."
 
-#: ../inc/catchbase-featured-content.php:267
-#: ../inc/catchbase-featured-content.php:276
-#: ../inc/catchbase-featured-content.php:287
-#: ../inc/catchbase-featured-content.php:304
+#: ../inc/catchbase-featured-content.php:269
+#: ../inc/catchbase-featured-content.php:278
+#: ../inc/catchbase-featured-content.php:289
 #: ../inc/catchbase-featured-slider.php:178
 #: ../inc/catchbase-featured-slider.php:185
 #: ../inc/catchbase-featured-slider.php:201
@@ -726,6 +735,10 @@ msgstr "Sidfotsområdet %d"
 msgid "Footer %d widget area."
 msgstr "Sidfot %d widget området."
 
+#: ../inc/catchbase-widgets.php:80
+msgid "CT: Social Icons"
+msgstr ""
+
 #: ../inc/catchbase-widgets.php:81
 msgid "Use this widget to add Social Icons as a widget. "
 msgstr "Använd denna widget för att lägga sociala ikoner som en widget."
@@ -768,13 +781,9 @@ msgstr "Google+"
 msgid "Options for Featured Content"
 msgstr "Alternativ för utvalt innehåll"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:21
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:29
 msgid "Featured Content Options"
 msgstr "Utvalt innehåll innehållsalternativ"
-
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:29
-msgid "Featured Content Settings"
-msgstr "Utvalt innehåll inställningar"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:46
 msgid "Enable Featured Content on"
@@ -788,31 +797,27 @@ msgstr "Visa utvalt Innehåll"
 msgid "Check to Move above Footer"
 msgstr "Kontrollera att flytta över sidfot"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:91
-msgid "Featured Content Type"
-msgstr "Utvalt innehållstyp"
-
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:108
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:102
 msgid "Select Content Type"
 msgstr "Välj innehållstyp"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:122
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:116
 msgid "Leave field empty if you want to remove Headline"
 msgstr "Lämna fältet tomt om du vill ta bort rubriken"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:123
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:117
 msgid "Headline for Featured Content"
 msgstr "Rubriken för utvalt innehåll"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:138
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:132
 msgid "Leave field empty if you want to remove Sub-headline"
 msgstr "Lämna fältet tomt om du vill ta bort sub rubrik"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:139
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:133
 msgid "Sub-headline for Featured Content"
 msgstr "Under rubriken för utvalt innehåll"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:154
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:148
 msgid ""
 "Save and refresh the page if No. of Featured Content is changed (Max no of "
 "Featured Content is 20)"
@@ -820,23 +825,27 @@ msgstr ""
 "Spara och uppdatera sidan om nej. av dagens innehåll ändras (Max inte av dagens "
 "innehåll är 20)"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:161
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:155
 msgid "No of Featured Content"
 msgstr "Antal av utvalt innehåll"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:178
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:189
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:177
+msgid "Display Content"
+msgstr ""
+
+#: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:192
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:183
 msgid "Featured Page"
 msgstr "Utvald sida"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:19
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:21
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:28
 msgid "Featured Slider Options"
 msgstr "Utvald inlägg bildspel"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:28
-msgid "Featured Slider Settings"
-msgstr "Slider Inställningar"
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:21
+msgid "Featured Slider"
+msgstr ""
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:45
 msgid "Enable Slider on"
@@ -871,20 +880,16 @@ msgstr ""
 msgid "Image Loader"
 msgstr ""
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:135
-msgid "Featured Slider Type"
-msgstr "Utvald inlägg bildspel"
-
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:152
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:146
 msgid "Select Slider Type"
 msgstr "Välj bildspelstyp"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:166
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:160
 msgid ""
 "Save and refresh the page if No. of Slides is changed (Max no of slides is 20)"
 msgstr "Spara och uppdatera sidan om nej. bilder ändras (Max inte är 20 bilder)"
 
-#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:173
+#: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:167
 msgid "No of Slides"
 msgstr "Antal bilder"
 
@@ -1219,6 +1224,18 @@ msgid ""
 msgstr ""
 "Detta är den primära sidopanelen om du använder en två eller tre kolumn "
 "webbplats layoutalternativ."
+
+#~ msgid "Featured Content Settings"
+#~ msgstr "Utvalt innehåll inställningar"
+
+#~ msgid "Featured Content Type"
+#~ msgstr "Utvalt innehållstyp"
+
+#~ msgid "Featured Slider Settings"
+#~ msgstr "Slider Inställningar"
+
+#~ msgid "Featured Slider Type"
+#~ msgstr "Utvald inlägg bildspel"
 
 #~ msgid "Archive for %s"
 #~ msgstr "Arkiv för% s"

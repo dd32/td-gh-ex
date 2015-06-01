@@ -18,14 +18,14 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		    'capability'     => 'edit_theme_options',
 		    'description'    => __( 'Featured Slider Options', 'catchbase' ),
 		    'priority'       => 500,
-			'title'    		 => __( 'Featured Slider Options', 'catchbase' ),
+			'title'    		 => __( 'Featured Slider', 'catchbase' ),
 		) );
 	}
 
 	$wp_customize->add_section( 'catchbase_featured_slider', array(
 		'panel'			=> 'catchbase_featured_slider',
 		'priority'		=> 1,
-		'title'			=> __( 'Featured Slider Settings', 'catchbase' ),
+		'title'			=> __( 'Featured Slider Options', 'catchbase' ),
 	) );
 
 	$wp_customize->add_setting( 'catchbase_theme_options[featured_slider_option]', array(
@@ -129,12 +129,6 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'type'    	=> 'select',
 	) );
 
-	$wp_customize->add_section( 'catchbase_featured_slider_type', array(
-		'panel'			=> 'catchbase_featured_slider',
-		'priority'		=> 2,
-		'title'			=> __( 'Featured Slider Type', 'catchbase' ),
-	) );
-
 	$wp_customize->add_setting( 'catchbase_theme_options[featured_slider_type]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['featured_slider_type'],
@@ -151,7 +145,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'choices'  	=> $choices,
 		'label'    	=> __( 'Select Slider Type', 'catchbase' ),
 		'priority'	=> '2.1.3',
-		'section'  	=> 'catchbase_featured_slider_type',
+		'section'  	=> 'catchbase_featured_slider',
 		'settings' 	=> 'catchbase_theme_options[featured_slider_type]',
 		'type'	  	=> 'select',
 	) );
@@ -172,7 +166,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
         	),
 		'label'    		=> __( 'No of Slides', 'catchbase' ),
 		'priority'		=> '2.1.4',
-		'section'  		=> 'catchbase_featured_slider_type',
+		'section'  		=> 'catchbase_featured_slider',
 		'settings' 		=> 'catchbase_theme_options[featured_slide_number]',
 		'type'	   		=> 'number',
 		)
@@ -188,7 +182,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		$wp_customize->add_control( 'catchbase_featured_slider_page_'. $i .'', array(
 			'label'    	=> __( 'Featured Page', 'catchbase' ) . ' # ' . $i ,
 			'priority'	=> '4' . $i,
-			'section'  	=> 'catchbase_featured_slider_type',
+			'section'  	=> 'catchbase_featured_slider',
 			'settings' 	=> 'catchbase_theme_options[featured_slider_page_'. $i .']',
 			'type'	   	=> 'dropdown-pages',
 		) );
