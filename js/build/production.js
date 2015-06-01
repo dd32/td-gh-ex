@@ -91,12 +91,16 @@ jQuery(document).ready(function($){
     var menuPrimary = $('#menu-primary');
     var menuPrimaryItems = $('#menu-primary-items');
     var toggleDropdown = $('.toggle-dropdown');
-    //var toggleSidebar = $('#toggle-sidebar');
-    //var sidebarPrimary = $('#sidebar-primary');
-    //var sidebarPrimaryContent = $('#sidebar-primary-content');
-    //var sidebarWidgets = $('#sidebar-primary-widgets');
-    //var socialMediaIcons = siteHeader.find('.social-media-icons');
+    var socialMediaIcons = siteHeader.find('.social-media-icons');
     var menuLink = $('.menu-item').children('a');
+
+    $(window).resize(function(){
+        removeToggleDropdownKeyboard();
+    });
+
+    $('.post-content').fitVids({
+        customSelector: 'iframe[src*="dailymotion.com"]'
+    });
 
     toggleNavigation.on('click', openPrimaryMenu);
 
@@ -106,8 +110,13 @@ jQuery(document).ready(function($){
             menuPrimaryContainer.removeClass('open');
             $(this).removeClass('open');
 
+            menuPrimaryContainer.css('max-height', '');
+
+            // scroll back up
+            $('html, body').animate({scrollTop: '0'}, 200);
+
             // change screen reader text
-            //$(this).children('span').text(objectL10n.openMenu);
+            $(this).children('span').text(objectL10n.openMenu);
 
             // change aria text
             $(this).attr('aria-expanded', 'false');
@@ -116,8 +125,12 @@ jQuery(document).ready(function($){
             menuPrimaryContainer.addClass('open');
             $(this).addClass('open');
 
+            var menuHeight = menuPrimary.outerHeight(true) + socialMediaIcons.outerHeight();
+
+            menuPrimaryContainer.css('max-height', menuHeight);
+
             // change screen reader text
-            //$(this).children('span').text(objectL10n.closeMenu);
+            $(this).children('span').text(objectL10n.closeMenu);
 
             // change aria text
             $(this).attr('aria-expanded', 'true');
@@ -129,32 +142,60 @@ jQuery(document).ready(function($){
 
     function openDropdownMenu() {
 
-        // get the buttons parent (li)
-        var menuItem = $(this).parent();
+        if( $(window).width() < 800 ) {
 
-        // if already opened
-        if( menuItem.hasClass('open') ) {
+            // get the buttons parent (li)
+            var menuItem = $(this).parent();
 
-            // remove open class
-            menuItem.removeClass('open');
+            // if already opened
+            if (menuItem.hasClass('open')) {
 
-            // change screen reader text
-            //$(this).children('span').text(objectL10n.openMenu);
+                // remove open class
+                menuItem.removeClass('open');
 
-            // change aria text
-            $(this).attr('aria-expanded', 'false');
-        } else {
+                $(this).siblings('ul').css('max-height', 0);
 
-            // add class to open the menu
-            menuItem.addClass('open');
+                // change screen reader text
+                $(this).children('span').text(objectL10n.openChildMenu);
 
-            // change screen reader text
-            //$(this).children('span').text(objectL10n.closeMenu);
+                // change aria text
+                $(this).attr('aria-expanded', 'false');
+            } else {
 
-            // change aria text
-            $(this).attr('aria-expanded', 'true');
+                // add class to open the menu
+                menuItem.addClass('open');
+
+                var ulHeight = 0;
+
+                $(this).siblings('ul').find('li').each(function () {
+                    ulHeight = ulHeight + $(this).height() + ( $(this).height() * 1.5 );
+                });
+
+                $(this).siblings('ul').css('max-height', ulHeight);
+
+                // expand entire menu for dropdowns
+                // doesn't need to be precise. Just needs to allow the menu to get taller
+                menuPrimaryContainer.css('max-height', 9999);
+
+                // change screen reader text
+                $(this).children('span').text(objectL10n.closeChildMenu);
+
+                // change aria text
+                $(this).attr('aria-expanded', 'true');
+            }
         }
     }
+
+    function removeToggleDropdownKeyboard() {
+
+        if( $(window).width() > 799 ) {
+
+            toggleDropdown.attr('tabindex', -1);
+        } else {
+            toggleDropdown.attr('tabindex', '');
+        }
+    }
+    removeToggleDropdownKeyboard();
 
     /* allow keyboard access/visibility for dropdown menu items */
     menuLink.focus(function(){

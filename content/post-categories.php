@@ -13,13 +13,15 @@ $output = '';
 if($categories){
 
 	echo '<p class="post-categories">';
+		echo '<span>' . __("Published in", "apex") . ' </span>';
 		foreach($categories as $category) {
 			// if it's the last and not the first (only) category, pre-prend with "and"
 			if( $category === end($categories) && $category !== reset($categories) ) {
-				$output .= 'and ';
+				$output = rtrim($output, ", "); // remove trailing comma
+				$output .= ' and ';
 			}
 			// output category name linked to the archive
-			$output .= '<a href="'.get_category_link( $category->term_id ).'" title="' . esc_attr( sprintf( __( "View all posts in %s", 'unlimited' ), $category->name ) ) . '">'.$category->cat_name.'</a>'.$separator;
+			$output .= '<a href="'.get_category_link( $category->term_id ).'" title="' . esc_attr( sprintf( __( "View all posts in %s", 'apex' ), $category->name ) ) . '">'.$category->cat_name.'</a>'.$separator;
 		}
 		echo trim($output, $separator);
 	echo "</p>";
