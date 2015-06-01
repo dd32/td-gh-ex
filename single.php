@@ -31,7 +31,7 @@ get_header();
                   <div><img src="<?php echo esc_url($foodrecipes_feature_img_url); ?>"></div>
                   <?php } ?>
                   <?php foodrecipes_entry_meta(); ?>
-                  <div class="clear-fix"></div>
+                 
                   <?php the_tags(); ?>
                   <p>
                     <?php the_content();

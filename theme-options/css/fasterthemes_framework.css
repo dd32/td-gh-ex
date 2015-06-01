@@ -326,7 +326,10 @@
 .fasterthemes-pro-header {
     padding: 8px 0 10px;
     width: 100%;
-	max-width: 858px;
+	max-width: 100%;
+}
+.group.faster-inner-tabs.fasterthemes-pro-image {
+    background-color: #000;
 }
 .fasterthemes-pro-logo {
     margin: 10px 30px 2px;
