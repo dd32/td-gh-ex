@@ -45,7 +45,6 @@ function optionsframework_rolescheck () {
 		// If the user can edit theme options, let the fun begin!
 		add_action( 'admin_menu', 'optionsframework_add_page');
 		add_action( 'admin_init', 'optionsframework_init' );
-		add_action( 'admin_init', 'optionsframework_mlu_init' );
 	}
 }
 
@@ -213,7 +212,6 @@ function optionsframework_page() {
         </div>	
     
 	<div class="wrap">
-    <?php screen_icon( 'themes' ); ?>
     <h2 class="nav-tab-wrapper">
         <?php echo $return[1]; ?>
     </h2>

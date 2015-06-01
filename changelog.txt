@@ -1,5 +1,8 @@
 *** agency Changelog ***
 
+27-05-2015 - version 1.2.9
+*sidebar-footer.php file updated with translation...
+
 20-09-2014 - version 1.2.8
 *Screenshot size changed...
 
