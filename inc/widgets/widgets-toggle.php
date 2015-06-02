@@ -72,6 +72,7 @@ class Accesspress_Basic_Toggle_Widget extends WP_Widget {
 		extract( $args );
 		$toggle_title = empty($instance['toggle_title']) ? false : $instance['toggle_title'];
         $toggle_content = empty($instance['toggle_content']) ? false : $instance['toggle_content'];
+        $toggle_status = empty($instance['toggle_status']) ? false : $instance['toggle_status'];
         
         echo $before_widget;
         ?>
