@@ -44,10 +44,9 @@ function adventurous_scripts() {
 	wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/js/fitvids.min.js', array( 'jquery' ), '20140317', true );	
 	
 	/**
-	 * Loads up jQuery Waypoints and Custom Scripts
+	 * Loads up jQuery Custom Scripts
 	 */	
-	wp_register_script( 'waypoints', get_template_directory_uri() . '/js/jquery.waypoints.js', array('jquery'), '3.1.1', true);
-	wp_enqueue_script( 'adventurous-custom', get_template_directory_uri() . '/js/adventurous-custom.js', array( 'waypoints' ), '20150330', true );	
+	wp_enqueue_script( 'adventurous-custom', get_template_directory_uri() . '/js/adventurous-custom.min.js', array( 'jquery' ), '20150601', true );	
 	
 	/**
 	 * Adds JavaScript to pages with the comment form to support

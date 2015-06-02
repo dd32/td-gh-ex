@@ -1,5 +1,9 @@
 == Changelog ==
 
+Version 1.6.1
+* Removed jQuery waypoint script
+* Updated custom scripts to fix the fixed header issue
+
 Version 1.6
 * Added search result template for better search result display
 * Bug Fixed: Style for WP-PageNavi plugin

@@ -1,6 +1,9 @@
 /* =Mobile Menu
 -------------------------------------------------------------- */
 
+#header-search {
+	display: block;
+}
 #header-mobile-menu { 
 	float: right; 
 	display: none; 
@@ -9,11 +12,12 @@
     display: none;
 }
 .mobile-menu-bar {
-	color: #757575;
+    color: #757575;
     display: block;
     height: 20px;
-    width: 31px;
-	text-align: center;
+    padding: 5px;
+    text-align: center;
+    width: 20px;
 }
 .mobile-menu-bar:hover {
 	color: #7c9b30;
@@ -331,6 +335,9 @@ and (orientation : landscape) {
 	}
 	.fixed-header #hgroup.logo-enable {
 		display: none;
+	}
+	#header-search {
+		padding: 5px 0;
 	}	
 	/* Menu */
 	#header-mobile-menu {
