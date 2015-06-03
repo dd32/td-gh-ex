@@ -159,3 +159,8 @@ require get_template_directory() . '/inc/admin-panel/theme-options.php';
  * Load Accesspress Basic Widgets
  */
 require get_template_directory() . '/inc/apbasic-widgets.php';
+
+/**
+ * Load TGM_Plugin_Activation class.
+ */
+require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
