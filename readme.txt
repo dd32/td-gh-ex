@@ -9,7 +9,7 @@ black, blue, gray, white, dark,light, one-column, two-columns, left-sidebar, rig
 
 == Translation ==
 Catch Kathmandu theme is translation ready. 
-Added Translation for French by Rico (Email: postmaster@web-automobile.com) and Sebastian Chamusard (admin78@orange.fr)
+Added Translation for French by Rico (Email: postmaster@web-automobile.com), Sebastian Chamusard (admin78@orange.fr) and Laurent Juvigny (laurent.juvigny@neuf.fr)
 Added Translation for Russian by XakRu (Email: calvinxakru@gmail.com) and Jose Rainbow (youlold@gmail.com)
 Added Translation for Spanish by Ruben Ramos Fernandez (batmovil69@hotmail.com )
 Added Translation for Polish by Piotr (Email: fansitepoprostugry@gmail.com)

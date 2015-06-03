@@ -117,7 +117,6 @@ function catchkathmandu_theme_options_do_page() {
             <div id="catchkathmandu_ad_tabs">
                 <ul class="tabNavigation" id="mainNav">
                     <li><a href="#themeoptions"><?php _e( 'Theme Options', 'catchkathmandu' );?></a></li>
-                    <li><a href="#homepagesettings"><?php _e( 'Homepage Settings', 'catchkathmandu' );?></a></li>
                     <li><a href="#slidersettings"><?php _e( 'Featured Slider', 'catchkathmandu' );?></a></li>
                     <li><a href="#sociallinks"><?php _e( 'Social Links', 'catchkathmandu' );?></a></li>
                     <?php if ( current_user_can( 'unfiltered_html' ) ) : ?>
@@ -127,7 +126,233 @@ function catchkathmandu_theme_options_do_page() {
                    
                    
                 <!-- Option for Design Settings -->
-                <div id="themeoptions">     
+                <div id="themeoptions">
+                    <div is="homepage-headline-options" class="option-container">
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Homepage Headline Options', 'catchkathmandu' ); ?></a></h3>
+                        <div class="option-content inside">
+                            <div class="row">
+                                <div class="col col-1">
+                                    <?php _e( 'Homepage Headline Text', 'catchkathmandu' ); ?>
+                                    <p><small><?php _e( 'The appropriate length for Headine is around 10 words.', 'catchkathmandu' ); ?></small></p>
+                                </div>
+                                <div class="col col-2">
+                                    <textarea class="textarea input-bg" name="catchkathmandu_options[homepage_headline]" cols="70" rows="3"><?php echo esc_textarea( $options[ 'homepage_headline' ] ); ?></textarea>
+                                </div>
+                            </div><!-- .row -->        
+                            <div class="row">
+                                <div class="col col-1">
+                                    <?php _e( 'Homepage Subheadline Headline', 'catchkathmandu' ); ?>
+                                    <p><small><?php _e( 'The appropriate length for Headine is around 15 words.', 'catchkathmandu' ); ?></small></p>
+                                </div>
+                                <div class="col col-2">
+                                    <textarea class="textarea input-bg" name="catchkathmandu_options[homepage_subheadline]" cols="70" rows="3"><?php echo esc_textarea( $options[ 'homepage_subheadline' ] ); ?></textarea>
+                                </div>
+                            </div><!-- .row -->                                
+                            <div class="row">
+                                <div class="col col-1">
+                                    <?php _e( 'Homepage Headline Button Text', 'catchkathmandu' ); ?>
+                                    <p><small><?php _e( 'The appropriate length for Headine is around 3 words.', 'catchkathmandu' ); ?></small></p>
+                                </div>
+                                <div class="col col-2">
+                                    <input type="text" size="45" name="catchkathmandu_options[homepage_headline_button]" value="<?php echo esc_attr( $options[ 'homepage_headline_button' ] ); ?>" />
+                                </div>
+                            </div><!-- .row -->
+                            <div class="row">
+                                <div class="col col-1">
+                                    <?php _e( 'Headine Link', 'catchkathmandu' ); ?>
+                                </div>
+                                <div class="col col-2">
+                                    <input type="text" size="70" name="catchkathmandu_options[homepage_headline_url]" value="<?php echo esc_url( $options[ 'homepage_headline_url' ] ); ?>" />
+                                </div>
+                            </div><!-- .row -->                            
+                            <div class="row">
+                                <div class="col col-1">
+                                    <?php _e( 'Disable Homepage Headline?', 'catchkathmandu' ); ?>
+                                </div>
+                                <div class="col col-2">
+                                    <input type='hidden' value='0' name='catchkathmandu_options[disable_homepage_headline]'>
+                                    <input type="checkbox" id="homepage-headline" name="catchkathmandu_options[disable_homepage_headline]" value="1" <?php checked( '1', $options['disable_homepage_headline'] ); ?> /> <?php _e( 'Check to disable', 'catchkathmandu'); ?>
+                                </div>
+                            </div><!-- .row -->                   
+                            <div class="row">
+                                <div class="col col-1">
+                                    <?php _e( 'Disable Homepage Subheadline?', 'catchkathmandu' ); ?>
+                                </div>
+                                <div class="col col-2">
+                                    <input type='hidden' value='0' name='catchkathmandu_options[disable_homepage_subheadline]'>
+                                    <input type="checkbox" id="homepage-subheadline" name="catchkathmandu_options[disable_homepage_subheadline]" value="1" <?php checked( '1', $options['disable_homepage_subheadline'] ); ?> /> <?php _e( 'Check to disable', 'catchkathmandu'); ?>
+                                </div>
+                            </div><!-- .row -->
+                            <div class="row">
+                                <div class="col col-1">
+                                    <?php _e( 'Disable Homepage Button?', 'catchkathmandu' ); ?>
+                                </div>
+                                <div class="col col-2">
+                                    <input type='hidden' value='0' name='catchkathmandu_options[disable_homepage_button]'>
+                                    <input type="checkbox" id="homepage-botton" name="catchkathmandu_options[disable_homepage_button]" value="1" <?php checked( '1', $options['disable_homepage_button'] ); ?> /> <?php _e( 'Check to disable', 'catchkathmandu'); ?>
+                                </div>
+                            </div><!-- .row -->                                             
+                            <div class="row">
+                                <input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchkathmandu' ); ?>" />
+                            </div><!-- .row -->
+                        </div><!-- .option-content -->
+                    </div><!-- .option-container -->   
+                    
+                    <div is="homepage-featured-content" class="option-container">
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Homepage Featured Content Options', 'catchkathmandu' ); ?></a></h3>
+                        <div class="option-content inside">
+                            <div class="row">
+                                <div class="col col-1">
+                                    <?php _e( 'Disable Homepage Featured Content?', 'catchkathmandu' ); ?>
+                                </div>
+                                <div class="col col-2">
+                                    <input type='hidden' value='0' name='catchkathmandu_options[disable_homepage_featured]'>
+                                    <input type="checkbox" name="catchkathmandu_options[disable_homepage_featured]" value="1" <?php checked( '1', $options['disable_homepage_featured'] ); ?> /> <?php _e( 'Check to disable', 'catchkathmandu'); ?>
+                                </div>
+                            </div><!-- .row -->
+                            <div class="row">
+                                <div class="col col-1">
+                                    <?php _e( 'Headline', 'catchkathmandu' ); ?>
+                                </div>
+                                <div class="col col-2">
+                                    <input type="text" size="65" name="catchkathmandu_options[homepage_featured_headline]" value="<?php echo esc_attr( $options[ 'homepage_featured_headline' ] ); ?>" /> <?php _e( 'Leave empty if you want to remove headline', 'catchkathmandu' ); ?>
+                                </div>
+                            </div><!-- .row -->
+                            <div class="row">
+                                <div class="col col-1">
+                                    <?php _e( 'Number of Featured Content', 'catchkathmandu' ); ?>
+                                </div>
+                                <div class="col col-2">
+                                    <input type="text" size="2" name="catchkathmandu_options[homepage_featured_qty]" value="<?php echo intval( $options[ 'homepage_featured_qty' ] ); ?>" size="2" />
+                                </div>
+                            </div><!-- .row -->
+                            <div class="row">                            
+                                <div class="col col-header">
+                                    <?php _e( 'Featured Content Layout', 'catchkathmandu' ); ?>
+                                </div>
+                                <div class="col col-options">  
+                                    <label title="three-columns" class="box first">
+                                    <input type="radio" name="catchkathmandu_options[homepage_featured_layout]" id="three-columns" <?php checked($options['homepage_featured_layout'], 'three-columns'); ?> value="three-columns"  />
+                                    <?php _e( '3 Columns', 'catchkathmandu' ); ?>
+                                    </label>
+                                    
+                                    <label title="four-columns" class="box">
+                                    <input type="radio" name="catchkathmandu_options[homepage_featured_layout]" id="four-columns" <?php checked($options['homepage_featured_layout'], 'four-columns'); ?> value="four-columns"  />
+                                    <?php _e( '4 Columns', 'catchkathmandu' ); ?>
+                                    </label>                            
+                                
+                                </div>
+                            </div><!-- .row -->
+                           
+                            <?php for ( $i = 1; $i <= $options[ 'homepage_featured_qty' ]; $i++ ): ?> 
+                                <div class="repeat-content-wrap">
+                                    <h2 class="title"><?php printf( esc_attr__( 'Featured Content #%s', 'catchkathmandu' ), $i ); ?></h2>
+                                    <div class="row">
+                                        <div class="col col-1">
+                                            <?php _e( 'Image', 'catchkathmandu' ); ?>
+                                        </div>
+                                        <div class="col col-2">
+                                            <input class="upload-url" size="70" type="text" name="catchkathmandu_options[homepage_featured_image][<?php echo $i; ?>]" value="<?php if( array_key_exists( 'homepage_featured_image', $options ) && array_key_exists( $i, $options[ 'homepage_featured_image' ] ) ) echo esc_url( $options[ 'homepage_featured_image' ][ $i ] ); ?>" />
+                                            <input  ref="<?php printf( esc_attr__( 'Insert as Featured Content #%s', 'catchkathmandu' ), $i ); ?>" class="catchkathmandu_upload_image button" name="wsl-image-add" type="button" value="<?php if( array_key_exists( 'homepage_featured_image', $options ) && array_key_exists( $i, $options[ 'homepage_featured_image' ] ) ) { esc_attr_e( 'Change Image','catchkathmandu' ); } else { esc_attr_e( 'Add Image','catchkathmandu' ); } ?>" />
+                                        </div>
+                                    </div><!-- .row -->
+                                    <div class="row">
+                                        <div class="col col-1">
+                                            <?php _e( 'Link URL', 'catchkathmandu' ); ?>
+                                        </div>
+                                        <div class="col col-2">
+                                            <input type="text" size="70" name="catchkathmandu_options[homepage_featured_url][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'homepage_featured_url', $options ) && array_key_exists( $i, $options[ 'homepage_featured_url' ] ) ) echo esc_url( $options[ 'homepage_featured_url' ][ $i ] ); ?>" /> <?php _e( 'Add in the Target URL for the content', 'catchkathmandu' ); ?>
+                                        </div>
+                                    </div><!-- .row -->                                   
+                                    <div class="row">
+                                        <div class="col col-1">
+                                            <?php _e( 'Target. Open Link in New Window?', 'catchkathmandu' ); ?>
+                                        </div>
+                                        <div class="col col-2">
+                                            <input type='hidden' value='0' name='catchkathmandu_options[homepage_featured_base][<?php echo absint( $i ); ?>]'>
+                                            <input type="checkbox" name="catchkathmandu_options[homepage_featured_base][<?php echo absint( $i ); ?>]" value="1" <?php if( array_key_exists( 'homepage_featured_base', $options ) && array_key_exists( $i, $options[ 'homepage_featured_base' ] ) ) checked( '1', $options[ 'homepage_featured_base' ][ $i ] ); ?> /> <?php _e( 'Check to open in new window', 'catchkathmandu' ); ?>
+                                        </div>
+                                    </div><!-- .row -->                
+                                    <div class="row">
+                                        <div class="col col-1">
+                                            <?php _e( 'Title', 'catchkathmandu' ); ?>
+                                        </div>
+                                        <div class="col col-2">
+                                            <input type="text" size="70" name="catchkathmandu_options[homepage_featured_title][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'homepage_featured_title', $options ) && array_key_exists( $i, $options[ 'homepage_featured_title' ] ) ) echo esc_attr( $options[ 'homepage_featured_title' ][ $i ] ); ?>" /> <?php _e( 'Leave empty if you want to remove title', 'catchkathmandu' ); ?>
+                                        </div>
+                                    </div><!-- .row -->                                  
+                                    <div class="row">
+                                        <div class="col col-1">
+                                            <?php _e( 'Content', 'catchkathmandu' ); ?>
+                                             <p><small><?php _e( 'The appropriate length for Content is around 10 words.', 'catchkathmandu' ); ?></small></p>
+                                        </div>
+                                        <div class="col col-2">
+                                            <textarea class="textarea input-bg" name="catchkathmandu_options[homepage_featured_content][<?php echo absint( $i ); ?>]" cols="70" rows="3"><?php if( array_key_exists( 'homepage_featured_content', $options ) && array_key_exists( $i, $options[ 'homepage_featured_content' ] ) ) echo esc_html( $options[ 'homepage_featured_content' ][ $i ] ); ?></textarea>
+                                        </div>
+                                    </div><!-- .row --> 
+                                </div><!-- .repeat-content-wrap -->                           
+                            <?php endfor; ?>    
+                            <div class="row">
+                                <input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchkathmandu' ); ?>" />
+                            </div><!-- .row -->
+                        </div><!-- .option-content -->
+                    </div><!-- .option-container -->                                     
+                
+                    <div id="homepage-settings" class="option-container">
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Homepage / Frontpage Settings', 'catchkathmandu' ); ?></a></h3>
+                        <div class="option-content inside">
+                            <div class="row">
+                                <div class="col col-1">
+                                    <?php _e( 'Enable Latest Posts?', 'catchkathmandu' ); ?>
+                                </div>
+                                <div class="col col-2">
+                                    <input type='hidden' value='0' name='catchkathmandu_options[enable_posts_home]'>
+                                    <input type="checkbox" id="headerlogo" name="catchkathmandu_options[enable_posts_home]" value="1" <?php checked( '1', $options['enable_posts_home'] ); ?> /> <?php _e( 'Check to Enable', 'catchkathmandu'); ?>
+                                </div>
+                            </div><!-- .row -->
+                            <div class="row">
+                                <div class="col col-1">
+                                    <?php _e( 'Add Page instead of Latest Posts', 'catchkathmandu' ); ?>
+                                </div>
+                                <div class="col col-2">
+                                    <a class="button" href="<?php echo esc_url( admin_url( 'options-reading.php' ) ) ; ?>" title="<?php esc_attr_e( 'Click Here to Set Static Front Page Instead of Latest Posts', 'catchkathmandu' ); ?>" target="_blank"><?php _e( 'Click Here to Set Static Front Page Instead of Latest Posts', 'catchkathmandu' );?></a>
+                                </div>
+                            </div><!-- .row -->
+                            <div class="row">
+                                <div class="col col-1">
+                                    <?php _e( 'Homepage posts categories:', 'catchkathmandu' ); ?>
+                                    <p><small><?php _e( 'Only posts that belong to the categories selected here will be displayed on the front page.', 'catchkathmandu' ); ?></small></p>
+                                </div>
+                                <div class="col col-2">
+                                    <select name="catchkathmandu_options[front_page_category][]" id="frontpage_posts_cats" multiple="multiple" class="select-multiple">
+                                        <option value="0" <?php if ( empty( $options['front_page_category'] ) ) { echo 'selected="selected"'; } ?>><?php _e( '--Disabled--', 'catchkathmandu' ); ?></option>
+                                        <?php /* Get the list of categories */  
+                                            $categories = get_categories();
+                                            if( empty( $options[ 'front_page_category' ] ) ) {
+                                                $options[ 'front_page_category' ] = array();
+                                            }
+                                            foreach ( $categories as $category) :
+                                        ?>
+                                        <option value="<?php echo $category->cat_ID; ?>" <?php if ( in_array( $category->cat_ID, $options['front_page_category'] ) ) {echo 'selected="selected"';}?>><?php echo $category->cat_name; ?></option>
+                                        <?php endforeach; ?>
+                                    </select><br />
+                                    <span class="description"><?php _e( 'You may select multiple categories by holding down the CTRL key.', 'catchkathmandu' ); ?></span>
+                                </div>
+                            </div><!-- .row -->                            
+                            <div class="row">
+                                <div class="col col-1">
+                                    <?php _e( 'Move above Homepage Featured Content?', 'catchkathmandu' ); ?>
+                                </div>
+                                <div class="col col-2">
+                                    <input type='hidden' value='0' name='catchkathmandu_options[move_posts_home]'>
+                                    <input type="checkbox" id="headerlogo" name="catchkathmandu_options[move_posts_home]" value="1" <?php checked( '1', $options['move_posts_home'] ); ?> /> <?php _e( 'Check to Move', 'catchkathmandu'); ?>
+                                </div>
+                            </div><!-- .row -->
+                            <div class="row">
+                                <input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchkathmandu' ); ?>" />
+                            </div><!-- .row --> 
+                        </div><!-- .option-content -->
+                    </div><!-- .option-container -->      
                 
                 	<div id="responsive-design" class="option-container">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Responsive Design', 'catchkathmandu' ); ?></a></h3>
@@ -616,238 +841,7 @@ function catchkathmandu_theme_options_do_page() {
                         </div><!-- .option-content -->
                     </div><!-- .option-container --> 
                                        
-                </div><!-- #themeoptions -->  
-
-				<!-- Options for Homepage Settings -->
-                <div id="homepagesettings">                    
-                
-                    <div is="homepage-headline-options" class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Homepage Headline Options', 'catchkathmandu' ); ?></a></h3>
-                        <div class="option-content inside">
-                        	<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Homepage Headline Text', 'catchkathmandu' ); ?>
-                                    <p><small><?php _e( 'The appropriate length for Headine is around 10 words.', 'catchkathmandu' ); ?></small></p>
-                                </div>
-                                <div class="col col-2">
-                                	<textarea class="textarea input-bg" name="catchkathmandu_options[homepage_headline]" cols="70" rows="3"><?php echo esc_textarea( $options[ 'homepage_headline' ] ); ?></textarea>
-                             	</div>
-                          	</div><!-- .row -->        
-                        	<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Homepage Subheadline Headline', 'catchkathmandu' ); ?>
-                                    <p><small><?php _e( 'The appropriate length for Headine is around 15 words.', 'catchkathmandu' ); ?></small></p>
-                                </div>
-                                <div class="col col-2">
-                                	<textarea class="textarea input-bg" name="catchkathmandu_options[homepage_subheadline]" cols="70" rows="3"><?php echo esc_textarea( $options[ 'homepage_subheadline' ] ); ?></textarea>
-                             	</div>
-                          	</div><!-- .row -->                                
-                        	<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Homepage Headline Button Text', 'catchkathmandu' ); ?>
-                                    <p><small><?php _e( 'The appropriate length for Headine is around 3 words.', 'catchkathmandu' ); ?></small></p>
-                                </div>
-                                <div class="col col-2">
-                                	<input type="text" size="45" name="catchkathmandu_options[homepage_headline_button]" value="<?php echo esc_attr( $options[ 'homepage_headline_button' ] ); ?>" />
-                             	</div>
-                          	</div><!-- .row -->
-                        	<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Headine Link', 'catchkathmandu' ); ?>
-                                </div>
-                                <div class="col col-2">
-                                	<input type="text" size="70" name="catchkathmandu_options[homepage_headline_url]" value="<?php echo esc_url( $options[ 'homepage_headline_url' ] ); ?>" />
-                             	</div>
-                          	</div><!-- .row -->                            
-                        	<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Disable Homepage Headline?', 'catchkathmandu' ); ?>
-                                </div>
-                                <div class="col col-2">
-                                	<input type='hidden' value='0' name='catchkathmandu_options[disable_homepage_headline]'>
-                                    <input type="checkbox" id="homepage-headline" name="catchkathmandu_options[disable_homepage_headline]" value="1" <?php checked( '1', $options['disable_homepage_headline'] ); ?> /> <?php _e( 'Check to disable', 'catchkathmandu'); ?>
-                             	</div>
-                          	</div><!-- .row -->                   
-                         	<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Disable Homepage Subheadline?', 'catchkathmandu' ); ?>
-                                </div>
-                                <div class="col col-2">
-                                	<input type='hidden' value='0' name='catchkathmandu_options[disable_homepage_subheadline]'>
-                                    <input type="checkbox" id="homepage-subheadline" name="catchkathmandu_options[disable_homepage_subheadline]" value="1" <?php checked( '1', $options['disable_homepage_subheadline'] ); ?> /> <?php _e( 'Check to disable', 'catchkathmandu'); ?>
-                             	</div>
-                          	</div><!-- .row -->
-                         	<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Disable Homepage Button?', 'catchkathmandu' ); ?>
-                                </div>
-                                <div class="col col-2">
-                                	<input type='hidden' value='0' name='catchkathmandu_options[disable_homepage_button]'>
-                                    <input type="checkbox" id="homepage-botton" name="catchkathmandu_options[disable_homepage_button]" value="1" <?php checked( '1', $options['disable_homepage_button'] ); ?> /> <?php _e( 'Check to disable', 'catchkathmandu'); ?>
-                             	</div>
-                          	</div><!-- .row -->                                             
-                            <div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchkathmandu' ); ?>" />
-                          	</div><!-- .row -->
-                        </div><!-- .option-content -->
-                    </div><!-- .option-container -->   
-                    
-                    <div is="homepage-featured-content" class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Homepage Featured Content Options', 'catchkathmandu' ); ?></a></h3>
-                        <div class="option-content inside">
-                         	<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Disable Homepage Featured Content?', 'catchkathmandu' ); ?>
-                                </div>
-                                <div class="col col-2">
-                                	<input type='hidden' value='0' name='catchkathmandu_options[disable_homepage_featured]'>
-                                    <input type="checkbox" name="catchkathmandu_options[disable_homepage_featured]" value="1" <?php checked( '1', $options['disable_homepage_featured'] ); ?> /> <?php _e( 'Check to disable', 'catchkathmandu'); ?>
-                             	</div>
-                          	</div><!-- .row -->
-                         	<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Headline', 'catchkathmandu' ); ?>
-                                </div>
-                                <div class="col col-2">
-                                	<input type="text" size="65" name="catchkathmandu_options[homepage_featured_headline]" value="<?php echo esc_attr( $options[ 'homepage_featured_headline' ] ); ?>" /> <?php _e( 'Leave empty if you want to remove headline', 'catchkathmandu' ); ?>
-                             	</div>
-                          	</div><!-- .row -->
-                         	<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Number of Featured Content', 'catchkathmandu' ); ?>
-                                </div>
-                                <div class="col col-2">
-                                	<input type="text" size="2" name="catchkathmandu_options[homepage_featured_qty]" value="<?php echo intval( $options[ 'homepage_featured_qty' ] ); ?>" size="2" />
-                             	</div>
-                          	</div><!-- .row -->
-                            <div class="row">                            
-                            	<div class="col col-header">
-                        			<?php _e( 'Featured Content Layout', 'catchkathmandu' ); ?>
-                               	</div>
-                                <div class="col col-options">  
-                                	<label title="three-columns" class="box first">
-                                    <input type="radio" name="catchkathmandu_options[homepage_featured_layout]" id="three-columns" <?php checked($options['homepage_featured_layout'], 'three-columns'); ?> value="three-columns"  />
-                                    <?php _e( '3 Columns', 'catchkathmandu' ); ?>
-                                    </label>
-                                    
-                                    <label title="four-columns" class="box">
-                                    <input type="radio" name="catchkathmandu_options[homepage_featured_layout]" id="four-columns" <?php checked($options['homepage_featured_layout'], 'four-columns'); ?> value="four-columns"  />
-                                    <?php _e( '4 Columns', 'catchkathmandu' ); ?>
-                                    </label>	                        
-           						
-                                </div>
-                          	</div><!-- .row -->
-                           
-							<?php for ( $i = 1; $i <= $options[ 'homepage_featured_qty' ]; $i++ ): ?> 
-                                <div class="repeat-content-wrap">
-                                    <h2 class="title"><?php printf( esc_attr__( 'Featured Content #%s', 'catchkathmandu' ), $i ); ?></h2>
-                                    <div class="row">
-                                        <div class="col col-1">
-                                            <?php _e( 'Image', 'catchkathmandu' ); ?>
-                                        </div>
-                                        <div class="col col-2">
-                                            <input class="upload-url" size="70" type="text" name="catchkathmandu_options[homepage_featured_image][<?php echo $i; ?>]" value="<?php if( array_key_exists( 'homepage_featured_image', $options ) && array_key_exists( $i, $options[ 'homepage_featured_image' ] ) ) echo esc_url( $options[ 'homepage_featured_image' ][ $i ] ); ?>" />
-                                            <input  ref="<?php printf( esc_attr__( 'Insert as Featured Content #%s', 'catchkathmandu' ), $i ); ?>" class="catchkathmandu_upload_image button" name="wsl-image-add" type="button" value="<?php if( array_key_exists( 'homepage_featured_image', $options ) && array_key_exists( $i, $options[ 'homepage_featured_image' ] ) ) { esc_attr_e( 'Change Image','catchkathmandu' ); } else { esc_attr_e( 'Add Image','catchkathmandu' ); } ?>" />
-                                        </div>
-                                    </div><!-- .row -->
-                                    <div class="row">
-                                        <div class="col col-1">
-                                            <?php _e( 'Link URL', 'catchkathmandu' ); ?>
-                                        </div>
-                                        <div class="col col-2">
-                                            <input type="text" size="70" name="catchkathmandu_options[homepage_featured_url][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'homepage_featured_url', $options ) && array_key_exists( $i, $options[ 'homepage_featured_url' ] ) ) echo esc_url( $options[ 'homepage_featured_url' ][ $i ] ); ?>" /> <?php _e( 'Add in the Target URL for the content', 'catchkathmandu' ); ?>
-                                        </div>
-                                    </div><!-- .row -->                                   
-                                    <div class="row">
-                                        <div class="col col-1">
-                                            <?php _e( 'Target. Open Link in New Window?', 'catchkathmandu' ); ?>
-                                        </div>
-                                        <div class="col col-2">
-                                            <input type='hidden' value='0' name='catchkathmandu_options[homepage_featured_base][<?php echo absint( $i ); ?>]'>
-                                            <input type="checkbox" name="catchkathmandu_options[homepage_featured_base][<?php echo absint( $i ); ?>]" value="1" <?php if( array_key_exists( 'homepage_featured_base', $options ) && array_key_exists( $i, $options[ 'homepage_featured_base' ] ) ) checked( '1', $options[ 'homepage_featured_base' ][ $i ] ); ?> /> <?php _e( 'Check to open in new window', 'catchkathmandu' ); ?>
-                                        </div>
-                                    </div><!-- .row -->                
-                                    <div class="row">
-                                        <div class="col col-1">
-                                            <?php _e( 'Title', 'catchkathmandu' ); ?>
-                                        </div>
-                                        <div class="col col-2">
-                                            <input type="text" size="70" name="catchkathmandu_options[homepage_featured_title][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'homepage_featured_title', $options ) && array_key_exists( $i, $options[ 'homepage_featured_title' ] ) ) echo esc_attr( $options[ 'homepage_featured_title' ][ $i ] ); ?>" /> <?php _e( 'Leave empty if you want to remove title', 'catchkathmandu' ); ?>
-                                        </div>
-                                    </div><!-- .row -->                                  
-                                    <div class="row">
-                                        <div class="col col-1">
-                                            <?php _e( 'Content', 'catchkathmandu' ); ?>
-                                             <p><small><?php _e( 'The appropriate length for Content is around 10 words.', 'catchkathmandu' ); ?></small></p>
-                                        </div>
-                                        <div class="col col-2">
-                                            <textarea class="textarea input-bg" name="catchkathmandu_options[homepage_featured_content][<?php echo absint( $i ); ?>]" cols="70" rows="3"><?php if( array_key_exists( 'homepage_featured_content', $options ) && array_key_exists( $i, $options[ 'homepage_featured_content' ] ) ) echo esc_html( $options[ 'homepage_featured_content' ][ $i ] ); ?></textarea>
-                                        </div>
-                                    </div><!-- .row --> 
-                                </div><!-- .repeat-content-wrap -->                           
-                            <?php endfor; ?>    
-                            <div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchkathmandu' ); ?>" />
-                          	</div><!-- .row -->
-                        </div><!-- .option-content -->
-                    </div><!-- .option-container -->                                     
-                
-                    <div id="homepage-settings" class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Homepage / Frontpage Settings', 'catchkathmandu' ); ?></a></h3>
-                        <div class="option-content inside">
-                         	<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Enable Latest Posts?', 'catchkathmandu' ); ?>
-                                </div>
-                                <div class="col col-2">
-                                	<input type='hidden' value='0' name='catchkathmandu_options[enable_posts_home]'>
-                                    <input type="checkbox" id="headerlogo" name="catchkathmandu_options[enable_posts_home]" value="1" <?php checked( '1', $options['enable_posts_home'] ); ?> /> <?php _e( 'Check to Enable', 'catchkathmandu'); ?>
-                             	</div>
-                          	</div><!-- .row -->
-                         	<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Add Page instead of Latest Posts', 'catchkathmandu' ); ?>
-                                </div>
-                                <div class="col col-2">
-                                	<a class="button" href="<?php echo esc_url( admin_url( 'options-reading.php' ) ) ; ?>" title="<?php esc_attr_e( 'Click Here to Set Static Front Page Instead of Latest Posts', 'catchkathmandu' ); ?>" target="_blank"><?php _e( 'Click Here to Set Static Front Page Instead of Latest Posts', 'catchkathmandu' );?></a>
-                             	</div>
-                          	</div><!-- .row -->
-                         	<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Homepage posts categories:', 'catchkathmandu' ); ?>
-                                    <p><small><?php _e( 'Only posts that belong to the categories selected here will be displayed on the front page.', 'catchkathmandu' ); ?></small></p>
-                                </div>
-                                <div class="col col-2">
-                                	<select name="catchkathmandu_options[front_page_category][]" id="frontpage_posts_cats" multiple="multiple" class="select-multiple">
-                                        <option value="0" <?php if ( empty( $options['front_page_category'] ) ) { echo 'selected="selected"'; } ?>><?php _e( '--Disabled--', 'catchkathmandu' ); ?></option>
-                                        <?php /* Get the list of categories */  
-                                            $categories = get_categories();
-                                            if( empty( $options[ 'front_page_category' ] ) ) {
-                                                $options[ 'front_page_category' ] = array();
-                                            }
-                                            foreach ( $categories as $category) :
-                                        ?>
-                                        <option value="<?php echo $category->cat_ID; ?>" <?php if ( in_array( $category->cat_ID, $options['front_page_category'] ) ) {echo 'selected="selected"';}?>><?php echo $category->cat_name; ?></option>
-                                        <?php endforeach; ?>
-                                    </select><br />
-                                    <span class="description"><?php _e( 'You may select multiple categories by holding down the CTRL key.', 'catchkathmandu' ); ?></span>
-                             	</div>
-                          	</div><!-- .row -->                            
-                         	<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Move above Homepage Featured Content?', 'catchkathmandu' ); ?>
-                                </div>
-                                <div class="col col-2">
-                                	<input type='hidden' value='0' name='catchkathmandu_options[move_posts_home]'>
-                                    <input type="checkbox" id="headerlogo" name="catchkathmandu_options[move_posts_home]" value="1" <?php checked( '1', $options['move_posts_home'] ); ?> /> <?php _e( 'Check to Move', 'catchkathmandu'); ?>
-                             	</div>
-                          	</div><!-- .row -->
-                         	<div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchkathmandu' ); ?>" />
-                            </div><!-- .row --> 
-                        </div><!-- .option-content -->
-                  	</div><!-- .option-container -->          
-            	</div><!-- #homepagesettings -->       
+                </div><!-- #themeoptions -->
                 
                 <!-- Options for Slider Settings -->
                 <div id="slidersettings">

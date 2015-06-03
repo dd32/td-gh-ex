@@ -32,9 +32,9 @@ function catchkathmandu_scripts() {
 	wp_enqueue_style( 'catchkathmandu-style', get_stylesheet_uri() );
 	
 	/**
-	 *Add Genericons font, used in the main stylesheet.
+	 * Add Genericons font, used in the main stylesheet.
 	 */	
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.0.3' );	
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/css/genericons/genericons.css', false, '3.3' );	
 	
 	/**
 	 * Loads up Color Scheme
@@ -1534,7 +1534,7 @@ function catchkathmandu_alter_home( $query ){
 		}
 	}
 }
-add_action( 'pre_get_posts','catchkathmandu_alter_home' );
+add_action( 'parse_query','catchkathmandu_alter_home', 5 );
 
 
 if ( ! function_exists( 'catchkathmandu_social_networks' ) ) :
