@@ -19,8 +19,8 @@ get_header();
 							</div><!-- .entry-meta -->
 
 							<nav role="navigation" id="image-navigation" class="navigation-image nav-links">
-								<div class="nav-previous"><?php previous_image_link( false, __( '<i class="fa fa-chevron-left"></i> Previous', 'sparkling' ) ); ?></div>
-								<div class="nav-next"><?php next_image_link( false, __( 'Next <i class="fa fa-chevron-right"></i>', 'sparkling' ) ); ?></div>
+								<div class="nav-previous"><?php previous_image_link( false, esc_html__( '<i class="fa fa-chevron-left"></i> Previous', 'sparkling' ) ); ?></div>
+								<div class="nav-next"><?php next_image_link( false, esc_html__( 'Next <i class="fa fa-chevron-right"></i>', 'sparkling' ) ); ?></div>
 							</nav><!-- #image-navigation -->
 						</header><!-- .entry-header -->
 
@@ -76,7 +76,7 @@ get_header();
 							<?php the_content(); ?>
 							<?php
 								wp_link_pages( array(
-									'before' => '<div class="page-links">' . __( 'Pages:', 'sparkling' ),
+									'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'sparkling' ),
 									'after'  => '</div>',
 								) );
 							?>
@@ -89,8 +89,11 @@ get_header();
 				</div>
 				<?php
 					// If comments are open or we have at least one comment, load up the comment template
-					if ( comments_open() || '0' != get_comments_number() )
-						comments_template();
+					if ( get_theme_mod( 'sparkling_page_comments' ) == 1 ) :
+						if ( comments_open() || '0' != get_comments_number() ) :
+							comments_template();
+						endif;
+					endif;
 				?>
 
 			<?php endwhile; // end of the loop. ?>

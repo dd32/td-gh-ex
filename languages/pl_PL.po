@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sparkling Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-04 15:02+0200\n"
-"PO-Revision-Date: 2015-04-04 15:02+0200\n"
+"POT-Creation-Date: 2015-06-04 14:53+0200\n"
+"PO-Revision-Date: 2015-06-04 14:53+0200\n"
 "Last-Translator: Aigars Silkalns <a.silkalns@gmail.com>\n"
 "Language-Team: colorlib <info@colorlib.com>\n"
 "Language: pl\n"
@@ -13,9 +13,10 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Loco-Source-Locale: en_GB\n"
-"X-Generator: Poedit 1.7.5\n"
+"X-Generator: Poedit 1.8.1\n"
 "X-Poedit-Basepath: .\n"
-"X-Poedit-KeywordsList: _e;__;esc_attr__;_nx:4c,1,2;_n:1,2\n"
+"X-Poedit-KeywordsList: _e;__;esc_attr__;esc_html__;esc_html_e;esc_attr_x;"
+"_nx:4c,1,2;_n:1,2\n"
 "X-Loco-Parser: loco_parse_po\n"
 "X-Loco-Target-Locale: pl_PL\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -112,7 +113,7 @@ msgstr "Dzwięki"
 msgid "Chats"
 msgstr "Czaty"
 
-#: ../comments.php:30
+#: ../comments.php:28
 #, php-format
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
@@ -120,19 +121,19 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] "Jedna myśl na temat &ldquo;%2$s&rdquo;"
 msgstr[1] "%1$s myśli na temat &ldquo;%2$s&rdquo;"
 
-#: ../comments.php:37 ../comments.php:55
+#: ../comments.php:35 ../comments.php:53
 msgid "Comment navigation"
 msgstr "Nawigacja komentarzy"
 
-#: ../comments.php:38 ../comments.php:56
+#: ../comments.php:36 ../comments.php:54
 msgid "&larr; Older Comments"
 msgstr "&larr; Starsze komentarze"
 
-#: ../comments.php:39 ../comments.php:57
+#: ../comments.php:37 ../comments.php:55
 msgid "Newer Comments &rarr;"
 msgstr "Nowsze komentarze &rarr;"
 
-#: ../comments.php:67
+#: ../comments.php:65
 msgid "Comments are closed."
 msgstr "Komentarze są zamknięte."
 
@@ -164,7 +165,7 @@ msgstr ""
 "Wygląda na to że nie możemy znaleźć tego czego szukasz. Może wyszukiwarka "
 "pomoże?"
 
-#: ../content-page.php:21 ../content-single.php:35 ../content.php:43
+#: ../content-page.php:21 ../content-single.php:35 ../content.php:49
 #: ../image.php:79
 msgid "Pages:"
 msgstr "Strony:"
@@ -194,7 +195,7 @@ msgstr "1 komentarz"
 msgid "% Comments"
 msgstr "% komentarzy"
 
-#: ../content.php:32 ../content.php:39
+#: ../content.php:32 ../content.php:45
 msgid "Read More"
 msgstr "Czytaj więcej"
 
@@ -202,7 +203,7 @@ msgstr "Czytaj więcej"
 msgid "Primary Menu"
 msgstr "Główne menu"
 
-#: ../functions.php:70 ../inc/extras.php:226
+#: ../functions.php:70 ../inc/extras.php:209
 msgid "Footer Links"
 msgstr "Linki stopki"
 
@@ -366,70 +367,80 @@ msgstr "Pogrubiona"
 msgid "Bold Italic"
 msgstr "Pogrubiona Kursywa"
 
+#: ../inc/customizer.php:27
+#, fuzzy
+msgid "Content Options"
+msgstr "Opcje tematu"
+
+#: ../inc/customizer.php:39
+msgid "Show post excerpts?"
+msgstr ""
+
+#: ../inc/customizer.php:51
+#, fuzzy
+msgid "Display Comments on Static Pages?"
+msgstr "Wyświetl na stronie głównej"
+
 #: ../inc/extras.php:61
 #, php-format
 msgid "Page %s"
 msgstr "Strona %s"
 
-#: ../inc/extras.php:121
-msgid "Search..."
-msgstr "Szukaj..."
-
-#: ../inc/extras.php:142
+#: ../inc/extras.php:124
 msgid ""
 "<p>This post is password protected. To view it please enter your password "
 "below:</p>"
 msgstr ""
 "<p>Ten post jest chroniony hasłem. Aby go zobaczyć wpisz hasło poniżej:</p>"
 
-#: ../inc/extras.php:143
+#: ../inc/extras.php:125
 msgid "Password:"
 msgstr "Hasło:"
 
-#: ../inc/extras.php:146
+#: ../inc/extras.php:128
 msgid "Submit"
 msgstr "Wyślij"
 
-#: ../inc/extras.php:190
+#: ../inc/extras.php:173
 msgid "Follow us on "
 msgstr "Śledź nas na"
 
-#: ../inc/extras.php:301
+#: ../inc/extras.php:284
 #, php-format
 msgid "Theme by %1$s Powered by %2$s"
 msgstr "Temat stworzony przez %1$s Napędzany przez %2$s"
 
-#: ../inc/extras.php:405
+#: ../inc/extras.php:388
 msgid "Support and Documentation"
 msgstr "Wsparcie i dokumentacja"
 
-#: ../inc/extras.php:411
+#: ../inc/extras.php:394
 msgid "Sparkling Documentation"
 msgstr "Dokumentacja"
 
-#: ../inc/extras.php:412
+#: ../inc/extras.php:395
 msgid ""
 "The best way to contact us with <b>support questions</b> and <b>bug reports</"
 "b> is via"
 msgstr "Najlepsza metoda aby się z nami skontaktować jest przez"
 
-#: ../inc/extras.php:412
+#: ../inc/extras.php:395
 msgid "Colorlib support forum"
 msgstr "Colorlib forum wsparcia"
 
-#: ../inc/extras.php:413
+#: ../inc/extras.php:396
 msgid "If you like this theme, I'd appreciate any of the following:"
 msgstr "Jeśli lubisz ten temat, będę wdzięczny za"
 
-#: ../inc/extras.php:415
+#: ../inc/extras.php:398
 msgid "Rate this Theme"
 msgstr "Oceń ten temat"
 
-#: ../inc/extras.php:416
+#: ../inc/extras.php:399
 msgid "Like on Facebook"
 msgstr "Polub nas na Facebook-u"
 
-#: ../inc/extras.php:417
+#: ../inc/extras.php:400
 msgid "Follow on Twitter"
 msgstr "Śledź nas na Twitterze"
 
@@ -838,18 +849,23 @@ msgid "SoundCloud"
 msgstr ""
 
 #: ../options.php:519
+#, fuzzy
 msgid "GitHub"
+msgstr "Github"
+
+#: ../options.php:527
+msgid "Spotify"
 msgstr ""
 
-#: ../options.php:526
+#: ../options.php:534
 msgid "Other"
 msgstr "Inne"
 
-#: ../options.php:531
+#: ../options.php:539
 msgid "Custom CSS"
 msgstr "Własny CSS"
 
-#: ../options.php:532
+#: ../options.php:540
 msgid "Additional CSS"
 msgstr "Dodatkowy CSS"
 
@@ -857,6 +873,15 @@ msgstr "Dodatkowy CSS"
 #, php-format
 msgid "Search Results for: %s"
 msgstr "Wyniki wyszukiwania dla: %s"
+
+#: ../searchform.php:11
+msgid "Search..."
+msgstr "Szukaj..."
+
+#: ../searchform.php:13
+#, fuzzy
+msgid "Search"
+msgstr "Szukaj"
 
 #: ../sidebar.php:26
 msgid "Meta"
