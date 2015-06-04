@@ -719,15 +719,6 @@ function optionsframework_options() {
             'type' => 'switch'
             );
     $options[] = array(
-            'name' => __( 'Show Breadcrumb on Single Post', 'accesspress-mag' ),                
-            'desc' => __( 'Show or hide the breadcrumbs in single post', 'accesspress-mag' ),
-            'id' => 'show_post_breadcrumbs',
-            'on' => __( 'Yes', 'accesspress-mag'),
-            'off' => __( 'No', 'accesspress-mag'),
-            'std' => '1',
-            'type' => 'switch'
-            );
-    $options[] = array(
             'name' => __( 'Enable link on Home', 'accesspress-mag' ),                
             'desc' => __( 'Enable or disable homepage link at home in breadcrumbs', 'accesspress-mag' ),
             'id' => 'show_home_link_breadcrumbs',
@@ -737,7 +728,7 @@ function optionsframework_options() {
             'type' => 'switch'
             );    
     $options[] = array(
-            'name' => __( 'Show Article Title on Single post', 'accesspress-mag' ),                
+            'name' => __( 'Enable Title on Single post', 'accesspress-mag' ),                
             'desc' => __( 'Show or hide article title on single post', 'accesspress-mag' ),
             'id' => 'show_article_breadcrumbs',
             'on' => __( 'Yes', 'accesspress-mag'),

@@ -3,21 +3,21 @@
            <h1 class="widget-title"><span><?php _e( 'Random Posts', 'accesspress-mag' ); ?></span></h1>     
            <div class="random-posts-wrapper">
                                     <div class="rand-single-post clearfix">
-                        <div class="post-img"><a href="#"><img src="<?php echo get_template_directory_uri();?>/images/demo-images/photo-1418793124283-7935cb656d02-114x76.jpg" alt=""></a></div>
+                        <div class="post-img"><a href="#"><img src="<?php echo get_template_directory_uri();?>/images/demo-images/photo-1418793124283-7935cb656d02-177x118.jpg" alt=""></a></div>
                         <div class="post-desc-wrapper">
                             <h3 class="post-title"><a href="#"><?php _e( 'Popular people who everyone love', 'accesspress-mag' ); ?></a></h3>
                             <div class="block-poston"><span class="posted-on"><a href="#" rel="bookmark"><time class="entry-date published" datetime="2015-03-11T07:40:54+00:00">March 11, 2015</time><time class="updated" datetime="2015-03-20T06:31:37+00:00">March 20, 2015</time></a></span><span class="comment_count"><i class="fa fa-comments"></i>1</span><span class="apmag-post-views"><i class="fa fa-eye"></i>4</span></div>
                         </div>                    
                     </div>
                                     <div class="rand-single-post clearfix">
-                        <div class="post-img"><a href="#"><img src="<?php echo get_template_directory_uri();?>/images/demo-images/2c0343f7-114x76.jpg" alt=""></a></div>
+                        <div class="post-img"><a href="#"><img src="<?php echo get_template_directory_uri();?>/images/demo-images/2c0343f7-177x118.jpg" alt=""></a></div>
                         <div class="post-desc-wrapper">
                             <h3 class="post-title"><a href="#"><?php _e( 'Basics of HDR Photography Tutorials HD', 'accesspress-mag' ); ?></a></h3>
                             <div class="block-poston"><span class="posted-on"><a href="#" rel="bookmark"><time class="entry-date published" datetime="2015-03-10T09:14:07+00:00">March 10, 2015</time><time class="updated" datetime="2015-03-18T09:13:59+00:00">March 18, 2015</time></a></span><span class="comment_count"><i class="fa fa-comments"></i>8</span><span class="apmag-post-views"><i class="fa fa-eye"></i>24</span></div>
                         </div>                    
                     </div>
                                     <div class="rand-single-post clearfix">
-                        <div class="post-img"><a href="#"><img src="<?php echo get_template_directory_uri();?>/images/demo-images/photo-1421916780003-47d5a692d999-114x76.jpg" alt=""></a></div>
+                        <div class="post-img"><a href="#"><img src="<?php echo get_template_directory_uri();?>/images/demo-images/photo-1421916780003-47d5a692d999-177x118.jpg" alt=""></a></div>
                         <div class="post-desc-wrapper">
                             <h3 class="post-title"><a href="#"><?php _e( 'Libratone Lounge are return back to stock', 'accesspress-mag' ); ?></a></h3>
                             <div class="block-poston"><span class="posted-on"><a href="#" rel="bookmark"><time class="entry-date published" datetime="2015-03-19T10:24:01+00:00">March 19, 2015</time><time class="updated" datetime="2015-03-20T04:52:19+00:00">March 20, 2015</time></a></span><span class="comment_count"><i class="fa fa-comments"></i>3</span><span class="apmag-post-views"><i class="fa fa-eye"></i>0</span></div>

@@ -8,7 +8,6 @@
 get_header(); 
 global $post;
 $accesspress_mag_show_breadcrumbs = of_get_option( 'show_hide_breadcrumbs' );
-$accesspress_mag_show_breadcrumbs_on_post = of_get_option( 'show_post_breadcrumbs' );
 $post_template_value =( of_get_option( 'global_post_template' ) == 'default-template' ) ? 'single' : 'style1';
 
 $accesspress_mag_post_template = get_post_meta( $post -> ID, 'accesspress_mag_post_template_layout', true );
@@ -25,7 +24,7 @@ else {
 ?>
 <div class="apmag-container">
     <?php
-        if ( (function_exists( 'accesspress_mag_breadcrumbs' ) && $accesspress_mag_show_breadcrumbs == 1 && $accesspress_mag_show_breadcrumbs_on_post == 1 ) ) {
+        if ( (function_exists( 'accesspress_mag_breadcrumbs' ) && $accesspress_mag_show_breadcrumbs == 1 ) ) {
     	    accesspress_mag_breadcrumbs();
         }
     ?>

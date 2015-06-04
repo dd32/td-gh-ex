@@ -12,14 +12,14 @@ $trans_editor = of_get_option( 'trans_editor_picks' );
 if( empty( $trans_editor ) ){ $trans_editor = __( "Editor Pick's", "accesspress-mag" ); }
 $page_sidebar = get_post_meta( $post -> ID, 'accesspress_mag_page_sidebar_layout', true);
 ?>
-<div id="secondary-<?php if($page_sidebar!='no-sidebar'){ echo $page_sidebar ; }?>">
+<div id="secondary-<?php if( $page_sidebar!='no-sidebar' ){ echo $page_sidebar ; } if( empty($accesspress_mag_theme_option) ) { echo 'right-sidebar'; }?>">
     <div id="secondary" class="secondary-wrapper">
     <?php if ( is_active_sidebar( 'accesspress-mag-home-top-sidebar' )) : ?>
     <div id="home-top-sidebar" class="widget-area wow fadeInUp" data-wow-delay="0.5s" role="complementary">
     	<?php dynamic_sidebar( 'accesspress-mag-home-top-sidebar' ); ?>
     </div><!-- #secondary -->
     <?php 
-        else:
+        elseif( empty( $accesspress_mag_theme_option ) ) :
             get_template_part( 'demo-content/demo-sidebar-top');
         endif ;
     ?>
@@ -46,7 +46,7 @@ $page_sidebar = get_post_meta( $post -> ID, 'accesspress_mag_page_sidebar_layout
     	<?php dynamic_sidebar( 'accesspress-mag-home-middle-sidebar' ); ?>
     </div><!-- #secondary -->
     <?php 
-        else:
+        elseif( empty( $accesspress_mag_theme_option ) ) :
             get_template_part( 'demo-content/demo-sidebar-middle');
         endif ; 
     ?>
@@ -101,7 +101,7 @@ $page_sidebar = get_post_meta( $post -> ID, 'accesspress_mag_page_sidebar_layout
             echo '</div>';
         ?>
         <?php 
-            else:
+            elseif( empty( $accesspress_mag_theme_option ) ) :
                 get_template_part( 'demo-content/demo-editorspick');
             endif ;
         ?>    
@@ -127,7 +127,7 @@ $page_sidebar = get_post_meta( $post -> ID, 'accesspress_mag_page_sidebar_layout
     	<?php dynamic_sidebar( 'accesspress-mag-home-bottom-sidebar' ); ?>
     </div><!-- #secondary -->
     <?php 
-        else:
+        elseif( empty( $accesspress_mag_theme_option ) ) :
             get_template_part( 'demo-content/demo-sidebar-bottom');
         endif ;
     ?> 

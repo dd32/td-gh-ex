@@ -5,7 +5,7 @@
    <div class="latest-posts-wrapper">
     <div class="latest-single-post clearfix">
         <div class="post-img">
-            <a href="#"><img src="<?php echo esc_url( get_template_directory_uri() .'/images/demo-images/photo-1416339306562-f3d12fefd36f-364x200.jpg' );?>" alt="" /> 
+            <a href="#"><img src="<?php echo esc_url( get_template_directory_uri() .'/images/demo-images/photo-1416339306562-f3d12fefd36f-554x305.jpg' );?>" alt="" /> 
         </div>
         <div class="post-desc-wrapper">
             <h3 class="post-title"><a href="#"><?php _e( 'Libratone Lounge are return back to stock', 'accesspress-mag' ); ?></a></h3>
@@ -14,7 +14,7 @@
     </div>
     <div class="latest-single-post clearfix">
         <div class="post-img">
-            <a href="#"><img src="<?php echo esc_url( get_template_directory_uri() .'/images/demo-images/photo-1421916780003-47d5a692d999-114x76.jpg' );?>" alt=""></a>
+            <a href="#"><img src="<?php echo esc_url( get_template_directory_uri() .'/images/demo-images/photo-1421916780003-47d5a692d999-177x118.jpg' );?>" alt=""></a>
         </div>
         <div class="post-desc-wrapper">
             <h3 class="post-title"><a href="#"><?php _e( 'Designer to Watch', 'accesspress-mag' ); ?></a></h3>
@@ -23,7 +23,7 @@
     </div>
     <div class="latest-single-post clearfix">
         <div class="post-img">
-            <a href="#"><img src="<?php echo esc_url( get_template_directory_uri() .'/images/demo-images/photo-1418793124283-7935cb656d02-114x76.jpg' );?>" alt=""></a>
+            <a href="#"><img src="<?php echo esc_url( get_template_directory_uri() .'/images/demo-images/photo-1418793124283-7935cb656d02-177x118.jpg' );?>" alt=""></a>
         </div>
         <div class="post-desc-wrapper">
             <h3 class="post-title"><a href="#"><?php _e( 'HOW Much Do Fashion ...', 'accesspress-mag' ); ?></a></h3>

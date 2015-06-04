@@ -50,9 +50,9 @@ function accesspress_mag_setup() {
     
     add_image_size( 'accesspress-mag-slider-big-thumb', 765, 496, true); //Big image for homepage slider
     add_image_size( 'accesspress-mag-slider-small-thumb', 364, 164, true); //Small image for homepage slider
-    add_image_size( 'accesspress-mag-block-big-thumb', 364, 200, true ); //Big thumb for homepage block
-    add_image_size( 'accesspress-mag-block-small-thumb', 114, 76, true ); //Small thumb for homepage block
-    add_image_size( 'accesspress-mag-singlepost-default', 792, 356, true); //Default image size for single post 792x356
+    add_image_size( 'accesspress-mag-block-big-thumb', 554, 305, true ); //Big thumb for homepage block
+    add_image_size( 'accesspress-mag-block-small-thumb', 177, 118, true ); //Small thumb for homepage block
+    add_image_size( 'accesspress-mag-singlepost-default', 1132, 509, true); //Default image size for single post
     add_image_size( 'accesspress-mag-singlepost-style1', 326, 235, true); //Style1 image size for single post 
 
 	// This theme uses wp_nav_menu() in one location.

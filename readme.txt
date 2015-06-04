@@ -73,6 +73,13 @@ ScreenShot Images
 
 ----------------------------------------------------
 == Changelog ==
+Version 1.1.9
+ * Fixed bugs on sidebar-home
+ * Changed option of TGM ('dismissable')
+ * Removed unusal option (show/hide breadcrumbs on single page)
+ * Changed image size while crop
+ * Changed image size of demo content
+
 Version 1.1.8
  * Fixed bug on homepage sidebar
  * Fixed bug on excerpt area at homepage
