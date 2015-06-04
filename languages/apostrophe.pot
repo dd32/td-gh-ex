@@ -1,14 +1,14 @@
-# Copyright (C) 2017 Automattic
-# This file is distributed under the GNU General Public License v2 or later.
+# Copyright (C) 2015 Automattic
+# This file is distributed under the GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Apostrophe 1.0.12\n"
+"Project-Id-Version: Apostrophe 1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/apostrophe\n"
-"POT-Creation-Date: 2017-03-23 06:02:28+00:00\n"
+"POT-Creation-Date: 2015-05-29 11:13:38+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
@@ -31,26 +31,25 @@ msgstr ""
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
-#: comments.php:26
-msgctxt "comments title"
-msgid "One comment"
+#: comments.php:24
+msgid "1 comment"
 msgid_plural "%s comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:33 comments.php:49
+#: comments.php:29 comments.php:46
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:34 comments.php:50
+#: comments.php:30 comments.php:47
 msgid "&laquo; Older Comments"
 msgstr ""
 
-#: comments.php:35 comments.php:51
+#: comments.php:31 comments.php:48
 msgid "Newer Comments &raquo;"
 msgstr ""
 
-#: comments.php:61
+#: comments.php:58
 msgid "Comments are closed."
 msgstr ""
 
@@ -84,14 +83,14 @@ msgid "Edit"
 msgstr ""
 
 #: footer.php:24
-msgid "http://wordpress.org/"
+msgid "A Semantic Personal Publishing Platform"
 msgstr ""
 
 #: footer.php:24
 msgid "Proudly powered by %s"
 msgstr ""
 
-#: footer.php:26
+#: footer.php:25
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
@@ -135,14 +134,6 @@ msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:209
-msgid "expand child menu"
-msgstr ""
-
-#: functions.php:210
-msgid "collapse child menu"
-msgstr ""
-
 #: header.php:34
 msgid "Menu"
 msgstr ""
@@ -163,7 +154,7 @@ msgstr ""
 msgid "Next Image &raquo;"
 msgstr ""
 
-#: image.php:64
+#: image.php:63
 msgctxt "Parent post link"
 msgid ""
 "<span class=\"meta-nav\">Published in</span><span class=\"post-title\">"
@@ -187,6 +178,10 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
+#: inc/template-tags.php:25
+msgid "All %s posts"
+msgstr ""
+
 #: inc/template-tags.php:46
 msgid "Post navigation"
 msgstr ""
@@ -202,157 +197,149 @@ msgid "Next"
 msgstr ""
 
 #. translators: min=minute
-#: inc/template-tags.php:102
+#: inc/template-tags.php:101
 msgid "%s min ago"
 msgid_plural "%s mins ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/template-tags.php:107
+#: inc/template-tags.php:106
 msgid "%s hour ago"
 msgid_plural "%s hours ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/template-tags.php:112
+#: inc/template-tags.php:111
 msgid "%s day ago"
 msgid_plural "%s days ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/template-tags.php:117
+#: inc/template-tags.php:116
 msgid "%s week ago"
 msgid_plural "%s weeks ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/template-tags.php:122
+#: inc/template-tags.php:121
 msgid "%s month ago"
 msgid_plural "%s months ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/template-tags.php:127
+#: inc/template-tags.php:126
 msgid "%s year ago"
 msgid_plural "%s years ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/template-tags.php:185
+#: inc/template-tags.php:184
 msgid "Category: %s"
 msgstr ""
 
-#: inc/template-tags.php:187
+#: inc/template-tags.php:186
 msgid "Tag: %s"
 msgstr ""
 
-#: inc/template-tags.php:189
+#: inc/template-tags.php:188
 msgid "Author: %s"
 msgstr ""
 
-#: inc/template-tags.php:191
+#: inc/template-tags.php:190
 msgid "Year: %s"
 msgstr ""
 
-#: inc/template-tags.php:191
+#: inc/template-tags.php:190
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: inc/template-tags.php:193
+#: inc/template-tags.php:192
 msgid "Month: %s"
 msgstr ""
 
-#: inc/template-tags.php:193
+#: inc/template-tags.php:192
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
-#: inc/template-tags.php:195
+#: inc/template-tags.php:194
 msgid "Day: %s"
 msgstr ""
 
-#: inc/template-tags.php:195
+#: inc/template-tags.php:194
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr ""
 
-#: inc/template-tags.php:197
+#: inc/template-tags.php:196
 msgctxt "post format archive title"
 msgid "Asides"
 msgstr ""
 
-#: inc/template-tags.php:199
+#: inc/template-tags.php:198
 msgctxt "post format archive title"
 msgid "Galleries"
 msgstr ""
 
-#: inc/template-tags.php:201
+#: inc/template-tags.php:200
 msgctxt "post format archive title"
 msgid "Images"
 msgstr ""
 
-#: inc/template-tags.php:203
+#: inc/template-tags.php:202
 msgctxt "post format archive title"
 msgid "Videos"
 msgstr ""
 
-#: inc/template-tags.php:205
+#: inc/template-tags.php:204
 msgctxt "post format archive title"
 msgid "Quotes"
 msgstr ""
 
-#: inc/template-tags.php:207
+#: inc/template-tags.php:206
 msgctxt "post format archive title"
 msgid "Links"
 msgstr ""
 
-#: inc/template-tags.php:209
+#: inc/template-tags.php:208
 msgctxt "post format archive title"
 msgid "Statuses"
 msgstr ""
 
-#: inc/template-tags.php:211
+#: inc/template-tags.php:210
 msgctxt "post format archive title"
 msgid "Audio"
 msgstr ""
 
-#: inc/template-tags.php:213
+#: inc/template-tags.php:212
 msgctxt "post format archive title"
 msgid "Chats"
 msgstr ""
 
-#: inc/template-tags.php:215
+#: inc/template-tags.php:214
 msgid "Archives: %s"
 msgstr ""
 
 #. translators: 1: Taxonomy singular name, 2: Current taxonomy term
-#: inc/template-tags.php:219
+#: inc/template-tags.php:218
 msgid "%1$s: %2$s"
 msgstr ""
 
-#: inc/template-tags.php:221
+#: inc/template-tags.php:220
 msgid "Archives"
 msgstr ""
 
-#: inc/template-tags.php:328 inc/template-tags.php:332
+#: inc/template-tags.php:327 inc/template-tags.php:331
 msgid "&rarr;"
 msgstr ""
 
-#: inc/template-tags.php:329 inc/template-tags.php:331
+#: inc/template-tags.php:328 inc/template-tags.php:330
 msgid "&larr;"
 msgstr ""
 
-#: inc/template-tags.php:351
+#: inc/template-tags.php:350
 msgid "Posts navigation"
-msgstr ""
-
-#: inc/wpcom-colors.php:118
-msgid "Links and Buttons"
-msgstr ""
-
-#: inc/wpcom-colors.php:139
-msgid "Accents"
 msgstr ""
 
 #: search.php:15
@@ -371,7 +358,7 @@ msgstr ""
 
 #. Description of the plugin/theme
 #: wp-content/themes/pub/apostrophe/style.css
-msgid "A clean, no-nonsense magazine theme"
+msgid "Quite possibly the cleanest magazine theme for WordPress."
 msgstr ""
 
 #. Author of the plugin/theme
@@ -387,39 +374,4 @@ msgstr ""
 #. Template Name of the plugin/theme
 #: wp-content/themes/pub/apostrophe/full-width-page.php
 msgid "Full-Width Page"
-msgstr ""
-#: inc/plugin-enhancements.php:92
-msgid "The %1$s is necessary to use some of this theme&rsquo;s features, including: "
-msgstr ""
-
-#: inc/plugin-enhancements.php:93
-msgid "Jetpack plugin"
-msgstr ""
-
-#: inc/plugin-enhancements.php:180
-msgid "no specific module needed"
-msgstr ""
-
-#: inc/plugin-enhancements.php:181
-msgid "Custom Content Types module"
-msgstr ""
-
-#: inc/plugin-enhancements.php:253
-msgid "Please activate %1$s. %2$s"
-msgstr ""
-
-#: inc/plugin-enhancements.php:255
-msgid "Activate"
-msgstr ""
-
-#: inc/plugin-enhancements.php:263
-msgid "Please install %1$s. %2$s"
-msgstr ""
-
-#: inc/plugin-enhancements.php:265
-msgid "Install"
-msgstr ""
-
-#: inc/plugin-enhancements.php:290
-msgid "To use %1$s, please activate the Jetpack plugin&rsquo;s %2$s."
 msgstr ""

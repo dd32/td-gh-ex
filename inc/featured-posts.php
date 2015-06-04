@@ -78,7 +78,8 @@ function apostrophe_inline_controls() {
 	// If the current user isn't able to edit posts, or if feature-starring isn't enabled as a theme option,
 	// or if we're on the customizer, return early and don't show the feature-starring panel
 	if ( ! current_user_can( 'edit_post', $post->ID ) OR
-		   1 != get_theme_mod( 'apostrophe_enable_feature_starring' ) OR is_customize_preview() ) {
+		   1 !== get_theme_mod( 'apostrophe_enable_feature_starring' ) OR
+		   is_customize_preview() ) {
 		return;
 	}
 

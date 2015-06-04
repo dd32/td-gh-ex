@@ -146,7 +146,7 @@ if ( ! function_exists( 'apostrophe_entry_footer' ) ) :
 			}
 
 			$tags_list = get_the_tag_list( '<ul class="post-tags"><li>', '</li><li>', '</li></ul>' );
-			if ( $tags_list && ! is_wp_error( $tags_list ) ) {
+			if ( $tags_list ) {
 				$apostrophe_tags .= $tags_list;
 			}
 
@@ -157,7 +157,7 @@ if ( ! function_exists( 'apostrophe_entry_footer' ) ) :
 
 		// Show the author's information, only if this blog has multiple authors
 		// hide = 1 means I've checked "hide author bio", and the below shouldn't display
-		if ( is_multi_author() && 1 != get_theme_mod( 'apostrophe_hide_author' ) ) :
+		if ( is_multi_author() && 1 !== get_theme_mod( 'apostrophe_hide_author' ) ) :
 		?>
 		<div class="author vcard">
 		<?php echo get_avatar( get_the_author_meta( 'ID' ), 300 ); ?>

@@ -37,21 +37,9 @@
 					'color': ''
 				} );
 			} else {
-				// If reset to default colour, change description back to grey
-				if ( '#362e77' === to ) {
-					$( '.site-title a' ).css( {
-						'color': to
-					} );
-					$( '.site-description' ).css({
-						'color': '#999999'
-					} );
-				} else {
-					$( '.site-title a, .site-description' ).css( {
-						'color': to
-					} );
-				}
 				$( '.site-title, .site-description' ).css( {
 					'clip': 'auto',
+					'color': to,
 					'position': 'relative'
 				} );
 				$( '.site-branding' ).css( {

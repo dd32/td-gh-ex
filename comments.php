@@ -23,7 +23,7 @@ if ( post_password_required() ) {
 		<h2 class="comments-title">
 			<?php
 			printf( // WPCS: XSS OK.
-				esc_html( _nx( 'One comment', '%s comments', get_comments_number(), 'comments title', 'apostrophe' ) ),
+				esc_html( _nx( 'One comment', '%s comments', get_comments_number(), 'apostrophe' ) ),
 			number_format_i18n( get_comments_number() ) );
 			?>
 		</h2>
@@ -40,6 +40,7 @@ if ( post_password_required() ) {
 			<?php
 				wp_list_comments( array(
 					'avatar_size' => 120,
+					'max_depth'   => 4,
 				) );
 			?>
 		</ol><!-- .comment-list -->

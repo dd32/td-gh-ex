@@ -64,18 +64,6 @@ body {
 	vertical-align: -0.4rem;
 }
 
-.apostrophe-navigation .dropdown-toggle {
-	left: 0;
-	right: auto;
-}
-
-@media (max-width: 767px) {
-	.main-navigation.toggled-on .apostrophe-navigation li.menu-item-has-children a {
-		padding-left: 60px;
-		padding-right: 25px;
-	}
-}
-
 .apostrophe-social {
 	float: left;
 }

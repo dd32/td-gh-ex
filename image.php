@@ -52,11 +52,10 @@ get_header(); ?>
 					</div><!-- .entry-content -->
 
 					<footer class="entry-footer">
-						<?php if ( $post->post_parent ) { ?>
-							<nav id="image-navigation" class="navigation image-navigation">
-								<div class="nav-previous"><?php previous_image_link( false, __( '&laquo; Previous Image', 'apostrophe' ) ); ?></div><div class="nav-next"><?php next_image_link( false, __( 'Next Image &raquo;', 'apostrophe' ) ); ?></div>
+
+						<nav id="image-navigation" class="navigation image-navigation">
+						<div class="nav-previous"><?php previous_image_link( false, __( '&laquo; Previous Image', 'apostrophe' ) ); ?></div><div class="nav-next"><?php next_image_link( false, __( 'Next Image &raquo;', 'apostrophe' ) ); ?></div>
 						</nav><!-- .image-navigation -->
-						<?php } ?>
 
 						<?php
 						// Show a link back to post

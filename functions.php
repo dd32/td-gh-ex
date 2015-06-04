@@ -182,7 +182,7 @@ function apostrophe_fonts_url() {
 			'subset' => urlencode( 'latin,latin-ext,cyrillic' ),
 		);
 
-		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+		$fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
 
 	endif;
 	return $fonts_url;
@@ -197,18 +197,13 @@ function apostrophe_scripts() {
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/css/genericons.css', array(), '20131222' );
 	wp_enqueue_style( 'apostrophe-fonts', apostrophe_fonts_url(), array(), null );
 
-	wp_enqueue_script( 'apostrophe-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20150605', true );
-	wp_enqueue_script( 'apostrophe-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20161104', true );
+	wp_enqueue_script( 'apostrophe-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'apostrophe-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20150318', true );
 	wp_enqueue_script( 'apostrophe', get_template_directory_uri() . '/js/apostrophe.js', array( 'jquery' ), '20150226', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-	
-	wp_localize_script( 'apostrophe-navigation', 'screenReaderText', array(
-		'expand'   => esc_html__( 'expand child menu', 'apostrophe' ),
-		'collapse' => esc_html__( 'collapse child menu', 'apostrophe' ),
-	) );
 }
 add_action( 'wp_enqueue_scripts', 'apostrophe_scripts' );
 
@@ -233,6 +228,7 @@ add_filter( 'shortcode_atts_gallery', 'apostrophe_shortcode_atts_gallery', 10, 3
  * largely irrelevant here, and may confuse users.
  */
 function apostrophe_body_class( $classes ) {
+	global $wp_customize;
 
 	if ( ! is_active_sidebar( 'sidebar-1' ) && ! is_active_sidebar( 'sidebar-2' ) && ! is_active_sidebar( 'sidebar-3' ) ) {
 		$classes[] = 'apostrophe-no-sidebar';
@@ -308,10 +304,3 @@ require get_template_directory() . '/inc/jetpack.php';
  * Featured post stuff
  */
 require get_template_directory() . '/inc/featured-posts.php';
-
-
-
-/**
- * Load plugin enhancement file to display admin notices.
- */
-require get_template_directory() . '/inc/plugin-enhancements.php';

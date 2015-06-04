@@ -2,13 +2,24 @@
 Theme Name: Apostrophe
 Theme URI: https://wordpress.com/themes/apostrophe/
 Description: A clean, no-nonsense magazine theme
-Version: 1.0.13
+Version: 1.0.2
 Author: Automattic
 Author URI: https://wordpress.com/themes/
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: apostrophe
-Tags: blog, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, grid-layout, microformats, one-column, post-formats, right-sidebar, rtl-language-support, sticky-post, theme-options, translation-ready, two-columns
+Tags: black, blue, gray, white, light, two-columns, one-column, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+
+Apostrophe WordPress Theme, Copyright 2015 Automattic, Inc.
+Apostrophe is distributed under the terms of the GNU GPL.
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Apostrophe is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
 
 /*--------------------------------------------------------------
@@ -39,7 +50,6 @@ Tags: blog, custom-background, custom-colors, custom-header, custom-menu, editor
 	13.2 Tablets
 	13.3 Desktops
 	13.4 Large Desktops
-14.0 Print
 
 --------------------------------------------------------------*/
 
@@ -87,7 +97,6 @@ Tags: blog, custom-background, custom-colors, custom-header, custom-menu, editor
 }
 
 .apostrophe-navigation .menu-item-has-children > a:after,
-.apostrophe-navigation .dropdown-toggle:before,
 .apostrophe-social li a::before,
 .nav-previous .meta-nav:before,
 .nav-next .meta-nav:before,
@@ -392,7 +401,6 @@ h1 {
 h2,
 .widgettitle,
 .widget-title,
-.widget-title label,
 .comments-title,
 #reply-title {
 	color: #999;
@@ -822,30 +830,10 @@ a:active {
 }
 
 /* Main navigation */
-.apostrophe-navigation .dropdown-toggle {
-	background: transparent;
-	border: 0;
-	display: none;
-	margin: 0;
-	padding: 10px 10px 15px;
-	position: absolute;
-	right: 0;
-	top: 0;
-}
-
 .apostrophe-navigation .menu-item-has-children > a:after {
 	content: "\f431";
 	padding-left: 0.5rem;
 	vertical-align: -0.1rem;
-}
-
-.apostrophe-navigation .dropdown-toggle:before {
-	content: "\f431";
-	line-height: 1.5;
-}
-
-.apostrophe-navigation .dropdown-toggle.toggled-on:before {
-	content: "\f432";
 }
 
 .apostrophe-navigation .current_page_item a,
@@ -863,10 +851,6 @@ a:active {
 	float: right;
 	list-style: none;
 	padding: 3px 0;
-}
-
-.apostrophe-social .dropdown-toggle {
-	display: none;
 }
 
 .apostrophe-social li a {
@@ -1216,6 +1200,8 @@ a:active {
 	width: 1px;
 }
 
+.screen-reader-text:hover,
+.screen-reader-text:active,
 .screen-reader-text:focus {
 	background-color: #f1f1f1;
 	border-radius: 3px;
@@ -1344,11 +1330,6 @@ a:active {
 
 .widget_search .search-submit {
 	display: none;
-}
-
-/* Facebook widget */
-.widget_facebook_likebox iframe {
-	margin: 0;
 }
 
 /*--------------------------------------------------------------
@@ -1698,10 +1679,6 @@ a:active {
 	position: relative;
 }
 
-.single.date-hidden .entry-meta {
-	padding: 0;
-}
-
 .archive .entry-title,
 .blog .entry-title,
 .search .entry-title {
@@ -1903,8 +1880,7 @@ article:hover .apostrophe-inline-controls {
 --------------------------------------------------------------*/
 /* General widget styles */
 .widgettitle,
-.widget-title,
-.widget-title label {
+.widget-title {
 	color: #a6a6a6;
 	font-size: 18px;
 	font-size: 1.8rem;
@@ -1912,10 +1888,6 @@ article:hover .apostrophe-inline-controls {
 	margin-bottom: 24px;
 	margin-top: 0;
 	padding-top: 0;
-}
-
-.widget-title label {
-	text-transform: none;
 }
 
 .widget {
@@ -2228,10 +2200,6 @@ object {
 .gallery-item a::before,
 .gallery-item a::after {
 	display: block;
-}
-
-.gallery-item .wp-caption-text a {
-	line-height: 1.2;
 }
 
 .gallery-columns-2 {
@@ -2664,8 +2632,7 @@ Primarily mobile devices and super-small tablets.
 @media (max-width: 767px) {
 	/* Show menu toggle and hide menu by default */
 	.menu-toggle,
-	.main-navigation.toggled-on .nav-menu,
-	.main-navigation.toggled-on ul.toggled-on {
+	.main-navigation.toggled .nav-menu {
 		display: block;
 	}
 
@@ -2706,47 +2673,38 @@ Primarily mobile devices and super-small tablets.
 		-webkit-font-smoothing: antialiased;
 	}
 
-	.main-navigation.toggled-on .current_page_item a,
-	.main-navigation.toggled-on .current-menu-item a,
-	.main-navigation.toggled-on .current-post-ancestor a,
-	.main-navigation.toggled-on .current-menu-ancestor a,
-	.main-navigation.toggled-on .current-menu-parent a,
-	.main-navigation.toggled-on .current-post-parent a {
+	.main-navigation.toggled .current_page_item a,
+	.main-navigation.toggled .current-menu-item a,
+	.main-navigation.toggled .current-post-ancestor a,
+	.main-navigation.toggled .current-menu-ancestor a,
+	.main-navigation.toggled .current-menu-parent a,
+	.main-navigation.toggled .current-post-parent a {
 		border-top-color: transparent;
 	}
 
-	.main-navigation.toggled-on .apostrophe-navigation {
+	.main-navigation.toggled .apostrophe-navigation {
 		border-bottom: solid 1px;
 		display: block;
 	}
 
-	.main-navigation.toggled-on .apostrophe-navigation li {
+	.main-navigation.toggled .apostrophe-navigation li {
 		clear: left;
 		display: block;
 		float: none;
-		position: relative;
 	}
 
-	.main-navigation.toggled-on .apostrophe-navigation li a {
+	.main-navigation.toggled .apostrophe-navigation li a {
 		margin-top: 0;
 		padding: 10px 25px 15px;
 	}
 
-	.main-navigation.toggled-on .apostrophe-navigation .toggled-on:not(.dropdown-toggle) {
+	.main-navigation.toggled .apostrophe-navigation .toggled {
 		border-bottom: 1px solid;
 		border-top: 2px solid;
 	}
 
-	.main-navigation.toggled-on .apostrophe-navigation .toggled-on > .sub-menu {
+	.main-navigation.toggled .apostrophe-navigation .toggled > .sub-menu {
 		display: block;
-	}
-
-	.main-navigation ul li.menu-item-has-children > a:after {
-		display: none;
-	}
-
-	.main-navigation.toggled-on .apostrophe-navigation li.menu-item-has-children a {
-		padding-right: 60px;
 	}
 
 	ul.apostrophe-social {
@@ -2757,10 +2715,6 @@ Primarily mobile devices and super-small tablets.
 
 	ul.apostrophe-social li a {
 		line-height: 60px;
-	}
-
-	.apostrophe-navigation .dropdown-toggle {
-		display: block;
 	}
 
 	/* Use a slightly smaller font size for titles */
@@ -2882,6 +2836,7 @@ Primarily tablets and teensy desktops.
 			 -moz-box-sizing: border-box;
 		-webkit-box-sizing: border-box;
 						box-sizing: border-box;
+		float: left;
 		padding-left: 0.75758%;
 		padding-right: 0.75758%;
 		width: 100%;
@@ -3012,8 +2967,7 @@ Primarily tablets and teensy desktops.
 		padding: 0.5em 1em;
 	}
 
-	.main-navigation ul ul li:hover > ul,
-	.main-navigation ul ul li.focus > ul {
+	.main-navigation ul ul li:hover > ul {
 		left: 100%;
 	}
 
@@ -3022,8 +2976,7 @@ Primarily tablets and teensy desktops.
 		border-color: transparent;
 	}
 
-	.main-navigation li:hover > ul,
-	.main-navigation li.focus > ul {
+	.main-navigation li:hover > ul {
 		left: auto;
 	}
 
@@ -3225,18 +3178,5 @@ Very large tablets in landscape mode and most desktops.
 	.entry-format::before {
 		left: -46px;
 		right: auto;
-	}
-}
-
-/*--------------------------------------------------------------
-14.0 Print
---------------------------------------------------------------*/
-@media print {
-	.entry-date {
-		display: block !important;
-	}
-	.entry-date > span,
-	.updated {
-		display: none !important;
 	}
 }
