@@ -4,7 +4,7 @@ Theme URI: https://competethemes.com/apex/
 Author: Compete Themes
 Author URI: https://competethemes.com/
 Description: Apex is a sophisticated, minimalist theme. It looks great and performs wonderfully on phones, tablets, laptops, and everything in between. As a fast, responsive, accessibility-ready, and translation-ready theme, Apex is a theme you can trust to present your content to the world. See our fully setup demo here: https://www.competethemes.com/apex-live-demo/
-Version: 1.02
+Version: 1.03
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: gray, silver, white, light, fluid-layout, responsive-layout, two-columns, right-sidebar, accessibility-ready, custom-menu, featured-images, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -1026,6 +1026,8 @@ li.pingback {
 .comments-link {
   color: #333333;
   margin-right: 18px;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
 }
 .comments-link i {
   margin-left: 3px;
@@ -1079,10 +1081,6 @@ li.pingback {
   bottom: 0;
   right: 0;
   font-size: 0;
-}
-
-.featured-image-large {
-  display: none;
 }
 
 .post-container {
@@ -1187,25 +1185,22 @@ li.pingback {
     margin-top: 0;
   }
 
-  .singular .entry .featured-image,
-  .error-404 .entry .featured-image {
-    display: none;
-  }
-  .singular .featured-image-large,
-  .error-404 .featured-image-large {
-    display: block;
-    margin-bottom: 3em;
-  }
-  .singular .post-header,
-  .error-404 .post-header {
-    margin: 0 0 3em;
-  }
-  .singular .post-title,
-  .error-404 .post-title {
+  .post-title {
     font-size: 2.3125em;
     /* 37px / 16px */
     line-height: 1.297;
     /* 48px */
+  }
+
+  .singular .post-header,
+  .error-404 .post-header {
+    margin: 0 0 2.25em;
+  }
+  .singular .featured-image,
+  .singular .featured-video,
+  .error-404 .featured-image,
+  .error-404 .featured-video {
+    margin-bottom: 2.25em;
   }
 }
 .search-form input[type="submit"] {
