@@ -20,6 +20,9 @@ Install
 
 Changelog
 ---------
+0.5.2 - 2015-6-5
+- update css
+
 0.5.1 - 2015-3-31
 - update css
 - add new mobile menu

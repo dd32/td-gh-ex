@@ -4,7 +4,7 @@ Theme URI: http://themehall.com/beta-second-omega-child-theme
 Author: themehall.com
 Author URI: http://themehall.com
 Description: Beta is a responsive Omega child theme, Valid HTML5 Document, SEO Friendly, multiple page layouts, Theme settings extending the WordPress Customizer
-Version: 0.5.1
+Version: 0.5.2
 License: GNU General Public License
 License URI: license.txt
 Tags: light, green, white, two-columns, one-column, right-sidebar, left-sidebar, flexible-width, full-width-template, theme-options, custom-menu, threaded-comments, sticky-post, translation-ready
@@ -944,7 +944,7 @@ Footer Widgets
 
 .footer-widgets {
   background: none repeat scroll 0 0 #F5F5F5;
-  padding: 40px 0 16px;
+  padding: 50px 0px 35px;
 }
 
 .footer-widgets .widget {
@@ -1071,10 +1071,6 @@ Media Queries
 
   .site-footer {
     padding: 24px 0;
-  }
-
-  .site-footer p {
-    margin: 15px 0;
   }
 
   p.copyright,
