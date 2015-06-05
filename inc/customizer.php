@@ -156,7 +156,7 @@ function aaron_customize_register( $wp_customize ) {
 	$wp_customize->get_section('header_image')->title = __( 'Header background', 'aaron');
 
 	$wp_customize->add_setting( 'aaron_header_bgcolor', array(
-		'default'        => '#fafafa',
+		'default'        => '#4777a6',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 
@@ -169,6 +169,7 @@ function aaron_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'aaron_header_bgpos',		 array(
 		'sanitize_callback' => 'aaron_sanitize_bgpos',
+		'default' => 'center top'
 	) );
 
 	$wp_customize->add_control( 'aaron_header_bgpos',		array(
@@ -190,6 +191,7 @@ function aaron_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'aaron_header_bgsize',		 array(
 		'sanitize_callback' => 'aaron_sanitize_bgsize',
+		'default' => 'cover',
 	) );
 
 	$wp_customize->add_control( 'aaron_header_bgsize',		array(
@@ -205,6 +207,7 @@ function aaron_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'aaron_header_bgrepeat',		 array(
 		'sanitize_callback' => 'aaron_sanitize_bgrepeat',
+		'default' => 'no-repeat',
 	) );
 
 	$wp_customize->add_control( 'aaron_header_bgrepeat',		array(
@@ -458,7 +461,7 @@ function aaron_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting( 'aaron_action_color', array(
-		'default'        => '#000000',
+		'default'        => '#ffffff',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 

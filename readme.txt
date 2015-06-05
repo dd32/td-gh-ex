@@ -20,6 +20,16 @@ If you have any questions, accessibility issues or feature requests for this the
 Please note that changing the colors of the theme can affect accessibility.
 
 == Change log ==
+Version 2.1, 2015-06-05
+Removed the example highlights. (They caused more issues than their worth =) )
+Added defaults to the header background image position.
+Fixed contrast ussues when the header image is not loaded ( Updated default background color and default CTA text color).
+Fixed a bug with the Call To Action background color.
+Added aria-hidden="true" to decorative icon fonts.
+Added a template that combines a static front page with featured posts (Requires Jetpack).
+
+
+
 Version 2.0, 2015-05-21
 Fixed a bug where the example highlights were showing even if the highlights had been edited. 
 Added options to display pages as separate sections of the front page.

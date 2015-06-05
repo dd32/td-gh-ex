@@ -5,7 +5,6 @@ function aaron_docs_menu() {
 add_action('admin_menu', 'aaron_docs_menu');
 
 function aaron_docs() {
-
 ?>
 
 <h1 class="doc-title"><?php _e('Aaron Setup Help', 'aaron'); ?></h1>
@@ -91,7 +90,6 @@ function aaron_docs() {
 			<?php _e('<b>Page sections:</b> Page sections are a great way to display your shortcodes, testimonials, pricing tables, contact information and similar.', 'aaron' ); ?><br>
 			<?php _e('The two page sections can display up to 3 pages each. Pages in the top section are displayed above the blog content, and pages in the bottom section are displayed below.','aaron' )?><br>
 			<?php _e('You can also show your page sections without your blog content by setting a static front page, using the <i>Sections</i> page template.','aaron' )?><br>
-
 	</div>
 
 	<div class="doc-box" id="aaron-advanced">

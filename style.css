@@ -5,7 +5,7 @@ Author: Carolina Nymark
 Author URI: http://wptema.se
 Description: Aaron is a responsive, accessibility-ready multi-purpose theme. Features include Call to action and frontpage Highlights that will grab your visitors attention and help you feature different parts of your website. The theme has two optional menus (including a social menu) and two widget areas that will hold any number of widgets. Want to run Aaron on a company website rather than a blog? No problem, just hide the meta, the sidebars, and turn off your comments. We recommend that you install the Jetpack plugin to make full use of supported features like logos, featured content, contact forms, social sharing and favicon. To create a portfolio, install Jetpack and create your projects, all the templates are already shipped with the theme. Aaron also works well with Woocommerce and bbPress.
 If you have any questions, accessibility issues or feature requests for this theme, please visit http://wptema.se/Aaron.
-Version: 2.0
+Version: 2.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Copyright: Carolina Nymark 2015
@@ -1336,7 +1336,7 @@ table#wp-calendar,
 	display: block;
 }
 
-.sticky .entry-title:after{
+.sticky .entry-title i:after{
 	content: "\f005";
 	display: inline-block;
 	font: normal normal normal 34px/1 FontAwesome;
@@ -1486,8 +1486,8 @@ table#wp-calendar,
 	background: url(images/border.png) repeat-x bottom;
 }
 
-.tags-links::before, 
-.edit-link::before{
+.tags-links i::before, 
+.edit-link i::before{
 	font: normal 16px/1 'dashicons';
 	font-size:16px;
 	height:16px;
@@ -1498,15 +1498,15 @@ table#wp-calendar,
 	vertical-align: middle;
 }
 
-.tags-links::before{
+.tags-links i::before{
 	content: "\f323";
 }
 
-.edit-link::before{
+.edit-link i::before{
 	content: "\f464";
 }
 
-.comments-link::before{
+.comments-link i::before{
 	content: "\f0e5";
 	display: inline-block;
 	font: normal normal normal 16px/1 FontAwesome;
@@ -1522,7 +1522,7 @@ table#wp-calendar,
 	vertical-align: middle;
 }
 
-.cat-links::before{
+.cat-links i::before{
 	content: "\f115";
 	display: inline-block;
 	font: normal normal normal 16px/1 FontAwesome;

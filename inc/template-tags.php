@@ -114,24 +114,24 @@ function aaron_entry_footer() {
 			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( __( ', ', 'aaron' ) );
 			if ( $categories_list && aaron_categorized_blog() ) {
-				printf( '<span class="cat-links">' . __( 'Categories: %1$s', 'aaron' ) . '</span>', $categories_list );
+				printf( '<span class="cat-links"><i aria-hidden="true"></i>' . __( 'Categories: %1$s', 'aaron' ) . '</span>', $categories_list );
 			}
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', __( ', ', 'aaron' ) );
 			if ( $tags_list ) {
-				printf( '<span class="tags-links"> ' . __( 'Tags: %1$s', 'aaron' ) . '</span>', $tags_list );
+				printf( '<span class="tags-links"><i aria-hidden="true"></i> ' . __( 'Tags: %1$s', 'aaron' ) . '</span>', $tags_list );
 			}
 		}
 
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
+			echo '<span class="comments-link"><i aria-hidden="true"></i>';
 			comments_popup_link( __( 'Leave a comment', 'aaron' ), __( '1 Comment', 'aaron' ), __( '% Comments', 'aaron' ) );
 			echo '</span>';
 		}
 		
 		/* translators: % is the post title */
-		edit_post_link( sprintf( __( 'Edit %s', 'aaron' ), get_the_title() ), '<span class="edit-link">', '</span>' );
+		edit_post_link( sprintf( __( 'Edit %s', 'aaron' ), get_the_title() ), '<span class="edit-link"><i aria-hidden="true"></i>', '</span>' );
 
 
 		/* Display jetpack's share if it's active*/
@@ -172,7 +172,7 @@ function aaron_portfolio_footer() {
 		echo the_terms($post->ID, 'jetpack-portfolio-tag', '<span class="tags-links">' . __( 'Project Tags: ', 'aaron' ),', ', '</span>');
 		
 		/* translators: % is the post title */
-		edit_post_link( sprintf( __( 'Edit %s', 'aaron' ), get_the_title() ), '<span class="edit-link">', '</span>' );
+		edit_post_link( sprintf( __( 'Edit %s', 'aaron' ), get_the_title() ), '<span class="edit-link"><i aria-hidden="true"></i>', '</span>' );
 
 
 		/* Display jetpack's share if it's active*/
