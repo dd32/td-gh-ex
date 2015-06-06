@@ -105,7 +105,6 @@
       } else if($blog_carousel_recent == 'recent') {
         get_template_part('templates/recentblog', 'carousel');
       } ?>
-
       <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'virtue'), 'after' => '</p></nav>')); ?>
       <?php if(isset($virtue['show_postlinks']) &&  $virtue['show_postlinks'] == 1) {get_template_part('templates/entry', 'post-links'); }?>
     </footer>

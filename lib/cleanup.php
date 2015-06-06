@@ -40,13 +40,28 @@ add_filter('wp_get_attachment_link', 'kadence_attachment_link_class', 10, 1);
  * Add-rel-lighbox
  */
 
-add_filter('the_content', 'kadence_addlightboxrel');
-function kadence_addlightboxrel($content) {
-       global $post;
-       $pattern ="/<a(.*?)href=('|\")(.*?).(bmp|gif|jpeg|jpg|png)('|\")(.*?)>/i";
-       $replacement = '<a$1href=$2$3.$4$5 rel="lightbox" $6>';
-       $content = preg_replace($pattern, $replacement, $content);
-       return $content;
+add_filter('the_content', 'kad_addlightboxrel', 10);
+function kad_addlightboxrel($content){
+
+  /* Find internal links */
+
+  //Check the page for link images direct to image (no trailing attributes)
+  $string = '/<a href="(.*?).(jpg|jpeg|png|gif|bmp|ico)"><img(.*?)class="(.*?)wp-image-(.*?)" \/><\/a>/i';
+  preg_match_all( $string, $content, $matches, PREG_SET_ORDER);
+
+  //Check which attachment is referenced
+  foreach ($matches as $val) {
+    $post_caption = '';
+    
+    $post = get_post($val[5]);
+    
+    //Replace the instance with the lightbox and title(caption) references. Won't fail if caption is empty.
+    $string = '<a href="' . $val[1] . '.' . $val[2] . '"><img' . $val[3] . 'class="' . $val[4] . 'wp-image-' . $val[5] . '" /></a>';
+    $replace = '<a href="' . $val[1] . '.' . $val[2] . '" data-rel="lightbox"><img' . $val[3] . 'class="' . $val[4] . 'wp-image-' . $val[5] . '" /></a>';
+    $content = str_replace( $string, $replace, $content);
+  }
+
+  return $content;
 }
 
 /**

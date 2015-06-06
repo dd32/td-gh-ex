@@ -30,6 +30,10 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 2.4.9 | 6th June 2015 =
+* Update: rel-link function to look for wp image class.
+* Update: Various CSS styles. 
+
 = Version 2.4.8 | 26nd May 2015 =
 * Update: TGM.
 * Update: Image edit script.
