@@ -4,7 +4,7 @@ Theme URI: https://competethemes.com/apex/
 Author: Compete Themes
 Author URI: https://competethemes.com/
 Description: Apex is a sophisticated, minimalist theme. It looks great and performs wonderfully on phones, tablets, laptops, and everything in between. As a fast, responsive, accessibility-ready, and translation-ready theme, Apex is a theme you can trust to present your content to the world. See our fully setup demo here: https://www.competethemes.com/apex-live-demo/
-Version: 1.03
+Version: 1.04
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: gray, silver, white, light, fluid-layout, responsive-layout, two-columns, right-sidebar, accessibility-ready, custom-menu, featured-images, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -42,7 +42,7 @@ h3, .post-title {
 
 .wp-caption-text, input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="file"]):not([type="image"]),
 textarea, input[type="submit"], .comment-respond label, #cancel-comment-reply-link, .comment-footer a,
-.comment-footer span, .site-footer span, .tagline, .more-link, .comments-link, .sticky-status, .post-date, .post-tags a, .further-reading span, .widget > * {
+.comment-footer span, .site-footer .design-credit span, .tagline, .more-link, .comments-link, .sticky-status, .post-date, .post-tags a, .further-reading span, .widget > * {
   font-size: 0.75em;
   /* 12px / 16px */
   line-height: 1.5;
@@ -459,16 +459,19 @@ li.pingback {
   }
 }
 .site-footer {
-  text-align: center;
   padding: 3em 6.25% 0.75em;
+}
+.site-footer .design-credit {
+  text-align: center;
   margin-top: 3em;
 }
-.site-footer a {
+.site-footer .design-credit a {
   font-weight: 700;
 }
 
 @media all and (min-width: 56.25em) {
   .site-footer {
+    padding: 3em 0 0.75em;
     clear: both;
   }
 }
@@ -1014,6 +1017,7 @@ li.pingback {
 .more-link {
   display: inline-block;
   padding: 8px 20px;
+  margin-left: 18px;
   border: solid 1px #333333;
   -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
@@ -1025,7 +1029,6 @@ li.pingback {
 
 .comments-link {
   color: #333333;
-  margin-right: 18px;
   -webkit-transition: color 0.1s ease-in-out;
   transition: color 0.1s ease-in-out;
 }
@@ -1240,10 +1243,6 @@ li.pingback {
     float: right;
     padding: 0;
     margin: 0 5.17031% 0 0;
-  }
-
-  .singular .sidebar-primary {
-    margin-top: 0.75em;
   }
 }
 .widget {

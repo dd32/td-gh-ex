@@ -87,6 +87,50 @@ function ct_apex_add_customizer_content( $wp_customize ) {
 		}
 	}
 
+	/* Ad Controls */
+	class apex_description_header_image_control extends WP_Customize_Control {
+
+		public function render_content() {
+			$link = 'https://www.competethemes.com/apex-pro/';
+			echo "<p>" . sprintf( __('Activate <a target="_blank" href="%s">Apex Pro</a> for advanced header image functionality.', 'apex'), $link ) . "</p>";
+		}
+	}
+	class apex_description_color_control extends WP_Customize_Control {
+
+		public function render_content() {
+			$link = 'https://www.competethemes.com/apex-pro/';
+			echo "<p>" . sprintf( __('Activate <a target="_blank" href="%s">Apex Pro</a> to change your colors.', 'apex'), $link ) . "</p>";
+		}
+	}
+	class apex_description_font_control extends WP_Customize_Control {
+
+		public function render_content() {
+			$link = 'https://www.competethemes.com/apex-pro/';
+			echo "<p>" . sprintf( __('Activate <a target="_blank" href="%s">Apex Pro</a> to change your font.', 'apex'), $link ) . "</p>";
+		}
+	}
+	class apex_description_display_control_control extends WP_Customize_Control {
+
+		public function render_content() {
+			$link = 'https://www.competethemes.com/apex-pro/';
+			echo "<p>" . sprintf( __('Activate <a target="_blank" href="%s">Apex Pro</a> to get hide/show controls.', 'apex'), $link ) . "</p>";
+		}
+	}
+	class apex_description_footer_text_control extends WP_Customize_Control {
+
+		public function render_content() {
+			$link = 'https://www.competethemes.com/apex-pro/';
+			echo "<p>" . sprintf( __('Activate <a target="_blank" href="%s">Apex Pro</a> to customize the footer text.', 'apex'), $link ) . "</p>";
+		}
+	}
+	class apex_description_layout_control extends WP_Customize_Control {
+
+		public function render_content() {
+			$link = 'https://www.competethemes.com/apex-pro/';
+			echo "<p>" . sprintf( __('Activate <a target="_blank" href="%s">Apex Pro</a> to change your layout.', 'apex'), $link ) . "</p>";
+		}
+	}
+
 	/***** Logo Upload *****/
 
 	// section
@@ -122,7 +166,7 @@ function ct_apex_add_customizer_content( $wp_customize ) {
 	// section
 	$wp_customize->add_section( 'ct_apex_social_media_icons', array(
 		'title'          => __('Social Media Icons', 'apex'),
-		'priority'       => 25,
+		'priority'       => 35,
 	) );
 
 	// create a setting and control for each social site
@@ -209,7 +253,7 @@ function ct_apex_add_customizer_content( $wp_customize ) {
 	// section
 	$wp_customize->add_section( 'ct_apex_comments_display', array(
 		'title'      => __( 'Comment Display', 'apex' ),
-		'priority'   => 65,
+		'priority'   => 55,
 		'capability' => 'edit_theme_options'
 	) );
 	// setting
@@ -240,7 +284,7 @@ function ct_apex_add_customizer_content( $wp_customize ) {
 	// section
 	$wp_customize->add_section( 'apex_custom_css', array(
 		'title'      => __( 'Custom CSS', 'apex' ),
-		'priority'   => 65,
+		'priority'   => 70,
 		'capability' => 'edit_theme_options'
 	) );
 	// setting
@@ -255,6 +299,142 @@ function ct_apex_add_customizer_content( $wp_customize ) {
 			'label'          => __( 'Add Custom CSS Here:', 'apex' ),
 			'section'        => 'apex_custom_css',
 			'settings'       => 'custom_css',
+		)
+	) );
+
+	/*
+	 * PRO only sections
+	 */
+
+	/***** Header Image *****/
+
+	// section
+	$wp_customize->add_section( 'apex_header_image', array(
+		'title'      => __( 'Header Image', 'apex' ),
+		'priority'   => 35,
+		'capability' => 'edit_theme_options'
+	) );
+	// setting
+	$wp_customize->add_setting( 'header_image_ad', array(
+		'type'              => 'theme_mod',
+		'capability'        => 'edit_theme_options',
+		'sanitize_callback' => 'absint',
+	) );
+	// control
+	$wp_customize->add_control( new apex_description_header_image_control(
+		$wp_customize, 'header_image_ad', array(
+			'section'        => 'apex_header_image',
+			'settings'       => 'header_image_ad'
+		)
+	) );
+
+	/***** Colors *****/
+
+	// section
+	$wp_customize->add_section( 'apex_colors', array(
+		'title'      => __( 'Colors', 'apex' ),
+		'priority'   => 50,
+		'capability' => 'edit_theme_options'
+	) );
+	// setting
+	$wp_customize->add_setting( 'colors_ad', array(
+		'type'              => 'theme_mod',
+		'capability'        => 'edit_theme_options',
+		'sanitize_callback' => 'absint',
+	) );
+	// control
+	$wp_customize->add_control( new apex_description_color_control(
+		$wp_customize, 'colors_ad', array(
+			'section'        => 'apex_colors',
+			'settings'       => 'colors_ad'
+		)
+	) );
+
+	/***** Fonts *****/
+
+	// section
+	$wp_customize->add_section( 'apex_font', array(
+		'title'      => __( 'Font', 'apex' ),
+		'priority'   => 40,
+		'capability' => 'edit_theme_options'
+	) );
+	// setting
+	$wp_customize->add_setting( 'font_ad', array(
+		'type'              => 'theme_mod',
+		'capability'        => 'edit_theme_options',
+		'sanitize_callback' => 'absint',
+	) );
+	// control
+	$wp_customize->add_control( new apex_description_font_control(
+		$wp_customize, 'font_ad', array(
+			'section'        => 'apex_font',
+			'settings'       => 'font_ad'
+		)
+	) );
+
+	/***** Display Control *****/
+
+	// section
+	$wp_customize->add_section( 'apex_display_control', array(
+		'title'      => __( 'Display Controls', 'apex' ),
+		'priority'   => 70,
+		'capability' => 'edit_theme_options'
+	) );
+	// setting
+	$wp_customize->add_setting( 'display_control_ad', array(
+		'type'              => 'theme_mod',
+		'capability'        => 'edit_theme_options',
+		'sanitize_callback' => 'absint',
+	) );
+	// control
+	$wp_customize->add_control( new apex_description_display_control_control(
+		$wp_customize, 'display_control_ad', array(
+			'section'        => 'apex_display_control',
+			'settings'       => 'display_control_ad'
+		)
+	) );
+
+	/***** Footer Text *****/
+
+	// section
+	$wp_customize->add_section( 'apex_footer_text', array(
+		'title'      => __( 'Footer Text', 'apex' ),
+		'priority'   => 85,
+		'capability' => 'edit_theme_options'
+	) );
+	// setting
+	$wp_customize->add_setting( 'footer_text_ad', array(
+		'type'              => 'theme_mod',
+		'capability'        => 'edit_theme_options',
+		'sanitize_callback' => 'absint',
+	) );
+	// control
+	$wp_customize->add_control( new apex_description_footer_text_control(
+		$wp_customize, 'footer_text_ad', array(
+			'section'        => 'apex_footer_text',
+			'settings'       => 'footer_text_ad'
+		)
+	) );
+
+	/***** Layout *****/
+
+	// section
+	$wp_customize->add_section( 'apex_layout', array(
+		'title'      => __( 'Layout', 'apex' ),
+		'priority'   => 47,
+		'capability' => 'edit_theme_options'
+	) );
+	// setting
+	$wp_customize->add_setting( 'layout_text_ad', array(
+		'type'              => 'theme_mod',
+		'capability'        => 'edit_theme_options',
+		'sanitize_callback' => 'absint',
+	) );
+	// control
+	$wp_customize->add_control( new apex_description_layout_control(
+		$wp_customize, 'layout_ad', array(
+			'section'        => 'apex_layout',
+			'settings'       => 'layout_text_ad'
 		)
 	) );
 }
