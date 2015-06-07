@@ -1,15 +1,14 @@
 INSTALLATION
 ============
-
-1. Extract darkelements.zip and upload the theme folder via FTP to your wp-content/themes/ directory, or login into WordPress Dashboard > Appearance > Themes.
-2. Go to your WordPress Dashboard > Appearance > Themes and select this theme to activate.
+1. Go to your WordPress Dashboard > Appearance > Themes.
+2. Select and install a new theme from the online WordPress Theme Directory or from your pc (zip file).
 3. Once activated, you're ready to use it.
 
 
 HOW TO SET HOMEPAGE
 ===================
 You can use the default homepage (displaying posts) or set a static page as homepage. 
-To set a static homepage login into WordPress Dashboard > Settings > Reading and select the page you want.
+To set a static homepage go to your WordPress Dashboard > Settings > Reading and select the page you want.
 
 
 HOW TO CHANGE HEADER IMAGE
@@ -31,13 +30,13 @@ You can add your own background(image) via  WordPress Dashboard > Appearance > B
 HOW TO SET MENU
 ===============
 DarkElements offers a menu that can contain subpages (2 levels deep).
-You can create and set menu via WordPress Dashboard > Appearance > Menu's.
+You can create and set menu via WordPress Dashboard > Appearance > Menus.
 
 
 TRANSLATION
 ===========
 This theme is translation-ready (Dutch, German, Spanish and French translation included). 
-You can translate this into your own language using for example plugin Codestyling Localization: http://wordpress.org/plugins/codestyling-localization/
+More translations are very welcome! Please contact me via my website.
 
 
 FONTS
@@ -52,9 +51,8 @@ License URI: http://www.apache.org/licenses/LICENSE-2.0.html
 Scripts
 =======
 Script: nav.js
-Source: http://maxfoundry.com/blog/responsive-mobile-navigation-in-wordpress/
+Source: http://maxfoundry.com/articles/116/responsive-mobile-navigation-in-wordpress
 Copyright author: John Hartley
-Author URI: http://maxfoundry.com/blog/author/johnbhartley 
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 

@@ -148,6 +148,18 @@
 	add_filter('previous_posts_link_attributes', 'darkelements_post_prev'); 
 
 
+// Add class to comment nav 
+	function darkelements_comment_next() { 
+		return 'class="comment-next"'; 
+	}
+	add_filter('next_comments_link_attributes', 'darkelements_comment_next'); 
+
+	function darkelements_comment_prev() { 
+		return 'class="comment-prev"'; 
+	}
+	add_filter('previous_comments_link_attributes', 'darkelements_comment_prev'); 
+
+
 // Custom excerpt lenght (default length is 55 words)
 	function darkelements_excerpt_length( $length ) { 
 		return 75; } 

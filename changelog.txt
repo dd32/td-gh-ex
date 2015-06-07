@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+DarkElements version 2.5 - june 2015
+- file page and single: fixed closing div
+- file single: removed if statement 
+- file functions, comments and style: changed alignment of comment nav
+- reordered file style
+- updated file readme
+
 DarkElements version 2.4 - april 2015
 - several small adjustment in stylesheet
 - removed support for document title in older WP versions 

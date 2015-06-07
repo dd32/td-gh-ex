@@ -23,7 +23,7 @@
 
 	<?php endwhile; ?>
 
-	<?php edit_post_link( __( 'Edit', 'darkelements' ), '<div class="edit-link">', '</div' ) ?>
+	<?php edit_post_link( __( 'Edit', 'darkelements' ), '<div class="edit-link">', '</div>' ) ?>
 
 </div>		
 <?php get_footer(); ?>
