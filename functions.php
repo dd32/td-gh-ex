@@ -48,10 +48,11 @@
 			'slide_desc_3' => __('Aldus PageMaker including versions of Lorem Ipsum, rutrum turpi', 'weblizar' ),
 			'slide_btn_text_3' => __('Read More', 'weblizar' ),
 			'slide_btn_link_3' => '#',			
-						
+			// Footer Call-Out
+			'fc_home'=>'1',			
 			'fc_title' => __('Lorem Ipsum is simply dummy text of the printing and typesetting industry. ', 'weblizar' ),
 			'fc_btn_txt' => __('More Features', 'weblizar' ),
-			'fc_btn_link' =>'#',
+			'fc_btn_link' =>"http://weblizar.com/",
 			//Social media links
 			'header_social_media_in_enabled'=>'1',
 			'footer_section_social_media_enbled'=>'1',

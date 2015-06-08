@@ -736,7 +736,10 @@ $site ="http://www.weblizar.com" ;?>
 				</td>
 				</tr>
 			</table>			
-		</div>		
+		</div>
+		<div class="section">
+		<input type="checkbox" name="fc_home" value="1" <?php checked( $wl_theme_options['fc_home'], 1 ); ?> /><span class="explain"><?php _e('Enable footer call out on home page','weblizar');?></span>
+		</div>
 		<div class="section">
 			<h3><?php _e('Footer Call Out Tagline','weblizar'); ?></h3>
 			<input  class="weblizar_inpute" type="text" name="fc_title" id="fc_title"  value="<?php if($wl_theme_options['fc_title']!='') { echo esc_attr($wl_theme_options['fc_title']); } ?>" >	
