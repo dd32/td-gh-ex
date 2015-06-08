@@ -389,6 +389,14 @@ function accesspress_breadcrumbs() {
     }
 }
 
+add_filter('get_the_archive_title','accesspress_change_cat_title');
+function accesspress_change_cat_title($title){
+    if ( is_category() ) {
+        $title = sprintf( __( '%s', 'accesspress-root' ), single_cat_title( '', false ) );
+    }
+    return $title;
+}
+
 function accesspress_exclude_category_from_blogpost($query) {
 $exclude_cat_array = of_get_option('exclude_from_blog');
 if(is_array($exclude_cat_array)):

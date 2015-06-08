@@ -97,6 +97,10 @@ Pattern Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.12
+* Blog Page layout fixed
+* Minor Changes in Admin Panel
+
 Version 1.11
 * Design bug Fixed
 * Screenshot Changed
