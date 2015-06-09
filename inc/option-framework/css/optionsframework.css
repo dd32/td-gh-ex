@@ -341,14 +341,14 @@
 .apmag-themeoption .nav-tab-wrapper{
 	float: left;
 	position: relative;
-	width: 250px;
+	width: 21.8%;
 }
 .apmag-themeoption .metabox-holder {
 	background: none repeat scroll 0 0 #DEDEDE;
 	float: left;
 	min-height: 515px;
-	padding: 25px !important;
-	width: 835px;
+	padding: 2.2% !important;
+	width: 72.8%;
 }
 .apmag-themeoption .static-layout-settings,
 .apmag-themeoption .static-misc{
@@ -499,4 +499,15 @@
 }
 .clearfix:after{
 	clear: both;
+}
+
+@media(max-width: 782px){
+
+	.apmag-themeoption .nav-tab-wrapper,
+	.apmag-themeoption .metabox-holder{
+		width: 100%;
+		box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+	}
 }

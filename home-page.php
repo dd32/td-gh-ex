@@ -32,7 +32,7 @@ get_header();
                                 echo '<div class="block-post-wrapper clearfix">';
                                 $block1_args = array(
                                                     'category_name'=>$block1_cat,
-                                                    'post_status'=>'pubish',
+                                                    'post_status'=>'publish',
                                                     'posts_per_page'=>$posts_for_block1,
                                                     'order'=>'DESC'
                                                     );
@@ -89,7 +89,7 @@ get_header();
                             echo '<div class="block-post-wrapper clearfix">';                           
                             $block2_args = array(
                                                 'category_name'=>$block2_cat,
-                                                'post_status'=>'pubish',
+                                                'post_status'=>'publish',
                                                 'posts_per_page'=>$posts_for_block2,
                                                 'order'=>'DESC'
                                                 );
@@ -154,7 +154,7 @@ get_header();
                                 echo '<div class="block-post-wrapper clearfix">';
                                 $block3_args = array(
                                                     'category_name'=>$block3_cat,
-                                                    'post_status'=>'pubish',
+                                                    'post_status'=>'publish',
                                                     'posts_per_page'=>$posts_for_block3,
                                                     'order'=>'DESC'
                                                     );
@@ -210,7 +210,7 @@ get_header();
                             echo '<div class="block-post-wrapper clearfix">';
                             $block4_args = array(
                                                 'category_name'=>$block4_cat,
-                                                'post_status'=>'pubish',
+                                                'post_status'=>'publish',
                                                 'posts_per_page'=>$posts_for_block4,
                                                 'order'=>'DESC'
                                                 );

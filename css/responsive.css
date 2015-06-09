@@ -34,7 +34,7 @@
     .slide-image > img {
         width: 100%;
     }
-    .small-slider-wrapper .small_slide:last-child {
+    .small-slider-wrapper a:last-child {
         display: none;
     }
     .ak-search .search-form {
@@ -144,8 +144,8 @@
         width: 100%;
         float: none;
     }
-    .nav-wrapper .mag-primary-menu,
-    .search-icon {
+    
+    .nav-wrapper .menu {
         display: none;
     }
     .nav-wrapper .nav-toggle {

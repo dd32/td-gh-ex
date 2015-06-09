@@ -73,12 +73,22 @@ ScreenShot Images
 
 ----------------------------------------------------
 == Changelog ==
+Version 2.0
+ * Fixed spelling of "publish" in homepage.
+ * Removed widget-latest-reviews.php file from widgets folder.
+ * Fixed all bugs in archive page and single page of product (woocommerce).
+ * Add required woocommerce template.
+ * Changed primary menu class name in header.php
+ * Fixed slider on ipad screen.
+ * Show search icon in mobile version.
+ * Responsive for theme option panel.  
+
 Version 1.1.9
  * Fixed bugs on sidebar-home
- * Changed option of TGM ('dismissable')
- * Removed unusal option (show/hide breadcrumbs on single page)
- * Changed image size while crop
- * Changed image size of demo content
+ * Changed option of TGM ('dismissable').
+ * Removed unusal option (show/hide breadcrumbs on single page).
+ * Changed image size while crop.
+ * Changed image size of demo content.
 
 Version 1.1.8
  * Fixed bug on homepage sidebar

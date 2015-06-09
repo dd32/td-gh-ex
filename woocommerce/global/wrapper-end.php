@@ -31,8 +31,5 @@ switch( $template ) {
 		echo '</div></div>';
 		break;
 	default :
-        echo '</div>';
-		get_sidebar( 'shop' );
-		echo '</div>';
-		break;
+        break;
 }

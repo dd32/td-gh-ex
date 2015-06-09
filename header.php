@@ -135,7 +135,7 @@
                         <span> </span>
                         <span> </span>
                     </div>
-        			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'mag-primary-menu' ) ); ?>
+        			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'menu' ) ); ?>
                 </div>
 
                 <?php get_search_form(); ?> 
