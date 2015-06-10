@@ -32,7 +32,6 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width">
-<title><?php wp_title( '|', true, 'right' ); ?></title>
 <?php get_template_part( 'stylearray' ); ?>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
@@ -88,7 +87,7 @@ global $badeyes_options;
 
 
 <div id="page" class="hfeed site">
-
+<header id="masthead">
 <div class="site-header">
 <?php if ( get_header_image() ) : ?>
 <div class="center">
@@ -125,5 +124,5 @@ $header_image_alt = get_post_meta($header_image_att_id, '_wp_attachment_image_al
 </div>
 <?php endif; ?>
 </div>
+</header><!-- #masthead -->
 <div id="main" class="site-main">
-
