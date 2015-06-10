@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Storefront\n"
 "Report-Msgid-Bugs-To: https://github.com/woothemes/storefront/issues\n"
-"POT-Creation-Date: 2015-05-14 15:20:54+00:00\n"
-"PO-Revision-Date: 2015-05-14 15:20+0000\n"
+"POT-Creation-Date: 2015-06-10 15:02:20+00:00\n"
+"PO-Revision-Date: 2015-06-10 15:02+0000\n"
 "Last-Translator: James Koster <jay@woothemes.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/storefront-1/language/ja/)\n"
 "MIME-Version: 1.0\n"
@@ -25,45 +25,45 @@ msgstr "おっと！このページは存在しません。"
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links"
 " below or a search?"
-msgstr ""
+msgstr "ここでは何もみつかりませんでした。たぶん、以下のリンクまたは検索のいずれかを試してみてください！"
 
 #: 404.php:27
 msgid "Most Used Categories"
-msgstr ""
+msgstr "よく使われているカテゴリー"
 
 #: 404.php:43
 msgid "Try looking in the monthly archives."
-msgstr ""
+msgstr "毎月のアーカイブで探してみてください。"
 
 #: comments.php:33 comments.php:51
 msgid "Comment navigation"
-msgstr ""
+msgstr "コメントナビゲーション"
 
 #: comments.php:34 comments.php:52
 msgid "&larr; Older Comments"
-msgstr ""
+msgstr "&larr; 古いコメント"
 
 #: comments.php:35 comments.php:53
 msgid "Newer Comments &rarr;"
-msgstr ""
+msgstr "新しいコメント &rarr;"
 
 #: comments.php:60
 msgid "Comments are closed."
-msgstr ""
+msgstr "コメントは受け付けていません。"
 
 #: content-none.php:13
 msgid "Nothing Found"
-msgstr ""
+msgstr "何も見つかりません"
 
 #: content-none.php:19
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
+msgstr "最初の投稿を公開する準備はできましたか？<a href=\"%1$s\">ここから始めて下さい。</a>"
 
 #: content-none.php:23
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
-msgstr ""
+msgstr "申し訳ありませんが、何も検索条件に一致しません。異なったキーワードで、もう一度やり直してください。"
 
 #: content-none.php:28
 msgid ""
@@ -249,27 +249,26 @@ msgid ""
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/child-themes.php:20
-msgid "Boutique Child Theme"
+msgid "Galleria Child Theme"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/child-themes.php:21
-msgid "Boutique"
+msgid "Galleria"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/child-themes.php:22
 msgid ""
-"Boutique is a simple, traditionally designed Storefront child theme, ideal "
-"for small stores or boutiques. Add your logo, create a unique color scheme "
-"and start selling!"
+"Galleria is a Storefront child theme perfect for fashion and design stores. "
+"Stylish and minimalist, it gives sites a high class look and keeps products "
+"centerstage."
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/child-themes.php:25
-#: inc/admin/welcome-screen/sections/child-themes.php:37
-msgid "Install %s now"
+msgid "Buy %s now"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/child-themes.php:27
-msgid "Read more %sabout Boutique%s &rarr;"
+msgid "Read more %sabout Galleria%s &rarr;"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/child-themes.php:32
@@ -286,8 +285,32 @@ msgid ""
 "natural, organic or hand made goods."
 msgstr ""
 
+#: inc/admin/welcome-screen/sections/child-themes.php:37
+#: inc/admin/welcome-screen/sections/child-themes.php:49
+msgid "Install %s now"
+msgstr ""
+
 #: inc/admin/welcome-screen/sections/child-themes.php:39
 msgid "Read more %sabout Deli%s &rarr;"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/child-themes.php:44
+msgid "Boutique Child Theme"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/child-themes.php:45
+msgid "Boutique"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/child-themes.php:46
+msgid ""
+"Boutique is a simple, traditionally designed Storefront child theme, ideal "
+"for small stores or boutiques. Add your logo, create a unique color scheme "
+"and start selling!"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/child-themes.php:51
+msgid "Read more %sabout Boutique%s &rarr;"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:15
@@ -615,11 +638,11 @@ msgstr ""
 
 #: inc/functions/setup.php:60
 msgid "Primary Menu"
-msgstr ""
+msgstr "Primary Menu"
 
 #: inc/functions/setup.php:61
 msgid "Secondary Menu"
-msgstr ""
+msgstr "Secondary Menu"
 
 #: inc/functions/setup.php:62
 msgid "Handheld Menu"
@@ -627,11 +650,11 @@ msgstr ""
 
 #: inc/functions/setup.php:104
 msgid "Sidebar"
-msgstr ""
+msgstr "サイドバー"
 
 #: inc/functions/setup.php:127
 msgid "Footer %d"
-msgstr ""
+msgstr "フッター %d"
 
 #: inc/functions/setup.php:129
 msgid "Widgetized Footer Region %d."
@@ -639,11 +662,11 @@ msgstr ""
 
 #: inc/structure/comments.php:40
 msgid "<cite class=\"fn\">%s</cite>"
-msgstr ""
+msgstr "<cite class=\"fn\">%s</cite>"
 
 #: inc/structure/comments.php:43
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "あなたのコメントは管理者の承認待ちです。"
 
 #: inc/structure/comments.php:59
 msgid "Edit"
@@ -679,7 +702,7 @@ msgstr ""
 
 #: inc/structure/post.php:47
 msgid "Continue reading %s"
-msgstr ""
+msgstr "続きを読む %s"
 
 #. translators: used between list items, there is a space after the comma
 #: inc/structure/post.php:74 inc/structure/post.php:87
@@ -688,49 +711,49 @@ msgstr ""
 
 #: inc/structure/post.php:79
 msgid "Categories: "
-msgstr ""
+msgstr "カテゴリー:"
 
 #: inc/structure/post.php:92
 msgid "Tags: "
-msgstr ""
+msgstr "タグ:"
 
 #: inc/structure/post.php:101
 msgid "Leave a comment"
-msgstr ""
+msgstr "コメントを残す"
 
 #: inc/structure/post.php:101
 msgid "1 Comment"
-msgstr ""
+msgstr "1コメント"
 
 #: inc/structure/post.php:101
 msgid "% Comments"
-msgstr ""
+msgstr "%コメント"
 
 #: inc/structure/post.php:117
 msgid "Next"
-msgstr ""
+msgstr "次"
 
 #: inc/structure/post.php:118
 msgid "Previous"
-msgstr ""
+msgstr "前"
 
 #: inc/structure/template-tags.php:26
 msgid "Product Categories"
-msgstr ""
+msgstr "商品カテゴリー"
 
-#: inc/structure/template-tags.php:58
+#: inc/structure/template-tags.php:65
 msgid "Recent Products"
 msgstr ""
 
-#: inc/structure/template-tags.php:92
+#: inc/structure/template-tags.php:103
 msgid "Featured Products"
 msgstr ""
 
-#: inc/structure/template-tags.php:124
+#: inc/structure/template-tags.php:142
 msgid "Top Rated Products"
 msgstr ""
 
-#: inc/structure/template-tags.php:156
+#: inc/structure/template-tags.php:179
 msgid "On Sale"
 msgstr ""
 
@@ -753,7 +776,7 @@ msgstr "Storefront"
 
 #. Theme URI of the plugin/theme
 msgid "http://www.woothemes.com/storefront"
-msgstr ""
+msgstr "http://www.woothemes.com/storefront"
 
 #. Description of the plugin/theme
 msgid ""
@@ -771,7 +794,7 @@ msgstr "WooThemes"
 
 #. Author URI of the plugin/theme
 msgid "http://www.woothemes.com"
-msgstr ""
+msgstr "http://www.woothemes.com"
 
 #. Template Name of the plugin/theme
 msgid "Full width"

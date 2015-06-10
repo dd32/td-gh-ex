@@ -1,12 +1,13 @@
 # Copyright (C) 2015 WooThemes
 # This file is distributed under the GNU General Public License v2 or later.
 # Translators:
+# esucces <jan@esucces.dk>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Storefront\n"
 "Report-Msgid-Bugs-To: https://github.com/woothemes/storefront/issues\n"
-"POT-Creation-Date: 2015-05-14 15:20:54+00:00\n"
-"PO-Revision-Date: 2015-05-14 15:20+0000\n"
+"POT-Creation-Date: 2015-06-10 15:02:20+00:00\n"
+"PO-Revision-Date: 2015-06-10 15:02+0000\n"
 "Last-Translator: James Koster <jay@woothemes.com>\n"
 "Language-Team: Danish (Denmark) (http://www.transifex.com/projects/p/storefront-1/language/da_DK/)\n"
 "MIME-Version: 1.0\n"
@@ -18,83 +19,83 @@ msgstr ""
 
 #: 404.php:15
 msgid "Oops! That page can&rsquo;t be found."
-msgstr ""
+msgstr "Undskyld - siden kan ikke findes."
 
 #: 404.php:19
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links"
 " below or a search?"
-msgstr ""
+msgstr "Der blev ikke fundet noget indhold på denne adresse. Måske du kan prøve med et af nedenstående links eller måske en søgning?"
 
 #: 404.php:27
 msgid "Most Used Categories"
-msgstr ""
+msgstr "Mest anvendte kategorier"
 
 #: 404.php:43
 msgid "Try looking in the monthly archives."
-msgstr ""
+msgstr "Forsøg med et kig i månedsarkiverne."
 
 #: comments.php:33 comments.php:51
 msgid "Comment navigation"
-msgstr ""
+msgstr "Kommentar navigation"
 
 #: comments.php:34 comments.php:52
 msgid "&larr; Older Comments"
-msgstr ""
+msgstr "&larr; Ældre kommentarer"
 
 #: comments.php:35 comments.php:53
 msgid "Newer Comments &rarr;"
-msgstr ""
+msgstr "Nyere kommentarer &rarr;"
 
 #: comments.php:60
 msgid "Comments are closed."
-msgstr ""
+msgstr "Lukket for kommentarer."
 
 #: content-none.php:13
 msgid "Nothing Found"
-msgstr ""
+msgstr "Ingenting fundet"
 
 #: content-none.php:19
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
+msgstr "Klar til at sende dit første indlæg i luften? <a href=\"%1$s\">Start her</a>."
 
 #: content-none.php:23
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
-msgstr ""
+msgstr "Der er desværre ingen match på dit valgte søgeord. Prøv en ny søgning med andre ord."
 
 #: content-none.php:28
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
-msgstr ""
+msgstr "Det ser ud til at vi ikke kan finde det du er ude efter. Måske du kan prøve en søgning."
 
 #: inc/admin/welcome-screen/sections/add-ons.php:7
 msgid "Enhance your site"
-msgstr ""
+msgstr "Udvid din side"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:10
 msgid ""
 "Below you will find a selection of free and commercial Storefront extensions"
 " that could help improve your online store."
-msgstr ""
+msgstr "Herunder kan du finde en liste med gratis og kommercielle Storefront udvidelser som kan hjælpe dig med at forbedre din webshop."
 
 #: inc/admin/welcome-screen/sections/add-ons.php:14
 msgid "Make your site instantly recognisable by adding your logo"
-msgstr ""
+msgstr "Gør din shop mere synlig ved at tilføje dit logo"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:14
 #: inc/admin/welcome-screen/sections/add-ons.php:105
 msgid "Free (Third Party)"
-msgstr ""
+msgstr "Gratis (3. part)"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:16
 msgid ""
 "Jetpack is probably a plugin you're already familiar with. Storefront fully "
 "supports Jetpacks site logo feature making it easy to upload and display "
 "your logo via the Customizer. %sMore info &rarr;%s"
-msgstr ""
+msgstr "Du kender måske allerede Jetpack. Storefront understøtter Jetpacks logo feature så du nemt kan uploade og vise dit logo via Customizer. %sMere info &rarr;%s"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:19
 #: inc/admin/welcome-screen/sections/add-ons.php:32
@@ -105,48 +106,48 @@ msgstr ""
 #: inc/admin/welcome-screen/sections/add-ons.php:97
 #: inc/admin/welcome-screen/sections/add-ons.php:110
 msgid "Activated"
-msgstr ""
+msgstr "Aktiveret"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:21
 #: inc/admin/welcome-screen/sections/getting-started.php:39
 msgid "Install Jetpack"
-msgstr ""
+msgstr "Installer Jetpack"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:27
 msgid "Further customise your store with the Storefront Designer"
-msgstr ""
+msgstr "Tilpas din webshop med Storefront Designer"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:27
 #: inc/admin/welcome-screen/sections/add-ons.php:40
 #: inc/admin/welcome-screen/sections/add-ons.php:92
 msgid "Premium"
-msgstr ""
+msgstr "Premium"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:29
 msgid ""
 "Storefront Designer adds a bunch of additional appearance settings allowing "
 "you to further tweak and perfect your Storefront design by changing the "
 "header layout, button styles, typographical schemes/scales and more."
-msgstr ""
+msgstr "Storefront designer tilføjer en del ekstra design indstillinger. Så har du mulighed for at ændre header udseende, layout af knapper, typografi osv."
 
 #: inc/admin/welcome-screen/sections/add-ons.php:34
 msgid "Buy %sStorefront Designer%s now"
-msgstr ""
+msgstr "Køb %sStorefront Designer%s"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:40
 msgid "Highlight a product of your choosing with the Storefront Product Hero"
-msgstr ""
+msgstr "Fremhæv et produkt med Storefront Product Hero"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:42
 msgid ""
 "The Storefront Product Hero extension adds a parallax hero component to your"
 " homepage highlighting a specific product at your store. Use the shortcode "
 "to add attractive hero components to posts, pages or widgets."
-msgstr ""
+msgstr "The Storefront Product Hero extension adds a parallax hero component to your homepage highlighting a specific product at your store. Use the shortcode to add attractive hero components to posts, pages or widgets."
 
 #: inc/admin/welcome-screen/sections/add-ons.php:47
 msgid "Buy %sStorefront Product Hero%s now"
-msgstr ""
+msgstr "Køb %sStorefront Product Hero%s"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:53
 msgid ""
@@ -157,7 +158,7 @@ msgstr ""
 #: inc/admin/welcome-screen/sections/add-ons.php:66
 #: inc/admin/welcome-screen/sections/add-ons.php:79
 msgid "Free"
-msgstr ""
+msgstr "Gratis"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:55
 msgid ""
@@ -168,7 +169,7 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:60
 msgid "Install Storefront Product Sharing"
-msgstr ""
+msgstr "Installer Storefront Product Sharing"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:66
 msgid "Add a site-wide call out to your footer with Storefront Footer Bar"
@@ -182,11 +183,11 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:73
 msgid "Install Storefront Footer Bar"
-msgstr ""
+msgstr "Installer Storefront Footer Bar"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:79
 msgid "Storefront Product Pagination"
-msgstr ""
+msgstr "Storefront Product Pagination"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:81
 msgid ""
@@ -196,7 +197,7 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:86
 msgid "Install Storefront Product Pagination"
-msgstr ""
+msgstr "Installer Storefront Product Pagination"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:92
 msgid ""
@@ -213,7 +214,7 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:99
 msgid "Buy %sStorefront WooCommerce Customiser%s now"
-msgstr ""
+msgstr "Køb %sStorefront WooCommerce Customiser%s"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:105
 msgid "Add practical information to your pages with Storefront Top Bar"
@@ -227,7 +228,7 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/add-ons.php:112
 msgid "Install Storefront Top Bar"
-msgstr ""
+msgstr "Installer Storefront Top Bar"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:120
 msgid ""
@@ -238,7 +239,7 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/child-themes.php:11
 msgid "Get a whole new look"
-msgstr ""
+msgstr "Få et helt nyt udseende"
 
 #: inc/admin/welcome-screen/sections/child-themes.php:14
 msgid ""
@@ -248,36 +249,35 @@ msgid ""
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/child-themes.php:20
-msgid "Boutique Child Theme"
+msgid "Galleria Child Theme"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/child-themes.php:21
-msgid "Boutique"
+msgid "Galleria"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/child-themes.php:22
 msgid ""
-"Boutique is a simple, traditionally designed Storefront child theme, ideal "
-"for small stores or boutiques. Add your logo, create a unique color scheme "
-"and start selling!"
+"Galleria is a Storefront child theme perfect for fashion and design stores. "
+"Stylish and minimalist, it gives sites a high class look and keeps products "
+"centerstage."
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/child-themes.php:25
-#: inc/admin/welcome-screen/sections/child-themes.php:37
-msgid "Install %s now"
+msgid "Buy %s now"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/child-themes.php:27
-msgid "Read more %sabout Boutique%s &rarr;"
+msgid "Read more %sabout Galleria%s &rarr;"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/child-themes.php:32
 msgid "Deli Child Theme"
-msgstr ""
+msgstr "Deli Child Theme"
 
 #: inc/admin/welcome-screen/sections/child-themes.php:33
 msgid "Deli"
-msgstr ""
+msgstr "Deli"
 
 #: inc/admin/welcome-screen/sections/child-themes.php:34
 msgid ""
@@ -285,24 +285,48 @@ msgid ""
 "natural, organic or hand made goods."
 msgstr ""
 
+#: inc/admin/welcome-screen/sections/child-themes.php:37
+#: inc/admin/welcome-screen/sections/child-themes.php:49
+msgid "Install %s now"
+msgstr "Installer %s nu"
+
 #: inc/admin/welcome-screen/sections/child-themes.php:39
 msgid "Read more %sabout Deli%s &rarr;"
 msgstr ""
 
+#: inc/admin/welcome-screen/sections/child-themes.php:44
+msgid "Boutique Child Theme"
+msgstr "Boutique Child Theme"
+
+#: inc/admin/welcome-screen/sections/child-themes.php:45
+msgid "Boutique"
+msgstr "Boutique"
+
+#: inc/admin/welcome-screen/sections/child-themes.php:46
+msgid ""
+"Boutique is a simple, traditionally designed Storefront child theme, ideal "
+"for small stores or boutiques. Add your logo, create a unique color scheme "
+"and start selling!"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/child-themes.php:51
+msgid "Read more %sabout Boutique%s &rarr;"
+msgstr ""
+
 #: inc/admin/welcome-screen/sections/getting-started.php:15
 msgid "Using Storefront"
-msgstr ""
+msgstr "Sådan bruger du Storefront"
 
 #: inc/admin/welcome-screen/sections/getting-started.php:16
 msgid ""
 "We've purposely kept Storefront lean & mean so configuration is a breeze. "
 "Here are some common theme-setup tasks:"
-msgstr ""
+msgstr "Vi har med vilje gjort Storefront superlet og hurtigt, så det er nemt at lave indstillingerne. Her er et par ting som du bør indstille:"
 
 #: inc/admin/welcome-screen/sections/getting-started.php:20
 #: inc/admin/welcome-screen/sections/getting-started.php:23
 msgid "Install WooCommerce"
-msgstr ""
+msgstr "Installer WooCommerce"
 
 #: inc/admin/welcome-screen/sections/getting-started.php:21
 msgid ""
@@ -313,7 +337,7 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:26
 msgid "Configure menu locations"
-msgstr ""
+msgstr "Indstil hvilke menuer du vil anvende."
 
 #: inc/admin/welcome-screen/sections/getting-started.php:27
 msgid ""
@@ -327,11 +351,11 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:28
 msgid "Configure menus"
-msgstr ""
+msgstr "Indstil menuer"
 
 #: inc/admin/welcome-screen/sections/getting-started.php:30
 msgid "Create a color scheme"
-msgstr ""
+msgstr "Lav dit farveskema"
 
 #: inc/admin/welcome-screen/sections/getting-started.php:31
 msgid ""
@@ -341,11 +365,11 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:32
 msgid "Open the Customizer"
-msgstr ""
+msgstr "Åben Customizer"
 
 #: inc/admin/welcome-screen/sections/getting-started.php:35
 msgid "Add your logo"
-msgstr ""
+msgstr "Tilføj logo"
 
 #: inc/admin/welcome-screen/sections/getting-started.php:36
 msgid ""
@@ -382,7 +406,7 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:55
 msgid "View documentation"
-msgstr ""
+msgstr "Vis dokumentation"
 
 #: inc/admin/welcome-screen/sections/getting-started.php:56
 msgid ""
@@ -392,13 +416,13 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:57
 msgid "View documentation &rarr;"
-msgstr ""
+msgstr "Vis dokumentation &rarr;"
 
 #: inc/admin/welcome-screen/sections/intro.php:14
 msgid ""
 "Awesome! You've decided to use Storefront to enrich your WooCommerce store "
 "design."
-msgstr ""
+msgstr "Sejt! Du har valgt at bruge Storefront til at forbedre din WooCommerce webshop."
 
 #: inc/admin/welcome-screen/sections/intro.php:15
 msgid ""
@@ -410,23 +434,23 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/tabs.php:2
 msgid "Getting Started"
-msgstr ""
+msgstr "Sådan starter du"
 
 #: inc/admin/welcome-screen/sections/tabs.php:3
 msgid "Enhance Storefront"
-msgstr ""
+msgstr "Udvid Storefront"
 
 #: inc/admin/welcome-screen/sections/tabs.php:4
 msgid "Storefront Child Themes"
-msgstr ""
+msgstr "Storefront Child Themes"
 
 #: inc/admin/welcome-screen/sections/who.php:8
 msgid "The Woo Team"
-msgstr ""
+msgstr "The Woo Team"
 
 #: inc/admin/welcome-screen/sections/who.php:9
 msgid "Who are WooThemes?"
-msgstr ""
+msgstr "Hvem er WooThemes?"
 
 #: inc/admin/welcome-screen/sections/who.php:10
 msgid ""
@@ -437,15 +461,15 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/who.php:11
 msgid "Visit WooThemes"
-msgstr ""
+msgstr "Besøg WooThemes"
 
 #: inc/admin/welcome-screen/sections/who.php:17
 msgid "WooCommerce logo"
-msgstr ""
+msgstr "WooCommerce logo"
 
 #: inc/admin/welcome-screen/sections/who.php:18
 msgid "What is WooCommerce?"
-msgstr ""
+msgstr "Hvad er WooCommerce?"
 
 #: inc/admin/welcome-screen/sections/who.php:19
 msgid ""
@@ -456,19 +480,19 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/who.php:20
 msgid "Download & Install WooCommerce"
-msgstr ""
+msgstr "Download & Installer WooCommerce"
 
 #: inc/admin/welcome-screen/sections/who.php:21
 msgid "View WooCommerce Documentation"
-msgstr ""
+msgstr "Vis WooCommerce dokumentation"
 
 #: inc/admin/welcome-screen/sections/who.php:27
 msgid "Can I contribute to Storefront?"
-msgstr ""
+msgstr "Kan jeg hjælpe med at udvikle Storefront?"
 
 #: inc/admin/welcome-screen/sections/who.php:28
 msgid "Can I Contribute?"
-msgstr ""
+msgstr "Kan jeg hjælpe?"
 
 #: inc/admin/welcome-screen/sections/who.php:29
 msgid ""
@@ -479,15 +503,15 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/who.php:30
 msgid "Storefront at GitHub"
-msgstr ""
+msgstr "Storefront at GitHub"
 
 #: inc/admin/welcome-screen/sections/who.php:30
 msgid "Storefront at Transifex"
-msgstr ""
+msgstr "Storefront at Transifex"
 
 #: inc/admin/welcome-screen/sections/who.php:34
 msgid "Can't find a feature?"
-msgstr ""
+msgstr "Mangler du en funktion?"
 
 #: inc/admin/welcome-screen/sections/who.php:35
 msgid ""
@@ -497,12 +521,12 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/who.php:37
 msgid "Are you enjoying Storefront?"
-msgstr ""
+msgstr "Kan du lide Storefront?"
 
 #: inc/admin/welcome-screen/sections/who.php:38
 msgid ""
 "Why not leave a review on %sWordPress.org%s? We'd really appreciate it! :-)"
-msgstr ""
+msgstr "Så er du velkommen til at anmelde på %sWordPress.org%s? Det sætter vi stor pris på :-)"
 
 #: inc/admin/welcome-screen/welcome-screen.php:47
 msgid ""
@@ -512,7 +536,7 @@ msgstr ""
 
 #: inc/admin/welcome-screen/welcome-screen.php:48
 msgid "Get started with Storefront"
-msgstr ""
+msgstr "Sådan kommer du igang med Storefront"
 
 #: inc/customizer/controls/more.php:16
 msgid ""
@@ -523,7 +547,7 @@ msgstr ""
 
 #: inc/customizer/controls/more.php:20
 msgid "Enjoying Storefront?"
-msgstr ""
+msgstr "Kan du lide Storefront?"
 
 #: inc/customizer/controls/more.php:23
 msgid ""
@@ -532,49 +556,49 @@ msgstr ""
 
 #: inc/customizer/controls.php:24
 msgid "Background"
-msgstr ""
+msgstr "Baggrund"
 
 #: inc/customizer/controls.php:28 inc/functions/setup.php:114
 msgid "Header"
-msgstr ""
+msgstr "Header"
 
 #: inc/customizer/controls.php:45
 msgid "Typography"
-msgstr ""
+msgstr "Typografi"
 
 #: inc/customizer/controls.php:58
 msgid "Link / accent color"
-msgstr ""
+msgstr "Link / accent farve"
 
 #: inc/customizer/controls.php:74 inc/customizer/controls.php:147
 #: inc/customizer/controls.php:203 inc/customizer/controls.php:271
 msgid "Text color"
-msgstr ""
+msgstr "Tekst farve"
 
 #: inc/customizer/controls.php:90 inc/customizer/controls.php:188
 msgid "Heading color"
-msgstr ""
+msgstr "Overskrift farve"
 
 #: inc/customizer/controls.php:103
 msgid "Logo"
-msgstr ""
+msgstr "Logo"
 
 #: inc/customizer/controls.php:110
 msgid "Looking to add a logo? Install the %sJetpack%s plugin! %sRead more%s."
-msgstr ""
+msgstr "Vil du gerne tilføje et logo? Installer %sJetpack%s plugin! %sLæs mere%s."
 
 #: inc/customizer/controls.php:131 inc/customizer/controls.php:233
 #: inc/customizer/controls.php:256
 msgid "Background color"
-msgstr ""
+msgstr "Baggrund farve"
 
 #: inc/customizer/controls.php:163 inc/customizer/controls.php:218
 msgid "Link color"
-msgstr ""
+msgstr "Link farve"
 
 #: inc/customizer/controls.php:173
 msgid "Footer"
-msgstr ""
+msgstr "Footer"
 
 #: inc/customizer/controls.php:175
 msgid "Customise the look & feel of your web site footer."
@@ -717,19 +741,19 @@ msgstr ""
 msgid "Product Categories"
 msgstr ""
 
-#: inc/structure/template-tags.php:58
+#: inc/structure/template-tags.php:65
 msgid "Recent Products"
 msgstr ""
 
-#: inc/structure/template-tags.php:92
+#: inc/structure/template-tags.php:103
 msgid "Featured Products"
 msgstr ""
 
-#: inc/structure/template-tags.php:124
+#: inc/structure/template-tags.php:142
 msgid "Top Rated Products"
 msgstr ""
 
-#: inc/structure/template-tags.php:156
+#: inc/structure/template-tags.php:179
 msgid "On Sale"
 msgstr ""
 

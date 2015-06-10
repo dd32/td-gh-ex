@@ -4,7 +4,7 @@ Theme URI:    	http://www.woothemes.com/storefront
 Author:       	WooThemes
 Author URI:		http://www.woothemes.com
 Description:  	Storefront is the perfect theme for your next WooCommerce project. Designed and developed by WooThemes, it features a deep integration with our market leading WooCommerce plugin, several layout & color options to personalise your shop, multiple widget regions, a responsive design and much more. Developers will love it's lean and extensible codebase making it a joy to customise and extend. Looking for a WooCommerce theme? Look no further!
-Version:      	1.4.5
+Version:      	1.4.6
 License:      	GNU General Public License v2 or later
 License URI:  	http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain:  	storefront
@@ -540,12 +540,15 @@ body {
   word-wrap: break-word;
   font-size: .938em; }
 
-body, button, input, select, textarea {
+body, button, input, textarea {
   color: #60646c;
   font-family: "Helvetica Neue", sans-serif;
   line-height: 1.618;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+
+select {
+  font-family: initial !important; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Helvetica Neue", sans-serif;
@@ -676,7 +679,7 @@ a {
   text-decoration: none;
   font-weight: 700; }
   a:focus {
-    outline: 2px solid #96588a; }
+    outline: 1px solid #96588a; }
 
 .storefront-cute * {
   font-family: "Comic Sans MS", sans-serif; }

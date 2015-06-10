@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Storefront\n"
 "Report-Msgid-Bugs-To: https://github.com/woothemes/storefront/issues\n"
-"POT-Creation-Date: 2015-05-14 15:20:54+00:00\n"
-"PO-Revision-Date: 2015-05-14 15:20+0000\n"
+"POT-Creation-Date: 2015-06-10 15:02:20+00:00\n"
+"PO-Revision-Date: 2015-06-10 15:02+0000\n"
 "Last-Translator: James Koster <jay@woothemes.com>\n"
 "Language-Team: Swedish (Sweden) (http://www.transifex.com/projects/p/storefront-1/language/sv_SE/)\n"
 "MIME-Version: 1.0\n"
@@ -96,7 +96,7 @@ msgid ""
 "Jetpack is probably a plugin you're already familiar with. Storefront fully "
 "supports Jetpacks site logo feature making it easy to upload and display "
 "your logo via the Customizer. %sMore info &rarr;%s"
-msgstr "Jetpack är förmodligen redan ett plugin som du känner till. Storefront supporterar fullt ut Jetpacks funktions för att enkelt ladda upp och lägga till din egen logga via Customizer. %sMer info &arr;%s"
+msgstr "Jetpack är förmodligen redan ett plugin som du känner till. Storefront supporterar fullt ut Jetpacks funktions för att enkelt ladda upp och lägga till din egen logga via Customizer. %sMer info &rarr;%s"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:19
 #: inc/admin/welcome-screen/sections/add-ons.php:32
@@ -166,7 +166,7 @@ msgid ""
 "Storefront Product Sharing adds attractive social sharing icons for "
 "Facebook, Twitter, Pinterest and Email to your product pages. %sMore info "
 "&rarr;%s"
-msgstr "Storefront Product Sharing lägger till snygga ikoner för att dela dina produktsidor på Facebook, Twitter, Pinterest och mail. %sMer info &arr;%s"
+msgstr "Storefront Product Sharing lägger till snygga ikoner för att dela dina produktsidor på Facebook, Twitter, Pinterest och mail. %sMer info &rarr;%s"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:60
 msgid "Install Storefront Product Sharing"
@@ -180,7 +180,7 @@ msgstr "Lägg till en \"call to action\" i fullbredd i din sidfot med Storefront
 msgid ""
 "Storefront Footer Bar adds a full width widgetised region above the default "
 "Storefront footer widget area. %sMore info &rarr;%s"
-msgstr "Storefront Footer Bar lägger till ett område i fullbredd, med widgetstöd, strax ovanför den vanliga Storefront sidfot. %sMer info &arr;%s"
+msgstr "Storefront Footer Bar lägger till ett område i fullbredd, med widgetstöd, strax ovanför den vanliga Storefront sidfot. %sMer info &rarr;%s"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:73
 msgid "Install Storefront Footer Bar"
@@ -194,7 +194,7 @@ msgstr "Storefront Product Pagination"
 msgid ""
 "Storefront Product Pagination adds unobtrusive links to next/previous "
 "products on your WooCommerce single product pages. %sMore info &rarr;%s"
-msgstr "Storefront Product Pagination diskreta länkar till nästa/föregående produkt på dina WooCommerce singelproduktsidor. %sMer info &arr;%s"
+msgstr "Storefront Product Pagination diskreta länkar till nästa/föregående produkt på dina WooCommerce singelproduktsidor. %sMer info &rarr;%s"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:86
 msgid "Install Storefront Product Pagination"
@@ -225,7 +225,7 @@ msgstr "Lägg till praktisk information till dina sidor med hjälp av Storefront
 msgid ""
 "Storefront Top Bar adds a widgetised content area at the top of your site "
 "and customise it's appearance in the Customizer. %sMore info &rarr;%s"
-msgstr "Storefront Top Bar lägger till ett område med widgetstöd högst upp på din butiks sidor och du kan anpassa dess utseende via Customiser. %sMer info &arr;%s"
+msgstr "Storefront Top Bar lägger till ett område med widgetstöd högst upp på din butiks sidor och du kan anpassa dess utseende via Customiser. %sMer info &rarr;%s"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:112
 msgid "Install Storefront Top Bar"
@@ -250,46 +250,69 @@ msgid ""
 msgstr "Nedan finner du ett urval av Storefront barnteman som kan ge din butik helt nya utseenden utan att försaka Storefronts stabilitet och funktionalitet."
 
 #: inc/admin/welcome-screen/sections/child-themes.php:20
+msgid "Galleria Child Theme"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/child-themes.php:21
+msgid "Galleria"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/child-themes.php:22
+msgid ""
+"Galleria is a Storefront child theme perfect for fashion and design stores. "
+"Stylish and minimalist, it gives sites a high class look and keeps products "
+"centerstage."
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/child-themes.php:25
+msgid "Buy %s now"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/child-themes.php:27
+msgid "Read more %sabout Galleria%s &rarr;"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/child-themes.php:32
+msgid "Deli Child Theme"
+msgstr "Deli Child Theme"
+
+#: inc/admin/welcome-screen/sections/child-themes.php:33
+msgid "Deli"
+msgstr "Deli"
+
+#: inc/admin/welcome-screen/sections/child-themes.php:34
+msgid ""
+"Deli features a texturised, earthy design, perfect for stores selling "
+"natural, organic or hand made goods."
+msgstr "Deli har en texturerad och jordnära design, perfekt för butiker som till exempel säljer naturliga, organiska eller handgjorda produkter."
+
+#: inc/admin/welcome-screen/sections/child-themes.php:37
+#: inc/admin/welcome-screen/sections/child-themes.php:49
+msgid "Install %s now"
+msgstr "Installera %s nu"
+
+#: inc/admin/welcome-screen/sections/child-themes.php:39
+msgid "Read more %sabout Deli%s &rarr;"
+msgstr "Läs mer %som Deli%s &rarr;"
+
+#: inc/admin/welcome-screen/sections/child-themes.php:44
 msgid "Boutique Child Theme"
 msgstr "Boutique Child Theme"
 
-#: inc/admin/welcome-screen/sections/child-themes.php:21
+#: inc/admin/welcome-screen/sections/child-themes.php:45
 msgid "Boutique"
 msgstr "Boutique"
 
-#: inc/admin/welcome-screen/sections/child-themes.php:22
+#: inc/admin/welcome-screen/sections/child-themes.php:46
 msgid ""
 "Boutique is a simple, traditionally designed Storefront child theme, ideal "
 "for small stores or boutiques. Add your logo, create a unique color scheme "
 "and start selling!"
 msgstr "Boutique är ett enkelt, traditionellt designat Storefront barntema. Idealiskt för små butiker. Komplettera med din logga, skapa ett eget unikt färgschema och börja sälja!"
 
-#: inc/admin/welcome-screen/sections/child-themes.php:25
-#: inc/admin/welcome-screen/sections/child-themes.php:37
-msgid "Install %s now"
-msgstr "Installera %s nu"
-
-#: inc/admin/welcome-screen/sections/child-themes.php:27
+#: inc/admin/welcome-screen/sections/child-themes.php:51
 msgid "Read more %sabout Boutique%s &rarr;"
 msgstr "Läs mer %som Boutique%s &rarr;"
-
-#: inc/admin/welcome-screen/sections/child-themes.php:32
-msgid "Deli Child Theme"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/child-themes.php:33
-msgid "Deli"
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/child-themes.php:34
-msgid ""
-"Deli features a texturised, earthy design, perfect for stores selling "
-"natural, organic or hand made goods."
-msgstr ""
-
-#: inc/admin/welcome-screen/sections/child-themes.php:39
-msgid "Read more %sabout Deli%s &rarr;"
-msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:15
 msgid "Using Storefront"
@@ -353,7 +376,7 @@ msgstr "Lägg till din logga"
 msgid ""
 "Install and activate either %sJetpack%s or the to enable a custom logo "
 "option in the Customizer."
-msgstr ""
+msgstr "Installera och aktivera %sJetpack%s så kan du sen ange logo i anpassaren."
 
 #: inc/admin/welcome-screen/sections/getting-started.php:46
 msgid "Configure homepage template"
@@ -394,7 +417,7 @@ msgstr "Du kan läsa detaljerad information i dokumentationen om Storefronts ege
 
 #: inc/admin/welcome-screen/sections/getting-started.php:57
 msgid "View documentation &rarr;"
-msgstr "Visa dokumentation &arr;"
+msgstr "Visa dokumentation &rarr;"
 
 #: inc/admin/welcome-screen/sections/intro.php:14
 msgid ""
@@ -559,11 +582,11 @@ msgstr "Rubrikfärg"
 
 #: inc/customizer/controls.php:103
 msgid "Logo"
-msgstr ""
+msgstr "Logotyp"
 
 #: inc/customizer/controls.php:110
 msgid "Looking to add a logo? Install the %sJetpack%s plugin! %sRead more%s."
-msgstr ""
+msgstr "Letar du efter att lägga till en logga? Installera %sJetpack%s plugin! %sLäs mer%s."
 
 #: inc/customizer/controls.php:131 inc/customizer/controls.php:233
 #: inc/customizer/controls.php:256
@@ -719,19 +742,19 @@ msgstr "Föregående"
 msgid "Product Categories"
 msgstr "Produktkategorier"
 
-#: inc/structure/template-tags.php:58
+#: inc/structure/template-tags.php:65
 msgid "Recent Products"
 msgstr "Senaste produkter"
 
-#: inc/structure/template-tags.php:92
+#: inc/structure/template-tags.php:103
 msgid "Featured Products"
 msgstr "Heta produkter"
 
-#: inc/structure/template-tags.php:124
+#: inc/structure/template-tags.php:142
 msgid "Top Rated Products"
 msgstr "Produkter med högst omdömen"
 
-#: inc/structure/template-tags.php:156
+#: inc/structure/template-tags.php:179
 msgid "On Sale"
 msgstr "På REA"
 

@@ -3,12 +3,13 @@
 # Translators:
 # Davide Vecchini <davide@studioazione.it>, 2015
 # Nicola Mustone <mustone.nicola@gmail.com>, 2014-2015
+# roberto grazzini <robertograzzini72@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Storefront\n"
 "Report-Msgid-Bugs-To: https://github.com/woothemes/storefront/issues\n"
-"POT-Creation-Date: 2015-05-14 15:20:54+00:00\n"
-"PO-Revision-Date: 2015-05-14 15:20+0000\n"
+"POT-Creation-Date: 2015-06-10 15:02:20+00:00\n"
+"PO-Revision-Date: 2015-06-10 15:02+0000\n"
 "Last-Translator: James Koster <jay@woothemes.com>\n"
 "Language-Team: Italian (Italy) (http://www.transifex.com/projects/p/storefront-1/language/it_IT/)\n"
 "MIME-Version: 1.0\n"
@@ -80,16 +81,16 @@ msgstr "Migliora il tuo sito"
 msgid ""
 "Below you will find a selection of free and commercial Storefront extensions"
 " that could help improve your online store."
-msgstr ""
+msgstr "Qui di seguito troverete una selezione di estensioni Storefront liberi e commerciali che potrebbero contribuire a migliorare il tuo negozio online "
 
 #: inc/admin/welcome-screen/sections/add-ons.php:14
 msgid "Make your site instantly recognisable by adding your logo"
-msgstr ""
+msgstr "Rendi il tuo sito immediatamente riconoscibile aggiungendo il tuo logo"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:14
 #: inc/admin/welcome-screen/sections/add-ons.php:105
 msgid "Free (Third Party)"
-msgstr ""
+msgstr "Gratis (Terzi)"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:16
 msgid ""
@@ -107,16 +108,16 @@ msgstr ""
 #: inc/admin/welcome-screen/sections/add-ons.php:97
 #: inc/admin/welcome-screen/sections/add-ons.php:110
 msgid "Activated"
-msgstr ""
+msgstr "Attivato"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:21
 #: inc/admin/welcome-screen/sections/getting-started.php:39
 msgid "Install Jetpack"
-msgstr ""
+msgstr "Installare Jetpack"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:27
 msgid "Further customise your store with the Storefront Designer"
-msgstr ""
+msgstr "Ulteriori personalizzazioni per il proprio negozio con i Designer di Storefront"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:27
 #: inc/admin/welcome-screen/sections/add-ons.php:40
@@ -129,7 +130,7 @@ msgid ""
 "Storefront Designer adds a bunch of additional appearance settings allowing "
 "you to further tweak and perfect your Storefront design by changing the "
 "header layout, button styles, typographical schemes/scales and more."
-msgstr ""
+msgstr "Designer Storefront un gruppo di impostazioni di visualizzazione aggiuntive che consente di ottimizzare ulteriormente e perfezionare il vostro design Storefront modificando il layout dell'intestazione , stili dei pulsanti , tipografici schemi / scale e molto altro ancora ."
 
 #: inc/admin/welcome-screen/sections/add-ons.php:34
 msgid "Buy %sStorefront Designer%s now"
@@ -250,27 +251,26 @@ msgid ""
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/child-themes.php:20
-msgid "Boutique Child Theme"
+msgid "Galleria Child Theme"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/child-themes.php:21
-msgid "Boutique"
-msgstr "Boutique"
+msgid "Galleria"
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/child-themes.php:22
 msgid ""
-"Boutique is a simple, traditionally designed Storefront child theme, ideal "
-"for small stores or boutiques. Add your logo, create a unique color scheme "
-"and start selling!"
-msgstr "Boutique &egrave; un child theme per Storefront semplice e tradizionale, ideale per piccoli negozi o boutique. Aggiungi il tuo logo, crea uno schema colori unico ed inizia a vendere!"
+"Galleria is a Storefront child theme perfect for fashion and design stores. "
+"Stylish and minimalist, it gives sites a high class look and keeps products "
+"centerstage."
+msgstr ""
 
 #: inc/admin/welcome-screen/sections/child-themes.php:25
-#: inc/admin/welcome-screen/sections/child-themes.php:37
-msgid "Install %s now"
+msgid "Buy %s now"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/child-themes.php:27
-msgid "Read more %sabout Boutique%s &rarr;"
+msgid "Read more %sabout Galleria%s &rarr;"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/child-themes.php:32
@@ -287,8 +287,32 @@ msgid ""
 "natural, organic or hand made goods."
 msgstr ""
 
+#: inc/admin/welcome-screen/sections/child-themes.php:37
+#: inc/admin/welcome-screen/sections/child-themes.php:49
+msgid "Install %s now"
+msgstr ""
+
 #: inc/admin/welcome-screen/sections/child-themes.php:39
 msgid "Read more %sabout Deli%s &rarr;"
+msgstr "Leggi più   %sabout Deli%s &rarr;"
+
+#: inc/admin/welcome-screen/sections/child-themes.php:44
+msgid "Boutique Child Theme"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/child-themes.php:45
+msgid "Boutique"
+msgstr "Boutique"
+
+#: inc/admin/welcome-screen/sections/child-themes.php:46
+msgid ""
+"Boutique is a simple, traditionally designed Storefront child theme, ideal "
+"for small stores or boutiques. Add your logo, create a unique color scheme "
+"and start selling!"
+msgstr "Boutique &egrave; un child theme per Storefront semplice e tradizionale, ideale per piccoli negozi o boutique. Aggiungi il tuo logo, crea uno schema colori unico ed inizia a vendere!"
+
+#: inc/admin/welcome-screen/sections/child-themes.php:51
+msgid "Read more %sabout Boutique%s &rarr;"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:15
@@ -719,19 +743,19 @@ msgstr ""
 msgid "Product Categories"
 msgstr "Categorie Prodotto"
 
-#: inc/structure/template-tags.php:58
+#: inc/structure/template-tags.php:65
 msgid "Recent Products"
 msgstr "Prodotti Recenti"
 
-#: inc/structure/template-tags.php:92
+#: inc/structure/template-tags.php:103
 msgid "Featured Products"
 msgstr "Prodotti in Evidenza"
 
-#: inc/structure/template-tags.php:124
+#: inc/structure/template-tags.php:142
 msgid "Top Rated Products"
 msgstr "Prodotti Pi&ugrave; Votati"
 
-#: inc/structure/template-tags.php:156
+#: inc/structure/template-tags.php:179
 msgid "On Sale"
 msgstr "In Offerta"
 

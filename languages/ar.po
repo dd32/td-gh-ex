@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Storefront\n"
 "Report-Msgid-Bugs-To: https://github.com/woothemes/storefront/issues\n"
-"POT-Creation-Date: 2015-05-14 15:20:54+00:00\n"
-"PO-Revision-Date: 2015-05-14 15:20+0000\n"
+"POT-Creation-Date: 2015-06-10 15:02:20+00:00\n"
+"PO-Revision-Date: 2015-06-10 15:02+0000\n"
 "Last-Translator: James Koster <jay@woothemes.com>\n"
 "Language-Team: Arabic (http://www.transifex.com/projects/p/storefront-1/language/ar/)\n"
 "MIME-Version: 1.0\n"
@@ -19,13 +19,13 @@ msgstr ""
 
 #: 404.php:15
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "عفوا! الصفحة المطلوبة لا يمكن العثور عليها."
+msgstr "عفوا! الصفحة المطلوبة لا يمكن العثور عليه."
 
 #: 404.php:19
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links"
 " below or a search?"
-msgstr "لم  يتم العثور على أي شيء في هذا المكان. حاول في الروابط الموجودة بالأسفل  أو  استخدم خاصية البحث؟"
+msgstr "لم  يتم العثور على أي شيء في هذا المكان. حاول في الروابط الموجودة بالأسفل  أو استخدم خاصية البحث؟"
 
 #: 404.php:27
 msgid "Most Used Categories"
@@ -41,39 +41,39 @@ msgstr "تصفح التعليقات"
 
 #: comments.php:34 comments.php:52
 msgid "&larr; Older Comments"
-msgstr "&rarr; تعليقات سابقة"
+msgstr "&rarr; التعليقات السابقة "
 
 #: comments.php:35 comments.php:53
 msgid "Newer Comments &rarr;"
-msgstr ""
+msgstr "التعليقات الاحدث &larr;"
 
 #: comments.php:60
 msgid "Comments are closed."
-msgstr ""
+msgstr "غير مسموح بالتعليقات"
 
 #: content-none.php:13
 msgid "Nothing Found"
-msgstr ""
+msgstr "لم يتم العثور على شئ"
 
 #: content-none.php:19
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
+msgstr "هل انت مستعد لنشر مقالك الأول ؟<a href=\"%1$s\">إبدأ من هنا </a>."
 
 #: content-none.php:23
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
-msgstr ""
+msgstr "ناسف , لا يوجد شيء يطابق كلمات البحث التي استخدمتها. جرب مرة أخرى واستخدام كلمات أخرى للبحث"
 
 #: content-none.php:28
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
-msgstr ""
+msgstr "يبدو أننا لا نستطيع العثور على طلبك. من الممكن أن استخدام البحث قد يساعدك"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:7
 msgid "Enhance your site"
-msgstr ""
+msgstr "قم بتحسين موقعك"
 
 #: inc/admin/welcome-screen/sections/add-ons.php:10
 msgid ""
@@ -235,7 +235,7 @@ msgid ""
 "There are literally hundreds of awesome extensions available for you to use."
 " Looking for Table Rate Shipping? Subscriptions? Product Add-ons? You can "
 "find these and more in the WooCommerce extension shop. %sGo shopping%s."
-msgstr ""
+msgstr "يوجد المئات من الملحقات الرائعة متاحة للاستخدام .اذا كنت تبحث عن ملحق لاسعار الشحن - الاشتراك في القوائم البريدية - ملحقات المنتجات  يمكن ان تجد كل هذه الملقات واكثر منها بكثير على متجر  WooCommerce extension shop. %sGo shopping%s."
 
 #: inc/admin/welcome-screen/sections/child-themes.php:11
 msgid "Get a whole new look"
@@ -249,27 +249,26 @@ msgid ""
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/child-themes.php:20
-msgid "Boutique Child Theme"
+msgid "Galleria Child Theme"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/child-themes.php:21
-msgid "Boutique"
+msgid "Galleria"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/child-themes.php:22
 msgid ""
-"Boutique is a simple, traditionally designed Storefront child theme, ideal "
-"for small stores or boutiques. Add your logo, create a unique color scheme "
-"and start selling!"
+"Galleria is a Storefront child theme perfect for fashion and design stores. "
+"Stylish and minimalist, it gives sites a high class look and keeps products "
+"centerstage."
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/child-themes.php:25
-#: inc/admin/welcome-screen/sections/child-themes.php:37
-msgid "Install %s now"
+msgid "Buy %s now"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/child-themes.php:27
-msgid "Read more %sabout Boutique%s &rarr;"
+msgid "Read more %sabout Galleria%s &rarr;"
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/child-themes.php:32
@@ -286,35 +285,59 @@ msgid ""
 "natural, organic or hand made goods."
 msgstr ""
 
+#: inc/admin/welcome-screen/sections/child-themes.php:37
+#: inc/admin/welcome-screen/sections/child-themes.php:49
+msgid "Install %s now"
+msgstr ""
+
 #: inc/admin/welcome-screen/sections/child-themes.php:39
 msgid "Read more %sabout Deli%s &rarr;"
 msgstr ""
 
+#: inc/admin/welcome-screen/sections/child-themes.php:44
+msgid "Boutique Child Theme"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/child-themes.php:45
+msgid "Boutique"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/child-themes.php:46
+msgid ""
+"Boutique is a simple, traditionally designed Storefront child theme, ideal "
+"for small stores or boutiques. Add your logo, create a unique color scheme "
+"and start selling!"
+msgstr ""
+
+#: inc/admin/welcome-screen/sections/child-themes.php:51
+msgid "Read more %sabout Boutique%s &rarr;"
+msgstr ""
+
 #: inc/admin/welcome-screen/sections/getting-started.php:15
 msgid "Using Storefront"
-msgstr ""
+msgstr "طريقة استخدام Storefront"
 
 #: inc/admin/welcome-screen/sections/getting-started.php:16
 msgid ""
 "We've purposely kept Storefront lean & mean so configuration is a breeze. "
 "Here are some common theme-setup tasks:"
-msgstr ""
+msgstr "Storefront تم عمله بشكل بسيط وغير متكلف حتى تكون اعداداته بسيط وغير صعبة على الاطلاق. هذه بعض الخطوات الشائعة الاستخدام لاعداد القالب الخاص بك"
 
 #: inc/admin/welcome-screen/sections/getting-started.php:20
 #: inc/admin/welcome-screen/sections/getting-started.php:23
 msgid "Install WooCommerce"
-msgstr ""
+msgstr "تنصيب WooCommerce"
 
 #: inc/admin/welcome-screen/sections/getting-started.php:21
 msgid ""
 "Although Storefront works fine as a standard WordPress theme, it really "
 "shines when used for an online store. Install WooCommerce and start selling "
 "now."
-msgstr ""
+msgstr "قالب Storefront  هو قالب رائع للوردبريس اذا استخدمته كقالب لاى موقع عادى . لكن امكانياته سوف تظهر بوضوح في حالة استخدمته في انشاء متجر اليكترونى. أبدا الان ونصب WooCommerce وانشئ متجرك وابدا ببيع منتجاتك "
 
 #: inc/admin/welcome-screen/sections/getting-started.php:26
 msgid "Configure menu locations"
-msgstr ""
+msgstr "قم بإعداد أماكن القوائم "
 
 #: inc/admin/welcome-screen/sections/getting-started.php:27
 msgid ""
@@ -328,25 +351,25 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:28
 msgid "Configure menus"
-msgstr ""
+msgstr "إعداد القوائم"
 
 #: inc/admin/welcome-screen/sections/getting-started.php:30
 msgid "Create a color scheme"
-msgstr ""
+msgstr "إنشاء مخطط للالوان"
 
 #: inc/admin/welcome-screen/sections/getting-started.php:31
 msgid ""
 "Using the WordPress Customizer you can tweak Storefront's appearance to "
 "match your brand."
-msgstr ""
+msgstr "باستخدام مخصص الوردبريس يمكنك تعديل مظهر Storefront بحيث يلائم العلامة التجارية الخاصة بك."
 
 #: inc/admin/welcome-screen/sections/getting-started.php:32
 msgid "Open the Customizer"
-msgstr ""
+msgstr "فتح مخصص الوردبريس"
 
 #: inc/admin/welcome-screen/sections/getting-started.php:35
 msgid "Add your logo"
-msgstr ""
+msgstr "إضافة صورة الشعار"
 
 #: inc/admin/welcome-screen/sections/getting-started.php:36
 msgid ""
@@ -356,26 +379,26 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:46
 msgid "Configure homepage template"
-msgstr ""
+msgstr "تعديل قالب الصفحة الرئيسية "
 
 #: inc/admin/welcome-screen/sections/getting-started.php:47
 msgid ""
 "Storefront includes a homepage template that displays a selection of "
 "products from your store."
-msgstr ""
+msgstr "يضم Storefront  قالب للصفحة الرئيسية يقوم بعرض منتجات مختارة من متجرك "
 
 #: inc/admin/welcome-screen/sections/getting-started.php:48
 msgid ""
 "To set this up you will need to create a new page and assign the "
 "\"Homepage\" template to it. You can then set that as a static homepage in "
 "the %sReading%s settings."
-msgstr ""
+msgstr "لإعداد هذا عليك بانشاء بإنشاء صفحة جديدة واختيار المخطط  \"Homepage\"  لها. بعد ذلك يمكنك ان تحدد هذه الصفحة كصفحة رئيسية من قائمة %sاعدادات  %sقراءة ."
 
 #: inc/admin/welcome-screen/sections/getting-started.php:49
 msgid ""
 "Once set up you can toggle and re-order the homepage components using the "
 "%sHomepage Control%s plugin."
-msgstr ""
+msgstr "بمجرد الانتهاء من الاعداد يمكنك تبديل وإعادة ترتيب مكونات الصفحة الرئيسية باستخدام اضافة  %sHomepage Control%s "
 
 #: inc/admin/welcome-screen/sections/getting-started.php:52
 msgid "Install Homepage Control"
@@ -383,13 +406,13 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:55
 msgid "View documentation"
-msgstr ""
+msgstr "اظهار ملفات شرح القالب"
 
 #: inc/admin/welcome-screen/sections/getting-started.php:56
 msgid ""
 "You can read detailed information on Storefronts features and how to develop"
 " on top of it in the documentation."
-msgstr ""
+msgstr "يمكنك أن تقرأ المعلومات المفصلة عن خصائص Storefront وكيفية تطويره في ملفات شرح القالب"
 
 #: inc/admin/welcome-screen/sections/getting-started.php:57
 msgid "View documentation &rarr;"
@@ -399,7 +422,7 @@ msgstr ""
 msgid ""
 "Awesome! You've decided to use Storefront to enrich your WooCommerce store "
 "design."
-msgstr ""
+msgstr "مذهل! أنك قررت استخدام قالب Storefront لتحسين متجر باستخدام ووكوميرس"
 
 #: inc/admin/welcome-screen/sections/intro.php:15
 msgid ""
@@ -407,7 +430,7 @@ msgid ""
 "enjoy Storefront's deep integration with WooCommerce core (including several"
 " popular WooCommerce extensions), plus the flexible design and extensible "
 "codebase that this theme provides."
-msgstr ""
+msgstr "أيا كنت صاحب متجر أو مطور ووردبريس او الاثنين معاً - نتمنى ان تستمتع باستخدام قالب Storefront والتكامل الموجود بينه وبين ووكوميرس (بالإضافة الى إضافات ووكوميرس الرائعة والتصميم الرائع والمرن للقالب وسهولة التعديل عليه )"
 
 #: inc/admin/welcome-screen/sections/tabs.php:2
 msgid "Getting Started"
@@ -427,18 +450,18 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/who.php:9
 msgid "Who are WooThemes?"
-msgstr ""
+msgstr "ما هي woothemes ؟"
 
 #: inc/admin/welcome-screen/sections/who.php:10
 msgid ""
 "WooCommerce creators WooThemes is an international team of WordPress "
 "superstars building products for a passionate community of hundreds of "
 "thousands of users."
-msgstr ""
+msgstr "منشئ WooCommerce و WooThemes  هم فريق عالمى من اكثر منتجى إضافات وردبريس شهرة ولهم مئات الالاف من المستخدمين"
 
 #: inc/admin/welcome-screen/sections/who.php:11
 msgid "Visit WooThemes"
-msgstr ""
+msgstr "قم بزيارة WooThemes"
 
 #: inc/admin/welcome-screen/sections/who.php:17
 msgid "WooCommerce logo"
@@ -446,22 +469,22 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/who.php:18
 msgid "What is WooCommerce?"
-msgstr ""
+msgstr "ما هي WooThemes ؟"
 
 #: inc/admin/welcome-screen/sections/who.php:19
 msgid ""
 "WooCommerce is the most popular WordPress eCommerce plugin. Packed full of "
 "intuitive features and surrounded by a thriving community - it's the perfect"
 " solution for building an online store with WordPress."
-msgstr ""
+msgstr "WooCommerce هي اكثر الإضافات شهرة للتجارة الاليكترونية للوردبريس . وهى تشمل العديد من الخصائص التي تجعلها من أكثر الأدوات كفاءة في انشاء المتاجر الاليكترونية"
 
 #: inc/admin/welcome-screen/sections/who.php:20
 msgid "Download & Install WooCommerce"
-msgstr ""
+msgstr "تحميل وتنصيب WooCommerce "
 
 #: inc/admin/welcome-screen/sections/who.php:21
 msgid "View WooCommerce Documentation"
-msgstr ""
+msgstr "عرض ملفات شرح WooCommerce "
 
 #: inc/admin/welcome-screen/sections/who.php:27
 msgid "Can I contribute to Storefront?"
@@ -469,32 +492,32 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/who.php:28
 msgid "Can I Contribute?"
-msgstr ""
+msgstr "هل يمكننى المساهمة ؟"
 
 #: inc/admin/welcome-screen/sections/who.php:29
 msgid ""
 "Found a bug? Want to contribute a patch or create a new feature? GitHub is "
 "the place to go! Or would you like to translate Storefront in to your "
 "language? Get involved at Transifex."
-msgstr ""
+msgstr "عثرت على ثغرة ؟ أريد أن اساعد في ترقيع الثغرة او انشاء خاصية جديدة ؟ ... كيف أبدا؟ GitHub هو المكان الذى تستطيع البدء منه او اذا كنت ترجمة قالب Storefront  للغتك يمكنك استخدام Transifex"
 
 #: inc/admin/welcome-screen/sections/who.php:30
 msgid "Storefront at GitHub"
-msgstr ""
+msgstr "Storefront at GitHub"
 
 #: inc/admin/welcome-screen/sections/who.php:30
 msgid "Storefront at Transifex"
-msgstr ""
+msgstr "Storefront at Transifex"
 
 #: inc/admin/welcome-screen/sections/who.php:34
 msgid "Can't find a feature?"
-msgstr ""
+msgstr "هل هناك خاصية لا تجدها ؟"
 
 #: inc/admin/welcome-screen/sections/who.php:35
 msgid ""
 "Please suggest and vote on ideas / feature requests at the %sStorefront "
 "Ideasboard%s. The most popular ideas will see prioritised development."
-msgstr ""
+msgstr "من فضلك ارسل لنا اقتراحاتك او افكارك او قم بالتصويت على الاقتراحات لتطوير القالب على الرابط %sStorefront Ideasboard%s.  الأفكار والاقتراحات الأكثر تصويتا ستكون لها الأولوية في التنفيذ."
 
 #: inc/admin/welcome-screen/sections/who.php:37
 msgid "Are you enjoying Storefront?"
@@ -509,11 +532,11 @@ msgstr ""
 msgid ""
 "Thanks for choosing Storefront! You can read hints and tips on how get the "
 "most out of your new theme on the %swelcome screen%s."
-msgstr ""
+msgstr "شكرا لك على استخدام storefront . للحصول على أفضل نتائج من القالب اقرأ الملحوظات والخطوات "
 
 #: inc/admin/welcome-screen/welcome-screen.php:48
 msgid "Get started with Storefront"
-msgstr ""
+msgstr "إبدأ باستخدام قالب Storefront"
 
 #: inc/customizer/controls/more.php:16
 msgid ""
@@ -533,15 +556,15 @@ msgstr ""
 
 #: inc/customizer/controls.php:24
 msgid "Background"
-msgstr ""
+msgstr "الخلفية"
 
 #: inc/customizer/controls.php:28 inc/functions/setup.php:114
 msgid "Header"
-msgstr ""
+msgstr "الهيدر "
 
 #: inc/customizer/controls.php:45
 msgid "Typography"
-msgstr ""
+msgstr "شكل الخطوط"
 
 #: inc/customizer/controls.php:58
 msgid "Link / accent color"
@@ -575,19 +598,19 @@ msgstr ""
 
 #: inc/customizer/controls.php:173
 msgid "Footer"
-msgstr ""
+msgstr "الفوتر"
 
 #: inc/customizer/controls.php:175
 msgid "Customise the look & feel of your web site footer."
-msgstr ""
+msgstr "تعديل شكل ومظهر الفوتر في موقعك"
 
 #: inc/customizer/controls.php:242
 msgid "Buttons"
-msgstr ""
+msgstr "الازرار"
 
 #: inc/customizer/controls.php:244
 msgid "Customise the look & feel of your web site buttons."
-msgstr ""
+msgstr "تعديل شكل ومظهر الازرار في موقعك"
 
 #: inc/customizer/controls.php:286
 msgid "Alternate button background color"
@@ -599,11 +622,11 @@ msgstr ""
 
 #: inc/customizer/controls.php:311
 msgid "Layout"
-msgstr ""
+msgstr "المخطط"
 
 #: inc/customizer/controls.php:321
 msgid "General layout"
-msgstr ""
+msgstr "المخطط العام"
 
 #: inc/customizer/controls.php:338
 msgid "More"
@@ -615,11 +638,11 @@ msgstr ""
 
 #: inc/functions/setup.php:60
 msgid "Primary Menu"
-msgstr ""
+msgstr "القائمة الرئيسية "
 
 #: inc/functions/setup.php:61
 msgid "Secondary Menu"
-msgstr ""
+msgstr "القائمة الفرعية"
 
 #: inc/functions/setup.php:62
 msgid "Handheld Menu"
@@ -627,31 +650,31 @@ msgstr ""
 
 #: inc/functions/setup.php:104
 msgid "Sidebar"
-msgstr ""
+msgstr "الشريط الجانبى "
 
 #: inc/functions/setup.php:127
 msgid "Footer %d"
-msgstr ""
+msgstr "الفوتر  %d."
 
 #: inc/functions/setup.php:129
 msgid "Widgetized Footer Region %d."
-msgstr ""
+msgstr "منطقة الفوتر الخاصة بالودجات  %d."
 
 #: inc/structure/comments.php:40
 msgid "<cite class=\"fn\">%s</cite>"
-msgstr ""
+msgstr "<cite class=\"fn\">%s</cite>"
 
 #: inc/structure/comments.php:43
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "تعليقك بانتظار موافقة الإدارة "
 
 #: inc/structure/comments.php:59
 msgid "Edit"
-msgstr ""
+msgstr "تحرير "
 
 #: inc/structure/footer.php:60
 msgid "%1$s designed by %2$s."
-msgstr ""
+msgstr "%1$s صمم بواسطة %2$s."
 
 #: inc/structure/header.php:54
 msgid "Primary Navigation"
@@ -671,11 +694,11 @@ msgstr ""
 
 #: inc/structure/header.php:107
 msgid "Skip to content"
-msgstr ""
+msgstr "تخطى هذا واذهب الى المحتوى "
 
 #: inc/structure/page.php:33 inc/structure/post.php:53
 msgid "Pages:"
-msgstr ""
+msgstr "الصفحات :"
 
 #: inc/structure/post.php:47
 msgid "Continue reading %s"
@@ -684,7 +707,7 @@ msgstr ""
 #. translators: used between list items, there is a space after the comma
 #: inc/structure/post.php:74 inc/structure/post.php:87
 msgid ", "
-msgstr ""
+msgstr ","
 
 #: inc/structure/post.php:79
 msgid "Categories: "
@@ -696,15 +719,15 @@ msgstr ""
 
 #: inc/structure/post.php:101
 msgid "Leave a comment"
-msgstr ""
+msgstr "اترك تعليق"
 
 #: inc/structure/post.php:101
 msgid "1 Comment"
-msgstr ""
+msgstr "1 تعليق"
 
 #: inc/structure/post.php:101
 msgid "% Comments"
-msgstr ""
+msgstr "% التعليقات"
 
 #: inc/structure/post.php:117
 msgid "Next"
@@ -716,45 +739,45 @@ msgstr ""
 
 #: inc/structure/template-tags.php:26
 msgid "Product Categories"
-msgstr ""
+msgstr "تصنيفات المنتجات"
 
-#: inc/structure/template-tags.php:58
+#: inc/structure/template-tags.php:65
 msgid "Recent Products"
-msgstr ""
+msgstr "أحدث المنتجات"
 
-#: inc/structure/template-tags.php:92
+#: inc/structure/template-tags.php:103
 msgid "Featured Products"
-msgstr ""
+msgstr "منتجات مميزة"
 
-#: inc/structure/template-tags.php:124
+#: inc/structure/template-tags.php:142
 msgid "Top Rated Products"
-msgstr ""
+msgstr "المنتجات الأكثر تقييماً"
 
-#: inc/structure/template-tags.php:156
+#: inc/structure/template-tags.php:179
 msgid "On Sale"
-msgstr ""
+msgstr "منتجات باعلى خصومات"
 
 #: inc/woocommerce/template-tags.php:18
 msgid "View your shopping cart"
-msgstr ""
+msgstr "عرض سلة التسوق "
 
 #: inc/woocommerce/template-tags.php:19
 msgid "%d item"
 msgid_plural "%d items"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "لا يوجد منتجات"
+msgstr[1] "%d منتج"
+msgstr[2] "%d  منتج"
+msgstr[3] "%d منتجات"
+msgstr[4] "%d منتجات"
+msgstr[5] "%d منتجات"
 
 #: search.php:16
 msgid "Search Results for: %s"
-msgstr ""
+msgstr "نتائج البحث ل : %s"
 
 #. Theme Name of the plugin/theme
 msgid "Storefront"
-msgstr ""
+msgstr " Storefront"
 
 #. Theme URI of the plugin/theme
 msgid "http://www.woothemes.com/storefront"
@@ -772,7 +795,7 @@ msgstr ""
 
 #. Author of the plugin/theme
 msgid "WooThemes"
-msgstr ""
+msgstr "WooThemes"
 
 #. Author URI of the plugin/theme
 msgid "http://www.woothemes.com"
@@ -780,29 +803,29 @@ msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Full width"
-msgstr ""
+msgstr "عرض الصفحة كامل"
 
 #. Template Name of the plugin/theme
 msgid "Homepage"
-msgstr ""
+msgstr "الرئيسية"
 
 #: comments.php:26
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] " لا يوجد منتجات"
+msgstr[1] "واحد فقط يفكر بخصوص &ldquo;%2$s&rdquo;"
+msgstr[2] "%1$s يفكرانبخصوص &ldquo;%2$s&rdquo;"
+msgstr[3] "%1$s يفكرون بخصوص &ldquo;%2$s&rdquo;"
+msgstr[4] "%1$s يفكرون بخصوص &ldquo;%2$s&rdquo;"
+msgstr[5] "%1$s يفكرون بخصوص &ldquo;%2$s&rdquo;"
 
 #: inc/structure/post.php:156
 msgctxt "post date"
 msgid "Posted on %s"
-msgstr ""
+msgstr "نشر في %s"
 
 #: inc/structure/post.php:161
 msgctxt "post author"
 msgid "by %s"
-msgstr ""
+msgstr "أضيف بواسطة %s"
