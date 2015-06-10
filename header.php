@@ -45,6 +45,7 @@
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 		</hgroup>
 <?php } ?>
+	<h2 class="tag-line"><?php bloginfo( 'description', 'display' ); ?></h2>
 </div>
 <div class="menu_search"><?php get_search_form(); ?></div>
 <div class="header-ads-img">

@@ -173,7 +173,7 @@ endif;
 
 //Excerpt Length.
 function custom_excerpt_length( $length ) {
-	return 40;
+	return 60;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
@@ -311,7 +311,6 @@ function get_all_posts(){
                  
                  <div class="content-post-tilte-excerpt">
                  <h4><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></h4>
-                 <small class="content-authore-excerpt"><b><?php _e( 'Posted by', 'artikler' ); ?></b> <?php the_author(); ?>.&nbsp;|&nbsp;<b> <?php _e( 'Posted on', 'artikler' ); ?></b> <?php the_time( 'F j, Y' ); ?></small>
                  <div class="post_expert_index">
                  <?php the_excerpt(); ?><br />
                  </div>
@@ -351,11 +350,11 @@ function get_random_post(){
              <div class="content-post-rand">
                  <div class="content-post-rand-img">
 				 <?php if ( has_post_thumbnail()) : ?>
-                 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute() ?>"><?php the_post_thumbnail( array(120,120) ); ?></a>			
+                 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute() ?>"><?php the_post_thumbnail( array(120,120) ); ?>			
                  <?php else : ?>
-                 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute() ?>" id="no-image-yet-rand"><div>No Image Yet</div></a>
+                 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute() ?>" id="no-image-yet-rand"><div>No Image Yet</div>
                  <?php endif; ?>
-                 <a href="<?php the_permalink() ?>" title="<?php the_title_attribute() ?>"> <?php the_title() ?></a>
+                 <p class="content-post-rand-a"><?php the_title() ?></p></a>
                  </div>
                  </li>
 			<?php endwhile; ?>
