@@ -1,12 +1,11 @@
 <?php
 
 function puro_premium_upgrade_content($content){
-	$content['premium_title'] = __('Upgrade To Puro Premium', 'puro');
-	$content['premium_summary'] = __("Hi, my name is Andrew Misplon, the developer of Puro. If you've enjoyed Puro Free then I know you're going to love Puro Premium. Below you'll find an outline of Puro's Premium features.", 'puro');
+	$content['premium_title'] = __('Upgrade to Puro Premium', 'puro');
+	$content['premium_summary'] = __("Hi, my name is Andrew Misplon, the developer of Puro. If you've enjoyed Puro Free then I know you're going to love Puro Premium. Below you'll find an outline of the premium features.", 'puro');
 
 	$content['buy_url'] = 'http://puro.fetchapp.com/sell/tierohvu';
 	$content['premium_video_poster'] = get_template_directory_uri().'/upgrade/poster.jpg';
-	// $content['premium_video_id'] = '74123479';
 
 	$content['features'] = array();
 
@@ -16,7 +15,7 @@ function puro_premium_upgrade_content($content){
 	);
 
 	$content['features'][] = array(
-		'heading' => __('Name The Price', 'puro'),
+		'heading' => __('Name the Price', 'puro'),
 		'content' => __("You choose the price, so you can pay what Puro is worth to you. Choose from one our suggested options or specify your own custom price. Regardless of what you pay you'll receive the same upgrade file and be supporting the continued development of the theme.", 'puro'),
 	);
 
@@ -28,7 +27,7 @@ function puro_premium_upgrade_content($content){
 
 	$content['features'][] = array(
 		'heading' => __('Remove Attribution Links', 'puro'),
-		'content' => __('Puro Premium gives you the option to remove the "Puro WordPress Theme" text from your Footer.', 'puro'),
+		'content' => __('Puro Premium gives you the option to remove the "Puro WordPress Theme" text from your Footer without editing any code.', 'puro'),
 		'image' => get_template_directory_uri().'/upgrade/teasers/attribution.png',
 	);
 
@@ -39,8 +38,8 @@ function puro_premium_upgrade_content($content){
 	);
 
 	$content['features'][] = array(
-		'heading' => __('Customizer Integration', 'puro'),
-		'content' => __("Make Puro your own with customizer integration. Change fonts, colors and more all using the live-updating WordPress customizer.", 'puro'),
+		'heading' => __('Enhanced Customizer Integration', 'puro'),
+		'content' => __("Make Puro your own with enhanced Customizer integration. Change fonts, colors and more all using the live-updating WordPress Customizer.", 'puro'),
 		'image' => get_template_directory_uri().'/upgrade/teasers/customizer.png',
 	);
 
@@ -52,7 +51,7 @@ function puro_premium_upgrade_content($content){
 
 	$content['features'][] = array(
 		'heading' => __("Post Sharing", 'puro'),
-		'content' => __("Add sharing icons for Facebook, Twitter and Google Plus to the bottom of your posts.", 'puro'),
+		'content' => __("Add sharing icons for Facebook, Twitter, Google Plus and LinkedIn to the bottom of your posts.", 'puro'),
 		'image' => get_template_directory_uri().'/upgrade/teasers/share.png',
 	);
 

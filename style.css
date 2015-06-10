@@ -1,16 +1,24 @@
-/*!
+/*
 Theme Name: Puro
 Author: Puro
 Author URI: http://purothemes.com/
-Theme URI: http://purothemes.com/themes/puro-wordpress-theme/
+Theme URI: http://purothemes.com/themes/puro/
 Description: A content focussed minimalist theme, perfect for your blog, portfolio or small business site. We've closely integrated SiteOrigin's Page Builder for responsive layouts and Meta Slider for smooth, easy to build sliders. Puro is responsive, Retina ready and fully compatible with Jetpack, Contact Form 7, Gravity Forms and WP PageNavi. Included is a .rtl CSS file for right to left languages. For assistance, check out our <a href="http://purothemes.com/documentation/">theme documentation</a> (http://purothemes.com/documentation/) or ask a question on our <a href="http://purothemes.com/support/">support forum</a> (http://purothemes.com/support/).
-Version: 1.0.6.1
+Version: 1.0.6.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: puro
 Domain Path: /languages/
-Tags: gray, green, white, light, one-column, right-sidebar, fluid-layout, custom-menu, featured-images, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: custom-menu, featured-images, fluid-layout, full-width-template, two-columns, gray, green, light, one-column, post-formats, responsive-layout, right-sidebar, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, white
 */
+/*--------------------------------------------------------------
+>>> IMPORTANT NOTICE:
+----------------------------------------------------------------
+Please don't edit this file; any changes made here will be lost
+during the theme update process. If you need to make CSS 
+modifications, please, use a Custom CSS plugin or make use of a 
+child theme.
+--------------------------------------------------------------*/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -892,11 +900,6 @@ a:hover, a:focus, a:active {
   display: inline-block;
   margin-right: 0.3125em;
   padding: 0.4375em 1.0625em 0.375em;
-}
-@media (max-width: 64rem) {
-  .resp .paging-navigation .page-numbers {
-    display: none;
-  }
 }
 .paging-navigation .page-numbers:hover {
   color: #2ac176;
@@ -2698,7 +2701,7 @@ span.jwcontrols span button {
   -webkit-transition: initial;
   transition: initial;
   border: none;
-  background: rinitial;
+  background: initial;
   color: initial;
   -webkit-appearance: initial;
   font-weight: initial;

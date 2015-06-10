@@ -19,17 +19,17 @@
 		
 		<?php wp_nav_menu( array( 'theme_location' => 'social', 'container_class' => 'social-links-menu', 'depth' => 1, 'link_before' => '<span class="screen-reader-text">', 'link_after' => '</span>', 'fallback_cb' => '' ) ); ?>
 
-		<?php $copyright_text = apply_filters('puro_copyright_text', siteorigin_setting('footer_copyright_text') ); ?>
+		<?php $copyright_text = apply_filters( 'puro_copyright_text', siteorigin_setting( 'footer_copyright_text' ) ); ?>
 		<div class="site-info">
 			<?php 
-				echo wp_kses_post($copyright_text); 
+				echo wp_kses_post( $copyright_text ); 
 			?> 
 			<?php
-				if( siteorigin_setting('footer_copyright_text') && siteorigin_setting('footer_attribution') ) { 
+				if ( siteorigin_setting( 'footer_copyright_text' ) && siteorigin_setting( 'footer_attribution' ) ) { 
 					echo ' - ';
 				}
-				if( siteorigin_setting('footer_attribution') ) {
-					printf(__('<a href="%s" title="A Free WordPress Theme by Puro">Theme by Puro</a>', 'puro'), 'http://purothemes.com');
+				if ( siteorigin_setting( 'footer_attribution' ) ) {
+					printf( __( '<a href="%s" title="A Free WordPress Theme by Puro">Theme by Puro</a>', 'puro' ), 'http://purothemes.com' );
 				}
 			?>
 		</div><!-- .site-info -->

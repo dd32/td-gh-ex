@@ -24,10 +24,7 @@ function puro_theme_settings(){
 	siteorigin_settings_add_section( 'social', __('Social', 'puro' ) );	
 	siteorigin_settings_add_section( 'footer', __('Footer', 'puro' ) );
 
-	/**
-	 * Logo
-	 */
-
+	// Header
 	siteorigin_settings_add_field('header', 'image', 'media', __('Logo Image', 'puro'), array(
 		'choose' => __('Choose Image', 'puro'),
 		'update' => __('Set Logo', 'puro'),
@@ -49,10 +46,7 @@ function puro_theme_settings(){
 		'description' => __('Display the website tagline.', 'puro')
 	) );	
 
-	/**
-	 * Navigation
-	 */
-
+	// Navigation
 	siteorigin_settings_add_field( 'navigation', 'post_nav', 'checkbox', __('Post Navigation', 'puro'), array(
 		'description' => __('Display next/previous post navigation.', 'puro')
 	) );		
@@ -66,10 +60,7 @@ function puro_theme_settings(){
 		'teaser-image' => get_template_directory_uri().'/upgrade/teasers/responsive-menu.png',
 	));			
 
-	/**
-	 * Layout
-	 */
-
+	// Layout
 	siteorigin_settings_add_field( 'layout', 'responsive', 'checkbox', __('Responsive Layout', 'puro'), array(
 		'description' => __('Adapt the site layout for mobile devices.', 'puro')
 	) );	
@@ -78,10 +69,7 @@ function puro_theme_settings(){
 		'description' => __('Include FitVids.js for fluid width video embeds.', 'puro')
 	));			
 
-	/**
-	 * Home
-	 */
-
+	// Home
 	siteorigin_settings_add_field('home', 'slider', 'select', __('Home Page Slider', 'puro'), array(
 		'options' => siteorigin_metaslider_get_options(true),
 		'description' => sprintf(
@@ -92,19 +80,50 @@ function puro_theme_settings(){
 		)
 	));
 
-	/**
-	 * Pages
-	 */	
-
+	// Pages
 	siteorigin_settings_add_field('pages', 'page_featured_image', 'checkbox', __('Page Featured Image', 'puro'), array(
 		'description' => __('Display the featured image on pages.', 'puro')
 	) );		
 
-	/**
-	 * Blog Settings
-	 */
 
-	siteorigin_settings_add_field('blog', 'post_date', 'checkbox', __('Post Date', 'puro'), array(
+	// Blog
+    siteorigin_settings_add_field('blog', 'archive_featured_image', 'checkbox', __('Archive Featured Image', 'puro'), array(
+        'description' => __('Display the featured image on the blog archive pages.', 'puro')
+    ) );   
+
+    siteorigin_settings_add_field('blog', 'archive_content', 'select', __('Archive Post Content', 'puro'), array(
+        'options' => array(
+            'full' => __('Full Post Content', 'puro'),
+            'excerpt' => __('Post Excerpt', 'puro'),
+        ),
+        'description' => __('Choose how to display your post content on blog and archive pages. Select Full Post Content if using the "more" quicktag.', 'puro'),
+    ));
+
+    siteorigin_settings_add_field('blog', 'read_more', 'text', __('Read More Text', 'puro'), array(
+        'description' => __('The link text displayed when posts are split using the "more" quicktag.', 'puro'),
+        'conditional' => array(
+            'show' => array(
+                'blog_archive_content' => 'full',
+            ),
+            'hide' => 'else'
+        )
+    ));
+    
+    siteorigin_settings_add_field('blog', 'excerpt_length', 'number', __('Post Excerpt Length', 'puro'), array(
+        'description' => __('If no manual post excerpt is added one will be generated. How many words should it be?', 'puro'),
+        'conditional' => array(
+            'show' => array(
+                'blog_archive_content' => 'excerpt',
+            ),
+            'hide' => 'else'
+        )
+    ));
+
+	siteorigin_settings_add_field('blog', 'post_featured_image', 'checkbox', __('Post Featured Image', 'puro'), array(
+		'description' => __('Display the featured image on the single post page.', 'puro')
+	) );    
+
+    siteorigin_settings_add_field('blog', 'post_date', 'checkbox', __('Post Date', 'puro'), array(
 		'description' => __('Display the post date.', 'puro')
 	));	
 
@@ -123,27 +142,13 @@ function puro_theme_settings(){
 	siteorigin_settings_add_field('blog', 'post_comment_count', 'checkbox', __('Post Comment Count', 'puro'), array(
 		'description' => __('Display the post comment count.', 'puro')
 	));	
-
-	siteorigin_settings_add_field('blog', 'post_featured_image', 'checkbox', __('Post Featured Image', 'puro'), array(
-		'description' => __('Display the featured image on the single post page.', 'puro')
-	) );	
-
-	siteorigin_settings_add_field('blog', 'archive_featured_image', 'checkbox', __('Archive Featured Image', 'puro'), array(
-		'description' => __('Display the featured image on the blog archive pages.', 'puro')
-	) );
-
-	siteorigin_settings_add_field('blog', 'read_more', 'text', __('Read More Text', 'puro'), array(
-		'description' => __('The link text displayed when posts are split using the "more" quicktag.', 'puro')
-	));	
-
+    
 	siteorigin_settings_add_field( 'blog', 'edit_link', 'checkbox', __( 'Post Edit Link', 'puro' ), array(
 		'description' => __( 'Display an Edit link below post content. Visible if a user is logged in and allowed to edit the content. Also applies to Pages.', 'puro' )
 	) );	
 
-	/**
-	 * Comments
-	 */		
 
+	// Comments
 	siteorigin_settings_add_field('comments', 'comment_form_tags', 'checkbox', __('Comment Form Allowed Tags', 'puro'), array(
 		'description' => __('Display the explanatory text below the comment form that lets users know which HTML tags may be used.', 'puro')
 	) );				
@@ -153,10 +158,7 @@ function puro_theme_settings(){
 		'teaser-image' => get_template_directory_uri().'/upgrade/teasers/ajax-comments.png',
 	));			 		
 
-	/**
-	 * Social
-	 */		
-
+	// Social 
 	siteorigin_settings_add_teaser('social', 'share_post', __('Post Sharing', 'puro'), array(
 		'description' => __('Show icons to share your posts on Facebook, Twitter, Google+ and LinkedIn.', 'puro'),
 		'teaser-image' => get_template_directory_uri().'/upgrade/teasers/share.png',
@@ -167,10 +169,7 @@ function puro_theme_settings(){
 		'teaser-image' => get_template_directory_uri().'/upgrade/teasers/share-rec.png',
 	));	
 
-	/**
-	 * Footer
-	 */
-
+	// Footer
 	siteorigin_settings_add_field( 'footer', 'copyright_text', 'text', __( 'Footer Copyright Text', 'puro' ), array(
 		'description' => __( '{site-title}, {copyright} and {year} can be used to display your website title, a copyright symbol and the current year.', 'puro' )
 	) );
@@ -211,14 +210,16 @@ function puro_theme_setting_defaults($defaults){
 
 	$defaults['pages_page_featured_image'] = true;		
 
+	$defaults['blog_archive_featured_image'] = true;
+	$defaults['blog_archive_content'] = 'full';
+	$defaults['blog_read_more'] = __('Continue reading', 'puro');
+	$defaults['blog_excerpt_length'] = 55;
+	$defaults['blog_post_featured_image'] = true;
 	$defaults['blog_post_date'] = true;
 	$defaults['blog_post_author'] = true;
 	$defaults['blog_post_cats'] = true;
 	$defaults['blog_post_tags'] = true;	
-	$defaults['blog_post_comment_count'] = true;	
-	$defaults['blog_post_featured_image'] = true;		
-	$defaults['blog_archive_featured_image'] = true;
-	$defaults['blog_read_more'] = __('Continue reading', 'puro');
+	$defaults['blog_post_comment_count'] = true;			
 	$defaults['blog_edit_link'] = true;
 
 	$defaults['comments_comment_form_tags'] = true;		

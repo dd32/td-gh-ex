@@ -226,7 +226,7 @@ jQuery( function ( $ ) {
     // Hide the updated message
     setTimeout( function () {
         $( '#setting-updated' ).slideUp();
-    }, 5000 );
+    }, 5000 );  
 
     // Now, lets handle the preview
     var previewModal;

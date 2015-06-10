@@ -705,7 +705,7 @@ function siteorigin_settings_theme_help(){
 	$text = sprintf(
 		__( "Read %s's <a href='%s' target='_blank'>theme documentation</a> for help with these settings.", 'puro' ),
 		ucfirst($theme_name),
-		'http://purothemes.com/documentation/'
+		'http://purothemes.com/documentation/puro-theme/'
 	); 
 	
 	$screen->add_help_tab( array(

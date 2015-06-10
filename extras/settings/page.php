@@ -16,7 +16,7 @@
 			<input name="Submit" type="submit" class="button-primary siteorigin-settings-submit-button" value="<?php esc_attr_e('Save Settings', 'puro'); ?>" id="siteorigin-settings-submit" />
 			<input type="button" class="button-secondary siteorigin-settings-preview-button" value="<?php esc_attr_e('Preview', 'puro'); ?>" id="siteorigin-settings-main-preview" />
 
-			<a href="http://purothemes.com/support/forum/<?php echo get_template() ?>/" target="_blank" id="siteorigin-theme-support"><?php _e( 'Theme Support Forum', 'puro' ) ?></a>
+			<a href="http://purothemes.com/support/forum/puro/" target="_blank" id="siteorigin-theme-support"><?php _e( 'Theme Support Forum', 'puro' ) ?></a>
 		</p>
 		<input type="hidden" id="current-tab-field" name="theme_settings_current_tab" value="<?php echo intval( get_theme_mod('_theme_settings_current_tab', 0) ) ?>" />
 	</form>

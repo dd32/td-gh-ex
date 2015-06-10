@@ -51,6 +51,10 @@
     line-height: 0;
 }
 
+#theme-upgrade #video-wrapper {
+    background-size: 100%;
+}
+
 #theme-upgrade #video-wrapper a {
     background: url(../img/video.png) no-repeat;
 }

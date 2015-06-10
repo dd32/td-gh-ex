@@ -1,7 +1,7 @@
 === Puro ===
 
 Contributors: Misplon
-Tags: gray, green, white, light, one-column, right-sidebar, fluid-layout, custom-menu, featured-images, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: custom-menu, featured-images, fluid-layout, full-width-template, two-columns, gray, green, light, one-column, post-formats, responsive-layout, right-sidebar, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, white
 
 Requires at least: 4.1
 Tested up to: 4.2.3
@@ -12,7 +12,62 @@ Clean, crisp and lightweight. Puro is a theme for bloggers, creatives and small 
 
 == Description ==
 
-A content focussed minimalist theme, perfect for your blog, portfolio or small business site. We've closely integrated SiteOrigin's Page Builder for responsive layouts and Meta Slider for smooth, easy to build sliders. Puro is responsive, Retina ready and fully compatible with Jetpack, Contact Form 7, Gravity Forms and WP PageNavi. Included is a .rtl CSS file for right to left languages. For assistance, check out our <a href="http://purothemes.com/documentation/">theme documentation</a> (http://purothemes.com/documentation/) or ask a question on our <a href="http://purothemes.com/support/">support forum</a> (http://purothemes.com/support/).
+A content focussed minimalist theme, perfect for your blog, portfolio or small business site. We've closely integrated SiteOrigin's Page Builder for responsive layouts and Meta Slider for smooth, easy to build sliders. Puro is responsive, Retina ready and fully compatible with Jetpack, Contact Form 7, Gravity Forms and WP PageNavi. Included is a .rtl CSS file for right to left languages.
+
+== Installation ==
+
+1. Login to your WordPress installation and go to Appearance > Themes > Add New > Upload Theme.
+2. Click Choose File and browse to the theme's ZIP file on your computer. Click Install Now.
+3. Click Activate to get started with your new theme right away.
+
+== Documentation ==
+
+[Documentation](http://purothemes.com/documentation/puro-theme/) is available on purothemes.com.
+
+== Support ==
+
+[Support](http://purothemes.com/support/forum/puro/) is available on purothemes.com.
+
+== Frequently Asked Questions ==
+
+= How do I add social icons to the footer? =
+
+1. Puro makes use of a social icon menu system managed from Appearance > Menus. Icons are rendered by the [Font Awesome library](http://fontawesome.io/icons/). Navigate to Appearance > Menus and click the "create a new menu" link. Choose a name for your menu and click the blue "Save Menu" button. Next look at the left column and locate the “Custom Links” tab, open it and add your first network. For example if we were adding a Twitter icon for Puro Themes we'd add the following to the URL field: https://twitter.com/purothemes
+
+2.The URL should be a link to your profile page on one of the support networks above. The Link Text can be anything you'd like, it won't be displayed on the front end of your site.
+
+3. Once you've added your networks, scroll down to the bottom of the page and locate the Theme Locations sub-heading under the Menu Settings heading. Locate the social icon menu location ( Social Network Icon Menu) and select it. Lastly, click the "Save Menu" button again.
+
+Available icons:
+
+* Behance
+* CodePen
+* Delicious
+* deviantART
+* Digg
+* Dribbble
+* Facebook
+* Flickr
+* Foursquare
+* GitHub
+* Google Plus
+* Instagram
+* LinkedIn
+* Pinterest
+* reddit
+* SoundCloud
+* StackExchange
+* Stack Overflow
+* Tumblr
+* Twitter
+* Vimeo
+* Vine
+* Vk
+* Weibo
+* WordPress.com
+* YouTube
+
+Un-supported networks will be represented by a generic share icon.
 
 == License ==
 
@@ -38,14 +93,19 @@ Font released under the SIL OFL 1.1, CSS released under the MIT License.
 FitVids, Copyright 2013, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
 Released under the WTFPL license.
 
-SASS Elements, Copyright 2006 - 2014 Hampton Catlin, Nathan Weizenbaum, Chris Eppstein, and numerous contributors
-Released under the MIT License.
-
 == SiteOrigin Extras ==
 
 This theme makes use of the SiteOrigin Extras Framework contained in the folder extras/. All code is licensed under GPL 2.0 and copyright 2013 Greg Priday unless otherwise stated in the file header. 
 
 == Changelog ==
+
+= 1.0.7 =
+* Added theme settings for Archive Post Content and Post Excerpt Length.
+* Fixed page navigation visibility problem when responsive layout enabled.
+* Standardised handles for Font Awesome and FitVids.
+* Removed Sass elements. If you require the Sass files for this theme please don't hesitate to get in touch via [Support](http://purothemes.com/support/forum/puro/).
+* Premium: Fixed text color setting bug in Firefox and IE.
+* Premium: Fixed enqueue issue with responsive navigation. 
 
 = 1.0.6.1 =
 * Added supporting styles for JW Player to ensure theme button styles don't change the player's buttons.

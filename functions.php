@@ -7,7 +7,7 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.0.6.1' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.0.7' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://updates.purothemes.com' ); 
 
 if( file_exists( get_template_directory() . '/premium/functions.php' ) ){
@@ -125,7 +125,6 @@ function puro_setup() {
 	}	
 
 	add_theme_support( 'siteorigin-premium-teaser', array(
-		'customizer' => true,
 		'settings' => true,
 	) );	
 
@@ -161,42 +160,22 @@ function puro_widgets_init() {
 add_action( 'widgets_init', 'puro_widgets_init' );
 
 /**
- * Count the footer widgets and add the count to the widget class.
- */
-function puro_footer_widgets_params($params) {
-
-    $sidebar_id = $params[0]['id'];
-
-    if ( $sidebar_id == 'sidebar-2' ) {
-
-        $total_widgets = wp_get_sidebars_widgets();
-        $sidebar_widgets = count($total_widgets[$sidebar_id]);
-
-        $params[0]['before_widget'] = str_replace('class="', 'class="widget-count-' . floor($sidebar_widgets) . ' ', $params[0]['before_widget']);
-    }
-
-    return $params;
-}
-add_filter( 'dynamic_sidebar_params','puro_footer_widgets_params' );
-
-/**
  * Enqueue scripts and styles.
  */
 function puro_scripts() {
+	$in_footer = siteorigin_setting( 'footer_js_enqueue' );
+	$js_suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';	
+
 	wp_enqueue_style( 'puro-style', get_stylesheet_uri(), array(), SITEORIGIN_THEME_VERSION );
 
-	wp_enqueue_style( 'puro-font-awesome', get_template_directory_uri().'/font-awesome/css/font-awesome.min.css', array(), '4.2.0' );
-
-	$in_footer = siteorigin_setting( 'footer_js_enqueue' );
-
-	$js_suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';	
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/font-awesome/css/font-awesome.min.css', array(), '4.2.0' );
 
 	wp_enqueue_script( 'puro-main' , get_template_directory_uri().'/js/jquery.theme-main' . $js_suffix . '.js', array('jquery'), SITEORIGIN_THEME_VERSION, $in_footer );
 
 	wp_enqueue_script( 'puro-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), SITEORIGIN_THEME_VERSION, $in_footer );
 
 	if( siteorigin_setting( 'layout_fitvids' ) ) {
-		wp_enqueue_script( 'puro-fitvids' , get_template_directory_uri().'/js/jquery.fitvids' . $js_suffix . '.js', array('jquery'), '1.1', $in_footer );
+		wp_enqueue_script( 'jquery-fitvids' , get_template_directory_uri().'/js/jquery.fitvids' . $js_suffix . '.js', array('jquery'), '1.1', $in_footer );
 	}	
 
 	if( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -212,8 +191,8 @@ add_action( 'wp_enqueue_scripts', 'puro_scripts' );
  * @param $defaults
  * @return mixed
  */
-function puro_comment_form_defaults($defaults){
-	if(!siteorigin_setting( 'comments_comment_form_tags' )){
+function puro_comment_form_defaults( $defaults ) {
+	if ( ! siteorigin_setting( 'comments_comment_form_tags' )) {
 		$defaults['comment_notes_after'] = null;
 	}
 	
@@ -222,9 +201,36 @@ function puro_comment_form_defaults($defaults){
 add_filter( 'comment_form_defaults', 'puro_comment_form_defaults', 5 );
 
 /**
+ * Filter the excerpt length.
+ */
+function puro_custom_excerpt_length( $length ) {
+    return absint( siteorigin_setting( 'blog_excerpt_length' ) );
+}
+add_filter( 'excerpt_length', 'puro_custom_excerpt_length', 999 );
+
+/**
+ * Count the footer widgets and add the count to the widget class.
+ */
+function puro_footer_widgets_params( $params ) {
+
+    $sidebar_id = $params[0]['id'];
+
+    if ( $sidebar_id == 'sidebar-2' ) {
+
+        $total_widgets = wp_get_sidebars_widgets();
+        $sidebar_widgets = count( $total_widgets[$sidebar_id] );
+
+        $params[0]['before_widget'] = str_replace( 'class="', 'class="widget-count-' . floor($sidebar_widgets) . ' ', $params[0]['before_widget'] );
+    }
+
+    return $params;
+}
+add_filter( 'dynamic_sidebar_params','puro_footer_widgets_params' );
+
+/**
 * Handles the site title, copyright symbol and year string replace for the Footer Copyright theme option.
 */
-function puro_footer_copyright_text_sub($copyright){
+function puro_footer_copyright_text_sub( $copyright ) {
 	$site_title = '<a href="' . esc_url( home_url( '/' ) ) . '">' . get_bloginfo( 'name' ) . '</a>';
 	return str_replace(
 		array('{site-title}', '{copyright}', '{year}'),
@@ -237,7 +243,7 @@ add_filter( 'puro_copyright_text', 'puro_footer_copyright_text_sub' );
 /**
  * Render the home page slider.
  */
-function puro_render_slider(){
+function puro_render_slider() {
 	if( is_front_page() && $GLOBALS['wp_query']->get('paged') == 0 ) {
 
 		if(substr(siteorigin_setting('home_slider'), 0, 5) == 'meta:' && class_exists('MetaSliderPlugin')){
@@ -258,8 +264,8 @@ add_filter( 'the_content_more_link', 'puro_read_more_link' );
 /**
  * Add the viewport meta tag.
  */
-function puro_responsive_header(){
-	if( siteorigin_setting('layout_responsive') ) {
+function puro_responsive_header() {
+	if( siteorigin_setting( 'layout_responsive' ) ) {
 		?><meta name="viewport" content="width=device-width, initial-scale=1" /><?php
 	}
 	else {

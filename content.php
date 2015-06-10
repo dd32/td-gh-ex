@@ -31,9 +31,8 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php if ( empty( $post->post_excerpt ) ) : ?>
 	<div class="entry-content">
-		<?php the_content(); ?>
+		<?php if ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' ) the_excerpt(); else the_content(); ?>
 		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'puro' ) . '</span>',
@@ -43,11 +42,6 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
-	<?php else : ?>
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
-	<?php endif; ?>
 	
 	<footer class="entry-footer">
 		<?php do_action('puro_entry_main_bottom') ?>
