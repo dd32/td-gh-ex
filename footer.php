@@ -16,30 +16,30 @@
 				<div class="footer-widget-area">
 					<div class="col-md-4">
 						<div class="left-footer">
-							<div id="secondary" class="widget-area" role="complementary">
+							<div class="widget-area" role="complementary">
 								<?php if ( ! dynamic_sidebar( 'footer-left' ) ) : ?>
 
 								<?php endif; // end sidebar widget area ?>
-							</div><!-- #secondary -->
+							</div><!-- .widget-area -->
 						</div>
 					</div>
 					
 					<div class="col-md-4">
 						<div class="mid-footer">
-							<div id="secondary" class="widget-area" role="complementary">
+							<div class="widget-area" role="complementary">
 								<?php if ( ! dynamic_sidebar( 'footer-mid' ) ) : ?>
 
 								<?php endif; // end sidebar widget area ?>
-							</div><!-- #secondary -->						</div>
+							</div><!-- .widget-area -->						</div>
 					</div>
 
 					<div class="col-md-4">
 						<div class="right-footer">
-							<div id="secondary" class="widget-area" role="complementary">
+							<div class="widget-area" role="complementary">
 								<?php if ( ! dynamic_sidebar( 'footer-right' ) ) : ?>
 
 								<?php endif; // end sidebar widget area ?>
-							</div><!-- #secondary -->				
+							</div><!-- .widget-area -->				
 						</div>
 					</div>						
 				</div><!-- .footer-widget-area -->

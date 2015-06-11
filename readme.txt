@@ -1,5 +1,5 @@
 Theme Name : Awaken
-Version    : 1.1.1
+Version    : 1.1.2
 Theme URL  : http://www.themezhut.com/themes/awaken
 Theme Documentation  : http://www.themezhut.com/awaken-theme-documentation
 License: GNU General Public License v2 or later
@@ -149,3 +149,6 @@ Added switches to on or off comments and comment forms in posts and pages.
 
 - Version 1.1.1
 Fixed a coding issue. ( Undefined index in slider )
+
+- Version 1.1.2
+Fixed some small issues in html validation.

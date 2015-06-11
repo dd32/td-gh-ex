@@ -158,7 +158,7 @@ function awaken_widgets_init() {
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<div class="widget-title-container"><h1 class="widget-title">',
-		'after_title'   => '</div></h1>',
+		'after_title'   => '</h1></div>',
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Magazine 1', 'awaken' ),
@@ -167,7 +167,7 @@ function awaken_widgets_init() {
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<div class="awt-container"><h1 class="awt-title">',
-		'after_title'   => '</div></h1>',
+		'after_title'   => '</h1></div>',
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Magazine 2', 'awaken' ),
@@ -176,7 +176,7 @@ function awaken_widgets_init() {
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<div class="awt-container"><h1 class="awt-title">',
-		'after_title'   => '</div></h1>',
+		'after_title'   => '</h1></div>',
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Footer Left Sidebar', 'awaken' ),
@@ -384,4 +384,3 @@ require get_template_directory() . '/inc/widgets/video-widget.php';
 require get_template_directory() . '/inc/functions/slider.php';
 /* Social Media Icons */
 require get_template_directory() . '/inc/functions/socialmedia.php';
-
