@@ -92,7 +92,7 @@ msgid "Comments are closed."
 msgstr ""
 
 #: content-blog-large-image.php:37 content-blog-small-image.php:38
-#: content.php:42 inc/widgets/widgets.php:213
+#: content.php:42 inc/widgets/widgets.php:213 inc/widgets/widgets.php:544
 msgid "Read more"
 msgstr ""
 
@@ -433,12 +433,11 @@ msgid "TG: Featured Single Page"
 msgstr ""
 
 #: inc/widgets/widgets.php:142
-msgid ""
-"Suitable for Home Top Sidebar, Home Bottom Left Sidebar and Side Sidbar."
+msgid "Suitable for Business Sidebar and Left/Right Sidebar."
 msgstr ""
 
-#: inc/widgets/widgets.php:145 inc/widgets/widgets.php:353
-#: inc/widgets/widgets.php:579
+#: inc/widgets/widgets.php:145 inc/widgets/widgets.php:360
+#: inc/widgets/widgets.php:598
 msgid "Title:"
 msgstr ""
 
@@ -446,8 +445,8 @@ msgstr ""
 msgid "Displays the title of the Page if title input is empty."
 msgstr ""
 
-#: inc/widgets/widgets.php:151 inc/widgets/widgets.php:360
-#: inc/widgets/widgets.php:463
+#: inc/widgets/widgets.php:151 inc/widgets/widgets.php:367
+#: inc/widgets/widgets.php:472
 msgid "Page"
 msgstr ""
 
@@ -471,49 +470,57 @@ msgstr ""
 msgid "TG: Call To Action Widget"
 msgstr ""
 
-#: inc/widgets/widgets.php:249
+#: inc/widgets/widgets.php:251
 msgid "Call to Action Main Text"
 msgstr ""
 
-#: inc/widgets/widgets.php:251
+#: inc/widgets/widgets.php:253
 msgid "Call to Action Additional Text"
 msgstr ""
 
-#: inc/widgets/widgets.php:254
+#: inc/widgets/widgets.php:256
 msgid "Button Text:"
 msgstr ""
 
-#: inc/widgets/widgets.php:258
+#: inc/widgets/widgets.php:260
 msgid "Button Redirect Link:"
 msgstr ""
 
-#: inc/widgets/widgets.php:330
+#: inc/widgets/widgets.php:264
+msgid "Open in new tab"
+msgstr ""
+
+#: inc/widgets/widgets.php:337
 msgid ""
 "Show your some pages as recent work. Best for Business Top or Bottom sidebar."
 msgstr ""
 
-#: inc/widgets/widgets.php:332
+#: inc/widgets/widgets.php:339
 msgid "TG: Featured Widget"
 msgstr ""
 
-#: inc/widgets/widgets.php:356
+#: inc/widgets/widgets.php:363
 msgid "Description"
 msgstr ""
 
-#: inc/widgets/widgets.php:445
+#: inc/widgets/widgets.php:452
 msgid ""
 "Display some pages as services. Best for Business Top or Bottom sidebar."
 msgstr ""
 
-#: inc/widgets/widgets.php:447
+#: inc/widgets/widgets.php:454
 msgid "TG: Image Services"
 msgstr ""
 
-#: inc/widgets/widgets.php:546
+#: inc/widgets/widgets.php:479
+msgid "Display Read more"
+msgstr ""
+
+#: inc/widgets/widgets.php:565
 msgid "Custom Tag Cloud"
 msgstr ""
 
-#: inc/widgets/widgets.php:548
+#: inc/widgets/widgets.php:567
 msgid "TG: Custom Tag Cloud"
 msgstr ""
 
@@ -604,7 +611,7 @@ msgid ""
 msgstr ""
 
 #: options.php:74
-msgid "Heder Image Position"
+msgid "Header Image Position"
 msgstr ""
 
 #: options.php:75

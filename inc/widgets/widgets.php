@@ -139,7 +139,7 @@ function accelerate_widgets_init() {
 		$page_id = absint( $instance[ 'page_id' ] );
 		$disable_feature_image = $instance['disable_feature_image'] ? 'checked="checked"' : '';
 		$image_position = esc_html( $instance[ 'image_position' ] );
-		_e( 'Suitable for Home Top Sidebar, Home Bottom Left Sidebar and Side Sidbar.', 'accelerate' );
+		_e( 'Suitable for Business Sidebar and Left/Right Sidebar.', 'accelerate' );
 	?>
 		<p>
 			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e( 'Title:', 'accelerate' ); ?></label>
@@ -238,11 +238,13 @@ class accelerate_call_to_action_widget extends WP_Widget {
  		$accelerate_defaults[ 'text_additional' ] = '';
  		$accelerate_defaults[ 'button_text' ] = '';
  		$accelerate_defaults[ 'button_url' ] = '';
+ 		$accelerate_defaults[ 'new_tab' ] = '0';
  		$instance = wp_parse_args( (array) $instance, $accelerate_defaults );
 		$text_main = esc_textarea( $instance[ 'text_main' ] );
 		$text_additional = esc_textarea( $instance[ 'text_additional' ] );
 		$button_text = esc_attr( $instance[ 'button_text' ] );
 		$button_url = esc_url( $instance[ 'button_url' ] );
+		$new_tab = $instance['new_tab'] ? 'checked="checked"' : '';
 		?>
 
 
@@ -257,6 +259,9 @@ class accelerate_call_to_action_widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id('button_url'); ?>"><?php _e( 'Button Redirect Link:', 'accelerate' ); ?></label>
 			<input id="<?php echo $this->get_field_id('button_url'); ?>" name="<?php echo $this->get_field_name('button_url'); ?>" type="text" value="<?php echo $button_url; ?>" />
+		</p>
+		<p>
+			<input class="checkbox" type="checkbox" <?php echo $new_tab; ?> id="<?php echo $this->get_field_id('new_tab'); ?>" name="<?php echo $this->get_field_name('new_tab'); ?>" /> <label for="<?php echo $this->get_field_id('new_tab'); ?>"><?php _e( 'Open in new tab', 'accelerate' ); ?></label>
 		</p>
 		<?php
 	}
@@ -276,6 +281,7 @@ class accelerate_call_to_action_widget extends WP_Widget {
 
 		$instance[ 'button_text' ] = strip_tags( $new_instance[ 'button_text' ] );
 		$instance[ 'button_url' ] = esc_url_raw( $new_instance[ 'button_url' ] );
+		$instance[ 'new_tab' ] = isset( $new_instance[ 'new_tab' ] ) ? 1 : 0;
 
 		return $instance;
 	}
@@ -285,6 +291,7 @@ class accelerate_call_to_action_widget extends WP_Widget {
  		extract( $instance );
 
  		global $post;
+ 		$new_tab = !empty( $instance[ 'new_tab' ] ) ? 'true' : 'false';
  		$text_main = empty( $instance['text_main'] ) ? '' : $instance['text_main'];
  		$text_additional = empty( $instance['text_additional'] ) ? '' : $instance['text_additional'];
  		$button_text = isset( $instance[ 'button_text' ] ) ? $instance[ 'button_text' ] : '';
@@ -310,7 +317,7 @@ class accelerate_call_to_action_widget extends WP_Widget {
 				<?php
 				if( !empty( $button_text ) ) {
 				?>
-					<a class="read-more" href="<?php echo esc_url( $button_url ); ?>" title="<?php echo esc_attr( $button_text ); ?>"><?php echo esc_html( $button_text ); ?></a>
+					<a class="read-more" <?php if( $new_tab == 'true' ) { echo 'target="_blank"'; } ?> href="<?php echo esc_url( $button_url ); ?>" title="<?php echo esc_attr( $button_text ); ?>"><?php echo esc_html( $button_text ); ?></a>
 				<?php
 				}
 				?>
@@ -469,7 +476,7 @@ class accelerate_image_service_widget extends WP_Widget {
 		next( $defaults );// forwards the key of $defaults array
 		} ?>
       <p>
-         <input class="checkbox" type="checkbox" <?php echo $display_read_more; ?> id="<?php echo $this->get_field_id( 'display_read_more' ); ?>" name="<?php echo $this->get_field_name( 'display_read_more' ); ?>" /> <label for="<?php echo $this->get_field_id( 'display_read_more' ); ?>"><?php _e( 'Display Read more', 'ample' ); ?></label>
+         <input class="checkbox" type="checkbox" <?php echo $display_read_more; ?> id="<?php echo $this->get_field_id( 'display_read_more' ); ?>" name="<?php echo $this->get_field_name( 'display_read_more' ); ?>" /> <label for="<?php echo $this->get_field_id( 'display_read_more' ); ?>"><?php _e( 'Display Read more', 'accelerate' ); ?></label>
       </p>
 	<?php }
 

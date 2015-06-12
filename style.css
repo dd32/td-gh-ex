@@ -4,7 +4,7 @@ Theme URI: http://themegrill.com/themes/accelerate/
 Author: ThemeGrill
 Author URI: http://themegrill.com
 Description: Accelerate is multipurpose WordPress theme made for simplicity and ease of use. This theme is a piece of art that has this premium look and feel which will make your site stand out. Supports all post formats. Accelerate can be used for portfolio, business, blog, personal, travel, corporate, business services or any other kinds of sites. Get free support in http://themegrill.com/support-forum/ and check the demo at http://demo.themegrill.com/accelerate/. Available Translation: Polish and Hungarian.
-Version: 1.1.5
+Version: 1.1.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: light, white, two-columns, right-sidebar, left-sidebar, fluid-layout, responsive-layout, custom-header, custom-background, custom-menu, custom-colors, sticky-post, threaded-comments, translation-ready, featured-images, theme-options, post-formats
@@ -780,7 +780,7 @@ li.default-menu {
 	margin: auto;
 	position: absolute;
 	bottom: 15%;
-	z-index: 999;
+	z-index: 98;
 	font-family: 'Roboto';
 }
 
@@ -841,7 +841,7 @@ a.slide-next {
    -ms-transform: translateY(-50%); /* IE 9 */
    -webkit-transform: translateY(-50%);
    transform: translateY(-50%);
-   z-index: 9;
+   z-index: 99;
 }
 .slide-prev i,
 .slide-next i {
@@ -877,7 +877,7 @@ a.slide-next:hover {
 	position: absolute;
 	width: 100%;
 	bottom: 15px;
-	z-index: 9;
+	z-index: 99;
 }
 #controllers a {
 	width: 16px;

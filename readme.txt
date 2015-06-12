@@ -50,6 +50,11 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.1.6 =
+* JQuery Cycle js updated to latest version(3.0.3).
+* Option added to open TG: Call to Action widget button in new tab on click.
+* Z-index issue for slider and menu fixed.
+
 = Version 1.1.5 =
 * Slider arrow appearing even when only one slide present: issue fixed.
 * Option added for displaying Read more in TG: Image Services widget.
