@@ -64,6 +64,12 @@
 									<!--/.contact-->
 									<div class="col-sm-6 text-left contact">
 										
+										<?php if ( is_active_sidebar( 'header-contact' ) ) : ?>
+										
+										<?php dynamic_sidebar( 'header-contact' ); ?>
+										
+										<?php else : ?>
+										
 										<a href="tel:+1 0888 666 555"><i class="fa fa-phone"></i>
 											+1 0888 666 555
 										</a> 
@@ -71,17 +77,25 @@
 										<a href="mailto:me@mycompany.com"><i class="fa fa-envelope-o"></i> 
 											me@mycompany.com
 										</a>
+										
+										<?php endif; ?>
 					 
 									</div>
 									<!--/.contact-->
 									
 									<!--/.social-->
-									<div class="col-sm-6 text-right social">	
+									<div class="col-sm-6 text-right social">
+										<?php if ( is_active_sidebar( 'header-social' ) ) : ?>
+										
+										<?php dynamic_sidebar( 'header-social' ); ?>
+										
+										<?php else : ?>
 										<a href="#" id="twitter" title="twitter"><i class="fa fa-twitter"> </i></a>
 										<a href="#" id="facebook" title="facebook"><i class="fa fa-facebook"> </i></a>
 										<a href="#" id="linkedin" title="linkedin"><i class="fa fa-linkedin"> </i></a>
 										<a href="#" id="google" title="google"><i class="fa fa-google-plus"> </i></a>
 										<a href="#" id="instagram" title="instagram"><i class="fa fa-instagram"> </i></a>
+										<?php endif; ?>
 									</div>
 									<!--/.social-->
 								
@@ -114,7 +128,7 @@
 									<div class="navbar-header">
 										
 										<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-										  <span class="sr-only"><?php _e('Toggle navigation', themeofwp); ?></span>
+										  <span class="sr-only"><?php _e('Toggle navigation', 'themeofwp'); ?></span>
 										  <span class="icon-bar"></span>
 										  <span class="icon-bar"></span>
 										  <span class="icon-bar"></span>

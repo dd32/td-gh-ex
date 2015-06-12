@@ -532,7 +532,7 @@ register_sidebar(array(
 register_sidebar(array(
   'name' => __( 'Footer', themeofwp ),
   'id' => 'bottom',
-  'description' => __( 'Widgets in this area will be shown before Footer.' , themeofwp),
+  'description' => __( 'Widgets in this area will be shown before footer area.' , themeofwp),
   'before_title' => '<h3>',
   'after_title' => '</h3>',
   'before_widget' => '<div class="col-lg-3 footer_widgets">',
@@ -541,22 +541,22 @@ register_sidebar(array(
 );
 
 register_sidebar(array(
-  'name' => __( 'Header', themeofwp ),
-  'id' => 'header',
-  'description' => __( 'Widgets in this area will be shown on hader style 5.' , themeofwp),
-  'before_title' => '<h3>',
-  'after_title' => '</h3>',
+  'name' => __( 'Header Social', themeofwp ),
+  'id' => 'header-social',
+  'description' => __( 'Widgets in this area will be shown on hader social area.' , themeofwp),
+  'before_title' => '',
+  'after_title' => '',
   'before_widget' => '',
   'after_widget' => ''
   )
 );
 
 register_sidebar(array(
-  'name' => __( 'Product', themeofwp ),
-  'id' => 'product',
-  'description' => __( 'Widgets in this area will be shown on commerce / products page' , themeofwp),
-  'before_title' => '<h3>',
-  'after_title' => '</h3>',
+  'name' => __( 'Header Contact', themeofwp ),
+  'id' => 'header-contact',
+  'description' => __( 'Widgets in this area will be shown on hader contact area.' , themeofwp),
+  'before_title' => '',
+  'after_title' => '',
   'before_widget' => '',
   'after_widget' => ''
   )
