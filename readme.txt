@@ -42,6 +42,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.2.3 =
+* JQuery Cycle js updated to latest version(3.0.3).
+* Option added to open TG: Call to Action widget button in new tab on click.
+
 = Version 1.2.2 =
 * Custom CSS option sanitized using wp_filter_nohtml_kses().
 * Adding the support for the entry-title tag for Google Rich Snippets in single post view.

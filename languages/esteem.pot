@@ -395,7 +395,7 @@ msgstr ""
 msgid "TG: Featured Widget"
 msgstr ""
 
-#: inc/widgets/widgets.php:254 inc/widgets/widgets.php:560
+#: inc/widgets/widgets.php:254 inc/widgets/widgets.php:567
 msgid "Title:"
 msgstr ""
 
@@ -407,51 +407,55 @@ msgstr ""
 msgid "TG: Call To Action Widget"
 msgstr ""
 
-#: inc/widgets/widgets.php:362
+#: inc/widgets/widgets.php:364
 msgid "Call to Action Main Text"
 msgstr ""
 
-#: inc/widgets/widgets.php:364
+#: inc/widgets/widgets.php:366
 msgid "Call to Action Additional Text"
 msgstr ""
 
-#: inc/widgets/widgets.php:367
+#: inc/widgets/widgets.php:369
 msgid "Button Text:"
 msgstr ""
 
-#: inc/widgets/widgets.php:371
+#: inc/widgets/widgets.php:373
 msgid "Button Redirect Link:"
 msgstr ""
 
-#: inc/widgets/widgets.php:448
+#: inc/widgets/widgets.php:377
+msgid "Open in new tab"
+msgstr ""
+
+#: inc/widgets/widgets.php:455
 msgid "Display Testimonial"
 msgstr ""
 
-#: inc/widgets/widgets.php:450
+#: inc/widgets/widgets.php:457
 msgid "TG: Testimonial"
 msgstr ""
 
-#: inc/widgets/widgets.php:563 inc/widgets/widgets.php:581
+#: inc/widgets/widgets.php:570 inc/widgets/widgets.php:588
 msgid "Name:"
 msgstr ""
 
-#: inc/widgets/widgets.php:566 inc/widgets/widgets.php:584
+#: inc/widgets/widgets.php:573 inc/widgets/widgets.php:591
 msgid "Image link:"
 msgstr ""
 
-#: inc/widgets/widgets.php:569 inc/widgets/widgets.php:587
+#: inc/widgets/widgets.php:576 inc/widgets/widgets.php:594
 msgid "Testimonial Description"
 msgstr ""
 
-#: inc/widgets/widgets.php:572 inc/widgets/widgets.php:590
+#: inc/widgets/widgets.php:579 inc/widgets/widgets.php:597
 msgid "Byline:"
 msgstr ""
 
-#: inc/widgets/widgets.php:575 inc/widgets/widgets.php:593
+#: inc/widgets/widgets.php:582 inc/widgets/widgets.php:600
 msgid "Company:"
 msgstr ""
 
-#: inc/widgets/widgets.php:578 inc/widgets/widgets.php:596
+#: inc/widgets/widgets.php:585 inc/widgets/widgets.php:603
 msgid "Company link:"
 msgstr ""
 

@@ -38,7 +38,7 @@ function esteem_scripts_styles_method() {
 	/**
 	 * Register JQuery cycle js file for slider.
 	 */
-	wp_register_script( 'jquery_cycle', ESTEEM_JS_URL . '/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
+	wp_register_script( 'jquery_cycle', ESTEEM_JS_URL . '/jquery.cycle.all.min.js', array( 'jquery' ), '3.0.3', true );
 
 	/**
 	 * Enqueue Slider setup js file.

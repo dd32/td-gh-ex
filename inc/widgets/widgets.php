@@ -351,11 +351,13 @@ class esteem_call_to_action_widget extends WP_Widget {
  		$esteem_defaults[ 'text_additional' ] = '';
  		$esteem_defaults[ 'button_text' ] = '';
  		$esteem_defaults[ 'button_url' ] = '';
+ 		$esteem_defaults[ 'new_tab' ] = '0';
  		$instance = wp_parse_args( (array) $instance, $esteem_defaults );
 		$text_main = esc_textarea( $instance[ 'text_main' ] );
 		$text_additional = esc_textarea( $instance[ 'text_additional' ] );
 		$button_text = esc_attr( $instance[ 'button_text' ] );
 		$button_url = esc_url( $instance[ 'button_url' ] );
+		$new_tab = $instance['new_tab'] ? 'checked="checked"' : '';
 		?>
 	
 		
@@ -370,6 +372,9 @@ class esteem_call_to_action_widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id('button_url'); ?>"><?php _e( 'Button Redirect Link:', 'esteem' ); ?></label> 
 			<input id="<?php echo $this->get_field_id('button_url'); ?>" name="<?php echo $this->get_field_name('button_url'); ?>" type="text" value="<?php echo $button_url; ?>" />
+		</p>
+		<p>
+			<input class="checkbox" type="checkbox" <?php echo $new_tab; ?> id="<?php echo $this->get_field_id('new_tab'); ?>" name="<?php echo $this->get_field_name('new_tab'); ?>" /> <label for="<?php echo $this->get_field_id('new_tab'); ?>"><?php _e( 'Open in new tab', 'esteem' ); ?></label>
 		</p>
 		<?php
 	}
@@ -389,6 +394,7 @@ class esteem_call_to_action_widget extends WP_Widget {
 
 		$instance[ 'button_text' ] = strip_tags( $new_instance[ 'button_text' ] );
 		$instance[ 'button_url' ] = esc_url_raw( $new_instance[ 'button_url' ] );
+		$instance[ 'new_tab' ] = isset( $new_instance[ 'new_tab' ] ) ? 1 : 0;
 
 		return $instance;
 	}
@@ -398,6 +404,7 @@ class esteem_call_to_action_widget extends WP_Widget {
  		extract( $instance );
 
  		global $post;
+ 		$new_tab = !empty( $instance[ 'new_tab' ] ) ? 'true' : 'false';
  		$text_main = empty( $instance['text_main'] ) ? '' : $instance['text_main'];
  		$text_additional = empty( $instance['text_additional'] ) ? '' : $instance['text_additional'];
  		$button_text = isset( $instance[ 'button_text' ] ) ? $instance[ 'button_text' ] : ''; 		
@@ -427,7 +434,7 @@ class esteem_call_to_action_widget extends WP_Widget {
 					?>			
 						<div class="call-to-action-button">	
 							<div class="call-to-action-button-inner-wrap">	
-								<a class="call-to-action-link" href="<?php echo esc_url( $button_url ); ?>" title="<?php echo esc_attr( $button_text ); ?>"><?php echo esc_html( $button_text ); ?></a>
+								<a class="call-to-action-link" <?php if( $new_tab == 'true' ) { echo 'target="_blank"'; } ?> href="<?php echo esc_url( $button_url ); ?>" title="<?php echo esc_attr( $button_text ); ?>"><?php echo esc_html( $button_text ); ?></a>
 							</div>
 						</div><!-- .call-to-action-button -->
 					<?php
