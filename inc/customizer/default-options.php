@@ -36,7 +36,11 @@ function rubine_default_options() {
 		'header_search' 					=> false,
 		'header_icons' 						=> false,
 		'post_thumbnails_single' 			=> true,
-		'excerpt_text' 						=> false
+		'excerpt_text' 						=> false,
+		'meta_date'							=> true,
+		'meta_author'						=> true,
+		'meta_category'						=> true,
+		'meta_tags'							=> true
 	);
 	
 	return $default_options;

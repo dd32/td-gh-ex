@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Rubine package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-05-18 21:25+0100\n"
+"PO-Revision-Date: 2015-06-01 10:36+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,7 +25,7 @@ msgstr ""
 
 #: inc/featured-content.php:376
 msgid "Tag name"
-msgstr "Tag Name"
+msgstr "Schlagwort"
 
 #: inc/featured-content.php:381
 msgid "Hide tag from displaying in post meta and tag clouds."
@@ -64,24 +64,24 @@ msgstr "Standard Schriftart"
 #: inc/customizer/sections/customizer-general.php:103
 msgid "Deactivate Google Fonts in case your language is not compatible."
 msgstr ""
-"Deaktiviere die Google Schriftart, falls die Sprache damit nicht kompatibel "
-"ist."
+"Deaktiviere die Google Schriftart, falls sie mit deiner Sprache nicht "
+"kompatibel ist."
 
 #: inc/customizer/sections/customizer-header.php:14
 msgid "Header Area"
-msgstr "Header Bereich"
+msgstr "Kopfzeilenbereich"
 
 #: inc/customizer/sections/customizer-post.php:14
 msgid "Post Settings"
-msgstr "Beitrags Einstellungen"
+msgstr "Beitragseinstellungen"
 
 #: inc/customizer/sections/customizer-post.php:30
 msgid "Post Images"
-msgstr "Beitrags Bilder"
+msgstr "Beitragsbilder"
 
 #: inc/customizer/sections/customizer-post.php:45
 msgid "Display featured images on single posts"
-msgstr "Anzeige von hervorgehobenen Bildern in Einzeilbeiträgen"
+msgstr "Zeige Artikelbilder auf einzelnen Beitragsseiten an"
 
 #: inc/customizer/sections/customizer-post.php:63
 msgid "Excerpt More Text"
@@ -100,7 +100,7 @@ msgid ""
 "Check out the PRO version which comes with additional features and advanced "
 "customization options."
 msgstr ""
-"Versuche die PRO-Version, die mit zusätzlichen Funktionen und erweiterten "
+"Versuche die PRO Version, die mit zusätzlichen Funktionen und erweiterten "
 "Anpassungsmöglichkeiten angeboten wird."
 
 #: inc/customizer/sections/customizer-upgrade.php:62
@@ -109,7 +109,7 @@ msgstr "Mehr über die PRO Version erfahren."
 
 #: 404.php:9
 msgid "404 Error: Not found"
-msgstr "Fehler 404: Seite nicht gefunden"
+msgstr "404 Error: Seite konnte nicht gefunden werden."
 
 #: 404.php:12
 msgid ""
@@ -117,7 +117,7 @@ msgid ""
 "the menus or the search box to find what you are looking for"
 msgstr ""
 "Die aufgerufene Seite existiert nicht oder wurde verschoben. Bitte verwende "
-"das Menu oder Suchfeld."
+"die Navigation oder die Suche, um die richtige Seite zu finden."
 
 #: 404.php:14
 msgid "Search"
@@ -133,7 +133,7 @@ msgstr "Seiten"
 
 #: archive.php:14
 msgid "Monthly Archives: %s"
-msgstr "Monatliche Archive: %s"
+msgstr "Monatsarchiv: %s"
 
 #: archive.php:14
 msgid "F Y"
@@ -145,11 +145,11 @@ msgstr "Archive"
 
 #: author.php:16
 msgid "Author Archives: %s"
-msgstr "Archiv Autor: %s"
+msgstr "Autorenarchive: %s"
 
 #: category.php:12
 msgid "Category Archives: %s"
-msgstr "Archiv Kategorie: %s"
+msgstr "Kategorienarchiv: %s"
 
 #: comments.php:13
 msgid "Enter password to view comments."
@@ -169,7 +169,7 @@ msgstr "Weiterlesen"
 
 #: functions.php:102
 msgid "Main Navigation"
-msgstr "Haupt Navigation"
+msgstr "Hauptnavigation"
 
 #: functions.php:103
 msgid "Top Navigation"
@@ -241,7 +241,7 @@ msgstr "Nichts gefunden. Bitte verwende das Menu oder Suchfeld. "
 
 #: searchform.php:4
 msgid "Search for:"
-msgstr "Suche nach:"
+msgstr "Suchen nach:"
 
 #: sidebar.php:14
 msgid "Widget Area"
@@ -257,7 +257,7 @@ msgstr ""
 
 #: tag.php:12
 msgid "Tag Archives: %s"
-msgstr "Tag Archive: %s"
+msgstr "Schlagwortarchiv: %s"
 
 #: inc/featured-content.php:348
 msgid "Featured Content"
@@ -278,8 +278,8 @@ msgid ""
 "tab and assign your created menu to the \"Social Icons\" theme location."
 msgstr ""
 "Bitte gehe zu WP-Admin -> Design -> Menüs und erstelle ein neues "
-"benutzerdefiniertes Menu mit eigenen Links zu allen deinen sozialen "
-"Netzwerken. Klicke dann auf die Registerkarte 'Standorte verwalten' und "
+"benutzerdefiniertes Menu mit eigenen Links zu all deinen sozialen "
+"Netzwerken. Klicke danach auf die Registerkarte 'Standorte verwalten' und "
 "verlinke dein erstelltes Menu mit dem'Social Icons'-Theme."
 
 #: inc/theme-info.php:15
@@ -327,8 +327,9 @@ msgid ""
 "Need any help to setup and configure this theme? We got you covered with an "
 "extensive theme documentation on our website."
 msgstr ""
-"Brauchst Du Hilfe zum Einrichten und der Konfiguration dieses Themes? Wir "
-"haben eine umfangreiches Dokumentation (in Englisch) auf unserer Website."
+"Du brauchst Hilfe mit der Einrichtung und Konfiguration dieses Themes? Wir "
+"haben die Lösung in Form einer ausführlichen Dokumentation (in Englisch) auf "
+"unserer Webseite."
 
 #: inc/theme-info.php:64
 msgid "Visit Rubine Documentation"

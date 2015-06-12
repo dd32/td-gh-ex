@@ -4,12 +4,13 @@
  */
 
 #customize-control-rubine_control_header_content,
-#customize-control-rubine_control_footer_content {
+#customize-control-rubine_control_footer_content,
+#customize-control-rubine_control_postmeta_headline,
+#customize-control-rubine_control_excerpt_text_headline{
 	margin: 12px 0 0;
 }
 
 #customize-control-rubine_control_default_fonts,
-#customize-control-rubine_control_post_images,
-#customize-control-rubine_control_excerpt_text_headline {
+#customize-control-rubine_control_post_images {
 	margin-bottom: 0;
 }
