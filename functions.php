@@ -256,32 +256,6 @@ function adamos_content( $limit ) {
 
 
 /**
- * Filters the page title appropriately depending on the current page
- *
- * This function is attached to the 'wp_title' fiilter hook.
- *
- * @uses	get_bloginfo()
- * @uses	is_home()
- * @uses	is_front_page()
- */
-function adamos_wp_title( $title ) {
-	global $page, $paged;
-
-	if ( is_feed() )
-		return $title;
-
-	$site_description = get_bloginfo( 'description' );
-
-	$filtered_title = $title . get_bloginfo( 'name' );
-	$filtered_title .= ( ! empty( $site_description ) && ( is_home() || is_front_page() ) ) ? ' | ' . $site_description: '';
-	$filtered_title .= ( 2 <= $paged || 2 <= $page ) ? ' | ' . sprintf( __( 'Page %s', 'adamos' ), max( $paged, $page ) ) : '';
-
-	return $filtered_title;
-}
-add_filter( 'wp_title', 'adamos_wp_title' );
-
-
-/**
  * Social Media Links on Contributors template
  */
 function author_social_media( $socialmedialinks ) {

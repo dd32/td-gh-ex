@@ -69,12 +69,12 @@
 
 	        		?>
 		           
-		           <p><?php echo $copyright; ?></p>
+		           <?php echo $copyright; ?>
 
 		        <?php else: ?>
 
 					<a href="<?php $my_theme = wp_get_theme(); echo $my_theme->get( 'ThemeURI' ); ?>">
-		            <?php _e('Adamos Pro WordPress Theme','discovery'); ?></a>
+		            <?php _e('Adamos WordPress Theme','discovery'); ?></a>
 		            <?php echo __( 'Powered By WordPress ', 'discovery' ); ?>
 
 		        <?php endif; ?>
