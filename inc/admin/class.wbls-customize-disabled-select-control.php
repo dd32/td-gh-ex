@@ -34,8 +34,9 @@ if( ! class_exists('Wbls_Customize_sep_title')) {
 		public $type = 'title_sep';
 
 		public function render_content() {
+			$label = $this->label;
 			?>
-			<div class="customize-sep-title"><?php echo esc_html($this->label); ?></div>
+			<div class="customize-sep-title"><?php esc_html_e($label); ?></div>
 			<?php
 		}
 	}
@@ -49,7 +50,13 @@ if( ! class_exists('Wbls_Customize_Info')) {
 
 		public function render_content() {
 			?>
-			<div class="dinozoom-info"><?php echo $this->label; ?></div>
+			<div class="dinozoom-info"><?php
+            /*
+			 * "Upgrade Now" notice
+			 * echo $this->label;
+			 */
+			printf( __( 'More options available in Pro version. <a href="%1$s">%2$s</a>.', 'bakery' ), esc_url('http://dinozoom.com/themes/bakery-wordpress-theme-for-bakeries-food-bloggers-coffee-shops-and-cupcakes/bakery-pro/'), __( 'Upgrade Now', 'bakery' ) )
+			?></div>
 			<?php
 		}
 	}

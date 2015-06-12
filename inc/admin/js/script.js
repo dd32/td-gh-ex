@@ -10,13 +10,12 @@
 		$('.buy-pro').on('click', function(e) {
 			e.stopPropagation();
 		});*/
-		
-		
-		
-// Services Section: Preview Selected Icon
-  $(document).ready(function($){
+$(document).ready(function($){
 
-
+	$('#accordion-section-pro .accordion-section-content').show();
+	$('#accordion-section-pro').addClass("open");
+	
+	// Services Section: Preview Selected Icon
     $('#accordion-section-services select').on('change', function(e){
 		var optionSelected = $(this).find("option:selected").val();
 
@@ -25,7 +24,7 @@
 		
     });
 
-  });
+});
 
 
 //

@@ -39,7 +39,7 @@ $msd = esc_attr (get_theme_mod( 'services_desc' ));
         <div class="hc_service_area <?php echo "sw-$w"; ?>">
         <?php
 		// values
-		$icon = esc_attr(get_theme_mod( 'service_icon'.$i, "birthday-cake"));
+		$icon = esc_attr(get_theme_mod( 'service_icon'.$i, "fa-birthday-cake"));
 		$title = esc_attr(get_theme_mod( 'service_title'.$i, "Lorem ipsum" ));
 		$desc = esc_attr(get_theme_mod( 'service_desc'.$i, "Nullam fringilla lorem sed ante pharetra, et ultrices nisl rhoncus!" ));
 		$link = esc_url(get_theme_mod( 'service_link'.$i ));
