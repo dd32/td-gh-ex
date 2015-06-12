@@ -57,7 +57,7 @@ if ( $req == "slider" ) return $bakery_slider_array;
 // Services Section Array
 $bakery_services_array = array(
                             'enable_services' => array(
-                                'type' => 'checkbox',
+                                'type' => 'disabled-checkbox',
                                 'label' => __('Enable this section', 'bakery'),
                                 'default' => 0,
                                 'sanitize_callback' => 'bakery_boolean',
@@ -135,7 +135,7 @@ if ( $req == "services" ) return $bakery_services_array;
 // Projects Section Array
 $bakery_projects_array = array(
                             'enable_projects' => array(
-                                'type' => 'checkbox',
+                                'type' => 'disabled-checkbox',
                                 'label' => __('Enable this section', 'bakery'),
                                 'default' => 0,
                                 'sanitize_callback' => 'bakery_boolean',

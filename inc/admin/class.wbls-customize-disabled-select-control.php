@@ -1,4 +1,28 @@
-<?php 
+<?php
+/**
+ * Customizer Custom Control Class for Disabled Dropdown
+ */
+if( ! class_exists('Wbls_Customize_Disabled_Checkbox_Control')) {
+	class Wbls_Customize_Disabled_Checkbox_Control extends WP_Customize_Control {
+		public $type = 'disabled-checkbox';
+
+		public function render_content() {
+			?>
+			<label>
+				<span class="customize-control-title"><?php echo esc_html($this->label); ?></span>
+                <?php printf('<span class="dinozoom-premium"><i class="fa fa-star"></i> <a href="%1$s">%2$s</a></span>',
+				esc_url( 'http://dinozoom.com/themes/bakery-wordpress-theme-for-bakeries-food-bloggers-coffee-shops-and-cupcakes/bakery-pro/' ),
+				__( 'Premium', 'bakery' )
+				);?>
+                
+                <input disabled="disabled" readonly="readonly" type="checkbox">
+                <?php esc_attr_e($this->label); ?>
+			</label>
+		<?php
+		}
+	}
+}
+
 /**
  * Customizer Custom Control Class for Disabled Dropdown
  */
@@ -34,9 +58,8 @@ if( ! class_exists('Wbls_Customize_sep_title')) {
 		public $type = 'title_sep';
 
 		public function render_content() {
-			$label = $this->label;
 			?>
-			<div class="customize-sep-title"><?php esc_html_e($label); ?></div>
+			<div class="customize-sep-title"><?php esc_html_e($this->label); ?></div>
 			<?php
 		}
 	}

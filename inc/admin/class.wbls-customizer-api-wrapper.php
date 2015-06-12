@@ -259,6 +259,19 @@
 						)
 					);
 					break;
+				case 'disabled-checkbox':
+					$wp_customize->add_control( 
+						new Wbls_Customize_Disabled_Checkbox_Control( 
+							$wp_customize, 
+							$field_id, 
+							array(
+								'label' => isset($label) ? $label : '',
+								'setting' => $field_id,
+								'section' => $this->_section_id,
+							)
+						)
+					);
+					break;
 				case 'sep-title':
 					$wp_customize->add_control( 
 						new Wbls_Customize_sep_title( 
