@@ -1,7 +1,11 @@
 <?php
-/*
-The main template file.
-*/
+/**
+ * The main template file
+ *
+ * @package WordPress
+ * @subpackage BirdSITE
+ * @since BirdSITE 1.0
+ */
 get_header(); ?>
 
 <ul id="thumbnails" class="row">
@@ -9,7 +13,6 @@ get_header(); ?>
 		<?php get_template_part( 'content', get_post_format() ); ?>
 	<?php endwhile; ?>
 </ul>
-<div class="tablenav"><?php birdsite_the_pagenation(); ?></div>
-
+<?php birdsite_the_pagenation(); ?>
 
 <?php get_footer(); ?>

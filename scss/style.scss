@@ -4,33 +4,59 @@ Theme Name: BirdSITE
 Theme URI: http://www.sysbird.jp/birdsite/theme/
 Description: BirdSITE is a photoblogging theme. The theme has grid layout and uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones. Features include the Theme Customize. You can choose the text color, link color, header line and footer background color and navigation color.
 Author: Sysbird
-Author URI: http://www.sysbird.jp/wptips/
-Version: 1.05
-License: GNU General Public License v2.0
+Author URI: https://profiles.wordpress.org/sysbird/
+Version: 1.06
+License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: white, two-columns, right-sidebar, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
+Tags: white, two-columns, left-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
+Text Domain: birdsite
 
-BirdSITE WordPress theme, Copyright (C) 2013 Sysbird
-BirdSITE WordPress theme is licensed under the GPL.
+This theme, like WordPress, is licensed under the GPL.
 */
 
-@import "normalize";
-@import "mixin";
+@import "compass";
+@import "compass/reset";
 
 // variable
-$background-color: #EFEFEF;
+$background-color: #F5F5F5;
 $text-color: #555;
 $link-color: #06A;
+$accent_color: #000;
 $navigation_color: #555;
-$footer-color: #000;
-$header-text-color: #000;
+$border-color: #CCC;
+$meta-color: #999;
+$menu-width: 240px;
+
+/*------------------------------
+Font Awesome
+-----------------------------*/
+@font-face {
+	font-family: 'FontAwesome';
+	src: url("font-awesome/fontawesome-webfont.eot?v=4.1.0");
+	src: url("font-awesome/fontawesome-webfont.eot?#iefix&v=4.1.0") format("embedded-opentype"), url("font-awesome/fontawesome-webfont.woff?v=4.1.0") format("woff"), url("font-awesome/fontawesome-webfont.ttf?v=4.1.0") format("truetype"), url("font-awesome/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@mixin font-awesome( $param, $padding-left:0, $padding-right:0 ) {
+	content: $param;
+	display: inline-block;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	padding-left: $padding-left;
+	padding-right: $padding-right;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
 
 /* Index
 --------------------------------------------- */
 h1, h2, h3, h4, h5, h6 {
 	margin: 0.7em 0;
 	line-height:1.2;
-	color: $header-text-color;
+	color: $accent_color;
 }
 
 h1 {font-size:2.4rem;}
@@ -54,10 +80,10 @@ a {
 /* Structure
 --------------------------------------------- */
 body {
-    margin:0;
-    padding:0;
-    border:0;
-    width:100%;
+	margin:0;
+	padding:0;
+	border:0;
+	width:100%;
 }
 
 .container {
@@ -66,8 +92,8 @@ body {
 
 #header {
 	float: left;
-	width: 240px;
-	margin-right: -240px;
+	width: $menu-width;
+	margin-right: -($menu-width);
 	position: relative;
 	z-index: 2;
 }
@@ -79,7 +105,7 @@ body {
 }
 
 #content {
-	margin-left: 240px;
+	margin-left: $menu-width;
 	position: relative;
 	z-index: 1;
 }
@@ -100,11 +126,20 @@ body {
 /* Wrapper
 -------------------------------------------------------------- */
 .wrapper {
-	font-family:'Lucida Grande','Verdana','Hiragino Kaku Gothic ProN',Meiryo, sans-serif;
+	font-family: 'Lucida Grande','Verdana','Hiragino Kaku Gothic ProN',Meiryo, sans-serif;
  	font-size: 0.92em;
 	color: $text-color;
-	border-top: solid 7px $footer-color;
+	border-top: solid 7px $accent_color;
+	word-wrap:break-word;
 	overflow: hidden;
+
+	* {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-o-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+		box-sizing: border-box;
+	}
 }
 
 /* Header
@@ -113,32 +148,50 @@ body {
 	padding-top: 40px;
 
 	.branding {
-		padding-left: 20px;
-		color: $header-text-color;
-		font-family: Georgia, "Bitstream Charter", serif;
+		font-family: Georgia,"Bitstream Charter",serif;
+		padding-left: 1.4em;
+		color: $accent_color;
+		margin-bottom: 20px;
 
 		.site-title {
 			font-size: 2.4rem;
 			font-size: 2.4em\9;  /* IE8 and below */
 			font-weight: bold;
+			line-height: 1;
 			margin: 0;
 
 			a {
-				color: $header-text-color;
+				color: $accent_color;
 			}
 		}
 
 		.site-description {
+			margin-top: 1rem;
 			font-size: 1rem;
+			line-height: 1.4;
 		}
 	}
 
 	.header-image {
 		display: block;
+		margin-bottom: 20px;
 
 		img {
 			max-width: 100%;
 			vertical-align:bottom
+		}
+	}
+
+	&.no-title {
+		.branding {
+			margin-bottom: 0;
+
+			.site-title,
+			.site-description {
+				position: absolute !important;
+				clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+				clip: rect(1px, 1px, 1px, 1px);
+			}
 		}
 	}
 }
@@ -146,21 +199,21 @@ body {
 /* Footer
 -------------------------------------------------------------- */
 #footer {
-	background: $footer-color;
-	padding: 1em 0;
+	background: $accent_color;
+	padding: 40px 0;
 	color: #FFF;
 
 	ul.row {
 		padding: 0;
-		margin: 0;
+		margin: 0 0 20px 0;
 		list-style: none outside none;
-		@include clear-fix();
+		@include clearfix;
 
 		&>li {
 			float: left;
 			min-height: 1px;
-			margin: 0 0 20px 20px;
-			width: 330px;
+			margin: 0 0 0 3%;
+			width: 30%;
 		}
 	}
 
@@ -170,16 +223,19 @@ body {
 
 	.site-title {
 		border-top: solid 3px #FFF;
-		padding: 1em 0 0 20px;
+		padding: 40px 0 0 20px;
+		line-height: 1.6;
+
+		.home {
+			font-weight: bold;
+		}
 
 		.generator {
 			font-family: Georgia, "Bitstream Charter", serif;
 			font-style: italic;
 
-			&:before {
-				font-family: 'Genericons';
-				content: '\f205';
-				font-style: normal;
+			&:after {
+			    @include font-awesome( "\f19a", 0.4em, 0.4em );
 			}
 		}
 	}
@@ -191,73 +247,72 @@ body {
 		z-index: 3;
 
 		a {
-			background: #EEE;
-			color: $link-color;
-			text-decoration: none;
-			text-align: center;
-			display: block;
-			@include alpha(0.7);
+			background: $border-color;
 			border-radius: 100px;
-			width: 50px;
+			display: block;
 			height: 50px;
+			width: 50px;
+			text-align: center;
+			text-decoration: none;
+			@include opacity( 0.7 );
 
 			span {
-				@include text-hide();
+				@include hide-text;
+				display: block;
 			}
 
 			&:hover {
 				text-decoration: none;
-				@include alpha(1);
+				@include opacity( 0.8 );
 			}
 
 			&:before {
-			    font-family: 'Genericons';
-			    content: '\f432';
-			    font-size: 50px;
-			    display: block;
+				@include font-awesome( "\f077" );
+				font-size: 30px;
+				display: block;
 				text-align: center;
+				padding-top: 8px;
+				color: $meta-color;
 			}
 		}
-
 	}
 }
 
 /* Menu
 -------------------------------------------------------------- */
 #menu-wrapper {
-
 	.menu {
-		width: 240px;
-		margin-top: 40px;
+		width: $menu-width;
 
 		#small-menu {
 			display: none; /* hide small menu initially */
 		}
 
-		ul { 
+		ul {
 			margin: 0;
-			padding-left: 0;
-			float: right;
-			@include clear-fix();
+			padding: 0;
+			*zoom: 1;
+			&:after {
+				clear: both;
+				content: "";
+				display: block;
+			}
 
 			li {
 				padding: 0;
-				width: 240px;
+				width: $menu-width;
 				list-style: none;
-				border-top: dotted 1px $navigation_color;
 				position: relative;
-
-				&:first-child {
-					border-top: none;
-				}
 
 				&:hover > ul {
 					display: block; /* show dropdown on hover */
 				}
 
 				a {
-					padding: 10px 0 10px 20px;
+					border-top: dotted 1px $navigation_color;
+					padding: 0.6em 1em;
 					display: block;
+					width: $menu-width - 2;
 					color: $navigation_color;
 					text-decoration: none;
 					line-height: 1.2;
@@ -268,16 +323,32 @@ body {
 					}
 				}
 
+				&:first-child {
+					> a {
+						border: none;
+					}
+				}
+
+				&.menu-item-has-children {
+					>a:after {
+						position: absolute;
+						top: 0.7em;
+						right: 0;
+						width: 0.6em;
+						height: 0.8em;
+						@include font-awesome("\f0da");
+					}
+				}
+
 				ul {
 					background: $background-color;
-					margin: 0;
 					border: dotted 1px $navigation_color;
 					display: none; /* hide dropdown */
-					width: 240px;
+					width: $menu-width;
 					position: absolute;
 					top: 0;
-					left: 240px;
-					z-index: 9999;
+					left: $menu-width;
+					z-index: 2;
 
 					li {
 						float: none;
@@ -287,42 +358,37 @@ body {
 						a {
 							white-space: normal;
 						}
+
+						ul {
+							margin: -1px 0 0 -2px;
+						}
 					}
 				}
 			}
 		}
 
-		.current_page_item > a,
-		.current_page_ancestor > a {
+		.current-menu-item > a,
+		.current-menu-ancestor > a {
 			font-weight: bold;
 		}
 	}
 }
 
-/* BirdSITE
--------------------------------------------------------------- */
 /* Posts
 --------------------------------------------- */
 #content{
 
 	padding: 40px 0;
 
-	.hentry {
-		margin-left: 20px;
-		padding: 40px;
-		background: #FFF;
-	}
-
 	h2 {
-		border-bottom: dashed 1px #CCC;
+		border-bottom: dashed 1px $border-color;
 		padding-bottom: 0.4em;
 	}
 
 	h3 {
-		border-left: solid 7px #CCC;
+		border-left: solid 7px $border-color;
 		padding-left: 10px;
 	}
-	
 
 	p {
 		line-height: 1.6;
@@ -332,13 +398,13 @@ body {
 	blockquote {
 		margin-left: 1em;
 		padding-left: 1em;
-		border-left: 5px solid #CCC;
+		border-left: 5px solid $border-color;
 		font-style: italic;
 	}
 
 	small {
 		line-height: 1;
-		color: #999999;
+		color: $meta-color;
 	}
 
 	cite:before {
@@ -346,7 +412,7 @@ body {
 	}
 
 	cite {
-		color: #999999;
+		color: $meta-color;
 		display: block;
 	}
 
@@ -355,6 +421,7 @@ body {
 		width: 100%;
 		border-collapse: collapse;
 		border-spacing: 0;
+		margin-bottom: 1.6em;
 
 		caption {
 			font-size: 1.2rem;
@@ -364,29 +431,82 @@ body {
 
 		th,
 		td {
-			border: 1px solid #CCC;
-			line-height: 20px;
-			padding: 8px;
+			border: 1px solid $border-color;
+			line-height: 1.4;
+			padding: 0.4em;
 			text-align: left;
 			vertical-align: top;
 		}
 
 		th {
-			background: $text-color;
-			color: #FFF;
+			background: $background-color;
+			font-weight: bold;
 		}
 	}
 
 	pre {
-		border: dotted 1px #CCC;
-		padding: 10px;
+		border: dotted 1px $border-color;
+		padding: 0.8em;
+		margin-bottom: 1.6em;
+		line-height: 1.4;
+	}
+
+	code, kbd, pre, samp {
+	    font-family: monospace,serif;
+	}
+
+	hr {
+	    background-color: $border-color;
+	    border: 0 none;
+	    height: 1px;
+	    margin-bottom: 1.6m;
+	}
+
+	hr {
+	    background-color: $border-color;
+	    border: 0 none;
+	    height: 1px;
+	    margin-bottom: 1.6m;
+	}
+
+	sup, sub {
+	    font-size: 80%;
+	    height: 0;
+	    line-height: 0;
+	    position: relative;
+	    vertical-align: baseline;
+	}
+
+	sub {
+		top: 0.5ex;
+	}
+
+	sup {
+		bottom: 1ex;
+	}
+
+	em {
+		font-style: italic;
+	}
+
+	strong {
+		font-weight: bold;
+	}
+
+	abbr, acronym {
+		border-bottom: 1px dotted #666;
+		cursor: help;
 	}
 
 	ul,
 	ol {
 		margin: 0 0 1.6em 1em;
 		padding: 0 0 0 1em;
-		line-height: 1.6;
+		line-height: 1.4;
+
+		li {
+			padding: 0.2em 0;
+		}
 
 		ul,
 		ol {
@@ -394,15 +514,22 @@ body {
 		}
 	}
 
+	ul {
+		list-style: disc;
+		ul {
+			list-style: circle;
+			ul {
+				list-style: square;
+			}
+		}
+	}
+
 	ol {
 		list-style: decimal;
-
 		ol {
 			list-style:upper-alpha;
-
 			ol {
 				list-style:lower-roman;
-
 				ol {
 					list-style:lower-alpha;
 				}
@@ -419,7 +546,7 @@ body {
 		}
 
 		dd {
-			margin-bottom: 1em;
+			margin: 0 1.5em 1.6em;
 			padding: 0;
 		}
 	}
@@ -434,21 +561,19 @@ body {
 	}
 
 	.hentry {
-
-		p {
-		    line-height: 1.6;
-			margin: 0 0 1.6em;
-		}
+		margin-left: 20px;
+		padding: 40px;
+		background: #FFF;
 
 		.entry-header {
-			margin-bottom: 2em;
+			margin-bottom: 1.6em;
 
 			.entry-title {
 				font-size: 2rem;
 				font-weight: normal;
 				color: $text-color;
-				border-bottom: dotted 1px #CCC;
-				padding-bottom: 1em;
+				border-bottom: dotted 1px $border-color;
+				padding-bottom: 40px;
 				margin: 0;
 
 				a {
@@ -458,123 +583,150 @@ body {
 		}
 
 		.entry-content {
-			margin-bottom: 2em;
-			@include clear-fix();
+			margin-bottom: 1.6em;
+			@include clearfix;
 		}
 
 		.entry-meta {
 			clear: both;
-			background: #F5F5F5;
+			background: $background-color;
 			line-height: 1.2;
-			padding: 10px;
-			margin-bottom: 3em;
+			padding: 0.8em;
+			margin-bottom: 1.6em;
 
 			a {
 				color: $text-color;
 			}
 
-			.icon {
+			div {
+				margin-bottom: 0.4em;
 				&:before {
-				    font-family: 'Genericons';
-				    padding-right: 2px;
-				    color: #CCC;
-				    font-size: 1rem;
+					color: $border-color;
 				}
 			}
 
 			.postdate {
 				&:before {
-				    content: '\f303';
+				    @include font-awesome( "\f017", 0, 0.4em );
 				}
 			}
 
 			.author {
 				&:before {
-				    content: '\f304';
+				    @include font-awesome( "\f007", 0, 0.4em );
 				}
 			}
 
 			.category {
 				&:before {
-				    content: '\f301';
+				    @include font-awesome( "\f07b", 0, 0.4em );
 				}
 			}
 
 			.tag {
 				&:before {
-				    content: '\f302';
+				    @include font-awesome( "\f02b", 0, 0.4em );
 				}
 			}
 
 			.comment {
 				&:before {
-				    font-family: 'Genericons';
-				    content: '\f300';
-				    padding-left: 2px;
+				    @include font-awesome( "\f075", 0, 0.4em );
+				}
+			}
+
+			.parent-post-link {
+				&:before {
+				    @include font-awesome( "\f1c5", 0, 0.4em );
 				}
 			}
 		}
 
 		.page-link {
 			clear: both;
-			margin: 2em 0;
-			font-weight: bold;
+			margin: 1.6em 0;
 			color: $link-color;
 
-			a {
-				padding: 0.5em 0.8em;
+			span {
+				background: $link-color;
+				color: #FFF;
+				padding: 0.4em 0.6em;
+				margin: 0.1em 0 0.1em 0;
 				text-decoration:none;
-				border: solid 1px $link-color;
 				font-weight: normal;
+				text-align: center;
+				border: solid 1px $link-color;
+				display: inline-block;
+				line-height: 1;
+			}
 
-				&:hover {
-					background: #F5F5F5;
+			a {
+				span {
+					color: $link-color;
+					background: #FFF;
+
+					&:hover {
+						background: $background-color;
+					}
 				}
 			}
 		}
 	}
 
-	/* Pagenation */
 	.tablenav {
 		clear: both;
-		padding: 2em 0 1em 20px;
 		color: $link-color;
+		padding: 20px 0 0;
+		@include clearfix;
 
 		a.page-numbers,
-		span.current {
-			padding: 0.5em 0.8em;
-			text-decoration:none;
-			margin: 5px 0;
-			font-weight: bold;
-			border:solid 1px $link-color;
+		.current {
 			display: inline-block;
-		}
-
-		a.page-numbers {
-			color: $link-color;
 			background: #FFF;
+			color: $link-color;
+			border:solid 1px $link-color;
+			text-decoration:none;
+			text-align: center;
+			padding: 0.4em 0.6em;
+			margin: 0.1em 0.1em 0.1em 0;
+
+			&.prev,
+			&.next {
+				background: none;
+				border: none;
+			}
 		}
 
 		a.page-numbers:hover {
-			background: #F5F5F5;
+			background: $background-color;
+
+			&.prev,
+			&.next {
+				background: none;
+				text-decoration: underline;
+			}
 		}
 
-		span.current {
+		.current {
 			color: #FFF;
 			background: $link-color;
+			border:solid 1px $link-color;
 		}
 
-		a.next,
+		a.next {
+		    padding-right: 0;
+
+			&:after {
+			    @include font-awesome( "\f054", 0.4em );
+			}
+		}
+
 		a.prev {
-			border: none;
-			background: none;
-			font-weight: normal;
-		}
+		    padding-left: 0;
 
-		a.next:hover,
-		a.prev:hover {
-			text-decoration: underline;
-			background: none;
+			&:before {
+			    @include font-awesome( "\f053", 0, 0.4em );
+			}
 		}
 	}
 }
@@ -586,7 +738,7 @@ body {
 		padding: 0;
 		margin: 0;
 		list-style: none outside none;
-		@include clear-fix();
+		@include clearfix;
 
 		li {
 			float: left;
@@ -612,8 +764,8 @@ body {
 					display: block;
 					width: 250px;
 					height: 250px;
-					@include text-hide();
-					@include alpha(0.6);
+					@include hide-text;
+					@include opacity( 0.6 );
 				}
 			}
 
@@ -656,7 +808,7 @@ body {
 				}
 
 				.entry-header {
-					padding: 1em 1em 0 1em;
+					padding: 0.8em;
 					margin: 0;
 
 					.entry-title {
@@ -664,7 +816,7 @@ body {
 						color: #FFF;
 						font-weight: normal;
 						border-bottom: none;
-						padding-bottom: 0.2em;
+						padding: 0;
 
 						a {
 							color: #FFF;
@@ -679,37 +831,69 @@ body {
 
 				.more-link {
 					a {
-						background: url("images/icon_arrow.png") no-repeat right bottom;
+						position: relative;
+
+						&:after {
+							position: absolute;
+							right: 0;
+							bottom: 0;
+							width: 0.5em;
+							height: 1.2em;
+							color: #FFF;
+							@include font-awesome( "\f054", 0, 0.4em );
+							font-size: 3em;
+							text-indent: 0;
+						}
 					}
 				}
 			}
 
 			&.has-image {
 				.caption {
-					@include alpha(0);
+					@include opacity( 0 );
 				}
 			}
 
-			&.sticky,
-			&.sticky.caption {
-				background: $link-color;
+			&.sticky {
+				position: relative;
+
+				i {
+					position: absolute;
+					top: -3px;
+					right: -15px;
+					font-size: 12px;
+					background: $accent-color;
+					color: #fff;
+					text-align: center;
+					width: 50px;
+					padding: 3px;
+					@include rotate(45deg);
+
+					 &:before {
+					     @include font-awesome("\f005");
+					}
+				}
 			}
 		}
 	}
+
+	.tablenav {
+		padding-left: 20px;
+	}
 }
 
+/* Single
+-------------------------------------------------------------------- */
 .single {
-
 	#content #nav-below {
-		margin: 2em 0 1em;
+		margin-top: 1.6em;
 		line-height: 1.2;
-		@include clear-fix();
+		@include clearfix;
 
 		.nav-next {
 			a {
 				&:before {
-				    font-family: 'Genericons';
-				    content: '\f430';
+				    @include font-awesome( "\f053", 0, 0.4em );
 				}
 			}
 		}
@@ -720,22 +904,28 @@ body {
 
 			a {
 				&:after {
-				    font-family: 'Genericons';
-				    content: '\f429';
+				    @include font-awesome( "\f054", 0.4em );
 				}
 			}
 		}
 	}
 }
-.attachment.single {
+
+/* Archive
+-------------------------------------------------------------------- */
+.attachment {
 
 	#content {
-		.entry-content .attachment {
-			text-align: center;
-		}
+		.hentry {
 
-		.hentry .wp-caption {
-			background: none;
+			.entry-attachment {
+				text-align: center;
+				margin-bottom: 1.6em;
+
+				.wp-caption {
+					background: none;
+				}
+			}
 		}
 	}
 }
@@ -744,13 +934,13 @@ body {
 -------------------------------------------------------------- */
 #content .hentry img,
 .widget img {
-	max-width: 100%; /* Fluid images for posts, comments, and widgets */
+	max-width: 100%;
 	height: auto;
 }
 
 img[class*="align"],
 img[class*="wp-image-"] {
-	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+	height: auto;
 }
 
 .aligncenter {
@@ -769,65 +959,92 @@ img[class*="wp-image-"] {
 	margin-left: 0.75em;
 }
 
-.alignleft,
-.alignright,
-.aligncenter {
+img.alignleft,
+img.alignright,
+img.aligncenter {
 	margin-bottom: 0.75em;
 }
 
-a:focus img[class*="attachment"],
-a:hover img[class*="attachment"],
-a:focus img[class*="align"],
-a:hover img[class*="align"],
-a:active img[class*="align"],
-a:focus img[class*="wp-image-"],
-a:hover img[class*="wp-image-"],
-a:active img[class*="wp-image-"],
-#content .gallery .gallery-icon a:focus img,
-#content .gallery .gallery-icon a:hover img,
-#content .gallery .gallery-icon a:active img,
-#content .hentry a:hover img {
-	@include alpha(0.9);
+a:hover img {
+	@include opacity( 0.9 );
 }
 
-#content .hentry .wp-caption {
-	background: #EFEFEF;
-	text-align: center;
-	padding: 5px 0;
-	font-size: 0.9rem;
-	color: #999;
-	max-width: 100%;
-	margin-bottom: 0.75em;
-
-	p {
-		margin: 0;
-	}
-}
-
-#content .hentry .gallery-thumb {
-	float: right;
-	display: block;
-	margin: 0 0 10px 10px;
-}
-
-#content .hentry .gallery {
-	margin: 0 auto;
-	clear: both;
-
-	.gallery-item {
-		float: left;
-		text-align: center;
-		margin: 0 0 10px 0;
-		width: 33%;
-	}
-
+#content .hentry {
 	.wp-caption,
 	.gallery-caption {
-		font-size: 0.9rem;
-		line-height: 1.2;
-	    color: #AAA;
-		max-width: 97.5%;
+		font-size: 0.9em;
+		line-height: 1;
+		color: $meta-color;
+		max-width: 100%;
 		text-align: center;
+	}
+
+	.wp-caption {
+		max-width: 100%;
+		background-color: $background-color;
+		padding: 5px;
+
+		p {
+			text-align: center;
+			margin: 5px 0 0 0;
+			line-height: 1;
+		}
+	}
+
+	.gallery-caption {
+		margin: 5px 0 0 0;
+	}
+
+	.gallery {
+		margin: 0 auto;
+		clear: both;
+
+		.gallery-item {
+			float: left;
+			padding: 0 5px;
+			margin-bottom: 10px;
+			text-align: center;
+			width: 33%;
+
+			a {
+				display: block;
+			}
+
+			img {
+				vertical-align:bottom;
+			}
+		}
+
+		&.gallery-columns-2 .gallery-item {
+			max-width: 50%;
+		}
+
+		&.gallery-columns-3 .gallery-item {
+			max-width: 33.33%;
+		}
+		&.gallery-columns-4 .gallery-item {
+			max-width: 25%;
+		}
+
+		&.gallery-columns-5 .gallery-item {
+			max-width: 20%;
+		}
+
+		&.gallery-columns-6 .gallery-item {
+			max-width: 16.66%;
+		}
+
+		&.gallery-columns-7 .gallery-item {
+			max-width: 14.28%;
+		}
+
+		&.gallery-columns-8 .gallery-item {
+			max-width: 12.5%;
+		}
+
+		&.gallery-columns-9 .gallery-item {
+			max-width: 11.11%;
+		}
 	}
 }
 
@@ -847,36 +1064,24 @@ video {
 /* Comments
 -------------------------------------------------------------- */
 #content #comments {
-	margin-top: 20px;
-	display: block;
-
-	#comments-title {
-		font-size: 1.3rem;
-		font-weight: bold;
-		margin: 1em 0;
-	}
-
-	#reply-title {
-		font-size: 1.3rem;
-		font-weight: bold;
-		margin: 1em 0;
-	}
+	margin-top: 1.6em;
 
 	.navigation {
 		position: relative;
 		height: 1em;
-		padding-bottom: 10px;
-		margin-bottom: 1em;
+		margin-bottom: 0.8em;
+
+		&.bottom {
+			margin-bottom: 1.6em;
+		}
 
 		.nav-previous a {
 			position: absolute;
 			top: 0;
 			right: 0;
-			padding-left: 1em;
 
 			&:after {
-			    font-family: 'Genericons';
-			    content: '\f429';
+				@include font-awesome( "\f054", 0.4em );
 			}
 		}
 
@@ -884,11 +1089,9 @@ video {
 			position: absolute;
 			top: 0;
 			left: 0;
-			padding-right: 1em;
 
 			&:before {
-			    font-family: 'Genericons';
-			    content: '\f430';
+				@include font-awesome( "\f053", 0, 0.4em );
 			}
 		}
 	}
@@ -901,26 +1104,22 @@ video {
 		li.trackback,
 		li.pingback,
 		li.comment {
-			border-left: 2px solid #CCC;
+			border-left: 2px solid $border-color;
 			clear: both;
-			margin-bottom: 1em;
-			padding: 0 0 0 10px;
+			margin-bottom: 0.8em;
+			padding: 0 0 0 0.8em;
 			position: relative;
 			list-style: none;
-			@include clear-fix();
+			@include clearfix;
 		}
 	}
 
 	li {
-
 		&.trackback,
 		&.pingback {
 			.posted {
 				a.web:after {
-				    font-family: 'Genericons';
-				    content: '\f442';
-				    padding-wight: 5px;
-				    font-size: 1rem;
+					@include font-awesome("\f08e", 0.2em, 0.2em );
 				}
 			}
 		}
@@ -928,28 +1127,20 @@ video {
 		.comment_meta {
 			.author {
 				font-weight: bold;
-				font-size: 1rem;
 			}
 
 			.postdate {
-				color: #999999;
+				color: $meta-color;
 				font-size: 0.85rem;
-				margin-top: 5px;
 
 				&:before {
-				    font-family: 'Genericons';
-				    padding-right: 2px;
-				    color: #CCC;
-				    font-size: 1rem;
-				    content: '\f303';
+					@include font-awesome( "\f017", 0.2em, 0.2em );
 				}
 			}
 
 			.comment-reply-link {
 				&:before {
-				    font-family: 'Genericons';
-				    content: '\f412';
-				    padding-left: 5px;
+					@include font-awesome( "\f112", 0.4em, 0.4em );
 				}
 			}
 
@@ -969,17 +1160,27 @@ video {
 
 				&.web {
 					a:after {
-					    font-family: 'Genericons';
-					    content: '\f442';
-					    padding-wight: 5px;
-					    font-size: 1rem;
+						@include font-awesome( "\f08e", 0.4em, 0 );
 					}
 				}
 			}
 		}
 
 		&.bypostauthor .comment_meta .author {
-			color: $footer-color;
+			color: $accent_color;
+		}
+
+		&.awaiting  {
+			.author,
+			.comment_text,
+			.comment_text a {
+				color: $meta_color;
+			}
+
+			.attention {
+				display: block;
+				color: #C00;
+			}
 		}
 	}
 }
@@ -987,14 +1188,14 @@ video {
 /* Forms
 -------------------------------------------------------------- */
 #comments #commentform {
-	border: dashed 1px #CCC;
+	border: dashed 1px $border-color;
 	padding: 10px 5%;
 	margin: 15px 0;
-	width: 90%;
+	width: 100%;
 
 	em {
 		display: block;
-		padding: 1em 0 0 0;
+		padding: 1em 0 0.4em;
 		font-style: normal;
 	}
 
@@ -1002,24 +1203,24 @@ video {
 		width: 300px;
 	  	padding: 5px;
 		background: #FFF;
-		border: solid 1px #CCC;
+		border: solid 1px $border-color;
 	}
 
 	textarea {
-		width: 95%;
+		width: 100%;
 		height: 100px;
 	  	padding:5px;
 		background: #FFF;
-		border: solid 1px #CCC;
-		}
+		border: solid 1px $border-color;
+	}
 
 	input#submit {
 		padding: 5px 10px;
-		}
+	}
 
 	.form-allowed-tags {
 		font-size: 0.9rem;
-		color: #999;
+		color: $meta-color;
 	}
 
 	.form-allowed-tags code {
@@ -1028,7 +1229,7 @@ video {
 }
 
 form {
-	input, 
+	input,
 	select,
 	textarea {
 		max-width: 95%;
@@ -1041,24 +1242,31 @@ form {
 .search,
 .error404 {
 	#content {
+		.hentry {
+			.entry-header {
+				margin-bottom: 0;
+			}
+		}
+
 		ul {
 			margin: 0;
 			padding: 0 0 20px 0;
 			list-style: none;
 
 			li {
-				border-bottom: dotted 1px #CCC;
+				border-bottom: dotted 1px $border-color;
 				line-height: 1.2;
+				padding: 0;
 
 				a {
 					display: block;
 					padding: 5px 0;
 					color: $text-color;
-					@include clear-fix();
+					@include clearfix;
 
 					&:hover {
 						text-decoration: none;
-						background: #F5F5F5;
+						background: $background-color;
 					}
 				}
 
@@ -1076,27 +1284,18 @@ form {
 				}
 
 				.postdate {
-					color: #999999;
+					color: $meta-color;
 					font-size: 0.85rem;
 					margin-top: 5px;
 					display: block;
 
 					&:before {
-					    font-family: 'Genericons';
-					    padding-right: 2px;
-					    color: #CCC;
-					    font-size: 1rem;
-					    content: '\f303';
+						@include font-awesome( "\f017", 0, 0.4em );
 					}
 				}
 			}
 		}
-
-		.tablenav {
-			padding-left: 0;
-		}
 	}
-
 }
 
 /* Widget
@@ -1130,18 +1329,17 @@ form {
 		list-style: none;
 		padding: 0;
 		margin-left: 0;
+		line-height: 1.4;
 		overflow: hidden;
 
 		li {
 			margin: -1px 0 0 0;
 			border-top: dotted 1px #FFF;
-			padding: 0.3em 0;
+			padding: 0.4em 0 0.4em 0.8em;
+			text-indent: -0.4em;
 
 			&:before {
-			    font-family: 'Genericons';
-			    content: '\f104';
-			    font-size: 10px;
-			    padding-right: 2px;
+				@include font-awesome( "\f0da", 0, 0.2em);
 			}
 
 			a {
@@ -1169,108 +1367,130 @@ form {
 	}
 
 	#wp-calendar {
-		/* Calendar Widget */
 		border-collapse: collapse;
 		border-spacing: 0;
 
 		caption {
-			font-size: 1.2rem;
-			font-style: bold;
-			padding: 0.5em 0;
+			font-size: 1.4rem;
+			font-weight: normal;
+			margin-bottom: 10px;
 		}
 
-		th,
-		td {
-			text-align: center;
-			border: 1px solid $footer-color;
-			background: #FFF;
-			padding: 8px;
-			color: $text-color;
+		tbody {
+			th,
+			td {
+				text-align: center;
+				border-top: 1px solid $border-color;
+				padding: 8px;
+
+				a {
+					font-weight: bold;
+					display: block;
+					padding: 2px 0;
+					margin: 0 auto;
+					background: #FFF;
+					color: $accent_color;
+
+					&:hover {
+						background: $border-color;
+						text-decoration: none;
+					}
+				}
+		    }
+		}
+
+		thead {
+			th {
+				padding: 8px;
+				text-align: center;
+			}
+		}
+
+		tfoot {
+			border-top: 1px solid $border-color;
 
 			a {
-				color: $link-color;
+				font-size: 1.2em;
 			}
-	    }
-	}
 
-	#searchform {
-		@include clear-fix();
+			#next {
+				text-align: right;
+			}
 
-		label {
-			@include text-hide();
-		}
-
-		#s {
-			float: left;
-			width: 76%;
-			padding: 5px 2%;
-			font-size: 15px;
-			height: 20px;
-			line-height: 1;
-			border: solid 1px #CCC;
-			border-radius: 5px 0 0 5px;
-		}
-
-		#searchsubmit {
-			background: url("images/icon_search.png") #CCC no-repeat center center;
-			border: 0 none;
-			cursor: pointer;
-			width: 18%;
-			height: 32px;
-			border-radius: 0 5px 5px 0;
-			margin: 0;
-			color: #FFF;
-			@include text-hide();
+			td {
+				padding: 8px 0;
+			}
 		}
 	}
 }
 
+/* Searcform
+--------------------------------------------- */
+#searchform {
+	width: 100%;
+	height: 30px;
+	position: relative;
+
+	label {
+	    display: block;
+	    font-size: 0;
+	    overflow: hidden;
+	    text-indent: -9999px;
+	}
+
+	#s {
+		width: 80%;
+		padding: 5px 10px 5px 5px;
+		height: 30px;
+		line-height: 1;
+		border-radius: 4px 0 0 4px;
+		border: none;
+	}
+
+	#searchsubmit {
+		position: absolute;
+		top: 0;
+		right: 1px;
+		border: 0 none;
+		cursor: pointer;
+		width: 20%;
+		height: 30px;
+		border-radius: 0 4px 4px 0;
+		margin: 0;
+		background: $border-color;
+		color: #FFF;
+		-webkit-appearance: button;
+		@include font-awesome( "\f005" );
+		font-size: 1.2em;
+	}
+}
 
 /* Media queries for responsive design
 --------------------------------------------- */
-/* --- iPad Landscape --- */
-@media screen and (max-width: 1060px) {
-	#content {
-		margin-right: 20px;
-	}
-}
-
 /* --- Smartphones and small Tablet PCs --- */
 @media screen and (max-width: 810px) {
 
 	.home #content {
 
 		ul.row {
-			width: 320px;
-
 			li {
 				float: none;
-				width: 300px;
-				height: 300px;
-
-				.caption {
-					width: 300px;
-					height: 300px;
-				}
 
 				.more-link {
-					width: 300px;
-					height: 300px;
-
 					a {
-						width: 300px;
-						height: 300px;
-						background: url("images/icon_arrow.png") no-repeat right bottom;
-					}
-				}
+						position: relative;
 
-				.thumbnail {
-					width: 290px;
-					height: 290px;
-					overflow: hidden;
-
-					img {
-						width: 100%;
+						&:after {
+							position: absolute;
+							right: 0;
+							bottom: 0;
+							width: 0.5em;
+							height: 1.2em;
+							color: #FFF;
+							@include font-awesome( "\f054", 0, 0.4em );
+							font-size: 3em;
+							text-indent: 0;
+						}
 					}
 				}
 			}
@@ -1278,13 +1498,13 @@ form {
 	}
 
 	#footer {
-
+		padding: 20px 0;
 		.container {
-			width: 90%;
-			margin: 0 auto;
+			padding: 0 10px;
 		}
 
 		ul.row {
+			margin: 0 0 10px 0;
 
 			&>li {
 				float: none;
@@ -1294,7 +1514,7 @@ form {
 		}
 
 		.site-title {
-			padding: 1em 0;
+			padding: 10px 0 0 0;
 			text-align: center;
 		}
 	}
@@ -1304,11 +1524,6 @@ form {
 			li {
 				border-top: none;
 				display: inline;
-
-				a {
-					padding: 0.5em 0.5em 0.5em 0;
-					display: inline-block;
-				}
 
 				ul {
 					margin-left: 2em;
@@ -1322,7 +1537,7 @@ form {
 				}
 			}
 
-			@include clear-fix();
+			@include clearfix;
 		}
 	}
 
@@ -1351,7 +1566,6 @@ form {
 
 /* --- Smartphones and small Tablet PCs --- */
 @media screen and (max-width: 600px) {
-
 	.wrapper {
 	 	font-size: 1em;
 	}
@@ -1364,9 +1578,11 @@ form {
 		width: 100%;
 		float: none;
 		padding: 0;
+		position: static;
 
 		.branding {
-			padding: 2.2em 0;
+			padding: 2.4em 0;
+			margin-bottom: 0;
 			text-align: center;
 
 			.site-description {
@@ -1375,13 +1591,19 @@ form {
 		}
 
 		.header-image {
-			margin-bottom: 20px
+			margin-bottom: 0;
 		}
-	}
 
-	#header.no-image {
-		min-height: 2.2em;
-		padding: 0;
+		&.no-image {
+			min-height: 2.2em;
+			padding: 0;
+		}
+
+		&.no-title {
+			.branding {
+				padding: 0;
+			}
+		}
 	}
 
 	#content {
@@ -1390,34 +1612,59 @@ form {
 
 		.hentry {
 			margin-left: 0;
-			padding: 20px;
+			padding: 10px;
+
+			.entry-header {
+				 margin-bottom: 10px;
+
+				.entry-title {
+					padding-bottom: 10px;
+				}
+			}
 		}
 
 		.tablenav {
+			padding: 0 10px 10px;
 			text-align: center;
 		}
 	}
 
-	.home #content {
+	.home {
+		#header {
+			margin-bottom: 20px;
 
-		ul.row {
-			padding: 0;
-			margin: 0 auto;
-			width: 300px;
-	
+			&.no-image {
+				margin-bottom: 0;
+			}
+		}
 
-			li {
-				margin: 0 auto 20px;
+		#content {
+			ul.row {
+				li {
+					margin: 0 auto 20px;
+				}
+			}
+
+			.tablenav {
+				padding-left:  10px;
+				padding-bottom: 20px
 			}
 		}
 	}
+
+	.single {
+		#content #nav-below {
+			margin-bottom: 1.6em;
+		}
+	}
+
 
 	/* small menu */
 	#menu-wrapper {
 		position: absolute;
 		top: 0;
-		left: -240px;
-		@include clear-fix();
+		left: -($menu-width);
+		z-index: 3;
 
 		.menu {
 			margin-top: 0;
@@ -1427,44 +1674,52 @@ form {
 				display: block;
 				position: absolute;
 				top: 0;
-				left: 240px;
+				left: $menu-width;
 				width: 2.8em;
-				height: 2.2em;
-				background: $navigation_color;
+				height: 2.8em;
+				background-color: $navigation_color;
 				color: #FFF;
 				text-align: center;
+				border-bottom-right-radius : 8px;
+				padding: 0.4em;
 
 				&:after {
-				    font-family: 'Genericons';
-				    content: '\f419';
-				    font-size: 2em;
+					@include font-awesome( "\f0c9" );
+					font-size: 2em;
 				}
-
 			}
 
 			ul#menu-primary-items {
 				clear: both;
-				width: 240px;
+				width: $menu-width;
 				background: $navigation_color;
-				overflow: hidden;
-				z-index: 9999;
-				@include alpha(0.9);
+				border-bottom-right-radius : 8px;
+				padding: 0 5px 5px;
+				z-index: 3;
 
 				li {
 					clear: both;
 					float: none;
 					width: 100%;
 					margin-top: -1px;
-					border-top: dotted 1px #FFF;
 					background: none;
 
 					a {
+						border-top: dotted 1px #FFF;
 						color: #FFF;
 						white-space: normal;
-						padding: 1em;
+						padding: 0.4em;
+						width: auto;
 
 						&:hover {
-							background: inherit;
+							background: none;
+							color: $border-color;
+						}
+					}
+
+					&.menu-item-has-children {
+						>a:after {
+							@include font-awesome("");
 						}
 					}
 
@@ -1485,17 +1740,38 @@ form {
 						}
 					}
 				}
+
+				.current-menu-item > a,
+				.current-menu-ancestor > a {
+					color: $border-color;
+				}
 			}
 		}
+	}
 
-		&.current {
+	body {
+		position: relative;
 
-			left: 0;
+		&.open-menu {
+			//overflow: hidden;
 
-			.menu {
-				#small-menu {
-					&:after {
-					    content: '\f406';
+			.overlay {
+				position: absolute;
+				z-index: 2;
+				top: 0;
+				left: 0;
+				width:100%;
+				height: 100%;
+				background: #000;
+				@include opacity( 0.7 );
+			}
+
+			#menu-wrapper {
+				.menu {
+					#small-menu {
+						&:after {
+							@include font-awesome( "\f00d" );
+						}
 					}
 				}
 			}
