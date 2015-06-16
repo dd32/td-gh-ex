@@ -792,11 +792,17 @@ class kad_image_widget extends WP_Widget{
           if(!empty($instance['image_link'])) {$link = $instance['image_link'];} else {$link = esc_url($instance['image_uri']);}
           $linktype = 'target="_self"';
         }
+        $image_id = attachment_url_to_postid( $instance['image_uri'] );
+        if(isset($image_id) && $image_id != '0') {
+          $alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+        } else {
+          $alt_text == '';
+        }
     ?>
      <?php echo $before_widget; ?>
     <div class="kad_img_upload_widget">
         <?php if($uselink == true) {echo '<a href="'.esc_url($link).'" '.$linktype.'>';} ?>
-        <img src="<?php echo esc_url($instance['image_uri']); ?>" />
+        <img src="<?php echo esc_url($instance['image_uri']); ?>" alt="<?php echo esc_attr($alt_text); ?>" />
         <?php if($uselink == true) {echo '</a>'; }?>
         <?php if(!empty($instance['text'])) { ?> <p class="kadence_image_widget_caption"><?php echo esc_html($instance['text']); ?></p><?php }?>
     </div>

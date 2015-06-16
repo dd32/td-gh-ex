@@ -32,11 +32,17 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+= 1.2.8 | 16th June 2015 = 
+* Update: Few w3 validator notices.
+* Update: Comments Template.
+* Update: rel-link function to look for wp image class.
+* Update: Image edit script.
+
 = 1.2.7 | 30th April 2015 = 
 * Add: Comments on pages option.
 * Update: TGM script for recommending plugins.
 * Update: Image size attributes for grid. 
-* Update Readme file.
+* Update: Readme file.
 
 = 1.2.6 | 14th April 2015 = 
 * Fix: Shop page not responding to header options.

@@ -5,7 +5,7 @@
  */
 
 function pinnacle_scripts() {
-  wp_enqueue_style('pinnacle_theme', get_template_directory_uri() . '/assets/css/pinnacle.css', false, '126');
+  wp_enqueue_style('pinnacle_theme', get_template_directory_uri() . '/assets/css/pinnacle.css', false, '128');
   global $pinnacle; if(isset($pinnacle['skin_stylesheet']) && !empty($pinnacle['skin_stylesheet'])) {$skin = $pinnacle['skin_stylesheet'];} else { $skin = 'default.css';} 
  wp_enqueue_style('pinnacle_skin', get_template_directory_uri() . '/assets/css/skins/'.$skin.'', false, null);
 
@@ -17,8 +17,8 @@ if (is_child_theme()) {
   }
 
   wp_register_script('modernizr', get_template_directory_uri() . '/assets/js/vendor/modernizr-2.7.0.min.js', false, null, false);
-  wp_register_script('pinnacle_plugins', get_template_directory_uri() . '/assets/js/min/kt_plugins.min.js', false, 126, true);
-  wp_register_script('pinnacle_main', get_template_directory_uri() . '/assets/js/min/kt_main.min.js', false, 126, true);
+  wp_register_script('pinnacle_plugins', get_template_directory_uri() . '/assets/js/min/kt_plugins.min.js', false, 128, true);
+  wp_register_script('pinnacle_main', get_template_directory_uri() . '/assets/js/min/kt_main.min.js', false, 128, true);
   wp_enqueue_script('jquery');
   wp_enqueue_script('modernizr');
   wp_enqueue_script('masonry');

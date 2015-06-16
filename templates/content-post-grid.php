@@ -86,8 +86,8 @@
                                             $image = aq_resize($attachment_url, $image_width, $image_height, true);
                                             if(empty($image)) {$image = $attachment_url;} ?>
                                             <li>
-                                                <a href="<?php the_permalink() ?>" alt="<?php the_title(); ?>">
-                                                    <img src="<?php echo esc_url($image); ?>" <?php echo 'width="'.esc_attr($image_width).'" height="'.esc_attr($image_height).'"';?> class="" />
+                                                <a href="<?php the_permalink() ?>">
+                                                    <img src="<?php echo esc_url($image); ?>" <?php echo 'width="'.esc_attr($image_width).'" height="'.esc_attr($image_height).'"';?> class="" alt="<?php the_title(); ?>" />
                                                 </a>
                                             </li>
                                           <?php }

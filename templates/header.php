@@ -43,9 +43,9 @@
           <a class="brand logofont" style="height:<?php echo esc_attr($header_height);?>px; line-height:<?php echo esc_attr($header_height);?>px; display:block;" href="<?php echo esc_url(home_url()); ?>/">
             <?php if (!empty($pinnacle['x1_logo_upload']['url'])) { ?> 
             <div id="thelogo" style="height:<?php echo esc_attr($header_height);?>px; line-height:<?php echo esc_attr($header_height);?>px;">
-                <div style="background-image: url('<?php echo esc_attr($pinnacle['x1_logo_upload']['url']); ?>'); max-height:<?php echo esc_attr($header_height);?>px; height:<?php echo esc_attr($pinnacle['x1_logo_upload']['height']); ?>px; width:<?php echo esc_attr($pinnacle['x1_logo_upload']['width']); ?>px;" class="kad-standard-logo kad-lg" /></div>
+                <div style="background-image: url('<?php echo esc_attr($pinnacle['x1_logo_upload']['url']); ?>'); max-height:<?php echo esc_attr($header_height);?>px; height:<?php echo esc_attr($pinnacle['x1_logo_upload']['height']); ?>px; width:<?php echo esc_attr($pinnacle['x1_logo_upload']['width']); ?>px;" class="kad-standard-logo kad-lg"></div>
                     <?php if (!empty($pinnacle['th_x1_logo_upload']['url'])) { ?> 
-                        <div style="background-image: url('<?php echo esc_attr($pinnacle['th_x1_logo_upload']['url']); ?>'); max-height:<?php echo esc_attr($header_height);?>px; height:<?php echo esc_attr($pinnacle['th_x1_logo_upload']['height']); ?>px; width:<?php echo esc_attr($pinnacle['th_x1_logo_upload']['width']); ?>px;" class="kad-lg kad-standard-logo-tranbg" /></div> 
+                        <div style="background-image: url('<?php echo esc_attr($pinnacle['th_x1_logo_upload']['url']); ?>'); max-height:<?php echo esc_attr($header_height);?>px; height:<?php echo esc_attr($pinnacle['th_x1_logo_upload']['height']); ?>px; width:<?php echo esc_attr($pinnacle['th_x1_logo_upload']['width']); ?>px;" class="kad-lg kad-standard-logo-tranbg"></div> 
                     <?php }?>
             </div> 
             <?php } else { 

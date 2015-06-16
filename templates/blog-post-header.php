@@ -1,5 +1,5 @@
 <?php
-	 if(!pinnacle_pagetitle_behind_header()) { ?>
+	 if(!pinnacle_hide_pagetitle()) { ?>
 <?php } else { 
 	global $post, $pinnacle; 
 		$bsub 				= get_post_meta( $post->ID, '_kad_subtitle', true );
