@@ -279,7 +279,7 @@ class interface_custom_tag_widget extends WP_Widget {
 								echo'<div class="service-icon">'.get_the_post_thumbnail( $post->ID, 'icon' ).'</div>';
 							}
 							?>
-      <h3 class="service-title"><?php echo $page_title; ?></h3>
+      <h3 class="service-title"><?php echo esc_attr($page_title); ?></h3>
     </div>
     <!-- .service-item -->
     <article>
@@ -321,7 +321,7 @@ class interface_custom_tag_widget extends WP_Widget {
 		$widget_redirecturl = apply_filters( 'widget_redirecturl', empty( $instance['widget_redirecturl'] ) ? '' : $instance['widget_redirecturl'], $instance, $this->id_base );
 
 		echo $before_widget;
-		if ( !empty( $widget_primary ) ) { echo '<div class="promotional-text">' . esc_html( $widget_primary ); } ?> <span> <?php echo esc_html( $widget_secondary ); ?> </span> <?php echo '</div>';?> <a class="call-to-action" href="<?php echo esc_html($widget_redirecturl); ?>" title="<?php echo $redirect_text; ?>"><?php echo esc_html( $redirect_text ); ?></a>
+		if ( !empty( $widget_primary ) ) { echo '<div class="promotional-text">' . esc_html( $widget_primary ); } ?> <span> <?php echo esc_html( $widget_secondary ); ?> </span> <?php echo '</div>';?> <a class="call-to-action" href="<?php echo esc_html($widget_redirecturl); ?>" title="<?php echo esc_html($redirect_text); ?>"><?php echo esc_html( $redirect_text ); ?></a>
 <?php
 		echo $after_widget;
 	}
@@ -408,10 +408,10 @@ class interface_custom_tag_widget extends WP_Widget {
   <label for="<?php echo $this->get_field_id('title'); ?>">
     <?php _e( 'Title:', 'interface' ); ?>
   </label>
-  <input id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
+  <input id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
 </p>
 <?php _e( 'Description','interface' ); ?>
-<textarea class="widefat" rows="10" cols="20" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo $text; ?></textarea>
+<textarea class="widefat" rows="10" cols="20" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo esc_attr($text); ?></textarea>
 <p>
   <label for="<?php echo $this->get_field_id('redirect_recentwork'); ?>">
     <?php _e( 'Redirect Text:', 'interface' ); ?>
@@ -422,7 +422,7 @@ class interface_custom_tag_widget extends WP_Widget {
   <label for="<?php echo $this->get_field_id('widget_redirecturl'); ?>">
     <?php _e( 'Redirect Url:', 'interface' ); ?>
   </label>
-  <input class="widefat" id="<?php echo $this->get_field_id('redirect_recenturl'); ?>" name="<?php echo $this->get_field_name('redirect_recenturl'); ?>" type="text" value="<?php echo $redirect_recenturl; ?>" />
+  <input class="widefat" id="<?php echo $this->get_field_id('redirect_recenturl'); ?>" name="<?php echo $this->get_field_name('redirect_recenturl'); ?>" type="text" value="<?php echo esc_html($redirect_recenturl); ?>" />
 </p>
 <?php
 		for( $i=0; $i<3; $i++) { 
@@ -484,7 +484,7 @@ class interface_custom_tag_widget extends WP_Widget {
 		echo '<div class="column clearfix">';
 			if ( !empty( $title ) ) { echo '<div class="one-fourth">' . $before_title . esc_html( $title ) . $after_title; ?>
 <p><?php echo esc_textarea( $text ); ?></p>
-<a class="call-to-action" href="<?php echo esc_html($redirect_recenturl); ?>" title="<?php echo $redirect_recentwork; ?>"><?php echo esc_html( $redirect_recentwork ); ?></a> <!-- .call-to-action --> 
+<a class="call-to-action" href="<?php echo esc_html($redirect_recenturl); ?>" title="<?php echo esc_html($redirect_recentwork); ?>"><?php echo esc_html( $redirect_recentwork ); ?></a> <!-- .call-to-action --> 
 <?php echo  '</div>';  }
 		  		
 		   		$j = 1;
@@ -504,7 +504,7 @@ class interface_custom_tag_widget extends WP_Widget {
 			echo '<a title="'.get_the_title().'" ' .'href="'.get_permalink().'">'.get_the_post_thumbnail( $post->ID,'gallery').'</a>';				
 						}
 						?>
-  <h3 class="custom-gallery-title"><a href="<?php the_permalink(); ?>" title=""><?php echo $page_title; ?></a></h3>
+  <h3 class="custom-gallery-title"><a href="<?php the_permalink(); ?>" title=""><?php echo esc_attr($page_title); ?></a></h3>
   <p><?php echo get_the_excerpt(); ?></p>
 </div>
 <!-- .one-fourth -->
@@ -557,14 +557,14 @@ class interface_Widget_Testimonial extends WP_Widget {
     <div class="testimonial-image"> <img src="<?php echo esc_url($image1)?>" title="<?php echo esc_attr($name1); ?>" alt="<?php echo esc_attr($name1); ?>" /> </div>
     <div class="testimonial-content">
       <p><?php echo esc_html( $text1 ); ?></p>
-      <div class="testimonial-meta"> <strong><?php echo esc_html( $name1 ); ?></strong> <?php echo esc_html( $designation1 ); if(!empty($company_name1)){  echo ' - '; } ?> <a href="<?php echo esc_url($company_link1); ?>" title="<?php echo $company_name1; ?>" target="_blank"> <?php echo esc_html( $company_name1 ); ?></a> </div>
+      <div class="testimonial-meta"> <strong><?php echo esc_html( $name1 ); ?></strong> <?php echo esc_html( $designation1 ); if(!empty($company_name1)){  echo ' - '; } ?> <a href="<?php echo esc_url($company_link1); ?>" title="<?php echo esc_html($company_name1); ?>" target="_blank"> <?php echo esc_html( $company_name1 ); ?></a> </div>
     </div>
   </div>
   <div class="one-half">
     <div class="testimonial-image"> <img src="<?php echo esc_url($image2);?>" title="<?php echo esc_attr($name2); ?>" alt="<?php echo esc_attr($name2); ?>"/> </div>
     <div class="testimonial-content">
       <p><?php echo esc_html( $text2 ); ?></p>
-      <div class="testimonial-meta"> <strong><?php echo esc_html( $name2 ); ?></strong> <?php echo esc_html( $designation2 ); if(!empty($company_name2)){ echo ' - '; } ?> <a href="<?php echo esc_url($company_link2); ?>" title="<?php echo $company_name2; ?>" target="_blank"> <?php echo esc_html( $company_name2 ); ?></a> </div>
+      <div class="testimonial-meta"> <strong><?php echo esc_html( $name2 ); ?></strong> <?php echo esc_html( $designation2 ); if(!empty($company_name2)){ echo ' - '; } ?> <a href="<?php echo esc_url($company_link2); ?>" title="<?php echo esc_html($company_name2); ?>" target="_blank"> <?php echo esc_html( $company_name2 ); ?></a> </div>
     </div>
   </div>
 </div>

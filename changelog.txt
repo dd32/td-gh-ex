@@ -1,5 +1,9 @@
 == CHANGE LOG ==
 
+= 2.0 =
+ - Fix - Recent Entries/Comments widget display issue fixed
+ - Fix - esc unknown variables
+
 = 1.9 =
  - Fix - Unwanted file removed
 
