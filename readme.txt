@@ -17,8 +17,11 @@ of your WordPress installation. You will then be able to activate the theme.
 
 == Frequently Asked Questions ==
 
-= How to setup Blog page =
-Create a new page by going to pages - Add New. Then on right side, in page attributes - Template, select Blog as the page template. And publish the page.
+= How to setup homepage without Blog =
+Go to settings - reading and select A static page as option for front page display. Select any page as front page and a page called say "Blog" for blog page.
+
+= Footer-sidebar.php, How to add footer widgets =
+Go to appearance - widgets. Drag widgets from left side and drop into First footer widget, second footer widget...and so on..
 
 = Where can I get support for the theme? =
 Support is available at the http://antthemes.com/forum/.

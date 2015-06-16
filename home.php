@@ -66,7 +66,7 @@
 		
 	<div class="row">		
 				
-		<?php get_template_part( 'element-boxes', 'index' ); ?>
+		<?php get_template_part( 'element-boxes', 'home' ); ?>
 		
 </div><!--row end-->			
 		
@@ -82,7 +82,7 @@
 	
 		<div id="left-col">
 			
-			<?php get_template_part( 'loop', 'index' ); ?>
+			<?php get_template_part( 'loop', 'home' ); ?>
 
 	</div> <!--left-col end-->
 </div> <!--column end-->

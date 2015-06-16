@@ -19,25 +19,6 @@ if ( is_admin() ) {
  * individual galleries for different uploaders.
  */
 
-if ( ! function_exists( 'optionsframework_mlu_init' ) ) {
-	function optionsframework_mlu_init () {
-		register_post_type( 'optionsframework', array(
-			'labels' => array(
-				'name' => __( 'Options Framework Internal Container' , 'target'),
-			),
-			'public' => true,
-			'show_ui' => false,
-			'capability_type' => 'post',
-			'hierarchical' => false,
-			'rewrite' => false,
-			'supports' => array( 'title', 'editor' ), 
-			'query_var' => false,
-			'can_export' => true,
-			'show_in_nav_menus' => false
-		) );
-	}
-}
-
 /**
  * Adds the Thickbox CSS file and specific loading and button images to the header
  * on the pages where this function is called.
@@ -250,7 +231,7 @@ if ( ! function_exists( 'optionsframework_mlu_js_popup' ) ) {
 		// Change the title of each tab to use the custom title text instead of "Media File".
 		$( 'h3.media-title' ).each ( function () {
 			var current_title = $( this ).html();
-			var new_title = current_title.replace( 'media file', '<?php echo $_of_title; ?>' );
+			var new_title = current_title.replace( 'media file', '<?php echo esc_attr($_of_title); ?>' );
 			$( this ).html( new_title );
 		
 		} );

@@ -1,8 +1,6 @@
-<?php
-/*
-Template Name: Home
-*/
-?>
+<?php if ( 'posts' == get_option( 'show_on_front' ) ) {
+    include( get_home_template() );
+} else { ?>
 
 <?php get_header(); ?>
 
@@ -51,3 +49,5 @@ Template Name: Home
 			<div class="clear"></div>
 
 <?php get_footer(); ?>
+
+<?php } ?>

@@ -7,8 +7,9 @@
 
 <meta charset="<?php bloginfo('charset'); ?>" />
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<!--[if IE]>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-
+<![endif]-->
 <title><?php wp_title(); ?></title>
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -51,9 +52,8 @@
 	
 	 <?php  if ($navcheck == '') { ?>
 	
-	<ul class="nav">
-
-<li <?php if (is_home()) { echo " class=\"current_page_item\""; } ?>><a href="<?php echo esc_url(home_url()); ?>" title="Home"><?php _e( 'Home', 'agency' ); ?></a></li>		
+	<ul id="nav">
+		
 		<?php wp_list_pages('title_li=&sort_column=menu_order'); ?>
 
 	</ul>
