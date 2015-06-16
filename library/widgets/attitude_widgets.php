@@ -234,7 +234,7 @@ class attitude_custom_tag_widget extends WP_Widget {
 								echo'<div class="service-icon">'.get_the_post_thumbnail( $post->ID, 'icon' ).'</div>';
 							}
 							?>
-							<h3 class="service-title"><?php echo $page_title; ?></h3>
+							<h3 class="service-title"><?php echo esc_attr($page_title); ?></h3>
 						</div><!-- .service-item -->
 						<article>
 							<?php the_excerpt(); ?>
@@ -351,7 +351,7 @@ class attitude_custom_tag_widget extends WP_Widget {
 							echo '<a title="'.get_the_title().'"href="'.get_permalink().'">'.get_the_post_thumbnail( $post->ID,'gallery').'</a>';				
 						}
 						?>
-						<h3 class="custom-gallery-title"><a href="<?php the_permalink(); ?>" title=""><?php echo $page_title; ?></a></h3>
+						<h3 class="custom-gallery-title"><a href="<?php the_permalink(); ?>" title=""><?php echo esc_attr($page_title); ?></a></h3>
 					</div><!-- .one-fourth -->			
 				<?php endwhile;
 		 		// Reset Post Data
@@ -417,7 +417,7 @@ class attitude_Widget_Testimonial extends WP_Widget {
 		<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e( 'Title:', 'attitude' ); ?></label>
 		<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
 		<?php _e( 'Testimonial Description','attitude'); ?>
-		<textarea class="widefat" rows="8" cols="20" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo $text; ?></textarea>
+		<textarea class="widefat" rows="8" cols="20" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo esc_attr($text); ?></textarea>
 
 		<p><label for="<?php echo $this->get_field_id('name'); ?>"><?php _e( 'Name:', 'attitude' ); ?></label>
 		<input class="widefat" id="<?php echo $this->get_field_id('name'); ?>" name="<?php echo $this->get_field_name('name'); ?>" type="text" value="<?php echo esc_attr($name); ?>" /></p>
