@@ -56,7 +56,7 @@ add_action( 'customize_register', 'apostrophe_customize_register' );
  * @return boolean (true|false).
  */
 function apostrophe_sanitize_checkbox( $input ) {
-	if ( 1 === $input ) {
+	if ( 1 == $input ) {
 		return true;
 	} else {
 		return false;

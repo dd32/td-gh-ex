@@ -197,7 +197,7 @@ function apostrophe_scripts() {
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/css/genericons.css', array(), '20131222' );
 	wp_enqueue_style( 'apostrophe-fonts', apostrophe_fonts_url(), array(), null );
 
-	wp_enqueue_script( 'apostrophe-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'apostrophe-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20150605', true );
 	wp_enqueue_script( 'apostrophe-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20150318', true );
 	wp_enqueue_script( 'apostrophe', get_template_directory_uri() . '/js/apostrophe.js', array( 'jquery' ), '20150226', true );
 
