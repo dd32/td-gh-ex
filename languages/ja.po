@@ -1,0 +1,292 @@
+# Translation of Beach in Japanese
+# This file is distributed under the same license as the Beach package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2015-05-13 01:25:38+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/1.0-alpha-1000\n"
+"Project-Id-Version: Beach\n"
+
+#: image.php:40
+msgid "Return to %s"
+msgstr "%s に戻る"
+
+#: image.php:30
+msgid "Link to full-size image"
+msgstr "フルサイズの画像にリンク"
+
+#: content-aside.php:20 content-gallery.php:14 content-single.php:14
+#: content-status.php:22 content.php:14 image.php:20
+msgid "Posted on"
+msgstr "投稿日"
+
+#: content-gallery.php:60
+msgid "This gallery contains"
+msgstr ""
+
+#: content-gallery.php:60
+msgid "%s photo"
+msgid_plural "%s photos"
+msgstr[0] ""
+
+#: content-aside.php:24 content-gallery.php:18 content-single.php:18
+#: content-status.php:26 content.php:18
+msgid "by"
+msgstr "by"
+
+#. Template Name of the plugin/theme
+#: wp-content/themes/pub/beach/full-width-page.php
+msgid "Full-width, no sidebar"
+msgstr "全幅、サイドバーなし"
+
+#. Description of the plugin/theme
+#: wp-content/themes/pub/beach/style.css
+msgid "Beach brings the warm feel of Thailand&rsquo;s shores to your blog year round. Originally designed for Drupal Thailand by Gibbo, Beach features special post formatting for Aside, Gallery, Quote, and Status posts, along with a beautiful secondary menu area in the header."
+msgstr "Beach テーマはタイの海辺の暖かな雰囲気を1年中ブログに運んできてくれます。もともと Drupal Thailand の Gibbo 氏によってデザインされたこのテーマは、アサイド・ギャラリー・引用・ステータス投稿用の特別な投稿フォーマット、ヘッダーサブメニューエリアが含まれています。"
+
+#: sidebar.php:22
+msgid "Meta"
+msgstr "メタ情報"
+
+#: search.php:36
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr "ご指定の検索条件に合う投稿がありませんでした。他のキーワードでもう一度検索してみてください。"
+
+#: search.php:32
+msgid "Nothing Found"
+msgstr "見つかりません"
+
+#: search.php:14
+msgid "Search Results for: %s"
+msgstr "検索結果: %s"
+
+#: image.php:107
+msgid "Both comments and trackbacks are currently closed."
+msgstr "コメント・トラックバックは受け付けていません。"
+
+#: image.php:105
+msgid "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">post a comment</a>."
+msgstr "現在トラックバックは受け付けていませんが、<a class=\"comment-link\" href=\"#respond\" title=\"コメントを投稿\">コメントを投稿</a>できます。"
+
+#: image.php:103
+msgid "Comments are closed, but you can leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "現在コメントは受け付けていませんが、トラックバックを送信できます: <a class=\"trackback-link\" href=\"%s\" title=\"あなたの投稿用のトラックバック URL\" rel=\"trackback\">トラックバック URL</a>"
+
+#: image.php:101
+msgid "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "<a class=\"comment-link\" href=\"#respond\" title=\"コメントを投稿\">コメントを投稿</a>するか、トラックバックを送信できます: <a class=\"trackback-link\" href=\"%s\" title=\"この投稿のトラックバック URL\" rel=\"trackback\">トラックバック URL</a>"
+
+#: image.php:49
+msgid "Next &rarr;"
+msgstr "次へ &rarr;"
+
+#: image.php:48
+msgid "&larr; Previous"
+msgstr "&larr; 前へ"
+
+#: header.php:31 header.php:42
+msgid "Skip to content"
+msgstr "コンテンツへ移動"
+
+#: header.php:30 header.php:41
+msgid "Menu"
+msgstr "メニュー"
+
+#: functions.php:199
+msgid "Page %s"
+msgstr "ページ %s"
+
+#: functions.php:172
+msgid "Pingback:"
+msgstr "ピンバック:"
+
+#. translators: 1: date, 2: time
+#: functions.php:149
+msgid "%1$s at %2$s"
+msgstr "%1$s %2$s"
+
+#: functions.php:141
+msgid "Your comment is awaiting moderation."
+msgstr "あなたのコメントは承認待ちです。"
+
+#: functions.php:138
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"says\">の発言:</span>"
+
+#: functions.php:97
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "新しい投稿 <span class=\"meta-nav\">&rarr;</span>"
+
+#: functions.php:96
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> 過去の投稿"
+
+#: functions.php:95
+msgid "Post navigation"
+msgstr "投稿ナビゲーション"
+
+#: functions.php:40
+msgid "Secondary Menu"
+msgstr "サブメニュー"
+
+#: functions.php:76
+msgid "Sidebar"
+msgstr "サイドバー"
+
+#: functions.php:39
+msgid "Primary Menu"
+msgstr "メインメニュー"
+
+#: footer.php:14
+msgid "Theme: %1$s by %2$s."
+msgstr "Theme: %1$s by %2$s."
+
+#: footer.php:12
+msgid "A Semantic Personal Publishing Platform"
+msgstr "セマンティックなブログ／CMS プラットフォーム"
+
+#: footer.php:12
+msgid "Proudly powered by %s"
+msgstr "Proudly powered by %s"
+
+#: content-single.php:38
+msgid "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "カテゴリー: %1$s <a href=\"%3$s\" title=\"%4$s へのパーマリンク\" rel=\"bookmark\">パーマリンク</a>"
+
+#: content-single.php:36
+msgid "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "カテゴリー: %1$s タグ: %2$s <a href=\"%3$s\" title=\"%4$s へのパーマリンク\" rel=\"bookmark\">パーマリンク</a>"
+
+#: content-aside.php:35 content-gallery.php:72 content-page.php:15
+#: content-single.php:49 content-status.php:37 content.php:43 functions.php:151
+#: functions.php:172 image.php:43 image.php:109
+msgid "Edit"
+msgstr "編集"
+
+#: content-aside.php:34 content-gallery.php:71 content-status.php:36
+#: content.php:42
+msgid "1 Comment"
+msgstr "1件のコメント"
+
+#: content-aside.php:34 content-gallery.php:71 content-status.php:36
+#: content.php:42
+msgid "% Comments"
+msgstr "%件のコメント"
+
+#: content-aside.php:34 content-gallery.php:71 content-status.php:36
+#: content.php:42
+msgid "Leave a comment"
+msgstr "コメントする"
+
+#: content-aside.php:33 content-gallery.php:70 content-status.php:35
+#: content.php:41
+msgid "Tagged"
+msgstr "タグ:"
+
+#: content-aside.php:31 content-gallery.php:68 content-status.php:33
+#: content.php:39 image.php:38
+msgid "Posted in"
+msgstr "カテゴリー:"
+
+#: content-aside.php:26 content-gallery.php:20 content-single.php:20
+#: content-status.php:28 content.php:20
+msgid "View all posts by %s"
+msgstr "%s のすべての投稿を表示"
+
+#: content-aside.php:14 content-page.php:14 content-single.php:29
+#: content-status.php:16 content.php:34 image.php:95
+msgid "Pages:"
+msgstr "ページ:"
+
+#: content-aside.php:13 content-status.php:15 content.php:29 content.php:33
+#: functions.php:106
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "続きを読む <span class=\"meta-nav\">&rarr;</span>"
+
+#: comments.php:46
+msgid "Comments are closed."
+msgstr "コメントは受け付けていません。"
+
+#: comments.php:24 comments.php:36
+msgid "Newer Comments &rarr;"
+msgstr "新しいコメント &rarr;"
+
+#: comments.php:23 comments.php:35
+msgid "&larr; Older Comments"
+msgstr "&larr; 古いコメント"
+
+#: comments.php:15
+msgid "One response to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s responses to &ldquo;%2$s&rdquo;"
+msgstr[0] "「%2$s」への%1$s件のフィードバック"
+
+#: comments.php:22 comments.php:34
+msgid "Comment navigation"
+msgstr "コメントナビゲーション"
+
+#: archive.php:57 sidebar.php:15
+msgid "Archives"
+msgstr "アーカイブ"
+
+#: archive.php:51
+msgid "Quotes"
+msgstr "引用"
+
+#: archive.php:54
+msgid "Links"
+msgstr "リンク"
+
+#: archive.php:48
+msgid "Videos"
+msgstr "動画"
+
+#: archive.php:42
+msgid "Asides"
+msgstr "アサイド"
+
+#: archive.php:45
+msgid "Images"
+msgstr "画像"
+
+#: archive.php:39
+msgid "Yearly Archives: %s"
+msgstr "年別アーカイブ: %s"
+
+#: archive.php:36
+msgid "Monthly Archives: %s"
+msgstr "月別アーカイブ: %s"
+
+#: archive.php:33
+msgid "Daily Archives: %s"
+msgstr "日別アーカイブ: %s"
+
+#: archive.php:25 author.php:12
+msgid "Author Archives: %s"
+msgstr "作成者別アーカイブ: %s"
+
+#: archive.php:18 tag.php:15
+msgid "Tag Archives: %s"
+msgstr "タグ別アーカイブ: %s"
+
+#: archive.php:15 category.php:13
+msgid "Category Archives: %s"
+msgstr "カテゴリー別アーカイブ: %s"
+
+#: 404.php:31
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "月別アーカイブを見てみてください。%1$s"
+
+#: 404.php:17
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching, or one of the links below, can help."
+msgstr "ご指定のコンテンツを見つけられませんでした。検索するか、下記のリンクが役に立つかもしれません。"
+
+#: 404.php:24
+msgid "Most Used Categories"
+msgstr "よく使われているカテゴリー"
+
+#: 404.php:13
+msgid "This is somewhat embarrassing, isn&rsquo;t it?"
+msgstr "おっと、失礼しました。"

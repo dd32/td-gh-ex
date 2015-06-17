@@ -82,7 +82,7 @@ function beach_widgets_init() {
 	) );
 
 }
-add_action( 'init', 'beach_widgets_init' );
+add_action( 'widgets_init', 'beach_widgets_init' );
 
 /**
  * Display navigation to next/previous pages when applicable
@@ -91,7 +91,7 @@ function beach_content_nav( $nav_id ) {
 	global $wp_query;
 
 	if ( $wp_query->max_num_pages > 1 ) : ?>
-		<nav id="<?php echo $nav_id; ?>">
+		<nav id="<?php echo esc_attr( $nav_id ); ?>">
 			<h1 class="section-heading"><?php _e( 'Post navigation', 'beach' ); ?></h1>
 			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'beach' ) ); ?></div>
 			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'beach' ) ); ?></div>
@@ -148,7 +148,7 @@ function beach_comment( $comment, $args, $depth ) {
 						/* translators: 1: date, 2: time */
 						printf( __( '%1$s at %2$s', 'beach' ), get_comment_date(),  get_comment_time() ); ?>
 					</time></a>
-					<?php edit_comment_link( __( '(Edit)', 'beach' ), ' ' );
+					<?php edit_comment_link( __( 'Edit', 'beach' ), ' ' );
 					?>
 				</div><!-- .comment-meta .commentmetadata -->
 			</footer>
@@ -169,7 +169,7 @@ function beach_comment( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'beach' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __('(Edit)', 'beach'), ' ' ); ?></p>
+		<p><?php _e( 'Pingback:', 'beach' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __('Edit', 'beach'), ' ' ); ?></p>
 	<?php
 			break;
 	endswitch;
@@ -205,7 +205,7 @@ add_filter( 'wp_title', 'beach_wp_title', 10, 2 );
 /**
  * Load Jetpack compatibility file.
  */
-require( get_template_directory() . '/inc/jetpack.compat.php' );
+require get_template_directory() . '/inc/jetpack.compat.php';
 
 /**
  * This theme was built with PHP, Semantic HTML, CSS, love, and a Toolbox.

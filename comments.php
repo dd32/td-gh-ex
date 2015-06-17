@@ -12,7 +12,7 @@ if ( post_password_required() )
 	<?php if ( have_comments() ) : ?>
 		<h2 id="comments-title">
 			<?php
-				printf( _n( 'One Response to %2$s', '%1$s Responses to %2$s', get_comments_number(), 'beach' ),
+				printf( _n( 'One response to &ldquo;%2$s&rdquo;', '%1$s responses to &ldquo;%2$s&rdquo;', get_comments_number(), 'beach' ),
 					number_format_i18n( get_comments_number() ), '<em>' . get_the_title() . '</em>' );
 			?>
 		</h2>

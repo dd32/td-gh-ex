@@ -1,0 +1,294 @@
+# Translation of Beach in Spanish (Spain)
+# This file is distributed under the same license as the Beach package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2014-10-04 03:29:42+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/1.0-alpha-1000\n"
+"Project-Id-Version: Beach\n"
+
+#: image.php:40
+msgid "Return to %s"
+msgstr "Volver a %s"
+
+#: image.php:30
+msgid "Link to full-size image"
+msgstr "Enlace a la imagen completa"
+
+#: content-aside.php:20 content-gallery.php:14 content-single.php:14
+#: content-status.php:22 content.php:14 image.php:20
+msgid "Posted on"
+msgstr "Publicado el"
+
+#: content-gallery.php:60
+msgid "This gallery contains"
+msgstr ""
+
+#: content-gallery.php:60
+msgid "%s photo"
+msgid_plural "%s photos"
+msgstr[0] ""
+msgstr[1] ""
+
+#: content-aside.php:24 content-gallery.php:18 content-single.php:18
+#: content-status.php:26 content.php:18
+msgid "by"
+msgstr "por"
+
+#. Template Name of the plugin/theme
+#: wp-content/themes/pub/beach/full-width-page.php
+msgid "Full-width, no sidebar"
+msgstr "Ancho completo, sin la barra lateral"
+
+#. Description of the plugin/theme
+#: wp-content/themes/pub/beach/style.css
+msgid "Beach brings the warm feel of Thailand&rsquo;s shores to your blog year round. Originally designed for Drupal Thailand by Gibbo, Beach features special post formatting for Aside, Gallery, Quote, and Status posts, along with a beautiful secondary menu area in the header."
+msgstr ""
+
+#: sidebar.php:22
+msgid "Meta"
+msgstr "Meta"
+
+#: search.php:36
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr "Lo sentimos, pero nada coincide con tus búsqueda. Por favor, prueba de nuevo con diferentes palabras clave."
+
+#: search.php:32
+msgid "Nothing Found"
+msgstr "No se ha encontrado nada"
+
+#: search.php:14
+msgid "Search Results for: %s"
+msgstr "Resultados de la búsqueda para: %s"
+
+#: image.php:107
+msgid "Both comments and trackbacks are currently closed."
+msgstr "Tanto los comentarios como las referencias están actualmente cerrados."
+
+#: image.php:105
+msgid "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">post a comment</a>."
+msgstr "Las referencias están cerradas pero puedes <a class=\"comment-link\" href=\"#respond\" title=\"Publicar un comentario\">publicar un comentario</a>."
+
+#: image.php:103
+msgid "Comments are closed, but you can leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "Los comentarios están cerrados pero puedes hacer una referencia: <a class=\"trackback-link\" href=\"%s\" title=\"URL de la referencia a tu entrada\" rel=\"trackback\">URL de referencia</a>."
+
+#: image.php:101
+msgid "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "<a class=\"comment-link\" href=\"#respond\" title=\"Publica un comentario\">Publica un comentario</a> o deja una referencia: <a class=\"trackback-link\" href=\"%s\" title=\"URL de la referencia a tu entrada\" rel=\"trackback\">URL de la referencia</a>."
+
+#: image.php:49
+msgid "Next &rarr;"
+msgstr "Siguiente &rarr;"
+
+#: image.php:48
+msgid "&larr; Previous"
+msgstr "&larr; Anterior"
+
+#: header.php:31 header.php:42
+msgid "Skip to content"
+msgstr "Saltar al contenido."
+
+#: header.php:30 header.php:41
+msgid "Menu"
+msgstr "Menú"
+
+#: functions.php:199
+msgid "Page %s"
+msgstr "Página %s"
+
+#: functions.php:172
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#. translators: 1: date, 2: time
+#: functions.php:149
+msgid "%1$s at %2$s"
+msgstr "%1$s en %2$s"
+
+#: functions.php:141
+msgid "Your comment is awaiting moderation."
+msgstr "Tu comentario está pendiente de moderación."
+
+#: functions.php:138
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"says\">dijo:</span>"
+
+#: functions.php:97
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Entradas más nuevas <span class=\"meta-nav\">&rarr;</span>"
+
+#: functions.php:96
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Entradas más antiguas"
+
+#: functions.php:95
+msgid "Post navigation"
+msgstr "Navegador de artículos"
+
+#: functions.php:40
+msgid "Secondary Menu"
+msgstr "Menú secundario"
+
+#: functions.php:76
+msgid "Sidebar"
+msgstr "Barra lateral"
+
+#: functions.php:39
+msgid "Primary Menu"
+msgstr "Menú Principal"
+
+#: footer.php:14
+msgid "Theme: %1$s by %2$s."
+msgstr "Tema: %1$s por %2$s."
+
+#: footer.php:12
+msgid "A Semantic Personal Publishing Platform"
+msgstr "Una Plataforma de Publicación Semántica Personal"
+
+#: footer.php:12
+msgid "Proudly powered by %s"
+msgstr "Funciona con %s"
+
+#: content-single.php:38
+msgid "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Esta entrada fue publicada en %1$s. Guarda el <a href=\"%3$s\" title=\"Enlace permanente a %4$s\" rel=\"bookmark\">enlace permanente</a>."
+
+#: content-single.php:36
+msgid "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Esta entrada fue publicada en %1$s y etiquetada %2$s. Guarda el <a href=\"%3$s\" title=\"Enlace Permanente a %4$s\" rel=\"bookmark\">enlace permanente</a>."
+
+#: content-aside.php:35 content-gallery.php:72 content-page.php:15
+#: content-single.php:49 content-status.php:37 content.php:43 functions.php:151
+#: functions.php:172 image.php:43 image.php:109
+msgid "Edit"
+msgstr "Editar"
+
+#: content-aside.php:34 content-gallery.php:71 content-status.php:36
+#: content.php:42
+msgid "1 Comment"
+msgstr "1 comentario"
+
+#: content-aside.php:34 content-gallery.php:71 content-status.php:36
+#: content.php:42
+msgid "% Comments"
+msgstr "% comentarios"
+
+#: content-aside.php:34 content-gallery.php:71 content-status.php:36
+#: content.php:42
+msgid "Leave a comment"
+msgstr "Deja un comentario"
+
+#: content-aside.php:33 content-gallery.php:70 content-status.php:35
+#: content.php:41
+msgid "Tagged"
+msgstr ""
+
+#: content-aside.php:31 content-gallery.php:68 content-status.php:33
+#: content.php:39 image.php:38
+msgid "Posted in"
+msgstr ""
+
+#: content-aside.php:26 content-gallery.php:20 content-single.php:20
+#: content-status.php:28 content.php:20
+msgid "View all posts by %s"
+msgstr "Ver todas las entradas de %s"
+
+#: content-aside.php:14 content-page.php:14 content-single.php:29
+#: content-status.php:16 content.php:34 image.php:95
+msgid "Pages:"
+msgstr "Páginas:"
+
+#: content-aside.php:13 content-status.php:15 content.php:29 content.php:33
+#: functions.php:106
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Sigue leyendo <span class=\"meta-nav\">&rarr;</span>"
+
+#: comments.php:46
+msgid "Comments are closed."
+msgstr "Los comentarios están cerrados."
+
+#: comments.php:24 comments.php:36
+msgid "Newer Comments &rarr;"
+msgstr "Comentarios recientes &rarr;"
+
+#: comments.php:23 comments.php:35
+msgid "&larr; Older Comments"
+msgstr "&larr; Comentarios antiguos"
+
+#: comments.php:15
+msgid "One response to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s responses to &ldquo;%2$s&rdquo;"
+msgstr[0] "Una respuesta a &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s Respuestas a &ldquo;%2$s&rdquo;"
+
+#: comments.php:22 comments.php:34
+msgid "Comment navigation"
+msgstr "Navegación de comentarios"
+
+#: archive.php:57 sidebar.php:15
+msgid "Archives"
+msgstr "Archivos"
+
+#: archive.php:51
+msgid "Quotes"
+msgstr "Citas"
+
+#: archive.php:54
+msgid "Links"
+msgstr "Enlaces"
+
+#: archive.php:48
+msgid "Videos"
+msgstr "Vídeos"
+
+#: archive.php:42
+msgid "Asides"
+msgstr "Apartados"
+
+#: archive.php:45
+msgid "Images"
+msgstr "Imágenes"
+
+#: archive.php:39
+msgid "Yearly Archives: %s"
+msgstr "Archivo Anual: %s"
+
+#: archive.php:36
+msgid "Monthly Archives: %s"
+msgstr "Archivos Mensuales: %s"
+
+#: archive.php:33
+msgid "Daily Archives: %s"
+msgstr "Archivos diarios: %s"
+
+#: archive.php:25 author.php:12
+msgid "Author Archives: %s"
+msgstr "Archivo del Autor: %s"
+
+#: archive.php:18 tag.php:15
+msgid "Tag Archives: %s"
+msgstr "Archivo de la etiqueta: %s"
+
+#: archive.php:15 category.php:13
+msgid "Category Archives: %s"
+msgstr "Archivo de la categoría: %s"
+
+#: 404.php:31
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Trata de buscar en los archivos mensuales. %1$s"
+
+#: 404.php:17
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching, or one of the links below, can help."
+msgstr "Parece que no podemos encontrar lo que estás buscando. Tal vez una búsqueda, o uno de los enlaces que aparecen a continuación, pueden ayudarte."
+
+#: 404.php:24
+msgid "Most Used Categories"
+msgstr "Categorías más usadas"
+
+#: 404.php:13
+msgid "This is somewhat embarrassing, isn&rsquo;t it?"
+msgstr "Esto es algo embarazoso, ¿verdad?"

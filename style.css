@@ -1,13 +1,14 @@
 /*
 Theme Name: Beach
-Theme URI: http://wordpress.org/extend/themes/beach/
+Theme URI: https://wordpress.com/themes/beach/
+Description: Beach brings the warm feel of Thailand&rsquo;s shores to your blog year round. Originally designed for Drupal Thailand by Gibbo, Beach features special post formatting for Aside, Gallery, Quote, and Status posts, along with a beautiful secondary menu area in the header.
+Version: 1.3
 Author: Gibbo and Automattic
 Author URI: http://webzer.net/
-Description: Beach brings the warm feel of Thailand&rsquo;s shores to your blog year round. Originally designed for Drupal Thailand by Gibbo, Beach features special post formatting for Aside, Gallery, Quote, and Status posts, along with a beautiful secondary menu area in the header.
-Version: 1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: blue, green, two-columns, fixed-width, custom-menu, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
+Text Domain: beach
+Tags: blue, green, two-columns, fixed-layout, custom-menu, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, translation-ready, seasonal
 */
 
 /* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
@@ -179,7 +180,7 @@ blockquote {
 	font-style: italic;
 	margin: 0 3em;
 }
-blockquote em, blockquote i, 
+blockquote em, blockquote i,
 blockquote cite {
 	font-style: normal;
 }
@@ -212,6 +213,10 @@ sup {
 }
 sub {
 	top: .5ex;
+}
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
 }
 input[type="text"],
 textarea {
@@ -615,6 +620,10 @@ img#wpstats,
 	clear: both;
 	display: block;
 }
+.attachment.page .edit-link {
+	clear: none;
+	display: inline;
+}
 
 /* Sticky Posts */
 .sticky {
@@ -708,7 +717,7 @@ img#wpstats,
 
 /* Audio */
 .format-audio .wp-audio-shortcode {
-    margin-bottom: 15px;
+	margin-bottom: 15px;
 }
 
 /* Navigation */
@@ -1261,7 +1270,7 @@ li.bypostauthor > article footer a:active {
 .infinite-scroll .infinite-loader,
 .infinite-scroll #infinite-handle {
 	padding: 1.5em 20px 3em;
-    text-align: center;
+	text-align: center;
 }
 .infinite-scroll #infinite-handle span {
 	background: #F1F6F9;

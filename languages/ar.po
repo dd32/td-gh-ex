@@ -1,0 +1,302 @@
+# Translation of Beach in Arabic
+# This file is distributed under the same license as the Beach package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2015-05-03 06:52:12+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: GlotPress/1.0-alpha-1000\n"
+"Project-Id-Version: Beach\n"
+
+#: image.php:40
+msgid "Return to %s"
+msgstr "العودة إلى %s"
+
+#: image.php:30
+msgid "Link to full-size image"
+msgstr "رابط إلى الصورة بالحجم الكامل"
+
+#: content-aside.php:20 content-gallery.php:14 content-single.php:14
+#: content-status.php:22 content.php:14 image.php:20
+msgid "Posted on"
+msgstr "كتبت بتاريخ"
+
+#: content-gallery.php:60
+msgid "This gallery contains"
+msgstr ""
+
+#: content-gallery.php:60
+msgid "%s photo"
+msgid_plural "%s photos"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: content-aside.php:24 content-gallery.php:18 content-single.php:18
+#: content-status.php:26 content.php:18
+msgid "by"
+msgstr "بواسطة"
+
+#. Template Name of the plugin/theme
+#: wp-content/themes/pub/beach/full-width-page.php
+msgid "Full-width, no sidebar"
+msgstr ""
+
+#. Description of the plugin/theme
+#: wp-content/themes/pub/beach/style.css
+msgid "Beach brings the warm feel of Thailand&rsquo;s shores to your blog year round. Originally designed for Drupal Thailand by Gibbo, Beach features special post formatting for Aside, Gallery, Quote, and Status posts, along with a beautiful secondary menu area in the header."
+msgstr ""
+
+#: sidebar.php:22
+msgid "Meta"
+msgstr "منوعات"
+
+#: search.php:36
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr "عفوا, لم يتم العثور على ما يتطابق مع عناصر بحثك. فضلا أعد البحث بكلمات أخرى."
+
+#: search.php:32
+msgid "Nothing Found"
+msgstr "لم يتم العثور على نتائج"
+
+#: search.php:14
+msgid "Search Results for: %s"
+msgstr "نتائج البحث عن: %s"
+
+#: image.php:107
+msgid "Both comments and trackbacks are currently closed."
+msgstr "التعليقات والتعقيبات مغلقة حاليا"
+
+#: image.php:105
+msgid "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">post a comment</a>."
+msgstr "التعقيبات مغلقة، لكن تستطيع <a class=\"comment-link\" href=\"#respond\" title=\"نشر تعليق\">post a comment</a>."
+
+#: image.php:103
+msgid "Comments are closed, but you can leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "التعليقات معطلة، لكن يمكنك ترك وصلة تتبع : <a class=\"trackback-link\" href=\"%s\" title=\"وصلة تتبع لرسالتك\" rel=\"trackback\">وصلة تتبع</a>."
+
+#: image.php:101
+msgid "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "<a class=\"comment-link\" href=\"#respond\" title=\"اكتب تعليق\">اكتب تعليق</a> او اترك Trackback: <a class=\"trackback-link\" href=\"%s\" title=\"رابط Trackback الخاص بمقالتك\" rel=\"trackback\">Trackback رابط</a>."
+
+#: image.php:49
+msgid "Next &rarr;"
+msgstr "التالي &larr;"
+
+#: image.php:48
+msgid "&larr; Previous"
+msgstr "&rarr; السابق"
+
+#: header.php:31 header.php:42
+msgid "Skip to content"
+msgstr "تخطى إلى المحتوى "
+
+#: header.php:30 header.php:41
+msgid "Menu"
+msgstr "القائمة"
+
+#: functions.php:199
+msgid "Page %s"
+msgstr "الصفحة %s"
+
+#: functions.php:172
+msgid "Pingback:"
+msgstr "تعقيب:"
+
+#. translators: 1: date, 2: time
+#: functions.php:149
+msgid "%1$s at %2$s"
+msgstr "%1$s الساعة %2$s"
+
+#: functions.php:141
+msgid "Your comment is awaiting moderation."
+msgstr "تعليقك في انتظار المراجعة."
+
+#: functions.php:138
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "<span class=\"says\">يقول</span> %s:"
+
+#: functions.php:97
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "مشاركات حديثة <span class=\"meta-nav\">&rarr;</span>"
+
+#: functions.php:96
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> التدوينات الأقدم"
+
+#: functions.php:95
+msgid "Post navigation"
+msgstr "التنقل بين التدوينات"
+
+#: functions.php:40
+msgid "Secondary Menu"
+msgstr "القائمة الثانوية"
+
+#: functions.php:76
+msgid "Sidebar"
+msgstr "القائمة الجانبية"
+
+#: functions.php:39
+msgid "Primary Menu"
+msgstr "القائمة الرئيسية"
+
+#: footer.php:14
+msgid "Theme: %1$s by %2$s."
+msgstr ""
+
+#: footer.php:12
+msgid "A Semantic Personal Publishing Platform"
+msgstr "منصة النشر الشخصية"
+
+#: footer.php:12
+msgid "Proudly powered by %s"
+msgstr "مدعوم بواسطة %s"
+
+#: content-single.php:38
+msgid "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "هذا المنشور نشر في %1$s. حفظ <a href=\"%3$s\" title=\"الرابط الثابت لـ %4$s\" rel=\"bookmark\">الرابط الثابت</a>."
+
+#: content-single.php:36
+msgid "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "هذا المنشور نشر في %1$s وكلماته الدلالية %2$s. حفظ <a href=\"%3$s\" title=\"الرابط الثابت لـ %4$s\" rel=\"bookmark\">الرابط الثابت</a>."
+
+#: content-aside.php:35 content-gallery.php:72 content-page.php:15
+#: content-single.php:49 content-status.php:37 content.php:43 functions.php:151
+#: functions.php:172 image.php:43 image.php:109
+msgid "Edit"
+msgstr "تحرير"
+
+#: content-aside.php:34 content-gallery.php:71 content-status.php:36
+#: content.php:42
+msgid "1 Comment"
+msgstr "تعليق واحد"
+
+#: content-aside.php:34 content-gallery.php:71 content-status.php:36
+#: content.php:42
+msgid "% Comments"
+msgstr "% تعليقات"
+
+#: content-aside.php:34 content-gallery.php:71 content-status.php:36
+#: content.php:42
+msgid "Leave a comment"
+msgstr "أضف تعليقا"
+
+#: content-aside.php:33 content-gallery.php:70 content-status.php:35
+#: content.php:41
+msgid "Tagged"
+msgstr ""
+
+#: content-aside.php:31 content-gallery.php:68 content-status.php:33
+#: content.php:39 image.php:38
+msgid "Posted in"
+msgstr ""
+
+#: content-aside.php:26 content-gallery.php:20 content-single.php:20
+#: content-status.php:28 content.php:20
+msgid "View all posts by %s"
+msgstr "شاهد كل التدوينات عن طريق %s"
+
+#: content-aside.php:14 content-page.php:14 content-single.php:29
+#: content-status.php:16 content.php:34 image.php:95
+msgid "Pages:"
+msgstr "الصفحات:"
+
+#: content-aside.php:13 content-status.php:15 content.php:29 content.php:33
+#: functions.php:106
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "استمر في القراءة <span class=\"meta-nav\">&larr;</span>"
+
+#: comments.php:46
+msgid "Comments are closed."
+msgstr "التعليقات مغلقة."
+
+#: comments.php:24 comments.php:36
+msgid "Newer Comments &rarr;"
+msgstr "تعليقات أقدم &larr;"
+
+#: comments.php:23 comments.php:35
+msgid "&larr; Older Comments"
+msgstr "&rarr; تعليقات أقدم"
+
+#: comments.php:15
+msgid "One response to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s responses to &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: comments.php:22 comments.php:34
+msgid "Comment navigation"
+msgstr "استعراض التعليق"
+
+#: archive.php:57 sidebar.php:15
+msgid "Archives"
+msgstr "الأرشيفات"
+
+#: archive.php:51
+msgid "Quotes"
+msgstr "الإقتباسات"
+
+#: archive.php:54
+msgid "Links"
+msgstr "روابط"
+
+#: archive.php:48
+msgid "Videos"
+msgstr "الفيديو"
+
+#: archive.php:42
+msgid "Asides"
+msgstr "الملاحظات"
+
+#: archive.php:45
+msgid "Images"
+msgstr "صور"
+
+#: archive.php:39
+msgid "Yearly Archives: %s"
+msgstr "الأرشيف السنوي: %s"
+
+#: archive.php:36
+msgid "Monthly Archives: %s"
+msgstr "الأرشيف الشهري: %s"
+
+#: archive.php:33
+msgid "Daily Archives: %s"
+msgstr "الأرشيف اليومي : %s"
+
+#: archive.php:25 author.php:12
+msgid "Author Archives: %s"
+msgstr "أرشيف الكاتب: %s"
+
+#: archive.php:18 tag.php:15
+msgid "Tag Archives: %s"
+msgstr "أرشيف الأوسمة: %s"
+
+#: archive.php:15 category.php:13
+msgid "Category Archives: %s"
+msgstr "أرشيف التصنيف: %s"
+
+#: 404.php:31
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "حاول ان تبحث في الأرشيفات الشهرية. %1$s"
+
+#: 404.php:17
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching, or one of the links below, can help."
+msgstr "يظهر انه لا يمكننا الوصول لما تبحث عنه. يمكن ان يساعدك البحث, او واحد من الروابط بالأسفل."
+
+#: 404.php:24
+msgid "Most Used Categories"
+msgstr "أكثر التصنيفات إستخداماً"
+
+#: 404.php:13
+msgid "This is somewhat embarrassing, isn&rsquo;t it?"
+msgstr "هذا مزعج شيءً ما، أليس كذلك؟"

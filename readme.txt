@@ -1,5 +1,15 @@
 == Changelog ==
 
+= 1.3 - October 3 2014 =
+* Internationalization improvements: remove HTML from strings and reduce number of individual strings.
+* Updated screenshot to the 880x660 pixels size.
+* Replace usage of get_children() with get_posts().
+* Jetpack fixes: use correct hook and add support for responsive videos.
+* Minor CSS fixes.
+* Add text domain in style.css.
+* Fix PHPDoc header in content-aside.php.
+* Use correct hook to register widgets.
+
 = 1.2 - May 16 2013 =
 * Updated license information.
 * Minor style fixes in preparation for 3.6 compat.

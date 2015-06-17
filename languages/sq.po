@@ -1,0 +1,294 @@
+# Translation of Beach in Albanian
+# This file is distributed under the same license as the Beach package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2014-12-10 17:36:28+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/1.0-alpha-1000\n"
+"Project-Id-Version: Beach\n"
+
+#: image.php:40
+msgid "Return to %s"
+msgstr "Kthehu te %s"
+
+#: image.php:30
+msgid "Link to full-size image"
+msgstr "Lidhje për te figura në madhësi të plotë"
+
+#: content-aside.php:20 content-gallery.php:14 content-single.php:14
+#: content-status.php:22 content.php:14 image.php:20
+msgid "Posted on"
+msgstr "Postuar në"
+
+#: content-gallery.php:60
+msgid "This gallery contains"
+msgstr "Kjo galeri përmban"
+
+#: content-gallery.php:60
+msgid "%s photo"
+msgid_plural "%s photos"
+msgstr[0] "%s foto"
+msgstr[1] "%s foto"
+
+#: content-aside.php:24 content-gallery.php:18 content-single.php:18
+#: content-status.php:26 content.php:18
+msgid "by"
+msgstr "nga"
+
+#. Template Name of the plugin/theme
+#: wp-content/themes/pub/beach/full-width-page.php
+msgid "Full-width, no sidebar"
+msgstr "Gjerësi e Plotë, Pa Anështyllë"
+
+#. Description of the plugin/theme
+#: wp-content/themes/pub/beach/style.css
+msgid "Beach brings the warm feel of Thailand&rsquo;s shores to your blog year round. Originally designed for Drupal Thailand by Gibbo, Beach features special post formatting for Aside, Gallery, Quote, and Status posts, along with a beautiful secondary menu area in the header."
+msgstr "Beach ju sjell në blogun tuaj ndjesitë e ngrohta të brigjeve të Tailandës, gjatë gjithë vitit. Hartuar fillimisht për Drupal Thailand nga Gibbo, Beach përmban formatime speciale postimesh për Mënjana, Galeri, Citime, dhe Gjendje, tok me një fushë dytësore të hijshme menush te kryet."
+
+#: sidebar.php:22
+msgid "Meta"
+msgstr "Meta"
+
+#: search.php:36
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr "Na ndjeni, por nuk u përputh gjë me kriterin tuaj të kërkimit. Ju lutemi, riprovoni me ndonjë fjalëkyç tjetër."
+
+#: search.php:32
+msgid "Nothing Found"
+msgstr "Nuk u Gjet Gjë"
+
+#: search.php:14
+msgid "Search Results for: %s"
+msgstr "Përfundime Kërkimi për: %s"
+
+#: image.php:107
+msgid "Both comments and trackbacks are currently closed."
+msgstr "Si komentet, ashtu edhe pasgjurmimet janë hëpërhë të mbyllura."
+
+#: image.php:105
+msgid "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">post a comment</a>."
+msgstr "Pasgjurmimet janë mbyllur, por mund të <a class=\"comment-link\" href=\"#respond\" title=\"Postoni një koment\">postoni një koment</a>."
+
+#: image.php:103
+msgid "Comments are closed, but you can leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "Komentet janë të mbyllura, por mund të lini një pasgjurmim: <a class=\"trackback-link\" href=\"%s\" title=\"URL pasgjurmimi për te postimi juaj\" rel=\"trackback\">URL Pasgjurmimi</a>."
+
+#: image.php:101
+msgid "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "<a class=\"comment-link\" href=\"#respond\" title=\"Postoni një koment\">Postoni një koment</a> ose lini një pasgjurmim: <a class=\"trackback-link\" href=\"%s\" title=\"URL pasgjurmimi për te postimi juaj\" rel=\"trackback\">URL Pasgjurmimi</a>."
+
+#: image.php:49
+msgid "Next &rarr;"
+msgstr "Pasuesi &rarr;"
+
+#: image.php:48
+msgid "&larr; Previous"
+msgstr "faqja I mëparshmi"
+
+#: header.php:31 header.php:42
+msgid "Skip to content"
+msgstr "Hidhu te lënda"
+
+#: header.php:30 header.php:41
+msgid "Menu"
+msgstr "Menu"
+
+#: functions.php:199
+msgid "Page %s"
+msgstr "Faqe %s"
+
+#: functions.php:172
+msgid "Pingback:"
+msgstr "Pingback: "
+
+#. translators: 1: date, 2: time
+#: functions.php:149
+msgid "%1$s at %2$s"
+msgstr "%1$s te %2$s"
+
+#: functions.php:141
+msgid "Your comment is awaiting moderation."
+msgstr "Komenti juaj po pret moderimin."
+
+#: functions.php:138
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"says\">thotë:</span>"
+
+#: functions.php:97
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Postime më të reja <span class=\"meta-nav\">&rarr;</span>"
+
+#: functions.php:96
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Postime më të vjetra"
+
+#: functions.php:95
+msgid "Post navigation"
+msgstr "Lëvizje te postimet"
+
+#: functions.php:40
+msgid "Secondary Menu"
+msgstr "Menuja Dytësore"
+
+#: functions.php:76
+msgid "Sidebar"
+msgstr "Anështyllë"
+
+#: functions.php:39
+msgid "Primary Menu"
+msgstr "Menuja Parësore"
+
+#: footer.php:14
+msgid "Theme: %1$s by %2$s."
+msgstr "Temë: %1$s nga %2$s."
+
+#: footer.php:12
+msgid "A Semantic Personal Publishing Platform"
+msgstr "Platformë Semantike Publikimesh Personale"
+
+#: footer.php:12
+msgid "Proudly powered by %s"
+msgstr "Bazohet me krenari në %s"
+
+#: content-single.php:38
+msgid "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Ky zë u postua te %1$s. Faqeruani <a href=\"%3$s\" title=\"Permalidhje për te %4$s\" rel=\"bookmark\">permalidhjen</a>."
+
+#: content-single.php:36
+msgid "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Ky zë u postua te %1$s dhe u etiketua si %2$s. Faqeruani <a href=\"%3$s\" title=\"Permalidhje për te %4$s\" rel=\"bookmark\">permalidhjen</a>."
+
+#: content-aside.php:35 content-gallery.php:72 content-page.php:15
+#: content-single.php:49 content-status.php:37 content.php:43 functions.php:151
+#: functions.php:172 image.php:43 image.php:109
+msgid "Edit"
+msgstr "Përpunoni"
+
+#: content-aside.php:34 content-gallery.php:71 content-status.php:36
+#: content.php:42
+msgid "1 Comment"
+msgstr "1 Koment"
+
+#: content-aside.php:34 content-gallery.php:71 content-status.php:36
+#: content.php:42
+msgid "% Comments"
+msgstr "% Koment"
+
+#: content-aside.php:34 content-gallery.php:71 content-status.php:36
+#: content.php:42
+msgid "Leave a comment"
+msgstr "Lini një koment"
+
+#: content-aside.php:33 content-gallery.php:70 content-status.php:35
+#: content.php:41
+msgid "Tagged"
+msgstr ""
+
+#: content-aside.php:31 content-gallery.php:68 content-status.php:33
+#: content.php:39 image.php:38
+msgid "Posted in"
+msgstr ""
+
+#: content-aside.php:26 content-gallery.php:20 content-single.php:20
+#: content-status.php:28 content.php:20
+msgid "View all posts by %s"
+msgstr "Shihni tërë postimet nga %s"
+
+#: content-aside.php:14 content-page.php:14 content-single.php:29
+#: content-status.php:16 content.php:34 image.php:95
+msgid "Pages:"
+msgstr "Faqe:"
+
+#: content-aside.php:13 content-status.php:15 content.php:29 content.php:33
+#: functions.php:106
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Vazhdoni leximin <span class=\"meta-nav\">&rarr;</span>"
+
+#: comments.php:46
+msgid "Comments are closed."
+msgstr "Komentet janë mbyllur."
+
+#: comments.php:24 comments.php:36
+msgid "Newer Comments &rarr;"
+msgstr "Komentet Më të Reja &rarr;"
+
+#: comments.php:23 comments.php:35
+msgid "&larr; Older Comments"
+msgstr "&larr; Komentet Më të Vjetra"
+
+#: comments.php:15
+msgid "One response to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s responses to &ldquo;%2$s&rdquo;"
+msgstr[0] "Një përgjigje ndaj &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s përgjigje ndaj &ldquo;%2$s&rdquo;"
+
+#: comments.php:22 comments.php:34
+msgid "Comment navigation"
+msgstr "Lëvizje te komentet"
+
+#: archive.php:57 sidebar.php:15
+msgid "Archives"
+msgstr "Arkiva"
+
+#: archive.php:51
+msgid "Quotes"
+msgstr "Citime"
+
+#: archive.php:54
+msgid "Links"
+msgstr "Lidhje"
+
+#: archive.php:48
+msgid "Videos"
+msgstr "Video"
+
+#: archive.php:42
+msgid "Asides"
+msgstr "Anësore"
+
+#: archive.php:45
+msgid "Images"
+msgstr "Figura"
+
+#: archive.php:39
+msgid "Yearly Archives: %s"
+msgstr "Arkiva Vjetorë: %s"
+
+#: archive.php:36
+msgid "Monthly Archives: %s"
+msgstr "Arkiva Mujorë: %s"
+
+#: archive.php:33
+msgid "Daily Archives: %s"
+msgstr "Arkiva Ditorë: %s"
+
+#: archive.php:25 author.php:12
+msgid "Author Archives: %s"
+msgstr "Arkiva Autori: %s"
+
+#: archive.php:18 tag.php:15
+msgid "Tag Archives: %s"
+msgstr "Arkiva Etiketash: %s"
+
+#: archive.php:15 category.php:13
+msgid "Category Archives: %s"
+msgstr "Arkiva Kategorie: %s"
+
+#: 404.php:31
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Provoni të shihni arkivat mujorë. %1$s"
+
+#: 404.php:17
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching, or one of the links below, can help."
+msgstr "Duket se nuk gjejmë dot ç&rsquo;po kërkonit. Ndoshta mund t&rsquo;ju ndihë kërkimi, ose ndonjë nga lidhjet  më poshtë."
+
+#: 404.php:24
+msgid "Most Used Categories"
+msgstr "Kategoritë Më të Përdorura"
+
+#: 404.php:13
+msgid "This is somewhat embarrassing, isn&rsquo;t it?"
+msgstr "Kjo është pak turpëruese, apo jo?"

@@ -10,11 +10,13 @@
 
 		<div class="entry-meta">
 			<?php
-				printf( __( '<span class="sep">Posted on </span><a href="%1$s" rel="bookmark"><time class="entry-date" datetime="%2$s" pubdate>%3$s</time></a> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%4$s" title="%5$s">%6$s</a></span>', 'beach' ),
-					get_permalink(),
-					get_the_date( 'c' ),
-					get_the_date(),
-					get_author_posts_url( get_the_author_meta( 'ID' ) ),
+				printf( '<span class="sep">%1$s</span> <a href="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a> <span class="sep">%5$s</span> <span class="author vcard"><a class="url fn n" href="%6$s" title="%7$s">%8$s</a></span>',
+					__( 'Posted on', 'beach' ),
+					esc_url( get_permalink() ),
+					esc_attr( get_the_date( 'c' ) ),
+					esc_html( get_the_date() ),
+					__( 'by', 'beach' ),
+					esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 					esc_attr( sprintf( __( 'View all posts by %s', 'beach' ), get_the_author() ) ),
 					get_the_author()
 				);

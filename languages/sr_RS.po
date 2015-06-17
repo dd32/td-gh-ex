@@ -1,0 +1,296 @@
+# Translation of Beach in Serbian
+# This file is distributed under the same license as the Beach package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2014-11-26 09:44:48+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: GlotPress/1.0-alpha-1000\n"
+"Project-Id-Version: Beach\n"
+
+#: image.php:40
+msgid "Return to %s"
+msgstr "Назад на %s"
+
+#: image.php:30
+msgid "Link to full-size image"
+msgstr "Веза ка пуној величини слике"
+
+#: content-aside.php:20 content-gallery.php:14 content-single.php:14
+#: content-status.php:22 content.php:14 image.php:20
+msgid "Posted on"
+msgstr "Објављено"
+
+#: content-gallery.php:60
+msgid "This gallery contains"
+msgstr ""
+
+#: content-gallery.php:60
+msgid "%s photo"
+msgid_plural "%s photos"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: content-aside.php:24 content-gallery.php:18 content-single.php:18
+#: content-status.php:26 content.php:18
+msgid "by"
+msgstr "од"
+
+#. Template Name of the plugin/theme
+#: wp-content/themes/pub/beach/full-width-page.php
+msgid "Full-width, no sidebar"
+msgstr "Пуна ширина, без бочних трака"
+
+#. Description of the plugin/theme
+#: wp-content/themes/pub/beach/style.css
+msgid "Beach brings the warm feel of Thailand&rsquo;s shores to your blog year round. Originally designed for Drupal Thailand by Gibbo, Beach features special post formatting for Aside, Gallery, Quote, and Status posts, along with a beautiful secondary menu area in the header."
+msgstr ""
+
+#: sidebar.php:22
+msgid "Meta"
+msgstr "Мета"
+
+#: search.php:36
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr "Жао нам је, али нисмо ништа пронашли што одговара вашем упиту. Молимо вас да покушате поново са другим кључним речима."
+
+#: search.php:32
+msgid "Nothing Found"
+msgstr "Ништа није пронађено"
+
+#: search.php:14
+msgid "Search Results for: %s"
+msgstr "Резултати претраживања за: %s"
+
+#: image.php:107
+msgid "Both comments and trackbacks are currently closed."
+msgstr "И коментари и повратне везе тренутно нису дозвољени."
+
+#: image.php:105
+msgid "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">post a comment</a>."
+msgstr "Није дозвољено објављивање повратне везе али можете <a class=\"comment-link\" href=\"#respond\" title=\"Објави коментар\">објавити коментар</a>."
+
+#: image.php:103
+msgid "Comments are closed, but you can leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "Коментари нису дозвољени али можете оставити повратну везу: <a class=\"trackback-link\" href=\"%s\" title=\"URL повратне везе за ваш чланак\" rel=\"trackback\">URL повратне везе</a>."
+
+#: image.php:101
+msgid "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "<a class=\"comment-link\" href=\"#respond\" title=\"Објавите коментар\">Објавите коментар</a> или оставите повратну везу: <a class=\"trackback-link\" href=\"%s\" title=\"URL повратне везе за ваш чланак\" rel=\"trackback\">URL повратне везе</a>."
+
+#: image.php:49
+msgid "Next &rarr;"
+msgstr "Следеће &rarr;"
+
+#: image.php:48
+msgid "&larr; Previous"
+msgstr "&larr; Претходно"
+
+#: header.php:31 header.php:42
+msgid "Skip to content"
+msgstr "Скочи на садржај"
+
+#: header.php:30 header.php:41
+msgid "Menu"
+msgstr "Изборник"
+
+#: functions.php:199
+msgid "Page %s"
+msgstr "Страна %s"
+
+#: functions.php:172
+msgid "Pingback:"
+msgstr "Повратни пинг: "
+
+#. translators: 1: date, 2: time
+#: functions.php:149
+msgid "%1$s at %2$s"
+msgstr "%1$s у %2$s"
+
+#: functions.php:141
+msgid "Your comment is awaiting moderation."
+msgstr "Ваш коментар чека преглед."
+
+#: functions.php:138
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"says\">каже:</span>"
+
+#: functions.php:97
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Новији чланци <span class=\"meta-nav\">&rarr;</span>"
+
+#: functions.php:96
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Старији чланци"
+
+#: functions.php:95
+msgid "Post navigation"
+msgstr "Кретање чланака"
+
+#: functions.php:40
+msgid "Secondary Menu"
+msgstr "Секундарни изборник"
+
+#: functions.php:76
+msgid "Sidebar"
+msgstr "Бочна трака"
+
+#: functions.php:39
+msgid "Primary Menu"
+msgstr "Примарни изборник"
+
+#: footer.php:14
+msgid "Theme: %1$s by %2$s."
+msgstr "Тема: %1$s од %2$s."
+
+#: footer.php:12
+msgid "A Semantic Personal Publishing Platform"
+msgstr "Семантичка платформа за лично издаваштво"
+
+#: footer.php:12
+msgid "Proudly powered by %s"
+msgstr "Са поносом покреће %s"
+
+#: content-single.php:38
+msgid "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Овај унос је објављен под %1$s. Забележите <a href=\"%3$s\" title=\"Стална веза ка %4$s\" rel=\"bookmark\">сталну везу</a>."
+
+#: content-single.php:36
+msgid "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Овај унос је објављен под %1$s и означен са %2$s. Забележите <a href=\"%3$s\" title=\"Стална веза ка %4$s\" rel=\"bookmark\">сталну везу</a>."
+
+#: content-aside.php:35 content-gallery.php:72 content-page.php:15
+#: content-single.php:49 content-status.php:37 content.php:43 functions.php:151
+#: functions.php:172 image.php:43 image.php:109
+msgid "Edit"
+msgstr "Уреди"
+
+#: content-aside.php:34 content-gallery.php:71 content-status.php:36
+#: content.php:42
+msgid "1 Comment"
+msgstr "1 коментар"
+
+#: content-aside.php:34 content-gallery.php:71 content-status.php:36
+#: content.php:42
+msgid "% Comments"
+msgstr "% коментара"
+
+#: content-aside.php:34 content-gallery.php:71 content-status.php:36
+#: content.php:42
+msgid "Leave a comment"
+msgstr "Оставите коментар"
+
+#: content-aside.php:33 content-gallery.php:70 content-status.php:35
+#: content.php:41
+msgid "Tagged"
+msgstr ""
+
+#: content-aside.php:31 content-gallery.php:68 content-status.php:33
+#: content.php:39 image.php:38
+msgid "Posted in"
+msgstr ""
+
+#: content-aside.php:26 content-gallery.php:20 content-single.php:20
+#: content-status.php:28 content.php:20
+msgid "View all posts by %s"
+msgstr "Види све чланке од %s"
+
+#: content-aside.php:14 content-page.php:14 content-single.php:29
+#: content-status.php:16 content.php:34 image.php:95
+msgid "Pages:"
+msgstr "Стране:"
+
+#: content-aside.php:13 content-status.php:15 content.php:29 content.php:33
+#: functions.php:106
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Наставите са читањем <span class=\"meta-nav\">&rarr;</span>"
+
+#: comments.php:46
+msgid "Comments are closed."
+msgstr "Затворено за коментаре."
+
+#: comments.php:24 comments.php:36
+msgid "Newer Comments &rarr;"
+msgstr "Новији коментари &rarr;"
+
+#: comments.php:23 comments.php:35
+msgid "&larr; Older Comments"
+msgstr "&larr; Старији коментари"
+
+#: comments.php:15
+msgid "One response to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s responses to &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: comments.php:22 comments.php:34
+msgid "Comment navigation"
+msgstr "Кретање коментара"
+
+#: archive.php:57 sidebar.php:15
+msgid "Archives"
+msgstr "Архиве"
+
+#: archive.php:51
+msgid "Quotes"
+msgstr "Цитати"
+
+#: archive.php:54
+msgid "Links"
+msgstr "Везе"
+
+#: archive.php:48
+msgid "Videos"
+msgstr "Видео записи"
+
+#: archive.php:42
+msgid "Asides"
+msgstr "Са стране"
+
+#: archive.php:45
+msgid "Images"
+msgstr "Слике"
+
+#: archive.php:39
+msgid "Yearly Archives: %s"
+msgstr "Годишње архиве: %s"
+
+#: archive.php:36
+msgid "Monthly Archives: %s"
+msgstr "Месечне архиве: %s"
+
+#: archive.php:33
+msgid "Daily Archives: %s"
+msgstr "Дневне архиве: %s"
+
+#: archive.php:25 author.php:12
+msgid "Author Archives: %s"
+msgstr "Архиве аутора: %s"
+
+#: archive.php:18 tag.php:15
+msgid "Tag Archives: %s"
+msgstr "Архиве ознака: %s"
+
+#: archive.php:15 category.php:13
+msgid "Category Archives: %s"
+msgstr "Архиве категорија: %s"
+
+#: 404.php:31
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Покушајте са гледањем месечних архива. %1$s"
+
+#: 404.php:17
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching, or one of the links below, can help."
+msgstr "Изгледа да неможемо да пронађемо оно што сте тражили. Можда ће претраживање или једна од веза испод помоћи."
+
+#: 404.php:24
+msgid "Most Used Categories"
+msgstr "Најкоришћеније категорије"
+
+#: 404.php:13
+msgid "This is somewhat embarrassing, isn&rsquo;t it?"
+msgstr "Ово је нешто непријатно, зар не?"

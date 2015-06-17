@@ -16,18 +16,32 @@ get_header(); ?>
 
 				<div class="entry-meta">
 					<?php
-						$metadata = wp_get_attachment_metadata();
-						printf( __( '<span class="meta-prep meta-prep-entry-date">Published </span> <span class="entry-date"><abbr class="published" title="%1$s">%2$s</abbr></span>  at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%7$s</a>', 'beach' ),
-							esc_attr( get_the_time() ),
-							get_the_date(),
-							wp_get_attachment_url(),
-							$metadata['width'],
-							$metadata['height'],
-							get_permalink( $post->post_parent ),
-							get_the_title( $post->post_parent )
+						printf( '<span class="meta-prep meta-prep-entry-date">%1$s</span> <time class="entry-date" datetime="%2$s" pubdate>%3$s</time>',
+						       __( 'Posted on', 'beach' ),
+						       esc_attr( get_the_date( 'c' ) ),
+						       esc_html( get_the_date() )
 						);
 					?>
-					<?php edit_post_link( __( 'Edit', 'beach' ), '<span class="sep">|</span> <span class="edit-link">', '</span>' ); ?>
+					<span class="sep"> | </span>
+					<?php
+						$metadata = wp_get_attachment_metadata();
+						printf( '<a href="%1$s" title="%2$s">%3$s &times; %4$s</a>',
+						       wp_get_attachment_url(),
+						       __( 'Link to full-size image', 'beach' ),
+						       absint( $metadata['width'] ),
+						       absint( $metadata['height'] )
+						);
+					?>
+					<span class="sep"> | </span>
+					<?php
+						printf( '%1$s <a href="%2$s" title="%3$s" rel="gallery">%3$s</a>',
+							__( 'Posted in', 'beach' ),
+							esc_url( get_permalink( $post->post_parent ) ),
+							sprintf( __( 'Return to %s', 'beach' ), esc_html( get_the_title( $post->post_parent ) ) )
+						);
+
+						edit_post_link( __( 'Edit', 'beach' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' );
+					?>
 				</div><!-- .entry-meta -->
 
 				<nav id="image-navigation">
@@ -45,7 +59,7 @@ get_header(); ?>
 							 * Grab the IDs of all the image attachments in a gallery so we can get the URL of the next adjacent image in a gallery,
 							 * or the first image (if we're looking at the last image in a gallery), or, in a gallery of one, just the link to that image file
 							 */
-							$attachments = array_values( get_children( array( 'post_parent' => $post->post_parent, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC', 'orderby' => 'menu_order ID' ) ) );
+							$attachments = array_values( get_posts( array( 'post_parent' => $post->post_parent, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC', 'orderby' => 'menu_order ID' ) ) );
 							foreach ( $attachments as $k => $attachment ) {
 								if ( $attachment->ID == get_the_ID() )
 									break;
@@ -64,7 +78,7 @@ get_header(); ?>
 								$next_attachment_url = wp_get_attachment_url();
 							}
 						?>
-						<a href="<?php echo $next_attachment_url; ?>" title="<?php the_title_attribute(); ?>" rel="attachment"><?php
+						<a href="<?php echo esc_url( $next_attachment_url ); ?>" title="<?php the_title_attribute(); ?>" rel="attachment"><?php
 						$attachment_size = apply_filters( 'theme_attachment_size',  800 );
 						echo wp_get_attachment_image( get_the_ID(), array( $attachment_size, 9999 ) ); // filterable image width with, essentially, no limit for image height.
 						?></a>

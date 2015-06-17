@@ -1,0 +1,298 @@
+# Translation of Beach in Scottish Gaelic
+# This file is distributed under the same license as the Beach package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2015-06-02 13:17:04+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 || n==11) ? 0 : (n==2 || n==12) ? 1 : (n > 2 && n < 20) ? 2 : 3;\n"
+"X-Generator: GlotPress/1.0-alpha-1000\n"
+"Project-Id-Version: Beach\n"
+
+#: image.php:40
+msgid "Return to %s"
+msgstr "Till gu %s"
+
+#: image.php:30
+msgid "Link to full-size image"
+msgstr ""
+
+#: content-aside.php:20 content-gallery.php:14 content-single.php:14
+#: content-status.php:22 content.php:14 image.php:20
+msgid "Posted on"
+msgstr "Air a phostadh"
+
+#: content-gallery.php:60
+msgid "This gallery contains"
+msgstr ""
+
+#: content-gallery.php:60
+msgid "%s photo"
+msgid_plural "%s photos"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: content-aside.php:24 content-gallery.php:18 content-single.php:18
+#: content-status.php:26 content.php:18
+msgid "by"
+msgstr "le"
+
+#. Template Name of the plugin/theme
+#: wp-content/themes/pub/beach/full-width-page.php
+msgid "Full-width, no sidebar"
+msgstr ""
+
+#. Description of the plugin/theme
+#: wp-content/themes/pub/beach/style.css
+msgid "Beach brings the warm feel of Thailand&rsquo;s shores to your blog year round. Originally designed for Drupal Thailand by Gibbo, Beach features special post formatting for Aside, Gallery, Quote, and Status posts, along with a beautiful secondary menu area in the header."
+msgstr ""
+
+#: sidebar.php:22
+msgid "Meta"
+msgstr "Meta"
+
+#: search.php:36
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr "Tha sinn duilich ach cha do lorg sinn seise sam bith airson na lorg thu. Feuch ris a-rithist le faclan-luirg eile."
+
+#: search.php:32
+msgid "Nothing Found"
+msgstr "Cha deach dad a lorg"
+
+#: search.php:14
+msgid "Search Results for: %s"
+msgstr "Toraidhean luirg airson: %s"
+
+#: image.php:107
+msgid "Both comments and trackbacks are currently closed."
+msgstr "Tha an dà chuid beachdan is trackbacks dùinte."
+
+#: image.php:105
+msgid "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">post a comment</a>."
+msgstr "Tha na trackbacks dùinte ach is urrainn dhut <a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">beachd a sgrìobhadh</a>."
+
+#: image.php:103
+msgid "Comments are closed, but you can leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "Tha na beachdan dùinte ach 's urrainn dhut trackback fhàgail: <a class=\"trackback-link\" href=\"%s\" title=\"URL Trackback airson a' phuist agad\" rel=\"trackback\">URL Trackback</a>."
+
+#: image.php:101
+msgid "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Sgrìobh beachd</a> no fàg trackback: <a class=\"trackback-link\" href=\"%s\" title=\"URL Trackback airson a' phuist agad\" rel=\"trackback\">URL Trackback</a>."
+
+#: image.php:49
+msgid "Next &rarr;"
+msgstr "Air adhart &rarr;"
+
+#: image.php:48
+msgid "&larr; Previous"
+msgstr "&larr; Air ais"
+
+#: header.php:31 header.php:42
+msgid "Skip to content"
+msgstr "Thoir leum gun t-susbaint"
+
+#: header.php:30 header.php:41
+msgid "Menu"
+msgstr "An clàr-taice"
+
+#: functions.php:199
+msgid "Page %s"
+msgstr "Duilleag %s"
+
+#: functions.php:172
+msgid "Pingback:"
+msgstr "Pingback: "
+
+#. translators: 1: date, 2: time
+#: functions.php:149
+msgid "%1$s at %2$s"
+msgstr "%1$s aig %2$s"
+
+#: functions.php:141
+msgid "Your comment is awaiting moderation."
+msgstr "Tha do bheachd a' feitheamh ri modarataireachd."
+
+#: functions.php:138
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "<span class=\"says\">Thuirt</span> %s:"
+
+#: functions.php:97
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Puist nas ùire <span class=\"meta-nav\">&rarr;</span>"
+
+#: functions.php:96
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Puist nas sine"
+
+#: functions.php:95
+msgid "Post navigation"
+msgstr "Seòladaireachd nam post"
+
+#: functions.php:40
+msgid "Secondary Menu"
+msgstr ""
+
+#: functions.php:76
+msgid "Sidebar"
+msgstr "Bàr-taoibh"
+
+#: functions.php:39
+msgid "Primary Menu"
+msgstr "Am prìomh-chlàr-taice"
+
+#: footer.php:14
+msgid "Theme: %1$s by %2$s."
+msgstr "Ùrlar: %1$s le %2$s."
+
+#: footer.php:12
+msgid "A Semantic Personal Publishing Platform"
+msgstr "Ùrlar foillseachaidh pearsanta semanticeach"
+
+#: footer.php:12
+msgid "Proudly powered by %s"
+msgstr "Le cumhaichd phròiseil %s"
+
+#: content-single.php:38
+msgid "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Chaidh seo a phostadh ann an %1$s. Dèan comharra-lìn dhen <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">bhuan-cheangal</a>."
+
+#: content-single.php:36
+msgid "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Chaidh seo a phostadh ann an %1$s agus a thagadh %2$s. Dèan comharra-lìn dhen <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">bhuan-cheangal</a>."
+
+#: content-aside.php:35 content-gallery.php:72 content-page.php:15
+#: content-single.php:49 content-status.php:37 content.php:43 functions.php:151
+#: functions.php:172 image.php:43 image.php:109
+msgid "Edit"
+msgstr "Deasaich"
+
+#: content-aside.php:34 content-gallery.php:71 content-status.php:36
+#: content.php:42
+msgid "1 Comment"
+msgstr "1 bheachd"
+
+#: content-aside.php:34 content-gallery.php:71 content-status.php:36
+#: content.php:42
+msgid "% Comments"
+msgstr "% beachd(an)"
+
+#: content-aside.php:34 content-gallery.php:71 content-status.php:36
+#: content.php:42
+msgid "Leave a comment"
+msgstr "Sgrìobh beachd"
+
+#: content-aside.php:33 content-gallery.php:70 content-status.php:35
+#: content.php:41
+msgid "Tagged"
+msgstr ""
+
+#: content-aside.php:31 content-gallery.php:68 content-status.php:33
+#: content.php:39 image.php:38
+msgid "Posted in"
+msgstr ""
+
+#: content-aside.php:26 content-gallery.php:20 content-single.php:20
+#: content-status.php:28 content.php:20
+msgid "View all posts by %s"
+msgstr "Seall a h-uile post le %s"
+
+#: content-aside.php:14 content-page.php:14 content-single.php:29
+#: content-status.php:16 content.php:34 image.php:95
+msgid "Pages:"
+msgstr "Duilleagan:"
+
+#: content-aside.php:13 content-status.php:15 content.php:29 content.php:33
+#: functions.php:106
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Cum ort a leughadh <span class=\"meta-nav\">&rarr;</span>"
+
+#: comments.php:46
+msgid "Comments are closed."
+msgstr "Tha na beachdan dùinte."
+
+#: comments.php:24 comments.php:36
+msgid "Newer Comments &rarr;"
+msgstr "Na beachdan as ùire &rarr;"
+
+#: comments.php:23 comments.php:35
+msgid "&larr; Older Comments"
+msgstr "&larr; Beachdan nas sine"
+
+#: comments.php:15
+msgid "One response to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s responses to &ldquo;%2$s&rdquo;"
+msgstr[0] "Aon fhreagairt air &ldquo;%2$s&rdquo;"
+msgstr[1] "Aon fhreagairt air &ldquo;%2$s&rdquo;"
+msgstr[2] "Aon freagairtean air &ldquo;%2$s&rdquo;"
+msgstr[3] "Aon freagairt air &ldquo;%2$s&rdquo;"
+
+#: comments.php:22 comments.php:34
+msgid "Comment navigation"
+msgstr "Seòladaireachd nam beachdan"
+
+#: archive.php:57 sidebar.php:15
+msgid "Archives"
+msgstr "Tasg-lannan"
+
+#: archive.php:51
+msgid "Quotes"
+msgstr "Luaidhean"
+
+#: archive.php:54
+msgid "Links"
+msgstr "Ceanglaichean"
+
+#: archive.php:48
+msgid "Videos"
+msgstr "Videothan"
+
+#: archive.php:42
+msgid "Asides"
+msgstr "Asides"
+
+#: archive.php:45
+msgid "Images"
+msgstr "Dealbhan"
+
+#: archive.php:39
+msgid "Yearly Archives: %s"
+msgstr "Tasg-lannan bliadhnail: %s"
+
+#: archive.php:36
+msgid "Monthly Archives: %s"
+msgstr "Tasg-lannan mìosail: %s"
+
+#: archive.php:33
+msgid "Daily Archives: %s"
+msgstr "Tasg-lannan làitheil: %s"
+
+#: archive.php:25 author.php:12
+msgid "Author Archives: %s"
+msgstr "Tasg-lannan an ùghdair: %s"
+
+#: archive.php:18 tag.php:15
+msgid "Tag Archives: %s"
+msgstr "Tasg-lannan nan taga: %s"
+
+#: archive.php:15 category.php:13
+msgid "Category Archives: %s"
+msgstr "Tasg-lannan nan roinn-seòrsa: %s"
+
+#: 404.php:31
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Feuch na tasg-lannan mìosail. %1$s"
+
+#: 404.php:17
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching, or one of the links below, can help."
+msgstr "Tha coltas nach urrainn dhuinn na tha a dhìth ort fhaighinn dhut. Feuch is dèan lorg no aon dhe na ceanglaichean gu h-ìosal."
+
+#: 404.php:24
+msgid "Most Used Categories"
+msgstr "Roinnean-seòrsa a chleachdar as trice"
+
+#: 404.php:13
+msgid "This is somewhat embarrassing, isn&rsquo;t it?"
+msgstr "Abair adhbhar-nàire!"

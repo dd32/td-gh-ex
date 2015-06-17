@@ -1,0 +1,292 @@
+# Translation of Beach in Thai
+# This file is distributed under the same license as the Beach package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2014-11-26 09:29:50+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/1.0-alpha-1000\n"
+"Project-Id-Version: Beach\n"
+
+#: image.php:40
+msgid "Return to %s"
+msgstr "กลับไปสู่ %s"
+
+#: image.php:30
+msgid "Link to full-size image"
+msgstr "ลิงก์ไปยังรูปภาพขนาดใหญ่สุด"
+
+#: content-aside.php:20 content-gallery.php:14 content-single.php:14
+#: content-status.php:22 content.php:14 image.php:20
+msgid "Posted on"
+msgstr "แสดงความเห็นแล้วใน"
+
+#: content-gallery.php:60
+msgid "This gallery contains"
+msgstr ""
+
+#: content-gallery.php:60
+msgid "%s photo"
+msgid_plural "%s photos"
+msgstr[0] ""
+
+#: content-aside.php:24 content-gallery.php:18 content-single.php:18
+#: content-status.php:26 content.php:18
+msgid "by"
+msgstr "โดย"
+
+#. Template Name of the plugin/theme
+#: wp-content/themes/pub/beach/full-width-page.php
+msgid "Full-width, no sidebar"
+msgstr ""
+
+#. Description of the plugin/theme
+#: wp-content/themes/pub/beach/style.css
+msgid "Beach brings the warm feel of Thailand&rsquo;s shores to your blog year round. Originally designed for Drupal Thailand by Gibbo, Beach features special post formatting for Aside, Gallery, Quote, and Status posts, along with a beautiful secondary menu area in the header."
+msgstr ""
+
+#: sidebar.php:22
+msgid "Meta"
+msgstr "Meta"
+
+#: search.php:36
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr "ขอโทษ แต่ไม่มีสิ่งใดตรงกับคำที่คุณใช้ค้น  โปรดลองอีกครั้งด้วยคำอื่นที่ต่างออกไป"
+
+#: search.php:32
+msgid "Nothing Found"
+msgstr "ไม่พบสิ่งใด"
+
+#: search.php:14
+msgid "Search Results for: %s"
+msgstr "ผลลัพท์การค้นหาสำหรับ: %s"
+
+#: image.php:107
+msgid "Both comments and trackbacks are currently closed."
+msgstr "ไม่อนุญาตให้เขียนความเห็นและใส่ trackbacks"
+
+#: image.php:105
+msgid "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">post a comment</a>."
+msgstr "ไม่อนุญาตให้ใส่ Trackbacks แต่คุณสามารถ <a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">เขียนความเห็นได้</a>"
+
+#: image.php:103
+msgid "Comments are closed, but you can leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "ไม่อนุญาตให้แสดงความเห็น  แต่คุณสามารถใส่ trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>"
+
+#: image.php:101
+msgid "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">เขียนความเห็น</a> หรือใส่ trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>"
+
+#: image.php:49
+msgid "Next &rarr;"
+msgstr "ต่อไป &rarr;"
+
+#: image.php:48
+msgid "&larr; Previous"
+msgstr "&larr; ก่อนหน้า"
+
+#: header.php:31 header.php:42
+msgid "Skip to content"
+msgstr "ข้ามไปยังเนื้อหา"
+
+#: header.php:30 header.php:41
+msgid "Menu"
+msgstr "เมนู"
+
+#: functions.php:199
+msgid "Page %s"
+msgstr "หน้า %s"
+
+#: functions.php:172
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#. translators: 1: date, 2: time
+#: functions.php:149
+msgid "%1$s at %2$s"
+msgstr "%1$s ที่ %2$s"
+
+#: functions.php:141
+msgid "Your comment is awaiting moderation."
+msgstr "ความเห็นของคุณกำลังรอตรวจสอบ"
+
+#: functions.php:138
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"says\">พูดว่า:</span>"
+
+#: functions.php:97
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "เรื่องที่ใหม่กว่า <span class=\"meta-nav\">&rarr;</span>"
+
+#: functions.php:96
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> เรื่องที่เก่ากว่า"
+
+#: functions.php:95
+msgid "Post navigation"
+msgstr "เมนูนำทางเรื่อง"
+
+#: functions.php:40
+msgid "Secondary Menu"
+msgstr ""
+
+#: functions.php:76
+msgid "Sidebar"
+msgstr "ด้านข้าง"
+
+#: functions.php:39
+msgid "Primary Menu"
+msgstr "เมนูหลัก"
+
+#: footer.php:14
+msgid "Theme: %1$s by %2$s."
+msgstr ""
+
+#: footer.php:12
+msgid "A Semantic Personal Publishing Platform"
+msgstr "แพลตฟอร์มสำหรับเผยแพร่บทความส่วนบุคคล"
+
+#: footer.php:12
+msgid "Proudly powered by %s"
+msgstr "ภูมิใจนำเสนอโดย %s"
+
+#: content-single.php:38
+msgid "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "ข้อความนี้ถูกเขียนใน %1$s คั่นหน้า <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">ลิงก์ถาวร</a>"
+
+#: content-single.php:36
+msgid "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "เรื่องนี้ถูกเขียนใน %1$s และติดป้ายกำกับ %2$s คั่นหน้า <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">ลิงก์ถาวร</a>"
+
+#: content-aside.php:35 content-gallery.php:72 content-page.php:15
+#: content-single.php:49 content-status.php:37 content.php:43 functions.php:151
+#: functions.php:172 image.php:43 image.php:109
+msgid "Edit"
+msgstr "แก้ไข"
+
+#: content-aside.php:34 content-gallery.php:71 content-status.php:36
+#: content.php:42
+msgid "1 Comment"
+msgstr "1 ความเห็น"
+
+#: content-aside.php:34 content-gallery.php:71 content-status.php:36
+#: content.php:42
+msgid "% Comments"
+msgstr "% ความเห็น"
+
+#: content-aside.php:34 content-gallery.php:71 content-status.php:36
+#: content.php:42
+msgid "Leave a comment"
+msgstr "แสดงความคิดเห็น"
+
+#: content-aside.php:33 content-gallery.php:70 content-status.php:35
+#: content.php:41
+msgid "Tagged"
+msgstr ""
+
+#: content-aside.php:31 content-gallery.php:68 content-status.php:33
+#: content.php:39 image.php:38
+msgid "Posted in"
+msgstr ""
+
+#: content-aside.php:26 content-gallery.php:20 content-single.php:20
+#: content-status.php:28 content.php:20
+msgid "View all posts by %s"
+msgstr "ดูเรื่องทั้งหมดของ %s"
+
+#: content-aside.php:14 content-page.php:14 content-single.php:29
+#: content-status.php:16 content.php:34 image.php:95
+msgid "Pages:"
+msgstr "หน้า:"
+
+#: content-aside.php:13 content-status.php:15 content.php:29 content.php:33
+#: functions.php:106
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "อ่านเพิ่มเติม <span class=\"meta-nav\">&rarr;</span>"
+
+#: comments.php:46
+msgid "Comments are closed."
+msgstr "ปิดการแสดงความเห็น"
+
+#: comments.php:24 comments.php:36
+msgid "Newer Comments &rarr;"
+msgstr "ความเห็นที่ใหม่กว่า &rarr;"
+
+#: comments.php:23 comments.php:35
+msgid "&larr; Older Comments"
+msgstr "&larr; ความเห็นที่เก่ากว่า"
+
+#: comments.php:15
+msgid "One response to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s responses to &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+
+#: comments.php:22 comments.php:34
+msgid "Comment navigation"
+msgstr "เมนูนำทางความเห็น"
+
+#: archive.php:57 sidebar.php:15
+msgid "Archives"
+msgstr "คลังเก็บ"
+
+#: archive.php:51
+msgid "Quotes"
+msgstr "เรื่องคำคม"
+
+#: archive.php:54
+msgid "Links"
+msgstr "ลิงก์"
+
+#: archive.php:48
+msgid "Videos"
+msgstr "เรื่องวีดีโอ"
+
+#: archive.php:42
+msgid "Asides"
+msgstr "เรื่องสั้น"
+
+#: archive.php:45
+msgid "Images"
+msgstr "เรื่องรูปภาพ"
+
+#: archive.php:39
+msgid "Yearly Archives: %s"
+msgstr "คลังเก็บแบบปี: %s"
+
+#: archive.php:36
+msgid "Monthly Archives: %s"
+msgstr "คลังเก็บรายเดือน: %s"
+
+#: archive.php:33
+msgid "Daily Archives: %s"
+msgstr "คลัีงเก็บรายวัน: %s"
+
+#: archive.php:25 author.php:12
+msgid "Author Archives: %s"
+msgstr "คลังเก็บผู้เขียน: %s"
+
+#: archive.php:18 tag.php:15
+msgid "Tag Archives: %s"
+msgstr "คลังเก็บป้ายกำกับ: %s"
+
+#: archive.php:15 category.php:13
+msgid "Category Archives: %s"
+msgstr "คลังเก็บหมวดหมู่: %s"
+
+#: 404.php:31
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "พยายามมองหาในคลังเก็บรายเดือน %1$s"
+
+#: 404.php:17
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching, or one of the links below, can help."
+msgstr "ดูเหมือนว่าเราไม่สามารถหาสิ่งที่คุณกำลังค้นหาอยู่  บางทีคำสั่งการค้นหาหรือหนึ่งในลิงก์ด้านล่าง อาจช่วยคุณได้"
+
+#: 404.php:24
+msgid "Most Used Categories"
+msgstr "หมวดหมู่ที่ใช้มากที่สุด"
+
+#: 404.php:13
+msgid "This is somewhat embarrassing, isn&rsquo;t it?"
+msgstr "นี่เป็นสิ่งน่าละอายนัก  ใช่รึไม่?"
