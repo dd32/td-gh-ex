@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Full Frame\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-20 08:28+0545\n"
-"PO-Revision-Date: 2015-05-20 08:28+0545\n"
+"POT-Creation-Date: 2015-06-18 00:12-0500\n"
+"PO-Revision-Date: 2015-06-18 00:12-0500\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: pt_BR\n"
@@ -188,12 +188,12 @@ msgid "Review"
 msgstr ""
 
 #: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:90
-#: ../inc/fullframe-default-options.php:464
+#: ../inc/fullframe-default-options.php:488
 msgid "Facebook"
 msgstr "Facebook"
 
 #: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:94
-#: ../inc/fullframe-default-options.php:465
+#: ../inc/fullframe-default-options.php:489
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -202,7 +202,7 @@ msgid "Google+"
 msgstr "Google+"
 
 #: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:102
-#: ../inc/fullframe-default-options.php:472
+#: ../inc/fullframe-default-options.php:496
 msgid "Pinterest"
 msgstr "Pinterest"
 
@@ -211,11 +211,12 @@ msgid "Options for Featured Content"
 msgstr ""
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:21
-msgid "Featured Content Options"
+#: ../inc/fullframe-featured-content.php:57
+msgid "Featured Content"
 msgstr ""
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:29
-msgid "Featured Content Settings"
+msgid "Featured Content Options"
 msgstr ""
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:46
@@ -234,68 +235,64 @@ msgstr ""
 msgid "Check to Enable Sliding Effect"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:105
-msgid "Featured Content Type"
-msgstr ""
-
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:122
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:116
 msgid "Select Content Type"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:136
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:130
 msgid "Leave field empty if you want to remove Headline"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:137
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:131
 msgid "Headline for Featured Content"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:152
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:146
 msgid "Leave field empty if you want to remove Sub-headline"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:153
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:147
 msgid "Sub-headline for Featured Content"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:168
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:162
 msgid ""
 "Save and refresh the page if No. of Featured Content is changed (Max no of "
 "Featured Content is 20)"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:175
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:169
 msgid "No of Featured Content"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:189
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:183
 msgid "Check to Enable Title"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:202
-msgid "Check to Enable Excerpt Content"
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:204
+msgid "Display Content"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:217
-#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:189
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:219
+#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:183
 msgid "Featured Page"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:228
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:230
 msgid "Featured Content Background Settings"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:238
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:240
 msgid "Select/Add Background Image"
 msgstr ""
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:19
-#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:21
+#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:28
 msgid "Featured Slider Options"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:28
-msgid "Featured Slider Settings"
+#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:21
+msgid "Featured Slider"
 msgstr ""
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:45
@@ -331,20 +328,16 @@ msgstr ""
 msgid "Image Loader"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:135
-msgid "Featured Slider Type"
-msgstr ""
-
-#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:152
+#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:146
 msgid "Select Slider Type"
 msgstr "Selecione o tipo de Slider Show"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:166
+#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:160
 msgid ""
 "Save and refresh the page if No. of Slides is changed (Max no of slides is 20)"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:173
+#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:167
 msgid "No of Slides"
 msgstr ""
 
@@ -412,7 +405,7 @@ msgid "Check to enable Breadcrumb on Homepage"
 msgstr ""
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:72
-msgid "Seperator between Breadcrumbs"
+msgid "Separator between Breadcrumbs"
 msgstr ""
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:82
@@ -762,6 +755,22 @@ msgstr "Postado em"
 msgid "By"
 msgstr "Por"
 
+#: ../inc/fullframe-core.php:1458
+msgid "Next &rarr;"
+msgstr ""
+
+#: ../inc/fullframe-core.php:1459
+msgid "Next post:"
+msgstr ""
+
+#: ../inc/fullframe-core.php:1461
+msgid "&larr; Previous"
+msgstr ""
+
+#: ../inc/fullframe-core.php:1462
+msgid "Previous post:"
+msgstr ""
+
 #: ../inc/fullframe-default-options.php:53
 msgid "Read More ..."
 msgstr "Leia mais ..."
@@ -793,21 +802,22 @@ msgid "Dark"
 msgstr "Escuro"
 
 #: ../inc/fullframe-default-options.php:136
-#: ../inc/fullframe-default-options.php:512
+#: ../inc/fullframe-default-options.php:536
 msgid "Primary Sidebar, Content"
 msgstr ""
 
 #: ../inc/fullframe-default-options.php:140
-#: ../inc/fullframe-default-options.php:517
+#: ../inc/fullframe-default-options.php:541
 msgid "Content, Primary Sidebar"
 msgstr ""
 
 #: ../inc/fullframe-default-options.php:144
-#: ../inc/fullframe-default-options.php:522
+#: ../inc/fullframe-default-options.php:546
 msgid "No Sidebar ( Content Width )"
 msgstr ""
 
 #: ../inc/fullframe-default-options.php:160
+#: ../inc/fullframe-default-options.php:313
 msgid "Show Excerpt"
 msgstr "Mostrar excerto"
 
@@ -843,7 +853,7 @@ msgstr ""
 
 #: ../inc/fullframe-default-options.php:205
 #: ../inc/fullframe-default-options.php:255
-#: ../inc/fullframe-default-options.php:450
+#: ../inc/fullframe-default-options.php:474
 msgid "Disabled"
 msgstr "Desativado"
 
@@ -875,222 +885,226 @@ msgstr "3 colunas"
 msgid "4 columns"
 msgstr "4 colunas"
 
-#: ../inc/fullframe-default-options.php:314
+#: ../inc/fullframe-default-options.php:317
+msgid "Show Full Content"
+msgstr ""
+
+#: ../inc/fullframe-default-options.php:321
+msgid "Hide Content"
+msgstr ""
+
+#: ../inc/fullframe-default-options.php:338
 msgid "Demo Featured Slider"
 msgstr ""
 
-#: ../inc/fullframe-default-options.php:318
+#: ../inc/fullframe-default-options.php:342
 msgid "Featured Page Slider"
 msgstr ""
 
-#: ../inc/fullframe-default-options.php:335
+#: ../inc/fullframe-default-options.php:359
 msgid "Fade"
 msgstr "Efeito desaparecer gradualmente"
 
-#: ../inc/fullframe-default-options.php:339
+#: ../inc/fullframe-default-options.php:363
 msgid "Fade Out"
 msgstr ""
 
-#: ../inc/fullframe-default-options.php:343
+#: ../inc/fullframe-default-options.php:367
 msgid "None"
 msgstr ""
 
-#: ../inc/fullframe-default-options.php:347
+#: ../inc/fullframe-default-options.php:371
 msgid "Scroll Horizontal"
 msgstr ""
 
-#: ../inc/fullframe-default-options.php:351
+#: ../inc/fullframe-default-options.php:375
 msgid "Scroll Vertical"
 msgstr ""
 
-#: ../inc/fullframe-default-options.php:355
+#: ../inc/fullframe-default-options.php:379
 msgid "Flip Horizontal"
 msgstr ""
 
-#: ../inc/fullframe-default-options.php:359
+#: ../inc/fullframe-default-options.php:383
 msgid "Flip Vertical"
 msgstr ""
 
-#: ../inc/fullframe-default-options.php:363
+#: ../inc/fullframe-default-options.php:387
 msgid "Tile Slide"
 msgstr ""
 
-#: ../inc/fullframe-default-options.php:367
+#: ../inc/fullframe-default-options.php:391
 msgid "Tile Blind"
 msgstr ""
 
-#: ../inc/fullframe-default-options.php:371
+#: ../inc/fullframe-default-options.php:395
 msgid "Suffle"
 msgstr "Efeito micelânia"
 
-#: ../inc/fullframe-default-options.php:388
+#: ../inc/fullframe-default-options.php:412
 msgid "True"
 msgstr ""
 
-#: ../inc/fullframe-default-options.php:392
+#: ../inc/fullframe-default-options.php:416
 msgid "Wait"
 msgstr ""
 
-#: ../inc/fullframe-default-options.php:396
+#: ../inc/fullframe-default-options.php:420
 msgid "False"
 msgstr ""
 
-#: ../inc/fullframe-default-options.php:413
+#: ../inc/fullframe-default-options.php:437
 msgid "Default(Older Posts/Newer Posts)"
 msgstr ""
 
-#: ../inc/fullframe-default-options.php:417
+#: ../inc/fullframe-default-options.php:441
 msgid "Numeric"
 msgstr ""
 
-#: ../inc/fullframe-default-options.php:421
+#: ../inc/fullframe-default-options.php:445
 msgid "Infinite Scroll (Click)"
 msgstr ""
 
-#: ../inc/fullframe-default-options.php:425
+#: ../inc/fullframe-default-options.php:449
 msgid "Infinite Scroll (Scroll)"
 msgstr ""
 
-#: ../inc/fullframe-default-options.php:442
+#: ../inc/fullframe-default-options.php:466
 msgid "Featured"
 msgstr ""
 
-#: ../inc/fullframe-default-options.php:446
-#: ../inc/fullframe-default-options.php:575
+#: ../inc/fullframe-default-options.php:470
+#: ../inc/fullframe-default-options.php:599
 msgid "Full Size"
 msgstr ""
 
-#: ../inc/fullframe-default-options.php:466
+#: ../inc/fullframe-default-options.php:490
 msgid "Googleplus"
 msgstr "Googleplus"
 
-#: ../inc/fullframe-default-options.php:467 ../inc/fullframe-social-icons.php:60
+#: ../inc/fullframe-default-options.php:491 ../inc/fullframe-social-icons.php:61
 msgid "Email"
 msgstr "Email"
 
-#: ../inc/fullframe-default-options.php:468
+#: ../inc/fullframe-default-options.php:492
 msgid "Feed"
 msgstr "Feed"
 
-#: ../inc/fullframe-default-options.php:469
+#: ../inc/fullframe-default-options.php:493
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../inc/fullframe-default-options.php:470
+#: ../inc/fullframe-default-options.php:494
 msgid "GitHub"
 msgstr "GitHub"
 
-#: ../inc/fullframe-default-options.php:471
+#: ../inc/fullframe-default-options.php:495
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: ../inc/fullframe-default-options.php:473
+#: ../inc/fullframe-default-options.php:497
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/fullframe-default-options.php:474
+#: ../inc/fullframe-default-options.php:498
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/fullframe-default-options.php:475
+#: ../inc/fullframe-default-options.php:499
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../inc/fullframe-default-options.php:476
+#: ../inc/fullframe-default-options.php:500
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/fullframe-default-options.php:477
+#: ../inc/fullframe-default-options.php:501
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/fullframe-default-options.php:478
+#: ../inc/fullframe-default-options.php:502
 msgid "PollDaddy"
 msgstr "PollDaddy"
 
-#: ../inc/fullframe-default-options.php:479
+#: ../inc/fullframe-default-options.php:503
 msgid "CodePen"
 msgstr "CodePen"
 
-#: ../inc/fullframe-default-options.php:480
+#: ../inc/fullframe-default-options.php:504
 msgid "Path"
 msgstr "Path"
 
-#: ../inc/fullframe-default-options.php:481
+#: ../inc/fullframe-default-options.php:505
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/fullframe-default-options.php:482
+#: ../inc/fullframe-default-options.php:506
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/fullframe-default-options.php:483
+#: ../inc/fullframe-default-options.php:507
 msgid "Digg"
 msgstr "Digg"
 
-#: ../inc/fullframe-default-options.php:484
+#: ../inc/fullframe-default-options.php:508
 msgid "Reddit"
 msgstr "Reddit"
 
-#: ../inc/fullframe-default-options.php:485
+#: ../inc/fullframe-default-options.php:509
 msgid "StumbleUpon"
 msgstr "StumbleUpon"
 
-#: ../inc/fullframe-default-options.php:486
+#: ../inc/fullframe-default-options.php:510
 msgid "Pocket"
 msgstr "Pocket"
 
-#: ../inc/fullframe-default-options.php:487
+#: ../inc/fullframe-default-options.php:511
 msgid "DropBox"
 msgstr "DropBox"
 
-#: ../inc/fullframe-default-options.php:488
+#: ../inc/fullframe-default-options.php:512
 msgid "Foursquare"
 msgstr "Foursquare"
 
-#: ../inc/fullframe-default-options.php:489
+#: ../inc/fullframe-default-options.php:513
 msgid "Spotify"
 msgstr "Spotify"
 
-#: ../inc/fullframe-default-options.php:490
+#: ../inc/fullframe-default-options.php:514
 msgid "Twitch"
 msgstr "Twitch"
 
-#: ../inc/fullframe-default-options.php:507
-#: ../inc/fullframe-default-options.php:538
-#: ../inc/fullframe-default-options.php:565
+#: ../inc/fullframe-default-options.php:531
+#: ../inc/fullframe-default-options.php:562
+#: ../inc/fullframe-default-options.php:589
 msgid "Default"
 msgstr "Padrão"
 
-#: ../inc/fullframe-default-options.php:543
+#: ../inc/fullframe-default-options.php:567
 msgid "Enable"
 msgstr "Ativar"
 
-#: ../inc/fullframe-default-options.php:548
+#: ../inc/fullframe-default-options.php:572
 msgid "Disable"
 msgstr "Desativar"
 
-#: ../inc/fullframe-default-options.php:570
+#: ../inc/fullframe-default-options.php:594
 msgid "Featured Image"
 msgstr "Imagem em destaque"
 
-#: ../inc/fullframe-default-options.php:580
+#: ../inc/fullframe-default-options.php:604
 msgid "Disable Image"
 msgstr "Desativar imagem"
 
-#: ../inc/fullframe-default-options.php:595
+#: ../inc/fullframe-default-options.php:619
 #, php-format
 msgctxt "1: Year, 2: Site Title with home URL"
 msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
 msgstr "Direitos Autorais &copy; %1$s %2$s. Todos os Direitos são Reservados."
 
-#: ../inc/fullframe-default-options.php:597
+#: ../inc/fullframe-default-options.php:621
 msgid "by"
 msgstr "por"
-
-#: ../inc/fullframe-featured-content.php:57
-msgid "Featured Content"
-msgstr ""
 
 #: ../inc/fullframe-featured-content.php:58
 msgid ""
@@ -1099,8 +1113,8 @@ msgid ""
 "Featured Content Options\"."
 msgstr ""
 
-#: ../inc/fullframe-featured-content.php:313
-#: ../inc/fullframe-featured-content.php:330
+#: ../inc/fullframe-featured-content.php:315
+#: ../inc/fullframe-featured-content.php:332
 #: ../inc/fullframe-featured-slider.php:185
 #: ../inc/fullframe-featured-slider.php:201
 #: ../inc/fullframe-featured-slider.php:211

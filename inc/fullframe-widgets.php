@@ -61,7 +61,7 @@ class Fullframe_social_icons_widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'fullframe_social_icons', // Base ID
-			'Fullframe Social Icons', // Name
+			'CT: Social Icons', // Name
 			array( 'description' => __( 'Use this widget to add Social Icons as a widget. ', 'fullframe' ) ) // Args
 		);
 	}

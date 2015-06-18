@@ -18,14 +18,14 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		    'capability'     => 'edit_theme_options',
 		    'description'    => __( 'Featured Slider Options', 'fullframe' ),
 		    'priority'       => 500,
-			'title'    		 => __( 'Featured Slider Options', 'fullframe' ),
+			'title'    		 => __( 'Featured Slider', 'fullframe' ),
 		) );
 	}
 
 	$wp_customize->add_section( 'fullframe_featured_slider', array(
 		'panel'			=> 'fullframe_featured_slider',
 		'priority'		=> 1,
-		'title'			=> __( 'Featured Slider Settings', 'fullframe' ),
+		'title'			=> __( 'Featured Slider Options', 'fullframe' ),
 	) );
 
 	$wp_customize->add_setting( 'fullframe_theme_options[featured_slider_option]', array(
@@ -129,12 +129,6 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'type'    	=> 'select',
 	) );
 
-	$wp_customize->add_section( 'fullframe_featured_slider_type', array(
-		'panel'			=> 'fullframe_featured_slider',
-		'priority'		=> 2,
-		'title'			=> __( 'Featured Slider Type', 'fullframe' ),
-	) );
-
 	$wp_customize->add_setting( 'fullframe_theme_options[featured_slider_type]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['featured_slider_type'],
@@ -151,7 +145,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'choices'  	=> $choices,
 		'label'    	=> __( 'Select Slider Type', 'fullframe' ),
 		'priority'	=> '2.1.3',
-		'section'  	=> 'fullframe_featured_slider_type',
+		'section'  	=> 'fullframe_featured_slider',
 		'settings' 	=> 'fullframe_theme_options[featured_slider_type]',
 		'type'	  	=> 'select',
 	) );
@@ -172,7 +166,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
         	),
 		'label'    		=> __( 'No of Slides', 'fullframe' ),
 		'priority'		=> '2.1.4',
-		'section'  		=> 'fullframe_featured_slider_type',
+		'section'  		=> 'fullframe_featured_slider',
 		'settings' 		=> 'fullframe_theme_options[featured_slide_number]',
 		'type'	   		=> 'number',
 		)
@@ -188,7 +182,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		$wp_customize->add_control( 'fullframe_featured_slider_page_'. $i .'', array(
 			'label'    	=> __( 'Featured Page', 'fullframe' ) . ' # ' . $i ,
 			'priority'	=> '4' . $i,
-			'section'  	=> 'fullframe_featured_slider_type',
+			'section'  	=> 'fullframe_featured_slider',
 			'settings' 	=> 'fullframe_theme_options[featured_slider_page_'. $i .']',
 			'type'	   	=> 'dropdown-pages',
 		) );

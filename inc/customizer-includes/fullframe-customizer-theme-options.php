@@ -69,7 +69,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 			'input_attrs' => array(
 	            'style' => 'width: 40px;'
             	),
-            'label'    	=> __( 'Seperator between Breadcrumbs', 'fullframe' ),
+            'label'    	=> __( 'Separator between Breadcrumbs', 'fullframe' ),
 			'section' 	=> 'fullframe_breadcumb_options',
 			'settings' 	=> 'fullframe_theme_options[breadcumb_seperator]',
 			'type'     	=> 'text'

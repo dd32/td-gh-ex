@@ -1,9 +1,19 @@
 == Change log ==
 
+= 1.6.1 =
+* Added: Single Post navigation
+* Updated: Sidr scripts to latest version 1.2.1
+
 = 1.6 = 
 * Added: Support for Random Header Image
 * Bug Fixed: Removal of extra '/' in sub-categories in breadcrumb and updates in breadcrumb
 * Bug Fixed: Blog page featured image not overwriting default header image
+* Combined options for Featured Content and renamed the section From Featured Content Options to Featured Content in Customizer
+* Combined options for Featured Slider and renamed the section From Featured Slider Options to Featured Slider in Customizer
+* Removed unnecessary js from custom customizer js as support for WordPress versions less than 4.0 is not required
+* Updated Featured Content Display excerpt option to "Display Content" and added Show Content option
+* Updated Social Widget name
+* Updated Genericion to version 3.3
 
 = 1.5 =
 * Bug Fixed: Header Text only CSS change when not displaying site title and tagline

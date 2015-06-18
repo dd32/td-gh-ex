@@ -301,6 +301,30 @@ function fullframe_featured_content_layout_options() {
 	return apply_filters( 'fullframe_featured_content_layout_options', $featured_content_layout_option );
 }
 
+/**
+ * Returns an array of featured content show registered for fullframe.
+ *
+ * @since Fullframe 1.6
+ */
+function fullframe_featured_content_show() {
+	$featured_content_show_option = array(
+		'excerpt' 		=> array(
+			'value'	=> '1',
+			'label' => __( 'Show Excerpt', 'fullframe' ),
+		),
+		'full-content' 	=> array(
+			'value' => '2',
+			'label' => __( 'Show Full Content', 'fullframe' ),
+		),
+		'hide-content' 	=> array(
+			'value' => '0',
+			'label' => __( 'Hide Content', 'fullframe' ),
+		),
+	);
+
+	return apply_filters( 'fullframe_featured_content_show', $featured_content_show_option );
+}
+
 
 /**
  * Returns an array of feature slider types registered for fullframe.

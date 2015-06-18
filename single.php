@@ -15,9 +15,14 @@ get_header(); ?>
 
 		<?php get_template_part( 'content', 'single' ); ?>
 
-		<?php //fullframe_content_nav( 'nav-below' ); ?>
-
 		<?php 
+			/** 
+			 * fullframe_after_post hook
+			 *
+			 * @hooked fullframe_post_navigation - 10
+			 */
+			do_action( 'fullframe_after_post' ); 
+			
 			/** 
 			 * fullframe_comment_section hook
 			 *

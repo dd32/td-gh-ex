@@ -18,7 +18,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		    'capability'     => 'edit_theme_options',
 			'description'    => __( 'Options for Featured Content', 'fullframe' ),
 		    'priority'       => 400,
-		    'title'    		 => __( 'Featured Content Options', 'fullframe' ),
+		    'title'    		 => __( 'Featured Content', 'fullframe' ),
 		) );
 	}
 
@@ -26,7 +26,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	$wp_customize->add_section( 'fullframe_featured_content_settings', array(
 		'panel'			=> 'fullframe_featured_content_options',
 		'priority'		=> 1,
-		'title'			=> __( 'Featured Content Settings', 'fullframe' ),
+		'title'			=> __( 'Featured Content Options', 'fullframe' ),
 	) );
 
 	$wp_customize->add_setting( 'fullframe_theme_options[featured_content_option]', array(
@@ -97,12 +97,6 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'section'  	=> 'fullframe_featured_content_settings',
 		'settings'	=> 'fullframe_theme_options[featured_content_slider]',
 		'type'		=> 'checkbox',
-	) );  
-
-	$wp_customize->add_section( 'fullframe_featured_content_type', array(
-		'panel'			=> 'fullframe_featured_content_options',
-		'priority'		=> 2,
-		'title'			=> __( 'Featured Content Type', 'fullframe' ),
 	) );
 
 	$wp_customize->add_setting( 'fullframe_theme_options[featured_content_type]', array(
@@ -121,7 +115,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'choices'  	=> $choices,
 		'label'    	=> __( 'Select Content Type', 'fullframe' ),
 		'priority'	=> '3',
-		'section'  	=> 'fullframe_featured_content_type',
+		'section'  	=> 'fullframe_featured_content_settings',
 		'settings' 	=> 'fullframe_theme_options[featured_content_type]',
 		'type'	  	=> 'select',
 	) );
@@ -136,7 +130,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'description'	=> __( 'Leave field empty if you want to remove Headline', 'fullframe' ),
 		'label'    		=> __( 'Headline for Featured Content', 'fullframe' ),
 		'priority'		=> '4',
-		'section'  		=> 'fullframe_featured_content_type',
+		'section'  		=> 'fullframe_featured_content_settings',
 		'settings' 		=> 'fullframe_theme_options[featured_content_headline]',
 		'type'	   		=> 'text',
 		)
@@ -152,7 +146,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'description'	=> __( 'Leave field empty if you want to remove Sub-headline', 'fullframe' ),
 		'label'    		=> __( 'Sub-headline for Featured Content', 'fullframe' ),
 		'priority'		=> '5',
-		'section'  		=> 'fullframe_featured_content_type',
+		'section'  		=> 'fullframe_featured_content_settings',
 		'settings' 		=> 'fullframe_theme_options[featured_content_subheadline]',
 		'type'	   		=> 'text',
 		) 
@@ -174,7 +168,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
         	),
 		'label'    		=> __( 'No of Featured Content', 'fullframe' ),
 		'priority'		=> '6',
-		'section'  		=> 'fullframe_featured_content_type',
+		'section'  		=> 'fullframe_featured_content_settings',
 		'settings' 		=> 'fullframe_theme_options[featured_content_number]',
 		'type'	   		=> 'number',
 		) 
@@ -188,23 +182,31 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	$wp_customize->add_control(  'fullframe_theme_options[featured_content_enable_title]', array(
 		'label'		=> __( 'Check to Enable Title', 'fullframe' ),
         'priority'	=> '7',
-		'section'   => 'fullframe_featured_content_type',
+		'section'   => 'fullframe_featured_content_settings',
         'settings'  => 'fullframe_theme_options[featured_content_enable_title]',
 		'type'		=> 'checkbox',
     ) );
 
 	$wp_customize->add_setting( 'fullframe_theme_options[featured_content_enable_excerpt_content]', array(
-	        'default'			=> $defaults['featured_content_enable_excerpt_content'],
-			'sanitize_callback'	=> 'fullframe_sanitize_checkbox',
-		) );
+		'capability'		=> 'edit_theme_options',
+		'default'			=> $defaults['featured_content_enable_excerpt_content'],
+		'sanitize_callback'	=> 'sanitize_key',
+	) ); 
 
-	$wp_customize->add_control(  'fullframe_theme_options[featured_content_enable_excerpt_content]', array(
-		'label'		=> __( 'Check to Enable Excerpt Content', 'fullframe' ),
-        'priority'	=> '8',
-		'section'   => 'fullframe_featured_content_type',
-        'settings'  => 'fullframe_theme_options[featured_content_enable_excerpt_content]',
-		'type'		=> 'checkbox',
-    ) );
+	$fullframe_featured_content_show = fullframe_featured_content_show();
+	$choices = array();
+	foreach ( $fullframe_featured_content_show as $fullframe_featured_content_shows ) {
+		$choices[$fullframe_featured_content_shows['value']] = $fullframe_featured_content_shows['label'];
+	}
+
+	$wp_customize->add_control( 'fullframe_theme_options[featured_content_enable_excerpt_content]', array(
+		'choices'  	=> $choices,
+		'label'    	=> __( 'Display Content', 'fullframe' ),
+		'priority'	=> '8',
+		'section'  	=> 'fullframe_featured_content_settings',
+		'settings' 	=> 'fullframe_theme_options[featured_content_enable_excerpt_content]',
+		'type'	  	=> 'select',
+	) );
 
 	//loop for featured page content
 	for ( $i=1; $i <= $options['featured_content_number'] ; $i++ ) {
@@ -216,7 +218,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		$wp_customize->add_control( 'fullframe_featured_content_page_'. $i .'', array(
 			'label'    	=> __( 'Featured Page', 'fullframe' ) . ' ' . $i ,
 			'priority'	=> '7' . $i,
-			'section'  	=> 'fullframe_featured_content_type',
+			'section'  	=> 'fullframe_featured_content_settings',
 			'settings' 	=> 'fullframe_theme_options[featured_content_page_'. $i .']',
 			'type'	   	=> 'dropdown-pages',
 		) );

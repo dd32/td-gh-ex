@@ -170,7 +170,7 @@ function fullframe_scripts() {
 	wp_enqueue_style( 'fullframe-responsive', get_template_directory_uri() . '/css/responsive.css' );
 
 	//Responsive Menu		
-	wp_enqueue_script('sidr', get_template_directory_uri() . '/js/jquery.sidr.min.js', array('jquery'), '1.2.1 - 2013-11-06', false );	
+	wp_enqueue_script('sidr', get_template_directory_uri() . '/js/jquery.sidr.min.js', array('jquery'), '1.2.1', false );	
 
 	wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/js/fitvids.min.js', array( 'jquery' ), '1.1', true );
 	
@@ -1440,3 +1440,29 @@ if ( ! function_exists( 'fullframe_alter_home' ) ) :
 	}
 endif; //fullframe_alter_home
 add_action( 'pre_get_posts','fullframe_alter_home' );
+
+
+if ( ! function_exists( 'fullframe_post_navigation' ) ) :
+	/**
+	 * Displays Single post Navigation
+	 *
+	 * @uses  the_post_navigation
+	 *
+	 * @action fullframe_after_post
+	 * 
+	 * @since Full Frame 1.7
+	 */
+	function fullframe_post_navigation() {
+		// Previous/next post navigation.
+		the_post_navigation( array(
+			'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next &rarr;', 'fullframe' ) . '</span> ' .
+				'<span class="screen-reader-text">' . __( 'Next post:', 'fullframe' ) . '</span> ' .
+				'<span class="post-title">%title</span>',
+			'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( '&larr; Previous', 'fullframe' ) . '</span> ' .
+				'<span class="screen-reader-text">' . __( 'Previous post:', 'fullframe' ) . '</span> ' .
+				'<span class="post-title">%title</span>',
+		) );
+
+	}
+endif; //fullframe_post_navigation
+add_action( 'fullframe_after_post', 'fullframe_post_navigation', 10 );

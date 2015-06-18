@@ -304,6 +304,8 @@ function fullframe_page_content( $options ) {
 			$i++;
 			
 			$title_attribute = apply_filters( 'the_title', get_the_title( $post->ID ) );
+
+			$excerpt = get_the_excerpt();
 			
 			$fullframe_page_content .= '
 				<article id="featured-post-' . $i . '" class="post hentry featured-page-content">';	
@@ -332,7 +334,7 @@ function fullframe_page_content( $options ) {
 					</a>';
 				}
 
-				if ( '1' == $options['featured_content_enable_title'] || '1'== $options['featured_content_enable_excerpt_content'] ) {
+				if ( '1' == $options['featured_content_enable_title'] || '0'!= $options['featured_content_enable_excerpt_content'] ) {
 				$fullframe_page_content .= '
 					<div class="entry-container">';
 					if ( '1' == $options['featured_content_enable_title'] ) {
@@ -343,11 +345,16 @@ function fullframe_page_content( $options ) {
 								</h1>
 							</header>';		
 					}
-					if ( '1'== $options['featured_content_enable_excerpt_content'] ) {
-						$fullframe_page_content .= '<div class="entry-content">'. get_the_excerpt() . '</div>';
+					if ( '1' == $options['featured_content_enable_excerpt_content'] ) {
+						//Show Excerpt
+						$fullframe_page_content .= '<div class="entry-excerpt"><p>' . $excerpt . '</p></div><!-- .entry-excerpt -->';
 					}
-					$fullframe_page_content .= '
-					</div><!-- .entry-container -->';
+					elseif ( '2' == $options['featured_content_enable_excerpt_content'] ) { 
+						//Show Content
+						$content = apply_filters( 'the_content', get_the_content() );
+						$content = str_replace( ']]>', ']]&gt;', $content );
+						$fullframe_page_content .= '<div class="entry-content">' . $content . '</div><!-- .entry-content -->';
+					}
 				}
 				$fullframe_page_content .= '
 				</article><!-- .featured-page-'. $i .' -->';
