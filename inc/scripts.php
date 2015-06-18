@@ -20,7 +20,7 @@ function ct_ignite_load_scripts_styles() {
 		wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css');
 
 		// Stylesheet
-		wp_enqueue_style('style', get_template_directory_uri() . 'style.min.css');
+		wp_enqueue_style('style', get_stylesheet_uri() );
 	}
 	// enqueue comment-reply script only on posts & pages with comments open ( included in WP core )
 	if( is_singular() && comments_open() && get_option('thread_comments') ) {
@@ -33,6 +33,9 @@ add_action('wp_enqueue_scripts', 'ct_ignite_load_scripts_styles' );
  * Back-end scripts
  */
 function ct_ignite_enqueue_admin_styles($hook){
+
+	// temporarily enqueue until notice no longer necessary
+	wp_enqueue_script('ignite-admin-js', get_template_directory_uri() . '/js/build/admin.min.js', array('jquery'), '', true);
 
 	if ( 'appearance_page_ignite-options' == $hook || 'widgets.php' == $hook ) {
 		wp_enqueue_style('admin-style', get_template_directory_uri() . '/styles/admin-style.min.css');
@@ -68,6 +71,18 @@ function ct_ignite_enqueue_customizer_scripts(){
 	wp_enqueue_style('customizer-styles', get_template_directory_uri() . '/styles/customizer-style.min.css');
 }
 add_action('customize_controls_enqueue_scripts','ct_ignite_enqueue_customizer_scripts');
+
+/*
+ * Script for live updating with customizer options. Has to be loaded separately on customize_preview_init hook
+ * transport => postMessage
+ */
+function ignite_enqueue_customizer_post_message_scripts(){
+
+	// JS for live updating with customizer input
+	wp_enqueue_script('ct-ignite-customizer-post-message-js', get_template_directory_uri() . '/js/build/postMessage.min.js',array('jquery'),'',true);
+
+}
+add_action('customize_preview_init','ignite_enqueue_customizer_post_message_scripts');
 
 // load scripts asynchronously
 function ct_ignite_add_async_script($url) {

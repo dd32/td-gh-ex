@@ -111,7 +111,7 @@ if( ! function_exists( 'ct_ignite_customize_comments' ) ) {
             </div>
             <div class="comment-meta">
                 <div class="comment-date"><?php comment_date(); ?></div>
-                <?php edit_comment_link( 'edit' ); ?>
+                <?php edit_comment_link( __('Edit', 'ignite') ); ?>
                 <?php comment_reply_link( array_merge( $args, array(
                     'reply_text' => __( 'Reply', 'ignite' ),
                     'depth'      => $depth,
@@ -202,23 +202,21 @@ if( ! function_exists( 'ct_ignite_excerpt' ) ) {
         // make post variable available
         global $post;
 
-        // make 'read more' setting available
-        global $more;
-
         // get the show full post setting
         $setting = get_theme_mod( 'ct_ignite_show_full_post_setting' );
 
         // check for the more tag
         $ismore = strpos( $post->post_content, '<!--more-->' );
 
-        // if show full post is on, show full post unless on search page
+        // if show full post is on and not on a search results page
         if ( ( $setting == 'yes' ) && ! is_search() ) {
 
-            // set read more value for all posts to 'off'
-            $more = - 1;
-
-            // output the full content
-            the_content();
+			// use the read more link if present
+	        if ( $ismore ) {
+		        the_content( __( 'Read More', 'ignite' ) . " <span class='screen-reader-text'>" . get_the_title() . "</span>" );
+	        } else {
+		        the_content();
+	        }
         } // use the read more link if present
         elseif ( $ismore ) {
             the_content( __( 'Read More', 'ignite' ) . " <span class='screen-reader-text'>" . get_the_title() . "</span>" );
@@ -236,7 +234,6 @@ if( ! function_exists( 'ct_ignite_excerpt_read_more_link' ) ) {
     }
 }
 add_filter('the_excerpt', 'ct_ignite_excerpt_read_more_link');
-
 
 // switch [...] to ellipsis on automatic excerpt
 if( ! function_exists( 'ct_ignite_new_excerpt_more' ) ) {
@@ -586,3 +583,35 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) :
     }
     add_action( 'wp_head', 'ct_ignite_add_title_tag' );
 endif;
+
+// show notice telling users about avatar change coming in v1.50
+function ct_ignite_delete_settings_notice() {
+
+	// if not dismissed previously, show message
+	if ( get_option( 'ct_ignite_dismiss_avatar_notice' ) != true ) {
+
+		// set link with full explanation
+		// linking to my site and redirecting as a precaution to maintain control
+		$url = 'https://www.competethemes.com/ignite-avatar-redirect/';
+		?>
+		<div id="ignite-avatar-notice" class="update-nag notice is-dismissible">
+			<p><?php printf( __( 'Custom avatars are being removed from Ignite in v1.50. Please <a target="_blank" href="%s">follow these instructions</a> before the next update', 'ignite' ), esc_url($url) ); ?>.</p>
+		</div>
+	<?php
+	}
+}
+add_action( 'admin_notices', 'ct_ignite_delete_settings_notice' );
+
+// remove the notice permanently if user clicks the "x" button
+function ct_ignite_dismiss_avatar_notice() {
+
+	// get the dismissed value
+	$dismissed = $_POST['dismissed'];
+
+	// if set to true, update option
+	if( $dismissed == true ) {
+		update_option('ct_ignite_dismiss_avatar_notice', true);
+	}
+	die();
+}
+add_action( 'wp_ajax_dismiss_ignite_avatar_notice', 'ct_ignite_dismiss_avatar_notice' );

@@ -1,3 +1,18 @@
+jQuery(document).ready(function($) {
+
+    $('#ignite-avatar-notice').find('.notice-dismiss').bind('click', function(){
+
+        // set up data object
+        var data = {
+            action: 'dismiss_ignite_avatar_notice',
+            dismissed: true,
+            security: '<?php echo $ajax_nonce; ?>'
+        };
+
+        // post data received from PHP respond
+        jQuery.post(ajaxurl, data);
+    });
+});
 /*global jQuery */
 /*jshint browser:true */
 /*!
@@ -772,3 +787,30 @@ window.addEventListener("hashchange", function(event) {
     Placeholders.enable = Placeholders.nativeSupport ? noop : enablePlaceholders;
 
 }(this));
+( function( $ ) {
+
+    /*
+     * Following functions are for utilizing the postMessage transport setting
+     */
+
+    // Site title
+    wp.customize( 'blogname', function( value ) {
+        value.bind( function( to ) {
+            // if there is a logo, don't replace it
+            if( $('.site-title').find('img').length == 0 ) {
+                $( '.site-title a' ).text( to );
+            }
+        } );
+    } );
+    // Tagline
+    wp.customize( 'blogdescription', function( value ) {
+        value.bind( function( to ) {
+            var tagline = $('#site-description');
+            if( tagline.length == 0 ) {
+                $('#menu-primary').prepend('<p id="site-description"></p>');
+            }
+            tagline.text( to );
+        } );
+    } );
+
+} )( jQuery );

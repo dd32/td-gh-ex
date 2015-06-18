@@ -4,7 +4,7 @@ Theme URI: https://www.competethemes.com/ignite/
 Author: Compete Themes
 Author URI: https://www.competethemes.com
 Description: Ignite is a responsive blog theme. It includes logo tools, social media icons, a left- or right-sidebar layout, five fonts, custom background colors, and many additional display options. There is also a premium upgrade for Ignite called Ignite Plus. See our fully-setup live demo at https://www.competethemes.com/ignite-live-demo/
-Version: 1.48.1
+Version: 1.49
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: gray, orange, silver, tan, white, light, two-columns, right-sidebar, left-sidebar, responsive-layout, custom-background, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
@@ -153,6 +153,7 @@ li li {
 /* Markup styles */
 pre {
   word-wrap: break-word;
+  white-space: pre-wrap;
   background: #e8eaee;
   padding: 0.75em;
 }
@@ -1290,23 +1291,14 @@ a img {
 .author-meta img {
   border-radius: 50%;
   float: left;
-  margin-right: 1.5em;
+  margin: 0 1.5em 0 0;
+  width: 72px;
+  height: 72px;
+  overflow: hidden;
 }
 .author-meta p {
   margin-top: 0.75em;
   margin-left: 6em;
-}
-
-.author-profile-image {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  float: left;
-  margin-right: 1.5em;
-  overflow: hidden;
-}
-.author-profile-image img {
-  border-radius: 0;
 }
 
 /* 700px */
@@ -1389,7 +1381,7 @@ li.pingback {
   height: auto;
   border-radius: 50%;
   float: left;
-  margin-right: 0.75em;
+  margin: 0 0.75em 0 0;
 }
 .comment-author .author-name {
   font-weight: 700;
@@ -1403,14 +1395,6 @@ li.pingback {
 }
 .comment-author .author-name a:hover, .comment-author .author-name a:active {
   color: #a87227;
-}
-.comment-author .author-profile-image {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  float: left;
-  margin-right: 0.75em;
-  overflow: hidden;
 }
 
 .comment-meta {
