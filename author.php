@@ -11,7 +11,7 @@
 
 get_header(); ?>
 
-	<section id="primary" class="site-content">
+	<section id="primary" class="site-content col-md-9">
 		<div id="content" role="main">
 
 		<?php if ( have_posts() ) : ?>
@@ -27,7 +27,7 @@ get_header(); ?>
 			?>
 
 			<header class="archive-header">
-				<h1 class="archive-title"><?php printf( __( 'Author Archives: %s', AGAMA_DOMAIN ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' ); ?></h1>
+				<h1 class="archive-title"><?php printf( __( 'Author Archives: %s', 'agama' ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' ); ?></h1>
 			</header><!-- .archive-header -->
 
 			<?php
@@ -58,7 +58,7 @@ get_header(); ?>
 					?>
 				</div><!-- .author-avatar -->
 				<div class="author-description">
-					<h2><?php printf( __( 'About %s', AGAMA_DOMAIN ), get_the_author() ); ?></h2>
+					<h2><?php printf( __( 'About %s', 'agama' ), get_the_author() ); ?></h2>
 					<p><?php the_author_meta( 'description' ); ?></p>
 				</div><!-- .author-description	-->
 			</div><!-- .author-info -->

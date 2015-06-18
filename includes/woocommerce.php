@@ -17,10 +17,12 @@ if( class_exists( 'Woocommerce' ) ):
 		}
 		
 		function agama_wrapper_start() {
-			echo '<div id="primary" class="site-content">';
+			echo '<div id="primary" class="site-content col-md-9">';
+				echo '<div id="content" role="main">';
 		}
 		
 		function agama_wrapper_end() {
+				echo '</div>';
 			echo '</div>';
 		}
 	}

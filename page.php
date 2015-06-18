@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="site-content">
+	<div id="primary" class="site-content col-md-9">
 		<div id="content" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>

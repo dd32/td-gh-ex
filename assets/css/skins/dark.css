@@ -80,7 +80,50 @@ input[type="reset"]:active {
 	background-color: #363636;
 }
 
-.top-navigation {
+/* Sticky Header */
+.site-header .sticky-header {
+	-webkit-box-shadow: 0px 1px 4px 0px rgba(29, 29, 29, 0.75);
+	-moz-box-shadow: 0px 1px 4px 0px rgba(29, 29, 29, 0.75);
+	box-shadow: 0px 1px 4px 0px rgba(29, 29, 29, 1);
+}
+.site-header .sticky-header,
+.sticky-header ul li ul,
+.sticky-nav > li > ul > li > ul {
+	background-color: #303030;
+}
+.sticky-nav > li {
+	border-right: 1px solid #545454;
+}
+.sticky-nav > li:first-child {
+	border-left: 1px solid #545454;
+}
+.sticky-nav > li > ul > li,
+.sticky-nav li > ul > li > ul > li {
+	border-top: 1px solid #545454;
+}
+.sticky-nav > li ul > li:last-child,
+.sticky-nav li > ul > li > ul > li:last-child {
+	border-bottom: 1px solid #545454;
+}
+.site-header .sticky-header nav a:hover {
+	color: #b8b8b8;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+	border: 1px solid #545454;
+}
+.mobile-nav-icons a {
+	color: #545454;
+}
+.mobile-nav-menu:first-child {
+	border-top: 1px solid #545454;
+}
+.mobile-nav-menu li a {
+	border-bottom: 1px solid #545454;
+}
+
+.top-nav-wrapper {
 	background-color: #484747;
 	-webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.30);
 	-moz-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.30);
@@ -129,8 +172,19 @@ input[type="reset"]:active {
 	border-bottom-color: #545454;
 }
 
+/* Site Content List Style */
+.list-style {
+	border-bottom-color: #545454;
+}
+
+/* Site Content */
 .site-content article {
 	border-bottom-color: #545454;
+}
+
+.agama-portfolio .agama-separator {
+	border-top: 1px solid #545454;
+	border-bottom: 1px solid #545454;
 }
 
 .archive-header, 
@@ -145,6 +199,10 @@ article.sticky .featured-post {
 
 .js-isotope .article-wrapper {
 	border-color: #545454;
+}
+
+.entry-date .format-box {
+	background-color: #484747;
 }
 
 .entry-sep {
@@ -174,6 +232,22 @@ article.sticky .featured-post {
 footer[role="contentinfo"] {
 	border-top-color: #545454;
 	color: #b8b8b8;
+}
+
+/* Portfolio */
+.portfolio-filters {
+	border-top: 1px solid #545454;
+	border-bottom: 1px solid #545454;
+}
+
+.portfolio-content h1, 
+.portfolio-content h4 {
+	color: #636363;
+}
+
+/* Widgets */
+.widget-area .widget li {
+	border-bottom-color: #545454;
 }
 
 /* WooCommerce */

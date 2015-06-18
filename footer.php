@@ -8,16 +8,81 @@
  * @subpackage Agama
  * @since Agama 1.0
  */
-?>
+?>		
+			</div><!-- .container -->
 		</div><!-- #main .wrapper -->
 	</div><!-- #page -->
-	<footer id="colophon" role="contentinfo">
-		<div class="site-info">
-			<?php do_action( 'agama_credits' ); ?>
-			<a href="<?php echo esc_url( __( 'http://theme-vision.com/', AGAMA_DOMAIN ) ); ?>" title="<?php esc_attr_e( 'Premium Wordpress Themes', AGAMA_DOMAIN ); ?>"><?php printf( __( 'Proudly powered by %s', AGAMA_DOMAIN ), 'WordPress' ); ?></a>
+	
+	<?php 
+	if( 
+		is_active_sidebar( 'footer-widget-1' ) || 
+		is_active_sidebar( 'footer-widget-2' ) || 
+		is_active_sidebar( 'footer-widget-3' ) || 
+		is_active_sidebar( 'footer-widget-4' )
+	  ): ?>
+	<div class="footer-widgets">
+		<div class="container">
+			
+			<?php if( is_active_sidebar( 'footer-widget-1' ) ): ?>
+			<div class="col-md-3">
+				<?php dynamic_sidebar( 'footer-widget-1' ); ?>
+			</div>
+			<?php endif; ?>
+			
+			<?php if( is_active_sidebar( 'footer-widget-2' ) ): ?>
+			<div class="col-md-3">
+				<?php dynamic_sidebar( 'footer-widget-2' ); ?>
+			</div>
+			<?php endif; ?>
+			
+			<?php if( is_active_sidebar( 'footer-widget-3' ) ): ?>
+			<div class="col-md-3">
+				<?php dynamic_sidebar( 'footer-widget-3' ); ?>
+			</div>
+			<?php endif; ?>
+			
+			<?php if( is_active_sidebar( 'footer-widget-4' ) ): ?>
+			<div class="col-md-3">
+				<?php dynamic_sidebar( 'footer-widget-4' ); ?>
+			</div>
+			<?php endif; ?>
+			
+		</div>
+	</div><!-- .footer-widgets -->
+	<?php endif; ?>
+	
+	<?php if( get_theme_mod('to_top', '1') ): ?>
+	<a id="toTop">
+		<i class="fa fa-angle-up"></i>
+	</a>
+	<?php endif; ?>
+	
+	<footer id="colophon" class="clear" role="contentinfo">
+		<div class="site-info col-md-6">
+			<?php do_action('agama_credits'); ?>
 		</div><!-- .site-info -->
+		
+		<?php if( get_theme_mod('footer_social', false) ): ?>
+		<div class="social col-md-6">
+			<?php agama_social_icons( 'top' ); ?>
+		</div>
+		<?php endif; ?>
+		
 	</footer><!-- #colophon -->
-</div><!-- / Main Wrapper -->
+	
+	<script>
+	jQuery(document).ready(function($) {
+	<?php if( get_theme_mod('nicescroll', '1') ): ?>
+		$("html").niceScroll({
+			cursorwidth:"10px",
+			cursorborder:"1px solid #333",
+			zindex:"9999"
+		});
+	<?php endif; ?>
+	});
+	</script>
+	
+</div><!-- .main-wrapper -->
 
 
 <?php wp_footer(); ?>

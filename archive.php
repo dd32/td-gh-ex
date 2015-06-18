@@ -9,20 +9,20 @@
 
 get_header(); ?>
 
-	<section id="primary" class="site-content">
+	<section id="primary" class="site-content col-md-9">
 		<div id="content" role="main">
 
 		<?php if ( have_posts() ) : ?>
 			<header class="archive-header">
 				<h1 class="archive-title"><?php
 					if ( is_day() ) :
-						printf( __( 'Daily Archives: %s', AGAMA_DOMAIN ), '<span>' . get_the_date() . '</span>' );
+						printf( __( 'Daily Archives: %s', 'agama' ), '<span>' . get_the_date() . '</span>' );
 					elseif ( is_month() ) :
-						printf( __( 'Monthly Archives: %s', AGAMA_DOMAIN ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', AGAMA_DOMAIN ) ) . '</span>' );
+						printf( __( 'Monthly Archives: %s', 'agama' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'agama' ) ) . '</span>' );
 					elseif ( is_year() ) :
-						printf( __( 'Yearly Archives: %s', AGAMA_DOMAIN ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', AGAMA_DOMAIN ) ) . '</span>' );
+						printf( __( 'Yearly Archives: %s', 'agama' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'agama' ) ) . '</span>' );
 					else :
-						_e( 'Archives', AGAMA_DOMAIN );
+						_e( 'Archives', 'agama' );
 					endif;
 				?></h1>
 			</header><!-- .archive-header -->

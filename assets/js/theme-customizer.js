@@ -72,7 +72,7 @@
 	} );
 	
 	// Header top border color
-	wp.customize( 'header_top_border_color', function( value ) {
+	wp.customize( 'agama_primary_color', function( value ) {
 		value.bind( function( to ) {
 			var site = jQuery('#main-wrapper');
 			site.css( 'border-top-color', to );
@@ -94,9 +94,8 @@
 		value.bind( function( to ) {
 			var custom_css = jQuery('#agama-customize-css');
 			if( '' !== to ) {
-				jQuery('.entry-title a').css('color', to);
-				jQuery('.entry-content a').css('color', to);
-				jQuery('.comment-content a').css('color', to);
+				jQuery('.entry-date .date-box').css('background-color', to);
+				jQuery('.entry-date .format-box i').css('color', to);
 			}			
 		} );
 	} );

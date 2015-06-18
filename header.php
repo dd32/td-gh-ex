@@ -6,7 +6,8 @@
  * @subpackage Agama
  * @since Agama 1.0
  */
-?><!DOCTYPE html>
+ global $Agama; ?>
+<!DOCTYPE html>
 <!--[if IE 7]>
 <html class="ie ie7" <?php language_attributes(); ?>>
 <![endif]-->
@@ -17,16 +18,15 @@
 <html <?php language_attributes(); ?>>
 <!--<![endif]-->
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="viewport" content="width=device-width" />
-<title><?php wp_title( '|', true, 'right' ); ?></title>
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<?php // Loads HTML5 JavaScript file to add support for HTML5 elements in older IE versions. ?>
-<!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
-<![endif]-->
-<?php wp_head(); ?>
+
+	<meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<meta name="viewport" content="width=device-width" />
+	
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+	
+	<?php wp_head(); ?>
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -35,41 +35,78 @@
 <div id="main-wrapper">
 
 	<header id="masthead" class="site-header" role="banner">
-	
-		<?php if( get_theme_mod( 'agama_top_navigation' ) == '1' || is_customize_preview() ): ?>
-		<!-- Top Nav -->
-		<nav id="top-navigation" class="top-navigation" role="navigation">
-			<button class="top-menu-toggle"><?php _e( 'Top Navigation', AGAMA_DOMAIN ); ?></button>
-			<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', AGAMA_DOMAIN ); ?>"><?php _e( 'Skip to content', AGAMA_DOMAIN ); ?></a>
-			<?php wp_nav_menu( array( 'theme_location' => 'top', 'menu_class' => 'top-nav-menu' ) ); ?>
-		</nav><!-- / Top Nav -->
-		<?php endif; ?>
 		
-		<!-- Logo -->
-		<hgroup>
-			<?php if( get_theme_mod( 'header_logo' ) ): ?>
-			<a href="<?php esc_url(home_url()); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-				<img src="<?php echo get_theme_mod( 'header_logo' ); ?>" class="logo">
-			</a>
-			<?php else: ?>
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-			<?php endif; ?>
-		</hgroup><!-- / Logo -->
+		<?php if( get_theme_mod('sticky_header', '0') == true ): ?>
+			<div class="sticky-header">
+				<div class="sticky-header-inner">
+					<h1><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+					<nav role="navigation">
+						<?php wp_nav_menu( array( 'theme_location' => 'top', 'menu_class' => 'sticky-nav' ) ); ?>
+					</nav><!-- .top-navigation -->
+					<div class="mobile-nav">
+						<div class="mobile-nav-icons">
+							<?php if( class_exists('Woocommerce') ): global $woocommerce; ?>
+							<a href="<?php echo $woocommerce->cart->get_cart_url(); ?>" class="fa fa-2x fa-shopping-cart"></a>
+							<?php endif; ?>
+							<a class="fa fa-2x fa-bars"></a>
+						</div>
+						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'mobile-nav-menu' ) ); ?>
+					</div><!-- .mobile-nav -->
+				</div>
+			</div>
+		<?php else: ?>
 		
-		<!-- Main Nav -->
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle"><?php _e( 'Main Navigation', AGAMA_DOMAIN ); ?></button>
-			<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', AGAMA_DOMAIN ); ?>"><?php _e( 'Skip to content', AGAMA_DOMAIN ); ?></a>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-		</nav><!-- / Main Nav -->
+			<div class="top-nav-wrapper">
+				
+				<?php if( get_theme_mod( 'agama_top_navigation', '1' ) == '1' || is_customize_preview() ): // Top navigation?>
+					<nav id="top-navigation" class="top-navigation col-md-6" role="navigation">
+						<?php wp_nav_menu( array( 'theme_location' => 'top', 'menu_class' => 'top-nav-menu' ) ); ?>
+					</nav><!-- .top-navigation -->
+				<?php endif; ?>
+				
+				<?php if( get_theme_mod( 'top_nav_social', '0' ) == true ): // Social icons ?>
+					<div id="top-nav-social" class="col-md-6">
+						<?php agama_social_icons( $tip_position = 'bottom' ); ?>
+					</div><!-- #top-nav-social -->
+				<?php endif; ?>
+
+			</div><!-- .top-wrapper -->
+		
+			<hgroup>
+				<?php if( get_theme_mod( 'logo' ) ): ?>
+				<a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+					<img src="<?php echo get_theme_mod( 'logo' ); ?>" class="logo">
+				</a>
+				<?php else: ?>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+				<?php endif; ?>
+			</hgroup><!-- hgroup -->
+		
+			<nav id="site-navigation" class="main-navigation" role="navigation">
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+			</nav><!-- #main-navigation -->
+			
+			<div class="mobile-nav">
+				<div class="mobile-nav-icons">
+					<?php if( class_exists('Woocommerce') ): global $woocommerce; ?>
+					<a href="<?php echo $woocommerce->cart->get_cart_url(); ?>" class="fa fa-2x fa-shopping-cart"></a>
+					<?php endif; ?>
+					<a class="fa fa-2x fa-bars"></a>
+				</div>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'mobile-nav-menu' ) ); ?>
+			</div><!-- .mobile-nav -->
+		
+		<?php endif; // if sticky_header ?>
 		
 		<!-- Header Image -->
-		<?php if ( get_header_image() ) : ?>
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php header_image(); ?>" class="header-image" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /></a>
+		<?php if ( get_header_image() && $Agama->get_meta('_enable_slider') !== 'on' ) : ?>
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<img src="<?php header_image(); ?>" class="header-image" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+		</a>
 		<?php endif; ?><!-- / Header Image -->
-		
 	</header><!-- #masthead -->
 
 	<div id="page" class="hfeed site">
 		<div id="main" class="wrapper">
+			<div class="vision-row">
