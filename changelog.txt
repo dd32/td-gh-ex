@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+MyKnowledgeBase version 2.2 - june 2015
+- file single: removed if statement
+- file functions, comments and style: changed alignment of comment nav
+- reordered file style
+- updated file readme
+
 MyKnowledgeBase version 2.1 - april 2015
 - several small adjustment in stylesheet
 - removed support for document title in older WP versions

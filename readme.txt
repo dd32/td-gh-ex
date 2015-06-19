@@ -1,15 +1,14 @@
 INSTALLATION
 ============
-
-1. Extract myknowledgebase.zip and upload the theme folder via FTP to your wp-content/themes/ directory, or login into WordPress Dashboard > Appearance > Themes.
-2. Go to your WordPress Dashboard > Appearance > Themes and select this theme to activate.
+1. Go to your WordPress Dashboard > Appearance > Themes.
+2. Select and install a new theme from the online WordPress Theme Directory or from your pc (zip file).
 3. Once activated, you're ready to use it.
 
 
 HOW TO SET HOMEPAGE
 ===================
 You can use the default homepage (displaying posts) or set a static page as homepage. 
-To set a static homepage login into WordPress Dashboard > Settings > Reading and select the page you want.
+To set a static homepage go to your WordPress Dashboard > Settings > Reading and select the page you want.
 
 
 HOW TO CREATE A KNOWLEDGE BASE 
@@ -21,9 +20,9 @@ If you want this page to be homepage, Go to Settings > Reading and select this p
 
 HOW TO CREATE A LINK PORTAL 
 ===========================
-If you only want to display weblinks you can install this plugin: https://wordpress.org/plugins/page-links-to/
+If you only want to display a list of links you can install this plugin: https://wordpress.org/plugins/page-links-to
 While creating a post you can add the URL (website) of your choice.
-Clicking the postlink will redirect you to this URL (so the post will not open).
+Clicking the post link in frontend will redirect you to this URL (so the post will not open).
 
 
 HOW TO CHANGE HEADER IMAGE
@@ -34,7 +33,7 @@ I advice you to use a header-image of 600px wide and 400px high.
 
 HOW TO SET LOGO
 ===============
-You can add your own logo in stead of blogname and description via  WordPress Dashboard > Appearance > Customize.
+You can add your own logo in stead of blogname and description via WordPress Dashboard > Appearance > Customize.
 
 
 HOW TO CHANGE BACKGROUND
@@ -45,13 +44,13 @@ You can add your own background(image) via WordPress Dashboard > Appearance > Ba
 HOW TO SET MENU
 ===============
 MyKnowledgeBase offers a menu that can contain subpages (2 levels deep).
-You can create and set menu via WordPress Dashboard > Appearance > Menu's.
+You can create and set menu via WordPress Dashboard > Appearance > Menus.
 
 
 TRANSLATION
 ===========
 This theme is translation-ready (Dutch, German, Spanish and French translation included). 
-You can translate this into your own language using for example plugin Codestyling Localization: http://wordpress.org/plugins/codestyling-localization/
+More translations are very welcome! Please contact me via my website.
 
 
 FONTS
@@ -66,9 +65,8 @@ License URI: http://www.apache.org/licenses/LICENSE-2.0.html
 Scripts
 =======
 Script: nav.js
-Source: http://maxfoundry.com/blog/responsive-mobile-navigation-in-wordpress/
+Source: http://maxfoundry.com/articles/116/responsive-mobile-navigation-in-wordpress
 Copyright author: John Hartley
-Author URI: http://maxfoundry.com/blog/author/johnbhartley 
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
