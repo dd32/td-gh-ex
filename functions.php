@@ -158,6 +158,18 @@
 	add_filter('previous_posts_link_attributes', 'medical_post_prev'); 
 
 
+// Add class to comment nav 
+	function medical_comment_next() { 
+		return 'class="comment-next"'; 
+	}
+	add_filter('next_comments_link_attributes', 'medical_comment_next'); 
+
+	function medical_comment_prev() { 
+		return 'class="comment-prev"'; 
+	}
+	add_filter('previous_comments_link_attributes', 'medical_comment_prev'); 
+
+
 // Custom excerpt lenght (default length is 55 words)
 	function medical_excerpt_length( $length ) { 
 		return 75; } 
