@@ -61,7 +61,7 @@ function generate_sanitize_nav_layout( $input ) {
 function generate_sanitize_typography( $input ) 
 {
 
-	$google_fonts = ( get_transient('generate_font_list') ? get_transient('generate_font_list') : array() );
+	$google_fonts = ( get_transient('generate_google_font_names') ? get_transient('generate_google_font_names') : array() );
 	
 	$not_google = array(
 		'inherit',
@@ -85,7 +85,7 @@ function generate_sanitize_typography( $input )
     if ( in_array( $input, $valid ) ) {
         return $input;
     } else {
-        return 'Open Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic';
+        return 'Open Sans';
     }
 }
 
