@@ -7,7 +7,7 @@
 <?php get_header(); ?>
 <div id="content">
 	<h4 class="page-title"><?php _e( 'Nothing Found', 'darkorange' ); ?></h4>
-		<p><?php _e('Sorry, no posts matched your criteria.', 'darkorange'); ?></p>
+	<p><?php _e('Sorry, no posts matched your criteria.', 'darkorange'); ?></p>
 	<?php get_search_form(); ?>
 </div>
 <?php get_sidebar(); ?>

@@ -151,6 +151,18 @@ function darkorange_widgets_init() {
 	add_filter('previous_posts_link_attributes', 'darkorange_post_prev'); 
 
 
+// Add class to comment nav 
+	function darkorange_comment_next() { 
+		return 'class="comment-next"'; 
+	}
+	add_filter('next_comments_link_attributes', 'darkorange_comment_next'); 
+
+	function darkorange_comment_prev() { 
+		return 'class="comment-prev"'; 
+	}
+	add_filter('previous_comments_link_attributes', 'darkorange_comment_prev'); 
+
+
 // Custom excerpt lenght (default length is 55 words)
 	function darkorange_excerpt_length( $length ) { 
 		return 55; } 
