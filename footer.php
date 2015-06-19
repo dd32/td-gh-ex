@@ -29,17 +29,17 @@
     ?>
 		<div class="site-info">
             <?php
-                            wp_nav_menu( array(
-                                'theme_location'    => 'footer',
-                                'depth'             => 1,
-                                'container'         => 'div',
-                                'container_class'   => 'footer-nav-wrapper',
-                                'menu_class'        => 'footer-nav',
-                                'fallback_cb'       => '',
-                                'link_after'        => '<span class="pipe">|</span>',
-                                )
-                            );
-                        ?>
+              wp_nav_menu( array(
+                'theme_location'  => 'footer',
+                'depth'           => 1,
+                'container'       => 'div',
+                'container_class' => 'footer-nav-wrapper',
+                'menu_class'      => 'footer-nav',
+                'fallback_cb'     => '',
+                'link_after'      => '<span class="pipe">|</span>',
+                )
+              );
+            ?>
 			<?php do_action( 'blue_planet_credits' ); ?>
 
 		</div><!-- .site-info -->
@@ -65,6 +65,5 @@ do_action( 'blue_planet_before_container_close' );
 ?>
 </div> <!-- // .container -->
 <?php wp_footer(); ?>
-
 </body>
 </html>

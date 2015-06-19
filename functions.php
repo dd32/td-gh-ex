@@ -1,7 +1,8 @@
 <?php
-define('BS_THEME_NAME', 'Blue Planet');
-define('BS_THEME_SLUG', 'blue-planet');
-define('BS_SHORT_NAME', 'bsk');
+define( 'BS_THEME_NAME', 'Blue Planet' );
+define( 'BS_THEME_SLUG', 'blue-planet' );
+define( 'BS_THEME_VERSION', '2.0' );
+define( 'BS_SHORT_NAME', 'bsk' );
 ?>
 <?php
 /**
@@ -43,7 +44,7 @@ function blue_planet_setup() {
     add_theme_support( 'custom-background' );
 
     // Add support for title tag
-    add_theme_support( "title-tag" );
+    add_theme_support( 'title-tag' );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -183,6 +184,17 @@ if ( ! function_exists( 'blue_planet_scripts' ) ):
 endif;
 
 add_action( 'wp_enqueue_scripts', 'blue_planet_scripts' );
+
+/**
+ * Conversion of theme settings
+ * @todo: Remove this in next version
+ */
+require get_template_directory() . '/inc/conversion.php';
+
+/**
+ * Include customizer settings.
+ */
+require get_template_directory() . '/inc/customizer.php';
 
 /**
  * Implement the Custom Header feature.

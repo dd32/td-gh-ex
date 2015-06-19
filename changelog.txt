@@ -1,5 +1,8 @@
 == Changelog ==
 
+Version 2.0
+* Remove Settings API implementation for theme options and port it to Customizer API
+
 Version 1.1.1
 * Change goto top implementation approach to optimize performance
 * Remove duplicate Edit link
