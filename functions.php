@@ -81,7 +81,7 @@
 // Enqueues scripts and styles for front-end
 	function privatebusiness_scripts() {
 			wp_enqueue_style( 'privatebusiness-style', get_stylesheet_uri() );
-			wp_enqueue_script( 'privatebusiness-nav', get_template_directory_uri() . '/js/nav.js', array( 'jquery' ) );
+			wp_enqueue_script( 'privatebusiness-nav-primary', get_template_directory_uri() . '/js/nav-primary.js', array( 'jquery' ) );
 			wp_enqueue_script( 'privatebusiness-nav-secondary', get_template_directory_uri() . '/js/nav-secondary.js', array( 'jquery' ) );
 			wp_enqueue_style( 'privatebusiness-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans' ); 
 
@@ -158,6 +158,18 @@
 		return 'class="nav-prev"'; 
 	}
 	add_filter('previous_posts_link_attributes', 'privatebusiness_post_prev'); 
+
+
+// Add class to comment nav 
+	function privatebusiness_comment_next() { 
+		return 'class="comment-next"'; 
+	}
+	add_filter('next_comments_link_attributes', 'privatebusiness_comment_next'); 
+
+	function privatebusiness_comment_prev() { 
+		return 'class="comment-prev"'; 
+	}
+	add_filter('previous_comments_link_attributes', 'privatebusiness_comment_prev'); 
 
 
 // Custom excerpt lenght (default length is 55 words)

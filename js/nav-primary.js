@@ -1,44 +1,43 @@
 /*
  * MOBILE NAVIGATION
- * Source: http://maxfoundry.com/blog/responsive-mobile-navigation-in-wordpress/
+ * Source: http://maxfoundry.com/articles/116/responsive-mobile-navigation-in-wordpress
  * Copyright author: John Hartley
- * Author URI: http://maxfoundry.com/blog/author/johnbhartley 
  * License: GNU General Public License v3 or later
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  */
 
 jQuery(document).ready(function() { 
 	// build <select> dropdown
-	jQuery("<select />").appendTo("div.nav-head");
+	jQuery("<select />").appendTo("div.nav-head-primary");
 
-	// create deafult option "Menu..."
+	// create option "Menu..."
 	jQuery("<option />", {
 		"selected": "selected",
 		"value": "",
 		"text": "Menu..."  
-	}).appendTo(".nav-head select");
+	}).appendTo(".nav-head-primary select");
 
 	// populate
-	jQuery(".nav-head ul li a").each(function() {
+	jQuery(".nav-head-primary ul li a").each(function() {
 		var el = jQuery(this);
 
-		if(el.parents('.nav-head ul ul').length) {
+		if(el.parents('.nav-head-primary ul ul').length) {
 			// if there are ul in li
 			jQuery('<option />', {
 				'value': el.attr('href'),
 				'text':  '- ' + el.text()
-			}).appendTo('.nav-head select');
+			}).appendTo('.nav-head-primary select');
 		} else { 
 			// if no ul in li
 			jQuery('<option />', {
 				'value': el.attr('href'),
 				'text': el.text()
-			}).appendTo('.nav-head select');
+			}).appendTo('.nav-head-primary select');
 		}
 	});
 
 	// make links work 
-	jQuery(".nav-head select").change(function() { 
+	jQuery(".nav-head-primary select").change(function() { 
 		window.location = jQuery(this).find("option:selected").val();
 	});
 });
