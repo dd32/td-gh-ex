@@ -73,6 +73,19 @@ ScreenShot Images
 
 ----------------------------------------------------
 == Changelog ==
+Version 2.0.1
+ * Removed demo content from theme
+ * Fixed pagination in home page(index.php)
+ * Managed custom background setting, header logo and header text from customizer.
+ * Removed menu selection from theme option and managed from core.
+ * Fixed copyright as reviewr.
+ * Updated version of TGMPA.
+ * Managed enqueue function about google fonts.
+ * Removed prefix from third party resources.
+ * Minor changes in theme option panel.
+ * Fixed some bugs in css file.
+
+
 Version 2.0
  * Fixed spelling of "publish" in homepage.
  * Removed widget-latest-reviews.php file from widgets folder.

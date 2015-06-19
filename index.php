@@ -12,11 +12,6 @@
  */
 
 get_header(); 
-
-$accesspress_mag_theme_option = get_option( 'accesspress-mag-theme' );
-if( empty( $accesspress_mag_theme_option )){
-    get_template_part('home-page');
-} else {
 ?>
 <div class="apmag-container">
 	<div id="primary" class="content-area">
@@ -37,10 +32,7 @@ if( empty( $accesspress_mag_theme_option )){
 
 			<?php endwhile; ?>
 
-			<?php 
-                $show_post_navigation = of_get_option('show_post_nextprev');
-                if($show_post_navigation!='0'){the_posts_navigation();}
-             ?>
+			<?php the_posts_navigation(); ?>
 
 		<?php else : ?>
 
@@ -53,4 +45,4 @@ if( empty( $accesspress_mag_theme_option )){
 
 <?php get_sidebar(); ?>
 </div>
-<?php  } get_footer(); ?>
+<?php get_footer(); ?>

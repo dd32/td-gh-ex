@@ -4,7 +4,7 @@ Theme URI: http://accesspressthemes.com/accesspress-mag/
 Author: Accesspress Theme
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Mag is clean & modern WordPress magazine theme. It is ideal for newspaper, editorial, online magazine, blog or personal website. It is a cutting-edge, feature-rich FREE WordPress theme and is fully-responsive. Its feature includes: 2 post layout, author block, large featured images for page/post, social media integration for wider social reach. Demo: http://accesspressthemes.com/accesspress-mag/ Support forum: https://accesspressthemes.com/support/ 
-Version: 2.0
+Version: 2.0.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: accesspress-mag
@@ -1196,6 +1196,68 @@ body.boxed-layout {
 	border-bottom: 1px solid #dc3522;
 }
 
+/*For child page*/
+#site-navigation .menu ul li,#top-right-navigation .menu li,#footer-navigation ul li {
+	position: relative;
+}
+
+#site-navigation .menu ul li ul.children,#top-right-navigation .menu li ul,
+#footer-navigation ul li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left:0;
+  width: 200px;
+}
+
+#site-navigation .menu ul li:hover > ul.children,
+#top-right-navigation .menu li:hover > ul,#footer-navigation ul li:hover > ul {
+  display: block;
+}
+
+#site-navigation .menu ul li ul li,#top-right-navigation .menu li ul li,
+#footer-navigation ul li ul li{
+	padding: 5px 18px;
+	display: block;
+	float: none;
+	border-bottom: 1px solid #3d3d3d;
+}
+
+#site-navigation .menu ul li ul li a,#top-right-navigation .menu li ul li a,
+#footer-navigation ul li ul li a{
+	display: block;
+}
+
+#top-right-navigation .menu li ul li a{
+	border-left: none;
+}
+
+#top-right-navigation .menu li ul,
+#footer-navigation ul li ul{
+	background: rgba(0,0,0,0.5);
+	margin-left: 0;
+	width: 150px;
+	top: 24px;
+}
+
+#top-right-navigation .menu li ul li,
+#footer-navigation ul li ul li{
+	padding: 5px 10px;
+}
+
+#top-right-navigation .menu li ul li a,
+#footer-navigation ul li ul li a{
+	padding: 0;
+}
+
+#footer-navigation ul li ul{
+	top: -48px;
+}
+
+#footer-navigation ul li ul li a{
+	text-align: left;
+}
+
 .site-branding {
 	float: left;
 	padding: 16px 0 0;
@@ -1203,6 +1265,11 @@ body.boxed-layout {
 
 .header-ad {
 	float: right;
+}
+
+.header-ad .widget{
+	margin-bottom: 0;
+	padding-bottom: 0;
 }
 
 .logo-ad-wrapper {
@@ -1970,6 +2037,21 @@ body.boxed-layout {
 	margin: 0px 0 50px;
 	padding: 0 0;
 	text-align: center;
+}
+
+.homepage-middle-ad,.article-ad-section{
+	width: 728px;
+	  margin: 0 auto 50px;
+}
+
+.sidebar-top-ad {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.homepage-middle-ad .widget,.article-ad-section .widget,.sidebar-top-ad .widget {
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .forth-block .single_post {
@@ -2957,3 +3039,6 @@ Galleries
   line-height: 51px;
   margin: 0 40px 0 20px;
 }
+
+/*- edit css --*/
+

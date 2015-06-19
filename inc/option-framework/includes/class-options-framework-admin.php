@@ -233,6 +233,26 @@ class Options_Framework_Admin {
 				</form>
 			</div> <!-- / #container -->
 		</div>
+		<div class="promo-banner clearfix">
+	        <div class="banner-image">
+	            <img src="<?php echo get_template_directory_uri().'/inc/option-framework/images/upgrade-mag-pro.jpg' ?>" />           
+	        </div> 
+	        <div class="button-link">
+    			<a href="http://accesspressthemes.com/accesspress-mag-pro/" target="_blank"><img src="<?php echo get_template_directory_uri().'/inc/option-framework/images/demo-btn.png'?>"/></a>
+    			<a href="https://accesspressthemes.com/wordpress-themes/accesspress-mag-pro/" target="_blank"><img src="<?php echo get_template_directory_uri().'/inc/option-framework/images/upgrade-btn.png' ?>"/></a>
+		    </div>
+	        <div class="any-question">
+	    		<?php echo sprintf( __('Any question!! Click <a href="%s" target="_blank"> here!! </a> for live chat', 'accesspress-mag'), esc_url('https://accesspressthemes.com/contact/')); ?>
+	    	</div>
+
+        	<div class="view-features">
+        	<h3><?php _e('View Features','accesspress-mag'); ?> <span>+<span></h3>
+    		
+    		<div style="display:none" class="view-features-img"> 
+            <img src="<?php echo get_template_directory_uri().'/inc/option-framework/images/upgrade-mag-pro-features.jpg'?>" />
+        	</div>
+        	</div>
+        </div>
 		<?php do_action( 'optionsframework_after' ); ?>
 		<div class="clear"></div>
 	</div> <!-- / .wrap -->

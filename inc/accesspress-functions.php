@@ -129,9 +129,6 @@ function accesspress_mag_slider_cb(){
                 }
             echo '</div>';
             }
-            else {
-                get_template_part( 'demo-content/demo-slider-content');
-            }
  }
 add_action( 'accesspress_mag_slider', 'accesspress_mag_slider_cb', 10 );
 
@@ -183,30 +180,6 @@ function accesspress_mag_setPostViews($postID) {
 
 // Remove issues with prefetching adding extra views
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0); 
-
-/*-----------------Dynamic Css-------------------*/
-
-function accesspress_mag_custom_css(){
-    $accesspress_mag_bg_image = of_get_option( 'site_background' );
-    $accesspress_mag_bg_color = of_get_option( 'site_background_color' );
-    $accesspress_mag_bg_reapet = of_get_option( 'repeat_background' );
-    $accesspress_mag_bg_position = of_get_option( 'position_background' );
-    $accesspress_mag_bg_attachment = of_get_option( 'attached_background' );
-    $accesspress_mag_bg_size = of_get_option( 'stretch_background' );
-		echo '<style type="text/css">';
-            if( !empty ( $accesspress_mag_bg_image )){
-                echo "body{background:url(".esc_url( $accesspress_mag_bg_image) .") ".esc_html( $accesspress_mag_bg_reapet )." ".esc_html( $accesspress_mag_bg_attachment )." ".esc_html( $accesspress_mag_bg_position )."}";    
-            } elseif( !empty ( $accesspress_mag_bg_color ) ) {
-                echo "body{background-color:".esc_html( $accesspress_mag_bg_color )." !important}";
-            } else {
-                
-            }
-            if($accesspress_mag_bg_size==1){
-                echo "body{background-size:cover}";
-            }  
-		echo '</style>';
-	}
-	add_action('wp_head','accesspress_mag_custom_css');
 
 /*--------------Sidebar layout for post & pages----------------------*/
 function accesspress_mag_sidebar_layout_class($classes){

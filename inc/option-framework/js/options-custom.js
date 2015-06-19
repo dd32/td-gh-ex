@@ -23,6 +23,11 @@ jQuery(document).ready(function($) {
 		options_framework_tabs();
 	}
 
+	$('.view-features h3').click(function(){
+		$(this).next('.view-features-img').slideToggle();
+	});
+
+
 	//Switch option
     $('.switch_options').each(function() {
 

@@ -119,55 +119,13 @@ if ( ! function_exists( 'accesspress_mag_entry_footer' ) ) :
  * Prints HTML with meta information for the categories, tags and comments.
  */
 function accesspress_mag_entry_footer() {
-    if( 'post' == get_post_type() && is_single() )
-    {
-        global $post;
-    	// Hide category and tag text for pages.
-    	/*
-        if ( 'post' == get_post_type() ) {
-    		/* translators: used between list items, there is a space after the comma */
-    		/*
-            $categories_list = get_the_category_list( __( ', ', 'accesspress-mag' ) );
-    		if ( $categories_list && accesspress_mag_categorized_blog() ) {
-    			printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'accesspress-mag' ) . '</span>', $categories_list );
-    		}
-    	}*/
-        $trans_via = of_get_option( 'trans_via' );
-        if( empty( $trans_via ) ){ $trans_via = __( 'Via', 'accesspress-mag' ); }
-        $trans_source = of_get_option( 'trans_source' );
-        if( empty( $trans_source ) ){ $trans_source = __( 'Source', 'accesspress-mag' ); }
-        $post_source_name   = get_post_meta($post->ID, 'post_source_name', true);
-        $post_source_url    = get_post_meta($post->ID, 'post_source_url', true);
-        $post_via_name      = get_post_meta($post->ID, 'post_via_name', true);
-        $post_via_url       = get_post_meta($post->ID, 'post_via_url', true);
-        if(!empty($post_via_name)){
-        ?>
-            <div class="post-via-wrapper">
-                <label class="via"><?php echo esc_attr( $trans_via );?></label>
-                <a href="<?php echo esc_attr( $post_via_url );?>" target="_blank">
-                    <span class="via-name"><?php echo esc_attr( $post_via_name ); ?></span>
-                </a> 
-            </div>
-        <?php
-        }
-        if(!empty($post_source_name)){
-        ?>
-            <div class="post-source-wrapper">
-                <label class="source"><?php echo esc_attr( $trans_source  ) ;?></label>
-                <a href="<?php echo esc_attr( $post_source_url ); ?>" target="_blank">
-                    <span class="source-name"><?php echo esc_attr( $post_source_name ); ?></span>
-                </a>
-            </div>
-        <?php
-        }
-        /*
-    	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-    		echo '<span class="comments-link">';
-    		comments_popup_link( __( 'Leave a comment', 'accesspress-mag' ), __( '1 Comment', 'accesspress-mag' ), __( '% Comments', 'accesspress-mag' ) );
-    		echo '</span>';
-    	}
-        */
-    }
+    /*
+	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+		echo '<span class="comments-link">';
+		comments_popup_link( __( 'Leave a comment', 'accesspress-mag' ), __( '1 Comment', 'accesspress-mag' ), __( '% Comments', 'accesspress-mag' ) );
+		echo '</span>';
+	}
+    */    
     if('post'==get_post_type() && !is_tag() ){
         $trans_tagged = of_get_option( 'trans_tagged' );
         $accesspress_mag_show_tags = of_get_option('show_tags_post');

@@ -20,45 +20,28 @@ function optionsframework_options() {
 		$options_categories[$category->slug] = $category->cat_name;
 	}
 
-	// Pull all tags into an array
-	$options_tags = array();
-	$options_tags_obj = get_tags();
-	foreach ( $options_tags_obj as $tag ) {
-		$options_tags[$tag->term_id] = $tag->name;
-	}
+	//Slide options for homepage slider
+    $options_slides = array();
+    $options_slides[0] = __( 'Select no.of slides', 'accesspress-mag' );
+    for($i=1;$i<=6;$i++)
+    {
+        $options_slides[$i] = $i ;
+    }
     
-        //Pull all menus into an array
-        $options_menus = array();
-        $options_menus_obj = get_terms( 'nav_menu', array( 'hide_empty' => true ) );
-        $options_menus[] = __( 'Select Menu', 'accesspress-mag' );
-        foreach($options_menus_obj as $menu) {
-            $options_menus[$menu->slug] = $menu->name;
-        }
-        
-        //Slide options for homepage slider
-        $options_slides = array();
-        $options_slides[0] = __( 'Select no.of slides', 'accesspress-mag' );
-        for($i=1;$i<=6;$i++)
-        {
-            $options_slides[$i] = $i ;
-        }
-        
-        //No.of posts for homepage blocks
-        $options_block_posts = array();
-        $options_block_posts[-1]= __( '-- All posts --', 'accesspress-mag' );
-        for($i=4;$i<=10;$i++)
-        {
-            $options_block_posts[$i] = $i ;
-        }
-    
+    //No.of posts for homepage blocks
+    $options_block_posts = array();
+    $options_block_posts[-1]= __( '-- All posts --', 'accesspress-mag' );
+    for($i=4;$i<=10;$i++)
+    {
+        $options_block_posts[$i] = $i ;
+    }    
     
     //Footer Pattern
 	$footer_pattern = array(
         'column4' => $imagepath . 'footers/footer-4.png',
         'column3' => $imagepath . 'footers/footer-3.png',
 		'column2' => $imagepath . 'footers/footer-2.png', 
-        'column1' => $imagepath . 'footers/footer-1.png',
-		   
+        'column1' => $imagepath . 'footers/footer-1.png',		   
 		);
         
     //Post Templates
@@ -73,22 +56,6 @@ function optionsframework_options() {
         'left-sidebar'=>$imagepath.'left-sidebar.png',
         'no-sidebar'=>$imagepath.'no-sidebar.png',
         );
-    
-    
-	// Pull all the pages into an array
-	$options_pages = array();
-	$options_pages_obj = get_pages( 'sort_column=post_parent,menu_order' );
-	$options_pages[''] = __( 'Select a page', 'accesspress-mag' );
-	foreach ($options_pages_obj as $page) {
-		$options_pages[$page->ID] = $page->post_title;
-	}
-    
-    // Logo settings
-    $logo_options = array(
-            		'image' => __( 'Image', 'accesspress-mag' ),
-            		'text' => __( 'Text', 'accesspress-mag' ),
-            		'image_text' => __( 'Image & Text', 'accesspress-mag' ),
-            		);
 
 	// If using image radio buttons, define a directory path
 	$imagepath =  get_template_directory_uri() . '/images/';
@@ -111,75 +78,6 @@ function optionsframework_options() {
             'name' => __( 'Basic Settings', 'accesspress-mag' ),
             'type' => 'heading'
             );
-   /*---------------------Background Settings----------------------*/
-    $options[] = array(
-            'name' => __( 'Background Settings', 'accesspress-mag' ),
-            'id'   => 'background_settings',
-            'type' => 'groupstart'
-            );
-    $options[] = array(
-            'name' => __( 'Site Background', 'accesspress-mag' ),
-            'desc' => __( 'Upload a image for background', 'accesspress-mag' ),
-            'id' => 'site_background',
-            'class' =>'sub-option',
-            'type' => 'upload', 
-            );
-    $options[] = array(
-            'name' => __( 'Site Background Color', 'accesspress-mag' ),
-            'desc' => __( 'Choose color for site background', 'accesspress-mag' ),
-            'id' => 'site_background_color',
-            'class' =>'sub-option-color',
-            'type' =>'color'
-            );
-    $options[] = array(
-            'name' => __( 'Repeat', 'accesspress-mag' ),
-            'desc' => __( 'Define - how the site background image will be displayed here', 'accesspress-mag' ),
-            'id' => 'repeat_background',            
-            'options' => array(
-                    ' ' => __( 'No Repeat', 'accesspress-mag' ),
-                    'repeat' => __( 'Tile', 'accesspress-mag' ),
-                    'repeat-x' => __( 'Tile Horizontally', 'accesspress-mag' ),
-                    'repeat-y' => __( 'Tile Vertically', 'accesspress-mag' ),
-                    ),
-            'type' => 'radio',
-            'std' => ' ' 
-            );
-    $options[] = array(
-            'name' => __( 'Position', 'accesspress-mag' ),
-            'desc' => __( 'Define - Position your background image here', 'accesspress-mag' ),
-            'id' => 'position_background',            
-            'options' => array(
-                    ' ' => 'Left',
-                    'center' => __( 'Center', 'accesspress-mag' ),
-                    'right' => __( 'Right', 'accesspress-mag' ),
-                    ),
-            'type' => 'radio',
-            'std' => ' ' 
-            );
-    $options[] = array(
-            'name' => __( 'Background Attachment', 'accesspress-mag' ),
-            'desc' => __( 'Define - Background attachment option here', 'accesspress-mag' ),
-            'id' => 'attached_background',            
-            'options' => array(
-                    'fixed' => __( 'Fixed', 'accesspress-mag' ),
-                    ' '     => __( 'Scroll', 'accesspress-mag' ),
-                    ),
-            'type' => 'radio',
-            'std' => ' ' 
-            );
-    $options[] = array(
-            'name' => __( 'Stretch Background', 'accesspress-mag' ),                
-            'desc' => __( 'Switch - Background image stretching', 'accesspress-mag' ),
-            'id' => 'stretch_background',
-            'on' => __( 'Yes', 'accesspress-mag'),
-            'off' => __( 'No', 'accesspress-mag'),
-            'std' => '0',
-            'type' => 'switch'
-            );
-    $options[] = array(
-            'type' => 'groupend'
-            );
-            
     /*-------------------Website layout------------------------*/
     $options[] = array(
             'name' => __( 'Website Layout', 'accesspress-mag' ),
@@ -206,65 +104,32 @@ function optionsframework_options() {
 	$options[] = array(
 		    'name' => __( 'Header', 'accesspress-mag' ),
             'type' => 'heading'
-	        );
-    
+	        );    
     $options[] = array(
-            'name' => __( 'Top Menu (black one)', 'accesspress-mag' ),
+            'name' => __( 'Top Menu', 'accesspress-mag' ),
             'id'   => 'top_menu',
             'type' => 'groupstart'
-            );
-            
+            );            
     $options[] = array(
             'name' => __( 'Top Menu Option', 'accesspress-mag' ),                
-            'desc' => __( 'Hide or show the top menu', 'accesspress-mag' ),
+            'desc' => __( 'Show or Hide the top menu', 'accesspress-mag' ),
             'id' => 'top_menu_switch',
             'on' => __( 'Yes', 'accesspress-mag'),
             'off' => __( 'No', 'accesspress-mag'),
             'std' => '1',
             'type' => 'switch'
             );	
-	
-    $options[] = array(
-            'name' => __( 'Select Top Menu', 'accesspress-mag' ),
-            'desc' => __( 'Select a menu for the top section', 'accesspress-mag' ),    
-            'id' => 'top_menu_select',
-            'type' => 'select',
-            'options' => $options_menus
-            );
-    $options[] = array(
-            'name' => __( 'Top Menu (right)', 'accesspress-mag' ),
-            'desc' => __( 'Select a menu for the top section on right side. It`s optional menu.', 'accesspress-mag' ),    
-            'id' => 'top_right_menu_select',
-            'type' => 'select',
-            'options' => $options_menus
-            );		
-
     $options[] = array(
             'type' => 'groupend'
             );
-    
+
+    /*--------------Logo setting-------------------*/
     $options[] = array(
             'name' => __( 'Logo Settings', 'accesspress-mag' ),
             'id'   => 'logo',
             'type' => 'groupstart'
             );
-    
-    $options[] = array(
-            'name' => __( 'Logo Type', 'accesspress-mag' ),
-            'desc' => __( 'Select option for site logo settings', 'accesspress-mag' ),    
-            'id' => 'logo_setting',
-            'std' => 'text',
-            'type' => 'select',
-            'options' => $logo_options
-            );
-    $options[] = array(
-            'name' => __( 'Header Logo', 'accesspress-mag' ),
-            'desc' => __( 'Upload your header logo', 'accesspress-mag' ),
-            'id' => 'logo_upload',
-            'class' =>'sub-option',
-            'type' => 'upload', 
-            );	
-            
+
      $options[] = array(
             'name' => __( 'Favicon', 'accesspress-mag' ),
             'desc' => __( 'Upload a favicon image (Standard size of the favicon is 16 x 16px)', 'accesspress-mag' ),
@@ -305,7 +170,7 @@ function optionsframework_options() {
             
     $options[] = array(
             'name' => __( 'Footer Widget Option', 'accesspress-mag' ),                
-            'desc' => __( 'Hide or show the footer widter area', 'accesspress-mag' ),
+            'desc' => __( 'Show or hide the footer widter area', 'accesspress-mag' ),
             'id' => 'footer_switch',
             'on' => __( 'Yes', 'accesspress-mag'),
             'off' => __( 'No', 'accesspress-mag'),
@@ -334,7 +199,7 @@ function optionsframework_options() {
             
     $options[] = array(
             'name' => __( 'Sub Footer Option', 'accesspress-mag' ),                
-            'desc' => __( 'Hide or show copy right and footer menu section', 'accesspress-mag' ),
+            'desc' => __( 'Show or hide copy right and footer menu section', 'accesspress-mag' ),
             'id' => 'sub_footer_switch',
             'on' => __( 'Yes', 'accesspress-mag'),
             'off' => __( 'No', 'accesspress-mag'),
@@ -346,7 +211,7 @@ function optionsframework_options() {
             'name' => __( 'Copyright text', 'accesspress-mag' ),
             'desc' => __( 'Set footer copyright text', 'accesspress-mag' ),
             'id' => 'mag_footer_copyright',
-            'std' => __('AccessPress Mag', 'accesspress-mag'),
+            'std' => __( get_bloginfo('name'), 'accesspress-mag' ),
             'type' => 'text' 
             );
     
@@ -358,13 +223,6 @@ function optionsframework_options() {
             'off' => __( 'No', 'accesspress-mag'),
             'std' => '1',
             'type' => 'switch'
-            );
-    $options[] = array(
-            'name' => __( 'Footer Menu', 'accesspress-mag' ),
-            'desc' => __( 'Select a menu for the footer section', 'accesspress-mag' ),    
-            'id' => 'footer_menu_select',
-            'type' => 'select',
-            'options' => $options_menus
             );
     $options[] = array(
             'type' => 'groupend'
@@ -464,7 +322,7 @@ function optionsframework_options() {
             );   
     $options[] = array(
             'name' => __( 'Show Pager', 'accesspress-mag' ),                
-            'desc' => __( 'Hide or show the slider pager', 'accesspress-mag' ),
+            'desc' => __( 'Show or hide the slider pager', 'accesspress-mag' ),
             'id' => 'slider_pager',
             'on' => __( 'Yes', 'accesspress-mag'),
             'off' => __( 'No', 'accesspress-mag'),
@@ -473,7 +331,7 @@ function optionsframework_options() {
             );
     $options[] = array(
             'name' => __( 'Show Controls', 'accesspress-mag' ),                
-            'desc' => __( 'Hide or show the slider controls', 'accesspress-mag' ),
+            'desc' => __( 'Show or hide the slider controls', 'accesspress-mag' ),
             'id' => 'slider_controls',
             'on' => __( 'Yes', 'accesspress-mag'),
             'off' => __( 'No', 'accesspress-mag'),

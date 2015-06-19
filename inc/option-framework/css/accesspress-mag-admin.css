@@ -30,3 +30,17 @@
     padding: 0 !important;
     margin-bottom: 0 !important;
 }
+
+.promo-banner h3 {
+  background: #4C4A4A;
+  color: #FFF;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+  width: 14.5%;
+  float: right;
+}
+
+.view-features h3{
+    cursor: pointer;
+}

@@ -67,7 +67,7 @@
                     <?php
                         if( !empty( $accesspress_mag_copyright_text ) ){ 
                             echo '<span class="copyright-text">'.esc_html( $accesspress_mag_copyright_text ).'</span>'; 
-                        } else { echo bloginfo( 'name' ); }
+                        }
                     ?> 
                     </a>           
         		</div><!-- .site-info -->
@@ -79,17 +79,10 @@
                 </div>
              <?php if( $accesspress_mag_sub_footer_switch == 1 ){ ?>   
                 <div class="subfooter-menu">
-                    <?php 
-                        $accesspress_mag_footer_menu = of_get_option( 'footer_menu_select' );
-                        if( !empty( $accesspress_mag_footer_menu ) ){
-                    ?>
-                        <nav id="footer-navigation" class="footer-main-navigation" role="navigation">
-                                <button class="menu-toggle hide" aria-controls="menu" aria-expanded="false"><?php _e( 'Footer Menu', 'accesspress-mag' ); ?></button>
-                                <?php wp_nav_menu( array( 'menu' => $accesspress_mag_footer_menu ) ); ?>
-                        </nav><!-- #site-navigation -->
-                    <?php
-                        }
-                    ?>
+                    <nav id="footer-navigation" class="footer-main-navigation" role="navigation">
+                        <button class="menu-toggle hide" aria-controls="menu" aria-expanded="false"><?php _e( 'Footer Menu', 'accesspress-mag' ); ?></button>
+                        <?php wp_nav_menu( array( 'theme_location' => 'footer_menu', 'container_class' => 'footer_menu' ) ); ?>
+                    </nav><!-- #site-navigation -->
                 </div>
              <?php } ?>
             </div>
