@@ -32,9 +32,9 @@ if ( post_password_required() )
 			if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
 		?>
 
-		<div class="post-nav">
-			<div class="nav-prev"><?php previous_comments_link( __( '&laquo; Older Comments', 'shipyard' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &raquo;', 'shipyard' ) ); ?></div>
+		<div class="comment-nav">
+			<?php previous_comments_link( __( '&laquo; Older Comments', 'shipyard' ) ); ?>
+			<?php next_comments_link( __( 'Newer Comments &raquo;', 'shipyard' ) ); ?>
 		</div>
 
 		<?php endif; // Check for comment navigation ?>
