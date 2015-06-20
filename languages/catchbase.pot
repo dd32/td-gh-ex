@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Catch Base\n"
 "Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/catch-base-"
 "free/\n"
-"POT-Creation-Date: 2015-06-01 10:01-0500\n"
-"PO-Revision-Date: 2015-06-01 10:01-0500\n"
+"POT-Creation-Date: 2015-06-20 17:33-0500\n"
+"PO-Revision-Date: 2015-06-20 17:33-0500\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: en\n"
@@ -279,6 +279,22 @@ msgstr ""
 
 #: ../inc/catchbase-core.php:1518
 msgid "By"
+msgstr ""
+
+#: ../inc/catchbase-core.php:1559
+msgid "Next &rarr;"
+msgstr ""
+
+#: ../inc/catchbase-core.php:1560
+msgid "Next post:"
+msgstr ""
+
+#: ../inc/catchbase-core.php:1562
+msgid "&larr; Previous"
+msgstr ""
+
+#: ../inc/catchbase-core.php:1563
+msgid "Previous post:"
 msgstr ""
 
 #: ../inc/catchbase-default-options.php:53
@@ -945,7 +961,7 @@ msgid "Check to enable Breadcrumb on Homepage"
 msgstr ""
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:72
-msgid "Seperator between Breadcrumbs"
+msgid "Separator between Breadcrumbs"
 msgstr ""
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:82

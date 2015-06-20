@@ -15,9 +15,14 @@ get_header(); ?>
 
 		<?php get_template_part( 'content', 'single' ); ?>
 
-		<?php //catchbase_content_nav( 'nav-below' ); ?>
-
 		<?php 
+			/** 
+			 * catchbase_after_post hook
+			 *
+			 * @hooked catchbase_post_navigation - 10
+			 */
+			do_action( 'catchbase_after_post' ); 
+			
 			/** 
 			 * catchbase_comment_section hook
 			 *

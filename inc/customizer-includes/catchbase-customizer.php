@@ -403,7 +403,7 @@ function catchbase_reset_all_settings( $input ) {
  *
  * @since Catch Base 1.2
  */
-function create_sanitize_important_link() {
+function catchbase_sanitize_important_link() {
 	return false;
 } 
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Base\n"
-"POT-Creation-Date: 2015-06-01 10:01-0500\n"
+"POT-Creation-Date: 2015-06-20 17:50-0500\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -169,7 +169,7 @@ msgstr ""
 #: ../inc/catchbase-breadcrumb.php:59
 #, php-format
 msgid "%1$sSearch results for: %2$s"
-msgstr ""
+msgstr "%1$sRésultats de recherche pour: %2$s"
 
 #: ../inc/catchbase-breadcrumb.php:60
 #, php-format
@@ -282,6 +282,22 @@ msgstr "Posté le"
 #: ../inc/catchbase-core.php:1518
 msgid "By"
 msgstr "par"
+
+#: ../inc/catchbase-core.php:1559
+msgid "Next &rarr;"
+msgstr "Suivant &rarr;"
+
+#: ../inc/catchbase-core.php:1560
+msgid "Next post:"
+msgstr "Article suivant:"
+
+#: ../inc/catchbase-core.php:1562
+msgid "&larr; Previous"
+msgstr "&larr; Précédent"
+
+#: ../inc/catchbase-core.php:1563
+msgid "Previous post:"
+msgstr "Article précédent:"
 
 #: ../inc/catchbase-default-options.php:53
 msgid "Read More ..."
@@ -965,7 +981,7 @@ msgid "Check to enable Breadcrumb on Homepage"
 msgstr "Cocher pour activer le fil d'ariane sur la page d'accueil "
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:72
-msgid "Seperator between Breadcrumbs"
+msgid "Separator between Breadcrumbs"
 msgstr "Séparation entre les fil d'ariane"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:82

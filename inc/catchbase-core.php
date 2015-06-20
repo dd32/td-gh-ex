@@ -881,7 +881,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	* Filters wp_title to print a neat <title> tag based on what is being viewed.
 	*
 	* @param string $title Default title text for current view.
-	* @param string $sep Optional separator.
+	* @param string $sep Optional Separator.
 	* @return string The filtered title.
 	*/
 	function catchbase_wp_title( $title, $sep ) {
@@ -1541,3 +1541,29 @@ if ( ! function_exists( 'catchbase_alter_home' ) ) :
 	}
 endif; //catchbase_alter_home
 add_action( 'pre_get_posts','catchbase_alter_home' );
+
+
+if ( ! function_exists( 'catchbase_post_navigation' ) ) :
+	/**
+	 * Displays Single post Navigation
+	 *
+	 * @uses  the_post_navigation
+	 *
+	 * @action catchbase_after_post
+	 * 
+	 * @since Catch Base 2.1
+	 */
+	function catchbase_post_navigation() {
+		// Previous/next post navigation.
+		the_post_navigation( array(
+			'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next &rarr;', 'catchbase' ) . '</span> ' .
+				'<span class="screen-reader-text">' . __( 'Next post:', 'catchbase' ) . '</span> ' .
+				'<span class="post-title">%title</span>',
+			'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( '&larr; Previous', 'catchbase' ) . '</span> ' .
+				'<span class="screen-reader-text">' . __( 'Previous post:', 'catchbase' ) . '</span> ' .
+				'<span class="post-title">%title</span>',
+		) );
+
+	}
+endif; //catchbase_post_navigation
+add_action( 'catchbase_after_post', 'catchbase_post_navigation', 10 );

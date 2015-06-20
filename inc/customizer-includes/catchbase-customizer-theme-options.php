@@ -69,7 +69,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 			'input_attrs' => array(
 	            'style' => 'width: 40px;'
             	),
-            'label'    	=> __( 'Seperator between Breadcrumbs', 'catchbase' ),
+            'label'    	=> __( 'Separator between Breadcrumbs', 'catchbase' ),
 			'section' 	=> 'catchbase_breadcumb_options',
 			'settings' 	=> 'catchbase_theme_options[breadcumb_seperator]',
 			'type'     	=> 'text'

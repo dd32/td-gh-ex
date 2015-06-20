@@ -14,7 +14,7 @@ Catch Base theme is translation ready.
 Added Translation for Swedish by Anders Paulcén ( Email: anderspaulcen@gmail.com )
 Added Translation for French by Jérôme Joseph ( Email: jerome.joseph28@hotmail.com )
 Added Translation for Brazilian Portuguese by Valdir Trombini ( Email: valdir.trombini@gmail.com )
-Added Translation for German by Jürgen Zapp ( Email: j_m_z@hotmail.com )
+Added Translation for German by Jürgen Zapp ( Email: j_m_z@hotmail.com ) and Micky261 ( Email: karlo261@hotmail.de )
 
 
 == License ==

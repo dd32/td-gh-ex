@@ -1,12 +1,17 @@
 == Change log ==
 
+= 2.1 = 
+* Added: Single Post navigation
+* Updated: German translation de_DE.po and de_DE.mo
+* Updated: Brazilian Portuguese translation pt_BR.po and pt_BR.mo
+
 = 2.0 = 
 * Added Featured Content "Display Content" option
 * Combined options for Featured Content and renamed the section From Featured Content Options to Featured Content in Customizer
 * Combined options for Featured Slider and renamed the section From Featured Slider Options to Featured Slider in Customizer
 * Removed unnecessary js from custom customizer js as support for WordPress versions less than 4.0 is not required
 * Updated Social Widget name
-* updated: Brazilian Portuguese translation pt_BR.po and pt_BR.mo
+* Updated: Brazilian Portuguese translation pt_BR.po and pt_BR.mo
 
 = 1.9 = 
 * Added: Support for Random Header Image
