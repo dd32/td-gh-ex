@@ -36,3 +36,4 @@ olo has theme options page:Go into your Wordpress Admin, navigate to 'Appearance
 2015.04.27	Fix comments style on mobile, and a few bugs, and update font-awesome plugin.
 2015.04.28	update some functions.
 2015.05.09	Fix the function add_theme_support( 'title-tag' ).
+2015.06.21	Fix the_title bug.

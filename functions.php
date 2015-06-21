@@ -29,6 +29,7 @@ function olo_setup(){
 	//olo Title Tag
 	add_filter( 'wp_title', 'olo_wp_title', 10, 2 );
 	add_theme_support( 'title-tag' );
+	remove_theme_support( 'title-tag' );
 	
 	// Enqueue style-file, if it exists.
 	add_action('wp_enqueue_scripts', 'olo_script');
