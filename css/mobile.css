@@ -6,7 +6,7 @@ Author URI: http://hjyl.org/
 Description: The theme from blackberry 10. simple and beautiful.based on HTML5 and CSS3.
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Version: 1.1
+Version: 1.2
 Tags: black, two-columns, theme-options, custom-menu, right-sidebar, editor-style, sticky-post, fixed-layout
 */
 @import url("font-awesome.min.css");
@@ -358,10 +358,12 @@ pre{
 	display:block;
 }
 #hjyl_menu ul li{
-	margin:20px 0;
+	padding:5px;
 	text-align:center;
 	position:relative;
-	width:60px;
+	width:30px;
+	border:1px solid rgba(255, 255, 255, 0.2);
+	box-shadow:0 0 1px rgba(255, 255, 255, 0.2);
 }
 .header-logo,
 #hjyl_header #searchform{
@@ -369,7 +371,7 @@ pre{
 }
 #hjylContent{
 	border-left:1px solid #FFF;
-	margin:0 0 0 70px;
+	margin:0 0 0 60px;
 	padding-left:15px;
 	display:inline-block;
 }

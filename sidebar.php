@@ -75,7 +75,7 @@
 			<?php } elseif( is_single() ) { ?>
 				<?php dynamic_sidebar( 'single' ); ?>
 			<?php } elseif( is_404() ) { ?>
-				<?php dynamic_sidebar( '404' ); ?>
+				<?php dynamic_sidebar( 'error' ); ?>
 			<?php } else { ?>
 				<?php dynamic_sidebar( 'other' ); ?>
 			<?php } ?>
