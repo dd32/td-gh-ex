@@ -171,7 +171,7 @@ function fastertheme_framework_page(){
           <div id="options-group-3" class="group faster-inner-tabs fasterthemes-pro-image">
           	<div class="fasterthemes-pro-header">
               <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/theme-logo.png" class="fasterthemes-pro-logo" />
-              <a href="http://fasterthemes.com/checkout/get_checkout_details?theme=FoodRecipes" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/buy-now.png" class="fasterthemes-pro-buynow" /></a>
+              <a href="http://fasterthemes.com/wordpress-themes/FoodRecipes" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/buy-now.png" class="fasterthemes-pro-buynow" /></a>
               </div>
           	<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/pro-featured.png" />
           </div>
@@ -182,23 +182,10 @@ function fastertheme_framework_page(){
 	<div class="fasterthemes-footer">
       	<ul>
         	<li>&copy; <a href="http://fasterthemes.com" target="_blank"><?php _e('fasterthemes.com','foodrecipes') ?></a></li>
-            <li><a href="https://www.facebook.com/faster.themes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/fb.png"/> </a></li>
-            <li><a href="https://twitter.com/FasterThemes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/tw.png"/> </a></li>
             <li class="btn-save"><input type="submit" class="button-primary" value="<?php _e('Save Options','foodrecipes') ?>" /></li>
         </ul>
     </div>
     </form>    
 </div>
 <div class="save-options"><h2><?php _e('Options saved successfully.','foodrecipes') ?></h2></div>
-<div class="newsletter"> 
-  <!-- Begin MailChimp Signup Form -->
-  <h1><?php _e('Subscribe with us','foodrecipes'); ?></h1>
-       <p><?php _e("Join our mailing list and we'll keep you updated on new themes as they're released and our exclusive special offers. ","foodrecipes"); ?>
-          
-        <a href="http://fasterthemes.com/freethemesubscribers/" target="_blank"><?php _e('Click here to join.','foodrecipes'); ?></a>
-        
-       </p> 
-  <!--End mc_embed_signup--> 
-</div>
-
 <?php } ?>

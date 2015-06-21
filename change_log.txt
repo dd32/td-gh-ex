@@ -81,3 +81,6 @@ Version 1.4.4 (16th Dec 2014)
     
 Version 1.4.5 (1th June 2015)
     i) Fix CSS issue.
+	
+Version 1.4.6 (21st June 2015)
+    i) Removed Social Links of FasterThemes
