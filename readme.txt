@@ -46,6 +46,11 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.2.8 =
+* Added latest version of genericons(3.3.1).
+* Adjusted z-index for slider controller.
+* Small adjustment in Breadcrumb NavXT plugin support code.
+
 = Version 1.2.7 =
 * Italian language file added. Thanks to Mr. Davide Doliana for providing the language files.
 

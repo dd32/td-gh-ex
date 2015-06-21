@@ -27,7 +27,7 @@ function spacious_scripts_styles_method() {
 	}
 
    // Add Genericons, used in the main stylesheet.
-   wp_enqueue_style( 'spacious-genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.3' );
+   wp_enqueue_style( 'spacious-genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.3.1' );
 
 	/**
 	 * Adds JavaScript to pages with the comment form to support
@@ -39,7 +39,7 @@ function spacious_scripts_styles_method() {
 	/**
 	 * Register JQuery cycle js file for slider.
 	 */
-	wp_register_script( 'jquery_cycle', SPACIOUS_JS_URL . '/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
+	wp_register_script( 'jquery_cycle', SPACIOUS_JS_URL . '/jquery.cycle.all.min.js', array( 'jquery' ), '3.0.3', true );
 
    wp_register_style( 'google_fonts', '//fonts.googleapis.com/css?family=Lato' );
 
