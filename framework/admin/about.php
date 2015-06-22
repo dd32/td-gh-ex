@@ -70,6 +70,9 @@ if( ! class_exists( 'Agama_About' ) ) {
 				echo '</h2>';
 				
 				echo '<div class="changelog point-releases">';
+					echo '<h3>'.__( 'Changelog Agama v1.0.4', 'agama' ).'</h3>';
+					echo '<p><strong>Version 1.0.4</strong> multiple theme fixes & unnecessary css code cleaned.</p>';
+				
 					echo '<h3>'.__( 'Changelog Agama v1.0.3', 'agama' ).'</h3>';
 					echo '<p><strong>Version 1.0.3</strong> implemented FlexSlider 2 in customizer.</p>';
 					echo '<p><strong>Version 1.0.3</strong> implemented Infinite Scroll for blog posts.</p>';

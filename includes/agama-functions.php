@@ -1,4 +1,7 @@
 <?php
+// Include sanitization file
+get_template_part('includes/agama-sanitize');
+
 // Include framework init file
 get_template_part('framework/framework-init');
 
@@ -59,15 +62,10 @@ function agama_setup() {
 	set_post_thumbnail_size( 800, 9999 ); // Unlimited height, soft crop
 	
 	// Register custom image sizes
-	add_image_size( 'blog-large', 776, 310, true );
-    add_image_size( 'blog-medium', 320, 202, true );
-    add_image_size( 'related-img', 180, 138, true );
-    add_image_size( 'portfolio-full', 800, 600, true );
-    add_image_size( 'portfolio-one', 776, 470, true );
-    add_image_size( 'portfolio-two', 527, 347, true );
-    add_image_size( 'portfolio-three', 346, 226, true );
-    add_image_size( 'portfolio-four', 256, 156, true );
-    add_image_size( 'recent-posts', 700, 441, true );
+	add_image_size( 'agama-blog-large', 776, 310, true );
+    add_image_size( 'agama-blog-medium', 320, 202, true );
+    add_image_size( 'agama-related-img', 180, 138, true );
+    add_image_size( 'agama-recent-posts', 700, 441, true );
 	
 	/*
 	 * Declare WooCommerce Support
@@ -101,54 +99,6 @@ function agama_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'agama_excerpt_length', 999 );
 
 /**
- * Primary Class
- *
- * @since Agama v1.0.2
- */
-function agama_primary_class() {
-	global $Agama;
-	if( $Agama->get_meta('_left_sidebar') && $Agama->get_meta('_right_sidebar') ) {
-		echo 'col-md-6';
-	}
-	else
-	if( 
-		$Agama->get_meta('_left_sidebar') && ! $Agama->get_meta('_right_sidebar') || 
-		$Agama->get_meta('_right_sidebar') && ! $Agama->get_meta('_left_sidebar') 
-	  ) 
-	{
-		echo 'col-md-9';
-	}
-	else
-	if( ! $Agama->get_meta('_left_sidebar') && ! $Agama->get_meta('_left_right') ) {
-		echo 'col-md-12';
-	}
-}
- 
-/**
- * Agama Right Sidebar
- *
- * @since Agama v1.0.2
- */
-function agama_r_sidebar() {
-	global $Agama;
-	if( $Agama->get_meta('_right_sidebar') ) {
-		get_sidebar('1');
-	}
-}
-
-/**
- * Agama Left Sidebar
- *
- * @since Agama v1.0.2
- */
-function agama_l_sidebar() {
-	global $Agama;
-	if( $Agama->get_meta('_left_sidebar') ) {
-		get_sidebar('2');
-	}
-}
-
-/**
  * Agama Thumb Title
  * Get post-page article title and separates it on two halfs
  *
@@ -179,11 +129,11 @@ function agama_thumb_title() {
 function agama_return_image_src( $thumb_size ) {
 	$att_id	 = get_post_thumbnail_id();
 	$att_src = wp_get_attachment_image_src( $att_id, $thumb_size );
-	return esc_url_raw($att_src[0]);
+	return esc_url($att_src[0]);
 }
 
 /**
- * Check if current page is template page
+ * Check if $page is template page
  *
  * @since Agama v1.0.1
  * @return string
@@ -193,26 +143,6 @@ function agama_is_page_template( $page ) {
 		return true;
 	}
 	return false;
-}
-
-/**
- * Get Portfolio Category Names
- *
- * @since Agama v1.0.1
- * @return string
- */
-function agama_get_portfolio_categories( $tag ) {
-	global $post;
-	$categories = wp_get_object_terms( $post->ID,  'portfolio-categories' );
-	if ( ! empty( $categories ) ) {
-		if ( ! is_wp_error( $categories ) ) {
-			echo $tag;
-			foreach( $categories as $term ) {
-				echo '<a href="' . get_term_link( $term->slug, 'portfolio-categories' ) . '">' . esc_html( $term->name ) . '</a>, '; 
-			}
-			echo str_replace( '<', '</', $tag );
-		}
-	}
 }
 
 /**
@@ -425,7 +355,7 @@ add_filter( 'body_class', 'agama_body_class' );
  *
  * @since Agama v1.0.1
  */
-function aw_class() {
+function agama_article_wrapper_class() {
 	if( get_theme_mod('blog_layout', 'list') == 'list' ) {
 		echo 'list-style';
 	}
@@ -444,33 +374,33 @@ function aw_class() {
  */
 if( ! function_exists( 'agama_social_icons' ) ) {
 	function agama_social_icons( $tip_position = '' ) {
-		$_target = get_theme_mod('social_url_target', '_self'); // URL target
+		$_target = esc_attr( get_theme_mod('social_url_target', '_self') ); // URL target
 		$social  = array(
-			'Facebook'	=> get_theme_mod('social_facebook', ''),
-			'Twitter'	=> get_theme_mod('social_twitter', ''),
-			'Flickr'	=> get_theme_mod('social_flickr', ''),
-			'RSS'		=> get_theme_mod('social_rss', ''),
-			'Vimeo'		=> get_theme_mod('social_vimeo', ''),
-			'Youtube'	=> get_theme_mod('social_youtube', ''),
-			'Instagram'	=> get_theme_mod('social_instagram', ''),
-			'Pinterest'	=> get_theme_mod('social_pinterest', ''),
-			'Tumblr'	=> get_theme_mod('social_tumblr', ''),
-			'Google'	=> get_theme_mod('social_google', ''),
-			'Dribbble'	=> get_theme_mod('social_dribbble', ''),
-			'Digg'		=> get_theme_mod('social_digg', ''),
-			'Linkedin'	=> get_theme_mod('social_linkedin', ''),
-			'Blogger'	=> get_theme_mod('social_blogger', ''),
-			'Skype'		=> get_theme_mod('social_skype', ''),
-			'Forrst'	=> get_theme_mod('social_forrst', ''),
-			'Myspace'	=> get_theme_mod('social_myspace', ''),
-			'Deviantart'=> get_theme_mod('social_deviantart', ''),
-			'Yahoo'		=> get_theme_mod('social_yahoo', ''),
-			'Reddit'	=> get_theme_mod('social_reddit', ''),
-			'PayPal'	=> get_theme_mod('social_paypal', ''),
-			'Dropbox'	=> get_theme_mod('social_dropbox', ''),
-			'Soundcloud'=> get_theme_mod('social_soundcloud', ''),
-			'VK'		=> get_theme_mod('social_vk', ''),
-			'Email'		=> get_theme_mod('social_email', '')
+			'Facebook'	=> esc_url( get_theme_mod('social_facebook', '') ),
+			'Twitter'	=> esc_url( get_theme_mod('social_twitter', '') ),
+			'Flickr'	=> esc_url( get_theme_mod('social_flickr', '') ),
+			'RSS'		=> esc_url( get_theme_mod('social_rss', '') ),
+			'Vimeo'		=> esc_url( get_theme_mod('social_vimeo', '') ),
+			'Youtube'	=> esc_url( get_theme_mod('social_youtube', '') ),
+			'Instagram'	=> esc_url( get_theme_mod('social_instagram', '') ),
+			'Pinterest'	=> esc_url( get_theme_mod('social_pinterest', '') ),
+			'Tumblr'	=> esc_url( get_theme_mod('social_tumblr', '') ),
+			'Google'	=> esc_url( get_theme_mod('social_google', '') ),
+			'Dribbble'	=> esc_url( get_theme_mod('social_dribbble', '') ),
+			'Digg'		=> esc_url( get_theme_mod('social_digg', '') ),
+			'Linkedin'	=> esc_url( get_theme_mod('social_linkedin', '') ),
+			'Blogger'	=> esc_url( get_theme_mod('social_blogger', '') ),
+			'Skype'		=> esc_url( get_theme_mod('social_skype', '') ),
+			'Forrst'	=> esc_url( get_theme_mod('social_forrst', '') ),
+			'Myspace'	=> esc_url( get_theme_mod('social_myspace', '') ),
+			'Deviantart'=> esc_url( get_theme_mod('social_deviantart', '') ),
+			'Yahoo'		=> esc_url( get_theme_mod('social_yahoo', '') ),
+			'Reddit'	=> esc_url( get_theme_mod('social_reddit', '') ),
+			'PayPal'	=> esc_url( get_theme_mod('social_paypal', '') ),
+			'Dropbox'	=> esc_url( get_theme_mod('social_dropbox', '') ),
+			'Soundcloud'=> esc_url( get_theme_mod('social_soundcloud', '') ),
+			'VK'		=> esc_url( get_theme_mod('social_vk', '') ),
+			'Email'		=> esc_url( get_theme_mod('social_email', '') )
 		);
 		// Output icons
 		foreach( $social as $name => $url ) {
@@ -554,7 +484,7 @@ if( ! function_exists( 'agama_render_blog_post_meta' ) ) {
 			$output = '';
 			if( $categories ):
 				foreach($categories as $category) {
-					$output .= '<a href="'.get_category_link( $category->term_id ).'" title="' . esc_attr( sprintf( __( "View all posts in %s", 'agama' ), $category->name ) ) . '">'.$category->cat_name.'</a>'.$separator;
+					$output .= '<a href="'.esc_url( get_category_link( $category->term_id ) ).'" title="' . esc_attr( sprintf( __( "View all posts in %s", 'agama' ), $category->name ) ) . '">'.esc_html( $category->cat_name ).'</a>'.$separator;
 					echo trim( $output, $separator );
 				}
 			endif;
@@ -627,7 +557,7 @@ jQuery(function($){
  */
 if( ! function_exists( 'agama_render_credits' ) ) {
 	function agama_render_credits() {
-		echo html_entity_decode( get_theme_mod( 'footer_copyright', '2015 &copy; Powered by <a href="http://www.theme-vision.com" target="_blank">Theme-Vision</a>.' ) );
+		echo html_entity_decode( get_theme_mod( 'footer_copyright', __( '2015 &copy; Powered by <a href="http://www.theme-vision.com" target="_blank">Theme-Vision</a>.', 'agama' ) ) );
 	}
 }
 add_action( 'agama_credits', 'agama_render_credits' );

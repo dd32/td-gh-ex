@@ -2,6 +2,9 @@ Agama WordPress Theme, Copyright 2015 Theme-Vision.com (Jaroslav Svetlik)
 Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
+= 1.0.4 Jun 22 2015 =
+* FIXES: multiple theme fixes & unnecessary css code cleaned.
+
 = 1.0.3 Jun 20 2015 =
 * ADDED: FlexSlider 2 in Customizer
 * ADDED: Infinite Scroll option

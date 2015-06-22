@@ -10,7 +10,7 @@
  */
 ?>
 
-	<div class="article-wrapper <?php aw_class(); ?> clearfix">
+	<div class="article-wrapper <?php agama_article_wrapper_class(); ?> clearfix">
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			
 			<header class="entry-header">
@@ -19,13 +19,13 @@
 				if ( ! post_password_required() && ! is_attachment() && get_the_post_thumbnail() ) :
 					// Output Post Thumbnail
 					if( get_theme_mod('blog_layout') == 'list' ):
-						echo '<figure class="effect-bubba" data-src="'.agama_return_image_src('blog-large').'">';
-						echo '<img src='.agama_return_image_src('blog-large').' class="img-responsive">';
+						echo '<figure class="effect-bubba" data-src="'.agama_return_image_src('agama-blog-large').'">';
+						echo '<img src='.agama_return_image_src('agama-blog-large').' class="img-responsive">';
 						echo '<figcaption>';
 							 //agama_thumb_title();
 						echo '<p>';
-						echo '<a href="'.get_the_permalink().'"><i class="fa fa-fw fa-link"></i></a>';
-						echo '<a href="https://www.facebook.com/sharer/sharer.php?u='.esc_url(get_the_permalink()).'" target="_blank"><i class="fa fa-fw fa-share"></i></a>';
+						echo '<a href="'.esc_url( get_permalink() ).'"><i class="fa fa-fw fa-link"></i></a>';
+						echo '<a href="https://www.facebook.com/sharer/sharer.php?u='.esc_url( get_permalink() ).'" target="_blank"><i class="fa fa-fw fa-share"></i></a>';
 						echo '</p>';
 						echo '</figcaption>';
 						echo '</figure>';
@@ -35,8 +35,8 @@
 						echo '<figcaption>';
 							 //agama_thumb_title();
 						echo '<p>';
-						echo '<a href="'.get_the_permalink().'"><i class="fa fa-fw fa-link"></i></a>';
-						echo '<a href="https://www.facebook.com/sharer/sharer.php?u='.esc_url(get_the_permalink()).'" target="_blank"><i class="fa fa-fw fa-share"></i></a>';
+						echo '<a href="'.esc_url( get_permalink() ).'"><i class="fa fa-fw fa-link"></i></a>';
+						echo '<a href="https://www.facebook.com/sharer/sharer.php?u='.esc_url( get_permalink() ).'" target="_blank"><i class="fa fa-fw fa-share"></i></a>';
 						echo '</p>';
 						echo '</figcaption>';
 						echo '</figure>';

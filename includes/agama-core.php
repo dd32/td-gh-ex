@@ -29,7 +29,7 @@ if( ! class_exists( 'Agama_Core' ) ) {
 
 			// Set up Agama version
 			if( !defined( 'AGAMA_VER' ) ) {
-				define( 'AGAMA_VER', '1.0.3' );
+				define( 'AGAMA_VER', '1.0.4' );
 			}
 			
 			// Defina Agama URI
@@ -77,15 +77,15 @@ if( ! class_exists( 'Agama_Core' ) ) {
 			global $wp_styles;
 			
 			// Open Sans
-			wp_register_style( 'OpenSans', esc_url_raw( '//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&subset=latin,latin-ext' ) );
+			wp_register_style( 'OpenSans', esc_url( '//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&subset=latin,latin-ext' ) );
 			 wp_enqueue_style( 'OpenSans' );
 			 
 			// PT Sans
-			wp_register_style( 'PTSans', esc_url_raw( '//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' ) );
+			wp_register_style( 'PTSans', esc_url( '//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' ) );
 			 wp_enqueue_style( 'PTSans' );
 			 
 			// Raleway
-			wp_register_style( 'Raleway', esc_url_raw( '//fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800,900,200,100' ) );
+			wp_register_style( 'Raleway', esc_url( '//fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800,900,200,100' ) );
 			 wp_enqueue_style( 'Raleway' );
 			
 			/*
@@ -162,8 +162,8 @@ if( ! class_exists( 'Agama_Core' ) ) {
 			// Agama main.js
 			wp_register_script( 'agama-main', AGAMA_JS.'main.js' );
 			$translation_array = array(
-				'primary_color' 	=> get_theme_mod( 'agama_primary_color', '#f7a805' ),
-				'header_top_margin'	=> get_theme_mod( 'header_top_margin', '0px' )
+				'primary_color' 	=> agama_sanitize_hex( get_theme_mod( 'agama_primary_color', '#f7a805' ), '#f7a805' ),
+				'header_top_margin'	=> esc_attr( get_theme_mod( 'header_top_margin', '0px' ) )
 			);
 			wp_localize_script( 'agama-main', 'agama', $translation_array );
 			wp_enqueue_script( 'agama-main' );

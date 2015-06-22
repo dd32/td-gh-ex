@@ -5,8 +5,7 @@
  * @package Theme-Vision
  * @subpackage Agama
  * @since Agama 1.0
- */
- global $Agama; ?>
+ */ ?>
 <!DOCTYPE html>
 <!--[if IE 7]>
 <html class="ie ie7" <?php language_attributes(); ?>>
@@ -40,11 +39,11 @@
 			<div class="sticky-header">
 				<div class="sticky-header-inner">
 					<?php if( get_theme_mod( 'logo' ) ): ?>
-						<a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-							<img src="<?php echo get_theme_mod( 'logo' ); ?>" class="logo">
+						<a href="<?php echo esc_url( home_url('/') ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+							<img src="<?php echo esc_url( get_theme_mod( 'logo' ) ); ?>" class="logo">
 						</a>
 					<?php else: ?>
-						<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+						<h1 class="site-title"><a href="<?php echo esc_url( home_url('/') ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 					<?php endif; ?>
 					<nav role="navigation">
 						<?php wp_nav_menu( array( 'theme_location' => 'top', 'menu_class' => 'sticky-nav' ) ); ?>
@@ -52,7 +51,7 @@
 					<div class="mobile-nav">
 						<div class="mobile-nav-icons">
 							<?php if( class_exists('Woocommerce') ): global $woocommerce; ?>
-							<a href="<?php echo $woocommerce->cart->get_cart_url(); ?>" class="fa fa-2x fa-shopping-cart"></a>
+							<a href="<?php echo esc_url( $woocommerce->cart->get_cart_url() ); ?>" class="fa fa-2x fa-shopping-cart"></a>
 							<?php endif; ?>
 							<a class="fa fa-2x fa-bars"></a>
 						</div>
@@ -80,8 +79,8 @@
 		
 			<hgroup>
 				<?php if( get_theme_mod( 'logo' ) ): ?>
-				<a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-					<img src="<?php echo get_theme_mod( 'logo' ); ?>" class="logo">
+				<a href="<?php echo esc_url( home_url('/') ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+					<img src="<?php echo esc_url( get_theme_mod( 'logo', '' ) ); ?>" class="logo">
 				</a>
 				<?php else: ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -96,7 +95,7 @@
 			<div class="mobile-nav">
 				<div class="mobile-nav-icons">
 					<?php if( class_exists('Woocommerce') ): global $woocommerce; ?>
-					<a href="<?php echo $woocommerce->cart->get_cart_url(); ?>" class="fa fa-2x fa-shopping-cart"></a>
+					<a href="<?php echo esc_url( $woocommerce->cart->get_cart_url() ); ?>" class="fa fa-2x fa-shopping-cart"></a>
 					<?php endif; ?>
 					<a class="fa fa-2x fa-bars"></a>
 				</div>
@@ -108,7 +107,7 @@
 		<!-- Header Image -->
 		<?php if ( get_header_image() && get_theme_mod('enable_slider', false) !== '1' ) : ?>
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-			<img src="<?php header_image(); ?>" class="header-image" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+			<img src="<?php esc_url( header_image() ); ?>" class="header-image" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
 		</a>
 		<?php endif; ?><!-- / Header Image -->
 	</header><!-- #masthead -->

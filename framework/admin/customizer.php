@@ -29,6 +29,7 @@ function agama_customize_register( $wp_customize ) {
 	// NiceScroll - setting
 	$wp_customize->add_setting( 'nicescroll', array(
 		'default'			=> '1',
+		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_key'
 	) );
@@ -51,6 +52,7 @@ function agama_customize_register( $wp_customize ) {
 	// Sticky header - setting
 	$wp_customize->add_setting( 'sticky_header', array(
 		'default'			=> false,
+		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_key'
 	) );
@@ -71,6 +73,7 @@ function agama_customize_register( $wp_customize ) {
 	// Header top margin setting
 	$wp_customize->add_setting( 'header_top_margin', array(
 		'default' 			=> '0px',
+		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'postMessage',
 		'sanitize_callback'	=> 'sanitize_text_field',
 	) );
@@ -101,6 +104,7 @@ function agama_customize_register( $wp_customize ) {
 	// Header top border size
 	$wp_customize->add_setting( 'header_top_border_size', array(
 		'default' 			=> '3px',
+		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'postMessage',
 		'sanitize_callback'	=> 'sanitize_text_field',
 	) );
@@ -134,6 +138,7 @@ function agama_customize_register( $wp_customize ) {
 	// Upload new logo setting
 	$wp_customize->add_setting( 'logo', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'esc_url_raw',
 	) );
@@ -150,6 +155,7 @@ function agama_customize_register( $wp_customize ) {
 	// Top navigation, enable / disable setting
 	$wp_customize->add_setting( 'agama_top_navigation', array(
 		'default'			=> 1,
+		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'postMessage',
 		'sanitize_callback'	=> 'sanitize_key'
 	) );
@@ -172,6 +178,7 @@ function agama_customize_register( $wp_customize ) {
 	// Agama primary color setting
 	$wp_customize->add_setting( 'agama_primary_color', array(
 		'default'			=> '#f7a805',
+		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
@@ -186,6 +193,7 @@ function agama_customize_register( $wp_customize ) {
 	// Agama skin setting
 	$wp_customize->add_setting( 'agama_skin', array(
 		'default'			=> 'light',
+		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field',
 	) );
@@ -210,7 +218,8 @@ function agama_customize_register( $wp_customize ) {
 	
 	// Enable social icons in top navigation - setting
 	$wp_customize->add_setting( 'top_nav_social', array(
-		'default'			=> 0,
+		'default'			=> false,
+		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
 		'sanitize_callback' => 'sanitize_key'
 	) );
@@ -226,6 +235,7 @@ function agama_customize_register( $wp_customize ) {
 	// Enable social icons in footer - setting
 	$wp_customize->add_setting( 'footer_social', array(
 		'default'			=> 0,
+		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
 		'sanitize_callback' => 'sanitize_key'
 	) );
@@ -241,6 +251,7 @@ function agama_customize_register( $wp_customize ) {
 	// Social icons URL target - setting
 	$wp_customize->add_setting( 'social_url_target', array(
 		'default'			=> '_self',
+		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field',
 	) );
@@ -260,6 +271,7 @@ function agama_customize_register( $wp_customize ) {
 	// Social icon Facebook - setting
 	$wp_customize->add_setting( 'social_facebook', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -275,6 +287,7 @@ function agama_customize_register( $wp_customize ) {
 	// Social icon Twitter - setting
 	$wp_customize->add_setting( 'social_twitter', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -290,6 +303,7 @@ function agama_customize_register( $wp_customize ) {
 	// Social icon Flickr - setting
 	$wp_customize->add_setting( 'social_flickr', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -305,6 +319,7 @@ function agama_customize_register( $wp_customize ) {
 	// Social icon RSS - setting
 	$wp_customize->add_setting( 'social_rss', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -320,6 +335,7 @@ function agama_customize_register( $wp_customize ) {
 	// Social icon Vimeo - setting
 	$wp_customize->add_setting( 'social_vimeo', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -335,6 +351,7 @@ function agama_customize_register( $wp_customize ) {
 	// Social icon Youtube - setting
 	$wp_customize->add_setting( 'social_youtube', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -350,6 +367,7 @@ function agama_customize_register( $wp_customize ) {
 	// Social icon Instagram - setting
 	$wp_customize->add_setting( 'social_instagram', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -365,6 +383,7 @@ function agama_customize_register( $wp_customize ) {
 	// Social icon Pinterest - setting
 	$wp_customize->add_setting( 'social_pinterest', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -380,6 +399,7 @@ function agama_customize_register( $wp_customize ) {
 	// Social icon Tumblr - setting
 	$wp_customize->add_setting( 'social_tumblr', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -395,6 +415,7 @@ function agama_customize_register( $wp_customize ) {
 	// Social icon Google+ - setting
 	$wp_customize->add_setting( 'social_google', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -410,6 +431,7 @@ function agama_customize_register( $wp_customize ) {
 	// Social icon Dribbble - setting
 	$wp_customize->add_setting( 'social_dribbble', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -425,6 +447,7 @@ function agama_customize_register( $wp_customize ) {
 	// Social icon Digg - setting
 	$wp_customize->add_setting( 'social_digg', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -440,6 +463,7 @@ function agama_customize_register( $wp_customize ) {
 	// Social icon Linkedin - setting
 	$wp_customize->add_setting( 'social_linkedin', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -455,6 +479,7 @@ function agama_customize_register( $wp_customize ) {
 	// Social icon Blogger - setting
 	$wp_customize->add_setting( 'social_blogger', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -470,6 +495,7 @@ function agama_customize_register( $wp_customize ) {
 	// Social icon Skype - setting
 	$wp_customize->add_setting( 'social_skype', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -485,6 +511,7 @@ function agama_customize_register( $wp_customize ) {
 	// Social icon Forrst - setting
 	$wp_customize->add_setting( 'social_forrst', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -500,6 +527,7 @@ function agama_customize_register( $wp_customize ) {
 	// Social icon Myspace - setting
 	$wp_customize->add_setting( 'social_myspace', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -515,6 +543,7 @@ function agama_customize_register( $wp_customize ) {
 	// Social icon Deviantart - setting
 	$wp_customize->add_setting( 'social_deviantart', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -530,6 +559,7 @@ function agama_customize_register( $wp_customize ) {
 	// Social icon Yahoo - setting
 	$wp_customize->add_setting( 'social_yahoo', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -545,6 +575,7 @@ function agama_customize_register( $wp_customize ) {
 	// Social icon Reddit - setting
 	$wp_customize->add_setting( 'social_reddit', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -560,6 +591,7 @@ function agama_customize_register( $wp_customize ) {
 	// Social icon PayPal - setting
 	$wp_customize->add_setting( 'social_paypal', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -575,6 +607,7 @@ function agama_customize_register( $wp_customize ) {
 	// Social icon Dropbox - setting
 	$wp_customize->add_setting( 'social_dropbox', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -590,6 +623,7 @@ function agama_customize_register( $wp_customize ) {
 	// Social icon Soundcloud - setting
 	$wp_customize->add_setting( 'social_soundcloud', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -605,6 +639,7 @@ function agama_customize_register( $wp_customize ) {
 	// Social icon VK - setting
 	$wp_customize->add_setting( 'social_vk', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -620,6 +655,7 @@ function agama_customize_register( $wp_customize ) {
 	// Social icon Email - setting
 	$wp_customize->add_setting( 'social_email', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -641,6 +677,7 @@ function agama_customize_register( $wp_customize ) {
 	// Enable slider setting
 	$wp_customize->add_setting( 'enable_slider', array(
 		'default'			=> false,
+		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
 		'sanitize_callback' => 'sanitize_text_field'
 	) );
@@ -656,6 +693,7 @@ function agama_customize_register( $wp_customize ) {
 	// Slider max-height setting
 	$wp_customize->add_setting( 'flex_max_height', array(
 		'default'			=> '400px',
+		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -670,6 +708,7 @@ function agama_customize_register( $wp_customize ) {
 	// Agama slide 1 title setting
 	$wp_customize->add_setting( 'slide_1_title', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -686,6 +725,7 @@ function agama_customize_register( $wp_customize ) {
 	// Agama slide 1 setting
 	$wp_customize->add_setting( 'slide_1', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'esc_url_raw'
 	) );
@@ -700,6 +740,7 @@ function agama_customize_register( $wp_customize ) {
 	// Agama slide 2 title setting
 	$wp_customize->add_setting( 'slide_2_title', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -716,6 +757,7 @@ function agama_customize_register( $wp_customize ) {
 	// Agama slide 2 setting
 	$wp_customize->add_setting( 'slide_2', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'esc_url_raw'
 	) );
@@ -730,6 +772,7 @@ function agama_customize_register( $wp_customize ) {
 	// Agama slide 3 title setting
 	$wp_customize->add_setting( 'slide_3_title', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -746,6 +789,7 @@ function agama_customize_register( $wp_customize ) {
 	// Agama slide 3 setting
 	$wp_customize->add_setting( 'slide_3', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'esc_url_raw'
 	) );
@@ -760,6 +804,7 @@ function agama_customize_register( $wp_customize ) {
 	// Agama slide 4 title setting
 	$wp_customize->add_setting( 'slide_4_title', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -776,6 +821,7 @@ function agama_customize_register( $wp_customize ) {
 	// Agama slide 4 setting
 	$wp_customize->add_setting( 'slide_4', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'esc_url_raw'
 	) );
@@ -790,6 +836,7 @@ function agama_customize_register( $wp_customize ) {
 	// Agama slide 5 title setting
 	$wp_customize->add_setting( 'slide_5_title', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -806,6 +853,7 @@ function agama_customize_register( $wp_customize ) {
 	// Agama slide 5 setting
 	$wp_customize->add_setting( 'slide_5', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'esc_url_raw'
 	) );
@@ -826,6 +874,7 @@ function agama_customize_register( $wp_customize ) {
 	// Infinite scroll setting
 	$wp_customize->add_setting( 'blog_infinite_scroll', array(
 		'default'			=> false,
+		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -841,6 +890,7 @@ function agama_customize_register( $wp_customize ) {
 	// Blog layout setting
 	$wp_customize->add_setting( 'blog_layout', array(
 		'default'			=> 'list',
+		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -860,6 +910,7 @@ function agama_customize_register( $wp_customize ) {
 	// Blog excerpt lenght setting
 	$wp_customize->add_setting( 'blog_excerpt', array(
 		'default'			=> 60,
+		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -905,6 +956,7 @@ function agama_customize_register( $wp_customize ) {
 	// Products per page setting
 	$wp_customize->add_setting( 'products_per_page', array(
 		'default'			=> '12',
+		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'esc_attr'
 	) );
@@ -926,6 +978,7 @@ function agama_customize_register( $wp_customize ) {
 	// Back to top - setting
 	$wp_customize->add_setting( 'to_top', array(
 		'default'			=> true,
+		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_key'
 	) );
@@ -942,6 +995,7 @@ function agama_customize_register( $wp_customize ) {
 	// Agama footer copyright - setting
 	$wp_customize->add_setting( 'footer_copyright', array(
 		'default'			=> '',
+		'capability'		=> 'edit_theme_options',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'esc_textarea'
 	) );
@@ -968,7 +1022,7 @@ function agama_customize_preview_js() {
 	wp_register_script( 'agama-customizer', get_template_directory_uri() . '/assets/js/theme-customizer.js', array( 'customize-preview' ), uniqid(), true );
 	$localize = array(
 		'skin_url' 			=> esc_url( get_stylesheet_directory_uri() . '/assets/css/skins/' ),
-		'top_nav_enable'	=> get_theme_mod( 'agama_top_navigation', '1' )
+		'top_nav_enable'	=> esc_attr( get_theme_mod( 'agama_top_navigation', '1' ) )
 	);
 	wp_localize_script( 'agama-customizer', 'agama', $localize );
 	wp_enqueue_script( 'agama-customizer' );
@@ -996,7 +1050,7 @@ function agama_customize_css()
 	.entry-meta a:hover,
 	.format-status .entry-header header a:hover,
 	footer[role="contentinfo"] a:hover {
-		color: <?php echo get_theme_mod( 'agama_primary_color', '#f7a805' ); ?>; 
+		color: <?php echo agama_sanitize_hex( get_theme_mod( 'agama_primary_color', '#f7a805' ), '#f7a805' ); ?>; 
 	}
 	.site-header .logo {
 		max-height: 100px;
@@ -1008,15 +1062,15 @@ function agama_customize_css()
 		max-height: 65px;
 	}
 	.search-form .search-table .search-button input[type="submit"]:hover {
-		background: <?php echo get_theme_mod( 'agama_primary_color', '#f7a805' ); ?>;
+		background: <?php echo agama_sanitize_hex( get_theme_mod( 'agama_primary_color', '#f7a805' ), '#f7a805' ); ?>;
 	}
 	#main-wrapper {
-		margin-top: <?php echo get_theme_mod( 'header_top_margin', '0px' ); ?>;
+		margin-top: <?php echo esc_attr( get_theme_mod( 'header_top_margin', '0px' ) ); ?>;
 	}
 	.sticky-header,
 	.top-nav-wrapper { 
-		border-top-width: <?php echo get_theme_mod( 'header_top_border_size', '3px' ); ?>; 
-		border-top-color: <?php echo get_theme_mod( 'agama_primary_color', '#f7a805' ); ?>;
+		border-top-width: <?php echo esc_attr( get_theme_mod( 'header_top_border_size', '3px' ) ); ?>; 
+		border-top-color: <?php echo agama_sanitize_hex( get_theme_mod( 'agama_primary_color', '#f7a805' ), '#f7a805' ); ?>;
 		border-top-style: solid;
 	}
 	<?php if( get_theme_mod('sticky_header', false) && get_theme_mod('enable_slider', false) ): ?>
@@ -1031,16 +1085,16 @@ function agama_customize_css()
 	}
 	<?php endif; ?>
 	.flexslider {
-		max-height: <?php echo get_theme_mod('flex_max_height', '400px'); ?> !important;
+		max-height: <?php echo esc_attr( get_theme_mod('flex_max_height', '400px') ); ?> !important;
 		overflow: hidden;
 		border: 0 !important;
 		margin: 0 !important;
 	}
 	.sticky-nav > li > ul {
-		border-top: 1px solid <?php echo get_theme_mod( 'agama_primary_color', '#f7a805' ); ?>;
+		border-top: 1px solid <?php echo agama_sanitize_hex( get_theme_mod( 'agama_primary_color', '#f7a805' ), '#f7a805' ); ?>;
 	}
 	.sticky-nav > li > ul > li > ul {
-		border-right: 1px solid <?php echo get_theme_mod( 'agama_primary_color', '#f7a805' ); ?>;
+		border-right: 1px solid <?php echo agama_sanitize_hex( get_theme_mod( 'agama_primary_color', '#f7a805' ), '#f7a805' ); ?>;
 	}
 	<?php if( get_theme_mod('blog_infinite_scroll', false) && get_theme_mod('blog_layout', 'list') == 'grid' ): ?>
 	#infscr-loading {
@@ -1050,20 +1104,20 @@ function agama_customize_css()
 	}
 	<?php endif; ?>
 	.entry-date .date-box {
-		background-color: <?php echo get_theme_mod( 'agama_primary_color', '#f7a805' ); ?>;
+		background-color: <?php echo agama_sanitize_hex( get_theme_mod( 'agama_primary_color', '#f7a805' ), '#f7a805' ); ?>;
 	}
 	.entry-date .format-box i {
-		color: <?php echo get_theme_mod( 'agama_primary_color', '#f7a805' ); ?>;
+		color: <?php echo agama_sanitize_hex( get_theme_mod( 'agama_primary_color', '#f7a805' ), '#f7a805' ); ?>;
 	}
 	.blog figure.effect-bubba, 
 	.agama-portfolio figure.effect-bubba {
-		background-color: <?php echo get_theme_mod( 'agama_primary_color', '#f7a805' ); ?>;
+		background-color: <?php echo agama_sanitize_hex( get_theme_mod( 'agama_primary_color', '#f7a805' ), '#f7a805' ); ?>;
 	}
 	.vision_tabs #tabs li.active a {
-		border-top: 3px solid <?php echo get_theme_mod( 'agama_primary_color', '#f7a805' ); ?>;
+		border-top: 3px solid <?php echo agama_sanitize_hex( get_theme_mod( 'agama_primary_color', '#f7a805' ), '#f7a805' ); ?>;
 	}
-	#toTop {
-		background-color: <?php echo get_theme_mod( 'agama_primary_color', '#f7a805' ); ?>;
+	#toTop:hover {
+		background-color: <?php echo agama_sanitize_hex( get_theme_mod( 'agama_primary_color', '#f7a805' ), '#f7a805' ); ?>;
 	}
 	</style>
 	<?php

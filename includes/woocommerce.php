@@ -17,7 +17,7 @@ if( class_exists( 'Woocommerce' ) ):
 			add_action('woocommerce_after_main_content', array( $this, 'agama_wrapper_end' ), 10);
 			
 			// Products per Page
-			$per_page = get_theme_mod('products_per_page', '12');
+			$per_page = esc_attr( get_theme_mod('products_per_page', '12') );
 			add_filter( 'loop_shop_per_page', create_function( '$cols', "return {$per_page};" ), 20 );
 		}
 		

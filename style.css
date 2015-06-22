@@ -4,7 +4,7 @@ Theme URI: http://theme-vision.com/agama/
 Author: Jaroslav Svetlik
 Author URI: http://theme-vision.com/
 Description: Agama Multi-Purpose, responsive Wordpress theme.
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: light,dark, white, one-column, two-columns, right-sidebar, left-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
@@ -244,9 +244,6 @@ input[type="color"] {
 	height: 8px;
 	border-bottom: 1px solid #e0dede;
 	border-top: 1px solid #e0dede;
-}
-.agama-portfolio .agama-separator {
-	margin: 50px 0;
 }
 
 /* Theme Vision */
@@ -1323,28 +1320,47 @@ section[role="banner"] {
 }
 
 /* Back to Top */
+/* Back to Top */
 #toTop {
     display: none;
     position: fixed;
-    bottom: 59px;
-    right: 5%;
+    bottom: 0;
+    right: 3%;
     width: 42px;
-    height: 42px;
-	border-radius: 42px;
-	-moz-border-radius: 42px;
-	-khtml-border-radius: 42px;
-	-webkit-border-radius: 42px;
+    height: 35px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
 	color: rgba(255, 255, 255, .8);
 	z-index: 99999;
 	cursor: pointer;
-	
+	opacity: 0.8;
+	-moz-opacity: 0.8; /* Netscape */
+	-khtml-opacity: 0.8; /* Safari 1.x */
+	filter: alpha(opacity=80); /* IE 5-7 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; /* IE 8 */
+	background-color: rgba(0,0,0,0.4);
+	background-repeat: no-repeat;
+	background-position: center;
+	transition: background-color 0.1s linear;
+	-moz-transition: background-color 0.1s linear;
+	-webkit-transition: background-color 0.1s linear;
+	-o-transition: background-color 0.1s linear;
 }
 #toTop:hover {
 	color: rgba(255, 255, 255, 1);
+	opacity: 1;
+	-moz-opacity: 1; /* Netscape */
+	-khtml-opacity: 1; /* Safari 1.x */
+	filter: alpha(opacity=100); /* IE 5-7 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; /* IE 8 */
 }
 #toTop i {
 	font-size: 22px;
-	padding: 10px 14px;
+	padding: 8px 14px;
 }
 
 /* Footer */
@@ -1422,8 +1438,7 @@ footer[role="contentinfo"] .social {
 .entry-header {
 	margin: 0;
 }
-.entry-title,
-.portfolio-content .entry-title {
+.entry-title {
 	font-weight: normal;
 }
 .entry-header img.wp-post-image {
@@ -1432,15 +1447,13 @@ footer[role="contentinfo"] .social {
 	-khtml-border-radius: 0;
 	-webkit-border-radius: 0;
 }
-.entry-header .entry-title,
-.portfolio-content .entry-title {
+.entry-header .entry-title {
 	font-size: 20px;
 	font-size: 1.428571429rem;
 	line-height: 1.2;
 	font-weight: normal;
 }
-.entry-header .entry-title a,
-.portfolio-content .entry-title a {
+.entry-header .entry-title a {
 	text-decoration: none;
 }
 .single-post .entry-header .single-line-meta {
@@ -1524,77 +1537,63 @@ article.sticky .featured-post {
 }
 .entry-content,
 .entry-summary,
-.mu_register,
-.portfolio-content {
+.mu_register {
 	line-height: 1.714285714;
 }
 .entry-content h1,
 .comment-content h1,
-.portfolio-content h1,
 .entry-content h2,
 .comment-content h2,
-.portfolio-content h2,
 .entry-content h3,
 .comment-content h3,
-.portfolio-content h3,
 .entry-content h4,
 .comment-content h4,
-.portfolio-content h4,
 .entry-content h5,
 .comment-content h5,
-.portfolio-content h5,
 .entry-content h6,
-.comment-content h6,
-.portfolio-content h6 {
+.comment-content h6 {
 	margin: 24px 0;
 	margin: 1.714285714rem 0;
 	line-height: 1.714285714;
 }
 .entry-content h1,
-.comment-content h1,
-.portfolio-content h1 {
+.comment-content h1 {
 	font-size: 21px;
 	font-size: 1.5rem;
 	line-height: 1.5;
 }
 .entry-content h2,
 .comment-content h2,
-.mu_register h2,
-.portfolio-content h2 {
+.mu_register h2 {
 	font-size: 18px;
 	font-size: 1.285714286rem;
 	line-height: 1.6;
 }
 .entry-content h3,
-.comment-content h3,
-.portfolio-content h3 {
+.comment-content h3 {
 	font-size: 16px;
 	font-size: 1.142857143rem;
 	line-height: 1.846153846;
 }
 .entry-content h4,
-.comment-content h4,
-.portfolio-content h4 {
+.comment-content h4 {
 	font-size: 14px;
 	font-size: 1rem;
 	line-height: 1.846153846;
 }
 .entry-content h5,
-.comment-content h5,
-.portfolio-content h5 {
+.comment-content h5 {
 	font-size: 13px;
 	font-size: 0.928571429rem;
 	line-height: 1.846153846;
 }
 .entry-content h6,
-.comment-content h6,
-.portfolio-content h6 {
+.comment-content h6 {
 	font-size: 12px;
 	font-size: 0.857142857rem;
 	line-height: 1.846153846;
 }
 .entry-content .single-line-meta,
-.portfolio-content .single-line-meta,
 article.format-aside .single-line-meta {
 	font-size: 11.5px;
 	padding-bottom: 0;
@@ -1603,66 +1602,53 @@ article.format-aside .single-line-meta {
 .entry-content p,
 .entry-summary p,
 .comment-content p,
-.mu_register p,
-.portfolio-content p {
+.mu_register p {
 	margin: 0 0 24px;
 	line-height: 1.714285714;
 }
 .entry-content a:visited,
-.comment-content a:visited,
-.portfolio-content a:visited {
+.comment-content a:visited {
 	color: #9f9f9f;
 }
-.entry-content .more-link,
-.portfolio-content .more-link {
+.entry-content .more-link {
 	white-space: nowrap;
 }
 .entry-content ol,
 .comment-content ol,
-.portfolio-content ol,
 .entry-content ul,
 .comment-content ul,
-.mu_register ul,
-.portfolio-content ul {
+.mu_register ul {
 	margin: 0 0 24px;
 	margin: 0 0 1.714285714rem;
 	line-height: 1.714285714;
 }
 .entry-content ul ul,
 .comment-content ul ul,
-.portfolio-content ul ul,
 .entry-content ol ol,
 .comment-content ol ol,
-.portfolio-content ol ol,
 .entry-content ul ol,
 .comment-content ul ol,
-.portfolio-content ul ol,
 .entry-content ol ul,
-.comment-content ol ul
-.portfolio-content ol ul {
+.comment-content ol ul {
 	margin-bottom: 0;
 }
 .entry-content ul,
 .comment-content ul,
-.portfolio-content ul,
 .mu_register ul {
 	list-style: disc outside;
 }
 .entry-content ol,
-.comment-content ol,
-.portfolio-content ol {
+.comment-content ol {
 	list-style: decimal outside;
 }
 .entry-content li,
 .comment-content li,
-.portfolio-content li,
 .mu_register li {
 	margin: 0 0 0 36px;
 	margin: 0 0 0 2.571428571rem;
 }
 .entry-content blockquote,
-.comment-content blockquote,
-.portfolio-content blockquote {
+.comment-content blockquote {
 	margin-bottom: 24px;
 	margin-bottom: 1.714285714rem;
 	padding: 24px;
@@ -1670,21 +1656,18 @@ article.format-aside .single-line-meta {
 	font-style: italic;
 }
 .entry-content blockquote p:last-child,
-.comment-content blockquote p:last-child,
-.portfolio-content blockquote p:last-child {
+.comment-content blockquote p:last-child {
 	margin-bottom: 0;
 }
 .entry-content code,
-.comment-content code,
-.portfolio-content code {
+.comment-content code {
 	font-family: Consolas, Monaco, Lucida Console, monospace;
 	font-size: 12px;
 	font-size: 0.857142857rem;
 	line-height: 2;
 }
 .entry-content pre,
-.comment-content pre,
-.portfolio-content pre {
+.comment-content pre {
 	border: 1px solid #ededed;
 	color: #666;
 	font-family: Consolas, Monaco, Lucida Console, monospace;
@@ -1698,25 +1681,20 @@ article.format-aside .single-line-meta {
 	padding: 1.714285714rem;
 }
 .entry-content pre code,
-.comment-content pre code,
-.portfolio-content pre code {
+.comment-content pre code {
 	display: block;
 }
 .entry-content abbr,
 .comment-content abbr,
-.portfolio-content abbr,
 .entry-content dfn,
 .comment-content dfn,
-.portfolio-content dfn,
 .entry-content acronym,
-.comment-content acronym,
-.portfolio-content acronym {
+.comment-content acronym {
 	border-bottom: 1px dotted #666;
 	cursor: help;
 }
 .entry-content address,
-.comment-content address,
-.portfolio-content address {
+.comment-content address {
 	display: block;
 	line-height: 1.714285714;
 	margin: 0 0 24px;
@@ -1741,38 +1719,30 @@ img.aligncenter,
 	margin-bottom: 0.857142857rem;
 }
 .entry-content embed,
-.portfolio-content embed,
 .entry-content iframe,
-.portfolio-content embed,
 .entry-content object,
-.portfolio-content object,
-.entry-content video,
-.portfolio-content video {
+.entry-content video {
 	margin-bottom: 24px;
 	margin-bottom: 1.714285714rem;
 }
 .entry-content dl,
-.comment-content dl,
-.portfolio-content dl {
+.comment-content dl {
 	margin: 0 24px;
 	margin: 0 1.714285714rem;
 }
 .entry-content dt,
-.comment-content dt,
-.portfolio-content dt {
+.comment-content dt {
 	font-weight: bold;
 	line-height: 1.714285714;
 }
 .entry-content dd,
-.comment-content dd,
-.portfolio-content dd {
+.comment-content dd {
 	line-height: 1.714285714;
 	margin-bottom: 24px;
 	margin-bottom: 1.714285714rem;
 }
 .entry-content table,
-.comment-content table,
-.portfolio-content table {
+.comment-content table {
 	border-bottom: 1px solid #ededed;
 	color: #757575;
 	font-size: 12px;
@@ -1783,16 +1753,14 @@ img.aligncenter,
 	width: 100%;
 }
 .entry-content table caption,
-.comment-content table caption,
-.portfolio-content table caption {
+.comment-content table caption {
 	font-size: 16px;
 	font-size: 1.142857143rem;
 	margin: 24px 0;
 	margin: 1.714285714rem 0;
 }
 .entry-content td,
-.comment-content td,
-.portfolio-content td {
+.comment-content td {
 	border-top: 1px solid #ededed;
 	padding: 6px 10px 6px 0;
 }
@@ -1857,107 +1825,22 @@ footer.entry-meta {
 	clear: both;
 }
 
-/* =Portfolio
+/* = Blog Main Thumb Hover Effects
 -------------------------------------------------------------- */
-.portfolio-filters {
-	border-top: 1px solid #e7e6e6;
-	border-bottom: 1px solid #e7e6e6;
-	line-height: 34px;
-	list-style: none;
-	overflow: hidden;
-	margin-bottom: 50px;
-}
-.portfolio-filter {
-	float: left;
-	margin-right: 30px;
-}
-.portfolio-filter a {
-	cursor: pointer;
-}
-.portfolio-content {
-	margin-top: 30px;
-}
-.portfolio-content h1,
-.portfolio-content h4 {
-	font-weight: normal;
-	margin: 0;
-}
-.portfolio-item img {
-	position: relative;
-}
-
-/* =Portfolio One Column
--------------------------------------------------------------- */
-
-
-/* =Portfolio Two Columns
--------------------------------------------------------------- */
-.portfolio-two-columns #content {
-	max-width: 100%;
-}
-.portfolio-two-columns .portfolio-wrapper {
-	float: left;
-	max-width: 527px;
-	width: 100%;
-	margin-right: 15px;
-	margin-bottom: 15px;
-	position: relative;
-}
-.portfolio-two-columns .portfolio-wrapper:nth-child(2n) {
-	margin-right: 0;
-}
-
-/* =Portfolio Three Columns
--------------------------------------------------------------- */
-.portfolio-three-columns #content {
-	max-width: 100%;
-}
-.portfolio-three-columns .portfolio-wrapper {
-	float: left;
-	max-width: 346px;
-	width: 100%;
-	margin-right: 15px;
-	margin-bottom: 15px;
-}
-.portfolio-three-columns .portfolio-wrapper:nth-child(3n) {
-	margin-right: 0;
-}
-
-/* =Portfolio Four Columns
--------------------------------------------------------------- */
-.portfolio-four-columns #content {
-	max-width: 100%;
-}
-.portfolio-four-columns .portfolio-wrapper {
-	float: left;
-	max-width: 256px;
-	width: 100%;
-	margin-right: 15px;
-	margin-bottom: 15px;
-	position: relative;
-}
-.portfolio-four-columns .portfolio-wrapper:nth-child(4n) {
-	margin-right: 0;
-}
-
-/* Portfolio Hover Effects Wrapper */
-.blog figure.effect-bubba,
-.agama-portfolio figure {
+figure.effect-bubba {
 	position: relative;
 	overflow: hidden;
 	background: #3085a3;
 	text-align: center;
 	cursor: pointer;
 }
-.blog figure.effect-bubba img,
-.agama-portfolio figure img {
+figure.effect-bubba img {
 	position: relative;
 	display: block;
 	max-width: 100%;
 	opacity: 0.8;
 }
-.blog figure.effect-bubba figcaption,
-.agama-portfolio figure figcaption {
+figure.effect-bubba figcaption {
 	padding: 2em;
 	color: #fff;
 	text-transform: uppercase;
@@ -1965,144 +1848,53 @@ footer.entry-meta {
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 }
-.blog figure.effect-bubba figcaption::before,
-.blog figure.effect-bubba figcaption::after,
-.agama-portfolio figure figcaption::before,
-.agama-portfolio figure figcaption::after {
+figure.effect-bubba figcaption::before,
+figure.effect-bubba figcaption::after {
 	pointer-events: none;
 }
-.blog figure.effect-bubba figcaption,
-.blog figure.effect-bubba figcaption > a,
-.agama-portfolio figure figcaption,
-.agama-portfolio figure figcaption > a {
+figure.effect-bubba figcaption,
+figure.effect-bubba figcaption > a {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
 }
-.blog figure.effect-bubba figcaption > a,
-.agama-portfolio figure figcaption > a {
+figure.effect-bubba figcaption > a {
 	z-index: 1000;
 	text-indent: 200%;
 	white-space: nowrap;
 	font-size: 0;
 	opacity: 0;
 }
-.blog figure.effect-bubba h2,
-.agama-portfolio figure h2 {
+figure.effect-bubba h2 {
 	word-spacing: -0.15em;
 	font-weight: 300;
 }
-.blog figure.effect-bubba h2 span,
-.agama-portfolio figure h2 span {
+figure.effect-bubba h2 span {
 	font-weight: 800;
 }
-.blog figure.effect-bubba h2,
-.blog figure.effect-bubba p,
-.agama-portfolio figure h2,
-.agama-portfolio figure p {
+figure.effect-bubba h2,
+figure.effect-bubba p {
 	margin: 0;
 }
-.blog figure.effect-bubba p,
-.agama-portfolio figure p {
+figure.effect-bubba p {
 	letter-spacing: 1px;
 	font-size: 68.5%;
 }
-
-/* Portfolio Hover Effect - Steve */
-.agama-portfolio figure.effect-steve {
-	z-index: auto;
-	overflow: visible;
-	background: #333;
-}
-.agama-portfolio figure.effect-steve:before,
-.agama-portfolio figure.effect-steve h2:before {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: -1;
-	width: 100%;
-	height: 100%;
-	background: #000;
-	content: '';
-	-webkit-transition: opacity 0.35s;
-	transition: opacity 0.35s;
-}
-.agama-portfolio figure.effect-steve:before {
-	box-shadow: 0 3px 30px rgba(255,255,255,0.8);
-	opacity: 0;
-}
-.agama-portfolio figure.effect-steve figcaption {
-	z-index: 1;
-}
-.agama-portfolio figure.effect-steve img {
-	background: rgba(255, 255, 255, .8);
-	-webkit-transition: -webkit-transform 0.35s;
-	transition: transform 0.35s;
-	-webkit-transform: perspective(1000px) translate3d(0,0,0);
-	transform: perspective(1000px) translate3d(0,0,0);
-}
-.agama-portfolio figure.effect-steve h2,
-.agama-portfolio figure.effect-steve p {
-	background: #fff;
-	color: #2d434e;
-}
-.agama-portfolio figure.effect-steve h2 {
-	line-height: 3;
-	position: relative;
-	margin-top: 2em;
-	padding: 0.25em;
-}
-.agama-portfolio figure.effect-steve h2:before {
-	box-shadow: 0 1px 10px rgba(0,0,0,0.5);
-}
-.agama-portfolio figure.effect-steve p {
-	line-height: 2;
-	margin-top: 1em;
-	padding: 0.5em;
-	font-weight: 800;
-	opacity: 0;
-	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-	transition: opacity 0.35s, transform 0.35s;
-	-webkit-transform: scale3d(0.9,0.9,1);
-	transform: scale3d(0.9,0.9,1);
-}
-.agama-portfolio figure.effect-steve:hover:before {
-	opacity: 1;
-}
-.agama-portfolio figure.effect-steve:hover img {
-	-webkit-transform: perspective(1000px) translate3d(0,0,21px);
-	transform: perspective(1000px) translate3d(0,0,21px);
-}
-.agama-portfolio figure.effect-steve:hover h2:before {
-	opacity: 0;
-}
-.agama-portfolio figure.effect-steve:hover p {
-	opacity: 1;
-	-webkit-transform: scale3d(1,1,1);
-	transform: scale3d(1,1,1);
-}
-
-/* Portfolio Hover Effect - Bubba */
-.blog figure.effect-bubba,
-.agama-portfolio figure.effect-bubba {
+figure.effect-bubba {
 	background: #F7A805;
 }
-.blog figure.effect-bubba img,
-.agama-portfolio figure.effect-bubba img {
+figure.effect-bubba img {
 	opacity: 0.8;
 	-webkit-transition: opacity 0.35s;
 	transition: opacity 0.35s;
 }
-.blog figure.effect-bubba:hover img,
-.agama-portfolio figure.effect-bubba:hover img {
+figure.effect-bubba:hover img {
 	opacity: 0.7;
 }
-.blog figure.effect-bubba figcaption::before,
-.blog figure.effect-bubba figcaption::after,
-.agama-portfolio figure.effect-bubba figcaption::before,
-.agama-portfolio figure.effect-bubba figcaption::after {
+figure.effect-bubba figcaption::before,
+figure.effect-bubba figcaption::after {
 	position: absolute;
 	top: 30px;
 	right: 30px;
@@ -2113,35 +1905,19 @@ footer.entry-meta {
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
 	transition: opacity 0.35s, transform 0.35s;
 }
-.blog figure.effect-bubba figcaption::before,
-.agama-portfolio figure.effect-bubba figcaption::before {
+figure.effect-bubba figcaption::before {
 	border-top: 1px solid #fff;
 	border-bottom: 1px solid #fff;
 	-webkit-transform: scale(0,1);
 	transform: scale(0,1);
 }
-.blog figure.effect-bubba figcaption::after,
-.agama-portfolio figure.effect-bubba figcaption::after {
+figure.effect-bubba figcaption::after {
 	border-right: 1px solid #fff;
 	border-left: 1px solid #fff;
 	-webkit-transform: scale(1,0);
 	transform: scale(1,0);
 }
-.portfolio-one-column figure.effect-bubba h2 {
-	font-size: 28px;
-}
-.portfolio-two-columns figure.effect-bubba h2 {
-	font-size: 22px;
-}
-.portfolio-three-columns figure.effect-bubba h2 {
-	padding-top: 20% !important;
-	font-size: 20px;
-}
-.portfolio-four-columns figure.effect-bubba h2 {
-	padding-top: 7% !important;
-}
-.blog figure.effect-bubba h2,
-.agama-portfolio figure.effect-bubba h2 {
+figure.effect-bubba h2 {
 	font-family: 'Raleway';
 	padding-top: 25%;
 	-webkit-transition: -webkit-transform 0.35s;
@@ -2149,8 +1925,7 @@ footer.entry-meta {
 	-webkit-transform: translate3d(0,-20px,0);
 	transform: translate3d(0,-20px,0);
 }
-.blog figure.effect-bubba p,
-.agama-portfolio figure.effect-bubba p {
+figure.effect-bubba p {
 	padding: 20px 2.5em;
 	opacity: 0;
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
@@ -2158,174 +1933,27 @@ footer.entry-meta {
 	-webkit-transform: translate3d(0,20px,0);
 	transform: translate3d(0,20px,0);
 }
-.blog .list-style figure.effect-bubba p {
+.list-style figure.effect-bubba p {
 	line-height: 215px;
 }
-.blog figure.effect-bubba p i {
+figure.effect-bubba p i {
 	font-size: 35px;
 	color: rgba(255, 255, 255, .7);
 	transition: all 100ms linear;
 	-moz-transition: all 100ms linear;
 	-webkit-transition: all 100ms linear;
 }
-.agama-portfolio figure.effect-bubba p i {
-	font-size: 22px;
-	color: rgba(255, 255, 255, .7);
-	transition: all 100ms linear;
-	-moz-transition: all 100ms linear;
-	-webkit-transition: all 100ms linear;
-}
-.blog figure.effect-bubba p i:hover,
-.agama-portfolio figure.effect-bubba p i:hover {
+figure.effect-bubba p i:hover {
 	color: rgba(255, 255, 255, 1);
 }
-.blog figure.effect-bubba:hover figcaption::before,
-.blog figure.effect-bubba:hover figcaption::after,
-.agama-portfolio figure.effect-bubba:hover figcaption::before,
-.agama-portfolio figure.effect-bubba:hover figcaption::after {
+figure.effect-bubba:hover figcaption::before,
+figure.effect-bubba:hover figcaption::after {
 	opacity: 1;
 	-webkit-transform: scale(1);
 	transform: scale(1);
 }
-.blog figure.effect-bubba:hover h2,
-.blog figure.effect-bubba:hover p,
-.agama-portfolio figure.effect-bubba:hover h2,
-.agama-portfolio figure.effect-bubba:hover p {
-	opacity: 1;
-	-webkit-transform: translate3d(0,0,0);
-	transform: translate3d(0,0,0);
-}
-
-/* Portfolio Hover Effect - Kira */
-.agama-portfolio figure.effect-kira {
-	background: #fff;
-	text-align: left;
-}
-.agama-portfolio figure.effect-kira img {
-	-webkit-transition: opacity 0.35s;
-	transition: opacity 0.35s;
-}
-.agama-portfolio figure.effect-kira figcaption {
-	z-index: 1;
-}
-.agama-portfolio figure.effect-kira figcaption h2 {
-	color: #333;
-}
-.agama-portfolio figure.effect-kira p {
-	padding: 2.25em 0.5em;
-	font-weight: 600;	
-	font-size: 100%;
-	line-height: 3;
-	opacity: 0;
-	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-	transition: opacity 0.35s, transform 0.35s;
-	-webkit-transform: translate3d(0,-10px,0);
-	transform: translate3d(0,-10px,0);
-}
-.agama-portfolio figure.effect-kira p a {
-	margin: 0 0.5em;
-	color: #101010;
-}
-.agama-portfolio figure.effect-kira p a:hover,
-.agama-portfolio figure.effect-kira p a:focus {
-	opacity: 0.6;
-}
-.agama-portfolio figure.effect-kira figcaption::before {
-	position: absolute;
-	top: 0;
-	right: 2em;
-	left: 2em;
-	z-index: -1;
-	height: 3.5em;
-	background: #fff;
-	content: '';
-	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-	transition: opacity 0.35s, transform 0.35s;
-	-webkit-transform: translate3d(0,4em,0) scale3d(1,0.023,1) ;
-	transform: translate3d(0,4em,0) scale3d(1,0.023,1);
-	-webkit-transform-origin: 50% 0;
-	transform-origin: 50% 0;
-}
-.agama-portfolio figure.effect-kira:hover img {
-	opacity: 0.5;
-}
-.agama-portfolio figure.effect-kira:hover p {
-	opacity: 1;
-	-webkit-transform: translate3d(0,0,0);
-	transform: translate3d(0,0,0);
-}
-.agama-portfolio figure.effect-kira:hover figcaption::before {
-	opacity: 0.7;
-	-webkit-transform: translate3d(0,5em,0) scale3d(1,1,1) ;
-	transform: translate3d(0,5em,0) scale3d(1,1,1);
-}
-
-/* Portfolio Hover Effect - Phoebe */
-.agama-portfolio figure.effect-phoebe {
-	background: #675983;
-}
-.agama-portfolio figure.effect-phoebe img {
-	opacity: 0.85;
-	-webkit-transition: opacity 0.35s;
-	transition: opacity 0.35s;
-}
-.agama-portfolio figure.effect-phoebe:hover img {
-	opacity: 0.6;
-}
-.agama-portfolio figure.effect-phoebe figcaption::before {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: url('assets/img/triangle2.svg') no-repeat center center;
-	background-size: 100% 100%;
-	content: '';
-	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-	transition: opacity 0.35s, transform 0.35s;
-	-webkit-transform: scale3d(5,2.5,1);
-	transform: scale3d(5,2.5,1);
-	-webkit-transform-origin: 50% 50%;
-	transform-origin: 50% 50%;
-}
-.agama-portfolio figure.effect-phoebe:hover figcaption::before {
-	opacity: 0.6;
-	-webkit-transform: scale3d(1,1,1);
-	transform: scale3d(1,1,1);
-}
-.agama-portfolio figure.effect-phoebe h2 {
-	margin-top: 1em;
-	-webkit-transition: transform 0.35s;
-	transition: transform 0.35s;
-	-webkit-transform: translate3d(0,40px,0);
-	transform: translate3d(0,40px,0);
-}
-.agama-portfolio figure.effect-phoebe:hover h2 {
-	-webkit-transform: translate3d(0,0,0);
-	transform: translate3d(0,0,0);
-}
-.agama-portfolio figure.effect-phoebe p a {
-	color: #fff;
-	font-size: 140%;
-	opacity: 0;
-	position: relative;
-	display: inline-block;
-	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-	transition: opacity 0.35s, transform 0.35s;
-}
-.agama-portfolio figure.effect-phoebe p a:first-child {
-	-webkit-transform: translate3d(-60px,-60px,0);
-	transform: translate3d(-60px,-60px,0);
-}
-.agama-portfolio figure.effect-phoebe p a:nth-child(2) {
-	-webkit-transform: translate3d(0,60px,0);
-	transform: translate3d(0,60px,0);
-}
-.agama-portfolio figure.effect-phoebe p a:nth-child(3) {
-	-webkit-transform: translate3d(60px,-60px,0);
-	transform: translate3d(60px,-60px,0);
-}
-.agama-portfolio figure.effect-phoebe:hover p a {
+figure.effect-bubba:hover h2,
+figure.effect-bubba:hover p {
 	opacity: 1;
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
@@ -3129,8 +2757,7 @@ img#wpstats {
 		float: none;
 		width: 100%;
 	}
-	.entry-header .entry-title,
-	.portfolio-content .entry-title {
+	.entry-header .entry-title {
 		font-size: 22px;
 		font-size: 1.571428571rem;
 	}
@@ -3267,7 +2894,6 @@ img#wpstats {
 		box-shadow: none;
 	}
 	.entry-header .entry-title,
-	.portfolio-content .entry-title,
 	.entry-title {
 		font-size: 21pt;
 	}

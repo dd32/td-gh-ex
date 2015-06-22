@@ -5,7 +5,7 @@
 */
 get_header(); ?>
 
-	<div id="primary" class="site-content <?php agama_primary_class(); ?>">
+	<div id="primary" class="site-content col-md-9">
 		<div id="content" role="main">
 		
 			<?php if(have_posts()): the_post(); ?>
@@ -24,7 +24,6 @@ get_header(); ?>
 		</div>
 	</div>
 
-<?php agama_l_sidebar(); ?>
-<?php agama_r_sidebar(); ?>
+<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

@@ -7,7 +7,7 @@
  * @since Agama 1.0
  */
 ?>
-	<div class="article-wrapper <?php aw_class(); ?>">
+	<div class="article-wrapper <?php agama_article_wrapper_class(); ?>">
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<header><i class="fa fa-2x fa-picture-o"></i></header>
 			

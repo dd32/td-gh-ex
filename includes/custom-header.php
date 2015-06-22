@@ -46,18 +46,6 @@ function agama_custom_header_setup() {
 add_action( 'after_setup_theme', 'agama_custom_header_setup' );
 
 /**
- * Load our special font CSS file.
- *
- * @since Agama 1.0
- */
-function agama_custom_header_fonts() {
-	$font_url = agama_get_font_url();
-	if ( ! empty( $font_url ) )
-		wp_enqueue_style( 'agama-fonts', esc_url_raw( $font_url ), array(), null );
-}
-add_action( 'admin_print_styles-appearance_page_custom-header', 'agama_custom_header_fonts' );
-
-/**
  * Style the header text displayed on the blog.
  *
  * get_header_textcolor() options: 515151 is default, hide text (returns 'blank'), or any hex value.
@@ -90,7 +78,7 @@ function agama_header_style() {
 	?>
 		.site-header h1 a,
 		.site-header h2 {
-			color: #<?php echo $text_color; ?>;
+			color: #<?php echo esc_attr( $text_color ); ?>;
 		}
 	<?php endif; ?>
 	</style>
@@ -131,7 +119,7 @@ function agama_admin_header_style() {
 		margin-bottom: 24px;
 	}
 	#headimg img {
-		max-width: <?php echo get_theme_support( 'custom-header', 'max-width' ); ?>px;
+		max-width: <?php echo esc_attr( get_theme_support( 'custom-header', 'max-width' ) ); ?>px;
 	}
 	</style>
 <?php
