@@ -620,8 +620,19 @@ img{
 .update-banner{
     border-top:10px solid #F6F6F6;
 }
+.pro-feature-title{
+    background: #333;
+    color: #FFF;
+    margin: 0;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.feature-img{
+    display: none;
+}
 
-@media screen and (max-width: 1420px){
+@media screen and (max-width: 1470px){
     #wpbody-content #optionsframework-metabox,
     #optionsframework{
         width: 640px

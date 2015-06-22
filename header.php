@@ -81,7 +81,7 @@
 
 	<div id="content" class="site-content">
 	<?php 
-	if(is_home() || is_front_page()) :
+	if(is_front_page()) :
 		do_action('accesspress_bxslider'); 
 	endif;
 	?>

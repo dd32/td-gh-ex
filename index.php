@@ -14,12 +14,6 @@
 get_header(); ?>
 
 <?php 
-if(of_get_option('web_layout') == NULL){
-	get_template_part('demo');
-	get_footer();
-	return;
-}
-
 $archive_page_layout = esc_attr(of_get_option('archive_page_layout'));
 ?>
 	<main id="main" class="site-main clearfix <?php echo $archive_page_layout; ?>">

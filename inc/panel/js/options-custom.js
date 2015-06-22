@@ -171,4 +171,8 @@ jQuery(document).ready(function($) {
         $(this).parent('h4.group-heading').next('.group-content').slideToggle();
     });
 
+    $('.pro-feature-title').click(function(){
+        $('.feature-img').slideToggle();
+    });
+
 });

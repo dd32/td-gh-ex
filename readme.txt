@@ -97,6 +97,12 @@ Pattern Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.13
+* Demo Content Removed
+* Padding Issues in Sidebar widget fixed
+* Minor Change in Theme Option Panel
+* Minor Design Bug Fixed
+
 Version 1.12
 * Blog Page layout fixed
 * Minor Changes in Admin Panel

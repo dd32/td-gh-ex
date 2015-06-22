@@ -452,11 +452,10 @@ get_header(); ?>
 						<?php endwhile; ?>
 						</div> <!-- testimonial-thumb-wrap -->
 						<?php endif; ?>
-
+						</div> <!-- testimonial-block-wrapper -->
 					<?php
 						endif;
-					?>
-					</div> <!-- testimonial-block-wrapper -->
+					?>				
 				</div>
 			</section> <!-- testimonial section -->
 		<?php

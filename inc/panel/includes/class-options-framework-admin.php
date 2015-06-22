@@ -194,10 +194,6 @@ class Options_Framework_Admin {
         <div class="optionsframework-holder">
         <div class="nav-tab-wrapper">
 	        <?php echo Options_Framework_Interface::optionsframework_tabs(); ?>
-
-	        <div class="update-banner">
-				<img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/upgrade-top.jpg">
-			</div>
 	    </div>
 
 	    <div id="optionsframework-metabox" class="metabox-holder">
@@ -216,15 +212,20 @@ class Options_Framework_Admin {
 
 		<div class="upgrade-pro">
 		    <h3><?php _e('Upgrade to Root Pro','accesspress-root') ?></h3>
+		    <div class="update-banner">
+				<img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/upgrade-top.jpg">
+			</div>
 		    <div class="button-link">
 				<a href="<?php echo esc_url('https://accesspressthemes.com/accesspress-root-pro/'); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/demo-btn.png"></a>
 				<a href="<?php echo esc_url('https://accesspressthemes.com/wordpress-themes/accesspress-root-pro/'); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/upgrade-btn.png"></a>
 			</div>
-
 			<div class="any-question">
 				<?php echo sprintf(__( 'Any question!! Click <a href="%s" target="_blank">here</a> for Live Chat' , 'accesspress_ray' ), esc_url('https://accesspressthemes.com/contact/')); ?>.
 		    </div>
-		    <img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/upgrade-side.jpg"/>
+		    <h4 class="pro-feature-title">Pro Features +</h4>
+		    <div class="feature-img">
+		    	<img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/upgrade-side.jpg"/>
+			</div>
 		</div>
 
 		<?php do_action( 'optionsframework_after' ); ?>

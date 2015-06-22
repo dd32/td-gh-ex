@@ -264,6 +264,9 @@ function accesspress_letter_count($content, $limit) {
 
 function accesspress_bodyclass($classes){
     $classes[]= of_get_option('web_layout');
+    if(of_get_option('show_slider') == '0'){
+        $classes[] = 'no-slider';
+    }
     return $classes;
 }
    
