@@ -10,11 +10,10 @@ if( ! class_exists( 'Agama_Core' ) ) {
 		// Class constructor (@since 1.0.1)
 		function __construct() {
 			$this->defines();
-			
-			// Enqueue Frontend Scripts
 			add_action( 'wp_head', array( $this, 'IE_Scripts' ) );
 			add_action( 'wp_enqueue_scripts', array( $this, 'scripts_styles' ) );
 			add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts_styles' ) );
+			add_action( 'wp_footer', array( $this, 'footer_scripts' ) );
 		}
 		
 		/**
@@ -30,7 +29,7 @@ if( ! class_exists( 'Agama_Core' ) ) {
 
 			// Set up Agama version
 			if( !defined( 'AGAMA_VER' ) ) {
-				define( 'AGAMA_VER', '1.0.2' );
+				define( 'AGAMA_VER', '1.0.3' );
 			}
 			
 			// Defina Agama URI
@@ -76,6 +75,18 @@ if( ! class_exists( 'Agama_Core' ) ) {
 		 */
 		function scripts_styles() {
 			global $wp_styles;
+			
+			// Open Sans
+			wp_register_style( 'OpenSans', esc_url_raw( '//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&subset=latin,latin-ext' ) );
+			 wp_enqueue_style( 'OpenSans' );
+			 
+			// PT Sans
+			wp_register_style( 'PTSans', esc_url_raw( '//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' ) );
+			 wp_enqueue_style( 'PTSans' );
+			 
+			// Raleway
+			wp_register_style( 'Raleway', esc_url_raw( '//fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800,900,200,100' ) );
+			 wp_enqueue_style( 'Raleway' );
 			
 			/*
 			 * Adds JavaScript to pages with the comment form to support
@@ -125,6 +136,28 @@ if( ! class_exists( 'Agama_Core' ) ) {
 			// SuperFish JS
 			wp_register_script( 'superFish', AGAMA_JS.'superfish.min.js' );
 			 wp_enqueue_script( 'superFish' );
+			 
+			// Infinite scroll
+			if( get_theme_mod('blog_infinite_scroll', false) ) {
+				// ImagesLoaded
+				wp_register_script( 'imagesLoaded', AGAMA_JS.'imagesloaded.pkgd.js' );
+				 wp_enqueue_script( 'imagesLoaded' );
+				
+				// InfiniteScroll
+				wp_register_script( 'infinitescroll', AGAMA_JS.'jquery.infinitescroll.min.js' );
+				 wp_enqueue_script( 'infinitescroll' );
+				
+				// Echo script init in footer
+				add_action( 'wp_footer', 'agama_infinite_scroll_init' );
+			}
+			 
+			// Agama flex slider
+			if( get_theme_mod('enable_slider', '0') ) {
+				wp_register_style( 'flexSlider', AGAMA_CSS.'flexslider.min.css' );
+				 wp_enqueue_style( 'flexSlider' );
+				wp_register_script( 'flexSlider', AGAMA_JS.'jquery.flexslider-min.js' );
+				 wp_enqueue_script( 'flexSlider' );
+			}
 			
 			// Agama main.js
 			wp_register_script( 'agama-main', AGAMA_JS.'main.js' );
@@ -134,10 +167,6 @@ if( ! class_exists( 'Agama_Core' ) ) {
 			);
 			wp_localize_script( 'agama-main', 'agama', $translation_array );
 			wp_enqueue_script( 'agama-main' );
-
-			$font_url = agama_get_font_url();
-			if ( ! empty( $font_url ) )
-				wp_enqueue_style( 'agama-fonts', esc_url_raw( $font_url ), array(), null );
 			
 			// Enqueue Agama Woocommerce stylesheet
 			if( class_exists('Woocommerce') ) {
@@ -177,13 +206,48 @@ if( ! class_exists( 'Agama_Core' ) ) {
 		 * @since Agama v1.0.1
 		 */
 		function admin_scripts_styles() {
-			// Agama backend script
-			wp_register_script( 'agama-backend', AGAMA_JS.'backend.js' );
-			 wp_enqueue_script( 'agama-backend' );
-			
-			// Agama backend stylesheet
-			wp_register_style( 'agama-backend', AGAMA_CSS.'backend.css' );
-			 wp_enqueue_style( 'agama-backend' );
+			$screen = get_current_screen();
+			if( $screen->id == 'post' || $screen->id == 'page' ) {
+				// Agama backend script
+				wp_register_script( 'agama-backend', AGAMA_JS.'backend.js' );
+				 wp_enqueue_script( 'agama-backend' );
+				
+				// Agama backend stylesheet
+				wp_register_style( 'agama-backend', AGAMA_CSS.'backend.css' );
+				 wp_enqueue_style( 'agama-backend' );
+			}
+		}
+		
+		/**
+		 * Enqueue Footer Scripts
+		 *
+		 * @since Agama v1.0.3
+		 */
+		function footer_scripts() {
+			if( get_theme_mod('nicescroll', '1') ) {
+				echo '
+				<script>
+				jQuery(document).ready(function($) {
+					$("html").niceScroll({
+						cursorwidth:"10px",
+						cursorborder:"1px solid #333",
+						zindex:"9999"
+					});
+				});
+				</script>
+				';
+			}
+			if( get_theme_mod('enable_slider', false) ) {
+				echo '
+				<script>
+				jQuery(document).ready(function($) {
+				  $(".flexslider").flexslider({
+					animation: "slide"
+				  });
+				});
+				</script>
+				';
+			}
 		}
 	}
 	new Agama_Core;

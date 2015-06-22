@@ -1,12 +1,12 @@
 <?php
 // Include framework init file
-require_once( AGAMA_FMW.'framework-init.php' );
-
-// Include Agama class file
-require_once( AGAMA_INC.'agama-class.php' );
+get_template_part('framework/framework-init');
 
 // Include WooCommerce class file
-require_once( AGAMA_INC.'woocommerce.php' );
+get_template_part('includes/woocommerce');
+
+// Custom header support
+get_template_part('includes/custom-header');
 
 if ( ! isset( $content_width ) ) 
 	$content_width = 1200;
@@ -91,11 +91,6 @@ function agama_slug_render_title() {
 }
 
 /**
- * Add support for a custom header image.
- */
-require( AGAMA_INC.'custom-header.php' );
-
-/**
  * Excerpt Lenght
  *
  * @since Agama v1.0
@@ -104,48 +99,6 @@ function agama_excerpt_length( $length ) {
 	return get_theme_mod('blog_excerpt', '60');
 }
 add_filter( 'excerpt_length', 'agama_excerpt_length', 999 );
- 
-/**
- * Return the Google font stylesheet URL if available.
- *
- * The use of Open Sans by default is localized. For languages that use
- * characters not supported by the font, the font can be disabled.
- *
- * @since Agama 1.0
- *
- * @return string Font stylesheet or empty string if disabled.
- */
-function agama_get_font_url() {
-	$font_url = '';
-
-	/* translators: If there are characters in your language that are not supported
-	 * by Open Sans, translate this to 'off'. Do not translate into your own language.
-	 */
-	if ( 'off' !== _x( 'on', 'Open Sans font: on or off', 'agama' ) ) {
-		$subsets = 'latin,latin-ext';
-
-		/* translators: To add an additional Open Sans character subset specific to your language,
-		 * translate this to 'greek', 'cyrillic' or 'vietnamese'. Do not translate into your own language.
-		 */
-		$subset = _x( 'no-subset', 'Open Sans font: add new subset (greek, cyrillic, vietnamese)', 'agama' );
-
-		if ( 'cyrillic' == $subset )
-			$subsets .= ',cyrillic,cyrillic-ext';
-		elseif ( 'greek' == $subset )
-			$subsets .= ',greek,greek-ext';
-		elseif ( 'vietnamese' == $subset )
-			$subsets .= ',vietnamese';
-
-		$query_args = array(
-			'family' => 'Open+Sans:400italic,700italic,400,700',
-			'subset' => $subsets,
-		);
-		
-		$font_url = esc_url_raw( add_query_arg( $query_args, "//fonts.googleapis.com/css" ) );
-	}
-
-	return $font_url;
-}
 
 /**
  * Primary Class
@@ -196,65 +149,6 @@ function agama_l_sidebar() {
 }
 
 /**
- * Filter TinyMCE CSS path to include Google Fonts.
- *
- * Adds additional stylesheets to the TinyMCE editor if needed.
- *
- * @uses agama_get_font_url() To get the Google Font stylesheet URL.
- * @param string $mce_css CSS path to load in TinyMCE.
- * @return string Filtered CSS path.
- * @since Agama 1.2
- */
-function agama_mce_css( $mce_css ) {
-	$font_url = agama_get_font_url();
-
-	if ( empty( $font_url ) )
-		return $mce_css;
-
-	if ( ! empty( $mce_css ) )
-		$mce_css .= ',';
-
-	$mce_css .= esc_url_raw( str_replace( ',', '%2C', $font_url ) );
-
-	return $mce_css;
-}
-add_filter( 'mce_css', 'agama_mce_css' );
-
-/**
- * Filter the page title.
- *
- * Creates a nicely formatted and more specific title element text
- * for output in head of document, based on current view.
- *
- * @since Agama 1.0
- *
- * @param string $title Default title text for current view.
- * @param string $sep Optional separator.
- * @return string Filtered title.
- */
-function agama_wp_title( $title, $sep ) {
-	global $paged, $page;
-
-	if ( is_feed() )
-		return $title;
-
-	// Add the site name.
-	$title .= get_bloginfo( 'name', 'display' );
-
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
-
-	// Add a page number if necessary.
-	if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'agama' ), max( $paged, $page ) );
-
-	return $title;
-}
-add_filter( 'wp_title', 'agama_wp_title', 10, 2 );
-
-/**
  * Agama Thumb Title
  * Get post-page article title and separates it on two halfs
  *
@@ -285,7 +179,7 @@ function agama_thumb_title() {
 function agama_return_image_src( $thumb_size ) {
 	$att_id	 = get_post_thumbnail_id();
 	$att_src = wp_get_attachment_image_src( $att_id, $thumb_size );
-	return $att_src[0];
+	return esc_url_raw($att_src[0]);
 }
 
 /**
@@ -516,7 +410,7 @@ function agama_body_class( $classes ) {
 	}
 
 	// Enable custom font class only if the font CSS is queued to load.
-	if ( wp_style_is( 'agama-fonts', 'queue' ) )
+	if ( wp_style_is( 'PTSans', 'queue' ) )
 		$classes[] = 'custom-font-enabled';
 
 	if ( ! is_multi_author() )
@@ -675,6 +569,56 @@ if( ! function_exists( 'agama_render_blog_post_meta' ) ) {
 	}
 }
 add_action( 'agama_blog_post_meta', 'agama_render_blog_post_meta', 10 );
+
+/**
+ * Infinite Scroll Init
+ * 
+ * @since 1.0.3
+ */
+function agama_infinite_scroll_init() { ?>
+<script>
+jQuery(function($){
+	<?php if( get_theme_mod('blog_layout', 'list') == 'grid' ): ?>
+	var $container = $('#content').imagesLoaded(function(){
+	
+		$container.isotope({
+			itemSelector : '.article-wrapper'
+		});
+	  
+		$container.infinitescroll({
+			navSelector  : '.navigation',
+			nextSelector : '.nav-previous a',
+			itemSelector : '.article-wrapper',
+			loading: {
+				finishedMsg: '<?php _e( 'No more posts to load.', 'agama' ); ?>',
+				img: '<?php echo AGAMA_IMG .'loader.gif'; ?>'
+			  },
+			errorCallback: function(){
+				$('#infscr-loading').replaceWith(
+					"<div id='infscr-loading'><?php _e( 'No more posts to load.', 'agama' ); ?></div>"
+				);
+			  },
+			},
+			// call Isotope as a callback
+			function( newElements ) {
+				$container.isotope( 'appended', $( newElements ) ); 
+			}
+		);
+	});
+	<?php else: ?>
+	jQuery('#content').infinitescroll({
+		navSelector  : '.navigation',
+		nextSelector : '.navigation .nav-previous a',
+		itemSelector : '.article-wrapper',
+		loading: {
+			finishedMsg: '<?php _e( 'No more posts to load.', 'agama' ); ?>',
+			img: '<?php echo AGAMA_IMG .'loader.gif'; ?>'
+		},
+	});
+	<?php endif; ?>
+});
+</script>
+<?php }
 
 /**
  * Agama Credits

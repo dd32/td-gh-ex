@@ -15,8 +15,6 @@ if( ! class_exists( 'Agama_About' ) ) {
 		public function __construct() {
 			// Register page
 			add_action('admin_menu', array( $this, 'register_page' ) );
-			// Redirect to page
-			add_action( 'admin_init', array( $this, 'redirect' ) );
 		}
 		
 		/**
@@ -72,6 +70,11 @@ if( ! class_exists( 'Agama_About' ) ) {
 				echo '</h2>';
 				
 				echo '<div class="changelog point-releases">';
+					echo '<h3>'.__( 'Changelog Agama v1.0.3', 'agama' ).'</h3>';
+					echo '<p><strong>Version 1.0.3</strong> implemented FlexSlider 2 in customizer.</p>';
+					echo '<p><strong>Version 1.0.3</strong> implemented Infinite Scroll for blog posts.</p>';
+					echo '<p><strong>Version 1.0.3</strong> WooCommerce Products per Page option.</p>';
+				
 					echo '<h3>'.__( 'Changelog Agama v1.0.2', 'agama' ).'</h3>';
 					echo '<p><strong>Version 1.0.2</strong> Sticky header option.</p>';
 					echo '<p><strong>Version 1.0.2</strong> NiceScroll option.</p>';
@@ -93,17 +96,6 @@ if( ! class_exists( 'Agama_About' ) ) {
 				echo '</div>';
 				
 			echo '</div>';
-		}
-		
-		/**
-		 * Redirect User to 'About Agama' Page After Theme Activated
-		 *
-		 * @since Agama v1.0.1
-		 */
-		public function redirect() {
-			if( is_admin() && isset( $_GET['activated'] ) ) {
-				header( 'Location: '.admin_url().'themes.php?page=about-agama');
-			}
 		}
 	}
 	new Agama_About;

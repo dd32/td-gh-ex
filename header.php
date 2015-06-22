@@ -39,7 +39,13 @@
 		<?php if( get_theme_mod('sticky_header', '0') == true ): ?>
 			<div class="sticky-header">
 				<div class="sticky-header-inner">
-					<h1><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php if( get_theme_mod( 'logo' ) ): ?>
+						<a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+							<img src="<?php echo get_theme_mod( 'logo' ); ?>" class="logo">
+						</a>
+					<?php else: ?>
+						<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php endif; ?>
 					<nav role="navigation">
 						<?php wp_nav_menu( array( 'theme_location' => 'top', 'menu_class' => 'sticky-nav' ) ); ?>
 					</nav><!-- .top-navigation -->
@@ -100,12 +106,14 @@
 		<?php endif; // if sticky_header ?>
 		
 		<!-- Header Image -->
-		<?php if ( get_header_image() && $Agama->get_meta('_enable_slider') !== 'on' ) : ?>
+		<?php if ( get_header_image() && get_theme_mod('enable_slider', false) !== '1' ) : ?>
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<img src="<?php header_image(); ?>" class="header-image" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
 		</a>
 		<?php endif; ?><!-- / Header Image -->
 	</header><!-- #masthead -->
+	
+	<?php get_template_part('framework/sliders'); ?>
 
 	<div id="page" class="hfeed site">
 		<div id="main" class="wrapper">

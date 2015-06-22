@@ -50,7 +50,7 @@ function agama_customize_register( $wp_customize ) {
 	
 	// Sticky header - setting
 	$wp_customize->add_setting( 'sticky_header', array(
-		'default'			=> '0',
+		'default'			=> false,
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_key'
 	) );
@@ -61,7 +61,11 @@ function agama_customize_register( $wp_customize ) {
 		'description'	=> __( 'Enable sticky header ?', 'agama' ),
 		'section'		=> 'agama_header_section',
 		'settings'		=> 'sticky_header',
-		'type'			=> 'checkbox'
+		'type'			=> 'checkbox',
+		'choices'		=> array(
+			false,
+			true
+		)
 	) ) );
 	
 	// Header top margin setting
@@ -634,9 +638,38 @@ function agama_customize_register( $wp_customize ) {
 		'priority'	=> 40,
 	) );
 	
+	// Enable slider setting
+	$wp_customize->add_setting( 'enable_slider', array(
+		'default'			=> false,
+		'transport'			=> 'refresh',
+		'sanitize_callback' => 'sanitize_text_field'
+	) );
+	
+	// Enable slider control
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'enable_slider', array(
+		'label'		=> __( 'Enable Slider', 'agama' ),
+		'section'	=> 'agama_slider_section',
+		'settings'	=> 'enable_slider',
+		'type'		=> 'checkbox'
+	) ) );
+	
+	// Slider max-height setting
+	$wp_customize->add_setting( 'flex_max_height', array(
+		'default'			=> '400px',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	
+	// Slider max-height control
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'flex_max_height', array(
+		'label'		=> __( 'Slider max-height', 'agama' ),
+		'section'	=> 'agama_slider_section',
+		'settings'	=> 'flex_max_height'
+	) ) );
+	
 	// Agama slide 1 title setting
 	$wp_customize->add_setting( 'slide_1_title', array(
-		'default'			=> 'Slide 1',
+		'default'			=> '',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -666,7 +699,7 @@ function agama_customize_register( $wp_customize ) {
 	
 	// Agama slide 2 title setting
 	$wp_customize->add_setting( 'slide_2_title', array(
-		'default'			=> 'Slide 2',
+		'default'			=> '',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -696,7 +729,7 @@ function agama_customize_register( $wp_customize ) {
 	
 	// Agama slide 3 title setting
 	$wp_customize->add_setting( 'slide_3_title', array(
-		'default'			=> 'Slide 3',
+		'default'			=> '',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -726,7 +759,7 @@ function agama_customize_register( $wp_customize ) {
 	
 	// Agama slide 4 title setting
 	$wp_customize->add_setting( 'slide_4_title', array(
-		'default'			=> 'Slide 4',
+		'default'			=> '',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -756,7 +789,7 @@ function agama_customize_register( $wp_customize ) {
 	
 	// Agama slide 5 title setting
 	$wp_customize->add_setting( 'slide_5_title', array(
-		'default'			=> 'Slide 5',
+		'default'			=> '',
 		'transport'			=> 'refresh',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
@@ -789,6 +822,21 @@ function agama_customize_register( $wp_customize ) {
 		'title'		=> __( 'Blog', 'agama' ),
 		'priority' 	=> 40,
 	) );
+	
+	// Infinite scroll setting
+	$wp_customize->add_setting( 'blog_infinite_scroll', array(
+		'default'			=> false,
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	
+	// Infinite scroll control
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'blog_infinite_scroll', array(
+		'label'		=> __( 'Enable Infinite Scroll ?', 'agama' ),
+		'section'	=> 'agama_blog_section',
+		'settings'	=> 'blog_infinite_scroll',
+		'type'		=> 'checkbox'
+	) ) );
 	
 	// Blog layout setting
 	$wp_customize->add_setting( 'blog_layout', array(
@@ -847,6 +895,27 @@ function agama_customize_register( $wp_customize ) {
 		'title'		=> __( 'Body Background', 'agama' ),
 		'priority'	=> 0,
 	) );
+	
+	// WooCommerce section
+	$wp_customize->add_section( 'agama_woocommerce', array(
+		'title'		=> __( 'WooCommerce', 'agama' ),
+		'priority'	=> 60,
+	) );
+	
+	// Products per page setting
+	$wp_customize->add_setting( 'products_per_page', array(
+		'default'			=> '12',
+		'transport'			=> 'refresh',
+		'sanitize_callback'	=> 'esc_attr'
+	) );
+	
+	// Products per page control
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'products_per_page', array(
+		'label'		=> __( 'Products per Page', 'agama' ),
+		'section'	=> 'agama_woocommerce',
+		'settings'	=> 'products_per_page',
+		'type'		=> 'text'
+	) ) );
 	
 	// Agama footer - section
 	$wp_customize->add_section( 'agama_footer_section', array(
@@ -929,6 +998,15 @@ function agama_customize_css()
 	footer[role="contentinfo"] a:hover {
 		color: <?php echo get_theme_mod( 'agama_primary_color', '#f7a805' ); ?>; 
 	}
+	.site-header .logo {
+		max-height: 100px;
+	}
+	.sticky-header .logo {
+		max-height: 90px;
+	}
+	.sticky-header-shrink .logo {
+		max-height: 65px;
+	}
 	.search-form .search-table .search-button input[type="submit"]:hover {
 		background: <?php echo get_theme_mod( 'agama_primary_color', '#f7a805' ); ?>;
 	}
@@ -941,27 +1019,36 @@ function agama_customize_css()
 		border-top-color: <?php echo get_theme_mod( 'agama_primary_color', '#f7a805' ); ?>;
 		border-top-style: solid;
 	}
-	<?php if( get_theme_mod('sticky_header', '0') && $Agama->get_meta('_enable_slider') == 'on' ): ?>
-	#slider-wrapper {
-		margin-top: 90px;
+	<?php if( get_theme_mod('sticky_header', false) && get_theme_mod('enable_slider', false) ): ?>
+	.site-header {
+		margin-bottom: 90px;
 	}
 	<?php endif; ?>
-	<?php if( get_theme_mod('sticky_header', '0') && get_header_image() ): ?>
+	
+	<?php if( get_theme_mod('sticky_header', false) && get_header_image() ): ?>
 	.header-image {
 		margin-top: 90px;
 	}
 	<?php endif; ?>
-	<?php if( get_theme_mod('sticky_header', '0') && ! get_header_image() && $Agama->get_meta('_enable_slider') !== 'on' ): ?>
-	#page {
-		margin-top: 90px;
+	.flexslider {
+		max-height: <?php echo get_theme_mod('flex_max_height', '400px'); ?> !important;
+		overflow: hidden;
+		border: 0 !important;
+		margin: 0 !important;
 	}
-	<?php endif; ?>
 	.sticky-nav > li > ul {
-		border-top: 3px solid <?php echo get_theme_mod( 'agama_primary_color', '#f7a805' ); ?>;
+		border-top: 1px solid <?php echo get_theme_mod( 'agama_primary_color', '#f7a805' ); ?>;
 	}
 	.sticky-nav > li > ul > li > ul {
-		border-right: 3px solid <?php echo get_theme_mod( 'agama_primary_color', '#f7a805' ); ?>;
+		border-right: 1px solid <?php echo get_theme_mod( 'agama_primary_color', '#f7a805' ); ?>;
 	}
+	<?php if( get_theme_mod('blog_infinite_scroll', false) && get_theme_mod('blog_layout', 'list') == 'grid' ): ?>
+	#infscr-loading {
+		position: absolute;
+		bottom: 0;
+		left: 25%;
+	}
+	<?php endif; ?>
 	.entry-date .date-box {
 		background-color: <?php echo get_theme_mod( 'agama_primary_color', '#f7a805' ); ?>;
 	}
@@ -971,6 +1058,9 @@ function agama_customize_css()
 	.blog figure.effect-bubba, 
 	.agama-portfolio figure.effect-bubba {
 		background-color: <?php echo get_theme_mod( 'agama_primary_color', '#f7a805' ); ?>;
+	}
+	.vision_tabs #tabs li.active a {
+		border-top: 3px solid <?php echo get_theme_mod( 'agama_primary_color', '#f7a805' ); ?>;
 	}
 	#toTop {
 		background-color: <?php echo get_theme_mod( 'agama_primary_color', '#f7a805' ); ?>;

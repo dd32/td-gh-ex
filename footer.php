@@ -70,21 +70,9 @@
 		
 	</footer><!-- #colophon -->
 	
-	<script>
-	jQuery(document).ready(function($) {
-	<?php if( get_theme_mod('nicescroll', '1') ): ?>
-		$("html").niceScroll({
-			cursorwidth:"10px",
-			cursorborder:"1px solid #333",
-			zindex:"9999"
-		});
-	<?php endif; ?>
-	});
-	</script>
-	
 </div><!-- .main-wrapper -->
 
-
 <?php wp_footer(); ?>
+
 </body>
 </html>

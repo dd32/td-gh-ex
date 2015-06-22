@@ -17,10 +17,17 @@ jQuery(document).ready(function(){
 });
 
 /*! 
- Call tooltips
+ Call tooltips & Tabs
 */
 jQuery(function ($) {
-  $('[data-toggle="tooltip"]').tooltip()
+  $('[data-toggle="tooltip"]').tooltip();
+  
+  $('#tabs a:first').tab('show'); // Show first tab by default
+  
+  $('#tabs a').click(function (e) {
+		e.preventDefault()
+		$(this).tab('show');
+  })
 });
 
 /*!

@@ -1,0 +1,714 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Agama\n"
+"POT-Creation-Date: 2015-06-22 12:47+0100\n"
+"PO-Revision-Date: 2015-06-22 12:47+0100\n"
+"Last-Translator: Jaroslav Svetlik <kdonet@gmail.com>\n"
+"Language-Team: Theme-Vision <support@theme-vision.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.3\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:17
+msgid "This is somewhat embarrassing, isn&rsquo;t it?"
+msgstr ""
+
+#: 404.php:21
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: archive.php:19
+#, php-format
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: archive.php:21
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: archive.php:21
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: archive.php:23
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: archive.php:23
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: archive.php:25
+msgid "Archives"
+msgstr ""
+
+#: author.php:30
+#, php-format
+msgid "Author Archives: %s"
+msgstr ""
+
+#: author.php:61 content.php:154
+#, php-format
+msgid "About %s"
+msgstr ""
+
+#: bbpress.php:17 content-page.php:23 content.php:137 image.php:100
+msgid "Pages:"
+msgstr ""
+
+#: category.php:19
+#, php-format
+msgid "Category Archives: %s"
+msgstr ""
+
+#: comments.php:31
+#, php-format
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:42
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:43
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:44
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:53
+msgid "Comments are closed."
+msgstr ""
+
+#: content-aside.php:61 content-image.php:51 content-link.php:50
+#: content-quote.php:52 content-status.php:51 content.php:133
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: content-aside.php:69 content-image.php:58 content-link.php:57
+#: content-page.php:26 content-quote.php:59 content-status.php:58
+#: content.php:143 image.php:35 includes/agama-functions.php:405
+msgid "Edit"
+msgstr ""
+
+#: content-none.php:13 index.php:40 search.php:34
+msgid "Nothing Found"
+msgstr ""
+
+#: content-none.php:17 index.php:44
+msgid ""
+"Apologies, but no results were found. Perhaps searching will help find a "
+"related post."
+msgstr ""
+
+#: content-portfolio.php:46
+msgid "Learn More"
+msgstr ""
+
+#: content.php:81
+msgid "Featured post"
+msgstr ""
+
+#: content.php:158
+#, php-format
+msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: framework/admin/about.php:27 framework/admin/about.php:28
+msgid "About Agama"
+msgstr ""
+
+#: framework/admin/about.php:42
+#, php-format
+msgid "Welcome to Agama v%s"
+msgstr ""
+
+#: framework/admin/about.php:45
+msgid "Thank you for using Agama theme!"
+msgstr ""
+
+#: framework/admin/about.php:46
+msgid "Consider supporting us with any desired amount donation."
+msgstr ""
+
+#: framework/admin/about.php:47
+msgid "Even the smallest donation amount means a lot for us."
+msgstr ""
+
+#: framework/admin/about.php:48
+msgid ""
+"With donations you are helping us for faster theme development & updates."
+msgstr ""
+
+#: framework/admin/about.php:63
+msgid "or"
+msgstr ""
+
+#: framework/admin/about.php:65
+#, php-format
+msgid ""
+"You can support us by Buying an %s theme with allot new features & "
+"extensions!"
+msgstr ""
+
+#: framework/admin/about.php:69
+msgid "What's New"
+msgstr ""
+
+#: framework/admin/about.php:73
+msgid "Changelog Agama v1.0.3"
+msgstr ""
+
+#: framework/admin/about.php:78
+msgid "Changelog Agama v1.0.2"
+msgstr ""
+
+#: framework/admin/about.php:83
+msgid "Changelog Agama v1.0.1"
+msgstr ""
+
+#: framework/admin/customizer.php:25
+msgid "General Settings"
+msgstr ""
+
+#: framework/admin/customizer.php:38
+msgid "NiceScroll"
+msgstr ""
+
+#: framework/admin/customizer.php:39
+msgid "Enable NiceScroll ?"
+msgstr ""
+
+#: framework/admin/customizer.php:47
+msgid "Header"
+msgstr ""
+
+#: framework/admin/customizer.php:60
+msgid "Sticky Header"
+msgstr ""
+
+#: framework/admin/customizer.php:61
+msgid "Enable sticky header ?"
+msgstr ""
+
+#: framework/admin/customizer.php:80
+msgid "Top Margin"
+msgstr ""
+
+#: framework/admin/customizer.php:81
+msgid "If sticky header enabled margin will be 0px!"
+msgstr ""
+
+#: framework/admin/customizer.php:110
+msgid "Top Border Size"
+msgstr ""
+
+#: framework/admin/customizer.php:130
+msgid "Logo"
+msgstr ""
+
+#: framework/admin/customizer.php:143
+msgid "Upload Logo"
+msgstr ""
+
+#: framework/admin/customizer.php:159
+msgid "Enable Top Navigation"
+msgstr ""
+
+#: framework/admin/customizer.php:168
+msgid "Styling"
+msgstr ""
+
+#: framework/admin/customizer.php:181
+msgid "Primary Color"
+msgstr ""
+
+#: framework/admin/customizer.php:195
+msgid "Skin"
+msgstr ""
+
+#: framework/admin/customizer.php:200
+msgid "Light"
+msgstr ""
+
+#: framework/admin/customizer.php:201
+msgid "Dark"
+msgstr ""
+
+#: framework/admin/customizer.php:207
+msgid "Social Icons"
+msgstr ""
+
+#: framework/admin/customizer.php:220
+msgid "Enable social icons in top nav ?"
+msgstr ""
+
+#: framework/admin/customizer.php:235
+msgid "Enable social icons in footer ?"
+msgstr ""
+
+#: framework/admin/customizer.php:250
+msgid "Icons URL Target"
+msgstr ""
+
+#: framework/admin/customizer.php:269
+msgid "Facebook URL"
+msgstr ""
+
+#: framework/admin/customizer.php:284
+msgid "Twitter URL"
+msgstr ""
+
+#: framework/admin/customizer.php:299
+msgid "Flickr URL"
+msgstr ""
+
+#: framework/admin/customizer.php:314
+msgid "RSS URL"
+msgstr ""
+
+#: framework/admin/customizer.php:329
+msgid "Vimeo URL"
+msgstr ""
+
+#: framework/admin/customizer.php:344
+msgid "Youtube URL"
+msgstr ""
+
+#: framework/admin/customizer.php:359
+msgid "Instagram URL"
+msgstr ""
+
+#: framework/admin/customizer.php:374
+msgid "Pinterest URL"
+msgstr ""
+
+#: framework/admin/customizer.php:389
+msgid "Tumblr URL"
+msgstr ""
+
+#: framework/admin/customizer.php:404
+msgid "Google+ URL"
+msgstr ""
+
+#: framework/admin/customizer.php:419
+msgid "Dribbble URL"
+msgstr ""
+
+#: framework/admin/customizer.php:434
+msgid "Digg URL"
+msgstr ""
+
+#: framework/admin/customizer.php:449
+msgid "Linkedin URL"
+msgstr ""
+
+#: framework/admin/customizer.php:464
+msgid "Blogger URL"
+msgstr ""
+
+#: framework/admin/customizer.php:479
+msgid "Skype URL"
+msgstr ""
+
+#: framework/admin/customizer.php:494
+msgid "Forrst URL"
+msgstr ""
+
+#: framework/admin/customizer.php:509
+msgid "Myspace URL"
+msgstr ""
+
+#: framework/admin/customizer.php:524
+msgid "Deviantart URL"
+msgstr ""
+
+#: framework/admin/customizer.php:539
+msgid "Yahoo URL"
+msgstr ""
+
+#: framework/admin/customizer.php:554
+msgid "Reddit URL"
+msgstr ""
+
+#: framework/admin/customizer.php:569
+msgid "PayPal URL"
+msgstr ""
+
+#: framework/admin/customizer.php:584
+msgid "Dropbox URL"
+msgstr ""
+
+#: framework/admin/customizer.php:599
+msgid "Soundcloud URL"
+msgstr ""
+
+#: framework/admin/customizer.php:614
+msgid "VK URL"
+msgstr ""
+
+#: framework/admin/customizer.php:629
+msgid "Email URL"
+msgstr ""
+
+#: framework/admin/customizer.php:637
+msgid "Slider"
+msgstr ""
+
+#: framework/admin/customizer.php:650
+msgid "Enable Slider"
+msgstr ""
+
+#: framework/admin/customizer.php:665
+msgid "Slider max-height"
+msgstr ""
+
+#: framework/admin/customizer.php:679
+msgid "Image 1 Title"
+msgstr ""
+
+#: framework/admin/customizer.php:680
+msgid "Enter image 1 title."
+msgstr ""
+
+#: framework/admin/customizer.php:695
+msgid "Upload Image #1"
+msgstr ""
+
+#: framework/admin/customizer.php:709
+msgid "Image 2 Title"
+msgstr ""
+
+#: framework/admin/customizer.php:710
+msgid "Enter image 2 title."
+msgstr ""
+
+#: framework/admin/customizer.php:725
+msgid "Upload Image #2"
+msgstr ""
+
+#: framework/admin/customizer.php:739
+msgid "Image 3 Title"
+msgstr ""
+
+#: framework/admin/customizer.php:740
+msgid "Enter image 3 title."
+msgstr ""
+
+#: framework/admin/customizer.php:755
+msgid "Upload Image #3"
+msgstr ""
+
+#: framework/admin/customizer.php:769
+msgid "Image 4 Title"
+msgstr ""
+
+#: framework/admin/customizer.php:770
+msgid "Enter image 4 title."
+msgstr ""
+
+#: framework/admin/customizer.php:785
+msgid "Upload Image #4"
+msgstr ""
+
+#: framework/admin/customizer.php:799
+msgid "Image 5 Title"
+msgstr ""
+
+#: framework/admin/customizer.php:800
+msgid "Enter image 5 title."
+msgstr ""
+
+#: framework/admin/customizer.php:815
+msgid "Upload Image #5"
+msgstr ""
+
+#: framework/admin/customizer.php:822
+msgid "Blog"
+msgstr ""
+
+#: framework/admin/customizer.php:835
+msgid "Enable Infinite Scroll ?"
+msgstr ""
+
+#: framework/admin/customizer.php:850
+msgid "Blog Layout"
+msgstr ""
+
+#: framework/admin/customizer.php:855
+msgid "List Style"
+msgstr ""
+
+#: framework/admin/customizer.php:856
+msgid "Grid Style"
+msgstr ""
+
+#: framework/admin/customizer.php:869
+msgid "Blog Excerpt Lenght"
+msgstr ""
+
+#: framework/admin/customizer.php:889
+msgid "Colors"
+msgstr ""
+
+#: framework/admin/customizer.php:895
+msgid "Body Background"
+msgstr ""
+
+#: framework/admin/customizer.php:901
+msgid "WooCommerce"
+msgstr ""
+
+#: framework/admin/customizer.php:914
+msgid "Products per Page"
+msgstr ""
+
+#: framework/admin/customizer.php:922
+msgid "Footer"
+msgstr ""
+
+#: framework/admin/customizer.php:935
+msgid "Back to Top"
+msgstr ""
+
+#: framework/admin/customizer.php:936
+msgid "Enable back to top button ?"
+msgstr ""
+
+#: framework/admin/customizer.php:951
+msgid "Footer Copyright"
+msgstr ""
+
+#: framework/admin/customizer.php:952
+msgid "Write your own footer copyright."
+msgstr ""
+
+#: framework/widgets/widgets.php:16
+msgid "Main Sidebar"
+msgstr ""
+
+#: framework/widgets/widgets.php:18 framework/widgets/widgets.php:28
+msgid "Appears on posts and pages."
+msgstr ""
+
+#: framework/widgets/widgets.php:26
+msgid "Second Sidebar"
+msgstr ""
+
+#: framework/widgets/widgets.php:36
+msgid "Footer Widget 1"
+msgstr ""
+
+#: framework/widgets/widgets.php:38 framework/widgets/widgets.php:48
+#: framework/widgets/widgets.php:58 framework/widgets/widgets.php:68
+msgid "Appears on footer area."
+msgstr ""
+
+#: framework/widgets/widgets.php:46
+msgid "Footer Widget 2"
+msgstr ""
+
+#: framework/widgets/widgets.php:56
+msgid "Footer Widget 3"
+msgstr ""
+
+#: framework/widgets/widgets.php:66
+msgid "Footer Widget 4"
+msgstr ""
+
+#: image.php:24
+#, php-format
+msgid ""
+"<span class=\"meta-prep meta-prep-entry-date\">Published </span> <span class="
+"\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\">%2$s</time></"
+"span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; "
+"%5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</"
+"a>."
+msgstr ""
+
+#: image.php:39
+msgid "&larr; Previous"
+msgstr ""
+
+#: image.php:40
+msgid "Next &rarr;"
+msgstr ""
+
+#: includes/agama-functions.php:42
+msgid "Sticky Header Menu"
+msgstr ""
+
+#: includes/agama-functions.php:44
+msgid "Top Menu"
+msgstr ""
+
+#: includes/agama-functions.php:49
+msgid "Primary Menu"
+msgstr ""
+
+#: includes/agama-functions.php:122
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr ""
+
+#: includes/agama-functions.php:128
+msgctxt "Open Sans font: add new subset (greek, cyrillic, vietnamese)"
+msgid "no-subset"
+msgstr ""
+
+#: includes/agama-functions.php:249
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: includes/agama-functions.php:346 single.php:20
+msgid "Post navigation"
+msgstr ""
+
+#: includes/agama-functions.php:347
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: includes/agama-functions.php:348
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: includes/agama-functions.php:373
+msgid "Pingback:"
+msgstr ""
+
+#: includes/agama-functions.php:373
+msgid "(Edit)"
+msgstr ""
+
+#: includes/agama-functions.php:388
+msgid "Post author"
+msgstr ""
+
+#: includes/agama-functions.php:394
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: includes/agama-functions.php:400
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: includes/agama-functions.php:409
+msgid "Reply"
+msgstr ""
+
+#: includes/agama-functions.php:430 includes/agama-functions.php:433
+msgid ", "
+msgstr ""
+
+#: includes/agama-functions.php:444
+#, php-format
+msgid "View all posts by %s"
+msgstr ""
+
+#: includes/agama-functions.php:450
+#, php-format
+msgid ""
+"This entry was posted in %1$s and tagged %2$s on %3$s<span class=\"by-author"
+"\"> by %4$s</span>."
+msgstr ""
+
+#: includes/agama-functions.php:452
+#, php-format
+msgid ""
+"This entry was posted in %1$s on %3$s<span class=\"by-author\"> by %4$s</"
+"span>."
+msgstr ""
+
+#: includes/agama-functions.php:454
+#, php-format
+msgid "This entry was posted on %3$s<span class=\"by-author\"> by %4$s</span>."
+msgstr ""
+
+#: includes/agama-functions.php:642
+msgid "By"
+msgstr ""
+
+#: includes/agama-functions.php:661
+#, php-format
+msgid "View all posts in %s"
+msgstr ""
+
+#: includes/agama-functions.php:670
+msgid " comments"
+msgstr ""
+
+#: includes/agama-functions.php:697 includes/agama-functions.php:702
+#: includes/agama-functions.php:718
+msgid "No more posts to load."
+msgstr ""
+
+#: index.php:29
+msgid "No posts to display"
+msgstr ""
+
+#: index.php:33
+#, php-format
+msgid "Ready to publish your first post? <a href=\"%s\">Get started here</a>."
+msgstr ""
+
+#: search.php:18
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: search.php:38
+msgid ""
+"Sorry, but nothing matched your search criteria. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: searchform.php:4
+msgctxt "screen-reader"
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:5
+msgid "Search"
+msgstr ""
+
+#: searchform.php:5
+msgctxt "agama"
+msgid "Search for:"
+msgstr ""
+
+#: single.php:21
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr ""
+
+#: single.php:22
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr ""
+
+#: tag.php:19
+#, php-format
+msgid "Tag Archives: %s"
+msgstr ""

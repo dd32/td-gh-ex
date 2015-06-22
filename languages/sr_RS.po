@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Agama\n"
-"POT-Creation-Date: 2015-06-03 16:24+0100\n"
-"PO-Revision-Date: 2015-06-03 16:27+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2015-06-22 12:33+0100\n"
+"PO-Revision-Date: 2015-06-22 12:36+0100\n"
+"Last-Translator: Jaroslav Svetlik <kdonet@gmail.com>\n"
 "Language-Team: Theme-Vision <support@theme-vision.com>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
@@ -70,6 +70,10 @@ msgstr "Arhiva Autora: %s"
 msgid "About %s"
 msgstr "O nama %s "
 
+#: bbpress.php:17 content-page.php:23 content.php:137 image.php:100
+msgid "Pages:"
+msgstr "Strane:"
+
 #: category.php:19
 #, php-format
 msgid "Category Archives: %s"
@@ -105,9 +109,8 @@ msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Nastavite sa čitanjem <span class=\"meta-nav\">&rarr;</span>"
 
 #: content-aside.php:69 content-image.php:58 content-link.php:57
-#: content-page.php:24 content-quote.php:59 content-status.php:58
-#: content.php:143 framework/admin/post_types.php:33 image.php:35
-#: includes/agama-functions.php:353
+#: content-page.php:26 content-quote.php:59 content-status.php:58
+#: content.php:143 image.php:35 includes/agama-functions.php:405
 msgid "Edit"
 msgstr "Uredi"
 
@@ -123,10 +126,6 @@ msgstr ""
 "Oprostite, ali nema pronađenih rezultata. Možda će pretraživanje pomoći da "
 "pronađete vezane postove."
 
-#: content-page.php:21 content.php:137 image.php:100
-msgid "Pages:"
-msgstr "Strane:"
-
 #: content-portfolio.php:46
 msgid "Learn More"
 msgstr "Saznaj Više"
@@ -140,37 +139,37 @@ msgstr "Istaknuti post"
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Pogledaj sve postove od %s <span class=\"meta-nav\">&rarr;</span>"
 
-#: framework/admin/about.php:29 framework/admin/about.php:30
+#: framework/admin/about.php:27 framework/admin/about.php:28
 msgid "About Agama"
 msgstr "Agama Detalji"
 
-#: framework/admin/about.php:44
+#: framework/admin/about.php:42
 #, php-format
 msgid "Welcome to Agama v%s"
 msgstr "Dobro došli u Agama v%s"
 
-#: framework/admin/about.php:47
+#: framework/admin/about.php:45
 msgid "Thank you for using Agama theme!"
 msgstr "Hvala što koristite Agama temu!"
 
-#: framework/admin/about.php:48
+#: framework/admin/about.php:46
 msgid "Consider supporting us with any desired amount donation."
 msgstr "Razmislite da nas podržite donacijom sa vašim željenim iznosom."
 
-#: framework/admin/about.php:49
+#: framework/admin/about.php:47
 msgid "Even the smallest donation amount means a lot for us."
 msgstr "Čak i ona najmanja suma nam znači mnogo."
 
-#: framework/admin/about.php:50
+#: framework/admin/about.php:48
 msgid ""
 "With donations you are helping us for faster theme development & updates."
 msgstr "Sa donacijama nam pomažete u bržem razvijanju i ažuriranju teme."
 
-#: framework/admin/about.php:65
+#: framework/admin/about.php:63
 msgid "or"
 msgstr "ili"
 
-#: framework/admin/about.php:67
+#: framework/admin/about.php:65
 #, php-format
 msgid ""
 "You can support us by Buying an %s theme with allot new features & "
@@ -179,724 +178,337 @@ msgstr ""
 "Možete nas podržati tako što ćete kupiti %s temu sa mnogo novih opcija i "
 "ekstenzija!"
 
-#: framework/admin/about.php:71
+#: framework/admin/about.php:69
 msgid "What's New"
 msgstr "Šta je Novo"
 
-#: framework/admin/about.php:75
+#: framework/admin/about.php:73
+msgid "Changelog Agama v1.0.3"
+msgstr "Info Agama v1.0.3"
+
+#: framework/admin/about.php:78
+msgid "Changelog Agama v1.0.2"
+msgstr "Info Agama v1.0.2"
+
+#: framework/admin/about.php:83
 msgid "Changelog Agama v1.0.1"
 msgstr "Changelog Agama v1.0.1"
 
-#: framework/admin/customizer.php:40
+#: framework/admin/customizer.php:25
+msgid "General Settings"
+msgstr "Podešavanja"
+
+#: framework/admin/customizer.php:38
+msgid "NiceScroll"
+msgstr "NiceScroll"
+
+#: framework/admin/customizer.php:39
+msgid "Enable NiceScroll ?"
+msgstr "Omogući NiceScroll"
+
+#: framework/admin/customizer.php:47
 msgid "Header"
 msgstr "Glava"
 
-#: framework/admin/customizer.php:53
+#: framework/admin/customizer.php:60
+msgid "Sticky Header"
+msgstr "Sticky Header"
+
+#: framework/admin/customizer.php:61
+msgid "Enable sticky header ?"
+msgstr "Omogući sticky header ?"
+
+#: framework/admin/customizer.php:80
 msgid "Top Margin"
 msgstr "Top Margin"
 
-#: framework/admin/customizer.php:82
+#: framework/admin/customizer.php:81
+msgid "If sticky header enabled margin will be 0px!"
+msgstr "Ako sticky header omogucen margina ce biti 0px!"
+
+#: framework/admin/customizer.php:110
 msgid "Top Border Size"
 msgstr "Top Border Size"
 
-#: framework/admin/customizer.php:102
+#: framework/admin/customizer.php:130
 msgid "Logo"
 msgstr "Logo"
 
-#: framework/admin/customizer.php:115
+#: framework/admin/customizer.php:143
 msgid "Upload Logo"
 msgstr "Dodaj Logo"
 
-#: framework/admin/customizer.php:131
+#: framework/admin/customizer.php:159
 msgid "Enable Top Navigation"
 msgstr "Omogući Gornju Navigaciju"
 
-#: framework/admin/customizer.php:140
+#: framework/admin/customizer.php:168
 msgid "Styling"
 msgstr "Stil"
 
-#: framework/admin/customizer.php:153
+#: framework/admin/customizer.php:181
 msgid "Primary Color"
 msgstr "Primarna Boja"
 
-#: framework/admin/customizer.php:167
+#: framework/admin/customizer.php:195
 msgid "Skin"
 msgstr "Skin"
 
-#: framework/admin/customizer.php:172
+#: framework/admin/customizer.php:200
 msgid "Light"
 msgstr "Svetli"
 
-#: framework/admin/customizer.php:173
+#: framework/admin/customizer.php:201
 msgid "Dark"
 msgstr "Tamni"
 
-#: framework/admin/customizer.php:179
+#: framework/admin/customizer.php:207
 msgid "Social Icons"
 msgstr "Društvene Mreže"
 
-#: framework/admin/customizer.php:192
+#: framework/admin/customizer.php:220
 msgid "Enable social icons in top nav ?"
 msgstr "Omogući društvene mreže na top navigaciji ?"
 
-#: framework/admin/customizer.php:207
+#: framework/admin/customizer.php:235
 msgid "Enable social icons in footer ?"
 msgstr "Omogući društvene mreže u footer ?"
 
-#: framework/admin/customizer.php:222
+#: framework/admin/customizer.php:250
 msgid "Icons URL Target"
 msgstr "Icons URL Target"
 
-#: framework/admin/customizer.php:241
+#: framework/admin/customizer.php:269
 msgid "Facebook URL"
 msgstr "Facebook link"
 
-#: framework/admin/customizer.php:256
+#: framework/admin/customizer.php:284
 msgid "Twitter URL"
 msgstr "Twitter link"
 
-#: framework/admin/customizer.php:271
+#: framework/admin/customizer.php:299
 msgid "Flickr URL"
 msgstr "Flickr link"
 
-#: framework/admin/customizer.php:286
+#: framework/admin/customizer.php:314
 msgid "RSS URL"
 msgstr "RSS link"
 
-#: framework/admin/customizer.php:301
+#: framework/admin/customizer.php:329
 msgid "Vimeo URL"
 msgstr "Vimeo link"
 
-#: framework/admin/customizer.php:316
+#: framework/admin/customizer.php:344
 msgid "Youtube URL"
 msgstr "Youtube link"
 
-#: framework/admin/customizer.php:331
+#: framework/admin/customizer.php:359
 msgid "Instagram URL"
 msgstr "Instagram link"
 
-#: framework/admin/customizer.php:346
+#: framework/admin/customizer.php:374
 msgid "Pinterest URL"
 msgstr "Pinterest link"
 
-#: framework/admin/customizer.php:361
+#: framework/admin/customizer.php:389
 msgid "Tumblr URL"
 msgstr "Tumblr link"
 
-#: framework/admin/customizer.php:376
+#: framework/admin/customizer.php:404
 msgid "Google+ URL"
 msgstr "Google+ link"
 
-#: framework/admin/customizer.php:391
+#: framework/admin/customizer.php:419
 msgid "Dribbble URL"
 msgstr "Dribbble link"
 
-#: framework/admin/customizer.php:406
+#: framework/admin/customizer.php:434
 msgid "Digg URL"
 msgstr "Digg link"
 
-#: framework/admin/customizer.php:421
+#: framework/admin/customizer.php:449
 msgid "Linkedin URL"
 msgstr "Linkedin link"
 
-#: framework/admin/customizer.php:436
+#: framework/admin/customizer.php:464
 msgid "Blogger URL"
 msgstr "Blogger link"
 
-#: framework/admin/customizer.php:451
+#: framework/admin/customizer.php:479
 msgid "Skype URL"
 msgstr "Skype link"
 
-#: framework/admin/customizer.php:466
+#: framework/admin/customizer.php:494
 msgid "Forrst URL"
 msgstr "Forrst link"
 
-#: framework/admin/customizer.php:481
+#: framework/admin/customizer.php:509
 msgid "Myspace URL"
 msgstr "Myspace link"
 
-#: framework/admin/customizer.php:496
+#: framework/admin/customizer.php:524
 msgid "Deviantart URL"
 msgstr "Deviantart link"
 
-#: framework/admin/customizer.php:511
+#: framework/admin/customizer.php:539
 msgid "Yahoo URL"
 msgstr "Yahoo link"
 
-#: framework/admin/customizer.php:526
+#: framework/admin/customizer.php:554
 msgid "Reddit URL"
 msgstr "Reddit link"
 
-#: framework/admin/customizer.php:541
+#: framework/admin/customizer.php:569
 msgid "PayPal URL"
 msgstr "PayPal link"
 
-#: framework/admin/customizer.php:556
+#: framework/admin/customizer.php:584
 msgid "Dropbox URL"
 msgstr "Dropbox link"
 
-#: framework/admin/customizer.php:571
+#: framework/admin/customizer.php:599
 msgid "Soundcloud URL"
 msgstr "Soundcloud link"
 
-#: framework/admin/customizer.php:586
+#: framework/admin/customizer.php:614
 msgid "VK URL"
 msgstr "VK link"
 
-#: framework/admin/customizer.php:601
+#: framework/admin/customizer.php:629
 msgid "Email URL"
 msgstr "Email link"
 
-#: framework/admin/customizer.php:609
+#: framework/admin/customizer.php:637
 msgid "Slider"
 msgstr "Slajder"
 
-#: framework/admin/customizer.php:622
-msgid "Image #1"
-msgstr "Slika #1"
-
-#: framework/admin/customizer.php:636
-msgid "Image #2"
-msgstr "Slika #2"
-
 #: framework/admin/customizer.php:650
-msgid "Image #3"
-msgstr "Slika #3"
-
-#: framework/admin/customizer.php:664
-msgid "Image #4"
-msgstr "Slika #4"
-
-#: framework/admin/customizer.php:678
-msgid "Image #5"
-msgstr "Slika #5"
-
-#: framework/admin/customizer.php:685
-msgid "Blog"
-msgstr "Blog"
-
-#: framework/admin/customizer.php:698
-msgid "Blog Layout"
-msgstr "Blog Izgled"
-
-#: framework/admin/customizer.php:703
-msgid "List Style"
-msgstr "List Style"
-
-#: framework/admin/customizer.php:704
-msgid "Grid Style"
-msgstr "Grid Style"
-
-#: framework/admin/customizer.php:717
-msgid "Blog Excerpt Lenght"
-msgstr "Dužina Excerpt-a"
-
-#: framework/admin/customizer.php:737
-msgid "Colors"
-msgstr "Boje"
-
-#: framework/admin/customizer.php:743
-msgid "Body Background"
-msgstr "Body Pozadina"
-
-#: framework/admin/customizer.php:749
-msgid "Footer"
-msgstr "Footer"
-
-#: framework/admin/customizer.php:762
-msgid "Footer Copyright"
-msgstr "Footer Autorsko Pravo"
-
-#: framework/admin/customizer.php:763
-msgid "Write your own footer copyright."
-msgstr "Promenite footer autorski tekst"
-
-#: framework/admin/metaboxes.php:29
-msgid "Agama Options"
-msgstr "Agama Opcije"
-
-#: framework/admin/metaboxes.php:115 framework/admin/metaboxes.php:158
-#: framework/admin/metaboxes.php:175 framework/admin/metaboxes.php:187
-msgid "Select Slider"
-msgstr "Izaberite Slajder"
-
-#: framework/admin/metaboxes.php:119 framework/admin/metaboxes.php:171
-msgid "Layer Slider"
-msgstr "Layer Slider"
-
-#: framework/admin/metaboxes.php:124 framework/admin/metaboxes.php:183
-msgid "Revolution Slider"
-msgstr "Revolution Slider"
-
-#: framework/admin/metaboxes.php:133
-msgid "Slider Options"
-msgstr "Slajder Opcije"
-
-#: framework/admin/metaboxes.php:134
-msgid "Page Options"
-msgstr "Page Opcije"
-
-#: framework/admin/metaboxes.php:135
-msgid "Sidebar Options"
-msgstr "Sidebar Opcije"
-
-#: framework/admin/metaboxes.php:145
 msgid "Enable Slider"
 msgstr "Omogući Slajder"
 
-#: framework/admin/metaboxes.php:149
-msgid "On"
-msgstr "Omogući"
+#: framework/admin/customizer.php:665
+msgid "Slider max-height"
+msgstr "Slajder max-height"
 
-#: framework/admin/metaboxes.php:150
-msgid "Off"
-msgstr "Onemogući"
+#: framework/admin/customizer.php:679
+msgid "Image 1 Title"
+msgstr "Naslov Slike 1"
 
-#: framework/admin/post_types.php:26 framework/admin/post_types.php:27
-#: framework/admin/post_types.php:28 framework/admin/post_types.php:29
-msgid "Portfolio"
-msgstr "Portfolio"
+#: framework/admin/customizer.php:680
+msgid "Enter image 1 title."
+msgstr "Unesite naslov za sliku 1."
 
-#: framework/admin/post_types.php:30 framework/admin/post_types.php:31
-#: framework/admin/post_types.php:32
-msgid "Add New"
-msgstr "Dodaj Novi"
-
-#: framework/admin/post_types.php:34
-msgid "View Portfolio"
-msgstr "Pogledaj Portfolio"
-
-#: framework/admin/post_types.php:35
-msgid "All Items"
-msgstr "Svi Predmeti"
-
-#: framework/admin/post_types.php:36
-msgid "Search Portfolio"
-msgstr "Traži Portfolio"
-
-#: framework/admin/post_types.php:37
-msgid "Parent Portfolio:"
-msgstr "Parent Portfolio:"
-
-#: framework/admin/post_types.php:38
-msgid "No portfolio found."
-msgstr "Nema pronađenih portfolio stavki."
-
-#: framework/admin/post_types.php:39
-msgid "No portfolio found in Trash."
-msgstr "Nema pronađenih portfolio stavki u smeću."
-
-#: framework/admin/post_types.php:69
-msgid "Category"
-msgstr "Kategorija"
-
-#: framework/admin/post_types.php:70 framework/admin/post_types.php:79
-msgid "Categories"
-msgstr "Kategorije"
-
-#: framework/admin/post_types.php:71
-msgid "Search Categories"
-msgstr "Traži Kategorije"
-
-#: framework/admin/post_types.php:72
-msgid "All Categories"
-msgstr "Sve Kategorije"
-
-#: framework/admin/post_types.php:73
-msgid "Parent Category"
-msgstr "Parent Kategorija"
-
-#: framework/admin/post_types.php:74
-msgid "Parent Category:"
-msgstr "Parent Kategorija:"
-
-#: framework/admin/post_types.php:75
-msgid "Edit Category"
-msgstr "Izmeni Kategoriju"
-
-#: framework/admin/post_types.php:76
-msgid "Update Category"
-msgstr "Ažuriraj Kategoriju"
-
-#: framework/admin/post_types.php:77
-msgid "Add New Category"
-msgstr "Dodaj Novu Kategoriju"
-
-#: framework/admin/post_types.php:78
-msgid "New Category Name"
-msgstr "Novo Ime Kategorije"
-
-#: framework/admin/post_types.php:94 framework/admin/post_types.php:104
-msgid "Skills"
-msgstr "Veštine"
-
-#: framework/admin/post_types.php:95
-msgid "Skill"
-msgstr "Veština"
-
-#: framework/admin/post_types.php:96
-msgid "Search Skills"
-msgstr "Traži Veštine"
-
-#: framework/admin/post_types.php:97
-msgid "All Skills"
-msgstr "Sve Veštine"
-
-#: framework/admin/post_types.php:98
-msgid "Parent Skill"
-msgstr "Parent Veština"
-
-#: framework/admin/post_types.php:99
-msgid "Parent Skill:"
-msgstr "Parent Veština:"
-
-#: framework/admin/post_types.php:100
-msgid "Edit Skill"
-msgstr "Uredi Veštinu"
-
-#: framework/admin/post_types.php:101
-msgid "Update Skill"
-msgstr "Ažuriraj Veštinu"
-
-#: framework/admin/post_types.php:102
-msgid "Add New Skill"
-msgstr "Nova Veština"
-
-#: framework/admin/post_types.php:103
-msgid "New Skill Name"
-msgstr "Novo Ime Veštine"
-
-#: framework/class-tgm-plugin-activation.php:161
-#: framework/framework-init.php:75
-msgid "Install Required Plugins"
-msgstr "Instaliraj Potrebne Dodatke"
-
-#: framework/class-tgm-plugin-activation.php:162
-#: framework/framework-init.php:76
-msgid "Install Plugins"
-msgstr "Instaliraj Dodatke"
-
-#: framework/class-tgm-plugin-activation.php:163
-#: framework/framework-init.php:77
-#, php-format
-msgid "Installing Plugin: %s"
-msgstr "Instaliranje Dodatka: %s"
-
-#: framework/class-tgm-plugin-activation.php:164
-msgid "Something went wrong."
-msgstr "Nešto nije bilo u redu."
-
-#: framework/class-tgm-plugin-activation.php:165
-#: framework/framework-init.php:79
-#, php-format
-msgid "This theme requires the following plugin: %1$s."
-msgid_plural "This theme requires the following plugins: %1$s."
-msgstr[0] "Ova tema zahteva sledeći dodatak: %1$s."
-msgstr[1] "Ova tema zahteva sledeći dodatak: %1$s."
-msgstr[2] "Ova tema zahteva sledeće dodatke: %1$s."
-
-#: framework/class-tgm-plugin-activation.php:166
-#: framework/framework-init.php:80
-#, php-format
-msgid "This theme recommends the following plugin: %1$s."
-msgid_plural "This theme recommends the following plugins: %1$s."
-msgstr[0] "Ova tema preporučuje sledeći dodatak: %1$s."
-msgstr[1] "Ova tema preporučuje sledeći dodataka: %1$s."
-msgstr[2] "Ova tema preporučuje sledeće dodatke: %1$s."
-
-#: framework/class-tgm-plugin-activation.php:167
-#: framework/framework-init.php:81
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to install the %s plugin. "
-"Contact the administrator of this site for help on getting the plugin "
-"installed."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to install the %s "
-"plugins. Contact the administrator of this site for help on getting the "
-"plugins installed."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-"Izvini, ali vi nemate potrebnu dozvolu da instalirate %s dodatak. "
-"Kontaktirajte administratora sajta za pomoć."
-
-#: framework/class-tgm-plugin-activation.php:168
-#: framework/framework-init.php:82
-#, php-format
-msgid "The following required plugin is currently inactive: %1$s."
-msgid_plural "The following required plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] "Sledeći dodaci su neaktivni: %1$s."
-msgstr[2] "Sldedći dodatak je neaktivan: %1$s."
-
-#: framework/class-tgm-plugin-activation.php:169
-#: framework/framework-init.php:83
-#, php-format
-msgid "The following recommended plugin is currently inactive: %1$s."
-msgid_plural "The following recommended plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: framework/class-tgm-plugin-activation.php:170
-#: framework/framework-init.php:84
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to activate the %s "
-"plugin. Contact the administrator of this site for help on getting the "
-"plugin activated."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to activate the %s "
-"plugins. Contact the administrator of this site for help on getting the "
-"plugins activated."
-msgstr[0] ""
-msgstr[1] ""
-
-#: framework/class-tgm-plugin-activation.php:171
-#: framework/framework-init.php:85
-#, php-format
-msgid ""
-"The following plugin needs to be updated to its latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgid_plural ""
-"The following plugins need to be updated to their latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: framework/class-tgm-plugin-activation.php:172
-#: framework/framework-init.php:86
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to update the %s plugin. "
-"Contact the administrator of this site for help on getting the plugin "
-"updated."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to update the %s plugins. "
-"Contact the administrator of this site for help on getting the plugins "
-"updated."
-msgstr[0] ""
-msgstr[1] ""
-
-#: framework/class-tgm-plugin-activation.php:173
-#: framework/framework-init.php:87
-msgid "Begin installing plugin"
-msgid_plural "Begin installing plugins"
-msgstr[0] "Počni sa instaliranjem dodatka"
-msgstr[1] "Počni sa instaliranjem dodataka"
-msgstr[2] "Počni sa instaliranjem dodatka"
-
-#: framework/class-tgm-plugin-activation.php:174
-#: framework/framework-init.php:88
-msgid "Begin activating plugin"
-msgid_plural "Begin activating plugins"
-msgstr[0] "Počni sa aktivacijom dodatka"
-msgstr[1] "Počni sa aktivacijom dodataka"
-msgstr[2] "Počni sa aktivacijom dodatka"
-
-#: framework/class-tgm-plugin-activation.php:175
-#: framework/framework-init.php:89
-msgid "Return to Required Plugins Installer"
-msgstr "Vrati se na instaler potrebnih dodataka"
-
-#: framework/class-tgm-plugin-activation.php:176
-msgid "Return to the dashboard"
-msgstr "Povratak na komandnu tablu"
-
-#: framework/class-tgm-plugin-activation.php:177
-#: framework/class-tgm-plugin-activation.php:1956
-#: framework/framework-init.php:90
-msgid "Plugin activated successfully."
-msgstr "Dodatak je uspešno aktiviran."
-
-#: framework/class-tgm-plugin-activation.php:178
-#: framework/class-tgm-plugin-activation.php:1644
-msgid "The following plugin was activated successfully:"
-msgid_plural "The following plugins were activated successfully:"
-msgstr[0] "Sledeći dodatak je uspešno aktiviran:"
-msgstr[1] "Sledeći dodaci su uspešno aktivirani:"
-msgstr[2] "Sledeći dodatak je uspešno aktiviran:"
-
-#: framework/class-tgm-plugin-activation.php:179
-#, php-format
-msgid "All plugins installed and activated successfully. %1$s"
-msgstr "Svi dodaci su instalirani i uspešno aktivirani. %1$s"
-
-#: framework/class-tgm-plugin-activation.php:180
-msgid "Dismiss this notice"
-msgstr "Odbaci ovo obaveštenje"
-
-#: framework/class-tgm-plugin-activation.php:532
-#: framework/class-tgm-plugin-activation.php:2173
-msgid "Return to the Dashboard"
-msgstr "Povratak na komandnu tablu"
-
-#: framework/class-tgm-plugin-activation.php:1167
-#: framework/class-tgm-plugin-activation.php:1348
-msgid "Private Repository"
-msgstr "Privatna spremišta"
-
-#: framework/class-tgm-plugin-activation.php:1170
-#: framework/class-tgm-plugin-activation.php:1351
-msgid "Pre-Packaged"
-msgstr "Pre-pakovano"
-
-#: framework/class-tgm-plugin-activation.php:1175
-msgid "WordPress Repository"
-msgstr "Wordpress spremišta"
-
-#: framework/class-tgm-plugin-activation.php:1178
-msgid "Required"
-msgstr "Potrebno"
-
-#: framework/class-tgm-plugin-activation.php:1178
-msgid "Recommended"
-msgstr "Preporučeno"
-
-#: framework/class-tgm-plugin-activation.php:1181
-msgid "Not Installed"
-msgstr "Nije instalirano"
-
-#: framework/class-tgm-plugin-activation.php:1183
-msgid "Installed But Not Activated"
-msgstr "Instalirano, ali nije aktivirano"
-
-#: framework/class-tgm-plugin-activation.php:1288
-#: framework/class-tgm-plugin-activation.php:1409
-msgid "Install"
-msgstr "Instalirajte"
-
-#: framework/class-tgm-plugin-activation.php:1312
-#: framework/class-tgm-plugin-activation.php:1410
-msgid "Activate"
-msgstr "Aktivirajte"
-
-#: framework/class-tgm-plugin-activation.php:1372
-#, php-format
-msgid ""
-"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
-"Dashboard\">Return to the Dashboard</a>"
+#: framework/admin/customizer.php:695
+msgid "Upload Image #1"
 msgstr ""
-"Nema dodataka za instalaciju ili aktiviranje. <a href=\"%1$s\" title="
-"\"Povratak na Kontrolnu tablu\">Povratak na Kontrolnu tablu</a>"
 
-#: framework/class-tgm-plugin-activation.php:1388
-msgid "Plugin"
-msgstr "Dodatak"
-
-#: framework/class-tgm-plugin-activation.php:1389
-msgid "Source"
-msgstr "Izvor"
-
-#: framework/class-tgm-plugin-activation.php:1390
-msgid "Type"
-msgstr "Tip"
-
-#: framework/class-tgm-plugin-activation.php:1391
-msgid "Status"
-msgstr "Status"
-
-#: framework/class-tgm-plugin-activation.php:1939
-msgid "Install package not available."
-msgstr "Paket za instaliranje nije dostupan."
-
-#: framework/class-tgm-plugin-activation.php:1940
-#, php-format
-msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
-msgstr "Skidanje instaliranog paketa iz <span class=\"code\">%s</span>&#8230;"
-
-#: framework/class-tgm-plugin-activation.php:1941
-msgid "Unpacking the package&#8230;"
-msgstr "Raspakovanje paketa&#8230;"
-
-#: framework/class-tgm-plugin-activation.php:1942
-msgid "Installing the plugin&#8230;"
-msgstr "Instaliranje dodatka&#8230;"
-
-#: framework/class-tgm-plugin-activation.php:1943
-msgid "Plugin install failed."
-msgstr "Instalacija dodatka je neuspešna."
-
-#: framework/class-tgm-plugin-activation.php:1944
-msgid "Plugin installed successfully."
-msgstr "Dodatak je instaliran uspešno."
-
-#: framework/class-tgm-plugin-activation.php:1955
-msgid "Plugin activation failed."
-msgstr "Aktivacija dodatka je neuspešna."
-
-#: framework/class-tgm-plugin-activation.php:2069
-msgid ""
-"The installation and activation process is starting. This process may take a "
-"while on some hosts, so please be patient."
+#: framework/admin/customizer.php:709
+msgid "Image 2 Title"
 msgstr ""
-"Instalacioni i aktivacioni proces su počeli. Ovaj proces može da potraje na "
-"nekim provajderima, pa vas molimo da budete strpljivi."
 
-#: framework/class-tgm-plugin-activation.php:2070
-#, php-format
-msgid "%1$s installed and activated successfully."
-msgstr "%1$s Instalirano i aktivirano uspešno."
-
-#: framework/class-tgm-plugin-activation.php:2070
-#: framework/class-tgm-plugin-activation.php:2079
-msgid "Show Details"
-msgstr "Pokaži detalje"
-
-#: framework/class-tgm-plugin-activation.php:2070
-#: framework/class-tgm-plugin-activation.php:2079
-msgid "Hide Details"
-msgstr "Sakrij detalje"
-
-#: framework/class-tgm-plugin-activation.php:2071
-msgid "All installations and activations have been completed."
-msgstr "Sve instalacije i aktivacije su završene."
-
-#: framework/class-tgm-plugin-activation.php:2072
-#, php-format
-msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr "Instaliranje i aktiviranje plugina %1$s (%2$d/%3$d)"
-
-#: framework/class-tgm-plugin-activation.php:2076
-msgid ""
-"The installation process is starting. This process may take a while on some "
-"hosts, so please be patient."
+#: framework/admin/customizer.php:710
+msgid "Enter image 2 title."
 msgstr ""
-"Proces instaliranja počinje.  Ovaj proces može da potraje na nekim "
-"provajderima, pa vas molimo da budete strpljivi."
 
-#: framework/class-tgm-plugin-activation.php:2077
-#, php-format
-msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr "Došlo je do greške prilikom instalacije %1$s: <strong>%2$s</strong>."
+#: framework/admin/customizer.php:725
+msgid "Upload Image #2"
+msgstr ""
 
-#: framework/class-tgm-plugin-activation.php:2078
-#, php-format
-msgid "The installation of %1$s failed."
-msgstr "Instalacija nije %1$s uspela."
+#: framework/admin/customizer.php:739
+msgid "Image 3 Title"
+msgstr ""
 
-#: framework/class-tgm-plugin-activation.php:2079
-#, php-format
-msgid "%1$s installed successfully."
-msgstr "%1$s Instalacija je uspela."
+#: framework/admin/customizer.php:740
+msgid "Enter image 3 title."
+msgstr ""
 
-#: framework/class-tgm-plugin-activation.php:2080
-msgid "All installations have been completed."
-msgstr "Sve instalacije su završene."
+#: framework/admin/customizer.php:755
+msgid "Upload Image #3"
+msgstr ""
 
-#: framework/class-tgm-plugin-activation.php:2081
-#, php-format
-msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr "Instaliranje dodatka %1$s (%2$d/%3$d)"
+#: framework/admin/customizer.php:769
+msgid "Image 4 Title"
+msgstr ""
 
-#: framework/framework-init.php:78
-msgid "Something went wrong with the plugin API."
-msgstr "Nešto nije bilo u redu sa API-jem dodatka"
+#: framework/admin/customizer.php:770
+msgid "Enter image 4 title."
+msgstr ""
 
-#: framework/framework-init.php:91
-#, php-format
-msgid "All plugins installed and activated successfully. %s"
-msgstr "Svi dodaci su instalirani i uspešno aktivirani. %s"
+#: framework/admin/customizer.php:785
+msgid "Upload Image #4"
+msgstr ""
+
+#: framework/admin/customizer.php:799
+msgid "Image 5 Title"
+msgstr ""
+
+#: framework/admin/customizer.php:800
+msgid "Enter image 5 title."
+msgstr ""
+
+#: framework/admin/customizer.php:815
+msgid "Upload Image #5"
+msgstr ""
+
+#: framework/admin/customizer.php:822
+msgid "Blog"
+msgstr "Blog"
+
+#: framework/admin/customizer.php:835
+msgid "Enable Infinite Scroll ?"
+msgstr ""
+
+#: framework/admin/customizer.php:850
+msgid "Blog Layout"
+msgstr "Blog Izgled"
+
+#: framework/admin/customizer.php:855
+msgid "List Style"
+msgstr "List Style"
+
+#: framework/admin/customizer.php:856
+msgid "Grid Style"
+msgstr "Grid Style"
+
+#: framework/admin/customizer.php:869
+msgid "Blog Excerpt Lenght"
+msgstr "Dužina Excerpt-a"
+
+#: framework/admin/customizer.php:889
+msgid "Colors"
+msgstr "Boje"
+
+#: framework/admin/customizer.php:895
+msgid "Body Background"
+msgstr "Body Pozadina"
+
+#: framework/admin/customizer.php:901
+msgid "WooCommerce"
+msgstr "WooCommerce"
+
+#: framework/admin/customizer.php:914
+msgid "Products per Page"
+msgstr "Proizvodi po Stranici"
+
+#: framework/admin/customizer.php:922
+msgid "Footer"
+msgstr "Footer"
+
+#: framework/admin/customizer.php:935
+msgid "Back to Top"
+msgstr "Povratak na Vrh"
+
+#: framework/admin/customizer.php:936
+msgid "Enable back to top button ?"
+msgstr ""
+
+#: framework/admin/customizer.php:951
+msgid "Footer Copyright"
+msgstr "Footer Autorsko Pravo"
+
+#: framework/admin/customizer.php:952
+msgid "Write your own footer copyright."
+msgstr "Promenite footer autorski tekst"
 
 #: framework/widgets/widgets.php:16
 msgid "Main Sidebar"
@@ -931,18 +543,6 @@ msgstr "Footer Vidžet 3"
 msgid "Footer Widget 4"
 msgstr "Footer Vidžet 4"
 
-#: header.php:42
-msgid "Top Navigation"
-msgstr "Top Navigacija"
-
-#: header.php:43 header.php:68
-msgid "Skip to content"
-msgstr "Idi na sadržaj"
-
-#: header.php:67
-msgid "Main Navigation"
-msgstr "Glavna Navigacija"
-
 #: image.php:24
 #, php-format
 msgid ""
@@ -966,76 +566,80 @@ msgstr "&larr; Prethodni"
 msgid "Next &rarr;"
 msgstr "Sledeći &rarr;"
 
-#: includes/agama-functions.php:38
+#: includes/agama-functions.php:42
+msgid "Sticky Header Menu"
+msgstr ""
+
+#: includes/agama-functions.php:44
 msgid "Top Menu"
 msgstr "Top Meni"
 
-#: includes/agama-functions.php:39
+#: includes/agama-functions.php:49
 msgid "Primary Menu"
 msgstr "Glavni Meni"
 
-#: includes/agama-functions.php:116
+#: includes/agama-functions.php:122
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr "on"
 
-#: includes/agama-functions.php:122
+#: includes/agama-functions.php:128
 msgctxt "Open Sans font: add new subset (greek, cyrillic, vietnamese)"
 msgid "no-subset"
 msgstr "no-subset"
 
-#: includes/agama-functions.php:197
+#: includes/agama-functions.php:249
 #, php-format
 msgid "Page %s"
 msgstr "Strana %s"
 
-#: includes/agama-functions.php:294 single.php:20
+#: includes/agama-functions.php:346 single.php:20
 msgid "Post navigation"
 msgstr "Članci navigacija"
 
-#: includes/agama-functions.php:295
+#: includes/agama-functions.php:347
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Stariji članci"
 
-#: includes/agama-functions.php:296
+#: includes/agama-functions.php:348
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Noviji članci <span class=\"meta-nav\">&rarr;</span>"
 
-#: includes/agama-functions.php:321
+#: includes/agama-functions.php:373
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: includes/agama-functions.php:321
+#: includes/agama-functions.php:373
 msgid "(Edit)"
 msgstr "(Uredi)"
 
-#: includes/agama-functions.php:336
+#: includes/agama-functions.php:388
 msgid "Post author"
 msgstr "Autor posta"
 
-#: includes/agama-functions.php:342
+#: includes/agama-functions.php:394
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s at %2$s"
 
-#: includes/agama-functions.php:348
+#: includes/agama-functions.php:400
 msgid "Your comment is awaiting moderation."
 msgstr "Vaš komentar čeka odobrenje."
 
-#: includes/agama-functions.php:357
+#: includes/agama-functions.php:409
 msgid "Reply"
 msgstr "Odgovori"
 
-#: includes/agama-functions.php:378 includes/agama-functions.php:381
+#: includes/agama-functions.php:430 includes/agama-functions.php:433
 msgid ", "
 msgstr ", "
 
-#: includes/agama-functions.php:392
+#: includes/agama-functions.php:444
 #, php-format
 msgid "View all posts by %s"
 msgstr "Pogledaj sve postove od %s"
 
-#: includes/agama-functions.php:398
+#: includes/agama-functions.php:450
 #, php-format
 msgid ""
 "This entry was posted in %1$s and tagged %2$s on %3$s<span class=\"by-author"
@@ -1044,7 +648,7 @@ msgstr ""
 "Ovaj unos je objavljen u %1$s i tagovan %2$s na %3$s<span class=\"by-author"
 "\"> by %4$s</span>."
 
-#: includes/agama-functions.php:400
+#: includes/agama-functions.php:452
 #, php-format
 msgid ""
 "This entry was posted in %1$s on %3$s<span class=\"by-author\"> by %4$s</"
@@ -1053,24 +657,29 @@ msgstr ""
 "Ovaj unost je objavljen u %1$s na %3$s<span class=\"by-author\"> od %4$s</"
 "span>."
 
-#: includes/agama-functions.php:402
+#: includes/agama-functions.php:454
 #, php-format
 msgid "This entry was posted on %3$s<span class=\"by-author\"> by %4$s</span>."
 msgstr ""
 "Ovaj unos je objavljen od  %3$s<span class=\"by-author\"> by %4$s</span>."
 
-#: includes/agama-functions.php:596
+#: includes/agama-functions.php:642
 msgid "By"
 msgstr "Od"
 
-#: includes/agama-functions.php:615
+#: includes/agama-functions.php:661
 #, php-format
 msgid "View all posts in %s"
 msgstr "Pogledaj sve postove u %s"
 
-#: includes/agama-functions.php:624
+#: includes/agama-functions.php:670
 msgid " comments"
 msgstr "komentari"
+
+#: includes/agama-functions.php:697 includes/agama-functions.php:702
+#: includes/agama-functions.php:718
+msgid "No more posts to load."
+msgstr ""
 
 #: index.php:29
 msgid "No posts to display"
@@ -1080,20 +689,6 @@ msgstr "Nema postova"
 #, php-format
 msgid "Ready to publish your first post? <a href=\"%s\">Get started here</a>."
 msgstr "Spremni da objavite vaš prvi post? <a href=\"%s\">Počnite ovde</a>."
-
-#: page-templates/portfolio-four-columns.php:28
-#: page-templates/portfolio-one-column.php:27
-#: page-templates/portfolio-three-columns.php:28
-#: page-templates/portfolio-two-columns.php:28
-msgid "All"
-msgstr "Sve"
-
-#: page-templates/portfolio-four-columns.php:43
-#: page-templates/portfolio-one-column.php:42
-#: page-templates/portfolio-three-columns.php:43
-#: page-templates/portfolio-two-columns.php:43
-msgid "No portfolio items found."
-msgstr "Nema pronađenih portfolio stavki."
 
 #: search.php:18
 #, php-format
@@ -1107,6 +702,20 @@ msgid ""
 msgstr ""
 "Žao nam je, ali ništa vezano za vašu pretragu nije pronađeno. Pokušajte "
 "ponovo sa nekim drugačijim terminima."
+
+#: searchform.php:4
+msgctxt "screen-reader"
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:5
+msgid "Search"
+msgstr ""
+
+#: searchform.php:5
+msgctxt "agama"
+msgid "Search for:"
+msgstr ""
 
 #: single.php:21
 msgctxt "Previous post link"
@@ -1122,6 +731,327 @@ msgstr "&rarr;"
 #, php-format
 msgid "Tag Archives: %s"
 msgstr "Tag Arhive: %s"
+
+#~ msgid "Image #1"
+#~ msgstr "Slika #1"
+
+#~ msgid "Image #2"
+#~ msgstr "Slika #2"
+
+#~ msgid "Image #3"
+#~ msgstr "Slika #3"
+
+#~ msgid "Image #4"
+#~ msgstr "Slika #4"
+
+#~ msgid "Image #5"
+#~ msgstr "Slika #5"
+
+#~ msgid "Agama Options"
+#~ msgstr "Agama Opcije"
+
+#~ msgid "Select Slider"
+#~ msgstr "Izaberite Slajder"
+
+#~ msgid "Layer Slider"
+#~ msgstr "Layer Slider"
+
+#~ msgid "Revolution Slider"
+#~ msgstr "Revolution Slider"
+
+#~ msgid "Slider Options"
+#~ msgstr "Slajder Opcije"
+
+#~ msgid "Page Options"
+#~ msgstr "Page Opcije"
+
+#~ msgid "Sidebar Options"
+#~ msgstr "Sidebar Opcije"
+
+#~ msgid "On"
+#~ msgstr "Omogući"
+
+#~ msgid "Off"
+#~ msgstr "Onemogući"
+
+#~ msgid "Portfolio"
+#~ msgstr "Portfolio"
+
+#~ msgid "Add New"
+#~ msgstr "Dodaj Novi"
+
+#~ msgid "View Portfolio"
+#~ msgstr "Pogledaj Portfolio"
+
+#~ msgid "All Items"
+#~ msgstr "Svi Predmeti"
+
+#~ msgid "Search Portfolio"
+#~ msgstr "Traži Portfolio"
+
+#~ msgid "Parent Portfolio:"
+#~ msgstr "Parent Portfolio:"
+
+#~ msgid "No portfolio found."
+#~ msgstr "Nema pronađenih portfolio stavki."
+
+#~ msgid "No portfolio found in Trash."
+#~ msgstr "Nema pronađenih portfolio stavki u smeću."
+
+#~ msgid "Category"
+#~ msgstr "Kategorija"
+
+#~ msgid "Categories"
+#~ msgstr "Kategorije"
+
+#~ msgid "Search Categories"
+#~ msgstr "Traži Kategorije"
+
+#~ msgid "All Categories"
+#~ msgstr "Sve Kategorije"
+
+#~ msgid "Parent Category"
+#~ msgstr "Parent Kategorija"
+
+#~ msgid "Parent Category:"
+#~ msgstr "Parent Kategorija:"
+
+#~ msgid "Edit Category"
+#~ msgstr "Izmeni Kategoriju"
+
+#~ msgid "Update Category"
+#~ msgstr "Ažuriraj Kategoriju"
+
+#~ msgid "Add New Category"
+#~ msgstr "Dodaj Novu Kategoriju"
+
+#~ msgid "New Category Name"
+#~ msgstr "Novo Ime Kategorije"
+
+#~ msgid "Skills"
+#~ msgstr "Veštine"
+
+#~ msgid "Skill"
+#~ msgstr "Veština"
+
+#~ msgid "Search Skills"
+#~ msgstr "Traži Veštine"
+
+#~ msgid "All Skills"
+#~ msgstr "Sve Veštine"
+
+#~ msgid "Parent Skill"
+#~ msgstr "Parent Veština"
+
+#~ msgid "Parent Skill:"
+#~ msgstr "Parent Veština:"
+
+#~ msgid "Edit Skill"
+#~ msgstr "Uredi Veštinu"
+
+#~ msgid "Update Skill"
+#~ msgstr "Ažuriraj Veštinu"
+
+#~ msgid "Add New Skill"
+#~ msgstr "Nova Veština"
+
+#~ msgid "New Skill Name"
+#~ msgstr "Novo Ime Veštine"
+
+#~ msgid "Install Required Plugins"
+#~ msgstr "Instaliraj Potrebne Dodatke"
+
+#~ msgid "Install Plugins"
+#~ msgstr "Instaliraj Dodatke"
+
+#~ msgid "Installing Plugin: %s"
+#~ msgstr "Instaliranje Dodatka: %s"
+
+#~ msgid "Something went wrong."
+#~ msgstr "Nešto nije bilo u redu."
+
+#~ msgid "This theme requires the following plugin: %1$s."
+#~ msgid_plural "This theme requires the following plugins: %1$s."
+#~ msgstr[0] "Ova tema zahteva sledeći dodatak: %1$s."
+#~ msgstr[1] "Ova tema zahteva sledeći dodatak: %1$s."
+#~ msgstr[2] "Ova tema zahteva sledeće dodatke: %1$s."
+
+#~ msgid "This theme recommends the following plugin: %1$s."
+#~ msgid_plural "This theme recommends the following plugins: %1$s."
+#~ msgstr[0] "Ova tema preporučuje sledeći dodatak: %1$s."
+#~ msgstr[1] "Ova tema preporučuje sledeći dodataka: %1$s."
+#~ msgstr[2] "Ova tema preporučuje sledeće dodatke: %1$s."
+
+#~ msgid "Begin installing plugin"
+#~ msgid_plural "Begin installing plugins"
+#~ msgstr[0] "Počni sa instaliranjem dodatka"
+#~ msgstr[1] "Počni sa instaliranjem dodataka"
+#~ msgstr[2] "Počni sa instaliranjem dodatka"
+
+#~ msgid "Begin activating plugin"
+#~ msgid_plural "Begin activating plugins"
+#~ msgstr[0] "Počni sa aktivacijom dodatka"
+#~ msgstr[1] "Počni sa aktivacijom dodataka"
+#~ msgstr[2] "Počni sa aktivacijom dodatka"
+
+#~ msgid "Return to Required Plugins Installer"
+#~ msgstr "Vrati se na instaler potrebnih dodataka"
+
+#~ msgid "Return to the dashboard"
+#~ msgstr "Povratak na komandnu tablu"
+
+#~ msgid "Plugin activated successfully."
+#~ msgstr "Dodatak je uspešno aktiviran."
+
+#~ msgid "The following plugin was activated successfully:"
+#~ msgid_plural "The following plugins were activated successfully:"
+#~ msgstr[0] "Sledeći dodatak je uspešno aktiviran:"
+#~ msgstr[1] "Sledeći dodaci su uspešno aktivirani:"
+#~ msgstr[2] "Sledeći dodatak je uspešno aktiviran:"
+
+#~ msgid "All plugins installed and activated successfully. %1$s"
+#~ msgstr "Svi dodaci su instalirani i uspešno aktivirani. %1$s"
+
+#~ msgid "Dismiss this notice"
+#~ msgstr "Odbaci ovo obaveštenje"
+
+#~ msgid "Return to the Dashboard"
+#~ msgstr "Povratak na komandnu tablu"
+
+#~ msgid "Private Repository"
+#~ msgstr "Privatna spremišta"
+
+#~ msgid "Pre-Packaged"
+#~ msgstr "Pre-pakovano"
+
+#~ msgid "WordPress Repository"
+#~ msgstr "Wordpress spremišta"
+
+#~ msgid "Required"
+#~ msgstr "Potrebno"
+
+#~ msgid "Recommended"
+#~ msgstr "Preporučeno"
+
+#~ msgid "Not Installed"
+#~ msgstr "Nije instalirano"
+
+#~ msgid "Installed But Not Activated"
+#~ msgstr "Instalirano, ali nije aktivirano"
+
+#~ msgid "Install"
+#~ msgstr "Instalirajte"
+
+#~ msgid "Activate"
+#~ msgstr "Aktivirajte"
+
+#~ msgid ""
+#~ "No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
+#~ "Dashboard\">Return to the Dashboard</a>"
+#~ msgstr ""
+#~ "Nema dodataka za instalaciju ili aktiviranje. <a href=\"%1$s\" title="
+#~ "\"Povratak na Kontrolnu tablu\">Povratak na Kontrolnu tablu</a>"
+
+#~ msgid "Plugin"
+#~ msgstr "Dodatak"
+
+#~ msgid "Source"
+#~ msgstr "Izvor"
+
+#~ msgid "Type"
+#~ msgstr "Tip"
+
+#~ msgid "Status"
+#~ msgstr "Status"
+
+#~ msgid "Install package not available."
+#~ msgstr "Paket za instaliranje nije dostupan."
+
+#~ msgid ""
+#~ "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+#~ msgstr ""
+#~ "Skidanje instaliranog paketa iz <span class=\"code\">%s</span>&#8230;"
+
+#~ msgid "Unpacking the package&#8230;"
+#~ msgstr "Raspakovanje paketa&#8230;"
+
+#~ msgid "Installing the plugin&#8230;"
+#~ msgstr "Instaliranje dodatka&#8230;"
+
+#~ msgid "Plugin install failed."
+#~ msgstr "Instalacija dodatka je neuspešna."
+
+#~ msgid "Plugin installed successfully."
+#~ msgstr "Dodatak je instaliran uspešno."
+
+#~ msgid "Plugin activation failed."
+#~ msgstr "Aktivacija dodatka je neuspešna."
+
+#~ msgid ""
+#~ "The installation and activation process is starting. This process may "
+#~ "take a while on some hosts, so please be patient."
+#~ msgstr ""
+#~ "Instalacioni i aktivacioni proces su počeli. Ovaj proces može da potraje "
+#~ "na nekim provajderima, pa vas molimo da budete strpljivi."
+
+#~ msgid "%1$s installed and activated successfully."
+#~ msgstr "%1$s Instalirano i aktivirano uspešno."
+
+#~ msgid "Show Details"
+#~ msgstr "Pokaži detalje"
+
+#~ msgid "Hide Details"
+#~ msgstr "Sakrij detalje"
+
+#~ msgid "All installations and activations have been completed."
+#~ msgstr "Sve instalacije i aktivacije su završene."
+
+#~ msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+#~ msgstr "Instaliranje i aktiviranje plugina %1$s (%2$d/%3$d)"
+
+#~ msgid ""
+#~ "The installation process is starting. This process may take a while on "
+#~ "some hosts, so please be patient."
+#~ msgstr ""
+#~ "Proces instaliranja počinje.  Ovaj proces može da potraje na nekim "
+#~ "provajderima, pa vas molimo da budete strpljivi."
+
+#~ msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+#~ msgstr ""
+#~ "Došlo je do greške prilikom instalacije %1$s: <strong>%2$s</strong>."
+
+#~ msgid "The installation of %1$s failed."
+#~ msgstr "Instalacija nije %1$s uspela."
+
+#~ msgid "%1$s installed successfully."
+#~ msgstr "%1$s Instalacija je uspela."
+
+#~ msgid "All installations have been completed."
+#~ msgstr "Sve instalacije su završene."
+
+#~ msgid "Installing Plugin %1$s (%2$d/%3$d)"
+#~ msgstr "Instaliranje dodatka %1$s (%2$d/%3$d)"
+
+#~ msgid "Something went wrong with the plugin API."
+#~ msgstr "Nešto nije bilo u redu sa API-jem dodatka"
+
+#~ msgid "All plugins installed and activated successfully. %s"
+#~ msgstr "Svi dodaci su instalirani i uspešno aktivirani. %s"
+
+#~ msgid "Top Navigation"
+#~ msgstr "Top Navigacija"
+
+#~ msgid "Skip to content"
+#~ msgstr "Idi na sadržaj"
+
+#~ msgid "Main Navigation"
+#~ msgstr "Glavna Navigacija"
+
+#~ msgid "All"
+#~ msgstr "Sve"
+
+#~ msgid "No portfolio items found."
+#~ msgstr "Nema pronađenih portfolio stavki."
 
 #~ msgid "You can support us by Buying an"
 #~ msgstr "Nas možete podržati tako što ćete kupiti"
