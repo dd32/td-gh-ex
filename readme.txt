@@ -28,6 +28,10 @@ Araiz is built upon underscores and depicts a very clean and warm feeling. The t
 Araiz includes support for Infinite Scroll in Jetpack.
 
 == Change log ==
+= 1.0.2 - June 23 2015 =
+* Fixed Content Width on Single Pages.
+* Added Description
+
 = 1.0.1 - June 23 2015 =
 * Added Editor Style
 
