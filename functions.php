@@ -74,6 +74,9 @@ function araiz_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+        
+        // Add styling to WYSIWYG editor backend
+         add_editor_style( array( 'css/editor-style.css') );
 }
 endif; // araiz_setup
 add_action( 'after_setup_theme', 'araiz_setup' );
