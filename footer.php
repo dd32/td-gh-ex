@@ -11,9 +11,9 @@
 	</div><!-- #content -->
     
 	<?php
-        $accesspress_mag_show_footer_switch = of_get_option( 'footer_switch' );
+        $accesspress_mag_show_footer_switch = of_get_option( 'footer_switch', 1 );
         $accesspress_mag_footer_layout = of_get_option( 'footer_layout' );
-        $accesspress_mag_sub_footer_switch = of_get_option( 'sub_footer_switch' );
+        $accesspress_mag_sub_footer_switch = of_get_option( 'sub_footer_switch', 1 );
         $accesspress_mag_copyright_text = of_get_option( 'mag_footer_copyright' );
         $accesspress_mag_copyright_symbol = of_get_option( 'copyright_symbol' );
         $trans_top = of_get_option( 'top_arrow' );
@@ -77,7 +77,7 @@
                     <?php _e( '| Theme: ' );?>
                     <a title="AccessPress Themes" href="<?php echo esc_url( 'http://accesspressthemes.com', 'accesspress-mag' ); ?>">AccessPress Mag</a>
                 </div>
-             <?php if( $accesspress_mag_sub_footer_switch == 1 ){ ?>   
+             <?php if ( ( has_nav_menu( 'footer_menu' ) ) && ( $accesspress_mag_sub_footer_switch == 1 ) ) { ?>      
                 <div class="subfooter-menu">
                     <nav id="footer-navigation" class="footer-main-navigation" role="navigation">
                         <button class="menu-toggle hide" aria-controls="menu" aria-expanded="false"><?php _e( 'Footer Menu', 'accesspress-mag' ); ?></button>

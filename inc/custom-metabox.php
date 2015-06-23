@@ -91,32 +91,7 @@ $accesspress_mag_post_template_layout = array(
                         'label' => __( 'Style 1', 'accesspress-mag' ),
                         'thumbnail' => get_template_directory_uri() . '/inc/option-framework/images/post_template/post-templates-icons-1.png',
                         'available'=> 'free'
-                    ),
-        'style2-template' => array(
-                        'value' => 'style2-template',
-                        'label' => __( 'Style 2', 'accesspress-mag' ),
-                        'thumbnail' => get_template_directory_uri() . '/inc/option-framework/images/post_template/post-templates-icons-2.png',
-                        'available'=> 'pro'
-                    ),
-        'style3-template' => array(
-                        'value' => 'style3-template',
-                        'label' => __( 'Style 3', 'accesspress-mag' ),
-                        'thumbnail' => get_template_directory_uri() . '/inc/option-framework/images/post_template/post-templates-icons-3.png',
-                        'available'=> 'pro'
-                    ),
-        'style4-template' => array(
-                        'value' => 'style4-template',
-                        'label' => __( 'Style 4', 'accesspress-mag' ),
-                        'thumbnail' => get_template_directory_uri() . '/inc/option-framework/images/post_template/post-templates-icons-4.png',
-                        'available'=> 'pro'
-                    ),
-        'style5-template' => array(
-                        'value' => 'style5-template',
-                        'label' => __( 'Style 5', 'accesspress-mag' ),
-                        'thumbnail' => get_template_directory_uri() . '/inc/option-framework/images/post_template/post-templates-icons-5.png',
-                        'available'=> 'pro'
-                    )  
-
+                    )
     );
 
 /*-------------------Function for Post settings meta box----------------------------*/

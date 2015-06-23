@@ -28,23 +28,25 @@
         $accesspress_mag_logo_title = of_get_option( 'logo_title' );
     ?>  
 	
-    <header id="masthead" class="site-header" role="banner">
-    
-        <?php if ($accesspress_mag_top_menu_switch=='1'):?> 
-            <div class="top-menu-wrapper clearfix">
-                <div class="apmag-container">     
-                    <nav id="top-navigation" class="top-main-navigation" role="navigation">
-                                <button class="menu-toggle hide" aria-controls="menu" aria-expanded="false"><?php _e( 'Top Menu', 'accesspress-mag' ); ?></button>
-                                <?php wp_nav_menu( array( 'theme_location' => 'top_menu', 'container_class' => 'top_menu_left' ) ); ?>
-                    </nav><!-- #site-navigation -->
-               
-                    <nav id="top-right-navigation" class="top-right-main-navigation" role="navigation">
-                                <button class="menu-toggle hide" aria-controls="menu" aria-expanded="false"><?php _e( 'Top Menu Right', 'accesspress-mag' ); ?></button>
-                                <?php wp_nav_menu( array( 'theme_location' => 'top_menu_right', 'container_class' => 'top_menu_right' ) ); ?>
-                    </nav><!-- #site-navigation -->
-                </div>
+    <header id="masthead" class="site-header" role="banner">    
+        
+        <div class="top-menu-wrapper clearfix">
+            <div class="apmag-container">   
+            <?php if ( has_nav_menu( 'top_menu' ) ) { ?>   
+                <nav id="top-navigation" class="top-main-navigation" role="navigation">
+                            <button class="menu-toggle hide" aria-controls="menu" aria-expanded="false"><?php _e( 'Top Menu', 'accesspress-mag' ); ?></button>
+                            <?php wp_nav_menu( array( 'theme_location' => 'top_menu', 'container_class' => 'top_menu_left' ) ); ?>
+                </nav><!-- #site-navigation -->
+            <?php } ?>
+            <?php if ( has_nav_menu( 'top_menu_right' ) ) { ?>        
+                <nav id="top-right-navigation" class="top-right-main-navigation" role="navigation">
+                            <button class="menu-toggle hide" aria-controls="menu" aria-expanded="false"><?php _e( 'Top Menu Right', 'accesspress-mag' ); ?></button>
+                            <?php wp_nav_menu( array( 'theme_location' => 'top_menu_right', 'container_class' => 'top_menu_right' ) ); ?>
+                </nav><!-- #site-navigation -->
+            <?php } ?>
             </div>
-        <?php endif;?> 
+        </div>
+         
         <div class="logo-ad-wrapper clearfix">
             <div class="apmag-container">
         		<div class="site-branding <?php echo esc_attr( $branding_class ) ;?>">

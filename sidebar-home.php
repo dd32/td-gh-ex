@@ -103,4 +103,3 @@ $page_sidebar = get_post_meta( $post -> ID, 'accesspress_mag_page_sidebar_layout
         <?php endif ; ?> 
     </div>
 </div><!--Secondary-right-sidebar-->
-

@@ -1,5 +1,7 @@
 <?php
 /**
+ * The template for displaying all single posts which have style 1 layout.
+ *
  * @package Accesspress Mag
  */
 ?>

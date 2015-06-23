@@ -316,7 +316,9 @@ function accesspress_mag_customize_excerpt_more( $more ) {
 add_filter( 'excerpt_more', 'accesspress_mag_customize_excerpt_more' );
 
 function accesspress_mag_word_count( $string, $limit ) {
-	$words = explode( ' ', $string );
+    $string = strip_tags( $string );
+    $string = strip_shortcodes( $string );
+    $words = explode( ' ', $string );
 	return implode( ' ', array_slice( $words, 0, $limit ));
 }
 
@@ -521,28 +523,28 @@ function accesspress_mag_required_plugins() {
          array(
             'name'      => __( 'Newsletter', 'accesspress-mag' ), //The plugin name
             'slug'      => 'newsletter',  // The plugin slug (typically the folder name)
-            'required'  => true,  // If false, the plugin is only 'recommended' instead of required.
+            'required'  => false,  // If false, the plugin is only 'recommended' instead of required.
             'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
             'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
             ),
          array(
             'name'      => __( 'AccessPress Social Icons', 'accesspress-mag' ), //The plugin name
             'slug'      => 'accesspress-social-icons',  // The plugin slug (typically the folder name)
-            'required'  => true,  // If false, the plugin is only 'recommended' instead of required.
+            'required'  => false,  // If false, the plugin is only 'recommended' instead of required.
             'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
             'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
             ),
          array(
             'name'      => __( 'AccessPress Social Counter', 'accesspress-mag' ), //The plugin name
             'slug'      => 'accesspress-social-counter',  // The plugin slug (typically the folder name)
-            'required'  => true,  // If false, the plugin is only 'recommended' instead of required.
+            'required'  => false,  // If false, the plugin is only 'recommended' instead of required.
             'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
             'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
             ),
          array(
             'name'      => __( 'AccessPress Social Share', 'accesspress-mag' ), //The plugin name
             'slug'      => 'accesspress-social-share',  // The plugin slug (typically the folder name)
-            'required'  => true,  // If false, the plugin is only 'recommended' instead of required.
+            'required'  => false,  // If false, the plugin is only 'recommended' instead of required.
             'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
             'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
             ),         

@@ -301,10 +301,11 @@
 .apmag-themeoption .accesspress-mag-logo {
 	float: left;
 }
-.apmag-themeoption .theme-name{
-	color: #555;
+.apmag-themeoption .theme-name{	
+	color: #EEE;
 }
 .apmag-themeoption .ak-socials {
+	color: #EEE;
     float: right;
     text-align: right;
 }
@@ -312,9 +313,12 @@
 	margin: 0.8em 0 1em;
 }
 .apmag-themeoption .ak-socials p, .apmag-themeoption .ak-socials a{
+	color: #EEE;
     text-decoration: none;
 }
-
+.ak-socials a:hover{
+	color: #54C1E8;
+}
 .wrap.apmag-themeoption {
     width: auto;
     clear: both;

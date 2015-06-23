@@ -78,6 +78,22 @@ function optionsframework_options() {
             'name' => __( 'Basic Settings', 'accesspress-mag' ),
             'type' => 'heading'
             );
+    /*----------------Background settings--------------------------*/
+    $options[] = array(
+            'name' => __( 'Background Settings', 'accesspress-mag' ),
+            'id'   => 'background_settings',
+            'type' => 'groupstart'
+            );
+    $options[] = array(
+            'name' => __( 'Background Settings', 'accesspress-mag' ) ,
+            'desc' => sprintf(__( 'Go to <a href="%s" target="_blank">customize page</a> to change the background settings', 'accesspress-mag' ), esc_url(admin_url('/customize.php'))),
+            'id'   => 'back_setting_option',    
+            'type' => 'info',  
+            );
+    $options[] = array(
+            'type' => 'groupend'
+            );
+    
     /*-------------------Website layout------------------------*/
     $options[] = array(
             'name' => __( 'Website Layout', 'accesspress-mag' ),
@@ -105,29 +121,17 @@ function optionsframework_options() {
 		    'name' => __( 'Header', 'accesspress-mag' ),
             'type' => 'heading'
 	        );    
-    $options[] = array(
-            'name' => __( 'Top Menu', 'accesspress-mag' ),
-            'id'   => 'top_menu',
-            'type' => 'groupstart'
-            );            
-    $options[] = array(
-            'name' => __( 'Top Menu Option', 'accesspress-mag' ),                
-            'desc' => __( 'Show or Hide the top menu', 'accesspress-mag' ),
-            'id' => 'top_menu_switch',
-            'on' => __( 'Yes', 'accesspress-mag'),
-            'off' => __( 'No', 'accesspress-mag'),
-            'std' => '1',
-            'type' => 'switch'
-            );	
-    $options[] = array(
-            'type' => 'groupend'
-            );
-
     /*--------------Logo setting-------------------*/
     $options[] = array(
             'name' => __( 'Logo Settings', 'accesspress-mag' ),
             'id'   => 'logo',
             'type' => 'groupstart'
+            );
+    $options[] = array(
+            'name' => __( 'Header Image', 'accesspress-mag' ) ,
+            'desc' => sprintf(__( 'Go to <a href="%s" target="_blank">customize page</a> to add Header Image', 'accesspress-mag' ), esc_url(admin_url('/customize.php'))),
+            'id'   => 'header_image',    
+            'type' => 'info',  
             );
 
      $options[] = array(
@@ -611,17 +615,7 @@ function optionsframework_options() {
             'off' => __( 'No', 'accesspress-mag'),
             'std' => '1',
             'type' => 'switch'
-            ); 
-            /*       
-    $options[] = array(
-            'name' => __( 'Featured Image Placeholder', 'accesspress-mag' ),                
-            'desc' => __( 'Enable or disable featured image placeholder in single page for post', 'accesspress-mag' ),
-            'id' => 'featured_image_placeholder',
-            'on' => __( 'Yes', 'accesspress-mag'),
-            'off' => __( 'No', 'accesspress-mag'),
-            'std' => '0',
-            'type' => 'switch'
-            ); */      
+            );      
     $options[] = array(
             'type' => 'groupend'
             );

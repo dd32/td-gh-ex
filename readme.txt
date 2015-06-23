@@ -74,6 +74,11 @@ ScreenShot Images
 ----------------------------------------------------
 == Changelog ==
 Version 2.0.1
+ * Removed unused file from widget folder.
+ * Fixed required option in TGMPA.
+ * Remove menu off/on option from theme option.
+ 
+Version 2.0.1
  * Removed demo content from theme
  * Fixed pagination in home page(index.php)
  * Managed custom background setting, header logo and header text from customizer.

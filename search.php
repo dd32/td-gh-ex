@@ -36,10 +36,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php 
-                $show_post_navigation = of_get_option('show_post_nextprev');
-                if($show_post_navigation!='0'){the_posts_navigation();}
-             ?>
+			<?php the_posts_navigation(); ?>
 
 		<?php else : ?>
 
@@ -50,6 +47,6 @@ get_header(); ?>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
-<?php get_sidebar(); ?>
+<?php get_sidebar('right'); ?>
 </div>
 <?php get_footer(); ?>
