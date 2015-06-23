@@ -23,3 +23,6 @@ version 1.0.4
 
 version 1.0.5
 	1) Remove unnecesssary code.
+
+Version 1.0.6
+	1) Fixed all the issues as per your suggestion

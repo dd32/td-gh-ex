@@ -56,7 +56,7 @@
 						<?php if(!empty($facebook_check) || !empty($twitter_check) || !empty($rss_check) || !empty($pinterest_check) || !empty($youtube_check))
 								$class="col-sm-9 col-md-9";
 							else $class="";?>
-                        <div class="menu-bar <?php echo $class;?>"> 
+                        <div class="menu-bar <?php echo esc_attr($class);?>"> 
 							<div class="navbar-header res-nav-header toggle-respon">
 								<button type="button" class="navbar-toggle menu_toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
 									<span class="sr-only"></span>

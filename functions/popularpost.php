@@ -12,7 +12,7 @@ class LatestPostWidget extends WP_Widget
 {
 function LatestPostWidget()
 {
-$avocation_lp_widget_ops = array('classname' => 'LatestPostWidget', 'description' => 'Displays a Latest post with thumbnail' );
+$avocation_lp_widget_ops = array('classname' => 'LatestPostWidget', 'description' => __('Displays a Latest post with thumbnail','avocation') );
 $this->WP_Widget('LatestPostWidget', 'avocation Latest Post', $avocation_lp_widget_ops);
 }
 

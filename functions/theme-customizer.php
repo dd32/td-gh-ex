@@ -11,6 +11,7 @@ function avocation_theme_customizer( $wp_customize ) {
 		'theme_supports' => '',
 		'title'          => 'Home Page Settings',
 		'description'    => '',
+		
 		'priority'    => 30,
 	) );
 
@@ -203,7 +204,7 @@ function avocation_theme_customizer( $wp_customize ) {
             'type'    => 'number',
            
         ) );    
-        
+  /*      
 	 // Contact Section
 	$wp_customize->add_setting( 'contact_info_title_setting', array(
 		'default'        => '',
@@ -272,7 +273,7 @@ function avocation_theme_customizer( $wp_customize ) {
 		'section' => 'avocation_contact_section',
 		'type'    => 'textarea'
 	) );
-
+*/
 
 	// Social Section
 	$wp_customize->add_setting( 'twitter_setting', array(
