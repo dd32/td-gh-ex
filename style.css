@@ -5,11 +5,14 @@ Description: AccountantLaw it's a responsive child theme for Lawyeria Lite. With
 Author: 9Pixels
 Author URI: http://9pixels.co
 Template: lawyeria-lite
-Version: 1.0.5
+Version: 1.0.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready, accountant, law, clean
-Text Domain: accountant
+Text Domain: accountantlaw
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
 */
 
 body {

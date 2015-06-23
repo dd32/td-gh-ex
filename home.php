@@ -8,7 +8,7 @@ get_header();
 ?>
 	<section class="wide-nav">
 		<div class="wrapper">
-			<h3><?php _e( 'Latest posts', 'lawyeria-lite' ); ?></h3>
+			<h3><?php _e( 'Latest posts', 'accountantlaw' ); ?></h3>
 		</div><!--/div .wrapper-->
 	</section><!--/section .wide-nav-->
 </header>
@@ -27,28 +27,28 @@ get_header();
 				</h3><!--/h3-->
 				<div class="post-meta">
 					<span>
-						<?php echo get_the_date(); ?> - <?php _e('Posted by:','lawyeria-lite'); ?> <?php the_author_posts_link(); ?> - <?php _e('In category:','lawyeria-lite'); ?> <?php the_category(', '); ?> - <a href="<?php the_permalink(); ?>#comments-template" title="<?php comments_number( __('No responses','lawyeria-lite'), __('One comment','lawyeria-lite'), __('% comments','lawyeria-lite') ); ?>"><?php comments_number( __('No responses','lawyeria-lite'), __('One comment','lawyeria-lite'), __('% comments','lawyeria-lite') ); ?></a>
+						<?php echo get_the_date(); ?> - <?php _e('Posted by:','accountantlaw'); ?> <?php the_author_posts_link(); ?> - <?php _e('In category:','accountantlaw'); ?> <?php the_category(', '); ?> - <a href="<?php the_permalink(); ?>#comments-template" title="<?php comments_number( __('No responses','accountantlaw'), __('One comment','accountantlaw'), __('% comments','accountantlaw') ); ?>"><?php comments_number( __('No responses','accountantlaw'), __('One comment','accountantlaw'), __('% comments','accountantlaw') ); ?></a>
 					</span><!--/span-->
 				</div><!--/div .post-meta-->
 				<?php
 					if ( $feat_image != NULL ) { ?>
 						<div class="post-image">
-							<img src="<?php echo $feat_image[0]; ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" />
+							<img src="<?php echo esc_url( $feat_image[0] ); ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" />
 						</div><!--/.post-image-->
 					<?php } ?>
 				<div class="post-excerpt">
 					<?php the_excerpt(); ?>
 				</div><!--/div .post-excerpt-->
-				<a href="<?php the_permalink(); ?>" title="Read More" class="read-more">
-					<span><?php _e('Read More','lawyeria-lite'); ?></span>
+				<a href="<?php the_permalink(); ?>" title="<?php _e( 'Read More','accountantlaw' ); ?>" class="read-more">
+					<span><?php _e( 'Read More','accountantlaw' ); ?></span>
 				</a><!--/a .read-more-->
 			</div><!--/div .post-->
 			<?php endwhile; else: ?>
-                  	<p><?php _e('Sorry, no posts matched your criteria.', 'lawyeria-lite'); ?></p>
+                  	<p><?php _e('Sorry, no posts matched your criteria.', 'accountantlaw'); ?></p>
                <?php endif; ?>
 			<div class="posts-navigation">
-				<?php next_posts_link(esc_attr__('Prev', 'lawyeria-lite')); ?>
-				<?php previous_posts_link(esc_attr__('Next', 'lawyeria-lite')); ?>
+				<?php next_posts_link(esc_attr__('Prev', 'accountantlaw')); ?>
+				<?php previous_posts_link(esc_attr__('Next', 'accountantlaw')); ?>
 			</div><!--/div .posts-navigation-->
 		</div><!--/div #posts-->
 		<?php get_sidebar(); ?>
