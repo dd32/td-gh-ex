@@ -12,7 +12,7 @@
 			<div class="aside">
 				<header><i class="fa fa-2x fa-outdent"></i></header>
 				
-				<?php if( get_theme_mod('blog_layout', 'list') == 'grid' ):  ?>
+				<?php if( get_theme_mod('agama_blog_layout', 'list') == 'grid' ):  ?>
 				<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 				<?php
 				/**
@@ -27,7 +27,7 @@
 				<?php endif; ?>
 				
 				<?php
-				if( get_theme_mod('blog_layout', 'list') == 'list' ):
+				if( get_theme_mod('agama_blog_layout', 'list') == 'list' ):
 				/**
 				 * agama_blog_post_date_and_format hook
 				 *
@@ -39,7 +39,7 @@
 				
 				<div class="entry-content">
 				
-					<?php if( get_theme_mod('blog_layout', 'list') == 'list' ):  ?>
+					<?php if( get_theme_mod('agama_blog_layout', 'list') == 'list' ):  ?>
 					<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 					<?php
 						/**
@@ -53,7 +53,7 @@
 					?>
 					<?php endif; ?>
 					
-					<?php if( !is_sticky() && get_theme_mod('blog_layout', 'list') !== 'list' ): // Separator ?>
+					<?php if( !is_sticky() && get_theme_mod('agama_blog_layout', 'list') !== 'list' ): // Separator ?>
 					<div class="entry-sep"></div>
 					<?php endif; ?>
 				

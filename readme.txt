@@ -50,12 +50,12 @@ Agama is distributed under the terms of the GNU GPL2
  * Superfish - http://users.tpg.com.au/j_birch/plugins/superfish/ - MIT License
  * Infinite Scroll - https://github.com/paulirish/infinite-scroll - MIT License
  * imagesLoaded - http://imagesloaded.desandro.com/ - MIT License
- *
+ * scrollToTop - https://plugins.jquery.com/scrollToTop/ - MIT License
  
  Images used in Screenshot are licensed under Creative Commons Zero License:
 
- * Anthony DELANOIX - http://princeandgreene.fr/ - License CC0 1.0
- * Ryan McGuire - http://www.laughandpee.com/ - CC0 1.0
+ * Anthony DELANOIX - http://princeandgreene.fr/ - http://princeandgreene.fr/monte-carlo-monaco/ - (Check homepage "About Me" for license) - CC0 1.0 License
+ * Ryan McGuire - http://www.laughandpee.com/ - Downloaded from (Nature category): http://www.gratisography.com/ - CC0 1.0 License
  
  Unless otherwise specified, all the theme files, scripts and images
  are licensed under GNU General Public License version 2, see file license.txt.

@@ -18,7 +18,7 @@
 				<?php // Attachments
 				if ( ! post_password_required() && ! is_attachment() && get_the_post_thumbnail() ) :
 					// Output Post Thumbnail
-					if( get_theme_mod('blog_layout') == 'list' ):
+					if( get_theme_mod('agama_blog_layout') == 'list' ):
 						echo '<figure class="effect-bubba" data-src="'.agama_return_image_src('agama-blog-large').'">';
 						echo '<img src='.agama_return_image_src('agama-blog-large').' class="img-responsive">';
 						echo '<figcaption>';
@@ -44,7 +44,7 @@
 				endif; ?>
 				
 				
-				<?php if( get_theme_mod('blog_layout', 'list') == 'grid' ): ?>
+				<?php if( get_theme_mod('agama_blog_layout', 'list') == 'grid' ): ?>
 				
 					<?php if ( is_single() ) : ?>
 					<h1 class="entry-title"><?php the_title(); ?></h1>
@@ -65,12 +65,12 @@
 					echo '</p>';
 					?>
 				
-				<?php endif; // blog_layout ?>
+				<?php endif; // agama_blog_layout ?>
 				
 			</header><!-- .entry-header -->
 			
 			
-			<?php if( !is_sticky() && get_theme_mod('blog_layout', 'list') !== 'list' ): // Separator ?>
+			<?php if( !is_sticky() && get_theme_mod('agama_blog_layout', 'list') !== 'list' ): // Separator ?>
 			<div class="entry-sep"></div>
 			<?php endif; ?>
 			
@@ -90,7 +90,7 @@
 				<?php else : ?>
 				
 				<?php
-				if( get_theme_mod('blog_layout', 'list') !== 'grid' ):
+				if( get_theme_mod('agama_blog_layout', 'list') !== 'grid' ):
 				/**
 				 * agama_blog_post_date_and_format hook
 				 *
@@ -102,7 +102,7 @@
 				
 				<div class="entry-content">
 				
-					<?php if( get_theme_mod('blog_layout', 'list') == 'list' ): // Post title on list style ?>
+					<?php if( get_theme_mod('agama_blog_layout', 'list') == 'list' ): // Post title on list style ?>
 						<?php if ( is_single() ) : ?>
 						<h1 class="entry-title"><?php the_title(); ?></h1>
 						<?php else : ?>

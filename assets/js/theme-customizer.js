@@ -64,9 +64,9 @@
 	} );
 	
 	// Header top border size
-	wp.customize( 'header_top_border_size', function( value ) {
+	wp.customize( 'agama_header_top_border_size', function( value ) {
 		value.bind( function( to ) {
-			var site = $('#main-wrapper');
+			var site = $('.top-nav-wrapper, .sticky-header');
 			site.css( 'border-top-width', to );
 		} );
 	} );
@@ -80,7 +80,7 @@
 	} );
 	
 	// Header top margin
-	wp.customize( 'header_top_margin', function( value ) {
+	wp.customize( 'agama_header_top_margin', function( value ) {
 		value.bind( function( to ) {
 			var header = jQuery('#main-wrapper');
 			if( '' !== to ) {

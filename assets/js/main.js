@@ -43,7 +43,7 @@ jQuery(document).ready(function($) {
 });
 
 /*!
-    jQuery scrollTopTop v1.0 - 2013-03-15
+    jQuery scrollToTop v1.0 - 2013-03-15
     (c) 2013 Yang Zhao - geniuscarrier.com
     license: http://www.opensource.org/licenses/mit-license.php
 */

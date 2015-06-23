@@ -70,32 +70,8 @@ if( ! class_exists( 'Agama_About' ) ) {
 				echo '</h2>';
 				
 				echo '<div class="changelog point-releases">';
-					echo '<h3>'.__( 'Changelog Agama v1.0.4', 'agama' ).'</h3>';
-					echo '<p><strong>Version 1.0.4</strong> multiple theme fixes & unnecessary css code cleaned.</p>';
-				
-					echo '<h3>'.__( 'Changelog Agama v1.0.3', 'agama' ).'</h3>';
-					echo '<p><strong>Version 1.0.3</strong> implemented FlexSlider 2 in customizer.</p>';
-					echo '<p><strong>Version 1.0.3</strong> implemented Infinite Scroll for blog posts.</p>';
-					echo '<p><strong>Version 1.0.3</strong> WooCommerce Products per Page option.</p>';
-				
-					echo '<h3>'.__( 'Changelog Agama v1.0.2', 'agama' ).'</h3>';
-					echo '<p><strong>Version 1.0.2</strong> Sticky header option.</p>';
-					echo '<p><strong>Version 1.0.2</strong> NiceScroll option.</p>';
-					echo '<p><strong>Version 1.0.2</strong> Back to top button option.</p>';
-					
-					echo '<h3>'.__( 'Changelog Agama v1.0.1', 'agama' ).'</h3>';
-					echo '<p><strong>Version 1.0.1</strong> added enable/disable top navigation menu option.</p>';
-					echo '<p><strong>Version 1.0.1</strong> added light/dark skin option</p>';
-					echo '<p><strong>Version 1.0.1</strong> added blog grid/list style option</p>';
-					echo '<p><strong>Version 1.0.1</strong> added blog excerpt lenght option</p>';
-					echo '<p><strong>Version 1.0.1</strong> added social icons option</p>';
-					echo '<p><strong>Version 1.0.1</strong> added WooCommerce support</p>';
-					echo '<p><strong>Version 1.0.1</strong> added bbPress support</p>';
-					echo '<p><strong>Version 1.0.1</strong> added BuddyPress support</p>';
-					echo '<p><strong>Version 1.0.1</strong> added Agama slider option</p>';
-					echo '<p><strong>Version 1.0.1</strong> added four widget places in footer.</p>';
-					echo '<p><strong>Version 1.0.1</strong> added footer custom copyright option.</p>';
-					echo '<p><strong>Version 1.0.1</strong> added Serbian language translation.</p>';
+					echo '<h3>'.__( 'Changelog Agama v1.0.5', 'agama' ).'</h3>';
+					echo '<p><strong>Version 1.0.5</strong> multiple theme fixes.</p>';
 				echo '</div>';
 				
 			echo '</div>';

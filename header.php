@@ -35,12 +35,12 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		
-		<?php if( get_theme_mod('sticky_header', '0') == true ): ?>
+		<?php if( get_theme_mod('agama_sticky_header', false) ): ?>
 			<div class="sticky-header">
 				<div class="sticky-header-inner">
-					<?php if( get_theme_mod( 'logo' ) ): ?>
+					<?php if( get_theme_mod( 'agama_logo' ) ): ?>
 						<a href="<?php echo esc_url( home_url('/') ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-							<img src="<?php echo esc_url( get_theme_mod( 'logo' ) ); ?>" class="logo">
+							<img src="<?php echo esc_url( get_theme_mod( 'agama_logo' ) ); ?>" class="logo">
 						</a>
 					<?php else: ?>
 						<h1 class="site-title"><a href="<?php echo esc_url( home_url('/') ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
@@ -69,7 +69,7 @@
 					</nav><!-- .top-navigation -->
 				<?php endif; ?>
 				
-				<?php if( get_theme_mod( 'top_nav_social', '0' ) == true ): // Social icons ?>
+				<?php if( get_theme_mod( 'agama_top_nav_social', false ) ): // Social icons ?>
 					<div id="top-nav-social" class="col-md-6">
 						<?php agama_social_icons( $tip_position = 'bottom' ); ?>
 					</div><!-- #top-nav-social -->
@@ -78,9 +78,9 @@
 			</div><!-- .top-wrapper -->
 		
 			<hgroup>
-				<?php if( get_theme_mod( 'logo' ) ): ?>
+				<?php if( get_theme_mod( 'agama_logo' ) ): ?>
 				<a href="<?php echo esc_url( home_url('/') ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-					<img src="<?php echo esc_url( get_theme_mod( 'logo', '' ) ); ?>" class="logo">
+					<img src="<?php echo esc_url( get_theme_mod( 'agama_logo', '' ) ); ?>" class="logo">
 				</a>
 				<?php else: ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -102,10 +102,10 @@
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'mobile-nav-menu' ) ); ?>
 			</div><!-- .mobile-nav -->
 		
-		<?php endif; // if sticky_header ?>
+		<?php endif; // if agama_sticky_header ?>
 		
 		<!-- Header Image -->
-		<?php if ( get_header_image() && get_theme_mod('enable_slider', false) !== '1' ) : ?>
+		<?php if ( get_header_image() && get_theme_mod('agama_enable_slider', false) !== '1' ) : ?>
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<img src="<?php esc_url( header_image() ); ?>" class="header-image" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
 		</a>

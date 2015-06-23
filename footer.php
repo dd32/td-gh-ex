@@ -51,7 +51,7 @@
 	</div><!-- .footer-widgets -->
 	<?php endif; ?>
 	
-	<?php if( get_theme_mod('to_top', '1') ): ?>
+	<?php if( get_theme_mod('agama_to_top', true) ): ?>
 	<a id="toTop">
 		<i class="fa fa-angle-up"></i>
 	</a>
@@ -62,7 +62,7 @@
 			<?php do_action('agama_credits'); ?>
 		</div><!-- .site-info -->
 		
-		<?php if( get_theme_mod('footer_social', false) ): ?>
+		<?php if( get_theme_mod('agama_footer_social', false) ): ?>
 		<div class="social col-md-6">
 			<?php agama_social_icons( 'top' ); ?>
 		</div>

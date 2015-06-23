@@ -12,7 +12,7 @@
 			<header><i class="fa fa-2x fa-link"></i></header>
 			
 			<?php
-			if( get_theme_mod('blog_layout', 'list') !== 'grid' ):
+			if( get_theme_mod('agama_blog_layout', 'list') !== 'grid' ):
 			/**
 			 * agama_blog_post_date_and_format hook
 			 *
@@ -42,7 +42,7 @@
 				echo '</p>';
 				?>
 				
-				<?php if( !is_sticky() && get_theme_mod('blog_layout', 'list') !== 'list' ): // Separator ?>
+				<?php if( !is_sticky() && get_theme_mod('agama_blog_layout', 'list') !== 'list' ): // Separator ?>
 				<div class="entry-sep"></div>
 				<?php endif; ?>
 						

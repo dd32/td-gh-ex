@@ -13,7 +13,7 @@
 			<header><i class="fa fa-2x fa-comment"></i></header>
 			
 			<?php
-			if( get_theme_mod('blog_layout', 'list') !== 'grid' ):
+			if( get_theme_mod('agama_blog_layout', 'list') !== 'grid' ):
 			/**
 			 * agama_blog_post_date_and_format hook
 			 *
@@ -28,7 +28,7 @@
 				<h1 class="entry-title"><?php the_title(); ?></h1>
 				<?php else : ?>
 				<h1 class="entry-title">
-					<a href="<?php esc_url( the_permalink() ); ?>" rel="bookmark"><?php the_title(); ?></a>
+					<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 				</h1>
 				<?php endif; // is_single() ?>
 				
@@ -43,7 +43,7 @@
 				echo '</p>';
 				?>
 				
-				<?php if( !is_sticky() && get_theme_mod('blog_layout') !== 'list' ): // Separator ?>
+				<?php if( !is_sticky() && get_theme_mod('agama_blog_layout') !== 'list' ): // Separator ?>
 				<div class="entry-sep"></div>
 				<?php endif; ?>
 			
