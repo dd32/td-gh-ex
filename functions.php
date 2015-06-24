@@ -6,7 +6,6 @@
 	define('WEBRITI_TEMPLATE_DIR_URI', get_template_directory_uri());
     define('WEBRITI_TEMPLATE_DIR' , get_template_directory());
     define('WEBRITI_THEME_FUNCTIONS_PATH' , WEBRITI_TEMPLATE_DIR.'/functions');
-    define('WEBRITI_THEME_OPTIONS_PATH' , WEBRITI_TEMPLATE_DIR_URI.'/functions/theme_options');
 	require( WEBRITI_THEME_FUNCTIONS_PATH .'/scripts/script.php');
     require( WEBRITI_THEME_FUNCTIONS_PATH .'/menu/default_menu_walker.php');
     require( WEBRITI_THEME_FUNCTIONS_PATH .'/menu/appoinment_nav_walker.php');
@@ -15,7 +14,17 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/template-tag.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/breadcrumbs/breadcrumbs.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/font/font.php');
-    
+	//Customizer
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-callout.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-slider.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-copyright.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-header.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-news.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-service.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro.php');
+	
+	// Custom Category control 
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/custom-controls/select/category-dropdown-custom-control.php');
 	/* Theme Setup Function */
 	add_action( 'after_setup_theme', 'appointment_setup' );
 	
@@ -24,6 +33,15 @@
 	// Load text domain for translation-ready
     load_theme_textdomain( 'appointment', WEBRITI_THEME_FUNCTIONS_PATH . '/lang' );
 
+	$header_args = array(
+				 'flex-height' => true,
+				 'height' => 200,
+				 'flex-width' => true,
+				 'width' => 1600,
+				 'admin-head-callback' => 'mytheme_admin_header_style',
+				 );
+				 
+				 add_theme_support( 'custom-header', $header_args );
     add_theme_support( 'post-thumbnails' ); //supports featured image
 	// Register primary menu 
     register_nav_menu( 'primary', __( 'Primary Menu', 'appointment' ) );
@@ -31,22 +49,8 @@
     add_theme_support( 'automatic-feed-links' );
 	// Set the content_width with 900
     if ( ! isset( $content_width ) ) $content_width = 900;
-	
 	require_once('theme_setup_data.php');
-		// setup admin pannel defual data for index page		
-		$appointment_options=theme_data_setup();
-		
-		$current_theme_options = get_option('appointment_options'); // get existing option data 		
-		if($current_theme_options)
-		{ 	$appointment_options = array_merge($appointment_options, $current_theme_options);
-			update_option('appointment_options',$appointment_options);	// Set existing and new option data			
-		}
-		else
-		{
-			add_option('appointment_options', $appointment_options);
-		}
-		require( WEBRITI_THEME_FUNCTIONS_PATH . '/theme_options/option_pannel.php' ); // for Option Panel Settings		
-}
+	}
 // set appoinment page title       
 function appointment_title( $title, $sep )
 {	
@@ -68,6 +72,7 @@ function appointment_title( $title, $sep )
 add_filter( 'wp_title', 'appointment_title', 10,2 );
 
 add_filter('get_avatar','appointment_add_gravatar_class');
+add_theme_support( "title-tag" );
 
 function appointment_add_gravatar_class($class) {
     $class = str_replace("class='avatar", "class='img-circle", $class);
@@ -81,14 +86,6 @@ function appointment_add_to_author_profile( $contactmethods ) {
 		return $contactmethods;
 	}
 	add_filter( 'user_contactmethods', 'appointment_add_to_author_profile', 10, 1);
-	
-	/********** Image Resize *************/
-	if ( function_exists( 'add_image_size' ) ) 
-	{ 
-	add_image_size('appointment_latest_news_img',190,190,true);
-	add_image_size('webriti_blogdetail_img',750,350,true);
-	add_image_size('webriti_blogright_img',270,260,true);
-	}
 	
 	function appointment_excerpt_length($length ) {
 	        return 25;
@@ -134,5 +131,5 @@ function appointment_add_to_author_profile( $contactmethods ) {
 		}
 		else
 		{ return $excerpt; }
-	}
+	}	
 ?>

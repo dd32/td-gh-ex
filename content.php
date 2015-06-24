@@ -4,12 +4,12 @@
 		<div class="media-body">
 			<?php // Check Image size for fullwidth template
 				if( is_page_template('blog-full-width.php'))
-				appointment_image_thumbnail('blog-area-full','img-responsive'); 
+				appointment_image_thumbnail('','img-responsive'); 
 				// Check Image size for Different format like Single post,page
 				elseif(is_single() || is_page())
-				appointment_post_thumbnail('blog-area-full','img-responsive'); 
+				appointment_post_thumbnail('','img-responsive'); 
 				else
-				appointment_post_thumbnail('webriti_blogfull_img','img-responsive');
+				appointment_post_thumbnail('','img-responsive');
 							 appointment_post_meta_content(); 
 				if( !is_page_template('fullwidth.php') && get_the_title() && !is_page() ) { ?>
 				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>

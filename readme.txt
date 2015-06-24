@@ -95,6 +95,10 @@ Source: http://fontawesome.io
 # --- EOF --- #
 ============================Change Log================================
 
+@version 2.0 
+1. Add Theme Customization API Using Option .
+2. Update pot file.
+
 @version 1.6
 1. Add Upgrade to pro option.
 2. Enqueue Style.css

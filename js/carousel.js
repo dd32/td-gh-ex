@@ -1,7 +1,7 @@
-$(function() {
+jQuery(document).ready(function(){
 
 		//	Project Scroll Js	
-		$('#newCarousel .item').each(function(){
+		jQuery('#newCarousel .item').each(function(){
 				
 		  var next = $(this).next();
 		  if (!next.length) {

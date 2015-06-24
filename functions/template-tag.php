@@ -1,29 +1,30 @@
 <?php
-// function for post meta
 if ( ! function_exists( 'appointment_aside_meta_content' ) ) :
 
-function appointment_aside_meta_content()
-{  $current_options=get_option('appointment_options'); 
-			if($current_options['meta_section_settings']=='on') { ?>
-	        <!--show date of post-->
-			<aside class="blog-post-date-area">
-							<div class="date"><?php echo get_the_date('j'); ?> <div class="month-year"><?php echo get_the_date('M'); ?>,<?php echo get_the_date('Y'); ?></div></div>
-							<div class="comment"><a href="<?php the_permalink(); ?>"><i class="fa fa-comments"></i><?php comments_number( '', 'o', '%' ); ?></a></div>
-			</aside>
-			<?php }  } endif;
-
+		function appointment_aside_meta_content()
+		{
+		$appointment_options=theme_setup_data();
+		$news_setting = wp_parse_args(  get_option( 'appointment_options', array() ), $appointment_options );
+		if($news_setting['home_meta_section_settings'] == '' ) { ?>
+	    <!--show date of post-->
+		<aside class="blog-post-date-area">
+			<div class="date"><?php echo get_the_date('j'); ?> <div class="month-year"><?php echo get_the_date('M'); ?>,<?php echo get_the_date('Y'); ?></div></div>
+			<div class="comment"><a href="<?php the_permalink(); ?>"><i class="fa fa-comments"></i><?php comments_number( '0', '1', '%' ); ?></a></div>
+		</aside>
+		<?php }  } endif;
 
 if ( ! function_exists( 'appointment_post_meta_content' ) ) :
 function appointment_post_meta_content()
 { 
-			$current_options=get_option('appointment_options'); 
-			if($current_options['meta_section_settings']=='on') { ?>
+			$appointment_options=theme_setup_data();
+			$news_setting = wp_parse_args(  get_option( 'appointment_options', array() ), $appointment_options );
+			if($news_setting['home_meta_section_settings'] == '' ) { ?>
 			<div class="blog-post-lg">
-					<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) );?>"><?php echo get_avatar( get_the_author_meta('user_email'), $size = '40'); ?></a><?php _e('By','appointment');?><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) );?>"><?php echo get_the_author();?></a>
-					<?php 	$tag_list = get_the_tag_list();
+				<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) );?>"><?php echo get_avatar( get_the_author_meta('user_email'), $size = '40'); ?></a><?php _e('By','appointment');?><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) );?>"><?php echo get_the_author();?></a>
+				<?php 	$tag_list = get_the_tag_list();
 					if(!empty($tag_list)) { ?>
-					<div class="blog-tags-lg"><i class="fa fa-tags"></i><?php the_tags('', ', ', ''); ?></div>
-					<?php } ?>
+				<div class="blog-tags-lg"><i class="fa fa-tags"></i><?php the_tags('', ', ', ''); ?></div>
+				<?php } ?>
 			</div>
 			<?php }  
 } endif; 
