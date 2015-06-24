@@ -46,34 +46,13 @@ Fonts
     http://www.google.com/fonts/specimen/Dosis
     SIL Open Font License, 1.1
 
--------------------------------------------
-ScreenShot Images
-
-    Slider Image
-    http://pixabay.com/en/girl-young-female-happy-face-689137/
-    http://pixabay.com/en/tablet-computer-woman-reading-690032/
-    http://pixabay.com/en/model-fashion-glamour-girl-female-600238/
-    http://pixabay.com/en/camera-video-camera-lens-technology-408258/
-    
-    For all four section
-    https://unsplash.com/photos/29SqSdfvN_A/download
-    https://unsplash.com/photos/39f997mmLvQ/download
-    https://unsplash.com/photos/kG71BXh8KFw/download
-    https://unsplash.com/photos/eOLpJytrbsQ/download
-    http://pixabay.com/en/macbook-notebook-home-office-336704/
-    https://unsplash.com/photos/ugo3jZ_qtKo/download
-    
-    For latest review widget at right sidebar
-    https://unsplash.com/photos/YIN4xUBaqnk/download
-    
-    GPL compatible for own images   
-    accesspress-mag/images/no-image-medium.jpg             
-    accesspress-mag/images/demo-images/728-90.png
-    accesspress-mag/images/demo-images/300-250.png
-
 ----------------------------------------------------
 == Changelog ==
-Version 2.0.1
+Version 2.0.3
+ * Removed unused demo files.
+ * Removed unused demo images.
+
+Version 2.0.2
  * Removed unused file from widget folder.
  * Fixed required option in TGMPA.
  * Remove menu off/on option from theme option.
