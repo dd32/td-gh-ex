@@ -47,7 +47,24 @@ Fonts
     SIL Open Font License, 1.1
 
 ----------------------------------------------------
+
+ScreenShot Images
+    https://pixabay.com/en/girl-young-female-happy-face-689137/
+    http://pixabay.com/en/tablet-computer-woman-reading-690032/
+    http://pixabay.com/en/model-fashion-glamour-girl-female-600238/
+    http://pixabay.com/en/camera-video-camera-lens-technology-408258/
+    https://pixabay.com/en/girl-woman-sunglasses-fashion-691105/
+    https://pixabay.com/en/ship-illuminated-night-ship-484696/
+
+GPL compatible for own images
+    accesspress-mag/images/demo-images/728-90.png
+    accesspress-mag/images/demo-images/300-250.png
+
+----------------------------------------------------
 == Changelog ==
+Version 2.0.4
+ * Added credit link about screenshot images.
+ 
 Version 2.0.3
  * Removed unused demo files.
  * Removed unused demo images.
