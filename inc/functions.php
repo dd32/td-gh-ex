@@ -444,4 +444,24 @@ function freedom_footer_copyright() {
 
 /**************************************************************************************/
 
+add_action('admin_init','freedom_textarea_sanitization_change', 100);
+/**
+ * Override the default textarea sanitization.
+ */
+function freedom_textarea_sanitization_change() {
+   remove_filter( 'of_sanitize_textarea', 'of_sanitize_textarea' );
+   add_filter( 'of_sanitize_textarea', 'freedom_sanitize_textarea_custom',10,2 );
+}
+
+/**
+ * sanitize the input for custom css
+ */
+function freedom_sanitize_textarea_custom( $input,$option ) {
+   if( $option['id'] == "freedom_custom_css" ) {
+      $output = wp_filter_nohtml_kses( $input );
+   } else {
+      $output = $input;
+   }
+   return $output;
+}
 ?>

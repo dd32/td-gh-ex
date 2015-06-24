@@ -26,10 +26,10 @@
 	<?php
 		if( has_post_thumbnail() ) {
 			$image = '';        			
-     		$title_attribute = get_the_title( $post->ID );
+     		$title_attribute = the_title_attribute( 'echo=0' );
      		$image .= '<figure class="post-featured-image">';
-  			$image .= '<a href="' . get_permalink() . '" title="'.the_title_attribute( 'echo=0' ).'">';
-  			$image .= get_the_post_thumbnail( $post->ID, 'featured', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ) ) ).'</a>';
+  			$image .= '<a href="' . get_permalink() . '" title="'.$title_attribute.'">';
+  			$image .= get_the_post_thumbnail( $post->ID, 'featured', array( 'title' => $title_attribute, 'alt' => $title_attribute ) ).'</a>';
   			$image .= '</figure>';
   			echo $image;
   		}

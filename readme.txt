@@ -51,6 +51,11 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.0.3 =
+* Fontawesome icons updated to 4.3.0
+* JQuery Cycle js updated to latest version(3.0.3).
+* Custom CSS option sanitized using wp_filter_nohtml_kses().
+
 = Version 1.0.2 =
 * add_theme_support('title_tag') added as per WordPress 4.1
 
