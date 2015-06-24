@@ -264,7 +264,7 @@ function agama_customize_register( $wp_customize ) {
 		'default'			=> '',
 		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'esc_url_raw'
 	) );
 	
 	// Social icon Facebook - control
@@ -280,7 +280,7 @@ function agama_customize_register( $wp_customize ) {
 		'default'			=> '',
 		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'esc_url_raw'
 	) );
 	
 	// Social icon Twitter - control
@@ -296,7 +296,7 @@ function agama_customize_register( $wp_customize ) {
 		'default'			=> '',
 		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'esc_url_raw'
 	) );
 	
 	// Social icon Flickr - control
@@ -312,7 +312,7 @@ function agama_customize_register( $wp_customize ) {
 		'default'			=> '',
 		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'esc_url_raw'
 	) );
 	
 	// Social icon RSS - control
@@ -328,7 +328,7 @@ function agama_customize_register( $wp_customize ) {
 		'default'			=> '',
 		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'esc_url_raw'
 	) );
 	
 	// Social icon Vimeo - control
@@ -344,7 +344,7 @@ function agama_customize_register( $wp_customize ) {
 		'default'			=> '',
 		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'esc_url_raw'
 	) );
 	
 	// Social icon Youtube - control
@@ -360,7 +360,7 @@ function agama_customize_register( $wp_customize ) {
 		'default'			=> '',
 		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'esc_url_raw'
 	) );
 	
 	// Social icon Instagram - control
@@ -376,7 +376,7 @@ function agama_customize_register( $wp_customize ) {
 		'default'			=> '',
 		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'esc_url_raw'
 	) );
 	
 	// Social icon Pinterest - control
@@ -392,7 +392,7 @@ function agama_customize_register( $wp_customize ) {
 		'default'			=> '',
 		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'esc_url_raw'
 	) );
 	
 	// Social icon Tumblr - control
@@ -408,7 +408,7 @@ function agama_customize_register( $wp_customize ) {
 		'default'			=> '',
 		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'esc_url_raw'
 	) );
 	
 	// Social icon Google+ - control
@@ -424,7 +424,7 @@ function agama_customize_register( $wp_customize ) {
 		'default'			=> '',
 		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'esc_url_raw'
 	) );
 	
 	// Social icon Dribbble - control
@@ -440,7 +440,7 @@ function agama_customize_register( $wp_customize ) {
 		'default'			=> '',
 		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'esc_url_raw'
 	) );
 	
 	// Social icon Digg - control
@@ -456,7 +456,7 @@ function agama_customize_register( $wp_customize ) {
 		'default'			=> '',
 		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'esc_url_raw'
 	) );
 	
 	// Social icon Linkedin - control
@@ -472,7 +472,7 @@ function agama_customize_register( $wp_customize ) {
 		'default'			=> '',
 		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'esc_url_raw'
 	) );
 	
 	// Social icon Blogger - control
@@ -488,7 +488,7 @@ function agama_customize_register( $wp_customize ) {
 		'default'			=> '',
 		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'esc_url_raw'
 	) );
 	
 	// Social icon Skype - control
@@ -504,7 +504,7 @@ function agama_customize_register( $wp_customize ) {
 		'default'			=> '',
 		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'esc_url_raw'
 	) );
 	
 	// Social icon Forrst - control
@@ -520,7 +520,7 @@ function agama_customize_register( $wp_customize ) {
 		'default'			=> '',
 		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'esc_url_raw'
 	) );
 	
 	// Social icon Myspace - control
@@ -536,7 +536,7 @@ function agama_customize_register( $wp_customize ) {
 		'default'			=> '',
 		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'esc_url_raw'
 	) );
 	
 	// Social icon Deviantart - control
@@ -552,7 +552,7 @@ function agama_customize_register( $wp_customize ) {
 		'default'			=> '',
 		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'esc_url_raw'
 	) );
 	
 	// Social icon Yahoo - control
@@ -568,7 +568,7 @@ function agama_customize_register( $wp_customize ) {
 		'default'			=> '',
 		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'esc_url_raw'
 	) );
 	
 	// Social icon Reddit - control
@@ -584,7 +584,7 @@ function agama_customize_register( $wp_customize ) {
 		'default'			=> '',
 		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'esc_url_raw'
 	) );
 	
 	// Social icon PayPal - control
@@ -600,7 +600,7 @@ function agama_customize_register( $wp_customize ) {
 		'default'			=> '',
 		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'esc_url_raw'
 	) );
 	
 	// Social icon Dropbox - control
@@ -616,7 +616,7 @@ function agama_customize_register( $wp_customize ) {
 		'default'			=> '',
 		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'esc_url_raw'
 	) );
 	
 	// Social icon Soundcloud - control
@@ -632,7 +632,7 @@ function agama_customize_register( $wp_customize ) {
 		'default'			=> '',
 		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'esc_url_raw'
 	) );
 	
 	// Social icon VK - control
@@ -648,7 +648,7 @@ function agama_customize_register( $wp_customize ) {
 		'default'			=> '',
 		'capability'		=> 'edit_theme_options',
 		'transport' 		=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
+		'sanitize_callback'	=> 'esc_url_raw'
 	) );
 	
 	// Social icon Email - control
@@ -1035,7 +1035,7 @@ function agama_customize_css()
 	.entry-meta a:hover,
 	.format-status .entry-header header a:hover,
 	footer[role="contentinfo"] a:hover {
-		color: <?php echo agama_sanitize_hex( get_theme_mod( 'agama_primary_color', '#f7a805' ), '#f7a805' ); ?>; 
+		color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>; 
 	}
 	.site-header .logo {
 		max-height: 100px;
@@ -1047,7 +1047,7 @@ function agama_customize_css()
 		max-height: 65px;
 	}
 	.search-form .search-table .search-button input[type="submit"]:hover {
-		background: <?php echo agama_sanitize_hex( get_theme_mod( 'agama_primary_color', '#f7a805' ), '#f7a805' ); ?>;
+		background: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>;
 	}
 	#main-wrapper {
 		margin-top: <?php echo esc_attr( get_theme_mod( 'agama_header_top_margin', '0px' ) ); ?>;
@@ -1055,7 +1055,7 @@ function agama_customize_css()
 	.sticky-header,
 	.top-nav-wrapper { 
 		border-top-width: <?php echo esc_attr( get_theme_mod( 'agama_header_top_border_size', '3px' ) ); ?>; 
-		border-top-color: <?php echo agama_sanitize_hex( get_theme_mod( 'agama_primary_color', '#f7a805' ), '#f7a805' ); ?>;
+		border-top-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>;
 		border-top-style: solid;
 	}
 	<?php if( get_theme_mod('agama_sticky_header', false) && get_theme_mod('agama_enable_slider', false) ): ?>
@@ -1076,10 +1076,10 @@ function agama_customize_css()
 		margin: 0 !important;
 	}
 	.sticky-nav > li > ul {
-		border-top: 1px solid <?php echo agama_sanitize_hex( get_theme_mod( 'agama_primary_color', '#f7a805' ), '#f7a805' ); ?>;
+		border-top: 1px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>;
 	}
 	.sticky-nav > li > ul > li > ul {
-		border-right: 1px solid <?php echo agama_sanitize_hex( get_theme_mod( 'agama_primary_color', '#f7a805' ), '#f7a805' ); ?>;
+		border-right: 1px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>;
 	}
 	<?php if( get_theme_mod('agama_blog_infinite_scroll', false) && get_theme_mod('agama_blog_layout', 'list') == 'grid' ): ?>
 	#infscr-loading {
@@ -1089,20 +1089,20 @@ function agama_customize_css()
 	}
 	<?php endif; ?>
 	.entry-date .date-box {
-		background-color: <?php echo agama_sanitize_hex( get_theme_mod( 'agama_primary_color', '#f7a805' ), '#f7a805' ); ?>;
+		background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>;
 	}
 	.entry-date .format-box i {
-		color: <?php echo agama_sanitize_hex( get_theme_mod( 'agama_primary_color', '#f7a805' ), '#f7a805' ); ?>;
+		color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>;
 	}
 	.blog figure.effect-bubba, 
 	.agama-portfolio figure.effect-bubba {
-		background-color: <?php echo agama_sanitize_hex( get_theme_mod( 'agama_primary_color', '#f7a805' ), '#f7a805' ); ?>;
+		background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>;
 	}
 	.vision_tabs #tabs li.active a {
-		border-top: 3px solid <?php echo agama_sanitize_hex( get_theme_mod( 'agama_primary_color', '#f7a805' ), '#f7a805' ); ?>;
+		border-top: 3px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>;
 	}
 	#toTop:hover {
-		background-color: <?php echo agama_sanitize_hex( get_theme_mod( 'agama_primary_color', '#f7a805' ), '#f7a805' ); ?>;
+		background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ); ?>;
 	}
 	</style>
 	<?php

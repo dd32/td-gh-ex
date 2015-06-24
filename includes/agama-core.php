@@ -28,7 +28,7 @@ if( ! class_exists( 'Agama_Core' ) ) {
 
 			// Set up Agama version
 			if( !defined( 'AGAMA_VER' ) ) {
-				define( 'AGAMA_VER', '1.0.5' );
+				define( 'AGAMA_VER', '1.0.6' );
 			}
 			
 			// Defina Agama URI
@@ -161,7 +161,7 @@ if( ! class_exists( 'Agama_Core' ) ) {
 			// Agama main.js
 			wp_register_script( 'agama-main', AGAMA_JS.'main.js' );
 			$translation_array = array(
-				'primary_color' 	=> agama_sanitize_hex( get_theme_mod( 'agama_primary_color', '#f7a805' ), '#f7a805' ),
+				'primary_color' 	=> esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ),
 				'header_top_margin'	=> esc_attr( get_theme_mod( 'agama_header_top_margin', '0px' ) )
 			);
 			wp_localize_script( 'agama-main', 'agama', $translation_array );

@@ -1,6 +1,4 @@
 <?php
-// Include sanitization file
-get_template_part('includes/agama-sanitize');
 
 // Include framework init file
 get_template_part('framework/framework-init');
@@ -376,31 +374,31 @@ if( ! function_exists( 'agama_social_icons' ) ) {
 	function agama_social_icons( $tip_position = '' ) {
 		$_target = esc_attr( get_theme_mod('agama_social_url_target', '_self') ); // URL target
 		$social  = array(
-			'Facebook'	=> esc_url_raw( get_theme_mod('social_facebook', '') ),
-			'Twitter'	=> esc_url_raw( get_theme_mod('social_twitter', '') ),
-			'Flickr'	=> esc_url_raw( get_theme_mod('social_flickr', '') ),
-			'RSS'		=> esc_url_raw( get_theme_mod('social_rss', '') ),
-			'Vimeo'		=> esc_url_raw( get_theme_mod('social_vimeo', '') ),
-			'Youtube'	=> esc_url_raw( get_theme_mod('social_youtube', '') ),
-			'Instagram'	=> esc_url_raw( get_theme_mod('social_instagram', '') ),
-			'Pinterest'	=> esc_url_raw( get_theme_mod('social_pinterest', '') ),
-			'Tumblr'	=> esc_url_raw( get_theme_mod('social_tumblr', '') ),
-			'Google'	=> esc_url_raw( get_theme_mod('social_google', '') ),
-			'Dribbble'	=> esc_url_raw( get_theme_mod('social_dribbble', '') ),
-			'Digg'		=> esc_url_raw( get_theme_mod('social_digg', '') ),
-			'Linkedin'	=> esc_url_raw( get_theme_mod('social_linkedin', '') ),
-			'Blogger'	=> esc_url_raw( get_theme_mod('social_blogger', '') ),
+			'Facebook'	=> esc_url( get_theme_mod('social_facebook', '') ),
+			'Twitter'	=> esc_url( get_theme_mod('social_twitter', '') ),
+			'Flickr'	=> esc_url( get_theme_mod('social_flickr', '') ),
+			'RSS'		=> esc_url( get_theme_mod('social_rss', '') ),
+			'Vimeo'		=> esc_url( get_theme_mod('social_vimeo', '') ),
+			'Youtube'	=> esc_url( get_theme_mod('social_youtube', '') ),
+			'Instagram'	=> esc_url( get_theme_mod('social_instagram', '') ),
+			'Pinterest'	=> esc_url( get_theme_mod('social_pinterest', '') ),
+			'Tumblr'	=> esc_url( get_theme_mod('social_tumblr', '') ),
+			'Google'	=> esc_url( get_theme_mod('social_google', '') ),
+			'Dribbble'	=> esc_url( get_theme_mod('social_dribbble', '') ),
+			'Digg'		=> esc_url( get_theme_mod('social_digg', '') ),
+			'Linkedin'	=> esc_url( get_theme_mod('social_linkedin', '') ),
+			'Blogger'	=> esc_url( get_theme_mod('social_blogger', '') ),
 			'Skype'		=> esc_html( get_theme_mod('social_skype', '') ),
-			'Forrst'	=> esc_url_raw( get_theme_mod('social_forrst', '') ),
-			'Myspace'	=> esc_url_raw( get_theme_mod('social_myspace', '') ),
-			'Deviantart'=> esc_url_raw( get_theme_mod('social_deviantart', '') ),
-			'Yahoo'		=> esc_url_raw( get_theme_mod('social_yahoo', '') ),
-			'Reddit'	=> esc_url_raw( get_theme_mod('social_reddit', '') ),
-			'PayPal'	=> esc_url_raw( get_theme_mod('social_paypal', '') ),
-			'Dropbox'	=> esc_url_raw( get_theme_mod('social_dropbox', '') ),
-			'Soundcloud'=> esc_url_raw( get_theme_mod('social_soundcloud', '') ),
-			'VK'		=> esc_url_raw( get_theme_mod('social_vk', '') ),
-			'Email'		=> esc_url_raw( get_theme_mod('social_email', '') )
+			'Forrst'	=> esc_url( get_theme_mod('social_forrst', '') ),
+			'Myspace'	=> esc_url( get_theme_mod('social_myspace', '') ),
+			'Deviantart'=> esc_url( get_theme_mod('social_deviantart', '') ),
+			'Yahoo'		=> esc_url( get_theme_mod('social_yahoo', '') ),
+			'Reddit'	=> esc_url( get_theme_mod('social_reddit', '') ),
+			'PayPal'	=> esc_url( get_theme_mod('social_paypal', '') ),
+			'Dropbox'	=> esc_url( get_theme_mod('social_dropbox', '') ),
+			'Soundcloud'=> esc_url( get_theme_mod('social_soundcloud', '') ),
+			'VK'		=> esc_url( get_theme_mod('social_vk', '') ),
+			'Email'		=> esc_url( get_theme_mod('social_email', '') )
 		);
 		// Output icons
 		foreach( $social as $name => $url ) {

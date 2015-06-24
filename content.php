@@ -25,7 +25,6 @@
 							 //agama_thumb_title();
 						echo '<p>';
 						echo '<a href="'.esc_url( get_permalink() ).'"><i class="fa fa-fw fa-link"></i></a>';
-						echo '<a href="https://www.facebook.com/sharer/sharer.php?u='.esc_url( get_permalink() ).'" target="_blank"><i class="fa fa-fw fa-share"></i></a>';
 						echo '</p>';
 						echo '</figcaption>';
 						echo '</figure>';
@@ -36,7 +35,6 @@
 							 //agama_thumb_title();
 						echo '<p>';
 						echo '<a href="'.esc_url( get_permalink() ).'"><i class="fa fa-fw fa-link"></i></a>';
-						echo '<a href="https://www.facebook.com/sharer/sharer.php?u='.esc_url( get_permalink() ).'" target="_blank"><i class="fa fa-fw fa-share"></i></a>';
 						echo '</p>';
 						echo '</figcaption>';
 						echo '</figure>';
