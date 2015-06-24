@@ -37,10 +37,7 @@ function avocation_theme_customizer( $wp_customize ) {
 		'title'          => 'Social Settings',
 		'priority'       => 35,
 	) );
-	$wp_customize->add_section( 'avocation_contact_section', array(
-		'title'          => 'Contact Us Setting',
-		'priority'       => 35,
-	) );
+	
 
 	/* basic section */
 	$wp_customize->add_setting( 'avocation_logo' ,array(
@@ -204,76 +201,7 @@ function avocation_theme_customizer( $wp_customize ) {
             'type'    => 'number',
            
         ) );    
-  /*      
-	 // Contact Section
-	$wp_customize->add_setting( 'contact_info_title_setting', array(
-		'default'        => '',
-		'sanitize_callback' => 'esc_attr',
-	) );
-	
-	$wp_customize->add_control( 'contact_info_title_setting', array(
-		'label'   => 'Contact Info Title',
-		'section' => 'avocation_contact_section',
-		'type'    => 'text'
-	) );
-	
-	$wp_customize->add_setting( 'contact_info_setting', array(
-		'default'        => '',
-		'sanitize_callback' => 'esc_textarea',
-	) );
-	
-	$wp_customize->add_control( 'contact_info_setting', array(
-		'label'   => 'Contact Info',
-		'section' => 'avocation_contact_section',
-		'type'    => 'textarea'
-	) );
-
-	$wp_customize->add_setting( 'contact_telephone_setting', array(
-		'default'        => '',
-		'sanitize_callback' => 'esc_attr',
-	) );
-	
-	$wp_customize->add_control( 'contact_telephone_setting', array(
-		'label'   => 'Contact Telephone',
-		'section' => 'avocation_contact_section',
-		'type'    => 'text'
-	) );
-
-	 
-	$wp_customize->add_setting( 'contact_email_setting', array(
-		'default'        => '',
-		'sanitize_callback' => 'sanitize_email'
-	) );
-	
-	$wp_customize->add_control( 'contact_email_setting', array(
-		'label'   => 'Contact Email',
-		'section' => 'avocation_contact_section',
-		'type'    => 'text'
-	) );
-	
-	 
-	$wp_customize->add_setting( 'contact_web_setting', array(
-		'default'        => '',
-		'sanitize_callback' => 'esc_url',
-	) );
-	
-	$wp_customize->add_control( 'contact_web_setting', array(
-		'label'   => 'Contact Web (http://)',
-		'section' => 'avocation_contact_section',
-		'type'    => 'text'
-	) );
-	
-	 $wp_customize->add_setting( 'contact_add_setting', array(
-		'default'        => '',
-		'sanitize_callback' => 'esc_textarea',
-	) );
-	
-	$wp_customize->add_control( 'contact_add_setting', array(
-		'label'   => 'Contact Address',
-		'section' => 'avocation_contact_section',
-		'type'    => 'textarea'
-	) );
-*/
+ 	
 
 	// Social Section
 	$wp_customize->add_setting( 'twitter_setting', array(

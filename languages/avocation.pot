@@ -1,16 +1,15 @@
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Avocation V1.0.6\n"
-"POT-Creation-Date: 2015-06-23 16:34+0530\n"
+"Project-Id-Version: Avocation V1.0.7\n"
+"POT-Creation-Date: 2015-04-15 17:31+0530\n"
 "PO-Revision-Date: 2015-04-15 17:36+0530\n"
 "Last-Translator: FruitThemes <info@fruitthemes.com>\n"
 "Language-Team: FruitThemes <info@fruitthemes.com>\n"
 "Language: en_US\n"
-"MIME-Version: 1.0\n"
+"MIME-Version: 1.0.1\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.1\n"
+"X-Generator: Poedit 1.7.5\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -38,15 +37,13 @@ msgid "Category : %s"
 msgstr ""
 
 #: comments.php:15 functions/theme-default-setup.php:115
-#, fuzzy, php-format
+#, php-format
 msgid "1 Comment"
 msgid_plural "%1$s Comments"
 msgstr[0] ""
-"#-#-#-#-#  0extracted.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-"#-#-#-#-#  1extracted.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-msgstr[1] "#-#-#-#-#  0extracted.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+msgstr[1] ""
 
-#: footer.php:28
+#: footer.php:29
 #, php-format
 msgid "Powered by %1$s and %2$s."
 msgstr ""
@@ -55,7 +52,7 @@ msgstr ""
 msgid "Main Menu"
 msgstr ""
 
-#: functions.php:91
+#: functions.php:88
 msgid "READ MORE"
 msgstr ""
 
@@ -87,302 +84,6 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: functions/class-tgm-plugin-activation.php:52 functions/tgm-plugins.php:34
-msgid "Install Required Plugins"
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:53 functions/tgm-plugins.php:35
-msgid "Install Plugins"
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:54 functions/tgm-plugins.php:36
-#, php-format
-msgid "Installing Plugin: %s"
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:55
-msgid "Something went wrong."
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:56 functions/tgm-plugins.php:38
-#, php-format
-msgid "This theme requires the following plugin: %1$s."
-msgid_plural "This theme requires the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions/class-tgm-plugin-activation.php:57 functions/tgm-plugins.php:39
-#, php-format
-msgid "This theme recommends the following plugin: %1$s."
-msgid_plural "This theme recommends the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions/class-tgm-plugin-activation.php:58 functions/tgm-plugins.php:40
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to install the %s plugin. "
-"Contact the administrator of this site for help on getting the plugin "
-"installed."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to install the %s "
-"plugins. Contact the administrator of this site for help on getting the "
-"plugins installed."
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions/class-tgm-plugin-activation.php:59 functions/tgm-plugins.php:41
-#, php-format
-msgid "The following required plugin is currently inactive: %1$s."
-msgid_plural "The following required plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions/class-tgm-plugin-activation.php:60 functions/tgm-plugins.php:42
-#, php-format
-msgid "The following recommended plugin is currently inactive: %1$s."
-msgid_plural "The following recommended plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions/class-tgm-plugin-activation.php:61 functions/tgm-plugins.php:43
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to activate the %s "
-"plugin. Contact the administrator of this site for help on getting the "
-"plugin activated."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to activate the %s "
-"plugins. Contact the administrator of this site for help on getting the "
-"plugins activated."
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions/class-tgm-plugin-activation.php:62 functions/tgm-plugins.php:44
-#, php-format
-msgid ""
-"The following plugin needs to be updated to its latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgid_plural ""
-"The following plugins need to be updated to their latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions/class-tgm-plugin-activation.php:63 functions/tgm-plugins.php:45
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to update the %s plugin. "
-"Contact the administrator of this site for help on getting the plugin "
-"updated."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to update the %s plugins. "
-"Contact the administrator of this site for help on getting the plugins "
-"updated."
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions/class-tgm-plugin-activation.php:64 functions/tgm-plugins.php:46
-msgid "Begin installing plugin"
-msgid_plural "Begin installing plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions/class-tgm-plugin-activation.php:65 functions/tgm-plugins.php:47
-msgid "Begin activating plugin"
-msgid_plural "Begin activating plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions/class-tgm-plugin-activation.php:66 functions/tgm-plugins.php:48
-msgid "Return to Required Plugins Installer"
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:67
-msgid "Return to the dashboard"
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:68
-#: functions/class-tgm-plugin-activation.php:1023 functions/tgm-plugins.php:49
-msgid "Plugin activated successfully."
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:69
-#: functions/class-tgm-plugin-activation.php:839
-msgid "The following plugin was activated successfully:"
-msgid_plural "The following plugins were activated successfully:"
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions/class-tgm-plugin-activation.php:70
-#, php-format
-msgid "All plugins installed and activated successfully. %1$s"
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:71
-msgid "Dismiss this notice"
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:259
-#: functions/class-tgm-plugin-activation.php:1129
-msgid "Return to the Dashboard"
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:561
-msgid "Private Repository"
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:564
-msgid "Pre-Packaged"
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:566
-msgid "WordPress Repository"
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:568
-msgid "Required"
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:568
-msgid "Recommended"
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:570
-msgid "Not Installed"
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:572
-msgid "Installed But Not Activated"
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:618
-#: functions/class-tgm-plugin-activation.php:675
-msgid "Install"
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:636
-#: functions/class-tgm-plugin-activation.php:676
-msgid "Activate"
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:659
-msgid "No plugins to install or activate"
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:666
-msgid "Plugin"
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:667
-msgid "Source"
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:668
-msgid "Type"
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:669
-msgid "Status"
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:741
-msgid "No plugins are available to be installed at this time."
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:822
-msgid "No plugins are available to be activated at this time."
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:1013
-msgid "Install package not available."
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:1014
-#, php-format
-msgid "Downloading install package from %1$s %s %1$s"
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:1015
-msgid "Unpacking the package&#8230;"
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:1016
-msgid "Installing the plugin&#8230;"
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:1017
-msgid "Plugin install failed."
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:1018
-msgid "Plugin installed successfully."
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:1022
-msgid "Plugin activation failed."
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:1062
-msgid ""
-"The installation and activation process is starting. This process may take a "
-"while on some hosts, so please be patient."
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:1063
-#, php-format
-msgid "%1$s installed and activated successfully."
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:1063
-#: functions/class-tgm-plugin-activation.php:1072
-msgid "Show Details"
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:1063
-#: functions/class-tgm-plugin-activation.php:1072
-msgid "Hide Details"
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:1064
-msgid "All installations and activations have been completed."
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:1065
-#, php-format
-msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:1069
-msgid ""
-"The installation process is starting. This process may take a while on some "
-"hosts, so please be patient."
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:1070
-#, php-format
-msgid "An error occurred while installing %1$s: %2$s."
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:1071
-#, php-format
-msgid "The installation of %1$s failed."
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:1072
-#, php-format
-msgid "%1$s installed successfully."
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:1073
-msgid "All installations have been completed."
-msgstr ""
-
-#: functions/class-tgm-plugin-activation.php:1074
-#, php-format
-msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
 #: functions/getintouch.php:14
 msgid "A widget that displays the title,contact information. "
 msgstr ""
@@ -391,40 +92,36 @@ msgstr ""
 msgid "Get In Touch"
 msgstr ""
 
-#: functions/getintouch.php:46 functions/getintouch.php:99
+#: functions/getintouch.php:45 functions/getintouch.php:98
 msgid "Phone:"
 msgstr ""
 
-#: functions/getintouch.php:50 functions/getintouch.php:105
+#: functions/getintouch.php:49 functions/getintouch.php:104
 msgid "Fax:"
 msgstr ""
 
-#: functions/getintouch.php:54
+#: functions/getintouch.php:53
 msgid "Email:"
 msgstr ""
 
-#: functions/getintouch.php:58
+#: functions/getintouch.php:57
 msgid "Web:"
 msgstr ""
 
-#: functions/getintouch.php:86
+#: functions/getintouch.php:85
 msgid "Widget Title:"
 msgstr ""
 
-#: functions/getintouch.php:92
+#: functions/getintouch.php:91
 msgid "Address:"
 msgstr ""
 
-#: functions/getintouch.php:111
+#: functions/getintouch.php:110
 msgid "Email Address:"
 msgstr ""
 
-#: functions/getintouch.php:117
+#: functions/getintouch.php:116
 msgid "Website:"
-msgstr ""
-
-#: functions/popularpost.php:15
-msgid "Displays a Latest post with thumbnail"
 msgstr ""
 
 #: functions/popularpost.php:26
@@ -437,47 +134,6 @@ msgstr ""
 
 #: functions/popularpost.php:30
 msgid "Display post date?"
-msgstr ""
-
-#: functions/tgm-plugins.php:16
-msgid "Responsive WordPress Slider - Soliloquy Lite"
-msgstr ""
-
-#: functions/tgm-plugins.php:37
-msgid "Something went wrong with the plugin API."
-msgstr ""
-
-#: functions/tgm-plugins.php:50
-#, php-format
-msgid "All plugins installed and activated successfully. %s"
-msgstr ""
-
-#: functions/theme-customizer.php:5
-msgid "Basic Settings"
-msgstr ""
-
-#: functions/theme-customizer.php:19
-msgid "Slider Section"
-msgstr ""
-
-#: functions/theme-customizer.php:25
-msgid "Purpose Business Section"
-msgstr ""
-
-#: functions/theme-customizer.php:30
-msgid "Blog Section"
-msgstr ""
-
-#: functions/theme-customizer.php:51
-msgid "Logo (Recommended size 182 x 39)"
-msgstr ""
-
-#: functions/theme-customizer.php:62
-msgid "Favicon (Recommended size 32 x 32)"
-msgstr ""
-
-#: functions/theme-customizer.php:119
-msgid "Background Image (Recommended size 1280 x 853)"
 msgstr ""
 
 #: functions/theme-default-setup.php:8
@@ -558,11 +214,15 @@ msgctxt "comment form placeholder"
 msgid "Comment"
 msgstr ""
 
-#: header.php:116
+#: header.php:41
+msgid "avocation-logo"
+msgstr ""
+
+#: header.php:120
 msgid "custom-header"
 msgstr ""
 
-#: index.php:18 page-templates/homepage.php:42
+#: index.php:16 page-templates/homepage.php:141
 msgid "Our Blog"
 msgstr ""
 
@@ -584,4 +244,283 @@ msgstr ""
 #: tag.php:12
 #, php-format
 msgid "Tag Archives : %s"
+msgstr ""
+
+#: theme-options/theme-options.php:69 theme-options/theme-options.php:70
+#: theme-options/theme-options.php:107
+msgid "Theme Options"
+msgstr ""
+
+#: theme-options/theme-options.php:94
+msgid "FruitThemes"
+msgstr ""
+
+#: theme-options/theme-options.php:98 theme-options/theme-options.php:508
+msgid "Save Options"
+msgstr ""
+
+#: theme-options/theme-options.php:110
+msgid "Basic Settings"
+msgstr ""
+
+#: theme-options/theme-options.php:111
+msgid "Home Page Settings"
+msgstr ""
+
+#: theme-options/theme-options.php:112
+msgid "Social Settings"
+msgstr ""
+
+#: theme-options/theme-options.php:113
+msgid "Contact Us Settings"
+msgstr ""
+
+#: theme-options/theme-options.php:126
+msgid "Site Logo (Recommended Size : 182px * 39px)"
+msgstr ""
+
+#: theme-options/theme-options.php:128
+msgid "Size of Logo should be exactly 182x39px for best results."
+msgstr ""
+
+#: theme-options/theme-options.php:131 theme-options/theme-options.php:148
+#: theme-options/theme-options.php:163 theme-options/theme-options.php:179
+#: theme-options/theme-options.php:220 theme-options/theme-options.php:329
+msgid "No file chosen"
+msgstr ""
+
+#: theme-options/theme-options.php:132 theme-options/theme-options.php:149
+#: theme-options/theme-options.php:164 theme-options/theme-options.php:180
+#: theme-options/theme-options.php:221 theme-options/theme-options.php:330
+msgid "Upload"
+msgstr ""
+
+#: theme-options/theme-options.php:135
+msgid "Avocation logo"
+msgstr ""
+
+#: theme-options/theme-options.php:144
+msgid "Breadcrumbs Backgroung Image (Recommended Size : 1329px * 89px)"
+msgstr ""
+
+#: theme-options/theme-options.php:159
+msgid "Footer Backgroung Image (Recommended Size : 1329px * 1035px)"
+msgstr ""
+
+#: theme-options/theme-options.php:174
+msgid "avocation-favicon (Recommended Size : 32px * 32px)"
+msgstr ""
+
+#: theme-options/theme-options.php:176
+msgid "Size of favicon should be exactly 32x32px for best results."
+msgstr ""
+
+#: theme-options/theme-options.php:183
+msgid "avocation-favicon"
+msgstr ""
+
+#: theme-options/theme-options.php:191 theme-options/theme-options.php:345
+msgid "Blog Title"
+msgstr ""
+
+#: theme-options/theme-options.php:199
+msgid "Copyright Text"
+msgstr ""
+
+#: theme-options/theme-options.php:202
+msgid ""
+"Some text regarding copyright of your site, you would like to display in the "
+"footer."
+msgstr ""
+
+#: theme-options/theme-options.php:213
+msgid "Banner Slider"
+msgstr ""
+
+#: theme-options/theme-options.php:216
+msgid "Slider"
+msgstr ""
+
+#: theme-options/theme-options.php:216
+msgid " (Recommended Size : 1350px * 667px)"
+msgstr ""
+
+#: theme-options/theme-options.php:227
+msgid "Slide Tiltle"
+msgstr ""
+
+#: theme-options/theme-options.php:227
+msgid "Title"
+msgstr ""
+
+#: theme-options/theme-options.php:232
+msgid "Slide"
+msgstr ""
+
+#: theme-options/theme-options.php:232
+msgid "Content"
+msgstr ""
+
+#: theme-options/theme-options.php:235
+msgid "Button Title"
+msgstr ""
+
+#: theme-options/theme-options.php:239
+msgid "Button Link"
+msgstr ""
+
+#: theme-options/theme-options.php:244 theme-options/theme-options.php:298
+msgid "Check this if you donot want to open in new tab."
+msgstr ""
+
+#: theme-options/theme-options.php:252
+msgid "About Us Section"
+msgstr ""
+
+#: theme-options/theme-options.php:254
+msgid "About Us Title Bar"
+msgstr ""
+
+#: theme-options/theme-options.php:257
+msgid "About Title "
+msgstr ""
+
+#: theme-options/theme-options.php:278
+msgid "Tab"
+msgstr ""
+
+#: theme-options/theme-options.php:281
+msgid "You have to enter the class name like this way fa fa-icon"
+msgstr ""
+
+#: theme-options/theme-options.php:282
+msgid "Section Icon"
+msgstr ""
+
+#: theme-options/theme-options.php:283
+msgid "Font Awesome icon names"
+msgstr ""
+
+#: theme-options/theme-options.php:283
+msgid "[View all]"
+msgstr ""
+
+#: theme-options/theme-options.php:286
+msgid "Section Title"
+msgstr ""
+
+#: theme-options/theme-options.php:289
+msgid "Section Description"
+msgstr ""
+
+#: theme-options/theme-options.php:292
+msgid "Section Url"
+msgstr ""
+
+#: theme-options/theme-options.php:306
+msgid "Purpose Business Section"
+msgstr ""
+
+#: theme-options/theme-options.php:308
+msgid "Purpose Business Title Bar"
+msgstr ""
+
+#: theme-options/theme-options.php:311
+msgid "Perfect Title "
+msgstr ""
+
+#: theme-options/theme-options.php:327
+msgid "Here background image 1280 x 853 set in the purpose section "
+msgstr ""
+
+#: theme-options/theme-options.php:340 theme-options/theme-options.php:342
+msgid "Blog Section"
+msgstr ""
+
+#: theme-options/theme-options.php:348
+msgid "Blog Sub Title"
+msgstr ""
+
+#: theme-options/theme-options.php:353
+msgid "Select Category"
+msgstr ""
+
+#: theme-options/theme-options.php:397
+msgid "Facebook"
+msgstr ""
+
+#: theme-options/theme-options.php:400
+msgid "Facebook profile or page URL "
+msgstr ""
+
+#: theme-options/theme-options.php:405
+msgid "twitter"
+msgstr ""
+
+#: theme-options/theme-options.php:408
+msgid "twitter profile or page URL "
+msgstr ""
+
+#: theme-options/theme-options.php:414
+msgid "youtube"
+msgstr ""
+
+#: theme-options/theme-options.php:417
+msgid "youtube profile or page URL "
+msgstr ""
+
+#: theme-options/theme-options.php:423
+msgid "rss"
+msgstr ""
+
+#: theme-options/theme-options.php:426
+msgid "rss profile or page URL "
+msgstr ""
+
+#: theme-options/theme-options.php:432
+msgid "pinterest"
+msgstr ""
+
+#: theme-options/theme-options.php:435
+msgid "pinterest profile or page URL "
+msgstr ""
+
+#: theme-options/theme-options.php:444
+msgid "Contact Info Title"
+msgstr ""
+
+#: theme-options/theme-options.php:452
+msgid "Contact Info"
+msgstr ""
+
+#: theme-options/theme-options.php:455
+msgid "Description"
+msgstr ""
+
+#: theme-options/theme-options.php:460
+msgid "Contact Telephone"
+msgstr ""
+
+#: theme-options/theme-options.php:469
+msgid "Contact Email"
+msgstr ""
+
+#: theme-options/theme-options.php:477
+msgid "Contact web"
+msgstr ""
+
+#: theme-options/theme-options.php:485 theme-options/theme-options.php:488
+msgid "Contact Address"
+msgstr ""
+
+#: theme-options/theme-options.php:493
+msgid "Contact Short Code"
+msgstr ""
+
+#: theme-options/theme-options.php:495
+msgid "here you have to write the shortcode "
+msgstr ""
+
+#: theme-options/theme-options.php:497
+msgid "Shortcode"
 msgstr ""

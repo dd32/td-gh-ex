@@ -38,18 +38,25 @@ Avocation is distributed under the terms of the GNU GPL
 	i) Avocation latest post widget for display latest post in sidebar or footer.
 	ii) Avocation Get in touch widget for display the contact information in footer
 	
-6. Theme Options :
-
-	a) Home Page Settings	
-		i) Slider Setting : Here you can add soliloqu slider id. 
-		ii)Purpose Business Section : you can manage your title,short description and background image. 
-		iii) Blog Section : You can set home page Blog Section title and description and select the category type as per the category type it will dispaly in the blog section.
-
-	b) Basic Settings: You can manage your site logo,favicon,breadcrumbs background image,footer background image,blog title and copyright text.
+6. Theme Customization  Path:- (Dashboard/Appearance/Customize/)
 	
-	c) Social Settings  : You can manage here Social Media.
-
-	d) Contact Us Settings: You can manage your title, short description,address,phone,fax,email and web address.
+	a) Hompage Settings:- In this section we have add the settings of the home page.
+	   
+           1) Slider Section :- In this you have to just pass the id of the slider shortcode which you want to display in the homepage.
+	   2) Purpose Business Section :- In this you can add the title, description and background image which you want to display in the homepage.
+	   3) Blog Section :- In this you can add title,description and select the specific category which you want to display in the homepage.
+	
+	b) Basic Settings  :- In these section you add your basic needs.
+	   
+            1) Logo:- you can choose your logo which you want to display in the header portion of the theme.
+	    2) Favicon :- You can choose your favicon for your site.
+	    3) Blog Title:- You write your blog heading for the index.php page i.e. blog page.
+	    4) Copyright Text :- You write the copyright text here which will be display in the footer section.
+	
+	c) Social Settings :- here we pass the url of the social icons which will be display in the top of the header
+		1) Facebook , 2) Twitter, 3) Youtube, 4) rss and 5) Pinterest.  
+		 	
+	 	
 
 ---------------------------------------------------------
 License and Copyrights for Resources used in this theme

@@ -34,11 +34,7 @@ function avocation_setup() {
 	add_theme_support('html5', array(
 		'search-form', 'comment-form', 'comment-list',
 	));
-	// Add support for featured content.
-	add_theme_support('featured-content', array(
-	   'featured_content_filter' => 'avocation_get_featured_posts',
-	   'max_posts' => 6,
-	));
+	
 	
 	add_theme_support( 'custom-header', apply_filters( 'avocation_custom_header_args', array(
 	'uploads'       => true,

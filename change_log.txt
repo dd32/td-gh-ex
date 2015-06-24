@@ -26,3 +26,9 @@ version 1.0.5
 
 Version 1.0.6
 	1) Fixed all the issues as per your suggestion
+
+Version 1.0.7
+	1) Removed the featured Post content from the fuctions.php
+	2) Removed the contact Settings from the theme-customizer.php
+	3) Add the documentation of theme Customization settings in the readme.txt as theme Customizer name.
+
