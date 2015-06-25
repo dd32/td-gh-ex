@@ -5,6 +5,10 @@ Theme instructions can be found at http://templateexpress.com/adam/documentation
 Changelog
 --------------------------------------------
 
+Version: 2.4
+* Fixed issue with child themes
+* Fixed text domain issues
+
 Version: 2.2
 
 * Improved documentation

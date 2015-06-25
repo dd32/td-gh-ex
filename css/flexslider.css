@@ -71,7 +71,7 @@ html[xmlns] .slides {display: block;}
 }
 .flex-caption a {color: #FFF;}
 .flex-caption a:hover {color: #CCC;}
-.flex-caption-title { font-family: 'open_sansbold', sans-serif; text-transform: uppercase; background-color: #222; text-transform: uppercase; font-size: 14px; margin-bottom: 4px; padding: 4px 4px; border-radius: 0.2em; width: 250px;}
+.flex-caption-title { font-family: 'open_sansbold', sans-serif; text-transform: uppercase; text-transform: uppercase; font-size: 14px; margin-bottom: 4px; padding: 4px 4px; border-radius: 0.2em; width: 250px;}
 
 @media screen and (max-width: 860px) {
   .flex-direction-nav .flex-prev {opacity: 1; left: 0;}

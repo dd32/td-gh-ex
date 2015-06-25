@@ -228,7 +228,7 @@ function adamos_register_theme_customizer( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting( 'adamos_color_scheme', array(
-			'default'        	=> 'black',
+			'default'        	=> 'Default',
 			'sanitize_callback' => 'adamos_sanitize_text',
 		) 
 	);
@@ -448,9 +448,10 @@ function adamos_register_theme_customizer( $wp_customize ) {
 		'settings'		=> 'adamos_color_scheme',
 		'type'       	=> 'radio',
 		'choices'    	=> array(
-			__( 'Black', 'adamos' ) => 'black',
-			__( 'Red', 'adamos' ) => 'red',
-			__( 'Pink', 'adamos' ) => 'pink',
+			__( 'Default', 'adamos' ) 	=> 'none',
+			__( 'Black', 'adamos' ) 	=> 'black',
+			__( 'Red', 'adamos' ) 		=> 'red',
+			__( 'Pink', 'adamos' ) 		=> 'pink',
 		),
 	));
 

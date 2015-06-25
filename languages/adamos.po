@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Adamos Pro\n"
-"POT-Creation-Date: 2015-05-18 20:22-0000\n"
-"PO-Revision-Date: 2015-05-18 20:23-0000\n"
+"POT-Creation-Date: 2015-06-25 09:57-0000\n"
+"PO-Revision-Date: 2015-06-25 09:58-0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.6\n"
+"X-Generator: Poedit 1.6.5\n"
 "X-Poedit-KeywordsList: _;__;_e;__e\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -33,6 +33,7 @@ msgstr ""
 msgid "Most Used Categories"
 msgstr ""
 
+#. translators: %1$s: smilie
 #: ../404.php:35
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
@@ -119,6 +120,7 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
+#. translators: used between list items, there is a space after the comma
 #: ../content-single.php:33 ../content.php:42 ../content.php:52
 msgid ", "
 msgstr ""
@@ -183,7 +185,7 @@ msgid "This right column is widget ready! Add one in the admin panel."
 msgstr ""
 
 #: ../footer.php:77
-msgid "Adamos Pro WordPress Theme"
+msgid "Adamos WordPress Theme"
 msgstr ""
 
 #: ../footer.php:78
@@ -194,49 +196,19 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: ../functions.php:131
+#: ../functions.php:122
 msgid "Primary Sidebar"
 msgstr ""
 
-#: ../functions.php:140
+#: ../functions.php:131
 msgid "Secondary Sidebar"
 msgstr ""
 
-#: ../functions.php:149
+#: ../functions.php:140
 msgid "Left Sidebar"
 msgstr ""
 
-#: ../functions.php:286
-#, php-format
-msgid "Page %s"
-msgstr ""
-
-#: ../functions.php:313 ../functions.php:335
-msgid "Custom CSS"
-msgstr ""
-
-#: ../functions.php:326
-msgid ""
-"/*\r\n"
-"Welcome to the Custom CSS editor!\r\n"
-" \r\n"
-"Please add all your custom CSS here and avoid modifying the core theme "
-"files, since that'll make upgrading the theme problematic. Your custom CSS "
-"will be loaded after the theme's stylesheets, which means that your rules "
-"will take precedence. Just add your CSS here for what you want to change, "
-"you don't need to copy all the theme's style.css content.\r\n"
-"*/"
-msgstr ""
-
-#: ../functions.php:336
-msgid "Custom CSS updated."
-msgstr ""
-
-#: ../functions.php:347
-msgid "Save Changes"
-msgstr ""
-
-#: ../functions.php:377
+#: ../functions.php:263
 msgid "Alternate Profile Image Url"
 msgstr ""
 
@@ -244,248 +216,208 @@ msgstr ""
 msgid "&mdash; Select &mdash;"
 msgstr ""
 
-#: ../functions/customizer_settings.php:32
+#: ../functions/customizer_settings.php:36
+msgid "Check out Pro Version"
+msgstr ""
+
+#: ../functions/customizer_settings.php:56
 msgid "Twitter url"
 msgstr ""
 
-#: ../functions/customizer_settings.php:33
+#: ../functions/customizer_settings.php:57
 msgid "Facebook url"
 msgstr ""
 
-#: ../functions/customizer_settings.php:34
+#: ../functions/customizer_settings.php:58
 msgid "Google + url"
 msgstr ""
 
-#: ../functions/customizer_settings.php:35
+#: ../functions/customizer_settings.php:59
 msgid "LinkedIn url"
 msgstr ""
 
-#: ../functions/customizer_settings.php:36
+#: ../functions/customizer_settings.php:60
 msgid "Flickr url"
 msgstr ""
 
-#: ../functions/customizer_settings.php:37
+#: ../functions/customizer_settings.php:61
 msgid "Pinterest url"
 msgstr ""
 
-#: ../functions/customizer_settings.php:38
-msgid "YouTube url"
-msgstr ""
-
-#: ../functions/customizer_settings.php:39
-msgid "Vimeo url"
-msgstr ""
-
-#: ../functions/customizer_settings.php:40
-msgid "Tumblr url"
-msgstr ""
-
-#: ../functions/customizer_settings.php:41
-msgid "Dribbble url"
-msgstr ""
-
-#: ../functions/customizer_settings.php:42
-msgid "Github url"
-msgstr ""
-
-#: ../functions/customizer_settings.php:43
-msgid "Instagram url"
-msgstr ""
-
-#: ../functions/customizer_settings.php:44
-msgid "Xing url"
-msgstr ""
-
-#: ../functions/customizer_settings.php:48 ../inc/contact-details.php:4
+#: ../functions/customizer_settings.php:65 ../inc/contact-details.php:4
 msgid "Telephone Number"
 msgstr ""
 
-#: ../functions/customizer_settings.php:49 ../inc/contact-details.php:5
-msgid "Mobile Number"
-msgstr ""
-
-#: ../functions/customizer_settings.php:50 ../inc/contact-details.php:6
-msgid "Email Address"
-msgstr ""
-
-#: ../functions/customizer_settings.php:51 ../inc/contact-details.php:7
+#: ../functions/customizer_settings.php:66 ../inc/contact-details.php:7
 msgid "Address"
 msgstr ""
 
-#: ../functions/customizer_settings.php:55
+#: ../functions/customizer_settings.php:70
 msgid "One"
 msgstr ""
 
-#: ../functions/customizer_settings.php:55
+#: ../functions/customizer_settings.php:70
 msgid "Service Box One"
 msgstr ""
 
-#: ../functions/customizer_settings.php:56
+#: ../functions/customizer_settings.php:71
 msgid "Two"
 msgstr ""
 
-#: ../functions/customizer_settings.php:56
+#: ../functions/customizer_settings.php:71
 msgid "Service Box Two"
 msgstr ""
 
-#: ../functions/customizer_settings.php:57
+#: ../functions/customizer_settings.php:72
 msgid "Three"
 msgstr ""
 
-#: ../functions/customizer_settings.php:57
+#: ../functions/customizer_settings.php:72
 msgid "Service Box Three"
 msgstr ""
 
-#: ../functions/customizer_settings.php:69
+#: ../functions/customizer_settings.php:84
 msgid "Site Settings"
 msgstr ""
 
-#: ../functions/customizer_settings.php:74
+#: ../functions/customizer_settings.php:89
 msgid "Homepage Settings"
 msgstr ""
 
-#: ../functions/customizer_settings.php:88
+#: ../functions/customizer_settings.php:103
 msgid "Site Logo"
 msgstr ""
 
-#: ../functions/customizer_settings.php:89
+#: ../functions/customizer_settings.php:104
 msgid ""
 "Upload a logo to replace the default site name and description in the header"
 msgstr ""
 
-#: ../functions/customizer_settings.php:95
+#: ../functions/customizer_settings.php:110
 msgid "Favicon & App Icons"
 msgstr ""
 
-#: ../functions/customizer_settings.php:101
+#: ../functions/customizer_settings.php:116
 msgid "Header Contact Details"
 msgstr ""
 
-#: ../functions/customizer_settings.php:102
+#: ../functions/customizer_settings.php:117
 msgid "Add contact details that will appear in the header of your site."
 msgstr ""
 
-#: ../functions/customizer_settings.php:108
+#: ../functions/customizer_settings.php:123
 msgid "Social Media Accounts"
 msgstr ""
 
-#: ../functions/customizer_settings.php:109
+#: ../functions/customizer_settings.php:124
 msgid "Setup your social media accounts here."
 msgstr ""
 
-#: ../functions/customizer_settings.php:115
+#: ../functions/customizer_settings.php:130
 msgid "Footer Settings"
 msgstr ""
 
-#: ../functions/customizer_settings.php:116
+#: ../functions/customizer_settings.php:131
 msgid "Change/hide content in the footer."
 msgstr ""
 
-#: ../functions/customizer_settings.php:122
+#: ../functions/customizer_settings.php:137
 msgid "Color Scheme"
 msgstr ""
 
-#: ../functions/customizer_settings.php:123
+#: ../functions/customizer_settings.php:138
 msgid "Click on a color for a preview of a color scheme"
 msgstr ""
 
-#: ../functions/customizer_settings.php:129
+#: ../functions/customizer_settings.php:144
 msgid "Homepage Slider"
 msgstr ""
 
-#: ../functions/customizer_settings.php:130
+#: ../functions/customizer_settings.php:145
 msgid "Control the homepage slider"
 msgstr ""
 
-#: ../functions/customizer_settings.php:136
+#: ../functions/customizer_settings.php:151
 msgid "Featured Promo Bar"
 msgstr ""
 
-#: ../functions/customizer_settings.php:137
+#: ../functions/customizer_settings.php:152
 msgid "Create a eye catching \"call to action\""
 msgstr ""
 
-#: ../functions/customizer_settings.php:143
+#: ../functions/customizer_settings.php:158
 msgid "Service Section Settings"
 msgstr ""
 
-#: ../functions/customizer_settings.php:144
-#: ../functions/customizer_settings.php:162
+#: ../functions/customizer_settings.php:159
+#: ../functions/customizer_settings.php:177
 msgid "Change the title and control the display."
 msgstr ""
 
-#: ../functions/customizer_settings.php:153
+#: ../functions/customizer_settings.php:168
 msgid "This is a settings section to change the custom homepage services box."
 msgstr ""
 
-#: ../functions/customizer_settings.php:161
+#: ../functions/customizer_settings.php:176
 msgid "Recent Posts Section Settings"
 msgstr ""
 
-#: ../functions/customizer_settings.php:168
+#: ../functions/customizer_settings.php:183
 msgid "Authors Template Settings"
 msgstr ""
 
-#: ../functions/customizer_settings.php:169
+#: ../functions/customizer_settings.php:184
 msgid "Paste user Id's seperated by commas to display user profiles."
 msgstr ""
 
-#: ../functions/customizer_settings.php:260
+#: ../functions/customizer_settings.php:261
 msgid "Default Featured Text"
 msgstr ""
 
-#: ../functions/customizer_settings.php:284
+#: ../functions/customizer_settings.php:285
 #: ../page-templates/custom_home.php:23
 msgid "Services"
 msgstr ""
 
-#: ../functions/customizer_settings.php:310
+#: ../functions/customizer_settings.php:311
 msgid "http://"
 msgstr ""
 
-#: ../functions/customizer_settings.php:329
+#: ../functions/customizer_settings.php:330
 #: ../page-templates/custom_home.php:67
 msgid "Recent Posts"
 msgstr ""
 
-#: ../functions/customizer_settings.php:379
+#: ../functions/customizer_settings.php:380
 msgid "Upload Favicon"
 msgstr ""
 
-#: ../functions/customizer_settings.php:392
+#: ../functions/customizer_settings.php:393
 msgid "Upload Apple App Icon"
 msgstr ""
 
-#: ../functions/customizer_settings.php:405
-msgid "Hide Topbar if your not using it"
+#: ../functions/customizer_settings.php:406
+msgid "Show Topbar if your using it"
 msgstr ""
 
-#: ../functions/customizer_settings.php:437
+#: ../functions/customizer_settings.php:438
 msgid "Logo"
 msgstr ""
 
-#: ../functions/customizer_settings.php:445
+#: ../functions/customizer_settings.php:446
 msgid "Choose a color scheme"
 msgstr ""
 
-#: ../functions/customizer_settings.php:449
-msgid "Black"
-msgstr ""
-
-#: ../functions/customizer_settings.php:450
-msgid "Red"
-msgstr ""
-
 #: ../functions/customizer_settings.php:451
-msgid "Blue"
+msgid "Default"
 msgstr ""
 
 #: ../functions/customizer_settings.php:452
-msgid "Green"
+msgid "Black"
 msgstr ""
 
 #: ../functions/customizer_settings.php:453
-msgid "Orange"
+msgid "Red"
 msgstr ""
 
 #: ../functions/customizer_settings.php:454
@@ -493,93 +425,85 @@ msgid "Pink"
 msgstr ""
 
 #: ../functions/customizer_settings.php:463
-msgid "Override pre-built color schemes with color below."
-msgstr ""
-
-#: ../functions/customizer_settings.php:477
-msgid "Main Color"
-msgstr ""
-
-#: ../functions/customizer_settings.php:490
 msgid "Hide Homepage Slider"
 msgstr ""
 
-#: ../functions/customizer_settings.php:504
+#: ../functions/customizer_settings.php:477
 msgid "Select Featured Category"
 msgstr ""
 
-#: ../functions/customizer_settings.php:517
+#: ../functions/customizer_settings.php:490
 msgid "Amount of slides to display"
 msgstr ""
 
-#: ../functions/customizer_settings.php:533
+#: ../functions/customizer_settings.php:506
 msgid "Hide Promotional Bar"
 msgstr ""
 
-#: ../functions/customizer_settings.php:543
+#: ../functions/customizer_settings.php:516
 msgid "Title"
 msgstr ""
 
-#: ../functions/customizer_settings.php:551
-#: ../functions/customizer_settings.php:632
+#: ../functions/customizer_settings.php:524
+#: ../functions/customizer_settings.php:605
 msgid "Link text"
 msgstr ""
 
-#: ../functions/customizer_settings.php:559
-#: ../functions/customizer_settings.php:625
+#: ../functions/customizer_settings.php:532
+#: ../functions/customizer_settings.php:598
 msgid "Link URL"
 msgstr ""
 
-#: ../functions/customizer_settings.php:571
+#: ../functions/customizer_settings.php:544
 msgid "Hide Services Section"
 msgstr ""
 
-#: ../functions/customizer_settings.php:581
-#: ../functions/customizer_settings.php:655
+#: ../functions/customizer_settings.php:554
+#: ../functions/customizer_settings.php:628
 msgid "Change Title"
 msgstr ""
 
-#: ../functions/customizer_settings.php:593
+#: ../functions/customizer_settings.php:566
 msgid "Hide Title"
 msgstr ""
 
-#: ../functions/customizer_settings.php:610
+#: ../functions/customizer_settings.php:583
 msgid "Header Image File Upload"
 msgstr ""
 
-#: ../functions/customizer_settings.php:618
+#: ../functions/customizer_settings.php:591
 msgid "Header Text"
 msgstr ""
 
-#: ../functions/customizer_settings.php:645
+#: ../functions/customizer_settings.php:618
 msgid "Hide Recent Posts Section"
 msgstr ""
 
-#: ../functions/customizer_settings.php:668
+#: ../functions/customizer_settings.php:641
 msgid "Select category to display posts from"
 msgstr ""
 
-#: ../functions/customizer_settings.php:677
+#: ../functions/customizer_settings.php:650
 msgid "Change Copyright Text"
 msgstr ""
 
-#: ../functions/customizer_settings.php:689
+#: ../functions/customizer_settings.php:662
 msgid "Hide Copyright Bar"
 msgstr ""
 
-#: ../functions/customizer_settings.php:703
+#: ../functions/customizer_settings.php:676
 msgid "Hide Footer Widgets"
 msgstr ""
 
-#: ../functions/customizer_settings.php:713
+#: ../functions/customizer_settings.php:686
 msgid "Add User Id's"
 msgstr ""
 
-#: ../functions/customizer_settings.php:725
+#: ../functions/customizer_settings.php:698
 msgid "Hide Page Content"
 msgstr ""
 
-#: ../functions/customizer_settings.php:739
+#: ../functions/customizer_settings.php:712
 msgid "Display Content below User Profiles"
 msgstr ""
 
@@ -638,6 +562,14 @@ msgstr ""
 msgid "Both comments and trackbacks are currently closed."
 msgstr ""
 
+#: ../inc/contact-details.php:5
+msgid "Mobile Number"
+msgstr ""
+
+#: ../inc/contact-details.php:6
+msgid "Email Address"
+msgstr ""
+
 #: ../inc/template-tags.php:39
 msgid "Post navigation"
 msgstr ""
@@ -667,6 +599,7 @@ msgstr ""
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
+#. translators: 1: date, 2: time
 #: ../inc/template-tags.php:99
 #, php-format
 msgid "%1$s at %2$s"
@@ -731,93 +664,4 @@ msgstr ""
 
 #: ../sidebar.php:25
 msgid "Meta"
-msgstr ""
-
-#: ../updater/theme-updater.php:33
-msgid "Theme License"
-msgstr ""
-
-#: ../updater/theme-updater.php:34
-msgid "Enter your theme license key."
-msgstr ""
-
-#: ../updater/theme-updater.php:35
-msgid "License Key"
-msgstr ""
-
-#: ../updater/theme-updater.php:36
-msgid "License Action"
-msgstr ""
-
-#: ../updater/theme-updater.php:37
-msgid "Deactivate License"
-msgstr ""
-
-#: ../updater/theme-updater.php:38
-msgid "Activate License"
-msgstr ""
-
-#: ../updater/theme-updater.php:39 ../updater/theme-updater.php:51
-msgid "License status is unknown."
-msgstr ""
-
-#: ../updater/theme-updater.php:40
-msgid "Renew?"
-msgstr ""
-
-#: ../updater/theme-updater.php:41
-msgid "unlimited"
-msgstr ""
-
-#: ../updater/theme-updater.php:42
-msgid "License key is active."
-msgstr ""
-
-#: ../updater/theme-updater.php:43
-#, php-format
-msgid "Expires %s."
-msgstr ""
-
-#: ../updater/theme-updater.php:44
-#, php-format
-msgid "You have %1$s / %2$s sites activated."
-msgstr ""
-
-#: ../updater/theme-updater.php:45
-#, php-format
-msgid "License key expired %s."
-msgstr ""
-
-#: ../updater/theme-updater.php:46
-msgid "License key has expired."
-msgstr ""
-
-#: ../updater/theme-updater.php:47
-msgid "License keys do not match."
-msgstr ""
-
-#: ../updater/theme-updater.php:48
-msgid "License is inactive."
-msgstr ""
-
-#: ../updater/theme-updater.php:49
-msgid "License key is disabled."
-msgstr ""
-
-#: ../updater/theme-updater.php:50
-msgid "Site is inactive."
-msgstr ""
-
-#: ../updater/theme-updater.php:52
-msgid ""
-"Updating this theme will lose any customizations you have made. 'Cancel' to "
-"stop, 'OK' to update."
-msgstr ""
-
-#: ../updater/theme-updater.php:53
-#, php-format
-msgid ""
-"<strong>%1$s %2$s</strong> is available. <a href=\"%3$s\" class=\"thickbox\" "
-"title=\"%4s\">Check out what's new</a> or <a href=\"%5$s\"%6$s>update now</"
-"a>."
 msgstr ""
