@@ -1,4 +1,4 @@
-Swell Lite v1.0.9
+Swell Lite v1.1
 http://www.swelltheme.com
 http://organicthemes.com
 
@@ -61,4 +61,18 @@ CHANGELOG v1.0.9:
 - Style tweak for IS loader
 - Removed leftover post format conditional
 - Removed unused customizer options
-- Updated default customizer values
+- Updated default customizer option values
+
+CHANGELOG v1.0.10:
+- Infinite Scroll tweaks
+
+CHANGELOG v1.1:
+- Page title for archive pages
+- Default page menu added
+- Default logo update
+- Removed old IE conditionals
+- Updated FontAwesome
+- Updated content width function
+- Removed unnecessary functions
+- Updates to footer.php
+- Style tweaks
