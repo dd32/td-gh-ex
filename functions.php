@@ -108,8 +108,8 @@ function anderson_setup() {
 	// Add Custom Header
 	add_theme_support('custom-header', array(
 		'header-text' => false,
-		'width'	=> 1300,
-		'height' => 250,
+		'width'	=> 1200,
+		'height' => 350,
 		'flex-height' => true));
 	
 	// Add Theme Support for Anderson Pro Plugin
@@ -134,17 +134,17 @@ if ( ! function_exists( 'anderson_add_image_sizes' ) ):
 function anderson_add_image_sizes() {
 
 	// Add Post Thumbnail Size
-	add_image_size( 'post-thumbnail', 275, 275, true);
+	add_image_size( 'post-thumbnail', 520, 350, true);
 	
 	// Add Custom Header Image Size
-	add_image_size( 'custom-header-image', 1300, 250, true);
+	add_image_size( 'custom-header-image', 1200, 350, true);
 	
 	// Add Category Post Widget image sizes
-	add_image_size( 'category-posts-widget-small', 95, 95, true);
-	add_image_size( 'category-posts-widget-big', 460, 325, true);
+	add_image_size( 'category-posts-widget-small', 120, 80, true);
+	add_image_size( 'category-posts-widget-big', 520, 300, true);
 	
 	// Add Slider Image Size
-	add_image_size( 'slider-image', 840, 440, true);
+	add_image_size( 'slider-image', 880, 440, true);
 
 }
 endif;
@@ -161,7 +161,7 @@ function anderson_register_sidebars() {
 		'name' => __( 'Sidebar', 'anderson-lite' ),
 		'id' => 'sidebar',
 		'description' => __( 'Appears on posts and pages except Magazine Homepage and Fullwidth template.', 'anderson-lite' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widgettitle"><span>',
 		'after_title' => '</span></h3>',
@@ -172,7 +172,7 @@ function anderson_register_sidebars() {
 		'name' => __( 'Magazine Homepage', 'anderson-lite' ),
 		'id' => 'magazine-homepage',
 		'description' => __( 'Appears on "Magazine Homepage" page template only. You can use the Category Posts widgets here.', 'anderson-lite' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'before_widget' => '<div id="%1$s" class="widget %2$s clearfix">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3 class="widgettitle"><span>',
 		'after_title' => '</span></h3>',
@@ -217,7 +217,7 @@ function anderson_has_featured_content() {
 // Change Excerpt Length
 add_filter('excerpt_length', 'anderson_excerpt_length');
 function anderson_excerpt_length($length) {
-    return 60;
+    return 30;
 }
 
 
@@ -240,14 +240,14 @@ function anderson_excerpt_more($more) {
 // Change Excerpt Length for Featured Content
 add_filter('excerpt_length', 'anderson_excerpt_length');
 function anderson_slideshow_excerpt_length($length) {
-    return 28;
+    return 20;
 }
 
 
 // Change Excerpt Length for Featured Content
 add_filter('excerpt_length', 'anderson_excerpt_length');
 function anderson_category_posts_widgets_excerpt_length($length) {
-    return 12;
+    return 20;
 }
 
 
