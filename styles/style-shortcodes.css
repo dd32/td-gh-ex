@@ -274,6 +274,7 @@ float: left;
 .sc-carousel .entry-header img {
 	display: block;
 	margin: 0 auto;
+	width: 100%;
 }
 .sc-carousel .entry-content {
 	margin-top: 20px;

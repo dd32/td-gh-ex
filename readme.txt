@@ -98,6 +98,13 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.6.6
+- Fixed:   prettyPhoto updates to v3.1.6 to put in place prettyPhoto XSS fix.
+- Fixed:   #sidebar styling in style-responsive.css applied with !important attribute.
+- Updated: #main-core styling in style-responsive.css applied with !important attribute.
+- Updated: caroufredsel now checks to if carousel item exists before executing code - reduces jQuery notices.
+- Updated: caroufredsel code updated to ensure carousel code is not applied to individual items (e.g. postitem, featured items, images).
+
 Version 1.6.5
 - Fixed:   Blog grid layout now displays correctly (full-width) on mobile devices.
 - Fixed:   Fix jQuery code used to add tr tags in main-backend.js. Improves compatibility with 3rd party code.
