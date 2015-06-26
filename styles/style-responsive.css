@@ -135,21 +135,21 @@
 	#sidebar,
 	#intro.option3 .page-teaser,
 	#footer-menu,
-	.meta-author	{
-		display: none;
+	.meta-author {
+		display: none !important;
 	}
 	#main-core,
 	#intro.option1, 
 	#intro.option2 {
-		margin-left: 0px;
+		margin-left: 0px !important;
 	}
 	#main {
-		width: 100%;
+		width: 100% !important;
 	}
 	#main-core, 
 	#intro,
 	.commentlist .children .children {
-		margin: 0px;
+		margin: 0px !important;
 	}
 	#intro.option1 #intro-core {
 		display: block;
