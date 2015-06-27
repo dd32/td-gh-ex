@@ -7,7 +7,7 @@
  * handled by a callback to generate_comment() which is
  * located in the inc/template-tags.php file.
  *
- * @package Generate
+ * @package GeneratePress
  */
 
 /*

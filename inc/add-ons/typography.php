@@ -448,7 +448,7 @@ if ( ! function_exists( 'generate_all_google_fonts' ) ) :
  * Store all Google Fonts in generate_all_google_fonts transient
  * @since 1.3.0
  */
-add_action( 'admin_init','generate_all_google_fonts' );
+add_action( 'init','generate_all_google_fonts' );
 function generate_all_google_fonts()
 {
 	// Bail if we already have our list of fonts
@@ -490,7 +490,7 @@ if ( ! function_exists( 'generate_google_font_names' ) ) :
  * This is used for sanitization
  * @since 1.3.0
  */
-add_action( 'admin_init','generate_google_font_names' );
+add_action( 'init','generate_google_font_names' );
 function generate_google_font_names()
 {
 	// Bail if we already have our font names
@@ -522,7 +522,7 @@ function generate_get_google_font_variants( $font )
 {
 	
 	// Grab all of our fonts
-	$fonts = ( get_transient('generate_all_google_fonts') ? get_transient('generate_all_google_fonts') : '' );
+	$fonts = ( get_transient('generate_all_google_fonts') ? get_transient('generate_all_google_fonts') : array() );
 	
 	// Get the ID from our font
 	$id = strtolower( str_replace( ' ', '_', $font ) );
@@ -556,7 +556,7 @@ function generate_get_google_font_category( $font )
 {
 	
 	// Get all of our fonts
-	$fonts = ( get_transient('generate_all_google_fonts') ? get_transient('generate_all_google_fonts') : '' );
+	$fonts = ( get_transient('generate_all_google_fonts') ? get_transient('generate_all_google_fonts') : array() );
 	
 	// Get the ID from our font
 	$id = strtolower( str_replace( ' ', '_', $font ) );

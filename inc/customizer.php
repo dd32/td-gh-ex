@@ -2,7 +2,7 @@
 /**
  * GeneratePress Customizer
  *
- * @package Generate
+ * @package GeneratePress
  */
 
 /**

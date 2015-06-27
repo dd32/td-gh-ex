@@ -10,6 +10,13 @@ Changelog Legend:
 
 ----
 
+(6/27/2015) - 1.3.01
+[+] Bulgarian translated added
+[!] Fix bug where font variants weren't loading
+[!] Fix font related PHP notice
+
+----
+
 (6/19/2015) - 1.3.0
 [*] Improve mobile menu label spacing if no text is set
 [*] Fix <pre> tag output
