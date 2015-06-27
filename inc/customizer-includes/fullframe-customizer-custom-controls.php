@@ -85,22 +85,6 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 								'link'	=> esc_url( 'https://wordpress.org/support/view/theme-reviews/full-frame' ),
 								'text' 	=> __( 'Review', 'fullframe' ),
 								),
-							'facebook' => array( 
-								'link'	=> esc_url( 'https://www.facebook.com/catchthemes/' ),
-								'text' 	=> __( 'Facebook', 'fullframe' ),
-								),
-							'twitter' => array( 
-								'link'	=> esc_url( 'https://twitter.com/catchthemes/' ),
-								'text' 	=> __( 'Twitter', 'fullframe' ),
-								),
-							'gplus' => array( 
-								'link'	=> esc_url( 'https://plus.google.com/+Catchthemes/' ),
-								'text' 	=> __( 'Google+', 'fullframe' ),
-								),
-							'pinterest' => array( 
-								'link'	=> esc_url( 'http://www.pinterest.com/catchthemes/' ),
-								'text' 	=> __( 'Pinterest', 'fullframe' ),
-								),
 							);
 			foreach ( $important_links as $important_link) {
 				echo '<p><a target="_blank" href="' . $important_link['link'] .'" >' . esc_attr( $important_link['text'] ) .' </a></p>';

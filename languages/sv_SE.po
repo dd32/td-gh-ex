@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Full Frame\n"
 "Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/catch-base-pro-"
 "premium/pro-premium/\n"
-"POT-Creation-Date: 2015-06-18 00:12-0500\n"
-"PO-Revision-Date: 2015-06-18 00:12-0500\n"
+"POT-Creation-Date: 2015-06-27 18:10-0500\n"
+"PO-Revision-Date: 2015-06-27 18:10-0500\n"
 "Last-Translator: Anders <anders@paulcen.se>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: sv\n"
@@ -182,25 +182,6 @@ msgstr "Ge ett bidrag nu"
 #: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:86
 msgid "Review"
 msgstr "Review"
-
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:90
-#: ../inc/fullframe-default-options.php:488
-msgid "Facebook"
-msgstr "Facebook"
-
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:94
-#: ../inc/fullframe-default-options.php:489
-msgid "Twitter"
-msgstr "Twitter"
-
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:98
-msgid "Google+"
-msgstr "Google+"
-
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:102
-#: ../inc/fullframe-default-options.php:496
-msgid "Pinterest"
-msgstr "Pinterest"
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:19
 msgid "Options for Featured Content"
@@ -991,6 +972,14 @@ msgstr "Utvalt"
 msgid "Full Size"
 msgstr "Full storlek"
 
+#: ../inc/fullframe-default-options.php:488
+msgid "Facebook"
+msgstr "Facebook"
+
+#: ../inc/fullframe-default-options.php:489
+msgid "Twitter"
+msgstr "Twitter"
+
 #: ../inc/fullframe-default-options.php:490
 msgid "Googleplus"
 msgstr "Googleplus"
@@ -1014,6 +1003,10 @@ msgstr "GitHub"
 #: ../inc/fullframe-default-options.php:495
 msgid "LinkedIn"
 msgstr "LinkedIn"
+
+#: ../inc/fullframe-default-options.php:496
+msgid "Pinterest"
+msgstr "Pinterest"
 
 #: ../inc/fullframe-default-options.php:497
 msgid "Flickr"
@@ -1221,6 +1214,9 @@ msgstr ""
 "Som standard läser den Sök och arkiv widgets som visas nedan. Du kan lägga till "
 "widgeten på detta område genom att besöka din <a href=\"%s\">Widgets Panel</a> "
 "som kommer att ersätta standard widgets."
+
+#~ msgid "Google+"
+#~ msgstr "Google+"
 
 #~ msgid "Featured Content Settings"
 #~ msgstr "Utvalt innehåll inställningar"

@@ -1,5 +1,10 @@
 == Change log ==
 
+= 1.6.2 =
+* Bug Fixed: Single Post navigation css
+* Removed: Author social links from customizer
+* Updated: French translation fr_FR.po and fr_FR.mo
+
 = 1.6.1 =
 * Added: Single Post navigation
 * Updated: Sidr scripts to latest version 1.2.1

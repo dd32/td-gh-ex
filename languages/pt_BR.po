@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Full Frame\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-18 00:12-0500\n"
-"PO-Revision-Date: 2015-06-18 00:12-0500\n"
+"POT-Creation-Date: 2015-06-27 18:10-0500\n"
+"PO-Revision-Date: 2015-06-27 18:10-0500\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: pt_BR\n"
@@ -186,25 +186,6 @@ msgstr "Gostou do tema? Faça uma Doação Agora!"
 #: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:86
 msgid "Review"
 msgstr ""
-
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:90
-#: ../inc/fullframe-default-options.php:488
-msgid "Facebook"
-msgstr "Facebook"
-
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:94
-#: ../inc/fullframe-default-options.php:489
-msgid "Twitter"
-msgstr "Twitter"
-
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:98
-msgid "Google+"
-msgstr "Google+"
-
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:102
-#: ../inc/fullframe-default-options.php:496
-msgid "Pinterest"
-msgstr "Pinterest"
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:19
 msgid "Options for Featured Content"
@@ -978,6 +959,14 @@ msgstr ""
 msgid "Full Size"
 msgstr ""
 
+#: ../inc/fullframe-default-options.php:488
+msgid "Facebook"
+msgstr "Facebook"
+
+#: ../inc/fullframe-default-options.php:489
+msgid "Twitter"
+msgstr "Twitter"
+
 #: ../inc/fullframe-default-options.php:490
 msgid "Googleplus"
 msgstr "Googleplus"
@@ -1001,6 +990,10 @@ msgstr "GitHub"
 #: ../inc/fullframe-default-options.php:495
 msgid "LinkedIn"
 msgstr "LinkedIn"
+
+#: ../inc/fullframe-default-options.php:496
+msgid "Pinterest"
+msgstr "Pinterest"
 
 #: ../inc/fullframe-default-options.php:497
 msgid "Flickr"
@@ -1199,6 +1192,9 @@ msgid ""
 "widget to this area by visiting your <a href=\"%s\">Widgets Panel</a> which will "
 "replace default widgets."
 msgstr ""
+
+#~ msgid "Google+"
+#~ msgstr "Google+"
 
 #~ msgid "Search results for: %s"
 #~ msgstr "Resultados da Pesquisa para: %s"

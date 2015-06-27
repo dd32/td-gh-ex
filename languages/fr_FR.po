@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Responsive\n"
-"POT-Creation-Date: 2015-06-18 00:12-0500\n"
+"POT-Creation-Date: 2015-06-27 18:10-0500\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -183,25 +183,6 @@ msgstr "Faire un don maintenant "
 #: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:86
 msgid "Review"
 msgstr "Examen "
-
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:90
-#: ../inc/fullframe-default-options.php:488
-msgid "Facebook"
-msgstr "Facebook"
-
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:94
-#: ../inc/fullframe-default-options.php:489
-msgid "Twitter"
-msgstr "Twitter"
-
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:98
-msgid "Google+"
-msgstr "Google+ "
-
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:102
-#: ../inc/fullframe-default-options.php:496
-msgid "Pinterest"
-msgstr "Pinterest"
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:19
 msgid "Options for Featured Content"
@@ -653,7 +634,7 @@ msgstr ""
 
 #: ../inc/fullframe-breadcrumb.php:57
 msgid "Home"
-msgstr "Maison"
+msgstr "Accueil"
 
 #: ../inc/fullframe-breadcrumb.php:58
 #, php-format
@@ -998,6 +979,14 @@ msgstr "Sélectioné"
 msgid "Full Size"
 msgstr "Pleine taille"
 
+#: ../inc/fullframe-default-options.php:488
+msgid "Facebook"
+msgstr "Facebook"
+
+#: ../inc/fullframe-default-options.php:489
+msgid "Twitter"
+msgstr "Twitter"
+
 #: ../inc/fullframe-default-options.php:490
 msgid "Googleplus"
 msgstr "Googleplus"
@@ -1021,6 +1010,10 @@ msgstr "GitHub"
 #: ../inc/fullframe-default-options.php:495
 msgid "LinkedIn"
 msgstr "Linkedln"
+
+#: ../inc/fullframe-default-options.php:496
+msgid "Pinterest"
+msgstr "Pinterest"
 
 #: ../inc/fullframe-default-options.php:497
 msgid "Flickr"
@@ -1228,6 +1221,9 @@ msgstr ""
 "Par défaut,  chargement de widget  Recherche et d' Archives comme indiqué ci-"
 "dessous. Vous pouvez ajouter un widget à cette région en visitant votre <a href="
 "\"%s\"> Panneau Widgets </a> qui remplacera widgets par défaut."
+
+#~ msgid "Google+"
+#~ msgstr "Google+ "
 
 #~ msgid "Featured Content Settings"
 #~ msgstr " Paramètres de contenu vedette"
