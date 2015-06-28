@@ -65,14 +65,7 @@
 	}   
 	add_filter( 'the_content_more_link', 'new_content_more' );
 
-	/********** Image Resize *************/
-	if ( function_exists( 'add_image_size' ) ) 
-	{
-		add_image_size('webriti_blogleft_img',740,400,true);
-		add_image_size('webriti_blogfull_img',1140,500,true);
-	}
-
-/*sidebar*/
+	/*sidebar*/
 add_action( 'widgets_init', 'webriti_widgets_init');
 function webriti_widgets_init() {
 register_sidebar( array(

@@ -6,7 +6,7 @@ $current_options = get_option('wallstreet_lite_options',theme_data_setup());
 <div class="homepage_mycarousel">
 	<div class="static-banner">
 	<?php if($current_options['home_banner_enabled'] == 'on') { ?>
-				<li>
+				
 					<?php if($current_options['slider_image']){ ?>
 					<img class="img-responsive" alt="Sleek &amp; Beautiful" src="<?php echo esc_url($current_options['slider_image']); ?>">
 					<?php } ?>
@@ -21,7 +21,7 @@ $current_options = get_option('wallstreet_lite_options',theme_data_setup());
 						<div class="slide-text-bg3"><p><?php echo esc_html ($current_options['slider_description']); ?></p></div>
 						<?php } ?>
 					</div>
-				</li>
+				
 			<?php } ?>
 	</div>
 </div>
