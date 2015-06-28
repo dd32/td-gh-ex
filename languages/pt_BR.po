@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Kathmandu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-03 15:40-0500\n"
-"PO-Revision-Date: 2015-06-03 15:40-0500\n"
-"Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
+"POT-Creation-Date: 2015-06-28 00:05-0500\n"
+"PO-Revision-Date: 2015-06-28 00:05-0500\n"
+"Last-Translator: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language-Team: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -133,7 +133,7 @@ msgstr "<b>1</b> Comentário"
 #: ../content-gallery.php:63 ../content-image.php:48 ../content-link.php:42
 #: ../content-quote.php:38 ../content-status.php:46 ../content-video.php:49
 msgid "% Replies;"
-msgstr "<b>%</b> Comentários;"
+msgstr "<b>%</b> Comentários"
 
 #: ../content-aside.php:42 ../content-audio.php:48 ../content-chat.php:49
 #: ../content-gallery.php:65 ../content-image.php:50 ../content-link.php:44
@@ -602,7 +602,7 @@ msgstr "-  Todos os Direitos são Reservados"
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:106
 #: ../inc/panel/theme-options.php:1809
 msgid "Catch Kathmandu by"
-msgstr "Catch Kathmandu by"
+msgstr "Catch Kathmandu por:"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:124
 msgid "Y"
@@ -655,7 +655,7 @@ msgstr "http://catchthemes.com/support/"
 
 #: ../inc/panel/theme-options.php:106
 msgid "Support"
-msgstr "Suporte"
+msgstr "Dar suporte"
 
 #: ../inc/panel/theme-options.php:107
 msgid "http://catchthemes.com/theme-instructions/catch-kathmandu/"
@@ -745,7 +745,8 @@ msgstr "Link da manchete"
 
 #: ../inc/panel/theme-options.php:170
 msgid "Disable Homepage Headline?"
-msgstr "Disativar a frase de apresentação (Manchete) da página inicial?"
+msgstr ""
+"Você deseja desativar a frase de apresentação (Manchete) da página inicial?"
 
 #: ../inc/panel/theme-options.php:174 ../inc/panel/theme-options.php:183
 #: ../inc/panel/theme-options.php:192 ../inc/panel/theme-options.php:210
@@ -756,11 +757,12 @@ msgstr "Marque aqui para desativar"
 
 #: ../inc/panel/theme-options.php:179
 msgid "Disable Homepage Subheadline?"
-msgstr "Desativar o subtítulo da manchete da página inicial?"
+msgstr "Você deseja desativar o subtítulo da manchete da página inicial?"
 
 #: ../inc/panel/theme-options.php:188
 msgid "Disable Homepage Button?"
-msgstr "Desativar a frase de apresentação no botão da página inicial"
+msgstr ""
+"Você deseja desativar a frase de apresentação no botão da página inicial?"
 
 #: ../inc/panel/theme-options.php:196 ../inc/panel/theme-options.php:296
 #: ../inc/panel/theme-options.php:352 ../inc/panel/theme-options.php:379
@@ -905,8 +907,8 @@ msgstr ""
 #: ../inc/panel/theme-options.php:344
 msgid "Move above Homepage Featured Content?"
 msgstr ""
-"Você quer que o conteúdo em destaque se desloque na parte de cima da página "
-"inicial?"
+"Você quer que o conteúdo em destaque se desloque da parte de cima para a "
+"parte de baixo da página inicial?"
 
 #: ../inc/panel/theme-options.php:348
 msgid "Check to Move"
@@ -919,8 +921,9 @@ msgstr "Projeto desenhado para ser responsivo"
 #: ../inc/panel/theme-options.php:362
 msgid "Disable Responsive Design?"
 msgstr ""
-"Você quer <strong>desativar</strong> o projeto que foi desenhado para ser "
-"responsivo em aparelhos ou despositivos móveis?"
+"Você quer <strong>desativar</strong> o projeto que foi desenhado "
+"especialmente para ser responsivo em aparelhos pequenos e/ou dispositivos "
+"móveis, como: Laptop, Netbook, Tablet, Smartphone e etc...?"
 
 #: ../inc/panel/theme-options.php:371
 msgid "Enable Secondary Menu in Mobile Devices?"
@@ -932,7 +935,7 @@ msgstr "Marque aqui para ativar"
 
 #: ../inc/panel/theme-options.php:385
 msgid "Favicon"
-msgstr "Favicon"
+msgstr "Opções de configuração do Favicon"
 
 #: ../inc/panel/theme-options.php:389
 msgid "Disable Favicon?"
@@ -944,7 +947,7 @@ msgstr "URL do seu ícone Favicon:"
 
 #: ../inc/panel/theme-options.php:406
 msgid "Insert as Fav Icon"
-msgstr "Insert as Fav Icon"
+msgstr "Inserir como ícone favorito (Favicon)"
 
 #: ../inc/panel/theme-options.php:406
 msgid "Change Fav Icon"
@@ -968,7 +971,7 @@ msgstr "URL na Web do seu ícone Favicon:"
 
 #: ../inc/panel/theme-options.php:451
 msgid "Insert as Web Clip Icon"
-msgstr "Insert as Web Clip Icon"
+msgstr "Inserir como ícone de clipe de Web"
 
 #: ../inc/panel/theme-options.php:451
 msgid "Change Web Clip Icon"
@@ -980,7 +983,7 @@ msgid ""
 "Height 144px height, which will support High Resolution Devices like iPad "
 "Retina."
 msgstr ""
-"<strong>Nota:</strong> Web Clip Ícone para dispositivos da Apple. Tamanho "
+"Nota importante: Web Clip Ícone usado para dispositivos da Apple. Tamanho "
 "recomendado - largura 144px e altura 144px, que irá suportar dispositivos de "
 "alta resolução, como iPad de Retina."
 
@@ -1047,11 +1050,11 @@ msgstr "URL da imagem em destaque no cabeçalho"
 
 #: ../inc/panel/theme-options.php:573
 msgid "Insert as Featured Header Image"
-msgstr "Insert as Featured Header Image"
+msgstr "Inserir como imagem de destaque no cabeçalho"
 
 #: ../inc/panel/theme-options.php:573
 msgid "Change Header Image"
-msgstr "Change Header Image"
+msgstr "Adicionar/Mudar imagem do cabeçalho"
 
 #: ../inc/panel/theme-options.php:578
 msgid "Featured Header Image Alt/Title Tag"
@@ -1059,18 +1062,18 @@ msgstr "Descrevendo a imagem do cabeçalho com tag alt/title"
 
 #: ../inc/panel/theme-options.php:586
 msgid "Featured Header Image Link URL"
-msgstr "Descrevendo a imagem do cabeçalho com link URL"
+msgstr "Atribuindo um link de destino para a imagem do cabeçalho (URL)"
 
 #: ../inc/panel/theme-options.php:604
 msgid "Reset Header Featured Image Options?"
 msgstr ""
-"Você quer voltar à configuração padrão (resetar) as opções da imagem em "
+"Você quer voltar à configuração padrão (resetar) para as opções da imagem em "
 "destaque?"
 
 #: ../inc/panel/theme-options.php:608 ../inc/panel/theme-options.php:693
 #: ../inc/panel/theme-options.php:793
 msgid "Check to reset"
-msgstr "Marque para redefinir (resetar)"
+msgstr "Marque aqui para redefinir (resetar)"
 
 #: ../inc/panel/theme-options.php:622
 msgid "Content Featured Image Size"
@@ -1106,7 +1109,7 @@ msgstr "Mostrar o conteúdo completo no blog"
 
 #: ../inc/panel/theme-options.php:682
 msgid "Excerpt/Blog Display"
-msgstr "Trecho ou resumo do conteúdo para exibição no blog"
+msgstr "Mostrar apenas o resumo do conteúdo na Homepage do blog"
 
 #: ../inc/panel/theme-options.php:689
 msgid "Reset Layout?"
@@ -1122,7 +1125,7 @@ msgstr "Esquema de cores padrão"
 
 #: ../inc/panel/theme-options.php:712
 msgid "Light (Blue)"
-msgstr "Claro"
+msgstr "Claro com detalhes em azul"
 
 #: ../inc/panel/theme-options.php:716
 msgid "Dark"
@@ -1130,7 +1133,7 @@ msgstr "Escuro"
 
 #: ../inc/panel/theme-options.php:720
 msgid "Light (Black)"
-msgstr "Light (Black)"
+msgstr "Claro com detalhes em preto"
 
 #: ../inc/panel/theme-options.php:726
 msgid "Custom Background Color:"
@@ -1150,26 +1153,31 @@ msgstr "Clique aqui para mudar o título do site e a cor da tagline"
 
 #: ../inc/panel/theme-options.php:751
 msgid "Search Text Settings"
-msgstr "Configurações de Pesquisa de texto"
+msgstr "Configurações da caixa de texto Pesquisar..."
 
 #: ../inc/panel/theme-options.php:755
 msgid "Default Display Text in Search"
-msgstr "Exibição do texto padrão no campo Pesquisar"
+msgstr ""
+"Exibição do texto padrão no campo Pesquisar, que faz a busca interna no "
+"Website/Blog é:"
 
 #: ../inc/panel/theme-options.php:768
 msgid "Excerpt / More Tag Settings"
-msgstr "Excerpt / Mais configurações de tag"
+msgstr "Configurações de tag Mais (&hellip; Continue lendo&hellip; &rarr;)"
 
 #: ../inc/panel/theme-options.php:772
 msgid "More Tag Text"
-msgstr "Mais tag de texto"
+msgstr ""
+"Coloque o texto no campo ao lado para incentivar a leitura completa do seu "
+"conteúdo (tag Mais)<br/>Exemplo: Leia mais... &rarr;<br/>Continue lendo... "
+"&rarr;"
 
 #: ../inc/panel/theme-options.php:780
 msgid "Excerpt length(words)"
 msgstr ""
-"Quantidade de palavras (excerpt) que serão usadas para apresentar o resumo "
-"da postagem, em páginas que usarem esse recurso. ( exemplo: home, "
-"categorias, etc...)"
+"Quantidade de palavras que serão usadas para apresentar o resumo da "
+"postagem, em páginas que usarem esse recurso. (exemplo: home, categorias, "
+"etc...)"
 
 #: ../inc/panel/theme-options.php:789
 msgid "Reset Excerpt?"
@@ -1195,19 +1203,21 @@ msgstr ""
 
 #: ../inc/panel/theme-options.php:824
 msgid "Enter your custom CSS styles."
-msgstr "Coloque aqui a sua folha de estilo CSS personalizado!"
+msgstr ""
+"Coloque aqui a sua folha de estilo em cascata personalizada - CSS -<br/> "
+"Nota: colocando aqui sua estilização, ela será preservada de modificações "
+"futuras, quando o tema for atualizado pelo desenvolvedor."
 
 #: ../inc/panel/theme-options.php:832
 msgid "CSS Tutorial from W3Schools."
 msgstr ""
-"Aprenda tudo que você precisa saber a respeito de CSS, de como fazer "
-"apresentação das folhas de estilo em cascata.</br><strong>CSS</strong> "
-"(<strong>C</strong>ascading <strong>S</strong>tyle <strong>S</strong>heet - "
-"Folha de Estilo em Cascata) com os tutoriais dinâmicos da escola "
-"<strong>W3Schools</strong>. (em inglês, contudo, vale o seu esforço em "
-"traduzir, para aprender esse <strong>Ensinamento Gratuito</strong> e "
-"apresentar o seu website/blog a seu gosto, para o seu público alvo na "
-"internet!)"
+"Aprenda tudo que você precisa saber a respeito da apresentação das folhas de "
+"estilo em cascata <strong>CSS</strong>  (<strong>C</strong>ascading "
+"<strong>S</strong>tyle <strong>S</strong>heet - Folha de Estilo em Cascata) "
+"com os tutoriais dinâmicos da escola <strong>W3Schools</strong>. (em inglês, "
+"contudo, vale o seu esforço em traduzir, para aprender esse "
+"<strong>Ensinamento Gratuito</strong> e apresentar o seu website/blog a seu "
+"gosto para o público alvo na internet!)"
 
 #: ../inc/panel/theme-options.php:835
 msgid "http://www.w3schools.com/css/default.asp"
@@ -1221,7 +1231,7 @@ msgstr ""
 
 #: ../inc/panel/theme-options.php:835
 msgid "Click Here to Read"
-msgstr "Clique aqui para aprender"
+msgstr "Clique aqui para ler e aprender"
 
 #: ../inc/panel/theme-options.php:849
 msgid "Slider Options"
@@ -1293,7 +1303,7 @@ msgstr "Efeito sobrepor"
 
 #: ../inc/panel/theme-options.php:910
 msgid "shuffle"
-msgstr "Efeito micelânia"
+msgstr "Efeito passar a imagem da frente para trás"
 
 #: ../inc/panel/theme-options.php:916
 msgid "Transition Delay"
@@ -1337,8 +1347,9 @@ msgstr "Clique aqui para editar"
 msgid ""
 "Note: Here You can put your Post IDs which displays on Homepage as slider."
 msgstr ""
-"<strong>Nota:</strong> Aqui você pode colocar as identificações (<b>IDs</b>) "
-"de suas postagens que seram exibidas na página inicial como slider."
+"<strong>Nota:</strong> Aqui você pode colocar as identificações únicas "
+"(<b>IDs</b>) de suas postagens que serão exibidas na página inicial como "
+"Slider Show."
 
 #: ../inc/panel/theme-options.php:973
 msgid "Featured Category Slider Options"
@@ -1423,7 +1434,7 @@ msgstr ""
 
 #: ../inc/panel/theme-options.php:1833
 msgid "More Theme Options &raquo;"
-msgstr "More Theme Options &raquo;"
+msgstr "Mais opções do tema &raquo;"
 
 #: ../inc/template-tags.php:51 ../inc/template-tags.php:112
 msgid "Post navigation"
@@ -1457,7 +1468,7 @@ msgstr "(Editar)"
 
 #: ../inc/template-tags.php:179
 msgid "Post author"
-msgstr "Arquivos do autor: %s"
+msgstr "- Resposta do Autor -"
 
 #. translators: 1: date, 2: time
 #: ../inc/template-tags.php:185
@@ -1492,7 +1503,7 @@ msgstr ""
 #: ../inc/template-tags.php:256 ../inc/template-tags.php:259
 #: ../inc/template-tags.php:288 ../inc/template-tags.php:291
 msgid ", "
-msgstr ","
+msgstr ", "
 
 #: ../inc/template-tags.php:264
 #, php-format
