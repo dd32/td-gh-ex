@@ -1,7 +1,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
 
-		<?php edit_post_link( __( '<i class="fa fa-pencil"></i> Edit - ', themeofwp ), '<small class="edit-link">', '</small>' ); ?> 
+		<?php edit_post_link( __( '<i class="fa fa-pencil"></i> Edit - ', 'themeofwp' ), '<small class="edit-link">', '</small>' ); ?> 
 
         <?php if ( is_single() ) { ?>
         <h1 class="entry-title"><?php the_title(); ?></h1>
@@ -9,7 +9,7 @@
         <h2 class="entry-title">
             <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
             <?php if ( is_sticky() && is_home() && ! is_paged() ) { ?>
-            <sup class="featured-post"><?php _e( 'Sticky', themeofwp ) ?></sup>
+            <sup class="featured-post"><?php _e( 'Sticky', 'themeofwp' ) ?></sup>
             <?php } ?>
         </h2>
         <?php } //.entry-title ?>
@@ -61,7 +61,7 @@
 				</p>
 			<?php } ?>
 			
-			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', themeofwp ) ); ?>
+			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'themeofwp' ) ); ?>
     </div>
 	
 			<?php if ( is_single() ) { ?>

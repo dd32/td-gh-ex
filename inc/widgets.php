@@ -14,7 +14,7 @@ class ThemeofWP_Recent_Posts_Widget extends WP_Widget {
         parent::__construct(
             'themeofwp_recent_posts', // Base ID
             'TWP Recent Posts (Sidebar)', // Name
-            array( 'description' => __( 'Recent Posts Widget for the sidebar.', themeofwp ), ) // Args
+            array( 'description' => __( 'Recent Posts Widget for the sidebar.', 'themeofwp' ), ) // Args
             );
     }
 
@@ -45,11 +45,11 @@ class ThemeofWP_Recent_Posts_Widget extends WP_Widget {
             $count  = isset($instance[ 'count' ]) ? $instance[ 'count' ] : 3;
             ?>
             <p>
-                <label for="<?php echo $this->get_field_name( 'title' ); ?>"><?php _e( 'Title:', themeofwp ); ?></label> 
+                <label for="<?php echo $this->get_field_name( 'title' ); ?>"><?php _e( 'Title:', 'themeofwp' ); ?></label> 
                 <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
             </p>
             <p>
-                <label for="<?php echo $this->get_field_name( 'count' ); ?>"><?php _e( 'Number of posts:', themeofwp ); ?></label> 
+                <label for="<?php echo $this->get_field_name( 'count' ); ?>"><?php _e( 'Number of posts:', 'themeofwp' ); ?></label> 
                 <input class="widefat" id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'count' ); ?>" type="text" value="<?php echo esc_attr( $count ); ?>" />
             </p>
             <?php 
@@ -65,132 +65,6 @@ class ThemeofWP_Recent_Posts_Widget extends WP_Widget {
 
     }
 
-
-
-//register works widget
-function register_themeofwp_works_widget() {
-    register_widget( 'ThemeofWP_Works_Widget' );
-}
-add_action( 'widgets_init', 'register_themeofwp_works_widget' );
-
-/**
- * Add ThemeofWP_Works_Widget widget.
- */
-class ThemeofWP_Works_Widget extends WP_Widget {
-
-    function __construct() {
-        parent::__construct(
-            'themeofwp_works', // Base ID
-            'TWP Recent Works (Sidebar)', // Name
-            array( 'description' => __( 'Works Widget for the sidebar.', themeofwp ), ) // Args
-            );
-    }
-
-    public function widget( $args, $instance ) {
-        $title  = $instance['title'];
-        $count  = $instance['count'];
-        echo $args['before_widget'];
-        echo $args['before_title'] . $title . $args['after_title'];
-		
-		$posts = get_posts( array( 'post_type' => 'works', 'posts_per_page' => $count ) );
-        foreach ($posts as $key => $value) {
-            ?>
-                <a href="<?php echo get_permalink( $value->ID ); ?>" class="portfolio-img"><?php echo get_the_post_thumbnail( $value->ID, array(50,50) ); ?></a> 
-				
-            <?php }
-            echo $args['after_widget'];
-        }
-
-        public function form( $instance ) {
-            $title  = isset($instance[ 'title' ]) ? $instance[ 'title' ] : 'Recent Works';
-            $count  = isset($instance[ 'count' ]) ? $instance[ 'count' ] : 3;
-            ?>
-            <p>
-                <label for="<?php echo $this->get_field_name( 'title' ); ?>"><?php _e( 'Title:', themeofwp ); ?></label> 
-                <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
-            </p>
-            <p>
-                <label for="<?php echo $this->get_field_name( 'count' ); ?>"><?php _e( 'Number of Portfolio:', themeofwp ); ?></label> 
-                <input class="widefat" id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'count' ); ?>" type="text" value="<?php echo esc_attr( $count ); ?>" />
-            </p>
-            <?php 
-        }
-
-        public function update( $new_instance, $old_instance ) {
-            $instance = array();
-            $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
-            $instance['count'] = ( ! empty( $new_instance['count'] ) ) ? strip_tags( $new_instance['count'] ) : '';
-            return $instance;
-        }
-
-
-    }
-	
-	
-//register products widget
-function register_themeofwp_products_widget() {
-    register_widget( 'ThemeofWP_Products_Widget' );
-}
-add_action( 'widgets_init', 'register_themeofwp_products_widget' );
-
-/**
- * Add ThemeofWP_Products_Widget widget.
- */
-class ThemeofWP_Products_Widget extends WP_Widget {
-
-    function __construct() {
-        parent::__construct(
-            'themeofwp_recent_products', // Base ID
-            'TWP Recent Products', // Name
-            array( 'description' => __( 'Products Widget for the sidebar.', themeofwp ), ) // Args
-            );
-    }
-
-    public function widget( $args, $instance ) {
-        $title  = $instance['title'];
-        $count  = $instance['count'];
-        echo $args['before_widget'];
-        echo $args['before_title'] . $title . $args['after_title'];
-
-        $posts = get_posts( array( 'post_type' => 'product', 'posts_per_page' => $count ) );
-        foreach ($posts as $key => $value) { 
-            ?>
-            <div class="media">
-                <div class="pull-left widget-img">
-                    <a href="<?php echo get_permalink( $value->ID ); ?>"><?php echo get_the_post_thumbnail( $value->ID, array(90,90) ); ?></a>
-                </div>
-                <div class="media-body">
-                    <span class="media-heading"><a href="<?php echo get_permalink( $value->ID ); ?>"><?php echo $value->post_title; ?></a></span>
-                </div>
-            </div>
-            <?php }
-            echo $args['after_widget'];
-        }
-
-        public function form( $instance ) {
-            $title  = isset($instance[ 'title' ]) ? $instance[ 'title' ] : 'Recent Products';
-            $count  = isset($instance[ 'count' ]) ? $instance[ 'count' ] : 3;
-            ?>
-            <p>
-                <label for="<?php echo $this->get_field_name( 'title' ); ?>"><?php _e( 'Title:', themeofwp ); ?></label> 
-                <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
-            </p>
-            <p>
-                <label for="<?php echo $this->get_field_name( 'count' ); ?>"><?php _e( 'Number of products:', themeofwp ); ?></label> 
-                <input class="widefat" id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'count' ); ?>" type="text" value="<?php echo esc_attr( $count ); ?>" />
-            </p>
-            <?php 
-        }
-
-        public function update( $new_instance, $old_instance ) {
-            $instance = array();
-            $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
-            $instance['count'] = ( ! empty( $new_instance['count'] ) ) ? strip_tags( $new_instance['count'] ) : '';
-            return $instance;
-        }
-
-
-    }
 
 /**
 * Add ThemeofWP Ads Widget widget.
@@ -214,7 +88,7 @@ class ThemeofWP_AD_Widget extends WP_Widget {
         parent::__construct(
             'themeofwp_adverts',
             'TWP 125x125 Ads (Sidebar)',
-            array( 'description' => __( 'Displays 125x125 ads with link for the sidebar.', themeofwp ), ) // Args
+            array( 'description' => __( 'Displays 125x125 ads with link for the sidebar.', 'themeofwp' ), ) // Args
             );
     }
 
@@ -316,7 +190,7 @@ class ThemeofWP_AD_Widget extends WP_Widget {
                 <img class="custom_media_image" src="<?php echo $instance['img_src'];?>" style="margin:0;padding:0;max-width:100px;float:left;display:inline-block" />
                 <?php } ?>
                 <input type="text" class="widefat custom_media_url" name="<?php echo $this->get_field_name('img_src'); ?>" id="<?php echo $this->get_field_id('img_src'); ?>" value="<?php if(!empty($instance['img_src'])){echo $instance['img_src'];} ?>">
-                <a href="#" class="button custom_media_upload"><?php _e('Upload', themeofwp); ?></a>            
+                <a href="#" class="button custom_media_upload"><?php _e('Upload', 'themeofwp'); ?></a>            
 
                 <p>
                     <label for="<?php echo $this->get_field_id('url2');?>">URL:</label><br/>
@@ -328,7 +202,7 @@ class ThemeofWP_AD_Widget extends WP_Widget {
                 <img class="custom_media_image2" src="<?php if(!empty($instance['img_src2'])){echo $instance['img_src2'];} else{ echo "No Image";}?>" style="margin:0;padding:0;max-width:100px;float:left;display:inline-block" />
                 <?php } ?>
                 <input type="text" class="widefat custom_media_url2" name="<?php echo $this->get_field_name('img_src2'); ?>" id="<?php echo $this->get_field_id('img_src2'); ?>" value="<?php if(!empty($instance['img_src2'])){echo $instance['img_src2'];} ?>">
-                <a href="#" class="button custom_media_upload2"><?php _e('Upload', themeofwp); ?></a>
+                <a href="#" class="button custom_media_upload2"><?php _e('Upload', 'themeofwp'); ?></a>
 				
 				<p>
                     <label for="<?php echo $this->get_field_id('url3');?>">URL:</label><br/>
@@ -340,7 +214,7 @@ class ThemeofWP_AD_Widget extends WP_Widget {
                 <img class="custom_media_image3" src="<?php if(!empty($instance['img_src3'])){echo $instance['img_src3'];} else{ echo "No Image";}?>" style="margin:0;padding:0;max-width:100px;float:left;display:inline-block" />
                 <?php } ?>
                 <input type="text" class="widefat custom_media_url3" name="<?php echo $this->get_field_name('img_src3'); ?>" id="<?php echo $this->get_field_id('img_src3'); ?>" value="<?php if(!empty($instance['img_src3'])){echo $instance['img_src3'];} ?>">
-                <a href="#" class="button custom_media_upload3"><?php _e('Upload', themeofwp); ?></a>
+                <a href="#" class="button custom_media_upload3"><?php _e('Upload', 'themeofwp'); ?></a>
 				
 				
 				<p>
@@ -353,7 +227,7 @@ class ThemeofWP_AD_Widget extends WP_Widget {
                 <img class="custom_media_image4" src="<?php if(!empty($instance['img_src4'])){echo $instance['img_src4'];} else{ echo "No Image";}?>" style="margin:0;padding:0;max-width:100px;float:left;display:inline-block" />
                 <?php } ?>
                 <input type="text" class="widefat custom_media_url4" name="<?php echo $this->get_field_name('img_src4'); ?>" id="<?php echo $this->get_field_id('img_src4'); ?>" value="<?php if(!empty($instance['img_src4'])){echo $instance['img_src4'];} ?>">
-                <a href="#" class="button custom_media_upload4"><?php _e('Upload', themeofwp); ?></a>
+                <a href="#" class="button custom_media_upload4"><?php _e('Upload', 'themeofwp'); ?></a>
 				
 				
             </div>
@@ -721,73 +595,3 @@ class Header_Social extends WP_Widget {
 	<?php
 	}
 }
-
-/**
-*	Begin Flickr Feed Custom Widgets
-**/
-
-class flickr_widget extends WP_Widget {
-    function flickr_widget() {
-        $widget_ops = array('classname' => 'widget_flickr', 'description' => 'Display your latest Flickr Photos.' );
-        $this->WP_Widget('themeofwp_flickr', 'ThemeofWP Flickr', $widget_ops);
-    }
-
-    /** @see WP_Widget::widget */
-    function widget($args, $instance) {		
-        extract( $args );
-		$flickr_title = $instance["flickr_title"];
-        $flickr_key = $instance["flickr_id"];
-        $flickr_count = $instance["flickr_count"];
-        $flickr_src  = "http://www.flickr.com/badge_code_v2.gne?count=".$flickr_count."&amp;display=latest&amp;size=s&amp;layout=x&amp;source=user&amp;user=".$flickr_key;
-        ?>
-			<?php echo $before_widget; ?>
-				<?php 
-					if($flickr_title == "") {
-						$flickr_title = "Flickr Stream";
-                    }
-
-					echo $before_title; ?>
-					   <?php echo $flickr_title; ?>
-					<?php echo $after_title; 
-				?>
-	            <div id="flickr_wrapper">
-	                <script type="text/javascript" src="<?php echo $flickr_src ?>"></script>
-	            </div>
-	           	<span class="clear"></span>
-			<?php echo $after_widget; ?>
-        <?php
-    }
-
-    /** @see WP_Widget::update */
-    function update($new_instance, $old_instance) {
-        return $new_instance;
-    }
-
-    /** @see WP_Widget::form */
-    function form($instance) {				
-        $flickr_id = isset($instance["flickr_id"]) ? esc_attr($instance["flickr_id"]) : "";
-        $flickr_count = isset($instance["flickr_count"]) ? esc_attr($instance["flickr_count"]) : "";
-		$flickr_title = isset($instance["flickr_title"]) ? esc_attr($instance["flickr_title"]) : "";
-		
-        ?>
-			<p><label for="<?php echo $this->get_field_id('flickr_title'); ?>"><?php _e('Title', 'themeofwp');?><input class="widefat" id="<?php echo $this->get_field_id('flickr_title'); ?>" name="<?php echo $this->get_field_name('flickr_title'); ?>" type="text" value="<?php echo $flickr_title; ?>" /></label></p>
-            
-			<p><label for="<?php echo $this->get_field_id('flickr_id'); ?>"><?php _e('Flickr ID', 'themeofwp');?><input class="widefat" id="<?php echo $this->get_field_id('flickr_id'); ?>" name="<?php echo $this->get_field_name('flickr_id'); ?>" type="text" value="<?php echo $flickr_id; ?>" /></label></p>
-			<p><?php _e('Get your Flickr ID from', 'themeofwp');?> idGettr http://idgettr.com</p>
-			
-           	<p>
-            	<label for="<?php echo $this->get_field_id('flickr_count'); ?>"><?php _e('Image Count', 'themeofwp');?></label>
-                <select size="1" class="widefat" id="<?php echo $this->get_field_id('flickr_count'); ?>" name="<?php echo $this->get_field_name('flickr_count'); ?>">
-                	<?php for($i = 1; $i < 11; $i++) : ?>
-	                    <option <?php if($flickr_count == $i) : ?>selected="selected"<?php endif; ?> value="<?php echo $i; ?>"><?php echo $i; ?></option>
-                    <?php endfor; ?>
-                </select>
-			</p>
-			
-        <?php 
-    }
-
-} 
-
-// register FooWidget widget
-add_action('widgets_init', create_function('', 'return register_widget("flickr_widget");'));

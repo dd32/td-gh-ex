@@ -22,7 +22,6 @@
 			<!-- sidebar right -->	
 			<?php get_sidebar(); ?>
 			<!-- sidebar right -->
-			<?php } ?>
 			
 		</div><!--/.row -->
 		
