@@ -62,6 +62,9 @@ GPL compatible for own images
 
 ----------------------------------------------------
 == Changelog ==
+Versuib 2.0.5
+ * Fixed the error for widget title
+ 
 Version 2.0.4
  * Added credit link about screenshot images.
  

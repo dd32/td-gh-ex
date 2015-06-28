@@ -56,7 +56,7 @@ class Accesspress_mag_register_random_posts extends WP_Widget {
         $random_posts_title = $instance['random_posts_title'];
         echo $before_widget; ?>
         <div class="random-posts clearfix">
-           <h1 class="widget-title"><span><?php echo esc_attr( $random_posts_title ); ?></span></h1>     
+           <h1 class="widget-title"><span><?php if( !empty( $random_posts_title ) ){ echo esc_attr( $random_posts_title ); } ?></span></h1>     
            <div class="random-posts-wrapper">
                 <?php
                     $rand_posts_args = array( 'post_type'=>'post','post_status'=>'publish','posts_per_page'=>3,'orderby'=>'rand' );
