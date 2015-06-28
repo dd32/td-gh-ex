@@ -97,6 +97,9 @@ Pattern Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.14
+* Breadcrumb error in the attachment single page fixed
+
 Version 1.13
 * Demo Content Removed
 * Padding Issues in Sidebar widget fixed
