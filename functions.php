@@ -27,9 +27,7 @@ function olo_setup(){
 	add_theme_support( 'automatic-feed-links' );
 	
 	//olo Title Tag
-	add_filter( 'wp_title', 'olo_wp_title', 10, 2 );
-	add_theme_support( 'title-tag' );
-	remove_theme_support( 'title-tag' );
+	add_theme_support( "title-tag" );
 	
 	// Enqueue style-file, if it exists.
 	add_action('wp_enqueue_scripts', 'olo_script');
@@ -63,25 +61,6 @@ function olo_wp_list_pages(){
 	echo "<ul>";
 	echo wp_list_pages('title_li=&depth=1');
 	echo "</ul>";
-}
-
-//olo Title Tag
-function olo_wp_title($title, $sep) {
-	global $paged, $wp_query;
-	if ( is_feed() ) {
-		return $title;
-	}
-	// Add the site name.
-	$title .= get_bloginfo('name');
-	// Add a page number if necessary:
-	if( is_paged() ){
-		echo sprintf( __('Page %1$s of %2$s', 'olo'), intval( get_query_var('paged')), $wp_query->max_num_pages)."$sep";
-	}
-	// Add the blog name.
-	if(is_home() && is_front_page()) {
-		return $title;
-	}
-	return $title;
 }
 
 // Enqueue style-file, if it exists.
