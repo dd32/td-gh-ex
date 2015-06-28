@@ -58,11 +58,20 @@ function generate_sanitize_nav_layout( $input ) {
  * Sanitize typography dropdown
  * @since 1.1.10
  */
+add_action('admin_init','generate_sanitize_typography');
 function generate_sanitize_typography( $input ) 
 {
 
-	$google_fonts = ( get_transient('generate_google_font_names') ? get_transient('generate_google_font_names') : array() );
+	// Grab all of our fonts
+	$fonts = ( get_transient('generate_all_google_fonts') ? get_transient('generate_all_google_fonts') : array() );
 	
+	// Loop through all of them and grab their names
+	$font_names = array();
+	foreach ( $fonts as $k => $fam ) {
+		$font_names[] = $fam['name'];
+	}
+	
+	// Get all non-Google font names
 	$not_google = array(
 		'inherit',
 		'Arial, Helvetica, sans-serif',
@@ -79,9 +88,11 @@ function generate_sanitize_typography( $input )
 		'Trebuchet MS, Helvetica, sans-serif',
 		'Verdana, Geneva, sans-serif'
 	);
+
+	// Merge them both into one array
+	$valid = array_merge( $font_names, $not_google );
 	
-	$valid = array_merge( $google_fonts, $not_google );
-	
+	// Sanitize
     if ( in_array( $input, $valid ) ) {
         return $input;
     } else {

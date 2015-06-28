@@ -10,6 +10,13 @@ Changelog Legend:
 
 ----
 
+(6/28/2015) - 1.3.02
+[!] Fix galleries
+[x] blk_trans.png removed - using rgba for caption background instead
+[*] Remove two unnecessary queries
+
+----
+
 (6/27/2015) - 1.3.01
 [+] Bulgarian translated added
 [!] Fix bug where font variants weren't loading

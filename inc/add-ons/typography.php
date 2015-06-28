@@ -10,7 +10,7 @@
  *
  * This file is a core Generate file and should not be edited.
  *
- * @package  WordPress
+ * @package  GeneratePress
  * @author   Thomas Usborne
  * @license  http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
  * @link     http://www.generatepress.com
@@ -452,7 +452,7 @@ add_action( 'init','generate_all_google_fonts' );
 function generate_all_google_fonts()
 {
 	// Bail if we already have our list of fonts
-	if ( get_transient('generate_all_google_fonts') )
+	if ( get_transient( 'generate_all_google_fonts' ) )
 		return;
 	
 	// Our big list Google Fonts
@@ -470,10 +470,10 @@ function generate_all_google_fonts()
 		);
 		
 		// Create an ID using our font family name
-		$id				= strtolower( str_replace( ' ', '_', $item->family ) );
+		$id = strtolower( str_replace( ' ', '_', $item->family ) );
 		
 		// Add our attributes to our new array
-		$fonts[ $id ] 	= $atts;
+		$fonts[ $id ] = $atts;
 	}
 	
 	// Filter to allow us to modify the fonts array before saving the transient
@@ -481,34 +481,6 @@ function generate_all_google_fonts()
 				
 	// Set transient for google fonts
 	set_transient( 'generate_all_google_fonts', $fonts, 14 * DAY_IN_SECONDS );
-}
-endif;
-
-if ( ! function_exists( 'generate_google_font_names' ) ) :
-/**
- * Store all Google Fontnames in generate_google_font_names transient
- * This is used for sanitization
- * @since 1.3.0
- */
-add_action( 'init','generate_google_font_names' );
-function generate_google_font_names()
-{
-	// Bail if we already have our font names
-	if ( get_transient('generate_google_font_names') )
-		return;
-	
-	// Grab all of our fonts
-	$fonts = ( get_transient('generate_all_google_fonts') ? get_transient('generate_all_google_fonts') : '' );
-	
-	// Loop through all of them and grab their names
-	$font = array();
-	foreach ( $fonts as $k => $fam ) {
-		$font[] = $fam['name'];
-	}
-	
-	// Set the transient with the names
-	set_transient('generate_google_font_names', $font, WEEK_IN_SECONDS);
-
 }
 endif;
 
