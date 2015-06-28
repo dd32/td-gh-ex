@@ -610,7 +610,7 @@
                                     <th><label for="<?php echo 'slide'.$i.'_readmore_button_icon'; ?>"><?php echo 'Slide-'.$i.__(' Read More Button Icon','accesspress-basic'); ?></label></th>
                                     <td>
                                         <input type="text" name="apbasic_options[slide<?php echo $i; ?>_readmore_button_icon]" id="<?php echo 'slide'.$i.'_readmore_button_icon'; ?>" value="<?php echo esc_attr($settings['slide'.$i.'_readmore_button_icon']); ?>" />
-                                        <em>e.g. fa-train ref link: <a href="<?php esc_url('http://fortawesome.github.io/Font-Awesome/icons/'); ?>" target="_blank"><?php _e('Get Fa-Icon','accesspress-basic'); ?></a></em>
+                                        <em>e.g. fa-train ref link: <a href="<?php echo esc_url('http://fortawesome.github.io/Font-Awesome/icons/'); ?>" target="_blank"><?php _e('Get Fa-Icon','accesspress-basic'); ?></a></em>
                                     </td>
                                 </tr>    
                                 <?php endfor; ?>
@@ -697,7 +697,7 @@
             						<p><?php _e('We want to give "a little beautiful thing" - back to the community.<br />With our experience, we are creating "AccessPress Basic", a free WordPress theme, which includes the most useful features for a generic business website!','accesspress-basic'); ?></p>
             						<hr />
             						
-            						<p><?php _e('For documentation, click','accesspress-basic'); ?> <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/theme-instruction-accesspress-basic/'); ?>"><?php _e('here','accesspress-basic'); ?></a></p>
+            						<p><?php _e('For documentation, click','accesspress-basic'); ?> <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/accesspress-basic-documentation/'); ?>"><?php _e('here','accesspress-basic'); ?></a></p>
             						<p><?php _e('For Video tutorials, click','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('https://www.youtube.com/watch?v=Mi60ORm_VMI&list=PLdSqn2S_qFxEzeboBioXZdAg5P4l32Hm3'); ?>"><?php _e('here','accesspress-basic'); ?></a></p>
             						<hr />
             						

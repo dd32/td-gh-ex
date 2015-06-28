@@ -4,7 +4,7 @@ Theme URI: http://accesspressthemes.com/wordpress-themes/accesspress-basic/
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com
 Description: AccessPress Basic is a simple, basic & clean.  It is beautifully designed responsive free WordPress business theme. It has useful features to setup your website fast and make your website operate smoothly. It doesn't have much features which you probably won't use at all! Full width and boxed layout, featured slider, featured posts, services/features/projects layout, testimonial layout, blog layout, social media integration, call to action and many other page layouts. Fully responsive, WooCommerce compatible, bbPress compatible, translation ready, cross-browser compatible, SEO friendly, RTL support. AccessPress Basic is multi-purpose and is suitable for any type of business. Highest level of compatibility with mostly used WP plugins.  Great customer support via online chat, email, support forum. Official support forum: http://accesspressthemes.com/support/ View full demo here: https://accesspressthemes.com/accesspress-basic/
-Version: 1.1.7
+Version: 1.1.8
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: accesspress-basic
@@ -2781,6 +2781,50 @@ Footer CSS
     float: right;
 }
 
+/***** Gallery *******/
+.gallery {
+	margin-bottom: 15px;
+}
 
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
 
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
 
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+
+.gallery-caption {
+	display: block;
+}

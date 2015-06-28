@@ -56,3 +56,7 @@ Images
 
 Version 1.0
 * Submitted theme for review in http://wordpress.org
+
+Version 1.1.8
+* Fixed Gallery Page Column Layout Issues
+* Fixed Span and H2 tags for slider caption title and descriptions. 

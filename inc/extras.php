@@ -114,10 +114,10 @@ endif;
                                 <?php if(!empty($slide['caption_title']) || !empty($slide['caption_description'])) : ?>
                                 <div class="slider-caption-container">
                                     <?php if(!empty($slide['caption_title'])) : ?>
-                                        <h1 class="caption-title"><?php echo esc_attr($slide['caption_title']); ?></h1>
+                                        <h1 class="caption-title"><?php echo ($slide['caption_title']); ?></h1>
                                     <?php endif; ?>
                                     <?php if(!empty($slide['caption_description'])) : ?>
-                                        <div class="caption-description"><?php echo esc_textarea($slide['caption_description']); ?></div>
+                                        <div class="caption-description"><?php echo ($slide['caption_description']); ?></div>
                                     <?php endif; ?>
                                     <?php if(!empty($slide['readmore_text'])) : ?>
                                         <a class="readmore-button slide_readmore-button" href="<?php echo esc_url($slide['readmore_link']); ?>" target="_blank"><i class="fa <?php echo $slide['readmore_icon']; ?>"></i><?php echo $slide['readmore_text']; ?></a>
