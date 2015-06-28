@@ -89,11 +89,15 @@ function ct_tracks_video_callback( $post ) {
 			echo '<p>' . __( 'Choose where to display the video:', 'tracks' ) . '</p>';
 			echo '<label for="ct_tracks_video_display_post">';
 				echo '<input type="radio" name="ct_tracks_video_display" id="ct_tracks_video_display_post" value="post" ' . checked( $display_value, "post", false ) . '>';
-				_e( 'Display on Post', 'tracks' );
+				_e( 'Post', 'tracks' );
+			echo '</label> ';
+			echo '<label for="ct_tracks_video_display_blog">';
+				echo '<input type="radio" name="ct_tracks_video_display" id="ct_tracks_video_display_blog" value="blog" ' . checked( $display_value, "blog", false ) . '>';
+				_e( 'Blog', 'tracks' );
 			echo '</label> ';
 			echo '<label for="ct_tracks_video_display_both">';
 				echo '<input type="radio" name="ct_tracks_video_display" id="ct_tracks_video_display_both" value="both" ' . checked( $display_value, "both", false ) . '>';
-				_e( 'Display on Post and Blog', 'tracks' );
+				_e( 'Post & Blog', 'tracks' );
 			echo '</label> ';
 		echo '</div>';
 	}
@@ -164,6 +168,8 @@ function ct_tracks_video_save_data( $post_id ) {
 	 * because the save_post action can be triggered at other times.
 	 */
 
+	global $post;
+
 	// Check if our nonce is set.
 	if ( ! isset( $_POST['ct_tracks_video_nonce'] ) ) {
 		return;
@@ -187,28 +193,30 @@ function ct_tracks_video_save_data( $post_id ) {
 	/* OK, it's safe for us to save the data now. */
 
 	// Make sure video URL is set
-	if ( ! isset( $_POST['ct_tracks_video_url'] ) ) {
-		return;
-	}
+	if ( isset( $_POST['ct_tracks_video_url'] ) ) {
 
-	// validate user input.
-	$my_data = esc_url_raw( $_POST['ct_tracks_video_url'] );
+		// validate user input.
+		$video_url = esc_url_raw( $_POST['ct_tracks_video_url'] );
 
-	// Update the meta field in the database.
-	update_post_meta( $post_id, 'ct_tracks_video_key', $my_data );
+		// Update the meta field in the database.
+		update_post_meta( $post_id, 'ct_tracks_video_key', $video_url );
 
-	// Make sure display setting is set
-	if ( isset( $_POST['ct_tracks_video_display'] ) ) {
+		// save display option for posts only
+		if( $post->post_type == 'post' ) {
 
-		// get user input
-		$raw_data = $_POST[ 'ct_tracks_video_display' ];
+			// Make sure display setting is set
+			if ( isset( $_POST['ct_tracks_video_display'] ) ) {
 
-		// validate user input
-		if( $raw_data == 'post' || $raw_data == 'both' ) {
-			$clean_data = $raw_data;
+				// get user input
+				$display_setting = esc_attr( $_POST['ct_tracks_video_display'] );
 
-			// Saves video display option
-			update_post_meta( $post_id, 'ct_tracks_video_display_key', $clean_data );
+				// validate user input
+				if ( $display_setting == 'post' || $display_setting == 'blog' || $display_setting == 'both' ) {
+
+					// Saves video display option
+					update_post_meta( $post_id, 'ct_tracks_video_display_key', $display_setting );
+				}
+			}
 		}
 	}
 
@@ -278,8 +286,12 @@ function ct_tracks_pro_output_featured_video( $featured_image ){
 		// get the display setting (post or blog)
 		$display_blog = get_post_meta( $post->ID, 'ct_tracks_video_display_key', true );
 
-		// if is post, page, or video displays on blog, use the video
-		if( is_singular() || $display_blog == 'both' ) {
+		// post and setting is post or both, or if the blog and setting is blog or both, or if a page
+		if(
+			( is_singular() && ( $display_blog == 'post' || $display_blog == 'both' ) )
+			|| ( ( is_home() || is_archive() ) && ( $display_blog == 'blog' || $display_blog == 'both' ) )
+			|| is_singular('page')
+		) {
 			$featured_image = '<div class="featured-video">' . wp_oembed_get( esc_url( $featured_video ) ) . '</div>';
 		}
 	}
@@ -295,10 +307,10 @@ function ct_tracks_add_youtube_parameters($html, $url, $args) {
 	global $post;
 
 	// get featured video
-	$featured_video = get_post_meta( $post->ID, 'ct_tracks_video_key', true );
+	if( ! empty( $post ) ) $featured_video = get_post_meta( $post->ID, 'ct_tracks_video_key', true );
 
 	// only run filter if there is a featured video
-	if( $featured_video ) {
+	if( ! empty( $featured_video ) ) {
 
 		// only run filter on the featured video
 		if( $url == $featured_video ) {

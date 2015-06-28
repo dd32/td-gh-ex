@@ -103,13 +103,13 @@ if( ! function_exists( 'ct_tracks_customize_comments' ) ) {
                 ?>
                 <div>
                     <div class="author-name"><?php comment_author_link(); ?></div>
-                    <div class="comment-date"><?php comment_date( 'n/j/Y' ); ?></div>
+                    <div class="comment-date"><?php comment_date(); ?></div>
                     <?php comment_reply_link( array_merge( $args, array(
                         'reply_text' => __( 'Reply', 'tracks' ),
                         'depth'      => $depth,
                         'max_depth'  => $args['max_depth']
                     ) ) ); ?>
-                    <?php edit_comment_link( 'edit' ); ?>
+                    <?php edit_comment_link( __('Edit', 'tracks') ); ?>
                 </div>
             </div>
             <div class="comment-content">
@@ -202,23 +202,21 @@ if( ! function_exists( 'ct_tracks_excerpt' ) ) {
         // make post variable available
         global $post;
 
-        // make 'read more' setting available
-        global $more;
-
         // get the 'show full post' setting
         $setting = get_theme_mod( 'premium_layouts_full_width_full_post' );
 
         // check for the more tag
         $ismore = strpos( $post->post_content, '<!--more-->' );
 
-        // if show full post is on, and full-width layout is on, show full post unless on search page
+	    // if show full post is on and not on a search results page
         if ( ( $setting == 'yes' ) && get_theme_mod( 'premium_layouts_setting' ) == 'full-width' && ! is_search() ) {
 
-            // set read more value for all posts to 'off'
-            $more = - 1;
-
-            // output the full content
-            the_content();
+	        // use the read more link if present
+	        if ( $ismore ) {
+		        the_content( __( 'Read More', 'tracks' ) . " <span class='screen-reader-text'>" . get_the_title() . "</span>" );
+	        } else {
+		        the_content();
+	        }
         } // use the read more link if present
         elseif ( $ismore ) {
             the_content( __( 'Read More', 'tracks' ) . "<span class='screen-reader-text'>" . get_the_title() . "</span>" );
@@ -431,8 +429,11 @@ function ct_tracks_post_class_update($classes){
 
 		// only add on blog/archive if enabled
 		if( is_home() || is_archive() ) {
+
+			$display_setting = get_post_meta( $post->ID, 'ct_tracks_video_display_key', true );
+
 			// if post has video enabled on blog
-			if( get_post_meta( $post->ID, 'ct_tracks_video_display_key', true ) == 'both' ) {
+			if( $display_setting == 'blog' || $display_setting == 'both' ) {
 				$classes[] = 'has-video';
 			}
 		} else {
@@ -683,3 +684,36 @@ function ct_tracks_full_width_images_featured_image($featured_image, $image, $ha
 	return $featured_image;
 }
 add_filter( 'ct_tracks_featured_image', 'ct_tracks_full_width_images_featured_image', 10, 3 );
+
+
+// show notice telling users about avatar change coming in v1.50
+function ct_tracks_delete_settings_notice() {
+
+	// if not dismissed previously, show message
+	if ( get_option( 'ct_tracks_dismiss_avatar_notice' ) != true ) {
+
+		// set link with full explanation
+		// linking to my site and redirecting as a precaution to maintain control
+		$url = 'https://www.competethemes.com/tracks-avatar-redirect/';
+		?>
+		<div id="tracks-avatar-notice" class="update-nag notice is-dismissible">
+			<p><?php printf( __( 'Custom avatars are being removed from Tracks in v1.38. Please <a target="_blank" href="%s">follow these instructions</a> before the next update', 'tracks' ), esc_url($url) ); ?>.</p>
+		</div>
+	<?php
+	}
+}
+add_action( 'admin_notices', 'ct_tracks_delete_settings_notice' );
+
+// remove the notice permanently if user clicks the "x" button
+function ct_tracks_dismiss_avatar_notice() {
+
+	// get the dismissed value
+	$dismissed = $_POST['dismissed'];
+
+	// if set to true, update option
+	if( $dismissed == true ) {
+		update_option('ct_tracks_dismiss_avatar_notice', true);
+	}
+	die();
+}
+add_action( 'wp_ajax_dismiss_tracks_avatar_notice', 'ct_tracks_dismiss_avatar_notice' );
