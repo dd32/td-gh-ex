@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-09 22:33+0800\n"
-"PO-Revision-Date: 2015-05-09 22:33+0800\n"
+"POT-Creation-Date: 2015-06-28 22:23+0800\n"
+"PO-Revision-Date: 2015-06-28 22:23+0800\n"
 "Last-Translator: 皇家元林 <i@hjyl.org>\n"
 "Language-Team: hjyl.org <i@hjyl.org>\n"
 "Language: zh_CN\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.7.6\n"
+"X-Generator: Poedit 1.8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../archive.php:7 ../index.php:7 ../single.php:7
@@ -40,7 +40,7 @@ msgstr "<b>1</b>"
 msgid "<b>%</b>"
 msgstr "<b>%</b>"
 
-#: ../archive.php:37 ../functions.php:102 ../index.php:37 ../page.php:27
+#: ../archive.php:37 ../functions.php:76 ../index.php:37 ../page.php:27
 #: ../single.php:33
 msgid "Edit"
 msgstr "编辑"
@@ -165,60 +165,55 @@ msgstr "https://hjyl.org/"
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: ../functions.php:60
+#: ../functions.php:53
 msgid "Primary Navigation"
 msgstr "主要导航"
 
-#: ../functions.php:61
+#: ../functions.php:54
 msgid "Mobile Navigation"
 msgstr "手机导航"
 
 #: ../functions.php:75
-#, php-format
-msgid "Page %1$s of %2$s"
-msgstr "Page %1$s of %2$s"
-
-#: ../functions.php:101
 msgid "Before Refresh, you can"
 msgstr "刷新之前，你可以"
 
-#: ../functions.php:103
+#: ../functions.php:77
 msgid "Cancel Editing"
 msgstr "取消编辑"
 
-#: ../functions.php:104
+#: ../functions.php:78
 msgid "Wait a moment..."
 msgstr "请稍候..."
 
-#: ../functions.php:105
+#: ../functions.php:79
 msgid "Good Comment"
 msgstr "提交成功"
 
-#: ../functions.php:124
+#: ../functions.php:98
 msgid "CopyRights"
 msgstr "转载请注明"
 
-#: ../functions.php:132 ../header.php:47
+#: ../functions.php:106 ../header.php:47
 msgid "Home"
 msgstr "首页"
 
-#: ../functions.php:140
+#: ../functions.php:114
 msgid "Single"
 msgstr "文章页"
 
-#: ../functions.php:148
+#: ../functions.php:122
 msgid "404"
 msgstr "404页面"
 
-#: ../functions.php:156
+#: ../functions.php:130
 msgid "Other"
 msgstr "其他页"
 
-#: ../functions.php:176
+#: ../functions.php:150
 msgid "<< Previous"
 msgstr "上一页"
 
-#: ../functions.php:177
+#: ../functions.php:151
 msgid "Next >>"
 msgstr "下一页"
 
@@ -458,6 +453,9 @@ msgstr "上一篇: %title"
 #: ../single.php:43
 msgid "Next: %title"
 msgstr "下一篇: %title"
+
+#~ msgid "Page %1$s of %2$s"
+#~ msgstr "Page %1$s of %2$s"
 
 #~ msgid "Anti-spam Code"
 #~ msgstr "请输入验证码"
