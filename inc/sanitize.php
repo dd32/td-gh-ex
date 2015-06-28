@@ -58,7 +58,6 @@ function generate_sanitize_nav_layout( $input ) {
  * Sanitize typography dropdown
  * @since 1.1.10
  */
-add_action('admin_init','generate_sanitize_typography');
 function generate_sanitize_typography( $input ) 
 {
 
