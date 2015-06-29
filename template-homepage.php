@@ -1,14 +1,15 @@
-<?php 
+		<?php 
+		/**
+		Template Name: Home Page
+		*/
 		
-		if('page' == get_option('show_on_front')){ get_template_part('index');}
-
-		else {get_header();
-		
+		get_header();
 		//****** get index static banner  ********
 		get_template_part('index', 'slider');
 		
 		//****** Orange Sidebar Area ********
 		get_sidebar('orange');
+				
 		//****** get index service  ********				
 		get_template_part('index', 'service');
 		
@@ -19,5 +20,5 @@
 		get_template_part('index', 'news');
 				
 		get_footer();
-		}
-?>
+		
+		?>

@@ -94,9 +94,10 @@ Source: http://fontawesome.io
 
 # --- EOF --- #
 ============================Change Log================================
-
+@version 2.1
+1. Add Custom front page template.
 @version 2.0 
-1. Add Theme Customization API Using Option .
+1. Add Theme Customization API.
 2. Update pot file.
 
 @version 1.6

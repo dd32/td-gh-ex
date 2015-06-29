@@ -2,7 +2,7 @@
 get_header();
 get_template_part('index','banner'); ?>
 <!-- Blog Section with Sidebar -->
-<div class="blog-section-lg">
+<div class="blog-section-md">
 	<div class="container">
 		<div class="row">
 			<!-- Blog Area -->

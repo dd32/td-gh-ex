@@ -52,7 +52,7 @@ if($slider_setting['home_banner_enabled'] == 0 ) {
 			else
 			{
 			$featured_slider_post = $slider_setting['featured_slider_post'];
-
+			
 			$slider_select_category = array();
 			$slider_select_category = $slider_setting['slider_select_category' ];
 		
@@ -85,13 +85,15 @@ if($slider_setting['home_banner_enabled'] == 0 ) {
 			<?php if(has_post_thumbnail()){
 			the_post_thumbnail('', $default_arg); 
 			}
-			else { 
 			if(!has_post_thumbnail()){
-			 echo '<img class="img-responsive" src="'.WEBRITI_TEMPLATE_DIR_URI.'/images/slide/no-image.jpg">';
-			}
-			?>
+			 echo '<img class="img-responsive" src="'.WEBRITI_TEMPLATE_DIR_URI.'/images/slide/no-image.jpg">'; ?>
+			 <div class="slide-caption">
+				<div class="slide-text-bg1"><h2><?php the_title();?></h2></div>
+				<?php echo get_the_excerpt(); ?>
+			</div>
+			<?php }
+			else { ?>
 			<div class="slide-caption">
-				
 				<div class="slide-text-bg1"><h2><?php the_title();?></h2></div>
 				<?php echo get_the_excerpt(); ?>
 			</div>
