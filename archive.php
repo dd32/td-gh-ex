@@ -8,25 +8,19 @@
 		
 		<section id="content" class="primary" role="main">
 
-		<h2 id="date-title" class="archive-title">
-			<?php // Display Archive Title
-			if ( is_date() ) :
-				printf( __( 'Monthly Archives: %s', 'rubine-lite' ), '<span>' . get_the_date( _x( 'F Y', 'date format of monthly archives', 'rubine-lite' ) ) . '</span>' );
-			else :
-				_e( 'Archives', 'rubine-lite' );
-			endif;
-			?>
-		</h2>
+			<header class="page-header">
+				<?php the_archive_title( '<h2 class="archive-title">', '</h2>' ); ?>
+			</header>
 		
-		<?php if (have_posts()) : while (have_posts()) : the_post();
+			<?php if (have_posts()) : while (have_posts()) : the_post();
 		
-			get_template_part( 'content' );
+				get_template_part( 'content' );
 		
 			endwhile;
 			
-		rubine_display_pagination();
+			rubine_display_pagination();
 
-		endif; ?>
+			endif; ?>
 			
 		</section>
 		
