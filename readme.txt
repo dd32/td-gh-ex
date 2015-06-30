@@ -72,5 +72,9 @@ The portfolio archive page can be found at http://mygroovysite.wordpress.com/por
 
 == Changelog ==
 
+= 1.0.1 - June 30 2015 =
+* Removed include for updater.php script from functions.php.
+* Fixed minor textdomain issues.
+
 = 1.0 - May 28 2015 =
 * Initial release.
