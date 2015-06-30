@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Avien Light\n"
-"POT-Creation-Date: 2015-03-25 17:07+0200\n"
-"PO-Revision-Date: 2015-05-08 10:53+0200\n"
+"POT-Creation-Date: 2015-07-01 00:18+0200\n"
+"PO-Revision-Date: 2015-07-01 00:18+0200\n"
 "Last-Translator: \n"
 "Language-Team: themeofwp.com <info@themeofwp.com>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.7\n"
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
 "_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_ex:1,2c;"
 "esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
@@ -29,2816 +29,6 @@ msgstr ""
 
 #: ../404.php:15
 msgid "Go back to the homepage"
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:196 ../admin/plugin-setup.php:163
-msgid "Install Required Plugins"
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:197 ../admin/plugin-setup.php:164
-msgid "Install Plugins"
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:198 ../admin/plugin-setup.php:165
-#, php-format
-msgid "Installing Plugin: %s"
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:199
-msgid "Something went wrong."
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:200
-#, php-format
-msgid "This theme requires the following plugin: %1$s."
-msgid_plural "This theme requires the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../admin/class-plugin-activation.php:201
-#, php-format
-msgid "This theme recommends the following plugin: %1$s."
-msgid_plural "This theme recommends the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../admin/class-plugin-activation.php:202 ../admin/plugin-setup.php:169
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to install the %s plugin. "
-"Contact the administrator of this site for help on getting the plugin "
-"installed."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to install the %s "
-"plugins. Contact the administrator of this site for help on getting the "
-"plugins installed."
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../admin/class-plugin-activation.php:203 ../admin/plugin-setup.php:170
-#, php-format
-msgid "The following required plugin is currently inactive: %1$s."
-msgid_plural "The following required plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../admin/class-plugin-activation.php:204 ../admin/plugin-setup.php:171
-#, php-format
-msgid "The following recommended plugin is currently inactive: %1$s."
-msgid_plural "The following recommended plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../admin/class-plugin-activation.php:205 ../admin/plugin-setup.php:172
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to activate the %s "
-"plugin. Contact the administrator of this site for help on getting the "
-"plugin activated."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to activate the %s "
-"plugins. Contact the administrator of this site for help on getting the "
-"plugins activated."
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../admin/class-plugin-activation.php:206 ../admin/plugin-setup.php:173
-#, php-format
-msgid ""
-"The following plugin needs to be updated to its latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgid_plural ""
-"The following plugins need to be updated to their latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../admin/class-plugin-activation.php:207 ../admin/plugin-setup.php:174
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to update the %s plugin. "
-"Contact the administrator of this site for help on getting the plugin "
-"updated."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to update the %s plugins. "
-"Contact the administrator of this site for help on getting the plugins "
-"updated."
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../admin/class-plugin-activation.php:208 ../admin/plugin-setup.php:175
-msgid "Begin installing plugin"
-msgid_plural "Begin installing plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../admin/class-plugin-activation.php:209
-msgid "Begin activating plugin"
-msgid_plural "Begin activating plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../admin/class-plugin-activation.php:210 ../admin/plugin-setup.php:177
-msgid "Return to Required Plugins Installer"
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:211
-msgid "Return to the dashboard"
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:212
-#: ../admin/class-plugin-activation.php:1951 ../admin/plugin-setup.php:178
-msgid "Plugin activated successfully."
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:213
-#: ../admin/class-plugin-activation.php:1638
-msgid "The following plugin was activated successfully:"
-msgid_plural "The following plugins were activated successfully:"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../admin/class-plugin-activation.php:214
-#, php-format
-msgid "All plugins installed and activated successfully. %1$s"
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:215
-msgid "Dismiss this notice"
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:544
-#: ../admin/class-plugin-activation.php:2168
-msgid "Return to the Dashboard"
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:1174
-msgid "Private Repository"
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:1177
-msgid "Pre-Packaged"
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:1182
-msgid "WordPress Repository"
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:1185
-msgid "Required"
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:1185
-msgid "Recommended"
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:1188
-msgid "Not Installed"
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:1190
-msgid "Installed But Not Activated"
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:1290
-#: ../admin/class-plugin-activation.php:1398
-msgid "Install"
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:1312
-#: ../admin/class-plugin-activation.php:1399
-msgid "Activate"
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:1361
-#, php-format
-msgid ""
-"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
-"Dashboard\">Return to the Dashboard</a>"
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:1377
-msgid "Plugin"
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:1378
-msgid "Source"
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:1379
-msgid "Type"
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:1380
-msgid "Status"
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:1508
-msgid "No plugins are available to be installed at this time."
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:1616
-msgid "No plugins are available to be activated at this time."
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:1934
-msgid "Install package not available."
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:1935
-#, php-format
-msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:1936
-msgid "Unpacking the package&#8230;"
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:1937
-msgid "Installing the plugin&#8230;"
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:1938
-msgid "Plugin install failed."
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:1939
-msgid "Plugin installed successfully."
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:1950
-msgid "Plugin activation failed."
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:2064
-msgid ""
-"The installation and activation process is starting. This process may take a "
-"while on some hosts, so please be patient."
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:2065
-#, php-format
-msgid "%1$s installed and activated successfully."
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:2065
-#: ../admin/class-plugin-activation.php:2074
-msgid "Show Details"
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:2065
-#: ../admin/class-plugin-activation.php:2074
-msgid "Hide Details"
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:2066
-msgid "All installations and activations have been completed."
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:2067
-#, php-format
-msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:2071
-msgid ""
-"The installation process is starting. This process may take a while on some "
-"hosts, so please be patient."
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:2072
-#, php-format
-msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:2073
-#, php-format
-msgid "The installation of %1$s failed."
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:2074
-#, php-format
-msgid "%1$s installed successfully."
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:2075
-msgid "All installations have been completed."
-msgstr ""
-
-#: ../admin/class-plugin-activation.php:2076
-#, php-format
-msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: ../admin/custom-menu-perpage/ce-wp-menu-per-page.php:81
-msgid "Select the menu for this page"
-msgstr ""
-
-#: ../admin/custom-menu-perpage/ce-wp-menu-per-page.php:111
-msgid "WordPress Default"
-msgstr ""
-
-#: ../admin/custom-menu-perpage/ce-wp-menu-per-page.php:116
-msgid "Please select the menu which should be displayed on this page."
-msgstr ""
-
-#: ../admin/custom-menu-perpage/ce-wp-menu-per-page.php:134
-msgid "Please select the menu location, where your menu should appear"
-msgstr ""
-
-#: ../admin/custom-meta/helpers/cmb_Meta_Box_ajax.php:47
-msgid "Please Try Again"
-msgstr ""
-
-#: ../admin/custom-meta/helpers/cmb_Meta_Box_ajax.php:131
-msgid "Remove Embed"
-msgstr ""
-
-#: ../admin/custom-meta/helpers/cmb_Meta_Box_ajax.php:134
-#, php-format
-msgid "No oEmbed Results Found for %s. View more info at"
-msgstr ""
-
-#: ../admin/custom-meta/helpers/cmb_Meta_Box_field.php:459
-msgid "Add Group"
-msgstr ""
-
-#: ../admin/custom-meta/helpers/cmb_Meta_Box_field.php:460
-msgid "Remove Group"
-msgstr ""
-
-#: ../admin/custom-meta/helpers/cmb_Meta_Box_types.php:250
-msgid "Add Row"
-msgstr ""
-
-#: ../admin/custom-meta/helpers/cmb_Meta_Box_types.php:306
-#: ../admin/custom-meta/helpers/cmb_Meta_Box_types.php:706
-#: ../admin/custom-meta/helpers/cmb_Meta_Box_types.php:768
-msgid "Remove"
-msgstr ""
-
-#: ../admin/custom-meta/helpers/cmb_Meta_Box_types.php:601
-#: ../admin/custom-meta/helpers/cmb_Meta_Box_types.php:635
-msgid "No terms"
-msgstr ""
-
-#: ../admin/custom-meta/helpers/cmb_Meta_Box_types.php:674
-#: ../admin/custom-meta/helpers/cmb_Meta_Box_types.php:728
-msgid "Add or Upload File"
-msgstr ""
-
-#: ../admin/custom-meta/helpers/cmb_Meta_Box_types.php:695
-#: ../admin/custom-meta/helpers/cmb_Meta_Box_types.php:760
-msgid "Remove Image"
-msgstr ""
-
-#: ../admin/custom-meta/helpers/cmb_Meta_Box_types.php:706
-#: ../admin/custom-meta/helpers/cmb_Meta_Box_types.php:768
-msgid "File:"
-msgstr ""
-
-#: ../admin/custom-meta/helpers/cmb_Meta_Box_types.php:706
-#: ../admin/custom-meta/helpers/cmb_Meta_Box_types.php:768
-msgid "Download"
-msgstr ""
-
-#: ../admin/custom-meta/init.php:258
-msgid "Clear"
-msgstr ""
-
-#: ../admin/custom-meta/init.php:259
-msgid "Default"
-msgstr ""
-
-#: ../admin/custom-meta/init.php:260
-msgid "Select Color"
-msgstr ""
-
-#: ../admin/custom-meta/init.php:261
-msgid "Current Color"
-msgstr ""
-
-#: ../admin/custom-meta/init.php:288
-msgid "Select / Deselect All"
-msgstr ""
-
-#: ../admin/custom-meta/init.php:1177
-msgid "Save"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:57
-msgid "One Page Sections"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:68 ../admin/custom-meta/metabox.php:208
-msgid ""
-"You can create your own page model with this repeatable and sortable "
-"homepage blog parts. Add your own "
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:70
-msgid "Onepage Section #{#}"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:71 ../admin/custom-meta/metabox.php:211
-msgid "Add Another Section"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:72 ../admin/custom-meta/metabox.php:212
-msgid "Remove Section"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:97
-msgid "Section Title Color"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:98
-msgid "Enter the title color for this section."
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:125 ../admin/custom-meta/metabox.php:264
-msgid "Section Bg Color"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:126 ../admin/custom-meta/metabox.php:265
-msgid "You can define bg color options for this section"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:133 ../admin/custom-meta/metabox.php:272
-msgid "Section Bg Image"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:134 ../admin/custom-meta/metabox.php:273
-msgid "You can define bg image options for this section"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:140 ../admin/custom-meta/metabox.php:279
-msgid "Section Bg Position"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:141 ../admin/custom-meta/metabox.php:280
-msgid "You can define bg position options for this section"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:145 ../admin/custom-meta/metabox.php:163
-#: ../admin/custom-meta/metabox.php:177 ../admin/custom-meta/metabox.php:284
-#: ../admin/custom-meta/metabox.php:302 ../admin/custom-meta/metabox.php:316
-msgid "None"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:146 ../admin/custom-meta/metabox.php:285
-#: ../admin/custom-meta/metabox.php:911
-msgid "Top Left"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:147 ../admin/custom-meta/metabox.php:286
-#: ../admin/custom-meta/metabox.php:912
-msgid "Top Right"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:148 ../admin/custom-meta/metabox.php:287
-#: ../admin/custom-meta/metabox.php:913
-msgid "Center Left"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:149 ../admin/custom-meta/metabox.php:288
-#: ../admin/custom-meta/metabox.php:914
-msgid "Center Center"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:150 ../admin/custom-meta/metabox.php:289
-#: ../admin/custom-meta/metabox.php:915
-msgid "Center Right"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:151 ../admin/custom-meta/metabox.php:290
-#: ../admin/custom-meta/metabox.php:916
-msgid "Bottom Left"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:152 ../admin/custom-meta/metabox.php:291
-#: ../admin/custom-meta/metabox.php:917
-msgid "Bottom Center"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:153 ../admin/custom-meta/metabox.php:292
-#: ../admin/custom-meta/metabox.php:918
-msgid "Bottom Right"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:158 ../admin/custom-meta/metabox.php:297
-msgid "Section Bg Repeat"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:159 ../admin/custom-meta/metabox.php:298
-msgid "You can define bg repeat options for this section"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:164 ../admin/custom-meta/metabox.php:303
-#: ../admin/custom-meta/metabox.php:929
-msgid "No Repeat"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:165 ../admin/custom-meta/metabox.php:304
-#: ../admin/custom-meta/metabox.php:930
-msgid "Repeat Horizontally"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:166 ../admin/custom-meta/metabox.php:305
-#: ../admin/custom-meta/metabox.php:931
-msgid "Repeat Vertically"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:167 ../admin/custom-meta/metabox.php:306
-#: ../admin/custom-meta/metabox.php:932
-msgid "Repeat"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:172 ../admin/custom-meta/metabox.php:311
-msgid "Section Bg Attachment"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:173 ../admin/custom-meta/metabox.php:312
-msgid "You can define bg attachment options for this section."
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:178 ../admin/custom-meta/metabox.php:317
-#: ../admin/custom-meta/metabox.php:943
-msgid "Fixed"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:179 ../admin/custom-meta/metabox.php:318
-#: ../admin/custom-meta/metabox.php:944
-msgid "Scroll"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:197 ../admin/custom-meta/metabox.php:222
-msgid "Homepage Sections"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:210
-msgid "Homepage Section #{#}"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:223
-msgid ""
-"Select you want to display homepage block. Then set your block and you can "
-"change the block orders."
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:227
-msgid "Dont use anything"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:228
-msgid "Use Slider"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:229
-msgid "Use Portfolio"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:230
-msgid "Use Testimonial"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:231
-msgid "Use Call to Action"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:232
-msgid "Use Team"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:233
-msgid "Use Parallax"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:234
-msgid "Use Services"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:235
-msgid "Use Blog"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:240
-msgid "Section Title"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:241
-msgid "enter the section title for axample: Our Services"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:247
-msgid "Section Content"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:248
-msgid "enter the section content for axample: Our Services"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:255
-msgid "Section Content Color"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:256
-msgid "Enter the main color for this section."
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:336
-msgid "Team Member Details"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:344 ../admin/custom-meta/metabox.php:403
-#: ../admin/custom-meta/metabox.php:450 ../admin/custom-meta/metabox.php:488
-msgid "Effect"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:345 ../admin/custom-meta/metabox.php:404
-#: ../admin/custom-meta/metabox.php:451
-msgid ""
-"enter the effect name for axample: fadeIn you can select more effects at <a "
-"href=\"http://daneden.github.io/animate.css/\" target=\"_blank\">Animate."
-"css</a>"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:352
-msgid "Job Title"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:353
-msgid "enter the team member job title: for example: UI Designer"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:359
-msgid "Facebook"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:360
-msgid "enter the team member facebook url."
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:366
-msgid "Google+"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:367
-msgid "enter the team member Google+ url."
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:373
-msgid "Twitter"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:374
-msgid "enter the team member Twitter url."
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:380
-msgid "LinkedIn"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:381
-msgid "enter the team member LinkedIn url."
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:395
-msgid "Parallax Item Details"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:418
-msgid "Testimonial Item Details"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:427
-msgid "Testimonial Owner Title"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:428 ../admin/custom-meta/metabox.php:524
-msgid "enter the customer name"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:442
-msgid "Call to Action Button Options"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:458
-msgid "Button Title"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:459
-msgid "enter the call to action button title"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:465
-msgid "Button URL"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:466
-msgid "enter the call to action button url"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:480
-msgid "Service Icon Options"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:489
-msgid ""
-"enter the effect name for axample: fadeInUp you can select more effects at "
-"<a href=\"http://daneden.github.io/animate.css/\" target=\"_blank\">Animate."
-"css</a>"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:496
-msgid "Fontawesome Icon"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:497
-msgid ""
-"enter the service icon name for axample: fa-area-chart you can select more "
-"icons at <a href=\"http://fontawesome.io/icons/\" target=\"_blank"
-"\">Fontawesome</a> "
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:514
-msgid "Project Details"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:523
-msgid "Project Customer Name"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:530
-msgid "Project Skills"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:531
-msgid "enter the skilss"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:537
-msgid "Project Date"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:538
-msgid "enter the project published date"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:544
-msgid "Project Demo URL"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:545
-msgid "enter the project demo URL"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:558 ../admin/custom-meta/metabox.php:622
-msgid "Item Settings"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:568 ../admin/custom-meta/metabox.php:632
-msgid "Item Effect"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:569 ../admin/custom-meta/metabox.php:633
-msgid "Please choose effect for the page item display effect"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:573
-msgid "lily"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:574
-msgid "sadie"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:575
-msgid "honey"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:576
-msgid "layla"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:577
-msgid "zoe"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:578
-msgid "oscar"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:579
-msgid "marley"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:580
-msgid "ruby"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:581
-msgid "roxy"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:582
-msgid "bubba"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:583
-msgid "romeo"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:584
-msgid "dexter"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:585
-msgid "sarah"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:586
-msgid "chico"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:587
-msgid "milo"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:588
-msgid "julia"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:589
-msgid "goliath"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:590
-msgid "selena"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:591
-msgid "apollo"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:592
-msgid "steve"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:593
-msgid "moses"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:594
-msgid "jazz"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:595
-msgid "ming"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:596
-msgid "lexi"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:597
-msgid "duke"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:602 ../admin/custom-meta/metabox.php:646
-msgid "Select Post Type"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:603 ../admin/custom-meta/metabox.php:647
-msgid "Please choose post type you want to display in this page"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:607 ../admin/custom-meta/metabox.php:651
-msgid "Page"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:608 ../admin/custom-meta/metabox.php:652
-msgid "Post"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:609 ../admin/custom-meta/metabox.php:653
-#: ../admin/options/functions/functions.options.php:1358
-#: ../inc/custom-post-types.php:6 ../inc/custom-post-types.php:7
-#: ../inc/custom-post-types.php:8 ../inc/sub-header.php:103
-msgid "Portfolio"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:637
-msgid "kira"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:638
-msgid "hera"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:639
-msgid "winston"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:640
-msgid "terry"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:641
-msgid "phoebe"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:668 ../admin/custom-meta/metabox.php:688
-msgid "Subtitle"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:677
-msgid "Show Subtitle"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:678 ../admin/custom-meta/metabox.php:713
-msgid "Do you want to show subheader on this page ?"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:682 ../admin/custom-meta/metabox.php:891
-msgid "Yes"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:683 ../admin/custom-meta/metabox.php:892
-msgid "No"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:689
-msgid ""
-"you can use custom subtitle as unique for each page, portfolio and product. "
-"(this is an optional)"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:703
-msgid "Layout"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:712
-#: ../admin/options/functions/functions.options.php:604
-msgid "Theme Layout Style"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:717 ../admin/custom-meta/metabox.php:817
-#: ../admin/custom-meta/metabox.php:831 ../admin/custom-meta/metabox.php:860
-#: ../admin/custom-meta/metabox.php:910 ../admin/custom-meta/metabox.php:928
-#: ../admin/custom-meta/metabox.php:942
-msgid "Use Default Theme Options"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:718
-msgid "Full Width"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:719
-msgid "Boxed"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:732
-msgid "Shortcode Option"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:742
-msgid "Shortcode"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:743
-msgid ""
-"You can enter the layer slider, revolution slider or any shortcode here. ex: "
-"[rev_slider revslider] this will be displayed as full size."
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:761
-msgid "Extra Tabs"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:770
-msgid "Product Extra Tab #1 Content"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:771 ../admin/custom-meta/metabox.php:778
-#: ../admin/custom-meta/metabox.php:785
-msgid ""
-"If you see this area. You did check extra product tabs visible on theme "
-"options."
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:777
-msgid "Product Extra Tab #2 Content"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:784
-msgid "Product Extra Tab #3 Content"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:802
-msgid "Custom Options"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:812
-msgid "Header Style"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:813
-msgid ""
-"You can define header style specifically to this page. If you dont choose "
-"one, default theme header style options will be valid for this page. "
-"Basically this option will be overwrite the theme options > header style "
-"settings."
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:818
-msgid "No Header"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:819
-msgid "Fixed Top"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:820
-msgid "Static Top"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:821
-msgid "Fixed Footer"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:826
-msgid "Logo & Navigation Style"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:827
-msgid ""
-"You can define logo and navigation placement specifically to this page. If "
-"you dont choose one, default theme header style options will be valid for "
-"this page. Basically this option will be overwrite the theme options > logo "
-"& navigation settings."
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:832
-msgid "Logo Left - Navigation Right"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:833
-msgid "Logo Right - Navigation Left"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:834
-msgid "Logo Center - Navigation Center"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:839 ../admin/custom-meta/metabox.php:897
-msgid "Background Color"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:840 ../admin/custom-meta/metabox.php:898
-msgid ""
-"You can define background color specifically to this page. If you dont "
-"choose one, default theme background color options will be valid for this "
-"page. Basically this option will be overwrite the theme options > body style "
-"settings."
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:847 ../admin/custom-meta/metabox.php:879
-msgid "Background Image"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:848 ../admin/custom-meta/metabox.php:880
-msgid ""
-"You can define background image specifically to this page. If you dont "
-"choose one, default theme background image options will be valid for this "
-"page. Basically this option will be overwrite the theme options > body style "
-"settings."
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:855
-msgid "Sidebar Position"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:856
-msgid ""
-"You can define sidebar position style specifically to this page. If you dont "
-"choose one default theme sidebar options will be valid for this page. "
-"Basically this option will be overwrite the theme options > page sidebar "
-"settings."
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:861
-msgid "No Sidebar"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:862
-msgid "Sidebar on the Left"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:863
-msgid "Sidebar on the Right"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:868
-#: ../admin/options/functions/functions.options.php:1013 ../functions.php:59
-#: ../functions.php:713
-msgid "Footer"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:869
-msgid "Do you want to show / hide footer on this page ?"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:873
-msgid "Show"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:874
-msgid "Hide"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:886
-#: ../admin/options/functions/functions.options.php:395
-msgid "Enable Fullscreen Background Image"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:887
-#: ../admin/options/functions/functions.options.php:396
-msgid "Do you want to set background image as full screen ?"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:905
-msgid "Background Position"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:906
-msgid ""
-"You can define background position specifically to this page. If you dont "
-"choose one, default theme background position style options will be valid "
-"for this page. Basically this option will be overwrite the theme options > "
-"body style settings."
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:923
-msgid "Background Repeat"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:924
-msgid ""
-"You can define background repeat specifically to this page. If you dont "
-"choose one, default theme background repeat style options will be valid for "
-"this page. Basically this option will be overwrite the theme options > body "
-"style settings."
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:937
-msgid "Background Attachment"
-msgstr ""
-
-#: ../admin/custom-meta/metabox.php:938
-msgid ""
-"You can define background attachment specifically to this page. If you dont "
-"choose one, default theme background attachment style options will be valid "
-"for this page. Basically this option will be overwrite the theme options > "
-"body style settings.."
-msgstr ""
-
-#: ../admin/options/classes/class.options_machine.php:614
-msgid "Last Backup : "
-msgstr ""
-
-#: ../admin/options/front-end/options.php:43
-#: ../admin/options/front-end/options.php:67
-msgid "Save All Changes"
-msgstr ""
-
-#: ../admin/options/front-end/options.php:68
-msgid "Options Reset"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:121
-msgid "General"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:127
-msgid "Predefined Skins"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:128
-msgid "Choose the theme skin."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:149
-msgid "Show My Logo As Image"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:150
-msgid ""
-"Show or hide your site logo (if you hide this image logo, default site name "
-"and description will be displayed)"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:158
-msgid "Upload Image Logo"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:159
-msgid ""
-"Upload logo and select from media manager. (for the best view logo size "
-"should; width:135px and height 55px)"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:169
-msgid "Text Logo Style"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:170
-msgid ""
-"If you want to use text logo you should disable Logo image. You can edit "
-"your text logo (site name and description) under the Settins > General. "
-"(default color #38404A, font: Abel, font-size:14px)"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:177
-msgid "Text Logo Hover Color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:178
-msgid "Text logo hover color (default: #A9D360)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:185
-msgid "Show Site Decription"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:186
-msgid "Show or hide site description"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:196
-msgid "Favicon"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:197
-msgid ""
-"Upload favicon image. You can generate one for your site from: <a href="
-"\"http://tools.dynamicdrive.com/favicon/\" target=\"_blank\">DynamicDrive</"
-"a> "
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:206
-msgid "Apple Icon Support"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:207
-msgid "Show or hide Apple Icon"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:215
-msgid "iPhone icon"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:216
-msgid "Upload iPhone icon"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:224
-msgid "iPhone retina icon"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:225
-msgid "Upload 120x120 px iPhone retina icon"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:233
-msgid "iPad icon"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:234
-msgid "Upload 76x76 px iPad icon"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:242
-msgid "iPad retina icon"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:243
-msgid "Upload 150x150 px iPad retina icon"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:252
-msgid "Sidebars"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:258
-msgid "Default Blog Sidebar Position"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:259
-msgid ""
-"Choose the blog sidebar position. If you choose no sidebar, this will be "
-"affected all single blog posts and custom page templates."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:272
-msgid "Default Page Sidebar Position"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:273
-msgid ""
-"Choose the default page sidebar position. If you choose no sidebar, this "
-"will be affected all default pages."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:286
-msgid "Default Contact Page Sidebar Position"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:287
-msgid ""
-"Choose the contact page sidebar position. If you choose no sidebar, this "
-"will be affected all contact page."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:300
-msgid "Default Shop Sidebar Position"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:301
-msgid ""
-"Choose the shop sidebar position. If you choose no sidebar, this will be "
-"affected all shop pages."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:314
-msgid "Default Portfolio Sidebar Position"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:315
-msgid ""
-"Choose the portfolio sidebar position. If you choose no sidebar, this will "
-"be affected all portfolio pages."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:329
-msgid "Body Styling"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:335
-msgid "Body Font Style"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:336
-msgid "Default color #333333, font: Abel, font-size:14px"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:346
-msgid "Body Link Color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:347
-msgid "Pick a link color (default: #666666)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:353
-msgid "Body Link Hover Color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:354
-msgid "Pick a link hover color (default: #A0CE4E)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:361
-msgid "Body Selection Color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:362
-msgid "Pick a body text selection color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:369
-msgid "Body Selection Background Color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:370
-msgid "Pick a body text selection background color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:377
-msgid "Body Line Height"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:378
-msgid "Pick a body line height"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:388
-msgid "Body Background Image"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:389
-msgid "Define Body Background image (default: none)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:403
-msgid "Body Background Color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:404
-msgid "Pick a background color for the theme (default: #ffffff)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:412
-msgid "Body Background Repeat"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:413
-msgid "Choose the background repeat style."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:427
-msgid "BodyBackground Attachment"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:428
-msgid "Choose the body background attachment style."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:440
-msgid "Body Top / Bottom Margin"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:441
-msgid "You can define body to and bottom margins."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:451
-msgid "Headings Font (h1, h2, h3 h4, h5, h6)"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:452
-msgid "Default font: Abel."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:459
-msgid "Heading (h1) Color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:460
-msgid "Pick a h1 color."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:467
-msgid "Heading (h1) Weight"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:468
-msgid "Pick a h1 font weight."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:481
-msgid "Heading (h2) Color "
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:482
-msgid "Pick a h2 color."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:489
-msgid "Heading (h2) Weight "
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:490
-msgid "Pick a h2 font weight"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:503
-msgid "Heading (h3) Color "
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:504
-msgid "Pick a h3 color."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:511
-msgid "Heading (h3) Weight "
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:512
-msgid "Pick a h3 font weight"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:526
-msgid "Heading (h4) Color "
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:527
-msgid "Pick a h4 color."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:534
-msgid "Heading (h4) Weight "
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:535
-msgid "Pick a h4 font weight"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:549
-msgid "Heading (h5) Color "
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:550
-msgid "Pick a h5 color."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:557
-msgid "Heading (h5) Weight "
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:558
-msgid "Pick a h5 font weight"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:572
-msgid "Heading (h6) Color "
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:573
-msgid "Pick a h6 color."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:580
-msgid "Heading (h6) Weight "
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:581
-msgid "Pick a h6 font weight"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:598
-msgid "Main Content"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:605
-msgid "Choose the Theme layout style."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:614
-msgid "Main Content Width"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:615
-msgid ""
-"You can define main content with. <strong>(!You should be selected boxed "
-"layout first.)</strong>"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:625
-msgid "Main Content Background Color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:626
-msgid "Pick a background color for the main content (default: #ffffff)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:633
-msgid "Main Content Background Image"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:634
-msgid "Main Content background image (default: transparent.png)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:641
-msgid "Main Content Border"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:642
-msgid ""
-"This will be affect main content border. (!Only will be visible with boxed "
-"version.)"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:654 ../functions.php:724
-msgid "Header"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:660
-msgid "Enable Header"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:661
-msgid "Do you want enable header ?"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:668
-msgid "Header Position Style"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:669
-msgid "Choose the header position style."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:682
-msgid "Header Background Color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:683
-msgid "Header background color (default: none)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:690
-msgid "Header Background Image"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:691
-msgid "Header background image (default: transparent.png)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:700
-#: ../admin/options/functions/functions.options.php:707
-msgid "Top Header"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:708
-msgid ""
-"Show or hide Top Header (!If you want to hide this top header, you should "
-"select flat style header option. Otherwise header won't be displayed "
-"properly.)"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:716
-msgid "Top Header Contact Info"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:717
-msgid ""
-"Show or hide Top Header Contact Info. (!Please use contact info or login "
-"info otherwise your top header won't looks good.)"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:725
-msgid "Top Header Login Info"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:726
-msgid ""
-"Show or hide Top Header Login Info (!Please use contact info or login info "
-"otherwise your top header won't looks good.)"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:734
-msgid "Top Header Background Color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:735
-msgid "Top Header background color (default: #a9d360)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:743
-msgid "Top Header Background Image"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:744
-msgid "Top Header background image (default: transparent.png)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:752
-msgid "Top Header Text Style"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:753
-msgid "Default color #999999, font: Abel, font-size:12px"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:761
-msgid "Top Header Link Color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:762
-msgid "Top Header link color (default: #ffffff)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:770
-msgid "Top Header Link Hover Color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:771
-msgid "Top Header link hovercolor (default: #B6D79E)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:781
-msgid "Subheader"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:787
-msgid "SubHeader"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:788
-msgid "Show or hide Top Header."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:796
-msgid "SubHeader Background Color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:797
-msgid "Sub Header background color (default: #f7f7f7)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:805
-msgid "SubHeader Background Image"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:806
-msgid "Sub Header background image (default: bokeh.jpg)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:814
-msgid "SubHeader Text Color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:815
-msgid "Sub Header text color (default: #999999)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:823
-msgid "SubHeader Link Color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:824
-msgid "Sub Header link color (default: #A9D360)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:834
-msgid "Navigation"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:840
-msgid "Navigation Dropdown Icon"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:841
-msgid "Choose the navigation dropdown icon arrow style."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:862
-msgid "Navigation Parent Item Styles"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:863
-msgid ""
-"You can define main navigation menu link color, size, google font below "
-"(default color #020202, font: Abel, font-size:12px)"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:870
-msgid "Navigation Link Hover Color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:871
-msgid "Navigation text hover color (default: #A9D360)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:878
-msgid "Navigation Parent Background Color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:879
-msgid "Navigation parent item background color (default: transparent)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:886
-msgid "Navigation Parent Hover Background Color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:887
-msgid "Navigation hover parent item background color (default: transparent)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:895
-msgid "Navigation Parent Current Menu Top Border"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:896
-msgid "Current navigation parent item top border style"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:907
-msgid "Navigation Parent Current Menu Bottom Border"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:908
-msgid "Current navigation parent item bottom border style"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:920
-msgid "Navigation Child Item Styles"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:921
-msgid ""
-"You can define navigation child menu item link color, size, google font "
-"below (default color #020202, font: Abel, font-size:12px)"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:928
-msgid "Navigation Child Item Link Hover Color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:929
-msgid "Navigation child menu item text hover color (default: #A9D360)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:936
-msgid "Navigation Child Item Background Color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:937
-msgid "Navigation child menu item background color (default: #ffffff)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:944
-msgid "Navigation Child Item Hover Background Color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:945
-msgid "Navigation hover child menu item background color (default: #ffffff)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:953
-msgid "Navigation Child Current Menu Item Top Border"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:954
-msgid "Current navigation child menu item top border style"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:965
-msgid "Navigation Child Current Menu Item Bottom Border"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:966
-msgid "Current navigation child menu item bottom border style"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:977
-msgid "Navigation Child Item Border"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:978
-msgid "Show or hide child menu item border color."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:985
-msgid "Navigation Child Item Top Border"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:986
-msgid "Navigation Child Item top border color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:998
-msgid "Navigation Child Item Bottom Border"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:999
-msgid "Navigation Child Item bottom border color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1019
-msgid "Enable Footer"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1020
-msgid "Do you want enable footer ?"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1027
-msgid "Footer Main"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1028
-msgid "Show or hide footer main area."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1036
-msgid "Footer Main Background Color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1037
-msgid "Footer Main background color (default: #2E3339)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1045
-msgid "Footer Main Background Image"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1046
-msgid "Footer Main background image (default: none)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1054
-msgid "Footer Main Border"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1055
-msgid "Footer Main border color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1067
-msgid "Footer Main Text Style"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1068
-msgid "Default color #cccccc, font: Abel, font-size:14px"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1076
-msgid "Footer Main Link Color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1077
-msgid "Footer main link color (default: #efefef)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1085
-msgid "Footer Main Link Hover Color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1086
-msgid "Footer main link hover color (default: #a9d360)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1094
-msgid "Footer Bottom"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1095
-msgid "Show or hide footer bottom area."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1103
-msgid "Footer Bottom Background"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1104
-msgid "Footer bottom background color (default: #f2f2f2)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1112
-msgid "Footer Bottom Text Style"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1113
-msgid "Default color #bfbfbf, font: Abel, font-size:14px"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1122
-msgid "Footer Bottom Link Color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1123
-msgid "Footer bottom link color (default: #666666)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1131
-msgid "Footer Bottom Link Hover Color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1132
-msgid "Footer bottom link hover color (default: #A9D360)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1140
-msgid "Back to Top"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1141
-msgid "Show or hide back to top button when scrolled to bottom."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1149
-msgid "Back to top border radius"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1150
-msgid "You can define back to top border radius."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1161
-msgid "Back to top arrow color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1162
-msgid "Back to top arrow color (default: #ffffff)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1170
-msgid "Back to top Background Color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1171
-msgid "Back to top background color (default: #2E3339)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1179
-msgid "Back to top arrow hover color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1180
-msgid "Back to top arrow hover color (default: #ffffff)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1188
-msgid "Back to top hover Background Color"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1189
-msgid "Back to top hover background color (default: #A9D360)."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1197
-msgid "Show Copyright"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1206
-msgid "Copyright Text"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1207
-msgid "Insert Copyright Text."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1216
-msgid "Google Analytics Code"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1217
-msgid ""
-"Paste your Google Analytics (or other) tracking code here. This will be "
-"added into the footer template of your theme."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1225
-msgid "Homepage"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1238
-msgid "Slider"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1242
-msgid "Slider Options"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1243
-msgid "Unlimited slider with drag and drop sortings."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1251 ../functions.php:702
-#: ../inc/breadcrumbs.php:62
-msgid "Blog"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1257
-#: ../admin/options/functions/functions.options.php:1258
-msgid "Blog Title"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1265
-#: ../admin/options/functions/functions.options.php:1266
-msgid "Blog Sub Title"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1274
-msgid "Author BIO on Single Post?"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1275
-msgid "Whether to show or hide the Author BIO from single post"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1282
-msgid "Blog Featured Image"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1283
-msgid "Enable/disable blog featureed image in single blog post."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1290
-msgid "Show Comments"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1291
-msgid "On / Off comments from all pages"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1300
-msgid "Excerpt Length"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1302
-msgid "You can limit excerpt lenght for blog post templates."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1308
-msgid "Show Date"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1309
-msgid "Show date on archives pages and single post pages."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1316
-msgid "Show Read More"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1317
-msgid "Show read more link text on archives pages."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1324
-msgid "Show Author"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1325
-msgid "Show author meta on archives pages and single post pages."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1332
-msgid "Show Categories"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1333
-msgid "Show categories meta on archives pages and single post pages."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1340
-msgid "Show Tags"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1341
-msgid "Show post tags on archives pages and single post pages."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1348
-msgid "Show Comment Counts"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1349
-msgid "Show comments meta on archives pages and single post pages."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1364
-#: ../admin/options/functions/functions.options.php:1365
-msgid "Portfolio Title"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1373
-#: ../admin/options/functions/functions.options.php:1374
-msgid "Portfolio Sub Title"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1401
-msgid "Main Portfolio Page Link"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1402
-msgid ""
-"You should define main portfolio link (it will be linked when users click "
-"'Back to Portfolio' link on portfolio single item page.)"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1410
-msgid "Portfolio Navigation"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1411
-msgid "Enable/disable portfolio navigation."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1418
-msgid "Portfolio Featured Image"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1419
-msgid "Enable/disable portfolio featureed image in single portfolio page."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1428 ../functions.php:735
-msgid "Product"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1434
-msgid "Product Page Title"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1435
-msgid "Product page title. This will shown on WooCommerce pages."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1443
-msgid "Product Page Subtitle"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1444
-msgid "Product page subtitle. This will shown on WooCommerce pages."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1454
-msgid ""
-"Enable/Disable extra product tabs on WooCommerce single item page. If you "
-"turned on thi option, extra tabs content areas will appear in then product "
-"item edit screen."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1462
-msgid "Extra Tab #1 Title"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1463
-msgid ""
-"Enter the extra tab #1 title. You can add extra content in the single "
-"product item page."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1471
-msgid "Extra Tab #2 Title"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1472
-msgid ""
-"Enter the extra tab #2 title. You can add extra content in the single "
-"product item page."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1480
-msgid "Extra Tab #3 Title"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1481
-msgid ""
-"Enter the extra tab #3 title. You can add extra content in the single "
-"product item page."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1490
-msgid ""
-"BCC all product activity e-mails to my contact e-mail address, where I "
-"defined in theme options > contact e-mail."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1499 ../functions.php:768
-msgid "Contact"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1505
-msgid "Google Map Location"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1506
-msgid "(State,Country)"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1512
-msgid "Google Map Height"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1513
-msgid "(In pixels or percentage, e.g.:100px or 100%"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1520
-msgid "Contact Email Address"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1521
-msgid "Example: admin@example.com"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1528
-msgid "Contact Phone"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1529
-msgid "Example: +1 888 555 222"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1537
-msgid "Social"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1543
-msgid "Show Social Icons "
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1544
-msgid "Enable/Disable social icons above header section."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1552
-msgid "Enable/Disable social icons on footer section."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1559
-msgid "Twitter URL"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1560
-msgid "Enter your twitter account full url here"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1567
-msgid "Facebook URL"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1568
-msgid "Enter your facebook account full url here"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1575
-msgid "LinkedIn URL"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1576
-msgid "Enter your linkedin account full url here"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1583
-msgid "Dribbble URL"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1584
-msgid "Enter your dribbble account full url here"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1591
-msgid "GitHub URL"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1592
-msgid "Enter your github account full url here"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1599
-msgid "RSS URL"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1600
-msgid "Enter your rss full full url here"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1607
-msgid "Google URL"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1608
-msgid "Enter your google account full url here"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1615
-msgid "Pinterest URL"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1616
-msgid "Enter your pinterest account full url here"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1623
-msgid "Youtube URL"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1624
-msgid "Enter your youtube account full url here"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1631
-msgid "Flickr URL"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1632
-msgid "Enter your Flickr full url here"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1639
-msgid "Android Market URL"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1640
-msgid "Enter your Android Market full url here"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1647
-msgid "Apple Store URL"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1648
-msgid "Enter your Apple Store full url here"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1655
-msgid "Foursquare Foursquare URL"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1656
-msgid "Enter your Foursquare full url here"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1663
-msgid "Instagram Foursquare URL"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1664
-msgid "Enter your Instagram full url here"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1671
-msgid "Stack-Overflow URL"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1672
-msgid "Enter your Stack-Overflow full url here"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1679
-msgid "Skype Name"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1680
-msgid "Enter your Skype name here"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1687
-msgid "Tumblr URL"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1688
-msgid "Enter your Tumblr full url here"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1695
-msgid "Vimeo URL"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1696
-msgid "Enter your Vimeo full url here"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1703
-msgid "VK URL"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1704
-msgid "Enter your VK full url here"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1714
-msgid "Advanced"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1720
-msgid "Breadcrumbs"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1721
-msgid "This will enable or disable breadcrumbs."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1728
-msgid "Login Logo"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1729
-msgid "Change admin login logo."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1735
-msgid "Exclude Pages from Search"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1736
-msgid "This will exclude pages from search results."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1744
-#: ../admin/options/functions/functions.options.php:1750
-msgid "Custom CSS"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1753
-msgid "Enter the Custom CSS of your custom Modify."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1759
-msgid "Backup"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1765
-msgid "Backup and Restore Options"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1769
-msgid ""
-"You can use the two buttons below to backup your current options, and then "
-"restore it back at a later time. This is useful if you want to experiment on "
-"the options but would like to keep the old settings in case you need it back."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1773
-msgid "Transfer Theme Options Data"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1777
-msgid ""
-"You can tranfer the saved options data between different installs by copying "
-"the text inside the text box. To import data from another install, replace "
-"the data in the text box with the one from another install and click "
-"\"Import Options\"."
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1782
-msgid "Demo Importer"
-msgstr ""
-
-#: ../admin/options/functions/functions.options.php:1823
-msgid "Help"
-msgstr ""
-
-#: ../admin/plugin-setup.php:166
-msgid "Something went wrong with the plugin API."
-msgstr ""
-
-#: ../admin/plugin-setup.php:167
-#, php-format
-msgid "COSMOS theme requires the following plugin: %1$s."
-msgid_plural ""
-"<span style=color:#FF1D00>REQUIRED PLUGIN ALERT:</span> COSMOS theme "
-"requires the following plugins: <span style=color:#FF1D00>%1$s</span>. "
-"Before to use this theme please install the required plugins. You can find "
-"the plugins in the downloaded documentation folder."
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../admin/plugin-setup.php:168
-#, php-format
-msgid "COSMOS theme recommends the following plugin: %1$s."
-msgid_plural ""
-"<span style=color:#FF1D00>RECOMMENDED PLUGIN ALERT:</span> COSMOS theme "
-"recommends the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../admin/plugin-setup.php:176
-msgid "Activate installed plugin"
-msgid_plural "Activate installed plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../admin/plugin-setup.php:179
-#, php-format
-msgid "All plugins installed and activated successfully. %s"
-msgstr ""
-
-#: ../admin/wordpress-importer/parsers.php:42
-#: ../admin/wordpress-importer/parsers.php:72
-#: ../admin/wordpress-importer/parsers.php:80
-msgid "There was an error when reading this WXR file"
-msgstr ""
-
-#: ../admin/wordpress-importer/parsers.php:43
-msgid ""
-"Details are shown above. The importer will now try again with a different "
-"parser..."
-msgstr ""
-
-#: ../admin/wordpress-importer/parsers.php:84
-#: ../admin/wordpress-importer/parsers.php:89
-#: ../admin/wordpress-importer/parsers.php:279
-#: ../admin/wordpress-importer/parsers.php:468
-msgid ""
-"This does not appear to be a WXR file, missing/invalid WXR version number"
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:134
-#: ../admin/wordpress-importer/wordpress-importer.php:143
-#: ../admin/wordpress-importer/wordpress-importer.php:194
-#: ../admin/wordpress-importer/wordpress-importer.php:198
-#: ../admin/wordpress-importer/wordpress-importer.php:207
-msgid "Sorry, there has been an error."
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:135
-msgid "The file does not exist, please try again."
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:178
-msgid "All done."
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:178
-msgid "Have fun!"
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:179
-msgid "Remember to update the passwords and roles of imported users."
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:199
-#, php-format
-msgid ""
-"The export file could not be found at <code>%s</code>. It is likely that "
-"this was caused by a permissions problem."
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:215
-#, php-format
-msgid ""
-"This WXR file (version %s) may not be supported by this version of the "
-"importer. Please consider updating."
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:240
-#, php-format
-msgid ""
-"Failed to import author %s. Their posts will be attributed to the current "
-"user."
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:266
-msgid "Assign Authors"
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:267
-msgid ""
-"To make it easier for you to edit and save the imported content, you may "
-"want to reassign the author of the imported item to an existing user of this "
-"site. For example, you may want to import all the entries as <code>admin</"
-"code>s entries."
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:269
-#, php-format
-msgid ""
-"If a new user is created by WordPress, a new password will be randomly "
-"generated and the new user&#8217;s role will be set as %s. Manually changing "
-"the new user&#8217;s details will be necessary."
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:279
-msgid "Import Attachments"
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:282
-msgid "Download and import file attachments"
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:286
-#: ../functions.php:1027
-msgid "Submit"
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:299
-msgid "Import author:"
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:310
-msgid "or create new user with login name:"
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:313
-msgid "as a new user:"
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:321
-msgid "assign posts to an existing user:"
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:323
-msgid "or assign posts to an existing user:"
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:324
-msgid "- Select -"
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:374
-#, php-format
-msgid ""
-"Failed to create new user for %s. Their posts will be attributed to the "
-"current user."
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:425
-#, php-format
-msgid "Failed to import category %s"
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:465
-#, php-format
-msgid "Failed to import post tag %s"
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:511
-#: ../admin/wordpress-importer/wordpress-importer.php:652
-#, php-format
-msgid "Failed to import %s %s"
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:537
-#, php-format
-msgid "Failed to import &#8220;%s&#8221;: Invalid post type %s"
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:559
-#, php-format
-msgid "%s &#8220;%s&#8221; already exists."
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:618
-#, php-format
-msgid "Failed to import %s &#8220;%s&#8221;"
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:783
-msgid "Menu item skipped due to missing menu slug"
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:790
-#, php-format
-msgid "Menu item skipped due to invalid menu slug: %s"
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:853
-msgid "Fetching attachments is not enabled"
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:866
-msgid "Invalid file type"
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:910
-msgid "Remote server did not respond"
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:916
-#, php-format
-msgid "Remote server returned error response %1$d %2$s"
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:923
-msgid "Remote file is incorrect size"
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:928
-msgid "Zero size file downloaded"
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:934
-#, php-format
-msgid "Remote file is too large, limit is %s"
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:1033
-msgid "Import WordPress"
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:1040
-#, php-format
-msgid ""
-"A new version of this importer is available. Please update to version %s to "
-"ensure compatibility with newer export files."
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:1055
-msgid ""
-"Howdy! Upload your WordPress eXtended RSS (WXR) file and we&#8217;ll import "
-"the posts, pages, comments, custom fields, categories, and tags into this "
-"site."
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:1056
-msgid "Choose a WXR (.xml) file to upload, then click Upload file and import."
-msgstr ""
-
-#: ../admin/wordpress-importer/wordpress-importer.php:1130
-msgid ""
-"Import <strong>posts, pages, comments, custom fields, categories, and tags</"
-"strong> from a WordPress export file."
-msgstr ""
-
-#: ../archive-product.php:35 ../image.php:30
-#: ../inc/post-templates/content-audio.php:4
-#: ../inc/post-templates/content-gallery.php:3
-#: ../inc/post-templates/content-image.php:3
-#: ../inc/post-templates/content-video.php:3
-#: ../inc/post-templates/content.php:4 ../page.php:49 ../single-product.php:46
-#: ../template-fullwidth-page-fullslider.php:43 ../template-homepage.php:594
-#: ../template-page-fulwidth-nosidebar.php:29
-msgid "<i class=\"fa fa-pencil\"></i> Edit - "
 msgstr ""
 
 #: ../author-bio.php:12
@@ -2880,178 +70,199 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: ../functions.php:58
+#: ../functions.php:26
 msgid "Primary"
 msgstr ""
 
-#: ../functions.php:279
+#: ../functions.php:27 ../functions.php:562
+msgid "Footer"
+msgstr ""
+
+#: ../functions.php:223 ../inc/mainfunctions.php:178
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: ../functions.php:371
-msgid "Sending user info, please wait..."
-msgstr ""
-
-#: ../functions.php:396
-msgid "Wrong username or password."
-msgstr ""
-
-#: ../functions.php:398
-msgid "Login successful, redirecting..."
-msgstr ""
-
-#: ../functions.php:521
+#: ../functions.php:370
 msgctxt "Previous post link"
 msgid "<i class=\"fa fa-long-arrow-left\"></i> %title"
 msgstr ""
 
-#: ../functions.php:526
+#: ../functions.php:375
 msgctxt "Next post link"
 msgid "%title <i class=\"fa fa-long-arrow-right\"></i>"
 msgstr ""
 
-#: ../functions.php:545
+#: ../functions.php:394
 msgid "Next page"
 msgstr ""
 
-#: ../functions.php:546
+#: ../functions.php:395
 msgid "Previous page"
 msgstr ""
 
-#: ../functions.php:642
+#: ../functions.php:491
 msgid "Pingback:"
 msgstr ""
 
-#: ../functions.php:642
+#: ../functions.php:491
 msgid "(Edit)"
 msgstr ""
 
-#: ../functions.php:666
+#: ../functions.php:515
 msgid "By"
 msgstr ""
 
-#: ../functions.php:671
+#: ../functions.php:520
 msgid "Edit"
 msgstr ""
 
-#: ../functions.php:675
+#: ../functions.php:524
 #, php-format
 msgid "%s Reply"
 msgstr ""
 
-#: ../functions.php:680
+#: ../functions.php:529
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../functions.php:704
+#: ../functions.php:551
+msgid "Blog"
+msgstr ""
+
+#: ../functions.php:553
 msgid "Widgets in this area will be shown blogs on right side."
 msgstr ""
 
-#: ../functions.php:715
-msgid "Widgets in this area will be shown before Footer."
+#: ../functions.php:564
+msgid "Widgets in this area will be shown before footer area."
 msgstr ""
 
-#: ../functions.php:726
-msgid "Widgets in this area will be shown on hader style 5."
+#: ../functions.php:573
+msgid "Header Social"
 msgstr ""
 
-#: ../functions.php:737
-msgid "Widgets in this area will be shown on commerce / products page"
+#: ../functions.php:575
+msgid "Widgets in this area will be shown on hader social area."
 msgstr ""
 
-#: ../functions.php:746
+#: ../functions.php:584
+msgid "Header Contact"
+msgstr ""
+
+#: ../functions.php:586
+msgid "Widgets in this area will be shown on hader contact area."
+msgstr ""
+
+#: ../functions.php:595
 msgid "Works"
 msgstr ""
 
-#: ../functions.php:748
+#: ../functions.php:597
 msgid "Widgets in this area will be shown on portfolio / works page"
 msgstr ""
 
-#: ../functions.php:757
+#: ../functions.php:606
 msgid "Pages"
 msgstr ""
 
-#: ../functions.php:759
+#: ../functions.php:608
 msgid "Widgets in this area will be shown on pages"
 msgstr ""
 
-#: ../functions.php:770
+#: ../functions.php:617
+msgid "Contact"
+msgstr ""
+
+#: ../functions.php:619
 msgid "Widgets in this area will be shown on contact page"
 msgstr ""
 
-#: ../functions.php:851
+#: ../functions.php:700
 msgid "Name"
 msgstr ""
 
-#: ../functions.php:858
+#: ../functions.php:707
 msgid "Email"
 msgstr ""
 
-#: ../functions.php:866
+#: ../functions.php:715
 msgid "Website"
 msgstr ""
 
-#: ../functions.php:871
+#: ../functions.php:720
 #, php-format
 msgid "Required fields are marked %s"
 msgstr ""
 
-#: ../functions.php:879
+#: ../functions.php:728
 msgctxt "noun"
 msgid "Comment"
 msgstr ""
 
-#: ../functions.php:888
+#: ../functions.php:737
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
 
-#: ../functions.php:891
+#: ../functions.php:740
 #, php-format
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
 "this account\">Log out?</a>"
 msgstr ""
 
-#: ../functions.php:893
+#: ../functions.php:742
 msgid "Your email address will not be published."
 msgstr ""
 
-#: ../functions.php:895
+#: ../functions.php:744
 #, php-format
 msgid ""
 "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags "
 "and attributes: %s"
 msgstr ""
 
-#: ../functions.php:901
+#: ../functions.php:750
 msgid "<i class=\"fa fa-comments-o\"></i> Leave a Reply"
 msgstr ""
 
-#: ../functions.php:903
+#: ../functions.php:752
 #, php-format
 msgid "<i class=\"fa fa-comments-o\"></i> Leave a Reply to %s"
 msgstr ""
 
-#: ../functions.php:905
+#: ../functions.php:754
 msgid "Cancel reply"
 msgstr ""
 
-#: ../functions.php:907
+#: ../functions.php:756
 msgid "Post Comment"
 msgstr ""
 
-#: ../functions.php:1025
+#: ../functions.php:851
 msgid "To view this protected post, enter the password below:"
 msgstr ""
 
-#: ../functions.php:1027
+#: ../functions.php:853
 msgid "Password:"
 msgstr ""
 
-#: ../header.php:301
+#: ../functions.php:853
+msgid "Submit"
+msgstr ""
+
+#: ../header.php:131
 msgid "Toggle navigation"
+msgstr ""
+
+#: ../image.php:30 ../inc/post-templates/content-audio.php:4
+#: ../inc/post-templates/content-gallery.php:3
+#: ../inc/post-templates/content-image.php:3
+#: ../inc/post-templates/content-video.php:3
+#: ../inc/post-templates/content.php:4 ../page.php:21
+#: ../template-fullwidth-page-fullslider.php:43
+msgid "<i class=\"fa fa-pencil\"></i> Edit - "
 msgstr ""
 
 #: ../image.php:42
@@ -3074,8 +285,7 @@ msgstr ""
 #: ../inc/post-templates/content-gallery.php:13
 #: ../inc/post-templates/content-image.php:13
 #: ../inc/post-templates/content-video.php:13
-#: ../inc/post-templates/content.php:20 ../template-blog-mid-thumb.php:55
-#: ../template-blog-small-thumb.php:54
+#: ../inc/post-templates/content.php:20
 msgid "on "
 msgstr ""
 
@@ -3087,267 +297,11 @@ msgstr ""
 msgid "Next <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: ../inc/breadcrumbs.php:15
-msgid "Home"
-msgstr ""
-
-#: ../inc/breadcrumbs.php:20
-msgid "Posts Tagged "
-msgstr ""
-
-#: ../inc/breadcrumbs.php:22 ../inc/breadcrumbs.php:24
-#: ../inc/breadcrumbs.php:26
-msgid "Posts made in"
-msgstr ""
-
-#: ../inc/breadcrumbs.php:28 ../inc/sub-header.php:100
-msgid "Search results for"
-msgstr ""
-
-#: ../inc/breadcrumbs.php:58
-msgid "Posts by "
-msgstr ""
-
-#: ../inc/custom-post-types.php:9
-msgid "All Portfolios"
-msgstr ""
-
-#: ../inc/custom-post-types.php:10 ../inc/custom-post-types.php:56
-#: ../inc/custom-post-types.php:92 ../inc/custom-post-types.php:129
-#: ../inc/custom-post-types.php:165 ../inc/custom-post-types.php:201
-msgid "Add New"
-msgstr ""
-
-#: ../inc/custom-post-types.php:11
-msgid "Add New Portfolio"
-msgstr ""
-
-#: ../inc/custom-post-types.php:12
-msgid "Edit Portfolio"
-msgstr ""
-
-#: ../inc/custom-post-types.php:13
-msgid "New Portfolio"
-msgstr ""
-
-#: ../inc/custom-post-types.php:14
-msgid "View Portfolio"
-msgstr ""
-
-#: ../inc/custom-post-types.php:15
-msgid "Search Portfolios"
-msgstr ""
-
-#: ../inc/custom-post-types.php:16
-msgid "No Portfolio item found"
-msgstr ""
-
-#: ../inc/custom-post-types.php:17
-msgid "No Portfolio item found in Trash"
-msgstr ""
-
-#: ../inc/custom-post-types.php:36
-msgid "Categories"
-msgstr ""
-
-#: ../inc/custom-post-types.php:38
-msgid "Portfolio Categories"
-msgstr ""
-
-#: ../inc/custom-post-types.php:52 ../inc/custom-post-types.php:53
-#: ../inc/custom-post-types.php:54
-msgid "Testimonial"
-msgstr ""
-
-#: ../inc/custom-post-types.php:55
-msgid "All Testimonials"
-msgstr ""
-
-#: ../inc/custom-post-types.php:57
-msgid "Add New Testimonial"
-msgstr ""
-
-#: ../inc/custom-post-types.php:58
-msgid "Edit Testimonial"
-msgstr ""
-
-#: ../inc/custom-post-types.php:59
-msgid "New Testimonial"
-msgstr ""
-
-#: ../inc/custom-post-types.php:60
-msgid "View Testimonial"
-msgstr ""
-
-#: ../inc/custom-post-types.php:61
-msgid "Search Testimonials"
-msgstr ""
-
-#: ../inc/custom-post-types.php:62
-msgid "No Testimonial item found"
-msgstr ""
-
-#: ../inc/custom-post-types.php:63
-msgid "No Testimonial item found in Trash"
-msgstr ""
-
-#: ../inc/custom-post-types.php:88 ../inc/custom-post-types.php:89
-msgid "Call to Action"
-msgstr ""
-
-#: ../inc/custom-post-types.php:90
-msgid "Call to Actions"
-msgstr ""
-
-#: ../inc/custom-post-types.php:91
-msgid "All Call to Action"
-msgstr ""
-
-#: ../inc/custom-post-types.php:93
-msgid "Add New Call to Action"
-msgstr ""
-
-#: ../inc/custom-post-types.php:94
-msgid "Edit Call to Action"
-msgstr ""
-
-#: ../inc/custom-post-types.php:95
-msgid "New Call to Action"
-msgstr ""
-
-#: ../inc/custom-post-types.php:96
-msgid "View Call to Action"
-msgstr ""
-
-#: ../inc/custom-post-types.php:97
-msgid "Search Call to Actions"
-msgstr ""
-
-#: ../inc/custom-post-types.php:98
-msgid "No Call to Action item found"
-msgstr ""
-
-#: ../inc/custom-post-types.php:99
-msgid "No Call to Action item found in Trash"
-msgstr ""
-
-#: ../inc/custom-post-types.php:125 ../inc/custom-post-types.php:126
-#: ../inc/custom-post-types.php:127
-msgid "Team"
-msgstr ""
-
-#: ../inc/custom-post-types.php:128
-msgid "All Teams"
-msgstr ""
-
-#: ../inc/custom-post-types.php:130
-msgid "Add New Team"
-msgstr ""
-
-#: ../inc/custom-post-types.php:131
-msgid "Edit Team"
-msgstr ""
-
-#: ../inc/custom-post-types.php:132
-msgid "New Team"
-msgstr ""
-
-#: ../inc/custom-post-types.php:133
-msgid "View Team"
-msgstr ""
-
-#: ../inc/custom-post-types.php:134
-msgid "Search Teams"
-msgstr ""
-
-#: ../inc/custom-post-types.php:135
-msgid "No Team item found"
-msgstr ""
-
-#: ../inc/custom-post-types.php:136
-msgid "No Team item found in Trash"
-msgstr ""
-
-#: ../inc/custom-post-types.php:161 ../inc/custom-post-types.php:162
-#: ../inc/custom-post-types.php:163
-msgid "Services"
-msgstr ""
-
-#: ../inc/custom-post-types.php:164
-msgid "All Services"
-msgstr ""
-
-#: ../inc/custom-post-types.php:166
-msgid "Add New Services"
-msgstr ""
-
-#: ../inc/custom-post-types.php:167
-msgid "Edit Services"
-msgstr ""
-
-#: ../inc/custom-post-types.php:168
-msgid "New Services"
-msgstr ""
-
-#: ../inc/custom-post-types.php:169
-msgid "View Services"
-msgstr ""
-
-#: ../inc/custom-post-types.php:170
-msgid "Search Services"
-msgstr ""
-
-#: ../inc/custom-post-types.php:171
-msgid "No Services item found"
-msgstr ""
-
-#: ../inc/custom-post-types.php:172
-msgid "No Services item found in Trash"
-msgstr ""
-
-#: ../inc/custom-post-types.php:197 ../inc/custom-post-types.php:198
-#: ../inc/custom-post-types.php:199
-msgid "Parallax"
-msgstr ""
-
-#: ../inc/custom-post-types.php:200
-msgid "All Parallax"
-msgstr ""
-
-#: ../inc/custom-post-types.php:202
-msgid "Add New Parallax"
-msgstr ""
-
-#: ../inc/custom-post-types.php:203
-msgid "Edit Parallax"
-msgstr ""
-
-#: ../inc/custom-post-types.php:204
-msgid "New Parallax"
-msgstr ""
-
-#: ../inc/custom-post-types.php:205
-msgid "View Parallax"
-msgstr ""
-
-#: ../inc/custom-post-types.php:206
-msgid "Search Parallax"
-msgstr ""
-
-#: ../inc/custom-post-types.php:207
-msgid "No Parallax item found"
-msgstr ""
-
-#: ../inc/custom-post-types.php:208
-msgid "No Parallax item found in Trash"
-msgstr ""
-
 #: ../inc/post-templates/content-audio.php:14
 #: ../inc/post-templates/content-gallery.php:13
 #: ../inc/post-templates/content-image.php:13
 #: ../inc/post-templates/content-video.php:13
-#: ../inc/post-templates/content.php:20 ../template-blog-mid-thumb.php:55
-#: ../template-blog-small-thumb.php:54
+#: ../inc/post-templates/content.php:20
 msgid "by "
 msgstr ""
 
@@ -3355,8 +309,7 @@ msgstr ""
 #: ../inc/post-templates/content-gallery.php:14
 #: ../inc/post-templates/content-image.php:14
 #: ../inc/post-templates/content-video.php:14
-#: ../inc/post-templates/content.php:21 ../template-blog-mid-thumb.php:56
-#: ../template-blog-small-thumb.php:55
+#: ../inc/post-templates/content.php:21
 msgid "in "
 msgstr ""
 
@@ -3365,7 +318,6 @@ msgstr ""
 #: ../inc/post-templates/content-image.php:29
 #: ../inc/post-templates/content-video.php:22
 #: ../inc/post-templates/content.php:64
-#: ../template-blog-timeline-sidebar.php:117
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
@@ -3399,312 +351,143 @@ msgid ""
 msgstr ""
 
 #: ../inc/post-templates/content-search.php:19
-#: ../inc/post-templates/content.php:44 ../template-blog-mid-thumb.php:73
-#: ../template-blog-small-thumb.php:72
+#: ../inc/post-templates/content.php:44
 msgid "read more"
 msgstr ""
 
-#: ../inc/post-templates/content.php:12 ../template-blog-mid-thumb.php:47
-#: ../template-blog-small-thumb.php:47
-#: ../template-blog-timeline-sidebar.php:98
+#: ../inc/post-templates/content.php:12
 msgid "Sticky"
 msgstr ""
 
-#: ../inc/sub-header.php:28 ../single-works.php:91
+#: ../inc/sub-header.php:23
 msgid "Category"
 msgstr ""
 
-#: ../inc/sub-header.php:39
+#: ../inc/sub-header.php:34
 msgid "Daily Archives"
 msgstr ""
 
-#: ../inc/sub-header.php:43
+#: ../inc/sub-header.php:38
 msgid "Monthly Archives"
 msgstr ""
 
-#: ../inc/sub-header.php:47
+#: ../inc/sub-header.php:42
 msgid "Yearly Archives"
 msgstr ""
 
-#: ../inc/sub-header.php:63
+#: ../inc/sub-header.php:58
 msgid "Blog Archives"
 msgstr ""
 
-#: ../inc/sub-header.php:97
+#: ../inc/sub-header.php:92
 msgid "Author: "
 msgstr ""
 
-#: ../inc/update.php:80
-msgid ""
-"An Unexpected HTTP Error occurred during the API request.</p> <p><a href=\"?"
-"\" onclick=\"document.location.reload(); return false;\">Try again</a>"
+#: ../inc/sub-header.php:95
+msgid "Search results for"
 msgstr ""
 
-#: ../inc/update.php:85
-msgid "An unknown error occurred"
+#: ../inc/sub-header.php:98
+msgid "Portfolio"
 msgstr ""
 
-#: ../inc/widgets.php:17 ../inc/widgets/ads-125x125.php:17
-#: ../inc/widgets/call-to-action.php:17 ../inc/widgets/contact-us.php:17
-#: ../inc/widgets/features.php:17 ../inc/widgets/flickr-stream.php:17
-#: ../inc/widgets/recent-posts.php:17 ../inc/widgets/recent-products.php:17
-#: ../inc/widgets/recent-works.php:17 ../inc/widgets/services.php:17
-#: ../inc/widgets/single-page.php:17 ../inc/widgets/testimonial.php:17
+#: ../inc/widgets.php:17
 msgid "Recent Posts Widget for the sidebar."
 msgstr ""
 
-#: ../inc/widgets.php:48 ../inc/widgets.php:109 ../inc/widgets.php:175
-#: ../inc/widgets.php:490 ../inc/widgets/ads-125x125.php:48
-#: ../inc/widgets/call-to-action.php:48 ../inc/widgets/contact-us.php:48
-#: ../inc/widgets/dribbble-stream.php:75 ../inc/widgets/features.php:48
-#: ../inc/widgets/flickr-stream.php:48 ../inc/widgets/recent-comments.php:96
-#: ../inc/widgets/recent-posts.php:48 ../inc/widgets/recent-products.php:48
-#: ../inc/widgets/recent-works.php:48 ../inc/widgets/services.php:48
-#: ../inc/widgets/single-page.php:48 ../inc/widgets/social-widget.php:127
-#: ../inc/widgets/testimonial.php:48 ../inc/widgets/video-widget.php:62
+#: ../inc/widgets.php:48 ../inc/widgets.php:367
 msgid "Title:"
 msgstr ""
 
-#: ../inc/widgets.php:52 ../inc/widgets/ads-125x125.php:52
-#: ../inc/widgets/call-to-action.php:52 ../inc/widgets/contact-us.php:52
-#: ../inc/widgets/features.php:52 ../inc/widgets/flickr-stream.php:52
-#: ../inc/widgets/recent-posts.php:52 ../inc/widgets/recent-products.php:52
-#: ../inc/widgets/recent-works.php:52 ../inc/widgets/services.php:52
-#: ../inc/widgets/single-page.php:52 ../inc/widgets/testimonial.php:52
+#: ../inc/widgets.php:52
 msgid "Number of posts:"
 msgstr ""
 
-#: ../inc/widgets.php:85
-msgid "Works Widget for the sidebar."
-msgstr ""
-
-#: ../inc/widgets.php:113
-msgid "Number of Portfolio:"
-msgstr ""
-
-#: ../inc/widgets.php:145
-msgid "Products Widget for the sidebar."
-msgstr ""
-
-#: ../inc/widgets.php:179
-msgid "Number of products:"
-msgstr ""
-
-#: ../inc/widgets.php:217
+#: ../inc/widgets.php:91
 msgid "Displays 125x125 ads with link for the sidebar."
 msgstr ""
 
-#: ../inc/widgets.php:319 ../inc/widgets.php:331 ../inc/widgets.php:343
-#: ../inc/widgets.php:356 ../inc/widgets.php:504
+#: ../inc/widgets.php:193 ../inc/widgets.php:205 ../inc/widgets.php:217
+#: ../inc/widgets.php:230 ../inc/widgets.php:381
 msgid "Upload"
 msgstr ""
 
-#: ../inc/widgets.php:403
+#: ../inc/widgets.php:272
 msgid "Add your contact info with map."
 msgstr ""
 
-#: ../inc/widgets.php:407
+#: ../inc/widgets.php:276
 msgid "TWP Contact Us"
 msgstr ""
 
-#: ../inc/widgets.php:440 ../inc/widgets.php:515
+#: ../inc/widgets.php:311 ../inc/widgets.php:392 ../inc/widgets.php:479
 msgid "Phone:"
 msgstr ""
 
-#: ../inc/widgets.php:445 ../inc/widgets.php:519
+#: ../inc/widgets.php:319 ../inc/widgets.php:396
 msgid "Fax:"
 msgstr ""
 
-#: ../inc/widgets.php:452 ../inc/widgets.php:523
+#: ../inc/widgets.php:327 ../inc/widgets.php:400 ../inc/widgets.php:484
 msgid "Email:"
 msgstr ""
 
-#: ../inc/widgets.php:458
+#: ../inc/widgets.php:334
 msgid "Web:"
 msgstr ""
 
-#: ../inc/widgets.php:494
+#: ../inc/widgets.php:371
 msgid "Map Image:"
 msgstr ""
 
-#: ../inc/widgets.php:507
+#: ../inc/widgets.php:384
 msgid "Map Image URL:"
 msgstr ""
 
-#: ../inc/widgets.php:511
+#: ../inc/widgets.php:388
 msgid "Address:"
 msgstr ""
 
-#: ../inc/widgets.php:527
+#: ../inc/widgets.php:404
 msgid "Website URL:"
 msgstr ""
 
-#: ../inc/widgets.php:582
-msgid "Title"
+#: ../inc/widgets.php:426
+msgid "Add your contact info to the header area."
 msgstr ""
 
-#: ../inc/widgets.php:584
-msgid "Flickr ID"
+#: ../inc/widgets.php:430
+msgid "TWP Header Contact"
 msgstr ""
 
-#: ../inc/widgets.php:585
-msgid "Get your Flickr ID from"
+#: ../inc/widgets.php:507
+msgid "Add your social info to the header area."
 msgstr ""
 
-#: ../inc/widgets.php:588
-msgid "Image Count"
+#: ../inc/widgets.php:511
+msgid "TWP Header Social"
 msgstr ""
 
-#: ../inc/widgets/dribbble-stream.php:8
-msgid "Displays your latest Dribbble photos."
+#: ../inc/widgets.php:571
+msgid "Twitter URL:"
 msgstr ""
 
-#: ../inc/widgets/dribbble-stream.php:81
-msgid "Dribbble username:"
+#: ../inc/widgets.php:576
+msgid "Facebook URL:"
 msgstr ""
 
-#: ../inc/widgets/dribbble-stream.php:87
-msgid "Number of images to display:"
+#: ../inc/widgets.php:581
+msgid "LinkedIn URL:"
 msgstr ""
 
-#: ../inc/widgets/recent-comments.php:6
-msgid "Displays recent comments with user avatars."
+#: ../inc/widgets.php:586
+msgid "Google+ URL:"
 msgstr ""
 
-#: ../inc/widgets/recent-comments.php:50
-msgid "Comment to"
+#: ../inc/widgets.php:591
+msgid "Instagram URL:"
 msgstr ""
 
-#: ../inc/widgets/recent-comments.php:50
-msgid "posted"
-msgstr ""
-
-#: ../inc/widgets/recent-comments.php:101
-msgid "Number of comments to display:"
-msgstr ""
-
-#: ../inc/widgets/recent-comments.php:103
-msgid "Defaults to 5 if empty"
-msgstr ""
-
-#: ../inc/widgets/social-widget.php:7
-msgid "Simple way to add Social Icons"
-msgstr ""
-
-#: ../inc/widgets/social-widget.php:8
-msgid "Pinnacle: Social Links"
-msgstr ""
-
-#: ../inc/widgets/social-widget.php:131
-msgid "Facebook:"
-msgstr ""
-
-#: ../inc/widgets/social-widget.php:135
-msgid "Twitter:"
-msgstr ""
-
-#: ../inc/widgets/social-widget.php:139
-msgid "Instagram:"
-msgstr ""
-
-#: ../inc/widgets/social-widget.php:143
-msgid "GooglePlus:"
-msgstr ""
-
-#: ../inc/widgets/social-widget.php:147
-msgid "Flickr:"
-msgstr ""
-
-#: ../inc/widgets/social-widget.php:151
-msgid "Vimeo:"
-msgstr ""
-
-#: ../inc/widgets/social-widget.php:155
-msgid "Youtube:"
-msgstr ""
-
-#: ../inc/widgets/social-widget.php:159
-msgid "Pinterest:"
-msgstr ""
-
-#: ../inc/widgets/social-widget.php:163
-msgid "Dribbble:"
-msgstr ""
-
-#: ../inc/widgets/social-widget.php:167
-msgid "Linkedin:"
-msgstr ""
-
-#: ../inc/widgets/social-widget.php:171
-msgid "Tumblr:"
-msgstr ""
-
-#: ../inc/widgets/social-widget.php:175
-msgid "VK:"
-msgstr ""
-
-#: ../inc/widgets/social-widget.php:179
-msgid "RSS:"
-msgstr ""
-
-#: ../inc/widgets/video-widget.php:6
-msgid "Displays a video of your choosing."
-msgstr ""
-
-#: ../inc/widgets/video-widget.php:68
-msgid "Video URL:"
-msgstr ""
-
-#: ../sidebar-contact.php:10
-msgid "OUR LOCATION"
-msgstr ""
-
-#: ../single-works.php:48 ../template-contact.php:54
+#: ../template-contact.php:54
 msgid " - <i class=\"fa fa-pencil\"></i> Edit - "
-msgstr ""
-
-#: ../single-works.php:90
-msgid "Customer"
-msgstr ""
-
-#: ../single-works.php:92
-msgid "Date"
-msgstr ""
-
-#: ../single-works.php:93
-msgid "Skilss"
-msgstr ""
-
-#: ../single-works.php:94
-msgid "URL"
-msgstr ""
-
-#: ../single-works.php:95
-msgid "Like"
-msgstr ""
-
-#: ../single-works.php:104
-msgid "Pages:"
-msgstr ""
-
-#: ../taxonomy-workcat.php:25 ../template-blog-grid-3col-fullwidth.php:28
-#: ../template-blog-grid-3col-sidebar.php:54
-#: ../template-portfolio-filter-1.php:36
-msgid "All"
-msgstr ""
-
-#: ../template-homepage.php:276
-msgid "Previous"
-msgstr ""
-
-#: ../template-homepage.php:280
-msgid "Next"
-msgstr ""
-
-#: ../template-item-effects-1.php:67
-msgid "View more"
-msgstr ""
-
-#: ../template-portfolio-filter-2.php:41
-msgid "Show All"
 msgstr ""
