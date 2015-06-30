@@ -11,6 +11,7 @@
 	require( WL_TEMPLATE_DIR_CORE . '/scripts/css_js.php' ); //Enquiring Resources here	
 	require( WL_TEMPLATE_DIR_CORE . '/comment-function.php' );
 	require( WL_TEMPLATE_DIR_CORE . '/flickr-widget.php' );
+	require(dirname(__FILE__).'/customizer.php');
 	
 	//Sane Defaults
 	function weblizar_default_settings()

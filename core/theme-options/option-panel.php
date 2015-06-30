@@ -50,6 +50,7 @@ $purchase = "http://weblizar.com/themes/enigma-premium/" ;?>
 						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('6 Types of Portfolio Templates','weblizar'); ?></li>
 						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('12 types Themes Colors Scheme','weblizar'); ?></li>
 						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('Patterns Background','weblizar'); ?>   </li>
+						<li style="float:none;margin-left: 40px;"> <div class="dashicons dashicons-yes"></div> <?php _e('WPML Compatible','weblizar'); ?>   </li>
 						
 					</ul>
 				</div>
@@ -76,7 +77,6 @@ $purchase = "http://weblizar.com/themes/enigma-premium/" ;?>
 				<h2><span><?php _e('Weblizar Theme Settings','weblizar'); ?></span></h2>			
 				<div class="weblizar-submenu-links" id="weblizar-submenu-links">
 					<ul>
-						<!-- <li class=""> <div class="dashicons dashicons-format-aside"> </div> <a href="#" target="_blank" title="Documentation"><?php _e('Documentation','weblizar'); ?></a></li> -->
 						<li class=""> <div class="dashicons dashicons-format-chat" > </div> <a href="https://wordpress.org/support/theme/enigma" target="_blank" title="Support Forum"><?php _e('Support Forum','weblizar'); ?></a></li>
 						<li class=""> <div class="dashicons dashicons-welcome-write-blog"></div> <a href="<?php echo get_template_directory_uri() . '/readme.txt'?>" target="_blank" title="Theme Changelog"><?php _e('View Changelog','weblizar'); ?></a></li>      
 					</ul>

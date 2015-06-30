@@ -5,6 +5,9 @@ Consider weblizar PRE-Fix for function-name and as a slug of the Theme Enigma.
 Enigma
 
 CHANGE-LOG:
+@Version: 1.9.3[30/06/2015]
+1.Theme option panel are customize ready.
+
 @Version: 1.9.2[08/06/2015]
 1. Footer Call-Out Issue Fixed.
 2. Search Box Issue Fixed.
