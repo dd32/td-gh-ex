@@ -37,11 +37,8 @@ Licensed: GNU General Public License v2 or later
 
 - Screenshot Images -
 
-Background Image: http://pixabay.com/en/new-york-city-skyline-city-usa-324574
-Copyright: http://pixabay.com
-Licensed: Public Domain Images
-
-Image: http://unsplash.com/post/56830680122/download-by-alexander-shustov
+Image: https://download.unsplash.com/20/cold-city.JPG
+Image: https://download.unsplash.com/42/U7Fc1sy5SCUDIu4tlJY3_NY_by_PhilippHenzler_philmotion.de.jpg
 Copyright: http://unsplash.com
 Licensed: Public Domain Images
 

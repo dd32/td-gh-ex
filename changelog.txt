@@ -1,5 +1,10 @@
 == CHANGE LOG ==
 
+= 2.0.1 =
+ - Fix - site-description closing tag fixed
+ - Update - Screenshot Changed
+ - Update - esc_html functions changed to esc_attr
+
 = 2.0 =
  - Fix - Recent Entries/Comments widget display issue fixed
  - Fix - esc unknown variables

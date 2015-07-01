@@ -293,8 +293,8 @@ if (1 != $options['disable_top']) {
 			if($site_description){?>
       <h2 id="site-description">
         <?php bloginfo( 'description' ); ?>
-        <?php } ?>
       </h2>
+        <?php } ?>
       <?php
 						}
 						elseif( $options[ 'header_show' ] != 'disable-both' && $options[ 'header_show' ] == 'header-logo' ) {
