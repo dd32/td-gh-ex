@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: mwsmall1.0.4\n"
-"POT-Creation-Date: 2015-05-19 01:09+0100\n"
-"PO-Revision-Date: 2015-05-19 01:09+0100\n"
+"POT-Creation-Date: 2015-07-01 18:58+0100\n"
+"PO-Revision-Date: 2015-07-01 18:58+0100\n"
 "Last-Translator: MW Themes <info@mwthemes.net>\n"
 "Language-Team: MW Themes <info@mwthemes.net>\n"
 "Language: en\n"
@@ -235,98 +235,131 @@ msgid "Text Box Home"
 msgstr ""
 
 #: ../inc/customizer.php:132
+msgid "Featured Posts Area"
+msgstr ""
+
+#: ../inc/customizer.php:133
+msgid ""
+"Option available in the <a target=\"_blank\" href=\"http://mwthemes.net/"
+"portfolio/mw-small-pro\">PRO version.</a>"
+msgstr ""
+
+#: ../inc/customizer.php:149
 msgid "Social Media Links"
 msgstr ""
 
-#: ../inc/customizer.php:142
+#: ../inc/customizer.php:159
 msgid "Facebook"
 msgstr ""
 
-#: ../inc/customizer.php:153
+#: ../inc/customizer.php:170
 msgid "Twitter"
 msgstr ""
 
-#: ../inc/customizer.php:164
+#: ../inc/customizer.php:181
 msgid "Google+"
 msgstr ""
 
-#: ../inc/customizer.php:175
+#: ../inc/customizer.php:192
 msgid "LinkedIn"
 msgstr ""
 
-#: ../inc/customizer.php:186
+#: ../inc/customizer.php:203
 msgid "Instagram"
 msgstr ""
 
-#: ../inc/customizer.php:197
+#: ../inc/customizer.php:214
 msgid "Flickr"
 msgstr ""
 
-#: ../inc/customizer.php:208
+#: ../inc/customizer.php:225
 msgid "Pinterest"
 msgstr ""
 
-#: ../inc/customizer.php:219
+#: ../inc/customizer.php:236
 msgid "Vimeo"
 msgstr ""
 
-#: ../inc/customizer.php:230
+#: ../inc/customizer.php:247
 msgid "Tumblr"
 msgstr ""
 
-#: ../inc/customizer.php:241
+#: ../inc/customizer.php:258
 msgid "Dribbble"
 msgstr ""
 
-#: ../inc/customizer.php:252
+#: ../inc/customizer.php:269
 msgid "RSS"
 msgstr ""
 
-#: ../inc/customizer.php:265
+#: ../inc/customizer.php:282
 msgid "Header Background Color"
 msgstr ""
 
-#: ../inc/customizer.php:272
+#: ../inc/customizer.php:289
 msgid "Info Theme"
 msgstr ""
 
-#: ../inc/customizer.php:273
+#: ../inc/customizer.php:290
 #, php-format
 msgid ""
-"<a target=\"_blank\" href=\"%1$s\">%2$s</a><br/><br/><a target=\"_blank\" "
-"href=\"%3$s\" class=\"button button-primary\">Facebook</a> | <a target="
-"\"_blank\" href=\"%4$s\" class=\"button button-primary\">Twitter</a><br/><br/"
-"><a target=\"_blank\" href=\"%5$s\" class=\"button button-primary\">Donate</"
-"a>"
+"<a target=\"_blank\" href=\"%1$s\">%2$s</a><br/><a target=\"_blank\" href="
+"\"%3$s\" class=\"button-pro mwfb\">Facebook</a><br/><a target=\"_blank\" "
+"href=\"%4$s\" class=\"button-pro mwtwitter\">Twitter</a><br/><a target="
+"\"_blank\" href=\"%5$s\" class=\"button-pro paypal\">Donate</a><br/><a "
+"target=\"_blank\" href=\"%7$s\">%8$s</a><br/><a target=\"_blank\" href=\"%7$s"
+"\" class=\"button-pro mwfb\">Upgrade to PRO</a><br/><a target=\"_blank\" "
+"href=\"%6$s\" class=\"button-pro\">DEMO PRO</a>"
 msgstr ""
 
-#: ../inc/customizer.php:274
+#: ../inc/customizer.php:291
 msgid "http://mwthemes.net"
 msgstr ""
 
-#: ../inc/customizer.php:275
-msgid "If you need assistance, please do not hesitate to contact us"
+#: ../inc/customizer.php:292
+msgid "If you need assistance, please do not hesitate to contact us."
 msgstr ""
 
-#: ../inc/customizer.php:276
+#: ../inc/customizer.php:293
 msgid "http://facebook.com/mwthemes"
 msgstr ""
 
-#: ../inc/customizer.php:277
+#: ../inc/customizer.php:294
 msgid "https://twitter.com/mwthemes"
 msgstr ""
 
-#: ../inc/customizer.php:278
+#: ../inc/customizer.php:295
 msgid ""
 "https://www.paypal.com/cgi-bin/webscr?cmd=_s-"
 "xclick&hosted_button_id=UEV9GM57HQUHA"
 msgstr ""
 
-#: ../inc/customizer.php:295
+#: ../inc/customizer.php:296
+msgid "http://demo.mwthemes.net/mw-small-pro"
+msgstr ""
+
+#: ../inc/customizer.php:297 ../inc/customizer.php:318
+msgid "http://mwthemes.net/portfolio/mw-small-pro"
+msgstr ""
+
+#: ../inc/customizer.php:298 ../inc/customizer.php:319
+msgid "If you need more useful options, see the MW Small PRO version."
+msgstr ""
+
+#: ../inc/customizer.php:316
+msgid "Upgrade MW Small "
+msgstr ""
+
+#: ../inc/customizer.php:317
+#, php-format
+msgid "<a target=\"_blank\" href=\"%1$s\">%2$s</a>"
+msgstr ""
+
+#: ../inc/customizer.php:337
 msgid "Footer"
 msgstr ""
 
-#: ../inc/customizer.php:304
+#: ../inc/customizer.php:346
 msgid "Your text in footer."
 msgstr ""
 

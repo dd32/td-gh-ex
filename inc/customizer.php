@@ -127,6 +127,23 @@ function mwsmall_customize_register($wp_customize){
 		'type' => 'textarea',		
 	));
 	
+	// Featured Posts Area
+	$wp_customize->add_section( 'mwsmall_featured', array(
+		'title' => __( 'Featured Posts Area', 'mwsmall' ),
+		'description' => '<span>' . __( 'Option available in the <a target="_blank" href="http://mwthemes.net/portfolio/mw-small-pro">PRO version.</a>', 'mwsmall' ) . '</span>',
+		'priority' => 42,
+		)	
+	);
+	
+	$wp_customize->add_setting( 'mwsmall_show_post_top_info', array(
+		'sanitize_callback' => 'esc_attr',
+	));
+	
+	$wp_customize->add_control('show_post_top_info', array(
+		'section' => 'mwsmall_featured',
+		'settings' => 'mwsmall_show_post_top_info'
+	));
+	
 	// Icon
 	$wp_customize->add_section('mwsmall_social', array(
         'title'    => __('Social Media Links', 'mwsmall'),
@@ -270,12 +287,16 @@ function mwsmall_customize_register($wp_customize){
 	// Info Theme 
 	$wp_customize->add_section('mwsmall_info', array(
         'title'    => __('Info Theme', 'mwsmall'),
-		'description' => sprintf( __( '<a target="_blank" href="%1$s">%2$s</a><br/><br/><a target="_blank" href="%3$s" class="button button-primary">Facebook</a> | <a target="_blank" href="%4$s" class="button button-primary">Twitter</a><br/><br/><a target="_blank" href="%5$s" class="button button-primary">Donate</a>', 'mwsmall' ), 
+		'description' => sprintf( __( '<a target="_blank" href="%1$s">%2$s</a><br/><a target="_blank" href="%3$s" class="button-pro mwfb">Facebook</a><br/><a target="_blank" href="%4$s" class="button-pro mwtwitter">Twitter</a><br/><a target="_blank" href="%5$s" class="button-pro paypal">Donate</a><br/><a target="_blank" href="%7$s">%8$s</a><br/><a target="_blank" href="%7$s" class="button-pro mwfb">Upgrade to PRO</a><br/><a target="_blank" href="%6$s" class="button-pro">DEMO PRO</a>', 'mwsmall' ), 
 		__( 'http://mwthemes.net', 'mwsmall' ), 
-		__('If you need assistance, please do not hesitate to contact us', 'mwsmall'), 
+		__('If you need assistance, please do not hesitate to contact us.', 'mwsmall'), 
 		__('http://facebook.com/mwthemes', 'mwsmall'), 
 		__('https://twitter.com/mwthemes', 'mwsmall'), 
-		__('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UEV9GM57HQUHA', 'mwsmall') ),
+		__('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UEV9GM57HQUHA', 'mwsmall'), 
+		__('http://demo.mwthemes.net/mw-small-pro', 'mwsmall'),
+		__('http://mwthemes.net/portfolio/mw-small-pro', 'mwsmall'),
+		__('If you need more useful options, see the MW Small PRO version.', 'mwsmall')
+		),
         'priority' => 110,		
     ));
 	
@@ -288,6 +309,27 @@ function mwsmall_customize_register($wp_customize){
 	);
 	$wp_customize->add_control( 'more_info_mwthemes', array(
 		'section' => 'mwsmall_info'
+	) );
+	
+	// Theme PRO 
+	$wp_customize->add_section('mwsmall_info_up', array(
+        'title'    => __('Upgrade MW Small ', 'mwsmall'),
+		'description' => sprintf( __( '<a target="_blank" href="%1$s">%2$s</a>', 'mwsmall' ), 
+		__('http://mwthemes.net/portfolio/mw-small-pro', 'mwsmall'),
+		__('If you need more useful options, see the MW Small PRO version.', 'mwsmall')
+		),
+        'priority' => 10,		
+    ));
+	
+	$wp_customize->add_setting( 
+		'up_mwsmall',
+		array(
+			'sanitize_callback' => 'esc_url_raw',
+		)
+		
+	);
+	$wp_customize->add_control( 'up_mwsmall', array(
+		'section' => 'mwsmall_info_up'
 	) );
 	
 	// footer
@@ -386,11 +428,41 @@ add_action( 'wp_head', 'mwsmall_css');
 function promo_info_none(){
 	?>
 	<style type="text/css">
+		#customize-control-show_post_top_info input,
+		#customize-control-up_mwsmall input,
 		#customize-control-more_info_mwthemes input{
 			display: none;
 		}
+		#customize-theme-controls #accordion-section-mwsmall_info_up .accordion-section-title,
 		#customize-theme-controls #accordion-section-mwsmall_info .accordion-section-title {
 			background-color: #8CBEDD;
+		}
+		#accordion-section-mwsmall_info .description {
+			text-align: center;
+		}
+		.button-pro {
+			background-color: #FF0000;
+			box-shadow: 0 0 0 0;
+			color: #FFFFFF;
+			display: inline-block;
+			font-size: 14px;
+			font-weight: 700;
+			margin-top: 8px;
+			padding: 5px;
+			text-align: center;
+			width: 160px;
+		}
+		.paypal {
+			background-color: #35AA00;
+		}
+		.mwfb {
+			background-color: #3D5B99;
+		}
+		.mwtwitter {
+			background-color: #55ACEE;
+		}
+		a.button-pro:hover {
+			color: #222;
 		}
 	</style>
 	<?php

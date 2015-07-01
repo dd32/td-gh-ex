@@ -4,7 +4,7 @@ Theme URI: http://mwthemes.net/portfolio/mw-small-blog-responsive-theme/
 Author: MWThemes
 Author URI: http://mwthemes.net
 Description: MW Small is a minimalistic responsive and customizable free blogging WordPress theme, built with Twitter Bootstrap 3.0. Support WordPress post formats: Image, Gallery, Video,  Status, Quote, Audio and Link. Easily customized from the theme customizer. You can upload your own Logo, set left sidebar or right, add your Social Links, custom color schemes, FontAwesome icons, translation ready and many other. Has 3 Footer Widget Areas. Demo: http://demo.mwthemes.net/mw-small/
-Version: 1.0.7
+Version: 1.0.8
 Tags:  custom-header, white, blue, light, dark, custom-background, custom-menu,  featured-images, flexible-header, post-formats, translation-ready, two-columns, right-sidebar, left-sidebar, featured-image-header, responsive-layout, custom-background, theme-options
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -626,48 +626,39 @@ header.center .navbar-nav li a {
 		display: block !important;
 	}
 }
-
 .menu-toggle {
     display: none;
 }
-
 .sf-menu, .sf-menu * {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
-
 .sf-menu a {
 	color: #ffffff;
 	display: block;
 	font-weight: 400;
 	text-decoration: none;
 }
-
 .navbar-nav li a {
     padding: 28px 10px;
 }
-
 .sf-menu li:hover > ul,
 .sf-menu li.sfHover > ul {
 	display: block;
 }
-
 .main-navigation ul ul .current_page_item > a, .main-navigation ul ul .current-menu-item > a {
     color: #004466;
 }
-
 .sf-menu li a:hover,
 .sf-menu li.sfHover > a,
 .sf-menu li.current_page_item > a,
 .sf-menu li.current-menu-item > a {
 	background-color: #0099CC;
 }
-
 .sf-menu li {
 	position: relative;
 }
-
 .sf-menu ul {
 	position: absolute;
 	display: none;
@@ -675,25 +666,21 @@ header.center .navbar-nav li a {
 	left: 0;
 	z-index: 99;
 }
-
 .sf-menu li:hover > ul,
 .sf-menu li.sfHover > ul {
 	display: block;
 }
-
 .navbar-nav li li a {
     background-color: #3E4A57;
     display: block;
     min-width: 200px;
     padding: 7px 15px;
 }
-
 .navbar-nav li li ul {
     left: 100%;
     position: absolute;
     top: 0;
 }
-
 .navbar-toggle {
 	border: 1px solid #0099CC;
     border-radius: 0;
@@ -704,6 +691,13 @@ header.center .navbar-nav li a {
     outline: 0 none;
     padding: 0 8px;
     position: relative;
+}
+.navbar-nav .button a {
+    background-color: #0099CC;
+    border-radius: 7px;
+    line-height: 15px;
+    margin: 19px 5px 10px;
+    padding: 10px 15px;
 }
 @media only screen and (max-width: 768px) {
 
@@ -1239,7 +1233,6 @@ article {
     background-color: #FFFFFF;
     margin-bottom: 25px;
 }
-
 .widget-title {
     background-color: #3E4A57;
     border-top: 3px solid #002244;
@@ -1248,7 +1241,6 @@ article {
 	margin: 0;
     padding: 0 15px;
 }
-
 .widget ul {
     padding: 0px;
     margin: 0px;
@@ -1256,31 +1248,86 @@ article {
     width: 100%;
     list-style-type: none;
 }
-
-.widget li:before  {
+.widget li a:before  {
 	color: #0099CC;
     content: "\f054";
 	font-family: FontAwesome;
 	font-size: 12px;
     padding-right: 5px;
 }
-.widget li:hover:before {
+.widget li a:hover:before {
     color: #003366;
 }
 .widget li a:hover {
     padding-left: 10px;
 	transition: all 200ms ease-in-out 0s;
 }
+.widget-area .widget_nav_menu .menu {
+    background-color: #3E4A57;
+    padding: 15px 0;
+}
+.widget-area .widget_nav_menu ul li {
+    margin-bottom: 5px;
+}
+.widget-area .widget_nav_menu a {
+	background-color: #002244;
+    color: #FFFFFF;
+    display: block;
+    font-size: 16px;
+    line-height: 28px;
+}
+.widget-area .widget_nav_menu a:before {
+    background-color: #0099CC;
+    color: #FFFFFF;
+	content: "\f101";
+    display: inline-block;
+    font-size: 16px;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 10px;
+    text-align: center;
+    width: 30px;
+}
+.widget-area .widget_nav_menu ul.sub-menu li {
+    margin-bottom: 0;
+}
+.widget-area .widget_nav_menu .sub-menu a:before,
+.widget-area .widget_nav_menu .sub-menu a {
+    background-color: rgba(0, 0, 0, 0);
+	content: "\f054";
+}
+.widget-area .widget_nav_menu .current-menu-item > a,
+.widget-area .widget_nav_menu li a:hover {
+    background-color: #0099CC;
+	color: #fff;
+    padding: 0;
+}
+.widget-area .widget_nav_menu li a:hover:before {
+	color: #fff;
+}
+.widget-area .widget_nav_menu .sub-menu a:before {
+    font-size: 12px;
+    margin-right: -5px;
+}
 .widget .tagcloud,
 .widget ul,
 .widget_nav_menu ul,
 .widget_recent_comments ul,
 .widget_text .textwidget,
-.widget.widget_search,
+.widget form,
 .widget_categories ul,
 .widget_recent_entries ul {
 	display: inline-block;
     padding: 15px;
+}
+.widget_archive label,
+.widget_categories label {
+	margin: 8px 0 0 15px;
+}
+.widget_archive select,
+.widget_categories select {
+	display: inline-block;
+	margin: 10px 15px 15px;
 }
 .widget.widget_search {
     display: block;
@@ -1290,6 +1337,7 @@ article {
 }
 .searchform {
 	position: relative;
+	width: 100%;
 }
 .searchform label {
 	display: block;
@@ -1308,6 +1356,10 @@ article {
     position: absolute;
     right: 0;
     top: 0;
+}
+.widget .searchform .searchsubmit {
+    right: 15px;
+    top: 15px;
 }
 .searchform .searchsubmit:hover {
 	color: #0099CC;
@@ -1381,6 +1433,9 @@ article {
 	padding: 7px 0; 
 	color: #a7a7a7; 
 }
+#wp-calendar #today {
+	color: #0099CC;
+}
 #footer #wp-calendar thead th { 
 	background: #222; 
 }
@@ -1445,7 +1500,6 @@ embed, iframe, object, video {
     margin: 5px 0;
     padding: 0 15px;
 }
-
 .format-video  iframe,   
 .format-video object,   
 .format-video embed {
