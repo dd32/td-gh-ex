@@ -1,5 +1,10 @@
 Changelog for Iconic One WordPress Responsive Theme | Visit http://themonic.com/iconic-one/ for latest version
 
+-------------- July 2015 ----------------
+
+07/02/15  - Iconic One Version 1.4.6
+
+* Improved RTL version
 
 -------------- April 2015 ----------------
 

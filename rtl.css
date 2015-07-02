@@ -2,6 +2,7 @@
 Theme Name: Iconic One
 Description: Adds support for languages written in a Right To Left (RTL) direction.
 Read more about it here http://codex.wordpress.org/Right_to_Left_Language_Support
+Last updated: July 2, 2015
 */
 
 
@@ -49,11 +50,45 @@ td {
 	margin-right: 1.071428571rem;
 	margin-left: auto;
 }
-
-
+/* Header
+----------------------------------------------- */
+.themonic-logo {
+    float: right;
+}
+.socialmedia {
+    float: left;
+    width: auto;
+}
 /* =Main Content
 ----------------------------------------------- */
 
+.site-content {
+    border-left: 1px solid #f1f1f1;
+	border-right:none;
+    float: right;
+	margin: 0;
+    padding: 30px 2% 0;
+    width: 63%;
+}
+.widget-area {
+    float: left;
+    margin: 24px 0;
+    padding: 0 0% 0 2%;
+    width: 28.7%;
+}
+.read-more {
+    display: block;
+}
+.widget-area #s {
+    margin-left: -4px;
+	margin-right: 0;
+    width: 67.9999%;
+}
+
+#searchsubmit {
+    float: right;
+
+}
 .comment-content ol,
 .comment-content ul {
 	margin: 0 24px 0 0;
@@ -176,7 +211,14 @@ label ~ span.required {
 
 /* =Media queries
 -------------------------------------------------------------- */
-
+@media screen and (max-width: 768px) {
+	.site-content {
+		width:96%;
+	}
+	.widget-area {
+		width:96%;
+	}
+}
 /* Minimum width of 600 pixels. */
 @media screen and (min-width: 600px) {
 	.site-content,
