@@ -7,11 +7,7 @@ function avocation_theme_register_plugins() {
  /*Array of plugin arrays. Required keys are name and slug. */
     $plugins = array(
         // This is an example of how to include a plugin from the WordPress Plugin Repository.
-        /* array(
-            'name'      => __('Contact Form 7','avocation'),
-            'slug'      => 'contact-form-7',
-            'required'  => false,
-        ),*/
+      
         array(
             'name'      => __('Responsive WordPress Slider - Soliloquy Lite','avocation'),
             'slug'      => 'soliloquy-lite',

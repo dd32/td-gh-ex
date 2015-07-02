@@ -115,3 +115,6 @@ require get_template_directory() . '/functions/tgm-plugins.php';
 
 /*** Customizer ***/
 require get_template_directory() . '/functions/theme-customizer.php';
+
+/*** Customizer ***/
+require get_template_directory() . '/theme-options/theme-option.php';

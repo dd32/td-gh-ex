@@ -14,7 +14,7 @@
 			}
     ?>
 <!--Slider End-->   
-
+ 
 <!--Purpose-Business  Start-->
     <div class="business-wrap">
         <span class="mask-overlay"></span>
@@ -34,6 +34,7 @@
 <!--Our-Blog  Start-->
 
 <div class="avocation-container  container"> 
+   
     <div class="blog-wrap">
         <div class="title-box">
            <?php $blog_check = get_theme_mod( 'avocation_blog-title' );

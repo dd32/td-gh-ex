@@ -32,3 +32,5 @@ Version 1.0.7
 	2) Removed the contact Settings from the theme-customizer.php
 	3) Add the documentation of theme Customization settings in the readme.txt as theme Customizer name.
 
+Version 1.0.8
+	1) Fixed all the issues

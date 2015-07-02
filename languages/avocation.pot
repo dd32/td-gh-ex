@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Avocation V1.0.7\n"
+"Project-Id-Version: Avocation V1.0.8\n"
 "POT-Creation-Date: 2015-04-15 17:31+0530\n"
 "PO-Revision-Date: 2015-04-15 17:36+0530\n"
 "Last-Translator: FruitThemes <info@fruitthemes.com>\n"

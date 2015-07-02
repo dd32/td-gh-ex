@@ -31,7 +31,7 @@ function avocation_theme_customizer( $wp_customize ) {
 		'priority'    => 30,
 		'panel'  => 'home_id',
 	) );
-
+   
         
 	$wp_customize->add_section( 'avocation_social_icons_section', array(
 		'title'          => 'Social Settings',
@@ -201,8 +201,8 @@ function avocation_theme_customizer( $wp_customize ) {
             'type'    => 'number',
            
         ) );    
- 	
-
+ 	 //about us
+    
 	// Social Section
 	$wp_customize->add_setting( 'twitter_setting', array(
 		'default'        => '',
@@ -259,7 +259,7 @@ function avocation_theme_customizer( $wp_customize ) {
 	) );
 	
 	$wp_customize->add_control( 'rss_setting', array(
-		'label'   => 'RSS Feed URL',
+		'label'   => 'LinkedIn URL',
 		'section' => 'avocation_social_icons_section',
 		'type'    => 'text',
 		'priority' => 1

@@ -117,6 +117,8 @@ if ( comments_open() ) {
 }
 return $avocation_comments;
 }
+
+
 /*
  * Comments placeholder function
  * 

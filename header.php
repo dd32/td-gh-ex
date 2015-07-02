@@ -97,7 +97,7 @@
 										<li> <a href="<?php esc_url($youtube_check); ?>" class="youtube-icon"> <span class="fa fa-youtube"></span> </a> </li>
 									<?php } ?>
 									<?php if(!empty($rss_check)) {  ?>
-										<li> <a href="<?php echo esc_url($rss_check); ?>" class="rss-icon"> <span class="fa fa-rss"></span> </a> </li>
+										<li> <a href="<?php echo esc_url($rss_check); ?>" class="rss-icon"> <span class="fa fa-linkedin"></span> </a> </li>
 									<?php } ?>
 									<?php if(!empty($pinterest_check)) {  ?>
 										<li> <a href="<?php echo  esc_url($pinterest_check); ?>" class="pinterest-icon"> <span class="fa fa-pinterest"></span> </a> </li>
