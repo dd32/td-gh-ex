@@ -94,6 +94,8 @@ Source: http://fontawesome.io
 
 # --- EOF --- #
 ============================Change Log================================
+@version 2.2
+1. Add esc_url in index-home-callout and footer.php
 @version 2.1
 1. Add Custom front page template.
 @version 2.0 

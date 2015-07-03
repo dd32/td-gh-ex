@@ -19,11 +19,11 @@ else
 						 <p><?php echo $callout_setting['home_call_out_description']; ?></p>
 					
 						<div class="btn-area">
-						<a href="<?php echo $callout_setting['home_call_out_btn1_link']; ?>" <?php if( $callout_setting['home_call_out_btn1_link_target'] == 1 ) { echo "target='_blank'"; } ?> class="callout-btn1"><?php echo $callout_setting['home_call_out_btn1_text']; 
+						<a href="<?php echo esc_url($callout_setting['home_call_out_btn1_link']); ?>" <?php if( $callout_setting['home_call_out_btn1_link_target'] == 1 ) { echo "target='_blank'"; } ?> class="callout-btn1"><?php echo $callout_setting['home_call_out_btn1_text']; 
 						?></a>
 						
 						
-						<a href="<?php echo $callout_setting['home_call_out_btn2_link']; ?>" <?php if( $callout_setting['home_call_out_btn2_link_target'] == 1 ) { echo "target='_blank'"; } ?> class="callout-btn2"><?php echo $callout_setting['home_call_out_btn2_text']; ?></a>
+						<a href="<?php echo esc_url($callout_setting['home_call_out_btn2_link']); ?>" <?php if( $callout_setting['home_call_out_btn2_link_target'] == 1 ) { echo "target='_blank'"; } ?> class="callout-btn2"><?php echo $callout_setting['home_call_out_btn2_text']; ?></a>
 					</div>
 				</div>	
 			</div>			
