@@ -108,3 +108,8 @@ require get_template_directory() . '/inc/jetpack.php';
  * Implement the custom metabox feature
  */
 require get_template_directory() . '/inc/custom-metabox.php';
+
+/**
+ * Implement the TGM PLugin Activation Class
+ */
+require get_template_directory() . '/inc/class-tgm-plugin-activation.php';

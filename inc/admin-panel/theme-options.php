@@ -508,7 +508,7 @@ function accesspresslite_theme_options_page() {
 					</tr>
 
 					<tr>
-						<td colspan="2"><em><?php _e('To replace the Event section in homepage, Go to', 'accesspresslite'); ?> <a href="<?php echo admin_url('widgets.php'); ?>"><?php _e('widget','accesspresslite'); ?></a> <?php _e('and drag widget item into the Event Sidebar Widget area.', 'accesspresslite' ); ?></em></td>
+						<td colspan="2"><em><?php _e('To replace the Event section in homepage, Go to', 'accesspresslite'); ?> <a href="<?php echo admin_url('widgets.php'); ?>" target="blank"><?php _e('widget','accesspresslite'); ?></a> <?php _e('and drag widget item into the Event Sidebar Widget area.', 'accesspresslite' ); ?></em></td>
 					</tr>
 
 					<tr><td colspan="2" class="seperator">&nbsp;</td></tr>
@@ -591,7 +591,7 @@ function accesspresslite_theme_options_page() {
                     
                     <tr>
                         <td colspan="2">
-                        <em><?php _e('You can replace the gallery and testimonial section of the home page with custom widget','accesspresslite'); ?> <a href="<?php echo admin_url('/widgets.php') ?>"><?php _e('here','accesspresslite'); ?></a></em>
+                        <em><?php _e('You can replace the gallery and testimonial section of the home page with custom widget','accesspresslite'); ?> <a href="<?php echo admin_url('/widgets.php') ?>" target="_blank"><?php _e('here','accesspresslite'); ?></a></em>
                         </td>
                     </tr>
 
@@ -854,7 +854,7 @@ function accesspresslite_theme_options_page() {
 						</tr>
 
 						<tr>
-							<th colspan="2"><?php _e('To add Custom widget in Left Sidebar, Click','accesspresslite'); ?> <a href="<?php echo admin_url('/widgets.php')?>"><?php _e('here','accesspresslite'); ?></a></th>
+							<th colspan="2"><?php _e('To add Custom widget in Left Sidebar, Click','accesspresslite'); ?> <a href="<?php echo admin_url('/widgets.php')?>" target="_blank"><?php _e('here','accesspresslite'); ?></a></th>
 						</tr>
 						</table>
 
@@ -879,7 +879,7 @@ function accesspresslite_theme_options_page() {
 						</tr>
 
 						<tr>
-							<th colspan="2"><?php _e('To add Custom widget in Right Sidebar, Click','accesspresslite'); ?> <a href="<?php echo admin_url('/widgets.php')?>"><?php _e('here','accesspresslite'); ?></a></th>
+							<th colspan="2"><?php _e('To add Custom widget in Right Sidebar, Click','accesspresslite'); ?> <a href="<?php echo admin_url('/widgets.php')?>" target="_blank"><?php _e('here','accesspresslite'); ?></a></th>
 						</tr>
 						</table>
 
@@ -1038,7 +1038,7 @@ function accesspresslite_theme_options_page() {
 						
 						<p><?php _e('For Documentation, click','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/theme-instruction-accesspress-lite/'); ?>"><?php _e('here','accesspresslite'); ?></a></p>
 						<p><?php _e('For Video tutorials, click','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('https://www.youtube.com/watch?v=Mi60ORm_VMI&list=PLdSqn2S_qFxEzeboBioXZdAg5P4l32Hm3'); ?>"><?php _e('here','accesspresslite'); ?></a></p>
-						<p><?php _e('Live Preview, click','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('https://accesspressthemes.com/accesspress-parallax/'); ?>"><?php _e('here','accesspresslite'); ?></a></p>
+						<p><?php _e('Live Preview, click','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('https://accesspressthemes.com/accesspress-lite/'); ?>"><?php _e('here','accesspresslite'); ?></a></p>
 						<hr />
 						
 						<h4><?php _e('Our other Products','accesspresslite'); ?></h4>
