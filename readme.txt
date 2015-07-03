@@ -51,7 +51,7 @@ Images used for these pages in front section are the featured images of those re
 /**********************************************************/
 
 == IMPORTANT NOTES ==
-* This theme supports post thumnail but are not used for posts but are used for pages that are
+* This theme supports post thumbnail but are not used for posts but are used for pages that are
   used in the featured section of front page.
 * This theme does not support a place for the theme tagline to be shown in front end.
 
@@ -64,6 +64,11 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.1.6 =
+* Added latest version of genericons(3.3.1).
+* Added HTML5 Markup theme support.
+* Added Author Bio Feature for single post.
+
 = Version 1.1.5 =
 * Added latest version of genericons(3.3).
 * Added scroll-to-top button feature as per users request.

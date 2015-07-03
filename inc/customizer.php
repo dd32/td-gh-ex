@@ -159,6 +159,32 @@ function radiate_register_theme_customizer( $wp_customize ) {
 		)
 	);
 
+   $wp_customize->add_section(
+      'radiate_author_bio',
+      array(
+         'title'     => __( 'Author Bio', 'radiate' ),
+         'priority'  => 250
+      )
+   );
+
+   $wp_customize->add_setting(
+      'radiate_author_bio_show',
+         array(
+         'default' => 0,
+         'capability' => 'edit_theme_options',
+         'sanitize_callback' => 'radiate_checkbox_sanitize'
+      )
+   );
+
+   $wp_customize->add_control(
+      'radiate_author_bio_show',
+         array(
+         'type' => 'checkbox',
+         'label' => __('Check to enable the Author Bio in the single post page.', 'colormag'),
+         'section' => 'radiate_author_bio',
+         'settings' => 'radiate_author_bio_show'
+      )
+   );
 
 	function radiate_sanitize_hex_color( $color ) {
 		if ( $unhashed = sanitize_hex_color_no_hash( $color ) )
@@ -177,6 +203,14 @@ function radiate_register_theme_customizer( $wp_customize ) {
 		$input = esc_attr( $input);
 		return $input;
 	}
+
+   function radiate_checkbox_sanitize($input) {
+      if ( $input == 1 ) {
+         return 1;
+      } else {
+         return '';
+      }
+   }
 
 }
 add_action( 'customize_register', 'radiate_register_theme_customizer' );

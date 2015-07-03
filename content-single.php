@@ -57,3 +57,14 @@
 		<?php edit_post_link( __( 'Edit', 'radiate' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->
+<?php if ( get_theme_mod( 'radiate_author_bio_show', 0 ) == 1 ) { ?>
+   <?php if ( get_the_author_meta( 'description' ) ) : ?>
+      <div class="author-box clearfix">
+         <div class="author-img"><?php echo get_avatar( get_the_author_meta( 'user_email' ), '100' ); ?></div>
+            <div class="author-description-wrapper">
+               <h4 class="author-name"><?php the_author_meta( 'display_name' ); ?></h4>
+               <p class="author-description"><?php the_author_meta( 'description' ); ?></p>
+            </div>
+      </div>
+   <?php endif; ?>
+<?php } ?>

@@ -65,6 +65,14 @@ function radiate_setup() {
 
    // Cropping images to different sizes to be used in the theme
    add_image_size( 'featured-image-medium', 768, 350, true );
+
+   /*
+    * Switch default core markup for search form, comment form, and comments
+    * to output valid HTML5.
+    */
+   add_theme_support('html5', array(
+       'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
+   ));
 }
 endif; // radiate_setup
 add_action( 'after_setup_theme', 'radiate_setup' );
@@ -94,7 +102,7 @@ function radiate_scripts() {
 	wp_enqueue_style( 'radiate-google-fonts', '//fonts.googleapis.com/css?family=Roboto|Merriweather:400,300' );
 
    // Add Genericons, used in the main stylesheet.
-   wp_enqueue_style( 'radiate-genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.3' );
+   wp_enqueue_style( 'radiate-genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.3.1' );
 
 	wp_enqueue_script( 'radiate-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
