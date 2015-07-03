@@ -21,21 +21,21 @@
 <link rel="prefetch" href="<?php echo get_next_posts_page_link(); ?>">
 <link rel="prerender" href="<?php echo get_next_posts_page_link(); ?>">
 <?php } ?>
-<?php wp_head();?>
 <!--[if lte IE 9]>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 <![endif]-->
+<?php wp_head();?>
 </head>
 <body <?php body_class(); ?> id="hjyl_bb10">
 	<header id="hjyl_header">
 		<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></h1>
-		<p class="header-logo"><img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php bloginfo('name'); ?>"></p>
+		<p class="header-logo"><img src="<?php echo esc_url( header_image() ); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php bloginfo('name'); ?>"></p>
 		<?php get_search_form(); ?>
 		<nav id="hjyl_menu">
-		<?php if(!IsMobile || !is_404()) { ?>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => 'hjyl_wp_list_pages', 'container' => false ) ); ?>
+		<?php if(!bb10_IsMobile || !is_404()) { ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => 'bb10_wp_list_pages', 'container' => false ) ); ?>
 		<?php }else{ ?>
-			<?php wp_nav_menu( array( 'theme_location' => 'mobile', 'fallback_cb' => 'hjyl_wp_list_pages', 'container' => false ) ); ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'mobile', 'fallback_cb' => 'bb10_wp_list_pages', 'container' => false ) ); ?>
 		<?php } ?>
 		</nav>
 	</header>
@@ -44,7 +44,7 @@
 	<div id="hjylContent">
 		<div class="hjylPosts">
 			<div class="position">
-				<?php _e('Location', 'bb10'); ?>: <i class="fa fa-home"></i> <a href="<?php echo home_url(); ?>"><?php _e('Home', 'bb10'); ?></a> > 
+				<?php _e('Location', 'bb10'); ?>: <i class="fa fa-home"></i> <a href="<?php echo esc_url( home_url() ); ?>"><?php _e('Home', 'bb10'); ?></a> > 
 				  <?php /* If this is a tag archive */ if(is_category()) { ?>
 						<?php single_cat_title(); ?>
 				 <?php /* If this is a search result */ } elseif (is_search()) { ?>

@@ -8,7 +8,12 @@ Tested up to: 4.2.2
 For questions, comments or bug reports, please go to
 http://hjyl.org/wordpress-theme-bb10/
 
-All the images bundled with the theme are licensed under the [GNU GPL](http://www.gnu.org/licenses/gpl-2.0.html)
+Bundled with the theme are licensed under the [GNU GPL](http://www.gnu.org/licenses/gpl-2.0.html) as followed:
+	All the images;
+	Font Awesome;
+	comments-ajax.js;
+	html5.js;
+	archives.js;
 
 == Theme Options ==
 bb10 has theme options page:Go into your Wordpress Admin, navigate to 'Appearance > Theme Options'

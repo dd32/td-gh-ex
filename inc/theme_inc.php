@@ -1,6 +1,6 @@
 <?php
 //////// Theme Options
-function hjyl_theme_options_items() {
+function bb10_theme_options_items() {
 	$items = array (
 		array(
 			'id' => 'twitter_url',
@@ -106,17 +106,17 @@ function hjyl_theme_options_items() {
 	return $items;
 }
 
-add_action( 'admin_init', 'hjyl_theme_options_init' );
-add_action( 'admin_menu', 'hjyl_theme_options_add_page' );
-function hjyl_theme_options_init(){
-	register_setting( 'hjyl_options', 'hjyl_theme_options', 'hjyl_options_validate' );
+add_action( 'admin_init', 'bb10_theme_options_init' );
+add_action( 'admin_menu', 'bb10_theme_options_add_page' );
+function bb10_theme_options_init(){
+	register_setting( 'bb10_options', 'bb10_theme_options', 'bb10_options_validate' );
 }
-function hjyl_theme_options_add_page() {
-	add_theme_page( __( 'Theme Options', 'bb10' ), __( 'Theme Options', 'bb10' ), 'edit_theme_options', 'theme_options', 'hjyl_theme_options_do_page' );
+function bb10_theme_options_add_page() {
+	add_theme_page( __( 'Theme Options', 'bb10' ), __( 'Theme Options', 'bb10' ), 'edit_theme_options', 'theme_options', 'bb10_theme_options_do_page' );
 }
-function hjyl_default_options() {
-	$options = get_option( 'hjyl_theme_options' );
-	foreach ( hjyl_theme_options_items() as $item ) {
+function bb10_default_options() {
+	$options = get_option( 'bb10_theme_options' );
+	foreach ( bb10_theme_options_items() as $item ) {
 		if ( ! isset( $options[$item['id']] ) ) {
 			if ( !empty($item['std']) )
 				$options[$item['id']] = $item['std'];
@@ -124,15 +124,15 @@ function hjyl_default_options() {
 				$options[$item['id']] = '';
 		}
 	}
-	update_option( 'hjyl_theme_options', $options );
+	update_option( 'bb10_theme_options', $options );
 }
-add_action( 'init', 'hjyl_default_options' );
-function hjyl_theme_options_do_page() {
+add_action( 'init', 'bb10_default_options' );
+function bb10_theme_options_do_page() {
 	if ( ! isset( $_REQUEST['settings-updated'] ) )
 		$_REQUEST['settings-updated'] = false;
 	if( isset( $_REQUEST['action'])&&('reset' == $_REQUEST['action']) ) {
-		delete_option( 'hjyl_theme_options' );
-		hjyl_default_options();
+		delete_option( 'bb10_theme_options' );
+		bb10_default_options();
 	}
 ?>
 	<div class="wrap hjyl_wrap">
@@ -175,17 +175,17 @@ function hjyl_theme_options_do_page() {
 			</div>
 			<div class="has-sidebar-content" id="post-body-content">
 				<form method="post" action="options.php">
-					<?php settings_fields( 'hjyl_options' ); ?>
-					<?php $options = get_option( 'hjyl_theme_options' ); ?>
+					<?php settings_fields( 'bb10_options' ); ?>
+					<?php $options = get_option( 'bb10_theme_options' ); ?>
 					<div class="stuffbox" style="padding-bottom:10px;">
 						<h3><label for="link_url"><?php _e( 'General settings', 'bb10' ); ?></label></h3>
 						<div class="inside">
 							<table class="form-table">
-							<?php foreach (hjyl_theme_options_items() as $item) {
+							<?php foreach (bb10_theme_options_items() as $item) {
 							
-								$hjyl_name = $item['name'];
-								$hjyl_form_name = 'hjyl_theme_options['.$item['id'].']';
-								$hjyl_value = !empty($options[$item['id']]) ? $options[$item['id']] : $item['std'];
+								$bb10_name = $item['name'];
+								$bb10_form_name = 'bb10_theme_options['.$item['id'].']';
+								$bb10_value = !empty($options[$item['id']]) ? $options[$item['id']] : $item['std'];
 							?>
 
 								<?php if ($item['type'] == 'checkbox') { ?>
@@ -200,10 +200,10 @@ function hjyl_theme_options_do_page() {
 							<table class="form-table">
 		<?php } ?>
 									<tr valign="top">
-										<th scope="row"><strong><?php echo $hjyl_name; ?></strong></th>
+										<th scope="row"><strong><?php echo $bb10_name; ?></strong></th>
 										<td>
-											<input name="<?php echo $hjyl_form_name; ?>" type="checkbox" value="1" <?php checked($hjyl_value, 1); ?> />
-											<label class="description" for="<?php echo $hjyl_form_name; ?>"><?php echo $item['desc']; ?></label>
+											<input name="<?php echo $bb10_form_name; ?>" type="checkbox" value="1" <?php checked($bb10_value, 1); ?> />
+											<label class="description" for="<?php echo $bb10_form_name; ?>"><?php echo $item['desc']; ?></label>
 										</td>
 									</tr>
 									<?php if ($item['hr']) echo '<tr valign="top"><th style="margin:0;padding:0;border-bottom:1px solid #ddd;"> </th><td style="margin:0;padding:0;border-bottom:1px solid #ddd;"> </td></tr>'; ?>
@@ -220,11 +220,11 @@ function hjyl_theme_options_do_page() {
 							<table class="form-table">
 		<?php } ?>
 									<tr valign="top">
-										<th scope="row"><strong><?php echo $hjyl_name; ?></strong></th>
+										<th scope="row"><strong><?php echo $bb10_name; ?></strong></th>
 										<td>
-											<textarea name="<?php echo $hjyl_form_name; ?>" type="code" cols="65%" rows="4"><?php echo $hjyl_value; ?></textarea>
+											<textarea name="<?php echo $bb10_form_name; ?>" type="code" cols="65%" rows="4"><?php echo $bb10_value; ?></textarea>
 											<br/>
-											<label class="description" for="<?php echo $hjyl_form_name; ?>"><?php echo $item['desc']; ?></label>
+											<label class="description" for="<?php echo $bb10_form_name; ?>"><?php echo $item['desc']; ?></label>
 										</td>
 									</tr>
 									<?php if ($item['hr']) echo '<tr valign="top"><th style="margin:0;padding:0;border-bottom:1px solid #ddd;"> </th><td style="margin:0;padding:0;border-bottom:1px solid #ddd;"> </td></tr>'; ?>
@@ -241,11 +241,11 @@ function hjyl_theme_options_do_page() {
 							<table class="form-table">
 		<?php } ?>
 									<tr valign="top">
-										<th scope="row"><strong><?php echo $hjyl_name; ?></strong></th>
+										<th scope="row"><strong><?php echo $bb10_name; ?></strong></th>
 										<td>
-											<input name="<?php echo $hjyl_form_name; ?>" type="text" value="<?php echo $hjyl_value; ?>" size="40" />
+											<input name="<?php echo $bb10_form_name; ?>" type="text" value="<?php echo $bb10_value; ?>" size="40" />
 											<br/>
-											<label class="description" for="<?php echo $hjyl_form_name; ?>"><?php echo $item['desc']; ?></label>
+											<label class="description" for="<?php echo $bb10_form_name; ?>"><?php echo $item['desc']; ?></label>
 										</td>
 									</tr>
 									<?php if ($item['hr']) echo '<tr valign="top"><th style="margin:0;padding:0;border-bottom:1px solid #ddd;"> </th><td style="margin:0;padding:0;border-bottom:1px solid #ddd;"> </td></tr>'; ?>
@@ -271,7 +271,7 @@ function hjyl_theme_options_do_page() {
 }
 
 //	Sanitize and validate input. Accepts an array, return a sanitized array.
-function hjyl_options_validate( $input ) {
+function bb10_options_validate( $input ) {
 	// must be safe text with no HTML tags
 	$str = array('twitter_name','twitter_url','weibo_name','weibo_url','email_name','email_url','rss_name','rss_url','qrcode_name','qrcode_url');
 	$input[$str] = sanitize_text_field( $input[$str] );

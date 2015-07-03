@@ -1,6 +1,6 @@
 <?php 
 /*
-Template Name: Archives
+Template Name: bb10-Archives
 */
 get_header(); ?>
 	<div id="archives">     
@@ -24,7 +24,7 @@ get_header(); ?>
                     array_push($all[$year], $mon);     
                     $output .= "<div class='archive-title' id='arti-$year-$mon'><h3>$year-$mon</h3><div class='archives archives-$mon' data-date='$year-$mon'>";     
                 }     
-                $output .= '<div class="brick"><a href="'.get_permalink() .'"><span class="time">'.get_the_time('n-d').'</span>'.get_the_title() .'<em>('. get_comments_number('0', '1', '%') .')</em></a></div>';     
+                $output .= '<div class="brick"><a href="'.esc_url( get_permalink() ) .'"><span class="time">'.get_the_time('n-d').'</span>'.get_the_title() .'<em>('. get_comments_number('0', '1', '%') .')</em></a></div>';     
             endwhile;     
             wp_reset_postdata();     
             $output .= '</div></div>';     
@@ -47,5 +47,5 @@ get_header(); ?>
         </div>     
     </div><!-- #archives -->
 		</div><!--#hjylPosts-->
-<?php if(!IsMobile) get_sidebar(); ?>		
+<?php if(!bb10_IsMobile) get_sidebar(); ?>		
 <?php get_footer(); ?>

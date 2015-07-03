@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-28 22:23+0800\n"
-"PO-Revision-Date: 2015-06-28 22:23+0800\n"
+"POT-Creation-Date: 2015-07-03 22:13+0800\n"
+"PO-Revision-Date: 2015-07-03 22:13+0800\n"
 "Last-Translator: 皇家元林 <i@hjyl.org>\n"
 "Language-Team: hjyl.org <i@hjyl.org>\n"
 "Language: zh_CN\n"
@@ -40,7 +40,7 @@ msgstr "<b>1</b>"
 msgid "<b>%</b>"
 msgstr "<b>%</b>"
 
-#: ../archive.php:37 ../functions.php:76 ../index.php:37 ../page.php:27
+#: ../archive.php:37 ../functions.php:78 ../index.php:37 ../page.php:27
 #: ../single.php:33
 msgid "Edit"
 msgstr "编辑"
@@ -173,49 +173,41 @@ msgstr "主要导航"
 msgid "Mobile Navigation"
 msgstr "手机导航"
 
-#: ../functions.php:75
+#: ../functions.php:77
 msgid "Before Refresh, you can"
 msgstr "刷新之前，你可以"
 
-#: ../functions.php:77
+#: ../functions.php:79
 msgid "Cancel Editing"
 msgstr "取消编辑"
 
-#: ../functions.php:78
+#: ../functions.php:80
 msgid "Wait a moment..."
 msgstr "请稍候..."
 
-#: ../functions.php:79
+#: ../functions.php:81
 msgid "Good Comment"
 msgstr "提交成功"
 
-#: ../functions.php:98
+#: ../functions.php:100
 msgid "CopyRights"
 msgstr "转载请注明"
 
-#: ../functions.php:106 ../header.php:47
+#: ../functions.php:108 ../header.php:47
 msgid "Home"
 msgstr "首页"
 
-#: ../functions.php:114
+#: ../functions.php:116
 msgid "Single"
 msgstr "文章页"
 
-#: ../functions.php:122
+#: ../functions.php:124
 msgid "404"
 msgstr "404页面"
 
-#: ../functions.php:130
+#: ../functions.php:132
 msgid "Other"
 msgstr "其他页"
-
-#: ../functions.php:150
-msgid "<< Previous"
-msgstr "上一页"
-
-#: ../functions.php:151
-msgid "Next >>"
-msgstr "下一页"
 
 #: ../header.php:47
 msgid "Location"
@@ -453,6 +445,12 @@ msgstr "上一篇: %title"
 #: ../single.php:43
 msgid "Next: %title"
 msgstr "下一篇: %title"
+
+#~ msgid "<< Previous"
+#~ msgstr "上一页"
+
+#~ msgid "Next >>"
+#~ msgstr "下一页"
 
 #~ msgid "Page %1$s of %2$s"
 #~ msgstr "Page %1$s of %2$s"

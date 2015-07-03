@@ -4,10 +4,10 @@
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<header>
 						<?php if ( is_sticky() ) : ?>
-								<h2>[<?php printf(__('Featured', 'bb10')) ; ?>]<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => '', 'after' => '' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+								<h2>[<?php printf(__('Featured', 'bb10')) ; ?>]<a href="<?php echo esc_url( the_permalink() ); ?>" title="<?php the_title_attribute( array( 'before' => '', 'after' => '' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 							
 						<?php else : ?>
-						<h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => '', 'after' => '' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+						<h2><a href="<?php echo esc_url( the_permalink() ); ?>" title="<?php the_title_attribute( array( 'before' => '', 'after' => '' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 						<?php endif; ?>
 						<div class="date">
 							<span class="month"><?php echo date( 'M' ,get_the_time( 'U' ));?> <?php the_time( 'Y' ); ?></span>
@@ -18,7 +18,7 @@
 					
 					<section class="hjylEntry">
 					<?php if ( has_post_thumbnail() ) { ?>
-						<?php the_post_thumbnail( 'index' ); ?>
+						<?php the_post_thumbnail( '70x50-right-top' ); ?>
 					<?php } ?>
 						<?php the_excerpt(); ?>
 					</section>
@@ -71,5 +71,5 @@
 
 			<?php endif; ?>
 		</div><!--#hjylPosts-->
-<?php if(!IsMobile) get_sidebar(); ?>		
+<?php if(!bb10_IsMobile) get_sidebar(); ?>		
 <?php get_footer(); ?>

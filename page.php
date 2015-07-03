@@ -45,5 +45,5 @@
 
 			<?php endif; ?>
 		</div><!--#hjylPosts-->
-<?php if(!IsMobile) get_sidebar(); ?>		
+<?php if(!bb10_IsMobile) get_sidebar(); ?>		
 <?php get_footer(); ?>
