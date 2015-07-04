@@ -10,9 +10,9 @@
 					<div class="post">
 						<?php the_content(); ?> <hr />
 						<?php wp_link_pages(); ?>
-							<div class="categories"><tag><?php the_tags(); ?></tag>	Categories: <?php the_category(' '); ?></div>
-							<span class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'alanding-lite' ) . '</span> %title' ); ?></span>
-							<span class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'alanding-lite' ) . '</span>' ); ?></span>
+							<div class="categories"><div class="tagi"><?php the_tags(); ?></div>	<?php _e( 'Categories ', 'alanding_lite' ); ?> <?php the_category(' '); ?></div>
+							<span class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'alanding_lite' ) . '</span> %title' ); ?></span>
+							<span class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'alanding_lite' ) . '</span>' ); ?></span>
 						<?php comments_template(); ?>
 					</div>
 				</div>

@@ -9,6 +9,7 @@ function alanding_lite_setup() {
 	add_theme_support( 'automatic-feed-links' );
 	add_image_size( 'my-theme-logo-size', 500, 200, true );
     add_theme_support( 'site-logo', array( 'size' => 'my-theme-logo-size' ) );
+    load_theme_textdomain( 'alanding_lite', get_template_directory() . '/languages' );
 }
 function alanding_lite_widgets() {
 	register_sidebar(		
@@ -153,16 +154,15 @@ function alanding_lite_menu() {
 add_action('admin_menu', 'alanding_lite_menu');
 function alanding_lite_menu_page() {
 echo '
-
 <br>
-<center><h1>17 Sidebar for theme ALanding lite</h1>
+<center><h1>' . __( '17 Sidebar for theme ALanding lite', 'alanding_lite' ) . '</h1>
 <br>
 <img src="' . get_template_directory_uri() . '/images/alanding-sidebar.png">
 <br><br><br>
-Go to the section Pages, and click on Add New.<br>On the right side in the field Template choose a desired number of blocks, type in the page name page and save. <br><br>
+' . __( 'Go to the section Pages, and click on Add New.<br>On the right side in the field Template choose a desired number of blocks, type in the page name page and save.', 'alanding_lite' ) . '<br><br>
 <img src="' . get_template_directory_uri() . '/images/help1.jpg">
 <br><br><br>
-Go to Settings -> Reading and assign a static page.<br><br>
+' . __( 'Go to Settings -> Reading and assign a static page.', 'alanding_lite' ) . '<br><br>
 <img src="' . get_template_directory_uri() . '/images/help2.jpg">
 <br><br><br>
 ';

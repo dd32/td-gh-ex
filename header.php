@@ -14,10 +14,9 @@
 	<div class="head">
 		<div class="head-center"><?php if ( function_exists( 'jetpack_the_site_logo' ) ) jetpack_the_site_logo(); ?>
 			<h5 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h5>
-	            <?php if ( is_active_sidebar( 'sidebar-header' ) ) : ?><div class="sidebar-right span2">
+	            <div class="sidebar-right span2">
 	                 <?php dynamic_sidebar( 'sidebar-header' ); ?>
-	            </div><?php endif; ?>
-
+	            </div>
 		</div>
 	</div>
 </div>
