@@ -1,14 +1,9 @@
 <!DOCTYPE html>
 
 <!--[if IE 8 ]><html class="ie8" <?php language_attributes(); ?>> <![endif]-->
-<!--[if IE 9 ]><html class="ie9" <?php language_attributes(); ?>> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html <?php language_attributes(); ?>> <!--<![endif]-->
 
 <head>
-
-	<!--[if IE 8 ]>
-	<script src="<?php echo trailingslashit( get_template_directory_uri() ) . 'js/build/html5shiv.min.js'; ?>"></script>
-	<![endif]-->
 
     <?php wp_head(); ?>
 

@@ -80,34 +80,36 @@ if( ! function_exists( 'unlimited_customize_comments' ) ) {
 		global $post;
 		?>
 		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-			<article id="comment-<?php comment_ID(); ?>" class="comment">
-				<div class="comment-author">
-					<?php
-					// if is post author
-					if ( $comment->user_id === $post->post_author ) {
-						unlimited_profile_image_output();
-					} else {
-						echo get_avatar( get_comment_author_email(), 48, '', get_comment_author() );
-					}
-					?>
-					<div class="author-name"><span><?php comment_author_link(); ?></span> <?php _x('said:', 'unlimited', 'the commenter said the following:'); ?></div>
+		<article id="comment-<?php comment_ID(); ?>" class="comment">
+			<div class="comment-author">
+				<?php
+				// if is post author
+				if ( $comment->user_id === $post->post_author ) {
+					unlimited_profile_image_output();
+				} else {
+					echo get_avatar( get_comment_author_email(), 48, '', get_comment_author() );
+				}
+				?>
+				<div class="author-name">
+					<span><?php comment_author_link(); ?></span> <?php _x( 'said:', 'unlimited', 'the commenter said the following:' ); ?>
 				</div>
-				<div class="comment-content">
-					<?php
-					if ( $comment->comment_approved == '0' ) :
-						echo "<em>" . __( 'Your comment is awaiting moderation.', 'unlimited' ) . "</em><br />";
-					endif;
-					comment_text(); ?>
-					<div class="comment-date"><?php comment_date( 'n/j/Y' ); ?></div>
-					<?php comment_reply_link( array_merge( $args, array(
-								'reply_text' => __( 'Reply', 'unlimited' ),
-								'depth'      => $depth,
-								'max_depth'  => $args['max_depth'],
-								'before'     => '|'
-							) ) ); ?>
-					<?php edit_comment_link( 'Edit', '|' ); ?>
-				</div>
-			</article>
+			</div>
+			<div class="comment-content">
+				<?php
+				if ( $comment->comment_approved == '0' ) :
+					echo "<em>" . __( 'Your comment is awaiting moderation.', 'unlimited' ) . "</em><br />";
+				endif;
+				comment_text(); ?>
+				<div class="comment-date"><?php comment_date(); ?></div>
+				<?php comment_reply_link( array_merge( $args, array(
+					'reply_text' => __( 'Reply', 'unlimited' ),
+					'depth'      => $depth,
+					'max_depth'  => $args['max_depth'],
+					'before'     => '|'
+				) ) ); ?>
+				<?php edit_comment_link( __( 'Edit', 'unlimited' ), '|' ); ?>
+			</div>
+		</article>
 	<?php
 	}
 }
@@ -191,23 +193,21 @@ if( ! function_exists( 'unlimited_excerpt' ) ) {
 		// make post variable available
 		global $post;
 
-		// make 'read more' setting available
-		global $more;
-
 		// check for the more tag
 		$ismore = strpos( $post->post_content, '<!--more-->' );
 
 		// get the show full post setting
 		$show_full_post = get_theme_mod( 'full_post' );
 
-		// if show full post is on, show full post unless on search page
+		// if show full post is on and not on a search results page
 		if ( ( $show_full_post == 'yes' ) && ! is_search() ) {
 
-			// set read more value for all posts to 'off'
-			$more = - 1;
-
-			// output the full content
-			the_content();
+			// use the read more link if present
+			if ( $ismore ) {
+				the_content( __( 'Read More', 'unlimited' ) . " <span class='screen-reader-text'>" . get_the_title() . "</span>" );
+			} else {
+				the_content();
+			}
 		} // use the read more link if present
 		elseif ( $ismore ) {
 			the_content( __( 'Read More', 'unlimited' ) . "<span class='screen-reader-text'>" . get_the_title() . "</span>" );
@@ -579,3 +579,35 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) :
 	}
 	add_action( 'wp_head', 'unlimited_add_title_tag' );
 endif;
+
+// show notice telling users about avatar change coming in v1.50
+function ct_unlimited_avatar_notice() {
+
+	// if not dismissed previously, show message
+	if ( get_option( 'ct_unlimited_dismiss_avatar_notice' ) != true ) {
+
+		// set link with full explanation
+		// linking to my site and redirecting as a precaution to maintain control
+		$url = 'https://www.competethemes.com/unlimited-avatar-redirect/';
+		?>
+		<div id="unlimited-avatar-notice" class="update-nag notice is-dismissible">
+			<p><?php printf( __( 'Custom avatars are being removed from Unlimited in v1.09. Please <a target="_blank" href="%s">follow these instructions</a> before the next update', 'unlimited' ), esc_url($url) ); ?>.</p>
+		</div>
+	<?php
+	}
+}
+add_action( 'admin_notices', 'ct_unlimited_avatar_notice' );
+
+// remove the notice permanently if user clicks the "x" button
+function ct_unlimited_dismiss_avatar_notice() {
+
+	// get the dismissed value
+	$dismissed = $_POST['dismissed'];
+
+	// if set to true, update option
+	if( $dismissed == true ) {
+		update_option('ct_unlimited_dismiss_avatar_notice', true);
+	}
+	die();
+}
+add_action( 'wp_ajax_dismiss_unlimited_avatar_notice', 'ct_unlimited_dismiss_avatar_notice' );

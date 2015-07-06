@@ -8,8 +8,8 @@ function unlimited_load_scripts_styles() {
 	// main JS file
 	wp_enqueue_script('ct-unlimited-js', get_template_directory_uri() . '/js/build/production.min.js#unlimited_asyncload', array('jquery'),'', true);
 	wp_localize_script( 'ct-unlimited-js', 'objectL10n', array(
-		'openMenu'     => __( 'open menu', 'unlimited' ),
-		'closeMenu'    => __( 'close menu', 'unlimited' )
+		'openMenu'  => __( 'open menu', 'unlimited' ),
+		'closeMenu' => __( 'close menu', 'unlimited' )
 	) );
 
 	// Google Fonts (required to register outside scripts first)
@@ -23,13 +23,23 @@ function unlimited_load_scripts_styles() {
 	if( is_rtl() ) {
 		wp_enqueue_style('style-rtl', get_template_directory_uri() . '/styles/rtl.min.css');
 	} else {
-		wp_enqueue_style('style', get_template_directory_uri() . 'style.min.css');
+		wp_enqueue_style('style', get_stylesheet_uri() );
 	}
 
 	// enqueue comment-reply script only on posts & pages with comments open ( included in WP core )
 	if( is_singular() && comments_open() && get_option('thread_comments') ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	/* Load Polyfills */
+
+	// HTML5 shiv
+	wp_enqueue_script('ct-unlimited-html5-shiv', get_template_directory_uri() . '/js/build/html5shiv.min.js');
+	wp_script_add_data( 'ct-unlimited-html5-shiv', 'conditional', 'IE 8' );
+
+	// respond.js - media query support
+	wp_enqueue_script('ct-unlimited-respond', get_template_directory_uri() . '/js/build/respond.min.js', '', '', true);
+	wp_script_add_data( 'ct-unlimited-respond', 'conditional', 'IE 8' );
 }
 add_action('wp_enqueue_scripts', 'unlimited_load_scripts_styles' );
 
@@ -53,6 +63,7 @@ function unlimited_enqueue_admin_styles($hook){
 		// Admin styles
 		wp_enqueue_style('ct-unlimited-admin-styles', get_template_directory_uri() . '/styles/admin.min.css');
 	}
+	wp_enqueue_script('ct-unlimited-admin-js', get_template_directory_uri() . '/js/build/admin.min.js');
 }
 add_action('admin_enqueue_scripts',	'unlimited_enqueue_admin_styles' );
 
