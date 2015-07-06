@@ -846,15 +846,15 @@
             $apbasic_inputs['show_silder_in_post'] = 1;
         }
         
-        $apbasic_inputs['slide1_title'] = wp_kses($input['slide1_title'],$al_tags);
-        $apbasic_inputs['slide2_title'] = wp_kses($input['slide2_title'],$al_tags);
-        $apbasic_inputs['slide3_title'] = wp_kses($input['slide3_title'],$al_tags);
-        $apbasic_inputs['slide4_title'] = wp_kses($input['slide4_title'],$al_tags);
+        $apbasic_inputs['slide1_title'] = wp_kses_post($input['slide1_title']);
+        $apbasic_inputs['slide2_title'] = wp_kses_post($input['slide2_title']);
+        $apbasic_inputs['slide3_title'] = wp_kses_post($input['slide3_title']);
+        $apbasic_inputs['slide4_title'] = wp_kses_post($input['slide4_title']);
         
-        $apbasic_inputs['slide1_description'] = wp_kses($input['slide1_description'],$al_tags);
-        $apbasic_inputs['slide2_description'] = wp_kses($input['slide2_description'],$al_tags);
-        $apbasic_inputs['slide3_description'] = wp_kses($input['slide3_description'],$al_tags);
-        $apbasic_inputs['slide4_description'] = wp_kses($input['slide4_description'],$al_tags);
+        $apbasic_inputs['slide1_description'] = wp_kses_post($input['slide1_description'],$al_tags);
+        $apbasic_inputs['slide2_description'] = wp_kses_post($input['slide2_description'],$al_tags);
+        $apbasic_inputs['slide3_description'] = wp_kses_post($input['slide3_description'],$al_tags);
+        $apbasic_inputs['slide4_description'] = wp_kses_post($input['slide4_description'],$al_tags);
         
         $apbasic_inputs['slide1_readmore_text'] = sanitize_text_field($input['slide1_readmore_text']);
         $apbasic_inputs['slide2_readmore_text'] = sanitize_text_field($input['slide2_readmore_text']);
