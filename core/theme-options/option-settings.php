@@ -914,7 +914,7 @@ $theme_name ="Enigma";
 <div class="block ui-tabs-panel deactive" id="option-ourproduct">
 	<div class="row-fluid pricing-table pricing-three-column">
 		<div class="plan-name centre"> 
-			<a style="margin-bottom:10px;textt-align:center" target="_new" href="http://weblizar.com"><img  src="http://weblizar.com/wp-content/themes/home-theme/images/weblizar2.png" /></a>
+			<a style="margin-bottom:10px;textt-align:center" target="_new" href="http://weblizar.com"><img  src="<?php echo  get_template_directory_uri(). '/images/weblizar2.png'?>" /></a>
 			<div class="purchase_btn_div">
 				<a href="http://www.weblizar.com" target="_new" class="btn btn-primary btn-lg dmobtn">View Site</a>		
 			</div>

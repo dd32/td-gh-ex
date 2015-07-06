@@ -18,7 +18,7 @@ function weblizar_gl_customizer( $wp_customize ) {
 	$wp_customize->add_section(
         'general_sec',
         array(
-            'title' => 'Theme General Options',
+            'title' => __( 'Theme General Options','weblizar' ),
             'description' => 'Here you can customize Your theme\'s general Settings',
 			'panel'=>'enigma_theme_option',
 			'capability'=>'edit_theme_options',
@@ -124,7 +124,7 @@ function weblizar_gl_customizer( $wp_customize ) {
 	$wp_customize->add_section(
         'slider_sec',
         array(
-            'title' => 'Theme Slider Options',
+            'title' =>  __( 'Theme Slider Options','weblizar' ),
 			'panel'=>'enigma_theme_option',
             'description' => 'Here you can add slider images',
 			'capability'=>'edit_theme_options',
@@ -573,8 +573,8 @@ function weblizar_gl_customizer( $wp_customize ) {
 	$wp_customize->add_section(
         'portfolio_section',
         array(
-            'title' => __('Portfolio Options','chronicle'),
-            'description' => __('Here you can add Portfolio title,description and even portfolios','chronicle'),
+            'title' => __('Portfolio Options','weblizar'),
+            'description' => __('Here you can add Portfolio title,description and even portfolios','weblizar'),
 			'panel'=>'enigma_theme_option',
 			'capabilit'=>'edit_theme_options',
             'priority' => 35,
@@ -632,13 +632,13 @@ function weblizar_gl_customizer( $wp_customize ) {
 	}
 	
 	$wp_customize->add_control( 'enigma_show_portfolio', array(
-		'label'        => __( 'Enable Portfolio on Home', 'chronicle' ),
+		'label'        => __( 'Enable Portfolio on Home', 'weblizar' ),
 		'type'=>'checkbox',
 		'section'    => 'portfolio_section',
 		'settings'   => 'enigma_options[portfolio_home]'
 	) );
 	$wp_customize->add_control( 'enigma_portfolio_title', array(
-		'label'        => __( 'Portfolio Heading', 'chronicle' ),
+		'label'        => __( 'Portfolio Heading', 'weblizar' ),
 		'type'=>'text',
 		'section'    => 'portfolio_section',
 		'settings'   => 'enigma_options[port_heading]'
@@ -646,19 +646,19 @@ function weblizar_gl_customizer( $wp_customize ) {
 
 	for($i=1;$i<=3;$i++){
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'enigma_portfolio_img_'.$i, array(
-		'label'        => __( 'Portfolio Image', 'chronicle' ),
+		'label'        => __( 'Portfolio Image', 'weblizar' ),
 		'section'    => 'portfolio_section',
 		'settings'   => 'enigma_options[port_'.$i.'_img]'
 	) ) );
 	$wp_customize->add_control( 'enigma_portfolio_title_'.$i, array(
-		'label'        => __( 'Portfolio Title', 'chronicle' ),
+		'label'        => __( 'Portfolio Title', 'weblizar' ),
 		'type'=>'text',
 		'section'    => 'portfolio_section',
 		'settings'   => 'enigma_options[port_'.$i.'_title]'
 	) );
 	
 	$wp_customize->add_control( 'enigma_portfolio_link_'.$i, array(
-		'label'        => __( 'Portfolio Link', 'chronicle' ),
+		'label'        => __( 'Portfolio Link', 'weblizar' ),
 		'type'=>'url',
 		'section'    => 'portfolio_section',
 		'settings'   => 'enigma_options[port_'.$i.'_link]'

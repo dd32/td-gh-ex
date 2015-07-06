@@ -9,8 +9,7 @@
 	require( WL_TEMPLATE_DIR_CORE . '/menu/default_menu_walker.php' );
 	require( WL_TEMPLATE_DIR_CORE . '/menu/weblizar_nav_walker.php' );
 	require( WL_TEMPLATE_DIR_CORE . '/scripts/css_js.php' ); //Enquiring Resources here	
-	require( WL_TEMPLATE_DIR_CORE . '/comment-function.php' );
-	require( WL_TEMPLATE_DIR_CORE . '/flickr-widget.php' );
+	require( WL_TEMPLATE_DIR_CORE . '/comment-function.php' );	
 	require(dirname(__FILE__).'/customizer.php');
 	
 	//Sane Defaults
@@ -53,7 +52,7 @@
 			'fc_home'=>'1',			
 			'fc_title' => __('Lorem Ipsum is simply dummy text of the printing and typesetting industry. ', 'weblizar' ),
 			'fc_btn_txt' => __('More Features', 'weblizar' ),
-			'fc_btn_link' =>"http://weblizar.com/",
+			'fc_btn_link' =>"#",
 			//Social media links
 			'header_social_media_in_enabled'=>'1',
 			'footer_section_social_media_enbled'=>'1',
