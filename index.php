@@ -13,6 +13,9 @@
 
 get_header(); 
 ?>
+
+<?php do_action( 'accesspress_mag_before_body_content' ); ?>
+
 <div class="apmag-container">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -45,4 +48,7 @@ get_header();
 
 <?php get_sidebar('right'); ?>
 </div>
+
+<?php do_action( 'accesspress_mag_after_body_content' ); ?>
+
 <?php get_footer(); ?>

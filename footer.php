@@ -21,6 +21,9 @@
         $trans_copyright = of_get_option( 'trans_copyright' );
         if( empty( $trans_copyright ) ){ $trans_copyright = __( 'Copyright', 'accesspress-mag' ); }
     ?>
+    
+    <?php do_action( 'accesspress_mag_before_footer' ); ?>
+    
     <footer id="colophon" class="site-footer" role="contentinfo">
     
         <?php 

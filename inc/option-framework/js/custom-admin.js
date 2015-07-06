@@ -13,10 +13,20 @@
             //alert(cur_selection);
         }
     }
+  
  jQuery(document).ready(function($) {
         td_updateMetaboxes();
         $('#reviewSelector').change(function() {
             td_updateMetaboxes();
+        });
+        
+        
+       /*-------------Toogle for slider posts option ----------------------*/
+       if( $(".slider_type input[type='radio']:checked").val() !=='cat' ){
+            $('#section-homepage_slider_category').hide();
+       }
+        $(".slider_type input[type='radio']").on('change',function(){
+            $('#section-homepage_slider_category').fadeToggle('slow');
         });
         
         $('.radio-post-template-wrapper').click(function(event){

@@ -22,7 +22,7 @@ function optionsframework_options() {
 
 	//Slide options for homepage slider
     $options_slides = array();
-    $options_slides[0] = __( 'Select no.of slides', 'accesspress-mag' );
+    $options_slides[0] = __( '--Select Number of slides--', 'accesspress-mag' );
     for($i=1;$i<=6;$i++)
     {
         $options_slides[$i] = $i ;
@@ -121,7 +121,32 @@ function optionsframework_options() {
 		    'name' => __( 'Header', 'accesspress-mag' ),
             'type' => 'heading'
 	        );    
-    /*--------------Logo setting-------------------*/
+    /*--------------Header Setting-------------------*/
+    $options[] = array(
+            'name' => __( 'Header Settings', 'accesspress-mag' ),
+            'id'   => 'header_settings',
+            'type' => 'groupstart'
+            );
+    $options[] = array(
+            'name' => __( 'News Ticker', 'accesspress-mag' ),                
+            'desc' => __( 'Show or hide the news ticker section, which display latest 5 posts', 'accesspress-mag' ),
+            'id' => 'news_ticker_option',
+            'on' => __( 'Yes', 'accesspress-mag'),
+            'off' => __( 'No', 'accesspress-mag'),
+            'std' => '1',
+            'type' => 'switch'
+            );
+    $options[] = array(
+            'name' => __( 'News Ticker Caption ', 'accesspress-mag' ),
+            'desc' => __( 'Write your ticker caption', 'accesspress-mag' ),
+            'id' => 'ticker_caption',
+            'type' => 'text',
+            'std' => 'Latest ', 
+            );
+    $options[] = array(
+            'type' => 'groupend'
+            );
+    /*--------------Logo Setting-------------------*/
     $options[] = array(
             'name' => __( 'Logo Settings', 'accesspress-mag' ),
             'id'   => 'logo',
@@ -139,6 +164,7 @@ function optionsframework_options() {
             'desc' => __( 'Upload a favicon image (Standard size of the favicon is 16 x 16px)', 'accesspress-mag' ),
             'id' => 'favicon_upload',
             'class' =>'sub-option',
+            'std' => '',
             'type' => 'upload', 
             ); 
     
@@ -310,13 +336,25 @@ function optionsframework_options() {
     $options[] = array(
             'name' => __( 'Homepage Settings', 'accesspress-mag' ),
 		    'type' => 'heading'
-	       );
+	        );
     
-     $options[] = array(
+    $options[] = array(
             'name' => __( 'Slider Settings', 'accesspress-mag' ),
             'id'   => 'slider_settings',
             'type' => 'groupstart'
-            );            
+            );
+    $options[] = array(
+            'name' => __( 'Select Slide`s Posts', 'accesspress-mag' ),
+            'desc' => __( 'Choose option to slide posts in slider', 'accesspress-mag' ),
+            'id' => 'slider_post_option',            
+            'options' => array(
+                    ' ' => __( 'Show Latest Posts', 'accesspress-mag' ),
+                    'cat' => __( 'Show posts from a category', 'accesspress-mag' ),
+                    ),
+            'type' => 'radio',
+            'class' => 'slider_type',
+            'std' => ' ' 
+            );             
     $options[] = array(
             'name' => __( 'Select Category', 'accesspress-mag' ),
             'desc' => __( 'Select a category for homepage slider', 'accesspress-mag' ),    
@@ -365,6 +403,7 @@ function optionsframework_options() {
             'desc' => __( 'Choose number of slides', 'accesspress-mag' ),
             'id' => 'count_slides', 
             'type' => 'select',
+            'std' => '1',
             'options' => $options_slides
             );
     $options[] = array(

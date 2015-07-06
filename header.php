@@ -18,19 +18,31 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php do_action( 'accesspress_mag_before' ); ?>
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'accesspress-mag' ); ?></a>
     <?php 
         $accesspress_mag_logo = get_theme_mod( 'header_image' );
         $branding_class = '';
-        $accesspress_mag_top_menu_switch = of_get_option( 'top_menu_switch' );
         $accesspress_mag_logo_alt = of_get_option( 'logo_alt' );
         $accesspress_mag_logo_title = of_get_option( 'logo_title' );
+        $accesspress_mag_ticker_option = of_get_option( 'news_ticker_option' );
     ?>  
 	
     <header id="masthead" class="site-header" role="banner">    
-        
-        <div class="top-menu-wrapper clearfix">
+    
+        <?php
+            /**
+             * Top menu section
+             * 
+             */ 
+            if( has_nav_menu( 'top_menu' ) || has_nav_menu( 'top_menu_right' ) ){
+                $top_menu_class = 'has_menu'; 
+            } else {
+                $top_menu_class = 'no_menu';
+            }
+        ?>
+        <div class="top-menu-wrapper <?php echo esc_attr( $top_menu_class ); ?> clearfix">
             <div class="apmag-container">   
             <?php if ( has_nav_menu( 'top_menu' ) ) { ?>   
                 <nav id="top-navigation" class="top-main-navigation" role="navigation">
@@ -45,8 +57,18 @@
                 </nav><!-- #site-navigation -->
             <?php } ?>
             </div>
-        </div>
-         
+        </div><!-- .top-menu-wrapper -->
+        
+        <?php 
+            /**
+             * 
+             * News Ticker section 
+             */
+             if( $accesspress_mag_ticker_option == '1' ){
+                accesspress_mag_ticker();
+             }
+        ?>
+            
         <div class="logo-ad-wrapper clearfix">
             <div class="apmag-container">
         		<div class="site-branding <?php echo esc_attr( $branding_class ) ;?>">
@@ -69,10 +91,11 @@
                     </div><!--header ad-->
                 <?php endif; ?>                
                 
-            </div>
-        </div>
-
-		<nav id="site-navigation" class="main-navigation" role="navigation">
+            </div><!-- .apmag-container -->
+        </div><!-- .logo-ad-wrapper -->
+   
+    	
+        <nav id="site-navigation" class="main-navigation" role="navigation">
 			<div class="apmag-container">
                 <div class="nav-wrapper">
                     <div class="nav-toggle hide">
@@ -80,7 +103,13 @@
                         <span> </span>
                         <span> </span>
                     </div>
-        			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'menu' ) ); ?>
+        			<?php 
+                        if( has_nav_menu( 'primary' ) ){
+                            wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'menu' ) );    
+                        } else {
+                            wp_page_menu();
+                        }
+                    ?>
                 </div>
 
                 <?php get_search_form(); ?> 
@@ -88,5 +117,6 @@
 		</nav><!-- #site-navigation -->
         
 	</header><!-- #masthead -->
-
+    <?php do_action( 'accesspress_mag_after_header' ); ?>
+	<?php do_action( 'accesspress_mag_before_main' ); ?>
 	<div id="content" class="site-content">

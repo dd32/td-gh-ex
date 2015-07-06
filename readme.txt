@@ -28,6 +28,9 @@ JS Files
     
     WOW Min JS: MIT license
     https://github.com/matthieua/WOW
+    
+    Jquery News Ticker: GPL v2
+    http://www.jquerynewsticker.com/
   
 -------------------------------------------
 Fonts
@@ -62,7 +65,13 @@ GPL compatible for own images
 
 ----------------------------------------------------
 == Changelog ==
-Versuib 2.0.5
+Version 2.0.6
+ * Added news ticker option
+ * Added few animation at home page banner
+ * Refine some code at accesspress-function.php file
+ * Added sticky menu option for primary menu only 
+
+Version 2.0.5
  * Fixed the error for widget title
  
 Version 2.0.4

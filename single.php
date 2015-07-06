@@ -21,6 +21,9 @@ else {
         $content_value = 'style1';
     }
 } 
+
+do_action( 'accesspress_mag_before_body_content' );
+
 ?>
 <div class="apmag-container">
     <?php
@@ -88,4 +91,7 @@ else {
     }
  ?>
 </div>
+
+<?php do_action( 'accesspress_mag_after_body_content' ); ?>
+
 <?php get_footer(); ?>

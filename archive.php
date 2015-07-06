@@ -8,6 +8,9 @@
  */
 
 get_header(); ?>
+
+<?php do_action( 'accesspress_mag_before_body_content' ); ?>
+
 <div class="apmag-container">
     <?php   
         $accesspress_mag_show_breadcrumbs = of_get_option('show_hide_breadcrumbs');
@@ -67,4 +70,7 @@ get_header(); ?>
     }
 ?>
 </div>
+
+<?php do_action( 'accesspress_mag_after_body_content' ); ?>
+
 <?php get_footer(); ?>

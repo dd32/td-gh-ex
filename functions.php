@@ -88,163 +88,6 @@ function accesspress_mag_setup() {
 endif; // accesspress_mag_setup
 add_action( 'after_setup_theme', 'accesspress_mag_setup' );
 
-/**
- * Register widget area.
- *
- * @link http://codex.wordpress.org/Function_Reference/register_sidebar
- */
-function accesspress_mag_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Home top sidebar', 'accesspress-mag' ),
-		'id'            => 'accesspress-mag-home-top-sidebar',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title"><span>',
-		'after_title'   => '</span></h1>',
-	) );
-    
-    register_sidebar( array(
-   	    'name'          => __( 'Home middle sidebar', 'accesspress-mag' ),
-    	'id'            => 'accesspress-mag-home-middle-sidebar',
-    	'description'   => '',
-    	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-    	'after_widget'  => '</aside>',
-    	'before_title'  => '<h1 class="widget-title"><span>',
-    	'after_title'   => '</span></h1>',
-    ) );
-    
-    register_sidebar( array(
-   	    'name'          => __( 'Home bottom sidebar', 'accesspress-mag' ),
-    	'id'            => 'accesspress-mag-home-bottom-sidebar',
-    	'description'   => '',
-    	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-    	'after_widget'  => '</aside>',
-    	'before_title'  => '<h1 class="widget-title"><span>',
-    	'after_title'   => '</span></h1>',
-    ) );
-    
-    register_sidebar( array(
-		'name'          => __( 'Footer 1', 'accesspress-mag' ),
-		'id'            => 'accesspress-mag-footer-1',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title"><span>',
-		'after_title'   => '</span></h1>',
-	) );
-    
-    register_sidebar( array(
-		'name'          => __( 'Footer 2', 'accesspress-mag' ),
-		'id'            => 'accesspress-mag-footer-2',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title"><span>',
-		'after_title'   => '</span></h1>',
-	) );
-    
-    register_sidebar( array(
-		'name'          => __( 'Footer 3', 'accesspress-mag' ),
-		'id'            => 'accesspress-mag-footer-3',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title"><span>',
-		'after_title'   => '</span></h1>',
-	) );
-    
-    register_sidebar( array(
-		'name'          => __( 'Footer 4', 'accesspress-mag' ),
-		'id'            => 'accesspress-mag-footer-4',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title"><span>',
-		'after_title'   => '</span></h1>',
-	) );
-    
-    register_sidebar( array(
-		'name'          => __( 'Left Sidebar', 'accesspress-mag' ),
-		'id'            => 'accesspress-mag-sidebar-left',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title"><span>',
-		'after_title'   => '</span></h1>',
-	) );
-	
-    register_sidebar( array(
-		'name'          => __( 'Right Sidebar', 'accesspress-mag' ),
-		'id'            => 'accesspress-mag-sidebar-right',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title"><span>',
-		'after_title'   => '</span></h1>',
-	) );
-    
-    register_sidebar( array(
-		'name'          => __( 'Shop', 'accesspress-mag' ),
-		'id'            => 'shop',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title"><span>',
-		'after_title'   => '</span></h1>',
-	) );
-    
-    register_sidebar( array(
-		'name'          => __( 'Header Ad ', 'accesspress-mag' ),
-		'id'            => 'accesspress-mag-header-ad',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title"><span>',
-		'after_title'   => '</span></h1>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Article Ad', 'accesspress-mag' ),
-		'id'            => 'accesspress-mag-article-ad',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s widget-ads">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title"><span>',
-		'after_title'   => '</span></h1>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Homepage Inline Ad', 'accesspress-mag' ),
-		'id'            => 'accesspress-mag-homepage-inline-ad',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s widget-ads">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title"><span>',
-		'after_title'   => '</span></h1>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Homepage Sidebar Top Ad', 'accesspress-mag' ),
-		'id'            => 'accesspress-mag-homepage-sidebar-top-ad',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title"><span>',
-		'after_title'   => '</span></h1>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Homepage Sidebar Middle Ad', 'accesspress-mag' ),
-		'id'            => 'accesspress-mag-homepage-sidebar-middle-ad',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title"><span>',
-		'after_title'   => '</span></h1>',
-	) );
-}
-add_action( 'widgets_init', 'accesspress_mag_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
@@ -257,14 +100,36 @@ function accesspress_mag_scripts() {
     $my_theme = wp_get_theme();
     $theme_version = $my_theme->get('Version'); 
     wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.css');
-    wp_enqueue_style( 'accesspress-mag-style', get_stylesheet_uri(), array(), esc_attr($theme_version) );    
-    wp_enqueue_style( 'fontawesome-font', get_template_directory_uri(). '/css/font-awesome.min.css' );	
+    
+    wp_enqueue_style( 'accesspress-mag-style', get_stylesheet_uri(), array(), esc_attr($theme_version) );
+        
+    wp_enqueue_style( 'fontawesome-font', get_template_directory_uri(). '/css/font-awesome.min.css' );
+    	
     wp_enqueue_style( 'responsive', get_template_directory_uri() . '/css/responsive.css');
+    
 
-    wp_enqueue_script( 'bxslider-js', get_template_directory_uri(). '/js/jquery.bxslider.min.js', array(), '4.1.2', true );
+    if ( of_get_option( 'news_ticker_option' ) == 1 ) {        
+      wp_enqueue_style( 'ticker-style', get_template_directory_uri() . '/js/news-ticker/ticker-style.css' );
+      
+      wp_enqueue_style( 'newsticker-style', get_template_directory_uri() . '/js/news-ticker/news-ticker-style.css' );
+      
+      wp_enqueue_script( 'news-ticker', get_template_directory_uri() . '/js/news-ticker/jquery.ticker.js', array( 'jquery' ), '1.0.0', true );
+   }
+
+   if ( of_get_option( 'skticky_menu_option' ) == 1 ) {
+      wp_enqueue_script( 'jquery-sticky', get_template_directory_uri(). '/js/sticky/jquery.sticky.js', array( 'jquery' ), '20150309', true );
+
+      wp_enqueue_script( 'accesspress-mag-sticky-menu-setting', get_template_directory_uri(). '/js/sticky/sticky-setting.js', array( 'jquery-sticky' ), '20150309', true );
+   }
+   
+    wp_enqueue_script( 'bxslider-js', get_template_directory_uri(). '/js/jquery.bxslider.min.js', array( 'jquery' ), '4.1.2', true );
+    
     wp_enqueue_script( 'accesspress-mag-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+    
 	wp_enqueue_script( 'accesspress-mag-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+    
 	wp_enqueue_script( 'wow', get_template_directory_uri() . '/js/wow.min.js', array(), '1.0.1');
+    
 	wp_enqueue_script( 'accesspress-mag-custom-scripts', get_template_directory_uri() . '/js/custom-scripts.js', array('jquery'), '1.0.1' );
     
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -310,6 +175,11 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
+ * Load widgets and widgets area
+ */
+require get_template_directory() . '/inc/widgets/widgets.php';
+
+/**
  * Implement the custom metabox feature
  */
 require get_template_directory() . '/inc/custom-metabox.php';
@@ -323,5 +193,10 @@ require get_template_directory() . '/inc/accesspress-widgets.php';
  * Load Options Plugin Activation
  */
 require get_template_directory() . '/inc/accesspress-plugin-activation.php';
+
+/**
+ * Load TGMPA function
+ */
+require get_template_directory() . '/inc/accesspress-tgmpa.php';
 
 define('OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri(). '/inc/option-framework/');
