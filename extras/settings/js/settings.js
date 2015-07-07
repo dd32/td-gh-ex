@@ -73,7 +73,7 @@ jQuery( function ( $ ) {
             var attachment = frame.state().get('selection').first().attributes;
 
             $c.find('.current .title' ).html(attachment.title);
-            $c.find('input[type=hidden]' ).val(attachment.id);
+            $c.find('input[type=hidden]' ).val(attachment.id).change();
 
             if(typeof attachment.sizes != 'undefined'){
                 if(typeof attachment.sizes.thumbnail != 'undefined')
@@ -84,7 +84,7 @@ jQuery( function ( $ ) {
             else{
                 $c.find('.current .thumbnail' ).attr('src', attachment.icon).fadeIn();
             }
-            
+
             frame.close();
         });
 
@@ -118,7 +118,7 @@ jQuery( function ( $ ) {
             var $$ = $(this ).closest('td');
             
             $$.find('.current .title' ).html('');
-            $$.find('input[type=hidden]' ).val('');
+            $$.find('input[type=hidden]' ).val('').change();
             $$.find('.current .thumbnail' ).fadeOut('fast');
             $(this ).fadeOut('fast');
         });
@@ -156,8 +156,8 @@ jQuery( function ( $ ) {
     } );
     
     // Autofill
-    $('.input-field-select')
-        .change(function(){
+    $('body')
+        .on('change', '.input-field-select', function(){
             var c = $(this ).closest('td').find('input');
             c.val( $(this ).val() );
         });
@@ -218,7 +218,7 @@ jQuery( function ( $ ) {
 
         var $$ = $(this);
         var widget_form = $$.closest('td').find('.so-settings-widget-form');
-        widget_form.html( $$.data('form') );
+        widget_form.html( widget_form.find('.so-settings-widget-form-template').html() );
 
         return false;
     }).click();
@@ -233,4 +233,134 @@ jQuery( function ( $ ) {
         var upgradeLink = $('<div id="upgrade-to-premium" class="screen-meta-toggle"><a href="' + siteoriginSettings.premium.premiumUrl + '" target="_blank">' + siteoriginSettings.premium.name + '</a></div>');
         $('#screen-meta-links').append(upgradeLink);
     }
+
+    // Now, lets handle the preview
+    var previewModal;
+    $('#siteorigin-settings-form .siteorigin-settings-preview-button').click( function(e){
+        e.preventDefault();
+
+        // Lets create the modal
+        if( previewModal == null ) {
+            previewModal = $( $('#settings-preview-modal-template').html()).appendTo('body');
+        }
+        else{
+            previewModal.show();
+        }
+
+
+        // Submit the preview to the iframe
+        var submitToIframe = function(){
+            // And now submit the form to this iframe
+            var $f = $('#siteorigin-settings-form');
+            $f
+                .attr({
+                    'target': 'siteorigin-settings-preview-iframe',
+                    'action' : previewModal.find('iframe').attr('src')
+                });
+            var $hidden = $('<input type="hidden" name="siteorigin_settings_is_preview" value="true" />').appendTo($f);
+            $f.submit();
+            $hidden.remove();
+            $f
+                .attr({
+                    'target': '_self',
+                    'action' : 'options.php'
+                });
+        }
+        submitToIframe();
+
+        // After the iframe has loaded, intercept all link clicks so we can continue the preview.
+        previewModal.find('iframe').load(function(){
+            var iframe = $(this);
+            $(this).contents().find('a').click(function(e){
+                e.preventDefault();
+
+                // Ignore this click if it's going outside the current site.
+                var linkUrl = $(this).prop('href').split('#')[0];
+                if( linkUrl.indexOf( iframe.data( 'home' ) ) != 0 || linkUrl == iframe.attr( 'src' ) ) {
+                    return false;
+                }
+
+                iframe.attr( 'src', linkUrl );
+                submitToIframe();
+            })
+        });
+
+        // Handle closing the modal
+        previewModal.find('.siteorigin-settings-close').click(function(){
+            previewModal.hide();
+        });
+    } );
+
+    // Set up conditionals
+    $optionsForm.find('[data-conditional]').each(function(){
+        var
+            $$ = $(this),
+            $tr = $$.closest('tr'),
+            conditional = $$.data('conditional');
+
+        if( typeof conditional.show === 'undefined' ) {
+            conditional.show = 'else';
+        }
+        if( typeof conditional.hide === 'undefined' ) {
+            conditional.hide = 'else';
+        }
+        if( conditional.hide === 'else' && conditional.show === 'else' ) {
+            return;
+        }
+
+        // The test that decides if we should show/hide this field
+        var runTest = function(type){
+            if( typeof conditional[type] === 'undefined' || conditional[type] === 'else' ) {
+                return null;
+            }
+
+            var pass = true;
+            var vals = null, $f = null;
+
+            for( var k in conditional[type] ) {
+                $f = $optionsForm.find("[data-field=" + k + "]").find('input,select,textarea');
+                vals = conditional[type][k].split('|');
+
+                if( vals.indexOf( $f.val() ) === -1 && pass ){
+                    pass = false;
+                }
+            }
+
+            return pass;
+        };
+
+        // This function shows/hides the given field
+        var showHide = function(){
+            if( conditional.show === 'else' ) {
+                if( runTest('hide') ) {
+                    $tr.hide();
+                }
+                else {
+                    $tr.show();
+                }
+            }
+            else if( conditional.hide === 'else' ) {
+                if( runTest('show') ) {
+                    $tr.show();
+                }
+                else {
+                    $tr.hide();
+                }
+            }
+            else {
+                if( runTest('hide') ) {
+                    $tr.hide();
+                }
+                if( runTest('show') ) {
+                    $tr.show();
+                }
+            }
+        }
+
+        // When a settings field changes, run a show/hide test
+        $optionsForm.find('input,select').on('change keyup', showHide);
+        showHide();
+
+    });
+
 } );

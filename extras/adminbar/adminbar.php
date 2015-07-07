@@ -26,7 +26,7 @@ function siteorigin_adminbar_init() {
 	}
 
 	if ( !empty( $bar ) ) {
-		if ( empty( $bar->icon ) ) $bar->icon = 'http://www.gravatar.com/avatar/' . md5( 'greg@siteorigin.com' ) . '?s=44';
+		if ( empty( $bar->icon ) ) $bar->icon = 'https://www.gravatar.com/avatar/' . md5( 'greg@siteorigin.com' ) . '?s=44';
 	}
 
 	$GLOBALS['siteorigin_adminbar_active'] = $bar;
@@ -61,7 +61,7 @@ function siteorigin_adminbar_enqueue( $suffix ) {
 
 	// Only enqueue these if there's an active admin bar
 	if ( !empty( $GLOBALS['siteorigin_adminbar_active'] ) ) {
-		wp_enqueue_script( 'siteorigin-admin-bar', get_template_directory_uri() . '/extras/adminbar/assets/bar.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
+		wp_enqueue_script( 'siteorigin-admin-bar', get_template_directory_uri() . '/extras/adminbar/assets/bar.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
 		wp_enqueue_style( 'siteorigin-admin-bar', get_template_directory_uri() . '/extras/adminbar/assets/bar.css', array(), SITEORIGIN_THEME_VERSION );
 	}
 }

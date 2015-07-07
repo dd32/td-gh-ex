@@ -11,11 +11,8 @@
  */
 function siteorigin_theme_update_filter( $current ) {
 	$theme = basename( get_template_directory() );
-	$order_number = get_option( 'siteorigin_order_number_' . $theme, false );
+	$order_number = siteorigin_setting('premium_order_number');
 	if ( empty( $order_number ) ) return $current; // Skip if the user has not entered an order number.
-
-	// Updates are not compatible with the old child theme system
-	if ( basename( get_stylesheet_directory() ) == basename( get_template_directory() ) . '-premium' ) return $current;
 
 	static $request = false;
 	if(empty($request)){
@@ -51,44 +48,30 @@ add_filter( 'pre_set_site_transient_update_themes', 'siteorigin_theme_update_fil
  * @action admin_init
  */
 function siteorigin_theme_update_settings() {
-	$theme = basename( get_template_directory() );
-	$name = 'siteorigin_order_number_' . $theme;
-
-	add_settings_section(
-		'so-order-code',
-		sprintf( __( '%s Order Code', 'origami' ), ucfirst( $theme ) ),
-		'__return_false',
-		'general'
-	);
-
-	add_settings_field(
-		'so-order-code-field',
-		__( 'Order Code', 'origami' ),
-		'siteorigin_theme_update_settings_order_field',
-		'general',
-		'so-order-code'
-	);
-
-	register_setting( 'general', $name, 'siteorigin_theme_update_refresh' );
+	siteorigin_settings_add_section('premium', __('Premium', 'origami'));
+	siteorigin_settings_add_field('premium', 'order_number', 'text', __('Order Number', 'origami'), array(
+		'description' => __('Enter the order number we sent you by email', 'origami')
+	));
 }
-
-add_action( 'admin_init', 'siteorigin_theme_update_settings' );
+add_action( 'siteorigin_settings_init', 'siteorigin_theme_update_settings', 40 );
 
 /**
- * Render the order field
+ * Add the order number default, this is to take into account the legacy order number.
  */
-function siteorigin_theme_update_settings_order_field() {
+function siteorigin_theme_update_settings_defaults( $defaults ){
 	$theme = basename( get_template_directory() );
 	$name = 'siteorigin_order_number_' . $theme;
+	$defaults['premium_order_number'] = get_option($name, false);
 
-	?>
-	<input type="text" class="regular-text code" name="<?php echo esc_attr( $name ) ?>" value="<?php echo esc_attr( get_option( $name, false ) ) ?>" />
-	<p class="description"><?php _e( 'Find your order number in your original order email from SiteOrigin', 'origami' ); ?></p>
-	<?php
+	return $defaults;
 }
+add_filter('siteorigin_theme_default_settings', 'siteorigin_theme_update_settings_defaults');
 
-function siteorigin_theme_update_refresh( $code ) {
+/**
+ * Trigger an update check
+ */
+function siteorigin_theme_update_refresh( ) {
 	// This tells the theme update to recheck
 	set_site_transient( 'update_themes', null );
-	return $code;
 }
+add_action('siteorigin_settings_changed_field_changed_premium_order_number', 'siteorigin_theme_update_refresh');

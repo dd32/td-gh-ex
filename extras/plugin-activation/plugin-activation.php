@@ -22,7 +22,7 @@ function siteorigin_plugin_activation_render_page(){
 }
 
 /**
- * Install a plugin
+ * Install a plugin.
  */
 function siteorigin_plugin_activation_do_plugin_install(){
 	/** All plugin information will be stored in an array for processing */
@@ -36,7 +36,7 @@ function siteorigin_plugin_activation_do_plugin_install(){
 		$plugin['slug']   = $_GET['plugin']; // Plugin slug
 
 		if(!empty($_GET['plugin_source'])) {
-			$plugin['source'] = $_GET['plugin_source'];
+			$plugin['source'] = urlencode($_GET['plugin_source']);
 		}
 		else {
 			$plugin['source'] = false;
@@ -47,8 +47,8 @@ function siteorigin_plugin_activation_do_plugin_install(){
 			add_query_arg(
 				array(
 					'page'          => 'siteorigin_plugin_activation',
-					'plugin'        => $plugin['slug'],
-					'plugin_name'   => $plugin['name'],
+					'plugin'        => urlencode($plugin['slug']),
+					'plugin_name'   => urlencode($plugin['name']),
 					'plugin_source' => $plugin['source'],
 					'siteorigin-pa-install' => 'install-plugin',
 				),
@@ -93,6 +93,9 @@ function siteorigin_plugin_activation_do_plugin_install(){
 }
 
 function siteorigin_plugin_activation_install_url($plugin, $plugin_name, $source = false){
+	// This is to prevent the issue where this URL is called from outside the admin
+	if( !is_admin() || !function_exists('get_plugins') ) return false;
+
 	$plugins = get_plugins();
 	$plugins = array_keys($plugins);
 	
@@ -127,6 +130,13 @@ function siteorigin_plugin_activation_install_url($plugin, $plugin_name, $source
 	}
 }
 
+/**
+ * Check if a plugin is currently activating.
+ *
+ * @param $plugin
+ *
+ * @return bool
+ */
 function siteorigin_plugin_activation_is_activating( $plugin ){
 	if( !is_admin() ) return false;
 	return (
@@ -134,6 +144,6 @@ function siteorigin_plugin_activation_is_activating( $plugin ){
 		&& isset($_GET['action'])
 		&& ($_GET['action'] == 'activate' || $_GET['action'] == 'upgrade-plugin' || $_GET['action'] == 'activate-plugin')
 		&& isset($_GET['plugin'])
-		&& $_GET['plugin'] == $plugin.'/'.$plugin.'.php'
+		&& strpos($_GET['plugin'], '/'.$plugin.'.php') !== false
 	);
 }

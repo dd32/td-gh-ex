@@ -35,13 +35,13 @@ function siteorigin_premium_page_render() {
 		case 'enter-order' :
 			$option_name = 'siteorigin_order_number_' . $theme;
 			if ( isset( $_POST['_upgrade_nonce'] ) && wp_verify_nonce( $_POST['_upgrade_nonce'], 'save_order_number' ) && isset( $_POST['order_number'] ) ) {
-				update_option( $option_name, trim( $_POST['order_number'] ) );
+				siteorigin_settings_set('premium_order_number', trim( $_POST['order_number'] ) );
 			}
 
 			// Validate the order number
 			$result = wp_remote_get(
 				add_query_arg( array(
-					'order_number' => get_option( $option_name ),
+					'order_number' => siteorigin_setting( 'premium_order_number' ),
 					'action' => 'validate_order_number',
 				), SITEORIGIN_THEME_ENDPOINT . '/premium/' . $theme . '/' )
 			);
@@ -53,11 +53,15 @@ function siteorigin_premium_page_render() {
 					// Trigger a refresh of the theme update information
 					set_site_transient( 'update_themes', null );
 				}
+				else {
+					// Clear the order number if it is not valid
+					siteorigin_settings_set('premium_order_number', '');
+				}
 			}
 
 			?>
 			<div class="wrap" id="theme-upgrade">
-				<h2><?php printf(__('Your Order Number Is [%s]', 'origami'), get_option( $option_name )) ?></h2>
+				<h2><?php printf(__('Your Order Number Is [%s]', 'origami'), siteorigin_setting( 'premium_order_number' )) ?></h2>
 
 				<?php if ( is_null( $valid ) ) : ?>
 				<p>
@@ -107,10 +111,12 @@ function siteorigin_premium_page_render() {
  */
 function siteorigin_premium_admin_enqueue( $prefix ) {
 	// Ignore this for premium themes
-	if(defined( 'SITEORIGIN_IS_PREMIUM' )) return;
+	if( defined( 'SITEORIGIN_IS_PREMIUM' ) ) return;
+
+	$js_suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 	
 	if ( $prefix == 'appearance_page_premium_upgrade' ) {
-		wp_enqueue_script( 'siteorigin-premium-upgrade', get_template_directory_uri() . '/extras/premium/js/premium.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
+		wp_enqueue_script( 'siteorigin-premium-upgrade', get_template_directory_uri() . '/extras/premium/js/premium' . $js_suffix . '.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
 		wp_enqueue_style( 'siteorigin-premium-upgrade', get_template_directory_uri() . '/extras/premium/css/premium.css', array(), SITEORIGIN_THEME_VERSION );
 	}
 
@@ -123,12 +129,12 @@ function siteorigin_premium_admin_enqueue( $prefix ) {
 	
 	if($teaser_required){
 		wp_enqueue_style( 'siteorigin-premium-teaser', get_template_directory_uri() . '/extras/premium/css/premium-teaser.css', array(), SITEORIGIN_THEME_VERSION );
-		wp_enqueue_script( 'siteorigin-premium-teaser', get_template_directory_uri() . '/extras/premium/js/premium-teaser.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
+		wp_enqueue_script( 'siteorigin-premium-teaser', get_template_directory_uri() . '/extras/premium/js/premium-teaser' . $js_suffix . '.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
 	}
 
 	// Enqueue the page templates teaser, which works slightly differently
 	if( siteorigin_premium_teaser_get_support('page-templates') ){
-		wp_enqueue_script( 'siteorigin-premium-teaser-templates', get_template_directory_uri() . '/extras/premium/js/premium-teaser-templates.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
+		wp_enqueue_script( 'siteorigin-premium-teaser-templates', get_template_directory_uri() . '/extras/premium/js/premium-teaser-templates' . $js_suffix . '.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
 		
 		wp_localize_script( 'siteorigin-premium-teaser-templates', 'siteoriginTeaserTemplates' , array(
 			'code' => '<p>'.siteorigin_premium_teaser(
@@ -239,7 +245,7 @@ function siteorigin_premium_teaser_customizer_enqueue(){
 	if(!siteorigin_premium_teaser_get_support('customizer')) return;
 	
 	wp_enqueue_style( 'siteorigin-premium-teaser', get_template_directory_uri() . '/extras/premium/css/premium-teaser.css', array(), SITEORIGIN_THEME_VERSION );
-	wp_enqueue_script( 'siteorigin-premium-teaser', get_template_directory_uri() . '/extras/premium/js/premium-teaser.min.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
+	wp_enqueue_script( 'siteorigin-premium-teaser', get_template_directory_uri() . '/extras/premium/js/premium-teaser.js', array( 'jquery' ), SITEORIGIN_THEME_VERSION );
 }
 add_action('customize_controls_enqueue_scripts', 'siteorigin_premium_teaser_customizer_enqueue');
 
