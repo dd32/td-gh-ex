@@ -131,6 +131,9 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog:
+
+@Version 1.2
+customizer added
 @version 1.1
 1. All social links initialised with the # value.
 2. Remove console errors.

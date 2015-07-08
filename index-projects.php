@@ -1,6 +1,5 @@
-<?php $current_options=get_option('quality_options');
-if($current_options['home_projects_enabled']=="on")
-{ ?>
+<?php $quality_pro_options=theme_data_setup(); 
+$current_options = wp_parse_args(  get_option( 'quality_pro_options', array() ), $quality_pro_options );  ?>
 <div class="qua_portfolio_carusel">
 	<div class="container">
 		<div class="qua_port_title">
@@ -97,4 +96,3 @@ if($current_options['home_projects_enabled']=="on")
 		</div>
 	</div>
 </div>
-<?php } ?>

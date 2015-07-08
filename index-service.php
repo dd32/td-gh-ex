@@ -1,6 +1,7 @@
 <!-- Quality Service Section ---->
+<?php $quality_pro_options=theme_data_setup(); 
+		  $current_options = wp_parse_args(  get_option( 'quality_pro_options', array() ), $quality_pro_options ); ?>
 <div class="container">
-	<?php $current_options=get_option('quality_options'); ?>
 	<div class="row">
 		<div class="qua_heading_title">
 		<?php if($current_options['service_title']) { ?>

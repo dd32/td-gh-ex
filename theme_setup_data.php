@@ -1,15 +1,13 @@
 <?php
 function theme_data_setup()
 {	
-	$project_img = QUALITY_TEMPLATE_DIR_URI .'/images/project_thumb.png';
 	return $theme_options=array(
 			//Logo and Fevicon header			
-			'front_page'  => 'on',
 			'home_feature' => QUALITY_TEMPLATE_DIR_URI .'/images/slider/slide.jpg',
 			'upload_image_logo'=>'',
 			'height'=>'80',
 			'width'=>'200',
-			'text_title'=>'off',
+			'text_title'=>false,
 			'upload_image_favicon'=>'',	
 			
 			/* Home Image */
@@ -20,7 +18,7 @@ function theme_data_setup()
 			'service_title'=>'What We Do',
 			'service_description' =>'We provide best WordPress solutions for your business. Thanks to our framework you will get more happy customers.',
 			
-			'service_enable' => 'on',
+			'service_enable' => true,
 			'service_one_title' => 'Fully Responsive',
 			'service_two_title' => 'SEO Friendly',
 			'service_three_title' => 'Easy Customization',
@@ -36,30 +34,30 @@ function theme_data_setup()
 			'service_three_text' => 'fLorem Ipsum which looks reason able. The generated Lorem Ipsum is t',
 			'service_four_text' => 'Lorem Ipsum which looks reason able. The generated Lorem Ipsum is-o',
 			//Projects Section Settings
-			'home_projects_enabled' => 'on',
+			'home_projects_enabled' => true,
 			'project_heading_one' => 'Featured Portfolio Projects',
 			'project_tagline' => 'Maecenas sit amet tincidunt elit. Pellentesque habitant morbi tristique senectus et netus et Nulla facilisi.',
 			
-			'project_one_thumb' => $project_img,
+			'project_one_thumb' => QUALITY_TEMPLATE_DIR_URI .'/images/project_thumb.png',
 			'project_one_title' => 'Lorem Ipsum',
 			
-		    'project_two_thumb' => $project_img,
+		    'project_two_thumb' => QUALITY_TEMPLATE_DIR_URI .'/images/project_thumb.png',
 			'project_two_title' => 'Postao je popularan',
 			
-			'project_three_thumb' => $project_img,
+			'project_three_thumb' => QUALITY_TEMPLATE_DIR_URI .'/images/project_thumb.png',
 			'project_three_title' => 'kojekakve promjene s',
 			
-			'project_four_thumb' => $project_img,
+			'project_four_thumb' => QUALITY_TEMPLATE_DIR_URI .'/images/project_thumb.png',
 			'project_four_title' => 'kojekakve promjene s',
 			
 			//BLOG
-			'home_blog_enabled' => 'on',
+			'home_blog_enabled' => true,
 			'blog_heading' => 'Latest <span>From</span> Blog',
 			
-			'quality_custom_css'=>'',						
-			'footer_customizations' => '&copy; 2014 <span> Quality </span>. Design & Developed by',
-			'created_by_webriti_text' => 'Webriti',
-			'created_by_link' => 'http://www.webriti.com',
+			//Custom css
+			'webrit_custom_css'=>'',						
+			//Footer Customization
+			'footer_copyright_text' => '<p>@ Copyright 2014 Quality Center Design And Developed by  <a href="'.esc_url('http://www.webriti.com').'" target="_blank">WordPress Theme</a></p>',
 		);
 }
 ?>

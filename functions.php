@@ -13,8 +13,17 @@
   	require( QUALITY_THEME_FUNCTIONS_PATH . '/resize_image/resize_image.php'); //Image Resizing 	
   	require( QUALITY_THEME_FUNCTIONS_PATH . '/commentbox/comment-function.php'); //Comment Handling
   	require( QUALITY_THEME_FUNCTIONS_PATH . '/widget/custom-sidebar.php'); //Sidebar Registration
-		
-  	//wp title tag starts here
+	
+	
+	//Customizer 
+	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-service.php');
+	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-slider.php');
+	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-copyright.php');
+	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-home.php');
+	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-project.php');
+	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-blog.php');
+	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro.php');
+	//wp title tag starts here
   	function quality_head( $title, $sep )
   	{	global $paged, $page;		
   		if ( is_feed() )
@@ -39,7 +48,7 @@
 		if ( ! isset( $content_width ) ) $content_width = 700;//In PX
 		// Load text domain for translation-ready
   		load_theme_textdomain( 'quality', QUALITY_THEME_FUNCTIONS_PATH . '/lang' );
-  		
+  		add_theme_support( "title-tag" ); //Support title tag
   		add_theme_support( 'post-thumbnails' ); //supports featured image
   		// This theme uses wp_nav_menu() in one location.
   		register_nav_menu( 'primary', __( 'Primary Menu', 'quality' ) ); //Navigation
@@ -48,18 +57,7 @@
   		
   		require_once('theme_setup_data.php');
   		// setup admin pannel defual data for index page		
-  		$quality_options=theme_data_setup();
-  		
-  		$current_theme_options = get_option('quality_options'); // get existing option data 		
-  		if($current_theme_options)
-  		{ 	$quality_options = array_merge($quality_options, $current_theme_options);
-  			update_option('quality_options',$quality_options);	// Set existing and new option data			
-  		}
-  		else
-  		{
-  			add_option('quality_options', $quality_options);
-  		}
-  		require( QUALITY_THEME_FUNCTIONS_PATH . '/theme_options/option_pannel.php' ); // for Option Panel Settings		
+  		$quality_pro_options=theme_data_setup();		
   	}
   	// Read more tag to formatting in blog page 
   	function quality_new_content_more($more)
@@ -67,9 +65,17 @@
   	   return ' <a href="' . get_permalink() . "#more-{$post->ID}\" class=\"qua_blog_btn\">Read More<i class='fa fa-long-arrow-right'></i></a>";
   	}   
   	add_filter( 'the_content_more_link', 'quality_new_content_more' );
-	add_filter( "the_excerpt", "webriti_add_class_to_excerpt" );
-	function webriti_add_class_to_excerpt( $excerpt ) {
+	add_filter( "the_excerpt", "quality_add_class_to_excerpt" );
+	function quality_add_class_to_excerpt( $excerpt ) {
     return str_replace('<p', '<p class="qua-blog-post-description"', $excerpt);
 	}
-
+	
+	
+	add_action('admin_menu', 'quality_admin_menu_pannel');  
+	function quality_admin_menu_pannel()
+	{	
+	add_theme_page( __('Option panel','quality'), __('Option panel','health'), 'edit_theme_options', 'option_panel', 'quality_option_page' );
+	}
+	function quality_option_page ()
+	{require_once('option-panel.php');}
   ?>

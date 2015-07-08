@@ -10,12 +10,13 @@
     <title><?php wp_title( '|', true, 'right' ); ?></title>
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <!-- Theme Css -->
-    <?php $current_options=get_option('quality_options'); ?>
+	<?php
+	$quality_pro_options=theme_data_setup(); 
+	$current_options = wp_parse_args(  get_option( 'quality_pro_options', array() ), $quality_pro_options ); ?>
     <?php if($current_options['upload_image_favicon']!=''){ ?>
     <link rel="shortcut icon" href="<?php  echo esc_url($current_options['upload_image_favicon']); ?>" />
-    <?php } ?>
-    <link href="<?php echo get_stylesheet_uri(); ?>" rel="stylesheet" />
-    <?php wp_head(); ?>
+    <?php } 
+	wp_head(); ?>
   </head>
   <body <?php body_class(); ?>>
     <!--Header Logo & Menus-->
@@ -32,7 +33,7 @@
             </button>
             <div class="logo pull-left" >
               <?php 
-                if($current_options['text_title'] =="on")
+                if($current_options['text_title'] ==true)
                 	{ ?>
               <div class="qua_title_head">
                 <h1 class="qua-logo" ><a href="<?php echo home_url( '/' ); ?>"><?php echo get_bloginfo( ); ?></a></h1>
@@ -48,14 +49,7 @@
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
           
-            <?php /*	wp_nav_menu( array(  
-              		'theme_location' => 'primary',
-              		'container'  => 'nav-collapse collapse navbar-inverse-collapse',
-              		'menu_class' => 'nav navbar-nav navbar-right',
-              		'fallback_cb' => 'quality_fallback_page_menu',
-              		'walker' => new quality_nav_walker()
-              		)
-              	); */	
+            <?php 	
                wp_nav_menu( array(
                 'menu'              => 'primary',
                 'theme_location'    => 'primary',

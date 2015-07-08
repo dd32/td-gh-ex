@@ -1,5 +1,6 @@
 <!-- Quality Main Slider --->
-<?php $current_options=get_option('quality_options') ; ?>
+<?php $quality_pro_options=theme_data_setup(); 
+$current_options = wp_parse_args(  get_option( 'quality_pro_options', array() ), $quality_pro_options ); ?>
 
 
 <!-- /Quality Main Slider --->
