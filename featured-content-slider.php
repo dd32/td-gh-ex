@@ -31,24 +31,14 @@ add_filter('excerpt_length', 'anderson_slideshow_excerpt_length');
 				
 				<ul class="zeeslides">
 
-			<?php foreach ( $slider_posts as $post ) : setup_postdata( $post ); 
-			
-				// Get Thumbnail URL
-				$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'post-thumbnail');
-				$thumbnail = $image[0];
-				
-				// set Default Thumbnail
-				if( '' == $thumbnail ) :
-					$thumbnail = get_template_directory_uri() . '/images/default-slider-thumbnail.png';
-				endif;
-			?>
+			<?php foreach ( $slider_posts as $post ) : setup_postdata( $post ); ?>
 
 				<li id="slide-<?php the_ID(); ?>" class="zeeslide" data-thumb="<?php echo $thumbnail; ?>">
 
 					<?php // Display Post Thumbnail or default thumbnail
 						if( '' != get_the_post_thumbnail() ) :
 
-							the_post_thumbnail('slider-image', array('class' => 'slide-image'));
+							the_post_thumbnail('anderson-slider-image', array('class' => 'slide-image'));
 
 						else: ?>
 
