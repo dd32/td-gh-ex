@@ -12,7 +12,7 @@
 /*Menus*/
 .navbar .navbar-right { float: left !important; }
 /*Flexslider*/
-.slide-caption { top: 12%; }
+.slide-caption { width: 80%; }
 /*Callout Section*/
 .callout-section p { padding: 0 0px; }
 /*Testimonial Section*/
@@ -28,7 +28,7 @@
 .navbar-collapse.in { overflow: hidden; }
 .navbar-default .navbar-nav .open .dropdown-menu > li > a { color: #1b1b1b; }
 /*FlexSlider*/
-.slide-caption { top: 13%; }
+.slide-caption { width: 80%; }
 .slide-text-bg1 { margin: 0 0 13px; }
 .slide-text-bg1 h2 { font-size: 24px; line-height: 30px; padding: 6px 10px; }
 .slide-text-bg2 { margin: 0 0 13px; }
@@ -79,7 +79,7 @@
 .head-contact-info { float: none; text-align: center; margin: 10px 0 17px; }
 /*Carousel Main Slider*/
 
-.slide-caption { top: 7%; }
+.slide-caption { width: 80%; }
 .slide-text-bg1 { margin: 0 0 5px; }
 .slide-text-bg1 h2 { font-size: 14px; line-height: 20px; padding: 2px 10px; }
 .slide-text-bg2 { margin: 0 0 5px; }
@@ -155,7 +155,7 @@
 .head-contact-social { float: none; text-align: center;	margin: 17px 0 17px; }
 .head-contact-info { float: none; text-align: center; margin: 10px 0 17px; }
 /*Carousel Main Slider*/
-.slide-caption { top: 0%; width: 65%; }
+.slide-caption { width: 80%; }
 .slide-text-bg1 { margin: 0 0 5px; }
 .slide-text-bg1 h2 { font-size: 12px; line-height: 20px; padding: 1px 7px; }
 .slide-text-bg2 { margin: 0 0 5px; width: 90%; }
