@@ -11,7 +11,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php do_action( 'spacious_before_post_content' ); ?>
 	<div class="entry-content clearfix">
-		<?php 
+		<?php
 			the_content();
 
 			$spacious_tag_list = get_the_tag_list( '', '&nbsp;&nbsp;&nbsp;&nbsp;', '' );
@@ -25,7 +25,7 @@
 				<?php
 			}
 
-			wp_link_pages( array( 
+			wp_link_pages( array(
 			'before'            => '<div style="clear: both;"></div><div class="pagination clearfix">'.__( 'Pages:', 'spacious' ),
 			'after'             => '</div>',
 			'link_before'       => '<span>',
@@ -34,10 +34,10 @@
 		?>
 	</div>
 
-	<footer class="entry-meta-bar clearfix">	        			
+	<footer class="entry-meta-bar clearfix">
 		<div class="entry-meta clearfix">
 			<span class="by-author author vcard"><a class="url fn n" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a></span>
-			<span class="date updated"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_time() ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></a></span>
+			<?php spacious_updated_class(); ?>
 			<?php if( has_category() ) { ?>
        		<span class="category"><?php the_category(', '); ?></span>
        	<?php } ?>

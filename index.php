@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Theme Index Section for our theme.
  *
@@ -28,14 +28,14 @@
 			<?php else : ?>
 
 				<?php get_template_part( 'no-results', 'none' ); ?>
-				
+
 			<?php endif; ?>
 
 		</div><!-- #content -->
 	</div><!-- #primary -->
-	
+
 	<?php spacious_sidebar_select(); ?>
-	
+
 	<?php do_action( 'spacious_after_body_content' ); ?>
 
 <?php get_footer(); ?>

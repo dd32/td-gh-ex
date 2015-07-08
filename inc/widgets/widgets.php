@@ -254,7 +254,7 @@ function spacious_widgets_init() {
 	 			else: $output .= $before_title.'<a href="' . get_permalink() . '" title="'.$page_name.'">'. $page_name .'</a>'.$after_title;
 	 			endif;
 		 	}
-			$output .= '<p>'.get_the_excerpt().'...'.'</p>';
+			$output .= '<p>'.get_the_excerpt().'</p>';
 			$output .= '<a class="read-more" href="'. get_permalink() .'">'.__( 'Read more', 'spacious' ).'</a>';
 	 		$output .= $after_widget;
 	 		endwhile;

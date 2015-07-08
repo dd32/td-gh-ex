@@ -46,6 +46,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.2.9 =
+* Added the 'updated' class for Google Structured Data.
+* Added HTML5 Markup theme support.
+
 = Version 1.2.8 =
 * Added latest version of genericons(3.3.1).
 * Adjusted z-index for slider controller.
