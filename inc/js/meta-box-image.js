@@ -60,7 +60,9 @@ jQuery(document).ready(function($) {
 			
 			/* refresh */
 			if ( wp ) { 
-				wp.customize.Widgets.getWidgetFormControlForWidget( widget_id ).updateWidget();
+				if ( wp.customize ) {
+					wp.customize.Widgets.getWidgetFormControlForWidget( widget_id ).updateWidget();
+				}
 			}
 	
 		});

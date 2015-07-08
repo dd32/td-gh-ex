@@ -11,11 +11,16 @@ add_action( 'customize_register', 'aladdin_create_section_layout', 20 );
 function aladdin_create_section_layout( $wp_customize ) {
 	$defaults = aladdin_get_defaults();
 		
-	$wp_customize->add_panel( 'layout', array(
-		'priority'       => 101,
-		'title'          => __( 'Layout', 'aladdin' ),
-		'description'    => __( 'In this section you can choose layout settings.', 'aladdin' ),
-	) );
+	global $wp_version;
+	if ( version_compare( $wp_version, '4.0.0', '>=' ) ) {
+	
+		$wp_customize->add_panel( 'layout', array(
+			'priority'       => 101,
+			'title'          => __( 'Layout', 'aladdin' ),
+			'description'    => __( 'In this section you can choose layout settings.', 'aladdin' ),
+		) );
+		
+	}
 
 	$section_priority = 10;
 	$priority = 1;

@@ -98,9 +98,17 @@ function aladdin_echo_input_upload_id( $object, $name, $instance, $title ) { ?>
 		if( strpos( $instance[ $name ], 'http' ) !== false ) : ?>
 			<img class="<?php echo $object->get_field_id( $name ) . '_url'; ?>" src="<?php echo esc_url( $instance[ $name ] ); ?>" />
 		<?php
-		else : ?>
-			<img class="<?php echo $object->get_field_id( $name ) . '_url'; ?>" src="<?php echo wp_get_attachment_image_src( $instance[ $name] )[0]; ?>" />
+		else : 
+			$img = wp_get_attachment_image_src( $instance[ $name] );
+			if ( $img ) :
+		?>
+			<img style="max-width:100%;" class="<?php echo $object->get_field_id( $name ) . '_url'; ?>" src="<?php echo esc_url( $img[0] ); ?>" />
 		<?php
+			else :
+		?>
+			<img class="<?php echo $object->get_field_id( $name ) . '_url'; ?>" src="" />
+		<?php
+			endif;
 		endif; 
 		
 		$widget_id = str_replace( '-' . $name, '', $object->get_field_id( $name ) );

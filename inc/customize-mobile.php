@@ -10,12 +10,17 @@ function aladdin_mobile_register( $wp_customize ) {
 
 	$defaults = aladdin_get_defaults();
 	
-	$wp_customize->add_panel( 'mobile', array(
-		'priority'       => 104,
-		'title'          => __( 'Mobile', 'aladdin' ),
-		'description'    => __( 'Settings for mobile users.', 'aladdin' ),
-	) );
+	global $wp_version;
+	if ( version_compare( $wp_version, '4.0.0', '>=' ) ) {
+	
+		$wp_customize->add_panel( 'mobile', array(
+			'priority'       => 104,
+			'title'          => __( 'Mobile', 'aladdin' ),
+			'description'    => __( 'Settings for mobile users.', 'aladdin' ),
+		) );
 
+	}
+	
 	$section_priority = 10;
 	$priority = 1;
 	

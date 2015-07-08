@@ -62,11 +62,16 @@ function aladdin_customize_register_info( $wp_customize ) {
 
 	$defaults = aladdin_get_defaults();
 	
-	$wp_customize->add_panel( 'info', array(
-		'priority'       => 0,
-		'title'          => __( 'Info', 'aladdin' ),
-		'description'    => __( 'Info and Links.', 'aladdin' ),
-	) );
+	global $wp_version;
+	if ( version_compare( $wp_version, '4.0.0', '>=' ) ) {
+	
+		$wp_customize->add_panel( 'info', array(
+			'priority'       => 0,
+			'title'          => __( 'Info', 'aladdin' ),
+			'description'    => __( 'Info and Links.', 'aladdin' ),
+		) );
+		
+	}
 
 	$section_priority = 10;
 	

@@ -613,28 +613,13 @@ function aladdin_calc_content_width( $curr_layout ) {
 	$unit = aladdin_get_theme_mod('unit');
 
 	if( 'left-sidebar' == $curr_layout) {
-		if(  0 == $unit ) {
-			$content_width = $content_width - aladdin_get_theme_mod('width_column_1_left') - 40;
-		}
-		else {
-			$content_width = $content_width - $content_width/100*aladdin_get_theme_mod('width_column_1_left_rate') - 40;
-		}
+		$content_width = $content_width - $content_width/100*aladdin_get_theme_mod('width_column_1_left_rate') - 40;
 	} 
 	elseif( 'right-sidebar' == $curr_layout) {
-		if(  0 == $unit ) {
-			$content_width = $content_width - aladdin_get_theme_mod('width_column_1_right') - 80;
-		}
-		else {
-			$content_width = $content_width - $content_width/100*aladdin_get_theme_mod('width_column_1_right_rate') - 40;
-		}
+		$content_width = $content_width - $content_width/100*aladdin_get_theme_mod('width_column_1_right_rate') - 40;
 	}
 	elseif( 'two-sidebars' == $curr_layout) {
-		if( 0 == $unit ) {
-			$content_width = $content_width - aladdin_get_theme_mod('width_column_1') - aladdin_get_theme_mod('width_column_2') - 40;
-		}
-		else {
-			$content_width = $content_width - $content_width/100*aladdin_get_theme_mod('width_column_1_rate') - $content_width/100*aladdin_get_theme_mod('width_column_2_rate') - 40;
-		}
+		$content_width = $content_width - $content_width/100*aladdin_get_theme_mod('width_column_1_rate') - $content_width/100*aladdin_get_theme_mod('width_column_2_rate') - 40;
 	}
 	else {
 		$content_width -= 40;
@@ -1038,8 +1023,11 @@ require get_template_directory() . '/inc/widget-page-2.php';
 
 /* one page scroll */
 require get_template_directory() . '/inc/widget-sidebar-navigation.php';
+
 /* portfolio */
-require get_template_directory() . '/inc/widget-portfolio.php';
+if ( class_exists( 'Jetpack' ) ) {
+	require get_template_directory() . '/inc/widget-portfolio.php';
+}
 
 /* posts */
 require get_template_directory() . '/inc/widget-items-category.php';

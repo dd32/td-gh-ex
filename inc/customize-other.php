@@ -10,11 +10,16 @@ function aladdin_customize_register_other( $wp_customize ) {
 
 	$defaults = aladdin_get_defaults();
 	
-	$wp_customize->add_panel( 'other', array(
-		'priority'       =>106,
-		'title'          => __( 'Other Settings', 'aladdin' ),
-		'description'    => __( 'All other settings.', 'aladdin' ),
-	) );
+	global $wp_version;
+	if ( version_compare( $wp_version, '4.0.0', '>=' ) ) {
+	
+		$wp_customize->add_panel( 'other', array(
+			'priority'       =>106,
+			'title'          => __( 'Other Settings', 'aladdin' ),
+			'description'    => __( 'All other settings.', 'aladdin' ),
+		) );
+	
+	}
 
 	$section_priority = 10;
 	

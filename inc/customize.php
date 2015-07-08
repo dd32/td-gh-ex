@@ -8,29 +8,33 @@
  
 function aladdin_customize_register( $wp_customize ) {	
 
-	$wp_customize->add_panel( 'background', array(
-		'priority'       => 105,
-		'title'          => __( 'Customize Background', 'aladdin' ),
-		'description'    => __( 'Background.', 'aladdin' ),
-	) );	
+	global $wp_version;
+	if ( version_compare( $wp_version, '4.0.0', '>=' ) ) {
+
+		$wp_customize->add_panel( 'background', array(
+			'priority'       => 105,
+			'title'          => __( 'Customize Background', 'aladdin' ),
+			'description'    => __( 'Background.', 'aladdin' ),
+		) );	
+
+		$wp_customize->add_panel( 'navigation', array(
+			'priority'       => 106,
+			'title'          => __( 'Menu', 'aladdin' ),
+			'description'    => __( 'Navigation settings.', 'aladdin' ),
+		) );
+
+		//Sets postMessage support
+		$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
+		$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+		$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+
+		$wp_customize->get_section( 'colors' )->panel = 'custom_colors';	
+		$wp_customize->get_section( 'colors' )->priority = '1';		
+		$wp_customize->get_section( 'nav' )->panel = 'navigation';	
+		$wp_customize->get_section( 'nav' )->priority = '1';
+		$wp_customize->get_section( 'background_image' )->priority = '90';
 	
-	$wp_customize->add_panel( 'navigation', array(
-		'priority'       => 106,
-		'title'          => __( 'Menu', 'aladdin' ),
-		'description'    => __( 'Navigation settings.', 'aladdin' ),
-	) );
-	
-//Sets postMessage support
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-	
-	$wp_customize->get_section( 'colors' )->panel = 'custom_colors';	
-	$wp_customize->get_section( 'colors' )->priority = '1';		
-	$wp_customize->get_section( 'nav' )->panel = 'navigation';	
-	$wp_customize->get_section( 'nav' )->priority = '1';
-	$wp_customize->get_section( 'background_image' )->priority = '90';
-	
+	}
 }
 add_action( 'customize_register', 'aladdin_customize_register' );
  

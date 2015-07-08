@@ -213,12 +213,16 @@ class aladdin_Colors_Class {
 	
 	// Add sections and controls to the Customizer
 	public function aladdin_create_colors_controls( $wp_customize ) {
+	
+		global $wp_version;
+		if ( version_compare( $wp_version, '4.0.0', '>=' ) ) {
 
-		$wp_customize->add_panel( 'custom_colors', array(
-			'priority'       => 103,
-			'title'          => __( 'Colors', 'aladdin' ),
-			'description'    => __( 'In this section you can change colors for different elements.', 'aladdin' ),
-		) );
+			$wp_customize->add_panel( 'custom_colors', array(
+				'priority'       => 103,
+				'title'          => __( 'Colors', 'aladdin' ),
+				'description'    => __( 'In this section you can change colors for different elements.', 'aladdin' ),
+			) );
+		}
 		
 		$wp_customize->add_section( 'color_scheme', array(
 			'title'          => __( 'Color Scheme', 'aladdin' ),

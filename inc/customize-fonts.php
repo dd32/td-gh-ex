@@ -30,12 +30,16 @@ function aladdin_customize_register_fonts( $wp_customize ) {
 		}
 
 	}
+	global $wp_version;
+	if ( version_compare( $wp_version, '4.0.0', '>=' ) ) {
 	
-	$wp_customize->add_panel( 'fonts', array(
-		'priority'       => 105,
-		'title'          => __( 'Fonts', 'aladdin' ),
-		'description'    => __( 'Selecting a google fonts.', 'aladdin' ),
-	) );
+		$wp_customize->add_panel( 'fonts', array(
+			'priority'       => 105,
+			'title'          => __( 'Fonts', 'aladdin' ),
+			'description'    => __( 'Selecting a google fonts.', 'aladdin' ),
+		) );
+		
+	}
 
 	$section_priority = 10;
 	

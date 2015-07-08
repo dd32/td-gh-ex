@@ -11,11 +11,16 @@ function aladdin_creare_section_sidebars( $wp_customize ) {
 	
 	/* Create default, blog, home, page, shop sections for choosing custom sidebars for different types of pages */
 	
-	$wp_customize->add_panel( 'sidebars', array(
-		'priority'       => 107,
-		'title'          => __( 'Sidebars', 'aladdin' ),
-		'description'    => __( 'In this section you can add or remove sidebars for particular pages.', 'aladdin' ),
-	) );	
+	global $wp_version;
+	if ( version_compare( $wp_version, '4.0.0', '>=' ) ) {
+	
+		$wp_customize->add_panel( 'sidebars', array(
+			'priority'       => 107,
+			'title'          => __( 'Sidebars', 'aladdin' ),
+			'description'    => __( 'In this section you can add or remove sidebars for particular pages.', 'aladdin' ),
+		) );	
+		
+	}
 
 	$section_priority = 10;
 
