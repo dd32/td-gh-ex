@@ -7,16 +7,16 @@
  */
 if ( !isset( $boots_custom_header_args ) ) {
     $boots_custom_header_args = array(
-        'default-text-color'     => 'ffffff'
-        , 'width'                  => apply_filters( 'raindrops_header_image_width', 1280 )
+        'default-text-color'     => 'efefef'
+        , 'width'                  => apply_filters( 'raindrops_header_image_width', 1600 )
         , 'flex-width'             => true
-        , 'height'                 => apply_filters( 'raindrops_header_image_height', 521 )
+        , 'height'                 => apply_filters( 'raindrops_header_image_height', 310 )
         , 'flex-height'            => true
         , 'header-text'            => true
         , 'default-image'          => get_stylesheet_directory_uri() . '/images/headers/wp3.jpg'
-        , 'wp-head-callback'       => apply_filters( 'raindrops_wp-head-callback', 'raindrops_embed_meta' )
-        , 'admin-preview-callback' => 'raindrops_admin_header_image'
-        , 'admin-head-callback'    => 'raindrops_admin_header_style'
+       // , 'wp-head-callback'       => apply_filters( 'raindrops_wp-head-callback', 'raindrops_child_embed_css' )
+        //, 'admin-preview-callback' => 'raindrops_admin_header_image'
+        //, 'admin-head-callback'    => 'raindrops_admin_header_style'
     );
 
     add_theme_support( 'custom-header', $boots_custom_header_args );
@@ -37,6 +37,7 @@ if ( !function_exists( 'raindrops_child_init' ) ) {
 		}
         /* broad color type setting */
         add_action( 'raindrops_include_after', 'boots_extend_styles' );
+
     }
 
 }
@@ -64,20 +65,10 @@ if ( !function_exists( 'raindrops_child_custom_header_image_content' ) ) {
         }
 
 		$boots_site_title = '<a href="'. esc_url( home_url() ). '" rel="home">'. $boots_site_title.'</a>';
-/*
-        $boots_content_max_width = raindrops_warehouse_clone( 'raindrops_fluid_max_width' );
-
-        if ( empty( $boots_content_max_width ) ) {
-
-            $boots_content_max_width = 1280;
-        }*/
-
 
         $html = '<div class="tagline-wrapper no-header-image"><div id="header-inner" style="%3$s">'
                 . '%1$s%2$s'
                 . '</div></div>';
-
-       // $page_width = boots_page_width();
 
 		$image = get_header_image();
 
