@@ -276,10 +276,15 @@ function accelerate_entry_meta() {
 		<?php
 
 	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
-	$time_string = sprintf( $time_string,
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() )
-	);
+   if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+      $time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
+   }
+   $time_string = sprintf( $time_string,
+      esc_attr( get_the_date( 'c' ) ),
+      esc_html( get_the_date() ),
+      esc_attr( get_the_modified_date( 'c' ) ),
+      esc_html( get_the_modified_date() )
+   );
 	printf( '<span class="posted-on"><a href="%1$s" title="%2$s" rel="bookmark"><i class="fa fa-calendar-o"></i> %3$s</a></span>',
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),

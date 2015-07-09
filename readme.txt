@@ -50,6 +50,11 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.1.7 =
+* Fixed textdomain for the archive pages.
+* Added the update class for Google Structured Data.
+* Added HTML5 Markup theme support.
+
 = Version 1.1.6 =
 * JQuery Cycle js updated to latest version(3.0.3).
 * Option added to open TG: Call to Action widget button in new tab on click.

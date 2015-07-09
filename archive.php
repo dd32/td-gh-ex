@@ -31,7 +31,7 @@
 								 * what author we're dealing with (if that is the case).
 								*/
 								the_post();
-								printf( __( 'Author: %s', 'radiate' ), '<span class="vcard">' . get_the_author() . '</span>' );
+								printf( __( 'Author: %s', 'accelerate' ), '<span class="vcard">' . get_the_author() . '</span>' );
 								/* Since we called the_post() above, we need to
 								 * rewind the loop back to the beginning that way
 								 * we can run the loop properly, in full.
@@ -39,31 +39,31 @@
 								rewind_posts();
 
 							elseif ( is_day() ) :
-								printf( __( 'Day: %s', 'radiate' ), '<span>' . get_the_date() . '</span>' );
+								printf( __( 'Day: %s', 'accelerate' ), '<span>' . get_the_date() . '</span>' );
 
 							elseif ( is_month() ) :
-								printf( __( 'Month: %s', 'radiate' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
+								printf( __( 'Month: %s', 'accelerate' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
 
 							elseif ( is_year() ) :
-								printf( __( 'Year: %s', 'radiate' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+								printf( __( 'Year: %s', 'accelerate' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
 
 							elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-								_e( 'Asides', 'radiate' );
+								_e( 'Asides', 'accelerate' );
 
 							elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-								_e( 'Images', 'radiate');
+								_e( 'Images', 'accelerate');
 
 							elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-								_e( 'Videos', 'radiate' );
+								_e( 'Videos', 'accelerate' );
 
 							elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-								_e( 'Quotes', 'radiate' );
+								_e( 'Quotes', 'accelerate' );
 
 							elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-								_e( 'Links', 'radiate' );
+								_e( 'Links', 'accelerate' );
 
 							else :
-								_e( 'Archives', 'radiate' );
+								_e( 'Archives', 'accelerate' );
 
 							endif;
 						?>
@@ -88,14 +88,14 @@
 			<?php else : ?>
 
 				<?php get_template_part( 'no-results', 'archive' ); ?>
-				
+
 			<?php endif; ?>
 
 		</div><!-- #content -->
 	</div><!-- #primary -->
-	
+
 	<?php accelerate_sidebar_select(); ?>
-	
+
 	<?php do_action( 'accelerate_after_body_content' ); ?>
 
 <?php get_footer(); ?>
