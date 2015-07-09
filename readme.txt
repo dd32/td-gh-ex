@@ -42,6 +42,11 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.2.4 =
+* Small adjustment in Breadcrumb NavXT plugin support code.
+* Added HTML5 Markup theme support.
+* Added the updated class for Google Structured Data.
+
 = Version 1.2.3 =
 * JQuery Cycle js updated to latest version(3.0.3).
 * Option added to open TG: Call to Action widget button in new tab on click.

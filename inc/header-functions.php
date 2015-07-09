@@ -213,7 +213,7 @@ if ( ! function_exists( 'esteem_breadcrumb' ) ) :
  */
 function esteem_breadcrumb() {
 	if( function_exists( 'bcn_display' ) ) {
-		echo '<div class="breadcrumb">';
+		echo '<div class="breadcrumb" xmlns:v="http://rdf.data-vocabulary.org/#">';
 		echo '<span class="breadcrumb-title">'.__( 'You are here:', 'esteem' ).'</span>';
 		bcn_display();
 		echo '</div> <!-- .breadcrumb -->';

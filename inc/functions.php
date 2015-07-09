@@ -321,4 +321,25 @@ function esteem_add_mod_hatom_data($content) {
    return $content;
 }
 add_filter('the_content', 'esteem_add_mod_hatom_data');
+
+/**
+ * Function to render the date (post published date)
+ */
+function esteem_published_date() {
+   $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+   if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+      $time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
+   }
+   $time_string = sprintf( $time_string,
+      esc_attr( get_the_date( 'c' ) ),
+      esc_html( get_the_date() ),
+      esc_attr( get_the_modified_date( 'c' ) ),
+      esc_html( get_the_modified_date() )
+   );
+   printf( __( '<span class="icon-time"><a href="%1$s" title="%2$s" rel="bookmark"><i class="fa fa-calendar-o"></i> %3$s</a></span>', 'esteem' ),
+      esc_url( get_permalink() ),
+      esc_attr( get_the_time() ),
+      $time_string
+   );
+}
 ?>
