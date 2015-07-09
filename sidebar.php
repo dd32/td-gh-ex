@@ -3,31 +3,31 @@
 			<?php if (is_home()) { ?>
 			<li class="twitter_rss">
 			<?php 
-				global $hjyl_theme_options;
+				global $bb10_theme_options;
 				$twitter_name = 'Follow me on twitter!';
 				$twitter_url = '';
-				if ($hjyl_theme_options['twitter_url'] != '') $twitter_url = esc_url( $hjyl_theme_options['twitter_url'] );
-				if ($hjyl_theme_options['twitter_name'] != '') esc_attr( $twitter_name = $hjyl_theme_options['twitter_name'] );
+				if ($bb10_theme_options['twitter_url'] != '') $twitter_url = esc_url( $bb10_theme_options['twitter_url'] );
+				if ($bb10_theme_options['twitter_name'] != '') esc_attr( $twitter_name = $bb10_theme_options['twitter_name'] );
 				
 				$weibo_name = 'WeiBo';
 				$weibo_url = '';
-				if ($hjyl_theme_options['weibo_url'] != '') $weibo_url = esc_url( $hjyl_theme_options['weibo_url'] );
-				if ($hjyl_theme_options['weibo_name'] != '') esc_attr( $weibo_name = $hjyl_theme_options['weibo_name'] );
+				if ($bb10_theme_options['weibo_url'] != '') $weibo_url = esc_url( $bb10_theme_options['weibo_url'] );
+				if ($bb10_theme_options['weibo_name'] != '') esc_attr( $weibo_name = $bb10_theme_options['weibo_name'] );
 				
 				$email_name = 'Email to me!';
 				$email_url = '';
-				if ($hjyl_theme_options['email_url'] != '') $email_url = esc_url( $hjyl_theme_options['email_url'] );
-				if ($hjyl_theme_options['email_name'] != '') esc_attr( $email_name = $hjyl_theme_options['email_name'] );
+				if ($bb10_theme_options['email_url'] != '') $email_url = esc_url( $bb10_theme_options['email_url'] );
+				if ($bb10_theme_options['email_name'] != '') esc_attr( $email_name = $bb10_theme_options['email_name'] );
 				
 				$rss_name = 'Subscribe me!';
 				$rss_url = '';
-				if ($hjyl_theme_options['rss_url'] != '') $rss_url = esc_url( $hjyl_theme_options['rss_url'] );
-				if ($hjyl_theme_options['rss_name'] != '') esc_attr( $rss_name = $hjyl_theme_options['rss_name'] );
+				if ($bb10_theme_options['rss_url'] != '') $rss_url = esc_url( $bb10_theme_options['rss_url'] );
+				if ($bb10_theme_options['rss_name'] != '') esc_attr( $rss_name = $bb10_theme_options['rss_name'] );
 				
 				$qrcode_name = 'Add me on WeiXin!';
 				$qrcode_url = '';
-				if ($hjyl_theme_options['qrcode_url'] != '') $qrcode_url = esc_url( $hjyl_theme_options['qrcode_url'] );
-				if ($hjyl_theme_options['qrcode_name'] != '') esc_attr( $qrcode_name = $hjyl_theme_options['qrcode_name'] );
+				if ($bb10_theme_options['qrcode_url'] != '') $qrcode_url = esc_url( $bb10_theme_options['qrcode_url'] );
+				if ($bb10_theme_options['qrcode_name'] != '') esc_attr( $qrcode_name = $bb10_theme_options['qrcode_name'] );
 			?>
 				<?php if ($twitter_url != '') { ?>
 					<a href="<?php echo $twitter_url; ?>" rel="bookmark" title="<?php echo $twitter_name; ?>"><span class="fa fa-twitter"></span></a>
