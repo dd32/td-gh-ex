@@ -55,6 +55,9 @@ function theme_data_setup()
 			'portfolio_description_four' => __('A wonderful serenity has taken possession of my entire soul, like these sweet mornings.','wallstreet'),
 			'portfolio_image_four' => $portfolio_image,
 			
+			//Home blog
+			'blog_section_enabled' => 'on',
+			
 			// Head Titles
 			'contact_header_settings' => 'on',
 			'contact_phone_number' => '1-800-123-789',
@@ -63,6 +66,8 @@ function theme_data_setup()
 			'service_description' => __('We Offer Great Services to our Clients','wallstreet'),
 			'portfolio_title' => __('Featured Portfolio Project','wallstreet'),
 			'portfolio_description' => __('Most Popular of Our Works.','wallstreet'),
+			'home_blog_heading'=> __('Our Latest Blog Post','wallstreet'),
+			'home_blog_description' => __('We Work With New Customers And Grow Their Businesses','wallstreet'),
 			
 			/** Social media links **/
 			'header_social_media_enabled'=>'on',			

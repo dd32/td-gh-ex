@@ -49,9 +49,7 @@
 		</div>	
 		<?php wp_nonce_field('webriti_customization_nonce_gernalsetting','webriti_gernalsetting_nonce_customization'); ?>
 		<div class="section">
-			<h3><?php _e('To enable Themes Custom front page, create a page using this', 'wallstreet'); ?> <a href="<?php echo admin_url(); ?>post-new.php?post_type=page"><?php _e('link.', 'wallstreet'); ?></a> <?php _e('and assign a template "custom front page".', 'wallstreet'); ?>
-			<?php _e('After assigning custom front page template Go To Settings >> Reading >> Select this page as a static front page.', 'wallstreet'); ?>
-			<?php _e('Follow this ', 'wallstreet'); ?><a href="<?php echo admin_url(); ?>options-reading.php"><?php _e('link.', 'wallstreet'); ?></a>
+			<h3><?php _e('In the next version ie 1.4 we are moving all the theme options in the customizer, as per the latest guidelines.','wallstreet'); ?>
 			</h3>
 		</div>
 		<div class="section">

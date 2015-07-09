@@ -14,6 +14,8 @@
 				$current_options['service_description'] = sanitize_text_field($_POST['service_description']);
 				$current_options['portfolio_title'] = sanitize_text_field($_POST['portfolio_title']);
 				$current_options['portfolio_description']= sanitize_text_field($_POST['portfolio_description']);
+				$current_options['home_blog_heading']= sanitize_text_field($_POST['home_blog_heading']);
+				$current_options['home_blog_description']= sanitize_text_field($_POST['home_blog_description']);
 				
 				// Contact Heading Section Enabled on Home Page
 				if(isset($_POST['contact_header_settings']))
@@ -32,6 +34,8 @@
 			$current_options['service_description'] = __('We Offer Great Services to our Clients','wallstreet');
 			$current_options['portfolio_title'] =__('Featured Portfolio Project','wallstreet');
 			$current_options['portfolio_description'] =__('Most Popular of Our Works','wallstreet');
+			$current_options['home_blog_heading']= __('Our Latest Blog Post','wallstreet');
+			$current_options['home_blog_description']= __('We Work With New Customers And Grow Their Businesses','wallstreet');
 			update_option('wallstreet_lite_options',$current_options);
 		}
 	}  ?>
@@ -92,6 +96,18 @@
 		<h3><?php _e('Portfolio Description','wallstreet'); ?></h3>			
 			<textarea rows="3" cols="8" id="portfolio_description" name="portfolio_description"><?php if($current_options['portfolio_description']!='') { echo esc_attr($current_options['portfolio_description']); } ?></textarea>
 			<span class="explain"><?php _e('Enter the Portfolio Description.','wallstreet'); ?></span>
+		</div>
+		<div class="section">		
+			<h3><?php _e('Home Blog Tag Settings','wallstreet'); ?></h3>
+		</div>
+		<div class="section">
+			<h3><?php _e('Home Page Blog Section Heading','wallstreet');?></h3>
+			<input class="webriti_inpute"  type="text" name="home_blog_heading" id="home_blog_heading" value="<?php if($current_options['home_blog_heading']!='') { echo esc_attr($current_options['home_blog_heading']); } ?>" >		
+			<span class="explain"><?php  _e('Enter Heading For Blog Section.','wallstreet');?></span>
+			
+			<h3><?php _e('Home Page Blog Section Description','wallstreet');?></h3>
+			<input class="webriti_inpute"  type="text" name="home_blog_description" id="home_blog_description" value="<?php if($current_options['home_blog_description']!='') { echo esc_attr($current_options['home_blog_description']); } ?>" >		
+			<span class="explain"><?php  _e('Enter Small Description For Blog Section.','wallstreet');?></span>
 		</div>
 		<div id="button_section">
 			<input type="hidden" value="1" id="webriti_settings_save_15" name="webriti_settings_save_15" />

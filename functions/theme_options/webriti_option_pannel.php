@@ -23,7 +23,9 @@
 						<ul><li class="currunt" ><a href="#" class="ui-tabs-anchor" id="ui-id-1"><?php _e('Quick Start','wallstreet');?> </a><span></span></li>
 							<li><a href="#"  id="ui-id-2"><?php _e('Featured Image Setting','wallstreet');?></a><span></span></li>
 							<li><a href="#"  id="ui-id-3"><?php _e('Service Setting','wallstreet');?></a><span></span></li> 
-							<li><a href="#"  id="ui-id-4"><?php _e('Project Portfolio','wallstreet');?></a><span></span></li>			
+							<li><a href="#"  id="ui-id-4"><?php _e('Project Portfolio','wallstreet');?>
+							<li><a href="#"  id="ui-id-5"><?php _e('Home Blog','wallstreet');?>
+							</a><span></span></li>			
 						</ul>
 					</li>
 					<li>
@@ -50,6 +52,8 @@
 				<?php require_once('pages/home_service_settings.php'); ?>				
 				<!--most 4 tabs home_project_portfolio_settings --> 
 				<?php require_once('pages/home_project_portfolio_settings.php'); ?>
+				<!--most 5 tabs home_blog_settings --> 
+				<?php require_once('pages/home_blog.php'); ?>
 				<!--most 22 tabs home_page_settings --> 
 				<?php require_once('pages/footer_copyright_settings.php'); ?>
 				<!--most 15 tabs home_page_settings --> 

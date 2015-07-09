@@ -52,7 +52,8 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
-
+@Version 1.3
+1. Add Blog section in front-page.
 @Version 1.2 
 1. Remove resize image option.
 2. Fixed Styling issue.
