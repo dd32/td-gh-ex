@@ -156,13 +156,13 @@ function bb10_theme_options_do_page() {
 											<br /><br />
 											<table>
 											<tr>
-											<form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+											<form name="_xclick" action="<?php echo esc_url( __( 'https://www.paypal.com/cgi-bin/webscr', 'bb10' ) ); ?>" method="post">
 												<input type="hidden" name="cmd" value="_xclick">
 												<input type="hidden" name="business" value="i@hjyl.org">
 												<input type="hidden" name="item_name" value="hjyl WordPress Theme">
 												<input type="hidden" name="charset" value="utf-8" >
 												<input type="hidden" name="currency_code" value="USD">
-												<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+												<input type="image" src="<?php echo esc_url( __( 'https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif', 'bb10' ) ); ?>" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
 											</form>
 											</tr>
 											<tr>
@@ -202,7 +202,7 @@ function bb10_theme_options_do_page() {
 									<tr valign="top">
 										<th scope="row"><strong><?php echo $bb10_name; ?></strong></th>
 										<td>
-											<input name="<?php echo $bb10_form_name; ?>" type="checkbox" value="1" <?php checked($bb10_value, 1); ?> />
+											<input name="<?php echo $bb10_form_name; ?>" type="checkbox" value="1" <?php esc_attr( checked($bb10_value, 1) ); ?> />
 											<label class="description" for="<?php echo $bb10_form_name; ?>"><?php echo $item['desc']; ?></label>
 										</td>
 									</tr>
@@ -222,7 +222,7 @@ function bb10_theme_options_do_page() {
 									<tr valign="top">
 										<th scope="row"><strong><?php echo $bb10_name; ?></strong></th>
 										<td>
-											<textarea name="<?php echo $bb10_form_name; ?>" type="code" cols="65%" rows="4"><?php echo $bb10_value; ?></textarea>
+											<textarea name="<?php echo $bb10_form_name; ?>" type="code" cols="65%" rows="4"><?php echo esc_textarea($bb10_value); ?></textarea>
 											<br/>
 											<label class="description" for="<?php echo $bb10_form_name; ?>"><?php echo $item['desc']; ?></label>
 										</td>
@@ -243,7 +243,7 @@ function bb10_theme_options_do_page() {
 									<tr valign="top">
 										<th scope="row"><strong><?php echo $bb10_name; ?></strong></th>
 										<td>
-											<input name="<?php echo $bb10_form_name; ?>" type="text" value="<?php echo $bb10_value; ?>" size="40" />
+											<input name="<?php echo $bb10_form_name; ?>" type="text" value="<?php echo esc_attr( $bb10_value ); ?>" size="40" />
 											<br/>
 											<label class="description" for="<?php echo $bb10_form_name; ?>"><?php echo $item['desc']; ?></label>
 										</td>

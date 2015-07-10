@@ -11,37 +11,6 @@
 			
 <?php endif; ?>
 
-			<?php if ( $user_ID ) : ?>
-
-				<?php echo null;?>
-
-				<?php elseif ( '' != $comment_author ): ?>
-
-				<p class="comment-welcomeback"><?php printf(__('Welcome <strong>%s</strong>', 'bb10'), $comment_author); ?>
-				
-				<a href="javascript:hjyl_toggleCommentAuthorInfo();" id="toggle-comment-author-info">
-					<?php _e('(Toggle)', 'bb10'); ?>
-				</a>
-
-				<script type="text/javascript" charset="utf-8">
-					var changeMsg = "<?php echo  esc_js( __('(Toggle)', 'bb10') ); ?>";
-					var closeMsg = "<?php echo esc_js( __('(Close)', 'bb10') ); ?>";
-					
-					function hjyl_toggleCommentAuthorInfo() {
-						jQuery('#comment-author-info').slideToggle('slow', function(){
-							if ( jQuery('#comment-author-info').css('display') == 'none' ) {
-								jQuery('#toggle-comment-author-info').text(changeMsg);
-							} else {
-								jQuery('#toggle-comment-author-info').text(closeMsg);
-							}
-						});
-					}
-
-					jQuery(document).ready(function(){
-						jQuery('#comment-author-info').hide();
-					});
-				</script>
-			<?php endif; ?>
 <?php 
 		$aria_req = ( $req ? " aria-required='true'" : '' );
        	$fields =  array(

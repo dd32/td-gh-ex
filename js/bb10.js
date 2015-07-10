@@ -21,4 +21,5 @@ $('.hjylEntry p a').each(function(){
             $self.append(' <i class="fa fa-external-link"></i>');
     }
 });
+
 }); 

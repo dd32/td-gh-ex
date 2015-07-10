@@ -65,14 +65,14 @@ function bb10_wp_list_pages(){
 // Enqueue style-file, if it exists.
 function bb10_script() {
 	if( !bb10_IsMobile ){
-		wp_enqueue_style( 'bb10-style', get_stylesheet_uri(),  array(), '20150709', false);
+		wp_enqueue_style( 'bb10-style', get_stylesheet_uri(),  array(), '20150710', false);
 	}else{
-		wp_enqueue_style('bb10-mobile', BB10_TPLDIR . '/css/bb10-mobile.css', array(), '20150709', 'all', false);
+		wp_enqueue_style('bb10-mobile', BB10_TPLDIR . '/css/bb10-mobile.css', array(), '20150710', 'all', false);
 	};
 	wp_enqueue_script( 'jquery' );
-	wp_enqueue_style( 'font-awesome', BB10_TPLDIR . '/css/font-awesome.min.css', array(), '20150709', 'all');
-	wp_enqueue_script( 'bb10-js', BB10_TPLDIR . '/js/bb10.js', array(), '20150709', true);
-	wp_enqueue_script( 'bb10-comments-ajax', BB10_TPLDIR . '/js/bb10-comments-ajax.js', array(), '20150709', true);
+	wp_enqueue_style( 'font-awesome', BB10_TPLDIR . '/css/font-awesome.min.css', array(), '20150710', 'all');
+	wp_enqueue_script( 'bb10-js', BB10_TPLDIR . '/js/bb10.js', array(), '20150710', true);
+	wp_enqueue_script( 'bb10-comments-ajax', BB10_TPLDIR . '/js/bb10-comments-ajax.js', array(), '20150710', true);
 	wp_localize_script('bb10-comments-ajax', 'ajaxL10n', array(
 		'edt1' => __('Before Refresh, you can','bb10'),
 		'edt2' => __('Edit','bb10'),
@@ -84,13 +84,13 @@ function bb10_script() {
 	if ( is_singular() && comments_open() ) wp_enqueue_script( 'comment-reply' );
 		
 	if( is_page('archives') ){
-		wp_enqueue_script( 'bb10-archives', BB10_TPLDIR . '/js/bb10-archives.js', array(), '20150709', false);
-		wp_enqueue_style( 'bb10-archives', BB10_TPLDIR . '/css/bb10-archives.css', array(), '20150709', 'all');
+		wp_enqueue_script( 'bb10-archives', BB10_TPLDIR . '/js/bb10-archives.js', array(), '20150710', false);
+		wp_enqueue_style( 'bb10-archives', BB10_TPLDIR . '/css/bb10-archives.css', array(), '20150710', 'all');
 	};
 	if(is_404()){
-		wp_enqueue_style( 'bb10-4041', '//fonts.googleapis.com/css?family=Press+Start+2P', array(), '20150709', 'all');
-		wp_enqueue_style( 'bb10-4042', '//fonts.googleapis.com/css?family=Oxygen:700', array(), '20150709', 'all');
-		wp_enqueue_style( 'bb10-4043', BB10_TPLDIR . '/css/bb10-404.css', array(), '20150709', 'all');
+		wp_enqueue_style( 'bb10-4041', '//fonts.googleapis.com/css?family=Press+Start+2P', array(), '20150710', 'all');
+		wp_enqueue_style( 'bb10-4042', '//fonts.googleapis.com/css?family=Oxygen:700', array(), '20150710', 'all');
+		wp_enqueue_style( 'bb10-4043', BB10_TPLDIR . '/css/bb10-404.css', array(), '20150710', 'all');
 	}
 }
 

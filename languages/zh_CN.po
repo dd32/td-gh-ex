@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-03 22:13+0800\n"
-"PO-Revision-Date: 2015-07-03 22:13+0800\n"
+"POT-Creation-Date: 2015-07-10 21:22+0800\n"
+"PO-Revision-Date: 2015-07-10 21:22+0800\n"
 "Last-Translator: 皇家元林 <i@hjyl.org>\n"
 "Language-Team: hjyl.org <i@hjyl.org>\n"
 "Language: zh_CN\n"
@@ -84,41 +84,28 @@ msgstr "上一页"
 msgid "Next"
 msgstr "下一页"
 
-#: ../comments.php:20
-#, php-format
-msgid "Welcome <strong>%s</strong>"
-msgstr "欢迎回来 <strong>%s</strong>"
-
-#: ../comments.php:23 ../comments.php:27
-msgid "(Toggle)"
-msgstr "(打开)"
-
-#: ../comments.php:28
-msgid "(Close)"
-msgstr "(关闭)"
-
-#: ../comments.php:48
+#: ../comments.php:17
 msgid "Name"
 msgstr "名字"
 
-#: ../comments.php:48 ../comments.php:49
+#: ../comments.php:17 ../comments.php:18
 msgid "(required)"
 msgstr "(必填)"
 
-#: ../comments.php:49
+#: ../comments.php:18
 msgid "Email"
 msgstr "邮箱"
 
-#: ../comments.php:50
+#: ../comments.php:19
 msgid "Website"
 msgstr "网站"
 
-#: ../comments.php:55
+#: ../comments.php:24
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr "你必须 <a href=\"%s\">登录</a> 才能发布评论。"
 
-#: ../comments.php:56
+#: ../comments.php:25
 #, php-format
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
@@ -127,24 +114,24 @@ msgstr ""
 "<a href=\"%1$s\">%2$s</a>已登录。 <a href=\"%3$s\" title=\"登出账户\">退出？"
 "</a>"
 
-#: ../comments.php:61
+#: ../comments.php:30
 msgid "Leave a Reply"
 msgstr "发表评论"
 
-#: ../comments.php:62
+#: ../comments.php:31
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr "回复 %s"
 
-#: ../comments.php:63
+#: ../comments.php:32
 msgid "Cancel reply"
 msgstr "取消回复"
 
-#: ../comments.php:64
+#: ../comments.php:33
 msgid "Post Comment"
 msgstr "发布评论"
 
-#: ../comments.php:72
+#: ../comments.php:41
 msgid "Pingbacks"
 msgstr "引用通告"
 
@@ -394,6 +381,14 @@ msgstr ""
 msgid "http://hjyl.org/"
 msgstr "http://hjyl.org/"
 
+#: ../inc/theme_inc.php:159
+msgid "https://www.paypal.com/cgi-bin/webscr"
+msgstr "https://www.paypal.com/cgi-bin/webscr"
+
+#: ../inc/theme_inc.php:165
+msgid "https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif"
+msgstr "https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif"
+
 #: ../inc/theme_inc.php:169
 msgid "http://t1.qpic.cn/mblogpic/bcd7926bbc4d4e03f384/2000"
 msgstr "http://t1.qpic.cn/mblogpic/bcd7926bbc4d4e03f384/2000"
@@ -445,6 +440,15 @@ msgstr "上一篇: %title"
 #: ../single.php:43
 msgid "Next: %title"
 msgstr "下一篇: %title"
+
+#~ msgid "Welcome <strong>%s</strong>"
+#~ msgstr "欢迎回来 <strong>%s</strong>"
+
+#~ msgid "(Toggle)"
+#~ msgstr "(打开)"
+
+#~ msgid "(Close)"
+#~ msgstr "(关闭)"
 
 #~ msgid "<< Previous"
 #~ msgstr "上一页"
