@@ -3,13 +3,13 @@
 Contributors: Iceable
 Tags: black, blue, white, light, two-columns, right-sidebar, flexible-width, custom-header, custom-background, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
-Tested up to: 3.6
-Stable tag: 1.1.9
+Tested up to: 4.2.2
+Stable tag: 1.2
 
 == ABOUT BOLDR LITE ==
 
-BoldR Lite is a bold, responsive, magazine style theme for WordPress. Perfect for tech or design oriented blogs and creative business websites.
-It features two widgetizable areas (sidebar and optional footer).
+BoldR Lite is a Bold, Responsive, Magazine-style theme for WordPress. Suitable for any website and perfect for tech or design oriented blogs and creative business websites.
+It features two widgetizable areas (Sidebar and optional Footer), two menu locations (Navbar and Footer), optional Tagline display, custom Logo and Favicon, Custom Header Image and Custom Background.
 
 BoldR Lite is the lite version of BoldR Pro, which comes with many additional features and access to premium class pro support forum and can be found at http://www.iceablethemes.com
 
@@ -36,26 +36,229 @@ Please refer to license.txt for more information.
 == CREDITS ==
 
 This theme bundles some third party javascript and jQuery plugins, released under GPL or GPL compatible licenses:
-* hoverIntent: Copyright 2007, 2013 Brian Cherne. MIT License. http://cherne.net/brian/resources/jquery.hoverIntent.html
 * superfish: Copyright 2013 Joel Birch. Dual licensed under the MIT and GPL licenses. http://users.tpg.com.au/j_birch/plugins/superfish/
-* ru_RU translation files for BoldR Lite: Copyright 2013 Dmitriy Skalubo. GPL license. http://wordpress.crimea.ua/
+* ru_RU, de_DE, es_ES, pt_BR, pl_PL and it_IT translation files: see below.
+* HTML5 Shiv v3.6 | @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed. Source: https://github.com/aFarkas/html5shiv
 
-All other files are copyright 2013 Iceable Media.
+All other files are copyright 2013-2015 Iceable Media and released under the terms of the GNU GPLv2 License.
 
 == TRANSLATIONS ==
 
-Currently available translations:
+Currently available translations (GNU GPLv2 Licensed):
 
 * French (fr_FR) translation: by Iceable Media
 * Russian (ru_RU) translation: Thanks to Dmitriy Skalubo - http://wordpress.crimea.ua/
+* German (de_DE) translation: Adapted from BoldR Pro translation by FromBeyond - info@frombeyond.de
+* Spanish (es_ES) translation: por Chema Masip Diaz – http://www.pedaleapormadrid.es/ – chmadi@gmail.com
+* Brazilian Portuguese (pt_BR) translation: Thanks to Rafael de Oliveira Stephano - http://rstephano.com.br - rafael@rstephano.com.br
+* Polish (pl_PL) translation: Thanks to nitr0 - dreambyte.pl
+* Italian (it_IT) translation: Thanks to Manuel Valentino - brisma@gmail.com - http://www.brisma.it/
 
-Translating this theme into you own language is quick and easy, you will find a .POT file in the /languages folder to get you started. It contains about 40 strings only.
+Translating this theme into you own language is quick and easy, you will find a .POT file in the /languages folder to get you started. It contains about 80 strings only.
 If you don't have a .po file editor yet, you can download Poedit from http://www.poedit.net/download.php - Poedit is free and available for Windows, Mac OS and Linux.
 
 If you have translated this theme into your own language and are willing to share your translation with the community, please feel free to do so on the forums at http://www.iceablethemes.com
 Your translation files will be added to the next update. Don't forget to leave your name, email address and/or website link so credits can be given to you!
 
 == CHANGELOG ==
+
+= 1.2.0 =
+July 10th, 2015
+* Replaced theme options panel with Customizer implementation
+* Added "title-tag" support
+* Custom Header image: removed recommended height
+* Updated fr_FR translation file
+* Tested with WordPress 4.2.2
+
+= 1.1.47 =
+February 2nd, 2015
+* Enhanced menu items: the whole area (box) around menu item is now clickable, not only the text
+* Updated copyright date to 2015
+* Updated description
+
+= 1.1.46 =
+December 18th, 2014
+* Fixed: Typo in comments.php in version 1.1.45 breaking all pages with comments
+
+= 1.1.45 =
+December 16th, 2014
+* Fixed: made all text strings translatable in front-end and back-end.
+* Updated POT file
+* Updated french (fr_FR) bundled translation
+
+= 1.1.44 =
+December 15th, 2014
+* Tested with WordPress 4.1 (RC1)
+* Fixed Blogpost title font size in index
+* Profixed 'boldr-style' handle when registering style.css
+* Moved admin notice to theme options page only and removed boldr_notice_ignore()
+* Now using core bundled version of hoverIntent
+* Removed content filters
+* Renamed and moved /page-full-width.php to /page-templates/full-width.php
+* Reviewed and enhanced validation, sanitation and escaping in theme options
+* Added an extra user permission check before saving theme options setting in the database
+* Appropriately use the_title_attribute() to escape title attributes in index.php and single.php
+
+= 1.1.43 =
+October 27th, 2014
+* Added it_IT translation files
+* Updated de_DE translation files
+
+= 1.1.42 =
+September 24th, 2014
+* Fixed hAtom structured data (Errors like Missing required field "entry-title" / "updated" / hCard "author" in Google Webmaster tools)
+* Removed hentry class from pages (hentry is irrelevant for static content)
+
+= 1.1.41 =
+September 8th, 2014
+* Tested with WordPress 4.0
+* Updated Polish (pl_PL) translation (Update by nitr0 - dreambyte.pl)
+* Updated Theme Options page and upgrade description
+
+= 1.1.40 =
+September 1st, 2014
+* Fixed further glitch in Firefox with large post thumbnails
+
+= 1.1.39 =
+August 25th, 2014
+* Fixed CSS glitch in Firefox: oversized logo image were overflowing header area
+
+= 1.1.38 =
+August 4th, 2014
+* Fixed an odd glitch with footer widgets columns
+
+= 1.1.37 =
+July 14th, 2014
+* Added polish translation files (kindly provided by nitr0 - dreambyte.pl)
+
+= 1.1.36 =
+July 7th, 2014
+* Optimized all png images (62% size reduction)
+* Replaced (has_post_thumbnail()) with ('' != get_the_post_thumbnail()) in single.php (as per codex recommendation - fixes an occasional issue)
+
+= 1.1.35 =
+June 10th, 2014
+* Fixed W3C validator error caused by the "X-UA-Compatible" meta tag. The theme now fully validates as HTML5.
+
+= 1.1.34 =
+May 26th, 2014
+* Added ellipsis (...) to the end of truncated excerpts when displaying the "read more" button (based on user feedback).
+
+= 1.1.33 =
+May 19th, 2014
+* Removed unnecessary function that updated boldr_settings in the database upon activation. Now saving/updating only upon user action (when user clicks "save changes" in Theme options)
+
+= 1.1.32 =
+May 12th, 2014
+* Moved $content_width definition into a callback function (hooked to after_setup_theme)
+* Tested with WP 3.9.1
+
+= 1.1.31 =
+May 5th, 2014
+* Fixed missing spaces in all translation files
+
+= 1.1.30 =
+April 28th, 2014
+* Overall code review and optimization
+* Tested with WordPress 3.9
+
+= 1.1.29 =
+April 14th, 2014
+* Fixed: Using sane defaults (No setting is saved in the database without explicit user action)
+* Removed unused function boldr_get_settings()
+* Tested with WordPress 3.9-RC1: no issue found
+
+= 1.1.28 =
+April 7th, 2014
+* Fixed german translation: "Kein Kommentar" instead of "Nein Kommentar" based on user feedback
+* Fixed typo in french translation "Votre recherche" instead of "Votre recherché"
+* Updated .pot file
+* Updated copyright note in all files (2013-2015)
+
+= 1.1.27 =
+March 31th, 2014
+* Fixed missing strings from translation
+* Webfonts loading (SSL/Non-SSL): removed is_ssl() check and let browsers determine which protocol to use
+* Added paginated page support to page-full-width template
+
+= 1.1.26 =
+March 10th, 2014
+* Loading webfonts with latin + latin extended subset to improve support for some foreign languages
+
+= 1.1.25 =
+February 26th, 2014
+* Fixed minor issue in the code added to 1.1.24
+* Updated fr_FR translation based on french speaking users feedback
+
+= 1.1.24 =
+February 17th, 2014
+* Added paginated pages support
+
+= 1.1.23 =
+February 4th, 2014
+* Added "Support and Feedback" in theme options
+* Tested with WordPress 3.8.1
+
+= 1.1.22 =
+January 16th, 2014
+* Added pt_BR translation files (kindly provided by Rafael de Oliveira Stephano)
+
+= 1.1.21 =
+January 2nd, 2014
+* Updated tags for WordPress 3.8: fixed-layout and responsive-layout
+* Updated screenshot to 880x660px for WordPress 3.8
+
+= 1.1.20 =
+December 13th, 2013
+* Added spanish (es_ES) translation files.
+
+= 1.1.19 =
+November 25th, 2013
+* Fixed select dropdown styling in Firefox (removes default FF arrow overlapping the custom styled arrow)
+
+= 1.1.18 =
+November 18th, 2013
+* Bugfix: Appropriately use 'wp_enqueue_scripts' to enqueue CSS stylesheet
+* Changed comment about removing credit link in footer.php (compliance)
+
+= 1.1.17 =
+November 8th, 2013
+* Changed title attribute in footer credit link (WPTRT compliance)
+* Removed logo from default settings: default now falls back to site title (WPTRT compliance)
+
+= 1.1.16 =
+November 5th, 2013
+* Tested with WordPress 3.7.1
+* Merged and minified CSS files into one for increased performances (uncompressed .dev.css version available for developpers under /css )
+* Merged and minified JS files into one for increased performances (uncompressed .dev.js version available for developpers under /js )
+
+= 1.1.15 =
+October 21st, 2013
+* Added editor style
+
+= 1.1.14 =
+October 2nd, 2013
+* Enhanced empty search results page
+* Updated .POT file
+* Updated fr_FR translation
+
+= 1.1.13 =
+September 17th, 2013
+* Merged header image code conditionals and moved to header.php
+* Tested with WP 3.6.1.
+
+= 1.1.12 =
+September 10th, 2013
+* Added: Option to disable responsive mode in Theme Options.
+
+= 1.1.11 =
+September 2nd, 2013
+* Added: Dismissable admin notice warning users who have not set a primary menu (fallback menu is not responsive).
+
+= 1.1.10 =
+August 23th, 2013
+* Fixed: Thumbnail display for single post causing occasional issue if not sized properly (happened when the image were uploaded while using another theme with different thumbnail size)
+* Added: de_DE translation files.
 
 = 1.1.9 =
 August 5th, 2013

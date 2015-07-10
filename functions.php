@@ -3,34 +3,21 @@
  *
  * BoldR Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
  *
- * Copyright 2013 Mathieu Sarrasin - Iceable Media
+ * Copyright 2013-2015 Mathieu Sarrasin - Iceable Media
  *
  * Theme's Function
  *
  */
 
 /*
- * Set default $content_width
- */
-if ( ! isset( $content_width ) )
-	$content_width = 590;
-
-/* Adjust $content_width depending on the page being displayed */
-function boldr_content_width() {
-	global $content_width;
-	if ( is_singular() && !is_page() )
-		$content_width = 595;
-	if ( is_page() )
-		$content_width = 680;
-	if ( is_page_template( 'page-full-width.php' ) )
-		$content_width = 920;
-}
-add_action( 'template_redirect', 'boldr_content_width' );
-
-/*
  * Setup and registration functions
  */
 function boldr_setup(){
+
+	/* Set default $content_width */
+	global $content_width;
+	if ( ! isset( $content_width ) ) $content_width = 590;
+
 	/* Translation support
 	 * Translations can be added to the /languages directory.
 	 * A .pot template file is included to get you started
@@ -44,6 +31,9 @@ function boldr_setup(){
 	register_nav_menu( 'primary', 'Navigation menu' );
 	register_nav_menu( 'footer-menu', 'Footer menu' );
 
+	/* Title tag support */
+	add_theme_support( 'title-tag' );
+
 	/* Post Thumbnails Support */
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 260, 260, true );
@@ -52,7 +42,7 @@ function boldr_setup(){
 	add_theme_support( 'custom-header',
 						array(	'header-text' => false,
 								'width' => 920,
-								'height' => 370,
+								// 'height' => 370,
 								'flex-height' => true,
 								)
 					);
@@ -67,30 +57,27 @@ function boldr_setup(){
 }
 add_action('after_setup_theme', 'boldr_setup');
 
-/*
- * Page title
- */
-function boldr_wp_title( $title, $sep ) {
-	global $paged, $page;
-
-	if ( is_feed() )
-		return $title;
-
-	// Add the site name.
-	$title .= get_bloginfo( 'name' );
-
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
-
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'boldr' ), max( $paged, $page ) );
-
-	return $title;
+/* Adjust $content_width depending on the page being displayed */
+function boldr_content_width() {
+	global $content_width;
+	if ( is_singular() && !is_page() )
+		$content_width = 595;
+	if ( is_page() )
+		$content_width = 680;
+	if ( is_page_template( 'page-full-width.php' ) )
+		$content_width = 920;
 }
-add_filter( 'wp_title', 'boldr_wp_title', 10, 2 );
+add_action( 'template_redirect', 'boldr_content_width' );
+
+/*
+ * Page title (for WordPress < 4.1 )
+ */
+if ( ! function_exists( '_wp_render_title_tag' ) ) :
+	function boldr_render_title() {
+		?><title><?php wp_title( '|', true, 'right' ); ?></title><?php
+	}
+	add_action( 'wp_head', 'boldr_render_title' );
+endif;
 
 /*
  * Add a home link to wp_page_menu() ( wp_nav_menu() fallback )
@@ -121,7 +108,6 @@ function boldr_add_menu_parent_class( $items ) {
 }
 add_filter( 'wp_nav_menu_objects', 'boldr_add_menu_parent_class' );
 
-
 /*
  * Register Sidebar and Footer widgetized areas
  */
@@ -143,7 +129,7 @@ function boldr_widgets_init() {
 		'id'            => 'footer-sidebar',
 		'description'   => '',
 	    'class'         => '',
-		'before_widget' => '<li id="%1$s" class="one-fourth widget %2$s">',
+		'before_widget' => '<li id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</li>',
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
@@ -162,55 +148,65 @@ function boldr_styles() {
 	$stylesheet_directory = get_stylesheet_directory(); // Current theme directory
 	$stylesheet_directory_uri = get_stylesheet_directory_uri(); // Current theme URI
 
+	$responsive_mode = get_theme_mod('boldr_responsive_mode');
+	
+	if ($responsive_mode != 'off'):
+		$stylesheet = '/css/boldr.min.css';
+	else:
+		$stylesheet = '/css/boldr-unresponsive.min.css';
+	endif;
+
 	/* Child theme support:
-	 * Enqueue child-theme's versions of stylesheets in /css if they exist,
+	 * Enqueue child-theme's versions of stylesheet in /css if they exist,
 	 * or the parent theme's version otherwise
 	 */
-	if ( @file_exists( $stylesheet_directory . '/css/icefit.css' ) )
-		wp_register_style( 'icefit', $stylesheet_directory_uri . '/css/icefit.css' );
+	if ( @file_exists( $stylesheet_directory . $stylesheet ) )
+		wp_register_style( 'boldr', $stylesheet_directory_uri . $stylesheet );
 	else
-		wp_register_style( 'icefit', $template_directory_uri . '/css/icefit.css' );				
-
-	if ( @file_exists( $stylesheet_directory . '/css/theme-style.css' ) )
-		wp_register_style( 'theme-style', $stylesheet_directory_uri . '/css/theme-style.css' );
-	else
-		wp_register_style( 'theme-style', $template_directory_uri . '/css/theme-style.css' );	
-
-	if ( @file_exists( $stylesheet_directory . '/css/media-queries.css' ) )
-		wp_register_style( 'media-queries', $stylesheet_directory_uri . '/css/media-queries.css' );
-	else
-		wp_register_style( 'media-queries', $template_directory_uri . '/css/media-queries.css' );	
+		wp_register_style( 'boldr', $template_directory_uri . $stylesheet );				
 
 	// Always enqueue style.css from the current theme
-	wp_register_style( 'style', $stylesheet_directory_uri . '/style.css');
+	wp_register_style( 'boldr-style', $stylesheet_directory_uri . '/style.css');
 
-	wp_enqueue_style( 'icefit' );
-	wp_enqueue_style( 'theme-style' );
-	wp_enqueue_style( 'media-queries' );
-	wp_enqueue_style( 'style' );
+	wp_enqueue_style( 'boldr' );
+	wp_enqueue_style( 'boldr-style' );
 
 	// Google Webfonts
-	$protocol = is_ssl() ? 'https' : 'http';
-	wp_enqueue_style( 'Oswald-webfonts', "$protocol://fonts.googleapis.com/css?family=Oswald:400italic,700italic,400,700", array(), null );
-	wp_enqueue_style( 'PTSans-webfonts', "$protocol://fonts.googleapis.com/css?family=PT+Sans:400italic,700italic,400,700", array(), null );
+	wp_enqueue_style( 'Oswald-webfonts', "//fonts.googleapis.com/css?family=Oswald:400italic,700italic,400,700&subset=latin,latin-ext", array(), null );
+	wp_enqueue_style( 'PTSans-webfonts', "//fonts.googleapis.com/css?family=PT+Sans:400italic,700italic,400,700&subset=latin,latin-ext", array(), null );
 
 }
-add_action('wp_print_styles', 'boldr_styles');
+add_action('wp_enqueue_scripts', 'boldr_styles');
 
+/*
+ * Register editor style
+ */
+function boldr_editor_styles() {
+	add_editor_style('css/editor-style.css');
+}
+add_action( 'init', 'boldr_editor_styles' );
 
 /*
  * Enqueue Javascripts
  */
 function boldr_scripts() {
-	wp_enqueue_script('icefit-scripts', get_template_directory_uri() . '/js/icefit.js', array('jquery'));
-	wp_enqueue_script('hoverIntent',    get_template_directory_uri() . '/js/hoverIntent.js', array('jquery'));
-	wp_enqueue_script('superfish',      get_template_directory_uri() . '/js/superfish.js', array('jquery'));
+	wp_enqueue_script('boldr', get_template_directory_uri() . '/js/boldr.min.js', array('jquery','hoverIntent'));
     /* Threaded comments support */
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 }
 add_action('wp_enqueue_scripts', 'boldr_scripts');
 
+/*
+ * Remove hentry class from static pages
+ */
+function boldr_remove_hentry( $classes ) {
+	if ( is_page() ):
+		$classes = array_diff($classes, array('hentry'));
+	endif;
+	return $classes;
+}
+add_filter('post_class','boldr_remove_hentry');
 
 /*
  * Remove "rel" tags in category links (HTML5 invalid)
@@ -221,46 +217,11 @@ function boldr_remove_rel_cat( $text ) {
 add_filter( 'the_category', 'boldr_remove_rel_cat' );
 
 /*
- * Fix for a known issue with enclosing shortcodes and wpautop
- * (wpautop tends to add empty <p> or <br> tags before and/or after enclosing shortcodes)
- * Thanks to Johann Heyne
- */
-function boldr_shortcode_empty_paragraph_fix($content) {
-	$array = array (
-		'<p>['    => '[', 
-		']</p>'   => ']', 
-		']<br />' => ']',
-	);
-	$content = strtr($content, $array);
-	return $content;
-}
-add_filter('the_content', 'boldr_shortcode_empty_paragraph_fix');
-
-/*
- * Improved version of clean_pre
- * Based on a work by Emrah Gunduz
- */
-function boldr_protect_pre($pee) {
-	$pee = preg_replace_callback('!(<pre[^>]*>)(.*?)</pre>!is', 'boldr_eg_clean_pre', $pee );
-	return $pee;
-}
-
-function boldr_eg_clean_pre($matches) {
-	if ( is_array($matches) )
-		$text = $matches[1] . $matches[2] . "</pre>";
-	else
-		$text = $matches;
-	$text = str_replace('<br />', '', $text);
-	return $text;
-}
-add_filter( 'the_content', 'boldr_protect_pre' );
-
-/*
  * Customize "read more" links on index view
  */
 function boldr_excerpt_more( $more ) {
 	global $post;
-	return '<div class="read-more"><a href="'. get_permalink( get_the_ID() ) . '">'. __("Read More", 'boldr') .'</a></div>';
+	return '... <div class="read-more"><a href="'. get_permalink( get_the_ID() ) . '">'. __("Read More", 'boldr') .'</a></div>';
 }
 add_filter( 'excerpt_more', 'boldr_excerpt_more' );
 
@@ -358,9 +319,11 @@ function boldr_adjacent_image_link($prev = true) {
 		return false;
 }
 
+
 /*
- * Framework Elements
+ * Customizer
  */
-include_once('functions/icefit-options/settings.php'); // Admin Settings Panel
+
+require_once 'inc/customizer/customizer.php';
 
 ?>

@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BoldR Lite 1.1\n"
 "POT-Creation-Date: 2013-06-03 10:54+0100\n"
-"PO-Revision-Date: 2013-07-04 14:55+0200\n"
-"Last-Translator: Dmitriy <wordpress.crimea.ua@gmail.com>\n"
+"PO-Revision-Date: 2014-05-05 08:32+0100\n"
+"Last-Translator: \n"
 "Language-Team: Iceable Themes <contact@iceablethemes.com>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.6\n"
+"X-Generator: Poedit 1.5.5\n"
 "X-Poedit-KeywordsList: __;_e;_x;_n\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -85,11 +85,11 @@ msgstr "Результаты поиска для"
 
 #: ../index.php:37
 msgid "Tag: "
-msgstr "Тэги:"
+msgstr "Тэги: "
 
 #: ../index.php:42
 msgid "Category: "
-msgstr "Категория:"
+msgstr "Категория: "
 
 #: ../index.php:67 ../single.php:44
 msgid "No"
@@ -117,7 +117,7 @@ msgstr "Комментарии отключены"
 
 #: ../index.php:72 ../single.php:49
 msgid "by "
-msgstr "по"
+msgstr "по "
 
 #: ../index.php:74 ../page-full-width.php:40 ../page.php:40 ../single.php:51
 msgid "Edit"
