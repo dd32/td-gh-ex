@@ -103,7 +103,7 @@
 										<?php
 											$output = '';
 											if ( isset( $abaris['skill-heading'] ) ) {
-												$output .= '<h2><i class="el-icon-tags"></i>' . $abaris['skill-heading'] . '</h2>';
+												$output .= '<h2><i class="el el-tags"></i>' . $abaris['skill-heading'] . '</h2>';
 											}
 
 											for ($i=1;$i<6;$i++) {
@@ -135,7 +135,7 @@
 								?>
 									<div class="row">
 										<div class="span12">
-											<h2><i class="el-icon-tags"></i><?php _e('From the Blog','abaris'); ?></h2>
+											<h2><i class="el el-tags"></i><?php _e('From the Blog','abaris'); ?></h2>
 											<?php abaris_recent_posts(); ?>
 										</div><!-- .span12 -->
 									</div><!-- .row -->
@@ -224,7 +224,7 @@
 								<?php
 									$output = '';
 									if ( isset( $abaris_home['skill-heading'] ) ) {
-										$output .= '<h2><i class="el-icon-tags"></i>' . esc_html( $abaris_home['skill-heading'] ) . '</h2>';
+										$output .= '<h2><i class="el el-tags"></i>' . esc_html( $abaris_home['skill-heading'] ) . '</h2>';
 									}
 
 									for ($i=1;$i<6;$i++) {
@@ -251,7 +251,7 @@
 						<div class="divider div2"><span></span></div>
 						<div class="row">
 							<div class="span12">
-								<h2><i class="el-icon-tags"></i><?php _e('From the Blog','abaris'); ?></h2>
+								<h2><i class="el el-tags"></i><?php _e('From the Blog','abaris'); ?></h2>
 								<?php abaris_recent_posts(); ?>
 							</div><!-- .span12 -->
 						</div><!-- .row -->

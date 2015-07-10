@@ -69,7 +69,7 @@ function abaris_widgets_init() {
 		'id'            => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title"><i class="el-icon-tags"></i>',
+		'before_title'  => '<h1 class="widget-title"><i class="el el-tags"></i>',
 		'after_title'   => '</h1>',
 	) );
 	register_sidebar( array(
@@ -77,7 +77,7 @@ function abaris_widgets_init() {
 		'id'            => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title"><i class="el-icon-tags"></i>',
+		'before_title'  => '<h3 class="widget-title"><i class="el el-tags"></i>',
 		'after_title'   => '</h3>',
 	) );
 

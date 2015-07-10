@@ -103,7 +103,7 @@ if (!class_exists("Redux_Framework_sample_config")) {
             $sections[] = array(
                 'title' => __('Section via hook', 'redux-framework-demo'),
                 'desc' => __('<p class="description">This is a section created by adding a filter to the sections array. Can be used by child themes to add/remove sections from the options.</p>', 'redux-framework-demo'),
-                'icon' => 'el-icon-paper-clip',
+                'icon' => 'el el-paper-clip',
                 // Leave this as a blank section, no options just some intro text set above.
                 'fields' => array()
             );
@@ -231,78 +231,78 @@ if (!class_exists("Redux_Framework_sample_config")) {
 
             $featuresHTML = <<< FEATURES
             <div class="one-third column">
-                <div class="icon-wrap"><i class="el-icon-cog-alt"></i></div>
+                <div class="icon-wrap"><i class="el el-cog-alt"></i></div>
                 <h3>Page Builder</h3>
                 <p>Abaris Pro supports Page Builder. All our shortcodes can be used as widgets too. You can drag and drop our widgets with page builder visual editor.</p>
             </div>
             <div class="one-third column">
-                <div class="icon-wrap"><i class="el-icon-th-large"></i></div>
+                <div class="icon-wrap"><i class="el el-th-large"></i></div>
                 <h3>Page Layout</h3>
                 <p>Abaris Pro offers many different page layouts so you can quickly and easily create your pages with various layout without any hassle!</p>
             </div>            
             <div class="one-third column">
-                <div class="icon-wrap"><i class="el-icon-adjust-alt"></i></div>
+                <div class="icon-wrap"><i class="el el-adjust-alt"></i></div>
                 <h3>Unlimited Sidebar</h3>
                 <p>Unlimited sidebars allows you to create multiple sidebars. Check out our demo site to see how different pages displays different sidebars!</p>
             </div>
             <div class="one-third column">
-                <div class="icon-wrap"><i class="el-icon-fork"></i></div>
+                <div class="icon-wrap"><i class="el el-fork"></i></div>
                 <h3>Shortcode Builder</h3>
                 <p>With our shortcode builder and lots of shortcodes, you can easily create nested shortcodes and build custom pages!</p>
             </div>
             <div class="one-third column">
-                <div class="icon-wrap"><i class="el-icon-camera"></i></div>
+                <div class="icon-wrap"><i class="el el-camera"></i></div>
                 <h3>Multi Portfolio</h3>
                 <p>7 portfolio layouts with Isotope filtering, 3 blog layouts and multiple other alternate layouts for interior pages!</p>
             </div>
             <div class="one-third column">
-                <div class="icon-wrap"><i class="el-icon-fontsize"></i></div>
+                <div class="icon-wrap"><i class="el el-fontsize"></i></div>
                 <h3>Typography</h3>
                 <p>Abaris Pro loves typography, you can choose from over 500+ Google Fonts and Standard Fonts to customize your site!</p>
             </div>
             <div class="one-third column">
-                <div class="icon-wrap"><i class="el-icon-slideshare"></i></div>
+                <div class="icon-wrap"><i class="el el-slideshare"></i></div>
                 <h3>Awesome Sliders</h3>
                 <p>Abaris Pro includes two types of slider. You can use both Flex and Elastic sliders anywhere in your site.</p>
             </div>
             <div class="one-third column">
-                <div class="icon-wrap"><i class="el-icon-dashboard"></i></div>
+                <div class="icon-wrap"><i class="el el-dashboard"></i></div>
                 <h3>Woo Commerce</h3>
                 <p>Abaris Pro has full design/code integration for WooCommerce, your shop will look as good as the rest of your site!</p>
             </div>
             <div class="one-third column">
-                <div class="icon-wrap"><i class="el-icon-tasks"></i></div>
+                <div class="icon-wrap"><i class="el el-tasks"></i></div>
                 <h3>Custom Widget</h3>
                 <p>We offer many custom widgets that are stylized and ready for use. Simply drag &amp; drop into place to activate!</p>
             </div>
             <div class="one-third column">
-                <div class="icon-wrap"><i class="el-icon-leaf"></i></div>
+                <div class="icon-wrap"><i class="el el-leaf"></i></div>
                 <h3>Advanced Admin</h3>
                 <p>Advanced Redux Framework for theme options panel, you can customize any part of your site quickly and easily!</p>
             </div>            
             <div class="one-third column">
-                <div class="icon-wrap"><i class="el-icon-magic"></i></div>
+                <div class="icon-wrap"><i class="el el-magic"></i></div>
                 <h3>Font Awesome</h3>
                 <p>Font Awesome icons are fully integrated into the theme. Use them anywhere in your site in 6 different sizes!</p>
             </div>
             <div class="one-third column">
-                <div class="icon-wrap"><i class="el-icon-resize-full"></i></div>
+                <div class="icon-wrap"><i class="el el-resize-full"></i></div>
                 <h3>Responsive Layout</h3>
                 <p>Abaris Pro is fully responsive and can adapt to any screen size. Resize your browser window to view it!</p>
             </div>  
 
             <div class="one-third column">
-                <div class="icon-wrap"><i class="el-icon-magic"></i></div>
+                <div class="icon-wrap"><i class="el el-magic"></i></div>
                 <h3>Testimonials</h3>
                 <p>With our testimonial post type, shortcode and widget, Displaying testimonials is a breeze.</p>
             </div>
             <div class="one-third column">
-                <div class="icon-wrap"><i class="el-icon-smiley-alt"></i></div>
+                <div class="icon-wrap"><i class="el el-smiley-alt"></i></div>
                 <h3>Social Media</h3>
                 <p>Want your users to stay in touch? No problem, Abaris Pro has Social Media icons all throughout the theme!</p>
             </div>
             <div class="one-third column">
-                <div class="icon-wrap"><i class="el-icon-map-marker-alt"></i></div>
+                <div class="icon-wrap"><i class="el el-map-marker-alt"></i></div>
                 <h3>Google Map</h3>
                 <p>Abaris Pro includes Goole Map as shortcode and widget. So, you can use it anywhere in your site!</p>
             </div>
@@ -314,7 +314,7 @@ FEATURES;
             $this->sections[] = array(
                 'title' => __('General Settings', 'abaris'),
                 'desc' => __('General Settings of Theme to change look and feel through out the site', 'abaris'),
-                'icon' => 'el-icon-cogs',
+                'icon' => 'el el-cogs',
                 // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
                 'fields' => array(  
                     array(
@@ -393,7 +393,7 @@ FEATURES;
             $this->sections[] = array(
                 'title' => __('Header', 'abaris'),
                 'desc' => __('Theme options related to header section', 'abaris'),
-                'icon' => 'el-icon-arrow-up',
+                'icon' => 'el el-arrow-up',
                 // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
                 'fields' => array(  
 
@@ -475,7 +475,7 @@ FEATURES;
             $this->sections[] = array(
                 'title' => __('Footer', 'abaris'),
                 'desc' => __('Theme options related to footer area of theme', 'abaris'),
-                'icon' => 'el-icon-arrow-down',
+                'icon' => 'el el-arrow-down',
                 // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
                 'fields' => array(  
 
@@ -504,7 +504,7 @@ FEATURES;
                         'type'      => 'info',
                         'notice'    => true,
                         'style'     => 'critical',
-                        'icon'      => 'el-icon-info-sign',
+                        'icon'      => 'el el-info-circle',
                         'title'     => __('Abaris Pro Options. <a href="http://www.webulousthemes.com/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
                         'desc'      => __('These options are available only in Abaris Pro version theme. Upgrade now for just $39 .', 'abaris')
                     ),
@@ -523,7 +523,7 @@ FEATURES;
                 $this->sections[] = array(
                     'title' => __('Home', 'abaris'),
                     'desc' => __('Theme options related to home page', 'abaris'),
-                    'icon' => 'el-icon-home',
+                    'icon' => 'el el-home',
                     // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
                     'fields' => array(  
 
@@ -540,7 +540,7 @@ FEATURES;
                             'type'      => 'info',
                             'notice'    => true,
                             'style'     => 'critical',
-                            'icon'      => 'el-icon-info-sign',
+                            'icon'      => 'el el-info-circle',
                             'title'     => __('Flex Slider Post Type and Multiple Sliders. <a href="http://www.webulousthemes.com/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
                             'desc'      => __('Upgrade to Abaris Pro version to use Flex Slider Custom Post Type<br> and setup multiple sliders. You can also tweak slider effects.', 'abaris')
                         ),
@@ -757,7 +757,7 @@ FEATURES;
 		                    'type'      => 'info',
 		                    'notice'    => true,
 		                    'style'     => 'critical',
-		                    'icon'      => 'el-icon-info-sign',
+		                    'icon'      => 'el el-info-circle',
 		                    'title'     => __('Abaris Pro Options. <a href="http://www.webulousthemes.com/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
 		                    'desc'      => __('These options are available only in Abaris Pro version theme. Upgrade now for just $39 .', 'abaris')
 		                ),
@@ -785,7 +785,7 @@ FEATURES;
                 $this->sections[] = array(
                     'title' => __('Blog', 'abaris'),
                     'desc' => __('Blog options for site', 'abaris'),
-                    'icon' => 'el-icon-file',
+                    'icon' => 'el el-file',
                     // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
                     'fields' => array(  
 
@@ -813,7 +813,7 @@ FEATURES;
                         'type'      => 'info',
                         'notice'    => true,
                         'style'     => 'critical',
-                        'icon'      => 'el-icon-info-sign',
+                        'icon'      => 'el el-info-circle',
                         'title'     => __('Abaris Pro Options. <a href="http://www.webulousthemes.com/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
                         'desc'      => __('These options are available only in Abaris Pro version theme. Upgrade now for just $39', 'abaris')
                     ),
@@ -892,14 +892,14 @@ FEATURES;
             $this->sections[] = array(
                 'title' => __('Social Sharing Box', 'abaris'),
                 'desc' => __('Social Sharing Icons Setup', 'abaris'),
-                'icon' => 'el-icon-share',
+                'icon' => 'el el-share',
                 'fields' => array(  
                     array(
                         'id'        => 'upgrade-notice-5',
                         'type'      => 'info',
                         'notice'    => true,
                         'style'     => 'critical',
-                        'icon'      => 'el-icon-info-sign',
+                        'icon'      => 'el el-info-circle',
                         'title'     => __('Abaris Pro Options. <a href="http://www.webulousthemes.com/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
                         'desc'      => __('These options are available only in Abaris Pro version theme. Upgrade now for just $39 .', 'abaris')
                     ),
@@ -959,14 +959,14 @@ FEATURES;
             $this->sections[] = array(
                 'title' => __('Social Network', 'abaris'),
                 'desc' => __('Social Network Links', 'abaris'),
-                'icon' => 'el-icon-share',
+                'icon' => 'el el-share',
                 'fields' => array(
                     array(
                         'id'        => 'upgrade-notice-6',
                         'type'      => 'info',
                         'notice'    => true,
                         'style'     => 'critical',
-                        'icon'      => 'el-icon-info-sign',
+                        'icon'      => 'el el-info-circle',
                         'title'     => __('Abaris Pro Options. <a href="http://www.webulousthemes.com/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
                         'desc'      => __('These options are available only in Abaris Pro version theme. Upgrade now for just $39 .', 'abaris')
                     ),
@@ -1067,7 +1067,7 @@ FEATURES;
             $this->sections[] = array(
                 'title' => __('Support', 'abaris'),
                 'desc' => __('Documentation', 'abaris'),
-                'icon' => 'el-icon-user',
+                'icon' => 'el el-user',
                 'fields' => array(
 
                     array(
@@ -1083,7 +1083,7 @@ FEATURES;
             $this->sections[] = array(
                 'title' => __('Why Upgrade?', 'abaris'),
                 'desc' => __('Features you\'ll get in Pro Version', 'abaris'),
-                'icon' => 'el-icon-magic',
+                'icon' => 'el el-magic',
                 'fields' => array(
                     
                     array(
@@ -1099,7 +1099,7 @@ FEATURES;
             $this->sections[] = array(
                 'title' => __('Flex Slider', 'abaris'),
                 'desc' => __('Flex Slider Settings', 'abaris'),
-                'icon' => 'el-icon-screen',
+                'icon' => 'el el-screen',
                 'fields' => array(
 
                     array(
@@ -1107,7 +1107,7 @@ FEATURES;
                         'type'      => 'info',
                         'notice'    => true,
                         'style'     => 'critical',
-                        'icon'      => 'el-icon-info-sign',
+                        'icon'      => 'el el-info-circle',
                         'title'     => __('Abaris Pro Options. <a href="http://www.webulousthemes.com/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
                         'desc'      => __('These options are available only in Abaris Pro version theme. Upgrade now for just $39 .', 'abaris')
                     ),
@@ -1300,7 +1300,7 @@ FEATURES;
             $this->sections[] = array(
                 'title' => __('Light Box', 'abaris'),
                 'desc' => __('Light Box Settings', 'abaris'),
-                'icon' => 'el-icon-idea',
+                'icon' => 'el el-idea',
                 'fields' => array(
 
                     array(
@@ -1308,7 +1308,7 @@ FEATURES;
                         'type'      => 'info',
                         'notice'    => true,
                         'style'     => 'critical',
-                        'icon'      => 'el-icon-info-sign',
+                        'icon'      => 'el el-info-circle',
                         'title'     => __('Abaris Pro Options. <a href="http://www.webulousthemes.com/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
                         'desc'      => __('These options are available only in Abaris Pro version theme. Upgrade now for just $39 .', 'abaris')
                     ),
@@ -1405,7 +1405,7 @@ FEATURES;
             $this->sections[] = array(
                 'title' => __('Typography', 'abaris'),
                 'desc' => __('Typography and Link Color Settings', 'abaris'),
-                'icon' => 'el-icon-font',
+                'icon' => 'el el-font',
                 'fields' => array(
 
                     array(
@@ -1413,7 +1413,7 @@ FEATURES;
                         'type'      => 'info',
                         'notice'    => true,
                         'style'     => 'critical',
-                        'icon'      => 'el-icon-info-sign',
+                        'icon'      => 'el el-info-circle',
                         'title'     => __('Abaris Pro Options. <a href="http://www.webulousthemes.com/?add-to-cart=21">Upgrade Now</a> for just $39.', 'abaris'),
                         'desc'      => __('These options are available only in Abaris Pro version theme. Upgrade now for just $39 .', 'abaris')
                     ),
@@ -1687,23 +1687,23 @@ FEATURES;
             $this->args['share_icons'][] = array(
                 'url' => 'https://github.com/venkatraj',
                 'title' => 'Visit me on GitHub',
-                'icon' => 'el-icon-github'
+                'icon' => 'el el-github'
                     // 'img' => '', // You can use icon OR img. IMG needs to be a full URL.
             );
             $this->args['share_icons'][] = array(
                 'url' => 'https://www.facebook.com/pages/webulous/170827696548',
                 'title' => 'Like us on Facebook',
-                'icon' => 'el-icon-facebook'
+                'icon' => 'el el-facebook'
             );
             $this->args['share_icons'][] = array(
                 'url' => 'https://twitter.com/webulous',
                 'title' => 'Follow us on Twitter',
-                'icon' => 'el-icon-twitter'
+                'icon' => 'el el-twitter'
             );
             $this->args['share_icons'][] = array(
                 'url' => 'https://www.linkedin.com/company/coding-geek',
                 'title' => 'Find us on LinkedIn',
-                'icon' => 'el-icon-linkedin'
+                'icon' => 'el el-linkedin'
             );
 
 
@@ -1716,7 +1716,7 @@ FEATURES;
                     $v = str_replace("-", "_", $this->args['opt_name']);
                 }
                 //$this->args['intro_text'] = sprintf(__('<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'redux-framework-demo'), $v);
-                $this->args['intro_text'] = sprintf(__('<p class="btn-upgrade"><a href="http://www.webulousthemes.com/?add-to-cart=21"><i class="el-icon-upload"></i> Upgrade for just $39</a> <a href="http://demo.webulous.in/abarispro/" class="vide-demo"><i class="el-icon-eye-open"></i>View Demo</p>', 'redux-framework-demo'), $v);
+                $this->args['intro_text'] = sprintf(__('<p class="btn-upgrade"><a href="http://www.webulousthemes.com/?add-to-cart=21"><i class="el el-upload"></i> Upgrade for just $39</a> <a href="http://demo.webulous.in/abarispro/" class="vide-demo"><i class="el el-eye-open"></i>View Demo</p>', 'redux-framework-demo'), $v);
             } else {
                 $this->args['intro_text'] = __('<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'redux-framework-demo');
             }

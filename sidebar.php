@@ -14,14 +14,14 @@
 			</aside>
 
 			<aside id="archives" class="widget">
-				<h1 class="widget-title"><i class="el-icon-tags"></i><?php _e( 'Archives', 'abaris' ); ?></h1>
+				<h1 class="widget-title"><i class="el el-tags"></i><?php _e( 'Archives', 'abaris' ); ?></h1>
 				<ul>
 					<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
 				</ul>
 			</aside>
 
 			<aside id="meta" class="widget">
-				<h1 class="widget-title"><i class="el-icon-tags"></i><?php _e( 'Meta', 'abaris' ); ?></h1>
+				<h1 class="widget-title"><i class="el el-tags"></i><?php _e( 'Meta', 'abaris' ); ?></h1>
 				<ul>
 					<?php wp_register(); ?>
 					<li><?php wp_loginout(); ?></li>

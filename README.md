@@ -94,3 +94,8 @@ Version 1.2.1
 
 Version 1.2.2
 	* TGM Plugin Activation Update to fix XSS vulnerability
+
+Version 1.2.3
+	* Tidy Archive template
+	* Elusive Icon Fixes
+	* Theme Options screen fix

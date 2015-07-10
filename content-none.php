@@ -10,7 +10,7 @@
 
 <section class="no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title"><i class="el-icon-tags"></i><?php _e( 'Nothing Found', 'abaris' ); ?></h1>
+		<h1 class="page-title"><i class="el el-tags"></i><?php _e( 'Nothing Found', 'abaris' ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content">

@@ -7,7 +7,7 @@ global $abaris;
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title( '<i class="el-icon-tags"></i>', '' ); ?></a></h1>
+		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title( '<i class="el el-tags"></i>', '' ); ?></a></h1>
 	</header><!-- .entry-header -->
 
 	<?php if ( is_search() ) : // Only display Excerpts for Search ?>
@@ -49,7 +49,7 @@ global $abaris;
 				if ( $categories_list && abaris_categorized_blog() ) :
 			?>
 			<span class="cat-links">
-				<i class="el-icon-list-alt"></i>
+				<i class="el el-list-alt"></i>
 				<?php printf( __( ' %1$s', 'abaris' ), $categories_list ); ?>
 			</span>
 			<?php endif; // End if categories ?>
@@ -60,11 +60,11 @@ global $abaris;
 				if ( $tags_list ) :
 			?>		
 			<span class="tags-links">
-				<i class="el-icon-tags"></i>
+				<i class="el el-tags"></i>
 				<?php printf( __( ' %1$s', 'abaris' ), $tags_list ); ?>
 			</span>
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
-		<?php edit_post_link( __( '<span class="edit-link"><i class="el-icon-file-edit"></i> Edit</span>', 'abaris' ), '', '' ); ?>
+		<?php edit_post_link( __( '<span class="edit-link"><i class="el el-file-edit"></i> Edit</span>', 'abaris' ), '', '' ); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->

@@ -8,7 +8,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<h1 class="entry-title"><i class="el-icon-tags"></i><?php the_title(); ?></h1>
+		<h1 class="entry-title"><i class="el el-tags"></i><?php the_title(); ?></h1>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
@@ -20,5 +20,5 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
-	<?php edit_post_link( __( 'Edit', 'abaris' ), '<footer class="entry-meta"><span class="edit-link"><i class="el-icon-file-edit"></i> ', '</span></footer>' ); ?>
+	<?php edit_post_link( __( 'Edit', 'abaris' ), '<footer class="entry-meta"><span class="edit-link"><i class="el el-file-edit"></i> ', '</span></footer>' ); ?>
 </article><!-- #post-## -->
