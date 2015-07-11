@@ -80,12 +80,6 @@ $site ="http://www.weblizar.com" ;?>
 			<input  class="weblizar_inpute" type="text" name="width" id="width"  value="<?php echo $wl_theme_options['width']; ?>" >	
 			<span class="explain"><?php  _e('Default Logo Width : 150px, if you want to increase than specify your value','weblizar');?></span>
 		</div>
-		
-		<div class="section">
-			<h3><?php _e('Text Title','weblizar'); ?></h3>
-			<input type="checkbox" name="text_title" value="1" <?php checked( $wl_theme_options['text_title'], 1 ); ?> /><span class="explain"><?php _e('Enable text-based Site Title.   Setup title','weblizar');?> <a href="<?php echo home_url( '/' ); ?>wp-admin/options-general.php"><?php _e('Click Here','weblizar');?></a>.</span>
-		</div>
-		
 		<div class="section">
 			<h3><?php _e('Custom Favicon','weblizar'); ?></h3>
 			<input class="weblizar_inpute" type="text" value="<?php if($wl_theme_options['upload_image_favicon']!='') { echo esc_attr($wl_theme_options['upload_image_favicon']); } ?>" id="upload_image_favicon" name="upload_image_favicon" size="36" class="upload has-file"/>

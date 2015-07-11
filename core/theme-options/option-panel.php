@@ -74,7 +74,7 @@ $purchase = "http://weblizar.com/themes/enigma-premium/" ;?>
 		<h2><span></span></h2>
 		<div id="content_wrap">			
 			<div class="weblizar-header" >
-				<h2><span><?php _e('Weblizar Theme Settings','weblizar'); ?></span></h2>			
+				<h2><span><?php _e('Enigma Theme Settings','weblizar'); ?></span></h2>			
 				<div class="weblizar-submenu-links" id="weblizar-submenu-links">
 					<ul>
 						<li class=""> <div class="dashicons dashicons-format-chat" > </div> <a href="https://wordpress.org/support/theme/enigma" target="_blank" title="Support Forum"><?php _e('Support Forum','weblizar'); ?></a></li>

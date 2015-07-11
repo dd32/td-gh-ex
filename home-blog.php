@@ -14,7 +14,8 @@ if($wl_theme_options['blog_title'] !='') { ?>
 	<div class="container">	
 	<div class="row" id="enigma_blog_section">
 	<?php 	if ( have_posts()) : 			
-			$args = array( 'post_type' => 'post','posts_per_page' => 6);		
+			$posts_count =wp_count_posts()->publish;
+			$args = array( 'post_type' => 'post','posts_per_page' => $posts_count ,'ignore_sticky_posts' => 1);		
 			$post_type_data = new WP_Query( $args );
 			while($post_type_data->have_posts()):
 			$post_type_data->the_post(); ?>

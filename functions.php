@@ -30,7 +30,7 @@
 			'height'=>'55',
 			'width'=>'150',
 			'_frontpage' => '1',
-			'text_title'=>'',
+			'blog_count'=>'3',
 			'upload_image_favicon'=>'',			
 			'custom_css'=>'',
 			'slide_image_1' => $ImageUrl,
@@ -348,5 +348,8 @@
 	</nav>
 	</div>	
 <?php 
-	}	
+	}
+if (is_admin()) {
+	require_once('core/admin/admin.php');
+}	
 ?>
