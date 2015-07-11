@@ -131,7 +131,10 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog:
-
+@Version 1.3
+1. Fixed Styling issue
+2. Fixed Front page issue.
+3. Add HTML Sanitization copyright and blog section.
 @Version 1.2
 customizer added
 @version 1.1

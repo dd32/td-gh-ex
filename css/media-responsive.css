@@ -37,19 +37,7 @@
 @media only screen and (min-width: 960px) and (max-width: 1200px) {
 
 /*Flex Slider Center Alignment*/
-	.flex-slider-center {
-    left: 0;
-	right: 0;
-    position: absolute;
-    top: 10%;
-	margin: 0px auto;
-	text-align: center;
-    width: auto;
-	height: auto;
-	z-index: 0;
-	padding: 20px;
-    float: none;
-}
+.flex-slider-center { }
 .flex-slider-center h2 {
     font-size: 55px;
 	line-height: 55px;
@@ -74,69 +62,6 @@
 	padding: 10px 20px;
 
 }
-/*Flex Slider left Alignment*/
-.flex-slider-left {
-    left: 0;
-	right: 0;
-    position: absolute;
-    top: 10%;
-	margin: 0px auto;
-	text-align: left;
-    width: 80%;
-	height: auto;
-	z-index: 0;
-	padding: 20px;
-    float: none;
-}
-.flex-slider-left h2 {
-    font-size: 55px;
-	line-height: 55px;
-    margin: 0px 0px 12px;
-}
-.flex-slider-left span{ 
-	margin: 0px 0px 12px;
-	padding: 0px 15px 5px 15px;
-    font-size: 55px;
-	line-height: 55px;
-}
-.flex-slider-left p{ 
-	padding: 0px 0px 0px 0px;
-    font-size: 24px;
-	line-height: 30px;
-    margin: 0px 0px 12px;
-}
-/*Flex Slider Right Alignment*/
-.flex-slider-right {
-    left: 0;
-	right: 0;
-    position: absolute;
-    top: 10%;
-	margin: 0px auto;
-	text-align: right;
-    width: 80%;
-	height: auto;
-	z-index: 0;
-	padding: 20px;
-    float: none;
-}
-.flex-slider-right h2 {
-    font-size: 55px;
-	line-height: 55px;
-    margin: 0px 0px 12px;
-}
-.flex-slider-right span{ 
-	margin: 0px 0px 12px;
-	padding: 0px 15px 5px 15px;
-    font-size: 55px;
-	line-height: 55px;
-}
-.flex-slider-right p{ 
-	padding: 0px 0px 0px 0px;
-    font-size: 24px;
-	line-height: 30px;
-    margin: 0px 0px 12px;
-}
-
 
 
 }
@@ -166,19 +91,6 @@
 		margin: 50px 0 0;
 	}
 /*Flex Slider Center Alignment*/
-	.flex-slider-center {
-    left: 0;
-	right: 0;
-    position: absolute;
-    top: 10%;
-	margin: 0px auto;
-	text-align: center;
-    width: auto;
-	height: auto;
-	z-index: 0;
-	padding: 20px;
-    float: none;
-}
 .flex-slider-center h2 {
     font-size: 36px;
 	line-height: 40px;
@@ -203,69 +115,7 @@
 	padding: 8px 20px;
 
 }
-/*Flex Slider left Alignment*/
-.flex-slider-left {
-    left: 0;
-	right: 0;
-    position: absolute;
-    top: 10%;
-	margin: 0px auto;
-	text-align: left;
-    width: 80%;
-	height: auto;
-	z-index: 0;
-	padding: 20px;
-    float: none;
-}
-.flex-slider-left h2 {
-     font-size: 36px;
-	line-height: 40px;
-    margin: 0px 0px 12px;
-}
-.flex-slider-left span{ 
-	margin: 0px 0px 12px;
-	padding: 0px 15px 5px 15px;
-    font-size: 36px;
-	line-height: 40px;
-}
-.flex-slider-left p{ 
-	padding: 0px 0px 0px 0px;
-    font-size: 18px;
-	line-height: 22px;
-    margin: 0px 0px 12px;
-}
 
-/*Flex Slider Right Alignment*/
-.flex-slider-right {
-    left: 0;
-	right: 0;
-    position: absolute;
-    top: 10%;
-	margin: 0px auto;
-	text-align: right;
-    width: 80%;
-	height: auto;
-	z-index: 0;
-	padding: 20px;
-    float: none;
-}
-.flex-slider-right h2 {
-     font-size: 36px;
-	line-height: 40px;
-    margin: 0px 0px 12px;
-}
-.flex-slider-right span{ 
-	margin: 0px 0px 12px;
-	padding: 0px 15px 5px 15px;
-    font-size: 36px;
-	line-height: 40px;
-}
-.flex-slider-right p{ 
-	padding: 0px 0px 0px 0px;
-    font-size: 18px;
-	line-height: 22px;
-    margin: 0px 0px 12px;
-}
 	
 	
 }	
@@ -366,19 +216,6 @@
     padding: 20px 0;
 	}	
 /*Flex Slider Center Alignment*/
-	.flex-slider-center {
-    left: 0;
-	right: 0;
-    position: absolute;
-    top: 15%;
-	margin: 0px auto;
-	text-align: center;
-    width: auto;
-	height: auto;
-	z-index: 0;
-	padding: 20px;
-    float: none;
-}
 .flex-slider-center h2 {
     font-size: 25px;
 	line-height: 30px;
@@ -391,7 +228,10 @@
 	line-height: 30px;
 }
 .flex-slider-center p{ 
-	display:none;
+	padding: 0px 10px 0px 10px;
+    font-size: 13px;
+	line-height: 20px;
+    margin: 0px 10% 12px;
 }
 .flex_btn {
     font-size: 11px;
@@ -399,68 +239,6 @@
     margin-bottom: 5px;
 	padding: 5px 20px;
    
-}
-	
-	
-	
-	
-/*Flex Slider left Alignment*/
-.flex-slider-left {
-    left: 0;
-	right: 0;
-    position: absolute;
-    top: 10%;
-	margin: 0px auto;
-	text-align: left;
-    width: 80%;
-	height: auto;
-	z-index: 0;
-	padding: 20px;
-    float: none;
-}
-.flex-slider-left h2 {
-     font-size: 25px;
-	line-height: 30px;
-    margin: 0px 0px 6px;
-}
-.flex-slider-left span{ 
-	margin: 0px 0px 6px;
-	padding: 0px 15px 5px 15px;
-    font-size: 25px;
-	line-height: 30px;
-}
-.flex-slider-left p{ 
-	display:none;
-}
-
-
-/*Flex Slider Right Alignment*/
-.flex-slider-right {
-    left: 0;
-	right: 0;
-    position: absolute;
-    top: 10%;
-	margin: 0px auto;
-	text-align: right;
-    width: 80%;
-	height: auto;
-	z-index: 0;
-	padding: 20px;
-    float: none;
-}
-.flex-slider-right h2 {
-     font-size: 25px;
-	line-height: 30px;
-    margin: 0px 0px 6px;
-}
-.flex-slider-right span{ 
-	margin: 0px 0px 6px;
-	padding: 0px 15px 5px 15px;
-    font-size: 25px;
-	line-height: 30px;
-}
-.flex-slider-right p{ 
-	display:none;
 }
 
 /* Homepage Testimonials */
@@ -605,20 +383,7 @@
     padding: 20px 0;
 	}
 	
-	/*Flex Slider Center Alignment*/
-	.flex-slider-center {
-    left: 0;
-	right: 0;
-    position: absolute;
-    top: 22%;
-	margin: 0px auto;
-	text-align: center;
-    width: auto;
-	height: auto;
-	z-index: 0;
-	padding: 10px;
-    float: none;
-}
+/*Flex Slider Center Alignment*/
 .flex-slider-center h2 {
 	font-size: 16px;
 	line-height: 20px;
@@ -631,7 +396,10 @@
 	line-height: 20px;
 }
 .flex-slider-center p{ 
-	display:none;
+	padding: 0px 10px 0px 10px;
+    font-size: 11px;
+	line-height: 18px;
+    margin: 0px 10% 12px;
 }
 .flex_btn {
     font-size: 9px;

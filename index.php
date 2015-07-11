@@ -4,7 +4,6 @@
 <div class="container">
   <div class="row">
     <div class="qua_page_heading">
-      <?php the_post(); ?>
       <h1><?php the_title(); ?></h1>
       <div class="qua-separator"></div>
     </div>

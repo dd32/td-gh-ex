@@ -334,7 +334,7 @@ class WP_service_Customize_Control extends WP_Customize_Control {
     public function render_content() {
     ?>
      <div class="pro-vesrion">
-	 <P><?php _e('Want to add more services, than uprage to pro version','quality');?></P>
+	 <P><?php _e('Want to add more services, than upgrade to pro version','quality');?></P>
 	 </div>
 	  <div class="pro-box">
 	 <a href="<?php echo esc_url( __('http://webriti.com/quality/', 'quality'));?>" target="_blank" class="service" id="review_pro"><?php _e( 'UPGRADE TO PRO','quality' ); ?></a>

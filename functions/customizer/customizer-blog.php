@@ -37,7 +37,7 @@ function quality_blog_customizer( $wp_customize ) {
 		array('capability'  => 'edit_theme_options',
 		'default' => __('Latest <span>From</span> Blog','quality'), 
 		'type' => 'option',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'quality_blog_sanitize_text',
 		));
 
 	$wp_customize->add_control(
@@ -48,6 +48,13 @@ function quality_blog_customizer( $wp_customize ) {
 			'section' => 'blog_setting',
 		)
 	);
+	function quality_blog_sanitize_text( $input ) {
+	return wp_kses_post( force_balance_tags( $input ) );
+	}
+
+	function quality_blog_sanitize_html( $input ) {
+	return force_balance_tags( $input );
+	}
 	}
 	add_action( 'customize_register', 'quality_blog_customizer' );
 	?>

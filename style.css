@@ -4,16 +4,16 @@ Theme URI: http://webriti.com/quality-lite-version-details-page/
 Author: Webriti
 Author URI: http://webriti.com/
 Description: Business theme which is ideal for creating a corporate / business website.It boasts of 2 beautifully designed page templates , Home and Blog Page.
-Version:  1.2
+Version:  1.3
 Tags: white, red,pink , full-width-template, threaded-comments, custom-menu, two-columns,translation-ready , custom-background , sticky-post,featured-images,theme-options,responsive-layout
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: quality
-* Quality Center Css created By Shahid - Scientech IT
+* Quality Css created By Shahid - Scientech IT
 */
 
 /*!
- * Quality Css created By Shahid, Deepesh - Scientech IT
+ * Quality Css created By Shahid - Scientech IT
 */
 
 #wrapper{	
@@ -147,14 +147,19 @@ margin-top:70px;
     left: 0;
 	right: 0;
     position: absolute;
-    top: 25%;
-	margin: 0px auto;
+    margin: 0px auto;
 	text-align: center;
-    width: 1120px;
+    /* width: 1120px; */
+	width: 100%;
 	height: auto;
 	z-index: 0;
 	padding: 20px;
     float: none;
+	
+	top: 50%; 
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
 }
 .flex-slider-center h2 {
 	color: #FFFFFF;
@@ -864,18 +869,22 @@ margin-top:70px;
 	font-family: 'OpenSansRegular';
 	font-size: 15px;
 	line-height: 27px;
-    margin: 0 0 20px;
+    margin: 0 0 10px;
 	word-wrap: break-word;
 }
+.blog-btn-col {
+  display: block;
+  margin: 0 0 20px;
+}
 a.qua_blog_btn {
-	border-radius: 6px;
+	border-radius: 3px;
     display: inline-block;
     font-family: 'RalewaySemiBold';
     font-size: 14px;
     line-height: 20px;
     margin: 5px 0;
     padding: 7px 15px;
-    text-align: right;
+    text-align: center;
     transition: all 0.3s ease 0s;
     vertical-align: middle;
 }
@@ -947,7 +956,7 @@ a.qua_blog_btn i {
 	font-size:20px;
 	margin: 0 0 10px;
 	word-wrap: break-word;
-	font-family: OpenSansRegular;
+	font-family: OpenSansSemiBold;
 }
 .widgettitle{
 border-bottom:5px solid #F8504B;
@@ -1002,7 +1011,7 @@ margin: 0px !important;
 	font-size: 15px;
 	transition: all 0.4s ease 0s;
 	padding-bottom: 10px;
-    padding-top: 3px;
+    padding-top: 10px;
 	word-wrap: break-word;
 }
 .qua_sidebar_link p:last-child ,.widget ul li:last-child, .qua_sidebar_widget ul li:last-child{
@@ -1429,7 +1438,10 @@ margin-right: auto;
 .qua_blog_post_content  ol  li , .qua_blog_post_content ul  li	{
 	font-family: 'OpenSansRegular';
 	font-size: 15px;	
-	word-wrap: break-word; }
+	word-wrap: break-word;
+	margin-bottom: 10px;
+}
+	
 /*Table CSS*/
 table {	
 	border-collapse: separate;	
@@ -1446,6 +1458,7 @@ padding: 8px;
 line-height: 20px;
 text-align: center;
 vertical-align: top;
+color:#6a6a6a;
 }
 table th {
 border: 1px solid #dddddd;
@@ -1500,8 +1513,8 @@ max-width: 100%;
 .qua_blog_post_content  h6,.qua_blog_post_content h6,.qua_blog_post_content h6{	font-size:20px;line-height:30px;}
 
 */
-.qua_blog_post_content  ul  li,.qua_blog_post_content ul  li{list-style:disc outside none;list-style-position: inside;color:#767676;}
-.qua_blog_post_content  ol  li,.qua_blog_post_content ol  li{list-style:decimal outside none;list-style-position: inside;}
+.qua_blog_post_content  ul  li,.qua_blog_post_content ul  li{list-style:disc outside none;list-style-position: outside;color:#6a6a6a;}
+.qua_blog_post_content  ol  li,.qua_blog_post_content ol  li{list-style:decimal outside none;list-style-position: inside; margin-top: 5px; color:#6a6a6a;}
 .qua_blog_post_content cite,.qua_blog_post_content cite{font-style: italic;}
 .qua_blog_post_content h1,.qua_blog_post_content h2,.qua_blog_post_content h3,.qua_blog_post_content h4,.qua_blog_post_content h5,.qua_blog_post_content h6{font-family: 'OpenSansRegular';}
 .widget ul , .qua_sidebar_widget ul {list-style:none; padding-left:0;}
@@ -1949,3 +1962,44 @@ height: auto;
 }
 .qua_sidebar_widget .textwidget select
 { max-width: 100%; }
+
+
+/*---------------------Theme Unit Data Testing by shahid-----July 9, 2015--------------------*/
+.qua_blog_section dl > dd {
+    margin-left: 10px;
+	margin-bottom: 5px;
+	line-height: 27px;
+}
+.qua_blog_section dl {
+	font-family: 'OpenSansRegular';
+	font-size: 15px;
+	color: #6a6a6a;
+	line-height: 27px;
+	word-wrap: break-word;
+}
+.qua_blog_section dt, .qua_blog_section dd { font-size: 15px; }
+.qua_blog_section address {
+	font-family: 'OpenSansRegular';
+	font-size: 15px;
+	color: #6a6a6a; 
+}
+
+.qua_blog_section ins {
+  background-color: rgba(254,255,0,0.68);
+  text-decoration: none;
+}
+
+p.wp-caption-text {
+	margin-bottom: 0;
+	font-size: 13px;
+	text-align: center;
+	padding: 5px 0;
+}
+.Tweet-text { color: #ff0000; }
+
+
+
+
+
+
+
