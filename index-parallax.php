@@ -41,7 +41,7 @@
 					<h1><span><?php the_title(); ?></span></h1>
 
 					<div class="parallax-content">
-					<?php if($page->post_content != "") : ?>
+					<?php if(get_the_content() != "") : ?>
 						<div class="page-content">
 						<?php the_content(); ?>
 						</div>

@@ -214,18 +214,6 @@ class Options_Framework_Admin {
 		</div>
 		<?php do_action( 'optionsframework_after' ); ?>
 		</div> <!-- / .wrap -->
-        
-        <?php
-        $optionsframework_settings = get_option( 'optionsframework' );
-        $optionsframework_settings_array = get_option($optionsframework_settings['id']);
-    	if(empty($optionsframework_settings_array)): ?>
-    	<div class="ap-popup-wrapper">
-    		<div class="ap-popup-close">&times;</div>
-    		<h4><?php _e('Like our Facebook page and don\'t miss any updates!','accesspress_parallax'); ?></h4>
-    		<iframe style="border: none; overflow: hidden; width: 340px; height: 260px;" src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FAccessPress-Themes%2F1396595907277967&amp;width=340&amp;height=260&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=true&amp;appId=1411139805828592" width="340" height="260" frameborder="0" scrolling="no"></iframe>
-    	</div>
-    	<div class="ap-popup-bg"></div>
-    	<?php endif; ?>
 
 	<?php
 	}

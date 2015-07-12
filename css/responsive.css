@@ -75,6 +75,9 @@ Responsive CSS
 		padding-left: 70px;
 		padding-right: 70px;
 	}
+	#main-slider{
+		min-height: 0;
+	}
 }
 
 @media screen and (max-width: 768px){

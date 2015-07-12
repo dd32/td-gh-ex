@@ -89,6 +89,12 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.23.5
+* TGM Plugin Class Updated to latest version
+* Content bug for the parallax section fixed
+* Jquery bug fixed for multiple team section added
+* Slider caption overlapping the menu issue fixed
+
 Version 1.23.4
 * Loop Issue fixed in Parallax Section.
 * Missing Translation text fixed.

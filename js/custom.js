@@ -72,7 +72,7 @@ jQuery(document).ready(function($){
 
     $('.team-tab .team-image').on('click', function(){
         $('.team-image').removeClass('active');
-        $('.team-content .team-list').hide();
+        $(this).parents('.team-listing').find('.team-list').hide();
         $(this).addClass('active');
         var teamid = $(this).attr('id');
         $('.team-content .'+teamid).fadeIn();
