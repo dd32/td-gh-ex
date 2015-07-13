@@ -57,6 +57,11 @@ Images
 Version 1.0
 * Submitted theme for review in http://wordpress.org
 
-Version 1.1.8
+Version 1.1.9
 * Fixed Gallery Page Column Layout Issues
 * Fixed Span and H2 tags for slider caption title and descriptions. 
+
+Version 2.0.0
+* Slider displaying in blog page (assigned from settings > Reading) (Fixed)
+* Added Navigation feature in Post pages.
+* Prevented woocommerce incompatibility message from showing up (Fixed)

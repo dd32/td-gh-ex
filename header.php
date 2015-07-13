@@ -135,7 +135,7 @@
     <?php
         if($show_slider == 'yes') :
             if($show_slider_in_post == 1) :
-                 if(is_front_page() || is_home() || is_single()) :
+                 if(is_front_page() || is_single()) :
                  ?>
                 <div class="ap-basic-slider-wrapper">
                 <div class="ap-container">
@@ -147,7 +147,7 @@
                 <?php
                  endif;
             else:
-                if(is_home() || is_front_page()) :
+                if(is_front_page()) :
                 ?>
                 <div class="ap-basic-slider-wrapper">
                 <div class="ap-container">

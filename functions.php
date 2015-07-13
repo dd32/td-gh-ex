@@ -81,6 +81,9 @@ function accesspress_basic_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+
+	// Woocommerce Compatibility
+	add_theme_support( 'woocommerce' );
 }
 endif; // accesspress_basic_setup
 add_action( 'after_setup_theme', 'accesspress_basic_setup' );

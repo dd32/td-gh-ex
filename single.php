@@ -46,7 +46,7 @@ get_header(); ?>
             
             			<?php get_template_part( 'content', 'single' ); ?>
             
-            			<?php //the_post_navigation(); ?>
+            			<?php the_post_navigation(); ?>
             
                         <?php if($enable_comments_post == 1) : ?>
             			<?php
