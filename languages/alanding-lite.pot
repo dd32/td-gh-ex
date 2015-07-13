@@ -70,22 +70,6 @@ msgstr ""
 msgid "Not found"
 msgstr ""
 
-#: index.php:12
-msgid "This template will help you create a Landing Page or One Page."
-msgstr ""
-
-#: index.php:15
-msgid "+ Free theme"
-msgstr ""
-
-#: index.php:16
-msgid "+ 20 Sidebars"
-msgstr ""
-
-#: index.php:17
-msgid "+ Responsive web design"
-msgstr ""
-
 #: index.php:40
 msgid "Read more..."
 msgstr ""

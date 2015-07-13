@@ -1,7 +1,7 @@
 /*  
  * Theme Name: ALanding lite
  * Theme URI: http://justpx.com/product/alanding-lite/
- * Version: 1.1
+ * Version: 1.2
  * Author: JustPX
  * Author URI: http://justpx.com/
  * Description: This template will help you create a Landing Page or One Page. Light, easy-to-use, functional template ALanding consists of only 17 sidebars ideal for building any landing page. Template creators have decided against using unnecessary graphic elements. Visitors of your page will be able to focus on content and won’t be distracted by anything else. On the home page, you can find instructions and demo content. Supports Jetpack plugin (logo and favicon) and Easy Google Fonts plugin. Demo and Documentation http://justpx.com/product/alanding-lite/
@@ -48,9 +48,9 @@ p {line-height: 1.6em;}
 	width: 100%;
 	background: #fff;
 	padding-top: 30px;
--webkit-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2) inset, 0px 0px 3px 0px rgba(0, 0, 0, 0.0);
-   -moz-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2) inset, 0px 0px 3px 0px rgba(0, 0, 0, 0.0);
-        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2) inset, 0px 0px 3px 0px rgba(0, 0, 0, 0.0);
+-webkit-box-shadow: 0px 7px 8px 0px rgba(0, 0, 0, 0.1) inset, 0px 0px 3px 0px rgba(0, 0, 0, 0.0);
+   -moz-box-shadow: 0px 7px 8px 0px rgba(0, 0, 0, 0.1) inset, 0px 0px 3px 0px rgba(0, 0, 0, 0.0);
+        box-shadow: 0px 7px 8px 0px rgba(0, 0, 0, 0.1) inset, 0px 0px 3px 0px rgba(0, 0, 0, 0.0);
 }
 .head{
 	background: #fff;
@@ -793,9 +793,8 @@ span.wpcf7-not-valid-tip {
 ===================================================================*/
 .sidebar-right {
 	color: #232324;	
-	
 	list-style: none;
-	margin-top: 20px;
+	margin-top: 14px;
 	float: right;
 }
 .sidebar-right li {

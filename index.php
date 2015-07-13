@@ -2,31 +2,31 @@
 
 
 
-<div class="block1">
-		<div class="block1-center">
-			<div class="block1-center1">
-				<div class="sidebar-user2 span2">
-						<br/><br/><br/><br/>
-						<center><h1>ALanding lite</h1></center>
-						<br/><br/><p style="text-align: justify;">
-						<br/><br/><br/><?php _e( 'This template will help you create a Landing Page or One Page.', 'alanding_lite' ); ?>
-						</p>
-						<br/>
-						<h3><?php _e( '+ Free theme', 'alanding_lite' ); ?></h3>
-						<h3><?php _e( '+ 20 Sidebars', 'alanding_lite' ); ?></h3>
-						<h3><?php _e( '+ Responsive web design', 'alanding_lite' ); ?></h3>
-						<br/><br/>
-						
-				</div>
-				<div class="sidebar-user3 span2">
-					<center><br/><br/><br/><img src="<?php echo get_template_directory_uri(); ?>/images/imglpfree.png"/>
-								
 
-					</center><br/><br/><br/>
-				</div>
-			</div>
-		</div>
-</div>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="main-tag">
 	<div class="main">
 			<div class="content">

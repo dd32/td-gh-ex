@@ -8,7 +8,8 @@ The Following images present in the 'images/' folder:
 	help2.jpg
 	imglpfree.png
 	alanding-sidebar.png
-	
+	screenshot.png https://pixabay.com/en/office-startup-business-home-office-594132/ - Public Domain CC0
+
 The theme does not display the description/tag line.
 In sidebar-header, sidebar-block1-user1, sidebar-block1-user2, sidebar-block1-user3 and sidebar-block1-user4 does not display widget: Archive, Calendar, Categories, Meta, Tag, Search, Recent entries, Recent comments, Rss, Menu.
 
