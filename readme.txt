@@ -68,9 +68,13 @@ The portfolio archive page can be found at http://mygroovysite.wordpress.com/por
 
 == Credits ==
 
+* slick.js script (https://github.com/kenwheeler/slick) by Ken Wheeler distributed under the MIT license.
 * Screenshot image by Unsplash (http://pixabay.com/en/macbook-notebook-apple-inc-336651/), licensed under CC0 Public Domain (http://creativecommons.org/publicdomain/zero/1.0/deed.en)
 
 == Changelog ==
+
+= 1.0.2 - July 13 2015 =
+* Added missing license and copyright info for Slick script.
 
 = 1.0.1 - June 30 2015 =
 * Removed include for updater.php script from functions.php.
