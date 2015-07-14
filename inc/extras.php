@@ -145,36 +145,38 @@ if ( ! function_exists( 'sparkling_social' ) ) :
 /**
  * Display social links in footer and widgets if enabled
  */
-function sparkling_social(){
-  $services = array (
-    'facebook'   => 'Facebook',
-    'twitter'    => 'Twitter',
-    'googleplus' => 'Google+',
-    'youtube'    => 'Youtube',
-    'vimeo'      => 'Vimeo',
-    'linkedin'   => 'LinkedIn',
-    'pinterest'  => 'Pinterest',
-    'rss'        => 'RSS',
-    'tumblr'     => 'Tumblr',
-    'flickr'     => 'Flickr',
-    'instagram'  => 'Instagram',
-    'dribbble'   => 'Dribbble',
-    'skype'      => 'Skype',
-    'foursquare' => 'Foursquare',
-    'soundcloud' => 'SoundCloud',
-    'github'     => 'GitHub',
-    'spotify'    => 'Spotify'
-    );
+function sparkling_social($force = false){
+  if($force || of_get_option( 'footer_social' ) != 0){
+    $services = array (
+      'facebook'   => 'Facebook',
+      'twitter'    => 'Twitter',
+      'googleplus' => 'Google+',
+      'youtube'    => 'Youtube',
+      'vimeo'      => 'Vimeo',
+      'linkedin'   => 'LinkedIn',
+      'pinterest'  => 'Pinterest',
+      'rss'        => 'RSS',
+      'tumblr'     => 'Tumblr',
+      'flickr'     => 'Flickr',
+      'instagram'  => 'Instagram',
+      'dribbble'   => 'Dribbble',
+      'skype'      => 'Skype',
+      'foursquare' => 'Foursquare',
+      'soundcloud' => 'SoundCloud',
+      'github'     => 'GitHub',
+      'spotify'    => 'Spotify'
+      );
 
-  echo '<div class="social-icons">';
+    echo '<div class="social-icons">';
 
-  foreach ( $services as $service => $name ) :
+    foreach ( $services as $service => $name ) :
 
-      $active[ $service ] = of_get_option ( 'social_'.$service );
-      if ( $active[$service] ) { echo '<a href="'. esc_url( $active[$service] ) .'" title="'. esc_html__('Follow us on ','sparkling').$name.'" class="'. $service .'" target="_blank"><i class="social_icon fa fa-'.$service.'"></i></a>';}
+        $active[ $service ] = of_get_option ( 'social_'.$service );
+        if ( $active[$service] ) { echo '<a href="'. esc_url( $active[$service] ) .'" title="'. esc_html__('Follow us on ','sparkling').$name.'" class="'. $service .'" target="_blank"><i class="social_icon fa fa-'.$service.'"></i></a>';}
 
-  endforeach;
-  echo '</div>';
+    endforeach;
+    echo '</div>';
+  }
 
 }
 endif;
@@ -319,13 +321,16 @@ if ( ! function_exists( 'get_sparkling_theme_options' ) ) {
         echo 'h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .entry-title {color: '.of_get_option('heading_color').';}';
       }
       if ( of_get_option('nav_bg_color')) {
-        echo '.navbar.navbar-default {background-color: '.of_get_option('nav_bg_color').';}';
+        echo '.navbar.navbar-default, .navbar-default .navbar-nav .open .dropdown-menu > li > a {background-color: '.of_get_option('nav_bg_color').';}';
       }
       if ( of_get_option('nav_link_color')) {
         echo '.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus { color: '.of_get_option('nav_link_color').';}';
       }
       if ( of_get_option('nav_item_hover_color')) {
         echo '.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus, .entry-title a:hover {color: '.of_get_option('nav_item_hover_color').';}';
+      }
+      if ( of_get_option('nav_dropdown_bg_hover') || of_get_option('nav_dropdown_item_hover') ) {
+        echo '@media (max-width: 767px) {.navbar-default .navbar-nav .open .dropdown-menu>.active>a, .navbar-default .navbar-nav .open .dropdown-menu>.active>a:focus, .navbar-default .navbar-nav .open .dropdown-menu>.active>a:hover {background: '.of_get_option('nav_dropdown_bg_hover').'; color:'.of_get_option('nav_dropdown_item_hover').';} }';
       }
       if ( of_get_option('nav_dropdown_bg')) {
         echo '.dropdown-menu {background-color: '.of_get_option('nav_dropdown_bg').';}';
@@ -334,7 +339,10 @@ if ( ! function_exists( 'get_sparkling_theme_options' ) ) {
         echo '.navbar-default .navbar-nav .open .dropdown-menu > li > a, .dropdown-menu > li > a { color: '.of_get_option('nav_dropdown_item').';}';
       }
       if ( of_get_option('nav_dropdown_bg_hover') || of_get_option('nav_dropdown_item_hover') ) {
-        echo '.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus, .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {background-color: '.of_get_option('nav_dropdown_bg_hover').'; color:'.of_get_option('nav_dropdown_item_hover').'}';
+        echo '.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus, .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > li.active > a {background-color: '.of_get_option('nav_dropdown_bg_hover').'; color:'.of_get_option('nav_dropdown_item_hover').';}';
+      }
+      if ( of_get_option('nav_dropdown_item_hover') ) {
+        echo '.navbar-default .navbar-nav .current-menu-ancestor a.dropdown-toggle { color: '.of_get_option('nav_dropdown_item_hover').';}';
       }
       if ( of_get_option('footer_bg_color')) {
         echo '#colophon {background-color: '.of_get_option('footer_bg_color').';}';
@@ -359,7 +367,7 @@ if ( ! function_exists( 'get_sparkling_theme_options' ) ) {
         echo '.entry-content {font-family: ' . $typography['face'] . '; font-size:' . $typography['size'] . '; font-weight: ' . $typography['style'] . '; color:'.$typography['color'] . ';}';
       }
       if ( of_get_option('custom_css')) {
-        echo of_get_option( 'custom_css', 'no entry' );
+        echo html_entity_decode( of_get_option( 'custom_css', 'no entry' ) );
       }
         echo '</style>';
     }

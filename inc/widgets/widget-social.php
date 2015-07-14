@@ -9,7 +9,7 @@ class sparkling_social_widget extends WP_Widget
 	 function sparkling_social_widget(){
 
         $widget_ops = array('classname' => 'sparkling-social','description' => esc_html__( "Sparkling Social Widget" ,'sparkling') );
-		    $this->WP_Widget('sparkling-social', esc_html__('Sparkling Social Widget','sparkling'), $widget_ops);
+		    parent::__construct('sparkling-social', esc_html__('Sparkling Social Widget','sparkling'), $widget_ops);
     }
 
     function widget($args , $instance) {
@@ -30,7 +30,7 @@ class sparkling_social_widget extends WP_Widget
     <div class="social-icons sticky-sidebar-social">
 
 
-    <?php sparkling_social(); ?>
+    <?php sparkling_social(true); ?>
 
 
     </div><!-- end social icons -->
