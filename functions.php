@@ -41,7 +41,8 @@ if ( ! function_exists( 'adler_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'primary' => __( 'Primary Menu', 'adler' ),
-			'footer'  => __( 'Footer Menu', 'adler' )
+			'footer'  => __( 'Footer Menu', 'adler' ),
+			'social' => __( 'Social Menu', 'adler')
 		) );
 
 		/*
@@ -82,6 +83,8 @@ function adler_scripts() {
 	wp_enqueue_style( 'adler-style', get_stylesheet_uri(), array('adler-font-awesome-style') );
 
 	wp_enqueue_script( 'adler-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20120206', true );
+
+	wp_enqueue_script( 'adler-main', get_template_directory_uri() . '/js/main.js', array( 'jquery' ), '20120209', true );
 
 	wp_enqueue_script( 'adler-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 

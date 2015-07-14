@@ -28,11 +28,12 @@
 					<img src="<?php echo esc_url($main_logo_url); ?>"/>
 				<?php } else { ?>
 					<h1 class="site-title">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+						<?php bloginfo( 'name' ); ?>
 					</h1>
 				<?php } ?>
 			</a>
 		</div><!-- .site-branding -->
+
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
 				<?php _e( '', 'adler' ); ?>
@@ -41,10 +42,10 @@
 				'theme_location' => 'primary',
 				'menu_id'        => 'primary-menu',
 				'container_class' => 'main-menu-container',
-
-
 			) ); ?>
+			<?php get_template_part( 'templates/toolbar' ); ?>
 		</nav><!-- #site-navigation -->
+
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

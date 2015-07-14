@@ -66,11 +66,21 @@
       .title {
         @extend %white-hero;
         @extend %hero-gradient;
+        white-space: nowrap;
+        @include query-below($lap) {
+          font-size: 100%;
+          width: 80%;
+          margin: 0 auto;
+
+        }
 
         @include query-below($small) {
           font-size: 100%;
           display: block;
           padding:0 5px;
+        }
+        @include query-below($tiny){
+          font-size: 80%;
         }
       }
 
@@ -78,11 +88,21 @@
       .sub-title {
         @extend %white-hero;
         @extend %hero-gradient;
+        white-space: nowrap;
+        @include query-below($lap) {
+          font-size: 100%;
+          width: 80%;
+          margin: 0 auto;
+
+        }
 
         @include query-below($small) {
           font-size: 100%;
           display: block;
           padding:0 5px;
+        }
+        @include query-below($tiny){
+          font-size: 80%;
         }
 
       }

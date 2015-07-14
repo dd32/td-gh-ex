@@ -11,10 +11,17 @@
   @include query-below($lap){
     text-align: center;
     float: none;
+    padding: 20px 20px 20px 20px;
   }
 
   a:first-child {
     border: none;
+  }
+
+  ul.menu {
+    @include query-below($small) {
+      padding-left: 0;
+    }
   }
 }
 

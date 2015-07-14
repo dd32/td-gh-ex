@@ -4,6 +4,8 @@
  * Handles toggling the navigation menu for small screens.
  */
 (function () {
+
+    
     var container, button, menu;
 
     container = document.getElementById('site-navigation');
@@ -43,6 +45,7 @@
     };
 })();
 
+
 jQuery(document).ready(function ($) {
     $(".arrow-wrap").click(function() {
         $('html, body').animate({
@@ -50,4 +53,25 @@ jQuery(document).ready(function ($) {
         }, 500);
         return false;
     });
+
+    /* Search */
+
+    $(".nav__item--search").click(function(){
+        $(".overlay--search").fadeIn("fast");
+
+    });
+    $(".overlay__close").click(function() {
+        $(".overlay--search").fadeOut("fast");
+    });
+
+    $(".menu-toggle").click(function() {
+        $(".toolbar, .logo").toggle().css("z-index","1");
+        $(".main-menu-container").toggleClass("padding--fix");
+    });
+
+    $(document).keyup(function(e) {
+        if (e.keyCode == 27)
+            $('.overlay--search').fadeOut("fast");
+    });
 });
+

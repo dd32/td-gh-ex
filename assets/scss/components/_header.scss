@@ -1,22 +1,29 @@
 .site-header {
-  width: 100%;
+  width: 99%;
   height: 80px;
   margin-bottom: 20px;
-  padding: 20px;
+  padding: 20px 40px;
   position: absolute;
   z-index: 50;
   top: 0;
   left: 0;
-}
 
+  @include query-below($lap) {
+    width: 100%;
+  }
+  .nav--toolbar a:before {
+    @include query-below($lap) {
+      color: $dark;
+    }
+  }
+}
 .no-thumbnail {
 
   .site-header {
     background-color: transparent;
     border-bottom: none;
     position: relative;
-    padding-left: 40px;
-    padding-right: 40px;
+
 
     a {
       border-bottom: none;
@@ -28,11 +35,11 @@
 
     @extend %logo-settings;
 
+    @extend %logo-settings-mobile;
+
     .site-title {
 
-      a {
         color: $dark;
-      }
 
     }
 
@@ -51,13 +58,17 @@
     }
 
   }
-
+ .nav--toolbar a:before {
+   color: $dark;
+ }
 }
+
 button {
   &:focus {
     outline: none !important;
   }
 }
+
 .main-navigation {
   width: 80%;
   float: right;
@@ -69,12 +80,13 @@ button {
     color: #0E3650;
 
     @include query-below ($lap) {
-      display: block !important;
-      float: right !important;
+      position: absolute;
+      right: 35px;
+      display: block;
       background-color: transparent;
       border: none;
       font-size: 20px;
-
+      z-index: 2;
 
       &::after {
         content:"\f0c9";
@@ -100,8 +112,10 @@ button {
       a {
 
         @include query-below($lap){
-          color: #0E3650;
+          color: $dark;
+          display: inline-block;
         }
+
         color: $lightest;
         text-decoration: none;
         @extend %gama;
@@ -123,9 +137,9 @@ button {
   text-align: left;
   margin-top: 10px;
 
-  .logo {
-    @extend %logo-settings;
-  }
+  @extend %logo-settings;
+
+  @extend %logo-settings-mobile;
 
   .site-title {
     font-size: 14px;
@@ -137,14 +151,14 @@ button {
   .no-site-title {
     display: none;
   }
-}
 
-  .site-title a {
+  .site-title {
     text-decoration: none;
     border-bottom: 0;
-    color: $lightest;
+    color: $lightest ;
     @extend %gama;
   }
+}
 
 .header-content {
   position: relative;
@@ -220,18 +234,6 @@ button {
   @extend .nav;
   @extend .nav--stacked;
 
-  @include query-below($lap){
-    position: relative;
-    top:100%;
-    left:51%;
-    padding-left: 10px;
-    z-index: 1;
-    background-color: #FFF;
-    width: 100%;
-    display:block;
-    margin-bottom: 0;
-  }
-
   position: absolute;
   top: 100%;
   left: 50%;
@@ -242,8 +244,22 @@ button {
   text-align: center;
 
   background: transparent;
-
   transform: translateX(-50%);
+
+  @include query-above($lap) {
+    transform: translateX(-55%);
+  }
+  @include query-below($lap){
+    position: relative;
+    top: 100%;
+    left: 51%;
+    padding-left: 10px;
+    z-index: 1;
+    background-color: #FFF;
+    width: 100%;
+    display:block;
+    margin-bottom: 0;
+  }
 
   .lt-ie9 & {
     left: 0;
@@ -289,12 +305,15 @@ button {
   .sub-menu {
     left: 0;
     top: 100%;
-    transform: translateX(0);
+    @include query-above($lap) {
+      transform: translateX(-36%);
+    }
   }
 }
 
 .menu-item-has-children, .page_item_has_children {
   position: relative;
+  margin-right: 20px;
 
   &:hover:after {
     border-color: $accent;
@@ -307,7 +326,6 @@ button {
     top: 50%;
     right: -10px;
 
-    margin-top: -2px;
     display: inline-block;
 
     width: 5px;
@@ -322,6 +340,12 @@ button {
   &:hover > .sub-menu, &:hover > .children  {
     display: block;
   }
+
+  .sub-menu {
+    @include query-below($lap) {
+      left: 50%;
+    }
+  }
 }
 
   #primary-menu {
@@ -332,8 +356,11 @@ button {
   }
 
   .main-menu-container{
-
     display:block;
+
+      &.padding--fix {
+        padding-top: 35px;
+      }
 
     @include query-below($lap) {
       background-color: #FFFFFF;

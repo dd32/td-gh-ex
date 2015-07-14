@@ -3,9 +3,20 @@
     .hero__content {
       margin-bottom: 40px;
     }
+
+  }
+  .site-content {
+    @include query-below($small) {
+      padding: 0 5px;
+    }
   }
 }
 
+#page {
+  @include query-below($small){
+    overflow: hidden;
+  }
+}
 .content-area {
   .site-main {
     .posts-navigation {
@@ -23,6 +34,12 @@
           float: left;
           margin-bottom: 40px;
           padding-right: 200px;
+
+          @include query-below($small) {
+            padding-right: 50px;
+          }
+
+
         }
 
         .nav-next {
@@ -33,6 +50,17 @@
     }
   }
 }
+
+.page {
+  &.no-thumbnail {
+    .site-branding {
+      .site-title {
+        color: $dark;
+      }
+    }
+  }
+}
+
 
 .blog .site-main {
   text-align: center;

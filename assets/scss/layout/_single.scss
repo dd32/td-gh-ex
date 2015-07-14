@@ -15,6 +15,14 @@
     .entry-wrapper {
       margin-bottom: 40px;
       .entry-footer {
+
+          span {
+            @include query-below($tiny) {
+            display: block;
+              width: 100%;
+              margin-bottom: 5px;
+          }
+        }
         .tags-links {
           float: right;
         }
