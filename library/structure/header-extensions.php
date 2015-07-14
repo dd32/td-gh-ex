@@ -183,7 +183,7 @@ function attitude_headerdetails() {
 	</div><!-- .container -->	
 	<?php $header_image = get_header_image();
 			if( !empty( $header_image ) ) :?>
-				<img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+				<a href="<?php echo esc_url(home_url('/'));?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
 			<?php endif; ?>	
 	<?php
 		if ( has_nav_menu( 'primary' ) ) { 

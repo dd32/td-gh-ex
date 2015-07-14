@@ -1,5 +1,10 @@
 == Change Log ==
 
+= 1.9 =
+* Fix - bbPress comment edit issue fixed 
+* Update - video/comment section spacing fixed
+* Update - Link added for header image
+
 = 1.8 =
 * Fix - Recent Entries/Comments widget display issue fixed
 * Fix - esc unknown variables

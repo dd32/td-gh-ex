@@ -134,7 +134,7 @@ function attitude_theloop_for_archive() {
 	  			echo $image;
 	  		}
   			?>
-            <?php if (get_the_author() !=''){?>
+            <?php if (has_category() !=''){?>
   			<div class="entry-content clearfix">
     			<?php the_excerpt(); ?>
   			</div>
