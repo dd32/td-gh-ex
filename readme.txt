@@ -31,6 +31,9 @@ When adding a page or post, set your "Featured Image" to activate the page heade
 To add the social icons, use this free plugin: https://wordpress.org/plugins/lightweight-social-icons/
 Once activated, add the widget to the "Header" widget area in "Appearance > Widgets".
 
+== Content Columns == 
+To add content columns, use this free plugin: https://wordpress.org/plugins/lightweight-grid-columns
+
 -------------------------------------------------------
 GeneratePress License
 -------------------------------------------------------
@@ -38,6 +41,10 @@ GeneratePress License
 GeneratePress is licensed under the GNU General Public License v2 or later
 
 More details here: http://www.gnu.org/licenses/gpl-2.0.html
+
+-------------------------------------------------------
+Screenshot Licenses
+-------------------------------------------------------
 
 Screenshot images are all licensed under CC0 1.0 Universal - http://creativecommons.org/publicdomain/zero/1.0/deed.en
 http://pixabay.com/en/home-office-workstation-office-336378/
