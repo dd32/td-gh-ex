@@ -13,16 +13,8 @@
     	<div class="row">
         
         	<div class="span12">
-            
-				<?php if (is_tag()) : ?>
 
-                    <p><?php _e( 'Tag',"alhenalite"); ?> : <strong> <?php echo get_query_var('tag');  ?> </strong> </p>
-				
-				<?php else : ?>
-				
-                    <p><?php _e( 'Category',"alhenalite"); ?> : <strong> <?php the_category(' '); ?> </strong> </p>
-
-				<?php endif; ?>
+				<p><?php echo alhenalite_get_archive_title(); ?> </p>
                 
             </div>
             
