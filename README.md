@@ -45,8 +45,12 @@ http://www.gratisography.com/pictures/46_1.jpg
 16. Other theme options are self explanatory.
 
 == Change Log ==
+Version 1.0.8
+	* Color Scheme added.
+	
 Version 1.0.7
 	* Change function prefix (flaton_ to greenr_) in jigoshop support file
+	* Changing screenshot.png
 
 Version 1.0.6
 	* Updated Font Awesome files

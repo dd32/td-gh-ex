@@ -336,6 +336,16 @@ FEATURES;
                 'icon' => 'fa fa fa-cogs',
                 // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
                 'fields' => array(  
+
+                    array(
+                        'id'=>'color',
+                        'type' => 'select',
+                        'title' => __('Color Scheme', 'greenr'),
+                        'subtitle'=> __('Select your color scheme.', 'greenr'),
+                        'options' => array( '1' => 'green_default', '2' => 'green_pattern', '3' => 'green_flat', '4' => 'More color schemes in GREENR Pro Version.' ),
+                        'default' => '1'
+                        ),
+
                     array(
                         'id'=>'breadcrumb',
                         'type' => 'switch', 
