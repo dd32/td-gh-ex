@@ -1,5 +1,6 @@
 <?php get_header(); 
 $wl_theme_options = weblizar_get_options();
+$wl_theme_options['_frontpage'];
 if ($wl_theme_options['_frontpage']=="1" && is_front_page())
 {	get_template_part('home','slideshow'); 
 	get_template_part('home','services'); 
@@ -17,11 +18,9 @@ if ($wl_theme_options['_frontpage']=="1" && is_front_page())
 }
  else 
 {	
-	if(get_page_template_slug( get_the_ID() )) {	
-		$temp_name= get_page_template_slug( get_the_ID() );
-		$temp_name =str_replace('.php', '', $temp_name);
-		get_template_part( $temp_name );
-	} else	{	
-		get_template_part( 'page' );
-	} 
+	if(is_page()){
+	get_template_part('page');
+	}else{
+		get_template_part('index');
+	}
 }	?>
