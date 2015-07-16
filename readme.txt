@@ -1,15 +1,15 @@
-Alhena WordPress Theme
+Alhena Lite WordPress Theme
 ---------------------
 
-Alhena is a responsive clean and corporate WordPress Theme. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like HTML5 and CSS3.
+Alhena Lite is a responsive clean and corporate WordPress Theme. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like HTML5 and CSS3.
 
-Created by ThemeinProgress, http://www.themeinprogress.com 
-Demo: http://www.wpinprogress.com/demo/alhena
+Created by ThemeinProgress, https://www.themeinprogress.com 
+Demo: http://demo.themeinprogress.com/?theme=Alhena
 
 
 License
 -------
-Alhena is licensed under GNU General Public License v3.
+Alhena Lite is licensed under GNU General Public License v3.
 
 
 Credits

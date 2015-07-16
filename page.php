@@ -19,7 +19,7 @@
                
 				<?php do_action('alhenalite_postformat'); ?> 
         
-				<?php wp_link_pages(array('before' => '<div class="wip-pagination">' . __('Pages:','wip'), 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>') ); ?>
+				<?php wp_link_pages(array('before' => '<div class="wip-pagination">' . __('Pages:',"alhenalite"), 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>') ); ?>
         
             <?php endwhile; endif;?>
         

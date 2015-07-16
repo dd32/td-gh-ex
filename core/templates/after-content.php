@@ -11,7 +11,7 @@
 
 function alhenalite_after_content_function() {
 
-	if ((is_home()) || (is_category()) || (is_page() )):
+	if ((is_home()) || (alhenalite_get_archive_title()) || (is_page() )):
 		
 		alhenalite_excerpt(); 
 	
@@ -26,7 +26,7 @@ function alhenalite_after_content_function() {
 
 		echo '<div class="post-pagination">';
 		
-		previous_post_link( '%link', _x( '&larr; %title', 'Previous post', 'wip' ) ); 
+		previous_post_link( '%link', _x( '&larr; %title', 'Previous post', "alhenalite" ) ); 
 		next_post_link( '%link', _x( '%title &rarr;', 'Next post', 'revised' ) );
 
 		echo '</div>';

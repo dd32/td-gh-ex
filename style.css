@@ -1,16 +1,16 @@
 /*
 
 Theme Name: Alhena Lite
-Theme URI: http://themeinprogress.com/alhena/
+Theme URI: https://www.themeinprogress.com/alhena-free-responsive-corporate-wordpress-theme
 Description: Alhena is a responsive clean and corporate WordPress Theme. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like HTML5 and CSS3.
 Author: Theme in Progress.
-Author URI: http://themeinprogress.com
-Version: 1.1.1
-Tags: gray, black, white, orange, blue, red, purple, yellow, green, dark, light, two-columns, right-sidebar, left-sidebar, custom-background, custom-menu, threaded-comments, full-width-template, theme-options 
+Author URI: https://www.themeinprogress.com
+Version: 1.1.2
+Tags: blue, green, orange, purple, red, yellow, light, one-column, two-columns, left-sidebar, right-sidebar, photoblogging, custom-background, post-formats, theme-options, translation-ready, responsive-layout, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-
-Alhena Lite, Copyright (C) 2013 Theme in Progress
+Alhena Lite WordPress Theme, Copyright 2015 WordPress.org
+Alhena Lite is distributed under the terms of the GNU GPL v3
 
 */
 
@@ -18,7 +18,7 @@ html {
 	min-height:101%;
 }
 body.custombody { 
-	background-image:url(images/background/patterns/pattern1.jpg) repeat;
+	background-image:url(inc/images/background/patterns/pattern1.jpg) repeat;
 	background-color:#f3f3f3;
 }
 
@@ -306,10 +306,12 @@ form {
 	-webkit-transition: all .3s ease;
 	font-family:'Abel',Verdana, Geneva, sans-serif;
 	font-size:14px;
-}
-#footer p,
-#footer a {
 	color:#ffffff;
+}
+
+#footer p {
+	color:#ffffff;
+	margin:0
 }
 
 #footer a:hover { 
@@ -866,7 +868,7 @@ h3#reply-title, h3.comments {
 	padding: 0 0 5px 45px;
 	height:45px;
 	line-height:45px;
-	background:url('images/icons/comment.png') no-repeat center left; 
+	background:url('inc/images/icons/comment.png') no-repeat center left; 
 	margin:45px 0;
 }
 
@@ -945,14 +947,14 @@ h3#reply-title small, .logged-in-as {
 }
 
 #searchform #searchsubmit {
-	float:left;
+	display:inline-block;
 	width: 25%;
-	margin:0;
+	margin:0 -5px 0 0;
 	padding: 10px 1% 6px 1%;
 }
 
 #searchform input[type=text] { 
-	float:left;
+	display:inline-block;
 	width: 70%;
 	margin:0 1% 0 0;
 	padding: 10px 2%;
@@ -1201,12 +1203,12 @@ footer.post-tags .line {
 	width: 1170px;
 	height: 7px;
 	z-index: 998;
-	background: url(images/icons/dark_stripes.png) repeat;
+	background: url(inc/images/icons/dark_stripes.png) repeat;
 	word-wrap: break-word
 }
 
 body.dark #top-box .line:before {
-	background: url(images/icons/light_stripes.png) repeat;
+	background: url(inc/images/icons/light_stripes.png) repeat;
 }
 
 #sidebar .line:before {
@@ -1599,47 +1601,47 @@ tr:nth-child(2n+2) {
 	opacity: 0.8; 
 	filter: alpha(opacity=80); 
 	background-repeat: no-repeat;  
-	background-image: url(images/icons/tipsy.gif);
+	background-image: url(inc/images/icons/tipsy.gif);
 }
 
 a.facebook { 
-	background:url('images/icons/social/facebook.png') no-repeat;
+	background:url('inc/images/icons/social/facebook.png') no-repeat;
 }
 a.flickr { 
-	background:url('images/icons/social/flickr.png') no-repeat;
+	background:url('inc/images/icons/social/flickr.png') no-repeat;
 }
 a.google  { 
-	background:url('images/icons/social/google.png') no-repeat;
+	background:url('inc/images/icons/social/google.png') no-repeat;
 }
 a.linkedin  { 
-	background:url('images/icons/social/linkedin.png') no-repeat;
+	background:url('inc/images/icons/social/linkedin.png') no-repeat;
 }
 a.myspace  { 
-	background:url('images/icons/social/myspace.png') no-repeat;
+	background:url('inc/images/icons/social/myspace.png') no-repeat;
 }
 a.pinterest {  
-	background:url('images/icons/social/pinterest.png') no-repeat;
+	background:url('inc/images/icons/social/pinterest.png') no-repeat;
 }
 a.rss { 
-	background:url('images/icons/social/rss.png') no-repeat;
+	background:url('inc/images/icons/social/rss.png') no-repeat;
 }
 a.skype  { 
-	background:url('images/icons/social/skype.png') no-repeat;
+	background:url('inc/images/icons/social/skype.png') no-repeat;
 }
 a.tumblr  { 
-	background:url('images/icons/social/tumblr.png') no-repeat;
+	background:url('inc/images/icons/social/tumblr.png') no-repeat;
 }
 a.twitter { 
-	background:url('images/icons/social/twitter.png') no-repeat;
+	background:url('inc/images/icons/social/twitter.png') no-repeat;
 }
 a.vimeo  { 
-	background:url('images/icons/social/vimeo.png') no-repeat;
+	background:url('inc/images/icons/social/vimeo.png') no-repeat;
 }
 a.youtube  { 
-	background:url('images/icons/social/youtube.png') no-repeat;
+	background:url('inc/images/icons/social/youtube.png') no-repeat;
 }
 a.email  { 
-	background:url('images/icons/social/email.png') no-repeat;
+	background:url('inc/images/icons/social/email.png') no-repeat;
 }
 
 .tipsy-inner { 

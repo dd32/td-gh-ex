@@ -21,12 +21,12 @@ alhenalite_thumbnail('blog','pin-container'); ?>
       
          <?php if (alhenalite_setting('wip_view_comments') == "on" ): ?>
          
-             <span class="entry-comments"><i class="icon-comments-alt" ></i> <?php echo comments_number( '<a href="'.get_permalink($post->ID).'#respond">'.__( "No comments","wip").'</a>', '<a href="'.get_permalink($post->ID).'#comments">1 '.__( "comment","wip").'</a>', '<a href="'.get_permalink($post->ID).'#comments">% '.__( "comments","wip").'</a>' ); ?> 
+             <span class="entry-comments"><i class="icon-comments-alt" ></i> <?php echo comments_number( '<a href="'.get_permalink($post->ID).'#respond">'.__( "No comments","alhenalite").'</a>', '<a href="'.get_permalink($post->ID).'#comments">1 '.__( "comment","alhenalite").'</a>', '<a href="'.get_permalink($post->ID).'#comments">% '.__( "comments","alhenalite").'</a>' ); ?> 
              </span>
             
         <?php endif; ?>
         
-        <span class="entry-standard"><i class="icon-file-text-alt"></i> <?php _e( "Aside","wip"); ?> </span>
+        <span class="entry-standard"><i class="icon-file-text-alt"></i> <?php _e( "Aside","alhenalite"); ?> </span>
         
     </div>
 

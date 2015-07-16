@@ -2,7 +2,7 @@
 
 if  ( comments_open() && ( have_comments()) ) : 
 
-	echo comments_number( '<h3 class="comments">'.__( "No comments","wip").'</h3>', '<h3 class="comments">1 '.__( "comment","wip").'</h3>', '<h3 class="comments">% '.__( "comments","wip").'</h3>' ); 
+	echo comments_number( '<h3 class="comments">'.__( "No comments","alhenalite").'</h3>', '<h3 class="comments">1 '.__( "comment","alhenalite").'</h3>', '<h3 class="comments">% '.__( "comments","alhenalite").'</h3>' ); 
 	
 ?>
 
@@ -28,17 +28,17 @@ function alhenalite_comment ($comment, $args, $depth) {
  	<div class="comment-text">
 	   <header class="comment-author">
        		
-        	<span class="author"><?php printf(__('<cite>%s</cite>','wip'), get_comment_author_link()) ?></span>
+        	<span class="author"><?php printf(__('<cite>%s</cite>',"alhenalite"), get_comment_author_link()) ?></span>
             <time datetime="<?php echo get_comment_date("c")?>" class="comment-date">  
-      		<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf(__('%1$s at %2$s','wip'), get_comment_date(),  get_comment_time()) ?></a> - 
+      		<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf(__('%1$s at %2$s',"alhenalite"), get_comment_date(),  get_comment_time()) ?></a> - 
 	  		<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-      		<?php edit_comment_link(__('(Edit)','wip')) ?>
+      		<?php edit_comment_link(__('(Edit)',"alhenalite")) ?>
     		</time>
             
       </header>
 
       <?php if ($comment->comment_approved == '0') : ?>
-         <br /><em><?php _e('Your comment is awaiting approval.','wip') ?></em>
+         <br /><em><?php _e('Your comment is awaiting approval.',"alhenalite") ?></em>
       <?php endif; ?>
 	  
 	  <?php comment_text() ?>
@@ -54,8 +54,8 @@ function alhenalite_comment ($comment, $args, $depth) {
 <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 
 <div class="wp-pagenavi">
-     <div class="alignleft"><?php previous_comments_link(__('&laquo;','wip')) ?></div>
-     <div class="alignright"><?php next_comments_link(__('&raquo;','wip')) ?></div>
+     <div class="alignleft"><?php previous_comments_link(__('&laquo;',"alhenalite")) ?></div>
+     <div class="alignright"><?php next_comments_link(__('&raquo;',"alhenalite")) ?></div>
 </div> 
 <?php endif; // check for comment navigation ?>
 
@@ -63,7 +63,7 @@ function alhenalite_comment ($comment, $args, $depth) {
 
 <section class="contact-form">
 
-	<?php comment_form(array('label_submit' =>  __('Comment','wip')) ); ?>
+	<?php comment_form(array('label_submit' =>  __('Comment',"alhenalite")) ); ?>
     
     <div class="clear"></div>
 

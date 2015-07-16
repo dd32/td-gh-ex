@@ -1,26 +1,41 @@
-<?php get_header(); ?>
+<?php 
 
-<?php if ( have_posts() ) : ?>
+	get_header();
+	
+	if ( have_posts() ) : 
+	
+?>
 
 <section id="slogan">
+
 	<div class="container">
+    
     	<div class="row">
+        
         	<div class="span12">
+            
 				<?php if (is_tag()) : ?>
 
-                    <p><?php _e( 'Tag','wip'); ?> : <strong> <?php echo get_query_var('tag');  ?> </strong> </p>
+                    <p><?php _e( 'Tag',"alhenalite"); ?> : <strong> <?php echo get_query_var('tag');  ?> </strong> </p>
 				
 				<?php else : ?>
 				
-                    <p><?php _e( 'Category','wip'); ?> : <strong> <?php the_category(' '); ?> </strong> </p>
+                    <p><?php _e( 'Category',"alhenalite"); ?> : <strong> <?php the_category(' '); ?> </strong> </p>
 
 				<?php endif; ?>
+                
             </div>
+            
         </div>
+        
     </div>
+    
 </section>
         
+<?php do_action( 'alhenalite_header_content' ); ?>
+
 <div class="container main-content blog">
+
 	<div class="row" id="blog" >
     
 	<?php if ( ( alhenalite_template('sidebar') == "left-sidebar" ) || ( alhenalite_template('sidebar') == "right-sidebar" ) ) : ?>
@@ -44,6 +59,7 @@
 		<?php endwhile; else:  ?>
 
         <div class="container">
+            
             <div class="row" id="blog" >
 
                 <div class="pin-article span12">
@@ -52,21 +68,25 @@
 
                         <h1>Not found</h1>
 
-                        <p><?php _e( 'Sorry, no posts matched your criteria',"wip" ) ?> </p>
+                        <p><?php _e( 'Sorry, no posts matched your criteria',"alhenalite" ) ?> </p>
          
                     </article>
         
                 </div>
                 
             </div>
+        
         </div>
 	
-		<?php endif; ?>
-        
-	<?php if ( ( alhenalite_template('sidebar') == "left-sidebar" ) || ( alhenalite_template('sidebar') == "right-sidebar" ) ) : ?>
+		<?php 
+		
+			endif;
+			
+			if ( ( alhenalite_template('sidebar') == "left-sidebar" ) || ( alhenalite_template('sidebar') == "right-sidebar" ) ) : ?>
         
         </div>
-        </div>
+        
+	</div>
         
     <?php endif; ?>
 
@@ -75,7 +95,8 @@
     <!-- HOME WIDGET -->
 
     <section id="sidebar" class="pin-article span4">
-    	<div class="sidebar-box">
+    	
+        <div class="sidebar-box">
 
 			<?php if ( is_active_sidebar('category_sidebar_area') ) { 
             
@@ -84,22 +105,22 @@
             } else { 
                 
                 the_widget( 'WP_Widget_Archives','',
-				array('before_widget' => '<div class="widget-box">',
+				array('before_widget' => '<div id="%1$s" class="widget-box %2$s">',
 					  'after_widget'  => '</div>',
 					  'before_title'  => '<header class="title"><div class="line"><h3>',
 					  'after_title'   => '</h3></div></header>'
 				));
 
                 the_widget( 'WP_Widget_Calendar',
-				array("title"=> __('Calendar','wip')),
-				array('before_widget' => '<div class="widget-box">',
+				array("title"=> __('Calendar',"alhenalite")),
+				array('before_widget' => '<div id="%1$s" class="widget-box %2$s">',
 					  'after_widget'  => '</div>',
 					  'before_title'  => '<header class="title"><div class="line"><h3>',
 					  'after_title'   => '</h3></div></header>'
 				));
 
                 the_widget( 'WP_Widget_Categories','',
-				array('before_widget' => '<div class="widget-box">',
+				array('before_widget' => '<div id="%1$s" class="widget-box %2$s">',
 					  'after_widget'  => '</div>',
 					  'before_title'  => '<header class="title"><div class="line"><h3>',
 					  'after_title'   => '</h3></div></header>'
@@ -110,6 +131,7 @@
 			 ?>
 
             </div>
+            
         </section>
 
 	<!--  END HOME WIDGET -->
@@ -117,11 +139,13 @@
 	<?php endif;?>
            
     </div>
+    
 </div>
 
 <?php
 
 	get_template_part('pagination');
+	do_action( 'alhenalite_footer_content' ); 
 	get_footer(); 
 
 ?>

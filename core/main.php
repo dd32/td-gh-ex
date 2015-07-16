@@ -10,26 +10,38 @@
  */
 
 /*-----------------------------------------------------------------------------------*/
-/* Admin class */
-/*-----------------------------------------------------------------------------------*/   
+/* DEFAULT STYLE, AFTER THEME ACTIVATION */
+/*-----------------------------------------------------------------------------------*/         
 
-function alhenalite_admin_body_class( $classes ) {
-	
-	global $wp_version;
-	
-	if ( ( $wp_version >= 3.8 ) && ( is_admin()) ) {
-		$classes .= 'wp-8';
+if ( ! function_exists( 'alhenalite_after_switch_theme' ) ) {
+
+	function alhenalite_after_switch_theme () {
+				
+		wp_redirect(admin_url("customize.php"));
+
 	}
-		return $classes;
-}
 	
-add_filter( 'admin_body_class', 'alhenalite_admin_body_class' );
+	add_action('after_switch_theme', 'alhenalite_after_switch_theme');
+	
+}
 
 /*-----------------------------------------------------------------------------------*/
-/* Localize theme */
-/*-----------------------------------------------------------------------------------*/   
+/* GET ARCHIVE TITLE */
+/*-----------------------------------------------------------------------------------*/ 
 
-load_theme_textdomain( 'wip', get_template_directory() . '/languages');
+if (!function_exists('alhenalite_get_archive_title')) {
+
+	function alhenalite_get_archive_title() {
+		
+		if ( get_the_archive_title()  && ( get_the_archive_title() <> 'Archives' ) ) :
+		
+			return get_the_archive_title();
+		
+		endif;
+	
+	}
+
+}
 
 /*-----------------------------------------------------------------------------------*/
 /* Default menu */
@@ -38,6 +50,7 @@ load_theme_textdomain( 'wip', get_template_directory() . '/languages');
 function alhenalite_add_menuclass( $ulclass ) {
 	return preg_replace( '/<ul>/', '<ul class="menu">', $ulclass, 1 );
 }
+
 add_filter( 'wp_page_menu', 'alhenalite_add_menuclass' );
 
 
@@ -61,7 +74,7 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) {
 			$title = "$title $sep $site_description";
 	
 		if ( $paged >= 2 || $page >= 2 )
-			$title = "$title $sep " . sprintf( __( 'Page %s', 'wip' ), max( $paged, $page ) );
+			$title = "$title $sep " . sprintf( __( 'Page %s', "alhenalite" ), max( $paged, $page ) );
 	
 		return $title;
 		
@@ -82,24 +95,6 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) {
 	add_action( 'wp_head', 'alhenalite_addtitle' );
 
 }
-
-/*-----------------------------------------------------------------------------------*/
-/* Admin menu */
-/*-----------------------------------------------------------------------------------*/  
-
-function alhenalite_option_panel() {
-        global $wp_admin_bar, $wpdb;
-    	$wp_admin_bar->add_menu( array( 'id' => 'theme_options', 'title' => '<span> Alhena Options </span>', 'href' => get_admin_url() . 'themes.php?page=themeoption' ) );
-        $wp_admin_bar->add_menu( array( 'id' => 'get_premium', 'title' => '<span> Get Premium </span>', 'href' => get_admin_url() . 'themes.php?page=getpremium' ) );
-}
-add_action( 'admin_bar_menu', 'alhenalite_option_panel', 1000 );
-
-/*-----------------------------------------------------------------------------------*/
-/* Content width */
-/*-----------------------------------------------------------------------------------*/ 
-
-if ( ! isset( $content_width ) )
-	$content_width = 940;
 
 /*-----------------------------------------------------------------------------------*/
 /* Prettyphoto at post gallery */
@@ -138,15 +133,9 @@ function alhenalite_excerpt() {
 		$content = the_excerpt();
 	endif;
 	
-	echo '<p>' . $content . ' <a class="button" href="'.get_permalink($post->ID).'" title="More">  ' . __( "Read More","wip") . '</a> </p>';
+	echo '<p>' . $content . ' <a class="button" href="'.get_permalink($post->ID).'" title="More">  ' . __( "Read More","alhenalite") . '</a> </p>';
 }
 
-
-/*-----------------------------------------------------------------------------------*/
-/* Shortcode in widget */
-/*-----------------------------------------------------------------------------------*/   
-
-add_filter('widget_text', 'do_shortcode');
 
 /*-----------------------------------------------------------------------------------*/
 /* Remove category list rel */
@@ -182,73 +171,142 @@ function alhenalite_my_gallery_style() {
 add_filter( 'gallery_style', 'alhenalite_my_gallery_style', 99 );
 
 /*-----------------------------------------------------------------------------------*/
-/* Thematic dropdown options */
+/* REQUIRE */
 /*-----------------------------------------------------------------------------------*/ 
 
-function alhenalite_childtheme_dropdown_options($dropdown_options) {
-	$dropdown_options = '<script type="text/javascript" src="'. get_stylesheet_directory_uri() .'/scripts/thematic-dropdowns.js"></script>';
-	return $dropdown_options;
-}
+if (!function_exists('alhenalite_require')) {
 
-add_filter('thematic_dropdown_options','alhenalite_childtheme_dropdown_options');
-
-/*-----------------------------------------------------------------------------------*/
-/* Require */
-/*-----------------------------------------------------------------------------------*/ 
-
-function alhenalite_require($folder) {
-
-$dh  = opendir(get_template_directory().$folder);
-
-while (false !== ($filename = readdir($dh))) {
-   
-	if ( strlen($filename) > 2 ) {
-	require_once get_template_directory()."/".$folder.$filename;
-	}
-}
-
-
-}
-
-/*-----------------------------------------------------------------------------------*/
-/* Scripts */
-/*-----------------------------------------------------------------------------------*/ 
-
-function alhenalite_enqueue_script($folder) {
-
-	if (isset($folder)) : 
+	function alhenalite_require($folder) {
 	
-	$dh  = opendir(get_template_directory().$folder);
+		if (isset($folder)) : 
 	
-	while (false !== ($filename = readdir($dh))) {
-	   
-		if ( strlen($filename) > 2 ) {
-				wp_enqueue_script( str_replace('.js','',$filename), get_template_directory_uri() . $folder . "/" . $filename , array('jquery'), FALSE, TRUE ); 
-		}
+			if ( ( !alhenalite_setting('wip_loadsystem') ) || ( alhenalite_setting('wip_loadsystem') == "mode_a" ) ) {
+		
+				$folder = dirname(dirname(__FILE__)) . $folder ;  
+				
+				$files = scandir($folder);  
+				  
+				foreach ($files as $key => $name) {  
+				
+					if ( (!is_dir($name)) && ( $name <> ".DS_Store" ) ) { 
+					
+						require_once $folder . $name;
+					
+					} 
+				}  
+			
+			} else if ( alhenalite_setting('wip_loadsystem') == "mode_b" ) {
+	
+				$dh  = opendir(get_template_directory().$folder);
+				
+				while (false !== ($filename = readdir($dh))) {
+				   
+					if ( ( strlen($filename) > 2 ) && ( $filename <> ".DS_Store" ) ) {
+					
+						require_once get_template_directory()."/".$folder.$filename;
+					
+					}
+				}
+			}
+		
+		endif;
+		
 	}
-
-endif;
 
 }
 
 /*-----------------------------------------------------------------------------------*/
-/* Styles */
+/* SCRIPTS */
 /*-----------------------------------------------------------------------------------*/ 
 
-function alhenalite_enqueue_style($folder) {
+if (!function_exists('alhenalite_enqueue_script')) {
 
-if (isset($folder)) : 
-
-	$dh  = opendir(get_template_directory().$folder);
+	function alhenalite_enqueue_script($folder) {
 	
-	while (false !== ($filename = readdir($dh))) {
-	   
-		if ( strlen($filename) > 2 ) {
-				wp_enqueue_style( str_replace('.css','',$filename), get_template_directory_uri() . $folder . "/" . $filename ); 
-		}
+		if (isset($folder)) : 
+	
+			if ( ( !alhenalite_setting('wip_loadsystem') ) || ( alhenalite_setting('wip_loadsystem') == "mode_a" ) ) {
+		
+				$dir = dirname(dirname(__FILE__)) . $folder ;  
+				
+				$files = scandir($dir);  
+				  
+				foreach ($files as $key => $name) {  
+
+					if ( (!is_dir($name)) && ( $name <> ".DS_Store" ) ) { 
+						
+						wp_enqueue_script( str_replace('.js','',$name), get_template_directory_uri() . $folder . "/" . $name , array('jquery'), FALSE, TRUE ); 
+						
+					} 
+				}  
+			
+			} else if ( alhenalite_setting('wip_loadsystem') == "mode_b" ) {
+	
+				$dh  = opendir(get_template_directory().$folder);
+				
+				while (false !== ($filename = readdir($dh))) {
+				   
+					if ( ( strlen($filename) > 2 ) && ( $filename <> ".DS_Store" ) ) {
+						
+						wp_enqueue_script( str_replace('.js','',$filename), get_template_directory_uri() . $folder . "/" . $filename , array('jquery'), FALSE, TRUE ); 
+					
+					}
+					
+				}
+		
+			}
+			
+		endif;
+	
 	}
 
-endif;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* STYLES */
+/*-----------------------------------------------------------------------------------*/ 
+
+if (!function_exists('alhenalite_enqueue_style')) {
+
+	function alhenalite_enqueue_style($folder) {
+	
+		if (isset($folder)) : 
+	
+			if ( ( !alhenalite_setting('wip_loadsystem') ) || ( alhenalite_setting('wip_loadsystem') == "mode_a" ) ) {
+			
+				$dir = dirname(dirname(__FILE__)) . $folder ;  
+				
+				$files = scandir($dir);  
+				  
+				foreach ($files as $key => $name) {  
+					
+					if ( (!is_dir($name)) && ( $name <> ".DS_Store" ) ) { 
+						
+						wp_enqueue_style( str_replace('.css','',$name), get_template_directory_uri() . $folder . "/" . $name ); 
+						
+					} 
+				}  
+			
+			
+			} else if ( alhenalite_setting('wip_loadsystem') == "mode_b" ) {
+	
+				$dh  = opendir(get_template_directory().$folder);
+				
+				while (false !== ($filename = readdir($dh))) {
+				   
+					if ( ( strlen($filename) > 2 ) && ( $filename <> ".DS_Store" ) ) {
+						
+						wp_enqueue_style( str_replace('.css','',$filename), get_template_directory_uri() . $folder . "/" . $filename ); 
+				
+					}
+				
+				}
+			
+			}
+		
+		endif;
+	
+	}
 
 }
 
@@ -290,11 +348,17 @@ function alhenalite_themename() {
 /* Theme settings */
 /*-----------------------------------------------------------------------------------*/ 
 
-function alhenalite_setting($id) {
+if (!function_exists('alhenalite_setting')) {
 
-	$wip_setting = get_option(alhenalite_themename());
-	if(isset($wip_setting[$id]))
-		return $wip_setting[$id];
+	function alhenalite_setting($id) {
+
+		$alhenalite_setting = get_theme_mod($id);
+			
+		if ( isset($alhenalite_setting))
+			
+			return $alhenalite_setting;
+
+	}
 
 }
 
@@ -311,32 +375,6 @@ function alhenalite_postmeta($id) {
 		return $val;
 
 }
-
-/*-----------------------------------------------------------------------------------*/
-/* Post formats */
-/*-----------------------------------------------------------------------------------*/   
-
-function alhenalite_setup() {
-
-	add_theme_support( 'post-formats', array( 'aside','gallery','quote','video','audio','link' ) );
-	add_theme_support( 'automatic-feed-links' );
-	add_theme_support( 'post-thumbnails' );
-
-	add_theme_support( 'title-tag' );
-	
-	add_theme_support( 'custom-background', array(
-		'default-color' => 'f3f3f3',
-		'default-image' => get_template_directory_uri() . alhenalite_setting('wip_body_background'),
-	) );
-	
-	add_theme_support( 'custom-header' );
-	
-	add_image_size( 'blog', 940,429, TRUE ); 
-	register_nav_menu( 'main-menu', 'Main menu' );
-	
-}
-
-add_action( 'after_setup_theme', 'alhenalite_setup' );
 
 /*-----------------------------------------------------------------------------------*/
 /* Get Skin */
@@ -364,20 +402,20 @@ function alhenalite_template($id) {
 
 	$template = array ("full" => "span12" , "left-sidebar" => "span8" , "right-sidebar" => "span8" );
 
-	$span = $template["full"];
-	$sidebar =  "full";
+	$span = $template["right-sidebar"];
+	$sidebar =  "right-sidebar";
 
-	if ( (is_category()) || (is_tag()) ) {
+	if ( ( (is_category()) || (is_tag()) ) && (alhenalite_setting('wip_category_layout')) ) {
 		
 		$span = $template[alhenalite_setting('wip_category_layout')];
 		$sidebar =  alhenalite_setting('wip_category_layout');
 			
-	} else if (is_home()) {
+	} else if ( (is_home()) && ( alhenalite_setting('wip_home')) ) {
 		
 		$span = $template[alhenalite_setting('wip_home')];
 		$sidebar =  alhenalite_setting('wip_home');
 			
-	} else if (alhenalite_postmeta('wip_template')) {
+	} else if ( alhenalite_postmeta('wip_template') ) {
 		
 		$span = $template[alhenalite_postmeta('wip_template')];
 		$sidebar =  alhenalite_postmeta('wip_template');
@@ -408,89 +446,84 @@ function alhenalite_layout($id) {
 	
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-/* Add default style, at theme activation */
-/*-----------------------------------------------------------------------------------*/         
+/* STYLES AND SCRIPTS */
+/*-----------------------------------------------------------------------------------*/ 
 
-if ( is_admin() && isset($_GET['activated'] ) && $pagenow == 'themes.php' ) {
-	
-	$wip_setting = get_option(alhenalite_themename());
+if (!function_exists('alhenalite_scripts_styles')) {
 
-	if (!$wip_setting) {	
-		
-		$skins = array( 
-		
-		"wip_skins" => "light_turquoise", 
-		"wip_logo_font" => "Kristi", 
-		"wip_logo_font_size" => "55px", 
-		
-		"wip_menu_font" => "Abel", 
-		"wip_menu_font_size" => "14px", 
-		
-		"wip_titles_font" => "Abel", 
-		
-		"wip_text_font_color" => "#616161", 
-		"wip_copyright_font_color" => "#ffffff", 
-		
-		"wip_link_color" => "#1abc9c", 
-		"wip_link_color_hover" => "#16a085", 
-		"wip_border_color" => "#16a085", 
-		
-		"wip_header_font_color" => "#919191", 
-		"wip_header_hover_font_color" => "#ffffff", 
-		"wip_submenu_color" => "#474747", 
-		"wip_submenu_text_color" => "#919191", 
+	function alhenalite_scripts_styles() {
 	
-		"wip_header_background" => "None",
-		"wip_header_background_color" => "#333333",
-	
-		"wip_body_background" => "/images/background/patterns/pattern1.jpg",
-		"wip_body_background_repeat" => "repeat",
-		"wip_body_background_color" => "#f3f3f3",
-		
-		"wip_footer_background" => "None",
-		"wip_footer_background_color" => "#333333",
-	
-		"wip_top_sidebar_area" => "span4",
-		"wip_header_sidebar_area" => "span4",
-		"wip_footer_sidebar_area" => "span4",
+		alhenalite_enqueue_style('/inc/css');
 
-		"wip_home" => "full",
-		"wip_category_layout" => "full",
-		"wip_footer_facebook_button" => "#",
-		"wip_footer_twitter_button" => "#",
-		"wip_footer_skype_button" => "#",
-		"wip_view_comments" => "on",
-		
-		);
+		if ( ( get_theme_mod('wip_skin') ) && ( get_theme_mod('wip_skin') <> "light_blue" ) ):
 	
-		update_option( alhenalite_themename(), $skins ); 
+			wp_enqueue_style( 'alhenalite ' . get_theme_mod('wip_skin') , get_template_directory_uri() . '/inc/skins/' . get_theme_mod('wip_skin') . '.css' ); 
+		
+		endif;
+
+		wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Abel|Kristi|Handlee|Maven+Pro:400,500,700,900|Oxygen:400,300,700&subset=latin,latin-ext' );
+
+		if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
+	
+		wp_enqueue_script( "jquery-ui-core", array('jquery'));
+		wp_enqueue_script( "jquery-ui-tabs", array('jquery'));
+
+		alhenalite_enqueue_script('/inc/js');
 		
 	}
-}
-
-/*-----------------------------------------------------------------------------------*/
-/* Styles and scripts */
-/*-----------------------------------------------------------------------------------*/ 
-
-function alhenalite_scripts_styles() {
 	
-	alhenalite_enqueue_script('/js');
-	alhenalite_enqueue_style('/css');
+	add_action( 'wp_enqueue_scripts', 'alhenalite_scripts_styles', 11 );
+
+}
+/*-----------------------------------------------------------------------------------*/
+/* THEME SETUP */
+/*-----------------------------------------------------------------------------------*/   
+
+if (!function_exists('alhenalite_setup')) {
+
+	function alhenalite_setup() {
+
+		global $nivoitems, $bxitems;
+
+		if ( ! isset( $content_width ) )
+			$content_width = 940;
+	
+		add_theme_support( 'post-formats', array( 'aside','gallery','quote','video','audio','link' ) );
+		add_theme_support( 'automatic-feed-links' );
+		add_theme_support( 'post-thumbnails' );
+	
+		add_theme_support( 'title-tag' );
+		
+		add_theme_support( 'custom-background', array(
+			'default-color' => 'f3f3f3',
+		) );
+		
+		add_image_size( 'blog', 940,429, TRUE ); 
+		
+		register_nav_menu( 'main-menu', 'Main menu' );
+	
+		load_theme_textdomain("alhenalite", get_template_directory() . '/languages');
+		
+		$require_array = array (
+			"/core/classes/",
+			"/core/admin/customize/",
+			"/core/templates/",
+			"/core/functions/",
+			"/core/metaboxes/",
+		);
+		
+		foreach ( $require_array as $require_file ) {	
+		
+			alhenalite_require($require_file);
+		
+		}
+		
+	}
+
+	add_action( 'after_setup_theme', 'alhenalite_setup' );
 
 }
 
-add_action( 'wp_enqueue_scripts', 'alhenalite_scripts_styles' );
-
-/*-----------------------------------------------------------------------------------*/
-/* Functions */
-/*-----------------------------------------------------------------------------------*/ 
-
-alhenalite_require('/core/widgets/');
-alhenalite_require('/core/templates/');
-alhenalite_require('/core/classes/');
-alhenalite_require('/core/functions/');
-alhenalite_require('/core/metaboxes/');
 
 ?>

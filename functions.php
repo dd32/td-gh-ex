@@ -11,6 +11,5 @@
  *
 */
 require_once get_template_directory() . '/core/main.php';
-require_once get_template_directory() . '/core/admin/function_panel.php';
 
 ?>

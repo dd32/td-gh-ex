@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="span12">
         
-                        <h1><?php _e( '<span>Search </span> results for', 'wip' ) ?> <strong><?php echo $s; ?> </strong></h1>
+                        <h1><?php _e( '<span>Search </span> results for', "alhenalite" ) ?> <strong><?php echo $s; ?> </strong></h1>
                     
                     </div>
                 </div>
@@ -39,16 +39,16 @@
         			<article class="article">
 
                     <header class="title">
-                        <div class="line"><h1><?php _e( 'Not Found',"wip" ) ?></h1></div>
+                        <div class="line"><h1><?php _e( 'Not Found',"alhenalite" ) ?></h1></div>
                     </header>
                         
-					<p> <?php _e( 'You can repeat your search with the following form.',"wip" ) ?> </p>
+					<p> <?php _e( 'You can repeat your search with the following form.',"alhenalite" ) ?> </p>
                 
                     <section class="contact-form searchform">
                         <form method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
                              <div>
-                             <input type="text" placeholder="<?php _e( 'Search here', 'wip' ) ?>"  name="s" id="s" class="input-search"/>
-                             <input type="submit" id="searchsubmit" class="button-search" value="<?php _e( 'Search', 'wip' ) ?>" />
+                             <input type="text" placeholder="<?php _e( 'Search here', "alhenalite" ) ?>"  name="s" id="s" class="input-search"/>
+                             <input type="submit" id="searchsubmit" class="button-search" value="<?php _e( 'Search', "alhenalite" ) ?>" />
                              </div>
                         </form>
                     <div class="clear"></div>  

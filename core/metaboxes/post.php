@@ -12,7 +12,7 @@
 $wip_new_metaboxes = new alhenalite_metaboxes ('post', array (
 
 array( "type" => "navigation",  
-       "item" => array( "setting" => __( "Setting","wip")),   
+       "item" => array( "setting" => __( "Setting","alhenalite")),   
        "start" => "<ul>", 
        "end" => "</ul>"),  
 
@@ -20,18 +20,18 @@ array( "type" => "begintab",
 	   "tab" => "setting",
 	   "element" =>
 
-		array( "name" => __( "Setting","wip"),
+		array( "name" => __( "Setting","alhenalite"),
 			   "type" => "title",
 			  ),
 
-		array( "name" => __( "Template","wip"),
-			   "desc" => __( "Select a template for this page", "wip"),
+		array( "name" => __( "Template","alhenalite"),
+			   "desc" => __( "Select a template for this page", "alhenalite"),
 			   "id" => "wip_template",
 			   "type" => "select",
 			   "options" => array(
-				   "full" => __( "Full Width","wip"),
-				   "left-sidebar" =>  __( "Left Sidebar","wip"),
-				   "right-sidebar" => __( "Right Sidebar","wip"),
+				   "full" => __( "Full Width","alhenalite"),
+				   "left-sidebar" =>  __( "Left Sidebar","alhenalite"),
+				   "right-sidebar" => __( "Right Sidebar","alhenalite"),
 			  ),
 			  ),
 			  

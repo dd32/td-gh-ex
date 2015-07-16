@@ -16,13 +16,21 @@ function alhenalite_header_content_function() {
 	<!-- START SLOGAN  -->
 	
 	<section id="slogan" >
+    
 		<div class="container">
+        
 			<div class="row">
+            
 				<div class="span12">
+                
 					<p> <?php echo alhenalite_postmeta('wip_slogan'); ?> </p>
+                    
 				</div>
+                
 			</div>
+            
 		</div>
+        
 	</section>
 	
 	<!-- END SLOGAN -->
@@ -34,15 +42,19 @@ function alhenalite_header_content_function() {
 	<!-- TOP WIDGET -->
 
 	<section id="top-box" >
+    
 		<div class="container">
+        
 			<div class="row">
 
 			<?php dynamic_sidebar('top_sidebar_area'); ?>
 
 			</div>
+            
 		</div>
+        
 	</section>
-
+ 
 	<!--  END TOP WIDGET -->
 
 <?php
