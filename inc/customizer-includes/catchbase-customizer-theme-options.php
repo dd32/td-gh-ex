@@ -91,13 +91,13 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'sanitize_callback' => 'catchbase_sanitize_custom_css',
 	) );
 
-	$wp_customize->add_control( new Catchbase_Customize_Textarea_Control ( $wp_customize, 'catchbase_theme_options[custom_css]', array(
+	$wp_customize->add_control( 'catchbase_theme_options[custom_css]', array(
 			'label'		=> __( 'Enter Custom CSS', 'catchbase' ),
 	        'priority'	=> 1,
 			'section'   => 'catchbase_custom_css',
 	        'settings'  => 'catchbase_theme_options[custom_css]',
 			'type'		=> 'textarea',
-	) ) );
+	) );
    	// Custom CSS End
 
    	// Excerpt Options
@@ -209,7 +209,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'catchbase_theme_options[theme_layout]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['theme_layout'],
-		'sanitize_callback' => 'sanitize_key',
+		'sanitize_callback' => 'catchbase_sanitize_select',
 	) );
 
 	$layouts = catchbase_layouts();
@@ -229,7 +229,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'catchbase_theme_options[content_layout]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['content_layout'],
-		'sanitize_callback' => 'sanitize_key',
+		'sanitize_callback' => 'catchbase_sanitize_select',
 	) );
 
 	$layouts = catchbase_get_archive_content_layout();
@@ -249,7 +249,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'catchbase_theme_options[single_post_image_layout]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['single_post_image_layout'],
-		'sanitize_callback' => 'sanitize_key',
+		'sanitize_callback' => 'catchbase_sanitize_select',
 	) );
 
 	
@@ -306,7 +306,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'catchbase_theme_options[pagination_type]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['pagination_type'],
-		'sanitize_callback' => 'sanitize_key',
+		'sanitize_callback' => 'catchbase_sanitize_select',
 	) );
 
 	$pagination_types = catchbase_get_pagination_types();
@@ -335,7 +335,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	$wp_customize->add_setting( 'catchbase_theme_options[promotion_headline_option]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['promotion_headline_option'],
-		'sanitize_callback' => 'sanitize_key',
+		'sanitize_callback' => 'catchbase_sanitize_select',
 	) );
 
 	$catchbase_featured_slider_content_options = catchbase_featured_slider_content_options();
@@ -359,13 +359,14 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'sanitize_callback'	=> 'wp_kses_post'
 	) );
 
-	$wp_customize->add_control( new Catchbase_Customize_Textarea_Control( $wp_customize, 'catchbase_theme_options[promotion_headline]', array(
+	$wp_customize->add_control( 'catchbase_theme_options[promotion_headline]', array(
 		'description'	=> __( 'Appropriate Words: 10', 'catchbase' ),
 		'label'    	=> __( 'Promotion Headline Text', 'catchbase' ),
 		'priority'	=> '1',
 		'section' 	=> 'catchbase_promotion_headline_options',
 		'settings'	=> 'catchbase_theme_options[promotion_headline]',
-	) ) );
+		'type'		=> 'textarea'
+	) );
 
 	$wp_customize->add_setting( 'catchbase_theme_options[promotion_subheadline]', array(
 		'capability'		=> 'edit_theme_options',
@@ -373,13 +374,14 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 		'sanitize_callback'	=> 'wp_kses_post'
 	) );
 
-	$wp_customize->add_control( new Catchbase_Customize_Textarea_Control( $wp_customize, 'catchbase_theme_options[promotion_subheadline]', array(
+	$wp_customize->add_control( 'catchbase_theme_options[promotion_subheadline]', array(
 		'description'	=> __( 'Appropriate Words: 15', 'catchbase' ),
 		'label'    	=> __( 'Promotion Subheadline Text', 'catchbase' ),
 		'priority'	=> '2',
 		'section' 	=> 'catchbase_promotion_headline_options',
 		'settings'	=> 'catchbase_theme_options[promotion_subheadline]',
-	) ) );
+		'type'		=> 'textarea'
+	) );
 
 	$wp_customize->add_setting( 'catchbase_theme_options[promotion_headline_button]', array(
 		'capability'		=> 'edit_theme_options',

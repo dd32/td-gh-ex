@@ -136,14 +136,18 @@ if ( ! function_exists( 'catchbase_setup' ) ) :
 		/**
 		 * Setup the WordPress core custom background feature.
 		 */
-		if ( $options['color_scheme'] != 'light' ) {
-			$default_color = '111';
+		if ( 'light' == $options['color_scheme'] ) {
+			$default_bg_color = catchbase_get_default_theme_options();
+			$default_bg_color = $default_bg_color['background_color'];
 		}
-		else {
-			$default_color = 'f2f2f2';
+		else if ( 'dark' == $options['color_scheme'] ) {
+			$default_bg_color = catchbase_default_dark_color_options();
+			$default_bg_color = $default_bg_color['background_color'];
 		}
+
+
 		add_theme_support( 'custom-background', apply_filters( 'catchbase_custom_background_args', array(
-			'default-color' => $default_color
+			'default-color' => $default_bg_color
 		) ) );
 
 		/**

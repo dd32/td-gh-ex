@@ -1,5 +1,14 @@
 == Change log ==
 
+= 2.2 =
+* Added: Missing keywords esc_attr_x in .pot file
+* Bug Fixed: Featured slider overlapping text and image issue
+* Bug Fixed: Escaped missing options in slider, social icons and breadcrumb implementation 
+* Changed the link for html5shiv in readme file 
+* Optimized Customizer Scripts 
+* Updated: French translation fr_FR.po and fr_FR.mo
+* Updated: Handling of default hex color values of custom background color and custom header text color
+
 = 2.1 = 
 * Added: Single Post navigation
 * Updated: German translation de_DE.po and de_DE.mo

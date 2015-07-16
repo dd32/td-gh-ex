@@ -39,7 +39,7 @@ Font Icons
 
 JS Files
     HTML5-Shiv is Licensed under the MIT and GPL licenses
-    https://code.google.com/p/html5shiv/
+    https://github.com/afarkas/html5shiv 
 
     jQuery Cycle 2 is Licensed under the MIT and GPL licenses
     http://jquery.malsup.com/cycle2/

@@ -91,7 +91,7 @@ if( !function_exists( 'catchbase_custom_breadcrumbs' ) ) :
 			echo '<div id="breadcrumb-list">
 					<div class="wrapper">';
 			
-			echo sprintf( $link, $homeLink, $text['home'] );
+			echo sprintf( $link, esc_url( $homeLink ), $text['home'] );
 
 			if( is_home() ) {
 				if( $showCurrent == 1 ) {
@@ -133,7 +133,7 @@ if( !function_exists( 'catchbase_custom_breadcrumbs' ) ) :
 				if( get_post_type() != 'post' ) {
 					$post_type = get_post_type_object( get_post_type() );
 					$slug      = $post_type->rewrite;
-					printf( $link, $homeLink . '/' . $slug['slug'] . '/', $post_type->labels->singular_name );
+					printf( $link,  esc_url( $homeLink ) . '/' . $slug['slug'] . '/', $post_type->labels->singular_name );
 					if( $showCurrent == 1 ) {
 						echo $before . get_the_title() . $after;
 					}

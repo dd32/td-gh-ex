@@ -16,92 +16,34 @@
     $('.preview-notice').prepend('<span id="catchbase_upgrade"><a target="_blank" class="button btn-upgrade" href="' + catchbase_misc_links.upgrade_link + '">' + catchbase_misc_links.upgrade_text + '</a></span>');
     jQuery('#customize-info .btn-upgrade, .misc_links').click(function(event) {
         event.stopPropagation();
-    });
-    /*
-     * For Featured Content on featured_content_type change event
-     */
-    $("#customize-control-catchbase_theme_options-featured_content_type label select").live( "change", function() {
-        var value = $(this).val();
-
-        if (value == 'demo-featured-content') {
-            $('#customize-control-catchbase_theme_options-featured_content_number').hide();
-            $('#customize-control-catchbase_theme_options-featured_content_headline').hide();
-            $('#customize-control-catchbase_theme_options-featured_content_subheadline').hide();
-            $('#customize-control-catchbase_theme_options-featured_content_show').hide();
-            $('[id*=customize-control-catchbase_featured_content_page]').hide();
-        } else {
-            $('#customize-control-catchbase_theme_options-featured_content_number').show();
-            $('#customize-control-catchbase_theme_options-featured_content_headline').show();
-            $('#customize-control-catchbase_theme_options-featured_content_subheadline').show();
-            $('#customize-control-catchbase_theme_options-featured_content_show').show();
-            $('[id*=customize-control-catchbase_featured_content_page]').show();
-        }
-    });
-
-    /**
-     * Control of show/hide events on feature content type selection on panel click if prevously value has been saved
-     */
-    $('#accordion-panel-catchbase_featured_content_options .accordion-section-title').live( "click", function() {
-        var value = $("#customize-control-catchbase_theme_options-featured_content_type label select").val();
-         if (value == 'demo-featured-content') {
-            $('#customize-control-catchbase_theme_options-featured_content_number').hide();
-            $('#customize-control-catchbase_theme_options-featured_content_headline').hide();
-            $('#customize-control-catchbase_theme_options-featured_content_subheadline').hide();
-            $('#customize-control-catchbase_theme_options-featured_content_show').hide();
-            $('[id*=customize-control-catchbase_featured_content_page]').hide();
-        } else {
-            $('#customize-control-catchbase_theme_options-featured_content_number').show();
-            $('#customize-control-catchbase_theme_options-featured_content_headline').show();
-            $('#customize-control-catchbase_theme_options-featured_content_subheadline').show();
-            $('#customize-control-catchbase_theme_options-featured_content_show').show();
-            $('[id*=customize-control-catchbase_featured_content_page]').show();
-        }
-    });
-
-    /*
-     * For Feature Slider on featured_slider_type change event
-     */
-
-    $('#accordion-panel-catchbase_featured_slider .accordion-section-title').live( "click", function() {
-        var value = $("#customize-control-catchbase_featured_slider_type label select").val();
-
-        if (value == 'demo-featured-slider') {
-            $('#customize-control-catchbase_featured_slide_number').hide();
-            $('[id*=customize-control-catchbase_featured_slider_page]').hide();
-        } else {
-            $('#customize-control-catchbase_featured_slide_number').show();
-            $('[id*=customize-control-catchbase_featured_slider_page]').show();
-        }
-    });
-
-    $("#customize-control-catchbase_featured_slider_type label select").live( "change", function() {
-        var value = $(this).val();
-
-        if (value == 'demo-featured-slider') {
-            $('#customize-control-catchbase_featured_slide_number').hide();
-            $('[id*=customize-control-catchbase_featured_slider_page]').hide();
-        } else {
-            $('#customize-control-catchbase_featured_slide_number').show();
-            $('[id*=customize-control-catchbase_featured_slider_page]').show();
-        }
-    });
-
-
-    //For Color Scheme
-    $("#customize-control-catchbase_theme_options-color_scheme").live( "change", function() {
-        //var name = $('#customize-control-catchbase_theme_options-color_scheme input').attr('name');
-        var value = $('#customize-control-catchbase_theme_options-color_scheme input:checked').val();
-        if ( 'dark' == value ){
-            $('#customize-control-header_textcolor .color-picker-hex').iris('color', '#ddd');
-
-            $('#customize-control-background_color .color-picker-hex').iris('color', '#111');
-        
-        }
-        else {
-            $('#customize-control-header_textcolor .color-picker-hex').iris('color', '#404040');
-
-            $('#customize-control-background_color .color-picker-hex').iris('color', '#f2f2f2');
-        }
-    });
-     
+    });     
 })(jQuery);
+
+
+/**
+ * Add a listener to the Color Scheme control to update other color controls to new values/defaults.
+ */
+( function( api ) {
+    api.controlConstructor.radio = api.Control.extend( {
+        ready: function() {
+            if ( 'catchbase_theme_options[color_scheme]' === this.id ) {
+                this.setting.bind( 'change', function( color_scheme ) {
+                    jQuery.each( catchbase_misc_links.color_list, function( index, value ) {
+                        if ( 'light' == color_scheme ) {
+                            api( index ).set( value.light );
+                            api.control( index ).container.find( '.color-picker-hex' )
+                            .data( 'data-default-color', value.light )
+                            .wpColorPicker( 'defaultColor', value.light );
+                        }
+                        else if ( 'dark' == color_scheme ) {
+                            api( index ).set( value.dark );
+                            api.control( index ).container.find( '.color-picker-hex' )
+                            .data( 'data-default-color', value.dark )
+                            .wpColorPicker( 'defaultColor', value.dark );
+                        }
+                    });
+                });
+            }
+        }
+    });
+} )( wp.customize );

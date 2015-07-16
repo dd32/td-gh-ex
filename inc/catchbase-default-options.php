@@ -70,7 +70,9 @@ function catchbase_get_default_theme_options() {
 		'search_text'										=> __( 'Search...', 'catchbase' ),
 
 		//Basic Color Options
-		'color_scheme' 										=> 'light',	
+		'color_scheme' 										=> 'light',
+		'background_color'									=> '#f2f2f2',
+		'header_textcolor'									=> '#404040',
 		
 		//Featured Content Options
 		'featured_content_option'							=> 'homepage',
@@ -639,4 +641,20 @@ function catchbase_get_content() {
 	$catchbase_content['right']	= esc_attr( $theme_data->get( 'Name') ) . '&nbsp;' . __( 'by', 'catchbase' ). '&nbsp;<a target="_blank" href="'. esc_url( $theme_data->get( 'AuthorURI' ) ) .'">'. esc_attr( $theme_data->get( 'Author' ) ) .'</a>';
 
 	return apply_filters( 'catchbase_get_content', $catchbase_content );
+}
+
+
+/**
+ * Returns the default options for Catch Base dark theme.
+ *
+ * @since Catch Base 1.0
+ */
+function catchbase_default_dark_color_options() {
+	$default_dark_color_options = array(
+		//Basic Color Options
+		'background_color'	=> '#111111',
+		'header_textcolor'	=> '#dddddd',
+	);
+
+	return apply_filters( 'catchbase_default_dark_color_options', $default_dark_color_options );
 }

@@ -23,10 +23,23 @@ if ( ! function_exists( 'catchbase_custom_header' ) ) :
  * support post thumbnails.
  */
 	function catchbase_custom_header() {
+		/**
+		 * Get Theme Options Values
+		 */	
+		$options 	= catchbase_get_theme_options();
 
+		if ( 'light' == $options['color_scheme'] ) {
+			$default_header_color = catchbase_get_default_theme_options();
+			$default_header_color = $default_header_color['header_textcolor'];
+		}
+		else if ( 'dark' == $options['color_scheme'] ) {
+			$default_header_color = catchbase_default_dark_color_options();
+			$default_header_color = $default_header_color['header_textcolor'];
+		}
+		
 		$args = array(
 		// Text color and image (empty to use none).
-		'default-text-color'     => '404040',
+		'default-text-color'     => $default_header_color,
 		
 		// Header image default
 		'default-image'			=> get_template_directory_uri() . '/images/headers/buddha.jpg',
@@ -491,6 +504,9 @@ if ( ! function_exists( 'catchbase_featured_overall_image' ) ) :
 		elseif ( $enableheaderimage == 'pages-posts' ) {
 			if ( is_page() || is_single() ) {
 				catchbase_featured_page_post_image();
+			}
+			else {
+				return false;
 			}
 		}
 		else {

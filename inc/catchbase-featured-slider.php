@@ -50,10 +50,10 @@ function catchbase_featured_slider() {
 						    data-cycle-pause-on-hover="true"
 						    data-cycle-swipe="true"
 						    data-cycle-auto-height=container
-						    data-cycle-fx="'. $options['featured_slide_transition_effect'] .'"
-							data-cycle-speed="'. $options['featured_slide_transition_length'] * 1000 .'"
-							data-cycle-timeout="'. $options['featured_slide_transition_delay'] * 1000 .'"
-							data-cycle-loader="'. $imageloader .'"
+						    data-cycle-fx="'. esc_attr( $options['featured_slide_transition_effect'] ) .'"
+							data-cycle-speed="'. esc_attr( $options['featured_slide_transition_length'] ) * 1000 .'"
+							data-cycle-timeout="'. esc_attr( $options['featured_slide_transition_delay'] ) * 1000 .'"
+							data-cycle-loader="'. esc_attr( $imageloader ) .'"
 							data-cycle-slides="> article"
 							>
 						    
@@ -68,7 +68,7 @@ function catchbase_featured_slider() {
 							if ( $sliderselect == 'demo-featured-slider' && function_exists( 'catchbase_demo_slider' ) ) {
 								$catchbase_featured_slider .=  catchbase_demo_slider( $options );
 							}
-							elseif ( $sliderselect == 'featured-page-slider' && function_exists( 'catchbase_page_slider' ) ) {
+							elseif ( $sliderselect == 'featured-page-slider' && function_exists( 'output' ) ) {
 								$catchbase_featured_slider .=  catchbase_page_slider( $options );
 							}
 			
@@ -96,43 +96,43 @@ if ( ! function_exists( 'catchbase_demo_slider' ) ) :
  *
  */
 function catchbase_demo_slider( $options ) {
-	$catchbase_demo_slider ='
-								<article class="post hentry slides demo-image displayblock">
-									<figure class="slider-image">
-										<a title="Slider Image 1" href="'. esc_url( home_url( '/' ) ) .'">
-											<img src="'.get_template_directory_uri().'/images/gallery/slider1-1200x514.jpg" class="wp-post-image" alt="Slider Image 1" title="Slider Image 1">
-										</a>
-									</figure>
-									<div class="entry-container">
-										<header class="entry-header">
-											<h1 class="entry-title">
-												<a title="Slider Image 1" href="#"><span>Slider Image 1</span></a>
-											</h1>
-										</header>
-										<div class="entry-content">
-											<p>Slider Image 1 Content</p>
-										</div>   
-									</div>             
-								</article><!-- .slides --> 	
-								
-								<article class="post hentry slides demo-image displaynone">
-									<figure class="Slider Image 2">
-										<a title="Slider Image 2" href="'. esc_url( home_url( '/' ) ) .'">
-											<img src="'. get_template_directory_uri() . '/images/gallery/slider2-1200x514.jpg" class="wp-post-image" alt="Slider Image 2" title="Slider Image 2">
-										</a>
-									</figure>
-									<div class="entry-container">
-										<header class="entry-header">
-											<h1 class="entry-title">
-												<a title="Slider Image 2" href="#"><span>Slider Image 2</span></a>
-											</h1>
-										</header>
-										<div class="entry-content">
-											<p>Slider Image 2 Content</p>
-										</div>   
-									</div>             
-								</article><!-- .slides -->';
-	return $catchbase_demo_slider;
+	$output ='
+			<article class="post hentry slides demo-image displayblock">
+				<figure class="slider-image">
+					<a title="Slider Image 1" href="'. esc_url( home_url( '/' ) ) .'">
+						<img src="'.get_template_directory_uri().'/images/gallery/slider1-1200x514.jpg" class="wp-post-image" alt="Slider Image 1" title="Slider Image 1">
+					</a>
+				</figure>
+				<div class="entry-container">
+					<header class="entry-header">
+						<h1 class="entry-title">
+							<a title="Slider Image 1" href="#"><span>Slider Image 1</span></a>
+						</h1>
+					</header>
+					<div class="entry-content">
+						<p>Slider Image 1 Content</p>
+					</div>   
+				</div>             
+			</article><!-- .slides --> 	
+			
+			<article class="post hentry slides demo-image displaynone">
+				<figure class="Slider Image 2">
+					<a title="Slider Image 2" href="'. esc_url( home_url( '/' ) ) .'">
+						<img src="'. get_template_directory_uri() . '/images/gallery/slider2-1200x514.jpg" class="wp-post-image" alt="Slider Image 2" title="Slider Image 2">
+					</a>
+				</figure>
+				<div class="entry-container">
+					<header class="entry-header">
+						<h1 class="entry-title">
+							<a title="Slider Image 2" href="#"><span>Slider Image 2</span></a>
+						</h1>
+					</header>
+					<div class="entry-content">
+						<p>Slider Image 2 Content</p>
+					</div>   
+				</div>             
+			</article><!-- .slides -->';
+	return $output;
 }
 endif; // catchbase_demo_slider
 
@@ -146,12 +146,11 @@ if ( ! function_exists( 'catchbase_page_slider' ) ) :
  * @since Catch Base 1.0
  */
 function catchbase_page_slider( $options ) {
-	$quantity		= $options['featured_slide_number'];
-	$more_link_text	=	$options['excerpt_more_text'];
+	$quantity		= absint( $options['featured_slide_number'] );
+	
+	global $post;
 
-    global $post;
-
-    $catchbase_page_slider = '';
+    $output 				= '';
     $number_of_page 		= 0; 		// for number of pages
 	$page_list				= array();	// list of valid page ids
 
@@ -174,15 +173,21 @@ function catchbase_page_slider( $options ) {
 		));
 		$i=0; 
 
-		while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post(); $i++;
+		while ( $get_featured_posts->have_posts()) {
+			$get_featured_posts->the_post(); 
+
+			$i++;
+			
 			$title_attribute =the_title_attribute( array( 'before' => __( 'Permalink to:', 'catchbase' ), 'echo' => false ) );
+			
 			$excerpt = get_the_excerpt();
+			
 			if ( $i == 1 ) { $classes = 'page pageid-'.$post->ID.' hentry slides displayblock'; } else { $classes = 'page pageid-'.$post->ID.' hentry slides displaynone'; }
-			$catchbase_page_slider .= '
+			$output .= '
 			<article class="'.$classes.'">
 				<figure class="slider-image">';
 				if ( has_post_thumbnail() ) {
-					$catchbase_page_slider .= '<a title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'catchbase' ), 'echo' => false ) ) . '" href="' . get_permalink() . '">
+					$output .= '<a title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'catchbase' ), 'echo' => false ) ) . '" href="' . get_permalink() . '">
 						'. get_the_post_thumbnail( $post->ID, 'catchbase_slider', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class'	=> 'attached-page-image' ) ).'
 					</a>';
 				}
@@ -198,12 +203,12 @@ function catchbase_page_slider( $options ) {
 						$catchbase_image =	$catchbase_first_image;
 					}
 
-					$catchbase_page_slider .= '<a title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'catchbase' ), 'echo' => false ) ) . '" href="' . get_permalink() . '">
+					$output .= '<a title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'catchbase' ), 'echo' => false ) ) . '" href="' . get_permalink() . '">
 						'. $catchbase_image .'
 					</a>';
 				}
 				
-				$catchbase_page_slider .= '
+				$output .= '
 				</figure><!-- .slider-image -->
 				<div class="entry-container">
 					<header class="entry-header">
@@ -213,15 +218,15 @@ function catchbase_page_slider( $options ) {
 						<div class="assistive-text">'.catchbase_page_post_meta().'</div>
 					</header>';
 					if( $excerpt !='') {
-						$catchbase_page_slider .= '<div class="entry-content">'. $excerpt.'</div>';
+						$output .= '<div class="entry-content">'. $excerpt.'</div>';
 					}
-					$catchbase_page_slider .= '
+					$output .= '
 				</div><!-- .entry-container -->
 			</article><!-- .slides -->';
-		endwhile; 
+		} 
 
 		wp_reset_query();
   	}
-	return $catchbase_page_slider;
+	return $output;
 }
-endif; // catchbase_page_slider
+endif; // output
