@@ -71,10 +71,11 @@ function annina_options_do_page() {
 			<div class="anninaRight" style="float:right; width: 70%;">
 			<ul>
 				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Advanced Theme Options', 'annina' ); ?></b> <?php _e( '(Manage Loading Page, Additional Custom Code, Font switcher and much more...)', 'annina' ); ?></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Logo and Favicon Upload', 'annina' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Logo Upload', 'annina' ); ?></b></li>
 				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Unlimited Colors and Skin', 'annina' ); ?></b></li>
 				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Post views counter', 'annina' ); ?></b></li>
 				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Infinite Scroll', 'annina' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Sticky Sidebar', 'annina' ); ?></b></li>
 				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Breadcrumb', 'annina' ); ?></b></li>
 				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( '7 Shortcodes', 'annina' ); ?></b> <?php _e( '(Toggle, Tabs, Boxes, Columns, Highlights, Buttons and Drop Cap)', 'annina' ); ?></li>
 				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( '11 Exclusive Widgets', 'annina' ); ?></b> <?php _e( '(Latest Tweet, Instagram, Social Buttons, Recent Posts with Thumbnail and Most Commented Posts...)', 'annina' ); ?></li>
@@ -227,6 +228,17 @@ function annina_options_do_page() {
 					<td>
 						<input id="annina_theme_options[emailurl]" class="regular-text" type="text" name="annina_theme_options[emailurl]" value="<?php if( isset( $se_options[ 'emailurl' ] ) ) echo sanitize_email( $se_options[ 'emailurl' ] ); ?>" />
 						<label class="description" for="annina_theme_options[emailurl]"><?php _e( 'Leave blank to hide Email Icon', 'annina' ); ?></label>
+					</td>
+				</tr>
+				
+				<?php
+				/**
+				 * Customize Link
+				 */
+				?>
+				<tr valign="top"><th scope="row"><?php _e( 'Theme Colors', 'annina' ); ?></th>
+					<td>
+						<a href="<?php echo admin_url( 'customize.php' ); ?>" target="_blank"><?php _e( 'Click here to customize colors', 'annina' ); ?></a>
 					</td>
 				</tr>
 				
