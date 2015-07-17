@@ -104,6 +104,7 @@ add_action( 'after_setup_theme', 'cyberchimps_core_setup_theme' );
 
 function cyberchimps_custom_background_cb() {
 
+	$style = "";
 	// $background is the saved custom image, or the default image.
 	$background = get_background_image();
 
@@ -141,7 +142,7 @@ function cyberchimps_custom_background_cb() {
 
 		$style = $image . $repeat . $position . $attachment;
 	}
-	else if( $cc_background != 'none' ) {
+	else if( $cc_background != 'none' && !empty( $cc_background ) ) {
 		$img_url = get_template_directory_uri() . '/cyberchimps/lib/images/backgrounds/' . $cc_background . '.jpg';
 		$style = "background-image: url( '$img_url' );";
 	}
