@@ -53,7 +53,11 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
-
+@Version 1.2
+1. Full width page template sidebar is showing.
+2. Remove woocomerce.php commented code block
+3. Remove Image resize.
+4. Solve Reading setting.
 @Version 1.1.4
 1. Removed Twitter link from the option panel
 2. Removed CDN font awesome icons 

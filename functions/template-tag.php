@@ -23,8 +23,6 @@ $current_options = wp_parse_args(  get_option( 'corpbiz_options', array() ), the
 					</div>
 					<?php } ?>
 	</div>
-			
-			
 <?php }  endif;
 // This Function Check whether Sidebar active or Not
 if(!function_exists( 'corpbiz_post_layout_class' )) :
@@ -47,4 +45,4 @@ function corpbiz_post_link() { ?>
 				<?php next_posts_link(); ?>
 				<?php endif; ?>
 			</div>
-<?php }  endif; ?>			
+<?php }  endif; ?>

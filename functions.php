@@ -82,21 +82,6 @@
 		) );
 	}
 	
-	/********** Image Resize *************/
-	// code for home slider post types 
-	add_filter( 'intermediate_image_sizes', 'webriti_image_presets');
-	function webriti_image_presets($sizes){
-	   $type = get_post_type($_REQUEST['post_id']);
-	   
-		foreach($sizes as $key => $value){
-			if($type=='post' && $value != 'webriti_blog_thumb' && $value != 'webriti_sidebar_thumb')
-			{        unset($sizes[$key]); }		
-			else if($type=='page' && $value != 'webriti_page_thumb')
-			{        unset($sizes[$key]); }		
-		}
-		return $sizes;	 
-	}
-	
 	/*******corpbiz css and js *******/
 	function webriti_scripts()
 	{	

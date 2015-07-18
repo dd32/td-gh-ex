@@ -6,7 +6,7 @@ get_template_part('index', 'banner');
 <div class="container">
 	<div class="row blog_sidebar_section">		
 		<!--Blog-->
-<div class="<?php if(is_active_sidebar('sidebar-primary')){ echo 'col-md-8'; } else { echo 'col-md-12'; } ?>" >
+<div class="<?php corpbiz_post_layout_class(); ?>" >
 	<?php
 		if(have_posts())
 		{
