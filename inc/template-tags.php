@@ -96,6 +96,8 @@ function afterlight_entry_meta() {
 	}
 
 	if ( 'jetpack-portfolio' == get_post_type() ) {
+		global $post;
+
 		$project_types_list = get_the_term_list( $post->ID, 'jetpack-portfolio-type', '', _x( ', ', 'Used between list items, there is a space after the comma.', 'afterlight' ), '' );
 		if ( $project_types_list ) {
 			printf( '<span class="cat-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',

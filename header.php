@@ -24,7 +24,7 @@
 	<?php if ( get_header_image() ) : ?>
 		<div class="header-image">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-				<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+				<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
 			</a>
 		</div>
 	<?php endif; // End header image check. ?>
@@ -44,7 +44,7 @@
 			<?php endif; ?>
 
 			<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'social' ) || is_active_sidebar( 'sidebar-1' )  ) : ?>
-				<button id="sidebar-toggle" class="sidebar-toggle"><?php _e( 'Widgets', 'afterlight' ); ?></button>
+				<button id="sidebar-toggle" class="sidebar-toggle"></button>
 			<?php endif; ?>
 		</div><!-- .site-header-top -->
 
@@ -65,7 +65,7 @@
 			</div>
 
 			<?php if ( has_nav_menu( 'social' ) ) : ?>
-				<nav class="social-navigation" role="navigation">
+				<nav class="social-navigation">
 					<?php
 						// Social links navigation menu.
 						wp_nav_menu( array(

@@ -207,7 +207,7 @@ function afterlight_fonts_url() {
 		$fonts_url = add_query_arg( array(
 			'family' => urlencode( implode( '|', $fonts ) ),
 			'subset' => urlencode( $subsets ),
-		), '//fonts.googleapis.com/css' );
+		), 'https://fonts.googleapis.com/css' );
 	}
 
 	return $fonts_url;
@@ -256,6 +256,12 @@ function afterlight_scripts() {
 	wp_localize_script( 'afterlight-script', 'screenReaderText', array(
 		'expand'   => '<span class="screen-reader-text">' . __( 'expand child menu', 'afterlight' ) . '</span>',
 		'collapse' => '<span class="screen-reader-text">' . __( 'collapse child menu', 'afterlight' ) . '</span>',
+	) );
+
+	wp_localize_script( 'afterlight-script', 'toggleButtonText', array(
+		'menu'    => __( 'Menu', 'afterlight' ),
+		'widgets' => __( 'Widgets', 'afterlight' ),
+		'both'    => __( 'Menu &amp; Widgets', 'afterlight' ),
 	) );
 }
 add_action( 'wp_enqueue_scripts', 'afterlight_scripts' );

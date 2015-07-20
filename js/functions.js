@@ -1,4 +1,5 @@
 /* global screenReaderText */
+/* global toggleButtonText */
 /**
  * Theme functions file.
  *
@@ -10,10 +11,8 @@
 	    $window       = $( window ),
 	    sidebar       = $( '#sidebar' ),
 	    sidebarToggle = $( '#masthead' ).find( '#sidebar-toggle' ),
-	    resizeTimer,
-	    toolbarHeight,
-	    mastheadHeight,
-	    headerImageHeight;
+	    menu = $( '#masthead' ).find( '.nav-menu' ),
+	    resizeTimer;
 
 	// Add dropdown toggle that display child menu items.
 	$( '#sidebar .main-navigation .menu-item-has-children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false">' + screenReaderText.expand + '</button>' );
@@ -42,17 +41,21 @@
 			return;
 		}
 
+		// Add a toggle button text.
+		sidebarToggle.append( toggleButtonText.widgets );
+
+		// Add an initial value for the attribute.
+		$( sidebarToggle ).add( sidebar ).attr( 'aria-expanded', 'false' );
+
 		sidebarToggle.on( 'click.afterlight', function() {
 			$body.toggleClass( 'sidebar-open' ).trigger( 'resize' );
 			$( this ).toggleClass( 'toggled-on' );
-			$( this ).attr( 'aria-expanded', sidebar.attr( 'aria-expanded' ) === 'true' ? 'false' : 'true');
-			sidebar.attr( 'aria-hidden', sidebar.attr( 'aria-hidden' ) === 'false' ? 'true' : 'false');
+			$( this ).add( sidebar ).attr( 'aria-expanded', $( this ).add( sidebar ).attr( 'aria-expanded' ) === 'false' ? 'true' : 'false');
 		} );
 	} )();
 
 	// Fix sub-menus for touch devices and better focus for hidden submenu items for accessibility.
 	( function() {
-		var menu = $( '#masthead' ).find( '.nav-menu' );
 		if ( ! menu || ! menu.children().length ) {
 			return;
 		}
@@ -76,15 +79,16 @@
 
 	// Minimum height for sidebar.
 	function sidebarSize() {
-		var sidebarMinHeight;
+		var toolbarHeight,
+		    mastheadHeight    = $( '#masthead' ).outerHeight(),
+		    headerImageHeight = $( '.header-image' ).height(),
+		    sidebarMinHeight;
 
 		if ( ! sidebar ) {
 			return;
 		}
 
 		toolbarHeight     = $body.is( '.admin-bar' ) ? $( '#wpadminbar' ).height() : 0;
-		mastheadHeight    = $( '#masthead' ).outerHeight();
-		headerImageHeight = $( '.header-image' ).height();
 		sidebarMinHeight  = $window.height() - ( toolbarHeight + mastheadHeight + headerImageHeight );
 
 		sidebar.css( {
@@ -151,6 +155,24 @@
 		}
 	}
 
+	// Change the toggle button text.
+	function toggleButtonTxt() {
+		var social  = $( '#sidebar' ).find( '#social-navigation' ),
+		    widgets = $( '#sidebar' ).find( '#secondary' );
+
+		if ( $window.width() <= 833 ) {
+			if ( ( menu.length || social.length ) && widgets.length ) {
+				sidebarToggle.html( toggleButtonText.both );
+			} else if ( ( menu.length || social.length ) && ! widgets.length ) {
+				sidebarToggle.html( toggleButtonText.menu );
+			} else {
+				sidebarToggle.html( toggleButtonText.widgets );
+			}
+		} else {
+			sidebarToggle.html( toggleButtonText.widgets );
+		}
+	}
+
 	// Close Sidebar with an escape key.
 	$( document ).keyup( function( e ) {
 		if ( 27 === e.keyCode && sidebarToggle.hasClass( 'toggled-on' ) ) {
@@ -167,6 +189,7 @@
 				sidebarSize();
 				bodyClasses();
 				postNavigation();
+				toggleButtonTxt();
 			}, 300 );
 		} );
 
@@ -174,11 +197,13 @@
 		bodyClasses();
 		bigImageClass();
 		postNavigation();
+		toggleButtonTxt();
 
 		for ( var i = 1; i < 4; i++ ) {
 			setTimeout( sidebarSize, 100 * i );
 			setTimeout( bodyClasses, 100 * i );
 			setTimeout( postNavigation, 100 * i );
+			setTimeout( toggleButtonTxt, 100 * i );
 		}
 	} );
 } )( jQuery );
