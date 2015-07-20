@@ -1,46 +1,74 @@
-**===== Info =====**
+APERTURE
+Theme Version: 1.1.0
+Author: Michael Van Den Berg 
+Author URL: http://michaelvandenberg.com/
 
-Theme Name:	Aperture
-Theme URI: 	http://michaelvandenberg.com/themes/#aperture
-Author: 	Michael Van Den Berg
-Author URI:	http://michaelvandenberg.com/
+--------------------
+=== Description ===
+--------------------
 
-
-**===== Description =====**
-
-Aperture is a modern and responsive photographers theme with a fullscreen slider; perfect for artists and photographers wanting to showcase their art. Aperture supports all post formats (standard, quote, link, image, gallery, aside, status) and this combined with it's clear typography (Droid Sans and Oswald) makes Aperture a great theme for bloggers too! Aperture easily adapts to your needs. Use it with or without sidebars, add a copyright line at the bottom, add up to 18 social media icons or add a second menu: it's all up to you! Need more convincing: http://wp.me/p8Ci4-4x
-
-
-**===== Notes =====**
-
-To use the frontpage slider: 
-	1.- Go to a page or add a new one. 
-	2.- Select 'Slider Template' at the right side under 'Page Attributes'.
-	3.- Go to the customizer.
-	4.- Add your images under the 'Fullscreen Slider Images' tab.
-	5.- Don't forget to add the page to your menu! ;)
-
-The fullscreen background, copyright text, social media icons and the slider texts can all be set in the customizer.
-
-This theme is one of the first themes to support the upcoming Jetpack Portfolio Custom Post Type.
+Aperture is a simple, responsive theme with a fullscreen slider.
 
 
-**===== License =====**
+--------------------
+=== Copyright ===
+--------------------
 
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
+Aperture WordPress Theme, Copyright 2015 Michael Van Den Berg.
+Aperture is distributed under the terms of the GNU GPL license 2.0 or later.
 
- Aperture is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+Identity is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 
-This theme uses SuperSlides for the fullscreen slider
-and Sidr for the menu on small screen sizes.
-http://nicinabox.com/superslides/
-http://www.berriart.com/sidr/
-Both of them are MIT licenced and are GPL compatible.
 
-The layout/grid has been made with Susy.
-http://susy.oddbird.net/
+--------------------
+=== Installation ===
+--------------------
 
-The aside post format note paper css style has been borrowed from:
-http://www.cssflow.com/snippets/notepaper-blockquote
-And is also MIT licenced and thus GPL compatible.
+1. Sign into your WordPress dashboard, go to Appearance > Themes, and click Add New.
+2. Click Add New.
+3. Click Upload.
+4. Click Choose File and select the theme zip file.
+5. Click Install Now.
+6. Click Add New, then click Upload, then click Choose File.
+7. After WordPress installs the theme, click Activate.
+8. You've successfully installed your new theme!
+
+
+--------------------
+=== Licenses ===
+--------------------
+
+-- Fonts.
+*
+*  Oswald / by Vernon Adams.
+*  URL: https://www.google.com/fonts/specimen/Oswald
+*  License: SIL Open Font License 1.1 / http://scripts.sil.org/ofl_web
+*
+*  Droid Sans / by Steve Matteson
+*  URL: http://www.google.com/fonts/specimen/Droid+Sans
+*  License: Apache License 2.0 / https://www.apache.org/licenses/LICENSE-2.0
+*
+*  Genericons / by Automattic
+*  URL: http://genericons.com/
+*  License: GNU GPL License 2.0 / https://www.gnu.org/licenses/gpl-2.0.html
+*
+
+-- Images.
+*
+*  The default background image is based on a picture from Nelly Volkovich.
+*  URL: https://unsplash.com/nelly
+*  License: CC0 / http://creativecommons.org/publicdomain/zero/1.0/
+*
+*  The image on the theme screenshot is based on a picture from Daniela Cuevas.
+*  URL: https://unsplash.com/danielacuevas
+*  License: CC0 / http://creativecommons.org/publicdomain/zero/1.0/
+*
+
+--------------------
+=== Changelog ===
+--------------------
+
+*
+* 1.0.0 / 20.07.2015
+* Initial release.
+*

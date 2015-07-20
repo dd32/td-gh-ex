@@ -1,36 +1,29 @@
 <?php
 /**
- * The Template for displaying all single posts.
+ * The template for displaying all single posts.
  *
  * @package Aperture
  */
 
 get_header(); ?>
 
-<?php if ( is_active_sidebar( 'right-sidebar' ) ) { ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-<?php } else { ?>
-	<div id="primary" class="content-area-no-sidebar">
-		<main id="main" class="site-main" role="main">
-<?php } ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php get_template_part( 'content', 'single' ); ?>
+			<?php get_template_part( 'template-parts/content', 'single' ); ?>
 
-			<?php get_template_part( 'after', 'post' ); ?>
+			<?php the_post_navigation(); ?>
 
 			<?php
-				// If comments are open or we have at least one comment, load up the comment template
-				if ( comments_open() || '0' != get_comments_number() ) :
+				// If comments are open or we have at least one comment, load up the comment template.
+				if ( comments_open() || get_comments_number() ) :
 					comments_template();
 				endif;
 			?>
 
-			<?php aperture_post_nav(); ?>
-
-		<?php endwhile; // end of the loop. ?>
+		<?php endwhile; // End of the loop. ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

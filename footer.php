@@ -6,44 +6,43 @@
  *
  * @package Aperture
  */
+$customtext = get_theme_mod( 'aperture_footer_text', 'Some custom text here!' );
 ?>
 
-<?php if ( !is_page_template('page-slider.php') ) { ?>
 	</div><!-- #content -->
-<?php } ?>
 
-	<footer id="colophon" class="site-footer <?php if ( is_page_template('page-slider.php') ) { esc_attr_e( 'no-footer-sidebar', 'aperture' ); } ?>" role="contentinfo">
-		<?php if ( !is_page_template('page-slider.php') ) { get_sidebar( 'footer' ); } ?>
+	<footer id="colophon" class="site-footer" role="contentinfo">
 
-		<div class="site-info-background">
-			<div class="site-info <?php if ( is_page_template('page-slider.php') ) { esc_attr_e( 'site-info-fullwidth', 'aperture' ); } ?>">
-				<?php printf( __( 'Powered by %s', 'aperture' ), '<a href="http://wordpress.org/" rel="generator" target="_blank">WordPress</a>' ); ?>
-				<span class="sep"> | </span>
-				<?php printf( __( 'Theme: %1$s by %2$s', 'aperture' ), '<a href="http://www.michaelvandenberg.com/themes/#aperture" target="_blank">Aperture</a>', '<a href="http://www.michaelvandenberg.com/" rel="designer" target="_blank">Michael Van Den Berg</a>' ); ?>
-				<?php $copyrighttext = get_theme_mod( 'copyright_custom_text' ); ?>
-				<?php if ( ! empty( $copyrighttext ) ) : ?>
-				<span class="custom-text"><?php echo esc_html( $copyrighttext ); ?></span>
+		<div class="container">
+
+			<?php get_sidebar( 'bottom' ); ?>
+
+			<div class="site-info">
+
+				<?php if ( has_nav_menu( 'social' ) ) : ?>
+					<nav id="bottom-social" class="social-links">
+						<?php get_template_part( 'template-parts/navigation-social' ); ?>
+					</nav><!-- #social-links -->
 				<?php endif; ?>
+
+				<div class="credits">
+					<span class="credits-top"><?php echo __( 'Powered by ', 'aperture' ) ?><a href="<?php echo esc_url( __( 'http://wordpress.org/', 'aperture' ) ); ?>" rel="generator">WordPress</a></span>
+					<span class="sep"> | </span>
+					<span class="credits-bottom"><?php printf( __( 'The %1$s theme by %2$s', 'aperture' ), '<a href="http://michaelvandenberg.com/portfolio/themes/aperture/" rel="theme">Aperture</a>', '<a href="http://michaelvandenberg.com/" rel="designer">MvdB</a>' ); ?></span>
+				</div><!-- .credits -->
+
+				<div class="custom-text">
+					<span><?php echo sanitize_text_field( $customtext ) ?></span>
+				</div><!-- .custom-text -->
 			</div><!-- .site-info -->
-		</div><!-- .site-info-background -->
+
+		</div><!-- .container -->
+
+		<a href="#content" class="back-to-top"><span class="genericon genericon-top"></span></a>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-
-<script type="text/javascript">
-jQuery(document).ready(function($){
-    $('#sidr-toggle').sidr({
-      name: 'sidr-menu',
-      source: '.primary-menu-container, .secondary-menu-container',
-      side: 'right'
-    });
-});
-
-jQuery(window).resize(function() {
-       jQuery.sidr('close', 'sidr-menu');
-});
-</script>
 
 </body>
 </html>

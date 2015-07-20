@@ -5,7 +5,7 @@
  */
 
 ( function( $ ) {
-	// Site title, description and copyright text.
+	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( to ) {
 			$( '.site-title a' ).text( to );
@@ -14,11 +14,6 @@
 	wp.customize( 'blogdescription', function( value ) {
 		value.bind( function( to ) {
 			$( '.site-description' ).text( to );
-		} );
-	} );
-	wp.customize( 'copyright_custom_text', function( value ) {
-		value.bind( function( to ) {
-			$( '.custom-text' ).text( to );
 		} );
 	} );
 	// Header text color.
