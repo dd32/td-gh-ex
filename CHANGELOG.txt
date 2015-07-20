@@ -1,16 +1,8 @@
 Changelog
 =========
 
-v1.0.9 (https://github.com/9Pixels/Accountant-Theme/releases/tag/v1.0.8) (2015-07-25)
--------------------------------------------------------------------------------------
 
-Full changelog: https://github.com/9Pixels/Accountant-Theme/compare/v1.0.8...v1.0.9
-
-Bug(s):
- - Accessibility ready.
-
-
-v1.0.8 (https://github.com/9Pixels/Accountant-Theme/releases/tag/v1.0.8) (2015-07-20)
+v1.0.8 (https://github.com/9Pixels/Accountant-Theme/releases/tag/v1.0.7) (2015-07-20)
 -------------------------------------------------------------------------------------
 
 Full changelog: https://github.com/9Pixels/Accountant-Theme/compare/v1.0.7...v1.0.8
