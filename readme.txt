@@ -1,19 +1,19 @@
 === Araiz ===
+Araiz WordPress Theme, Copyright (C) 2015 Waqass Khalid
+Araiz is distributed under the terms of the GNU GPL
+Araiz is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
 
-Contributors: Waqass Khalid
-Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
+Tags: white, responsive-layout, one-column, right-sidebar, featured-images
 
 Requires at least: 4.0
 Tested up to: 4.2.2
-Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A starter theme called Araiz clean and simple interface.
-
 == Description ==
 
-Araiz is built upon underscores and depicts a very clean and warm feeling. The theme is fast and pleasent on eyes. 
+Araiz is built upon underscores and depicts a very clean and warm feeling. The theme is fast and easy on eyes.
 
 == Installation ==
 	
@@ -28,6 +28,11 @@ Araiz is built upon underscores and depicts a very clean and warm feeling. The t
 Araiz includes support for Infinite Scroll in Jetpack.
 
 == Change log ==
+= 1.0.3 - July 19 2015 =
+* Removed rtl.css 
+* Appropriate tags added
+* Fixed responsive layout and menu
+
 = 1.0.2 - June 23 2015 =
 * Fixed Content Width on Single Pages.
 * Added Description

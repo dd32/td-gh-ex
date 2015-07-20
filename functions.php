@@ -91,7 +91,7 @@ add_action( 'after_setup_theme', 'araiz_setup' );
 
 // Set up the content width value based on the theme's design and stylesheet.
 if ( ! isset( $content_width ) )
-	$content_width = 1100;
+	$content_width = 1000;
 /**
  * Register widget area.
  *

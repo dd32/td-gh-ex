@@ -4,11 +4,14 @@ Theme URI: http://lodse.com/?theme=araiz
 Author: Waqass Khalid
 Author URI: https://profiles.wordpress.org/waqasskhalid
 Description: Araiz is a basic theme great for simple blogging. It is a blend between classic design and a modern interface. It is basically a fast theme with fully responsive interface.
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: araiz
-Tags: black, white, dark, light, responsive-layout, one-column, right-sidebar, featured-images
+Tags: white, responsive-layout, one-column, right-sidebar, featured-images
+
+Araiz WordPress Theme, Copyright (C) 2015 Waqass Khalid
+Araiz is distributed under the terms of the GNU GPL
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -578,48 +581,49 @@ h6 a:visited {
 	text-decoration: none;
 }
 
-.main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 1.5em;
-	left: -999em;
-	z-index: 99999;
-}
 
 .main-navigation ul ul ul {
 	left: -999em;
-	top: 0;
+	top: -4px;
+        margin-left: -2px;
+        border-left: none;
 }
 
 .main-navigation ul ul a {
-	width: 200px;
+	padding:3px;
+        width:100px
+            
 }
 
 .main-navigation ul ul li {
-
+margin: 0px;
 }
 
 .main-navigation li:hover > a,
 .main-navigation li.focus > a {
+    background-color: #EDEDED
 }
 
 .main-navigation ul ul :hover > a,
 .main-navigation ul ul .focus > a {
+    background-color: #EDEDED
 }
 
 .main-navigation ul ul a:hover,
 .main-navigation ul ul a.focus {
+    background-color: #EDEDED
 }
 
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
 	left: auto;
+        background-color: #EDEDED
 }
 
 .main-navigation ul ul li:hover > ul,
 .main-navigation ul ul li.focus > ul {
 	left: 100%;
+        background-color: #EDEDED
 }
 
 .main-navigation .current_page_item > a,
@@ -659,11 +663,25 @@ h6 a:visited {
         text-align: left;
         width: 100%;
         background-color: rgba(240, 255, 255, 0.33);
-        padding: 5px 15px;
+        padding: 0px 15px;
         }
         .main-navigation li:hover > a, .main-navigation li.focus > a {
         color: #38a16a;;
         }
+        .main-navigation ul ul {
+	float: left;
+	position: absolute;
+	top: 1.5em;
+	left: -999em;
+	z-index: 99999;
+        background-color: rgba(240, 255, 255, 0.33);
+        border-left: 1px solid #EDEDED;
+        border-right: 1px solid #EDEDED;
+        border-bottom: 1px solid #EDEDED;
+        border-radius: 5px;
+        margin-top: 5px;
+        }
+        
 
 }
 @media screen and (max-width: 768px) {
@@ -675,6 +693,25 @@ h6 a:visited {
     .main-navigation li:hover > a, .main-navigation li.focus > a {
         color: #38a16a;;
         }
+    .main-navigation a {
+    padding: 7px 0px;
+    }
+    .main-navigation ul {
+    margin: 0px;
+    padding-left: 5px;
+    }
+    .main-navigation ul ul {
+    padding-left: 15px;
+    }
+    .main-navigation ul ul ul{
+    padding-left: 25px;
+    }
+    .main-navigation ul ul a {
+    padding: 3px;
+    width: 80%;
+    text-align: left;
+    }
+        
 }
 
 .site-main .comment-navigation,
@@ -797,6 +834,86 @@ h6 a:visited {
 .widget_search .search-submit {
 	display: none;
 }
+/*--------------------------------------------------------------
+  Widgets
+--------------------------------------------------------------*/
+.widget {
+  padding: 40px;
+  margin-bottom: 40px;
+  background-color: #fff;
+  border-radius: 5px;
+  /* Custom list styling */
+  /* List icons */
+  /* Make sure select elements fit in widgets. */
+}
+.widget:last-child {
+  margin-bottom: 0;
+}
+.widget ul,
+.widget ol {
+  padding-left: 10px;
+  margin: 0;
+  list-style: none;
+}
+.widget li {
+  position: relative;
+  /* custom list-style */
+}
+.widget li:last-child {
+  margin-bottom: 0;
+}
+.widget ol li {
+  counter-increment: step-counter;
+}
+.widget ol li:before {
+  content: counter(step-counter);
+  padding-left: 0;
+}
+.widget select {
+  width: 100%;
+  max-width: 350px;
+}
+.widget .search-submit {
+  display: none;
+}
+.widget-title {
+  margin: 0 0 30px 0;
+  font-size: .9em;
+}
+/* For mobile */
+/* For desktop */
+input.search-field {
+  background-color: #f1f1f1;
+  width: 100%;
+  box-sizing: border-box;
+}
+#wp-calendar {
+  text-align: center;
+  margin-bottom: 0;
+}
+#wp-calendar caption {
+  margin-bottom: 20px;
+}
+#wp-calendar th {
+  text-align: inherit;
+}
+#wp-calendar th,
+#wp-calendar td {
+  padding: 5px 0;
+}
+.tagcloud a {
+  font-size: 9pt !important;
+  padding: 3px 10px;
+  background: #f1f1f1;
+  color: #bbb;
+  display: inline-block;
+  margin: 0 3px 7px 0;
+}
+.tagcloud a:hover,
+.tagcloud a:active {
+  color: #fff;
+  background-color: #38a16a;
+}
 
 /*--------------------------------------------------------------
 # Content
@@ -871,6 +988,7 @@ h6 a:visited {
   text-transform: uppercase;
   font-size: .7857em;
   color: #aaa;
+  padding:5px;
 }
 /*--------------------------------------------------------------
 ## Footer
@@ -1036,3 +1154,7 @@ object {
 .gallery-caption {
 	display: block;
 }
+figure {
+    width: 80% !important;
+}
+
