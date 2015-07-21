@@ -1,15 +1,8 @@
 <!DOCTYPE html>
 
-<!--[if IE 8 ]><html class="ie8" <?php language_attributes(); ?>> <![endif]-->
-<!--[if IE 9 ]><html class="ie9" <?php language_attributes(); ?>> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html <?php language_attributes(); ?>> <!--<![endif]-->
+<html <?php language_attributes(); ?>>
 
 <head>
-
-	<!--[if IE 8 ]>
-	<script src="<?php echo trailingslashit( get_template_directory_uri() ) . 'js/build/html5shiv.min.js'; ?>"></script>
-	<![endif]-->
-
     <?php wp_head(); ?>
 </head>
 
@@ -48,5 +41,5 @@
 				<?php hybrid_do_atomic( 'after_sidebar' ); ?>
 			</div>
 			<?php hybrid_do_atomic( 'before_main' ); ?>
-			<div id="main" class="main" role="main">
+			<section id="main" class="main" role="main">
 				<?php hybrid_do_atomic( 'main_top' ); ?>

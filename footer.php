@@ -1,5 +1,5 @@
 <?php hybrid_do_atomic( 'main_bottom' ); ?>
-</div> <!-- .main -->
+</section> <!-- .main -->
 
 <footer class="site-footer" role="contentinfo">
     <?php hybrid_do_atomic( 'footer_top' ); ?>
@@ -18,10 +18,6 @@
 </div><!-- .overflow-container -->
 
 <?php wp_footer(); ?>
-
-<!--[if IE 8 ]>
-<script src="<?php echo trailingslashit( get_template_directory_uri() ) . 'js/build/respond.min.js'; ?>"></script>
-<![endif]-->
 
 <?php hybrid_do_atomic( 'body_bottom' ); ?>
 </body>
