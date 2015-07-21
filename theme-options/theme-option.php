@@ -13,7 +13,6 @@ function avocation_framework_load_scripts(){
 	wp_enqueue_script('jquery-ui-sortable');
 	// Enqueue custom option panel JS
 	wp_enqueue_script( 'options-custom', get_template_directory_uri(). '/theme-options/js/theme-option-custom.js', array('jquery','wp-color-picker'));
-	wp_enqueue_script( 'media-uploader', get_template_directory_uri(). '/theme-options/js/media-uploader.js', array( 'jquery') );
 	wp_localize_script('options-custom', 'admin_url', admin_url('admin-ajax.php'));
 }
 add_action( 'admin_enqueue_scripts', 'avocation_framework_load_scripts' );

@@ -34,3 +34,6 @@ Version 1.0.7
 
 Version 1.0.8
 	1) Fixed all the issues
+
+Version 1.0.9
+	1) remove media js file and used wordpress default
