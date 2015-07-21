@@ -2,7 +2,7 @@
 /**
  * The template for search form.
  *
- * @package Accesspress Mag
+ * @package AccessPress Mag
  */
 ?>
 

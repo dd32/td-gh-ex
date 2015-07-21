@@ -7,7 +7,7 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package Accesspress Mag
+ * @package AccessPress Mag
  */
 
 get_header(); ?>
@@ -40,7 +40,8 @@ get_header(); ?>
 			</main><!-- #main -->
 		</div><!-- #primary -->
 
-<?php 
+<?php
+$page_sidebar = 'right-sidebar'; 
 $page_sidebar = get_post_meta( $post -> ID, 'accesspress_mag_page_sidebar_layout', true);
     if($page_sidebar!='no-sidebar'){
         $option_value = explode('-',$page_sidebar); 

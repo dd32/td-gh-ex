@@ -2,7 +2,7 @@
 /**
  * Contains all the functions related to sidebar and widget.
  *
- * @package Accesspress Mag
+ * @package AccessPress Mag
  * 
  */
  

@@ -266,7 +266,7 @@ function optionsframework_options() {
             ); 
     
     $options[] = array(
-            'name' => __( 'Heder ad', 'accesspress-mag' ),
+            'name' => __( 'Header ad', 'accesspress-mag' ),
             'id'   => 'header_ad',
             'type' => 'groupstart'
             );

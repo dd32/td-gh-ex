@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Accesspress Mag
+ * @package AccessPress Mag
  */
 ?>
 

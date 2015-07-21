@@ -2,7 +2,7 @@
 /**
  * The sidebar containing the main widget area.
  *
- * @package Accesspress Mag
+ * @package AccessPress Mag
  */
 $accesspress_mag_theme_option = get_option( 'accesspress-mag-theme' );
 $sidebar_bottom_ad = of_get_option('value_sidebar_bottom_ad'); 

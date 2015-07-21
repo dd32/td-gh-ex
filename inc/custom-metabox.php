@@ -2,7 +2,7 @@
 /**
  * AccessPress Mag Theme Options
  *
- * @package Accesspress Mag
+ * @package AccessPress Mag
  */
  
 add_action('add_meta_boxes', 'accesspress_mag_add_sidebar_layout_box'); 

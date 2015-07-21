@@ -52,12 +52,10 @@ Fonts
 ----------------------------------------------------
 
 ScreenShot Images
-    https://pixabay.com/en/girl-young-female-happy-face-689137/
-    http://pixabay.com/en/tablet-computer-woman-reading-690032/
+    https://pixabay.com/en/glamour-style-hat-woman-portrait-678834/
     http://pixabay.com/en/model-fashion-glamour-girl-female-600238/
-    http://pixabay.com/en/camera-video-camera-lens-technology-408258/
-    https://pixabay.com/en/girl-woman-sunglasses-fashion-691105/
-    https://pixabay.com/en/ship-illuminated-night-ship-484696/
+    https://pixabay.com/en/girls-friends-friendship-young-685778/
+    https://pixabay.com/en/woman-beach-model-beauty-game-692785/
 
 GPL compatible for own images
     accesspress-mag/images/demo-images/728-90.png
@@ -65,11 +63,16 @@ GPL compatible for own images
 
 ----------------------------------------------------
 == Changelog ==
+Version 2.0.7
+ * Display full post of slider in mobile device
+ * Fixed bugs on slider function and add extra slider function for mobile device
+ * Fixed bugs about page sidebar for old posts
+ * Changed theme package name (Accesspress Mag to AccessPress Mag) 
+
 Version 2.0.6
  * Added news ticker option
  * Added few animation at home page banner
  * Refine some code at accesspress-function.php file
- * Added sticky menu option for primary menu only 
 
 Version 2.0.5
  * Fixed the error for widget title

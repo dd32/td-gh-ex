@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Accesspress Mag
+ * @package AccessPress Mag
  */
 function accesspress_mag_widgets_show_widget_field($instance = '', $widget_field = '', $athm_field_value = '') {
     // Store Posts in array

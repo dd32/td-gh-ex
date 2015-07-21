@@ -3,7 +3,7 @@
 /**
  * Article Contributors Widgets
  *
- * @package Accesspress Mag
+ * @package AccessPress Mag
  */
 /**
  * Adds accesspress_mag_contributors widget.

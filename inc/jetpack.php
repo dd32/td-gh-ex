@@ -3,7 +3,7 @@
  * Jetpack Compatibility File
  * See: http://jetpack.me/
  *
- * @package Accesspress Mag
+ * @package AccessPress Mag
  */
 
 /**

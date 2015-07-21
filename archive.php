@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package Accesspress Mag
+ * @package AccessPress Mag
  */
 
 get_header(); ?>
@@ -22,7 +22,7 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php
-            $archive_template = of_get_option( 'global_archive_template' );
+            $archive_template = of_get_option( 'global_archive_template', 'default-template' );
             if($archive_template=='default-template'){
                 $archive_template = 'archive-default';
             } else {
@@ -63,6 +63,7 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php 
+ $sidebar_option = 'right-sidebar';
  $sidebar_option = of_get_option('global_archive_sidebar');
  if($sidebar_option!='no-sidebar'){
         $option_value = explode('-',$sidebar_option); 

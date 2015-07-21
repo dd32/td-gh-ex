@@ -2,7 +2,7 @@
 /**
  * Accesspress Mag Theme Customizer
  *
- * @package Accesspress Mag
+ * @package AccessPress Mag
  */
 
 /**

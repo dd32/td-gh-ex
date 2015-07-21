@@ -2,7 +2,7 @@
 /**
  * The template for displaying search results pages.
  *
- * @package Accesspress Mag
+ * @package AccessPress Mag
  */
 
 get_header(); ?>

@@ -3,7 +3,7 @@
 /**
  * Random Posts Widgets
  *
- * @package Accesspress Mag
+ * @package AccessPress Mag
  */
 /**
  * Adds accesspress_mag_random_posts widget.

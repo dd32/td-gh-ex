@@ -7,7 +7,7 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package Accesspress Mag
+ * @package AccessPress Mag
  */
 
 get_header();
@@ -15,7 +15,13 @@ get_header();
 
     <section class="slider-wrapper">
         <div class="apmag-container"> 
-            <?php do_action('accesspress_mag_slider');?>
+            <?php 
+                if( wp_is_mobile() ) {
+                    do_action('accesspress_mag_slider_mobile');
+                } else {
+                    do_action('accesspress_mag_slider');
+                }
+            ?>
         </div>                  
     </section>
     <div class="apmag-container">

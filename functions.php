@@ -2,7 +2,7 @@
 /**
  * Accesspress Mag functions and definitions
  *
- * @package Accesspress Mag
+ * @package AccessPress Mag
  */
 
 /**

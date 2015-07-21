@@ -96,12 +96,15 @@ endif;
  */
 if ( ! function_exists( 'accesspress_mag_slider_cb' ) ) : 
 function accesspress_mag_slider_cb(){
-        $slider_posts_option = of_get_option( 'slider_post_option' );
+        $slider_posts_option = of_get_option( 'slider_post_option', ' ' );
         $slider_category = of_get_option( 'homepage_slider_category' );
         $slide_count = of_get_option( 'count_slides' );
-        if( $slide_count == 0 || empty($slider_category) ){
+        if( $slide_count == 0 ){
             $posts_perpage_value = 1;
-        } else {
+        } elseif( empty( $slider_category ) && $slider_posts_option == 'cat' ) {
+            $posts_perpage_value = 1;
+        }
+        else {
             $posts_perpage_value = $slide_count*4;
         }
         $slide_info = of_get_option( 'slider_info' );
@@ -121,9 +124,6 @@ function accesspress_mag_slider_cb(){
         if( ( $slider_posts_option == 'cat' ) && ( !empty( $slider_category ) ) ){
             $slider_args['category_name'] = $slider_category;
         }
-        //echo '<pre>';
-//        	print_r($slider_args);
-//        echo '</pre>';
         $slider_query = new WP_Query( $slider_args );
         $slide_counter = 0; 
         if( $slider_query->have_posts() )
@@ -179,6 +179,78 @@ add_action( 'accesspress_mag_slider', 'accesspress_mag_slider_cb', 10 );
 
 /**
  * 
+ * Homepage Slider settings mobile
+ */
+if ( ! function_exists( 'accesspress_mag_slider_mobile_cb' ) ) : 
+function accesspress_mag_slider_mobile_cb(){
+        $slider_posts_option = of_get_option( 'slider_post_option', ' ' );
+        $slider_category = of_get_option( 'homepage_slider_category' );
+        $slide_count = of_get_option( 'count_slides' );
+        if( $slide_count == 0 ){
+            $posts_perpage_value = 1;
+        } elseif( empty( $slider_category ) && $slider_posts_option == 'cat' ) {
+            $posts_perpage_value = 1;
+        }
+        else {
+            $posts_perpage_value = $slide_count*4;
+        }
+        $slide_info = of_get_option( 'slider_info' );
+        $slider_args = array(
+                    'post_type' => 'post',
+                    'post_status' => 'publish',
+                    'posts_per_page' => $posts_perpage_value,
+                    'order' => 'DESC',
+                    'meta_query' => array(
+                                        array(
+                                            'key' => '_thumbnail_id',
+                                            'compare' => '!=',
+                                            'value' => null
+                                        )
+                                    )
+                        );
+        if( ( $slider_posts_option == 'cat' ) && ( !empty( $slider_category ) ) ){
+            $slider_args['category_name'] = $slider_category;
+        }
+        $slider_query = new WP_Query( $slider_args );
+        $slide_counter = 0; 
+        if( $slider_query->have_posts() )
+        {
+            echo '<div id="homeslider-mobile">';
+            while( $slider_query->have_posts() )
+            {
+                $slide_counter++;                                                            
+                $slider_query->the_post();
+                $post_id = get_the_ID();
+                $post_image_id = get_post_thumbnail_id();
+                $post_big_image_path = wp_get_attachment_image_src( $post_image_id, 'accesspress-mag-slider-big-thumb', true );
+                $post_small_image_path = wp_get_attachment_image_src( $post_image_id, 'accesspress-mag-slider-small-thumb', true );
+                $post_image_alt = get_post_meta( $post_image_id, '_wp_attachment_image_alt', true );
+            ?>                        
+                    <div class="slider">
+                        <a href="<?php echo the_permalink();?>">
+                            <div class="big_slide wow fadeInLeft">
+                                <div class="big-cat-box">
+                                    <?php category_details( $post_id );?>
+                                    <?php do_action('accesspress_mag_post_meta');?>
+                                </div>
+                                    <div class="slide-image"><img src="<?php echo esc_url( $post_big_image_path[0] );?>" alt="<?php echo esc_attr($post_image_alt);?>" /></div>
+                                    <?php if( $slide_info == 1 ){?><div class="mag-slider-caption"><h3 class="slide-title"><?php the_title();?></h3></div><?php } ?>
+                            </div>
+                        </a>
+                    </div>
+           <?php                
+                }
+                wp_reset_query();
+            echo '</div>';
+            }
+ }
+ endif ;
+add_action( 'accesspress_mag_slider_mobile', 'accesspress_mag_slider_mobile_cb', 10 );
+
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+
+/**
+ * 
  * Function scripts for header
  * 
  */
@@ -196,6 +268,15 @@ function accesspress_mag_function_script(){
         /*--------------For Home page slider-------------------*/
         
             $("#homeslider").bxSlider({
+                controls:<?php echo esc_attr($slider_controls); ?>,
+                pager:<?php echo esc_attr($slider_pager);?>,
+                pause: 6000,
+                speed: 1000,
+                auto:<?php echo esc_attr($slider_auto_transaction);?>
+                                        
+            });
+            
+            $("#homeslider-mobile").bxSlider({
                 controls:<?php echo esc_attr($slider_controls); ?>,
                 pager:<?php echo esc_attr($slider_pager);?>,
                 pause: 6000,
@@ -501,6 +582,7 @@ endif;
 
 if( ! function_exists( 'accesspress_mag_breadcrumbs' ) ):
 function accesspress_mag_breadcrumbs() {
+  wp_reset_postdata();
   global $post;
   $trans_here = of_get_option( 'trans_you_are_here' );
   if( empty( $trans_here ) ){ $trans_here = __( 'You are here', 'accesspress-mag' ); }
@@ -658,7 +740,7 @@ if((function_exists('accesspress_mag_woocommerce_breadcrumbs') && $accesspress_s
 add_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 10, 0 ); 
 }
 
-/*---------------------------------------------------------------------------------------------------------------------------------------*/ 
+/*-------------------------------------------------------------------------------------------------------------------------------*/ 
 
 /**
  *
@@ -670,3 +752,5 @@ function accesspress_mag_bbp_no_breadcrumb ($arg){
 }
 endif;
 add_filter('bbp_no_breadcrumb', 'accesspress_mag_bbp_no_breadcrumb' );
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/

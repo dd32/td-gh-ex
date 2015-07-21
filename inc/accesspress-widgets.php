@@ -2,7 +2,7 @@
 /**
  * AccessPress Mag Custom Widgets
  *
- * @package Accesspress Mag
+ * @package AccessPress Mag
  */
  
 /**

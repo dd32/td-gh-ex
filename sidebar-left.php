@@ -2,7 +2,7 @@
 /**
  * The sidebar containing the main widget area.
  *
- * @package Accesspress Mag
+ * @package AccessPress Mag
  */
 
 if ( ! is_active_sidebar( 'accesspress-mag-sidebar-left' ) ) {
