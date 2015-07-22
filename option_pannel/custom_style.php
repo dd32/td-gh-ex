@@ -1,4 +1,4 @@
-<?php $spa_current_options=get_option('spa_theme_options'); ?>
+<?php $current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), spa_the_theme_setup() ); ?>
 <style>
   .navbar .nav > li > a
   {	

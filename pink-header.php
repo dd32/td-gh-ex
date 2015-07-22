@@ -1,5 +1,5 @@
 <?php 	get_header();
-  $current_options=get_option('spa_theme_options');
+  $current_options=get_option('spa_theme_options',spa_the_theme_setup());
 $call_us=$current_options['call_us'];  
 $call_us_text=$current_options['call_us_text'];  
   if(is_category()){

@@ -5,17 +5,7 @@
   		// setup admin pannel defual data for index page
   		$spa_theme_options=spa_the_theme_setup(); 
   		
-  		// upgrade to current package to new feature package and Current option array and new option array are merge 
-  		$current_theme_options = get_option('spa_theme_options'); // get existing option data 		
-  		if($current_theme_options)
-  		{ 	$spa_theme_options = array_merge($spa_theme_options, $current_theme_options);
-  			update_option('spa_theme_options',$spa_theme_options);	// Save existing and new option data			
-  		}
-  		else
-  		{ 		
-  			add_option('spa_theme_options',$spa_theme_options);  // set New option data 
-  		}
-  		
+  		// upgrade to current package to new feature package and Current option array and new option array are merge
   		//add_option('spa_theme_options',$spa_theme_options);
   		
   		//Add THEME SUPPORT

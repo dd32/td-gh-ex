@@ -1,5 +1,5 @@
 <?php
-  $current_options=get_option('spa_theme_options');
+  $current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), spa_the_theme_setup() );
   if(isset($_POST['spasalon_settings_save_7']))
   {		
   if($_POST['spasalon_settings_save_7'] == 1) 

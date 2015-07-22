@@ -8,11 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="<?php bloginfo('charset'); ?>" />
     <title><?php wp_title( '|', true, 'right' ); ?></title>
-    <?php if(get_option('spa_theme_options')!='')			
-      {
-      	$spa_current_options=get_option('spa_theme_options');
-      }
-      ?>
+	<?php 
+    $spa_current_options = get_option('spa_theme_options',spa_the_theme_setup());
+	?>
     <?php if($spa_current_options['upload_image_favicon']!=''){?>
     <link rel="shortcut icon" href="<?php  echo $spa_current_options['upload_image_favicon']; ?>" />
     <?php }?>

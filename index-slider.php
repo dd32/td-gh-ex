@@ -1,4 +1,4 @@
-<?php $current_options=get_option('spa_theme_options'); ?>
+<?php $current_options=get_option('spa_theme_options',spa_the_theme_setup());; ?>
 <div id="container" class="cf">
   <div class="main" role="main">
     <div class="slider">

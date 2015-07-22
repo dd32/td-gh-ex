@@ -1,5 +1,6 @@
 <!--product thumbnails slider-->
-<?php $products=get_option('spa_theme_options');?>
+<?php 
+$products=get_option('spa_theme_options',spa_the_theme_setup()); ?>
 <div class="container-fluid">
   <div class="container">
     <div class="jumbotron">

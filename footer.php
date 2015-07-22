@@ -1,4 +1,4 @@
-<?php $current_options=get_option('spa_theme_options'); 
+<?php $current_options=get_option('spa_theme_options',spa_the_theme_setup()); 
   if($current_options['spa_custom_css']!='')
   { echo "<style type='text/css'>".$current_options['spa_custom_css']."</style>"; }
   

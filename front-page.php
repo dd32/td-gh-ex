@@ -1,5 +1,5 @@
 <?php
-  $is_front_page = get_option('spa_theme_options');
+  $is_front_page = get_option('spa_theme_options',spa_the_theme_setup());
   if ( 'posts' == get_option( 'show_on_front') && $is_front_page['front_page'] != 'yes' ) {
   get_template_part('index');
   }

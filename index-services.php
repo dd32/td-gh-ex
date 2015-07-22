@@ -1,4 +1,4 @@
-<?php $service_data=get_option('spa_theme_options');?>
+<?php $service_data=get_option('spa_theme_options',spa_the_theme_setup());?>
 <div class="container">
   <!-- jumbotron - Tagline with Description -->
   <div class="jumbotron">

@@ -99,6 +99,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@version 1.5.3
+1. Remove the feature of saving the option panel data into database during the time Install
 @version 1.5.2
 1. Remove all debug log errors.
 2. the_title replaced by the tag get_search_query in the search.php
