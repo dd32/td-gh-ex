@@ -3,8 +3,8 @@
 Contributors: Iceable
 Tags: gray, green, white, light, one-column, two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.5
-Tested up to: 4.1.1
-Stable tag: 1.1.3
+Tested up to: 4.2.2
+Stable tag: 1.2.0
 
 == ABOUT WORTEX LITE ==
 
@@ -48,13 +48,20 @@ Currently available translations:
 
 * French (fr_FR) translation: by Iceable Media
 
-Translating this theme into you own language is quick and easy, you will find a .POT file in the /languages folder to get you started. It contains about 40 strings only.
+Translating this theme into you own language is quick and easy, you will find a .POT file in the /languages folder to get you started. It contains about 80 strings only.
 If you don't have a .po file editor yet, you can download Poedit from http://www.poedit.net/download.php - Poedit is free and available for Windows, OSX and Linux.
 
 If you have translated this theme into your own language and are willing to share your translation with the community, please feel free to do so on the forums at http://www.iceablethemes.com
 Your translation files will be added to the next update. Don't forget to leave your name, email address and/or website link so credits can be given to you!
 
 == CHANGELOG ==
+
+= 1.2.0 =
+July 22th, 2015
+* Replaced theme options panel with Customizer implementation
+* Added "title-tag" support
+* Updated fr_FR translation file
+* Tested with WordPress 4.2.2
 
 = 1.1.3 =
 March 31th, 2015

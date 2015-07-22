@@ -17,10 +17,9 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
-<title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<?php $favicon = wortex_get_option('favicon');
+<?php $favicon = get_theme_mod( 'wortex_favicon' );
 if ($favicon): ?><link rel="shortcut icon" href="<?php echo esc_url($favicon); ?>" /><?php endif; ?>
 <?php // Loads HTML5 JavaScript file to add support for HTML5 elements in older IE versions. ?>
 <!--[if lt IE 9]>
@@ -30,7 +29,7 @@ wp_head();
 ?></head><body <?php body_class(); ?>><?php
 
 /* Wide or boxed layout ? */
-$boxed = ('Boxed' == wortex_get_option('layout') ) ? true : false;
+$boxed = ('boxed' == get_theme_mod('wortex_layout') ) ? true : false;
 
 /* Start main wrap */
 ?><div id="main-wrap"<?php if ( $boxed ) echo ' class="boxed"'; ?>><?php
@@ -42,18 +41,16 @@ $boxed = ('Boxed' == wortex_get_option('layout') ) ? true : false;
 		?><div id="header"><?php
 
 			?><div class="container"><?php
-				?><div id="logo"><a href="<?php echo home_url(); ?>"><?php
-		
-			$logo_url = wortex_get_option('logo');
-			if ( wortex_get_option('header_title') == 'Display Title' || $logo_url == "" ):
-						?><h1 class="site-title"><?php echo bloginfo('name'); ?></h1><?php
-					else:
-						?><img src="<?php echo esc_url( $logo_url ); ?>" alt="<?php echo bloginfo('name'); ?>"><?php
-					endif;
+			?><div id="logo"><a href="<?php echo esc_url( home_url() ); ?>" title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><?php
+				if ( get_theme_mod( 'wortex_logo' ) ) :
+					?><h1 class="site-title" style="display:none"><?php bloginfo('name') ?></h1><?php
+					?><img src="<?php echo esc_url( get_theme_mod( 'wortex_logo' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php
+				else:
+					?><h1 class="site-title"><?php bloginfo('name') ?></h1><?php
+				endif;
+			?></a></div><?php
 
-				?></a></div><?php
-
-			if ( "On" == wortex_get_option('display_tagline') ):
+			if ( get_bloginfo ( 'description' ) ):
 				?><div id="tagline"><?php bloginfo('description'); ?></div><?php
 			endif;
 
@@ -70,10 +67,10 @@ $boxed = ('Boxed' == wortex_get_option('layout') ) ? true : false;
 			/* End header wrap */
 
 		if ( get_custom_header()->url ) :
-			if ( ( is_front_page() && wortex_get_option('home_header_image') != 'Off' )
-				|| ( is_page() && !is_front_page() && wortex_get_option('pages_header_image') != 'Off' )
-				|| ( is_single() && wortex_get_option('single_header_image') != 'Off' )
-				|| ( !is_front_page() && !is_singular() && wortex_get_option('blog_header_image') != 'Off' )
+			if ( ( is_front_page() && get_theme_mod('home_header_image') != 'off' )
+				|| ( is_page() && !is_front_page() && get_theme_mod('pages_header_image') != 'off' )
+				|| ( is_single() && get_theme_mod('single_header_image') != 'off' )
+				|| ( !is_front_page() && !is_singular() && get_theme_mod('blog_header_image') != 'off' )
 				|| ( is_404() ) ):
 
 	?><div id="header-image"><?php
