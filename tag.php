@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-
 <!-- Page Title Section -->
 <div class="page-mycarousel">
 	<div class="page-title-col">

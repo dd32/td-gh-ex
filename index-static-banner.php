@@ -1,11 +1,10 @@
 <!-- wallstreet Main Slider --->
-<?php
-$current_options = get_option('wallstreet_lite_options',theme_data_setup());
-?>
+<?php $wallstreet_pro_options=theme_data_setup();
+	  $current_options = wp_parse_args(  get_option( 'wallstreet_pro_options', array() ), $wallstreet_pro_options ); ?>
 <!-- /Slider Section -->
 <div class="homepage_mycarousel">
 	<div class="static-banner">
-	<?php if($current_options['home_banner_enabled'] == 'on') { ?>
+	<?php if($current_options['home_banner_enabled'] == true) { ?>
 				
 					<?php if($current_options['slider_image']){ ?>
 					<img class="img-responsive" alt="Sleek &amp; Beautiful" src="<?php echo esc_url($current_options['slider_image']); ?>">

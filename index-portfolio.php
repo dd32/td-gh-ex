@@ -1,6 +1,7 @@
 <!-- AddThis Button END -->
-<?php $current_options=get_option('wallstreet_lite_options',theme_data_setup()); ?>
-<?php if($current_options['portfolio_section_enabled'] == 'on') { ?>
+<?php $wallstreet_pro_options=theme_data_setup();
+$current_options = wp_parse_args(  get_option( 'wallstreet_pro_options', array() ), $wallstreet_pro_options ); 
+ if($current_options['portfolio_section_enabled'] == true) { ?>
 <div class="portfolio-section">
 	<div class="container">
 
@@ -85,7 +86,7 @@
 			<div class="col-md-3 col-md-6 home-portfolio-area">
 				<div class="home-portfolio-showcase">
 					<div class="home-portfolio-showcase-media">
-					<?php if($current_options['portfolio_image_four']) { ?>
+					<?php if($current_options['portfolio_title_four']) { ?>
 						<img class="img-responsive home-portfolio-img" alt="Sleek &amp; Beautiful" src="<?php echo esc_url($current_options['portfolio_image_four']); ?>">
 					<?php } ?>
 						<div class="home-portfolio-showcase-overlay">

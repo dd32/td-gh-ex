@@ -22,7 +22,7 @@ function theme_data_setup()
 			'slider_image' => $slider_image,
 			
 			// service
-			'service_section_enabled' => 'on',
+			'service_section_enabled' => true,
 			
 			'service_image_one' => $service_image, 
 			'service_title_one'=> __('Product Designing','wallstreet'),
@@ -37,7 +37,7 @@ function theme_data_setup()
 			'service_description_three' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta nisl.','wallstreet'),
 			
 			//portfolio
-			'portfolio_section_enabled' => 'on',
+			'portfolio_section_enabled' => true,
 			
 			'portfolio_title_one' => __('Wall Street Style','wallstreet'),
 			'portfolio_description_one' => __('A wonderful serenity has taken possession of my entire soul, like these sweet mornings.','wallstreet'),
@@ -59,7 +59,7 @@ function theme_data_setup()
 			'blog_section_enabled' => 'on',
 			
 			// Head Titles
-			'contact_header_settings' => 'on',
+			'contact_header_settings' => true,
 			'contact_phone_number' => '1-800-123-789',
 			'contact_email' => 'info@webriti.com',
 			'service_title' => __('Our Services','wallstreet'),

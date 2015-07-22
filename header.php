@@ -8,7 +8,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
-	<?php $current_options = get_option('wallstreet_lite_options',theme_data_setup()); ?>
+	<?php $wallstreet_pro_options=theme_data_setup();
+	  $current_options = wp_parse_args(  get_option( 'wallstreet_pro_options', array() ), $wallstreet_pro_options ); ?>
 	<?php if($current_options['upload_image_favicon']!=''){ ?>
 	<link rel="shortcut icon" href="<?php  echo esc_url( $current_options['upload_image_favicon'] ); ?>" /> 
 	<?php } ?>
@@ -20,7 +21,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-6">
-				<?php if($current_options['header_social_media_enabled']=='on') { ?>
+				<?php if($current_options['header_social_media_enabled']==true) { ?>
 				<ul class="head-contact-social">
 					<?php if($current_options['social_media_twitter_link']!='') { ?>
 					<li><a href="<?php echo esc_url( $current_options['social_media_twitter_link'] ); ?>"><i class="fa fa-twitter"></i></a></li>
@@ -42,7 +43,7 @@
 			</div>
 			
 			<div class="col-sm-6">
-			<?php if($current_options['contact_header_settings']=="on") { ?>
+			<?php if($current_options['contact_header_settings']==true) { ?>
 				<ul class="head-contact-info">
 					<?php if($current_options['contact_phone_number']!=''){ ?>
 					<li><i class="fa fa-phone-square"></i><?php echo esc_html( $current_options['contact_phone_number'] ); ?></li>
@@ -67,11 +68,12 @@
 		<!-- logo -->
 		<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' )); ?>">
 			<?php
-				if($current_options['text_title'] =="on")
+				if($current_options['text_title'] ==true)
 				{ echo "<div class=wallstreet_title_head>" . get_bloginfo( ). "</div>"; }
 				else if($current_options['upload_image_logo']!='') 
 				{ ?>
-				<img src="<?php echo esc_url($current_options['upload_image_logo']); ?>" style="height:<?php if($current_options['height']!='') { esc_attr_e($current_options['height']); }  else { "50"; } ?>px; width:<?php if($current_options['width']!='') { esc_attr_e($current_options['width']); }  else { "250"; } ?>px;" alt="logo" />
+				<img src="<?php echo esc_url($current_options['upload_image_logo']); ?>" style="height:<?php if($current_options['height']!='') { 
+				echo $current_options['height']; }  else { "50"; } ?>px; width:<?php if($current_options['width']!='') { echo $current_options['width']; }  else { "250"; } ?>px;" alt="logo" />
 				<?php } ?>
 			</a>
 		</a><!-- /logo -->

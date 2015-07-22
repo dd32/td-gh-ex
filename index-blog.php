@@ -1,6 +1,7 @@
 <!-- wallstreet Blog Section ---->
-<?php $current_options=get_option('wallstreet_lite_options');
- if($current_options['blog_section_enabled'] == 'on') { ?>	
+<?php $wallstreet_pro_options=theme_data_setup();
+	  $current_options = wp_parse_args(  get_option( 'wallstreet_pro_options', array() ), $wallstreet_pro_options );
+ if($current_options['blog_section_enabled'] == true) { ?>	
 <div class="container home-blog-section">
 	<div class="row">
 		<div class="section_heading_title">

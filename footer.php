@@ -1,8 +1,9 @@
 <!-- Footer Widget Secton -->
-<?php $current_options=get_option('wallstreet_lite_options',theme_data_setup()); ?>
+<?php $wallstreet_pro_options=theme_data_setup();
+	  $current_options = wp_parse_args(  get_option( 'wallstreet_pro_options', array() ), $wallstreet_pro_options ); ?>
 <div class="footer_section">
 
-	<?php if($current_options['footer_social_media_enabled']=='on') { ?>
+	<?php if($current_options['footer_social_media_enabled']==true) { ?>
 				<div class="footer-social-area"><ul class="footer-social-icons">
 					<?php if($current_options['social_media_twitter_link']!='') { ?>
 					<li><a href="<?php echo esc_url( $current_options['social_media_twitter_link']); ?>"><i class="fa fa-twitter"></i></a></li>
@@ -31,26 +32,14 @@
 		</div>
         <div class="row">
 			<div class="col-md-12">
-			<?php if($current_options['footer_customizations']) { ?>
 				<div class="footer-copyright">
-					<p> <?php echo esc_html($current_options['footer_customizations']);?>
-					 <?php if(is_home() && $current_options['created_by_webriti_text']!='') {   ?>
-					<a href="<?php if($current_options['created_by_link']!='') { echo esc_url($current_options['created_by_link']); } ?>"><?php echo esc_html($current_options['created_by_webriti_text']);  ?></a>
-					<?php } else { echo esc_html($current_options['created_by_webriti_text']); }?>
-					</p>
+					<p><?php echo $current_options['footer_copyright'];?> 
+				</p>
 				</div>
-			<?php } ?>
 			</div>
 		</div>
 	</div>
 </div>
-<!------  Custom CSS Code --------->
-<?php
-if($current_options['webrit_custom_css']!='') {  ?>
-<style>
-<?php echo htmlspecialchars_decode($current_options['webrit_custom_css']); ?>
-</style>
-<?php } ?>
 </div> <!-- end of wrapper -->
 <?php wp_footer(); ?>
 </body>
