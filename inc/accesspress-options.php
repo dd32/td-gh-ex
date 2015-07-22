@@ -127,6 +127,7 @@ function optionsframework_options() {
           <a class="button" target="_blank" href="'.esc_url('https://accesspressthemes.com/accesspress-root').'">'.__('View Demo','accesspress-root').'</a>
         </div>';
     $for_support =  __("Forum:","accesspress-root").' <a target="_blank" href="'. esc_url("http://accesspressthemes.com/support").'">accesspressthemes.com/support</a><br/>';
+    $for_support .=  __("Visit Our website for live chat","accesspress-root").' <a target="_blank" href="'. esc_url("http://accesspressthemes.com").'">accesspressthemes.com</a><br/>';
 	$for_customization = __('We offer WordPress Themes/Plugins development, customization, design integration, WordPress setup, fixes etc.','accesspress-root').'<br/>'
         .__('Email:','accesspress-root').' <a href="mailto:support@accesspressthemes.com">support@accesspressthemes.com</a>';
     $about_accesspress_themes = 'AccessPress Themes is an online WordPress themes store, that provides beautiful and useful themes. All of our themes are crafted with our years of experience. Our theme don\'t lack the basics and don\'t have a lot of non-sense features which you might never use. AccessPress Themes has beautiful and elegant, fully responsive, multipurpose themes to meet your need for free and premium basis. Our themes have bunch of easily customizable options and features, someone with no programming knowledge can use our easy theme options panel and configure/setup the theme as needed.';        
@@ -720,13 +721,13 @@ function optionsframework_options() {
 		'type' => 'heading');
 
 	$options[] = array(
-		'name' => __('About AccessPress Pro', 'accesspress-root'),
-		'desc' => $about_content,
+		'name' => __('For Support', 'accesspress-root'),
+		'desc' => $for_support,
 		'type' => 'info');
 
 	$options[] = array(
-		'name' => __('For Support', 'accesspress-root'),
-		'desc' => $for_support,
+		'name' => __('About AccessPress Pro', 'accesspress-root'),
+		'desc' => $about_content,
 		'type' => 'info');
 
 	$options[] = array(

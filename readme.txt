@@ -97,6 +97,10 @@ Pattern Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.15
+* CSS bug for responsive menu fixed
+* Minor Change in Theme Option Panel text
+
 Version 1.14
 * Breadcrumb error in the attachment single page fixed
 
