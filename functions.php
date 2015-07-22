@@ -42,7 +42,7 @@ function boldr_setup(){
 	add_theme_support( 'custom-header',
 						array(	'header-text' => false,
 								'width' => 920,
-								// 'height' => 370,
+								'height' => 370,
 								'flex-height' => true,
 								)
 					);

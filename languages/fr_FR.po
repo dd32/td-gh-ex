@@ -257,7 +257,7 @@ msgstr "Transférez votre logo"
 #: ../inc/customizer/customizer.php:49
 msgid "If no logo is uploaded, the site title will be displayed instead."
 msgstr ""
-"Si aucun logo n'est pas défini, le nom de site sera affiché à la place."
+"Si aucun logo n'est défini, le nom de site sera affiché à la place."
 
 #: ../inc/customizer/customizer.php:63
 msgid "Upload a custom favicon"
