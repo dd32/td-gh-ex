@@ -3,31 +3,21 @@
  *
  * Silverclean WordPress Theme by Iceable Themes | http://www.iceablethemes.com
  *
- * Copyright 2013 Mathieu Sarrasin - Iceable Media
+ * Copyright 2013-2015 Mathieu Sarrasin - Iceable Media
  *
  * Theme's Function
  *
  */
 
 /*
- * Set default $content_width
- */
-if ( ! isset( $content_width ) )
-	$content_width = 450;
-
-/* Adjust $content_width it depending on the page being displayed */
-function silverclean_content_width() {
-	if ( is_page_template( 'page-full-width.php' ) ) {
-		global $content_width;
-		$content_width = 920;
-	}
-}
-add_action( 'template_redirect', 'silverclean_content_width' );
-
-/*
  * Setup and registration functions
  */
 function silverclean_setup(){
+
+	/* Set default $content_width */
+	global $content_width;
+	if ( ! isset( $content_width ) ) $content_width = 450;
+
 	/* Translation support
 	 * Translations can be added to the /languages directory.
 	 * A .pot template file is included to get you started
@@ -39,6 +29,9 @@ function silverclean_setup(){
 
 	/* Register Primary menu */
 	register_nav_menu( 'primary', 'Navigation menu' );
+
+	/* Title tag support */
+	add_theme_support( 'title-tag' );
 
 	/* Post Thumbnails Support */
 	add_theme_support( 'post-thumbnails' );
@@ -56,30 +49,24 @@ function silverclean_setup(){
 }
 add_action('after_setup_theme', 'silverclean_setup');
 
-/*
- * Page title
- */
-function silverclean_wp_title( $title, $sep ) {
-	global $paged, $page;
-
-	if ( is_feed() )
-		return $title;
-
-	// Add the site name.
-	$title .= get_bloginfo( 'name' );
-
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
-
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'silverclean' ), max( $paged, $page ) );
-
-	return $title;
+/* Adjust $content_width it depending on the page being displayed */
+function silverclean_content_width() {
+	if ( is_page_template( 'page-full-width.php' ) ) {
+		global $content_width;
+		$content_width = 920;
+	}
 }
-add_filter( 'wp_title', 'silverclean_wp_title', 10, 2 );
+add_action( 'template_redirect', 'silverclean_content_width' );
+
+/*
+ * Page title (for WordPress < 4.1 )
+ */
+if ( ! function_exists( '_wp_render_title_tag' ) ) :
+	function silverclean_render_title() {
+		?><title><?php wp_title( '|', true, 'right' ); ?></title><?php
+	}
+	add_action( 'wp_head', 'silverclean_render_title' );
+endif;
 
 /*
  * Add a home link to wp_page_menu() ( wp_nav_menu() fallback )
@@ -113,7 +100,7 @@ function silverclean_widgets_init() {
 		'id'            => 'footer-sidebar',
 		'description'   => '',
 	    'class'         => '',
-		'before_widget' => '<li id="%1$s" class="one-fourth widget %2$s">',
+		'before_widget' => '<li id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</li>',
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
@@ -132,41 +119,60 @@ function silverclean_styles() {
 	$stylesheet_directory = get_stylesheet_directory(); // Current theme directory
 	$stylesheet_directory_uri = get_stylesheet_directory_uri(); // Current theme URI
 
+	$responsive_mode = get_theme_mod('silverclean_responsive_mode');
+
+	if ($responsive_mode != 'off'):
+		$stylesheet = '/css/silverclean.dev.css';
+	else:
+		$stylesheet = '/css/silverclean-unresponsive.min.css';
+	endif;
+
 	/* Child theme support:
 	 * Enqueue child-theme's versions of stylesheets in /css if they exist,
 	 * or the parent theme's version otherwise
 	 */
-	if ( @file_exists( $stylesheet_directory . '/css/icefit.css' ) )
-		wp_register_style( 'icefit', $stylesheet_directory_uri . '/css/icefit.css' );
+	if ( @file_exists( $stylesheet_directory . $stylesheet ) )
+		wp_register_style( 'silverclean', $stylesheet_directory_uri . $stylesheet );
 	else
-		wp_register_style( 'icefit', $template_directory_uri . '/css/icefit.css' );	
-
-	if ( @file_exists( $stylesheet_directory . '/css/theme-style.css' ) )
-		wp_register_style( 'theme-style', $stylesheet_directory_uri . '/css/theme-style.css' );
-	else
-		wp_register_style( 'theme-style', $template_directory_uri . '/css/theme-style.css' );
+		wp_register_style( 'silverclean', $template_directory_uri . $stylesheet );
 
 	// Always enqueue style.css from the current theme
-	wp_register_style( 'style', $stylesheet_directory_uri . '/style.css');
+	wp_register_style( 'silverclean-style', $stylesheet_directory_uri . '/style.css');
 
-	wp_enqueue_style( 'icefit' );
-	wp_enqueue_style( 'theme-style' );
-	wp_enqueue_style( 'style' );
+	wp_enqueue_style( 'silverclean' );
+	wp_enqueue_style( 'silverclean-style' );
 }
 add_action('wp_enqueue_scripts', 'silverclean_styles');
+
+/*
+ * Register editor style
+ */
+function silverclean_editor_styles() {
+	add_editor_style('css/editor-style.css');
+}
+add_action( 'init', 'silverclean_editor_styles' );
 
 /*
  * Enqueue Javascripts
  */
 function silverclean_scripts() {
-	wp_enqueue_script('icefit-scripts', get_template_directory_uri() . '/js/icefit.js', array('jquery'));
-	wp_enqueue_script('hoverIntent', get_template_directory_uri() . '/js/hoverIntent.js', array('jquery'));	// Submenus
-	wp_enqueue_script('superfish', get_template_directory_uri() . '/js/superfish.js', array('jquery'));	// Submenus
+	wp_enqueue_script('silverclean', get_template_directory_uri() . '/js/silverclean.min.js', array('jquery','hoverIntent'));
     /* Threaded comments support */
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 }
 add_action('wp_enqueue_scripts', 'silverclean_scripts');
+
+/*
+ * Remove hentry class from static pages
+ */
+function silverclean_remove_hentry( $classes ) {
+	if ( is_page() ):
+		$classes = array_diff($classes, array('hentry'));
+	endif;
+	return $classes;
+}
+add_filter('post_class','silverclean_remove_hentry');
 
 /*
  * Remove "rel" tags in category links (HTML5 invalid)
@@ -177,46 +183,11 @@ function silverclean_remove_rel_cat( $text ) {
 add_filter( 'the_category', 'silverclean_remove_rel_cat' ); 
 
 /*
- * Fix for a known issue with enclosing shortcodes and wpautop
- * (wpautop tends to add empty <p> or <br> tags before and/or after enclosing shortcodes)
- * Thanks to Johann Heyne
- */
-function silverclean_shortcode_empty_paragraph_fix($content) {
-	$array = array (
-		'<p>['    => '[', 
-		']</p>'   => ']', 
-		']<br />' => ']',
-	);
-	$content = strtr($content, $array);
-	return $content;
-}
-add_filter('the_content', 'silverclean_shortcode_empty_paragraph_fix');
-
-/*
- * Improved version of clean_pre
- * Based on a work by Emrah Gunduz
- */
-function silverclean_protect_pre($pee) {
-	$pee = preg_replace_callback('!(<pre[^>]*>)(.*?)</pre>!is', 'silverclean_eg_clean_pre', $pee );
-	return $pee;
-}
-
-function silverclean_eg_clean_pre($matches) {
-	if ( is_array($matches) )
-		$text = $matches[1] . $matches[2] . "</pre>";
-	else
-		$text = $matches;
-	$text = str_replace('<br />', '', $text);
-	return $text;
-}
-add_filter( 'the_content', 'silverclean_protect_pre' );
-
-/*
  * Customize "read more" links on index view
  */
 function silverclean_excerpt_more( $more ) {
 	global $post;
-	return '<div class="read-more"><a href="'. get_permalink( get_the_ID() ) . '">'. __("Read More", 'silverclean') .'</a></div>';
+	return '... <div class="read-more"><a href="'. get_permalink( get_the_ID() ) . '">'. __("Read More", 'silverclean') .'</a></div>';
 }
 add_filter( 'excerpt_more', 'silverclean_excerpt_more' );
 
@@ -303,10 +274,10 @@ function silverclean_adjacent_image_link($prev = true) {
 		return false;
 }
 
-
 /*
- * Framework Elements
+ * Customizer
  */
-include_once('functions/icefit-options/settings.php'); // Admin Settings Panel
+
+require_once 'inc/customizer/customizer.php';
 
 ?>
