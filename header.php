@@ -3,7 +3,7 @@
  *
  * Chooko Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
  *
- * Copyright 2013-2014 Mathieu Sarrasin - Iceable Media
+ * Copyright 2013-2015 Mathieu Sarrasin - Iceable Media
  *
  * Header Template
  *
@@ -17,58 +17,54 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
-<title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<?php $favicon = chooko_get_option('favicon');
+<?php $favicon = get_theme_mod('chooko_favicon');
 if ($favicon): ?><link rel="shortcut icon" href="<?php echo esc_url($favicon); ?>" /><?php endif; ?>
 <?php // Loads HTML5 JavaScript file to add support for HTML5 elements in older IE versions. ?>
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
 <?php wp_head(); ?>
-</head>
-<body <?php body_class(); ?>>
+</head><body <?php body_class(); ?>><?php
 
-	<div id="header">
-	<div class="container">
-		<div id="logo">
-		<a href="<?php echo esc_url( home_url() ); ?>">
+	?><div id="header"><?php
+	?><div class="container"><?php
+				?><div id="logo"><a href="<?php echo esc_url( home_url() ); ?>" title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><?php
+				if ( get_theme_mod( 'chooko_logo' ) ) :
+					?><h1 class="site-title" style="display:none"><?php echo bloginfo('name'); ?></h1><?php
+					?><img src="<?php echo esc_url( get_theme_mod( 'chooko_logo' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php
+				else:
+					?><h1 class="site-title"><?php echo bloginfo('name'); ?></h1><?php
+				endif;
+		?></a></div><?php // End #logo
 
-				<?php $logo_url = chooko_get_option('logo');
-			if ( chooko_get_option('header_title') == 'Display Title' || $logo_url == "" ): ?>
-				<span class="site-title"><?php bloginfo('name') ?></span>
-			<?php else: ?>
-				<img src="<?php echo esc_url( $logo_url ); ?>" alt="<?php bloginfo('name') ?>">
-			<?php endif; ?>
+			if ( get_bloginfo ( 'description' ) ):
+				?><div id="tagline"><?php bloginfo('description'); ?></div><?php
+			endif;
 
-		</a>
-		</div>
-	</div>
-	</div><!-- End header -->
+		?></div><?php // End .container
+	?></div><?php // End #header
 
-	<div id="main-wrap">
+	?><div id="main-wrap"><?php
 
-	<div id="navbar" class="container">
-	<div class="menu-container">
-	<?php wp_nav_menu( array( 'theme_location' => 'primary', 'items_wrap' => '<ul id="%1$s" class="%2$s sf-menu">%3$s</ul>', ) ); ?>
-	<?php chooko_dropdown_nav_menu(); ?>
-	</div>
-	</div><!-- End navbar -->
+	?><div id="navbar" class="container"><?php
+		?><div class="menu-container"><?php
+			wp_nav_menu( array( 'theme_location' => 'primary', 'items_wrap' => '<ul id="%1$s" class="%2$s sf-menu">%3$s</ul>', ) );
+			chooko_dropdown_nav_menu();
+		?></div><?php
+	?></div><?php // End navbar
 
-<?php $header_image = false;
+	$header_image = false;
 	if ( get_custom_header()->url ) :
-		if ( ( is_front_page() && chooko_get_option('home_header_image') != 'Off' )
-			|| ( is_page() && !is_front_page() && chooko_get_option('pages_header_image') != 'Off' )
-			|| ( is_single() && chooko_get_option('single_header_image') != 'Off' )
-			|| ( !is_front_page() && !is_singular() && chooko_get_option('blog_header_image') != 'Off' )
+		if ( ( is_front_page() && get_theme_mod('home_header_image') != 'off' )
+			|| ( is_page() && !is_front_page() && get_theme_mod('pages_header_image') != 'off' )
+			|| ( is_single() && get_theme_mod('single_header_image') != 'off' )
+			|| ( !is_front_page() && !is_singular() && get_theme_mod('blog_header_image') != 'off' )
 			|| ( is_404() ) ):
-?>
-	<div id="header-image" class="container">
-		<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
-	</div>
-<?php
-			$header_image = true;
+		?><div id="header-image" class="container"><?php
+			?><img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" /><?php
+		?></div><?php
+		$header_image = true;
 		endif;
-	endif;
-?>
+	endif; ?>
