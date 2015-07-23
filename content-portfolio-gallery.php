@@ -26,7 +26,10 @@ $images = explode( ',', $gallery['ids'] ); // Get the gallery image IDs
 			}
 
 			// Output the image with captions
-			echo '<div> ' . $image_excerpt_caption . ' <img src=" ' . esc_url( wp_get_attachment_image_src( $image, 'full' )[0] ) . ' " /></div>';
+			$attachment = (array) wp_get_attachment_image_src( $image, 'full' );
+			if ( isset( $attachment[0] ) ) {
+			  echo '<div> ' . $image_excerpt_caption . ' <img src=" ' . esc_url( $attachment[0] ) . ' " /></div>';
+			}
 
 		endforeach;
 		?>

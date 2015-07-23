@@ -176,7 +176,7 @@ function argent_fonts_url() {
 		$fonts_url = add_query_arg( array(
 			'family' => urlencode( implode( '|', $fonts ) ),
 			'subset' => urlencode( $subsets ),
-		), '//fonts.googleapis.com/css' );
+		), 'https://fonts.googleapis.com/css' );
 	}
 
 	return $fonts_url;
@@ -240,6 +240,10 @@ require get_template_directory() . '/inc/extras.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
+/**
+ * WordPress.com-specific functions and definitions.
+ */
+require get_template_directory() . '/inc/wpcom.php';
 
 /**
  * Load Jetpack compatibility file.

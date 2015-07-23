@@ -73,6 +73,12 @@ The portfolio archive page can be found at http://mygroovysite.wordpress.com/por
 
 == Changelog ==
 
+= 1.0.4 - July 23 2015 =
+* Add missing styling for <b> and <strong> elements.
+
+= 1.0.3 - July 20 2015 =
+* Fix array indices error in for older versions of PHP.
+
 = 1.0.2 - July 13 2015 =
 * Added missing license and copyright info for Slick script.
 
