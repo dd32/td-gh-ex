@@ -27,6 +27,7 @@ function araiz_custom_header_setup() {
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
+                'flex-width'             => true,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'araiz_header_style',
 		'admin-head-callback'    => 'araiz_admin_header_style',
