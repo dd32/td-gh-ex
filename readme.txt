@@ -75,3 +75,7 @@ Version 1.3.3
 * Added VK social button
 * Fixed Previous and Next Post translation bug
 * Minor bug fixes
+
+Version 1.3.4
+* Move the "Theme Options" in "WP Customizer"
+* Minor bug fixes
