@@ -580,6 +580,10 @@
                                             <img src="<?php echo $slide_preview ?>" width="400px" height="200px" />
                                             <span class="remove_slide_preview">Remove</span>
                                         </div>
+                                        <p style="font-size: 11px; font-weight: bold; color: #939393;">
+                                        <?php _e('The Recommended Slider Image size is 676X444px.', 'accesspress-basic'); ?><br />
+                                        <?php _e('Try using Transparent image for better result.', 'accesspress-basic'); ?>
+                                        </p>
                                     </td> 
                                 </tr>
                                 <tr>

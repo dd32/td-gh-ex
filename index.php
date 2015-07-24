@@ -53,10 +53,11 @@ get_header(); ?>
 <?php if ( have_posts() ) : ?>
 	<header class="page-header">
 		<div class="ap-container">
-            <?php
-    			the_archive_title( '<h1 class="page-title">', '</h1>' );
-    			the_archive_description( '<div class="taxonomy-description">', '</div>' );
-    		?>
+            <?php 
+                $blog_page_id = get_option('page_for_posts'); 
+                $blog_page = get_page($blog_page_id);
+            ?>
+            <h1 class="page-title"><?php echo $blog_page->post_title; ?></h1>
         </div>
 	</header><!-- .page-header -->
 <?php endif; ?>

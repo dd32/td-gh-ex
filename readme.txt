@@ -65,3 +65,7 @@ Version 2.0.0
 * Slider displaying in blog page (assigned from settings > Reading) (Fixed)
 * Added Navigation feature in Post pages.
 * Prevented woocommerce incompatibility message from showing up (Fixed)
+
+Version 2.0.1
+* Fixed the wrong page title showing up in blog page.
+
