@@ -4,7 +4,7 @@ Theme URI: http://www.tenman.info/wp3/raindrops/
 Description: This theme can change freely fonts,layout,color scheme and header image for each post,page. The google fonts, you can use freely in the post more than 90percent of the fonts.Color scheme and layout, you can freely change from theme customizer.For more updates, please make sure to open the link of the changelog from the help tab of this theme page.Add new post, so also to help tab of edit post page has been described how to use tips, please visit. Supported languages Japanese - JAPAN (ja) French - FRANCE (fr_FR) Polish - POLAND (PL) (pl_PL) Portuguese - BRAZIL (pt_BR)
 Author: Tenman
 Author URI: http://www.tenman.info/wp3/
-Version: 1.307
+Version: 1.308
 Tags: black, blue, gray, brown, green, orange, pink, purple, red, silver, tan, white, yellow, dark, light, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, post-formats, featured-images, full-width-template, fixed-layout, fluid-layout, responsive-layout, rtl-language-support, microformats
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -103,6 +103,11 @@ a:visited{
 .ie11 #doc4 #header-image{
     width:auto;
 }
+#doc-3 #header-image,
+#doc-5 #header-image{
+    background-size:cover;
+}
+
 
 .page-template-page-templatespage-featured-php #container{
     width:100%;
@@ -917,7 +922,8 @@ ul.archive ul li {
     line-height:2;
 }
 .wireframe .footer-widget{
-    border:0.07692307692em solid #ccc;
+    border:0.07692307692em solid rgba(222,222,222,.5);
+    width:32%!important;
 }
 .footer-widget h2{
     width:100%;
@@ -1851,15 +1857,9 @@ li.byuser,
 }
 /* add*/
 
-/* 1.307
 .single-post-thumbnail{
-    margin-left:0.23076923076em;
-    width:99%;
-    overflow:hidden;
     text-align:center;
-    margin-top:1em;
-}*/
-
+}
 .single-post-thumbnail img{
     height:auto;
 }
@@ -2316,6 +2316,7 @@ address .entry-rss:after{
 /* post format */
 .format-link .entry-content{
     display:table;
+    margin:1.6em auto;
 }
 .entry-meta-link{
     text-align:right;
@@ -2413,8 +2414,16 @@ div:not(.raindrops-empty-content) .entry-meta-default .raindrops-comment-link{
 .icon-link-no-title{
     background: url("images/link.png");
     background-size:24px 24px;
+    vertical-align:middle;
+    background-repeat:no-repeat;
 }
-
+.single .current_item .icon-link-no-title,
+.single article .icon-link-no-title,
+.single article .entry-title .icon-link-no-title,
+.page .icon-link-no-title,
+.page .page .icon-link-no-title{
+    display:none;
+}
 .icon-post-format-aside{
     background: url("images/post-format-aside.png");
     background-size:24px 24px;
@@ -2468,6 +2477,19 @@ div:not(.raindrops-empty-content) .entry-meta-default .raindrops-comment-link{
     background-size:24px 24px;
     width:24px;
     height:24px;
+}
+.icon-post-format-image,
+.icon-post-format-link,
+.icon-post-format-quote,
+.icon-post-format-status,
+.icon-post-format-video,
+.icon-post-format-aside,
+.icon-post-format-audio,
+.icon-post-format-chat,
+.icon-post-format-gallery{
+    background-repeat:no-repeat;
+    display:inline-block;
+    padding:0 0 0 10px;
 }
 .nav-previous .meta-nav,
 .nav-next .meta-nav{
@@ -4065,3 +4087,4 @@ html body.ja .rsidebar .lang-ja{
     display:inline-block;
     margin-bottom:1em;
 }
+
