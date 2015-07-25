@@ -10,6 +10,12 @@ Changelog Legend:
 
 ----
 
+(7/25/2015) - 1.3.06
+[+] Dutch translation added (thanks, Jaap!)
+[!] Fix fatal error
+
+----
+
 (7/15/2015) - 1.3.05
 [*] Make generate_get_font_family_css() available to other settings
 [*] If site title or tagline is empty (not disabled), don't print the surrounding HTML

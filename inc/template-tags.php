@@ -476,10 +476,10 @@ function generate_header_items()
 	);
 	
 	// If the disable title checkbox is checked, or the title field is empty, return true
-	$disable_title = ( '1' == $generate_settings[ 'hide_title' ] || empty( get_bloginfo( 'title' ) ) ) ? true : false;
+	$disable_title = ( '1' == $generate_settings[ 'hide_title' ] ) ? true : false;
 	
 	// If the disable tagline checkbox is checked, or the tagline field is empty, return true
-	$disable_tagline = ( '1' == $generate_settings[ 'hide_tagline' ] || empty( get_bloginfo( 'description' ) ) ) ? true : false;
+	$disable_tagline = ( '1' == $generate_settings[ 'hide_tagline' ] ) ? true : false;
 	
 	// Header widget
 	if ( is_active_sidebar('header') ) : ?>
