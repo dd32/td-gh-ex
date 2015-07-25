@@ -4,7 +4,7 @@ Araiz is distributed under the terms of the GNU GPL
 Araiz is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
-Tags: white, light, two-columns, right-sidebar, fluid-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, post-formats, responsive-layout,  featured-images
+Tags: white, light, two-columns, right-sidebar, fluid-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, post-formats, responsive-layout,  featured-images, translation-ready, threaded-comments, one-column
 
 Requires at least: 4.0
 Tested up to: 4.2.2
@@ -26,6 +26,11 @@ Araiz is built upon underscores and depicts a very clean and warm feeling. The t
 = Does this theme support any plugins? =
 
 Araiz includes support for Infinite Scroll in Jetpack.
+
+== Change log ==
+= 1.0.5 - July 25 2015 =
+* Missing Tags Added
+
 
 == Change log ==
 = 1.0.4 - July 23 2015 =
