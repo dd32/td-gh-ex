@@ -24,46 +24,46 @@ get_header(); ?>
 							single_tag_title();
 
 						elseif ( is_author() ) :
-							printf( __( 'Author: %s', 'accesspress_parallax' ), '<span class="vcard">' . get_the_author() . '</span>' );
+							printf( __( 'Author: %s', 'accesspress-parallax' ), '<span class="vcard">' . get_the_author() . '</span>' );
 
 						elseif ( is_day() ) :
-							printf( __( 'Day: %s', 'accesspress_parallax' ), '<span>' . get_the_date() . '</span>' );
+							printf( __( 'Day: %s', 'accesspress-parallax' ), '<span>' . get_the_date() . '</span>' );
 
 						elseif ( is_month() ) :
-							printf( __( 'Month: %s', 'accesspress_parallax' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'accesspress_parallax' ) ) . '</span>' );
+							printf( __( 'Month: %s', 'accesspress-parallax' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'accesspress-parallax' ) ) . '</span>' );
 
 						elseif ( is_year() ) :
-							printf( __( 'Year: %s', 'accesspress_parallax' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'accesspress_parallax' ) ) . '</span>' );
+							printf( __( 'Year: %s', 'accesspress-parallax' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'accesspress-parallax' ) ) . '</span>' );
 
 						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-							_e( 'Asides', 'accesspress_parallax' );
+							_e( 'Asides', 'accesspress-parallax' );
 
 						elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
-							_e( 'Galleries', 'accesspress_parallax' );
+							_e( 'Galleries', 'accesspress-parallax' );
 
 						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-							_e( 'Images', 'accesspress_parallax' );
+							_e( 'Images', 'accesspress-parallax' );
 
 						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-							_e( 'Videos', 'accesspress_parallax' );
+							_e( 'Videos', 'accesspress-parallax' );
 
 						elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-							_e( 'Quotes', 'accesspress_parallax' );
+							_e( 'Quotes', 'accesspress-parallax' );
 
 						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-							_e( 'Links', 'accesspress_parallax' );
+							_e( 'Links', 'accesspress-parallax' );
 
 						elseif ( is_tax( 'post_format', 'post-format-status' ) ) :
-							_e( 'Statuses', 'accesspress_parallax' );
+							_e( 'Statuses', 'accesspress-parallax' );
 
 						elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
-							_e( 'Audios', 'accesspress_parallax' );
+							_e( 'Audios', 'accesspress-parallax' );
 
 						elseif ( is_tax( 'post_format', 'post-format-chat' ) ) :
-							_e( 'Chats', 'accesspress_parallax' );
+							_e( 'Chats', 'accesspress-parallax' );
 
 						else :
-							_e( 'Archives', 'accesspress_parallax' );
+							_e( 'Archives', 'accesspress-parallax' );
 
 						endif;
 					?>

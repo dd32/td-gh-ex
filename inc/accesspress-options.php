@@ -7,9 +7,8 @@
 
 function optionsframework_option_name() {
 
-	// This gets the theme name from the stylesheet
-	$optionsframework_settings['id'] = 'accesspress_parallax';
-	update_option( 'optionsframework', $optionsframework_settings );
+	return 'accesspress_parallax';
+
 }
 
 /**
@@ -23,57 +22,53 @@ function optionsframework_option_name() {
 
 function optionsframework_options() {
 
-	// $settings = get_option('accesspress_parallax');
-	// 	$count = count($settings['parallax_section']);
-	// 	update_option('accesspress_parallax_count', $count );
-
 	// Test data
 	$transitions = array(
-		'fade' => __('Fade', 'accesspress_parallax'),
-		'horizontal' => __('Slide Horizontal', 'accesspress_parallax'),
-		'vertical' => __('Slide Vertical', 'accesspress_parallax')
+		'fade' => __('Fade', 'accesspress-parallax'),
+		'horizontal' => __('Slide Horizontal', 'accesspress-parallax'),
+		'vertical' => __('Slide Vertical', 'accesspress-parallax')
 	);
 
 	$overlay = array(
-		'overlay0' => __( 'No Overlay', 'accesspress_parallax' ),
-		'overlay1' => __( 'Small Dotted', 'accesspress_parallax' ),
-		'overlay2'  => __( 'Large Dotted', 'accesspress_parallax'),
-		'overlay3'  => __( 'Light Black', 'accesspress_parallax'),
-		'overlay4'  => __( 'Black Dotted', 'accesspress_parallax')
+		'overlay0' => __( 'No Overlay', 'accesspress-parallax' ),
+		'overlay1' => __( 'Small Dotted', 'accesspress-parallax' ),
+		'overlay2'  => __( 'Large Dotted', 'accesspress-parallax'),
+		'overlay3'  => __( 'Light Black', 'accesspress-parallax'),
+		'overlay4'  => __( 'Black Dotted', 'accesspress-parallax')
 	);
 
 	$section_template = array(
-		'default_template' => __('Default Section', 'accesspress_parallax'),
-		'service_template' => __('Service Section', 'accesspress_parallax'),
-		'team_template' => __('Team Section', 'accesspress_parallax'),
-		'portfolio_template' => __('Portfolio Section', 'accesspress_parallax'),
-		'testimonial_template' => __('Testimonial Section', 'accesspress_parallax'),
-		'blog_template' => __('Blog Section', 'accesspress_parallax'),
-		'action_template' => __('Call to Action Section', 'accesspress_parallax'),
-		'googlemap_template' => __('Google Map Section', 'accesspress_parallax'),
-		'blank_template' => __('Blank Section', 'accesspress_parallax'),
+		'default_template' => __('Default Section', 'accesspress-parallax'),
+		'service_template' => __('Service Section', 'accesspress-parallax'),
+		'team_template' => __('Team Section', 'accesspress-parallax'),
+		'portfolio_template' => __('Portfolio Section', 'accesspress-parallax'),
+		'testimonial_template' => __('Testimonial Section', 'accesspress-parallax'),
+		'blog_template' => __('Blog Section', 'accesspress-parallax'),
+		'action_template' => __('Call to Action Section', 'accesspress-parallax'),
+		'googlemap_template' => __('Google Map Section', 'accesspress-parallax'),
+		'blank_template' => __('Blank Section', 'accesspress-parallax'),
 	);
 
 	$check = array(
-		'yes' => __('Yes', 'accesspress_parallax'),
-		'no' => __('No', 'accesspress_parallax')
+		'yes' => __('Yes', 'accesspress-parallax'),
+		'no' => __('No', 'accesspress-parallax')
 	);
 
 	$test_array = array(
-		'one' => __('One', 'accesspress_parallax'),
-		'two' => __('Two', 'accesspress_parallax'),
-		'three' => __('Three', 'accesspress_parallax'),
-		'four' => __('Four', 'accesspress_parallax'),
-		'five' => __('Five', 'accesspress_parallax')
+		'one' => __('One', 'accesspress-parallax'),
+		'two' => __('Two', 'accesspress-parallax'),
+		'three' => __('Three', 'accesspress-parallax'),
+		'four' => __('Four', 'accesspress-parallax'),
+		'five' => __('Five', 'accesspress-parallax')
 	);
 
 	// Multicheck Array
 	$multicheck_array = array(
-		'one' => __('French Toast', 'accesspress_parallax'),
-		'two' => __('Pancake', 'accesspress_parallax'),
-		'three' => __('Omelette', 'accesspress_parallax'),
-		'four' => __('Crepe', 'accesspress_parallax'),
-		'five' => __('Waffle', 'accesspress_parallax')
+		'one' => __('French Toast', 'accesspress-parallax'),
+		'two' => __('Pancake', 'accesspress-parallax'),
+		'three' => __('Omelette', 'accesspress-parallax'),
+		'four' => __('Crepe', 'accesspress-parallax'),
+		'five' => __('Waffle', 'accesspress-parallax')
 	);
 
 	// Multicheck Defaults
@@ -96,20 +91,20 @@ function optionsframework_options() {
 	$parallax_defaults = NULL;
 
     $about_content = "<p>".__('AccessPress Parallax is a beautiful WordPress theme with Parallax design. Parallax design has become popular and is being adopted because 3D effects are possible with it, you can add some sphere to your product, it is the best way of storytelling, you can draw your visitors in, it is interactive, engaging, makes your visitors curious, fun, surprise, effective to trigger action, invite your visitors in great Call to Action, great conversion rates and many more. This is probably the most beautiful, feature rich and complete free WordPress parallax theme with features like: fully responsive, advance theme option panel, featured slider, advance post settings, services/team/blog/portfolio/testimonial layout, Google map integration, custom logo/fav icon, call to action, CSS animation, SEO friendly, translation ready, RTL support, custom CSS/JS and more! ')."</p>"; 
-    $about_content .= "<p><a target='_blank' href='".esc_url('http://www.accesspressthemes.com/')."'>AccessPress Themes</a> ".__('- A WordPress Division of Access Keys.','accesspress_parallax')."</p>"; 
+    $about_content .= "<p><a target='_blank' href='".esc_url('http://www.accesspressthemes.com/')."'>AccessPress Themes</a> ".__('- A WordPress Division of Access Keys.','accesspress-parallax')."</p>"; 
     
     $about_content .= "<hr/>";
     
-    $about_content .= "<h4>".__('Other products by AccessPressThemes','accesspress_parallax')."</h4>";
+    $about_content .= "<h4>".__('Other products by AccessPressThemes','accesspress-parallax')."</h4>";
     $about_content .=  __('Our Themes - ','accesspress_ray'). __(sprintf('<a href="%s" target="_blank">https://accesspressthemes.com/themes</a>','https://accesspressthemes.com/themes'))."<br/><br />" ;
     $about_content .= __('Our Plugins - ','accesspress_ray'). __(sprintf('<a href="%s" target="_blank">https://accesspressthemes.com/plugins</a>','https://accesspressthemes.com/plugins'))."<br/><br />" ;
 
     $about_content .= "<hr/>";
 
-    $about_content .= "<h4>".__('Get in touch','accesspress_parallax')."</h4>";
-    $about_content .= __('If you have any question/feedback regarding theme, please post in our forum','accesspress_parallax')."<br /><br />"; 
-    $about_content .= __('Forum:','accesspress_parallax')." <a target='_blank' href='".esc_url('http://accesspressthemes.com/support/')."'>http://accesspressthemes.com/support/</a><br /><br /><br />";
-    $about_content .= __('For Queries Regading Pro Themes:','accesspress_parallax')."<br/><br />";
+    $about_content .= "<h4>".__('Get in touch','accesspress-parallax')."</h4>";
+    $about_content .= __('If you have any question/feedback regarding theme, please post in our forum','accesspress-parallax')."<br /><br />"; 
+    $about_content .= __('Forum:','accesspress-parallax')." <a target='_blank' href='".esc_url('http://accesspressthemes.com/support/')."'>http://accesspressthemes.com/support/</a><br /><br /><br />";
+    $about_content .= __('For Queries Regading Pro Themes:','accesspress-parallax')."<br/><br />";
     $about_content .= "<a href='mailto:support@accesspressthemes.com'>support@accesspressthemes.com</a><br /><br />";
     
 	// Pull all the categories into an array
@@ -142,58 +137,58 @@ function optionsframework_options() {
 	$options = array();
 
 	$options[] = array(
-		'name' => __('General Settings', 'accesspress_parallax'),
+		'name' => __('General Settings', 'accesspress-parallax'),
 		'type' => 'heading');
 
 	$options[] = array(
-		'name' => __('Enable Single Page Parallax Home Page - if disabled, will show Blog-roll/Static-page', 'accesspress_parallax'),
-		'desc' => __('Check To enable', 'accesspress_parallax'),
+		'name' => __('Enable Single Page Parallax Home Page - if disabled, will show Blog-roll/Static-page', 'accesspress-parallax'),
+		'desc' => __('Check To enable', 'accesspress-parallax'),
 		'id' => 'enable_parallax',
 		'std' => '1',
 		'type' => 'checkbox');
 
 	$options[] = array(
-		'name' => __('Enable Single Page Nav(Menu) - if disabled, will show primary menu', 'accesspress_parallax'),
-		'desc' => __('Check To enable', 'accesspress_parallax'),
+		'name' => __('Enable Single Page Nav(Menu) - if disabled, will show primary menu', 'accesspress-parallax'),
+		'desc' => __('Check To enable', 'accesspress-parallax'),
 		'id' => 'enable_parallax_nav',
 		'std' => '1',
 		'type' => 'checkbox');
 
 	$options[] = array(
-		'name' => __('Home Menu Text - Single Page Nav(Menu)', 'accesspress_parallax'),
+		'name' => __('Home Menu Text - Single Page Nav(Menu)', 'accesspress-parallax'),
 		'id' => 'home_text',
-		'desc' => __('Leave blank if you do not want to show', 'accesspress_parallax'),
+		'desc' => __('Leave blank if you do not want to show', 'accesspress-parallax'),
 		'std' => 'Home',
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('Enable Animation on scroll - Page Elements will show with some animation only in home page.', 'accesspress_parallax'),
-		'desc' => __('Check To enable', 'accesspress_parallax'),
+		'name' => __('Enable Animation on scroll - Page Elements will show with some animation only in home page.', 'accesspress-parallax'),
+		'desc' => __('Check To enable', 'accesspress-parallax'),
 		'id' => 'enable_animation',
 		'std' => '1',
 		'type' => 'checkbox');
 
 	$options[] = array(
-		'name' => __('Enable Responsive', 'accesspress_parallax'),
-		'desc' => __('Check To enable', 'accesspress_parallax'),
+		'name' => __('Enable Responsive', 'accesspress-parallax'),
+		'desc' => __('Check To enable', 'accesspress-parallax'),
 		'id' => 'enable_responsive',
 		'std' => '1',
 		'type' => 'checkbox');
 
 
 	$options[] = array(
-		'name' => __('Upload Logo', 'accesspress_parallax'),
-		'desc' => '<a target="_blank" href="'.admin_url().'themes.php?page=custom-header" class="button">'.__('Upload', 'accesspress_parallax').'</a>',
+		'name' => __('Upload Logo', 'accesspress-parallax'),
+		'desc' => '<a target="_blank" href="'.admin_url().'themes.php?page=custom-header" class="button">'.__('Upload', 'accesspress-parallax').'</a>',
 		'type' => 'info');
 
 	$options[] = array(
-		'name' => __('Upload Fav Icon', 'accesspress_parallax'),
+		'name' => __('Upload Fav Icon', 'accesspress-parallax'),
 		'id' => 'fav_icon',
 		'class' => 'sub-option',
 		'type' => 'upload');
 
 	$options[] = array(
-		'name' =>  __('Select Header Layout', 'accesspress_parallax'),
+		'name' =>  __('Select Header Layout', 'accesspress-parallax'),
 		'id' => "header_layout",
 		'std' => "logo-side",
 		'type' => "images",
@@ -203,11 +198,11 @@ function optionsframework_options() {
 	);
 
 	$options[] = array(
-		'name' => __('Parallax Sections', 'accesspress_parallax'),
+		'name' => __('Parallax Sections', 'accesspress-parallax'),
 		'type' => 'heading');
 
 	$options[] = array(
-		'desc' => __('<strong>Note: Please make a new page before you create a section. Each Section should have unique Page.</strong>', 'accesspress_parallax'),
+		'desc' => __('<strong>Note: Please make a new page before you create a section. Each Section should have unique Page.</strong>', 'accesspress-parallax'),
 		'id' => 'parallax_info',
 		'type' => 'info');
 
@@ -220,6 +215,11 @@ function optionsframework_options() {
 		'layout' => $section_template,
 		'type' => 'parallaxsection' );
 
+	$options[] = array(
+		'id' => 'parallax_count',
+		'type' => 'hidden',
+		'std' => '50'
+		);
 
 	$options[] = array(
 		'id' => 'add_new_section',
@@ -227,44 +227,44 @@ function optionsframework_options() {
 
 	/*Post Section Ends*/
 	$options[] = array(
-		'name' => __('Post Settings', 'accesspress_parallax'),
+		'name' => __('Post Settings', 'accesspress-parallax'),
 		'type' => 'heading');
 
 	$options[] = array(
-		'name' => __('Show Posted Date', 'accesspress_parallax'),
-		'desc' => __('Check To enable', 'accesspress_parallax'),
+		'name' => __('Show Posted Date', 'accesspress-parallax'),
+		'desc' => __('Check To enable', 'accesspress-parallax'),
 		'id' => 'post_date',
 		'std' => '1',
 		'type' => 'checkbox');
 
 	$options[] = array(
-		'name' => __('Show Post Author', 'accesspress_parallax'),
-		'desc' => __('Check To enable', 'accesspress_parallax'),
+		'name' => __('Show Post Author', 'accesspress-parallax'),
+		'desc' => __('Check To enable', 'accesspress-parallax'),
 		'id' => 'post_author',
 		'std' => '1',
 		'type' => 'checkbox');
 
 	$options[] = array(
-		'name' => __('Show Post Footer text', 'accesspress_parallax'),
-		'desc' => __('Check To enable', 'accesspress_parallax'),
+		'name' => __('Show Post Footer text', 'accesspress-parallax'),
+		'desc' => __('Check To enable', 'accesspress-parallax'),
 		'id' => 'post_footer',
 		'std' => '1',
 		'type' => 'checkbox');
 
 	$options[] = array(
-		'name' => __('Show Prev Next Pagination', 'accesspress_parallax'),
-		'desc' => __('Check To enable', 'accesspress_parallax'),
+		'name' => __('Show Prev Next Pagination', 'accesspress-parallax'),
+		'desc' => __('Check To enable', 'accesspress-parallax'),
 		'id' => 'post_pagination',
 		'std' => '1',
 		'type' => 'checkbox');
 	
 	/*Parallax Section Ends*/
 	$options[] = array(
-		'name' => __('Slider Settings', 'accesspress_parallax'),
+		'name' => __('Slider Settings', 'accesspress-parallax'),
 		'type' => 'heading');
 
 	$options[] = array(
-		'name' => __('Show Slider', 'accesspress_parallax'),
+		'name' => __('Show Slider', 'accesspress-parallax'),
 		'id' => 'show_slider',
 		'std' => 'yes',
 		'type' => 'radio',
@@ -272,150 +272,150 @@ function optionsframework_options() {
 
 	if ( $options_categories ) {
 	$options[] = array(
-		'name' => __('Select a Category', 'accesspress_parallax'),
+		'name' => __('Select a Category', 'accesspress-parallax'),
 		'id' => 'slider_category',
 		'type' => 'select',
 		'options' => $options_categories);
 	}
 
 	$options[] = array(
-		'name' => __('Show full window', 'accesspress_parallax'),
+		'name' => __('Show full window', 'accesspress-parallax'),
 		'id' => 'slider_full_window',
 		'std' => 'yes',
 		'type' => 'radio',
 		'options' => $check);
 
 	$options[] = array(
-		'name' => __('Remove Slider overlay - Black Dots', 'accesspress_parallax'),
+		'name' => __('Remove Slider overlay - Black Dots', 'accesspress-parallax'),
 		'id' => 'slider_overlay',
 		'std' => 'no',
 		'type' => 'radio',
 		'options' => $check);
 
 	$options[] = array(
-		'name' => __('Show Pager', 'accesspress_parallax'),
+		'name' => __('Show Pager', 'accesspress-parallax'),
 		'id' => 'show_pager',
 		'std' => 'yes',
 		'type' => 'radio',
 		'options' => $check);
 
 	$options[] = array(
-		'name' => __('Show Controls', 'accesspress_parallax'),
+		'name' => __('Show Controls', 'accesspress-parallax'),
 		'id' => 'show_controls',
 		'std' => 'yes',
 		'type' => 'radio',
 		'options' => $check);
 
 	$options[] = array(
-		'name' => __('Auto Transition', 'accesspress_parallax'),
+		'name' => __('Auto Transition', 'accesspress-parallax'),
 		'id' => 'auto_transition',
 		'std' => 'yes',
 		'type' => 'radio',
 		'options' => $check);
 
 	$options[] = array(
-		'name' => __('Slider Transition', 'accesspress_parallax'),
+		'name' => __('Slider Transition', 'accesspress-parallax'),
 		'id' => 'slider_transition',
 		'std' => 'fade',
 		'type' => 'radio',
 		'options' => $transitions);
 
 	$options[] = array(
-		'name' => __('Slider Transition Speed', 'accesspress_parallax'),
+		'name' => __('Slider Transition Speed', 'accesspress-parallax'),
 		'id' => 'slider_speed',
 		'std' => '5000',
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('Slider Pause Duration', 'accesspress_parallax'),
+		'name' => __('Slider Pause Duration', 'accesspress-parallax'),
 		'id' => 'slider_pause',
 		'std' => '5000',
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('Show Caption', 'accesspress_parallax'),
+		'name' => __('Show Caption', 'accesspress-parallax'),
 		'id' => 'show_caption',
 		'std' => 'yes',
 		'type' => 'radio',
 		'options' => $check);
 
 	$options[] = array(
-		'name' => __('Social Links', 'accesspress_parallax'),
+		'name' => __('Social Links', 'accesspress-parallax'),
 		'type' => 'heading');
 
 	$options[] = array(
-		'name' => __('Show Social Icon', 'accesspress_parallax'),
-		'desc' => __('Check To enable', 'accesspress_parallax'),
+		'name' => __('Show Social Icon', 'accesspress-parallax'),
+		'desc' => __('Check To enable', 'accesspress-parallax'),
 		'id' => 'show_social',
 		'std' => '1',
 		'type' => 'checkbox');
 
 	$options[] = array(
-		'name' => __('Facebook', 'accesspress_parallax'),
+		'name' => __('Facebook', 'accesspress-parallax'),
 		'id' => 'facebook',
 		'type' => 'url');
 
 	$options[] = array(
-		'name' => __('Twitter', 'accesspress_parallax'),
+		'name' => __('Twitter', 'accesspress-parallax'),
 		'id' => 'twitter',
 		'type' => 'url');
 
 	$options[] = array(
-		'name' => __('Google Plus', 'accesspress_parallax'),
+		'name' => __('Google Plus', 'accesspress-parallax'),
 		'id' => 'google_plus',
 		'type' => 'url');
 
 	$options[] = array(
-		'name' => __('Youtube', 'accesspress_parallax'),
+		'name' => __('Youtube', 'accesspress-parallax'),
 		'id' => 'youtube',
 		'type' => 'url');
 
 	$options[] = array(
-		'name' => __('Pinterest', 'accesspress_parallax'),
+		'name' => __('Pinterest', 'accesspress-parallax'),
 		'id' => 'pinterest',
 		'type' => 'url');
 
 	$options[] = array(
-		'name' => __('Linkedin', 'accesspress_parallax'),
+		'name' => __('Linkedin', 'accesspress-parallax'),
 		'id' => 'linkedin',
 		'type' => 'url');
 
 	$options[] = array(
-		'name' => __('Fickr', 'accesspress_parallax'),
+		'name' => __('Fickr', 'accesspress-parallax'),
 		'id' => 'flickr',
 		'type' => 'url');
 
 	$options[] = array(
-		'name' => __('Vimeo', 'accesspress_parallax'),
+		'name' => __('Vimeo', 'accesspress-parallax'),
 		'id' => 'vimeo',
 		'type' => 'url');
 
 	$options[] = array(
-		'name' => __('Instagram', 'accesspress_parallax'),
+		'name' => __('Instagram', 'accesspress-parallax'),
 		'id' => 'instagram',
 		'type' => 'url');
 
 	$options[] = array(
-		'name' => __('Skype', 'accesspress_parallax'),
+		'name' => __('Skype', 'accesspress-parallax'),
 		'id' => 'skype',
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('Tools', 'accesspress_parallax'),
+		'name' => __('Tools', 'accesspress-parallax'),
 		'type' => 'heading');
 
 	$options[] = array(
-		'name' => __('Custom CSS', 'accesspress_parallax'),
+		'name' => __('Custom CSS', 'accesspress-parallax'),
 		'id' => 'custom_css',
 		'type' => 'textarea',
-		'desc' => __('Put your custom CSS here', 'accesspress_parallax') );
+		'desc' => __('Put your custom CSS here', 'accesspress-parallax') );
 
 	$options[] = array(
-		'name' => __('About', 'accesspress_parallax'),
+		'name' => __('About', 'accesspress-parallax'),
 		'type' => 'heading');
 
 	$options[] = array(
-		'name' => __('About AccessPress Themes', 'accesspress_parallax'),
+		'name' => __('About AccessPress Themes', 'accesspress-parallax'),
 		'desc' => $about_content,
 		'type' => 'info');
 return $options;

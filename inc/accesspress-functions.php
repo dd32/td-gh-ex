@@ -61,7 +61,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 
 		// Add a page number if necessary:
 		if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-			$title .= " $sep " . sprintf( __( 'Page %s', 'accesspress_parallax' ), max( $paged, $page ) );
+			$title .= " $sep " . sprintf( __( 'Page %s', 'accesspress-parallax' ), max( $paged, $page ) );
 		}
 
 		return $title;
@@ -200,10 +200,10 @@ function accesspress_bxslidercb(){
 					<img src="<?php echo get_template_directory_uri(); ?>/images/demo/slider1.jpg" alt="slider1">
 					<div class="slider-caption">
 						<div class="mid-content">
-							<h1 class="caption-title"><?php _e('Welcome to AccessPress Parallax!','accesspress_parallax'); ?></h1>
+							<h1 class="caption-title"><?php _e('Welcome to AccessPress Parallax!','accesspress-parallax'); ?></h1>
 							<h2 class="caption-description">
-							<p><?php _e('A full featured parallax theme - and its absolutely free!','accesspress_parallax'); ?></p>
-							<p><a href="#"><?php _e('Read More','accesspress_parallax'); ?></a></p>
+							<p><?php _e('A full featured parallax theme - and its absolutely free!','accesspress-parallax'); ?></p>
+							<p><a href="#"><?php _e('Read More','accesspress-parallax'); ?></a></p>
 							</h2>
 						</div>
 					</div>
@@ -213,10 +213,10 @@ function accesspress_bxslidercb(){
 					<img src="<?php echo get_template_directory_uri(); ?>/images/demo/slider2.jpg" alt="slider2">
 					<div class="slider-caption">
 						<div class="ak-container">
-							<h1 class="caption-title"><?php _e('Amazing multi-purpose parallax theme','accesspress_parallax'); ?></h1>
+							<h1 class="caption-title"><?php _e('Amazing multi-purpose parallax theme','accesspress-parallax'); ?></h1>
 							<h2 class="caption-description">
-							<p><?php _e('Travel, corporate, small biz, portfolio, agencies, photography, health, creative - useful for anyone and everyone','accesspress_parallax'); ?></p>
-							<p><a href="#"><?php _e('Read More','accesspress_parallax'); ?></a></p>
+							<p><?php _e('Travel, corporate, small biz, portfolio, agencies, photography, health, creative - useful for anyone and everyone','accesspress-parallax'); ?></p>
+							<p><a href="#"><?php _e('Read More','accesspress-parallax'); ?></a></p>
 							</h2>
 							</div>
 					</div>
@@ -254,9 +254,11 @@ function accesspress_header_styles_scripts(){
 	echo "<link type='image/png' rel='icon' href='".$favicon."'/>\n";
 	echo "<style type='text/css' media='all'>"; 
 
+	if(!empty($sections)){
 	foreach ($sections as $section) {
 		echo "#section-".$section['page']."{ background:url(".$section['image'].") ".$section['repeat']." ".$section['attachment']." ".$section['position']." ".$section['color']."; background-size:".$section['size']."; color:".$section['font_color']."}\n";
 		echo "#section-".$section['page']." .overlay { background:url(".$image_url.$section['overlay'].".png);}\n";
+	}
 	}
 
 	if($slider_overlay == "yes"){
@@ -399,31 +401,31 @@ function accesspress_required_plugins() {
      */
     $plugins = array(
          array(
-            'name'      => __( 'AccessPress Social Icons', 'accesspress_parallax' ), //The plugin name
+            'name'      => __( 'AccessPress Social Icons', 'accesspress-parallax' ), //The plugin name
             'slug'      => 'accesspress-social-icons',  // The plugin slug (typically the folder name)
             'required'  => false,  // If false, the plugin is only 'recommended' instead of required.
-            'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+            'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
             'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
             ),
          array(
-            'name'      => __( 'AccessPress Social Counter', 'accesspress_parallax' ), //The plugin name
+            'name'      => __( 'AccessPress Social Counter', 'accesspress-parallax' ), //The plugin name
             'slug'      => 'accesspress-social-counter',  // The plugin slug (typically the folder name)
             'required'  => false,  // If false, the plugin is only 'recommended' instead of required.
-            'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+            'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
             'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
             ),
          array(
-            'name'      => __( 'AccessPress Social Share', 'accesspress_parallax' ), //The plugin name
+            'name'      => __( 'AccessPress Social Share', 'accesspress-parallax' ), //The plugin name
             'slug'      => 'accesspress-social-share',  // The plugin slug (typically the folder name)
             'required'  => false,  // If false, the plugin is only 'recommended' instead of required.
-            'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+            'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
             'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
             ),   
         array(
             'name'      => 'AccessPress Custom CSS',
             'slug'      => 'accesspress-custom-css',
             'required'  => false,
-            'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+            'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
             'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
         ),      
     );
@@ -439,15 +441,15 @@ function accesspress_required_plugins() {
             'default_path' => '',                      // Default absolute path to pre-packaged plugins.
             'menu'         => 'accesspress-install-plugins', // Menu slug.
             'has_notices'  => true,                    // Show admin notices or not.
-            'dismissable'  => false,                    // If false, a user cannot dismiss the nag message.
+            'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
             'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
             'is_automatic' => true,                   // Automatically activate plugins after installation or not.
             'message'      => '',                      // Message to output right before the plugins table.
             'strings'      => array(
-            'page_title'                      => __( 'Install Required Plugins', 'accesspress_parallax' ),
-            'menu_title'                      => __( 'Install Plugins', 'accesspress_parallax' ),
-            'installing'                      => __( 'Installing Plugin: %s', 'accesspress_parallax' ), // %s = plugin name.
-            'oops'                            => __( 'Something went wrong with the plugin API.', 'accesspress_parallax' ),
+            'page_title'                      => __( 'Install Required Plugins', 'accesspress-parallax' ),
+            'menu_title'                      => __( 'Install Plugins', 'accesspress-parallax' ),
+            'installing'                      => __( 'Installing Plugin: %s', 'accesspress-parallax' ), // %s = plugin name.
+            'oops'                            => __( 'Something went wrong with the plugin API.', 'accesspress-parallax' ),
             'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.' ), // %1$s = plugin name(s).
             'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.' ), // %1$s = plugin name(s).
             'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.' ), // %1$s = plugin name(s).
@@ -458,9 +460,9 @@ function accesspress_required_plugins() {
             'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.' ), // %1$s = plugin name(s).
             'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins' ),
             'activate_link'                   => _n_noop( 'Begin activating plugin', 'Begin activating plugins' ),
-            'return'                          => __( 'Return to Required Plugins Installer', 'accesspress_parallax' ),
-            'plugin_activated'                => __( 'Plugin activated successfully.', 'accesspress_parallax' ),
-            'complete'                        => __( 'All plugins installed and activated successfully. %s', 'accesspress_parallax' ), // %s = dashboard link.
+            'return'                          => __( 'Return to Required Plugins Installer', 'accesspress-parallax' ),
+            'plugin_activated'                => __( 'Plugin activated successfully.', 'accesspress-parallax' ),
+            'complete'                        => __( 'All plugins installed and activated successfully. %s', 'accesspress-parallax' ), // %s = dashboard link.
             'nag_type'                        => 'updated' // Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
         )
     );

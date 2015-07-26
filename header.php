@@ -38,7 +38,7 @@
 		</div>
 
 		<nav id="site-navigation" class="main-navigation">
-		<div class="menu-toggle"><?php _e( 'Menu', 'accesspress_parallax' ); ?></div>
+		<div class="menu-toggle"><?php _e( 'Menu', 'accesspress-parallax' ); ?></div>
 					
 			<?php 
 			$sections = of_get_option('parallax_section');

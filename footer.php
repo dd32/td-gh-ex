@@ -50,14 +50,17 @@
 					&copy; <?php echo date('Y')." "; bloginfo('name'); ?>  
 				</div><!-- .copy-right -->
 				<div class="site-info">
-					<?php _e('AccessPress Parallax by','accesspress_parallax'); ?> <a href="<?php echo esc_url('http://accesspressthemes.com/','accesspress_parallax'); ?>" title="AccessPress Themes" target="_blank">AccessPress Themes</a>
+					<?php _e('AccessPress Parallax by','accesspress-parallax'); ?> <a href="<?php echo esc_url('http://accesspressthemes.com/'); ?>" title="AccessPress Themes" target="_blank">AccessPress Themes</a>
 				</div><!-- .site-info -->
 			</div>
 		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 <div id="go-top"><a href="#page"><i class="fa fa-angle-up"></i></a></div>
-
+<?php 
+$aa = get_option('accesspress_parallax');
+var_dump($aa);
+?>
 <?php wp_footer(); ?>
 </body>
 </html>

@@ -16,9 +16,6 @@ function optionsframework_init() {
 	require get_template_directory() . '/inc/options-framework/includes/class-options-media-uploader.php';
 	require get_template_directory() . '/inc/options-framework/includes/class-options-sanitization.php';
 
-	// Instantiate the main plugin class.
-	$options_framework = new Options_Framework;
-	$options_framework->init();
 
 	// Instantiate the options page.
 	$options_framework_admin = new Options_Framework_Admin;
@@ -46,13 +43,21 @@ endif;
 if ( ! function_exists( 'of_get_option' ) ) :
 
 function of_get_option( $name, $default = false ) {
-	$config = get_option( 'optionsframework' );
+	$option_name = '';
 
-	if ( ! isset( $config['id'] ) ) {
-		return $default;
+	// Gets option name as defined in the theme
+	if ( function_exists( 'optionsframework_option_name' ) ) {
+		$option_name = optionsframework_option_name();
 	}
 
-	$options = get_option( $config['id'] );
+	// Fallback option name
+	if ( '' == $option_name ) {
+		$option_name = get_option( 'stylesheet' );
+		$option_name = preg_replace( "/\W/", "_", strtolower( $option_name ) );
+	}
+
+	// Get option settings from database
+	$options = get_option( $option_name );
 
 	if ( isset( $options[$name] ) ) {
 		return $options[$name];

@@ -30,16 +30,10 @@ class Options_Framework_Interface {
 	static function optionsframework_fields() {
 
 		global $allowedtags;
-		$optionsframework_settings = get_option( 'optionsframework' );
 
-		// Gets the unique option id
-		if ( isset( $optionsframework_settings['id'] ) ) {
-			$option_name = $optionsframework_settings['id'];
-		}
-		else {
-			$option_name = 'optionsframework';
-		};
-
+		$options_framework = new Options_Framework;
+		$option_name = $options_framework->get_option_name();
+		
 		$settings = get_option($option_name);
 		$options = & Options_Framework::_optionsframework_options();
 
@@ -118,6 +112,11 @@ class Options_Framework_Interface {
 			// Basic text input
 			case 'text':
 				$output .= '<input id="' . esc_attr( $value['id'] ) . '" class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" type="text" value="' . esc_attr( $val ) . '"' . $placeholder . ' />';
+				break;
+
+			// Basic hidded input
+			case 'hidden':
+				$output .= '<input id="' . esc_attr( $value['id'] ) . '" class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" type="hidden" value="' . esc_attr( $val ) . '"' . $placeholder . ' />';
 				break;
 
 			// Basic text input
@@ -417,17 +416,14 @@ class Options_Framework_Interface {
 			// Background
 			case 'parallaxsection':
 
-				$parallaxsection_array = array();
-
 				if(!empty($settings['parallax_section'])) {
 				foreach ($settings['parallax_section'] as $i => $ival) { 
-				$parallaxsection_array[] = $i;
 				$background = $val;
-				$output .='<div class="sub-option clearifx"><h3 class="title">'.__('Page Title: ' ,'accesspress_parallax').'<span></span><div class="section-toggle"><i class="fa fa-chevron-down"></i>
+				$output .='<div class="sub-option clearfix" data-id="'.$i.'"><h3 class="title">'.__('Page Title: ' ,'accesspress-parallax').'<span></span><div class="section-toggle"><i class="fa fa-chevron-down"></i>
 </div></h3>';
 				$output .='<div class="sub-option-inner" style="display:none">';
 				$output .='<div class="inline-label">';
-				$output .='<label>'.__('Page','accesspress_parallax').'</label>';
+				$output .='<label>'.__('Page','accesspress-parallax').'</label>';
 				$output .= '<select class="of-input '.esc_attr( $value['id'] . '_page' ).'" name="' . esc_attr( $option_name . '[' . $value['id'] . ']['.$i.'][page]' ) . '">';
 
 				foreach ($value['options'] as $key => $option ) {
@@ -443,7 +439,7 @@ class Options_Framework_Interface {
 						$default_color = ' data-default-color="' .$value['std']['font_color'] . '" ';
 				}
 				$output .='<div class="color-picker inline-label">';
-				$output .='<label class="">'.__('Font Color','accesspress_parallax').'</label>';
+				$output .='<label class="">'.__('Font Color','accesspress-parallax').'</label>';
 				$output .= '<input name="' . esc_attr( $option_name . '[' . $value['id'] . ']['.$i.'][font_color]' ) . '" class="of-color of-background-color"  type="text" value="' . esc_attr( $background[$i]['font_color'] ) . '"' . $default_color .' />';
 				$output .='</div>';
 
@@ -454,13 +450,13 @@ class Options_Framework_Interface {
 						$default_color = ' data-default-color="' .$value['std']['color'] . '" ';
 				}
 				$output .='<div class="color-picker inline-label">';
-				$output .='<label>'.__('Background Color','accesspress_parallax').'</label>';
+				$output .='<label>'.__('Background Color','accesspress-parallax').'</label>';
 				$output .= '<input name="' . esc_attr( $option_name . '[' . $value['id'] . ']['.$i.'][color]' ) . '" class="of-color of-background-color"  type="text" value="' . esc_attr( $background[$i]['color'] ) . '"' . $default_color .' />';
 				$output .='</div>';
 
 				// Section Layout
 				$output .='<div class="inline-label">';
-				$output .='<label>'.__('Layout','accesspress_parallax').'</label>';
+				$output .='<label>'.__('Layout','accesspress-parallax').'</label>';
 				$output .= '<select class="of-section of-section-layout" name="' . esc_attr( $option_name . '[' . $value['id'] . ']['.$i.'][layout]' ) . '">';
 				$layouts = of_recognized_layout();
 
@@ -472,7 +468,7 @@ class Options_Framework_Interface {
 
 				// Section Category
 				$output .='<div class="inline-label toggle-category">';
-				$output .='<label>'.__('Category','accesspress_parallax').'</label>';
+				$output .='<label>'.__('Category','accesspress-parallax').'</label>';
 				$output .= '<select class="of-input of-section-category" name="' . esc_attr( $option_name . '[' . $value['id'] . ']['.$i.'][category]' ) . '">';
 
 				foreach ($value['category'] as $key => $category ) {
@@ -487,7 +483,7 @@ class Options_Framework_Interface {
 				}
 
 				$output .='<div class="inline-label">';
-				$output .='<label class="">'.__('Background Image','accesspress_parallax').'</label>';
+				$output .='<label class="">'.__('Background Image','accesspress-parallax').'</label>';
 				$output .= Options_Framework_Media_Uploader::optionsframework_uploader( $value['id'], $background[$i]['image'], null, esc_attr( $option_name . '[' . $value['id'] . ']['.$i.'][image]' ) );
 				$output .='</div>';
 
@@ -496,7 +492,7 @@ class Options_Framework_Interface {
 					$class .= ' hide';
 				}
 				$output .= '<div class="inline-label ' . esc_attr( $class ) . '">';
-				$output .= '<label>'.__('Background Settings','accesspress_parallax').'</label>';
+				$output .= '<label>'.__('Background Settings','accesspress-parallax').'</label>';
 
 				// Background Repeat
 				$output .= '<div class="background-settings">';
@@ -539,7 +535,7 @@ class Options_Framework_Interface {
 
 				// Background Overlay
 				$output .='<div class="color-picker inline-label">';
-				$output .='<label>'.__('Overlay','accesspress_parallax').'</label>';
+				$output .='<label>'.__('Overlay','accesspress-parallax').'</label>';
 				$output .= '<select class="of-background of-background-overlay" name="' . esc_attr( $option_name . '[' . $value['id'] . ']['.$i.'][overlay]' ) . '">';
 				$overlays = of_recognized_background_overlay();
 
@@ -550,17 +546,16 @@ class Options_Framework_Interface {
 				$output .= '</div>';
 
 				$output .= '</div>';
-				$output .= '<div class="button-primary remove-parallax">'.__('Remove','accesspress_parallax').'</div></div>';
+				$output .= '<div class="button-primary remove-parallax">'.__('Remove','accesspress-parallax').'</div></div>';
 				$output .= '</div>';
 				}
 			}
-				update_option('accesspress_parallax_count', $parallaxsection_array );
 
 				break;
 
 				// Button
 				case "button":
-				$output .= '<a id="' . esc_attr( $value['id'] ) . '" class="button-primary" href="javascript:void(0);">'.__('Add New Section','accesspress_parallax').'</a>'."\n";
+				$output .= '<a id="' . esc_attr( $value['id'] ) . '" class="button-primary" href="javascript:void(0);">'.__('Add New Section','accesspress-parallax').'</a>'."\n";
 				break;
 			}
 

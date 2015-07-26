@@ -67,7 +67,9 @@ jQuery(document).ready(function($) {
 		$('#section-sticky_header').show();
 	}
 
-	$( "#section-parallax_section .controls" ).sortable();
+	$( "#section-parallax_section .controls" ).sortable({
+		axis: "y"
+	});
 	$( "#sub-option-inner" ).disableSelection();
 
 	$(document).on('click', '.section-toggle', function(){

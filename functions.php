@@ -28,7 +28,7 @@ function accesspress_parallax_setup() {
 	 * If you're building a theme based on accesspress_parallax, use a find and replace
 	 * to change 'accesspress_parallax' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'accesspress_parallax', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'accesspress-parallax', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -60,7 +60,7 @@ function accesspress_parallax_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'accesspress_parallax' ),
+		'primary' => __( 'Primary Menu', 'accesspress-parallax' ),
 	) );
 	
 	/*
@@ -95,7 +95,7 @@ add_action( 'after_setup_theme', 'accesspress_parallax_setup' );
  */
 function accesspress_parallax_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'accesspress_parallax' ),
+		'name'          => __( 'Sidebar', 'accesspress-parallax' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -105,7 +105,7 @@ function accesspress_parallax_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer One', 'accesspress_parallax' ),
+		'name'          => __( 'Footer One', 'accesspress-parallax' ),
 		'id'            => 'footer-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -115,7 +115,7 @@ function accesspress_parallax_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer Two', 'accesspress_parallax' ),
+		'name'          => __( 'Footer Two', 'accesspress-parallax' ),
 		'id'            => 'footer-2',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -125,7 +125,7 @@ function accesspress_parallax_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer Three', 'accesspress_parallax' ),
+		'name'          => __( 'Footer Three', 'accesspress-parallax' ),
 		'id'            => 'footer-3',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -135,7 +135,7 @@ function accesspress_parallax_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer Four', 'accesspress_parallax' ),
+		'name'          => __( 'Footer Four', 'accesspress-parallax' ),
 		'id'            => 'footer-4',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -153,32 +153,32 @@ function accesspress_parallax_scripts() {
 	$query_args = array(
 		'family' => 'Roboto:400,300,500,700|Oxygen:400,300,700',
 	);
-	wp_enqueue_style( 'accesspress_parallax-google-fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ) );
-	wp_enqueue_style( 'accesspress_parallax-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
-	wp_enqueue_style( 'accesspress_parallax-bx-slider', get_template_directory_uri() . '/css/jquery.bxslider.css' );
-	wp_enqueue_style( 'accesspress_parallax-nivo-lightbox', get_template_directory_uri() . '/css/nivo-lightbox.css' );
-	wp_enqueue_style( 'accesspress_parallax-animate', get_template_directory_uri() . '/css/animate.css' );
-	wp_enqueue_style( 'accesspress_parallax-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'accesspress-parallax-google-fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ) );
+	wp_enqueue_style( 'accesspress-parallax-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
+	wp_enqueue_style( 'accesspress-parallax-bx-slider', get_template_directory_uri() . '/css/jquery.bxslider.css' );
+	wp_enqueue_style( 'accesspress-parallax-nivo-lightbox', get_template_directory_uri() . '/css/nivo-lightbox.css' );
+	wp_enqueue_style( 'accesspress-parallax-animate', get_template_directory_uri() . '/css/animate.css' );
+	wp_enqueue_style( 'accesspress-parallax-style', get_stylesheet_uri() );
 	if(of_get_option('enable_responsive') == 1) :
-		wp_enqueue_style( 'accesspress_parallax-responsive', get_template_directory_uri() . '/css/responsive.css' );
+		wp_enqueue_style( 'accesspress-parallax-responsive', get_template_directory_uri() . '/css/responsive.css' );
 	endif;
 	
 	if (of_get_option('enable_animation') == '1' && is_front_page()) :
-        wp_enqueue_script('accesspress_parallax-wow', get_template_directory_uri() . '/js/wow.js', array('jquery'), '1.0', true);
+        wp_enqueue_script('accesspress-parallax-wow', get_template_directory_uri() . '/js/wow.js', array('jquery'), '1.0', true);
     endif;
 
-	wp_enqueue_script( 'accesspress_parallax-smoothscroll', get_template_directory_uri() . '/js/SmoothScroll.js', array('jquery'), '1.2.1', true );
-    wp_enqueue_script( 'accesspress_parallax-parallax', get_template_directory_uri() . '/js/parallax.js', array('jquery'), '1.1.3', true );
-	wp_enqueue_script( 'accesspress_parallax-ScrollTo', get_template_directory_uri() . '/js/jquery.scrollTo.min.js', array('jquery'), '1.4.14', true );
-	wp_enqueue_script( 'accesspress_parallax-local-scroll', get_template_directory_uri() . '/js/jquery.localScroll.min.js', array('jquery'), '1.3.5', true );
-	wp_enqueue_script( 'accesspress_parallax-parallax-nav', get_template_directory_uri() . '/js/jquery.nav.js', array('jquery'), '2.2.0', true );
-	wp_enqueue_script( 'accesspress_parallax-bx_slider', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array('jquery'), '4.2.1', true );
-	wp_enqueue_script( 'accesspress_parallax-easing', get_template_directory_uri() . '/js/jquery.easing.min.js', array('jquery'), '1.3', true );
-	wp_enqueue_script( 'accesspress_parallax-fit-vid', get_template_directory_uri() . '/js/jquery.fitvids.js', array('jquery'), '1.0', true );
-	wp_enqueue_script( 'accesspress_parallax-actual', get_template_directory_uri() . '/js/jquery.actual.min.js', array('jquery'), '1.0.16', true );
-	wp_enqueue_script( 'accesspress_nivo-lightbox', get_template_directory_uri() . '/js/nivo-lightbox.min.js', array('jquery'), '1.2.0', true );
-	wp_enqueue_script( 'accesspress_parallax-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-	wp_enqueue_script( 'accesspress_parallax-custom', get_template_directory_uri() . '/js/custom.js', array('jquery'), '1.0', true );
+	wp_enqueue_script( 'accesspress-parallax-smoothscroll', get_template_directory_uri() . '/js/SmoothScroll.js', array('jquery'), '1.2.1', true );
+    wp_enqueue_script( 'accesspress-parallax-parallax', get_template_directory_uri() . '/js/parallax.js', array('jquery'), '1.1.3', true );
+	wp_enqueue_script( 'accesspress-parallax-ScrollTo', get_template_directory_uri() . '/js/jquery.scrollTo.min.js', array('jquery'), '1.4.14', true );
+	wp_enqueue_script( 'accesspress-parallax-local-scroll', get_template_directory_uri() . '/js/jquery.localScroll.min.js', array('jquery'), '1.3.5', true );
+	wp_enqueue_script( 'accesspress-parallax-parallax-nav', get_template_directory_uri() . '/js/jquery.nav.js', array('jquery'), '2.2.0', true );
+	wp_enqueue_script( 'accesspress-parallax-bx_slider', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array('jquery'), '4.2.1', true );
+	wp_enqueue_script( 'accesspress-parallax-easing', get_template_directory_uri() . '/js/jquery.easing.min.js', array('jquery'), '1.3', true );
+	wp_enqueue_script( 'accesspress-parallax-fit-vid', get_template_directory_uri() . '/js/jquery.fitvids.js', array('jquery'), '1.0', true );
+	wp_enqueue_script( 'accesspress-parallax-actual', get_template_directory_uri() . '/js/jquery.actual.min.js', array('jquery'), '1.0.16', true );
+	wp_enqueue_script( 'accesspress-parallax-nivo-lightbox', get_template_directory_uri() . '/js/nivo-lightbox.min.js', array('jquery'), '1.2.0', true );
+	wp_enqueue_script( 'accesspress-parallax-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'accesspress-parallax-custom', get_template_directory_uri() . '/js/custom.js', array('jquery'), '1.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

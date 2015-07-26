@@ -54,11 +54,12 @@ class Options_Framework_Admin {
      */
     function settings_init() {
 
-    	// Load Options Framework Settings
-        $optionsframework_settings = get_option( 'optionsframework' );
+    	// Get the option name
+		$options_framework = new Options_Framework;
+	    $name = $options_framework->get_option_name();
 
 		// Registers the settings fields and callback
-		register_setting( 'optionsframework', $optionsframework_settings['id'],  array ( $this, 'validate_options' ) );
+		register_setting( 'optionsframework', $name,  array ( $this, 'validate_options' ) );
 
 		// Displays notice after options save
 		add_action( 'optionsframework_after_validate', array( $this, 'save_options_notice' ) );
@@ -73,8 +74,8 @@ class Options_Framework_Admin {
             'mode' => 'submenu',
 
             // Submenu default settings
-            'page_title' => __( '', 'accesspress_parallax'),
-			'menu_title' => __('Theme Options', 'accesspress_parallax'),
+            'page_title' => '',
+			'menu_title' => __('Theme Options', 'accesspress-parallax'),
 			'capability' => 'edit_theme_options',
 			'menu_slug' => 'theme-options',
             'parent_slug' => 'themes.php',
@@ -169,27 +170,28 @@ class Options_Framework_Admin {
 
 		<div class="theme-header clearfix">
 		<div class="accesspresslite-logo">
-		<img src="<?php echo get_template_directory_uri();?>/inc/options-framework/images/logo.png" alt="<?php esc_attr_e('AccessPress Lite','accesspress_parallax'); ?>" />
+		<img src="<?php echo get_template_directory_uri();?>/inc/options-framework/images/logo.png" alt="<?php esc_attr_e('AccessPress Lite','accesspress-parallax'); ?>" />
 		</div>
 
 		<div class="ak-socials">
 		</div>
 		</div>
 
+
 	    <div class="nav-tab-wrapper">
 	        <?php echo Options_Framework_Interface::optionsframework_tabs(); ?>
 	    </div>
 
-	    <?php settings_errors( 'options-framework' ); ?>
-
+	    
 	    <div id="optionsframework-metabox" class="metabox-holder">
+	    <?php settings_errors( 'options-framework' ); ?>
 		    <div id="optionsframework" class="postbox">
 				<form action="options.php" method="post">
 				<?php settings_fields( 'optionsframework' ); ?>
 				<?php Options_Framework_Interface::optionsframework_fields(); /* Settings */ ?>
 				<div id="optionsframework-submit">
-					<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'accesspress_parallax' ); ?>" />
-					<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'accesspress_parallax' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'accesspress_parallax' ) ); ?>' );" />
+					<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'accesspress-parallax' ); ?>" />
+					<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'accesspress-parallax' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'accesspress-parallax' ) ); ?>' );" />
 					<div class="clear"></div>
 				</div>
 				</form>
@@ -208,7 +210,7 @@ class Options_Framework_Admin {
     			</div>
     
     			<div class="any-question">
-    				<?php echo sprintf(__('Any question!! Click <a href="%s" target="_blank">here</a> for Live Chat.','accesspress_parallax'), esc_url('https://accesspressthemes.com/contact/')); ?>
+    				<?php echo sprintf(__('Any question!! Click <a href="%s" target="_blank">here</a> for Live Chat.','accesspress-parallax'), esc_url('https://accesspressthemes.com/contact/')); ?>
     			</div>
     		</div>
 		</div>
@@ -237,7 +239,7 @@ class Options_Framework_Admin {
 		 */
 
 		if ( isset( $_POST['reset'] ) ) {
-			add_settings_error( 'options-framework', 'restore_defaults', __( 'Default options restored.', 'accesspress_parallax' ), 'updated fade' );
+			add_settings_error( 'options-framework', 'restore_defaults', __( 'Default options restored.', 'accesspress-parallax' ), 'updated fade' );
 			return $this->get_default_values();
 		}
 
@@ -291,7 +293,7 @@ class Options_Framework_Admin {
 	 */
 
 	function save_options_notice() {
-		add_settings_error( 'options-framework', 'save_options', __( 'Options saved.', 'accesspress_parallax' ), 'updated fade' );
+		add_settings_error( 'options-framework', 'save_options', __( 'Options saved.', 'accesspress-parallax' ), 'updated fade' );
 	}
 
 	/**

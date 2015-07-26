@@ -15,6 +15,13 @@
 add_filter( 'of_sanitize_text', 'sanitize_text_field' );
 
 /**
+ * Sanitization for hidden input
+ *
+ * @link http://developer.wordpress.org/reference/functions/sanitize_text_field/
+ */
+add_filter( 'of_sanitize_hidden', 'sanitize_text_field' );
+
+/**
  * Sanitization for password input
  *
  * @link http://developer.wordpress.org/reference/functions/sanitize_text_field/
@@ -405,10 +412,10 @@ add_filter( 'of_font_face', 'of_sanitize_font_face' );
  */
 function of_recognized_background_repeat() {
 	$default = array(
-		'no-repeat' => __( 'No Repeat', 'accesspress_parallax' ),
-		'repeat-x'  => __( 'Repeat Horizontally', 'accesspress_parallax' ),
-		'repeat-y'  => __( 'Repeat Vertically', 'accesspress_parallax' ),
-		'repeat'    => __( 'Repeat All', 'accesspress_parallax' ),
+		'no-repeat' => __( 'No Repeat', 'accesspress-parallax' ),
+		'repeat-x'  => __( 'Repeat Horizontally', 'accesspress-parallax' ),
+		'repeat-y'  => __( 'Repeat Vertically', 'accesspress-parallax' ),
+		'repeat'    => __( 'Repeat All', 'accesspress-parallax' ),
 		);
 	return apply_filters( 'of_recognized_background_repeat', $default );
 }
@@ -420,15 +427,15 @@ function of_recognized_background_repeat() {
  */
 function of_recognized_background_position() {
 	$default = array(
-		'top left'      => __( 'Top Left', 'accesspress_parallax' ),
-		'top center'    => __( 'Top Center', 'accesspress_parallax' ),
-		'top right'     => __( 'Top Right', 'accesspress_parallax' ),
-		'center left'   => __( 'Middle Left', 'accesspress_parallax' ),
-		'center center' => __( 'Middle Center', 'accesspress_parallax' ),
-		'center right'  => __( 'Middle Right', 'accesspress_parallax' ),
-		'bottom left'   => __( 'Bottom Left', 'accesspress_parallax' ),
-		'bottom center' => __( 'Bottom Center', 'accesspress_parallax' ),
-		'bottom right'  => __( 'Bottom Right', 'accesspress_parallax')
+		'top left'      => __( 'Top Left', 'accesspress-parallax' ),
+		'top center'    => __( 'Top Center', 'accesspress-parallax' ),
+		'top right'     => __( 'Top Right', 'accesspress-parallax' ),
+		'center left'   => __( 'Middle Left', 'accesspress-parallax' ),
+		'center center' => __( 'Middle Center', 'accesspress-parallax' ),
+		'center right'  => __( 'Middle Right', 'accesspress-parallax' ),
+		'bottom left'   => __( 'Bottom Left', 'accesspress-parallax' ),
+		'bottom center' => __( 'Bottom Center', 'accesspress-parallax' ),
+		'bottom right'  => __( 'Bottom Right', 'accesspress-parallax')
 		);
 	return apply_filters( 'of_recognized_background_position', $default );
 }
@@ -440,8 +447,8 @@ function of_recognized_background_position() {
  */
 function of_recognized_background_attachment() {
 	$default = array(
-		'scroll' => __( 'Scroll Normally', 'accesspress_parallax' ),
-		'fixed'  => __( 'Fixed in Place', 'accesspress_parallax')
+		'scroll' => __( 'Scroll Normally', 'accesspress-parallax' ),
+		'fixed'  => __( 'Fixed in Place', 'accesspress-parallax')
 		);
 	return apply_filters( 'of_recognized_background_attachment', $default );
 }
@@ -453,9 +460,9 @@ function of_recognized_background_attachment() {
  */
 function of_recognized_background_size() {
 	$default = array(
-		'auto' => __( 'Auto', 'accesspress_parallax' ),
-		'cover'  => __( 'Cover', 'accesspress_parallax'),
-		'contain'  => __( 'Contain', 'accesspress_parallax')
+		'auto' => __( 'Auto', 'accesspress-parallax' ),
+		'cover'  => __( 'Cover', 'accesspress-parallax'),
+		'contain'  => __( 'Contain', 'accesspress-parallax')
 		);
 	return apply_filters( 'of_recognized_background_size', $default );
 }
@@ -468,15 +475,15 @@ function of_recognized_background_size() {
  */
 function of_recognized_layout() {
 	$default = array(
-		'default_template' => __('Default Section', 'accesspress_parallax'),
-		'service_template' => __('Service Section', 'accesspress_parallax'),
-		'team_template' => __('Team Section', 'accesspress_parallax'),
-		'portfolio_template' => __('Portfolio Section', 'accesspress_parallax'),
-		'testimonial_template' => __('Testimonial Section', 'accesspress_parallax'),
-		'blog_template' => __('Blog Section', 'accesspress_parallax'),
-		'action_template' => __('Call to Action Section', 'accesspress_parallax'),
-		'googlemap_template' => __('Google Map Section', 'accesspress_parallax'),
-		'blank_template' => __('Blank Section', 'accesspress_parallax'),
+		'default_template' => __('Default Section', 'accesspress-parallax'),
+		'service_template' => __('Service Section', 'accesspress-parallax'),
+		'team_template' => __('Team Section', 'accesspress-parallax'),
+		'portfolio_template' => __('Portfolio Section', 'accesspress-parallax'),
+		'testimonial_template' => __('Testimonial Section', 'accesspress-parallax'),
+		'blog_template' => __('Blog Section', 'accesspress-parallax'),
+		'action_template' => __('Call to Action Section', 'accesspress-parallax'),
+		'googlemap_template' => __('Google Map Section', 'accesspress-parallax'),
+		'blank_template' => __('Blank Section', 'accesspress-parallax'),
 		);
 	return apply_filters( 'of_recognized_layout', $default );
 }
@@ -488,11 +495,11 @@ function of_recognized_layout() {
  */
 function of_recognized_background_overlay() {
 	$default = array(
-		'overlay0' => __( 'No Overlay', 'accesspress_parallax' ),
-		'overlay1' => __( 'Small Dotted', 'accesspress_parallax' ),
-		'overlay2'  => __( 'Large Dotted', 'accesspress_parallax'),
-		'overlay3'  => __( 'Light Black', 'accesspress_parallax'),
-		'overlay4'  => __( 'Black Dotted', 'accesspress_parallax')
+		'overlay0' => __( 'No Overlay', 'accesspress-parallax' ),
+		'overlay1' => __( 'Small Dotted', 'accesspress-parallax' ),
+		'overlay2'  => __( 'Large Dotted', 'accesspress-parallax'),
+		'overlay3'  => __( 'Light Black', 'accesspress-parallax'),
+		'overlay4'  => __( 'Black Dotted', 'accesspress-parallax')
 		);
 	return apply_filters( 'of_recognized_background_overlay', $default );
 }
@@ -564,10 +571,10 @@ function of_recognized_font_faces() {
  */
 function of_recognized_font_styles() {
 	$default = array(
-		'normal'      => __( 'Normal', 'accesspress_parallax' ),
-		'italic'      => __( 'Italic', 'accesspress_parallax' ),
-		'bold'        => __( 'Bold', 'accesspress_parallax' ),
-		'bold italic' => __( 'Bold Italic', 'accesspress_parallax' )
+		'normal'      => __( 'Normal', 'accesspress-parallax' ),
+		'italic'      => __( 'Italic', 'accesspress-parallax' ),
+		'bold'        => __( 'Bold', 'accesspress-parallax' ),
+		'bold italic' => __( 'Bold Italic', 'accesspress-parallax' )
 		);
 	return apply_filters( 'of_recognized_font_styles', $default );
 }
