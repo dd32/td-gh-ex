@@ -10,22 +10,6 @@
  */
 
 /*-----------------------------------------------------------------------------------*/
-/* DEFAULT STYLE, AFTER THEME ACTIVATION */
-/*-----------------------------------------------------------------------------------*/         
-
-if ( ! function_exists( 'alhenalite_after_switch_theme' ) ) {
-
-	function alhenalite_after_switch_theme () {
-				
-		wp_redirect(admin_url("customize.php"));
-
-	}
-	
-	add_action('after_switch_theme', 'alhenalite_after_switch_theme');
-	
-}
-
-/*-----------------------------------------------------------------------------------*/
 /* GET ARCHIVE TITLE */
 /*-----------------------------------------------------------------------------------*/ 
 
