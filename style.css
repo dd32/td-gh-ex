@@ -4,8 +4,8 @@ Theme Name: BirdSITE
 Theme URI: http://www.sysbird.jp/birdsite/theme/
 Description: BirdSITE is a photoblogging theme. The theme has grid layout and uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones. Features include the Theme Customize. You can choose the text color, link color, header line and footer background color and navigation color.
 Author: Sysbird
-Author URI: http://www.sysbird.jp/
-Version: 1.07
+Author URI: http://www.sysbird.jp
+Version: 1.08
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, two-columns, left-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
@@ -165,11 +165,10 @@ body {
     font-family: Georgia,"Bitstream Charter",serif;
     padding-left: 1.4em;
     color: #000;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    text-align: right; }
     #header .branding .site-title {
       font-size: 2.4rem;
-      font-size: 2.4em\9;
-      /* IE8 and below */
       font-weight: bold;
       line-height: 1;
       margin: 0; }
@@ -293,14 +292,14 @@ body {
     #menu-wrapper .menu ul li {
       padding: 0;
       width: 240px;
-      list-style: none;
+      text-align: right;
       position: relative; }
       #menu-wrapper .menu ul li:hover > ul {
         display: block;
         /* show dropdown on hover */ }
       #menu-wrapper .menu ul li a {
         border-top: dotted 1px #555;
-        padding: 0.6em 1em;
+        padding: 0.6em;
         display: block;
         width: 238px;
         color: #555;
@@ -341,7 +340,8 @@ body {
         #menu-wrapper .menu ul li ul li {
           float: none;
           margin: 0;
-          padding: 0; }
+          padding: 0;
+          text-align: left; }
           #menu-wrapper .menu ul li ul li a {
             white-space: normal; }
           #menu-wrapper .menu ul li ul li ul {
@@ -371,11 +371,11 @@ body {
   #content small {
     line-height: 1;
     color: #999; }
-  #content cite:before {
-    content: "-"; }
   #content cite {
     color: #999;
     display: block; }
+    #content cite:before {
+      content: "-"; }
   #content table {
     max-width: 100%;
     width: 100%;
@@ -401,6 +401,8 @@ body {
     padding: 0.8em;
     margin-bottom: 1.6em;
     line-height: 1.4; }
+  #content code {
+    background: #F5F5F5; }
   #content code, #content kbd, #content pre, #content samp {
     font-family: monospace,serif; }
   #content hr {
@@ -668,10 +670,6 @@ body {
       width: 250px;
       height: 250px; }
       .home #content ul.row li .more-link a {
-        z-index: 9\9;
-        /* IE8 and below */
-        background: url("images/null.gif") repeat left top\9;
-        /* IE8 and below */
         display: block;
         width: 250px;
         height: 250px;
@@ -700,8 +698,6 @@ body {
       position: absolute;
       color: #FFF;
       background-color: rgba(0, 0, 0, 0.5);
-      background-color: #000 \9;
-      /* IE8 and below */
       top: 0;
       left: 0;
       width: 250px;
@@ -749,8 +745,18 @@ body {
     .home #content ul.row li.has-image .caption {
       filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
       opacity: 0; }
+    .home #content ul.row li.has-image:hover .caption {
+      filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+      opacity: 1;
+      -moz-transition-duration: 0.7s;
+      -o-transition-duration: 0.7s;
+      -webkit-transition-duration: 0.7s;
+      transition-duration: 0.7s; }
     .home #content ul.row li.sticky {
       position: relative; }
+      .home #content ul.row li.sticky .caption {
+        filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+        opacity: 1; }
       .home #content ul.row li.sticky i {
         position: absolute;
         top: -3px;
@@ -915,17 +921,18 @@ video {
 /* Comments
 -------------------------------------------------------------- */
 #content #comments {
-  margin-top: 1.6em; }
+  margin-top: 20px;
+  display: block; }
   #content #comments .navigation {
     position: relative;
     height: 1em;
-    margin-bottom: 0.8em; }
-    #content #comments .navigation.bottom {
-      margin-bottom: 1.6em; }
+    padding-bottom: 10px;
+    margin-bottom: 1em; }
     #content #comments .navigation .nav-previous a {
       position: absolute;
       top: 0;
-      right: 0; }
+      right: 0;
+      padding-left: 1em; }
       #content #comments .navigation .nav-previous a:after {
         content: "";
         display: inline-block;
@@ -940,7 +947,8 @@ video {
     #content #comments .navigation .nav-next a {
       position: absolute;
       top: 0;
-      left: 0; }
+      left: 0;
+      padding-right: 1em; }
       #content #comments .navigation .nav-next a:before {
         content: "";
         display: inline-block;
@@ -956,119 +964,62 @@ video {
     list-style: none;
     margin: 0;
     padding-left: 0; }
-    #content #comments ol.commentlist li.trackback,
     #content #comments ol.commentlist li.pingback,
     #content #comments ol.commentlist li.comment {
       border-left: 2px solid #CCC;
       clear: both;
-      margin-bottom: 0.8em;
-      padding: 0 0 0 0.8em;
+      margin-bottom: 1.6em;
+      padding: 0 0 0 10px;
       position: relative;
-      list-style: none;
-      overflow: hidden;
-      *zoom: 1; }
-  #content #comments li.trackback .posted a.web:after, #content #comments li.pingback .posted a.web:after {
-    content: "";
-    display: inline-block;
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    padding-left: 0.2em;
-    padding-right: 0.2em;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; }
-  #content #comments li .comment_meta .author {
-    font-weight: bold; }
-  #content #comments li .comment_meta .postdate {
-    color: #999;
-    font-size: 0.85rem; }
-    #content #comments li .comment_meta .postdate:before {
-      content: "";
-      display: inline-block;
-      font-family: FontAwesome;
-      font-style: normal;
-      font-weight: normal;
-      line-height: 1;
-      padding-left: 0.2em;
-      padding-right: 0.2em;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale; }
-  #content #comments li .comment_meta .comment-reply-link:before {
-    content: "";
-    display: inline-block;
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    padding-left: 0.4em;
-    padding-right: 0.4em;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; }
-  #content #comments li .comment_meta img {
-    border: none;
-    margin: 0 10px 5px 0;
-    float: left; }
-  #content #comments li .comment_text {
-    clear: both;
-    margin: 0 0 0.7em 55px; }
-    #content #comments li .comment_text p {
-      line-height: 1.4; }
-      #content #comments li .comment_text p.web a:after {
-        content: "";
-        display: inline-block;
-        font-family: FontAwesome;
-        font-style: normal;
-        font-weight: normal;
-        line-height: 1;
-        padding-left: 0.4em;
-        padding-right: 0;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale; }
-  #content #comments li.bypostauthor .comment_meta .author {
-    color: #000; }
-  #content #comments li.awaiting .author,
-  #content #comments li.awaiting .comment_text,
-  #content #comments li.awaiting .comment_text a {
-    color: #999; }
-  #content #comments li.awaiting .attention {
-    display: block;
-    color: #C00; }
-
-/* Forms
--------------------------------------------------------------- */
-#comments #commentform {
-  border: dashed 1px #CCC;
-  padding: 10px 5%;
-  margin: 15px 0;
-  width: 100%; }
-  #comments #commentform em {
-    display: block;
-    padding: 1em 0 0.4em;
-    font-style: normal; }
-  #comments #commentform label input {
-    width: 300px;
-    padding: 5px;
-    background: #FFF;
-    border: solid 1px #CCC; }
-  #comments #commentform textarea {
-    width: 100%;
-    height: 100px;
-    padding: 5px;
-    background: #FFF;
-    border: solid 1px #CCC; }
-  #comments #commentform input#submit {
-    padding: 5px 10px; }
-  #comments #commentform .form-allowed-tags {
-    font-size: 0.9rem;
-    color: #999; }
-  #comments #commentform .form-allowed-tags code {
-    display: block; }
-
-form input,
-form select,
-form textarea {
-  max-width: 95%; }
+      list-style: none; }
+      #content #comments ol.commentlist li.pingback:after,
+      #content #comments ol.commentlist li.comment:after {
+        overflow: hidden;
+        *zoom: 1; }
+      #content #comments ol.commentlist li.pingback .comment-author .fn,
+      #content #comments ol.commentlist li.comment .comment-author .fn {
+        display: inline;
+        font-weight: bold;
+        color: #000; }
+        #content #comments ol.commentlist li.pingback .comment-author .fn:before,
+        #content #comments ol.commentlist li.comment .comment-author .fn:before {
+          content: none; }
+      #content #comments ol.commentlist li.pingback .comment-author img,
+      #content #comments ol.commentlist li.comment .comment-author img {
+        border: none;
+        margin: 0 10px 10px 0;
+        float: left; }
+      #content #comments ol.commentlist li.pingback .comment-meta,
+      #content #comments ol.commentlist li.comment .comment-meta {
+        font-size: 0.96em;
+        line-height: 1.6;
+        margin-bottom: 1.6em; }
+        #content #comments ol.commentlist li.pingback .comment-meta a,
+        #content #comments ol.commentlist li.comment .comment-meta a {
+          border-bottom: none;
+          color: #999; }
+      #content #comments ol.commentlist li.pingback .comment-awaiting-moderation,
+      #content #comments ol.commentlist li.comment .comment-awaiting-moderation {
+        font-size: 0.96em;
+        color: #999; }
+      #content #comments ol.commentlist li.pingback.bypostauthor .comment-author .fn,
+      #content #comments ol.commentlist li.comment.bypostauthor .comment-author .fn {
+        color: #000; }
+      #content #comments ol.commentlist li.pingback .reply,
+      #content #comments ol.commentlist li.comment .reply {
+        margin-bottom: 1.6em; }
+        #content #comments ol.commentlist li.pingback .reply a.comment-reply-link:before,
+        #content #comments ol.commentlist li.comment .reply a.comment-reply-link:before {
+          content: "";
+          display: inline-block;
+          font-family: FontAwesome;
+          font-style: normal;
+          font-weight: normal;
+          line-height: 1;
+          padding-left: 0;
+          padding-right: 0.2em;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale; }
 
 /* Archive
 -------------------------------------------------------------------- */
@@ -1223,6 +1174,46 @@ form textarea {
       .widget #wp-calendar tfoot td {
         padding: 8px 0; }
 
+/* Forms
+-------------------------------------------------------------- */
+form input {
+  font-size: 100%; }
+
+#commentform {
+  border: 1px dotted #CCC;
+  padding: 10px 15px 0;
+  margin-bottom: 1.6em; }
+  #commentform p {
+    margin-bottom: 0.8em; }
+  #commentform label {
+    padding: 0 0 5px 0;
+    display: block; }
+  #commentform input:not([id="submit"]) {
+    width: 100%;
+    max-width: 300px;
+    padding: 5px;
+    background: #FFF;
+    border: solid 1px #CCC; }
+  #commentform textarea {
+    width: 100%;
+    height: 100px;
+    padding: 5px;
+    background: #FFF;
+    border: solid 1px #CCC; }
+  #commentform input#submit {
+    padding: 5px 10px; }
+  #commentform #email-notes {
+    display: block; }
+  #commentform .form-allowed-tags {
+    line-height: 1.2; }
+    #commentform .form-allowed-tags code {
+      display: block; }
+
+.post-password-form input:not([type="submit"]) {
+  padding: 5px;
+  background: #FFF;
+  border: solid 1px #CCC; }
+
 /* Searcform
 --------------------------------------------- */
 #searchform {
@@ -1240,7 +1231,8 @@ form textarea {
     height: 30px;
     line-height: 1;
     border-radius: 4px 0 0 4px;
-    border: none; }
+    border: none;
+    border: solid 1px #CCC; }
   #searchform #searchsubmit {
     position: absolute;
     top: 0;
@@ -1265,6 +1257,9 @@ form textarea {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 1.2em; }
+
+#footer #searchform #s {
+  border: none; }
 
 /* Media queries for responsive design
 --------------------------------------------- */
@@ -1401,12 +1396,12 @@ form textarea {
         top: 0;
         left: 240px;
         width: 2.8em;
-        height: 2.8em;
+        height: 2.4em;
         background-color: #555;
         color: #FFF;
         text-align: center;
         border-bottom-right-radius: 8px;
-        padding: 0.4em; }
+        padding: 0.2em; }
         #menu-wrapper .menu #small-menu:after {
           content: "";
           display: inline-block;
@@ -1431,9 +1426,10 @@ form textarea {
           float: none;
           width: 100%;
           margin-top: -1px;
-          background: none; }
+          background: none;
+          text-align: left; }
           #menu-wrapper .menu ul#menu-primary-items li a {
-            border-top: dotted 1px #FFF;
+            border-color: #FFF;
             color: #FFF;
             white-space: normal;
             padding: 0.4em;

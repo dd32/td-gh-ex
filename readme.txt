@@ -1,4 +1,4 @@
-== Description ==
+c== Description ==
 BirdSITE is a photoblogging theme. The theme has grid layout and uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones. Features include the Theme Customize. You can choose the text color, link color, header line and footer background color and navigation color.
 
 
@@ -18,13 +18,13 @@ The Theme has customizable footer.
 Text Color: set at Colors section.
 Link Color: set at Colors section.
 Header, Footer Background Color: set at Colors section.
-Display Copyright: set at Footer section.
-Display Credit: set at Foote section.
+Display Copyright and Credit: set at Footer section.
+Display Postdate and Author, Category, Tags, Comment Number: set at Home section.
 Recommend Blog pages show at most 9 posts at Reading Settings.
 
 
 == License ==
-BirdSITE WordPress theme, Copyright (C) 2013 Sysbird
+BirdSITE WordPress theme, Copyright (C) 2010 Sysbird
 BirdSITE WordPress theme is licensed under the GPL.
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -37,10 +37,6 @@ html5shiv.js
 License: MIT/GPL2 Licensed
 Source:  https://github.com/aFarkas/html5shiv
 
-respond.js
-License:  MIT Lic.
-Source:  https://github.com/scottjehl/Respond
-
 Font Awesome
 License: SIL Open Font License, 1.1/MIT License
 Source:  http://fortawesome.github.io/Font-Awesome/
@@ -48,6 +44,23 @@ Source:  http://fortawesome.github.io/Font-Awesome/
 
 == Author ==
 The theme built by TORIYAMA Yuko at Sysbird.
+http://www.sysbird.jp
+
+
+== Changelog ==
+v1.08
+* stop the correspondence for IE8 and below.
+* delete wp_list_comments callback.
+* change comment form to the default style.
+* change style for sticky post.
+* add theme option choose display item at home.
+
+== Changelog ==
+v1.07
+* change Author URI
+* fix a parameter at add_theme_support( 'custom-header' )
+* fix a bug at wp_title filter.
+=======
 http://www.sysbird.jp/
 
 
@@ -56,6 +69,7 @@ v1.07
 * change Author URI
 * fix a parameter at add_theme_support( 'custom-header' )
 * fix  a bug at wp_title filter.
+>>>>>>> 71ef27025b09414a62853628977cde938d0dda93
 
 v1.06
 * fix WordPress Version 4.2
