@@ -57,10 +57,7 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 <div id="go-top"><a href="#page"><i class="fa fa-angle-up"></i></a></div>
-<?php 
-$aa = get_option('accesspress_parallax');
-var_dump($aa);
-?>
+
 <?php wp_footer(); ?>
 </body>
 </html>

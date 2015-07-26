@@ -123,7 +123,7 @@ class Options_Framework_Admin {
 
 		if ( $this->options_screen != $hook )
 	        return;
-	    wp_enqueue_style( 'accesspress_parallax-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
+	    wp_enqueue_style( 'accesspress-parallax-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
 		wp_enqueue_style( 'optionsframework', OPTIONS_FRAMEWORK_DIRECTORY . 'css/optionsframework.css', array(),  Options_Framework::VERSION );
 		wp_enqueue_style( 'wp-color-picker' );
 	}

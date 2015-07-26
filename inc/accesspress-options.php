@@ -54,29 +54,6 @@ function optionsframework_options() {
 		'no' => __('No', 'accesspress-parallax')
 	);
 
-	$test_array = array(
-		'one' => __('One', 'accesspress-parallax'),
-		'two' => __('Two', 'accesspress-parallax'),
-		'three' => __('Three', 'accesspress-parallax'),
-		'four' => __('Four', 'accesspress-parallax'),
-		'five' => __('Five', 'accesspress-parallax')
-	);
-
-	// Multicheck Array
-	$multicheck_array = array(
-		'one' => __('French Toast', 'accesspress-parallax'),
-		'two' => __('Pancake', 'accesspress-parallax'),
-		'three' => __('Omelette', 'accesspress-parallax'),
-		'four' => __('Crepe', 'accesspress-parallax'),
-		'five' => __('Waffle', 'accesspress-parallax')
-	);
-
-	// Multicheck Defaults
-	$multicheck_defaults = array(
-		'one' => '1',
-		'five' => '1'
-	);
-
 	// Background Defaults
 	$background_defaults = array(
 		'color' => '',
