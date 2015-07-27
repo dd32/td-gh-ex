@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Base\n"
-"POT-Creation-Date: 2015-07-16 17:04-0500\n"
+"POT-Creation-Date: 2015-07-27 08:20+0545\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__;"
-"_nx:1,2,4c;esc_html__;esc_attr_x\n"
+"_nx:1,2,4c;esc_html__;esc_attr_x:1,2c\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
@@ -694,7 +694,7 @@ msgstr "Permalien à:"
 msgid "Skip to content"
 msgstr "Aller au contenu"
 
-#: ../inc/catchbase-menus.php:44 ../searchform.php:17
+#: ../inc/catchbase-menus.php:44
 msgid "Search"
 msgstr "Recherche"
 
@@ -1216,6 +1216,11 @@ msgstr "Résultat de recherche pour: %s"
 msgctxt "label"
 msgid "Search for:"
 msgstr "Recherche pour:"
+
+#: ../searchform.php:17
+msgctxt "submit button"
+msgid "Search"
+msgstr "Recherche"
 
 #: ../sidebar-secondary.php:28
 msgid "Secondary Sidebar Widget Area"

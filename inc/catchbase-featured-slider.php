@@ -68,7 +68,7 @@ function catchbase_featured_slider() {
 							if ( $sliderselect == 'demo-featured-slider' && function_exists( 'catchbase_demo_slider' ) ) {
 								$catchbase_featured_slider .=  catchbase_demo_slider( $options );
 							}
-							elseif ( $sliderselect == 'featured-page-slider' && function_exists( 'output' ) ) {
+							elseif ( $sliderselect == 'featured-page-slider' && function_exists( 'catchbase_page_slider' ) ) {
 								$catchbase_featured_slider .=  catchbase_page_slider( $options );
 							}
 			

@@ -1,5 +1,8 @@
 == Change log ==
 
+= 2.2.1 =
+* Bug Fixed: Featured Page Slider
+
 = 2.2 =
 * Added: Missing keywords esc_attr_x in .pot file
 * Bug Fixed: Featured slider overlapping text and image issue
