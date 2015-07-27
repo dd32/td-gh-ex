@@ -4,7 +4,7 @@
 	
     <div class="row" id="blog">
 
-        <div class="<?php echo sneaklite_template('span')." ".sneaklite_template('sidebar'); ?>"> 
+        <div class="<?php echo suevafree_template('span')." ".suevafree_template('sidebar'); ?>"> 
 
             <div class="row">
             
@@ -14,15 +14,7 @@
         
                     <article class="article category">
                     
-                        <?php if (is_tag()) : ?>
-        
-                            <p><?php _e( 'Tag','wip'); ?> : <strong> <?php echo get_query_var('tag');  ?> </strong> </p>
-                        
-                        <?php else : ?>
-
-                            <p><?php _e( 'Category','wip'); ?> : <strong> <?php single_cat_title(); ?> </strong> </p>
-        
-                        <?php endif; ?>
+                        <p> <?php echo suevafree_get_archive_title(); ?> </strong> </p>
                         
                     </article>
         
@@ -59,7 +51,7 @@
             
         </div>
         
-		<?php if ( sneaklite_template('span') == "span8" ) : ?>
+		<?php if ( suevafree_template('span') == "span8" ) : ?>
     
                 <section id="sidebar" class="span4">
                     <div class="row">
@@ -73,23 +65,23 @@
                         the_widget( 'WP_Widget_Archives','',
                         array('before_widget' => '<div class="pin-article span4"><div class="widget-box">',
                               'after_widget'  => '</div></div>',
-                              'before_title'  => '<h3 class="title">',
-                              'after_title'   => '</h3>'
+                              'before_title'  => '<h4 class="title">',
+                              'after_title'   => '</h4>'
                         ));
         
                         the_widget( 'WP_Widget_Calendar',
 						array("title"=> __('Calendar','wip')),
                         array('before_widget' => '<div class="pin-article span4"><div class="widget-box">',
                               'after_widget'  => '</div></div>',
-                              'before_title'  => '<h3 class="title">',
-                              'after_title'   => '</h3>'
+                              'before_title'  => '<h4 class="title">',
+                              'after_title'   => '</h4>'
                         ));
         
                         the_widget( 'WP_Widget_Categories','',
                         array('before_widget' => '<div class="pin-article span4"><div class="widget-box">',
                               'after_widget'  => '</div></div>',
-                              'before_title'  => '<h3 class="title">',
-                              'after_title'   => '</h3>'
+                              'before_title'  => '<h4 class="title">',
+                              'after_title'   => '</h4>'
                         ));
                     
                      } 

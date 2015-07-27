@@ -3,8 +3,8 @@
 Theme Name: Sneak Lite
 Description: Sneak Lite is a clean, minimal and responsive Sueva child theme, based on Bootstrap framework, with a new menu and buttons style and a different layout for the elements like sidebar and with a new fonts.
 Author: ThemeinProgress.
-Author URI: http://themeinprogress.com
-Version: 1.0.3
+Author URI: https://www.themeinprogress.com
+Version: 1.1.0
 Template: suevafree
 Tags: gray, light, black, orange, blue, white, two-columns, right-sidebar, left-sidebar, custom-background, custom-menu, threaded-comments, full-width-template, theme-options 
 License: GNU General Public License v3 or later
@@ -13,7 +13,6 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 */
 
 @import url("../suevafree/style.css");
-@import url("css/fonts.css");
 
 /* ===============================================
    GENERAL
@@ -32,12 +31,16 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 a:hover {
 	text-decoration:none;
 	border-bottom:none;
+}
+
+a:hover,
+#footer a:hover {
 	color:#48c2ae;
 }
 
 a.button,
 .contact-form input[type=submit] {
-	background:#fff;
+	background-color:#fff;
 	color:#48c2ae;
 	border:solid 1px #48c2ae;
 	-webkit-border-radius: 0;
@@ -46,12 +49,13 @@ a.button,
 	font-size:14px;
 	text-transform:none;
 	width:120px;
-	padding:14px
+	padding:14px;
+	font-weight:normal
 }
 
 a.button:hover,
 .contact-form input[type=submit]:hover {
-	background:#3aa694;
+	background-color:#3aa694;
 	color:#fff;
 	border:solid 1px #3aa694;
 }
@@ -172,7 +176,7 @@ nav#mainmenu ul li.current_page_item > a,
 nav#mainmenu ul li.current-menu-parent > a, 
 nav#mainmenu ul li.current_page_ancestor > a, 
 nav#mainmenu ul li.current-menu-ancestor > a { 
-	background:#48c2ae;
+	background-color:#48c2ae;
 	color:#fff !important;
 	margin-bottom:0;
 	text-decoration:none;
@@ -214,7 +218,7 @@ nav#mainmenu ul ul li.current-menu-ancestor > a {
 	outline:none !important;
 	margin:0;
 	text-decoration:none;
-	background:#48c2ae;
+	background-color:#48c2ae;
 }
 
 
@@ -238,11 +242,7 @@ nav#mainmenu ul ul li ul {
 
 #sidebar .tagcloud a:hover, 
 #footer .tagcloud a:hover { 
-	background: #3aa694;
-}
-
-#sidebar h3.title {
-	font-size: 18px;
+	background-color: #3aa694;
 }
 
 #sidebar .widget-box {
@@ -257,16 +257,12 @@ article blockquote {
 	border-color:#48c2ae;
 }
 
-.pin-article h1.title a:hover {
+.pin-article .title a:hover {
 	color:#48c2ae;
 }
 
 .pin-container:after {
 	display:none;
-}
-
-.pin-article h1.title {
-	font-size: 32px;
 }
 
 .pin-article {
@@ -286,7 +282,7 @@ article blockquote {
 }
 
 .line:before {
-  background: #ddd;
+  background-color: #ddd;
 }
 
 footer.line {
@@ -333,7 +329,7 @@ h3#reply-title, h3.comments {
    
 .wp-pagenavi a:hover , 
 .wp-pagenavi span.current {
-	background:#48c2ae;
+	background-color:#48c2ae;
 }
 
 

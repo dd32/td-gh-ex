@@ -1,4 +1,4 @@
-<?php if ( sneaklite_template('span') == "span8" ) : ?>
+<?php if ( suevafree_template('span') == "span8" ) : ?>
         
 	<section id="sidebar" class="span4">
 		<div class="row">

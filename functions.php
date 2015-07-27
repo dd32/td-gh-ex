@@ -1,148 +1,5 @@
 <?php
 
-/*-----------------------------------------------------------------------------------*/
-/* POST CLASS */
-/*-----------------------------------------------------------------------------------*/   
-
-function sneaklite_post_class($classes) {
-
-	if ( (is_category()) || (is_tax()) || (is_month()) || (is_tax()) || (is_home()) ) {
-
-		$classes[] = 'pin-article ' . sneaklite_template('span');
-	
-	}
-
-	return $classes;
-
-}
-
-add_filter('post_class', 'sneaklite_post_class');
-
-/*-----------------------------------------------------------------------------------*/
-/* Add default style, at theme activation */
-/*-----------------------------------------------------------------------------------*/         
-
-if ( is_admin() && isset($_GET['activated'] ) && $pagenow == 'themes.php' ) {
-	
-	$sneaklite_setting = get_option('suevafree_theme_settings');
-
-	if (!$sneaklite_setting) {	
-	
-		$skins = array( 
-		
-		"suevafree_skins" => "Cyan", 
-		"suevafree_logo_font_size" => "70px", 
-
-		"suevafree_logo_description_font_size" => "14px", 
-		
-		"suevafree_menu_font_size" => "14px", 
-		
-		"suevafree_text_font_color" => "#616161", 
-		"suevafree_copyright_font_color" => "#ffffff", 
-		"suevafree_link_color" => "#48c2ae", 
-		"suevafree_link_color_hover" => "#3aa694", 
-		"suevafree_border_color" => "#48c2ae", 
-	
-		"suevafree_body_background" => "/images/background/patterns/pattern1.jpg",
-		"suevafree_body_background_repeat" => "repeat",
-		"suevafree_body_background_color" => "#f3f3f3",
-		
-		"suevafree_footer_background" => "/images/background/patterns/pattern2.jpg",
-		"suevafree_footer_background_repeat" => "repeat",
-		"suevafree_footer_background_color" => "#f3f3f3",
-	
-		"suevafree_home" => "right-sidebar",
-		"suevafree_category_layout" => "right-sidebar",
-		"suevafree_footer_facebook_button" => "#",
-		"suevafree_footer_twitter_button" => "#",
-		"suevafree_footer_skype_button" => "#",
-		"suevafree_view_comments" => "on",
-		"suevafree_footer_rss_button" => "on",
-
-		);
-
-	update_option( 'suevafree_theme_settings', $skins ); 
-	
-	}
-	
-}
-
-function sneaklite_template($id) {
-
-	$template = array ("full" => "span12" , "left-sidebar" => "span8" , "right-sidebar" => "span8" );
-
-	$span = $template["full"];
-	$sidebar =  "full";
-
-	if ( ( !suevafree_setting('suevafree_home') )  && (  (is_home()) )  ){
-		
-		$span = $template["right-sidebar"];
-		$sidebar =  "right-sidebar";
-
-	} else if ( ( suevafree_setting('suevafree_home') )  && ( (is_home()) )  ){
-		
-		$span = $template[suevafree_setting('suevafree_home')];
-		$sidebar =  suevafree_setting('suevafree_home');
-
-	} else if ( ( !suevafree_setting('suevafree_category_layout') )  && ( (is_category()) || (is_tag()) )  ){
-		
-		$span = $template["right-sidebar"];
-		$sidebar =  "right-sidebar";
-
-	} else if ( ( suevafree_setting('suevafree_category_layout') )  && ( (is_category()) || (is_tag()) )  ){
-		
-		$span = $template[suevafree_setting('suevafree_category_layout')];
-		$sidebar =  suevafree_setting('suevafree_category_layout');
-
-	} else if ( ( suevafree_postmeta('suevafree_template') )  && ( (is_page()) || (is_single())  )  ){
-
-		$span = $template[suevafree_postmeta('suevafree_template')];
-		$sidebar =  suevafree_postmeta('suevafree_template');
-			
-	}
-	
-	return ${$id};
-	
-}
-
-function sneaklite_css_custom() { 
-
-	
-	echo '<style type="text/css" id="prova">';
-
-		echo 'a.button, .contact-form input[type=submit] { background: #fff; } ';
-
-		if ( suevafree_setting('suevafree_menu_font_size') ):
-		
-			echo 'nav#mainmenu ul ul li a { font-size: '.suevafree_setting('suevafree_menu_font_size').'; } ';
-	
-		endif;	
-	
-		if ( suevafree_setting('suevafree_link_color') ):
-		
-			echo 'a.button, .contact-form input[type=submit] { border-color: '.suevafree_setting('suevafree_link_color').'; } ';
-	
-			echo 'a.button, .contact-form input[type=submit] { color: '.suevafree_setting('suevafree_link_color').'; } ';
-	
-		endif;	
-		
-		if ( suevafree_setting('suevafree_link_color_hover') ):
-	
-			echo 'a.button:hover, .contact-form input[type=submit]:hover { border-color: '.suevafree_setting('suevafree_link_color_hover').'; } ';
-			
-			echo 'a.button:hover, .contact-form input[type=submit]:hover { background-color: '.suevafree_setting('suevafree_link_color_hover').'; } ';
-			echo '#footer .copyright a:hover { color: '.suevafree_setting('suevafree_link_color_hover').'; } ';
-		
-			echo "nav#mainmenu ul li a:hover, nav#mainmenu li:hover > a, nav#mainmenu ul li.current-menu-item > a, nav#mainmenu ul li.current_page_item > a, nav#mainmenu ul li.current-menu-parent > a, nav#mainmenu ul li.current_page_ancestor > a, nav#mainmenu ul li.current-menu-ancestor > a, nav#mainmenu ul ul li a:hover, nav#mainmenu ul ul li:hover > a, nav#mainmenu ul ul li.current-menu-item > a, nav#mainmenu ul ul li.current_page_item > a, nav#mainmenu ul ul li.current-menu-parent > a, nav#mainmenu ul ul li.current_post_ancestor > a, nav#mainmenu ul ul li.current_page_ancestor > a, nav#mainmenu ul ul li.current-menu-ancestor > a { background-color:".suevafree_setting('suevafree_link_color_hover')." }"; 
-	 
-		endif;
-	
-	echo '</style>';
-
-}
-
-add_action('wp_head', 'sneaklite_css_custom', 11);
-
 function sneaklite_widgets_init() {
 
 	unregister_sidebar( 'sidebar-area' );
@@ -157,8 +14,8 @@ function sneaklite_widgets_init() {
 		'description'   => 'This sidebar will be shown after the contents.',
 		'before_widget' => '<div class="pin-article span4"><div class="widget-box">',
 		'after_widget'  => '</div></div>',
-		'before_title'  => '<h3 class="title">',
-		'after_title'   => '</h3>'
+		'before_title'  => '<h4 class="title">',
+		'after_title'   => '</h4>'
 	
 	));
 	
@@ -169,8 +26,8 @@ function sneaklite_widgets_init() {
 		'description'   => __( "This sidebar will be shown for the homepage","wip"),
 		'before_widget' => '<div class="pin-article span4"><div class="widget-box">',
 		'after_widget'  => '</div></div>',
-		'before_title'  => '<h3 class="title">',
-		'after_title'   => '</h3>'
+		'before_title'  => '<h4 class="title">',
+		'after_title'   => '</h4>'
 	
 	));
 
@@ -181,8 +38,8 @@ function sneaklite_widgets_init() {
 		'description'   => 'This sidebar will be shown after the content.',
 		'before_widget' => '<div class="pin-article span4"><div class="widget-box">',
 		'after_widget'  => '</div></div>',
-		'before_title'  => '<h3 class="title">',
-		'after_title'   => '</h3>'
+		'before_title'  => '<h4 class="title">',
+		'after_title'   => '</h4>'
 	
 	));
 
@@ -201,5 +58,30 @@ function sneaklite_widgets_init() {
 }
 
 add_action( 'widgets_init', 'sneaklite_widgets_init' , 11);
+
+/*-----------------------------------------------------------------------------------*/
+/* STYLES AND SCRIPTS */
+/*-----------------------------------------------------------------------------------*/ 
+
+if (!function_exists('sneaklite_scripts_styles')) {
+
+	function sneaklite_scripts_styles() {
+
+		wp_deregister_style ( 'suevafree-' . get_theme_mod('suevafree_skin') );
+
+		if ( ( get_theme_mod('suevafree_skin') ) && ( get_theme_mod('suevafree_skin') <> "cyan" ) ):
+		
+			wp_enqueue_style( 'sneaklite- ' . get_theme_mod('suevafree_skin') , get_stylesheet_directory_uri() . '/inc/skins/' . get_theme_mod('suevafree_skin') . '.css' ); 
+		
+		endif;
+	
+		wp_deregister_style ( 'suevafree-google-fonts' );
+		wp_enqueue_style( 'sneaklite-google-fonts', '//fonts.googleapis.com/css?family=Abel|Allura|Roboto+Slab|Fjalla+One&subset=latin,latin-ext' );
+
+	}
+	
+	add_action( 'wp_enqueue_scripts', 'sneaklite_scripts_styles', 20 );
+
+}
 
 ?>

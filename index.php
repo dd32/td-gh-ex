@@ -4,7 +4,7 @@
 	
     <div class="row" id="blog">
 
-        <div class="<?php echo sneaklite_template('span')." ".sneaklite_template('sidebar'); ?>"> 
+        <div class="<?php echo suevafree_template('span')." ".suevafree_template('sidebar'); ?>"> 
 
             <div class="row">
             
@@ -39,7 +39,7 @@
             
         </div>
         
-		<?php if ( sneaklite_template('span') == "span8" ) : ?>
+		<?php if ( suevafree_template('span') == "span8" ) : ?>
     
                 <section id="sidebar" class="span4">
                     <div class="row">
@@ -53,23 +53,23 @@
                         the_widget( 'WP_Widget_Archives','',
                         array('before_widget' => '<div class="pin-article span4"><div class="widget-box">',
                               'after_widget'  => '</div></div>',
-                              'before_title'  => '<h3 class="title">',
-                              'after_title'   => '</h3>'
+                              'before_title'  => '<h4 class="title">',
+                              'after_title'   => '</h4>'
                         ));
         
                         the_widget( 'WP_Widget_Calendar',
 						array("title"=> __('Calendar','wip')),
                         array('before_widget' => '<div class="pin-article span4"><div class="widget-box">',
                               'after_widget'  => '</div></div>',
-                              'before_title'  => '<h3 class="title">',
-                              'after_title'   => '</h3>'
+                              'before_title'  => '<h4 class="title">',
+                              'after_title'   => '</h4>'
                         ));
         
                         the_widget( 'WP_Widget_Categories','',
                         array('before_widget' => '<div class="pin-article span4"><div class="widget-box">',
                               'after_widget'  => '</div></div>',
-                              'before_title'  => '<h3 class="title">',
-                              'after_title'   => '</h3>'
+                              'before_title'  => '<h4 class="title">',
+                              'after_title'   => '</h4>'
                         ));
                     
                      } 
