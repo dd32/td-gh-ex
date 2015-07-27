@@ -5,7 +5,7 @@
  * @package Albar
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.6.4' );
+define( 'KAIRA_THEME_VERSION' , '1.6.5' );
 
 if ( file_exists( get_stylesheet_directory() . '/settings/class.kaira-theme-settings.php' ) ) {
     require_once( get_stylesheet_directory() . '/settings/class.kaira-theme-settings.php' );
@@ -90,12 +90,16 @@ function kaira_widgets_init() {
 		'id'            => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>'
 	) );
 	register_sidebar(array(
 		'name' => __('Alba Footer', 'albar'),
 		'id' => 'site-footer',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</aside>',
+        'before_title'  => '<h4 class="widgettitle">',
+        'after_title'   => '</h4>'
 	));
 	
     register_widget( 'alba_carousel' );

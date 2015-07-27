@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Albar\n"
-"POT-Creation-Date: 2015-03-20 08:25+0200\n"
-"PO-Revision-Date: 2015-03-20 08:26+0200\n"
+"POT-Creation-Date: 2015-07-27 03:25+0200\n"
+"PO-Revision-Date: 2015-07-27 03:25+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -12,16 +12,8 @@ msgstr ""
 "X-Generator: Poedit 1.7.5\n"
 "X-Poedit-Basepath: ../\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-KeywordsList: __;_e;esc_attr_e;esc_html_e\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr;esc_attr_e\n"
 "X-Poedit-SearchPath-0: .\n"
-
-#: 404.php:24 no-results.php:22 no-results.php:31
-msgid "Return Home"
-msgstr ""
-
-#: 404.php:25 no-results.php:23 no-results.php:32
-msgid "Search"
-msgstr ""
 
 #: archive.php:23
 #, php-format
@@ -143,8 +135,11 @@ msgstr ""
 msgid "Tags %1$s"
 msgstr ""
 
-#: content.php:72 includes/blog/blog-standard.php:83
-msgid "Read More"
+#: footer.php:17
+#, php-format
+msgid ""
+"<div class=\"site-container\"><div class=\"scroll-to-top\"><i class=\"fa fa-"
+"angle-up\"></i></div><div class=\"footer-left\">Theme: %1$s by %2$s"
 msgstr ""
 
 #: functions.php:51
@@ -221,6 +216,10 @@ msgstr ""
 msgid "Both comments and trackbacks are currently closed."
 msgstr ""
 
+#: includes/blog/blog-standard.php:83
+msgid "Read More"
+msgstr ""
+
 #: includes/headers/header-layout-one.php:18
 msgid "My Account"
 msgstr ""
@@ -234,7 +233,7 @@ msgid "Sign In / Register"
 msgstr ""
 
 #: includes/headers/header-layout-one.php:32
-msgid "Email Us"
+msgid "Email"
 msgstr ""
 
 #: includes/headers/header-layout-one.php:43
@@ -354,7 +353,6 @@ msgid "0"
 msgstr ""
 
 #: includes/widgets/alba-carousel.php:65
-#: includes/widgets/alba-carousel.php:119
 msgid "1"
 msgstr ""
 
@@ -374,34 +372,8 @@ msgstr ""
 msgid "Columns"
 msgstr ""
 
-#: includes/widgets/alba-carousel.php:120
-msgid "2"
-msgstr ""
-
-#: includes/widgets/alba-carousel.php:121
-msgid "3"
-msgstr ""
-
-#: includes/widgets/alba-carousel.php:122
-msgid "4"
-msgstr ""
-
 #: includes/widgets/alba-carousel.php:127
 msgid "Show Featured Image"
-msgstr ""
-
-#: includes/widgets/alba-carousel.php:129
-#: includes/widgets/alba-carousel.php:137
-#: includes/widgets/alba-carousel.php:145
-#: includes/widgets/alba-carousel.php:159
-msgid "On"
-msgstr ""
-
-#: includes/widgets/alba-carousel.php:130
-#: includes/widgets/alba-carousel.php:138
-#: includes/widgets/alba-carousel.php:146
-#: includes/widgets/alba-carousel.php:160
-msgid "Off"
 msgstr ""
 
 #: includes/widgets/alba-carousel.php:135
@@ -428,18 +400,6 @@ msgstr ""
 
 #: includes/widgets/alba-carousel.php:165
 msgid "Carousel Pagination"
-msgstr ""
-
-#: includes/widgets/alba-carousel.php:167
-msgid "Numbers"
-msgstr ""
-
-#: includes/widgets/alba-carousel.php:168
-msgid "Dots"
-msgstr ""
-
-#: includes/widgets/alba-carousel.php:169 includes/widgets/alba-icon.php:81
-msgid "None"
 msgstr ""
 
 #: includes/widgets/alba-heading.php:10
@@ -475,48 +435,12 @@ msgstr ""
 msgid "Style"
 msgstr ""
 
-#: includes/widgets/alba-heading.php:71
-msgid "Lined heading"
-msgstr ""
-
-#: includes/widgets/alba-heading.php:72
-msgid "Title heading"
-msgstr ""
-
 #: includes/widgets/alba-heading.php:77
 msgid "Size"
 msgstr ""
 
-#: includes/widgets/alba-heading.php:79
-msgid "Small"
-msgstr ""
-
-#: includes/widgets/alba-heading.php:80
-msgid "Medium"
-msgstr ""
-
-#: includes/widgets/alba-heading.php:81
-msgid "Large"
-msgstr ""
-
-#: includes/widgets/alba-heading.php:82
-msgid "Extra Large"
-msgstr ""
-
 #: includes/widgets/alba-heading.php:87
 msgid "Alignment"
-msgstr ""
-
-#: includes/widgets/alba-heading.php:89 includes/widgets/alba-icon.php:90
-msgid "Left"
-msgstr ""
-
-#: includes/widgets/alba-heading.php:90 includes/widgets/alba-icon.php:91
-msgid "Center"
-msgstr ""
-
-#: includes/widgets/alba-heading.php:91 includes/widgets/alba-icon.php:92
-msgid "Right"
 msgstr ""
 
 #: includes/widgets/alba-icon.php:10
@@ -551,44 +475,8 @@ msgstr ""
 msgid "Icon Size"
 msgstr ""
 
-#: includes/widgets/alba-icon.php:68
-msgid "18px"
-msgstr ""
-
-#: includes/widgets/alba-icon.php:69
-msgid "26px"
-msgstr ""
-
-#: includes/widgets/alba-icon.php:70
-msgid "34px"
-msgstr ""
-
-#: includes/widgets/alba-icon.php:71
-msgid "48px"
-msgstr ""
-
-#: includes/widgets/alba-icon.php:72
-msgid "66px"
-msgstr ""
-
-#: includes/widgets/alba-icon.php:73
-msgid "86px"
-msgstr ""
-
-#: includes/widgets/alba-icon.php:74
-msgid "100px"
-msgstr ""
-
 #: includes/widgets/alba-icon.php:79
 msgid "Icon Style"
-msgstr ""
-
-#: includes/widgets/alba-icon.php:82
-msgid "Round"
-msgstr ""
-
-#: includes/widgets/alba-icon.php:83
-msgid "Square"
 msgstr ""
 
 #: includes/widgets/alba-icon.php:88
@@ -603,6 +491,14 @@ msgstr ""
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: no-results.php:22 no-results.php:31
+msgid "Return Home"
+msgstr ""
+
+#: no-results.php:23 no-results.php:32
+msgid "Search"
 msgstr ""
 
 #: search.php:16
@@ -667,7 +563,7 @@ msgid "Save Changes"
 msgstr ""
 
 #: settings/class.kaira-theme-settings.php:251
-msgid "Upgrade to premium to get all features"
+msgid "Upgrade to premium only <b>$15</b>"
 msgstr ""
 
 #: settings/class.kaira-theme-settings.php:276
@@ -695,7 +591,7 @@ msgstr ""
 #: settings/class.kaira-theme-settings.php:316
 #: settings/class.kaira-theme-settings.php:348
 #: settings/class.kaira-theme-settings.php:476
-#: settings/class.kaira-theme-settings.php:617
+#: settings/class.kaira-theme-settings.php:624
 msgid "http://sllwi.re/p/Eu"
 msgstr ""
 
@@ -852,7 +748,10 @@ msgid "Custom CSS"
 msgstr ""
 
 #: settings/class.kaira-theme-settings.php:463
-msgid "Add Custom CSS to add your own styling to the Theme"
+msgid ""
+"Add Custom CSS to add your own styling to the Theme. For an advanced CSS "
+"Plugin re recommend <a href=\"https://wordpress.org/plugins/so-css/\" target="
+"\"_blank\">SiteOrigin CSS</a>"
 msgstr ""
 
 #: settings/class.kaira-theme-settings.php:475 settings/tpl/upsell-page.php:58
@@ -880,7 +779,7 @@ msgid "Enter the number of posts you'd like to show per page"
 msgstr ""
 
 #: settings/class.kaira-theme-settings.php:507
-#: settings/class.kaira-theme-settings.php:595
+#: settings/class.kaira-theme-settings.php:602
 msgid "Email Address"
 msgstr ""
 
@@ -928,35 +827,39 @@ msgstr ""
 msgid "Address"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:602
+#: settings/class.kaira-theme-settings.php:595
+msgid "Header Email Text"
+msgstr ""
+
+#: settings/class.kaira-theme-settings.php:609
 msgid "Phone Number"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:616
+#: settings/class.kaira-theme-settings.php:623
 msgid "Footer Copy Text"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:629
+#: settings/class.kaira-theme-settings.php:636
 msgid "404 Error Page Heading"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:630
+#: settings/class.kaira-theme-settings.php:637
 msgid "Enter the heading for the 404 Error page"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:635
+#: settings/class.kaira-theme-settings.php:642
 msgid "Error 404 Message"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:636
+#: settings/class.kaira-theme-settings.php:643
 msgid "Enter the default text on the 404 error page (Page not found)"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:650
+#: settings/class.kaira-theme-settings.php:657
 msgid "No Search Results"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:651
+#: settings/class.kaira-theme-settings.php:658
 msgid "Enter the default text for when no search results are found"
 msgstr ""
 

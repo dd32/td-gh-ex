@@ -460,7 +460,7 @@ class Kaira_theme_settings {
         );
         $this->settings['kra-custom-css'] = array(
             'title'   => __( 'Custom CSS', 'albar' ),
-            'desc'    => __( 'Add Custom CSS to add your own styling to the Theme', 'albar' ),
+            'desc'    => __( 'Add Custom CSS to add your own styling to the Theme. For an advanced CSS Plugin re recommend <a href="https://wordpress.org/plugins/so-css/" target="_blank">SiteOrigin CSS</a>', 'albar' ),
             'std'     => '',
             'type'    => 'textarea',
             'section' => 'styling',
@@ -589,6 +589,13 @@ class Kaira_theme_settings {
             'desc'    => __( '', 'albar' ),
             'type'    => 'text',
             'std'     => 'Incolm Place, Cape Town, South Africa'
+        );
+        $this->settings['kra-website-txt-email-txt'] = array(
+            'section' => 'website',
+            'title'   => __( 'Header Email Text', 'albar' ),
+            'desc'    => __( '', 'albar' ),
+            'type'    => 'text',
+            'std'     => 'Email Us'
         );
         $this->settings['kra-website-txt-email'] = array(
             'section' => 'website',

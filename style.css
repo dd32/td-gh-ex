@@ -4,7 +4,7 @@ Theme URI: http://kairaweb.com/theme/albar/
 Author: Kaira
 Author URI: http://www.kairaweb.com/
 Description: Albar is a responsive multipurpose Wordpress theme. You can use Albar to build a business website, portfolio website, online store or a simple blogging website which adapts nicely to all devices. We've integrated with some powerful plugins like SiteOrigin's Page Builder, WooCommerce, Contact Form 7 and more.
-Version: 1.6.4
+Version: 1.6.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: responsive-layout, fluid-layout, custom-menu, featured-images, theme-options, threaded-comments, translation-ready, white, light, one-column, two-columns, full-width-template
@@ -2971,11 +2971,11 @@ div.wpcf7 {
     
     .site-header-one .site-social {
         text-align: center;
-    }
+        padding: 0;
+	}
     .site-header-one .header-bar.site-pad {
         padding: 0;
     }
-    
     
     /* ---- Search ---- */
     .site-header-one .search-button,
@@ -3009,16 +3009,11 @@ div.wpcf7 {
         padding: 0;
     }
     
-    
     /* ---- Search ---- */
     .site-header-two .search-button,
     .site-header-two .search-block {
         display: none;
     }
-    
-    
-    
-    
     
     /* ---- Banner Widget ----*/
     .alba-banner-style-bottom-shadow {
@@ -3029,8 +3024,6 @@ div.wpcf7 {
     #alba-home-slider div h3 {
         font-size: 26px;
     }
-    
-    
     
     /* ---- Footere Elements ---- */
     .footer-widgets .widget {
@@ -3100,13 +3093,14 @@ div.wpcf7 {
     .site-header-one .site-description {
         display: block;
         margin: 0;
-        padding: 0 0 20px;
+        padding: 0 0 6px;
         width: 100%;
     }
     .site-header-one .site-social {
         padding: 2px 0 6px;
         box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
-    }
+        font-size: 18px;
+	}
     
 	.site-header-one .site-search {
 		display: none;
