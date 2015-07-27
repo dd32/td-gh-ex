@@ -1,7 +1,5 @@
 <?php 
 	
-	global $suevafree_wip_setting;
-    
 	if ( has_post_thumbnail() ) : ?>
         
 		<div class="pin-container">
@@ -16,8 +14,20 @@
     
 <article class="article">
 
-    <h1 class="title"><a href="<?php echo get_permalink($post->ID); ?>"><?php the_title(); ?></a></h1>
+	<?php
+	
+		if (is_single()) :
 
+			do_action("suevafree_title","single"); 
+
+		else :
+
+			do_action("suevafree_title","blog"); 
+
+		endif;
+	
+	?>
+    
     <div class="line"> 
 
         <div class="entry-info">
@@ -29,13 +39,13 @@
                 <span class="entry-comments">
                     
                     <i class="icon-comments-alt" ></i>
-                    <?php echo comments_number( '<a href="'.get_permalink($post->ID).'#respond">'.__( "No comments","wip").'</a>', '<a href="'.get_permalink($post->ID).'#comments">1 '.__( "comment","wip").'</a>', '<a href="'.get_permalink($post->ID).'#comments">% '.__( "comments","wip").'</a>' ); ?>
+                    <?php echo comments_number( '<a href="'.get_permalink($post->ID).'#respond">'.__( "No comments","suevafree").'</a>', '<a href="'.get_permalink($post->ID).'#comments">1 '.__( "comment","suevafree").'</a>', '<a href="'.get_permalink($post->ID).'#comments">% '.__( "comments","suevafree").'</a>' ); ?>
                 
                 </span>
             
 			<?php endif; ?>
             
-            <span class="entry-standard"><i class="icon-film"></i><?php _e( "Video","wip") ?></span>
+            <span class="entry-standard"><i class="icon-film"></i><?php _e( "Video","suevafree") ?></span>
         	
 			<?php if (suevafree_setting('suevafree_view_author') == "on" ) : ?>
 
@@ -47,34 +57,6 @@
     
     </div>
 
-	<?php 
-	
-	if ((is_home()) || (is_category()) || (is_page()) || (is_search()) ) {
-		
-		if ( (!suevafree_setting('suevafree_view_readmore')) || (suevafree_setting('suevafree_view_readmore') == "on" ) ) {
-			suevafree_excerpt(); 
-		} else if (suevafree_setting('suevafree_view_readmore') == "off" ) {
-			the_content(); 
-		}
-
-	} else {
-
-		the_content();
-		
-		echo "<div class='clear'></div>";
-		
-		wp_link_pages();
-		
-		echo '<p class="categories"><strong>'. __( "Categories: ","wip").'</strong>'; the_category(', '); echo '</p>';
-		
-		the_tags( '<footer class="line"><div class="entry-info"><span class="tags">Tags: ', ', ', '</span></div></footer>' );
-		
-		if (suevafree_setting('suevafree_view_comments') == "on" ) :
-			comments_template();
-		endif;
-		
-	}
-	
-	?>
+	<?php do_action('suevafree_after_content'); ?>
 
 </article>

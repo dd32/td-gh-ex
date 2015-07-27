@@ -12,14 +12,5 @@
 
 /* CORE */
 require_once get_template_directory() . '/core/main.php';
-require_once get_template_directory() . '/core/post-formats.php';
-
-/* STYLE  */
-require_once get_template_directory() . '/core/add-style.php';
-
-/* WIDGET  */
-require_once get_template_directory() . '/core/add-widgets.php';
-require_once get_template_directory() . '/core/register-metaboxes.php';
-require_once get_template_directory() . '/core/admin/function_panel.php';
 
 ?>

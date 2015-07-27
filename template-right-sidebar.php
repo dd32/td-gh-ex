@@ -57,11 +57,11 @@
             } else { 
                 
                 the_widget( 'WP_Widget_Calendar',
-				array("title"=> __('Calendar','wip')),
+				array("title"=> __('Calendar','suevafree')),
 				array('before_widget' => '<div class="widget-box">',
 					  'after_widget'  => '</div>',
-					  'before_title'  => '<h3 class="title">',
-					  'after_title'   => '</h3>'
+					  'before_title'  => '<h4 class="title">',
+					  'after_title'   => '</h4>'
 				)
 				
 				);
@@ -69,8 +69,8 @@
                 the_widget( 'WP_Widget_Archives','',
 				array('before_widget' => '<div class="widget-box">',
 					  'after_widget'  => '</div>',
-					  'before_title'  => '<h3 class="title">',
-					  'after_title'   => '</h3>'
+					  'before_title'  => '<h4 class="title">',
+					  'after_title'   => '</h4>'
 				)
 
 				);
@@ -78,8 +78,8 @@
                 the_widget( 'WP_Widget_Categories','',
 				array('before_widget' => '<div class="widget-box">',
 					  'after_widget'  => '</div>',
-					  'before_title'  => '<h3 class="title">',
-					  'after_title'   => '</h3>'
+					  'before_title'  => '<h4 class="title">',
+					  'after_title'   => '</h4>'
 				)
 
 				);

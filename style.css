@@ -4,7 +4,7 @@ Theme URI: https://themeinprogress.com/sueva/
 Description: Sueva is a free responsive clean and corporate Tumblelog  WordPress Theme. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like HTML5 and CSS3.
 Author: ThemeinProgress.
 Author URI: https://themeinprogress.com
-Version: 1.2.7.8
+Version: 1.3.0
 Tags: gray, light, black, orange, blue, pink, purple, two-columns, right-sidebar, left-sidebar, custom-background, custom-menu, threaded-comments, full-width-template, theme-options,responsive-layout, translation-ready, one-column, photoblogging
 Text Domain: suevafree
 License: GNU General Public License v3 or later
@@ -62,6 +62,7 @@ h6.title {
 	font-family:'Abel',Verdana, Geneva, sans-serif; 
 	font-weight: normal;
 }
+
 h1,
 h2,
 h3,
@@ -69,26 +70,6 @@ h4,
 h5,
 h6 { 
 	font-family:'Abel',Verdana, Geneva, sans-serif; 
-}
-   
-h1 {
-	font-size: 28px;
-}
-h2 {
-	font-size: 26px;
-}
-h3 {
-	font-size: 24px;
-}
-h4.title {
-	font-size: 20px;
-	margin:15px auto;
-}
-h5 {
-	font-size: 16px;
-}
-h6 {
-	font-size: 14px;
 }
 
 code {
@@ -223,7 +204,7 @@ video {
 	color:#fff;	
 	position:relative; 
 	margin-top:50px;
-	background:url(images/background/patterns/pattern2.jpg) repeat #333;
+	background:url(inc/images/background/patterns/pattern2.jpg) repeat #333;
 	border-top:solid 4px #ff6644;
 }
 
@@ -266,14 +247,14 @@ video {
 	margin-bottom:25px;
 }
 
-#sidebar h3.title { 
+#sidebar h4.title { 
 	padding: 0;
 	margin: 0 0 20px 0;
 	position:relative;
-	font-size:28px;
+	text-align:left;
 }
+
 #footer h4.title { 
-	font-size: 20px;
 	margin: 0;
 	padding: 20px 0;
 }
@@ -620,8 +601,7 @@ nav#mainmenu ul ul li ul:before {
 	z-index:1000;
 }
 
-.pin-article h1.title {
-	font-size:38px;
+.pin-article .title {
 	font-style: normal;
 	font-weight: normal;
 	margin:0 0 15px 0;
@@ -631,15 +611,13 @@ nav#mainmenu ul ul li ul:before {
 	color:#616161;
 	word-wrap: break-word
 }
-.pin-article h1.title a {
+
+.pin-article .title a {
 	color:#616161;
 }
-.pin-article h1.title a:hover {
-	color:#d14a2b;
-}
 
-.pin-article.span4 h1.title {
-	font-size:22px;
+.pin-article .title a:hover {
+	color:#d14a2b;
 }
 
 .pin-article.span4 .line {
@@ -647,7 +625,7 @@ nav#mainmenu ul ul li ul:before {
 }
 
 .pin-article .separator:after {
-	background:url(images/separator.png) repeat;
+	background:url(inc/images/separator.png) repeat;
 	width:100%;
 	height:5px;
 	content: '';
@@ -742,7 +720,7 @@ h3#reply-title, h3.comments {
 	padding: 0 0 5px 45px;
 	height:45px;
 	line-height:45px;
-	background:url('images/icons/comment.png') no-repeat center left; 
+	background:url('inc/images/icons/comment.png') no-repeat center left; 
 	margin:45px 0;
 }
 h3#reply-title small, .logged-in-as { 
@@ -973,7 +951,7 @@ article blockquote p {
 	width: 100%;
 	left:0;
 	height: 1px;
-	background: url(images/background/dotted.png) repeat;
+	background: url(inc/images/background/dotted.png) repeat;
 	z-index:-1;
 	top:11px
 }
@@ -1177,7 +1155,7 @@ p.list-tags {
 	margin-top:20px;
 	border-top:1px solid #dcdbdb;
 	padding:10px 0 10px 36px;
-	background:url('images/icons/article.png') left 15px no-repeat;
+	background:url('inc/images/icons/article.png') left 15px no-repeat;
 }
 article .overlay-image { 
 	position:relative; 
@@ -1390,47 +1368,47 @@ ul#twitter_update_list li {
 	opacity: 0.8; 
 	filter: alpha(opacity=80); 
 	background-repeat: no-repeat;  
-	background-image: url(images/icons/tipsy.gif);
+	background-image: url(inc/images/icons/tipsy.gif);
 }
 
 a.facebook { 
-	background:url('images/icons/social/facebook.png') no-repeat;
+	background:url('inc/images/icons/social/facebook.png') no-repeat;
 }
 a.flickr { 
-	background:url('images/icons/social/flickr.png') no-repeat;
+	background:url('inc/images/icons/social/flickr.png') no-repeat;
 }
 a.google  { 
-	background:url('images/icons/social/google.png') no-repeat;
+	background:url('inc/images/icons/social/google.png') no-repeat;
 }
 a.linkedin  { 
-	background:url('images/icons/social/linkedin.png') no-repeat;
+	background:url('inc/images/icons/social/linkedin.png') no-repeat;
 }
 a.myspace  { 
-	background:url('images/icons/social/myspace.png') no-repeat;
+	background:url('inc/images/icons/social/myspace.png') no-repeat;
 }
 a.pinterest {  
-	background:url('images/icons/social/pinterest.png') no-repeat;
+	background:url('inc/images/icons/social/pinterest.png') no-repeat;
 }
 a.rss { 
-	background:url('images/icons/social/rss.png') no-repeat;
+	background:url('inc/images/icons/social/rss.png') no-repeat;
 }
 a.skype  { 
-	background:url('images/icons/social/skype.png') no-repeat;
+	background:url('inc/images/icons/social/skype.png') no-repeat;
 }
 a.tumblr  { 
-	background:url('images/icons/social/tumblr.png') no-repeat;
+	background:url('inc/images/icons/social/tumblr.png') no-repeat;
 }
 a.twitter { 
-	background:url('images/icons/social/twitter.png') no-repeat;
+	background:url('inc/images/icons/social/twitter.png') no-repeat;
 }
 a.vimeo  { 
-	background:url('images/icons/social/vimeo.png') no-repeat;
+	background:url('inc/images/icons/social/vimeo.png') no-repeat;
 }
 a.youtube  { 
-	background:url('images/icons/social/youtube.png') no-repeat;
+	background:url('inc/images/icons/social/youtube.png') no-repeat;
 }
 a.email  { 
-	background:url('images/icons/social/email.png') no-repeat;
+	background:url('inc/images/icons/social/email.png') no-repeat;
 }
 
 .tipsy-inner { 

@@ -9,7 +9,7 @@
 
 			<article class="article search">
 
-				<p><?php _e( '<span>Search </span> results for', 'wip' ) ?> <strong><?php echo $s; ?> </strong></p>
+				<p><?php _e( '<span>Search </span> results for', 'suevafree' ) ?> <strong><?php echo $s; ?> </strong></p>
  
 			</article>
 
@@ -31,7 +31,7 @@
 
 			<article class="article search">
 
-				<p><?php _e( 'Sorry, no posts matched your criteria','wip' ) ?> <strong>: <?php echo $s; ?> </strong></p>
+				<p><?php _e( 'Sorry, no posts matched your criteria','suevafree' ) ?> <strong>: <?php echo $s; ?> </strong></p>
  
 			</article>
 

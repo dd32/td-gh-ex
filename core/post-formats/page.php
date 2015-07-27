@@ -10,7 +10,19 @@
     
 <article class="article">
 
-    <h1 class="title"><a href="<?php echo get_permalink($post->ID); ?>"><?php the_title(); ?></a></h1>
+	<?php
+	
+		if (is_single()) :
+
+			do_action("suevafree_title","single"); 
+
+		else :
+
+			do_action("suevafree_title","blog"); 
+
+		endif;
+	
+	?>
     
     <div class="line"></div>
 
@@ -29,7 +41,9 @@
 		wp_link_pages();
 		
 		if (suevafree_setting('suevafree_view_comments') == "on" ) :
+		
 			comments_template();
+		
 		endif;
 		
 	endif;

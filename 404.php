@@ -8,8 +8,8 @@
 
 			<article class="article">
             
-				<h1><?php _e( 'Not found','wip'); ?> </h1>
-				<p><?php _e( 'Sorry, no posts matched your criteria','wip'); ?> </p>
+				<h1><?php _e( 'Not found','suevafree'); ?> </h1>
+				<p><?php _e( 'Sorry, no posts matched your criteria','suevafree'); ?> </p>
  
 			</article>
 
