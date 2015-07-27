@@ -16,9 +16,5 @@ if ( has_post_thumbnail() ) {
     		<?php the_title( '<h3 class="entry-title">', '</h3>' ); ?>
     	</header><!-- .entry-header -->
     </a>
-    <?php if ( has_post_thumbnail() ) : ?>
-        <?php the_post_thumbnail( 'blog_standard_img' ); ?>
-    <?php else : ?>
-        <img src="<?php echo get_template_directory_uri(); ?>/images/blank_img.png" alt="<?php the_title(); ?>" />
-    <?php endif; ?>
+    <img src="<?php echo get_template_directory_uri(); ?>/images/blank_img.png" alt="<?php the_title(); ?>" />
 </article><!-- #post-## -->

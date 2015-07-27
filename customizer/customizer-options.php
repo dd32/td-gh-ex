@@ -56,7 +56,7 @@ function customizer_library_kaira_options() {
         'label'   => __( 'Show Slogan', 'electa' ),
         'section' => $section,
         'type'    => 'checkbox',
-        'description' => __( 'Enable to a slogan for your site. This uses the site Tagline', 'electa' ),
+        'description' => __( 'Enable to a slogan for your site. This uses the Site Tagline', 'electa' ),
         'default' => 1,
     );
     $options['kra-header-search'] = array(
@@ -64,7 +64,7 @@ function customizer_library_kaira_options() {
         'label'   => __( 'Show Search', 'electa' ),
         'section' => $section,
         'type'    => 'checkbox',
-        'description' => __( 'Enable to a slogan for your site. This uses the site Tagline', 'electa' ),
+        'description' => __( 'Enable to show a search box on the site', 'electa' ),
         'default' => 1,
     );
     // Upsell Button One
@@ -171,7 +171,7 @@ function customizer_library_kaira_options() {
         'section' => $section,
         'type'    => 'textarea',
         'default' => __( '', 'electa'),
-        'description' => __( 'Add custom CSS to your theme', 'electa' )
+        'description' => __( 'Add custom CSS to your theme. For advanced custom styling we recommend using a <a href="https://wordpress.org/plugins/so-css/" target="_blank">Custom CSS plugin</a>', 'electa' )
     );
     
     
@@ -189,7 +189,7 @@ function customizer_library_kaira_options() {
         'label'   => __( 'Enable home blocks layout', 'electa' ),
         'section' => $section,
         'type'    => 'checkbox',
-        'description' => __( 'Enable this to change the layout of the home page to list posts as blocks. This shows ALL posts', 'electa' ),
+        'description' => __( 'Enable this to change the layout of the blog page to list posts as blocks. This shows ALL posts', 'electa' ),
         'default' => 0,
     );
     $options['kra-blog-cats'] = array(

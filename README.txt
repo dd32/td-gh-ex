@@ -61,6 +61,11 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.2.2
+* Fixed bug with bocks layout.
+* Added hint/help links into customizer settings.
+* Styling tweaks.
+
 #### 1.2.1
 * Style tweaks.
 * Upgrade text change.
@@ -94,6 +99,5 @@ View the theme settings under "Appearance" -> Customize.
 * Added a page under "Appearance" linking to Kaira website.
 * Added sanitization to the widgets - Electa Carousel & Electa Icon.
 * Added an upgrade to premium page under Appearance.
-
 
 * Initial release.
