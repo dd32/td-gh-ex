@@ -2,9 +2,9 @@
 Contributors: joedolson
 Donate link: https://www.joedolson.com/donate/
 Tags: accessibility-ready, translation-ready, responsive-layout, two-columns, black, blue, gray, white, light, custom-header, custom-menu, custom-background, custom-colors, featured-images, sticky-post
-Requires at least: 3.8.2
+Requires at least: 4.0.5
 Tested up to: 4.2
-Stable tag: 0.9.9
+Stable tag: 1.0.0
 License: GPLv2 or later
 
 Universal: ready for accessibility, responsive, and waiting for your content. 
@@ -37,6 +37,15 @@ Nothing yet!
 3. Go to Appearance > Customize to customize features of the theme.
 
 == Changelog ==
+
+= 1.0.0 =
+
+* Feature: navigate primary menu using arrow keys
+* Restrict access to H1 in TinyMCE editor to encourage proper hierarchy.
+* Added support for Dropbox, Yahoo, Email, RSS, Soundcloud, Steam, Stackoverflow, Delicious, Flattr, Foursquare, & Yelp to Social Media icons.
+* Bug fix: Missing icons.
+* Duplicated post-content class on single post view.
+* Updated requires value.
 
 = 0.9.9 =
 
