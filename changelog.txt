@@ -1,5 +1,9 @@
 *** discover Changelog ***
 
+
+28-07-2015 - version 1.7.29
+*Theme options files updated to remove BUG "Cheating UH error"...
+
 30-03-2015 - version 1.7.28
 *Options.php updated with translation...
 

@@ -637,23 +637,16 @@ function discover_wrapper_end() {
   <!--content end-->';
 }
 
-// include panel file.
+define( 'DISCOVER_PARENT_DIR', get_template_directory() );
+define( 'DISCOVER_ADMIN_DIR', DISCOVER_PARENT_DIR . '/admin' );
+/**
+ * Adds support for a theme option.
+ */
 if ( !function_exists( 'optionsframework_init' ) ) {
+	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/admin/options/' );
+	require_once( DISCOVER_ADMIN_DIR . '/options/options-framework.php' );
 
-	/*-----------------------------------------------------------------------------------*/
-	/* Options Framework Theme
-	/*-----------------------------------------------------------------------------------*/
-
-	/* Set the file path based on whether the Options Framework Theme is a parent theme or child theme */
-
-	if ( get_stylesheet_directory() == get_template_directory_uri() ) {
-		define('OPTIONS_FRAMEWORK_URL', get_template_directory() . '/admin/');
-		define('OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/admin/');
-	} else {
-		define('OPTIONS_FRAMEWORK_URL', get_template_directory() . '/admin/');
-		define('OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/admin/');
-	}
-
-	require_once (OPTIONS_FRAMEWORK_URL . 'options-framework.php');
-
+	// Loads options.php from child or parent theme
+	$optionsfile = locate_template( 'options.php' );
+	load_template( $optionsfile );
 }
