@@ -28,6 +28,7 @@
 	}  ?>	
 	<form method="post" id="webriti_theme_options_1">
 		<div id="heading">
+		 <h3><?php _e('In the next version ie 1.3 we are moving all the theme options in the customizer, as per the latest guidelines.','elitepress'); ?></h3>
 			<table style="width:100%;"><tr>
 				<td><h2><?php _e('Quick Start Settings','elitepress');?></h2></td>
 				<td style="width:30%;">
