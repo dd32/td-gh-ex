@@ -101,7 +101,7 @@
 			<h3><?php _e('Service One','corpbiz'); ?></h3>
 			<h3><?php _e('Service Icons','corpbiz'); ?></h3>			
 			<input class="webriti_inpute"  type="text" name="service_icon_one" id="service_icon_one" value="<?php echo $current_options['service_icon_one']; ?>" >
-			<h4 class="heading"><?php __('Service Icon (Using Font Awesome icons name) like: fa-rub.','corpbiz'); ?> <label style="margin-left:10px;"><a href="http://fontawesome.io/icons/" target="_blank"><?php __('Get your fontawesome icons.','corpbiz'); ?></a></label></h4>
+			<h3 class="heading"><?php _e('Service Icon (Using Font Awesome icons name) like: fa-rub.','corpbiz');?> <label style="margin-left:10px;"><a href="<?php echo esc_url( __('http://fontawesome.io/icons/', 'corpbiz'));?>" target="_blank"><?php _e('Get your fontawesome icons.','corpbiz'); ?></a></label></h3>
 			<h3><?php _e('Service Title','corpbiz'); ?></h3>
 			<input class="webriti_inpute"  type="text" name="service_title_one" id="service_title_one" value="<?php echo $current_options['service_title_one']; ?>" >
 			<span class="explain"><?php _e('Enter the Service Title.','corpbiz'); ?></span>
@@ -119,7 +119,7 @@
 			<h3><?php _e('Service Two','corpbiz'); ?></h3>
 			<h3><?php _e('Service Icons','corpbiz'); ?></h3>			
 			<input class="webriti_inpute"  type="text" name="service_icon_two" id="service_icon_two" value="<?php echo $current_options['service_icon_two']; ?>" >
-			<h4 class="heading"><?php __('Service Icon (Using Font Awesome icons name) like: fa-rub.','corpbiz'); ?> <label style="margin-left:10px;"><a href="http://fontawesome.io/icons/" target="_blank"> <?php __('Get your fontawesome icons.','corpbiz'); ?></a></label></h4>
+			<h3 class="heading"><?php _e('Service Icon (Using Font Awesome icons name) like: fa-rub.','corpbiz');?> <label style="margin-left:10px;"><a href="<?php echo esc_url( __('http://fontawesome.io/icons/', 'corpbiz'));?>" target="_blank"><?php _e('Get your fontawesome icons.','corpbiz'); ?></a></label></h3>
 			<h3><?php _e('Service Title','corpbiz'); ?></h3>
 			<input class="webriti_inpute"  type="text" name="service_title_two" id="service_title_two" value="<?php echo $current_options['service_title_two']; ?>" >
 			<span class="explain"><?php _e('Enter the Service Title.','corpbiz'); ?></span>
@@ -137,7 +137,7 @@
 			<h3><?php _e('Service Three','corpbiz'); ?></h3>
 			<h3><?php _e('Service Icons','corpbiz'); ?></h3>			
 			<input class="webriti_inpute"  type="text" name="service_icon_three" id="service_icon_three" value="<?php echo $current_options['service_icon_three']; ?>" >
-			<h4 class="heading"><?php __('Service Icon (Using Font Awesome icons name) like: fa-rub.','corpbiz'); ?> <label style="margin-left:10px;"><a href="http://fontawesome.io/icons/" target="_blank"> <?php __('Get your fontawesome icons.','corpbiz'); ?></a></label></h4>
+			<h3 class="heading"><?php _e('Service Icon (Using Font Awesome icons name) like: fa-rub.','corpbiz');?> <label style="margin-left:10px;"><a href="<?php echo esc_url( __('http://fontawesome.io/icons/', 'corpbiz'));?>" target="_blank"><?php _e('Get your fontawesome icons.','corpbiz'); ?></a></label></h3>
 			<h3><?php _e('Service Title','corpbiz'); ?></h3>
 			<input class="webriti_inpute"  type="text" name="service_title_three" id="service_title_three" value="<?php echo $current_options['service_title_three']; ?>" >
 			<span class="explain"><?php _e('Enter the Service Title.','corpbiz'); ?></span>
@@ -155,8 +155,7 @@
 			<h3><?php _e('Service Four','corpbiz'); ?></h3>
 			<h3><?php _e('Service Icons','corpbiz'); ?></h3>			
 			<input class="webriti_inpute"  type="text" name="service_icon_four" id="service_icon_four" value="<?php echo $current_options['service_icon_four']; ?>" >
-			<h4 class="heading"><?php __('Service Icon (Using Font Awesome icons name) like: fa-rub.','corpbiz');?> <label style="margin-left:10px;"><a href="http://fontawesome.io/icons/" target="_blank"> <?php __('Get your fontawesome icons.','corpbiz'); ?></a></label></h4>
-			<h3><?php _e('Service Title','corpbiz'); ?></h3>
+			<h3 class="heading"><?php _e('Service Icon (Using Font Awesome icons name) like: fa-rub.','corpbiz');?> <label style="margin-left:10px;"><a href="<?php echo esc_url( __('http://fontawesome.io/icons/', 'corpbiz'));?>" target="_blank"><?php _e('Get your fontawesome icons.','corpbiz'); ?></a></label></h3>
 			<input class="webriti_inpute"  type="text" name="service_title_four" id="service_title_four" value="<?php echo $current_options['service_title_four']; ?>" >
 			<span class="explain"><?php _e('Enter the Service Title.','corpbiz'); ?></span>
 			<h3><?php _e('Service Description','corpbiz'); ?></h3>			

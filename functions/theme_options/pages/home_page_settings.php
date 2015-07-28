@@ -35,6 +35,7 @@
 	<form method="post" id="webriti_theme_options_1">
 		<div id="heading">
 			<table style="width:100%;"><tr>
+			<h3><?php _e('In the next version ie 1.4 we are moving all the theme options in the customizer, as per the latest guidelines.','corpbiz'); ?>
 				<td><h2><?php _e('Quick Start Settings','corpbiz');?></h2></td>
 				<td style="width:30%;">
 					<div class="webriti_settings_loding" id="webriti_loding_1_image"></div>

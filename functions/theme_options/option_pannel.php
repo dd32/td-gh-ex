@@ -1,7 +1,7 @@
 <?php
 add_action('admin_menu', 'webriti_admin_menu_pannel');  
 function webriti_admin_menu_pannel()
- {	add_theme_page( __('theme','corpbiz'), __('Option Panel','corpbiz'), 'edit_theme_options', 'webriti', 'webriti_option_panal_function' ); 
+ {	add_theme_page( __('theme','corpbiz'), __('Option Panel','corpbiz'), 'edit_theme_options', 'webriti', 'corpbiz_option_panal_function' ); 
  	add_action('admin_enqueue_scripts', 'webriti_admin_enqueue_script');
  }
 function webriti_admin_enqueue_script($hook)
@@ -18,9 +18,6 @@ function webriti_admin_enqueue_script($hook)
 	wp_enqueue_style('corpbiz-optionpanal-dragdrop',get_template_directory_uri().'/functions/theme_options/css/optionpanal-dragdrop.css');
 	wp_enqueue_style('corpbiz-upgrade', get_template_directory_uri(). '/functions/theme_options/css/upgrade-pro.css');
 	
-	/** Font awesome **/
-	wp_enqueue_style( 'bootstrap-style' , '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
-	
 	//Custom plugin
 	wp_enqueue_script('corpbiz_admin_js',get_template_directory_uri().'/functions/theme_options/js/my-custom.js');
 	wp_enqueue_script ('wff_custom_wp_admin_js');
@@ -30,6 +27,6 @@ function webriti_admin_enqueue_script($hook)
         wp_enqueue_style( 'wff_custom_wp_admin_css' );
 }
 }
-function webriti_option_panal_function()
+function corpbiz_option_panal_function()
 {	require_once('webriti_option_pannel.php'); }
 ?>

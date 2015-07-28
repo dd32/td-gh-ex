@@ -7,6 +7,7 @@
 				<?php endif; 
 				corpbiz_post_meta_content(); ?>
 				<div class="blog_post_content">
-					<?php the_content(__( 'Read More' , 'corpbiz' )); ?><?php if(wp_link_pages()) { wp_link_pages();  } ?>	
+					<?php the_content(__( 'Read More' , 'corpbiz' )); ?>
+					<?php wp_link_pages();  ?>
 				</div>	
 			</div>

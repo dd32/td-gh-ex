@@ -45,6 +45,7 @@
 		//$args = array('default-color' => '#ffffff');
 		//add_theme_support( 'custom-background', $args  ); 
 		add_theme_support( 'automatic-feed-links');
+		 add_theme_support( "title-tag" );
 		
 		require_once('theme_setup_data.php');
 		require( WEBRITI_THEME_FUNCTIONS_PATH . '/theme_options/option_pannel.php' ); // for Option Panel Settings		
@@ -99,9 +100,9 @@
 	}
 	add_action('wp_enqueue_scripts', 'webriti_scripts');
 	// Read more tag to formatting in blog page 	
-	function webriti_content_more($more)
+	function corpbiz_content_more($more)
 	{  global $post;
 		return '<div class="blog-btn-col"><a href="' . get_permalink() . "\" class=\"blog-btn\">Read More</a></div>";
 	}   
-	add_filter( 'the_content_more_link', 'webriti_content_more' );
+	add_filter( 'the_content_more_link', 'corpbiz_content_more' );
 ?>
