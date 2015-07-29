@@ -18,7 +18,7 @@ get_template_part('index','banner'); ?>
 				<div class="blog-author">
 					<div class="media">
 						<div class="pull-left">
-							<?php echo get_avatar( get_the_author_meta( 'ID') , 94); ?>
+							<?php echo get_avatar( get_the_author_meta( 'ID') , 200); ?>
 						</div>
 						<div class="media-body">
 							<h2> <?php the_author(); ?> <span> <?php $user = new WP_User( get_the_author_meta( 'ID' ) ); echo $user->roles[0];?> </span></h2>

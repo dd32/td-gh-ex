@@ -75,7 +75,7 @@ add_filter('get_avatar','appointment_add_gravatar_class');
 add_theme_support( "title-tag" );
 
 function appointment_add_gravatar_class($class) {
-    $class = str_replace("class='avatar", "class='img-circle", $class);
+    $class = str_replace("class='avatar", "class='img-responsive img-circle", $class);
     return $class;
 }
 function appointment_add_to_author_profile( $contactmethods ) {
@@ -85,7 +85,7 @@ function appointment_add_to_author_profile( $contactmethods ) {
 		$contactmethods['google_profile'] = __('Google Profile URL','appointment');
 		return $contactmethods;
 	}
-	add_filter( 'user_contactmethods', 'appointment_add_to_author_profile', 10, 1);
+add_filter( 'user_contactmethods', 'appointment_add_to_author_profile', 10, 1);
 	
 	function appointment_excerpt_length($length ) {
 	        return 25;
@@ -116,7 +116,7 @@ function appointment_add_to_author_profile( $contactmethods ) {
                 
         }
 						
-		function get_home_blog_excerpt()
+	function get_home_blog_excerpt()
 	{
 		global $post;
 		$excerpt = get_the_content();
@@ -131,5 +131,6 @@ function appointment_add_to_author_profile( $contactmethods ) {
 		}
 		else
 		{ return $excerpt; }
-	}	
+	}
+	
 ?>

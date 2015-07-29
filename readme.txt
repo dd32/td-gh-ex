@@ -94,6 +94,8 @@ Source: http://fontawesome.io
 
 # --- EOF --- #
 ============================Change Log================================
+@version 2.2.2
+1. Add img-responsive class in author avator image
 @version 2.2.1
 1. Add css code in media-responsive for phone landscape and porttrait mode.
 @version 2.2
