@@ -30,7 +30,10 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
-= Version 2.5.0 | 29th June 2015 =
+= Version 2.5.1 | 29th July 2015 =
+* Fix: undefined variable notice. 
+
+= Version 2.5.0 | 29th July 2015 =
 * Add: Customizer options.
 * Fix: Odd gif error on some servers.
 * Fix: Home page visibilty options.

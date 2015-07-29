@@ -58,6 +58,7 @@ function kadence_sidebar_id() {
         } 
     } elseif( class_exists('woocommerce') and (is_account_page())) {
             get_template_part('templates/account', 'sidebar');
+            $sidebar = "";
     } elseif(is_page_template('page-blog.php') || is_page_template('page-sidebar.php') || is_page_template('page-feature-sidebar.php') || (get_post_type() == 'post')) {
       global $post;
       $sidebar_name = get_post_meta( $post->ID, '_kad_sidebar_choice', true ); 
