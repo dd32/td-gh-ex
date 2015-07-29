@@ -79,9 +79,7 @@ function theme_data_setup()
 			'social_media_youtube_link' =>"#",
 			
 			/** footer customization **/
-			'footer_customizations' => 'Copyright @ 2014 - WALL STREET. Designed by',
-			'created_by_webriti_text' => __('Webriti','wallstreet'),
-			'created_by_link' => 'http://webriti.com/',
+			'footer_copyright' =>__('Copyright @ 2014 - WALL STREET. Designed by  <a href="'.esc_url('http://www.webriti.com').'" target="_blank">Webriti</a>','wallstreet'),
 		);
 }
 ?>
