@@ -7,9 +7,9 @@ function virtue_lang_setup() {
 	load_theme_textdomain('virtue', get_template_directory() . '/languages');
 }
 add_action( 'after_setup_theme', 'virtue_lang_setup' );
-require_once locate_template('/themeoptions/options/virtue_extension.php'); // Options framework extension
 require_once locate_template('/themeoptions/framework.php');        // Options framework
 require_once locate_template('/themeoptions/options.php');     		// Options framework
+require_once locate_template('/themeoptions/options/virtue_extension.php'); // Options framework extension
 require_once locate_template('/lib/utils.php');           			// Utility functions
 require_once locate_template('/lib/init.php');            			// Initial theme setup and constants
 require_once locate_template('/lib/sidebar.php');         			// Sidebar class

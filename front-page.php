@@ -57,7 +57,7 @@
       		<?php if(isset($virtue['homepage_layout']['enabled'])) { 
       			$layout = $virtue['homepage_layout']['enabled']; 
       		  } else {
-      		  	$layout = array("block_twenty" => "block_twenty", "block_five" => "block_five"); 
+      		  	$layout = array("block_one" => "block_one", "block_four" => "block_four"); 
       		  }
 
 				if ($layout):
@@ -134,5 +134,4 @@
 				}
 			endif; ?>  
 			</div>
-
 		</div><!-- /.main -->

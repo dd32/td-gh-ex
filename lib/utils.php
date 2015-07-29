@@ -47,7 +47,7 @@ class Kadence_Wrapping {
     return locate_template($templates);
   }
 }
-add_filter('template_include', array('Kadence_Wrapping', 'wrap'), 99);
+add_filter('template_include', array('Kadence_Wrapping', 'wrap'), 101);
 
 /**
  * Page titles

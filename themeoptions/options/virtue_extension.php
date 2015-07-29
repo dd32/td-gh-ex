@@ -1,9 +1,10 @@
 <?php
 
-// Replace {$redux_opt_name} with your opt_name.
-// Also be sure to change this function name!
-
-if(!function_exists('redux_register_custom_extension_loader')) :
+if ( class_exists( 'Redux' ) ) {
+    $opt_name = 'virtue';
+    Redux::setExtensions( $opt_name, dirname( __FILE__ ) . '/extensions/' );
+}
+/* if(!function_exists('redux_register_custom_extension_loader')) :
     function redux_register_custom_extension_loader($ReduxFramework) {
         $path = dirname( __FILE__ ) . '/extensions/';
         $folders = scandir( $path, 1 );        
@@ -25,3 +26,4 @@ if(!function_exists('redux_register_custom_extension_loader')) :
     }
     add_action("redux/extensions/virtue/before", 'redux_register_custom_extension_loader', 0);
 endif;
+*/

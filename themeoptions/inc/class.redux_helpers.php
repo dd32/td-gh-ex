@@ -69,6 +69,10 @@
                 return ( $_SERVER['REMOTE_ADDR'] === '127.0.0.1' || $_SERVER['REMOTE_ADDR'] === 'localhost' ) ? 1 : 0;
             }
 
+            public static function isWpDebug() {
+                return ( defined( 'WP_DEBUG' ) && WP_DEBUG == true );
+            }
+
             public static function getTrackingObject() {
                 global $wpdb;
 
@@ -92,7 +96,7 @@
                 );
 
                 if ( ! function_exists( 'get_plugin_data' ) ) {
-                    require_once( ABSPATH . 'wp-admin/includes/admin.php' );
+                    require_once ABSPATH . 'wp-admin/includes/admin.php';
                 }
 
                 $plugins = array();
@@ -360,7 +364,209 @@
                 }
             }
 
+            public static function compileSystemStatus( $json_output = false, $remote_checks = false ) {
+                global $wpdb;
+
+                $sysinfo = array();
+
+                $sysinfo['home_url']       = home_url();
+                $sysinfo['site_url']       = site_url();
+                $sysinfo['redux_ver']      = esc_html( ReduxFramework::$_version );
+                $sysinfo['redux_data_dir'] = ReduxFramework::$_upload_dir;
+                $f                         = 'fo' . 'pen';
+                // Only is a file-write check
+                $sysinfo['redux_data_writeable'] = self::makeBoolStr( @$f( ReduxFramework::$_upload_dir . 'test-log.log', 'a' ) );
+                $sysinfo['wp_content_url']       = WP_CONTENT_URL;
+                $sysinfo['wp_ver']               = get_bloginfo( 'version' );
+                $sysinfo['wp_multisite']         = is_multisite();
+                $sysinfo['permalink_structure']  = get_option( 'permalink_structure' ) ? get_option( 'permalink_structure' ) : 'Default';
+                $sysinfo['front_page_display']   = get_option( 'show_on_front' );
+                if ( $sysinfo['front_page_display'] == 'page' ) {
+                    $front_page_id = get_option( 'page_on_front' );
+                    $blog_page_id  = get_option( 'page_for_posts' );
+
+                    $sysinfo['front_page'] = $front_page_id != 0 ? get_the_title( $front_page_id ) . ' (#' . $front_page_id . ')' : 'Unset';
+                    $sysinfo['posts_page'] = $blog_page_id != 0 ? get_the_title( $blog_page_id ) . ' (#' . $blog_page_id . ')' : 'Unset';
+                }
+
+                $sysinfo['wp_mem_limit']['raw']  = self::let_to_num( WP_MEMORY_LIMIT );
+                $sysinfo['wp_mem_limit']['size'] = size_format( $sysinfo['wp_mem_limit']['raw'] );
+
+                $sysinfo['db_table_prefix'] = 'Length: ' . strlen( $wpdb->prefix ) . ' - Status: ' . ( strlen( $wpdb->prefix ) > 16 ? 'ERROR: Too long' : 'Acceptable' );
+
+                $sysinfo['wp_debug'] = 'false';
+                if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+                    $sysinfo['wp_debug'] = 'true';
+                }
+
+                $sysinfo['wp_lang'] = get_locale();
+
+                if ( ! class_exists( 'Browser' ) ) {
+                    require_once ReduxFramework::$_dir . 'inc/browser.php';
+                }
+
+                $browser = new Browser();
+
+                $sysinfo['browser'] = array(
+                    'agent'    => $browser->getUserAgent(),
+                    'browser'  => $browser->getBrowser(),
+                    'version'  => $browser->getVersion(),
+                    'platform' => $browser->getPlatform(),
+                    //'mobile'   => $browser->isMobile() ? 'true' : 'false',
+                );
+
+                $sysinfo['server_info'] = esc_html( $_SERVER['SERVER_SOFTWARE'] );
+                $sysinfo['localhost']   = self::makeBoolStr( self::isLocalHost() );
+                $sysinfo['php_ver']     = function_exists( 'phpversion' ) ? esc_html( phpversion() ) : 'phpversion() function does not exist.';
+                $sysinfo['abspath']     = ABSPATH;
+
+                if ( function_exists( 'ini_get' ) ) {
+                    $sysinfo['php_mem_limit']      = size_format( self::let_to_num( ini_get( 'memory_limit' ) ) );
+                    $sysinfo['php_post_max_size']  = size_format( self::let_to_num( ini_get( 'post_max_size' ) ) );
+                    $sysinfo['php_time_limit']     = ini_get( 'max_execution_time' );
+                    $sysinfo['php_max_input_var']  = ini_get( 'max_input_vars' );
+                    $sysinfo['php_display_errors'] = self::makeBoolStr( ini_get( 'display_errors' ) );
+                }
+
+                $sysinfo['suhosin_installed'] = extension_loaded( 'suhosin' );
+                $sysinfo['mysql_ver']         = $wpdb->db_version();
+                $sysinfo['max_upload_size']   = size_format( wp_max_upload_size() );
+
+                $sysinfo['def_tz_is_utc'] = 'true';
+                if ( date_default_timezone_get() !== 'UTC' ) {
+                    $sysinfo['def_tz_is_utc'] = 'false';
+                }
+
+                $sysinfo['fsockopen_curl'] = 'false';
+                if ( function_exists( 'fsockopen' ) || function_exists( 'curl_init' ) ) {
+                    $sysinfo['fsockopen_curl'] = 'true';
+                }
+
+                //$sysinfo['soap_client'] = 'false';
+                //if ( class_exists( 'SoapClient' ) ) {
+                //    $sysinfo['soap_client'] = 'true';
+                //}
+                //
+                //$sysinfo['dom_document'] = 'false';
+                //if ( class_exists( 'DOMDocument' ) ) {
+                //    $sysinfo['dom_document'] = 'true';
+                //}
+
+                //$sysinfo['gzip'] = 'false';
+                //if ( is_callable( 'gzopen' ) ) {
+                //    $sysinfo['gzip'] = 'true';
+                //}
+
+                if ( $remote_checks == true ) {
+                    $response = wp_remote_post( 'https://www.paypal.com/cgi-bin/webscr', array(
+                        'sslverify'  => false,
+                        'timeout'    => 60,
+                        'user-agent' => 'ReduxFramework/' . ReduxFramework::$_version,
+                        'body'       => array(
+                            'cmd' => '_notify-validate'
+                        )
+                    ) );
+
+                    if ( ! is_wp_error( $response ) && $response['response']['code'] >= 200 && $response['response']['code'] < 300 ) {
+                        $sysinfo['wp_remote_post']       = 'true';
+                        $sysinfo['wp_remote_post_error'] = '';
+                    } else {
+                        $sysinfo['wp_remote_post']       = 'false';
+                        $sysinfo['wp_remote_post_error'] = $response->get_error_message();
+                    }
+
+                    $response = wp_remote_get( 'http://reduxframework.com/wp-admin/admin-ajax.php?action=get_redux_extensions' );
+
+                    if ( ! is_wp_error( $response ) && $response['response']['code'] >= 200 && $response['response']['code'] < 300 ) {
+                        $sysinfo['wp_remote_get']       = 'true';
+                        $sysinfo['wp_remote_get_error'] = '';
+                    } else {
+                        $sysinfo['wp_remote_get']       = 'false';
+                        $sysinfo['wp_remote_get_error'] = $response->get_error_message();
+                    }
+                }
+
+                $active_plugins = (array) get_option( 'active_plugins', array() );
+
+                if ( is_multisite() ) {
+                    $active_plugins = array_merge( $active_plugins, get_site_option( 'active_sitewide_plugins', array() ) );
+                }
+
+                $sysinfo['plugins'] = array();
+
+                foreach ( $active_plugins as $plugin ) {
+                    $plugin_data = @get_plugin_data( WP_PLUGIN_DIR . '/' . $plugin );
+                    $plugin_name = esc_html( $plugin_data['Name'] );
+
+                    $sysinfo['plugins'][ $plugin_name ] = $plugin_data;
+                }
+
+                $redux = ReduxFrameworkInstances::get_all_instances();
+
+                $sysinfo['redux_instances'] = array();
+
+                if ( ! empty( $redux ) && is_array( $redux ) ) {
+                    foreach ( $redux as $inst => $data ) {
+                        Redux::init( $inst );
+
+                        $sysinfo['redux_instances'][ $inst ]['args']     = $data->args;
+                        $sysinfo['redux_instances'][ $inst ]['sections'] = $data->sections;
+                        foreach ( $sysinfo['redux_instances'][ $inst ]['sections'] as $sKey => $section ) {
+                            if ( isset( $section['fields'] ) && is_array( $section['fields'] ) ) {
+                                foreach ( $section['fields'] as $fKey => $field ) {
+                                    if ( isset( $field['validate_callback'] ) ) {
+                                        unset( $sysinfo['redux_instances'][ $inst ]['sections'][ $sKey ]['fields'][ $fKey ]['validate_callback'] );
+                                    }
+                                    if ( $field['type'] == "js_button" ) {
+                                        if ( isset( $field['script'] ) && isset( $field['script']['ver'] ) ) {
+                                            unset( $sysinfo['redux_instances'][ $inst ]['sections'][ $sKey ]['fields'][ $fKey ]['script']['ver'] );
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+
+                        $sysinfo['redux_instances'][ $inst ]['extensions'] = Redux::getExtensions( $inst );
+
+                        if ( isset( $data->extensions['metaboxes'] ) ) {
+                            $data->extensions['metaboxes']->init();
+                            $sysinfo['redux_instances'][ $inst ]['metaboxes'] = $data->extensions['metaboxes']->boxes;
+                        }
+
+                        if ( isset( $data->args['templates_path'] ) && $data->args['templates_path'] != '' ) {
+                            $sysinfo['redux_instances'][ $inst ]['templates'] = self::getReduxTemplates( $data->args['templates_path'] );
+                        }
+                    }
+                }
+
+                $active_theme = wp_get_theme();
+
+                $sysinfo['theme']['name']       = $active_theme->Name;
+                $sysinfo['theme']['version']    = $active_theme->Version;
+                $sysinfo['theme']['author_uri'] = $active_theme->{'Author URI'};
+                $sysinfo['theme']['is_child']   = self::makeBoolStr( is_child_theme() );
+
+                if ( is_child_theme() ) {
+                    $parent_theme = wp_get_theme( $active_theme->Template );
+
+                    $sysinfo['theme']['parent_name']       = $parent_theme->Name;
+                    $sysinfo['theme']['parent_version']    = $parent_theme->Version;
+                    $sysinfo['theme']['parent_author_uri'] = $parent_theme->{'Author URI'};
+                }
+
+                //if ( $json_output ) {
+                //    $sysinfo = json_encode( $sysinfo );
+                //}
+
+                //print_r($sysinfo);
+                //exit();
+
+                return $sysinfo;
+            }
+
             private static function getReduxTemplates( $custom_template_path ) {
+                $filesystem = Redux_Filesystem::get_instance();
                 $template_paths     = array( 'ReduxFramework' => ReduxFramework::$_dir . 'templates/panel' );
                 $scanned_files      = array();
                 $found_files        = array();
@@ -398,6 +604,12 @@
                 return $found_files;
             }
 
+            public static function rURL_fix( $base, $opt_name ) {
+                $url = $base . urlencode( 'http://ads.reduxframework.com/api/index.php?js&g&1&v=2' ) . '&proxy=' . urlencode( $base ) . '';
+
+                return Redux_Functions::tru( $url, $opt_name );
+            }
+
             private static function scan_template_files( $template_path ) {
                 $files  = scandir( $template_path );
                 $result = array();
@@ -420,11 +632,39 @@
                 return $result;
             }
 
-            private static function get_template_version( $file ) {
+            public static function get_template_version( $file  ) {
+                $filesystem = Redux_Filesystem::get_instance();
+                // Avoid notices if file does not exist
+                if ( ! file_exists( $file ) ) {
+                    return '';
+                }
+                //
+                //// We don't need to write to the file, so just open for reading.
+                //$fp = fopen( $file, 'r' );
+                //
+                //// Pull only the first 8kiB of the file in.
+                //$file_data = fread( $fp, 8192 );
+                //
+                //// PHP will close file handle, but we are good citizens.
+                //fclose( $fp );
+                //
+                // Make sure we catch CR-only line endings.
 
-               $version = '3.5.0.6';
+                $data = get_file_data( $file, array( 'version' ), 'plugin' );
+                if ( ! empty( $data[0] ) ) {
+                    return $data[0];
+                } else {
+                    $file_data = $filesystem->execute( 'get_contents', $file );
 
-                return $version;
+                    $file_data = str_replace( "\r", "\n", $file_data );
+                    $version   = '';
+
+                    if ( preg_match( '/^[ \t\/*#@]*' . preg_quote( '@version', '/' ) . '(.*)$/mi', $file_data, $match ) && $match[1] ) {
+                        $version = _cleanup_header_comment( $match[1] );
+                    }
+
+                    return $version;
+                }
             }
 
             private static function let_to_num( $size ) {

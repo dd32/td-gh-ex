@@ -14,6 +14,7 @@ function kadence_register_required_plugins() {
 			'name'     				=> 'Virtue/Pinnacle Toolkit', // The plugin name
 			'slug'     				=> 'virtue-toolkit', // The plugin slug (typically the folder name)
 			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
+			'version' 				=> '3.0',
 			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
 			'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
 		)
@@ -36,7 +37,7 @@ function kadence_register_required_plugins() {
 			'installing'                       			=> __( 'Installing Plugin: %s', 'virtue' ), // %1$s = plugin name
 			'oops'                             			=> __( 'Something went wrong with the plugin API.', 'virtue' ),
 			'notice_can_install_required'     			=> _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.' ), // %1$s = plugin name(s)
-			'notice_can_install_recommended'			=> _n_noop( 'This theme comes packaged with the following premium plugin: %1$s. enjoy:)', 'This theme comes packaged with the following premium plugin: %1$s. enjoy:)' ), // %1$s = plugin name(s)
+			'notice_can_install_recommended'			=> _n_noop( 'This theme recommends the following plugins, they add extra features to the theme options and content controls: %1$s. enjoy:)', 'This theme recommends the following plugins, they add extra features to the theme options and content controls: %1$s. enjoy:)' ), // %1$s = plugin name(s)
 			'notice_cannot_install'  					=> _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.' ), // %1$s = plugin name(s)
 			'notice_can_activate_required'    			=> _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.' ), // %1$s = plugin name(s)
 			'notice_can_activate_recommended'			=> _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.' ), // %1$s = plugin name(s)
