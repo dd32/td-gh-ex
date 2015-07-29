@@ -119,13 +119,6 @@ if ( ! function_exists( 'accesspress_mag_entry_footer' ) ) :
  * Prints HTML with meta information for the categories, tags and comments.
  */
 function accesspress_mag_entry_footer() {
-    /*
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link( __( 'Leave a comment', 'accesspress-mag' ), __( '1 Comment', 'accesspress-mag' ), __( '% Comments', 'accesspress-mag' ) );
-		echo '</span>';
-	}
-    */    
     if('post'==get_post_type() && !is_tag() ){
         $trans_tagged = of_get_option( 'trans_tagged' );
         $accesspress_mag_show_tags = of_get_option('show_tags_post');

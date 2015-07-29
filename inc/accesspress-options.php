@@ -144,6 +144,15 @@ function optionsframework_options() {
             'std' => 'Latest ', 
             );
     $options[] = array(
+            'name' => __( 'Sticky Menu', 'accesspress-mag' ),                
+            'desc' => __( 'Enable or Disable sticky menu behaviour.', 'accesspress-mag' ),
+            'id' => 'menu_sticky',
+            'on' => __( 'Enable', 'accesspress-mag'),
+            'off' => __( 'Disable', 'accesspress-mag'),
+            'std' => '1',
+            'type' => 'switch'
+            );
+    $options[] = array(
             'type' => 'groupend'
             );
     /*--------------Logo Setting-------------------*/

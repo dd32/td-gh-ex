@@ -31,6 +31,9 @@ JS Files
     
     Jquery News Ticker: GPL v2
     http://www.jquerynewsticker.com/
+    
+    Sticky Js by Anthony Garand : MIT license
+    https://github.com/garand/sticky
   
 -------------------------------------------
 Fonts
@@ -63,6 +66,13 @@ GPL compatible for own images
 
 ----------------------------------------------------
 == Changelog ==
+Version 2.0.8
+ * Fixed bugs about overwitten theme css by news ticker css
+ * Added sticky menu behaviour for only primay menu
+ * Fixed design bugs in news ticker content area
+ * Some changes in our function code
+ * Updated mo file for language translate
+ 
 Version 2.0.7
  * Display full post of slider in mobile device
  * Fixed bugs on slider function and add extra slider function for mobile device

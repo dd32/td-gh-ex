@@ -59,7 +59,6 @@ function accesspress_mag_admin_css(){
 add_action('admin_head','accesspress_mag_admin_css');
 
 /*---------------------------------------------------------------------------------------------------------------------------------------*/
-
 /**
  * News ticker section in the header
  */
@@ -87,11 +86,8 @@ function accesspress_mag_ticker() {
 }
 endif;
 
-
 /*---------------------------------------------------------------------------------------------------------------------------------------*/
-
 /**
- * 
  * Homepage Slider settings 
  */
 if ( ! function_exists( 'accesspress_mag_slider_cb' ) ) : 
@@ -176,9 +172,7 @@ function accesspress_mag_slider_cb(){
 add_action( 'accesspress_mag_slider', 'accesspress_mag_slider_cb', 10 );
 
 /*---------------------------------------------------------------------------------------------------------------------------------------*/
-
 /**
- * 
  * Homepage Slider settings mobile
  */
 if ( ! function_exists( 'accesspress_mag_slider_mobile_cb' ) ) : 
@@ -248,11 +242,8 @@ function accesspress_mag_slider_mobile_cb(){
 add_action( 'accesspress_mag_slider_mobile', 'accesspress_mag_slider_mobile_cb', 10 );
 
 /*---------------------------------------------------------------------------------------------------------------------------------------*/
-
 /**
- * 
  * Function scripts for header
- * 
  */
  
 if( ! function_exists( 'accesspress_mag_function_script' ) ): 
@@ -287,15 +278,20 @@ function accesspress_mag_function_script(){
 
         /*--------------For news ticker----------------*/
 
+            <?php if ( of_get_option( 'news_ticker_option', '1' ) == 1 ) {  ?>
             $('#apmag-news').ticker({
                 speed: 0.10,
+                feedType: 'xml',
+                displayType: 'reveal',
                 htmlFeed: true,
+                debugMode: true,    
                 fadeInSpeed: 600,
                 //displayType: 'fade',
                 pauseOnItems: 4000,
                 direction: 'ltr',
                 titleText: '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo esc_attr( $ticker_caption ); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
             });
+            <?php } ?>
             
             });
     </script>
@@ -305,9 +301,7 @@ endif ;
 add_action( 'wp_head', 'accesspress_mag_function_script' );
 
 /*---------------------------------------------------------------------------------------------------------------------------------------*/
-
 /**
- * 
  * Get category name and it's link  
  */
  if( ! function_exists( 'category_details' ) ):
@@ -324,9 +318,7 @@ add_action( 'wp_head', 'accesspress_mag_function_script' );
 endif;
 
 /*---------------------------------------------------------------------------------------------------------------------------------------*/
-
 /**
- * 
  * Get and set Post Views
  */
 
@@ -358,11 +350,8 @@ function accesspress_mag_setPostViews($postID) {
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0); 
 
 /*---------------------------------------------------------------------------------------------------------------------------------------*/
-
 /**
- * 
  * Sidebar layout for post & pages
- * 
  */ 
 function accesspress_mag_sidebar_layout_class($classes){
     global $post;
@@ -396,9 +385,7 @@ function accesspress_mag_sidebar_layout_class($classes){
 add_filter( 'body_class', 'accesspress_mag_sidebar_layout_class' );
 
 /*---------------------------------------------------------------------------------------------------------------------------------------*/
-
 /**
- * 
  * Template style layout for post and pages
  */
 
@@ -431,9 +418,7 @@ function accesspress_mag_template_layout_class($classes){
 add_filter( 'body_class', 'accesspress_mag_template_layout_class' );
 
 /*---------------------------------------------------------------------------------------------------------------------------------------*/
-
 /**
- *
  * Website layout 
  */
 
@@ -449,9 +434,7 @@ function accesspress_mag_website_layout_class( $classes ){
 add_filter( 'body_class', 'accesspress_mag_website_layout_class' );
 
 /*---------------------------------------------------------------------------------------------------------------------------------------*/
-
 /**
- * 
  * Meta post on
  */
 
@@ -472,9 +455,7 @@ endif ;
 add_action( 'accesspress_mag_post_meta', 'accesspress_mag_post_meta_cb', 10 );
 
 /*---------------------------------------------------------------------------------------------------------------------------------------*/
-
 /**
- * 
  * Posted on for home page
  */
 
@@ -518,9 +499,7 @@ endif;
 add_action( 'accesspress_mag_home_posted_on', 'accesspress_mag_home_posted_on_cb', 10 );
 
 /*---------------------------------------------------------------------------------------------------------------------------------------*/
-
 /**
- * 
  * Excerpt length (Effect on archive page only) 
  */
 if( ! function_exists( 'accesspress_mag_customize_excerpt_more' ) ):
@@ -552,9 +531,7 @@ function accesspress_mag_letter_count( $content, $limit ) {
 endif;
 
 /*---------------------------------------------------------------------------------------------------------------------------------------*/
-
 /**
- * 
  * Get excerpt content (Effect only in archive page)
  */
 
@@ -574,9 +551,7 @@ function accesspress_mag_excerpt(){
 endif;
 
 /*---------------------------------------------------------------------------------------------------------------------------------------*/
-
 /**
- * 
  * BreadCrumb Settings
  */
 
@@ -739,11 +714,8 @@ $accesspress_show_breadcrumb = of_get_option( 'show_hide_breadcrumbs' );
 if((function_exists('accesspress_mag_woocommerce_breadcrumbs') && $accesspress_show_breadcrumb == 1)) { 
 add_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 10, 0 ); 
 }
-
-/*-------------------------------------------------------------------------------------------------------------------------------*/ 
-
+/*-------------------------------------------------------------------------------------------------------------------------------*/
 /**
- *
  * Remove bbpress breadcrumbs
  */
 if( ! function_exists( 'accesspress_mag_bbp_no_breadcrumb' ) ):

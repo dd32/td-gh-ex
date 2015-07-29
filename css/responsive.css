@@ -292,12 +292,15 @@
     .sidebar-top-ad .ad_content{
         width: 300px;
     }
+    #site-navigation {
+        position: relative !important;
+    }
 }
 /* Landscape phones and down */
 
 @media (max-width: 579px) {
     .big-cat-box {
-        width: 95px;
+        width: 115px;
         padding: 10px;
     }
     .single_post.top-post {

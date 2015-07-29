@@ -26,15 +26,10 @@
         $branding_class = '';
         $accesspress_mag_logo_alt = of_get_option( 'logo_alt' );
         $accesspress_mag_logo_title = of_get_option( 'logo_title' );
-        $accesspress_mag_ticker_option = of_get_option( 'news_ticker_option' );
-        if(of_get_option('menu_sticky') == '1'){
-            $sticky_header = "sticky-header";
-        }else{
-            $sticky_header = "";
-        }
+        $accesspress_mag_ticker_option = of_get_option( 'news_ticker_option', '1' );
     ?>  
 	
-    <header id="masthead" class="site-header <?php echo esc_attr( $sticky_header ); ?>" role="banner">    
+    <header id="masthead" class="site-header" role="banner">    
     
         <?php
             /**
@@ -66,7 +61,6 @@
         
         <?php 
             /**
-             * 
              * News Ticker section 
              */
              if( $accesspress_mag_ticker_option == '1' ){

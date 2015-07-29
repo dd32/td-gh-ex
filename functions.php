@@ -93,6 +93,12 @@ add_action( 'after_setup_theme', 'accesspress_mag_setup' );
  * Enqueue scripts and styles.
  */
 function accesspress_mag_scripts() {
+	if ( of_get_option( 'news_ticker_option', '1' ) == 1 ) {        
+      wp_enqueue_style( 'ticker-style', get_template_directory_uri() . '/js/news-ticker/ticker-style.css' );
+      
+      wp_enqueue_script( 'news-ticker', get_template_directory_uri() . '/js/news-ticker/jquery.ticker.js', array( 'jquery' ), '1.0.0', true );
+    }
+
 	$font_args = array(
         'family' => 'Open+Sans:400,600,700,300|Oswald:400,700,300|Dosis:400,300,500,600,700',
     );
@@ -101,26 +107,17 @@ function accesspress_mag_scripts() {
     $theme_version = $my_theme->get('Version'); 
     wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.css');
     
-    wp_enqueue_style( 'accesspress-mag-style', get_stylesheet_uri(), array(), esc_attr($theme_version) );
-        
     wp_enqueue_style( 'fontawesome-font', get_template_directory_uri(). '/css/font-awesome.min.css' );
     	
+    wp_enqueue_style( 'accesspress-mag-style', get_stylesheet_uri(), array(), esc_attr($theme_version) );
+
     wp_enqueue_style( 'responsive', get_template_directory_uri() . '/css/responsive.css');
     
+   if ( of_get_option( 'menu_sticky', '1' ) == 1 ) {
+      wp_enqueue_script( 'jquery-sticky', get_template_directory_uri(). '/js/sticky/jquery.sticky.js', array( 'jquery' ), '1.0.2', true );
 
-    if ( of_get_option( 'news_ticker_option' ) == 1 ) {        
-      wp_enqueue_style( 'ticker-style', get_template_directory_uri() . '/js/news-ticker/ticker-style.css' );
-      
-      wp_enqueue_style( 'newsticker-style', get_template_directory_uri() . '/js/news-ticker/news-ticker-style.css' );
-      
-      wp_enqueue_script( 'news-ticker', get_template_directory_uri() . '/js/news-ticker/jquery.ticker.js', array( 'jquery' ), '1.0.0', true );
-   }
-
-   if ( of_get_option( 'skticky_menu_option' ) == 1 ) {
-      wp_enqueue_script( 'jquery-sticky', get_template_directory_uri(). '/js/sticky/jquery.sticky.js', array( 'jquery' ), '20150309', true );
-
-      wp_enqueue_script( 'accesspress-mag-sticky-menu-setting', get_template_directory_uri(). '/js/sticky/sticky-setting.js', array( 'jquery-sticky' ), '20150309', true );
-   }
+      wp_enqueue_script( 'accesspress-mag-sticky-menu-setting', get_template_directory_uri(). '/js/sticky/sticky-setting.js', array( 'jquery-sticky' ), esc_attr($theme_version), true );
+    }
    
     wp_enqueue_script( 'bxslider-js', get_template_directory_uri(). '/js/jquery.bxslider.min.js', array( 'jquery' ), '4.1.2', true );
     
