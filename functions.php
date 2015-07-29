@@ -83,12 +83,7 @@ if( ! function_exists( 'unlimited_customize_comments' ) ) {
 		<article id="comment-<?php comment_ID(); ?>" class="comment">
 			<div class="comment-author">
 				<?php
-				// if is post author
-				if ( $comment->user_id === $post->post_author ) {
-					unlimited_profile_image_output();
-				} else {
 					echo get_avatar( get_comment_author_email(), 48, '', get_comment_author() );
-				}
 				?>
 				<div class="author-name">
 					<span><?php comment_author_link(); ?></span> <?php _x( 'said:', 'unlimited', 'the commenter said the following:' ); ?>
@@ -430,50 +425,6 @@ if( ! function_exists('unlimited_social_icons_output') ) {
 	}
 }
 
-// retrieves the attachment ID from the file URL
-function unlimited_get_image_id($url) {
-
-    // Split the $url into two parts with the wp-content directory as the separator
-    $parsed_url  = explode( parse_url( WP_CONTENT_URL, PHP_URL_PATH ), $url );
-
-    // Get the host of the current site and the host of the $url, ignoring www
-    $this_host = str_ireplace( 'www.', '', parse_url( home_url(), PHP_URL_HOST ) );
-    $file_host = str_ireplace( 'www.', '', parse_url( $url, PHP_URL_HOST ) );
-
-    // Return nothing if there aren't any $url parts or if the current host and $url host do not match
-    if ( ! isset( $parsed_url[1] ) || empty( $parsed_url[1] ) || ( $this_host != $file_host ) ) {
-        return;
-    }
-
-    // Now we're going to quickly search the DB for any attachment GUID with a partial path match
-    // Example: /uploads/2013/05/test-image.jpg
-    global $wpdb;
-
-    $attachment = $wpdb->get_col( $wpdb->prepare( "SELECT ID FROM {$wpdb->prefix}posts WHERE guid RLIKE %s;", $parsed_url[1] ) );
-
-    // Returns null if no attachment is found
-    return $attachment[0];
-}
-
-function unlimited_profile_image_output(){
-
-    // use User's profile image, else default to their Gravatar
-    if(get_the_author_meta('unlimited_user_profile_image')){
-
-        // get the id based on the image's URL
-        $image_id = unlimited_get_image_id(get_the_author_meta('unlimited_user_profile_image'));
-
-        // retrieve the thumbnail size of profile image (60px)
-        $image_thumb = wp_get_attachment_image($image_id, array(60,60), false, array('alt' => get_the_author() ) );
-
-        // display the image
-        echo $image_thumb;
-
-    } else {
-        echo get_avatar( get_the_author_meta( 'ID' ), 60, '', get_the_author() );
-    }
-}
-
 function unlimited_wp_backwards_compatibility() {
 
 	// not using this function, simply remove it so use of "has_image_size" doesn't break < 3.9
@@ -579,35 +530,3 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) :
 	}
 	add_action( 'wp_head', 'unlimited_add_title_tag' );
 endif;
-
-// show notice telling users about avatar change coming in v1.50
-function ct_unlimited_avatar_notice() {
-
-	// if not dismissed previously, show message
-	if ( get_option( 'ct_unlimited_dismiss_avatar_notice' ) != true ) {
-
-		// set link with full explanation
-		// linking to my site and redirecting as a precaution to maintain control
-		$url = 'https://www.competethemes.com/unlimited-avatar-redirect/';
-		?>
-		<div id="unlimited-avatar-notice" class="update-nag notice is-dismissible">
-			<p><?php printf( __( 'Custom avatars are being removed from Unlimited in v1.09. Please <a target="_blank" href="%s">follow these instructions</a> before the next update', 'unlimited' ), esc_url($url) ); ?>.</p>
-		</div>
-	<?php
-	}
-}
-add_action( 'admin_notices', 'ct_unlimited_avatar_notice' );
-
-// remove the notice permanently if user clicks the "x" button
-function ct_unlimited_dismiss_avatar_notice() {
-
-	// get the dismissed value
-	$dismissed = $_POST['dismissed'];
-
-	// if set to true, update option
-	if( $dismissed == true ) {
-		update_option('ct_unlimited_dismiss_avatar_notice', true);
-	}
-	die();
-}
-add_action( 'wp_ajax_dismiss_unlimited_avatar_notice', 'ct_unlimited_dismiss_avatar_notice' );

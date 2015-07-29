@@ -48,22 +48,12 @@ add_action('wp_enqueue_scripts', 'unlimited_load_scripts_styles' );
  */
 function unlimited_enqueue_admin_styles($hook){
 
-	// if is user profile page
-	if('profile.php' == $hook || 'user-edit.php' == $hook ){
-
-		// Enqueues all scripts, styles, settings, and templates necessary to use all media JavaScript APIs.
-		wp_enqueue_media();
-
-		// enqueue the JS needed to utilize media uploader on profile image upload
-		wp_enqueue_script('ct-unlimited-profile-image-uploader', get_template_directory_uri() . '/js/build/profile-image-uploader.min.js#unlimited_asyncload');
-	}
 	// if theme options page
 	if( 'appearance_page_unlimited-options' == $hook ) {
 
 		// Admin styles
 		wp_enqueue_style('ct-unlimited-admin-styles', get_template_directory_uri() . '/styles/admin.min.css');
 	}
-	wp_enqueue_script('ct-unlimited-admin-js', get_template_directory_uri() . '/js/build/admin.min.js');
 }
 add_action('admin_enqueue_scripts',	'unlimited_enqueue_admin_styles' );
 

@@ -9,9 +9,9 @@ function unlimited_add_customizer_content( $wp_customize ) {
 
 	$wp_customize->get_section('title_tagline')->priority     = 1;
 	$wp_customize->get_section('static_front_page')->priority = 5;
-	$wp_customize->get_section('static_front_page')->title = __('Front Page', 'unlimited');
-	$wp_customize->get_section('nav')->priority = 10;
-	$wp_customize->get_section('nav')->title = __('Menus', 'unlimited');
+	$wp_customize->get_section('static_front_page')->title    = __('Front Page', 'unlimited');
+	$wp_customize->get_section('nav')->priority               = 10;
+	$wp_customize->get_section('nav')->title                  = __('Menus', 'unlimited');
 
 	/***** Add PostMessage Support *****/
 	
@@ -89,49 +89,49 @@ function unlimited_add_customizer_content( $wp_customize ) {
 
 		public function render_content() {
 			$link = 'https://www.competethemes.com/unlimited-pro/';
-			echo "<p>" . sprintf( __('Activate <a target="_blank" href="%s">Unlimited Pro</a> to change your colors.', 'unlimited'), $link ) . "</p>";
+			echo "<p>" . sprintf( __('Activate the <a target="_blank" href="%s">Unlimited Pro Plugin</a> to change your colors.', 'unlimited'), $link ) . "</p>";
 		}
 	}
 	class unlimited_description_header_image_control extends WP_Customize_Control {
 
 		public function render_content() {
 			$link = 'https://www.competethemes.com/unlimited-pro/';
-			echo "<p>" . sprintf( __('Activate <a target="_blank" href="%s">Unlimited Pro</a> for advanced header image functionality.', 'unlimited'), $link ) . "</p>";
+			echo "<p>" . sprintf( __('Activate the <a target="_blank" href="%s">Unlimited Pro Plugin</a> for advanced header image functionality.', 'unlimited'), $link ) . "</p>";
 		}
 	}
 	class unlimited_description_background_control extends WP_Customize_Control {
 
 		public function render_content() {
 			$link = 'https://www.competethemes.com/unlimited-pro/';
-			echo "<p>" . sprintf( __('Activate <a target="_blank" href="%s">Unlimited Pro</a> for advanced background image and texture functionality.', 'unlimited'), $link ) . "</p>";
+			echo "<p>" . sprintf( __('Activate the <a target="_blank" href="%s">Unlimited Pro Plugin</a> for advanced background image and texture functionality.', 'unlimited'), $link ) . "</p>";
 		}
 	}
 	class unlimited_description_font_control extends WP_Customize_Control {
 
 		public function render_content() {
 			$link = 'https://www.competethemes.com/unlimited-pro/';
-			echo "<p>" . sprintf( __('Activate <a target="_blank" href="%s">Unlimited Pro</a> to change your font.', 'unlimited'), $link ) . "</p>";
+			echo "<p>" . sprintf( __('Activate the <a target="_blank" href="%s">Unlimited Pro Plugin</a> to change your font.', 'unlimited'), $link ) . "</p>";
 		}
 	}
 	class unlimited_description_fixed_menu_control extends WP_Customize_Control {
 
 		public function render_content() {
 			$link = 'https://www.competethemes.com/unlimited-pro/';
-			echo "<p>" . sprintf( __('Activate <a target="_blank" href="%s">Unlimited Pro</a> to change your menu to a fixed style.', 'unlimited'), $link ) . "</p>";
+			echo "<p>" . sprintf( __('Activate the <a target="_blank" href="%s">Unlimited Pro Plugin</a> to change your menu to a fixed style.', 'unlimited'), $link ) . "</p>";
 		}
 	}
 	class unlimited_description_display_control_control extends WP_Customize_Control {
 
 		public function render_content() {
 			$link = 'https://www.competethemes.com/unlimited-pro/';
-			echo "<p>" . sprintf( __('Activate <a target="_blank" href="%s">Unlimited Pro</a> to get hide/show controls.', 'unlimited'), $link ) . "</p>";
+			echo "<p>" . sprintf( __('Activate the <a target="_blank" href="%s">Unlimited Pro Plugin</a> to get hide/show controls.', 'unlimited'), $link ) . "</p>";
 		}
 	}
 	class unlimited_description_footer_text_control extends WP_Customize_Control {
 
 		public function render_content() {
 			$link = 'https://www.competethemes.com/unlimited-pro/';
-			echo "<p>" . sprintf( __('Activate <a target="_blank" href="%s">Unlimited Pro</a> to customize the footer text.', 'unlimited'), $link ) . "</p>";
+			echo "<p>" . sprintf( __('Activate the <a target="_blank" href="%s">Unlimited Pro Plugin</a> to customize the footer text.', 'unlimited'), $link ) . "</p>";
 		}
 	}
 
@@ -140,7 +140,7 @@ function unlimited_add_customizer_content( $wp_customize ) {
 
 	// section
 	$wp_customize->add_section( 'unlimited_logo_upload', array(
-		'title'      => __( 'Logo Upload', 'unlimited' ),
+		'title'      => __( 'Logo', 'unlimited' ),
 		'priority'   => 20,
 		'capability' => 'edit_theme_options'
 	) );
@@ -650,7 +650,7 @@ add_action('wp_head','unlimited_ajaxurl');
 
 function unlimited_customize_preview_js() {
 
-	$content = "<script>jQuery('#customize-info').prepend('<div class=\"upgrades-ad\"><a href=\"https://www.competethemes.com/unlimited-pro/\" target=\"_blank\">View the Unlimited Pro Upgrade <span>&rarr;</span></a></div>');</script>";
+	$content = "<script>jQuery('#customize-info').prepend('<div class=\"upgrades-ad\"><a href=\"https://www.competethemes.com/unlimited-pro/\" target=\"_blank\">View the Unlimited Pro Plugin <span>&rarr;</span></a></div>');</script>";
 
 	echo apply_filters('unlimited_customizer_ad', $content);
 }
