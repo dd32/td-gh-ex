@@ -16,10 +16,7 @@ var TCParams = TCParams || {
   centerSliderImg : 1,
 	SmoothScroll: { Enabled : 1 , Options : {} },
 	anchorSmoothScroll: "linear",
-  anchorSmoothScrollExclude : {
-      simple : ['[class*=edd]', '.tc-carousel-control', '.carousel-control', '[data-toggle="modal"]', '[data-toggle="dropdown"]', '[data-toggle="tooltip"]', '[data-toggle="popover"]', '[data-toggle="collapse"]', '[data-toggle="tab"]', '[class*=upme]', '[class*=um-]'],
-      deep : { classes : [], ids : [] }
-    },
+  anchorSmoothScrollExclude : ['[class*=edd]', '.tc-carousel-control', '.carousel-control', '[data-toggle="modal"]', '[data-toggle="dropdown"]', '[data-toggle="tooltip"]', '[data-toggle="popover"]', '[data-toggle="collapse"]', '[data-toggle="tab"]', '[class*=upme]', '[class*=um-]'],
 	stickyCustomOffset: { _initial : 0, _scrolling : 0, options : { _static : true, _element : "" } },
 	stickyHeader: 1,
 	dropdowntoViewport: 1,
@@ -27,7 +24,7 @@ var TCParams = TCParams || {
   extLinksStyle :1,
   extLinksTargetExt:1,
   extLinksSkipSelectors: {
-    classes : ['btn', 'button'],
+    classes : ['btn'],
     ids:[]
   },
   dropcapEnabled:1,
@@ -39,15 +36,12 @@ var TCParams = TCParams || {
     ids : []
   },
   imgSmartLoadEnabled:0,
-  imgSmartLoadOpts: {
-    parentSelectors: ['.article-container', '.__before_main_wrapper', '.widget-front'],
-    opts : { excludeImg: ['.tc-holder-img'] }
-  },
+  imgSmartLoadOpts: {},
   goldenRatio : 1.618,
   gridGoldenRatioLimit : 350,
   isSecondMenuEnabled : 0,
   secondMenuRespSet : 'in-sn-before'
-};
+}
 // addEventListener Polyfill ie9- http://stackoverflow.com/a/27790212
 window.addEventListener = window.addEventListener || function (e, f) { window.attachEvent('on' + e, f); };
 
@@ -2853,8 +2847,7 @@ var TCParams = TCParams || {};
   var pluginName = 'imgSmartLoad',
       defaults = {
         load_all_images_on_first_scroll : false,
-        attribute : [ 'data-src', 'data-srcset' ],
-        excludeImg : '',
+        attribute : 'data-src',
         threshold : 200,
         fadeIn_options : { duration : 400 },
         delaySmartLoadEvent : 0
@@ -2873,8 +2866,7 @@ var TCParams = TCParams || {};
   //can access this.element and this.option
   Plugin.prototype.init = function () {
     var self        = this,
-        $_imgs   = $( 'img[' + this.options.attribute[0] + ']:not('+ this.options.excludeImg.join() +')' , this.element );
-
+        $_imgs   = $( 'img[' + this.options.attribute + ']' , this.element );
     this.increment  = 1;//used to wait a little bit after the first user scroll actions to trigger the timer
     this.timer      = 0;
 
@@ -2950,48 +2942,18 @@ var TCParams = TCParams || {};
   * replace src place holder by data-src attr val which should include the real src
   */
   Plugin.prototype._load_img = function( _img ) {
-    var $_img    = $(_img),
-        _src     = $_img.attr( this.options.attribute[0] ),
-        _src_set = $_img.attr( this.options.attribute[1] ),
+    var $_img = $(_img),
+        _src  = $_img.attr( this.options.attribute ),
         self = this;
 
     $_img.parent().addClass('smart-loading');
 
     $_img.unbind('load_img')
     .hide()
-    //https://api.jquery.com/removeAttr/
-    //An attribute to remove; as of version 1.7, it can be a space-separated list of attributes.
-    //minimum supported wp version (3.4+) embeds jQuery 1.7.2
-    .removeAttr( this.options.attribute.join(' ') )
-    .attr( 'srcset' , _src_set )
-    .attr('src', _src )
+    .removeAttr( this.options.attribute )
+    .attr('src' , _src )
     .load( function () {
-      //prevent executing this twice on an already smartloaded img
-      if ( ! $_img.hasClass('tc-smart-loaded') )
-        $_img.fadeIn(self.options.fadeIn_options).addClass('tc-smart-loaded');
-
-      //Following would be executed twice if needed, as some browsers at the
-      //first execution of the load callback might still have not actually loaded the img
-
-      //jetpack's photon commpability (seems to be unneeded since jetpack 3.9.1)
-      //Honestly to me this makes no really sense but photon does it.
-      //Basically photon recalculates the image dimension and sets its
-      //width/height attribute once the image is smartloaded. Given the fact that those attributes are "needed" by the browser to assign the images a certain space so that when loaded the page doesn't "grow" it's height .. what's the point doing it so late?
-      if ( ( 'undefined' !== typeof $_img.attr('data-tcjp-recalc-dims')  ) && ( false !== $_img.attr('data-tcjp-recalc-dims') ) ) {
-        var _width  = $_img.originalWidth();
-            _height = $_img.originalHeight();
-
-        if ( 2 != _.size( _.filter( [ _width, _height ], function(num){ return _.isNumber( parseInt(num, 10) ) && num > 1; } ) ) )
-          return;
-
-        //From photon.js: Modify given image's markup so that devicepx-jetpack.js will act on the image and it won't be reprocessed by this script.
-        $_img.removeAttr( 'data-tcjp-recalc-dims scale' );
-
-        $_img.attr( 'width', _width );
-        $_img.attr( 'height', _height );
-      }
-
-      $_img.trigger('smartload');
+      $_img.fadeIn(self.options.fadeIn_options).addClass('tc-smart-loaded').trigger('smartload');
     });//<= create a load() fn
     //http://stackoverflow.com/questions/1948672/how-to-tell-if-an-image-is-loaded-or-cached-in-jquery
     if ( $_img[0].complete )
@@ -3009,8 +2971,7 @@ var TCParams = TCParams || {};
         }
     });
   };
-})( jQuery, window, document );
-//Target the first letter of the first element found in the wrapper
+})( jQuery, window, document );//Target the first letter of the first element found in the wrapper
 ;(function ( $, window, document, undefined ) {
     //defaults
     var pluginName = 'extLinks',
@@ -3071,17 +3032,7 @@ var TCParams = TCParams || {};
       if ( 2 != ( ['ids', 'classes'].filter( function( sel_type) { return self._is_selector_allowed(sel_type); } ) ).length )
         return;
 
-      var _is_eligible = true;
-      // disallow elements whose parent has text-decoration: underline
-      // we want to exit as soon as we find a parent with the underlined text-decoration
-      $.each( this.$_el.parents(), function() {
-        if ( 'underline' == $(this).css('textDecoration') ){
-          _is_eligible = false;
-          return false;    
-        }
-      });
-      
-      return true && _is_eligible;
+      return true;
     };
 
 
@@ -3093,9 +3044,6 @@ var TCParams = TCParams || {};
     * @return boolean
     */
     Plugin.prototype._is_selector_allowed = function( requested_sel_type ) {
-      if ( czrapp )
-        return czrapp.isSelectorAllowed( this.$_el, this.options.skipSelectors, requested_sel_type);
-
       var sel_type = 'ids' == requested_sel_type ? 'id' : 'class',
           _selsToSkip   = this.options.skipSelectors[requested_sel_type];
 
@@ -3261,7 +3209,7 @@ var TCParams = TCParams || {};
     var new_height = Math.round( $(this.container).width() / this.options.goldenRatioVal );
     //check if the new height does not exceed the goldenRatioLimitHeightTo option
     new_height = new_height > this.options.goldenRatioLimitHeightTo ? this.options.goldenRatioLimitHeightTo : new_height;
-    $(this.container).css( {'line-height' : new_height + 'px' , 'height' : new_height + 'px' } ).trigger('golden-ratio-applied');
+    $(this.container).css( {'line-height' : new_height + 'px' , 'height' : new_height + 'px' } );
   };
 
 
@@ -4126,43 +4074,6 @@ smoothScroll._setCustomOptions = function( _options ){
 })();
 
 var smoothScroll;
-// modified version of
-// outline.js (https://github.com/lindsayevans/outline.js)
-// based on http://www.paciellogroup.com/blog/2012/04/how-to-remove-css-outlines-in-an-accessible-manner/
-var tcOutline;
-(function(d){
-  tcOutline = function() {
-	var style_element = d.createElement('STYLE'),
-	    dom_events = 'addEventListener' in d,
-	    add_event_listener = function(type, callback){
-			// Basic cross-browser event handling
-			if(dom_events){
-				d.addEventListener(type, callback);
-			}else{
-				d.attachEvent('on' + type, callback);
-			}
-		},
-	    set_css = function(css_text){
-			// Handle setting of <style> element contents in IE8
-			if ( !!style_element.styleSheet )
-                style_element.styleSheet.cssText = css_text; 
-            else 
-                style_element.innerHTML = css_text;
-		}
-	;
-
-	d.getElementsByTagName('HEAD')[0].appendChild(style_element);
-
-	// Using mousedown instead of mouseover, so that previously focused elements don't lose focus ring on mouse move
-	add_event_listener('mousedown', function(){
-		set_css('input[type=file]:focus,input[type=radio]:focus,input[type=checkbox]:focus,select:focus,a:focus{outline:0}input[type=file]::-moz-focus-inner,input[type=radio]::-moz-focus-inner,input[type=checkbox]::-moz-focus-inner,select::-moz-focus-inner,a::-moz-focus-inner{border:0;}');
-	});
-
-	add_event_listener('keydown', function(){
-		set_css('');
-	});
-  }
-})(document);
 //@global TCParams
 var czrapp = czrapp || {};
 
@@ -4300,31 +4211,6 @@ var czrapp = czrapp || {};
     },
 
 
-    //@return bool
-    isSelectorAllowed : function( $_el, skip_selectors, requested_sel_type ) {
-      var sel_type = 'ids' == requested_sel_type ? 'id' : 'class',
-      _selsToSkip   = skip_selectors[requested_sel_type];
-
-      //check if option is well formed
-      if ( 'object' != typeof(skip_selectors) || ! skip_selectors[requested_sel_type] || ! $.isArray( skip_selectors[requested_sel_type] ) || 0 === skip_selectors[requested_sel_type].length )
-        return true;
-
-      //has a forbidden parent?
-      if ( $_el.parents( _selsToSkip.map( function( _sel ){ return 'id' == sel_type ? '#' + _sel : '.' + _sel; } ).join(',') ).length > 0 )
-        return false;
-
-      //has requested sel ?
-      if ( ! $_el.attr( sel_type ) )
-        return true;
-
-      var _elSels       = $_el.attr( sel_type ).split(' '),
-          _filtered     = _elSels.filter( function(classe) { return -1 != $.inArray( classe , _selsToSkip ) ;});
-
-      //check if the filtered selectors array with the non authorized selectors is empty or not
-      //if empty => all selectors are allowed
-      //if not, at least one is not allowed
-      return 0 === _filtered.length;
-    },
 
     /***************************************************************************
     * Event methods, offering the ability to bind to and trigger events.
@@ -4404,8 +4290,7 @@ var czrapp = czrapp || {};
       var self = this;
       _.map( cbs, function(cb) {
         if ( 'function' == typeof(self[cb]) ) {
-          args = 'undefined' == typeof( args ) ? Array() : args ;  
-          self[cb].apply(self, args );
+          self[cb].apply(self, 'undefined' == typeof( args ) ? Array() : args );
           czrapp.trigger( cb, _.object( _.keys(args), args ) );
         }
       });//_.map
@@ -4436,9 +4321,6 @@ var czrapp = czrapp || {};
     },
     isReponsive : function() {
       return czrapp.isReponsive();
-    },
-    isSelectorAllowed: function( $_el, skip_selectors, requested_sel_type ) {
-      return czrapp.isSelectorAllowed( $_el, skip_selectors, requested_sel_type );    
     }
 
   };//_methods{}
@@ -4457,8 +4339,6 @@ var czrapp = czrapp || {};
           czrapp.$_body.addClass("chrome");
       else if ( $.browser.webkit )
           czrapp.$_body.addClass("safari");
-      if ( $.browser.mozilla )
-          czrapp.$_body.addClass("mozilla");
       else if ( $.browser.msie || '8.0' === $.browser.version || '9.0' === $.browser.version || '10.0' === $.browser.version || '11.0' === $.browser.version )
           czrapp.$_body.addClass("ie").addClass("ie" + $.browser.version.replace(/[.0]/g, ''));
 
@@ -4470,8 +4350,7 @@ var czrapp = czrapp || {};
 
   $.extend( czrapp.methods.BrowserDetect = {} , _methods );
 
-})(jQuery, czrapp);
-var czrapp = czrapp || {};
+})(jQuery, czrapp);var czrapp = czrapp || {};
 /***************************
 * ADD JQUERY PLUGINS METHODS
 ****************************/
@@ -4489,41 +4368,13 @@ var czrapp = czrapp || {};
     //__before_main_wrapper covers the single post thumbnail case
     //.widget-front handles the featured pages
     imgSmartLoad : function() {
-      var smartLoadEnabled = 1 == TCParams.imgSmartLoadEnabled,
-          //Default selectors for where are : $( '.article-container, .__before_main_wrapper, .widget-front' ).find('img');
-          _where           = TCParams.imgSmartLoadOpts.parentSelectors.join();
-
-      //Smart-Load images
-      //imgSmartLoad plugin will trigger the smartload event when the img will be loaded
-      //the centerImages plugin will react to this event centering them
-      if (  smartLoadEnabled )
-        $( _where ).imgSmartLoad(
-          _.size( TCParams.imgSmartLoadOpts.opts ) > 0 ? TCParams.imgSmartLoadOpts.opts : {}
-        );
-    
-      //If the centerAllImg is on we have to ensure imgs will be centered when simple loaded,
-      //for this purpose we have to trigger the simple-load on:
-      //1) imgs which have been excluded from the smartloading if enabled
-      //2) all the images in the default 'where' if the smartloading isn't enaled
-      //simple-load event on holders needs to be triggered with a certain delay otherwise holders will be misplaced (centering)
-      if ( 1 == TCParams.centerAllImg ) {
-        var self                   = this,
-            $_to_center            = smartLoadEnabled ? 
-               $( _.filter( $( _where ).find('img'), function( img ) {
-                  return $(img).is(TCParams.imgSmartLoadOpts.opts.excludeImg.join());
-                }) ): //filter 
-                $( _where ).find('img');
-            $_to_center_with_delay = $( _.filter( $_to_center, function( img ) {
-                return $(img).hasClass('tc-holder-img'); 
-            }) );
-        
-        //imgs to center with delay
-        setTimeout( function(){
-          self.triggerSimpleLoad( $_to_center_with_delay );
-        }, 300 );
-        //all other imgs to center
-        self.triggerSimpleLoad( $_to_center );
-      }
+      if ( 1 == TCParams.imgSmartLoadEnabled )
+        $( '.article-container, .__before_main_wrapper, .widget-front' ).imgSmartLoad( _.size( TCParams.imgSmartLoadOpts ) > 0 ? TCParams.imgSmartLoadOpts : {} );
+      else {
+        //if smart load not enabled => trigger the load event on img load
+        var $_to_center = $( '.article-container, .__before_main_wrapper, .widget-front' ).find('img');
+        this.triggerSimpleLoad($_to_center);
+      }//end else
     },
 
 
@@ -4593,23 +4444,14 @@ var czrapp = czrapp || {};
     centerImages : function() {
       //SLIDER IMG + VARIOUS
       setTimeout( function() {
-        //centering per slider
-        $.each( $( '.carousel .carousel-inner') , function() {  
-          $( this ).centerImages( {
-            enableCentering : 1 == TCParams.centerSliderImg,
-            imgSel : '.item .carousel-image img',
-            oncustom : ['slid', 'simple_load'],
-            defaultCSSVal : { width : '100%' , height : 'auto' },
-            useImgAttr : true
-          });
-          //fade out the loading icon per slider with a little delay
-          //mostly for retina devices (the retina image will be downloaded afterwards
-          //and this may cause the re-centering of the image)
-          var self = this;
-          setTimeout( function() {
-              $( self ).prevAll('.tc-slider-loader-wrapper').fadeOut();
-          }, 500 );
-        });  
+        $( '.carousel .carousel-inner').centerImages( {
+          enableCentering : 1 == TCParams.centerSliderImg,
+          imgSel : '.item .carousel-image img',
+          oncustom : ['slid', 'simple_load'],
+          defaultCSSVal : { width : '100%' , height : 'auto' },
+          useImgAttr : true
+        });
+        $('.tc-slider-loader-wrapper').hide();
       } , 50);
 
       //Featured Pages
@@ -4813,12 +4655,6 @@ var czrapp = czrapp || {};
         break;
       }
     },//eventHandler
- 
-    //outline firefox fix, see https://github.com/presscustomizr/customizr/issues/538
-    outline: function() {
-      if ( czrapp.$_body.hasClass( 'mozilla' ) )
-        tcOutline();
-    },
 
     //SMOOTH SCROLL
     smoothScroll: function() {
@@ -4831,23 +4667,8 @@ var czrapp = czrapp || {};
       if ( ! TCParams.anchorSmoothScroll || 'easeOutExpo' != TCParams.anchorSmoothScroll )
             return;
 
-      var _excl_sels = ( TCParams.anchorSmoothScrollExclude && _.isArray( TCParams.anchorSmoothScrollExclude.simple ) ) ? TCParams.anchorSmoothScrollExclude.simple.join(',') : '',
-          self = this,
-          $_links = $('a[href^="#"]', '#content').not(_excl_sels);
-
-      //Deep exclusion
-      //are ids and classes selectors allowed ?
-      //all type of selectors (in the array) must pass the filter test
-      _deep_excl = _.isObject( TCParams.anchorSmoothScrollExclude.deep ) ? TCParams.anchorSmoothScrollExclude.deep : null ;
-      if ( _deep_excl )
-        _links = _.toArray($_links).filter( function ( _el ) {
-          return ( 2 == ( ['ids', 'classes'].filter( 
-                        function( sel_type) { 
-                            return self.isSelectorAllowed( $(_el), _deep_excl, sel_type); 
-                        } ) ).length 
-                );
-        });
-      $(_links).click( function () {
+      var _excl_sels = ( TCParams.anchorSmoothScrollExclude && _.isArray( TCParams.anchorSmoothScrollExclude ) ) ? TCParams.anchorSmoothScrollExclude.join(',') : '';
+      $('a[href^="#"]', '#content').not( _excl_sels ).click(function () {
         var anchor_id = $(this).attr("href");
 
         //anchor el exists ?
@@ -4877,13 +4698,11 @@ var czrapp = czrapp || {};
     //BACK TO TOP
     backToTop : function() {
       var $_html = $("html, body"),
-          _backToTop = function( evt ) {
-            return ( evt.which > 0 || "mousedown" === evt.type || "mousewheel" === evt.type) && $_html.stop().off( "scroll mousedown DOMMouseScroll mousewheel keyup", _backToTop );
+          _backToTop = function($) {
+            return ($.which > 0 || "mousedown" === $.type || "mousewheel" === $.type) && $_html.stop().off( "scroll mousedown DOMMouseScroll mousewheel keyup", _backToTop );
           };
 
-      $(".back-to-top, .tc-btt-wrapper, .btt-arrow").on("click touchstart touchend", function ( evt ) {
-        evt.preventDefault();
-        evt.stopPropagation();
+      $(".back-to-top, .tc-btt-wrapper, .btt-arrow").on("click touchstart touchend", function ($) {
         $_html.on( "scroll mousedown DOMMouseScroll mousewheel keyup", _backToTop );
         $_html.animate({
             scrollTop: 0
@@ -4891,6 +4710,7 @@ var czrapp = czrapp || {};
             $_html.stop().off( "scroll mousedown DOMMouseScroll mousewheel keyup", _backToTop );
             //czrapp.$_window.trigger('resize');
         });
+        $.preventDefault();
       });
     },
 
@@ -5351,7 +5171,7 @@ var czrapp = czrapp || {};
           logoH = this.logo._logo.originalHeight();
 
       //check that all numbers are valid before using division
-      if ( 2 != _.size( _.filter( [ logoW, logoH ], function(num){ return _.isNumber( parseInt(num, 10) ) && 0 !== num; } ) ) )
+      if ( 0 === _.size( _.filter( [ logoW, logoH ], function(num){ return _.isNumber( parseInt(num, 10) ) && 0 !== num; } ) ) )
         return;
 
       this.logo._ratio = logoW / logoH;
@@ -5388,17 +5208,11 @@ var czrapp = czrapp || {};
       var self = this;
       //process scrolling actions
       if ( czrapp.$_window.scrollTop() > this.triggerHeight ) {
-        if ( ! this._is_scrolling() ) {
-          czrapp.$_body.addClass("sticky-enabled").removeClass("sticky-disabled")
-                       .trigger('tc-sticky-enabled');
-          // set the logo height, makes sense just when the logo isn't shrinked
-          if ( ! czrapp.$_tcHeader.hasClass('tc-shrink-on') )
-            self._set_logo_height();
-        }
+        if ( ! this._is_scrolling() )
+            czrapp.$_body.addClass("sticky-enabled").removeClass("sticky-disabled");
       }
       else if ( this._is_scrolling() ){
-        czrapp.$_body.removeClass("sticky-enabled").addClass("sticky-disabled")
-                     .trigger('tc-sticky-disabled');
+        czrapp.$_body.removeClass("sticky-enabled").addClass("sticky-disabled");
         setTimeout( function() { self._sticky_refresh(); } ,
           self.isCustomizing ? 100 : 20
         );
@@ -5441,12 +5255,6 @@ var czrapp = czrapp || {};
       czrapp.$_window.on( 'tc-resize', function() {
         self.stickyFooterEventHandler('resize');
       });
-
-      // maybe apply sticky footer on golden ratio applied
-      czrapp.$_window.on( 'golden-ratio-applied', function() {
-        self.stickyFooterEventHandler('refresh');
-      });
-
       /* can be useful without exposing methods make it react to this event which could be externally fired, used in the preview atm */
       czrapp.$_body.on( 'refresh-sticky-footer', function() {
         self.stickyFooterEventHandler('refresh');
@@ -5645,8 +5453,7 @@ var czrapp = czrapp || {};
    _transition_end_callback : function() {
      czrapp.$_body.removeClass( 'animating ' +  this._anim_type)
                   .toggleClass( 'tc-sn-visible' )
-                  .trigger( this._anim_type + '_end' )
-                  .trigger( this._anim_type );
+                  .trigger( this._anim_type + '_end' );
 
      /* on transition end re-set sticky header */
      if ( this._is_sticky_header() ){
@@ -5697,311 +5504,7 @@ var czrapp = czrapp || {};
   czrapp.methods.Czr_SideNav = {};
   $.extend( czrapp.methods.Czr_SideNav , _methods );
 
-})(jQuery, czrapp);
-var czrapp = czrapp || {};
-/************************************************
-* DROPDOWN PLACEMENT SUB CLASS
-*************************************************/
-/* 
-* We need to compute the offset of dropdown and to do this the parents of the submenus
-* have to be visible (visible for jQuery means display:block or similar). 
-* So we treat them case by case 'cause they might be already open (see resize when opened on click ). 
-* We cannot grab all the dropdowns and process them independentely from their parents.
-*
-* So what we do is:
-* 1) grab all the first level dropdowns in the header
-* 2) Cycle through them
-* 3) make the single dropdown parent 'visible' and compute/set its new offset
-* 4) if they have dropdowns children (1st level children), re-start from point 2) throughout them
-* 5) reset the visibility manipulation
-* Points from 3 to 5 are performed in _move_dropdown function
-*/
-(function($, czrapp) {
-  var _methods =  {
-    init : function() {
-      this.$_sidenav                = $( '#tc-sn' );
-      this._dd_first_selector       = '.menu-item-has-children.dropdown > .dropdown-menu' ;
-      this.$_nav_collapse           = czrapp.$_tcHeader.length > 0 ? czrapp.$_tcHeader.find( '.navbar-wrapper .nav-collapse' ) : {};
-      this.$_nav                    = this.$_nav_collapse.length ? this.$_nav_collapse.find( '.nav' ) : {};
-
-      if ( ! this._has_dd_to_move() )
-        return;
-      
-      //cache jQuery el
-      this.$_navbar_wrapper         = this.$_nav_collapse.closest( '.navbar-wrapper' );
-      this.$_nav                    = this.$_nav_collapse.find( '.nav' );
-      this.$_head                   = $( 'head' );
-
-      //other useful vars
-      this._dyn_style_id            = 'tc-dropdown-dyn-style';
-      this._prop                    = czrapp.$_body.hasClass('rtl') ? 'right' : 'left';
-      
-      //fire event listener
-      this.dropdownPlaceEventListener();
-
-      //place dropdowns on init
-      this._place_dropdowns();
-    },//init()
-
-    /***********************************************
-    * DOM EVENT LISTENERS AND HANDLERS
-    ***********************************************/
-    dropdownPlaceEventListener : function() {
-      var self    = this,
-          _events = 'tc-resize sn-open sn-close tc-sticky-enabled tc-place-dropdowns';
-
-      //Any event which may have resized the header
-      czrapp.$_body.on( _events, function( evt ) {
-        self.dropdownPlaceEventHandler( evt, 'resize' );
-      });
-    },
-
-
-    dropdownPlaceEventHandler : function( evt, evt_name ) {
-      var self = this;
-
-      switch ( evt_name ) {
-        case 'resize' :
-          setTimeout( function(){
-            self._place_dropdowns();
-          }, 250);
-        break;
-      }
-    },
-
-
-    _place_dropdowns : function () {
-      var _dd = this._get_dd_to_move();  
-      if ( ! _dd.length )
-        return;
-
-      this._staging();  
-      this._move_dropdown( _dd );
-      this._write_dyn_style();
-      this._unstaging();        
-    },
-
-
-
-    /***********************************************
-    * HELPERS
-    ***********************************************/
-    //DROPDOWN PLACE SUB CLASS HELPER (private like)
-    //When checking if there's something to move does not make sense at the start
-    //1) there's no navbar collapse in the header
-    //2) there are no dropdowns to move in the header 
-    _has_dd_to_move : function() {
-      if ( this.$_nav_collapse.length < 1 )
-        return false;    
-      if ( this.$_nav.length && this.$_nav.find( this._dd_first_selector ) < 1 )
-        return false;    
-      
-      return true;
-    },
-
-    //DROPDOWN PLACE SUB CLASS HELPER (private like)
-    //returns the dropdowns to move on resize?
-    //a) when the nav-collapse is not absolute => we're not in mobile menu case => no dd to move
-    //b) .tc-header .nav is hidden (case: second menu hidden in mobiles ) => no dd to move
-    //c) return the .tc-header .nav dropdown children 
-    _get_dd_to_move : function() {
-      if ( 'absolute' == this.$_nav_collapse.css('position') )
-        return {};
-      if ( ! this.$_nav.is(':visible') )
-        return {};
-      return this.$_nav.find( this._dd_first_selector );
-    },
-
-    //DROPDOWN PLACE SUB CLASS HELPER (private like)
-    //Prepare the environment
-    //What we do here:
-    //1) we 'suspend' the transitions on submenus
-    //2) we add a dynamic style which:
-    // a) sets the max width of the dropdown to the window's width
-    // b) allows braking words for submenus label
-    _staging : function() {
-      this._window_width = czrapp.$_window.width();  
-      //remove submenu fade, transitions corrupt the offset computing
-      if ( this.$_navbar_wrapper.hasClass('tc-submenu-fade') )
-        // tc-submenu-fade-susp(ended) is a dummy class we add for the future check in _unstaging
-        this.$_navbar_wrapper.removeClass('tc-submenu-fade').addClass('tc-submenu-fade-susp');
-      var _max_width            = this._window_width - 40,
-          _dyn_style_css_prefix = '.tc-header .nav-collapse .dropdown-menu';
-          
-      //the max width of a drodpdown must be the window's width (- 40px aesthetical )
-      this._dyn_style  = _dyn_style_css_prefix + ' {max-width: ' + _max_width + 'px;}';
-      //following is to ensure that big labels are broken in more lines if they exceed the max width
-      //probably due to a bug, white-space: pre; doesn't work fine in recent firefox. 
-      //Anyway this just means that the following rule (hence the prev) for them is useless => doesn't introduce a bug
-      //p.s. this could be moved in our main CSS
-      this._dyn_style += _dyn_style_css_prefix + ' > li > a { word-wrap: break-word; white-space: pre; }';
-      this._write_dyn_style();  
-    },
-
-    //DROPDOWN PLACE SUB CLASS HELPER (private like)
-    //Reset temporary changes to the environment performed in the staging phase
-    //What we do here:
-    //1) Re-add the transitions on submenus if needed
-    _unstaging : function() {
-      //re-add submenu fade, transitions corrupt the offset computing
-      if ( this.$_navbar_wrapper.hasClass('tc-submenu-fade-susp') )
-        this.$_navbar_wrapper.removeClass('tc-submenu-fade-susp').addClass('tc-submenu-fade');
-    },
-
-    //DROPDOWN PLACE SUB CLASS HELPER (private like)
-    //Write the dynamic style into the HEAD
-    _write_dyn_style : function() {
-      var $_dyn_style_el = this.$_head.find('#' + this._dyn_style_id);
-                  
-      //there's already a _dyn_style_el, so remove it
-      //I thought that remove/create a new element every time is worse than just have an empty style, but looks like that $_dyn_style_el.html( _dyn_style ) isnt' cross-browser, gives me errors in ie8
-      if ( $_dyn_style_el.length > 0 )
-        $_dyn_style_el.remove();
-      if ( this._dyn_style )
-        // I would have loved ot use getOverrideStyle, but couldn't get it to work -> Error: getOverrideStyle is not a function
-        // I'm probabably missing something. Ref: http://www.w3.org/TR/DOM-Level-2-Style/css.html#CSS-CSSStyleDeclaration
-        // probably not very supported by browsers?
-        // getOverrideStyle($_dropdown[0], ':before');
-        $("<style type='text/css' id='" + this._dyn_style_id +"'>" + this._dyn_style + "</style>")
-          .appendTo( this.$_head );
-    },
-
-    //DROPDOWN PLACE SUB CLASS HELPER (private like)
-    // Moving dropdown core
-    _move_dropdown : function( $dropdown_menu ) {
-      // does dropdown_menu element exists?
-      if ( $dropdown_menu && $dropdown_menu.length ) {
-        if ( $dropdown_menu.length > 1 ) {
-          var self = this;    
-          // is $dropdown_menu an array of elements ? if yes call this function over them
-          $.each( $dropdown_menu, function(){
-            self._move_dropdown( $(this) );
-          });
-          return;
-        }//end array of dropdown case
-      }else //no dropdown
-        return;
-      // Moving core
-      var _is_dropdown_visible = $dropdown_menu.is(':visible');
-      if ( ! _is_dropdown_visible )
-        $dropdown_menu.css('display', 'block').css('visibility', 'hidden');
-
-      //first thing to do; reset all changes why?
-      //example, say the last menu item has a submenu which has been moved when window's width == 1200px, 
-      //then the window is shrinked to 1000px and the last menu item drops on a new line. In this case :
-      //a) the "moving" might not be needed anymore 'cause it might not overflows the window
-      //b) even worse, the "moving" might have made it overflow on the opposite side.
-      this._set_dropdown_offset( $dropdown_menu, '' );
-      //get the current overflow
-      var _overflow     = this._get_dropdown_overflow( $dropdown_menu );
-                    
-      if ( _overflow ) 
-        this._set_dropdown_offset( $dropdown_menu, _overflow );
-
-      //move all the childrens (1st level of children ) which are dropdowns
-      var $_children_dropdowns = $dropdown_menu.children('li.dropdown-submenu');
-        if ( $_children_dropdowns.length )
-          this._move_dropdown( $_children_dropdowns.children('ul.dropdown-menu') );    
-                    
-      //reset 'visibility-manipulation'
-      if ( ! _is_dropdown_visible )
-        $dropdown_menu.css('display', '').css('visibility', '');
-    },
-
-    //DROPDOWN PLACE SUB CLASS HELPER (private like)
-    //Set dropdown offset + first dropdown level top arrow offset accordingly
-    _set_dropdown_offset : function( $dropdown_menu, _dropdown_overflow ) {
-      var _offset = '';
-      
-      if ( _dropdown_overflow ) {
-        var $_parent_dropdown  = $dropdown_menu.parent('.menu-item-has-children'),
-            _is_dropdown_submenu = $_parent_dropdown.hasClass('dropdown-submenu');
-
-        //is submenu 2nd level?
-        if ( _is_dropdown_submenu ) {
-          _offset = parseFloat( $dropdown_menu.css( this._prop ) ) - _dropdown_overflow - 5;
-          //does the parent menu item have "brothers/sisters"? in this case be sure the new position will
-          //not make it completely overlap parent menu item sibling. We can left 50px of space so
-          //the user can access the sibling menu item.
-          //So the condition are:
-          //1) the parent menu item has siblings
-          //and
-          //2) there's a space < 50px between the startin edges of the parent and child dropdown
-          //or
-          //2.1) there's a space < 50px between the ending edges of the parent and child dropdown
-          if ( $_parent_dropdown.next('.menu-item').length ) {
-            var _submenu_overflows_parent = this._get_element_overflow( $dropdown_menu, _offset, $_parent_dropdown );
-            if ( _offset < 50  || _submenu_overflows_parent < 50 ) {
-              _offset = _submenu_overflows_parent - 50;
-            }
-          }
-        } else {
-          _offset = -20 - _dropdown_overflow; //add some space (20px) on the right(rtl-> left)
-          // when is dropdown first level we need to move the top arrow
-          // we need the menu-item-{id} class to build the css rule
-          var _menu_id = $_parent_dropdown.attr('class').match(/menu-item-\d+/);
-          _menu_id = _menu_id ? _menu_id[0] : null;
-          if ( _menu_id )
-            this._set_dropdown_arrow_style( _menu_id, _offset );  
-        }
-      }
-      //in any case write the dropdown offset css:
-      //a dropdown which doesn't have to be moved will not be passed to this function, so no problem. The only case when this is needed is when we reset the dropdowns offset before checking whether or not we have to move it, Maybe we can fine tune this adding a css class to the moved dropdowns so we'll reset just them.
-      $dropdown_menu.css( this._prop, _offset );
-    },
-
-    //DROPDOWN PLACE SUB CLASS HELPER (private like)
-    //compute the dropdown overflow
-    _get_dropdown_overflow : function ( $dropdown_menu ) {
-      var overflow = null,
-          _t_overflow;
-       // how we compute the overflow
-       // ltr 
-       if ( 'left' == this._prop ) {
-         // the overlfow is: the absolute position left/right of the elemnt + its width - the window's width
-         // so it represents the amount of "width" which overflows the window
-         _t_overflow = this._get_element_overflow( $dropdown_menu, $dropdown_menu.offset().left, {}, this._window_width );
-         // a positive overflow means that the dropdown goes off the window
-         // anyways I decided to adjust its position even if the gap between the end of the dropdown
-        // and the window's width is < 5 (6), just to avoid dropdown edges so close to the end of the window
-        overflow = _t_overflow > -5 ? _t_overflow : overflow ;
-      }else { // rtl
-        //the overflow is: the left offset * -1 if less than 5px 
-        //note: jQuery.offset() gives just top and left properties.
-        _t_overflow = $dropdown_menu.offset().left;
-        overflow  = _t_overflow < 5 ? -1 * _t_overflow : overflow;
-      }
-        return overflow;
-    },
-    //DROPDOWN PLACE SUB CLASS HELPER (private like)
-    //compute the overflow of an element given a parent an an initial left offset
-    _get_element_overflow : function ( $_el, _offset, $_parent, _parent_width ) {
-      _parent_width = $_parent.length ? $_parent.width() : _parent_width;  
-      return $_el.width() + _offset - _parent_width;
-    },
-    //DROPDOWN PLACE SUB CLASS HELPER (private like)
-    //compute and set the dropdown first level top arrow offset
-    //which is the original offset for the pseudo element before and after minus the
-    //shift amount applied to the dropdown
-    _set_dropdown_arrow_style : function( _menu_id, _offset ) {
-      //9px is static to avoid using the following via javascript  
-      //window.getComputedStyle($_dropdown[0], ':before').left ;  
-      var _arrow_before_offset    = +9 - _offset,
-          _arrow_after_offset     = _arrow_before_offset + 1,
-          _arrow_css_rule_prefix  = '.tc-header .navbar .nav > .' + _menu_id + ' > .dropdown-menu',
-        
-         _arrow_before_css_rule  = _arrow_css_rule_prefix + ":before { " + this._prop + ": " + _arrow_before_offset + "px;}",
-         _arrow_after_css_rule   = _arrow_css_rule_prefix + ":after { " + this._prop + ": " + _arrow_after_offset + "px;}";
-
-      this._dyn_style += "\n" + _arrow_before_css_rule + "\n" + _arrow_after_css_rule;
-    }
-  };//_methods{}
-
-  czrapp.methods.Czr_DropdownPlace = {};
-  $.extend( czrapp.methods.Czr_DropdownPlace , _methods );
-
-})(jQuery, czrapp);
-var czrapp = czrapp || {};
+})(jQuery, czrapp);var czrapp = czrapp || {};
 
 /************************************************
 * LET'S DANCE
@@ -6011,10 +5514,7 @@ jQuery(function ($) {
     BrowserDetect : [],
     Czr_Plugins : ['centerImagesWithDelay', 'imgSmartLoad' , 'dropCaps', 'extLinks' , 'fancyBox'],
     Czr_Slider : ['fireSliders', 'manageHoverClass', 'centerSliderArrows', 'addSwipeSupport', 'sliderTriggerSimpleLoad'],
-    //DropdownPlace is here to ensure is loaded before UserExperience's secondMenuRespActions
-    //this will simplify the checks on whether or not move dropdowns at start
-    Czr_DropdownPlace : [],
-    Czr_UserExperience : ['eventListener', 'outline','smoothScroll', 'anchorSmoothScroll', 'backToTop', 'widgetsHoverActions', 'attachmentsFadeEffect', 'clickableCommentButton', 'dynSidebarReorder', 'dropdownMenuEventsHandler', 'menuButtonHover', 'secondMenuRespActions'],
+    Czr_UserExperience : ['eventListener', 'smoothScroll', 'anchorSmoothScroll', 'backToTop', 'widgetsHoverActions', 'attachmentsFadeEffect', 'clickableCommentButton', 'dynSidebarReorder', 'dropdownMenuEventsHandler', 'menuButtonHover', 'secondMenuRespActions'],
     Czr_StickyHeader : ['stickyHeaderEventListener', 'triggerStickyHeaderLoad' ],
     Czr_StickyFooter : ['stickyFooterEventListener'],
     Czr_SideNav : []

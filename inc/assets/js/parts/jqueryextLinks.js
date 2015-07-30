@@ -59,17 +59,7 @@
       if ( 2 != ( ['ids', 'classes'].filter( function( sel_type) { return self._is_selector_allowed(sel_type); } ) ).length )
         return;
 
-      var _is_eligible = true;
-      // disallow elements whose parent has text-decoration: underline
-      // we want to exit as soon as we find a parent with the underlined text-decoration
-      $.each( this.$_el.parents(), function() {
-        if ( 'underline' == $(this).css('textDecoration') ){
-          _is_eligible = false;
-          return false;    
-        }
-      });
-      
-      return true && _is_eligible;
+      return true;
     };
 
 
@@ -81,9 +71,6 @@
     * @return boolean
     */
     Plugin.prototype._is_selector_allowed = function( requested_sel_type ) {
-      if ( czrapp )
-        return czrapp.isSelectorAllowed( this.$_el, this.options.skipSelectors, requested_sel_type);
-
       var sel_type = 'ids' == requested_sel_type ? 'id' : 'class',
           _selsToSkip   = this.options.skipSelectors[requested_sel_type];
 

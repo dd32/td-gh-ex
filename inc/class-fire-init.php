@@ -194,12 +194,6 @@ if ( ! class_exists( 'TC_init' ) ) :
                                     'link_title'    => __( 'Subscribe to my rss feed' , 'customizr' ),
                                     'option_label'  => __( 'RSS feed (default is the wordpress feed)' , 'customizr' ),
                                     'default'       => get_bloginfo( 'rss_url' )
-                                ),
-            'tc_email'          => array(
-                                    'link_title'    => __( 'E-mail' , 'customizr' ),
-                                    'option_label'  => __( 'Contact E-mail address' , 'customizr' ),
-                                    'default'       => null,
-                                    'type'          => 'email'
                                   ),
             'tc_twitter'        => array(
                                     'link_title'    => __( 'Follow me on Twitter' , 'customizr' ),
@@ -260,33 +254,18 @@ if ( ! class_exists( 'TC_init' ) ) :
                                     'link_title'    => __( 'Follow me on LinkedIn' , 'customizr' ),
                                     'option_label'  => __( 'LinkedIn profile url' , 'customizr' ),
                                     'default'       => null
-                                  ),
-            'tc_vk'             => array(
-                                    'link_title'    => __( 'Follow me on VKontakte' , 'customizr' ),
-                                    'option_label'  => __( 'VKontakte profile url' , 'customizr' ),
-                                    'default'       => null
-                                  ),
-            'tc_yelp'           => array(
-                                    'link_title'    => __( 'Follow me on Yelp' , 'customizr' ),
-                                    'option_label'  => __( 'Yelp profile url' , 'customizr' ),
-                                    'default'       => null
-                                  ),
-            'tc_xing'           => array(
-                                    'link_title'    => __( 'Follow me on Xing' , 'customizr' ),
-                                    'option_label'  => __( 'Xing profile url' , 'customizr' ),
-                                    'default'       => null
                                   )
           );//end of social array
 
 
           //Default sidebar widgets
           $this -> sidebar_widgets    = array(
-            'left'          => array(
-                            'name'                 => __( 'Left Sidebar' , 'customizr' ),
-                            'description'          => __( 'Appears on posts, static pages, archives and search pages' , 'customizr' )
-            ),
             'right'         => array(
                             'name'                 => __( 'Right Sidebar' , 'customizr' ),
+                            'description'          => __( 'Appears on posts, static pages, archives and search pages' , 'customizr' )
+            ),
+            'left'          => array(
+                            'name'                 => __( 'Left Sidebar' , 'customizr' ),
                             'description'          => __( 'Appears on posts, static pages, archives and search pages' , 'customizr' )
             )
           );//end of array
@@ -548,7 +527,8 @@ if ( ! class_exists( 'TC_init' ) ) :
       */
       function tc_get_style_src( $_wot = 'skin' ) {
         $_sheet    = ( 'skin' == $_wot ) ? esc_attr( TC_utils::$inst->tc_opt( 'tc_skin' ) ) : 'tc_common.css';
-        $_sheet    = $this -> tc_maybe_use_min_style( $_sheet ); 
+        if ( esc_attr( TC_utils::$inst->tc_opt( 'tc_minified_skin' ) ) )
+          $_sheet  = ( defined('TC_NOT_MINIFIED_CSS') && true === TC_NOT_MINIFIED_CSS ) ? $_sheet : str_replace('.css', '.min.css', $_sheet);
 
         //Finds the good path : are we in a child theme and is there a skin to override?
         $remote_path    = ( TC___::$instance -> tc_is_child() && file_exists(TC_BASE_CHILD .'inc/assets/css/' . $_sheet) ) ? TC_BASE_URL_CHILD .'inc/assets/css/' : false ;
@@ -567,27 +547,6 @@ if ( ! class_exists( 'TC_init' ) ) :
           $tc_get_style_src  = $remote_path ? $remote_path.$_sheet : TC_BASE_URL.'inc/assets/css/tc_common.css';
 
         return apply_filters ( 'tc_get_style_src' , $tc_get_style_src , $_wot );
-      }
-
-
-
-      /**
-      * //Move in TC_utils?
-      *
-      * Returns the min or normal version of the passed css filename (basename.type)
-      * depending on whether or not the minified version should be used
-      *  
-      * @param $_sheet string
-      *
-      * @return string
-      *
-      * @package Customizr
-      * @since Customizr 3.4.19
-      */
-      function tc_maybe_use_min_style( $_sheet ) {
-        if ( esc_attr( TC_utils::$inst->tc_opt( 'tc_minified_skin' ) ) )
-          $_sheet = ( defined('TC_NOT_MINIFIED_CSS') && true === TC_NOT_MINIFIED_CSS ) ? $_sheet : str_replace('.css', '.min.css', $_sheet);
-        return $_sheet;
       }
 
 

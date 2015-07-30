@@ -21,7 +21,6 @@ if ( ! class_exists( 'TC_utils' ) ) :
       public $db_options;
       public $options;//not used in customizer context only
       public $is_customizing;
-      public $tc_options_prefixes;
 
       function __construct () {
         self::$inst =& $this;
@@ -29,12 +28,8 @@ if ( ! class_exists( 'TC_utils' ) ) :
 
         //init properties
         add_action( 'after_setup_theme'       , array( $this , 'tc_init_properties') );
-
-        //Various WP filters for
-        //content
-        //thumbnails => parses image if smartload enabled
-        //title
-        add_action( 'wp_head'                 , array( $this , 'tc_wp_filters') );
+        //WP filters
+        add_action( 'after_setup_theme'       , array( $this , 'tc_wp_filters') );
 
         //get all options
         add_filter( '__options'               , array( $this , 'tc_get_theme_options' ), 10, 1);
@@ -70,8 +65,6 @@ if ( ! class_exists( 'TC_utils' ) ) :
       * @since Customizr 3.2.3
       */
       function tc_init_properties() {
-        //all customizr theme options start by "tc_" by convention
-        $this -> tc_options_prefixes = apply_filters('tc_options_prefixes', array('tc_') );
         $this -> is_customizing   = TC___::$instance -> tc_is_customizing();
         $this -> db_options       = false === get_option( TC___::$tc_option_group ) ? array() : (array)get_option( TC___::$tc_option_group );
         $this -> default_options  = $this -> tc_get_default_options();
@@ -99,7 +92,7 @@ if ( ! class_exists( 'TC_utils' ) ) :
       function tc_wp_filters() {
         add_filter( 'the_content'                         , array( $this , 'tc_fancybox_content_filter' ) );
         if ( esc_attr( TC_utils::$inst->tc_opt( 'tc_img_smart_load' ) ) ) {
-          add_filter( 'the_content'                       , array( $this , 'tc_parse_imgs' ), PHP_INT_MAX );
+          add_filter( 'the_content'                       , array( $this , 'tc_parse_imgs' ), 20 );
           add_filter( 'tc_thumb_html'                     , array( $this , 'tc_parse_imgs' ) );
         }
         add_filter( 'wp_title'                            , array( $this , 'tc_wp_title' ), 10, 2 );
@@ -118,6 +111,9 @@ if ( ! class_exists( 'TC_utils' ) ) :
         if( is_feed() || is_preview() || ( wp_is_mobile() && apply_filters('tc_disable_img_smart_load_mobiles', false ) ) )
           return $_html;
 
+        if ( strpos( $_html, 'data-src' ) !== false )
+          return $_html;
+
         return preg_replace_callback('#<img([^>]+?)src=[\'"]?([^\'"\s>]+)[\'"]?([^>]*)>#', array( $this , 'tc_regex_callback' ) , $_html);
       }
 
@@ -132,20 +128,18 @@ if ( ! class_exists( 'TC_utils' ) ) :
       */
       private function tc_regex_callback( $matches ) {
         $_placeholder = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
-
-        if ( false !== strpos( $matches[0], 'data-src' ) ||
-            preg_match('/ data-smartload *= *"false" */', $matches[0]) )
-          return $matches[0];    
+        if ( preg_match('/ data-smartload *= *"false" */', $matches[0]) )
+          return sprintf('<img %1$s src="%2$s" %3$s>',
+            $matches[1],
+            $matches[2],
+            $matches[3]
+          );
         else
-          return apply_filters( 'tc_img_smartloaded',
-            str_replace( 'srcset=', 'data-srcset=',
-                sprintf('<img %1$s src="%2$s" data-src="%3$s" %4$s>',
-                    $matches[1],
-                    $_placeholder,
-                    $matches[2],
-                    $matches[3]
-                )
-            )
+          return sprintf('<img %1$s src="%2$s" data-src="%3$s" %4$s>',
+            $matches[1],
+            $_placeholder,
+            $matches[2],
+            $matches[3]
           );
       }
 
@@ -160,19 +154,17 @@ if ( ! class_exists( 'TC_utils' ) ) :
       */
       function tc_get_skin_color( $_what = null ) {
         $_color_map    = TC_init::$instance -> skin_color_map;
-        $_color_map    = ( is_array($_color_map) ) ? $_color_map : array();
-          
         $_active_skin =  str_replace('.min.', '.', basename( TC_init::$instance -> tc_get_style_src() ) );
         //falls back to blue3 ( default #27CDA5 ) if not defined
         $_to_return = array( '#27CDA5', '#1b8d71' );
 
         switch ($_what) {
           case 'all':
-            $_to_return = $_color_map;
+            $_to_return = ( is_array($_color_map) ) ? $_color_map : array();
           break;
 
           case 'pair':
-            $_to_return = ( false != $_active_skin && array_key_exists( $_active_skin, $_color_map ) && is_array( $_color_map[$_active_skin] ) ) ? $_color_map[$_active_skin] : $_to_return;
+            $_to_return = ( false != $_active_skin && is_array($_color_map[$_active_skin]) ) ? $_color_map[$_active_skin] : $_to_return;
           break;
 
           default:
@@ -182,22 +174,6 @@ if ( ! class_exists( 'TC_utils' ) ) :
         return apply_filters( 'tc_get_skin_color' , $_to_return , $_what );
       }
 
-
-
-
-      /**
-      * Helper
-      * Returns whether or not the option is a theme/addon option
-      *
-      * @return bool
-      *
-      * @package Customizr
-      * @since Customizr 3.4.9
-      */
-      function tc_is_customizr_option( $option_key ) {
-        $_is_tc_option = in_array( substr( $option_key, 0, 3 ), $this -> tc_options_prefixes );
-        return apply_filters( 'tc_is_customizr_option', $_is_tc_option , $option_key );
-      }
 
 
 
@@ -252,7 +228,8 @@ if ( ! class_exists( 'TC_utils' ) ) :
 
         foreach ($map['add_setting_control'] as $key => $options) {
           //check it is a customizr option
-          if(  ! $this -> tc_is_customizr_option( $key ) )
+          //all customizr theme options start by "tc_" by convention
+          if(  'tc_' !== substr( $key, 0, 3 ) )
             continue;
 
           $option_name = $key;
@@ -686,9 +663,7 @@ if ( ! class_exists( 'TC_utils' ) ) :
               //gets height and width from image, we check if getimagesize can be used first with the error control operator
               $width = $height = '';
               if ( isset($data['custom_icon_url']) && @getimagesize($data['custom_icon_url']) ) { list( $width, $height ) = getimagesize($data['custom_icon_url']); }
-              $type = isset( $data['type'] ) && ! empty( $data['type'] ) ? $data['type'] : 'url';
-              $link = 'email' == $type ? 'mailto:' : '';
-              $link .=  call_user_func( array( TC_utils_settings_map::$instance, 'tc_sanitize_'.$type ), $__options[$key] );
+
               //there is one exception : rss feed has no target _blank and special icon title
               $html .= sprintf('<a class="%1$s" href="%2$s" title="%3$s" %4$s %5$s>%6$s</a>',
                   apply_filters( 'tc_social_link_class',
@@ -697,9 +672,9 @@ if ( ! class_exists( 'TC_utils' ) ) :
                                 ),
                                 $key
                   ),
-                  $link,
+                  esc_url( $__options[$key]),
                   isset($data['link_title']) ?  call_user_func( '__' , $data['link_title'] , 'customizr' ) : '' ,
-                  ( in_array( $key, array('tc_rss', 'tc_email') ) ) ? '' : apply_filters( 'tc_socials_target', 'target=_blank', $key ),
+                  ( $key == 'tc_rss' ) ? '' : apply_filters( 'tc_socials_target', 'target=_blank', $key ),
                   apply_filters( 'tc_additional_social_attributes', '' , $key),
                   ( isset($data['custom_icon_url']) && !empty($data['custom_icon_url']) ) ? sprintf('<img src="%1$s" width="%2$s" height="%3$s" alt="%4$s"/>',
                                                           $data['custom_icon_url'],
@@ -712,8 +687,6 @@ if ( ! class_exists( 'TC_utils' ) ) :
         }
         return $html;
       }
-
-
 
 
     /**
@@ -744,20 +717,6 @@ if ( ! class_exists( 'TC_utils' ) ) :
       }
 
       return compact( 'ext', 'type' );
-    }
-
-    /**
-    * Check whether a category exists.
-    * (wp category_exists isn't available in pre_get_posts)
-    * @since 3.4.10
-    *
-    * @see term_exists()
-    *
-    * @param int $cat_id.
-    * @return bool
-    */
-    public function tc_category_id_exists( $cat_id ) {
-      return term_exists( (int) $cat_id, 'category');
     }
 
 
@@ -961,7 +920,6 @@ if ( ! class_exists( 'TC_utils' ) ) :
         array(
           'defaults',
           'tc_sliders',
-          'tc_blog_restrict_by_cat',
           'last_update_notice',
           'last_update_notice_pro'
         )
@@ -980,37 +938,23 @@ if ( ! class_exists( 'TC_utils' ) ) :
 
     /**
     * Returns the url of the customizer with the current url arguments + an optional customizer section args
-    *
-    * @param $autofocus(optional) is an array indicating the elements to focus on ( control,section,panel).
-    * Ex : array( 'control' => 'tc_front_slider', 'section' => 'frontpage_sec').
-    * Wordpress will cycle among autofocus keys focusing the existing element - See wp-admin/customize.php.
-    * The actual focused element depends on its type according to this priority scale: control, section, panel.
-    * In this sense when specifying a control, additional section and panel could be considered as fall-back.
-    *
-    * @param $control_wrapper(optional) is a string indicating the wrapper to apply to the passed control. By default is "tc_theme_options".
-    * Ex: passing $aufocus = array('control' => 'tc_front_slider') will produce the query arg 'autofocus'=>array('control' => 'tc_theme_options[tc_front_slider]'
-    *
+    * @param $section is an array indicating the panel or section and its name. Ex : array( 'panel' => 'widgets')
     * @return url string
     * @since Customizr 3.4+
     */
-    static function tc_get_customizer_url( $autofocus = null, $control_wrapper = 'tc_theme_options' ) {
+    static function tc_get_customizer_url( $_panel_or_section = null ) {
       $_current_url       = ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
       $_customize_url     = add_query_arg( 'url', urlencode( $_current_url ), wp_customize_url() );
-      $autofocus  = ( ! is_array($autofocus) || empty($autofocus) ) ? null : $autofocus;
+      $_panel_or_section  = ( ! is_array($_panel_or_section) || empty($_panel_or_section) ) ? null : $_panel_or_section;
 
-      if ( is_null($autofocus) )
+      if ( is_null($_panel_or_section) )
         return $_customize_url;
 
-      // $autofocus must contain at least one key among (control,section,panel)
-      if ( ! count( array_intersect( array_keys($autofocus), array( 'control', 'section', 'panel') ) ) )
+      if ( ! array_key_exists('section', $_panel_or_section) && ! array_key_exists('panel', $_panel_or_section) )
         return $_customize_url;
 
-      // wrap the control in the $control_wrapper if neded
-      if ( array_key_exists( 'control', $autofocus ) && ! empty( $autofocus['control'] ) && $control_wrapper ){
-        $autofocus['control'] = $control_wrapper . '[' . $autofocus['control'] . ']';
-      }
-      // We don't really have to care for not existent autofocus keys, wordpress will stash them when passing the values to the customize js
-      return add_query_arg( array( 'autofocus' => $autofocus ), $_customize_url );
+      $_what = array_key_exists('section', $_panel_or_section) ? 'section' : 'panel';
+      return add_query_arg( urlencode( "autofocus[{$_what}]" ), $_panel_or_section[$_what], $_customize_url );
     }
 
 

@@ -33,8 +33,7 @@ if ( ! class_exists( 'TC_featured_pages' ) ) :
       if ( ! TC_placeholders::tc_is_fp_notice_on() )
         return;
 
-      $_customizer_lnk = apply_filters( 'tc_fp_notice_customizer_url', TC_utils::tc_get_customizer_url( array( 'control' => 'tc_show_featured_pages', 'section' => 'frontpage_sec') ) );
-
+      $_customizer_lnk = TC_utils::tc_get_customizer_url( array( 'section' => 'frontpage_sec') );
       ?>
       <div class="tc-placeholder-wrap tc-fp-notice">
         <?php
@@ -149,7 +148,7 @@ if ( ! class_exists( 'TC_featured_pages' ) ) :
         $_skin_color                        = TC_utils::$inst -> tc_get_skin_color();
         $fp_holder_img                      = apply_filters (
           'tc_fp_holder_img' ,
-          sprintf('<img class="tc-holder-img" data-src="holder.js/270x250/%1$s:%2$s" data-no-retina alt="Holder Thumbnail" style="width:270px;height:250px;"/>',
+          sprintf('<img class="tc-holder-img" data-src="holder.js/270x250/%1$s:%2$s" data-no-retina alt="Holder Thumbnail" />',
             ( '#E4E4E4' != $_skin_color ) ? '#EEE' : '#5A5A5A',
             $_skin_color
           )
@@ -159,15 +158,14 @@ if ( ! class_exists( 'TC_featured_pages' ) ) :
         //if fps are not set
         if ( null == TC_utils::$inst->tc_opt( 'tc_featured_page_'.$fp_single_id ) || ! TC_utils::$inst->tc_opt( 'tc_featured_page_'.$fp_single_id ) ) {
             //admin link if user logged in
-            $featured_page_link             = '';
-            $customizr_link                 = '';
-            if ( ! TC___::$instance -> tc_is_customizing() && is_user_logged_in() && current_user_can('edit_theme_options') ) {
+            $featured_page_link             = is_user_logged_in() ? apply_filters( 'tc_fp_link_url', admin_url().'customize.php' , $fp_single_id ) : '';
+            $customizr_link = '';
+            if ( is_user_logged_in() ) {
               $customizr_link              = sprintf( '<a href="%1$s" title="%2$s">%3$s</a>',
-                TC_utils::tc_get_customizer_url( array( 'control' => 'tc_featured_text_'.$fp_single_id, 'section' => 'frontpage_sec') ),
+                admin_url('customize.php?autofocus[section]=frontpage_sec'),
                 __( 'Customizer screen' , 'customizr' ),
                 __( 'Edit now.' , 'customizr' )
               );
-              $featured_page_link          = apply_filters( 'tc_fp_link_url', TC_utils::tc_get_customizer_url( array( 'control' => 'tc_featured_page_'.$fp_single_id, 'section' => 'frontpage_sec') ) );
             }
 
             //rendering
@@ -192,15 +190,9 @@ if ( ! class_exists( 'TC_featured_pages' ) ) :
             $featured_page_link             = apply_filters( 'tc_fp_link_url', get_permalink( $featured_page_id ), $fp_single_id );
 
             $featured_page_title            = apply_filters( 'tc_fp_title', get_the_title( $featured_page_id ), $fp_single_id, $featured_page_id );
-
-            $edit_enabled                   = false;
             //when are we displaying the edit link?
-            //never display when customizing
-            if ( ! TC___::$instance -> tc_is_customizing() ) {
-              $edit_enabled                 = ( (is_user_logged_in()) && current_user_can('edit_pages') && is_page( $featured_page_id ) ) ? true : $edit_enabled;
-              $edit_enabled                 = ( (is_user_logged_in()) && current_user_can('edit_post' , $featured_page_id ) && ! is_page( $featured_page_id ) ) ? true : $edit_enabled;
-            }
-            
+            $edit_enabled                   = ( (is_user_logged_in()) && current_user_can('edit_pages') && is_page( $featured_page_id ) ) ? true : false;
+            $edit_enabled                   = ( (is_user_logged_in()) && current_user_can('edit_post' , $featured_page_id ) && ! is_page( $featured_page_id ) ) ? true : $edit_enabled;
             $edit_enabled                   = apply_filters( 'tc_edit_in_fp_title', $edit_enabled );
 
             $featured_text                  = apply_filters( 'tc_fp_text', TC_utils::$inst->tc_opt( 'tc_featured_text_'.$fp_single_id ), $fp_single_id, $featured_page_id );
