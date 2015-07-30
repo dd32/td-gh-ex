@@ -1656,8 +1656,7 @@ var TCParams = TCParams || {};
 
       if ( TCParams && 1 == TCParams.dropdowntoViewport )
       {
-        var tcVisible = $('body').hasClass('sticky-enabled') ? $(window).height() : ($(window).height() - $('.navbar-wrapper').offset().top);
-        tcVisible = ( tcVisible - 90 ) > 80 ? tcVisible - 90 : 300;
+        var tcVisible = czrapp.$_window.height() - this.$element.offset().top + czrapp.$_window.scrollTop();
         this.$element.css('max-height' , tcVisible + 'px');
       }
       else if ( TCParams && 1 != TCParams.dropdowntoViewport && 1 == TCParams.stickyHeader )
@@ -1667,8 +1666,8 @@ var TCParams = TCParams || {};
           $('.back-to-top').trigger('click');
         }
         else {
-          ('html, body').animate({
-                  scrollTop: $(anchor_id).offset().top
+          $('html, body').animate({
+                  scrollTop: 0
               }, 700);
         }
         $('body').removeClass('sticky-enabled').removeClass('tc-sticky-header');
@@ -1870,7 +1869,7 @@ var TCParams = TCParams || {};
     }
 
   , slide: function (type, next) {
-      if(!$.support.transition && this.$element.hasClass('slide')) {
+      if(!$.support.transition && this.$element.hasClass('customizr-slide')) {
          this.$element.find('.item').stop(true, true); //Finish animation and jump to end.
       }
       var $active = this.$element.find('.item.active')
@@ -1902,7 +1901,7 @@ var TCParams = TCParams || {};
         })
       }
 
-      if ($.support.transition && this.$element.hasClass('slide')) {
+      if ($.support.transition && this.$element.hasClass('customizr-slide')) {
         this.$element.trigger(e)
         if (e.isDefaultPrevented()) return
         //tc addon => trigger slide event to img
@@ -1923,7 +1922,7 @@ var TCParams = TCParams || {};
               $next.find('img').trigger('slid');
           }, 0)
         })
-      } else if(!$.support.transition && this.$element.hasClass('slide')) {
+      } else if(!$.support.transition && this.$element.hasClass('customizr-slide')) {
           this.$element.trigger(e)
           if (e.isDefaultPrevented()) return
           $active.animate({left: (direction == 'right' ? '100%' : '-100%')}, 600, function(){

@@ -152,12 +152,12 @@
       h : {
         dim : { name : 'height', val : c_y },
         dir : { name : 'left', val : ( c_x - up_i_x ) / 2 + ( this.options.leftAdjust || 0 ) },
-        class : 'h-centered'
+        _class : 'h-centered'
       },
       v : {
         dim : { name : 'width', val : c_x },
         dir : { name : 'top', val : ( c_y - up_i_y ) / 2 + ( this.options.topAdjust || 0 ) },
-        class : 'v-centered'
+        _class : 'v-centered'
       }
     };
 
@@ -174,12 +174,14 @@
     if ( $_img.is(":visible") )
       return 'x' == _dim ? $_img.outerWidth() : $_img.outerHeight();
     else {
-      if ( 'x' == _dim && $_img.attr('width') )
-        return $_img.attr('width');
-      if ( 'y' == _dim && $_img.attr('height') )
-        return $_img.attr('height');
+      if ( 'x' == _dim ){
+        var _width = $_img.originalWidth();
+        return typeof _width === undefined ? 0 : _width;
+      }if ( 'y' == _dim ){
+        var _height = $_img.originalHeight();
+        return typeof _height === undefined ? 0 : _height;
+      }
     }
-    return 0;
   };
 
 
@@ -191,7 +193,7 @@
         _not_p_dir_val = 'h' == _case ? ( this.options.zeroTopAdjust || 0 ) : ( this.options.zeroLeftAdjust || 0 );
 
     $_img.css( _p.dim.name , _p.dim.val ).css( _not_p.dim.name , this.options.defaultCSSVal[_not_p.dim.name] || 'auto' )
-        .addClass( _p.class ).removeClass( _not_p.class )
+        .addClass( _p._class ).removeClass( _not_p._class )
         .css( _p.dir.name, _p.dir.val ).css( _not_p.dir.name, _not_p_dir_val );
   };
 

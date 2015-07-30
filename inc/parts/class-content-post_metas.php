@@ -6,9 +6,9 @@
 * @package      Customizr
 * @subpackage   classes
 * @since        3.0.5
-* @author       Nicolas GUILLAUME <nicolas@themesandco.com>
-* @copyright    Copyright (c) 2013, Nicolas GUILLAUME
-* @link         http://themesandco.com/customizr
+* @author       Nicolas GUILLAUME <nicolas@presscustomizr.com>
+* @copyright    Copyright (c) 2013-2015, Nicolas GUILLAUME
+* @link         http://presscustomizr.com/customizr
 * @license      http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 if ( ! class_exists( 'TC_post_metas' ) ) :
@@ -17,9 +17,9 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
         function __construct () {
           self::$instance =& $this;
           //Show / hide metas based on customizer user options (@since 3.2.0)
-          add_action( 'wp'                            , array( $this , 'tc_set_visibility_options' ) , 10 );
+          add_action( 'template_redirect'                            , array( $this , 'tc_set_visibility_options' ) , 10 );
            //Show / hide metas based on customizer user options (@since 3.2.0)
-          add_action( 'wp'                            , array( $this , 'tc_set_design_options' ) , 20 );
+          add_action( 'template_redirect'                            , array( $this , 'tc_set_design_options' ) , 20 );
           //Show / hide metas based on customizer user options (@since 3.2.0)
           add_action( '__after_content_title'         , array( $this , 'tc_set_post_metas_hooks' ), 20 );
 
@@ -32,13 +32,21 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
         /**
         * Set the post metas visibility based on Customizer options
         * uses hooks tc_show_post_metas, body_class
-        * hook : wp
+        * hook : template_redirect
         *
         * @package Customizr
         * @since Customizr 3.2.0
         */
         function tc_set_visibility_options() {
           //if customizing context, always render. Will be hidden in the DOM with a body class filter is disabled.
+          if ( 0 == esc_attr( TC_utils::$inst->tc_opt( 'tc_show_post_metas' ) ) ) {
+            if ( TC___::$instance -> tc_is_customizing() )
+              add_filter( 'body_class' , array( $this , 'tc_hide_all_post_metas') );
+            else{
+              add_filter( 'tc_show_post_metas' , '__return_false' );
+              return;
+            }
+          }
           if ( is_singular() && ! is_page() && ! tc__f('__is_home') ) {
               if ( 0 != esc_attr( TC_utils::$inst->tc_opt( 'tc_show_post_metas_single_post' ) ) ) {
                   add_filter( 'tc_show_post_metas' , '__return_true' );
@@ -51,7 +59,7 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
               }
               else
                   add_filter( 'tc_show_post_metas' , '__return_false' );
-
+              return;
           }
           if ( ! is_singular() && ! tc__f('__is_home') && ! is_page() ) {
               if ( 0 != esc_attr( TC_utils::$inst->tc_opt( 'tc_show_post_metas_post_lists' ) ) ) {
@@ -59,12 +67,13 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
                   return;
               }
 
-                  if ( TC___::$instance -> tc_is_customizing() ) {
-                      add_filter( 'body_class' , array( $this , 'tc_hide_post_metas') );
-                      add_filter( 'tc_show_post_metas' , '__return_true' );
-                  }
-                  else
-                      add_filter( 'tc_show_post_metas' , '__return_false' );
+              if ( TC___::$instance -> tc_is_customizing() ) {
+                  add_filter( 'body_class' , array( $this , 'tc_hide_post_metas') );
+                  add_filter( 'tc_show_post_metas' , '__return_true' );
+              }
+              else
+                  add_filter( 'tc_show_post_metas' , '__return_false' );
+              return;
           }
           if ( tc__f('__is_home') ) {
               if ( 0 != esc_attr( TC_utils::$inst->tc_opt( 'tc_show_post_metas_home' ) ) ) {
@@ -84,7 +93,7 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
 
         /**
         * Default metas visibility controller
-        * tc_show_post_metas gets filtered by tc_set_visibility_options() called early in wp
+        * tc_show_post_metas gets filtered by tc_set_visibility_options() called early in template_redirect
         * @return  boolean
         * @package Customizr
         * @since Customizr 3.2.6
@@ -171,8 +180,8 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
 
           $_args      = compact( 'cat_list' ,'tag_list', 'pub_date', 'auth', 'upd_date' );
           $_html      = sprintf( __( 'This entry was posted on %1$s<span class="by-author"> by %2$s</span>.' , 'customizr' ),
-            $this -> tc_get_meta_date('publication'),
-            $this -> tc_get_meta_author()
+            $pub_date,
+            $auth
           );
           return apply_filters( 'tc_post_metas_model' , compact( "_html" , "_args" ) );
         }
@@ -352,14 +361,24 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
             array_push( $_classes , 'btn-tag' );
 
           $_classes      = implode( ' ', apply_filters( 'tc_meta_tax_class', $_classes , isset( $term -> category_parent ) ) );
-          return apply_filters( 'tc_meta_term_view' , sprintf('<a class="%1$s" href="%2$s" title="%3$s"> %4$s </a>',
+
+          // (Rocco's PR Comment) : following to this https://wordpress.org/support/topic/empty-articles-when-upgrading-to-customizr-version-332
+          // I found that at least wp 3.6.1  get_term_link($term->term_id, $term->taxonomy) returns a WP_Error
+          // Looking at the codex, looks like we can just use get_term_link($term), when $term is a term object.
+          // Just this change avoids the issue with 3.6.1, but I thought should be better make a check anyway on the return type of that function.
+          $_term_link    = is_wp_error( get_term_link( $term ) ) ? '' : get_term_link( $term );
+
+          $_to_return    = $_term_link ? '<a class="%1$s" href="%2$s" title="%3$s"> %4$s </a>' :  '<span class="%1$s"> %4$s </a>';
+
+          return apply_filters( 'tc_meta_term_view' , sprintf($_to_return,
               $_classes,
-              get_term_link( $term -> term_id , $term -> taxonomy ),
+              $_term_link,
               esc_attr( sprintf( __( "View all posts in %s", 'customizr' ), $term -> name ) ),
               $term -> name
             )
           );
         }
+
 
 
         /**
@@ -373,7 +392,7 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
         */
         public function tc_get_term_of_tax_type( $hierarchical = true ) {
           //var declaration
-          $post_type              = get_post_type( tc__f('__ID') );
+          $post_type              = get_post_type( TC_utils::tc_id() );
           $tax_list               = get_object_taxonomies( $post_type, 'object' );
           $_tax_type_list         = array();
           $_tax_type_terms_list   = array();
@@ -382,15 +401,28 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
               return false;
 
           //filter the post taxonomies
-          while ( $el = current($tax_list) ) {
-              //skip the post format taxinomy
-              if ( in_array( key($tax_list) , apply_filters_ref_array ( 'tc_exclude_taxonomies_from_metas' , array( array('post_format') , $post_type , tc__f('__ID') ) ) ) ) {
-                  next($tax_list);
-                  continue;
-              }
-              if ( (bool) $hierarchical === (bool) $el -> hierarchical )
-                  $_tax_type_list[key($tax_list)] = $el;
+          while ( $_tax_object = current($tax_list) ) {
+            // cast $_tax_object stdClass object in an array to access its property 'public'
+            // fix for PHP version < 5.3 (?)
+            $_tax_object = (array) $_tax_object;
+
+            //Is the object well defined ?
+            if ( ! isset($_tax_object['name']) ) {
               next($tax_list);
+              continue;
+            }
+
+            $_tax_name = $_tax_object['name'];
+
+            //skip the post format taxinomy
+            if ( ! $this -> tc_is_tax_authorized( $_tax_object, $post_type ) ) {
+              next($tax_list);
+              continue;
+            }
+
+            if ( (bool) $hierarchical === (bool) $_tax_object['hierarchical'] )
+                $_tax_type_list[$_tax_name] = $_tax_object;
+            next($tax_list);
           }
 
           if ( empty($_tax_type_list) )
@@ -398,7 +430,7 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
 
           //fill the post terms array
           foreach ($_tax_type_list as $tax_name => $data ) {
-              $_current_tax_terms = get_the_terms( tc__f('__ID') , $tax_name );
+              $_current_tax_terms = get_the_terms( TC_utils::tc_id() , $tax_name );
 
               //If current post support this tax but no terms has been assigned yet = continue
               if ( ! $_current_tax_terms )
@@ -413,6 +445,30 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
         }
 
 
+
+        /**
+        * Helper : check if a given tax is allowed in the post metas or not
+        * A tax is authorized if :
+        * 1) not in the exclude list
+        * 2) AND not private
+        *
+        * @return boolean (false)
+        * @param  $post_type, $_tax_object
+        * @package Customizr
+        * @since Customizr 3.3+
+        *
+        */
+        public function tc_is_tax_authorized( $_tax_object , $post_type ) {
+          $_in_exclude_list = in_array(
+            $_tax_object['name'],
+            apply_filters_ref_array ( 'tc_exclude_taxonomies_from_metas' , array( array('post_format') , $post_type , TC_utils::tc_id() ) )
+          );
+
+          $_is_private = false === (bool) $_tax_object['public'] && apply_filters_ref_array( 'tc_exclude_private_taxonomies', array( true, $_tax_object['public'], TC_utils::tc_id() ) );
+          return ! $_in_exclude_list && ! $_is_private;
+        }
+
+
         /**
         * Helper
         * Return the date post metas
@@ -420,16 +476,22 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
         * @package Customizr
         * @since Customizr 3.2.6
         */
-        public function tc_get_meta_date( $pub_or_update = 'publication', $_format = 'long' ) {
-            $_format = 'long' == $_format ? 'F j, Y' : 'j M, Y';
+        public function tc_get_meta_date( $pub_or_update = 'publication', $_format = '' ) {
+            if ( 'short' == $_format )
+              $_format = 'j M, Y';
+
+            $_format = apply_filters( 'tc_meta_date_format' , $_format );
+            $_use_post_mod_date = apply_filters( 'tc_use_the_post_modified_date' , 'publication' != $pub_or_update );
             return apply_filters(
                 'tc_date_meta',
                 sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date updated" datetime="%3$s">%4$s</time></a>' ,
                     esc_url( get_day_link( get_the_time( 'Y' ), get_the_time( 'm' ), get_the_time( 'd' ) ) ),
                     esc_attr( get_the_time() ),
-                    apply_filters( 'tc_use_the_post_modified_date' , 'publication' != $pub_or_update ) ? esc_attr( get_the_modified_date('c') ) : esc_attr( get_the_date( 'c' ) ),
-                    apply_filters( 'tc_use_the_post_modified_date' , 'publication' != $pub_or_update ) ? esc_html( get_the_modified_date( $_format ) ) : esc_html( get_the_date( $_format ) )
-                )
+                    $_use_post_mod_date ? esc_attr( get_the_modified_date('c') ) : esc_attr( get_the_date( 'c' ) ),
+                    $_use_post_mod_date ? esc_html( get_the_modified_date( $_format ) ) : esc_html( get_the_date( $_format ) )
+                ),
+                $_use_post_mod_date,
+                $_format
             );//end filter
         }
 
@@ -472,6 +534,18 @@ if ( ! class_exists( 'TC_post_metas' ) ) :
           return $_metas_html;
         }
 
+
+
+
+        /**
+        * hook body_class filter
+        *
+        * @package Customizr
+        * @since Customizr 3.2.0
+        */
+        function tc_hide_all_post_metas( $_classes ) {
+          return array_merge($_classes , array('hide-all-post-metas') );
+        }
 
 
         /**

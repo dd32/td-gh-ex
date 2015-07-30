@@ -6,9 +6,9 @@
 * @package      Customizr
 * @subpackage   classes
 * @since        3.0.5
-* @author       Nicolas GUILLAUME <nicolas@themesandco.com>
-* @copyright    Copyright (c) 2013, Nicolas GUILLAUME
-* @link         http://themesandco.com/customizr
+* @author       Nicolas GUILLAUME <nicolas@presscustomizr.com>
+* @copyright    Copyright (c) 2013-2015, Nicolas GUILLAUME
+* @link         http://presscustomizr.com/customizr
 * @license      http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 if ( ! class_exists( 'TC_post' ) ) :
@@ -19,11 +19,17 @@ if ( ! class_exists( 'TC_post' ) ) :
       add_action( 'wp'                , array( $this , 'tc_set_single_post_hooks' ));
       //Set single post thumbnail with customizer options (since 3.2.0)
       add_action( 'wp'                , array( $this , 'tc_set_single_post_thumbnail_hooks' ));
+
+      //append inline style to the custom stylesheet
+      //! tc_user_options_style filter is shared by several classes => must always check the local context inside the callback before appending new css
+      //fired on hook : wp_enqueue_scripts
+      //Set thumbnail specific design based on user options
+      add_filter( 'tc_user_options_style'    , array( $this , 'tc_write_thumbnail_inline_css') );
     }
 
 
     /***************************
-    * SINGLE POST HOOK SETUP
+    * SINGLE POST AND THUMB HOOKS SETUP
     ****************************/
     /**
     * hook : wp
@@ -47,13 +53,13 @@ if ( ! class_exists( 'TC_post' ) ) :
     * @since Customizr 3.2.0
     */
     function tc_set_single_post_thumbnail_hooks() {
+      if ( $this -> tc_single_post_display_controller() )
+        add_action( '__before_content'        , array( $this, 'tc_maybe_display_featured_image_help') );
+
       //__before_main_wrapper, 200
       //__before_content 0
       //__before_content 20
-      if ( ! $this -> tc_single_post_display_controller()
-        || ! esc_attr( TC_utils::$inst->tc_opt( 'tc_single_post_thumb_location' ) )
-        || 'hide' == esc_attr( TC_utils::$inst->tc_opt( 'tc_single_post_thumb_location' ) )
-        )
+      if ( ! $this -> tc_show_single_post_thumbnail() )
         return;
 
       $_exploded_location   = explode('|', esc_attr( TC_utils::$inst->tc_opt( 'tc_single_post_thumb_location' )) );
@@ -64,8 +70,6 @@ if ( ! class_exists( 'TC_post' ) ) :
       add_action( $_hook, array($this , 'tc_single_post_prepare_thumb') , $_priority );
       //Set thumb shape with customizer options (since 3.2.0)
       add_filter( 'tc_post_thumb_wrapper'      , array( $this , 'tc_set_thumb_shape'), 10 , 2 );
-      //Set thumbnail specific design based on user options
-      add_filter( 'tc_user_options_style'       , array( $this , 'tc_write_thumbnail_inline_css') );
     }
 
 
@@ -179,6 +183,39 @@ if ( ! class_exists( 'TC_post' ) ) :
     }
 
 
+    /***************************
+    * SINGLE POST THUMBNAIL HELP VIEW
+    ****************************/
+    /**
+    * Displays a help block about featured images for single posts
+    * hook : __before_content
+    * @since Customizr 3.4
+    */
+    function tc_maybe_display_featured_image_help() {
+      if (  ! TC_placeholders::tc_is_thumbnail_help_on() )
+        return;
+      ?>
+      <div class="tc-placeholder-wrap tc-thumbnail-help">
+        <?php
+          printf('<p><strong>%1$s</strong></p><p>%2$s</p><p>%3$s</p>',
+              __( "You can display your post's featured image here if you have set one.", "customizr" ),
+              sprintf( __("%s to display a featured image here.", "customizr"),
+                sprintf( '<strong><a href="%1$s" title="%2$s">%2$s</a></strong>', TC_utils::tc_get_customizer_url( array( "section" => "single_posts_sec") ), __( "Jump to the customizer now", "customizr") )
+              ),
+              sprintf( __( "Don't know how to set a featured image to a post? Learn how in the %s.", "customizr" ),
+                sprintf('<a href="%1$s" title="%2$s" target="_blank">%2$s</a><span class="tc-external"></span>' , esc_url('codex.wordpress.org/Post_Thumbnails#Setting_a_Post_Thumbnail'), __("WordPress documentation" , "customizr" ) )
+              )
+          );
+          printf('<a class="tc-dismiss-notice" href="#" title="%1$s">%1$s x</a>',
+                __( 'dismiss notice', 'customizr')
+          );
+        ?>
+      </div>
+      <?php
+    }
+
+
+
 
     /******************************
     * SETTERS / HELPERS / CALLBACKS
@@ -198,6 +235,19 @@ if ( ! class_exists( 'TC_post' ) ) :
         && is_singular()
         && ! tc__f( '__is_home_empty');
       return apply_filters( 'tc_show_single_post_content', $tc_show_single_post_content );
+    }
+
+
+    /**
+    * HELPER
+    * @return boolean
+    * @package Customizr
+    * @since Customizr 3.2.11
+    */
+    function tc_show_single_post_thumbnail() {
+      return $this -> tc_single_post_display_controller()
+        && 'hide' != esc_attr( TC_utils::$inst->tc_opt( 'tc_single_post_thumb_location' ) )
+        && apply_filters( 'tc_show_single_post_thumbnail' , true );
     }
 
 
@@ -238,6 +288,8 @@ if ( ! class_exists( 'TC_post' ) ) :
     * @since Customizr 3.2.6
     */
     function tc_write_thumbnail_inline_css( $_css ) {
+      if ( ! $this -> tc_show_single_post_thumbnail() )
+        return $_css;
       $_single_thumb_height   = esc_attr( TC_utils::$inst->tc_opt( 'tc_single_post_thumb_height' ) );
       $_single_thumb_height   = (! $_single_thumb_height || ! is_numeric($_single_thumb_height) ) ? 250 : $_single_thumb_height;
       return sprintf("%s\n%s",

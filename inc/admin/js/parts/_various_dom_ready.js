@@ -16,7 +16,8 @@
       'tc_grid_thumb_height',
       'tc_grid_shadow',
       'tc_grid_bottom_border',
-      'tc_grid_icons'
+      'tc_grid_icons',
+      'tc_grid_num_words'
     ];
 
     var _build_control_id = function( _control ) {
@@ -36,11 +37,6 @@
       $( _get_grid_design_controls() ).slideToggle('fast');
       $(this).toggleClass('open');
     } );
-
-    /* BUTTON JUMP TO POST LIST */
-    $('.tc-navigate-to-post-list').click( function() {
-      $('#accordion-section-tc_post_list_settings > .accordion-section-title').trigger('click');
-    });
 
     /* RECENTER CURRENT SECTIONS */
     $('.accordion-section').not('.control-panel').click( function () {

@@ -6,9 +6,9 @@
 * @package      Customizr
 * @subpackage   classes
 * @since        3.0.5
-* @author       Nicolas GUILLAUME <nicolas@themesandco.com>
-* @copyright    Copyright (c) 2013, Nicolas GUILLAUME
-* @link         http://themesandco.com/customizr
+* @author       Nicolas GUILLAUME <nicolas@presscustomizr.com>
+* @copyright    Copyright (c) 2013-2015, Nicolas GUILLAUME
+* @link         http://presscustomizr.com/customizr
 * @license      http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 if ( ! class_exists( 'TC_attachment' ) ) :
@@ -31,7 +31,7 @@ if ( ! class_exists( 'TC_attachment' ) ) :
         function tc_attachment_content() {
             //check conditional tags
             global $post;
-            if (isset($post) && 'attachment' != $post -> post_type || !is_singular() )
+            if ( ! isset($post) || empty($post) || 'attachment' != $post -> post_type || !is_singular() )
                 return;
 
             ob_start();
