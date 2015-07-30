@@ -98,6 +98,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.6.7
+- Updated: css code in style-shortcodes.css completely rewritten. Much tidier and easier or end user to customize.
+
 Version 1.6.6
 - Fixed:   prettyPhoto updates to v3.1.6 to put in place prettyPhoto XSS fix.
 - Fixed:   #sidebar styling in style-responsive.css applied with !important attribute.
