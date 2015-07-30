@@ -85,40 +85,45 @@ global $post;
 //----------------------------------------------------------------------------------
 
 function thinkup_input_breadcrumb() {
+global $thinkup_general_breadcrumbdelimeter;
 
-	$output = NULL;
-	$count_loop = NULL;
+	$output           = NULL;
+	$count_loop       = NULL;
 	$count_categories = NULL;
 
-	$delimiter 		   = '<span class="delimiter">/</span>';
+	if ( empty( $thinkup_general_breadcrumbdelimeter ) ) {
+		$delimiter = '<span class="delimiter">/</span>';
+	} else if ( ! empty( $thinkup_general_breadcrumbdelimeter ) ) {
+		$delimiter = '<span class="delimiter"> ' . $thinkup_general_breadcrumbdelimeter . ' </span>';
+	}
 
 	$delimiter_inner   =   '<span class="delimiter_core"> &bull; </span>';
-	$main              =   __( 'Home ', 'renden' );
+	$main              =   __( 'Home', 'renden' );
 	$maxLength         =   30;
 
-	// Archive variables
+	/* Archive variables */
 	$arc_year       =   get_the_time('Y');
 	$arc_month      =   get_the_time('F');
 	$arc_day        =   get_the_time('d');
 	$arc_day_full   =   get_the_time('l');  
 
-	// URL variables
+	/* URL variables */
 	$url_year    =   get_year_link($arc_year);
 	$url_month   =   get_month_link($arc_year,$arc_month);
 
-	// Display breadcumbs if NOT the home page
-	if ( !is_home() ) {
+	/* Display breadcumbs if NOT the home page */
+	if ( ! is_front_page() ) {
 		$output .= '<div id="breadcrumbs"><div id="breadcrumbs-core">';
 		global $post, $cat;
 		$homeLink = home_url( '/' );
-		$output .=  '<a href="' . $homeLink . '">' . $main . '</a>' . $delimiter;    
+		$output .= '<a href="' . $homeLink . '">' . $main . '</a>' . $delimiter;    
 
-		// Display breadcrumbs for single post
+		/* Display breadcrumbs for single post */
 		if ( is_single() ) {
 			$category = get_the_category();
 			$num_cat = count($category);
 			if ($num_cat <=1) {
-				$output .=  ' ' . get_the_title();
+				$output .= ' ' . get_the_title();
 			} else {
 
 				// Count Total categories
@@ -144,10 +149,10 @@ function thinkup_input_breadcrumb() {
 				}
 			}
 		} elseif (is_category()) {
-			$output .= __( 'Archive Category: ', 'renden' ) . get_category_parents($cat, true,' ' . $delimiter . ' ') ;
+			$output .= '<span class="breadcrumbs-cat">' . __( 'Archive Category: ', 'renden' ) . '</span>' . get_category_parents($cat, true, '') ;
 		} elseif ( is_tag() ) {
-			$output .= __( 'Posts Tagged: ', 'renden' ) . single_tag_title("", false) . '"';
-		} elseif ( is_day() ) {
+			$output .= '<span class="breadcrumbs-tag">' . __( 'Posts Tagged: ', 'renden' ) . '</span>' . single_tag_title("", false);
+		} elseif ( is_day()) {
 			$output .=  '<a href="' . $url_year . '">' . $arc_year . '</a> ' . $delimiter . ' ';
 			$output .=  '<a href="' . $url_month . '">' . $arc_month . '</a> ' . $delimiter . $arc_day . ' (' . $arc_day_full . ')';
 		} elseif ( is_month() ) {
@@ -163,10 +168,10 @@ function thinkup_input_breadcrumb() {
 			krsort( $post_array ); 
 			foreach( $post_array as $key=>$postid ){
 				$post_ids = get_post( $postid );
-				$title    = $post_ids->post_title;
+				$title = $post_ids->post_title;
 				$output  .= '<a href="' . get_permalink($post_ids) . '">' . $title . '</a>' . $delimiter;
 			}
-			the_title();
+			$output .= get_the_title();
 		} elseif ( is_author() ) {
 			global $author;
 			$user_info = get_userdata($author);
@@ -177,8 +182,14 @@ function thinkup_input_breadcrumb() {
 			$output .= get_queried_object()->name;
 		} elseif ( is_post_type_archive( 'portfolio' )	) {
 			$output .= __( 'Portfolio', 'renden' );
+		} elseif ( is_post_type_archive( 'client' )	) {
+			$output .= __( 'Clients', 'renden' );
+		} elseif ( is_post_type_archive( 'team' )	) {
+			$output .= __( 'Team', 'renden' );
+		} elseif ( is_post_type_archive( 'testimonial' )	) {
+			$output .= __( 'Testimonials', 'renden' );
 		} elseif ( is_post_type_archive( 'product' ) and function_exists( 'thinkup_woo_titleshop_archive' ) ) {
-			thinkup_woo_titleshop_archive();
+//			$output .= thinkup_woo_titleshop_archive();
 		}
        $output .=  '</div></div>';
 	   

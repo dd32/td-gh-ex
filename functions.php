@@ -81,9 +81,9 @@ function thinkup_frontscripts() {
 
 	// Add theme stylesheets.
 	wp_enqueue_style( 'thinkup-bootstrap', get_template_directory_uri() . '/lib/extentions/bootstrap/css/bootstrap.css', '', '2.3.2' );
-	wp_enqueue_style( 'thinkup-prettyPhoto', get_template_directory_uri() . '/lib/extentions/prettyPhoto/css/prettyPhoto.css', '', '3.1.5' );
+	wp_enqueue_style( 'thinkup-prettyPhoto', get_template_directory_uri() . '/lib/extentions/prettyPhoto/css/prettyPhoto.css', '', '3.1.6' );
 	wp_enqueue_style( 'thinkup-shortcodes', get_template_directory_uri() . '/styles/style-shortcodes.css', '', '1.1' );
-	wp_enqueue_style( 'thinkup-style', get_stylesheet_uri(), '', '1.0.8' );
+	wp_enqueue_style( 'thinkup-style', get_stylesheet_uri(), '', '1.1.0' );
 
 	// Add Font Packages.
 	wp_enqueue_style( 'dashicons' );
@@ -91,7 +91,7 @@ function thinkup_frontscripts() {
 
 	// Add theme scripts
 	wp_enqueue_script( 'thinkup-imagesloaded', get_template_directory_uri() . '/lib/scripts/plugins/imagesloaded/imagesloaded.js', array( 'jquery' ), '1.3.4', true );	
-	wp_enqueue_script( 'thinkup-prettyPhoto', ( get_template_directory_uri()."/lib/extentions/prettyPhoto/jquery.prettyPhoto.js" ), array( 'jquery' ), '3.1.5', 'true' );
+	wp_enqueue_script( 'thinkup-prettyPhoto', ( get_template_directory_uri().'/lib/extentions/prettyPhoto/js/jquery.prettyPhoto.js' ), array( 'jquery' ), '3.1.6', 'true' );
 	wp_enqueue_script( 'thinkup-frontend', get_template_directory_uri() . '/lib/scripts/main-frontend.js', array( 'jquery' ), '1.1', 'true'  );
 	wp_enqueue_script( 'thinkup-bootstrap', get_template_directory_uri() . '/lib/extentions/bootstrap/js/bootstrap.js', array( 'jquery' ), '2.3.2', 'true'  );
 	wp_enqueue_script( 'thinkup-modernizr', get_template_directory_uri() . '/lib/scripts/modernizr.js', array( 'jquery' ), '2.6.2', 'true'  );

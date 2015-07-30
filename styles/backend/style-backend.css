@@ -325,6 +325,12 @@ border-bottom: none;
 	META BOXES
 ---------------------------------------------------- */
 
+/* Font styles for CMB meta boxes */
+table.cmb_metabox td label {
+  font-size: 13px !important;
+  vertical-align: middle !important;
+}
+
 /* Custom styling for side metabox - Featured Media */
 ._thinkup_meta_featuredmedia th,
 ._thinkup_meta_featuredmediatype th,
