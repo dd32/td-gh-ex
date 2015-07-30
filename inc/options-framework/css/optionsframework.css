@@ -25,6 +25,9 @@
 	font-weight: normal;
 	color:#000;
 }
+#optionsframework  #options-group-7 h4{
+	font-size: 17px;
+}
 #optionsframework p {
 	margin-bottom:0;
 	padding-bottom:10px;
@@ -400,4 +403,35 @@
 	border:0;
 	padding: 0;
 	margin: 0;
+}
+.ap-intro-text{
+	line-height: 2;
+}
+.update-banner h3{
+	background: #333;
+	color: #FFF;
+	border:1px solid #333;
+}
+.pro-feature-title{
+	cursor: pointer;
+}
+.pro-feature-title span{
+	float: right;
+	font-size: 20px;
+	line-height: 20px;
+}
+.feature-img{
+	display: none;
+}
+.ak-socials{
+	margin-top: 10px;
+}
+.ak-socials a{
+	color: #FFF;
+	background: #E3633B;
+	display: inline-block;
+	padding: 8px 10px;
+	text-decoration: none;
+	border-radius: 5px;
+	margin: 0 5px;
 }

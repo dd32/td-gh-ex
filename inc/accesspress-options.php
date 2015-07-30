@@ -67,21 +67,26 @@ function optionsframework_options() {
 	// Parallax Defaults
 	$parallax_defaults = NULL;
 
-    $about_content = "<p>".__('AccessPress Parallax is a beautiful WordPress theme with Parallax design. Parallax design has become popular and is being adopted because 3D effects are possible with it, you can add some sphere to your product, it is the best way of storytelling, you can draw your visitors in, it is interactive, engaging, makes your visitors curious, fun, surprise, effective to trigger action, invite your visitors in great Call to Action, great conversion rates and many more. This is probably the most beautiful, feature rich and complete free WordPress parallax theme with features like: fully responsive, advance theme option panel, featured slider, advance post settings, services/team/blog/portfolio/testimonial layout, Google map integration, custom logo/fav icon, call to action, CSS animation, SEO friendly, translation ready, RTL support, custom CSS/JS and more! ')."</p>"; 
+    $about_content = "<p class='ap-intro-text'>".__('AccessPress Parallax is a beautiful WordPress theme with Parallax design. Parallax design has become popular and is being adopted because 3D effects are possible with it, you can add some sphere to your product, it is the best way of storytelling, you can draw your visitors in, it is interactive, engaging, makes your visitors curious, fun, surprise, effective to trigger action, invite your visitors in great Call to Action, great conversion rates and many more. This is probably the most beautiful, feature rich and complete free WordPress parallax theme with features like: fully responsive, advance theme option panel, featured slider, advance post settings, services/team/blog/portfolio/testimonial layout, Google map integration, custom logo/fav icon, call to action, CSS animation, SEO friendly, translation ready, RTL support, custom CSS/JS and more! ')."</p>"; 
     $about_content .= "<p><a target='_blank' href='".esc_url('http://www.accesspressthemes.com/')."'>AccessPress Themes</a> ".__('- A WordPress Division of Access Keys.','accesspress-parallax')."</p>"; 
     
-    $about_content .= "<hr/>";
+    $about_content .= "<hr/><br />";
+    $about_content .= __('Demo:','accesspress-parallax')." <a target='_blank' href='".esc_url('http://accesspressthemes.com/accesspress-parallax/')."'>http://accesspressthemes.com/accesspress-parallax/</a><br /><br />";
+    $about_content .= __('Documentation:','accesspress-parallax')." <a target='_blank' href='".esc_url('https://accesspressthemes.com/documentation/theme-instruction-accesspress-parallax/')."'>https://accesspressthemes.com/documentation/theme-instruction-accesspress-parallax/</a><br /><br />";
+    $about_content .= "<hr/><br />";
     
     $about_content .= "<h4>".__('Other products by AccessPressThemes','accesspress-parallax')."</h4>";
     $about_content .=  __('Our Themes - ','accesspress_ray'). __(sprintf('<a href="%s" target="_blank">https://accesspressthemes.com/themes</a>','https://accesspressthemes.com/themes'))."<br/><br />" ;
     $about_content .= __('Our Plugins - ','accesspress_ray'). __(sprintf('<a href="%s" target="_blank">https://accesspressthemes.com/plugins</a>','https://accesspressthemes.com/plugins'))."<br/><br />" ;
 
-    $about_content .= "<hr/>";
+    $about_content .= "<hr/><br />";
 
     $about_content .= "<h4>".__('Get in touch','accesspress-parallax')."</h4>";
     $about_content .= __('If you have any question/feedback regarding theme, please post in our forum','accesspress-parallax')."<br /><br />"; 
-    $about_content .= __('Forum:','accesspress-parallax')." <a target='_blank' href='".esc_url('http://accesspressthemes.com/support/')."'>http://accesspressthemes.com/support/</a><br /><br /><br />";
-    $about_content .= __('For Queries Regading Pro Themes:','accesspress-parallax')."<br/><br />";
+    $about_content .= __('Forum:','accesspress-parallax')." <a target='_blank' href='".esc_url('http://accesspressthemes.com/support/')."'>http://accesspressthemes.com/support/</a><br /><br />";
+    $about_content .= __('Live Chat Support:','accesspress-parallax')." <a target='_blank' href='".esc_url('http://accesspressthemes.com/')."'>http://accesspressthemes.com</a><br /><br /><br />";
+    $about_content .= "<hr/><br />";
+    $about_content .= "<h4>".__('For Queries Regading Pro Themes:','accesspress-parallax')."</h4>";
     $about_content .= "<a href='mailto:support@accesspressthemes.com'>support@accesspressthemes.com</a><br /><br />";
     
 	// Pull all the categories into an array

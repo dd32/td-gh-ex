@@ -89,6 +89,11 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.23.9
+* Demo Slider Content Removed
+* Demo and Documentation Link added in Theme Option Panel
+* Minor change in theme option panel
+
 Version 1.23.5
 * TGM Plugin Class Updated to latest version
 * Content bug for the parallax section fixed

@@ -106,8 +106,8 @@ jQuery(document).ready(function($) {
             $(this).parents('.sub-option-inner').find('.toggle-category').fadeOut();
         }
     });
-    
-    $('.ap-popup-bg, .ap-popup-close').click(function(){
-		$('.ap-popup-bg, .ap-popup-wrapper').fadeOut();
-	});
+
+	$('.pro-feature-title').click(function(){
+        $('.feature-img').slideToggle();
+    });
 });

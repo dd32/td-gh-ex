@@ -174,6 +174,8 @@ class Options_Framework_Admin {
 		</div>
 
 		<div class="ak-socials">
+		<a target='_blank' href="<?php echo esc_url('http://accesspressthemes.com/accesspress-parallax/'); ?>"><?php _e('Demo','accesspress-parallax'); ?></a>
+		<a target='_blank' href="<?php echo esc_url('https://accesspressthemes.com/documentation/theme-instruction-accesspress-parallax/'); ?>"><?php _e('Documentation/Video Tutorial','accesspress-parallax'); ?></a>
 		</div>
 		</div>
 
@@ -198,19 +200,22 @@ class Options_Framework_Admin {
 			</div> <!-- / #container -->
             
             <div class="update-banner">
+            	<h3><?php _e('Upgrade to Parallax Pro','accesspress-parallax') ?></h3>
     			<img src="<?php echo get_template_directory_uri(); ?>/inc/options-framework/images/upgrade-top.jpg">
     			<div class="button-link">
     				<a href="<?php echo esc_url('http://accesspressthemes.com/accesspress-parallax-pro/'); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/inc/options-framework/images/demo-btn.png"></a>
     				<a href="<?php echo esc_url('https://accesspressthemes.com/wordpress-themes/accesspress-parallax-pro/'); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/inc/options-framework/images/upgrade-btn.png"></a>
     			</div>
+    			<div class="any-question">
+    				<?php echo sprintf(__('Any question!! Click <a href="%s" target="_blank">here</a> for Live Chat.','accesspress-parallax'), esc_url('https://accesspressthemes.com/contact/')); ?>
+    			</div>
+    			<h3 class="pro-feature-title"><?php _e('Pro Features','accesspress-root') ?><span>&#8250;</span></h3>
+    			<div class="feature-img">
     			<img src="<?php echo get_template_directory_uri(); ?>/inc/options-framework/images/upgrade-bottom.jpg">
     			<div class="button-link">
     				<a href="<?php echo esc_url('http://accesspressthemes.com/accesspress-parallax-pro/'); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/inc/options-framework/images/demo-btn.png"></a>
     				<a href="<?php echo esc_url('https://accesspressthemes.com/wordpress-themes/accesspress-parallax-pro/'); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/inc/options-framework/images/upgrade-btn.png"></a>
     			</div>
-    
-    			<div class="any-question">
-    				<?php echo sprintf(__('Any question!! Click <a href="%s" target="_blank">here</a> for Live Chat.','accesspress-parallax'), esc_url('https://accesspressthemes.com/contact/')); ?>
     			</div>
     		</div>
 		</div>
