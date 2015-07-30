@@ -127,10 +127,13 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.2.0
+- Updated: css code in style-shortcodes.css completely rewritten. Much tidier and easier or end user to customize.
+
 Version 1.1.9
+- Fixed:   #sidebar styling in style-responsive.css applied with !important attribute.
+- Fixed:   #main-core styling in style-responsive.css applied with !important attribute.
 - Updated: prettyPhoto updates to v3.1.6 to put in place prettyPhoto XSS fix.
-- Updated: #sidebar styling in style-responsive.css applied with !important attribute.
-- Updated: #main-core styling in style-responsive.css applied with !important attribute.
 - Updated: caroufredsel now checks to if carousel item exists before executing code - reduces jQuery notices.
 - Updated: caroufredsel code updated to ensure carousel code is not applied to individual items (e.g. postitem, featured items, images).
 
