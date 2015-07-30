@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Anarcho Notepad v2.18\n"
+"Project-Id-Version: Anarcho Notepad v2.22\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-09-14 20:15:29+0000\n"
+"PO-Revision-Date: 2014-11-14 06:20:50+0000\n"
 "Last-Translator: Svetlana Drotianko\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -52,20 +52,20 @@ msgstr "Ви можете скористуватися пошуком на мо�
 msgid "Continue reading"
 msgstr "Продовжити читання"
 
-#: functions.php:546
-#: functions.php:556
-#: functions.php:558
+#: functions.php:518
+#: functions.php:528
+#: functions.php:530
 #: sitemap.php:52
 #@ anarcho-notepad
 msgid "Category: "
 msgstr "Категорія: "
 
-#: functions.php:531
+#: functions.php:503
 #@ anarcho-notepad
 msgid "Not Found"
 msgstr "Не знайдено"
 
-#: functions.php:532
+#: functions.php:504
 #@ anarcho-notepad
 msgid "Sorry, but you are looking for something that isn't here."
 msgstr "Пробачте, але тут немає того, що ви шукаєте."
@@ -216,69 +216,22 @@ msgstr "(Редактувати)"
 msgid "(Post author) "
 msgstr "(Автор запису) "
 
-#. translators: 1: date, 2: time
-#: functions.php:419
+#: functions.php:418
 #@ anarcho-notepad
 msgid "Your comment is awaiting moderation."
 msgstr "Ваш коментар чекає перевірки."
 
-#: functions.php:424
+#: functions.php:423
 #@ anarcho-notepad
 msgid "Edit"
 msgstr "Редактувати"
 
-#: functions.php:428
+#: functions.php:427
 #@ anarcho-notepad
 msgid "Reply"
 msgstr "Відповісти"
 
-#: functions.php:445
-#@ anarcho-notepad
-msgid "Name:"
-msgstr "Ім'я:"
-
-#: functions.php:446
-#@ anarcho-notepad
-msgid "Name"
-msgstr "Ім'я"
-
-#: functions.php:447
-#@ anarcho-notepad
-msgid "Email:"
-msgstr "Email:"
-
-#: functions.php:448
-#@ anarcho-notepad
-msgid "Email"
-msgstr "Email"
-
-#: functions.php:449
-#@ anarcho-notepad
-msgid "Website:"
-msgstr "Вебсайт:"
-
-#: functions.php:450
-#@ anarcho-notepad
-msgid "Website"
-msgstr "Вебсайт"
-
 #: functions.php:454
-#@ anarcho-notepad
-msgctxt "noun"
-msgid "Comment:"
-msgstr "Коментар:"
-
-#: functions.php:454
-#@ anarcho-notepad
-msgid "Comment"
-msgstr "Коментар"
-
-#: functions.php:456
-#@ anarcho-notepad
-msgid "Leave a Comment"
-msgstr "Залишити коментар"
-
-#: functions.php:482
 #, php-format
 #@ anarcho-notepad
 msgid "Page %s"
@@ -289,182 +242,182 @@ msgstr "Сторінка %s"
 msgid "Meta"
 msgstr "Meta"
 
-#: inc/customizer.php:37
+#: inc/customizer.php:38
 #@ anarcho-notepad
 msgid "Paste here small text about You and/or about site"
 msgstr "Впишіть сюди невеликий текст про себе чи про свій сайт"
 
-#: inc/customizer.php:40
+#: inc/customizer.php:43
 #@ anarcho-notepad
 msgid "About box - \"What is this place?\""
 msgstr "Область - \"Що це за місце?\""
 
-#: inc/customizer.php:49
+#: inc/customizer.php:55
 #@ anarcho-notepad
 msgid "Copyright after post"
 msgstr "Копірайт після запису"
 
-#: inc/customizer.php:58
+#: inc/customizer.php:67
 #@ anarcho-notepad
 msgid "Site-info in footer"
 msgstr "Інфо про сайт"
 
-#: inc/customizer.php:68
+#: inc/customizer.php:80
 #@ anarcho-notepad
 msgid "Disable copyright of the author of theme in footer"
 msgstr "Відключити копірайт автора теми в footer"
 
-#: inc/customizer.php:74
+#: inc/customizer.php:87
 #@ anarcho-notepad
 msgid "Stuff"
 msgstr "Stuff"
 
-#: inc/customizer.php:83
+#: inc/customizer.php:99
 #@ anarcho-notepad
 msgid "Enable \"Title animation\""
 msgstr "Включити \"Анімація заголовка\""
 
-#: inc/customizer.php:92
+#: inc/customizer.php:111
 #@ anarcho-notepad
 msgid "Disable \"Paper Search\""
 msgstr "Відключити \"Сторінка пошуку\""
 
-#: inc/customizer.php:101
+#: inc/customizer.php:123
 #@ anarcho-notepad
 msgid "Disable box \"What is this place?\""
 msgstr "Відключити область \"Що це за місце?\""
 
-#: inc/customizer.php:128
+#: inc/customizer.php:159
 #@ anarcho-notepad
 msgid "Disable \"Red Data Ribbons\""
 msgstr "Відключити \"Червона стрічка з датою\""
 
-#: inc/customizer.php:137
+#: inc/customizer.php:171
 #@ anarcho-notepad
 msgid "Disable \"Recent Posts Sticker\""
 msgstr "Відключити \"Стікер з останніми записами\""
 
-#: inc/customizer.php:146
+#: inc/customizer.php:183
 #@ anarcho-notepad
 msgid "Enable \"Breadcrumbs\""
 msgstr "Включити \"Хлібні крихти\""
 
-#: inc/customizer.php:155
+#: inc/customizer.php:195
 #@ anarcho-notepad
 msgid "Enable \"Page Navigation\""
 msgstr "Включити \"Посторінкова навігація\""
 
-#: inc/customizer.php:173
+#: inc/customizer.php:219
 #@ anarcho-notepad
 msgid "Disable button \"To Top\""
 msgstr "Відключити кнопку \"Вверх\""
 
-#: inc/customizer.php:182
+#: inc/customizer.php:231
 #@ anarcho-notepad
 msgid "Show info line in footer"
 msgstr "Показати інформаційний рядок в"
 
-#: inc/customizer.php:187
+#: inc/customizer.php:275
 #@ anarcho-notepad
 msgid "Scripts"
 msgstr "Скрипти"
 
-#: inc/customizer.php:188
+#: inc/customizer.php:276
 #@ anarcho-notepad
 msgid "Put here your scripts"
 msgstr "Оголошення тут ваші скрипти"
 
-#: inc/customizer.php:195
+#: inc/customizer.php:287
 #@ anarcho-notepad
 msgid "Scripts before posts"
 msgstr "Скрипти перед записами"
 
-#: inc/customizer.php:203
+#: inc/customizer.php:299
 #@ anarcho-notepad
 msgid "Scripts at the beginning of the posts"
 msgstr "Скрипты на початку записів"
 
-#: inc/customizer.php:211
+#: inc/customizer.php:311
 #@ anarcho-notepad
 msgid "Scripts at the end of the posts"
 msgstr "Скрипты в кінці записів"
 
-#: inc/customizer.php:219
+#: inc/customizer.php:323
 #@ anarcho-notepad
 msgid "Scripts after posts"
 msgstr "Скрипты після записів"
 
-#: inc/customizer.php:225
+#: inc/customizer.php:330
 #@ anarcho-notepad
 msgid "Post"
 msgstr "Запис"
 
-#: inc/customizer.php:245
+#: inc/customizer.php:354
 #@ anarcho-notepad
 msgid "Font size of posts"
 msgstr "Розмір шрифту в записах"
 
-#: inc/customizer.php:552
+#: inc/customizer.php:664
 #@ anarcho-notepad
 msgid "Font of posts (Google Webfonts)"
 msgstr "Шрифт записів (Google Webfonts)"
 
-#: inc/customizer.php:570
+#: inc/customizer.php:685
 #@ anarcho-notepad
 msgid "Site Title font (Google Webfonts)"
 msgstr "Шрифт заголовка (Google Webfonts)"
 
-#: inc/customizer.php:582
+#: inc/customizer.php:700
 #@ anarcho-notepad
 msgid "Site Tagline font (Google Webfonts)"
 msgstr "Шрифт підзаголовка (Google Webfonts)"
 
-#: inc/customizer.php:595
+#: inc/customizer.php:716
 #@ anarcho-notepad
 msgid "Site Title color"
 msgstr "Колір заголовка"
 
-#: inc/customizer.php:607
+#: inc/customizer.php:730
 #@ anarcho-notepad
 msgid "Site Tagline color"
 msgstr "Колір підзаголовка"
 
-#: inc/customizer.php:617
+#: inc/customizer.php:742
 #@ anarcho-notepad
 msgid "Site Title Position"
 msgstr "Позиція заголовка"
 
-#: inc/customizer.php:623
+#: inc/customizer.php:748
 #@ anarcho-notepad
 msgid "Left"
 msgstr "Зліва"
 
-#: inc/customizer.php:624
+#: inc/customizer.php:749
 #@ anarcho-notepad
 msgid "Center"
 msgstr "В центрі"
 
-#: inc/customizer.php:636
+#: inc/customizer.php:763
 #@ anarcho-notepad
 msgid "Background Color"
 msgstr "Колір фону"
 
-#: inc/customizer.php:644
+#: inc/customizer.php:774
 #@ anarcho-notepad
 msgid "Background Size"
 msgstr "Розмір фону"
 
-#: inc/customizer.php:650
+#: inc/customizer.php:780
 #@ anarcho-notepad
 msgid "Auto (Default)"
 msgstr "Автоматично (Стандарт)"
 
-#: inc/customizer.php:651
+#: inc/customizer.php:781
 #@ anarcho-notepad
 msgid "Contain"
 msgstr "Помістити"
 
-#: inc/customizer.php:652
+#: inc/customizer.php:782
 #@ anarcho-notepad
 msgid "Cover"
 msgstr "Обкладинка"
@@ -474,58 +427,43 @@ msgstr "Обкладинка"
 msgid "If you liked the theme \"Anarcho Notepad\", then I'll be glad if you consider donating:"
 msgstr "Якщо вам сподобалася тема \"Anarcho Notepad\", тоді я буду радий якщо ви зробите пожертвування:"
 
-#: inc/theme_info.php:36
-#@ anarcho-notepad
-msgid "or if you leave feedback about the \"Anarcho Notepad\" on the site wordpress.org:"
-msgstr "або якщо ви залишите відгук про \"Anarcho Notepad\" на сайті wordpress.org:"
-
-#: inc/theme_info.php:41
-#@ anarcho-notepad
-msgid "If you have any questions or suggestions for improving and adding new features, feel free to contact me at support at:"
-msgstr "Якщо у вас є запитання або пропозиціі по покращенню або добавленню нової функції:"
-
-#: inc/theme_info.php:45
-#@ anarcho-notepad
-msgid "or at my website:"
-msgstr "або на моєму вебсайті:"
-
-#: inc/theme_info.php:54
+#: inc/theme_info.php:50
 #@ anarcho-notepad
 msgid "The theme is in the process of translation into other languages of the world. If you have the desire then you can help me in translation to your native language."
 msgstr "Ця тема зараз знаходиться в стані перекладу на інші мови світу. Якщо у вас є бажання,то ви можете мені допомогти перекласти на свою рідну мову."
 
-#: inc/theme_info.php:69
+#: inc/theme_info.php:75
 #@ anarcho-notepad
 msgid "Please consider making a donation"
 msgstr "Пропоную розглянути питання про пожертвування"
 
-#: inc/theme_info.php:75
+#: inc/theme_info.php:81
 #@ anarcho-notepad
 msgid "Happy to enjoy the Anarcho-Notepad?"
 msgstr "Щасливий володар Anarcho-Notepad?"
 
-#: inc/theme_info.php:76
+#: inc/theme_info.php:82
 #@ anarcho-notepad
 msgid "Leave a comment"
 msgstr "Залишити коментарій"
 
-#: inc/theme_info.php:80
+#: inc/theme_info.php:86
 #@ anarcho-notepad
 msgid "Follow me :"
 msgstr "Ідіть за мною :"
 
-#: inc/theme_info.php:104
-#: inc/theme_info.php:105
+#: inc/theme_info.php:110
+#: inc/theme_info.php:111
 #@ anarcho-notepad
 msgid "Theme Info"
 msgstr "Інфо про тему"
 
-#: inc/theme_info.php:120
+#: inc/theme_info.php:126
 #@ anarcho-notepad
 msgid "Help"
 msgstr "Допомога"
 
-#: inc/theme_info.php:123
+#: inc/theme_info.php:129
 #@ anarcho-notepad
 msgid "Need help with Anarcho-Notepad? Click here!"
 msgstr "Потрібна допомога з Anarcho-Notepad? Натисніть тут!"
@@ -546,17 +484,17 @@ msgstr "Впишіть слово і нажміть Enter"
 msgid "Pages:"
 msgstr "Сторінки:"
 
-#: functions.php:550
+#: functions.php:522
 #@ anarcho-notepad
 msgid "Posted "
 msgstr "Опубліковано "
 
-#: functions.php:550
+#: functions.php:522
 #@ anarcho-notepad
 msgid " by "
 msgstr ""
 
-#: functions.php:550
+#: functions.php:522
 #@ anarcho-notepad
 msgid " in category "
 msgstr "в категоріі "
@@ -616,61 +554,97 @@ msgstr ""
 msgid "Widgets in this area will be shown right."
 msgstr ""
 
-#: functions.php:504
+#: functions.php:476
 #@ anarcho-notepad
 msgid " queries in "
 msgstr ""
 
-#: functions.php:506
+#: functions.php:478
 #@ anarcho-notepad
 msgid " seconds"
 msgstr ""
 
-#: functions.php:509
+#: functions.php:481
 #@ anarcho-notepad
 msgid " mb"
 msgstr ""
 
-#: functions.php:548
-#: functions.php:550
-#: functions.php:556
-#: functions.php:558
+#: functions.php:520
+#: functions.php:522
+#: functions.php:528
+#: functions.php:530
 #@ anarcho-notepad
 msgid "&#9998; EDIT"
 msgstr ""
 
-#: inc/customizer.php:110
+#: inc/customizer.php:135
 #@ anarcho-notepad
 msgid "Disable box \"Friends & Links\""
 msgstr "Відключити область \"Друзі і посилання\""
 
-#: inc/customizer.php:119
+#: inc/customizer.php:147
 #@ anarcho-notepad
 msgid "Enable Year in \"Red Data Ribbons\""
 msgstr ""
 
-#: inc/customizer.php:164
+#: inc/customizer.php:207
 #@ anarcho-notepad
 msgid "Disable block \"About the Author\""
 msgstr ""
 
-#: inc/theme_info.php:50
+#: inc/theme_info.php:46
 #@ anarcho-notepad
 msgid "Sorry for what I delete some functions from Customizer. I have to do it due to the rules of wordpress.org."
 msgstr ""
 
-#: inc/theme_info.php:53
-#@ anarcho-notepad
-msgid "Languages"
-msgstr ""
-
-#: inc/theme_info.php:56
+#: inc/theme_info.php:52
 #@ anarcho-notepad
 msgid "\"Anarcho-Notepad\" written in English and translated into:"
 msgstr ""
 
-#: inc/theme_info.php:63
+#: inc/theme_info.php:62
 #@ anarcho-notepad
 msgid "Thanks to all who helped me translate \"Anarcho-Notepad\" into other languages!"
+msgstr ""
+
+#: functions.php:528
+#: functions.php:530
+#@ anarcho-notepad
+msgid "LEAVE A COMMENT"
+msgstr ""
+
+#: inc/customizer.php:243
+#@ anarcho-notepad
+msgid "Disable RSS icon in sidebar"
+msgstr ""
+
+#: inc/customizer.php:265
+#@ anarcho-notepad
+msgid "Numbers of recent posts in sidebar"
+msgstr ""
+
+#: inc/theme_info.php:36
+#@ anarcho-notepad
+msgid "or if you leave feedback about the \"Anarcho Notepad\":"
+msgstr ""
+
+#: inc/theme_info.php:40
+#@ anarcho-notepad
+msgid "If you have any questions or suggestions for improving and adding new features, feel free to contact me at:"
+msgstr ""
+
+#: inc/theme_info.php:42
+#@ anarcho-notepad
+msgid "or at:"
+msgstr ""
+
+#: inc/theme_info.php:49
+#@ anarcho-notepad
+msgid "Translation"
+msgstr ""
+
+#: inc/theme_info.php:63
+#@ anarcho-notepad
+msgid "Thank you very much for your contribution!"
 msgstr ""
 

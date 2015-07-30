@@ -3,9 +3,9 @@
  * The sidebar containing the secondary widget area, displays on posts and pages.
  *
  * @package	Anarcho Notepad
- * @since	2.20
- * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
- * @copyright 	Copyright (c) 2013-2014, Arthur Gareginyan
+ * @since	2.22
+ * @author	Arthur "Berserkr" Gareginyan <arthurgareginyan@gmail.com>
+ * @copyright 	Copyright (c) 2013-2015, Arthur Gareginyan
  * @link      	http://mycyberuniverse.com/anarcho-notepad.html
  * @license   	http://www.gnu.org/licenses/gpl-3.0.html
  */
@@ -62,7 +62,8 @@
 <?php if(get_theme_mod('disable_recent_sticker') == '0') {  ?>
 <div class="recent-posts-upper"></div>
  <nav class="recent-posts">
-    <?php $query = new WP_Query( array( 'posts_per_page' => '10' ) ); ?>
+    <?php $num_recent_post = get_theme_mod('num_recent_post'); ?>
+    <?php $query = new WP_Query( array( 'posts_per_page' => $num_recent_post ) ); ?>
     <?php while ($query->have_posts()): $query->the_post(); ?>
     <ul>
        <li>

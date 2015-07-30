@@ -3,9 +3,9 @@
  * Anarcho Notepad functions and definitions.
  *
  * @package	Anarcho Notepad
- * @since	2.17
- * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
- * @copyright 	Copyright (c) 2013-2014, Arthur Gareginyan
+ * @since	2.22
+ * @author	Arthur "Berserkr" Gareginyan <arthurgareginyan@gmail.com>
+ * @copyright 	Copyright (c) 2013-2015, Arthur Gareginyan
  * @link      	http://mycyberuniverse.com/anarcho-notepad.html
  * @license   	http://www.gnu.org/licenses/gpl-3.0.html
  */
@@ -19,7 +19,7 @@ function anarcho_notepad_setup() {
 	// Localization Init
 	load_theme_textdomain( 'anarcho-notepad', get_template_directory() . '/languages' );
 
-        // This feature enables Custom Backgrounds.
+	// This feature enables Custom Backgrounds.
 	add_theme_support( 'custom-background', array(
 		'default-image' => get_template_directory_uri() . '/images/background.jpg', ) );
 
@@ -35,17 +35,20 @@ function anarcho_notepad_setup() {
 	  'uploads'       	   => true,
 	) );
 
-        // This feature enables Featured Images (also known as post thumbnails).
+	// This feature enables Featured Images (also known as post thumbnails).
 	add_theme_support('post-thumbnails');
 	set_post_thumbnail_size(540,230,!1);
 
-        // This feature enables post and comment RSS feed links to <head>.
-        add_theme_support('automatic-feed-links');
+	// This feature enables post and comment RSS feed links to <head>.
+	add_theme_support('automatic-feed-links');
 
 	// Add HTML5 elements
-	add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form', ) );
+	add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form', 'gallery', 'caption', ) );
 
-        // This feature enables menu.
+	// Add Title-tag
+	add_theme_support('title-tag');
+
+	// This feature enables menu.
 	register_nav_menus( array(
 			'primary' => __( 'Primary', 'anarcho-notepad' ) ));
 
@@ -161,10 +164,10 @@ function anarcho_include_font_awesome_styles() {
 add_action( 'wp_enqueue_scripts', 'anarcho_include_font_awesome_styles' );
 
 // Enable smoothscroll.js
-function include_smoothscroll_script() {
+function anarcho_include_smoothscroll_script() {
 	wp_enqueue_script( 'back-top', get_template_directory_uri() . '/js/smoothscroll.js', array( 'jquery' ), '',  true );
 }
-add_action( 'wp_enqueue_scripts', 'include_smoothscroll_script' );
+add_action( 'wp_enqueue_scripts', 'anarcho_include_smoothscroll_script' );
 
 // Display block "About the Author".
 function anarcho_author_bio() {
@@ -401,16 +404,15 @@ function anarcho_comment( $comment, $args, $depth ) {
 			<header class="comment-meta comment-author vcard">
 				<?php
 					echo get_avatar( $comment, 44 );
-					printf( '<cite><b class="fn">%1$s</b> %2$s</cite>',
+					printf( '<cite>By <b class="fn">%1$s</b> %2$s</cite>',
 						get_comment_author_link(),
 						// If current post author is also comment author, make it known visually.
 						( $comment->user_id === $post->post_author ) ? '<span>' . __( '(Post author) ', 'anarcho-notepad' ) . '</span>' : ''
 					);
-					printf( '<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
+					printf( '<b>on <a href="%1$s"><time datetime="%2$s">%3$s</time></a></b>',
 						esc_url( get_comment_link( $comment->comment_ID ) ),
 						get_comment_time( 'c' ),
-						/* translators: 1: date, 2: time */
-						sprintf( '%1$s at %2$s', get_comment_date(), get_comment_time() )
+						sprintf( '%1$s', get_comment_date( 'j F, Y' ) )
 					);
 				?>
 			</header><!-- .comment-meta -->
@@ -432,33 +434,6 @@ function anarcho_comment( $comment, $args, $depth ) {
 		break;
 	endswitch; // end comment_type check
 }
-// END-Comments
-
-// Comments-Form
-function anarcho_comment_form($anarcho_defaults) {
-
-	$commenter = wp_get_current_commenter();
-	$req = get_option( 'require_name_email' );
-	$aria_req = ( $req ? " aria-required='true'" : '' );
-
-	$anarcho_fields = array(
-		'author' => '<p class="comment-form-author">' . '<label for="author">' . __( 'Name:', 'anarcho-notepad' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
-		            '<input id="author" name="author" placeholder="' . __('Name', 'anarcho-notepad') . '" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>',
-		'email'  => '<p class="comment-form-email"><label for="email">' . __( 'Email:', 'anarcho-notepad' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
-		            '<input id="email" name="email" placeholder="' . __('Email', 'anarcho-notepad') . '" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>',
-		'url'    => '<p class="comment-form-url"><label for="url">' . __( 'Website:', 'anarcho-notepad' ) . '</label>' .
-		            '<input id="url" name="url" placeholder="' . __('Website', 'anarcho-notepad') . '" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>',
-);
-
-	$anarcho_defaults['fields'] = apply_filters( 'comment_form_default_fields', $anarcho_fields);
-	$anarcho_defaults['comment_field'] = '<p><label for=comment">' . _x( 'Comment:', 'noun', 'anarcho-notepad' ) . '</label><textarea id="comment" name="comment" placeholder="' . __('Comment', 'anarcho-notepad') . '" cols="45" rows="4" aria-required="true"></textarea></p>';
-
-	$anarcho_defaults['title_reply'] = __('Leave a Comment', 'anarcho-notepad');
-
-	return $anarcho_defaults;
-}
-add_filter('comment_form_defaults', 'anarcho_comment_form');
-// END-Comments-Form
 // END-Comments
 
 // Creates a nicely formatted and more specific title element text
