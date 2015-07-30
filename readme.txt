@@ -1,5 +1,5 @@
 APERTURE
-Theme Version: 1.1.0
+Theme Version: 1.1.1
 Author: Michael Van Den Berg 
 Author URL: http://michaelvandenberg.com/
 
@@ -69,6 +69,15 @@ Identity is based on Underscores http://underscores.me/, (C) 2012-2015 Automatti
 --------------------
 
 *
-* 1.0.0 / 20.07.2015
+* 1.1.1 / 30.07.2015
+* Minor improvements.
+* - Bug fix: Author bio not appearing on posts without comments and comments disabled.
+* - Bug fix: Content width wasn't adjusted for full width page templates.
+* - Bug fix: Adjust height of the fullscreen slider if admin bar is present.
+* - Added support for Jetpack Infinite Scroll.
+*
+
+*
+* 1.1.0 / 20.07.2015
 * Initial release.
 *

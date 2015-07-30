@@ -16,11 +16,6 @@
 if ( post_password_required() ) {
 	return;
 }
-
-// Author bio.
-if ( is_single() && get_the_author_meta( 'description' ) ) :
-	get_template_part( 'template-parts/author-bio' );
-endif;
 ?>
 
 <div id="comments" class="comments-area">

@@ -40,7 +40,7 @@ function aperture_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 640, 9999, false );
-	add_image_size( 'aperture-full-width', '1140', '9999', false );
+	add_image_size( 'aperture-full-width', '1010', '9999', false );
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
@@ -81,15 +81,21 @@ add_action( 'after_setup_theme', 'aperture_setup' );
  * @global int $content_width
  */
 function aperture_content_width() {
-	if ( is_page_template( 'template-parts/page-full-width.php' ) ) {
-		$content_width = 1010;
-	}
-	else {
-		$content_width = 640;
-	}
-	$GLOBALS['content_width'] = apply_filters( 'aperture_content_width', $content_width );
+	$GLOBALS['content_width'] = apply_filters( 'aperture_content_width', 640 );
 }
 add_action( 'after_setup_theme', 'aperture_content_width', 0 );
+
+/**
+ * Adjust content_width value for full width page template.
+ *
+ * @since Aperture 1.1.1
+ */
+function aperture_full_width_page_content_width() {
+	if ( is_page_template( 'template-parts/page-full-width.php' ) ) {	
+		$GLOBALS['content_width'] = apply_filters( 'aperture_full_width_page_content_width', 1010 );
+	}
+}
+add_action( 'template_redirect', 'aperture_full_width_page_content_width' );
 
 /**
  * Register widget area.

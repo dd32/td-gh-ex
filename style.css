@@ -4,7 +4,7 @@ Theme URI: http://michaelvandenberg.com/portfolio/themes/aperture/
 Author: Michael Van Den Berg
 Author URI: http://michaelvandenberg.com/
 Description: Aperture is a simple, responsive theme with a fullscreen slider.
-Version: 1.1.0
+Version: 1.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aperture
@@ -611,7 +611,7 @@ input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea {
-  color: #f3f3f3;
+  color: #202020;
   border: 1px solid #ccc;
   border-radius: 3px;
 }
@@ -621,7 +621,7 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 input[type="search"]:focus,
 textarea:focus {
-  color: #f1f1f1;
+  color: #101010;
 }
 
 input[type="text"],
@@ -635,6 +635,24 @@ input[type="search"] {
 textarea {
   padding-left: 3px;
   width: 100%;
+}
+
+#hidden-header input[type="text"],
+#hidden-header input[type="email"],
+#hidden-header input[type="url"],
+#hidden-header input[type="password"],
+#hidden-header input[type="search"],
+#hidden-header textarea {
+  color: #f3f3f3;
+  border-radius: 3px;
+}
+#hidden-header input[type="text"]:focus,
+#hidden-header input[type="email"]:focus,
+#hidden-header input[type="url"]:focus,
+#hidden-header input[type="password"]:focus,
+#hidden-header input[type="search"]:focus,
+#hidden-header textarea:focus {
+  color: #f1f1f1;
 }
 
 /*--------------------------------------------------------------
@@ -1019,6 +1037,10 @@ p.site-description {
   top: 1px;
   content: '\f429';
   font-family: Genericons;
+}
+
+.infinite-scroll .pagination {
+  display: none;
 }
 
 /*--------------------------------------------------------------
@@ -1547,10 +1569,10 @@ a:hover, a:active {
 #desktop-search .search-form .search-field {
   font-size: 32px;
   font-size: 2rem;
-  color: #f1f1f1;
+  color: #101010;
 }
 #desktop-search .search-form .search-submit {
-  color: #f1f1f1;
+  color: #101010;
   min-height: 56px;
   margin-left: 8rem;
   margin-right: 1rem;
@@ -1586,12 +1608,12 @@ a:hover, a:active {
   padding-bottom: 1em;
 }
 #mobile-search .search-form .search-field {
-  color: #f1f1f1;
+  color: #101010;
   font-size: 14px;
   font-size: 0.875rem;
 }
 #mobile-search .search-form .search-submit {
-  color: #f1f1f1;
+  color: #101010;
   border: 0;
   padding: 0;
   width: 48px;
@@ -2201,6 +2223,12 @@ h3.comment-reply-title small {
   text-decoration: none;
 }
 
+.author-info:last-child {
+  margin-bottom: 0;
+  padding-bottom: 1.5em;
+  border-bottom: none;
+}
+
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
@@ -2437,6 +2465,30 @@ body {
   margin-bottom: 1.5em;
 }
 
+/* Center Infinite Scroll loader. */
+.infinite-loader {
+  margin: 1.5em auto;
+}
+.infinite-loader .spinner {
+  left: 50% !important;
+}
+
+/* Add some styling to the infinite footer. */
+#infinite-footer .container {
+  color: white;
+  background: rgba(0, 0, 0, 0.75);
+}
+#infinite-footer .blog-info a,
+#infinite-footer .blog-credits a {
+  -webkit-transition: all 0.25s ease-in-out;
+          transition: all 0.25s ease-in-out;
+  color: white;
+}
+#infinite-footer .blog-info a:hover,
+#infinite-footer .blog-credits a:hover {
+  color: #ff8b27;
+}
+
 /* Selection style. */
 ::-moz-selection {
   color: black;
@@ -2450,6 +2502,11 @@ body {
 /* Prevent the admin bar from overlapping the menu bar on the slider page. */
 body.admin-bar #page {
   position: relative;
+}
+
+/* Adjust hide of the slider if admin bar is present. */
+.admin-bar.fullscreen-slider #content {
+  height: calc( 100vh - 32px );
 }
 
 /*--------------------------------------------------------------

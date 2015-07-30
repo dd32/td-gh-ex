@@ -12,6 +12,7 @@ function aperture_jetpack_setup() {
 	 * See: https://jetpack.me/support/infinite-scroll/
 	 */
 	add_theme_support( 'infinite-scroll', array(
+		'type'		=> 'scroll',
 		'container' => 'main',
 		'render'    => 'aperture_infinite_scroll_render',
 		'footer'    => 'page',
