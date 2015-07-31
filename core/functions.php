@@ -16,18 +16,20 @@ function cpotheme_get_sidebar_position(){
 	
 //Abstracted function for retrieving specific options inside option arrays
 if(!function_exists('cpotheme_get_option')){
-	function cpotheme_get_option($option_name = '', $option_array = 'cpotheme_settings', $multilingual = false){
-		//Determines whether to grab current language, or original language's option
-		if($multilingual)
-			$option_list_name = $option_array.cpotheme_wpml_current_language();
-		else
-			$option_list_name = $option_array;
-		
-		$option_list = get_option($option_list_name, false);
+	function cpotheme_get_option($option_name = '', $option_array = 'cpotheme_settings'){
 		
 		$option_value = '';
+		
+		//Check against option array and see if it is multilingual
+		$options = cpotheme_metadata_customizer();
+		if(isset($options[$option_name]['multilingual']) && $options[$option_name]['multilingual'] == true){
+			//Determines whether to grab current language, or original language's option
+			$option_array = $option_array.cpotheme_wpml_current_language();
+		}
+		
 		//If options exists and is not empty, get value
-		if($option_list && isset($option_list[$option_name]) && (is_bool($option_list[$option_name]) === true || trim($option_list[$option_name]) !== '')){
+		$option_list = get_option($option_array, false);
+		if($option_list && isset($option_list[$option_name]) && (is_bool($option_list[$option_name]) === true || $option_list[$option_name] !== '')){
 			$option_value = $option_list[$option_name];
 		}
 		
@@ -53,15 +55,67 @@ if(!function_exists('cpotheme_get_option')){
 //Abstracted function for updating specific options inside arrays
 if(!function_exists('cpotheme_update_option')){
 	function cpotheme_update_option($option_name, $option_value, $option_array = 'cpotheme_settings'){
-		$option_list_name = $option_array;
-		$option_list = get_option($option_list_name, false);
+		
+		//Check against option array and see if it is multilingual
+		$options = cpotheme_metadata_customizer();
+		if(isset($options[$option_name]['multilingual']) && $options[$option_name]['multilingual'] == true){
+			//Determines whether to grab current language, or original language's option
+			$option_array = $option_array.cpotheme_wpml_current_language();
+		}
+		
+		
+		$option_list = get_option($option_array, false);
 		if(!$option_list)
 			$option_list = array();
 		$option_list[$option_name] = $option_value;
-		if(update_option($option_list_name, $option_list))
+		if(update_option($option_array, $option_list))
 			return true;
 		else
 			return false;
+	}
+}
+
+//Returns the current language's code in the event that WPML is active
+if(!function_exists('cpotheme_wpml_current_language')){
+	function cpotheme_wpml_current_language(){
+		$language_code = '';
+		if(cpotheme_wpml_active()){		
+			$default_language = cpotheme_wpml_default_language();
+			$active_language = ICL_LANGUAGE_CODE;
+			if($active_language != $default_language)
+				$language_code = '_'.$active_language;
+		}
+		return $language_code;
+	}
+}
+
+//Check if WPML is active
+if(!function_exists('cpotheme_wpml_active')){	
+	function cpotheme_wpml_active(){
+		if(defined('ICL_LANGUAGE_CODE') && defined('ICL_SITEPRESS_VERSION'))
+			return true;
+		else
+			return false;
+	}
+}
+
+//Retrieve languages from WPML
+if(!function_exists('cpotheme_wpml_languages')){
+	function cpotheme_wpml_languages(){
+		if(cpotheme_wpml_active()){
+			global $sitepress;
+			return $sitepress->get_active_languages();
+		}
+	}
+}
+
+//Retrieve default WPML language
+if(!function_exists('cpotheme_wpml_default_language')){
+	function cpotheme_wpml_default_language(){
+		if(cpotheme_wpml_active()){
+			global $sitepress;
+			return $sitepress->get_default_language();
+		}
 	}
 }
 

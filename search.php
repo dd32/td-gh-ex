@@ -6,12 +6,6 @@
 	<div class="container">
 		<section id="content" class="content">
 			<?php do_action('cpotheme_before_content'); ?>
-			<div class="widget_search">
-				<form role="search" method="get" id="search-form" class="search-form" action="<?php echo home_url('/'); ?>">
-					<input type="text" value="<?php if(isset($_GET['s'])) echo esc_attr($_GET['s']); ?>" name="s" id="s" />
-					<input type="submit" id="search-submit" value=" " />
-				</form>
-			</div>
 			<?php if(have_posts()): while(have_posts()): the_post(); ?>
 			<article class="search-result" id="post-<?php the_ID(); ?>"> 			
 				<h4 class="search-title heading">

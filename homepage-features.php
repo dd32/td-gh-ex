@@ -33,7 +33,7 @@
 					</div>
 				</div>
 			</div>
-			<?php if($feature_count % $columns == 0) echo '</div><div class="row">'; ?>
+			<?php if($feature_count % 3 == 0) echo '</div><div class="row">'; ?>
 			<?php endforeach; ?>
 		</div>
 	</div>

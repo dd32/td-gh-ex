@@ -16,7 +16,7 @@
 			</div>
 			<?php endwhile; ?>
 			
-			<?php get_template_part('element', 'portfolio-navigation'); ?>
+			<?php cpotheme_secondary_menu('cpo_portfolio_category', 'menu-portfolio'); ?>
 
 			<?php if(get_query_var('paged')) $current_page = get_query_var('paged'); else $current_page = 1; ?>	
 			<?php $query = new WP_Query('post_type=cpo_portfolio&paged='.$current_page.'&posts_per_page=12&order=ASC&orderby=menu_order'); ?>

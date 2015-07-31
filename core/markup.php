@@ -161,8 +161,9 @@ if(!function_exists('cpotheme_logo')){
 				$output .= '<a class="site-logo" href="'.home_url().'"><img src="'.get_template_directory_uri().'/images/logo.png" alt="'.get_bloginfo('name').'" width="'.esc_attr($width).'" height="'.esc_attr($height).'"/></a>';
 			}else{
 				$logo_width = cpotheme_get_option('general_logo_width');
+				$logo_url = esc_url(cpotheme_get_option('general_logo'));
 				if($logo_width != '') $logo_width = ' style="width:'.esc_attr($logo_width).'px;"';
-				$output .= '<a class="site-logo" href="'.home_url().'"><img src="'.cpotheme_get_option('general_logo').'" alt="'.get_bloginfo('name').'"'.$logo_width.'/></a>';
+				$output .= '<a class="site-logo" href="'.home_url().'"><img src="'.$logo_url.'" alt="'.get_bloginfo('name').'"'.$logo_width.'/></a>';
 			}
 		}
 		
@@ -311,7 +312,11 @@ if(!function_exists('cpotheme_grid_default')){
 		$count = 0;
 		while(have_posts()){ 
 			the_post();
-			if($count % $columns == 0 && $count > 0) echo '</div><div class="row">';
+			if($count % $columns == 0 && $count > 0){
+				echo '</div>';
+				do_action('cpotheme_grid_'.$template);
+				echo '<div class="row">';
+			}
 			$count++;
 			echo '<div class="column '.esc_attr($class).' col'.esc_attr($columns).'">';
 			get_template_part($element, $template);
@@ -333,7 +338,11 @@ if(!function_exists('cpotheme_grid_custom')){
 		$count = 0;
 		foreach($posts as $post){ 
 			setup_postdata($post);
-			if($count % $columns == 0 && $count > 0) echo '</div><div class="row">';
+			if($count % $columns == 0 && $count > 0){
+				echo '</div>';
+				do_action('cpotheme_grid_'.$template);
+				echo '<div class="row">';
+			}
 			$count++;
 			echo '<div class="column '.esc_attr($class).' col'.esc_attr($columns).'">';
 			get_template_part($element, $template);
@@ -350,7 +359,7 @@ if(!function_exists('cpotheme_layout_css')){
 	function cpotheme_layout_css(){
 		$output = cpotheme_get_option('general_css');
 		if($output != ''){
-			$output = '<style type="text/css">'.stripslashes(html_entity_decode($output)).'</style>';
+			$output = '<style type="text/css">'.wp_strip_all_tags($output).'</style>';
 			echo $output;
 		}
 	}
@@ -423,6 +432,26 @@ if(!function_exists('cpotheme_breadcrumb')){
 			
 			$output = '<div id="breadcrumb" class="breadcrumb">'.$result.'</div>';
 			echo $output;
+		}
+	}
+}
+
+
+//Displays the search form on search pages
+add_action('cpotheme_before_content', 'cpotheme_search_form');
+if(!function_exists('cpotheme_search_form')){
+	function cpotheme_search_form(){
+		if(is_search()){
+			$search_query = '';
+			if(isset($_GET['s'])) 
+				$search_query = esc_attr($_GET['s']);
+			
+			echo '<div class="search-form">';
+			echo '<form role="search" method="get" id="search-form" class="search-form" action="'.home_url('/').'">';
+			echo '<input type="text" value="'.$search_query.'" name="s" id="s" />';
+			echo '<input type="submit" id="search-submit" value="'.__('Search', 'cpocore').'" />';
+			echo '</form>';
+			echo '</div>';
 		}
 	}
 }
@@ -549,7 +578,7 @@ if(!function_exists('cpotheme_postpage_readmore')){
 	function cpotheme_postpage_readmore($classes = ''){
 		if(!is_singular('post')){
 			echo '<a class="post-readmore '.esc_attr($classes).'" href="'.get_permalink(get_the_ID()).'">';
-			echo apply_filters('cpotheme_readmore', __('Read More', 'cpotheme'));
+			echo apply_filters('cpotheme_readmore', __('Read More', 'cpocore'));
 			echo '</a>';
 		}
 	}
@@ -704,7 +733,7 @@ if(!function_exists('cpotheme_menu')){
 	function cpotheme_menu($options = null){
 		if(has_nav_menu('main_menu')){
 			if(isset($options['toggle']) && $options['toggle'] == true) cpotheme_menu_toggle();
-			wp_nav_menu(array('menu_id' => 'menu-main', 'menu_class' => 'menu-main', 'theme_location' => 'main_menu', 'depth' => '4', 'container' => false, 'walker' => new Cpotheme_Menu_Walker()));
+			wp_nav_menu(array('menu_id' => 'menu-main', 'menu_class' => 'menu-main', 'theme_location' => 'main_menu', 'depth' => '4', 'container' => false, 'fallback_cb' => 'cpotheme_default_menu', 'walker' => new Cpotheme_Menu_Walker()));
 		}
 	}
 }
@@ -716,7 +745,7 @@ if(!function_exists('cpotheme_mobile_menu')){
 	function cpotheme_mobile_menu($options = null){
 		if(has_nav_menu('main_menu')){
 			echo '<div id="menu-mobile-close" class="menu-mobile-close menu-mobile-toggle"></div>';
-			wp_nav_menu(array('menu_id' => 'menu-mobile', 'menu_class' => 'menu-mobile', 'theme_location' => 'main_menu', 'depth' => '4', 'container' => false, 'walker' => new Cpotheme_Menu_Walker()));
+			wp_nav_menu(array('menu_id' => 'menu-mobile', 'menu_class' => 'menu-mobile', 'theme_location' => 'main_menu', 'depth' => '4', 'container' => false, 'fallback_cb' => 'cpotheme_default_menu', 'walker' => new Cpotheme_Menu_Walker()));
 		}
 	}
 }
@@ -730,6 +759,7 @@ if(!function_exists('cpotheme_menu_toggle')){
 	}
 }
 
+
 //Prints the footer navigation menu
 if(!function_exists('cpotheme_top_menu')){
 	function cpotheme_top_menu(){
@@ -741,6 +771,7 @@ if(!function_exists('cpotheme_top_menu')){
 	}
 }
 
+
 //Prints the footer navigation menu
 if(!function_exists('cpotheme_footer_menu')){
 	function cpotheme_footer_menu(){
@@ -749,6 +780,58 @@ if(!function_exists('cpotheme_footer_menu')){
 			wp_nav_menu(array('menu_class' => 'menu-footer', 'theme_location' => 'footer_menu', 'depth' => '1', 'fallback_cb' => false));
 			echo '</div>';
 		}
+	}
+}
+
+
+//Prints a custom navigation menu based around a single taxonomy
+if(!function_exists('cpotheme_secondary_menu')){
+	function cpotheme_secondary_menu($taxonomy = 'cpo_portfolio_category', $class){
+		if(taxonomy_exists($taxonomy)){
+			$feature_posts = get_terms($taxonomy, 'order=ASC&orderby=name');
+			if(sizeof($feature_posts) > 0){ 
+				$current_id = cpotheme_current_id();
+				echo '<div id="menu-secondary '.$class.'" class="menu-secondary '.$class.'">';
+				foreach($feature_posts as $current_item){
+					$active_item = '';
+					if($current_item->term_id == $current_id)
+						$active_item = ' menu-item-active';
+					echo '<a href="'.get_term_link($current_item, 'cpo_portfolio_category').'" class="menu-item'.$active_item.'">';
+					echo '<div class="menu-title">'.$current_item->name.'</div>';
+					echo '</a>';
+				}
+				echo '</div>';
+			}
+		}
+	}
+}
+
+
+//TODO: Print a default navigation menu when there is none, using the theme markup
+if(!function_exists('cpotheme_default_menu')){
+	function cpotheme_default_menu(){
+		$args = array('sort_column' => 'menu_order, post_title');
+		$pages = get_pages($args);
+		
+		if($pages){
+			$count = 0;
+			$output = '';
+			$output .= '<ul class="menu-main">';
+			foreach($pages as $current_page){
+				$count++;
+				if($current_page->post_parent == 0 && $count < 17){
+					$output .= '<li class="menu-item">';
+					$output .= '<a href="'.get_permalink($current_page->ID).'">';
+					$output .= '<span class="menu-link">';
+					$output .= '<span class="menu-title">'.$current_page->post_title.'</span>';
+					$output .= '</span>';
+					$output .= '</a>';
+					$output .= '</li>';	
+				}
+			}
+			$output .= '</ul>';
+		}
+		echo $output;
 	}
 }
 

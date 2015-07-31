@@ -14,7 +14,7 @@
 			</div>
 			<?php endif; ?>
 			
-			<?php get_template_part('element', 'portfolio-navigation'); ?>
+			<?php cpotheme_secondary_menu('cpo_portfolio_category', 'menu-portfolio'); ?>
 				
 			<?php if(have_posts()): ?>
 			<div id="portfolio" class="portfolio">

@@ -18,7 +18,7 @@ if(!function_exists('cpotheme_icon')){
 		$output = '';
 		if($wrapper != '')
 			$output .= '<div class="'.$wrapper.'">';
-		$output .= cpotheme_get_icon($font_library, $font_value);
+		$output .= cpotheme_get_icon($font_library, html_entity_decode($font_value));
 		if($wrapper != '')
 			$output .= '</div>';
 		

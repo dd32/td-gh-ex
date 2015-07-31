@@ -101,3 +101,20 @@ function cpotheme_metadata_team_options(){
 	
 	return apply_filters('cpotheme_metadata_team', $data);
 }
+
+
+//Create page meta fields
+function cpotheme_metadata_page_options(){
+
+	$data = array();
+	
+	$data['page_featured'] = array(
+	'name' => 'page_featured',
+	'std'  => '',
+	'label' => __('Show In Homepage', 'cpocore'),
+	'desc' => __('Specifies whether this item is featured in the homepage.', 'cpocore'),
+	'type' => 'select',
+	'option' => cpotheme_metadata_featured_page());
+	
+	return apply_filters('cpotheme_metadata_page', $data);
+}

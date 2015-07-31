@@ -22,12 +22,17 @@ function cpotheme_customizer($customize){
 	foreach($settings as $setting_id => $setting_data){
 		$default = isset($setting_data['default']) ? $setting_data['default'] : '';
 		
-		//Add setting to the customizer
-		$customize->add_setting('cpotheme_settings['.$setting_id.']', array(
+		$setting_args = array(
 		'type' => 'option',
 		'default' => $default,
 		'capability' => 'edit_theme_options',
-		'transport' => 'refresh')); 
+		'transport' => 'refresh');
+		if(isset($setting_data['sanitize']) && $setting_data['sanitize'] != ''){
+			$setting_args['sanitize_callback'] = $setting_data['sanitize'];
+		}
+		
+		//Add setting to the customizer
+		$customize->add_setting('cpotheme_settings['.$setting_id.']', $setting_args); 
 		
 		//Define control metadata
 		$args = $setting_data;

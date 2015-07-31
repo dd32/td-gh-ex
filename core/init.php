@@ -5,7 +5,7 @@ if(!function_exists('cpotheme_setup')){
 	function cpotheme_setup(){
 		//Set core variables
 		define('CPOCORE_STORE', 'http://www.cpothemes.com');
-		define('CPOCORE_VERSION', '4.0.2');
+		define('CPOCORE_VERSION', '4.3.0');
 		define('CPOCORE_AUTHOR', 'CPOThemes');
 		if(!defined('CPOTHEME_ID')) define('CPOTHEME_ID', 'core');
 		if(!defined('CPOTHEME_NAME')) define('CPOTHEME_NAME', 'theme');
@@ -19,7 +19,6 @@ if(!function_exists('cpotheme_setup')){
 		add_image_size('portfolio', apply_filters('cpotheme_thumbnail_width', CPOTHEME_THUMBNAIL_WIDTH), apply_filters('cpotheme_thumbnail_height', CPOTHEME_THUMBNAIL_HEIGHT), true);
 		
 		//Initialize supported theme features
-		add_editor_style();
 		add_theme_support('title-tag');
 		add_theme_support('post-thumbnails');
 		add_theme_support('custom-header', array('header-text' => false,'width' => 1600, 'height' => 500, 'flex-width' => true, 'flex-height' => true));
@@ -56,11 +55,11 @@ if(!function_exists('cpotheme_scripts_front')){
 		if(is_singular() && get_option('thread_comments')) 
 			wp_enqueue_script('comment-reply');
 		
-		wp_enqueue_script('cpotheme_html5', $scripts_path.'html5.js');
+		wp_enqueue_script('cpotheme_html5', $scripts_path.'html5-min.js');
 		//Register custom scripts for later enqueuing
 		wp_enqueue_script('cpotheme_core', $scripts_path.'core.js', array(), false, true);
-		wp_register_script('cpotheme_cycle', $scripts_path.'jquery-cycle2.js', array('jquery'), false, true);
-		wp_register_script('cpotheme-magnific', $scripts_path.'jquery-magnific.js', array('jquery'), false, true);
+		wp_register_script('cpotheme_cycle', $scripts_path.'jquery-cycle2-min.js', array('jquery'), false, true);
+		wp_register_script('cpotheme-magnific', $scripts_path.'jquery-magnific-min.js', array('jquery'), false, true);
 	}
 }
 	
@@ -114,6 +113,8 @@ if(!function_exists('cpotheme_add_admin_styles')){
 	function cpotheme_add_admin_styles(){
 		$stylesheets_path = get_template_directory_uri().'/core/css/';
 		if(defined('CPO_CORELITE_URL')) $stylesheets_path = CPO_CORELITE_URL.'/css/';
+		
+		add_editor_style($stylesheets_path.'editor.css');
 		
 		wp_enqueue_style('wp-color-picker');
 		wp_enqueue_style('cpotheme_admin', $stylesheets_path.'admin.css');

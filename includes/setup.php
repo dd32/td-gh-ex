@@ -75,6 +75,15 @@ function cpotheme_customizer_controls($data){
 	'choices' => cpotheme_metadata_layoutstyle(),
 	'default' => 'fixed');
 	
+	//Colors
+	$data['primary_color'] = array(
+	'label' => __('Primary Color', 'cpocore'),
+	'description' => __('Used in buttons, headings, and other prominent elements.', 'cpocore'),
+	'section' => 'colors',
+	'type' => 'color',
+	'sanitize' => 'sanitize_hex_color',
+	'default' => '#F59A0A');
+	
 	return $data;
 }
 
@@ -102,4 +111,33 @@ function cpotheme_metadata_layoutstyle(){
 	'fixed' => __('Fixed', 'cpotheme'),
 	'boxed' => __('Boxed', 'cpotheme'));
 	return $cpotheme_data;
+}
+
+
+add_action('wp_head', 'cpotheme_styling_custom', 19);
+function cpotheme_styling_custom(){
+	$primary_color = cpotheme_get_option('primary_color');
+	?>
+	<style type="text/css">
+		<?php if($primary_color != ''): ?>
+		.primary-color { color:<?php echo $primary_color; ?>; }
+		.primary-color-bg { background-color:<?php echo $primary_color; ?>; }
+		.primary-color-border { border-color:<?php echo $primary_color; ?>; }
+		.menu-item.menu-highlight > a { background-color:<?php echo $primary_color; ?>; }
+		.tp-caption.primary_color_background { background:<?php echo $primary_color; ?>; }
+		.tp-caption.primary_color_text{ color:<?php echo $primary_color; ?>; }
+		.widget_nav_menu a .menu-icon { color:<?php echo $primary_color; ?>; }
+		
+		.button, .button:link, .button:visited, input[type=submit] { background-color:<?php echo $primary_color; ?>; }
+		.button:hover, input[type=submit]:hover { background-color:<?php echo $primary_color; ?>; }
+		::selection  { color:#fff; background-color:<?php echo $primary_color; ?>; }
+		::-moz-selection { color:#fff; background-color:<?php echo $primary_color; ?>; }
+		
+		.menu-main .current_page_ancestor > a,
+		.menu-main .current-menu-item > a { color:<?php echo $primary_color; ?>; }
+		.menu-portfolio .current-cat a,
+		.pagination .current { background-color:<?php echo $primary_color; ?>; }
+		<?php endif; ?>
+    </style>
+	<?php
 }

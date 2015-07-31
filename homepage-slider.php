@@ -37,7 +37,7 @@
 		<div id="slide_<?php echo $slide_count; ?>" class="slide" style="background-image:url(<?php echo $image_url[0]; ?>);">
 			<div class="slide-body">
 				<div class="container">
-					<div class="slide-caption">
+					<a class="slide-caption" href="<?php the_permalink(); ?>">
 						<h2 class="slide-title">
 							<?php the_title(); ?>
 						</h2>
@@ -45,7 +45,7 @@
 							<?php the_excerpt(); ?>
 						</div>
 						<?php cpotheme_edit(); ?>
-					</div>
+					</a>
 				</div>
 			</div>
 		</div>

@@ -119,12 +119,14 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		'label' => __('Custom Logo', 'cpocore'),
 		'description' => __('Insert the URL of an image to be used as a custom logo.', 'cpocore'),
 		'section' => 'title_tagline',
+		'sanitize' => 'esc_url',
 		'type' => 'image');
 
 		$data['general_favicon'] = array(
 		'label' => __('Custom Favicon', 'cpocore'),
 		'description' => __('Recommended sizes are 16x16 pixels.', 'cpocore'),
 		'section' => 'title_tagline',
+		'sanitize' => 'esc_url',
 		'type' => 'image');
 		
 		$data['general_logo_width'] = array(
@@ -133,6 +135,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		'section' => 'title_tagline',
 		'type' => 'text',
 		'placeholder' => '(none)',
+		'sanitize' => 'absint',
 		'width' => '100px');
 		
 		$data['general_texttitle'] = array(
@@ -155,6 +158,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		'description' => __('Add custom CSS styling for the entire site, overriding the default stylesheet.', 'cpocore'),
 		'section' => 'cpotheme_management',
 		'type' => 'textarea',
+		'sanitize' => 'wp_filter_nohtml_kses',
 		'format' => 'css');
 		
 		$data['general_credit'] = array(
@@ -252,51 +256,63 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		'label' => __('Tagline Title', 'cpocore'),
 		'section' => 'cpotheme_content_home',
 		'empty' => true,
-		'default' => __('Add your custom tagline here.', 'cpotheme'),
+		'multilingual' => true,
+		'default' => __('Add your custom tagline here.', 'cpocore'),
+		'sanitize' => 'esc_html',
 		'type' => 'textarea');
 		
 		if(defined('CPOTHEME_USE_FEATURES') && CPOTHEME_USE_FEATURES == true){
 			$data['home_features'] = array(
-			'label' => __('Features Description', 'cpotheme'),
+			'label' => __('Features Description', 'cpocore'),
 			'section' => 'cpotheme_content_home',
 			'empty' => true,
-			'default' => __('Our core features', 'cpotheme'),
+			'multilingual' => true,
+			'default' => __('Our core features', 'cpocore'),
+			'sanitize' => 'esc_html',
 			'type' => 'textarea');
 		}
 		
 		if(defined('CPOTHEME_USE_PORTFOLIO') && CPOTHEME_USE_PORTFOLIO == true){
 			$data['home_portfolio'] = array(
-			'label' => __('Portfolio Description', 'cpotheme'),
+			'label' => __('Portfolio Description', 'cpocore'),
 			'section' => 'cpotheme_content_home',
 			'empty' => true,
-			'default' => __('Take a look at our work', 'cpotheme'),
+			'multilingual' => true,
+			'default' => __('Take a look at our work', 'cpocore'),
+			'sanitize' => 'esc_html',
 			'type' => 'textarea');
 		}
 		
 		if(defined('CPOTHEME_USE_SERVICES') && CPOTHEME_USE_SERVICES == true){
 			$data['home_services'] = array(
-			'label' => __('Services Description', 'cpotheme'),
+			'label' => __('Services Description', 'cpocore'),
 			'section' => 'cpotheme_content_home',
 			'empty' => true,
-			'default' => __('What we can offer you', 'cpotheme'),
+			'multilingual' => true,
+			'default' => __('What we can offer you', 'cpocore'),
+			'sanitize' => 'esc_html',
 			'type' => 'textarea');
 		}
 		
 		if(defined('CPOTHEME_USE_TEAM') && CPOTHEME_USE_TEAM == true){
 			$data['home_team'] = array(
-			'label' => __('Team Members Description', 'cpotheme'),
+			'label' => __('Team Members Description', 'cpocore'),
 			'section' => 'cpotheme_content_home',
 			'empty' => true,
-			'default' => __('Meet our team', 'cpotheme'),
+			'multilingual' => true,
+			'default' => __('Meet our team', 'cpocore'),
+			'sanitize' => 'esc_html',
 			'type' => 'textarea');
 		}
 		
 		if(defined('CPOTHEME_USE_TESTIMONIALS') && CPOTHEME_USE_TESTIMONIALS == true){
 			$data['home_testimonials'] = array(
-			'label' => __('Testimonials Description', 'cpotheme'),
+			'label' => __('Testimonials Description', 'cpocore'),
 			'section' => 'cpotheme_content_home',
 			'empty' => true,
-			'default' => __('What they say about us', 'cpotheme'),
+			'multilingual' => true,
+			'default' => __('What they say about us', 'cpocore'),
+			'sanitize' => 'esc_html',
 			'type' => 'textarea');
 		}
 		

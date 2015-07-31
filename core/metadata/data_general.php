@@ -21,3 +21,12 @@ function cpotheme_metadata_sidebarposition(){
 	
 	return $cpotheme_data;
 }
+
+
+function cpotheme_metadata_featured_page(){
+	$data = array(
+	'none' => __('None', 'cpocore'),
+	'slider' => __('In The Slider', 'cpocore'),
+	'features' => __('In The Featured Boxes', 'cpocore'));
+	return apply_filters('cpotheme_metadata_featured_page', $data);
+}

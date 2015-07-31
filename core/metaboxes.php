@@ -38,6 +38,11 @@ function cpotheme_metaboxes(){
 	if(defined('CPOTHEME_USE_TESTIMONIALS') && CPOTHEME_USE_TESTIMONIALS == true){
 		add_meta_box('cpotheme_testimonial', __('Testimonial Options', 'cpocore'), 'cpocore_metabox_testimonial', 'cpo_testimonial', 'normal', 'high');
 	}
+	//Featured posts and pages
+	if(defined('CPOTHEME_USE_PAGES') && CPOTHEME_USE_PAGES == true){
+		add_meta_box('cpotheme_post', __('Post Options', 'cpocore'), 'cpocore_metabox_page', 'post', 'normal', 'high');
+		add_meta_box('cpotheme_page', __('Page Options', 'cpocore'), 'cpocore_metabox_page', 'page', 'normal', 'high');
+	}
 }
 
 //Display and save post metaboxes
@@ -74,6 +79,9 @@ function cpocore_metabox_team($post){
 function cpocore_metabox_testimonial($post){
 	cpotheme_meta_message(sprintf(__('Upgrade to %s to add descriptions to testimonials.', 'cpocore'), '<a target="_blank" href="'.CPOTHEME_PREMIUM_URL.'">'.CPOTHEME_PREMIUM_NAME.'</a>'));
 }
+function cpocore_metabox_page($post){
+	cpotheme_meta_fields($post, cpotheme_metadata_page_options());
+}
 add_action('edit_post', 'cpocore_metaboxes_save');
 function cpocore_metaboxes_save($post){
 	cpotheme_meta_save(cpotheme_metadata_layout_options());
@@ -82,6 +90,7 @@ function cpocore_metaboxes_save($post){
 	if(defined('CPOTHEME_USE_PRODUCTS') && CPOTHEME_USE_PRODUCTS == true) cpotheme_meta_save(cpotheme_metadata_product_options());
 	if(defined('CPOTHEME_USE_SERVICES') && CPOTHEME_USE_SERVICES == true) cpotheme_meta_save(cpotheme_metadata_service_options());
 	if(defined('CPOTHEME_USE_TEAM') && CPOTHEME_USE_TEAM == true) cpotheme_meta_save(cpotheme_metadata_team_options());
+	if(defined('CPOTHEME_USE_PAGES') && CPOTHEME_USE_PAGES == true) cpotheme_meta_save(cpotheme_metadata_page_options());
 }
 
 
