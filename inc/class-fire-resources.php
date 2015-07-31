@@ -23,6 +23,8 @@ if ( ! class_exists( 'TC_resources' ) ) :
           add_action( 'wp_enqueue_scripts'            , array( $this , 'tc_enqueue_gfonts' ) , 0 );
 	        add_action( 'wp_enqueue_scripts'						, array( $this , 'tc_enqueue_front_styles' ) );
             add_action( 'wp_enqueue_scripts'						, array( $this , 'tc_enqueue_front_scripts' ) );
+          //force classic smilies
+          add_action( 'after_setup_theme'             , array( $this, 'tc_force_classic_smilies') );
           //Custom Stylesheets
           //Write font icon
           add_filter('tc_user_options_style'          , array( $this , 'tc_write_inline_font_icons_css') , apply_filters( 'tc_font_icon_priority', 999 ) );
@@ -31,11 +33,12 @@ if ( ! class_exists( 'TC_resources' ) ) :
           add_filter('tc_user_options_style'          , array( $this , 'tc_write_fonts_inline_css') );
           add_filter('tc_user_options_style'          , array( $this , 'tc_write_dropcap_inline_css') );
 
-          /* See: https://github.com/presscustomizr/customizr/issues/605 */
-          add_filter('tc_user_options_style'          , array( $this , 'tc_apply_media_upload_front_patch' ) );
-
           //set random skin
           add_filter ('tc_opt_tc_skin'                , array( $this, 'tc_set_random_skin' ) );
+
+          //Grunt Live reload script on DEV mode (TC_DEV constant has to be defined. In wp_config for example)
+	        if ( defined('TC_DEV') && true === TC_DEV && apply_filters('tc_live_reload_in_dev_mode' , true ) )
+	        	add_action( 'wp_head' , array( $this , 'tc_add_livereload_script' ) );
 
           //stores the front scripts map in a property
           $this -> tc_script_map = $this -> tc_get_script_map();
@@ -48,31 +51,22 @@ if ( ! class_exists( 'TC_resources' ) ) :
 		* @package Customizr
 		* @since Customizr 1.1
 		*/
-        function tc_enqueue_front_styles() {
-          //Enqueue FontAwesome CSS
-          if ( true == TC_utils::$inst -> tc_opt( 'tc_font_awesome_css' ) ) {
-            $_path = apply_filters( 'tc_font_icons_path' , TC_BASE_URL . 'inc/assets/css' );
-            wp_enqueue_style( 'customizr-fa',
-                $_path . '/fonts/' . TC_init::$instance -> tc_maybe_use_min_style( 'font-awesome.css' ),
-                array() , CUSTOMIZR_VER, 'all' );
-          }
+		function tc_enqueue_front_styles() {
+	    wp_enqueue_style( 'customizr-common', TC_init::$instance -> tc_get_style_src( 'common') , array() , CUSTOMIZR_VER, 'all' );
+      //Customizr active skin
+	    wp_register_style( 'customizr-skin', TC_init::$instance -> tc_get_style_src( 'skin'), array('customizr-common'), CUSTOMIZR_VER, 'all' );
+	    wp_enqueue_style( 'customizr-skin' );
+	    //Customizr stylesheet (style.css)
+	    wp_enqueue_style( 'customizr-style', get_stylesheet_uri(), array( 'customizr-skin' ), CUSTOMIZR_VER , 'all' );
 
-	      wp_enqueue_style( 'customizr-common', TC_init::$instance -> tc_get_style_src( 'common') , array() , CUSTOMIZR_VER, 'all' );
-          //Customizr active skin
-	      wp_register_style( 'customizr-skin', TC_init::$instance -> tc_get_style_src( 'skin'), array('customizr-common'), CUSTOMIZR_VER, 'all' );
-	      wp_enqueue_style( 'customizr-skin' );
-	      //Customizr stylesheet (style.css)
-	      wp_enqueue_style( 'customizr-style', get_stylesheet_uri(), array( 'customizr-skin' ), CUSTOMIZR_VER , 'all' );
-
-	      //Customizer user defined style options : the custom CSS is written with a high priority here
-	      wp_add_inline_style( 'customizr-skin', apply_filters( 'tc_user_options_style' , '' ) );
+	    //Customizer user defined style options : the custom CSS is written with a high priority here
+	    wp_add_inline_style( 'customizr-skin', apply_filters( 'tc_user_options_style' , '' ) );
 		}
 
 
 
     /**
     * Helper to get all front end script
-    * Fired from the constructor
     *
     * @package Customizr
     * @since Customizr 3.3+
@@ -96,7 +90,7 @@ if ( ! class_exists( 'TC_resources' ) ) :
           'dependencies' => array( 'tc-js-arraymap-proto', 'jquery', 'tc-js-params' )
         ),
         'tc-img-original-sizes' => array(
-          'path' => 'inc/assets/js/jquery-plugins/',
+          'path' => 'inc/assets/js/parts/',
           'files' => array( 'jqueryimgOriginalSizes.js' ),
           'dependencies' => array('jquery')
         ),
@@ -105,38 +99,23 @@ if ( ! class_exists( 'TC_resources' ) ) :
           'files' => array( 'smoothScroll.js' ),
           'dependencies' => array( 'tc-js-arraymap-proto', 'underscore' )
         ),
-        'tc-outline' => array(
-          'path' => 'inc/assets/js/parts/',
-          'files' => array( 'outline.js' ),
-          'dependencies' => array()
-        ),
-        'tc-waypoints' => array(
-          'path' => 'inc/assets/js/parts/',
-          'files' => array( 'waypoints.js' ),
-          'dependencies' => array('jquery')
-        ),
         'tc-dropcap' => array(
-          'path' => 'inc/assets/js/jquery-plugins/',
+          'path' => 'inc/assets/js/parts/',
           'files' => array( 'jqueryaddDropCap.js' ),
           'dependencies' => array( 'tc-js-arraymap-proto', 'jquery' , 'tc-js-params', 'tc-bootstrap', 'underscore' )
         ),
         'tc-img-smartload' => array(
-          'path' => 'inc/assets/js/jquery-plugins/',
+          'path' => 'inc/assets/js/parts/',
           'files' => array( 'jqueryimgSmartLoad.js' ),
           'dependencies' => array( 'tc-js-arraymap-proto', 'jquery' , 'tc-js-params', 'tc-bootstrap', 'underscore' )
         ),
         'tc-ext-links' => array(
-          'path' => 'inc/assets/js/jquery-plugins/',
+          'path' => 'inc/assets/js/parts/',
           'files' => array( 'jqueryextLinks.js' ),
           'dependencies' => array( 'tc-js-arraymap-proto', 'jquery' , 'tc-js-params', 'tc-bootstrap', 'underscore' )
         ),
-        'tc-parallax' => array(
-          'path' => 'inc/assets/js/jquery-plugins/',
-          'files' => array( 'jqueryParallax.js' ),
-          'dependencies' => array( 'tc-js-arraymap-proto', 'jquery' , 'tc-js-params', 'tc-bootstrap', 'underscore' )
-        ),
         'tc-center-images' => array(
-          'path' => 'inc/assets/js/jquery-plugins/',
+          'path' => 'inc/assets/js/parts/',
           'files' => array( 'jqueryCenterImages.js' ),
           'dependencies' => array( 'tc-js-arraymap-proto', 'jquery' , 'tc-js-params', 'tc-img-original-sizes', 'tc-bootstrap', 'underscore' )
         ),
@@ -202,12 +181,12 @@ if ( ! class_exists( 'TC_resources' ) ) :
 			else {
         wp_enqueue_script( 'underscore' );
         //!!mind the dependencies
-        $this -> tc_enqueue_script( array( 'tc-js-params', 'tc-js-arraymap-proto', 'tc-img-original-sizes', 'tc-bootstrap', 'tc-smoothscroll', 'tc-outline', 'tc-waypoints' ) );
+        $this -> tc_enqueue_script( array( 'tc-js-params', 'tc-js-arraymap-proto', 'tc-img-original-sizes', 'tc-bootstrap', 'tc-smoothscroll' ) );
 
         if ( $this -> tc_is_fancyboxjs_required() )
           $this -> tc_enqueue_script( 'tc-fancybox' );
 
-        $this -> tc_enqueue_script( array( 'tc-dropcap' , 'tc-img-smartload', 'tc-ext-links', 'tc-center-images', 'tc-parallax', 'tc-main-front' ) );
+        $this -> tc_enqueue_script( array( 'tc-dropcap' , 'tc-img-smartload', 'tc-ext-links', 'tc-center-images', 'tc-main-front' ) );
 			}//end of load concatenate script if
 
       //carousel options
@@ -220,30 +199,13 @@ if ( ! class_exists( 'TC_resources' ) ) :
 			$has_post_comments 	= ( 0 != $wp_query -> post_count && comments_open() && get_comments_number() != 0 ) ? true : false;
 
 			//adds the jquery effect library if smooth scroll is enabled => easeOutExpo effect
-			$anchor_smooth_scroll 		  = ( false != esc_attr( TC_utils::$inst->tc_opt( 'tc_link_scroll') ) ) ? 'easeOutExpo' : 'linear';
+			$anchor_smooth_scroll 		= ( false != esc_attr( TC_utils::$inst->tc_opt( 'tc_link_scroll') ) ) ? 'easeOutExpo' : 'linear';
 			if ( false != esc_attr( TC_utils::$inst->tc_opt( 'tc_link_scroll') ) )
 				wp_enqueue_script('jquery-effects-core');
-            $anchor_smooth_scroll_exclude =  apply_filters( 'tc_anchor_smoothscroll_excl' , array(
-                'simple' => array( '[class*=edd]' , '.tc-carousel-control', '.carousel-control', '[data-toggle="modal"]', '[data-toggle="dropdown"]', '[data-toggle="tooltip"]', '[data-toggle="popover"]', '[data-toggle="collapse"]', '[data-toggle="tab"]', '[class*=upme]', '[class*=um-]' ),
-                'deep'   => array(
-                  'classes' => array(),
-                  'ids'     => array()
-                )
-            ));
 
       $smooth_scroll_enabled = apply_filters('tc_enable_smoothscroll', ! wp_is_mobile() && 1 == esc_attr( TC_utils::$inst->tc_opt( 'tc_smoothscroll') ) );
-      $smooth_scroll_options = apply_filters('tc_smoothscroll_options', array( 'touchpadSupport' => false ) );
+      $smooth_scroll_options = apply_filters('tc_smoothscroll_options', array() );
 
-      //smart load
-      $smart_load_enabled   = esc_attr( TC_utils::$inst->tc_opt( 'tc_img_smart_load' ) );
-      $smart_load_opts      = apply_filters( 'tc_img_smart_load_options' , array(
-            'parentSelectors' => array(
-                '.article-container', '.__before_main_wrapper', '.widget-front',
-            ),
-            'opts'     => array(
-                'excludeImg' => array( '.tc-holder-img' )
-            )
-      ));
 			//gets current screen layout
     	$screen_layout      = TC_utils::tc_get_layout( TC_utils::tc_id() , 'sidebar'  );
     	//gets the global layout settings
@@ -266,7 +228,7 @@ if ( ! class_exists( 'TC_resources' ) ) :
 	          	'centerSliderImg'   => esc_attr( TC_utils::$inst->tc_opt( 'tc_center_slider_img') ),
               'SmoothScroll'      => array( 'Enabled' => $smooth_scroll_enabled, 'Options' => $smooth_scroll_options ),
               'anchorSmoothScroll'			=> $anchor_smooth_scroll,
-              'anchorSmoothScrollExclude' => $anchor_smooth_scroll_exclude,
+              'anchorSmoothScrollExclude' => apply_filters( 'tc_anchor_smoothscroll_excl' , array( '[class*=edd]' , '.tc-carousel-control', '.carousel-control', '[data-toggle="modal"]', '[data-toggle="dropdown"]', '[data-toggle="tooltip"]', '[data-toggle="popover"]', '[data-toggle="collapse"]', '[data-toggle="tab"]', '[class*=upme]', '[class*=um-]' ) ),
 	          	'ReorderBlocks' 		=> esc_attr( TC_utils::$inst->tc_opt( 'tc_block_reorder') ),
 	          	'centerAllImg' 			=> esc_attr( TC_utils::$inst->tc_opt( 'tc_center_img') ),
 	          	'HasComments' 			=> $has_post_comments,
@@ -279,13 +241,13 @@ if ( ! class_exists( 'TC_resources' ) ) :
 	          	'timerOnScrollAllBrowsers' => apply_filters( 'tc_timer_on_scroll_for_all_browser' , true), //<= if false, for ie only
               'extLinksStyle'       => esc_attr( TC_utils::$inst->tc_opt( 'tc_ext_link_style' ) ),
               'extLinksTargetExt'   => esc_attr( TC_utils::$inst->tc_opt( 'tc_ext_link_target' ) ),
-              'extLinksSkipSelectors'   => apply_filters( 'tc_ext_links_skip_selectors' , array( 'classes' => array('btn', 'button') , 'ids' => array() ) ),
+              'extLinksSkipSelectors'   => apply_filters( 'tc_ext_links_skip_selectors' , array( 'classes' => array('btn') , 'ids' => array() ) ),
               'dropcapEnabled'      => esc_attr( TC_utils::$inst->tc_opt( 'tc_enable_dropcap' ) ),
               'dropcapWhere'      => array( 'post' => esc_attr( TC_utils::$inst->tc_opt( 'tc_post_dropcap' ) ) , 'page' => esc_attr( TC_utils::$inst->tc_opt( 'tc_page_dropcap' ) ) ),
               'dropcapMinWords'     => esc_attr( TC_utils::$inst->tc_opt( 'tc_dropcap_minwords' ) ),
               'dropcapSkipSelectors'  => apply_filters( 'tc_dropcap_skip_selectors' , array( 'tags' => array('IMG' , 'IFRAME', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'BLOCKQUOTE', 'UL', 'OL'), 'classes' => array('btn') , 'id' => array() ) ),
-              'imgSmartLoadEnabled' => $smart_load_enabled,
-              'imgSmartLoadOpts'    => $smart_load_opts,
+              'imgSmartLoadEnabled' => esc_attr( TC_utils::$inst->tc_opt( 'tc_img_smart_load' ) ),
+              'imgSmartLoadOpts'    => apply_filters( 'tc_img_smart_load_options' , array() ),
               'goldenRatio'         => apply_filters( 'tc_grid_golden_ratio' , 1.618 ),
               'gridGoldenRatioLimit' => esc_attr( TC_utils::$inst->tc_opt( 'tc_grid_thumb_height' ) ),
               'isSecondMenuEnabled'  => TC_utils::$inst->tc_is_secondary_menu_enabled(),
@@ -346,20 +308,24 @@ if ( ! class_exists( 'TC_resources' ) ) :
     * @since Customizr 3.3.2
     */
     public function tc_get_inline_font_icons_css() {
-      if ( false == TC_utils::$inst -> tc_opt( 'tc_font_awesome_icons' ) )
-        return;
-
       $_path = apply_filters( 'tc_font_icons_path' , TC_BASE_URL . 'inc/assets/css' );
       ob_start();
         ?>
         @font-face {
-          font-family: 'FontAwesome';
-          src:url('<?php echo $_path ?>/fonts/fonts/fontawesome-webfont.eot');
-          src:url('<?php echo $_path ?>/fonts/fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
-              url('<?php echo $_path ?>/fonts/fonts/fontawesome-webfont.woff2') format('woff2'),
-              url('<?php echo $_path ?>/fonts/fonts/fontawesome-webfont.woff') format('woff'),
-              url('<?php echo $_path ?>/fonts/fonts/fontawesome-webfont.ttf') format('truetype'),
-              url('<?php echo $_path ?>/fonts/fonts/fontawesome-webfont.svg#fontawesomeregular') format('svg');
+          font-family: 'genericons';
+          src:url('<?php echo $_path ?>/fonts/fonts/genericons-regular-webfont.eot');
+          src:url('<?php echo $_path ?>/fonts/fonts/genericons-regular-webfont.eot?#iefix') format('embedded-opentype'),
+              url('<?php echo $_path ?>/fonts/fonts/genericons-regular-webfont.woff') format('woff'),
+              url('<?php echo $_path ?>/fonts/fonts/genericons-regular-webfont.ttf') format('truetype'),
+              url('<?php echo $_path ?>/fonts/fonts/genericons-regular-webfont.svg#genericonsregular') format('svg');
+        }
+        @font-face {
+          font-family: 'entypo';
+          src:url('<?php echo $_path ?>/fonts/fonts/entypo.eot');
+          src:url('<?php echo $_path ?>/fonts/fonts/entypo.eot?#iefix') format('embedded-opentype'),
+          url('<?php echo $_path ?>/fonts/fonts/entypo.woff') format('woff'),
+          url('<?php echo $_path ?>/fonts/fonts/entypo.ttf') format('truetype'),
+          url('<?php echo $_path ?>/fonts/fonts/entypo.svg#genericonsregular') format('svg');
         }
         <?php
       $_font_css = ob_get_contents();
@@ -388,17 +354,24 @@ if ( ! class_exists( 'TC_resources' ) ) :
     }//end of function
 
 
-    /* See: https://github.com/presscustomizr/customizr/issues/605 */
-    function tc_apply_media_upload_front_patch( $_css ) {
-      global $wp_version;
-      if ( version_compare( '4.5', $wp_version, '<=' ) )
-        $_css = sprintf("%s%s",
-  		            	$_css,
-                        'table { border-collapse: separate; }
-                         body table { border-collapse: collapse; }
-                        ');
-      return $_css;
-    }
+
+
+		/*
+		* Writes the livereload script in dev mode (if Grunt watch livereload is enabled)
+		*@since v3.2.4
+		*/
+		function tc_add_livereload_script() {
+			if ( TC___::$instance -> tc_is_customizing() )
+				return;
+			?>
+			<script id="tc-dev-live-reload" type="text/javascript">
+			    document.write('<script src="http://'
+			        + ('localhost').split(':')[0]
+			        + ':35729/livereload.js?snipver=1" type="text/javascript"><\/script>')
+			    console.log('When WP_DEBUG mode is enabled, activate the watch Grunt task to enable live reloading. This script can be disabled with the following code to paste in your functions.php file : add_filter("tc_live_reload_in_dev_mode" , "__return_false")');
+			</script>
+			<?php
+		}
 
 
 
@@ -447,7 +420,7 @@ if ( ! class_exists( 'TC_resources' ) ) :
 
       //adapt the selectors in edit context => add specificity for the mce-editor
       if ( ! is_null( $_context ) ) {
-        $titles = ".{$_context} h1, .{$_context} h2, .{$_context} h3";
+        $titles = ".{$_context} .h1, .{$_context} h2, .{$_context} h3";
         $body   = "body.{$_context}";
       }
 
@@ -557,19 +530,101 @@ if ( ! class_exists( 'TC_resources' ) ) :
       if ( false == esc_attr( TC_utils::$inst -> tc_opt( 'tc_skin_random' ) ) )
         return $_skin;
 
-      //allow custom skins to be taken in account
-      $_skins = apply_filters( 'tc_get_skin_color', TC_init::$instance -> skin_color_map, 'all' );
-
-      //allow users to filter the list of skins they want to randomize
-      $_skins = apply_filters( 'tc_skins_to_randomize', $_skins );
-
       /* Generate the random skin just once !*/
-      if ( ! $this -> current_random_skin && is_array( $_skins ) )
-        $this -> current_random_skin = array_rand( $_skins, 1 );
+      if ( ! $this -> current_random_skin || ! is_array( TC_init::$instance -> skins ) )
+        $this -> current_random_skin = array_rand( TC_init::$instance -> skins, 1 );
 
       return $this -> current_random_skin;
     }
 
+    /**
+    * Force classic smilies
+    * hook after_setup_theme
+    *
+    * @credits: https://wordpress.org/plugins/classic-smilies/
+    * @package Customizr
+    * @since Customizr 3.3+
+    */
+    function tc_force_classic_smilies() {
+      if ( apply_filters( 'tc_not_force_classic_smilies', is_admin() || ! ( 0 != esc_attr( TC_utils::$inst->tc_opt( 'tc_show_featured_pages' ) ) &&  $this -> tc_maybe_is_holder_js_required() ) ) )
+        return;
+
+      // put the classic smilies images back
+      global $wpsmiliestrans;
+      $wpsmiliestrans = array(
+        ':mrgreen:' => 'icon_mrgreen.gif',
+        ':neutral:' => 'icon_neutral.gif',
+        ':twisted:' => 'icon_twisted.gif',
+          ':arrow:' => 'icon_arrow.gif',
+          ':shock:' => 'icon_eek.gif',
+          ':smile:' => 'icon_smile.gif',
+            ':???:' => 'icon_confused.gif',
+           ':cool:' => 'icon_cool.gif',
+           ':evil:' => 'icon_evil.gif',
+           ':grin:' => 'icon_biggrin.gif',
+           ':idea:' => 'icon_idea.gif',
+           ':oops:' => 'icon_redface.gif',
+           ':razz:' => 'icon_razz.gif',
+           ':roll:' => 'icon_rolleyes.gif',
+           ':wink:' => 'icon_wink.gif',
+            ':cry:' => 'icon_cry.gif',
+            ':eek:' => 'icon_surprised.gif',
+            ':lol:' => 'icon_lol.gif',
+            ':mad:' => 'icon_mad.gif',
+            ':sad:' => 'icon_sad.gif',
+              '8-)' => 'icon_cool.gif',
+              '8-O' => 'icon_eek.gif',
+              ':-(' => 'icon_sad.gif',
+              ':-)' => 'icon_smile.gif',
+              ':-?' => 'icon_confused.gif',
+              ':-D' => 'icon_biggrin.gif',
+              ':-P' => 'icon_razz.gif',
+              ':-o' => 'icon_surprised.gif',
+              ':-x' => 'icon_mad.gif',
+              ':-|' => 'icon_neutral.gif',
+              ';-)' => 'icon_wink.gif',
+        // This one transformation breaks regular text with frequency.
+        //     '8)' => 'icon_cool.gif',
+               '8O' => 'icon_eek.gif',
+               ':(' => 'icon_sad.gif',
+               ':)' => 'icon_smile.gif',
+               ':?' => 'icon_confused.gif',
+               ':D' => 'icon_biggrin.gif',
+               ':P' => 'icon_razz.gif',
+               ':o' => 'icon_surprised.gif',
+               ':x' => 'icon_mad.gif',
+               ':|' => 'icon_neutral.gif',
+               ';)' => 'icon_wink.gif',
+              ':!:' => 'icon_exclaim.gif',
+              ':?:' => 'icon_question.gif',
+      );
+      add_filter( 'smilies_src', 'tc_classic_smilies_src', 10, 2 );
+
+      // disable any and all mention of emoji's
+      remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+      remove_action( 'wp_print_styles', 'print_emoji_styles' );
+      remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+      remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+      remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+
+      add_filter( 'the_content', 'tc_classic_smilies_rm_additional_styles', 11 );
+      add_filter( 'the_excerpt', 'tc_classic_smilies_rm_additional_styles', 11 );
+      add_filter( 'comment_text', 'tc_classic_smilies_rm_additional_styles', 21 );
+
+      // fix the path to the smilies to point to the plugin
+      function tc_classic_smilies_src( $old, $img ) {
+        return TC_BASE_URL . 'inc/assets/img/' . $img;
+      }
+
+      // filter function used to remove the tinymce emoji plugin
+      function tc_classic_smilies_rm_tinymce_emoji( $plugins ) {
+        return array_diff( $plugins, array( 'wpemoji' ) );
+      }
+
+      function tc_classic_smilies_rm_additional_styles( $content ) {
+        return str_replace( 'class="wp-smiley" style="height: 1em; max-height: 1em;"', 'class="wp-smiley"', $content );
+      }
+    }
 
     /*************************************
     * HELPERS

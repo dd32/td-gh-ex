@@ -23,11 +23,7 @@
         } );
       };
 
-  //Patch for wp versions before 4.1 => preview-ready signal isn't triggered
-  if ( TCPreviewParams && ! TCPreviewParams.preview_ready_event_exists )
-    $(document).ready(fireCzrPrev);
-  else
-    api.bind( 'preview-ready', fireCzrPrev );
+  api.bind( 'preview-ready', fireCzrPrev );
 
   /******************************************
   * GLOBAL SETTINGS
@@ -333,12 +329,6 @@
         $_body.removeClass('tc-transparent-on-scroll');
         $_body.addClass('tc-solid-color-on-scroll');
       }
-    },
-    tc_woocommerce_header_cart_sticky : function( to ) {
-      if ( false !== to )
-        $_header.addClass('tc-wccart-on').removeClass('tc-wccart-off').trigger('resize');
-      else
-        $_header.addClass('tc-wccart-off').removeClass('tc-wccart-on').trigger('resize');
     }
   } );//$.extend()
 
@@ -420,7 +410,8 @@
 
   //add callbacks dynamically
   $.each( _post_metas_context, function() {
-    var $_post_metas = $('.entry-header .entry-meta', this._container + ' .article-container' );
+    var $_post_metas = $('.entry-header .entry-meta', this._container + ' .article-container' ),
+        _preview_cbs = _preview_cbs || {};
 
     if ( false === $_post_metas.length > 0 )
       return;
@@ -445,7 +436,6 @@
   ******************************************/
   $.extend( _preview_cbs, {
     tc_show_post_navigation : function( to ) {
-      var $_post_nav = $( '#nav-below' );
       if ( false === to )
         $_post_nav.hide('slow');
             else if ( ! $_post_nav.hasClass('hide-post-navigation') )
@@ -455,19 +445,19 @@
 
   var _post_nav_context = [
     { _context : 'page', _container : 'body.page' },
-    { _context : 'home', _container : 'body.blog.home' },
-    { _context : 'single', _container: 'body.single' },
-    { _context : 'archive', _container: 'body.archive' }
+    { _context : 'single', _container: 'body.single'},
+    { _context : 'archive', _container: 'body.archive, body.blog'}
   ];
 
   //add callbacks dynamically
   $.each( _post_nav_context, function() {
-    var $_post_nav = $('#nav-below', this._container );
+    var $_post_nav = $('#nav-below', this._container ),
+        _preview_cbs = _preview_cbs || {};
 
     if ( false === $_post_nav.length > 0 )
       return;
 
-    _preview_cbs[ 'tc_show_post_navigation_' + this._context ] = function( to ) {
+    _preview_cbs['tc_theme_options[tc_show_post_navigation_' + this._context] = function( to ) {
       if ( false === to )
         $_post_nav.hide('slow').addClass('hide-post-navigation');
       else
@@ -613,10 +603,6 @@
         $_body.addClass('tc-sticky-footer').trigger('refresh-sticky-footer');
       else
         $_body.removeClass('tc-sticky-footer');
-    },
-    tc_back_to_top_position : function( to ) {
-      $_el = $( '#tc-footer-btt-wrapper' );
-      $_el.removeClass( "left right" ).addClass( to );
     }
   } );//$.extend()
 

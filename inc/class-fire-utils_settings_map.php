@@ -109,8 +109,7 @@ if ( ! class_exists( 'TC_utils_settings_map' ) ) :
         //ADVANCED OPTIONS
         'tc_custom_css_option_map',
         'tc_performance_option_map',
-        'tc_placeholders_notice_map',
-        'tc_external_resources_option_map'
+        'tc_placeholders_notice_map'
       );
 
       foreach ( $_settings_sections as $_section_cb ) {
@@ -142,23 +141,16 @@ if ( ! class_exists( 'TC_utils_settings_map' ) ) :
                                    LOGO & FAVICON SECTION
     ------------------------------------------------------------------------------------------------------*/
     function tc_logo_favicon_option_map( $get_default = null ) {
-      global $wp_version;
       return array(
               'tc_logo_upload'  => array(
-                                'control'   =>  version_compare( $wp_version, '4.3', '>=' ) ? 'TC_Customize_Cropped_Image_Control' : 'TC_Customize_Upload_Control',
+                                'control'   =>  'TC_Customize_Upload_Control' ,
                                 'label'     =>  __( 'Logo Upload (supported formats : .jpg, .png, .gif, svg, svgz)' , 'customizr' ),
                                 'title'     => __( 'LOGO' , 'customizr'),
-                                'section'   => 'logo_sec',
-                                'sanitize_callback' => array( $this , 'tc_sanitize_number' ),
-                                //we can define suggested cropping area and allow it to be flexible (def 150x150 and not flexible)
-                                'width'     => 250,
-                                'height'    => 100,
-                                'flex_width' => true,
-                                'flex_height' => true,
-                                //to keep the selected cropped size
-                                'dst_width'  => false,
-                                'dst_height'  => false
+                                'section'   => 'logo_sec' ,
+                                'type'      => 'tc_upload',
+                                'sanitize_callback' => array( $this , 'tc_sanitize_number' )
               ),
+
               //force logo resize 250 * 85
               'tc_logo_resize'  => array(
                                 'default'   =>  1,
@@ -169,18 +161,11 @@ if ( ! class_exists( 'TC_utils_settings_map' ) ) :
                                 'notice'    => __( "Uncheck this option to keep your original logo dimensions." , 'customizr')
               ),
               'tc_sticky_logo_upload'  => array(
-                                'control'   =>  version_compare( $wp_version, '4.3', '>=' ) ? 'TC_Customize_Cropped_Image_Control' : 'TC_Customize_Upload_Control',
+                                'control'   =>  'TC_Customize_Upload_Control' ,
                                 'label'     =>  __( 'Sticky Logo Upload (supported formats : .jpg, .png, .gif, svg, svgz)' , 'customizr' ),
                                 'section'   =>  'logo_sec' ,
+                                'type'      => 'tc_upload',
                                 'sanitize_callback' => array( $this , 'tc_sanitize_number' ),
-                        //we can define suggested cropping area and allow it to be flexible (def 150x150 and not flexible)
-                                'width'     => 75,
-                                'height'    => 30,
-                                'flex_width' => true,
-                                'flex_height' => true,
-                                //to keep the selected cropped size
-                                'dst_width'  => false,
-                                'dst_height'  => false,
                                 'notice'    => __( "Use this upload control to specify a different logo on sticky header mode." , 'customizr')
               ),
 
@@ -394,9 +379,7 @@ if ( ! class_exists( 'TC_utils_settings_map' ) ) :
                                    IMAGE SECTION
     ------------------------------------------------------------------------------------------------------*/
     function tc_images_option_map( $get_default = null ) {
-      global $wp_version;
-
-      $_image_options =  array(
+      return array(
               'tc_fancybox' =>  array(
                                 'default'       => 1,
                                 'control'   => 'TC_controls' ,
@@ -429,23 +412,14 @@ if ( ! class_exists( 'TC_utils_settings_map' ) ) :
                                     __( "Open the description page of the Regenerate thumbnails plugin" , 'customizr')
                                 )
               ),
-              'tc_slider_parallax'  =>  array(
-                                'default'       => 1,
-                                'control'   => 'TC_controls' ,
-                                'label'       => __( "Sliders : use parallax scrolling" , "customizr" ),
-                                'section'     => 'images_sec' ,
-                                'type'        => 'checkbox' ,
-                                'notice'    => __( 'If enabled, your slides scroll slower than the page (parallax effect).' , 'customizr' ),
-              ),
-              'tc_display_slide_loader'  =>  array(
-                                'default'       => 1,
+               'tc_display_slide_loader'  =>  array(
+                                'default'       => 0,
                                 'control'   => 'TC_controls' ,
                                 'label'       => __( "Sliders : display on loading icon before rendering the slides" , "customizr" ),
                                 'section'     => 'images_sec' ,
                                 'type'        => 'checkbox' ,
                                 'notice'    => __( 'When checked, this option displays a loading icon when the slides are being setup.' , 'customizr' ),
               ),
-
                'tc_center_slider_img'  =>  array(
                                 'default'       => 1,
                                 'control'   => 'TC_controls' ,
@@ -463,29 +437,6 @@ if ( ! class_exists( 'TC_utils_settings_map' ) ) :
                                 'notice'    => __( 'This option dynamically centers your images on any devices, vertically or horizontally according to their initial aspect ratio.' , 'customizr' ),
               )
       );//end of images options
-      //add responsive image settings for wp >= 4.4
-      if ( version_compare( $wp_version, '4.4', '>=' ) )
-        $_image_options = array_merge( $_image_options, array(
-               'tc_resp_slider_img'  =>  array(
-                                'default'     => 0,
-                                'control'     => 'TC_controls' ,
-                                'title'       => __( 'Responsive settings', 'customizr' ),
-                                'label'       => __( "Enable the WordPress responsive image feature for the slider" , "customizr" ),
-                                'section'     => 'images_sec' ,
-                                'type'        => 'checkbox' ,
-              ),
-              'tc_resp_thumbs_img'  =>  array(
-                                'default'     => 0,
-                                'control'     => 'TC_controls' ,
-                                'label'       => __( "Enable the WordPress responsive image feature for the theme's thumbnails" , "customizr" ),
-                                'section'     => 'images_sec' ,
-                                'notice'      => __( 'This feature has been introduced in WordPress v4.4+ (dec-2015), and might have minor side effects on some of your existing images. Check / uncheck this option to safely verify that your images are displayed nicely.' , 'customizr' ),
-                                'type'        => 'checkbox' ,
-              )
-          )
-        );
-
-      return $_image_options;
     }
 
 
@@ -594,16 +545,6 @@ if ( ! class_exists( 'TC_utils_settings_map' ) ) :
                                 'priority'      => 15,
                                 'transport'     => 'postMessage'
               ),
-              'tc_woocommerce_header_cart' => array(
-                               'default'   => 1,
-                               'label'     => sprintf('<span class="dashicons dashicons-cart"></span> %s', __( "Display the shopping cart in the header" , "customizr" ) ),
-                               'control'   => 'TC_controls' ,
-                               'section'   => 'header_layout_sec',
-                               'notice'    => __( "WooCommerce: check to display a cart icon showing the number of items in your cart next to your header's tagline.", 'customizr' ),
-                               'type'      => 'checkbox' ,
-                               'priority'  => 18,
-                               'active_callback' => apply_filters( 'tc_woocommerce_options_enabled', '__return_false' )
-              ),
               'tc_social_in_header' =>  array(
                                 'default'       => 1,
                                 'label'       => __( 'Social links in header' , 'customizr' ),
@@ -642,17 +583,6 @@ if ( ! class_exists( 'TC_utils_settings_map' ) ) :
                                 'type'          => 'checkbox' ,
                                 'priority'      => 40,
                                 'transport'     => 'postMessage',
-              ),
-              'tc_woocommerce_header_cart_sticky' => array(
-                               'default'   => 1,
-                               'label'     => sprintf('<span class="dashicons dashicons-cart"></span> %s', __( "Sticky header: display the shopping cart" , "customizr" ) ),
-                               'control'   => 'TC_controls' ,
-                               'section'   => 'header_layout_sec',
-                               'type'      => 'checkbox' ,
-                               'priority'  => 45,
-                               'transport' => 'postMessage',
-                               'active_callback' => apply_filters( 'tc_woocommerce_options_enabled', '__return_false' ),
-                               'notice'    => __( 'WooCommerce: if checked, your WooCommerce cart icon will remain visible when scrolling.' , 'customizr' )
               ),
               'tc_sticky_show_title_logo'  =>  array(
                                 'default'       => 1,
@@ -772,23 +702,13 @@ if ( ! class_exists( 'TC_utils_settings_map' ) ) :
                                 ),
                                 'priority'      => 50,
                                 'transport'     => 'postMessage',
-                                'notice'        => sprintf( '%1$s<br/><br/>%2$s',
-                                  __( 'When the menu style is set to "Side Menu", the menu position is the side on which the menu will be revealed.' , 'customizr' ),
-                                  sprintf( __("To change the global header layout, %s" , "customizr"),
-                                    sprintf( '<a href="%1$s" title="%3$s">%2$s &raquo;</a>',
-                                      "javascript:wp.customize.section('header_layout_sec').focus();",
-                                      __("jump to the Design and Layout section" , "customizr"),
-                                      __("Change the header layout", "customizr")
-                                    )
-                                  )
-                                )
-
+                                'notice'        => __( 'When the menu style is set to "Side Menu", the menu position is the side on which the menu will be revealed.' , 'customizr' )
               ),
               'tc_second_menu_position'  =>  array(
                                 'default'       => 'pull-menu-left',
                                 'control'       => 'TC_controls' ,
                                 'title'         => __( 'Secondary (horizontal) menu design' , 'customizr'),
-                                'label'         => __( 'Menu position (for the horizontal menu)' , "customizr" ),
+                                'label'         => __( 'Menu position for the horizontal menu)' , "customizr" ),
                                 'section'       => 'nav' ,
                                 'type'          =>  'select' ,
                                 'choices'       => array(
@@ -872,31 +792,6 @@ if ( ! class_exists( 'TC_utils_settings_map' ) ) :
                                    FRONT PAGE SECTION
     ------------------------------------------------------------------------------------------------------*/
     function tc_front_page_option_map( $get_default = null ) {
-      //prepare the cat picker notice
-      global $wp_version;
-      $_cat_picker_notice = sprintf( '%1$s <a href="%2$s" target="_blank">%3$s<span style="font-size: 17px;" class="dashicons dashicons-external"></span></a>' ,
-        __( "Click inside the above field and pick post categories you want to display. No filter will be applied if empty.", 'customizr'),
-        esc_url('codex.wordpress.org/Posts_Categories_SubPanel'),
-        __('Learn more about post categories in WordPress' , 'customizr')
-      );
-      //for wp version >= 4.3 add deep links
-      if ( ! version_compare( $wp_version, '4.3', '<' ) ) {
-        $_cat_picker_notice = sprintf( '%1$s<br/><br/><ul><li>%2$s</li><li>%3$s</li></ul>',
-          $_cat_picker_notice,
-          sprintf( '%1$s <a href="%2$s">%3$s &raquo;</a>',
-            __("Set the number of posts to display" , "customizr"),
-            "javascript:wp.customize.section('frontpage_sec').container.find('.customize-section-back').trigger('click'); wp.customize.control('posts_per_page').focus();",
-            __("here", "customizr")
-          ),
-          sprintf( '%1$s <a href="%2$s">%3$s &raquo;</a>',
-            __('Jump to the blog design options' , 'customizr'),
-            "javascript:wp.customize.section('frontpage_sec').container.find('.customize-section-back').trigger('click'); wp.customize.control('tc_theme_options[tc_post_list_grid]').focus();",
-            __("here", "customizr")
-          )
-        );
-      }
-
-
       return array(
               //title
               'homecontent_title'         => array(
@@ -936,25 +831,7 @@ if ( ! class_exists( 'TC_utils_settings_map' ) ) :
                                 'type'        => 'dropdown-pages' ,
                                 'priority'      => 1,
               ),
-              'tc_show_post_navigation_home'  =>  array(
-                                'default'       => 1,
-                                'control'     => 'TC_controls' ,
-                                'label'         => __( "Display navigation in your home blog" , "customizr" ),
-                                'section'       => 'frontpage_sec',
-                                'type'          => 'checkbox',
-                                'priority'      => 1,
-                                'transport'     => 'postMessage',
-              ),
-              //page for posts
-              'tc_blog_restrict_by_cat'       => array(
-                                'default'     => array(),
-                                'label'       =>  __( 'Apply a category filter to your home / blog posts' , 'customizr'  ),
-                                'section'     => 'frontpage_sec',
-                                'control'     => 'TC_Customize_Multipicker_Categories_Control',
-                                'type'        => 'tc_multiple_picker',
-                                'priority'    => 1,
-                                'notice'      => $_cat_picker_notice
-              ),
+
               //layout
               'tc_front_layout' => array(
                                 'default'       => 'f' ,//Default layout for home page is full width
@@ -978,69 +855,7 @@ if ( ! class_exists( 'TC_utils_settings_map' ) ) :
                                 'choices'     => ( true == $get_default ) ? null : $this -> tc_slider_choices(),
                                 'priority'    => 20
               ),
-              //posts slider
-              'tc_posts_slider_number' => array(
-                                'default'     => 1 ,
-                                'control'     => 'TC_controls',
-                                'label'       => __('Number of posts to display', 'customizr'),
-                                'section'     => 'frontpage_sec' ,
-                                'type'        => 'number',
-                                'priority'    => 22,
-                                'notice'      => __( "Only the posts with a featured image or at least an image inside their content will qualify for the slider. The number of post slides displayed won't exceed the number of available posts in your website.", 'customizr' )
-              ),
-              'tc_posts_slider_stickies' => array(
-                                'default'     => 0,
-                                'control'     => 'TC_controls',
-                                'label'       => __( 'Include only sticky posts' , 'customizr' ),
-                                'section'     => 'frontpage_sec' ,
-                                'type'        => 'checkbox' ,
-                                'priority'    => 23,
-                                'notice'      => sprintf('%1$s <a href="https://codex.wordpress.org/Sticky_Posts" target="_blank">%2$s</a>',
-                                    __( 'You can choose to display only the sticky posts. If you\'re not sure how to set a sticky post, check', 'customizr' ),
-                                    __('the WordPress documentation.', 'customizr' )
-                                )
 
-              ),
-              'tc_posts_slider_title' => array(
-                                'default'     => 1,
-                                'control'     => 'TC_controls',
-                                'label'       => __( 'Display the title' , 'customizr' ),
-                                'section'     => 'frontpage_sec' ,
-                                'type'        => 'checkbox' ,
-                                'priority'    => 24,
-                                'notice'      => __( 'The title will be limited to 80 chars max', 'customizr' ),
-              ),
-              'tc_posts_slider_text' => array(
-                                'default'     => 1,
-                                'control'     => 'TC_controls',
-                                'label'       => __( 'Display the excerpt' , 'customizr' ),
-                                'section'     => 'frontpage_sec' ,
-                                'type'        => 'checkbox' ,
-                                'priority'    => 25,
-                                'notice'      => __( 'The excerpt will be limited to 80 chars max', 'customizr' ),
-              ),
-              'tc_posts_slider_link' => array(
-                                'default'     => 'cta',
-                                'control'     => 'TC_controls',
-                                'label'       => __( 'Link post with' , 'customizr' ),
-                                'section'     => 'frontpage_sec' ,
-                                'type'        => 'select' ,
-                                'choices'     => array(
-                                    'cta'        => __('Call to action button', 'customizr' ),
-                                    'slide'      => __('Entire slide', 'customizr' ),
-                                    'slide_cta'  => __('Entire slide and call to action button', 'customizr' )
-                                ),
-                                'priority'    => 26,
-
-              ),
-              'tc_posts_slider_button_text' => array(
-                                'default'     => __( 'Read more &raquo;' , 'customizr' ),
-                                'label'       => __( 'Button text' , 'customizr' ),
-                                'section'     => 'frontpage_sec' ,
-                                'type'        => 'text' ,
-                                'priority'    => 28,
-                                'notice'      => __( 'The button text will be limited to 80 chars max. Leave this field empty to hide the button', 'customizr' ),
-              ),
               //select slider
               'tc_slider_width' => array(
                                 'default'       => 1,
@@ -1049,7 +864,6 @@ if ( ! class_exists( 'TC_utils_settings_map' ) ) :
                                 'section'     => 'frontpage_sec' ,
                                 'type'        => 'checkbox' ,
                                 'priority'      => 30,
-                                'notice'      => __( "When checked, the front page slider occupies the full viewport's width", 'customizr' ),
               ),
 
               //Delay between each slides
@@ -1092,7 +906,7 @@ if ( ! class_exists( 'TC_utils_settings_map' ) ) :
                                 'section'     => 'frontpage_sec' ,
                                 'type'        => 'checkbox' ,
                                 'priority'       => 54,
-                                'notice'    => sprintf('%1$s <a href="http://docs.presscustomizr.com/article/74-recommended-plugins-for-the-customizr-wordpress-theme/#images" target="_blank">%2$s</a>',
+                                'notice'    => sprintf('%1$s <a href="http://doc.presscustomizr.com/customizr/recommended-plugins/#images" target="_blank">%2$s</a>',
                                     __( "If this option is checked, your images will be resized with your custom height on upload. This is better for your overall loading performance." , 'customizr' ),
                                     __( "You might want to regenerate your thumbnails." , 'customizr')
                                 ),
@@ -1216,7 +1030,7 @@ if ( ! class_exists( 'TC_utils_settings_map' ) ) :
                                 'priority'       => 40,
                                 'notice'    => sprintf('<br/> %s<br/>%s',
                                     sprintf( __("The above layout options will set your layout globally for your post and pages. But you can also define the layout for each post and page individually. Learn how in the %s.", "customizr"),
-                                        sprintf('<a href="%1$s" title="%2$s" target="_blank">%2$s<span style="font-size: 17px;" class="dashicons dashicons-external"></span></a>' , esc_url('http://docs.presscustomizr.com/article/107-customizr-theme-options-pages-and-posts-layout'), __("Customizr theme documentation" , "customizr" )
+                                        sprintf('<a href="%1$s" title="%2$s" target="_blank">%2$s<span style="font-size: 17px;" class="dashicons dashicons-external"></span></a>' , esc_url('doc.presscustomizr.com/customizr/content-options/#pages-and-posts-layout'), __("Customizr theme documentation" , "customizr" )
                                         )
                                     ),
                                     sprintf( __("If you need to change the layout design of the front page, then open the 'Front Page' section above this one.", "customizr") )
@@ -1232,7 +1046,6 @@ if ( ! class_exists( 'TC_utils_settings_map' ) ) :
                                   POST LISTS SECTION
     ------------------------------------------------------------------------------------------------------*/
     function tc_post_list_option_map( $get_default = null ) {
-      global $wp_version;
       return array(
               'tc_post_list_excerpt_length'  =>  array(
                                 'default'       => 50,
@@ -1263,23 +1076,14 @@ if ( ! class_exists( 'TC_utils_settings_map' ) ) :
                                 'type'          => 'checkbox',
                                 'priority'      => 70
               ),
-
-              'tc_post_list_default_thumb'  => array(
-                                'control'   =>  version_compare( $wp_version, '4.3', '>=' ) ? 'TC_Customize_Cropped_Image_Control' : 'TC_Customize_Upload_Control',
+              'tc_post_list_default_thumb' => array(
+                                'control'       =>  'TC_Customize_Upload_Control',
                                 'label'         => __( 'Upload a default thumbnail' , 'customizr' ),
-                                'section'   =>  'post_lists_sec' ,
-                                'sanitize_callback' => array( $this , 'tc_sanitize_number' ),
-                        //we can define suggested cropping area and allow it to be flexible (def 150x150 and not flexible)
-                                'width'         => 570,
-                                'height'        => 350,
-                                'flex_width'    => true,
-                                'flex_height'   => true,
-                                //to keep the selected cropped size
-                                'dst_width'     => false,
-                                'dst_height'    => false,
-                                'priority'      =>  73
+                                'section'       =>  'post_lists_sec',
+                                'type'          =>  'tc_upload',
+                                'sanitize_callback' => array( $this , 'tc_sanitize_number'),
+                                'priority'      =>  73,
               ),
-
 
               'tc_post_list_thumb_shape'  =>  array(
                                 'default'       => 'rounded',
@@ -1970,7 +1774,6 @@ if ( ! class_exists( 'TC_utils_settings_map' ) ) :
                                 'priority'      => 5,
                                 'transport'   => 'postMessage'
               ),
-
               'tc_show_post_navigation_page'  =>  array(
                                 'default'       => 0,
                                 'control'     => 'TC_controls' ,
@@ -2082,26 +1885,9 @@ if ( ! class_exists( 'TC_utils_settings_map' ) ) :
                                 'section'       => 'footer_global_sec' ,
                                 'type'          => 'checkbox',
                                 'priority'      => 5
-                            ),
-              'tc_back_to_top_position'  =>  array(
-                                'default'       => 'right',
-                                'control'       => 'TC_controls' ,
-                                'label'         => __( "Display a back to top arrow on scroll" , "customizr" ),
-                                'section'       => 'footer_global_sec' ,
-                                'type'          => 'select',
-                                'choices'       => array(
-                                      'left'      => __( 'Left' , 'customizr' ),
-                                      'centered'  => __( 'Right' , 'customizr'),
-                                ),
-                                'priority'      => 5,
-                                'transport'     => 'postMessage'
-              ),
-
+              )
       );
     }
-
-
-
 
 
     /******************************************************************************************************
@@ -2141,10 +1927,10 @@ if ( ! class_exists( 'TC_utils_settings_map' ) ) :
               'tc_minified_skin'  =>  array(
                                 'default'       => 1,
                                 'control'   => 'TC_controls' ,
-                                'label'       => __( "Performance : use the minified CSS stylesheets", 'customizr' ),
+                                'label'       => __( "Performance : use the minified CSS stylesheet", 'customizr' ),
                                 'section'     => 'performances_sec' ,
                                 'type'        => 'checkbox' ,
-                                'notice'    => __( 'Using the minified version of the stylesheets will speed up your webpage load time.' , 'customizr' ),
+                                'notice'    => __( 'Using the minified version of the skin stylesheet will speed up your webpage load time.' , 'customizr' ),
               ),
               'tc_img_smart_load'  =>  array(
                                 'default'       => 0,
@@ -2174,38 +1960,7 @@ if ( ! class_exists( 'TC_utils_settings_map' ) ) :
       );
     }
 
-    /*-----------------------------------------------------------------------------------------------------
-                              FRONT END EXTERNAL RESOURCES SECTION
-    ------------------------------------------------------------------------------------------------------*/
-    function tc_external_resources_option_map( $get_default = null ) {
-      return array(
-              'tc_font_awesome_icons'  =>  array(
-                                'default'       => 1,
-                                'control'   => 'TC_controls',
-                                'label'       => __( "Load Font Awesome set of icons", 'customizr' ),
-                                'section'     => 'extresources_sec',
-                                'type'        => 'checkbox',
-                                'notice'      => sprintf('<strong>%1$s</strong>. %2$s',
-                                    __( 'Use with caution' , 'customizr'),
-                                    __( 'When checked, the Font Awesome icons will be loaded on front end. You might want to load the Font Awesome icons with a custom code, or let a plugin do it for you.', 'customizr' )
-                                )
-              ),
-              'tc_font_awesome_css'  =>  array(
-                                'default'       => 0,
-                                'control'   => 'TC_controls',
-                                'label'       => __( "Load Font Awesome CSS", 'customizr' ),
-                                'section'     => 'extresources_sec',
-                                'type'        => 'checkbox',
-                                'notice'      => sprintf('%1$s </br>%2$s <a href="%3$s" target="_blank">%4$s<span style="font-size: 17px;" class="dashicons dashicons-external"></span></a>.',
-                                    __( "When checked, the additional Font Awesome CSS stylesheet will be loaded. This stylesheet is not loaded by default to save bandwidth but you might need it if you want to use the whole Font Awesome CSS.", 'customizr' ),
-                                    __( "Check out some example of uses", 'customizr'),
-                                    esc_url('http://fontawesome.io/examples/'),
-                                    __('here', 'customizr')
-                                )
-              )
 
-      );
-    }
 
     /***************************************************************
     * POPULATE PANELS
@@ -2269,7 +2024,9 @@ if ( ! class_exists( 'TC_utils_settings_map' ) ) :
     function tc_popul_remove_section_map( $_sections ) {
       //customizer option array
       $remove_section = array(
+        'background_image' ,
         'static_front_page' ,
+        'colors',
         'nav',
         'title_tagline',
         'tc_page_comments'
@@ -2328,7 +2085,7 @@ if ( ! class_exists( 'TC_utils_settings_map' ) ) :
       //adapt the nav section description for v4.3 (menu in the customizer from now on)
       if ( version_compare( $wp_version, '4.3', '<' ) ) {
         $nav_section_desc .= "<br/>" . sprintf( __("You can create new menu and edit your menu's content %s." , "customizr"),
-          sprintf( '<strong><a href="%1$s" target="_blank" title="%3$s">%2$s &raquo;</a></strong>',
+          sprintf( '<strong><a href="%1$s" target="_blank" title="%3$s">%2$s &raquo;</a><strong>',
             admin_url('nav-menus.php'),
             __("on the Menus screen in the Appearance section" , "customizr"),
             __("create/edit menus", "customizr")
@@ -2336,8 +2093,8 @@ if ( ! class_exists( 'TC_utils_settings_map' ) ) :
         );
       } else {
         $nav_section_desc .= "<br/>" . sprintf( __("You can create new menu and edit your menu's content %s." , "customizr"),
-          sprintf( '<strong><a href="%1$s" title="%3$s">%2$s &raquo;</a><strong>',
-            "javascript:wp.customize.section('nav').container.find('.customize-section-back').trigger('click'); wp.customize.panel('nav_menus').focus();",
+          sprintf( '<strong><a href="%1$s" target="_blank" title="%3$s">%2$s &raquo;</a><strong>',
+            "javascript:wp.customize.section('nav').container.find('.customize-section-back').trigger('click'); wp.customize.panel('nav_menus').focus()",
             __("in the menu panel" , "customizr"),
             __("create/edit menus", "customizr")
           )
@@ -2548,11 +2305,6 @@ if ( ! class_exists( 'TC_utils_settings_map' ) ) :
                             'title'     =>  __( 'Front-end placeholders and help blocks' , 'customizr' ),
                             'priority'    => 30,
                             'panel'   => 'tc-advanced-panel'
-        ),
-        'extresources_sec'    => array(
-                            'title'     =>  __( 'Front-end Icons (Font Awesome)' , 'customizr' ),
-                            'priority'    => 40,
-                            'panel'   => 'tc-advanced-panel'
         )
       );
       return array_merge( $_sections, $_new_sections );
@@ -2583,9 +2335,9 @@ if ( ! class_exists( 'TC_utils_settings_map' ) ) :
               'three' => __( 'Home featured page three' , 'customizr' )
         ),
         'text'    => array(
-              'one'   => __( 'Featured text one (200 char. max)' , 'customizr' ),
-              'two'   => __( 'Featured text two (200 char. max)' , 'customizr' ),
-              'three' => __( 'Featured text three (200 char. max)' , 'customizr' )
+              'one'   => __( 'Featured text one (200 car. max)' , 'customizr' ),
+              'two'   => __( 'Featured text two (200 car. max)' , 'customizr' ),
+              'three' => __( 'Featured text three (200 car. max)' , 'customizr' )
         )
       );
 
@@ -2617,7 +2369,7 @@ if ( ! class_exists( 'TC_utils_settings_map' ) ) :
                       'sanitize_callback' => array( $this , 'tc_sanitize_textarea' ),
                       'transport'   => 'postMessage',
                       'control'   => 'TC_controls' ,
-                      'label'       => isset($default['text'][$id]) ? $default['text'][$id] : sprintf( __('Featured text %1$s (200 char. max)' , 'customizr' ) , $id ),
+                      'label'       => isset($default['text'][$id]) ? $default['text'][$id] : sprintf( __('Featured text %1$s (200 car. max)' , 'customizr' ) , $id ),
                       'section'     => 'frontpage_sec' ,
                       'type'        => 'textarea' ,
                       'notice'    => __( 'You need to select a page first. Leave this field empty if you want to use the page excerpt.' , 'customizr' ),
@@ -2651,20 +2403,19 @@ if ( ! class_exists( 'TC_utils_settings_map' ) ) :
 
       foreach ( $socials as $key => $data ) {
         $priority += $incr;
-        $type      = isset( $data['type'] ) && ! is_null( $data['type'] ) ? $data['type'] : 'url';
-
         $_new_map[$key]  = array(
-                      'default'       => ( isset($data['default']) && !is_null($data['default']) ) ? $data['default'] : null,
-                      'sanitize_callback' => array( $this , 'tc_sanitize_' . $type ),
+                      'default'         => ( isset($data['default']) && !is_null($data['default']) ) ? $data['default'] : null ,
+                      'sanitize_callback' => array( $this , 'tc_sanitize_url' ),
                       'control'       => 'TC_controls' ,
                       'label'         => ( isset($data['option_label']) ) ? call_user_func( '__' , $data['option_label'] , 'customizr' ) : $key,
                       'section'       => 'socials_sec' ,
-                      'type'          => $type,
+                      'type'          => 'url',
                       'priority'      => $priority,
                       'icon'          => "tc-icon-". str_replace('tc_', '', $key)
                     );
         $incr += 5;
       }
+
       return array_merge( $_original_map, $_new_map );
     }
 
@@ -2747,8 +2498,7 @@ if ( ! class_exists( 'TC_utils_settings_map' ) ) :
 
       $slider_choices = array(
         0     =>  __( '&mdash; No slider &mdash;' , 'customizr' ),
-        'demo'  =>  __( '&mdash; Demo Slider &mdash;' , 'customizr' ),
-        'tc_posts_slider' => __('&mdash; Auto-generated slider from your blog posts &mdash;', 'customizr')
+        'demo'  =>  __( '&mdash; Demo Slider &mdash;' , 'customizr' )
         );
       if ( $slider_names ) {
         foreach( $slider_names as $tc_name => $slides) {
@@ -2804,6 +2554,9 @@ if ( ! class_exists( 'TC_utils_settings_map' ) ) :
         return ( 0 < $value ) ? $value : null;
     }
 
+
+
+
     /**
      * adds sanitization callback funtion : url
      * @package Customizr
@@ -2814,14 +2567,7 @@ if ( ! class_exists( 'TC_utils_settings_map' ) ) :
       return $value;
     }
 
-    /**
-     * adds sanitization callback funtion : email
-     * @package Customizr
-     * @since Customizr 3.4.11
-     */
-    function tc_sanitize_email( $value) {
-      return sanitize_email( $value );
-    }
+
 
     /**
      * adds sanitization callback funtion : colors

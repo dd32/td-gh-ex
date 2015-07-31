@@ -4,6 +4,7 @@
 ***************************************************/
 if ( ! class_exists( 'TC_Customize_Setting') ) :
   class TC_Customize_Setting extends WP_Customize_Setting {
+
     /**
      * Fetch the value of the setting.
      *
@@ -49,13 +50,13 @@ if ( ! class_exists( 'TC_Customize_Setting') ) :
         $_maybe_array = $this->multidimensional_get( $values, $this->id_data[ 'keys' ], $this->default );
         if ( ! is_array( $_maybe_array ) )
           return $_maybe_array;
+
         if ( isset($_maybe_array['all_ctx']) )
           return $_maybe_array['all_ctx'];
         if ( isset($_maybe_array['all_ctx_over']) )
           return $_maybe_array['all_ctx_over'];
 
-        return $_maybe_array;
-        //$this->default;
+        return $this->default;
       }
   }
 endif;
@@ -122,7 +123,7 @@ if ( ! class_exists( 'TC_controls' ) ) :
     					<?php endif; ?>
     					<label>
     						<span class="customize-control-title"><?php echo $this->label; ?></span>
-    						<?php $this -> tc_print_select_control( in_array( $this->id, array( 'tc_theme_options[tc_fonts]', 'tc_theme_options[tc_skin]' ) ) ? 'select2' : '' ) ?>
+    						<?php $this -> tc_print_select_control() ?>
                 <?php if(!empty( $this -> notice)) : ?>
                   <span class="tc-notice"><?php echo $this -> notice ?></span>
                 <?php endif; ?>
@@ -136,12 +137,12 @@ if ( ! class_exists( 'TC_controls' ) ) :
                   $sliders        = $options['tc_sliders'];
                 }
                 if ( empty( $sliders ) ) {
-      						printf('<div class="tc-notice" style="width:99%; padding: 5px;"><p class="description">%1$s<br/><a class="button-primary" href="%2$s" target="_blank">%3$s</a><br/><span class="tc-notice">%4$s <a href="%5$s" title="%6$s" target="_blank">%6$s</a></span></p>',
+      						printf('<div style="width:99%; padding: 5px;"><p class="description">%1$s<br/><a class="button-primary" href="%2$s" target="_blank">%3$s</a><br/><span class="tc-notice">%4$s <a href="%5$s" title="%6$s" target="_blank">%6$s</a></span></p>',
                     __("You haven't create any slider yet. Go to the media library, edit your images and add them to your sliders.", "customizr" ),
                     admin_url( 'upload.php?mode=list' ),
                     __( 'Create a slider' , 'customizr' ),
                     __( 'Need help to create a slider ?' , 'customizr' ),
-                    esc_url( "http://docs.presscustomizr.com/article/3-creating-a-slider-with-customizr-wordpress-theme" ),
+                    esc_url( "doc.presscustomizr.com/customizr/creating-sliders/" ),
                     __( 'Check the documentation' , 'customizr' )
                   );
                 }
@@ -180,6 +181,7 @@ if ( ! class_exists( 'TC_controls' ) ) :
     					<?php if(!empty( $this -> notice)) : ?>
     					 <span class="tc-notice"><?php echo $this-> notice ?></span>
     					<?php endif; ?>
+    					<hr class="tc-customizer-separator-invisible" />
     					<?php
     				break;
 
@@ -199,7 +201,6 @@ if ( ! class_exists( 'TC_controls' ) ) :
 		        	break;
 
 	        	case 'url':
-	        	case 'email':
               ?>
               <?php if (isset( $this->title)) : ?>
               <h3 class="tc-customizr-title"><?php echo esc_html( $this->title); ?></h3>
@@ -208,7 +209,7 @@ if ( ! class_exists( 'TC_controls' ) ) :
 	        		printf('<label><span class="customize-control-title %1$s">%2$s</span><input type="text" value="%3$s" %4$s /></label>',
 	        			! empty( $this -> icon) ? $this -> icon : '',
 	        			$this->label,
-	        			call_user_func( array( TC_utils_settings_map::$instance, 'tc_sanitize_' . $this -> type), $this->value() ),
+	        			esc_url( $this->value() ),
 	        			call_user_func( array( $this, 'get'.'_'.'link' ) )
 	        		);
 		        	break;
@@ -244,10 +245,9 @@ if ( ! class_exists( 'TC_controls' ) ) :
 
 
 
-    private function tc_print_select_control($class) {
-      printf('<select %1$s class="%2$s">%3$s</select>',
+    private function tc_print_select_control() {
+      printf('<select %1$s>%2$s</select>',
         call_user_func( array( $this, 'get'.'_'.'link' ) ),
-        $class,
         $this -> tc_get_select_options()
       );
     }
@@ -311,282 +311,75 @@ if ( ! class_exists( 'TC_controls' ) ) :
 endif;
 
 
-
-/*
- * @since 3.4.19
- * @package      Customizr
-*/
-if ( class_exists('WP_Customize_Cropped_Image_Control') && ! class_exists( 'TC_Customize_Cropped_Image_Control' ) ) :
-  class TC_Customize_Cropped_Image_Control extends WP_Customize_Cropped_Image_Control {
-    public $type = 'tc_cropped_image';
-    public $title;
-    public $notice;
-    public $dst_width;
-    public $dst_height;
-
-
-    /**
-    * Refresh the parameters passed to the JavaScript via JSON.
-    *
-    * @since 3.4.19
-    * @package      Customizr
-    *
-    * @Override
-    * @see WP_Customize_Control::to_json()
-    */
-    public function to_json() {
-        parent::to_json();
-        $this->json['title']  = !empty( $this -> title )  ? esc_html( $this -> title ) : '';
-        $this->json['notice'] = !empty( $this -> notice ) ?           $this -> notice  : '';
-
-        $this->json['dst_width']  = isset( $this -> dst_width )  ?  $this -> dst_width  : $this -> width;
-        $this->json['dst_height'] = isset( $this -> dst_height ) ?  $this -> dst_height : $this -> height;
-        //overload WP_Customize_Upload_Control
-        //we need to re-build the absolute url of the logo src set in old Customizr
-        $value = $this->value();
-        if ( $value ) {
-          //re-build the absolute url if the value isn't an attachment id before retrieving the id
-          if ( (int) esc_attr( $value ) < 1 ) {
-            $upload_dir = wp_upload_dir();
-            $value  = false !== strpos( $value , '/wp-content/' ) ? $value : $upload_dir['baseurl'] . $value;
-          }
-          // Get the attachment model for the existing file.
-          $attachment_id = attachment_url_to_postid( $value );
-          if ( $attachment_id ) {
-              $this->json['attachment'] = wp_prepare_attachment_for_js( $attachment_id );
-      }
-      }//end overload
-    }
-
-    /**
-  * Render a JS template for the content of the media control.
-  *
-  * @since 3.4.19
-    * @package      Customizr
-    *
-    * @Override
-  * @see WP_Customize_Control::content_template()
-  */
-    public function content_template() {
-    ?>
-    <# if ( data.title ) { #>
-        <h3 class="tc-customizr-title">{{{ data.title }}}</h3>
-      <# } #>
-        <?php parent::content_template(); ?>
-      <# if ( data.notice ) { #>
-        <span class="tc-notice">{{{ data.notice }}}</span>
-      <# } #>
-    <?php
-    }
-  }//end class
-endif;
-
-
-/**************************************************************************************************
-* MULTIPICKER CLASSES
-***************************************************************************************************/
-if ( ! class_exists( 'TC_Customize_Multipicker_Control' ) ) :
-  /**
-  * Customize Multi-picker Control Class
-  *
-  * @package WordPress
-  * @subpackage Customize
-  * @since 3.4.10
-  */
-  abstract class TC_Customize_Multipicker_Control extends TC_controls {
-
-    public function render_content() {
-
-      if ( ! $this -> type ) return;
-      do_action( '__before_setting_control' , $this -> id );
-
-      $dropdown = $this -> tc_get_dropdown_multipicker();
-
-      if ( empty( $dropdown ) ) return;
-
-      $dropdown = str_replace( '<select', '<select multiple="multiple"' . $this->get_link(), $dropdown );
-      //start rendering
-      if (!empty( $this->title)) :
-    ?>
-        <h3 class="tc-customizr-title"><?php echo esc_html( $this->title); ?></h3>
-      <?php endif; ?>
-
-      <label>
-        <span class="customize-control-title"><?php echo $this->label; ?></span>
-        <?php echo $dropdown; ?>
-        <?php if(!empty( $this -> notice)) : ?>
-          <span class="tc-notice"><?php echo $this -> notice ?></span>
-         <?php endif; ?>
-      </label>
-    <?php
-      do_action( '__after_setting_control' , $this -> id );
-    }
-
-    //to define in the extended classes
-    abstract public function tc_get_dropdown_multipicker();
-  }//end class
-endif;
-
-if ( ! class_exists( 'TC_Customize_Multipicker_Categories_Control' ) ) :
-  class TC_Customize_Multipicker_Categories_Control extends TC_Customize_Multipicker_Control {
-
-    public function tc_get_dropdown_multipicker() {
-      $cats_dropdown = wp_dropdown_categories(
-          array(
-              'name'               => '_customize-'.$this->type,
-              'id'                 => $this -> id,
-              //hide empty, set it to false to avoid complains
-              'hide_empty'         => 0 ,
-              'echo'               => 0 ,
-              'walker'             => new TC_Walker_CategoryDropdown_Multipicker(),
-              'hierarchical'       => 1,
-              'class'              => 'select2 '.$this->type,
-              'selected'           => implode(',', $this->value() )
-          )
-      );
-
-      return $cats_dropdown;
-    }
-  }
-endif;
-
-
-/**
- * @ dropdown multi-select walker
- * Create HTML dropdown list of Categories.
- *
- * @package WordPress
- * @since 2.1.0
- * @uses Walker
- *
- * we need to allow more than one "selected" attribute
- */
-
-if ( ! class_exists( 'TC_Walker_CategoryDropdown_Multipicker' ) ) :
-  class TC_Walker_CategoryDropdown_Multipicker extends Walker_CategoryDropdown {
-    /**
-     * Start the element output.
-     *
-     * @Override
-     *
-     * @see Walker::start_el()
-     *
-     * @param string $output   Passed by reference. Used to append additional content.
-     * @param object $category Category data object.
-     * @param int    $depth    Depth of category. Used for padding.
-     * @param array  $args     Uses 'selected', 'show_count', and 'value_field' keys, if they exist.
-     *                         See {@see wp_dropdown_categories()}.
-     */
-    public function start_el( &$output, $category, $depth = 0, $args = array(), $id = 0 ) {
-      $pad = str_repeat('&mdash;', $depth );
-      /** This filter is documented in wp-includes/category-template.php */
-      $cat_name = apply_filters( 'list_cats', $category->name, $category );
-
-      $value_field = 'term_id';
-
-      $output .= "\t<option class=\"level-$depth\" value=\"" . esc_attr( $category->{$value_field} ) . "\"";
-      //Treat selected arg as array
-      if ( in_array( (string) $category->{$value_field}, explode( ',', $args['selected'] ) ) )
-        $output .= ' selected="selected"';
-
-      $output .= '>';
-      $output .= $pad.$cat_name;
-      if ( $args['show_count'] )
-        $output .= '&nbsp;&nbsp;('. number_format_i18n( $category->count ) .')';
-      $output .= "</option>\n";
-    }
-  }
-endif;
-/**************************************************************************************************
-* END OF MULTIPICKER CLASSES
-***************************************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-/*********************************************************************************
-* Old upload control used until v3.4.18, still used if current version of WP is < 4.3
-**********************************************************************************/
-
 if ( ! class_exists( 'TC_Customize_Upload_Control' ) ) :
-  /**
-   * Customize Upload Control Class
-   *
-   * @package WordPress
-   * @subpackage Customize
-   * @since 3.4.0
-   */
-  class TC_Customize_Upload_Control extends WP_Customize_Control {
-    public $type    = 'tc_upload';
-    public $removed = '';
-    public $context;
-    public $extensions = array();
+	/**
+	 * Customize Upload Control Class
+	 *
+	 * @package WordPress
+	 * @subpackage Customize
+	 * @since 3.4.0
+	 */
+	class TC_Customize_Upload_Control extends WP_Customize_Control {
+		public $type    = 'tc_upload';
+		public $removed = '';
+		public $context;
+		public $extensions = array();
     public $title;
     public $notice;
 
-    /**
-     * Enqueue control related scripts/styles.
-     *
-     * @since 3.4.0
-     */
-    public function enqueue() {
-      wp_enqueue_script( 'wp-plupload' );
-    }
+		/**
+		 * Enqueue control related scripts/styles.
+		 *
+		 * @since 3.4.0
+		 */
+		public function enqueue() {
+			wp_enqueue_script( 'wp-plupload' );
+		}
 
-    /**
-     * Refresh the parameters passed to the JavaScript via JSON.
-     *
-     * @since 3.4.0
-     * @uses WP_Customize_Control::to_json()
-     */
-    public function to_json() {
-      parent::to_json();
+		/**
+		 * Refresh the parameters passed to the JavaScript via JSON.
+		 *
+		 * @since 3.4.0
+		 * @uses WP_Customize_Control::to_json()
+		 */
+		public function to_json() {
+			parent::to_json();
 
-      $this->json['removed'] = $this->removed;
+			$this->json['removed'] = $this->removed;
 
-      if ( $this->context )
-        $this->json['context'] = $this->context;
+			if ( $this->context )
+				$this->json['context'] = $this->context;
 
-      if ( $this->extensions )
-        $this->json['extensions'] = implode( ',', $this->extensions );
-    }
+			if ( $this->extensions )
+				$this->json['extensions'] = implode( ',', $this->extensions );
+		}
 
-    /**
-     * Render the control's content.
-     *
-     * @since 3.4.0
-     */
-  public function render_content() {
-      do_action( '__before_setting_control' , $this -> id );
-      ?>
+		/**
+		 * Render the control's content.
+		 *
+		 * @since 3.4.0
+		 */
+		public function render_content() {
+			?>
       <?php if ( isset( $this->title) ) : ?>
         <h3 class="tc-customizr-title"><?php echo esc_html( $this->title); ?></h3>
       <?php endif; ?>
-      <label>
-        <?php if ( ! empty( $this->label ) ) : ?>
-          <span class="customize-control-title"><?php echo $this->label; ?></span>
-        <?php endif;
-        if ( ! empty( $this->description ) ) : ?>
-          <span class="description customize-control-description"><?php echo $this->description; ?></span>
-        <?php endif; ?>
-        <div>
-          <a href="#" class="button-secondary tc-upload"><?php _e( 'Upload' , 'customizr'  ); ?></a>
-          <a href="#" class="remove"><?php _e( 'Remove' , 'customizr'  ); ?></a>
-        </div>
+			<label>
+				<?php if ( ! empty( $this->label ) ) : ?>
+					<span class="customize-control-title"><?php echo $this->label; ?></span>
+				<?php endif;
+				if ( ! empty( $this->description ) ) : ?>
+					<span class="description customize-control-description"><?php echo $this->description; ?></span>
+				<?php endif; ?>
+				<div>
+					<a href="#" class="button-secondary tc-upload"><?php _e( 'Upload' , 'customizr'  ); ?></a>
+					<a href="#" class="remove"><?php _e( 'Remove' , 'customizr'  ); ?></a>
+				</div>
         <?php if(!empty( $this -> notice)) : ?>
           <span class="tc-notice"><?php echo $this -> notice; ?></span>
         <?php endif; ?>
-      </label>
-      <?php
-      do_action( '__after_setting_control' , $this -> id );
-    }
-  }
+			</label>
+			<?php
+		}
+	}
 endif;

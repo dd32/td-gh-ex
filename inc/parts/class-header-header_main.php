@@ -17,12 +17,10 @@ if ( ! class_exists( 'TC_header_main' ) ) :
     function __construct () {
       self::$instance =& $this;
       //Set header hooks
-      //we have to use 'wp' action hook to show header in multisite wp-signup/wp-activate.php which don't fire template_redirect hook 
-      //(see https://github.com/presscustomizr/customizr/issues/395)
-      add_action ( 'wp'                    , array( $this , 'tc_set_header_hooks' ) );
+      add_action ( 'template_redirect' 		, array( $this , 'tc_set_header_hooks' ) );
 
       //Set header options
-      add_action ( 'wp'                    , array( $this , 'tc_set_header_options' ) );
+      add_action ( 'template_redirect' 		, array( $this , 'tc_set_header_options' ) );
 
       //! tc_user_options_style filter is shared by several classes => must always check the local context inside the callback before appending new css
       //fired on hook : wp_enqueue_scripts
@@ -37,7 +35,7 @@ if ( ! class_exists( 'TC_header_main' ) ) :
     ****************************/
 	  /**
 		* Set all header hooks
-		* wp callback
+		* template_redirect callback
 		* @return  void
 		*
 		* @package Customizr
@@ -46,8 +44,6 @@ if ( ! class_exists( 'TC_header_main' ) ) :
     function tc_set_header_hooks() {
     	//html > head actions
       add_action ( '__before_body'	  , array( $this , 'tc_head_display' ));
-
-      //The WP favicon (introduced in WP 4.3) will be used in priority
       add_action ( 'wp_head'     		  , array( $this , 'tc_favicon_display' ));
 
       //html > header actions
@@ -76,7 +72,7 @@ if ( ! class_exists( 'TC_header_main' ) ) :
   	  }
 
       //add a 100% wide container just after the sticky header to reset margin top
-      if ( 1 == esc_attr( TC_utils::$inst->tc_opt( 'tc_sticky_header' ) ) || TC___::$instance -> tc_is_customizing() )
+      if ( 1 == esc_attr( TC_utils::$inst->tc_opt( 'tc_sticky_header' ) ) )
         add_action( '__after_header'              , array( $this, 'tc_reset_margin_top_after_sticky_header'), 0 );
 
     }
@@ -84,7 +80,7 @@ if ( ! class_exists( 'TC_header_main' ) ) :
 
 
     /**
-    * Callback for wp
+    * Callback for template_redirect
     * Set customizer user options
     *
     * @package Customizr
@@ -129,7 +125,15 @@ if ( ! class_exists( 'TC_header_main' ) ) :
 				    <!--[if lt IE 9]>
 				      <script src="<?php echo TC_BASE_URL ?>inc/assets/js/html5.js"></script>
 				    <![endif]-->
+				   <!-- Icons font support for IE6-7  -->
+				    <!--[if lt IE 8]>
+				      <script src="<?php echo TC_BASE_URL ?>inc/assets/css/fonts/lte-ie7.js"></script>
+				    <![endif]-->
 				    <?php wp_head(); ?>
+				    <!--Icons size hack for IE8 and less -->
+				    <!--[if lt IE 9]>
+				      <link href="<?php echo TC_BASE_URL ?>inc/assets/css/fonts/ie8-hacks.css" rel="stylesheet" type="text/css"/>
+				    <![endif]-->
 				</head>
 				<?php
 			$html = ob_get_contents();
@@ -141,52 +145,46 @@ if ( ! class_exists( 'TC_header_main' ) ) :
 
 
 		/**
-    * Render favicon from options
-    * Since WP 4.3 : let WP do the job if user has set the WP site_icon setting.
-    *
-    * @package Customizr
-    * @since Customizr 3.0
-    */
-    function tc_favicon_display() {
-     	//is there a WP favicon set ?
-      //if yes then let WP do the job
-      if ( function_exists('has_site_icon') && has_site_icon() )
-        return;
+	    * Render favicon from options
+	    *
+	    * @package Customizr
+	    * @since Customizr 3.0
+	    */
+	    function tc_favicon_display() {
+	       	$_fav_option  			= esc_attr( TC_utils::$inst->tc_opt( 'tc_fav_upload') );
+	       	if ( ! $_fav_option || is_null($_fav_option) )
+	       		return;
 
-      $_fav_option  			= esc_attr( TC_utils::$inst->tc_opt( 'tc_fav_upload') );
-     	if ( ! $_fav_option || is_null($_fav_option) )
-     		return;
+	       	$_fav_src 				= '';
+	       	//check if option is an attachement id or a path (for backward compatibility)
+	       	if ( is_numeric($_fav_option) ) {
+	       		$_attachement_id 	= $_fav_option;
+	       		$_attachment_data 	= apply_filters( 'tc_fav_attachment_img' , wp_get_attachment_image_src( $_fav_option , 'large' ) );
+	       		$_fav_src 			= $_attachment_data[0];
+	       	} else { //old treatment
+	       		$_saved_path 		= esc_url ( TC_utils::$inst->tc_opt( 'tc_fav_upload') );
+	       		//rebuild the path : check if the full path is already saved in DB. If not, then rebuild it.
+		       	$upload_dir 		= wp_upload_dir();
+		       	$_fav_src 			= ( false !== strpos( $_saved_path , '/wp-content/' ) ) ? $_saved_path : $upload_dir['baseurl'] . $_saved_path;
+	       	}
 
-     	$_fav_src 				= '';
-     	//check if option is an attachement id or a path (for backward compatibility)
-     	if ( is_numeric($_fav_option) ) {
-     		$_attachement_id 	= $_fav_option;
-     		$_attachment_data 	= apply_filters( 'tc_fav_attachment_img' , wp_get_attachment_image_src( $_fav_option , 'full' ) );
-     		$_fav_src 			= $_attachment_data[0];
-     	} else { //old treatment
-     		$_saved_path 		= esc_url ( TC_utils::$inst->tc_opt( 'tc_fav_upload') );
-     		//rebuild the path : check if the full path is already saved in DB. If not, then rebuild it.
-       	$upload_dir 		= wp_upload_dir();
-       	$_fav_src 			= ( false !== strpos( $_saved_path , '/wp-content/' ) ) ? $_saved_path : $upload_dir['baseurl'] . $_saved_path;
-     	}
+	       	//makes ssl compliant url
+	       	$_fav_src 				= apply_filters( 'tc_fav_src' , is_ssl() ? str_replace('http://', 'https://', $_fav_src) : $_fav_src );
 
-     	//makes ssl compliant url
-     	$_fav_src 				= apply_filters( 'tc_fav_src' , is_ssl() ? str_replace('http://', 'https://', $_fav_src) : $_fav_src );
+	        if( null == $_fav_src || !$_fav_src )
+	        	return;
 
-      if( null == $_fav_src || !$_fav_src )
-      	return;
+          	$type = "image/x-icon";
+          	if ( strpos( $_fav_src, '.png') ) $type = "image/png";
+          	if ( strpos( $_fav_src, '.gif') ) $type = "image/gif";
 
-      	$type = "image/x-icon";
-      	if ( strpos( $_fav_src, '.png') ) $type = "image/png";
-      	if ( strpos( $_fav_src, '.gif') ) $type = "image/gif";
-
-    	echo apply_filters( 'tc_favicon_display',
-      		sprintf('<link id="czr-favicon" rel="shortcut icon" href="%1$s" type="%2$s">' ,
-      			$_fav_src,
-      			$type
-      		)
-    	);
-    }
+        	echo apply_filters( 'tc_favicon_display',
+	        		sprintf('<link rel="shortcut icon" href="%1$s" type="%2$s">' ,
+	        			$_fav_src,
+	        			$type
+	        		)
+        	);
+	    }
 
 
 
@@ -219,7 +217,7 @@ if ( ! class_exists( 'TC_header_main' ) ) :
           //check if option is an attachement id or a path (for backward compatibility)
           if ( is_numeric($_logo_option) ) {
               $_attachement_id 	= $_logo_option;
-              $_attachment_data 	= apply_filters( "tc{$logo_type}logo_attachment_img" , wp_get_attachment_image_src( $_logo_option , 'full' ) );
+              $_attachment_data 	= apply_filters( "tc{$logo_type}logo_attachment_img" , wp_get_attachment_image_src( $_logo_option , 'large' ) );
               $_logo_src 			= $_attachment_data[0];
               $_width 			= ( isset($_attachment_data[1]) && $_attachment_data[1] > 1 ) ? $_attachment_data[1] : $_width;
               $_height 			= ( isset($_attachment_data[2]) && $_attachment_data[2] > 1 ) ? $_attachment_data[2] : $_height;
@@ -593,10 +591,6 @@ if ( ! class_exists( 'TC_header_main' ) ) :
      	else {
      		$_classes = array_merge( $_classes, array('tc-no-sticky-header') );
      	}
-
-      //No navbar box
-      if ( 1 != esc_attr( TC_utils::$inst->tc_opt( 'tc_display_boxed_navbar') ) )
-          $_classes = array_merge( $_classes , array('no-navbar' ) );
 
       //SKIN CLASS
       $_skin = sprintf( 'skin-%s' , basename( TC_init::$instance -> tc_get_style_src() ) );

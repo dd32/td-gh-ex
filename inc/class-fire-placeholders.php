@@ -1,6 +1,6 @@
 <?php
 /**
-* This class must be instantiated if is_admin() for the ajax call to work
+* This class must be instanciated if is_admin() for the ajax call to work
 * => because ajax request are fired with the admin_url(), even on front-end.
 * more here : https://codex.wordpress.org/AJAX_in_Plugins
 *
@@ -34,7 +34,6 @@ if ( ! class_exists( 'TC_placeholders' ) ) :
       if ( ! $this -> tc_is_front_help_enabled() )
         return;
       add_action( 'wp_ajax_dismiss_thumbnail_help'    , array( $this, 'tc_dismiss_thumbnail_help' ) );
-      add_action( 'wp_ajax_dismiss_img_smartload_help', array( $this, 'tc_dismiss_img_smartload_help' ) );
       add_action( 'wp_ajax_dismiss_sidenav_help'      , array( $this, 'tc_dismiss_sidenav_help' ) );
       add_action( 'wp_ajax_dismiss_second_menu_notice', array( $this, 'tc_dismiss_second_menu_notice' ) );
       add_action( 'wp_ajax_dismiss_main_menu_notice'  , array( $this, 'tc_dismiss_main_menu_notice' ) );
@@ -56,10 +55,8 @@ if ( ! class_exists( 'TC_placeholders' ) ) :
       if ( ! $this -> tc_is_front_help_enabled() )
         return;
       if ( $this -> tc_is_thumbnail_help_on() )
-          add_action( 'wp_footer'   , array( $this, 'tc_write_thumbnail_help_js'), 100 );
+        add_action( 'wp_footer'   , array( $this, 'tc_write_thumbnail_help_js'), 100 );
 
-      /* The actual printing of the js is controlled with a filter inside the callback */
-      add_action( 'wp_footer'     , array( $this, 'tc_maybe_write_img_sarmtload_help_js'), 100 );
       if ( $this -> tc_is_sidenav_help_on() )
         add_action( 'wp_footer'   , array( $this, 'tc_write_sidenav_help_js'), 100 );
 
@@ -149,10 +146,6 @@ if ( ! class_exists( 'TC_placeholders' ) ) :
     * @since Customizr 3.3+
     */
     static function tc_is_thumbnail_help_on() {
-      //never display when customizing
-      if ( TC___::$instance -> tc_is_customizing() )
-        return;
-
       //always display in DEV mode
       if ( defined('TC_DEV') && true === TC_DEV )
         return true;
@@ -172,141 +165,6 @@ if ( ! class_exists( 'TC_placeholders' ) ) :
       );
     }
 
-
-
-
-    /*****************************************************
-    * IMG SMARTLOAD MENU HELP : AJAX JS AND CALLBACK
-    *****************************************************/
-    /**
-    * Dismiss images smartload help
-    * hook : wp_ajax_dismiss_img_smartload_help
-    *
-    * @package Customizr
-    * @since Customizr 3.4+
-    */
-    function tc_dismiss_img_smartload_help() {
-      check_ajax_referer( 'tc-img-smartload-help-nonce', 'imgSmartLoadNonce' );
-      set_transient( 'tc_img_smartload_help', 'disabled' , 60*60*24*365*20 );//20 years of peace
-      wp_die();
-    }
-
-    /**
-    * Print Smartload help block notice
-    *
-    * @package Customizr
-    * @since Customizr 3.4+
-    */
-    static function tc_get_smartload_help_block( $echo = false ) {
-      //prepare js printing in the footer
-      add_filter( 'tc_write_img_smartload_help_js', '__return_true' );
-
-      ob_start();
-      ?>
-      <div class="tc-placeholder-wrap tc-img-smartload-help">
-        <?php
-          printf('<p><strong>%1$s</strong></p><p>%2$s</p>',
-              __( "Did you know you can easily speed up your page load by deferring the loading of the non visible images?", "customizr" ),
-              sprintf( __("%s and check the option 'Load images on scroll' under 'Website Performances' section.", "customizr"),
-                sprintf( '<strong><a href="%1$s" title="%2$s">%2$s</a></strong>', TC_utils::tc_get_customizer_url( array( "control" => "tc_img_smart_load", "section" => "performances_sec" ) ), __( "Jump to the customizer now", "customizr") )
-              )
-          );
-          printf('<a class="tc-dismiss-notice" href="#" title="%1$s">%1$s x</a>',
-                __( 'dismiss notice', 'customizr')
-          );
-        ?>
-      </div>
-      <?php
-      $help_block = ob_get_contents();
-      ob_end_clean();
-
-      if ( ! $echo )
-        return $help_block;
-      echo $help_block;
-    }
-
-
-
-    /**
-    * Prints dismiss notice javascript in the footer
-    * hook : wp_footer
-    *
-    * @package Customizr
-    * @since Customizr 3.4+
-    */
-    function tc_maybe_write_img_sarmtload_help_js() {
-      if ( ! apply_filters( 'tc_write_img_smartload_help_js', false ) ) return;
-      ?>
-      <script type="text/javascript" id="img-smartload-help">
-        ( function( $ ) {
-          var dismiss_request = function( $_el ) {
-            var AjaxUrl         = "<?php echo admin_url( 'admin-ajax.php' ); ?>",
-                _query = {
-                    action  : 'dismiss_img_smartload_help',
-                    imgSmartLoadNonce :  "<?php echo wp_create_nonce( 'tc-img-smartload-help-nonce' ); ?>"
-                },
-                $ = jQuery,
-                request = $.post( AjaxUrl, _query );
-
-            request.done( function( response ) {
-              // Check if the user is logged out.
-              if ( '0' === response )
-                return;
-              // Check for cheaters.
-              if ( '-1' === response )
-                return;
-
-              $_el.closest('.tc-img-smartload-help').slideToggle('fast');
-            }).always(function() {console.log(arguments);});
-          };//end of fn
-
-          //DOM READY
-          $( function($) {
-            $('.tc-dismiss-notice', '.tc-img-smartload-help').click( function( e ) {
-              e.preventDefault();
-              dismiss_request( $(this) );
-            } );
-          } );
-        }) (jQuery)
-      </script>
-      <?php
-    }
-
-
-    /**
-    *
-    * @return  bool
-    * @since Customizr 3.4+
-    */
-    static function tc_is_img_smartload_help_on( $text, $min_img_num = 2 ) {
-      //never display when customizing
-      if ( TC___::$instance -> tc_is_customizing() )
-        return;
-
-      if ( $min_img_num ) {
-        if ( ! $text )
-          return false;
-      }
-
-      //always display in DEV mode
-      if ( defined('TC_DEV') && true === TC_DEV )
-        return true;
-
-      $_dont_display_conditions = array(
-        1 == esc_attr( TC_utils::$inst->tc_opt( 'tc_img_smart_load' ) ),
-        ! is_user_logged_in() || ! current_user_can('edit_theme_options'),
-        ! self::$instance -> tc_is_front_help_enabled(),
-        'disabled' == get_transient("tc_img_smartload_help"),
-        $min_img_num ? apply_filters('tc_img_smartload_help_n_images', $min_img_num ) > preg_match_all( '/(<img[^>]+>)/i', $text, $matches ) : false ,
-        is_admin()
-      );
-
-      //checks if at least one of the conditions is true
-      return apply_filters(
-        'tc_is_img_smartload_help_on',
-        ! (bool) array_sum( $_dont_display_conditions )
-      );
-    }
 
 
 
@@ -380,10 +238,6 @@ if ( ! class_exists( 'TC_placeholders' ) ) :
     * @since Customizr 3.3+
     */
     static function tc_is_sidenav_help_on() {
-      //never display when customizing
-      if ( TC___::$instance -> tc_is_customizing() )
-        return;
-
       //always display in DEV mode
       if ( defined('TC_DEV') && true === TC_DEV )
         return true;
@@ -476,10 +330,6 @@ if ( ! class_exists( 'TC_placeholders' ) ) :
     * @since Customizr 3.3+
     */
     static function tc_is_second_menu_placeholder_on() {
-      //never display when customizing
-      if ( TC___::$instance -> tc_is_customizing() )
-        return;
-
       //always display in DEV mode
       if ( defined('TC_DEV') && true === TC_DEV )
         return true;
@@ -566,10 +416,6 @@ if ( ! class_exists( 'TC_placeholders' ) ) :
     * @since Customizr 3.3+
     */
     static function tc_is_main_menu_notice_on() {
-      //never display when customizing
-      if ( TC___::$instance -> tc_is_customizing() )
-        return;
-
       //always display in DEV mode
       if ( defined('TC_DEV') && true === TC_DEV )
         return true;
@@ -686,10 +532,6 @@ if ( ! class_exists( 'TC_placeholders' ) ) :
     * @since Customizr 3.4+
     */
     static function tc_is_slider_notice_on( $_position = null ) {
-      //never display when customizing
-      if ( TC___::$instance -> tc_is_customizing() )
-        return;
-
       //always display in DEV mode
       if ( defined('TC_DEV') && true === TC_DEV )
         return true;
@@ -807,10 +649,6 @@ if ( ! class_exists( 'TC_placeholders' ) ) :
     * @since Customizr 3.4+
     */
     static function tc_is_fp_notice_on( $_position = null ) {
-      //never display when customizing
-      if ( TC___::$instance -> tc_is_customizing() )
-        return;
-
       //always display in DEV mode
       if ( defined('TC_DEV') && true === TC_DEV )
         return true;
@@ -928,10 +766,6 @@ if ( ! class_exists( 'TC_placeholders' ) ) :
     * @since Customizr 3.3+
     */
     static function tc_is_widget_placeholder_enabled( $_position = null ) {
-      //never display when customizing
-      if ( TC___::$instance -> tc_is_customizing() )
-        return;
-
       //always display in DEV mode
       if ( defined('TC_DEV') && true === TC_DEV )
         return true;
@@ -955,7 +789,6 @@ if ( ! class_exists( 'TC_placeholders' ) ) :
     /**
     * @return  bool
     * @since Customizr 3.4+
-    * User option to enabe/disable all notices. Enabled by default.
     */
     function tc_is_front_help_enabled(){
       return apply_filters( 'tc_is_front_help_enabled' , (bool)TC_utils::$inst->tc_opt('tc_display_front_help') );

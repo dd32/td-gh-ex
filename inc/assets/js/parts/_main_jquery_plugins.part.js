@@ -16,41 +16,13 @@ var czrapp = czrapp || {};
     //__before_main_wrapper covers the single post thumbnail case
     //.widget-front handles the featured pages
     imgSmartLoad : function() {
-      var smartLoadEnabled = 1 == TCParams.imgSmartLoadEnabled,
-          //Default selectors for where are : $( '.article-container, .__before_main_wrapper, .widget-front' ).find('img');
-          _where           = TCParams.imgSmartLoadOpts.parentSelectors.join();
-
-      //Smart-Load images
-      //imgSmartLoad plugin will trigger the smartload event when the img will be loaded
-      //the centerImages plugin will react to this event centering them
-      if (  smartLoadEnabled )
-        $( _where ).imgSmartLoad(
-          _.size( TCParams.imgSmartLoadOpts.opts ) > 0 ? TCParams.imgSmartLoadOpts.opts : {}
-        );
-
-      //If the centerAllImg is on we have to ensure imgs will be centered when simple loaded,
-      //for this purpose we have to trigger the simple-load on:
-      //1) imgs which have been excluded from the smartloading if enabled
-      //2) all the images in the default 'where' if the smartloading isn't enaled
-      //simple-load event on holders needs to be triggered with a certain delay otherwise holders will be misplaced (centering)
-      if ( 1 == TCParams.centerAllImg ) {
-        var self                   = this,
-            $_to_center            = smartLoadEnabled ?
-               $( _.filter( $( _where ).find('img'), function( img ) {
-                  return $(img).is(TCParams.imgSmartLoadOpts.opts.excludeImg.join());
-                }) ): //filter
-                $( _where ).find('img');
-            $_to_center_with_delay = $( _.filter( $_to_center, function( img ) {
-                return $(img).hasClass('tc-holder-img');
-            }) );
-
-        //imgs to center with delay
-        setTimeout( function(){
-          self.triggerSimpleLoad( $_to_center_with_delay );
-        }, 300 );
-        //all other imgs to center
-        self.triggerSimpleLoad( $_to_center );
-      }
+      if ( 1 == TCParams.imgSmartLoadEnabled )
+        $( '.article-container, .__before_main_wrapper, .widget-front' ).imgSmartLoad( _.size( TCParams.imgSmartLoadOpts ) > 0 ? TCParams.imgSmartLoadOpts : {} );
+      else {
+        //if smart load not enabled => trigger the load event on img load
+        var $_to_center = $( '.article-container, .__before_main_wrapper, .widget-front' ).find('img');
+        this.triggerSimpleLoad($_to_center);
+      }//end else
     },
 
 
@@ -120,23 +92,14 @@ var czrapp = czrapp || {};
     centerImages : function() {
       //SLIDER IMG + VARIOUS
       setTimeout( function() {
-        //centering per slider
-        $.each( $( '.carousel .carousel-inner') , function() {
-          $( this ).centerImages( {
-            enableCentering : 1 == TCParams.centerSliderImg,
-            imgSel : '.item .carousel-image img',
-            oncustom : ['slid', 'simple_load'],
-            defaultCSSVal : { width : '100%' , height : 'auto' },
-            useImgAttr : true
-          });
-          //fade out the loading icon per slider with a little delay
-          //mostly for retina devices (the retina image will be downloaded afterwards
-          //and this may cause the re-centering of the image)
-          var self = this;
-          setTimeout( function() {
-              $( self ).prevAll('.tc-slider-loader-wrapper').fadeOut();
-          }, 500 );
+        $( '.carousel .carousel-inner').centerImages( {
+          enableCentering : 1 == TCParams.centerSliderImg,
+          imgSel : '.item .carousel-image img',
+          oncustom : ['slid', 'simple_load'],
+          defaultCSSVal : { width : '100%' , height : 'auto' },
+          useImgAttr : true
         });
+        $('.tc-slider-loader-wrapper').hide();
       } , 50);
 
       //Featured Pages
@@ -157,8 +120,8 @@ var czrapp = czrapp || {};
         oncustom : ['smartload', 'simple_load']
       });
 
-      //rectangulars in post lists
-      $('.tc-rectangular-thumb', '.tc-post-list-context' ).centerImages( {
+      //rectangulars
+      $('.tc-rectangular-thumb').centerImages( {
         enableCentering : 1 == TCParams.centerAllImg,
         enableGoldenRatio : true,
         goldenRatioVal : TCParams.goldenRatio || 1.618,
@@ -183,18 +146,6 @@ var czrapp = czrapp || {};
         goldenRatioLimitHeightTo : TCParams.gridGoldenRatioLimit || 350
       } );
     },//center_images
-
-    /**
-    * PARALLAX
-    * @return {void}
-    */
-    parallax : function() {
-      $( '.parallax-item' ).czrParallax(
-      {
-        parallaxRatio : 0.55
-      }
-      );
-    },
 
   };//_methods{}
 

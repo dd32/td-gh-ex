@@ -31,14 +31,14 @@
 * => Default filtered options for the customizer
 * => Customizr theme's hooks API : front end components are rendered with action and filter hooks
 *
-* The method TC__::tc__() loads the php files and instantiates all theme's classes.
+* The method TC__::tc__() loads the php files and instanciates all theme's classes.
 * All classes files (except the class__.php file which loads the other) are named with the following convention : class-[group]-[class_name].php
 *
 * The theme is entirely built on an extensible filter and action hooks API, which makes customizations easy and safe, without ever needing to modify the core structure.
 * Customizr's code acts like a collection of plugins that can be enabled, disabled or extended.
 *
 * If you're not familiar with the WordPress hooks concept, you might want to read those guides :
-* http://docs.presscustomizr.com/article/26-wordpress-actions-filters-and-hooks-a-guide-for-non-developers
+* http://doc.presscustomizr.com/customizr/wordpress-actions-filters-and-hooks-a-guide-for-non-developers/
 * https://codex.wordpress.org/Plugin_API
 */
 
@@ -53,6 +53,6 @@ require_once( get_template_directory() . '/inc/init.php' );
 * Don't know what a child theme is ? Then you really want to spend 5 minutes learning how to use child themes in WordPress, you won't regret it :) !
 * https://codex.wordpress.org/Child_Themes
 *
-* More informations about how to create a child theme with Customizr : http://docs.presscustomizr.com/article/24-creating-a-child-theme-for-customizr/
-* A good starting point to customize the Customizr theme : http://docs.presscustomizr.com/article/35-how-to-customize-the-customizr-wordpress-theme/
+* More informations about how to create a child theme with Customizr : http://doc.presscustomizr.com/customizr/creating-child-theme-customizr/
+* A good starting point to customize the Customizr theme : http://doc.presscustomizr.com/customizr/customize-customizr-wordpress-theme/
 */
