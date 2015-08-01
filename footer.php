@@ -1,11 +1,12 @@
 <?php
 /**
- *  The template for displaying Footer.
+ *  The template for displaying the Footer.
  *
- *  @package accountant
+ *  @package WordPress
+ *	@subpackage AccountantLaw
  */
 ?>
-		<footer id="footer">
+		<footer role="contentinfo" id="footer">
 			<div class="wrapper cf">
 				<div class="footer-margin-left cf">
 					<?php if( is_active_sidebar( 'footer-sidebar' ) ): ?>

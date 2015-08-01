@@ -1,6 +1,6 @@
 <?php
 /**
- *  The template for displaying Front Page.
+ *  The template for displaying the Front Page.
  *
  *  @package accountant
 */
@@ -19,13 +19,11 @@ get_header();
 <?php else: ?>
 		<section class="wide-nav">
 			<div class="wrapper">
-				<h3>
-					<?php _e( 'Latest posts', 'accountantlaw' ); ?>
-				</h3><!--/h3-->
+				<h1><?php _e( 'Latest posts', 'accountantlaw' ); ?></h1>
 			</div><!--/div .wrapper-->
 		</section><!--/section .wide-nav-->
 	</header>
-	<section id="content">
+	<main role="main" id="content">
 		<div class="wrapper cf">
 			<div id="posts">
 				<?php
@@ -50,7 +48,7 @@ get_header();
 							</div><!--/.post-image-->
 						<?php } ?>
 					<div class="post-excerpt">
-						<?php the_excerpt(); ?>
+						<?php the_content( sprintf( __( 'Continue reading%s', 'textdomain' ), '<span class="screen-reader-text">  '. get_the_title() .'</span>' ) ); ?>
 					</div><!--/div .post-excerpt-->
 					<a href="<?php the_permalink(); ?>" title="<?php _e('Read More','accountantlaw'); ?>" class="read-more">
 						<span><?php _e('Read More','accountantlaw'); ?></span>
@@ -66,6 +64,6 @@ get_header();
 			</div><!--/div #posts-->
 			<?php get_sidebar(); ?>
 		</div><!--/div .wrapper-->
-	</section><!--/section #content-->
+	</main><!--/#content-->
 	<?php get_footer(); ?>
 <?php endif; ?>
