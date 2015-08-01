@@ -54,6 +54,10 @@ You can ask any question about aladdin at https://wordpress.org/support/theme/al
    
 == Changelog ==
 
+=== Vertion 1.0.2 ===
+
+* updated .pot file
+
 === Vertion 1.0.1 ===
 
 * fix for php errors
