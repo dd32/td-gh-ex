@@ -2,7 +2,7 @@
 <div class="main-tag">
 <div class="block1">
 		<div class="block1-center">
-				<center><h1><?php _e('Search Results for: ', 'alanding_lite') ?><?php echo get_search_query(); ?></h1>  </center>
+				<center><h1><?php _e('Search Results for: ', 'alanding-lite') ?><?php echo get_search_query(); ?></h1>  </center>
 			<div class="content">
 				<?php if(have_posts()) : ?>
 				<?php while(have_posts()) : the_post(); ?>
@@ -19,7 +19,7 @@
 				</div>
 				<?php else : ?>
 				<div class="post-main"> 
-					<h1><?php _e( 'Not found.', 'alanding_lite' ); ?></h1>
+					<h1><?php _e( 'Not found.', 'alanding-lite' ); ?></h1>
 				</div> 		
 				<?php endif; ?>
 			</div>
