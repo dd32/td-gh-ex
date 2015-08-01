@@ -52,6 +52,8 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 1.5.1
+1. Changed sidebar post widget link from blue to green.
 @Version 1.5
 1. Footer copyright setting issue resolved.
 @Version 1.4
