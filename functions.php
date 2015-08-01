@@ -1,82 +1,5 @@
 <?php
-require_once('theme-option/ariniothemes.php');
-/**
- * Set up the content width value based on the theme's design.
- */
  
- 
- 
-if ( ! isset( $content_width ) ) {
-	$content_width = 900;
-}
-// Adding breadcrumbs
-function aron_breadcrumbs() {
- echo '<li><a href="';
- //echo get_option('home');
- echo home_url(); 
- echo '">Home';
- echo "</a></li>";
- 
-if (is_attachment()) {
-            echo "<li class='active'>attachment: ";
-    
-    
-   
-   echo "</li>";
-        }
- 
-  if (is_category() || is_single()) {
-   if(is_category())
-   {
-    echo "<li class='active'>Category By: ";
-   the_category(' &bull; ');
-   echo "</li>";
-   }
-   
-    if (is_single()) {
-   echo "<li>";
-   $category = get_the_category();
-   echo '<a rel="category" title="View all posts in '.$category[0]->cat_name.'" href="'.site_url().'/?cat='.$category[0]->term_id.'">'.$category[0]->cat_name.'</a>';
-   echo "</li>";
-     echo "<li class='active'>";
-     the_title();
-     echo "</li>";
-    }
-        } elseif (is_page()) {
-            echo "<li class='active'>";
-            echo the_title();
-   echo "</li>";
-  } elseif (is_search()) {
-            echo "<li class='active'>Search Results for... ";
-   echo '"<em>';
-   echo the_search_query();
-   echo '</em>"';
-   echo "</li>";
-        } elseif (is_tag()) { echo "<li class='active'>"; single_tag_title(); echo "</li>";}
-		 elseif (is_day()) {echo"<li class='active'>Archive for "; the_time('F jS, Y'); echo'</li>';}
-    elseif (is_month()) {echo"<li class='active'>Archive for "; the_time('F, Y'); echo'</li>';}
-    elseif (is_year()) {echo"<li class='active'>Archive for "; the_time('Y'); echo'</li>';}
-    elseif (is_author()) {echo"<li class='active'>Author Archive: "; printf(__(' %s', 'aron'), "<a class='url fn n' href='" . get_author_posts_url(get_the_author_meta('ID')) . "' title='" . esc_attr(get_the_author()) . "' rel='me'>" . get_the_author() . "</a>"); echo'</li>';}
-	elseif (!is_single() && !is_page() && get_post_type() != 'post') {
-        $post_type = get_post_type_object(get_post_type());
-        //echo $before . $post_type->labels->singular_name . $after;
-        echo $before . '<li class="active">Search results for "' . get_search_query() . '"' . $after; echo "</li>";
-    }
-    }
-//fetch title
-function aron_title() {
-	  if (is_category() || is_single())
-	  {
-	   if(is_category())
-		  the_category();
-	   if (is_single())
-		 the_title();
-	   }
-	   elseif (is_page()) 
-		  the_title();
-	   elseif (is_search())
-		   echo the_search_query();
-    }
 /* aron Theme Starts */
 if ( ! function_exists( 'aron_setup' ) ) :
 function aron_setup() {
@@ -85,11 +8,15 @@ function aron_setup() {
 	 *
 	 */
 	load_theme_textdomain( 'aron', get_template_directory() . '/languages' );
-	// This theme styles the visual editor to resemble the theme style.
- 
-	// Add RSS feed links to <head> for posts and comments.
+ 	add_editor_style();
 	add_theme_support( 'automatic-feed-links' );
-	// Enable support for Post Thumbnails, and declare two sizes.
+	 	global $content_width;
+if ( ! isset( $content_width ) )
+     $content_width = 900; /* pixels */
+	
+	
+	
+		 add_theme_support( "title-tag" );
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 798, 398, true );
 	add_image_size( 'aron-full-width', 1038, 576, true );
@@ -121,36 +48,123 @@ function aron_setup() {
 endif; // aron_setup
 add_action( 'after_setup_theme', 'aron_setup' );
 
-/**
- * Register Lato Google font for aron.
- *
- */
+ 
+ 
+ 
+ 
+function aron_of_head_css() {
+  
+    $output = '';
+    $custom_css = esc_attr(get_theme_mod( 'aron_custom_css' ) );
+    if ($custom_css <> '') {
+        $output .= $custom_css . "\n";
+    }
+// Output styles
+    if ($output <> '') {
+        $output = "<!-- Custom Styling -->\n<style type=\"text/css\">\n" . $output . "</style>\n";
+        echo $output;
+    }
+}
+
+add_action('wp_head', 'aron_of_head_css');
+
+
+
+function aron_header_add_favicon() {
+  
+    $outputfevicon = '';
+    $custom_fevicon = esc_attr(get_theme_mod( 'aron_logo2' ) );
+    if ($custom_fevicon <> '') {
+        $outputfevicon .= $custom_fevicon . "\n";
+    }
+// Output styles
+    if ($outputfevicon <> '') {
+        $outputfevicon = '<link rel="shortcut icon" href="' . $outputfevicon . '">';
+        echo $outputfevicon;
+    }
+}
+
+add_action('wp_head', 'aron_header_add_favicon');
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
 
-/**
- * Filter the page title.
- **/
-function aron_wp_title( $title, $sep ) {
-	global $paged, $page;
+// Adding breadcrumbs
+function aron_breadcrumbs() {
+ echo '<li><a href="';
+ //echo get_option('home');
+ echo home_url(); 
+ echo '">'. __('Home','aron');
+ echo "</a></li>";
+ 
+if (is_attachment()) {
+           echo "<li class='active'>". __('attachment:','aron');
+    
+    
+   
+   echo "</li>";
+        }
+ 
+  if (is_category() || is_single()) {
+   if(is_category())
+   {
+   echo "<li class='active'>". __('Category By:','aron');
+   the_category(' &bull; ');
+   echo "</li>";
+   }
+   
+    if (is_single()) {
+   echo "<li>";
+   $category = get_the_category();
+   echo '<a rel="category" title="View all posts in '.$category[0]->cat_name.'" href="'.site_url().'/?cat='.$category[0]->term_id.'">'.$category[0]->cat_name.'</a>';
+   echo "</li>";
+     echo "<li class='active'>";
+     the_title();
+     echo "</li>";
+    }
+        } elseif (is_page()) {
+            echo "<li class='active'>";
+            echo the_title();
+   echo "</li>";
+  } elseif (is_search()) {
+            echo "<li class='active'>". __('Search Results for...','aron');
+   echo '"<em>';
+   echo the_search_query();
+   echo '</em>"';
+   echo "</li>";
+        } elseif (is_tag()) { echo "<li class='active'>"; single_tag_title(); echo "</li>";}
+		 elseif (is_day()) {echo"<li class='active'>". __('Archive for ','aron'); the_time('F jS, Y'); echo'</li>';}
+    elseif (is_month()) {echo"<li class='active'>". __('Archive for ','aron'); the_time('F, Y'); echo'</li>';}
+    elseif (is_year()) {echo"<li class='active'>". __('Archive for ','aron'); the_time('Y'); echo'</li>';}
+    elseif (is_author()) {echo"<li class='active'>". __('Author Archive for ','aron'); printf(__(' %s', 'aron'), "<a class='url fn n' href='" . get_author_posts_url(get_the_author_meta('ID')) . "' title='" . esc_attr(get_the_author()) . "' rel='me'>" . get_the_author() . "</a>"); echo'</li>';}
+	elseif (!is_single() && !is_page() && get_post_type() != 'post') {
+        $post_type = get_post_type_object(get_post_type());
+        //echo $before . $post_type->labels->singular_name . $after;
+        echo $before . '<li class="active">'. __('Search Results for "','aron').'' . get_search_query() . '"' . $after; echo "</li>";
+    }
+    }
+ 
 
-	if ( is_feed() )
-		return $title;
+ 
 
-	// Add the site name.
-	$title .= get_bloginfo( 'name' );
-
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
-
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'aron' ), max( $paged, $page ) );
-
-	return $title;
-}
-add_filter( 'wp_title', 'aron_wp_title', 10, 2 );
+ 
+ 
+ 
+ 
+ 
+ 
 
 if ( ! function_exists( 'aron_entry_meta' ) ) :
 /**
@@ -250,27 +264,25 @@ function aron_add_nav_class($output) {
     return $output;
 }
 add_filter('wp_list_categories', 'aron_add_nav_class');
-/*
- * Replace Excerpt [...] with Read More
-**/
-function aron_read_more( ) {
-return ' ... <p class="moree"><a class="btn btn-inverse btn-normal btn-primary " href="'. get_permalink( get_the_ID() ) . '">Read more</a></p>';
- }
-add_filter( 'excerpt_more', 'aron_read_more' ); 
+ 
 /**
  * Enqueues scripts and styles for front-end.
  */
 function aron_scripts_styles() {
 	 wp_enqueue_style('bootstrap', get_template_directory_uri() . '/styles/bootstrap.min.css');
-          
-		   wp_enqueue_script('jquery');
-			wp_enqueue_script( 'nav', get_template_directory_uri() . '/scripts/jquery.nav.js',array(),false,true);
-		   
-		  wp_enqueue_script( 'validate', get_template_directory_uri() . '/styles/jquery.validate.min.js',array(),false,true);
-		
-		  wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/scripts/modernizr.js',array(),false,true);
-		  wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/styles/bootstrap.min.js',array(),false,true);
-		  wp_enqueue_script( 'custom', get_template_directory_uri() . '/scripts/custom.js',array(),false,true);
+         wp_enqueue_style( 'aron-basic-style', get_stylesheet_uri() );
+		  wp_enqueue_style('font-awesome', get_template_directory_uri() . '/styles/font-awesome.css');
+		    wp_enqueue_style('normalize', get_template_directory_uri() . '/styles/normalize.css');
+	 
+		    // Add Google Fonts
+  wp_register_style( 'aron-fonts', '//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,700,800,600');
+
+  wp_enqueue_style( 'aron-fonts' );
+		 
+	 
+		  wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/scripts/modernizr.js',array('jquery'),false,true);
+		  wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/styles/bootstrap.min.js',array('jquery'),false,true);
+		  wp_enqueue_script( 'custom', get_template_directory_uri() . '/scripts/custom.js',array('jquery'),false,true);
 	  if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 }
 add_action( 'wp_enqueue_scripts', 'aron_scripts_styles' );
@@ -279,64 +291,19 @@ add_action( 'wp_enqueue_scripts', 'aron_scripts_styles' );
 
 
 
+ 
 
 
 
 
-
-
-
-
-
-
-
-
-add_filter( 'comment_form_default_fields', 'aron_comment_placeholders' );
-
-/**
- * Change default fields, add placeholder and change type attributes.
- *
- * @param  array $fields
- * @return array
- */
-function aron_comment_placeholders( $fields )
-{
-    $fields['author'] = str_replace(
-        '<input',
-        '<input placeholder="'
-        /** I use _x() here to make your translators life easier. :)
-         * See http://codex.wordpress.org/Function_Reference/_x
-         */
-            . _x(
-                'Name',
-                'comment form placeholder',
-                'aron'
-                )
-            . '"',
-        $fields['author']
-    );
-    $fields['email'] = str_replace(
-        '<input id="email" name="email" type="text"',
-        '<input type="email" placeholder="contact@example.com"  id="email" name="email"',
-        $fields['email']
-    );
-    $fields['url'] = str_replace(
-        '<input id="url" name="url" type="text"',
-        // Again: a better 'type' attribute value.
-        '<input placeholder="http://example.com" id="url" name="url" type="url"',
-        $fields['url']
-    );
-	
-
-    return $fields;
-}
+ 
 
 // placeholder to textarea
 function aron_comment_textarea_field($comment_field) {
  
     $comment_field = 
          '<div class="col-md-12">
-            <textarea class="form-control" required placeholder="Enter Your Comments" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
+            <textarea class="form-control" required placeholder="'. __( 'Enter Your Comments', 'aron' ).'" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
         </div>';
  
     return $comment_field;
@@ -356,40 +323,36 @@ add_filter('comment_text', 'aron_wrap_comment_text');
 
 
 
+ 
+
+if ( ! function_exists( 'aron_ie_js_header' ) ) {
+	function aron_ie_js_header () {
+		echo '<!--[if lt IE 9]>'. "\n";
+		echo '<script src="' . esc_url( get_template_directory_uri() . '/scripts/html5.js' ) . '"></script>'. "\n";
+		echo '<script src="' . esc_url( get_template_directory_uri() . '/scripts/selectivizr.js' ) . '"></script>'. "\n";
+		echo '<![endif]-->'. "\n";
+	}
+	
+}
+add_action( 'wp_head', 'aron_ie_js_header' );
+/*  IE js footer
+/* ------------------------------------ */
+if ( ! function_exists( 'aron_ie_js_footer' ) ) {
+	function aron_ie_js_footer () {
+		echo '<!--[if lt IE 9]>'. "\n";
+		echo '<script src="' . esc_url( get_template_directory_uri() . '/scripts/respond.js' ) . '"></script>'. "\n";
+		echo '<![endif]-->'. "\n";
+	}
+	
+}
+add_action( 'wp_footer', 'aron_ie_js_footer', 20 );
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
@@ -405,8 +368,8 @@ add_filter('comment_text', 'aron_wrap_comment_text');
  */
 function aron_add_menuid ($page_markup) {
 preg_match('/^<div class=\"([a-z0-9-_]+)\">/i', $page_markup, $matches);
-$divclass = $matches[1];
-$toreplace = array('<div class="'.$divclass.'">', '</div>');
+ 
+$toreplace = array('<div class="navbar-collapse collapse top-gutter">', '</div>');
 $replace = array('<div class="navbar-collapse collapse top-gutter">', '</div>');
 $new_markup = str_replace($toreplace,$replace, $page_markup);
 $new_markup= preg_replace('/<ul/', '<ul class="nav navbar-nav navbar-right"', $new_markup);
@@ -450,7 +413,7 @@ function aron_paginate($pages = '', $range = 1)
 
 
 
-
+require get_template_directory() . '/inc/customizer.php';
 
 
 

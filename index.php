@@ -1,65 +1,63 @@
 <?php 
-/*
-** Template Name : Right Sidebar
-*/
+/**
+ * The main template file.
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package Market
+ */
 get_header(); ?>
-
-<!--end / page-title-->
-<div class="mainblogwrapper">
-    <div class="container">
-        <div class="row">
-            <div class="mainblogcontent">
-             <div class="col-md-12  col-sm-12 ">
+<div class="smallhead">
+</div>
+<div class="page-intro" style="margin-top: 0px;">
+				<div class="container">
+					<div class="row">
+ <div class="col-md-12  col-sm-12 ">
         <ol class="breadcrumb ">
           <?php aron_breadcrumbs(); ?>
         </ol>
       </div>
+</div>
+				</div>
+			</div>
+<!--end / page-title-->
+<div class="mainblogwrapper clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="mainblogcontent">
+              
                 <div class="col-md-9">
-                    <!-- *** Post loop starts *** -->
-
-                    <!-- *** Post1 Starts *** -->
-                    <?php if (have_posts()) while (have_posts()) : the_post(); ?> 
-                            <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                                <div class="article-page">
-                                
-                                 <?php if ((function_exists('has_post_thumbnail')) && (has_post_thumbnail())) { ?>
-             <?php
- 	             the_post_thumbnail();
-             ?>
- 	                <?php }  ?>
-                                
-                                
-                                
-                                    <h1 class="article-page-head"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
- <ul class="meta">
-                    <li><i class="fa fa-clock-o blogin-color"></i> <?php
-                        $archive_year = get_the_time('Y');
-                        $archive_month = get_the_time('m');
-                        $archive_day = get_the_time('d');
-                        ?>
-                        <a href="<?php
-                        echo get_day_link($archive_year,
-                                $archive_month,
-                                $archive_day);
-                        ?>"><?php echo get_the_time('m, d, Y') ?></a></li>
-                    <li><i class="fa fa-user blogin-color"></i>&nbsp;<?php the_author_posts_link(); ?></li>
-                    <li><i class="fa fa-folder-open blogin-color"></i>&nbsp;<?php the_category(', '); ?></li>
-                    <li class="comments"><i class="fa fa-comment blogin-color"></i> <?php comments_popup_link('No Comments.',
-                                'Comment: 1',
-                                'Comments: %'); ?></li>
-                </ul>
-
-                                    <?php the_excerpt(); ?>
-                                </div>
-                            </div>
-                        <?php endwhile; ?>
+                                    <!-- *** Post loop starts *** -->
+       <?php 
+	  $post_per_page = get_option('posts_per_page');
+	  $args = array( 'posts_per_page'  => $post_per_page, 
+		'orderby'      => 'post_date', 
+		'order'        => 'DESC',
+		'post_type'    => 'post',
+		'paged' => $paged,
+		'post_status'    => 'publish'	
+      );
+	$query = new WP_Query($args);
+	?>
+ 
+                    
+                    
+                    
+ <?php get_template_part('loop', 'index'); ?>
                     <div class="clearfix"></div>
+
+         
                     <nav id="nav-single"> <span class="nav-previous">
-                            <?php next_posts_link('Next Post'); ?>
+                             <?php next_posts_link(__( 'Next Post', 'aron' )); ?>
                         </span> <span class="nav-next">
-<?php previous_posts_link('Previous Post'); ?>
+ <?php previous_posts_link(__( 'Previous Post', 'aron' )); ?>
                         </span> </nav>
                     <div class="clearfix"></div>
+                    <!-- ***Comment Template *** -->
                     <?php comments_template(); ?>
                     <!-- ***Comment Template *** -->
                 </div>

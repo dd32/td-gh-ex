@@ -10,20 +10,29 @@
  */
 ?>
 <?php get_header(); ?>
-<!--Start Content Grid-->
-<div class="mainblogwrapper">
-    <div class="container">
-        <div class="row">
-            <div class="mainblogcontent">
-             <div class="col-md-12  col-sm-12 ">
+<div class="smallhead">
+</div>
+<div class="page-intro" style="margin-top: 0px;">
+				<div class="container">
+					<div class="row">
+ <div class="col-md-12  col-sm-12 ">
         <ol class="breadcrumb ">
           <?php aron_breadcrumbs(); ?>
         </ol>
       </div>
+</div>
+				</div>
+			</div>
+<!--Start Content Grid-->
+<div class="mainblogwrapper clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="mainblogcontent">
+              
                 <div class="col-md-9">
                
                 <h1>
-                    <?php printf('Tag Archives: %s', '' . single_tag_title('', false) . ''); ?>
+                    <?php printf(__('Tag Archives: %s', 'aron'), '' . single_tag_title('', false) . ''); ?>
                 </h1>
                 <?php
                 /* Run the loop for the tag archive to output the posts
@@ -34,9 +43,9 @@
                 ?>
             <div class="clearfix"></div>
                         <nav id="nav-single"> <span class="nav-previous">
-                                <?php next_posts_link('Next Post'); ?>
+                                <?php next_posts_link(__( 'Next Post', 'aron' )); ?>
                             </span> <span class="nav-next">
-                        <?php previous_posts_link('Previous Post'); ?>
+                        <?php previous_posts_link(__( 'Previous Post', 'aron' )); ?>
                             </span> </nav>
                  <div class="clearfix"></div>
                 </div>

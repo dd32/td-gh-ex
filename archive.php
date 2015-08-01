@@ -10,16 +10,25 @@
  */
 ?>
 <?php get_header(); ?>
-<!--Start Content Grid-->
-<div class="mainblogwrapper">
-    <div class="container">
-        <div class="row">
-            <div class="mainblogcontent">
-            <div class="col-md-12  col-sm-12 ">
+<div class="smallhead">
+</div>
+<div class="page-intro" style="margin-top: 0px;">
+				<div class="container">
+					<div class="row">
+ <div class="col-md-12  col-sm-12 ">
         <ol class="breadcrumb ">
           <?php aron_breadcrumbs(); ?>
         </ol>
       </div>
+</div>
+				</div>
+			</div>
+<!--Start Content Grid-->
+<div class="mainblogwrapper clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="mainblogcontent">
+             
                 <div class="col-md-9">
              
              <div class="article-page">   <?php
@@ -32,15 +41,15 @@
                 if (have_posts())
                     the_post();
                 ?>
-                <h1>
+                 <h1>
                     <?php if (is_day()) : ?>
-                        <?php printf('Daily Archives: %s', get_the_date()); ?>
+                        <?php printf(__('Daily Archives: %s', 'aron'), get_the_date()); ?>
                     <?php elseif (is_month()) : ?>
-                        <?php printf('Monthly Archives: %s', get_the_date('F Y')); ?>
+                        <?php printf(__('Monthly Archives: %s', 'aron'), get_the_date('F Y')); ?>
                     <?php elseif (is_year()) : ?>
-                        <?php printf('Yearly Archives: %s', get_the_date('Y')); ?>
+                        <?php printf(__('Yearly Archives: %s', 'aron'), get_the_date('Y')); ?>
                     <?php else : ?>
-                        <?php echo ('Blog Archives'); ?>
+                      <?php _e( 'Blog Archives', 'aron' ); ?>  
                     <?php endif; ?>
                 </h1></div>
                 <?php
@@ -57,9 +66,9 @@
                 ?>
             <div class="clearfix"></div>
                         <nav id="nav-single"> <span class="nav-previous">
-                                <?php next_posts_link('Next Post'); ?>
+                                <?php next_posts_link(__( 'Next Post', 'aron' )); ?>
                             </span> <span class="nav-next">
-                        <?php previous_posts_link('Previous Post'); ?>
+                        <?php previous_posts_link(__( 'Previous Post', 'aron' )); ?>
                             </span> </nav>
            <div class="clearfix"></div>
                 </div>

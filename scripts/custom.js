@@ -1,4 +1,15 @@
+/* 
+ * Create HTML5 elements for IE's sake
+ */
 
+/* catch ie10 */
+if (/*@cc_on!@*/false) {  
+    document.documentElement.className+=' ie10';  
+}
+/* slider */
+jQuery(window).load(function() {
+    jQuery('ul.sf-menu').superfish();
+  });
   
  /* scroll to top */
  jQuery(document).ready(function(){
@@ -28,62 +39,10 @@
 });
 
 
-
-
-//validation
-
- // When the browser is ready...
-  $(function() {
-  
-    // Setup form validation on the #register-form element
-    $("#register-form").validate({
-    
-        // Specify the validation rules
-        rules: {
-            firstname: "required",
-            message: "required",
-            email: {
-                required: true,
-                email: true
-            },
-            password: {
-                required: true,
-                minlength: 5
-            },
-            agree: "required"
-        },
-        
-        // Specify the validation error messages
-        messages: {
-            firstname: "Please enter your first name",
-            message: "Please enter your message",
-            password: {
-                required: "Please provide a password",
-                minlength: "Your password must be at least 5 characters long"
-            },
-            email: "Please enter a valid email address",
-            agree: "Please accept our policy"
-        },
-        
-        submitHandler: function(form) {
-            form.submit();
-        }
-    });
-
-  });
-
-
-  
-
-//menu
-
-$(document).ready(function() {
-			$('#nav').onePageNav();
-		});
-
-
+ 
 
  
+
 
 
 //slider

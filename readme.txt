@@ -1,26 +1,41 @@
-"Aron Multipurpose WordPress Theme"
+﻿"Aron Multipurpose WordPress Theme"
 
 == Theme: Aron==
 
-Aron is Beautiful  multipurpose responsive theme. You can use it for your business, portfolio, blogging, fitness, GYM, Travels Agencies or any type of site. Its comes with beautiful slider. It has a very easy admin option panel where you change lot of things easily. It also give you custom  blog page and fixed header. and it is fully responsive.
+Aron is Multipurpose, Elegant, Responsive and beautiful Theme with Easy Customization Options. Aron Theme is Single Click Intall feature, Just press activate button and your website will get ready. Aron is a bootstrap based fully responsive theme that works on any device. You can use it for your business, portfolio, blogging, fitness, GYM, Travels Agencies or any type of site. Its comes with beautiful slider. It has a very easy admin option panel where you can change lot of things easily. You can upload logo , fevicon etc. This theme made by arinio.com.
 
 * By ArinioThemes, http://arinio.com/
 
 == Theme License & Copyright ==
 Aron is distributed under the terms of the GNU GPL
-Aron - Copyright 2014 Aron, arinio.com
+Aron - Copyright 2015 Aron, arinio.com
 
 
 
-* The script jquery.nav.js is dual licensed under GPL & MIT { Copyright (c) 2010 Trevor Davis (http://trevordavis.net)}
-* The script jquery.validate.min.js is dual licensed under GPL & MIT {Copyright (c) 2006 - 2011 Jörn Zaefferer}
+ 
+ 
 * The script modernizr.js is dual licensed under BSD & MIT 
 * Other custom.js files are our own creation and is licensed under the same license as this theme.
 
 == bootstrap.min.js ==
- * Bootstrap v3.0.3 (http://getbootstrap.com)
- * Copyright 2013 Twitter, Inc.
+ * Bootstrap v3.3.0 (http://getbootstrap.com)
+ * Copyright 2011-2014 Twitter, Inc.
  * Licensed under http://www.apache.org/licenses/LICENSE-2.0
+
+== html5.js ==
+ HTML5 Shiv v3.7.0 | MIT/GPL2 Licensed
+
+
+== respond.js ==
+Authors & copyright (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas. Dual MIT/BSD license
+
+== selectivizr.js ==
+selectivizr v1.0.2 - (c) Keith Clark, freely distributable under the terms 
+of the MIT license.
+
+
+== jquery.easing.1.3.js ==
+jQuery Easing v1.3 -  © 2008 George McGinley Smith | Open source under the BSD License. 
 
 
 == Font Awesome Icons==
@@ -32,8 +47,7 @@ License URI: http://opensource.org/licenses/mit-license.html
 Copyright: Dave Gandy http://fontawesome.io
 
 
-== Google Fonts==
-License: SIL OFL 1.1
+ 
 
 
 
@@ -52,3 +66,22 @@ Get free support at http://arinio.com/support/
 All available options can be used from Appearance->AR Options
 
 /**********************************************************/
+
+
+License for images:
+1. Image Name: slider-2.jpg
+Resource link: - https://pixabay.com/en/girl-portrait-young-room-white-511881/
+License:  Creative Commons license
+url : http://creativecommons.org/publicdomain/zero/1.0/
+
+
+ 
+ 
+other images made by us .
+
+
+
+
+
+
+

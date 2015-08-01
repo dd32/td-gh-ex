@@ -15,6 +15,7 @@
  	                ?>
                 <h1 class="article-page-head"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
                 <ul class="meta">
+                 
                     <li><i class="fa fa-clock-o blogin-color"></i> <?php
                         $archive_year = get_the_time('Y');
                         $archive_month = get_the_time('m');
@@ -31,8 +32,11 @@
                                 'Comment: 1',
                                 'Comments: %'); ?></li>
                 </ul>
-        <?php the_excerpt(); ?>
-                 
+        <div class="blog-border"></div>
+                
+       <div class="blog-content"> 
+        <?php the_excerpt(); ?> </div>
+               <hr>  
             </div>
         </div>
         <?php
