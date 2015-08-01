@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2014-08-30 15:31-0000\n"
-"PO-Revision-Date: 2014-08-30 15:34-0000\n"
+"PO-Revision-Date: 2014-08-30 15:38-0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -14,7 +14,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:10
-msgid "Sorry! We cant find that page!"
+msgid "Sorry! We cant find that page translated fsdfsdfsf!"
 msgstr ""
 
 #: ../404.php:13
@@ -54,7 +54,7 @@ msgid "Newer Comments <span class=\"meta-nav\"></span>"
 msgstr ""
 
 #: ../comments.php:59
-msgid "There are no comments yet."
+msgid "There are no comments yet. asdsdas"
 msgstr ""
 
 #: ../comments.php:62

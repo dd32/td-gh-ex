@@ -19,7 +19,12 @@
 
 <body <?php body_class(); ?>>
 
-<div class="page-wrapper">
+<?php
+$fixed_nav = get_theme_mod('navbar_fixed', 'no');
+$fixed_nav = 'fixed_nav_' . $fixed_nav;
+?>
+
+<div class="page-wrapper <?php echo $fixed_nav; ?>">
     <!-- BEGIN NAV -->
     <nav class="primary-navigation navbar" role="navigation">
         <div class="container">

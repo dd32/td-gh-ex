@@ -236,6 +236,19 @@ function Themeora_Customize_Register($wp_customize) {
         'settings' => 'footer_copyright',
         'priority' => 7
     )));
+    
+    $wp_customize->add_setting('navbar_fixed', array(
+        'default' => 'no',
+        'sanitize_callback' => 'themeora_sanitize_text',
+     ));
+    $wp_customize->add_control('navbar_fixed', array(
+        'type' => 'select',
+        'label' => __('Fix the navbar?', 'themeora'),
+        'section' => 'general_settings',
+        'priority' => 8,
+        'choices' => array('no' => 'No', 'yes' => 'Yes')
+        )
+    );
 
     /* Background settings
       ---------------------------------------------------------------------------------------------------- */

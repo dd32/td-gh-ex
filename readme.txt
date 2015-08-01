@@ -39,9 +39,13 @@ Other icons and images are created by Themeora and licensed under GPL.
 Changelog
 --------------------------------------------------------------------------------
 
+v1.2.4
+- Tweak: Removed default fixed position navbar
+- Tweak: Added option for fixed position navbar
+- Tweak: Changed description
+
 v1.2.3
 - Fix: Changed footer text sanitize callback to stop output from being empty
-- Tweak: updated default.pot to remove ../ before file names
 
 v1.2.2
 - Tweak: Removed @import from custom-editor-style.css

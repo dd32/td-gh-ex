@@ -22,7 +22,7 @@ a, .column, .columns, .widget, .widget input, .row, a.sidebar-advert img {
 /* =Structure
 -------------------------------------------------------------- */
 
-.page-wrapper {
+.page-wrapper.fixed_nav_yes {
     padding: 50px 0 0 0;
 }
 
@@ -48,14 +48,18 @@ nav.primary-navigation {
     background: #fff;
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.12);
     padding: 17px 0 20px 0;
-    position: fixed;
+    margin: 0;
     top: 0;
     width: 100%;
     z-index: 500;   
     border-radius: 0;
 }
 
-.logged-in nav.primary-navigation {
+.fixed_nav_yes nav.primary-navigation {
+    position: fixed;
+}
+
+.logged-in .fixed_nav_yes nav.primary-navigation {
     top: 20px;
 }
 
