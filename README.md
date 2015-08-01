@@ -99,3 +99,6 @@ Version 1.2.3
 	* Tidy Archive template
 	* Elusive Icon Fixes
 	* Theme Options screen fix
+
+Version 1.2.4
+	* CSS and Design match
