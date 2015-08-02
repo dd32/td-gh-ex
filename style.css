@@ -1,10 +1,10 @@
 /*
 Theme Name: Apex
-Theme URI: https://competethemes.com/apex/
+Theme URI: https://www.competethemes.com/apex/
 Author: Compete Themes
-Author URI: https://competethemes.com/
+Author URI: https://www.competethemes.com/
 Description: Apex is a sophisticated, minimalist theme. It looks great and performs wonderfully on phones, tablets, laptops, and everything in between. As a fast, responsive, accessibility-ready, and translation-ready theme, Apex is a theme you can trust to present your content to the world. See our fully setup demo here: https://www.competethemes.com/apex-live-demo/
-Version: 1.07
+Version: 1.08
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: gray, silver, white, light, fluid-layout, responsive-layout, two-columns, right-sidebar, accessibility-ready, custom-menu, featured-images, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -1010,6 +1010,20 @@ li.pingback {
   .toggle-dropdown:focus {
     color: orange;
   }
+
+  .rtl .menu-primary-items ul .menu-item-has-children:hover > button {
+    -webkit-transform: translate(-2px, 0);
+    -ms-transform: translate(-2px, 0);
+    transform: translate(-2px, 0);
+  }
+  .rtl .menu-primary-items ul .menu-item-has-children .toggle-dropdown:after {
+    content: '\f104';
+  }
+  .rtl .menu-primary-items ul .menu-item-has-children a:hover + button, .rtl .menu-primary-items ul .menu-item-has-children a:active + button, .rtl .menu-primary-items ul .menu-item-has-children a:focus + button {
+    -webkit-transform: translate(-2px, 0);
+    -ms-transform: translate(-2px, 0);
+    transform: translate(-2px, 0);
+  }
 }
 .entry {
   margin: 3em 0 4.5em;
@@ -1041,7 +1055,7 @@ li.pingback {
   color: #333333;
 }
 
-.full-post .comments-link {
+.full-post .entry:not(.has-more-link) .comments-link {
   display: block;
   margin: 3em 0;
 }
