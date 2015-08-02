@@ -16,6 +16,15 @@ Credits
 
 /** IMAGES **/
 
+- Screenshot images
+
+-- By Unsplash - https://unsplash.com
+
+-- https://ununsplash.imgix.net/photo-1433838552652-f9a46b332c40 by Daniela Cuevas ( https://unsplash.com/danielacuevas )
+-- https://ununsplash.imgix.net/photo-1429277158984-614d155e0017 by Julia Caesar ( https://unsplash.com/juliacaesa )
+
+--- Both images licensed under CC0 License.
+
 - Patters
 
 -- By Theme in Progress - http://www.themeinprogress.com
