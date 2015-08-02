@@ -14,20 +14,6 @@ The exceptions to this license are as follows:
 
 == Changelog ==
 
-= 1.5.12 =
-
-* fixed HTML issue in sidebar.php (thanks @billbennett)
-
-= 1.5.11 =
-
-* Support for titleless posts
-
-= 1.5.10 =
-
-* Fixed a lot of bugs
-* Microformats: better `u-photo` handling
-* Microformats: removed abandoned `h-as-*` formats
-
 = 1.5.2 =
 * added h-cite to be compatible to: https://indiewebcamp.com/comments-presentation#How_to_markup
 
