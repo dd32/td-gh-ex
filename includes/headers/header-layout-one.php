@@ -29,7 +29,7 @@ endif; ?>
                 <?php endif; ?>
                 <div class="site-top-bar-right">
                     <?php if ( kaira_theme_option( 'kra-website-txt-email' ) ) : ?>
-                    <i class="fa fa-envelope-o"></i> <a href="<?php echo esc_url( 'mailto:' . antispambot( kaira_theme_option( 'kra-website-txt-email' ), 1 ) ) ?>"><?php echo ( kaira_theme_option( 'kra-website-txt-email-txt' ) ) ? esc_attr( kaira_theme_option( 'kra-website-txt-email-txt' ) ) : esc_attr( 'Email' ); ?></a>
+                    <i class="fa fa-envelope-o"></i> <a href="<?php echo esc_url( 'mailto:' . antispambot( kaira_theme_option( 'kra-website-txt-email' ), 1 ) ) ?>"><?php echo ( kaira_theme_option( 'kra-website-txt-email-txt' ) ) ? esc_attr( kaira_theme_option( 'kra-website-txt-email-txt' ) ) : _e( 'Email', 'albar' ); ?></a>
                     <?php endif; ?>
                     
                     <?php if ( kaira_theme_option( 'kra-website-txt-phone' ) ) : ?>

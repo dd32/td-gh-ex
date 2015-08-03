@@ -68,6 +68,9 @@ View the settings under Appearance -> ALBAR Settings.
 
 == Changelog ==
 
+#### 1.6.6
+** Fixed text in header to be translatable.
+
 #### 1.6.5
 ** Made "Email Us" text in top bar editable.
 ** Improved responsive styling.
