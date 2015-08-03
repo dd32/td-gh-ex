@@ -50,6 +50,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.1.8 =
+* Support Image Post Format.
+* Search alignment bug fixed.
+
 = Version 1.1.7 =
 * Fixed textdomain for the archive pages.
 * Added the update class for Google Structured Data.

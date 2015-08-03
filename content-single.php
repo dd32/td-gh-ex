@@ -11,6 +11,8 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php do_action( 'accelerate_before_post_content' ); ?>
 
+	<?php if( get_post_format() ) { get_template_part( 'inc/post-formats' ); } ?>
+
 	<header class="entry-header">
 		<h1 class="entry-title">
 			<?php the_title(); ?>
@@ -20,10 +22,10 @@
 	<?php accelerate_entry_meta(); ?>
 
 	<div class="entry-content clearfix">
-		<?php 
+		<?php
 			the_content();
 
-			wp_link_pages( array( 
+			wp_link_pages( array(
 				'before'            => '<div style="clear: both;"></div><div class="pagination clearfix">'.__( 'Pages:', 'accelerate' ),
 				'after'             => '</div>',
 				'link_before'       => '<span>',

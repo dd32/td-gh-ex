@@ -17,15 +17,15 @@
 		</h1>
 	</header>
 
-	<?php 
+	<?php
 		if ( 'post' == get_post_type() ) :
 			accelerate_entry_meta();
-		endif; 
+		endif;
 	?>
 
 	<?php
 		if( has_post_thumbnail() ) {
-			$image = '';        			
+			$image = '';
      		$title_attribute = get_the_title( $post->ID );
      		$image .= '<figure class="post-featured-image">';
   			$image .= '<a href="' . get_permalink() . '" title="'.the_title_attribute( 'echo=0' ).'">';
@@ -39,7 +39,7 @@
 		<?php
 			global $more;
 			$more = 0;
-			the_content( '<span>'.__( 'Read more', 'accelerate' ).'</span>' ); 
+			the_content( '<span>'.__( 'Read more', 'accelerate' ).'</span>' );
 		?>
 	</div>
 
