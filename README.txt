@@ -61,6 +61,9 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.2.3
+* Updated language .pot file.
+
 #### 1.2.2
 * Fixed bug with bocks layout.
 * Added hint/help links into customizer settings.
