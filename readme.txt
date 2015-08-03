@@ -73,6 +73,9 @@ The portfolio archive page can be found at http://mygroovysite.wordpress.com/por
 
 == Changelog ==
 
+= 1.0.5 - August 3, 2015 =
+* Remove unneeded call to WordPress.com specific file that caused a fatal error.
+
 = 1.0.4 - July 23 2015 =
 * Add missing styling for <b> and <strong> elements.
 
