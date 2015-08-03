@@ -42,6 +42,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.2.5 =
+* Testimonial widget issue fixed.
+* Function is used to call Entry Meta for code minification.
+
 = Version 1.2.4 =
 * Small adjustment in Breadcrumb NavXT plugin support code.
 * Added HTML5 Markup theme support.
