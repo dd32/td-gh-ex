@@ -46,6 +46,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.3.1 =
+* Minor bug fixed
+
 = Version 1.3.0 =
 * Finnish language file added. Thanks to Mr. Ulla Konkarikoski for providing the language files.
 * Function is used to call Entry Meta for code minification.

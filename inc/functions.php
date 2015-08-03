@@ -546,7 +546,7 @@ function spacious_entry_meta() {
 
       <?php edit_post_link( __( 'Edit', 'spacious' ), '<span class="edit-link">', '</span>' ); ?>
 
-      <?php if ( of_get_option( 'spacious_archive_display_type', 'blog_large' ) != 'blog_full_content' ) { ?>
+      <?php if ( ( of_get_option( 'spacious_archive_display_type', 'blog_large' ) != 'blog_full_content' ) && !is_single() ) { ?>
          <span class="read-more-link"><a class="read-more" href="<?php the_permalink(); ?>"><?php _e( 'Read more', 'spacious' ); ?></a></span>
       <?php } ?>
 
