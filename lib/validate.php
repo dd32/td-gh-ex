@@ -1,4 +1,20 @@
 <?php
+function raindrops_sitewide_css_validate( $input ) {
+	
+	if ( empty( $input ) ) {
+		return '';
+	}
+	
+	$style = ' ' . wp_strip_all_tags( $input );
+	// format
+	$value = str_replace( array( '{', '}', "\t"), array( "{\r\n\t", "}\r\n", '    '), $input );
+	$value = str_replace( '![^(\"|\')];!', ";\r\n", $value );
+	$value = str_replace( ';',";\r\n    ", $value);
+	$value = str_replace( "    }","}", $value);
+	$value = preg_replace("!^\s!msi",'',$value);
+	
+	return $value;
+}
 function raindrops_display_sticky_post_validate( $input ) {
 	
 	if( $input == 'anytime' || $input == 'only_home' ) {
