@@ -41,20 +41,8 @@
 		?>
 	</div>
 
-	<footer class="entry-meta-bar clearfix">
-		<div class="entry-meta clearfix">
-			<span class="by-author author vcard"><a class="url fn n" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a></span>
-         <?php spacious_updated_class(); ?>
-			<?php if( has_category() ) { ?>
-       		<span class="category"><?php the_category(', '); ?></span>
-       	<?php } ?>
-				<?php if ( comments_open() ) { ?>
-       		<span class="comments"><?php comments_popup_link( __( 'No Comments', 'spacious' ), __( '1 Comment', 'spacious' ), __( '% Comments', 'spacious' ), '', __( 'Comments Off', 'spacious' ) ); ?></span>
-       	<?php } ?>
-       	<?php edit_post_link( __( 'Edit', 'spacious' ), '<span class="edit-link">', '</span>' ); ?>
-			<span class="read-more-link"><a class="read-more" href="<?php the_permalink(); ?>"><?php _e( 'Read more', 'spacious' ); ?></a></span>
-		</div>
-	</footer>
+	<?php spacious_entry_meta(); ?>
+
 	<?php
 	do_action( 'spacious_after_post_content' );
    ?>
