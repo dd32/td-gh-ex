@@ -69,3 +69,5 @@ Version 2.0.0
 Version 2.0.1
 * Fixed the wrong page title showing up in blog page.
 
+Version 2.0.2
+* Fixed the option of unable to set the sidebar layout for the blog page.

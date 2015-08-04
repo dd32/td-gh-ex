@@ -9,7 +9,10 @@
  
  global $apbasic_options;
  $apbasic_settings = get_option('apbasic_options',$apbasic_options);
- $default_layout = $apbasic_settings['default_layout'];
+ $default_blog_layout = $apbasic_settings['default_layout'];
+ $blog_page_id = get_option('page_for_posts');
+ $single_default_page_layout = get_post_meta( $blog_page_id, 'apbasic_page_layout', true);
+ $default_layout = ($single_default_page_layout == 'default_layout') ? $default_blog_layout : $single_default_page_layout;
  
  $blog_display_type = $apbasic_settings['blog_post_display_type'];
  
