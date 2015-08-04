@@ -1,0 +1,382 @@
+# Copyright (C) 2015 mudThemes
+# This file is distributed under the GNU General Public License, v2 (or newer).
+msgid ""
+msgstr ""
+"Project-Id-Version: Afford 0.0.1\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/theme/afford\n"
+"POT-Creation-Date: 2015-08-03 06:53:15+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: archive.php:13
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: archive.php:15
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: archive.php:15
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: archive.php:17
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: archive.php:17
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: archive.php:19
+msgid "Blog Archives"
+msgstr ""
+
+#: archive.php:23
+msgid "<p>Archive of posts published in the specified %s </p>"
+msgstr ""
+
+#: author.php:11
+msgid "Author Archives"
+msgstr ""
+
+#: author.php:18
+msgid "Archive of the posts written by author : %s."
+msgstr ""
+
+#: category.php:11
+msgid "Category Archives"
+msgstr ""
+
+#: category.php:19
+msgid "Archive of posts published in the category: %s"
+msgstr ""
+
+#: comments.php:12
+msgid ""
+"This post is password protected. Enter the password to view any comments"
+msgstr ""
+
+#: comments.php:21
+msgid "Comments (%1$s)"
+msgstr ""
+
+#: comments.php:32
+msgid "Older Comments <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: comments.php:33
+msgid "<span class=\"meta-nav\">&larr;</span> Newer Comments"
+msgstr ""
+
+#: comments.php:40
+msgid "Sorry, Comments are closed."
+msgstr ""
+
+#: footer.php:12
+msgid "Copyright"
+msgstr ""
+
+#: footer.php:12
+msgid "Powered by"
+msgstr ""
+
+#: footer.php:12
+msgid "Afford theme by"
+msgstr ""
+
+#: functions.php:179 functions.php:181
+msgid "Right Sidebar"
+msgstr ""
+
+#: functions.php:190 functions.php:192
+msgid "Footerbox Sidebar #1"
+msgstr ""
+
+#: functions.php:201 functions.php:203
+msgid "Footerbox Sidebar #2"
+msgstr ""
+
+#: functions.php:212 functions.php:214
+msgid "Footerbox Sidebar #3"
+msgstr ""
+
+#: functions.php:325
+msgid "Page %s"
+msgstr ""
+
+#: functions.php:456
+msgid "Ooops! Nothing Found"
+msgstr ""
+
+#: functions.php:458 functions.php:460
+msgid "Nothing found for: %s"
+msgstr ""
+
+#: functions.php:467
+msgid ""
+"Apologies, but no results were found for the requested archive. Perhaps "
+"searching will help find a related post."
+msgstr ""
+
+#: functions.php:484
+msgid "Day"
+msgstr ""
+
+#: functions.php:486
+msgid "Month"
+msgstr ""
+
+#: functions.php:488
+msgid "Year"
+msgstr ""
+
+#: functions.php:490
+msgid "Period"
+msgstr ""
+
+#: functions.php:513
+msgid "<span class=\"meta-nav\">&larr;</span> Newer posts"
+msgstr ""
+
+#: functions.php:514
+msgid "Older posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: functions.php:574
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:586
+msgid "%s <span class=\"says\"></span>"
+msgstr ""
+
+#: functions.php:587
+msgid "%1$s ago"
+msgstr ""
+
+#: functions.php:595 functions.php:609
+msgid "(Edit)"
+msgstr ""
+
+#: functions.php:609
+msgid "Pingback:"
+msgstr ""
+
+#: functions.php:627 includes/customizer.php:216
+msgid "Blog"
+msgstr ""
+
+#: home.php:15
+msgid "Our Blog"
+msgstr ""
+
+#: includes/customizer.php:25
+msgid "General"
+msgstr ""
+
+#: includes/customizer.php:32 includes/customizer.php:67
+#: includes/customizer.php:137
+msgid "Header"
+msgstr ""
+
+#: includes/customizer.php:39 includes/customizer.php:49
+msgid "Site Logo"
+msgstr ""
+
+#: includes/customizer.php:60
+msgid "Layout"
+msgstr ""
+
+#: includes/customizer.php:77
+msgid "Hide Header"
+msgstr ""
+
+#: includes/customizer.php:89
+msgid "Hide Site Description"
+msgstr ""
+
+#: includes/customizer.php:100 includes/customizer.php:261
+msgid "Social"
+msgstr ""
+
+#: includes/customizer.php:110
+msgid "Disable Social Section"
+msgstr ""
+
+#: includes/customizer.php:121
+msgid "Colors"
+msgstr ""
+
+#: includes/customizer.php:128
+msgid "Global"
+msgstr ""
+
+#: includes/customizer.php:147
+msgid "Site Title Color"
+msgstr ""
+
+#: includes/customizer.php:159
+msgid "Site Description Color"
+msgstr ""
+
+#: includes/customizer.php:170
+msgid "Posts/Pages"
+msgstr ""
+
+#: includes/customizer.php:181
+msgid "Post Title Color (Page/Post)"
+msgstr ""
+
+#: includes/customizer.php:193
+msgid "Post Meta Color (Page/Posts)"
+msgstr ""
+
+#: includes/customizer.php:205
+msgid "Post Content Color (Page/Posts)"
+msgstr ""
+
+#: includes/customizer.php:226
+msgid "Post Title Color (Blog)"
+msgstr ""
+
+#: includes/customizer.php:238
+msgid "Post Meta Color (Blog)"
+msgstr ""
+
+#: includes/customizer.php:250
+msgid "Post Content Color (Blog)"
+msgstr ""
+
+#: includes/customizer.php:268
+msgid "Social Profiles"
+msgstr ""
+
+#: includes/customizer.php:278
+msgid "Facebook"
+msgstr ""
+
+#: includes/customizer.php:290
+msgid "Twitter"
+msgstr ""
+
+#: includes/customizer.php:302
+msgid "RSS"
+msgstr ""
+
+#: includes/customizer.php:313
+msgid "About Afford Theme"
+msgstr ""
+
+#: includes/customizer_extended.php:19
+msgid "Theme Documentation"
+msgstr ""
+
+#: includes/customizer_extended.php:21
+msgid "Contact us"
+msgstr ""
+
+#: loop.php:18
+msgid "Permalink to"
+msgstr ""
+
+#: loop.php:21
+msgid "Written on"
+msgstr ""
+
+#: loop.php:22
+msgid "by"
+msgstr ""
+
+#: loop.php:33 loop.php:38
+msgid "Read more"
+msgstr ""
+
+#: loop.php:41 page.php:25 single.php:46
+msgid "Pages:"
+msgstr ""
+
+#: page.php:29 single.php:50
+msgid "Edit"
+msgstr ""
+
+#: search.php:12
+msgid "Search Results"
+msgstr ""
+
+#: search.php:15
+msgid "We have found following content based on your search query: %s."
+msgstr ""
+
+#: searchform.php:11
+msgid "Search..."
+msgstr ""
+
+#: searchform.php:12
+msgid "Go"
+msgstr ""
+
+#: sidebar.php:14
+msgid "Recent Posts"
+msgstr ""
+
+#: sidebar.php:19
+msgid "Search"
+msgstr ""
+
+#: single.php:31 single.php:33
+msgid "Comments (Closed)"
+msgstr ""
+
+#: single.php:37
+msgid "Leave a reply"
+msgstr ""
+
+#: single.php:37
+msgid "1 Comment"
+msgstr ""
+
+#: single.php:37
+msgid "Comments"
+msgstr ""
+
+#: single.php:51
+msgid "Tags: "
+msgstr ""
+
+#: tag.php:11
+msgid "Tag Archives"
+msgstr ""
+
+#: tag.php:19
+msgid "Archive of posts published in the tag: %s"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Afford"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://www.mudthemes.com/afford"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Afford is a responsive and multipurpose theme for magazine and personal "
+"blogs. This theme can be customized using Theme Customizer options. It is "
+"fully Translation ready and comes with online documentation."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "mudThemes"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.mudthemes.com"
+msgstr ""
