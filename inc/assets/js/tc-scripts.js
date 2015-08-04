@@ -16,10 +16,7 @@ var TCParams = TCParams || {
   centerSliderImg : 1,
 	SmoothScroll: { Enabled : 1 , Options : {} },
 	anchorSmoothScroll: "linear",
-  anchorSmoothScrollExclude : {
-      simple : ['[class*=edd]', '.tc-carousel-control', '.carousel-control', '[data-toggle="modal"]', '[data-toggle="dropdown"]', '[data-toggle="tooltip"]', '[data-toggle="popover"]', '[data-toggle="collapse"]', '[data-toggle="tab"]', '[class*=upme]', '[class*=um-]'],
-      deep : { classes : [], ids : [] }
-    },
+  anchorSmoothScrollExclude : ['[class*=edd]', '.tc-carousel-control', '.carousel-control', '[data-toggle="modal"]', '[data-toggle="dropdown"]', '[data-toggle="tooltip"]', '[data-toggle="popover"]', '[data-toggle="collapse"]', '[data-toggle="tab"]', '[class*=upme]', '[class*=um-]'],
 	stickyCustomOffset: { _initial : 0, _scrolling : 0, options : { _static : true, _element : "" } },
 	stickyHeader: 1,
 	dropdowntoViewport: 1,
@@ -27,7 +24,7 @@ var TCParams = TCParams || {
   extLinksStyle :1,
   extLinksTargetExt:1,
   extLinksSkipSelectors: {
-    classes : ['btn', 'button'],
+    classes : ['btn'],
     ids:[]
   },
   dropcapEnabled:1,
@@ -39,15 +36,12 @@ var TCParams = TCParams || {
     ids : []
   },
   imgSmartLoadEnabled:0,
-  imgSmartLoadOpts: {
-    parentSelectors: ['.article-container', '.__before_main_wrapper', '.widget-front'],
-    opts : { excludeImg: ['.tc-holder-img'] }
-  },
+  imgSmartLoadOpts: {},
   goldenRatio : 1.618,
   gridGoldenRatioLimit : 350,
   isSecondMenuEnabled : 0,
   secondMenuRespSet : 'in-sn-before'
-};
+}
 // addEventListener Polyfill ie9- http://stackoverflow.com/a/27790212
 window.addEventListener = window.addEventListener || function (e, f) { window.attachEvent('on' + e, f); };
 
@@ -562,10 +556,8 @@ var TCParams = TCParams || {};
       if ($this.is('.disabled, :disabled')) return
 
       $parent = getParent($this)
-      //@tc adddon
-      //add && ! $parent.children('ul').is(':visible');
-      //to avoid conflicts with bootstrap>2.3.2 dropdown on click for the menu
-      isActive = $parent.hasClass('open') && ! $parent.children('ul').is(':visible');
+
+      isActive = $parent.hasClass('open')
 
       clearMenus()
 
@@ -583,7 +575,6 @@ var TCParams = TCParams || {};
     }
 
   , keydown: function (e) {
-
       var $this
         , $items
         , $active
@@ -665,6 +656,7 @@ var TCParams = TCParams || {};
   }
 
   $.fn.dropdown.Constructor = Dropdown
+
 
  /* DROPDOWN NO CONFLICT
   * ==================== */
@@ -1818,9 +1810,6 @@ var TCParams = TCParams || {};
   var Collapse = function (element, options) {
     this.$element = $(element)
     this.options = $.extend({}, $.fn.collapse.defaults, options)
-    //@tc adddon
-    //to avoid conflicts with bootstrap>2.3.2 mobile menu
-    this._collapsed = true;
 
     if (this.options.parent) {
       this.$parent = $(this.options.parent)
@@ -1839,13 +1828,12 @@ var TCParams = TCParams || {};
     }
 
   , show: function () {
-
       var dimension
         , scroll
         , actives
         , hasData
-//( this._collapsed && !this.$element.hasClass('in') )
-      if (this.transitioning || this.$element.hasClass('in') ) return
+
+      if (this.transitioning || this.$element.hasClass('in')) return
 
       dimension = this.dimension()
       scroll = $.camelCase(['scroll', dimension].join('-'))
@@ -1862,10 +1850,6 @@ var TCParams = TCParams || {};
       this.transition('addClass', $.Event('show'), 'shown')
       $.support.transition && this.$element[dimension](this.$element[0][scroll])
 
-    //@tc adddon
-    //to avoid conflicts with bootstrap>2.3.2 mobile menu
-      this._collapsed = false;
-
       //@tc adddon
       //give the revealed sub menu the height of the visible viewport
       if ( ! this.$element.hasClass('nav-collapse') )
@@ -1873,9 +1857,7 @@ var TCParams = TCParams || {};
 
       if ( TCParams && 1 == TCParams.dropdowntoViewport )
       {
-        //fallback on jQuery height() if window.innerHeight isn't defined (e.g. ie<9)
-        var winHeight = 'undefined' === typeof window.innerHeight ? window.innerHeight : czrapp.$_window.height(),
-            tcVisible = winHeight - this.$element.offset().top + czrapp.$_window.scrollTop();
+        var tcVisible = czrapp.$_window.height() - this.$element.offset().top + czrapp.$_window.scrollTop();
         this.$element.css('max-height' , tcVisible + 'px');
       }
       else if ( TCParams && 1 != TCParams.dropdowntoViewport && 1 == TCParams.stickyHeader )
@@ -1896,22 +1878,13 @@ var TCParams = TCParams || {};
 
   , hide: function () {
       var dimension
-      //@tc adddon
-      //( this._collapsed
-      if (this.transitioning || ( this._collapsed && !this.$element.hasClass('in') ) ) return
+      if (this.transitioning || !this.$element.hasClass('in')) return
       dimension = this.dimension()
       this.reset(this.$element[dimension]())
       this.transition('removeClass', $.Event('hide'), 'hidden')
       this.$element[dimension](0)
 
-    //@tc adddon
-    //to avoid conflicts with bootstrap>2.3.2 mobile menu
-      this._collapsed = true;
-
       //@tc adddon
-      if ( ! this.$element.hasClass('nav-collapse') )
-          return;
-
       if ( TCParams && 1 != TCParams.dropdowntoViewport && 1 == TCParams.stickyHeader ) {
         $('body').addClass('tc-sticky-header');
       }
@@ -1952,9 +1925,7 @@ var TCParams = TCParams || {};
     }
 
   , toggle: function () {
-    //@tc adddon || ! this._collapsed
-    //to avoid conflicts with bootstrap>2.3.2 mobile menu
-      this[this.$element.hasClass('in') || ! this._collapsed ? 'hide' : 'show']();
+      this[this.$element.hasClass('in') ? 'hide' : 'show']()
     }
 
   }
@@ -2042,10 +2013,7 @@ var TCParams = TCParams || {};
   }
 
   Carousel.prototype = {
-    //@tc_addon
-    //use customizr events namespace
-    //use .czr-item in place of .item
-    //to avoid conflicts with other bootstrap versions
+
     cycle: function (e) {
       if (!e) this.paused = false
       if (this.interval) clearInterval(this.interval);
@@ -2056,7 +2024,7 @@ var TCParams = TCParams || {};
     }
 
   , getActiveIndex: function () {
-      this.$active = this.$element.find('.czr-item.active')
+      this.$active = this.$element.find('.item.active')
       this.$items = this.$active.parent().children()
       return this.$items.index(this.$active)
     }
@@ -2068,7 +2036,7 @@ var TCParams = TCParams || {};
       if (pos > (this.$items.length - 1) || pos < 0) return
 
       if (this.sliding) {
-        return this.$element.one('customizr.slid', function () {
+        return this.$element.one('slid', function () {
           that.to(pos)
         })
       }
@@ -2103,9 +2071,9 @@ var TCParams = TCParams || {};
 
   , slide: function (type, next) {
       if(!$.support.transition && this.$element.hasClass('customizr-slide')) {
-         this.$element.find('.czr-item').stop(true, true); //Finish animation and jump to end.
+         this.$element.find('.item').stop(true, true); //Finish animation and jump to end.
       }
-      var $active = this.$element.find('.czr-item.active')
+      var $active = this.$element.find('.item.active')
         , $next = next || $active[type]()
         , isCycling = this.interval
         , direction = type == 'next' ? 'left' : 'right'
@@ -2117,9 +2085,9 @@ var TCParams = TCParams || {};
 
       isCycling && this.pause()
 
-      $next = $next.length ? $next : this.$element.find('.czr-item')[fallback]()
+      $next = $next.length ? $next : this.$element.find('.item')[fallback]()
 
-      e = $.Event('customizr.slide', {
+      e = $.Event('slide', {
         relatedTarget: $next[0]
       , direction: direction
       })
@@ -2128,7 +2096,7 @@ var TCParams = TCParams || {};
 
       if (this.$indicators.length) {
         this.$indicators.find('.active').removeClass('active')
-        this.$element.one('customizr.slid', function () {
+        this.$element.one('slid', function () {
           var $nextIndicator = $(that.$indicators.children()[that.getActiveIndex()])
           $nextIndicator && $nextIndicator.addClass('active')
         })
@@ -2139,7 +2107,7 @@ var TCParams = TCParams || {};
         if (e.isDefaultPrevented()) return
         //tc addon => trigger slide event to img
         if ( 0 !== $next.find('img').length )
-          $next.find('img').trigger('customizr.slide');
+          $next.find('img').trigger('slide');
         $next.addClass(type)
         $next[0].offsetWidth // force reflow
         $active.addClass(direction)
@@ -2149,10 +2117,10 @@ var TCParams = TCParams || {};
           $active.removeClass(['active', direction].join(' '))
           that.sliding = false
           setTimeout(function () {
-            that.$element.trigger('customizr.slid');
+            that.$element.trigger('slid');
             //tc addon => trigger slid event to img
             if ( 0 !== $next.find('img').length )
-              $next.find('img').trigger('customizr.slid');
+              $next.find('img').trigger('slid');
           }, 0)
         })
       } else if(!$.support.transition && this.$element.hasClass('customizr-slide')) {
@@ -2161,7 +2129,7 @@ var TCParams = TCParams || {};
           $active.animate({left: (direction == 'right' ? '100%' : '-100%')}, 600, function(){
              $active.removeClass('active')
               that.sliding = false
-              setTimeout(function () { that.$element.trigger('customizr.slid') }, 0)
+              setTimeout(function () { that.$element.trigger('slid') }, 0)
             })
            $next.addClass(type).css({left: (direction == 'right' ? '-100%' : '100%')}).animate({left: '0'}, 600,  function(){
                $next.removeClass(type).addClass('active')
@@ -2172,7 +2140,7 @@ var TCParams = TCParams || {};
         $active.removeClass('active')
         $next.addClass('active')
         this.sliding = false
-        this.$element.trigger('customizr.slid')
+        this.$element.trigger('slid')
       }
 
       isCycling && this.cycle()
@@ -2862,11 +2830,9 @@ var TCParams = TCParams || {};
  * Replace all img src placeholder in the $element by the real src on scroll window event
  * Bind a 'smartload' event on each transformed img
  *
- * Note : the data-src (data-srcset) attr has to be pre-processed before the actual page load
+ * Note : the data-src attr has to be pre-processed before the actual page load
  * Example of regex to pre-process img server side with php :
  * preg_replace_callback('#<img([^>]+?)src=[\'"]?([^\'"\s>]+)[\'"]?([^>]*)>#', 'regex_callback' , $_html)
- *
- * (c) 2016 Nicolas Guillaume, Nice, France
  *
  *
  * Example of gif 1px x 1px placeholder :
@@ -2875,16 +2841,13 @@ var TCParams = TCParams || {};
  * inspired by the work of Luís Almeida
  * http://luis-almeida.github.com/unveil
  *
- * Requires requestAnimationFrame polyfill:
- * http://paulirish.com/2011/requestanimationframe-for-smart-animating/
  * =================================================== */
 ;(function ( $, window, document, undefined ) {
   //defaults
   var pluginName = 'imgSmartLoad',
       defaults = {
         load_all_images_on_first_scroll : false,
-        attribute : [ 'data-src', 'data-srcset', 'data-sizes' ],
-        excludeImg : '',
+        attribute : 'data-src',
         threshold : 200,
         fadeIn_options : { duration : 400 },
         delaySmartLoadEvent : 0
@@ -2903,8 +2866,7 @@ var TCParams = TCParams || {};
   //can access this.element and this.option
   Plugin.prototype.init = function () {
     var self        = this,
-        $_imgs   = $( 'img[' + this.options.attribute[0] + ']:not('+ this.options.excludeImg.join() +')' , this.element );
-
+        $_imgs   = $( 'img[' + this.options.attribute + ']' , this.element );
     this.increment  = 1;//used to wait a little bit after the first user scroll actions to trigger the timer
     this.timer      = 0;
 
@@ -2926,14 +2888,15 @@ var TCParams = TCParams || {};
   */
   Plugin.prototype._better_scroll_event_handler = function( $_imgs , _evt ) {
     var self = this;
-
-    if ( ! this.doingAnimation ) {
-      this.doingAnimation = true;
-      window.requestAnimationFrame(function() {
-        self._maybe_trigger_load( $_imgs , _evt );
-        self.doingAnimation = false;
-      });
+    //use a timer
+    if ( 0 !== this.timer ) {
+        this.increment++;
+        window.clearTimeout( this.timer );
     }
+
+    this.timer = window.setTimeout(function() {
+      self._maybe_trigger_load( $_imgs , _evt );
+    }, self.increment > 5 ? 50 : 0 );
   };
 
 
@@ -2979,50 +2942,18 @@ var TCParams = TCParams || {};
   * replace src place holder by data-src attr val which should include the real src
   */
   Plugin.prototype._load_img = function( _img ) {
-    var $_img    = $(_img),
-        _src     = $_img.attr( this.options.attribute[0] ),
-        _src_set = $_img.attr( this.options.attribute[1] ),
-        _sizes   = $_img.attr( this.options.attribute[2] ),
+    var $_img = $(_img),
+        _src  = $_img.attr( this.options.attribute ),
         self = this;
 
     $_img.parent().addClass('smart-loading');
 
     $_img.unbind('load_img')
     .hide()
-    //https://api.jquery.com/removeAttr/
-    //An attribute to remove; as of version 1.7, it can be a space-separated list of attributes.
-    //minimum supported wp version (3.4+) embeds jQuery 1.7.2
-    .removeAttr( this.options.attribute.join(' ') )
-    .attr( 'sizes' , _sizes )
-    .attr( 'srcset' , _src_set )
-    .attr('src', _src )
+    .removeAttr( this.options.attribute )
+    .attr('src' , _src )
     .load( function () {
-      //prevent executing this twice on an already smartloaded img
-      if ( ! $_img.hasClass('tc-smart-loaded') )
-        $_img.fadeIn(self.options.fadeIn_options).addClass('tc-smart-loaded');
-
-      //Following would be executed twice if needed, as some browsers at the
-      //first execution of the load callback might still have not actually loaded the img
-
-      //jetpack's photon commpability (seems to be unneeded since jetpack 3.9.1)
-      //Honestly to me this makes no really sense but photon does it.
-      //Basically photon recalculates the image dimension and sets its
-      //width/height attribute once the image is smartloaded. Given the fact that those attributes are "needed" by the browser to assign the images a certain space so that when loaded the page doesn't "grow" it's height .. what's the point doing it so late?
-      if ( ( 'undefined' !== typeof $_img.attr('data-tcjp-recalc-dims')  ) && ( false !== $_img.attr('data-tcjp-recalc-dims') ) ) {
-        var _width  = $_img.originalWidth();
-            _height = $_img.originalHeight();
-
-        if ( 2 != _.size( _.filter( [ _width, _height ], function(num){ return _.isNumber( parseInt(num, 10) ) && num > 1; } ) ) )
-          return;
-
-        //From photon.js: Modify given image's markup so that devicepx-jetpack.js will act on the image and it won't be reprocessed by this script.
-        $_img.removeAttr( 'data-tcjp-recalc-dims scale' );
-
-        $_img.attr( 'width', _width );
-        $_img.attr( 'height', _height );
-      }
-
-      $_img.trigger('smartload');
+      $_img.fadeIn(self.options.fadeIn_options).addClass('tc-smart-loaded').trigger('smartload');
     });//<= create a load() fn
     //http://stackoverflow.com/questions/1948672/how-to-tell-if-an-image-is-loaded-or-cached-in-jquery
     if ( $_img[0].complete )
@@ -3040,14 +2971,12 @@ var TCParams = TCParams || {};
         }
     });
   };
-})( jQuery, window, document );
-//Target the first letter of the first element found in the wrapper
+})( jQuery, window, document );//Target the first letter of the first element found in the wrapper
 ;(function ( $, window, document, undefined ) {
     //defaults
     var pluginName = 'extLinks',
         defaults = {
           addIcon : true,
-          iconClassName : 'tc-external',
           newTab: true,
           skipSelectors : { //defines the selector to skip when parsing the wrapper
             classes : [],
@@ -3058,16 +2987,15 @@ var TCParams = TCParams || {};
 
 
     function Plugin( element, options ) {
-        this.$_el     = $(element);
-        this.options  = $.extend( {}, defaults, options) ;
-        this._href    = $.trim( this.$_el.attr( 'href' ) );
-        this.init();
+      this.$_el     = $(element);
+      this.options  = $.extend( {}, defaults, options) ;
+      this._href    = $.trim( this.$_el.attr( 'href' ) );
+      this.init();
     }
 
 
     Plugin.prototype.init = function() {
-      var self = this,
-          $_external_icon = this.$_el.next( '.' + self.options.iconClassName );
+      var $_external_icon = this.$_el.next('.tc-external');
       //if not eligible, then remove any remaining icon element and return
       //important => the element to remove is right after the current link element ( => use of '+' CSS operator )
       if ( ! this._is_eligible() ) {
@@ -3075,9 +3003,10 @@ var TCParams = TCParams || {};
           $_external_icon.remove();
         return;
       }
+
       //add the icon link, if not already there
       if ( this.options.addIcon && 0 === $_external_icon.length ) {
-        this.$_el.after('<span class="' + self.options.iconClassName + '">');
+        this.$_el.after('<span class="tc-external">');
       }
 
       //add the target _blank, if not already there
@@ -3103,17 +3032,7 @@ var TCParams = TCParams || {};
       if ( 2 != ( ['ids', 'classes'].filter( function( sel_type) { return self._is_selector_allowed(sel_type); } ) ).length )
         return;
 
-      var _is_eligible = true;
-      // disallow elements whose parent has text-decoration: underline
-      // we want to exit as soon as we find a parent with the underlined text-decoration
-      $.each( this.$_el.parents(), function() {
-        if ( 'underline' == $(this).css('textDecoration') ){
-          _is_eligible = false;
-          return false;
-        }
-      });
-
-      return true && _is_eligible;
+      return true;
     };
 
 
@@ -3125,9 +3044,6 @@ var TCParams = TCParams || {};
     * @return boolean
     */
     Plugin.prototype._is_selector_allowed = function( requested_sel_type ) {
-      if ( czrapp )
-        return czrapp.isSelectorAllowed( this.$_el, this.options.skipSelectors, requested_sel_type);
-
       var sel_type = 'ids' == requested_sel_type ? 'id' : 'class',
           _selsToSkip   = this.options.skipSelectors[requested_sel_type];
 
@@ -3242,9 +3158,7 @@ var TCParams = TCParams || {};
         goldenRatioVal : 1.618,
         skipGoldenRatioClasses : ['no-gold-ratio'],
         disableGRUnder : 767,//in pixels
-        useImgAttr:false,//uses the img height and width attributes if not visible (typically used for the customizr slider hidden images)
-        setOpacityWhenCentered : false,//this can be used to hide the image during the time it is centered
-        opacity : 1
+        useImgAttr:false//uses the img height and width attributes if not visible (typically used for the customizr slider hidden images)
       };
 
   function Plugin( element, options ) {
@@ -3295,7 +3209,7 @@ var TCParams = TCParams || {};
     var new_height = Math.round( $(this.container).width() / this.options.goldenRatioVal );
     //check if the new height does not exceed the goldenRatioLimitHeightTo option
     new_height = new_height > this.options.goldenRatioLimitHeightTo ? this.options.goldenRatioLimitHeightTo : new_height;
-    $(this.container).css( {'line-height' : new_height + 'px' , 'height' : new_height + 'px' } ).trigger('golden-ratio-applied');
+    $(this.container).css( {'line-height' : new_height + 'px' , 'height' : new_height + 'px' } );
   };
 
 
@@ -3404,24 +3318,14 @@ var TCParams = TCParams || {};
 
   //@return void
   Plugin.prototype._maybe_center_img = function( $_img, _state ) {
-    var self = this,
-        _case  = _state.current,
+    var _case  = _state.current,
         _p     = _state.prop[_case],
         _not_p = _state.prop[ 'h' == _case ? 'v' : 'h'],
-        _not_p_dir_val = 'h' == _case ? ( this.options.zeroTopAdjust || 0 ) : ( this.options.zeroLeftAdjust || 0 ),
-        _centerImg = function( $_img ) {
-          $_img.css( _p.dim.name , _p.dim.val ).css( _not_p.dim.name , self.options.defaultCSSVal[_not_p.dim.name] || 'auto' )
-          .addClass( _p._class ).removeClass( _not_p._class )
-          .css( _p.dir.name, _p.dir.val ).css( _not_p.dir.name, _not_p_dir_val );
-          return $_img;
-        };
-    if ( this.options.setOpacityWhenCentered ) {
-        $.when( _centerImg( $_img ) ).done( function( $_img ) {
-            $_img.css('opacity', self.options.opacity );
-        });
-    } else {
-        _centerImg( $_img );
-    }
+        _not_p_dir_val = 'h' == _case ? ( this.options.zeroTopAdjust || 0 ) : ( this.options.zeroLeftAdjust || 0 );
+
+    $_img.css( _p.dim.name , _p.dim.val ).css( _not_p.dim.name , this.options.defaultCSSVal[_not_p.dim.name] || 'auto' )
+        .addClass( _p._class ).removeClass( _not_p._class )
+        .css( _p.dir.name, _p.dir.val ).css( _not_p.dir.name, _not_p_dir_val );
   };
 
   /********
@@ -3462,184 +3366,7 @@ var TCParams = TCParams || {};
   };
 
 })( jQuery, window, document );
-/* ===================================================
- * jqueryParallax.js v1.0.0
- * ===================================================
- * (c) 2016 Nicolas Guillaume - Rocco Aliberti, Nice, France
- * CenterImages plugin may be freely distributed under the terms of the GNU GPL v2.0 or later license.
- *
- * License URI: http://www.gnu.org/licenses/gpl-2.0.html
- *
- * Requires requestAnimationFrame polyfill:
- * http://paulirish.com/2011/requestanimationframe-for-smart-animating/
- *
- * =================================================== */
-;(function ( $, window, document, undefined ) {
-  //defaults
-  var pluginName = 'czrParallax',
-      defaults = {
-        parallaxRatio : 0.5,
-        parallaxDirection : 1,
-        parallaxOverflowHidden : true,
-        oncustom : [],//list of event here
-        backgroundClass : 'image'
-      };
-
-  function Plugin( element, options ) {
-    this.element = $(element);
-    this.options = $.extend( {}, defaults, options, this.parseElementDataOptions() ) ;
-    this._defaults = defaults;
-    this._name = pluginName;
-    this.init();
-  }
-
-  Plugin.prototype.parseElementDataOptions = function () {
-    return this.element.data();
-  };
-
-  //can access this.element and this.option
-  //@return void
-  Plugin.prototype.init = function () {
-    //cache some element
-    this.$_document   = $(document);
-    this.$_window     = czrapp ? czrapp.$_window : $(window);
-    this.doingAnimation = false;
-
-    this.initWaypoints();
-    this.stageParallaxElements();
-    this._bind_evt();
-  };
-
-  //@return void
-  //map custom events if any
-  Plugin.prototype._bind_evt = function() {
-    var self = this,
-        _customEvt = $.isArray(this.options.oncustom) ? this.options.oncustom : this.options.oncustom.split(' ');
-
-    _.bindAll( this, 'maybeParallaxMe', 'parallaxMe' );
-    /* TODO: custom events? */
-  };
-
-  Plugin.prototype.stageParallaxElements = function() {
-
-    this.element.css( 'position', this.element.hasClass( this.options.backgroundClass ) ? 'absolute' : 'relative' );
-    if ( this.options.parallaxOverflowHidden ){
-      var $_wrapper = this.element.closest( '.parallax-wrapper' );
-      if ( $_wrapper.length )
-        $_wrapper.css( 'overflow', 'hidden' );
-    }
-  };
-
-  Plugin.prototype.initWaypoints = function() {
-    var self = this;
-
-      this.way_start = new Waypoint({
-        element: self.element,
-        handler: function() {
-          self.maybeParallaxMe();
-          if ( ! self.element.hasClass('parallaxing') ){
-            self.$_window.on('scroll', self.maybeParallaxMe );
-            self.element.addClass('parallaxing');
-          }else{
-            self.element.removeClass('parallaxing');
-            self.$_window.off('scroll', self.maybeParallaxMe );
-            self.doingAnimation = false;
-            self.element.css('top', 0 );
-          }
-        }
-      });
-
-      this.way_stop = new Waypoint({
-        element: self.element,
-        handler: function() {
-          self.maybeParallaxMe();
-          if ( ! self.element.hasClass('parallaxing') ) {
-            self.$_window.on('scroll', self.maybeParallaxMe );
-            self.element.addClass('parallaxing');
-          }else {
-            self.element.removeClass('parallaxing');
-            self.$_window.off('scroll', self.maybeParallaxMe );
-            self.doingAnimation = false;
-          }
-        },
-        offset: function(){
-          //offset = this.context.innerHeight() - this.adapter.outerHeight();
-          //return - (  offset > 20 /* possible wrong h scrollbar */ ? offset : this.context.innerHeight() );
-          return - this.adapter.outerHeight();
-        }
-      });
-  };
-
-  /*
-  * In order to handle a smooth scroll
-  */
-  Plugin.prototype.maybeParallaxMe = function() {
-      var self = this;
-
-      if ( !this.doingAnimation ) {
-        this.doingAnimation = true;
-        window.requestAnimationFrame(function() {
-          self.parallaxMe();
-          self.doingAnimation = false;
-        });
-      }
-  };
-
-  Plugin.prototype.parallaxMe = function() {
-      //parallax only the current slide if in slider context?
-      /*
-      if ( ! ( this.element.hasClass( 'is-selected' ) || this.element.parent( '.is-selected' ).length ) )
-        return;
-      */
-
-      var ratio = this.options.parallaxRatio,
-          parallaxDirection = this.options.parallaxDirection,
-
-          value = ratio * parallaxDirection * ( this.$_document.scrollTop() - this.way_start.triggerPoint );
-
-       this.element.css('top', parallaxDirection * value < 0 ? 0 : value );
-  };
-
-
-  // prevents against multiple instantiations
-  $.fn[pluginName] = function ( options ) {
-      return this.each(function () {
-          if (!$.data(this, 'plugin_' + pluginName)) {
-              $.data(this, 'plugin_' + pluginName,
-              new Plugin( this, options ));
-          }
-      });
-  };
-
-})( jQuery, window, document );// http://paulirish.com/2011/requestanimationframe-for-smart-animating/
-// http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating
-
-// requestAnimationFrame polyfill by Erik Möller. fixes from Paul Irish and Tino Zijdel
-
-// MIT license
-(function() {
-    var lastTime = 0;
-    var vendors = ['ms', 'moz', 'webkit', 'o'];
-    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
-        window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
-        window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame']
-                                   || window[vendors[x]+'CancelRequestAnimationFrame'];
-    }
-
-    if (!window.requestAnimationFrame)
-        window.requestAnimationFrame = function(callback, element) {
-            var currTime = new Date().getTime();
-            var timeToCall = Math.max(0, 16 - (currTime - lastTime));
-            lastTime = currTime + timeToCall;
-            return window.setTimeout(function() { callback(currTime + timeToCall); },
-              timeToCall);
-        };
-
-    if (!window.cancelAnimationFrame)
-        window.cancelAnimationFrame = function(id) {
-            clearTimeout(id);
-        };
-}());// Customizr version of Galambosi's SmoothScroll
+// Customizr version of Galambosi's SmoothScroll
 
 // SmoothScroll for websites v1.3.8 (Balazs Galambosi)
 // Licensed under the terms of the MIT license.
@@ -4347,692 +4074,7 @@ smoothScroll._setCustomOptions = function( _options ){
 })();
 
 var smoothScroll;
-// modified version of
-// outline.js (https://github.com/lindsayevans/outline.js)
-// based on http://www.paciellogroup.com/blog/2012/04/how-to-remove-css-outlines-in-an-accessible-manner/
-var tcOutline;
-(function(d){
-  tcOutline = function() {
-	var style_element = d.createElement('STYLE'),
-	    dom_events = 'addEventListener' in d,
-	    add_event_listener = function(type, callback){
-			// Basic cross-browser event handling
-			if(dom_events){
-				d.addEventListener(type, callback);
-			}else{
-				d.attachEvent('on' + type, callback);
-			}
-		},
-	    set_css = function(css_text){
-			// Handle setting of <style> element contents in IE8
-			if ( !!style_element.styleSheet )
-                style_element.styleSheet.cssText = css_text; 
-            else 
-                style_element.innerHTML = css_text;
-		}
-	;
-
-	d.getElementsByTagName('HEAD')[0].appendChild(style_element);
-
-	// Using mousedown instead of mouseover, so that previously focused elements don't lose focus ring on mouse move
-	add_event_listener('mousedown', function(){
-		set_css('input[type=file]:focus,input[type=radio]:focus,input[type=checkbox]:focus,select:focus,a:focus{outline:0}input[type=file]::-moz-focus-inner,input[type=radio]::-moz-focus-inner,input[type=checkbox]::-moz-focus-inner,select::-moz-focus-inner,a::-moz-focus-inner{border:0;}');
-	});
-
-	add_event_listener('keydown', function(){
-		set_css('');
-	});
-  }
-})(document);
-/*!
-Waypoints - 4.0.0
-Copyright © 2011-2015 Caleb Troughton
-Licensed under the MIT license.
-https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
-*/
-(function() {
-  'use strict'
-
-  var keyCounter = 0
-  var allWaypoints = {}
-
-  /* http://imakewebthings.com/waypoints/api/waypoint */
-  function Waypoint(options) {
-    if (!options) {
-      throw new Error('No options passed to Waypoint constructor')
-    }
-    if (!options.element) {
-      throw new Error('No element option passed to Waypoint constructor')
-    }
-    if (!options.handler) {
-      throw new Error('No handler option passed to Waypoint constructor')
-    }
-
-    this.key = 'waypoint-' + keyCounter
-    this.options = Waypoint.Adapter.extend({}, Waypoint.defaults, options)
-    this.element = this.options.element
-    this.adapter = new Waypoint.Adapter(this.element)
-    this.callback = options.handler
-    this.axis = this.options.horizontal ? 'horizontal' : 'vertical'
-    this.enabled = this.options.enabled
-    this.triggerPoint = null
-    this.group = Waypoint.Group.findOrCreate({
-      name: this.options.group,
-      axis: this.axis
-    })
-    this.context = Waypoint.Context.findOrCreateByElement(this.options.context)
-
-    if (Waypoint.offsetAliases[this.options.offset]) {
-      this.options.offset = Waypoint.offsetAliases[this.options.offset]
-    }
-    this.group.add(this)
-    this.context.add(this)
-    allWaypoints[this.key] = this
-    keyCounter += 1
-  }
-
-  /* Private */
-  Waypoint.prototype.queueTrigger = function(direction) {
-    this.group.queueTrigger(this, direction)
-  }
-
-  /* Private */
-  Waypoint.prototype.trigger = function(args) {
-    if (!this.enabled) {
-      return
-    }
-    if (this.callback) {
-      this.callback.apply(this, args)
-    }
-  }
-
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/destroy */
-  Waypoint.prototype.destroy = function() {
-    this.context.remove(this)
-    this.group.remove(this)
-    delete allWaypoints[this.key]
-  }
-
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/disable */
-  Waypoint.prototype.disable = function() {
-    this.enabled = false
-    return this
-  }
-
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/enable */
-  Waypoint.prototype.enable = function() {
-    this.context.refresh()
-    this.enabled = true
-    return this
-  }
-
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/next */
-  Waypoint.prototype.next = function() {
-    return this.group.next(this)
-  }
-
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/previous */
-  Waypoint.prototype.previous = function() {
-    return this.group.previous(this)
-  }
-
-  /* Private */
-  Waypoint.invokeAll = function(method) {
-    var allWaypointsArray = []
-    for (var waypointKey in allWaypoints) {
-      allWaypointsArray.push(allWaypoints[waypointKey])
-    }
-    for (var i = 0, end = allWaypointsArray.length; i < end; i++) {
-      allWaypointsArray[i][method]()
-    }
-  }
-
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/destroy-all */
-  Waypoint.destroyAll = function() {
-    Waypoint.invokeAll('destroy')
-  }
-
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/disable-all */
-  Waypoint.disableAll = function() {
-    Waypoint.invokeAll('disable')
-  }
-
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/enable-all */
-  Waypoint.enableAll = function() {
-    Waypoint.invokeAll('enable')
-  }
-
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/refresh-all */
-  Waypoint.refreshAll = function() {
-    Waypoint.Context.refreshAll()
-  }
-
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/viewport-height */
-  Waypoint.viewportHeight = function() {
-    return window.innerHeight || document.documentElement.clientHeight
-  }
-
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/viewport-width */
-  Waypoint.viewportWidth = function() {
-    return document.documentElement.clientWidth
-  }
-
-  Waypoint.adapters = []
-
-  Waypoint.defaults = {
-    context: window,
-    continuous: true,
-    enabled: true,
-    group: 'default',
-    horizontal: false,
-    offset: 0
-  }
-
-  Waypoint.offsetAliases = {
-    'bottom-in-view': function() {
-      return this.context.innerHeight() - this.adapter.outerHeight()
-    },
-    'right-in-view': function() {
-      return this.context.innerWidth() - this.adapter.outerWidth()
-    }
-  }
-
-  window.Waypoint = Waypoint
-}())
-;(function() {
-  'use strict'
-
-  function requestAnimationFrameShim(callback) {
-    window.setTimeout(callback, 1000 / 60)
-  }
-
-  var keyCounter = 0
-  var contexts = {}
-  var Waypoint = window.Waypoint
-  var oldWindowLoad = window.onload
-
-  /* http://imakewebthings.com/waypoints/api/context */
-  function Context(element) {
-    this.element = element
-    this.Adapter = Waypoint.Adapter
-    this.adapter = new this.Adapter(element)
-    this.key = 'waypoint-context-' + keyCounter
-    this.didScroll = false
-    this.didResize = false
-    this.oldScroll = {
-      x: this.adapter.scrollLeft(),
-      y: this.adapter.scrollTop()
-    }
-    this.waypoints = {
-      vertical: {},
-      horizontal: {}
-    }
-
-    element.waypointContextKey = this.key
-    contexts[element.waypointContextKey] = this
-    keyCounter += 1
-
-    this.createThrottledScrollHandler()
-    this.createThrottledResizeHandler()
-  }
-
-  /* Private */
-  Context.prototype.add = function(waypoint) {
-    var axis = waypoint.options.horizontal ? 'horizontal' : 'vertical'
-    this.waypoints[axis][waypoint.key] = waypoint
-    this.refresh()
-  }
-
-  /* Private */
-  Context.prototype.checkEmpty = function() {
-    var horizontalEmpty = this.Adapter.isEmptyObject(this.waypoints.horizontal)
-    var verticalEmpty = this.Adapter.isEmptyObject(this.waypoints.vertical)
-    if (horizontalEmpty && verticalEmpty) {
-      this.adapter.off('.waypoints')
-      delete contexts[this.key]
-    }
-  }
-
-  /* Private */
-  Context.prototype.createThrottledResizeHandler = function() {
-    var self = this
-
-    function resizeHandler() {
-      self.handleResize()
-      self.didResize = false
-    }
-
-    this.adapter.on('resize.waypoints', function() {
-      if (!self.didResize) {
-        self.didResize = true
-        Waypoint.requestAnimationFrame(resizeHandler)
-      }
-    })
-  }
-
-  /* Private */
-  Context.prototype.createThrottledScrollHandler = function() {
-    var self = this
-    function scrollHandler() {
-      self.handleScroll()
-      self.didScroll = false
-    }
-
-    this.adapter.on('scroll.waypoints', function() {
-      if (!self.didScroll || Waypoint.isTouch) {
-        self.didScroll = true
-        Waypoint.requestAnimationFrame(scrollHandler)
-      }
-    })
-  }
-
-  /* Private */
-  Context.prototype.handleResize = function() {
-    Waypoint.Context.refreshAll()
-  }
-
-  /* Private */
-  Context.prototype.handleScroll = function() {
-    var triggeredGroups = {}
-    var axes = {
-      horizontal: {
-        newScroll: this.adapter.scrollLeft(),
-        oldScroll: this.oldScroll.x,
-        forward: 'right',
-        backward: 'left'
-      },
-      vertical: {
-        newScroll: this.adapter.scrollTop(),
-        oldScroll: this.oldScroll.y,
-        forward: 'down',
-        backward: 'up'
-      }
-    }
-
-    for (var axisKey in axes) {
-      var axis = axes[axisKey]
-      var isForward = axis.newScroll > axis.oldScroll
-      var direction = isForward ? axis.forward : axis.backward
-
-      for (var waypointKey in this.waypoints[axisKey]) {
-        var waypoint = this.waypoints[axisKey][waypointKey]
-        var wasBeforeTriggerPoint = axis.oldScroll < waypoint.triggerPoint
-        var nowAfterTriggerPoint = axis.newScroll >= waypoint.triggerPoint
-        var crossedForward = wasBeforeTriggerPoint && nowAfterTriggerPoint
-        var crossedBackward = !wasBeforeTriggerPoint && !nowAfterTriggerPoint
-        if (crossedForward || crossedBackward) {
-          waypoint.queueTrigger(direction)
-          triggeredGroups[waypoint.group.id] = waypoint.group
-        }
-      }
-    }
-
-    for (var groupKey in triggeredGroups) {
-      triggeredGroups[groupKey].flushTriggers()
-    }
-
-    this.oldScroll = {
-      x: axes.horizontal.newScroll,
-      y: axes.vertical.newScroll
-    }
-  }
-
-  /* Private */
-  Context.prototype.innerHeight = function() {
-    /*eslint-disable eqeqeq */
-    if (this.element == this.element.window) {
-      return Waypoint.viewportHeight()
-    }
-    /*eslint-enable eqeqeq */
-    return this.adapter.innerHeight()
-  }
-
-  /* Private */
-  Context.prototype.remove = function(waypoint) {
-    delete this.waypoints[waypoint.axis][waypoint.key]
-    this.checkEmpty()
-  }
-
-  /* Private */
-  Context.prototype.innerWidth = function() {
-    /*eslint-disable eqeqeq */
-    if (this.element == this.element.window) {
-      return Waypoint.viewportWidth()
-    }
-    /*eslint-enable eqeqeq */
-    return this.adapter.innerWidth()
-  }
-
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/context-destroy */
-  Context.prototype.destroy = function() {
-    var allWaypoints = []
-    for (var axis in this.waypoints) {
-      for (var waypointKey in this.waypoints[axis]) {
-        allWaypoints.push(this.waypoints[axis][waypointKey])
-      }
-    }
-    for (var i = 0, end = allWaypoints.length; i < end; i++) {
-      allWaypoints[i].destroy()
-    }
-  }
-
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/context-refresh */
-  Context.prototype.refresh = function() {
-    /*eslint-disable eqeqeq */
-    var isWindow = this.element == this.element.window
-    /*eslint-enable eqeqeq */
-    var contextOffset = isWindow ? undefined : this.adapter.offset()
-    var triggeredGroups = {}
-    var axes
-
-    this.handleScroll()
-    axes = {
-      horizontal: {
-        contextOffset: isWindow ? 0 : contextOffset.left,
-        contextScroll: isWindow ? 0 : this.oldScroll.x,
-        contextDimension: this.innerWidth(),
-        oldScroll: this.oldScroll.x,
-        forward: 'right',
-        backward: 'left',
-        offsetProp: 'left'
-      },
-      vertical: {
-        contextOffset: isWindow ? 0 : contextOffset.top,
-        contextScroll: isWindow ? 0 : this.oldScroll.y,
-        contextDimension: this.innerHeight(),
-        oldScroll: this.oldScroll.y,
-        forward: 'down',
-        backward: 'up',
-        offsetProp: 'top'
-      }
-    }
-
-    for (var axisKey in axes) {
-      var axis = axes[axisKey]
-      for (var waypointKey in this.waypoints[axisKey]) {
-        var waypoint = this.waypoints[axisKey][waypointKey]
-        var adjustment = waypoint.options.offset
-        var oldTriggerPoint = waypoint.triggerPoint
-        var elementOffset = 0
-        var freshWaypoint = oldTriggerPoint == null
-        var contextModifier, wasBeforeScroll, nowAfterScroll
-        var triggeredBackward, triggeredForward
-
-        if (waypoint.element !== waypoint.element.window) {
-          elementOffset = waypoint.adapter.offset()[axis.offsetProp]
-        }
-
-        if (typeof adjustment === 'function') {
-          adjustment = adjustment.apply(waypoint)
-        }
-        else if (typeof adjustment === 'string') {
-          adjustment = parseFloat(adjustment)
-          if (waypoint.options.offset.indexOf('%') > - 1) {
-            adjustment = Math.ceil(axis.contextDimension * adjustment / 100)
-          }
-        }
-
-        contextModifier = axis.contextScroll - axis.contextOffset
-        waypoint.triggerPoint = elementOffset + contextModifier - adjustment
-        wasBeforeScroll = oldTriggerPoint < axis.oldScroll
-        nowAfterScroll = waypoint.triggerPoint >= axis.oldScroll
-        triggeredBackward = wasBeforeScroll && nowAfterScroll
-        triggeredForward = !wasBeforeScroll && !nowAfterScroll
-
-        if (!freshWaypoint && triggeredBackward) {
-          waypoint.queueTrigger(axis.backward)
-          triggeredGroups[waypoint.group.id] = waypoint.group
-        }
-        else if (!freshWaypoint && triggeredForward) {
-          waypoint.queueTrigger(axis.forward)
-          triggeredGroups[waypoint.group.id] = waypoint.group
-        }
-        else if (freshWaypoint && axis.oldScroll >= waypoint.triggerPoint) {
-          waypoint.queueTrigger(axis.forward)
-          triggeredGroups[waypoint.group.id] = waypoint.group
-        }
-      }
-    }
-
-    Waypoint.requestAnimationFrame(function() {
-      for (var groupKey in triggeredGroups) {
-        triggeredGroups[groupKey].flushTriggers()
-      }
-    })
-
-    return this
-  }
-
-  /* Private */
-  Context.findOrCreateByElement = function(element) {
-    return Context.findByElement(element) || new Context(element)
-  }
-
-  /* Private */
-  Context.refreshAll = function() {
-    for (var contextId in contexts) {
-      contexts[contextId].refresh()
-    }
-  }
-
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/context-find-by-element */
-  Context.findByElement = function(element) {
-    return contexts[element.waypointContextKey]
-  }
-
-  window.onload = function() {
-    if (oldWindowLoad) {
-      oldWindowLoad()
-    }
-    Context.refreshAll()
-  }
-
-  Waypoint.requestAnimationFrame = function(callback) {
-    var requestFn = window.requestAnimationFrame ||
-      window.mozRequestAnimationFrame ||
-      window.webkitRequestAnimationFrame ||
-      requestAnimationFrameShim
-    requestFn.call(window, callback)
-  }
-  Waypoint.Context = Context
-}())
-;(function() {
-  'use strict'
-
-  function byTriggerPoint(a, b) {
-    return a.triggerPoint - b.triggerPoint
-  }
-
-  function byReverseTriggerPoint(a, b) {
-    return b.triggerPoint - a.triggerPoint
-  }
-
-  var groups = {
-    vertical: {},
-    horizontal: {}
-  }
-  var Waypoint = window.Waypoint
-
-  /* http://imakewebthings.com/waypoints/api/group */
-  function Group(options) {
-    this.name = options.name
-    this.axis = options.axis
-    this.id = this.name + '-' + this.axis
-    this.waypoints = []
-    this.clearTriggerQueues()
-    groups[this.axis][this.name] = this
-  }
-
-  /* Private */
-  Group.prototype.add = function(waypoint) {
-    this.waypoints.push(waypoint)
-  }
-
-  /* Private */
-  Group.prototype.clearTriggerQueues = function() {
-    this.triggerQueues = {
-      up: [],
-      down: [],
-      left: [],
-      right: []
-    }
-  }
-
-  /* Private */
-  Group.prototype.flushTriggers = function() {
-    for (var direction in this.triggerQueues) {
-      var waypoints = this.triggerQueues[direction]
-      var reverse = direction === 'up' || direction === 'left'
-      waypoints.sort(reverse ? byReverseTriggerPoint : byTriggerPoint)
-      for (var i = 0, end = waypoints.length; i < end; i += 1) {
-        var waypoint = waypoints[i]
-        if (waypoint.options.continuous || i === waypoints.length - 1) {
-          waypoint.trigger([direction])
-        }
-      }
-    }
-    this.clearTriggerQueues()
-  }
-
-  /* Private */
-  Group.prototype.next = function(waypoint) {
-    this.waypoints.sort(byTriggerPoint)
-    var index = Waypoint.Adapter.inArray(waypoint, this.waypoints)
-    var isLast = index === this.waypoints.length - 1
-    return isLast ? null : this.waypoints[index + 1]
-  }
-
-  /* Private */
-  Group.prototype.previous = function(waypoint) {
-    this.waypoints.sort(byTriggerPoint)
-    var index = Waypoint.Adapter.inArray(waypoint, this.waypoints)
-    return index ? this.waypoints[index - 1] : null
-  }
-
-  /* Private */
-  Group.prototype.queueTrigger = function(waypoint, direction) {
-    this.triggerQueues[direction].push(waypoint)
-  }
-
-  /* Private */
-  Group.prototype.remove = function(waypoint) {
-    var index = Waypoint.Adapter.inArray(waypoint, this.waypoints)
-    if (index > -1) {
-      this.waypoints.splice(index, 1)
-    }
-  }
-
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/first */
-  Group.prototype.first = function() {
-    return this.waypoints[0]
-  }
-
-  /* Public */
-  /* http://imakewebthings.com/waypoints/api/last */
-  Group.prototype.last = function() {
-    return this.waypoints[this.waypoints.length - 1]
-  }
-
-  /* Private */
-  Group.findOrCreate = function(options) {
-    return groups[options.axis][options.name] || new Group(options)
-  }
-
-  Waypoint.Group = Group
-}())
-;(function() {
-  'use strict'
-
-  var $ = window.jQuery
-  var Waypoint = window.Waypoint
-
-  function JQueryAdapter(element) {
-    this.$element = $(element)
-  }
-
-  $.each([
-    'innerHeight',
-    'innerWidth',
-    'off',
-    'offset',
-    'on',
-    'outerHeight',
-    'outerWidth',
-    'scrollLeft',
-    'scrollTop'
-  ], function(i, method) {
-    JQueryAdapter.prototype[method] = function() {
-      var args = Array.prototype.slice.call(arguments)
-      return this.$element[method].apply(this.$element, args)
-    }
-  })
-
-  $.each([
-    'extend',
-    'inArray',
-    'isEmptyObject'
-  ], function(i, method) {
-    JQueryAdapter[method] = $[method]
-  })
-
-  Waypoint.adapters.push({
-    name: 'jquery',
-    Adapter: JQueryAdapter
-  })
-  Waypoint.Adapter = JQueryAdapter
-}())
-;(function() {
-  'use strict'
-
-  var Waypoint = window.Waypoint
-
-  function createExtension(framework) {
-    return function() {
-      var waypoints = []
-      var overrides = arguments[0]
-
-      if (framework.isFunction(arguments[0])) {
-        overrides = framework.extend({}, arguments[1])
-        overrides.handler = arguments[0]
-      }
-
-      this.each(function() {
-        var options = framework.extend({}, overrides, {
-          element: this
-        })
-        if (typeof options.context === 'string') {
-          options.context = framework(this).closest(options.context)[0]
-        }
-        waypoints.push(new Waypoint(options))
-      })
-
-      return waypoints
-    }
-  }
-
-  if (window.jQuery) {
-    window.jQuery.fn.waypoint = createExtension(window.jQuery)
-  }
-  if (window.Zepto) {
-    window.Zepto.fn.waypoint = createExtension(window.Zepto)
-  }
-}())
-;//@global TCParams
+//@global TCParams
 var czrapp = czrapp || {};
 
 (function($, czrapp) {
@@ -5148,62 +4190,27 @@ var czrapp = czrapp || {};
 
     //bool
     isResponsive : function() {
-      return this.matchMedia(979);
+      return $(window).width() <= 979 - 15;
     },
 
     //@return string of current device
     getDevice : function() {
       var _devices = {
-            desktop : 979,
-            tablet : 767,
-            smartphone : 480
+            desktop : 979 - 15,
+            tablet : 767 - 15,
+            smartphone : 480 - 15
           },
           _current_device = 'desktop',
-          that = this;
-
+          $_window = czrapp.$_window || $(window);
 
       _.map( _devices, function( max_width, _dev ){
-        if ( that.matchMedia( max_width ) )
+        if ( $_window.width() <= max_width )
           _current_device = _dev;
       } );
-
       return _current_device;
     },
 
-    matchMedia : function( _maxWidth ) {
-      if ( window.matchMedia )
-        return ( window.matchMedia("(max-width: "+_maxWidth+"px)").matches );
 
-      //old browsers compatibility
-      $_window = czrapp.$_window || $(window);
-      return $_window.width() <= ( _maxWidth - 15 );
-    },
-
-    //@return bool
-    isSelectorAllowed : function( $_el, skip_selectors, requested_sel_type ) {
-      var sel_type = 'ids' == requested_sel_type ? 'id' : 'class',
-      _selsToSkip   = skip_selectors[requested_sel_type];
-
-      //check if option is well formed
-      if ( 'object' != typeof(skip_selectors) || ! skip_selectors[requested_sel_type] || ! $.isArray( skip_selectors[requested_sel_type] ) || 0 === skip_selectors[requested_sel_type].length )
-        return true;
-
-      //has a forbidden parent?
-      if ( $_el.parents( _selsToSkip.map( function( _sel ){ return 'id' == sel_type ? '#' + _sel : '.' + _sel; } ).join(',') ).length > 0 )
-        return false;
-
-      //has requested sel ?
-      if ( ! $_el.attr( sel_type ) )
-        return true;
-
-      var _elSels       = $_el.attr( sel_type ).split(' '),
-          _filtered     = _elSels.filter( function(classe) { return -1 != $.inArray( classe , _selsToSkip ) ;});
-
-      //check if the filtered selectors array with the non authorized selectors is empty or not
-      //if empty => all selectors are allowed
-      //if not, at least one is not allowed
-      return 0 === _filtered.length;
-    },
 
     /***************************************************************************
     * Event methods, offering the ability to bind to and trigger events.
@@ -5283,8 +4290,7 @@ var czrapp = czrapp || {};
       var self = this;
       _.map( cbs, function(cb) {
         if ( 'function' == typeof(self[cb]) ) {
-          args = 'undefined' == typeof( args ) ? Array() : args ;
-          self[cb].apply(self, args );
+          self[cb].apply(self, 'undefined' == typeof( args ) ? Array() : args );
           czrapp.trigger( cb, _.object( _.keys(args), args ) );
         }
       });//_.map
@@ -5315,9 +4321,6 @@ var czrapp = czrapp || {};
     },
     isReponsive : function() {
       return czrapp.isReponsive();
-    },
-    isSelectorAllowed: function( $_el, skip_selectors, requested_sel_type ) {
-      return czrapp.isSelectorAllowed( $_el, skip_selectors, requested_sel_type );
     }
 
   };//_methods{}
@@ -5336,8 +4339,6 @@ var czrapp = czrapp || {};
           czrapp.$_body.addClass("chrome");
       else if ( $.browser.webkit )
           czrapp.$_body.addClass("safari");
-      if ( $.browser.mozilla )
-          czrapp.$_body.addClass("mozilla");
       else if ( $.browser.msie || '8.0' === $.browser.version || '9.0' === $.browser.version || '10.0' === $.browser.version || '11.0' === $.browser.version )
           czrapp.$_body.addClass("ie").addClass("ie" + $.browser.version.replace(/[.0]/g, ''));
 
@@ -5349,8 +4350,7 @@ var czrapp = czrapp || {};
 
   $.extend( czrapp.methods.BrowserDetect = {} , _methods );
 
-})(jQuery, czrapp);
-var czrapp = czrapp || {};
+})(jQuery, czrapp);var czrapp = czrapp || {};
 /***************************
 * ADD JQUERY PLUGINS METHODS
 ****************************/
@@ -5368,41 +4368,13 @@ var czrapp = czrapp || {};
     //__before_main_wrapper covers the single post thumbnail case
     //.widget-front handles the featured pages
     imgSmartLoad : function() {
-      var smartLoadEnabled = 1 == TCParams.imgSmartLoadEnabled,
-          //Default selectors for where are : $( '.article-container, .__before_main_wrapper, .widget-front' ).find('img');
-          _where           = TCParams.imgSmartLoadOpts.parentSelectors.join();
-
-      //Smart-Load images
-      //imgSmartLoad plugin will trigger the smartload event when the img will be loaded
-      //the centerImages plugin will react to this event centering them
-      if (  smartLoadEnabled )
-        $( _where ).imgSmartLoad(
-          _.size( TCParams.imgSmartLoadOpts.opts ) > 0 ? TCParams.imgSmartLoadOpts.opts : {}
-        );
-
-      //If the centerAllImg is on we have to ensure imgs will be centered when simple loaded,
-      //for this purpose we have to trigger the simple-load on:
-      //1) imgs which have been excluded from the smartloading if enabled
-      //2) all the images in the default 'where' if the smartloading isn't enaled
-      //simple-load event on holders needs to be triggered with a certain delay otherwise holders will be misplaced (centering)
-      if ( 1 == TCParams.centerAllImg ) {
-        var self                   = this,
-            $_to_center            = smartLoadEnabled ?
-               $( _.filter( $( _where ).find('img'), function( img ) {
-                  return $(img).is(TCParams.imgSmartLoadOpts.opts.excludeImg.join());
-                }) ): //filter
-                $( _where ).find('img');
-            $_to_center_with_delay = $( _.filter( $_to_center, function( img ) {
-                return $(img).hasClass('tc-holder-img');
-            }) );
-
-        //imgs to center with delay
-        setTimeout( function(){
-          self.triggerSimpleLoad( $_to_center_with_delay );
-        }, 300 );
-        //all other imgs to center
-        self.triggerSimpleLoad( $_to_center );
-      }
+      if ( 1 == TCParams.imgSmartLoadEnabled )
+        $( '.article-container, .__before_main_wrapper, .widget-front' ).imgSmartLoad( _.size( TCParams.imgSmartLoadOpts ) > 0 ? TCParams.imgSmartLoadOpts : {} );
+      else {
+        //if smart load not enabled => trigger the load event on img load
+        var $_to_center = $( '.article-container, .__before_main_wrapper, .widget-front' ).find('img');
+        this.triggerSimpleLoad($_to_center);
+      }//end else
     },
 
 
@@ -5472,23 +4444,14 @@ var czrapp = czrapp || {};
     centerImages : function() {
       //SLIDER IMG + VARIOUS
       setTimeout( function() {
-        //centering per slider
-        $.each( $( '.carousel .carousel-inner') , function() {
-          $( this ).centerImages( {
-            enableCentering : 1 == TCParams.centerSliderImg,
-            imgSel : '.czr-item .carousel-image img',
-            oncustom : ['customizr.slid', 'simple_load'],
-            defaultCSSVal : { width : '100%' , height : 'auto' },
-            useImgAttr : true
-          });
-          //fade out the loading icon per slider with a little delay
-          //mostly for retina devices (the retina image will be downloaded afterwards
-          //and this may cause the re-centering of the image)
-          var self = this;
-          setTimeout( function() {
-              $( self ).prevAll('.tc-slider-loader-wrapper').fadeOut();
-          }, 500 );
+        $( '.carousel .carousel-inner').centerImages( {
+          enableCentering : 1 == TCParams.centerSliderImg,
+          imgSel : '.item .carousel-image img',
+          oncustom : ['slid', 'simple_load'],
+          defaultCSSVal : { width : '100%' , height : 'auto' },
+          useImgAttr : true
         });
+        $('.tc-slider-loader-wrapper').hide();
       } , 50);
 
       //Featured Pages
@@ -5509,8 +4472,8 @@ var czrapp = czrapp || {};
         oncustom : ['smartload', 'simple_load']
       });
 
-      //rectangulars in post lists
-      $('.tc-rectangular-thumb', '.tc-post-list-context' ).centerImages( {
+      //rectangulars
+      $('.tc-rectangular-thumb').centerImages( {
         enableCentering : 1 == TCParams.centerAllImg,
         enableGoldenRatio : true,
         goldenRatioVal : TCParams.goldenRatio || 1.618,
@@ -5523,9 +4486,7 @@ var czrapp = czrapp || {};
         enableCentering : 1 == TCParams.centerAllImg,
         enableGoldenRatio : false,
         disableGRUnder : 0,//<= don't disable golden ratio when responsive
-        oncustom : ['smartload', 'refresh-height', 'simple_load'], //bind 'refresh-height' event (triggered to the the customizer preview frame)
-        setOpacityWhenCentered : true,//will set the opacity to 1
-        opacity : 1
+        oncustom : ['smartload', 'refresh-height', 'simple_load'] //bind 'refresh-height' event (triggered to the the customizer preview frame)
       });
 
       //POST GRID IMAGES
@@ -5537,18 +4498,6 @@ var czrapp = czrapp || {};
         goldenRatioLimitHeightTo : TCParams.gridGoldenRatioLimit || 350
       } );
     },//center_images
-
-    /**
-    * PARALLAX
-    * @return {void}
-    */
-    parallax : function() {
-      $( '.parallax-item' ).czrParallax(
-      {
-        parallaxRatio : 0.55
-      }
-      );
-    },
 
   };//_methods{}
 
@@ -5707,12 +4656,6 @@ var czrapp = czrapp || {};
       }
     },//eventHandler
 
-    //outline firefox fix, see https://github.com/presscustomizr/customizr/issues/538
-    outline: function() {
-      if ( czrapp.$_body.hasClass( 'mozilla' ) && 'function' == typeof( tcOutline ) )
-          tcOutline();
-    },
-
     //SMOOTH SCROLL
     smoothScroll: function() {
       if ( TCParams.SmoothScroll && TCParams.SmoothScroll.Enabled )
@@ -5724,23 +4667,8 @@ var czrapp = czrapp || {};
       if ( ! TCParams.anchorSmoothScroll || 'easeOutExpo' != TCParams.anchorSmoothScroll )
             return;
 
-      var _excl_sels = ( TCParams.anchorSmoothScrollExclude && _.isArray( TCParams.anchorSmoothScrollExclude.simple ) ) ? TCParams.anchorSmoothScrollExclude.simple.join(',') : '',
-          self = this,
-          $_links = $('a[href^="#"]', '#content').not(_excl_sels);
-
-      //Deep exclusion
-      //are ids and classes selectors allowed ?
-      //all type of selectors (in the array) must pass the filter test
-      _deep_excl = _.isObject( TCParams.anchorSmoothScrollExclude.deep ) ? TCParams.anchorSmoothScrollExclude.deep : null ;
-      if ( _deep_excl )
-        _links = _.toArray($_links).filter( function ( _el ) {
-          return ( 2 == ( ['ids', 'classes'].filter(
-                        function( sel_type) {
-                            return self.isSelectorAllowed( $(_el), _deep_excl, sel_type);
-                        } ) ).length
-                );
-        });
-      $(_links).click( function () {
+      var _excl_sels = ( TCParams.anchorSmoothScrollExclude && _.isArray( TCParams.anchorSmoothScrollExclude ) ) ? TCParams.anchorSmoothScrollExclude.join(',') : '';
+      $('a[href^="#"]', '#content').not( _excl_sels ).click(function () {
         var anchor_id = $(this).attr("href");
 
         //anchor el exists ?
@@ -5770,13 +4698,11 @@ var czrapp = czrapp || {};
     //BACK TO TOP
     backToTop : function() {
       var $_html = $("html, body"),
-          _backToTop = function( evt ) {
-            return ( evt.which > 0 || "mousedown" === evt.type || "mousewheel" === evt.type) && $_html.stop().off( "scroll mousedown DOMMouseScroll mousewheel keyup", _backToTop );
+          _backToTop = function($) {
+            return ($.which > 0 || "mousedown" === $.type || "mousewheel" === $.type) && $_html.stop().off( "scroll mousedown DOMMouseScroll mousewheel keyup", _backToTop );
           };
 
-      $(".back-to-top, .tc-btt-wrapper, .btt-arrow").on("click touchstart touchend", function ( evt ) {
-        evt.preventDefault();
-        evt.stopPropagation();
+      $(".back-to-top, .tc-btt-wrapper, .btt-arrow").on("click touchstart touchend", function ($) {
         $_html.on( "scroll mousedown DOMMouseScroll mousewheel keyup", _backToTop );
         $_html.animate({
             scrollTop: 0
@@ -5784,6 +4710,7 @@ var czrapp = czrapp || {};
             $_html.stop().off( "scroll mousedown DOMMouseScroll mousewheel keyup", _backToTop );
             //czrapp.$_window.trigger('resize');
         });
+        $.preventDefault();
       });
     },
 
@@ -5882,14 +4809,14 @@ var czrapp = czrapp || {};
 
       //both conain iframes => do nothing
       if ( leftIframe && contentIframe )
-        return;
+        return;    
 
       if ( that.$_left.length ) {
         if ( leftIframe )
           that.$_content[ _sidebarLayout === 'normal' ?  'insertAfter' : 'insertBefore']( that.$_left );
         else
           that.$_left[ _sidebarLayout === 'normal' ?  'insertBefore' : 'insertAfter']( that.$_content );
-      }
+      } 
     },
 
     //Handle dropdown on click for multi-tier menus
@@ -6022,7 +4949,7 @@ var czrapp = czrapp || {};
     },
 
     //Helpers
-
+    
     //Check if the passed element(s) contains an iframe
     //@return list of containers
     //@param $_elements = mixed
@@ -6244,7 +5171,7 @@ var czrapp = czrapp || {};
           logoH = this.logo._logo.originalHeight();
 
       //check that all numbers are valid before using division
-      if ( 2 != _.size( _.filter( [ logoW, logoH ], function(num){ return _.isNumber( parseInt(num, 10) ) && 0 !== num; } ) ) )
+      if ( 0 === _.size( _.filter( [ logoW, logoH ], function(num){ return _.isNumber( parseInt(num, 10) ) && 0 !== num; } ) ) )
         return;
 
       this.logo._ratio = logoW / logoH;
@@ -6281,17 +5208,11 @@ var czrapp = czrapp || {};
       var self = this;
       //process scrolling actions
       if ( czrapp.$_window.scrollTop() > this.triggerHeight ) {
-        if ( ! this._is_scrolling() ) {
-          czrapp.$_body.addClass("sticky-enabled").removeClass("sticky-disabled")
-                       .trigger('tc-sticky-enabled');
-          // set the logo height, makes sense just when the logo isn't shrinked
-          if ( ! czrapp.$_tcHeader.hasClass('tc-shrink-on') )
-            self._set_logo_height();
-        }
+        if ( ! this._is_scrolling() )
+            czrapp.$_body.addClass("sticky-enabled").removeClass("sticky-disabled");
       }
       else if ( this._is_scrolling() ){
-        czrapp.$_body.removeClass("sticky-enabled").addClass("sticky-disabled")
-                     .trigger('tc-sticky-disabled');
+        czrapp.$_body.removeClass("sticky-enabled").addClass("sticky-disabled");
         setTimeout( function() { self._sticky_refresh(); } ,
           self.isCustomizing ? 100 : 20
         );
@@ -6334,12 +5255,6 @@ var czrapp = czrapp || {};
       czrapp.$_window.on( 'tc-resize', function() {
         self.stickyFooterEventHandler('resize');
       });
-
-      // maybe apply sticky footer on golden ratio applied
-      czrapp.$_window.on( 'golden-ratio-applied', function() {
-        self.stickyFooterEventHandler('refresh');
-      });
-
       /* can be useful without exposing methods make it react to this event which could be externally fired, used in the preview atm */
       czrapp.$_body.on( 'refresh-sticky-footer', function() {
         self.stickyFooterEventHandler('refresh');
@@ -6538,8 +5453,7 @@ var czrapp = czrapp || {};
    _transition_end_callback : function() {
      czrapp.$_body.removeClass( 'animating ' +  this._anim_type)
                   .toggleClass( 'tc-sn-visible' )
-                  .trigger( this._anim_type + '_end' )
-                  .trigger( this._anim_type );
+                  .trigger( this._anim_type + '_end' );
 
      /* on transition end re-set sticky header */
      if ( this._is_sticky_header() ){
@@ -6590,311 +5504,7 @@ var czrapp = czrapp || {};
   czrapp.methods.Czr_SideNav = {};
   $.extend( czrapp.methods.Czr_SideNav , _methods );
 
-})(jQuery, czrapp);
-var czrapp = czrapp || {};
-/************************************************
-* DROPDOWN PLACEMENT SUB CLASS
-*************************************************/
-/*
-* We need to compute the offset of dropdown and to do this the parents of the submenus
-* have to be visible (visible for jQuery means display:block or similar).
-* So we treat them case by case 'cause they might be already open (see resize when opened on click ).
-* We cannot grab all the dropdowns and process them independentely from their parents.
-*
-* So what we do is:
-* 1) grab all the first level dropdowns in the header
-* 2) Cycle through them
-* 3) make the single dropdown parent 'visible' and compute/set its new offset
-* 4) if they have dropdowns children (1st level children), re-start from point 2) throughout them
-* 5) reset the visibility manipulation
-* Points from 3 to 5 are performed in _move_dropdown function
-*/
-(function($, czrapp) {
-  var _methods =  {
-    init : function() {
-      this.$_sidenav                = $( '#tc-sn' );
-      this._dd_first_selector       = '.menu-item-has-children.dropdown > .dropdown-menu' ;
-      this.$_nav_collapse           = czrapp.$_tcHeader.length > 0 ? czrapp.$_tcHeader.find( '.navbar-wrapper .nav-collapse' ) : [];
-      this.$_nav                    = this.$_nav_collapse.length ? this.$_nav_collapse.find( '.nav' ) : [];
-
-      if ( ! this._has_dd_to_move() )
-        return;
-
-      //cache jQuery el
-      this.$_navbar_wrapper         = this.$_nav_collapse.closest( '.navbar-wrapper' );
-      this.$_nav                    = this.$_nav_collapse.find( '.nav' );
-      this.$_head                   = $( 'head' );
-
-      //other useful vars
-      this._dyn_style_id            = 'tc-dropdown-dyn-style';
-      this._prop                    = czrapp.$_body.hasClass('rtl') ? 'right' : 'left';
-
-      //fire event listener
-      this.dropdownPlaceEventListener();
-
-      //place dropdowns on init
-      this._place_dropdowns();
-    },//init()
-
-    /***********************************************
-    * DOM EVENT LISTENERS AND HANDLERS
-    ***********************************************/
-    dropdownPlaceEventListener : function() {
-      var self    = this,
-          _events = 'tc-resize sn-open sn-close tc-sticky-enabled tc-place-dropdowns';
-
-      //Any event which may have resized the header
-      czrapp.$_body.on( _events, function( evt ) {
-        self.dropdownPlaceEventHandler( evt, 'resize' );
-      });
-    },
-
-
-    dropdownPlaceEventHandler : function( evt, evt_name ) {
-      var self = this;
-
-      switch ( evt_name ) {
-        case 'resize' :
-          setTimeout( function(){
-            self._place_dropdowns();
-          }, 250);
-        break;
-      }
-    },
-
-
-    _place_dropdowns : function () {
-      var _dd = this._get_dd_to_move();
-      if ( ! _dd.length )
-        return;
-
-      this._staging();
-      this._move_dropdown( _dd );
-      this._write_dyn_style();
-      this._unstaging();
-    },
-
-
-
-    /***********************************************
-    * HELPERS
-    ***********************************************/
-    //DROPDOWN PLACE SUB CLASS HELPER (private like)
-    //When checking if there's something to move does not make sense at the start
-    //1) there's no navbar collapse in the header
-    //2) there are no dropdowns to move in the header
-    _has_dd_to_move : function() {
-      if ( this.$_nav_collapse.length < 1 )
-        return false;
-      if ( this.$_nav.length && this.$_nav.find( this._dd_first_selector ) < 1 )
-        return false;
-
-      return true;
-    },
-
-    //DROPDOWN PLACE SUB CLASS HELPER (private like)
-    //returns the dropdowns to move on resize?
-    //a) when the nav-collapse is not absolute => we're not in mobile menu case => no dd to move
-    //b) .tc-header .nav is hidden (case: second menu hidden in mobiles ) => no dd to move
-    //c) return the .tc-header .nav dropdown children
-    _get_dd_to_move : function() {
-      if ( 'absolute' == this.$_nav_collapse.css('position') )
-        return {};
-      if ( ! this.$_nav.is(':visible') )
-        return {};
-      return this.$_nav.find( this._dd_first_selector );
-    },
-
-    //DROPDOWN PLACE SUB CLASS HELPER (private like)
-    //Prepare the environment
-    //What we do here:
-    //1) we 'suspend' the transitions on submenus
-    //2) we add a dynamic style which:
-    // a) sets the max width of the dropdown to the window's width
-    // b) allows braking words for submenus label
-    _staging : function() {
-      this._window_width = czrapp.$_window.width();
-      //remove submenu fade, transitions corrupt the offset computing
-      if ( this.$_navbar_wrapper.hasClass('tc-submenu-fade') )
-        // tc-submenu-fade-susp(ended) is a dummy class we add for the future check in _unstaging
-        this.$_navbar_wrapper.removeClass('tc-submenu-fade').addClass('tc-submenu-fade-susp');
-      var _max_width            = this._window_width - 40,
-          _dyn_style_css_prefix = '.tc-header .nav-collapse .dropdown-menu';
-
-      //the max width of a drodpdown must be the window's width (- 40px aesthetical )
-      this._dyn_style  = _dyn_style_css_prefix + ' {max-width: ' + _max_width + 'px;}';
-      //following is to ensure that big labels are broken in more lines if they exceed the max width
-      //probably due to a bug, white-space: pre; doesn't work fine in recent firefox.
-      //Anyway this just means that the following rule (hence the prev) for them is useless => doesn't introduce a bug
-      //p.s. this could be moved in our main CSS
-      this._dyn_style += _dyn_style_css_prefix + ' > li > a { word-wrap: break-word; white-space: pre; }';
-      this._write_dyn_style();
-    },
-
-    //DROPDOWN PLACE SUB CLASS HELPER (private like)
-    //Reset temporary changes to the environment performed in the staging phase
-    //What we do here:
-    //1) Re-add the transitions on submenus if needed
-    _unstaging : function() {
-      //re-add submenu fade, transitions corrupt the offset computing
-      if ( this.$_navbar_wrapper.hasClass('tc-submenu-fade-susp') )
-        this.$_navbar_wrapper.removeClass('tc-submenu-fade-susp').addClass('tc-submenu-fade');
-    },
-
-    //DROPDOWN PLACE SUB CLASS HELPER (private like)
-    //Write the dynamic style into the HEAD
-    _write_dyn_style : function() {
-      var $_dyn_style_el = this.$_head.find('#' + this._dyn_style_id);
-
-      //there's already a _dyn_style_el, so remove it
-      //I thought that remove/create a new element every time is worse than just have an empty style, but looks like that $_dyn_style_el.html( _dyn_style ) isnt' cross-browser, gives me errors in ie8
-      if ( $_dyn_style_el.length > 0 )
-        $_dyn_style_el.remove();
-      if ( this._dyn_style )
-        // I would have loved ot use getOverrideStyle, but couldn't get it to work -> Error: getOverrideStyle is not a function
-        // I'm probabably missing something. Ref: http://www.w3.org/TR/DOM-Level-2-Style/css.html#CSS-CSSStyleDeclaration
-        // probably not very supported by browsers?
-        // getOverrideStyle($_dropdown[0], ':before');
-        $("<style type='text/css' id='" + this._dyn_style_id +"'>" + this._dyn_style + "</style>")
-          .appendTo( this.$_head );
-    },
-
-    //DROPDOWN PLACE SUB CLASS HELPER (private like)
-    // Moving dropdown core
-    _move_dropdown : function( $dropdown_menu ) {
-      // does dropdown_menu element exists?
-      if ( $dropdown_menu && $dropdown_menu.length ) {
-        if ( $dropdown_menu.length > 1 ) {
-          var self = this;
-          // is $dropdown_menu an array of elements ? if yes call this function over them
-          $.each( $dropdown_menu, function(){
-            self._move_dropdown( $(this) );
-          });
-          return;
-        }//end array of dropdown case
-      }else //no dropdown
-        return;
-      // Moving core
-      var _is_dropdown_visible = $dropdown_menu.is(':visible');
-      if ( ! _is_dropdown_visible )
-        $dropdown_menu.css('display', 'block').css('visibility', 'hidden');
-
-      //first thing to do; reset all changes why?
-      //example, say the last menu item has a submenu which has been moved when window's width == 1200px,
-      //then the window is shrinked to 1000px and the last menu item drops on a new line. In this case :
-      //a) the "moving" might not be needed anymore 'cause it might not overflows the window
-      //b) even worse, the "moving" might have made it overflow on the opposite side.
-      this._set_dropdown_offset( $dropdown_menu, '' );
-      //get the current overflow
-      var _overflow     = this._get_dropdown_overflow( $dropdown_menu );
-
-      if ( _overflow )
-        this._set_dropdown_offset( $dropdown_menu, _overflow );
-
-      //move all the childrens (1st level of children ) which are dropdowns
-      var $_children_dropdowns = $dropdown_menu.children('li.dropdown-submenu');
-        if ( $_children_dropdowns.length )
-          this._move_dropdown( $_children_dropdowns.children('ul.dropdown-menu') );
-
-      //reset 'visibility-manipulation'
-      if ( ! _is_dropdown_visible )
-        $dropdown_menu.css('display', '').css('visibility', '');
-    },
-
-    //DROPDOWN PLACE SUB CLASS HELPER (private like)
-    //Set dropdown offset + first dropdown level top arrow offset accordingly
-    _set_dropdown_offset : function( $dropdown_menu, _dropdown_overflow ) {
-      var _offset = '';
-
-      if ( _dropdown_overflow ) {
-        var $_parent_dropdown  = $dropdown_menu.parent('.menu-item-has-children'),
-            _is_dropdown_submenu = $_parent_dropdown.hasClass('dropdown-submenu');
-
-        //is submenu 2nd level?
-        if ( _is_dropdown_submenu ) {
-          _offset = parseFloat( $dropdown_menu.css( this._prop ) ) - _dropdown_overflow - 5;
-          //does the parent menu item have "brothers" after it? in this case be sure the new position will
-          //not make it completely overlap parent menu item sibling. We can left 30px of space so
-          //the user can access the sibling menu item.
-          //So the condition are:
-          //1) the parent menu item has siblings
-          //and
-          //2) there's a space < 30px between the starting edges of the parent and child dropdown
-          //or
-          //2.1) there's a space < 30px between the ending edges of the parent and child dropdown
-          if ( $_parent_dropdown.next('.menu-item').length ) {
-            var _submenu_overflows_parent = this._get_element_overflow( $dropdown_menu, _offset, $_parent_dropdown );
-            if ( _offset < 30  || _submenu_overflows_parent < 30 )
-              //the new offset is then the old one minus the amount of overflow (ex. in ltr align parent and child right edge ) minus 30px
-              _offset = _offset - _submenu_overflows_parent - 30;
-          }
-        } else {
-          _offset = -20 - _dropdown_overflow; //add some space (20px) on the right(rtl-> left)
-          // when is dropdown first level we need to move the top arrow
-          // we need the menu-item-{id} class to build the css rule
-          var _menu_id = $_parent_dropdown.attr('class').match(/(menu|page)-item-\d+/);
-          _menu_id = _menu_id ? _menu_id[0] : null;
-          if ( _menu_id )
-            this._set_dropdown_arrow_style( _menu_id, _offset );
-        }
-      }
-      //in any case write the dropdown offset css:
-      //a dropdown which doesn't have to be moved will not be passed to this function, so no problem. The only case when this is needed is when we reset the dropdowns offset before checking whether or not we have to move it, Maybe we can fine tune this adding a css class to the moved dropdowns so we'll reset just them.
-      $dropdown_menu.css( this._prop, _offset );
-    },
-
-    //DROPDOWN PLACE SUB CLASS HELPER (private like)
-    //compute the dropdown overflow
-    _get_dropdown_overflow : function ( $dropdown_menu ) {
-      var overflow = null,
-          _t_overflow;
-       // how we compute the overflow
-       // ltr
-       if ( 'left' == this._prop ) {
-         // the overlfow is: the absolute position left/right of the elemnt + its width - the window's width
-         // so it represents the amount of "width" which overflows the window
-         _t_overflow = this._get_element_overflow( $dropdown_menu, $dropdown_menu.offset().left, {}, this._window_width );
-         // a positive overflow means that the dropdown goes off the window
-         // anyways I decided to adjust its position even if the gap between the end of the dropdown
-        // and the window's width is < 5 (6), just to avoid dropdown edges so close to the end of the window
-        overflow = _t_overflow > -5 ? _t_overflow : overflow ;
-      }else { // rtl
-        //the overflow is: the left offset * -1 if less than 5px
-        //note: jQuery.offset() gives just top and left properties.
-        _t_overflow = $dropdown_menu.offset().left;
-        overflow  = _t_overflow < 5 ? -1 * _t_overflow : overflow;
-      }
-        return overflow;
-    },
-    //DROPDOWN PLACE SUB CLASS HELPER (private like)
-    //compute the overflow of an element given a parent an an initial left offset
-    _get_element_overflow : function ( $_el, _offset, $_parent, _parent_width ) {
-      _parent_width = $_parent.length ? $_parent.width() : _parent_width;
-      return $_el.width() + _offset - _parent_width;
-    },
-    //DROPDOWN PLACE SUB CLASS HELPER (private like)
-    //compute and set the dropdown first level top arrow offset
-    //which is the original offset for the pseudo element before and after minus the
-    //shift amount applied to the dropdown
-    _set_dropdown_arrow_style : function( _menu_id, _offset ) {
-      //9px is static to avoid using the following via javascript
-      //window.getComputedStyle($_dropdown[0], ':before').left ;
-      var _arrow_before_offset    = +9 - _offset,
-          _arrow_after_offset     = _arrow_before_offset + 1,
-          _arrow_css_rule_prefix  = '.tc-header .navbar .nav > .' + _menu_id + ' > .dropdown-menu',
-
-         _arrow_before_css_rule  = _arrow_css_rule_prefix + ":before { " + this._prop + ": " + _arrow_before_offset + "px;}",
-         _arrow_after_css_rule   = _arrow_css_rule_prefix + ":after { " + this._prop + ": " + _arrow_after_offset + "px;}";
-
-      this._dyn_style += "\n" + _arrow_before_css_rule + "\n" + _arrow_after_css_rule;
-    }
-  };//_methods{}
-
-  czrapp.methods.Czr_DropdownPlace = {};
-  $.extend( czrapp.methods.Czr_DropdownPlace , _methods );
-
-})(jQuery, czrapp);
-var czrapp = czrapp || {};
+})(jQuery, czrapp);var czrapp = czrapp || {};
 
 /************************************************
 * LET'S DANCE
@@ -6902,12 +5512,9 @@ var czrapp = czrapp || {};
 jQuery(function ($) {
   var toLoad = {
     BrowserDetect : [],
-    Czr_Plugins : ['centerImagesWithDelay', 'imgSmartLoad' , 'dropCaps', 'extLinks' , 'fancyBox', 'parallax'],
+    Czr_Plugins : ['centerImagesWithDelay', 'imgSmartLoad' , 'dropCaps', 'extLinks' , 'fancyBox'],
     Czr_Slider : ['fireSliders', 'manageHoverClass', 'centerSliderArrows', 'addSwipeSupport', 'sliderTriggerSimpleLoad'],
-    //DropdownPlace is here to ensure is loaded before UserExperience's secondMenuRespActions
-    //this will simplify the checks on whether or not move dropdowns at start
-    Czr_DropdownPlace : [],
-    Czr_UserExperience : ['eventListener', 'outline','smoothScroll', 'anchorSmoothScroll', 'backToTop', 'widgetsHoverActions', 'attachmentsFadeEffect', 'clickableCommentButton', 'dynSidebarReorder', 'dropdownMenuEventsHandler', 'menuButtonHover', 'secondMenuRespActions'],
+    Czr_UserExperience : ['eventListener', 'smoothScroll', 'anchorSmoothScroll', 'backToTop', 'widgetsHoverActions', 'attachmentsFadeEffect', 'clickableCommentButton', 'dynSidebarReorder', 'dropdownMenuEventsHandler', 'menuButtonHover', 'secondMenuRespActions'],
     Czr_StickyHeader : ['stickyHeaderEventListener', 'triggerStickyHeaderLoad' ],
     Czr_StickyFooter : ['stickyFooterEventListener'],
     Czr_SideNav : []

@@ -114,62 +114,27 @@ var czrapp = czrapp || {};
 
     //bool
     isResponsive : function() {
-      return this.matchMedia(979);
+      return $(window).width() <= 979 - 15;
     },
 
     //@return string of current device
     getDevice : function() {
       var _devices = {
-            desktop : 979,
-            tablet : 767,
-            smartphone : 480
+            desktop : 979 - 15,
+            tablet : 767 - 15,
+            smartphone : 480 - 15
           },
           _current_device = 'desktop',
-          that = this;
-
+          $_window = czrapp.$_window || $(window);
 
       _.map( _devices, function( max_width, _dev ){
-        if ( that.matchMedia( max_width ) )
+        if ( $_window.width() <= max_width )
           _current_device = _dev;
       } );
-
       return _current_device;
     },
 
-    matchMedia : function( _maxWidth ) {
-      if ( window.matchMedia )
-        return ( window.matchMedia("(max-width: "+_maxWidth+"px)").matches );
 
-      //old browsers compatibility
-      $_window = czrapp.$_window || $(window);
-      return $_window.width() <= ( _maxWidth - 15 );
-    },
-
-    //@return bool
-    isSelectorAllowed : function( $_el, skip_selectors, requested_sel_type ) {
-      var sel_type = 'ids' == requested_sel_type ? 'id' : 'class',
-      _selsToSkip   = skip_selectors[requested_sel_type];
-
-      //check if option is well formed
-      if ( 'object' != typeof(skip_selectors) || ! skip_selectors[requested_sel_type] || ! $.isArray( skip_selectors[requested_sel_type] ) || 0 === skip_selectors[requested_sel_type].length )
-        return true;
-
-      //has a forbidden parent?
-      if ( $_el.parents( _selsToSkip.map( function( _sel ){ return 'id' == sel_type ? '#' + _sel : '.' + _sel; } ).join(',') ).length > 0 )
-        return false;
-
-      //has requested sel ?
-      if ( ! $_el.attr( sel_type ) )
-        return true;
-
-      var _elSels       = $_el.attr( sel_type ).split(' '),
-          _filtered     = _elSels.filter( function(classe) { return -1 != $.inArray( classe , _selsToSkip ) ;});
-
-      //check if the filtered selectors array with the non authorized selectors is empty or not
-      //if empty => all selectors are allowed
-      //if not, at least one is not allowed
-      return 0 === _filtered.length;
-    },
 
     /***************************************************************************
     * Event methods, offering the ability to bind to and trigger events.
@@ -249,8 +214,7 @@ var czrapp = czrapp || {};
       var self = this;
       _.map( cbs, function(cb) {
         if ( 'function' == typeof(self[cb]) ) {
-          args = 'undefined' == typeof( args ) ? Array() : args ;
-          self[cb].apply(self, args );
+          self[cb].apply(self, 'undefined' == typeof( args ) ? Array() : args );
           czrapp.trigger( cb, _.object( _.keys(args), args ) );
         }
       });//_.map
@@ -281,9 +245,6 @@ var czrapp = czrapp || {};
     },
     isReponsive : function() {
       return czrapp.isReponsive();
-    },
-    isSelectorAllowed: function( $_el, skip_selectors, requested_sel_type ) {
-      return czrapp.isSelectorAllowed( $_el, skip_selectors, requested_sel_type );
     }
 
   };//_methods{}

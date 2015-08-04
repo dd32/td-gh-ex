@@ -355,10 +355,8 @@ var TCParams = TCParams || {};
       if ($this.is('.disabled, :disabled')) return
 
       $parent = getParent($this)
-      //@tc adddon
-      //add && ! $parent.children('ul').is(':visible');
-      //to avoid conflicts with bootstrap>2.3.2 dropdown on click for the menu
-      isActive = $parent.hasClass('open') && ! $parent.children('ul').is(':visible');
+
+      isActive = $parent.hasClass('open')
 
       clearMenus()
 
@@ -376,7 +374,6 @@ var TCParams = TCParams || {};
     }
 
   , keydown: function (e) {
-
       var $this
         , $items
         , $active
@@ -458,6 +455,7 @@ var TCParams = TCParams || {};
   }
 
   $.fn.dropdown.Constructor = Dropdown
+
 
  /* DROPDOWN NO CONFLICT
   * ==================== */
@@ -1611,9 +1609,6 @@ var TCParams = TCParams || {};
   var Collapse = function (element, options) {
     this.$element = $(element)
     this.options = $.extend({}, $.fn.collapse.defaults, options)
-    //@tc adddon
-    //to avoid conflicts with bootstrap>2.3.2 mobile menu
-    this._collapsed = true;
 
     if (this.options.parent) {
       this.$parent = $(this.options.parent)
@@ -1632,13 +1627,12 @@ var TCParams = TCParams || {};
     }
 
   , show: function () {
-
       var dimension
         , scroll
         , actives
         , hasData
-//( this._collapsed && !this.$element.hasClass('in') )
-      if (this.transitioning || this.$element.hasClass('in') ) return
+
+      if (this.transitioning || this.$element.hasClass('in')) return
 
       dimension = this.dimension()
       scroll = $.camelCase(['scroll', dimension].join('-'))
@@ -1655,10 +1649,6 @@ var TCParams = TCParams || {};
       this.transition('addClass', $.Event('show'), 'shown')
       $.support.transition && this.$element[dimension](this.$element[0][scroll])
 
-    //@tc adddon
-    //to avoid conflicts with bootstrap>2.3.2 mobile menu
-      this._collapsed = false;
-
       //@tc adddon
       //give the revealed sub menu the height of the visible viewport
       if ( ! this.$element.hasClass('nav-collapse') )
@@ -1666,9 +1656,7 @@ var TCParams = TCParams || {};
 
       if ( TCParams && 1 == TCParams.dropdowntoViewport )
       {
-        //fallback on jQuery height() if window.innerHeight isn't defined (e.g. ie<9)
-        var winHeight = 'undefined' === typeof window.innerHeight ? window.innerHeight : czrapp.$_window.height(),
-            tcVisible = winHeight - this.$element.offset().top + czrapp.$_window.scrollTop();
+        var tcVisible = czrapp.$_window.height() - this.$element.offset().top + czrapp.$_window.scrollTop();
         this.$element.css('max-height' , tcVisible + 'px');
       }
       else if ( TCParams && 1 != TCParams.dropdowntoViewport && 1 == TCParams.stickyHeader )
@@ -1689,22 +1677,13 @@ var TCParams = TCParams || {};
 
   , hide: function () {
       var dimension
-      //@tc adddon
-      //( this._collapsed
-      if (this.transitioning || ( this._collapsed && !this.$element.hasClass('in') ) ) return
+      if (this.transitioning || !this.$element.hasClass('in')) return
       dimension = this.dimension()
       this.reset(this.$element[dimension]())
       this.transition('removeClass', $.Event('hide'), 'hidden')
       this.$element[dimension](0)
 
-    //@tc adddon
-    //to avoid conflicts with bootstrap>2.3.2 mobile menu
-      this._collapsed = true;
-
       //@tc adddon
-      if ( ! this.$element.hasClass('nav-collapse') )
-          return;
-
       if ( TCParams && 1 != TCParams.dropdowntoViewport && 1 == TCParams.stickyHeader ) {
         $('body').addClass('tc-sticky-header');
       }
@@ -1745,9 +1724,7 @@ var TCParams = TCParams || {};
     }
 
   , toggle: function () {
-    //@tc adddon || ! this._collapsed
-    //to avoid conflicts with bootstrap>2.3.2 mobile menu
-      this[this.$element.hasClass('in') || ! this._collapsed ? 'hide' : 'show']();
+      this[this.$element.hasClass('in') ? 'hide' : 'show']()
     }
 
   }
@@ -1835,10 +1812,7 @@ var TCParams = TCParams || {};
   }
 
   Carousel.prototype = {
-    //@tc_addon
-    //use customizr events namespace
-    //use .czr-item in place of .item
-    //to avoid conflicts with other bootstrap versions
+
     cycle: function (e) {
       if (!e) this.paused = false
       if (this.interval) clearInterval(this.interval);
@@ -1849,7 +1823,7 @@ var TCParams = TCParams || {};
     }
 
   , getActiveIndex: function () {
-      this.$active = this.$element.find('.czr-item.active')
+      this.$active = this.$element.find('.item.active')
       this.$items = this.$active.parent().children()
       return this.$items.index(this.$active)
     }
@@ -1861,7 +1835,7 @@ var TCParams = TCParams || {};
       if (pos > (this.$items.length - 1) || pos < 0) return
 
       if (this.sliding) {
-        return this.$element.one('customizr.slid', function () {
+        return this.$element.one('slid', function () {
           that.to(pos)
         })
       }
@@ -1896,9 +1870,9 @@ var TCParams = TCParams || {};
 
   , slide: function (type, next) {
       if(!$.support.transition && this.$element.hasClass('customizr-slide')) {
-         this.$element.find('.czr-item').stop(true, true); //Finish animation and jump to end.
+         this.$element.find('.item').stop(true, true); //Finish animation and jump to end.
       }
-      var $active = this.$element.find('.czr-item.active')
+      var $active = this.$element.find('.item.active')
         , $next = next || $active[type]()
         , isCycling = this.interval
         , direction = type == 'next' ? 'left' : 'right'
@@ -1910,9 +1884,9 @@ var TCParams = TCParams || {};
 
       isCycling && this.pause()
 
-      $next = $next.length ? $next : this.$element.find('.czr-item')[fallback]()
+      $next = $next.length ? $next : this.$element.find('.item')[fallback]()
 
-      e = $.Event('customizr.slide', {
+      e = $.Event('slide', {
         relatedTarget: $next[0]
       , direction: direction
       })
@@ -1921,7 +1895,7 @@ var TCParams = TCParams || {};
 
       if (this.$indicators.length) {
         this.$indicators.find('.active').removeClass('active')
-        this.$element.one('customizr.slid', function () {
+        this.$element.one('slid', function () {
           var $nextIndicator = $(that.$indicators.children()[that.getActiveIndex()])
           $nextIndicator && $nextIndicator.addClass('active')
         })
@@ -1932,7 +1906,7 @@ var TCParams = TCParams || {};
         if (e.isDefaultPrevented()) return
         //tc addon => trigger slide event to img
         if ( 0 !== $next.find('img').length )
-          $next.find('img').trigger('customizr.slide');
+          $next.find('img').trigger('slide');
         $next.addClass(type)
         $next[0].offsetWidth // force reflow
         $active.addClass(direction)
@@ -1942,10 +1916,10 @@ var TCParams = TCParams || {};
           $active.removeClass(['active', direction].join(' '))
           that.sliding = false
           setTimeout(function () {
-            that.$element.trigger('customizr.slid');
+            that.$element.trigger('slid');
             //tc addon => trigger slid event to img
             if ( 0 !== $next.find('img').length )
-              $next.find('img').trigger('customizr.slid');
+              $next.find('img').trigger('slid');
           }, 0)
         })
       } else if(!$.support.transition && this.$element.hasClass('customizr-slide')) {
@@ -1954,7 +1928,7 @@ var TCParams = TCParams || {};
           $active.animate({left: (direction == 'right' ? '100%' : '-100%')}, 600, function(){
              $active.removeClass('active')
               that.sliding = false
-              setTimeout(function () { that.$element.trigger('customizr.slid') }, 0)
+              setTimeout(function () { that.$element.trigger('slid') }, 0)
             })
            $next.addClass(type).css({left: (direction == 'right' ? '-100%' : '100%')}).animate({left: '0'}, 600,  function(){
                $next.removeClass(type).addClass('active')
@@ -1965,7 +1939,7 @@ var TCParams = TCParams || {};
         $active.removeClass('active')
         $next.addClass('active')
         this.sliding = false
-        this.$element.trigger('customizr.slid')
+        this.$element.trigger('slid')
       }
 
       isCycling && this.cycle()

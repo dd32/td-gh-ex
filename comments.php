@@ -4,15 +4,12 @@
  *
  * The area of the page that contains both current comments
  * and the comment form. The actual display of comments is
- * handled by a callback to czr_fn_comment_callback()
+ * handled by a callback to tc_comment_callback()
  *
  * @package Customizr
  * @since Customizr 1.0
  */
-if ( apply_filters( 'czr_four_do', false ) ) {
-  do_action( 'czr_four_template', 'comments' );
-  return;
-}
+
 /*
  * If the current post is protected by a password and
  * the visitor has not yet entered the password we will
@@ -30,4 +27,4 @@ if ( have_comments() ) {
 		if ( have_comments() && apply_filters( 'tc_display_comment_list', true ) )
 			do_action ( '__comment' );
 	?>
-</div><!-- //#comments .comments-area -->
+</div><!-- #comments .comments-area -->

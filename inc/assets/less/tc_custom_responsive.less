@@ -26,11 +26,10 @@
   }
 
   /*Other*/
-  .carousel .czr-item {
+  .carousel .item {
     line-height: 385px;
     overflow: hidden;
     min-height: 385px;
-    max-height: 385px;
   }
   #left .round-div {
     left: -77px;
@@ -65,7 +64,6 @@
 
 @media (min-width: 980px) {
   /* ROUND DIV FOR 3 columns Top or bottom thumb position SINCE V3.2.0*/
-  .span6 .thumb-position-bottom .round-div,
   .span6 .thumb-position-top .round-div {
     width: 125px;
     height: 125px;
@@ -122,7 +120,6 @@
     float:none;
     text-align: center;
     width: 100%;
-    clear: both;
   }
   .container.navbar-wrapper {
     margin-bottom: 0;
@@ -188,13 +185,8 @@
   .nav-collapse, .nav-collapse.collapse.in .nav{
     display: block;
   }
-  .tc-header:not(.tc-second-menu-on) .navbar div > ul.nav > .menu-item:first-child > a {
-    & when (@is_rtl = false){
-      padding-left: 15px;
-    }
-    & when (@is_rtl = true){
-      padding-right: 15px;
-    }
+  .navbar div > ul.nav > .menu-item:first-child > a {
+    padding-left: 15px
   }
   .nav-collapse .nav > li > a, .nav-collapse .dropdown-menu a {
     font-weight:normal;
@@ -230,7 +222,7 @@
     text-align: @textAlign;
     position: relative;
   }
-  .tc-header:not(.tc-second-menu-on) .tc-hover-menu.nav a:after {
+  .tc-hover-menu.nav a:after {
     border-top: none;
     border-right: none;
     border-left: none;
@@ -255,11 +247,10 @@
   .social-block.widget {
     float: none;
   }
-  .carousel .czr-item {
+  .carousel .item {
     line-height: 309px;
     overflow: hidden;
     min-height: 309px;
-    max-height: 309px;
   }
 
   .featurette {
@@ -368,12 +359,6 @@
   .sticky-enabled .tc-header {
     min-height: 40px;
   }
-  .sticky-enabled .tc-header .brand {
-    & when (@is_rtl = true){
-    float: left;
-    text-align: left;
-    }
-  }
   .sticky-enabled .tc-header .outside {
     display: none;
   }
@@ -442,7 +427,7 @@
     }
   }
 
-  .nav .dropdown-submenu>a:after {
+  .dropdown-submenu>a:after {
     content: none;
   }
   .nav a {
@@ -545,10 +530,6 @@
   #right.widget-area:before{
     border-left:0px;
   }
-  .tc-no-sticky-header .navbar-wrapper,
-  .sticky-disabled .navbar-wrapper {
-    clear: both;
-  }
   .navbar-inner {
     margin: -20px;
   }
@@ -557,14 +538,13 @@
     margin-right: -20px; */
 
   }
- .carousel .czr-item {
+ .carousel .item {
     line-height: 308px;
     overflow: hidden;
     min-height: 308px;
-    max-height: 308px;
   }
 
-  .czr-item .carousel-caption h1 {
+  .item .carousel-caption h1 {
     font-size: 22px;
   }
   .carousel-caption .btn {
@@ -593,14 +573,12 @@
     text-align: center;
   }
   /* SINCE V3.2.0 */
-  .span6 .thumb-position-bottom .round-div,
   .span6 .thumb-position-top .round-div {
     width: 125px;
     height: 125px;
     top: -59px;
     left: -63px;
   }
-  .span6 .thumb-position-bottom .thumb-wrapper,
   .span6 .thumb-position-top .thumb-wrapper {
     max-width: none;
   }
@@ -664,11 +642,10 @@
   .social-block a {
   padding-right: 10px;
   }
-  .carousel .czr-item {
+  .carousel .item {
     line-height: 190px;
     overflow: hidden;
     min-height: 190px;
-    max-height: 190px;
   }
 
   .carousel-caption {
@@ -678,7 +655,7 @@
     max-height: 130px;
     overflow: hidden;
   }
-  .czr-item .carousel-caption h1 {
+  .item .carousel-caption h1 {
     font-size: 20px;
   }
   .carousel-caption .lead,
@@ -741,16 +718,15 @@
   /*end prevent overflows in mobiles */
 }
 @media (max-width: 320px) {
-  .carousel .czr-item {
+  .carousel .item {
     line-height: 140px;
     overflow: hidden;
     min-height: 140px;
-    max-height: 140px;
   }
   .carousel-caption {
     padding: 2%;
   }
-  .czr-item .carousel-caption h1 {
+  .item .carousel-caption h1 {
     font-size: 16px;
   }
   .carousel-caption .btn {

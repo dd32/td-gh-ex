@@ -55,7 +55,7 @@
 
     /* ADD GOOGLE IN TITLE */
     $g_logo = $('<img>' , {class : 'tc-title-google-logo' , src : 'http://www.google.com/images/logos/google_logo_41.png' , height : 20 });
-    $('#accordion-section-fonts_sec').prepend($g_logo);
+    $('#accordion-section-tc_fonts').prepend($g_logo);
 
 
     /* CHECK */
@@ -64,8 +64,8 @@
     $('input[type=checkbox]').not('input[id*="widget"]').each( function() {
       if ( 0 === $(this).closest('div[class^="icheckbox"]').length ) {
         $(this).iCheck({
-          checkboxClass: 'icheckbox_flat-grey',
-          radioClass: 'iradio_flat-grey'
+          checkboxClass: 'icheckbox_flat-green',
+          radioClass: 'iradio_flat-green'
         })
         .on( 'ifChanged', function(e){
             $(e.currentTarget).trigger('change');
@@ -75,7 +75,8 @@
 
     /* SELECT */
     //Exclude skin
-    $('select[data-customize-setting-link]').not('.select2')
+    $('select[data-customize-setting-link]').not('select[data-customize-setting-link="tc_theme_options[tc_skin]"]')
+      .not('select[data-customize-setting-link="tc_theme_options[tc_fonts]"]')
       .each( function() {
         $(this).selecter({
         //triggers a change event on the view, passing the newly selected value + index as parameters.
@@ -85,16 +86,6 @@
         });
     });
 
-    //Multipicker
-    //http://ivaynberg.github.io/select2/#documentation
-    $('select.tc_multiple_picker').select2({
-      closeOnSelect: false,
-      formatSelection: tcEscapeMarkup
-    });
-    function tcEscapeMarkup(obj) {
-      //trim dashes
-      return obj.text.replace(/\u2013|\u2014/g, "");
-    }
 
     //SKINS
     //http://ivaynberg.github.io/select2/#documentation
@@ -135,33 +126,6 @@
 
     /* NUMBER */
     $('input[type="number"]').stepper();
-
-
-    ( function() {
-          var $home_button = $('<span/>', { class:'customize-controls-home', html:'<span class="screen-reader-text">Home</span>' } );
-          $.when( $('#customize-header-actions').append( $home_button ) )
-                .done( function() {
-                      $home_button
-                            .keydown( function( event ) {
-                                  if ( 9 === event.which ) // tab
-                                    return;
-                                  if ( 13 === event.which ) // enter
-                                    this.click();
-                                  event.preventDefault();
-                            })
-                            .on( 'click.customize-controls-home', function() {
-                                  //event.preventDefault();
-                                  //close everything
-                                  api.section.each( function( _s ) {
-                                      _s.expanded( false );
-                                  });
-                                  api.panel.each( function( _p ) {
-                                        _p.expanded( false );
-                                  });
-                            });
-                });
-      })();
-
 
   });//end of $( function($) ) dom ready
 
