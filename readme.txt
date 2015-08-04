@@ -2,7 +2,7 @@
 
 Contributors: automattic
 Tags: black, blue, gray, white, light, two-columns, one-column, right-sidebar, responsive-layout, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, infinite-scroll, microformats, post-formats, rtl-language-support, site-logo, sticky-post, theme-options, translation-ready, art, artwork, blog, collaboration, design, fashion, food, magazine, travel, bright, clean, contemporary, light, minimal, modern, professional, simple
-Tested up to: 4.2.2
+Tested up to: 4.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -95,24 +95,90 @@ https://apostrophedemo.wordpress.com/how-to-use-this-theme/
 3. Featured Images are 225 square. In the case of Featured Posts, they're 465 wide by 225 high.
 4. Site Logo has a maximum height of 125.
 
+== Licensing ==
+
+Apostrophe bundles the following third-party resources:
+
+Genericons icon font, Copyright 2013 Automattic
+Licensed under the terms of the GNU GPL, Version 2 (or later)
+Source: http://www.genericons.com
+
+PT Serif font, Copyright ParaType 2010
+Licensed under the terms of the SIL Open Font License, 1.1
+Source: https://www.google.com/fonts/specimen/PT+Serif
+
+Open Sans Font, Copyright Steve Matteson
+Licensed under the terms of the Apache License, version 2.0
+Source: https://www.google.com/fonts/specimen/Open+Sans
+
+All images used in demo/screenshot are CC0.
+http://creativecommons.org/choose/zero/
+
+Shoes, Copyright Alejandro Escamilla
+Licensed under the terms of the Creative Commons CC0 License
+https://download.unsplash.com/3/alejandroescamilla-white-shoes.jpg
+
+Laundry, Copyright Charles L.
+Licensed under the terms of the Creative Commons CC0 License
+https://download.unsplash.com/32/90PZOijCSquhzM1A3cq8_photo.JPG
+
+Wedding Dress, Copyright NDGPhotoworks
+Licensed under the terms of the Creative Commons CC0 License
+https://pixabay.com/en/bridal-son-in-law-marriage-wedding-636018/
+
+Underwear, Copyright kheinz
+Licensed under the terms of the Creative Commons CC0 License
+https://pixabay.com/en/trousers-underwear-nostalgia-past-362781/
+
+
 == Changelog ==
 
-= 1.0.2 - May 29 2015 =
-* Remove Sass sources.
-* Clean up tab/space issues.
-* Prepare for .org submission.
+= 4 August 2015 =
 
-= 1.0.1 - May 29 2015 =
-* Ensure that all featured posts appear on the homepage.
-* Correct sizing of header image.
-* Use accurate screenshot.
-* Make sure elements are properly escaped.
-* Add a star to indicate sticky posts.
-* Centre site logo if site title is hidden.
 
-= 1.0 - May 21 2015 =
-* Initial release.
+= 3 August 2015 =
+* Update as per .org review.
 
-== Credits ==
+= 31 July 2015 =
+* Remove `.screen-reader-text:hover` and `.screen-reader-text:active` style rules.
 
-* Genericons: font by Automattic (http://automattic.com/), licensed under [GPL2](https://www.gnu.org/licenses/gpl-2.0.html)
+= 14 July 2015 =
+* Always use https when loading Google Fonts. See #3221;
+
+= 17 June 2015 =
+* Updated readme to reflect recent changes and version bump.
+
+= 15 June 2015 =
+* Updating version number for regenerated download.
+
+= 8 June 2015 =
+* Ensure that feature-starrer shows up correctly.
+
+= 5 June 2015 =
+* removing unneeded = from apostrophe_sanitize_checkbox
+* Fix JS issue introduced by PHPCS.
+
+= 4 June 2015 =
+* Escape data as per CodeSniffer output and convert spaces to tabs.
+* Remove scss source files and clean up stylesheet.
+
+= 29 May 2015 =
+* Generate language file.
+
+= 28 May 2015 =
+* Ensure that header images are being sized correctly.
+* Display site logo in center of header if site title is hidden.
+* Ensure that Featured Content displays on the front page.
+
+= 27 May 2015 =
+* Add star to indicate sticky posts.
+
+= 26 May 2015 =
+* Escape a few elements, now that I (sort of) know better. :)
+* Update with a screenshot showing the proper theme name.
+
+= 21 May 2015 =
+* Rename JS file so it loads properly.
+
+= 18 May 2015 =
+* Rename to "Apostrophe".

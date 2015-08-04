@@ -182,7 +182,7 @@ function apostrophe_fonts_url() {
 			'subset' => urlencode( 'latin,latin-ext,cyrillic' ),
 		);
 
-		$fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
+		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
 
 	endif;
 	return $fonts_url;
@@ -228,7 +228,6 @@ add_filter( 'shortcode_atts_gallery', 'apostrophe_shortcode_atts_gallery', 10, 3
  * largely irrelevant here, and may confuse users.
  */
 function apostrophe_body_class( $classes ) {
-	global $wp_customize;
 
 	if ( ! is_active_sidebar( 'sidebar-1' ) && ! is_active_sidebar( 'sidebar-2' ) && ! is_active_sidebar( 'sidebar-3' ) ) {
 		$classes[] = 'apostrophe-no-sidebar';
