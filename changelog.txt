@@ -1,5 +1,8 @@
 == Change log ==
 
+= 2.3 =
+* Added: Hungarian translation hu_HU.po and hu_HU.mo
+
 = 2.2.1 =
 * Bug Fixed: Featured Page Slider
 
