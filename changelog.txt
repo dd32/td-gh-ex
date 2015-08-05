@@ -1,5 +1,8 @@
 == Change Log ==
 
+= 2.0 =
+* Fix - Decrepted notice issue fixed in widgets for WordPress 4.3
+
 = 1.9 =
 * Fix - bbPress comment edit issue fixed 
 * Update - video/comment section spacing fixed
