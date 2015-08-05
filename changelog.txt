@@ -1,5 +1,9 @@
 == CHANGE LOG ==
 
+= 2.0.2 =
+- Fix - Decrepted notice issue fixed in widgets for WordPress 4.3
+- Update - video/comment section spacing fixed
+
 = 2.0.1 =
  - Fix - site-description closing tag fixed
  - Update - Screenshot Changed
