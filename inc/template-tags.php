@@ -113,12 +113,12 @@ function bhost_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', __( ', ', 'bhost' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'bhost' ) . '</span>', $tags_list );
+			printf( ' <span class="tags-links">' . __( 'Tagged %1$s', 'bhost' ) . '</span>', $tags_list );
 		}
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
+		echo ' <span class="comments-link">';
 		comments_popup_link( __( 'Leave a comment', 'bhost' ), __( '1 Comment', 'bhost' ), __( '% Comments', 'bhost' ) );
 		echo '</span>';
 	}

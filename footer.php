@@ -16,7 +16,7 @@
 			<div class="site-info">
 				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'bhost' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'bhost' ), 'WordPress' ); ?></a>
 				<span class="sep"> | </span>
-				<?php printf( __( 'Theme: %1$s by %2$s.', 'bhost' ), 'bhost', '<a href="http://masum.esy.es/" rel="designer">Masum Billah</a>' ); ?>
+				<?php printf( __( 'Theme: %1$s by %2$s.', 'bhost' ), 'bhost', '<a href="http://getmasum.net/" rel="designer">BHost Theme</a>' ); ?>
 			</div><!-- .site-info -->
 		</footer><!-- #footer -->
 	</div>

@@ -1,10 +1,10 @@
 /*
-Theme Name: bhost
-Theme URI: http://getmasum.esy.es/bhost
+Theme Name: BHost
+Theme URI: 
 Author: Masum Billah
-Author URI: http://getmasum.esy.es/
+Author URI: http://getmasum.net/
 Description: Responsive WordPress Theme.This theme made with Responsive Framework Skeleton v2.0.4. Used some css3 effects, Scroll Top option and many more.
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bhost
@@ -14,8 +14,6 @@ Tags: light, gray, white, one-column, two-columns, right-sidebar, fluid-layout, 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
 
 /*--------------------------------------------------------------
@@ -49,17 +47,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import url("css/hover.css");
 
 /*--------------------------------------------------------------
-1.0 Google fonts
---------------------------------------------------------------*/
-
-@import url(http://fonts.googleapis.com/css?family=Roboto);
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab);
-
-/*--------------------------------------------------------------
 1.0 Normalize
 --------------------------------------------------------------*/
 html {
-	font-family: sans-serif;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust:     100%;
 	
@@ -67,8 +57,8 @@ html {
 
 body {
 	margin: 0;
-	font-family: 'Roboto', sans-serif;	
-	
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
 }
 
 article,
@@ -301,7 +291,8 @@ h5,
 h6
 {
 	clear: both;
-	font-family: 'Roboto Slab', serif;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
 }
 
 p {
@@ -594,7 +585,7 @@ a:active {
 	background: #333333;
 	color: #fff;
 }
-.site-branding{padding: 3.5em;}
+.site-branding{padding: 3em;}
 
 .site-branding h1.site-title{
 	margin-bottom: 5px;
@@ -709,8 +700,8 @@ a:active {
 .main-navigation li ul li a{
 	color: #444;
 	display: block;
-	font-size: 14px;
-	padding: 9px 15px;
+	font-size: 13px;
+	padding: 5px 12px;
 	text-decoration: none;
 	text-transform: none;
 	width: 200px;
@@ -765,22 +756,22 @@ a:active {
 /*--------------------------------------------------------------
 5.2 Content
 --------------------------------------------------------------*/
-#content,.site-content{
-	background: #f7f7f7;
-	padding: 10px;
+#content, .site-content{
+	background: #fff;
+	padding: 15px;
 	border-top: 8px solid #dddddd;
 	border-bottom: 8px solid #dddddd;
 }
 article.single-post{
-	border-bottom: 3px solid #ddd;
-	padding-bottom:5em;
-	margin-bottom: 4em;
+	border-bottom: 1px solid #ddd;
+	padding-bottom:3em;
+	margin-bottom: 2.5em;
 }
 #primary, .content-area{
 	background: #fff;
 }
-#primary, #main{
-	padding: 10px;
+#primary{
+	padding: 5px 0;
 }
 h1.entry-title{
 	font-size: 2.5em;
@@ -942,14 +933,7 @@ h1.entry-title a:hover{
 	margin-right: 7px;
 	width: 5px;
 }
-.single-widget .widget-title:after{
-	background: none repeat scroll 0 0 #d10046;
-	content: "";
-	display: inline-block;
-	height: 15px;
-	margin-left: 7px;
-	width: 5px;
-}
+
 .single-widget ul{
 	margin: 0;
 	list-style: none;
@@ -990,7 +974,7 @@ h1.entry-title a:hover{
 	background: none repeat scroll 0 0 #222222;
 	color: #ffffff;
 	text-align: center;
-	padding: 3.5em;
+	padding: 3em;
 	font-size: 1.5em;
 }
 #footer a{
@@ -1040,7 +1024,7 @@ h1.entry-title a:hover{
 10.2 Asides
 --------------------------------------------------------------*/
 #secondary{
-	padding-top: 5em;
+	padding-top: 1em;
 }
 .single-widget{
 	background: #dddddd;

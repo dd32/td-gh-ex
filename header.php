@@ -31,12 +31,12 @@
 			<header id="masthead" class="site-header twelve columns" role="banner">
 				<div class="site-branding">
 					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="hvr-pulse"><?php bloginfo( 'name' ); ?></a></h1>
-					<h2 class="site-description hvr-grow-rotate"><?php bloginfo( 'description' ); ?></h2>
+					<p class="site-description hvr-grow-rotate"><?php bloginfo( 'description' ); ?></p>
 				</div><!-- .site-branding -->
 
 				<nav id="site-navigation" class="main-navigation hvr-bounce-to-bottom hvr-bounce-to-right" role="navigation">
 					<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Primary Menu', 'bhost' ); ?></button>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => 'default_menu' ) ); ?>
 				</nav><!-- #site-navigation -->
 			</header><!-- #masthead -->
 		</div>
