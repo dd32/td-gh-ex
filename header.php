@@ -29,8 +29,10 @@
 				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 			</div>
 
-			<div class="header-search-icon"></div>
-			<?php get_search_form(); ?>
+			<?php if ( get_theme_mod( 'radiate_header_search_hide', 0 ) == 0 ) { ?>
+				<div class="header-search-icon"></div>
+				<?php get_search_form();
+			} ?>
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">
 				<h4 class="menu-toggle"></h4>

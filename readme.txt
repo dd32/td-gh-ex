@@ -64,6 +64,12 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.1.7 =
+* Added option to hide header search icon.
+* Unwanted gap removed if featured section is not used.
+* Language pot file updated to include new strings.
+* Mobile device menu issue fixed.
+
 = Version 1.1.6 =
 * Added latest version of genericons(3.3.1).
 * Added HTML5 Markup theme support.
