@@ -4,7 +4,7 @@
  *
  * This file contains all the functions and it's defination that particularly can't be
  * in other files.
- * 
+ *
  * @package ThemeGrill
  * @subpackage Freedom
  * @since Freedom 1.0
@@ -35,10 +35,10 @@ function freedom_scripts_styles_method() {
 	/**
 	 * Register JQuery cycle js file for slider.
 	 */
-	wp_register_script( 'jquery_cycle', FREEDOM_JS_URL . '/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
-	
+	wp_register_script( 'jquery_cycle', FREEDOM_JS_URL . '/jquery.cycle.all.min.js', array( 'jquery' ), '3.0.3', true );
+
 	/**
-	 * Enqueue Slider setup js file.	 
+	 * Enqueue Slider setup js file.
 	 */
 	if ( is_front_page() && of_get_option( 'freedom_activate_slider', '0' ) == '1' ) {
 		wp_enqueue_script( 'freedom_slider', FREEDOM_JS_URL . '/freedom-slider-setting.js', array( 'jquery_cycle' ), false, true );
@@ -106,9 +106,9 @@ function freedom_gallery_atts( $out, $pairs, $atts ) {
 	), $atts );
 
 	$out['size'] = $atts['size'];
-	 
+
 	return $out;
- 
+
 }
 add_filter( 'shortcode_atts_gallery', 'freedom_gallery_atts', 10, 3 );
 
@@ -127,7 +127,7 @@ function freedom_body_class( $classes ) {
 
 	if( is_home() ) {
 		$queried_id = get_option( 'page_for_posts' );
-		$layout_meta = get_post_meta( $queried_id, 'freedom_page_layout', true ); 
+		$layout_meta = get_post_meta( $queried_id, 'freedom_page_layout', true );
 	}
 	if( empty( $layout_meta ) || is_archive() || is_search() ) { $layout_meta = 'default_layout'; }
 	$freedom_default_layout = of_get_option( 'freedom_default_layout', 'no_sidebar_full_width' );
@@ -157,7 +157,7 @@ function freedom_body_class( $classes ) {
 	elseif( $layout_meta == 'left_sidebar' ) { $classes[] = 'left-sidebar'; }
 	elseif( $layout_meta == 'no_sidebar_full_width' ) { $classes[] = 'no-sidebar-full-width'; }
 	elseif( $layout_meta == 'no_sidebar_content_centered' ) { $classes[] = 'no-sidebar'; }
-	
+
 	if( of_get_option( 'freedom_site_layout', 'wide' ) == 'wide' ) {
 		$classes[] = 'wide';
 	}
@@ -211,23 +211,28 @@ endif;
 
 if ( ! function_exists( 'freedom_entry_meta' ) ) :
 /**
- * Shows meta information of post. 
+ * Shows meta information of post.
  */
 function freedom_entry_meta() {
 	echo '<div class="entry-meta">';
 	?>
 	<span class="byline"><span class="author vcard"><i class="fa fa-user"></i><a class="url fn n" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo get_the_author(); ?>"><?php echo esc_html( get_the_author() ); ?></a></span></span>
-	<?php 
+	<?php
 
 	$categories_list = get_the_category_list( __( ', ', 'freedom' ) );
 	if ( $categories_list )	printf( __( '<span class="cat-links"><i class="fa fa-folder-open"></i>%1$s</span>', 'freedom' ), $categories_list );
 
 	echo '<span class="sep"></span>';
 
-	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+   $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+   if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+      $time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
+   }
 	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() )
+		esc_html( get_the_date() ),
+      esc_attr( get_the_modified_date( 'c' ) ),
+      esc_html( get_the_modified_date() )
 	);
 	printf( __( '<span class="posted-on"><a href="%1$s" title="%2$s" rel="bookmark"><i class="fa fa-calendar-o"></i> %3$s</a></span>', 'freedom' ),
 		esc_url( get_permalink() ),
@@ -257,10 +262,15 @@ function freedom_home_entry_meta() {
 	echo '<div class="entry-meta">';
 
 	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
-	$time_string = sprintf( $time_string,
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() )
-	);
+   if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+      $time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
+   }
+   $time_string = sprintf( $time_string,
+      esc_attr( get_the_date( 'c' ) ),
+      esc_html( get_the_date() ),
+      esc_attr( get_the_modified_date( 'c' ) ),
+      esc_html( get_the_modified_date() )
+   );
 	printf( __( '<span class="posted-on"><a href="%1$s" title="%2$s" rel="bookmark"><i class="fa fa-calendar-o"></i> %3$s</a></span>', 'freedom' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
@@ -281,9 +291,9 @@ add_action('wp_head', 'freedom_custom_css');
  * Hooks the Custom Internal CSS to head section
  */
 function freedom_custom_css() {
-	$freedom_internal_css = '';	
+	$freedom_internal_css = '';
 
-	$primary_color = of_get_option( 'freedom_primary_color', '#46c9be' );	
+	$primary_color = of_get_option( 'freedom_primary_color', '#46c9be' );
 	if( $primary_color != '#46c9be' ) {
 		$freedom_internal_css .= ' .feedom-button,blockquote,button,input[type=button],input[type=reset],input[type=submit]{background-color:'.$primary_color.'}#site-title a:hover,.next a:hover,.previous a:hover,a{color:'.$primary_color.'}#search-form span{background-color:'.$primary_color.'}.main-navigation a:hover,.main-navigation ul li ul li a:hover,.main-navigation ul li ul li:hover>a,.main-navigation ul li.current-menu-ancestor a,.main-navigation ul li.current-menu-item a,.main-navigation ul li.current-menu-item ul li a:hover,.main-navigation ul li.current_page_ancestor a,.main-navigation ul li.current_page_item a,.main-navigation ul li:hover>a,.site-header .menu-toggle:before{color:'.$primary_color.'}.main-small-navigation li a:hover,.main-small-navigation .current-menu-item a,.main-small-navigation .current_page_item a{background-color:'.$primary_color.'}#featured-slider .entry-title a:hover{color:'.$primary_color.'}#featured-slider .slider-read-more-button a{background-color:'.$primary_color.'}.slider-nav i:hover{color:'.$primary_color.'}.format-link .entry-content a,.pagination span{background-color:'.$primary_color.'}.pagination a span:hover{color:'.$primary_color.';border-color:'.$primary_color.'}#content .comments-area a.comment-edit-link:hover,#content .comments-area a.comment-permalink:hover,#content .comments-area article header cite a:hover,.comments-area .comment-author-link a:hover{color:'.$primary_color.'}.comments-area .comment-author-link span{background-color:'.$primary_color.'}.comment .comment-reply-link:hover,.nav-next a,.nav-previous a{color:'.$primary_color.'}#secondary h3.widget-title{border-bottom:2px solid '.$primary_color.'}#wp-calendar #today{color:'.$primary_color.'}.entry-meta .byline i,.entry-meta .cat-links i,.entry-meta a,.footer-socket-wrapper .copyright a:hover,.footer-widgets-area a:hover,.post .entry-title a:hover,.search .entry-title a:hover,.post-box .entry-meta .cat-links a:hover,.post-box .entry-meta .posted-on a:hover,.post.post-box .entry-title a:hover,a#scroll-up i{color:'.$primary_color.'}.entry-meta .post-format i{background-color:'.$primary_color.'}.entry-meta .comments-link a:hover,.entry-meta .edit-link a:hover,.entry-meta .posted-on a:hover,.entry-meta .tag-links a:hover{color:'.$primary_color.'}.more-link span{background-color:'.$primary_color.'}.single #content .tags a:hover{color:'.$primary_color.'}.no-post-thumbnail{background-color:'.$primary_color.'}@media screen and (max-width:768px){.top-menu-toggle:before{color:'.$primary_color.'}}';
 	}
@@ -307,7 +317,7 @@ add_filter('the_content_more_link', 'freedom_remove_more_jump_link');
 /**
  * Removing the more link jumping to middle of content
  */
-function freedom_remove_more_jump_link($link) { 
+function freedom_remove_more_jump_link($link) {
 	$offset = strpos($link, '#more-');
 	if ($offset) {
 		$end = strpos($link, '"',$offset);
@@ -417,7 +427,7 @@ function freedom_comment( $comment, $args, $depth ) {
 				<?php comment_text(); ?>
 				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'freedom' ), 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 			</section><!-- .comment-content -->
-			
+
 		</article><!-- #comment-## -->
 	<?php
 		break;

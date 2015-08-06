@@ -51,6 +51,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.0.4 =
+* Added HTML5 Markup theme support
+* Added the update class for Google Structured Data.
+
 = Version 1.0.3 =
 * Fontawesome icons updated to 4.3.0
 * JQuery Cycle js updated to latest version(3.0.3).
