@@ -44,32 +44,15 @@ get_template_part( 'featured-content' );
 
 <div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
-<?php global $badeyes_options;
-
-					$badeyes_settings = get_option( 'badeyes_options', $badeyes_options );
-
-				?>
-
-<?php if( $badeyes_settings['intro_text'] != '' ) : ?>
-
 <?php 
-echo $badeyes_settings['intro_text']; 
-?>
-
-<?php endif; ?>
-<?php global $badeyes_options;
-
-					$badeyes_settings = get_option( 'badeyes_options', $badeyes_options );
-				?>
-<?php if( $badeyes_settings['blog_title'] != '' ) : ?>
+echo get_theme_mod("blog" , "<h2>Badeyes Theme Blog Text Area</h2><p>Use this area to highlight something important you want to draw your visitors attention to, or just remove it in the Customize area in the backend.</p>"); 
+?> 
 <?php 
 echo "<h1 class=\"entry-title\">";
-echo $badeyes_settings['blog_title']; 
+echo get_theme_mod("blog_title" , "Blog Title Goes Here"); 
 echo "</h1>";
-?>
-<?php endif; ?>
+?> 
 <?php
-
 			if ( have_posts() ) :
 
 				// Start the Loop.

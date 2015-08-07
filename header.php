@@ -40,27 +40,12 @@
 <![endif]-->
 
 <?php wp_head(); ?>
-<?php
-global $badeyes_options;
-
-					$badeyes_settings = get_option( 'badeyes_options', $badeyes_options );
-
-				?>
-
-<?php if( $badeyes_settings['header_style'] != '' ) : ?>
-<?php 
-echo "<style type=\"text/css\">";
-echo $badeyes_settings['header_style']; 
-echo "</style>";
-?>
-<?php endif; ?>
-
 </head>
 <body <?php body_class(); ?>>
 <div id="access_bar" role="navigation" aria-label="Page">
 <ul class="navlist">
 
-<li id="top"><a href="#content">Main Content</a></li>
+<li id="top"><a href="#content"><?php _e('Main Content' , 'badeyes'); ?></a></li>
 
 	<?php if ( has_nav_menu( 'primary' ) ) : ?>
 
@@ -72,14 +57,12 @@ echo "</style>";
 <?php endif; ?>
 
 <?php if ( has_nav_menu( 'secondary' ) ) : ?>
-
-<li><a href="#secondary"><?php
-global $badeyes_options;
-
-					$badeyes_settings = get_option( 'badeyes_options', $badeyes_options );
-?><?php if( $badeyes_settings['side_nav'] != '' ) : ?>
-<?php echo $badeyes_settings['side_nav']; ?>
-<?php endif; ?></a></li>
+<?php if( get_theme_mod('side_menu') ): ?>
+<?php echo '<li><a href="#secondary">';
+echo get_theme_mod("side_menu" , "");
+echo '</a></li>';
+?>
+<?php endif; ?>
 <?php endif; ?>
 <li id="default"><a href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/styleswitcher.php?SETSTYLE=0" title="Click here to set Style 0"><span class="white">Default colours</span></a></li>
 <li id="high"><a href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/styleswitcher.php?SETSTYLE=1" title="Click here to set Style 1"><span class="black">High Contrast</span></a></li></ul>

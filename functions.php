@@ -1,5 +1,4 @@
 <?php
-require_once ( get_stylesheet_directory() . '/theme-options.php' );
 if ( ! class_exists( 'WP_List_Table' ) ) {
     require_once( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' );
 }
@@ -123,7 +122,7 @@ add_action( 'widgets_init', 'remove_twentyfourteen_widgets', 11 );
 function twentyfourteen_badeyes_widgets_init() {	
 
 include get_stylesheet_directory() . '/inc/widgets.php';
-
+include get_stylesheet_directory() . '/inc/customizer.php';
 register_widget( 'badeyes_twentyfourteen_child_Ephemera_Widget' );
 
 register_sidebar( array(
@@ -282,3 +281,13 @@ function my_theme_register_required_plugins() {
     tgmpa( $plugins, $config );
 
 }
+
+function badeyes_customize_css()
+{
+?>
+<style type="text/css">
+<?php echo get_theme_mod('styleSheet', ''); ?></style>
+<?php
+}
+add_action( 'wp_head', 'badeyes_customize_css');
+

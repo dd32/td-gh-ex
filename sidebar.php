@@ -27,19 +27,13 @@
 <?php if ( has_nav_menu( 'secondary' ) ) : ?>
 
 	<div role="navigation" aria-label="Global" class="navigation site-navigation secondary-navigation">
-
+<?php if( get_theme_mod('sideHeading') ): ?>
 <?php
-global $badeyes_options;
-
-					$badeyes_settings = get_option( 'badeyes_options', $badeyes_options );
+echo "<div id=\"secondary\"><h2>";
+echo get_theme_mod("sideHeading" , "");
+echo "</h2></div>";
 ?>
 
-<?php if( $badeyes_settings['side_heading'] != '' ) : ?>
-<?php 
-echo "<h2 class=\"sidebarH2\">";
-echo $badeyes_settings['side_heading']; 
-echo "</h2>";
-?>
 	<?php endif; ?>
 <div class="navigation">
 <?php wp_nav_menu( array( 'theme_location' => 'secondary' ) ); ?>

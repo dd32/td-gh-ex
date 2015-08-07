@@ -9,19 +9,12 @@
 ?>
 
 <div id="featured-content" class="featured-content">
-<?php
-global $badeyes_options;
-$badeyes_settings = get_option( 'badeyes_options', $badeyes_options );
-
-				?>
-
-<?php if( $badeyes_settings['featured_title'] != '' ) : ?>
-<?php
-echo "<h1>";
-echo $badeyes_settings['featured_title']; 
+<?php 
+echo "<h1 class=\"entry-title\">";
+echo get_theme_mod("featuredTitle" , "Featured Content Title Goes Here"); 
 echo "</h1>";
-?>
-<?php endif; ?>
+?> 
+
 	<div class="featured-content-inner">
 	<?php
 		/**

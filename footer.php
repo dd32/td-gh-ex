@@ -17,8 +17,7 @@
 ?>
 
 <div style="text-align: center;" class="navlist">
-
-<a href="#top">Back to top</a>
+<p><a href="#top"><?php _e('Back to top' , 'thePriority'); ?></a></p>
 </div>
 </div><!-- #main -->
 
@@ -33,36 +32,23 @@
 <?php endif; ?>
 
 </div>
-<footer id="colophon" class="site-footer" role="contentinfo">
+<footer id="colophon" class="site-footer">
 
 <div class="site-info">
 <div class="center">
-<?php 
-global $badeyes_options;
-$badeyes_settings = get_option( 'badeyes_options', $badeyes_options );
-?>
-
-<a href="<?php echo home_url( '/' ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-
-<?php echo $badeyes_settings['footer_copyright']; 
+<a href="<?php echo esc_url( home_url( '/' )); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php echo get_theme_mod("copyright" , "Copyright Since (start date goes here)");
 echo("".date('Y').", ");
     bloginfo('name');
-echo "All rights reserved";
-?>
-
-</a>
+echo "&nbsp;All rights reserved";
+?></a>
 </div>
+
 </div><!-- .site-info -->
 
 			<div id="site-generator">
-
-				<?php do_action( 'twentyten_credits' ); ?>
-
-                <?php if( $badeyes_settings['author_credits'] ) : ?>
-<div class="center"><p>This Accessible 2014 Child Theme created by <?php echo "<a href=\"http://www.badeyes.com\">Badeyes Design &amp; Consulting</a>"; ?></p></div>
-<?php endif; ?>
-
-			</div><!-- #site-generator -->
+<div class="center"<?php echo ( get_theme_mod( 'author_credits' ) ) ? "style='display:none;'" : "" ?>><p>This Accessible 2014 Child Theme created by <?php echo "<a href=\"http://www.badeyes.com\">Badeyes Design &amp; Consulting</a>"; ?></p>
+</div>
+</div><!-- #site-generator -->
 </footer><!-- #colophon -->
 </div><!-- #page -->
 

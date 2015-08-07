@@ -23,20 +23,10 @@ get_header(); ?>
 ?>
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
-<?php
-global $badeyes_options;
-
-					$badeyes_settings = get_option( 'badeyes_options', $badeyes_options );
-
-				?>
-
-<?php if( $badeyes_settings['page_text'] != '' ) : ?>
-
 <?php 
-echo $badeyes_settings['page_text']; 
-?>
+echo get_theme_mod("page" , "<h2>Badeyes Theme Page Text Area</h2><p>Use this area to highlight something important you want to draw your visitors attention to, or just remove it in the Customize area in the backend.</p>"); 
+?> 
 
-<?php endif; ?>
 <?php
 				// Start the Loop.
 				while ( have_posts() ) : the_post();
