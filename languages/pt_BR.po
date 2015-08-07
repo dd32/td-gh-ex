@@ -4,9 +4,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Adventurous\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-01 21:00-0500\n"
-"PO-Revision-Date: 2015-06-01 21:00-0500\n"
-"Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
+"POT-Creation-Date: 2015-08-07 11:06+0545\n"
+"PO-Revision-Date: 2015-08-07 11:06+0545\n"
+"Last-Translator: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language-Team: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -717,15 +717,13 @@ msgid "Footer Area Four"
 msgstr "Área do Rodapé - Quatro"
 
 #: ../inc/adventurous-widgets.php:88
-msgid ""
-"Use this widget to add Social Icons from Social Icons Settings as a widget. "
-msgstr ""
-"Utilize esta ferramenta para adicionar ícones sociais, configurando os "
-"ícones sociais como um widget."
+msgid "CT: Social Icons"
+msgstr "CT: Ícones sociais"
 
 #: ../inc/adventurous-widgets.php:89
-msgid "1. Adventurous: Social"
-msgstr "1. Adventurous: Social"
+msgid ""
+"Use this widget to add Social Icons from Social Icons Settings as a widget."
+msgstr "Utilize esta ferramenta para adicionar ícones sociais como um widget."
 
 #: ../inc/adventurous-widgets.php:102
 msgid "Title (optional):"
@@ -907,7 +905,7 @@ msgstr "URL do seu ícone Favicon:"
 
 #: ../inc/panel/adventurous-theme-options.php:151
 msgid "Insert as Fav Icon"
-msgstr "Insert as Fav Icon"
+msgstr "Inserir como ícone favorito (Favicon)"
 
 #: ../inc/panel/adventurous-theme-options.php:151
 msgid "Change Fav Icon"
@@ -1015,7 +1013,7 @@ msgstr "URL do logotipo"
 
 #: ../inc/panel/adventurous-theme-options.php:273
 msgid "Insert as Logo"
-msgstr "Insert as Logo"
+msgstr "Inserir logotipo"
 
 #: ../inc/panel/adventurous-theme-options.php:273
 msgid "Change Logo"
@@ -1347,7 +1345,8 @@ msgstr "Subtítulo da manchete da página inicial"
 
 #: ../inc/panel/adventurous-theme-options.php:782
 msgid "Leave empty if you want to remove Subheadline"
-msgstr "Leave empty if you want to remove Subheadline"
+msgstr ""
+"Deixe em branco se você quiser remover o subtítulo de apresentação (manchete)"
 
 #: ../inc/panel/adventurous-theme-options.php:790
 msgid "Number of Featured Content"
@@ -1376,7 +1375,7 @@ msgstr "Conteúdo em destaque #%s"
 
 #: ../inc/panel/adventurous-theme-options.php:834
 msgid "Insert Image"
-msgstr "Insert Image"
+msgstr "Inserir imagem"
 
 #: ../inc/panel/adventurous-theme-options.php:834
 msgid "Change Image"
@@ -1484,7 +1483,7 @@ msgstr "Efeito sobrepor"
 
 #: ../inc/panel/adventurous-theme-options.php:959
 msgid "shuffle"
-msgstr "Efeito micelânia"
+msgstr "Efeito passar a imagem da frente para trás"
 
 #: ../inc/panel/adventurous-theme-options.php:965
 msgid "Transition Delay"
@@ -1590,7 +1589,7 @@ msgstr "Soundcloud"
 
 #: ../inc/panel/adventurous-theme-options.php:1772
 msgid "More Theme Options &raquo;"
-msgstr "More Theme Options &raquo;"
+msgstr "Mais opções de temas $raquo;"
 
 #: ../no-results.php:15
 msgid "Nothing Found"
@@ -1634,6 +1633,16 @@ msgstr "Pesquisar"
 #, php-format
 msgid "%s"
 msgstr "%s"
+
+#~ msgid ""
+#~ "Use this widget to add Social Icons from Social Icons Settings as a "
+#~ "widget. "
+#~ msgstr ""
+#~ "Utilize esta ferramenta para adicionar ícones sociais, configurando os "
+#~ "ícones sociais como um widget."
+
+#~ msgid "1. Adventurous: Social"
+#~ msgstr "1. Adventurous: Social"
 
 #~ msgid "Upload Fav Icon"
 #~ msgstr "Fazer upload do Favicon"

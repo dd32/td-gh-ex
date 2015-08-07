@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Adventurous\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-01 21:00-0500\n"
-"PO-Revision-Date: 2015-06-01 21:00-0500\n"
+"POT-Creation-Date: 2015-08-07 11:05+0545\n"
+"PO-Revision-Date: 2015-08-07 11:05+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: en_US\n"
@@ -682,12 +682,12 @@ msgid "Footer Area Four"
 msgstr ""
 
 #: ../inc/adventurous-widgets.php:88
-msgid ""
-"Use this widget to add Social Icons from Social Icons Settings as a widget. "
+msgid "CT: Social Icons"
 msgstr ""
 
 #: ../inc/adventurous-widgets.php:89
-msgid "1. Adventurous: Social"
+msgid ""
+"Use this widget to add Social Icons from Social Icons Settings as a widget."
 msgstr ""
 
 #: ../inc/adventurous-widgets.php:102

@@ -1,5 +1,12 @@
 == Changelog ==
 
+Version 1.6.2
+* Bug Fixed: Layout of Error 404 and No Result Found page
+* Bug Fixed: Footer widget issue in Mobile devices ( Reported By Haydie )
+* Bug Fixed: Masthead content issue when scrolling down ( Reported By Haydie ) 
+* Updated Brazilian Portuguese translation pt_BR.po and pt_BR.mo
+* Updated codes to comply with deprecating PHP4 style constructors in WordPress 4.3
+
 Version 1.6.1
 * Removed jQuery waypoint script
 * Updated custom scripts to fix the fixed header issue

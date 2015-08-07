@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Adventurous\n"
-"POT-Creation-Date: 2015-06-01 21:00-0500\n"
+"POT-Creation-Date: 2015-08-07 11:05+0545\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: \n"
@@ -714,15 +714,13 @@ msgid "Footer Area Four"
 msgstr "Footerruimte 4"
 
 #: ../inc/adventurous-widgets.php:88
-msgid ""
-"Use this widget to add Social Icons from Social Icons Settings as a widget. "
+msgid "CT: Social Icons"
 msgstr ""
-"Gebruik deze widget om de social media-iconen uit '\"Social-media iconen\" "
-"toe te voegen"
 
 #: ../inc/adventurous-widgets.php:89
-msgid "1. Adventurous: Social"
-msgstr "1. Adventurous: Social"
+msgid ""
+"Use this widget to add Social Icons from Social Icons Settings as a widget."
+msgstr ""
 
 #: ../inc/adventurous-widgets.php:102
 msgid "Title (optional):"
@@ -1591,6 +1589,16 @@ msgstr "Zoeken"
 #, php-format
 msgid "%s"
 msgstr "%s"
+
+#~ msgid ""
+#~ "Use this widget to add Social Icons from Social Icons Settings as a "
+#~ "widget. "
+#~ msgstr ""
+#~ "Gebruik deze widget om de social media-iconen uit '\"Social-media iconen"
+#~ "\" toe te voegen"
+
+#~ msgid "1. Adventurous: Social"
+#~ msgstr "1. Adventurous: Social"
 
 #~ msgid "Upload Fav Icon"
 #~ msgstr "Upload Favicon"

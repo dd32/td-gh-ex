@@ -80,14 +80,14 @@ add_action( 'widgets_init', 'adventurous_widgets_init' );
 class adventurous_social_widget extends WP_Widget {
 	
 	/**
-	 * Constructor
-	 *
-	 * @return void
-	 **/
-	function adventurous_social_widget() {
-		$widget_ops = array( 'classname' => 'widget_adventurous_social_widget', 'description' => __( 'Use this widget to add Social Icons from Social Icons Settings as a widget. ', 'adventurous' ) );
-		$this->WP_Widget( 'widget_adventurous_social_widget', __( '1. Adventurous: Social', 'adventurous' ), $widget_ops );
-		$this->alt_option_name = 'widget_adventurous_social_widget';
+	 * Register widget with WordPress.
+	 */
+	function __construct() {
+		parent::__construct(
+			'widget_adventurous_social_widget', // Base ID
+			__( 'CT: Social Icons', 'adventurous' ), // Name
+			array( 'description' => __( 'Use this widget to add Social Icons from Social Icons Settings as a widget.', 'adventurous' ) ) // Args
+		);
 	}
 
 	/**

@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Adventurous\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-01 21:00-0500\n"
-"PO-Revision-Date: 2015-06-01 21:00-0500\n"
+"POT-Creation-Date: 2015-08-07 11:06+0545\n"
+"PO-Revision-Date: 2015-08-07 11:06+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Piotrekkk <fansitejustgames@gmail.com>\n"
 "Language: pl\n"
@@ -721,15 +721,13 @@ msgid "Footer Area Four"
 msgstr "Obszar cztery stopki"
 
 #: ../inc/adventurous-widgets.php:88
-msgid ""
-"Use this widget to add Social Icons from Social Icons Settings as a widget. "
-msgstr ""
-"Użyj ten widżet, aby dodać ikony społecznościowe (ustawione w odpowiedniej "
-"zakładce) jak widget."
+msgid "CT: Social Icons"
+msgstr "CT: Social Icons"
 
 #: ../inc/adventurous-widgets.php:89
-msgid "1. Adventurous: Social"
-msgstr "1. Adventurous: Social"
+msgid ""
+"Use this widget to add Social Icons from Social Icons Settings as a widget."
+msgstr ""
 
 #: ../inc/adventurous-widgets.php:102
 msgid "Title (optional):"
@@ -1590,6 +1588,16 @@ msgstr "Szukaj"
 #, php-format
 msgid "%s"
 msgstr "%s"
+
+#~ msgid ""
+#~ "Use this widget to add Social Icons from Social Icons Settings as a "
+#~ "widget. "
+#~ msgstr ""
+#~ "Użyj ten widżet, aby dodać ikony społecznościowe (ustawione w "
+#~ "odpowiedniej zakładce) jak widget."
+
+#~ msgid "1. Adventurous: Social"
+#~ msgstr "1. Adventurous: Social"
 
 #~ msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 #~ msgstr "Czytaj dalej <span class=\"meta-nav\">&rarr;</span>"
