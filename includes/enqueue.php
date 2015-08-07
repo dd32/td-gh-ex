@@ -11,8 +11,8 @@ add_action( 'wp_enqueue_scripts', 'boxy_fontawesome' );
 add_action( 'redux/page/boxy/enqueue', 'boxy_fontawesome' );
 
 function boxy_scripts() {
-	wp_enqueue_style( 'boxy-font-ptsans', '//fonts.googleapis.com/css?family=PT+Sans:400,700' );
-	wp_enqueue_style( 'boxy-font-roboto-slab', '//fonts.googleapis.com/css?family=Roboto+Slab:400,700' );
+	wp_enqueue_style( 'boxy-font-ptsans', boxy_theme_font_url('PT Sans:400,700'), array(), 20150807 );
+	wp_enqueue_style( 'boxy-font-roboto-slab', boxy_theme_font_url('Roboto Slab:400,700'), array(), 20150807 );
 	wp_enqueue_style( 'boxy-flexslider', BOXY_PARENT_URL . '/css/flexslider.css' );
 	wp_enqueue_style( 'boxy-style', get_stylesheet_uri() );
 
@@ -44,6 +44,24 @@ function boxy_scripts() {
 	}	
 }
 add_action( 'wp_enqueue_scripts', 'boxy_scripts' );
+
+/**
+ * Register Google fonts.
+ *
+ * @return string
+ */
+function boxy_theme_font_url($font) {
+	$font_url = '';
+	/*
+	 * Translators: If there are characters in your language that are not supported
+	 * by Font, translate this to 'off'. Do not translate into your own language.
+	 */
+	if ( 'off' !== _x( 'on', 'Font: on or off', 'colorist' ) ) {
+		$font_url = esc_url( add_query_arg( 'family', urlencode($font), "//fonts.googleapis.com/css" ) );
+	}
+
+	return $font_url;
+}
 
 function boxy_admin_style() {
 	wp_enqueue_style( 'boxy-admin', BOXY_PARENT_URL . '/css/admin.css' );
