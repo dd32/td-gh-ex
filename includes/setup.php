@@ -69,7 +69,7 @@ function cpotheme_customizer_controls($data){
 	$data['home_posts']['default'] = true;
 	$data['home_features']['default'] = '';
 	$data['layout_style'] = array(
-	'label' => __('Layout Style', 'cpotheme'),
+	'label' => __('Layout Style', 'cpocore'),
 	'section' => 'cpotheme_layout_general',
 	'type' => 'select',
 	'choices' => cpotheme_metadata_layoutstyle(),
@@ -108,8 +108,8 @@ function cpotheme_background_args($data){
 
 function cpotheme_metadata_layoutstyle(){
 	$cpotheme_data = array(
-	'fixed' => __('Fixed', 'cpotheme'),
-	'boxed' => __('Boxed', 'cpotheme'));
+	'fixed' => __('Fixed', 'cpocore'),
+	'boxed' => __('Boxed', 'cpocore'));
 	return $cpotheme_data;
 }
 
