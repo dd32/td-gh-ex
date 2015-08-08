@@ -31,8 +31,6 @@ function generate_customize_register( $wp_customize ) {
 		$wp_customize->get_section('static_front_page')->priority = 10;
 	endif;
 	
-	$wp_customize->get_section('nav')->priority = 5;
-	$wp_customize->get_section('nav')->title = __( 'Set Navigation', 'generate' );
 	$wp_customize->remove_section('background_image');
 	$wp_customize->remove_section('colors');
 	
