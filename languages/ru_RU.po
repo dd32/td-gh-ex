@@ -4,15 +4,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-06 01:46+0545\n"
-"PO-Revision-Date: 2014-07-06 01:47+0545\n"
+"POT-Creation-Date: 2015-08-09 21:35+0545\n"
+"PO-Revision-Date: 2015-08-09 21:35+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team:  <kurpachev@gmail.com>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Poedit 1.7.1\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_x;_ex;_n;esc_attr_e;"
 "esc_attr__\n"
 "X-Poedit-Basepath: .\n"
@@ -940,28 +940,28 @@ msgid "sidebar"
 msgstr "боковая панель"
 
 #: ../functions/widgets.php:41
-msgid "Displays Custom Tag Cloud designed for Simple Catch Theme."
-msgstr "Displays Custom Tag Cloud designed for Simple Catch Theme."
+msgid "CT: Tag Clouds"
+msgstr ""
 
 #: ../functions/widgets.php:42
-msgid "1. Simple Catch: Tag Clouds"
-msgstr "1. Simple Catch: Tag Clouds"
+msgid "Displays Custom Tag Cloud designed for Simple Catch Theme"
+msgstr ""
 
 #: ../functions/widgets.php:124
-msgid "Displays Social Icons added from Theme Options Panel."
-msgstr "Displays Social Icons added from Theme Options Panel."
+msgid "CT: Social Icons"
+msgstr ""
 
 #: ../functions/widgets.php:125
-msgid "2. Simple Catch: Social Icons"
-msgstr "2. Simple Catch: Social Icons"
+msgid "Displays Social Icons added from Theme Options Panel"
+msgstr ""
 
 #: ../functions/widgets.php:208
-msgid "Use this widget to add any type of Advertisement as a widget."
-msgstr "Use this widget to add any type of Advertisement as a widget."
+msgid "CT: Advertisement"
+msgstr ""
 
 #: ../functions/widgets.php:209
-msgid "3. Simple Catch: Advertisement"
-msgstr "3. Simple Catch: Advertisement"
+msgid "Use this widget to add any type of Advertisement as a widget"
+msgstr ""
 
 #: ../functions/widgets.php:227
 msgid "Title (optional):"
@@ -1026,6 +1026,24 @@ msgstr "Попробуйте различные ключевые слова"
 #: ../search.php:39
 msgid "Try more general keywords"
 msgstr "Попробуйте более общие ключевые слова"
+
+#~ msgid "Displays Custom Tag Cloud designed for Simple Catch Theme."
+#~ msgstr "Displays Custom Tag Cloud designed for Simple Catch Theme."
+
+#~ msgid "1. Simple Catch: Tag Clouds"
+#~ msgstr "1. Simple Catch: Tag Clouds"
+
+#~ msgid "Displays Social Icons added from Theme Options Panel."
+#~ msgstr "Displays Social Icons added from Theme Options Panel."
+
+#~ msgid "2. Simple Catch: Social Icons"
+#~ msgstr "2. Simple Catch: Social Icons"
+
+#~ msgid "Use this widget to add any type of Advertisement as a widget."
+#~ msgstr "Use this widget to add any type of Advertisement as a widget."
+
+#~ msgid "3. Simple Catch: Advertisement"
+#~ msgstr "3. Simple Catch: Advertisement"
 
 #~ msgid "http://facebook.com/catchthemes"
 #~ msgstr "http://facebook.com/catchthemes"

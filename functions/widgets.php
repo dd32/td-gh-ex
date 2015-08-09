@@ -33,15 +33,15 @@ add_action( 'widgets_init', 'simplecatch_widgets_init' );
 class CustomTagWidget extends WP_Widget {
 		
 	/**
-	 * Constructor
-	 *
-	 * @return void
-	 **/
-	function CustomTagWidget() {
-		$widget_ops = array( 'classname' => 'simplecatch_tag_widget', 'description' => __( 'Displays Custom Tag Cloud designed for Simple Catch Theme.', 'simplecatch' ) );
-		$this->WP_Widget( 'simplecatch_tag_widget', __( '1. Simple Catch: Tag Clouds', 'simplecatch' ), $widget_ops );
-		$this->alt_option_name = 'simplecatch_tag_widget';
-	}		
+	 * Register widget with WordPress.
+	 */
+	function __construct() {
+		parent::__construct(
+			'simplecatch_tag_widget', // Base ID
+			__( 'CT: Tag Clouds', 'simplecatch' ), // Name
+			array( 'description' => __( 'Displays Custom Tag Cloud designed for Simple Catch Theme', 'simplecatch' ) ) // Args
+		);
+	}
 		
 	/**
 	 * Displays the Widget in the front-end.
@@ -116,15 +116,15 @@ class CustomTagWidget extends WP_Widget {
 class simplecatch_social_widget extends WP_Widget {
 
 	/**
-	 * Constructor
-	 *
-	 * @return void
-	 **/
-	function simplecatch_social_widget() {
-		$widget_ops = array( 'classname' => 'simplecatch_social_widget', 'description' => __( 'Displays Social Icons added from Theme Options Panel.', 'simplecatch' ) );
-		$this->WP_Widget( 'simplecatch_social_widget', __( '2. Simple Catch: Social Icons', 'simplecatch' ), $widget_ops );
-		$this->alt_option_name = 'simplecatch_social_widget';
-	}	
+	 * Register widget with WordPress.
+	 */
+	function __construct() {
+		parent::__construct(
+			'simplecatch_social_widget', // Base ID
+			__( 'CT: Social Icons', 'simplecatch' ), // Name
+			array( 'description' => __( 'Displays Social Icons added from Theme Options Panel', 'simplecatch' ) ) // Args
+		);
+	}
 	
 	/**
 	 * Displays the Widget in the front-end.
@@ -200,14 +200,14 @@ class simplecatch_social_widget extends WP_Widget {
 class simplecatch_adspace_widget extends WP_Widget {
 	
 	/**
-	 * Constructor
-	 *
-	 * @return void
-	 **/
-	function simplecatch_adspace_widget() {
-		$widget_ops = array( 'classname' => 'widget_simplecatch_adspace_widget', 'description' => __( 'Use this widget to add any type of Advertisement as a widget.', 'simplecatch' ) );
-		$this->WP_Widget( 'widget_simplecatch_adspace_widget', __( '3. Simple Catch: Advertisement', 'simplecatch' ), $widget_ops );
-		$this->alt_option_name = 'widget_simplecatch_adspace_widget';
+	 * Register widget with WordPress.
+	 */
+	function __construct() {
+		parent::__construct(
+			'widget_simplecatch_adspace_widget', // Base ID
+			__( 'CT: Advertisement', 'simplecatch' ), // Name
+			array( 'description' => __( 'Use this widget to add any type of Advertisement as a widget', 'simplecatch' ) ) // Args
+		);
 	}
 
 	/**
