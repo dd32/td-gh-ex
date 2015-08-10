@@ -39,9 +39,9 @@
 					
 							<div class="blog-info">
 							
-								<h1 class="blog-title">
+								<h2 class="blog-title">
 									<a href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?> &mdash; <?php echo esc_attr( get_bloginfo( 'description' ) ); ?>" rel="home"><?php echo esc_attr( get_bloginfo( 'title' ) ); ?></a>
-								</h1>
+								</h2>
 								
 								<?php if ( get_bloginfo( 'description' ) ) { ?>
 								

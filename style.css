@@ -1,7 +1,9 @@
+@charset "UTF-8";
+
 /*---------------------------------------------------------------------------------
 
 	Theme Name: Hemingway
-	Version: 1.48
+	Version: 1.50
 	Description: Hemingway is a clean, beautiful and responsive two-column theme for bloggers. Features responsive design, retina-ready assets, full-width header image with parallax scrolling effect, custom accent color, custom logo upload, custom widgets (video, Flickr and Dribbble), page templates and translation-ready code. Included translations: Swedish/svenska.
 	Tags: black, dark, white, green, two-columns, fluid-layout, responsive-layout, custom-header, custom-menu, custom-colors, featured-images, flexible-header, post-formats, sticky-post, threaded-comments, translation-ready, editor-style
 	Author: Anders Norén
@@ -384,7 +386,7 @@ a.more-link,
 }
 
 .blog-menu ul > .has-children:hover::after,
-.blog-menu ul > .page_item_has_children:hover::after { border-right-color: #FFF; }
+.blog-menu ul > .page_item_has_children:hover::after { border-left-color: #FFF; }
 
 .blog-menu ul li { 	
 	width: 240px; 
@@ -450,7 +452,10 @@ a.more-link,
 .featured-media a,
 .featured-media img { display: block; }
 
-.featured-media img { border-radius: 4px; }
+.featured-media img { 
+	border-radius: 4px; 
+	margin: 0 auto;
+}
 
 .featured-media iframe { 
 	display: block;
@@ -550,12 +555,15 @@ a.more-link,
 }
 
 
-/* Post format aside --------------------------------------- */
+/* Post format aside & video --------------------------------------- */
 
 
 .blog .format-aside .post-meta,
 .archive .format-aside .post-meta,
-.search .format-aside .post-meta { text-align: center; }
+.search .format-aside .post-meta,
+.blog .format-video .post-meta,
+.archive .format-video .post-meta,
+.search .format-video .post-meta { text-align: center; }
 
 .blog .format-aside .post-content,
 .archive .format-aside .post-content,
@@ -761,8 +769,8 @@ a.more-link,
 
 .post-nav-newer h5 { text-align: right; }
 
-.post-nav-newer,
-a.post-nav-newer { float: right; text-align: right; }
+.post-nav-older { float: left; }
+.post-nav-newer { float: right; text-align: right; }
 
 .post-nav a:hover { color: #1abc9c; }
 
@@ -1457,7 +1465,24 @@ p.form-allowed-tags {
 	line-height: 160%
 }
 
-.form-submit { margin-top: 1.5em; }
+.comment-form p.form-submit { margin: 1.5em 0 0; }
+
+
+/* In Commentlist */
+
+
+.commentlist .comment-respond { 
+	margin: 25px 0; 
+	padding-bottom: 25px;
+	border-bottom: 1px solid #eee;
+}
+
+.commentlist .comment-reply-title { margin-bottom: 10px; }
+
+.commentlist p.comment-notes,
+.commentlist p.logged-in-as {
+	margin-bottom: 20px;
+}
 
 
 /* -------------------------------------------------------------------------------- */
