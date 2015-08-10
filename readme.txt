@@ -96,6 +96,9 @@ Social networks that aren't currently supported will be indicated by a generic s
 
 == Changelog ==
 
+= 1.0.2 - August 2015 =
+* Improve accessibility
+
 = 1.0.1 - July 2015 =
 * Declare copyright and license explicitly.
 * Make sure escape custom header image attributes.

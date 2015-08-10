@@ -7,12 +7,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/1.0-alpha-1000\n"
+"X-Generator: GlotPress/1.0-alpha-1100\n"
 "Project-Id-Version: Afterlight\n"
-
-#: functions.php:264
-msgid "Menu &amp; Widgets"
-msgstr ""
 
 #. Description of the plugin/theme
 #: wp-content/themes/pub/afterlight/style.css
@@ -65,16 +61,6 @@ msgctxt "Used before tag names."
 msgid "Tags"
 msgstr "Etiketlər"
 
-#: inc/template-tags.php:104
-msgctxt "Used before project type names."
-msgid "Project Types"
-msgstr ""
-
-#: inc/template-tags.php:112
-msgctxt "Used before project tag names."
-msgid "Project Tags"
-msgstr ""
-
 #: inc/template-tags.php:123
 msgctxt "Used before full size attachment link."
 msgid "Full size"
@@ -108,25 +94,9 @@ msgstr "Ən yeni Şərhlər"
 msgid "Older Comments"
 msgstr "Əvvəlki şərhlər"
 
-#: inc/customizer.php:40
-msgid "Add an overlay to background."
-msgstr ""
-
-#: inc/customizer.php:56
-msgid "Scale background image to fit."
-msgstr ""
-
 #: inc/template-tags.php:21
 msgid "Comment navigation"
 msgstr "Şərh naviqasiyası"
-
-#: inc/back-compat.php:36 inc/back-compat.php:46 inc/back-compat.php:59
-msgid "Afterlight requires at least WordPress version 4.1. You are running version %s. Please upgrade and try again."
-msgstr ""
-
-#: inc/customizer.php:24
-msgid "Tagline is hidden in this theme."
-msgstr ""
 
 #: inc/customizer.php:28
 msgid "Theme"
@@ -168,10 +138,6 @@ msgstr "uşaq mövzusunu genişlət"
 msgctxt "Inconsolata font: on or off"
 msgid "on"
 msgstr "açıq"
-
-#: functions.php:169
-msgid "Add widgets here to appear in your off-screen panel."
-msgstr ""
 
 #. translators: If there are characters in your language that are not supported
 #. by Playfair Display, translate this to 'off'. Do not translate into your own
@@ -246,10 +212,6 @@ msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] "&ldquo;%2$s&rdquo; üzərinə bir şərh"
 msgstr[1] "&ldquo;%2$s&rdquo; üzərinə %1$s şərh"
-
-#: author-bio.php:27
-msgid "Published by:"
-msgstr ""
 
 #: author-bio.php:32
 msgid "View all posts by %s"

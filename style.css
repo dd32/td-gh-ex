@@ -1,15 +1,24 @@
 /*
 Theme Name: Afterlight
 Theme URI: https://wordpress.com/themes/afterlight/
-Description: Afterlight is a monochromatic blog theme with an option for a full-screen background image. Add your favorite background image or color to lend your personal flair.
-Version: 1.0.1
 Author: Automattic
 Author URI: https://wordpress.com/themes/
+Description: Afterlight is a monochromatic blog theme with an option for a full-screen background image. Add your favorite background image or color to lend your personal flair.
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: afterlight
 Tags: white, dark, one-column, fixed-layout, responsive-layout, accessibility-ready, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, rtl-language-support, sticky-post, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Afterlight is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
+
 
 /**
  * Table of Contents
@@ -802,8 +811,8 @@ a:visited {
 	text-decoration: none;
 }
 
-a:hover,
-a:focus {
+a:not([class*="screen-reader-"]):hover,
+a:not([class*="screen-reader-"]):focus {
 	opacity: 0.8;
 }
 
