@@ -16,7 +16,7 @@
 			<header class="entry-header">
 				
 				<?php // Attachments
-				if ( ! post_password_required() && ! is_attachment() && get_the_post_thumbnail() ) :
+				if ( ! post_password_required() && ! is_attachment() && get_the_post_thumbnail() && ! is_search() ) :
 					// Output Post Thumbnail
 					if( get_theme_mod('agama_blog_layout') == 'list' ):
 						echo '<figure class="effect-bubba" data-src="'.agama_return_image_src('agama-blog-large').'">';
@@ -42,7 +42,7 @@
 				endif; ?>
 				
 				
-				<?php if( get_theme_mod('agama_blog_layout', 'list') == 'grid' ): ?>
+				<?php if( get_theme_mod('agama_blog_layout', 'list') == 'grid' ): // Grid layout ?>
 				
 					<?php if ( is_single() ) : ?>
 					<h1 class="entry-title"><?php the_title(); ?></h1>
@@ -74,21 +74,14 @@
 			
 			<div class="article-entry-wrapper">
 				
-				<?php if ( is_sticky() && is_home() && ! is_paged() ) : // Sticky post ?>
+				<?php if ( is_sticky() && is_home() && ! is_paged() ) { // Sticky post ?>
 				<div class="featured-post">
 					<?php _e( 'Featured post', 'agama' ); ?>
 				</div>
-				<?php endif; ?>
-
-				
-				<?php if ( is_search() ) : // Only display Excerpts for Search ?>
-				<div class="entry-summary">
-					<?php the_excerpt(); ?>
-				</div><!-- .entry-summary -->
-				<?php else : ?>
+				<?php } ?>
 				
 				<?php
-				if( get_theme_mod('agama_blog_layout', 'list') !== 'grid' ):
+				if( get_theme_mod('agama_blog_layout', 'list') == 'list' ):
 				/**
 				 * agama_blog_post_date_and_format hook
 				 *
@@ -135,7 +128,7 @@
 					<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'agama' ), 'after' => '</div>' ) ); ?>
 				</div><!-- .entry-content -->
 				
-				<?php endif; ?>
+				<?php //endif; ?>
 
 				<footer class="entry-meta">
 					<?php edit_post_link( __( 'Edit', 'agama' ), '<span class="edit-link">', '</span>' ); ?>

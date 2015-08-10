@@ -28,7 +28,7 @@ if( ! class_exists( 'Agama_Core' ) ) {
 
 			// Set up Agama version
 			if( !defined( 'AGAMA_VER' ) ) {
-				define( 'AGAMA_VER', '1.0.6' );
+				define( 'AGAMA_VER', '1.0.7' );
 			}
 			
 			// Defina Agama URI
@@ -98,16 +98,6 @@ if( ! class_exists( 'Agama_Core' ) ) {
 			wp_register_script( 'bootstrap', AGAMA_JS.'bootstrap.min.js', array( 'jquery' ) );
 			 wp_enqueue_script( 'bootstrap' );
 			
-			if( get_theme_mod('agama_sticky_header', false) ) {
-				// Classie - in footer
-				wp_register_script( 'classie', AGAMA_JS.'classie.min.js', array(), null, true );
-				 wp_enqueue_script( 'classie' );
-				
-				// Animated Header - in footer
-				wp_register_script( 'stickyHeader', AGAMA_JS.'stickyHeader.min.js', array(), null, true );
-				 wp_enqueue_script( 'stickyHeader' );
-			}
-			
 			// NiceScroll
 			wp_register_script( 'NiceScroll', AGAMA_JS.'jquery.nicescroll.min.js' );
 			 wp_enqueue_script( 'NiceScroll' );
@@ -161,6 +151,8 @@ if( ! class_exists( 'Agama_Core' ) ) {
 			// Agama main.js
 			wp_register_script( 'agama-main', AGAMA_JS.'main.js' );
 			$translation_array = array(
+				'background_image'	=> esc_attr( get_header_image() ),
+				'enable_slider'		=> esc_attr( get_theme_mod( 'agama_enable_slider', false ) ),
 				'primary_color' 	=> esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ),
 				'header_top_margin'	=> esc_attr( get_theme_mod( 'agama_header_top_margin', '0px' ) )
 			);

@@ -3,8 +3,8 @@ Theme Name: Agama
 Theme URI: http://theme-vision.com/agama/
 Author: Jaroslav Svetlik
 Author URI: http://theme-vision.com/
-Description: Agama Multi-Purpose, responsive Wordpress theme.
-Version: 1.0.6
+Description: Agama Multi-Purpose, responsive Wordpress theme. Features: WooCommerce compatible, bbPress compatible, BuddyPress compatible, flexslider 2, light - dark skin, list - grid blog style, normal - sticky header style, 25 social icons options, FontAwesome included, translate ready.
+Version: 1.0.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: light,dark, white, one-column, two-columns, right-sidebar, left-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
@@ -256,6 +256,9 @@ input[type="color"] {
 .vision-row:after {
 	content: " ";
 	display: table;
+}
+.hfeed.site {
+	width: 100%;
 }
 
 /* Agama Buttons */
@@ -663,7 +666,7 @@ a:hover {
 
 /* Assistive text */
 .assistive-text,
-.site .screen-reader-text {
+.screen-reader-text {
 	position: absolute !important;
 	clip: rect(1px, 1px, 1px, 1px);
 	overflow: hidden;
@@ -693,23 +696,23 @@ body.sticky_header #main-wrapper {
 	margin-top: 0 !important;
 }
 .sticky-header {
-	box-sizing: content-box;
-	-moz-box-sizing: content-box;
-	-webkit-box-sizing: content-box;
-}
-.site-header .sticky-header {
+	position: relative;
 	background-color: #fff;
-	position: fixed;
 	max-width: 1200px;
 	width: 100%;
-	z-index: 10000;
 	-webkit-transition: height 0.4s;
 	-moz-transition: height 0.4s;
 	transition: height 0.4s;
 	-webkit-box-shadow: 0px 1px 4px 0px rgba(167, 169, 164, 0.75);
-	-moz-box-shadow:    0px 1px 4px 0px rgba(167, 169, 164, 0.75);
-	box-shadow:         0px 1px 4px 0px rgba(167, 169, 164, 0.75);
-	z-index: 10000;
+	-moz-box-shadow: 0px 1px 4px 0px rgba(167, 169, 164, 0.75);
+	box-shadow: 0px 1px 4px 0px rgba(167, 169, 164, 0.75);
+	box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	z-index: 9998;
+}
+.sticky-header.sticky-header-shrink {
+	position: fixed;
 }
 .site-header .sticky-header .sticky-header-inner {
 	margin: 0 auto;
@@ -2497,6 +2500,9 @@ img#wpstats {
 	#wpadminbar {
 		position: fixed;
 	}
+	.blog .list-style figure.effect-bubba p {
+		line-height: 105px;
+	}
 }
 
 /* Maximum width of 800px. */
@@ -2515,11 +2521,21 @@ img#wpstats {
 	.sticky-header {
 		height: auto !important;
 	}
+	.sticky-header.sticky-header-shrink {
+		position: relative !important;
+	}
+	.site-header .col-md-4,
+	.site-header hgroup {
+		text-align: center;
+	}
 	.sticky-header nav {
 		display: none !important;
 	}
 	.sticky-header .mobile-nav {
 		display: block;
+	}
+	aside.widget {
+		margin-top: 30px;
 	}
 }
 

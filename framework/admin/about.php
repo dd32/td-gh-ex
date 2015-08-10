@@ -70,11 +70,12 @@ if( ! class_exists( 'Agama_About' ) ) {
 				echo '</h2>';
 				
 				echo '<div class="changelog point-releases">';
-					echo '<h3>'.__( 'Changelog Agama v1.0.6', 'agama' ).'</h3>';
-					
-					
-					echo '<h3>'.__( 'Changelog Agama v1.0.5', 'agama' ).'</h3>';
-					echo '<p><strong>Version 1.0.5</strong> multiple theme fixes.</p>';
+					echo '<h3>'.__( 'Changelog Agama v1.0.7', 'agama' ).'</h3>';
+					echo '<p><strong>Version 1.0.7</strong> fixed search page results.</p>';
+					echo '<p><strong>Version 1.0.7</strong> improved sticky header responsivity.</p>';
+					echo '<p><strong>Version 1.0.7</strong> improved navigation menus.</p>';
+					echo '<p><strong>Version 1.0.7</strong> improved logo centered on media devices.</p>';
+					echo '<p><strong>Version 1.0.7</strong> improved customizer options.</p>';
 				echo '</div>';
 				
 			echo '</div>';

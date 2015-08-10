@@ -1,5 +1,17 @@
 /*!
- Mobile Navigation
+ Sticky Header
+*/
+jQuery(window).scroll(function($) {
+	if (jQuery(this).scrollTop() > 1){  
+		jQuery('.sticky-header').addClass("sticky-header-shrink");
+	}
+	else{
+		jQuery('.sticky-header').removeClass("sticky-header-shrink");
+	}
+});
+
+/*!
+ Mobile Navigation && Sticky Header
 */
 jQuery(document).ready(function($) {
 	$('.mobile-nav-icons .fa-bars').click(function() {

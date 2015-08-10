@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Agama\n"
-"POT-Creation-Date: 2015-06-23 18:56+0100\n"
-"PO-Revision-Date: 2015-06-23 18:56+0100\n"
+"POT-Creation-Date: 2015-08-10 11:22+0100\n"
+"PO-Revision-Date: 2015-08-10 11:22+0100\n"
 "Last-Translator: Jaroslav Svetlik <kdonet@gmail.com>\n"
 "Language-Team: Theme-Vision <support@theme-vision.com>\n"
 "Language: en_US\n"
@@ -63,12 +63,12 @@ msgstr ""
 msgid "Author Archives: %s"
 msgstr ""
 
-#: author.php:61 content.php:154
+#: author.php:61 content.php:145
 #, php-format
 msgid "About %s"
 msgstr ""
 
-#: bbpress.php:17 content-page.php:23 content.php:137 image.php:100
+#: bbpress.php:17 content-page.php:23 content.php:128 image.php:100
 msgid "Pages:"
 msgstr ""
 
@@ -101,13 +101,13 @@ msgid "Comments are closed."
 msgstr ""
 
 #: content-aside.php:61 content-image.php:51 content-link.php:50
-#: content-quote.php:52 content-status.php:51 content.php:133
+#: content-quote.php:52 content-status.php:51 content.php:124
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
 #: content-aside.php:69 content-image.php:58 content-link.php:57
 #: content-page.php:26 content-quote.php:59 content-status.php:58
-#: content.php:143 image.php:35 includes/agama-functions.php:231
+#: content.php:134 image.php:35 includes/agama-functions.php:229
 msgid "Edit"
 msgstr ""
 
@@ -121,11 +121,11 @@ msgid ""
 "related post."
 msgstr ""
 
-#: content.php:81
+#: content.php:79
 msgid "Featured post"
 msgstr ""
 
-#: content.php:158
+#: content.php:149
 #, php-format
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
@@ -172,318 +172,366 @@ msgid "What's New"
 msgstr ""
 
 #: framework/admin/about.php:73
-msgid "Changelog Agama v1.0.5"
+msgid "Changelog Agama v1.0.7"
 msgstr ""
 
-#: framework/admin/customizer.php:25
-msgid "General Settings"
+#: framework/admin/customizer.php:20 framework/admin/customizer.php:21
+msgid "Donate"
 msgstr ""
 
-#: framework/admin/customizer.php:39
-msgid "NiceScroll"
+#: framework/admin/customizer.php:23
+msgid "Review Agama"
 msgstr ""
 
-#: framework/admin/customizer.php:40
-msgid "Enable NiceScroll ?"
+#: framework/admin/customizer.php:24
+msgid "Rate Agama"
 msgstr ""
 
-#: framework/admin/customizer.php:48
-msgid "Header"
+#: framework/admin/customizer.php:26 framework/admin/customizer.php:27
+msgid "Support Forum"
 msgstr ""
 
-#: framework/admin/customizer.php:62
-msgid "Enable Top Navigation"
+#: framework/admin/customizer.php:29 framework/admin/customizer.php:30
+msgid "Theme Documentation"
 msgstr ""
 
-#: framework/admin/customizer.php:63
-msgid "Works with normal header only."
+#: framework/admin/customizer.php:32 framework/admin/customizer.php:33
+msgid "Agama PRO Demo"
+msgstr ""
+
+#: framework/admin/customizer.php:35 framework/admin/customizer.php:36
+msgid "Agama PRO Buy"
+msgstr ""
+
+#: framework/admin/customizer.php:58
+msgid "Agama Support"
+msgstr ""
+
+#: framework/admin/customizer.php:59
+msgid "Hey! Buy us a cofee and we shall come with new features and updates. "
+msgstr ""
+
+#: framework/admin/customizer.php:70
+msgid "Agama Upgrade"
 msgstr ""
 
 #: framework/admin/customizer.php:80
-msgid "Sticky Header"
+msgid "Agama Theme Options"
 msgstr ""
 
-#: framework/admin/customizer.php:81
-msgid "Enable sticky header ?"
-msgstr ""
-
-#: framework/admin/customizer.php:97
-msgid "Top Margin"
-msgstr ""
-
-#: framework/admin/customizer.php:98
-msgid "If sticky header enabled margin will be 0px!"
-msgstr ""
-
-#: framework/admin/customizer.php:128
-msgid "Top Border Size"
-msgstr ""
-
-#: framework/admin/customizer.php:148
+#: framework/admin/customizer.php:84
 msgid "Logo"
 msgstr ""
 
-#: framework/admin/customizer.php:162
+#: framework/admin/customizer.php:97
 msgid "Upload Logo"
 msgstr ""
 
-#: framework/admin/customizer.php:179
-msgid "Agama Primary Color"
+#: framework/admin/customizer.php:107
+msgid "Header"
 msgstr ""
 
-#: framework/admin/customizer.php:194
-msgid "Skin"
+#: framework/admin/customizer.php:120
+msgid "Enable Top Navigation"
 msgstr ""
 
-#: framework/admin/customizer.php:199
-msgid "Light"
+#: framework/admin/customizer.php:121
+msgid "Works with normal header only."
 msgstr ""
 
-#: framework/admin/customizer.php:200
-msgid "Dark"
+#: framework/admin/customizer.php:138
+msgid "Sticky Header"
 msgstr ""
 
-#: framework/admin/customizer.php:206
-msgid "Social Icons"
+#: framework/admin/customizer.php:139
+msgid "Enable sticky header ?"
 msgstr ""
 
-#: framework/admin/customizer.php:220
-msgid "Enable social icons in top nav ?"
+#: framework/admin/customizer.php:155
+msgid "Top Margin"
 msgstr ""
 
-#: framework/admin/customizer.php:236
-msgid "Enable social icons in footer ?"
+#: framework/admin/customizer.php:156
+msgid "If sticky header enabled margin will be 0px!"
 msgstr ""
 
-#: framework/admin/customizer.php:252
-msgid "Icons URL Target"
+#: framework/admin/customizer.php:187
+msgid "Top Border Size"
 msgstr ""
 
-#: framework/admin/customizer.php:272
-msgid "Facebook URL"
+#: framework/admin/customizer.php:209
+msgid "General Settings"
 msgstr ""
 
-#: framework/admin/customizer.php:288
-msgid "Twitter URL"
+#: framework/admin/customizer.php:222
+msgid "NiceScroll"
 msgstr ""
 
-#: framework/admin/customizer.php:304
-msgid "Flickr URL"
+#: framework/admin/customizer.php:223
+msgid "Enable NiceScroll ?"
 msgstr ""
 
-#: framework/admin/customizer.php:320
-msgid "RSS URL"
-msgstr ""
-
-#: framework/admin/customizer.php:336
-msgid "Vimeo URL"
-msgstr ""
-
-#: framework/admin/customizer.php:352
-msgid "Youtube URL"
-msgstr ""
-
-#: framework/admin/customizer.php:368
-msgid "Instagram URL"
-msgstr ""
-
-#: framework/admin/customizer.php:384
-msgid "Pinterest URL"
-msgstr ""
-
-#: framework/admin/customizer.php:400
-msgid "Tumblr URL"
-msgstr ""
-
-#: framework/admin/customizer.php:416
-msgid "Google+ URL"
-msgstr ""
-
-#: framework/admin/customizer.php:432
-msgid "Dribbble URL"
-msgstr ""
-
-#: framework/admin/customizer.php:448
-msgid "Digg URL"
-msgstr ""
-
-#: framework/admin/customizer.php:464
-msgid "Linkedin URL"
-msgstr ""
-
-#: framework/admin/customizer.php:480
-msgid "Blogger URL"
-msgstr ""
-
-#: framework/admin/customizer.php:496
-msgid "Skype URL"
-msgstr ""
-
-#: framework/admin/customizer.php:512
-msgid "Forrst URL"
-msgstr ""
-
-#: framework/admin/customizer.php:528
-msgid "Myspace URL"
-msgstr ""
-
-#: framework/admin/customizer.php:544
-msgid "Deviantart URL"
-msgstr ""
-
-#: framework/admin/customizer.php:560
-msgid "Yahoo URL"
-msgstr ""
-
-#: framework/admin/customizer.php:576
-msgid "Reddit URL"
-msgstr ""
-
-#: framework/admin/customizer.php:592
-msgid "PayPal URL"
-msgstr ""
-
-#: framework/admin/customizer.php:608
-msgid "Dropbox URL"
-msgstr ""
-
-#: framework/admin/customizer.php:624
-msgid "Soundcloud URL"
-msgstr ""
-
-#: framework/admin/customizer.php:640
-msgid "VK URL"
-msgstr ""
-
-#: framework/admin/customizer.php:656
-msgid "Email URL"
-msgstr ""
-
-#: framework/admin/customizer.php:664
-msgid "Slider"
-msgstr ""
-
-#: framework/admin/customizer.php:678
-msgid "Enable Slider"
-msgstr ""
-
-#: framework/admin/customizer.php:694
-msgid "Slider max-height"
-msgstr ""
-
-#: framework/admin/customizer.php:709
-msgid "Image 1 Title"
-msgstr ""
-
-#: framework/admin/customizer.php:710
-msgid "Enter image 1 title."
-msgstr ""
-
-#: framework/admin/customizer.php:726
-msgid "Upload Image #1"
-msgstr ""
-
-#: framework/admin/customizer.php:741
-msgid "Image 2 Title"
-msgstr ""
-
-#: framework/admin/customizer.php:742
-msgid "Enter image 2 title."
-msgstr ""
-
-#: framework/admin/customizer.php:758
-msgid "Upload Image #2"
-msgstr ""
-
-#: framework/admin/customizer.php:773
-msgid "Image 3 Title"
-msgstr ""
-
-#: framework/admin/customizer.php:774
-msgid "Enter image 3 title."
-msgstr ""
-
-#: framework/admin/customizer.php:790
-msgid "Upload Image #3"
-msgstr ""
-
-#: framework/admin/customizer.php:805
-msgid "Image 4 Title"
-msgstr ""
-
-#: framework/admin/customizer.php:806
-msgid "Enter image 4 title."
-msgstr ""
-
-#: framework/admin/customizer.php:822
-msgid "Upload Image #4"
-msgstr ""
-
-#: framework/admin/customizer.php:837
-msgid "Image 5 Title"
-msgstr ""
-
-#: framework/admin/customizer.php:838
-msgid "Enter image 5 title."
-msgstr ""
-
-#: framework/admin/customizer.php:854
-msgid "Upload Image #5"
-msgstr ""
-
-#: framework/admin/customizer.php:861
+#: framework/admin/customizer.php:232
 msgid "Blog"
 msgstr ""
 
-#: framework/admin/customizer.php:875
+#: framework/admin/customizer.php:245
 msgid "Enable Infinite Scroll ?"
 msgstr ""
 
-#: framework/admin/customizer.php:891
+#: framework/admin/customizer.php:261
 msgid "Blog Layout"
 msgstr ""
 
-#: framework/admin/customizer.php:896
+#: framework/admin/customizer.php:267
 msgid "List Style"
 msgstr ""
 
-#: framework/admin/customizer.php:897
+#: framework/admin/customizer.php:268
 msgid "Grid Style"
 msgstr ""
 
-#: framework/admin/customizer.php:911
+#: framework/admin/customizer.php:282
 msgid "Blog Excerpt Lenght"
 msgstr ""
 
-#: framework/admin/customizer.php:931
-msgid "Body Background"
+#: framework/admin/customizer.php:304
+msgid "Slider"
 msgstr ""
 
-#: framework/admin/customizer.php:937
+#: framework/admin/customizer.php:317
+msgid "Enable Slider"
+msgstr ""
+
+#: framework/admin/customizer.php:333
+msgid "Slider max-height"
+msgstr ""
+
+#: framework/admin/customizer.php:348
+msgid "Image 1 Title"
+msgstr ""
+
+#: framework/admin/customizer.php:349
+msgid "Enter image 1 title."
+msgstr ""
+
+#: framework/admin/customizer.php:365
+msgid "Upload Image #1"
+msgstr ""
+
+#: framework/admin/customizer.php:380
+msgid "Image 2 Title"
+msgstr ""
+
+#: framework/admin/customizer.php:381
+msgid "Enter image 2 title."
+msgstr ""
+
+#: framework/admin/customizer.php:397
+msgid "Upload Image #2"
+msgstr ""
+
+#: framework/admin/customizer.php:412
+msgid "Image 3 Title"
+msgstr ""
+
+#: framework/admin/customizer.php:413
+msgid "Enter image 3 title."
+msgstr ""
+
+#: framework/admin/customizer.php:429
+msgid "Upload Image #3"
+msgstr ""
+
+#: framework/admin/customizer.php:444
+msgid "Image 4 Title"
+msgstr ""
+
+#: framework/admin/customizer.php:445
+msgid "Enter image 4 title."
+msgstr ""
+
+#: framework/admin/customizer.php:461
+msgid "Upload Image #4"
+msgstr ""
+
+#: framework/admin/customizer.php:476
+msgid "Image 5 Title"
+msgstr ""
+
+#: framework/admin/customizer.php:477
+msgid "Enter image 5 title."
+msgstr ""
+
+#: framework/admin/customizer.php:493
+msgid "Upload Image #5"
+msgstr ""
+
+#: framework/admin/customizer.php:501
+msgid "Typography"
+msgstr ""
+
+#: framework/admin/customizer.php:510
+msgid "Colours"
+msgstr ""
+
+#: framework/admin/customizer.php:523
+msgid "Agama Primary Color"
+msgstr ""
+
+#: framework/admin/customizer.php:538
+msgid "Skin"
+msgstr ""
+
+#: framework/admin/customizer.php:544
+msgid "Light"
+msgstr ""
+
+#: framework/admin/customizer.php:545
+msgid "Dark"
+msgstr ""
+
+#: framework/admin/customizer.php:552
+msgid "Social Icons"
+msgstr ""
+
+#: framework/admin/customizer.php:565
+msgid "Enable social icons in top nav ?"
+msgstr ""
+
+#: framework/admin/customizer.php:581
+msgid "Enable social icons in footer ?"
+msgstr ""
+
+#: framework/admin/customizer.php:597
+msgid "Icons URL Target"
+msgstr ""
+
+#: framework/admin/customizer.php:618
+msgid "Facebook URL"
+msgstr ""
+
+#: framework/admin/customizer.php:632
+msgid "Twitter URL"
+msgstr ""
+
+#: framework/admin/customizer.php:648
+msgid "Flickr URL"
+msgstr ""
+
+#: framework/admin/customizer.php:662
+msgid "RSS URL"
+msgstr ""
+
+#: framework/admin/customizer.php:678
+msgid "Vimeo URL"
+msgstr ""
+
+#: framework/admin/customizer.php:694
+msgid "Youtube URL"
+msgstr ""
+
+#: framework/admin/customizer.php:710
+msgid "Instagram URL"
+msgstr ""
+
+#: framework/admin/customizer.php:724
+msgid "Pinterest URL"
+msgstr ""
+
+#: framework/admin/customizer.php:740
+msgid "Tumblr URL"
+msgstr ""
+
+#: framework/admin/customizer.php:756
+msgid "Google+ URL"
+msgstr ""
+
+#: framework/admin/customizer.php:772
+msgid "Dribbble URL"
+msgstr ""
+
+#: framework/admin/customizer.php:788
+msgid "Digg URL"
+msgstr ""
+
+#: framework/admin/customizer.php:804
+msgid "Linkedin URL"
+msgstr ""
+
+#: framework/admin/customizer.php:820
+msgid "Blogger URL"
+msgstr ""
+
+#: framework/admin/customizer.php:836
+msgid "Skype URL"
+msgstr ""
+
+#: framework/admin/customizer.php:852
+msgid "Forrst URL"
+msgstr ""
+
+#: framework/admin/customizer.php:868
+msgid "Myspace URL"
+msgstr ""
+
+#: framework/admin/customizer.php:884
+msgid "Deviantart URL"
+msgstr ""
+
+#: framework/admin/customizer.php:900
+msgid "Yahoo URL"
+msgstr ""
+
+#: framework/admin/customizer.php:916
+msgid "Reddit URL"
+msgstr ""
+
+#: framework/admin/customizer.php:932
+msgid "PayPal URL"
+msgstr ""
+
+#: framework/admin/customizer.php:948
+msgid "Dropbox URL"
+msgstr ""
+
+#: framework/admin/customizer.php:964
+msgid "Soundcloud URL"
+msgstr ""
+
+#: framework/admin/customizer.php:980
+msgid "VK URL"
+msgstr ""
+
+#: framework/admin/customizer.php:996
+msgid "Email URL"
+msgstr ""
+
+#: framework/admin/customizer.php:1005
 msgid "WooCommerce"
 msgstr ""
 
-#: framework/admin/customizer.php:951
+#: framework/admin/customizer.php:1018
 msgid "Products per Page"
 msgstr ""
 
-#: framework/admin/customizer.php:959
+#: framework/admin/customizer.php:1027
 msgid "Footer"
 msgstr ""
 
-#: framework/admin/customizer.php:973
+#: framework/admin/customizer.php:1040
 msgid "Back to Top"
 msgstr ""
 
-#: framework/admin/customizer.php:974
+#: framework/admin/customizer.php:1041
 msgid "Enable back to top button ?"
 msgstr ""
 
-#: framework/admin/customizer.php:990
+#: framework/admin/customizer.php:1057
 msgid "Footer Copyright"
 msgstr ""
 
-#: framework/admin/customizer.php:991
+#: framework/admin/customizer.php:1058
 msgid "Write your own footer copyright."
 msgstr ""
 
@@ -538,102 +586,102 @@ msgstr ""
 msgid "Next &rarr;"
 msgstr ""
 
-#: includes/agama-functions.php:42
+#: includes/agama-functions.php:40
 msgid "Sticky Header Menu"
 msgstr ""
 
-#: includes/agama-functions.php:44
+#: includes/agama-functions.php:42
 msgid "Top Menu"
 msgstr ""
 
-#: includes/agama-functions.php:49
+#: includes/agama-functions.php:47
 msgid "Primary Menu"
 msgstr ""
 
-#: includes/agama-functions.php:172 single.php:20
+#: includes/agama-functions.php:170 single.php:20
 msgid "Post navigation"
 msgstr ""
 
-#: includes/agama-functions.php:173
+#: includes/agama-functions.php:171
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: includes/agama-functions.php:174
+#: includes/agama-functions.php:172
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: includes/agama-functions.php:199
+#: includes/agama-functions.php:197
 msgid "Pingback:"
 msgstr ""
 
-#: includes/agama-functions.php:199
+#: includes/agama-functions.php:197
 msgid "(Edit)"
 msgstr ""
 
-#: includes/agama-functions.php:214
+#: includes/agama-functions.php:212
 msgid "Post author"
 msgstr ""
 
-#: includes/agama-functions.php:220
+#: includes/agama-functions.php:218
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: includes/agama-functions.php:226
+#: includes/agama-functions.php:224
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: includes/agama-functions.php:235
+#: includes/agama-functions.php:233
 msgid "Reply"
 msgstr ""
 
-#: includes/agama-functions.php:256 includes/agama-functions.php:259
+#: includes/agama-functions.php:254 includes/agama-functions.php:257
 msgid ", "
 msgstr ""
 
-#: includes/agama-functions.php:270
+#: includes/agama-functions.php:268
 #, php-format
 msgid "View all posts by %s"
 msgstr ""
 
-#: includes/agama-functions.php:276
+#: includes/agama-functions.php:274
 #, php-format
 msgid ""
 "This entry was posted in %1$s and tagged %2$s on %3$s<span class=\"by-author"
 "\"> by %4$s</span>."
 msgstr ""
 
-#: includes/agama-functions.php:278
+#: includes/agama-functions.php:276
 #, php-format
 msgid ""
 "This entry was posted in %1$s on %3$s<span class=\"by-author\"> by %4$s</"
 "span>."
 msgstr ""
 
-#: includes/agama-functions.php:280
+#: includes/agama-functions.php:278
 #, php-format
 msgid "This entry was posted on %3$s<span class=\"by-author\"> by %4$s</span>."
 msgstr ""
 
-#: includes/agama-functions.php:468
+#: includes/agama-functions.php:466
 msgid "By"
 msgstr ""
 
-#: includes/agama-functions.php:487
+#: includes/agama-functions.php:485
 #, php-format
 msgid "View all posts in %s"
 msgstr ""
 
-#: includes/agama-functions.php:496
+#: includes/agama-functions.php:494
 msgid " comments"
 msgstr ""
 
-#: includes/agama-functions.php:523 includes/agama-functions.php:528
-#: includes/agama-functions.php:544
+#: includes/agama-functions.php:521 includes/agama-functions.php:526
+#: includes/agama-functions.php:542
 msgid "No more posts to load."
 msgstr ""
 
-#: includes/agama-functions.php:560
+#: includes/agama-functions.php:558
 #, php-format
 msgid "2015 &copy; Powered by %s."
 msgstr ""
