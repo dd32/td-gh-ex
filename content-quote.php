@@ -1,29 +1,23 @@
-<?php $quote_content = get_post_meta($post->ID, 'quote_content', true); ?>
-<?php $quote_attribution = get_post_meta($post->ID, 'quote_attribution', true); ?>
-
 <div class="post-container">
 	
 	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
-		<?php if ( !empty($quote_content) && !empty($quote_attribution) ) : ?>
-	
-			<div class="post-quote">
+		<div class="post-quote">
+
+			<?php
+				
+				// Fetch post content
+				$content = get_post_field( 'post_content', get_the_ID() );
+				
+				// Get content parts
+				$content_parts = get_extended( $content );
+				
+				// Output part before <!--more--> tag
+				echo $content_parts['main'];
 			
-				<?php if ( !empty($quote_content) ) : ?>
-			
-					<blockquote><?php echo $quote_content; ?></blockquote>
-				
-				<?php endif; ?>
-				
-				<?php if ( !empty($quote_attribution) ) : ?>
-				
-					<cite><?php echo $quote_attribution; ?></cite>
-				
-				<?php endif; ?>
-			
-			</div> <!-- /post-quote -->
+			?>
 		
-		<?php endif; ?>
+		</div> <!-- /post-quote -->
 		
 		<?php if ( is_sticky() ) : ?>
 				
@@ -47,25 +41,19 @@
 			
 			<?php endif; ?>
 				    		            			            	                                                                                            
-			<?php the_excerpt(); ?>
-		
-			<div class="post-meta">
+			<div class="post-excerpt">
+					
+				<?php 
+					if ($pos=strpos($post->post_content, '<!--more-->')) {
+						echo  '<p>' . mb_strimwidth($content_parts['extended'], 0, 200, '...') . '</p>';
+					} else {
+						the_excerpt('100');
+					}
+				?>
 			
-				<a class="post-meta-date" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-					<div class="genericon genericon-time"></div>
-					<?php the_time( get_option('date_format') ); ?>
-				</a>
-				
-				<?php if ( comments_open() ) : ?>
-					<a class="post-meta-comments" href="<?php the_permalink(); ?>#comments" title="<?php comments_number( '0', '1', '%'); ?> <?php _e('comments to','garfunkel'); ?> <?php the_title_attribute(); ?>">
-						<div class="genericon genericon-comment"></div>
-						<?php comments_number( '0', '1', '%'); ?>
-					</a>
-				<?php endif; ?>
+			</div> <!-- /post-excerpt -->
 			
-				<div class="clear"></div>
-			
-			</div> <!-- /post-meta -->
+			<?php garfunkel_meta(); ?>
 		
 		</div> <!-- /post-inner -->
 	

@@ -1,4 +1,21 @@
-*** Garfunkel changelog ***
+*** Garfunkel Changelog ***
+
+
+Version 1.03 (2015-08-11)
+-------------------------
+- Replaced custom title function with title-tag support
+- The widgets now use __construct()
+- Fixed missing index notice for widget variables
+- Removed post meta fields from functions.php
+- Removed a shortcode function from functions.php
+- Removed a function used for getting titles from URLs (no longer needed due to changes in format-video/-quote/-link)
+- Added a sanitize callback for custom accent color and custom logo
+- Stored the post meta element as a function in functions.php
+- Modified how the post formats video, quote and link are edited and presented
+- Updated readme.txt to reflect those changes
+- Optimized translation strings
+- Updated the Swedish translation
+- Improved the presentation of the infinite scroll button
 
 
 Version 1.02 (2014-09-26)

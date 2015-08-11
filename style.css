@@ -1,7 +1,7 @@
 /*---------------------------------------------------------------------------------
 
 	Theme Name: Garfunkel
-	Version: 1.02
+	Version: 1.03
 	Description: Garfunkel is a stylish and responsive Pinterest-style theme with Masonry layout. It features responsive and retina-ready design, support for six post formats (including a gallery slideshow), six custom widgets, two page templates, Jetpack Infinite Scroll support, editor styling and translation-ready code. Included translations: Swedish/svenska.
 	Tags: black, red, white, dark, one-column, three-columns, fluid-layout, responsive-layout, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 	Author: Anders Norén
@@ -633,8 +633,6 @@ a .post-icon img {
 }
 
 
-
-
 /* Social menu --------------------------------------- */
 
 
@@ -954,10 +952,12 @@ a .post-icon img {
 .post-quote cite {
 	display: block;
 	margin-top: 20px;
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 14px;
+	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	font-size: 0.8em;
-	font-weight: 700;
+
 }
 
 .post-quote cite:before { content: "— " }
@@ -1026,7 +1026,7 @@ a .post-icon img {
 
 .single-post .post-quote cite {
 	margin-top: 40px;
-	font-size: 0.9em;
+	font-size: 16px;
 }
 
 
@@ -2199,8 +2199,25 @@ p.comment-form-author { margin-right: 5%; }
 /* Jetpack infinite scroll --------------------------------------- */
 
 
+.infinite-scroll .posts { padding-bottom: 60px; }
+
 .infinite-loader,
 .infinite-loader .spinner { display: none; }
+
+#infinite-handle { 
+	text-align: center;
+	position: absolute;
+	top: auto !important;
+	bottom: 0; 
+	left: 0;
+	right: 0;
+}
+
+#infinite-handle span {
+	display: inline-block;
+	padding: 14px 20px;
+	border-radius: 3px;
+}
 
 
 /* -------------------------------------------------------------------------------- */
@@ -2508,25 +2525,25 @@ p.comment-form-author { margin-right: 5%; }
 /* Widget Dribbble & Flickr --------------------------------------- */
 
 
-.widget_garfunkel_dribbble_widget .dribbble-shot,
-.widget_garfunkel_flickr_widget .flickr_badge_image {
+.dribbble-shot,
+.flickr_badge_image {
 	display: inline-block;
 	width: 75px;
 	height: auto;
 	margin: 0 10px 3px 0;
 }
 
-.widget_garfunkel_dribbble_widget .dribbble-shot { margin-bottom: 7px; }
+.dribbble-shot { margin-bottom: 7px; }
 
-.widget_garfunkel_dribbble_widget .dribbble-shot img,
-.widget_garfunkel_flickr_widget .flickr_badge_image a,
-.widget_garfunkel_flickr_widget .flickr_badge_image img { 
+.dribbble-shot img,
+.flickr_badge_image a,
+.flickr_badge_image img { 
 	display: block; 
 	border-radius: 3px;
 }
 
-.widget_garfunkel_dribbble_widget .dribbble-shot:hover,
-.widget_garfunkel_flickr_widget .flickr_badge_image a:hover {
+.dribbble-shot:hover,
+.flickr_badge_image a:hover {
 	opacity: 0.7;
 	-moz-opacity: 0.7;
 	-webkit-opacity: 0.7;
@@ -2905,7 +2922,10 @@ img#wpstats { display: none; }
 	
 	.single-post .post-quote blockquote { font-size: 1.25em; }
 	
-	.single-post .post-quote cite { margin-top: 20px; }
+	.single-post .post-quote cite { 
+		margin-top: 20px; 
+		font-size: 14px;
+	}
 	
 	.single-post .post-link p { font-size: 1.25em; }
 	

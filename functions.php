@@ -33,6 +33,10 @@ function garfunkel_setup() {
 	    'container'			=> 		'posts',
 		'footer' 			=> 		false,
 	) );
+	
+	
+	// Add support for title tag
+	add_theme_support('title-tag');
 
 	// Add nav menu
 	register_nav_menu( 'primary', __('Primary Menu','garfunkel') );
@@ -155,30 +159,6 @@ function garfunkel_html_js_class() {
 add_action( 'wp_head', 'garfunkel_html_js_class', 1 );
 
 
-// Custom title function
-function garfunkel_wp_title( $title, $sep ) {
-	global $paged, $page;
-
-	if ( is_feed() )
-		return $title;
-
-	// Add the site name.
-	$title .= get_bloginfo( 'name' );
-
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
-
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'garfunkel' ), max( $paged, $page ) );
-
-	return $title;
-}
-add_filter( 'wp_title', 'garfunkel_wp_title', 10, 2 );
-
-
 // Add classes to next_posts_link and previous_posts_link
 add_filter('next_posts_link_attributes', 'garfunkel_posts_link_attributes_1');
 add_filter('previous_posts_link_attributes', 'garfunkel_posts_link_attributes_2');
@@ -276,52 +256,6 @@ function garfunkel_add_class_to_excerpt( $excerpt ) {
 }
 
 
-// Remove inline styling of attachment
-add_shortcode('wp_caption', 'garfunkel_fixed_img_caption_shortcode');
-add_shortcode('caption', 'garfunkel_fixed_img_caption_shortcode');
-
-function garfunkel_fixed_img_caption_shortcode($attr, $content = null) {
-	if ( ! isset( $attr['caption'] ) ) {
-		if ( preg_match( '#((?:<a [^>]+>\s*)?<img [^>]+>(?:\s*</a>)?)(.*)#is', $content, $matches ) ) {
-			$content = $matches[1];
-			$attr['caption'] = trim( $matches[2] );
-		}
-	}
-	
-	$output = apply_filters('img_caption_shortcode', '', $attr, $content);
-	
-	if ( $output != '' ) return $output;
-	extract(shortcode_atts(array(
-		'id' => '',
-		'align' => 'alignnone',
-		'width' => '',
-		'caption' => ''
-	), $attr));
-	
-	if ( 1 > (int) $width || empty($caption) )
-	return $content;
-	if ( $id ) $id = 'id="' . esc_attr($id) . '" ';
-	return '<div ' . $id . 'class="wp-caption ' . esc_attr($align) . '" >' 
-	. do_shortcode( $content ) . '<p class="wp-caption-text">' . $caption . '</p></div>';
-}
-
-
-// Get domain name from URL
-function garfunkel_url_to_domain($url) {
-    $host = @parse_url($url, PHP_URL_HOST);
- 
-    if (!$host) {
-        $host = $url;
-    }
- 
-    if (substr($host, 0, 4) == "www.") {
-        $host = substr($host, 0);
-    }
- 
-    return $host;
-}
-
-
 // Get comment excerpt length
 function garfunkel_get_comment_excerpt($comment_ID = 0, $num_words = 20) {
 	$comment = get_comment( $comment_ID );
@@ -356,6 +290,27 @@ function garfunkel_custom_colors() {
 }
 
 add_action('admin_head', 'garfunkel_custom_colors');
+
+
+// Garfunkel meta function
+function garfunkel_meta() { ?>
+
+	<div class="post-meta">			
+		<a class="post-meta-date" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+			<div class="genericon genericon-time"></div>
+			<?php the_time( get_option('date_format') ); ?>
+		</a>
+		<?php if ( comments_open() ) : ?>
+			<a class="post-meta-comments" href="<?php the_permalink(); ?>#comments" title="<?php comments_number( '0', '1', '%'); ?> <?php _e('comments to','garfunkel'); ?> <?php the_title_attribute(); ?>">
+				<div class="genericon genericon-comment"></div>
+				<?php comments_number( '0', '1', '%'); ?>
+			</a>
+		<?php endif; ?>
+		<div class="clear"></div>
+	</div> <!-- /post-meta -->
+	
+<?php
+}
 
 
 // Flexslider function for format-gallery
@@ -470,172 +425,6 @@ function garfunkel_comment( $comment, $args, $depth ) {
 endif;
 
 
-// Add and save meta boxes for posts
-add_action( 'add_meta_boxes', 'cd_meta_box_add' );
-function cd_meta_box_add() {
-	add_meta_box( 'post-video-url', __('Video URL', 'garfunkel'), 'cd_meta_box_video_url', 'post', 'side', 'high' );
-	add_meta_box( 'post-quote-content-box', __('Quote content', 'garfunkel'), 'cd_meta_box_quote_content', 'post', 'normal', 'core' );
-	add_meta_box( 'post-quote-attribution-box', __('Quote attribution', 'garfunkel'), 'cd_meta_box_quote_attribution', 'post', 'normal', 'core' );
-	add_meta_box( 'post-link-url', __('Link URL', 'garfunkel'), 'cd_meta_box_link_url', 'post', 'side', 'high' );
-	add_meta_box( 'post-link-title', __('Link title', 'garfunkel'), 'cd_meta_box_link_title', 'post', 'side', 'high' );
-}
-
-function cd_meta_box_video_url( $post ) {
-	$values = get_post_custom( $post->ID );
-	$video_url = isset( $values['video_url'] ) ? esc_attr( $values['video_url'][0] ) : '';
-	wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
-	?>
-		<p>
-			<input type="text" class="widefat" name="video_url" id="video_url" value="<?php echo $video_url; ?>" />
-		</p>
-	<?php		
-}
-
-
-function cd_meta_box_quote_content( $post ) {
-	$values = get_post_custom( $post->ID );
-	$quote_content = isset( $values['quote_content'] ) ? esc_attr( $values['quote_content'][0] ) : '';
-	wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
-	?>
-		<p>
-			<textarea name="quote_content" id="quote_content" class="widefat" rows="5"><?php echo $quote_content; ?></textarea>
-		</p>
-	<?php		
-}
-
-function cd_meta_box_quote_attribution( $post ) {
-	$values = get_post_custom( $post->ID );
-	$quote_attribution = isset( $values['quote_attribution'] ) ? esc_attr( $values['quote_attribution'][0] ) : '';
-	wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
-	?>
-		<p>
-			<input name="quote_attribution" id="quote_attribution" class="widefat" value="<?php echo $quote_attribution; ?>" />
-		</p>
-	<?php		
-}
-
-function cd_meta_box_link_url( $post ) {
-	$values = get_post_custom( $post->ID );
-	$link_url = isset( $values['link_url'] ) ? esc_attr( $values['link_url'][0] ) : '';
-	wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
-	?>
-		<p>
-			<input name="link_url" id="link_url" class="widefat" value="<?php echo $link_url; ?>" />
-		</p>
-	<?php		
-}
-
-function cd_meta_box_link_title( $post ) {
-	$values = get_post_custom( $post->ID );
-	$link_title = isset( $values['link_title'] ) ? esc_attr( $values['link_title'][0] ) : '';
-	wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
-	?>
-		<p>
-			<input name="link_title" id="link_title" class="widefat" value="<?php echo $link_title; ?>" />
-		</p>
-	<?php		
-}
-
-add_action( 'save_post', 'cd_meta_box_save' );
-function cd_meta_box_save( $post_id ) {
-	// Bail if we're doing an auto save
-	if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
-	
-	// if our nonce isn't there, or we can't verify it, bail
-	if( !isset( $_POST['meta_box_nonce'] ) || !wp_verify_nonce( $_POST['meta_box_nonce'], 'my_meta_box_nonce' ) ) return;
-	
-	// if our current user can't edit this post, bail
-	if( !current_user_can( 'edit_post' ) ) return;
-	
-	// now we can actually save the data
-	$allowed = array( 
-		'a' => array( // on allow a tags
-			'href' => array() // and those anchords can only have href attribute
-		)
-	);
-	
-	// Probably a good idea to make sure the data is set		
-	if( isset( $_POST['video_url'] ) ) {
-		update_post_meta( $post_id, 'video_url', wp_kses( $_POST['video_url'], $allowed ) );
-	}
-	
-	if( isset( $_POST['quote_content'] ) ) {
-		update_post_meta( $post_id, 'quote_content', wp_kses( $_POST['quote_content'], $allowed ) );
-	}
-	
-	if( isset( $_POST['quote_attribution'] ) ) {
-		update_post_meta( $post_id, 'quote_attribution', wp_kses( $_POST['quote_attribution'], $allowed ) );
-	}
-	
-	if( isset( $_POST['link_url'] ) ) {
-		update_post_meta( $post_id, 'link_url', wp_kses( $_POST['link_url'], $allowed ) );
-	}
-	
-	if( isset( $_POST['link_title'] ) ) {
-		update_post_meta( $post_id, 'link_title', wp_kses( $_POST['link_title'], $allowed ) );
-	}
-
-}
-
-
-// Hide/show meta boxes depending on the post format selected
-function meta_box_post_format_toggle()
-{
-    wp_enqueue_script( 'jquery' );
-
-    $script = '
-    <script type="text/javascript">
-        jQuery( document ).ready( function($)
-            {
-            
-                $( "#post-video-url" ).hide();
-                $( "#post-link-title" ).hide();
-                $( "#post-link-url" ).hide();
-                $( "#post-quote-content-box" ).hide();
-                $( "#post-quote-attribution-box" ).hide();
-            	
-            	if($("#post-format-video").is(":checked"))
-	                $( "#post-video-url" ).show();
-            	if($("#post-format-link").is(":checked")) {
-	                $( "#post-link-title" ).show();
-	                $( "#post-link-url" ).show();
-				}
-            	if($("#post-format-quote").is(":checked")) {
-	                $( "#post-quote-content-box" ).show();
-	                $( "#post-quote-attribution-box" ).show();
-				}
-                
-                $( "input[name=\"post_format\"]" ).change( function() {
-	                $( "#post-video-url" ).hide();
-	                $( "#post-link-url" ).hide();
-	                $( "#post-link-title" ).hide();
-	                $( "#post-quote-content-box" ).hide();
-	                $( "#post-quote-attribution-box" ).hide();
-                } );
-
-                $( "input#post-format-video" ).change( function() {
-                    $( "#post-video-url" ).show();
-				});
-                
-                $( "input#post-format-link" ).change( function() {
-                    $( "#post-link-url" ).show();
-                    $( "#post-link-title" ).show();
-                });
-                
-                $( "input#post-format-quote" ).change( function() {
-                    $( "#post-quote-content-box" ).show();
-                    $( "#post-quote-attribution-box" ).show();
-                });
-
-            }
-        );
-    </script>';
-
-    return print $script;
-}
-add_action( 'admin_footer', 'meta_box_post_format_toggle' );
-
-
 // Garfunkel theme options
 class Garfunkel_Customize {
 
@@ -664,10 +453,16 @@ class Garfunkel_Customize {
             'type' => 'theme_mod', //Is this an 'option' or a 'theme_mod'?
             'capability' => 'edit_theme_options', //Optional. Special permissions for accessing this setting.
             'transport' => 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+      		'sanitize_callback' => 'sanitize_hex_color'
          ) 
       );
       
-      $wp_customize->add_setting( 'garfunkel_logo' );
+      // Add logo setting and sanitize it
+      $wp_customize->add_setting( 'garfunkel_logo', 
+      	array( 
+      		'sanitize_callback' => 'esc_url_raw'
+      	) 
+      );
                   
       //3. Finally, we define the control itself (which links a setting to a section and renders the HTML controls)...
       $wp_customize->add_control( new WP_Customize_Color_Control( //Instantiate the color control class

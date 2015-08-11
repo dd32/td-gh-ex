@@ -1,7 +1,7 @@
 Copyright
 --------------
 
-Garfunkel WordPress Theme, Copyright 2014 Anders Norén
+Garfunkel WordPress Theme, Copyright 2015 Anders Norén
 Garfunkel is distributed under the terms of the GNU GPL v2
 
 
@@ -55,37 +55,55 @@ Use the gallery post format
 
 
 
-Use the quote post format
+Link Format
 --------------
 
-1. Go to Admin > Posts > Add New.
-2. Select the "Quote" post format in the Post Attributes box.
-3. Two meta boxes should appear below the post content box on the page.
-4. Enter the quote and the quote attribution (optional) in the corresponding boxes. Publish/update the post.
-5. The quote you entered should now be displayed in the quote section above the post.
+1. Create a new post.
+2. Select "Link" in the Format window to the right.
+3. In the post content, enter the title of your link within a paragraph element, and the link to the page in a link element.
+4. Directly after the two elements, add the <!--more--> tag followed by the rest of the content. Example:
+
+<p>[title]</p>
+<a href="[url]">[website]</a>
+<!--more-->
+The rest of the content...
+
+5. Publish.
+6. The link title and link will now be displayed in a separate section from the content of your post.
 
 
-
-Use the video post format
+Quote Format
 --------------
 
-1. Go to Admin > Posts > Add New.
-2. Select the "Video" post format in the Post Attributes box.
-3. A meta box with the title "Video URL" should appear in the top of the right sidebar.
-4. Paste the URL to the video you wish to display in the box, and publish/update the post.
-5. The video you linked to should now be displayed in the media section above the post.
+1. Create a new post.
+2. Select "Quote" in the Format window to the right.
+3. In the post content, enter the quote content within a blockquote element, and the quote attribution within a cite element.
+4. Directly after the two elements, add the <!--more--> tag followed by the rest of the content. Example:
+
+<blockquote>[quote content]
+<cite>[quote attribution]</cite>
+</blockquote>
+<!--more-->
+The rest of the content...
+
+5. Publish.
+6. The quote will now be displayed in a separate section from the content of your post.
 
 
-
-Use the link post format
+Video Format
 --------------
 
-1. Go to Admin > Posts > Add New.
-2. Select the "Link" post format in the Post Attributes box.
-3. Two meta boxes should appear in the sidebar in the top right.
-4. Enter the link text and the link URL in the corresponding boxes. Publish/update the post.
-5. The link you entered should now be displayed in the link section above the post.
+1. Create a new post.
+2. Select "Video" in the Format window to the right.
+3. In the post content, enter the full url to the video you want to include.
+4. Directly after the url, add the <!--more--> tag followed by the rest of the content. Example:
 
+https://www.youtube.com/watch?v=iszwuX1AK6A
+<!--more-->
+The rest of the content...
+
+5. Publish.
+6. The video will now be displayed in a separate section from the content of your post.
 
 
 Licenses

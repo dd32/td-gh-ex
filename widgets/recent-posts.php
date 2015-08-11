@@ -2,9 +2,10 @@
 
 class garfunkel_recent_posts extends WP_Widget {
 
-	function garfunkel_recent_posts() {
-		parent::WP_Widget(false, $name = 'Recent posts', array('description' => __('Displays recent blog entries.', 'garfunkel') ));	
-	}
+	function __construct() {
+        $widget_ops = array( 'classname' => 'widget_garfunkel_recent_posts', 'description' => __('Displays recent blog entries.', 'garfunkel') );
+        parent::__construct( 'widget_garfunkel_recent_posts', __('Recent Posts','garfunkel'), $widget_ops );
+    }
 	
 	function widget($args, $instance) {
 	
@@ -126,6 +127,10 @@ class garfunkel_recent_posts extends WP_Widget {
 	}
 	
 	function form($instance) {
+		
+		// Set defaults
+		if(!isset($instance["widget_title"])) { $instance["widget_title"] = ''; }
+		if(!isset($instance["number_of_posts"])) { $instance["number_of_posts"] = ''; }
 	
 		// Get the options into variables, escaping html characters on the way
 		$widget_title = $instance['widget_title'];

@@ -2,9 +2,10 @@
 
 class garfunkel_video_widget extends WP_Widget {
 
-	function garfunkel_video_widget() {
-		parent::WP_Widget(false, $name = 'Video widget', array('description' => __('Displays a video of your choosing.', 'garfunkel') ));	
-	}
+	function __construct() {
+        $widget_ops = array( 'classname' => 'garfunkel_video_widget', 'description' => __('Displays a video of your choosing.', 'garfunkel') );
+        parent::__construct( 'garfunkel_video_widget', __('Video Widget','garfunkel'), $widget_ops );
+    }
 	
 	function widget($args, $instance) {
 	
@@ -52,6 +53,10 @@ class garfunkel_video_widget extends WP_Widget {
 	}
 	
 	function form($instance) {
+		
+		// Set defaults
+		if(!isset($instance["widget_title"])) { $instance["widget_title"] = ''; }
+		if(!isset($instance["video_widget_url"])) { $instance["video_widget_url"] = ''; }
 	
 		// Get the options into variables, escaping html characters on the way
 		$widget_title = $instance['widget_title'];

@@ -2,9 +2,10 @@
 
 class garfunkel_search_form extends WP_Widget {
 
-	function garfunkel_search_form() {
-		parent::WP_Widget(false, $name = 'Search form', array('description' => __('Displays a search form.', 'garfunkel') ));	
-	}
+	function __construct() {
+        $widget_ops = array( 'classname' => 'garfunkel_search_widget', 'description' => __('Displays a search form.', 'garfunkel') );
+        parent::__construct( 'garfunkel_search_widget', __('Search Form','garfunkel'), $widget_ops );
+    }
 	
 	function widget($args, $instance) {
 	
@@ -36,7 +37,10 @@ class garfunkel_search_form extends WP_Widget {
 	}
 	
 	function form($instance) {
-	
+		
+		// Set defaults
+		if(!isset($instance["widget_title"])) { $instance["widget_title"] = ''; }
+			
 		// Get the options into variables, escaping html characters on the way
 		$widget_title = $instance['widget_title'];
 		?>

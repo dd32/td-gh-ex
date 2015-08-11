@@ -2,9 +2,10 @@
 
 class garfunkel_recent_comments extends WP_Widget {
 
-	function garfunkel_recent_comments() {
-		parent::WP_Widget(false, $name = 'Recent comments', array('description' => __('Displays recent comments with user avatars.', 'garfunkel') ));
-	}
+	function __construct() {
+        $widget_ops = array( 'classname' => 'widget_garfunkel_recent_comments', 'description' => __('Displays recent comments with user avatars.', 'garfunkel') );
+        parent::__construct( 'widget_garfunkel_recent_comments', __('Recent Comments','garfunkel'), $widget_ops );
+    }
 	
 	function widget($args, $instance) {
 	
@@ -86,6 +87,10 @@ class garfunkel_recent_comments extends WP_Widget {
 	}
 	
 	function form($instance) {
+		
+		// Set defaults
+		if(!isset($instance["widget_title"])) { $instance["widget_title"] = ''; }
+		if(!isset($instance["number_of_comments"])) { $instance["number_of_comments"] = ''; }
 	
 		// Get the options into variables, escaping html characters on the way
 		$widget_title = $instance['widget_title'];

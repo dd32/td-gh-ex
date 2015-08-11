@@ -18,91 +18,60 @@
 
 					<?php if ($format == 'video') : ?> 
 					
-						<?php $video_url = get_post_meta($post->ID, 'video_url', true); ?>
-						
-						<?php if ( !empty($video_url) ) : ?>
-						
-							<div class="featured-media">
-							
-								<?php if (strpos($video_url,'.mp4') !== false) : ?>
-									
-									<video controls>
-									  <source src="<?php echo $video_url; ?>" type="video/mp4">
-									</video>
-																							
-								<?php else : ?>
-									
-									<?php 
-									
-										$embed_code = wp_oembed_get($video_url); 
-										
-										echo $embed_code;
-										
-									?>
-										
-								<?php endif; ?>
+						<div class="featured-media">
+			
+							<?php
 								
-							</div>
+								// Fetch post content
+								$content = get_post_field( 'post_content', get_the_ID() );
+								
+								// Get content parts
+								$content_parts = get_extended( $content );
+								
+								// Output part before <!--more--> tag
+								echo $content_parts['main'];
+							
+							?>
 						
-						<?php endif; ?>
+						</div> <!-- /featured-media -->
 					
 					<?php elseif ($format == 'quote') : ?> 
-					
-						<?php $quote_content = get_post_meta($post->ID, 'quote_content', true); ?>
-						<?php $quote_attribution = get_post_meta($post->ID, 'quote_attribution', true); ?>
-						
-						<?php if ( !empty($quote_content) && !empty($quote_attribution) ) : ?>
-					
-							<div class="post-quote">
+											
+						<div class="post-quote">
 							
-								<div class="inner">
+							<?php
 								
-									<?php if ( !empty($quote_content) ) : ?>
-		
-										<blockquote><?php echo $quote_content; ?></blockquote>
-									
-									<?php endif; ?>
-									
-									<?php if ( !empty($quote_attribution) ) : ?>
-									
-										<cite><?php echo $quote_attribution; ?></cite>
-									
-									<?php endif; ?>
+								// Fetch post content
+								$content = get_post_field( 'post_content', get_the_ID() );
 								
-								</div> <!-- /inner -->
+								// Get content parts
+								$content_parts = get_extended( $content );
+								
+								// Output part before <!--more--> tag
+								echo $content_parts['main'];
 							
-							</div> <!-- /post-quote -->
+							?>
 						
-						<?php endif; ?>
+						</div> <!-- /post-quote -->
 						
 					<?php elseif ($format == 'link') : ?> 
 					
-						<?php $link_url = get_post_meta($post->ID, 'link_url', true); ?>
-						<?php $link_title = get_post_meta($post->ID, 'link_title', true); ?>
-						
-						<?php if ( !empty($link_title) && !empty($link_url) ) : ?>
-					
-							<div class="post-link">
-							
-								<div class="inner">
+						<div class="post-link">
+			
+							<?php
 								
-									<?php if ( !empty($link_title) ) : ?>
-							
-										<p><?php echo $link_title; ?></p>
-									
-									<?php endif; ?>
-									
-									<?php if ( !empty($link_url) ) : ?>
-									
-										<a href="<?php echo $link_url; ?>" title="<?php echo $link_title; ?>"><?php echo garfunkel_url_to_domain( $link_url ); ?></a>
-									
-									<?php endif; ?>
+								// Fetch post content
+								$content = get_post_field( 'post_content', get_the_ID() );
 								
-								</div> <!-- /inner -->
+								// Get content parts
+								$content_parts = get_extended( $content );
+								
+								// Output part before <!--more--> tag
+								echo $content_parts['main'];
 							
-							</div> <!-- /post-link -->
+							?>
 						
-						<?php endif; ?>
+						</div> <!-- /post-link -->
 						
 					<?php elseif ($format == 'gallery') : ?> 
 					
@@ -138,13 +107,23 @@
 						
 							<p class="post-date"><?php the_time(get_option('date_format')); ?><?php edit_post_link(__('Edit','garfunkel'), '<span class="sep">/</span>'); ?></p>
 							
-						    <h2 class="post-title"><?php the_title(); ?></h2>
+						    <h1 class="post-title"><?php the_title(); ?></h1>
 						    
 						</div> <!-- /post-header -->
 														                                    	    
 						<div class="post-content">
 							    		            			            	                                                                                            
-							<?php the_content(); ?>
+							<?php 
+								if ($format == 'link' || $format == 'quote' || $format == 'video') { 
+									$content = $content_parts['extended'];
+									$content = apply_filters('the_content', $content);
+									echo $content;
+								} else {
+									the_content();
+								}
+										            			            	                                                                                            
+								wp_link_pages(); 
+							?>
 							
 							<div class="clear"></div>
 										        
@@ -414,7 +393,7 @@
 						$prev_post = get_previous_post();
 						if (!empty( $prev_post )): ?>
 						
-							<a class="post-nav-prev" title="<?php _e('Previous post:', 'garfunkel'); echo ' ' . esc_attr( get_the_title($prev_post) ); ?>" href="<?php echo get_permalink( $prev_post->ID ); ?>">
+							<a class="post-nav-prev" title="<?php _e('Previous post', 'garfunkel'); echo ': ' . esc_attr( get_the_title($prev_post) ); ?>" href="<?php echo get_permalink( $prev_post->ID ); ?>">
 								<span class="hidden"><?php _e('Previous post', 'garfunkel'); ?></span>
 								<span class="arrow">&laquo;</span>
 							</a>
@@ -425,7 +404,7 @@
 						$next_post = get_next_post();
 						if (!empty( $next_post )): ?>
 							
-							<a class="post-nav-next" title="<?php _e('Next post:', 'garfunkel'); echo ' ' . esc_attr( get_the_title($next_post) ); ?>" href="<?php echo get_permalink( $next_post->ID ); ?>">
+							<a class="post-nav-next" title="<?php _e('Next post', 'garfunkel'); echo ': ' . esc_attr( get_the_title($next_post) ); ?>" href="<?php echo get_permalink( $next_post->ID ); ?>">
 								<span class="hidden"><?php _e('Next post', 'garfunkel'); ?></span>
 								<span class="arrow">&raquo;</span>
 							</a>

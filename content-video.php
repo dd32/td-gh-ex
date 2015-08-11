@@ -2,29 +2,26 @@
 
 	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
-		<?php $video_url = get_post_meta($post->ID, 'video_url', true); if ( $video_url != '' ) : ?>
-		
+		<?php if ($pos=strpos($post->post_content, '<!--more-->')): ?>
+
 			<div class="featured-media">
 			
-				<?php if (strpos($video_url,'.mp4') !== false) : ?>
-					
-					<video controls>
-					  <source src="<?php echo $video_url; ?>" type="video/mp4">
-					</video>
-																			
-				<?php else : ?>
-					
-					<?php 
-					
-						$embed_code = wp_oembed_get($video_url); 
+				<?php
 						
-						echo $embed_code;
-						
-					?>
-						
-				<?php endif; ?>
+					// Fetch post content
+					$content = get_post_field( 'post_content', get_the_ID() );
+					
+					// Get content parts
+					$content_parts = get_extended( $content );
+					
+					// oEmbed part before <!--more--> tag
+					$embed_code = wp_oembed_get($content_parts['main']); 
+					
+					echo $embed_code;
 				
-			</div>
+				?>
+			
+			</div> <!-- /featured-media -->
 		
 		<?php endif; ?>
 		
@@ -50,25 +47,15 @@
 			
 			<?php endif; ?>
 				    		            			            	                                                                                            
-			<?php the_excerpt(); ?>
+			<?php 
+				if ($pos=strpos($post->post_content, '<!--more-->')) {
+					echo  '<p class="post-excerpt">' . mb_strimwidth($content_parts['extended'], 0, 200, '...') . '</p>';
+				} else {
+					the_excerpt('100');
+				}
+			?>
 		
-			<div class="post-meta">
-			
-				<a class="post-meta-date" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-					<div class="genericon genericon-time"></div>
-					<?php the_time( get_option('date_format') ); ?>
-				</a>
-				
-				<?php if ( comments_open() ) : ?>
-					<a class="post-meta-comments" href="<?php the_permalink(); ?>#comments" title="<?php comments_number( '0', '1', '%'); ?> <?php _e('comments to','garfunkel'); ?> <?php the_title_attribute(); ?>">
-						<div class="genericon genericon-comment"></div>
-						<?php comments_number( '0', '1', '%'); ?>
-					</a>
-				<?php endif; ?>
-			
-				<div class="clear"></div>
-			
-			</div> <!-- /post-meta -->
+			<?php garfunkel_meta(); ?>
 		
 		</div> <!-- /post-inner -->
 	

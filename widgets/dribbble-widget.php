@@ -6,9 +6,10 @@ include_once(ABSPATH . WPINC . '/feed.php');
 
 class garfunkel_dribbble_widget extends WP_Widget {
 
-	function garfunkel_dribbble_widget() {
-		parent::WP_Widget(false, $name = 'Dribbble widget', array('description' => __('Displays your latest Dribbble photos.', 'garfunkel') ));	
-	}
+	function __construct() {
+        $widget_ops = array( 'classname' => 'garfunkel_dribbble_widget', 'description' => __('Displays your latest Dribbble photos.', 'garfunkel') );
+        parent::__construct( 'garfunkel_dribbble_widget', __('Dribbble Widget','garfunkel'), $widget_ops );
+    }
 	
 	function widget($args, $instance) {
 	
