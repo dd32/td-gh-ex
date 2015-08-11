@@ -32,15 +32,6 @@ function hemingway_setup() {
 	// Title tag
 	add_theme_support( 'title-tag' );
 	
-	// Title tag backwards compatibility
-	if ( ! function_exists( '_wp_render_title_tag' ) ) {
-		function lovecraft_theme_slug_render_title() { ?>
-			<title><?php wp_title('|', true, 'right'); ?></title>
-		<?php 
-		}
-		add_action( 'wp_head', 'lovecraft_theme_slug_render_title' );
-	} 
-
 	// Add nav menu
 	register_nav_menu( 'primary', 'Primary Menu' );
 	
