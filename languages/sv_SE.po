@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Lovecraft v1.13\n"
+"Project-Id-Version: Lovecraft v1.16\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2015-03-09 12:09:54+0000\n"
+"PO-Revision-Date: 2015-08-11 13:58:33+0000\n"
 "Last-Translator: anders <anders@andersnoren.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -101,14 +101,14 @@ msgstr[1] "pingbacks"
 
 #: comments.php:65
 #: functions.php:191
-#: single.php:81
+#: single.php:83
 #@ lovecraft
 msgid "Previous"
 msgstr "Föregående"
 
 #: comments.php:71
 #: functions.php:201
-#: single.php:94
+#: single.php:96
 #@ lovecraft
 msgid "Next"
 msgstr "Nästa"
@@ -133,7 +133,7 @@ msgstr "E-post"
 msgid "Website"
 msgstr "Webbplats"
 
-#: content-aside.php:27
+#: content-aside.php:29
 #: content.php:33
 #: image.php:27
 #: single.php:21
@@ -141,7 +141,7 @@ msgstr "Webbplats"
 msgid "By"
 msgstr "Av"
 
-#: content-aside.php:28
+#: content-aside.php:30
 #: content.php:34
 #: image.php:28
 #: single.php:22
@@ -154,7 +154,7 @@ msgstr "Den"
 msgid "Sticky post"
 msgstr "Klistrat inlägg"
 
-#: content-aside.php:30
+#: content-aside.php:32
 #: content.php:36
 #: single.php:24
 #@ lovecraft
@@ -173,8 +173,8 @@ msgstr "Tema av"
 
 #: full-width-page-template.php:59
 #: image.php:52
-#: page.php:49
-#: single.php:116
+#: page.php:51
+#: single.php:118
 #@ lovecraft
 msgid "We couldn't find any posts that matched your query. Please try again."
 msgstr "Vi kunde inte hitta några inlägg som matchar din sökning. Vänligen försök igen."
@@ -231,54 +231,54 @@ msgstr "Widgets i det här utrymmet kommer att visas i den högra kolumnen i sid
 msgid "Page %s of %s"
 msgstr "Sida %s av %s"
 
-#: functions.php:302
+#: functions.php:287
 #@ lovecraft
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: functions.php:302
-#: functions.php:344
+#: functions.php:287
+#: functions.php:329
 #@ lovecraft
 msgid "Edit"
 msgstr "Redigera"
 
-#: functions.php:318
+#: functions.php:303
 #@ lovecraft
 msgid "Post author"
 msgstr "Inläggsförfattare"
 
-#: functions.php:357
+#: functions.php:342
 #@ lovecraft
 msgid "Reply"
 msgstr "Svara"
 
-#: functions.php:350
+#: functions.php:335
 #@ lovecraft
 msgid "Your comment is awaiting moderation."
 msgstr "Din kommentar inväntar granskning."
 
-#: functions.php:391
+#: functions.php:376
 #@ lovecraft
 msgid "Options for Lovecraft"
 msgstr "Inställningar för Lovecraft"
 
-#: functions.php:394
+#: functions.php:379
 #@ lovecraft
 msgid "Allows you to customize theme settings for Lovecraft."
 msgstr "Låter dig bestämma inställningar för Lovecraft."
 
-#: functions.php:399
-#: functions.php:435
+#: functions.php:384
+#: functions.php:420
 #@ lovecraft
 msgid "Logo"
 msgstr "Logotyp"
 
-#: functions.php:401
+#: functions.php:386
 #@ lovecraft
 msgid "Upload a logo to replace the default site title in the header."
 msgstr "Ladda upp en logotyp som visas istället för webbplatstiteln i sidhuvudet."
 
-#: functions.php:427
+#: functions.php:412
 #@ lovecraft
 msgid "Accent Color"
 msgstr "Accentfärg"
@@ -309,12 +309,12 @@ msgstr "Sökformulär"
 msgid "Pages:"
 msgstr "Sidor:"
 
-#: single.php:83
+#: single.php:85
 #@ lovecraft
 msgid "Previous post"
 msgstr "Föregående inlägg"
 
-#: single.php:96
+#: single.php:98
 #@ lovecraft
 msgid "Next post"
 msgstr "Nästa inlägg"
@@ -324,19 +324,19 @@ msgstr "Nästa inlägg"
 msgid "Displays your latest Flickr photos."
 msgstr "Visar dina senaste Flickr-bilder."
 
-#: widgets/flickr-widget.php:66
-#: widgets/recent-comments.php:108
-#: widgets/recent-posts.php:141
+#: widgets/flickr-widget.php:67
+#: widgets/recent-comments.php:109
+#: widgets/recent-posts.php:142
 #@ lovecraft
 msgid "Title"
 msgstr "Titel"
 
-#: widgets/flickr-widget.php:72
+#: widgets/flickr-widget.php:73
 #@ lovecraft
 msgid "Flickr ID (use <a target=\"_blank\" href=\"http://www.idgettr.com\">idGettr</a>)"
 msgstr "Flickr-ID (använd <a target=\"_blank\" href=\"http://www.idgettr.com\">idGettr</a>)"
 
-#: widgets/flickr-widget.php:78
+#: widgets/flickr-widget.php:79
 #@ lovecraft
 msgid "Number of images to display"
 msgstr "Antal bilder att visa"
@@ -346,23 +346,23 @@ msgstr "Antal bilder att visa"
 msgid "Displays recent comments with user avatars."
 msgstr "Visar de senaste kommentarerna med användaravatarer."
 
-#: widgets/recent-comments.php:53
+#: widgets/recent-comments.php:54
 #@ lovecraft
 msgid "Comment to"
 msgstr "Kommentar till"
 
-#: widgets/recent-comments.php:53
+#: widgets/recent-comments.php:54
 #@ lovecraft
 msgid "posted"
 msgstr "postades"
 
-#: widgets/recent-comments.php:113
+#: widgets/recent-comments.php:114
 #@ lovecraft
 msgid "Number of comments to display"
 msgstr "Antal kommentarer att visa"
 
-#: widgets/recent-comments.php:115
-#: widgets/recent-posts.php:148
+#: widgets/recent-comments.php:116
+#: widgets/recent-posts.php:149
 #@ lovecraft
 msgid "Defaults to 5 if empty"
 msgstr "Standardvärde är 5"
@@ -372,7 +372,7 @@ msgstr "Standardvärde är 5"
 msgid "Displays recent blog entries."
 msgstr "Visar de senaste blogginläggen."
 
-#: widgets/recent-posts.php:146
+#: widgets/recent-posts.php:147
 #@ lovecraft
 msgid "Number of posts to display"
 msgstr "Antal inlägg att visa"
@@ -383,17 +383,17 @@ msgid "Read More"
 msgstr "Läs mer"
 
 #: sidebar.php:27
-#: widgets/recent-posts.php:6
+#: widgets/recent-posts.php:7
 #@ lovecraft
 msgid "Recent Posts"
 msgstr "Senaste inläggen"
 
-#: widgets/flickr-widget.php:6
+#: widgets/flickr-widget.php:7
 #@ lovecraft
 msgid "Flickr Widget"
 msgstr "Flickr-widget"
 
-#: widgets/recent-comments.php:6
+#: widgets/recent-comments.php:7
 #@ lovecraft
 msgid "Recent Comments"
 msgstr "Senaste kommentarerna"

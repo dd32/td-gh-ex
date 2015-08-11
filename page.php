@@ -14,7 +14,7 @@
 				
 						<div class="post-header">
 							
-						    <h2 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+						    <h1 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
 						    
 						    <?php if ( current_user_can('edit_post', $post->ID) ) : ?>
 						    
@@ -35,6 +35,8 @@
 								<?php the_content(); ?>
 							
 							</div>
+							
+							<div class="clear"></div>
 						
 						<?php endif; ?>
 					

@@ -1,10 +1,18 @@
-*** Lovecraft changelog ***
+*** Lovecraft Changelog ***
+
+
+Version 1.16 (2015-08-11)
+------------------------- 
+- Added clearing divs after the post content on archive pages and single posts/pages
+- Widgets now use the __construct() function in prep for WP 4.3
+- Singular post titles now use the h1 element for SEO reasons
+- Set the standard number of images in the Flickr widget to six
+- Set the infinite handle button to antialiased
 
 
 Version 1.15 (2014-04-07)
 ------------------------- 
 - Replaced wp_print_styles() with wp_enqueue_styles() in functions.php
-
 
 
 Version 1.14 (2014-03-23)

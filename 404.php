@@ -12,7 +12,7 @@
 			
 					<div class="post-header">
 						
-					    <h2 class="post-title"><?php _e('Error 404','lovecraft'); ?></h2>
+					    <h1 class="post-title"><?php _e('Error 404','lovecraft'); ?></h1>
 					    					    	    
 					</div> <!-- /post-header -->
 					

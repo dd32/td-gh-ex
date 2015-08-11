@@ -14,7 +14,7 @@
 				
 						<div class="post-header">
 							
-						    <h2 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+						    <h1 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
 						    
 						    <div class="post-meta">
 			    
@@ -50,6 +50,8 @@
 								?>
 							
 							</div>
+							
+							<div class="clear"></div>
 						
 						<?php endif; ?>
 						

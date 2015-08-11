@@ -2,9 +2,10 @@
 
 class lovecraft_flickr_widget extends WP_Widget {
 
-	function lovecraft_flickr_widget() {
-		parent::WP_Widget(false, $name = __('Flickr Widget', 'lovecraft'), array('description' => __('Displays your latest Flickr photos.', 'lovecraft') ));	
-	}
+	function __construct() {
+        $widget_ops = array( 'classname' => 'lovecraft_flickr_widget', 'description' => __('Displays your latest Flickr photos.', 'lovecraft') );
+        parent::__construct( 'lovecraft_flickr_widget', __('Flickr Widget','lovecraft'), $widget_ops );
+    }
 	
 	function widget($args, $instance) {
 	
@@ -54,7 +55,7 @@ class lovecraft_flickr_widget extends WP_Widget {
 		// Set defaults
 		if(!isset($instance["widget_title"])) { $instance["widget_title"] = ''; }
 		if(!isset($instance["id"])) { $instance["id"] = ''; }
-		if(!isset($instance["number"])) { $instance["number"] = ''; }
+		if(!isset($instance["number"])) { $instance["number"] = '6'; }
 	
 		// Get the options into variables, escaping html characters on the way
 		$widget_title = esc_attr($instance['widget_title']);

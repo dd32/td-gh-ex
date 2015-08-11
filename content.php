@@ -48,6 +48,8 @@
 				<?php the_content(); ?>
 			
 			</div>
+			
+			<div class="clear"></div>
 		
 		<?php endif; ?>
 	
