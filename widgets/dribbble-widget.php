@@ -4,9 +4,10 @@ include_once(ABSPATH . WPINC . '/feed.php');
 
 class fukasawa_dribbble_widget extends WP_Widget {
 
-	function fukasawa_dribbble_widget() {
-		parent::WP_Widget(false, $name = 'Dribbble widget', array('description' => __('Displays your latest Dribbble photos.', 'fukasawa') ));	
-	}
+	function __construct() {
+        $widget_ops = array( 'classname' => 'fukasawa_dribbble_widget', 'description' => __('Displays your latest Dribbble photos.', 'fukasawa') );
+        parent::__construct( 'fukasawa_dribbble_widget', __('Dribbble Widget','fukasawa'), $widget_ops );
+    }
 	
 	function widget($args, $instance) {
 	

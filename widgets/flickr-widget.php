@@ -2,9 +2,10 @@
 
 class fukasawa_flickr_widget extends WP_Widget {
 
-	function fukasawa_flickr_widget() {
-		parent::WP_Widget(false, $name = 'Flickr widget', array('description' => __('Displays your latest Flickr photos.', 'fukasawa') ));	
-	}
+	function __construct() {
+        $widget_ops = array( 'classname' => 'fukasawa_flickr_widget', 'description' => __('Displays your latest Flickr photos.', 'fukasawa') );
+        parent::__construct( 'fukasawa_flickr_widget', __('Flickr Widget','fukasawa'), $widget_ops );
+    }
 	
 	function widget($args, $instance) {
 	

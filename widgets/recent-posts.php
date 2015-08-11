@@ -2,9 +2,10 @@
 
 class fukasawa_recent_posts extends WP_Widget {
 
-	function fukasawa_recent_posts() {
-		parent::WP_Widget(false, $name = 'Recent posts', array('description' => __('Displays recent blog entries.', 'fukasawa') ));	
-	}
+	function __construct() {
+        $widget_ops = array( 'classname' => 'widget_fukasawa_recent_posts', 'description' => __('Displays recent blog entries.', 'fukasawa') );
+        parent::__construct( 'widget_fukasawa_recent_posts', __('Recent Posts','fukasawa'), $widget_ops );
+    }
 	
 	function widget($args, $instance) {
 	

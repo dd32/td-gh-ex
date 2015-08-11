@@ -29,6 +29,9 @@ function fukasawa_setup() {
 		'footer' 			=> 		false,
 	) );
 	
+	// Title tag
+	add_theme_support('title-tag');
+	
 	// Add nav menu
 	register_nav_menu( 'primary', __('Primary Menu','fukasawa') );
 	
@@ -50,6 +53,7 @@ function fukasawa_load_javascript_files() {
 		wp_enqueue_script( 'masonry' );
 		wp_enqueue_script( 'fukasawa_flexslider', get_template_directory_uri().'/js/flexslider.min.js', array('jquery'), '', true );
 		wp_enqueue_script( 'fukasawa_global', get_template_directory_uri().'/js/global.js', array('jquery'), '', true );
+		if ( is_singular() ) wp_enqueue_script( "comment-reply" );		
 	}
 }
 
@@ -116,30 +120,6 @@ function html_js_class () {
 add_action( 'wp_head', 'html_js_class', 1 );
 
 
-// Custom title function
-function fukasawa_wp_title( $title, $sep ) {
-	global $paged, $page;
-
-	if ( is_feed() )
-		return $title;
-
-	// Add the site name.
-	$title .= get_bloginfo( 'name' );
-
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title &mdash; $site_description";
-
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title &mdash; " . sprintf( __( 'Page %s', 'fukasawa' ), max( $paged, $page ) );
-
-	return $title;
-}
-add_filter( 'wp_title', 'fukasawa_wp_title', 10, 2 );
-
-
 // Add classes to next_posts_link and previous_posts_link
 add_filter('next_posts_link_attributes', 'fukasawa_posts_link_attributes_1');
 add_filter('previous_posts_link_attributes', 'fukasawa_posts_link_attributes_2');
@@ -179,36 +159,6 @@ function fukasawa_is_mobile_body_class( $classes ){
         $classes[] = 'wp-is-not-mobile';
     }
     return $classes;
-}
-
-
-// Remove inline styling of attachment
-add_shortcode('wp_caption', 'fukasawa_fixed_img_caption_shortcode');
-add_shortcode('caption', 'fukasawa_fixed_img_caption_shortcode');
-
-function fukasawa_fixed_img_caption_shortcode($attr, $content = null) {
-	if ( ! isset( $attr['caption'] ) ) {
-		if ( preg_match( '#((?:<a [^>]+>\s*)?<img [^>]+>(?:\s*</a>)?)(.*)#is', $content, $matches ) ) {
-			$content = $matches[1];
-			$attr['caption'] = trim( $matches[2] );
-		}
-	}
-	
-	$output = apply_filters('img_caption_shortcode', '', $attr, $content);
-	
-	if ( $output != '' ) return $output;
-	extract(shortcode_atts(array(
-		'id' => '',
-		'align' => 'alignnone',
-		'width' => '',
-		'caption' => ''
-	), $attr));
-	
-	if ( 1 > (int) $width || empty($caption) )
-	return $content;
-	if ( $id ) $id = 'id="' . esc_attr($id) . '" ';
-	return '<div ' . $id . 'class="wp-caption ' . esc_attr($align) . '" >' 
-	. do_shortcode( $content ) . '<p class="wp-caption-text">' . $caption . '</p></div>';
 }
 
 
@@ -371,82 +321,6 @@ function fukasawa_comment( $comment, $args, $depth ) {
 endif;
 
 
-// Add and save meta boxes for posts
-add_action( 'add_meta_boxes', 'fukasawa_cd_meta_box_add' );
-function fukasawa_cd_meta_box_add() {
-	add_meta_box( 'post-video-url', __('Video URL', 'fukasawa'), 'fukasawa_cd_meta_box_video_url', 'post', 'side', 'high' );
-}
-
-function fukasawa_cd_meta_box_video_url( $post ) {
-	$values = get_post_custom( $post->ID );
-	$video_url = isset( $values['video_url'] ) ? esc_attr( $values['video_url'][0] ) : '';
-	wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
-	?>
-		<p>
-			<input type="text" class="widefat" name="video_url" id="video_url" value="<?php echo $video_url; ?>" />
-		</p>
-	<?php		
-}
-
-add_action( 'save_post', 'fukasawa_cd_meta_box_save' );
-function fukasawa_cd_meta_box_save( $post_id ) {
-	// Bail if we're doing an auto save
-	if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
-	
-	// if our nonce isn't there, or we can't verify it, bail
-	if( !isset( $_POST['meta_box_nonce'] ) || !wp_verify_nonce( $_POST['meta_box_nonce'], 'my_meta_box_nonce' ) ) return;
-	
-	// if our current user can't edit this post, bail
-	if( !current_user_can( 'edit_post' ) ) return;
-	
-	// now we can actually save the data
-	$allowed = array( 
-		'a' => array( // on allow a tags
-			'href' => array() // and those anchords can only have href attribute
-		)
-	);
-	
-	// Probably a good idea to make sure the data is set		
-	if( isset( $_POST['video_url'] ) ) {
-		update_post_meta( $post_id, 'video_url', wp_kses( $_POST['video_url'], $allowed ) );
-	}
-	
-}
-
-
-// Hide/show meta boxes depending on the post format selected
-function fukasawa_meta_box_post_format_toggle()
-{
-    wp_enqueue_script( 'jquery' );
-
-    $script = '
-    <script type="text/javascript">
-        jQuery( document ).ready( function($)
-            {
-            
-                $( "#post-video-url" ).hide();
-                $( "#post-quote-content-box" ).hide();
-                $( "#post-quote-attribution-box" ).hide();
-            	
-            	if($("#post-format-video").is(":checked"))
-	                $( "#post-video-url" ).show();
-                
-                $( "input[name=\"post_format\"]" ).change( function() {
-	                $( "#post-video-url" ).hide();
-                } );
-
-                $( "input#post-format-video" ).change( function() {
-                    $( "#post-video-url" ).show();
-				});
-
-            }
-        );
-    </script>';
-
-    return print $script;
-}
-add_action( 'admin_footer', 'fukasawa_meta_box_post_format_toggle' );
-
 
 // Fukasawa theme options
 class fukasawa_Customize {
@@ -476,6 +350,7 @@ class fukasawa_Customize {
             'default' => '#019EBD', //Default setting/value to save
             'type' => 'theme_mod', //Is this an 'option' or a 'theme_mod'?
             'transport' => 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+            'sanitize_callback' => 'sanitize_hex_color'            
          ) 
       );
 	  

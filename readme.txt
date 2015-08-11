@@ -1,7 +1,7 @@
 # Copyright
 --------------
 
-Fukasawa WordPress Theme, Copyright 2014 Anders Norén
+Fukasawa WordPress Theme, Copyright 2015 Anders Norén
 Fukasawa is distributed under the terms of the GNU GPL v2
 
 

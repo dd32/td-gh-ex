@@ -2,9 +2,10 @@
 
 class fukasawa_recent_comments extends WP_Widget {
 
-	function fukasawa_recent_comments() {
-		parent::WP_Widget(false, $name = 'Recent comments', array('description' => __('Displays recent comments with user avatars.', 'fukasawa') ));
-	}
+	function __construct() {
+        $widget_ops = array( 'classname' => 'widget_fukasawa_recent_comments', 'description' => __('Displays recent comments with user avatars.', 'fukasawa') );
+        parent::__construct( 'widget_fukasawa_recent_comments', __('Recent Comments','fukasawa'), $widget_ops );
+    }
 	
 	function widget($args, $instance) {
 	

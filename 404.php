@@ -8,7 +8,7 @@
 		                
 		<div class="post-header">
 		
-			<h2 class="post-title"><?php _e('Error 404','fukasawa'); ?></h2>
+			<h1 class="post-title"><?php _e('Error 404','fukasawa'); ?></h1>
 													
 		</div> <!-- /post-header -->
 	                                                	            

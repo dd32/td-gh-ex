@@ -10,29 +10,26 @@
 			
 			<?php if ( $post_format == 'video' ) : ?>
 			
-				<?php $video_url = get_post_meta($post->ID, 'video_url', true); if ( $video_url != '' ) : ?>
-				
+				<?php if ($pos=strpos($post->post_content, '<!--more-->')): ?>
+		
 					<div class="featured-media">
 					
-						<?php if (strpos($video_url,'.mp4') !== false) : ?>
-							
-							<video controls>
-								<source src="<?php echo esc_url( $video_url ); ?>" type="video/mp4">
-							</video>
-																					
-						<?php else : ?>
-							
-							<?php 
-							
-								$embed_code = wp_oembed_get($video_url); 
+						<?php
 								
-								echo $embed_code;
-								
-							?>
-								
-						<?php endif; ?>
+							// Fetch post content
+							$content = get_post_field( 'post_content', get_the_ID() );
+							
+							// Get content parts
+							$content_parts = get_extended( $content );
+							
+							// oEmbed part before <!--more--> tag
+							$embed_code = wp_oembed_get($content_parts['main']); 
+							
+							echo $embed_code;
 						
-					</div>
+						?>
+					
+					</div> <!-- /featured-media -->
 				
 				<?php endif; ?>
 				
@@ -45,28 +42,7 @@
 					<div class="clear"></div>
 					
 				</div> <!-- /featured-media -->
-				
-			<?php elseif ( $post_format == 'quote' ) : ?>
-			
-				<?php $quote_content = get_post_meta($post->ID, 'quote_content', true); ?>
-				<?php $quote_attribution = get_post_meta($post->ID, 'quote_attribution', true); ?>
-					
-				<div class="post-quote">
-				
-					<div class="post-inner">
-						
-						<blockquote><?php echo $quote_content; ?></blockquote>
-					
-						<?php if ( $quote_attribution != '' ) : ?>
-						
-							<cite><?php echo $quote_attribution; ?></cite>
-						
-						<?php endif; ?>
-					
-					</div> <!-- /post-inner -->
-				
-				</div> <!-- /post-quote -->
-			
+							
 			<?php elseif ( has_post_thumbnail() ) : ?>
 					
 				<div class="featured-media">
@@ -81,13 +57,21 @@
 				
 				<div class="post-header">
 													
-					<h2 class="post-title"><?php the_title(); ?></h2>
+					<h1 class="post-title"><?php the_title(); ?></h1>
 															
 				</div> <!-- /post-header -->
 				    
 			    <div class="post-content">
 			    
-			    	<?php the_content(); ?>
+			    	<?php 
+						if ($post_format == 'video') { 
+							$content = $content_parts['extended'];
+							$content = apply_filters('the_content', $content);
+							echo $content;
+						} else {
+							the_content();
+						}
+					?>
 			    
 			    </div> <!-- /post-content -->
 			    
@@ -110,7 +94,7 @@
 					?>
 				
 					<ul>
-						<li class="post-date"><a href="<?php the_permalink(); ?>"><?php the_date(get_option('date_format')); ?></a></p>
+						<li class="post-date"><a href="<?php the_permalink(); ?>"><?php the_date(get_option('date_format')); ?></a></li>
 						<?php if (has_category()) : ?>
 							<li class="post-categories"><?php _e('In','fukasawa'); ?> <?php the_category(', '); ?></li>
 						<?php endif; ?>

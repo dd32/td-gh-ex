@@ -2,9 +2,10 @@
 
 class fukasawa_video_widget extends WP_Widget {
 
-	function fukasawa_video_widget() {
-		parent::WP_Widget(false, $name = 'Video widget', array('description' => __('Displays a video of your choosing.', 'fukasawa') ));	
-	}
+	function __construct() {
+        $widget_ops = array( 'classname' => 'fukasawa_video_widget', 'description' => __('Displays a video of your choosing.', 'fukasawa') );
+        parent::__construct( 'fukasawa_video_widget', __('Video Widget','fukasawa'), $widget_ops );
+    }
 	
 	function widget($args, $instance) {
 	

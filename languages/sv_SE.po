@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Fukasawa v1.00\n"
+"Project-Id-Version: Fukasawa v1.04\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-08-04 10:28:50+0000\n"
+"PO-Revision-Date: 2015-08-11 13:42:59+0000\n"
 "Last-Translator: anders <anders@andersnoren.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -55,6 +55,7 @@ msgstr "Arkiv"
 
 #: archive.php:31
 #: index.php:17
+#: search.php:16
 #, php-format
 #@ fukasawa
 msgid "Page %s of %s"
@@ -62,14 +63,14 @@ msgstr "Sida %s av %s"
 
 #: archive.php:61
 #: index.php:41
-#: search.php:27
+#: search.php:38
 #@ fukasawa
 msgid "Older posts"
 msgstr "Äldre inlägg"
 
 #: archive.php:63
 #: index.php:43
-#: search.php:29
+#: search.php:40
 #@ fukasawa
 msgid "Newer posts"
 msgstr "Nyare inlägg"
@@ -131,65 +132,54 @@ msgstr "Webbplats"
 msgid "View"
 msgstr "Visa"
 
-#: functions.php:29
+#: functions.php:36
 #@ fukasawa
 msgid "Primary Menu"
 msgstr "Huvudmeny"
 
-#: functions.php:81
+#: functions.php:89
 #@ fukasawa
 msgid "Sidebar"
 msgstr "Sidebar"
 
-#: functions.php:83
+#: functions.php:91
 #@ fukasawa
 msgid "Widgets in this area will be shown in the sidebar."
 msgstr "Widgets i det här fältet kommer att visas i sidebaren."
 
-#: functions.php:136
-#, php-format
-#@ fukasawa
-msgid "Page %s"
-msgstr "Sida %s"
-
-#: functions.php:308
+#: functions.php:254
 #@ fukasawa
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: functions.php:308
-#: functions.php:361
+#: functions.php:254
+#: functions.php:307
 #@ fukasawa
 msgid "Edit"
 msgstr "Redigera"
 
-#: functions.php:346
+#: functions.php:292
 #@ fukasawa
 msgid "Your comment is awaiting moderation."
 msgstr "Din kommentar inväntar moderering."
 
-#: functions.php:354
+#: functions.php:300
 #@ fukasawa
 msgid "Reply"
 msgstr "Svara"
 
-#: functions.php:381
-#@ fukasawa
-msgid "Video URL"
-msgstr "Videoadress"
-
-#: functions.php:471
-#: functions.php:506
+#: functions.php:341
+#: functions.php:377
 #@ fukasawa
 msgid "Logo"
 msgstr "Logotyp"
 
-#: functions.php:473
+#: functions.php:343
 #@ fukasawa
 msgid "Upload a logo to replace the default site title in the sidebar/header"
 msgstr "Ladda upp en logotyp för att ersätta texttiteln i sidopanelen/sidhuvudet"
 
-#: functions.php:498
+#: functions.php:369
 #@ fukasawa
 msgid "Accent Color"
 msgstr "Accentfärg"
@@ -231,25 +221,25 @@ msgstr "Upplösning:"
 
 #: image.php:53
 #: page.php:49
-#: single.php:163
+#: single.php:147
 #: template-archive.php:107
 #@ fukasawa
 msgid "We couldn't find any posts that matched your query. Please try again."
 msgstr "Vi kunde inte hitta några inlägg som matchar din sökning. Försök gärna igen."
 
 #: page.php:33
-#: single.php:100
+#: single.php:84
 #@ fukasawa
 msgid "Pages:"
 msgstr "Sidor:"
 
 #: search.php:9
-#: search.php:42
+#: search.php:57
 #@ fukasawa
 msgid "Search results:"
 msgstr "Sökresultat:"
 
-#: search.php:53
+#: search.php:68
 #@ fukasawa
 msgid "No results. Try again, would you kindly?"
 msgstr "Inga resultat. Försök gärna igen."
@@ -259,19 +249,19 @@ msgstr "Inga resultat. Försök gärna igen."
 msgid "Search form"
 msgstr "Sökformulär"
 
-#: single.php:115
+#: single.php:99
 #@ fukasawa
 msgid "In"
 msgstr "I"
 
-#: single.php:139
-#: single.php:140
+#: single.php:123
+#: single.php:124
 #@ fukasawa
 msgid "Previous post"
 msgstr "Föregående inlägg"
 
-#: single.php:147
-#: single.php:148
+#: single.php:131
+#: single.php:132
 #@ fukasawa
 msgid "Next post"
 msgstr "Nästa inlägg"
@@ -322,8 +312,8 @@ msgstr "Arkiv efter dag"
 msgid "Displays your latest Dribbble photos."
 msgstr "Visar dina senaste Dribbble-bilder."
 
-#: widgets/dribbble-widget.php:87
-#: widgets/flickr-widget.php:66
+#: widgets/dribbble-widget.php:88
+#: widgets/flickr-widget.php:67
 #@ fukasawa
 msgid "Number of images to display:"
 msgstr "Antal bilder att visa:"
@@ -333,7 +323,7 @@ msgstr "Antal bilder att visa:"
 msgid "Displays your latest Flickr photos."
 msgstr "Visar dina senaste Flickr-bilder."
 
-#: widgets/flickr-widget.php:60
+#: widgets/flickr-widget.php:61
 #@ fukasawa
 msgid "Flickr ID (use <a target=\"_blank\" href=\"http://www.idgettr.com\">idGettr</a>):"
 msgstr "Flickr ID (använd <a target=\"_blank\" href=\"http://www.idgettr.com\">idGettr</a>):"
@@ -343,32 +333,32 @@ msgstr "Flickr ID (använd <a target=\"_blank\" href=\"http://www.idgettr.com\">
 msgid "Displays recent comments with user avatars."
 msgstr "Visar de senaste kommentarerna med användaravatarer."
 
-#: widgets/recent-comments.php:50
+#: widgets/recent-comments.php:51
 #@ fukasawa
 msgid "Comment to"
 msgstr "Kommentar till"
 
-#: widgets/recent-comments.php:50
+#: widgets/recent-comments.php:51
 #@ fukasawa
 msgid "posted"
 msgstr "publicerades"
 
-#: widgets/dribbble-widget.php:75
-#: widgets/flickr-widget.php:54
-#: widgets/recent-comments.php:96
-#: widgets/recent-posts.php:135
-#: widgets/video-widget.php:62
+#: widgets/dribbble-widget.php:76
+#: widgets/flickr-widget.php:55
+#: widgets/recent-comments.php:97
+#: widgets/recent-posts.php:136
+#: widgets/video-widget.php:63
 #@ fukasawa
 msgid "Title:"
 msgstr "Titel:"
 
-#: widgets/recent-comments.php:101
+#: widgets/recent-comments.php:102
 #@ fukasawa
 msgid "Number of comments to display:"
 msgstr "Antal kommentarer att visa:"
 
-#: widgets/recent-comments.php:103
-#: widgets/recent-posts.php:142
+#: widgets/recent-comments.php:104
+#: widgets/recent-posts.php:143
 #@ fukasawa
 msgid "Defaults to 5 if empty"
 msgstr "5 visas om fältet lämnas tomt"
@@ -378,7 +368,7 @@ msgstr "5 visas om fältet lämnas tomt"
 msgid "Displays recent blog entries."
 msgstr "Visar de senaste inläggen från bloggen."
 
-#: widgets/recent-posts.php:140
+#: widgets/recent-posts.php:141
 #@ fukasawa
 msgid "Number of posts to display:"
 msgstr "Antal inlägg att visa:"
@@ -388,23 +378,48 @@ msgstr "Antal inlägg att visa:"
 msgid "Displays a video of your choosing."
 msgstr "Visar en utvald video."
 
-#: functions.php:463
+#: functions.php:333
 #@ fukasawa
 msgid "Options for Fukasawa"
 msgstr "Inställningar för Fukasawa"
 
-#: functions.php:466
+#: functions.php:336
 #@ fukasawa
 msgid "Allows you to customize theme settings for Fukasawa."
 msgstr "Låter dig ställa in temainställningarna för Fukasawa."
 
-#: widgets/dribbble-widget.php:81
+#: widgets/dribbble-widget.php:82
 #@ fukasawa
 msgid "Dribbble username:"
 msgstr "Dribbble-användarnamn:"
 
-#: widgets/video-widget.php:68
+#: widgets/video-widget.php:69
 #@ fukasawa
 msgid "Video URL:"
 msgstr "Videoadress:"
+
+#: widgets/dribbble-widget.php:9
+#@ fukasawa
+msgid "Dribbble Widget"
+msgstr "Dribbble-widget"
+
+#: widgets/flickr-widget.php:7
+#@ fukasawa
+msgid "Flickr Widget"
+msgstr "Flickr-widget"
+
+#: widgets/recent-comments.php:7
+#@ fukasawa
+msgid "Recent Comments"
+msgstr "Senaste kommentarerna"
+
+#: widgets/recent-posts.php:7
+#@ fukasawa
+msgid "Recent Posts"
+msgstr "Senaste inläggen"
+
+#: widgets/video-widget.php:7
+#@ fukasawa
+msgid "Video Widget"
+msgstr "Video-widget"
 
