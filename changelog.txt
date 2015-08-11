@@ -1,6 +1,11 @@
 *** Hemingway Changelog ***
 
 
+Version 1.51 (2015-08-11)
+-------------------------
+- Added a missing margin between the format-video post content and post meta on archive pages
+
+
 Version 1.50 (2015-08-11)
 -------------------------
 - Removed a add_shortcode() function from functions.php
