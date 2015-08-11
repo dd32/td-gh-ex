@@ -130,7 +130,7 @@ class garfunkel_recent_posts extends WP_Widget {
 		
 		// Set defaults
 		if(!isset($instance["widget_title"])) { $instance["widget_title"] = ''; }
-		if(!isset($instance["number_of_posts"])) { $instance["number_of_posts"] = ''; }
+		if(!isset($instance["number_of_posts"])) { $instance["number_of_posts"] = '5'; }
 	
 		// Get the options into variables, escaping html characters on the way
 		$widget_title = $instance['widget_title'];
