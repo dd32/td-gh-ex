@@ -175,7 +175,7 @@ add_action('widgets_init', 'kadence_widgets_init');
 class Kadence_Contact_Widget extends WP_Widget {
   function Kadence_Contact_Widget() {
     $widget_ops = array('classname' => 'widget_kadence_contact', 'description' => __('Use this widget to add a Vcard to your site', 'virtue'));
-    $this->WP_Widget('widget_kadence_contact', __('Virtue: Contact/Vcard', 'virtue'), $widget_ops);
+    $this->__construct('widget_kadence_contact', __('Virtue: Contact/Vcard', 'virtue'), $widget_ops);
     $this->alt_option_name = 'widget_kadence_contact';
 
     add_action('save_post', array(&$this, 'flush_widget_cache'));
@@ -326,7 +326,7 @@ class Kadence_Contact_Widget extends WP_Widget {
 class Kadence_Social_Widget extends WP_Widget {
   function Kadence_Social_Widget() {
     $widget_ops = array('classname' => 'widget_kadence_social', 'description' => __('Simple way to add Social Icons', 'virtue'));
-    $this->WP_Widget('widget_kadence_social', __('Virtue: Social Links', 'virtue'), $widget_ops);
+    $this->__construct('widget_kadence_social', __('Virtue: Social Links', 'virtue'), $widget_ops);
     $this->alt_option_name = 'widget_kadence_social';
 
     add_action('save_post', array(&$this, 'flush_widget_cache'));
@@ -512,7 +512,7 @@ class Kadence_Recent_Posts_Widget extends WP_Widget {
 
   function Kadence_Recent_Posts_Widget() {
       $widget_ops = array('classname' => 'kadence_recent_posts', 'description' => __('This shows the most recent posts on your site with a thumbnail', 'virtue'));
-      $this->WP_Widget('kadence_recent_posts', __('Virtue: Recent Posts', 'virtue'), $widget_ops);
+      $this->__construct('kadence_recent_posts', __('Virtue: Recent Posts', 'virtue'), $widget_ops);
       $this->alt_option_name = 'kadence_recent_entries';
 
     add_action( 'save_post', array(&$this, 'flush_widget_cache') );
@@ -623,7 +623,7 @@ class Kadence_Image_Grid_Widget extends WP_Widget {
 
   function Kadence_Image_Grid_Widget() {
       $widget_ops = array('classname' => 'kadence_image_grid', 'description' => __('This shows a grid of featured images from recent posts or portfolio items', 'virtue'));
-      $this->WP_Widget('kadence_image_grid', __('Virtue: Image Grid', 'virtue'), $widget_ops);
+      $this->__construct('kadence_image_grid', __('Virtue: Image Grid', 'virtue'), $widget_ops);
       $this->alt_option_name = 'kadence_image_grid';
 
     add_action( 'save_post', array(&$this, 'flush_widget_cache') );
@@ -786,7 +786,7 @@ class Simple_About_With_Image extends WP_Widget{
 
     function Simple_About_With_Image() {
         $widget_ops = array('classname' => 'virtue_about_with_image', 'description' => __('This allows for an image and a simple about text.', 'virtue'));
-        $this->WP_Widget('virtue_about_with_image', __('Virtue: Image', 'virtue'), $widget_ops);
+        $this->__construct('virtue_about_with_image', __('Virtue: Image', 'virtue'), $widget_ops);
         $this->alt_option_name = 'virtue_about_with_image';
     }
 

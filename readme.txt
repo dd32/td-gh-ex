@@ -30,6 +30,10 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 2.5.2 | 29th July 2015 =
+* Update: WP_Widget to __construct. 
+* Update: Woocommerce templates.
+
 = Version 2.5.1 | 29th July 2015 =
 * Fix: undefined variable notice. 
 
@@ -38,7 +42,6 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 * Fix: Odd gif error on some servers.
 * Fix: Home page visibilty options.
 * Remove: Save Defaults.
-* Remove: options panel (no loaded through plugin).
 
 = Version 2.4.9 | 6th June 2015 =
 * Update: rel-link function to look for wp image class.

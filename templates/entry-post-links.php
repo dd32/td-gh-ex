@@ -6,3 +6,4 @@
         <?php next_post_link('%link', __('Next Post', 'virtue')); ?> 
         </div>
  </div> <!-- end navigation -->
+ 
