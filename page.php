@@ -22,13 +22,19 @@ get_header(); ?>
 				<?php get_template_part( 'content', 'page' ); ?>
 
 				<?php
-                    if ( $awaken_options['awaken-page-comments'] == '1' ) :
+
+					if ( $awaken_options && $awaken_options['awaken-page-comments'] == '1' ) {
                         // If comments are open or we have at least one comment, load up the comment template
                         if ( comments_open() || '0' != get_comments_number() ) :
                             comments_template();
                         endif;
 
-                    endif;
+                    } else {
+                		if ( comments_open() || '0' != get_comments_number() ) :
+                            comments_template();
+                        endif;
+                    }
+
 				?>
 
 			<?php endwhile; // end of the loop. ?>

@@ -101,9 +101,9 @@ function awaken_initialize_header() {
 	global $awaken_options; //Global theme options variable
 	
 	//Place all Javascript Here
-	echo "<script>";
+	echo '<script>';
 		echo $awaken_options['awaken-header-code'];
-	echo "</script>";
+	echo '</script>';
 	//Java Script Ends
 	
 	//CSS Begins

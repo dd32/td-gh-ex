@@ -1,5 +1,5 @@
-Theme Name : Awaken
-Version    : 1.1.2
+﻿Theme Name : Awaken
+Version    : 1.1.3
 Theme URL  : http://www.themezhut.com/themes/awaken
 Theme Documentation  : http://www.themezhut.com/awaken-theme-documentation
 License: GNU General Public License v2 or later
@@ -152,3 +152,7 @@ Fixed a coding issue. ( Undefined index in slider )
 
 - Version 1.1.2
 Fixed some small issues in html validation.
+
+- Version 1.1.3
+Fixed some translation issues. 
+Fixed some issues in comments activate deactivate methodology.

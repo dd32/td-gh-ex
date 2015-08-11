@@ -86,7 +86,7 @@
 				<div class="awaken-search-box">
 					<form action="<?php echo esc_url( home_url( '/' ) ); ?>" id="awaken-search-form" method="get">
 						<input type="text" value="" name="s" id="s" />
-						<input type="submit" value="<?php esc_attr_e( 'Search', 'awaken' ); ?>" />
+						<input type="submit" value="<?php _e( 'Search', 'awaken' ); ?>" />
 					</form>
 				</div><!-- th-search-box -->
 			</div><!-- .th-search-box-container -->
@@ -99,8 +99,12 @@
 
 	<?php 
 		if ( is_front_page() ) {
-			if ( $awaken_options['home-slider-activate'] == '1' ) {
-				awaken_featured_posts(); 
+			if ( $awaken_options ) {
+				if ( $awaken_options['home-slider-activate'] == '1' ) {
+					awaken_featured_posts();
+				}
+			} else {
+				awaken_featured_posts();
 			}
 		}
 	?>

@@ -24,9 +24,18 @@
 			<div class="genpost-entry-meta">
 				<?php awaken_posted_on(); ?>
                 <?php global $awaken_options; ?>
-                <?php if ( $awaken_options['awaken-post-comments'] == '1' && ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-                    <span class="comments-link"><?php comments_popup_link( __( 'Comment', 'awaken' ), '1', '%' ); ?></span>
-                <?php endif; ?>
+                <?php 
+                	if( $awaken_options ) {
+                		if ( $awaken_options['awaken-post-comments'] == '1' ) {
+	                		if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
+	                    		<span class="comments-link"><?php comments_popup_link( __( 'Comment', 'awaken' ), '1', '%' ); ?></span>
+	            			<?php endif; 
+            			} 
+            		} else {
+    					if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
+                    		<span class="comments-link"><?php comments_popup_link( __( 'Comment', 'awaken' ), '1', '%' ); ?></span>
+            			<?php endif;
+                	} ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->

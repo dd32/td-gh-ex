@@ -40,8 +40,8 @@ function awaken_paging_nav() {
 		'current'  => $paged,
 		'mid_size' => 3,
 		'add_args' => array_map( 'urlencode', $query_args ),
-		'prev_text' => __( '<span class="meta-nav-prev"></span> Previous', 'thbusiness' ),
-		'next_text' => __( 'Next <span class="meta-nav-next"></span>', 'thbusiness' ),
+		'prev_text' => __( '<span class="meta-nav-prev"></span> Previous', 'awaken' ),
+		'next_text' => __( 'Next <span class="meta-nav-next"></span>', 'awaken' ),
 		'type'      => 'list',
 	) );
 
@@ -49,7 +49,7 @@ function awaken_paging_nav() {
 
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'thbusiness' ); ?></h1>
+		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'awaken' ); ?></h1>
 			<?php echo $links; ?>
 	</nav><!-- .navigation -->
 	<?php

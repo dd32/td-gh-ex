@@ -326,15 +326,16 @@
                             'indent'   => false, // Indent all options below until the next 'section' option is set.
                             'required' => array( 'favicon-display-checkbox', "=", 1 ),
                         ),
-                        array(
-                            'id'       => 'awaken-header-code',
-                            'type'     => 'textarea',
-                            'title'    => __( 'Header Code', 'awaken' ),
-                            'subtitle' => __( 'Paste your Google Analytics (or other) tracking code here. This will be added into the header of your theme.', 'awaken' ),
-                            'validate' => 'js',
-                            'desc'     => 'Validate that it\'s javascript!',
-							'default'  => ''
-                        ),
+						array(
+							'id'       => 'awaken-header-code',
+							'type'     => 'ace_editor',
+							'title'    => __( 'Header JS Code', 'awaken' ),
+							'subtitle' => __( 'Paste your Google Analytics (or other) tracking code here. This will be added into the header of your theme.', 'awaken' ),
+							'mode'     => 'javascript',
+							'theme'    => 'chrome',
+							'desc'     => 'Note: Please don\'t include the "&lt;script&gt; &lt;/script&gt;" tags. Just paste your js code here.',
+							'default'  => "jQuery(document).ready(function(){\n\n});"
+						),
                         array(
                             'id'       => 'awaken-footer-text',
                             'type'     => 'editor',
