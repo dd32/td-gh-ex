@@ -1,6 +1,11 @@
 *** Garfunkel Changelog ***
 
 
+Version 1.04 (2015-08-11)
+-------------------------
+- Actually generated the new Swedish translation (important part)
+
+
 Version 1.03 (2015-08-11)
 -------------------------
 - Replaced custom title function with title-tag support

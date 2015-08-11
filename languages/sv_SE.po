@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Garfunkel v1.0\n"
+"Project-Id-Version: Garfunkel v1.03\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-07-24 12:44:41+0000\n"
+"PO-Revision-Date: 2015-08-11 13:10:48+0000\n"
 "Last-Translator: anders <anders@andersnoren.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -118,13 +118,7 @@ msgstr "Kommentarsfältet är stängt."
 msgid "Your email address will not be published."
 msgstr "Din e-postadress kommer inte att publiceras."
 
-#: content-aside.php:25
-#: content-gallery.php:67
-#: content-image.php:41
-#: content-link.php:60
-#: content-quote.php:60
-#: content-video.php:63
-#: content.php:51
+#: functions.php:304
 #@ garfunkel
 msgid "comments to"
 msgstr "kommentarer till"
@@ -134,110 +128,83 @@ msgstr "kommentarer till"
 msgid "Sticky post"
 msgstr "Klistrat inlägg"
 
-#: functions.php:38
+#: functions.php:42
 #@ garfunkel
 msgid "Primary Menu"
 msgstr "Huvudmeny"
 
-#: functions.php:39
+#: functions.php:43
 #@ garfunkel
 msgid "Social Menu"
 msgstr "Social meny"
 
-#: functions.php:99
+#: functions.php:105
 #@ garfunkel
 msgid "Footer A"
 msgstr "Sidfot A"
 
-#: functions.php:101
+#: functions.php:107
 #@ garfunkel
 msgid "Widgets in this area will be shown in the left column in the footer of single posts and pages."
 msgstr "Widgets i det här utrymmet kommer att visas i den vänstra kolumnen på enskilda inlägg och sidor."
 
-#: functions.php:108
+#: functions.php:114
 #@ garfunkel
 msgid "Footer B"
 msgstr "Sidfot B"
 
-#: functions.php:110
+#: functions.php:116
 #@ garfunkel
 msgid "Widgets in this area will be shown in the middle column in the footer  of single posts and pages."
 msgstr "Widgets i det här utrymmet kommer att visas i mittenkolumnen på enskilda inlägg och sidor."
 
-#: functions.php:117
+#: functions.php:123
 #@ garfunkel
 msgid "Footer C"
 msgstr "Sidfot C"
 
-#: functions.php:119
+#: functions.php:125
 #@ garfunkel
 msgid "Widgets in this area will be shown in the right column in the footer  of single posts and pages."
 msgstr "Widgets i det här utrymmet kommer att visas i den högra kolumnen på enskilda inlägg och sidor."
 
-#: functions.php:173
-#, php-format
-#@ garfunkel
-msgid "Page %s"
-msgstr "Sida %s"
-
-#: functions.php:415
+#: functions.php:372
 #@ garfunkel
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: functions.php:415
-#: functions.php:453
+#: functions.php:372
+#: functions.php:410
 #: page.php:49
-#: single.php:139
+#: single.php:108
 #: template-archives.php:57
 #: template-fullwidth.php:55
 #@ garfunkel
 msgid "Edit"
 msgstr "Redigera"
 
-#: functions.php:445
+#: functions.php:402
 #@ garfunkel
 msgid "Awaiting moderation"
 msgstr "Inväntar moderering"
 
-#: functions.php:455
+#: functions.php:412
 #@ garfunkel
 msgid "Reply"
 msgstr "Svara"
 
-#: functions.php:474
-#: widgets/video-widget.php:68
+#: widgets/video-widget.php:73
 #@ garfunkel
 msgid "Video URL"
 msgstr "Videoadress"
 
-#: functions.php:475
-#@ garfunkel
-msgid "Quote content"
-msgstr "Citatets innehåll"
-
-#: functions.php:476
-#@ garfunkel
-msgid "Quote attribution"
-msgstr "Citatets attribution"
-
-#: functions.php:477
-#@ garfunkel
-msgid "Link URL"
-msgstr "Länkadress"
-
-#: functions.php:478
-#@ garfunkel
-msgid "Link title"
-msgstr "Länktitel"
-
-#: functions.php:653
-#: functions.php:683
+#: functions.php:444
+#: functions.php:480
 #@ garfunkel
 msgid "Logo"
 msgstr "Logotyp"
 
-#: functions.php:675
+#: functions.php:472
 #@ garfunkel
 msgid "Accent Color"
 msgstr "Accentfärg"
@@ -254,7 +221,7 @@ msgstr "Stäng"
 
 #: image.php:56
 #: page.php:77
-#: single.php:441
+#: single.php:420
 #: template-archives.php:157
 #: template-fullwidth.php:83
 #@ garfunkel
@@ -282,96 +249,96 @@ msgstr "Inga resultat. Försök gärna igen."
 msgid "Search form"
 msgstr "Sökformulär"
 
-#: single.php:155
+#: single.php:134
 #@ garfunkel
 msgid "Pages:"
 msgstr "Sidor:"
 
-#: single.php:178
+#: single.php:157
 #@ garfunkel
 msgid "Comments"
 msgstr "Kommentarer"
 
-#: single.php:184
+#: single.php:163
 #@ garfunkel
 msgid "Post info"
 msgstr "Om inlägget"
 
-#: single.php:190
+#: single.php:169
 #@ garfunkel
 msgid "Author info"
 msgstr "Om författaren"
 
-#: single.php:235
-#: single.php:417
+#: single.php:214
 #@ garfunkel
 msgid "Previous post:"
 msgstr "Föregående inlägg:"
 
-#: single.php:236
-#: single.php:418
+#: single.php:215
+#: single.php:396
+#: single.php:397
 #@ garfunkel
 msgid "Previous post"
 msgstr "Föregående inlägg"
 
-#: single.php:246
-#: single.php:428
+#: single.php:225
 #@ garfunkel
 msgid "Next post:"
 msgstr "Nästa inlägg:"
 
-#: single.php:247
-#: single.php:429
+#: single.php:226
+#: single.php:407
+#: single.php:408
 #@ garfunkel
 msgid "Next post"
 msgstr "Nästa inlägg"
 
-#: single.php:273
+#: single.php:252
 #@ garfunkel
 msgid "Administrator"
 msgstr "Administratör"
 
-#: single.php:275
+#: single.php:254
 #@ garfunkel
 msgid "Editor"
 msgstr "Redaktör"
 
-#: single.php:277
+#: single.php:256
 #@ garfunkel
 msgid "Author"
 msgstr "Författare"
 
-#: single.php:279
+#: single.php:258
 #@ garfunkel
 msgid "Contributor"
 msgstr "Skribent"
 
-#: single.php:281
+#: single.php:260
 #@ garfunkel
 msgid "Subscriber"
 msgstr "Prenumerant"
 
-#: single.php:283
+#: single.php:262
 #@ garfunkel
 msgid "Guest"
 msgstr "Gäst"
 
-#: single.php:303
+#: single.php:282
 #@ garfunkel
 msgid "Posts by"
 msgstr "Inlägg av"
 
-#: single.php:351
+#: single.php:330
 #@ garfunkel
 msgid "Comments by"
 msgstr "Kommentarer av"
 
-#: single.php:371
+#: single.php:350
 #@ garfunkel
 msgid "Posted on"
 msgstr "Publicerades den"
 
-#: single.php:371
+#: single.php:350
 #@ garfunkel
 msgid "to"
 msgstr "till"
@@ -422,68 +389,62 @@ msgstr "Arkiv efter datum"
 msgid "Displays your latest Dribbble photos."
 msgstr "Visar dina senaste Dribbble-bilder."
 
-#: widgets/dribbble-widget.php:77
-#: widgets/flickr-widget.php:56
-#: widgets/recent-posts.php:136
-#: widgets/search-form.php:45
-#: widgets/video-widget.php:62
+#: widgets/dribbble-widget.php:78
+#: widgets/flickr-widget.php:67
+#: widgets/recent-posts.php:141
+#: widgets/search-form.php:49
+#: widgets/video-widget.php:67
 #@ garfunkel
 msgid "Title"
 msgstr "Titel"
 
-#: widgets/dribbble-widget.php:83
+#: widgets/dribbble-widget.php:84
 #@ garfunkel
 msgid "Dribbble username"
 msgstr "Dribbble-användarnamn"
 
-#: widgets/dribbble-widget.php:89
-#: widgets/flickr-widget.php:68
+#: widgets/dribbble-widget.php:90
 #@ garfunkel
 msgid "Number of images to display:"
 msgstr "Antal bilder att visa:"
 
-#: widgets/flickr-widget.php:8
+#: widgets/flickr-widget.php:6
 #@ garfunkel
 msgid "Displays your latest Flickr photos."
 msgstr "Visar dina senaste Flickr-bilder."
-
-#: widgets/flickr-widget.php:62
-#@ garfunkel
-msgid "Flickr ID (use <a target=\"_blank\" href=\"http://www.idgettr.com\">idGettr</a>):"
-msgstr "Flickr-ID (använd <a target=\"_blank\" href=\"http://www.idgettr.com\">idGettr</a>):"
 
 #: widgets/recent-comments.php:6
 #@ garfunkel
 msgid "Displays recent comments with user avatars."
 msgstr "Visar de senaste kommentarerna med användaravatarer."
 
-#: widgets/recent-comments.php:50
+#: widgets/recent-comments.php:51
 #@ garfunkel
 msgid "Comment to"
 msgstr "Kommentar till"
 
-#: widgets/recent-comments.php:50
+#: widgets/recent-comments.php:51
 #@ garfunkel
 msgid "posted"
 msgstr "postades"
 
-#: widgets/recent-comments.php:96
+#: widgets/recent-comments.php:101
 #@ garfunkel
 msgid "Title:"
 msgstr "Titel:"
 
-#: widgets/recent-comments.php:101
+#: widgets/recent-comments.php:106
 #@ garfunkel
 msgid "Number of comments to display:"
 msgstr "Antal kommentarer att visa:"
 
-#: widgets/recent-comments.php:103
-#: widgets/recent-posts.php:143
+#: widgets/recent-comments.php:108
+#: widgets/recent-posts.php:148
 #@ garfunkel
 msgid "Defaults to 5 if empty"
 msgstr "Sätts till 5 om fältet lämnas tomt."
 
-#: widgets/recent-posts.php:141
+#: widgets/recent-posts.php:146
 #@ garfunkel
 msgid "Number of posts to display:"
 msgstr "Antal inlägg att visa:"
@@ -503,12 +464,12 @@ msgstr "Visar en video."
 msgid "Theme by"
 msgstr "Tema av"
 
-#: functions.php:645
+#: functions.php:436
 #@ garfunkel
 msgid "Garfunkel Options"
 msgstr "Alternativ för Garfunkel"
 
-#: functions.php:648
+#: functions.php:439
 #@ garfunkel
 msgid "Allows you to customize settings for Garfunkel."
 msgstr "Låter dig bestämma inställningarna för Garfunkel."
@@ -522,4 +483,44 @@ msgstr "Visar de senaste blogginläggen."
 #@ garfunkel
 msgid "Comment"
 msgstr "Kommentar"
+
+#: widgets/dribbble-widget.php:11
+#@ garfunkel
+msgid "Dribbble Widget"
+msgstr "Dribbble-widget"
+
+#: widgets/flickr-widget.php:7
+#@ garfunkel
+msgid "Flickr Widget"
+msgstr "Flickr-widget"
+
+#: widgets/flickr-widget.php:73
+#@ garfunkel
+msgid "Flickr ID (use <a target=\"_blank\" href=\"http://www.idgettr.com\">idGettr</a>)"
+msgstr "Flickr-ID (använd <a target=\"_blank\" href=\"http://www.idgettr.com\">idGettr</a>)"
+
+#: widgets/flickr-widget.php:79
+#@ garfunkel
+msgid "Number of images to display"
+msgstr "Antal bilder att visa"
+
+#: widgets/recent-comments.php:7
+#@ garfunkel
+msgid "Recent Comments"
+msgstr "Nya kommentarer"
+
+#: widgets/recent-posts.php:7
+#@ garfunkel
+msgid "Recent Posts"
+msgstr "Nya inlägg"
+
+#: widgets/search-form.php:7
+#@ garfunkel
+msgid "Search Form"
+msgstr "Sökformulär"
+
+#: widgets/video-widget.php:7
+#@ garfunkel
+msgid "Video Widget"
+msgstr "Video-widget"
 

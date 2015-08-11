@@ -72,6 +72,7 @@ The rest of the content...
 6. The link title and link will now be displayed in a separate section from the content of your post.
 
 
+
 Quote Format
 --------------
 
@@ -90,6 +91,7 @@ The rest of the content...
 6. The quote will now be displayed in a separate section from the content of your post.
 
 
+
 Video Format
 --------------
 
@@ -104,6 +106,7 @@ The rest of the content...
 
 5. Publish.
 6. The video will now be displayed in a separate section from the content of your post.
+
 
 
 Licenses
