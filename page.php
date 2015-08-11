@@ -12,7 +12,7 @@
 				
 					<div class="post-header">
 												
-					    <h2 class="post-title"><?php the_title(); ?></h2>
+					    <h1 class="post-title"><?php the_title(); ?></h1>
 					    				    
 				    </div> <!-- /post-header -->
 				
@@ -43,10 +43,6 @@
 					<div class="post-content">
 								                                        
 						<?php the_content(); ?>
-						
-						<?php if ( current_user_can( 'manage_options' ) ) : ?>
-																								
-						<?php endif; ?>
 						
 						<div class="clear"></div>
 															            			                        

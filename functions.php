@@ -27,6 +27,9 @@ function baskerville_setup() {
 	);
 	add_theme_support( 'custom-header', $args );
 	
+	// Add support for title_tag
+	add_theme_support('title-tag');
+		
 	// Add support for custom background
 	$args = array(
 		'default-color'	=> '#f1f1f1'
@@ -51,14 +54,12 @@ function baskerville_load_javascript_files() {
 
 	if ( !is_admin() ) {
 		wp_register_script( 'baskerville_imagesloaded', get_template_directory_uri().'/js/imagesloaded.pkgd.js', array('jquery'), '', true );
-		wp_register_script( 'baskerville_mediaelement', get_template_directory_uri().'/js/mediaelement-and-player.min.js', array('jquery'), '', true );
 		wp_register_script( 'baskerville_flexslider', get_template_directory_uri().'/js/flexslider.min.js', array('jquery'), '', true );
 		wp_register_script( 'baskerville_global', get_template_directory_uri().'/js/global.js', array('jquery'), '', true );
 		
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'masonry' );
 		wp_enqueue_script( 'baskerville_imagesloaded' );
-		wp_enqueue_script( 'baskerville_mediaelement' );
 		wp_enqueue_script( 'baskerville_flexslider' );
 		wp_enqueue_script( 'baskerville_global' );
 	}
@@ -142,30 +143,6 @@ require_once (get_template_directory() . "/widgets/video-widget.php");
 if ( ! isset( $content_width ) ) $content_width = 676;
 
 
-// Custom title function
-function baskerville_wp_title( $title, $sep ) {
-	global $paged, $page;
-
-	if ( is_feed() )
-		return $title;
-
-	// Add the site name.
-	$title .= get_bloginfo( 'name' );
-
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
-
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'baskerville' ), max( $paged, $page ) );
-
-	return $title;
-}
-add_filter( 'wp_title', 'baskerville_wp_title', 10, 2 );
-
-
 // Add classes to next_posts_link and previous_posts_link
 add_filter('next_posts_link_attributes', 'baskerville_posts_link_attributes_1');
 add_filter('previous_posts_link_attributes', 'baskerville_posts_link_attributes_2');
@@ -227,6 +204,7 @@ function baskerville_if_page_class($classes) {
      return $classes;
 }
 
+
 // Change the length of excerpts
 function custom_excerpt_length( $length ) {
 	return 40;
@@ -240,50 +218,29 @@ function new_excerpt_more( $more ) {
 }
 add_filter( 'excerpt_more', 'new_excerpt_more' );
 
+function baskerville_meta() { ?>
 
-// Remove inline styling of attachment
-add_shortcode('wp_caption', 'baskerville_fixed_img_caption_shortcode');
-add_shortcode('caption', 'baskerville_fixed_img_caption_shortcode');
-
-function baskerville_fixed_img_caption_shortcode($attr, $content = null) {
-	if ( ! isset( $attr['caption'] ) ) {
-		if ( preg_match( '#((?:<a [^>]+>\s*)?<img [^>]+>(?:\s*</a>)?)(.*)#is', $content, $matches ) ) {
-			$content = $matches[1];
-			$attr['caption'] = trim( $matches[2] );
-		}
-	}
+	<div class="post-meta">
 	
-	$output = apply_filters('img_caption_shortcode', '', $attr, $content);
+		<a class="post-date" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_time( 'Y/m/d' ); ?></a>
+		
+		<?php
+		
+			if( function_exists('zilla_likes') ) zilla_likes(); 
+		
+			if ( comments_open() ) {
+				comments_popup_link( '0', '1', '%', 'post-comments' );
+			}
+			
+			edit_post_link(); 
+		
+		?>
+		
+		<div class="clear"></div>
 	
-	if ( $output != '' ) return $output;
-	extract(shortcode_atts(array(
-		'id' => '',
-		'align' => 'alignnone',
-		'width' => '',
-		'caption' => ''
-	), $attr));
+	</div> <!-- /post-meta -->
 	
-	if ( 1 > (int) $width || empty($caption) )
-	return $content;
-	if ( $id ) $id = 'id="' . esc_attr($id) . '" ';
-	return '<div ' . $id . 'class="wp-caption ' . esc_attr($align) . '" >' 
-	. do_shortcode( $content ) . '<p class="wp-caption-text">' . $caption . '</p></div>';
-}
-
-
-// Get domain name from URL
-function url_to_domain($url) {
-    $host = @parse_url($url, PHP_URL_HOST);
- 
-    if (!$host) {
-        $host = $url;
-    }
- 
-    if (substr($host, 0, 4) == "www.") {
-        $host = substr($host, 0);
-    }
- 
-    return $host;
+<?php
 }
 
 
@@ -471,196 +428,6 @@ function save_extra_profile_fields( $user_id ) {
 	update_user_meta( $user_id, 'showemail', $_POST['showemail'] );
 
 }
-
-
-
-// Add and save meta boxes for posts
-add_action( 'add_meta_boxes', 'cd_meta_box_add' );
-function cd_meta_box_add() {
-	add_meta_box( 'post-video-url', __('Video URL', 'baskerville'), 'cd_meta_box_video_url', 'post', 'side', 'high' );
-	add_meta_box( 'post-audio-url', __('Audio URL', 'baskerville'), 'cd_meta_box_audio_url', 'post', 'side', 'high' );
-	add_meta_box( 'post-quote-content-box', __('Quote content', 'baskerville'), 'cd_meta_box_quote_content', 'post', 'normal', 'core' );
-	add_meta_box( 'post-quote-attribution-box', __('Quote attribution', 'baskerville'), 'cd_meta_box_quote_attribution', 'post', 'normal', 'core' );
-	add_meta_box( 'post-link-url', __('Link URL', 'baskerville'), 'cd_meta_box_link_url', 'post', 'side', 'high' );
-	add_meta_box( 'post-link-title', __('Link title', 'baskerville'), 'cd_meta_box_link_title', 'post', 'side', 'high' );
-}
-
-function cd_meta_box_video_url( $post ) {
-	$values = get_post_custom( $post->ID );
-	$video_url = isset( $values['video_url'] ) ? esc_attr( $values['video_url'][0] ) : '';
-	wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
-	?>
-		<p>
-			<input type="text" class="widefat" name="video_url" id="video_url" value="<?php echo $video_url; ?>" />
-		</p>
-	<?php		
-}
-
-function cd_meta_box_audio_url( $post ) {
-	$values = get_post_custom( $post->ID );
-	$audio_url = isset( $values['audio_url'] ) ? esc_attr( $values['audio_url'][0] ) : '';
-	wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
-	?>
-		<p>
-			<input type="text" class="widefat" name="audio_url" id="audio_url" value="<?php echo $audio_url; ?>" />
-		</p>
-	<?php		
-}
-
-function cd_meta_box_quote_content( $post ) {
-	$values = get_post_custom( $post->ID );
-	$quote_content = isset( $values['quote_content'] ) ? esc_attr( $values['quote_content'][0] ) : '';
-	wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
-	?>
-		<p>
-			<textarea name="quote_content" id="quote_content" class="widefat" rows="5"><?php echo $quote_content; ?></textarea>
-		</p>
-	<?php		
-}
-
-function cd_meta_box_quote_attribution( $post ) {
-	$values = get_post_custom( $post->ID );
-	$quote_attribution = isset( $values['quote_attribution'] ) ? esc_attr( $values['quote_attribution'][0] ) : '';
-	wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
-	?>
-		<p>
-			<input name="quote_attribution" id="quote_attribution" class="widefat" value="<?php echo $quote_attribution; ?>" />
-		</p>
-	<?php		
-}
-
-function cd_meta_box_link_url( $post ) {
-	$values = get_post_custom( $post->ID );
-	$link_url = isset( $values['link_url'] ) ? esc_attr( $values['link_url'][0] ) : '';
-	wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
-	?>
-		<p>
-			<input name="link_url" id="link_url" class="widefat" value="<?php echo $link_url; ?>" />
-		</p>
-	<?php		
-}
-
-function cd_meta_box_link_title( $post ) {
-	$values = get_post_custom( $post->ID );
-	$link_title = isset( $values['link_title'] ) ? esc_attr( $values['link_title'][0] ) : '';
-	wp_nonce_field( 'my_meta_box_nonce', 'meta_box_nonce' );
-	?>
-		<p>
-			<input name="link_title" id="link_title" class="widefat" value="<?php echo $link_title; ?>" />
-		</p>
-	<?php		
-}
-
-add_action( 'save_post', 'cd_meta_box_save' );
-function cd_meta_box_save( $post_id ) {
-	// Bail if we're doing an auto save
-	if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
-	
-	// if our nonce isn't there, or we can't verify it, bail
-	if( !isset( $_POST['meta_box_nonce'] ) || !wp_verify_nonce( $_POST['meta_box_nonce'], 'my_meta_box_nonce' ) ) return;
-	
-	// if our current user can't edit this post, bail
-	if( !current_user_can( 'edit_post' ) ) return;
-	
-	// now we can actually save the data
-	$allowed = array( 
-		'a' => array( // on allow a tags
-			'href' => array() // and those anchords can only have href attribute
-		)
-	);
-	
-	// Probably a good idea to make sure the data is set		
-	if( isset( $_POST['video_url'] ) ) {
-		update_post_meta( $post_id, 'video_url', wp_kses( $_POST['video_url'], $allowed ) );
-	}
-	
-	if( isset( $_POST['audio_url'] ) ) {
-		update_post_meta( $post_id, 'audio_url', wp_kses( $_POST['audio_url'], $allowed ) );
-	}
-	
-	if( isset( $_POST['quote_content'] ) ) {
-		update_post_meta( $post_id, 'quote_content', wp_kses( $_POST['quote_content'], $allowed ) );
-	}
-	
-	if( isset( $_POST['quote_attribution'] ) ) {
-		update_post_meta( $post_id, 'quote_attribution', wp_kses( $_POST['quote_attribution'], $allowed ) );
-	}
-	
-	if( isset( $_POST['link_url'] ) ) {
-		update_post_meta( $post_id, 'link_url', wp_kses( $_POST['link_url'], $allowed ) );
-	}
-	
-	if( isset( $_POST['link_title'] ) ) {
-		update_post_meta( $post_id, 'link_title', wp_kses( $_POST['link_title'], $allowed ) );
-	}
-
-}
-
-
-// Hide/show meta boxes depending on the post format selected
-function meta_box_post_format_toggle()
-{
-    wp_enqueue_script( 'jquery' );
-
-    $script = '
-    <script type="text/javascript">
-        jQuery( document ).ready( function($)
-            {
-            
-                $( "#post-video-url" ).hide();
-                $( "#post-audio-url" ).hide();
-                $( "#post-link-title" ).hide();
-                $( "#post-link-url" ).hide();
-                $( "#post-quote-content-box" ).hide();
-                $( "#post-quote-attribution-box" ).hide();
-            	
-            	if($("#post-format-video").is(":checked"))
-	                $( "#post-video-url" ).show();
-            	if($("#post-format-audio").is(":checked"))
-	                $( "#post-audio-url" ).show();
-            	if($("#post-format-link").is(":checked")) {
-	                $( "#post-link-title" ).show();
-	                $( "#post-link-url" ).show();
-				}
-            	if($("#post-format-quote").is(":checked")) {
-	                $( "#post-quote-content-box" ).show();
-	                $( "#post-quote-attribution-box" ).show();
-				}
-                
-                $( "input[name=\"post_format\"]" ).change( function() {
-	                $( "#post-video-url" ).hide();
-	                $( "#post-audio-url" ).hide();
-	                $( "#post-link-url" ).hide();
-	                $( "#post-link-title" ).hide();
-	                $( "#post-quote-content-box" ).hide();
-	                $( "#post-quote-attribution-box" ).hide();
-                } );
-
-                $( "input#post-format-video" ).change( function() {
-                    $( "#post-video-url" ).show();
-				});
-                
-                $( "input#post-format-audio" ).change( function() {
-					$( "#post-audio-url" ).show();
-				});
-				
-                $( "input#post-format-link" ).change( function() {
-                    $( "#post-link-url" ).show();
-                    $( "#post-link-title" ).show();
-                });
-                
-                $( "input#post-format-quote" ).change( function() {
-                    $( "#post-quote-content-box" ).show();
-                    $( "#post-quote-attribution-box" ).show();
-                });
-
-            }
-        );
-    </script>';
-
-    return print $script;
-}
-add_action( 'admin_footer', 'meta_box_post_format_toggle' );
 
 
 // Baskerville theme options

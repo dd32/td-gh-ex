@@ -6,60 +6,45 @@
     
 </div> <!-- /post-header -->
 
-<?php $video_url = get_post_meta($post->ID, 'video_url', true); if ( $video_url != '' ) : ?>
+<?php if ($pos=strpos($post->post_content, '<!--more-->')): ?>
 
 	<div class="featured-media">
 	
-		<?php if (strpos($video_url,'.mp4') !== false) : ?>
-			
-			<video controls>
-			  <source src="<?php echo $video_url; ?>" type="video/mp4">
-			</video>
-																	
-		<?php else : ?>
-			
-			<?php 
-			
-				$embed_code = wp_oembed_get($video_url); 
+		<?php
 				
-				echo $embed_code;
-				
-			?>
-				
-		<?php endif; ?>
+			// Fetch post content
+			$content = get_post_field( 'post_content', get_the_ID() );
+			
+			// Get content parts
+			$content_parts = get_extended( $content );
+			
+			// oEmbed part before <!--more--> tag
+			$embed_code = wp_oembed_get($content_parts['main']); 
+			
+			echo $embed_code;
 		
-	</div>
+		?>
+	
+	</div> <!-- /featured-media -->
 
 <?php endif; ?>
 
 <?php if($post->post_content != "") : ?>
 									                                    	    
 	<div class="post-excerpt">
-		    		            			            	                                                                                            
-		<?php the_excerpt('100'); ?>
+		
+		<?php 
+			if ($pos=strpos($post->post_content, '<!--more-->')) {
+				echo  '<p>' . mb_strimwidth($content_parts['extended'], 0, 200, '...') . '</p>';
+			} else {
+				the_excerpt('100');
+			}
+		?>
 	
 	</div> <!-- /post-excerpt -->
 
 <?php endif; ?>
-									                                    	    
-<div class="post-meta">
 
-	<a class="post-date" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_time( 'Y/m/d' ); ?></a>
-	
-	<?php
-	
-		if( function_exists('zilla_likes') ) zilla_likes(); 
-	
-		if ( comments_open() ) {
-			comments_popup_link( '0', '1', '%', 'post-comments' );
-		}
-		
-		edit_post_link(); 
-	
-	?>
-	
-	<div class="clear"></div>
-
-</div>
+<?php baskerville_meta(); ?>		                                    	    
             
 <div class="clear"></div>

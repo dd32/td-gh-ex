@@ -54,16 +54,6 @@ jQuery(document).ready(function($) {
     });
 
         
-    // Add custom audio player
-	$('#audio-player').mediaelementplayer({
-	    alwaysShowControls: true,
-	    features: ['playpause','progress','volume'],
-	    audioVolume: 'horizontal',
-	    audioWidth: 872,
-	    audioHeight: 100
-	});
-	
-			
 	// resize videos after container
 	var vidSelector = ".post iframe, .post object, .post video, .widget-content iframe, .widget-content object, .widget-content iframe";	
 	var resizeVideo = function(sSel) {

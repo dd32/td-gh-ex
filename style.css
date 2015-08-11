@@ -1,7 +1,7 @@
 /*---------------------------------------------------------------------------------
 
 	Theme Name: Baskerville
-	Version: 1.15
+	Version: 1.16
 	Description: Baskerville is a beautiful, responsive and retina-ready masonry theme for hoarders. It's the perfect way to showcase your posts, videos, images and galleries, and share your favorite quotes and links. Features responsive design, retina-ready assets, full-width header image, support for all post formats, custom logo upload, custom widgets (video, Flickr and Dribbble), four page templates (including a contributors template), editor styling, like functionality via the ZillaLikes plugin and translation-ready code. Included translations: Swedish/svenska.
 	Tags: black, dark, white, green, two-columns, fluid-layout, responsive-layout, custom-header, custom-menu, featured-images, flexible-header, post-formats, sticky-post, threaded-comments, translation-ready, editor-style
 	Author: Anders Norén
@@ -761,146 +761,6 @@ body a {
 .format-image .post-excerpt .image-caption { font-weight: 600; }
 
 
-/* format audio */
-
-
-.posts .format-audio .post-header:before,
-.posts .format-audio .post-header:after { content: none; }
-
-.post-audio .mejs-container {
-	max-width: 100%;
-	height: auto !important;
-	background: #2B3542;
-	padding: 3% 0;
-	color: #FFF;
-	position: relative;
-}
-
-.post-audio .mejs-controls .mejs-time-rail .mejs-time-handle,
-.post-audio .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-handle,
-.post-audio .mejs-controls .mejs-time-rail .mejs-time-float,
-.post-audio .mejs-controls .mejs-time-rail .mejs-time-float-current,
-.post-audio .mejs-mediaelement,
-.post-audio .mejs-layers {
-    display: none;
-}
-
-.post-audio .mejs-controls .mejs-button button {
-    cursor: pointer;
-    display: block;
-    text-indent: -9999px;
-}
-
-.post-audio .mejs-playpause-button,
-.post-audio .mejs-time-rail,
-.post-audio .mejs-volume-button,
-.post-audio .mejs-horizontal-volume-slider {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	padding: 3% 0;
-	margin-left: 3%;
-	float: left;
-}
-
-.post-audio .mejs-horizontal-volume-slider { margin-right: 3%; }
-
-.post-audio .mejs-playpause-button,
-.post-audio .mejs-volume-button {
-	width: 6.25%;
-}
-
-.post-audio .mejs-playpause-button button,
-.post-audio .mejs-volume-button button,
-.post-audio .mejs-mute button,
-.post-audio .mejs-unmute button {
-	margin: 0 auto;
-	width: 100%;
-	height: 31px;
-	background: none;
-	background-size: 18px auto;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-.post-audio .mejs-playpause-button.mejs-play button { background-image: url(images/icons/1x/audio/play.png); }
-.post-audio .mejs-playpause-button.mejs-pause button { background-image: url(images/icons/1x/audio/pause.png); }
-
-.post-audio .mejs-mute button,
-.post-audio .mejs-unmute button { background-size: 20px auto; }
-
-.post-audio .mejs-mute button { background-image: url(images/icons/1x/audio/audio-mute.png); }
-.post-audio .mejs-unmute button { background-image: url(images/icons/1x/audio/audio-unmute.png); }
-
-.post-audio .mejs-horizontal-volume-slider { 
-	margin-top: 12px;
-	width: 16.25%; 
-	cursor: pointer; 
-}
-
-.post-audio .mejs-horizontal-volume-total,
-.post-audio .mejs-horizontal-volume-current,
-.post-audio .mejs-controls .mejs-time-rail span {
-	height: 8px;
-}
- 
-.post-audio .mejs-horizontal-volume-total { background: #222A34; }
-
-.post-audio .mejs-horizontal-volume-current {
-    position: absolute;
-    margin-top: -8px;
-    background: #13C4A5;
-}
-
-.post-audio .mejs-controls .mejs-time-rail { 
-    margin-top: 12px;
-	max-width: 56.25%; 
-	float: left;
-}
- 
-.post-audio .mejs-controls .mejs-time-rail span {
-    position: absolute;
-    display: block;
-    max-width: 100%;
-    cursor: pointer;
-}
- 
-.post-audio .mejs-controls .mejs-time-rail .mejs-time-total { background: #555D67; }
- 
-.post-audio .mejs-controls .mejs-time-rail .mejs-time-loaded {
-    width: 0;
-    background: #222A34;
-}
- 
-.mejs-controls .mejs-time-rail .mejs-time-current {
-    width: 0;
-    background: #13C4A5;
-}
-
-.post-audio .mejs-clear { clear: both; }
-
-.post-audio .mejs-android .mejs-controls .mejs-playpause-button,
-.post-audio .mejs-ios .mejs-controls .mejs-playpause-button,
-.post-audio .mejs-android .mejs-controls .mejs-time-rail,
-.post-audio .mejs-ios .mejs-controls .mejs-time-rail {
-	padding: 5% 0;
-	margin-left: 5%;
-}
-
-.post-audio .mejs-android .mejs-controls .mejs-playpause-button,
-.post-audio .mejs-ios .mejs-controls .mejs-playpause-button { width: 15%; margin-left: 0; }
-
-.post-audio .mejs-android .mejs-controls .mejs-time-rail,
-.post-audio .mejs-ios .mejs-controls .mejs-time-rail { max-width: 80%; margin-right: 5%; margin-left: 0; }
-
-.post-audio .mejs-android .mejs-controls .mejs-volume-button,
-.post-audio .mejs-ios .mejs-controls .mejs-volume-button,
-.post-audio .mejs-android .mejs-controls .mejs-horizontal-volume-slider,
-.post-audio .mejs-ios .mejs-controls .mejs-horizontal-volume-slider {
-	display: none;
-}
-
-
 /* format quote, format link */
 
 
@@ -919,6 +779,8 @@ body a {
 	line-height: 140%;
 }
 
+.post-quote blockquote { font-size: 1.1em; }
+
 .post-quote cite,
 .post-link a {
 	display: block;
@@ -929,7 +791,10 @@ body a {
 	font-weight: 700;
 }
 
-.post-quote cite { font-family: 'Roboto Slab', sans-serif; }
+.post-quote cite { 
+	font-family: 'Roboto Slab', sans-serif; 
+	font-size: 14px;
+}
 
 .post-quote cite:before { content: "— " }
 
@@ -1059,20 +924,6 @@ body.single .content.center {
 .single .post-title { font-size: 2.25em; }
 
 .single .post-content { padding: 10%; }
-
-/* format audio */
-
-.single .featured-media .mejs-playpause-button.mejs-play button,
-.single .featured-media .mejs-playpause-button.mejs-pause button { background-size: 24px auto; }
-
-.single .featured-media .mejs-playpause-button.mejs-play button { background-image: url(images/icons/1x/audio/play-big.png); }
-.single .featured-media .mejs-playpause-button.mejs-pause button { background-image: url(images/icons/1x/audio/pause-big.png); }
-
-.single .featured-media .post-audio .mejs-mute button,
-.single .featured-media .post-audio .mejs-unmute button { background-size: 32px auto; }
-
-.single .featured-media .post-audio .mejs-mute button { background-image: url(images/icons/1x/audio/audio-mute-big.png); }
-.single .featured-media .post-audio .mejs-unmute button { background-image: url(images/icons/1x/audio/audio-unmute-big.png); }
 
 /* format gallery */
 
@@ -2553,16 +2404,7 @@ img#wpstats { display: none; } /* Silly WordPress stats */
 	.posts .post-meta a.zilla-likes.active { background-image: url(images/icons/2x/heart-c.png); }
 	.posts .post-meta a.post-comments { background-image: url(images/icons/2x/comment-g.png); }
 	.posts .post-meta a.post-comments:hover { background-image: url(images/icons/2x/comment-c.png); }
-	
-	.featured-media .mejs-playpause-button.mejs-play button,
-	.single .featured-media .mejs-playpause-button.mejs-play button { background-image: url(images/icons/2x/audio/play.png); }
-	.featured-media .mejs-playpause-button.mejs-pause button,
-	.single .featured-media .mejs-playpause-button.mejs-pause button { background-image: url(images/icons/2x/audio/pause.png); }	
-	.featured-media .mejs-mute button,
-	.single .featured-media .mejs-mute button { background-image: url(images/icons/2x/audio/audio-mute.png); }
-	.featured-media .mejs-unmute button,
-	.single .featured-media .mejs-unmute button { background-image: url(images/icons/2x/audio/audio-unmute.png); }
-	
+		
 	.post-link a { background-image: url(images/icons/2x/link-c.png); }
 	
 	.format-gallery .flex-direction-nav .flex-prev,
@@ -2814,14 +2656,6 @@ img#wpstats { display: none; } /* Silly WordPress stats */
 	.post-excerpt { font-size: 1em; }
 	
 	.posts .post-meta { padding: 0 6%; }
-	
-	/* format audio */
-	
-	.single .featured-media .mejs-mute button, 
-	.single .featured-media .mejs-unmute button { background-size: 20px auto; }
-	
-	.single .featured-media .mejs-playpause-button.mejs-play button, 
-	.single .featured-media .mejs-playpause-button.mejs-pause button { background-size: 16px auto; }
 	
 	/* single post */
 	

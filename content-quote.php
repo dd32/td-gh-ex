@@ -1,6 +1,3 @@
-<?php $quote_content = get_post_meta($post->ID, 'quote_content', true); ?>
-<?php $quote_attribution = get_post_meta($post->ID, 'quote_attribution', true); ?>
-
 <div class="post-header">
 	
     <h2 class="post-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
@@ -11,44 +8,33 @@
 
 <div class="post-quote">
 
-	<blockquote><?php echo $quote_content; ?></blockquote>
-	
-	<?php if ( $quote_attribution != '' ) : ?>
-	
-		<cite><?php echo $quote_attribution; ?></cite>
-	
-	<?php endif; ?>
-
-</div> <!-- /post-quote -->
-						
-<?php if($post->post_content != "") : ?>
-									                                    	    
-	<div class="post-excerpt">
-		    		            			            	                                                                                            
-		<?php the_excerpt('100'); ?>
-	
-	</div> <!-- /post-excerpt -->
-
-<?php endif; ?>
-
-<div class="post-meta">
-
-	<a class="post-date" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_time( 'Y/m/d' ); ?></a>
-	
 	<?php
-	
-		if( function_exists('zilla_likes') ) zilla_likes(); 
-	
-		if ( comments_open() ) {
-			comments_popup_link( '0', '1', '%', 'post-comments' );
-		}
 		
-		edit_post_link(); 
+		// Fetch post content
+		$content = get_post_field( 'post_content', get_the_ID() );
+		
+		// Get content parts
+		$content_parts = get_extended( $content );
+		
+		// Output part before <!--more--> tag
+		echo $content_parts['main'];
 	
 	?>
 
-	<div class="clear"></div>
+</div> <!-- /post-quote -->
 
-</div>
+<div class="post-excerpt">
+		
+	<?php 
+		if ($pos=strpos($post->post_content, '<!--more-->')) {
+			echo  '<p>' . mb_strimwidth($content_parts['extended'], 0, 200, '...') . '</p>';
+		} else {
+			the_excerpt('100');
+		}
+	?>
+
+</div> <!-- /post-excerpt -->
+
+<?php baskerville_meta(); ?>
             
 <div class="clear"></div>
