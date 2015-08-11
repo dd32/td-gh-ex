@@ -4,9 +4,10 @@
 
 class baskerville_flickr_widget extends WP_Widget {
 
-	function baskerville_flickr_widget() {
-		parent::WP_Widget(false, $name = 'Flickr widget', array('description' => __('Displays your latest Flickr photos.', 'baskerville') ));	
-	}
+	function __construct() {
+        $widget_ops = array( 'classname' => 'baskerville_flickr_widget', 'description' => __('Displays your latest Flickr photos.', 'baskerville') );
+        parent::__construct( 'baskerville_flickr_widget', __('Flickr Widget','baskerville'), $widget_ops );
+    }
 	
 	function widget($args, $instance) {
 	

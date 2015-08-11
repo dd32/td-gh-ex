@@ -4,9 +4,10 @@
 
 class baskerville_video_widget extends WP_Widget {
 
-	function baskerville_video_widget() {
-		parent::WP_Widget(false, $name = 'Video widget', array('description' => __('Displays a video of your choosing.', 'baskerville') ));	
-	}
+	function __construct() {
+        $widget_ops = array( 'classname' => 'baskerville_video_widget', 'description' => __('Displays a video of your choosing.', 'baskerville') );
+        parent::__construct( 'baskerville_video_widget', __('Video Widget','baskerville'), $widget_ops );
+    }
 	
 	function widget($args, $instance) {
 	
