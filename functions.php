@@ -464,7 +464,7 @@ add_filter( 'wp_title', 'anarcho_wp_title', 10, 2 );
 /* Enable info about copyright. */
 function anarcho_copyright() {
  if(get_theme_mod('disable_anarcho_copy') == '0') {
-	echo '<a href="http://wordpress.org/themes/anarcho-notepad">Theme "Anarcho Notepad" designed and engineered by Arthur (Berserkr) Gareginyan.</a><br/>';
+	echo '<a href="http://mycyberuniverse.com/author.html">Theme "Anarcho Notepad" designed and engineered by Arthur "Berserkr" Gareginyan.</a><br/>';
  }
 }
 add_action ('wp_footer','anarcho_copyright', 999);
