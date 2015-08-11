@@ -3,8 +3,19 @@
 	<a class="post-quote" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 		
 		<div class="post-inner">
-	
-			<?php the_content(); ?>
+		
+			<?php
+				
+				// Fetch post content
+				$content = get_post_field( 'post_content', get_the_ID() );
+				
+				// Get content parts
+				$content_parts = get_extended( $content );
+				
+				// Output part before <!--more--> tag
+				echo $content_parts['main'];
+			
+			?>
 		
 		</div>
 	

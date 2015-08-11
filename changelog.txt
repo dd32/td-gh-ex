@@ -1,6 +1,19 @@
 *** Rams changelog ***
 
 
+Version 1.12 (2015-08-11)
+-------------------------
+- Replaced the custom title function with theme support for title-tag
+- Modified the presentation of quotes in content-quote
+- Added a description for adding quotes in content-quote to readme.txt
+- Changed the post title to h1 elements on singular for SEO reasons
+
+
+Version 1.11 (2015-01-27)
+-------------------------
+- Updated the readme.txt to reflect the changes in v1.10.
+
+
 Version 1.10 (2015-01-27)
 -------------------------
 - Removed the video template file and format, and changed the display of the quote post format in order to be able to remove the meta fields from the theme

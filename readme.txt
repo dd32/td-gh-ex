@@ -1,7 +1,7 @@
 # Copyright
 --------------
 
-Rams WordPress Theme, Copyright 2014 Anders Norén
+Rams WordPress Theme, Copyright 2015 Anders Norén
 Rams is distributed under the terms of the GNU GPL v2
 
 
@@ -25,25 +25,22 @@ Rams is distributed under the terms of the GNU GPL v2
 
 
 
-# Use the quote post format
+# Use the the quote post format
 --------------
 
-1. Go to Admin > Posts > Add New.
-2. Select the "Quote" post format in the Post Attributes box.
-3. Two meta boxes should appear below the post content box on the page.
-4. Enter the quote and the quote attribution (optional) in the corresponding boxes. Publish/update the post.
-5. The quote you entered should now be displayed in the quote section above the post.
+1. Create a new post.
+2. Select "Quote" in the Format window to the right.
+3. In the post content, enter the quote content within a blockquote element, and the quote attribution within a cite element.
+4. Directly after the two elements, add the <!--more--> tag followed by the rest of the content. Example:
 
+<blockquote>[quote content]
+<cite>[quote attribution]</cite>
+</blockquote>
+<!--more-->
+The rest of the content...
 
-
-# Use the video post format
---------------
-
-1. Go to Admin > Posts > Add New.
-2. Select the "Video" post format in the Post Attributes box.
-3. A meta box with the title "Video URL" should appear in the top of the right sidebar.
-4. Paste the URL to the video you wish to display in the box, and publish/update the post.
-5. The video you linked to should now be displayed in the media section above the post.
+5. Publish.
+6. The blockquote will now be presented as a single link element on the archive pages.
 
 
 
