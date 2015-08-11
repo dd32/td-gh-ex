@@ -2,8 +2,9 @@
 
 class hoffman_recent_comments extends WP_Widget {
 
-	function hoffman_recent_comments() {
-		parent::WP_Widget(false, $name = __('Recent Comments','hoffman'), array('description' => __('Displays recent comments with user avatars.', 'hoffman') ));
+	function __construct() {
+        $widget_ops = array( 'classname' => 'hoffman_recent_comments_widget', 'description' => __('Displays recent comments with user avatars.', 'hoffman') );
+        parent::__construct( 'hoffman_recent_comments_widget', __('Recent Comments','hoffman'), $widget_ops );
 	}
 	
 	function widget($args, $instance) {

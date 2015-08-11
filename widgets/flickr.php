@@ -2,9 +2,10 @@
 
 class hoffman_flickr_widget extends WP_Widget {
 
-	function hoffman_flickr_widget() {
-		parent::WP_Widget(false, $name = __('Flickr Widget','hoffman'), array('description' => __('Displays your latest Flickr photos.', 'hoffman') ));	
-	}
+	function __construct() {
+        $widget_ops = array( 'classname' => 'hoffman_flickr_widget', 'description' => __('Displays your latest Flickr photos.', 'hoffman') );
+        parent::__construct( 'hoffman_flickr_widget', __('Flickr Widget','hoffman'), $widget_ops );
+    }
 	
 	function widget($args, $instance) {
 	

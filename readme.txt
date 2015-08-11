@@ -1,7 +1,7 @@
 # Copyright
 --------------
 
-Hoffman WordPress Theme, Copyright 2014 Anders Norén
+Hoffman WordPress Theme, Copyright 2015 Anders Norén
 Hoffman is distributed under the terms of the GNU GPL v2
 
 

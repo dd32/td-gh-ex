@@ -27,6 +27,10 @@ function hoffman_setup() {
 	    'type' => 'click'
 	) );
 	
+	
+	// Add support for title-tag
+	add_theme_support('title-tag');
+	
 	// Add nav menu
 	register_nav_menu( 'primary', __('Primary Menu','hoffman') );
 	register_nav_menu( 'social', __('Social Menu','hoffman') );
@@ -133,30 +137,6 @@ function hoffman_html_js_class () {
     echo '<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>'. "\n";
 }
 add_action( 'wp_head', 'hoffman_html_js_class', 1 );
-
-
-// Custom title function
-function hoffman_wp_title( $title, $sep ) {
-	global $paged, $page;
-
-	if ( is_feed() )
-		return $title;
-
-	// Add the site name.
-	$title .= get_bloginfo( 'name' );
-
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
-
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'hoffman' ), max( $paged, $page ) );
-
-	return $title;
-}
-add_filter( 'wp_title', 'hoffman_wp_title', 10, 2 );
 
 
 // Add classes to next_posts_link and previous_posts_link

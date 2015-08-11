@@ -1,4 +1,13 @@
-*** Hoffman changelog ***
+*** Hoffman Changelog ***
+
+
+
+Version 1.11 (2015-08-11)
+-------------------------
+- Fixed align-center images overflowing on smaller devices
+- Replaced custom title function with title-tag support
+- The widgets now use __construct()
+
 
 
 Version 1.10 (2015-04-07)

@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Hoffman v1.10\n"
+"Project-Id-Version: Hoffman v1.11\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2015-04-07 10:02:43+0000\n"
+"PO-Revision-Date: 2015-08-11 13:24:15+0000\n"
 "Last-Translator: anders <anders@andersnoren.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -166,82 +166,76 @@ msgstr "Klistrat"
 msgid "Theme by"
 msgstr "Tema av"
 
-#: functions.php:89
+#: functions.php:93
 #@ hoffman
 msgid "Footer A"
 msgstr "Sidfot A"
 
-#: functions.php:91
+#: functions.php:95
 #@ hoffman
 msgid "Widgets in this area will be shown in the left column in the footer."
 msgstr "Widgets i det här fältet kommer att visas i den vänstra kolumnen i sidfoten."
 
-#: functions.php:98
+#: functions.php:102
 #@ hoffman
 msgid "Footer B"
 msgstr "Footer B"
 
-#: functions.php:100
+#: functions.php:104
 #@ hoffman
 msgid "Widgets in this area will be shown in the middle column in the footer."
 msgstr "Widgets i det här fältet kommer att visas i mittenkolumnen i sidfoten."
 
-#: functions.php:107
+#: functions.php:111
 #@ hoffman
 msgid "Footer C"
 msgstr "Footer C"
 
-#: functions.php:109
+#: functions.php:113
 #@ hoffman
 msgid "Widgets in this area will be shown in the right column in the footer."
 msgstr "Widgets i det här fältet kommer att visas i den högra kolumnen i sidfoten."
 
-#: functions.php:155
-#, php-format
-#@ hoffman
-msgid "Page %s"
-msgstr "Sida %s"
-
-#: functions.php:360
+#: functions.php:309
 #@ hoffman
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: functions.php:360
+#: functions.php:309
 #@ hoffman
 msgid "(Edit)"
 msgstr "(Redigera)"
 
-#: functions.php:379
+#: functions.php:328
 #@ hoffman
 msgid "Comment by post author"
 msgstr "Kommentar av inläggsförfattaren"
 
-#: functions.php:393
+#: functions.php:342
 #@ hoffman
 msgid "Your comment is awaiting moderation."
 msgstr "Din kommentar inväntar moderering"
 
 #: content-gallery.php:32
 #: content.php:44
-#: functions.php:411
+#: functions.php:360
 #: single.php:50
 #@ hoffman
 msgid "Edit"
 msgstr "Redigera"
 
-#: functions.php:416
+#: functions.php:365
 #@ hoffman
 msgid "Reply"
 msgstr "Svara"
 
-#: functions.php:458
-#: functions.php:487
+#: functions.php:407
+#: functions.php:441
 #@ hoffman
 msgid "Logo"
 msgstr "Logotyp"
 
-#: functions.php:479
+#: functions.php:433
 #@ hoffman
 msgid "Accent Color"
 msgstr "Accentfärg"
@@ -303,22 +297,22 @@ msgstr "Klistrat inlägg"
 msgid "All rights reserved."
 msgstr "Alla rättigheter reserverade."
 
-#: functions.php:31
+#: functions.php:35
 #@ hoffman
 msgid "Primary Menu"
 msgstr "Huvudmeny"
 
-#: functions.php:32
+#: functions.php:36
 #@ hoffman
 msgid "Social Menu"
 msgstr "Sociala medier-meny"
 
-#: functions.php:178
+#: functions.php:158
 #@ hoffman
 msgid "Read more"
 msgstr "Läs mer"
 
-#: functions.php:385
+#: functions.php:334
 #@ hoffman
 msgid "says:"
 msgstr "säger:"
@@ -406,9 +400,9 @@ msgstr "Arkiv efter månad"
 msgid "Archives by Day"
 msgstr "Arkiv efter dag"
 
-#: widgets/flickr.php:66
-#: widgets/recent-comments.php:108
-#: widgets/recent-posts.php:115
+#: widgets/flickr.php:67
+#: widgets/recent-comments.php:109
+#: widgets/recent-posts.php:116
 #@ hoffman
 msgid "Title"
 msgstr "Titel"
@@ -423,23 +417,23 @@ msgstr "Visar dina senaste Flickr-bilder."
 msgid "Displays recent comments with user avatars."
 msgstr "Visar de senaste kommentarerna med användaravatarer."
 
-#: widgets/recent-comments.php:53
+#: widgets/recent-comments.php:54
 #@ hoffman
 msgid "Comment to"
 msgstr "Kommentar till"
 
-#: widgets/recent-comments.php:115
-#: widgets/recent-posts.php:122
+#: widgets/recent-comments.php:116
+#: widgets/recent-posts.php:123
 #@ hoffman
 msgid "Defaults to 5 if empty"
 msgstr "Om fältet lämnas tomt kommer 5 att visas"
 
-#: functions.php:450
+#: functions.php:399
 #@ hoffman
 msgid "Hoffman Options"
 msgstr "Alternativ för Hoffman"
 
-#: functions.php:453
+#: functions.php:402
 #@ hoffman
 msgid "Allows you to customize theme settings for Hoffman."
 msgstr "Låter dig bestämma temainställningarna för Hoffman."
@@ -495,42 +489,42 @@ msgstr "Prenumerant"
 msgid "Guest"
 msgstr "Gäst"
 
-#: functions.php:460
+#: functions.php:409
 #@ hoffman
 msgid "Upload a logo to replace the default site name and description in the header"
 msgstr "Ladda upp en logotyp för att visas istället för sidtiteln och -beskrivningen i sidhuvudet"
 
-#: widgets/flickr.php:6
+#: widgets/flickr.php:7
 #@ hoffman
 msgid "Flickr Widget"
 msgstr "Flickr-widget"
 
-#: widgets/flickr.php:72
+#: widgets/flickr.php:73
 #@ hoffman
 msgid "Flickr ID (use <a target=\"_blank\" href=\"http://www.idgettr.com\">idGettr</a>)"
 msgstr "Flickr ID (använd <a target=\"_blank\" href=\"http://www.idgettr.com\">idGettr</a>)"
 
-#: widgets/flickr.php:78
+#: widgets/flickr.php:79
 #@ hoffman
 msgid "Number of images to display"
 msgstr "Antal bilder att visa"
 
-#: widgets/recent-comments.php:6
+#: widgets/recent-comments.php:7
 #@ hoffman
 msgid "Recent Comments"
 msgstr "Nya kommentarer"
 
-#: widgets/recent-comments.php:53
+#: widgets/recent-comments.php:54
 #@ hoffman
 msgid "posted"
 msgstr "publicerades"
 
-#: widgets/recent-comments.php:113
+#: widgets/recent-comments.php:114
 #@ hoffman
 msgid "Number of comments to display"
 msgstr "Antal kommentarer att visa"
 
-#: widgets/recent-posts.php:6
+#: widgets/recent-posts.php:7
 #@ hoffman
 msgid "Recent Posts"
 msgstr "Nya inlägg"
@@ -540,7 +534,7 @@ msgstr "Nya inlägg"
 msgid "Displays recent blog entries."
 msgstr "Visar de senaste blogginläggen."
 
-#: widgets/recent-posts.php:120
+#: widgets/recent-posts.php:121
 #@ hoffman
 msgid "Number of posts to display"
 msgstr "Antal inlägg att visa"

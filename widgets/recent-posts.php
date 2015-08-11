@@ -2,8 +2,9 @@
 
 class hoffman_recent_posts extends WP_Widget {
 
-	function hoffman_recent_posts() {
-		parent::WP_Widget(false, $name = __('Recent Posts','hoffman'), array('description' => __('Displays recent blog entries.', 'hoffman') ));	
+	function __construct() {
+        $widget_ops = array( 'classname' => 'hoffman_recent_posts_widget', 'description' => __('Displays recent blog entries.', 'hoffman') );
+        parent::__construct( 'hoffman_recent_posts_widget', __('Recent Posts','hoffman'), $widget_ops );
 	}
 	
 	function widget($args, $instance) {
