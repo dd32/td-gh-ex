@@ -275,32 +275,32 @@ function accelerate_entry_meta() {
 
 		<?php
 
-	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
-   if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-      $time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
-   }
-   $time_string = sprintf( $time_string,
-      esc_attr( get_the_date( 'c' ) ),
-      esc_html( get_the_date() ),
-      esc_attr( get_the_modified_date( 'c' ) ),
-      esc_html( get_the_modified_date() )
-   );
-	printf( '<span class="posted-on"><a href="%1$s" title="%2$s" rel="bookmark"><i class="fa fa-calendar-o"></i> %3$s</a></span>',
-		esc_url( get_permalink() ),
-		esc_attr( get_the_time() ),
-		$time_string
-	);
+   	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+      if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+         $time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
+      }
+      $time_string = sprintf( $time_string,
+         esc_attr( get_the_date( 'c' ) ),
+         esc_html( get_the_date() ),
+         esc_attr( get_the_modified_date( 'c' ) ),
+         esc_html( get_the_modified_date() )
+      );
+   	printf( '<span class="posted-on"><a href="%1$s" title="%2$s" rel="bookmark"><i class="fa fa-calendar-o"></i> %3$s</a></span>',
+   		esc_url( get_permalink() ),
+   		esc_attr( get_the_time() ),
+   		$time_string
+   	);
 
-	$tags_list = get_the_tag_list( '<span class="tag-links"><i class="fa fa-tags"></i>', __( ', ', 'accelerate' ), '</span>' );
-	if ( $tags_list ) echo $tags_list;
+   	$tags_list = get_the_tag_list( '<span class="tag-links"><i class="fa fa-tags"></i>', __( ', ', 'accelerate' ), '</span>' );
+   	if ( $tags_list ) echo $tags_list;
 
-	if ( ! post_password_required() && comments_open() ) { ?>
-		<span class="comments-link"><?php comments_popup_link( __( '<i class="fa fa-comment"></i> 0 Comment', 'accelerate' ), __( '<i class="fa fa-comment"></i> 1 Comment', 'accelerate' ), __( '<i class="fa fa-comments"></i> % Comments', 'accelerate' ) ); ?></span>
-	<?php }
+   	if ( ! post_password_required() && comments_open() ) { ?>
+   		<span class="comments-link"><?php comments_popup_link( __( '<i class="fa fa-comment"></i> 0 Comment', 'accelerate' ), __( '<i class="fa fa-comment"></i> 1 Comment', 'accelerate' ), __( '<i class="fa fa-comments"></i> % Comments', 'accelerate' ) ); ?></span>
+   	<?php }
 
-	edit_post_link( __( 'Edit', 'accelerate' ), '<span class="edit-link"><i class="fa fa-edit"></i>', '</span>' );
+   	edit_post_link( __( 'Edit', 'accelerate' ), '<span class="edit-link"><i class="fa fa-edit"></i>', '</span>' );
 
-	echo '</div>';
+   	echo '</div>';
 }
 endif;
 

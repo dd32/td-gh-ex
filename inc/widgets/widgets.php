@@ -127,10 +127,10 @@ function accelerate_widgets_init() {
  *
  */
  class accelerate_featured_single_page_widget extends WP_Widget {
- 	function accelerate_featured_single_page_widget() {
+ 	function __construct() {
  		$widget_ops = array( 'classname' => 'widget_featured_single_post clearfix', 'description' => __( 'Display Featured Single Page', 'accelerate' ) );
 		$control_ops = array( 'width' => 200, 'height' =>250 );
-		parent::WP_Widget( false, $name= __( 'TG: Featured Single Page', 'accelerate' ), $widget_ops, $control_ops);
+		parent::__construct( false, $name= __( 'TG: Featured Single Page', 'accelerate' ), $widget_ops, $control_ops);
  	}
 
  	function form( $instance ) {
@@ -227,10 +227,10 @@ function accelerate_widgets_init() {
  * Featured call to action widget.
  */
 class accelerate_call_to_action_widget extends WP_Widget {
- 	function accelerate_call_to_action_widget() {
+ 	function __construct() {
  		$widget_ops = array( 'classname' => 'widget_call_to_action', 'description' => __( 'Use this widget to show the call to action section.', 'accelerate' ) );
 		$control_ops = array( 'width' => 200, 'height' =>250 );
-		parent::WP_Widget( false, $name = __( 'TG: Call To Action Widget', 'accelerate' ), $widget_ops, $control_ops);
+		parent::__construct( false, $name = __( 'TG: Call To Action Widget', 'accelerate' ), $widget_ops, $control_ops);
  	}
 
  	function form( $instance ) {
@@ -333,10 +333,10 @@ class accelerate_call_to_action_widget extends WP_Widget {
  * Featured recent work widget to show pages.
  */
  class accelerate_recent_work_widget extends WP_Widget {
- 	function accelerate_recent_work_widget() {
+ 	function __construct() {
  		$widget_ops = array( 'classname' => 'widget_recent_work', 'description' => __( 'Show your some pages as recent work. Best for Business Top or Bottom sidebar.', 'accelerate' ) );
 		$control_ops = array( 'width' => 200, 'height' =>250 );
-		parent::WP_Widget( false, $name = __( 'TG: Featured Widget', 'accelerate' ), $widget_ops, $control_ops);
+		parent::__construct( false, $name = __( 'TG: Featured Widget', 'accelerate' ), $widget_ops, $control_ops);
  	}
 
  	function form( $instance ) {
@@ -448,10 +448,10 @@ class accelerate_call_to_action_widget extends WP_Widget {
  * Featured service widget to show pages.
  */
 class accelerate_image_service_widget extends WP_Widget {
- 	function accelerate_image_service_widget() {
+ 	function __construct() {
  		$widget_ops = array( 'classname' => 'widget_image_service_block', 'description' => __( 'Display some pages as services. Best for Business Top or Bottom sidebar.', 'accelerate' ) );
 		$control_ops = array( 'width' => 200, 'height' =>250 );
-		parent::WP_Widget( false, $name = __( 'TG: Image Services', 'accelerate' ), $widget_ops, $control_ops);
+		parent::__construct( false, $name = __( 'TG: Image Services', 'accelerate' ), $widget_ops, $control_ops);
  	}
 
  	function form( $instance ) {
@@ -561,10 +561,10 @@ class accelerate_image_service_widget extends WP_Widget {
  * ThemeGrill Custom Tag Widget
  */
 class accelerate_custom_tag_widget extends WP_Widget {
-	function accelerate_custom_tag_widget() {
+	function __construct() {
 		$widget_ops = array( 'classname' => 'accelerate_tagcloud_widget', 'description' => __( 'Custom Tag Cloud', 'accelerate' ) );
 		$control_ops = array( 'width' => 200, 'height' => 250 );
-		parent::WP_Widget( false, $name = __( 'TG: Custom Tag Cloud', 'accelerate' ) , $widget_ops, $control_ops );
+		parent::__construct( false, $name = __( 'TG: Custom Tag Cloud', 'accelerate' ) , $widget_ops, $control_ops );
 	}
 
 	function widget( $args, $instance ) {
