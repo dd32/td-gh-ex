@@ -39,7 +39,7 @@
 		</header>
 	<?php
 	}
-	esteem_entry_meta(); ?> ?>
+	esteem_entry_meta(); ?>
 
 	<div class="entry-content clearfix">
 		<?php the_excerpt(); ?>

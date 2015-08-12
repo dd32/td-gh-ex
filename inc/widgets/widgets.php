@@ -104,10 +104,10 @@ function esteem_widgets_init() {
  * i.e. Name, description and control options.
  */
 class esteem_service_widget extends WP_Widget {
- 	function esteem_service_widget() {
+ 	function __construct() {
  		$widget_ops = array( 'classname' => 'widget-services', 'description' => __( 'Display Services( Business Layout )', 'esteem' ) );
 		$control_ops = array( 'width' => 200, 'height' =>250 );
-		parent::WP_Widget( false, $name = __( 'TG: Services', 'esteem' ), $widget_ops, $control_ops);
+		parent::__construct( false, $name = __( 'TG: Services', 'esteem' ), $widget_ops, $control_ops);
  	}
 
  	function form( $instance ) {
@@ -229,10 +229,10 @@ class esteem_service_widget extends WP_Widget {
  * i.e. Name, description and control options.
  */
  class esteem_recent_work_widget extends WP_Widget {
- 	function esteem_recent_work_widget() {
+ 	function __construct() {
  		$widget_ops = array( 'classname' => 'widget-recent-work', 'description' => __( 'Use this widget to show recent work, portfolio or any pages as your wish ( Business Layout )', 'esteem' ) );
 		$control_ops = array( 'width' => 200, 'height' =>250 );
-		parent::WP_Widget( false, $name = __( 'TG: Featured Widget', 'esteem' ), $widget_ops, $control_ops);
+		parent::__construct( false, $name = __( 'TG: Featured Widget', 'esteem' ), $widget_ops, $control_ops);
  	}
 
  	function form( $instance ) {
@@ -340,10 +340,10 @@ class esteem_service_widget extends WP_Widget {
  * i.e. Name, description and control options.
  */
 class esteem_call_to_action_widget extends WP_Widget {
- 	function esteem_call_to_action_widget() {
+ 	function __construct() {
  		$widget_ops = array( 'classname' => 'widget-call-to-action', 'description' => __( 'Use this widget to show the call to action section', 'esteem' ) );
 		$control_ops = array( 'width' => 200, 'height' =>250 );
-		parent::WP_Widget( false, $name = __( 'TG: Call To Action Widget', 'esteem' ), $widget_ops, $control_ops);
+		parent::__construct( false, $name = __( 'TG: Call To Action Widget', 'esteem' ), $widget_ops, $control_ops);
  	}
 
  	function form( $instance ) {
@@ -451,10 +451,10 @@ class esteem_call_to_action_widget extends WP_Widget {
  */
 class esteem_testimonial_widget extends WP_Widget {
 
-	function esteem_testimonial_widget() {
+	function __construct() {
  		$widget_ops = array( 'classname' => 'widget_testimonial', 'description' => __( 'Display Testimonial', 'esteem' ) );
 		$control_ops = array( 'width' => 200, 'height' =>250 );
-		parent::WP_Widget( false, $name = __( 'TG: Testimonial', 'esteem' ), $widget_ops, $control_ops);
+		parent::__construct( false, $name = __( 'TG: Testimonial', 'esteem' ), $widget_ops, $control_ops);
  	}
 
 	function widget( $args, $instance ) {
