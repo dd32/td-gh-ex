@@ -66,6 +66,10 @@ GPL compatible for own images
 
 ----------------------------------------------------
 == Changelog ==
+Version 2.0.9
+ * Added features of random post at primary menu section.
+ * Fixed some bugs in our theme functions
+ 
 Version 2.0.8
  * Fixed bugs about overwitten theme css by news ticker css
  * Added sticky menu behaviour for only primay menu

@@ -153,6 +153,15 @@ function optionsframework_options() {
             'type' => 'switch'
             );
     $options[] = array(
+            'name' => __( 'Random Post in Menu', 'accesspress-mag' ),                
+            'desc' => __( 'Enable or Disable Random Post icon in menu section.', 'accesspress-mag' ),
+            'id' => 'random_icon_option',
+            'on' => __( 'Enable', 'accesspress-mag'),
+            'off' => __( 'Disable', 'accesspress-mag'),
+            'std' => '1',
+            'type' => 'switch'
+            );
+    $options[] = array(
             'type' => 'groupend'
             );
     /*--------------Logo Setting-------------------*/

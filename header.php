@@ -27,6 +27,7 @@
         $accesspress_mag_logo_alt = of_get_option( 'logo_alt' );
         $accesspress_mag_logo_title = of_get_option( 'logo_title' );
         $accesspress_mag_ticker_option = of_get_option( 'news_ticker_option', '1' );
+        $accesspress_mag_random_icon = of_get_option( 'random_icon_option', '1' );
     ?>  
 	
     <header id="masthead" class="site-header" role="banner">    
@@ -109,8 +110,11 @@
                             wp_page_menu();
                         }
                     ?>
-                </div>
+                </div>                
                 <?php get_search_form(); ?>
+                <?php if ( $accesspress_mag_random_icon == 1 ) { ?>
+                  <?php accesspress_mag_random_post(); ?>
+               <?php } ?>
             </div>
 		</nav><!-- #site-navigation -->
         

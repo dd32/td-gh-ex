@@ -251,7 +251,7 @@ function accesspress_mag_function_script(){
     $slider_controls = ( of_get_option( 'slider_controls' ) == "1" ) ? "true" : "false";
     $slider_auto_transaction = ( of_get_option( 'slider_auto_transition' ) == "1" ) ? "true" : "false";
     $slider_pager = ( of_get_option( 'slider_pager' ) == "1" ) ? "true" : "false";
-    $ticker_caption = of_get_option( 'ticker_caption' ); 
+    $ticker_caption = of_get_option( 'ticker_caption', 'Latest' ); 
     ?>
     <script type="text/javascript">
         jQuery(function($){
@@ -726,3 +726,31 @@ endif;
 add_filter('bbp_no_breadcrumb', 'accesspress_mag_bbp_no_breadcrumb' );
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
+/**
+ * Random Post in header
+ */
+if ( ! function_exists( 'accesspress_mag_random_post' ) ) :
+function accesspress_mag_random_post() {
+   $get_random_post = new WP_Query( array(
+      'posts_per_page'        => 1,
+      'post_type'             => 'post',
+      'ignore_sticky_posts'   => true,
+      'orderby'               => 'rand'
+   ) );
+?>
+   <div class="random-post">
+      <?php 
+        if( $get_random_post->have_posts() ) {
+            while( $get_random_post->have_posts() ) {
+                $get_random_post->the_post();
+      ?>
+        <a href="<?php the_permalink(); ?>" title="<?php _e( 'View a random post', 'accesspress-mag' ); ?>"><i class="fa fa-random"></i></a>
+      <?php
+            }
+        }
+      ?>
+   </div>
+   <?php
+   wp_reset_query();
+}
+endif;

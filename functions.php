@@ -104,14 +104,14 @@ function accesspress_mag_scripts() {
     );
     wp_enqueue_style('google-fonts', add_query_arg($font_args, "//fonts.googleapis.com/css"));
     $my_theme = wp_get_theme();
-    $theme_version = $my_theme->get('Version'); 
+    $theme_version = $my_theme->get('Version');
     wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.css');
     
     wp_enqueue_style( 'fontawesome-font', get_template_directory_uri(). '/css/font-awesome.min.css' );
     	
     wp_enqueue_style( 'accesspress-mag-style', get_stylesheet_uri(), array(), esc_attr($theme_version) );
 
-    wp_enqueue_style( 'responsive', get_template_directory_uri() . '/css/responsive.css');
+    wp_enqueue_style( 'responsive', get_template_directory_uri() . '/css/responsive.css', array(), esc_attr($theme_version) );
     
    if ( of_get_option( 'menu_sticky', '1' ) == 1 ) {
       wp_enqueue_script( 'jquery-sticky', get_template_directory_uri(). '/js/sticky/jquery.sticky.js', array( 'jquery' ), '1.0.2', true );
