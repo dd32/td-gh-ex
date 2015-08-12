@@ -23,39 +23,41 @@
 
 <body <?php body_class(); ?>>
 
-<header class="header container" >
+<div id="wrapper">
 
-	<div class="row">
+    <header class="header container" >
     
-    	<div class="span12" >
+        <div class="row">
         
-        	<div id="logo">
-                    
-            	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name') ?>">
-                        
-                	<?php 
-					
-                    	if ( suevafree_setting('suevafree_custom_logo')) :
-                        	echo "<img src='".suevafree_setting('suevafree_custom_logo')."' alt='logo'>"; 
-                        else: 
-                            bloginfo('name');
-							echo "<span>".get_bloginfo('description')."</span>";
-                        endif; 
-						
-					?>
-                            
-                </a>
-                        
-			</div>
-
-            <nav id="mainmenu">
+            <div class="span12" >
             
-                <?php wp_nav_menu( array('theme_location' => 'main-menu', 'container' => 'false','depth' => 3  )); ?>
-                
-            </nav>    
+                <div id="logo">
                         
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name') ?>">
+                            
+                        <?php 
+                        
+                            if ( suevafree_setting('suevafree_custom_logo')) :
+                                echo "<img src='".suevafree_setting('suevafree_custom_logo')."' alt='logo'>"; 
+                            else: 
+                                bloginfo('name');
+                                echo "<span>".get_bloginfo('description')."</span>";
+                            endif; 
+                            
+                        ?>
+                                
+                    </a>
+                            
+                </div>
+    
+                <nav id="mainmenu">
+                
+                    <?php wp_nav_menu( array('theme_location' => 'main-menu', 'container' => 'false','depth' => 3  )); ?>
+                    
+                </nav>    
+                            
+            </div>
+            
         </div>
-        
-	</div>
-
-</header>
+    
+    </header>
