@@ -172,10 +172,10 @@ function spacious_widgets_init() {
  *
  */
  class spacious_featured_single_page_widget extends WP_Widget {
- 	function spacious_featured_single_page_widget() {
+ 	function __construct() {
  		$widget_ops = array( 'classname' => 'widget_featured_single_post', 'description' => __( 'Display Featured Single Page', 'spacious' ) );
 		$control_ops = array( 'width' => 200, 'height' =>250 );
-		parent::WP_Widget( false, $name='TG: Featured Single Page', $widget_ops, $control_ops);
+		parent::__construct( false, $name='TG: Featured Single Page', $widget_ops, $control_ops);
  	}
 
  	function form( $instance ) {
@@ -272,10 +272,10 @@ function spacious_widgets_init() {
  * Featured service widget to show pages.
  */
 class spacious_service_widget extends WP_Widget {
- 	function spacious_service_widget() {
+ 	function __construct() {
  		$widget_ops = array( 'classname' => 'widget_service_block', 'description' => __( 'Display some pages as services. Best for Business Top or Bottom sidebar.', 'spacious' ) );
 		$control_ops = array( 'width' => 200, 'height' =>250 );
-		parent::WP_Widget( false, $name = __( 'TG: Services', 'spacious' ), $widget_ops, $control_ops);
+		parent::__construct( false, $name = __( 'TG: Services', 'spacious' ), $widget_ops, $control_ops);
  	}
 
  	function form( $instance ) {
@@ -371,10 +371,10 @@ class spacious_service_widget extends WP_Widget {
  * Featured call to action widget.
  */
 class spacious_call_to_action_widget extends WP_Widget {
- 	function spacious_call_to_action_widget() {
+ 	function __construct() {
  		$widget_ops = array( 'classname' => 'widget_call_to_action', 'description' => __( 'Use this widget to show the call to action section.', 'spacious' ) );
 		$control_ops = array( 'width' => 200, 'height' =>250 );
-		parent::WP_Widget( false, $name = __( 'TG: Call To Action Widget', 'spacious' ), $widget_ops, $control_ops);
+		parent::__construct( false, $name = __( 'TG: Call To Action Widget', 'spacious' ), $widget_ops, $control_ops);
  	}
 
  	function form( $instance ) {
@@ -471,10 +471,10 @@ class spacious_call_to_action_widget extends WP_Widget {
  */
 class spacious_testimonial_widget extends WP_Widget {
 
-	function spacious_testimonial_widget() {
+	function __construct() {
  		$widget_ops = array( 'classname' => 'widget_testimonial', 'description' => __( 'Display Testimonial', 'spacious' ) );
 		$control_ops = array( 'width' => 200, 'height' =>250 );
-		parent::WP_Widget( false, $name = __( 'TG: Testimonial', 'spacious' ), $widget_ops, $control_ops);
+		parent::__construct( false, $name = __( 'TG: Testimonial', 'spacious' ), $widget_ops, $control_ops);
  	}
 
 	function widget( $args, $instance ) {
@@ -538,10 +538,10 @@ class spacious_testimonial_widget extends WP_Widget {
  * Featured recent work widget to show pages.
  */
  class spacious_recent_work_widget extends WP_Widget {
- 	function spacious_recent_work_widget() {
+ 	function __construct() {
  		$widget_ops = array( 'classname' => 'widget_recent_work', 'description' => __( 'Show your some pages as recent work. Best for Business Top or Bottom sidebar.', 'spacious' ) );
 		$control_ops = array( 'width' => 200, 'height' =>250 );
-		parent::WP_Widget( false, $name = __( 'TG: Featured Widget', 'spacious' ), $widget_ops, $control_ops);
+		parent::__construct( false, $name = __( 'TG: Featured Widget', 'spacious' ), $widget_ops, $control_ops);
  	}
 
  	function form( $instance ) {
