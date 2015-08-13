@@ -30,7 +30,7 @@
       					<?php if(isset($pinnacle['homepage_layout']['enabled'])) { 
       						$layout = $pinnacle['homepage_layout']['enabled']; 
       					} else {
-      						$layout = array("block_two" => "block_two", "block_five" => "block_five");
+      						$layout = array("block_two" => "block_four");
       					}
 						if ($layout):
 							foreach ($layout as $key=>$value) {

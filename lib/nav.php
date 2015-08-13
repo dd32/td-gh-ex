@@ -28,6 +28,7 @@ class kadence_Nav_Walker extends Walker_Nav_Menu {
       foreach ($custom_classes as $custom_class) {
       }
     }
+    if(empty($args->link_before)) {$args->link_before = '<span>'; $args->link_after = '</span>';}
 
     $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
     $class_names = $class_names ? ' class="' . $id . ' ' . esc_attr($class_names) . '"' : ' class="' . $id . '"';

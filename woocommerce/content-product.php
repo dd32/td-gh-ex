@@ -6,7 +6,7 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     1.6.4
+ * @version     2.4.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -85,7 +85,14 @@ $product_column = $woocommerce_loop['columns'];
 		    <div class="product_details_case clearfix">
 				<div class="product_details">
 					<a href="<?php the_permalink(); ?>" class="product_item_link product_title_link">
-						<h5><?php the_title(); ?></h5>
+						<?php 
+				/**
+			 	* woocommerce_shop_loop_item_title hook
+			 	*
+			 	* @hooked woocommerce_template_loop_product_title - 10
+			 	*/
+				do_action( 'woocommerce_shop_loop_item_title' );
+				?>
 					</a>
 					<div class="product_excerpt">
 						<?php global $post; if ($post->post_excerpt){

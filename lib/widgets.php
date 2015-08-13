@@ -175,7 +175,7 @@ add_action('widgets_init', 'pinnacle_widgets_init');
 class kad_contact_widget extends WP_Widget {
   function kad_contact_widget() {
     $widget_ops = array('classname' => 'widget_kadence_contact', 'description' => __('Use this widget to add a Vcard to your site', 'pinnacle'));
-    $this->WP_Widget('widget_kadence_contact', __('Pinnacle: Contact/Vcard', 'pinnacle'), $widget_ops);
+    $this->__construct('widget_kadence_contact', __('Pinnacle: Contact/Vcard', 'pinnacle'), $widget_ops);
     $this->alt_option_name = 'widget_kadence_contact';
 
     add_action('save_post', array(&$this, 'flush_widget_cache'));
@@ -323,7 +323,7 @@ class kad_contact_widget extends WP_Widget {
 class kad_social_widget extends WP_Widget {
   function kad_social_widget() {
     $widget_ops = array('classname' => 'widget_kadence_social', 'description' => __('Simple way to add Social Icons', 'pinnacle'));
-    $this->WP_Widget('widget_kadence_social', __('Pinnacle: Social Links', 'pinnacle'), $widget_ops);
+    $this->__construct('widget_kadence_social', __('Pinnacle: Social Links', 'pinnacle'), $widget_ops);
     $this->alt_option_name = 'widget_kadence_social';
     add_action('save_post', array(&$this, 'flush_widget_cache'));
     add_action('deleted_post', array(&$this, 'flush_widget_cache'));
@@ -509,7 +509,7 @@ class kad_recent_posts_widget extends WP_Widget {
 
   function kad_recent_posts_widget() {
       $widget_ops = array('classname' => 'kadence_recent_posts', 'description' => __('This shows the most recent posts on your site with a thumbnail', 'pinnacle'));
-      $this->WP_Widget('kadence_recent_posts', __('Pinnacle: Recent Posts', 'pinnacle'), $widget_ops);
+      $this->__construct('kadence_recent_posts', __('Pinnacle: Recent Posts', 'pinnacle'), $widget_ops);
       $this->alt_option_name = 'kadence_recent_entries';
 
     add_action( 'save_post', array(&$this, 'flush_widget_cache') );
@@ -621,7 +621,7 @@ class kad_post_grid_widget extends WP_Widget {
 
   function kad_post_grid_widget() {
       $widget_ops = array('classname' => 'kadence_image_grid', 'description' => __('This shows a grid of featured images from recent posts or portfolio items', 'pinnacle'));
-      $this->WP_Widget('kadence_image_grid', __('Pinnacle: Post Grid', 'pinnacle'), $widget_ops);
+      $this->__construct('kadence_image_grid', __('Pinnacle: Post Grid', 'pinnacle'), $widget_ops);
       $this->alt_option_name = 'kadence_image_grid';
 
     add_action( 'save_post', array(&$this, 'flush_widget_cache') );
@@ -769,7 +769,7 @@ class kad_image_widget extends WP_Widget{
 
     function kad_image_widget() {
         $widget_ops = array('classname' => 'kadence_simple_image', 'description' => __('This allows for an image and a simple about text.', 'pinnacle'));
-        $this->WP_Widget('kadence_simple_image', __('Pinnacle: Image', 'pinnacle'), $widget_ops);
+        $this->__construct('kadence_simple_image', __('Pinnacle: Image', 'pinnacle'), $widget_ops);
         $this->alt_option_name = 'kadence_simple_image';
     }
 

@@ -32,6 +32,12 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+= 1.3.0 | 12th August 2015 = 
+* Add: Customizer Options.
+* Update: wp_widget to construct.
+* Remove: Options Panel (moved to plugin).
+* Update: Few w3 validator notices.
+
 = 1.2.8 | 16th June 2015 = 
 * Update: Few w3 validator notices.
 * Update: Comments Template.

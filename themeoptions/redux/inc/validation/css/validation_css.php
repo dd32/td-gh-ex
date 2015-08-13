@@ -31,12 +31,8 @@
 
                 $data = $this->value;
 
-                $data = str_replace( '<=', '&lt;=', $data );      
-                // Why KSES instead of strip_tags?  Who knows?     
-                $data = wp_kses_split( $prev = $data, array(), array() );        
-                $data = str_replace( '&gt;', '>', $data ); // kses replaces lone '>' with &gt;       
-                // Why both KSES and strip_tags?  Because we just added some '>'.      
-                $data = strip_tags( $data );
+                $data = wp_filter_nohtml_kses( $data );
+                $data = str_replace( '&gt;', '>', $data );
 
                 if ($data != $this->value) {
                     $this->warning = __( 'Unsafe strings were found in your CSS and have been filtered out.', 'redux-framework' );

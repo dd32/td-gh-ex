@@ -116,3 +116,94 @@ add_filter( 'add_to_cart_fragments', 'kt_get_refreshed_fragments' );
   }
 
 
+remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
+add_action( 'woocommerce_shop_loop_item_title', 'kt_woocommerce_template_loop_product_title', 10);
+function kt_woocommerce_template_loop_product_title() {
+  echo '<h5>'.get_the_title().'</h5>';
+}
+
+
+remove_action( 'woocommerce_single_variation', 'woocommerce_single_variation', 10 );
+remove_action( 'woocommerce_single_variation', 'woocommerce_single_variation_add_to_cart_button', 20 );
+add_action( 'woocommerce_single_variation', 'kt_woocommerce_single_variation', 10 );
+add_action( 'woocommerce_single_variation', 'kt_woocommerce_single_variation_add_to_cart_button', 20 );
+
+if ( ! function_exists( 'kt_woocommerce_single_variation_add_to_cart_button' ) ) {
+  /**
+   * Output the add to cart button for variations.
+   */
+  function kt_woocommerce_single_variation_add_to_cart_button() {
+    global $product;
+    ?>
+    <div class="variations_button">
+      <?php woocommerce_quantity_input( array( 'input_value' => isset( $_POST['quantity'] ) ? wc_stock_amount( $_POST['quantity'] ) : 1 ) ); ?>
+      <button type="submit" class="kad_add_to_cart headerfont kad-btn kad-btn-primary single_add_to_cart_button"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
+      <input type="hidden" name="add-to-cart" value="<?php echo absint( $product->id ); ?>" />
+      <input type="hidden" name="product_id" value="<?php echo absint( $product->id ); ?>" />
+      <input type="hidden" name="variation_id" class="variation_id" value="" />
+    </div>
+    <?php
+  }
+}
+
+if ( ! function_exists( 'kt_woocommerce_single_variation' ) ) {
+  /**
+   * Output placeholders for the single variation.
+   */
+  function kt_woocommerce_single_variation() {
+    echo '<div class="single_variation headerfont"></div>';
+  }
+}
+
+if ( ! function_exists( 'kt_wc_dropdown_variation_attribute_options' ) ) {
+  /**
+   * Output a list of variation attributes for use in the cart forms.
+   *
+   * @param array $args
+   * @since 2.4.0
+   */
+  function kt_wc_dropdown_variation_attribute_options( $args = array() ) {
+    $args = wp_parse_args( $args, array(
+      'options'          => false,
+      'attribute'        => false,
+      'product'          => false,
+      'selected'         => false,
+      'name'             => '',
+      'id'               => '',
+      'show_option_none' => __( 'Choose an option', 'pinnacle' )
+    ) );
+    $options   = $args['options'];
+    $product   = $args['product'];
+    $attribute = $args['attribute'];
+    $name      = $args['name'] ? $args['name'] : 'attribute_' . sanitize_title( $attribute );
+    $id        = $args['id'] ? $args['id'] : sanitize_title( $attribute );
+    if ( empty( $options ) && ! empty( $product ) && ! empty( $attribute ) ) {
+      $attributes = $product->get_variation_attributes();
+      $options    = $attributes[ $attribute ];
+    }
+    echo '<select id="' . esc_attr( $id ) . '" name="' . esc_attr( $name ) . '" class="kad-select" data-attribute_name="attribute_' . esc_attr( sanitize_title( $attribute ) ) . '">';
+    if ( $args['show_option_none'] ) {
+      echo '<option value="">' . esc_html( $args['show_option_none'] ) . '</option>';
+    }
+    if ( ! empty( $options ) ) {
+      if ( $product && taxonomy_exists( $attribute ) ) {
+        // Get terms if this is a taxonomy - ordered. We need the names too.
+        $terms = wc_get_product_terms( $product->id, $attribute, array( 'fields' => 'all' ) );
+        foreach ( $terms as $term ) {
+          if ( in_array( $term->slug, $options ) ) {
+            echo '<option value="' . esc_attr( $term->slug ) . '" ' . selected( sanitize_title( $args['selected'] ), $term->slug, false ) . '>' . apply_filters( 'woocommerce_variation_option_name', $term->name ) . '</option>';
+          }
+        }
+      } else {
+        foreach ( $options as $option ) {
+          // This handles < 2.4.0 bw compatibility where text attributes were not sanitized.
+          $selected = sanitize_title( $args['selected'] ) === $args['selected'] ? selected( $args['selected'], sanitize_title( $option ), false ) : selected( $args['selected'], $option, false );
+          echo '<option value="' . esc_attr( $option ) . '" ' . $selected . '>' . esc_html( apply_filters( 'woocommerce_variation_option_name', $option ) ) . '</option>';
+        }
+      }
+    }
+    echo '</select>';
+  }
+}
+
+

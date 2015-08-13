@@ -1,80 +1,117 @@
 <?php
 define( 'LAYOUT_PATH', get_template_directory() . '/assets/css/skins/' );
+load_theme_textdomain('pinnacle', get_template_directory() . '/languages');
 define( 'OPTIONS_PATH', get_template_directory_uri() . '/themeoptions/options_assets/' );
-
-// BEGIN Config
-
-if ( !class_exists( "ReduxFramework" ) ) {
-        return;
-} 
-
-if ( !class_exists( "Redux_Framework_pinnacle_config" ) ) {
-        class Redux_Framework_pinnacle_config {
-          public $args = array();
-                public $sections = array();
-                public $theme;
-                public $ReduxFramework;
-
-                public function __construct() {
-
-                    if (!class_exists('ReduxFramework')) {
-                        return;
-                    }
-
-                    // This is needed. Bah WordPress bugs.  ;)
-                    if (  true == Redux_Helpers::isTheme(__FILE__) ) {
-                        $this->initSettings();
-                    } else {
-                        add_action('plugins_loaded', array($this, 'initSettings'), 10);
-                    }
-
-                }
-                public function initSettings() {
-
-                load_theme_textdomain('pinnacle', get_template_directory() . '/languages');
-                  // Create the sections and fields
-                  $this->setSections();
-                  // Set the default arguments
-                  $this->setArguments();
-                  //add_filter('redux/options/'.$this->args['opt_name'].'/compiler', array( $this, 'compiler_action' ), 10, 2);
-                  $this->ReduxFramework = new ReduxFramework($this->sections, $this->args);
-                }
-                /*function compiler_action($options, $css) {                  
-                    // Demo of how to use the dynamic CSS and write your own static CSS file
-                    $filename = dirname(__FILE__) . '/themeoptions' . '.css';
-                    global $wp_filesystem;
-                    if( empty( $wp_filesystem ) ) {
-                      require_once( ABSPATH .'/wp-admin/includes/file.php' );
-                    WP_Filesystem();
-                    }
-
-                    if( $wp_filesystem ) {
-                      $wp_filesystem->put_contents(
-                          $filename,
-                          $css,
-                          FS_CHMOD_FILE // predefined mode settings for WP files
-                      );
-                    }
-                   
-              } */
-
-                public function setSections() {
-                 
-
 $alt_stylesheet_path = LAYOUT_PATH;
 $alt_stylesheets = array(); 
 if ( is_dir($alt_stylesheet_path) ) {if ($alt_stylesheet_dir = opendir($alt_stylesheet_path) ) {while ( ($alt_stylesheet_file = readdir($alt_stylesheet_dir)) !== false ) {if(stristr($alt_stylesheet_file, ".css") !== false) {$alt_stylesheets[$alt_stylesheet_file] = $alt_stylesheet_file;}}}}
 
-$this->sections[] = array(
+// BEGIN Config
+
+if ( ! class_exists( 'Redux' ) ) {
+        return;
+    }
+// This is your option name where all the Redux data is stored.
+    $opt_name = "pinnacle";
+
+    // If Redux is running as a plugin, this will remove the demo notice and links
+    add_action( 'redux/loaded', 'pinnacle_remove_demo' );
+
+    $theme = wp_get_theme(); // For use with some settings. Not necessary.
+    $args = array(
+        'opt_name'             => $opt_name,
+        'display_name'         => $theme->get( 'Name' ),
+        'display_version'      => $theme->get( 'Version' ),
+        'page_type'            => 'submenu',
+        'allow_sub_menu'       => false,
+        'menu_title'           => __('Theme Options', 'pinnacle'),
+        'page_title'           => __('Theme Options', 'pinnacle'),
+        'google_api_key'       => 'AIzaSyALkgUvb8LFAmrsczX56ZGJx-PPPpwMid0',
+        'google_update_weekly' => false,
+        'async_typography'     => false,
+        'admin_bar'            => true,
+        'admin_bar_icon'       => 'dashicons-admin-generic',
+        'admin_bar_priority'   => 50,
+        'use_cdn'              => false,
+        'dev_mode'             => false,
+        'forced_dev_mode_off'  => true,
+        'update_notice'        => false,
+        'customizer'           => false,
+        'page_priority'        => 50,
+        'page_permissions'     => 'manage_options',
+        'menu_icon'            => '',
+        'page_icon'            => 'kad_logo_header',
+        'page_slug'            => 'ktoptions',
+        'ajax_save'            => true,
+        'default_show'         => false,
+        'default_mark'         => '',
+        'disable_tracking'     => true,
+        'customizer_only'      => true,
+        'save_defaults'        => false,
+        'intro_text'           => 'Upgrade to <a href="http://www.kadencethemes.com/product/pinnacle-premium-wordpress-theme/" target="_blank" >Pinnacle Premium!</a> More great features! Over 50 more theme options, premium sliders and carousels, breadcrumbs, custom post types and much much more!',           
+        'footer_credit'        => __('Thank you for using the Virtue Theme by <a href="http://kadencethemes.com/" target="_blank">Kadence Themes</a>.', 'virtue'),
+        'hints'                => array(
+            'icon'          => 'icon-question',
+            'icon_position' => 'right',
+            'icon_color'    => '#444',
+            'icon_size'     => 'normal',
+            'tip_style'     => array(
+                'color'   => 'dark',
+                'shadow'  => true,
+                'rounded' => false,
+                'style'   => '',
+            ),
+            'tip_position'  => array(
+                'my' => 'top left',
+                'at' => 'bottom right',
+            ),
+            'tip_effect'    => array(
+                'show' => array(
+                    'effect'   => 'slide',
+                    'duration' => '500',
+                    'event'    => 'mouseover',
+                ),
+                'hide' => array(
+                    'effect'   => 'slide',
+                    'duration' => '500',
+                    'event'    => 'click mouseleave',
+                ),
+            ),
+        ),
+    );
+    // SOCIAL ICONS -> Setup custom links in the footer for quick links in your panel footer icons.
+        $args['share_icons'][] = array(
+            'url' => 'https://www.facebook.com/KadenceThemes',
+            'title' => 'Follow Kadence Themes on Facebook', 
+            'icon' => 'icon-facebook',
+        );
+        $args['share_icons'][] = array(
+            'url' => 'https://www.twitter.com/KadenceThemes',
+            'title' => 'Follow Kadence Themes on Twitter', 
+            'icon' => 'icon-twitter',
+        );
+        $args['share_icons'][] = array(
+            'url' => 'https://www.instagram.com/KadenceThemes',
+            'title' => 'Follow Kadence Themes on Instagram', 
+            'icon' => 'icon-instagram',
+        );
+        $args = apply_filters('kadence_theme_options_args', $args);
+   Redux::setArgs( $opt_name, $args );
+
+   // -> START Basic Fields                
+
+    Redux::setSection( $opt_name, array(
     'title' => __('Site Header', 'pinnacle'),
+    'id' => 'site_header',
     'header' => '',
     'desc' => "<div class='redux-info-field'><h3>".__('Welcome to Pinnacle Theme Options', 'pinnacle')."</h3>
-                                    <p>".__('This theme was developed by', 'pinnacle')." <a href=\"http://kadencethemes.com/\" target=\"_blank\">Kadence Themes</a></p>
-                                    <p>".__('For theme documentation visit', 'pinnacle').": <a href=\"http://docs.kadencethemes.com/pinnacle/\" target=\"_blank\">docs.kadencethemes.com/pinnacle/</a>
-                                    <br />
-                                    ".__('For support please visit', 'pinnacle').": <a href=\"https://wordpress.org/support/theme/pinnacle\" target=\"_blank\">https://wordpress.org/support/theme/pinnacle</a></p></div>",
+            <p>".__('This theme was developed by', 'pinnacle')." <a href=\"http://kadencethemes.com/\" target=\"_blank\">Kadence Themes</a></p>
+            <p>".__('For theme documentation visit', 'pinnacle').": <a href=\"http://docs.kadencethemes.com/pinnacle/\" target=\"_blank\">docs.kadencethemes.com/pinnacle/</a>
+            <br />
+            ".__('For support please visit', 'pinnacle').": <a href=\"https://wordpress.org/support/theme/pinnacle\" target=\"_blank\">https://wordpress.org/support/theme/pinnacle</a></p></div>",
     'icon_class' => 'icon-large',
     'icon' => 'icon-desktop',
+    'customizer' => true,
     'fields' => array(
          array(
             'id'=>'header_height',
@@ -83,16 +120,19 @@ $this->sections[] = array(
             "default"       => "120",
             "min"       => "30",
             "step"      => "2",
+            'customizer' => true,
             "max"       => "400",
             ),
         array(
             'id'=>'transparentheader',
             'type' => 'info',
+            'customizer' => true,
             'desc' => __('Transparent Header', 'pinnacle'),
             ),
         array(
             'id'=>'pagetitle_intoheader',
-            'type' => 'switch', 
+            'type' => 'switch',
+            'customizer' => true,
             'title' => __('Enable Transparent header?', 'pinnacle'),
             'subtitle'=> __('This will make the page header background fill to the top of the page.', 'pinnacle'),
             "default" => 1,
@@ -134,6 +174,7 @@ $this->sections[] = array(
             'id'=>'th_x1_logo_upload',
             'type' => 'media', 
             'url'=> true,
+            'customizer' => true,
             'title' => __('Logo (For Transparent Header)', 'pinnacle'),
             'subtitle' => __('Upload your Logo.', 'pinnacle'),
             ),
@@ -141,19 +182,23 @@ $this->sections[] = array(
             'id'=>'th_x2_logo_upload',
             'type' => 'media', 
             'url'=> true,
+            'customizer' => true,
             'title' => __('@2x Logo (For Transparent Header) ', 'pinnacle'),
             'subtitle' => __('Should be twice the pixel size of your normal logo.', 'pinnacle'),
             ),
          ),
-      );
-    $this->sections[] = array(
+        )
+    );
+    Redux::setSection( $opt_name, array(
           'icon' => 'icon-trophy',
           'icon_class' => 'icon-large',
+          'id' => 'logo_options',
           'title' => __('Logo Options', 'pinnacle'),
           'fields' => array(
           array(
             'id'=>'logo_container_width',
             'type' => 'select',
+            'customizer' => true,
             'title' => __('Logo Container Width', 'pinnacle'), 
             'options' => array('16' => __('16%', 'pinnacle'),'25' => __('25%', 'pinnacle'), '33' => __('33%', 'pinnacle'),'41' => __('41%', 'pinnacle'), '50' => __('50%', 'pinnacle')),
             'default' => '33',
@@ -163,6 +208,7 @@ $this->sections[] = array(
             'id'=>'x1_logo_upload',
             'type' => 'media', 
             'url'=> true,
+            'customizer' => true,
             'title' => __('Logo', 'pinnacle'),
             'subtitle' => __('Upload your Logo. If left blank theme will use site name.', 'pinnacle'),
             ),
@@ -170,6 +216,7 @@ $this->sections[] = array(
             'id'=>'x2_logo_upload',
             'type' => 'media', 
             'url'=> true,
+            'customizer' => true,
             'title' => __('Upload Your @2x Logo for Retina Screens', 'pinnacle'),
             'subtitle' => __('Should be twice the pixel size of your normal logo.', 'pinnacle'),
             ),
@@ -186,6 +233,7 @@ $this->sections[] = array(
             'font-size'=>true,
             'line-height'=>false,
             'text-align' => false,
+            'customizer' => false,
             'color'=>true,
             'preview'=>true,
             'output' => array('.is-sticky header #logo a.brand', '.logofont', '.none-trans-header header #logo a.brand','header #logo a.brand'),
@@ -197,15 +245,18 @@ $this->sections[] = array(
                 'font-size'=>'32px',  ),
             ),
         ),
+    )
 );
-$this->sections[] = array(
+Redux::setSection( $opt_name, array(
     'icon' => 'icon-pencil',
     'icon_class' => 'icon-large',
+    'id' => 'page_title',
     'title' => __('Page Title', 'pinnacle'),
     'fields' => array(
     array(
             'id'=>'default_showpagetitle',
-            'type' => 'switch', 
+            'type' => 'switch',
+            'customizer' => true,
             'title' => __('Show the page title by default', 'pinnacle'),
             'subtitle'=> __('This can be overridden on each page.', 'pinnacle'),
             "default" => 1,
@@ -213,6 +264,7 @@ $this->sections[] = array(
     array(
         'id'        => 'pageheader_background',
         'type'      => 'background',
+        'customizer' => false,
         'output'    => array('.titleclass'),
         'title'     => __('Page Header Default Background', 'pinnacle'),
         ),
@@ -244,18 +296,22 @@ $this->sections[] = array(
             'title' => __('Page Title Align', 'pinnacle'), 
             'options' => array('center' => __('Center', 'pinnacle'),'left' => __('Left', 'pinnacle'), 'right' => __('Right', 'pinnacle')),
             'default' => 'center',
+            'customizer' => true,
             'width' => 'width:60%',
             ),
     ),
+)
 );
-$this->sections[] = array(
+Redux::setSection( $opt_name, array(
     'icon' => 'icon-laptop',
     'icon_class' => 'icon-large',
+    'id' => 'footer_layout',
     'title' => __('Footer Layout', 'pinnacle'),
     'fields' => array(
         array(
                 'id'=>'footer_layout',
                 'type' => 'image_select',
+                'customizer' => true,
                 'title' => __('Footer Widget Layout', 'pinnacle'), 
                 'subtitle' => __('Select how many columns for footer widgets', 'pinnacle'),
                 'options' => array(
@@ -266,22 +322,26 @@ $this->sections[] = array(
                 'default' => 'fourc',
         ),
     ),
+    )
 );
-$this->sections[] = array(
+Redux::setSection( $opt_name, array(
     'icon' => 'icon-list-alt',
     'icon_class' => 'icon-large',
+    'id' => 'topbar_settings',
     'title' => __('Topbar Settings', 'pinnacle'),
     'fields' => array(
         array(
             'id'=>'topbar',
-            'type' => 'switch', 
+            'type' => 'switch',
+            'customizer' => true,
             'title' => __('Use Topbar?', 'pinnacle'),
             'subtitle'=> __('Choose to show or hide topbar', 'pinnacle'),
             "default"       => 0,
             ),
         array(
             'id'=>'topbar_height',
-            'type' => 'slider', 
+            'type' => 'slider',
+            'customizer' => true,
             'title' => __('Topbar Height', 'pinnacle'),
             "default"       => "30",
             "min"       => "4",
@@ -290,14 +350,16 @@ $this->sections[] = array(
             ),
         array(
             'id'=>'topbar_mobile_hide',
-            'type' => 'switch', 
+            'type' => 'switch',
+            'customizer' => true,
             'title' => __('Hide on mobile?', 'pinnacle'),
             'subtitle'=> __('Choose to show or hide topbar on mobile', 'pinnacle'),
             "default"       => 1,
             ),
         array(
             'id'=>'topbar_icons',
-            'type' => 'switch', 
+            'type' => 'switch',
+            'customizer' => false,
             'title' => __('Use Topbar Icon Menu?', 'pinnacle'),
             'subtitle'=> __('Choose to show or hide topbar icon Menu', 'pinnacle'),
             "default"       => 0,
@@ -305,6 +367,7 @@ $this->sections[] = array(
         array(
             'id'=>'topbar_icon_menu',
             'type' => 'kad_icons',
+            'customizer' => false,
             'title' => __('Topbar Icon Menu', 'pinnacle'),
             'subtitle'=> __('Choose your icons for the topbar icon menu.', 'pinnacle'),
         ),
@@ -314,18 +377,21 @@ $this->sections[] = array(
             'title' => __('Icon menu font size', 'pinnacle'),
             "default"       => "14",
             "min"       => "8",
+            'customizer' => true,
             "step"      => "1",
             "max"       => "36",
             ),
         array(
             'id'=>'show_cartcount',
-            'type' => 'switch', 
+            'type' => 'switch',
+            'customizer' => true,
             'title' => __('Show Cart total in topbar?', 'pinnacle'),
             'subtitle'=> __('This only works if using woocommerce', 'pinnacle'),
             "default"       => 1,
             ), 
         array(
             'id'=>'topbar_search',
+            'customizer' => true,
             'type' => 'switch', 
             'title' => __('Display Search in Topbar?', 'pinnacle'),
             'subtitle'=> __('Choose to show or hide search in topbar', 'pinnacle'),
@@ -333,22 +399,26 @@ $this->sections[] = array(
             ),
         array(
             'id'=>'topbar_widget',
-            'type' => 'switch', 
+            'type' => 'switch',
+            'customizer' => true,
             'title' => __('Enable widget area in left of Topbar?', 'pinnacle'),
             "default"       => 0,
             ),
         array(
             'id'=>'topbar_layout',
-            'type' => 'switch', 
+            'type' => 'switch',
+            'customizer' => true,
             'title' => __('Topbar Layout Switch', 'pinnacle'),
             'subtitle'=> __('This moves the left items to the right and right items to the left.', 'pinnacle'),
             "default"       => 0,
             ),
         ),
+)
 );
-$this->sections[] = array(
+Redux::setSection( $opt_name, array(
     'icon' => 'icon-picture',
     'icon_class' => 'icon-large',
+    'id' => 'home_slider',
     'title' => __('Home Slider', 'pinnacle'),
     'desc' => "<div class='redux-info-field'><h3>".__('Home Page Slider Options', 'pinnacle')."</h3></div>",
     'fields' => array(
@@ -360,10 +430,12 @@ $this->sections[] = array(
             'options' => array('none' => __('None', 'pinnacle'),'pagetitle' => __('Page Title', 'pinnacle'),'flex' => __('Flex Slider', 'pinnacle'),'carousel' => __('Carousel Slider', 'pinnacle'),'latest' => __('Latest Posts', 'pinnacle'), 'video' => __('Video', 'pinnacle')),
             'default' => 'pagetitle',
             'width' => 'width:60%',
+            'customizer' => false,
             ),
         array(
             'id'=>'hs_behindheader',
             'type' => 'switch', 
+            'customizer' => false,
             'title' => __('Place behind Header', 'pinnacle'),
             'subtitle'=> __('This enabled the transparent header on the home page.', 'pinnacle'),
             "default" => 1,
@@ -371,6 +443,7 @@ $this->sections[] = array(
         array(
             'id'=>'home_page_title',
             'type' => 'textarea',
+            'customizer' => false,
             'title' => __('Home Page Title', 'pinnacle'), 
             'validate' => 'html',
             'default' => 'Welcome to [site-name]',
@@ -379,6 +452,7 @@ $this->sections[] = array(
         array(
             'id'=>'home_page_sub_title',
             'type' => 'textarea',
+            'customizer' => false,
             'title' => __('Home Page SubTitle', 'pinnacle'), 
             'subtitle' => __('optional text below home page title', 'pinnacle'),
             'validate' => 'html',
@@ -388,6 +462,7 @@ $this->sections[] = array(
         array(
             'id'=>'home_page_title_ptop',
             'type' => 'slider', 
+            'customizer' => false,
             'title' => __('Home Page Title Padding Top', 'pinnacle'),
             "default"       => "110",
             "min"       => "5",
@@ -398,6 +473,7 @@ $this->sections[] = array(
         array(
             'id'=>'home_page_title_pbottom',
             'type' => 'slider', 
+            'customizer' => false,
             'title' => __('Home Page Title Padding Bottom', 'pinnacle'),
             "default"       => "110",
             "min"       => "5",
@@ -408,11 +484,13 @@ $this->sections[] = array(
         array(
             'id'        => 'home_pagetitle_background',
             'type'      => 'background',
+            'customizer' => false,
             'required' => array('choose_home_header','=','pagetitle'), 
         ),
         array(
             'id'=>'home_slider',
             'type' => 'kad_slides',
+            'customizer' => false,
             'title' => __('Slider Images', 'pinnacle'),
             'subtitle'=> __('Use large images for best results.', 'pinnacle'),
             'required' => array('choose_home_header','=',array('flex','carousel','imgcarousel')),
@@ -420,6 +498,7 @@ $this->sections[] = array(
         array(
             'id'=>'slider_size',
             'type' => 'slider', 
+            'customizer' => false,
             'title' => __('Slider Max Height', 'pinnacle'),
             'subtitle' => __('Note: does not work if images are smaller than max.', 'pinnacle'),
             "default"       => "500",
@@ -431,6 +510,7 @@ $this->sections[] = array(
         array(
             'id'=>'slider_size_width',
             'type' => 'slider', 
+            'customizer' => false,
             'title' => __('Slider Max Width', 'pinnacle'),
             'subtitle' => __('Note: does not work if images are smaller than max.', 'pinnacle'),
             "default"       => "1140",
@@ -442,6 +522,7 @@ $this->sections[] = array(
         array(
             'id'=>'slider_autoplay',
             'type' => 'switch', 
+            'customizer' => false,
             'title' => __('Auto Play?', 'pinnacle'),
             'subtitle'=> __('This determines if a slider automatically scrolls', 'pinnacle'),
             "default"       => 1,
@@ -450,6 +531,7 @@ $this->sections[] = array(
         array(
             'id'=>'slider_pausetime',
             'type' => 'slider', 
+            'customizer' => false,
             'title' => __('Slider Pause Time', 'pinnacle'),
             'subtitle' => __('How long to pause on each slide, in milliseconds.', 'pinnacle'),
             "default"       => "7000",
@@ -461,6 +543,7 @@ $this->sections[] = array(
         array(
             'id'=>'trans_type',
             'type' => 'select',
+            'customizer' => false,
             'title' => __('Transition Type', 'pinnacle'), 
             'subtitle' => __("Choose a transition type", 'pinnacle'),
             'options' => array('fade' => __('Fade', 'pinnacle'),'slide' => __('Slide', 'pinnacle')),
@@ -470,6 +553,7 @@ $this->sections[] = array(
         array(
             'id'=>'slider_transtime',
             'type' => 'slider', 
+            'customizer' => false,
             'title' => __('Slider Transition Time', 'pinnacle'),
             'subtitle' => __('How long for slide transitions, in milliseconds.', 'pinnacle'),
             "default"       => "600",
@@ -481,6 +565,7 @@ $this->sections[] = array(
         array(
             'id'=>'slider_captions',
             'type' => 'switch', 
+            'customizer' => false,
             'title' => __('Show Captions?', 'pinnacle'),
             'subtitle'=> __('Choose to show or hide captions', 'pinnacle'),
             "default"       => 0,
@@ -489,23 +574,27 @@ $this->sections[] = array(
         array(
             'id'=>'video_embed',
             'type' => 'textarea',
+            'customizer' => false,
             'title' => __('Video Embed Code', 'pinnacle'), 
             'subtitle' => __('If your using a video on the home page place video embed code here.', 'pinnacle'),
             'default' => '',
             'required' => array('choose_home_header','=','video'),
             ),
          ),
+)
 );
 
-$this->sections[] = array(
+Redux::setSection( $opt_name, array(
     'icon' => 'icon-tablet',
     'icon_class' => 'icon-large',
+    'id' => 'mobile_home_slider',
     'title' => __('Home Mobile Slider', 'pinnacle'),
     'desc' => "<div class='redux-info-field'><h3>".__('Create a different home slider for your mobile visitors.', 'pinnacle')."</h3></div>",
     'fields' => array(
       array(
             'id'=>'mobile_switch',
             'type' => 'switch', 
+            'customizer' => false,
             'title' => __('Would you like to use this feature?', 'pinnacle'),
             'subtitle'=> __('Choose if you would like to show a different slider on your home page for your mobile visitors.', 'pinnacle'),
             "default"       => 0,
@@ -513,6 +602,7 @@ $this->sections[] = array(
         array(
             'id'=>'choose_mobile_slider',
             'type' => 'select',
+            'customizer' => false,
             'title' => __('Choose a Slider for Mobile', 'pinnacle'), 
             'subtitle' => __("Choose which slider you would like to show for mobile viewers.", 'pinnacle'),
             'options' => array('none' => __('None', 'pinnacle'),'flex' => __('Flex Slider', 'pinnacle'), 'pagetitle' => __('Page Title', 'pinnacle'), 'video' => __('Video', 'pinnacle')),
@@ -523,6 +613,7 @@ $this->sections[] = array(
         array(
             'id'=>'m_home_page_title',
             'type' => 'textarea',
+            'customizer' => false,
             'title' => __('Home Page Title', 'pinnacle'), 
             'validate' => 'html',
             'default' => 'Welcome to [site-name]',
@@ -531,6 +622,7 @@ $this->sections[] = array(
         array(
             'id'=>'m_home_page_sub_title',
             'type' => 'textarea',
+            'customizer' => false,
             'title' => __('Home Page SubTitle', 'pinnacle'), 
             'subtitle' => __('optional text below home page title', 'pinnacle'),
             'validate' => 'html',
@@ -540,6 +632,7 @@ $this->sections[] = array(
         array(
             'id'=>'m_home_page_title_ptop',
             'type' => 'slider', 
+            'customizer' => false,
             'title' => __('Home Page Title Padding Top', 'pinnacle'),
             "default"       => "35",
             "min"       => "5",
@@ -550,6 +643,7 @@ $this->sections[] = array(
         array(
             'id'=>'m_home_page_title_pbottom',
             'type' => 'slider', 
+            'customizer' => false,
             'title' => __('Home Page Title Padding Bottom', 'pinnacle'),
             "default"       => "35",
             "min"       => "5",
@@ -560,12 +654,14 @@ $this->sections[] = array(
         array(
             'id'        => 'm_home_pagetitle_background',
             'type'      => 'background',
+            'customizer' => false,
             'output'    => array('.home_titleclass'),
             'required' => array('choose_mobile_slider','=','pagetitle'), 
         ),
         array(
             'id'=>'home_mobile_slider',
             'type' => 'kad_slides',
+            'customizer' => false,
             'title' => __('Slider Images', 'pinnacle'),
             'subtitle'=> __('Use large images for best results.', 'pinnacle'),
             'required' => array('choose_mobile_slider','=',array('flex','carousel','imgcarousel','latest')),
@@ -573,6 +669,7 @@ $this->sections[] = array(
         array(
             'id'=>'mobile_slider_size',
             'type' => 'slider', 
+            'customizer' => false,
             'title' => __('Slider Max Height', 'pinnacle'),
             'subtitle' => __('Note: does not work if images are smaller than max.', 'pinnacle'),
             "default"       => "300",
@@ -584,6 +681,7 @@ $this->sections[] = array(
         array(
             'id'=>'mobile_slider_size_width',
             'type' => 'slider', 
+            'customizer' => false,
             'title' => __('Slider Max Width', 'pinnacle'),
             'subtitle' => __('Note: does not work if images are smaller than max.', 'pinnacle'),
             "default"       => "480",
@@ -595,6 +693,7 @@ $this->sections[] = array(
         array(
             'id'=>'mobile_slider_autoplay',
             'type' => 'switch', 
+            'customizer' => false,
             'title' => __('Auto Play?', 'pinnacle'),
             'subtitle'=> __('This determines if a slider automatically scrolls', 'pinnacle'),
             "default"       => 1,
@@ -603,6 +702,7 @@ $this->sections[] = array(
         array(
             'id'=>'mobile_slider_pausetime',
             'type' => 'slider', 
+            'customizer' => false,
             'title' => __('Slider Pause Time', 'pinnacle'),
             'subtitle' => __('How long to pause on each slide, in milliseconds.', 'pinnacle'),
             "default"       => "7000",
@@ -614,6 +714,7 @@ $this->sections[] = array(
         array(
             'id'=>'mobile_trans_type',
             'type' => 'select',
+            'customizer' => false,
             'title' => __('Transition Type', 'pinnacle'), 
             'subtitle' => __("Choose a transition type", 'pinnacle'),
             'options' => array('fade' => __('Fade', 'pinnacle'),'slide' => __('Slide', 'pinnacle')),
@@ -623,6 +724,7 @@ $this->sections[] = array(
         array(
             'id'=>'mobile_slider_transtime',
             'type' => 'slider', 
+            'customizer' => false,
             'title' => __('Slider Transition Time', 'pinnacle'),
             'subtitle' => __('How long for slide transitions, in milliseconds.', 'pinnacle'),
             "default"       => "600",
@@ -634,6 +736,7 @@ $this->sections[] = array(
         array(
             'id'=>'mobile_slider_captions',
             'type' => 'switch', 
+            'customizer' => false,
             'title' => __('Show Captions?', 'pinnacle'),
             'subtitle'=> __('Choose to show or hide captions', 'pinnacle'),
             "default"       => 0,
@@ -642,16 +745,19 @@ $this->sections[] = array(
         array(
             'id'=>'mobile_video_embed',
             'type' => 'textarea',
+            'customizer' => false,
             'title' => __('Video Embed Code', 'pinnacle'), 
             'subtitle' => __('If your using a video on the home page place video embed code here.', 'pinnacle'),
             'default' => '',
             'required' => array('choose_mobile_slider','=','video'),
             ),
          ),
+)
 );
-$this->sections[] = array(
+Redux::setSection( $opt_name, array(
     'icon' => 'icon-home',
     'icon_class' => 'icon-large',
+    'id' => 'home_layout',
     'title' => __('Home Layout', 'pinnacle'),
     'desc' => "",
     'fields' => array(
@@ -659,6 +765,7 @@ $this->sections[] = array(
             'id'=>'home_sidebar_layout',
             'type' => 'image_select',
             'compiler'=> false,
+            'customizer' => true,
             'title' => __('Display a sidebar on the Home Page?', 'pinnacle'), 
             'subtitle' => __('This determines if there is a sidebar on the home page.', 'pinnacle'),
             'options' => array(
@@ -670,6 +777,7 @@ $this->sections[] = array(
        array(
             'id'=>'home_sidebar',
             'type' => 'select',
+            'customizer' => true,
             'title' => __('Choose a Sidebar for your Home Page', 'pinnacle'), 
             'data' => 'sidebars',
             'default' => 'sidebar-primary',
@@ -678,30 +786,31 @@ $this->sections[] = array(
        array(
             "id" => "homepage_layout",
             "type" => "sorter",
+            'customizer' => false,
             "title" => __("Homepage Layout Manager", 'pinnacle'),
             "subtitle" => __("Organize how you want the layout to appear on the homepage", 'pinnacle'),  
             'options' => array(
               "disabled" => array(
-                    "placebo" => "placebo", //REQUIRED!
                     "block_six"   => __("Portfolio Carousel", 'pinnacle'),
                     "block_seven" => __("Icon Menu", 'pinnacle'),
                     "block_one"   => __("Call to Action", 'pinnacle'),
-                    "block_four"  => __("Page Content", 'pinnacle'),
+                    "block_five"  => __("Latest Blog Posts", 'pinnacle'),
                 ),
                 "enabled" => array(
-                    "placebo" => "placebo", //REQUIRED!
-                    "block_five"  => __("Latest Blog Posts", 'pinnacle'),
+                    "block_four"  => __("Page Content", 'pinnacle'),
                 ),
             ),
         ),
          array(
             'id'=>'info_blog_settings',
             'type' => 'info',
+            'customizer' => false,
             'desc' => __('Home Blog Settings', 'pinnacle'),
             ),
          array(
             'id'=>'blog_title',
             'type' => 'text',
+            'customizer' => false,
             'title' => __('Home Blog Title', 'pinnacle'),
             'subtitle' => __('e.g. = Latest from the blog', 'pinnacle'),
             ),
@@ -711,6 +820,7 @@ $this->sections[] = array(
             'title' => __('Choose How many posts on Homepage', 'pinnacle'),
             "default"       => "6",
             "min"       => "2",
+            'customizer' => false,
             "step"      => "1",
             "max"       => "18",
             ),
@@ -721,12 +831,14 @@ $this->sections[] = array(
             "default"       => "3",
             "min"       => "2",
             "step"      => "1",
+            'customizer' => false,
             "max"       => "4",
             ),
          array(
             'id'=>'home_post_type',
             'type' => 'select',
             'data' => 'categories',
+            'customizer' => false,
             'title' => __('Limit posts to a Category', 'pinnacle'), 
             'subtitle' => __('Leave blank to select all', 'pinnacle'),
             'width' => 'width:60%',
@@ -734,11 +846,13 @@ $this->sections[] = array(
          array(
             'id'=>'info_portfolio_settings',
             'type' => 'info',
+            'customizer' => false,
             'desc' => __('Home Portfolio Carousel Settings', 'pinnacle'),
             ),
          array(
             'id'=>'portfolio_title',
             'type' => 'text',
+            'customizer' => false,
             'title' => __('Home Portfolio Carousel title', 'pinnacle'),
             'subtitle' => __('e.g. = Portfolio Carousel title', 'pinnacle'),
             ),
@@ -746,6 +860,7 @@ $this->sections[] = array(
             'id'=>'portfolio_type',
             'type' => 'select',
             'data' => 'terms',
+            'customizer' => false,
             'args' => array('taxonomies'=>'portfolio-type', 'args'=>array()),
             'title' => __('Portfolio Carousel Category Type', 'pinnacle'), 
             'subtitle' => __('Leave blank to select all types', 'pinnacle'),
@@ -757,6 +872,7 @@ $this->sections[] = array(
             'title' => __('Choose how many columns are in carousel', 'pinnacle'),
             "default"       => "3",
             "min"       => "2",
+            'customizer' => false,
             "step"      => "1",
             "max"       => "6",
             ),
@@ -766,6 +882,7 @@ $this->sections[] = array(
             'title' => __('Portfolio Layout Style', 'pinnacle'), 
             'options' => array('default' => __('Default', 'pinnacle'),'padded_style' => __('Post Boxes', 'pinnacle'), 'flat-w-margin' => __('Flat with Margin', 'pinnacle')),
             'default' => 'default',
+            'customizer' => false,
             'width' => 'width:60%',
             ),
            array(
@@ -774,6 +891,7 @@ $this->sections[] = array(
             'title' => __('Portfolio Hover Style', 'pinnacle'), 
             'options' => array('default' => __('Default', 'pinnacle'),'p_lightstyle' => __('Light', 'pinnacle'), 'p_darkstyle' => __('Dark', 'pinnacle'), 'p_primarystyle' => __('Primary Color', 'pinnacle')),
             'default' => 'default',
+            'customizer' => false,
             'width' => 'width:60%',
             ),
            array(
@@ -782,6 +900,7 @@ $this->sections[] = array(
             'title' => __('Portfolio Image Ratio', 'pinnacle'), 
             'options' => array('default' => __('Default', 'pinnacle'),'square' => __('Square 1:1', 'pinnacle'), 'portrait' => __('Portrait 3:4', 'pinnacle'), 'landscape' => __('Landscape 4:3', 'pinnacle'), 'widelandscape' => __('Wide Landscape 4:2', 'pinnacle')),
             'default' => 'default',
+            'customizer' => false,
             'width' => 'width:60%',
             ),
          array(
@@ -790,6 +909,7 @@ $this->sections[] = array(
             'title' => __('Choose how many portfolio items are in carousel', 'pinnacle'),
             "default"       => "6",
             "min"       => "4",
+            'customizer' => false,
             "step"      => "1",
             "max"       => "18",
             ),
@@ -800,6 +920,7 @@ $this->sections[] = array(
             "default"       => "9",
             "min"       => "2",
             "step"      => "1",
+            'customizer' => false,
             "max"       => "12",
             ),
          array(
@@ -809,6 +930,7 @@ $this->sections[] = array(
             'subtitle' => __("Choose how the portfolio items scroll.", 'pinnacle'),
             'options' => array('oneitem' => __('One Item', 'pinnacle'), 'all' => __('All Visible', 'pinnacle')),
             'default' => 'oneitem',
+            'customizer' => false,
             'width' => 'width:60%',
             ),
          array(
@@ -818,40 +940,47 @@ $this->sections[] = array(
             'subtitle' => __("Choose how the portfolio items should be ordered in the carousel.", 'pinnacle'),
             'options' => array('menu_order' => __('Menu Order', 'pinnacle'),'title' => __('Title', 'pinnacle'),'date' => __('Date', 'pinnacle'),'rand' => __('Random', 'pinnacle')),
             'default' => 'menu_order',
+            'customizer' => false,
             'width' => 'width:60%',
             ),
            array(
             'id'=>'portfolio_car_lightbox',
             'type' => 'switch', 
+            'customizer' => false,
             'title' => __('Display lightbox link in portfolio item?', 'pinnacle'),
             "default"       => 0,
             ),
            array(
             'id'=>'portfolio_show_type',
             'type' => 'switch', 
+            'customizer' => false,
             'title' => __('Display Portfolio Types under Title', 'pinnacle'),
             "default" => 1,
             ),
            array(
             'id'=>'portfolio_show_excerpt',
             'type' => 'switch', 
+            'customizer' => false,
             'title' => __('Display Portfolio excerpt under Title', 'pinnacle'),
             "default" => 0,
             ),
            array(
             'id'=>'info_iconmenu_settings',
             'type' => 'info',
+            'customizer' => false,
             'desc' => __('Home Icon Menu', 'pinnacle'),
             ),
            array(
             'id'=>'icon_menu',
             'type' => 'kad_icons',
+            'customizer' => false,
             'title' => __('Icon Menu', 'pinnacle'),
             'subtitle'=> __('Choose your icons for the icon menu.', 'pinnacle'),
         ), 
             array(
             'id'=>'home_icon_menu_column',
             'type' => 'slider', 
+            'customizer' => false,
             'title' => __('Choose how many columns in each row', 'pinnacle'),
             "default"       => "3",
             "min"       => "2",
@@ -861,15 +990,18 @@ $this->sections[] = array(
             array(
             'id'=>'home_icon_menu_btn',
             'type' => 'text',
+            'customizer' => false,
             'title' => __('Icon menu button text (optional)', 'pinnacle'),
             'subtitle' => __('e.g. = Read More', 'pinnacle'),
             ),
             array(
             'id'=>'icon_font_color',
             'type' => 'color',
+            'customizer' => false,
             'title' => __('Icon Color', 'pinnacle'), 
             'subtitle' => __('Choose the color for icon.', 'pinnacle'),
             'default' => '',
+            'customizer' => false,
             'transparent'=>false,
             'output' => array('color' => '.home-iconmenu .home-icon-item i'),
             'validate' => 'color',
@@ -877,6 +1009,7 @@ $this->sections[] = array(
            array(
             'id'=>'icon_bg_color',
             'type' => 'color',
+            'customizer' => false,
             'title' => __('Icon Background Color', 'pinnacle'), 
             'subtitle' => __('Choose the background color for icon. * Note the hover color is set by your primary color in basic styling.', 'pinnacle'),
             'default' => '',
@@ -886,6 +1019,7 @@ $this->sections[] = array(
            array(
             'id'=>'icon_text_font_color',
             'type' => 'color',
+            'customizer' => false,
             'title' => __('Title and Description Font Color', 'pinnacle'), 
             'subtitle' => __('Choose the color for icon menu title and description Font.', 'pinnacle'),
             'default' => '',
@@ -896,16 +1030,19 @@ $this->sections[] = array(
             array(
             'id'=>'info_calltoaction_home_settings',
             'type' => 'info',
+            'customizer' => false,
             'desc' => __('Home Call To Action Settings', 'pinnacle'),
             ),
             array(
             'id'=>'home_action_text',
             'type' => 'text',
+            'customizer' => false,
             'title' => __('Call to Action Text', 'pinnacle'),
             ),
             array(
             'id'=>'home_action_color',
             'type' => 'color',
+            'customizer' => false,
             'title' => __('Call to Action Text Color', 'pinnacle'), 
             'default' => '',
             'validate' => 'color',
@@ -915,17 +1052,20 @@ $this->sections[] = array(
              array(
             'id'=>'home_action_text_btn',
             'type' => 'text',
+            'customizer' => false,
             'title' => __('Call to Action Button Text', 'pinnacle'),
             'subtitle' => __('e.g. = Read More', 'pinnacle'),
             ),
              array(
             'id'=>'home_action_link',
             'type' => 'text',
+            'customizer' => false,
             'title' => __('Call to Action Button Link', 'pinnacle'),
             ),
              array(
             'id'=>'home_action_btn_color',
             'type' => 'color',
+            'customizer' => false,
             'title' => __('Button Text Color', 'pinnacle'), 
             'default' => '',
             'validate' => 'color',
@@ -935,6 +1075,7 @@ $this->sections[] = array(
             array(
             'id'=>'home_action_bg_color',
             'type' => 'color',
+            'customizer' => false,
             'title' => __('Button Background Color', 'pinnacle'), 
             'default' => '',
             'validate' => 'color',
@@ -943,6 +1084,7 @@ $this->sections[] = array(
              array(
             'id'=>'home_action_btn_color_hover',
             'type' => 'color',
+            'customizer' => false,
             'title' => __('Button Hover Text Color', 'pinnacle'), 
             'default' => '',
             'validate' => 'color',
@@ -952,6 +1094,7 @@ $this->sections[] = array(
             array(
             'id'=>'home_action_bg_color_hover',
             'type' => 'color',
+            'customizer' => false,
             'title' => __('Button Hover Background Color', 'pinnacle'), 
             'default' => '',
             'validate' => 'color',
@@ -960,6 +1103,7 @@ $this->sections[] = array(
             array(
             'id'=>'home_action_padding',
             'type' => 'slider', 
+            'customizer' => false,
             'title' => __('Call to action top and bottom padding.', 'pinnacle'),
             "default"       => "20",
             "min"       => "4",
@@ -969,17 +1113,20 @@ $this->sections[] = array(
              array(
                 'id'        => 'home_action_background',
                 'type'      => 'background',
+                'customizer' => false,
                 'output'    => array('.kt-home-call-to-action'),
                 'title'     => __('Call to action background', 'pinnacle'),
                 ),
            array(
             'id'=>'info_page_content',
             'type' => 'info',
+            'customizer' => true,
             'desc' => __('Page Content Options (if home page is latest post page)', 'pinnacle'),
             ),
            array(
             'id'=>'home_post_summery',
             'type' => 'select',
+            'customizer' => true,
             'title' => __('Latest Post Display', 'pinnacle'), 
             'subtitle' => __("If Latest Post page is front page. Choose how to show the posts.", 'pinnacle'),
             'options' => array('summary' => __('Normal Post Excerpt', 'pinnacle'),'full' => __('Normal Full Post', 'pinnacle'), 'grid' => __('Grid Post', 'pinnacle')),
@@ -989,6 +1136,7 @@ $this->sections[] = array(
         array(
             'id'=>'home_post_grid_columns',
             'type' => 'select',
+            'customizer' => true,
             'title' => __('Post Grid Columns', 'pinnacle'), 
             'options' => array('2' => __('Two', 'pinnacle'),'3' => __('Three', 'pinnacle'), '4' => __('Four', 'pinnacle')),
             'width' => 'width:60%',
@@ -997,16 +1145,19 @@ $this->sections[] = array(
             ),
 
     ),
+)
 );
-$this->sections[] = array(
+Redux::setSection( $opt_name, array(
     'icon' => 'icon-shopping-cart',
     'icon_class' => 'icon-large',
+    'id' => 'shop_settings',
     'title' => __('Shop Settings', 'pinnacle'),
     'desc' => "<div class='redux-info-field'><h3>".__('Shop Archive Page Settings (Woocommerce plugin required)', 'pinnacle')."</h3></div>",
     'fields' => array(
       array(
             'id'=>'product_shop_layout',
             'type' => 'select',
+            'customizer' => false,
             'title' => __('Shop Product Column Layout', 'pinnacle'), 
             'subtitle' => __('Choose how many product columns on the shop and category pages', 'pinnacle'),
             'options' => array('3' => __('Three Column', 'pinnacle'), '4' => __('Four Column', 'pinnacle')),
@@ -1017,6 +1168,7 @@ $this->sections[] = array(
             'id'=>'shop_layout',
             'type' => 'image_select',
             'compiler'=> false,
+            'customizer' => false,
             'title' => __('Display the sidebar on Shop Page?', 'pinnacle'), 
             'subtitle' => __('This determines if there is a sidebar on the shop page.', 'pinnacle'),
             'options' => array(
@@ -1028,6 +1180,7 @@ $this->sections[] = array(
       array(
             'id'=>'shop_sidebar',
             'type' => 'select',
+            'customizer' => false,
             'title' => __('Choose a Sidebar for your shop page', 'pinnacle'), 
             'data' => 'sidebars',
             'default' => 'sidebar-primary',
@@ -1037,6 +1190,7 @@ $this->sections[] = array(
             'id'=>'shop_cat_layout',
             'type' => 'image_select',
             'compiler'=> false,
+            'customizer' => false,
             'title' => __('Display the sidebar on Product Category Pages?', 'pinnacle'), 
             'subtitle' => __('This determines if there is a sidebar on the product category pages.', 'pinnacle'),
             'options' => array(
@@ -1048,6 +1202,7 @@ $this->sections[] = array(
       array(
             'id'=>'shop_cat_sidebar',
             'type' => 'select',
+            'customizer' => false,
             'title' => __('Choose a Sidebar for your Product Category Pages', 'pinnacle'), 
             'data' => 'sidebars',
             'default' => 'sidebar-primary',
@@ -1056,6 +1211,7 @@ $this->sections[] = array(
       array(
             'id'=>'products_per_page',
             'type' => 'slider', 
+            'customizer' => false,
             'title' => __('How many products per page', 'pinnacle'),
             "default"       => "12",
             "min"       => "2",
@@ -1065,6 +1221,7 @@ $this->sections[] = array(
       array(
             'id'=>'shop_rating',
             'type' => 'switch', 
+            'customizer' => false,
             'title' => __('Show Ratings in Shop and Category Pages', 'pinnacle'),
             'subtitle' => __('This determines if the rating is displayed in the product archive pages', 'pinnacle'),
             "default"=> 1,
@@ -1072,6 +1229,7 @@ $this->sections[] = array(
       array(
             'id'=>'shop_hide_action',
             'type' => 'switch', 
+            'customizer' => false,
             'title' => __('Hide Add to Cart Till Mouse Hover', 'pinnacle'),
             'subtitle' => __('This determines if add to cart button will be hidden till the mouse hovers over the product', 'pinnacle'),
             "default"=> 1,
@@ -1079,6 +1237,7 @@ $this->sections[] = array(
       array(
             'id'=>'product_quantity_input',
             'type' => 'switch', 
+            'customizer' => false,
             'title' => __('Quantity box plus and minus', 'pinnacle'),
             'subtitle' => __('Turn this off if you would like to use browser added plus and minus for number boxes', 'pinnacle'),
             "default"=> 1,
@@ -1086,11 +1245,13 @@ $this->sections[] = array(
         array(
             'id'=>'info_cat_product_size',
             'type' => 'info',
+            'customizer' => false,
             'desc' => __('Shop Category Image Size', 'pinnacle'),
             ),
          array(
             'id'=>'product_cat_layout',
             'type' => 'select',
+            'customizer' => false,
             'title' => __('Shop Category Column Layout', 'pinnacle'), 
             'subtitle' => __('Choose how many Category Image columns to show on the shop and category pages', 'pinnacle'),
             'options' => array('3' => __('Three Column', 'pinnacle'), '4' => __('Four Column', 'pinnacle')),
@@ -1100,6 +1261,7 @@ $this->sections[] = array(
         array(
             'id'=>'info_shop_product_title',
             'type' => 'info',
+            'customizer' => false,
             'desc' => __('Shop Product Title Settings', 'pinnacle'),
             ),
         array(
@@ -1107,6 +1269,7 @@ $this->sections[] = array(
             'type' => 'typography', 
             'title' => __('Shop & archive Product title Font', 'pinnacle'),
             'font-family'=>true, 
+            'customizer' => false,
             'google'=>true, // Disable google fonts. Won't work if you haven't defined your google api key
             'font-backup'=>false, // Select a backup non-google font in addition to a google font
             'font-style'=>true, // Includes font-style and weight. Can use font-style or font-weight to declare
@@ -1127,6 +1290,7 @@ $this->sections[] = array(
         array(
             'id'=>'shop_title_uppercase',
             'type' => 'switch', 
+            'customizer' => false,
             'title' => __('Set Product Title to Uppercase?', 'pinnacle'),
             'subtitle' => __('This makes your product titles uppercase on Category pages', 'pinnacle'),
             "default"=> 0,
@@ -1134,6 +1298,7 @@ $this->sections[] = array(
         array(
             'id'=>'shop_title_min_height',
             'type' => 'slider', 
+            'customizer' => false,
             'title' => __('Product title Min Height', 'pinnacle'),
             'subtitle' => __('If your titles are long increase this to help align your products height.', 'pinnacle'),
             "default"       => "50",
@@ -1144,11 +1309,13 @@ $this->sections[] = array(
          array(
             'id'=>'info_shop_img_size',
             'type' => 'info',
+            'customizer' => false,
             'desc' => __('Product Image Sizes', 'pinnacle'),
             ),
       array(
             'id'=>'product_img_resize',
             'type' => 'switch', 
+            'customizer' => false,
             'title' => __('Enable Product Image Aspect Ratio on Catalog pages', 'pinnacle'),
             'subtitle' => __('If turned off image dimensions are set by woocommerce settings - recommended width: 270px for Catalog Images', 'pinnacle'),
             "default"=> 1,
@@ -1156,14 +1323,17 @@ $this->sections[] = array(
       array(
             'id'=>'product_simg_resize',
             'type' => 'switch', 
+            'customizer' => false,
             'title' => __('Enable Product Image Aspect Ratio on product Page', 'pinnacle'),
             'subtitle' => __('If turned off image dimensions are set by woocommerce settings - recommended width: 468px for Single Product Image', 'pinnacle'),
             "default"=> 1,
             ),
         ),
+)
 );
-    $this->sections[] = array(
+    Redux::setSection( $opt_name, array(
     'icon' => 'icon-barcode',
+    'id' => 'product_settings',
     'icon_class' => 'icon-large',
     'title' => __('Product Settings', 'pinnacle'),
     'desc' => "<div class='redux-info-field'><h3>".__('Single Product Page Header (Woocommerce plugin required)', 'pinnacle')."</h3></div>",
@@ -1171,13 +1341,15 @@ $this->sections[] = array(
            array(
             'id'=>'default_showproducttitle',
             'type' => 'switch', 
+            'customizer' => false,
             'title' => __('Show the Title in header by default', 'pinnacle'),
             'subtitle'=> __('This can be overridden on each page.', 'pinnacle'),
             "default" => 1,
             ),
         array(
             'id'=>'default_showproducttitle_inpost',
-            'type' => 'switch', 
+            'type' => 'switch',
+            'customizer' => false, 
             'title' => __('Show the Title in post', 'pinnacle'),
             'subtitle'=> __('This can be overridden on each page.', 'pinnacle'),
             "default" => 1,
@@ -1185,6 +1357,7 @@ $this->sections[] = array(
         array(
             'id'=>'single_product_header_title',
             'type' => 'select',
+            'customizer' => false,
             'title' => __('Product Default Title Text', 'pinnacle'), 
             'options' => array('category' => __('Category of product', 'pinnacle'), 'posttitle' => __('Product Title', 'pinnacle'), 'custom' => __('Custom', 'pinnacle')),
             'width' => 'width:60%',
@@ -1193,6 +1366,7 @@ $this->sections[] = array(
          array(
             'id'=>'product_header_title_text',
             'type' => 'text',
+            'customizer' => false,
             'title' => __('Post Default Title', 'pinnacle'),
             'subtitle' => __('Example: My Shop', 'pinnacle'),
             'required' => array('single_product_header_title','=','custom'),
@@ -1200,12 +1374,14 @@ $this->sections[] = array(
         array(
             'id'=>'product_header_subtitle_text',
             'type' => 'text',
+            'customizer' => false,
             'title' => __('Post Default Subtitle', 'pinnacle'),
             'required' => array('single_product_header_title','=','custom'),
             ),
         array(
             'id'=>'product_tabs',
             'type' => 'switch', 
+            'customizer' => false,
             'title' => __('Display product tabs?', 'pinnacle'),
             'subtitle'=> __('This determines if product tabs are displayed', 'pinnacle'),
             "default"       => 1,
@@ -1213,21 +1389,25 @@ $this->sections[] = array(
         array(
             'id'=>'related_products',
             'type' => 'switch', 
+            'customizer' => false,
             'title' => __('Display related products?', 'pinnacle'),
             'subtitle'=> __('This determines related products are displayed', 'pinnacle'),
             "default"       => 1,
             ),
     ),
+)
 );
-$this->sections[] = array(
+Redux::setSection( $opt_name, array(
     'icon' => 'icon-camera-retro',
     'icon_class' => 'icon-large',
+    'id' => 'portfolio_options',
     'title' => __('Portfolio Options', 'pinnacle'),
     'desc' => "<div class='redux-info-field'><h3>".__('Portfolio Options (Pinnacle Toolkit plugin required)', 'pinnacle')."</h3></div>",
     'fields' => array(
         array(
             'id'=>'portfolio_comments',
             'type' => 'switch', 
+            'customizer' => true,
             'title' => __('Allow Comments on Portfolio Posts', 'pinnacle'),
             'subtitle' => __('Turn on to allow Comments on Portfolio posts', 'pinnacle'),
             "default" => 0,
@@ -1235,12 +1415,14 @@ $this->sections[] = array(
         array(
             'id'=>'info_portfolio_grid_options',
             'type' => 'info',
+            'customizer' => true,
             'desc' => __('Portfolio Grid Options', 'pinnacle'),
             ),
         array(
             'id'=>'portfolio_style_default',
             'type' => 'select',
             'width' => 'width:60%',
+            'customizer' => true,
             'default' => 'flat-w-margin',
             'title' => __('Default Portfolio Layout Style', 'pinnacle'), 
             'subtitle' => __('This sets the defualt layout style for the portfolio post.', 'pinnacle'),
@@ -1250,6 +1432,7 @@ $this->sections[] = array(
             'id'=>'portfolio_hover_style_default',
             'type' => 'select',
             'width' => 'width:60%',
+            'customizer' => true,
             'default' => 'p_primarystyle',
             'title' => __('Default Hover Style', 'pinnacle'), 
             'subtitle' => __('This sets the defualt hover style for the portfolio post.', 'pinnacle'),
@@ -1258,18 +1441,21 @@ $this->sections[] = array(
           array(
             'id'=>'info_product_ph_defaults',
             'type' => 'info',
+            'customizer' => false,
             'desc' => __('Single Portfolio Page Header', 'pinnacle'),
             ),
            array(
             'id'=>'default_showportfoliotitle',
-            'type' => 'switch', 
+            'type' => 'switch',
+            'customizer' => false,
             'title' => __('Show the Title in header by default', 'pinnacle'),
             'subtitle'=> __('This can be overridden on each page.', 'pinnacle'),
             "default" => 1,
             ),
         array(
             'id'=>'default_showportfoliotitle_inpost',
-            'type' => 'switch', 
+            'type' => 'switch',
+            'customizer' => false, 
             'title' => __('Show the Title in post', 'pinnacle'),
             "default" => 0,
             ),
@@ -1279,11 +1465,13 @@ $this->sections[] = array(
             'title' => __('Product Default Title Text', 'pinnacle'), 
             'options' => array('category' => __('Category of Portfolio', 'pinnacle'), 'posttitle' => __('Portfolio Title', 'pinnacle'), 'custom' => __('Custom', 'pinnacle')),
             'width' => 'width:60%',
+            'customizer' => false,
             'default' => 'posttitle',
             ),
          array(
             'id'=>'portfolio_header_title_text',
             'type' => 'text',
+            'customizer' => false,
             'title' => __('Post Default Title', 'pinnacle'),
             'subtitle' => __('Example: My Shop', 'pinnacle'),
             'required' => array('single_portfolio_header_title','=','custom'),
@@ -1291,17 +1479,20 @@ $this->sections[] = array(
         array(
             'id'=>'portfolio_header_subtitle_text',
             'type' => 'text',
+            'customizer' => false,
             'title' => __('Post Default Subtitle', 'pinnacle'),
             'required' => array('single_portfolio_header_title','=','custom'),
             ),
         array(
             'id'=>'info_portfolio_nav_options',
             'type' => 'info',
+            'customizer' => false,
             'desc' => __('Single Portfolio Navigation Options', 'pinnacle'),
             ),
         array(
             'id'=>'portfolio_header_nav',
             'type' => 'switch', 
+            'customizer' => false,
             'title' => __('Show portfolio nav below post title', 'pinnacle'),
             "default" => 1,
             ),
@@ -1309,6 +1500,7 @@ $this->sections[] = array(
             'id'=>'portfolio_link',
             'type' => 'select',
             'data' => 'pages',
+            'customizer' => true,
             'width' => 'width:60%',
             'title' => __('All Projects Default Portfolio Page', 'pinnacle'), 
             'subtitle' => __('This sets the link in every portfolio post.', 'pinnacle'),
@@ -1316,11 +1508,13 @@ $this->sections[] = array(
         array(
             'id'=>'info_portfolio_carousel_options',
             'type' => 'info',
+            'customizer' => true,
             'desc' => __('Portfolio Post Bottom Carousel', 'pinnacle'),
             ),
         array(
             'id'=>'single_portfolio_carousel_default',
             'type' => 'select',
+            'customizer' => true,
             'title' => __('Display Bottom Portfolio carousel by Default', 'pinnacle'), 
             'options' => array('no' => __('No', 'pinnacle'), 'yes' => __('Yes', 'pinnacle')),
             'width' => 'width:60%',
@@ -1329,6 +1523,7 @@ $this->sections[] = array(
         array(
             'id'=>'single_portfolio_carousel_items',
             'type' => 'select',
+            'customizer' => true,
             'title' => __('Bottom Portfolio Carousel Items', 'pinnacle'), 
             'options' => array('all' => __('All Portfolio Posts', 'pinnacle'), 'cat' => __('Only of same Portfolio Type', 'pinnacle')),
             'width' => 'width:60%',
@@ -1336,7 +1531,8 @@ $this->sections[] = array(
             ),
         array(
             'id'=>'portfolio_recent_car_column',
-            'type' => 'slider', 
+            'type' => 'slider',
+            'customizer' => true,
             'title' => __('Choose how many columns to show on recent portfolio carousel.', 'pinnacle'),
             "default"       => "4",
             "min"       => "2",
@@ -1346,11 +1542,13 @@ $this->sections[] = array(
         array(
             'id'=>'info_portfolio_cat_defaults',
             'type' => 'info',
+            'customizer' => true,
             'desc' => __('Portfolio Category Pages', 'pinnacle'),
             ),
         array(
             'id'=>'portfolio_tax_column',
             'type' => 'slider', 
+            'customizer' => true,
             'title' => __('Choose how many portfolio columns to show on portfolio catagory pages.', 'pinnacle'),
             "default"       => "4",
             "min"       => "2",
@@ -1358,23 +1556,27 @@ $this->sections[] = array(
             "max"       => "6",
             ),
       ),
+)
 );
-$this->sections[] = array(
+Redux::setSection( $opt_name, array(
     'icon' => 'icon-paperclip',
     'icon_class' => 'icon-large',
+    'id' => 'blog_options',
     'title' => __('Blog Options', 'pinnacle'),
     'desc' => "<div class='redux-info-field'><h3>".__('Blog Options', 'pinnacle')."</h3></div>",
     'fields' => array(
         array(
             'id'=>'close_comments',
-            'type' => 'switch', 
+            'type' => 'switch',
+            'customizer' => true,
             'title' => __('Show Comments Closed Text?', 'pinnacle'),
             'subtitle' => __('Choose to show or hide comments closed alert below posts.', 'pinnacle'),
             "default" => 0,
             ),
         array(
             'id'=>'hide_author_img',
-            'type' => 'switch', 
+            'type' => 'switch',
+            'customizer' => true,
             'title' => __('Show Author image with posts?', 'pinnacle'),
             'subtitle' => __('Choose to show or hide author image beside post title.', 'pinnacle'),
             "default" => 0,
@@ -1382,6 +1584,7 @@ $this->sections[] = array(
       array(
             'id'=>'hide_author',
             'type' => 'switch', 
+            'customizer' => true,
             'title' => __('Show author name with posts?', 'pinnacle'),
             'subtitle' => __('Choose to show or hide author name under post title.', 'pinnacle'),
             "default" => 1,
@@ -1389,6 +1592,7 @@ $this->sections[] = array(
       array(
             'id'=>'hide_postedin',
             'type' => 'switch', 
+            'customizer' => true,
             'title' => __('Show categories with posts?', 'pinnacle'),
             'subtitle' => __('Choose to show or hide categories in the post footer.', 'pinnacle'),
             "default" => 1,
@@ -1396,6 +1600,7 @@ $this->sections[] = array(
       array(
             'id'=>'hide_posttags',
             'type' => 'switch', 
+            'customizer' => true,
             'title' => __('Show tags with posts?', 'pinnacle'),
             'subtitle' => __('Choose to show or hide tags in the post footer.', 'pinnacle'),
             "default" => 1,
@@ -1403,6 +1608,7 @@ $this->sections[] = array(
       array(
             'id'=>'hide_commenticon',
             'type' => 'switch', 
+            'customizer' => true,
             'title' => __('Show comment count with posts?', 'pinnacle'),
             'subtitle' => __('Choose to show or hide comment count under post title.', 'pinnacle'),
             "default" => 1,
@@ -1410,6 +1616,7 @@ $this->sections[] = array(
       array(
             'id'=>'hide_postdate',
             'type' => 'switch', 
+            'customizer' => true,
             'title' => __('Show date with posts?', 'pinnacle'),
             'subtitle' => __('Choose to show or hide date under post title.', 'pinnacle'),
             "default" => 1,
@@ -1417,6 +1624,7 @@ $this->sections[] = array(
       array(
             'id'=>'show_postlinks',
             'type' => 'switch', 
+            'customizer' => true,
             'title' => __('Show Previous and Next posts links?', 'pinnacle'),
             'subtitle' => __('Choose to show or hide previous and next post links in the footer of a single post.', 'pinnacle'),
             "default" => 0,
@@ -1424,6 +1632,7 @@ $this->sections[] = array(
         array(
             'id'=>'postexcerpt_hard_crop',
             'type' => 'switch', 
+            'customizer' => true,
             'title' => __('Hard Crop excerpt images to the same height.', 'pinnacle'),
             'subtitle' => __('Makes the excerpt images the same size instead of whatever ratio was uploaded.', 'pinnacle'),
             "default"=> 0,
@@ -1431,6 +1640,7 @@ $this->sections[] = array(
        array(
             'id'=>'info_blog_defaults',
             'type' => 'info',
+            'customizer' => false,
             'desc' => __('Blog Post Page Header', 'pinnacle'),
             ),
            array(
@@ -1439,6 +1649,7 @@ $this->sections[] = array(
             'title' => __('Show the post title in head by default', 'pinnacle'),
             'subtitle'=> __('This can be overridden on each page.', 'pinnacle'),
             "default" => 1,
+            'customizer' => false,
             ),
            array(
             'id'=>'single_post_header_title',
@@ -1446,18 +1657,21 @@ $this->sections[] = array(
             'title' => __('Blog Post Default Head Title', 'pinnacle'), 
             'options' => array('category' => __('Category', 'pinnacle'), 'posttitle' => __('Post Title', 'pinnacle'), 'custom' => __('Custom', 'pinnacle')),
             'width' => 'width:60%',
+            'customizer' => false,
             'default' => 'category',
             ),
            array(
             'id'=>'default_showposttitle_below',
-            'type' => 'switch', 
+            'type' => 'switch',
             'title' => __('Show the post title below the header', 'pinnacle'),
             "default" => 1,
+            'customizer' => false,
             'required' => array('single_post_header_title','=','posttitle'),
             ),
             array(
             'id'=>'post_header_title_text',
             'type' => 'text',
+            'customizer' => false,
             'title' => __('Post Default Title', 'pinnacle'),
             'subtitle' => __('Example: Blog', 'pinnacle'),
             'required' => array('single_post_header_title','=','custom'),
@@ -1465,12 +1679,14 @@ $this->sections[] = array(
             array(
             'id'=>'post_header_subtitle_text',
             'type' => 'text',
+            'customizer' => false,
             'title' => __('Post Default Subtitle', 'pinnacle'),
             'required' => array('single_post_header_title','=','custom'),
             ),
       array(
             'id'=>'info_blog_defaults',
             'type' => 'info',
+            'customizer' => true,
             'desc' => __('Blog Post Defaults', 'pinnacle'),
             ),
        array(
@@ -1479,6 +1695,7 @@ $this->sections[] = array(
             'title' => __('Blog Post Sidebar Default', 'pinnacle'), 
             'options' => array('yes' => __('Yes, Show', 'pinnacle'), 'no' => __('No, Do not Show', 'pinnacle')),
             'width' => 'width:60%',
+            'customizer' => true,
             'default' => 'yes',
             ),
         array(
@@ -1487,6 +1704,7 @@ $this->sections[] = array(
             'title' => __('Blog Post Author Box Default', 'pinnacle'), 
             'options' => array('no' => __('No, Do not Show', 'pinnacle'), 'yes' => __('Yes, Show', 'pinnacle')),
             'width' => 'width:60%',
+            'customizer' => true,
             'default' => 'no',
             ),
         array(
@@ -1495,16 +1713,19 @@ $this->sections[] = array(
             'title' => __('Blog Post Bottom Carousel Default', 'pinnacle'), 
             'options' => array('no' => __('No, Do not Show', 'pinnacle'), 'recent' => __('Yes - Display Recent Posts', 'pinnacle'), 'similar' => __('Yes - Display Similar Posts', 'pinnacle')),
             'width' => 'width:60%',
+            'customizer' => true,
             'default' => 'no',
             ),
         array(
             'id'=>'info_blog_defaults_stand',
             'type' => 'info',
+            'customizer' => true,
             'desc' => __('Blog Post Defaults Standard', 'pinnacle'),
             ),
         array(
             'id'=>'post_summery_default',
             'type' => 'select',
+            'customizer' => true,
             'title' => __('Standard Blog Post Summary Default', 'pinnacle'), 
             'options' => array('text' => __('Text', 'pinnacle'), 'img_portrait' => __('Portrait Image', 'pinnacle'), 'img_landscape' => __('Landscape Image', 'pinnacle')),
             'width' => 'width:60%',
@@ -1513,6 +1734,7 @@ $this->sections[] = array(
         array(
             'id'=>'info_blog_defaults_image',
             'type' => 'info',
+            'customizer' => true,
             'desc' => __('Blog Post Defaults Image', 'pinnacle'),
             ),
         array(
@@ -1521,11 +1743,13 @@ $this->sections[] = array(
             'title' => __('Image Blog Post Summary Default', 'pinnacle'), 
             'options' => array('text' => __('Text', 'pinnacle'), 'img_portrait' => __('Portrait Image', 'pinnacle'), 'img_landscape' => __('Landscape Image', 'pinnacle')),
             'width' => 'width:60%',
+            'customizer' => true,
             'default' => 'img_portrait',
             ),
         array(
             'id'=>'image_post_blog_default',
             'type' => 'select',
+            'customizer' => true,
             'title' => __('Single Image Post Head Content', 'pinnacle'), 
             'options' => array('none' => __('None', 'pinnacle'), 'image' => __('Image', 'pinnacle')),
             'width' => 'width:60%',
@@ -1534,11 +1758,13 @@ $this->sections[] = array(
         array(
             'id'=>'info_blog_defaults_gallery',
             'type' => 'info',
+            'customizer' => true,
             'desc' => __('Blog Post Defaults gallery', 'pinnacle'),
             ),
         array(
             'id'=>'gallery_post_summery_default',
             'type' => 'select',
+            'customizer' => true,
             'title' => __('Gallery Blog Post Summary Default', 'pinnacle'), 
             'options' => array('text' => __('Text', 'pinnacle'), 'img_portrait' => __('Portrait Image', 'pinnacle'), 'img_landscape' => __('Landscape Image', 'pinnacle'),'slider_portrait' => __('Portrait Slider', 'pinnacle'), 'slider_landscape' => __('Landscape Slider', 'pinnacle')),
             'width' => 'width:60%',
@@ -1547,6 +1773,7 @@ $this->sections[] = array(
         array(
             'id'=>'gallery_post_blog_default',
             'type' => 'select',
+            'customizer' => true,
             'title' => __('Single Gallery Post Head Content', 'pinnacle'), 
             'options' => array('none' => __('None', 'pinnacle'), 'flex' => __('Image Slider (Flex Slider)', 'pinnacle'),'carouselslider' => __('Carousel Slider (Caroufedsel Slider)', 'pinnacle')),
             'width' => 'width:60%',
@@ -1555,11 +1782,13 @@ $this->sections[] = array(
         array(
             'id'=>'info_blog_defaults_video',
             'type' => 'info',
+            'customizer' => true,
             'desc' => __('Blog Post Defaults Video', 'pinnacle'),
             ),
         array(
             'id'=>'video_post_summery_default',
             'type' => 'select',
+            'customizer' => true,
             'title' => __('Video Blog Post Summary Default', 'pinnacle'), 
             'options' => array('text' => __('Text', 'pinnacle'), 'img_portrait' => __('Portrait Image', 'pinnacle'), 'img_landscape' => __('Landscape Image', 'pinnacle'),'video' => __('Video', 'pinnacle')),
             'width' => 'width:60%',
@@ -1568,6 +1797,7 @@ $this->sections[] = array(
         array(
             'id'=>'video_post_blog_default',
             'type' => 'select',
+            'customizer' => true,
             'title' => __('Single Video Post Head Content', 'pinnacle'), 
             'options' => array('none' => __('None', 'pinnacle'), 'video' => __('Video', 'pinnacle')),
             'width' => 'width:60%',
@@ -1576,11 +1806,13 @@ $this->sections[] = array(
         array(
             'id'=>'info_blog_category',
             'type' => 'info',
+            'customizer' => true,
             'desc' => __('Blog Category/Archive Defaults', 'pinnacle'),
             ),
         array(
             'id'=>'category_post_summary',
             'type' => 'select',
+            'customizer' => true,
             'title' => __('Category Display Type', 'pinnacle'), 
             'options' => array('summary' => __('Normal Post Excerpt', 'pinnacle'),'full' => __('Normal Full Post', 'pinnacle'), 'grid' => __('Grid Post', 'pinnacle')),
             'width' => 'width:60%',
@@ -1589,6 +1821,7 @@ $this->sections[] = array(
         array(
             'id'=>'category_post_grid_columns',
             'type' => 'select',
+            'customizer' => true,
             'title' => __('Category Grid Columns', 'pinnacle'), 
             'options' => array('2' => __('Two', 'pinnacle'),'3' => __('Three', 'pinnacle'), '4' => __('Four', 'pinnacle')),
             'width' => 'width:60%',
@@ -1599,6 +1832,7 @@ $this->sections[] = array(
             'id'=>'blog_cat_layout',
             'type' => 'image_select',
             'compiler'=> false,
+            'customizer' => true,
             'title' => __('Display the sidebar on blog archives?', 'pinnacle'), 
             'subtitle' => __('This determines if there is a sidebar on the blog category pages.', 'pinnacle'),
             'options' => array(
@@ -1612,29 +1846,35 @@ $this->sections[] = array(
             'type' => 'select',
             'title' => __('Choose a Sidebar for your Category/Archive Pages', 'pinnacle'), 
             'data' => 'sidebars',
+            'customizer' => true,
             'default' => 'sidebar-primary',
             'width' => 'width:60%',
             ),    
       ),
+)
 );
-$this->sections[] = array(
+Redux::setSection( $opt_name, array(
     'icon' => 'icon-file-text',
     'icon_class' => 'icon-large',
+    'id' => 'page_options',
     'title' => __('Page Options', 'pinnacle'),
     'desc' => "<div class='redux-info-field'><h3>".__('Page Options', 'pinnacle')."</h3></div>",
     'fields' => array(
         array(
             'id'=>'page_comments',
-            'type' => 'switch', 
+            'type' => 'switch',
+            'customizer' => true,
             'title' => __('Allow Comments on Pages', 'pinnacle'),
             'subtitle' => __('Turn on to allow comments on pages.', 'pinnacle'),
             "default" => 0,
             ),
         ),
+    )
 );
-$this->sections[] = array(
+Redux::setSection( $opt_name, array(
     'icon' => 'icon-edit',
     'icon_class' => 'icon-large',
+    'id' => 'basic_styling',
     'title' => __('Basic Styling', 'pinnacle'),
     'desc' => "<div class='redux-info-field'><h3>".__('Basic Stylng', 'pinnacle')."</h3></div>",
     'fields' => array(
@@ -1686,10 +1926,12 @@ $this->sections[] = array(
             'customizer' => true,
             ),
       ),
+)
 );
-$this->sections[] = array(
+Redux::setSection( $opt_name, array(
     'icon' => 'icon-cogs',
     'icon_class' => 'icon-large',
+    'id' => 'advanced_styling',
     'title' => __('Advanced Styling', 'pinnacle'),
     'desc' => "<div class='redux-info-field'><h3>".__('Main Content Background', 'pinnacle')."</h3></div>",
     'fields' => array(
@@ -1697,22 +1939,26 @@ $this->sections[] = array(
         'id'        => 'content_background',
         'type'      => 'background',
         'output'    => array('.contentclass'),
+        'customizer' => false,
         'title'     => __('Content Background', 'pinnacle'),
         ),
       array(
             'id'=>'info_topbar_background',
             'type' => 'info',
+            'customizer' => false,
             'desc' => __('Topbar Background', 'pinnacle'),
             ),
       array(
         'id'        => 'topbar_background',
         'type'      => 'background',
         'output'    => array('.topclass'),
+        'customizer' => false,
         'title'     => __('Topbar Background', 'pinnacle'),
         ),
       array(
             'id'=>'info_header_background',
             'type' => 'info',
+            'customizer' => false,
             'desc' => __('Header Background', 'pinnacle'),
             ),
       array(
@@ -1721,6 +1967,7 @@ $this->sections[] = array(
             'title' => __('Header Background Style', 'pinnacle'), 
             'options' => array('simple' => __('Simple', 'pinnacle'), 'full' => __('Full', 'pinnacle')),
             'width' => 'width:60%',
+            'customizer' => false,
             'default' => 'simple',
             ),
       array(
@@ -1728,6 +1975,7 @@ $this->sections[] = array(
         'type'      => 'background',
         'output'    => array('.is-sticky .headerclass', '.none-trans-header .headerclass'),
         'title'     => __('Header Background', 'pinnacle'),
+        'customizer' => false,
         'required' => array('header_background_choice','=','full'),
         ),
       array(
@@ -1737,6 +1985,7 @@ $this->sections[] = array(
             'default' => '',
             'transparent'=>false,
             'validate' => 'color',
+            'customizer' => false,
             'required' => array('header_background_choice','=','simple'),
             ),
       array(
@@ -1746,69 +1995,82 @@ $this->sections[] = array(
             'options' => array('1' => '1','0.9' => '0.9', '0.8' => '0.8','0.7' => '0.7', '0.6' => '0.6', '0.5' => '0.5', '0.4' => '0.4', '0.3' => '0.3', '0.2' => '0.2', '0.1' => '0.1', '0' => '0'),
             'default' => '1',
             'width' => 'width:60%',
+            'customizer' => false,
             'required' => array('header_background_choice','=','simple'),
             ),
       array(
             'id'=>'info_menu_background',
             'type' => 'info',
+            'customizer' => false,
             'desc' => __('Menu Background', 'pinnacle'),
             ),
       array(
         'id'        => 'menu_background',
         'type'      => 'background',
         'output'    => array('.navclass'),
+        'customizer' => false,
         'title'     => __('Menu Background', 'pinnacle'),
         ),
       array(
             'id'=>'info_mobile_background',
             'type' => 'info',
+            'customizer' => false,
             'desc' => __('Mobile Menu Background', 'pinnacle'),
             ),
       array(
         'id'        => 'mobile_background',
         'type'      => 'background',
+        'customizer' => false,
         'output'    => array('.mobileclass'),
         'title'     => __('Mobile Menu Background', 'pinnacle'),
         ),
       array(
             'id'=>'info_post_background',
             'type' => 'info',
+            'customizer' => false,
             'desc' => __('Post and Page Content area Background', 'pinnacle'),
             ),
       array(
         'id'        => 'post_background',
         'type'      => 'background',
         'output'    => array('.postclass'),
+        'customizer' => false,
         'title'     => __('Post Background', 'pinnacle'),
         ),
       array(
             'id'=>'info_footer_background',
             'type' => 'info',
+            'customizer' => false,
             'desc' => __('Footer Background', 'pinnacle'),
             ),
     array(
         'id'        => 'footer_background',
         'type'      => 'background',
+        'customizer' => false,
         'output'    => array('.footerclass'),
         'title'     => __('Footer Background', 'pinnacle'),
         ),
       array(
             'id'=>'info_body_background',
             'type' => 'info',
+            'customizer' => false,
             'desc' => __('Body Background', 'pinnacle'),
             ),
       array(
         'id'        => 'body_background',
         'type'      => 'background',
+        'customizer' => false,
         'output'    => array('body'),
         'title'     => __('Body Background', 'pinnacle'),
         'subtitle'  => __('This shows if site is using the boxed layout option.', 'pinnacle'),
         ),
     ),
+)
 );
-$this->sections[] = array(
+Redux::setSection( $opt_name, array(
     'icon' => 'icon-text-width',
     'icon_class' => 'icon-large',
+    'id' => 'typography',
     'title' => __('Typography', 'pinnacle'),
     'desc' => "<div class='redux-info-field'><h3>".__('Header Font Options', 'pinnacle')."</h3></div>",
     'fields' => array(
@@ -1824,6 +2086,7 @@ $this->sections[] = array(
             'font-size'=>true,
             'line-height'=>true,
             'text-align' => false,
+            'customizer' => false,
             'color'=>true,
             'preview'=>true, // Disable the previewer
             'output' => array('h1'),
@@ -1848,6 +2111,7 @@ $this->sections[] = array(
             'font-size'=>true,
             'line-height'=>true,
             'text-align' => false,
+            'customizer' => false,
             //'word-spacing'=>false, // Defaults to false
             //'all_styles' => true,
             'color'=>true,
@@ -1874,6 +2138,7 @@ $this->sections[] = array(
             'font-size'=>true,
             'line-height'=>true,
             'text-align' => false,
+            'customizer' => false,
             //'word-spacing'=>false, // Defaults to false
             //'all_styles' => true,
             'color'=>true,
@@ -1898,6 +2163,7 @@ $this->sections[] = array(
             'font-style'=>true, // Includes font-style and weight. Can use font-style or font-weight to declare
             'subsets'=>true, // Only appears if google is true and subsets not set to false
             'font-size'=>true,
+            'customizer' => false,
             'line-height'=>true,
             'text-align' => false,
             //'word-spacing'=>false, // Defaults to false
@@ -1926,6 +2192,7 @@ $this->sections[] = array(
             'font-size'=>true,
             'text-align' => false,
             'line-height'=>true,
+            'customizer' => false,
             'color'=>true,
             'preview'=>true, // Disable the previewer
             'output' => array('h5'),
@@ -1948,6 +2215,7 @@ $this->sections[] = array(
             'subsets'=>true, // Only appears if google is true and subsets not set to false
             'font-size'=>true,
             'text-align' => false,
+            'customizer' => false,
             'line-height'=>true,
             'color'=>true,
             'preview'=>true, // Disable the previewer
@@ -1963,6 +2231,7 @@ $this->sections[] = array(
     array(
             'id'=>'info_body_font',
             'type' => 'info',
+            'customizer' => false,
             'desc' => __('Body Font Options', 'pinnacle'),
             ),
     array(
@@ -1981,6 +2250,7 @@ $this->sections[] = array(
             //'word-spacing'=>false, // Defaults to false
             'all_styles' => true,
             'color'=>true,
+            'customizer' => false,
             'preview'=>true, // Disable the previewer
             'output' => array('body'),
             'subtitle'=> __("Choose Size and Style for paragraphs", 'pinnacle'),
@@ -1991,11 +2261,13 @@ $this->sections[] = array(
                 'font-size'=>'14px', 
                 'line-height'=>'20px', ),
             ),
-  ),
+        ),
+    )
 );
-$this->sections[] = array(
+Redux::setSection( $opt_name, array(
     'icon' => 'icon-reorder',
     'icon_class' => 'icon-large',
+    'id' => 'menu_settings',
     'title' => __('Menu Settings', 'pinnacle'),
     'desc' => "<div class='redux-info-field'><h3>".__('Primary Menu Options', 'pinnacle')."</h3></div>",
     'fields' => array(
@@ -2012,6 +2284,7 @@ $this->sections[] = array(
             'font-size'=>true,
             'line-height'=>false,
             'text-align' => false,
+            'customizer' => false,
             //'word-spacing'=>false, // Defaults to false
             //'all_styles' => true,
             'color'=>true,
@@ -2027,6 +2300,7 @@ $this->sections[] = array(
     array(
             'id'=>'info_menu_mobile_font',
             'type' => 'info',
+            'customizer' => false,
             'desc' => __('Mobile Menu Options', 'pinnacle'),
             ),
     array(
@@ -2041,6 +2315,7 @@ $this->sections[] = array(
             'subsets'=>true, // Only appears if google is true and subsets not set to false
             'font-size'=>true,
             'line-height'=>true,
+            'customizer' => false,
             'text-align' => false,
             //'word-spacing'=>false, // Defaults to false
             //'all_styles' => true,
@@ -2058,6 +2333,7 @@ $this->sections[] = array(
     array(
             'id'=>'info_menu_topbar_font',
             'type' => 'info',
+            'customizer' => false,
             'desc' => __('Topbar Menu Options', 'pinnacle'),
             ),
      array(
@@ -2072,6 +2348,7 @@ $this->sections[] = array(
             'font-size'=>true,
             'line-height'=>false,
             'text-align' => false,
+            'customizer' => false,
             'color'=>true,
             'preview'=>true, // Disable the previewer
             'output' => array('#topbar ul.sf-menu > li > a, #topbar .top-menu-cart-btn, #topbar .top-menu-search-btn, #topbar .nav-trigger-case .kad-navbtn, #topbar .topbarsociallinks li a'),
@@ -2083,10 +2360,13 @@ $this->sections[] = array(
                 'font-size'=>'11px', ),
             ),
     ),
+)
 );
-$this->sections[] = array(
+
+Redux::setSection( $opt_name, array(
     'icon' => 'icon-wrench',
     'icon_class' => 'icon-large',
+    'id' => 'misc_settings',
     'title' => __('Misc Settings', 'pinnacle'),
     'desc' => "<div class='redux-info-field'><h3>".__('Misc Settings', 'pinnacle')."</h3></div>",
     'fields' => array(
@@ -2094,12 +2374,14 @@ $this->sections[] = array(
             'id'=>'pinnacle_custom_favicon',
             'type' => 'media', 
             'preview'=> true,
+            'customizer' => true,
             'title' => __('Custom Favicon', 'pinnacle'),
             'subtitle' => __('Upload a 16px x 16px png/gif/ico image that will represent your website favicon.', 'pinnacle'),
             ),  
         array(
             'id'=>'footer_text',
             'type' => 'textarea',
+            'customizer' => true,
             'title' => __('Footer Copyright Text', 'pinnacle'), 
             'subtitle' => __('Write your own copyright text here. You can use the following shortcodes in your footer text: [copyright] [site-name] [the-year]', 'pinnacle'),
             'default' => '[copyright] [the-year] [site-name] [theme-credit]',
@@ -2107,6 +2389,7 @@ $this->sections[] = array(
         array(
             'id'=>'info_search_sidebars',
             'type' => 'info',
+            'customizer' => true,
             'desc' => __('Search Results Sidebars', 'pinnacle'),
             ),
         array(
@@ -2114,17 +2397,20 @@ $this->sections[] = array(
             'type' => 'select',
             'title' => __('Search Results - choose Sidebar', 'pinnacle'), 
             'data' => 'sidebars',
+            'customizer' => true,
             'default' => 'sidebar-primary',
             'width' => 'width:60%',
             ),
         array(
             'id'=>'info_sidebars',
             'type' => 'info',
+            'customizer' => true,
             'desc' => __('Create Sidebars', 'pinnacle'),
             ),
         array(
             'id'=>'cust_sidebars',
             'type' => 'multi_text',
+            'customizer' => true,
             'title' => __('Create Custom Sidebars', 'pinnacle'),
             'subtitle' => __('Type new sidebar name into textbox', 'pinnacle'),
             'default' =>__('Extra Sidebar', 'pinnacle'),
@@ -2132,90 +2418,78 @@ $this->sections[] = array(
         array(
             'id'=>'info_wpgallerys',
             'type' => 'info',
+            'customizer' => true,
             'desc' => __('WordPress Galleries', 'pinnacle'),
             ),
         array(
             'id'=>'pinnacle_gallery',
-            'type' => 'switch', 
+            'type' => 'switch',
+            'customizer' => true,
             'title' => __('Enable Pinnacle Galleries to override WordPress', 'pinnacle'),
             'subtitle' => __('You must have virtue/pinnacle toolkit installed to use.', 'pinnacle'),
             "default" => 1,
             ),
-    ),
-);
-$this->sections[] = array(
+        ),
+    )
+    );
+Redux::setSection( $opt_name, array(
     'icon' => 'icon-code',
     'icon_class' => 'icon-large',
+    'id' => 'custom_css',
     'title' => __('Custom CSS', 'pinnacle'),
     'desc' => "<div class='redux-info-field'><h3>".__('Custom CSS Box', 'pinnacle')."</h3></div>",
     'fields' => array(
              array(
             'id'=>'custom_css',
             'type' => 'textarea',
+            'customizer' => true,
             'title' => __('Custom CSS', 'pinnacle'), 
             'subtitle' => __('Quickly add some CSS to your theme by adding it to this block.', 'pinnacle'),
             'validate' => 'css',
             ),
     ),
+    )
 );
-}
-          public function setArguments() {
-            $theme = wp_get_theme();
-            $this->args = array(
-            'dev_mode' => false,
-            'update_notice' => false,
-            'customizer' => false,
-            'page_permissions' => 'edit_theme_options',
-            'dev_mode_icon_class' => 'icon-large',
-            'opt_name' => 'pinnacle',
-            'system_info_icon_class' => 'icon-large',
-            'display_name' => $theme->get('Name'),
-            'display_version' => $theme->get('Version'),
-            'google_api_key' => 'AIzaSyALkgUvb8LFAmrsczX56ZGJx-PPPpwMid0',
-            'import_icon' => 'icon-hdd',
-            'import_icon_class' => 'icon-large',
-            'menu_title' => __('Theme Options', 'pinnacle'),
-            'page_title' => __('Theme Options', 'pinnacle'),
-            'page_slug' => 'ktoptions',
-            'default_show' => false,
-            'default_mark' => '',
-            'admin_bar' => false, 
-            'disable_tracking' => true,
-            'page_type' => 'submenu',
-            'page_icon' => "kad_logo_header",
-            'footer_credit' => __('Thank you for using the Pinnacle Theme by <a href="http://kadencethemes.com/" target="_blank">Kadence Themes</a>.', 'pinnacle'),
-            );
-            $this->args['intro_text'] = 'Upgrade to <a href="http://www.kadencethemes.com/product/pinnacle-premium-wordpress-theme/" target="_blank" >Pinnacle Premium!</a> More great features! Over 50 more theme options, premium sliders and carousels, breadcrumbs, custom post types and much much more!';
-           $this->args['share_icons']['facebook'] = array(
-            'link' => 'https://www.facebook.com/KadenceThemes',
-            'title' => 'Follow Kadence Themes on Facebook', 
-            'icon' => 'icon-facebook',
-            );
-           $this->args['share_icons']['twitter'] = array(
-            'link' => 'https://www.twitter.com/KadenceThemes',
-            'title' => 'Follow Kadence Themes on Twitter', 
-            'icon' => 'icon-twitter',
-            );
-           $this->args['share_icons']['instagram'] = array(
-            'link' => 'https://www.instagram.com/KadenceThemes',
-            'title' => 'Follow Kadence Themes on Instagram', 
-            'icon' => 'icon-instagram',
-            );
-
-          }
-     }
-        new Redux_Framework_pinnacle_config();
-
-}
+Redux::setSection( $opt_name, array(
+    'id' => 'inportexport_settings',
+                    'title'  => __( 'Import / Export', 'virtue' ),
+                    'desc'   => __( 'Import and Export your Theme Options from text or URL.', 'virtue' ),
+                    'icon'   => 'icon-large icon-hdd',
+                    'fields' => array(
+                        array(
+                            'id'         => 'opt-import-export',
+                            'type'       => 'import_export',
+                            'title'      => '',
+                            'customizer' => false,
+                            'subtitle'   => '',
+                            'full_width' => true,
+                        ),
+                    ),
+                ) );
 
 function kadence_override_redux_icons_css() {
-  wp_dequeue_style( 'redux-css' );
-  wp_register_style('redux-custom-css', get_template_directory_uri() . '/themeoptions/options_assets/css/style.css', false, 123);    
-  wp_enqueue_style('redux-custom-css');
+  wp_dequeue_style( 'redux-admin-css' );
+  wp_register_style('pinncale-redux-custom-css', get_template_directory_uri() . '/themeoptions/options_assets/css/style.css', false, 123);    
+  wp_enqueue_style('pinncale-redux-custom-css');
+  wp_dequeue_style( 'select2-css' );
+  wp_dequeue_script( 'select2-js' );
   wp_dequeue_style( 'redux-elusive-icon' );
   wp_dequeue_style( 'redux-elusive-icon-ie7' );
 }
 
 add_action('redux-enqueue-pinnacle', 'kadence_override_redux_icons_css');
 
+function pinnacle_remove_demo() {
+
+        // Used to hide the demo mode link from the plugin page. Only used when Redux is a plugin.
+        if ( class_exists( 'ReduxFrameworkPlugin' ) ) {
+            remove_filter( 'plugin_row_meta', array(
+                ReduxFrameworkPlugin::instance(),
+                'plugin_metalinks'
+            ), null, 2 );
+
+            // Used to hide the activation notice informing users of the demo panel. Only used when Redux is a plugin.
+            remove_action( 'admin_notices', array( ReduxFrameworkPlugin::instance(), 'admin_notices' ) );
+        }
+    }
 

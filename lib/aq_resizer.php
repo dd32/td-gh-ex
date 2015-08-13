@@ -144,8 +144,7 @@ if(!class_exists('Aq_Resize')) {
                         $editor = wp_get_image_editor( $img_path );
 
                         if ( is_wp_error( $editor ) || is_wp_error( $editor->resize( $width, $height, $crop ) ) ) {
-                            throw new Aq_Exception('Unable to get WP_Image_Editor: ' . 
-                                                   $editor->get_error_message() . ' (is GD or ImageMagick installed?)');
+                            throw new Aq_Exception('Unable to get WP_Image_Editor: (is GD or ImageMagick installed?)');
                         }
 
                         $resized_file = $editor->save();
@@ -154,7 +153,7 @@ if(!class_exists('Aq_Resize')) {
                             $resized_rel_path = str_replace( $upload_dir, '', $resized_file['path'] );
                             $img_url = $upload_url . $resized_rel_path;
                         } else {
-                                throw new Aq_Exception('Unable to save resized image file: ');
+                                throw new Aq_Exception('Unable to save resized image file.');
                         }
 
                     }
