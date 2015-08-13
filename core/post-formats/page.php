@@ -30,7 +30,7 @@
 	
 	if ( is_search() ):
 		
-		suevafree_excerpt(); 
+		do_action('suevafree_excerpt');
 	
 	else:
 
