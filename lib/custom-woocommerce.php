@@ -169,7 +169,7 @@ if ( ! function_exists( 'kt_wc_dropdown_variation_attribute_options' ) ) {
       'selected'         => false,
       'name'             => '',
       'id'               => '',
-      'show_option_none' => __( 'Choose an option', 'woocommerce' )
+      'show_option_none' => __( 'Choose an option', 'virtue' )
     ) );
     $options   = $args['options'];
     $product   = $args['product'];

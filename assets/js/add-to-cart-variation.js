@@ -120,8 +120,8 @@
 								$form.trigger( 'found_variation', [ variation ] );
 							} else {
 								$form.trigger( 'reset_data' );
-								$form.find( '.single_variation_wrap' ).after( '<p class="wc-no-matching-variations woocommerce-info">' + wc_add_to_cart_variation_params.i18n_no_matching_variations_text + '</p>' );
-								//$form.find( '.wc-no-matching-variations' ).slideDown( 200 );
+								$form.find( '.single_variation_wrap_kad' ).after( '<p class="wc-no-matching-variations woocommerce-info">' + wc_add_to_cart_variation_params.i18n_no_matching_variations_text + '</p>' );
+								$form.find( '.wc-no-matching-variations' ).slideDown( 200 );
 							}
 						}
 					} );
