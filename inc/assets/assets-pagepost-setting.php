@@ -5,6 +5,7 @@ function accesspress_pagepost_setting($wp_customize){
         'pagepost_setting',
         array(
           'title'           =>      __('Page/Post Settings', 'accesspress-store'),
+          'description'           =>      __('If not defined from cutom metabox these settings will be applied.', 'accesspress-store'),
           'priority'        =>      '40',
           )
         );

@@ -93,7 +93,7 @@ class accesspress_cta_video extends WP_Widget {
             <div class="cta-wrap-left wow fadeInBounce" data-wow-delay="1s" data-wow-duration="2s">
                 <?php echo $cta_video_iframe ; ?>
             </div>
-            <div class="cta-wrap-right wow bounceInRight" data-wow-delay="1.5s">
+            <div class="cta-wrap-right wow fadeIn" data-wow-delay="1.5s">
                 <h2 class="cta-title main-title"><?php echo $cta_video_title;?></h2>
                 <div class="cta-desc"><?php echo $cta_video_desc;  ?></div>
                 <a class="bttn cta-video-btn" href="<?php echo $cta_video_btn_url; ?>"><?php echo $cta_video_btn_text; ?></a>

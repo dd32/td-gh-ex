@@ -89,11 +89,6 @@ add_action( 'after_setup_theme', 'accesspress_store_setup' );
 
 
 /**
- * Implement the Custom Header feature.
- */
-//require get_template_directory() . '/inc/custom-header.php';
-
-/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
@@ -117,6 +112,10 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/accesspress-function.php';
+/**
+ * Implement the Custom Metabox feature.
+ */
+require get_template_directory() . '/inc/custom-metabox.php';
 
 /**
  * Load Option Framework file.

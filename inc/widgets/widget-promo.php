@@ -98,7 +98,7 @@ return $fields;
                     <?php if (!empty($promo)): ?>
                         <img src = "<?php echo $promo; ?>" alt="<?php echo $promo_title; ?>" />
                     <?php endif; ?>
-                    <div class="caption">
+                    <div class="caption wow fadeIn" data-wow-delay="1s">
                         <?php if (!empty($promo_title)): ?>
                             <h4 class="widget-title"><?php echo $promo_title; ?></h4>
                         <?php endif; ?>

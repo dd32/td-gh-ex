@@ -203,55 +203,26 @@ function accesspress_slider_setting($wp_customize){
                                         )
                                 
                                 );
-                                
-    $wp_customize->add_setting(
-                                'slider1_image',
-                                array(
-                                        'default'       =>      '',
-                                        'transport'     =>      'postMessage',
-                                        'sanitize_callback' => 'esc_url_raw'
-                                        )
-                                );
-    
-    $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,
-                                'slider1_image',
-                                array(
-                                        'section'       =>      'slider_1',
-                                        'label'         =>      __('Upload Slider 1 Image', 'accesspress-store'),
-                                        'type'          =>      'image',
-                                        )
-                                ));
-    
-    $wp_customize->add_setting(
-                                'slider1_title',
-                                array(
-                                        'default'       =>      '',
-                                        'transport'     =>      'postMessage',
-                                        'sanitize_callback' => 'accesspress_store_sanitize_text'
-                                        )
-                                );
-    
-    $wp_customize->add_control( 'slider1_title',array(
-                                        'section'       =>      'slider_1',
-                                        'label'         =>      __('Slider 1 Title', 'accesspress-store'),
-                                        'type'          =>      'text',
-                                        )
-                                );
-    $wp_customize->add_setting(
-                                'slider1_desc',
-                                array(
-                                        'default'       =>      '',
-                                        'transport'     =>      'postMessage',
-                                        'sanitize_callback' => 'accesspress_store_sanitize_text'
-                                        )
-                                );
-    
-    $wp_customize->add_control( 'slider1_desc',array(
-                                        'section'       =>      'slider_1',
-                                        'label'         =>      __('Slider 1 Description', 'accesspress-store'),
-                                        'type'          =>      'textarea',
-                                        )
-                                );
+    //select Page for Our Services
+   $pages = get_posts();
+   $fg_pages = array();
+   $fg_pages[] = __('Select Slider Post','accesspress-store');
+    foreach ( $pages as $page ) {
+       $fg_pages[$page->ID] = $page->post_title;     
+    }
+
+    $wp_customize->add_setting('slider_1_post', array(
+        'default'        => '',
+        'sanitize_callback' => 'accesspress_store_integer_sanitize',
+    ));
+    $wp_customize->add_control( 'slider_1_post', array(
+        'settings' => 'slider_1_post',
+        'label'   => __('Select Post For Slider One','fotography'),
+        'section'  => 'slider_1',
+        'type'    => 'select',
+        'choices' => $fg_pages,
+    ));
+   
                                 
     $wp_customize->add_setting(
                                 'slider1_button_link',
@@ -284,55 +255,17 @@ function accesspress_slider_setting($wp_customize){
                                         )
                                 );
                                 
-    $wp_customize->add_setting(
-                                'slider2_image',
-                                array(
-                                        'default'       =>      '',
-                                        'transport'     =>      'postMessage',
-                                        'sanitize_callback' => 'esc_url_raw'
-                                        )
-                                );
-    
-    $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,
-                                'slider2_image',
-                                array(
-                                        'section'       =>      'slider_2',
-                                        'label'         =>      __('Upload Slider 2 Image', 'accesspress-store'),
-                                        'type'          =>      'image',
-                                        )
-                                ));
-    
-    $wp_customize->add_setting(
-                                'slider2_title',
-                                array(
-                                        'default'       =>      '',
-                                        'transport'     =>      'postMessage',
-                                        'sanitize_callback' => 'accesspress_store_sanitize_text'
-                                        )
-                                );
-    
-    $wp_customize->add_control( 'slider2_title',array(
-                                        'section'       =>      'slider_2',
-                                        'label'         =>      __('Slider 2 Title', 'accesspress-store'),
-                                        'type'          =>      'text',
-                                        )
-                                );
-    
-    $wp_customize->add_setting(
-                                'slider2_desc',
-                                array(
-                                        'default'       =>      '',
-                                        'transport'     =>      'postMessage',
-                                        'sanitize_callback' => 'accesspress_store_sanitize_text'
-                                        )
-                                );
-    
-    $wp_customize->add_control( 'slider2_desc',array(
-                                        'section'       =>      'slider_2',
-                                        'label'         =>      __('Slider 2 Description', 'accesspress-store'),
-                                        'type'          =>      'textarea',
-                                        )
-                                );
+    $wp_customize->add_setting('slider_2_post', array(
+        'default'        => '',
+        'sanitize_callback' => 'accesspress_store_integer_sanitize',
+    ));
+    $wp_customize->add_control( 'slider_2_post', array(
+        'settings' => 'slider_2_post',
+        'label'   => __('Select Post For Slider Two','fotography'),
+        'section'  => 'slider_2',
+        'type'    => 'select',
+        'choices' => $fg_pages,
+    ));
                                 
     $wp_customize->add_setting(
                                 'slider2_button_link',
@@ -366,54 +299,18 @@ function accesspress_slider_setting($wp_customize){
                                 );
     
                                 
-    $wp_customize->add_setting(
-                                'slider3_image',
-                                array(
-                                        'default'       =>      '',
-                                        'transport'     =>      'postMessage',
-                                        'sanitize_callback' => 'esc_url_raw'
-                                        )
-                                );
-    
-    $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,
-                                'slider3_image',
-                                array(
-                                        'section'       =>      'slider_3',
-                                        'label'         =>      __('Upload Slider 3 Image', 'accesspress-store'),
-                                        'type'          =>      'image',
-                                        )
-                                ));
-    
-    $wp_customize->add_setting(
-                                'slider3_title',
-                                array(
-                                        'default'       =>      '',
-                                        'transport'     =>      'postMessage',
-                                        'sanitize_callback' => 'accesspress_store_sanitize_text'
-                                        )
-                                );
-    
-    $wp_customize->add_control( 'slider3_title',array(
-                                        'section'       =>      'slider_3',
-                                        'label'         =>      __('Slider 3 Title', 'accesspress-store'),
-                                        'type'          =>      'text',
-                                        )
-                                );
-    $wp_customize->add_setting(
-                                'slider3_desc',
-                                array(
-                                        'default'       =>      '',
-                                        'transport'     =>      'postMessage',
-                                        'sanitize_callback' => 'accesspress_store_sanitize_text'
-                                        )
-                                );
-    
-    $wp_customize->add_control( 'slider3_desc',array(
-                                        'section'       =>      'slider_3',
-                                        'label'         =>      __('Slider 3 Description', 'accesspress-store'),
-                                        'type'          =>      'textarea',
-                                        )
-                                );
+    $wp_customize->add_setting('slider_3_post', array(
+        'default'        => 'default',
+        'sanitize_callback' => 'accesspress_store_integer_sanitize',
+    ));
+    $wp_customize->add_control( 'slider_3_post', array(
+        'settings' => 'slider_3_post',
+        'label'   => __('Select Post For Slider Three','fotography'),
+        'section'  => 'slider_3',
+        'type'    => 'select',
+        'choices' => $fg_pages,
+    ));
+
     $wp_customize->add_setting(
                                 'slider3_button_link',
                                 array(
@@ -446,52 +343,18 @@ function accesspress_slider_setting($wp_customize){
                                 );
     
                                 
-    $wp_customize->add_setting(
-                            'slider4_image',
-                            array(
-                                    'default'       =>      '',
-                                    'transport'     =>      'postMessage',
-                                    'sanitize_callback' => 'accesspress_store_sanitize_text'
-                                    )
-                            );
+    $wp_customize->add_setting('slider_4_post', array(
+        'default'        => '',
+        'sanitize_callback' => 'accesspress_store_integer_sanitize',
+    ));
+    $wp_customize->add_control( 'slider_4_post', array(
+        'settings' => 'slider_4_post',
+        'label'   => __('Select Post For Slider Four','fotography'),
+        'section'  => 'slider_4',
+        'type'    => 'select',
+        'choices' => $fg_pages,
+    ));
 
-    $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,
-                                'slider4_image',
-                                array(
-                                        'section'       =>      'slider_4',
-                                        'label'         =>      __('Upload Slider 4 Image', 'accesspress-store'),                                        'type'          =>      'image',
-                                        )
-                                ));
-    $wp_customize->add_setting(
-                                'slider4_title',
-                                array(
-                                        'default'       =>      '',
-                                        'transport'     =>      'postMessage',
-                                        'sanitize_callback' => 'accesspress_store_sanitize_text'
-                                        )
-                                );
-    
-    $wp_customize->add_control( 'slider4_title',array(
-                                        'section'       =>      'slider_4',
-                                        'label'         =>      __('Slider 4 Title', 'accesspress-store'),
-                                        'type'          =>      'text',
-                                        )
-                                );
-    $wp_customize->add_setting(
-                                'slider4_desc',
-                                array(
-                                        'default'       =>      '',
-                                        'transport'     =>      'postMessage',
-                                        'sanitize_callback' => 'accesspress_store_sanitize_text'
-                                        )
-                                );
-    
-    $wp_customize->add_control( 'slider4_desc',array(
-                                        'section'       =>      'slider_4',
-                                        'label'         =>      __('Slider 4 Description', 'accesspress-store'),
-                                        'type'          =>      'textarea',
-                                        )
-                                );
     $wp_customize->add_setting(
                                 'slider4_button_link',
                                 array(
@@ -523,52 +386,18 @@ function accesspress_slider_setting($wp_customize){
                                         )
                                 );
     
-    $wp_customize->add_setting(
-                            'slider5_image',
-                            array(
-                                    'default'       =>      '',
-                                    'transport'     =>      'postMessage',
-                                    'sanitize_callback' => 'esc_url_raw'
-                                    )
-                            );
+     $wp_customize->add_setting('slider_5_post', array(
+        'default'        => '',
+        'sanitize_callback' => 'accesspress_store_integer_sanitize',
+    ));
+    $wp_customize->add_control( 'slider_5_post', array(
+        'settings' => 'slider_5_post',
+        'label'   => __('Select Post For Slider Five','fotography'),
+        'section'  => 'slider_5',
+        'type'    => 'select',
+        'choices' => $fg_pages,
+    ));
 
-    $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize,
-                                'slider5_image',
-                                array(
-                                        'section'       =>      'slider_5',
-                                        'label'         =>      __('Upload Slider 5 Image', 'accesspress-store'),                                        'type'          =>      'image',
-                                        )
-                                ));
-    $wp_customize->add_setting(
-                                'slider5_title',
-                                array(
-                                        'default'       =>      '',
-                                        'transport'     =>      'postMessage',
-                                        'sanitize_callback' => 'accesspress_store_sanitize_text'
-                                        )
-                                );
-    
-    $wp_customize->add_control( 'slider5_title',array(
-                                        'section'       =>      'slider_5',
-                                        'label'         =>      __('Slider 5 Title', 'accesspress-store'),
-                                        'type'          =>      'text',
-                                        )
-                                );
-    $wp_customize->add_setting(
-                                'slider5_desc',
-                                array(
-                                        'default'       =>      '',
-                                        'transport'     =>      'postMessage',
-                                        'sanitize_callback' => 'accesspress_store_sanitize_text'
-                                        )
-                                );
-    
-    $wp_customize->add_control( 'slider5_desc',array(
-                                        'section'       =>      'slider_5',
-                                        'label'         =>      __('Slider 5 Description', 'accesspress-store'),
-                                        'type'          =>      'textarea',
-                                        )
-                                );
     $wp_customize->add_setting(
                                 'slider5_button_link',
                                 array(

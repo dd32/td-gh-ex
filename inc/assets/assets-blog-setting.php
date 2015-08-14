@@ -27,7 +27,7 @@ function accesspress_blog_setting($wp_customize){
       'choices'       =>      array( 
         'blog_layout1' => __('Blog Image Large', 'accesspress-store'),
         'blog_layout2' => __('Blog Image Medium', 'accesspress-store'),
-        'blog_layout3' => __('Blog Image Alternate Medium', 'accesspress-store'),
+        'blog_layout3' => __('Blog Image Medium Alternate', 'accesspress-store'),
         'blog_layout4' => __('Blog Full Content', 'accesspress-store'),
         )
       )

@@ -35,7 +35,21 @@ function accesspress_ticker_setting($wp_customize){
       'output'        =>      array('Enable', 'Disable')
       ))
   );
-
+  $wp_customize->add_setting(
+    'accesspress_ticker_title',
+    array(
+      'default'       =>      'Latest',
+      'sanitize_callback'     =>  'accesspress_store_sanitize_text'
+      )
+    );
+  $wp_customize->add_control(
+    'accesspress_ticker_title',
+    array(
+      'section'       =>      'accesspress_ticker',
+      'label'         =>      __('Ticker Title', 'accesspress-store'),
+      'type'          =>      'text'
+      )
+    );
   $wp_customize->add_setting(
     'accesspress_ticker_text1',
     array(
@@ -193,7 +207,7 @@ function accesspress_ticker_setting($wp_customize){
       )
     ));
 
-$wp_customize->add_section('webpage_layout',
+  $wp_customize->add_section('webpage_layout',
     array(
      'title'            =>       __('Layout Setting', 'accesspress-store'),
      'priority'         =>      '110',
@@ -224,7 +238,7 @@ $wp_customize->add_section('webpage_layout',
       )
     );
 
-$wp_customize->add_section('responsive_setting',
+  $wp_customize->add_section('responsive_setting',
     array(
      'title'            =>       __('Responsive Setting', 'accesspress-store'),
      'priority'         =>      '110',

@@ -164,13 +164,19 @@ add_action( 'widgets_init', 'accesspress_store_widgets_init' );
  * Enqueue scripts and styles.
  */
 function accesspress_store_scripts() {
-	wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.css');
-	
-	wp_enqueue_style( 'perfect-scrollbar', get_template_directory_uri() . '/css/perfect-scrollbar.min.css');
 
-	wp_enqueue_style( 'slick', get_template_directory_uri() . '/css/slick.css');
+	$font_args = array(
+		'family' => 'Open+Sans:400,600,700,300|Oswald:400,700,300|Dosis:400,300,500,600,700|Lato:300,400,700,900',
+		);
+	wp_enqueue_style('accesspress-store-google-fonts', add_query_arg($font_args, "//fonts.googleapis.com/css"));
+
+	wp_enqueue_style( 'accesspress-store-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css');
+
+	wp_enqueue_style( 'accesspress-store-animate', get_template_directory_uri() . '/css/animate.css');
 	
-	wp_enqueue_style( 'ticker', get_template_directory_uri() . '/css/ticker-style.css');
+	wp_enqueue_style( 'accesspress-store-slick', get_template_directory_uri() . '/css/slick.css');
+	
+	wp_enqueue_style( 'accesspress-store-ticker', get_template_directory_uri() . '/css/ticker-style.css');
 
 	wp_enqueue_style( 'accesspress-store-style', get_stylesheet_uri() );
 
@@ -181,12 +187,9 @@ function accesspress_store_scripts() {
 
 	wp_enqueue_script( 'accesspress-store-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 	
-	wp_enqueue_script( 'accesspress-slick', get_template_directory_uri() . '/js/slick.js', array('jquery'), '1.5.0', true );
+	wp_enqueue_script( 'accesspress-store--slick', get_template_directory_uri() . '/js/slick.js', array('jquery'), '1.5.0', true );
 
-	wp_enqueue_script( 'wow', get_template_directory_uri() . '/js/wow.min.js',array(),'1.1.2',true);
-
-	wp_enqueue_script( 'perfect-scroll', get_template_directory_uri() . '/js/perfect-scrollbar.min.js',array('jquery'),'0.6.3',true);
-	wp_enqueue_script( 'perfect-scroll-jq', get_template_directory_uri() . '/js/perfect-scrollbar.jquery.min.js',array('jquery'),'0.6.3',true);
+	wp_enqueue_script( 'accesspress-store-wow', get_template_directory_uri() . '/js/wow.min.js',array(),'1.1.2',true);
 
 	wp_enqueue_script( 'accesspress-ticker-js', get_template_directory_uri() . '/js/jquery.ticker.js', array('jquery'), '1.0.0', true );
 
@@ -204,6 +207,8 @@ function accesspress_ticker_header_customizer(){
 	//Check if ticker is enabled
 	if(get_theme_mod('accesspress_ticker_checkbox')===1)
 	{
+		$ticker_title = get_theme_mod('accesspress_ticker_title');
+		if(empty($ticker_title)){$ticker_title="Latest";}
 		$ticker_text1 = get_theme_mod('accesspress_ticker_text1');
 		$ticker_text2 = get_theme_mod('accesspress_ticker_text2');
 		$ticker_text3 = get_theme_mod('accesspress_ticker_text3');
@@ -222,12 +227,12 @@ function accesspress_ticker_header_customizer(){
 		            debugMode: true,       // Show some helpful errors in the console or as alerts
 		      	    // SHOULD BE SET TO FALSE FOR PRODUCTION SITES!
 		            controls: true,        // Whether or not to show the jQuery News Ticker controls
-		            titleText: 'Latest',   // To remove the title set this to an empty String
+		            titleText: '<?php echo $ticker_title;?>',   // To remove the title set this to an empty String
 		            displayType: 'reveal', // Animation type - current options are 'reveal' or 'fade'
 		            direction: 'ltr',       // Ticker direction - current options are 'ltr' or 'rtl'
-		            fadeInSpeed: 600,      // Speed of fade in animation
+		            fadeInSpeed: 900,      // Speed of fade in animation
 		            fadeOutSpeed: 300,   
-		            pauseOnItems: 2000,    // The pause on a news item before being replaced  
+		            pauseOnItems: 3000,    // The pause on a news item before being replaced  
 		        });
 });
 </script>
@@ -286,30 +291,33 @@ function accesspress_slidercb(){
 		?>
 	<section id="main-slider">
 		<div class="bx-slider">
-			<?php 
+			<?php 			
 			for ($i=1; $i <= 5 ; $i++) { 
-				$slider_image = get_theme_mod('slider'.$i.'_image');
-				$slider_title = get_theme_mod('slider'.$i.'_title');
-				$slider_desc = get_theme_mod('slider'.$i.'_desc');
+				$slider_post = get_theme_mod('slider_'.$i.'_post');
 				$slider_button_text = get_theme_mod('slider'.$i.'_button_text');
 				$slider_button_link = get_theme_mod('slider'.$i.'_button_link');
 
-				if(!empty($slider_image)) :
+				if(!empty($slider_post)) :
 					?>
 				<div class="slides">
-					<img src="<?php echo esc_url($slider_image); ?>" alt="<?php echo esc_attr($slider_title); ?>"/>
+					<?php
+						$args = array('post__in'=> array($slider_post));
+						$query1 = new WP_Query( $args );
+						while ( $query1->have_posts() ) {
+							$query1->the_post();
+							$image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'full', true);
+					?>
+						<img src="<?php echo esc_url($image[0]); ?>" alt="<?php echo esc_attr(the_title()); ?>"/>
+					
 					<?php if($accesspress_show_caption == '1'): ?>
 						<div class="slider-caption">
 							<div class="ak-container">
+								
 								<div class="caption-content-wrapper">
-									<?php if($slider_title): ?>
-										<h2 class="caption-title"><?php echo esc_attr($slider_title);?></h2>
-									<?php endif; ?>
-
-									<?php if($slider_desc): ?>
-										<div class="caption-content"><?php echo esc_attr($slider_desc);?></div>
-
-									<?php endif; ?>
+									<h2 class="caption-title"><?php echo esc_attr(the_title());?></h2>
+									<div class="caption-content">
+										<?php echo accesspress_letter_count(get_the_content(), '165'); ?>
+									</div>
 								</div>
 
 								<?php if($slider_button_text): ?>
@@ -319,7 +327,10 @@ function accesspress_slidercb(){
 							</div>
 						</div>
 					<?php endif; ?>
-
+					<?php
+					}
+						wp_reset_postdata();
+					?>
 				</div>
 				<?php 
 				endif; ?>
@@ -383,7 +394,8 @@ if(is_woocommerce_activated()):
 		$cart_url = $woocommerce->cart->get_cart_url();  
 		?>
 		<div class="view-cart"><a title="View your shopping cart" href="<?php echo $cart_url; ?>" class="wcmenucart-contents"><?php echo __('CART', 'accesspress-store'); ?> [ <?php echo $woocommerce->cart->cart_contents_count; ?> / <span class="amount"><?php echo $woocommerce->cart->get_cart_total(); ?></span> ]</a>
-			<ul class="sub-menu">
+			<?php /*
+			<ul class="sub-menu <?php if ( sizeof( WC()->cart->get_cart() ) < 1 ){ echo "empty";}?>">
 				<?php if ( sizeof( WC()->cart->get_cart() ) > 0 ) : ?>
 
 					<?php
@@ -420,6 +432,7 @@ if(is_woocommerce_activated()):
 				<?php endif; ?>
 
 			</ul>
+			*/ ?>
 		</div>
 		<?php
 		$fragments['div.view-cart'] = ob_get_clean();
@@ -700,6 +713,16 @@ if(is_woocommerce_activated()){
 		$args['posts_per_page'] = 3; // 3 related products
 		return $args;
 	}
+
+	remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
+	add_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_upsells', 15 );
+
+	if ( ! function_exists( 'woocommerce_output_upsells' ) ) {
+		function woocommerce_output_upsells() {
+		    woocommerce_upsell_display( 2,1 ); 
+		    // Display 3 products in rows of 3
+		}
+	}
 }
 add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
 function special_nav_class($classes, $item){
@@ -709,9 +732,9 @@ function special_nav_class($classes, $item){
 	return $classes;
 }
 
-register_nav_menus( array(
-	'custom_header_menu' => 'Custom Header Menu'
-	) );
+// register_nav_menus( array(
+// 	'custom_header_menu' => 'Custom Header Menu'
+// 	) );
 
 function as_before_top_header_enabled()
 {

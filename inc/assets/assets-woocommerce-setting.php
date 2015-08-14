@@ -34,7 +34,7 @@ function accesspress_woocommerce_setting($wp_customize){
                                         'description'   => 'Upload a custom placeholder to be displayed when there is no product image.',
                                         )
                                 ));
-    $wp_customize->add_setting(
+    /*$wp_customize->add_setting(
                                 'hide_header_cart_link',
                                 array(
                                         'default'       =>      '0',
@@ -50,7 +50,7 @@ function accesspress_woocommerce_setting($wp_customize){
                                         'type'          =>      'switch_yesno',
                                         'output'        =>      array('Yes', 'No')
                                       ))
-                              );
+                              );*/
     $wp_customize->add_setting(
                                 'hide_header_product_search',
                                 array(
@@ -68,7 +68,7 @@ function accesspress_woocommerce_setting($wp_customize){
                                         'output'        =>      array('Yes', 'No')
                                       ))
                               );
-    $wp_customize->add_setting(
+    /*$wp_customize->add_setting(
                                 'hide_navigation_checkout',
                                 array(
                                         'default'       =>      '0',
@@ -84,6 +84,6 @@ function accesspress_woocommerce_setting($wp_customize){
                                         'type'          =>      'switch_yesno',
                                         'output'        =>      array('Yes', 'No')
                                       ))
-                              );
+                              );*/
 }
 add_action('customize_register', 'accesspress_woocommerce_setting');

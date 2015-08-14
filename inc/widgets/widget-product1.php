@@ -170,15 +170,13 @@ public function widget($args, $instance){
       <?php echo $before_title.esc_attr($product_title).$after_title; ?>
       <ul class="new-prod-slide">
         <?php
+        $count = 0;
         $product_loop = new WP_Query( $product_args );
         while ( $product_loop->have_posts() ) : $product_loop->the_post(); 
         global $product; 
-        // echo "<pre>";
-        // print_r($product);
-        // echo "</pre>";
-        // die();
+        $count+=0.5;
         ?>
-        <li class="span3">
+        <li class="span3 wow flipInY" data-wow-delay="<?php echo $count ?>s">
           <div class="item-img">
             <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">  
               <?php

@@ -28,7 +28,7 @@
       $valid_keys = array( 
                 		'blog_layout1' => __('Blog Image Large', 'accesspress-store'),
                 		'blog_layout2' => __('Blog Image Medium', 'accesspress-store'),
-                		'blog_layout3' => __('Blog Image Alternate Medium', 'accesspress-store'),
+                    'blog_layout3' => __('Blog Image Medium Alternate', 'accesspress-store'),
                 		'blog_layout4' => __('Blog Full Content', 'accesspress-store'),
                 		);
       if ( array_key_exists( $input, $valid_keys ) ) {
@@ -132,3 +132,4 @@
    function accesspress_store_integer_sanitize($input){
         return intval( $input );
    }
+   

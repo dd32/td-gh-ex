@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	}
 	?>
 
-	<div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class('single-img'); ?>>
 
 		<div class="img-wrap">
 		<?php
@@ -66,7 +66,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			// check for plugin using plugin name
 			if ( is_plugin_active( 'accesspress-social-share/accesspress-social-share.php' ) ) {
-				echo do_shortcode("[apss-share]");
+				echo do_shortcode("[apss-share share_text='Share this']");
 			}
 			?>
 		</div><!-- .summary -->
