@@ -29,11 +29,15 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 == Changelog ==
 
 = Theme Name: Virtue =
-= Version 2.5.3 | 13th July 2015 =
+
+= Version 2.5.4 | 14th July 2015 =
+* Bug Fix: woocommerce Ajax
+
+= Version 2.5.3 | 13th August 2015 =
 * Remove: un-needed files
 * Fix: Small text doamin fix.
 
-= Version 2.5.2 | 10th July 2015 =
+= Version 2.5.2 | 10th August 2015 =
 * Update: WP_Widget to __construct. 
 * Update: Woocommerce templates.
 

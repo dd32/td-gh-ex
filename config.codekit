@@ -1337,14 +1337,14 @@
 		},
 	"\/assets\/js\/add-to-cart-variation.js": {
 		"fileType": 64,
-		"ignore": 1,
+		"ignore": 0,
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/assets\/js\/add-to-cart-variation.js",
 		"outputAbbreviatedPath": "\/assets\/js\/min\/add-to-cart-variation-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 2
 		},
 	"\/assets\/js\/jquery.validate.js": {
 		"fileType": 64,
