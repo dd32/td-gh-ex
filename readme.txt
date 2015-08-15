@@ -26,19 +26,3 @@ The exceptions to license are as follows:
 
 == Tags ==
 light, white, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, translation-ready, responsive-layout
-
-== Changelog ==
-
-Version 1.0.6
-* Feature: Go to top button
-* Fix: New title tag support for latest version of WordPress
-* Update: Latest Bootstrap and Font Awesome libraries
-* Update: Use separate panel for Theme Options
-
-Version 1.0.4
-* Fixed missing translation strings in language file
-* Sanitizing customizer options
-
-Version 1.0.0
-* Initial Submission to WordPress.org
-

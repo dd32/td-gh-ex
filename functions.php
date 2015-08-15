@@ -91,13 +91,13 @@ add_action( 'after_setup_theme', 'simple_life_setup' );
  */
 function simple_life_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'simple-life' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget clearfix %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
+    'name'          => __( 'Sidebar', 'simple-life' ),
+    'id'            => 'sidebar-1',
+    'description'   => __( 'Add widgets here to appear in your sidebar.', 'simple-life' ),
+    'before_widget' => '<aside id="%1$s" class="widget clearfix %2$s">',
+    'after_widget'  => '</aside>',
+    'before_title'  => '<h3 class="widget-title">',
+    'after_title'   => '</h3>',
 	) );
 }
 add_action( 'widgets_init', 'simple_life_widgets_init' );
@@ -107,8 +107,8 @@ add_action( 'widgets_init', 'simple_life_widgets_init' );
  */
 function simple_life_scripts() {
   wp_enqueue_style( 'simple-life-style-open-sans', '//fonts.googleapis.com/css?family=Open+Sans' );
-  wp_enqueue_style( 'simple-life-style-bootstrap', get_template_directory_uri().'/css/bootstrap.min.css', false ,'3.3.4' );
-  wp_enqueue_style( 'simple-life-style-font-awesome', get_template_directory_uri().'/third-party/font-awesome/css/font-awesome.min.css', false ,'4.3.0' );
+  wp_enqueue_style( 'simple-life-style-bootstrap', get_template_directory_uri().'/css/bootstrap.min.css', false ,'3.3.5' );
+  wp_enqueue_style( 'simple-life-style-font-awesome', get_template_directory_uri().'/third-party/font-awesome/css/font-awesome.min.css', false ,'4.4.0' );
   wp_enqueue_style( 'simple-life-style-meanmenu', get_template_directory_uri().'/third-party/meanmenu/meanmenu.css', false ,'2.0.6' );
 
 	wp_enqueue_style( 'simple-life-style', get_stylesheet_uri() );
@@ -122,6 +122,11 @@ function simple_life_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'simple_life_scripts' );
+
+/**
+ * Include helper.
+ */
+require get_template_directory() . '/inc/helper.php';
 
 /**
  * Implement the Custom Header feature.

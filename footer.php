@@ -49,7 +49,7 @@
     $powered_by = simple_life_get_option( 'powered_by' );
    ?>
 
-   <?php if ( 1 == $powered_by ): ?>
+   <?php if ( true == $powered_by ): ?>
 
   		<div class="site-info" id="powered-by-wrap">
   			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'simple-life' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'simple-life' ), 'WordPress' ); ?></a>

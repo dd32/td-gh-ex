@@ -1,10 +1,10 @@
 /*
 Theme Name: Simple Life
-Theme URI:
+Theme URI: http://www.nilambar.net/2015/03/simple-life-free-wordpress-theme.html
 Author: Nilambar Sharma
 Author URI: http://www.nilambar.net/
 Description: Simple Life is a simple and minimal theme for your awesome WordPress website. It comes with a whole set of interesting, rich features and flexible theme customization. This theme is easily customizable with the Customizer feature of WordPress. It is also translation ready.
-Version: 1.0.6
+Version: 1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: simple-life
@@ -500,39 +500,41 @@ a:active {
 /*--------------------------------------------------------------
 6.0 Accessibility
 --------------------------------------------------------------*/
-/* Text meant only for screen readers */
+/* Text meant only for screen readers. */
 .screen-reader-text {
-	clip: rect(1px, 1px, 1px, 1px);
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
 }
 
-.screen-reader-text:hover,
-.screen-reader-text:active,
 .screen-reader-text:focus {
-	background-color: #f1f1f1;
-	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	clip: auto !important;
-	color: #21759b;
-	display: block;
-	font-size: 14px;
-	font-weight: bold;
-	height: auto;
-	left: 5px;
-	line-height: normal;
-	padding: 15px 23px 14px;
-	text-decoration: none;
-	top: 5px;
-	width: auto;
-	z-index: 100000; /* Above WP toolbar */
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar. */
 }
 
 /*--------------------------------------------------------------
 7.0 Alignments
 --------------------------------------------------------------*/
+.wp-post-image{
+  margin-bottom: 8px;
+}
 .alignleft {
 	display: inline;
 	float: left;
@@ -590,26 +592,23 @@ a:active {
 }
 
 /* Search widget */
-.widget_search .search-submit {
+.search-form .search-submit {
 	display: none;
 }
-.widget_search .search-form label {
+.search-form .search-form label {
 	width:100%;
 }
-.search-field {
+.search-form .search-field {
 	border:1px #CCCCCC solid;
 	font-weight: normal;
 	font-family: inherit;
 	box-sizing: border-box;
+  max-width: 350px;
 }
-.widget_search .search-field {
+.search-form .search-field {
 	width:100%;
 }
-.page-content .search-field{
-	border:1px #CCCCCC solid;
-	padding: .5em 1em;
 
-}
 /*--------------------------------------------------------------
 10.0 Content
 --------------------------------------------------------------*/
@@ -720,13 +719,52 @@ h2 a:hover, h3 a:hover {
   color: #0fa5d9;
   font-size: 20px;
 }
-.site-main .paging-navigation {
+.site-main .paging-navigation,
+nav.pagination {
     background-color: #ffffff;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
     margin: 0 0 1.5em;
     overflow: hidden;
     padding: 1em 1.5em;
 }
+nav.pagination{
+    display: block;
+}
+nav.pagination .nav-links{
+    text-align: center;
+}
+nav.pagination .nav-links a,
+nav.pagination .nav-links span{
+    margin: 0 10px;
+}
+nav.pagination a.prev{
+    float: left;
+    margin: 0;
+}
+nav.pagination a.prev .meta-nav{
+    margin-left: 0;
+}
+nav.pagination a.next{
+    margin: 0;
+    float: right;
+}
+nav.pagination a.next .meta-nav{
+    margin-right: 0;
+}
+
+/*WP Page navi */
+.wp-pagenavi{
+  background-color: #ffffff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06);
+  padding: 1em;
+  margin: 0 0 1.5em;
+}
+.wp-pagenavi a, .wp-pagenavi span {
+  border: none;
+}
+
+/*WP Page navi ends */
+
 .entry-content table {
   margin:5px 0px;
   border-collapse: collapse;
@@ -910,6 +948,7 @@ body{
 }
 .site-branding {
     margin: 2em 0;
+    text-align: center;
 }
 h1.site-title {
 	font-family: sans-serif;
@@ -934,12 +973,16 @@ h1.site-title a:focus {
 	outline: 0;
 	text-decoration: none;
 }
-
+.site-branding .site-logo{
+  margin-bottom: 10px;
+}
 .site-description {
     color: #555;
     font-family: sans-serif;
     font-size: 1.071em;
     letter-spacing: 1px;
+    margin-top: 10px;
+
 }
 
 
@@ -959,6 +1002,7 @@ h1.site-title a:focus {
     font-size: 1.154em;
     margin-bottom: 1em;
     font-weight: bold;
+    margin-top: 0;
 }
 
 .widget ul {
@@ -1044,6 +1088,10 @@ footer#colophon a{
 
 header#masthead{
 	padding:0;
+}
+
+body.search-no-results .page-content {
+  margin: 0 10px 10px 10px;
 }
 
 /*woocommerce starts*/

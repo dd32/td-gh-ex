@@ -14,23 +14,30 @@ function simple_life_customize_register( $wp_customize ) {
 
   global $simple_life_default_options;
 
-  if ( ! function_exists( 'simple_life_customizer_validate_excerpt_length' ) ) {
-    function simple_life_customizer_validate_excerpt_length($input){
-      if ( intval( $input ) < 1 ) {
-        $input = 40;
-      }
-      return $input;
-    }
-  }
-  if ( ! function_exists( 'simple_life_customizer_validate_read_more_text' ) ) {
-    function simple_life_customizer_validate_read_more_text($input){
-      if ( empty( $input ) ) {
-        $input = __( 'Read more', 'simple-life' );
-      }
-      return $input;
+  // Sanitization callback functions
+  if ( ! function_exists( 'simple_life_sanitize_number_absint' ) ) {
+    function simple_life_sanitize_number_absint( $number, $setting ) {
+      $number = absint( $number );
+      return ( $number ? $number : $setting->default );
     }
   }
 
+  if ( ! function_exists( 'simple_life_sanitize_checkbox' ) ){
+    function simple_life_sanitize_checkbox( $checked ) {
+      return ( ( isset( $checked ) && true == $checked ) ? true : false );
+    }
+  }
+
+
+  if ( ! function_exists( 'simple_life_sanitize_select' ) ){
+    function simple_life_sanitize_select( $input, $setting ) {
+      $input = sanitize_key( $input );
+      $choices = $setting->manager->get_control( $setting->id )->choices;
+      return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
+    }
+  }
+
+  // Panels, sections and fields
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -44,10 +51,53 @@ function simple_life_customize_register( $wp_customize ) {
      )
   );
 
+  // Logo Section
+  $wp_customize->add_section( 'simple_life_options_logo',
+     array(
+        'title'      => __( 'Logo Options', 'simple-life' ),
+        'priority'   => 100,
+        'capability' => 'edit_theme_options',
+        'panel'      => 'simple_life_options_panel',
+     )
+  );
+  // site_logo
+  $wp_customize->add_setting( 'simple_life_options[site_logo]',
+     array(
+        'default'              => $simple_life_default_options['site_logo'],
+        'capability'           => 'edit_theme_options',
+        'sanitize_callback'    => 'esc_url_raw',
+     )
+  );
+  $wp_customize->add_control(
+         new WP_Customize_Image_Control(
+             $wp_customize,
+             'simple_life_options[site_logo]',
+             array(
+                 'label'    => __( 'Logo', 'simple-life' ),
+                 'section'  => 'simple_life_options_logo',
+                 'settings' => 'simple_life_options[site_logo]',
+             )
+         )
+     );
+  // replace_site_title
+  $wp_customize->add_setting( 'simple_life_options[replace_site_title]',
+     array(
+        'default'           => $simple_life_default_options['replace_site_title'],
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'simple_life_sanitize_checkbox',
+     )
+  );
+  $wp_customize->add_control('simple_life_options[replace_site_title]', array(
+          'label'    => __( 'Replace Site Title by Logo', 'simple-life' ),
+          'section'  => 'simple_life_options_logo',
+          'type'     => 'checkbox',
+          'priority' => 920,
+  ));
+
   // General Section
   $wp_customize->add_section( 'simple_life_options_general',
      array(
-        'title'      => __( 'General', 'simple-life' ),
+        'title'      => __( 'General Options', 'simple-life' ),
         'priority'   => 100,
         'capability' => 'edit_theme_options',
         'panel'      => 'simple_life_options_panel',
@@ -59,8 +109,7 @@ function simple_life_customize_register( $wp_customize ) {
      array(
         'default'              => $simple_life_default_options['site_layout'],
         'capability'           => 'edit_theme_options',
-        'sanitize_callback'    => 'esc_attr',
-        'sanitize_js_callback' => 'esc_attr',
+        'sanitize_callback'    => 'simple_life_sanitize_select',
      )
   );
   $wp_customize->add_control('simple_life_options[site_layout]', array(
@@ -80,8 +129,7 @@ function simple_life_customize_register( $wp_customize ) {
      array(
         'default'              => $simple_life_default_options['content_layout'],
         'capability'           => 'edit_theme_options',
-        'sanitize_callback'    => 'esc_attr',
-        'sanitize_js_callback' => 'esc_attr',
+        'sanitize_callback'    => 'simple_life_sanitize_select',
      )
   );
   $wp_customize->add_control('simple_life_options[content_layout]', array(
@@ -90,16 +138,48 @@ function simple_life_customize_register( $wp_customize ) {
           'type'     => 'select',
           'priority' => 115,
           'choices'  => array(
-            'full'          => __( 'Full Post', 'simple-life' ),
+            'full'          => __( 'Full Post (with image)', 'simple-life' ),
             'excerpt'       => __( 'Excerpt', 'simple-life' ),
             'excerpt-thumb' => __( 'Excerpt with thumbnail', 'simple-life' ),
             ),
   ));
 
+  // archive_image_thumbnail_size
+  $wp_customize->add_setting( 'simple_life_options[archive_image_thumbnail_size]',
+     array(
+        'default'              => $simple_life_default_options['archive_image_thumbnail_size'],
+        'capability'           => 'edit_theme_options',
+        'sanitize_callback'    => 'simple_life_sanitize_select',
+     )
+  );
+  $wp_customize->add_control('simple_life_options[archive_image_thumbnail_size]', array(
+          'label'    => __( 'Archive Image Size', 'simple-life' ),
+          'section'  => 'simple_life_options_general',
+          'type'     => 'select',
+          'priority' => 120,
+          'choices'  => simple_life_get_image_sizes_options( false ),
+  ));
+
+  // archive_image_alignment
+  $wp_customize->add_setting( 'simple_life_options[archive_image_alignment]',
+     array(
+        'default'              => $simple_life_default_options['archive_image_alignment'],
+        'capability'           => 'edit_theme_options',
+        'sanitize_callback'    => 'simple_life_sanitize_select',
+     )
+  );
+  $wp_customize->add_control('simple_life_options[archive_image_alignment]', array(
+          'label'    => __( 'Archive Image Alignment', 'simple-life' ),
+          'section'  => 'simple_life_options_general',
+          'type'     => 'select',
+          'priority' => 125,
+          'choices'  => simple_life_get_image_alignment_options(),
+  ));
+
   // Blog Section
   $wp_customize->add_section( 'simple_life_options_blog',
      array(
-        'title'      => __( 'Blog', 'simple-life' ),
+        'title'      => __( 'Blog Options', 'simple-life' ),
         'priority'   => 100,
         'capability' => 'edit_theme_options',
         'panel'      => 'simple_life_options_panel',
@@ -111,8 +191,7 @@ function simple_life_customize_register( $wp_customize ) {
      array(
         'default'              => $simple_life_default_options['read_more_text'],
         'capability'           => 'edit_theme_options',
-        'sanitize_callback'    => 'simple_life_customizer_validate_read_more_text',
-        'sanitize_js_callback' => 'esc_attr',
+        'sanitize_callback'    => 'wp_filter_nohtml_kses',
      )
   );
   $wp_customize->add_control('simple_life_options[read_more_text]', array(
@@ -127,7 +206,7 @@ function simple_life_customize_register( $wp_customize ) {
      array(
         'default'              => $simple_life_default_options['excerpt_length'],
         'capability'           => 'edit_theme_options',
-        'sanitize_callback'    => 'simple_life_customizer_validate_excerpt_length',
+        'sanitize_callback'    => 'simple_life_sanitize_number_absint',
         'sanitize_js_callback' => 'esc_attr',
      )
   );
@@ -138,10 +217,64 @@ function simple_life_customize_register( $wp_customize ) {
           'priority' => 220,
   ));
 
+  // Search Section
+  $wp_customize->add_section( 'simple_life_options_search',
+     array(
+        'title'      => __( 'Search Options', 'simple-life' ),
+        'priority'   => 100,
+        'capability' => 'edit_theme_options',
+        'panel'      => 'simple_life_options_panel',
+     )
+  );
+
+  // search_placeholder
+  $wp_customize->add_setting( 'simple_life_options[search_placeholder]',
+     array(
+        'default'              => $simple_life_default_options['search_placeholder'],
+        'capability'           => 'edit_theme_options',
+        'sanitize_callback'    => 'wp_filter_nohtml_kses',
+     )
+  );
+  $wp_customize->add_control('simple_life_options[search_placeholder]', array(
+          'label'    => __( 'Search Placeholder', 'simple-life' ),
+          'section'  => 'simple_life_options_search',
+          'type'     => 'text',
+          'priority' => 220,
+  ));
+
+  // Pagination Section
+  $wp_customize->add_section( 'simple_life_options_pagination',
+     array(
+        'title'      => __( 'Pagination Options', 'simple-life' ),
+        'priority'   => 100,
+        'capability' => 'edit_theme_options',
+        'panel'      => 'simple_life_options_panel',
+     )
+  );
+  // pagination_type
+  $wp_customize->add_setting( 'simple_life_options[pagination_type]',
+     array(
+        'default'              => $simple_life_default_options['pagination_type'],
+        'capability'           => 'edit_theme_options',
+        'sanitize_callback'    => 'simple_life_sanitize_select',
+     )
+  );
+  $wp_customize->add_control('simple_life_options[pagination_type]', array(
+          'label'       => __( 'Pagination Type', 'simple-life' ),
+          'description' => sprintf( __( 'Numeric: Requires %sWP-PageNavi%s plugin', 'simple-life' ), '<a href="https://wordpress.org/plugins/wp-pagenavi/" target="_blank">','</a>' ),
+          'section'     => 'simple_life_options_pagination',
+          'type'        => 'select',
+          'priority'    => 220,
+          'choices'     => array(
+              'default' => __( 'Default', 'simple-life' ),
+              'numeric' => __( 'Numeric', 'simple-life' ),
+            ),
+  ));
+
   // Footer Section
   $wp_customize->add_section( 'simple_life_options_footer',
      array(
-        'title'      => __( 'Footer', 'simple-life' ),
+        'title'      => __( 'Footer Options', 'simple-life' ),
         'priority'   => 100,
         'capability' => 'edit_theme_options',
         'panel'      => 'simple_life_options_panel',
@@ -153,8 +286,7 @@ function simple_life_customize_register( $wp_customize ) {
      array(
         'default'              => $simple_life_default_options['footer_widgets'],
         'capability'           => 'edit_theme_options',
-        'sanitize_callback'    => 'esc_attr',
-        'sanitize_js_callback' => 'esc_attr',
+        'sanitize_callback'    => 'absint',
      )
   );
   $wp_customize->add_control('simple_life_options[footer_widgets]', array(
@@ -194,8 +326,7 @@ function simple_life_customize_register( $wp_customize ) {
      array(
         'default'              => $simple_life_default_options['powered_by'],
         'capability'           => 'edit_theme_options',
-        'sanitize_callback'    => 'esc_attr',
-        'sanitize_js_callback' => 'esc_attr',
+        'sanitize_callback'    => 'simple_life_sanitize_checkbox',
      )
   );
   $wp_customize->add_control('simple_life_options[powered_by]', array(
@@ -210,8 +341,7 @@ function simple_life_customize_register( $wp_customize ) {
      array(
         'default'              => $simple_life_default_options['go_to_top'],
         'capability'           => 'edit_theme_options',
-        'sanitize_callback'    => 'esc_attr',
-        'sanitize_js_callback' => 'esc_attr',
+        'sanitize_callback'    => 'simple_life_sanitize_checkbox',
      )
   );
   $wp_customize->add_control('simple_life_options[go_to_top]', array(

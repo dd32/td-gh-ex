@@ -35,26 +35,33 @@
 	 	<?php else: ?>
 	 			<?php if ( 'excerpt-thumb' == $content_layout ): ?>
 
+          <?php
+            // Full post
+            $archive_image_thumbnail_size = esc_attr( simple_life_get_option( 'archive_image_thumbnail_size' ) );
+            $archive_image_alignment = esc_attr( simple_life_get_option( 'archive_image_alignment' ) );
+           ?>
+
 					<div class="entry-summary entry-summary-with-thumbnail">
 				 		<?php if ( has_post_thumbnail()) : ?>
-				 			<div class="post-thumbnail-wrapper">
-				 				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-				 					<?php the_post_thumbnail( 'large', array( 'class' => 'aligncenter' ) ); ?>
-				 				</a>
-				 			</div>
+			 				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+			 					<?php the_post_thumbnail( $archive_image_thumbnail_size, array( 'class' => 'align' . $archive_image_alignment ) ); ?>
+			 				</a>
 				 		<?php endif; ?>
 				 		<?php the_excerpt(); ?>
 			 		</div>
 
 			 	<?php else: ?>
 
+          <?php
+            // Full post
+            $archive_image_thumbnail_size = esc_attr( simple_life_get_option( 'archive_image_thumbnail_size' ) );
+            $archive_image_alignment = esc_attr( simple_life_get_option( 'archive_image_alignment' ) );
+           ?>
 					<div class="entry-content">
 						<?php if ( has_post_thumbnail()) : ?>
-							<div class="post-thumbnail-wrapper">
-								<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-									<?php the_post_thumbnail( 'large', array( 'class' => 'aligncenter' ) ); ?>
-								</a>
-							</div>
+							<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+								<?php the_post_thumbnail( $archive_image_thumbnail_size, array( 'class' => 'align' . $archive_image_alignment ) ); ?>
+							</a>
 						<?php endif; ?>
 						<?php the_content( __( 'Continue reading', 'simple-life' ) . ' <span class="meta-nav">&rarr;</span>' ); ?>
 						<?php

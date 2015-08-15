@@ -175,7 +175,7 @@ endif; // simple_life_custom_excerpt_length
 add_filter( 'excerpt_length', 'simple_life_custom_excerpt_length', 999 );
 
 if ( ! function_exists( 'simple_life_excerpt_readmore' ) ) :
-  function simple_life_excerpt_readmore($more) {
+  function simple_life_excerpt_readmore( $more ) {
     global $post;
 
     $flag_apply_excerpt_readmore = apply_filters('simple_life_filter_excerpt_readmore', true );
@@ -206,7 +206,7 @@ if ( ! function_exists( 'simple_life_add_go_to_top' ) ) :
     function simple_life_add_go_to_top() {
 
       $go_to_top = simple_life_get_option( 'go_to_top' );
-      if ( 1 != $go_to_top ) {
+      if ( true != $go_to_top ) {
         return;
       }
       echo '<a href="#" class="scrollup" id="btn-scrollup"><span class="fa-stack"> <i class="fa fa-square fa-stack-2x"></i><i class="fa fa-angle-up fa-stack-1x fa-inverse"></i></span></a>';

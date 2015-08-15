@@ -16,22 +16,46 @@ function simple_life_paging_nav() {
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
 		return;
 	}
-	?>
-	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'simple-life' ); ?></h1>
-		<div class="nav-links">
+  $pagination_type = esc_attr( simple_life_get_option( 'pagination_type' ) );
 
-			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( '<span class="meta-nav"><i class="fa fa-chevron-left"></i></span> ' . __( 'Older posts', 'simple-life' ) ); ?></div>
-			<?php endif; ?>
+  switch ( $pagination_type ) {
+    case 'numeric':
+      if ( function_exists( 'wp_pagenavi' ) ) {
+        wp_pagenavi();
+      }
+      else{
+        the_posts_pagination( array(
+          'mid_size'           => 2,
+          'prev_text'          => '<span class="meta-nav"><i class="fa fa-chevron-left"></i></span> '.__( 'Previous page', 'simple-life' ),
+          'next_text'          => __( 'Next page', 'simple-life' ). ' <span class="meta-nav"><i class="fa fa-chevron-right"></i></span>',
+          'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'simple-life' ) . ' </span>',
+        ) );
+      }
+      break;
 
-			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts', 'simple-life' ) . ' <span class="meta-nav"><i class="fa fa-chevron-right"></i></span>' ); ?></div>
-			<?php endif; ?>
+    case 'default':
+      ?>
+      <nav class="navigation paging-navigation" role="navigation">
+        <h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'simple-life' ); ?></h1>
+        <div class="nav-links">
 
-		</div><!-- .nav-links -->
-	</nav><!-- .navigation -->
-	<?php
+          <?php if ( get_next_posts_link() ) : ?>
+          <div class="nav-previous"><?php next_posts_link( '<span class="meta-nav"><i class="fa fa-chevron-left"></i></span> ' . __( 'Older posts', 'simple-life' ) ); ?></div>
+          <?php endif; ?>
+
+          <?php if ( get_previous_posts_link() ) : ?>
+          <div class="nav-next"><?php previous_posts_link( __( 'Newer posts', 'simple-life' ) . ' <span class="meta-nav"><i class="fa fa-chevron-right"></i></span>' ); ?></div>
+          <?php endif; ?>
+
+        </div><!-- .nav-links -->
+      </nav><!-- .navigation -->
+      <?php
+      break;
+
+    default:
+      break;
+  }
+
 }
 endif;
 
