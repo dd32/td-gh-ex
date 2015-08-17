@@ -1,86 +1,43 @@
 <?php
 
-// add profile image option for contributors roles and higher
-function ct_tracks_user_profile_image_setting( $user ) { ?>
+if ( !function_exists( 'ct_tracks_social_array' ) ) {
+    function ct_tracks_social_array() {
 
-    <?php
-    $user_id = get_current_user_id();
+        $social_sites = array(
+            'twitter'       => 'twitter_profile',
+            'facebook'      => 'facebook_profile',
+            'googleplus'    => 'googleplus_profile',
+            'pinterest'     => 'pinterest_profile',
+            'linkedin'      => 'linkedin_profile',
+            'youtube'       => 'youtube_profile',
+            'vimeo'         => 'vimeo_profile',
+            'tumblr'        => 'tumblr_profile',
+            'instagram'     => 'instagram_profile',
+            'flickr'        => 'flickr_profile',
+            'dribbble'      => 'dribbble_profile',
+            'rss'           => 'rss_profile',
+            'reddit'        => 'reddit_profile',
+            'soundcloud'    => 'soundcloud_profile',
+            'spotify'       => 'spotify_profile',
+            'vine'          => 'vine_profile',
+            'yahoo'         => 'yahoo_profile',
+            'behance'       => 'behance_profile',
+            'codepen'       => 'codepen_profile',
+            'delicious'     => 'delicious_profile',
+            'stumbleupon'   => 'stumbleupon_profile',
+            'deviantart'    => 'deviantart_profile',
+            'digg'          => 'digg_profile',
+            'git'           => 'git_profile',
+            'hacker-news'   => 'hacker-news_profile',
+            'steam'         => 'steam_profile',
+            'vk'            => 'vk_profile',
+            'weibo'         => 'weibo_profile',
+            'tencent-weibo' => 'tencent_weibo_profile',
+            'email'         => 'email_profile'
+        );
 
-    // only added for contributors and above
-    if ( ! current_user_can( 'edit_posts', $user_id ) ) return false;
-    ?>
-
-    <table id="profile-image-table" class="form-table">
-
-        <tr>
-            <th><label for="user_profile_image"><?php _e( 'Profile image', 'tracks' ); ?></label></th>
-            <td>
-                <!-- Outputs the image after save -->
-                <img id="image-preview" src="<?php echo esc_url( get_the_author_meta( 'user_profile_image', $user->ID ) ); ?>" style="width:100px;"><br />
-                <!-- Outputs the text field and displays the URL of the image retrieved by the media uploader -->
-                <input type="text" name="user_profile_image" id="user_profile_image" value="<?php echo esc_url( get_the_author_meta( 'user_profile_image', $user->ID ) ); ?>" class="regular-text" />
-                <!-- Outputs the save button -->
-                <input type='button' id="user-profile-upload" class="button-primary" value="<?php _e( 'Upload Image', 'tracks' ); ?>"/><br />
-                <span class="description"><?php _e( 'Upload an image here to use instead of your Gravatar. Perfectly square images will not be cropped.', 'tracks' ); ?></span>
-            </td>
-        </tr>
-
-    </table><!-- end form-table -->
-<?php } // additional_user_fields
-
-add_action( 'show_user_profile', 'ct_tracks_user_profile_image_setting' );
-add_action( 'edit_user_profile', 'ct_tracks_user_profile_image_setting' );
-
-/**
- * Saves additional user fields to the database
- */
-function ct_tracks_save_user_profile_image( $user_id ) {
-
-    // only saves if the current user can edit user profiles
-    if ( ! current_user_can( 'edit_user', $user_id ) )
-        return false;
-
-    update_user_meta( $user_id, 'user_profile_image', esc_url_raw( $_POST['user_profile_image'] ) );
-}
-
-add_action( 'personal_options_update', 'ct_tracks_save_user_profile_image' );
-add_action( 'edit_user_profile_update', 'ct_tracks_save_user_profile_image' );
-
-function ct_tracks_social_array(){
-
-    $social_sites = array(
-        'twitter' => 'twitter_profile',
-        'facebook' => 'facebook_profile',
-        'googleplus' => 'googleplus_profile',
-        'pinterest' => 'pinterest_profile',
-        'linkedin' => 'linkedin_profile',
-        'youtube' => 'youtube_profile',
-        'vimeo' => 'vimeo_profile',
-        'tumblr' => 'tumblr_profile',
-        'instagram' => 'instagram_profile',
-        'flickr' => 'flickr_profile',
-        'dribbble' => 'dribbble_profile',
-        'rss' => 'rss_profile',
-        'reddit' => 'reddit_profile',
-        'soundcloud' => 'soundcloud_profile',
-        'spotify' => 'spotify_profile',
-        'vine' => 'vine_profile',
-        'yahoo' => 'yahoo_profile',
-        'behance' => 'behance_profile',
-        'codepen' => 'codepen_profile',
-        'delicious' => 'delicious_profile',
-        'stumbleupon' => 'stumbleupon_profile',
-        'deviantart' => 'deviantart_profile',
-        'digg' => 'digg_profile',
-        'git' => 'git_profile',
-        'hacker-news' => 'hacker-news_profile',
-        'steam' => 'steam_profile',
-        'vk' => 'vk_profile',
-        'weibo' => 'weibo_profile',
-        'tencent-weibo' => 'tencent_weibo_profile',
-        'email' => 'email_profile'
-    );
-    return $social_sites;
+        return apply_filters( 'ct_tracks_social_array_filter', $social_sites );
+    }
 }
 
 // add the social profile boxes to the user screen.

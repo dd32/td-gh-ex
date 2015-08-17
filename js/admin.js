@@ -61,7 +61,7 @@ jQuery(function($) {
                 });
 
                 // show youtube options if youtube video
-                if( response.includes('youtube.com') ) {
+                if( response.includes('youtube.com') || response.includes('youtu.be') ) {
                     $('.ct_tracks_video_youtube_controls_container.hide').removeClass('hide');
                 }
 
@@ -75,17 +75,4 @@ jQuery(function($) {
             }
         });
     }
-
-    $('#tracks-avatar-notice').on('click', '.notice-dismiss', function(){
-
-        // set up data object
-        var data = {
-            action: 'dismiss_tracks_avatar_notice',
-            dismissed: true,
-            security: '<?php echo $ajax_nonce; ?>'
-        };
-
-        // post data received from PHP respond
-        jQuery.post(ajaxurl, data);
-    });
 });

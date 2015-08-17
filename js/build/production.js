@@ -83,7 +83,10 @@
 })( window.jQuery || window.Zepto );
 jQuery(function($){
 
-    $('.entry-content, .excerpt-content, .featured-video').fitVids({
+    $('.entry-content, .excerpt-content').fitVids({
+        customSelector: 'iframe[src*="dailymotion.com"], iframe[src*="slideshare.net"], iframe[src*="animoto.com"], iframe[src*="blip.tv"], iframe[src*="funnyordie.com"], iframe[src*="hulu.com"], iframe[src*="ted.com"], iframe[src*="wordpress.tv"]'
+    });
+    $('.featured-video').fitVids({
         customSelector: 'iframe[src*="dailymotion.com"], iframe[src*="slideshare.net"], iframe[src*="animoto.com"], iframe[src*="blip.tv"], iframe[src*="funnyordie.com"], iframe[src*="hulu.com"], iframe[src*="ted.com"], iframe[src*="vine.co"], iframe[src*="wordpress.tv"], iframe[src*="soundcloud.com"]'
     });
 
@@ -98,6 +101,7 @@ jQuery(function($){
     }
     var body = $('body');
     var overflowContainer = $('#overflow-container');
+    var titleInfo = $('#title-info');
 
     // bind the tap event on the menu icon
     $('#toggle-navigation').bind('click', onTap);
@@ -156,6 +160,9 @@ jQuery(function($){
 
             // if page is shorter than menu, extend to fit menu
             overflowContainer.css('min-height', menuHeight + 240);
+
+            menuPrimary.css('padding-top', titleInfo.height() + 48);
+            menuPrimaryTracks.css('padding-top', $('#title-info').height() + 48);
 
             // watch scroll to auto-close the menu if visitor scrolls past it
             $(window).scroll(onScroll);
