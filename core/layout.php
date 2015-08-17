@@ -13,17 +13,17 @@ function cpotheme_styling_fonts(){
 add_action('widgets_init', 'cpotheme_init_sidebar');
 function cpotheme_init_sidebar(){
 	
-    register_sidebar(array('name' => __('Default Widgets', 'cpocore'),
+    register_sidebar(array('name' => __('Default Widgets', 'cpotheme'),
     'id' => 'primary-widgets',
-    'description' => __('Sidebar shown in all standard pages by default.', 'cpocore'),
+    'description' => __('Sidebar shown in all standard pages by default.', 'cpotheme'),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => '</div>',
     'before_title' => '<div class="widget-title heading">',
     'after_title' => '</div>'));
 	
-	register_sidebar(array('name' => __('Secondary Widgets', 'cpocore'),
+	register_sidebar(array('name' => __('Secondary Widgets', 'cpotheme'),
     'id' => 'secondary-widgets',
-    'description' => __('Shown in pages with more than one sidebar.', 'cpocore'),
+    'description' => __('Shown in pages with more than one sidebar.', 'cpotheme'),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => '</div>',
     'before_title' => '<div class="widget-title heading">',
@@ -34,8 +34,8 @@ function cpotheme_init_sidebar(){
 	for($count = 1; $count <= $footer_columns; $count++){
 		register_sidebar(array(
 		'id' => 'footer-widgets-'.$count,
-		'name' => __('Footer Widgets', 'cpocore').' '.$count,
-		'description' => __('Shown in the footer area.', 'cpocore'),
+		'name' => __('Footer Widgets', 'cpotheme').' '.$count,
+		'description' => __('Shown in the footer area.', 'cpotheme'),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<div class="widget-title heading">',
@@ -48,8 +48,8 @@ function cpotheme_init_sidebar(){
 add_action('widgets_init', 'cpotheme_init_menu');
 function cpotheme_init_menu(){
     register_nav_menus(array(
-	'top_menu' => __('Top Menu', 'cpocore'),
-    'main_menu' => __('Main Menu', 'cpocore'),
-    'footer_menu' => __('Footer Menu', 'cpocore')
+	'top_menu' => __('Top Menu', 'cpotheme'),
+    'main_menu' => __('Main Menu', 'cpotheme'),
+    'footer_menu' => __('Footer Menu', 'cpotheme')
 	));
 }

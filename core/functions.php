@@ -3,7 +3,9 @@
 //Calculate sidebar class to load
 function cpotheme_get_sidebar_position(){
 	$current_id = cpotheme_current_id();
-	if(is_tax() || is_category() || is_tag()){ 
+	if(is_home()){ 
+		$sidebar_layout = 'right';
+	}elseif(is_tax() || is_category() || is_tag()){ 
 		$sidebar_layout = cpotheme_tax_meta($current_id, 'layout_sidebar');
 	}else{
 		$sidebar_layout = get_post_meta($current_id, 'layout_sidebar', true);
@@ -164,7 +166,35 @@ if(!function_exists('cpotheme_current_id')){
 }
 
 
+//Return true if posts should be displayed on homepage
+function cpotheme_show_posts(){
+	$display = false;
+	if(!is_front_page() || cpotheme_get_option('home_posts') === true){
+		$display = true;
+	}
+	return $display;
+}
+
+
+//Return true if page title should be displayed
+function cpotheme_show_title(){
+	$display = false;
+	if(!is_front_page() && !is_home()){
+		$display = true;
+	}
+	return $display;
+}
+
+
 add_action('after_switch_theme', 'cpotheme_rewrite_flush');
 function cpotheme_rewrite_flush(){
     flush_rewrite_rules();
+}
+
+
+//Return the URL to the premium theme page
+function cpotheme_upgrade_link($name = 'Customizer'){
+	$url = esc_url(CPOTHEME_PREMIUM_URL.'?utm_source=upsell&utm_medium=theme&utm_campaign='.$name);
+	$link = '<a target="_blank" href="'.$url.'">'.esc_attr(CPOTHEME_PREMIUM_NAME).'</a>';
+	return $link;
 }

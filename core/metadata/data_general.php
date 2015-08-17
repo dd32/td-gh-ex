@@ -13,7 +13,7 @@ if(!function_exists('cpotheme_metadata_fonts_weight')){
 
 function cpotheme_metadata_sidebarposition(){
 	$core_path = get_template_directory_uri().'/core/';
-	if(defined('CPO_CORELITE_URL')) $core_path = CPO_CORELITE_URL;
+	if(defined('CPOTHEME_CORELITE_URL')) $core_path = CPOTHEME_CORELITE_URL;
 	$cpotheme_data = array(
 	'right' => $core_path.'/images/admin/sidebar_position_right.gif',
 	'none' => $core_path.'/images/admin/sidebar_position_none.gif',
@@ -22,11 +22,19 @@ function cpotheme_metadata_sidebarposition(){
 	return $cpotheme_data;
 }
 
+if(!function_exists('cpotheme_metadata_layoutstyle')){
+	function cpotheme_metadata_layoutstyle(){
+		$data = array(
+		'fixed' => __('Full Width', 'cpotheme'),
+		'boxed' => __('Boxed', 'cpotheme'));
+		return $data;
+	}
+}
 
 function cpotheme_metadata_featured_page(){
 	$data = array(
-	'none' => __('None', 'cpocore'),
-	'slider' => __('In The Slider', 'cpocore'),
-	'features' => __('In The Featured Boxes', 'cpocore'));
+	'none' => __('None', 'cpotheme'),
+	'slider' => __('In The Slider', 'cpotheme'),
+	'features' => __('In The Featured Boxes', 'cpotheme'));
 	return apply_filters('cpotheme_metadata_featured_page', $data);
 }

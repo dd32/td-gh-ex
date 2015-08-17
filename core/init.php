@@ -5,12 +5,12 @@ if(!function_exists('cpotheme_setup')){
 	function cpotheme_setup(){
 		//Set core variables
 		define('CPOCORE_STORE', 'http://www.cpothemes.com');
-		define('CPOCORE_VERSION', '4.3.0');
+		define('CPOCORE_VERSION', '4.3.1');
 		define('CPOCORE_AUTHOR', 'CPOThemes');
 		if(!defined('CPOTHEME_ID')) define('CPOTHEME_ID', 'core');
 		if(!defined('CPOTHEME_NAME')) define('CPOTHEME_NAME', 'theme');
 		if(!defined('CPOTHEME_VERSION')) define('CPOTHEME_VERSION', '1.0.0');
-		if(!defined('CPOTHEME_PREMIUM_NAME')) define('CPOTHEME_PREMIUM_NAME', __('Premium Version', 'cpocore'));
+		if(!defined('CPOTHEME_PREMIUM_NAME')) define('CPOTHEME_PREMIUM_NAME', __('Premium Version', 'cpotheme'));
 		if(!defined('CPOTHEME_PREMIUM_URL')) define('CPOTHEME_PREMIUM_URL', 'http://www.cpothemes.com');
 		if(!defined('CPOTHEME_THUMBNAIL_WIDTH')) define('CPOTHEME_THUMBNAIL_WIDTH', '600');
 		if(!defined('CPOTHEME_THUMBNAIL_HEIGHT')) define('CPOTHEME_THUMBNAIL_HEIGHT', '400');
@@ -34,8 +34,8 @@ if(!function_exists('cpotheme_setup')){
 		
 		//Load translation text domain and make translation available
 		$languages_path = get_template_directory().'/core/languages';
-		if(defined('CPO_CORELITE')) $languages_path = CPO_CORELITE.'/languages';
-		load_theme_textdomain('cpocore', $languages_path);
+		if(defined('CPOTHEME_CORELITE')) $languages_path = CPOTHEME_CORELITE.'/languages';
+		load_theme_textdomain('cpotheme', $languages_path);
 		$locale = get_locale();
 		$locale_file = get_template_directory()."/languages/$locale.php";
 		if(is_readable($locale_file)) require_once($locale_file);
@@ -48,7 +48,7 @@ if(!function_exists('cpotheme_scripts_front')){
 	function cpotheme_scripts_front( ){
 		$scripts_theme_path = get_template_directory_uri().'/scripts/';
 		$scripts_path = get_template_directory_uri().'/core/scripts/';
-		if(defined('CPO_CORELITE_URL')) $scripts_path = CPO_CORELITE_URL.'/scripts/';
+		if(defined('CPOTHEME_CORELITE_URL')) $scripts_path = CPOTHEME_CORELITE_URL.'/scripts/';
 
 		//Enqueue necessary scripts already in the WordPress core
 		//wp_enqueue_script('jquery-ui-core');
@@ -70,7 +70,7 @@ if(!function_exists('cpotheme_scripts_back')){
 		$screen = get_current_screen();
 		$scripts_theme_path = get_template_directory_uri().'/scripts/';
 		$scripts_path = get_template_directory_uri().'/core/scripts/';
-		if(defined('CPO_CORELITE_URL')) $scripts_path = CPO_CORELITE_URL.'/scripts/';
+		if(defined('CPOTHEME_CORELITE_URL')) $scripts_path = CPOTHEME_CORELITE_URL.'/scripts/';
 
 		//Common scripts
 		wp_enqueue_script('jquery-ui-core');
@@ -95,7 +95,7 @@ if(!function_exists('cpotheme_add_styles')){
 	add_action('wp_enqueue_scripts', 'cpotheme_add_styles');
 	function cpotheme_add_styles(){
 		$stylesheets_path = get_template_directory_uri().'/core/css/';
-		if(defined('CPO_CORELITE_URL')) $stylesheets_path = CPO_CORELITE_URL.'/css/';
+		if(defined('CPOTHEME_CORELITE_URL')) $stylesheets_path = CPOTHEME_CORELITE_URL.'/css/';
 		
 		//Common styles
 		wp_enqueue_style('cpotheme-base', $stylesheets_path.'base.css');
@@ -112,7 +112,7 @@ if(!function_exists('cpotheme_add_admin_styles')){
 	add_action('admin_print_styles', 'cpotheme_add_admin_styles');
 	function cpotheme_add_admin_styles(){
 		$stylesheets_path = get_template_directory_uri().'/core/css/';
-		if(defined('CPO_CORELITE_URL')) $stylesheets_path = CPO_CORELITE_URL.'/css/';
+		if(defined('CPOTHEME_CORELITE_URL')) $stylesheets_path = CPOTHEME_CORELITE_URL.'/css/';
 		
 		add_editor_style($stylesheets_path.'editor.css');
 		
@@ -128,7 +128,7 @@ if(!function_exists('cpotheme_add_admin_styles')){
 
 //Add all Core components
 $core_path = get_template_directory().'/core/';
-if(defined('CPO_CORELITE')) $core_path = CPO_CORELITE;
+if(defined('CPOTHEME_CORELITE')) $core_path = CPOTHEME_CORELITE;
 	
 //Classes
 require_once($core_path.'classes/class_customizer.php');

@@ -100,12 +100,12 @@ if(!function_exists('cpotheme_form_yesno')){
 		$output = '';
 		$output .= '<label for="'.$name.'_yes">';
 		$output .= '<input type="radio" name="'.$name.'" id="'.$name.'_yes" value="1" '.$checked_yes.'/>'; 
-		$output .= __('Yes', 'cpocore').'</label>';
+		$output .= __('Yes', 'cpotheme').'</label>';
 		$output .= '&nbsp;&nbsp;&nbsp;&nbsp;';
 		
 		$output .= '<label for="'.$name.'_no">';
 		$output .= '<input type="radio" name="'.$name.'" id="'.$name.'_no" value="0" '.$checked_no.'/>'; 
-		$output .= __('No', 'cpocore').'</label>';
+		$output .= __('No', 'cpotheme').'</label>';
 		return $output;
 	}
 }
@@ -249,13 +249,13 @@ if(!function_exists('cpotheme_form_collection')){
 				$output .= '</td>';
 			}
 			$output .= '<td>';
-			$output .= '<a href="#" tabindex="-1" class="collection-remove-row">'.__('Remove', 'cpocore').'</a>';
+			$output .= '<a href="#" tabindex="-1" class="collection-remove-row">'.__('Remove', 'cpotheme').'</a>';
 			$output .= '</td>';
 			$output .= '</tr>';
 		}
 		$output .= '<tr>';
 		$output .= '<td>';
-		$output .= '<a href="#" class="button collection-add-row">'.__('Add Row', 'cpocore').'</a>';
+		$output .= '<a href="#" class="button collection-add-row">'.__('Add Row', 'cpotheme').'</a>';
 		$output .= '</td>';
 		$output .= '</tr>';
 		$output .= '</table>';
@@ -286,13 +286,13 @@ if(!function_exists('cpotheme_form_upload')){
 		if(isset($args['placeholder'])) $field_placeholder = ' placeholder="'.$args['placeholder'].'"'; else $field_placeholder = '';		
 		if(stripslashes($value) != '')
 			$image = stripslashes($value);
-		elseif(defined('CPO_CORELITE_URL'))
-			$image = CPO_CORELITE_URL.'/images/noimage.jpg';
+		elseif(defined('CPOTHEME_CORELITE_URL'))
+			$image = CPOTHEME_CORELITE_URL.'/images/noimage.jpg';
 		else
 			$image = get_template_directory_uri().'/core/images/noimage.jpg';
 		
 		$output = '<input class="upload_field" type="upload" value="'.stripslashes($value).'" name="'.$name.'" id="'.$name.'-field"/>';
-		$output .= '<input class="upload_button" type="button" value="'.__('Upload', 'cpocore').'" name="'.$name.'" id="'.$name.'-button"/>';
+		$output .= '<input class="upload_button" type="button" value="'.__('Upload', 'cpotheme').'" name="'.$name.'" id="'.$name.'-button"/>';
 		$output .= '<img class="upload_preview" id="'.$name.'-preview" src="'.$image.'"/>';
 		return $output;	    
 	}
@@ -316,7 +316,7 @@ if(!function_exists('cpotheme_form_font')){
 		$output .= '<div class="font_file" id="'.$name.'-file">';
 		$output .= "<link href='http://fonts.googleapis.com/css?family=".$value."' rel='stylesheet' type='text/css'>";
 		$output .= '</div>';
-		$output .= '<div type="text" class="font_preview" id="'.$name.'-preview" style="font-family:\''.$font_name.'\'; font-weight:'.$weight.';">'.__('This is a font preview image', 'cpocore').'</div>';
+		$output .= '<div type="text" class="font_preview" id="'.$name.'-preview" style="font-family:\''.$font_name.'\'; font-weight:'.$weight.';">'.__('This is a font preview image', 'cpotheme').'</div>';
 		return $output;
 	}
 }

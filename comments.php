@@ -1,4 +1,4 @@
-<?php if(!(is_page() && !comments_open())): ?>
+<?php if(is_singular('post') || comments_open()): ?>
 <div id="comments" class="comments">
 	<?php if(cpotheme_comments_protected()) return; ?>
 	

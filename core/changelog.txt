@@ -1,3 +1,9 @@
+Version 4.3.1
+Tweaks - Added better escaping
+Tweaks - Renamed functions for a more consistent namespace
+Tweaks - Reorganized the options in the customizer for easier management
+Tweaks - Removed the Custom CSS field in the customizer due to being plugin territory.
+
 Version 4.3.0
 Feature - Added support for featured posts and pages
 Feature - Added WPML support for text-based fields in the Customizer

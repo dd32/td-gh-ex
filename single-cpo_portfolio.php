@@ -15,6 +15,7 @@
 				<?php cpotheme_post_pagination(); ?>
 				<div class="clear"></div>
 			</div>
+			<?php comments_template('', true); ?>
 			<?php endwhile; ?>
 			
 			<?php do_action('cpotheme_after_content'); ?>

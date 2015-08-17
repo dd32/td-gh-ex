@@ -1,6 +1,8 @@
 <?php get_header(); ?>
 
-<?php if(cpotheme_get_option('home_posts') === true): ?>
+<?php get_template_part('element', 'page-header'); ?>
+
+<?php if(cpotheme_show_posts()): ?>
 <div id="main" class="main">
 	<div class="container">		
 		<section id="content" class="content">
