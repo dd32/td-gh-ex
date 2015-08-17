@@ -102,3 +102,8 @@ Version 1.2.3
 
 Version 1.2.4
 	* CSS and Design match
+
+Version 1.2.5
+	* Table CSS Tweak
+	* Services Section Tweak
+	

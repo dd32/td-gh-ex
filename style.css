@@ -4,7 +4,7 @@ Theme URI: http://demo.webulous.in/abaris/
 Author: N. Venkat Raj
 Author URI: http://www.webulousthemes.com/
 Description: Abaris is a multi purpose, responsive theme with beautiful design and cool CSS3 animations. It supports "Jigoshop" to turn your WordPress website into a dynamic eCommerce store. It uses HTML5, CSS3, Bootstrap Grid system and coded with love and care. It's best suited for corporate/portfolio/blog sites. It has advanced theme options panel support to customize various parts of site, footer widget area to accommodate 4 widgets. Check the demo at http://demo.webulous.in/abaris/
-Version: 1.2.4
+Version: 1.2.5
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: abaris
@@ -304,6 +304,10 @@ th {
 	border-width: 0 1px 1px 0;
 }
 
+thead th {
+	text-transform: uppercase;	
+}
+
 td {
 	border-width: 0 1px 1px 0;
 }
@@ -311,7 +315,6 @@ td {
 table td, 
 table th {
 	padding: 10px;
-	text-align: center;	
 }
 
 table caption {
@@ -2236,7 +2239,7 @@ blockquote p {
 /* Home Page Features Styles Starts 
 --------------------------------------- */
 .services {
-	padding: 40px 0;
+	padding: 70px 0 50px;
 	text-align: center;	
 	background-color: #1F2329;
 }
@@ -2275,7 +2278,6 @@ blockquote p {
 .service p {
 	padding: 0 20px;
 	text-align: center;
-	min-height: 94px;
 	color: #fefefe;
 }
 
