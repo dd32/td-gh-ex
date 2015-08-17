@@ -20,7 +20,7 @@ function agama_textarea_register($wp_customize){
 			<a title="<?php esc_attr_e( 'Donate', 'agama' ); ?>" href="<?php echo esc_url( 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BR55TPNQEK28L' ); ?>" target="_blank">
 			<?php _e( 'Donate', 'agama' ); ?>
 			</a>
-			<a title="<?php esc_attr_e( 'Review Agama', 'Agama' ); ?>" href="<?php echo esc_url( 'http://wordpress.org/support/view/theme-reviews/agama' ); ?>" target="_blank">
+			<a title="<?php esc_attr_e( 'Review Agama', 'agama' ); ?>" href="<?php echo esc_url( 'http://wordpress.org/support/view/theme-reviews/agama' ); ?>" target="_blank">
 			<?php _e( 'Rate Agama', 'agama' ); ?>
 			</a>
 			<a href="<?php echo esc_url( 'http://theme-vision.com/forums/' ); ?>" title="<?php esc_attr_e( 'Support Forum', 'agama' ); ?>" target="_blank">

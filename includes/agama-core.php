@@ -28,7 +28,7 @@ if( ! class_exists( 'Agama_Core' ) ) {
 
 			// Set up Agama version
 			if( !defined( 'AGAMA_VER' ) ) {
-				define( 'AGAMA_VER', '1.0.7' );
+				define( 'AGAMA_VER', '1.0.8' );
 			}
 			
 			// Defina Agama URI
