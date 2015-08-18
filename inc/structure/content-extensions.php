@@ -136,11 +136,11 @@ function interface_theloop_for_archive() {
       </div>
       <?php } ?>
       <!-- .entry-meta -->
-      <h1 class="entry-title"> <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>">
+      <h2 class="entry-title"> <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>">
         <?php the_title();?>
-        </a> </h1>
+        </a> </h2>
       <!-- .entry-title -->
-       <?php if (get_the_author() !=''){?>
+       <?php if (has_category() !=''){?>
       <div class="entry-meta clearfix">
         <div class="by-author vcard author"><span class="fn"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" 
                         title="<?php  esc_attr(the_author()); ?>">
@@ -188,9 +188,9 @@ function interface_theloop_for_archive() {
 	}
 	else {
 		?>
-<h1 class="entry-title">
+<h2 class="entry-title">
   <?php _e( 'No Posts Found.', 'interface' ); ?>
-</h1>
+</h2>
 <?php
    }
 }
@@ -251,9 +251,9 @@ function interface_theloop_for_page() {
 	}
 	else {
 		?>
-<h1 class="entry-title">
+<h2 class="entry-title">
   <?php _e( 'No Posts Found.', 'interface' ); ?>
-</h1>
+</h2>
 <?php
    }
 }
@@ -297,9 +297,9 @@ function interface_theloop_for_single() {
       </div>
       <!-- .entry-meta -->
      
-      <h1 class="entry-title">
+      <h2 class="entry-title">
         <?php the_title();?>
-      </h1>
+      </h2>
       <!-- .entry-title -->
       <div class="entry-meta clearfix">
         <div class="by-author vcard author"><span class="fn"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"  title="<?php  esc_attr(the_author()); ?>">
@@ -369,9 +369,9 @@ function interface_theloop_for_single() {
 	}
 	else {
 		?>
-<h1 class="entry-title">
+<h2 class="entry-title">
   <?php _e( 'No Posts Found.', 'interface' ); ?>
-</h1>
+</h2>
 <?php
    }
 }
@@ -396,9 +396,9 @@ function interface_theloop_for_search() {
   <article>
     <?php do_action( 'interface_before_post_header' ); ?>
     <header class="entry-header">
-      <h1 class="entry-title"> <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>">
+      <h2 class="entry-title"> <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>">
         <?php the_title(); ?>
-        </a> </h1>
+        </a> </h2>
       <!-- .entry-title --> 
     </header>
     <?php do_action( 'interface_after_post_header' ); ?>
@@ -416,9 +416,9 @@ function interface_theloop_for_search() {
 	}
 	else {
 		?>
-<h1 class="entry-title">
+<h2 class="entry-title">
   <?php _e( 'No Posts Found.', 'interface' ); ?>
-</h1>
+</h2>
 <?php
    }
 }
@@ -476,9 +476,9 @@ function interface_theloop_for_template_blog_image_large() {
         </span><!-- .cat-links --> 
       </div>
       <!-- .entry-meta -->
-      <h1 class="entry-title"> <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>">
+      <h2 class="entry-title"> <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>">
         <?php the_title();?>
-        </a> </h1>
+        </a> </h2>
       <!-- .entry-title -->
       <div class="entry-meta clearfix">
         <div class="by-author vcard author"><span class="fn"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"  title="<?php  esc_attr(the_author()); ?>">
@@ -540,9 +540,9 @@ function interface_theloop_for_template_blog_image_large() {
 	}
 	else {
 		?>
-<h1 class="entry-title">
+<h2 class="entry-title">
   <?php _e( 'No Posts Found.', 'interface' ); ?>
-</h1>
+</h2>
 <?php
    }
    $wp_query = $temp_query;
@@ -590,9 +590,9 @@ function interface_theloop_for_template_blog_image_medium() {
         </span><!-- .cat-links --> 
       </div>
       <!-- .entry-meta -->
-      <h1 class="entry-title"> <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>">
+      <h2 class="entry-title"> <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>">
         <?php the_title();?>
-        </a> </h1>
+        </a> </h2>
       <!-- .entry-title -->
       <div class="entry-meta clearfix">
         <div class="by-author vcard author"><span class="fn"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" title="<?php  esc_attr(the_author()); ?>">
@@ -664,9 +664,9 @@ function interface_theloop_for_template_blog_image_medium() {
 	}
 	else {
 		?>
-<h1 class="entry-title">
+<h2 class="entry-title">
   <?php _e( 'No Posts Found.', 'interface' ); ?>
-</h1>
+</h2>
 <?php
    }
    $wp_query = $temp_query;
@@ -715,9 +715,9 @@ function interface_theloop_for_template_blog_full_content() {
         </span><!-- .cat-links --> 
       </div>
       <!-- .entry-meta -->
-      <h1 class="entry-title"> <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>">
+      <h2 class="entry-title"> <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>">
         <?php the_title();?>
-        </a> </h1>
+        </a> </h2>
       <!-- .entry-title -->
       <div class="entry-meta clearfix">
         <div class="by-author vcard author"><span class="fn"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"  title="<?php  esc_attr(the_author()); ?>">
@@ -785,9 +785,9 @@ function interface_theloop_for_template_blog_full_content() {
 				}
 				else {
 					?>
-<h1 class="entry-title">
+<h2 class="entry-title">
   <?php _e( 'No Posts Found.', 'interface' ); ?>
-</h1>
+</h2>
 <?php
 			   }
 			   $wp_query = $temp_query;
@@ -994,9 +994,9 @@ function interface_display_contact_page_template_content() {
 			}
 			else {
 				?>
-      <h1 class="entry-title">
+      <h2 class="entry-title">
         <?php _e( 'No Posts Found.', 'interface' ); ?>
-      </h1>
+      </h2>
       <?php
 		   }
 		   ?>
@@ -1022,9 +1022,9 @@ function interface_display_404_page_content() {
 ?>
   <div id="content">
     <header class="entry-header">
-      <h1 class="entry-title">
+      <h2 class="entry-title">
         <?php _e( 'Error 404-Page NOT Found', 'interface' ); ?>
-        </a></h1>
+        </a></h2>
     </header>
     <div class="entry-content clearfix" >
       <p>

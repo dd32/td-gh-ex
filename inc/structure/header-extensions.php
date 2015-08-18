@@ -286,10 +286,16 @@ if (1 != $options['disable_top']) {
       <?php 
 						if( $options[ 'header_show' ] != 'disable-both' && $options[ 'header_show' ] == 'header-text' ) {
 						?>
-      <h1 id="site-title"> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+						<?php if(is_single() || (!is_page_template('page-templates/page-template-business.php' )) && !is_home()){ ?>
+      <h2 id="site-title"> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+        <?php bloginfo( 'name' ); ?>
+        </a> </h2>
+        <?php } else { ?>
+        <h1 id="site-title"> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
         <?php bloginfo( 'name' ); ?>
         </a> </h1>
-       <?php $site_description = get_bloginfo( 'description', 'display' );
+        <?php }
+       $site_description = get_bloginfo( 'description', 'display' );
 			if($site_description){?>
       <h2 id="site-description">
         <?php bloginfo( 'description' ); ?>
@@ -299,8 +305,12 @@ if (1 != $options['disable_top']) {
 						}
 						elseif( $options[ 'header_show' ] != 'disable-both' && $options[ 'header_show' ] == 'header-logo' ) {
 						?>
-      <h1 id="site-title"> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"> <img src="<?php echo $options[ 'header_logo' ]; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"> </a> </h1>
+							<?php if(is_single() || (!is_page_template('page-templates/page-template-business.php' )) && !is_home()){ ?>
+      <h2 id="site-title"> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"> <img src="<?php echo $options[ 'header_logo' ]; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"> </a> </h2>
       <?php
+   						} else{ ?>
+   						<h1 id="site-title"> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"> <img src="<?php echo $options[ 'header_logo' ]; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"> </a> </h1>
+   					<?php	}
 						}
 						?>
     </section>

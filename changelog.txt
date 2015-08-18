@@ -1,5 +1,9 @@
 == CHANGE LOG ==
 
+= 2.0.3 =
+ - Fix - Heading tag placement fixed for better SEO
+ - Fix - bbPress comment edit issue fixed
+
 = 2.0.2 =
 - Fix - Decrepted notice issue fixed in widgets for WordPress 4.3
 - Update - video/comment section spacing fixed

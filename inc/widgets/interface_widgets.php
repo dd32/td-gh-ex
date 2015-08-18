@@ -22,8 +22,8 @@ function interface_widgets_init() {
 		'description'   	=> __( 'Shows widgets at Left side.', 'interface' ),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  	=> '</aside>',
-		'before_title'  	=> '<h1 class="widget-title">',
-		'after_title'   	=> '</h1>'
+		'before_title'  	=> '<h2 class="widget-title">',
+		'after_title'   	=> '</h2>'
 	) );
 
 	// Registering main right sidebar
@@ -33,8 +33,8 @@ function interface_widgets_init() {
 		'description'   	=> __( 'Shows widgets at Right side.', 'interface' ),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  	=> '</aside>',
-		'before_title'  	=> '<h1 class="widget-title">',
-		'after_title'   	=> '</h1>'
+		'before_title'  	=> '<h2 class="widget-title">',
+		'after_title'   	=> '</h2>'
 	) );
 
 	// Registering Business Page template sidebar
@@ -44,8 +44,8 @@ function interface_widgets_init() {
 		'description'   	=> __( 'Shows widgets on Business Page Template. Suitable widget: Theme Horse: Featured Recent Work, Theme Horse: Testimonial, Theme Horse: Services, Theme Horse: PromoBox', 'interface' ),
 		'before_widget' 	=> '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  	=> '</section>',
-		'before_title'  	=> '<h1 class="widget-title">',
-		'after_title'   	=> '</h1>',
+		'before_title'  	=> '<h2 class="widget-title">',
+		'after_title'   	=> '</h2>',
 		
 	) );
 	
@@ -56,8 +56,8 @@ function interface_widgets_init() {
 		'description'   	=> __( 'Shows widgets on Business Page Template at bottom of the page. Suitable widget: Theme Horse: Featured Image', 'interface' ),
 		'before_widget' 	=> '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  	=> '</div>',
-		'before_title'  	=> '<h1 class="widget-title">',
-		'after_title'   	=> '</h1>',
+		'before_title'  	=> '<h2 class="widget-title">',
+		'after_title'   	=> '</h2>',
 		
 	) );
 
@@ -68,8 +68,8 @@ function interface_widgets_init() {
 		'description'   	=> __( 'Shows widgets on Contact Page Template.', 'interface' ),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  	=> '</aside>',
-		'before_title'  	=> '<h1 class="widget-title">',
-		'after_title'   	=> '</h1>'
+		'before_title'  	=> '<h2 class="widget-title">',
+		'after_title'   	=> '</h2>'
 	) );
 
 	/** 
@@ -82,8 +82,8 @@ function interface_widgets_init() {
 		'description'   	=> __( 'Shows widgets at footer Column 1.', 'interface' ),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  	=> '</aside>',
-		'before_title'  	=> '<h1 class="widget-title">',
-		'after_title'   	=> '</h1>'
+		'before_title'  	=> '<h2 class="widget-title">',
+		'after_title'   	=> '</h2>'
 	) );
 
 	// Registering footer sidebar 2
@@ -93,8 +93,8 @@ function interface_widgets_init() {
 		'description'   	=> __( 'Shows widgets at footer Column 2.', 'interface' ),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  	=> '</aside>',
-		'before_title'  	=> '<h1 class="widget-title">',
-		'after_title'   	=> '</h1>'
+		'before_title'  	=> '<h2 class="widget-title">',
+		'after_title'   	=> '</h2>'
 	) );
 
 	// Registering footer sidebar 3
@@ -104,8 +104,8 @@ function interface_widgets_init() {
 		'description'   	=> __( 'Shows widgets at footer Column 3.', 'interface' ),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  	=> '</aside>',
-		'before_title'  	=> '<h1 class="widget-title">',
-		'after_title'   	=> '</h1>'
+		'before_title'  	=> '<h2 class="widget-title">',
+		'after_title'   	=> '</h2>'
 	) );
 
 	// Registering widgets
