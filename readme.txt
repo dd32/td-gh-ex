@@ -133,8 +133,8 @@ https://pixabay.com/en/trousers-underwear-nostalgia-past-362781/
 
 == Changelog ==
 
-= 4 August 2015 =
-
+= 17 August 2015 =
+* Add context for comment title.
 
 = 3 August 2015 =
 * Update as per .org review.

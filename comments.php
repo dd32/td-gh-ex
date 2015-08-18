@@ -23,7 +23,7 @@ if ( post_password_required() ) {
 		<h2 class="comments-title">
 			<?php
 			printf( // WPCS: XSS OK.
-				esc_html( _nx( 'One comment', '%s comments', get_comments_number(), 'apostrophe' ) ),
+				esc_html( _nx( 'One comment', '%s comments', get_comments_number(), 'comments title', 'apostrophe' ) ),
 			number_format_i18n( get_comments_number() ) );
 			?>
 		</h2>
