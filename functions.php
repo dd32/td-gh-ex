@@ -156,7 +156,7 @@ function adelle_setup() {
   // ==================================================================
   // Menu location
   // ==================================================================
-  register_nav_menu( 'top_menu', __( 'Top Menu','adelle-theme' ) );
+  register_nav_menu( 'top_menu', __( 'Top Menu', 'adelle-theme' ) );
 
   // ==================================================================
   // Custom background
@@ -192,6 +192,11 @@ function adelle_setup() {
   }
   add_filter( 'wp_page_menu_args', 'adelle_theme_home_page_menu' );
 
+  // ==================================================================
+  // Header title tag support
+  // ==================================================================
+  add_theme_support( 'title-tag' );
+
 // ====================================================================================================================================
 // Innit
 // ====================================================================================================================================
@@ -203,7 +208,7 @@ add_action( 'after_setup_theme', 'adelle_setup' );
 // ==================================================================
 function adelle_theme_check_referrer() {
   if (!isset($_SERVER['HTTP_REFERER']) || $_SERVER['HTTP_REFERER'] == "" ) {
-    wp_die( __( 'Please enable referrers in your browser.','adelle-theme' ) );
+    wp_die( __( 'Please enable referrers in your browser.', 'adelle-theme' ) );
   }
 }
 add_action( 'check_comment_flood', 'adelle_theme_check_referrer' );
@@ -213,7 +218,7 @@ add_action( 'check_comment_flood', 'adelle_theme_check_referrer' );
 // ==================================================================
 function adelle_theme_time_ago( $type = 'comment' ) {
   $d = 'comment' == $type ? 'get_comment_time' : 'get_post_time';
-  return human_time_diff($d( 'U' ), current_time( 'timestamp' )) . " " . __( 'ago','adelle-theme' );
+  return human_time_diff($d( 'U' ), current_time( 'timestamp' )) . " " . __( 'ago', 'adelle-theme' );
 }
 
 // ==================================================================
@@ -225,31 +230,24 @@ $GLOBALS['comment'] = $comment; ?>
   <article class="comment-content" id="comment-<?php comment_ID(); ?>">
     <div class="comment-meta">
     <?php echo get_avatar($comment, $size = '32' ); ?>
-    <?php printf(__( '<h6>%s</h6>','adelle-theme' ), get_comment_author_link()) ?>
-    <small><?php printf( __( '%1$s at %2$s','adelle-theme' ), get_comment_date(), get_comment_time()) ?> (<?php printf( __( '%s','adelle-theme' ), adelle_theme_time_ago() ) ?>)</small>
+    <?php printf(__( '<h6>%s</h6>', 'adelle-theme' ), get_comment_author_link()) ?>
+    <small><?php printf( __( '%1$s at %2$s', 'adelle-theme' ), get_comment_date(), get_comment_time()) ?> (<?php printf( __( '%s', 'adelle-theme' ), adelle_theme_time_ago() ) ?>)</small>
     </div>
-  <?php if ($comment->comment_approved == '0' ) : ?><em><?php _e( 'Your comment is awaiting moderation.','adelle-theme' ) ?></em><br /><?php endif; ?>
+  <?php if ($comment->comment_approved == '0' ) : ?><em><?php _e( 'Your comment is awaiting moderation.', 'adelle-theme' ) ?></em><br /><?php endif; ?>
   <?php comment_text() ?>
   <?php comment_reply_link(array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
   </article>
 <?php }
 
 // ==================================================================
-// Header title
+// WordPress header title backward compatibility
 // ==================================================================
-function adelle_theme_wp_title( $title, $sep ) {
-	global $paged, $page;
-	if ( is_feed() )
-		return $title;
-	$title .= get_bloginfo( 'name' );
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'adelle' ), max( $paged, $page ) );
-	return $title;
-}
-add_filter( 'wp_title', 'adelle_theme_wp_title', 10, 2 );
+if ( ! function_exists( '_wp_render_title_tag' ) ) :
+  function adelle_theme_render_title() {
+    echo wp_title();
+  }
+  add_action( 'wp_head', 'adelle_theme_render_title' );
+endif;
 
 // ==================================================================
 // Post/page pagination
@@ -257,13 +255,13 @@ add_filter( 'wp_title', 'adelle_theme_wp_title', 10, 2 );
 function adelle_theme_get_link_pages() {
   wp_link_pages(
     array(
-    'before'           => '<p class="page-pagination"><span class="page-pagination-title">' . __( 'Pages:','adelle-theme' ) . '</span>',
+    'before'           => '<p class="page-pagination"><span class="page-pagination-title">' . __( 'Pages:', 'adelle-theme' ) . '</span>',
     'after'            => '</p>',
     'link_before'      => '<span class="page-pagination-number">',
     'link_after'       => '</span>',
     'next_or_number'   => 'number',
-    'nextpagelink'     => __( 'Next page','adelle-theme' ),
-    'previouspagelink' => __( 'Previous page','adelle-theme' ),
+    'nextpagelink'     => __( 'Next page', 'adelle-theme' ),
+    'previouspagelink' => __( 'Previous page', 'adelle-theme' ),
     'pagelink'         => '%',
     'echo'             => 1
     )
@@ -296,8 +294,8 @@ function adelle_theme_pagination_links() {
       'current'		=> $paged,
       'total'			=> $GLOBALS['wp_query']->max_num_pages,
       'prev_next'	=> true,
-      'prev_text'	=> __( 'Previous','ace' ),
-      'next_text'	=> __( 'Next','ace' ),
+      'prev_text'	=> __( 'Previous', 'adelle-theme' ),
+      'next_text'	=> __( 'Next', 'adelle-theme' ),
     ) );
     if ( $links ) :
     ?>
@@ -312,15 +310,31 @@ function adelle_theme_pagination_links() {
 // ==================================================================
 function adelle_widgets_init() {
   register_sidebar(array(
-    'name' => __( 'Right Widget 1','adelle-theme' ),
-    'id' => 'right-widget',
-    'description' => 'Right side widget area',
+    'name'          => __( 'Right Widget', 'adelle-theme' ),
+    'id'            => 'right-widget',
+    'description'   => 'Right side widget area',
     'before_widget' => '<article id="%1$s" class="side-widget %2$s">',
-    'after_widget' => '</article>',
-    'before_title' => '<h3>',
-    'after_title' => '</h3>',
+    'after_widget'  => '</article>',
+    'before_title'  => '<h3>',
+    'after_title'   => '</h3>',
   ));
 }
 
 
 add_action( 'widgets_init', 'adelle_widgets_init' );
+// ==================================================================
+// Widget - Instagram
+// ==================================================================
+function adelle_footer_widgets_instagram_init() {
+  register_sidebar( array(
+    'name'          => __( 'Instagram Widget', 'adelle-theme' ),
+    'id'            => 'footer-widget-instagram',
+    'class'         => '',
+    'description'   => 'Instagram widget area.',
+    'before_widget' => '<article id="%1$s" class="footer-instagram-widget %2$s">',
+    'after_widget'  => '</article>',
+    'before_title'  => '<h4>',
+    'after_title'   => '</h4>',
+  ) );
+}
+add_action( 'widgets_init', 'adelle_footer_widgets_instagram_init' );
