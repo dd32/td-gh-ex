@@ -155,12 +155,20 @@ function attitude_headerdetails() {
 					<?php 
 						if( $options[ 'header_show' ] != 'disable-both' && $options[ 'header_show' ] == 'header-text' ) {
 						?>
+						<?php if(is_single() || (!is_page_template('page-template-business.php' )) && !is_home()){ ?>
+							<h2 id="site-title"> 
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+									<?php bloginfo( 'name' ); ?>
+								</a>
+							</h2>
+							<?php } else { ?>
 							<h1 id="site-title"> 
 								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 									<?php bloginfo( 'name' ); ?>
 								</a>
 							</h1>
-					<?php $site_description = get_bloginfo( 'description', 'display' );
+					<?php  }
+					$site_description = get_bloginfo( 'description', 'display' );
 							if($site_description){?>
 							<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
 					<?php } ?>
@@ -168,12 +176,19 @@ function attitude_headerdetails() {
 						}
 						elseif( $options[ 'header_show' ] != 'disable-both' && $options[ 'header_show' ] == 'header-logo' ) {
 						?>
+						<?php if(is_single() || (!is_page_template('page-template-business.php' )) && !is_home()){ ?>
+							<h2 id="site-title"> 
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+									<img src="<?php echo $options[ 'header_logo' ]; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+								</a>
+							</h2>
+							<?php }else{ ?>
 							<h1 id="site-title"> 
 								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 									<img src="<?php echo $options[ 'header_logo' ]; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
 								</a>
 							</h1>
-						<?php
+						<?php }
 						}
 						?>
 					
@@ -228,7 +243,7 @@ function attitude_headerdetails() {
 		    		if( function_exists( 'attitude_breadcrumb' ) )
 						attitude_breadcrumb();
 					?>
-				   <h3 class="page-title"><?php echo attitude_header_title(); ?></h3><!-- .page-title -->
+				   <h1 class="page-title"><?php echo attitude_header_title(); ?></h1><!-- .page-title -->
 				</div>
 	    	</div>
 	   <?php

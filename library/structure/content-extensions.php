@@ -113,9 +113,9 @@ function attitude_theloop_for_archive() {
 			<?php do_action( 'attitude_before_post_header' ); ?>
 
 			<header class="entry-header">
-    			<h1 class="entry-title">
+    			<h2 class="entry-title">
     				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php the_title(); ?></a>
-    			</h1><!-- .entry-title -->
+    			</h2><!-- .entry-title -->
   			</header>
 
   			<?php do_action( 'attitude_after_post_header' ); ?>
@@ -172,7 +172,7 @@ function attitude_theloop_for_archive() {
 	}
 	else {
 		?>
-		<h1 class="entry-title"><?php _e( 'No Posts Found.', 'attitude' ); ?></h1>
+		<h2 class="entry-title"><?php _e( 'No Posts Found.', 'attitude' ); ?></h2>
       <?php
    }
 }
@@ -367,9 +367,9 @@ function attitude_theloop_for_search() {
 			<?php do_action( 'attitude_before_post_header' ); ?>
 
 			<header class="entry-header">
-    			<h1 class="entry-title">
+    			<h2 class="entry-title">
     				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php the_title(); ?></a>
-    			</h1><!-- .entry-title -->
+    			</h2><!-- .entry-title -->
   			</header>
 
   			<?php do_action( 'attitude_after_post_header' ); ?>
@@ -391,7 +391,7 @@ function attitude_theloop_for_search() {
 	}
 	else {
 		?>
-		<h1 class="entry-title"><?php _e( 'No Posts Found.', 'attitude' ); ?></h1>
+		<h2 class="entry-title"><?php _e( 'No Posts Found.', 'attitude' ); ?></h2>
       <?php
    }
 }
@@ -433,9 +433,9 @@ function attitude_theloop_for_template_blog_image_large() {
 			<?php do_action( 'attitude_before_post_header' ); ?>
 
 			<header class="entry-header">
-    			<h1 class="entry-title">
+    			<h2 class="entry-title">
     				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php the_title(); ?></a>
-    			</h1><!-- .entry-title -->
+    			</h2><!-- .entry-title -->
   			</header>
 
   			<?php do_action( 'attitude_after_post_header' ); ?>
@@ -502,7 +502,7 @@ function attitude_theloop_for_template_blog_image_large() {
 	}
 	else {
 		?>
-		<h1 class="entry-title"><?php _e( 'No Posts Found.', 'attitude' ); ?></h1>
+		<h2 class="entry-title"><?php _e( 'No Posts Found.', 'attitude' ); ?></h2>
       <?php
    }
    $wp_query = $temp_query;
@@ -546,9 +546,9 @@ function attitude_theloop_for_template_blog_image_medium() {
 			<?php do_action( 'attitude_before_post_header' ); ?>
 
 			<header class="entry-header">
-    			<h1 class="entry-title">
+    			<h2 class="entry-title">
     				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php the_title(); ?></a>
-    			</h1><!-- .entry-title -->
+    			</h2><!-- .entry-title -->
   			</header>
 
   			<?php do_action( 'attitude_after_post_header' ); ?>
@@ -615,7 +615,7 @@ function attitude_theloop_for_template_blog_image_medium() {
 	}
 	else {
 		?>
-		<h1 class="entry-title"><?php _e( 'No Posts Found.', 'attitude' ); ?></h1>
+		<h2 class="entry-title"><?php _e( 'No Posts Found.', 'attitude' ); ?></h2>
       <?php
    }
    $wp_query = $temp_query;
@@ -660,9 +660,9 @@ function attitude_theloop_for_template_blog_full_content() {
 			<?php do_action( 'attitude_before_post_header' ); ?>
 
 			<header class="entry-header">
-    			<h1 class="entry-title">
+    			<h2 class="entry-title">
     				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php the_title(); ?></a>
-    			</h1><!-- .entry-title -->
+    			</h2><!-- .entry-title -->
   			</header>
 
   			<?php do_action( 'attitude_after_post_header' ); ?>
@@ -727,7 +727,7 @@ function attitude_theloop_for_template_blog_full_content() {
 	}
 	else {
 		?>
-		<h1 class="entry-title"><?php _e( 'No Posts Found.', 'attitude' ); ?></h1>
+		<h2 class="entry-title"><?php _e( 'No Posts Found.', 'attitude' ); ?></h2>
       <?php
    }
    $wp_query = $temp_query;
@@ -916,7 +916,7 @@ function attitude_display_contact_page_template_content() {
 			}
 			else {
 				?>
-				<h1 class="entry-title"><?php _e( 'No Posts Found.', 'attitude' ); ?></h1>
+				<h2 class="entry-title"><?php _e( 'No Posts Found.', 'attitude' ); ?></h2>
 		      <?php
 		   }
 		   ?>
@@ -939,7 +939,7 @@ function attitude_display_404_page_content() {
 ?>
 	<div id="content">
 		<header class="entry-header">
-			<h1 class="entry-title"><?php _e( 'Error 404-Page NOT Found', 'attitude' ); ?></a></h1>
+			<h2 class="entry-title"><?php _e( 'Error 404-Page NOT Found', 'attitude' ); ?></a></h2>
 		</header>
 		<div class="entry-content clearfix" >
 			<p><?php _e( 'It seems we can\'t find what you\'re looking for.', 'attitude' ); ?></p>
