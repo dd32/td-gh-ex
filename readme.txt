@@ -89,6 +89,11 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.24.0
+* Theme Demo Url Changed
+* Changed Author url from http to https
+* Jquery bug in Team Section fixed
+
 Version 1.23.9
 * Demo Slider Content Removed
 * Demo and Documentation Link added in Theme Option Panel
