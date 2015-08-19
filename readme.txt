@@ -60,6 +60,12 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.44.9
+* Documentation and Demo link Updates according to new change in the website
+* Few Other link changed from http to https
+* Unused code remove from the theme option panel
+* TGM-Plugin-Activation updated to 2.5.2
+
 Version 2.44.8
 * Addition and modification of Info in theme option panel
 

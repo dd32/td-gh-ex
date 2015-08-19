@@ -53,7 +53,7 @@
 			<h1 class="site-info">
 				<a href="<?php echo esc_url('http://wordpress.org/'); ?>"><?php _e( 'Free WordPress Theme', 'accesspresslite' ); ?></a>
 				<span class="sep"> | </span>
-				<a href="<?php echo esc_url('http://accesspressthemes.com/');?>" title="AccessPress Themes" target="_blank">AccessPress Lite</a>
+				<a href="<?php echo esc_url('https://accesspressthemes.com/');?>" title="AccessPress Themes" target="_blank">AccessPress Lite</a>
 			</h1><!-- .site-info -->
 
 			<div class="copyright">

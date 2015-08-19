@@ -78,7 +78,6 @@ $accesspresslite_options = array(
 	'accesspresslite_tumblr' => '',
 	'accesspresslite_myspace' =>'',
 	'show_social_header'=>'',
-	'show_social_footer'=>'',
 
 	'accesspresslite_home_page_layout' => 'Layout2',
     'accesspresslite_webpage_layout' => 'Fullwidth',
@@ -911,14 +910,6 @@ function accesspresslite_theme_options_page() {
 						</td>
 					</tr>
 
-					<tr>
-						<th><label for="show_social_footer"><?php _e('Disable Social icons in Footer?','accesspresslite'); ?></label></th>
-						<td>
-							<input type="checkbox" id="show_social_footer" name="accesspresslite_options[show_social_footer]" value="1" <?php checked( true, $settings['show_social_footer'] ); ?> />
-							<label for="show_social_footer"><?php _e('Check to disable','accesspresslite'); ?></label>
-						</td>
-					</tr>
-
 					<tr><th scope="row"><label for="accesspresslite_facebook">Facebook</label></th>
 					<td>
 					<input id="accesspresslite_facebook" name="accesspresslite_options[accesspresslite_facebook]" type="text" value="<?php echo esc_url($settings['accesspresslite_facebook']); ?>" />
@@ -1030,37 +1021,37 @@ function accesspresslite_theme_options_page() {
 				<table class="form-table">
 					<tr>
 					<td colspan="2">
-						<p><?php _e('AccessPress Lite - is a FREE WordPress theme by','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('http://www.accesspressthemes.com/'); ?>">AccessPress Themes</a> <?php _e('- A WordPress Division of Access Keys.','accesspresslite'); ?>
+						<p><?php _e('AccessPress Lite - is a FREE WordPress theme by','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('https://accesspressthemes.com/'); ?>">AccessPress Themes</a> <?php _e('- A WordPress Division of Access Keys.','accesspresslite'); ?>
 						<?php _e(' Access Keys - has developed more than 350 WordPress websites for its clients.','accesspresslite'); ?></p>
 
 						<p><?php _e('We want to give "a little beautiful thing" - back to the community.<br />With our experience, we are creating "AccessPress Lite", a free WordPress theme, which includes the most useful features for a generic business website!','accesspresslite'); ?></p>
 						<hr />
 						
-						<p><?php _e('For Documentation, click','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/theme-instruction-accesspress-lite/'); ?>"><?php _e('here','accesspresslite'); ?></a></p>
+						<p><?php _e('For Documentation, click','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('https://accesspressthemes.com/theme-instruction-accesspress-lite/'); ?>"><?php _e('here','accesspresslite'); ?></a></p>
 						<p><?php _e('For Video tutorials, click','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('https://www.youtube.com/watch?v=Mi60ORm_VMI&list=PLdSqn2S_qFxEzeboBioXZdAg5P4l32Hm3'); ?>"><?php _e('here','accesspresslite'); ?></a></p>
-						<p><?php _e('Live Preview, click','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('https://accesspressthemes.com/accesspress-lite/'); ?>"><?php _e('here','accesspresslite'); ?></a></p>
+						<p><?php _e('Live Preview, click','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/theme-demos/?theme=accesspress-lite'); ?>"><?php _e('here','accesspresslite'); ?></a></p>
 						<hr />
 
 						<h4><?php _e('New Child Theme of AccessPress Lite','accesspresslite'); ?></h4>
-						<p><?php _e('Check Demo Here - ','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/aplite/'); ?>"><?php echo esc_url('http://accesspressthemes.com/aplite/'); ?></a></p>
+						<p><?php _e('Check Demo Here - ','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/theme-demos/?theme=ap-lite'); ?>"><?php echo esc_url('http://accesspressthemes.com/theme-demos/?theme=ap-lite'); ?></a></p>
 						<p><?php _e('Download Here - ','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('https://accesspressthemes.com/wordpress-themes/ap-lite/'); ?>"><?php echo esc_url('https://accesspressthemes.com/wordpress-themes/ap-lite/'); ?></a></p>
 
 						<hr />
 
 						<h4><?php _e('Our other Products','accesspresslite'); ?></h4>
-						<p><?php _e('Themes - ','accesspresslite'); ?><a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/themes'); ?>"><?php echo esc_url('http://accesspressthemes.com/themes'); ?></a></p>
-						<p><?php _e('Plugins - ','accesspresslite'); ?><a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/plugins'); ?>"><?php echo esc_url('http://accesspressthemes.com/plugins'); ?></a></p>
+						<p><?php _e('Themes - ','accesspresslite'); ?><a target="_blank" href="<?php echo esc_url('https://accesspressthemes.com/themes'); ?>"><?php echo esc_url('https://accesspressthemes.com/themes'); ?></a></p>
+						<p><?php _e('Plugins - ','accesspresslite'); ?><a target="_blank" href="<?php echo esc_url('https://accesspressthemes.com/plugins'); ?>"><?php echo esc_url('https://accesspressthemes.com/plugins'); ?></a></p>
 						<hr />
 						<h4><?php _e('Get in touch','accesspresslite'); ?></h4>
 
 						<p>
 						<?php _e('If you have any question/feedback regarding theme, please post in our forum','accesspresslite'); ?><br/>
-						<?php _e('Forum:','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/support/'); ?>"><?php echo esc_url('http://accesspressthemes.com/support/'); ?></a><br/>
+						<?php _e('Forum:','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('https://accesspressthemes.com/support/'); ?>"><?php echo esc_url('https://accesspressthemes.com/support/'); ?></a><br/>
 						
 						<br />
 
 						<?php _e('For Online Chat Support','accesspresslite'); ?><br/>
-						<a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/'); ?>"><?php echo esc_url('http://accesspressthemes.com/'); ?></a><br/>
+						<a target="_blank" href="<?php echo esc_url('https://accesspressthemes.com/'); ?>"><?php echo esc_url('https://accesspressthemes.com/'); ?></a><br/>
 						
 						<br />
 
@@ -1081,12 +1072,12 @@ function accesspresslite_theme_options_page() {
 		<div class="update-banner">
 			<img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/upgrade-top.jpg">
 			<div class="button-link">
-				<a href="<?php echo esc_url('http://accesspressthemes.com/accesspresslite-pro/'); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/demo-btn.png"></a>
+				<a href="<?php echo esc_url('http://accesspressthemes.com/theme-demos/?theme=accesspress-pro'); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/demo-btn.png"></a>
 				<a href="<?php echo esc_url('https://accesspressthemes.com/wordpress-themes/accesspress-pro/'); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/upgrade-btn.png"></a>
 			</div>
 			<img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/upgrade-bottom.jpg">
 			<div class="button-link">
-				<a href="<?php echo esc_url('http://accesspressthemes.com/accesspresslite-pro/'); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/demo-btn.png"></a>
+				<a href="<?php echo esc_url('http://accesspressthemes.com/theme-demos/?theme=accesspress-pro'); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/demo-btn.png"></a>
 				<a href="<?php echo esc_url('https://accesspressthemes.com/wordpress-themes/accesspress-pro/'); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/upgrade-btn.png"></a>
 			</div>
 
@@ -1237,10 +1228,6 @@ function accesspresslite_validate_options( $input ) {
 	if ( ! isset( $input['show_social_header'] ) )
 		$input['show_social_header'] = null;
 	$input['show_social_header'] = ( $input['show_social_header'] == 1 ? 1 : 0 );
-
-	if ( ! isset( $input['show_social_footer'] ) )
-		$input['show_social_footer'] = null;
-	$input['show_social_footer'] = ( $input['show_social_footer'] == 1 ? 1 : 0 );
 
 	if ( ! isset( $input['featured_bar'] ) )
 		$input['featured_bar'] = null;
