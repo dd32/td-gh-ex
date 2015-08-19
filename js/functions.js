@@ -20,7 +20,11 @@ jQuery(document).ready(function($){
     /* Call functions */
 
     positionSidebar();
-    setMainMinHeight();
+
+    // delay until everything loaded to avoid inaccuracy due to other JS changing element heights
+    $(window).bind("load", function() {
+        setMainMinHeight();
+    });
 
     $(window).resize(function(){
         positionSidebar();
@@ -29,7 +33,9 @@ jQuery(document).ready(function($){
     });
 
     // add fitVids to videos in posts
-    $('.post-content').fitVids();
+    $('.post-content').fitVids({
+        customSelector: 'iframe[src*="dailymotion.com"], iframe[src*="slideshare.net"], iframe[src*="animoto.com"], iframe[src*="blip.tv"], iframe[src*="funnyordie.com"], iframe[src*="hulu.com"], iframe[src*="ted.com"], iframe[src*="wordpress.tv"]'
+    });
 
     // display the primary menu at mobile widths
     $('#toggle-navigation').on('click', openPrimaryMenu);
@@ -123,7 +129,11 @@ jQuery(document).ready(function($){
             $(this).attr('aria-expanded', 'true');
             short = false; // return to false to be measured again (may not be shorter than window now)
         }
+        setMainMinHeight();
     }
+
+    // open the menu to display the current page if inside a dropdown menu
+    $( '.current-menu-ancestor').addClass('open');
 
     // absolutely position the sidebar
     function positionSidebar() {

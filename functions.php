@@ -248,7 +248,12 @@ function ct_author_custom_excerpt_length( $length ) {
     // if there is a new length set and it's not 15, change it
     if( ! empty( $new_excerpt_length ) && $new_excerpt_length != 25 ){
         return $new_excerpt_length;
-    } else {
+    }
+    // allow 0 to be an option if user wants to remove the excerpt entirely
+    elseif( $new_excerpt_length === 0 ) {
+	    return 0;
+    }
+	else {
         return 25;
     }
 }
@@ -257,7 +262,16 @@ add_filter( 'excerpt_length', 'ct_author_custom_excerpt_length', 99 );
 // switch [...] to ellipsis on automatic excerpt
 if( !function_exists('ct_author_new_excerpt_more' ) ) {
 	function ct_author_new_excerpt_more( $more ) {
-		return '&#8230;';
+
+		// get user set excerpt length
+		$new_excerpt_length = get_theme_mod('excerpt_length');
+
+		// don't return trailing ellipsis if user removed excerpt
+		if( $new_excerpt_length === 0 ) {
+			return '';
+		} else {
+			return '&#8230;';
+		}
 	}
 }
 add_filter('excerpt_more', 'ct_author_new_excerpt_more');
@@ -337,41 +351,44 @@ if ( function_exists( 'dsq_options' ) ) {
 }
 
 // associative array of social media sites
-function ct_author_social_array(){
+if( !function_exists( 'ct_author_social_array' ) ) {
+	function ct_author_social_array() {
 
-	$social_sites = array(
-		'twitter' => 'author_twitter_profile',
-		'facebook' => 'author_facebook_profile',
-		'google-plus' => 'author_googleplus_profile',
-		'pinterest' => 'author_pinterest_profile',
-		'linkedin' => 'author_linkedin_profile',
-		'youtube' => 'author_youtube_profile',
-		'vimeo' => 'author_vimeo_profile',
-		'tumblr' => 'author_tumblr_profile',
-		'instagram' => 'author_instagram_profile',
-		'flickr' => 'author_flickr_profile',
-		'dribbble' => 'author_dribbble_profile',
-		'rss' => 'author_rss_profile',
-		'reddit' => 'author_reddit_profile',
-		'soundcloud' => 'author_soundcloud_profile',
-		'spotify' => 'author_spotify_profile',
-		'vine' => 'author_vine_profile',
-		'yahoo' => 'author_yahoo_profile',
-		'behance' => 'author_behance_profile',
-		'codepen' => 'author_codepen_profile',
-		'delicious' => 'author_delicious_profile',
-		'stumbleupon' => 'author_stumbleupon_profile',
-		'deviantart' => 'author_deviantart_profile',
-		'digg' => 'author_digg_profile',
-		'git' => 'author_git_profile',
-		'hacker-news' => 'author_hacker-news_profile',
-		'steam' => 'author_steam_profile',
-		'vk' => 'author_vk_profile',
-		'weibo' => 'author_weibo_profile',
-		'tencent-weibo' => 'author_tencent_weibo_profile',
-		'email' => 'author_email_profile'
-	);
-	return $social_sites;
+		$social_sites = array(
+			'twitter'       => 'author_twitter_profile',
+			'facebook'      => 'author_facebook_profile',
+			'google-plus'   => 'author_googleplus_profile',
+			'pinterest'     => 'author_pinterest_profile',
+			'linkedin'      => 'author_linkedin_profile',
+			'youtube'       => 'author_youtube_profile',
+			'vimeo'         => 'author_vimeo_profile',
+			'tumblr'        => 'author_tumblr_profile',
+			'instagram'     => 'author_instagram_profile',
+			'flickr'        => 'author_flickr_profile',
+			'dribbble'      => 'author_dribbble_profile',
+			'rss'           => 'author_rss_profile',
+			'reddit'        => 'author_reddit_profile',
+			'soundcloud'    => 'author_soundcloud_profile',
+			'spotify'       => 'author_spotify_profile',
+			'vine'          => 'author_vine_profile',
+			'yahoo'         => 'author_yahoo_profile',
+			'behance'       => 'author_behance_profile',
+			'codepen'       => 'author_codepen_profile',
+			'delicious'     => 'author_delicious_profile',
+			'stumbleupon'   => 'author_stumbleupon_profile',
+			'deviantart'    => 'author_deviantart_profile',
+			'digg'          => 'author_digg_profile',
+			'git'           => 'author_git_profile',
+			'hacker-news'   => 'author_hacker-news_profile',
+			'steam'         => 'author_steam_profile',
+			'vk'            => 'author_vk_profile',
+			'weibo'         => 'author_weibo_profile',
+			'tencent-weibo' => 'author_tencent_weibo_profile',
+			'email'         => 'author_email_profile'
+		);
+
+		return apply_filters( 'ct_author_social_array_filter', $social_sites );
+	}
 }
 
 // used in ct_author_social_icons_output to return urls
