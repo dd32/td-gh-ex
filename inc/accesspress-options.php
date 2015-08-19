@@ -67,7 +67,7 @@ function optionsframework_options() {
 	// Parallax Defaults
 	$parallax_defaults = NULL;
 
-    $about_content = "<p class='ap-intro-text'>".__('AccessPress Parallax is a beautiful WordPress theme with Parallax design. Parallax design has become popular and is being adopted because 3D effects are possible with it, you can add some sphere to your product, it is the best way of storytelling, you can draw your visitors in, it is interactive, engaging, makes your visitors curious, fun, surprise, effective to trigger action, invite your visitors in great Call to Action, great conversion rates and many more. This is probably the most beautiful, feature rich and complete free WordPress parallax theme with features like: fully responsive, advance theme option panel, featured slider, advance post settings, services/team/blog/portfolio/testimonial layout, Google map integration, custom logo/fav icon, call to action, CSS animation, SEO friendly, translation ready, RTL support, custom CSS/JS and more! ')."</p>"; 
+    $about_content = "<p class='ap-intro-text'>".__('AccessPress Parallax is a beautiful WordPress theme with Parallax design. Parallax design has become popular and is being adopted because 3D effects are possible with it, you can add some sphere to your product, it is the best way of storytelling, you can draw your visitors in, it is interactive, engaging, makes your visitors curious, fun, surprise, effective to trigger action, invite your visitors in great Call to Action, great conversion rates and many more. This is probably the most beautiful, feature rich and complete free WordPress parallax theme with features like: fully responsive, advance theme option panel, featured slider, advance post settings, services/team/blog/portfolio/testimonial layout, Google map integration, custom logo/fav icon, call to action, CSS animation, SEO friendly, translation ready, RTL support, custom CSS/JS and more! ', 'accesspress-parallax')."</p>"; 
     $about_content .= "<p><a target='_blank' href='".esc_url('https://accesspressthemes.com/')."'>AccessPress Themes</a> ".__('- A WordPress Division of Access Keys.','accesspress-parallax')."</p>"; 
     
     $about_content .= "<hr/><br />";
@@ -76,8 +76,8 @@ function optionsframework_options() {
     $about_content .= "<hr/><br />";
     
     $about_content .= "<h4>".__('Other products by AccessPressThemes','accesspress-parallax')."</h4>";
-    $about_content .=  __('Our Themes - ','accesspress_ray'). __(sprintf('<a href="%s" target="_blank">https://accesspressthemes.com/themes</a>','https://accesspressthemes.com/themes'))."<br/><br />" ;
-    $about_content .= __('Our Plugins - ','accesspress_ray'). __(sprintf('<a href="%s" target="_blank">https://accesspressthemes.com/plugins</a>','https://accesspressthemes.com/plugins'))."<br/><br />" ;
+    $about_content .=  __('Our Themes - ','accesspress-parallax'). __(sprintf('<a href="%s" target="_blank">https://accesspressthemes.com/themes</a>','https://accesspressthemes.com/themes'))."<br/><br />" ;
+    $about_content .= __('Our Plugins - ','accesspress-parallax'). __(sprintf('<a href="%s" target="_blank">https://accesspressthemes.com/plugins</a>','https://accesspressthemes.com/plugins'))."<br/><br />" ;
 
     $about_content .= "<hr/><br />";
 

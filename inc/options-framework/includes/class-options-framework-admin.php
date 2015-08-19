@@ -209,7 +209,7 @@ class Options_Framework_Admin {
     			<div class="any-question">
     				<?php echo sprintf(__('Any question!! Click <a href="%s" target="_blank">here</a> for Live Chat.','accesspress-parallax'), esc_url('https://accesspressthemes.com/contact/')); ?>
     			</div>
-    			<h3 class="pro-feature-title"><?php _e('Pro Features','accesspress-root') ?><span>&#8250;</span></h3>
+    			<h3 class="pro-feature-title"><?php _e('Pro Features','accesspress-parallax') ?><span>&#8250;</span></h3>
     			<div class="feature-img">
     			<img src="<?php echo get_template_directory_uri(); ?>/inc/options-framework/images/upgrade-bottom.jpg">
     			<div class="button-link">
