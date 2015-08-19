@@ -235,7 +235,12 @@ if( ! function_exists( 'apex_custom_excerpt_length' ) ) {
 		// if there is a new length set and it's not 15, change it
 		if( ! empty( $new_excerpt_length ) && $new_excerpt_length != 25 ){
 			return $new_excerpt_length;
-		} else {
+		}
+		// return 0 if user explicitly sets it to 0
+		elseif ( $new_excerpt_length === 0 ) {
+			return 0;
+		}
+		else {
 			return 25;
 		}
 	}
@@ -245,7 +250,18 @@ add_filter( 'excerpt_length', 'apex_custom_excerpt_length', 99 );
 // switch [...] to ellipsis on automatic excerpt
 if( ! function_exists( 'ct_apex_new_excerpt_more' ) ) {
 	function ct_apex_new_excerpt_more( $more ) {
-		return '&#8230;';
+
+		// get user set excerpt length
+		$new_excerpt_length = get_theme_mod('excerpt_length');
+
+		// if set to 0, return nothing
+		if ( $new_excerpt_length === 0 ) {
+			return '';
+		}
+		// else add the ellipsis
+		else {
+			return '&#8230;';
+		}
 	}
 }
 add_filter('excerpt_more', 'ct_apex_new_excerpt_more');
@@ -325,42 +341,44 @@ if ( function_exists( 'dsq_options' ) ) {
 }
 
 // associative array of social media sites
-function ct_apex_social_array() {
+if ( !function_exists( 'ct_apex_social_array' ) ) {
+	function ct_apex_social_array() {
 
-	$social_sites = array(
-		'twitter'       => 'apex_twitter_profile',
-		'facebook'      => 'apex_facebook_profile',
-		'google-plus'   => 'apex_googleplus_profile',
-		'pinterest'     => 'apex_pinterest_profile',
-		'linkedin'      => 'apex_linkedin_profile',
-		'youtube'       => 'apex_youtube_profile',
-		'vimeo'         => 'apex_vimeo_profile',
-		'tumblr'        => 'apex_tumblr_profile',
-		'instagram'     => 'apex_instagram_profile',
-		'flickr'        => 'apex_flickr_profile',
-		'dribbble'      => 'apex_dribbble_profile',
-		'rss'           => 'apex_rss_profile',
-		'reddit'        => 'apex_reddit_profile',
-		'soundcloud'    => 'apex_soundcloud_profile',
-		'spotify'       => 'apex_spotify_profile',
-		'vine'          => 'apex_vine_profile',
-		'yahoo'         => 'apex_yahoo_profile',
-		'behance'       => 'apex_behance_profile',
-		'codepen'       => 'apex_codepen_profile',
-		'delicious'     => 'apex_delicious_profile',
-		'stumbleupon'   => 'apex_stumbleupon_profile',
-		'deviantart'    => 'apex_deviantart_profile',
-		'digg'          => 'apex_digg_profile',
-		'git'           => 'apex_git_profile',
-		'hacker-news'   => 'apex_hacker-news_profile',
-		'steam'         => 'apex_steam_profile',
-		'vk'            => 'apex_vk_profile',
-		'weibo'         => 'apex_weibo_profile',
-		'tencent-weibo' => 'apex_tencent_weibo_profile',
-		'email'         => 'apex_email_profile'
-	);
+		$social_sites = array(
+			'twitter'       => 'apex_twitter_profile',
+			'facebook'      => 'apex_facebook_profile',
+			'google-plus'   => 'apex_googleplus_profile',
+			'pinterest'     => 'apex_pinterest_profile',
+			'linkedin'      => 'apex_linkedin_profile',
+			'youtube'       => 'apex_youtube_profile',
+			'vimeo'         => 'apex_vimeo_profile',
+			'tumblr'        => 'apex_tumblr_profile',
+			'instagram'     => 'apex_instagram_profile',
+			'flickr'        => 'apex_flickr_profile',
+			'dribbble'      => 'apex_dribbble_profile',
+			'rss'           => 'apex_rss_profile',
+			'reddit'        => 'apex_reddit_profile',
+			'soundcloud'    => 'apex_soundcloud_profile',
+			'spotify'       => 'apex_spotify_profile',
+			'vine'          => 'apex_vine_profile',
+			'yahoo'         => 'apex_yahoo_profile',
+			'behance'       => 'apex_behance_profile',
+			'codepen'       => 'apex_codepen_profile',
+			'delicious'     => 'apex_delicious_profile',
+			'stumbleupon'   => 'apex_stumbleupon_profile',
+			'deviantart'    => 'apex_deviantart_profile',
+			'digg'          => 'apex_digg_profile',
+			'git'           => 'apex_git_profile',
+			'hacker-news'   => 'apex_hacker-news_profile',
+			'steam'         => 'apex_steam_profile',
+			'vk'            => 'apex_vk_profile',
+			'weibo'         => 'apex_weibo_profile',
+			'tencent-weibo' => 'apex_tencent_weibo_profile',
+			'email'         => 'apex_email_profile'
+		);
 
-	return $social_sites;
+		return apply_filters( 'ct_apex_social_array_filter', $social_sites );
+	}
 }
 
 // used in ct_apex_social_icons_output to return urls
