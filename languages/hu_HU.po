@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Catch Base\n"
 "Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/catch-base-"
 "free/\n"
-"POT-Creation-Date: 2015-08-05 21:36+0545\n"
-"PO-Revision-Date: 2015-08-05 21:36+0545\n"
+"POT-Creation-Date: 2015-08-20 17:26+0545\n"
+"PO-Revision-Date: 2015-08-20 17:26+0545\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: hu_HU\n"
@@ -187,7 +187,7 @@ msgstr "%1$sMinden bejegyzés tőle: %2$s"
 msgid "Error 404"
 msgstr "404-es hiba"
 
-#: ../inc/catchbase-breadcrumb.php:223 ../inc/catchbase-core.php:910
+#: ../inc/catchbase-breadcrumb.php:223
 #, php-format
 msgid "Page %s"
 msgstr "Oldal %s"
@@ -268,36 +268,36 @@ msgctxt "Used before tag names."
 msgid "<span class=\"screen-reader-text\">Tags</span>"
 msgstr "<span class=\"screen-reader-text\">Címkék</span>"
 
-#: ../inc/catchbase-core.php:1006
+#: ../inc/catchbase-core.php:955
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: ../inc/catchbase-core.php:1504
+#: ../inc/catchbase-core.php:1453
 msgid "Scroll Up"
 msgstr "Felfelé görgetés"
 
-#: ../inc/catchbase-core.php:1521
+#: ../inc/catchbase-core.php:1470
 msgid "Posted on"
 msgstr "Közzétéve"
 
-#: ../inc/catchbase-core.php:1522
+#: ../inc/catchbase-core.php:1471
 msgid "By"
 msgstr "Írta:"
 
-#: ../inc/catchbase-core.php:1563
+#: ../inc/catchbase-core.php:1512
 msgid "Next &rarr;"
 msgstr "Következő &rarr;"
 
-#: ../inc/catchbase-core.php:1564
+#: ../inc/catchbase-core.php:1513
 msgid "Next post:"
 msgstr "Következő bejegyzés"
 
-#: ../inc/catchbase-core.php:1566
+#: ../inc/catchbase-core.php:1515
 msgid "&larr; Previous"
 msgstr "&larr; Előző"
 
-#: ../inc/catchbase-core.php:1567
+#: ../inc/catchbase-core.php:1516
 msgid "Previous post:"
 msgstr "Előző bejegyzés"
 
@@ -704,7 +704,7 @@ msgid "Menu"
 msgstr "Menü"
 
 #: ../inc/catchbase-metabox.php:92
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:206
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:204
 msgid "Layout Options"
 msgstr "Oldalelrendezés"
 
@@ -713,7 +713,7 @@ msgid "Header Featured Image Options"
 msgstr "Fejrész kiemelt kép tulajdonságai"
 
 #: ../inc/catchbase-metabox.php:94
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:263
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:261
 msgid "Single Page/Post Image Layout "
 msgstr "Aloldal / Hozzászólás kép elrendezés"
 
@@ -935,20 +935,20 @@ msgid "Featured Header Image Link URL"
 msgstr "Fejrész kiemelt kép URL címe"
 
 #: ../inc/customizer-includes/catchbase-customizer-header-options.php:91
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:422
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:420
 msgid "Check to Open Link in New Window/Tab"
 msgstr "Hivatkozás megnyitása új ablakon/fülön"
 
-#: ../inc/customizer-includes/catchbase-customizer-social-icons.php:20
+#: ../inc/customizer-includes/catchbase-customizer-social-icons.php:19
 msgid "Note: Enter the url for correponding social networking website"
 msgstr "Megjegyzés: Írja be a megfelelő közösségi hálózat weblapcímét"
 
-#: ../inc/customizer-includes/catchbase-customizer-social-icons.php:22
-#: ../inc/customizer-includes/catchbase-customizer-social-icons.php:29
+#: ../inc/customizer-includes/catchbase-customizer-social-icons.php:21
+#: ../inc/customizer-includes/catchbase-customizer-social-icons.php:27
 msgid "Social Links"
 msgstr "Közösségi linkek"
 
-#: ../inc/customizer-includes/catchbase-customizer-social-icons.php:46
+#: ../inc/customizer-includes/catchbase-customizer-social-icons.php:44
 msgid ""
 "Skype link can be of formats:<br>callto://+{number}<br> skype:{username}?"
 "{action}. More Information in readme file"
@@ -956,15 +956,15 @@ msgstr ""
 "Skype link a következő formátumú lehet:<br>callto://+{szám}<br> skype: "
 "{felhasználónév}?{művelet}. További információ a readme fájlban."
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:21
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:20
 msgid "Basic theme Options"
 msgstr "Alap téma beállítások"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:24
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:23
 msgid "Theme Options"
 msgstr "Téma beállítások"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:30
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:28
 msgid ""
 "Breadcrumbs are a great way of letting your visitors find out where they are on "
 "your site with just a glance. You can enable/disable them on homepage and entire "
@@ -974,51 +974,51 @@ msgstr ""
 "pillantás alatt lássák, hogy a honlap melyik részén járnak éppen. "
 "Engedélyezheti / letilthatja őket a honlapon, vagy az egész webhelyen."
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:32
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:30
 msgid "Breadcrumb Options"
 msgstr "Breadcrumb opciók"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:43
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:41
 msgid "Check to enable Breadcrumb"
 msgstr "Breadcrumb engedélyezése"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:56
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:54
 msgid "Check to enable Breadcrumb on Homepage"
 msgstr "Breadcrumb engedélyezése a honlapon"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:72
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:70
 msgid "Separator between Breadcrumbs"
 msgstr "Elválasztójel"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:82
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:80
 msgid "Custom/Inline CSS"
 msgstr "Egyéni CSS"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:85
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:83
 msgid "Custom CSS Options"
 msgstr "Egyéni CSS opciók"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:95
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:93
 msgid "Enter Custom CSS"
 msgstr "Egyéni CSS megadása"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:107
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:105
 msgid "Excerpt Options"
 msgstr "Kivonat tulajdonságai"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:117
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:115
 msgid "Excerpt length. Default is 40 words"
 msgstr "Kivonat hossza. Alapértelmezett a 40 szó"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:124
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:122
 msgid "Excerpt Length (words)"
 msgstr "Kivonat hossza (szavak száma)"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:138
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:136
 msgid "Read More Text"
 msgstr "Tovább ..."
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:147
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:145
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on the "
 "front page"
@@ -1026,27 +1026,27 @@ msgstr ""
 "Csak az itt kiválasztott kategóriába tartozó hozzászólások jelennek meg a "
 "címlapon"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:150
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:148
 msgid "Homepage / Frontpage Options"
 msgstr "Kezdőoldal / Főoldal tulajdonságai"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:160
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:158
 msgid "Select Categories"
 msgstr "Kategória választása"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:171
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:169
 msgid "Remove Icon images to disable."
 msgstr "Távolítsa el az Ikonokat a kikapcsoláshoz"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:174
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:172
 msgid "Icon Options"
 msgstr "Ikon tulajdonságok"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:183
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:181
 msgid "Select/Add Favicon"
 msgstr "Honlap ikon kiválasztása / hozzáadása"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:194
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:192
 msgid ""
 "Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px "
 "height, which will support High Resolution Devices like iPad Retina."
@@ -1054,19 +1054,19 @@ msgstr ""
 "Web Clip Icon Apple eszközökhöz. Ajánlott méret: 144px x 144px, amely támogatja "
 "a nagy felbontású készülékeket, mint pl. iPad Retina."
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:195
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:193
 msgid "Select/Add Web Clip Icon"
 msgstr "Web Clip ikon kiválasztása / hozzáadása"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:223
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:221
 msgid "Default Layout"
 msgstr "Alapértelmezett elrendezés"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:243
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:241
 msgid "Archive Content Layout"
 msgstr "Archív tartalom elrendezése"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:274
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:272
 #, php-format
 msgid ""
 "Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>."
@@ -1078,7 +1078,7 @@ msgstr ""
 "\">JetPack Plugin</a> szükséges, és engedélyezni kell benne az Infinite Scroll "
 "modult."
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:281
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:279
 #, php-format
 msgid ""
 "Infinite Scroll Options requires <a target=\"_blank\" href=\"%s\">JetPack "
@@ -1087,7 +1087,7 @@ msgstr ""
 "A végtelen scrollozáshoz a <a target=\"_blank\" href=\"%s\">JetPack Plugin</a> "
 "szükséges, és engedélyezni kell benne az Infinite Scroll modult."
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:292
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:290
 #, php-format
 msgid ""
 "Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>."
@@ -1095,63 +1095,63 @@ msgstr ""
 "Az oldalszámozás a <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>-t "
 "igényli."
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:303
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:301
 msgid "Pagination Options"
 msgstr "Oldalszámozás tulajdonságai"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:320
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:318
 msgid "Pagination type"
 msgstr "Oldalszámozás típusa"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:329
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:327
 msgid "To disable the fields, simply leave them empty."
 msgstr "A mezők letiltásához egyszerűen csak hagyja őket üresen."
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:332
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:330
 msgid "Promotion Headline Options"
 msgstr "Promóciós főcím tulajdonságai"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:349
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:347
 msgid "Enable Promotion Headline on"
 msgstr "Promóciós főcím engedélyezése"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:363
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:361
 msgid "Appropriate Words: 10"
 msgstr "Megfelelő szavak: 10"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:364
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:362
 msgid "Promotion Headline Text"
 msgstr "Promóciós főcím szövege"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:378
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:376
 msgid "Appropriate Words: 15"
 msgstr "Megfelelő szavak: 15"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:379
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:377
 msgid "Promotion Subheadline Text"
 msgstr "Promóciós alcím szövege"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:393
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:391
 msgid "Appropriate Words: 3"
 msgstr "Megfelelő szavak: 3"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:394
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:392
 msgid "Promotion Headline Button Text "
 msgstr "Promóciós főcím gomb  szövege"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:408
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:406
 msgid "Promotion Headline Link"
 msgstr "Promóciós főcím linkje"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:432
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:430
 msgid "Change default placeholder text in Search."
 msgstr "Keresésben megjelenő alap szöveg megváltoztatása."
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:435
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:433
 msgid "Search Options"
 msgstr "Keresés opciók"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:445
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:443
 msgid "Default Display Text in Search"
 msgstr "Keresésben megjelenő alap szöveg"
 

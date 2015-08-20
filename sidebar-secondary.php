@@ -25,11 +25,11 @@ do_action( 'catchbase_before_secondary_sidebar' ); ?>
 		if ( current_user_can( 'edit_theme_options' ) ) { ?>
 			<section id="widget-default-text" class="widget widget_text">	
 				<div class="widget-wrap">
-                	<h4 class="widget-title"><?php _e( 'Secondary Sidebar Widget Area', 'catchbase' ); ?></h4>
+                	<h4 class="widget-title"><?php _e( 'Secondary Sidebar Widget Area', 'catch-base' ); ?></h4>
            		
            			<div class="textwidget">
-                   		<p><?php _e( 'This is the Secondary Sidebar Widget Area if you are using a three column site layout option.', 'catchbase' ); ?></p>
-                   		<p><?php printf( __( 'By default it will load Search and Archives widgets as shown below. You can add widget to this area by visiting your <a href="%s">Widgets Panel</a> which will replace default widgets.', 'catchbase' ), admin_url( 'widgets.php' ) ); ?></p>
+                   		<p><?php _e( 'This is the Secondary Sidebar Widget Area if you are using a three column site layout option.', 'catch-base' ); ?></p>
+                   		<p><?php printf( __( 'By default it will load Search and Archives widgets as shown below. You can add widget to this area by visiting your <a href="%s">Widgets Panel</a> which will replace default widgets.', 'catch-base' ), admin_url( 'widgets.php' ) ); ?></p>
                  	</div>
            		</div><!-- .widget-wrap -->
        		</section><!-- #widget-default-text -->
@@ -42,7 +42,7 @@ do_action( 'catchbase_before_secondary_sidebar' ); ?>
 		</section><!-- #default-search -->
 		<section class="widget widget_archive" id="default-archives">
 			<div class="widget-wrap">
-				<h4 class="widget-title"><?php _e( 'Archives', 'catchbase' ); ?></h4>
+				<h4 class="widget-title"><?php _e( 'Archives', 'catch-base' ); ?></h4>
 				<ul>
 					<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
 				</ul>

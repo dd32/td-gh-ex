@@ -48,7 +48,7 @@ function catchbase_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'logo', array(
-		'label'		=> __( 'Logo', 'catchbase' ),
+		'label'		=> __( 'Logo', 'catch-base' ),
 		'priority'	=> 100,
 		'section'   => 'title_tagline',
         'settings'  => 'catchbase_theme_options[logo]',
@@ -61,7 +61,7 @@ function catchbase_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'catchbase_theme_options[logo_disable]', array(
-		'label'    => __( 'Check to disable logo', 'catchbase' ),
+		'label'    => __( 'Check to disable logo', 'catch-base' ),
 		'priority' => 101,
 		'section'  => 'title_tagline',
 		'settings' => 'catchbase_theme_options[logo_disable]',
@@ -75,7 +75,7 @@ function catchbase_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'catchbase_logo_alt_text', array(
-		'label'    	=> __( 'Logo Alt Text', 'catchbase' ),
+		'label'    	=> __( 'Logo Alt Text', 'catch-base' ),
 		'priority'	=> 102,
 		'section' 	=> 'title_tagline',
 		'settings' 	=> 'catchbase_theme_options[logo_alt_text]',
@@ -89,7 +89,7 @@ function catchbase_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'catchbase_theme_options[move_title_tagline]', array(
-		'label'    => __( 'Check to move Site Title and Tagline before logo', 'catchbase' ),
+		'label'    => __( 'Check to move Site Title and Tagline before logo', 'catch-base' ),
 		'priority' => 103,
 		'section'  => 'title_tagline',
 		'settings' => 'catchbase_theme_options[move_title_tagline]',
@@ -115,7 +115,7 @@ function catchbase_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( 'catchbase_theme_options[color_scheme]', array(
 		'choices'  => $choices,
-		'label'    => __( 'Color Scheme', 'catchbase' ),
+		'label'    => __( 'Color Scheme', 'catch-base' ),
 		'priority' => 5,
 		'section'  => 'colors',
 		'settings' => 'catchbase_theme_options[color_scheme]',
@@ -140,9 +140,9 @@ function catchbase_customize_register( $wp_customize ) {
 	
 	// Reset all settings to default
 	$wp_customize->add_section( 'catchbase_reset_all_settings', array(
-		'description'	=> __( 'Caution: Reset all settings to default. Refresh the page after save to view full effects.', 'catchbase' ),
+		'description'	=> __( 'Caution: Reset all settings to default. Refresh the page after save to view full effects.', 'catch-base' ),
 		'priority' 		=> 700,
-		'title'    		=> __( 'Reset all settings', 'catchbase' ),
+		'title'    		=> __( 'Reset all settings', 'catch-base' ),
 	) );
 
 	$wp_customize->add_setting( 'catchbase_theme_options[reset_all_settings]', array(
@@ -153,7 +153,7 @@ function catchbase_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'catchbase_theme_options[reset_all_settings]', array(
-		'label'    => __( 'Check to reset all settings to default', 'catchbase' ),
+		'label'    => __( 'Check to reset all settings to default', 'catch-base' ),
 		'section'  => 'catchbase_reset_all_settings',
 		'settings' => 'catchbase_theme_options[reset_all_settings]',
 		'type'     => 'checkbox',
@@ -163,7 +163,7 @@ function catchbase_customize_register( $wp_customize ) {
 	//Important Links
 	$wp_customize->add_section( 'important_links', array(
 		'priority' 		=> 999,
-		'title'   	 	=> __( 'Important Links', 'catchbase' ),
+		'title'   	 	=> __( 'Important Links', 'catch-base' ),
 	) );
 
 	/**
@@ -174,7 +174,7 @@ function catchbase_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new Catchbase_Important_Links( $wp_customize, 'important_links', array(
-        'label'   	=> __( 'Important Links', 'catchbase' ),
+        'label'   	=> __( 'Important Links', 'catch-base' ),
          'section'  	=> 'important_links',
         'settings' 	=> 'important_links',
         'type'     	=> 'important_links',
@@ -209,9 +209,9 @@ function catchbase_customize_scripts() {
 
 	$catchbase_misc_links = array(
 							'upgrade_link' 				=> esc_url( 'http://catchthemes.com/themes/catch-base-pro/' ),
-							'upgrade_text'	 			=> __( 'Upgrade To Pro &raquo;', 'catchbase' ),
+							'upgrade_text'	 			=> __( 'Upgrade To Pro &raquo;', 'catch-base' ),
 							'WP_version'				=> get_bloginfo( 'version' ),
-							'old_version_message'		=> __( 'Some settings might be missing or disorganized in this version of WordPress. So we suggest you to upgrade to version 4.0 or better.', 'catchbase' )
+							'old_version_message'		=> __( 'Some settings might be missing or disorganized in this version of WordPress. So we suggest you to upgrade to version 4.0 or better.', 'catch-base' )
 		);
 
 	$catchbase_misc_links['color_list'] = catchbase_color_list();

@@ -96,9 +96,9 @@ if ( ! function_exists( 'catchbase_setup' ) ) :
 		 * Make theme available for translation
 		 * Translations can be filed in the /languages/ directory
 		 * If you're building a theme based on catchbase, use a find and replace
-		 * to change 'catchbase' to the name of your theme in all the template files
+		 * to change 'catch-base' to the name of your theme in all the template files
 		 */
-		load_theme_textdomain( 'catchbase', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'catch-base', get_template_directory() . '/languages' );
 
 		/**
 		 * Add default posts and comments RSS feed links to head
@@ -124,8 +124,8 @@ if ( ! function_exists( 'catchbase_setup' ) ) :
 		 * This theme uses wp_nav_menu() in one location.
 		 */
 		register_nav_menus( array(
-			'primary' 	=> __( 'Primary Menu', 'catchbase' ),
-			'secondary' => __( 'Secondary Menu', 'catchbase' ),
+			'primary' 	=> __( 'Primary Menu', 'catch-base' ),
+			'secondary' => __( 'Secondary Menu', 'catch-base' ),
 		) );
 
 		/**
@@ -602,7 +602,7 @@ if ( ! function_exists( 'catchbase_content_nav' ) ) :
 
 		?>
 	        <nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>">
-	        	<h3 class="screen-reader-text"><?php _e( 'Post navigation', 'catchbase' ); ?></h3>
+	        	<h3 class="screen-reader-text"><?php _e( 'Post navigation', 'catch-base' ); ?></h3>
 				<?php
 				/**
 				 * Check if navigation type is numeric and if Wp-PageNavi Plugin is enabled
@@ -611,8 +611,8 @@ if ( ! function_exists( 'catchbase_content_nav' ) ) :
 					wp_pagenavi();
 	            }
 	            else { ?>	
-	                <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'catchbase' ) ); ?></div>
-	                <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'catchbase' ) ); ?></div>
+	                <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'catch-base' ) ); ?></div>
+	                <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'catch-base' ) ); ?></div>
 	            <?php 
 	            } ?>
 	        </nav><!-- #nav -->	
@@ -636,7 +636,7 @@ if ( ! function_exists( 'catchbase_comment' ) ) :
 
 		<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
 			<div class="comment-body">
-				<?php _e( 'Pingback:', 'catchbase' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'catchbase' ), '<span class="edit-link">', '</span>' ); ?>
+				<?php _e( 'Pingback:', 'catch-base' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'catch-base' ), '<span class="edit-link">', '</span>' ); ?>
 			</div>
 
 		<?php else : ?>
@@ -646,20 +646,20 @@ if ( ! function_exists( 'catchbase_comment' ) ) :
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
 						<?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
-						<?php printf( __( '%s <span class="says">says:</span>', 'catchbase' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+						<?php printf( __( '%s <span class="says">says:</span>', 'catch-base' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
 					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 							<time datetime="<?php comment_time( 'c' ); ?>">
-								<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'catchbase' ), get_comment_date(), get_comment_time() ); ?>
+								<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'catch-base' ), get_comment_date(), get_comment_time() ); ?>
 							</time>
 						</a>
-						<?php edit_comment_link( __( 'Edit', 'catchbase' ), '<span class="edit-link">', '</span>' ); ?>
+						<?php edit_comment_link( __( 'Edit', 'catch-base' ), '<span class="edit-link">', '</span>' ); ?>
 					</div><!-- .comment-metadata -->
 
 					<?php if ( '0' == $comment->comment_approved ) : ?>
-					<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'catchbase' ); ?></p>
+					<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'catch-base' ); ?></p>
 					<?php endif; ?>
 				</footer><!-- .comment-meta -->
 
@@ -762,14 +762,14 @@ if ( ! function_exists( 'catchbase_entry_meta' ) ) :
 		);
 
 		printf( '<span class="posted-on">%1$s<a href="%2$s" rel="bookmark">%3$s</a></span>',
-			sprintf( _x( '<span class="screen-reader-text">Posted on</span>', 'Used before publish date.', 'catchbase' ) ),
+			sprintf( _x( '<span class="screen-reader-text">Posted on</span>', 'Used before publish date.', 'catch-base' ) ),
 			esc_url( get_permalink() ),
 			$time_string
 		);
 
 		if ( is_singular() || is_multi_author() ) {
 			printf( '<span class="byline"><span class="author vcard">%1$s<a class="url fn n" href="%2$s">%3$s</a></span></span>',
-				sprintf( _x( '<span class="screen-reader-text">Author</span>', 'Used before post author name.', 'catchbase' ) ),
+				sprintf( _x( '<span class="screen-reader-text">Author</span>', 'Used before post author name.', 'catch-base' ) ),
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 				esc_html( get_the_author() )
 			);
@@ -777,11 +777,11 @@ if ( ! function_exists( 'catchbase_entry_meta' ) ) :
 
 		if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) {
 			echo '<span class="comments-link">';
-			comments_popup_link( esc_html__( 'Leave a comment', 'catchbase' ), esc_html__( '1 Comment', 'catchbase' ), esc_html__( '% Comments', 'catchbase' ) );
+			comments_popup_link( esc_html__( 'Leave a comment', 'catch-base' ), esc_html__( '1 Comment', 'catch-base' ), esc_html__( '% Comments', 'catch-base' ) );
 			echo '</span>';
 		}
 
-		edit_post_link( esc_html__( 'Edit', 'catchbase' ), '<span class="edit-link">', '</span>' ); 
+		edit_post_link( esc_html__( 'Edit', 'catch-base' ), '<span class="edit-link">', '</span>' ); 
 
 		echo '</p><!-- .entry-meta -->';
 	}
@@ -798,18 +798,18 @@ if ( ! function_exists( 'catchbase_tag_category' ) ) :
 		echo '<p class="entry-meta">';
 
 		if ( 'post' == get_post_type() ) {
-			$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'catchbase' ) );
+			$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'catch-base' ) );
 			if ( $categories_list && catchbase_categorized_blog() ) {
 				printf( '<span class="cat-links">%1$s%2$s</span>',
-					sprintf( _x( '<span class="screen-reader-text">Categories</span>', 'Used before category names.', 'catchbase' ) ),
+					sprintf( _x( '<span class="screen-reader-text">Categories</span>', 'Used before category names.', 'catch-base' ) ),
 					$categories_list
 				);
 			}
 
-			$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'catchbase' ) );
+			$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'catch-base' ) );
 			if ( $tags_list ) {
 				printf( '<span class="tags-links">%1$s%2$s</span>',
-					sprintf( _x( '<span class="screen-reader-text">Tags</span>', 'Used before tag names.', 'catchbase' ) ),
+					sprintf( _x( '<span class="screen-reader-text">Tags</span>', 'Used before tag names.', 'catch-base' ) ),
 					$tags_list
 				);
 			}
@@ -878,57 +878,6 @@ function catchbase_enhanced_image_navigation( $url, $id ) {
 	return $url;
 }
 add_filter( 'attachment_link', 'catchbase_enhanced_image_navigation', 10, 2 );
-
-
-if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
-	/**
-	* Filters wp_title to print a neat <title> tag based on what is being viewed.
-	*
-	* @param string $title Default title text for current view.
-	* @param string $sep Optional Separator.
-	* @return string The filtered title.
-	*/
-	function catchbase_wp_title( $title, $sep ) {
-		if ( is_feed() ) {
-			return $title;
-		}
-		
-		global $page, $paged;
-		
-		// Add the blog name
-		$title .= get_bloginfo( 'name', 'display' );
-		
-		// Add the blog description for the home/front page.
-		$site_description = get_bloginfo( 'description', 'display' );
-		
-		if ( $site_description && ( is_home() || is_front_page() ) ) {
-			$title .= " $sep $site_description";
-		}
-		
-		// Add a page number if necessary:
-		if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-			$title .= " $sep " . sprintf( __( 'Page %s', '_s' ), max( $paged, $page ) );
-		}
-		
-		return $title;
-		
-	}
-		
-	add_filter( 'wp_title', 'catchbase_wp_title', 10, 2 );
-	
-	/**
-	* Title shim for sites older than WordPress 4.1.
-	*
-	* @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
-	* @todo Remove this function when WordPress 4.3 is released.
-	*/
-	function catchbase_render_title() {
-	?>
-		<title><?php wp_title( '|', true, 'right' ); ?></title>
-	<?php
-	}
-	add_action( 'wp_head', 'catchbase_render_title' );
-endif;
 
 
 /**
@@ -1003,7 +952,7 @@ if ( ! function_exists( 'catchbase_continue_reading' ) ) :
 		$options		=	catchbase_get_theme_options();
 		$more_tag_text	= $options['excerpt_more_text'];
 
-		return ' <a class="more-link" href="'. esc_url( get_permalink() ) . '">' .  sprintf( __( '%s', 'catchbase' ) , $more_tag_text ) . '</a>';
+		return ' <a class="more-link" href="'. esc_url( get_permalink() ) . '">' .  sprintf( __( '%s', 'catch-base' ) , $more_tag_text ) . '</a>';
 	}
 endif; //catchbase_continue_reading
 add_filter( 'excerpt_more', 'catchbase_continue_reading' );
@@ -1501,7 +1450,7 @@ if ( ! function_exists( 'catchbase_scrollup' ) ) {
 			$options = catchbase_get_theme_options();
 			echo '<!-- refreshing cache -->';	
 			
-			$catchbase_scrollup =  '<a href="#masthead" id="scrollup" class="genericon"><span class="screen-reader-text">' . __( 'Scroll Up', 'catchbase' ) . '</span></a>' ;
+			$catchbase_scrollup =  '<a href="#masthead" id="scrollup" class="genericon"><span class="screen-reader-text">' . __( 'Scroll Up', 'catch-base' ) . '</span></a>' ;
 			
 			set_transient( 'catchbase_scrollup', $catchbase_scrollup, 86940 );
 		}
@@ -1518,8 +1467,8 @@ if ( ! function_exists( 'catchbase_page_post_meta' ) ) :
 	function catchbase_page_post_meta() {
 		$catchbase_author_url = esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) );
 		
-		$catchbase_page_post_meta = '<span class="post-time">' . __( 'Posted on', 'catchbase' ) . ' <time class="entry-date updated" datetime="' . esc_attr( get_the_date( 'c' ) ) . '" pubdate>' . esc_html( get_the_date() ) . '</time></span>';
-	    $catchbase_page_post_meta .= '<span class="post-author">' . __( 'By', 'catchbase' ) . ' <span class="author vcard"><a class="url fn n" href="' . $catchbase_author_url . '" title="View all posts by ' . get_the_author() . '" rel="author">' .get_the_author() . '</a></span>';
+		$catchbase_page_post_meta = '<span class="post-time">' . __( 'Posted on', 'catch-base' ) . ' <time class="entry-date updated" datetime="' . esc_attr( get_the_date( 'c' ) ) . '" pubdate>' . esc_html( get_the_date() ) . '</time></span>';
+	    $catchbase_page_post_meta .= '<span class="post-author">' . __( 'By', 'catch-base' ) . ' <span class="author vcard"><a class="url fn n" href="' . $catchbase_author_url . '" title="View all posts by ' . get_the_author() . '" rel="author">' .get_the_author() . '</a></span>';
 
 		return $catchbase_page_post_meta;
 	} 
@@ -1560,11 +1509,11 @@ if ( ! function_exists( 'catchbase_post_navigation' ) ) :
 	function catchbase_post_navigation() {
 		// Previous/next post navigation.
 		the_post_navigation( array(
-			'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next &rarr;', 'catchbase' ) . '</span> ' .
-				'<span class="screen-reader-text">' . __( 'Next post:', 'catchbase' ) . '</span> ' .
+			'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next &rarr;', 'catch-base' ) . '</span> ' .
+				'<span class="screen-reader-text">' . __( 'Next post:', 'catch-base' ) . '</span> ' .
 				'<span class="post-title">%title</span>',
-			'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( '&larr; Previous', 'catchbase' ) . '</span> ' .
-				'<span class="screen-reader-text">' . __( 'Previous post:', 'catchbase' ) . '</span> ' .
+			'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( '&larr; Previous', 'catch-base' ) . '</span> ' .
+				'<span class="screen-reader-text">' . __( 'Previous post:', 'catch-base' ) . '</span> ' .
 				'<span class="post-title">%title</span>',
 		) );
 

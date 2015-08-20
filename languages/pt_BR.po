@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Catch Base\n"
 "Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/catch-base-"
 "free/\n"
-"POT-Creation-Date: 2015-08-05 21:36+0545\n"
-"PO-Revision-Date: 2015-08-05 21:36+0545\n"
+"POT-Creation-Date: 2015-08-20 17:26+0545\n"
+"PO-Revision-Date: 2015-08-20 17:26+0545\n"
 "Last-Translator: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language-Team: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language: pt_BR\n"
@@ -190,7 +190,7 @@ msgstr "%1$s Ver todas as postagens de: %2$s"
 msgid "Error 404"
 msgstr "Erro 404 - Página não encontrada."
 
-#: ../inc/catchbase-breadcrumb.php:223 ../inc/catchbase-core.php:910
+#: ../inc/catchbase-breadcrumb.php:223
 #, php-format
 msgid "Page %s"
 msgstr "Página %s"
@@ -273,36 +273,36 @@ msgctxt "Used before tag names."
 msgid "<span class=\"screen-reader-text\">Tags</span>"
 msgstr "<span class=\"screen-reader-text\">Tags: </span>"
 
-#: ../inc/catchbase-core.php:1006
+#: ../inc/catchbase-core.php:955
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: ../inc/catchbase-core.php:1504
+#: ../inc/catchbase-core.php:1453
 msgid "Scroll Up"
 msgstr "Rolar para cima"
 
-#: ../inc/catchbase-core.php:1521
+#: ../inc/catchbase-core.php:1470
 msgid "Posted on"
 msgstr "Postada na"
 
-#: ../inc/catchbase-core.php:1522
+#: ../inc/catchbase-core.php:1471
 msgid "By"
 msgstr "Por"
 
-#: ../inc/catchbase-core.php:1563
+#: ../inc/catchbase-core.php:1512
 msgid "Next &rarr;"
 msgstr "Próximo &rarr;"
 
-#: ../inc/catchbase-core.php:1564
+#: ../inc/catchbase-core.php:1513
 msgid "Next post:"
 msgstr "Próximo post: "
 
-#: ../inc/catchbase-core.php:1566
+#: ../inc/catchbase-core.php:1515
 msgid "&larr; Previous"
 msgstr "&larr; Anterior"
 
-#: ../inc/catchbase-core.php:1567
+#: ../inc/catchbase-core.php:1516
 msgid "Previous post:"
 msgstr "Post anterior: "
 
@@ -710,7 +710,7 @@ msgid "Menu"
 msgstr "Menu"
 
 #: ../inc/catchbase-metabox.php:92
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:206
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:204
 msgid "Layout Options"
 msgstr "Opções de layout"
 
@@ -719,7 +719,7 @@ msgid "Header Featured Image Options"
 msgstr "Opções da imagem em destaque no cabeçalho (Header)"
 
 #: ../inc/catchbase-metabox.php:94
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:263
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:261
 msgid "Single Page/Post Image Layout "
 msgstr "Layout de imagem único em página/post"
 
@@ -950,11 +950,11 @@ msgid "Featured Header Image Link URL"
 msgstr "Atribuindo um link de destino para a imagem do cabeçalho (URL)"
 
 #: ../inc/customizer-includes/catchbase-customizer-header-options.php:91
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:422
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:420
 msgid "Check to Open Link in New Window/Tab"
 msgstr "Marque aqui para abrir o link em uma nova janela/aba"
 
-#: ../inc/customizer-includes/catchbase-customizer-social-icons.php:20
+#: ../inc/customizer-includes/catchbase-customizer-social-icons.php:19
 msgid "Note: Enter the url for correponding social networking website"
 msgstr ""
 "<strong>Nota:</strong> Digite abaixo o url da  Rede Social, a qual você é "
@@ -964,12 +964,12 @@ msgstr ""
 "<strong>\"Salvar & Publicar\"</strong>, acima, sempre que incluir ou alterar "
 "algum link nesta seção!"
 
-#: ../inc/customizer-includes/catchbase-customizer-social-icons.php:22
-#: ../inc/customizer-includes/catchbase-customizer-social-icons.php:29
+#: ../inc/customizer-includes/catchbase-customizer-social-icons.php:21
+#: ../inc/customizer-includes/catchbase-customizer-social-icons.php:27
 msgid "Social Links"
 msgstr "Links das Redes Sociais"
 
-#: ../inc/customizer-includes/catchbase-customizer-social-icons.php:46
+#: ../inc/customizer-includes/catchbase-customizer-social-icons.php:44
 msgid ""
 "Skype link can be of formats:<br>callto://+{number}<br> skype:{username}?"
 "{action}. More Information in readme file"
@@ -979,15 +979,15 @@ msgstr ""
 "você encontra no arquivo leia-me (readme.txt) dentro da pasta principal deste "
 "tema."
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:21
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:20
 msgid "Basic theme Options"
 msgstr "Opções básicas do tema"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:24
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:23
 msgid "Theme Options"
 msgstr "Opções do tema"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:30
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:28
 msgid ""
 "Breadcrumbs are a great way of letting your visitors find out where they are on "
 "your site with just a glance. You can enable/disable them on homepage and entire "
@@ -999,58 +999,58 @@ msgstr ""
 "com apenas um olhar. Aqui você pode ativá-lo ou desativa-lo na página inicial ou "
 "no site inteiro."
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:32
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:30
 msgid "Breadcrumb Options"
 msgstr "Exibir o caminho de navegação"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:43
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:41
 msgid "Check to enable Breadcrumb"
 msgstr "Marque aqui para ativar o caminho de navegação no site inteiro"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:56
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:54
 msgid "Check to enable Breadcrumb on Homepage"
 msgstr ""
 "Marque aqui para ativar o caminho de navegação na página inicial (Homepage)"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:72
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:70
 msgid "Separator between Breadcrumbs"
 msgstr "Separador indicativo que é usado no caminho de navegação"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:82
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:80
 msgid "Custom/Inline CSS"
 msgstr "Personalizar o CSS em linha"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:85
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:83
 msgid "Custom CSS Options"
 msgstr "Opções de personalização do CSS"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:95
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:93
 msgid "Enter Custom CSS"
 msgstr "Coloque aqui a sua folha de estilo CSS personalizado!"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:107
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:105
 msgid "Excerpt Options"
 msgstr "Opções do resumo do post (Excerpt)"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:117
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:115
 msgid "Excerpt length. Default is 40 words"
 msgstr ""
 "Quantidade de palavras (excerpt) que serão usadas para apresentar o resumo da "
 "postagem, em páginas que usarem esse recurso. ( exemplo: home, categorias, "
 "etc...).<br><strong>O padrão é de 40 palavras.</strong>"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:124
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:122
 msgid "Excerpt Length (words)"
 msgstr ""
 "Quantidade de palavras que serão usadas para apresentar o resumo da postagem, "
 "(Excerpt), em páginas que usarem esse recurso. ( exemplo: home, categorias, "
 "etc...)"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:138
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:136
 msgid "Read More Text"
 msgstr "Texto leia mais"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:147
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:145
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on the "
 "front page"
@@ -1058,27 +1058,27 @@ msgstr ""
 "Somente as postagens que pertencem às categorias selecionadas aqui, serão "
 "exibidas na primeira página."
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:150
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:148
 msgid "Homepage / Frontpage Options"
 msgstr "Opções da Homepage/Frontpage"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:160
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:158
 msgid "Select Categories"
 msgstr "Selecionar as categorias do Slider Show"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:171
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:169
 msgid "Remove Icon images to disable."
 msgstr "Remova a imagem do ícone para desativar."
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:174
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:172
 msgid "Icon Options"
 msgstr "Opções para os ícones"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:183
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:181
 msgid "Select/Add Favicon"
 msgstr "Adicionar/Mudar - Favicon"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:194
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:192
 msgid ""
 "Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px "
 "height, which will support High Resolution Devices like iPad Retina."
@@ -1087,19 +1087,19 @@ msgstr ""
 "144px e altura 144px, que irá suportar dispositivos de alta resolução, como iPad "
 "de Retina."
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:195
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:193
 msgid "Select/Add Web Clip Icon"
 msgstr "Adicionar/Mudar Web Clip Icone"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:223
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:221
 msgid "Default Layout"
 msgstr "Layout padrão"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:243
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:241
 msgid "Archive Content Layout"
 msgstr "Layout do arquivo de conteúdo"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:274
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:272
 #, php-format
 msgid ""
 "Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>."
@@ -1110,7 +1110,7 @@ msgstr ""
 "<br/>Opção de rolagem infinita requer <a target=\"_blank\" href=\"%s\">Plugin "
 "JetPack</a> com módulo de rolagem infinita habilitado."
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:281
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:279
 #, php-format
 msgid ""
 "Infinite Scroll Options requires <a target=\"_blank\" href=\"%s\">JetPack "
@@ -1119,70 +1119,70 @@ msgstr ""
 "Opção de rolagem infinita requer <a target=\"_blank\" href=\"%s\">Plugin "
 "JetPack</a> com o módulo de rolagem infinita habilitado."
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:292
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:290
 #, php-format
 msgid ""
 "Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>."
 msgstr ""
 "Opção numérica requer <a target=\"_blank\" href=\"%s\">Plugin WP-PageNavi</a>."
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:303
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:301
 msgid "Pagination Options"
 msgstr "Opções de paginação"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:320
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:318
 msgid "Pagination type"
 msgstr "Tipo de paginação"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:329
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:327
 msgid "To disable the fields, simply leave them empty."
 msgstr "Para desativar os campos, basta deixá-los vazio."
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:332
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:330
 msgid "Promotion Headline Options"
 msgstr "Opções da frase de apresentação da manchete"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:349
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:347
 msgid "Enable Promotion Headline on"
 msgstr "Habilitar a promoção da manchete"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:363
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:361
 msgid "Appropriate Words: 10"
 msgstr "Quantidade de palavras apropriada é: 10"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:364
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:362
 msgid "Promotion Headline Text"
 msgstr "Texto da promoção da manchete"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:378
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:376
 msgid "Appropriate Words: 15"
 msgstr "Quantidade de palavras apropriada é: 15"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:379
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:377
 msgid "Promotion Subheadline Text"
 msgstr "O texto do subtítulo na promoção"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:393
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:391
 msgid "Appropriate Words: 3"
 msgstr "Quantidade de palavras apropriada é: 3"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:394
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:392
 msgid "Promotion Headline Button Text "
 msgstr "Texto no botão da promoção da manchete"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:408
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:406
 msgid "Promotion Headline Link"
 msgstr "Link vinculado a promoção da manchete"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:432
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:430
 msgid "Change default placeholder text in Search."
 msgstr "Alterar o texto do espaço reservado padrão no campo Pesquisar."
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:435
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:433
 msgid "Search Options"
 msgstr "Opções do campo Pesquisar"
 
-#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:445
+#: ../inc/customizer-includes/catchbase-customizer-theme-options.php:443
 msgid "Default Display Text in Search"
 msgstr "Exibição do texto padrão no campo Pesquisar é:"
 

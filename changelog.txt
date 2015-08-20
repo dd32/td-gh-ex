@@ -1,5 +1,13 @@
 == Change log ==
 
+= 2.4 =
+* Bug Fixed: German language translation issue in de_DE.po and de_DE.mo file (Reported by mydreamin )
+* Bug Fixed: Changed esc_attr_e to echo esc_attr in searchform.php
+* Compatible with WordPress 4.3
+* Removed support for WordPress version less than 4.1
+* Updated codes to comply with deprecating PHP4 style constructors in WordPress 4.3
+* Updated text-domain
+
 = 2.3 =
 * Added: Hungarian translation hu_HU.po and hu_HU.mo
 

@@ -27,37 +27,37 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 function catchbase_widgets_init() {
 	//Primary Sidebar
 	register_sidebar( array(
-		'name'          => __( 'Primary Sidebar', 'catchbase' ),
+		'name'          => __( 'Primary Sidebar', 'catch-base' ),
 		'id'            => 'primary-sidebar',
 		'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-wrap">',
 		'after_widget'  => '</div><!-- .widget-wrap --></section><!-- #widget-default-search -->',
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
-		'description'	=> __( 'This is the primary sidebar if you are using a two or three column site layout option.', 'catchbase' ),
+		'description'	=> __( 'This is the primary sidebar if you are using a two or three column site layout option.', 'catch-base' ),
 	) );
 
 	//Secondary Sidebar
 	register_sidebar( array(
-		'name'          => __( 'Secondary Sidebar', 'catchbase' ),
+		'name'          => __( 'Secondary Sidebar', 'catch-base' ),
 		'id'            => 'secondary-sidebar',
 		'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-wrap">',
 		'after_widget'  => '</div><!-- .widget-wrap --></section><!-- #widget-default-search -->',
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
-		'description'	=> __( 'This is the secondary sidebar if you are using a three column site layout option.', 'catchbase' ),
+		'description'	=> __( 'This is the secondary sidebar if you are using a three column site layout option.', 'catch-base' ),
 	) );
 
 	$footer_sidebar_number = 3; //Number of footer sidebars
 	
 	for( $i=1; $i <= $footer_sidebar_number; $i++ ) {
 		register_sidebar( array(
-			'name'          => sprintf( __( 'Footer Area %d', 'catchbase' ), $i ),
+			'name'          => sprintf( __( 'Footer Area %d', 'catch-base' ), $i ),
 			'id'            => sprintf( 'footer-%d', $i ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-wrap">',
 			'after_widget'  => '</div><!-- .widget-wrap --></section><!-- #widget-default-search -->',
 			'before_title'  => '<h4 class="widget-title">',
 			'after_title'   => '</h4>',
-			'description'	=> sprintf( __( 'Footer %d widget area.', 'catchbase' ), $i ),
+			'description'	=> sprintf( __( 'Footer %d widget area.', 'catch-base' ), $i ),
 		) );
 	}
 }
@@ -77,8 +77,8 @@ class Catchbase_social_icons_widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'catchbase_social_icons', // Base ID
-			__( 'CT: Social Icons', 'catchbase' ), // Name
-			array( 'description' => __( 'Use this widget to add Social Icons as a widget. ', 'catchbase' ) ) // Args
+			__( 'CT: Social Icons', 'catch-base' ), // Name
+			array( 'description' => __( 'Use this widget to add Social Icons as a widget. ', 'catch-base' ) ) // Args
 		);
 	}
 
@@ -119,7 +119,7 @@ class Catchbase_social_icons_widget extends WP_Widget {
 		}
 		?>
 		<p>
-		<label for="<?php echo $this->get_field_name( 'title' ); ?>"><?php _e( 'Title (optional):', 'catchbase' ); ?></label>
+		<label for="<?php echo $this->get_field_name( 'title' ); ?>"><?php _e( 'Title (optional):', 'catch-base' ); ?></label>
 		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
         <?php

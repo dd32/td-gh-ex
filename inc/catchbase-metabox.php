@@ -89,9 +89,9 @@ class CatchbaseMetaBox {
 	    // Begin the field table and loop  ?>  
 	    <div id="catchbase-ui-tabs" class="ui-tabs">
 		    <ul class="catchbase-ui-tabs-nav" id="catchbase-ui-tabs-nav">
-		    	<li><a href="#frag1"><?php _e( 'Layout Options', 'catchbase' ); ?></a></li>
-		    	<li><a href="#frag3"><?php _e( 'Header Featured Image Options', 'catchbase' ); ?></a></li>
-		    	<li><a href="#frag4"><?php _e( 'Single Page/Post Image Layout ', 'catchbase' ); ?></a></li>
+		    	<li><a href="#frag1"><?php _e( 'Layout Options', 'catch-base' ); ?></a></li>
+		    	<li><a href="#frag3"><?php _e( 'Header Featured Image Options', 'catch-base' ); ?></a></li>
+		    	<li><a href="#frag4"><?php _e( 'Single Page/Post Image Layout ', 'catch-base' ); ?></a></li>
 		    </ul> 
 		    <div id="frag1" class="catch_ad_tabhead">
 		    	<table id="layout-options" class="form-table" width="100%">
@@ -217,6 +217,6 @@ class CatchbaseMetaBox {
 
 $catchbase_metabox = new CatchbaseMetaBox( 
 									'catchbase-options', 					//metabox id
-									__( 'Catchbase Options', 'catchbase' ), //metabox title
+									__( 'Catchbase Options', 'catch-base' ), //metabox title
 									array( 'page', 'post' )				//metabox post types
 									);

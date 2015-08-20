@@ -15,15 +15,15 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	// Featured Slider
 	$wp_customize->add_panel( 'catchbase_featured_slider', array(
 	    'capability'     => 'edit_theme_options',
-	    'description'    => __( 'Featured Slider Options', 'catchbase' ),
+	    'description'    => __( 'Featured Slider Options', 'catch-base' ),
 	    'priority'       => 500,
-		'title'    		 => __( 'Featured Slider', 'catchbase' ),
+		'title'    		 => __( 'Featured Slider', 'catch-base' ),
 	) );
 
 	$wp_customize->add_section( 'catchbase_featured_slider', array(
 		'panel'			=> 'catchbase_featured_slider',
 		'priority'		=> 1,
-		'title'			=> __( 'Featured Slider Options', 'catchbase' ),
+		'title'			=> __( 'Featured Slider Options', 'catch-base' ),
 	) );
 
 	$wp_customize->add_setting( 'catchbase_theme_options[featured_slider_option]', array(
@@ -40,7 +40,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 
 	$wp_customize->add_control( 'catchbase_theme_options[featured_slider_option]', array(
 		'choices'   => $choices,
-		'label'    	=> __( 'Enable Slider on', 'catchbase' ),
+		'label'    	=> __( 'Enable Slider on', 'catch-base' ),
 		'priority'	=> '1.1',
 		'section'  	=> 'catchbase_featured_slider',
 		'settings' 	=> 'catchbase_theme_options[featured_slider_option]',
@@ -62,7 +62,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	$wp_customize->add_control( 'catchbase_theme_options[featured_slide_transition_effect]' , array(
 		'active_callback'	=> 'catchbase_is_slider_active',
 		'choices'  			=> $choices,
-		'label'				=> __( 'Transition Effect', 'catchbase' ),
+		'label'				=> __( 'Transition Effect', 'catch-base' ),
 		'priority'			=> '2',
 		'section'  			=> 'catchbase_featured_slider',
 		'settings' 			=> 'catchbase_theme_options[featured_slide_transition_effect]',
@@ -78,11 +78,11 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 
 	$wp_customize->add_control( 'catchbase_theme_options[featured_slide_transition_delay]' , array(
 		'active_callback'	=> 'catchbase_is_slider_active',
-		'description'		=> __( 'seconds(s)', 'catchbase' ),
+		'description'		=> __( 'seconds(s)', 'catch-base' ),
 		'input_attrs' 		=> array(
 					            'style' => 'width: 40px;'
 					        	),
-		'label'    			=> __( 'Transition Delay', 'catchbase' ),
+		'label'    			=> __( 'Transition Delay', 'catch-base' ),
 		'priority'			=> '2.1.1',
 		'section'  			=> 'catchbase_featured_slider',
 		'settings' 			=> 'catchbase_theme_options[featured_slide_transition_delay]',
@@ -97,11 +97,11 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 
 	$wp_customize->add_control( 'catchbase_theme_options[featured_slide_transition_length]' , array(
 		'active_callback'	=> 'catchbase_is_slider_active',
-		'description'		=> __( 'seconds(s)', 'catchbase' ),
+		'description'		=> __( 'seconds(s)', 'catch-base' ),
 		'input_attrs' 		=> array(
 					            'style' => 'width: 40px;'
 				            	),
-		'label'    			=> __( 'Transition Length', 'catchbase' ),
+		'label'    			=> __( 'Transition Length', 'catch-base' ),
 		'priority'			=> '2.1.2',
 		'section'  			=> 'catchbase_featured_slider',
 		'settings' 			=> 'catchbase_theme_options[featured_slide_transition_length]',
@@ -122,9 +122,9 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 
 	$wp_customize->add_control( 'catchbase_theme_options[featured_slider_image_loader]', array(
 		'active_callback'	=> 'catchbase_is_slider_active',
-		'description'		=> __( 'True: Fixes the height overlap issue. Slideshow will start as soon as two slider are available. Slide may display in random, as image is fetch.<br>Wait: Fixes the height overlap issue.<br> Slideshow will start only after all images are available.', 'catchbase' ),
+		'description'		=> __( 'True: Fixes the height overlap issue. Slideshow will start as soon as two slider are available. Slide may display in random, as image is fetch.<br>Wait: Fixes the height overlap issue.<br> Slideshow will start only after all images are available.', 'catch-base' ),
 		'choices'   		=> $choices,
-		'label'    			=> __( 'Image Loader', 'catchbase' ),
+		'label'    			=> __( 'Image Loader', 'catch-base' ),
 		'priority'			=> '2.1.3',
 		'section'  			=> 'catchbase_featured_slider',
 		'settings' 			=> 'catchbase_theme_options[featured_slider_image_loader]',
@@ -146,7 +146,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	$wp_customize->add_control( 'catchbase_theme_options[featured_slider_type]', array(
 		'active_callback'	=> 'catchbase_is_slider_active',
 		'choices'  			=> $choices,
-		'label'    			=> __( 'Select Slider Type', 'catchbase' ),
+		'label'    			=> __( 'Select Slider Type', 'catch-base' ),
 		'priority'			=> '2.1.3',
 		'section'  			=> 'catchbase_featured_slider',
 		'settings' 			=> 'catchbase_theme_options[featured_slider_type]',
@@ -161,14 +161,14 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 
 	$wp_customize->add_control( 'catchbase_theme_options[featured_slide_number]' , array(
 		'active_callback'	=> 'catchbase_is_demo_slider_inactive',
-		'description'		=> __( 'Save and refresh the page if No. of Slides is changed (Max no of slides is 20)', 'catchbase' ),
+		'description'		=> __( 'Save and refresh the page if No. of Slides is changed (Max no of slides is 20)', 'catch-base' ),
 		'input_attrs' 		=> array(
 					            'style' => 'width: 45px;',
 					            'min'   => 0,
 					            'max'   => 20,
 					            'step'  => 1,
 					        	),
-		'label'    			=> __( 'No of Slides', 'catchbase' ),
+		'label'    			=> __( 'No of Slides', 'catch-base' ),
 		'priority'			=> '2.1.4',
 		'section'  			=> 'catchbase_featured_slider',
 		'settings' 			=> 'catchbase_theme_options[featured_slide_number]',
@@ -185,7 +185,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 
 		$wp_customize->add_control( 'catchbase_theme_options[featured_slider_page_'. $i .']', array(
 			'active_callback'	=> 'catchbase_is_demo_slider_inactive',
-			'label'    			=> __( 'Featured Page', 'catchbase' ) . ' # ' . $i ,
+			'label'    			=> __( 'Featured Page', 'catch-base' ) . ' # ' . $i ,
 			'priority'			=> '4' . $i,
 			'section'  			=> 'catchbase_featured_slider',
 			'settings' 			=> 'catchbase_theme_options[featured_slider_page_'. $i .']',

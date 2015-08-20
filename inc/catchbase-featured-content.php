@@ -53,8 +53,8 @@ function catchbase_featured_content_display() {
 
 			if( $contentselect == 'demo-featured-content' ) {
 				$classes 		.= ' demo-featured-content' ;
-				$headline 		= __( 'Featured Content', 'catchbase' );
-				$subheadline 	= __( 'Here you can showcase the x number of Featured Content. You can edit this Headline, Subheadline and Feaured Content from "Appearance -> Customize -> Featured Content Options".', 'catchbase' );
+				$headline 		= __( 'Featured Content', 'catch-base' );
+				$subheadline 	= __( 'Here you can showcase the x number of Featured Content. You can edit this Headline, Subheadline and Feaured Content from "Appearance -> Customize -> Featured Content Options".', 'catch-base' );
 			} 
 			elseif ( $contentselect == 'featured-page-content' ) {
 				$classes .= ' featured-page-content' ;
@@ -266,7 +266,7 @@ function catchbase_page_content( $options ) {
 
 		$i=0; 
 		while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post(); $i++;
-			$title_attribute = the_title_attribute( array( 'before' => __( 'Permalink to:', 'catchbase' ), 'echo' => false ) );
+			$title_attribute = the_title_attribute( array( 'before' => __( 'Permalink to:', 'catch-base' ), 'echo' => false ) );
 			
 			$excerpt = get_the_excerpt();
 			
@@ -275,7 +275,7 @@ function catchbase_page_content( $options ) {
 				if ( has_post_thumbnail() ) {
 					$catchbase_page_content .= '
 					<figure class="featured-homepage-image">
-						<a href="' . get_permalink() . '" "' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'catchbase' ), 'echo' => false ) ) . '">
+						<a href="' . get_permalink() . '" "' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'catch-base' ), 'echo' => false ) ) . '">
 						'. get_the_post_thumbnail( $post->ID, 'medium', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class' => 'pngfix' ) ) .'
 						</a>
 					</figure>';
@@ -286,7 +286,7 @@ function catchbase_page_content( $options ) {
 					if ( '' != $catchbase_first_image ) {
 						$catchbase_page_content .= '
 						<figure class="featured-homepage-image">
-							<a href="' . get_permalink() . '" title=""' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'catchbase' ), 'echo' => false ) ) . '">
+							<a href="' . get_permalink() . '" title=""' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'catch-base' ), 'echo' => false ) ) . '">
 								'. $catchbase_first_image .'
 							</a>
 						</figure>';

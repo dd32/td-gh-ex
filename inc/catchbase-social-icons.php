@@ -59,7 +59,7 @@ function catchbase_get_social_icons(){
 			if( '' != $value ){
 				$title	=	explode( '-', $key );
 				if ( 'Mail' == $key  ) { 
-					$output .= '<a class="genericon_parent genericon genericon-'. esc_attr( strtolower( $key ) ) .'" title="'. __( 'Email', 'catchbase') . '" href="mailto:'. sanitize_email( $value ) .'"><span class="screen-reader-text">'. __( 'Email', 'catchbase') . '</span> </a>';
+					$output .= '<a class="genericon_parent genericon genericon-'. esc_attr( strtolower( $key ) ) .'" title="'. __( 'Email', 'catch-base') . '" href="mailto:'. sanitize_email( $value ) .'"><span class="screen-reader-text">'. __( 'Email', 'catch-base') . '</span> </a>';
 				}
 				else if ( 'Skype' == $key  ) { 
 					$output .= '<a class="genericon_parent genericon genericon-'. esc_attr( strtolower( $key ) ) .'" title="'. $title[ 0 ] . '" href="'. esc_attr( $value ) .'"><span class="screen-reader-text">'. esc_attr( $title[ 0 ] ) . '</span> </a>';

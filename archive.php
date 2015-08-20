@@ -27,46 +27,46 @@ get_header(); ?>
 							single_tag_title();
 
 						elseif ( is_author() ) :
-							printf( __( 'Author: %s', 'catchbase' ), '<span class="vcard">' . get_the_author() . '</span>' );
+							printf( __( 'Author: %s', 'catch-base' ), '<span class="vcard">' . get_the_author() . '</span>' );
 
 						elseif ( is_day() ) :
-							printf( __( 'Day: %s', 'catchbase' ), '<span>' . get_the_date() . '</span>' );
+							printf( __( 'Day: %s', 'catch-base' ), '<span>' . get_the_date() . '</span>' );
 
 						elseif ( is_month() ) :
-							printf( __( 'Month: %s', 'catchbase' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'catchbase' ) ) . '</span>' );
+							printf( __( 'Month: %s', 'catch-base' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'catch-base' ) ) . '</span>' );
 
 						elseif ( is_year() ) :
-							printf( __( 'Year: %s', 'catchbase' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'catchbase' ) ) . '</span>' );
+							printf( __( 'Year: %s', 'catch-base' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'catch-base' ) ) . '</span>' );
 
 						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-							_e( 'Asides', 'catchbase' );
+							_e( 'Asides', 'catch-base' );
 
 						elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
-							_e( 'Galleries', 'catchbase');
+							_e( 'Galleries', 'catch-base');
 
 						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-							_e( 'Images', 'catchbase');
+							_e( 'Images', 'catch-base');
 
 						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-							_e( 'Videos', 'catchbase' );
+							_e( 'Videos', 'catch-base' );
 
 						elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-							_e( 'Quotes', 'catchbase' );
+							_e( 'Quotes', 'catch-base' );
 
 						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-							_e( 'Links', 'catchbase' );
+							_e( 'Links', 'catch-base' );
 
 						elseif ( is_tax( 'post_format', 'post-format-status' ) ) :
-							_e( 'Statuses', 'catchbase' );
+							_e( 'Statuses', 'catch-base' );
 
 						elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
-							_e( 'Audios', 'catchbase' );
+							_e( 'Audios', 'catch-base' );
 
 						elseif ( is_tax( 'post_format', 'post-format-chat' ) ) :
-							_e( 'Chats', 'catchbase' );
+							_e( 'Chats', 'catch-base' );
 
 						else :
-							_e( 'Archives', 'catchbase' );
+							_e( 'Archives', 'catch-base' );
 
 						endif;
 					?>
