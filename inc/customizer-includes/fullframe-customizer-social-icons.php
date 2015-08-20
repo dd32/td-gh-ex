@@ -14,19 +14,17 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 }
 
 	// Social Icons
-	if( 4 <= get_bloginfo( 'version' ) ) {
-		$wp_customize->add_panel( 'fullframe_social_links', array(
-		    'capability'     => 'edit_theme_options',
-		    'description'	=> __( 'Note: Enter the url for correponding social networking website', 'fullframe' ),
-		    'priority'       => 600,
-			'title'    		 => __( 'Social Links', 'fullframe' ),
-		) );
-	}
+	$wp_customize->add_panel( 'fullframe_social_links', array(
+	    'capability'     => 'edit_theme_options',
+	    'description'	=> __( 'Note: Enter the url for correponding social networking website', 'full-frame' ),
+	    'priority'       => 600,
+		'title'    		 => __( 'Social Links', 'full-frame' ),
+	) );
 	
 	$wp_customize->add_section( 'fullframe_social_links', array(
 		'panel'			=> 'fullframe_social_links',
 		'priority' 		=> 1,
-		'title'   	 	=> __( 'Social Links', 'fullframe' ),
+		'title'   	 	=> __( 'Social Links', 'full-frame' ),
 	) );
 
 	$fullframe_social_icons 	=	fullframe_get_social_icons_list();	
@@ -43,7 +41,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 				) );
 
 			$wp_customize->add_control( 'fullframe_'. $lower_case_option .'_link', array(
-				'description'	=> __( 'Skype link can be of formats:<br>callto://+{number}<br> skype:{username}?{action}. More Information in readme file', 'fullframe' ),
+				'description'	=> __( 'Skype link can be of formats:<br>callto://+{number}<br> skype:{username}?{action}. More Information in readme file', 'full-frame' ),
 				'label'    		=> $option,
 				'priority' 		=> $i + '2',
 				'section'  		=> 'fullframe_social_links',

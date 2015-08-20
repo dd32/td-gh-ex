@@ -48,7 +48,7 @@ function fullframe_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'logo', array(
-		'label'		=> __( 'Logo', 'fullframe' ),
+		'label'		=> __( 'Logo', 'full-frame' ),
 		'priority'	=> 100,
 		'section'   => 'title_tagline',
         'settings'  => 'fullframe_theme_options[logo]',
@@ -61,7 +61,7 @@ function fullframe_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'fullframe_theme_options[logo_disable]', array(
-		'label'    => __( 'Check to disable logo', 'fullframe' ),
+		'label'    => __( 'Check to disable logo', 'full-frame' ),
 		'priority' => 101,
 		'section'  => 'title_tagline',
 		'settings' => 'fullframe_theme_options[logo_disable]',
@@ -75,7 +75,7 @@ function fullframe_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'fullframe_logo_alt_text', array(
-		'label'    	=> __( 'Logo Alt Text', 'fullframe' ),
+		'label'    	=> __( 'Logo Alt Text', 'full-frame' ),
 		'priority'	=> 102,
 		'section' 	=> 'title_tagline',
 		'settings' 	=> 'fullframe_theme_options[logo_alt_text]',
@@ -89,7 +89,7 @@ function fullframe_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'fullframe_theme_options[move_title_tagline]', array(
-		'label'    => __( 'Check to move Site Title and Tagline before logo', 'fullframe' ),
+		'label'    => __( 'Check to move Site Title and Tagline before logo', 'full-frame' ),
 		'priority' => 103,
 		'section'  => 'title_tagline',
 		'settings' => 'fullframe_theme_options[move_title_tagline]',
@@ -115,7 +115,7 @@ function fullframe_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( 'fullframe_theme_options[color_scheme]', array(
 		'choices'  => $choices,
-		'label'    => __( 'Color Scheme', 'fullframe' ),
+		'label'    => __( 'Color Scheme', 'full-frame' ),
 		'priority' => 5,
 		'section'  => 'colors',
 		'settings' => 'fullframe_theme_options[color_scheme]',
@@ -140,9 +140,9 @@ function fullframe_customize_register( $wp_customize ) {
 	
 	// Reset all settings to default
 	$wp_customize->add_section( 'fullframe_reset_all_settings', array(
-		'description'	=> __( 'Caution: Reset all settings to default. Refresh the page after save to view full effects.', 'fullframe' ),
+		'description'	=> __( 'Caution: Reset all settings to default. Refresh the page after save to view full effects.', 'full-frame' ),
 		'priority' 		=> 700,
-		'title'    		=> __( 'Reset all settings', 'fullframe' ),
+		'title'    		=> __( 'Reset all settings', 'full-frame' ),
 	) );
 
 	$wp_customize->add_setting( 'fullframe_theme_options[reset_all_settings]', array(
@@ -153,7 +153,7 @@ function fullframe_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'fullframe_theme_options[reset_all_settings]', array(
-		'label'    => __( 'Check to reset all settings to default', 'fullframe' ),
+		'label'    => __( 'Check to reset all settings to default', 'full-frame' ),
 		'section'  => 'fullframe_reset_all_settings',
 		'settings' => 'fullframe_theme_options[reset_all_settings]',
 		'type'     => 'checkbox',
@@ -163,7 +163,7 @@ function fullframe_customize_register( $wp_customize ) {
 	//Important Links
 	$wp_customize->add_section( 'important_links', array(
 		'priority' 		=> 999,
-		'title'   	 	=> __( 'Important Links', 'fullframe' ),
+		'title'   	 	=> __( 'Important Links', 'full-frame' ),
 	) );
 
 	/**
@@ -174,7 +174,7 @@ function fullframe_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new Fullframe_Important_Links( $wp_customize, 'important_links', array(
-        'label'   	=> __( 'Important Links', 'fullframe' ),
+        'label'   	=> __( 'Important Links', 'full-frame' ),
          'section'  	=> 'important_links',
         'settings' 	=> 'important_links',
         'type'     	=> 'important_links',
@@ -433,9 +433,9 @@ function fullframe_customize_scripts() {
 
 	$fullframe_misc_links = array(
 							'upgrade_link' 				=> esc_url( 'http://catchthemes.com/themes/full-frame-pro/' ),
-							'upgrade_text'	 			=> __( 'Upgrade To Pro &raquo;', 'fullframe' ),
+							'upgrade_text'	 			=> __( 'Upgrade To Pro &raquo;', 'full-frame' ),
 							'WP_version'				=> get_bloginfo( 'version' ),
-							'old_version_message'		=> __( 'Some settings might be missing or disorganized in this version of WordPress. So we suggest you to upgrade to version 4.0 or better.', 'fullframe' )
+							'old_version_message'		=> __( 'Some settings might be missing or disorganized in this version of WordPress. So we suggest you to upgrade to version 4.0 or better.', 'full-frame' )
 		);
 
 	//Add Upgrade Button and old WordPress message via localized script

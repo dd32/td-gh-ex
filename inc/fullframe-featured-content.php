@@ -54,8 +54,8 @@ function fullframe_featured_content_display() {
 
 			if( $contentselect == 'demo-featured-content' ) {
 				$classes 		.= ' demo-featured-content' ;
-				$headline 		= __( 'Featured Content', 'fullframe' );
-				$subheadline 	= __( 'Here you can showcase the x number of Featured Content. You can edit this Headline, Subheadline and Feaured Content from "Appearance -> Customize -> Featured Content Options".', 'fullframe' );
+				$headline 		= __( 'Featured Content', 'full-frame' );
+				$subheadline 	= __( 'Here you can showcase the x number of Featured Content. You can edit this Headline, Subheadline and Feaured Content from "Appearance -> Customize -> Featured Content Options".', 'full-frame' );
 			} 
 			elseif ( $contentselect == 'featured-page-content' ) {
 				$classes .= ' featured-page-content' ;
@@ -312,7 +312,7 @@ function fullframe_page_content( $options ) {
 				if ( has_post_thumbnail() ) {
 					$fullframe_page_content .= '
 					<figure class="featured-homepage-image">
-						<a href="' . get_permalink() . '" title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'fullframe' ), 'echo' => false ) ). '">
+						<a href="' . get_permalink() . '" title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'full-frame' ), 'echo' => false ) ). '">
 						'. get_the_post_thumbnail( $post->ID, 'fullframe-featured-content', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class' => 'pngfix' ) ) .'
 						</a>
 					</figure>';
@@ -329,7 +329,7 @@ function fullframe_page_content( $options ) {
 						$fullframe_image =	$fullframe_first_image;
 					}
 
-					$fullframe_page_content .= '<a title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'fullframe' ), 'echo' => false ) ) . '" href="' . get_permalink() . '">
+					$fullframe_page_content .= '<a title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'full-frame' ), 'echo' => false ) ) . '" href="' . get_permalink() . '">
 						'. $fullframe_image .'
 					</a>';
 				}

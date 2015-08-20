@@ -54,7 +54,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 				$dropdown
 			);
 
-			echo '<p class="description">'. __( 'Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.', 'fullframe' ) . '</p>';
+			echo '<p class="description">'. __( 'Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.', 'full-frame' ) . '</p>';
 		}
 	}
 
@@ -67,23 +67,23 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
             $important_links = array(
 							'theme_instructions' => array( 
 								'link'	=> esc_url( 'http://catchthemes.com/theme-instructions/full-frame/' ),
-								'text' 	=> __( 'Theme Instructions', 'fullframe' ),
+								'text' 	=> __( 'Theme Instructions', 'full-frame' ),
 								),
 							'support' => array( 
 								'link'	=> esc_url( 'http://catchthemes.com/support/' ),
-								'text' 	=> __( 'Support', 'fullframe' ),
+								'text' 	=> __( 'Support', 'full-frame' ),
 								),
 							'changelog' => array( 
 								'link'	=> esc_url( 'http://catchthemes.com/changelogs/full-frame-theme/' ),
-								'text' 	=> __( 'Changelog', 'fullframe' ),
+								'text' 	=> __( 'Changelog', 'full-frame' ),
 								),
 							'donate' => array( 
 								'link'	=> esc_url( 'http://catchthemes.com/donate/' ),
-								'text' 	=> __( 'Donate Now', 'fullframe' ),
+								'text' 	=> __( 'Donate Now', 'full-frame' ),
 								),
 							'review' => array( 
 								'link'	=> esc_url( 'https://wordpress.org/support/view/theme-reviews/full-frame' ),
-								'text' 	=> __( 'Review', 'fullframe' ),
+								'text' 	=> __( 'Review', 'full-frame' ),
 								),
 							);
 			foreach ( $important_links as $important_link) {

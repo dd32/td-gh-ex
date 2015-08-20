@@ -27,46 +27,46 @@ get_header(); ?>
 							single_tag_title();
 
 						elseif ( is_author() ) :
-							printf( __( 'Author: %s', 'fullframe' ), '<span class="vcard">' . get_the_author() . '</span>' );
+							printf( __( 'Author: %s', 'full-frame' ), '<span class="vcard">' . get_the_author() . '</span>' );
 
 						elseif ( is_day() ) :
-							printf( __( 'Day: %s', 'fullframe' ), '<span>' . get_the_date() . '</span>' );
+							printf( __( 'Day: %s', 'full-frame' ), '<span>' . get_the_date() . '</span>' );
 
 						elseif ( is_month() ) :
-							printf( __( 'Month: %s', 'fullframe' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'fullframe' ) ) . '</span>' );
+							printf( __( 'Month: %s', 'full-frame' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'full-frame' ) ) . '</span>' );
 
 						elseif ( is_year() ) :
-							printf( __( 'Year: %s', 'fullframe' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'fullframe' ) ) . '</span>' );
+							printf( __( 'Year: %s', 'full-frame' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'full-frame' ) ) . '</span>' );
 
 						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-							_e( 'Asides', 'fullframe' );
+							_e( 'Asides', 'full-frame' );
 
 						elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
-							_e( 'Galleries', 'fullframe');
+							_e( 'Galleries', 'full-frame');
 
 						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-							_e( 'Images', 'fullframe');
+							_e( 'Images', 'full-frame');
 
 						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-							_e( 'Videos', 'fullframe' );
+							_e( 'Videos', 'full-frame' );
 
 						elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-							_e( 'Quotes', 'fullframe' );
+							_e( 'Quotes', 'full-frame' );
 
 						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-							_e( 'Links', 'fullframe' );
+							_e( 'Links', 'full-frame' );
 
 						elseif ( is_tax( 'post_format', 'post-format-status' ) ) :
-							_e( 'Statuses', 'fullframe' );
+							_e( 'Statuses', 'full-frame' );
 
 						elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
-							_e( 'Audios', 'fullframe' );
+							_e( 'Audios', 'full-frame' );
 
 						elseif ( is_tax( 'post_format', 'post-format-chat' ) ) :
-							_e( 'Chats', 'fullframe' );
+							_e( 'Chats', 'full-frame' );
 
 						else :
-							_e( 'Archives', 'fullframe' );
+							_e( 'Archives', 'full-frame' );
 
 						endif;
 					?>

@@ -71,11 +71,11 @@ do_action( 'fullframe_before_secondary' );?>
 			if ( current_user_can( 'edit_theme_options' ) ) { ?>
 				<section id="widget-default-text" class="widget widget_text">	
 					<div class="widget-wrap">
-	                	<h4 class="widget-title"><?php _e( 'Primary Sidebar Widget Area', 'fullframe' ); ?></h4>
+	                	<h4 class="widget-title"><?php _e( 'Primary Sidebar Widget Area', 'full-frame' ); ?></h4>
 	           		
 	           			<div class="textwidget">
-	                   		<p><?php _e( 'This is the Primary Sidebar Widget Area if you are using a two column site layout option.', 'fullframe' ); ?></p>
-	                   		<p><?php printf( __( 'By default it will load Search and Archives widgets as shown below. You can add widget to this area by visiting your <a href="%s">Widgets Panel</a> which will replace default widgets.', 'fullframe' ), admin_url( 'widgets.php' ) ); ?></p>
+	                   		<p><?php _e( 'This is the Primary Sidebar Widget Area if you are using a two column site layout option.', 'full-frame' ); ?></p>
+	                   		<p><?php printf( __( 'By default it will load Search and Archives widgets as shown below. You can add widget to this area by visiting your <a href="%s">Widgets Panel</a> which will replace default widgets.', 'full-frame' ), admin_url( 'widgets.php' ) ); ?></p>
 	                 	</div>
 	           		</div><!-- .widget-wrap -->
 	       		</section><!-- #widget-default-text -->
@@ -88,7 +88,7 @@ do_action( 'fullframe_before_secondary' );?>
 			</section><!-- #default-search -->
 			<section class="widget widget_archive" id="default-archives">
 				<div class="widget-wrap">
-					<h4 class="widget-title"><?php _e( 'Archives', 'fullframe' ); ?></h4>
+					<h4 class="widget-title"><?php _e( 'Archives', 'full-frame' ); ?></h4>
 					<ul>
 						<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
 					</ul>

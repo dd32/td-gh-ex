@@ -23,8 +23,8 @@ function fullframe_primary_menu() {
     ?>
 	<nav class="nav-primary search-enabled" role="navigation">
         <div class="wrapper">
-            <h1 class="assistive-text"><?php _e( 'Primary Menu', 'fullframe' ); ?></h1>
-            <div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'fullframe' ); ?>"><?php _e( 'Skip to content', 'fullframe' ); ?></a></div>
+            <h1 class="assistive-text"><?php _e( 'Primary Menu', 'full-frame' ); ?></h1>
+            <div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'full-frame' ); ?>"><?php _e( 'Skip to content', 'full-frame' ); ?></a></div>
             
             <?php // Header Left Mobile Menu Anchor 
             if ( has_nav_menu( 'primary' ) ) {
@@ -36,7 +36,7 @@ function fullframe_primary_menu() {
             ?>
             <div id="mobile-header-left-menu" class="<?php echo $classes; ?>">
                 <a href="#mobile-header-left-nav" id="header-left-menu" class="genericon genericon-menu">
-                    <span class="mobile-menu-text"><?php _e( 'Menu', 'fullframe' );?></span>
+                    <span class="mobile-menu-text"><?php _e( 'Menu', 'full-frame' );?></span>
                 </a>
             </div><!-- #mobile-header-menu -->
 
@@ -64,7 +64,7 @@ function fullframe_primary_menu() {
                 
                 ?>
                 <div id="header-toggle" class="genericon">
-                    <a class="screen-reader-text" href="#header-container"><?php _e( 'Header Toggle', 'fullframe' ); ?></a>
+                    <a class="screen-reader-text" href="#header-container"><?php _e( 'Header Toggle', 'full-frame' ); ?></a>
                 </div>
     	</div><!-- .wrapper -->
     </nav><!-- .nav-primary -->

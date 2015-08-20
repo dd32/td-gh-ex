@@ -22,26 +22,26 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 function fullframe_widgets_init() {
 	//Primary Sidebar
 	register_sidebar( array(
-		'name'          => __( 'Primary Sidebar', 'fullframe' ),
+		'name'          => __( 'Primary Sidebar', 'full-frame' ),
 		'id'            => 'primary-sidebar',
 		'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-wrap">',
 		'after_widget'  => '</div><!-- .widget-wrap --></section><!-- #widget-default-search -->',
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
-		'description'	=> __( 'This is the primary sidebar if you are using two column site layout option.', 'fullframe' ),
+		'description'	=> __( 'This is the primary sidebar if you are using two column site layout option.', 'full-frame' ),
 	) );
 
 	$footer_sidebar_number = 3; //Number of footer sidebars
 	
 	for( $i=1; $i <= $footer_sidebar_number; $i++ ) {
 		register_sidebar( array(
-			'name'          => sprintf( __( 'Footer Area %d', 'fullframe' ), $i ),
+			'name'          => sprintf( __( 'Footer Area %d', 'full-frame' ), $i ),
 			'id'            => sprintf( 'footer-%d', $i ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-wrap">',
 			'after_widget'  => '</div><!-- .widget-wrap --></section><!-- #widget-default-search -->',
 			'before_title'  => '<h4 class="widget-title">',
 			'after_title'   => '</h4>',
-			'description'	=> sprintf( __( 'Footer %d widget area.', 'fullframe' ), $i ),
+			'description'	=> sprintf( __( 'Footer %d widget area.', 'full-frame' ), $i ),
 		) );
 	}
 }
@@ -62,7 +62,7 @@ class Fullframe_social_icons_widget extends WP_Widget {
 		parent::__construct(
 			'fullframe_social_icons', // Base ID
 			'CT: Social Icons', // Name
-			array( 'description' => __( 'Use this widget to add Social Icons as a widget. ', 'fullframe' ) ) // Args
+			array( 'description' => __( 'Use this widget to add Social Icons as a widget. ', 'full-frame' ) ) // Args
 		);
 	}
 
@@ -103,7 +103,7 @@ class Fullframe_social_icons_widget extends WP_Widget {
 		}
 		?>
 		<p>
-		<label for="<?php echo $this->get_field_name( 'title' ); ?>"><?php _e( 'Title (optional):', 'fullframe' ); ?></label>
+		<label for="<?php echo $this->get_field_name( 'title' ); ?>"><?php _e( 'Title (optional):', 'full-frame' ); ?></label>
 		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
         <?php

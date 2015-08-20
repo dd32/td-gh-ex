@@ -16,20 +16,18 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 
 	
 	//Theme Options
-	if( 4 <= get_bloginfo( 'version' ) ) {
-		$wp_customize->add_panel( 'fullframe_theme_options', array(
-		    'description'    => __( 'Basic theme Options', 'fullframe' ),
-		    'capability'     => 'edit_theme_options',
-		    'priority'       => 200,
-		    'title'    		 => __( 'Theme Options', 'fullframe' ),
-		) );
-	}
+	$wp_customize->add_panel( 'fullframe_theme_options', array(
+	    'description'    => __( 'Basic theme Options', 'full-frame' ),
+	    'capability'     => 'edit_theme_options',
+	    'priority'       => 200,
+	    'title'    		 => __( 'Theme Options', 'full-frame' ),
+	) );
 
 	// Breadcrumb Option
 	$wp_customize->add_section( 'fullframe_breadcumb_options', array(
-		'description'	=> __( 'Breadcrumbs are a great way of letting your visitors find out where they are on your site with just a glance. You can enable/disable them on homepage and entire site.', 'fullframe' ),
+		'description'	=> __( 'Breadcrumbs are a great way of letting your visitors find out where they are on your site with just a glance. You can enable/disable them on homepage and entire site.', 'full-frame' ),
 		'panel'			=> 'fullframe_theme_options',
-		'title'    		=> __( 'Breadcrumb Options', 'fullframe' ),
+		'title'    		=> __( 'Breadcrumb Options', 'full-frame' ),
 		'priority' 		=> 201,
 	) );
 
@@ -40,7 +38,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	) );
 
 	$wp_customize->add_control( 'fullframe_breadcumb_options', array(
-		'label'    => __( 'Check to enable Breadcrumb', 'fullframe' ),
+		'label'    => __( 'Check to enable Breadcrumb', 'full-frame' ),
 		'section'  => 'fullframe_breadcumb_options',
 		'settings' => 'fullframe_theme_options[breadcumb_option]',
 		'type'     => 'checkbox',
@@ -53,7 +51,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	) );
 
 	$wp_customize->add_control( 'fullframe_breadcumb_onhomepage', array(
-		'label'    => __( 'Check to enable Breadcrumb on Homepage', 'fullframe' ),
+		'label'    => __( 'Check to enable Breadcrumb on Homepage', 'full-frame' ),
 		'section'  => 'fullframe_breadcumb_options',
 		'settings' => 'fullframe_theme_options[breadcumb_onhomepage]',
 		'type'     => 'checkbox',
@@ -69,7 +67,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 			'input_attrs' => array(
 	            'style' => 'width: 40px;'
             	),
-            'label'    	=> __( 'Separator between Breadcrumbs', 'fullframe' ),
+            'label'    	=> __( 'Separator between Breadcrumbs', 'full-frame' ),
 			'section' 	=> 'fullframe_breadcumb_options',
 			'settings' 	=> 'fullframe_theme_options[breadcumb_seperator]',
 			'type'     	=> 'text'
@@ -79,10 +77,10 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
    	
    	// Custom CSS Option
 	$wp_customize->add_section( 'fullframe_custom_css', array(
-		'description'	=> __( 'Custom/Inline CSS', 'fullframe'),
+		'description'	=> __( 'Custom/Inline CSS', 'full-frame'),
 		'panel'  		=> 'fullframe_theme_options',
 		'priority' 		=> 203,
-		'title'    		=> __( 'Custom CSS Options', 'fullframe' ),
+		'title'    		=> __( 'Custom CSS Options', 'full-frame' ),
 	) );
 
 	$wp_customize->add_setting( 'fullframe_theme_options[custom_css]', array(
@@ -92,7 +90,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	) );
 
 	$wp_customize->add_control( new Fullframe_Customize_Textarea_Control ( $wp_customize, 'fullframe_theme_options[custom_css]', array(
-			'label'		=> __( 'Enter Custom CSS', 'fullframe' ),
+			'label'		=> __( 'Enter Custom CSS', 'full-frame' ),
 	        'priority'	=> 1,
 			'section'   => 'fullframe_custom_css',
 	        'settings'  => 'fullframe_theme_options[custom_css]',
@@ -104,7 +102,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	$wp_customize->add_section( 'fullframe_excerpt_options', array(
 		'panel'  	=> 'fullframe_theme_options',
 		'priority' 	=> 204,
-		'title'    	=> __( 'Excerpt Options', 'fullframe' ),
+		'title'    	=> __( 'Excerpt Options', 'full-frame' ),
 	) );
 
 	$wp_customize->add_setting( 'fullframe_theme_options[excerpt_length]', array(
@@ -114,14 +112,14 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	) );
 
 	$wp_customize->add_control( 'fullframe_excerpt_length', array(
-		'description' => __('Excerpt length. Default is 40 words', 'fullframe'),
+		'description' => __('Excerpt length. Default is 40 words', 'full-frame'),
 		'input_attrs' => array(
             'min'   => 10,
             'max'   => 200,
             'step'  => 5,
             'style' => 'width: 60px;'
             ),
-        'label'    => __( 'Excerpt Length (words)', 'fullframe' ),
+        'label'    => __( 'Excerpt Length (words)', 'full-frame' ),
 		'section'  => 'fullframe_excerpt_options',
 		'settings' => 'fullframe_theme_options[excerpt_length]',
 		'type'	   => 'number',
@@ -135,7 +133,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	) );
 
 	$wp_customize->add_control( 'fullframe_excerpt_more_text', array(
-		'label'    => __( 'Read More Text', 'fullframe' ),
+		'label'    => __( 'Read More Text', 'full-frame' ),
 		'section'  => 'fullframe_excerpt_options',
 		'settings' => 'fullframe_theme_options[excerpt_more_text]',
 		'type'	   => 'text',
@@ -144,10 +142,10 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 
 	//Homepage / Frontpage Options
 	$wp_customize->add_section( 'fullframe_homepage_options', array(
-		'description'	=> __( 'Only posts that belong to the categories selected here will be displayed on the front page', 'fullframe' ),
+		'description'	=> __( 'Only posts that belong to the categories selected here will be displayed on the front page', 'full-frame' ),
 		'panel'			=> 'fullframe_theme_options',
 		'priority' 		=> 209,
-		'title'   	 	=> __( 'Homepage / Frontpage Options', 'fullframe' ),
+		'title'   	 	=> __( 'Homepage / Frontpage Options', 'full-frame' ),
 	) );
 
 	$wp_customize->add_setting( 'fullframe_theme_options[front_page_category]', array(
@@ -157,7 +155,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	) );
 
 	$wp_customize->add_control( new Fullframe_Customize_Dropdown_Categories_Control( $wp_customize, 'fullframe_theme_options[front_page_category]', array(
-        'label'   	=> __( 'Select Categories', 'fullframe' ),
+        'label'   	=> __( 'Select Categories', 'full-frame' ),
         'name'	 	=> 'fullframe_theme_options[front_page_category]',
 		'priority'	=> '6',
         'section'  	=> 'fullframe_homepage_options',
@@ -168,10 +166,10 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	
 	// Icon Options
 	$wp_customize->add_section( 'fullframe_icons', array(
-		'description'	=> __( 'Remove Icon images to disable.', 'fullframe'),
+		'description'	=> __( 'Remove Icon images to disable.', 'full-frame'),
 		'panel'  => 'fullframe_theme_options',
 		'priority' 		=> 210,
-		'title'    		=> __( 'Icon Options', 'fullframe' ),
+		'title'    		=> __( 'Icon Options', 'full-frame' ),
 	) );
 
 	$wp_customize->add_setting( 'fullframe_theme_options[favicon]', array(
@@ -180,7 +178,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'fullframe_theme_options[favicon]', array(
-		'label'		=> __( 'Select/Add Favicon', 'fullframe' ),
+		'label'		=> __( 'Select/Add Favicon', 'full-frame' ),
 		'section'    => 'fullframe_icons',
         'settings'   => 'fullframe_theme_options[favicon]',
 	) ) );
@@ -191,8 +189,8 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'fullframe_theme_options[web_clip]', array(
-		'description'	=> __( 'Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px height, which will support High Resolution Devices like iPad Retina.', 'fullframe'),
-		'label'		 	=> __( 'Select/Add Web Clip Icon', 'fullframe' ),
+		'description'	=> __( 'Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px height, which will support High Resolution Devices like iPad Retina.', 'full-frame'),
+		'label'		 	=> __( 'Select/Add Web Clip Icon', 'full-frame' ),
 		'section'    	=> 'fullframe_icons',
         'settings'   	=> 'fullframe_theme_options[web_clip]',
 	) ) );
@@ -203,8 +201,8 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'fullframe_theme_options[logo_icon]', array(
-		'description'	=> __( 'Logo Icon is displayed in Primary Menu', 'fullframe'),
-		'label'		 	=> __( 'Select/Add Logo Icon', 'fullframe' ),
+		'description'	=> __( 'Logo Icon is displayed in Primary Menu', 'full-frame'),
+		'label'		 	=> __( 'Select/Add Logo Icon', 'full-frame' ),
 		'section'    	=> 'fullframe_icons',
         'settings'   	=> 'fullframe_theme_options[logo_icon]',
 	) ) );
@@ -215,7 +213,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'capability'=> 'edit_theme_options',
 		'panel'		=> 'fullframe_theme_options',
 		'priority'	=> 211,
-		'title'		=> __( 'Layout Options', 'fullframe' ),
+		'title'		=> __( 'Layout Options', 'full-frame' ),
 	) );
 
 	$wp_customize->add_setting( 'fullframe_theme_options[theme_layout]', array(
@@ -232,7 +230,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 
 	$wp_customize->add_control( 'fullframe_theme_options[theme_layout]', array(
 		'choices'	=> $choices,
-		'label'		=> __( 'Default Layout', 'fullframe' ),
+		'label'		=> __( 'Default Layout', 'full-frame' ),
 		'section'	=> 'fullframe_layout',
 		'settings'   => 'fullframe_theme_options[theme_layout]',
 		'type'		=> 'select',
@@ -252,7 +250,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 
 	$wp_customize->add_control( 'fullframe_theme_options[content_layout]', array(
 		'choices'   => $choices,
-		'label'		=> __( 'Archive Content Layout', 'fullframe' ),
+		'label'		=> __( 'Archive Content Layout', 'full-frame' ),
 		'section'   => 'fullframe_layout',
 		'settings'  => 'fullframe_theme_options[content_layout]',
 		'type'      => 'select',
@@ -272,7 +270,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	}
 
 	$wp_customize->add_control( 'fullframe_theme_options[single_post_image_layout]', array(
-			'label'		=> __( 'Single Page/Post Image Layout ', 'fullframe' ),
+			'label'		=> __( 'Single Page/Post Image Layout ', 'full-frame' ),
 			'section'   => 'fullframe_layout',
 	        'settings'  => 'fullframe_theme_options[single_post_image_layout]',
 	        'type'	  	=> 'select',
@@ -283,14 +281,14 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	// Pagination Options
 	$pagination_type	= $options['pagination_type'];
 
-	$fullframe_navigation_description = sprintf( __( 'Numeric Option requires <a target="_blank" href="%s">WP-PageNavi Plugin</a>.<br/>Infinite Scroll Options requires <a target="_blank" href="%s">JetPack Plugin</a> with Infinite Scroll module Enabled.', 'fullframe' ), esc_url( 'https://wordpress.org/plugins/wp-pagenavi' ), esc_url( 'https://wordpress.org/plugins/jetpack/' ) );
+	$fullframe_navigation_description = sprintf( __( 'Numeric Option requires <a target="_blank" href="%s">WP-PageNavi Plugin</a>.<br/>Infinite Scroll Options requires <a target="_blank" href="%s">JetPack Plugin</a> with Infinite Scroll module Enabled.', 'full-frame' ), esc_url( 'https://wordpress.org/plugins/wp-pagenavi' ), esc_url( 'https://wordpress.org/plugins/jetpack/' ) );
 	
 	/**
 	 * Check if navigation type is Jetpack Infinite Scroll and if it is enabled
 	 */
 	if ( ( 'infinite-scroll-click' == $pagination_type || 'infinite-scroll-scroll' == $pagination_type ) ) {
 		if ( ! (class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'infinite-scroll' ) ) ) {
-			$fullframe_navigation_description = sprintf( __( 'Infinite Scroll Options requires <a target="_blank" href="%s">JetPack Plugin</a> with Infinite Scroll module Enabled.', 'fullframe' ), esc_url( 'https://wordpress.org/plugins/jetpack/' ) );
+			$fullframe_navigation_description = sprintf( __( 'Infinite Scroll Options requires <a target="_blank" href="%s">JetPack Plugin</a> with Infinite Scroll module Enabled.', 'full-frame' ), esc_url( 'https://wordpress.org/plugins/jetpack/' ) );
 		}
 		else {
 			$fullframe_navigation_description = '';
@@ -301,7 +299,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	*/
 	else if ( 'numeric' == $pagination_type ) {
 		if ( !function_exists( 'wp_pagenavi' ) ) {
-			$fullframe_navigation_description = sprintf( __( 'Numeric Option requires <a target="_blank" href="%s">WP-PageNavi Plugin</a>.', 'fullframe' ), esc_url( 'https://wordpress.org/plugins/wp-pagenavi' ) );
+			$fullframe_navigation_description = sprintf( __( 'Numeric Option requires <a target="_blank" href="%s">WP-PageNavi Plugin</a>.', 'full-frame' ), esc_url( 'https://wordpress.org/plugins/wp-pagenavi' ) );
 		}
 		else {
 			$fullframe_navigation_description = '';
@@ -312,7 +310,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 		'description'	=> $fullframe_navigation_description,
 		'panel'  		=> 'fullframe_theme_options',
 		'priority'		=> 212,
-		'title'    		=> __( 'Pagination Options', 'fullframe' ),
+		'title'    		=> __( 'Pagination Options', 'full-frame' ),
 	) );
 
 	$wp_customize->add_setting( 'fullframe_theme_options[pagination_type]', array(
@@ -329,7 +327,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 
 	$wp_customize->add_control( 'fullframe_pagination_options', array(
 		'choices'  => $choices,
-		'label'    => __( 'Pagination type', 'fullframe' ),
+		'label'    => __( 'Pagination type', 'full-frame' ),
 		'section'  => 'fullframe_pagination_options',
 		'settings' => 'fullframe_theme_options[pagination_type]',
 		'type'	   => 'select',
@@ -338,10 +336,10 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 
 	//Promotion Headline Options
     $wp_customize->add_section( 'fullframe_promotion_headline_options', array(
-		'description'	=> __( 'To disable the fields, simply leave them empty.', 'fullframe' ),
+		'description'	=> __( 'To disable the fields, simply leave them empty.', 'full-frame' ),
 		'panel'			=> 'fullframe_theme_options',
 		'priority' 		=> 213,
-		'title'   	 	=> __( 'Promotion Headline Options', 'fullframe' ),
+		'title'   	 	=> __( 'Promotion Headline Options', 'full-frame' ),
 	) );
 
 	$wp_customize->add_setting( 'fullframe_theme_options[promotion_headline_option]', array(
@@ -358,7 +356,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 
 	$wp_customize->add_control( 'fullframe_theme_options[promotion_headline_option]', array(
 		'choices'  	=> $choices,
-		'label'    	=> __( 'Enable Promotion Headline on', 'fullframe' ),
+		'label'    	=> __( 'Enable Promotion Headline on', 'full-frame' ),
 		'priority'	=> '0.5',
 		'section'  	=> 'fullframe_promotion_headline_options',
 		'settings' 	=> 'fullframe_theme_options[promotion_headline_option]',
@@ -372,8 +370,8 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	) );
 
 	$wp_customize->add_control( new Fullframe_Customize_Textarea_Control( $wp_customize, 'fullframe_theme_options[promotion_headline]', array(
-		'description'	=> __( 'Appropriate Words: 10', 'fullframe' ),
-		'label'    	=> __( 'Promotion Headline Text', 'fullframe' ),
+		'description'	=> __( 'Appropriate Words: 10', 'full-frame' ),
+		'label'    	=> __( 'Promotion Headline Text', 'full-frame' ),
 		'priority'	=> '1',
 		'section' 	=> 'fullframe_promotion_headline_options',
 		'settings'	=> 'fullframe_theme_options[promotion_headline]',
@@ -386,8 +384,8 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	) );
 
 	$wp_customize->add_control( new Fullframe_Customize_Textarea_Control( $wp_customize, 'fullframe_theme_options[promotion_subheadline]', array(
-		'description'	=> __( 'Appropriate Words: 15', 'fullframe' ),
-		'label'    	=> __( 'Promotion Subheadline Text', 'fullframe' ),
+		'description'	=> __( 'Appropriate Words: 15', 'full-frame' ),
+		'label'    	=> __( 'Promotion Subheadline Text', 'full-frame' ),
 		'priority'	=> '2',
 		'section' 	=> 'fullframe_promotion_headline_options',
 		'settings'	=> 'fullframe_theme_options[promotion_subheadline]',
@@ -400,8 +398,8 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	) );
 
 	$wp_customize->add_control( 'fullframe_theme_options[promotion_headline_button]', array(
-		'description'	=> __( 'Appropriate Words: 3', 'fullframe' ),
-		'label'    	=> __( 'Promotion Headline Button Text ', 'fullframe' ),
+		'description'	=> __( 'Appropriate Words: 3', 'full-frame' ),
+		'label'    	=> __( 'Promotion Headline Button Text ', 'full-frame' ),
 		'priority'	=> '3',
 		'section' 	=> 'fullframe_promotion_headline_options',
 		'settings'	=> 'fullframe_theme_options[promotion_headline_button]',
@@ -415,7 +413,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	) );
 
 	$wp_customize->add_control( 'fullframe_theme_options[promotion_headline_url]', array(
-		'label'    	=> __( 'Promotion Headline Link', 'fullframe' ),
+		'label'    	=> __( 'Promotion Headline Link', 'full-frame' ),
 		'priority'	=> '4',
 		'section' 	=> 'fullframe_promotion_headline_options',
 		'settings'	=> 'fullframe_theme_options[promotion_headline_url]',
@@ -429,7 +427,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	) );
 
 	$wp_customize->add_control( 'fullframe_theme_options[promotion_headline_target]', array(
-		'label'    	=> __( 'Check to Open Link in New Window/Tab', 'fullframe' ),
+		'label'    	=> __( 'Check to Open Link in New Window/Tab', 'full-frame' ),
 		'priority'	=> '5',
 		'section'  	=> 'fullframe_promotion_headline_options',
 		'settings' 	=> 'fullframe_theme_options[promotion_headline_target]',
@@ -439,10 +437,10 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 
 	// Search Options
 	$wp_customize->add_section( 'fullframe_search_options', array(
-		'description'=> __( 'Change default placeholder text in Search.', 'fullframe'),
+		'description'=> __( 'Change default placeholder text in Search.', 'full-frame'),
 		'panel'  => 'fullframe_theme_options',
 		'priority' => 216,
-		'title'    => __( 'Search Options', 'fullframe' ),
+		'title'    => __( 'Search Options', 'full-frame' ),
 	) );
 
 	$wp_customize->add_setting( 'fullframe_theme_options[search_text]', array(
@@ -452,7 +450,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	) );
 
 	$wp_customize->add_control( 'fullframe_theme_options[search_text]', array(
-		'label'		=> __( 'Default Display Text in Search', 'fullframe' ),
+		'label'		=> __( 'Default Display Text in Search', 'full-frame' ),
 		'section'   => 'fullframe_search_options',
         'settings'  => 'fullframe_theme_options[search_text]',
 		'type'		=> 'text',

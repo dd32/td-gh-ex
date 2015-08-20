@@ -43,7 +43,7 @@
 					<?php the_content(); ?>
 					<?php
 						wp_link_pages( array(
-							'before' => '<div class="page-links"><span class="pages">' . __( 'Pages:', 'fullframe' ) . '</span>',
+							'before' => '<div class="page-links"><span class="pages">' . __( 'Pages:', 'full-frame' ) . '</span>',
 							'after'  => '</div>',
 							'link_before' 	=> '<span>',
 		                    'link_after'   	=> '</span>',

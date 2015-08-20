@@ -54,12 +54,12 @@ if( !function_exists( 'fullframe_custom_breadcrumbs' ) ) :
 	function fullframe_custom_breadcrumbs( $showOnHome, $delimiter ) {
 
 		/* === OPTIONS === */
-		$text['home']     = __( 'Home', 'fullframe' ); // text for the 'Home' link
-		$text['category'] = __( '%1$s Archive for %2$s', 'fullframe' ); // text for a category page
-		$text['search']   = __( '%1$sSearch results for: %2$s', 'fullframe' ); // text for a search results page
-		$text['tag']      = __( '%1$sPosts tagged %2$s', 'fullframe' ); // text for a tag page
-		$text['author']   = __( '%1$sView all posts by %2$s', 'fullframe' ); // text for an author page
-		$text['404']      = __( 'Error 404', 'fullframe' ); // text for the 404 page
+		$text['home']     = __( 'Home', 'full-frame' ); // text for the 'Home' link
+		$text['category'] = __( '%1$s Archive for %2$s', 'full-frame' ); // text for a category page
+		$text['search']   = __( '%1$sSearch results for: %2$s', 'full-frame' ); // text for a search results page
+		$text['tag']      = __( '%1$sPosts tagged %2$s', 'full-frame' ); // text for a tag page
+		$text['author']   = __( '%1$sView all posts by %2$s', 'full-frame' ); // text for an author page
+		$text['404']      = __( 'Error 404', 'full-frame' ); // text for the 404 page
 
 		$showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
 		$before      = '<span class="breadcrumb-current">'; // tag before the current crumb
@@ -219,7 +219,7 @@ if( !function_exists( 'fullframe_custom_breadcrumbs' ) ) :
 				if( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) {
 					echo ' (';
 				}
-				echo sprintf( __( 'Page %s', 'fullframe' ), max( $paged, $page ) );
+				echo sprintf( __( 'Page %s', 'full-frame' ), max( $paged, $page ) );
 				if( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) {
 					echo ')';
 				}

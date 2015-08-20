@@ -89,9 +89,9 @@ class FullframeMetaBox {
 	    // Begin the field table and loop  ?>  
 	    <div id="fullframe-ui-tabs" class="ui-tabs">
 		    <ul class="fullframe-ui-tabs-nav" id="fullframe-ui-tabs-nav">
-		    	<li><a href="#frag1"><?php _e( 'Layout Options', 'fullframe' ); ?></a></li>
-		    	<li><a href="#frag3"><?php _e( 'Header Featured Image Options', 'fullframe' ); ?></a></li>
-		    	<li><a href="#frag4"><?php _e( 'Single Page/Post Image Layout ', 'fullframe' ); ?></a></li>
+		    	<li><a href="#frag1"><?php _e( 'Layout Options', 'full-frame' ); ?></a></li>
+		    	<li><a href="#frag3"><?php _e( 'Header Featured Image Options', 'full-frame' ); ?></a></li>
+		    	<li><a href="#frag4"><?php _e( 'Single Page/Post Image Layout ', 'full-frame' ); ?></a></li>
 		    </ul> 
 		    <div id="frag1" class="catch_ad_tabhead">
 		    	<table id="layout-options" class="form-table" width="100%">
@@ -217,6 +217,6 @@ class FullframeMetaBox {
 
 $fullframe_metabox = new FullframeMetaBox( 
 									'fullframe-options', 					//metabox id
-									__( 'Fullframe Options', 'fullframe' ), //metabox title
+									__( 'Fullframe Options', 'full-frame' ), //metabox title
 									array( 'page', 'post' )				//metabox post types
 									);

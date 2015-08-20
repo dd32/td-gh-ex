@@ -25,13 +25,13 @@
 			<?php the_content(); ?>
 			<?php
 				wp_link_pages( array(
-					'before' => '<div class="page-links"><span class="pages">' . __( 'Pages:', 'fullframe' ) . '</span>',
+					'before' => '<div class="page-links"><span class="pages">' . __( 'Pages:', 'full-frame' ) . '</span>',
 					'after'  => '</div>',
 					'link_before' 	=> '<span>',
                     'link_after'   	=> '</span>',
 				) );
 			?>
 		</div><!-- .entry-content -->
-		<?php edit_post_link( __( 'Edit', 'fullframe' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'full-frame' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer>' ); ?>
 	</div><!-- .entry-container -->
 </article><!-- #post-## -->

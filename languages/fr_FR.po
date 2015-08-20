@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Responsive\n"
-"POT-Creation-Date: 2015-06-27 18:10-0500\n"
+"POT-Creation-Date: 2015-08-20 17:02+0545\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__;"
-"_nx:1,2,4c;esc_html__\n"
+"_nx:1,2,4c;esc_html__;esc_attr_x:1,2c\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
@@ -184,56 +184,56 @@ msgstr "Faire un don maintenant "
 msgid "Review"
 msgstr "Examen "
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:19
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:18
 msgid "Options for Featured Content"
 msgstr "Option pour contenu vedette"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:21
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:20
 #: ../inc/fullframe-featured-content.php:57
 msgid "Featured Content"
 msgstr "Contenu en vedette"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:29
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:27
 msgid "Featured Content Options"
 msgstr "Options de contenu vedette"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:46
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:44
 msgid "Enable Featured Content on"
 msgstr "Activer le contenu vedette sur "
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:67
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:65
 msgid "Select Featured Content Layout"
 msgstr "Sélectionnez la mise en page du contenu vedette"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:81
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:79
 msgid "Check to Move above Footer"
 msgstr "Vérifiez ci-dessus le déplacement du Pied "
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:95
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:93
 msgid "Check to Enable Sliding Effect"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:116
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:114
 msgid "Select Content Type"
 msgstr "Sélectionner le type de contenu "
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:130
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:128
 msgid "Leave field empty if you want to remove Headline"
 msgstr "Laissez le champ vide si vous souhaitez supprimer titre"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:131
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:129
 msgid "Headline for Featured Content"
 msgstr "Titre pour le contenu en vedette"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:146
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:144
 msgid "Leave field empty if you want to remove Sub-headline"
 msgstr "Laissez le champ vide si vous souhaitez supprimer Sous-titre "
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:147
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:145
 msgid "Sub-headline for Featured Content"
 msgstr "Sous-titre pour le contenu sélectionné"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:162
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:160
 msgid ""
 "Save and refresh the page if No. of Featured Content is changed (Max no of "
 "Featured Content is 20)"
@@ -241,62 +241,62 @@ msgstr ""
 "Enregistrer et actualiser la page si le nombre de contenu selectionné est "
 "modifié (Max pas de contenu vedette est 20)"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:169
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:167
 msgid "No of Featured Content"
 msgstr "Pas de contenu vedette"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:183
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:181
 msgid "Check to Enable Title"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:204
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:202
 msgid "Display Content"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:219
-#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:183
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:217
+#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:181
 msgid "Featured Page"
 msgstr "page sélectionné "
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:230
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:228
 msgid "Featured Content Background Settings"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:240
+#: ../inc/customizer-includes/fullframe-customizer-featured-content-setting.php:238
 msgid "Select/Add Background Image"
 msgstr "Sélectionner / Ajouter  Background Image"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:19
-#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:28
+#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:18
+#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:26
 msgid "Featured Slider Options"
 msgstr "Options du curseur sélectionné"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:21
+#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:20
 msgid "Featured Slider"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:45
+#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:43
 msgid "Enable Slider on"
 msgstr "Activer curseur sur "
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:66
+#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:64
 msgid "Transition Effect"
 msgstr "Effet de transition "
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:81
-#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:99
+#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:79
+#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:97
 msgid "seconds(s)"
 msgstr "seconde (s) "
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:85
+#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:83
 msgid "Transition Delay"
 msgstr "Retard de transition "
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:103
+#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:101
 msgid "Transition Length"
 msgstr "Transition Longueur "
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:123
+#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:121
 msgid ""
 "True: Fixes the height overlap issue. Slideshow will start as soon as two slider "
 "are available. Slide may display in random, as image is fetch.<br>Wait: Fixes "
@@ -304,22 +304,22 @@ msgid ""
 "available."
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:125
+#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:123
 msgid "Image Loader"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:146
+#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:144
 msgid "Select Slider Type"
 msgstr "Sélectionnez type de curseur"
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:160
+#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:158
 msgid ""
 "Save and refresh the page if No. of Slides is changed (Max no of slides is 20)"
 msgstr ""
 "Enregistrer et actualiser la page si le nombre de diapositives est modifié (Max "
 "pas de diapositives est 20) "
 
-#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:167
+#: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:165
 msgid "No of Slides"
 msgstr "Pas de diapositives "
 
@@ -340,20 +340,20 @@ msgid "Featured Header Image Link URL"
 msgstr " Image d'en tête lien URL "
 
 #: ../inc/customizer-includes/fullframe-customizer-header-options.php:91
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:432
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:430
 msgid "Check to Open Link in New Window/Tab"
 msgstr "Vérifiez que le lien s'ouvre dans une nouvelle fenêtre / onglet "
 
-#: ../inc/customizer-includes/fullframe-customizer-social-icons.php:20
+#: ../inc/customizer-includes/fullframe-customizer-social-icons.php:19
 msgid "Note: Enter the url for correponding social networking website"
 msgstr "Remarque: entrez l'URL du site correspondant au réseau social "
 
-#: ../inc/customizer-includes/fullframe-customizer-social-icons.php:22
-#: ../inc/customizer-includes/fullframe-customizer-social-icons.php:29
+#: ../inc/customizer-includes/fullframe-customizer-social-icons.php:21
+#: ../inc/customizer-includes/fullframe-customizer-social-icons.php:27
 msgid "Social Links"
 msgstr "Liens sociaux "
 
-#: ../inc/customizer-includes/fullframe-customizer-social-icons.php:46
+#: ../inc/customizer-includes/fullframe-customizer-social-icons.php:44
 msgid ""
 "Skype link can be of formats:<br>callto://+{number}<br> skype:{username}?"
 "{action}. More Information in readme file"
@@ -361,15 +361,15 @@ msgstr ""
 "Skype link can be of formats:<br>callto://+{number}<br> skype:{username}?"
 "{action}. More Information in readme file"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:21
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:20
 msgid "Basic theme Options"
 msgstr "Options thème de base "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:24
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:23
 msgid "Theme Options"
 msgstr "Options du thème "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:30
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:28
 msgid ""
 "Breadcrumbs are a great way of letting your visitors find out where they are on "
 "your site with just a glance. You can enable/disable them on homepage and entire "
@@ -379,51 +379,51 @@ msgstr ""
 "sont sur votre site avec un simple coup d'œil. Vous pouvez  les activer / les "
 "désactiver sur la page d'accueil et de tout le site."
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:32
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:30
 msgid "Breadcrumb Options"
 msgstr "Options de fil d'ariane"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:43
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:41
 msgid "Check to enable Breadcrumb"
 msgstr "Cocher pour activer fil d'Ariane "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:56
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:54
 msgid "Check to enable Breadcrumb on Homepage"
 msgstr "Cocher pour activer le fil d'ariane sur la page d'accueil "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:72
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:70
 msgid "Separator between Breadcrumbs"
 msgstr "Séparation entre les fil d'ariane"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:82
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:80
 msgid "Custom/Inline CSS"
 msgstr "Personnalisé / ine CSS "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:85
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:83
 msgid "Custom CSS Options"
 msgstr "Options CSS personnalisées "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:95
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:93
 msgid "Enter Custom CSS"
 msgstr "Entrez CSS personnalisé "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:107
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:105
 msgid "Excerpt Options"
 msgstr "Extrait d'option "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:117
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:115
 msgid "Excerpt length. Default is 40 words"
 msgstr "Extrait  longueur. Par défaut est 40 mots"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:124
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:122
 msgid "Excerpt Length (words)"
 msgstr "Extrait Longueur (mots) "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:138
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:136
 msgid "Read More Text"
 msgstr "En lire plus"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:147
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:145
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on the "
 "front page"
@@ -431,27 +431,27 @@ msgstr ""
 "Seuls les messages qui appartiennent aux catégories sélectionnées ici seront "
 "affichés sur la page d'accueil "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:150
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:148
 msgid "Homepage / Frontpage Options"
 msgstr "Page d'accueil / Options première page"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:160
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:158
 msgid "Select Categories"
 msgstr "Sélectionner Catégories "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:171
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:169
 msgid "Remove Icon images to disable."
 msgstr "Supprimer les icônes d'image pour désactiver. "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:174
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:172
 msgid "Icon Options"
 msgstr " Options icône"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:183
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:181
 msgid "Select/Add Favicon"
 msgstr "Sélectionner / Ajouter Favicon "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:194
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:192
 msgid ""
 "Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px "
 "height, which will support High Resolution Devices like iPad Retina."
@@ -460,37 +460,37 @@ msgstr ""
 "144px de hauteur, qui soutiendra les dispositifs à haute résolution comme iPad "
 "Retina."
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:195
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:193
 msgid "Select/Add Web Clip Icon"
 msgstr "Sélectionner / Ajouter Web clip "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:206
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:204
 msgid "Logo Icon is displayed in Primary Menu"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:207
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:205
 msgid "Select/Add Logo Icon"
 msgstr "Sélectionner / Ajouter Logo Icon"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:218
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:216
 #: ../inc/fullframe-metabox.php:92
 msgid "Layout Options"
 msgstr "Options de présentation "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:235
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:233
 msgid "Default Layout"
 msgstr "Mise en page par défaut "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:255
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:253
 msgid "Archive Content Layout"
 msgstr "Archive mise en page de contenu "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:275
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:273
 #: ../inc/fullframe-metabox.php:94
 msgid "Single Page/Post Image Layout "
 msgstr "Une seule page / Disposition message d'image"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:286
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:284
 #, php-format
 msgid ""
 "Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>."
@@ -501,7 +501,7 @@ msgstr ""
 "</a>. <br/> Options de défilement Infinite nécessite <a target=\"_blank\" href="
 "\"%s\"> JetPack Plugin </a> avec module Infini Scroll Enabled. "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:293
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:291
 #, php-format
 msgid ""
 "Infinite Scroll Options requires <a target=\"_blank\" href=\"%s\">JetPack "
@@ -510,7 +510,7 @@ msgstr ""
 "Options de défilement infini nécessite <a target=\"_blank\" href=\"%s\"> JetPack "
 "Plugin </a> avec module Infini Scroll permis. "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:304
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:302
 #, php-format
 msgid ""
 "Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>."
@@ -518,63 +518,63 @@ msgstr ""
 "Option numérique nécessite <a target=\"_blank\" href=\"%s\"> WP-PageNavi Plugin "
 "</a>. "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:315
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:313
 msgid "Pagination Options"
 msgstr "Options de pagination "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:332
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:330
 msgid "Pagination type"
 msgstr "Type de pagination "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:341
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:339
 msgid "To disable the fields, simply leave them empty."
 msgstr "Pour désactiver les champs, laissez simplement vide. "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:344
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:342
 msgid "Promotion Headline Options"
 msgstr "Promotion options titre"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:361
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:359
 msgid "Enable Promotion Headline on"
 msgstr "Activer Promotion titre sur "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:375
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:373
 msgid "Appropriate Words: 10"
 msgstr "Mots appropriés: 10 "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:376
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:374
 msgid "Promotion Headline Text"
 msgstr "Promotion tire text "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:389
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:387
 msgid "Appropriate Words: 15"
 msgstr "Mots appropriés: 15 "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:390
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:388
 msgid "Promotion Subheadline Text"
 msgstr "Promotion sous titre texte "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:403
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:401
 msgid "Appropriate Words: 3"
 msgstr "Mots appropriés: 3 "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:404
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:402
 msgid "Promotion Headline Button Text "
 msgstr "Promotion Bouton global Text␣ "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:418
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:416
 msgid "Promotion Headline Link"
 msgstr "Promotion titre Lien "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:442
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:440
 msgid "Change default placeholder text in Search."
 msgstr "Texte d'espace réservé changement défaut dans Recherche. "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:445
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:443
 msgid "Search Options"
 msgstr "options de recherche "
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:455
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:453
 msgid "Default Display Text in Search"
 msgstr "Affichage par défaut texte Rechercher "
 
@@ -660,7 +660,7 @@ msgstr ""
 msgid "Error 404"
 msgstr "Erreur 404"
 
-#: ../inc/fullframe-breadcrumb.php:222 ../inc/fullframe-core.php:861
+#: ../inc/fullframe-breadcrumb.php:222
 #, php-format
 msgid "Page %s"
 msgstr "Page %s"
@@ -737,36 +737,36 @@ msgctxt "Used before tag names."
 msgid "<span class=\"screen-reader-text\">Tags</span>"
 msgstr "<span class = \"lecteur d'écran-text\"> Balises </ span>"
 
-#: ../inc/fullframe-core.php:957
+#: ../inc/fullframe-core.php:906
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: ../inc/fullframe-core.php:1399
+#: ../inc/fullframe-core.php:1348
 msgid "Scroll Up"
 msgstr "Faire remonter"
 
-#: ../inc/fullframe-core.php:1416
+#: ../inc/fullframe-core.php:1365
 msgid "Posted on"
 msgstr "Posté le"
 
-#: ../inc/fullframe-core.php:1417
+#: ../inc/fullframe-core.php:1366
 msgid "By"
 msgstr "par"
 
-#: ../inc/fullframe-core.php:1458
+#: ../inc/fullframe-core.php:1407
 msgid "Next &rarr;"
 msgstr ""
 
-#: ../inc/fullframe-core.php:1459
+#: ../inc/fullframe-core.php:1408
 msgid "Next post:"
 msgstr ""
 
-#: ../inc/fullframe-core.php:1461
+#: ../inc/fullframe-core.php:1410
 msgid "&larr; Previous"
 msgstr ""
 
-#: ../inc/fullframe-core.php:1462
+#: ../inc/fullframe-core.php:1411
 msgid "Previous post:"
 msgstr ""
 
@@ -1198,6 +1198,11 @@ msgstr "Résultat de recherche pour: %s"
 msgctxt "label"
 msgid "Search for:"
 msgstr "Recherche pour:"
+
+#: ../searchform.php:17
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
 
 #: ../sidebar.php:74
 msgid "Primary Sidebar Widget Area"

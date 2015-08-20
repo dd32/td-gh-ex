@@ -58,7 +58,7 @@ function fullframe_get_social_icons(){
 			if( '' != $value ){
 				$title	=	explode( '-', $key );
 				if ( 'Mail' == $key  ) { 
-					$output .= '<a class="genericon_parent genericon genericon-'. strtolower( $key ) .'" title="'. __( 'Email', 'fullframe') . '" href="mailto:'. sanitize_email( $value ) .'"><span class="screen-reader-text">'. __( 'Email', 'fullframe') . '</span> </a>';
+					$output .= '<a class="genericon_parent genericon genericon-'. strtolower( $key ) .'" title="'. __( 'Email', 'full-frame') . '" href="mailto:'. sanitize_email( $value ) .'"><span class="screen-reader-text">'. __( 'Email', 'full-frame') . '</span> </a>';
 				}
 				else if ( 'Skype' == $key  ) { 
 					$output .= '<a class="genericon_parent genericon genericon-'. strtolower( $key ) .'" title="'. $title[ 0 ] . '" href="'. esc_attr( $value ) .'"><span class="screen-reader-text">'.$title[ 0 ] . '</span> </a>';

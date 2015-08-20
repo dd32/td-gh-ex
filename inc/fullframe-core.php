@@ -46,9 +46,9 @@ if ( ! function_exists( 'fullframe_setup' ) ) :
 		 * Make theme available for translation
 		 * Translations can be filed in the /languages/ directory
 		 * If you're building a theme based on fullframe, use a find and replace
-		 * to change 'fullframe' to the name of your theme in all the template files
+		 * to change 'full-frame' to the name of your theme in all the template files
 		 */
-		load_theme_textdomain( 'fullframe', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'full-frame', get_template_directory() . '/languages' );
 
 		/**
 		 * Add default posts and comments RSS feed links to head
@@ -74,7 +74,7 @@ if ( ! function_exists( 'fullframe_setup' ) ) :
     	/**
 		 * This theme uses wp_nav_menu() in one location.
 		 */
-		register_nav_menu( 'primary', __( 'Primary Menu', 'fullframe' ) );
+		register_nav_menu( 'primary', __( 'Primary Menu', 'full-frame' ) );
 
 		/**
 		 * Enable support for Post Formats
@@ -553,7 +553,7 @@ if ( ! function_exists( 'fullframe_content_nav' ) ) :
 
 		?>
 	        <nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>">
-	        	<h3 class="screen-reader-text"><?php _e( 'Post navigation', 'fullframe' ); ?></h3>
+	        	<h3 class="screen-reader-text"><?php _e( 'Post navigation', 'full-frame' ); ?></h3>
 				<?php
 				/**
 				 * Check if navigation type is numeric and if Wp-PageNavi Plugin is enabled
@@ -562,8 +562,8 @@ if ( ! function_exists( 'fullframe_content_nav' ) ) :
 					wp_pagenavi();
 	            }
 	            else { ?>	
-	                <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'fullframe' ) ); ?></div>
-	                <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'fullframe' ) ); ?></div>
+	                <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'full-frame' ) ); ?></div>
+	                <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'full-frame' ) ); ?></div>
 	            <?php 
 	            } ?>
 	        </nav><!-- #nav -->	
@@ -587,7 +587,7 @@ if ( ! function_exists( 'fullframe_comment' ) ) :
 
 		<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
 			<div class="comment-body">
-				<?php _e( 'Pingback:', 'fullframe' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'fullframe' ), '<span class="edit-link">', '</span>' ); ?>
+				<?php _e( 'Pingback:', 'full-frame' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'full-frame' ), '<span class="edit-link">', '</span>' ); ?>
 			</div>
 
 		<?php else : ?>
@@ -597,20 +597,20 @@ if ( ! function_exists( 'fullframe_comment' ) ) :
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
 						<?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
-						<?php printf( __( '%s <span class="says">says:</span>', 'fullframe' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+						<?php printf( __( '%s <span class="says">says:</span>', 'full-frame' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
 					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
 						<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 							<time datetime="<?php comment_time( 'c' ); ?>">
-								<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'fullframe' ), get_comment_date(), get_comment_time() ); ?>
+								<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'full-frame' ), get_comment_date(), get_comment_time() ); ?>
 							</time>
 						</a>
-						<?php edit_comment_link( __( 'Edit', 'fullframe' ), '<span class="edit-link">', '</span>' ); ?>
+						<?php edit_comment_link( __( 'Edit', 'full-frame' ), '<span class="edit-link">', '</span>' ); ?>
 					</div><!-- .comment-metadata -->
 
 					<?php if ( '0' == $comment->comment_approved ) : ?>
-					<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'fullframe' ); ?></p>
+					<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'full-frame' ); ?></p>
 					<?php endif; ?>
 				</footer><!-- .comment-meta -->
 
@@ -713,14 +713,14 @@ if ( ! function_exists( 'fullframe_entry_meta' ) ) :
 		);
 
 		printf( '<span class="posted-on">%1$s<a href="%2$s" rel="bookmark">%3$s</a></span>',
-			sprintf( _x( '<span class="screen-reader-text">Posted on</span>', 'Used before publish date.', 'fullframe' ) ),
+			sprintf( _x( '<span class="screen-reader-text">Posted on</span>', 'Used before publish date.', 'full-frame' ) ),
 			esc_url( get_permalink() ),
 			$time_string
 		);
 
 		if ( is_singular() || is_multi_author() ) {
 			printf( '<span class="byline"><span class="author vcard">%1$s<a class="url fn n" href="%2$s">%3$s</a></span></span>',
-				sprintf( _x( '<span class="screen-reader-text">Author</span>', 'Used before post author name.', 'fullframe' ) ),
+				sprintf( _x( '<span class="screen-reader-text">Author</span>', 'Used before post author name.', 'full-frame' ) ),
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 				esc_html( get_the_author() )
 			);
@@ -728,11 +728,11 @@ if ( ! function_exists( 'fullframe_entry_meta' ) ) :
 
 		if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) {
 			echo '<span class="comments-link">';
-			comments_popup_link( esc_html__( 'Leave a comment', 'fullframe' ), esc_html__( '1 Comment', 'fullframe' ), esc_html__( '% Comments', 'fullframe' ) );
+			comments_popup_link( esc_html__( 'Leave a comment', 'full-frame' ), esc_html__( '1 Comment', 'full-frame' ), esc_html__( '% Comments', 'full-frame' ) );
 			echo '</span>';
 		}
 
-		edit_post_link( esc_html__( 'Edit', 'fullframe' ), '<span class="edit-link">', '</span>' ); 
+		edit_post_link( esc_html__( 'Edit', 'full-frame' ), '<span class="edit-link">', '</span>' ); 
 
 		echo '</p><!-- .entry-meta -->';
 	}
@@ -749,18 +749,18 @@ if ( ! function_exists( 'fullframe_tag_category' ) ) :
 		echo '<p class="entry-meta">';
 
 		if ( 'post' == get_post_type() ) {
-			$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'fullframe' ) );
+			$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'full-frame' ) );
 			if ( $categories_list && fullframe_categorized_blog() ) {
 				printf( '<span class="cat-links">%1$s%2$s</span>',
-					sprintf( _x( '<span class="screen-reader-text">Categories</span>', 'Used before category names.', 'fullframe' ) ),
+					sprintf( _x( '<span class="screen-reader-text">Categories</span>', 'Used before category names.', 'full-frame' ) ),
 					$categories_list
 				);
 			}
 
-			$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'fullframe' ) );
+			$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'full-frame' ) );
 			if ( $tags_list ) {
 				printf( '<span class="tags-links">%1$s%2$s</span>',
-					sprintf( _x( '<span class="screen-reader-text">Tags</span>', 'Used before tag names.', 'fullframe' ) ),
+					sprintf( _x( '<span class="screen-reader-text">Tags</span>', 'Used before tag names.', 'full-frame' ) ),
 					$tags_list
 				);
 			}
@@ -829,57 +829,6 @@ function fullframe_enhanced_image_navigation( $url, $id ) {
 	return $url;
 }
 add_filter( 'attachment_link', 'fullframe_enhanced_image_navigation', 10, 2 );
-
-
-if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
-	/**
-	* Filters wp_title to print a neat <title> tag based on what is being viewed.
-	*
-	* @param string $title Default title text for current view.
-	* @param string $sep Optional separator.
-	* @return string The filtered title.
-	*/
-	function fullframe_wp_title( $title, $sep ) {
-		if ( is_feed() ) {
-			return $title;
-		}
-		
-		global $page, $paged;
-		
-		// Add the blog name
-		$title .= get_bloginfo( 'name', 'display' );
-		
-		// Add the blog description for the home/front page.
-		$site_description = get_bloginfo( 'description', 'display' );
-		
-		if ( $site_description && ( is_home() || is_front_page() ) ) {
-			$title .= " $sep $site_description";
-		}
-		
-		// Add a page number if necessary:
-		if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-			$title .= " $sep " . sprintf( __( 'Page %s', '_s' ), max( $paged, $page ) );
-		}
-		
-		return $title;
-		
-	}
-		
-	add_filter( 'wp_title', 'fullframe_wp_title', 10, 2 );
-	
-	/**
-	* Title shim for sites older than WordPress 4.1.
-	*
-	* @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
-	* @todo Remove this function when WordPress 4.3 is released.
-	*/
-	function fullframe_render_title() {
-	?>
-		<title><?php wp_title( '|', true, 'right' ); ?></title>
-	<?php
-	}
-	add_action( 'wp_head', 'fullframe_render_title' );
-endif;
 
 
 /**
@@ -954,7 +903,7 @@ if ( ! function_exists( 'fullframe_continue_reading' ) ) :
 		$options		=	fullframe_get_theme_options();
 		$more_tag_text	= $options['excerpt_more_text'];
 
-		return ' <a class="more-link" href="'. esc_url( get_permalink() ) . '">' .  sprintf( __( '%s', 'fullframe' ) , $more_tag_text ) . '</a>';
+		return ' <a class="more-link" href="'. esc_url( get_permalink() ) . '">' .  sprintf( __( '%s', 'full-frame' ) , $more_tag_text ) . '</a>';
 	}
 endif; //fullframe_continue_reading
 add_filter( 'excerpt_more', 'fullframe_continue_reading' );
@@ -1396,7 +1345,7 @@ if ( ! function_exists( 'fullframe_scrollup' ) ) {
 			$options = fullframe_get_theme_options();
 			echo '<!-- refreshing cache -->';	
 			
-			$fullframe_scrollup =  '<a href="#masthead" id="scrollup" class="genericon"><span class="screen-reader-text">' . __( 'Scroll Up', 'fullframe' ) . '</span></a>' ;
+			$fullframe_scrollup =  '<a href="#masthead" id="scrollup" class="genericon"><span class="screen-reader-text">' . __( 'Scroll Up', 'full-frame' ) . '</span></a>' ;
 			
 			set_transient( 'fullframe_scrollup', $fullframe_scrollup, 86940 );
 		}
@@ -1413,8 +1362,8 @@ if ( ! function_exists( 'fullframe_page_post_meta' ) ) :
 	function fullframe_page_post_meta() {
 		$fullframe_author_url = esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) );
 		
-		$fullframe_page_post_meta = '<span class="post-time">' . __( 'Posted on', 'fullframe' ) . ' <time class="entry-date updated" datetime="' . esc_attr( get_the_date( 'c' ) ) . '" pubdate>' . esc_html( get_the_date() ) . '</time></span>';
-	    $fullframe_page_post_meta .= '<span class="post-author">' . __( 'By', 'fullframe' ) . ' <span class="author vcard"><a class="url fn n" href="' . $fullframe_author_url . '" title="View all posts by ' . get_the_author() . '" rel="author">' .get_the_author() . '</a></span>';
+		$fullframe_page_post_meta = '<span class="post-time">' . __( 'Posted on', 'full-frame' ) . ' <time class="entry-date updated" datetime="' . esc_attr( get_the_date( 'c' ) ) . '" pubdate>' . esc_html( get_the_date() ) . '</time></span>';
+	    $fullframe_page_post_meta .= '<span class="post-author">' . __( 'By', 'full-frame' ) . ' <span class="author vcard"><a class="url fn n" href="' . $fullframe_author_url . '" title="View all posts by ' . get_the_author() . '" rel="author">' .get_the_author() . '</a></span>';
 
 		return $fullframe_page_post_meta;
 	} 
@@ -1455,11 +1404,11 @@ if ( ! function_exists( 'fullframe_post_navigation' ) ) :
 	function fullframe_post_navigation() {
 		// Previous/next post navigation.
 		the_post_navigation( array(
-			'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next &rarr;', 'fullframe' ) . '</span> ' .
-				'<span class="screen-reader-text">' . __( 'Next post:', 'fullframe' ) . '</span> ' .
+			'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next &rarr;', 'full-frame' ) . '</span> ' .
+				'<span class="screen-reader-text">' . __( 'Next post:', 'full-frame' ) . '</span> ' .
 				'<span class="post-title">%title</span>',
-			'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( '&larr; Previous', 'fullframe' ) . '</span> ' .
-				'<span class="screen-reader-text">' . __( 'Previous post:', 'fullframe' ) . '</span> ' .
+			'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( '&larr; Previous', 'full-frame' ) . '</span> ' .
+				'<span class="screen-reader-text">' . __( 'Previous post:', 'full-frame' ) . '</span> ' .
 				'<span class="post-title">%title</span>',
 		) );
 

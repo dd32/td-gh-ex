@@ -12,8 +12,9 @@
  */
 
 //define theme version
-if ( !defined( 'FULLFRAME_THEME_VERSION' ) )
-define ( 'FULLFRAME_THEME_VERSION', '1.6.2' );
+if ( !defined( 'FULLFRAME_THEME_VERSION' ) ) {
+	define ( 'FULLFRAME_THEME_VERSION', '1.7' );
+}
 
 /**
  * Implement the core functions
