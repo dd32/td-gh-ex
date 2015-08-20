@@ -49,7 +49,7 @@
                     Copyright &copy; <?php the_date( 'Y' ); ?> <a href="<?php get_home_url(); ?>">
                         <?php 
                         if(!empty($apbasic_settings['footer_text'])){
-                            echo esc_attr__($apbasic_settings['footer_text']);                              
+                            echo esc_attr__($apbasic_settings['footer_text'], 'accesspress-basic');                              
                         }else{
                             echo bloginfo('name');
                         }

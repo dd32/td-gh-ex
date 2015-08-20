@@ -71,3 +71,6 @@ Version 2.0.1
 
 Version 2.0.2
 * Fixed the option of unable to set the sidebar layout for the blog page.
+
+Version 2.0.3
+* Removed the option to set the blog page layout from blog page metabox option itself which created the confusion within the users to set the blog layout.
