@@ -74,7 +74,7 @@ function optionsframework_options() {
 	);
 
         $options['header_title_size'] = array(
-		'desc' => __( 'Header Title Size (Default: 2.5)', 'atomic' ),
+		'desc' => __( 'Header Title Size (Default: 2.5em)', 'atomic' ),
 		'id' => 'header_title_size',
 		'std' => '2.5',
 		'class' => 'mini',
@@ -90,7 +90,7 @@ function optionsframework_options() {
 	);
 
         $options['header_description_size'] = array(
-		'desc' => __( 'Header Description Size (Default: 1.75)', 'atomic' ),
+		'desc' => __( 'Header Description Size (Default: 1.75em)', 'atomic' ),
 		'id' => 'header_description_size',
 		'std' => '1.75',
 		'class' => 'mini',
@@ -105,11 +105,12 @@ function optionsframework_options() {
 		'type' => 'text'
 	);
 
-        $typography_top_text_defaults = array(
+    $typography_top_text_defaults = array(
 		'size' => '24px',
 		'face' => 'proxima-nova',
 		'style' => 'italic',
-		'color' => '#FFFFFF' );
+		'color' => '#FFFFFF'
+	);
 		
 	$options['header_top_text_typography'] = array(
 		'name' => __( '', 'atomic' ),
@@ -128,7 +129,7 @@ function optionsframework_options() {
 		'type' => 'text'
 	);
 
-        $typography_bottom_text_defaults = array(
+    $typography_bottom_text_defaults = array(
 		'size' => '32px',
 		'face' => 'proxima-nova',
 		'style' => 'bold',
@@ -187,19 +188,22 @@ function optionsframework_options() {
 		'size' => '12px',
 		'face' => 'Helvetica',
 		'style' => 'normal',
-		'color' => '#FFFFFF' );
+		'color' => '#FFFFFF'
+		);
 
 	$typography_post_date_defaults = array(
 		'size' => '32px',
 		'face' => 'Helvetica',
 		'style' => 'normal',
-		'color' => '#FFFFFF' );
+		'color' => '#FFFFFF'
+		);
 
 	$typography_post_title_defaults = array(
 		'size' => '48px',
 		'face' => 'proxima-nova',
 		'style' => 'bold',
-		'color' => '#FFFFFF' );
+		'color' => '#FFFFFF'
+		);
 		
 	$options['header_date_typography'] = array(
 		'name' => __( '', 'atomic' ),

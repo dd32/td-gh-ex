@@ -18,7 +18,7 @@ get_header(); ?>
 				<h1 class="page-title">
 					<?php
 						if ( is_category() ) :
-							single_cat_title();
+							//single_cat_title();// Moved to Header
 
 						elseif ( is_tag() ) :
 							single_tag_title();

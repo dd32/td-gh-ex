@@ -29,14 +29,15 @@
 						<?php endif; ?>
 					</div><!-- .footer-widget-wrapper -->
 				</div><!-- #footer-widgets -->
-				<?php if ( of_get_option( 'copyright', '1' ) && of_get_default('copyright') ) {
-					echo '<div style="text-align: center;';
-					
+				<?php 
+
+if ( of_get_option( 'copyright', '1' ) && of_get_default('copyright') ) {
+					echo '<div class="copyright" style="padding: 0em 0 2.5em 0; text-align: center;';
 					if ( of_get_option( 'copyright', '' ) ) {
 						$typography = of_get_option('copyright_typography');
 					} else $typography = of_get_default('copyright_typography');
 					
-					echo 'font-family: ' . $typography['face'] . '; font-size:' . $typography['size'] . '; font-style: ' . $typography['style'] . '; color:'.$typography['color'] . ';">';
+					echo 'font-family: ' . $typography['face'] . '; font-size:' . $typography['size'] . '; font-style: ' . $typography['style'] . '; color:' . $typography['color'] . ';">';
 					
 					echo of_get_option( 'copyright_text', of_get_default('copyright_text') ); echo '</div>';		
 				} ?>

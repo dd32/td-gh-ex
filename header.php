@@ -48,7 +48,8 @@
                             }
                         }
                         echo '</a></h1>';
-                    }
+                    } else echo '<h1 class="site-title">&nbsp;</h1>';
+
                     if ( of_get_option( 'header_description_text', '1' ) && of_get_default( 'header_description_text' ) ) {
                         echo '<h2 class="site-description"';
                         if ( of_get_option( 'header_description_size', '' ) ) {
@@ -121,7 +122,7 @@
                 
             /* Custom header text of category */
             if ( is_category() ) {
-                echo '<div class="header-text-first">Category</div><div class="header-text-second">' . single_cat_title("", false) . '</div>';
+                echo '<div class="header-text-first"></div><div class="header-text-second" style="font-style: italic; text-transform: capitalize; font-size: 3em;">' . single_cat_title("", false) . '</div>';
             }
             /* End custom header text of category */
 

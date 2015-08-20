@@ -3,41 +3,46 @@ Theme Name: Atomic
 Theme URI: http://KyleGabriel.com/mytheme
 Author: Kyle Gabriel
 Author URI: http://KyleGabriel.com/
-Description: Atomic is a theme developed for a website to showcase my portfolio and travel. With so many themes cluttered with unused or unwanted features, Atomic brings a refreshingly minimal, full-width, responsive, and fluid layout that is also mobile friendly. Many complex aspects have been stripped so you may choose which features you would like to use, as plugins. For extra customization of the header and footer, go to Appearance -> Atomic Options. Featured images are displayed in the header and are recommended to be greater than or equal to 1400x400 resolution.
-Version: 1.5.1
-License: GNU General Public License v2 or later
+Description: Atomic is a theme developed for a website to showcase my portfolio and travel. With so many themes cluttered with unused or unwanted features, Atomic brings a refreshingly minimal, full-width, responsive, andi fluid layout that is also mobile friendly. Many complex aspects have been stripped so you may choose which features you would like to use, as plugins. For extra customization of the header and footer, go to Appearance -> Atomic Options. Featured images are displayed in the header and are recommended to be greater than or equal to 1400x400 resolution.
+Version: 1.6
+License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, custom-header, custom-menu, dark, featured-image-header, fluid-layout, full-width-template, light, one-column, responsive-layout, theme-options, threaded-comments, white
 Text Domain: atomic
 */
 
+@media screen and (max-width: 62.5em) {
+.copyright {
+    color:#000000 !important;
+}
+}
+
 .content-area {
-    padding: 2.0em;
+    padding:0 2.0em
 }
 
 .indent {
-    text-indent: 1em;
+    text-indent:1em
 }
 
 .clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
+    content:"";
+    display:table;
+    clear:both
 }
 
 a.body-button {
     background-color:transparent;
-    border:3px solid #000;
+    border:0.188em solid #000;
     color:#FFF;
     cursor:pointer;
 /* Improves usability and consistency of cursor style between image-type 'input' and others */
     display:inline-block;
     font-size:16px;
-    font-size:1.6rem;
     font-weight:400;
-    letter-spacing:1px;
+    letter-spacing:0.063em;
     line-height:1;
-    padding:16px;
+    padding:1em;
     text-transform:uppercase;
     -webkit-transition:all .2s ease-in-out;
     -moz-transition:all .2s ease-in-out;
@@ -48,8 +53,8 @@ a.body-button {
 
 .body-button:hover {
     background:#000;
-    border:3px solid #FFF;
-    color:#FFF;
+    border:0.188em solid #FFF;
+    color:#FFF
 }
 
 /*--------------------------------------------------------------
@@ -134,11 +139,11 @@ Structure
 --------------------------------------------------------------*/
 .inner-wrap {
     margin:0 auto;
-    max-width:1500px;
+    max-width:93.75em;
     padding:0 2%
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 62.5em) {
 .inner-wrap {
     padding:0 2%
 }
@@ -151,8 +156,13 @@ Structure
 
 .site-content {
     margin-bottom:4em;
-    margin-top:40px;
-    //margin-left:1em;
+}
+
+@media screen and (max-width: 62.5em){
+    .site-content {
+        padding-top:3em;
+        margin-bottom:0;
+    }
 }
 
 #secondary {
@@ -160,9 +170,9 @@ Structure
     margin-top:2em
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 62.5em) {
 #secondary {
-    display:block
+    display:block;
 }
 }
 
@@ -172,14 +182,14 @@ Typography
 body,button,input,select,textarea {
     color:#404040;
     font-family:'Lato',sans-serif;
-    font-size:1.125em;
+    font-size:16px;
     font-weight:400;
     line-height:1.6
 }
 
 h1,h2,h3,h4,h5,h6 {
     clear:both;
-    font-family:'Roboto Condensed',sans-serif;
+    font-family: 'Roboto Condensed',sans-serif;
     font-weight:400
 }
 
@@ -209,7 +219,7 @@ h6 {
 }
 
 p {
-    margin-bottom:10px;
+    margin-bottom:0.625em
 }
 
 p.indent {
@@ -217,17 +227,17 @@ p.indent {
 }
 
 .entry-content h1,.hentry h2 {
-    line-height: 1.2;
-    margin-bottom: 0.5em;
-    margin-top: 0.5em
+    line-height:1.2;
+    margin-bottom:0.5em;
+    margin-top:0.5em
 }
 
 .hentry h3 {
-    margin-bottom:.7em
+    margin-bottom:0.7em
 }
 
 .hentry h4,.hentry h5,.hentry h6 {
-    margin-bottom:.7em
+    margin-bottom:0.7em
 }
 
 .hentry h1,.hentry h2,.hentry h3,.hentry h4,.hentry h5,.hentry h6 {
@@ -251,30 +261,30 @@ address {
 }
 
 pre {
-    background-color: #eee;
+    background-color:#eee;
     font-family:"Courier 10 Pitch",Courier,monospace;
-    padding: 0.2em 0.3em 0.2em 0.3em;
+    padding:0.2em 0.3em 0.2em 0.3em;
     margin-bottom:0.5em;
-    margin-left: 0.5em;
+    margin-left:0.5em;
     font-size:100%;
     line-height:1.6;
     max-width:98%;
-    font-size: 90%;
+    font-size:90%;
     overflow:auto;
 }
 
 code,kbd,tt,var {
     font-family:Monaco,Consolas,"Andale Mono","DejaVu Sans Mono",monospace;
-    padding: 0.3em;
-    margin: 0;
-    margin-left: 0.5em;
-    font-size: 90%;
-    background-color: rgba(0,0,0,0.04);
-    border-radius: 3px;
+    padding:0.3em;
+    margin:0;
+    margin-left:0.5em;
+    font-size:90%;
+    background-color:rgba(0,0,0,0.04);
+    border-radius:0.188em;
 }
 
 abbr,acronym {
-    border-bottom:1px dotted #666;
+    border-bottom:0.063em dotted #666;
     cursor:help
 }
 
@@ -296,7 +306,7 @@ sup {
 }
 
 sub {
-    top:.5ex
+    top:0.5ex
 }
 
 small {
@@ -313,7 +323,7 @@ big {
 hr {
     background-color:#ccc;
     border:0;
-    height:1px
+    height:0.063em
 }
 
 ul,ol {
@@ -331,6 +341,10 @@ ol {
 li > ul,li > ol {
     margin-bottom:0;
     margin-left:3.0em
+}
+
+ol,ul {
+    list-style:none
 }
 
 dt {
@@ -369,7 +383,7 @@ th {
 }
 
 td,th {
-    padding: 0.5em;
+    padding:0.5em;
 }
 
 table tr:last-child td {
@@ -378,6 +392,23 @@ table tr:last-child td {
 
 table tr:nth-child(even) {
     background:#f5f5f5
+}
+
+ol.num {
+    counter-reset: item;
+    margin:0 0 1.5em 2em
+}
+
+ol.num li {
+    display:block;
+    position:relative;
+}
+ol.num li:before {
+    content: counters(item, ".")".";
+    counter-increment:item;
+    position:absolute;
+    margin-right:100%;
+    right:0.625em; /* space between number and text */
 }
 
 /*--------------------------------------------------------------
@@ -399,13 +430,13 @@ button,input,select,textarea {
 
 button,input[type="button"],input[type="reset"],input[type="submit"] {
     background:#fff;
-    border:3px solid #EB7D00;
+    border:0.188em solid #EB7D00;
     color:#EB7D00;
     cursor:pointer;
 /* Improves usability and consistency of cursor style between image-type 'input' and others */
     font-size:1.4em;
     font-weight:400;
-    letter-spacing:1px;
+    letter-spacing:0.063em;
     line-height:1;
     padding:0.5em;
     text-transform:uppercase;
@@ -417,7 +448,7 @@ button,input[type="button"],input[type="reset"],input[type="submit"] {
 }
 
 .hentry button,.hentry input[type="button"],.hentry input[type="reset"],.hentry input[type="submit"] {
-    padding:6px 4px
+    padding:0.375em 0.25em
 }
 
 button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover {
@@ -446,10 +477,10 @@ input[type="search"]::-webkit-search-decoration {
 
 input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],textarea {
     background:#F5F5F5;
-    border:1px solid #ccc;
-    border-bottom:3px solid #ccc;
+    border:0.063em solid #ccc;
+    border-bottom:0.188em solid #ccc;
     color:#ccc;
-    padding:2px
+    padding:0.125em
 }
 
 input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="search"]:focus,textarea:focus {
@@ -459,13 +490,13 @@ input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input
 }
 
 input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"] {
-    padding:3px
+    padding:0.188em
 }
 
 textarea {
     overflow:auto;
 /* Removes vertical scroll bar in IE6/7/8/9 */
-    padding-left:6px;
+    padding-left:0.375em;
     vertical-align:top;
 /* Improves readability/alignment in browsers */
     width:100%
@@ -475,7 +506,7 @@ textarea {
 Links
 --------------------------------------------------------------*/
 a {
-    border-bottom:1px solid #EB7D00;
+    border-bottom:0.063em solid #EB7D00;
     color:#404040;
     text-decoration:none;
     -webkit-transition:all .2s ease-in-out;
@@ -493,6 +524,25 @@ a:hover,a:focus,a:active {
     color:#EB7D00
 }
 
+.donate {
+    border-bottom:0.063em solid #EB7D00;
+    color:#D47000;
+    text-decoration:none;
+    -webkit-transition:all .2s ease-in-out;
+    -moz-transition:all .2s ease-in-out;
+    -ms-transition:all .2s ease-in-out;
+    -o-transition:all .2s ease-in-out;
+    transition:all .2s ease-in-out
+}
+
+.donate:visited {
+    color:#D47000
+}
+
+.donate:hover,a:focus,a:active {
+    color:#EB7D00
+}
+
 /*--------------------------------------------------------------
 Menus
 --------------------------------------------------------------*/
@@ -500,10 +550,10 @@ Menus
     background:rgba(255,255,255,1);
     display:none;
     padding:0 3%;
-    z-index:1000
+    z-index:1000;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 62.5em) {
 .main-navigation {
     background:transparent;
     position:relative
@@ -512,8 +562,8 @@ Menus
 
 .main-navigation.toggled {
     display:block;
-    margin-bottom:40px;
-    margin-top:40px
+    margin-bottom:2.5em;
+    margin-top:2.5em
 }
 
 .menu-toggle {
@@ -523,7 +573,7 @@ Menus
     padding:0;
     position:absolute;
     right:3%;
-    top:20px
+    top:1.25em
 }
 
 .menu-toggle:hover {
@@ -533,32 +583,32 @@ Menus
 .menu-toggle:before {
     content:"\f0c9";
     font-family:"FontAwesome";
-    font-size:32px
+    font-size:2em
 }
 
 .main-navigation ul {
     list-style:none;
     margin:0;
-    padding-left:0
+    padding-left:0;
 }
 
 .main-navigation a {
-    border-bottom:1px solid #e6e6e6;
+    border-bottom:0.063em solid #e6e6e6;
     display:block;
-    padding:20px 0;
+    padding:1.25em 0;
     text-transform:uppercase;
     font-weight:700;
-    font-size:1.0rem;
-    letter-spacing:1px;
+    font-size: 0.95em;
+    letter-spacing:0.063em;
     color:#404040
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 62.5em) {
 .main-navigation a {
     color:#fff;
-    padding:6px 0;
-    margin-right:25px;
-    margin-top:5px;
+    padding:0.375em 0;
+    margin-right:1.563em;
+    margin-top:0.313em;
     border-bottom:none
 }
 
@@ -568,23 +618,23 @@ Menus
 }
 
 .main-navigation ul ul a {
-    padding-left:30px
+    padding-left:1.875em
 }
 
 .main-navigation ul ul ul a {
-    padding-left:60px
+    padding-left:3.75em
 }
 
 .main-navigation .current_page_item > a,.main-navigation .current-menu-item > a {
     color:#EB7D00
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 62.5em) {
 .main-navigation {
     display:block;
     float:right;
     padding:0;
-    text-shadow:1px 1px 0 rgba(0,0,0,0.1)
+    text-shadow:0.063em 0.063em 0 rgba(0,0,0,0.1)
 }
 
 .main-navigation ul {
@@ -593,7 +643,7 @@ Menus
 }
 
 .main-navigation a:hover {
-    border-bottom:2px solid #fff
+    border-bottom:0.125em solid #fff
 }
 
 .main-navigation .menu-item-has-children > a {
@@ -628,7 +678,7 @@ Menus
 
 /*.main-navigation .current_page_ancestor > a,*/
 .main-navigation .current_page_item > a,.main-navigation .current-menu-item > a {
-    border-bottom:2px solid #fff;
+    border-bottom:0.125em solid #fff;
     color:#fff
 }
 
@@ -643,7 +693,7 @@ Menus
 }
 
 .main-navigation a {
-    border-bottom:2px solid rgba(255,255,255,0);
+    border-bottom:0.125em solid rgba(255,255,255,0);
     display:block;
     text-decoration:none
 }
@@ -678,7 +728,7 @@ Menus
     color:#fff;
     content:"\f107";
     font-family:'FontAwesome';
-    margin-left:5px
+    margin-left:0.313em
 }
 
 .main-navigation li.menu-item-has-children > a:hover:after {
@@ -689,7 +739,7 @@ Menus
     color:#404040;
     content:"\f105";
     font-family:'FontAwesome';
-    margin-left:5px
+    margin-left:0.313em
 }
 
 .main-navigation ul ul li.menu-item-has-children > a:hover:after {
@@ -702,7 +752,7 @@ Menus
 }
 
 .site-main .comment-navigation,.site-main .paging-navigation,.site-main .post-navigation {
-    font-size:20px;
+    font-size:1.25em;
     font-size:2rem;
     font-style:italic;
     font-weight:700;
@@ -710,9 +760,9 @@ Menus
     overflow:hidden
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 50em) {
 .site-main .comment-navigation,.site-main .paging-navigation,.site-main .post-navigation {
-    font-size:1.3em;
+    font-size:1.3em
 }
 }
 
@@ -731,37 +781,43 @@ Menus
 Header
 --------------------------------------------------------------*/
 .header-desc-wrap {
-    height:320px;
+    height:20em;
     z-index:100;
     position:relative;
-    width:100%;
-    max-width:956px;
+    width:90%;
+    max-width:59.75em;
     -moz-box-sizing:border-box;
     -webkit-box-sizing:border-box;
     box-sizing:border-box;
     margin:0 auto;
-    padding-top:80px;
+    padding-top:5em;
     text-align:center;
     text-rendering:optimizeLegibility
 }
 
+@media screen and (max-width: 62.5em){
+    .header-desc-wrap {
+        padding-top:3em;
+    }
+}
+
 .post-date {
-    padding-bottom:10px;
+    padding-bottom:0.625em;
     text-align:center;
     color:#fff;
-    font-size:32px
+    font-size:2em
 }
 
 .post-title {
-    padding-bottom:10px;
+    padding-bottom:0.625em;
     font-family:"proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
     letter-spacing:0;
     text-transform:none;
     line-height:1em;
     font-family:"proxima-nova";
-    font-size:64px;
+    font-size:4em;
     text-transform:uppercase;
-    letter-spacing:4px;
+    letter-spacing:0.25em;
     font-weight:700;
     font-style:normal;
     text-decoration:none;
@@ -772,13 +828,13 @@ Header
 
 .header-text-first {
     font-size:1.2em;
-    padding-bottom:10px;
+    padding-bottom:0.625em;
     text-align:center;
     color:#fff
 }
 
 .header-text-second {
-    padding-top:20px;
+    padding-top:1.25em;
     font-family:"proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight:400;
     letter-spacing:0;
@@ -787,7 +843,7 @@ Header
     font-family:"proxima-nova";
     font-size:2em;
     text-transform:uppercase;
-    letter-spacing:4px;
+    letter-spacing:0.25em;
     font-weight:700;
     font-style:normal;
     text-decoration:none;
@@ -806,7 +862,7 @@ Header
     font-family:"proxima-nova";
     font-size:2.5em;
     text-transform:uppercase;
-    letter-spacing:4px;
+    letter-spacing:0.25em;
     font-weight:700;
     font-style:normal;
     text-decoration:none;
@@ -817,51 +873,51 @@ Header
 
 .overlay {
     background:rgba(0,0,0,0.2) url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAQAAADYv8WvAAAADklEQVQIHWNgYGBoACMABIoBAUIssgcAAAAASUVORK5CYII=) repeat;
-    min-height:200px;
-    padding:10px 0 0
+    min-height:12.5em;
+    padding:0.9em 0 0 
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 50em) {
 .overlay {
-    min-height:350px
+    min-height:21.875em
 }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 75em) {
 .overlay {
-    min-height:400px
+    min-height:25em
 }
 }
 
 .site-title a {
     border-bottom:none;
-    border:3px solid #fff;
+    border:0.11em solid #fff;
     color:#fff;
     font-weight:400;
-    letter-spacing:4px;
+    letter-spacing:0.2em;
     line-height:1;
-    padding:0.2em 0.25em;
-    text-shadow:1px 1px 0 rgba(0,0,0,0.1);
+    padding: 0.25em 0.15em 0.25em 0.35em;
+    text-shadow:0.063em 0.063em 0 rgba(0,0,0,0.1);
     text-transform:uppercase
 }
 
 .site-description {
     color:#fff;
-    font-size:18px;
+    font-size:1.125em;
     font-size:1.8rem
 }
 
 .site-branding {
-    margin-top:10px
+    margin-top:0.625em;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 62.5em) {
 .site-branding {
     float:left
 }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 62.5em) {
 .header-search {
     border-bottom:none;
     padding:0
@@ -875,10 +931,10 @@ Header
 
 .header-search .search-field:focus {
     background-color:#fff;
-    border-bottom:3px solid #EB7D00;
+    border-bottom:0.188em solid #EB7D00;
     cursor:text;
     outline:0;
-    width:180px
+    width:11.25em
 }
 }
 
@@ -891,29 +947,29 @@ Accessibility
 --------------------------------------------------------------*/
 /* Text meant only for screen readers */
 .screen-reader-text {
-    clip:rect(1px,1px,1px,1px);
+    clip:rect(0.063em,0.063em,0.063em,0.063em);
     position:absolute!important;
-    height:1px;
-    width:1px;
+    height:0.063em;
+    width:0.063em;
     overflow:hidden
 }
 
 .screen-reader-text:hover,.screen-reader-text:active,.screen-reader-text:focus {
     background-color:#f1f1f1;
-    border-radius:3px;
-    box-shadow:0 0 2px 2px rgba(0,0,0,0.6);
+    border-radius:0.188em;
+    box-shadow:0 0 0.125em 0.125em rgba(0,0,0,0.6);
     clip:auto!important;
     color:#21759b;
     display:block;
-    font-size:14px;
+    font-size:0.875em;
     font-size:1.4rem;
     font-weight:700;
     height:auto;
-    left:5px;
+    left:0.313em;
     line-height:normal;
-    padding:15px 23px 14px;
+    padding:0.938em 1.438em 0.875em;
     text-decoration:none;
-    top:5px;
+    top:0.313em;
     width:auto;
     z-index:100000
 /* Above WP toolbar */
@@ -940,7 +996,7 @@ Alignments
     margin:0 auto
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 50em) {
 .alignleft,.alignright,.aligncenter {
     float:none;
     margin:0 auto 1.5em;
@@ -970,7 +1026,7 @@ Clearings
 Widgets
 --------------------------------------------------------------*/
 .widget {
-    margin:0 0 2em
+    margin:0.5em 0 0.5em 0
 }
 
 /* Make sure select elements fit in widgets */
@@ -989,7 +1045,7 @@ Widgets
 }
 
 .widget li {
-    margin-bottom:.5em
+    margin-bottom:0.5em
 }
 
 .widget-title {
@@ -1021,7 +1077,7 @@ a.featured-image {
     margin-bottom:4em
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 62.5em) {
 .hentry {
     margin-top:0
 }
@@ -1052,7 +1108,7 @@ a.featured-image {
 .entry-meta,.entry-footer {
     font-size:1.0rem;
     font-weight:300;
-    letter-spacing:1px;
+    letter-spacing:0.063em;
     text-transform:uppercase;
     margin-bottom:1em
 }
@@ -1062,25 +1118,25 @@ a.featured-image {
     margin-bottom:1.5em
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 37.5em) {
 .entry-info {
-    margin-bottom:10px
+    margin-bottom:0.625em
 }
 
 .posted-on,.byline,.comments-link,.edit-link {
     display:inline-block;
-    margin-right:10px
+    margin-right:0.625em
 }
 
 .posted-on:after,.byline:after {
     color:#ccc;
     content:"\002F";
     font-size:1.6rem;
-    margin-left:10px
+    margin-left:0.625em
 }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 62.5em) {
 .posted-on,.byline,.comments-link,.edit-link {
     display:block;
     margin-bottom:1.5em
@@ -1100,22 +1156,22 @@ a.featured-image {
     display:none
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 50em) {
 .meta-list {
     display:block
 }
 }
 
 .cat-links a,.tags-links a {
-    border:2px solid #EB7D00;
+    border:0.125em solid #EB7D00;
     color:#EB7D00;
     display:inline-block;
-    padding:3px 12px;
-    margin-bottom:10px;
-    margin-right:3px;
-    -webkit-border-radius:24px;
-    -moz-border-radius:24px;
-    border-radius:24px
+    padding:0.188em 0.75em;
+    margin-bottom:0.625em;
+    margin-right:0.188em;
+    -webkit-border-radius:1.5em;
+    -moz-border-radius:1.5em;
+    border-radius:1.5em
 }
 
 .cat-links a:hover,.tags-links a:hover {
@@ -1124,21 +1180,21 @@ a.featured-image {
 }
 
 a.header-link {
-/*border-bottom: 2px solid #EB7D00;
+/*border-bottom: 0.125em solid #EB7D00;
 	font-style: italic;
 	font-weight: bold;*/
     background-color:transparent;
-    border:3px solid #FFF;
+    border:0.188em solid #FFF;
     color:#FFF;
     cursor:pointer;
 /* Improves usability and consistency of cursor style between image-type 'input' and others */
     display:inline-block;
-    font-size:16px;
+    font-size:1em;
     font-size:1.2rem;
     font-weight:400;
-    letter-spacing:1px;
+    letter-spacing:0.063em;
     line-height:1;
-    padding:16px;
+    padding:1em;
     text-transform:uppercase;
     -webkit-transition:all .2s ease-in-out;
     -moz-transition:all .2s ease-in-out;
@@ -1149,23 +1205,23 @@ a.header-link {
 
 .header-link:hover {
     background:#FFF;
-    border:3px solid #OOO;
+    border:0.188em solid #OOO;
     color:#000;
 }
 
 a.more-link {
     background-color:transparent;
-    border:3px solid #F80;
+    border:0.188em solid #F80;
     color:#F80;
     cursor:pointer;
 /* Improves usability and consistency of cursor style between image-type 'input' and others */
     display:inline-block;
-    font-size:16px;
+    font-size:1em;
     font-size:1.6rem;
     font-weight:400;
-    letter-spacing:1px;
+    letter-spacing:0.063em;
     line-height:1;
-    padding:10px 16px 10px 16px;
+    padding:0.625em 1em 0.625em 1em;
     margin-top: 0.75em;
     text-transform:uppercase;
     -webkit-transition:all .2s ease-in-out;
@@ -1177,7 +1233,7 @@ a.more-link {
 
 .more-link:hover {
     background:#F80;
-    border:3px solid #F80;
+    border:0.188em solid #F80;
     color:#FFF
 }
 
@@ -1191,20 +1247,20 @@ a.more-link {
 }
 
 .more-link:hover .meta-nav {
-    margin-left:10px
+    margin-left:0.625em
 }
 
 .entry-title,.page-title {
-    font-size:32px;
+    font-size:2em;
     font-size:3.2rem;
     line-height:1.2;
     -ms-word-wrap:break-word;
     word-wrap:break-word
 }
 
-@media screen and (min-width: 1500px) {
+@media screen and (min-width: 93.75em) {
 .entry-title,.page-title {
-    font-size:42px;
+    font-size:2.625em;
     font-size:4.2rem;
 }
 
@@ -1214,69 +1270,70 @@ a.more-link {
 
 .posted-on,.byline,.comments-link,.edit-link {
     display:inline-block;
-    margin-right:10px
+    margin-right:0.625em
 }
 
 .posted-on:after,.byline:after {
     color:#ccc;
     content:"\002F";
     font-size:1.6rem;
-    margin-left:10px
+    margin-left:0.625em
 }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 62.5em) {
 .entry-header,.page-header {
     float:left;
-    width:95%
+    width:95%;
+    padding-top:3em
 }
 
 .entry-content,.entry-summary,.page-content {
     float:right;
-    width:99%;
+    width:99%
 }
 
 .nav-links a {
-    border-bottom:2px solid #EB7D00
+    border-bottom:0.125em solid #EB7D00
 }
 
 /* Sticky posts */
 .sticky {
-    padding-top:60px;
+    padding-top:3.75em;
     position:relative
 }
 
 .sticky-post {
     background:#EB7D00;
     color:#fff;
-    font-size:16px;
+    font-size:1em;
     font-size:1.6rem;
     font-weight:300;
-    letter-spacing:1px;
+    letter-spacing:0.063em;
     line-height:1;
-    padding:8px 10px;
+    padding:0.5em 0.625em;
     position:absolute;
     right:0;
     text-transform:uppercase;
-    top:12px
+    top:0.75em
 }
 
 .archive .sticky-post {
     display:none
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 62.5em) {
 .sticky {
     padding-top:0
 }
 
 .sticky .entry-content {
-    margin-top:60px;
+    margin-top:3.75em
 }
 
 .entry-content li {
     line-height:170%;
-    margin-bottom:0.2em;
+    margin-bottom:0.2em
 }
 
 .entry-content ul,.entry-content ol,.entry-content dl {
@@ -1313,12 +1370,12 @@ a.more-link {
 
 .entry-content hr {
     background:#000;
-    height:1px;
+    height:0.063em;
     width:95%;
     text-align:center;
     margin:0 auto;
-    margin-top:60px;
-    margin-bottom:60px
+    margin-top:3.75em;
+    margin-bottom:3.75em
 }
 
 .entry-content ol > li:last-child,.entry-content ul > li:last-child {
@@ -1329,8 +1386,8 @@ a.more-link {
     background:#EB7D00;
     border-bottom:none;
     color:#fff;
-    margin:0 8px;
-    padding:4px 12px
+    margin:0 0.5em;
+    padding:0.25em 0.75em
 }
 
 .page-links a:hover {
@@ -1352,10 +1409,10 @@ Post formats
 
 blockquote {
     color:#ccc;
-    font-size:22px;
+    font-size:1.375em;
     font-size:2.2rem;
     font-style:italic;
-    padding-right:60px;
+    padding-right:3.75em;
     position:relative
 }
 
@@ -1363,7 +1420,7 @@ blockquote:after {
     color:#ccc;
     content:"\f10d";
     font-family:"FontAwesome";
-    font-size:48px;
+    font-size:3em;
     font-style:normal;
     right:0;
     line-height:1.2;
@@ -1382,9 +1439,9 @@ blockquote:after {
 }
 
 .format-link .entry-content {
-    font-size:22px;
+    font-size:1.375em;
     font-size:2.2rem;
-    padding-right:50px;
+    padding-right:3.125em;
     position:relative;
     text-align:center
 }
@@ -1393,7 +1450,7 @@ blockquote:after {
     color:#ccc;
     content:"\f0c1";
     font-family:"FontAwesome";
-    font-size:48px;
+    font-size:3em;
     font-style:normal;
     right:0;
     line-height:1.2;
@@ -1423,7 +1480,7 @@ Archives
 Comments
 --------------------------------------------------------------*/
 .comment-content {
-    font-size:0.875em;
+    font-size:0.8em;
 }
 
 .comment-content a {
@@ -1464,26 +1521,26 @@ Comments
 }
 
 .comment-author {
-    margin-bottom:1em
+    margin-bottom:0.8em
 }
 
 .comment-author .fn {
     display:block;
     font-size:1.5rem;
-    letter-spacing:1px;
-    margin-left:5px;
+    letter-spacing:0.063em;
+    margin-left:0.313em
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 50em) {
 .comment-author .fn {
     display:inline
 }
 }
 
 .avatar {
-    -webkit-border-radius:50px;
-    -moz-border-radius:50px;
-    border-radius:50px;
+    -webkit-border-radius:3.125em;
+    -moz-border-radius:3.125em;
+    border-radius:3.125em;
     vertical-align:middle
 }
 
@@ -1492,21 +1549,21 @@ Comments
 }
 
 .comment-reply-link {
-    border-bottom:2px solid #EB7D00;
+    border-bottom:0.125em solid #EB7D00;
     font-style:italic;
     font-weight:700
 }
 
 .comment-metadata {
-    font-size:1.0rem;
+    font-size:0.8em;
     font-weight:300;
-    letter-spacing:1px;
+    letter-spacing:0.063em;
     margin-bottom:.8em;
     text-transform:uppercase
 }
 
 .comment-metadata .edit-link {
-    margin-left:10px
+    margin-left:0.625em
 }
 
 li > ul,li > ol {
@@ -1515,12 +1572,12 @@ li > ul,li > ol {
 }
 
 .bypostauthor .comment-body {
-    border-left:6px solid #EB7D00
+    border-left:0.375em solid #EB7D00
 }
 
 .comment-form-comment label {
     display:inline-block;
-    font-size:24px;
+    font-size:1.5em;
     font-size:2.4rem;
     margin-bottom:1em
 }
@@ -1528,10 +1585,10 @@ li > ul,li > ol {
 .comment-form label {
     color:#aaa;
     display:inline-block;
-    font-size:16px;
+    font-size:1em;
     font-weight:700;
-    letter-spacing:1px;
-    margin-bottom:12px;
+    letter-spacing:0.063em;
+    margin-bottom:0.75em;
     text-transform:uppercase
 }
 
@@ -1562,22 +1619,22 @@ Footer
 --------------------------------------------------------------*/
 .site-footer {
     background:#f5f5f5;
-    font-size:16px;
+    font-size:1em
 }
 
 #footer-widgets {
-    margin-bottom:4%
+    //margin-bottom:4%
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 62.5em) {
 .site-footer {
-    font-size:18px;
+    font-size:1.125em;
     font-size:1.8rem
 }
 
 .footer-widget-wrapper {
     float:left;
-    margin-right:4%;
+    margin: 0 1.5%;
     width:30%
 }
 
@@ -1586,16 +1643,16 @@ Footer
 }
 
 .site-info {
-    padding:1em 0
+    padding:1em 0 0 0
 }
 }
 
 .site-info {
     background:#201E1C;
     color:#fff;
-    font-size:16px;
+    font-size:1em;
     font-size:1.6rem;
-    padding:1em 0
+    padding:1em 0 0 0
 }
 
 .site-info a {
@@ -1655,7 +1712,7 @@ Captions
 
 .wp-caption .wp-caption-text {
     color:#aaa;
-    font-size:16px;
+    font-size:1em;
     font-style:italic;
     margin:.8075em 0
 }
@@ -1710,7 +1767,7 @@ Galleries
 .gallery-caption {
     color:#aaa;
     display:block;
-    font-size:16px
+    font-size:1em
 }
 
 .gallery-item a {
@@ -1718,5 +1775,5 @@ Galleries
 }
 
 .figcaption a {
-    border-bottom:1px solid #EB7D00
+    border-bottom:0.063em solid #EB7D00
 }

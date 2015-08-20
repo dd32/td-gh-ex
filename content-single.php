@@ -14,7 +14,7 @@
 		<div class="entry-meta">
 			
 			<div class="meta-list">	
-				<?php atomic_display_categories(); atomic_comment_count(); atomic_display_edit(); ?>
+				<?php atomic_display_categories(); atomic_comment_count(); //atomic_display_edit(); ?>
 			</div>
 		</div><!-- .entry-meta -->
 		<?php if ( '' != get_theme_mod( 'post_sidebar' ) ) { get_sidebar();} ?>

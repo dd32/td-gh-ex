@@ -1,5 +1,5 @@
 Atomic WordPress theme, copyright (C) 2015 Kyle Gabriel.
-Atomic WordPress theme is licensed under GPLv2.
+Atomic WordPress theme is licensed under GPLv3.
 
 Atomic is a minimal theme designed for personal websites.
 
