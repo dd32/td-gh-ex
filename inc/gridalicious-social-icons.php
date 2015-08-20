@@ -14,6 +14,7 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 }
 
 
+if ( ! function_exists( 'gridalicious_get_social_icons' ) ) :
 /**
  * Generate social icons.
  *
@@ -73,5 +74,5 @@ function gridalicious_get_social_icons(){
 		set_transient( 'gridalicious_social_icons', $gridalicious_social_icons, 86940 );	
 	}
 	return $gridalicious_social_icons;
-}
-
+} // gridalicious_get_social_icons
+endif;

@@ -14,14 +14,12 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 }
 
 	// Social Icons
-	if( 4 <= get_bloginfo( 'version' ) ) {
-		$wp_customize->add_panel( 'gridalicious_social_links', array(
-		    'capability'     => 'edit_theme_options',
-		    'description'	=> __( 'Note: Enter the url for correponding social networking website', 'gridalicious' ),
-		    'priority'       => 600,
-			'title'    		 => __( 'Social Links', 'gridalicious' ),
-		) );
-	}
+	$wp_customize->add_panel( 'gridalicious_social_links', array(
+	    'capability'     => 'edit_theme_options',
+	    'description'	=> __( 'Note: Enter the url for correponding social networking website', 'gridalicious' ),
+	    'priority'       => 600,
+		'title'    		 => __( 'Social Links', 'gridalicious' ),
+	) );
 	
 	$wp_customize->add_section( 'gridalicious_social_links', array(
 		'panel'			=> 'gridalicious_social_links',

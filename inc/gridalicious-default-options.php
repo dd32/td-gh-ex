@@ -81,7 +81,8 @@ function gridalicious_get_default_theme_options() {
 		'featured_content_headline'							=> '',
 		'featured_content_subheadline'						=> '',
 		'featured_content_type'								=> 'demo-featured-content',
-		'featured_content_number'							=> '4',
+		'featured_content_number'							=> '3',
+		'featured_content_show'								=> 'excerpt',
 
 		//Featured Grid Content Options
 		'featured_grid_content_option'						=> 'homepage',
@@ -293,6 +294,30 @@ function gridalicious_featured_content_layout_options() {
 	);
 
 	return apply_filters( 'gridalicious_featured_content_layout_options', $featured_content_layout_option );
+}
+
+/**
+ * Returns an array of featured content show registered for gridalicious.
+ *
+ * @since Gridalicious 1.1
+ */
+function gridalicious_featured_content_show() {
+	$featured_content_show_option = array(
+		'excerpt' 		=> array(
+			'value'	=> 'excerpt',
+			'label' => __( 'Show Excerpt', 'gridalicious' ),
+		),
+		'full-content' 	=> array(
+			'value' => 'full-content',
+			'label' => __( 'Show Full Content', 'gridalicious' ),
+		),
+		'hide-content' 	=> array(
+			'value' => 'hide-content',
+			'label' => __( 'Hide Content', 'gridalicious' ),
+		),
+	);
+
+	return apply_filters( 'gridalicious_featured_content_show', $featured_content_show_option );
 }
 
 

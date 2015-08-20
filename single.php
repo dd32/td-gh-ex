@@ -15,9 +15,14 @@ get_header(); ?>
 
 		<?php get_template_part( 'content', 'single' ); ?>
 
-		<?php //gridalicious_content_nav( 'nav-below' ); ?>
-
 		<?php 
+			/** 
+			 * gridalicious_after_post hook
+			 *
+			 * @hooked gridalicious_post_navigation - 10
+			 */
+			do_action( 'gridalicious_after_post' ); 
+			
 			/** 
 			 * gridalicious_comment_section hook
 			 *

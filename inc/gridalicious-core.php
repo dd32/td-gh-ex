@@ -798,34 +798,6 @@ add_filter( 'attachment_link', 'gridalicious_enhanced_image_navigation', 10, 2 )
 
 
 /**
- * Filters wp_title to print a neat <title> tag based on what is being viewed.
- *
- * @since Gridalicious 0.1
- */
-function gridalicious_wp_title( $title, $sep ) {
-	global $page, $paged;
-
-	if ( is_feed() )
-		return $title;
-
-	// Add the blog name
-	$title .= get_bloginfo( 'name' );
-
-	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title .= " $sep $site_description";
-
-	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 )
-		$title .= " $sep " . sprintf( __( 'Page %s', 'gridalicious' ), max( $paged, $page ) );
-
-	return $title;
-}
-add_filter( 'wp_title', 'gridalicious_wp_title', 10, 2 );
-
-
-/**
  * Count the number of footer sidebars to enable dynamic classes for the footer
  *
  * @since Gridalicious 0.1
@@ -1425,3 +1397,29 @@ if ( ! function_exists( 'gridalicious_alter_home' ) ) :
 	}
 endif; //gridalicious_alter_home
 add_action( 'pre_get_posts','gridalicious_alter_home' );
+
+
+if ( ! function_exists( 'gridalicious_post_navigation' ) ) :
+	/**
+	 * Displays Single post Navigation
+	 *
+	 * @uses  the_post_navigation
+	 *
+	 * @action gridalicious_after_post
+	 * 
+	 * @since Gridalicious 1.2
+	 */
+	function gridalicious_post_navigation() {
+		// Previous/next post navigation.
+		the_post_navigation( array(
+			'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next &rarr;', 'gridalicious' ) . '</span> ' .
+				'<span class="screen-reader-text">' . __( 'Next post:', 'gridalicious' ) . '</span> ' .
+				'<span class="post-title">%title</span>',
+			'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( '&larr; Previous', 'gridalicious' ) . '</span> ' .
+				'<span class="screen-reader-text">' . __( 'Previous post:', 'gridalicious' ) . '</span> ' .
+				'<span class="post-title">%title</span>',
+		) );
+
+	}
+endif; //gridalicious_post_navigation
+add_action( 'gridalicious_after_post', 'gridalicious_post_navigation', 10 );

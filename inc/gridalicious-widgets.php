@@ -66,7 +66,7 @@ class Gridalicious_social_icons_widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'gridalicious_social_icons', // Base ID
-			'Gridalicious Social Icons', // Name
+			__( 'CT: Social Icons', 'gridalicious' ), // Name
 			array( 'description' => __( 'Use this widget to add Social Icons as a widget. ', 'gridalicious' ) ) // Args
 		);
 	}

@@ -238,8 +238,10 @@ function gridalicious_page_content( $options ) {
 	$quantity 					= $options [ 'featured_content_number' ];
 
 	$more_link_text				= $options['excerpt_more_text'];
+
+	$show_content				= isset( $options['featured_content_show'] ) ? $options['featured_content_show'] : 'excerpt';
 	
-	$gridalicious_page_content 	= '';
+	$output 	= '';
 
    	$number_of_page 			= 0; 		// for number of pages
 
@@ -268,10 +270,10 @@ function gridalicious_page_content( $options ) {
 			
 			$excerpt = get_the_excerpt();
 			
-			$gridalicious_page_content .= '
+			$output .= '
 				<article id="featured-post-' . $i . '" class="post hentry featured-page-content">';	
 				if ( has_post_thumbnail() ) {
-					$gridalicious_page_content .= '
+					$output .= '
 					<figure class="featured-homepage-image">
 						<a href="' . get_permalink() . '" title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'gridalicious' ), 'echo' => false ) ) . '">
 						'. get_the_post_thumbnail( $post->ID, 'medium', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class' => 'pngfix' ) ) .'
@@ -282,7 +284,7 @@ function gridalicious_page_content( $options ) {
 					$gridalicious_first_image = gridalicious_get_first_image( $post->ID, 'medium', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class' => 'pngfix' ) );
 
 					if ( '' != $gridalicious_first_image ) {
-						$gridalicious_page_content .= '
+						$output .= '
 						<figure class="featured-homepage-image">
 							<a href="' . get_permalink() . '" title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'gridalicious' ), 'echo' => false ) ) . '">
 								'. $gridalicious_first_image .'
@@ -290,17 +292,22 @@ function gridalicious_page_content( $options ) {
 						</figure>';
 					}
 				}
-				$gridalicious_page_content .= '
+				$output .= '
 					<div class="entry-container">
 						<header class="entry-header">
 							<h1 class="entry-title">
 								<a href="' . get_permalink() . '" rel="bookmark">' . the_title( '','', false ) . '</a>
 							</h1>
 						</header>';
-						if( $excerpt !='') {
-							$gridalicious_page_content .= '<div class="entry-content">'. $excerpt.'</div>';
-						}	
-						$gridalicious_page_content .= '
+						if ( 'excerpt' == $show_content ) {
+							$output .= '<div class="entry-excerpt"><p>' . $excerpt . '</p></div><!-- .entry-excerpt -->';
+						}
+						elseif ( 'full-content' == $show_content ) { 
+							$content = apply_filters( 'the_content', get_the_content() );
+							$content = str_replace( ']]>', ']]&gt;', $content );
+							$output .= '<div class="entry-content">' . $content . '</div><!-- .entry-content -->';
+						}
+						$output .= '
 					</div><!-- .entry-container -->
 				</article><!-- .featured-post-'. $i .' -->';
 		endwhile;
@@ -308,6 +315,6 @@ function gridalicious_page_content( $options ) {
 		wp_reset_query();
 	}		
 	
-	return $gridalicious_page_content;
+	return $output;
 }
 endif; // gridalicious_page_content

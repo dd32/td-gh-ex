@@ -16,14 +16,12 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 
 	
 	//Theme Options
-	if( 4 <= get_bloginfo( 'version' ) ) {
-		$wp_customize->add_panel( 'gridalicious_theme_options', array(
-		    'description'    => __( 'Basic theme Options', 'gridalicious' ),
-		    'capability'     => 'edit_theme_options',
-		    'priority'       => 200,
-		    'title'    		 => __( 'Theme Options', 'gridalicious' ),
-		) );
-	}
+	$wp_customize->add_panel( 'gridalicious_theme_options', array(
+	    'description'    => __( 'Basic theme Options', 'gridalicious' ),
+	    'capability'     => 'edit_theme_options',
+	    'priority'       => 200,
+	    'title'    		 => __( 'Theme Options', 'gridalicious' ),
+	) );
 
 	// Breadcrumb Option
 	$wp_customize->add_section( 'gridalicious_breadcumb_options', array(
