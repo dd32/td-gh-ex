@@ -7,7 +7,7 @@ class laurels_randompostwidget extends WP_Widget
 function laurels_randompostwidget()
 {
 $laurels_widget_ops = array('classname' => 'laurels_recentpostwidget', 'description' => 'Displays a recent post with thumbnail' );
-$this->WP_Widget('laurels_recentpostwidget', 'Laurels Recent Post', $laurels_widget_ops);
+parent::__construct('laurels_recentpostwidget', 'Laurels Recent Post', $laurels_widget_ops);
 }
 
 function form($laurels_instance)
