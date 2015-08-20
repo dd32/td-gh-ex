@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Medics V1.4\n"
+"Project-Id-Version: Medics V1.5\n"
 "POT-Creation-Date: 2014-12-15 14:14+0530\n"
 "PO-Revision-Date: 2014-12-15 14:14+0530\n"
 "Last-Translator: FasterThemes <support@fasterthemes.com>\n"

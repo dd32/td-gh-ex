@@ -26,3 +26,6 @@ Version: 1.4 (15 Dec 2014)
 i) Remove unnecessary code
 ii) Declare copyright and license information
 iii) Set translation ready
+
+Version: 1.5 (20 Aug 2015)
+i) Fixed WP_Widget constructor issue.

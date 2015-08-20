@@ -7,7 +7,7 @@ class medics_randompostwidget extends WP_Widget
 function medics_randompostwidget()
 {
 $medics_widget_ops = array('classname' => 'medics_recentpostwidget', 'description' => __('Displays a recent post with thumbnail','medics') );
-$this->WP_Widget('medics_recentpostwidget', __('Medics Recent Post','medics'), $medics_widget_ops);
+parent::__construct('medics_recentpostwidget', __('Medics Recent Post','medics'), $medics_widget_ops);
 }
 
 function form($medics_instance)

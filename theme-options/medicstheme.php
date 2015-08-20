@@ -301,7 +301,7 @@ function medics_framework_page(){
           <div id="options-group-4" class="group faster-inner-tabs fasterthemes-pro-image">
           	<div class="fasterthemes-pro-header">
               <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/theme-logo.png" class="fasterthemes-pro-logo" />
-              <a href="http://fasterthemes.com/checkout/get_checkout_details?theme=Medics" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/buy-now.png" class="fasterthemes-pro-buynow" /></a>
+              <a href="http://fasterthemes.com/wordpress-themes/medics" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/buy-now.png" class="fasterthemes-pro-buynow" /></a>
               </div>
           	<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/pro-featured.png" />
           </div>

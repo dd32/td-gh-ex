@@ -23,10 +23,6 @@ get_header();
     <?php $medics_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>
     <div class="col-md-9 clearfix no-padding">
       <div class="single-blog">
-        <div class="blog-date-col-1">
-          <h2><?php echo get_the_date("M j, Y "); ?> </h2>
-          <div class="blog-comment"> <i class="fa fa-comments"></i><?php comments_number( '0', '1', '%' ); ?> </div>
-        </div>
         <div class="blog-contan-col-2">
           <?php 
 			if($medics_image){
