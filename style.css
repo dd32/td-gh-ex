@@ -5,8 +5,10 @@ Theme URI: https://www.themeinprogress.com/alhena-free-responsive-corporate-word
 Description: Alhena is a responsive clean and corporate WordPress Theme. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like HTML5 and CSS3.
 Author: Theme in Progress.
 Author URI: https://www.themeinprogress.com
-Version: 1.1.4
+Version: 1.1.5
 Tags: blue, green, orange, purple, red, yellow, light, one-column, two-columns, left-sidebar, right-sidebar, photoblogging, custom-background, post-formats, theme-options, translation-ready, responsive-layout, translation-ready
+Text Domain: alhenalite
+Domain Path: /languages
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Alhena Lite WordPress Theme, Copyright 2015 WordPress.org
@@ -1294,6 +1296,34 @@ img.aligncenter {
 }
 .wp-smiley {
 	margin:0;
+}
+
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
 }
 
 /* ===============================================
