@@ -1,13 +1,14 @@
 /*
 Theme Name:		Adelle
 Description:	Your brand is eager and ready to go. The Adelle Theme is ready for you! With a soft pink confetti header and minimalist two-columns, you can get started blogging in no time. Adelle is poised to host any female-oriented brand.
-Version:			15.08
+Version:			15.08.01
 Author:				BluChic
 Author URI:		http://www.bluchic.com
 Theme URI:		http://www.bluchic.com/shop/adelle-theme
 License:			GPL
 License URI:	http://www.gnu.org/licenses/gpl-2.0.html
 Tags:					black, pink, white, light, two-columns, right-sidebar, fluid-layout, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, theme-options, threaded-comments, translation-ready
+Text Domain:  adelle-theme
 */
 
 /* 
@@ -394,6 +395,10 @@ div.aligncenter {display: block; margin-left: auto; margin-right: auto;}
 .wp-caption {border: 1px solid #ccc; background: #efefef; margin: 15px; padding: 1%; text-align: center; max-width: 96%;}
 .wp-caption img {border: 0;}
 .wp-caption p.wp-caption-text {font-size: 0.85em; line-height: 1.2em; padding: 3px 0; margin: 0;}
+
+/* .screen-reader-text */
+.screen-reader-text {}
+.screen-reader-text:focus {}
 
 /* Input and label */
 select,

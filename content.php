@@ -20,8 +20,8 @@
           </ul>
 
           <ul class="footer-navi">
-            <?php previous_post_link( __( '<li class="previous">&laquo; %link</li>' ) ); ?>
-            <?php next_post_link( __( '<li class="next">%link &raquo;</li>' ) ); ?>
+            <?php previous_post_link( __( '<li class="previous">&laquo; %link</li>', 'adelle-theme' ) ); ?>
+            <?php next_post_link( __( '<li class="next">%link &raquo;</li>', 'adelle-theme' ) ); ?>
           </ul>
 
         </footer><!-- .post-footer -->
