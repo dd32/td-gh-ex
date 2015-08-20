@@ -14,7 +14,7 @@ function catchevolution_widgets_init() {
 
 	//Main Sidebar
 	register_sidebar( array(
-		'name' => __( 'Main Sidebar', 'catchevolution' ),
+		'name' => __( 'Main Sidebar', 'catch-evolution' ),
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -24,7 +24,7 @@ function catchevolution_widgets_init() {
 	
 	//Third Column Sidebar
 	register_sidebar( array(
-		'name' => __( 'Third Column Sidebar', 'catchevolution' ),
+		'name' => __( 'Third Column Sidebar', 'catch-evolution' ),
 		'id' => 'catchevolution_third',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -34,7 +34,7 @@ function catchevolution_widgets_init() {
 	
 	// Header Right Sidebar
 	register_sidebar( array(
-		'name' => __( 'Header Right Sidebar', 'catchevolution' ),
+		'name' => __( 'Header Right Sidebar', 'catch-evolution' ),
 		'id' => 'catchevolution_header_right_sidebar',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
@@ -45,7 +45,7 @@ function catchevolution_widgets_init() {
 	// WooCommerce Sidebar
 	if ( class_exists( 'Woocommerce' ) ) {
 		register_sidebar( array(
-			'name' => __( 'WooCommerce Sidebar', 'catchevolution' ),
+			'name' => __( 'WooCommerce Sidebar', 'catch-evolution' ),
 			'id' => 'catchevolution_woocommerce_sidebar',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => "</aside>",
@@ -56,9 +56,9 @@ function catchevolution_widgets_init() {
 	
 	//Footer One Sidebar
 	register_sidebar( array(
-		'name' => __( 'Footer Area One', 'catchevolution' ),
+		'name' => __( 'Footer Area One', 'catch-evolution' ),
 		'id' => 'sidebar-2',
-		'description' => __( 'An optional widget area for your site footer', 'catchevolution' ),
+		'description' => __( 'An optional widget area for your site footer', 'catch-evolution' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -67,9 +67,9 @@ function catchevolution_widgets_init() {
 
 	//Footer Two Sidebar
 	register_sidebar( array(
-		'name' => __( 'Footer Area Two', 'catchevolution' ),
+		'name' => __( 'Footer Area Two', 'catch-evolution' ),
 		'id' => 'sidebar-3',
-		'description' => __( 'An optional widget area for your site footer', 'catchevolution' ),
+		'description' => __( 'An optional widget area for your site footer', 'catch-evolution' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -78,9 +78,9 @@ function catchevolution_widgets_init() {
 
 	//Footer Three Sidebar
 	register_sidebar( array(
-		'name' => __( 'Footer Area Three', 'catchevolution' ),
+		'name' => __( 'Footer Area Three', 'catch-evolution' ),
 		'id' => 'sidebar-4',
-		'description' => __( 'An optional widget area for your site footer', 'catchevolution' ),
+		'description' => __( 'An optional widget area for your site footer', 'catch-evolution' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
@@ -103,14 +103,14 @@ add_action( 'widgets_init', 'catchevolution_widgets_init' );
 class catchevolution_adwidget extends WP_Widget {
 	
 	/**
-	 * Constructor
-	 *
-	 * @return void
-	 **/
-	function catchevolution_adwidget() {
-		$widget_ops = array( 'classname' => 'widget_catchevolution_adwidget', 'description' => __( 'Use this widget to add any type of Advertisement as a widget.', 'catchevolution' ) );
-		$this->WP_Widget( 'widget_catchevolution_adwidget', __( '1. Catch Evolution Adspace Widget', 'catchevolution' ), $widget_ops );
-		$this->alt_option_name = 'widget_catchevolution_adwidget';
+	 * Register widget with WordPress.
+	 */
+	function __construct() {
+		parent::__construct(
+			'widget_catchevolution_adwidget', // Base ID
+			__( 'CT: Adspace Widget', 'catch-evolution' ), // Name
+			array( 'description' => __( 'Use this widget to add any type of Advertisement as a widget.', 'catch-evolution' ) ) // Args
+		);
 	}
 
 	/**
@@ -127,30 +127,30 @@ class catchevolution_adwidget extends WP_Widget {
 		$alt = esc_attr( $instance[ 'alt' ] );
 		?>
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title (optional):','catchevolution'); ?></label>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title (optional):','catch-evolution'); ?></label>
             <input type="text" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title; ?>" class="widefat" id="<?php echo $this->get_field_id('title'); ?>" />
         </p>
         <?php if ( current_user_can( 'unfiltered_html' ) ) : // Only show it to users who can edit it ?>
             <p>
-                <label for="<?php echo $this->get_field_id('adcode'); ?>"><?php _e('Ad Code:','catchevolution'); ?></label>
+                <label for="<?php echo $this->get_field_id('adcode'); ?>"><?php _e('Ad Code:','catch-evolution'); ?></label>
                 <textarea name="<?php echo $this->get_field_name('adcode'); ?>" class="widefat" id="<?php echo $this->get_field_id('adcode'); ?>"><?php echo $adcode; ?></textarea>
             </p>
             <p><strong>or</strong></p>
         <?php endif; ?>
         <p>
-            <label for="<?php echo $this->get_field_id('image'); ?>"><?php _e('Image Url:','catchevolution'); ?></label>
+            <label for="<?php echo $this->get_field_id('image'); ?>"><?php _e('Image Url:','catch-evolution'); ?></label>
         <input type="text" name="<?php echo $this->get_field_name('image'); ?>" value="<?php echo $image; ?>" class="widefat" id="<?php echo $this->get_field_id('image'); ?>" />
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('href'); ?>"><?php _e('Link URL:','catchevolution'); ?></label>
+            <label for="<?php echo $this->get_field_id('href'); ?>"><?php _e('Link URL:','catch-evolution'); ?></label>
             <input type="text" name="<?php echo $this->get_field_name('href'); ?>" value="<?php echo esc_url( $href ); ?>" class="widefat" id="<?php echo $this->get_field_id('href'); ?>" />
         </p>
 		<p>
-        	<label for="<?php echo $this->get_field_id('target'); ?>"><?php _e( 'Open Link in New Window', 'catchevolution' ); ?></label>
+        	<label for="<?php echo $this->get_field_id('target'); ?>"><?php _e( 'Open Link in New Window', 'catch-evolution' ); ?></label>
 			<input class="checkbox" type="checkbox" <?php echo $target; ?> id="<?php echo $this->get_field_id('target'); ?>" name="<?php echo $this->get_field_name('target'); ?>" />
 		</p>          
         <p>
-            <label for="<?php echo $this->get_field_id('alt'); ?>"><?php _e('Alt text:','catchevolution'); ?></label>
+            <label for="<?php echo $this->get_field_id('alt'); ?>"><?php _e('Alt text:','catch-evolution'); ?></label>
             <input type="text" name="<?php echo $this->get_field_name('alt'); ?>" value="<?php echo $alt; ?>" class="widefat" id="<?php echo $this->get_field_id('alt'); ?>" />
         </p>
         <?php
@@ -233,14 +233,14 @@ class catchevolution_adwidget extends WP_Widget {
 class catchevolution_social_search_widget extends WP_Widget {
 	
 	/**
-	 * Constructor
-	 *
-	 * @return void
-	 **/
-	function catchevolution_social_search_widget() {
-		$widget_ops = array( 'classname' => 'widget_catchevolution_social_widget', 'description' => __( 'Use this widget to add Social Icons from Social Icons Settings as a widget. ', 'catchevolution' ) );
-		$this->WP_Widget( 'widget_catchevolution_social_widget', __( '2. Catch Evolution Social Widget', 'catchevolution' ), $widget_ops );
-		$this->alt_option_name = 'widget_catchevolution_social_widget';
+	 * Register widget with WordPress.
+	 */
+	function __construct() {
+		parent::__construct(
+			'widget_catchevolution_social_widget', // Base ID
+			__( 'CT: Social Widget', 'catch-evolution' ), // Name
+			array( 'description' => __( 'Use this widget to add Social Icons from Social Icons Settings as a widget.', 'catch-evolution' ) ) // Args
+		);
 	}
 
 	/**
@@ -252,7 +252,7 @@ class catchevolution_social_search_widget extends WP_Widget {
 		$title = esc_attr( $instance[ 'title' ] );
 		?>
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title (optional):','catchevolution'); ?></label>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title (optional):','catch-evolution'); ?></label>
             <input type="text" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title; ?>" class="widefat" id="<?php echo $this->get_field_id('title'); ?>" />
         </p>
         <?php
@@ -312,14 +312,14 @@ class catchevolution_social_search_widget extends WP_Widget {
 class catchevolution_social_widget extends WP_Widget {
 	
 	/**
-	 * Constructor
-	 *
-	 * @return void
-	 **/
-	function catchevolution_social_widget() {
-		$widget_ops = array( 'classname' => 'widget_catchevolution_social_search_widget', 'description' => __( 'Use this widget to add Social Icons from Social Icons Settings & Search  as a widget. ', 'catchevolution' ) );
-		$this->WP_Widget( 'widget_catchevolution_social_search_widget', __( '3. Catch Evolution Social & Seach Widget', 'catchevolution' ), $widget_ops );
-		$this->alt_option_name = 'widget_catchevolution_social_search_widget';
+	 * Register widget with WordPress.
+	 */
+	function __construct() {
+		parent::__construct(
+			'widget_catchevolution_social_search_widget', // Base ID
+			__( 'CT: Social Widget', 'catch-evolution' ), // Name
+			array( 'description' => __( 'Use this widget to add Social Icons from Social Icons Settings & Search  as a widget.', 'catch-evolution' ) ) // Args
+		);
 	}
 
 	/**
@@ -331,7 +331,7 @@ class catchevolution_social_widget extends WP_Widget {
 		$title = esc_attr( $instance[ 'title' ] );
 		?>
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title (optional):','catchevolution'); ?></label>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title (optional):','catch-evolution'); ?></label>
             <input type="text" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title; ?>" class="widefat" id="<?php echo $this->get_field_id('title'); ?>" />
         </p>
         <?php

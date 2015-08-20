@@ -198,7 +198,7 @@ function catchevolution_header_top_menu() {
 	global $catchevolution_options_settings;
     $options = $catchevolution_options_settings; 
 	
-	if ( has_nav_menu( 'top', 'catchevolution' ) ) : ?>
+	if ( has_nav_menu( 'top', 'catch-evolution' ) ) : ?>
         <div id="fixed-header-top" class="full-menu">
             <div class="wrapper">
                 <?php 
@@ -438,14 +438,14 @@ function catchevolution_header_menu() {
 	
     <div id="header-menu">
         <nav id="access" role="navigation">
-            <h3 class="assistive-text"><?php _e( 'Primary menu', 'catchevolution' ); ?></h3>
+            <h3 class="assistive-text"><?php _e( 'Primary menu', 'catch-evolution' ); ?></h3>
             <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?>
-            <div class="skip-link"><a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to primary content', 'catchevolution' ); ?>"><?php _e( 'Skip to primary content', 'catchevolution' ); ?></a></div>
-            <div class="skip-link"><a class="assistive-text" href="#secondary" title="<?php esc_attr_e( 'Skip to secondary content', 'catchevolution' ); ?>"><?php _e( 'Skip to secondary content', 'catchevolution' ); ?></a></div>
+            <div class="skip-link"><a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to primary content', 'catch-evolution' ); ?>"><?php _e( 'Skip to primary content', 'catch-evolution' ); ?></a></div>
+            <div class="skip-link"><a class="assistive-text" href="#secondary" title="<?php esc_attr_e( 'Skip to secondary content', 'catch-evolution' ); ?>"><?php _e( 'Skip to secondary content', 'catch-evolution' ); ?></a></div>
             <?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assiged to the primary position is the one used. If none is assigned, the menu with the lowest ID is used. */ ?>
         
             <?php
-                if ( has_nav_menu( 'primary', 'catchevolution' ) ) { 
+                if ( has_nav_menu( 'primary', 'catch-evolution' ) ) { 
                     $args = array(
                         'theme_location'    => 'primary',
                         'container_class' 	=> 'menu-header-container wrapper', 
@@ -461,7 +461,7 @@ function catchevolution_header_menu() {
                    
             </nav><!-- #access -->
             
-        <?php if ( has_nav_menu( 'secondary', 'catchevolution' ) ) { 
+        <?php if ( has_nav_menu( 'secondary', 'catch-evolution' ) ) { 
 			// Check is footer menu is enable or not
 			$options = get_option( 'catchevolution_options' );
 			if ( !empty ($options ['enable_menus'] ) ) :
@@ -471,10 +471,10 @@ function catchevolution_header_menu() {
 			endif;
 			?>
             <nav id="access-secondary" class="<?php echo $menuclass; ?>" role="navigation">
-                <h3 class="assistive-text"><?php _e( 'Secondary menu', 'catchevolution' ); ?></h3>
+                <h3 class="assistive-text"><?php _e( 'Secondary menu', 'catch-evolution' ); ?></h3>
                     <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?>
-                    <div class="skip-link"><a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to primary content', 'catchevolution' ); ?>"><?php _e( 'Skip to primary content', 'catchevolution' ); ?></a></div>
-                    <div class="skip-link"><a class="assistive-text" href="#secondary" title="<?php esc_attr_e( 'Skip to secondary content', 'catchevolution' ); ?>"><?php _e( 'Skip to secondary content', 'catchevolution' ); ?></a></div>
+                    <div class="skip-link"><a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to primary content', 'catch-evolution' ); ?>"><?php _e( 'Skip to primary content', 'catch-evolution' ); ?></a></div>
+                    <div class="skip-link"><a class="assistive-text" href="#secondary" title="<?php esc_attr_e( 'Skip to secondary content', 'catch-evolution' ); ?>"><?php _e( 'Skip to secondary content', 'catch-evolution' ); ?></a></div>
                 <?php wp_nav_menu( array( 'theme_location'  => 'secondary', 'container_class' 	=> 'menu-secondary-container wrapper' ) );  ?>
             </nav>
         <?php }	

@@ -39,8 +39,8 @@ add_action( 'admin_print_styles-appearance_page_theme_options', 'catchevolution_
 function catchevolution_options_menu() {
 	
 	add_theme_page( 
-        __( 'Theme Options', 'catchevolution' ),           // Name of page
-        __( 'Theme Options', 'catchevolution' ),           // Label in menu
+        __( 'Theme Options', 'catch-evolution' ),           // Name of page
+        __( 'Theme Options', 'catch-evolution' ),           // Label in menu
         'edit_theme_options',                           // Capability required
         'theme_options',                                // Menu slug, used to uniquely identify the page
         'catchevolution_theme_options_do_page'             // Function that renders the options page
@@ -81,32 +81,32 @@ function catchevolution_theme_options_do_page() {
             ?>   
             
             <?php if (false !== $_REQUEST['settings-updated']) : ?>
-            	<div class="updated fade"><p><strong><?php _e('Options Saved', 'catchevolution'); ?></strong></p></div>
+            	<div class="updated fade"><p><strong><?php _e('Options Saved', 'catch-evolution'); ?></strong></p></div>
             <?php endif; ?>
             
 			<div id="theme-option-header">
             
                 <div id="theme-option-title">
-                    <h2 class="title"><?php _e( 'Theme Options By', 'catchevolution' ); ?></h2>
+                    <h2 class="title"><?php _e( 'Theme Options By', 'catch-evolution' ); ?></h2>
                     <h2 class="logo">
-                        <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchevolution' ) ); ?>" title="<?php esc_attr_e( 'Catch Themes', 'catchevolution' ); ?>" target="_blank">
-                            <img src="<?php echo get_template_directory_uri().'/inc/panel/images/catch-themes.png'; ?>" alt="<?php _e( 'Catch Themes', 'catchevolution' ); ?>" />
+                        <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catch-evolution' ) ); ?>" title="<?php esc_attr_e( 'Catch Themes', 'catch-evolution' ); ?>" target="_blank">
+                            <img src="<?php echo get_template_directory_uri().'/inc/panel/images/catch-themes.png'; ?>" alt="<?php _e( 'Catch Themes', 'catch-evolution' ); ?>" />
                         </a>
                     </h2>
                 </div><!-- #theme-option-title -->
                 
                 <div id="upgradepro">
-                	<a class="button" href="<?php echo esc_url(__('http://catchthemes.com/themes/catch-evolution-pro/','catchevolution')); ?>" title="<?php esc_attr_e('Upgrade to Catch Evolution Pro', 'catcheverest'); ?>" target="_blank"><?php printf(__('Upgrade to Catch Evolution Pro','catchevolution')); ?></a>
+                	<a class="button" href="<?php echo esc_url(__('http://catchthemes.com/themes/catch-evolution-pro/','catch-evolution')); ?>" title="<?php esc_attr_e('Upgrade to Catch Evolution Pro', 'catch-evolution'); ?>" target="_blank"><?php printf(__('Upgrade to Catch Evolution Pro','catch-evolution')); ?></a>
                	</div><!-- #upgradepro -->
             
                 <div id="theme-support">
                     <ul>
-                    	<li><a class="button donate" href="<?php echo esc_url(__('http://catchthemes.com/donate/','catchevolution')); ?>" title="<?php esc_attr_e('Donate to Catch Evolution', 'catchevolution'); ?>" target="_blank"><?php printf(__('Donate Now','evolution')); ?></a></li>
-                  		<li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/theme-instructions/catch-evolution/','catchevolution')); ?>" title="<?php esc_attr_e('Theme Instruction', 'catchevolution'); ?>" target="_blank"><?php printf(__('Theme Instruction','catchevolution')); ?></a></li>
-                   		<li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/support/','catchevolution')); ?>" title="<?php esc_attr_e('Support', 'catchevolution'); ?>" target="_blank"><?php printf(__('Support','catchevolution')); ?></a></li>
-                        <li><a class="button" href="<?php echo esc_url(__('https://www.facebook.com/catchthemes/','catchevolution')); ?>" title="<?php esc_attr_e('Like Catch Themes on Facebook', 'catchevolution'); ?>" target="_blank"><?php printf(__('Facebook','catchevolution')); ?></a></li>
-                        <li><a class="button" href="<?php echo esc_url(__('https://twitter.com/catchthemes/','catchevolution')); ?>" title="<?php esc_attr_e('Follow Catch Themes on Twitter', 'catchevolution'); ?>" target="_blank"><?php printf(__('Twitter','catchevolution')); ?></a></li>
-                        <li><a class="button" href="<?php echo esc_url(__('http://wordpress.org/support/view/theme-reviews/catch-evolution/','catchevolution')); ?>" title="<?php esc_attr_e('Rate us 5 Star on WordPress', 'catchevolution'); ?>" target="_blank"><?php printf(__('5 Star Rating','catchevolution')); ?></a></li>
+                    	<li><a class="button donate" href="<?php echo esc_url(__('http://catchthemes.com/donate/','catch-evolution')); ?>" title="<?php esc_attr_e('Donate to Catch Evolution', 'catch-evolution'); ?>" target="_blank"><?php printf(__('Donate Now','catch-evolution')); ?></a></li>
+                  		<li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/theme-instructions/catch-evolution/','catch-evolution')); ?>" title="<?php esc_attr_e('Theme Instruction', 'catch-evolution'); ?>" target="_blank"><?php printf(__('Theme Instruction','catch-evolution')); ?></a></li>
+                   		<li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/support/','catch-evolution')); ?>" title="<?php esc_attr_e('Support', 'catch-evolution'); ?>" target="_blank"><?php printf(__('Support','catch-evolution')); ?></a></li>
+                        <li><a class="button" href="<?php echo esc_url(__('https://www.facebook.com/catchthemes/','catch-evolution')); ?>" title="<?php esc_attr_e('Like Catch Themes on Facebook', 'catch-evolution'); ?>" target="_blank"><?php printf(__('Facebook','catch-evolution')); ?></a></li>
+                        <li><a class="button" href="<?php echo esc_url(__('https://twitter.com/catchthemes/','catch-evolution')); ?>" title="<?php esc_attr_e('Follow Catch Themes on Twitter', 'catch-evolution'); ?>" target="_blank"><?php printf(__('Twitter','catch-evolution')); ?></a></li>
+                        <li><a class="button" href="<?php echo esc_url(__('http://wordpress.org/support/view/theme-reviews/catch-evolution/','catch-evolution')); ?>" title="<?php esc_attr_e('Rate us 5 Star on WordPress', 'catch-evolution'); ?>" target="_blank"><?php printf(__('5 Star Rating','catch-evolution')); ?></a></li>
                    	</ul>
                 </div><!-- #theme-support --> 
                  
@@ -115,11 +115,11 @@ function catchevolution_theme_options_do_page() {
             
             <div id="catchevolution_ad_tabs">
                 <ul class="tabNavigation" id="mainNav">
-                    <li><a href="#themeoptions"><?php _e( 'Theme Options', 'catchevolution' );?></a></li>
-                    <li><a href="#slidersettings"><?php _e( 'Featured Post Slider', 'catchevolution' );?></a></li>
-                    <li><a href="#sociallinks"><?php _e( 'Social Links', 'catchevolution' );?></a></li>
+                    <li><a href="#themeoptions"><?php _e( 'Theme Options', 'catch-evolution' );?></a></li>
+                    <li><a href="#slidersettings"><?php _e( 'Featured Post Slider', 'catch-evolution' );?></a></li>
+                    <li><a href="#sociallinks"><?php _e( 'Social Links', 'catch-evolution' );?></a></li>
                     <?php if ( current_user_can( 'unfiltered_html' ) ) : ?>
-                    	<li><a href="#webmaster"><?php _e( 'Tools', 'catchevolution' );?></a></li>
+                    	<li><a href="#webmaster"><?php _e( 'Tools', 'catch-evolution' );?></a></li>
                    	<?php endif; ?>
                 </ul><!-- .tabsNavigation #mainNav -->
                    
@@ -127,28 +127,28 @@ function catchevolution_theme_options_do_page() {
                 <div id="themeoptions">
                     
                     <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Favicon Options', 'catchevolution' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Favicon Options', 'catch-evolution' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">
                                 <tbody>
                                     <tr>
-                                        <th scope="row"><?php _e( 'Disable Favicon?', 'catchevolution' ); ?></th>
+                                        <th scope="row"><?php _e( 'Disable Favicon?', 'catch-evolution' ); ?></th>
                                          <input type='hidden' value='0' name='catchevolution_options[remove_favicon]'>
-                                        <td><input type="checkbox" id="favicon" name="catchevolution_options[remove_favicon]" value="1" <?php checked( '1', $options['remove_favicon'] ); ?> /> <?php _e('Check to disable', 'catchevolution'); ?></td>
+                                        <td><input type="checkbox" id="favicon" name="catchevolution_options[remove_favicon]" value="1" <?php checked( '1', $options['remove_favicon'] ); ?> /> <?php _e('Check to disable', 'catch-evolution'); ?></td>
                                     </tr>
                                     <tr>                            
-                                        <th scope="row"><?php _e( 'Fav Icon URL:', 'catchevolution' ); ?></th>
+                                        <th scope="row"><?php _e( 'Fav Icon URL:', 'catch-evolution' ); ?></th>
                                         <td><?php if ( !empty ( $options[ 'fav_icon' ] ) ) { ?>
                                                 <input class="upload-url" size="65" type="text" name="catchevolution_options[fav_icon]" value="<?php echo esc_url( $options [ 'fav_icon' ] ); ?>" class="upload" />
                                             <?php } else { ?>
                                                 <input size="65" type="text" name="catchevolution_options[fav_icon]" value="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" alt="fav" />
                                             <?php }  ?> 
-                                            <input ref="<?php esc_attr_e( 'Insert as Fav Icon','catchevolution' );?>" class="catchevolution_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Fav Icon','catchevolution' );?>" />
+                                            <input ref="<?php esc_attr_e( 'Insert as Fav Icon','catch-evolution' );?>" class="catchevolution_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Fav Icon','catch-evolution' );?>" />
                                         </td>
                                     </tr>
                                     
                                     <tr>
-                                        <th scope="row"><?php _e( 'Preview: ', 'catchevolution' ); ?></th>
+                                        <th scope="row"><?php _e( 'Preview: ', 'catch-evolution' ); ?></th>
                                         <td> 
                                             <?php 
                                                 if ( !empty( $options[ 'fav_icon' ] ) ) { 
@@ -161,33 +161,33 @@ function catchevolution_theme_options_do_page() {
                                     </tr>
                                 </tbody>
                             </table>
-                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchevolution' ); ?>" /></p> 
+                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-evolution' ); ?>" /></p> 
                         </div><!-- .option-content -->
                     </div><!-- .option-container --> 
                     
                     <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Web Clip Icon Options', 'catchevolution' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Web Clip Icon Options', 'catch-evolution' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">
                                 <tbody>
                                     <tr>
-                                        <th scope="row"><?php _e( 'Disable Web Clip Icon?', 'catchevolution' ); ?></th>
+                                        <th scope="row"><?php _e( 'Disable Web Clip Icon?', 'catch-evolution' ); ?></th>
                                          <input type='hidden' value='0' name='catchevolution_options[remove_web_clip]'>
-                                        <td><input type="checkbox" id="favicon" name="catchevolution_options[remove_web_clip]" value="1" <?php checked( '1', $options['remove_web_clip'] ); ?> /> <?php _e('Check to disable', 'catchevolution'); ?></td>
+                                        <td><input type="checkbox" id="favicon" name="catchevolution_options[remove_web_clip]" value="1" <?php checked( '1', $options['remove_web_clip'] ); ?> /> <?php _e('Check to disable', 'catch-evolution'); ?></td>
                                     </tr>
                                     <tr>                            
-                                        <th scope="row"><?php _e( 'Web Clip Icon URL:', 'catchevolution' ); ?></th>
+                                        <th scope="row"><?php _e( 'Web Clip Icon URL:', 'catch-evolution' ); ?></th>
                                         <td><?php if ( !empty ( $options[ 'web_clip' ] ) ) { ?>
                                                 <input class="upload-url" size="65" type="text" name="catchevolution_options[web_clip]" value="<?php echo esc_url( $options [ 'web_clip' ] ); ?>" class="upload" />
                                             <?php } else { ?>
                                                 <input size="65" type="text" name="catchevolution_options[web_clip]" value="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png" alt="fav" />
                                             <?php }  ?> 
-                                            <input ref="<?php esc_attr_e( 'Insert as Web Clip Icon','catchevolution' );?>" class="catchevolution_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Web Clip Icon','catchevolution' );?>" />
+                                            <input ref="<?php esc_attr_e( 'Insert as Web Clip Icon','catch-evolution' );?>" class="catchevolution_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Web Clip Icon','catch-evolution' );?>" />
                                         </td>
                                     </tr>
                                     
                                     <tr>
-                                        <th scope="row"><?php _e( 'Preview: ', 'catchevolution' ); ?></th>
+                                        <th scope="row"><?php _e( 'Preview: ', 'catch-evolution' ); ?></th>
                                         <td> 
                                             <?php 
                                                 if ( !empty( $options[ 'web_clip' ] ) ) { 
@@ -200,35 +200,35 @@ function catchevolution_theme_options_do_page() {
                                     </tr>
                                 </tbody>
                             </table>
-                            <p><?php esc_attr_e( 'Note: Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px height, which will support High Resolution Devices like iPad Retina.', 'catchevolution' ); ?></p>
-                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchevolution' ); ?>" /></p> 
+                            <p><?php esc_attr_e( 'Note: Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px height, which will support High Resolution Devices like iPad Retina.', 'catch-evolution' ); ?></p>
+                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-evolution' ); ?>" /></p> 
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->                     
                     
                     <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Header Options', 'catchevolution' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Header Options', 'catch-evolution' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">  
                                 <tbody>
                                 	<tr>                            
-                                        <th scope="row"><?php _e( 'Disable Header?', 'catchevolution' ); ?></th>
+                                        <th scope="row"><?php _e( 'Disable Header?', 'catch-evolution' ); ?></th>
                                         <input type='hidden' value='0' name='catchevolution_options[disable_header]'>
-                                        <td><input type="checkbox" id="headerlogo" name="catchevolution_options[disable_header]" value="1" <?php checked( '1', $options['disable_header'] ); ?> /> <?php _e('Check to disable', 'catchevolution'); ?></td>
+                                        <td><input type="checkbox" id="headerlogo" name="catchevolution_options[disable_header]" value="1" <?php checked( '1', $options['disable_header'] ); ?> /> <?php _e('Check to disable', 'catch-evolution'); ?></td>
                                     </tr>
                                     
                                     <tr>                            
-                                        <th scope="row"><?php _e( 'Change Custom Header Image (Buddha)?', 'catchevolution' ); ?></th>
+                                        <th scope="row"><?php _e( 'Change Custom Header Image (Buddha)?', 'catch-evolution' ); ?></th>
                                         <td>
-                                        	<a class="button" href="<?php echo admin_url('themes.php?page=custom-header'); ?>" title="<?php esc_attr_e( 'Click here to change header image', 'catchevolution' ); ?>"><?php _e( 'Click here to change header image', 'catchevolution' );?></a>
+                                        	<a class="button" href="<?php echo admin_url('themes.php?page=custom-header'); ?>" title="<?php esc_attr_e( 'Click here to change header image', 'catch-evolution' ); ?>"><?php _e( 'Click here to change header image', 'catch-evolution' );?></a>
                                        	</td>
                                     </tr>
                                 	<tr>                            
-                                        <th scope="row"><?php _e( 'Disable Header Logo?', 'catchevolution' ); ?></th>
+                                        <th scope="row"><?php _e( 'Disable Header Logo?', 'catch-evolution' ); ?></th>
                                         <input type='hidden' value='0' name='catchevolution_options[remove_header_logo]'>
-                                        <td><input type="checkbox" id="headerlogo" name="catchevolution_options[remove_header_logo]" value="1" <?php checked( '1', $options['remove_header_logo'] ); ?> /> <?php _e('Check to disable', 'catchevolution'); ?></td>
+                                        <td><input type="checkbox" id="headerlogo" name="catchevolution_options[remove_header_logo]" value="1" <?php checked( '1', $options['remove_header_logo'] ); ?> /> <?php _e('Check to disable', 'catch-evolution'); ?></td>
                                     </tr>
                                     <tr>                            
-                                        <th scope="row"><?php _e( 'Logo url:', 'catchevolution' ); ?></th>
+                                        <th scope="row"><?php _e( 'Logo url:', 'catch-evolution' ); ?></th>
                                         <td>
                                             <?php  if ( !empty ( $options[ 'featured_logo_header' ] ) ) { ?>
                                              	<input  class="upload-url" size="65" type="text" name="catchevolution_options[featured_logo_header]" value="<?php echo esc_url ( $options [ 'featured_logo_header' ]); ?>" class="upload" />
@@ -236,11 +236,11 @@ function catchevolution_theme_options_do_page() {
                                                  <input class="upload-url" size="65" type="text" name="catchevolution_options[featured_logo_header]" value="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="logo" />
                                                  <?php }  ?>
                                                 
-                                                <input ref="<?php esc_attr_e( 'Insert as Header Logo','catchevolution' );?>" class="catchevolution_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Header Logo','catchevolution' ); ?>" />
+                                                <input ref="<?php esc_attr_e( 'Insert as Header Logo','catch-evolution' );?>" class="catchevolution_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Header Logo','catch-evolution' ); ?>" />
                                         </td>
                                     </tr>
                                 	<tr>                            
-                                        <th scope="row"><?php _e( 'Preview:', 'catchevolution' ); ?></th>
+                                        <th scope="row"><?php _e( 'Preview:', 'catch-evolution' ); ?></th>
                                         <td>              
                                             <?php 
                                                 if ( !empty( $options[ 'featured_logo_header' ] ) ) { 
@@ -252,113 +252,113 @@ function catchevolution_theme_options_do_page() {
                                         </td>
                                     </tr>
                                     <tr>                            
-                                        <th scope="row"><?php _e( 'Disable Site Title?', 'catchevolution' ); ?></th>
+                                        <th scope="row"><?php _e( 'Disable Site Title?', 'catch-evolution' ); ?></th>
                                         <input type='hidden' value='0' name='catchevolution_options[remove_site_title]'>
-                                        <td><input type="checkbox" id="headerlogo" name="catchevolution_options[remove_site_title]" value="1" <?php checked( '1', $options['remove_site_title'] ); ?> /> <?php _e('Check to disable', 'catchevolution'); ?></td>
+                                        <td><input type="checkbox" id="headerlogo" name="catchevolution_options[remove_site_title]" value="1" <?php checked( '1', $options['remove_site_title'] ); ?> /> <?php _e('Check to disable', 'catch-evolution'); ?></td>
                                     </tr>
                                     <tr>                            
-                                        <th scope="row"><?php _e( 'Disable Site Description (Tagline)?', 'catchevolution' ); ?></th>
+                                        <th scope="row"><?php _e( 'Disable Site Description (Tagline)?', 'catch-evolution' ); ?></th>
                                         <input type='hidden' value='0' name='catchevolution_options[remove_site_description]'>
-                                        <td><input type="checkbox" id="headerlogo" name="catchevolution_options[remove_site_description]" value="1" <?php checked( '1', $options['remove_site_description'] ); ?> /> <?php _e('Check to disable', 'catchevolution'); ?></td>
+                                        <td><input type="checkbox" id="headerlogo" name="catchevolution_options[remove_site_description]" value="1" <?php checked( '1', $options['remove_site_description'] ); ?> /> <?php _e('Check to disable', 'catch-evolution'); ?></td>
                                     </tr>
                                     <tr>
-                                        <th scope="row"><?php _e( 'Move Site Title and Tagline?', 'catchevolution' ); ?></th>
+                                        <th scope="row"><?php _e( 'Move Site Title and Tagline?', 'catch-evolution' ); ?></th>
                                         <input type='hidden' value='0' name='catchevolution_options[site_title_above]'>
-                                        <td><input type="checkbox" id="site-title" name="catchevolution_options[site_title_above]" value="1" <?php checked( '1', $options['site_title_above'] ); ?> /> <?php _e('Check to move before the Logo', 'catchevolution'); ?></td>
+                                        <td><input type="checkbox" id="site-title" name="catchevolution_options[site_title_above]" value="1" <?php checked( '1', $options['site_title_above'] ); ?> /> <?php _e('Check to move before the Logo', 'catch-evolution'); ?></td>
                                     </tr>
                                     <tr>
-                                        <th scope="row"><?php _e( 'Seperate Logo and Site Details?', 'catchevolution' ); ?></th>
+                                        <th scope="row"><?php _e( 'Seperate Logo and Site Details?', 'catch-evolution' ); ?></th>
                                         <input type='hidden' value='0' name='catchevolution_options[seperate_logo]'>
-                                        <td><input type="checkbox" id="site-title" name="catchevolution_options[seperate_logo]" value="1" <?php checked( '1', $options['seperate_logo'] ); ?> /> <?php _e('Check to move down', 'catchevolution'); ?></td>
+                                        <td><input type="checkbox" id="site-title" name="catchevolution_options[seperate_logo]" value="1" <?php checked( '1', $options['seperate_logo'] ); ?> /> <?php _e('Check to move down', 'catch-evolution'); ?></td>
                                     </tr>
                                     <tr>                            
-                                        <th scope="row"><?php _e( 'Enable Header Right Sidebar?', 'catchevolution' ); ?></th>
+                                        <th scope="row"><?php _e( 'Enable Header Right Sidebar?', 'catch-evolution' ); ?></th>
                                         <td>
-                                            <a class="button" href="<?php echo admin_url('widgets.php'); ?>" title="<?php esc_attr_e( 'Just add Widgets in Header Right Sidebar', 'catchevolution' ); ?>"><?php _e( 'Just add Widgets in Header Right Sidebar', 'catchevolution' );?></a>
+                                            <a class="button" href="<?php echo admin_url('widgets.php'); ?>" title="<?php esc_attr_e( 'Just add Widgets in Header Right Sidebar', 'catch-evolution' ); ?>"><?php _e( 'Just add Widgets in Header Right Sidebar', 'catch-evolution' );?></a>
                                         </td>
                                     </tr>                  
                                 </tbody>
                             </table>                        
 
-                      		<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchevolution' ); ?>" /></p>
+                      		<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-evolution' ); ?>" /></p>
                      			
                     	</div><!-- .option-content -->
                  	</div><!-- .option-container -->                     
                     
                     <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Menu Options', 'catchevolution' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Menu Options', 'catch-evolution' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">  
                                 <tbody>
                                 	<tr>
-                                        <th scope="row"><?php _e( 'Menu Tutorial', 'catchevolution' ); ?></th>
+                                        <th scope="row"><?php _e( 'Menu Tutorial', 'catch-evolution' ); ?></th>
                                         <td>
-                                            <a class="button" href="<?php echo esc_url( __( 'http://catchthemes.com/blog/custom-menus-wordpress-themes/','catchevolution' ) ); ?>" title="<?php esc_attr_e( 'Menu Tutorial', 'catchevolution' ); ?>" target="_blank"><?php _e( 'Click Here to Read Menu Tutorial', 'catchevolution' );?></a>
+                                            <a class="button" href="<?php echo esc_url( __( 'http://catchthemes.com/blog/custom-menus-wordpress-themes/','catch-evolution' ) ); ?>" title="<?php esc_attr_e( 'Menu Tutorial', 'catch-evolution' ); ?>" target="_blank"><?php _e( 'Click Here to Read Menu Tutorial', 'catch-evolution' );?></a>
                                         </td>
                                     </tr>
                                     <tr>                            
-                                        <th scope="row"><?php _e( 'Create Menu', 'catchevolution' ); ?></th>
+                                        <th scope="row"><?php _e( 'Create Menu', 'catch-evolution' ); ?></th>
                                         <td>
-                                            <a class="button" href="<?php echo admin_url('nav-menus.php'); ?>" title="<?php esc_attr_e( 'Create Menu', 'catchevolution' ); ?>"><?php _e( 'Click Here to Create Menu', 'catchevolution' );?></a>
+                                            <a class="button" href="<?php echo admin_url('nav-menus.php'); ?>" title="<?php esc_attr_e( 'Create Menu', 'catch-evolution' ); ?>"><?php _e( 'Click Here to Create Menu', 'catch-evolution' );?></a>
                                         </td>
                                     </tr>
                                     <tr>                            
-                                        <th scope="row"><?php _e( 'Assign Menu to Respective Location', 'catchevolution' ); ?></th>
+                                        <th scope="row"><?php _e( 'Assign Menu to Respective Location', 'catch-evolution' ); ?></th>
                                         <td>
-                                            <a class="button" href="<?php echo admin_url('nav-menus.php?action=locations'); ?>" title="<?php esc_attr_e( 'Assign Menu Location', 'catchevolution' ); ?>"><?php _e( 'Click Here to Assign Menu Location', 'catchevolution' );?></a>
+                                            <a class="button" href="<?php echo admin_url('nav-menus.php?action=locations'); ?>" title="<?php esc_attr_e( 'Assign Menu Location', 'catch-evolution' ); ?>"><?php _e( 'Click Here to Assign Menu Location', 'catch-evolution' );?></a>
                                         </td>
                                     </tr>
                                     <tr>                            
-                                        <th scope="row"><?php _e( 'Add Menu in Header Right Sidebar', 'catchevolution' ); ?></th>
+                                        <th scope="row"><?php _e( 'Add Menu in Header Right Sidebar', 'catch-evolution' ); ?></th>
                                         <td>
-                                            <a class="button" href="<?php echo admin_url('widgets.php'); ?>" title="<?php esc_attr_e( 'Add Menu Widget in Header Right Sidebar', 'catchevolution' ); ?>"><?php _e( 'Add Menu Widget in Header Right Sidebar', 'catchevolution' );?></a>
+                                            <a class="button" href="<?php echo admin_url('widgets.php'); ?>" title="<?php esc_attr_e( 'Add Menu Widget in Header Right Sidebar', 'catch-evolution' ); ?>"><?php _e( 'Add Menu Widget in Header Right Sidebar', 'catch-evolution' );?></a>
                                         </td>
                                     </tr>
                                 	<tr>                            
-                                        <th scope="row"><?php _e( 'Disable Primary & Secondary Menu?', 'catchevolution' ); ?></th>
+                                        <th scope="row"><?php _e( 'Disable Primary & Secondary Menu?', 'catch-evolution' ); ?></th>
                                         <input type='hidden' value='0' name='catchevolution_options[disable_header_menu]'>
-                                        <td><input type="checkbox" id="disable_header_menu" name="catchevolution_options[disable_header_menu]" value="1" <?php checked( '1', $options['disable_header_menu'] ); ?> /> <?php _e('Check to disable', 'catchevolution'); ?></td>
+                                        <td><input type="checkbox" id="disable_header_menu" name="catchevolution_options[disable_header_menu]" value="1" <?php checked( '1', $options['disable_header_menu'] ); ?> /> <?php _e('Check to disable', 'catch-evolution'); ?></td>
                                     </tr>                                
                                 </tbody>
                             </table> 
-                      		<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catchevolution' ); ?>" /></p>
+                      		<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catch-evolution' ); ?>" /></p>
                      			
                     	</div><!-- .option-content -->
                  	</div><!-- .option-container --> 
                     
                     <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Search Options', 'catchevolution' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Search Options', 'catch-evolution' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">  
                                 <tbody>
                                 	<tr> 
-                                        <th scope="row"><label><?php _e( 'Default Display Text in Search', 'catchevolution' ); ?></label></th>
+                                        <th scope="row"><label><?php _e( 'Default Display Text in Search', 'catch-evolution' ); ?></label></th>
                                         <td><input type="text" size="45" name="catchevolution_options[search_display_text]" value="<?php echo ( isset( $options[ 'search_display_text' ] ) ) ? esc_attr( $options[ 'search_display_text' ] ) : 'Search'; ?>" />
                                         </td>
                                     </tr>                                  
                                 </tbody>
                             </table>                        
 
-                      		<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catchevolution' ); ?>" /></p>
+                      		<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catch-evolution' ); ?>" /></p>
                      			
                     	</div><!-- .option-content -->
                  	</div><!-- .option-container -->  
                     
             		<div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Color Options', 'catchevolution' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Color Options', 'catch-evolution' ); ?></a></h3>
                         <div class="option-content inside">
                         	<table class="form-table">  
                                 <tbody>
                                     <tr>
-                                        <th scope="row"><label><?php _e( 'Default Color Scheme', 'catchevolution' ); ?></label></th>
+                                        <th scope="row"><label><?php _e( 'Default Color Scheme', 'catch-evolution' ); ?></label></th>
                                         <td>
                                             <label title="color-light" class="box"><img src="<?php echo get_template_directory_uri(); ?>/images/light.png" alt="color-light" /><br />
                                             <input type="radio" name="catchevolution_options[color_scheme]" id="color-light" <?php checked($options['color_scheme'], 'light') ?> value="light"  />
-                                            <?php _e( 'Light', 'catchevolution' ); ?>
+                                            <?php _e( 'Light', 'catch-evolution' ); ?>
                                             </label>
                                             <label title="color-dark" class="box"><img src="<?php echo get_template_directory_uri(); ?>/images/dark.png" alt="color-dark" /><br />
                                             <input type="radio" name="catchevolution_options[color_scheme]" id="color-dark" <?php checked($options['color_scheme'], 'dark') ?> value="dark"  />
-                                            <?php _e( 'Dark', 'catchevolution' ); ?>
+                                            <?php _e( 'Dark', 'catch-evolution' ); ?>
                                             </label>                                       
                                         </td>
                                     </tr>                                
@@ -366,105 +366,105 @@ function catchevolution_theme_options_do_page() {
                                 	<tr>
                                         <th>
                                             <label for="catchevolution_background_color">
-                                                <?php _e( 'Main Background Color:', 'catchevolution' ); ?>
+                                                <?php _e( 'Main Background Color:', 'catch-evolution' ); ?>
                                             </label>
                                         </th>
                                         <td>
                                         	<a class="button" href="<?php echo admin_url('themes.php?page=custom-background'); ?>">
-                                            	<?php _e( 'Click Here to change Main Background Image/Color', 'catchevolution' ); ?>
+                                            	<?php _e( 'Click Here to change Main Background Image/Color', 'catch-evolution' ); ?>
                                            	</a>
                                         </td>
                                     </tr>                                                                                                     
                                     <tr>
                                         <th>
                                             <label for="catchevolution_header_color">
-                                                <?php _e( 'Site Title Color:', 'catchevolution' ); ?>
+                                                <?php _e( 'Site Title Color:', 'catch-evolution' ); ?>
                                             </label>
                                         </th>
                                         <td>
                                         	<a class="button" href="<?php echo admin_url('themes.php?page=custom-header'); ?>">
-                                            	<?php _e( 'Click Here to change Site Title Color', 'catchevolution' ); ?>
+                                            	<?php _e( 'Click Here to change Site Title Color', 'catch-evolution' ); ?>
                                            	</a>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>      
                       
-                     		<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchevolution' ); ?>" /></p>	
+                     		<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-evolution' ); ?>" /></p>	
                     	</div><!-- .option-content -->
                  	</div><!-- .option-container -->                   
 
                     <div id="default-layout" class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Layout Options', 'catchevolution' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Layout Options', 'catch-evolution' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table content-layout">  
                                 <tbody>
                                     <tr>
-                                        <th scope="row"><label><?php _e( 'Default Layout', 'catchevolution' ); ?></label></th>
+                                        <th scope="row"><label><?php _e( 'Default Layout', 'catch-evolution' ); ?></label></th>
                                         <td>
                                         	<label title="right-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/images/right-sidebar.png" alt="Content-Sidebar" /><br />
                                             <input type="radio" name="catchevolution_options[sidebar_layout]" id="right-sidebar" <?php checked($options['sidebar_layout'], 'right-sidebar') ?> value="right-sidebar"  />
-                                            <?php _e( 'Right Sidebar', 'catchevolution' ); ?>
+                                            <?php _e( 'Right Sidebar', 'catch-evolution' ); ?>
                                             </label>  
                                             
                                             <label title="left-Sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/images/left-sidebar.png" alt="Content-Sidebar" /><br />
                                             <input type="radio" name="catchevolution_options[sidebar_layout]" id="left-sidebar" <?php checked($options['sidebar_layout'], 'left-sidebar') ?> value="left-sidebar"  />
-                                            <?php _e( 'Left Sidebar', 'catchevolution' ); ?>
+                                            <?php _e( 'Left Sidebar', 'catch-evolution' ); ?>
                                             </label>
                                              
                                             <label title="no-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/images/no-sidebar.png" alt="Content-Sidebar" /><br />
                                             <input type="radio" name="catchevolution_options[sidebar_layout]" id="no-sidebar" <?php checked($options['sidebar_layout'], 'no-sidebar') ?> value="no-sidebar"  />
-                                            <?php _e( 'No Sidebar', 'catchevolution' ); ?>
+                                            <?php _e( 'No Sidebar', 'catch-evolution' ); ?>
                                             </label>   
                                             
                                             <label title="three-columns" class="box"><img src="<?php echo get_template_directory_uri(); ?>/images/three-columns.png" alt="Three Columns" /><br />
                                             <input type="radio" name="catchevolution_options[sidebar_layout]" id="three-columns" <?php checked($options['sidebar_layout'], 'three-columns') ?> value="three-columns"  />
-                                            <?php _e( 'Three Columns', 'catchevolution' ); ?>
+                                            <?php _e( 'Three Columns', 'catch-evolution' ); ?>
                                             </label>                                                      
                                         </td>
                                     </tr> 
                                     
                                     <tr>
-                                        <th scope="row"><label><?php _e( 'Content Layout', 'catchevolution' ); ?></label></th>
+                                        <th scope="row"><label><?php _e( 'Content Layout', 'catch-evolution' ); ?></label></th>
                                         <td>
                                             <label title="content-excerpt" class="box"><img src="<?php echo get_template_directory_uri(); ?>/images/excerpt.png" alt="Excerpt/Blog Display" /><br />
                                             <input type="radio" name="catchevolution_options[content_layout]" id="content-excerpt" <?php checked($options['content_layout'], 'excerpt') ?> value="excerpt"  />
-                                            <?php _e( 'Excerpt/Blog Display', 'catchevolution' ); ?>
+                                            <?php _e( 'Excerpt/Blog Display', 'catch-evolution' ); ?>
                                             </label>
                                             <label title="content-full" class="box"><img src="<?php echo get_template_directory_uri(); ?>/images/full-content.png" alt="Full Content Display" /><br />
                                             <input type="radio" name="catchevolution_options[content_layout]" id="content-full" <?php checked($options['content_layout'], 'full') ?> value="full"  />
-                                            <?php _e( 'Full Content Display', 'catchevolution' ); ?>
+                                            <?php _e( 'Full Content Display', 'catch-evolution' ); ?>
                                             </label>                  
                                         </td>
                                     </tr>  
                                     
                                     <?php if( $options['reset_sidebar_layout'] == '1' ) { $options['reset_sidebar_layout'] = '0'; } ?>
                                     <tr>
-                                        <th scope="row"><?php _e( 'Reset Layout?', 'catchevolution' ); ?></th>
+                                        <th scope="row"><?php _e( 'Reset Layout?', 'catch-evolution' ); ?></th>
                                             <input type='hidden' value='0' name='catchevolution_options[reset_sidebar_layout]'>
-                                            <td><input type="checkbox" id="reset_family" name="catchevolution_options[reset_sidebar_layout]" value="1" <?php checked( '1', $options['reset_sidebar_layout'] ); ?> /> <?php _e('Check to reset', 'catchevolution'); ?></td>
+                                            <td><input type="checkbox" id="reset_family" name="catchevolution_options[reset_sidebar_layout]" value="1" <?php checked( '1', $options['reset_sidebar_layout'] ); ?> /> <?php _e('Check to reset', 'catch-evolution'); ?></td>
                                     </tr>  
                                 </tbody>
                             </table>
-                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchevolution' ); ?>" /></p> 
+                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-evolution' ); ?>" /></p> 
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->   
                     
                     <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Homepage / Frontpage Category Setting', 'catchevolution' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Homepage / Frontpage Category Setting', 'catch-evolution' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">
                                 <tbody>
                                     <tr>
                                         <th scope="row">
-                                            <?php _e( 'Front page posts categories:', 'catchevolution' ); ?>
+                                            <?php _e( 'Front page posts categories:', 'catch-evolution' ); ?>
                                             <p>
-                                                <small><?php _e( 'Only posts that belong to the categories selected here will be displayed on the front page.', 'catchevolution' ); ?></small>
+                                                <small><?php _e( 'Only posts that belong to the categories selected here will be displayed on the front page.', 'catch-evolution' ); ?></small>
                                             </p>
                                         </th>
                                         <td>
                                             <select name="catchevolution_options[front_page_category][]" id="frontpage_posts_cats" multiple="multiple" class="select-multiple">
-                                                <option value="0" <?php if ( empty( $options['front_page_category'] ) ) { echo 'selected="selected"'; } ?>><?php _e( '--Disabled--', 'catchevolution' ); ?></option>
+                                                <option value="0" <?php if ( empty( $options['front_page_category'] ) ) { echo 'selected="selected"'; } ?>><?php _e( '--Disabled--', 'catch-evolution' ); ?></option>
                                                 <?php /* Get the list of categories */  
                                                     $categories = get_categories();
                                                     if( empty( $options[ 'front_page_category' ] ) ) {
@@ -475,80 +475,80 @@ function catchevolution_theme_options_do_page() {
                                                 <option value="<?php echo $category->cat_ID; ?>" <?php if ( in_array( $category->cat_ID, $options['front_page_category'] ) ) {echo 'selected="selected"';}?>><?php echo $category->cat_name; ?></option>
                                                 <?php endforeach; ?>
                                             </select><br />
-                                            <span class="description"><?php _e( 'You may select multiple categories by holding down the CTRL key.', 'catchevolution' ); ?></span>
+                                            <span class="description"><?php _e( 'You may select multiple categories by holding down the CTRL key.', 'catch-evolution' ); ?></span>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
-                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchevolution' ); ?>" /></p> 
+                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-evolution' ); ?>" /></p> 
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->
                     
 					<div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Excerpt / More Tag Settings', 'catchevolution' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Excerpt / More Tag Settings', 'catch-evolution' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">  
                                 <tbody>
 									<tr>
-                                        <th scope="row"><label><?php _e( 'More Tag Text', 'catchevolution' ); ?></label></th>
+                                        <th scope="row"><label><?php _e( 'More Tag Text', 'catch-evolution' ); ?></label></th>
                                         <td><input type="text" size="45" name="catchevolution_options[more_tag_text]" value="<?php echo ( isset( $options[ 'more_tag_text' ] ) ) ? esc_attr( $options[ 'more_tag_text' ] ) : 'Continue Reading &rarr;'; ?>" />
                                         </td>
                                     </tr>  
                                     <tr>
-                                        <th scope="row"><?php _e( 'Excerpt length(words)', 'catchevolution' ); ?></th>
+                                        <th scope="row"><?php _e( 'Excerpt length(words)', 'catch-evolution' ); ?></th>
                                         <td><input type="text" size="3" name="catchevolution_options[excerpt_length]" value="<?php echo intval( $options[ 'excerpt_length' ] ); ?>" /></td>
                                     </tr>  
                                     <?php if( $options['reset_more_tag'] == '1' ) { $options['reset_more_tag'] = '0'; } ?>
                                     <tr>
-                                        <th scope="row"><?php _e( 'Reset?', 'catchevolution' ); ?></th>
+                                        <th scope="row"><?php _e( 'Reset?', 'catch-evolution' ); ?></th>
                                             <input type='hidden' value='0' name='catchevolution_options[reset_more_tag]'>
-                                            <td><input type="checkbox" id="reset_more_tag" name="catchevolution_options[reset_more_tag]" value="1" <?php checked( '1', $options['reset_more_tag'] ); ?> /> <?php _e('Check to reset', 'catchevolution'); ?></td>
+                                            <td><input type="checkbox" id="reset_more_tag" name="catchevolution_options[reset_more_tag]" value="1" <?php checked( '1', $options['reset_more_tag'] ); ?> /> <?php _e('Check to reset', 'catch-evolution'); ?></td>
                                     </tr> 
                               	</tbody>
                             </table>
-                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchevolution' ); ?>" /></p> 
+                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-evolution' ); ?>" /></p> 
                         </div><!-- .option-content -->
                     </div><!-- .option-container --> 
                     
                     <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Feed Redirect', 'catchevolution' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Feed Redirect', 'catch-evolution' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">  
                                 <tbody>
 									<tr>
-                                        <th scope="row"><label><?php _e( 'Feed Redirect URL', 'catchevolution' ); ?></label>
-                                        <p><small><?php _e( 'Add in the Feedburner URL', 'catchevolution' ); ?></small></p>
+                                        <th scope="row"><label><?php _e( 'Feed Redirect URL', 'catch-evolution' ); ?></label>
+                                        <p><small><?php _e( 'Add in the Feedburner URL', 'catch-evolution' ); ?></small></p>
                                         </th>
                                         <td><input type="text" size="70" name="catchevolution_options[feed_url]" value="<?php echo esc_attr( $options[ 'feed_url' ] ); ?>" />
                                         </td>
                                     </tr>  
                                	</tbody>
                             </table>
-                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchevolution' ); ?>" /></p> 
+                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-evolution' ); ?>" /></p> 
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->        
                                         
                     <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Custom CSS', 'catchevolution' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Custom CSS', 'catch-evolution' ); ?></a></h3>
                         <div class="option-content inside"> 
                             <table class="form-table">  
                                 <tbody>       
                                     <tr>
-                                        <th scope="row"><?php _e( 'Enter your custom CSS styles.', 'catchevolution' ); ?></th>
+                                        <th scope="row"><?php _e( 'Enter your custom CSS styles.', 'catch-evolution' ); ?></th>
                                         <td>
                                             <textarea name="catchevolution_options[custom_css]" id="custom-css" cols="90" rows="12"><?php echo esc_attr( $options[ 'custom_css' ] ); ?></textarea>
                                         </td>
                                     </tr>
                                    
                                     <tr>
-                                        <th scope="row"><?php _e( 'CSS Tutorial from W3Schools.', 'catchevolution' ); ?></th>
+                                        <th scope="row"><?php _e( 'CSS Tutorial from W3Schools.', 'catch-evolution' ); ?></th>
                                         <td>
-                                            <a class="button" href="<?php echo esc_url( __( 'http://www.w3schools.com/css/default.asp','catchevolution' ) ); ?>" title="<?php esc_attr_e( 'CSS Tutorial', 'catchevolution' ); ?>" target="_blank"><?php _e( 'Click Here to Read', 'catchevolution' );?></a>
+                                            <a class="button" href="<?php echo esc_url( __( 'http://www.w3schools.com/css/default.asp','catch-evolution' ) ); ?>" title="<?php esc_attr_e( 'CSS Tutorial', 'catch-evolution' ); ?>" target="_blank"><?php _e( 'Click Here to Read', 'catch-evolution' );?></a>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
-                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchevolution' ); ?>" /></p> 
+                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-evolution' ); ?>" /></p> 
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->                     
 
@@ -557,99 +557,99 @@ function catchevolution_theme_options_do_page() {
                 
                 <div id="slidersettings">
                     <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Slider Options', 'catchevolution' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Slider Options', 'catch-evolution' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">                      
                                 <tr>
-                                    <th scope="row"><label><?php _e( 'Enable Sidebar', 'catchevolution' ); ?></label></th>
+                                    <th scope="row"><label><?php _e( 'Enable Sidebar', 'catch-evolution' ); ?></label></th>
                                     <td>
                                         <label title="enable-slider-homepager" class="box">
                                         <input type="radio" name="catchevolution_options[enable_slider]" id="enable-slider-homepage" <?php checked($options['enable_slider'], 'enable-slider-homepage') ?> value="enable-slider-homepage"  />
-                                        <?php _e( 'Homepage / Frontpage', 'catchevolution' ); ?>
+                                        <?php _e( 'Homepage / Frontpage', 'catch-evolution' ); ?>
                                         </label>
                                         <label title="enable-slider-allpage" class="box">
                                         <input type="radio" name="catchevolution_options[enable_slider]" id="enable-slider-allpage" <?php checked($options['enable_slider'], 'enable-slider-allpage') ?> value="enable-slider-allpage"  />
-                                         <?php _e( 'Entire Site', 'catchevolution' ); ?>
+                                         <?php _e( 'Entire Site', 'catch-evolution' ); ?>
                                         </label>
                                         <label title="disable-slider" class="box">
                                         <input type="radio" name="catchevolution_options[enable_slider]" id="disable-slider" <?php checked($options['enable_slider'], 'disable-slider') ?> value="disable-slider"  />
-                                         <?php _e( 'Disable', 'catchevolution' ); ?>
+                                         <?php _e( 'Disable', 'catch-evolution' ); ?>
                                         </label>                                
                                     </td>
                                 </tr>                        
                                 <tr>
-                                    <th scope="row"><?php _e( 'Number of Slides', 'catchevolution' ); ?></th>
+                                    <th scope="row"><?php _e( 'Number of Slides', 'catch-evolution' ); ?></th>
                                     <td><input type="text" name="catchevolution_options[slider_qty]" value="<?php echo intval( $options[ 'slider_qty' ] ); ?>" size="2" /></td>
                                 </tr> 
         
                                 <tr>
                                     <th>
-                                        <label for="catchevolution_cycle_style"><?php _e( 'Transition Effect:', 'catchevolution' ); ?></label>
+                                        <label for="catchevolution_cycle_style"><?php _e( 'Transition Effect:', 'catch-evolution' ); ?></label>
                                     </th>
                                     <td>
                                         <select id="catchevolution_cycle_style" name="catchevolution_options[transition_effect]">
-                                            <option value="fade" <?php selected('fade', $options['transition_effect']); ?>><?php _e( 'fade', 'catchevolution' ); ?></option>
-                                            <option value="wipe" <?php selected('wipe', $options['transition_effect']); ?>><?php _e( 'wipe', 'catchevolution' ); ?></option>
-                                            <option value="scrollUp" <?php selected('scrollUp', $options['transition_effect']); ?>><?php _e( 'scrollUp', 'catchevolution' ); ?></option>
-                                            <option value="scrollDown" <?php selected('scrollDown', $options['transition_effect']); ?>><?php _e( 'scrollDown', 'catchevolution' ); ?></option>
-                                            <option value="scrollLeft" <?php selected('scrollLeft', $options['transition_effect']); ?>><?php _e( 'scrollLeft', 'catchevolution' ); ?></option>
-                                            <option value="scrollRight" <?php selected('scrollRight', $options['transition_effect']); ?>><?php _e( 'scrollRight', 'catchevolution' ); ?></option>
-                                            <option value="blindX" <?php selected('blindX', $options['transition_effect']); ?>><?php _e( 'blindX', 'catchevolution' ); ?></option>
-                                            <option value="blindY" <?php selected('blindY', $options['transition_effect']); ?>><?php _e( 'blindY', 'catchevolution' ); ?></option>
-                                            <option value="blindZ" <?php selected('blindZ', $options['transition_effect']); ?>><?php _e( 'blindZ', 'catchevolution' ); ?></option>
-                                            <option value="cover" <?php selected('cover', $options['transition_effect']); ?>><?php _e( 'cover', 'catchevolution' ); ?></option>
-                                            <option value="shuffle" <?php selected('shuffle', $options['transition_effect']); ?>><?php _e( 'shuffle', 'catchevolution' ); ?></option>
+                                            <option value="fade" <?php selected('fade', $options['transition_effect']); ?>><?php _e( 'fade', 'catch-evolution' ); ?></option>
+                                            <option value="wipe" <?php selected('wipe', $options['transition_effect']); ?>><?php _e( 'wipe', 'catch-evolution' ); ?></option>
+                                            <option value="scrollUp" <?php selected('scrollUp', $options['transition_effect']); ?>><?php _e( 'scrollUp', 'catch-evolution' ); ?></option>
+                                            <option value="scrollDown" <?php selected('scrollDown', $options['transition_effect']); ?>><?php _e( 'scrollDown', 'catch-evolution' ); ?></option>
+                                            <option value="scrollLeft" <?php selected('scrollLeft', $options['transition_effect']); ?>><?php _e( 'scrollLeft', 'catch-evolution' ); ?></option>
+                                            <option value="scrollRight" <?php selected('scrollRight', $options['transition_effect']); ?>><?php _e( 'scrollRight', 'catch-evolution' ); ?></option>
+                                            <option value="blindX" <?php selected('blindX', $options['transition_effect']); ?>><?php _e( 'blindX', 'catch-evolution' ); ?></option>
+                                            <option value="blindY" <?php selected('blindY', $options['transition_effect']); ?>><?php _e( 'blindY', 'catch-evolution' ); ?></option>
+                                            <option value="blindZ" <?php selected('blindZ', $options['transition_effect']); ?>><?php _e( 'blindZ', 'catch-evolution' ); ?></option>
+                                            <option value="cover" <?php selected('cover', $options['transition_effect']); ?>><?php _e( 'cover', 'catch-evolution' ); ?></option>
+                                            <option value="shuffle" <?php selected('shuffle', $options['transition_effect']); ?>><?php _e( 'shuffle', 'catch-evolution' ); ?></option>
                                         </select>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"><?php _e( 'Transition Delay', 'catchevolution' ); ?></th>
+                                    <th scope="row"><?php _e( 'Transition Delay', 'catch-evolution' ); ?></th>
                                     <td>
                                         <input type="text" name="catchevolution_options[transition_delay]" value="<?php echo $options[ 'transition_delay' ]; ?>" size="2" />
-                                       <span class="description"><?php _e( 'second(s)', 'catchevolution' ); ?></span>
+                                       <span class="description"><?php _e( 'second(s)', 'catch-evolution' ); ?></span>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"><?php _e( 'Transition Length', 'catchevolution' ); ?></th>
+                                    <th scope="row"><?php _e( 'Transition Length', 'catch-evolution' ); ?></th>
                                     <td>
                                         <input type="text" name="catchevolution_options[transition_duration]" value="<?php echo $options[ 'transition_duration' ]; ?>" size="2" />
-                                        <span class="description"><?php _e( 'second(s)', 'catchevolution' ); ?></span>
+                                        <span class="description"><?php _e( 'second(s)', 'catch-evolution' ); ?></span>
                                     </td>
                                 </tr>                      
         
                             </table>
-                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchevolution' ); ?>" /></p> 
+                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-evolution' ); ?>" /></p> 
                         </div><!-- .option-content -->
                     </div><!-- .option-container --> 
                     
                     <div class="option-container post-slider">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Featured Post Slider Options', 'catchevolution' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Featured Post Slider Options', 'catch-evolution' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">
                             	<tr>
-                                    <th scope="row"><?php _e( 'Post Slider Tutorial', 'catchevolution' ); ?></th>
+                                    <th scope="row"><?php _e( 'Post Slider Tutorial', 'catch-evolution' ); ?></th>
                                     <td>
-                                        <a class="button" href="<?php echo esc_url( __( 'http://catchthemes.com/blog/videos-blog/video-series-adding-featured-post-slider/','catchevolution' ) ); ?>" title="<?php esc_attr_e( 'Post Slider Tutorial', 'catchevolution' ); ?>" target="_blank"><?php _e( 'Click Here to Read Post Slider Tutorial', 'catchevolution' );?></a>
+                                        <a class="button" href="<?php echo esc_url( __( 'http://catchthemes.com/blog/videos-blog/video-series-adding-featured-post-slider/','catch-evolution' ) ); ?>" title="<?php esc_attr_e( 'Post Slider Tutorial', 'catch-evolution' ); ?>" target="_blank"><?php _e( 'Click Here to Read Post Slider Tutorial', 'catch-evolution' );?></a>
                                     </td>
                               	</tr>
                                 <tr>                            
-                                    <th scope="row"><?php _e( 'Exclude Slider post from Homepage posts?', 'catchevolution' ); ?></th>
+                                    <th scope="row"><?php _e( 'Exclude Slider post from Homepage posts?', 'catch-evolution' ); ?></th>
                                      <input type='hidden' value='0' name='catchevolution_options[exclude_slider_post]'>
-                                    <td><input type="checkbox" id="headerlogo" name="catchevolution_options[exclude_slider_post]" value="1" <?php checked( '1', $options['exclude_slider_post'] ); ?> /> <?php _e('Check to exclude', 'catchevolution'); ?></td>
+                                    <td><input type="checkbox" id="headerlogo" name="catchevolution_options[exclude_slider_post]" value="1" <?php checked( '1', $options['exclude_slider_post'] ); ?> /> <?php _e('Check to exclude', 'catch-evolution'); ?></td>
                                 </tr>
                                 <tbody class="sortable">
                                     <?php for ( $i = 1; $i <= $options[ 'slider_qty' ]; $i++ ): ?>
                                     <tr>
-                                        <th scope="row"><label class="handle"><?php _e( 'Featured Slider Post #', 'catchevolution' ); ?><span class="count"><?php echo absint( $i ); ?></span></label></th>
+                                        <th scope="row"><label class="handle"><?php _e( 'Featured Slider Post #', 'catch-evolution' ); ?><span class="count"><?php echo absint( $i ); ?></span></label></th>
                                         <td><input type="text" name="catchevolution_options[featured_slider][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'featured_slider', $options ) && array_key_exists( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>" />
-                                        <a href="<?php bloginfo ( 'url' );?>/wp-admin/post.php?post=<?php if( array_key_exists ( 'featured_slider', $options ) && array_key_exists ( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>&action=edit" class="button" title="<?php esc_attr_e('Click Here To Edit'); ?>" target="_blank"><?php _e( 'Click Here To Edit', 'catchevolution' ); ?></a>
+                                        <a href="<?php bloginfo ( 'url' );?>/wp-admin/post.php?post=<?php if( array_key_exists ( 'featured_slider', $options ) && array_key_exists ( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>&action=edit" class="button" title="<?php esc_attr_e('Click Here To Edit', 'catch-evolution' ); ?>" target="_blank"><?php _e( 'Click Here To Edit', 'catch-evolution' ); ?></a>
                                         </td>
                                     </tr>                           
                                     <?php endfor; ?>
                                 </tbody>
                             </table>
-                            <p><?php _e( 'Note: Here You can put your Post IDs which displays on Homepage as slider.', 'catchevolution' ); ?> </p>
-                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchevolution' ); ?>" /></p> 
+                            <p><?php _e( 'Note: Here You can put your Post IDs which displays on Homepage as slider.', 'catch-evolution' ); ?> </p>
+                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-evolution' ); ?>" /></p> 
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->                   
                        
@@ -660,168 +660,168 @@ function catchevolution_theme_options_do_page() {
                         <table class="form-table">
                             <tbody>
                             	<tr>                            
-                                    <th scope="row"><?php _e( 'Enable Social Icons in Header Right Sidebar?', 'catchevolution' ); ?></th>
+                                    <th scope="row"><?php _e( 'Enable Social Icons in Header Right Sidebar?', 'catch-evolution' ); ?></th>
                                     <td>
-                                        <a class="button" href="<?php echo admin_url('widgets.php'); ?>" title="<?php esc_attr_e( 'Just add Catch Evolution Social Widget in Header Right Sidebar', 'catchevolution' ); ?>"><?php _e( 'Just add Catch Evolution Social Widget in Header Right Sidebar', 'catchevolution' );?></a>
+                                        <a class="button" href="<?php echo admin_url('widgets.php'); ?>" title="<?php esc_attr_e( 'Just add Catch Evolution Social Widget in Header Right Sidebar', 'catch-evolution' ); ?>"><?php _e( 'Just add Catch Evolution Social Widget in Header Right Sidebar', 'catch-evolution' );?></a>
                                     </td>
                                 </tr>     
                                 <tr>                            
-                                    <th scope="row"><?php _e( 'Enable Social Icons in Footer?', 'catchevolution' ); ?></th>
+                                    <th scope="row"><?php _e( 'Enable Social Icons in Footer?', 'catch-evolution' ); ?></th>
                                     <input type='hidden' value='0' name='catchevolution_options[disable_footer_social]'>
-                                    <td><input type="checkbox" id="headerlogo" name="catchevolution_options[disable_footer_social]" value="1" <?php checked( '1', $options['disable_footer_social'] ); ?> /> <?php _e('Check to enable', 'catchevolution'); ?></td>
+                                    <td><input type="checkbox" id="headerlogo" name="catchevolution_options[disable_footer_social]" value="1" <?php checked( '1', $options['disable_footer_social'] ); ?> /> <?php _e('Check to enable', 'catch-evolution'); ?></td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'Facebook', 'catchevolution' ); ?></h4></th>
+                                    <th scope="row"><h4><?php _e( 'Facebook', 'catch-evolution' ); ?></h4></th>
                                     <td><input type="text" size="45" name="catchevolution_options[social_facebook]" value="<?php echo esc_url( $options[ 'social_facebook' ] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr> 
-                                    <th scope="row"><h4><?php _e( 'Twitter', 'catchevolution' ); ?> </h4></th>
+                                    <th scope="row"><h4><?php _e( 'Twitter', 'catch-evolution' ); ?> </h4></th>
                                     <td><input type="text" size="45" name="catchevolution_options[social_twitter]" value="<?php echo esc_url( $options[ 'social_twitter'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr> 
-                                    <th scope="row"><h4><?php _e( 'Google+', 'catchevolution' ); ?> </h4></th>
+                                    <th scope="row"><h4><?php _e( 'Google+', 'catch-evolution' ); ?> </h4></th>
                                     <td><input type="text" size="45" name="catchevolution_options[social_googleplus]" value="<?php echo esc_url( $options[ 'social_googleplus'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr> 
-                                    <th scope="row"><h4><?php _e( 'Pinterest', 'catchevolution' ); ?> </h4></th>
+                                    <th scope="row"><h4><?php _e( 'Pinterest', 'catch-evolution' ); ?> </h4></th>
                                     <td><input type="text" size="45" name="catchevolution_options[social_pinterest]" value="<?php echo esc_url( $options[ 'social_pinterest'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'Youtube', 'catchevolution' ); ?></h4></th>
+                                    <th scope="row"><h4><?php _e( 'Youtube', 'catch-evolution' ); ?></h4></th>
                                     <td><input type="text" size="45" name="catchevolution_options[social_youtube]" value="<?php echo esc_url( $options[ 'social_youtube' ] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'Vimeo', 'catchevolution' ); ?></h4></th>
+                                    <th scope="row"><h4><?php _e( 'Vimeo', 'catch-evolution' ); ?></h4></th>
                                     <td><input type="text" size="45" name="catchevolution_options[social_vimeo]" value="<?php echo esc_url( $options[ 'social_vimeo' ] ); ?>" />
                                     </td>
                                 </tr>
                                 
                                 <tr> 
-                                    <th scope="row"><h4><?php _e( 'Linkedin', 'catchevolution' ); ?> </h4></th>
+                                    <th scope="row"><h4><?php _e( 'Linkedin', 'catch-evolution' ); ?> </h4></th>
                                     <td><input type="text" size="45" name="catchevolution_options[social_linkedin]" value="<?php echo esc_url( $options[ 'social_linkedin'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr> 
-                                    <th scope="row"><h4><?php _e( 'AIM', 'catchevolution' ); ?> </h4></th>
+                                    <th scope="row"><h4><?php _e( 'AIM', 'catch-evolution' ); ?> </h4></th>
                                     <td><input type="text" size="45" name="catchevolution_options[social_aim]" value="<?php echo esc_url( $options[ 'social_aim'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'MySpace', 'catchevolution' ); ?></h4></th>
+                                    <th scope="row"><h4><?php _e( 'MySpace', 'catch-evolution' ); ?></h4></th>
                                     <td><input type="text" size="45" name="catchevolution_options[social_myspace]" value="<?php echo esc_url( $options[ 'social_myspace' ] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'Flickr', 'catchevolution' ); ?></h4></th>
+                                    <th scope="row"><h4><?php _e( 'Flickr', 'catch-evolution' ); ?></h4></th>
                                     <td><input type="text" size="45" name="catchevolution_options[social_flickr]" value="<?php echo esc_url( $options[ 'social_flickr' ] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'Tumblr', 'catchevolution' ); ?></h4></th>
+                                    <th scope="row"><h4><?php _e( 'Tumblr', 'catch-evolution' ); ?></h4></th>
                                     <td><input type="text" size="45" name="catchevolution_options[social_tumblr]" value="<?php echo esc_url( $options[ 'social_tumblr' ] ); ?>" />
                                     </td>
                                 </tr> 
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'deviantART', 'catchevolution' ); ?></h4></th>
+                                    <th scope="row"><h4><?php _e( 'deviantART', 'catch-evolution' ); ?></h4></th>
                                     <td><input type="text" size="45" name="catchevolution_options[social_deviantart]" value="<?php echo esc_url( $options[ 'social_deviantart' ] ); ?>" />
                                     </td>
                                 </tr> 
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'Dribbble', 'catchevolution' ); ?></h4></th>
+                                    <th scope="row"><h4><?php _e( 'Dribbble', 'catch-evolution' ); ?></h4></th>
                                     <td><input type="text" size="45" name="catchevolution_options[social_dribbble]" value="<?php echo esc_url( $options[ 'social_dribbble' ] ); ?>" />
                                     </td>
                                 </tr> 
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'WordPress', 'catchevolution' ); ?></h4></th>
+                                    <th scope="row"><h4><?php _e( 'WordPress', 'catch-evolution' ); ?></h4></th>
                                     <td><input type="text" size="45" name="catchevolution_options[social_wordpress]" value="<?php echo esc_url( $options[ 'social_wordpress' ] ); ?>" />
                                     </td>
                                 </tr>                           
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'RSS', 'catchevolution' ); ?> </h4></th>
+                                    <th scope="row"><h4><?php _e( 'RSS', 'catch-evolution' ); ?> </h4></th>
                                     <td><input type="text" size="45" name="catchevolution_options[social_rss]" value="<?php echo esc_url( $options[ 'social_rss' ] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'Slideshare', 'catchevolution' ); ?></h4></th>
+                                    <th scope="row"><h4><?php _e( 'Slideshare', 'catch-evolution' ); ?></h4></th>
                                     <td><input type="text" size="45" name="catchevolution_options[social_slideshare]" value="<?php echo esc_url( $options[ 'social_slideshare' ] ); ?>" />
                                     </td>
                                 </tr> 
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'Instagram', 'catchevolution' ); ?></h4></th>
+                                    <th scope="row"><h4><?php _e( 'Instagram', 'catch-evolution' ); ?></h4></th>
                                     <td><input type="text" size="45" name="catchevolution_options[social_instagram]" value="<?php echo esc_url( $options[ 'social_instagram' ] ); ?>" />
                                     </td>
                                 </tr>                           
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'Skype', 'catchevolution' ); ?> </h4></th>
+                                    <th scope="row"><h4><?php _e( 'Skype', 'catch-evolution' ); ?> </h4></th>
                                     <td><input type="text" size="45" name="catchevolution_options[social_skype]" value="<?php echo esc_attr( $options[ 'social_skype' ] ); ?>" />
                                     </td>
                                 </tr>
                                  <tr>
-                                    <th scope="row"><h4><?php _e( 'Soundcloud', 'catchevolution' ); ?></h4></th>
+                                    <th scope="row"><h4><?php _e( 'Soundcloud', 'catch-evolution' ); ?></h4></th>
                                     <td><input type="text" size="45" name="catchevolution_options[social_soundcloud]" value="<?php echo esc_url( $options[ 'social_soundcloud' ] ); ?>" />
                                     </td>
                                 </tr>                               
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'Email', 'catchevolution' ); ?></h4></th>
+                                    <th scope="row"><h4><?php _e( 'Email', 'catch-evolution' ); ?></h4></th>
                                     <td><input type="text" size="45" name="catchevolution_options[social_email]" value="<?php echo sanitize_email( $options[ 'social_email' ] ); ?>" />
                                     </td>
                                 </tr> 
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'Contact', 'catchevolution' ); ?></h4></th>
+                                    <th scope="row"><h4><?php _e( 'Contact', 'catch-evolution' ); ?></h4></th>
                                     <td><input type="text" size="45" name="catchevolution_options[social_contact]" value="<?php echo esc_url( $options[ 'social_contact' ] ); ?>" />
                                     </td>
                                 </tr> 
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'Xing', 'catchevolution' ); ?></h4></th>
+                                    <th scope="row"><h4><?php _e( 'Xing', 'catch-evolution' ); ?></h4></th>
                                     <td><input type="text" size="45" name="catchevolution_options[social_xing]" value="<?php echo esc_url( $options[ 'social_xing' ] ); ?>" />
                                     </td>
                                 </tr> 
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'Meetup', 'catchevolution' ); ?></h4></th>
+                                    <th scope="row"><h4><?php _e( 'Meetup', 'catch-evolution' ); ?></h4></th>
                                     <td><input type="text" size="45" name="catchevolution_options[social_meetup]" value="<?php echo esc_url( $options[ 'social_meetup' ] ); ?>" />
                                     </td>
                                 </tr>                                                                
                             </tbody>
                         </table>                           
-                        <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchevolution' ); ?>" /></p>
+                        <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-evolution' ); ?>" /></p>
                     </div><!-- .option-container -->
                 </div><!-- #sociallinks -->
                 
                 <?php if ( current_user_can( 'unfiltered_html' ) ) : ?>
                     <div id="webmaster">
                         <div class="option-container">
-                            <h3 class="option-toggle"><a href="#"><?php _e( 'Header and Footer Codes', 'catchevolution' ); ?></a></h3>
+                            <h3 class="option-toggle"><a href="#"><?php _e( 'Header and Footer Codes', 'catch-evolution' ); ?></a></h3>
                             <div class="option-content inside">
                                 <table class="form-table">  
                                     <tbody>       
                                         <tr>
-                                            <th scope="row"><?php _e( 'Code to display on Header', 'catchevolution' ); ?></th>
+                                            <th scope="row"><?php _e( 'Code to display on Header', 'catch-evolution' ); ?></th>
                                             <td>
                                             <textarea name="catchevolution_options[analytic_header]" id="analytics" rows="7" cols="80" ><?php echo esc_html( $options[ 'analytic_header' ] ); ?></textarea>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td></td><td><?php _e('Note: Here you can put scripts from Google, Facebook etc. which will load on Header', 'catchevolution' ); ?></td>
+                                            <td></td><td><?php _e('Note: Here you can put scripts from Google, Facebook etc. which will load on Header', 'catch-evolution' ); ?></td>
                                         </tr>
                                         <tr>
-                                            <th scope="row"><?php _e('Code to display on Footer', 'catchevolution' ); ?></th>
+                                            <th scope="row"><?php _e('Code to display on Footer', 'catch-evolution' ); ?></th>
                                             <td>
                                              <textarea name="catchevolution_options[analytic_footer]" id="analytics" rows="7" cols="80" ><?php echo esc_html( $options[ 'analytic_footer' ] ); ?></textarea>
                                  
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td></td><td><?php _e( 'Note: Here you can put scripts from Google, Facebook, Add This etc. which will load on footer', 'catchevolution' ); ?></td>
+                                            <td></td><td><?php _e( 'Note: Here you can put scripts from Google, Facebook, Add This etc. which will load on footer', 'catch-evolution' ); ?></td>
                                         </tr>
                                     </tbody>
                                 </table>
                                 
-                                <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchevolution' ); ?>" /></p> 
+                                <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-evolution' ); ?>" /></p> 
                             </div><!-- .option-content -->
                         </div><!-- .option-container -->  
                     </div><!-- #webmaster -->
@@ -1141,7 +1141,7 @@ add_action( 'save_post', 'catchevolution_post_invalidate_caches' );
  * @return string
  */
 function catchevolution_the_year() {
-    return date( __( 'Y', 'catchevolution' ) );
+    return date( __( 'Y', 'catch-evolution' ) );
 }
 
 
@@ -1162,7 +1162,7 @@ function catchevolution_site_link() {
  * @return string
  */
 function catchevolution_theme_name() {
-    return '<span class="theme-name">' . __( 'Theme: Catch Evolution by ', 'catchevolution' ) . '</span>';    
+    return '<span class="theme-name">' . __( 'Theme: Catch Evolution by ', 'catch-evolution' ) . '</span>';    
 }
 
 
@@ -1173,7 +1173,7 @@ function catchevolution_theme_name() {
  */
 function catchevolution_theme_author() {
     
-    return '<span class="theme-author"><a href="' . esc_url( 'http://catchthemes.com/' ) . '" target="_blank" title="' . esc_attr__( 'Catch Themes', 'catchevolution' ) . '">' . __( 'Catch Themes', 'catchevolution' ) . '</a></span>';
+    return '<span class="theme-author"><a href="' . esc_url( 'http://catchthemes.com/' ) . '" target="_blank" title="' . esc_attr__( 'Catch Themes', 'catch-evolution' ) . '">' . __( 'Catch Themes', 'catch-evolution' ) . '</a></span>';
 
 }
 
@@ -1184,7 +1184,7 @@ function catchevolution_theme_author() {
  * @return string
  */
 function catchevolution_assets(){
-    $catchevolution_content = '<div class="copyright">'. esc_attr__( 'Copyright', 'catchevolution' ) . ' &copy; '. catchevolution_the_year() . ' ' . catchevolution_site_link() . ' ' . esc_attr__( 'All Rights Reserved', 'catchevolution' ) . '.</div><div class="powered">'. catchevolution_theme_name() . catchevolution_theme_author() . '</div>';
+    $catchevolution_content = '<div class="copyright">'. esc_attr__( 'Copyright', 'catch-evolution' ) . ' &copy; '. catchevolution_the_year() . ' ' . catchevolution_site_link() . ' ' . esc_attr__( 'All Rights Reserved', 'catch-evolution' ) . '.</div><div class="powered">'. catchevolution_theme_name() . catchevolution_theme_author() . '</div>';
     return $catchevolution_content;
 }
 
@@ -1199,7 +1199,7 @@ function catchevolution_customize_scripts() {
 
     $catchevolution_misc_links = array(
                             'upgrade_link'              => esc_url( admin_url( 'themes.php?page=theme_options' ) ),
-                            'upgrade_text'              => __( 'More Theme Options &raquo;', 'catchevolution' ),
+                            'upgrade_text'              => __( 'More Theme Options &raquo;', 'catch-evolution' ),
                             );
 
     //Add More Theme Options Button

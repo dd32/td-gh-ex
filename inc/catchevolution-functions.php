@@ -74,57 +74,6 @@ function catchevolution_register_js() {
 add_action( 'admin_enqueue_scripts', 'catchevolution_register_js' );
 
 
-if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
-	/**
-	* Filters wp_title to print a neat <title> tag based on what is being viewed.
-	*
-	* @param string $title Default title text for current view.
-	* @param string $sep Optional separator.
-	* @return string The filtered title.
-	*/
-	function catchevolution_wp_title( $title, $sep ) {
-		if ( is_feed() ) {
-			return $title;
-		}
-		
-		global $page, $paged;
-		
-		// Add the blog name
-		$title .= get_bloginfo( 'name', 'display' );
-		
-		// Add the blog description for the home/front page.
-		$site_description = get_bloginfo( 'description', 'display' );
-		
-		if ( $site_description && ( is_home() || is_front_page() ) ) {
-			$title .= " $sep $site_description";
-		}
-		
-		// Add a page number if necessary:
-		if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-			$title .= " $sep " . sprintf( __( 'Page %s', '_s' ), max( $paged, $page ) );
-		}
-		
-		return $title;
-		
-	}
-		
-	add_filter( 'wp_title', 'catchevolution_wp_title', 10, 2 );
-	
-	/**
-	* Title shim for sites older than WordPress 4.1.
-	*
-	* @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
-	* @todo Remove this function when WordPress 4.3 is released.
-	*/
-	function catchevolution_render_title() {
-	?>
-		<title><?php wp_title( '&#124;', true, 'right' ); ?></title>
-	<?php
-	}
-	add_action( 'wp_head', 'catchevolution_render_title' );
-endif;
-
-
 /**
  * Responsive Layout
  *
@@ -264,7 +213,7 @@ function catchevolution_continue_reading_link() {
     $options = $catchevolution_options_settings;
 	$more_tag_text = $options[ 'more_tag_text' ];
 
-	return ' <a class="more-link" href="'. esc_url( get_permalink() ) . '">' . sprintf( __( '%s', 'catchevolution' ), esc_attr( $more_tag_text ) ) . '</a>';
+	return ' <a class="more-link" href="'. esc_url( get_permalink() ) . '">' . sprintf( __( '%s', 'catch-evolution' ), esc_attr( $more_tag_text ) ) . '</a>';
 }
 
 
@@ -319,7 +268,7 @@ function catchevolution_content_nav( $nav_id ) {
 	
 	if ( $wp_query->max_num_pages > 1 ) { ?>
         <nav role="navigation" id="<?php echo $nav_id; ?>">
-        	<h3 class="assistive-text"><?php _e( 'Post navigation', 'catchevolution' ); ?></h3>
+        	<h3 class="assistive-text"><?php _e( 'Post navigation', 'catch-evolution' ); ?></h3>
 			<?php if ( function_exists('wp_pagenavi' ) )  { 
                 wp_pagenavi();
             }
@@ -327,8 +276,8 @@ function catchevolution_content_nav( $nav_id ) {
                 wp_page_numbers();
             }
             else { ?>	
-                <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'catchevolution' ) ); ?></div>
-                <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'catchevolution' ) ); ?></div>
+                <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'catch-evolution' ) ); ?></div>
+                <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'catch-evolution' ) ); ?></div>
             <?php 
             } ?>
         </nav><!-- #nav -->	
@@ -406,7 +355,7 @@ function catchevolution_comment( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'catchevolution' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'catchevolution' ), '<span class="edit-link">', '</span>' ); ?></p>
+		<p><?php _e( 'Pingback:', 'catch-evolution' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'catch-evolution' ), '<span class="edit-link">', '</span>' ); ?></p>
 	<?php
 			break;
 		default :
@@ -423,22 +372,22 @@ function catchevolution_comment( $comment, $args, $depth ) {
 						echo get_avatar( $comment, $avatar_size );
 
 						/* translators: 1: comment author, 2: date and time */
-						printf( __( '%1$s on %2$s <span class="says">said:</span>', 'catchevolution' ),
+						printf( __( '%1$s on %2$s <span class="says">said:</span>', 'catch-evolution' ),
 							sprintf( '<span class="fn">%s</span>', get_comment_author_link() ),
 							sprintf( '<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
 								esc_url( get_comment_link( $comment->comment_ID ) ),
 								get_comment_time( 'c' ),
 								/* translators: 1: date, 2: time */
-								sprintf( __( '%1$s at %2$s', 'catchevolution' ), get_comment_date(), get_comment_time() )
+								sprintf( __( '%1$s at %2$s', 'catch-evolution' ), get_comment_date(), get_comment_time() )
 							)
 						);
 					?>
 
-					<?php edit_comment_link( __( 'Edit', 'catchevolution' ), '<span class="edit-link">', '</span>' ); ?>
+					<?php edit_comment_link( __( 'Edit', 'catch-evolution' ), '<span class="edit-link">', '</span>' ); ?>
 				</div><!-- .comment-author .vcard -->
 
 				<?php if ( $comment->comment_approved == '0' ) : ?>
-					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'catchevolution' ); ?></em>
+					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'catch-evolution' ); ?></em>
 					<br />
 				<?php endif; ?>
 
@@ -447,7 +396,7 @@ function catchevolution_comment( $comment, $args, $depth ) {
 			<div class="comment-content"><?php comment_text(); ?></div>
 
 			<div class="reply">
-				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply <span>&darr;</span>', 'catchevolution' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply <span>&darr;</span>', 'catch-evolution' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 			</div><!-- .reply -->
 		</article><!-- #comment-## -->
 
@@ -477,13 +426,13 @@ function catchevolution_posted_on() {
 	else {
 		$catchevolution_author_url = esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) );
 	}
-	printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date updated" datetime="%3$s" pubdate>%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'catchevolution' ),
+	printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date updated" datetime="%3$s" pubdate>%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'catch-evolution' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() ),
 		$catchevolution_author_url,
-		esc_attr( sprintf( __( 'View all posts by %s', 'catchevolution' ), get_the_author() ) ),
+		esc_attr( sprintf( __( 'View all posts by %s', 'catch-evolution' ), get_the_author() ) ),
 		get_the_author()
 	);	
 }
@@ -506,10 +455,10 @@ function catchevolution_body_classes( $classes ) {
 		$classes[] = 'woocommerce-nosidebar';
 	}
 	
-	if ( has_nav_menu( 'top', 'catchevolution' ) && !empty ( $header_logo ) ) { 
+	if ( has_nav_menu( 'top', 'catch-evolution' ) && !empty ( $header_logo ) ) { 
 		$classes[] = 'has-header-top menu-logo';
 	}
-	elseif ( has_nav_menu( 'top', 'catchevolution' ) && empty ( $header_logo ) ) {
+	elseif ( has_nav_menu( 'top', 'catch-evolution' ) && empty ( $header_logo ) ) {
 		$classes[] = 'has-header-top';
 	}
 	
@@ -562,7 +511,7 @@ add_filter( 'body_class', 'catchevolution_body_classes' );
  */
 function catchevolution_post_id_column( $post_columns ) {
 	$beginning = array_slice( $post_columns, 0 ,1 );
-	$beginning[ 'postid' ] = __( 'ID', 'catchevolution'  );
+	$beginning[ 'postid' ] = __( 'ID', 'catch-evolution'  );
 	$ending = array_slice( $post_columns, 1 );
 	$post_columns = array_merge( $beginning, $ending );
 	return $post_columns;
@@ -657,7 +606,7 @@ function catchevolution_sliders() {
 				
 				$catchevolution_sliders .= '
 				<div class="'.$classes.'">
-					<a href="'.get_permalink().'" title="'.sprintf( esc_attr__( 'Permalink to %s', 'catchevolution' ), the_title_attribute( 'echo=0' ) ).'" rel="bookmark">
+					<a href="'.get_permalink().'" title="'.sprintf( esc_attr__( 'Permalink to %s', 'catch-evolution' ), the_title_attribute( 'echo=0' ) ).'" rel="bookmark">
 						'.get_the_post_thumbnail( $post->ID, 'featured-slider', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class'	=> 'pngfix' ) ).'
 					</a>
 					<div class="featured-text">
@@ -831,9 +780,9 @@ function catchevolution_comment_form_fields( $fields ) {
 	$req = get_option( 'require_name_email' );
 	$aria_req = ( $req ? " aria-required='true'" : '' );
 	$commenter = wp_get_current_commenter();
-    $fields['author'] = '<p class="comment-form-author"><label for="author">' . esc_attr__( 'Name', 'catchevolution' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
+    $fields['author'] = '<p class="comment-form-author"><label for="author">' . esc_attr__( 'Name', 'catch-evolution' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
         '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>';
-    $fields['email'] = '<p class="comment-form-email"><label for="email">' . esc_attr__( 'Email', 'catchbox' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
+    $fields['email'] = '<p class="comment-form-email"><label for="email">' . esc_attr__( 'Email', 'catch-evolution' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
         '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>'; 
     return $fields;
 	
@@ -947,117 +896,117 @@ function catchevolution_social_networks() {
 			//facebook
 			if ( !empty( $options[ 'social_facebook' ] ) ) {
 				$catchevolution_social_networks .=
-					'<li class="facebook"><a href="'.esc_url( $options[ 'social_facebook' ] ).'" title="'. esc_attr__( 'Facebook', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Facebook', 'catchevolution' ).'</a></li>';
+					'<li class="facebook"><a href="'.esc_url( $options[ 'social_facebook' ] ).'" title="'. esc_attr__( 'Facebook', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Facebook', 'catch-evolution' ).'</a></li>';
 			}
 			//Twitter
 			if ( !empty( $options[ 'social_twitter' ] ) ) {
 				$catchevolution_social_networks .=
-					'<li class="twitter"><a href="'.esc_url( $options[ 'social_twitter' ] ).'" title="'. esc_attr__( 'Twitter', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Twitter', 'catchevolution' ).'</a></li>';
+					'<li class="twitter"><a href="'.esc_url( $options[ 'social_twitter' ] ).'" title="'. esc_attr__( 'Twitter', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Twitter', 'catch-evolution' ).'</a></li>';
 			}
 			//Google+
 			if ( !empty( $options[ 'social_googleplus' ] ) ) {
 				$catchevolution_social_networks .=
-					'<li class="google-plus"><a href="'.esc_url( $options[ 'social_googleplus' ] ).'" title="'. esc_attr__( 'Google+', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Google+', 'catchevolution' ).'</a></li>';
+					'<li class="google-plus"><a href="'.esc_url( $options[ 'social_googleplus' ] ).'" title="'. esc_attr__( 'Google+', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Google+', 'catch-evolution' ).'</a></li>';
 			}
 			//Linkedin
 			if ( !empty( $options[ 'social_linkedin' ] ) ) {
 				$catchevolution_social_networks .=
-					'<li class="linkedin"><a href="'.esc_url( $options[ 'social_linkedin' ] ).'" title="'. esc_attr__( 'Linkedin', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Linkedin', 'catchevolution' ).'</a></li>';
+					'<li class="linkedin"><a href="'.esc_url( $options[ 'social_linkedin' ] ).'" title="'. esc_attr__( 'Linkedin', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Linkedin', 'catch-evolution' ).'</a></li>';
 			}
 			//Pinterest
 			if ( !empty( $options[ 'social_pinterest' ] ) ) {
 				$catchevolution_social_networks .=
-					'<li class="pinterest"><a href="'.esc_url( $options[ 'social_pinterest' ] ).'" title="'. esc_attr__( 'Pinterest', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Pinterest', 'catchevolution' ).'</a></li>';
+					'<li class="pinterest"><a href="'.esc_url( $options[ 'social_pinterest' ] ).'" title="'. esc_attr__( 'Pinterest', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Pinterest', 'catch-evolution' ).'</a></li>';
 			}				
 			//Youtube
 			if ( !empty( $options[ 'social_youtube' ] ) ) {
 				$catchevolution_social_networks .=
-					'<li class="you-tube"><a href="'.esc_url( $options[ 'social_youtube' ] ).'" title="'. esc_attr__( 'YouTube', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'YouTube', 'catchevolution' ).'</a></li>';
+					'<li class="you-tube"><a href="'.esc_url( $options[ 'social_youtube' ] ).'" title="'. esc_attr__( 'YouTube', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'YouTube', 'catch-evolution' ).'</a></li>';
 			}
 			//Vimeo
 			if ( !empty( $options[ 'social_vimeo' ] ) ) {
 				$catchevolution_social_networks .=
-					'<li class="viemo"><a href="'.esc_url( $options[ 'social_vimeo' ] ).'" title="'. esc_attr__( 'Vimeo', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Vimeo', 'catchevolution' ).'</a></li>';
+					'<li class="viemo"><a href="'.esc_url( $options[ 'social_vimeo' ] ).'" title="'. esc_attr__( 'Vimeo', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Vimeo', 'catch-evolution' ).'</a></li>';
 			}				
 			//Slideshare
 			if ( !empty( $options[ 'social_aim' ] ) ) {
 				$catchevolution_social_networks .=
-					'<li class="aim"><a href="'.esc_url( $options[ 'social_aim' ] ).'" title="'. esc_attr__( 'AIM', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'AIM', 'catchevolution' ).'</a></li>';
+					'<li class="aim"><a href="'.esc_url( $options[ 'social_aim' ] ).'" title="'. esc_attr__( 'AIM', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'AIM', 'catch-evolution' ).'</a></li>';
 			}				
 			//MySpace
 			if ( !empty( $options[ 'social_myspace' ] ) ) {
 				$catchevolution_social_networks .=
-					'<li class="myspace"><a href="'.esc_url( $options[ 'social_myspace' ] ).'" title="'. esc_attr__( 'MySpace', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'MySpace', 'catchevolution' ).'</a></li>';
+					'<li class="myspace"><a href="'.esc_url( $options[ 'social_myspace' ] ).'" title="'. esc_attr__( 'MySpace', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'MySpace', 'catch-evolution' ).'</a></li>';
 			}
 			//Flickr
 			if ( !empty( $options[ 'social_flickr' ] ) ) {
 				$catchevolution_social_networks .=
-					'<li class="flickr"><a href="'.esc_url( $options[ 'social_flickr' ] ).'" title="'. esc_attr__( 'Flickr', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Flickr', 'catchevolution' ).'</a></li>';
+					'<li class="flickr"><a href="'.esc_url( $options[ 'social_flickr' ] ).'" title="'. esc_attr__( 'Flickr', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Flickr', 'catch-evolution' ).'</a></li>';
 			}
 			//Tumblr
 			if ( !empty( $options[ 'social_tumblr' ] ) ) {
 				$catchevolution_social_networks .=
-					'<li class="tumblr"><a href="'.esc_url( $options[ 'social_tumblr' ] ).'" title="'. esc_attr__( 'Tumblr', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Tumblr', 'catchevolution' ).'</a></li>';
+					'<li class="tumblr"><a href="'.esc_url( $options[ 'social_tumblr' ] ).'" title="'. esc_attr__( 'Tumblr', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Tumblr', 'catch-evolution' ).'</a></li>';
 			}
 			//deviantART
 			if ( !empty( $options[ 'social_deviantart' ] ) ) {
 				$catchevolution_social_networks .=
-					'<li class="deviantart"><a href="'.esc_url( $options[ 'social_deviantart' ] ).'" title="'. esc_attr__( 'deviantART', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'deviantART', 'catchevolution' ).'</a></li>';
+					'<li class="deviantart"><a href="'.esc_url( $options[ 'social_deviantart' ] ).'" title="'. esc_attr__( 'deviantART', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'deviantART', 'catch-evolution' ).'</a></li>';
 			}
 			//Dribbble
 			if ( !empty( $options[ 'social_dribbble' ] ) ) {
 				$catchevolution_social_networks .=
-					'<li class="dribbble"><a href="'.esc_url( $options[ 'social_dribbble' ] ).'" title="'. esc_attr__( 'Dribbble', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Dribbble', 'catchevolution' ).'</a></li>';
+					'<li class="dribbble"><a href="'.esc_url( $options[ 'social_dribbble' ] ).'" title="'. esc_attr__( 'Dribbble', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Dribbble', 'catch-evolution' ).'</a></li>';
 			}
 			//WordPress
 			if ( !empty( $options[ 'social_wordpress' ] ) ) {
 				$catchevolution_social_networks .=
-					'<li class="wordpress"><a href="'.esc_url( $options[ 'social_wordpress' ] ).'" title="'. esc_attr__( 'WordPress', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'WordPress', 'catchevolution' ).'</a></li>';
+					'<li class="wordpress"><a href="'.esc_url( $options[ 'social_wordpress' ] ).'" title="'. esc_attr__( 'WordPress', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'WordPress', 'catch-evolution' ).'</a></li>';
 			}				
 			//RSS
 			if ( !empty( $options[ 'social_rss' ] ) ) {
 				$catchevolution_social_networks .=
-					'<li class="rss"><a href="'.esc_url( $options[ 'social_rss' ] ).'" title="'. esc_attr__( 'RSS', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'RSS', 'catchevolution' ).'</a></li>';
+					'<li class="rss"><a href="'.esc_url( $options[ 'social_rss' ] ).'" title="'. esc_attr__( 'RSS', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'RSS', 'catch-evolution' ).'</a></li>';
 			}	
 			//Slideshare
 			if ( !empty( $options[ 'social_slideshare' ] ) ) {
 				$catchevolution_social_networks .=
-					'<li class="slideshare"><a href="'.esc_url( $options[ 'social_slideshare' ] ).'" title="'. esc_attr__( 'Slideshare', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Slideshare', 'catchevolution' ).'</a></li>';
+					'<li class="slideshare"><a href="'.esc_url( $options[ 'social_slideshare' ] ).'" title="'. esc_attr__( 'Slideshare', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Slideshare', 'catch-evolution' ).'</a></li>';
 			}
 			//Instagram
 			if ( !empty( $options[ 'social_instagram' ] ) ) {
 				$catchevolution_social_networks .=
-					'<li class="instagram"><a href="'.esc_url( $options[ 'social_instagram' ] ).'" title="'. esc_attr__( 'Instagram', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Instagram', 'catchevolution' ).'</a></li>';
+					'<li class="instagram"><a href="'.esc_url( $options[ 'social_instagram' ] ).'" title="'. esc_attr__( 'Instagram', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Instagram', 'catch-evolution' ).'</a></li>';
 			}				
 			//Skype
 			if ( !empty( $options[ 'social_skype' ] ) ) {
 				$catchevolution_social_networks .=
-					'<li class="skype"><a href="'.esc_attr( $options[ 'social_skype' ] ).'" title="'. esc_attr__( 'Skype', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Skype', 'catchevolution' ).'</a></li>';
+					'<li class="skype"><a href="'.esc_attr( $options[ 'social_skype' ] ).'" title="'. esc_attr__( 'Skype', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Skype', 'catch-evolution' ).'</a></li>';
 			}
 			//Soundcloud
 			if ( !empty( $options[ 'social_soundcloud' ] ) ) {
 				$catchevolution_social_networks .=
-					'<li class="soundcloud"><a href="'.esc_url( $options[ 'social_soundcloud' ] ).'" title="'. esc_attr__( 'Soundcloud', 'catchevolution' ) .'" target="_blank">'. esc_attr__( 'Soundcloud', 'catchevolution' ) .'</a></li>';
+					'<li class="soundcloud"><a href="'.esc_url( $options[ 'social_soundcloud' ] ).'" title="'. esc_attr__( 'Soundcloud', 'catch-evolution' ) .'" target="_blank">'. esc_attr__( 'Soundcloud', 'catch-evolution' ) .'</a></li>';
 			}	
 			//Email
 			if ( !empty( $options[ 'social_email' ] )  && is_email( $options[ 'social_email' ] ) ) {
 				$catchevolution_social_networks .=
-					'<li class="email"><a href="mailto:'.sanitize_email( $options[ 'social_email' ] ).'" title="'. esc_attr__( 'Email', 'catchevolution' ) .'" target="_blank">'. esc_attr__( 'Email', 'catchevolution' ) .'</a></li>';
+					'<li class="email"><a href="mailto:'.sanitize_email( $options[ 'social_email' ] ).'" title="'. esc_attr__( 'Email', 'catch-evolution' ) .'" target="_blank">'. esc_attr__( 'Email', 'catch-evolution' ) .'</a></li>';
 			}	
 			//Contact
 			if ( !empty( $options[ 'social_contact' ] ) ) {
 				$catchevolution_social_networks .=
-					'<li class="contactus"><a href="'.esc_url( $options[ 'social_contact' ] ).'" title="'. esc_attr__( 'Contact', 'catchevolution' ) .'">'. esc_attr__( 'Contact', 'catchevolution' ) .'</a></li>';
+					'<li class="contactus"><a href="'.esc_url( $options[ 'social_contact' ] ).'" title="'. esc_attr__( 'Contact', 'catch-evolution' ) .'">'. esc_attr__( 'Contact', 'catch-evolution' ) .'</a></li>';
 			}	
 			//Xing
 			if ( !empty( $options[ 'social_xing' ] ) ) {
 				$catchevolution_social_networks .=
-					'<li class="xing"><a href="'.esc_url( $options[ 'social_xing' ] ).'" title="'. esc_attr__( 'Xing', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Xing', 'catchevolution' ).'</a></li>';
+					'<li class="xing"><a href="'.esc_url( $options[ 'social_xing' ] ).'" title="'. esc_attr__( 'Xing', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Xing', 'catch-evolution' ).'</a></li>';
 			}
 			//Meetup
 			if ( !empty( $options[ 'social_meetup' ] ) ) {
 				$catchevolution_social_networks .=
-					'<li class="meetup"><a href="'.esc_url( $options[ 'social_meetup' ] ).'" title="'. esc_attr__( 'Meetup', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Meetup', 'catchevolution' ).'</a></li>';
+					'<li class="meetup"><a href="'.esc_url( $options[ 'social_meetup' ] ).'" title="'. esc_attr__( 'Meetup', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Meetup', 'catch-evolution' ).'</a></li>';
 			}
 
 			$catchevolution_social_networks .='
@@ -1151,117 +1100,117 @@ function catchevolution_social_search() {
 			//facebook
 			if ( !empty( $options[ 'social_facebook' ] ) ) {
 				$catchevolution_social_search .=
-					'<li class="facebook"><a href="'.esc_url( $options[ 'social_facebook' ] ).'" title="'. esc_attr__( 'Facebook', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Facebook', 'catchevolution' ).'</a></li>';
+					'<li class="facebook"><a href="'.esc_url( $options[ 'social_facebook' ] ).'" title="'. esc_attr__( 'Facebook', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Facebook', 'catch-evolution' ).'</a></li>';
 			}
 			//Twitter
 			if ( !empty( $options[ 'social_twitter' ] ) ) {
 				$catchevolution_social_search .=
-					'<li class="twitter"><a href="'.esc_url( $options[ 'social_twitter' ] ).'" title="'. esc_attr__( 'Twitter', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Twitter', 'catchevolution' ).'</a></li>';
+					'<li class="twitter"><a href="'.esc_url( $options[ 'social_twitter' ] ).'" title="'. esc_attr__( 'Twitter', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Twitter', 'catch-evolution' ).'</a></li>';
 			}
 			//Google+
 			if ( !empty( $options[ 'social_googleplus' ] ) ) {
 				$catchevolution_social_search .=
-					'<li class="google-plus"><a href="'.esc_url( $options[ 'social_googleplus' ] ).'" title="'. esc_attr__( 'Google+', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Google+', 'catchevolution' ).'</a></li>';
+					'<li class="google-plus"><a href="'.esc_url( $options[ 'social_googleplus' ] ).'" title="'. esc_attr__( 'Google+', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Google+', 'catch-evolution' ).'</a></li>';
 			}
 			//Linkedin
 			if ( !empty( $options[ 'social_linkedin' ] ) ) {
 				$catchevolution_social_search .=
-					'<li class="linkedin"><a href="'.esc_url( $options[ 'social_linkedin' ] ).'" title="'. esc_attr__( 'Linkedin', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Linkedin', 'catchevolution' ).'</a></li>';
+					'<li class="linkedin"><a href="'.esc_url( $options[ 'social_linkedin' ] ).'" title="'. esc_attr__( 'Linkedin', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Linkedin', 'catch-evolution' ).'</a></li>';
 			}
 			//Pinterest
 			if ( !empty( $options[ 'social_pinterest' ] ) ) {
 				$catchevolution_social_search .=
-					'<li class="pinterest"><a href="'.esc_url( $options[ 'social_pinterest' ] ).'" title="'. esc_attr__( 'Pinterest', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Pinterest', 'catchevolution' ).'</a></li>';
+					'<li class="pinterest"><a href="'.esc_url( $options[ 'social_pinterest' ] ).'" title="'. esc_attr__( 'Pinterest', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Pinterest', 'catch-evolution' ).'</a></li>';
 			}				
 			//Youtube
 			if ( !empty( $options[ 'social_youtube' ] ) ) {
 				$catchevolution_social_search .=
-					'<li class="you-tube"><a href="'.esc_url( $options[ 'social_youtube' ] ).'" title="'. esc_attr__( 'YouTube', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'YouTube', 'catchevolution' ).'</a></li>';
+					'<li class="you-tube"><a href="'.esc_url( $options[ 'social_youtube' ] ).'" title="'. esc_attr__( 'YouTube', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'YouTube', 'catch-evolution' ).'</a></li>';
 			}
 			//Vimeo
 			if ( !empty( $options[ 'social_vimeo' ] ) ) {
 				$catchevolution_social_search .=
-					'<li class="viemo"><a href="'.esc_url( $options[ 'social_vimeo' ] ).'" title="'. esc_attr__( 'Vimeo', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Vimeo', 'catchevolution' ).'</a></li>';
+					'<li class="viemo"><a href="'.esc_url( $options[ 'social_vimeo' ] ).'" title="'. esc_attr__( 'Vimeo', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Vimeo', 'catch-evolution' ).'</a></li>';
 			}				
 			//Slideshare
 			if ( !empty( $options[ 'social_aim' ] ) ) {
 				$catchevolution_social_search .=
-					'<li class="aim"><a href="'.esc_url( $options[ 'social_aim' ] ).'" title="'. esc_attr__( 'AIM', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'AIM', 'catchevolution' ).'</a></li>';
+					'<li class="aim"><a href="'.esc_url( $options[ 'social_aim' ] ).'" title="'. esc_attr__( 'AIM', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'AIM', 'catch-evolution' ).'</a></li>';
 			}				
 			//MySpace
 			if ( !empty( $options[ 'social_myspace' ] ) ) {
 				$catchevolution_social_search .=
-					'<li class="myspace"><a href="'.esc_url( $options[ 'social_myspace' ] ).'" title="'. esc_attr__( 'MySpace', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'MySpace', 'catchevolution' ).'</a></li>';
+					'<li class="myspace"><a href="'.esc_url( $options[ 'social_myspace' ] ).'" title="'. esc_attr__( 'MySpace', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'MySpace', 'catch-evolution' ).'</a></li>';
 			}
 			//Flickr
 			if ( !empty( $options[ 'social_flickr' ] ) ) {
 				$catchevolution_social_search .=
-					'<li class="flickr"><a href="'.esc_url( $options[ 'social_flickr' ] ).'" title="'. esc_attr__( 'Flickr', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Flickr', 'catchevolution' ).'</a></li>';
+					'<li class="flickr"><a href="'.esc_url( $options[ 'social_flickr' ] ).'" title="'. esc_attr__( 'Flickr', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Flickr', 'catch-evolution' ).'</a></li>';
 			}
 			//Tumblr
 			if ( !empty( $options[ 'social_tumblr' ] ) ) {
 				$catchevolution_social_search .=
-					'<li class="tumblr"><a href="'.esc_url( $options[ 'social_tumblr' ] ).'" title="'. esc_attr__( 'Tumblr', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Tumblr', 'catchevolution' ).'</a></li>';
+					'<li class="tumblr"><a href="'.esc_url( $options[ 'social_tumblr' ] ).'" title="'. esc_attr__( 'Tumblr', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Tumblr', 'catch-evolution' ).'</a></li>';
 			}
 			//deviantART
 			if ( !empty( $options[ 'social_deviantart' ] ) ) {
 				$catchevolution_social_search .=
-					'<li class="deviantart"><a href="'.esc_url( $options[ 'social_deviantart' ] ).'" title="'. esc_attr__( 'deviantART', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'deviantART', 'catchevolution' ).'</a></li>';
+					'<li class="deviantart"><a href="'.esc_url( $options[ 'social_deviantart' ] ).'" title="'. esc_attr__( 'deviantART', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'deviantART', 'catch-evolution' ).'</a></li>';
 			}
 			//Dribbble
 			if ( !empty( $options[ 'social_dribbble' ] ) ) {
 				$catchevolution_social_search .=
-					'<li class="dribbble"><a href="'.esc_url( $options[ 'social_dribbble' ] ).'" title="'. esc_attr__( 'Dribbble', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Dribbble', 'catchevolution' ).'</a></li>';
+					'<li class="dribbble"><a href="'.esc_url( $options[ 'social_dribbble' ] ).'" title="'. esc_attr__( 'Dribbble', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Dribbble', 'catch-evolution' ).'</a></li>';
 			}
 			//WordPress
 			if ( !empty( $options[ 'social_wordpress' ] ) ) {
 				$catchevolution_social_search .=
-					'<li class="wordpress"><a href="'.esc_url( $options[ 'social_wordpress' ] ).'" title="'. esc_attr__( 'WordPress', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'WordPress', 'catchevolution' ).'</a></li>';
+					'<li class="wordpress"><a href="'.esc_url( $options[ 'social_wordpress' ] ).'" title="'. esc_attr__( 'WordPress', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'WordPress', 'catch-evolution' ).'</a></li>';
 			}				
 			//RSS
 			if ( !empty( $options[ 'social_rss' ] ) ) {
 				$catchevolution_social_search .=
-					'<li class="rss"><a href="'.esc_url( $options[ 'social_rss' ] ).'" title="'. esc_attr__( 'RSS', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'RSS', 'catchevolution' ).'</a></li>';
+					'<li class="rss"><a href="'.esc_url( $options[ 'social_rss' ] ).'" title="'. esc_attr__( 'RSS', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'RSS', 'catch-evolution' ).'</a></li>';
 			}	
 			//Slideshare
 			if ( !empty( $options[ 'social_slideshare' ] ) ) {
 				$catchevolution_social_search .=
-					'<li class="slideshare"><a href="'.esc_url( $options[ 'social_slideshare' ] ).'" title="'. esc_attr__( 'Slideshare', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Slideshare', 'catchevolution' ).'</a></li>';
+					'<li class="slideshare"><a href="'.esc_url( $options[ 'social_slideshare' ] ).'" title="'. esc_attr__( 'Slideshare', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Slideshare', 'catch-evolution' ).'</a></li>';
 			}
 			//Instagram
 			if ( !empty( $options[ 'social_instagram' ] ) ) {
 				$catchevolution_social_search .=
-					'<li class="instagram"><a href="'.esc_url( $options[ 'social_instagram' ] ).'" title="'. esc_attr__( 'Instagram', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Instagram', 'catchevolution' ).'</a></li>';
+					'<li class="instagram"><a href="'.esc_url( $options[ 'social_instagram' ] ).'" title="'. esc_attr__( 'Instagram', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Instagram', 'catch-evolution' ).'</a></li>';
 			}				
 			//Skype
 			if ( !empty( $options[ 'social_skype' ] ) ) {
 				$catchevolution_social_search .=
-					'<li class="skype"><a href="'.esc_attr( $options[ 'social_skype' ] ).'" title="'. esc_attr__( 'Skype', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Skype', 'catchevolution' ).'</a></li>';
+					'<li class="skype"><a href="'.esc_attr( $options[ 'social_skype' ] ).'" title="'. esc_attr__( 'Skype', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Skype', 'catch-evolution' ).'</a></li>';
 			}
 			//Soundcloud
 			if ( !empty( $options[ 'social_soundcloud' ] ) ) {
 				$catchevolution_social_search .=
-					'<li class="soundcloud"><a href="'.esc_url( $options[ 'social_soundcloud' ] ).'" title="'. esc_attr__( 'Soundcloud', 'catchevolution' ) .'" target="_blank">'. esc_attr__( 'Soundcloud', 'catchevolution' ) .'</a></li>';
+					'<li class="soundcloud"><a href="'.esc_url( $options[ 'social_soundcloud' ] ).'" title="'. esc_attr__( 'Soundcloud', 'catch-evolution' ) .'" target="_blank">'. esc_attr__( 'Soundcloud', 'catch-evolution' ) .'</a></li>';
 			}	
 			//Email
 			if ( !empty( $options[ 'social_email' ] )  && is_email( $options[ 'social_email' ] ) ) {
 				$catchevolution_social_search .=
-					'<li class="email"><a href="mailto:'.sanitize_email( $options[ 'social_email' ] ).'" title="'. esc_attr__( 'Email', 'catchevolution' ) .'" target="_blank">'. esc_attr__( 'Email', 'catchevolution' ) .'</a></li>';
+					'<li class="email"><a href="mailto:'.sanitize_email( $options[ 'social_email' ] ).'" title="'. esc_attr__( 'Email', 'catch-evolution' ) .'" target="_blank">'. esc_attr__( 'Email', 'catch-evolution' ) .'</a></li>';
 			}
 			//Contact
 			if ( !empty( $options[ 'social_contact' ] ) ) {
 				$catchevolution_social_search .=
-					'<li class="contactus"><a href="'.esc_url( $options[ 'social_contact' ] ).'" title="'. esc_attr__( 'Contact', 'catchevolution' ) .'">'. esc_attr__( 'Contact', 'catchevolution' ) .'</a></li>';
+					'<li class="contactus"><a href="'.esc_url( $options[ 'social_contact' ] ).'" title="'. esc_attr__( 'Contact', 'catch-evolution' ) .'">'. esc_attr__( 'Contact', 'catch-evolution' ) .'</a></li>';
 			}
 			//Xing
 			if ( !empty( $options[ 'social_xing' ] ) ) {
 				$catchevolution_social_search .=
-					'<li class="xing"><a href="'.esc_url( $options[ 'social_xing' ] ).'" title="'. esc_attr__( 'Xing', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Xing', 'catchevolution' ).'</a></li>';
+					'<li class="xing"><a href="'.esc_url( $options[ 'social_xing' ] ).'" title="'. esc_attr__( 'Xing', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Xing', 'catch-evolution' ).'</a></li>';
 			}	
 			//Meetup
 			if ( !empty( $options[ 'social_meetup' ] ) ) {
 				$catchevolution_social_search .=
-					'<li class="meetup"><a href="'.esc_url( $options[ 'social_meetup' ] ).'" title="'. esc_attr__( 'Meetup', 'catchevolution' ) .'" target="_blank">'.esc_attr__( 'Meetup', 'catchevolution' ).'</a></li>';
+					'<li class="meetup"><a href="'.esc_url( $options[ 'social_meetup' ] ).'" title="'. esc_attr__( 'Meetup', 'catch-evolution' ) .'" target="_blank">'.esc_attr__( 'Meetup', 'catch-evolution' ).'</a></li>';
 			}	
 			//Search Icon
 			$catchevolution_social_search .= '<li class="social-search">' . get_search_form( false ) . '</li>';
@@ -1387,10 +1336,10 @@ if ( ! function_exists( 'catchevolution_footer_menu' ) ) :
  */
 function catchevolution_footer_menu() { 
 
-	if ( has_nav_menu( 'footer', 'catchevolution' ) ) {
+	if ( has_nav_menu( 'footer', 'catch-evolution' ) ) {
 		?>
 		<nav id="access-footer" class="mobile-disable" role="navigation">
-			<h3 class="assistive-text"><?php _e( 'Footer menu', 'catchevolution' ); ?></h3>
+			<h3 class="assistive-text"><?php _e( 'Footer menu', 'catch-evolution' ); ?></h3>
 			<?php wp_nav_menu( array( 'theme_location'  => 'footer', 'container_class' => 'menu-footer-container wrapper', 'depth' => 1 ) );  ?>
 		</nav>
 	<?php } 

@@ -123,9 +123,9 @@ function catchevolution_setup() {
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
 	 * If you're building a theme based on Catch Evolution, use a find and replace
-	 * to change 'catchevolution' to the name of your theme in all the template files
+	 * to change 'catch-evolution' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'catchevolution', get_template_directory() . '/languages' );	
+	load_theme_textdomain( 'catch-evolution', get_template_directory() . '/languages' );	
 
 	/**
      * Add callback for custom TinyMCE editor stylesheets. (editor-style.css)
@@ -177,10 +177,10 @@ function catchevolution_setup() {
      * @see http://codex.wordpress.org/Function_Reference/register_nav_menus
      */		
 	register_nav_menus(array(
-		'top' 		=> __( 'Fixed Header Top Menu', 'catchevolution' ),
-		'primary' 	=> __( 'Primary Menu', 'catchevolution' ),
-	   	'secondary'	=> __( 'Secondary Menu', 'catchevolution' ),
-		'footer'	=> __( 'Footer Menu', 'catchevolution' )
+		'top' 		=> __( 'Fixed Header Top Menu', 'catch-evolution' ),
+		'primary' 	=> __( 'Primary Menu', 'catch-evolution' ),
+	   	'secondary'	=> __( 'Secondary Menu', 'catch-evolution' ),
+		'footer'	=> __( 'Footer Menu', 'catch-evolution' )
 	) );
 
 	// Add support for custom backgrounds	

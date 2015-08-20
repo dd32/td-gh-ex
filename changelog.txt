@@ -1,5 +1,12 @@
 == Changelog ==
 
+2.5
+* Compatible with WordPress 4.3
+* Removed support for WordPress version less than 4.1
+* Updated: Brazilian Portuguese translation pt_BR.po and pt_BR.mo
+* Updated codes to comply with deprecating PHP4 style constructors in WordPress 4.3
+* Updated text-domain
+
 2.4.1 (2.4 Merged)
 * Added Polish translation pl_PL.po and pl_PL.mo
  

@@ -11,13 +11,13 @@
 function catchevolution_add_custom_box() {
 	add_meta_box(
 		'siderbar-layout',							//Unique ID
-       __( 'Catch Evolution Options', 'catchevolution' ),	//Title
+       __( 'Catch Evolution Options', 'catch-evolution' ),	//Title
         'catchevolution_sidebar_layout',					//Callback function
         'page'										//show metabox in pages
     ); 
 	add_meta_box(
 		'siderbar-layout',							//Unique ID
-       __( 'Catch Evolution Options', 'catchevolution' ),	//Title
+       __( 'Catch Evolution Options', 'catch-evolution' ),	//Title
         'catchevolution_sidebar_layout',					//Callback function
         'post'										//show metabox in pages
     ); 
@@ -31,31 +31,31 @@ $sidebar_layout = array(
 	'default-sidebar' => array(
 		'id'		=> 'catchevolution-sidebarlayout',
 		'value' 	=> 'default',
-		'label' 	=> sprintf( __( 'Default Layout Set in <a href="%s">Theme Settings</a>', 'catchevolution' ), esc_url( admin_url( 'themes.php?page=theme_options' ) ) ),
+		'label' 	=> sprintf( __( 'Default Layout Set in <a href="%s">Theme Settings</a>', 'catch-evolution' ), esc_url( admin_url( 'themes.php?page=theme_options' ) ) ),
 		'thumbnail' => ' '
 	),
 	'right-sidebar' => array(
 		'id' => 'catchevolution-sidebarlayout',
 		'value' => 'right-sidebar',
-		'label' => __( 'Right sidebar', 'catchevolution' ),
+		'label' => __( 'Right sidebar', 'catch-evolution' ),
 		'thumbnail' => get_template_directory_uri() . '/images/right-sidebar.png'
 	),
 	'left-sidebar' => array(
 		'id'		=> 'catchevolution-sidebarlayout',
 		'value' 	=> 'left-sidebar',
-		'label' 	=> __( 'Left sidebar', 'catchevolution' ),
+		'label' 	=> __( 'Left sidebar', 'catch-evolution' ),
 		'thumbnail' => get_template_directory_uri() . '/images/left-sidebar.png'
 	),	
 	'no-sidebar' => array(
 		'id'		=> 'catchevolution-sidebarlayout',
 		'value' 	=> 'no-sidebar',
-		'label' 	=> __( 'No sidebar', 'catchevolution' ),
+		'label' 	=> __( 'No sidebar', 'catch-evolution' ),
 		'thumbnail' => get_template_directory_uri() . '/images/no-sidebar.png'
 	),	
 	'three-columns'			=> array(
 		'id'				=> 'catchevolution-sidebarlayout',
 		'value'				=> 'three-columns',
-		'label'				=> __( 'Three Columns', 'catchevolution' ),
+		'label'				=> __( 'Three Columns', 'catch-evolution' ),
 		'thumbnail'			=> get_template_directory_uri() . '/images/three-columns.png'
 	)
 );
@@ -71,7 +71,7 @@ function catchevolution_sidebar_layout() {
 
     // Begin the field table and loop  ?>
     <div class="catchevolution-meta" style="border-bottom: 2px solid #dfdfdf; margin-bottom: 10px; padding-bottom: 10px;">
-    	<h4 class="title"><?php _e('Sidebar Layout Options', 'catchevolution'); ?></h4>    
+    	<h4 class="title"><?php _e('Sidebar Layout Options', 'catch-evolution'); ?></h4>    
         <table id="sidebar-metabox" class="form-table" width="100%">
             <tbody> 
                 <tr>
