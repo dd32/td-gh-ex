@@ -216,7 +216,7 @@ function besty_framework_page(){
           <div id="options-group-4" class="group faster-inner-tabs fasterthemes-pro-image">
           	<div class="fasterthemes-pro-header">
               <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/theme-logo.png" class="fasterthemes-pro-logo" />
-              <a href="http://fasterthemes.com/checkout/get_checkout_details?theme=besty" target="_blank" class="fasterthemes-pro-buynow"><img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/buy-now.png" /></a>
+              <a href="http://fasterthemes.com/wordpress-themes/besty" target="_blank" class="fasterthemes-pro-buynow"><img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/buy-now.png" /></a>
               </div>
           	<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/pro-featured.png" />
           </div>
