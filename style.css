@@ -4,7 +4,7 @@ Theme URI: http://catchthemes.com/themes/create/
 Author: Catch Themes
 Author URI: http://catchthemes.com/
 Description: Make a remarkable first impression on your website visitors with a large headline & full-page background. How do you do it best? Do it through Create, our new WordPress Theme! Create is super easy to use and has unconventional out-of-the-box features. It is great for your personal, business or even organizational web portals. Create is based on HTML5, CSS3 and designed with a mobile-first approach in mind. Your content display will always be clean, smooth and perfect regardless of whether your visitors reach you through smartphone, tablet, laptop, or desktop computer. Create a beautiful, yet professional WordPress site in no time! Check out Theme Instructions at http://catchthemes.com/theme-instructions/create/, Support at http://catchthemes.com/support/ and Demo at http://catchthemes.com/demo/create/
-Version: 1.2
+Version: 1.3
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: create
@@ -38,9 +38,10 @@ Tags: black, tan, white, light, dark, two-columns, three-columns, left-sidebar, 
     21. Comments
     22. Infinite scroll (Jetpack plugin)
     23. Scrollup    
-    24. Footer
-    25. Responsive design
-    26. Print styles
+    24. Featured Slider    
+    25. Footer
+    26. Responsive design
+    27. Print styles
 */
 
 
@@ -654,7 +655,7 @@ cite {
 blockquote {
     border-bottom: 1px solid rgba(0, 0, 0 ,0.1);
     border-top: 1px solid rgba(0, 0, 0 ,0.1);
-    font-family: 'Alegreya', Georgia, Time New Roman, serif;
+    font-family: Georgia, Time New Roman, serif;
     font-size: 24px;
     text-align: center;
 }
@@ -1080,6 +1081,8 @@ a:active {
 
 /* Reference only, see /css/genericons/genericons.css */
 .social-menu ul a:before,
+#feature-slider .cycle-prev:before,
+#feature-slider .cycle-next:before,
 .pagination .prev:before,
 .pagination .next:before {
     -moz-osx-font-smoothing: grayscale;
@@ -2056,6 +2059,176 @@ a#scrollup:hover {
     filter:alpha(opacity=100); /* For IE8 and earlier */
 }
 
+/* =24. Featured Slider
+-------------------------------------------------------------- */
+#feature-slider .cycle-pager span { 
+    font-size: 45px; 
+}
+#feature-slider .cycle-prev:before,
+#feature-slider .cycle-next:before {
+    font-size: 40px;
+    line-height: 40px;
+}
+#feature-slider .cycle-prev:before {
+    content: "\f430";
+}
+
+#feature-slider .cycle-next:before {
+    content: "\f429";   
+}
+
+#feature-slider {
+    position: relative;
+    z-index: 101;
+}
+
+#feature-slider .cycle-slideshow { 
+    width: 100%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0; 
+    position: relative;
+}
+
+#feature-slider .cycle-slideshow img {
+    display: block;
+    margin: 0 auto;
+}
+
+#feature-slider .cycle-pager { 
+    text-align: center; 
+    width: 100%; 
+    z-index: 101; 
+    position: absolute; 
+    bottom: 0; 
+    overflow: hidden;
+}
+
+#feature-slider .cycle-pager span { 
+    font-family: arial; 
+    line-height: 20px;
+    width: 14px; 
+    height: 20px; 
+    display: inline-block; 
+    color: #f2f2f2; 
+    cursor: pointer; 
+    margin: 0 2px;
+}
+
+#feature-slider .cycle-pager span.cycle-pager-active { 
+    color: #000;
+}
+
+#feature-slider .cycle-pager > * { 
+    cursor: pointer;
+}
+
+#feature-slider .cycle-prev:before,
+#feature-slider .cycle-next:before {
+    display: block;
+    text-align: center;
+    width: 40px;
+    height: 40px;   
+}
+
+#feature-slider .cycle-prev, 
+#feature-slider .cycle-next {
+    background-color: #000;
+    -moz-border-radius:     4px;
+    -webkit-border-radius:  4px;
+    border-radius:          4px;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    opacity: 0;
+    filter: alpha(opacity=0); 
+    position: absolute;
+    top: 50%;
+    text-decoration: none; 
+    -moz-transition:    all 0.2s ease-in-out; 
+    -webkit-transition: all 0.2s ease-in-out; 
+    transition:         all 0.2s ease-in-out;  
+    z-index: 101;    
+}
+
+#feature-slider .cycle-prev {
+    left: -20px;
+}
+
+#feature-slider .cycle-next {
+    right: -20px;
+}
+
+#feature-slider:hover .cycle-prev { 
+    left: 40px; 
+    opacity: 1; 
+    filter: alpha(opacity=100);
+}
+
+#feature-slider:hover .cycle-next { 
+    right: 40px; 
+    opacity: 1; 
+    filter: alpha(opacity=100);
+}
+
+#feature-slider .cycle-slideshow .hentry { 
+    position: absolute; 
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    margin: 0;
+    padding: 0; 
+    display: block;
+}
+
+#feature-slider .cycle-slideshow .hentry.displaynone {
+    display: none;
+}
+
+#feature-slider .cycle-slideshow article:first-child {
+    position: static; 
+    z-index: 100;
+}
+
+#feature-slider .entry-container {
+    bottom: 44px;
+    color: #fff;
+    left: 25%;
+    padding: 15px;
+    position: absolute;
+    text-align: center;
+    width: 50%;
+    z-index: 101;
+}
+
+#feature-slider .entry-container:hover {
+    background-color: #000;
+    -moz-border-radius:     4px;
+    -webkit-border-radius:  4px;
+    border-radius:          4px; 
+    -moz-transition:    all 0.2s ease-in-out; 
+    -webkit-transition: all 0.2s ease-in-out; 
+    transition:         all 0.2s ease-in-out;      
+}
+
+#feature-slider .entry-title,
+#feature-slider .entry-title a {
+    color: #fff;
+}
+
+#feature-slider .entry-content {
+    border: none;
+    margin: 0
+}
+
+#feature-slider .entry-content p:last-child {
+    margin-bottom: 0;
+}
+
+.disabled { 
+    opacity: .5; 
+    filter:alpha(opacity=50); 
+}
 
 /* =24. Footer
 -------------------------------------------------------------- */
@@ -2204,6 +2377,26 @@ a#scrollup:hover {
         padding-bottom: 15px;
     }
 
+    #feature-slider .cycle-prev,
+    #feature-slider:hover .cycle-prev {
+        left: 20px;
+        opacity: 1;
+    }   
+
+    #feature-slider .cycle-next,
+    #feature-slider:hover .cycle-next {
+        right: 20px;
+        opacity: 1;
+    }   
+
+    #feature-slider .cycle-prev:before,
+    #feature-slider .cycle-next:before {
+        font-size: 25px;
+        line-height: 30px;
+        width: 30px;
+        height: 30px;   
+    }     
+
 }
 
 @media screen and (max-width: 890px) { /* Mobile Devices */
@@ -2259,6 +2452,23 @@ a#scrollup:hover {
     .blog .entry-thumbnail {
         display: block;
     }
+
+    #feature-slider .entry-container { 
+        padding: 5px; 
+    }
+
+    #feature-slider .entry-content { 
+        display: none; 
+    }
+
+    #feature-slider .entry-header { 
+        margin: 0; 
+    }
+
+    #feature-slider .entry-title { 
+        font-size: 16px; 
+    }
+
 }
 
 @media screen and (max-width: 479px) {

@@ -2,9 +2,9 @@
 
 Contributors: Catch Themes and Emil Uzelac 
 Tags: black, tan, white, light, dark, two-columns, left-sidebar, fixed-layout, responsive-layout, custom-background, custom-menu, editor-style, featured-images, microformats, sticky-post, theme-options, translation-ready
-Requires at least: 4.0
-Tested up to: 4.1
-Create WordPress Theme, Copyright 2012-2014 Catchthemes.com
+Requires at least: 4.1
+Tested up to: 4.3
+Create WordPress Theme, Copyright 2012-2015 Catchthemes.com
 Create is distributed under the terms of the GNU General Public License v3 
 
 == Description ==

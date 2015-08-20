@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 1.3 =
+* Added Featured Slider
+* Compatible with WordPress 4.3
+* Removed support for WordPress version less than 4.1
+
 = 1.2 =
 * Added title tag via add theme support
 * Added Important links section to Theme Customizer
@@ -9,6 +14,8 @@
 * Bug Fixed: Extra css and border issue in style.css
 * Bug Fixed: Classes for excerpt and content fixed in content.php
 * Bug Fixed: Added missing keyword _nx:1,2,4c and esc_html__ in language file create.pot
+* Removed unnecessary font: Alegreya in blockquote
+
 
 = 1.1 =
 * Initial Release in Catchthemes.com

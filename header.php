@@ -55,4 +55,13 @@
        
 	</header><!-- #masthead -->
 
+	<?php	
+	/** 
+	 * create_before_content hook
+	 *
+	 * @hooked create_slider - 10
+	 */
+	do_action( 'create_before_content');
+	?>
+
 	<div id="content" class="site-content">

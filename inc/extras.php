@@ -45,56 +45,6 @@ function create_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'create_body_classes' );
 
-if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
-	/**
-	* Filters wp_title to print a neat <title> tag based on what is being viewed.
-	*
-	* @param string $title Default title text for current view.
-	* @param string $sep Optional separator.
-	* @return string The filtered title.
-	*/
-	function create_wp_title( $title, $sep ) {
-		if ( is_feed() ) {
-			return $title;
-		}
-		
-		global $page, $paged;
-		
-		// Add the blog name
-		$title .= get_bloginfo( 'name', 'display' );
-		
-		// Add the blog description for the home/front page.
-		$site_description = get_bloginfo( 'description', 'display' );
-		
-		if ( $site_description && ( is_home() || is_front_page() ) ) {
-			$title .= " $sep $site_description";
-		}
-		
-		// Add a page number if necessary:
-		if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-			$title .= " $sep " . sprintf( __( 'Page %s', '_s' ), max( $paged, $page ) );
-		}
-		
-		return $title;
-		
-	}
-		
-	add_filter( 'wp_title', 'create_wp_title', 10, 2 );
-	
-	/**
-	* Title shim for sites older than WordPress 4.1.
-	*
-	* @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
-	* @todo Remove this function when WordPress 4.3 is released.
-	*/
-	function create_render_title() {
-	?>
-		<title><?php wp_title( '|', true, 'right' ); ?></title>
-	<?php
-	}
-	add_action( 'wp_head', 'create_render_title' );
-endif;
-
 /**
  * Sets the authordata global when viewing an author archive.
  *
@@ -249,3 +199,46 @@ function create_footer_info() { ?>
 }
 // Load footer content in  create_footer hook 
 add_action( 'create_footer', 'create_footer_info', 20 );
+
+if ( ! function_exists( 'create_page_post_meta' ) ) :
+	/**
+	 * Post/Page Meta for Google Structure Data
+	 */
+	function create_page_post_meta() {
+		$create_author_url = esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) );
+		
+		$create_page_post_meta = '<span class="post-time">' . __( 'Posted on', 'create' ) . ' <time class="entry-date updated" datetime="' . esc_attr( get_the_date( 'c' ) ) . '" pubdate>' . esc_html( get_the_date() ) . '</time></span>';
+	    $create_page_post_meta .= '<span class="post-author">' . __( 'By', 'create' ) . ' <span class="author vcard"><a class="url fn n" href="' . $create_author_url . '" title="View all posts by ' . get_the_author() . '" rel="author">' .get_the_author() . '</a></span>';
+
+		return $create_page_post_meta;
+	} 
+endif; //create_page_post_meta
+
+/**
+ * Return the first image in a post. Works inside a loop.
+ * @param [integer] $post_id [Post or page id]
+ * @param [string/array] $size Image size. Either a string keyword (thumbnail, medium, large or full) or a 2-item array representing width and height in pixels, e.g. array(32,32).
+ * @param [string/array] $attr Query string or array of attributes.
+ * @return [string] image html
+ *
+ * @since Create 1.2
+ */
+
+function create_get_first_image( $postID, $size, $attr ) {
+	ob_start();
+
+	ob_end_clean();
+
+	$image 	= '';
+
+	$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', get_post_field('post_content', $postID ) , $matches);
+
+	if( isset( $matches [1] [0] ) ) {
+		//Get first image
+		$first_img = $matches [1] [0];
+		
+		return '<img class="pngfix wp-post-image" src="'. $first_img .'">';
+	}
+	
+	return false;
+}

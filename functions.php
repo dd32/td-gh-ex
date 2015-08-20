@@ -164,6 +164,40 @@ function create_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	/**
+	 * Loads up Cycle JS
+	 */
+	$featured_slider_option = get_theme_mod( 'featured_slider_option', create_get_default_theme_options( 'featured_slider_option' ) );
+
+	if( 'disabled' != $featured_slider_option  ) {
+		wp_register_script( 'jquery.cycle2', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.min.js', array( 'jquery' ), '2.1.5', true );
+
+		/**
+		 * Condition checks for additional slider transition plugins
+		 */
+		$featured_slide_transition_effect = get_theme_mod( 'featured_slide_transition_effect', create_get_default_theme_options( 'featured_slide_transition_effect' ) );
+
+		// Scroll Vertical transition plugin addition
+		if ( 'scrollVert' ==  $featured_slide_transition_effect ){
+			wp_enqueue_script( 'jquery.cycle2.scrollVert', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.scrollVert.min.js', array( 'jquery.cycle2' ), '20140128', true );
+		}
+		// Flip transition plugin addition
+		else if ( 'flipHorz' ==  $featured_slide_transition_effect || 'flipVert' ==  $featured_slide_transition_effect ){
+			wp_enqueue_script( 'jquery.cycle2.flip', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.flip.min.js', array( 'jquery.cycle2' ), '20140128', true );
+		}
+		// Suffle transition plugin addition
+		else if ( 'tileSlide' ==  $featured_slide_transition_effect || 'tileBlind' ==  $featured_slide_transition_effect ){
+			wp_enqueue_script( 'jquery.cycle2.tile', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.tile.min.js', array( 'jquery.cycle2' ), '20140128', true );
+		}
+		// Suffle transition plugin addition
+		else if ( 'shuffle' ==  $featured_slide_transition_effect ){
+			wp_enqueue_script( 'jquery.cycle2.shuffle', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.shuffle.min.js', array( 'jquery.cycle2' ), '20140128 ', true );
+		}
+		else {
+			wp_enqueue_script( 'jquery.cycle2' );
+		}
+	}
 }
 add_action( 'wp_enqueue_scripts', 'create_scripts' );
 
@@ -193,6 +227,11 @@ function create_admin_fonts() {
 add_action( 'admin_print_scripts-appearance_page_custom-header', 'create_admin_fonts' );
 
 /**
+ * Include Default Options for Create
+ */
+require get_template_directory() . '/inc/default-options.php';
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
@@ -211,3 +250,8 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Include featured slider
+ */
+require get_template_directory() . '/inc/featured-slider.php';
