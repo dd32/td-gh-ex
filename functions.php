@@ -159,7 +159,7 @@ $mywiki_widget_ops = array( 'classname' => 'widget_popular', 'description' => __
 $mywiki_control_ops = array( 'id_base' => 'popular-widget' );
  
 /* Create the widget. */
-$this->WP_Widget( 'popular-widget', __('Popular Posts','mywiki'), $mywiki_widget_ops, $mywiki_control_ops );
+parent::__construct( 'popular-widget', __('Popular Posts','mywiki'), $mywiki_widget_ops, $mywiki_control_ops );
 }
  
 // Limit to last 30 days
@@ -233,7 +233,7 @@ $mywiki_widget_ops = array( 'classname' => 'widget_recentpost', 'description' =>
 $mywiki_control_ops = array( 'id_base' => 'recent-widget' );
  
 /* Create the widget. */
-$this->WP_Widget( 'recent-widget', __('Recent Posts','mywiki'), $mywiki_widget_ops, $mywiki_control_ops );
+parent::__construct( 'recent-widget', __('Recent Posts','mywiki'), $mywiki_widget_ops, $mywiki_control_ops );
 }
  
 function widget( $args, $instance ) {
