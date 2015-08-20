@@ -11,13 +11,13 @@
 function catcheverest_add_custom_box() {
 	add_meta_box(
 		'siderbar-layout',							  	//Unique ID
-       __( 'Select Sidebar layout', 'catcheverest' ),   //Title
+       __( 'Select Sidebar layout', 'catch-everest' ),   //Title
         'catcheverest_sidebar_layout',                   //Callback function
         'page'                                          //show metabox in pages
     ); 
 	add_meta_box(
 		'siderbar-layout',							  	//Unique ID
-       __( 'Select Sidebar layout', 'catcheverest' ),   //Title
+       __( 'Select Sidebar layout', 'catch-everest' ),   //Title
         'catcheverest_sidebar_layout',                   //Callback function
         'post'                                          //show metabox in pages
     ); 
@@ -30,31 +30,31 @@ $sidebar_layout = array(
 		 'default-sidebar' => array(
             			'id'		=> 'catcheverest-sidebarlayout',
 						'value' 	=> 'default',
-						'label' 	=> __( 'Default Layout Set in', 'catcheverest' ).' <a href="' . admin_url('themes.php?page=theme_options') . '" target="_blank">'. __( 'Theme Settings', 'catcheverest' ).'</a>',
+						'label' 	=> __( 'Default Layout Set in', 'catch-everest' ).' <a href="' . admin_url('themes.php?page=theme_options') . '" target="_blank">'. __( 'Theme Settings', 'catch-everest' ).'</a>',
 						'thumbnail' => ' '
         			),
        'right-sidebar' => array(
 						'id' => 'catcheverest-sidebarlayout',
 						'value' => 'right-sidebar',
-						'label' => __( 'Right sidebar', 'catcheverest' ),
+						'label' => __( 'Right sidebar', 'catch-everest' ),
 						'thumbnail' => get_template_directory_uri() . '/inc/panel/images/right-sidebar.png'
        				),
         'left-sidebar' => array(
             			'id'		=> 'catcheverest-sidebarlayout',
 						'value' 	=> 'left-sidebar',
-						'label' 	=> __( 'Left sidebar', 'catcheverest' ),
+						'label' 	=> __( 'Left sidebar', 'catch-everest' ),
 						'thumbnail' => get_template_directory_uri() . '/inc/panel/images/left-sidebar.png'
        				),	 
         'no-sidebar' => array(
             			'id'		=> 'catcheverest-sidebarlayout',
 						'value' 	=> 'no-sidebar',
-						'label' 	=> __( 'No sidebar', 'catcheverest' ),
+						'label' 	=> __( 'No sidebar', 'catch-everest' ),
 						'thumbnail' => get_template_directory_uri() . '/inc/panel/images/no-sidebar.png'
         			),
 		'no-sidebar-full-width' => array(
             			'id'		=> 'catcheverest-sidebarlayout',
 						'value' 	=> 'no-sidebar-full-width',
-						'label' 	=> __( 'No sidebar, Full Width', 'catcheverest' ),
+						'label' 	=> __( 'No sidebar, Full Width', 'catch-everest' ),
 						'thumbnail' => get_template_directory_uri() . '/inc/panel/images/no-sidebar-fullwidth.png'
         			)
     );

@@ -11,9 +11,9 @@ function catcheverest_widgets_init() {
 	register_widget( 'catcheverest_adspace_widget' );
 	
 	register_sidebar( array(
-		'name' => __( 'Main Sidebar', 'catcheverest' ),
+		'name' => __( 'Main Sidebar', 'catch-everest' ),
 		'id' => 'sidebar-1',
-		'description'   	=> __( 'Shows the Widgets at the side of Content', 'catchthemes' ),
+		'description'   	=> __( 'Shows the Widgets at the side of Content', 'catch-everest' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h1 class="widget-title">',
@@ -22,9 +22,9 @@ function catcheverest_widgets_init() {
 	
 	//Footer One Sidebar
 	register_sidebar( array(
-		'name' => __( 'Footer Area One', 'catcheverest' ),
+		'name' => __( 'Footer Area One', 'catch-everest' ),
 		'id' => 'sidebar-2',
-		'description' => __( 'An optional widget area for your site footer', 'catcheverest' ),
+		'description' => __( 'An optional widget area for your site footer', 'catch-everest' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h1 class="widget-title">',
@@ -33,9 +33,9 @@ function catcheverest_widgets_init() {
 
 	//Footer Two Sidebar
 	register_sidebar( array(
-		'name' => __( 'Footer Area Two', 'catcheverest' ),
+		'name' => __( 'Footer Area Two', 'catch-everest' ),
 		'id' => 'sidebar-3',
-		'description' => __( 'An optional widget area for your site footer', 'catcheverest' ),
+		'description' => __( 'An optional widget area for your site footer', 'catch-everest' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h1 class="widget-title">',
@@ -44,9 +44,9 @@ function catcheverest_widgets_init() {
 
 	//Footer Three Sidebar
 	register_sidebar( array(
-		'name' => __( 'Footer Area Three', 'catcheverest' ),
+		'name' => __( 'Footer Area Three', 'catch-everest' ),
 		'id' => 'sidebar-4',
-		'description' => __( 'An optional widget area for your site footer', 'catcheverest' ),
+		'description' => __( 'An optional widget area for your site footer', 'catch-everest' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h1 class="widget-title">',
@@ -68,14 +68,14 @@ add_action( 'widgets_init', 'catcheverest_widgets_init' );
 class catcheverest_social_widget extends WP_Widget {
 	
 	/**
-	 * Constructor
-	 *
-	 * @return void
-	 **/
-	function catcheverest_social_widget() {
-		$widget_ops = array( 'classname' => 'widget_catcheverest_social_widget', 'description' => __( 'Use this widget to add Social Icons from Social Icons Settings as a widget. ', 'catcheverest' ) );
-		$this->WP_Widget( 'widget_catcheverest_social_widget', __( '1. Catch Everest Social Widget', 'catcheverest' ), $widget_ops );
-		$this->alt_option_name = 'widget_catcheverest_social_widget';
+	 * Register widget with WordPress.
+	 */
+	function __construct() {
+		parent::__construct(
+			'widget_catcheverest_social_widget', // Base ID
+			__( 'CT: Social Icons', 'catch-everest' ), // Name
+			array( 'description' => __( 'Use this widget to add Social Icons from Social Icons Settings as a widget.', 'catch-everest' ) ) // Args
+		);
 	}
 
 	/**
@@ -87,7 +87,7 @@ class catcheverest_social_widget extends WP_Widget {
 		$title = esc_attr( $instance[ 'title' ] );
 		?>
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title (optional):','catcheverest'); ?></label>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title (optional):','catch-everest'); ?></label>
             <input type="text" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title; ?>" class="widefat" id="<?php echo $this->get_field_id('title'); ?>" />
         </p>
         <?php
@@ -147,14 +147,14 @@ class catcheverest_social_widget extends WP_Widget {
 class catcheverest_adspace_widget extends WP_Widget {
 	
 	/**
-	 * Constructor
-	 *
-	 * @return void
-	 **/
-	function catcheverest_adspace_widget() {
-		$widget_ops = array( 'classname' => 'widget_catcheverest_adspace_widget', 'description' => __( 'Use this widget to add any type of Advertisement as a widget.', 'catcheverest' ) );
-		$this->WP_Widget( 'widget_catcheverest_adspace_widget', __( '2. Catch Everest: Advertisement', 'catcheverest' ), $widget_ops );
-		$this->alt_option_name = 'widget_catcheverest_adspace_widget';
+	 * Register widget with WordPress.
+	 */
+	function __construct() {
+		parent::__construct(
+			'widget_catcheverest_adspace_widget', // Base ID
+			__( 'CT: Advertisement', 'catch-everest' ), // Name
+			array( 'description' => __( 'Use this widget to add any type of Advertisement as a widget.', 'catch-everest' ) ) // Args
+		);
 	}
 
 	/**
@@ -171,29 +171,29 @@ class catcheverest_adspace_widget extends WP_Widget {
 		$alt = esc_attr( $instance[ 'alt' ] );
 		?>
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title (optional):','catcheverest'); ?></label>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title (optional):','catch-everest'); ?></label>
             <input type="text" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title; ?>" class="widefat" id="<?php echo $this->get_field_id('title'); ?>" />
         </p>
         <?php if ( current_user_can( 'unfiltered_html' ) ) : // Only show it to users who can edit it ?>
             <p>
-                <label for="<?php echo $this->get_field_id('adcode'); ?>"><?php _e('Advertisement Code:','catcheverest'); ?></label>
+                <label for="<?php echo $this->get_field_id('adcode'); ?>"><?php _e('Advertisement Code:','catch-everest'); ?></label>
                 <textarea name="<?php echo $this->get_field_name('adcode'); ?>" class="widefat" id="<?php echo $this->get_field_id('adcode'); ?>"><?php echo $adcode; ?></textarea>
             </p>
             <p><strong>or</strong></p>
         <?php endif; ?>
         <p>
-            <label for="<?php echo $this->get_field_id('image'); ?>"><?php _e('Image Url:','catcheverest'); ?></label>
+            <label for="<?php echo $this->get_field_id('image'); ?>"><?php _e('Image Url:','catch-everest'); ?></label>
         <input type="text" name="<?php echo $this->get_field_name('image'); ?>" value="<?php echo $image; ?>" class="widefat" id="<?php echo $this->get_field_id('image'); ?>" />
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('href'); ?>"><?php _e('Link URL:','catcheverest'); ?></label>
+            <label for="<?php echo $this->get_field_id('href'); ?>"><?php _e('Link URL:','catch-everest'); ?></label>
             <input type="text" name="<?php echo $this->get_field_name('href'); ?>" value="<?php echo esc_url( $href ); ?>" class="widefat" id="<?php echo $this->get_field_id('href'); ?>" />
         </p>
 		<p>
-			<input class="checkbox" type="checkbox" <?php echo $target; ?> id="<?php echo $this->get_field_id('target'); ?>" name="<?php echo $this->get_field_name('target'); ?>" /> <label for="<?php echo $this->get_field_id('target'); ?>"><?php _e( 'Open Link in New Window', 'catcheverest' ); ?></label>
+			<input class="checkbox" type="checkbox" <?php echo $target; ?> id="<?php echo $this->get_field_id('target'); ?>" name="<?php echo $this->get_field_name('target'); ?>" /> <label for="<?php echo $this->get_field_id('target'); ?>"><?php _e( 'Open Link in New Window', 'catch-everest' ); ?></label>
 		</p>        
         <p>
-            <label for="<?php echo $this->get_field_id('alt'); ?>"><?php _e('Alt text:','catcheverest'); ?></label>
+            <label for="<?php echo $this->get_field_id('alt'); ?>"><?php _e('Alt text:','catch-everest'); ?></label>
             <input type="text" name="<?php echo $this->get_field_name('alt'); ?>" value="<?php echo $alt; ?>" class="widefat" id="<?php echo $this->get_field_id('alt'); ?>" />
         </p>
         <?php
@@ -256,7 +256,7 @@ class catcheverest_adspace_widget extends WP_Widget {
         	echo '<a href="'.$href.'" target="'.$base.'"><img src="'. $image.'" alt="'.$alt.'" /></a>';
 		}
 		else {
-			_e( 'Add Advertisement Code or Image URL', 'catcheverest' );
+			_e( 'Add Advertisement Code or Image URL', 'catch-everest' );
 		}
 		echo $after_widget;
 	}

@@ -23,6 +23,7 @@ Added Translation for German - Stephan Erdmann (Email: s.erdmann@bewegungsfelder
 Added Translation for Catalan - Dr. Jaume Albaiges (jaumealbaiges@hotmail.com)
 Added Translation for Turkish - Dr. Hakan Gur (dilderslerisitesi@gmail.com)
 Added translation for Bosnian
+Added Translation for Danish by Alexander Leo-Hansen ( Email: alexanderleoh@gmail.com )
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt

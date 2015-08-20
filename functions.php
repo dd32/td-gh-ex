@@ -86,9 +86,9 @@ function catcheverest_setup() {
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
 	 * If you're building a theme based on Catch Everest, use a find and replace
-	 * to change 'catcheverest' to the name of your theme in all the template files
+	 * to change 'catch-everest' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'catcheverest', get_template_directory() . '/languages' );	
+	load_theme_textdomain( 'catch-everest', get_template_directory() . '/languages' );	
 	
 	/**
 	 * Add callback for custom TinyMCE editor stylesheets. (editor-style.css)
@@ -152,7 +152,7 @@ function catcheverest_setup() {
      * This feature enables custom-menus support for a theme.
      * @see http://codex.wordpress.org/Function_Reference/register_nav_menus
      */		
-	register_nav_menu( 'primary', __( 'Primary Menu', 'catcheverest' ) );
+	register_nav_menu( 'primary', __( 'Primary Menu', 'catch-everest' ) );
 
 	/**
 	 * Add support for the Aside Post Formats

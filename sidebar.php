@@ -70,7 +70,7 @@ do_action( 'catcheverest_before_secondary' );
 				</aside>
 		
 				<aside id="archives" class="widget">
-					<h1 class="widget-title"><?php _e( 'Archives', 'catcheverest' ); ?></h1>
+					<h1 class="widget-title"><?php _e( 'Archives', 'catch-everest' ); ?></h1>
 					<ul>
 						<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
 					</ul>

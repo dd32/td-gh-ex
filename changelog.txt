@@ -1,5 +1,13 @@
 == Changelog ==
 
+version 2.4
+* Added Danish translation da_DK.po and da_DK.mo files
+* Compatible with WordPress 4.3
+* Removed support for WordPress version less than 4.1
+* Updated Brazilian Portuguese translation pt_BR.po and pt_BR.mo
+* Updated codes to comply with deprecating PHP4 style constructors in WordPress 4.3
+* Updated text-domain
+
 version 2.3
 * Added Bosnian translation bs_BA.po and bs_BA.mo
 * Bug Fixed: Sidebar layout option (Reported by notjustblack )

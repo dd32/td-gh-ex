@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-08 13:19+0545\n"
-"PO-Revision-Date: 2015-04-08 13:19+0545\n"
+"POT-Creation-Date: 2015-08-20 18:25+0545\n"
+"PO-Revision-Date: 2015-08-20 18:25+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes Team <info@catchthemes.com>\n"
 "Language: bs\n"
@@ -232,7 +232,7 @@ msgstr "O %s"
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Pregledaj sve članke od %s <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../functions.php:155 ../inc/catcheverest-functions.php:495
+#: ../functions.php:155 ../inc/catcheverest-functions.php:444
 msgid "Primary Menu"
 msgstr "Primary Menu"
 
@@ -291,148 +291,143 @@ msgstr ""
 msgid "Both comments and trackbacks are currently closed."
 msgstr "Both comments and trackbacks are currently closed."
 
-#: ../inc/catcheverest-functions.php:191
-#, php-format
-msgid "Page %s"
-msgstr "Stranica %s"
-
-#: ../inc/catcheverest-functions.php:241 ../inc/catcheverest-functions.php:742
-#: ../inc/catcheverest-functions.php:745 ../inc/catcheverest-functions.php:862
-#: ../inc/catcheverest-functions.php:893 ../inc/catcheverest-functions.php:925
+#: ../inc/catcheverest-functions.php:190 ../inc/catcheverest-functions.php:691
+#: ../inc/catcheverest-functions.php:694 ../inc/catcheverest-functions.php:811
+#: ../inc/catcheverest-functions.php:842 ../inc/catcheverest-functions.php:874
 #: ../searchform.php:17
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: ../inc/catcheverest-functions.php:496
+#: ../inc/catcheverest-functions.php:445
 msgid "Skip to content"
 msgstr "Idi na sadržaj"
 
-#: ../inc/catcheverest-functions.php:1133 ../inc/panel/theme-options.php:106
+#: ../inc/catcheverest-functions.php:1082 ../inc/panel/theme-options.php:106
 #: ../inc/panel/theme-options.php:644
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../inc/catcheverest-functions.php:1138 ../inc/panel/theme-options.php:107
+#: ../inc/catcheverest-functions.php:1087 ../inc/panel/theme-options.php:107
 #: ../inc/panel/theme-options.php:649
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../inc/catcheverest-functions.php:1143 ../inc/panel/theme-options.php:654
+#: ../inc/catcheverest-functions.php:1092 ../inc/panel/theme-options.php:654
 msgid "Google+"
 msgstr "Google+"
 
-#: ../inc/catcheverest-functions.php:1148
+#: ../inc/catcheverest-functions.php:1097
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: ../inc/catcheverest-functions.php:1153 ../inc/panel/theme-options.php:659
+#: ../inc/catcheverest-functions.php:1102 ../inc/panel/theme-options.php:659
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/catcheverest-functions.php:1158
+#: ../inc/catcheverest-functions.php:1107
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../inc/catcheverest-functions.php:1163 ../inc/panel/theme-options.php:669
+#: ../inc/catcheverest-functions.php:1112 ../inc/panel/theme-options.php:669
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/catcheverest-functions.php:1168
+#: ../inc/catcheverest-functions.php:1117
 msgid "SlideShare"
 msgstr "SlideShare"
 
-#: ../inc/catcheverest-functions.php:1173
+#: ../inc/catcheverest-functions.php:1122
 msgid "FourSquare"
 msgstr "FourSquare"
 
-#: ../inc/catcheverest-functions.php:1178 ../inc/panel/theme-options.php:690
+#: ../inc/catcheverest-functions.php:1127 ../inc/panel/theme-options.php:690
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/catcheverest-functions.php:1183 ../inc/panel/theme-options.php:695
+#: ../inc/catcheverest-functions.php:1132 ../inc/panel/theme-options.php:695
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/catcheverest-functions.php:1188 ../inc/panel/theme-options.php:700
+#: ../inc/catcheverest-functions.php:1137 ../inc/panel/theme-options.php:700
 msgid "deviantART"
 msgstr "deviantART"
 
-#: ../inc/catcheverest-functions.php:1193 ../inc/panel/theme-options.php:705
+#: ../inc/catcheverest-functions.php:1142 ../inc/panel/theme-options.php:705
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/catcheverest-functions.php:1198 ../inc/panel/theme-options.php:710
+#: ../inc/catcheverest-functions.php:1147 ../inc/panel/theme-options.php:710
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../inc/catcheverest-functions.php:1203 ../inc/panel/theme-options.php:715
+#: ../inc/catcheverest-functions.php:1152 ../inc/panel/theme-options.php:715
 #: ../inc/panel/theme-options.php:1205
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../inc/catcheverest-functions.php:1208 ../inc/panel/theme-options.php:720
+#: ../inc/catcheverest-functions.php:1157 ../inc/panel/theme-options.php:720
 msgid "RSS"
 msgstr "RSS"
 
-#: ../inc/catcheverest-functions.php:1213 ../inc/panel/theme-options.php:725
+#: ../inc/catcheverest-functions.php:1162 ../inc/panel/theme-options.php:725
 msgid "Delicious"
 msgstr "Delicious"
 
-#: ../inc/catcheverest-functions.php:1218 ../inc/panel/theme-options.php:730
+#: ../inc/catcheverest-functions.php:1167 ../inc/panel/theme-options.php:730
 msgid "Last.fm"
 msgstr "Last.fm"
 
-#: ../inc/catcheverest-functions.php:1223 ../inc/panel/theme-options.php:735
+#: ../inc/catcheverest-functions.php:1172 ../inc/panel/theme-options.php:735
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/catcheverest-functions.php:1228 ../inc/panel/theme-options.php:740
+#: ../inc/catcheverest-functions.php:1177 ../inc/panel/theme-options.php:740
 msgid "GitHub"
 msgstr "GitHub"
 
-#: ../inc/catcheverest-functions.php:1233 ../inc/panel/theme-options.php:745
+#: ../inc/catcheverest-functions.php:1182 ../inc/panel/theme-options.php:745
 msgid "Vkontakte"
 msgstr "Vkontakte"
 
-#: ../inc/catcheverest-functions.php:1238 ../inc/panel/theme-options.php:750
+#: ../inc/catcheverest-functions.php:1187 ../inc/panel/theme-options.php:750
 msgid "My World"
 msgstr "My World"
 
-#: ../inc/catcheverest-functions.php:1243 ../inc/panel/theme-options.php:755
+#: ../inc/catcheverest-functions.php:1192 ../inc/panel/theme-options.php:755
 msgid "Odnoklassniki"
 msgstr "Odnoklassniki"
 
-#: ../inc/catcheverest-functions.php:1248
+#: ../inc/catcheverest-functions.php:1197
 msgid "GoodReads"
 msgstr "GoodReads"
 
-#: ../inc/catcheverest-functions.php:1253 ../inc/panel/theme-options.php:765
+#: ../inc/catcheverest-functions.php:1202 ../inc/panel/theme-options.php:765
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/catcheverest-functions.php:1258
+#: ../inc/catcheverest-functions.php:1207
 msgid "SoundCloud"
 msgstr "SoundCloud"
 
-#: ../inc/catcheverest-functions.php:1263 ../inc/panel/theme-options.php:775
+#: ../inc/catcheverest-functions.php:1212 ../inc/panel/theme-options.php:775
 msgid "Email"
 msgstr "Email"
 
-#: ../inc/catcheverest-functions.php:1268 ../inc/panel/theme-options.php:780
+#: ../inc/catcheverest-functions.php:1217 ../inc/panel/theme-options.php:780
 msgid "Contact"
 msgstr "Contact"
 
-#: ../inc/catcheverest-functions.php:1273 ../inc/panel/theme-options.php:785
+#: ../inc/catcheverest-functions.php:1222 ../inc/panel/theme-options.php:785
 msgid "Xing"
 msgstr "Xing"
 
-#: ../inc/catcheverest-functions.php:1368
+#: ../inc/catcheverest-functions.php:1317
 msgid "ID"
 msgstr "ID"
 
-#: ../inc/catcheverest-functions.php:1395
-#: ../inc/catcheverest-functions.php:1409
+#: ../inc/catcheverest-functions.php:1344
+#: ../inc/catcheverest-functions.php:1358
 msgid "Menu"
 msgstr "meni"
 
@@ -1234,26 +1229,25 @@ msgid "Footer Area Three"
 msgstr "Treća oblast podnožja"
 
 #: ../inc/widgets.php:76
-msgid ""
-"Use this widget to add Social Icons from Social Icons Settings as a widget. "
+msgid "CT: Social Icons"
 msgstr ""
-"Use this widget to add Social Icons from Social Icons Settings as a widget. "
 
 #: ../inc/widgets.php:77
-msgid "1. Catch Everest Social Widget"
-msgstr "1. Catch Everest Social Widget"
+msgid ""
+"Use this widget to add Social Icons from Social Icons Settings as a widget."
+msgstr ""
 
 #: ../inc/widgets.php:90 ../inc/widgets.php:174
 msgid "Title (optional):"
 msgstr "Title (optional):"
 
 #: ../inc/widgets.php:155
-msgid "Use this widget to add any type of Advertisement as a widget."
-msgstr "Use this widget to add any type of Advertisement as a widget."
+msgid "CT: Advertisement"
+msgstr ""
 
 #: ../inc/widgets.php:156
-msgid "2. Catch Everest: Advertisement"
-msgstr "2. Catch Everest: Advertisement"
+msgid "Use this widget to add any type of Advertisement as a widget."
+msgstr "Use this widget to add any type of Advertisement as a widget."
 
 #: ../inc/widgets.php:179
 msgid "Advertisement Code:"
@@ -1313,3 +1307,19 @@ msgstr "Rezultati pretrage za: %s"
 #: ../searchform.php:16 ../searchform.php:18
 msgid "Search"
 msgstr "Traži"
+
+#~ msgid "Page %s"
+#~ msgstr "Stranica %s"
+
+#~ msgid ""
+#~ "Use this widget to add Social Icons from Social Icons Settings as a "
+#~ "widget. "
+#~ msgstr ""
+#~ "Use this widget to add Social Icons from Social Icons Settings as a "
+#~ "widget. "
+
+#~ msgid "1. Catch Everest Social Widget"
+#~ msgstr "1. Catch Everest Social Widget"
+
+#~ msgid "2. Catch Everest: Advertisement"
+#~ msgstr "2. Catch Everest: Advertisement"

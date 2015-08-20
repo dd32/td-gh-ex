@@ -47,12 +47,12 @@ function catcheverest_content_nav( $nav_id ) {
 
 	?>
 	<nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
-		<h1 class="assistive-text"><?php _e( 'Post navigation', 'catcheverest' ); ?></h1>
+		<h1 class="assistive-text"><?php _e( 'Post navigation', 'catch-everest' ); ?></h1>
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
 
-		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'catcheverest' ) . '</span> %title' ); ?>
-		<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'catcheverest' ) . '</span>' ); ?>
+		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'catch-everest' ) . '</span> %title' ); ?>
+		<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'catch-everest' ) . '</span>' ); ?>
 
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
@@ -64,11 +64,11 @@ function catcheverest_content_nav( $nav_id ) {
         }
 		else { ?>
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'catcheverest' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'catch-everest' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-            <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'catcheverest' ) ); ?></div>
+            <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'catch-everest' ) ); ?></div>
             <?php endif; ?>
        	<?php } ?>
 
@@ -108,12 +108,12 @@ function catcheverest_content_query_nav( $nav_id ) {
 
 	?>
 	<nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
-		<h1 class="assistive-text"><?php _e( 'Post navigation', 'catcheverest' ); ?></h1>
+		<h1 class="assistive-text"><?php _e( 'Post navigation', 'catch-everest' ); ?></h1>
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
 
-		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'catcheverest' ) . '</span> %title' ); ?>
-		<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'catcheverest' ) . '</span>' ); ?>
+		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'catch-everest' ) . '</span> %title' ); ?>
+		<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'catch-everest' ) . '</span>' ); ?>
 
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
@@ -125,11 +125,11 @@ function catcheverest_content_query_nav( $nav_id ) {
         }
 		else { ?>
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'catcheverest' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'catch-everest' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-            <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'catcheverest' ) ); ?></div>
+            <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'catch-everest' ) ); ?></div>
             <?php endif; ?>
        	<?php } ?>
 
@@ -160,7 +160,7 @@ function catcheverest_comment( $comment, $args, $depth ) {
 		// Display trackbacks differently than normal comments.
 	?>
 	<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-		<p><?php _e( 'Pingback:', 'catcheverest' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'catcheverest' ), '<span class="edit-link">', '</span>' ); ?></p>
+		<p><?php _e( 'Pingback:', 'catch-everest' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'catch-everest' ), '<span class="edit-link">', '</span>' ); ?></p>
 	<?php
 			break;
 		default :
@@ -175,28 +175,28 @@ function catcheverest_comment( $comment, $args, $depth ) {
 					printf( '<cite class="fn">%1$s %2$s</cite>',
 						get_comment_author_link(),
 						// If current post author is also comment author, make it known visually.
-						( $comment->user_id === $post->post_author ) ? '<span> ' . __( 'Post author', 'catcheverest' ) . '</span>' : ''
+						( $comment->user_id === $post->post_author ) ? '<span> ' . __( 'Post author', 'catch-everest' ) . '</span>' : ''
 					);
 					printf( '<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
 						esc_url( get_comment_link( $comment->comment_ID ) ),
 						get_comment_time( 'c' ),
 						/* translators: 1: date, 2: time */
-						sprintf( __( '%1$s at %2$s', 'catcheverest' ), get_comment_date(), get_comment_time() )
+						sprintf( __( '%1$s at %2$s', 'catch-everest' ), get_comment_date(), get_comment_time() )
 					);
 				?>
 			</header><!-- .comment-meta -->
 
 			<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'catcheverest' ); ?></p>
+				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'catch-everest' ); ?></p>
 			<?php endif; ?>
 
 			<section class="comment-content comment">
 				<?php comment_text(); ?>
-				<?php edit_comment_link( __( 'Edit', 'catcheverest' ), '<p class="edit-link">', '</p>' ); ?>
+				<?php edit_comment_link( __( 'Edit', 'catch-everest' ), '<p class="edit-link">', '</p>' ); ?>
 			</section><!-- .comment-content -->
 
 			<div class="reply">
-				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'catcheverest' ), 'after' => ' <span>&darr;</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'catch-everest' ), 'after' => ' <span>&darr;</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 			</div><!-- .reply -->
 		</article><!-- #comment-## -->
 	<?php
@@ -225,12 +225,12 @@ function catcheverest_header_meta() {
 	
 	$author = sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'catcheverest' ), get_the_author() ) ),
+		esc_attr( sprintf( __( 'View all posts by %s', 'catch-everest' ), get_the_author() ) ),
 		get_the_author()
 	);
 	
 	// Translators: 1 is category, 2 is tag, 3 is the date and 4 is the author's name.
-		$utility_text = __( '<span class="on-date">Posted on %1$s</span><span class="by-author"> by %2$s</span>', 'catcheverest' );
+		$utility_text = __( '<span class="on-date">Posted on %1$s</span><span class="by-author"> by %2$s</span>', 'catch-everest' );
 
 	printf(
 		$utility_text,
@@ -252,17 +252,17 @@ if ( ! function_exists( 'catcheverest_footer_meta' ) ) :
 function catcheverest_footer_meta() {
 	
 	// Translators: used between list items, there is a space after the comma.
-	$categories_list = get_the_category_list( __( ', ', 'catcheverest' ) );
+	$categories_list = get_the_category_list( __( ', ', 'catch-everest' ) );
 
 	// Translators: used between list items, there is a space after the comma.
-	$tag_list = get_the_tag_list( '', __( ', ', 'catcheverest' ) );
+	$tag_list = get_the_tag_list( '', __( ', ', 'catch-everest' ) );
 
 
 	// Translators: 1 is category, 2 is tag, 3 is the date and 4 is the author's name.
 	if ( $tag_list ) {
-		$utility_text = __( '<span class="in-category">Posted in %1$s</span><span class="sep"> | </span><span class="in-tag">Tagged %2$s</span>', 'catcheverest' );
+		$utility_text = __( '<span class="in-category">Posted in %1$s</span><span class="sep"> | </span><span class="in-tag">Tagged %2$s</span>', 'catch-everest' );
 	} elseif ( $categories_list ) {
-		$utility_text = __( '<span class="in-category">Posted in %1$s</span>', 'catcheverest' );
+		$utility_text = __( '<span class="in-category">Posted in %1$s</span>', 'catch-everest' );
 	} 
 	
 	printf(
@@ -284,10 +284,10 @@ if ( ! function_exists( 'catcheverest_post_format_meta' ) ) :
  */
 function catcheverest_post_format_meta() {
 	// Translators: used between list items, there is a space after the comma.
-	$categories_list = get_the_category_list( __( ', ', 'catcheverest' ) );
+	$categories_list = get_the_category_list( __( ', ', 'catch-everest' ) );
 
 	// Translators: used between list items, there is a space after the comma.
-	$tag_list = get_the_tag_list( '', __( ', ', 'catcheverest' ) );
+	$tag_list = get_the_tag_list( '', __( ', ', 'catch-everest' ) );
 
 	$date = sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>',
 		esc_url( get_permalink() ),
@@ -298,17 +298,17 @@ function catcheverest_post_format_meta() {
 
 	$author = sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'catcheverest' ), get_the_author() ) ),
+		esc_attr( sprintf( __( 'View all posts by %s', 'catch-everest' ), get_the_author() ) ),
 		get_the_author()
 	);
 
 	// Translators: 1 is category, 2 is tag, 3 is the date and 4 is the author's name.
 	if ( $tag_list ) {
-		$utility_text = __( '<span class="on-date">Posted on %3$s</span><span class="in-category"> under %1$s</span><span class="sep"> | </span><span class="in-tag">Tagged %2$s</span><span class="sep"> | </span><span class="by-author"> By %4$s</span>', 'catcheverest' );
+		$utility_text = __( '<span class="on-date">Posted on %3$s</span><span class="in-category"> under %1$s</span><span class="sep"> | </span><span class="in-tag">Tagged %2$s</span><span class="sep"> | </span><span class="by-author"> By %4$s</span>', 'catch-everest' );
 	} elseif ( $categories_list ) {
-		$utility_text = __( '<span class="on-date">Posted on %3$s</span><span class="in-category"> under in %1$s<span><span class="sep"> | </span><span class="by-author"> By %4$s</span>.', 'catcheverest' );
+		$utility_text = __( '<span class="on-date">Posted on %3$s</span><span class="in-category"> under in %1$s<span><span class="sep"> | </span><span class="by-author"> By %4$s</span>.', 'catch-everest' );
 	} else {
-		$utility_text = __( '<span class="on-date">Posted on %3$s</span><span class="sep"> | </span><span class="by-author"> By %4$s</span>.', 'catcheverest' );
+		$utility_text = __( '<span class="on-date">Posted on %3$s</span><span class="sep"> | </span><span class="by-author"> By %4$s</span>.', 'catch-everest' );
 	}
 
 	printf(
