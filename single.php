@@ -28,8 +28,11 @@
 								// Get content parts
 								$content_parts = get_extended( $content );
 								
-								// Output part before <!--more--> tag
-								echo $content_parts['main'];
+								// oEmbed part before <!--more--> tag
+								$embed_code = wp_oembed_get($content_parts['main']); 
+								
+								echo $embed_code;
+							
 							
 							?>
 						

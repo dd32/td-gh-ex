@@ -1,6 +1,11 @@
 *** Garfunkel Changelog ***
 
 
+Version 1.06 (2015-08-20)
+-------------------------
+- Fixed the display of videos on single posts with the video post format
+
+
 Version 1.05 (2015-08-11)
 -------------------------
 - Fixed the display of post excerpts in the quote post format
