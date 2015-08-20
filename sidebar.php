@@ -10,7 +10,7 @@
             } else { 
                 
                 the_widget( 'WP_Widget_Calendar',
-				array("title"=> __('Calendar','wip')),
+				array("title"=> __('Calendar','novalite')),
 					array('before_widget' => '<div class="pin-article span4"><div class="article">',
 						  'after_widget'  => '</div></div>',
 						  'before_title'  => '<h3 class="title">',

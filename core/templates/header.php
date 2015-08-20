@@ -15,13 +15,13 @@
 
 function novalite_header_content() {
 	
-if ( ( is_page()) && (novalite_postmeta('wip_slogan')) ) : ?>
+if ( ( is_page()) && (novalite_postmeta('novalite_slogan')) ) : ?>
 
 <section id="subheader">
 	<div class="container">
     	<div class="row">
         	<div class="span12">
-            	<p> <?php echo novalite_postmeta('wip_slogan'); ?> </p>
+            	<p> <?php echo novalite_postmeta('novalite_slogan'); ?> </p>
             </div>
         </div>
     </div>
@@ -29,7 +29,7 @@ if ( ( is_page()) && (novalite_postmeta('wip_slogan')) ) : ?>
 
 <?php endif; ?>
 
-<?php if ( ( novalite_postmeta('wip_header_sidebar') <> "none" ) && ( is_active_sidebar('header_sidebar_area') ) ) : ?>
+<?php if ( ( novalite_postmeta('novalite_header_sidebar') <> "none" ) && ( is_active_sidebar('header_sidebar_area') ) ) : ?>
 	
     <section class="container head_widget content">
 		<div class="container">

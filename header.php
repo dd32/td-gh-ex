@@ -5,8 +5,8 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 
-<?php if (novalite_setting('wip_custom_favicon')) : ?>
-	<link rel="shortcut icon" href="<?php echo novalite_setting('wip_custom_favicon'); ?>"/>
+<?php if (novalite_setting('novalite_custom_favicon')) : ?>
+	<link rel="shortcut icon" href="<?php echo novalite_setting('novalite_custom_favicon'); ?>"/>
 <?php endif; ?>
 
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" media="screen" />
@@ -14,8 +14,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.2, user-scalable=yes" />
 
 <!--[if IE 8]>
-    <script src="<?php echo get_template_directory_uri(); ?>/scripts/html5.js" type="text/javascript"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/scripts/selectivizr-min.js" type="text/javascript"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/inc/scripts/html5.js" type="text/javascript"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/inc/scripts/selectivizr-min.js" type="text/javascript"></script>
 <![endif]-->
 
 <?php 
@@ -42,8 +42,8 @@
                             
                         <?php 
                                         
-                            if ( novalite_setting('wip_custom_logo') ):
-                                echo "<img src='".novalite_setting('wip_custom_logo')."' alt='logo'>"; 
+                            if ( novalite_setting('novalite_custom_logo') ):
+                                echo "<img src='".novalite_setting('novalite_custom_logo')."' alt='logo'>"; 
                             else: 
                                 bloginfo('name');
                             endif; 

@@ -13,7 +13,7 @@ $novalite_new_metaboxes = new novalite_metaboxes ('page', array (
 
 array( "name" => "Navigation",  
        "type" => "navigation",  
-       "item" => array( "setting" => __( "Setting","wip") ),   
+       "item" => array( "setting" => __( "Setting","novalite") ),   
        "start" => "<ul>", 
        "end" => "</ul>"),  
 
@@ -21,26 +21,27 @@ array( "type" => "begintab",
 	   "tab" => "setting",
 	   "element" =>
 
-		array( "name" => __( "Setting","wip"),
+		array( "name" => __( "Setting","novalite"),
 			   "type" => "title",
-			  ),
+		),
 
-		array( "name" => __( "Slogan","wip"),
-			   "desc" => __( "Insert the slogan of page","wip"),
-			   "id" => "wip_slogan",
+		array( "name" => __( "Slogan","novalite"),
+			   "desc" => __( "Insert the slogan of page","novalite"),
+			   "id" => "novalite_slogan",
 			   "type" => "text",
-			  ),
+		),
 
-		array( "name" => __( "Template","wip"),
-			   "desc" => __( "Select a template for this page","wip"),
-			   "id" => "wip_template",
+		array( "name" => __( "Template","novalite"),
+			   "desc" => __( "Select a template for this page","novalite"),
+			   "id" => "novalite_template",
 			   "type" => "select",
 			   "options" => array(
-				   "full" => __( "Full Width","wip"),
-				   "left-sidebar" =>  __( "Left Sidebar","wip"),
-				   "right-sidebar" => __( "Right Sidebar","wip"),
-			  ),
-			  ),
+				   "full" => __( "Full Width","novalite"),
+				   "left-sidebar" =>  __( "Left Sidebar","novalite"),
+				   "right-sidebar" => __( "Right Sidebar","novalite"),
+				   ),
+			   "std" => "full",
+		),
 			  
 ),
 

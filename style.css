@@ -1,13 +1,14 @@
 /*
 
 Theme Name: Nova Lite
-Theme URI: http://themeinprogress.com/nova/
+Theme URI: https://www.themeinprogress.com/nova-free-responsive-portfolio-blogging-wordpress-theme/
 Description: Nova is a responsive clean Tumblog Wordpress Theme, based on Bootstrap framework. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like Html5 and Css3.
 Author: Theme in Progress.
-Author URI: http://themeinprogress.com
-Version: 1.1.1
+Author URI: https://www.themeinprogress.com
+Version: 1.2.0
 Tags: blue, green, orange, purple, red, yellow, light, two-columns, left-sidebar, right-sidebar, photoblogging, custom-background, post-formats, theme-options, translation-ready
 Text Domain: novalite
+Domain Path: /languages
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -17,7 +18,7 @@ html {
 	min-height:101%;
 }
 body.custombody { 
-	background:url(images/background/patterns/pattern12.jpg) repeat;
+	background:url(inc/images/background/patterns/pattern12.jpg) repeat;
 }
 
 /* ===============================================
@@ -751,7 +752,7 @@ nav#mainmenu ul ul li ul:before {
 }
 
 .pin-article .separator:after {
-	background:url(images/separator.png) repeat;
+	background:url(inc/images/separator.png) repeat;
 	width:100%;
 	height:5px;
 	content: '';
@@ -940,7 +941,7 @@ h3.comments {
 	padding: 0 0 5px 45px;
 	height:45px;
 	line-height:45px;
-	background:url('images/icons/comment.png') no-repeat center left; 
+	background:url('inc/images/icons/comment.png') no-repeat center left; 
 	margin:45px 0;
 }
 
@@ -1207,6 +1208,34 @@ img.aligncenter {
 	margin:0;
 }
 
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+}
+
 /* ===============================================
    WORDPRESS GALLERY SHORTCODE
    =============================================== */
@@ -1326,7 +1355,7 @@ p.list-tags {
 	margin-top:20px;
 	border-top:1px solid #dcdbdb;
 	padding:10px 0 10px 36px;
-	background:url('images/icons/article.png') left 15px no-repeat;
+	background:url('inc/images/icons/article.png') left 15px no-repeat;
 }
 article .overlay-image { 
 	position:relative; 
@@ -1338,7 +1367,7 @@ article .overlay-image {
 	border:none;
 }
 .overlay-image .zoom { 
-	background: #000 url(images/icons/zoom.png) no-repeat center; 
+	background: #000 url(inc/images/icons/zoom.png) no-repeat center; 
 	position:absolute; 
 	top:5px; 
 	left:5px; 
@@ -1347,7 +1376,7 @@ article .overlay-image {
 	-o-transition: none;
 }
 .overlay-image .link { 
-	background: #000 url(images/icons/link.png) no-repeat center; 
+	background: #000 url(inc/images/icons/link.png) no-repeat center; 
 	position:absolute; 
 	top:5px; 
 	left:5px; 
@@ -1356,7 +1385,7 @@ article .overlay-image {
 	-o-transition: none;
 }
 .overlay-image .video { 
-	background: #000 url(images/icons/video.png) no-repeat center; 
+	background: #000 url(inc/images/icons/video.png) no-repeat center; 
 	position:absolute; 
 	top:5px; 
 	left:5px; 
@@ -1527,6 +1556,9 @@ tr:nth-child(2n+2) {
 	color:#fff;
 }
 
+.bottom_socials a {
+	color:#333333;
+}
 
 /* ===============================================
    PAGINATION
@@ -1572,228 +1604,228 @@ tr:nth-child(2n+2) {
 
 @media screen and (min-width : 0px) and (max-width : 768px)  {	
 
-body {
-	padding-left:0px !important;
-	padding-right:0px !important;
-}
-
-.bottom_widget,
-.container.content {
-	padding:0 20px;
-}
-
-#header {
-	height:auto;
-	margin-bottom:20px;
-	width:auto;
-	padding:20px;
-	min-height:60px;
-}
-
-#subheader {
-	margin-top:-20px;
-	padding:20px;
-	margin-bottom:20px;
-	font-size:14px;
-	width:auto;
-}
-
-#subheader p,
-#subheader h1 {
-	line-height:1.3em;
-	font-size:22px;
-}
-
-nav#mainmenu {
-	height:inherit;
-	margin-bottom:10px;
-	min-height:inherit;
-}
-
-nav#mainmenu ul {
-	visibility:hidden;
-	display:none;
-}
-
-.tinynav {
-	display: block;
-	visibility:visible;
-	width: 100% !important;
-	margin:0;
-	height: auto;
-	padding: 8px 10px;
-	background: #262626;
-	color: #fff;
-	border:solid 1px #333;
-	font-family: Verdana, Times, serif; 
-	-webkit-border-radius: 0px;
-	-moz-border-radius: 0px;
-	border-radius: 0px;
-	word-wrap: break-word
-}
-
-.tinynav option {
-	padding:5px 0;
-	border-bottom:solid 1px #333;
-	word-wrap: break-word
-}
-
-#header select.select-menu {
-	width:100%;
-	margin-bottom:40px;
-}
-
-#blog,
-#sidebar, 
-#sidebar .pin-article,
-.wp-pagenavi,
-.pin-article { 
-	margin-bottom:20px;
-}
-
-.pin-article .container-fluid {
-	margin: 0;
-}
-
-.head_widget .pin-article .article,
-#sidebar .pin-article .article,
-.pin-article article.article,
-.pin-article .link a { 
-	padding:20px;
-}
-
-.entry-info {
-	width:auto;
-	background:none;
-}
-
-.entry-info .entry-date, 
-.entry-info .entry-comments,
-.entry-info .entry-audio, 
-.entry-info .entry-video,
-.entry-info .entry-standard,
-.entry-info .entry-article,
-.entry-info .entry-gallery {
-	display:block;
-	text-align:left;
-	width:inherit;
-	padding:inherit;
-	margin:5px auto;
-}
-
-.line {
-	border:none;
-	background:none;
-	margin:inherit;
-	padding:0;
-}
-
-.line:before {
-	background:none;
-}
-
-.news-widget { 
-	padding-bottom:0; 
-}
-
-.news-thumb {
-	width:100%;
-	float:none;
-}
-
-.news-details {
-	width:100%;
-	float:none;
-	text-align:left;
-}
-
-.news-details h5 { 
-	margin:20px 0 0 0; 
-}
-
-.children li {
-	margin-left:0;
-}
-
-.comment-avatar img {
-	margin-right:15px;
-}
-
-.comment-text {
-	margin:0;
-	float:none;
-	border:none;
-	padding:0;
-}
-
-#searchform {
-	margin:0 !important;
-}
-
-#searchform input[type=submit] , 
-.contact-form input[type=submit] ,
-.comment-form input[type=submit] {
-	margin: 20px 0 -20px 0;
-}
-
-p.form-submit {
-	margin:0 !important;
-}
-
-h3#reply-title, 
-h3.comments {
-	font-size:18px;
-}
-
-.gallery p{
-	margin:0;
-	display:none;
-	visibility:hidden;
-}
-
-#sidebar h3.title {
-	font-size:22px;
-	margin:0 0 15px 0;
-	line-height: inherit;
-}
-
-.span3.left-sidebar ,
-.span4.left-sidebar,
-.span3.right-sidebar ,
-.span4.right-sidebar,
-.span8.left-sidebar,
-.span8.right-sidebar {
-	float:none;
-}
-
-.socials {
-	float:none;
-}
-.socials a {
-	margin:0 0 20px 0;
-}
-
-.bottom_widget .widget-box {
-	padding:10px 0 20px 0;
-}
-.bottom_socials {
-	padding: 0 0 0 20px;
-}
-
-#footer .widget {
-	margin-right: inherit;
-}
-
-#footer .copyright {
-	padding:25px 0 25px 20px;
-	line-height:15px;
-	text-align:left;
-}
-
-#footer { 
-	padding:0;
-}
-
+	body {
+		padding-left:0px !important;
+		padding-right:0px !important;
+	}
+	
+	.bottom_widget,
+	.container.content {
+		padding:0 20px;
+	}
+	
+	#header {
+		height:auto;
+		margin-bottom:20px;
+		width:auto;
+		padding:20px;
+		min-height:60px;
+	}
+	
+	#subheader {
+		margin-top:-20px;
+		padding:20px;
+		margin-bottom:20px;
+		font-size:14px;
+		width:auto;
+	}
+	
+	#subheader p,
+	#subheader h1 {
+		line-height:1.3em;
+		font-size:22px;
+	}
+	
+	nav#mainmenu {
+		height:inherit;
+		margin-bottom:10px;
+		min-height:inherit;
+	}
+	
+	nav#mainmenu ul {
+		visibility:hidden;
+		display:none;
+	}
+	
+	.tinynav {
+		display: block;
+		visibility:visible;
+		width: 100% !important;
+		margin:0;
+		height: 40px;
+		padding: 8px 10px;
+		background: #262626;
+		color: #fff;
+		border:solid 1px #333;
+		font-family: Verdana, Times, serif; 
+		-webkit-border-radius: 0px;
+		-moz-border-radius: 0px;
+		border-radius: 0px;
+		word-wrap: break-word
+	}
+	
+	.tinynav option {
+		padding:5px 0;
+		border-bottom:solid 1px #333;
+		word-wrap: break-word
+	}
+	
+	#header select.select-menu {
+		width:100%;
+		margin-bottom:40px;
+	}
+	
+	#blog,
+	#sidebar, 
+	#sidebar .pin-article,
+	.wp-pagenavi,
+	.pin-article { 
+		margin-bottom:20px;
+	}
+	
+	.pin-article .container-fluid {
+		margin: 0;
+	}
+	
+	.head_widget .pin-article .article,
+	#sidebar .pin-article .article,
+	.pin-article article.article,
+	.pin-article .link a { 
+		padding:20px;
+	}
+	
+	.entry-info {
+		width:auto;
+		background:none;
+	}
+	
+	.entry-info .entry-date, 
+	.entry-info .entry-comments,
+	.entry-info .entry-audio, 
+	.entry-info .entry-video,
+	.entry-info .entry-standard,
+	.entry-info .entry-article,
+	.entry-info .entry-gallery {
+		display:block;
+		text-align:left;
+		width:inherit;
+		padding:inherit;
+		margin:5px auto;
+	}
+	
+	.line {
+		border:none;
+		background:none;
+		margin:inherit;
+		padding:0;
+	}
+	
+	.line:before {
+		background:none;
+	}
+	
+	.news-widget { 
+		padding-bottom:0; 
+	}
+	
+	.news-thumb {
+		width:100%;
+		float:none;
+	}
+	
+	.news-details {
+		width:100%;
+		float:none;
+		text-align:left;
+	}
+	
+	.news-details h5 { 
+		margin:20px 0 0 0; 
+	}
+	
+	.children li {
+		margin-left:0;
+	}
+	
+	.comment-avatar img {
+		margin-right:15px;
+	}
+	
+	.comment-text {
+		margin:0;
+		float:none;
+		border:none;
+		padding:0;
+	}
+	
+	#searchform {
+		margin:0 !important;
+	}
+	
+	#searchform input[type=submit] , 
+	.contact-form input[type=submit] ,
+	.comment-form input[type=submit] {
+		margin: 20px 0 -20px 0;
+	}
+	
+	p.form-submit {
+		margin:0 !important;
+	}
+	
+	h3#reply-title, 
+	h3.comments {
+		font-size:18px;
+	}
+	
+	.gallery p{
+		margin:0;
+		display:none;
+		visibility:hidden;
+	}
+	
+	#sidebar h3.title {
+		font-size:22px;
+		margin:0 0 15px 0;
+		line-height: inherit;
+	}
+	
+	.span3.left-sidebar ,
+	.span4.left-sidebar,
+	.span3.right-sidebar ,
+	.span4.right-sidebar,
+	.span8.left-sidebar,
+	.span8.right-sidebar {
+		float:none;
+	}
+	
+	.socials {
+		float:none;
+	}
+	.socials a {
+		margin:0 0 20px 0;
+	}
+	
+	.bottom_widget .widget-box {
+		padding:10px 0 20px 0;
+	}
+	.bottom_socials {
+		padding: 0 0 0 20px;
+	}
+	
+	#footer .widget {
+		margin-right: inherit;
+	}
+	
+	#footer .copyright {
+		padding:25px 0 25px 20px;
+		line-height:15px;
+		text-align:left;
+	}
+	
+	#footer { 
+		padding:0;
+	}
+	
 }
 @media screen and (min-width : 0px) and (max-width : 320px) {	
 

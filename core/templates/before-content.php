@@ -19,16 +19,16 @@ function novalite_before_content_function() {
     
         <div class="entry-info">
        
-            <div class="entry-date"><strong> <?php _e( 'Posted on:','wip'); ?> </strong> <?php echo get_the_date(); ?> <span class="sep">/</span> </div>
+            <div class="entry-date"><strong> <?php _e( 'Posted on:','novalite'); ?> </strong> <?php echo get_the_date(); ?> <span class="sep">/</span> </div>
             
-            <?php if  ( ( comments_open() ) && (novalite_setting('wip_view_comments') == "on" ) ) : ?>
-                <div class="entry-comments"> <strong><?php _e( 'Comments: ','wip'); ?></strong>
-                    <?php echo comments_number( '<a href="'.get_permalink($post->ID).'#respond">'.__( "No comments","wip").'</a>', '<a href="'.get_permalink($post->ID).'#comments">1 '.__( "comment","wip").'</a>', '<a href="'.get_permalink($post->ID).'#comments">% '.__( "comments","wip").'</a>' ); ?>
+            <?php if  ( ( comments_open() ) && (novalite_setting('novalite_view_comments') == "on" ) ) : ?>
+                <div class="entry-comments"> <strong><?php _e( 'Comments: ','novalite'); ?></strong>
+                    <?php echo comments_number( '<a href="'.get_permalink($post->ID).'#respond">'.__( "No comments","novalite").'</a>', '<a href="'.get_permalink($post->ID).'#comments">1 '.__( "comment","novalite").'</a>', '<a href="'.get_permalink($post->ID).'#comments">% '.__( "comments","novalite").'</a>' ); ?>
                 <span class="sep">/</span> </div> 
             <?php endif; ?>
             
             <div class="entry-standard"> 
-            	<strong> <?php _e( 'Categories: ','wip'); echo the_category(', '); ?> </strong>
+            	<strong> <?php _e( 'Categories: ','novalite'); echo the_category(', '); ?> </strong>
             </div>
 
         </div>

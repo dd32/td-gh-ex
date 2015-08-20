@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="span12">
         
-                        <h1><?php _e( '<span>Search </span> results for', 'wip' ) ?> <strong><?php echo $s; ?> </strong></h1>
+                        <h1><?php _e( '<span>Search </span> results for', 'novalite' ) ?> <strong><?php echo $s; ?> </strong></h1>
                     
                     </div>
                 </div>
@@ -39,15 +39,15 @@
                         <div class="pin-article <?php echo novalite_template('span'); ?>">
                             <article class="article">
         
-                            <h1 class="title"><?php _e( 'Not Found',"wip" ) ?></h1>
+                            <h1 class="title"><?php _e( 'Not Found',"novalite" ) ?></h1>
                                 
-                            <p> <?php _e( 'You can repeat your search with the following form.',"wip" ) ?> </p>
+                            <p> <?php _e( 'You can repeat your search with the following form.',"novalite" ) ?> </p>
                         
                             <section class="contact-form searchform">
                                 <form method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
                                      <div>
-                                     <input type="text" placeholder="<?php _e( 'Search here', 'wip' ) ?>"  name="s" id="s" class="input-search"/>
-                                     <input type="submit" id="searchsubmit" class="button-search" value="<?php _e( 'Search', 'wip' ) ?>" />
+                                     <input type="text" placeholder="<?php _e( 'Search here', 'novalite' ) ?>"  name="s" id="s" class="input-search"/>
+                                     <input type="submit" id="searchsubmit" class="button-search" value="<?php _e( 'Search', 'novalite' ) ?>" />
                                      </div>
                                 </form>
                             <div class="clear"></div>  
@@ -79,7 +79,7 @@
                     } else { 
                             
                    		the_widget( 'WP_Widget_Calendar',
-                    	array("title"=> __('Calendar','wip')),
+                    	array("title"=> __('Calendar','novalite')),
                         	array('before_widget' => '<div class="pin-article span4"><div class="article">',
 								  'after_widget'  => '</div></div>',
 								  'before_title'  => '<h3 class="title">',
@@ -88,7 +88,7 @@
                         );
             
                         the_widget( 'WP_Widget_Archives','',
-                    	array("title"=> __('Archives','wip')),
+                    	array("title"=> __('Archives','novalite')),
                         	array('before_widget' => '<div class="pin-article span4"><div class="article">',
 								  'after_widget'  => '</div></div>',
 								  'before_title'  => '<h3 class="title">',
@@ -97,7 +97,7 @@
                         );
             
                         the_widget( 'WP_Widget_Categories','',
-                    	array("title"=> __('Categories','wip')),
+                    	array("title"=> __('Categories','novalite')),
                         	array('before_widget' => '<div class="pin-article span4"><div class="article">',
 								  'after_widget'  => '</div></div>',
 								  'before_title'  => '<h3 class="title">',

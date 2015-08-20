@@ -12,13 +12,13 @@
 			<div class="span12 copyright" >
             
                 <p>
-                    <?php if (novalite_setting('wip_copyright_text')): ?>
-                       <?php echo stripslashes(novalite_setting('wip_copyright_text')); ?>
+                    <?php if (novalite_setting('novalite_copyright_text')): ?>
+                       <?php echo stripslashes(novalite_setting('novalite_copyright_text')); ?>
                     <?php else: ?>
-                      <?php _e('Copyright','wip'); ?> <?php echo get_bloginfo("name"); ?> <?php echo date("Y"); ?> 
+                      <?php _e('Copyright','novalite'); ?> <?php echo get_bloginfo("name"); ?> <?php echo date("Y"); ?> 
                     <?php endif; ?> 
-                    | <?php _e('Theme by','wip'); ?> <a href="http://www.themeinprogress.com/" target="_blank">Theme in Progress</a> |
-                    <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'wip' ) ); ?>" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'wip' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'wip' ), 'WordPress' ); ?></a>
+                    | <?php _e('Theme by','novalite'); ?> <a href="http://www.themeinprogress.com/" target="_blank">Theme in Progress</a> |
+                    <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'novalite' ) ); ?>" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'novalite' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'novalite' ), 'WordPress' ); ?></a>
                 
                 </p>
 			

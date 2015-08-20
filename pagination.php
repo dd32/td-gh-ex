@@ -44,7 +44,7 @@ if ( (is_category()) || (is_search()) || (is_tax()) ) {
 	
 } else if (is_page() ) { 
 
-	$args = array('post_type' => 'post', 'paged' => wip_paged(), 'posts_per_page' => get_option('posts_per_page'));
+	$args = array('post_type' => 'post', 'paged' => novalite_paged(), 'posts_per_page' => get_option('posts_per_page'));
 	$query = new WP_Query( $args );
 	
     $paginate_links = paginate_links( array(
@@ -53,7 +53,7 @@ if ( (is_category()) || (is_search()) || (is_tax()) ) {
 	'format' => '?paged=%#%',
     'prev_text'    => '&laquo;',
     'next_text'    => '&raquo;',
-	'current' => wip_paged(),
+	'current' => novalite_paged(),
 	'total' => $query->max_num_pages ,
 
 	));
