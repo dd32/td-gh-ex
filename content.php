@@ -44,7 +44,7 @@
 		if ( is_sticky() ) {?>
 		<span class="sticky-post">
 			<i class="fa fa-thumb-tack"></i>
-			<?php _e( ' Sticked', 'accent' );?>
+			<?php _e( ' Sticked', 'atomic' );?>
 		</span>
 		<?php }
 	?>
