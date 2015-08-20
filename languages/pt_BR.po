@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-09 21:35+0545\n"
-"PO-Revision-Date: 2015-08-09 21:35+0545\n"
+"POT-Creation-Date: 2015-08-20 18:51+0545\n"
+"PO-Revision-Date: 2015-08-20 18:51+0545\n"
 "Last-Translator: gatinhobranco <giovanna@chinellato.com.br>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: pt_BR\n"
@@ -64,19 +64,19 @@ msgstr ""
 "Esse post é protegido por senha. Digite a senha para ver os comentários."
 
 # @ simplecatch
-#: comments.php:29 content.php:46 functions/simplecatch_functions.php:954
+#: comments.php:29 content.php:46 functions/simplecatch_functions.php:923
 #: image.php:48 page-blog.php:69
 msgid "No Comments"
 msgstr "Nenhum comentário"
 
 # @ simplecatch
-#: comments.php:29 content.php:46 functions/simplecatch_functions.php:954
+#: comments.php:29 content.php:46 functions/simplecatch_functions.php:923
 #: image.php:48 page-blog.php:69
 msgid "1 Comment"
 msgstr "1 Comentário"
 
 # @ simplecatch
-#: comments.php:29 content.php:46 functions/simplecatch_functions.php:954
+#: comments.php:29 content.php:46 functions/simplecatch_functions.php:923
 #: image.php:48 page-blog.php:69
 msgid "% Comments"
 msgstr "% Comentários"
@@ -87,7 +87,7 @@ msgid "Comments are closed."
 msgstr "Comentários desativados."
 
 # @ simplecatch
-#: content.php:44 functions/simplecatch_functions.php:952 image.php:46
+#: content.php:44 functions/simplecatch_functions.php:921 image.php:46
 #: page-blog.php:67
 msgid "By"
 msgstr "Por"
@@ -117,7 +117,7 @@ msgid "All Rights Reserved."
 msgstr "Todos os direitos reservados."
 
 # @ simplecatch
-#: functions.php:103
+#: functions.php:110
 msgid "Primary Menu"
 msgstr "Menu Principal"
 
@@ -139,7 +139,7 @@ msgstr "Opções do Tema por"
 
 # @ simplecatch
 #: functions/panel/theme_options.php:88
-#: functions/simplecatch_functions.php:781
+#: functions/simplecatch_functions.php:750
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
@@ -690,7 +690,7 @@ msgstr "MySpace"
 
 # @ simplecatch
 #: functions/panel/theme_options.php:695
-#: functions/simplecatch_functions.php:781
+#: functions/simplecatch_functions.php:750
 msgid "WordPress"
 msgstr "WordPress"
 
@@ -751,7 +751,7 @@ msgstr "Soundcloud"
 
 # @ simplecatch
 #: functions/panel/theme_options.php:755
-#: functions/simplecatch_functions.php:1038
+#: functions/simplecatch_functions.php:1007
 msgid "Email"
 msgstr "Email"
 
@@ -789,64 +789,58 @@ msgstr ""
 "carregar com o rodapé."
 
 # @ simplecatch
-#: functions/simplecatch_functions.php:110
-#, php-format
-msgid "Page %s"
-msgstr "Página %s"
-
-# @ simplecatch
-#: functions/simplecatch_functions.php:140 searchform.php:17
+#: functions/simplecatch_functions.php:109 searchform.php:17
 #, php-format
 msgid "%s"
 msgstr "%s"
 
 # @ simplecatch
-#: functions/simplecatch_functions.php:781
+#: functions/simplecatch_functions.php:750
 msgid "Powered By:"
 msgstr "Por:"
 
 # @ simplecatch
-#: functions/simplecatch_functions.php:781
+#: functions/simplecatch_functions.php:750
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
 # @ simplecatch
-#: functions/simplecatch_functions.php:781
+#: functions/simplecatch_functions.php:750
 msgid "Theme:"
 msgstr "Tema:"
 
 # @ simplecatch
-#: functions/simplecatch_functions.php:781
+#: functions/simplecatch_functions.php:750
 msgid "Simple Catch"
 msgstr "Simple Catch"
 
 # @ simplecatch
-#: functions/simplecatch_functions.php:968
+#: functions/simplecatch_functions.php:937
 msgid "Categories: "
 msgstr "Categorias:"
 
 # @ simplecatch
-#: functions/simplecatch_functions.php:1037
+#: functions/simplecatch_functions.php:1006
 msgid "Name"
 msgstr "Nome"
 
 # @ simplecatch
-#: functions/simplecatch_functions.php:1039
+#: functions/simplecatch_functions.php:1008
 msgid "Website"
 msgstr "Site"
 
 # @ simplecatch
-#: functions/simplecatch_functions.php:1075
+#: functions/simplecatch_functions.php:1044
 msgid "ID"
 msgstr "ID"
 
 # @ simplecatch
-#: functions/simplecatch_functions.php:1170 page-blog.php:97
+#: functions/simplecatch_functions.php:1139 page-blog.php:97
 msgid "Previous"
 msgstr "Anteriores"
 
 # @ simplecatch
-#: functions/simplecatch_functions.php:1171 page-blog.php:98
+#: functions/simplecatch_functions.php:1140 page-blog.php:98
 msgid "Next"
 msgstr "Próximos"
 
@@ -855,15 +849,10 @@ msgstr "Próximos"
 msgid "Select Sidebar layout"
 msgstr "Selecione o Layout da sua Barra Lateral"
 
-# @ simplecatch
 #: functions/simplecatch_metabox.php:33
-msgid "Default Layout Set in"
-msgstr "Layout Padrão Selecionado"
-
-# @ simplecatch
-#: functions/simplecatch_metabox.php:33
-msgid "Theme Settings"
-msgstr "Configurações do Tema"
+#, php-format
+msgid "Default Layout Set in <a href=\"%s\">Theme Settings</a>"
+msgstr ""
 
 # @ simplecatch
 #: functions/simplecatch_metabox.php:39
@@ -990,6 +979,18 @@ msgstr "Tente outras palavras‐chave"
 #: search.php:39
 msgid "Try more general keywords"
 msgstr "Tente termos menos específicos"
+
+# @ simplecatch
+#~ msgid "Page %s"
+#~ msgstr "Página %s"
+
+# @ simplecatch
+#~ msgid "Default Layout Set in"
+#~ msgstr "Layout Padrão Selecionado"
+
+# @ simplecatch
+#~ msgid "Theme Settings"
+#~ msgstr "Configurações do Tema"
 
 # @ simplecatch
 #~ msgid "Displays Custom Tag Cloud designed for Simple Catch Theme."

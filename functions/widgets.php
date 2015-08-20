@@ -9,9 +9,9 @@ function simplecatch_widgets_init() {
 	register_widget( 'simplecatch_adspace_widget' );
 	
 	register_sidebar( array( 
-		'name'          => __( 'sidebar', 'simplecatch' ),
+		'name'          => __( 'sidebar', 'simple-catch' ),
 		'id'            => 'sidebar',
-		'description'   => __( 'sidebar', 'simplecatch' ),
+		'description'   => __( 'sidebar', 'simple-catch' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3>',
@@ -38,8 +38,8 @@ class CustomTagWidget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'simplecatch_tag_widget', // Base ID
-			__( 'CT: Tag Clouds', 'simplecatch' ), // Name
-			array( 'description' => __( 'Displays Custom Tag Cloud designed for Simple Catch Theme', 'simplecatch' ) ) // Args
+			__( 'CT: Tag Clouds', 'simple-catch' ), // Name
+			array( 'description' => __( 'Displays Custom Tag Cloud designed for Simple Catch Theme', 'simple-catch' ) ) // Args
 		);
 	}
 		
@@ -121,8 +121,8 @@ class simplecatch_social_widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'simplecatch_social_widget', // Base ID
-			__( 'CT: Social Icons', 'simplecatch' ), // Name
-			array( 'description' => __( 'Displays Social Icons added from Theme Options Panel', 'simplecatch' ) ) // Args
+			__( 'CT: Social Icons', 'simple-catch' ), // Name
+			array( 'description' => __( 'Displays Social Icons added from Theme Options Panel', 'simple-catch' ) ) // Args
 		);
 	}
 	
@@ -205,8 +205,8 @@ class simplecatch_adspace_widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'widget_simplecatch_adspace_widget', // Base ID
-			__( 'CT: Advertisement', 'simplecatch' ), // Name
-			array( 'description' => __( 'Use this widget to add any type of Advertisement as a widget', 'simplecatch' ) ) // Args
+			__( 'CT: Advertisement', 'simple-catch' ), // Name
+			array( 'description' => __( 'Use this widget to add any type of Advertisement as a widget', 'simple-catch' ) ) // Args
 		);
 	}
 
@@ -224,29 +224,29 @@ class simplecatch_adspace_widget extends WP_Widget {
 		$alt = esc_attr( $instance[ 'alt' ] );
 		?>
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title (optional):','simplecatch'); ?></label>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title (optional):','simple-catch'); ?></label>
             <input type="text" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title; ?>" class="widefat" id="<?php echo $this->get_field_id('title'); ?>" />
         </p>
         <?php if ( current_user_can( 'unfiltered_html' ) ) : // Only show it to users who can edit it ?>
             <p>
-                <label for="<?php echo $this->get_field_id('adcode'); ?>"><?php _e('Advertisement Code:','simplecatch'); ?></label>
+                <label for="<?php echo $this->get_field_id('adcode'); ?>"><?php _e('Advertisement Code:','simple-catch'); ?></label>
                 <textarea name="<?php echo $this->get_field_name('adcode'); ?>" class="widefat" id="<?php echo $this->get_field_id('adcode'); ?>"><?php echo $adcode; ?></textarea>
             </p>
             <p><strong>or</strong></p>
         <?php endif; ?>
         <p>
-            <label for="<?php echo $this->get_field_id('image'); ?>"><?php _e('Image Url:','simplecatch'); ?></label>
+            <label for="<?php echo $this->get_field_id('image'); ?>"><?php _e('Image Url:','simple-catch'); ?></label>
         <input type="text" name="<?php echo $this->get_field_name('image'); ?>" value="<?php echo $image; ?>" class="widefat" id="<?php echo $this->get_field_id('image'); ?>" />
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('href'); ?>"><?php _e('Link URL:','simplecatch'); ?></label>
+            <label for="<?php echo $this->get_field_id('href'); ?>"><?php _e('Link URL:','simple-catch'); ?></label>
             <input type="text" name="<?php echo $this->get_field_name('href'); ?>" value="<?php echo esc_url( $href ); ?>" class="widefat" id="<?php echo $this->get_field_id('href'); ?>" />
         </p>
 		<p>
-			<input class="checkbox" type="checkbox" <?php echo $target; ?> id="<?php echo $this->get_field_id('target'); ?>" name="<?php echo $this->get_field_name('target'); ?>" /> <label for="<?php echo $this->get_field_id('target'); ?>"><?php _e( 'Open Link in New Window', 'simplecatch' ); ?></label>
+			<input class="checkbox" type="checkbox" <?php echo $target; ?> id="<?php echo $this->get_field_id('target'); ?>" name="<?php echo $this->get_field_name('target'); ?>" /> <label for="<?php echo $this->get_field_id('target'); ?>"><?php _e( 'Open Link in New Window', 'simple-catch' ); ?></label>
 		</p>        
         <p>
-            <label for="<?php echo $this->get_field_id('alt'); ?>"><?php _e('Alt text:','simplecatch'); ?></label>
+            <label for="<?php echo $this->get_field_id('alt'); ?>"><?php _e('Alt text:','simple-catch'); ?></label>
             <input type="text" name="<?php echo $this->get_field_name('alt'); ?>" value="<?php echo $alt; ?>" class="widefat" id="<?php echo $this->get_field_id('alt'); ?>" />
         </p>
         <?php
@@ -309,7 +309,7 @@ class simplecatch_adspace_widget extends WP_Widget {
         	echo '<a href="'.$href.'" target="'.$base.'"><img src="'. $image.'" alt="'.$alt.'" /></a>';
 		}
 		else {
-			_e( 'Add Advertisement Code or Image URL', 'simplecatch' );
+			_e( 'Add Advertisement Code or Image URL', 'simple-catch' );
 		}
 		echo $after_widget;
 	}

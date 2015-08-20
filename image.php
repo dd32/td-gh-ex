@@ -43,9 +43,9 @@
 
                     <ul class="post-by">
                         <li class="no-padding-left"><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>" 
-                            title="<?php echo esc_attr( get_the_author_meta( 'display_name' ) ); ?>"><?php _e( 'By', 'simplecatch' ); ?>&nbsp;<?php the_author_meta( 'display_name' );?></a></li>
+                            title="<?php echo esc_attr( get_the_author_meta( 'display_name' ) ); ?>"><?php _e( 'By', 'simple-catch' ); ?>&nbsp;<?php the_author_meta( 'display_name' );?></a></li>
                         <li><?php $simplecatch_date_format = get_option( 'date_format' ); the_time( $simplecatch_date_format ); ?></li>
-                        <li><?php comments_popup_link( __( 'No Comments', 'simplecatch' ), __( '1 Comment', 'simplecatch' ), __( '% Comments', 'simplecatch' ) ); ?></li>
+                        <li><?php comments_popup_link( __( 'No Comments', 'simple-catch' ), __( '1 Comment', 'simple-catch' ), __( '% Comments', 'simple-catch' ) ); ?></li>
                     </ul>
                 	<div class="entry-content">
 						<div class="entry-attachment">
@@ -103,8 +103,8 @@
 
 					</div><!-- .entry-content -->
 					<ul id="nav-image" class="default-wp-page">            
-						<li class="previous"><?php previous_image_link( false, __( 'Previous Image' , 'simplecatch' ) ); ?></li>
-						<li class="next"><?php next_image_link( false, __( 'Next Image' , 'simplecatch' ) ); ?></li>
+						<li class="previous"><?php previous_image_link( false, __( 'Previous Image' , 'simple-catch' ) ); ?></li>
+						<li class="next"><?php next_image_link( false, __( 'Next Image' , 'simple-catch' ) ); ?></li>
 					</ul><!-- #nav-image -->
 				</div><!-- .post -->
 

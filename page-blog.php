@@ -44,7 +44,7 @@ get_header();
                 <?php //If category has thumbnail it displays thumbnail and excerpt of content else excerpt only 
                 if ( has_post_thumbnail() ) : ?>
                     <div class="col3 post-img">
-                        <a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'simplecatch' ), the_title_attribute( 'echo=0' ) ); ?>"><?php the_post_thumbnail( 'featured' ); ?></a>
+                        <a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'simple-catch' ), the_title_attribute( 'echo=0' ) ); ?>"><?php the_post_thumbnail( 'featured' ); ?></a>
                     </div> <!-- .col3 -->  
                     <?php if( $themeoption_layout == 'no-sidebar-full-width' ) {
                         echo '<div class="col9">'; 
@@ -61,12 +61,12 @@ get_header();
                     }
                 endif; ?> 
                     
-                    <h2 class="entry-title"><a href="<?php the_permalink() ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'simplecatch' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark" ><?php the_title(); ?></a></h2>
+                    <h2 class="entry-title"><a href="<?php the_permalink() ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'simple-catch' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark" ><?php the_title(); ?></a></h2>
                 
                     <ul class="post-by">
-                        <li class="no-padding-left"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" title="<?php echo esc_attr(get_the_author_meta( 'display_name' ) ); ?>"><?php _e( 'By', 'simplecatch' ); ?>&nbsp;<?php the_author_meta( 'display_name' );?></a></li>
+                        <li class="no-padding-left"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" title="<?php echo esc_attr(get_the_author_meta( 'display_name' ) ); ?>"><?php _e( 'By', 'simple-catch' ); ?>&nbsp;<?php the_author_meta( 'display_name' );?></a></li>
                         <li><?php $simplecatch_date_format = get_option( 'date_format' ); the_time( $simplecatch_date_format ); ?></li>
-                        <li class="last"><?php comments_popup_link( __( 'No Comments', 'simplecatch' ), __( '1 Comment', 'simplecatch' ), __( '% Comments', 'simplecatch' ) ); ?></li>
+                        <li class="last"><?php comments_popup_link( __( 'No Comments', 'simple-catch' ), __( '1 Comment', 'simple-catch' ), __( '% Comments', 'simple-catch' ) ); ?></li>
                     </ul>
                         
                     <?php the_excerpt(); ?>
@@ -94,8 +94,8 @@ get_header();
             if ( $wp_query->max_num_pages > 1 ) : 
         ?>
                 <ul class="default-wp-page">
-                    <li class="previous"><?php next_posts_link( __( 'Previous', 'simplecatch' ) ); ?></li>
-                    <li class="next"><?php previous_posts_link( __( 'Next', 'simplecatch' ) ); ?></li>
+                    <li class="previous"><?php next_posts_link( __( 'Previous', 'simple-catch' ) ); ?></li>
+                    <li class="next"><?php previous_posts_link( __( 'Next', 'simple-catch' ) ); ?></li>
                 </ul>
             <?php endif;
         endif; 
@@ -104,8 +104,8 @@ get_header();
 		<?php else : ?>
         
             <div class="post">
-                <h2><?php _e( 'Not found', 'simplecatch' ); ?></h2>
-                <p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'simplecatch' ); ?></p>
+                <h2><?php _e( 'Not found', 'simple-catch' ); ?></h2>
+                <p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'simple-catch' ); ?></p>
                 <?php get_search_form(); ?>
             </div><!-- .post -->
 

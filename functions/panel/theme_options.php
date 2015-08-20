@@ -36,8 +36,8 @@ add_action('admin_print_styles-appearance_page_theme_options', 'simplecatch_admi
 function simplecatch_options_menu() {
 	
 	add_theme_page( 
-        __( 'Theme Options', 'simplecatch' ),           // Name of page
-        __( 'Theme Options', 'simplecatch' ),           // Label in menu
+        __( 'Theme Options', 'simple-catch' ),           // Name of page
+        __( 'Theme Options', 'simple-catch' ),           // Label in menu
         'edit_theme_options',                           // Capability required
         'theme_options',                                // Menu slug, used to uniquely identify the page
         'simplecatch_theme_options_do_page'             // Function that renders the options page
@@ -77,31 +77,31 @@ function simplecatch_theme_options_do_page() {
                 $options = $simplecatch_options_settings;				
             ?>   
             <?php if (false !== $_REQUEST['settings-updated']) : ?>
-            	<div class="updated fade"><p><strong><?php _e('Options Saved', 'simplecatch'); ?></strong></p></div>
+            	<div class="updated fade"><p><strong><?php _e('Options Saved', 'simple-catch'); ?></strong></p></div>
             <?php endif; ?>
 
 			<div id="theme-option-header">
             
                 <div id="theme-option-title">
-                    <h2 class="title"><?php _e( 'Theme Options By', 'simplecatch' ); ?></h2>
+                    <h2 class="title"><?php _e( 'Theme Options By', 'simple-catch' ); ?></h2>
                     <h2 class="logo">
-                        <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'simplecatch' ) ); ?>" title="<?php esc_attr_e( 'Catch Themes', 'simplecatch' ); ?>" target="_blank">
-                            <img src="<?php echo get_template_directory_uri().'/functions/panel/images/catch-themes.png'; ?>" alt="<?php _e( 'Catch Themes', 'simplecatch' ); ?>" />
+                        <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'simple-catch' ) ); ?>" title="<?php esc_attr_e( 'Catch Themes', 'simple-catch' ); ?>" target="_blank">
+                            <img src="<?php echo get_template_directory_uri().'/functions/panel/images/catch-themes.png'; ?>" alt="<?php _e( 'Catch Themes', 'simple-catch' ); ?>" />
                         </a>
                     </h2>
                 </div><!-- #theme-option-title -->
                 <div id="upgradepro">
-                	<a class="button" href="<?php echo esc_url(__('http://catchthemes.com/themes/simple-catch-pro/','simplecatch')); ?>" title="<?php esc_attr_e('Upgrade to Simple Catch Pro', 'simplecatch'); ?>" target="_blank"><?php printf(__('Upgrade to Simple Catch Pro','simplecatch')); ?></a>
+                	<a class="button" href="<?php echo esc_url(__('http://catchthemes.com/themes/simple-catch-pro/','simple-catch')); ?>" title="<?php esc_attr_e('Upgrade to Simple Catch Pro', 'simple-catch'); ?>" target="_blank"><?php printf(__('Upgrade to Simple Catch Pro','simple-catch')); ?></a>
                	</div><!-- #upgradepro -->
             
                 <div id="theme-support">
                     <ul>
-                    	<li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/donate/','simplecatch')); ?>" title="<?php esc_attr_e('Donate', 'simplecatch'); ?>" target="_blank"><?php printf(__('Donate','simplecatch')); ?></a></li>
-                        <li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/support/','simplecatch')); ?>" title="<?php esc_attr_e('Support', 'simplecatch'); ?>" target="_blank"><?php printf(__('Support','simplecatch')); ?></a></li>
-                        <li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/theme-instructions/simple-catch/','simplecatch')); ?>" title="<?php esc_attr_e('Theme Instruction', 'simplecatch'); ?>" target="_blank"><?php printf(__('Theme Instruction','simplecatch')); ?></a></li>
-                        <li><a class="button" href="<?php echo esc_url(__('https://www.facebook.com/catchthemes/','simplecatch')); ?>" title="<?php esc_attr_e('Like Catch Themes on Facebook', 'simplecatch'); ?>" target="_blank"><?php printf(__('Facebook','simplecatch')); ?></a></li>
-                        <li><a class="button" href="<?php echo esc_url(__('https://twitter.com/catchthemes/','simplecatch')); ?>" title="<?php esc_attr_e('Follow Catch Themes on Twitter', 'simplecatch'); ?>" target="_blank"><?php printf(__('Twitter','simplecatch')); ?></a></li>
-                        <li><a class="button" href="<?php echo esc_url(__('http://wordpress.org/support/view/theme-reviews/simple-catch','simplecatch')); ?>" title="<?php esc_attr_e('Rate us 5 Star on WordPress', 'simplecatch'); ?>" target="_blank"><?php printf(__('5 Star Rating','simplecatch')); ?></a></li>
+                    	<li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/donate/','simple-catch')); ?>" title="<?php esc_attr_e('Donate', 'simple-catch'); ?>" target="_blank"><?php printf(__('Donate','simple-catch')); ?></a></li>
+                        <li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/support/','simple-catch')); ?>" title="<?php esc_attr_e('Support', 'simple-catch'); ?>" target="_blank"><?php printf(__('Support','simple-catch')); ?></a></li>
+                        <li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/theme-instructions/simple-catch/','simple-catch')); ?>" title="<?php esc_attr_e('Theme Instruction', 'simple-catch'); ?>" target="_blank"><?php printf(__('Theme Instruction','simple-catch')); ?></a></li>
+                        <li><a class="button" href="<?php echo esc_url(__('https://www.facebook.com/catchthemes/','simple-catch')); ?>" title="<?php esc_attr_e('Like Catch Themes on Facebook', 'simple-catch'); ?>" target="_blank"><?php printf(__('Facebook','simple-catch')); ?></a></li>
+                        <li><a class="button" href="<?php echo esc_url(__('https://twitter.com/catchthemes/','simple-catch')); ?>" title="<?php esc_attr_e('Follow Catch Themes on Twitter', 'simple-catch'); ?>" target="_blank"><?php printf(__('Twitter','simple-catch')); ?></a></li>
+                        <li><a class="button" href="<?php echo esc_url(__('http://wordpress.org/support/view/theme-reviews/simple-catch','simple-catch')); ?>" title="<?php esc_attr_e('Rate us 5 Star on WordPress', 'simple-catch'); ?>" target="_blank"><?php printf(__('5 Star Rating','simple-catch')); ?></a></li>
                    	</ul>
                 </div><!-- #theme-support --> 
                  
@@ -110,32 +110,32 @@ function simplecatch_theme_options_do_page() {
                      
             <div id="simplecatch_ad_tabs">
                 <ul class="tabNavigation" id="mainNav">
-                    <li><a href="#themeoptions"><?php _e( 'Theme Options', 'simplecatch' );?></a></li>
-                    <li><a href="#postslider"><?php _e( 'Featured Post Slider', 'simplecatch' );?></a></li>
-                    <li><a href="#sociallinks"><?php _e( 'Social Links', 'simplecatch' );?></a></li>
-                    <li><a href="#webmaster"><?php _e( 'Webmaster Tools', 'simplecatch' );?></a></li>
+                    <li><a href="#themeoptions"><?php _e( 'Theme Options', 'simple-catch' );?></a></li>
+                    <li><a href="#postslider"><?php _e( 'Featured Post Slider', 'simple-catch' );?></a></li>
+                    <li><a href="#sociallinks"><?php _e( 'Social Links', 'simple-catch' );?></a></li>
+                    <li><a href="#webmaster"><?php _e( 'Webmaster Tools', 'simple-catch' );?></a></li>
                 </ul><!-- .tabsNavigation #mainNav -->
                    
                 <!-- Option for Theme Options -->
                 <div id="themeoptions">
                     <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Logo Options', 'simplecatch' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Logo Options', 'simple-catch' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">
                                 <tbody>
                                     <tr>                            
-                                        <th scope="row"><?php _e( 'Header logo url:', 'simplecatch' ); ?></th>
+                                        <th scope="row"><?php _e( 'Header logo url:', 'simple-catch' ); ?></th>
                                         <td>
                                             <?php  if ( !empty ( $options[ 'featured_logo_header' ] ) ) { ?>
                                                 <input class="upload-url" size="65" type="text" name="simplecatch_options[featured_logo_header]" value="<?php echo esc_url( $options[ 'featured_logo_header' ] ); ?>" class="upload" />
                                             <?php } else { ?>
                                                 <input size="65" type="text" name="simplecatch_options[featured_logo_header]" value="<?php echo get_template_directory_uri(); ?>/images/logo-head.png" alt="logo" />
                                             <?php }  ?>                            
-                                                <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Header Logo','simplecatch' );?>" />  
+                                                <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Header Logo','simple-catch' );?>" />  
                                         </td>
                                     </tr> 
                                     <tr>
-                                        <th scope="row"><?php _e( 'Preview: ', 'simplecatch' ); ?></th>
+                                        <th scope="row"><?php _e( 'Preview: ', 'simple-catch' ); ?></th>
                                         <td>                     
                                             <?php 
                                                 if ( !empty( $options[ 'featured_logo_header' ] ) ) { 
@@ -147,35 +147,35 @@ function simplecatch_theme_options_do_page() {
                                          </td>
                                     </tr>
                                    	<tr>                            
-                                        <th scope="row"><?php _e( 'Disable Header Logo?', 'simplecatch' ); ?></th>
+                                        <th scope="row"><?php _e( 'Disable Header Logo?', 'simple-catch' ); ?></th>
                                          <input type='hidden' value='0' name='simplecatch_options[remove_header_logo]'>
-                                        <td><input type="checkbox" id="headerlogo" name="simplecatch_options[remove_header_logo]" value="1" <?php checked( '1', $options['remove_header_logo'] ); ?> /> <?php _e( 'Check to Disable.', 'simplecatch' ); ?></td>
+                                        <td><input type="checkbox" id="headerlogo" name="simplecatch_options[remove_header_logo]" value="1" <?php checked( '1', $options['remove_header_logo'] ); ?> /> <?php _e( 'Check to Disable.', 'simple-catch' ); ?></td>
                                     </tr>
                                     
                                                                         
                                     <tr>                            
-                                        <th scope="row"><?php _e( 'Disable Site Title?', 'simplecatch' ); ?></th>
+                                        <th scope="row"><?php _e( 'Disable Site Title?', 'simple-catch' ); ?></th>
                                         <input type='hidden' value='0' name='simplecatch_options[remove_site_title]'>
-                                        <td><input type="checkbox" id="headerlogo" name="simplecatch_options[remove_site_title]" value="1" <?php checked( '1', $options['remove_site_title'] ); ?> /> <?php _e( 'Check to Disable.', 'simplecatch' ); ?></td>
+                                        <td><input type="checkbox" id="headerlogo" name="simplecatch_options[remove_site_title]" value="1" <?php checked( '1', $options['remove_site_title'] ); ?> /> <?php _e( 'Check to Disable.', 'simple-catch' ); ?></td>
                                     </tr>  
                                     <tr>                            
-                                        <th scope="row"><?php _e( 'Disable Site Description?', 'simplecatch' ); ?></th>
+                                        <th scope="row"><?php _e( 'Disable Site Description?', 'simple-catch' ); ?></th>
                                         <input type='hidden' value='0' name='simplecatch_options[remove_site_description]'>
-                                        <td><input type="checkbox" id="headerlogo" name="simplecatch_options[remove_site_description]" value="1" <?php checked( '1', $options['remove_site_description'] ); ?> /> <?php _e( 'Check to Disable.', 'simplecatch' ); ?></td>
+                                        <td><input type="checkbox" id="headerlogo" name="simplecatch_options[remove_site_description]" value="1" <?php checked( '1', $options['remove_site_description'] ); ?> /> <?php _e( 'Check to Disable.', 'simple-catch' ); ?></td>
                                     </tr>
                                     <tr>   
-                                        <th scope="row"><?php _e( 'Footer logo url: ', 'simplecatch' ); ?></th>
+                                        <th scope="row"><?php _e( 'Footer logo url: ', 'simple-catch' ); ?></th>
                                         <td>
                                             <?php  if ( !empty ( $options[ 'featured_logo_footer' ] ) ) { ?>
                                                 <input class="upload-url" size="65" type="text" name="simplecatch_options[featured_logo_footer]" value="<?php echo esc_url( $options[ 'featured_logo_footer' ] ); ?>" class="upload" />
                                             <?php } else { ?>
                                                 <input size="65" type="text" name="simplecatch_options[featured_logo_footer]" value="<?php echo get_template_directory_uri(); ?>/images/logo-foot.png" alt="logo" />
                                             <?php }  ?>                            
-                                                <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Footer Logo','simplecatch' );?>" />  
+                                                <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Footer Logo','simple-catch' );?>" />  
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row"><?php _e( 'Preview: ', 'simplecatch' ); ?></th>
+                                        <th scope="row"><?php _e( 'Preview: ', 'simple-catch' ); ?></th>
                                         <td>                     
                                             <?php 
                                                 if ( !empty( $options[ 'featured_logo_footer' ] ) ) { 
@@ -187,34 +187,34 @@ function simplecatch_theme_options_do_page() {
                                          </td>
                                     </tr>
                                     <tr>                            
-                                        <th scope="row"><?php _e( 'Disable Footer Logo?', 'simplecatch' ); ?></th>
+                                        <th scope="row"><?php _e( 'Disable Footer Logo?', 'simple-catch' ); ?></th>
                                          <input type='hidden' value='0' name='simplecatch_options[remove_footer_logo]'>
-                                        <td><input type="checkbox" id="headerlogo" name="simplecatch_options[remove_footer_logo]" value="1" <?php checked( '1', $options['remove_footer_logo'] ); ?> /> <?php _e( 'Check to Disable.', 'simplecatch' ); ?></td>
+                                        <td><input type="checkbox" id="headerlogo" name="simplecatch_options[remove_footer_logo]" value="1" <?php checked( '1', $options['remove_footer_logo'] ); ?> /> <?php _e( 'Check to Disable.', 'simple-catch' ); ?></td>
                                     </tr>                                    
                                 </tbody>
                             </table>
-                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
+                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simple-catch' ); ?>" /></p> 
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->  
 
                     <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Fav Icon Option', 'simplecatch' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Fav Icon Option', 'simple-catch' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">
                                 <tbody>
                                 	<tr>   
-                                        <th scope="row"><?php _e( 'Favicon URL:', 'simplecatch' ); ?></th>
+                                        <th scope="row"><?php _e( 'Favicon URL:', 'simple-catch' ); ?></th>
                                         <td>
                                             <?php  if ( !empty ( $options[ 'fav_icon' ] ) ) { ?>
                                                 <input class="upload-url" size="65" type="text" name="simplecatch_options[fav_icon]" value="<?php echo esc_url( $options[ 'fav_icon' ] ); ?>" class="upload" />
                                             <?php } else { ?>
                                                 <input size="65" type="text" name="simplecatch_options[fav_icon]" value="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" alt="fav icon" />
                                             <?php }  ?>                            
-                                                <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Fav icon Logo','simplecatch' );?>" />  
+                                                <input id="st_upload_button" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Fav icon Logo','simple-catch' );?>" />  
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row"><?php _e( 'Preview: ', 'simplecatch' ); ?></th>
+                                        <th scope="row"><?php _e( 'Preview: ', 'simple-catch' ); ?></th>
                                         <td>                     
                                             <?php 
                                                 if ( !empty( $options[ 'fav_icon' ] ) ) { 
@@ -226,37 +226,37 @@ function simplecatch_theme_options_do_page() {
                                          </td>
                                     </tr>
                                     <tr>                            
-                                        <th scope="row"><?php _e( 'Disable Fav Icon?', 'simplecatch' ); ?></th>
+                                        <th scope="row"><?php _e( 'Disable Fav Icon?', 'simple-catch' ); ?></th>
                                          <input type='hidden' value='0' name='simplecatch_options[remove_fav_icon]'>
-                                        <td><input type="checkbox" id="headerlogo" name="simplecatch_options[remove_fav_icon]" value="1" <?php checked( '1', $options['remove_fav_icon'] ); ?> /> <?php _e( 'Check to Disable.', 'simplecatch' ); ?></td>
+                                        <td><input type="checkbox" id="headerlogo" name="simplecatch_options[remove_fav_icon]" value="1" <?php checked( '1', $options['remove_fav_icon'] ); ?> /> <?php _e( 'Check to Disable.', 'simple-catch' ); ?></td>
                                     </tr>
                                 </tbody>
                             </table>
-                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
+                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simple-catch' ); ?>" /></p> 
                         </div><!-- .option-content -->
                     </div><!-- .option-container --> 
                     
                     <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Web Clip Icon Option', 'simplecatch' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Web Clip Icon Option', 'simple-catch' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">
                                 <tbody>
                                     <tr>                            
-                                        <th scope="row"><?php _e( 'Web Clip Icon URL:', 'simplecatch' ); ?></th>
+                                        <th scope="row"><?php _e( 'Web Clip Icon URL:', 'simple-catch' ); ?></th>
                                         <td>
                                         	<input class="upload-url" size="65" type="text" name="simplecatch_options[web_clip]" value="<?php echo esc_url( $options [ 'web_clip' ] ); ?>" class="upload" />
-                                            <input id="web-clip-image" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Upload/Change Web Clip Icon','simplecatch' );?>" />
+                                            <input id="web-clip-image" class="st_upload_button button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Upload/Change Web Clip Icon','simple-catch' );?>" />
                                      	</td>
                                     </tr>
                                     
                                     <tr>
-                                        <th scope="row"><?php _e( 'Preview: ', 'simplecatch' ); ?></th>
+                                        <th scope="row"><?php _e( 'Preview: ', 'simple-catch' ); ?></th>
                                         <td> 
                                             <?php 
                                                 if ( !empty( $options[ 'web_clip' ] ) ) { 
                                                     echo '<img src="'.esc_url( $options[ 'web_clip' ] ).'" alt="Web Clip Icon" />';
                                                 } else { ?>
-                                                    <p><?php _e( 'No Web Clip Icon Found. Upload Web Clip Icon.', 'simplecatch' ); ?></p>
+                                                    <p><?php _e( 'No Web Clip Icon Found. Upload Web Clip Icon.', 'simple-catch' ); ?></p>
                                                <?php
 											   }
                                             ?>
@@ -264,46 +264,46 @@ function simplecatch_theme_options_do_page() {
                                     </tr>
                                 </tbody>
                             </table>
-                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
+                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simple-catch' ); ?>" /></p> 
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->                    
             
             		<div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Color Options', 'simplecatch' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Color Options', 'simple-catch' ); ?></a></h3>
                         <div class="option-content inside">
                         	<table class="form-table">  
                                 <tbody>
                                     <tr>
-                                        <th scope="row"><label><?php _e( 'Default Color Scheme', 'catcheverest' ); ?></label></th>
+                                        <th scope="row"><label><?php _e( 'Default Color Scheme', 'simple-catch' ); ?></label></th>
                                         <td>
                                             <label title="color-light" class="box"><img src="<?php echo get_template_directory_uri(); ?>/functions/panel/images/default.jpg" alt="color-default" /><br />
                                             <input type="radio" name="simplecatch_options[color_scheme]" id="color-default" <?php checked($options['color_scheme'], 'default'); ?> value="default"  />
-                                            <?php _e( 'Default', 'catcheverest' ); ?>
+                                            <?php _e( 'Default', 'simple-catch' ); ?>
                                             </label>
                                             <label title="color-dark" class="box"><img src="<?php echo get_template_directory_uri(); ?>/functions/panel/images/dark.jpg" alt="color-dark" /><br />
                                             <input type="radio" name="simplecatch_options[color_scheme]" id="color-dark" <?php checked($options['color_scheme'], 'dark'); ?> value="dark"  />
-                                            <?php _e( 'Dark', 'catcheverest' ); ?>
+                                            <?php _e( 'Dark', 'simple-catch' ); ?>
                                             </label>  
                                             <label title="color-brown" class="box"><img src="<?php echo get_template_directory_uri(); ?>/functions/panel/images/brown.jpg" alt="color-brown" /><br />
                                             <input type="radio" name="simplecatch_options[color_scheme]" id="color-brown" <?php checked($options['color_scheme'], 'brown'); ?> value="brown"  />
-                                            <?php _e( 'Brown', 'catcheverest' ); ?>
+                                            <?php _e( 'Brown', 'simple-catch' ); ?>
                                             </label>                                                                                 
                                         </td>
                                     </tr>                                
                                 	<tr>
                                         <th>
                                             <label for="simplecatch_content_background">
-                                                <?php _e( 'Content Background:', 'simplecatch' ); ?>
+                                                <?php _e( 'Content Background:', 'simple-catch' ); ?>
                                             </label>
                                         </th>
                                         <td>
-                                            <?php printf(__('Need to replace default background?','simplecatch')); ?> <?php printf(__('<a class="button" href="%s">Click here</a>', 'simplecatch'), admin_url('themes.php?page=custom-background')); ?>
+                                            <?php printf(__('Need to replace default background?','simple-catch')); ?> <?php printf(__('<a class="button" href="%s">Click here</a>', 'simple-catch'), admin_url('themes.php?page=custom-background')); ?>
                                         </td>
                                     </tr> 
                                 	<tr>
                                         <th>
                                             <label for="simplecatch_heading_color">
-                                                <?php _e( 'Heading Color:', 'simplecatch' ); ?>
+                                                <?php _e( 'Heading Color:', 'simple-catch' ); ?>
                                             </label>
                                         </th>
                                         <td>
@@ -314,7 +314,7 @@ function simplecatch_theme_options_do_page() {
                                     <tr>
                                         <th>
                                             <label for="simplecatch_meta_color">
-                                                <?php _e( 'Meta Description Color:', 'simplecatch' ); ?>
+                                                <?php _e( 'Meta Description Color:', 'simple-catch' ); ?>
                                             </label>
                                         </th>
                                         <td>
@@ -325,7 +325,7 @@ function simplecatch_theme_options_do_page() {
                                     <tr>
                                         <th>
                                             <label for="simplecatch_text_color">
-                                                <?php _e( 'Text Color:', 'simplecatch' ); ?>
+                                                <?php _e( 'Text Color:', 'simple-catch' ); ?>
                                             </label>
                                         </th>
                                         <td>
@@ -336,7 +336,7 @@ function simplecatch_theme_options_do_page() {
                                     <tr>
                                         <th>
                                             <label for="simplecatch_link_color">
-                                                <?php _e( 'Link Color:', 'simplecatch' ); ?>
+                                                <?php _e( 'Link Color:', 'simple-catch' ); ?>
                                             </label>
                                         </th>
                                         <td>
@@ -347,7 +347,7 @@ function simplecatch_theme_options_do_page() {
         							<tr>
                                         <th>
                                             <label for="simplecatch_widget_heading_color">
-                                                <?php _e( 'Sidebar Widget Heading Color:', 'simplecatch' ); ?>
+                                                <?php _e( 'Sidebar Widget Heading Color:', 'simple-catch' ); ?>
                                             </label>
                                         </th>
                                         <td>
@@ -358,7 +358,7 @@ function simplecatch_theme_options_do_page() {
                                     <tr>
                                         <th>
                                             <label for="simplecatch_widget_text_color">
-                                                <?php _e( 'Sidebar Widget Text Color:', 'simplecatch' ); ?>
+                                                <?php _e( 'Sidebar Widget Text Color:', 'simple-catch' ); ?>
                                             </label>
                                         </th>
                                         <td>
@@ -368,70 +368,70 @@ function simplecatch_theme_options_do_page() {
                                     </tr>       
                                     <?php if( $options[ 'reset_color' ] == "1" ) { $options[ 'reset_color' ] = "0"; } ?>
                                     <tr>                            
-                                        <th scope="row"><?php _e( 'Reset Color:', 'simplecatch' ); ?></th>
+                                        <th scope="row"><?php _e( 'Reset Color:', 'simple-catch' ); ?></th>
                                         <input type='hidden' value='0' name='simplecatch_options[reset_color]'>
                                         <td>
-                                        	<input type="checkbox" id="headerlogo" name="simplecatch_options[reset_color]" value="1" <?php checked( '1', $options['reset_color'] ); ?> /> <?php _e( 'Check to Reset Color', 'simplecatch' ); ?>
+                                        	<input type="checkbox" id="headerlogo" name="simplecatch_options[reset_color]" value="1" <?php checked( '1', $options['reset_color'] ); ?> /> <?php _e( 'Check to Reset Color', 'simple-catch' ); ?>
                                        	</td>
                                     </tr>
                                 </tbody>
                             </table>      
                       
-                     		<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p>	
+                     		<p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simple-catch' ); ?>" /></p>	
                     	</div><!-- .option-content -->
                  	</div><!-- .option-container --> 
 
                     <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Default Layout', 'simplecatch' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Default Layout', 'simple-catch' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">  
                                 <tbody>
                                     <tr>
-                                        <th scope="row"><label><?php _e( 'Default Layout', 'simplecatch' ); ?></label></th>
+                                        <th scope="row"><label><?php _e( 'Default Layout', 'simple-catch' ); ?></label></th>
                                         <td>
                                         	<label title="right-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/functions/panel/images/right-sidebar.png" alt="Content-Sidebar" /><br />
                                             <input type="radio" name="simplecatch_options[sidebar_layout]" id="right-sidebar" <?php checked($options['sidebar_layout'], 'right-sidebar') ?> value="right-sidebar"  />
-                                            <?php _e( 'Content on Left', 'simplecatch' ); ?>
+                                            <?php _e( 'Content on Left', 'simple-catch' ); ?>
                                             </label>
                                             
                                             <label title="left-Sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/functions/panel/images/left-sidebar.png" alt="Content-Sidebar" /><br />
                                             <input type="radio" name="simplecatch_options[sidebar_layout]" id="left-sidebar" <?php checked($options['sidebar_layout'], 'left-sidebar') ?> value="left-sidebar"  />
-                                            <?php _e( 'Content on Right', 'simplecatch' ); ?>
+                                            <?php _e( 'Content on Right', 'simple-catch' ); ?>
                                             </label>
                                             
                                             <label title="no-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/functions/panel/images/no-sidebar.png" alt="No Sidebar" /><br />
                                             <input type="radio" name="simplecatch_options[sidebar_layout]" id="no-sidebar" <?php checked($options['sidebar_layout'], 'no-sidebar') ?> value="no-sidebar"  />
-                                            <?php _e( 'No Sidebar', 'simplecatch' ); ?>
+                                            <?php _e( 'No Sidebar', 'simple-catch' ); ?>
                                             </label>
                                             
                                             <label title="no-sidebar-full-width" class="box"><img src="<?php echo get_template_directory_uri(); ?>/functions/panel/images/no-sidebar-fullwidth.png" alt="No Sidebar Full Width" /><br />
                                             <input type="radio" name="simplecatch_options[sidebar_layout]" id="no-sidebar-full-width" <?php checked($options['sidebar_layout'], 'no-sidebar-full-width') ?> value="no-sidebar-full-width"  />
-                                            <?php _e( 'No Sidebar, Full Width', 'simplecatch' ); ?>
+                                            <?php _e( 'No Sidebar, Full Width', 'simple-catch' ); ?>
                                             </label>
                                                                                         
                                         </td>
                                     </tr>  
                                 </tbody>
                             </table>
-                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
+                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simple-catch' ); ?>" /></p> 
                         </div><!-- .option-content -->
                     </div><!-- .option-container --> 
                     
 					<div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Homepage / Frontpage Category Setting', 'simplecatch' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Homepage / Frontpage Category Setting', 'simple-catch' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">
                                 <tbody>
                                     <tr>
                                         <th scope="row">
-                                            <?php _e( 'Front page posts categories:', 'simplecatch' ); ?>
+                                            <?php _e( 'Front page posts categories:', 'simple-catch' ); ?>
                                             <p>
-                                                <small><?php _e( 'Only posts that belong to the categories selected here will be displayed on the front page.', 'simplecatch' ); ?></small>
+                                                <small><?php _e( 'Only posts that belong to the categories selected here will be displayed on the front page.', 'simple-catch' ); ?></small>
                                             </p>
                                         </th>
                                         <td>
                                             <select name="simplecatch_options[front_page_category][]" id="frontpage_posts_cats" multiple="multiple" class="select-multiple">
-                                                <option value="0" <?php if ( empty( $options['front_page_category'] ) ) { selected( true, true ); } ?>><?php _e( '--Disabled--', 'simplecatch' ); ?></option>
+                                                <option value="0" <?php if ( empty( $options['front_page_category'] ) ) { selected( true, true ); } ?>><?php _e( '--Disabled--', 'simple-catch' ); ?></option>
                                                 <?php /* Get the list of categories */ 
                                                     if( empty( $options[ 'front_page_category' ] ) ) {
                                                         $options[ 'front_page_category' ] = array();
@@ -441,93 +441,93 @@ function simplecatch_theme_options_do_page() {
                                                 		<option value="<?php echo $category->cat_ID; ?>" <?php if ( in_array( $category->cat_ID, $options['front_page_category'] ) ) {echo 'selected="selected"';}?>><?php echo $category->cat_name; ?></option>
                                                 <?php endforeach; ?>
                                             </select><br />
-                                            <span class="description"><?php _e( 'You may select multiple categories by holding down the CTRL key.', 'simplecatch' ); ?></span>
+                                            <span class="description"><?php _e( 'You may select multiple categories by holding down the CTRL key.', 'simple-catch' ); ?></span>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
-                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
+                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simple-catch' ); ?>" /></p> 
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->  
                     
                     <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Search Text Settings', 'simplecatch' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Search Text Settings', 'simple-catch' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">  
                                 <tbody>
                                     <tr> 
-                                        <th scope="row"><label><?php _e( 'Default Display Text in Search', 'simplecatch' ); ?></label></th>
+                                        <th scope="row"><label><?php _e( 'Default Display Text in Search', 'simple-catch' ); ?></label></th>
                                         <td><input type="text" size="45" name="simplecatch_options[search_display_text]" value="<?php echo esc_attr( $options[ 'search_display_text'] ); ?>" />
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row"><label><?php _e( 'Search Button\'s text', 'simplecatch' ); ?></label></th>
+                                        <th scope="row"><label><?php _e( 'Search Button\'s text', 'simple-catch' ); ?></label></th>
                                         <td><input type="text" size="45" name="simplecatch_options[search_button_text]" value="<?php echo esc_attr( $options[ 'search_button_text' ] ); ?>" />
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
-                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
+                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simple-catch' ); ?>" /></p> 
                         </div><!-- .option-content -->
                     </div><!-- .option-container --> 
                     
                     <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Excerpt / More Tag Settings', 'simplecatch' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Excerpt / More Tag Settings', 'simple-catch' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">  
                                 <tbody>
 									<tr>
-                                        <th scope="row"><label><?php _e( 'More Tag Text', 'simplecatch' ); ?></label></th>
+                                        <th scope="row"><label><?php _e( 'More Tag Text', 'simple-catch' ); ?></label></th>
                                         <td><input type="text" size="45" name="simplecatch_options[more_tag_text]" value="<?php echo esc_attr( $options[ 'more_tag_text' ] ); ?>" />
                                         </td>
                                     </tr>  
                                      <tr>
-                                        <th scope="row"><?php _e( 'Excerpt length(words)', 'simplecatch' ); ?></th>
+                                        <th scope="row"><?php _e( 'Excerpt length(words)', 'simple-catch' ); ?></th>
                                         <td><input type="text" size="3" name="simplecatch_options[excerpt_length]" value="<?php echo intval( $options[ 'excerpt_length' ] ); ?>" /></td>
                                     </tr>  
                               	</tbody>
                             </table>
-                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
+                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simple-catch' ); ?>" /></p> 
                         </div><!-- .option-content -->
                     </div><!-- .option-container --> 
                     
                     <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Feed Redirect', 'simplecatch' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Feed Redirect', 'simple-catch' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">  
                                 <tbody>
 									<tr>
-                                        <th scope="row"><label><?php _e( 'Feed Redirect URL', 'simplecatch' ); ?></label></th>
+                                        <th scope="row"><label><?php _e( 'Feed Redirect URL', 'simple-catch' ); ?></label></th>
                                         <td><input type="text" size="70" name="simplecatch_options[feed_url]" value="<?php echo esc_attr( $options[ 'feed_url' ] ); ?>" />
                                         </td>
                                     </tr>  
                                	</tbody>
                             </table>
-                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
+                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simple-catch' ); ?>" /></p> 
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->   
                    
                     <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Custom CSS', 'simplecatch' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Custom CSS', 'simple-catch' ); ?></a></h3>
                         <div class="option-content inside"> 
                             <table class="form-table">  
                                 <tbody>       
                                     <tr>
-                                        <th scope="row"><?php _e( 'Enter your custom CSS styles.', 'simplecatch' ); ?></th>
+                                        <th scope="row"><?php _e( 'Enter your custom CSS styles.', 'simple-catch' ); ?></th>
                                         <td>
                                             <textarea name="simplecatch_options[custom_css]" id="custom-css" cols="90" rows="12"><?php echo esc_attr( $options[ 'custom_css' ] ); ?></textarea>
                                         </td>
                                     </tr>
                                    
                                     <tr>
-                                        <th scope="row"><?php _e( 'CSS Tutorial from W3Schools.', 'simplecatch' ); ?></th>
+                                        <th scope="row"><?php _e( 'CSS Tutorial from W3Schools.', 'simple-catch' ); ?></th>
                                         <td>
-                                            <a class="button" href="<?php echo esc_url( __( 'http://www.w3schools.com/css/default.asp','simplecatch' ) ); ?>" title="<?php esc_attr_e( 'CSS Tutorial', 'simplecatch' ); ?>" target="_blank"><?php _e( 'Click Here to Read', 'simplecatch' );?></a>
+                                            <a class="button" href="<?php echo esc_url( __( 'http://www.w3schools.com/css/default.asp','simple-catch' ) ); ?>" title="<?php esc_attr_e( 'CSS Tutorial', 'simple-catch' ); ?>" target="_blank"><?php _e( 'Click Here to Read', 'simple-catch' );?></a>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
-                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
+                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simple-catch' ); ?>" /></p> 
                         </div><!-- .option-content -->
                     </div><!-- .option-container --> 
                                           
@@ -536,82 +536,82 @@ function simplecatch_theme_options_do_page() {
                 
                 <div id="postslider">
                     <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Add Slider Options', 'simplecatch' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Add Slider Options', 'simple-catch' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">
                                 <tr>                            
-                                    <th scope="row"><?php _e( 'Exclude Slider post from Home page posts:', 'simplecatch' ); ?></th>
+                                    <th scope="row"><?php _e( 'Exclude Slider post from Home page posts:', 'simple-catch' ); ?></th>
                                      <input type='hidden' value='0' name='simplecatch_options[exclude_slider_post]'>
                                     <td><input type="checkbox" id="headerlogo" name="simplecatch_options[exclude_slider_post]" value="1" <?php checked( '1', $options['exclude_slider_post'] ); ?> /></td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"><?php _e( 'Number of Slides', 'simplecatch' ); ?></th>
+                                    <th scope="row"><?php _e( 'Number of Slides', 'simple-catch' ); ?></th>
                                     <td><input type="text" name="simplecatch_options[slider_qty]" value="<?php echo intval( $options[ 'slider_qty' ] ); ?>" /></td>
                                 </tr>
                                 <tbody class="sortable">
                                     <?php for ( $i = 1; $i <= $options[ 'slider_qty' ]; $i++ ): ?>
                                     <tr>
-                                        <th scope="row"><label class="handle"><span class="count"><?php echo '#' . absint( $i ); ?></span> <?php _e( 'Featured Post ID', 'simplecatch' ); ?></label></th>
+                                        <th scope="row"><label class="handle"><span class="count"><?php echo '#' . absint( $i ); ?></span> <?php _e( 'Featured Post ID', 'simple-catch' ); ?></label></th>
                                         <td><input type="text" name="simplecatch_options[featured_slider][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'featured_slider', $options ) && array_key_exists( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>" />
-                                        <a href="<?php bloginfo ( 'url' );?>/wp-admin/post.php?post=<?php if( array_key_exists ( 'featured_slider', $options ) && array_key_exists ( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>&action=edit" class="button" title="<?php esc_attr_e('Click Here To Edit'); ?>" target="_blank"><?php _e( 'Click Here To Edit', 'simplecatch' ); ?></a>
+                                        <a href="<?php bloginfo ( 'url' );?>/wp-admin/post.php?post=<?php if( array_key_exists ( 'featured_slider', $options ) && array_key_exists ( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>&action=edit" class="button" title="<?php esc_attr_e('Click Here To Edit', 'simple-catch' ); ?>" target="_blank"><?php _e( 'Click Here To Edit', 'simple-catch' ); ?></a>
                                         </td>
                                     </tr>                           
                                     <?php endfor; ?>
                                 </tbody>
                             </table>
-                            <p><?php _e( 'Note: Here You can put your Post IDs which displays on Homepage as slider.', 'simplecatch' ); ?> </p>
-                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
+                            <p><?php _e( 'Note: Here You can put your Post IDs which displays on Homepage as slider.', 'simple-catch' ); ?> </p>
+                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simple-catch' ); ?>" /></p> 
                         </div><!-- .option-content -->
                     </div><!-- .option-container --> 
         
                     <!-- Option for More Slider Options -->
                     <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Slider Effect Options', 'simplecatch' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Slider Effect Options', 'simple-catch' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">   
                                 <tr>                            
-                                    <th scope="row"><?php _e( 'Disable Slider Background Effect:', 'simplecatch' ); ?></th>
+                                    <th scope="row"><?php _e( 'Disable Slider Background Effect:', 'simple-catch' ); ?></th>
                                      <input type='hidden' value='0' name='simplecatch_options[remove_noise_effect]'>
                                     <td><input type="checkbox" id="headerlogo" name="simplecatch_options[remove_noise_effect]" value="1" <?php checked( '1', $options['remove_noise_effect'] ); ?> /></td>
                                 </tr>
         
                                 <tr>
                                     <th>
-                                        <label for="simplecatch_cycle_style"><?php _e( 'Transition Effect:', 'simplecatch' ); ?></label>
+                                        <label for="simplecatch_cycle_style"><?php _e( 'Transition Effect:', 'simple-catch' ); ?></label>
                                     </th>
                                     <td>
                                         <select id="simplecatch_cycle_style" name="simplecatch_options[transition_effect]">
-                                            <option value="fade" <?php selected('fade', $options['transition_effect']); ?>><?php _e( 'fade', 'simplecatch' ); ?></option>
-                                            <option value="wipe" <?php selected('wipe', $options['transition_effect']); ?>><?php _e( 'wipe', 'simplecatch' ); ?></option>
-                                            <option value="scrollUp" <?php selected('scrollUp', $options['transition_effect']); ?>><?php _e( 'scrollUp', 'simplecatch' ); ?></option>
-                                            <option value="scrollDown" <?php selected('scrollDown', $options['transition_effect']); ?>><?php _e( 'scrollDown', 'simplecatch' ); ?></option>
-                                            <option value="scrollLeft" <?php selected('scrollLeft', $options['transition_effect']); ?>><?php _e( 'scrollLeft', 'simplecatch' ); ?></option>
-                                            <option value="scrollRight" <?php selected('scrollRight', $options['transition_effect']); ?>><?php _e( 'scrollRight', 'simplecatch' ); ?></option>
-                                            <option value="blindX" <?php selected('blindX', $options['transition_effect']); ?>><?php _e( 'blindX', 'simplecatch' ); ?></option>
-                                            <option value="blindY" <?php selected('blindY', $options['transition_effect']); ?>><?php _e( 'blindY', 'simplecatch' ); ?></option>
-                                            <option value="blindZ" <?php selected('blindZ', $options['transition_effect']); ?>><?php _e( 'blindZ', 'simplecatch' ); ?></option>
-                                            <option value="cover" <?php selected('cover', $options['transition_effect']); ?>><?php _e( 'cover', 'simplecatch' ); ?></option>
-                                            <option value="shuffle" <?php selected('shuffle', $options['transition_effect']); ?>><?php _e( 'shuffle', 'simplecatch' ); ?></option>
+                                            <option value="fade" <?php selected('fade', $options['transition_effect']); ?>><?php _e( 'fade', 'simple-catch' ); ?></option>
+                                            <option value="wipe" <?php selected('wipe', $options['transition_effect']); ?>><?php _e( 'wipe', 'simple-catch' ); ?></option>
+                                            <option value="scrollUp" <?php selected('scrollUp', $options['transition_effect']); ?>><?php _e( 'scrollUp', 'simple-catch' ); ?></option>
+                                            <option value="scrollDown" <?php selected('scrollDown', $options['transition_effect']); ?>><?php _e( 'scrollDown', 'simple-catch' ); ?></option>
+                                            <option value="scrollLeft" <?php selected('scrollLeft', $options['transition_effect']); ?>><?php _e( 'scrollLeft', 'simple-catch' ); ?></option>
+                                            <option value="scrollRight" <?php selected('scrollRight', $options['transition_effect']); ?>><?php _e( 'scrollRight', 'simple-catch' ); ?></option>
+                                            <option value="blindX" <?php selected('blindX', $options['transition_effect']); ?>><?php _e( 'blindX', 'simple-catch' ); ?></option>
+                                            <option value="blindY" <?php selected('blindY', $options['transition_effect']); ?>><?php _e( 'blindY', 'simple-catch' ); ?></option>
+                                            <option value="blindZ" <?php selected('blindZ', $options['transition_effect']); ?>><?php _e( 'blindZ', 'simple-catch' ); ?></option>
+                                            <option value="cover" <?php selected('cover', $options['transition_effect']); ?>><?php _e( 'cover', 'simple-catch' ); ?></option>
+                                            <option value="shuffle" <?php selected('shuffle', $options['transition_effect']); ?>><?php _e( 'shuffle', 'simple-catch' ); ?></option>
                                         </select>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"><?php _e( 'Transition Delay', 'simplecatch' ); ?></th>
+                                    <th scope="row"><?php _e( 'Transition Delay', 'simple-catch' ); ?></th>
                                     <td>
                                         <input type="text" name="simplecatch_options[transition_delay]" value="<?php echo $options[ 'transition_delay' ]; ?>" size="4" />
-                                       <span class="description"><?php _e( 'second(s)', 'simplecatch' ); ?></span>
+                                       <span class="description"><?php _e( 'second(s)', 'simple-catch' ); ?></span>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"><?php _e( 'Transition Length', 'simplecatch' ); ?></th>
+                                    <th scope="row"><?php _e( 'Transition Length', 'simple-catch' ); ?></th>
                                     <td>
                                         <input type="text" name="simplecatch_options[transition_duration]" value="<?php echo $options[ 'transition_duration' ]; ?>" size="4" />
-                                        <span class="description"><?php _e( 'second(s)', 'simplecatch' ); ?></span>
+                                        <span class="description"><?php _e( 'second(s)', 'simple-catch' ); ?></span>
                                     </td>
                                 </tr>                      
         
                             </table>
-                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
+                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simple-catch' ); ?>" /></p> 
                         </div><!-- .option-content -->
                     </div><!-- .option-container --> 
 				</div><!-- #themesettings -->  
@@ -621,174 +621,174 @@ function simplecatch_theme_options_do_page() {
                         <table class="form-table">
                             <tbody>
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'Facebook', 'simplecatch' ); ?></h4></th>
+                                    <th scope="row"><h4><?php _e( 'Facebook', 'simple-catch' ); ?></h4></th>
                                     <td><input type="text" size="45" name="simplecatch_options[social_facebook]" value="<?php echo esc_url( $options[ 'social_facebook' ] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr> 
-                                    <th scope="row"><h4><?php _e( 'Twitter', 'simplecatch' ); ?> </h4></th>
+                                    <th scope="row"><h4><?php _e( 'Twitter', 'simple-catch' ); ?> </h4></th>
                                     <td><input type="text" size="45" name="simplecatch_options[social_twitter]" value="<?php echo esc_url( $options[ 'social_twitter'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr> 
-                                    <th scope="row"><h4><?php _e( 'Google+', 'simplecatch' ); ?> </h4></th>
+                                    <th scope="row"><h4><?php _e( 'Google+', 'simple-catch' ); ?> </h4></th>
                                     <td><input type="text" size="45" name="simplecatch_options[social_googleplus]" value="<?php echo esc_url( $options[ 'social_googleplus'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr> 
-                                    <th scope="row"><h4><?php _e( 'Pinterest', 'simplecatch' ); ?> </h4></th>
+                                    <th scope="row"><h4><?php _e( 'Pinterest', 'simple-catch' ); ?> </h4></th>
                                     <td><input type="text" size="45" name="simplecatch_options[social_pinterest]" value="<?php echo esc_url( $options[ 'social_pinterest'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'Youtube', 'simplecatch' ); ?></h4></th>
+                                    <th scope="row"><h4><?php _e( 'Youtube', 'simple-catch' ); ?></h4></th>
                                     <td><input type="text" size="45" name="simplecatch_options[social_youtube]" value="<?php echo esc_url( $options[ 'social_youtube' ] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'Vimeo', 'simplecatch' ); ?></h4></th>
+                                    <th scope="row"><h4><?php _e( 'Vimeo', 'simple-catch' ); ?></h4></th>
                                     <td><input type="text" size="45" name="simplecatch_options[social_vimeo]" value="<?php echo esc_url( $options[ 'social_vimeo' ] ); ?>" />
                                     </td>
                                 </tr>
                                 
                                 <tr> 
-                                    <th scope="row"><h4><?php _e( 'Linkedin', 'simplecatch' ); ?> </h4></th>
+                                    <th scope="row"><h4><?php _e( 'Linkedin', 'simple-catch' ); ?> </h4></th>
                                     <td><input type="text" size="45" name="simplecatch_options[social_linkedin]" value="<?php echo esc_url( $options[ 'social_linkedin'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr> 
-                                    <th scope="row"><h4><?php _e( 'Slideshare', 'simplecatch' ); ?> </h4></th>
+                                    <th scope="row"><h4><?php _e( 'Slideshare', 'simple-catch' ); ?> </h4></th>
                                     <td><input type="text" size="45" name="simplecatch_options[social_slideshare]" value="<?php echo esc_url( $options[ 'social_slideshare'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'Foursquare', 'simplecatch' ); ?></h4></th>
+                                    <th scope="row"><h4><?php _e( 'Foursquare', 'simple-catch' ); ?></h4></th>
                                     <td><input type="text" size="45" name="simplecatch_options[social_foursquare]" value="<?php echo esc_url( $options[ 'social_foursquare' ] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'Flickr', 'simplecatch' ); ?></h4></th>
+                                    <th scope="row"><h4><?php _e( 'Flickr', 'simple-catch' ); ?></h4></th>
                                     <td><input type="text" size="45" name="simplecatch_options[social_flickr]" value="<?php echo esc_url( $options[ 'social_flickr' ] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'Tumblr', 'simplecatch' ); ?></h4></th>
+                                    <th scope="row"><h4><?php _e( 'Tumblr', 'simple-catch' ); ?></h4></th>
                                     <td><input type="text" size="45" name="simplecatch_options[social_tumblr]" value="<?php echo esc_url( $options[ 'social_tumblr' ] ); ?>" />
                                     </td>
                                 </tr> 
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'deviantART', 'simplecatch' ); ?></h4></th>
+                                    <th scope="row"><h4><?php _e( 'deviantART', 'simple-catch' ); ?></h4></th>
                                     <td><input type="text" size="45" name="simplecatch_options[social_deviantart]" value="<?php echo esc_url( $options[ 'social_deviantart' ] ); ?>" />
                                     </td>
                                 </tr> 
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'Dribbble', 'simplecatch' ); ?></h4></th>
+                                    <th scope="row"><h4><?php _e( 'Dribbble', 'simple-catch' ); ?></h4></th>
                                     <td><input type="text" size="45" name="simplecatch_options[social_dribbble]" value="<?php echo esc_url( $options[ 'social_dribbble' ] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'MySpace', 'simplecatch' ); ?></h4></th>
+                                    <th scope="row"><h4><?php _e( 'MySpace', 'simple-catch' ); ?></h4></th>
                                     <td><input type="text" size="45" name="simplecatch_options[social_myspace]" value="<?php echo esc_url( $options[ 'social_myspace' ] ); ?>" />
                                     </td>
                                 </tr> 
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'WordPress', 'simplecatch' ); ?></h4></th>
+                                    <th scope="row"><h4><?php _e( 'WordPress', 'simple-catch' ); ?></h4></th>
                                     <td><input type="text" size="45" name="simplecatch_options[social_wordpress]" value="<?php echo esc_url( $options[ 'social_wordpress' ] ); ?>" />
                                     </td>
                                 </tr>                           
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'RSS', 'simplecatch' ); ?> </h4></th>
+                                    <th scope="row"><h4><?php _e( 'RSS', 'simple-catch' ); ?> </h4></th>
                                     <td><input type="text" size="45" name="simplecatch_options[social_rss]" value="<?php echo esc_url( $options[ 'social_rss' ] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'Delicious', 'simplecatch' ); ?></h4></th>
+                                    <th scope="row"><h4><?php _e( 'Delicious', 'simple-catch' ); ?></h4></th>
                                     <td><input type="text" size="45" name="simplecatch_options[social_delicious]" value="<?php echo esc_url( $options[ 'social_delicious' ] ); ?>" />
                                     </td>
                                 </tr>                           
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'Last.fm', 'simplecatch' ); ?> </h4></th>
+                                    <th scope="row"><h4><?php _e( 'Last.fm', 'simple-catch' ); ?> </h4></th>
                                     <td><input type="text" size="45" name="simplecatch_options[social_lastfm]" value="<?php echo esc_url( $options[ 'social_lastfm' ] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'Instagram', 'simplecatch' ); ?> </h4></th>
+                                    <th scope="row"><h4><?php _e( 'Instagram', 'simple-catch' ); ?> </h4></th>
                                     <td><input type="text" size="45" name="simplecatch_options[social_instagram]" value="<?php echo esc_url( $options[ 'social_instagram' ] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'GitHub', 'simplecatch' ); ?></h4></th>
+                                    <th scope="row"><h4><?php _e( 'GitHub', 'simple-catch' ); ?></h4></th>
                                     <td><input type="text" size="45" name="simplecatch_options[social_github]" value="<?php echo esc_url( $options[ 'social_github' ] ); ?>" />
                                     </td>
                                 </tr> 
                                 <tr> 
-                                    <th scope="row"><h4><?php _e( 'Vkontakte', 'simplecatch' ); ?> </h4></th>
+                                    <th scope="row"><h4><?php _e( 'Vkontakte', 'simple-catch' ); ?> </h4></th>
                                     <td><input type="text" size="45" name="simplecatch_options[social_vkontakte]" value="<?php echo esc_url( $options[ 'social_vkontakte'] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'My World', 'simplecatch' ); ?></h4></th>
+                                    <th scope="row"><h4><?php _e( 'My World', 'simple-catch' ); ?></h4></th>
                                     <td><input type="text" size="45" name="simplecatch_options[social_myworld]" value="<?php echo esc_url( $options[ 'social_myworld' ] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'Odnoklassniki', 'simplecatch' ); ?></h4></th>
+                                    <th scope="row"><h4><?php _e( 'Odnoklassniki', 'simple-catch' ); ?></h4></th>
                                     <td><input type="text" size="45" name="simplecatch_options[social_odnoklassniki]" value="<?php echo esc_url( $options[ 'social_odnoklassniki' ] ); ?>" />
                                     </td>
                                 </tr>   
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'Goodreads', 'simplecatch' ); ?> </h4></th>
+                                    <th scope="row"><h4><?php _e( 'Goodreads', 'simple-catch' ); ?> </h4></th>
                                     <td><input type="text" size="45" name="simplecatch_options[social_goodreads]" value="<?php echo esc_url( $options[ 'social_goodreads' ] ); ?>" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'Skype', 'simplecatch' ); ?> </h4></th>
+                                    <th scope="row"><h4><?php _e( 'Skype', 'simple-catch' ); ?> </h4></th>
                                     <td><input type="text" size="45" name="simplecatch_options[social_skype]" value="<?php echo esc_attr( $options[ 'social_skype' ] ); ?>" />
                                     </td>
                                 </tr>  
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'Soundcloud', 'simplecatch' ); ?> </h4></th>
+                                    <th scope="row"><h4><?php _e( 'Soundcloud', 'simple-catch' ); ?> </h4></th>
                                     <td><input type="text" size="45" name="simplecatch_options[social_soundcloud]" value="<?php echo esc_url( $options[ 'social_soundcloud' ] ); ?>" />
                                     </td>
                                 </tr> 
                                 <tr>
-                                    <th scope="row"><h4><?php _e( 'Email', 'simplecatch' ); ?></h4></th>
+                                    <th scope="row"><h4><?php _e( 'Email', 'simple-catch' ); ?></h4></th>
                                     <td><input type="text" size="45" name="simplecatch_options[social_email]" value="<?php echo sanitize_email( $options[ 'social_email' ] ); ?>" />
                                     </td>
                                 </tr>                                                           
                             </tbody>
-                        </table><p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p>      
+                        </table><p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simple-catch' ); ?>" /></p>      
                 	</div><!-- .option-container -->                       
                 </div><!-- #sociallinks -->                
                 
                 <div id="webmaster">      
                     <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Header and Footer Codes', 'simplecatch' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Header and Footer Codes', 'simple-catch' ); ?></a></h3>
                         <div class="option-content inside">
                             <table class="form-table">  
                                 <tbody>       
                                     <tr>
-                                        <th scope="row"><?php _e( 'Code to display on Header', 'simplecatch' ); ?></th>
+                                        <th scope="row"><?php _e( 'Code to display on Header', 'simple-catch' ); ?></th>
                                         <td>
                                         <textarea name="simplecatch_options[analytic_header]" id="analytics" rows="7" cols="80" ><?php echo esc_html( $options[ 'analytic_header' ] ); ?></textarea>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td></td><td><?php _e('Note: Here you can put scripts from Google, Facebook etc. which will load on Header', 'simplecatch' ); ?></td>
+                                        <td></td><td><?php _e('Note: Here you can put scripts from Google, Facebook etc. which will load on Header', 'simple-catch' ); ?></td>
                                     </tr>
                                     <tr>
-                                        <th scope="row"><?php _e('Code to display on Footer', 'simplecatch' ); ?></th>
+                                        <th scope="row"><?php _e('Code to display on Footer', 'simple-catch' ); ?></th>
                                         <td>
                                          <textarea name="simplecatch_options[analytic_footer]" id="analytics" rows="7" cols="80" ><?php echo esc_html( $options[ 'analytic_footer' ] ); ?></textarea>
                              
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td></td><td><?php _e( 'Note: Here you can put scripts from Google, Facebook, Add This etc. which will load on footer', 'simplecatch' ); ?></td>
+                                        <td></td><td><?php _e( 'Note: Here you can put scripts from Google, Facebook, Add This etc. which will load on footer', 'simple-catch' ); ?></td>
                                     </tr>
                                 </tbody>
                             </table>
-                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simplecatch' ); ?>" /></p> 
+                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simple-catch' ); ?>" /></p> 
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->  	
                 </div><!-- #webmaster -->

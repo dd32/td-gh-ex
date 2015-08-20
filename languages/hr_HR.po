@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-09 21:35+0545\n"
-"PO-Revision-Date: 2015-08-09 21:35+0545\n"
+"POT-Creation-Date: 2015-08-20 18:50+0545\n"
+"PO-Revision-Date: 2015-08-20 18:50+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "Language: hr\n"
@@ -58,19 +58,19 @@ msgstr ""
 "Ovaj post je zaštićen zaporkom. Unesite zaporku da pogledate komentare."
 
 #: ../comments.php:29 ../content.php:46
-#: ../functions/simplecatch_functions.php:954 ../image.php:48
+#: ../functions/simplecatch_functions.php:923 ../image.php:48
 #: ../page-blog.php:69
 msgid "No Comments"
 msgstr "Nema komentara"
 
 #: ../comments.php:29 ../content.php:46
-#: ../functions/simplecatch_functions.php:954 ../image.php:48
+#: ../functions/simplecatch_functions.php:923 ../image.php:48
 #: ../page-blog.php:69
 msgid "1 Comment"
 msgstr "1 Komentar"
 
 #: ../comments.php:29 ../content.php:46
-#: ../functions/simplecatch_functions.php:954 ../image.php:48
+#: ../functions/simplecatch_functions.php:923 ../image.php:48
 #: ../page-blog.php:69
 msgid "% Comments"
 msgstr "% Komentara"
@@ -84,7 +84,7 @@ msgstr "Komentari su zatvoreni."
 msgid "Permalink to %s"
 msgstr "Permalink za %s"
 
-#: ../content.php:44 ../functions/simplecatch_functions.php:952
+#: ../content.php:44 ../functions/simplecatch_functions.php:921
 #: ../image.php:46 ../page-blog.php:67
 msgid "By"
 msgstr "od"
@@ -109,7 +109,7 @@ msgstr "Copyright"
 msgid "All Rights Reserved."
 msgstr "Sva prava pridržana."
 
-#: ../functions.php:103
+#: ../functions.php:110
 msgid "Primary Menu"
 msgstr "Osnovni izbornik"
 
@@ -128,7 +128,7 @@ msgid "Theme Options By"
 msgstr "Opcije Teme od"
 
 #: ../functions/panel/theme_options.php:88
-#: ../functions/simplecatch_functions.php:781
+#: ../functions/simplecatch_functions.php:750
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com/"
 
@@ -630,7 +630,7 @@ msgid "MySpace"
 msgstr "MySpace"
 
 #: ../functions/panel/theme_options.php:695
-#: ../functions/simplecatch_functions.php:781
+#: ../functions/simplecatch_functions.php:750
 msgid "WordPress"
 msgstr "WordPress"
 
@@ -679,7 +679,7 @@ msgid "Soundcloud"
 msgstr "Soundcloud"
 
 #: ../functions/panel/theme_options.php:755
-#: ../functions/simplecatch_functions.php:1038
+#: ../functions/simplecatch_functions.php:1007
 msgid "Email"
 msgstr "Email"
 
@@ -711,197 +711,192 @@ msgstr ""
 "Napomena: Ovdje možete staviti skripte iz Google, Facebook, Add This i sl. "
 "koje će se učitati u podnožju"
 
-#: ../functions/simplecatch_functions.php:110
-#, php-format
-msgid "Page %s"
-msgstr "Stranica %s"
-
-#: ../functions/simplecatch_functions.php:140 ../searchform.php:17
+#: ../functions/simplecatch_functions.php:109 ../searchform.php:17
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: ../functions/simplecatch_functions.php:497
+#: ../functions/simplecatch_functions.php:466
 #, php-format
 msgid "%s on Facebook"
 msgstr "%s u Facebook"
 
-#: ../functions/simplecatch_functions.php:502
+#: ../functions/simplecatch_functions.php:471
 #, php-format
 msgid "%s on Twitter"
 msgstr "%s u Twitter"
 
-#: ../functions/simplecatch_functions.php:507
+#: ../functions/simplecatch_functions.php:476
 #, php-format
 msgid "%s on Google+"
 msgstr "%s u Google+"
 
-#: ../functions/simplecatch_functions.php:512
+#: ../functions/simplecatch_functions.php:481
 #, php-format
 msgid "%s on Linkedin"
 msgstr "%s u Linkedin"
 
-#: ../functions/simplecatch_functions.php:517
+#: ../functions/simplecatch_functions.php:486
 #, php-format
 msgid "%s on Pinterest"
 msgstr "%s u Pinterest"
 
-#: ../functions/simplecatch_functions.php:522
+#: ../functions/simplecatch_functions.php:491
 #, php-format
 msgid "%s on YouTube"
 msgstr "%s u YouTube"
 
-#: ../functions/simplecatch_functions.php:527
+#: ../functions/simplecatch_functions.php:496
 #, php-format
 msgid "%s on Vimeo"
 msgstr "%s u Vimeo"
 
-#: ../functions/simplecatch_functions.php:532
+#: ../functions/simplecatch_functions.php:501
 #, php-format
 msgid "%s on Slideshare"
 msgstr "%s u Slideshare"
 
-#: ../functions/simplecatch_functions.php:537
+#: ../functions/simplecatch_functions.php:506
 #, php-format
 msgid "%s on Foursquare"
 msgstr "%s u Foursquare"
 
-#: ../functions/simplecatch_functions.php:542
+#: ../functions/simplecatch_functions.php:511
 #, php-format
 msgid "%s on Flickr"
 msgstr "%s u Flickr"
 
-#: ../functions/simplecatch_functions.php:547
+#: ../functions/simplecatch_functions.php:516
 #, php-format
 msgid "%s on Tumblr"
 msgstr "%s u Tumblr"
 
-#: ../functions/simplecatch_functions.php:552
+#: ../functions/simplecatch_functions.php:521
 #, php-format
 msgid "%s on deviantART"
 msgstr "%s u deviantART"
 
-#: ../functions/simplecatch_functions.php:557
+#: ../functions/simplecatch_functions.php:526
 #, php-format
 msgid "%s on Dribbble"
 msgstr "%s u Dribbble"
 
-#: ../functions/simplecatch_functions.php:562
+#: ../functions/simplecatch_functions.php:531
 #, php-format
 msgid "%s on MySpace"
 msgstr "%s u MySpace"
 
-#: ../functions/simplecatch_functions.php:567
+#: ../functions/simplecatch_functions.php:536
 #, php-format
 msgid "%s on WordPress"
 msgstr "%s u WordPress"
 
-#: ../functions/simplecatch_functions.php:572
+#: ../functions/simplecatch_functions.php:541
 #, php-format
 msgid "%s on RSS"
 msgstr "%s u RSS"
 
-#: ../functions/simplecatch_functions.php:577
+#: ../functions/simplecatch_functions.php:546
 #, php-format
 msgid "%s on Delicious"
 msgstr "%s u Delicious"
 
-#: ../functions/simplecatch_functions.php:582
+#: ../functions/simplecatch_functions.php:551
 #, php-format
 msgid "%s on Last.fm"
 msgstr "%s u Last.fm"
 
-#: ../functions/simplecatch_functions.php:587
+#: ../functions/simplecatch_functions.php:556
 #, php-format
 msgid "%s on Instagram"
 msgstr "%s u Instagram"
 
-#: ../functions/simplecatch_functions.php:592
+#: ../functions/simplecatch_functions.php:561
 #, php-format
 msgid "%s on GitHub"
 msgstr "%s u GitHub"
 
-#: ../functions/simplecatch_functions.php:597
+#: ../functions/simplecatch_functions.php:566
 #, php-format
 msgid "%s on Vkontakte"
 msgstr "%s u Vkontakte"
 
-#: ../functions/simplecatch_functions.php:602
+#: ../functions/simplecatch_functions.php:571
 #, php-format
 msgid "%s on My World"
 msgstr "%s u My World"
 
-#: ../functions/simplecatch_functions.php:607
+#: ../functions/simplecatch_functions.php:576
 #, php-format
 msgid "%s on Odnoklassniki"
 msgstr "%s u Odnoklassniki"
 
-#: ../functions/simplecatch_functions.php:612
+#: ../functions/simplecatch_functions.php:581
 #, php-format
 msgid "%s on Goodreads"
 msgstr "%s u Goodreads"
 
-#: ../functions/simplecatch_functions.php:617
+#: ../functions/simplecatch_functions.php:586
 #, php-format
 msgid "%s on Skype"
 msgstr "%s u Skype"
 
-#: ../functions/simplecatch_functions.php:622
+#: ../functions/simplecatch_functions.php:591
 #, php-format
 msgid "%s on Soundcloud"
 msgstr "%s u Soundcloud"
 
-#: ../functions/simplecatch_functions.php:627
+#: ../functions/simplecatch_functions.php:596
 #, php-format
 msgid "%s on Email"
 msgstr "%s u Email"
 
-#: ../functions/simplecatch_functions.php:781
+#: ../functions/simplecatch_functions.php:750
 msgid "Powered By:"
 msgstr "Pokretano od:"
 
-#: ../functions/simplecatch_functions.php:781
+#: ../functions/simplecatch_functions.php:750
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: ../functions/simplecatch_functions.php:781
+#: ../functions/simplecatch_functions.php:750
 msgid "Powered By WordPress"
 msgstr "Pokretano od WordPress"
 
-#: ../functions/simplecatch_functions.php:781
+#: ../functions/simplecatch_functions.php:750
 msgid "Theme:"
 msgstr "Tema:"
 
-#: ../functions/simplecatch_functions.php:781
+#: ../functions/simplecatch_functions.php:750
 msgid "Simple Catch"
 msgstr "Simple Catch"
 
-#: ../functions/simplecatch_functions.php:968
+#: ../functions/simplecatch_functions.php:937
 msgid "Categories: "
 msgstr "Kategorije:"
 
-#: ../functions/simplecatch_functions.php:1037
+#: ../functions/simplecatch_functions.php:1006
 msgid "Name"
 msgstr "Ime"
 
-#: ../functions/simplecatch_functions.php:1037
-#: ../functions/simplecatch_functions.php:1038
+#: ../functions/simplecatch_functions.php:1006
+#: ../functions/simplecatch_functions.php:1007
 msgid "( required )"
 msgstr "( obavezno )"
 
-#: ../functions/simplecatch_functions.php:1039
+#: ../functions/simplecatch_functions.php:1008
 msgid "Website"
 msgstr "Web stranica"
 
-#: ../functions/simplecatch_functions.php:1075
+#: ../functions/simplecatch_functions.php:1044
 msgid "ID"
 msgstr "ID"
 
-#: ../functions/simplecatch_functions.php:1170 ../page-blog.php:97
+#: ../functions/simplecatch_functions.php:1139 ../page-blog.php:97
 msgid "Previous"
 msgstr "Prethodno"
 
-#: ../functions/simplecatch_functions.php:1171 ../page-blog.php:98
+#: ../functions/simplecatch_functions.php:1140 ../page-blog.php:98
 msgid "Next"
 msgstr "Slijedeće"
 
@@ -911,12 +906,9 @@ msgid "Select Sidebar layout"
 msgstr "Odaberite izgled bočne trake"
 
 #: ../functions/simplecatch_metabox.php:33
-msgid "Default Layout Set in"
-msgstr "Zadani izgled postavljen u"
-
-#: ../functions/simplecatch_metabox.php:33
-msgid "Theme Settings"
-msgstr "Postavke teme"
+#, php-format
+msgid "Default Layout Set in <a href=\"%s\">Theme Settings</a>"
+msgstr ""
 
 #: ../functions/simplecatch_metabox.php:39
 msgid "Right sidebar"
@@ -1025,6 +1017,15 @@ msgstr "Pokušajte s drugačijim ključnim riječima"
 #: ../search.php:39
 msgid "Try more general keywords"
 msgstr "Pokušajte s više općih ključnih riječi"
+
+#~ msgid "Page %s"
+#~ msgstr "Stranica %s"
+
+#~ msgid "Default Layout Set in"
+#~ msgstr "Zadani izgled postavljen u"
+
+#~ msgid "Theme Settings"
+#~ msgstr "Postavke teme"
 
 #~ msgid "Displays Custom Tag Cloud designed for Simple Catch Theme."
 #~ msgstr ""

@@ -84,37 +84,6 @@ add_action( 'admin_enqueue_scripts', 'simplecatch_register_js' );
 
 
 /**
- * Creates a nicely formatted and more specific title element text
- * for output in head of document, based on current view.
- *
- * @param string $title Default title text for current view.
- * @param string $sep Optional separator.
- * @return string Filtered title.
- */
-function simplecatch_wp_title( $title, $sep ) {
-	global $paged, $page;
-
-	if ( is_feed() )
-		return $title;
-
-	// Add the site name.
-	$title .= get_bloginfo( 'name' );
-
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
-
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'simplecatch' ), max( $paged, $page ) );
-
-	return $title;
-}
-add_filter( 'wp_title', 'simplecatch_wp_title', 10, 2 );
-
-
-/**
  * Sets the post excerpt length to 30 words.
  *
  * function tied to the excerpt_length filter hook.
@@ -137,7 +106,7 @@ function simplecatch_continue_reading() {
     $options = $simplecatch_options_settings;
     
 	$more_tag_text = $options[ 'more_tag_text' ];
-	return ' <a class="readmore" href="'. esc_url( get_permalink() ) . '">' . sprintf( __( '%s', 'simplecatch' ), esc_attr( $more_tag_text ) ) . '</a>';
+	return ' <a class="readmore" href="'. esc_url( get_permalink() ) . '">' . sprintf( __( '%s', 'simple-catch' ), esc_attr( $more_tag_text ) ) . '</a>';
 }
 
 
@@ -494,137 +463,137 @@ function simplecatch_headersocialnetworks() {
 				//facebook
 				if ( !empty( $options[ 'social_facebook' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="facebook"><a href="'.esc_url( $options[ 'social_facebook' ] ).'" title="'.sprintf( esc_attr__( '%s on Facebook', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Facebook </a></li>';
+						'<li class="facebook"><a href="'.esc_url( $options[ 'social_facebook' ] ).'" title="'.sprintf( esc_attr__( '%s on Facebook', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Facebook </a></li>';
 				}
 				//Twitter
 				if ( !empty( $options[ 'social_twitter' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="twitter"><a href="'.esc_url( $options[ 'social_twitter' ] ).'" title="'.sprintf( esc_attr__( '%s on Twitter', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Twitter </a></li>';
+						'<li class="twitter"><a href="'.esc_url( $options[ 'social_twitter' ] ).'" title="'.sprintf( esc_attr__( '%s on Twitter', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Twitter </a></li>';
 				}
 				//Google+
 				if ( !empty( $options[ 'social_googleplus' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="google-plus"><a href="'.esc_url( $options[ 'social_googleplus' ] ).'" title="'.sprintf( esc_attr__( '%s on Google+', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Google+ </a></li>';
+						'<li class="google-plus"><a href="'.esc_url( $options[ 'social_googleplus' ] ).'" title="'.sprintf( esc_attr__( '%s on Google+', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Google+ </a></li>';
 				}
 				//Linkedin
 				if ( !empty( $options[ 'social_linkedin' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="linkedin"><a href="'.esc_url( $options[ 'social_linkedin' ] ).'" title="'.sprintf( esc_attr__( '%s on Linkedin', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Linkedin </a></li>';
+						'<li class="linkedin"><a href="'.esc_url( $options[ 'social_linkedin' ] ).'" title="'.sprintf( esc_attr__( '%s on Linkedin', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Linkedin </a></li>';
 				}
 				//Pinterest
 				if ( !empty( $options[ 'social_pinterest' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="pinterest"><a href="'.esc_url( $options[ 'social_pinterest' ] ).'" title="'.sprintf( esc_attr__( '%s on Pinterest', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Twitter </a></li>';
+						'<li class="pinterest"><a href="'.esc_url( $options[ 'social_pinterest' ] ).'" title="'.sprintf( esc_attr__( '%s on Pinterest', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Twitter </a></li>';
 				}				
 				//Youtube
 				if ( !empty( $options[ 'social_youtube' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="you-tube"><a href="'.esc_url( $options[ 'social_youtube' ] ).'" title="'.sprintf( esc_attr__( '%s on YouTube', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' YouTube </a></li>';
+						'<li class="you-tube"><a href="'.esc_url( $options[ 'social_youtube' ] ).'" title="'.sprintf( esc_attr__( '%s on YouTube', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' YouTube </a></li>';
 				}
 				//Vimeo
 				if ( !empty( $options[ 'social_vimeo' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="viemo"><a href="'.esc_url( $options[ 'social_vimeo' ] ).'" title="'.sprintf( esc_attr__( '%s on Vimeo', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Vimeo </a></li>';
+						'<li class="viemo"><a href="'.esc_url( $options[ 'social_vimeo' ] ).'" title="'.sprintf( esc_attr__( '%s on Vimeo', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Vimeo </a></li>';
 				}				
 				//Slideshare
 				if ( !empty( $options[ 'social_slideshare' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="slideshare"><a href="'.esc_url( $options[ 'social_slideshare' ] ).'" title="'.sprintf( esc_attr__( '%s on Slideshare', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Slideshare </a></li>';
+						'<li class="slideshare"><a href="'.esc_url( $options[ 'social_slideshare' ] ).'" title="'.sprintf( esc_attr__( '%s on Slideshare', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Slideshare </a></li>';
 				}				
 				//Foursquare
 				if ( !empty( $options[ 'social_foursquare' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="foursquare"><a href="'.esc_url( $options[ 'social_foursquare' ] ).'" title="'.sprintf( esc_attr__( '%s on Foursquare', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' foursquare </a></li>';
+						'<li class="foursquare"><a href="'.esc_url( $options[ 'social_foursquare' ] ).'" title="'.sprintf( esc_attr__( '%s on Foursquare', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' foursquare </a></li>';
 				}
 				//Flickr
 				if ( !empty( $options[ 'social_flickr' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="flickr"><a href="'.esc_url( $options[ 'social_flickr' ] ).'" title="'.sprintf( esc_attr__( '%s on Flickr', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Flickr </a></li>';
+						'<li class="flickr"><a href="'.esc_url( $options[ 'social_flickr' ] ).'" title="'.sprintf( esc_attr__( '%s on Flickr', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Flickr </a></li>';
 				}
 				//Tumblr
 				if ( !empty( $options[ 'social_tumblr' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="tumblr"><a href="'.esc_url( $options[ 'social_tumblr' ] ).'" title="'.sprintf( esc_attr__( '%s on Tumblr', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Tumblr </a></li>';
+						'<li class="tumblr"><a href="'.esc_url( $options[ 'social_tumblr' ] ).'" title="'.sprintf( esc_attr__( '%s on Tumblr', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Tumblr </a></li>';
 				}
 				//deviantART
 				if ( !empty( $options[ 'social_deviantart' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="deviantart"><a href="'.esc_url( $options[ 'social_deviantart' ] ).'" title="'.sprintf( esc_attr__( '%s on deviantART', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' deviantART </a></li>';
+						'<li class="deviantart"><a href="'.esc_url( $options[ 'social_deviantart' ] ).'" title="'.sprintf( esc_attr__( '%s on deviantART', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' deviantART </a></li>';
 				}
 				//Dribbble
 				if ( !empty( $options[ 'social_dribbble' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="dribbble"><a href="'.esc_url( $options[ 'social_dribbble' ] ).'" title="'.sprintf( esc_attr__( '%s on Dribbble', 'simplecatch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Dribbble </a></li>';
+						'<li class="dribbble"><a href="'.esc_url( $options[ 'social_dribbble' ] ).'" title="'.sprintf( esc_attr__( '%s on Dribbble', 'simple-catch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Dribbble </a></li>';
 				}
 				//MySpace
 				if ( !empty( $options[ 'social_myspace' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="myspace"><a href="'.esc_url( $options[ 'social_myspace' ] ).'" title="'.sprintf( esc_attr__( '%s on MySpace', 'simplecatch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' MySpace </a></li>';
+						'<li class="myspace"><a href="'.esc_url( $options[ 'social_myspace' ] ).'" title="'.sprintf( esc_attr__( '%s on MySpace', 'simple-catch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' MySpace </a></li>';
 				}
 				//WordPress
 				if ( !empty( $options[ 'social_wordpress' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="wordpress"><a href="'.esc_url( $options[ 'social_wordpress' ] ).'" title="'.sprintf( esc_attr__( '%s on WordPress', 'simplecatch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' WordPress </a></li>';
+						'<li class="wordpress"><a href="'.esc_url( $options[ 'social_wordpress' ] ).'" title="'.sprintf( esc_attr__( '%s on WordPress', 'simple-catch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' WordPress </a></li>';
 				}				
 				//RSS
 				if ( !empty( $options[ 'social_rss' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="rss"><a href="'.esc_url( $options[ 'social_rss' ] ).'" title="'.sprintf( esc_attr__( '%s on RSS', 'simplecatch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' RSS </a></li>';
+						'<li class="rss"><a href="'.esc_url( $options[ 'social_rss' ] ).'" title="'.sprintf( esc_attr__( '%s on RSS', 'simple-catch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' RSS </a></li>';
 				}
 				//Delicious
 				if ( !empty( $options[ 'social_delicious' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="delicious"><a href="'.esc_url( $options[ 'social_delicious' ] ).'" title="'.sprintf( esc_attr__( '%s on Delicious', 'simplecatch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Delicious </a></li>';
+						'<li class="delicious"><a href="'.esc_url( $options[ 'social_delicious' ] ).'" title="'.sprintf( esc_attr__( '%s on Delicious', 'simple-catch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Delicious </a></li>';
 				}				
 				//Last.fm
 				if ( !empty( $options[ 'social_lastfm' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="lastfm"><a href="'.esc_url( $options[ 'social_lastfm' ] ).'" title="'.sprintf( esc_attr__( '%s on Last.fm', 'simplecatch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Last.fm </a></li>';
+						'<li class="lastfm"><a href="'.esc_url( $options[ 'social_lastfm' ] ).'" title="'.sprintf( esc_attr__( '%s on Last.fm', 'simple-catch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Last.fm </a></li>';
 				}
 				//Instagram
 				if ( !empty( $options[ 'social_instagram' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="instagram"><a href="'.esc_url( $options[ 'social_instagram' ] ).'" title="'.sprintf( esc_attr__( '%s on Instagram', 'simplecatch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Instagram </a></li>';
+						'<li class="instagram"><a href="'.esc_url( $options[ 'social_instagram' ] ).'" title="'.sprintf( esc_attr__( '%s on Instagram', 'simple-catch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' Instagram </a></li>';
 				}	
 				//GitHub
 				if ( !empty( $options[ 'social_github' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="github"><a href="'.esc_url( $options[ 'social_github' ] ).'" title="'.sprintf( esc_attr__( '%s on GitHub', 'simplecatch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' GitHub </a></li>';
+						'<li class="github"><a href="'.esc_url( $options[ 'social_github' ] ).'" title="'.sprintf( esc_attr__( '%s on GitHub', 'simple-catch' ),get_bloginfo('name') ).'" target="_blank">'.get_bloginfo( 'name' ).' GitHub </a></li>';
 				}			
 				//Vkontakte
 				if ( !empty( $options[ 'social_vkontakte' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="vkontakte"><a href="'.esc_url( $options[ 'social_vkontakte' ] ).'" title="'.sprintf( esc_attr__( '%s on Vkontakte', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Vkontakte </a></li>';
+						'<li class="vkontakte"><a href="'.esc_url( $options[ 'social_vkontakte' ] ).'" title="'.sprintf( esc_attr__( '%s on Vkontakte', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Vkontakte </a></li>';
 				}				
 				//My World
 				if ( !empty( $options[ 'social_myworld' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="myworld"><a href="'.esc_url( $options[ 'social_myworld' ] ).'" title="'.sprintf( esc_attr__( '%s on My World', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' My World </a></li>';
+						'<li class="myworld"><a href="'.esc_url( $options[ 'social_myworld' ] ).'" title="'.sprintf( esc_attr__( '%s on My World', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' My World </a></li>';
 				}				
 				//Odnoklassniki
 				if ( !empty( $options[ 'social_odnoklassniki' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="odnoklassniki"><a href="'.esc_url( $options[ 'social_odnoklassniki' ] ).'" title="'.sprintf( esc_attr__( '%s on Odnoklassniki', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Odnoklassniki </a></li>';
+						'<li class="odnoklassniki"><a href="'.esc_url( $options[ 'social_odnoklassniki' ] ).'" title="'.sprintf( esc_attr__( '%s on Odnoklassniki', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Odnoklassniki </a></li>';
 				}	
 				//Goodreads
 				if ( !empty( $options[ 'social_goodreads' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="goodreads"><a href="'.esc_url( $options[ 'social_goodreads' ] ).'" title="'.sprintf( esc_attr__( '%s on Goodreads', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Goodreads </a></li>';
+						'<li class="goodreads"><a href="'.esc_url( $options[ 'social_goodreads' ] ).'" title="'.sprintf( esc_attr__( '%s on Goodreads', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Goodreads </a></li>';
 				}
 				//Skype
 				if ( !empty( $options[ 'social_skype' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="skype"><a href="'.esc_attr( $options[ 'social_skype' ] ).'" title="'.sprintf( esc_attr__( '%s on Skype', 'simplecatch' ),get_bloginfo( 'name' ) ).'">'.get_bloginfo( 'name' ).' Skype </a></li>';
+						'<li class="skype"><a href="'.esc_attr( $options[ 'social_skype' ] ).'" title="'.sprintf( esc_attr__( '%s on Skype', 'simple-catch' ),get_bloginfo( 'name' ) ).'">'.get_bloginfo( 'name' ).' Skype </a></li>';
 				}
 				//Soundcloud
 				if ( !empty( $options[ 'social_soundcloud' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="soundcloud"><a href="'.esc_url( $options[ 'social_soundcloud' ] ).'" title="'.sprintf( esc_attr__( '%s on Soundcloud', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Soundcloud </a></li>';
+						'<li class="soundcloud"><a href="'.esc_url( $options[ 'social_soundcloud' ] ).'" title="'.sprintf( esc_attr__( '%s on Soundcloud', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Soundcloud </a></li>';
 				}
 				//Email
 				if ( !empty( $options[ 'social_email' ] ) && is_email($options[ 'social_email' ] ) ) {
 					$simplecatch_headersocialnetworks .=
-						'<li class="email"><a href="mailto:'.sanitize_email( $options[ 'social_email' ] ).'" title="'.sprintf( esc_attr__( '%s on Email', 'simplecatch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Email </a></li>';
+						'<li class="email"><a href="mailto:'.sanitize_email( $options[ 'social_email' ] ).'" title="'.sprintf( esc_attr__( '%s on Email', 'simple-catch' ),get_bloginfo( 'name' ) ).'" target="_blank">'.get_bloginfo( 'name' ).' Email </a></li>';
 				}			
 				$simplecatch_headersocialnetworks .='
 			</ul>
@@ -778,7 +747,7 @@ function simplecatch_custom_tag_cloud() {
 function simplecatch_footer() {
 ?>
 	<div class="col5 powered-by"> 
-        <?php _e( 'Powered By:', 'simplecatch');?> <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'simplecatch' ) ); ?>" target="_blank" title="<?php esc_attr_e( 'Powered By WordPress', 'simplecatch' ); ?>"><?php _e( 'WordPress', 'simplecatch' ); ?></a> | <?php _e( 'Theme:', 'simplecatch');?> <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'simplecatch' ) ); ?>" target="_blank" title="<?php esc_attr_e( 'Simple Catch', 'simplecatch' ); ?>"><?php _e( 'Simple Catch', 'simplecatch' ); ?></a>
+        <?php _e( 'Powered By:', 'simple-catch');?> <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'simple-catch' ) ); ?>" target="_blank" title="<?php esc_attr_e( 'Powered By WordPress', 'simple-catch' ); ?>"><?php _e( 'WordPress', 'simple-catch' ); ?></a> | <?php _e( 'Theme:', 'simple-catch');?> <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'simple-catch' ) ); ?>" target="_blank" title="<?php esc_attr_e( 'Simple Catch', 'simple-catch' ); ?>"><?php _e( 'Simple Catch', 'simple-catch' ); ?></a>
   	</div><!--.col5 powered-by-->
 
 <?php
@@ -949,9 +918,9 @@ function simplecatch_loop() {
 			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>"><?php the_title(); ?></a></h2>
             <ul class="post-by">
                 <li class="no-padding-left"><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>" 
-                    title="<?php echo esc_attr( get_the_author_meta( 'display_name' ) ); ?>"><?php _e( 'By', 'simplecatch' ); ?>&nbsp;<?php the_author_meta( 'display_name' );?></a></li>
+                    title="<?php echo esc_attr( get_the_author_meta( 'display_name' ) ); ?>"><?php _e( 'By', 'simple-catch' ); ?>&nbsp;<?php the_author_meta( 'display_name' );?></a></li>
                 <li><?php $simplecatch_date_format = get_option( 'date_format' ); the_time( $simplecatch_date_format ); ?></li>
-                <li><?php comments_popup_link( __( 'No Comments', 'simplecatch' ), __( '1 Comment', 'simplecatch' ), __( '% Comments', 'simplecatch' ) ); ?></li>
+                <li><?php comments_popup_link( __( 'No Comments', 'simple-catch' ), __( '1 Comment', 'simple-catch' ), __( '% Comments', 'simple-catch' ) ); ?></li>
             </ul>
             <?php the_content();
             // copy this <!--nextpage--> and paste at the post content where you want to break the page
@@ -965,7 +934,7 @@ function simplecatch_loop() {
 				) );
 			$tag = get_the_tags();
 			if (! $tag ) { ?>
-				<div class='tags'><?php _e( 'Categories: ', 'simplecatch' ); ?> <?php the_category(', '); ?> </div>
+				<div class='tags'><?php _e( 'Categories: ', 'simple-catch' ); ?> <?php the_category(', '); ?> </div>
 			<?php } else { 
 					 the_tags( '<div class="tags"> Tags: ', ', ', '</div>'); 
 			} ?>
@@ -1034,9 +1003,9 @@ function simplecatch_comment_form_fields( $fields ) {
 	$req = get_option( 'require_name_email' );
 	$aria_req = ( $req ? " aria-required='true'" : '' );
 	
-    $fields['author'] = '<label for="author">' . __('Name','simplecatch') . '</label><input type="text" class="text" placeholder="'.esc_attr__( 'Name', 'simplecatch' ) .'&nbsp;'. ( $req ? esc_attr__( '( required )', 'simplecatch' ) : '' ) .'" name="author"'. $aria_req .' />';
-	$fields['email'] = '<label for="email">' . __('Email','simplecatch') . '</label><input type="text" class="text" placeholder="'.esc_attr__( 'Email', 'simplecatch' ) .'&nbsp;'. ( $req ? esc_attr__( '( required )', 'simplecatch' ) : '' ) .'" name="email"'. $aria_req .' />';
-	$fields['url'] = '<label for="url">' . __('Website','simplecatch') . '</label><input type="text" class="text" placeholder="'.esc_attr__( 'Website', 'simplecatch' ) .'" name="url"'. $aria_req .' />';
+    $fields['author'] = '<label for="author">' . __('Name','simple-catch') . '</label><input type="text" class="text" placeholder="'.esc_attr__( 'Name', 'simple-catch' ) .'&nbsp;'. ( $req ? esc_attr__( '( required )', 'simple-catch' ) : '' ) .'" name="author"'. $aria_req .' />';
+	$fields['email'] = '<label for="email">' . __('Email','simple-catch') . '</label><input type="text" class="text" placeholder="'.esc_attr__( 'Email', 'simple-catch' ) .'&nbsp;'. ( $req ? esc_attr__( '( required )', 'simple-catch' ) : '' ) .'" name="email"'. $aria_req .' />';
+	$fields['url'] = '<label for="url">' . __('Website','simple-catch') . '</label><input type="text" class="text" placeholder="'.esc_attr__( 'Website', 'simple-catch' ) .'" name="url"'. $aria_req .' />';
 
     return $fields;
 }
@@ -1072,7 +1041,7 @@ add_filter( 'comment_form_defaults', 'simplecatch_comment_form_defaults' );
  */
 function simplecatch_post_id_column( $post_columns ) {
 	$beginning = array_slice( $post_columns, 0 ,1 );
-	$beginning[ 'postid' ] = __( 'ID', 'simplecatch'  );
+	$beginning[ 'postid' ] = __( 'ID', 'simple-catch'  );
 	$ending = array_slice( $post_columns, 1 );
 	$post_columns = array_merge( $beginning, $ending );
 	return $post_columns;
@@ -1167,8 +1136,8 @@ function simplecatch_content_nav( $nav_id ) {
 		if ( $wp_query->max_num_pages > 1 ) : 
 	?>
 			<ul class="default-wp-page">
-				<li class="previous"><?php next_posts_link( __( 'Previous', 'simplecatch' ) ); ?></li>
-				<li class="next"><?php previous_posts_link( __( 'Next', 'simplecatch' ) ); ?></li>
+				<li class="previous"><?php next_posts_link( __( 'Previous', 'simple-catch' ) ); ?></li>
+				<li class="next"><?php previous_posts_link( __( 'Next', 'simple-catch' ) ); ?></li>
 			</ul>
 		<?php endif;
 	endif; 

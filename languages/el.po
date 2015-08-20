@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-09 21:34+0545\n"
-"PO-Revision-Date: 2015-08-09 21:34+0545\n"
+"POT-Creation-Date: 2015-08-20 18:50+0545\n"
+"PO-Revision-Date: 2015-08-20 18:50+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <fansitejustgames@gmail.com>\n"
 "Language: en\n"
@@ -58,19 +58,19 @@ msgstr ""
 "δείτε τα σχόλια."
 
 #: ../comments.php:29 ../content.php:46
-#: ../functions/simplecatch_functions.php:954 ../image.php:48
+#: ../functions/simplecatch_functions.php:923 ../image.php:48
 #: ../page-blog.php:69
 msgid "No Comments"
 msgstr "Χωρίς Σχόλια"
 
 #: ../comments.php:29 ../content.php:46
-#: ../functions/simplecatch_functions.php:954 ../image.php:48
+#: ../functions/simplecatch_functions.php:923 ../image.php:48
 #: ../page-blog.php:69
 msgid "1 Comment"
 msgstr "1 Σχόλιο"
 
 #: ../comments.php:29 ../content.php:46
-#: ../functions/simplecatch_functions.php:954 ../image.php:48
+#: ../functions/simplecatch_functions.php:923 ../image.php:48
 #: ../page-blog.php:69
 msgid "% Comments"
 msgstr "% Σχόλια"
@@ -84,7 +84,7 @@ msgstr "Τα σχόλια έχουν κλείσει."
 msgid "Permalink to %s"
 msgstr "Μόνιμη διεύθυνση για %s"
 
-#: ../content.php:44 ../functions/simplecatch_functions.php:952
+#: ../content.php:44 ../functions/simplecatch_functions.php:921
 #: ../image.php:46 ../page-blog.php:67
 msgid "By"
 msgstr "Από :"
@@ -109,7 +109,7 @@ msgstr "Copyright"
 msgid "All Rights Reserved."
 msgstr "Με την επιφύλαξη παντός δικαιώματος."
 
-#: ../functions.php:103
+#: ../functions.php:110
 msgid "Primary Menu"
 msgstr "Κυρίως Μενού"
 
@@ -128,7 +128,7 @@ msgid "Theme Options By"
 msgstr "Theme Options By"
 
 #: ../functions/panel/theme_options.php:88
-#: ../functions/simplecatch_functions.php:781
+#: ../functions/simplecatch_functions.php:750
 msgid "http://catchthemes.com/"
 msgstr "http://catchthemes.com"
 
@@ -629,7 +629,7 @@ msgid "MySpace"
 msgstr "MySpace"
 
 #: ../functions/panel/theme_options.php:695
-#: ../functions/simplecatch_functions.php:781
+#: ../functions/simplecatch_functions.php:750
 msgid "WordPress"
 msgstr "WordPress"
 
@@ -678,7 +678,7 @@ msgid "Soundcloud"
 msgstr "Soundcloud"
 
 #: ../functions/panel/theme_options.php:755
-#: ../functions/simplecatch_functions.php:1038
+#: ../functions/simplecatch_functions.php:1007
 msgid "Email"
 msgstr "Email"
 
@@ -710,197 +710,192 @@ msgstr ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"
 
-#: ../functions/simplecatch_functions.php:110
-#, php-format
-msgid "Page %s"
-msgstr "Σελίδα %s"
-
-#: ../functions/simplecatch_functions.php:140 ../searchform.php:17
+#: ../functions/simplecatch_functions.php:109 ../searchform.php:17
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: ../functions/simplecatch_functions.php:497
+#: ../functions/simplecatch_functions.php:466
 #, php-format
 msgid "%s on Facebook"
 msgstr "%s στο Facebook"
 
-#: ../functions/simplecatch_functions.php:502
+#: ../functions/simplecatch_functions.php:471
 #, php-format
 msgid "%s on Twitter"
 msgstr "%s στο Twitter"
 
-#: ../functions/simplecatch_functions.php:507
+#: ../functions/simplecatch_functions.php:476
 #, php-format
 msgid "%s on Google+"
 msgstr "%s στο Google+"
 
-#: ../functions/simplecatch_functions.php:512
+#: ../functions/simplecatch_functions.php:481
 #, php-format
 msgid "%s on Linkedin"
 msgstr "%s στο Linkedin"
 
-#: ../functions/simplecatch_functions.php:517
+#: ../functions/simplecatch_functions.php:486
 #, php-format
 msgid "%s on Pinterest"
 msgstr "%s στο Pinterest"
 
-#: ../functions/simplecatch_functions.php:522
+#: ../functions/simplecatch_functions.php:491
 #, php-format
 msgid "%s on YouTube"
 msgstr "%s στο YouTube"
 
-#: ../functions/simplecatch_functions.php:527
+#: ../functions/simplecatch_functions.php:496
 #, php-format
 msgid "%s on Vimeo"
 msgstr "%s στο Vimeo"
 
-#: ../functions/simplecatch_functions.php:532
+#: ../functions/simplecatch_functions.php:501
 #, php-format
 msgid "%s on Slideshare"
 msgstr "%s στο Slideshare"
 
-#: ../functions/simplecatch_functions.php:537
+#: ../functions/simplecatch_functions.php:506
 #, php-format
 msgid "%s on Foursquare"
 msgstr "%s στο Foursquare"
 
-#: ../functions/simplecatch_functions.php:542
+#: ../functions/simplecatch_functions.php:511
 #, php-format
 msgid "%s on Flickr"
 msgstr "%s στο Flickr"
 
-#: ../functions/simplecatch_functions.php:547
+#: ../functions/simplecatch_functions.php:516
 #, php-format
 msgid "%s on Tumblr"
 msgstr "%s στο Tumblr"
 
-#: ../functions/simplecatch_functions.php:552
+#: ../functions/simplecatch_functions.php:521
 #, php-format
 msgid "%s on deviantART"
 msgstr "%s στο deviantART"
 
-#: ../functions/simplecatch_functions.php:557
+#: ../functions/simplecatch_functions.php:526
 #, php-format
 msgid "%s on Dribbble"
 msgstr "%s στο Dribbble"
 
-#: ../functions/simplecatch_functions.php:562
+#: ../functions/simplecatch_functions.php:531
 #, php-format
 msgid "%s on MySpace"
 msgstr "%s στο MySpace"
 
-#: ../functions/simplecatch_functions.php:567
+#: ../functions/simplecatch_functions.php:536
 #, php-format
 msgid "%s on WordPress"
 msgstr "%s στο WordPress"
 
-#: ../functions/simplecatch_functions.php:572
+#: ../functions/simplecatch_functions.php:541
 #, php-format
 msgid "%s on RSS"
 msgstr "%s στο RSS"
 
-#: ../functions/simplecatch_functions.php:577
+#: ../functions/simplecatch_functions.php:546
 #, php-format
 msgid "%s on Delicious"
 msgstr "%s στο Delicious"
 
-#: ../functions/simplecatch_functions.php:582
+#: ../functions/simplecatch_functions.php:551
 #, php-format
 msgid "%s on Last.fm"
 msgstr "%s στο Last.fm"
 
-#: ../functions/simplecatch_functions.php:587
+#: ../functions/simplecatch_functions.php:556
 #, php-format
 msgid "%s on Instagram"
 msgstr "%s στο Instagram"
 
-#: ../functions/simplecatch_functions.php:592
+#: ../functions/simplecatch_functions.php:561
 #, php-format
 msgid "%s on GitHub"
 msgstr "%s στο GitHub"
 
-#: ../functions/simplecatch_functions.php:597
+#: ../functions/simplecatch_functions.php:566
 #, php-format
 msgid "%s on Vkontakte"
 msgstr "%s στο Vkontakte"
 
-#: ../functions/simplecatch_functions.php:602
+#: ../functions/simplecatch_functions.php:571
 #, php-format
 msgid "%s on My World"
 msgstr "%s στο My World"
 
-#: ../functions/simplecatch_functions.php:607
+#: ../functions/simplecatch_functions.php:576
 #, php-format
 msgid "%s on Odnoklassniki"
 msgstr "%s στο Odnoklassniki"
 
-#: ../functions/simplecatch_functions.php:612
+#: ../functions/simplecatch_functions.php:581
 #, php-format
 msgid "%s on Goodreads"
 msgstr "%s στο Goodreads"
 
-#: ../functions/simplecatch_functions.php:617
+#: ../functions/simplecatch_functions.php:586
 #, php-format
 msgid "%s on Skype"
 msgstr "%s στο Skype"
 
-#: ../functions/simplecatch_functions.php:622
+#: ../functions/simplecatch_functions.php:591
 #, php-format
 msgid "%s on Soundcloud"
 msgstr "%s στο Soundcloud"
 
-#: ../functions/simplecatch_functions.php:627
+#: ../functions/simplecatch_functions.php:596
 #, php-format
 msgid "%s on Email"
 msgstr "%s στο Email"
 
-#: ../functions/simplecatch_functions.php:781
+#: ../functions/simplecatch_functions.php:750
 msgid "Powered By:"
 msgstr "Με την υποστήριξη:"
 
-#: ../functions/simplecatch_functions.php:781
+#: ../functions/simplecatch_functions.php:750
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org"
 
-#: ../functions/simplecatch_functions.php:781
+#: ../functions/simplecatch_functions.php:750
 msgid "Powered By WordPress"
 msgstr "Με την υποστήριξη του Wordpress"
 
-#: ../functions/simplecatch_functions.php:781
+#: ../functions/simplecatch_functions.php:750
 msgid "Theme:"
 msgstr "Θέμα:"
 
-#: ../functions/simplecatch_functions.php:781
+#: ../functions/simplecatch_functions.php:750
 msgid "Simple Catch"
 msgstr "Simple Catch"
 
-#: ../functions/simplecatch_functions.php:968
+#: ../functions/simplecatch_functions.php:937
 msgid "Categories: "
 msgstr "Κατηγορίες:"
 
-#: ../functions/simplecatch_functions.php:1037
+#: ../functions/simplecatch_functions.php:1006
 msgid "Name"
 msgstr "Όνομα"
 
-#: ../functions/simplecatch_functions.php:1037
-#: ../functions/simplecatch_functions.php:1038
+#: ../functions/simplecatch_functions.php:1006
+#: ../functions/simplecatch_functions.php:1007
 msgid "( required )"
 msgstr "( Απαιτείται )"
 
-#: ../functions/simplecatch_functions.php:1039
+#: ../functions/simplecatch_functions.php:1008
 msgid "Website"
 msgstr "Website"
 
-#: ../functions/simplecatch_functions.php:1075
+#: ../functions/simplecatch_functions.php:1044
 msgid "ID"
 msgstr "ID"
 
-#: ../functions/simplecatch_functions.php:1170 ../page-blog.php:97
+#: ../functions/simplecatch_functions.php:1139 ../page-blog.php:97
 msgid "Previous"
 msgstr "Προηγούμενο"
 
-#: ../functions/simplecatch_functions.php:1171 ../page-blog.php:98
+#: ../functions/simplecatch_functions.php:1140 ../page-blog.php:98
 msgid "Next"
 msgstr "Επόμενο"
 
@@ -910,12 +905,9 @@ msgid "Select Sidebar layout"
 msgstr "Επιλέξτε τη μοροφοποίηση της πλαινής μπάρας"
 
 #: ../functions/simplecatch_metabox.php:33
-msgid "Default Layout Set in"
-msgstr "Προεπιλεγμένη μορφοποίηση"
-
-#: ../functions/simplecatch_metabox.php:33
-msgid "Theme Settings"
-msgstr "Theme Settings"
+#, php-format
+msgid "Default Layout Set in <a href=\"%s\">Theme Settings</a>"
+msgstr ""
 
 #: ../functions/simplecatch_metabox.php:39
 msgid "Right sidebar"
@@ -1022,6 +1014,15 @@ msgstr "Δοκιμάστε διαφορετικές λέξεις κλειδιά"
 #: ../search.php:39
 msgid "Try more general keywords"
 msgstr "Δοκιμάστε γενικότερους όρους αναζήτησης"
+
+#~ msgid "Page %s"
+#~ msgstr "Σελίδα %s"
+
+#~ msgid "Default Layout Set in"
+#~ msgstr "Προεπιλεγμένη μορφοποίηση"
+
+#~ msgid "Theme Settings"
+#~ msgstr "Theme Settings"
 
 #~ msgid "Displays Custom Tag Cloud designed for Simple Catch Theme."
 #~ msgstr "Displays Custom Tag Cloud designed for Simple Catch Theme."

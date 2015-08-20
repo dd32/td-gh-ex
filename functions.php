@@ -48,7 +48,7 @@ function simplecatch_setup() {
 	 * Add your files into /languages/ directory.
 	 * @see http://codex.wordpress.org/Function_Reference/load_theme_textdomain
 	 */
-	load_theme_textdomain( 'simplecatch', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'simple-catch', get_template_directory() . '/languages' );
 	
 	$locale = get_locale();
     $locale_file = get_template_directory().'/languages/$locale.php';
@@ -94,13 +94,20 @@ function simplecatch_setup() {
 	add_image_size( 'slider', 976, 313, true); // uses on Featured Slider on Homepage Header
 	
 	// Add default posts and comments RSS feed links to head
-	add_theme_support( 'automatic-feed-links' ); 
+	add_theme_support( 'automatic-feed-links' );
+
+	/**
+	 * Setup title support for theme
+	 * Supported from WordPress version 4.1 onwards 
+	 * More Info: https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
+	 */
+	add_theme_support( 'title-tag' );	
 		
 	// remove wordpress version from header for security concern
 	remove_action( 'wp_head', 'wp_generator' );
  
 	// This theme uses wp_nav_menu() in one location.
-	register_nav_menu( 'primary', __( 'Primary Menu', 'simplecatch' ) );
+	register_nav_menu( 'primary', __( 'Primary Menu', 'simple-catch' ) );
 	
 	// Add support for custom backgrounds	
 	add_theme_support( 'custom-background' );

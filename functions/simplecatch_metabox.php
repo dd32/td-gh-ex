@@ -11,13 +11,13 @@
 function simplecatch_add_custom_box() {
 	add_meta_box(
 		'siderbar-layout',							  	//Unique ID
-       __( 'Select Sidebar layout', 'simplecatch' ),   //Title
+       __( 'Select Sidebar layout', 'simple-catch' ),   //Title
         'simplecatch_sidebar_layout',                   //Callback function
         'page'                                          //show metabox in pages
     ); 
 	add_meta_box(
 		'siderbar-layout',							  	//Unique ID
-       __( 'Select Sidebar layout', 'simplecatch' ),   //Title
+       __( 'Select Sidebar layout', 'simple-catch' ),   //Title
         'simplecatch_sidebar_layout',                   //Callback function
         'post'                                          //show metabox in pages
     ); 
@@ -30,31 +30,31 @@ $sidebar_layout = array(
 	'default-sidebar' => array(
     	'id'		=> 'simplecatch-sidebarlayout',
 		'value' 	=> 'default',
-		'label' 	=> sprintf( __( 'Default Layout Set in <a href="%s">Theme Settings</a>', 'simplecatch' ), esc_url( admin_url('admin.php?page=theme_options' ) ) ),
+		'label' 	=> sprintf( __( 'Default Layout Set in <a href="%s">Theme Settings</a>', 'simple-catch' ), esc_url( admin_url('admin.php?page=theme_options' ) ) ),
 		'thumbnail' => ' '
  	),
     'right-sidebar' => array(
 		'id' => 'simplecatch-sidebarlayout',
 		'value' => 'right-sidebar',
-		'label' => __( 'Right sidebar', 'simplecatch' ),
+		'label' => __( 'Right sidebar', 'simple-catch' ),
 		'thumbnail' => get_template_directory_uri() . '/functions/panel/images/right-sidebar.gif'
 	),
 	'left-sidebar' => array(
     	'id'		=> 'simplecatch-sidebarlayout',
 		'value' 	=> 'left-sidebar',
-		'label' 	=> __( 'Left sidebar', 'simplecatch' ),
+		'label' 	=> __( 'Left sidebar', 'simple-catch' ),
 		'thumbnail' => get_template_directory_uri() . '/functions/panel/images/left-sidebar.gif'
 	),		
     'no-sidebar' => array(
     	'id'		=> 'simplecatch-sidebarlayout',
 		'value' 	=> 'no-sidebar',
-		'label' 	=> __( 'No sidebar', 'simplecatch' ),
+		'label' 	=> __( 'No sidebar', 'simple-catch' ),
 		'thumbnail' => get_template_directory_uri() . '/functions/panel/images/no-sidebar.png'
 	),
     'no-sidebar-full-width' => array(
     	'id'		=> 'simplecatch-sidebarlayout',
 		'value' 	=> 'no-sidebar-full-width',
-		'label' 	=> __( 'No sidebar, Full Width', 'simplecatch' ),
+		'label' 	=> __( 'No sidebar, Full Width', 'simple-catch' ),
 		'thumbnail' => get_template_directory_uri() . '/functions/panel/images/no-sidebar-fullwidth.png'
   	)
 );

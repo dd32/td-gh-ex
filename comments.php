@@ -18,7 +18,7 @@
 			
 	// Standard WordPress comments security
 	if ( post_password_required() ) { ?>
-		<p class="nocomments"><?php _e( 'This post is password protected. Enter the password to view comments.', 'simplecatch' ); ?></p>
+		<p class="nocomments"><?php _e( 'This post is password protected. Enter the password to view comments.', 'simple-catch' ); ?></p>
 		<?php return;
 	} ?>
 	
@@ -26,7 +26,7 @@
 	if ( have_comments() ): ?>
 		<div id="comments">	
             <h2 id="comments-title">
-                <?php comments_number(__( 'No Comments', 'simplecatch' ), __( '1 Comment', 'simplecatch' ), __( '% Comments', 'simplecatch' ) );?>
+                <?php comments_number(__( 'No Comments', 'simple-catch' ), __( '1 Comment', 'simple-catch' ), __( '% Comments', 'simple-catch' ) );?>
             </h2><!-- #comments -->
     
             <div class="navigation clearfix">
@@ -57,7 +57,7 @@
 		if (comments_open()): // If comments are open, but there are no comments.
           
 		else: // comments are closed ?>
-           <p class="nocomments"><?php _e( 'Comments are closed.', 'simplecatch' );?></p>
+           <p class="nocomments"><?php _e( 'Comments are closed.', 'simple-catch' );?></p>
     	<?php endif; 
 		
 	endif;?>

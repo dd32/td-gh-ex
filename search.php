@@ -14,7 +14,7 @@ get_header();
 	}
       
 	if (have_posts()): ?>
-		<h2 class="entry-title"><?php printf( __( 'Showing results for: <span class="img-title">%s</span>', 'simplecatch' ), get_search_query() ); ?></h2>
+		<h2 class="entry-title"><?php printf( __( 'Showing results for: <span class="img-title">%s</span>', 'simple-catch' ), get_search_query() ); ?></h2>
 		
 		<?php while (have_posts()) : the_post(); ?>
 		
@@ -30,13 +30,13 @@ get_header();
         <?php simplecatch_content_nav( 'nav-below' ); ?>
 		
 	<?php else : ?>
-		<h2><?php printf( __( 'Your search <span> "%s" </span> did not match any documents', 'simplecatch' ), get_search_query() ); ?></h2>
+		<h2><?php printf( __( 'Your search <span> "%s" </span> did not match any documents', 'simple-catch' ), get_search_query() ); ?></h2>
 		<div class="post">
-			<h5><?php _e( 'A few suggestions', 'simplecatch' ); ?></h5>
+			<h5><?php _e( 'A few suggestions', 'simple-catch' ); ?></h5>
 			<ul>
-				<li><?php _e( 'Make sure all words are spelled correctly', 'simplecatch' ); ?></li>
-				<li><?php _e( 'Try different keywords', 'simplecatch' ); ?></li>
-				<li><?php _e( 'Try more general keywords', 'simplecatch' ); ?></li>
+				<li><?php _e( 'Make sure all words are spelled correctly', 'simple-catch' ); ?></li>
+				<li><?php _e( 'Try different keywords', 'simple-catch' ); ?></li>
+				<li><?php _e( 'Try more general keywords', 'simple-catch' ); ?></li>
 			</ul> 
 		</div> <!-- .post -->
 		
