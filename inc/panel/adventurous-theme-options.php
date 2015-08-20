@@ -109,7 +109,13 @@ function adventurous_theme_options_do_page() {
                         <li><a class="button" href="<?php echo esc_url(__('https://twitter.com/catchthemes/','adventurous')); ?>" title="<?php esc_attr_e('Follow Catch Themes on Twitter', 'adventurous'); ?>" target="_blank"><?php printf(__('Twitter','adventurous')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('http://wordpress.org/support/view/theme-reviews/adventurous','adventurous')); ?>" title="<?php esc_attr_e('Rate us 5 Star on WordPress', 'adventurous'); ?>" target="_blank"><?php printf(__('5 Star Rating','adventurous')); ?></a></li>
                    	</ul>
-                </div><!-- #theme-support --> 
+                </div><!-- #theme-support -->
+
+                <div id="theme-option-header-notice">
+                    <p class="notice">
+                        <?php printf( _x( 'Theme Options Panel will be retired on future versions. Please use %1$s Customizer %2$s instead.','1: Customizer Link Start, 2: Customizer Link End' , 'adventurous' ) , '<a href="' . esc_url ( admin_url( 'customize.php' ) ) . '">', '</a>' ); ?>
+                    </p>
+                </div>
                  
           	</div><!-- #theme-option-header -->              
  
@@ -1005,7 +1011,7 @@ function adventurous_theme_options_do_page() {
                                         </div>
                                         <div class="col col-2">
                                             <input type="text" name="adventurous_options[featured_slider][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'featured_slider', $options ) && array_key_exists( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>" />
-                                        <a href="<?php bloginfo ( 'url' );?>/wp-admin/post.php?post=<?php if( array_key_exists ( 'featured_slider', $options ) && array_key_exists ( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>&action=edit" class="button" title="<?php esc_attr_e('Click Here To Edit'); ?>" target="_blank"><?php _e( 'Click Here To Edit', 'adventurous' ); ?></a>
+                                        <a href="<?php bloginfo ( 'url' );?>/wp-admin/post.php?post=<?php if( array_key_exists ( 'featured_slider', $options ) && array_key_exists ( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>&action=edit" class="button" title="<?php esc_attr_e('Click Here To Edit', 'adventurous' ); ?>" target="_blank"><?php _e( 'Click Here To Edit', 'adventurous' ); ?></a>
                                         </div>
                                     </div><!-- .row -->
                                 </div><!-- .repeat-content-wrap -->  
@@ -1757,26 +1763,3 @@ function adventurous_make_footer_modifications() {
     }
 }
 add_action( 'init', 'adventurous_make_footer_modifications' );
-
-
-/**
- * Custom scripts and styles on Customizer for Adventurous
- *
- * @since Adventurous 1.4
- */
-function adventurous_customize_scripts() {
-    wp_register_script( 'adventurous_customizer_custom', get_template_directory_uri() . '/inc/panel/js/customizer-custom-scripts.js', array( 'jquery' ), '20140107', true );
-
-    $adventurous_misc_links = array(
-                            'upgrade_link'              => esc_url( admin_url( 'themes.php?page=theme_options' ) ),
-                            'upgrade_text'              => __( 'More Theme Options &raquo;', 'adventurous' ),
-                            );
-
-    //Add Upgrade Button and old WordPress message via localized script
-    wp_localize_script( 'adventurous_customizer_custom', 'adventurous_misc_links', $adventurous_misc_links );
-
-    wp_enqueue_script( 'adventurous_customizer_custom' );
-
-    wp_enqueue_style( 'adventurous_customizer_custom', get_template_directory_uri() . '/inc/panel/adventurous-customizer.css');
-}
-add_action( 'customize_controls_print_footer_scripts', 'adventurous_customize_scripts');

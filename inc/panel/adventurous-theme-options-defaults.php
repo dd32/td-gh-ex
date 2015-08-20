@@ -136,3 +136,190 @@ function adventurous_site_link() {
 function adventurous_shop_link() {
 	return '<a href="'. esc_url( __( 'http://catchthemes.com', 'adventurous' ) ) . '" target="_blank" title="' . esc_attr__( 'Catch Themes', 'adventurous' ) . '"><span>' . __( 'Catch Themes', 'adventurous' ) . '</span></a>';
 }
+
+
+/**
+ * Returns an array of color schemes registered for adventurous.
+ *
+ * @since Adventurous 1.6.2
+ */
+function adventurous_color_schemes() {
+	$options = array(
+		'light' 		=> __( 'Light (Blue)', 'adventurous' ),
+		'dark'			=> __( 'Dark', 'adventurous' ),
+		'lightblack'	=> __( 'Light (Black)', 'adventurous' ),
+	);
+
+	return apply_filters( 'adventurous_color_schemes', $options );
+}
+
+
+/**
+ * Returns an array of featured content layout options
+ *
+ * @since Adventurous 1.6.2
+ */
+function adventurous_featured_content_layouts() {
+	$options = array(
+		'three-columns' => __( '3 Columns', 'adventurous' ),
+		'four-columns'	=> __( '4 Columns', 'adventurous' ),
+	);
+
+	return apply_filters( 'adventurous_featured_content_layouts', $options );
+}
+
+
+/**
+ * Returns an array of enable header image options
+ *
+ * @since Adventurous 1.6.2
+ */
+function adventurous_enable_header_featured_image() {
+	$options = array(
+		'homepage' 		=> __( 'Homepage', 'adventurous' ),
+		'excludehome' 	=> __( 'Excluding Homepage', 'adventurous' ),
+		'allpage' 		=> __( 'Entire Site', 'adventurous' ),
+		'postpage' 		=> __( 'Entire Site, Page/Post Featured Image', 'adventurous' ),
+		'pagespostes'	=> __( 'Pages & Posts', 'adventurous' ),
+		'disable'		=> __( 'Disable', 'adventurous' ),
+	);
+
+	return apply_filters( 'adventurous_enable_header_featured_image', $options );
+}
+
+
+/**
+ * Returns an array of page/post featured image size
+ *
+ * @since Adventurous 1.6.2
+ */
+function adventurous_page_post_featured_image_size() {
+	$options = array(
+		'full' 		=> __( 'Full Image', 'adventurous' ),
+		'slider' 	=> __( 'Slider Image', 'adventurous' ),
+		'featured'	=> __( 'Featured Image', 'adventurous' ),		
+	);
+
+	return apply_filters( 'adventurous_page_post_featured_image_size', $options );
+}
+
+
+/**
+ * Returns an array of content featured image size
+ *
+ * @since Adventurous 1.6.2
+ */
+function adventurous_content_featured_image_size() {
+	$options = array(
+		'full' 		=> __( 'Full Image', 'adventurous' ),
+		'slider' 	=> __( 'Slider Image', 'adventurous' ),
+		'featured'	=> __( 'Featured Image', 'adventurous' ),
+		'disable'	=> __( 'Disable Image', 'adventurous' ),		
+	);
+
+	return apply_filters( 'adventurous_content_featured_image_size', $options );
+}
+
+
+/**
+ * Returns an array of sidebar layout options
+ *
+ * @since Adventurous 1.6.2
+ */
+function adventurous_sidebar_layout_options() {
+	$options = array(
+		'right-sidebar' => __( 'Right Sidebar', 'adventurous' ),
+		'left-sidebar' 	=> __( 'Left Sidebar', 'adventurous' ),
+		'no-sidebar'	=> __( 'No Sidebar', 'adventurous' ),
+	);
+
+	return apply_filters( 'adventurous_sidebar_layout_options', $options );
+}
+
+
+/**
+ * Returns an array of slider enable options
+ *
+ * @since Adventurous 1.6.2
+ */
+function adventurous_enable_featured_content_options() {
+	$options = array(
+		'homepage'=> __( 'Homepage', 'adventurous' ),
+		'allpage' => __( 'Entire Site', 'adventurous' ),
+		'disable' => __( 'Disable', 'adventurous' ),
+	);
+
+	return apply_filters( 'adventurous_enable_slider_options', $options );
+}
+
+
+/**
+ * Returns an array of content layout options
+ *
+ * @since Adventurous 1.6.2
+ */
+function adventurous_content_layout_options() {
+	$options = array(
+		'full' 		=> __( 'Full Content Display', 'adventurous' ),
+		'excerpt' 	=> __( 'Excerpt/Blog Display', 'adventurous' ),
+	);
+
+	return apply_filters( 'adventurous_content_layout_options', $options );
+}
+
+
+/**
+ * Returns an array of slider types
+ *
+ * @since Adventurous 1.6.2
+ */
+function adventurous_slider_types() {
+	$options = array(
+		'demo-slider' 		=> __( 'Demo Slider', 'adventurous' ),
+		'post-slider' 		=> __( 'Post Slider', 'adventurous' ),
+		'category-slider' 	=> __( 'Category Slider', 'adventurous' ),
+	);
+
+	return apply_filters( 'adventurous_slider_types', $options );
+}
+
+
+/**
+ * Returns an array of slider enable options
+ *
+ * @since Adventurous 1.6.2
+ */
+function adventurous_enable_slider_options() {
+	$options = array(
+		'enable-slider-homepage'=> __( 'Homepage', 'adventurous' ),
+		'enable-slider-allpage' => __( 'Entire Site', 'adventurous' ),
+		'disable-slider' 		=> __( 'Disable', 'adventurous' ),
+	);
+
+	return apply_filters( 'adventurous_enable_slider_options', $options );
+}
+
+
+/**
+ * Returns an array of slider transition effects
+ *
+ * @since Adventurous 1.6.2
+ */
+function adventurous_transition_effects() {
+	$options = array(
+		'fade'			=> __( 'fade', 'adventurous' ),
+		'wipe' 			=> __( 'wipe', 'adventurous' ),
+		'scrollUp' 		=> __( 'scrollUp', 'adventurous' ),
+		'scrollDown'	=> __( 'scrollDown', 'adventurous' ),
+		'scrollUp' 		=> __( 'scrollUp', 'adventurous' ),
+		'scrollLeft'	=> __( 'scrollLeft', 'adventurous' ),
+		'scrollRight'	=> __( 'scrollRight', 'adventurous' ),
+		'blindX' 		=> __( 'blindX', 'adventurous' ),
+		'blindY' 		=> __( 'blindY', 'adventurous' ),
+		'blindZ' 		=> __( 'blindZ', 'adventurous' ),
+		'cover' 		=> __( 'cover', 'adventurous' ),
+		'shuffle' 		=> __( 'shuffle', 'adventurous' ),
+	);
+
+	return apply_filters( 'adventurous_transition_effects', $options );
+}

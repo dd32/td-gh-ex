@@ -59,6 +59,11 @@ function adventurous_setup() {
 	require( get_template_directory() . '/inc/panel/adventurous-theme-options-defaults.php' );	
 
 	/**
+	 * Customizer Options
+	 */
+	require( get_template_directory() . '/inc/panel/customizer/customizer.php' );	
+
+	/**
 	 * Custom Theme Options
 	 */
 	require( get_template_directory() . '/inc/panel/adventurous-theme-options.php' );	
