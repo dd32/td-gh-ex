@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Besty V1.3.6\n"
+"Project-Id-Version: Besty V1.3.9\n"
 "POT-Creation-Date: 2014-12-09 20:20+0530\n"
 "PO-Revision-Date: 2014-12-09 20:21+0530\n"
 "Last-Translator: FasterThemes <support@fasterthemes.com>\n"

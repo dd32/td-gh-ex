@@ -9,7 +9,7 @@ class besty_latest_post_widget extends WP_Widget {
 		
 		$besty_control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'latest-post-widget' );
 		
-		$this->WP_Widget( 'latest-post-widget', __('Besty Latest Post', 'besty'), $besty_widget_ops, $besty_control_ops );
+		parent::__construct( 'latest-post-widget', __('Besty Latest Post', 'besty'), $besty_widget_ops, $besty_control_ops );
 	}
 	
 	function widget( $besty_args, $instance ) {
