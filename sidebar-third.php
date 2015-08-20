@@ -54,10 +54,10 @@
 			}
 			else { ?>
             	<aside class="widget widget_text">
-                	<h3 class="widget-title"><?php _e( 'Secondary Sidebar Widget Area', 'catchflames' ); ?></h3>
+                	<h3 class="widget-title"><?php _e( 'Secondary Sidebar Widget Area', 'catch-flames' ); ?></h3>
                     <div class="textwidget">
-                    	<p><?php _e( 'This is the Secondary Sidebar Widget Area if you are using a three column site layout option.', 'catchflames' ); ?></p>
-                    	<p><?php printf( __( 'You can add content to this area by visiting your <a href="%s">Widgets Panel</a> and adding new widgets to this area.', 'catchflames' ), admin_url( 'widgets.php' ) ); ?></p>
+                    	<p><?php _e( 'This is the Secondary Sidebar Widget Area if you are using a three column site layout option.', 'catch-flames' ); ?></p>
+                    	<p><?php printf( __( 'You can add content to this area by visiting your <a href="%s">Widgets Panel</a> and adding new widgets to this area.', 'catch-flames' ), admin_url( 'widgets.php' ) ); ?></p>
                   	</div>
 				</aside>
 			<?php 		

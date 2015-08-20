@@ -15,9 +15,9 @@ get_header();
 				<?php while ( have_posts() ) : the_post(); ?>
 
 					<nav id="nav-single">
-						<h3 class="assistive-text"><?php _e( 'Post navigation', 'catchflames' ); ?></h3>
-						<span class="nav-previous"><?php previous_post_link( '%link', __( '<span class="meta-nav">&larr;</span> Previous', 'catchflames' ) ); ?></span>
-						<span class="nav-next"><?php next_post_link( '%link', __( 'Next <span class="meta-nav">&rarr;</span>', 'catchflames' ) ); ?></span>
+						<h3 class="assistive-text"><?php _e( 'Post navigation', 'catch-flames' ); ?></h3>
+						<span class="nav-previous"><?php previous_post_link( '%link', __( '<span class="meta-nav">&larr;</span> Previous', 'catch-flames' ) ); ?></span>
+						<span class="nav-next"><?php next_post_link( '%link', __( 'Next <span class="meta-nav">&rarr;</span>', 'catch-flames' ) ); ?></span>
 					</nav><!-- #nav-single -->
 
 					<?php get_template_part( 'content', 'single' ); ?>

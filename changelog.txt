@@ -1,5 +1,12 @@
 == Changelog ==
 
+Version 2.6
+* Bug Fixed: Print CSS
+* Compatible with WordPress 4.3
+* Removed support for WordPress version less than 4.1
+* Updated codes to comply with deprecating PHP4 style constructors in WordPress 4.3
+* Updated text-domain
+
 Version 2.5
 * Bug Fixed: Sidebar layout option (Reported by notjustblack )
 * Bug Fixed: Sidebar Option in page/post

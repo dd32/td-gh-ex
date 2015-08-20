@@ -50,8 +50,8 @@ add_action( 'admin_print_styles', 'catchflames_admin_style' );
 function catchflames_options_menu() {
 	
 	add_theme_page( 
-        __( 'Theme Options', 'catchflames' ),           // Name of page
-        __( 'Theme Options', 'catchflames' ),           // Label in menu
+        __( 'Theme Options', 'catch-flames' ),           // Name of page
+        __( 'Theme Options', 'catch-flames' ),           // Label in menu
         'edit_theme_options',                           // Capability required
         'theme_options',                                // Menu slug, used to uniquely identify the page
         'catchflames_theme_options_do_page'             // Function that renders the options page
@@ -95,27 +95,27 @@ function catchflames_theme_options_do_page() {
             ?>   
             
             <?php if (false !== $_REQUEST['settings-updated']) : ?>
-            	<div class="updated fade"><p><strong><?php _e('Options Saved', 'catchflames'); ?></strong></p></div>
+            	<div class="updated fade"><p><strong><?php _e('Options Saved', 'catch-flames'); ?></strong></p></div>
             <?php endif; ?>
             
 			<div id="theme-option-header">            
                 <div id="theme-option-title">
-                    <h2 class="title"><?php _e( 'Theme Options By', 'catchflames' ); ?></h2>
+                    <h2 class="title"><?php _e( 'Theme Options By', 'catch-flames' ); ?></h2>
                     <h2 class="logo">
-                        <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catchflames' ) ); ?>" title="<?php esc_attr_e( 'Catch Themes', 'catchflames' ); ?>" target="_blank">
-                            <img src="<?php echo get_template_directory_uri().'/inc/panel/images/catch-themes.png'; ?>" alt="<?php _e( 'Catch Themes', 'catchflames' ); ?>" />
+                        <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catch-flames' ) ); ?>" title="<?php esc_attr_e( 'Catch Themes', 'catch-flames' ); ?>" target="_blank">
+                            <img src="<?php echo get_template_directory_uri().'/inc/panel/images/catch-themes.png'; ?>" alt="<?php _e( 'Catch Themes', 'catch-flames' ); ?>" />
                         </a>
                     </h2>
                 </div><!-- #theme-option-title -->
             
                 <div id="theme-support">
                     <ul>
-                        <li><a class="button" href="<?php echo esc_url( __( 'http://catchthemes.com/support-forum/forum/catch-flames-pro-premium/','catchflames' ) ); ?>" title="<?php esc_attr_e( 'Support Forum', 'catchflames' ); ?>" target="_blank"><?php printf( __( 'Support Forum','catchflames' ) ); ?></a></li>
-                        <li><a class="button" href="<?php echo esc_url( __( 'http://catchthemes.com/theme-instructions/catch-flames-pro/','catchflames' ) ); ?>" title="<?php esc_attr_e( 'Theme Instruction', 'catchflames' ); ?>" target="_blank"><?php printf( __( 'Theme Instruction','catchflames' ) ); ?></a></li>
-                        <li><a class="button" href="<?php echo esc_url( __( 'https://www.facebook.com/catchthemes/','catchflames' ) ); ?>" title="<?php esc_attr_e( 'Like Catch Themes on Facebook', 'catchflames' ); ?>" target="_blank"><?php printf( __( 'Facebook','catchflames' ) ); ?></a></li>
-                        <li><a class="button" href="<?php echo esc_url( __( 'https://twitter.com/catchthemes/','catchflames' ) ); ?>" title="<?php esc_attr_e( 'Follow Catch Themes on Twitter', 'catchflames' ); ?>" target="_blank"><?php printf( __( 'Twitter','catchflames' ) ); ?></a></li>
-                        <li><a class="button" href="<?php echo esc_url( __( 'https://plus.google.com/+Catchthemes','catchflames' ) ); ?>" title="<?php esc_attr_e( 'Follow Catch Themes on Google+', 'catchflames' ); ?>" target="_blank"><?php printf( __( 'Google+','catchflames' ) ); ?></a></li>
-                        <li><a class="button" href="<?php echo esc_url( __( 'http://wordpress.org/support/view/theme-reviews/catch-flames/','catchflames' ) ); ?>" title="<?php esc_attr_e( 'Rate us 5 Star on WordPress', 'catchflames' ); ?>" target="_blank"><?php printf( __( '5 Star Rating','catchflames' ) ); ?></a></li>
+                        <li><a class="button" href="<?php echo esc_url( __( 'http://catchthemes.com/support-forum/forum/catch-flames-pro-premium/','catch-flames' ) ); ?>" title="<?php esc_attr_e( 'Support Forum', 'catch-flames' ); ?>" target="_blank"><?php printf( __( 'Support Forum','catch-flames' ) ); ?></a></li>
+                        <li><a class="button" href="<?php echo esc_url( __( 'http://catchthemes.com/theme-instructions/catch-flames-pro/','catch-flames' ) ); ?>" title="<?php esc_attr_e( 'Theme Instruction', 'catch-flames' ); ?>" target="_blank"><?php printf( __( 'Theme Instruction','catch-flames' ) ); ?></a></li>
+                        <li><a class="button" href="<?php echo esc_url( __( 'https://www.facebook.com/catchthemes/','catch-flames' ) ); ?>" title="<?php esc_attr_e( 'Like Catch Themes on Facebook', 'catch-flames' ); ?>" target="_blank"><?php printf( __( 'Facebook','catch-flames' ) ); ?></a></li>
+                        <li><a class="button" href="<?php echo esc_url( __( 'https://twitter.com/catchthemes/','catch-flames' ) ); ?>" title="<?php esc_attr_e( 'Follow Catch Themes on Twitter', 'catch-flames' ); ?>" target="_blank"><?php printf( __( 'Twitter','catch-flames' ) ); ?></a></li>
+                        <li><a class="button" href="<?php echo esc_url( __( 'https://plus.google.com/+Catchthemes','catch-flames' ) ); ?>" title="<?php esc_attr_e( 'Follow Catch Themes on Google+', 'catch-flames' ); ?>" target="_blank"><?php printf( __( 'Google+','catch-flames' ) ); ?></a></li>
+                        <li><a class="button" href="<?php echo esc_url( __( 'http://wordpress.org/support/view/theme-reviews/catch-flames/','catch-flames' ) ); ?>" title="<?php esc_attr_e( 'Rate us 5 Star on WordPress', 'catch-flames' ); ?>" target="_blank"><?php printf( __( '5 Star Rating','catch-flames' ) ); ?></a></li>
                    	</ul>
                 </div><!-- #theme-support --> 
                  
@@ -124,29 +124,29 @@ function catchflames_theme_options_do_page() {
             
             <div id="catchflames_ad_tabs">
                 <ul class="tabNavigation" id="mainNav">
-                    <li><a href="#themeoptions"><?php _e( 'Theme Options', 'catchflames' );?></a></li>
-                    <li><a href="#color-options"><?php _e( 'Color Options', 'catchflames' );?></a></li>
-                    <li><a href="#slidersettings"><?php _e( 'Featured Slider', 'catchflames' );?></a></li>
-                    <li><a href="#sociallinks"><?php _e( 'Social Links', 'catchflames' );?></a></li>
+                    <li><a href="#themeoptions"><?php _e( 'Theme Options', 'catch-flames' );?></a></li>
+                    <li><a href="#color-options"><?php _e( 'Color Options', 'catch-flames' );?></a></li>
+                    <li><a href="#slidersettings"><?php _e( 'Featured Slider', 'catch-flames' );?></a></li>
+                    <li><a href="#sociallinks"><?php _e( 'Social Links', 'catch-flames' );?></a></li>
                 </ul><!-- .tabsNavigation #mainNav -->
                    
                 <!-- Option for Theme Options -->
                 <div id="themeoptions">                    
                     <div id="fav-icons" class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Favicon', 'catchflames' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Favicon', 'catch-flames' ); ?></a></h3>
                         <div class="option-content inside">
                        		<div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Disable Favicon?', 'catchflames' ); ?>
+                                	<?php _e( 'Disable Favicon?', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2">
                                 	<input type='hidden' value='0' name='catchflames_options[remove_favicon]'>
-                                  	<input type="checkbox" id="favicon" name="catchflames_options[remove_favicon]" value="1" <?php checked( '1', $options['remove_favicon'] ); ?> /> <?php _e('Check to disable', 'catchflames'); ?>
+                                  	<input type="checkbox" id="favicon" name="catchflames_options[remove_favicon]" value="1" <?php checked( '1', $options['remove_favicon'] ); ?> /> <?php _e('Check to disable', 'catch-flames'); ?>
                                	</div>
                           	</div><!-- .row -->  
                             <div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Fav Icon URL:', 'catchflames' ); ?>
+                                	<?php _e( 'Fav Icon URL:', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2">
                                     <?php if ( !empty ( $options[ 'fav_icon' ] ) ) { ?>
@@ -154,12 +154,12 @@ function catchflames_theme_options_do_page() {
                                         <?php } else { ?>
                                         <input class="upload-url" size="65" type="text" name="catchflames_options[fav_icon]" value="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" alt="fav" />
                                         <?php }  ?> 
-                                        <input ref="<?php esc_attr_e( 'Insert as Favicon','catchflames' );?>" class="catchflames_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Favicon','catchflames' );?>" />
+                                        <input ref="<?php esc_attr_e( 'Insert as Favicon','catch-flames' );?>" class="catchflames_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Favicon','catch-flames' );?>" />
                                 </div>
                          	</div><!-- .row -->                            
                        		<div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Preview', 'catchflames' ); ?>
+                                	<?php _e( 'Preview', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2">                                    
 									<?php 
@@ -172,26 +172,26 @@ function catchflames_theme_options_do_page() {
                                </div>
                             </div><!-- .row -->
                             <div class="row">
-                      			<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchflames' ); ?>" />
+                      			<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-flames' ); ?>" />
                           	</div><!-- .row -->      
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->      
                                         
                     <div id="webclip-icon" class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Web Clip Icon Options', 'catchflames' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Web Clip Icon Options', 'catch-flames' ); ?></a></h3>
                         <div class="option-content inside">
                        		<div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Disable Web Clip Icon?', 'catchflames' ); ?>
+                                	<?php _e( 'Disable Web Clip Icon?', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2">                    
                                     <input type='hidden' value='0' name='catchflames_options[remove_web_clip]'>
-                                    <input type="checkbox" id="favicon" name="catchflames_options[remove_web_clip]" value="1" <?php checked( '1', $options['remove_web_clip'] ); ?> /> <?php _e('Check to disable', 'catchflames'); ?>
+                                    <input type="checkbox" id="favicon" name="catchflames_options[remove_web_clip]" value="1" <?php checked( '1', $options['remove_web_clip'] ); ?> /> <?php _e('Check to disable', 'catch-flames'); ?>
                                	</div>
                            	</div><!-- .row -->
                             <div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Web Clip Icon URL:', 'catchflames' ); ?>
+                                	<?php _e( 'Web Clip Icon URL:', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2">                                                     
 									<?php if ( !empty ( $options[ 'web_clip' ] ) ) { ?>
@@ -199,12 +199,12 @@ function catchflames_theme_options_do_page() {
                                     <?php } else { ?>
                                         <input size="65" type="text" name="catchflames_options[web_clip]" value="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png" alt="fav" />
                                     <?php }  ?> 
-                                    <input ref="<?php esc_attr_e( 'Insert as Web Clip Icon','catchflames' );?>" class="catchflames_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Web Clip Icon','catchflames' );?>" />
+                                    <input ref="<?php esc_attr_e( 'Insert as Web Clip Icon','catch-flames' );?>" class="catchflames_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Web Clip Icon','catch-flames' );?>" />
                              	</div>
                          	</div><!-- .row -->
                             <div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Preview', 'catchflames' ); ?>
+                                	<?php _e( 'Preview', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2">                                
 									<?php 
@@ -217,38 +217,38 @@ function catchflames_theme_options_do_page() {
                             	</div>
                          	</div><!-- .row -->
                             <div class="row">
-                             	<?php esc_attr_e( 'Note: Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px height, which will support High Resolution Devices like iPad Retina.', 'catchflames' ); ?>
+                             	<?php esc_attr_e( 'Note: Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px height, which will support High Resolution Devices like iPad Retina.', 'catch-flames' ); ?>
                            	</div><!-- .row -->
                             <div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchflames' ); ?>" />
+                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-flames' ); ?>" />
                           	</div><!-- .row -->
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->        
                                     
                		<div id="fixed-header-top-options" class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Fixed Header Top Options', 'catchflames' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Fixed Header Top Options', 'catch-flames' ); ?></a></h3>
                         <div class="option-content inside">  
                       		<div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Enable Fixed Header Top?', 'catchflames' ); ?>
+                                	<?php _e( 'Enable Fixed Header Top?', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2">
                                 	<input type='hidden' value='0' name='catchflames_options[enable_header_top]'>
-                                  	<input type="checkbox" id="enable-header-top" name="catchflames_options[enable_header_top]" value="1" <?php checked( '1', $options['enable_header_top'] ); ?> /> <?php _e('Check to enable', 'catchflames'); ?>
+                                  	<input type="checkbox" id="enable-header-top" name="catchflames_options[enable_header_top]" value="1" <?php checked( '1', $options['enable_header_top'] ); ?> /> <?php _e('Check to enable', 'catch-flames'); ?>
                            		</div>
                          	</div><!-- .row -->
                             <div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Disable Logo in Fixed Header Top?', 'catchflames' ); ?>
+                                	<?php _e( 'Disable Logo in Fixed Header Top?', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2">
                                 	<input type='hidden' value='0' name='catchflames_options[disable_top_menu_logo]'>
-                                   	<input type="checkbox" id="disable-fixed-logo" name="catchflames_options[disable_top_menu_logo]" value="1" <?php checked( '1', $options['disable_top_menu_logo'] ); ?> /> <?php _e('Check to disable', 'catchflames'); ?>
+                                   	<input type="checkbox" id="disable-fixed-logo" name="catchflames_options[disable_top_menu_logo]" value="1" <?php checked( '1', $options['disable_top_menu_logo'] ); ?> /> <?php _e('Check to disable', 'catch-flames'); ?>
                            		</div>
                          	</div><!-- .row -->
                             <div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Logo in Fixed Header Top:', 'catchflames' ); ?>
+                                	<?php _e( 'Logo in Fixed Header Top:', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2">
 									<?php  if ( !empty ( $options[ 'top_menu_logo' ] ) ) { ?>
@@ -256,46 +256,46 @@ function catchflames_theme_options_do_page() {
                                     <?php } else { ?>
                                      	<input class="upload-url" size="65" type="text" name="catchflames_options[top_menu_logo]" value="<?php echo get_template_directory_uri(); ?>/images/fixed-logo.png" alt="logo" />
                                     <?php }  ?>
-                                  	<input ref="<?php esc_attr_e( 'Insert as Header Logo','catchflames' );?>" class="catchflames_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Header Logo','catchflames' );?>" />
+                                  	<input ref="<?php esc_attr_e( 'Insert as Header Logo','catch-flames' );?>" class="catchflames_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Header Logo','catch-flames' );?>" />
                            		</div>
                          	</div><!-- .row -->
                             <div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Fixed Header Top Menu', 'catchflames' ); ?>
+                                	<?php _e( 'Fixed Header Top Menu', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                	 <?php _e( 'You need to create custom menu and then assign menu location as Featured Header Top Menu. For more go to Menu Option Below', 'catchflames' ); ?>
+                                	 <?php _e( 'You need to create custom menu and then assign menu location as Featured Header Top Menu. For more go to Menu Option Below', 'catch-flames' ); ?>
                            		</div>
                          	</div><!-- .row -->
                             <div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchflames' ); ?>" />
+                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-flames' ); ?>" />
                           	</div><!-- .row -->
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->             
        
        				<div id="header-options" class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Header Options', 'catchflames' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Header Options', 'catch-flames' ); ?></a></h3>
                         <div class="option-content inside">
                             <div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Custom Header Image', 'catchflames' ); ?>
+                                	<?php _e( 'Custom Header Image', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                	<?php _e( 'Custom Header Image can be managed from Header Featured Image Options', 'catchflames' ); ?>
+                                	<?php _e( 'Custom Header Image can be managed from Header Featured Image Options', 'catch-flames' ); ?>
                            		</div>
                          	</div><!-- .row -->
                             <div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Disable Header Logo?', 'catchflames' ); ?>
+                                	<?php _e( 'Disable Header Logo?', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2">
                                 	<input type='hidden' value='0' name='catchflames_options[remove_header_logo]'>
-                                   	<input type="checkbox" id="headerlogo" name="catchflames_options[remove_header_logo]" value="1" <?php checked( '1', $options['remove_header_logo'] ); ?> /> <?php _e('Check to disable', 'catchflames'); ?>
+                                   	<input type="checkbox" id="headerlogo" name="catchflames_options[remove_header_logo]" value="1" <?php checked( '1', $options['remove_header_logo'] ); ?> /> <?php _e('Check to disable', 'catch-flames'); ?>
                            		</div>
                          	</div><!-- .row -->
                             <div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Logo url:', 'catchflames' ); ?>
+                                	<?php _e( 'Logo url:', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2">
 									<?php  if ( !empty ( $options[ 'featured_logo_header' ] ) ) { ?>
@@ -303,12 +303,12 @@ function catchflames_theme_options_do_page() {
                                      <?php } else { ?>
                                      	<input class="upload-url" size="65" type="text" name="catchflames_options[featured_logo_header]" value="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="logo" />
                                      <?php }  ?>
-                                    <input ref="<?php esc_attr_e( 'Insert as Logo','catchflames' );?>" class="catchflames_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Logo','catchflames' );?>" />
+                                    <input ref="<?php esc_attr_e( 'Insert as Logo','catch-flames' );?>" class="catchflames_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Logo','catch-flames' );?>" />
                            		</div>
                          	</div><!-- .row -->
                             <div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Preview:', 'catchflames' ); ?>
+                                	<?php _e( 'Preview:', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2">
 									<?php 
@@ -320,80 +320,80 @@ function catchflames_theme_options_do_page() {
                            		</div>
                          	</div><!-- .row -->                                                         
                             <div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchflames' ); ?>" />
+                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-flames' ); ?>" />
                           	</div><!-- .row -->
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->
                          
                   	<div id="header-featured-image" class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Header Featured Image Options', 'catchflames' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Header Featured Image Options', 'catch-flames' ); ?></a></h3>
                         <div class="option-content inside">
                       		<div class="row">
                             	<div class="col col-header">
-                                	<?php _e( 'Enable Featured Header Image', 'catchflames' ); ?>
+                                	<?php _e( 'Enable Featured Header Image', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-options">
                                 	<label title="enable-header-homepage">
                                         <input type="radio" name="catchflames_options[enable_featured_header_image]" id="enable-header-homepage" <?php checked($options['enable_featured_header_image'], 'excludehome'); ?> value="excludehome"  />
-                                       <?php _e( 'Excluding Homepage', 'catchflames' ); ?>
+                                       <?php _e( 'Excluding Homepage', 'catch-flames' ); ?>
                                     </label>
                                                                             
                                     <label title="enable-header-homepage">
                                         <input type="radio" name="catchflames_options[enable_featured_header_image]" id="enable-header-homepage" <?php checked($options['enable_featured_header_image'], 'homepage'); ?> value="homepage"  />
-                                        <?php _e( 'Homepage', 'catchflames' ); ?>
+                                        <?php _e( 'Homepage', 'catch-flames' ); ?>
                                     </label>
                                                                                                                         
                                     <label title="enable-header-allpage">
                                         <input type="radio" name="catchflames_options[enable_featured_header_image]" id="enable-header-allpage" <?php checked($options['enable_featured_header_image'], 'allpage'); ?> value="allpage"  />
-                                         <?php _e( 'Entire Site', 'catchflames' ); ?>
+                                         <?php _e( 'Entire Site', 'catch-flames' ); ?>
                                     </label>
                                     
                                     <label title="enable-header-postpage">
                                         <input type="radio" name="catchflames_options[enable_featured_header_image]" id="enable-header-postpage" <?php checked($options['enable_featured_header_image'], 'postpage'); ?> value="postpage"  />
-                                         <?php _e( 'Entire Site, Page/Post Featured Image', 'catchflames' ); ?>
+                                         <?php _e( 'Entire Site, Page/Post Featured Image', 'catch-flames' ); ?>
                                     </label> 
                                     
                                     <label title="enable-header-pagespostes">
                                         <input type="radio" name="catchflames_options[enable_featured_header_image]" id="enable-header-pagespostes" <?php checked($options['enable_featured_header_image'], 'pagespostes'); ?> value="pagespostes"  />
-                                         <?php _e( 'Pages & Posts', 'catchflames' ); ?>
+                                         <?php _e( 'Pages & Posts', 'catch-flames' ); ?>
                                     </label> 
                                     
                                     <label title="disable-header">
                                         <input type="radio" name="catchflames_options[enable_featured_header_image]" id="disable-header" <?php checked($options['enable_featured_header_image'], 'disable'); ?> value="disable" />
-                                         <?php _e( 'Disable', 'catchflames' ); ?>
+                                         <?php _e( 'Disable', 'catch-flames' ); ?>
                                     </label>  
                            		</div>
                           	</div><!-- .row --> 
                             <div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Header Image:', 'catchflames' ); ?>
+                                	<?php _e( 'Header Image:', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2">                                   
 									<?php 
                                     $header_image = get_header_image();
                                     if ( !empty ( $header_image ) ) { 
-                                    	echo '<a class="button" href="' . admin_url('themes.php?page=custom-header') . '" title="' .esc_attr__( 'Click here to change header image', 'catchflames' ). '">' . __( 'Click here to change Header Image', 'catchflames' ) . '</a>';
+                                    	echo '<a class="button" href="' . admin_url('themes.php?page=custom-header') . '" title="' .esc_attr__( 'Click here to change header image', 'catch-flames' ). '">' . __( 'Click here to change Header Image', 'catch-flames' ) . '</a>';
                                     } else { 
-                                   		echo '<a class="button" href="' . admin_url('themes.php?page=custom-header') . '" title="' .esc_attr__( 'Click here to change header image', 'catchflames' ). '">' . __( 'Click here to add Header Image', 'catchflames' ) . '</a>';
+                                   		echo '<a class="button" href="' . admin_url('themes.php?page=custom-header') . '" title="' .esc_attr__( 'Click here to change header image', 'catch-flames' ). '">' . __( 'Click here to add Header Image', 'catch-flames' ) . '</a>';
 									} ?> 
                              	</div>
                           	</div><!-- .row --> 
                             <div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Preview', 'catchflames' ); ?>
+                                	<?php _e( 'Preview', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2">                                         
 									<?php 
                                     if ( !empty( $header_image ) ) { 
                                    		echo '<img src="'.esc_url( $header_image ).'" alt=""  style="width: 90%; height:auto" />';
                                     } else {
-                                    	_e( 'There is no Header Image', 'catchflames' );
+                                    	_e( 'There is no Header Image', 'catch-flames' );
                                     } ?>
                              	</div>
                           	</div><!-- .row -->                                                                     
                             <div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Featured Header Image Alt/Title Tag', 'catchflames' ); ?>
+                                	<?php _e( 'Featured Header Image Alt/Title Tag', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2">       
                               		<input type="text" size="65" name="catchflames_options[featured_header_image_alt]" value="<?php echo esc_attr( $options [ 'featured_header_image_alt' ] ); ?>" />
@@ -401,7 +401,7 @@ function catchflames_theme_options_do_page() {
                           	</div><!-- .row -->
                             <div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Featured Header Image Link URL', 'catchflames' ); ?>
+                                	<?php _e( 'Featured Header Image Link URL', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2">         
                                   	<input type="text" size="65" name="catchflames_options[featured_header_image_url]" value="<?php echo esc_url( $options [ 'featured_header_image_url' ] ); ?>" />
@@ -410,151 +410,151 @@ function catchflames_theme_options_do_page() {
                             <div class="row">
                             	<div class="col col-1">
                                 	<?php if( $options[ 'reset_header_image' ] == "1" ) { $options[ 'reset_header_image' ] = "0"; } ?>
-                                	<?php _e( 'Reset Header Featured Image Options?', 'catchflames' ); ?>
+                                	<?php _e( 'Reset Header Featured Image Options?', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2">        
                                 	<input type='hidden' value='0' name='catchflames_options[reset_header_image]'>
-                                    <input type="checkbox" id="reset_header_image" name="catchflames_options[reset_header_image]" value="1" <?php checked( '1', $options['reset_header_image'] ); ?> /> <?php _e('Check to reset', 'catchflames'); ?>
+                                    <input type="checkbox" id="reset_header_image" name="catchflames_options[reset_header_image]" value="1" <?php checked( '1', $options['reset_header_image'] ); ?> /> <?php _e('Check to reset', 'catch-flames'); ?>
                               </div>
                           	</div><!-- .row -->                                                         
                             <div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchflames' ); ?>" />
+                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-flames' ); ?>" />
                           	</div><!-- .row --> 
 						</div><!-- .option-content --> 
                  	</div><!-- .option-container -->  
                     
                     <div id="header-options" class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Menu Options', 'catchflames' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Menu Options', 'catch-flames' ); ?></a></h3>
                         <div class="option-content inside">  
                       		<div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Menu Tutorial', 'catchflames' ); ?>
+                                	<?php _e( 'Menu Tutorial', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                	<a class="button" href="<?php echo esc_url( __( 'http://catchthemes.com/blog/custom-menus-wordpress-themes/','catchflames' ) ); ?>" title="<?php esc_attr_e( 'Menu Tutorial', 'catchflames' ); ?>" target="_blank"><?php _e( 'Click Here to Read Menu Tutorial', 'catchflames' );?></a>
+                                	<a class="button" href="<?php echo esc_url( __( 'http://catchthemes.com/blog/custom-menus-wordpress-themes/','catch-flames' ) ); ?>" title="<?php esc_attr_e( 'Menu Tutorial', 'catch-flames' ); ?>" target="_blank"><?php _e( 'Click Here to Read Menu Tutorial', 'catch-flames' );?></a>
                            		</div>
                          	</div><!-- .row -->
                             <div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Custom Menus', 'catchflames' ); ?>
+                                	<?php _e( 'Custom Menus', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                	<a class="button" href="<?php echo admin_url('nav-menus.php'); ?>" title="<?php esc_attr_e( 'Click to Create Custom Menus', 'catchflames' ); ?>"><?php _e( 'Click Here to Create Menu', 'catchflames' );?></a>
+                                	<a class="button" href="<?php echo admin_url('nav-menus.php'); ?>" title="<?php esc_attr_e( 'Click to Create Custom Menus', 'catch-flames' ); ?>"><?php _e( 'Click Here to Create Menu', 'catch-flames' );?></a>
                            		</div>
                          	</div><!-- .row -->
                            	<div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Assign Locations', 'catchflames' ); ?>
-                                     <small><?php _e( 'Note: You can assign your custom menu to Fixed Header Top Menu, Header Right Sidebar Menu, Primary Menu, Secondary Menu and Footer Menu Locations. This will replace the WordPress default page menu', 'catchflames' ); ?></small>
+                                	<?php _e( 'Assign Locations', 'catch-flames' ); ?>
+                                     <small><?php _e( 'Note: You can assign your custom menu to Fixed Header Top Menu, Header Right Sidebar Menu, Primary Menu, Secondary Menu and Footer Menu Locations. This will replace the WordPress default page menu', 'catch-flames' ); ?></small>
                                 </div>
                                 <div class="col col-2">
-                                	<a class="button" href="<?php echo admin_url('nav-menus.php?action=locations'); ?>" title="<?php esc_attr_e( 'Click to Manage Menu Locations', 'catchflames' ); ?>"><?php _e( 'Click to Manage Menu Locations', 'catchflames' );?></a>
+                                	<a class="button" href="<?php echo admin_url('nav-menus.php?action=locations'); ?>" title="<?php esc_attr_e( 'Click to Manage Menu Locations', 'catch-flames' ); ?>"><?php _e( 'Click to Manage Menu Locations', 'catch-flames' );?></a>
                            		</div>
                          	</div><!-- .row -->
                             <div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Disable Default Page Menu?', 'catchflames' ); ?>
+                                	<?php _e( 'Disable Default Page Menu?', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2">
                                 	<input type='hidden' value='0' name='catchflames_options[disable_header_menu]'>
-                                   	<input type="checkbox" id="disable_header_menu" name="catchflames_options[disable_header_menu]" value="1" <?php checked( '1', $options['disable_header_menu'] ); ?> /> <?php _e('Check to disable', 'catchflames'); ?>
+                                   	<input type="checkbox" id="disable_header_menu" name="catchflames_options[disable_header_menu]" value="1" <?php checked( '1', $options['disable_header_menu'] ); ?> /> <?php _e('Check to disable', 'catch-flames'); ?>
                            		</div>
                          	</div><!-- .row -->
                             <div class="row">
-                                    <input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchflames' ); ?>" />
+                                    <input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-flames' ); ?>" />
                            	</div><!-- .row -->
                        	</div><!-- .option-content -->
                   	</div><!-- .option-container --> 
                     
                     <div id="search-settings" class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Search Options', 'catchflames' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Search Options', 'catch-flames' ); ?></a></h3>
                         <div class="option-content inside">
                         	<div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Default Display Text in Search', 'catchflames' ); ?>
+                                	<?php _e( 'Default Display Text in Search', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2">  
                                 	<input type="text" size="45" name="catchflames_options[search_display_text]" value="<?php echo ( isset( $options[ 'search_display_text' ] ) ) ? esc_attr( $options[ 'search_display_text' ] ) : 'Search'; ?>" />
                              	</div>
                           	</div><!-- .row -->                                                         
                             <div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchflames' ); ?>" />
+                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-flames' ); ?>" />
                           	</div><!-- .row -->
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->    
                     
                     <div id="layout-options" class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Layout Options', 'catchflames' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Layout Options', 'catch-flames' ); ?></a></h3>
                         <div class="option-content inside">
                        		<div class="row">
                             	<div class="col col-header">
-                        			<?php _e( 'Default Layout Options', 'catchflames' ); ?>
+                        			<?php _e( 'Default Layout Options', 'catch-flames' ); ?>
                                	</div>
                                 <div class="col col-options">               
                               		<label title="three-columns" class="box first"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/three-columns.png" alt="Three Columns" /><br />
                                 		<input type="radio" name="catchflames_options[sidebar_layout]" id="three-columns" <?php checked($options['sidebar_layout'], 'three-columns') ?> value="three-columns"  />
-                                		<?php _e( 'Three Columns', 'catchflames' ); ?>
+                                		<?php _e( 'Three Columns', 'catch-flames' ); ?>
                                 	</label>                                                               
                                     
                                     <label title="right-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/right-sidebar.png" alt="Content-Sidebar" /><br />
                                     	<input type="radio" name="catchflames_options[sidebar_layout]" id="right-sidebar" <?php checked($options['sidebar_layout'], 'right-sidebar') ?> value="right-sidebar"  />
-                                    	<?php _e( 'Right Sidebar', 'catchflames' ); ?>
+                                    	<?php _e( 'Right Sidebar', 'catch-flames' ); ?>
                                     </label>  
                                     
                                     <label title="left-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/left-sidebar.png" alt="Content-Sidebar" /><br />
                                     	<input type="radio" name="catchflames_options[sidebar_layout]" id="left-sidebar" <?php checked($options['sidebar_layout'], 'left-sidebar') ?> value="left-sidebar"  />
-                                    	<?php _e( 'Left Sidebar', 'catchflames' ); ?>
+                                    	<?php _e( 'Left Sidebar', 'catch-flames' ); ?>
                                     </label>
                                      
                                     <label title="no-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/no-sidebar.png" alt="Content-Sidebar" /><br />
                                    		<input type="radio" name="catchflames_options[sidebar_layout]" id="no-sidebar" <?php checked($options['sidebar_layout'], 'no-sidebar') ?> value="no-sidebar"  />
-                                    	<?php _e( 'No Sidebar', 'catchflames' ); ?>
+                                    	<?php _e( 'No Sidebar', 'catch-flames' ); ?>
                                     </label>                                    
                         		</div>
                             </div><!-- .row -->                                             
                          	<div class="row">
                             	<div class="col col-header">
-                        			<?php _e( 'Archive Content Layout', 'catchflames' ); ?>
+                        			<?php _e( 'Archive Content Layout', 'catch-flames' ); ?>
                                	</div>
                                 <div class="col col-options">     
 									<label title="content-excerpt" class="box first"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/excerpt-blog.jpg" alt="Excerpt/Blog Display" /><br />
                                 		<input type="radio" name="catchflames_options[content_layout]" id="content-excerpt" <?php checked($options['content_layout'], 'excerpt-border') ?> value="excerpt-border"  />
-                                		<?php _e( 'Excerpt/Blog Display', 'catchflames' ); ?>
+                                		<?php _e( 'Excerpt/Blog Display', 'catch-flames' ); ?>
                                 	</label>                           
                                 
                                     <label title="content-full" class="box"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/full-content.jpg" alt="Full Content Display" /><br />
                                     	<input type="radio" name="catchflames_options[content_layout]" id="content-full" <?php checked($options['content_layout'], 'full') ?> value="full"  />
-                                    <?php _e( 'Full Content Display', 'catchflames' ); ?>
+                                    <?php _e( 'Full Content Display', 'catch-flames' ); ?>
                                     </label>
                               	</div>
                             </div><!-- .row --> 
                             <div class="row">
                             	<div class="col col-header">
                                 	<?php if( $options[ 'reset_sidebar_layout' ] == "1" ) { $options[ 'reset_sidebar_layout' ] = "0"; } ?>
-                                	<?php _e( 'Reset Layout?', 'catchflames' ); ?>
+                                	<?php _e( 'Reset Layout?', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-options">         
                                 	<input type='hidden' value='0' name='catchflames_options[reset_sidebar_layout]'>
-                                    <input type="checkbox" id="reset_family" name="catchflames_options[reset_sidebar_layout]" value="1" <?php checked( '1', $options['reset_sidebar_layout'] ); ?> /> <?php _e('Check to reset', 'catchflames'); ?>
+                                    <input type="checkbox" id="reset_family" name="catchflames_options[reset_sidebar_layout]" value="1" <?php checked( '1', $options['reset_sidebar_layout'] ); ?> /> <?php _e('Check to reset', 'catch-flames'); ?>
                               	</div>
                           	</div><!-- .row -->                                                         
                             <div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchflames' ); ?>" />
+                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-flames' ); ?>" />
                           	</div><!-- .row -->                             
                         </div><!-- .option-content -->
                     </div><!-- .option-container --> 
                             
                     <div id="homepage-category-setting" class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Homepage / Frontpage Category Setting', 'catchflames' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Homepage / Frontpage Category Setting', 'catch-flames' ); ?></a></h3>
                         <div class="option-content inside"> 
                        		<div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Front page posts categories:', 'catchflames' ); ?>
-                                    <p><small><?php _e( 'Only posts that belong to the categories selected here will be displayed on the front page.', 'catchflames' ); ?></small></p>
+                                	<?php _e( 'Front page posts categories:', 'catch-flames' ); ?>
+                                    <p><small><?php _e( 'Only posts that belong to the categories selected here will be displayed on the front page.', 'catch-flames' ); ?></small></p>
                                 </div>
                                 <div class="col col-2">  
                                     <select name="catchflames_options[front_page_category][]" id="frontpage_posts_cats" multiple="multiple" class="select-multiple">
-                                        <option value="0" <?php if ( empty( $options['front_page_category'] ) ) { echo 'selected="selected"'; } ?>><?php _e( '--Disabled--', 'catchflames' ); ?></option>
+                                        <option value="0" <?php if ( empty( $options['front_page_category'] ) ) { echo 'selected="selected"'; } ?>><?php _e( '--Disabled--', 'catch-flames' ); ?></option>
                                         <?php /* Get the list of categories */  
                                             $categories = get_categories();
                                             if( empty( $options[ 'front_page_category' ] ) ) {
@@ -565,21 +565,21 @@ function catchflames_theme_options_do_page() {
                                         <option value="<?php echo $category->cat_ID; ?>" <?php if ( in_array( $category->cat_ID, $options['front_page_category'] ) ) {echo 'selected="selected"';}?>><?php echo $category->cat_name; ?></option>
                                         <?php endforeach; ?>
                                     </select><br />
-                                    <span class="description"><?php _e( 'You may select multiple categories by holding down the CTRL key.', 'catchflames' ); ?></span>
+                                    <span class="description"><?php _e( 'You may select multiple categories by holding down the CTRL key.', 'catch-flames' ); ?></span>
                                	</div>
                           	</div><!-- .row -->                            
                          	<div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchflames' ); ?>" />
+                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-flames' ); ?>" />
                             </div><!-- .row --> 
                         </div><!-- .option-content -->
                   	</div><!-- .option-container --> 
                          
                  	<div id="excerpt-more-tag" class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Excerpt / More Tag Settings', 'catchflames' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Excerpt / More Tag Settings', 'catch-flames' ); ?></a></h3>
                         <div class="option-content inside">
                        		<div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'More Tag Text', 'catchflames' ); ?>
+                                	<?php _e( 'More Tag Text', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2">  
                                 	<input type="text" size="45" name="catchflames_options[more_tag_text]" value="<?php echo ( isset( $options[ 'more_tag_text' ] ) ) ? esc_attr( $options[ 'more_tag_text' ] ) : 'Continue Reading &rarr;'; ?>" />
@@ -587,7 +587,7 @@ function catchflames_theme_options_do_page() {
                           	</div><!-- .row -->
                         	<div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Excerpt length(words)', 'catchflames' ); ?>
+                                	<?php _e( 'Excerpt length(words)', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2">  
                                 	<input type="text" size="3" name="catchflames_options[excerpt_length]" value="<?php echo intval( $options[ 'excerpt_length' ] ); ?>" />
@@ -596,25 +596,25 @@ function catchflames_theme_options_do_page() {
                             <div class="row">
                             	<div class="col col-1">
                                 	<?php if( $options[ 'reset_more_tag' ] == "1" ) { $options[ 'reset_more_tag' ] = "0"; } ?>
-                                	<?php _e( 'Reset Excerpt?', 'catchflames' ); ?>
+                                	<?php _e( 'Reset Excerpt?', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2">         
                                 	<input type='hidden' value='0' name='catchflames_options[reset_more_tag]'>
-                                  	<input type="checkbox" id="reset_more_tag" name="catchflames_options[reset_more_tag]" value="1" <?php checked( '1', $options['reset_more_tag'] ); ?> /> <?php _e('Check to reset', 'catchflames'); ?>
+                                  	<input type="checkbox" id="reset_more_tag" name="catchflames_options[reset_more_tag]" value="1" <?php checked( '1', $options['reset_more_tag'] ); ?> /> <?php _e('Check to reset', 'catch-flames'); ?>
                               	</div>
                           	</div><!-- .row -->                                                         
                             <div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchflames' ); ?>" />
+                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-flames' ); ?>" />
                           	</div><!-- .row -->
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->
                                         
 					<div id="custom-css" class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Custom CSS', 'catchflames' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Custom CSS', 'catch-flames' ); ?></a></h3>
                         <div class="option-content inside"> 
                         	<div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Enter your custom CSS styles.', 'catchflames' ); ?>
+                                	<?php _e( 'Enter your custom CSS styles.', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2"> 
                                 	<textarea name="catchflames_options[custom_css]" id="custom-css" cols="90" rows="12"><?php echo esc_attr( $options[ 'custom_css' ] ); ?></textarea>
@@ -622,32 +622,32 @@ function catchflames_theme_options_do_page() {
                           	</div><!-- .row --> 
                         	<div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'CSS Tutorial from W3Schools.', 'catchflames' ); ?>
+                                	<?php _e( 'CSS Tutorial from W3Schools.', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2"> 
-                                	<a class="button" href="<?php echo esc_url( __( 'http://www.w3schools.com/css/default.asp','catchflames' ) ); ?>" title="<?php esc_attr_e( 'CSS Tutorial', 'catchflames' ); ?>" target="_blank"><?php _e( 'Click Here to Read', 'catchflames' );?></a>
+                                	<a class="button" href="<?php echo esc_url( __( 'http://www.w3schools.com/css/default.asp','catch-flames' ) ); ?>" title="<?php esc_attr_e( 'CSS Tutorial', 'catch-flames' ); ?>" target="_blank"><?php _e( 'Click Here to Read', 'catch-flames' );?></a>
                             	</div>
                           	</div><!-- .row -->                            
                             <div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchflames' ); ?>" />
+                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-flames' ); ?>" />
                           	</div><!-- .row -->
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->
                     
                     <div id="scrollup" class="option-container">
-                    	<h3 class="option-toggle"><a href="#"><?php _e( 'Scroll Up', 'catchflames' ); ?></a></h3>
+                    	<h3 class="option-toggle"><a href="#"><?php _e( 'Scroll Up', 'catch-flames' ); ?></a></h3>
                         <div class="option-content inside">
                         	<div class="row">
                             	<div class="col col-1">
-									<?php _e( 'Disable Scroll Up?', 'catchflames' ); ?></th>
+									<?php _e( 'Disable Scroll Up?', 'catch-flames' ); ?></th>
                                 </div>
                                 <div class="col col-2">
                                         <input type='hidden' value='0' name='catchflames_options[disable_scrollup]'>
-                                        <input type="checkbox" id="headerlogo" name="catchflames_options[disable_scrollup]" value="1" <?php checked( '1', $options['disable_scrollup'] ); ?> /> <?php _e('Check to disable', 'catchflames'); ?>
+                                        <input type="checkbox" id="headerlogo" name="catchflames_options[disable_scrollup]" value="1" <?php checked( '1', $options['disable_scrollup'] ); ?> /> <?php _e('Check to disable', 'catch-flames'); ?>
                                  </div>
                           	</div><!-- .row -->
                       		<div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchflames' ); ?>" />
+                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-flames' ); ?>" />
                           	</div><!-- .row --> 
                         </div><!-- .option-content -->   
                     </div><!-- .option-container -->                     
@@ -656,25 +656,25 @@ function catchflames_theme_options_do_page() {
 				<!-- Option for Color Options -->
                 <div id="color-options">                 
                 	<div id="color-scheme" class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Color Scheme', 'catchflames' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Color Scheme', 'catch-flames' ); ?></a></h3>
                         <div class="option-content show inside">
                         	<div class="row">
                             	<div class="col col-header">
-                        			<?php _e( 'Default Color Scheme', 'catchflames' ); ?>
+                        			<?php _e( 'Default Color Scheme', 'catch-flames' ); ?>
                                	</div>
                                 <div class="col col-options">
                                     <label title="color-light" class="box first"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/light.jpg" alt="color-light" /><br />
                                     	<input type="radio" name="catchflames_options[color_scheme]" id="color-light" <?php checked($options['color_scheme'], 'light') ?> value="light"  />
-                                    	<?php _e( 'Light', 'catchflames' ); ?>
+                                    	<?php _e( 'Light', 'catch-flames' ); ?>
                                     </label>
                                     <label title="color-dark" class="box"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/dark.jpg" alt="color-dark" /><br />
                                     	<input type="radio" name="catchflames_options[color_scheme]" id="color-dark" <?php checked($options['color_scheme'], 'dark') ?> value="dark"  />
-                                    	<?php _e( 'Dark', 'catchflames' ); ?>
+                                    	<?php _e( 'Dark', 'catch-flames' ); ?>
                                     </label>    
                               	</div>
                           	</div><!-- .row --> 
                             <div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchflames' ); ?>" />
+                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-flames' ); ?>" />
                           	</div><!-- .row -->                              
                   		</div><!-- .option-content -->
                   	</div><!-- #color-scheme -->
@@ -683,50 +683,50 @@ function catchflames_theme_options_do_page() {
                 <!-- Option for Slider Options -->
                 <div id="slidersettings">
                 	<div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Slider Options', 'catchflames' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Slider Options', 'catch-flames' ); ?></a></h3>
                         <div class="option-content inside"> 
                         	<div class="row">
                             	<div class="col col-header">
-                                	<?php _e( 'Select Slider Type', 'catchflames' ); ?>
+                                	<?php _e( 'Select Slider Type', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-options"> 
                                 	<label title="demo-slider">
                                     	<input type="radio" name="catchflames_options[select_slider_type]" id="demo-slider" <?php checked($options['select_slider_type'], 'demo-slider'); ?> value="demo-slider"  />
-                                    	<?php _e( 'Demo Slider', 'catchflames' ); ?>
+                                    	<?php _e( 'Demo Slider', 'catch-flames' ); ?>
                                     </label>                                       
                                     
                                     <label title="page-slider">
                                    		<input type="radio" name="catchflames_options[select_slider_type]" id="page-slider" <?php checked($options['select_slider_type'], 'page-slider') ?> value="page-slider"  />
-                                    	<?php _e( 'Featured Page Slider', 'catchflames' ); ?>
+                                    	<?php _e( 'Featured Page Slider', 'catch-flames' ); ?>
                                     </label>
                                 </div>
                           	</div><!-- .row --> 
                         
                 			<div class="row">                            
                             	<div class="col col-header">
-                        			<?php _e( 'Enable Sidebar', 'catchflames' ); ?>
+                        			<?php _e( 'Enable Sidebar', 'catch-flames' ); ?>
                                	</div>
                                 <div class="col col-options"> 
                                     <label title="enable-slider-homepager">
                                     	<input type="radio" name="catchflames_options[enable_slider]" id="enable-slider-homepage" <?php checked($options['enable_slider'], 'enable-slider-homepage') ?> value="enable-slider-homepage"  />
-                                    	<?php _e( 'Homepage / Frontpage', 'catchflames' ); ?>
+                                    	<?php _e( 'Homepage / Frontpage', 'catch-flames' ); ?>
                                     </label>
                                     
                                     <label title="enable-slider-allpage">
                                     	<input type="radio" name="catchflames_options[enable_slider]" id="enable-slider-allpage" <?php checked($options['enable_slider'], 'enable-slider-allpage') ?> value="enable-slider-allpage"  />
-                                  		<?php _e( 'Entire Site', 'catchflames' ); ?>
+                                  		<?php _e( 'Entire Site', 'catch-flames' ); ?>
                                     </label>
                                     
                                     <label title="disable-slider">
                                     	<input type="radio" name="catchflames_options[enable_slider]" id="disable-slider" <?php checked($options['enable_slider'], 'disable-slider') ?> value="disable-slider"  />
-                                     	<?php _e( 'Disable', 'catchflames' ); ?>
+                                     	<?php _e( 'Disable', 'catch-flames' ); ?>
                                    	</label> 
                            		</div>
                          	</div><!-- .row -->
                             
                             <div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Number of Slides', 'catchflames' ); ?>
+                                	<?php _e( 'Number of Slides', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2">
                                 	<input type="text" name="catchflames_options[slider_qty]" value="<?php echo intval( $options[ 'slider_qty' ] ); ?>" size="2" />
@@ -735,58 +735,58 @@ function catchflames_theme_options_do_page() {
                             
                             <div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Transition Effect:', 'catchflames' ); ?>
+                                	<?php _e( 'Transition Effect:', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2"> 
                                     <select id="catchflames_cycle_style" name="catchflames_options[transition_effect]">
-                                        <option value="fade" <?php selected('fade', $options['transition_effect']); ?>><?php _e( 'fade', 'catchflames' ); ?></option>
-                                        <option value="wipe" <?php selected('wipe', $options['transition_effect']); ?>><?php _e( 'wipe', 'catchflames' ); ?></option>
-                                        <option value="scrollUp" <?php selected('scrollUp', $options['transition_effect']); ?>><?php _e( 'scrollUp', 'catchflames' ); ?></option>
-                                        <option value="scrollDown" <?php selected('scrollDown', $options['transition_effect']); ?>><?php _e( 'scrollDown', 'catchflames' ); ?></option>
-                                        <option value="scrollLeft" <?php selected('scrollLeft', $options['transition_effect']); ?>><?php _e( 'scrollLeft', 'catchflames' ); ?></option>
-                                        <option value="scrollRight" <?php selected('scrollRight', $options['transition_effect']); ?>><?php _e( 'scrollRight', 'catchflames' ); ?></option>
-                                        <option value="blindX" <?php selected('blindX', $options['transition_effect']); ?>><?php _e( 'blindX', 'catchflames' ); ?></option>
-                                        <option value="blindY" <?php selected('blindY', $options['transition_effect']); ?>><?php _e( 'blindY', 'catchflames' ); ?></option>
-                                        <option value="blindZ" <?php selected('blindZ', $options['transition_effect']); ?>><?php _e( 'blindZ', 'catchflames' ); ?></option>
-                                        <option value="cover" <?php selected('cover', $options['transition_effect']); ?>><?php _e( 'cover', 'catchflames' ); ?></option>
-                                        <option value="shuffle" <?php selected('shuffle', $options['transition_effect']); ?>><?php _e( 'shuffle', 'catchflames' ); ?></option>
+                                        <option value="fade" <?php selected('fade', $options['transition_effect']); ?>><?php _e( 'fade', 'catch-flames' ); ?></option>
+                                        <option value="wipe" <?php selected('wipe', $options['transition_effect']); ?>><?php _e( 'wipe', 'catch-flames' ); ?></option>
+                                        <option value="scrollUp" <?php selected('scrollUp', $options['transition_effect']); ?>><?php _e( 'scrollUp', 'catch-flames' ); ?></option>
+                                        <option value="scrollDown" <?php selected('scrollDown', $options['transition_effect']); ?>><?php _e( 'scrollDown', 'catch-flames' ); ?></option>
+                                        <option value="scrollLeft" <?php selected('scrollLeft', $options['transition_effect']); ?>><?php _e( 'scrollLeft', 'catch-flames' ); ?></option>
+                                        <option value="scrollRight" <?php selected('scrollRight', $options['transition_effect']); ?>><?php _e( 'scrollRight', 'catch-flames' ); ?></option>
+                                        <option value="blindX" <?php selected('blindX', $options['transition_effect']); ?>><?php _e( 'blindX', 'catch-flames' ); ?></option>
+                                        <option value="blindY" <?php selected('blindY', $options['transition_effect']); ?>><?php _e( 'blindY', 'catch-flames' ); ?></option>
+                                        <option value="blindZ" <?php selected('blindZ', $options['transition_effect']); ?>><?php _e( 'blindZ', 'catch-flames' ); ?></option>
+                                        <option value="cover" <?php selected('cover', $options['transition_effect']); ?>><?php _e( 'cover', 'catch-flames' ); ?></option>
+                                        <option value="shuffle" <?php selected('shuffle', $options['transition_effect']); ?>><?php _e( 'shuffle', 'catch-flames' ); ?></option>
                                     </select>
                              	</div>
                           	</div><!-- .row --> 
                             
                             <div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Transition Delay', 'catchflames' ); ?>
+                                	<?php _e( 'Transition Delay', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2"> 
                             		<input type="text" name="catchflames_options[transition_delay]" value="<?php echo $options[ 'transition_delay' ]; ?>" size="2" />
-                                   	<span class="description"><?php _e( 'second(s)', 'catchflames' ); ?></span>
+                                   	<span class="description"><?php _e( 'second(s)', 'catch-flames' ); ?></span>
                             	</div>
                           	</div><!-- .row -->
                             
                             <div class="row">
                             	<div class="col col-1">
-                                	<?php _e( 'Transition Length', 'catchflames' ); ?>
+                                	<?php _e( 'Transition Length', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2"> 
                             		<input type="text" name="catchflames_options[transition_duration]" value="<?php echo $options[ 'transition_duration' ]; ?>" size="2" />
-                                        <span class="description"><?php _e( 'second(s)', 'catchflames' ); ?></span>
+                                        <span class="description"><?php _e( 'second(s)', 'catch-flames' ); ?></span>
                             	</div>
                           	</div><!-- .row --> 
 							<div class="row">
-        						<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchflames' ); ?>" />
+        						<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-flames' ); ?>" />
                           	</div><!-- .row --> 
                         </div><!-- .option-content -->
             		</div><!-- .option-container -->                  
         
         			<div id="featured-page-slider" class="option-container page-slider">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Featured Page Slider Options', 'catchflames' ); ?></a></h3>
+                        <h3 class="option-toggle"><a href="#"><?php _e( 'Featured Page Slider Options', 'catch-flames' ); ?></a></h3>
                         <div class="option-content inside">
                             <?php for ( $i = 1; $i <= $options[ 'slider_qty' ]; $i++ ): ?>
                                 <div class="repeat-content-wrap">
                                     <div class="row">
                                         <div class="col col-1">
-                                            <?php printf( esc_attr__( 'Featured Page Slider #%s', 'catchflames' ), $i ); ?>
+                                            <?php printf( esc_attr__( 'Featured Page Slider #%s', 'catch-flames' ), $i ); ?>
                                         </div>
                                         <div class="col col-2">
                                             <?php
@@ -803,14 +803,14 @@ function catchflames_theme_options_do_page() {
                                                wp_dropdown_pages( $catchflames_args ); 
                                             ?>
                                         <?php if( isset( $options[ 'featured_slider_page' ][ $i ] ) && $options[ 'featured_slider_page' ][ $i ] > 0 ) : ?>
-                                            <a href="<?php bloginfo ( 'url' );?>/wp-admin/post.php?post=<?php if( array_key_exists ( 'featured_slider_page', $options ) && array_key_exists ( $i, $options[ 'featured_slider_page' ] ) ) echo absint( $options[ 'featured_slider_page' ][ $i ] ); ?>&action=edit" class="button" title="<?php esc_attr_e('Click Here To Edit'); ?>" target="_blank"><?php _e( 'Click Here To Edit', 'catchflames' ); ?></a>
+                                            <a href="<?php bloginfo ( 'url' );?>/wp-admin/post.php?post=<?php if( array_key_exists ( 'featured_slider_page', $options ) && array_key_exists ( $i, $options[ 'featured_slider_page' ] ) ) echo absint( $options[ 'featured_slider_page' ][ $i ] ); ?>&action=edit" class="button" title="<?php esc_attr_e('Click Here To Edit', 'catch-flames' ); ?>" target="_blank"><?php _e( 'Click Here To Edit', 'catch-flames' ); ?></a>
                                         <?php endif; ?>
                                         </div>
                                     </div><!-- .row -->
                                 </div><!-- .repeat-content-wrap -->  
                          	<?php endfor; ?>
                             <div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchflames' ); ?>" />
+                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-flames' ); ?>" />
                            	</div><!-- .row -->       
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->
@@ -818,28 +818,28 @@ function catchflames_theme_options_do_page() {
      
                 <!-- Options for Social Links -->
                 <div id="sociallinks" class="option-container">	
-                    <h3 class="option-toggle"><a href="#"><?php _e( 'Social Icons', 'catchflames' ); ?></a></h3>
+                    <h3 class="option-toggle"><a href="#"><?php _e( 'Social Icons', 'catch-flames' ); ?></a></h3>
                     <div class="option-content show inside">
                         <div class="row">
                             <div class="col col-1">
-                                <?php _e( 'Enable Social Icons in Sidebar?', 'catchflames' ); ?>
+                                <?php _e( 'Enable Social Icons in Sidebar?', 'catch-flames' ); ?>
                             </div>
                             <div class="col col-2">
-                                <a class="button" href="<?php echo admin_url('widgets.php'); ?>" title="<?php esc_attr_e( 'Just add Catch Flames Social Widget in Sidebar', 'catchflames' ); ?>"><?php _e( 'Just add Catch Flames Social Widget in Sidebar', 'catchflames' );?></a>
+                                <a class="button" href="<?php echo admin_url('widgets.php'); ?>" title="<?php esc_attr_e( 'Just add Catch Flames Social Widget in Sidebar', 'catch-flames' ); ?>"><?php _e( 'Just add Catch Flames Social Widget in Sidebar', 'catch-flames' );?></a>
                             </div>
                         </div><!-- .row -->
                         <div class="row">
                             <div class="col col-1">
-                                <?php _e( 'Enable Social Icons in Footer?', 'catchflames' ); ?>
+                                <?php _e( 'Enable Social Icons in Footer?', 'catch-flames' ); ?>
                             </div>
                             <div class="col col-2">
                                 <input type='hidden' value='0' name='catchflames_options[disable_footer_social]'>
-                                <input type="checkbox" id="headerlogo" name="catchflames_options[disable_footer_social]" value="1" <?php checked( '1', $options['disable_footer_social'] ); ?> /> <?php _e('Check to enable', 'catchflames'); ?>
+                                <input type="checkbox" id="headerlogo" name="catchflames_options[disable_footer_social]" value="1" <?php checked( '1', $options['disable_footer_social'] ); ?> /> <?php _e('Check to enable', 'catch-flames'); ?>
                             </div>
                         </div><!-- .row --> 
                         <div class="row">
                             <div class="col col-1">
-                                <?php _e( 'Facebook', 'catchflames' ); ?>
+                                <?php _e( 'Facebook', 'catch-flames' ); ?>
                             </div>
                             <div class="col col-2">
                                 <input type="text" size="45" name="catchflames_options[social_facebook]" value="<?php echo esc_url( $options[ 'social_facebook' ] ); ?>" />
@@ -847,7 +847,7 @@ function catchflames_theme_options_do_page() {
                         </div><!-- .row -->
                         <div class="row">
                             <div class="col col-1">
-                                <?php _e( 'Twitter', 'catchflames' ); ?>
+                                <?php _e( 'Twitter', 'catch-flames' ); ?>
                             </div>
                             <div class="col col-2">
                                 <input type="text" size="45" name="catchflames_options[social_twitter]" value="<?php echo esc_url( $options[ 'social_twitter' ] ); ?>" />
@@ -855,7 +855,7 @@ function catchflames_theme_options_do_page() {
                         </div><!-- .row --> 
                         <div class="row">
                             <div class="col col-1">
-                                <?php _e( 'Google+', 'catchflames' ); ?>
+                                <?php _e( 'Google+', 'catch-flames' ); ?>
                             </div>
                             <div class="col col-2">
                                 <input type="text" size="45" name="catchflames_options[social_googleplus]" value="<?php echo esc_url( $options[ 'social_googleplus' ] ); ?>" />
@@ -863,7 +863,7 @@ function catchflames_theme_options_do_page() {
                         </div><!-- .row --> 
                         <div class="row">
                             <div class="col col-1">
-                                <?php _e( 'Pinterest', 'catchflames' ); ?>
+                                <?php _e( 'Pinterest', 'catch-flames' ); ?>
                             </div>
                             <div class="col col-2">
                                 <input type="text" size="45" name="catchflames_options[social_pinterest]" value="<?php echo esc_url( $options[ 'social_pinterest' ] ); ?>" />
@@ -871,7 +871,7 @@ function catchflames_theme_options_do_page() {
                         </div><!-- .row --> 
                         <div class="row">
                             <div class="col col-1">
-                                <?php _e( 'Youtube', 'catchflames' ); ?>
+                                <?php _e( 'Youtube', 'catch-flames' ); ?>
                             </div>
                             <div class="col col-2">
                                 <input type="text" size="45" name="catchflames_options[social_youtube]" value="<?php echo esc_url( $options[ 'social_youtube' ] ); ?>" />
@@ -879,7 +879,7 @@ function catchflames_theme_options_do_page() {
                         </div><!-- .row -->
                         <div class="row">
                             <div class="col col-1">
-                                <?php _e( 'Vimeo', 'catchflames' ); ?>
+                                <?php _e( 'Vimeo', 'catch-flames' ); ?>
                             </div>
                             <div class="col col-2">
                                 <input type="text" size="45" name="catchflames_options[social_vimeo]" value="<?php echo esc_url( $options[ 'social_vimeo' ] ); ?>" />
@@ -887,7 +887,7 @@ function catchflames_theme_options_do_page() {
                         </div><!-- .row --> 
                         <div class="row">
                             <div class="col col-1">
-                                <?php _e( 'Linkedin', 'catchflames' ); ?>
+                                <?php _e( 'Linkedin', 'catch-flames' ); ?>
                             </div>
                             <div class="col col-2">
                                 <input type="text" size="45" name="catchflames_options[social_linkedin]" value="<?php echo esc_url( $options[ 'social_linkedin' ] ); ?>" />
@@ -895,7 +895,7 @@ function catchflames_theme_options_do_page() {
                         </div><!-- .row --> 
                         <div class="row">
                             <div class="col col-1">
-                                <?php _e( 'AIM', 'catchflames' ); ?>
+                                <?php _e( 'AIM', 'catch-flames' ); ?>
                             </div>
                             <div class="col col-2">
                                 <input type="text" size="45" name="catchflames_options[social_aim]" value="<?php echo esc_url( $options[ 'social_aim' ] ); ?>" />
@@ -903,7 +903,7 @@ function catchflames_theme_options_do_page() {
                         </div><!-- .row --> 
                         <div class="row">
                             <div class="col col-1">
-                                <?php _e( 'MySpace', 'catchflames' ); ?>
+                                <?php _e( 'MySpace', 'catch-flames' ); ?>
                             </div>
                             <div class="col col-2">
                                 <input type="text" size="45" name="catchflames_options[social_myspace]" value="<?php echo esc_url( $options[ 'social_myspace' ] ); ?>" />
@@ -912,7 +912,7 @@ function catchflames_theme_options_do_page() {
                     
                         <div class="row">
                             <div class="col col-1">
-                                <?php _e( 'Flickr', 'catchflames' ); ?>
+                                <?php _e( 'Flickr', 'catch-flames' ); ?>
                             </div>
                             <div class="col col-2">
                                 <input type="text" size="45" name="catchflames_options[social_flickr]" value="<?php echo esc_url( $options[ 'social_flickr' ] ); ?>" />
@@ -920,7 +920,7 @@ function catchflames_theme_options_do_page() {
                         </div><!-- .row --> 
                         <div class="row">
                             <div class="col col-1">
-                                <?php _e( 'Tumblr', 'catchflames' ); ?>
+                                <?php _e( 'Tumblr', 'catch-flames' ); ?>
                             </div>
                             <div class="col col-2">
                                 <input type="text" size="45" name="catchflames_options[social_tumblr]" value="<?php echo esc_url( $options[ 'social_tumblr' ] ); ?>" />
@@ -928,7 +928,7 @@ function catchflames_theme_options_do_page() {
                         </div><!-- .row --> 
                         <div class="row">
                             <div class="col col-1">
-                                <?php _e( 'deviantART', 'catchflames' ); ?>
+                                <?php _e( 'deviantART', 'catch-flames' ); ?>
                             </div>
                             <div class="col col-2">
                                 <input type="text" size="45" name="catchflames_options[social_deviantart]" value="<?php echo esc_url( $options[ 'social_deviantart' ] ); ?>" />
@@ -936,7 +936,7 @@ function catchflames_theme_options_do_page() {
                         </div><!-- .row --> 
                         <div class="row">
                             <div class="col col-1">
-                                <?php _e( 'Dribbble', 'catchflames' ); ?>
+                                <?php _e( 'Dribbble', 'catch-flames' ); ?>
                             </div>
                             <div class="col col-2">
                                 <input type="text" size="45" name="catchflames_options[social_dribbble]" value="<?php echo esc_url( $options[ 'social_dribbble' ] ); ?>" />
@@ -945,7 +945,7 @@ function catchflames_theme_options_do_page() {
                           
                         <div class="row">
                             <div class="col col-1">
-                                <?php _e( 'WordPress', 'catchflames' ); ?>
+                                <?php _e( 'WordPress', 'catch-flames' ); ?>
                             </div>
                             <div class="col col-2">
                                 <input type="text" size="45" name="catchflames_options[social_wordpress]" value="<?php echo esc_url( $options[ 'social_wordpress' ] ); ?>" />
@@ -953,7 +953,7 @@ function catchflames_theme_options_do_page() {
                         </div><!-- .row --> 
                         <div class="row">
                             <div class="col col-1">
-                                <?php _e( 'RSS', 'catchflames' ); ?>
+                                <?php _e( 'RSS', 'catch-flames' ); ?>
                             </div>
                             <div class="col col-2">
                                 <input type="text" size="45" name="catchflames_options[social_rss]" value="<?php echo esc_url( $options[ 'social_rss' ] ); ?>" />
@@ -961,7 +961,7 @@ function catchflames_theme_options_do_page() {
                         </div><!-- .row --> 
                         <div class="row">
                             <div class="col col-1">
-                                <?php _e( 'Slideshare', 'catchflames' ); ?>
+                                <?php _e( 'Slideshare', 'catch-flames' ); ?>
                             </div>
                             <div class="col col-2">
                                 <input type="text" size="45" name="catchflames_options[social_slideshare]" value="<?php echo esc_url( $options[ 'social_slideshare' ] ); ?>" />
@@ -969,7 +969,7 @@ function catchflames_theme_options_do_page() {
                         </div><!-- .row -->
                         <div class="row">
                             <div class="col col-1">
-                                <?php _e( 'Instagram', 'catchflames' ); ?>
+                                <?php _e( 'Instagram', 'catch-flames' ); ?>
                             </div>
                             <div class="col col-2">
                                 <input type="text" size="45" name="catchflames_options[social_instagram]" value="<?php echo esc_url( $options[ 'social_instagram' ] ); ?>" />
@@ -977,7 +977,7 @@ function catchflames_theme_options_do_page() {
                         </div><!-- .row --> 
                         <div class="row">
                             <div class="col col-1">
-                                <?php _e( 'Skype', 'catchflames' ); ?>
+                                <?php _e( 'Skype', 'catch-flames' ); ?>
                             </div>
                             <div class="col col-2">
                                 <input type="text" size="45" name="catchflames_options[social_skype]" value="<?php echo esc_attr( $options[ 'social_skype' ] ); ?>" />
@@ -985,7 +985,7 @@ function catchflames_theme_options_do_page() {
                         </div><!-- .row --> 
                         <div class="row">
                             <div class="col col-1">
-                                <?php _e( 'Soundcloud', 'catchflames' ); ?>
+                                <?php _e( 'Soundcloud', 'catch-flames' ); ?>
                             </div>
                             <div class="col col-2">
                                 <input type="text" size="45" name="catchflames_options[social_soundcloud]" value="<?php echo esc_url( $options[ 'social_soundcloud' ] ); ?>" />
@@ -993,7 +993,7 @@ function catchflames_theme_options_do_page() {
                         </div><!-- .row --> 
                         <div class="row">
                             <div class="col col-1">
-                                <?php _e( 'Email', 'catchflames' ); ?>
+                                <?php _e( 'Email', 'catch-flames' ); ?>
                             </div>
                             <div class="col col-2">
                                 <input type="text" size="45" name="catchflames_options[social_email]" value="<?php echo sanitize_email( $options[ 'social_email' ] ); ?>" />
@@ -1001,7 +1001,7 @@ function catchflames_theme_options_do_page() {
                         </div><!-- .row -->
                         <div class="row">
                             <div class="col col-1">
-                                <?php _e( 'Contact', 'catchflames' ); ?>
+                                <?php _e( 'Contact', 'catch-flames' ); ?>
                             </div>
                             <div class="col col-2">
                                 <input type="text" size="45" name="catchflames_options[social_contact]" value="<?php echo esc_url( $options[ 'social_contact' ] ); ?>" />
@@ -1009,7 +1009,7 @@ function catchflames_theme_options_do_page() {
                         </div><!-- .row -->    
                         <div class="row">
                             <div class="col col-1">
-                                <?php _e( 'Xing', 'catchflames' ); ?>
+                                <?php _e( 'Xing', 'catch-flames' ); ?>
                             </div>
                             <div class="col col-2">
                                 <input type="text" size="45" name="catchflames_options[social_xing]" value="<?php echo esc_url( $options[ 'social_xing' ] ); ?>" />
@@ -1017,15 +1017,15 @@ function catchflames_theme_options_do_page() {
                         </div><!-- .row -->
                         <div class="row">
                             <div class="col col-1">
-                                <?php _e( 'Enable SpecificFeeds?', 'catchflames' ); ?>
+                                <?php _e( 'Enable SpecificFeeds?', 'catch-flames' ); ?>
                             </div>
                             <div class="col col-2">
                                 <input type='hidden' value='0' name='catchflames_options[enable_specificfeeds]'>
-                                <input type="checkbox" id="headerlogo" name="catchflames_options[enable_specificfeeds]" value="1" <?php checked( '1', $options['enable_specificfeeds'] ); ?> /> <?php _e('Check to enable', 'catchflames'); ?>
+                                <input type="checkbox" id="headerlogo" name="catchflames_options[enable_specificfeeds]" value="1" <?php checked( '1', $options['enable_specificfeeds'] ); ?> /> <?php _e('Check to enable', 'catch-flames'); ?>
                             </div>
                         </div><!-- .row --> 
                         <div class="row">
-                            <input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catchflames' ); ?>" />
+                            <input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-flames' ); ?>" />
                         </div><!-- .row -->    
                   	</div><!-- .option-content -->
                            
@@ -1411,7 +1411,7 @@ add_action( 'custom_header_options', 'catchflames_customheader_invalidate_caches
  * @return string
  */
 function catchflames_the_year() {
-	return date( __( 'Y', 'catchflames' ) );
+	return date( __( 'Y', 'catch-flames' ) );
 }
 
 
@@ -1432,7 +1432,7 @@ function catchflames_site_link() {
  * @return string
  */
 function catchflames_theme_name() {
-    return '<span class="theme-name">' . __( 'Theme: Catch Flames by ', 'catchflames' ) . '</span>';	
+    return '<span class="theme-name">' . __( 'Theme: Catch Flames by ', 'catch-flames' ) . '</span>';	
 }
 
 
@@ -1443,7 +1443,7 @@ function catchflames_theme_name() {
  */
 function catchflames_theme_author() {
 	
-    return '<span class="theme-author"><a href="' . esc_url( 'http://catchthemes.com/' ) . '" target="_blank" title="' . esc_attr__( 'Catch Themes', 'catchflames' ) . '">' . __( 'Catch Themes', 'catchflames' ) . '</a></span>';
+    return '<span class="theme-author"><a href="' . esc_url( 'http://catchthemes.com/' ) . '" target="_blank" title="' . esc_attr__( 'Catch Themes', 'catch-flames' ) . '">' . __( 'Catch Themes', 'catch-flames' ) . '</a></span>';
 
 }
 
@@ -1454,7 +1454,7 @@ function catchflames_theme_author() {
  * @return string
  */
 function catchflames_assets(){
-    $catchflames_content = '<div class="copyright">'. esc_attr__( 'Copyright', 'catchflames' ) . ' &copy; '. catchflames_the_year() . ' ' . catchflames_site_link() . ' ' . esc_attr__( 'All Rights Reserved', 'catchflames' ) . '.</div><div class="powered">'. catchflames_theme_name() . catchflames_theme_author() . '</div>';
+    $catchflames_content = '<div class="copyright">'. esc_attr__( 'Copyright', 'catch-flames' ) . ' &copy; '. catchflames_the_year() . ' ' . catchflames_site_link() . ' ' . esc_attr__( 'All Rights Reserved', 'catch-flames' ) . '.</div><div class="powered">'. catchflames_theme_name() . catchflames_theme_author() . '</div>';
     return $catchflames_content;
 }
 
@@ -1469,7 +1469,7 @@ function catchflames_customize_scripts() {
 
     $catchflames_misc_links = array(
                             'upgrade_link'              => esc_url( admin_url( 'themes.php?page=theme_options' ) ),
-                            'upgrade_text'              => __( 'More Theme Options &raquo;', 'catchflames' ),
+                            'upgrade_text'              => __( 'More Theme Options &raquo;', 'catch-flames' ),
                             );
 
     //Add More Theme Options Button

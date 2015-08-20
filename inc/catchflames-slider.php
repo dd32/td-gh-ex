@@ -168,7 +168,7 @@ function catchflames_slider_display() {
 				catchflames_page_sliders();
 			}
 			else {
-				echo '<p style="text-align: center">' . esc_attr__( 'You have selected Page Slider but you haven\'t added the Page ID in "Appearance => Theme Options => Featured Slider => Featured Page Slider Options"', 'catchflames' ) . '</p>';
+				echo '<p style="text-align: center">' . esc_attr__( 'You have selected Page Slider but you haven\'t added the Page ID in "Appearance => Theme Options => Featured Slider => Featured Page Slider Options"', 'catch-flames' ) . '</p>';
 			}			
 		}
 		else {

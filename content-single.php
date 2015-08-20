@@ -20,7 +20,7 @@ $options = $catchflames_options_settings; ?>
                 <?php if ( comments_open() && ! post_password_required() ) : ?>
                     <span class="sep"> &mdash; </span>
                     <span class="comments-link">
-                        <?php comments_popup_link(__('Leave a reply', 'catchflames'), __('1 Comment &darr;', 'catchflames'), __('% Comments &darr;', 'catchflames')); ?>
+                        <?php comments_popup_link(__('Leave a reply', 'catch-flames'), __('1 Comment &darr;', 'catch-flames'), __('% Comments &darr;', 'catch-flames')); ?>
                     </span>
                 <?php endif; ?>
             </div><!-- .entry-meta -->
@@ -30,7 +30,7 @@ $options = $catchflames_options_settings; ?>
 	<div class="entry-content">
 		<?php the_content(); ?>
 		<?php wp_link_pages( array( 
-			'before'		=> '<div class="page-link"><span class="pages">' . __( 'Pages:', 'catchflames' ) . '</span>',
+			'before'		=> '<div class="page-link"><span class="pages">' . __( 'Pages:', 'catch-flames' ) . '</span>',
 			'after'			=> '</div>',
 			'link_before' 	=> '<span>',
 			'link_after'   	=> '</span>',
@@ -41,16 +41,16 @@ $options = $catchflames_options_settings; ?>
 	<footer class="entry-meta">
 		<?php
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( __( ', ', 'catchflames' ) );
+			$categories_list = get_the_category_list( __( ', ', 'catch-flames' ) );
 
 			/* translators: used between list items, there is a space after the comma */
-			$tag_list = get_the_tag_list( '', __( ', ', 'catchflames' ) );
+			$tag_list = get_the_tag_list( '', __( ', ', 'catch-flames' ) );
 			if ( '' != $tag_list ) {
-				$utility_text = __( 'This entry was posted in %1$s and tagged %2$s by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'catchflames' );
+				$utility_text = __( 'This entry was posted in %1$s and tagged %2$s by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'catch-flames' );
 			} elseif ( '' != $categories_list ) {
-				$utility_text = __( 'This entry was posted in %1$s by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'catchflames' );
+				$utility_text = __( 'This entry was posted in %1$s by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'catch-flames' );
 			} else {
-				$utility_text = __( 'This entry was posted by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'catchflames' );
+				$utility_text = __( 'This entry was posted by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'catch-flames' );
 			}
 
 			printf(
@@ -63,7 +63,7 @@ $options = $catchflames_options_settings; ?>
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) )
 			);
 		?>
-		<?php edit_post_link( __( 'Edit', 'catchflames' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'catch-flames' ), '<span class="edit-link">', '</span>' ); ?>
 
 		
 	</footer><!-- .entry-meta -->
@@ -75,11 +75,11 @@ $options = $catchflames_options_settings; ?>
 				<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'catchflames_author_bio_avatar_size', 68 ) ); ?>
 			</div><!-- #author-avatar -->
 			<div id="author-description">
-				<h2><?php printf( __( 'About %s', 'catchflames' ), get_the_author() ); ?></h2>
+				<h2><?php printf( __( 'About %s', 'catch-flames' ), get_the_author() ); ?></h2>
 				<?php the_author_meta( 'description' ); ?>
 				<div id="author-link">
 					<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-						<?php printf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>', 'catchflames' ), get_the_author() ); ?>
+						<?php printf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>', 'catch-flames' ), get_the_author() ); ?>
 					</a>
 				</div><!-- #author-link	-->
 			</div><!-- #author-description -->

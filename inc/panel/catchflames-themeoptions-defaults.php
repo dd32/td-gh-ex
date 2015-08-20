@@ -73,7 +73,7 @@ $catchflames_options_defaults = array(
 	'featured_logo_header'				=> get_template_directory_uri().'/images/logo.png',
  	'remove_header_logo'				=> '1',
  	'disable_header_menu'				=> '0',
-	'search_display_text'				=> esc_attr__( 'Search', 'catchflames' ),
+	'search_display_text'				=> esc_attr__( 'Search', 'catch-flames' ),
 	'enable_header_top'					=> '0',
 	'disable_top_menu_logo'				=> '1',
 	'top_menu_logo'						=> get_template_directory_uri().'/images/fixed-logo.png',
@@ -121,7 +121,7 @@ $catchflames_options_defaults = array(
 	'enable_specificfeeds'				=> '0',
  	'custom_css'						=> '',
 	'disable_scrollup'					=> '0',
- 	'more_tag_text'						=> esc_attr__( 'Continue Reading', 'catchflames' ) . ' &rarr;',
+ 	'more_tag_text'						=> esc_attr__( 'Continue Reading', 'catch-flames' ) . ' &rarr;',
  	'excerpt_length'					=> 30,
 	'reset_more_tag'					=> '2'
 );

@@ -135,9 +135,9 @@ function catchflames_setup() {
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
 	 * If you're building a theme based on Catch Flames, use a find and replace
-	 * to change 'catchflames' to the name of your theme in all the template files
+	 * to change 'catch-flames' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'catchflames', get_template_directory() . '/languages' );	
+	load_theme_textdomain( 'catch-flames', get_template_directory() . '/languages' );	
 
 	/**
      * Add callback for custom TinyMCE editor stylesheets. (editor-style.css)
@@ -196,8 +196,8 @@ function catchflames_setup() {
      * @see http://codex.wordpress.org/Function_Reference/register_nav_menus
      */		
 	register_nav_menus(array(
-		'top' 		=> __( 'Fixed Header Top Menu', 'catchflames' ),
-		'primary' 	=> __( 'Primary Menu', 'catchflames' ),
+		'top' 		=> __( 'Fixed Header Top Menu', 'catch-flames' ),
+		'primary' 	=> __( 'Primary Menu', 'catch-flames' ),
 	) );
 
 	// Add support for custom backgrounds	

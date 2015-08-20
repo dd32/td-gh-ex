@@ -11,13 +11,13 @@
 function catchflames_add_custom_box() {
 	add_meta_box(
 		'siderbar-layout',							//Unique ID
-       __( 'Catch Flames Options', 'catchflames' ),	//Title
+       __( 'Catch Flames Options', 'catch-flames' ),	//Title
         'catchflames_sidebar_layout',				//Callback function
         'page'										//show metabox in pages
     ); 
 	add_meta_box(
 		'siderbar-layout',							//Unique ID
-       __( 'Catch Flames Options', 'catchflames' ),	//Title
+       __( 'Catch Flames Options', 'catch-flames' ),	//Title
         'catchflames_sidebar_layout',				//Callback function
         'post'										//show metabox in posts
     ); 
@@ -31,31 +31,31 @@ $sidebar_layout = array(
 	'default-sidebar'		=> array(
 		'id'				=> 'catchflames-sidebarlayout',
 		'value'				=> 'default',
-		'label' 			=> sprintf( __( 'Default Layout Set in <a href="%s">Theme Settings</a>', 'catchflames' ), esc_url( admin_url('admin.php?page=theme_options' ) ) ),
+		'label' 			=> sprintf( __( 'Default Layout Set in <a href="%s">Theme Settings</a>', 'catch-flames' ), esc_url( admin_url('admin.php?page=theme_options' ) ) ),
 		'thumbnail'			=> ' '
 	),
 	'three-columns'			=> array(
 		'id'				=> 'catchflames-sidebarlayout',
 		'value'				=> 'three-columns',
-		'label'				=> __( 'Three Columns (Style 1)', 'catchflames' ),
+		'label'				=> __( 'Three Columns (Style 1)', 'catch-flames' ),
 		'thumbnail'			=> get_template_directory_uri() . '/inc/panel/images/three-columns.png'
 	),
 	'right-sidebar'			=> array(
 		'id'				=> 'catchflames-sidebarlayout',
 		'value'				=> 'right-sidebar',
-		'label'				=> __( 'Right sidebar', 'catchflames' ),
+		'label'				=> __( 'Right sidebar', 'catch-flames' ),
 		'thumbnail'			=> get_template_directory_uri() . '/inc/panel/images/right-sidebar.png'
 	),
 	'left-sidebar'			=> array(
 		'id'				=> 'catchflames-sidebarlayout',
 		'value'				=> 'left-sidebar',
-		'label'				=> __( 'Left sidebar', 'catchflames' ),
+		'label'				=> __( 'Left sidebar', 'catch-flames' ),
 		'thumbnail'			=> get_template_directory_uri() . '/inc/panel/images/left-sidebar.png'
 	),	
 	'no-sidebar'			=> array(
 		'id'				=> 'catchflames-sidebarlayout',
 		'value'				=> 'no-sidebar',
-		'label'				=> __( 'No sidebar', 'catchflames' ),
+		'label'				=> __( 'No sidebar', 'catch-flames' ),
 		'thumbnail'			=> get_template_directory_uri() . '/inc/panel/images/no-sidebar.png'
 	)
 	
@@ -72,7 +72,7 @@ function catchflames_sidebar_layout() {
     // Begin the field table and loop  ?>
     <div class="catchflames-meta sidebar-layout">
     	<div class="layout-css">
-    		<h4 class="title"><?php _e('Sidebar Layout Options', 'catchflames'); ?></h4>    
+    		<h4 class="title"><?php _e('Sidebar Layout Options', 'catch-flames'); ?></h4>    
 			<?php  
             foreach ($sidebar_layout as $field) {  
                 $meta = get_post_meta( $post->ID, $field['id'], true );

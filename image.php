@@ -15,9 +15,9 @@ get_header();
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<nav id="nav-single">
-					<h3 class="assistive-text"><?php _e( 'Image navigation', 'catchflames' ); ?></h3>
-					<span class="nav-previous"><?php previous_image_link( false, __( '&larr; Previous' , 'catchflames' ) ); ?></span>
-					<span class="nav-next"><?php next_image_link( false, __( 'Next &rarr;' , 'catchflames' ) ); ?></span>
+					<h3 class="assistive-text"><?php _e( 'Image navigation', 'catch-flames' ); ?></h3>
+					<span class="nav-previous"><?php previous_image_link( false, __( '&larr; Previous' , 'catch-flames' ) ); ?></span>
+					<span class="nav-next"><?php next_image_link( false, __( 'Next &rarr;' , 'catch-flames' ) ); ?></span>
 				</nav><!-- #nav-single -->
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -27,7 +27,7 @@ get_header();
 							<div class="entry-meta">
 								<?php
 									$metadata = wp_get_attachment_metadata();
-									printf( __( '<span class="meta-prep meta-prep-entry-date">Published </span> <span class="entry-date"><abbr class="published" title="%1$s">%2$s</abbr></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%8$s</a>', 'catchflames' ),
+									printf( __( '<span class="meta-prep meta-prep-entry-date">Published </span> <span class="entry-date"><abbr class="published" title="%1$s">%2$s</abbr></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%8$s</a>', 'catch-flames' ),
 										esc_attr( get_the_time() ),
 										get_the_date(),
 										esc_url( wp_get_attachment_url() ),
@@ -87,7 +87,7 @@ get_header();
 							<div class="entry-description">
 								<?php the_content(); ?>
 								<?php wp_link_pages( array( 
-                                    'before'		=> '<div class="page-link"><span class="pages">' . __( 'Pages:', 'catchflames' ) . '</span>',
+                                    'before'		=> '<div class="page-link"><span class="pages">' . __( 'Pages:', 'catch-flames' ) . '</span>',
                                     'after'			=> '</div>',
                                     'link_before' 	=> '<span>',
                                     'link_after'   	=> '</span>',
@@ -97,7 +97,7 @@ get_header();
 
 						</div><!-- .entry-content -->
                         <footer class="entry-meta">
-							<?php edit_post_link( __( 'Edit', 'catchflames' ), '<span class="edit-link">', '</span>' ); ?>
+							<?php edit_post_link( __( 'Edit', 'catch-flames' ), '<span class="edit-link">', '</span>' ); ?>
                         </footer><!-- .entry-meta -->
 
 					</article><!-- #post-<?php the_ID(); ?> -->

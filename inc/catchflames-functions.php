@@ -20,7 +20,7 @@ function catchflames_scripts_method() {
 	$page_id = $wp_query->get_queried_object_id();
 	
 	// Enqueue catchflames Sytlesheet
-	wp_enqueue_style( 'catchflames', get_stylesheet_uri() );
+	wp_enqueue_style( 'catch-flames', get_stylesheet_uri() );
 	
 	// Add Genericons font, used in the main stylesheet.
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/css/genericons/genericons.css', false, '3.3' );		
@@ -88,57 +88,6 @@ function catchflames_register_js() {
 	wp_register_script( 'jquery-cookie', get_template_directory_uri() . '/js/jquery.cookie.min.js', array( 'jquery' ), '1.0', true );
 }
 add_action( 'admin_enqueue_scripts', 'catchflames_register_js' );
-
-
-if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
-	/**
-	* Filters wp_title to print a neat <title> tag based on what is being viewed.
-	*
-	* @param string $title Default title text for current view.
-	* @param string $sep Optional separator.
-	* @return string The filtered title.
-	*/
-	function catchflames_wp_title( $title, $sep ) {
-		if ( is_feed() ) {
-			return $title;
-		}
-		
-		global $page, $paged;
-		
-		// Add the blog name
-		$title .= get_bloginfo( 'name', 'display' );
-		
-		// Add the blog description for the home/front page.
-		$site_description = get_bloginfo( 'description', 'display' );
-		
-		if ( $site_description && ( is_home() || is_front_page() ) ) {
-			$title .= " $sep $site_description";
-		}
-		
-		// Add a page number if necessary:
-		if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-			$title .= " $sep " . sprintf( __( 'Page %s', '_s' ), max( $paged, $page ) );
-		}
-		
-		return $title;
-		
-	}
-		
-	add_filter( 'wp_title', 'catchflames_wp_title', 10, 2 );
-	
-	/**
-	* Title shim for sites older than WordPress 4.1.
-	*
-	* @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
-	* @todo Remove this function when WordPress 4.3 is released.
-	*/
-	function catchflames_render_title() {
-	?>
-		<title><?php wp_title( '|', true, 'right' ); ?></title>
-	<?php
-	}
-	add_action( 'wp_head', 'catchflames_render_title' );
-endif;
 
 
 /**
@@ -331,7 +280,7 @@ function catchflames_content_nav( $nav_id ) {
 	
 	if ( $wp_query->max_num_pages > 1 ) { ?>
         <nav role="navigation" id="<?php echo $nav_id; ?>">
-        	<h3 class="assistive-text"><?php _e( 'Post navigation', 'catchflames' ); ?></h3>
+        	<h3 class="assistive-text"><?php _e( 'Post navigation', 'catch-flames' ); ?></h3>
 			<?php if ( function_exists('wp_pagenavi' ) )  { 
                 wp_pagenavi();
             }
@@ -339,8 +288,8 @@ function catchflames_content_nav( $nav_id ) {
                 wp_page_numbers();
             }
             else { ?>	
-                <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'catchflames' ) ); ?></div>
-                <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'catchflames' ) ); ?></div>
+                <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'catch-flames' ) ); ?></div>
+                <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'catch-flames' ) ); ?></div>
             <?php 
             } ?>
         </nav><!-- #nav -->	
@@ -419,7 +368,7 @@ function catchflames_comment( $comment, $args, $depth ) {
 		// Display trackbacks differently than normal comments.	
 	?>
    	<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-		<p><?php _e( 'Pingback:', 'catchflames' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'catchflames' ), '<span class="edit-link">', '</span>' ); ?></p> 
+		<p><?php _e( 'Pingback:', 'catch-flames' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'catch-flames' ), '<span class="edit-link">', '</span>' ); ?></p> 
 	<?php
 			break;
 		default :
@@ -434,28 +383,28 @@ function catchflames_comment( $comment, $args, $depth ) {
 					printf( '<cite><b class="fn">%1$s</b> %2$s</cite>',
 						get_comment_author_link(),
 						// If current post author is also comment author, make it known visually.
-						( $comment->user_id === $post->post_author ) ? '<span>' . __( 'Post author', 'catchflames' ) . '</span>' : ''
+						( $comment->user_id === $post->post_author ) ? '<span>' . __( 'Post author', 'catch-flames' ) . '</span>' : ''
 					);
 					printf( '<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
 						esc_url( get_comment_link( $comment->comment_ID ) ),
 						get_comment_time( 'c' ),
 						/* translators: 1: date, 2: time */
-						sprintf( __( '%1$s at %2$s', 'catchflames' ), get_comment_date(), get_comment_time() )
+						sprintf( __( '%1$s at %2$s', 'catch-flames' ), get_comment_date(), get_comment_time() )
 					);
 				?>
 			</header><!-- .comment-meta -->
 
 			<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'catchflames' ); ?></p>
+				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'catch-flames' ); ?></p>
 			<?php endif; ?>
 
 			<section class="comment-content comment">
 				<?php comment_text(); ?>
-				<?php edit_comment_link( __( 'Edit', 'catchflames' ), '<p class="edit-link">', '</p>' ); ?>
+				<?php edit_comment_link( __( 'Edit', 'catch-flames' ), '<p class="edit-link">', '</p>' ); ?>
 			</section><!-- .comment-content -->
 
 			<div class="reply">
-				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'catchflames' ), 'after' => ' <span>&darr;</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'catch-flames' ), 'after' => ' <span>&darr;</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 			</div><!-- .reply -->
 		</article><!-- #comment-## -->
 	<?php
@@ -483,13 +432,13 @@ function catchflames_posted_on() {
 	else {
 		$catchflames_author_url = esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) );
 	}
-	printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date updated" datetime="%3$s" pubdate>%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'catchflames' ),
+	printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date updated" datetime="%3$s" pubdate>%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'catch-flames' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() ),
 		$catchflames_author_url,
-		esc_attr( sprintf( __( 'View all posts by %s', 'catchflames' ), get_the_author() ) ),
+		esc_attr( sprintf( __( 'View all posts by %s', 'catch-flames' ), get_the_author() ) ),
 		get_the_author()
 	);	
 }
@@ -602,7 +551,7 @@ add_filter( 'body_class', 'catchflames_body_classes' );
  */
 function catchflames_post_id_column( $post_columns ) {
 	$beginning = array_slice( $post_columns, 0 ,1 );
-	$beginning[ 'postid' ] = __( 'ID', 'catchflames'  );
+	$beginning[ 'postid' ] = __( 'ID', 'catch-flames'  );
 	$ending = array_slice( $post_columns, 1 );
 	$post_columns = array_merge( $beginning, $ending );
 	return $post_columns;
@@ -748,117 +697,117 @@ function catchflames_social_networks() {
 			//facebook
 			if ( !empty( $options[ 'social_facebook' ] ) ) {
 				$catchflames_social_networks .=
-					'<li class="facebook"><a href="'.esc_url( $options[ 'social_facebook' ] ).'" title="'. esc_attr__( 'Facebook', 'catchflames' ) .'" target="_blank">'.esc_attr__( 'Facebook', 'catchflames' ).'</a></li>';
+					'<li class="facebook"><a href="'.esc_url( $options[ 'social_facebook' ] ).'" title="'. esc_attr__( 'Facebook', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Facebook', 'catch-flames' ).'</a></li>';
 			}
 			//Twitter
 			if ( !empty( $options[ 'social_twitter' ] ) ) {
 				$catchflames_social_networks .=
-					'<li class="twitter"><a href="'.esc_url( $options[ 'social_twitter' ] ).'" title="'. esc_attr__( 'Twitter', 'catchflames' ) .'" target="_blank">'.esc_attr__( 'Twitter', 'catchflames' ).'</a></li>';
+					'<li class="twitter"><a href="'.esc_url( $options[ 'social_twitter' ] ).'" title="'. esc_attr__( 'Twitter', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Twitter', 'catch-flames' ).'</a></li>';
 			}
 			//Google+
 			if ( !empty( $options[ 'social_googleplus' ] ) ) {
 				$catchflames_social_networks .=
-					'<li class="google-plus"><a href="'.esc_url( $options[ 'social_googleplus' ] ).'" title="'. esc_attr__( 'Google+', 'catchflames' ) .'" target="_blank">'.esc_attr__( 'Google+', 'catchflames' ).'</a></li>';
+					'<li class="google-plus"><a href="'.esc_url( $options[ 'social_googleplus' ] ).'" title="'. esc_attr__( 'Google+', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Google+', 'catch-flames' ).'</a></li>';
 			}
 			//Linkedin
 			if ( !empty( $options[ 'social_linkedin' ] ) ) {
 				$catchflames_social_networks .=
-					'<li class="linkedin"><a href="'.esc_url( $options[ 'social_linkedin' ] ).'" title="'. esc_attr__( 'Linkedin', 'catchflames' ) .'" target="_blank">'.esc_attr__( 'Linkedin', 'catchflames' ).'</a></li>';
+					'<li class="linkedin"><a href="'.esc_url( $options[ 'social_linkedin' ] ).'" title="'. esc_attr__( 'Linkedin', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Linkedin', 'catch-flames' ).'</a></li>';
 			}
 			//Pinterest
 			if ( !empty( $options[ 'social_pinterest' ] ) ) {
 				$catchflames_social_networks .=
-					'<li class="pinterest"><a href="'.esc_url( $options[ 'social_pinterest' ] ).'" title="'. esc_attr__( 'Pinterest', 'catchflames' ) .'" target="_blank">'.esc_attr__( 'Pinterest', 'catchflames' ).'</a></li>';
+					'<li class="pinterest"><a href="'.esc_url( $options[ 'social_pinterest' ] ).'" title="'. esc_attr__( 'Pinterest', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Pinterest', 'catch-flames' ).'</a></li>';
 			}				
 			//Youtube
 			if ( !empty( $options[ 'social_youtube' ] ) ) {
 				$catchflames_social_networks .=
-					'<li class="you-tube"><a href="'.esc_url( $options[ 'social_youtube' ] ).'" title="'. esc_attr__( 'YouTube', 'catchflames' ) .'" target="_blank">'.esc_attr__( 'YouTube', 'catchflames' ).'</a></li>';
+					'<li class="you-tube"><a href="'.esc_url( $options[ 'social_youtube' ] ).'" title="'. esc_attr__( 'YouTube', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'YouTube', 'catch-flames' ).'</a></li>';
 			}
 			//Vimeo
 			if ( !empty( $options[ 'social_vimeo' ] ) ) {
 				$catchflames_social_networks .=
-					'<li class="viemo"><a href="'.esc_url( $options[ 'social_vimeo' ] ).'" title="'. esc_attr__( 'Vimeo', 'catchflames' ) .'" target="_blank">'.esc_attr__( 'Vimeo', 'catchflames' ).'</a></li>';
+					'<li class="viemo"><a href="'.esc_url( $options[ 'social_vimeo' ] ).'" title="'. esc_attr__( 'Vimeo', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Vimeo', 'catch-flames' ).'</a></li>';
 			}				
 			//Slideshare
 			if ( !empty( $options[ 'social_aim' ] ) ) {
 				$catchflames_social_networks .=
-					'<li class="aim"><a href="'.esc_url( $options[ 'social_aim' ] ).'" title="'. esc_attr__( 'AIM', 'catchflames' ) .'" target="_blank">'.esc_attr__( 'AIM', 'catchflames' ).'</a></li>';
+					'<li class="aim"><a href="'.esc_url( $options[ 'social_aim' ] ).'" title="'. esc_attr__( 'AIM', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'AIM', 'catch-flames' ).'</a></li>';
 			}				
 			//MySpace
 			if ( !empty( $options[ 'social_myspace' ] ) ) {
 				$catchflames_social_networks .=
-					'<li class="myspace"><a href="'.esc_url( $options[ 'social_myspace' ] ).'" title="'. esc_attr__( 'MySpace', 'catchflames' ) .'" target="_blank">'.esc_attr__( 'MySpace', 'catchflames' ).'</a></li>';
+					'<li class="myspace"><a href="'.esc_url( $options[ 'social_myspace' ] ).'" title="'. esc_attr__( 'MySpace', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'MySpace', 'catch-flames' ).'</a></li>';
 			}
 			//Flickr
 			if ( !empty( $options[ 'social_flickr' ] ) ) {
 				$catchflames_social_networks .=
-					'<li class="flickr"><a href="'.esc_url( $options[ 'social_flickr' ] ).'" title="'. esc_attr__( 'Flickr', 'catchflames' ) .'" target="_blank">'.esc_attr__( 'Flickr', 'catchflames' ).'</a></li>';
+					'<li class="flickr"><a href="'.esc_url( $options[ 'social_flickr' ] ).'" title="'. esc_attr__( 'Flickr', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Flickr', 'catch-flames' ).'</a></li>';
 			}
 			//Tumblr
 			if ( !empty( $options[ 'social_tumblr' ] ) ) {
 				$catchflames_social_networks .=
-					'<li class="tumblr"><a href="'.esc_url( $options[ 'social_tumblr' ] ).'" title="'. esc_attr__( 'Tumblr', 'catchflames' ) .'" target="_blank">'.esc_attr__( 'Tumblr', 'catchflames' ).'</a></li>';
+					'<li class="tumblr"><a href="'.esc_url( $options[ 'social_tumblr' ] ).'" title="'. esc_attr__( 'Tumblr', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Tumblr', 'catch-flames' ).'</a></li>';
 			}
 			//deviantART
 			if ( !empty( $options[ 'social_deviantart' ] ) ) {
 				$catchflames_social_networks .=
-					'<li class="deviantart"><a href="'.esc_url( $options[ 'social_deviantart' ] ).'" title="'. esc_attr__( 'deviantART', 'catchflames' ) .'" target="_blank">'.esc_attr__( 'deviantART', 'catchflames' ).'</a></li>';
+					'<li class="deviantart"><a href="'.esc_url( $options[ 'social_deviantart' ] ).'" title="'. esc_attr__( 'deviantART', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'deviantART', 'catch-flames' ).'</a></li>';
 			}
 			//Dribbble
 			if ( !empty( $options[ 'social_dribbble' ] ) ) {
 				$catchflames_social_networks .=
-					'<li class="dribbble"><a href="'.esc_url( $options[ 'social_dribbble' ] ).'" title="'. esc_attr__( 'Dribbble', 'catchflames' ) .'" target="_blank">'.esc_attr__( 'Dribbble', 'catchflames' ).'</a></li>';
+					'<li class="dribbble"><a href="'.esc_url( $options[ 'social_dribbble' ] ).'" title="'. esc_attr__( 'Dribbble', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Dribbble', 'catch-flames' ).'</a></li>';
 			}
 			//WordPress
 			if ( !empty( $options[ 'social_wordpress' ] ) ) {
 				$catchflames_social_networks .=
-					'<li class="wordpress"><a href="'.esc_url( $options[ 'social_wordpress' ] ).'" title="'. esc_attr__( 'WordPress', 'catchflames' ) .'" target="_blank">'.esc_attr__( 'WordPress', 'catchflames' ).'</a></li>';
+					'<li class="wordpress"><a href="'.esc_url( $options[ 'social_wordpress' ] ).'" title="'. esc_attr__( 'WordPress', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'WordPress', 'catch-flames' ).'</a></li>';
 			}				
 			//RSS
 			if ( !empty( $options[ 'social_rss' ] ) ) {
 				$catchflames_social_networks .=
-					'<li class="rss"><a href="'.esc_url( $options[ 'social_rss' ] ).'" title="'. esc_attr__( 'RSS', 'catchflames' ) .'" target="_blank">'.esc_attr__( 'RSS', 'catchflames' ).'</a></li>';
+					'<li class="rss"><a href="'.esc_url( $options[ 'social_rss' ] ).'" title="'. esc_attr__( 'RSS', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'RSS', 'catch-flames' ).'</a></li>';
 			}	
 			//Slideshare
 			if ( !empty( $options[ 'social_slideshare' ] ) ) {
 				$catchflames_social_networks .=
-					'<li class="slideshare"><a href="'.esc_url( $options[ 'social_slideshare' ] ).'" title="'. esc_attr__( 'Slideshare', 'catchflames' ) .'" target="_blank">'.esc_attr__( 'Slideshare', 'catchflames' ).'</a></li>';
+					'<li class="slideshare"><a href="'.esc_url( $options[ 'social_slideshare' ] ).'" title="'. esc_attr__( 'Slideshare', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Slideshare', 'catch-flames' ).'</a></li>';
 			}
 			//Instagram
 			if ( !empty( $options[ 'social_instagram' ] ) ) {
 				$catchflames_social_networks .=
-					'<li class="instagram"><a href="'.esc_url( $options[ 'social_instagram' ] ).'" title="'. esc_attr__( 'Instagram', 'catchflames' ) .'" target="_blank">'.esc_attr__( 'Instagram', 'catchflames' ).'</a></li>';
+					'<li class="instagram"><a href="'.esc_url( $options[ 'social_instagram' ] ).'" title="'. esc_attr__( 'Instagram', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Instagram', 'catch-flames' ).'</a></li>';
 			}				
 			//Skype
 			if ( !empty( $options[ 'social_skype' ] ) ) {
 				$catchflames_social_networks .=
-					'<li class="skype"><a href="'.esc_url( $options[ 'social_skype' ] ).'" title="'. esc_attr__( 'Skype', 'catchflames' ) .'" target="_blank">'.esc_attr__( 'Skype', 'catchflames' ).'</a></li>';
+					'<li class="skype"><a href="'.esc_url( $options[ 'social_skype' ] ).'" title="'. esc_attr__( 'Skype', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Skype', 'catch-flames' ).'</a></li>';
 			}
 			//Soundcloud
 			if ( !empty( $options[ 'social_soundcloud' ] ) ) {
 				$catchflames_social_networks .=
-					'<li class="soundcloud"><a href="'.esc_url( $options[ 'social_soundcloud' ] ).'" title="'. esc_attr__( 'Soundcloud', 'catchflames' ) .'" target="_blank">'. esc_attr__( 'Soundcloud', 'catchflames' ) .'</a></li>';
+					'<li class="soundcloud"><a href="'.esc_url( $options[ 'social_soundcloud' ] ).'" title="'. esc_attr__( 'Soundcloud', 'catch-flames' ) .'" target="_blank">'. esc_attr__( 'Soundcloud', 'catch-flames' ) .'</a></li>';
 			}	
 			//Email
 			if ( !empty( $options[ 'social_email' ] )  && is_email( $options[ 'social_email' ] ) ) {
 				$catchflames_social_networks .=
-					'<li class="email"><a href="mailto:'.sanitize_email( $options[ 'social_email' ] ).'" title="'. esc_attr__( 'Email', 'catchflames' ) .'" target="_blank">'. esc_attr__( 'Email', 'catchflames' ) .'</a></li>';
+					'<li class="email"><a href="mailto:'.sanitize_email( $options[ 'social_email' ] ).'" title="'. esc_attr__( 'Email', 'catch-flames' ) .'" target="_blank">'. esc_attr__( 'Email', 'catch-flames' ) .'</a></li>';
 			}
 			//Contact
 			if ( !empty( $options[ 'social_contact' ] ) ) {
 				$catchflames_social_networks .=
-					'<li class="contactus"><a href="'.esc_url( $options[ 'social_contact' ] ).'" title="'. esc_attr__( 'Contact', 'catchflames' ) .'">'.esc_attr__( 'Contact', 'catchflames' ).'</a></li>';
+					'<li class="contactus"><a href="'.esc_url( $options[ 'social_contact' ] ).'" title="'. esc_attr__( 'Contact', 'catch-flames' ) .'">'.esc_attr__( 'Contact', 'catch-flames' ).'</a></li>';
 			}	
 			//Xing
 			if ( !empty( $options[ 'social_xing' ] ) ) {
 				$catchflames_social_networks .=
-					'<li class="xing"><a href="'.esc_url( $options[ 'social_xing' ] ).'" title="'. esc_attr__( 'Xing', 'catchflames' ) .'" target="_blank">'.esc_attr__( 'Xing', 'catchflames' ).'</a></li>';
+					'<li class="xing"><a href="'.esc_url( $options[ 'social_xing' ] ).'" title="'. esc_attr__( 'Xing', 'catch-flames' ) .'" target="_blank">'.esc_attr__( 'Xing', 'catch-flames' ).'</a></li>';
 			}			
 			//SpecificFeeds
 			if ( !empty( $options[ 'enable_specificfeeds' ] ) ) {
 				$catchflames_social_networks .=
-					'<li class="specificfeeds"><a href="'.esc_url( 'http://www.specificfeeds.com/follow' ).'" title="'. esc_attr__( 'SpecificFeeds', 'catchflames' ) .'" target="_blank">'. esc_attr__( 'SpecificFeeds', 'catchflames' ) .'</a></li>';
+					'<li class="specificfeeds"><a href="'.esc_url( 'http://www.specificfeeds.com/follow' ).'" title="'. esc_attr__( 'SpecificFeeds', 'catch-flames' ) .'" target="_blank">'. esc_attr__( 'SpecificFeeds', 'catch-flames' ) .'</a></li>';
 			}				
 			$catchflames_social_networks .='
 		</ul></div>';
@@ -900,7 +849,7 @@ function catchflames_post_featured_image() {
 	
     if ( has_post_thumbnail() ) : ?>	
         <figure class="featured-image">
-            <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'catchflames' ), the_title_attribute( 'echo=0' ) ) ); ?>">
+            <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'catch-flames' ), the_title_attribute( 'echo=0' ) ) ); ?>">
                 <?php the_post_thumbnail( $imagesize ); ?>
             </a>
         </figure>
