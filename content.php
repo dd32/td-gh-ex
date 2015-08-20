@@ -21,7 +21,7 @@ $moretag = $options[ 'more_tag_text' ];
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
-        <div class="featured-sticky"><?php _e( 'Featured post', 'catchkathmandu' ); ?></div>
+        <div class="featured-sticky"><?php _e( 'Featured post', 'catch-kathmandu' ); ?></div>
     <?php endif; ?>
     
     <?php if ( function_exists( 'catchkathmandu_content_image' ) ) : catchkathmandu_content_image(); endif; ?>
@@ -29,7 +29,7 @@ $moretag = $options[ 'more_tag_text' ];
     <div class="entry-container">
     
 		<header class="entry-header">
-    		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'catchkathmandu' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+    		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'catch-kathmandu' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 			<?php if ( 'post' == get_post_type() ) : ?>
                 <div class="entry-meta">
                     <?php catchkathmandu_header_meta(); ?>
@@ -49,7 +49,7 @@ $moretag = $options[ 'more_tag_text' ];
             <div class="entry-content">
                 <?php the_content( $moretag ); ?>
                 <?php wp_link_pages( array( 
-					'before'		=> '<div class="page-link"><span class="pages">' . __( 'Pages:', 'catchkathmandu' ) . '</span>',
+					'before'		=> '<div class="page-link"><span class="pages">' . __( 'Pages:', 'catch-kathmandu' ) . '</span>',
 					'after'			=> '</div>',
 					'link_before' 	=> '<span>',
 					'link_after'   	=> '</span>',
@@ -63,21 +63,21 @@ $moretag = $options[ 'more_tag_text' ];
 			<?php if ( comments_open() && ! post_password_required() ) : ?>
                 <span class="sep"> | </span>
                 <span class="comments-link">
-                    <?php comments_popup_link(__('Leave a reply', 'catchkathmandu'), __('1 Reply', 'catchkathmandu'), __('% Replies', 'catchkathmandu')); ?>
+                    <?php comments_popup_link(__('Leave a reply', 'catch-kathmandu'), __('1 Reply', 'catch-kathmandu'), __('% Replies', 'catch-kathmandu')); ?>
                 </span>
             <?php endif; ?>            
-            <?php edit_post_link( __( 'Edit', 'catchkathmandu' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
+            <?php edit_post_link( __( 'Edit', 'catch-kathmandu' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
 			<?php if ( is_singular() && get_the_author_meta( 'description' ) && is_multi_author() ) : // If a user has filled out their description and this is a multi-author blog, show a bio on their entries. ?>
 				<div class="author-info">
 					<div class="author-avatar">
 						<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'catchkathmandu_author_bio_avatar_size', 68 ) ); ?>
 					</div><!-- .author-avatar -->
 					<div class="author-description">
-						<h2><?php printf( __( 'About %s', 'catchkathmandu' ), get_the_author() ); ?></h2>
+						<h2><?php printf( __( 'About %s', 'catch-kathmandu' ), get_the_author() ); ?></h2>
 						<p><?php the_author_meta( 'description' ); ?></p>
 						<div class="author-link">
 							<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-								<?php printf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>', 'catchkathmandu' ), get_the_author() ); ?>
+								<?php printf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>', 'catch-kathmandu' ), get_the_author() ); ?>
 							</a>
 						</div><!-- .author-link	-->
 					</div><!-- .author-description -->

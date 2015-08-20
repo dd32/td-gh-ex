@@ -1,11 +1,21 @@
 == Changelog ==
 
+Version 3.4
+* Compatible with WordPress 4.3
+* Removed support for WordPress version less than 4.1
+* Updated text-domain
+
 Version 3.3.2
 * Added screen-reader-text css
+* Added all theme options to customizer
+* Removed: Unnecessary Codes from catchkathmandu-functions.php
 * Updated: Brazilian Portuguese translation pt_BR.po and pt_BR.mo
+* Changed: enable_posts_home default value to 1
+* Changed: select_slider_type default value to demo-slider
+* Updated codes to comply with deprecating PHP4 style constructors in WordPress 4.3
 
 Version 3.3.1
-* Simplfied Theme Options: Moved all Homepage option to Theme Options
+* Simplified Theme Options: Moved all Homepage option to Theme Options
 * Replaced: pre_get_posts with parse_query for catchkathmandu_alter_home for better WPML plugin handle
 * Updated: Genericons to version 3.3
 * Updated: French translation fr_FR.po and fr_FR.mo (By Laurent Juvigny)

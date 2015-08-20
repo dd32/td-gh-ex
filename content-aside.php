@@ -18,13 +18,13 @@ $options = $catchkathmandu_options_settings;
     
     	<div class="aside">
             <header class="entry-header">
-                <h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'catchkathmandu' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+                <h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'catch-kathmandu' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
             </header><!-- .entry-header -->
             
             <div class="entry-content">
                 <?php the_content(); ?>
                 <?php wp_link_pages( array( 
-					'before'		=> '<div class="page-link"><span class="pages">' . __( 'Pages:', 'catchkathmandu' ) . '</span>',
+					'before'		=> '<div class="page-link"><span class="pages">' . __( 'Pages:', 'catch-kathmandu' ) . '</span>',
 					'after'			=> '</div>',
 					'link_before' 	=> '<span>',
 					'link_after'   	=> '</span>',
@@ -37,9 +37,9 @@ $options = $catchkathmandu_options_settings;
             <?php catchkathmandu_post_format_meta(); ?>   
             <?php if ( comments_open() ) : ?>
             	<span class="sep"> | </span>
-            	<span class="comments-link"><?php comments_popup_link(__('Leave a reply', 'catchkathmandu'), __('1 Reply', 'catchkathmandu'), __('% Replies;', 'catchkathmandu')); ?></span>
+            	<span class="comments-link"><?php comments_popup_link(__('Leave a reply', 'catch-kathmandu'), __('1 Reply', 'catch-kathmandu'), __('% Replies;', 'catch-kathmandu')); ?></span>
             <?php endif; ?>
-            <?php edit_post_link( __( 'Edit', 'catchkathmandu' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
+            <?php edit_post_link( __( 'Edit', 'catch-kathmandu' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
         </footer><!-- .entry-meta -->
         
    	</div><!-- .entry-container -->

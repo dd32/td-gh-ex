@@ -255,6 +255,9 @@
 	font-weight: bold;
     text-shadow: none;
 }
+#theme-option-header-notice{
+		text-align:center;
+}
 @media screen and (max-width: 780px) {
 	#catchthemes .option-content .col {
 		width: 100%;

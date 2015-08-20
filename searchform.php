@@ -14,7 +14,7 @@ $options = $catchkathmandu_options_settings;
 $catchkathmandu_search_text = $options[ 'search_display_text' ]; 
 ?>
 	<form method="get" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
-		<label for="s" class="assistive-text"><?php _e( 'Search', 'catchkathmandu' ); ?></label>
-		<input type="text" class="field" name="s" value="<?php echo esc_attr( get_search_query() ); ?>" id="s" placeholder="<?php printf( __( '%s', 'catchkathmandu' ) , $catchkathmandu_search_text ); ?>" />
-		<input type="submit" class="submit" name="submit" id="searchsubmit" value="<?php esc_attr_e( 'Search', 'catchkathmandu' ); ?>" />
+		<label for="s" class="assistive-text"><?php _e( 'Search', 'catch-kathmandu' ); ?></label>
+		<input type="text" class="field" name="s" value="<?php echo esc_attr( get_search_query() ); ?>" id="s" placeholder="<?php printf( __( '%s', 'catch-kathmandu' ) , $catchkathmandu_search_text ); ?>" />
+		<input type="submit" class="submit" name="submit" id="searchsubmit" value="<?php esc_attr_e( 'Search', 'catch-kathmandu' ); ?>" />
 	</form>

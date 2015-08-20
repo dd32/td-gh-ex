@@ -11,13 +11,13 @@
 function catchkathmandu_add_custom_box() {
 	add_meta_box(
 		'catchkathmandu-options',							  	//Unique ID
-       __( 'Catch Kathmandu Options', 'catchkathmandu' ),   	//Title
+       __( 'Catch Kathmandu Options', 'catch-kathmandu' ),   	//Title
         'catchkathmandu_meta_options',                   	//Callback function
         'page'                                          	//show metabox in page
     ); 
 	add_meta_box(
 		'catchkathmandu-options',							  	//Unique ID
-       __( 'Catch Kathmandu Options', 'catchkathmandu' ),   	//Title
+       __( 'Catch Kathmandu Options', 'catch-kathmandu' ),   	//Title
         'catchkathmandu_meta_options',                   	//Callback function
         'post'                                          	//show metabox in post
     ); 	
@@ -31,17 +31,17 @@ $header_image_options = array(
 	'default' => array(
 		'id'		=> 'catchkathmandu-header-image',
 		'value' 	=> 'default',
-		'label' 	=> __( 'Default', 'catchkathmandu' ),
+		'label' 	=> __( 'Default', 'catch-kathmandu' ),
 	),
 	'enable' => array(
 		'id'		=> 'catchkathmandu-header-image',
 		'value' 	=> 'enable',
-		'label' 	=> __( 'Enable', 'catchkathmandu' ),
+		'label' 	=> __( 'Enable', 'catch-kathmandu' ),
 	),	
 	'disable' => array(
 		'id'		=> 'catchkathmandu-header-image',
 		'value' 	=> 'disable',
-		'label' 	=> __( 'Disable', 'catchkathmandu' )
+		'label' 	=> __( 'Disable', 'catch-kathmandu' )
 	)
 );
 
@@ -52,25 +52,25 @@ $sidebar_layout = array(
 		 'default-sidebar' => array(
             			'id'		=> 'catchkathmandu-sidebarlayout',
 						'value' 	=> 'default',
-						'label' 	=> __( 'Default Layout Set in', 'catchkathmandu' ).' <a href="' . admin_url('themes.php?page=theme_options') . '" target="_blank">'. __( 'Theme Options', 'catchkathmandu' ).'</a>',
+						'label' 	=> __( 'Default Layout Set in', 'catch-kathmandu' ).' <a href="' . admin_url('themes.php?page=theme_options') . '" target="_blank">'. __( 'Theme Options', 'catch-kathmandu' ).'</a>',
 						'thumbnail' => ' '
         			),
        'right-sidebar' => array(
 						'id' => 'catchkathmandu-sidebarlayout',
 						'value' => 'right-sidebar',
-						'label' => __( 'Right sidebar', 'catchkathmandu' ),
+						'label' => __( 'Right sidebar', 'catch-kathmandu' ),
 						'thumbnail' => get_template_directory_uri() . '/inc/panel/images/right-sidebar.png'
        				),
         'left-sidebar' => array(
             			'id'		=> 'catchkathmandu-sidebarlayout',
 						'value' 	=> 'left-sidebar',
-						'label' 	=> __( 'Left sidebar', 'catchkathmandu' ),
+						'label' 	=> __( 'Left sidebar', 'catch-kathmandu' ),
 						'thumbnail' => get_template_directory_uri() . '/inc/panel/images/left-sidebar.png'
        				),	 
         'no-sidebar' => array(
             			'id'		=> 'catchkathmandu-sidebarlayout',
 						'value' 	=> 'no-sidebar',
-						'label' 	=> __( 'No sidebar', 'catchkathmandu' ),
+						'label' 	=> __( 'No sidebar', 'catch-kathmandu' ),
 						'thumbnail' => get_template_directory_uri() . '/inc/panel/images/no-sidebar.png'
         			)	
 
@@ -82,27 +82,27 @@ $featuredimage_options = array(
 	'default' => array(
 		'id'		=> 'catchkathmandu-featured-image',
 		'value' 	=> 'default',
-		'label' 	=> __( 'Default Layout Set in', 'catchkathmandu' ).' <a href="' . admin_url('themes.php?page=theme_options') . '" target="_blank">'. __( 'Theme Options', 'catchkathmandu' ).'</a>',
+		'label' 	=> __( 'Default Layout Set in', 'catch-kathmandu' ).' <a href="' . admin_url('themes.php?page=theme_options') . '" target="_blank">'. __( 'Theme Options', 'catch-kathmandu' ).'</a>',
 	),							   
 	'featured' => array(
 		'id'		=> 'catchkathmandu-featured-image',
 		'value' 	=> 'featured',
-		'label' 	=> __( 'Featured Image', 'catchkathmandu' )
+		'label' 	=> __( 'Featured Image', 'catch-kathmandu' )
 	),
 	'full' => array(
 		'id' => 'catchkathmandu-featured-image',
 		'value' => 'full',
-		'label' => __( 'Full Image', 'catchkathmandu' )
+		'label' => __( 'Full Image', 'catch-kathmandu' )
 	),
 	'slider' => array(
 		'id' => 'catchkathmandu-featured-image',
 		'value' => 'slider',
-		'label' => __( 'Slider Image', 'catchkathmandu' )
+		'label' => __( 'Slider Image', 'catch-kathmandu' )
 	),
 	'disable' => array(
 		'id' => 'catchkathmandu-featured-image',
 		'value' => 'disable',
-		'label' => __( 'Disable Image', 'catchkathmandu' )
+		'label' => __( 'Disable Image', 'catch-kathmandu' )
 	)
 );
 
@@ -119,7 +119,7 @@ function catchkathmandu_meta_options() {
 
     // Begin the field table and loop  ?>  
     <div class="catchkathmandu-meta" style="border-bottom: 2px solid #dfdfdf; margin-bottom: 10px; padding-bottom: 10px;">
-    	<h4 class="title"><?php _e('Sidebar Layout', 'catchkathmandu'); ?></h4>
+    	<h4 class="title"><?php _e('Sidebar Layout', 'catch-kathmandu'); ?></h4>
         <table id="sidebar-layout" class="form-table" width="100%">
             <tbody> 
                 <tr>
@@ -149,7 +149,7 @@ function catchkathmandu_meta_options() {
    	</div><!-- .catchkathmandu-meta -->      
     
     <div class="catchkathmandu-meta" style="border-bottom: 2px solid #dfdfdf; margin-bottom: 10px; padding-bottom: 10px;">
-    	<h4 class="title"><?php _e('Header Featured Image Options', 'catchkathmandu'); ?></h4>  
+    	<h4 class="title"><?php _e('Header Featured Image Options', 'catch-kathmandu'); ?></h4>  
         <table id="featuedimage-metabox" class="form-table" width="100%">
             <tbody> 
                 <tr>                
@@ -177,7 +177,7 @@ function catchkathmandu_meta_options() {
 	</div><!-- .catchkathmandu-meta -->  
         
     <div class="catchkathmandu-meta">
-    	<h4 class="title"><?php _e('Content Featured Image Options', 'catchkathmandu'); ?></h4>  
+    	<h4 class="title"><?php _e('Content Featured Image Options', 'catch-kathmandu'); ?></h4>  
         <table id="featuedimage-metabox" class="form-table" width="100%">
             <tbody> 
                 <tr>

@@ -68,13 +68,13 @@ function catchkathmandu_custom_header_setup() {
 			'url' => '%s/images/logo.png',
 			'thumbnail_url' => '%s/images/logo.png',
 			/* translators: header image description */
-			'description' => __( 'Default Logo', 'catchkathmandu' )
+			'description' => __( 'Default Logo', 'catch-kathmandu' )
 		),
 		'catchkathmandulogo' => array(
 			'url' => '%s/images/catch-kathmandu.png',
 			'thumbnail_url' => '%s/images/catch-kathmandu.png',
 			/* translators: header image description */
-			'description' => __( 'Catch Kathmandu Logo', 'catchkathmandu' )
+			'description' => __( 'Catch Kathmandu Logo', 'catch-kathmandu' )
 		)
 	) );	
  

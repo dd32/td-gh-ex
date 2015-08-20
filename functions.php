@@ -31,9 +31,9 @@ function catchkathmandu_setup() {
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
 	 * If you're building a theme based on Catch Kathmandu, use a find and replace
-	 * to change 'catchkathmandu' to the name of your theme in all the template files
+	 * to change 'catch-kathmandu' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'catchkathmandu', get_template_directory() . '/languages' );	
+	load_theme_textdomain( 'catch-kathmandu', get_template_directory() . '/languages' );	
 	
 	/**
 	 * Add callback for custom TinyMCE editor stylesheets. (editor-style.css)
@@ -62,7 +62,12 @@ function catchkathmandu_setup() {
 	/**
 	 * Custom Theme Options
 	 */
-	require( get_template_directory() . '/inc/panel/theme-options.php' );	
+	require( get_template_directory() . '/inc/panel/theme-options.php' );
+
+	/**
+	 * Customizer Options
+	 */
+	require( get_template_directory() . '/inc/panel/customizer/customizer.php' );	
 	
 	/**
 	 * Custom functions that act independently of the theme templates
@@ -98,8 +103,8 @@ function catchkathmandu_setup() {
      * @see http://codex.wordpress.org/Function_Reference/register_nav_menus
      */		
 	register_nav_menus(array(
-		'primary' 	=> __( 'Primary Menu', 'catchkathmandu' ),
-	   	'secondary'	=> __( 'Secondary Menu', 'catchkathmandu' )
+		'primary' 	=> __( 'Primary Menu', 'catch-kathmandu' ),
+	   	'secondary'	=> __( 'Secondary Menu', 'catch-kathmandu' )
 	) );
 	
 	/**

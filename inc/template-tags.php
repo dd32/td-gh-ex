@@ -48,12 +48,12 @@ function catchkathmandu_content_nav( $nav_id ) {
 
 	?>
 	<nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
-		<h1 class="assistive-text"><?php _e( 'Post navigation', 'catchkathmandu' ); ?></h1>
+		<h1 class="assistive-text"><?php _e( 'Post navigation', 'catch-kathmandu' ); ?></h1>
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
 
-		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'catchkathmandu' ) . '</span> %title' ); ?>
-		<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'catchkathmandu' ) . '</span>' ); ?>
+		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'catch-kathmandu' ) . '</span> %title' ); ?>
+		<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'catch-kathmandu' ) . '</span>' ); ?>
 
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
@@ -65,11 +65,11 @@ function catchkathmandu_content_nav( $nav_id ) {
         }
 		else { ?>
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'catchkathmandu' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'catch-kathmandu' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-            <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'catchkathmandu' ) ); ?></div>
+            <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'catch-kathmandu' ) ); ?></div>
             <?php endif; ?>
        	<?php } ?>
 
@@ -109,12 +109,12 @@ function catchkathmandu_content_query_nav( $nav_id ) {
 
 	?>
 	<nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
-		<h1 class="assistive-text"><?php _e( 'Post navigation', 'catchkathmandu' ); ?></h1>
+		<h1 class="assistive-text"><?php _e( 'Post navigation', 'catch-kathmandu' ); ?></h1>
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
 
-		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'catchkathmandu' ) . '</span> %title' ); ?>
-		<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'catchkathmandu' ) . '</span>' ); ?>
+		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'catch-kathmandu' ) . '</span> %title' ); ?>
+		<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'catch-kathmandu' ) . '</span>' ); ?>
 
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
@@ -126,11 +126,11 @@ function catchkathmandu_content_query_nav( $nav_id ) {
         }
 		else { ?>
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'catchkathmandu' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'catch-kathmandu' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-            <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'catchkathmandu' ) ); ?></div>
+            <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'catch-kathmandu' ) ); ?></div>
             <?php endif; ?>
        	<?php } ?>
 
@@ -161,7 +161,7 @@ function catchkathmandu_comment( $comment, $args, $depth ) {
 		// Display trackbacks differently than normal comments.
 	?>
 	<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-		<p><?php _e( 'Pingback:', 'catchkathmandu' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'catchkathmandu' ), '<span class="edit-link">', '</span>' ); ?></p>
+		<p><?php _e( 'Pingback:', 'catch-kathmandu' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'catch-kathmandu' ), '<span class="edit-link">', '</span>' ); ?></p>
 	<?php
 			break;
 		default :
@@ -176,28 +176,28 @@ function catchkathmandu_comment( $comment, $args, $depth ) {
 					printf( '<cite class="fn">%1$s %2$s</cite>',
 						get_comment_author_link(),
 						// If current post author is also comment author, make it known visually.
-						( $comment->user_id === $post->post_author ) ? '<span> ' . __( 'Post author', 'catchkathmandu' ) . '</span>' : ''
+						( $comment->user_id === $post->post_author ) ? '<span> ' . __( 'Post author', 'catch-kathmandu' ) . '</span>' : ''
 					);
 					printf( '<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
 						esc_url( get_comment_link( $comment->comment_ID ) ),
 						get_comment_time( 'c' ),
 						/* translators: 1: date, 2: time */
-						sprintf( __( '%1$s at %2$s', 'catchkathmandu' ), get_comment_date(), get_comment_time() )
+						sprintf( __( '%1$s at %2$s', 'catch-kathmandu' ), get_comment_date(), get_comment_time() )
 					);
 				?>
 			</header><!-- .comment-meta -->
 
 			<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'catchkathmandu' ); ?></p>
+				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'catch-kathmandu' ); ?></p>
 			<?php endif; ?>
 
 			<section class="comment-content comment">
 				<?php comment_text(); ?>
-				<?php edit_comment_link( __( 'Edit', 'catchkathmandu' ), '<p class="edit-link">', '</p>' ); ?>
+				<?php edit_comment_link( __( 'Edit', 'catch-kathmandu' ), '<p class="edit-link">', '</p>' ); ?>
 			</section><!-- .comment-content -->
 
 			<div class="reply">
-				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'catchkathmandu' ), 'after' => ' <span>&darr;</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'catch-kathmandu' ), 'after' => ' <span>&darr;</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 			</div><!-- .reply -->
 		</article><!-- #comment-## -->
 	<?php
@@ -226,12 +226,12 @@ function catchkathmandu_header_meta() {
 	
 	$author = sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'catchkathmandu' ), get_the_author() ) ),
+		esc_attr( sprintf( __( 'View all posts by %s', 'catch-kathmandu' ), get_the_author() ) ),
 		get_the_author()
 	);
 	
 	// Translators: 1 is category, 2 is tag, 3 is the date and 4 is the author's name.
-		$utility_text = __( '<span class="on-date">Posted on %1$s</span><span class="by-author"> by %2$s</span>', 'catchkathmandu' );
+		$utility_text = __( '<span class="on-date">Posted on %1$s</span><span class="by-author"> by %2$s</span>', 'catch-kathmandu' );
 
 	printf(
 		$utility_text,
@@ -253,17 +253,17 @@ if ( ! function_exists( 'catchkathmandu_footer_meta' ) ) :
 function catchkathmandu_footer_meta() {
 	
 	// Translators: used between list items, there is a space after the comma.
-	$categories_list = get_the_category_list( __( ', ', 'catchkathmandu' ) );
+	$categories_list = get_the_category_list( __( ', ', 'catch-kathmandu' ) );
 
 	// Translators: used between list items, there is a space after the comma.
-	$tag_list = get_the_tag_list( '', __( ', ', 'catchkathmandu' ) );
+	$tag_list = get_the_tag_list( '', __( ', ', 'catch-kathmandu' ) );
 
 
 	// Translators: 1 is category, 2 is tag, 3 is the date and 4 is the author's name.
 	if ( $tag_list ) {
-		$utility_text = __( '<span class="in-category">Posted in %1$s</span><span class="sep"> | </span><span class="in-tag">Tagged %2$s</span>', 'catchkathmandu' );
+		$utility_text = __( '<span class="in-category">Posted in %1$s</span><span class="sep"> | </span><span class="in-tag">Tagged %2$s</span>', 'catch-kathmandu' );
 	} elseif ( $categories_list ) {
-		$utility_text = __( '<span class="in-category">Posted in %1$s</span>', 'catchkathmandu' );
+		$utility_text = __( '<span class="in-category">Posted in %1$s</span>', 'catch-kathmandu' );
 	} 
 	
 	printf(
@@ -285,10 +285,10 @@ if ( ! function_exists( 'catchkathmandu_post_format_meta' ) ) :
  */
 function catchkathmandu_post_format_meta() {
 	// Translators: used between list items, there is a space after the comma.
-	$categories_list = get_the_category_list( __( ', ', 'catchkathmandu' ) );
+	$categories_list = get_the_category_list( __( ', ', 'catch-kathmandu' ) );
 
 	// Translators: used between list items, there is a space after the comma.
-	$tag_list = get_the_tag_list( '', __( ', ', 'catchkathmandu' ) );
+	$tag_list = get_the_tag_list( '', __( ', ', 'catch-kathmandu' ) );
 
 	$date = sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>',
 		esc_url( get_permalink() ),
@@ -299,17 +299,17 @@ function catchkathmandu_post_format_meta() {
 
 	$author = sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'catchkathmandu' ), get_the_author() ) ),
+		esc_attr( sprintf( __( 'View all posts by %s', 'catch-kathmandu' ), get_the_author() ) ),
 		get_the_author()
 	);
 
 	// Translators: 1 is category, 2 is tag, 3 is the date and 4 is the author's name.
 	if ( $tag_list ) {
-		$utility_text = __( '<span class="on-date">Posted on %3$s</span><span class="in-category"> under %1$s</span><span class="sep"> | </span><span class="in-tag">Tagged %2$s</span><span class="sep"> | </span><span class="by-author"> By %4$s</span>', 'catchkathmandu' );
+		$utility_text = __( '<span class="on-date">Posted on %3$s</span><span class="in-category"> under %1$s</span><span class="sep"> | </span><span class="in-tag">Tagged %2$s</span><span class="sep"> | </span><span class="by-author"> By %4$s</span>', 'catch-kathmandu' );
 	} elseif ( $categories_list ) {
-		$utility_text = __( '<span class="on-date">Posted on %3$s</span><span class="in-category"> under in %1$s</span><span class="sep"> | </span><span class="by-author"> By %4$s</span>.', 'catchkathmandu' );
+		$utility_text = __( '<span class="on-date">Posted on %3$s</span><span class="in-category"> under in %1$s</span><span class="sep"> | </span><span class="by-author"> By %4$s</span>.', 'catch-kathmandu' );
 	} else {
-		$utility_text = __( '<span class="on-date">Posted on %3$s</span><span class="sep"> | </span><span class="by-author"> By %4$s</span>.', 'catchkathmandu' );
+		$utility_text = __( '<span class="on-date">Posted on %3$s</span><span class="sep"> | </span><span class="by-author"> By %4$s</span>.', 'catch-kathmandu' );
 	}
 
 	printf(

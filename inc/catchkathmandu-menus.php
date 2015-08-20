@@ -8,8 +8,8 @@ if ( ! function_exists( 'catchkathmandu_primary_menu' ) ) :
 function catchkathmandu_primary_menu() { ?>
 	<div id="header-menu">
         <nav id="access" role="navigation">
-            <h2 class="assistive-text"><?php _e( 'Primary Menu', 'catchkathmandu' ); ?></h2>
-            <div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'catchkathmandu' ); ?>"><?php _e( 'Skip to content', 'catchkathmandu' ); ?></a></div>
+            <h2 class="assistive-text"><?php _e( 'Primary Menu', 'catch-kathmandu' ); ?></h2>
+            <div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'catch-kathmandu' ); ?>"><?php _e( 'Skip to content', 'catch-kathmandu' ); ?></a></div>
             <?php
                 if ( has_nav_menu( 'primary' ) ) { 
                     $catchkathamdu_primary_menu_args = array(
@@ -42,7 +42,7 @@ function catchkathmandu_secondary_menu() {
 	if ( has_nav_menu( 'secondary' ) ) { ?>
 	<div id="secondary-menu">
         <nav id="access-secondary" role="navigation">
-            <h2 class="assistive-text"><?php _e( 'Secondary Menu', 'catchkathmandu' ); ?></h2>
+            <h2 class="assistive-text"><?php _e( 'Secondary Menu', 'catch-kathmandu' ); ?></h2>
             <?php     
 				$catchkathamdu_secondary_menu_args = array(
 					'theme_location'    => 'secondary',

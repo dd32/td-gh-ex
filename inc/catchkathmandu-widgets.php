@@ -11,9 +11,9 @@ function catchkathmandu_widgets_init() {
 	
 	//Main Sidebar
 	register_sidebar( array(
-		'name' => __( 'Main Sidebar', 'catchkathmandu' ),
+		'name' => __( 'Main Sidebar', 'catch-kathmandu' ),
 		'id' => 'sidebar-1',
-		'description'   	=> __( 'Shows the Widgets at the side of Content', 'catchkathmandu' ),
+		'description'   	=> __( 'Shows the Widgets at the side of Content', 'catch-kathmandu' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
@@ -22,9 +22,9 @@ function catchkathmandu_widgets_init() {
 	
 	//Header Right Sidebar
 	register_sidebar( array(
-		'name' => __( 'Header Right Sidebar', 'catchkathmandu' ),
+		'name' => __( 'Header Right Sidebar', 'catch-kathmandu' ),
 		'id' => 'sidebar-header-right',
-		'description'   	=> __( 'Shows the Widgets at the Top Right Side of Header', 'catchkathmandu' ),
+		'description'   	=> __( 'Shows the Widgets at the Top Right Side of Header', 'catch-kathmandu' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
@@ -33,9 +33,9 @@ function catchkathmandu_widgets_init() {
 	
 	//Footer One Sidebar
 	register_sidebar( array(
-		'name' => __( 'Footer Area One', 'catchkathmandu' ),
+		'name' => __( 'Footer Area One', 'catch-kathmandu' ),
 		'id' => 'sidebar-2',
-		'description' => __( 'An optional widget area for your site footer', 'catchkathmandu' ),
+		'description' => __( 'An optional widget area for your site footer', 'catch-kathmandu' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
@@ -44,9 +44,9 @@ function catchkathmandu_widgets_init() {
 
 	//Footer Two Sidebar
 	register_sidebar( array(
-		'name' => __( 'Footer Area Two', 'catchkathmandu' ),
+		'name' => __( 'Footer Area Two', 'catch-kathmandu' ),
 		'id' => 'sidebar-3',
-		'description' => __( 'An optional widget area for your site footer', 'catchkathmandu' ),
+		'description' => __( 'An optional widget area for your site footer', 'catch-kathmandu' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
@@ -55,9 +55,9 @@ function catchkathmandu_widgets_init() {
 
 	//Footer Three Sidebar
 	register_sidebar( array(
-		'name' => __( 'Footer Area Three', 'catchkathmandu' ),
+		'name' => __( 'Footer Area Three', 'catch-kathmandu' ),
 		'id' => 'sidebar-4',
-		'description' => __( 'An optional widget area for your site footer', 'catchkathmandu' ),
+		'description' => __( 'An optional widget area for your site footer', 'catch-kathmandu' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
@@ -66,9 +66,9 @@ function catchkathmandu_widgets_init() {
 	
 	//Footer Four Sidebar
 	register_sidebar( array(
-		'name' => __( 'Footer Area Four', 'catchkathmandu' ),
+		'name' => __( 'Footer Area Four', 'catch-kathmandu' ),
 		'id' => 'sidebar-5',
-		'description' => __( 'An optional widget area for your site footer', 'catchkathmandu' ),
+		'description' => __( 'An optional widget area for your site footer', 'catch-kathmandu' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
@@ -91,14 +91,14 @@ add_action( 'widgets_init', 'catchkathmandu_widgets_init' );
 class catchkathmandu_social_widget extends WP_Widget {
 	
 	/**
-	 * Constructor
-	 *
-	 * @return void
-	 **/
-	function catchkathmandu_social_widget() {
-		$widget_ops = array( 'classname' => 'widget_catchkathmandu_social_widget', 'description' => __( 'Use this widget to add Social Icons from Social Icons Settings as a widget. ', 'catchkathmandu' ) );
-		$this->WP_Widget( 'widget_catchkathmandu_social_widget', __( '1. Catch Kathmandu: Social', 'catchkathmandu' ), $widget_ops );
-		$this->alt_option_name = 'widget_catchkathmandu_social_widget';
+	 * Register widget with WordPress.
+	 */
+	function __construct() {
+		parent::__construct(
+			'widget_catchkathmandu_social_widget', // Base ID
+			__( 'CT: Social Widget', 'catch-kathmandu' ), // Name
+			array( 'description' => __( 'Use this widget to add Social Icons from Social Icons Settings as a widget.', 'catch-kathmandu' ) ) // Args
+		);
 	}
 
 	/**
@@ -110,7 +110,7 @@ class catchkathmandu_social_widget extends WP_Widget {
 		$title = esc_attr( $instance[ 'title' ] );
 		?>
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title (optional):','catchkathmandu'); ?></label>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title (optional):','catch-kathmandu'); ?></label>
             <input type="text" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title; ?>" class="widefat" id="<?php echo $this->get_field_id('title'); ?>" />
         </p>
         <?php

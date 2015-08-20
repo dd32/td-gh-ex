@@ -21,8 +21,8 @@ $moretag = $options[ 'more_tag_text' ];
 	<div class="entry-container post-format">
     
         <header class="entry-header">
-            <h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'catchkathmandu' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-            <h2 class="entry-format"><a href="<?php echo get_post_format_link( 'video' ); ?>" title="<?php _e( 'All Video Posts', 'catchkathmandu' ); ?>"><?php _e( 'Video', 'catchkathmandu' ); ?></a></h2>
+            <h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'catch-kathmandu' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+            <h2 class="entry-format"><a href="<?php echo get_post_format_link( 'video' ); ?>" title="<?php _e( 'All Video Posts', 'catch-kathmandu' ); ?>"><?php _e( 'Video', 'catch-kathmandu' ); ?></a></h2>
     	</header><!-- .entry-header -->  
     
 		<?php if ( is_search() ) : // Only display Excerpts for Search ?>
@@ -33,7 +33,7 @@ $moretag = $options[ 'more_tag_text' ];
             <div class="entry-content">
                 <?php the_content( $moretag ); ?>
 				<?php wp_link_pages( array( 
-                    'before'		=> '<div class="page-link"><span class="pages">' . __( 'Pages:', 'catchkathmandu' ) . '</span>',
+                    'before'		=> '<div class="page-link"><span class="pages">' . __( 'Pages:', 'catch-kathmandu' ) . '</span>',
                     'after'			=> '</div>',
                     'link_before' 	=> '<span>',
                     'link_after'   	=> '</span>',
@@ -46,9 +46,9 @@ $moretag = $options[ 'more_tag_text' ];
             <?php catchkathmandu_post_format_meta(); ?>   
             <?php if ( comments_open() ) : ?>
             	<span class="sep"> | </span>
-            	<span class="comments-link"><?php comments_popup_link(__('Leave a reply', 'catchkathmandu'), __('1 Reply', 'catchkathmandu'), __('% Replies;', 'catchkathmandu')); ?></span>
+            	<span class="comments-link"><?php comments_popup_link(__('Leave a reply', 'catch-kathmandu'), __('1 Reply', 'catch-kathmandu'), __('% Replies;', 'catch-kathmandu')); ?></span>
             <?php endif; ?>
-            <?php edit_post_link( __( 'Edit', 'catchkathmandu' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
+            <?php edit_post_link( __( 'Edit', 'catch-kathmandu' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
         </footer><!-- .entry-meta -->
         
   	</div><!-- .entry-container -->
