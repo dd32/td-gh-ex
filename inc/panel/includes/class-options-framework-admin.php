@@ -216,7 +216,7 @@ class Options_Framework_Admin {
 				<img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/upgrade-top.jpg">
 			</div>
 		    <div class="button-link">
-				<a href="<?php echo esc_url('https://accesspressthemes.com/accesspress-root-pro/'); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/demo-btn.png"></a>
+				<a href="<?php echo esc_url('http://demo.accesspressthemes.com/accesspress-root/'); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/demo-btn.png"></a>
 				<a href="<?php echo esc_url('https://accesspressthemes.com/wordpress-themes/accesspress-root-pro/'); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/upgrade-btn.png"></a>
 			</div>
 			<div class="any-question">

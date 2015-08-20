@@ -97,6 +97,10 @@ Pattern Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.16
+* Change in documentation and demo links
+* TGM activation plugin updated to 2.5.2
+
 Version 1.15
 * CSS bug for responsive menu fixed
 * Minor Change in Theme Option Panel text
