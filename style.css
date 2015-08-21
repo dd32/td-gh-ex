@@ -1,0 +1,407 @@
+/*
+Theme Name: AccountantLaw
+Description: AccountantLaw it's a responsive child theme for Lawyeria Lite. With a clean design it fits perfectly for your accountant website. You can use AccountantLaw for any law website.
+Author: 9Pixels
+Author URI: http://9pixels.co
+Template: lawyeria-lite
+Version: 1.0.10
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: light, dark, two-columns, right-sidebar, responsive-layout, accountant, law, clean
+Text Domain: accountantlaw
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+body {
+	font-family: "Lora", sans-serif;
+	color: #39352E;
+}
+
+.site-title a {
+	font-weight: 700;
+	color: #BB7A40;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+
+nav li a,
+nav li a:hover {
+	border: none;
+}
+
+.header-contact {
+	margin-top: 20px;
+}
+
+#features {
+	background-image: none;
+	float: none;
+}
+
+#features,
+#features .features-box {
+	box-shadow: none;
+}
+
+.second-subheader {
+	width: 100%;
+	background: #fff;
+	padding: 60px 0px;
+	text-align: center;
+	position: relative;
+	float: left;
+}
+.second-subheader h3 {
+	margin: 0px 155px;
+	line-height: 42px;
+	color: #394753;
+	font-weight: 300;
+	font-size: 36px;
+}
+
+#subheader {
+	background-image: none !important;
+}
+
+#subheader .subheader-color .full-header-content-no-sidebar h3,
+.second-subheader h3,
+#content .content-article h3,
+#content .content-article p {
+	font-family: "Lora", sans-serif;
+}
+
+#subheader .subheader-color {
+	background: #39352E;
+	padding-top: 72px;
+	padding-bottom: 0;
+}
+
+#subheader .subheader-color .full-header-content-no-sidebar {
+	margin-top: 0 !important;
+}
+
+#subheader .subheader-color .subheader-features {
+	width: 100%;
+	margin-top: 72px;
+	background: #fff;
+	border: 1px solid #ededed;
+	-webkit-box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+  	-ms-box-sizing: border-box;
+  	-o-box-sizing: border-box;
+  	box-sizing: border-box;
+	float: left;
+}
+
+#subheader .subheader-color .subheader-features .feature {
+	width: 25%;
+	padding: 25px 15px;
+	border-left: 1px solid #ededed;
+	font-size: 16px;
+	text-align: center;
+	-webkit-box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+  	-ms-box-sizing: border-box;
+  	-o-box-sizing: border-box;
+  	box-sizing: border-box;
+	float: left;
+}
+
+#subheader .subheader-color .subheader-features .feature:first-child {
+	border-left: none;
+}
+
+#subheader .subheader-color .subheader-features .feature:hover {
+	color: #BB7A40;
+}
+
+#subheader .subheader-color .subheader-features .feature span {
+	width: 100%;
+	margin-top: 10px;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #DBC889;
+}
+
+#about-us {
+	width: 100%;
+	background: #fff url("images/about-us-background.png") repeat;
+	padding: 60px 0;
+}
+
+#about-us .container {
+	width: 64.626556016%;
+	float: left;
+}
+
+#about-us h3 {
+	width: 100%;
+	height: 50px;
+	margin-bottom: 15px;
+	line-height: 50px;
+	font-size: 40px;
+	text-transform: uppercase;
+	position: relative;
+}
+
+#about-us h3:after,
+#about-us h3:before {
+	content: "";
+	width: 100%;
+	height: 1px;
+	background: #4a5c6b;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+#about-us h3:before {
+	bottom: 2px;
+}
+
+#about-us h4 {
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+#about-us .box {
+	width: 45.264847512%;
+	line-height: 21px;
+	font-size: 15px;
+	text-align: justify;
+}
+
+#about-us .box.left {
+	float: left;
+}
+
+#about-us .box.right {
+	float: right;
+}
+
+#about-us .image {
+	width: 29.253112033%;
+	height: 100%;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-ms-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+	float: right;
+}
+
+#sidebar-right .widget .title-widget {
+	background: none;
+	border-bottom: 1px solid #cecece;
+}
+
+#footer {
+	background: #39352E;
+	color: #fff;
+}
+
+#testimonials {
+	width: 100%;
+	padding: 60px 0;
+}
+
+#testimonials h3 {
+	width: 100%;
+	margin-bottom: 15px;
+	display: block;
+	font-size: 40px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+#testimonials h4 {
+	width: 100%;
+	margin-bottom: 30px;
+	display: block;
+	font-family: "Lato", sans-serif;
+	text-align: center;
+}
+
+#testimonials .container {
+	width: 100%;
+}
+
+#testimonials .testimonial {
+	width: 29.253112033%;
+	background: #fff;
+	margin-left: 6.12033195%;
+	padding: 30px;
+	-webkit-box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+  	-ms-box-sizing: border-box;
+  	-o-box-sizing: border-box;
+  	box-sizing: border-box;
+  	text-align: center;
+	float: left;
+}
+
+#testimonials .testimonial:first-child {
+	margin-left: 0;
+}
+
+#testimonials .testimonial .testimonial-image {
+	width: 65px;
+	height: 65px;
+	border-radius: 50%;
+	margin: 0 auto 15px auto;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-ms-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
+
+#testimonials .testimonial .testimonial-title {
+	width: 100%;
+	margin-bottom: 15px;
+	font-size: 16px;
+	text-align: center;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+#testimonials .testimonial .testimonial-entry {
+	line-height: 16px;
+	color: #565147;
+}
+
+.container-menu {
+	text-transform: uppercase;
+}
+
+nav li ul.sub-menu {
+	background: rgba(243, 243, 243, 0.9);
+}
+
+#subheader .subheader-color .full-header-content p {
+	font-family: "Lato", sans-serif;
+}
+
+.lawyeria_lite_poweredby a {
+	display: inline;
+}
+
+.wide-nav {
+	background: #39352E;
+	color: #fff;
+}
+
+#sidebar-right .widget .searchform input#searchsubmit {
+	background: #39352E;
+}
+
+#sidebar-right .widget .title-widget,
+#sidebar-right .widget ul li a,
+.post h3 a,
+#comments-template .comments-template-title,
+#comments-template .comments-template-title a,
+#comments-template .comments-list li .comment-entry .comment-entry-head,
+#comments-template .comments-list li .comment-entry .comment-entry-head span a,
+#comments-template .comments-list li .comment-entry .comment-entry-head .comment-entry-head-date,
+#comments-template .comments-list li .comment-entry .comment-entry-head .comment-edit-link,
+#comments-template .comments-list li .comment-entry .comment-entry-content p,
+#comments-template .comment-respond h3#reply-title,
+#comments-template .comment-respond .comment-form p.logged-in-as,
+#comments-template .comment-respond .comment-form p.logged-in-as a,
+#comments-template .comment-respond .comment-form p.form-allowed-tags,
+.header-contact,
+.header-contact span a,
+.second-subheader h3 {
+	color: #39352E;
+}
+
+#comments-template .comments-list li .comment-entry a.comment-reply-link,
+#comments-template .comments-list li .comment-entry em.awaiting-moderation,
+#comments-template .comment-respond .comment-form #contact_submit,
+.openresponsivemenu,
+.single-navigation a.previous-post,
+.single-navigation a.next-post,
+.posts-navigation .left-navigation,
+.posts-navigation .right-navigation {
+	background: #39352E;
+}
+
+.openresponsivemenu {
+	color: #fff;
+}
+
+#comments-template .comment-respond .comment-form #contact_submit {
+	border: none;
+	outline: 0;
+	box-shadow: none;
+}
+
+#comments-template .comment-respond .comment-form fieldset .input-full,
+#comments-template .comment-respond .comment-form fieldset .input-small-left,
+#comments-template .comment-respond .comment-form fieldset .input-small-right,
+#comments-template .comment-respond .comment-form .input-textarea {
+	color: #39352E;
+	border: 1px solid #39352E;
+}
+
+#sidebar-right .widget ul li a:hover,
+.post h3 a:hover {
+	color: #15214F;
+}
+
+.wide-nav h3,
+.wide-nav h1 {
+	width: 100%;
+    font-weight: 700;
+    font-size: 26px;
+}
+
+@media only screen and (max-width: 1024px) {}
+@media only screen and (max-width: 768px) {
+	#subheader .subheader-color .subheader-features .feature {
+		font-size: 15px;
+	}
+	#subheader .subheader-color .subheader-features .feature span {
+		font-size: 12px;
+	}
+	.second-subheader h3 {
+		width: 100%;
+		margin: 0;
+	}
+}
+@media only screen and (max-width: 560px) {
+	#subheader .subheader-color .subheader-features .feature {
+		width: 100%;
+		border-right:  none;
+		border-bottom: 1px solid #ededed;
+		border-left: none;
+		font-size: 18px;
+	}
+	#subheader .subheader-color .subheader-features .feature span {
+		font-size: 16px;
+	}
+	#subheader .subheader-color .subheader-features .feature:last-child {
+		border-bottom: none;
+	}
+	#testimonials .testimonial {
+		width: 100%;
+		margin-top: 59px;
+		margin-left: 0;
+	}
+	#about-us .container {
+		width: 100%;
+	}
+	#about-us h4 {
+		word-wrap: break-word;
+	}
+	#about-us .image {
+		width: 100%;
+		margin-top: 59px;
+	}
+}
+@media only screen and (max-width: 480px) {}
+@media only screen and (max-width: 320px) {}
