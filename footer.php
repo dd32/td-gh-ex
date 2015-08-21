@@ -17,7 +17,7 @@
 ?>
 
 <div style="text-align: center;" class="navlist">
-<p><a href="#top"><?php _e('Back to top' , 'thePriority'); ?></a></p>
+<p><a href="#top"><?php _e('Back to top' , 'badeyes'); ?></a></p>
 </div>
 </div><!-- #main -->
 

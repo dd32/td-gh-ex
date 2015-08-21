@@ -16,15 +16,15 @@
 
  * @package WordPress
 
- * @subpackage Twenty_Fourteen
+ * @subpackage badeyes
 
- * @since Twenty Fourteen 1.0
+ * @since Badeyes 1.0
 
  */
 
 
 
-class badeyes_twentyfourteen_child_Ephemera_Widget extends WP_Widget {
+class badeyes_child_Ephemera_Widget extends WP_Widget {
 
 
 
@@ -36,7 +36,7 @@ class badeyes_twentyfourteen_child_Ephemera_Widget extends WP_Widget {
 
 	 * @access private
 
-	 * @since Twenty Fourteen 1.0
+	 * @since Badeyes 1.0
 
 	 *
 
@@ -56,7 +56,7 @@ class badeyes_twentyfourteen_child_Ephemera_Widget extends WP_Widget {
 
 	 * @access private
 
-	 * @since Twenty Fourteen 1.0
+	 * @since Badeyes 1.0
 
 	 *
 
@@ -74,21 +74,21 @@ class badeyes_twentyfourteen_child_Ephemera_Widget extends WP_Widget {
 
 	 *
 
-	 * @since Twenty Fourteen 1.0
+	 * @since Badeyes 1.0
 
 	 *
 
-	 * @return Twenty_Fourteen_Ephemera_Widget
+	 * @return badeyes_Ephemera_Widget
 
 	 */
 
 	public function __construct() {
 
-		parent::__construct( 'widget_twentyfourteen_ephemera', __( 'Twenty Fourteen Ephemera', 'twentyfourteen' ), array(
+		parent::__construct( 'widget_badeyes_ephemera', __( 'Badeyes Ephemera', 'badeyes' ), array(
 
-			'classname'   => 'widget_badeyes_twentyfourteen_child_ephemera',
+			'classname'   => 'widget_badeyes_child_ephemera',
 
-			'description' => __( 'Use this widget to list your recent Aside, Quote, Video, Audio, Image, Gallery, and Link posts', 'twentyfourteen' ),
+			'description' => __( 'Use this widget to list your recent Aside, Quote, Video, Audio, Image, Gallery, and Link posts', 'badeyes' ),
 
 		) );
 
@@ -102,19 +102,19 @@ class badeyes_twentyfourteen_child_Ephemera_Widget extends WP_Widget {
 
 		$this->format_strings = array(
 
-			'aside'   => __( 'Asides',    'twentyfourteen' ),
+			'aside'   => __( 'Asides',    'badeyes' ),
 
-			'image'   => __( 'Images',    'twentyfourteen' ),
+			'image'   => __( 'Images',    'badeyes' ),
 
-			'video'   => __( 'Videos',    'twentyfourteen' ),
+			'video'   => __( 'Videos',    'badeyes' ),
 
-			'audio'   => __( 'Audio',     'twentyfourteen' ),
+			'audio'   => __( 'Audio',     'badeyes' ),
 
-			'quote'   => __( 'Quotes',    'twentyfourteen' ),
+			'quote'   => __( 'Quotes',    'badeyes' ),
 
-			'link'    => __( 'Links',     'twentyfourteen' ),
+			'link'    => __( 'Links',     'badeyes' ),
 
-			'gallery' => __( 'Galleries', 'twentyfourteen' ),
+			'gallery' => __( 'Galleries', 'badeyes' ),
 
 		);
 
@@ -130,7 +130,7 @@ class badeyes_twentyfourteen_child_Ephemera_Widget extends WP_Widget {
 
 	 * @access public
 
-	 * @since Twenty Fourteen 1.0
+	 * @since Badeyes 1.0
 
 	 *
 
@@ -222,7 +222,7 @@ class badeyes_twentyfourteen_child_Ephemera_Widget extends WP_Widget {
 
 								if ( post_password_required() ) :
 
-									the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentyfourteen' ) );
+									the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'badeyes' ) );
 
 								else :
 
@@ -292,7 +292,7 @@ class badeyes_twentyfourteen_child_Ephemera_Widget extends WP_Widget {
 
 							<?php
 
-								printf( _n( 'This gallery contains <a href="%1$s" rel="bookmark">%2$s photo</a>.', 'This gallery contains <a href="%1$s" rel="bookmark">%2$s photos</a>.', $total_images, 'twentyfourteen' ),
+								printf( _n( 'This gallery contains <a href="%1$s" rel="bookmark">%2$s photo</a>.', 'This gallery contains <a href="%1$s" rel="bookmark">%2$s photos</a>.', $total_images, 'badeyes' ),
 
 									esc_url( get_permalink() ),
 
@@ -312,7 +312,7 @@ class badeyes_twentyfourteen_child_Ephemera_Widget extends WP_Widget {
 
 							else :
 
-								the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentyfourteen' ) );
+								the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'badeyes' ) );
 
 							endif;
 
@@ -349,7 +349,7 @@ the_title( '<p class="entry-title"><a href="' . esc_url( get_permalink() ) . '" 
 
 							?>
 
-							<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'twentyfourteen' ), __( '1 Comment', 'twentyfourteen' ), __( '% Comments', 'twentyfourteen' ) ); ?></span>
+							<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'badeyes' ), __( '1 Comment', 'badeyes' ), __( '% Comments', 'badeyes' ) ); ?></span>
 
 							<?php endif; ?>
 
@@ -367,7 +367,7 @@ the_title( '<p class="entry-title"><a href="' . esc_url( get_permalink() ) . '" 
 
 			</ol>
 
-			<a class="post-format-archive-link" href="<?php echo esc_url( get_post_format_link( $format ) ); ?>"><?php printf( __( 'More %s <span class="meta-nav">&rarr;</span>', 'twentyfourteen' ), $this->format_strings[ $format ] ); ?></a>
+			<a class="post-format-archive-link" href="<?php echo esc_url( get_post_format_link( $format ) ); ?>"><?php printf( __( 'More %s <span class="meta-nav">&rarr;</span>', 'badeyes' ), $this->format_strings[ $format ] ); ?></a>
 
 			<?php
 
@@ -403,7 +403,7 @@ the_title( '<p class="entry-title"><a href="' . esc_url( get_permalink() ) . '" 
 
 	 *
 
-	 * @since Twenty Fourteen 1.0
+	 * @since Badeyes 1.0
 
 	 *
 
@@ -441,7 +441,7 @@ the_title( '<p class="entry-title"><a href="' . esc_url( get_permalink() ) . '" 
 
 	 *
 
-	 * @since Twenty Fourteen 1.0
+	 * @since Badeyes 1.0
 
 	 *
 
@@ -461,19 +461,19 @@ the_title( '<p class="entry-title"><a href="' . esc_url( get_permalink() ) . '" 
 
 		?>
 
-			<p><label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( 'Title:', 'twentyfourteen' ); ?></label>
+			<p><label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( 'Title:', 'badeyes' ); ?></label>
 
 			<input id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" class="widefat" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>"></p>
 
 
 
-			<p><label for="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>"><?php _e( 'Number of posts to show:', 'twentyfourteen' ); ?></label>
+			<p><label for="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>"><?php _e( 'Number of posts to show:', 'badeyes' ); ?></label>
 
 			<input id="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>" type="text" value="<?php echo esc_attr( $number ); ?>" size="3"></p>
 
 
 
-			<p><label for="<?php echo esc_attr( $this->get_field_id( 'format' ) ); ?>"><?php _e( 'Post format to show:', 'twentyfourteen' ); ?></label>
+			<p><label for="<?php echo esc_attr( $this->get_field_id( 'format' ) ); ?>"><?php _e( 'Post format to show:', 'badeyes' ); ?></label>
 
 			<select id="<?php echo esc_attr( $this->get_field_id( 'format' ) ); ?>" class="widefat" name="<?php echo esc_attr( $this->get_field_name( 'format' ) ); ?>">
 

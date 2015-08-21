@@ -17,7 +17,7 @@
 function badeyes_customize_register( $wp_customize ) {
 $wp_customize->add_section("intro_text", array( 
 'description' => '<p>Use the edit boxes below to add a description, Advertisement, Google Ads or any other relevant text  to the top of the Blog, Single Post and Page area , you need to use html code to render properly, for accessibility reasons leave the headings at their current default levels if you use any.</p><p>Leave blank to remove text from front end.</p>',
-"title" => __("Call to Action(CTA) Areas", "customizer_intro_text_sections"), 
+"title" => __("Call to Action(CTA) Areas", "badeyes", "customizer_intro_text_sections"), 
 "priority" => 1, 
 )); 
 $wp_customize->add_setting("single", array( 
@@ -29,7 +29,7 @@ $wp_customize->add_control(new WP_Customize_Control(
 $wp_customize,
 "single",
 array(
-"label" => __("Enter text for single post area", "customizer_single_label"),
+"label" => __("Enter text for single post area", "badeyes", "customizer_single_label"),
 "section" => "intro_text",
 "settings" => "single",
 "type" => "textarea",
@@ -44,7 +44,7 @@ $wp_customize->add_control(new WP_Customize_Control(
 $wp_customize,
 "featuredTitle",
 array(
-"label" => __("Enter text for Featured Content Heading", "customizer_featuredTitle_label"),
+"label" => __("Enter text for Featured Content Heading", "badeyes", "customizer_featuredTitle_label"),
 "section" => "rewrite_titles",
 "settings" => "featuredTitle",
 "type" => "textbox",
@@ -59,7 +59,7 @@ $wp_customize->add_control(new WP_Customize_Control(
 $wp_customize,
 "blog",
 array(
-"label" => __("Enter text for Blog text area", "customizer_blog_label"),
+"label" => __("Enter text for Blog text area", "badeyes", "customizer_blog_label"),
 "section" => "intro_text",
 "settings" => "blog",
 "type" => "textarea",
@@ -74,7 +74,7 @@ $wp_customize->add_control(new WP_Customize_Control(
 $wp_customize,
 "page",
 array(
-"label" => __("Enter text for page text area", "customizer_page_label"),
+"label" => __("Enter text for page text area", "badeyes", "customizer_page_label"),
 "section" => "intro_text",
 "settings" => "page",
 "type" => "textarea",
@@ -82,7 +82,7 @@ array(
 )));
 $wp_customize->add_section("rewrite_titles", array( 
 'description' => '<p>Use the edit fields below to change or remove the corresponding text.</p>',
-"title" => __("Rewrite Titles", "customizer_rewrite_titles_sections"), 
+"title" => __("Rewrite Titles", "badeyes", "customizer_rewrite_titles_sections"), 
 "priority" => 2, 
 )); 
 $wp_customize->add_setting("blog_title", array( 
@@ -94,7 +94,7 @@ $wp_customize->add_control(new WP_Customize_Control(
 $wp_customize,
 "blog_title",
 array(
-"label" => __("Enter title for Blog Heading", "customizer_blog_title_label"),
+"label" => __("Enter title for Blog Heading", "badeyes", "customizer_blog_title_label"),
 "section" => "rewrite_titles",
 "settings" => "blog_title",
 "type" => "textbox",
@@ -109,7 +109,7 @@ $wp_customize->add_control(new WP_Customize_Control(
 $wp_customize,
 "side_menu",
 array(
-"label" => __("Enter text for link to side menu in skip links", "customizer_side_menu_label"),
+"label" => __("Enter text for link to side menu in skip links", "badeyes", "customizer_side_menu_label"),
 "section" => "rewrite_titles",
 "settings" => "side_menu",
 "type" => "textbox",
@@ -124,7 +124,7 @@ $wp_customize->add_control(new WP_Customize_Control(
 $wp_customize,
 "sideHeading",
 array(
-"label" => __("Right hand side Heading text(leave empty to hide)", "customizer_sideHeading_label"),
+"label" => __("Right hand side Heading text(leave empty to hide)", "badeyes", "customizer_sideHeading_label"),
 "section" => "rewrite_titles",
 "settings" => "sideHeading",
 "type" => "textbox",
@@ -132,7 +132,7 @@ array(
 )));
 $wp_customize->add_section("miscellaneous", array( 
 'description' => '<p>Use this area to add scripts to the head section, alt text to the header image and show/hide certain elements.</p>',
-"title" => __("Miscellaneous", "customizer_miscellaneous_sections"), 
+"title" => __("Miscellaneous", "badeyes", "customizer_miscellaneous_sections"), 
 "priority" => 3, 
 )); 
 $wp_customize->add_setting("copyright", array( 
@@ -144,7 +144,7 @@ $wp_customize->add_control(new WP_Customize_Control(
 $wp_customize,
 "copyright",
 array(
-"label" => __("Enter text for Copyright notice.", "customizer_copyright_label"),
+"label" => __("Enter text for Copyright notice.", "badeyes", "customizer_copyright_label"),
 "section" => "miscellaneous",
 "settings" => "copyright",
 "type" => "textbox",
@@ -159,7 +159,7 @@ $wp_customize->add_control(new WP_Customize_Control(
 $wp_customize,
 "author_credits",
 array(
-"label" => __("Check to hide Author credits", "customizer_author_credits_label"),
+"label" => __("Check to hide Author credits", "badeyes", "customizer_author_credits_label"),
 "section" => "miscellaneous",
 "settings" => "author_credits",
 "type" => "checkbox",
@@ -167,7 +167,7 @@ array(
 )));
 $wp_customize->add_section("css_code", array( 
 'description' => '',
-"title" => __("CSS Options", "customizer_css_code_sections"), 
+"title" => __("CSS Options", "badeyes", "customizer_css_code_sections"), 
 "priority" => 4, 
 )); 
 $wp_customize->add_setting("styleSheet", array( 
@@ -179,7 +179,7 @@ $wp_customize->add_control(new WP_Customize_Control(
 $wp_customize,
 "styleSheet",
 array(
-"label" => __("Replace css classes here", "customizer_styleSheet_label"),
+"label" => __("Replace css classes here", "badeyes", "customizer_styleSheet_label"),
 "section" => "css_code",
 "settings" => "styleSheet",
 "type" => "textarea",
