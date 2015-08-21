@@ -1,4 +1,5 @@
 <?php
+
 /**
  * functions and constants for Raindrops theme
  *
@@ -97,7 +98,7 @@ if ( class_exists( 'Jetpack', false ) && $jetpack_active_modules ) {
 }
 
 /**
- * Featured Image Prezentation
+ * Featured Image Presentation
  * @since 1.274
  */
 if ( false !== ( $path = raindrops_locate_url( 'lib/featured-image.php', 'path' ) ) ) {
@@ -687,7 +688,7 @@ foreach ( $raindrops_base_setting as $setting ) {
  * add browser class, languages class,
  *
  *
- */	
+ */
 
 if ( !function_exists( 'raindrops_add_body_class' ) ) {
 
@@ -695,7 +696,7 @@ if ( !function_exists( 'raindrops_add_body_class' ) ) {
 
 		global $post, $current_blog, $raindrops_link_unique_text, $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone, $raindrops_browser_detection, $raindrops_status_bar, $raindrops_current_column;
 
-		
+
 		$raindrops_link_unique_text = raindrops_link_unique_text();
 
 		$classes[] = get_locale();
@@ -730,7 +731,7 @@ if ( !function_exists( 'raindrops_add_body_class' ) ) {
 		if ( is_child_theme() ) {
 			raindrops_filter_page_column_control();
 		}
-		
+
 		if( isset( $raindrops_current_column ) && !empty( $raindrops_current_column ) ) {
 			$classes[] = sanitize_html_class( 'rd-col-'. $raindrops_current_column );
 		}
@@ -772,9 +773,9 @@ if ( !function_exists( 'raindrops_add_body_class' ) ) {
 		}
 
 		if ( true == $raindrops_browser_detection ) {
-			
+
 			$blowser_lang = raindrops_get_accept_language();
-			
+
 			if( !empty( $blowser_lang ) ) {
 				$browser_lang	 = 'accept-lang-' . $blowser_lang;
 				$classes[]		 = sanitize_html_class( $browser_lang );
@@ -940,6 +941,45 @@ if ( !function_exists( 'raindrops_comment' ) ) {
 		} //endif
 	}
 }
+
+add_filter( 'raindrops_posted_in', 'raindrops_add_share_link' );
+
+if ( !function_exists( 'raindrops_add_share_link' ) ) {
+	/**
+	 *
+	 * @param type $posted_in
+	 * @return type
+	 * @since 1.315
+	 */
+
+	function raindrops_add_share_link( $posted_in ) {
+		global $raindrops_allow_share_link, $raindrops_share_link_image, $is_IE;
+
+		/* Widdows10 edge browser */
+		$http_user_agent = filter_input(INPUT_ENV,'HTTP_USER_AGENT');
+
+		if( $is_IE || preg_match('!Edge!', $http_user_agent ) ) {
+
+			return $posted_in;
+		}
+
+		$eye_candy_image = '';
+
+		if( 'post_thumbnail' == $raindrops_share_link_image ) {
+			$eye_candy_image = 'post_thumbnail';
+		}
+
+		if( is_singular() && true == $raindrops_allow_share_link && !$is_IE ) {
+
+			ob_start();
+			?><a href='<?php echo raindrops_content_shareing( $eye_candy_image );?>' target="_blank" class="share-link"><?php esc_html_e('Share', 'Raindrops');?></a><?php
+			$share_link = ob_get_clean();
+			return $posted_in. $share_link;
+		}
+
+		return $posted_in;
+	}
+}
 /**
  * Template function posted in
  *
@@ -948,8 +988,6 @@ if ( !function_exists( 'raindrops_comment' ) ) {
  * loop.php
  *
  */
-
-
 if ( !function_exists( 'raindrops_posted_in' ) ) {
 
 	function raindrops_posted_in( ) {
@@ -963,6 +1001,7 @@ if ( !function_exists( 'raindrops_posted_in' ) ) {
 
 			return;
 		}
+
 		$format		     = get_post_format( $post->ID );
 		$tag_list		 = get_the_tag_list( '', ' ' );
 		$categories_list = get_the_category_list( ' ' );
@@ -1000,12 +1039,12 @@ if ( !function_exists( 'raindrops_posted_in' ) ) {
 				}
 			}
 		}
-		
+
 		if( 'emoji' == raindrops_warehouse_clone( 'raindrops_posted_in_label' ) ) {
-		
+
 			$category_label = $raindrops_category_emoji. '<span class="screen-reader-text">'. esc_html__( 'This entry was posted in', 'Raindrops' ). '</span>';
 			$tag_label = $raindrops_tag_emoji. '<span class="screen-reader-text">'.  esc_html__( 'and tagged', 'Raindrops' ). '</span>';
-			
+
 			$categories = wp_get_post_categories( $post->ID );
 			$categories_count = count( $categories );
 			$default_category_id = absint( get_option('default_category') );
@@ -1013,7 +1052,7 @@ if ( !function_exists( 'raindrops_posted_in' ) ) {
 
 			if(  $categories_count == 1 && absint( $categories[0] ) == absint( $default_category_id ) && 'show' !== $raindrops_display_default_category){
 				$category_label = '';
-			} 
+			}
 			if( is_category() ) {
 				$category_label = '';
 			}
@@ -1030,17 +1069,20 @@ if ( !function_exists( 'raindrops_posted_in' ) ) {
 							'</span> %1$s <span class="tagged">' .
 								 $tag_label.
 							'</span> %2$s';
-		
-				
-				
+
+
+
 			} elseif ( is_object_in_taxonomy( get_post_type(), 'category' ) ) {
 
 				$posted_in = '<span class="this-posted-in">' . $category_label . '</span> %1$s ';
-				
+
 			} else {
 
 				$posted_in = '';
 			}
+
+
+
 			$result = $format . sprintf( $posted_in, $categories_list, $tag_list );
 			echo apply_filters( "raindrops_posted_in", $result );
 		} else {
@@ -1112,9 +1154,9 @@ if ( !function_exists( 'raindrops_post_author' ) ) {
 		$author						= raindrops_blank_fallback( get_the_author(), 'Somebody' );
 		$author_attr_title_string	 = sprintf( esc_attr__( 'View all posts by %s', 'Raindrops' ), wp_kses( $author, array() ) );
 		$author_html				 = '<span class="author vcard"><a class="url fn nickname" href="%1$s" title="%2$s">%3$s</a></span> ';
-		
+
 		if ( "avatar" == raindrops_warehouse_clone( 'raindrops_display_article_author' ) ) {
-			
+
 			$author = get_avatar( get_the_author_meta( 'ID' ), 24 ). '<span class="screen-reader-text">'. $author. '</span>';
 		}
 
@@ -1141,9 +1183,9 @@ if ( !function_exists( 'raindrops_post_date' ) ) {
 		$archive_day			 = get_the_time( 'd' );
 		$day_link				 = esc_url( get_day_link( $archive_year, $archive_month, $archive_day ) . '#post-' . $post->ID );
 		$raindrops_date_format	 = get_option( 'date_format' ) . ' ' . get_option( 'time_format' );
-		
+
 		$date_text = get_the_date( $raindrops_date_format );
-		
+
 		if ( 'emoji' == raindrops_warehouse_clone( 'raindrops_display_article_publish_date' ) ) {
 			$date_text = '<span class="emoji-date">'. $raindrops_posted_on_date_emoji. '</span><span class="screen-reader-text">'. $date_text. '</span>';
 		}
@@ -2087,14 +2129,18 @@ if ( !function_exists( "raindrops_embed_css" ) ) {
 			$css .= '.yui-t6 .index.archives,.yui-t5 .index.archives,.yui-t4 .index.archives{
 					 margin-right:1em;	}';
 		}
-		
-		if ( "hide" == raindrops_warehouse_clone( 'raindrops_display_article_author' ) ) {
+
+		if ( "hide" == raindrops_warehouse_clone( 'raindrops_display_article_author' )) {
 			$css .= ' .posted-by-string{display:none;} .raindrops-comment-link{margin:0;} ';
+		}
+
+		if( "avatar" == raindrops_warehouse_clone( 'raindrops_display_article_author' ) ) {
+			$css .= 'body:not(.ja) .posted-by-string{visibility:hidden;margin:-.5em;} ';
 		}
 
 		if ( "hide" == raindrops_warehouse_clone( 'raindrops_posted_in_label' ) ) {
 			$css .= ' .entry-meta .tagged, .this-posted-in{display:none;} ';
-		} 
+		}
 		if ( "show" !== raindrops_warehouse_clone( 'raindrops_comments_are_closed' ) ) {
 			$css .= ' .nocomments{display:none;} ';
 		}
@@ -3423,6 +3469,7 @@ list-style-position:inside;
 .ie8 .lsidebar .widget ul li a {
 list-style:none;
 }
+.blog .sticky,
 .home .sticky {
 %c5%
 border-top:solid 6px %c_border%;
@@ -4218,7 +4265,8 @@ if ( !function_exists( 'raindrops_site_description' ) ) {
 
 	function raindrops_site_description( $args = array() ) {
 
-		if ( 'blank' == get_theme_mod( 'header_textcolor' ) ) {
+	//	if ( 'blank' == get_theme_mod( 'header_textcolor' ) ) {
+		if( 'above' == raindrops_warehouse_clone( 'raindrops_tagline_in_the_header_image') ) {
 
 			$raindrops_show_hide = '';
 		} elseif ( preg_match( "!([0-9a-f]{6}|[0-9a-f]{3})!si", get_header_textcolor() ) ) {
@@ -6565,7 +6613,7 @@ if ( !function_exists( 'raindrops_monthly_archive_prev_next_navigation' ) ) {
 		global $wpdb, $wp_query, $wp_locale;
 
 		if ( ! is_singular() && !is_404() ) {
-			
+
 			if( ! isset( $wp_query->posts[ 0 ]->post_date ) || !isset( $wp_query->posts[ 0 ]->post_date ) ) {
 				return;
 			}
@@ -6777,7 +6825,7 @@ if ( !function_exists( 'raindrops_dinamic_class' ) ) {
 
 		global $rsidebar_show,$raindrops_current_column, $raindrops_keep_content_width;
 		$class = '';
-		
+
 		if ( 'yui-u first' == $id ) {
 
 			if ( 3 == $raindrops_current_column ) {
@@ -8758,7 +8806,7 @@ if ( !function_exists( 'raindrops_register_color_type_style' ) ) {
     function raindrops_register_color_type_style() {
 
 		global $raindrops_current_data_version,$post,$posts,$raindrops_current_column;
-		
+
 		$query = '';
 		$count = count( $posts );
 		if( isset($post) && $count == 1 ) {
@@ -8779,7 +8827,7 @@ if ( !function_exists( 'raindrops_color_type_style_buffer' ) ) {
 	 */
     function raindrops_color_type_style_buffer( ) {
 		global $raindrops_fallback_human_interface_show,$post,$raindrops_current_column;
-		
+
         if( intval( get_query_var( 'raindrops_color_type' ) ) == 1 ) {
 			if( $raindrops_fallback_human_interface_show == true ) { exit;}
 
@@ -9531,14 +9579,15 @@ if ( ! function_exists( 'raindrops_article_wrapper_class' ) ) {
 		global $post;
 			$class = array();
 			if (isset( $post ) && preg_match( '!<[^>]*?(lang-ja|lang-not-ja)[^>]*?>!', $post->post_content ) ) {
-				
-				$class[] = sanitize_html_class( 'rd-l-'. raindrops_get_accept_language( ) );				
+
+				$class[] = sanitize_html_class( 'rd-l-'. raindrops_get_accept_language( ) );
 			}
-			
-			$result = trim( implode(' ', $class ) );			
-			return apply_filters( 'raindrops_article_wrapper_class', $result, $class );			
+
+			$result = trim( implode(' ', $class ) );
+			return apply_filters( 'raindrops_article_wrapper_class', $result, $class );
 	}
 }
+
 if ( ! function_exists( 'raindrops_get_accept_language' ) ) {
 	/**
 	 *
@@ -10011,7 +10060,7 @@ if ( ! function_exists( 'raindrops_custom_site_title_style' ) ) {
 	 * @return type
 	 * @since 1.278
 	 */
-	function raindrops_custom_site_title_style( $return_value ) {
+	function raindrops_custom_site_title_style( $return_value  ) {
 		global $post;
 		$display_header_image_file = '';
 
@@ -10037,7 +10086,7 @@ if ( ! function_exists( 'raindrops_custom_site_title_style' ) ) {
 
 		$setting_value = raindrops_warehouse_clone( 'raindrops_tagline_in_the_header_image' );
 
-		If( $setting_value == 'hide' ) {
+		If( $setting_value == 'hide' || $setting_value == 'above' ) {
 
 			$style .= '#header-image .tagline{display:none;}';
 		}
@@ -10172,7 +10221,7 @@ if ( !function_exists( 'raindrops_customizer_hide_post_date' ) ) {
 
 			return $css . $css_add;
 		}
-		
+
 		return $css;
 	}
 
@@ -10276,7 +10325,97 @@ if ( !function_exists( 'raindrops_recent_comments_avatar' ) ) {
 		return $return;
 	}
 }
+if ( !function_exists( 'raindrops_content_shareing' ) ) {
 
+	/**
+	 *
+	 * @global type $post
+	 * @global type $raindrops_allow_share_link
+	 * @global type $raindrops_share_link_image
+	 * @global type $is_gecko
+	 * @global type $is_IE
+	 * @param string $type
+	 * @param type $excerpt_length
+	 * @return text
+	 * @since 1.315
+	 */
+	function raindrops_content_shareing( $type = '', $excerpt_length = 100 ) {
+
+		global $post, $raindrops_allow_share_link, $raindrops_share_link_image, $is_gecko, $is_IE;
+		if ( false == $raindrops_allow_share_link ) {
+			return;
+		}
+		if ( !isset( $post ) ) {
+			return;
+		}
+
+
+		if ( isset( $raindrops_share_link_image ) && 'post_thumbnail' == $raindrops_share_link_image ) {
+			$type = 'post_thumbnail';
+		}
+
+		$site_icon	 = '';
+		$article	 = get_post( $post->ID );
+		$title		 = $article->post_title;
+		$content	 = $article->post_content;
+		$excerpt	 = wp_html_excerpt( $content, $excerpt_length, '...' );
+		$permalink	 = get_permalink( $post->ID );
+
+		$id = get_option( 'site_icon' );
+		if ( isset( $id ) ) {
+			$site_icon = wp_get_attachment_image( $id );
+		}
+		$post_thumbnail = get_the_post_thumbnail( $post->ID );
+		if ( empty( $post_thumbnail ) ) {
+
+			$post_thumbnail = $site_icon;
+		}
+		$additional_filter = apply_filters( 'raindrops_content_shareing', '' );
+
+		$style = apply_filters( 'raindrops_content_shareing_style', "#quote-raindrops{background:#fff;color:#333;padding:1em;font-size:16px;border:1px solid #ccc;overflow:hidden;}
+					#quote-raindrops ul{margin:0;padding:0;}
+					#quote-raindrops h3{background:#fff;color:#333;padding:0;margin:0;font-size:16px;display:inline-block;}
+					#quote-raindrops a{background:#fff;color:#666;padding:0;10px;font-size:16px;font-weight:700}
+					#quote-raindrops img{width:75px;height:auto;}
+					#quote-raindrops .first{ width:75px;float:left;list-style:none;margin:0;}
+					#quote-raindrops .second{ margin-left:95px;display:block;list-style:none;}
+					#quote-raindrops .first:empty + .second{margin-left:0;display:block;list-style:none;}
+					@media (max-width: 640px) {
+						#quote-raindrops .second,
+						#quote-raindrops .first{
+							margin:0;
+							float:none;
+							width:auto;
+							list-style:none;
+							text-align:left;
+							display:block;
+						}
+						#quote-raindrops .first{
+							text-align:center;
+							background:#ccc;
+						}
+					}" );
+
+
+		$style = str_replace( array( "\t", "\r", "\n", "  " ), array( '', ' ', '', ' ' ), $style );
+
+		if ( $is_gecko ) {
+
+			$style			 = '';
+			$post_thumbnail	 = '';
+			$site_icon		 = '';
+			$html			 = '<div style="border:1px solid gray;padding:1em;box-sizing:border-box;"><h3><a href="%3$s">%4$s</a></h3><div>%5$s</div><div>%6$s</div></div>';
+		} else {
+
+			$html = '<div><style scoped="scoped">%1$s</style><ul id="quote-raindrops"><li class="first">%2$s</li><li class="second"><h3><a href="%3$s">%4$s</a></h3><div>%5$s</div><div>%6$s</div></li></ul></div>';
+		}
+
+		if ( 'post_thumbnail' == $type ) {
+			return 'data:text/plain;charset=utf-8,' . sprintf( $html, $style, $post_thumbnail, $permalink, $title, $excerpt, $additional_filter );
+		}
+		return 'data:text/plain;charset=utf-8,' . sprintf( $html, $style, $site_icon, $permalink, $title, $excerpt, $additional_filter );
+	}
+}
 /**
  *
  *

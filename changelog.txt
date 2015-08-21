@@ -1,4 +1,72 @@
 Changelog -----------------------------------
+version:1.315
+Overview of Changes
+
+	Fixed Customizer 'choices' Tranlatable.
+	Modified Add isset, defined or function_exists check for vars ,functions, const at lib/vars.php
+	Fixed Wrong Label from 'title'        => esc_html__( 'Comments are closed Label', 'Raindrops' ),
+        				to 'title'        => esc_html__( 'Archives label', 'Raindrops' ),
+	Fixed Moble nav_menu display improperly.
+	Modified For Raindrops for plugin bbpress, change the correction style so that it can be disabled in the filter
+
+		Disabling logic
+
+			style.css change from
+			body #bbpress-forums .subscription-toggle{...}
+			to
+			body:not(.no-apply-bbpress-css) #bbpress-forums .subscription-toggle{...}
+
+			[PHP]
+
+			add_filter('body_class', 'my_ignore_bbperess_style');
+
+			function my_ignore_bbperess_style( $classes ){
+
+				$classes[] = 'no-apply-bbpress-css';
+
+				return $classes;
+			}
+
+			[/PHP]
+		Add Content Share Link
+			Shows entry-title,featured image and excerpt html source.
+				add function raindrops_add_share_link()
+				add raindrops_content_shareing()
+
+			If you no needs add var at functions.php first.
+			[php]
+				$raindrops_allow_share_link = false;
+			[/php]
+		Class change constructer name
+				lib/csscolor/csscolor.php
+					function raindrops_PEAR to __construct
+					function raindrops_PEAR_Error to __construct
+		Customize.php function change from __() to esc_html__()
+
+		Customizer modified
+			add tagline position. above header image.
+
+		Fixed sanitize_callback function name wrong
+			from	raindrops_enalbe_header_image_filter_validate
+			to		raindrops_enable_header_image_filter_validate
+
+	File Move
+			childs/boots/functions.php to child/functions.php
+			childs/boots/inc.php to child/inc.php
+Files Modified
+	modified:   languages/ja.mo
+	modified:   languages/ja.po
+	modified:   lib/alias_functions.php
+	modified:   lib/csscolor.css.php
+	modified:   lib/customize.php
+	modified:   lib/validate.php
+	modified:   lib/vars.php
+	modified:   responsiveness.css
+	modified:   style.css
+Description of Code Changes
+	please see https://themes.trac.wordpress.org/changeset?old_path=raindrops/1.313&new_path=raindrops/1.315
+-----------------------------------------------
+Changelog -----------------------------------
 version:1.313
 Overview of Changes
 	Fixed
