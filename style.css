@@ -4,10 +4,11 @@ Theme URI: http://www.inkthemes.com/appointway-wordpress-org/
 Description: Appointway Theme for WordPress is a simple and beautiful theme which can be built easily through the inbuilt Themes Options Panel. The Theme is very simple to Install and you can get your website ready in minutes. Theme comes with various different customization options that can tweaked easily by Theme Options Panel. You can easily change Logo, Intro texts and background. Appointway Theme supports multiple widgetized areas on sidebar and footer and also allows you to place widget on the homepage enabling you to have unlimited customization possibilities. Theme supports featured images. It includes stylesheets for print and the admin Visual Editor.
 Author: InkThemes.com
 Author URI: http://www.inkthemes.com
-Version: 1.0.5
+Version: 1.0.6
 License: GNU General Public License 
 License URI: license.txt
-Tags: Green, two-columns, fixed-width, threaded-comments, translation-ready, microformats, editor-style, custom-menu
+Tags: Green, two-columns, fixed-layout, threaded-comments, translation-ready, microformats, editor-style, custom-menu
+Text Domain: appointway
 */
 /*
 AppointWay WordPress Theme, Copyright 2013 InkThemes
@@ -750,7 +751,7 @@ html[xmlns] .slides {
     }
     .appointment_wrapper .appointment_form_wrapper li.select_item select.inktext{
         border-radius: 5px;     
-        background-image: url(images/select-arrow.png), 
+        background-image: url(images/select-arrow.png); 
             background-position: center right;
         margin-left:35px;
         margin-bottom:15px;
@@ -1884,6 +1885,7 @@ a img.aligncenter {
     margin:0;
     padding:10px 4px 5px;
 }
+.screen-reader-text{}
 /*Calendar style*/
 #wp-calendar caption {
     text-align: center;
@@ -2402,7 +2404,7 @@ a img.aligncenter {
         }
         .appointment_wrapper .appointment_form_wrapper ul li.select_item select.inktext{
             border-radius: 5px;     
-            background-image: url(images/select-arrow.png), 
+            background-image: url(images/select-arrow.png); 
                 background-position: center right;
             margin-left:35px;
             margin-bottom:15px;
@@ -2696,7 +2698,7 @@ a img.aligncenter {
         }
         .appointment_wrapper .appointment_form_wrapper ul li.select_item select.inktext{
             border-radius: 5px;     
-            background-image: url(images/select-arrow.png), 
+            background-image: url(images/select-arrow.png); 
                 background-position: center right;
             margin-left:35px;
             margin-bottom:15px;
@@ -3344,7 +3346,7 @@ a img.aligncenter {
         }
         .appointment_wrapper .appointment_form_wrapper ul li.select_item select.inktext{
             border-radius: 5px;     
-            background-image: url(images/select-arrow.png), 
+            background-image: url(images/select-arrow.png); 
                 background-position: center right;
             margin-left:35px;
             margin-bottom:15px;

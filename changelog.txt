@@ -2,6 +2,13 @@
 
 = Theme Name: Appointway Theme Pro=
 
+= Version: 1.0.6 =
+1. TGM-Plugin-Activation class updated with new version.
+2. Theme check issue fixed.
+3. All text domain matched with theme directory.
+4. Language .pot file matched with text domain.
+5. POT file re-generated. 
+
 = Version: 1.0.5 =
 1. Code indented.
 2. Deprecated php function error fixed.

@@ -46,7 +46,7 @@
                                         <?php wp_link_pages(array('before' => '<div class="page-link"><span>' . __('Pages:', 'appointway') . '</span>', 'after' => '</div>')); ?>
                                         <?php if (has_tag()) { ?>
                                             <div class="tag">
-                                                <?php the_tags(__('Post Tagged with ', ', ', '')); ?>
+                                                <?php the_tags(__('Post Tagged with ', ', ', 'appointway')); ?>
                                             </div>
                                         <?php } ?>
                                     </div>

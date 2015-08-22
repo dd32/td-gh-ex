@@ -3,13 +3,13 @@
         <h3>Search:</h3>
         <?php get_search_form(); ?>
         <h3>
-            <?php _e('Categories', 'spotmoto'); ?>
+            <?php _e('Categories', 'appointway'); ?>
         </h3>
         <ul>
             <?php wp_list_categories('title_li'); ?>
         </ul>
         <h3>
-            <?php _e('Archives', 'spotmoto'); ?>
+            <?php _e('Archives', 'appointway'); ?>
         </h3>
         <ul>
             <?php wp_get_archives('type=monthly'); ?>
