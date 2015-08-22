@@ -2,6 +2,9 @@
 
 = Theme Name: Appointway Theme Pro=
 
+= Version: 1.0.7 =
+1. POT file uploaded.
+
 = Version: 1.0.6 =
 1. TGM-Plugin-Activation class updated with new version.
 2. Theme check issue fixed.
