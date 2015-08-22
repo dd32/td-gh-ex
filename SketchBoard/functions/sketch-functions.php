@@ -87,24 +87,24 @@ function advertica_bg_style($option) {
 		if($background['image']){
 			$bg_style = 'background:';				
 			if ($background['color']) {			
-				$bg_style .= $background['color'];
+				$bg_style .= esc_attr($background['color']);
 			}
 			if ($background['image']) {
-				$bg_style .= ' url('.$background['image'].')';
+				$bg_style .= 'url('.esc_url($background['image']).')';
 			}
 			if ($background['repeat']) {
-				$bg_style .= ' '.$background['repeat'];
+				$bg_style .= ' '.esc_attr($background['repeat']);
 			}
 			if ($background['attachment']) {
-				$bg_style .= ' '.$background['attachment'];
+				$bg_style .= ' '.esc_attr($background['attachment']);
 			}
 			if ($background['position']) {
-				$bg_style .= ' '.$background['position']. ';';
+				$bg_style .= ' '.esc_attr($background['position']). ';';
 			}
 
 		} else{
 			if ($background['color']) {
-				$bg_style .= 'background:'.$background['color'];
+				$bg_style .= 'background:'.esc_attr($background['color']);
 			}
 		}
 	}

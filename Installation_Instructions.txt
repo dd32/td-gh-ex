@@ -1,7 +1,7 @@
 /*========= Advertica Lite =========*/
 
 == Copyright and License ==
-Advertica Lite WordPress Theme, Copyright (C) 2014 SketchThemes
+Advertica Lite WordPress Theme, Copyright (C) 2015 SketchThemes
 Advertica Lite WordPress theme is licensed under the GPL.
 
 /*========= Installation =========*/
@@ -18,7 +18,7 @@ Activation and Use
 
 == WP Version ==
 
-It's requires at least version 3.4 to work properly.Please make sure your WP version is at least 3.4.
+It's requires at least version 3.8 to work properly.Please make sure your WP version is at least 3.8.
 
 
 == Theme Setup ==
@@ -43,8 +43,7 @@ It's requires at least version 3.4 to work properly.Please make sure your WP ver
 
 /*========= Page Templates =========*/
 
-1)Home Page Template
-2)Full Width Template
+1)Full Width Template
 
 
 /*========= Translation =========*/

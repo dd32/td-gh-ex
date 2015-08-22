@@ -38,9 +38,10 @@ if($tweetfeedmeta == '1'){ ?>
 	<div class="third_wrapper">
 		<div class="container">
 			<div class="row-fluid">
-				<?php $sktURL = 'http://www.sketchthemes.com/'; ?>
-				<div class="copyright span6 alpha omega"> <?php echo stripslashes(sketch_get_option($advertica_shortname."_copyright")); ?> </div>
-				<div class="owner span6 alpha omega"><?php _e('Advertica Theme by','advertica-lite'); ?> <a href="<?php echo $sktURL; ?>" ><?php _e('SketchThemes','advertica-lite'); ?></a></div>
+				<?php $sktURL = 'https://www.sketchthemes.com/'; ?>
+				<?php $footer_copyright = wp_kses_post(sketch_get_option($advertica_shortname."_copyright")); ?>
+				<div class="copyright span6 alpha omega"> <?php echo $footer_copyright; ?></div>
+				<div class="owner span6 alpha omega"><?php _e('Advertica Theme by','advertica-lite'); ?> <a href="<?php echo esc_url($sktURL); ?>" ><?php _e('SketchThemes','advertica-lite'); ?></a></div>
 				<div class="clearfix"></div>
 			</div>
 		</div>
@@ -50,7 +51,7 @@ if($tweetfeedmeta == '1'){ ?>
 
 </div>
 <!-- #wrapper -->
-	<a href="JavaScript:void(0);" title="Back To Top" id="backtop"></a>
+	<a href="JavaScript:void(0);" title="<?php _e('Back To Top', 'advertica-lite'); ?>" id="backtop"></a>
 	<?php wp_footer(); ?>
 </body>
 </html>

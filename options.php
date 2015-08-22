@@ -101,8 +101,8 @@ function optionsframework_options() {
 			'type' => 'color' );
 
 	$options[] = array(
-			'name' => __('Change Logo (full path to logo image size: width * height (156px * 40px) )', 'advertica-lite'),
-			'desc' => __('This creates a custom logo for your website.', 'advertica-lite'),
+			'name' => __('Custom Logo', 'advertica-lite'),
+			'desc' => __('Choose your own logo for your site. Recomended size: 156px * 40px', 'advertica-lite'),
 			'id' => $advertica_shortname.'_logo_img',
 			'std' => '',
 			'type' => 'upload');
@@ -115,8 +115,8 @@ function optionsframework_options() {
 			'type' => 'text');
 
 	$options[] = array(
-			'name' => __('Upload Favicon', 'advertica-lite'),
-			'desc' => __('This creates a custom favicon for your website.', 'advertica-lite'),
+			'name' => __('Custom favicon', 'advertica-lite'),
+			'desc' => __('Choose a custom favicon for your site. Recomended size: 16px*16px or 32px*32px.', 'advertica-lite'),
 			'id' => $advertica_shortname.'_favicon',
 			'std' => '',
 			'type' => 'upload');
@@ -129,77 +129,24 @@ function optionsframework_options() {
 				'std'  => $background_style,
 				'type' => 'background' );
 
-			//Breadcrumb	
+	//Front Page Options	
 	$options[] = array(
-		'name' => __('Breadcrumb Settings', 'advertica-lite'),
-		'type' => 'heading');
+			'name' => __('Home Header Image', 'advertica-lite'),
+			'type' => 'heading');
+		
+		$options[] = array(
+			'name' => __('Home Header Image:', 'advertica-lite'),
+			'desc' => __('Choose image for home page header. Recomended size: 1600px*500px.', 'advertica-lite'),
+			'id' => $advertica_shortname.'_frontslider_stype',
+			'std' => $imagepath.'advertica-header.jpg',
+			'type' => 'upload');
 
+	//Home Page Featured Box Options	
 	$options[] = array(
-			'name' => __('Breadcrumb Enable/Disable', 'advertica-lite'),
-			'desc' => __('', 'advertica-lite'),
-			'id' => $advertica_shortname.'_hide_bread',
-			'std' => 'true',
-			'type' => 'radio',
-			'options' => $breadcumhide_array);
-
-	$options[] = array(
-			'name' => __('Page Title & Breadcrumb Background Type', 'advertica-lite'),
-			'desc' => __('', 'advertica-lite'),
-			'id' => $advertica_shortname.'_bread_stype',
-			'std' => 'brcolor',
-			'type' => 'radio',
-			'options' => $bread_type);
-
-    $options[] = array(
-			'name' => __('Choose Page Title & Breadcrumb Background Color', 'advertica-lite'),
-			'desc' => __('Please choose background color', 'advertica-lite'),
-			'id' => $advertica_shortname.'_bread_color',
-			'std' => '#F9F1E3',
-			'type' => 'color',
-			'class'=>'hidden' );
-
-    $options[] = array(
-			'name' => __('Upload Page Title & Breadcrumb Background Image ( width * height (1600px * 180px) )', 'advertica-lite'),
-			'desc' => __('This image will show up as background on page title & breadcrumb section.', 'advertica-lite'),
-			'id' => $advertica_shortname.'_bread_image',
-			'std' => $imagepath.'page-title-bg.jpg',
-			'type' => 'upload',
-			'class'=>'hidden');
-
-	$options[] = array(
-			'name' => __('Choose Page Title & Breadcrumb Font Color', 'advertica-lite'),
-			'desc' => __('Please choose font color', 'advertica-lite'),
-			'id' => $advertica_shortname.'_bread_title_color',
-			'std' => '#222222',
-			'type' => 'color' );		
-	//Blog	
-	$options[] = array(
-		'name' => __('Blog Page Settings', 'advertica-lite'),
-		'type' => 'heading');
-
-	//Blog page Title
-	$options[] = array(
-			'name' => __('Enter Blog Page Title', 'advertica-lite'),
-			'desc' => __('Enter blog page title text.', 'advertica-lite'),
-			'id' => $advertica_shortname.'_blogpage_heading',
-			'std' => 'Blog',
-			'type' => 'text');		
-
-	
-
-//Home Page Featured Box Options	
-	$options[] = array(
-		'name' => __('Home Featured Section', 'advertica-lite'),
+		'name' => __('Home Featured Box', 'advertica-lite'),
 		'type' => 'heading');
 		
-	$options[] = array(
-		'name' => __('Home page Image:', 'advertica-lite'),
-		'desc' => __('Choose image for home page. Size: Width 1600px and Height 500px.', 'advertica-lite'),
-		'id' => $advertica_shortname.'_frontslider_stype',
-		'std' => $imagepath.'advertica-header.png',
-		'type' => 'upload');
-
-	//Featured Box 1
+		//Featured Box 1
 		$options[] = array(
 			'name' => __('First Featured Box Heading', 'advertica-lite'),
 			'desc' => __('Enter heading for first featured box.', 'advertica-lite'),
@@ -208,25 +155,25 @@ function optionsframework_options() {
 			'type' => 'text');
 			
 		$options[] = array(
-			'name' => __('First Featured Box Image Path (size: width * height (150px * 150px) )', 'advertica-lite'),
-			'desc' => __('Upload image for first featured box.', 'advertica-lite'),
+			'name' => __('First Featured Box Image', 'advertica-lite'),
+			'desc' => __('Choose image for first featured box. size: 150px*150px.', 'advertica-lite'),
 			'id' => $advertica_shortname.'_fb1_first_part_image',
 			'std' => '',
 			'type' => 'upload');
 
 		 $options[] = array(
-				'name' => __('First Featured Box Content', 'advertica-lite'),
-				'desc' => __('Enter content for first featured box.','advertica-lite'),
-				'id' => $advertica_shortname.'_fb1_first_part_content',
-				'std' => ' Get focused from your target consumers and increase your business with Web portal Design and Development. ',
-				'type' => 'textarea');
+			'name' => __('First Featured Box Content', 'advertica-lite'),
+			'desc' => __('Enter content for first featured box.','advertica-lite'),
+			'id' => $advertica_shortname.'_fb1_first_part_content',
+			'std' => ' Get focused from your target consumers and increase your business with Web portal Design and Development. ',
+			'type' => 'textarea');
 
 		$options[] = array(
-				'name' => __('First Featured Box Link', 'advertica-lite'),
-				'desc' => __('Enter link for first featured box.', 'advertica-lite'),
-				'id' => $advertica_shortname.'_fb1_first_part_link',
-				'std' => '#',
-				'type' => 'text');
+			'name' => __('First Featured Box Link', 'advertica-lite'),
+			'desc' => __('Enter link for first featured box.', 'advertica-lite'),
+			'id' => $advertica_shortname.'_fb1_first_part_link',
+			'std' => '#',
+			'type' => 'text');
 
 		//Featured Box 2
 		$options[] = array(
@@ -237,8 +184,8 @@ function optionsframework_options() {
 			'type' => 'text');
 		
 		$options[] = array(
-			'name' => __('Second Featured Box Image Path (size: width * height (150px * 150px) )', 'advertica-lite'),
-			'desc' => __('Upload image for second featured box.', 'advertica-lite'),
+			'name' => __('Second Featured Box Image', 'advertica-lite'),
+			'desc' => __('Choose image for second featured box. size: 150px*150px.', 'advertica-lite'),
 			'id' => $advertica_shortname.'_fb2_second_part_image',
 			'std' => '',
 			'type' => 'upload');
@@ -266,8 +213,8 @@ function optionsframework_options() {
 			'type' => 'text');
 			
 		$options[] = array(
-			'name' => __('Third Featured Box Image Path (size: width * height (150px * 150px) )', 'advertica-lite'),
-			'desc' => __('Upload image for third featured box.', 'advertica-lite'),
+			'name' => __('Third Featured Box Image', 'advertica-lite'),
+			'desc' => __('Choose image for third featured box. size: 150px*150px.', 'advertica-lite'),
 			'id' => $advertica_shortname.'_fb3_third_part_image',
 			'std' => '',
 			'type' => 'upload');
@@ -289,28 +236,55 @@ function optionsframework_options() {
 
 	//Front Page Parallax Box Options	
 	$options[] = array(
-		'name' => __('Home Parallax Section', 'advertica-lite'),
+		'name' => __('Home Parallax', 'advertica-lite'),
 		'type' => 'heading');
 
 	$options[] = array(
-			'name' => __('Parallax Section Background Image (size: width * height (1600x * 1000px) )', 'advertica-lite'),
-			'desc' => __('Upload background image for parallax section.', 'advertica-lite'),
+			'name' => __('Home Parallax Image', 'advertica-lite'),
+			'desc' => __('Choose home page parallax image. Recomended size: 1600px*1000px.', 'advertica-lite'),
 			'id' => $advertica_shortname.'_fullparallax_image',
 			'std' => $imagepath.'Parallax_Section_Image.jpg',
 			'type' => 'upload');
 
 	$options[] = array(
-			'name' => __('Parallax Section Content', 'advertica-lite'),
-			'desc' => __('Enter content for parallax section','advertica-lite'),
+			'name' => __('Home Parallax Content', 'advertica-lite'),
+			'desc' => __('Enter home parallax content.','advertica-lite'),
 			'id' => $advertica_shortname.'_para_content_left',
 			'std' => '<div class="skt-awesome-section"> 
 						<div class="skt-awesome-title">Awesome Parallax Section</div><div class="skt-awesome-desp">Advertica features an amazing parallax section</div>
 					  </div>',
 			'type' => 'textarea');
 
-	//Front Page Options	
+	//Front Page Blog Options
 	$options[] = array(
-		'name' => __('Home Clients Logo Section', 'advertica-lite'),
+		'name' => __('Home Blogs', 'advertica-lite'),
+		'type' => 'heading');
+
+	$options[] = array(
+			'name' => __('Home Blogs Enable/Disable:', 'advertica-lite'),
+			'desc' => __('Radio select with default options "Enable".', 'advertica-lite'),
+			'id' => $advertica_shortname.'_hide_home_blog',
+			'std' => 'true',
+			'type' => 'radio',
+			'options' => $breadcumhide_array);
+
+	$options[] = array(
+			'name' => __('Home Blogs Title:', 'advertica-lite'),
+			'desc' => __('Enter blog section title.', 'advertica-lite'),
+			'id' => $advertica_shortname.'_blogsec_title',
+			'std' => 'Latest News',
+			'type' => 'text');
+
+	$options[] = array(
+			'name' => __('Number of post:', 'advertica-lite'),
+			'desc' => __('Enter number of post to show.', 'advertica-lite'),
+			'id' => $advertica_shortname.'_blog_no',
+			'std' => '6',
+			'type' => 'text');
+
+	//Front Page Clients Options
+	$options[] = array(
+		'name' => __('Home Clients Logo', 'advertica-lite'),
 		'type' => 'heading');
 
 	$options[] = array(
@@ -328,10 +302,10 @@ function optionsframework_options() {
 			'type' => 'text');
 
 	$options[] = array(
-		'name' => __('First Client Logo Image (size: width * height (232px * 101px)', 'advertica-lite'),
-		'desc' => __('Upload image for first client logo.', 'advertica-lite'),
+		'name' => __('First Client Logo Image', 'advertica-lite'),
+		'desc' => __('Upload image for first client logo. Recomended size: 232px*101px.', 'advertica-lite'),
 		'id' => $advertica_shortname.'_img1_icon',
-		'std' => $imagepath.'clients-logo/defdault-client-logo.png',
+		'std' => $imagepath.'clients-logo/client-logo1.png',
 		'type' => 'upload');
 
 	$options[] = array(
@@ -349,10 +323,10 @@ function optionsframework_options() {
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('Second Client Logo Image (size: width * height (232px * 101px)', 'advertica-lite'),
-		'desc' => __('Upload image for second client logo.', 'advertica-lite'),
+		'name' => __('Second Client Logo Image', 'advertica-lite'),
+		'desc' => __('Upload image for second client logo. Recomended size: 232px*101px.', 'advertica-lite'),
 		'id' => $advertica_shortname.'_img2_icon',
-		'std' => $imagepath.'clients-logo/defdault-client-logo.png',
+		'std' => $imagepath.'clients-logo/client-logo2.png',
 		'type' => 'upload');
 
 	$options[] = array(
@@ -364,16 +338,16 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => __('Third Client Logo Title', 'advertica-lite'),
-		'desc' => __('Enter title for third client logo image.', 'advertica-lite'),
+		'desc' => __('Enter title for third client logo image. Recomended size: 232px*101px.', 'advertica-lite'),
 		'id' => $advertica_shortname.'_img3_title',
 		'std' => '',
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('Third Client Logo Image (size: width * height (232px * 101px)', 'advertica-lite'),
+		'name' => __('Third Client Logo Image', 'advertica-lite'),
 		'desc' => __('Upload image for third client logo.', 'advertica-lite'),
 		'id' => $advertica_shortname.'_img3_icon',
-		'std' => $imagepath.'clients-logo/defdault-client-logo.png',
+		'std' => $imagepath.'clients-logo/client-logo3.png',
 		'type' => 'upload');
 
 	$options[] = array(
@@ -391,10 +365,10 @@ function optionsframework_options() {
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('Fourth Client Logo Image (size: width * height (232px * 101px)', 'advertica-lite'),
-		'desc' => __('Upload image for fourth client logo.', 'advertica-lite'),
+		'name' => __('Fourth Client Logo Image', 'advertica-lite'),
+		'desc' => __('Upload image for fourth client logo. Recomended size: 232px*101px.', 'advertica-lite'),
 		'id' => $advertica_shortname.'_img4_icon',
-		'std' => $imagepath.'clients-logo/defdault-client-logo.png',
+		'std' => $imagepath.'clients-logo/client-logo4.png',
 		'type' => 'upload');
 
 	$options[] = array(
@@ -412,10 +386,10 @@ function optionsframework_options() {
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('Fifth Client Logo Image (size: width * height (232px * 101px)', 'advertica-lite'),
-		'desc' => __('Upload image for fifth client logo.', 'advertica-lite'),
+		'name' => __('Fifth Client Logo Image', 'advertica-lite'),
+		'desc' => __('Upload image for fifth client logo. Recomended size: 232px*101px.', 'advertica-lite'),
 		'id' => $advertica_shortname.'_img5_icon',
-		'std' => $imagepath.'clients-logo/defdault-client-logo.png',
+		'std' => $imagepath.'clients-logo/client-logo5.png',
 		'type' => 'upload');
 
 	$options[] = array(
@@ -425,15 +399,71 @@ function optionsframework_options() {
 		'std' => '#',
 		'type' => 'text');
 
-	//Footer	
+	//Blog	
+	$options[] = array(
+		'name' => __('Blog Page Settings', 'advertica-lite'),
+		'type' => 'heading');
 
+	//Blog page Title
+	$options[] = array(
+			'name' => __('Blog Page Title', 'advertica-lite'),
+			'desc' => __('Enter blog page title.', 'advertica-lite'),
+			'id' => $advertica_shortname.'_blogpage_heading',
+			'std' => 'Blog',
+			'type' => 'text');
+
+	//Breadcrumb	
+	$options[] = array(
+		'name' => __('Breadcrumb Settings', 'advertica-lite'),
+		'type' => 'heading');
+
+	$options[] = array(
+			'name' => __('Breadcrumb Enable/Disable', 'advertica-lite'),
+			'desc' => __('Radio select with default options "Enable".', 'advertica-lite'),
+			'id' => $advertica_shortname.'_hide_bread',
+			'std' => 'true',
+			'type' => 'radio',
+			'options' => $breadcumhide_array);
+
+	$options[] = array(
+			'name' => __('Breadcrumb Background Type', 'advertica-lite'),
+			'desc' => __('Select breadcrumb background type. Default ( image ).', 'advertica-lite'),
+			'id' => $advertica_shortname.'_bread_stype',
+			'std' => 'brimage',
+			'type' => 'radio',
+			'options' => $bread_type);
+
+    $options[] = array(
+			'name' => __('Breadcrumb Background Color', 'advertica-lite'),
+			'desc' => __('Select breadcrumb background color. No color selected by default.', 'advertica-lite'),
+			'id' => $advertica_shortname.'_bread_color',
+			'std' => '#F2F2F2',
+			'type' => 'color',
+			'class'=>'hidden' );
+
+    $options[] = array(
+			'name' => __('Breadcrumb Background Image (size: 1600px by 180px)', 'advertica-lite'),
+			'desc' => __('Upload breadcrumb background image.', 'advertica-lite'),
+			'id' => $advertica_shortname.'_bread_image',
+			'std' => $imagepath.'page-title-bg.jpg',
+			'type' => 'upload',
+			'class'=>'hidden');
+
+	$options[] = array(
+			'name' => __('Breadcrumb Text Color', 'advertica-lite'),
+			'desc' => __('Select breadcrumb text color. No color selected by default.', 'advertica-lite'),
+			'id' => $advertica_shortname.'_bread_title_color',
+			'std' => '#222222',
+			'type' => 'color' );
+
+	//Footer
 	$options[] = array(
 		'name' => __('Footer Settings', 'advertica-lite'),
 		'type' => 'heading');
 
 		$options[] = array(
 			'name' => __('Copyright Text', 'advertica-lite'),
-			'desc' => __('Enter text for copyright (you can also use HTML tags here).', 'advertica-lite'),
+			'desc' => __('You can use HTML for links etc..', 'advertica-lite'),
 			'id' => $advertica_shortname.'_copyright',
 			'std' => "Copyright Text",
 			'type' => 'textarea');

@@ -72,7 +72,6 @@
 		<div class="header-clone"></div>
 		
 <!-- header image section -->
-  <?php $classes = get_body_class(); ?>
-  <?php if(in_array('front-page',$classes)) {  include("includes/front-header-image-section.php");} ?>
+<?php include("includes/front-header-image-section.php"); ?>
 
 <div id="main" class="clearfix">

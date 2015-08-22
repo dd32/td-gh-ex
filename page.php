@@ -36,7 +36,7 @@ get_header(); ?>
 					<div class="post clearfix" id="post-<?php the_ID(); ?>">
 						<div class="skepost">
 							<?php the_content(); ?>
-							<?php wp_link_pages(__('<p><strong>Pages:</strong> ','advertica-lite'), '</p>', __('number','advertica-lite')); ?>
+							<?php wp_link_pages(array('before' => '<p><strong>'.__('Pages :','advertica-lite').'</strong>','after' => '</p>', __('number','advertica-lite'),));	?>
 						</div>
 					<!-- skepost --> 
 					</div>

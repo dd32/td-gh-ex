@@ -1,8 +1,7 @@
 == Copyright and License ==
 
-Advertica Lite WordPress Theme, Copyright 2014 SketchThemes.
-Advertica Lite WordPress theme is distributed under the terms of the GNU GPL.
-
+Advertica Lite WordPress Theme, Copyright (C) 2015 SketchThemes
+Advertica Lite WordPress theme is licensed under the GPL.
 
 /*========= Credits =========*/
 
@@ -16,7 +15,7 @@ Advertica Lite WordPress theme is distributed under the terms of the GNU GPL.
 
 --------------------- Font Credits "Advertica Lite WordPress Theme" ---------------------
 
-* Icon Set: FontAwesome is licensed under MIT License· (http://fortawesome.github.io/Font-Awesome/)
+* Icon Set: FontAwesome is licensed under Font: SIL OFL 1.1, CSS: MIT License (http://fontawesome.io/license)
 * Google Webfonts: Open Sans is licensed under Apache License, version 2.0.(http://www.google.com/fonts/specimen/Open+Sans)
 
 --------------------- CSS Credits "Advertica Lite WordPress Theme" ---------------------
@@ -27,9 +26,12 @@ Advertica Lite WordPress theme is distributed under the terms of the GNU GPL.
 
 --------------------- Image credits "Advertica Lite WordPress Theme" ---------------------
 
-* screenshot.png
-	http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_522b53fb137bb_1.jpg
+* advertica-header.jpg
+	https://pixabay.com/en/sahara-nightsky-stars-night-dune-336490/
 
+* Parallax_Section_Image.jpg
+	https://pixabay.com/en/hiker-hiking-nature-hipster-846094/
+	
 * Timeliner_Modeling_Demo.png
 	http://pixabay.com/en/girl-woman-exotic-beauty-model-97433/
 	http://pixabay.com/en/girl-model-pretty-portrait-lady-97088/
@@ -70,6 +72,13 @@ Advertica Lite WordPress theme is distributed under the terms of the GNU GPL.
 
 
 == Changelog ==
+
+= 1.0.7 =
+* WP 4.3 Compatible.
+* Added options escaping while output.
+* Included Google Font in enqueue.
+* Updated Font Awesome.
+* Added more Theme Options.
 
 = 1.0.6 =
 * Fixed Theme Check issue(register_post_type and screen_icon).

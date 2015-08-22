@@ -18,8 +18,8 @@
 						<?php } ?>
 					</div>		
 					<div class="iconbox-content">		
-						<h4><?php if(sketch_get_option($advertica_shortname."_fb1_first_part_heading")) { echo sketch_get_option($advertica_shortname."_fb1_first_part_heading"); } ?></h4>			
-						<p><?php if(sketch_get_option($advertica_shortname."_fb1_first_part_content")) { echo sketch_get_option($advertica_shortname."_fb1_first_part_content"); } ?></p>		
+						<h4><?php if(sketch_get_option($advertica_shortname."_fb1_first_part_heading")) { echo sketch_get_option($advertica_shortname."_fb1_first_part_heading"); } else { _e("Business Strategy", "advertica-lite"); } ?></h4>
+						<p><?php if(sketch_get_option($advertica_shortname."_fb1_first_part_content")) { echo sketch_get_option($advertica_shortname."_fb1_first_part_content"); } else { _e("Get focused from your target consumers and increase your business with Web portal Design and Development.", "advertica-lite"); } ?></p>		
 					</div>			
 					<div class="clearfix"></div>	
 				</div>
@@ -40,8 +40,8 @@
 					  <?php  } ?>	
 					</div>		
 					<div class="iconbox-content">		
-						<h4><?php if(sketch_get_option($advertica_shortname."_fb2_second_part_heading")) { echo sketch_get_option($advertica_shortname."_fb2_second_part_heading"); } ?></h4>				
-						<p><?php if(sketch_get_option($advertica_shortname."_fb2_second_part_content")) { echo sketch_get_option($advertica_shortname."_fb2_second_part_content"); } ?></p>			
+						<h4><?php if(sketch_get_option($advertica_shortname."_fb2_second_part_heading")) { echo sketch_get_option($advertica_shortname."_fb2_second_part_heading"); } else { _e("Quality Products", "advertica-lite"); } ?></h4>				
+						<p><?php if(sketch_get_option($advertica_shortname."_fb2_second_part_content")) { echo sketch_get_option($advertica_shortname."_fb2_second_part_content"); } else { _e("Products with the ultimate features and functionality that provide the complete satisfaction to the clients.", "advertica-lite"); } ?></p>			
 					</div>			
 					<div class="clearfix"></div>	
 				</div>
@@ -62,8 +62,8 @@
 					  <?php } ?>	
 					</div>			
 					<div class="iconbox-content">			
-						<h4><?php if(sketch_get_option($advertica_shortname."_fb3_third_part_heading")) { echo sketch_get_option($advertica_shortname."_fb3_third_part_heading"); } ?></h4>				
-						<p><?php if(sketch_get_option($advertica_shortname."_fb3_third_part_content")) { echo sketch_get_option($advertica_shortname."_fb3_third_part_content"); } ?></p>		
+						<h4><?php if(sketch_get_option($advertica_shortname."_fb3_third_part_heading")) { echo sketch_get_option($advertica_shortname."_fb3_third_part_heading"); } else { _e("Best Business Plans", "advertica-lite"); } ?></h4>				
+						<p><?php if(sketch_get_option($advertica_shortname."_fb3_third_part_content")) { echo sketch_get_option($advertica_shortname."_fb3_third_part_content"); } else { _e("Based on the client requirement, different business plans suits and fulfill your business and cost requirement.", "advertica-lite"); } ?></p>		
 					</div>		
 					<div class="clearfix"></div>	
 				</div>

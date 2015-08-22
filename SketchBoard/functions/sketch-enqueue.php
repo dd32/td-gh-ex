@@ -16,51 +16,44 @@ function advertica_script_enqueqe() {
 }
 add_action('init', 'advertica_script_enqueqe');
 
-
-//ENQUEUE STYLE FOR IE BROWSER
-function advertica_IE_enqueue_scripts() {
-	global $is_IE;
-	if($is_IE ) {
-		if ( !is_admin() ) {
-			wp_register_style( 'ie-style', get_template_directory_uri().'/css/ie-style.css', false, $theme->Version );
-			wp_enqueue_style( 'ie-style' );
-			wp_register_style( 'awesome-theme-stylesheet', get_template_directory_uri().'/css/font-awesome-ie7.css', false, $theme->Version );
-			wp_enqueue_style( 'awesome-theme-stylesheet' );
-		}
-	}
-}
-add_action( 'wp_enqueue_scripts', 'advertica_IE_enqueue_scripts' );
-
 //ENQUEUE FRONT SCRIPTS
 function advertica_theme_stylesheet()
 {
 	global $advertica_themename;
 	global $advertica_shortname;
-	if ( !is_admin() ) 
-	{
-		$theme = wp_get_theme();
-		wp_enqueue_script('hoverIntent');
-		wp_enqueue_script('advertica_superfish', get_template_directory_uri().'/js/superfish.js',array('jquery'),true,'1.0');
-		wp_enqueue_script('advertica_AnimatedHeader', get_template_directory_uri().'/js/cbpAnimatedHeader.js',array('jquery'),true,'1.0');
-		wp_enqueue_script('advertica_easing_slide',get_template_directory_uri().'/js/jquery.easing.1.3.js',array('jquery'),'1.0',true);
-		wp_enqueue_script('adverticat_waypoints',get_template_directory_uri().'/js/waypoints.min.js',array('jquery'),'1.0',true );
-		
-		wp_enqueue_style('advertica-style', get_stylesheet_uri());
-		wp_enqueue_style('advertica-animation-stylesheet', get_template_directory_uri().'/css/skt-animation.css', false, $theme->Version);
-		wp_enqueue_style('sktawesome-theme-stylesheet', get_template_directory_uri().'/css/font-awesome.css', false, $theme->Version);
-		
-		/*SUPERFISH*/
-		wp_enqueue_style( 'sktddsmoothmenu-superfish-stylesheet', get_template_directory_uri().'/css/superfish.css', false, $theme->Version);
-		wp_enqueue_style( 'bootstrap-responsive-theme-stylesheet', get_template_directory_uri().'/css/bootstrap-responsive.css', false, $theme->Version);
-		
+
+	$theme = wp_get_theme();
+
+	global $is_IE;
+	if($is_IE ) {
+		wp_enqueue_style( 'ie-style', get_template_directory_uri().'/css/ie-style.css', false, $theme->Version );
+		wp_enqueue_style( 'awesome-theme-stylesheet', get_template_directory_uri().'/css/font-awesome-ie7.css', false, $theme->Version );
 	}
+
+	wp_enqueue_script('hoverIntent');
+	wp_enqueue_script('advertica_superfish', get_template_directory_uri().'/js/superfish.js',array('jquery'),true,'1.0');
+	wp_enqueue_script('advertica_AnimatedHeader', get_template_directory_uri().'/js/cbpAnimatedHeader.js',array('jquery'),true,'1.0');
+	wp_enqueue_script('advertica_easing_slide',get_template_directory_uri().'/js/jquery.easing.1.3.js',array('jquery'),'1.0',true);
+	wp_enqueue_script('adverticat_waypoints',get_template_directory_uri().'/js/waypoints.min.js',array('jquery'),'1.0',true );
+	
+	wp_enqueue_style('advertica-style', get_stylesheet_uri());
+	wp_enqueue_style('advertica-animation-stylesheet', get_template_directory_uri().'/css/skt-animation.css', false, $theme->Version);
+	wp_enqueue_style('sktawesome-theme-stylesheet', get_template_directory_uri().'/css/font-awesome.min.css', false, $theme->Version);
+	
+	/*SUPERFISH*/
+	wp_enqueue_style( 'sktddsmoothmenu-superfish-stylesheet', get_template_directory_uri().'/css/superfish.css', false, $theme->Version);
+	wp_enqueue_style( 'bootstrap-responsive-theme-stylesheet', get_template_directory_uri().'/css/bootstrap-responsive.css', false, $theme->Version);
+
+	// Google Fonts
+	wp_enqueue_style('advertica-googlefont-opensans', '//fonts.googleapis.com/css?family=Open+Sans:400,600,700,300&subset=latin,cyrillic,latin-ext,cyrillic-ext,vietnamese,greek-ext,greek');
+
 }
 add_action('wp_enqueue_scripts', 'advertica_theme_stylesheet');
 
 function advertica_head() {
 	global $advertica_shortname;
 	$advertica_favicon = "";
-	$advertica_meta = '<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">'."\n";
+	$advertica_meta = '<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />'."\n";
 
 	if(sketch_get_option($advertica_shortname.'_favicon')) {
 		$advertica_favicon = sketch_get_option($advertica_shortname.'_favicon','bizstudio');

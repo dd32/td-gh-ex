@@ -19,7 +19,7 @@ get_header(); ?>
 		 <div class="container">
 			 <div class="row-fluid">
 				  <div class="container_inner clearfix">
-					 <h1 class="title"><?php if(sketch_get_option($advertica_shortname.'_blogpage_heading')) { echo sketch_get_option($advertica_shortname.'_blogpage_heading'); } ?></h1>
+					 <h1 class="title"><?php if(sketch_get_option($advertica_shortname.'_blogpage_heading')) { echo wp_kses_post(sketch_get_option($advertica_shortname.'_blogpage_heading')); } ?></h1>
 				   </div>
 			 </div>
 		</div>

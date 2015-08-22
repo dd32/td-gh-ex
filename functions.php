@@ -27,6 +27,7 @@
 function advertica_widgets_init() {
 	register_sidebar(array(
 		'name' => 'Page Sidebar',
+		'id' => 'page-sidebar',
 		'before_widget' => '<li id="%1$s" class="ske-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="ske-title">',
@@ -34,6 +35,7 @@ function advertica_widgets_init() {
 	));
 	register_sidebar(array(
 		'name' => 'Blog Sidebar',
+		'id' => 'blog-sidebar',
 		'before_widget' => '<li id="%1$s" class="ske-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="ske-title">',
@@ -41,6 +43,7 @@ function advertica_widgets_init() {
 	));
 	register_sidebar(array(
 		'name' => 'Footer Sidebar',
+		'id' => 'footer-sidebar',
 		'before_widget' => '<div id="%1$s" class="ske-footer-container span3 ske-container %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3 class="ske-title ske-footer-title">',

@@ -239,24 +239,7 @@ if ( !function_exists( 'optionsframework_page' ) ) {
 		<a title="<?php esc_attr_e( 'Setup Instructions', 'advertica-lite' ); ?>" href="<?php echo get_template_directory_uri().'/Installation_Instructions.txt'; ?>" target="_blank" class="donate"><?php _e( 'Setup Instructions', 'advertica-lite' ); ?></a>
 		<?php $sktratelink = "http://wordpress.org/support/view/theme-reviews/advertica-lite"; ?>
 		<a title="<?php esc_attr_e( 'Rate Advertica Lite', 'advertica-lite' ); ?>" href="<?php echo esc_url($sktratelink); ?>" target="_blank" class="review"><?php _e( 'Rate Advertica Lite', 'advertica-lite' ); ?></a>
-		<a title="<?php _e( 'Test Drive', 'convac-lite' ); ?>" href="<?php echo esc_url($skttest_drive); ?>" target="_blank" class="review"><?php _e( 'Theme Test Drive', 'convac-lite' );?></a>
-		<div id="social-share">
-		<div class="fb-like">
-			<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FSketchThemes&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=true&amp;share=false&amp;height=21&amp;appId=333709623346310" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>
-		</div>
-	    	<div class="tw-follow" ><a href="https://twitter.com/sketchthemes" class="twitter-follow-button" data-show-count="false" data-size="small">Follow @sketchthemes</a></div>
-			<script>
-				!function (d, s, id) {
-				var js, fjs = d.getElementsByTagName(s)[0];
-				if (!d.getElementById(id)) {
-				js = d.createElement(s);
-				js.id = id;
-				js.src = "//platform.twitter.com/widgets.js";
-				fjs.parentNode.insertBefore(js, fjs);
-				}
-				}(document, "script", "twitter-wjs");
-			</script>
-		</div>	
+		<a title="<?php _e( 'Test Drive', 'advertica-lite' ); ?>" href="<?php echo esc_url($skttest_drive); ?>" target="_blank" class="review"><?php _e( 'Theme Test Drive', 'advertica-lite' );?></a>
 	</div>
 
 	<div id="optionsframework-wrap">

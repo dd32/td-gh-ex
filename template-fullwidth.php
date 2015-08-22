@@ -31,7 +31,7 @@ Template Name: Full Width Template
 				<div class="post" id="post-<?php the_ID(); ?>">
 					<div class="skepost">
 						<?php the_content(); ?>
-						<?php wp_link_pages(__('<p><strong>Pages:</strong> ','advertica-lite'), '</p>', __('number','advertica-lite')); ?>
+						<?php wp_link_pages(array('before' => '<p><strong>'.__('Pages :','advertica-lite').'</strong>','after' => '</p>', __('number','advertica-lite'),));	?>
 						<?php edit_post_link('Edit', '', ''); ?>	
 					</div>
 					<!-- skepost -->
