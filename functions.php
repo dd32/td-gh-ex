@@ -12,7 +12,7 @@
 if ( ! isset( $content_width ) )
     $content_width = 750; /* pixels */
 
-    
+
 /*
  * Loads the Options Panel
  *
@@ -38,7 +38,7 @@ function optionsframework_custom_scripts() { ?>
         jQuery('#home_page_slider').click(function() {
             $slider_option_field.fadeToggle(400);
         });
-    
+
         if (jQuery('#home_page_slider:checked').val() !== undefined) {
             $slider_option_field.show();
         }
@@ -46,8 +46,8 @@ function optionsframework_custom_scripts() { ?>
 </script>
 <?php
 }
-  
-  
+
+
 if ( ! function_exists( 'ascent_setup' ) ) :
 /**
  * Set up theme defaults and register support for various WordPress features.
@@ -63,19 +63,19 @@ function ascent_setup() {
      * Add default posts and comments RSS feed links to head
     */
     add_theme_support( 'automatic-feed-links' );
-    
+
     /**
      * Enable support for Post Thumbnails on posts and pages
      *
      * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
     */
     add_theme_support( 'post-thumbnails' );
-    
+
     /**
      * Enable support for Post Formats
     */
     add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
-    
+
     /**
      * Setup the WordPress core custom background feature.
     */
@@ -88,11 +88,11 @@ function ascent_setup() {
     add_theme_support('menus');
     register_nav_menus(
         array(
-            'main-menu' => __('Main Menu', 'framework')
+            'main-menu' => __('Main Menu', 'ascent')
         )
     );
     /* Add Post Thumbnails Support and Related Image Sizes */
-    add_theme_support('post-thumbnails');
+
     add_image_size('blog-page', 732, 9999, false);                  // For Blog Page
     add_image_size('default-page', 1140, 9999, false);              // Default Page and Full Width Page
     add_image_size('blog-post-thumb', 732, 447, true);              // For Home Blog Section and Gallery Slider on Single and Blog Page
@@ -122,7 +122,7 @@ function ascent_widgets_init() {
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
     ) );
-  
+
     register_sidebar( array(
         'name'          => __( 'Sidebar Footer', 'ascent' ),
         'id'            => 'sidebar-footer',
@@ -138,14 +138,14 @@ add_action( 'widgets_init', 'ascent_widgets_init' );
 
 /**
  * Enqueue scripts and styles
- * 
+ *
  */
 function ascent_scripts() {
     $protocol = is_ssl() ? 'https' : 'http';
     wp_enqueue_style('google-raleway', "$protocol://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800");
     // load bootstrap css
     wp_enqueue_style( 'ascent-bootstrap', get_template_directory_uri() . '/includes/resources/bootstrap/css/bootstrap.css' );
-    
+
     if(of_get_option('enable_swipebox')) { //check if enable swipebox from theme options
         wp_enqueue_style( 'ascent-swipebox', get_template_directory_uri() . '/includes/css/swipebox.css' );
     }
@@ -154,7 +154,7 @@ function ascent_scripts() {
     wp_enqueue_style( 'ascent-animations', get_template_directory_uri() . '/includes/css/animations.css' );
     wp_enqueue_style( 'ascent-meanmenu', get_template_directory_uri() . '/includes/css/meanmenu.css' );
     wp_enqueue_style( 'ascent-main', get_template_directory_uri() . '/includes/css/main.css' );
-    
+
     // load bootstrap js
     wp_enqueue_script('ascent-bootstrapjs', get_template_directory_uri().'/includes/resources/bootstrap/js/bootstrap.js', array('jquery') );
 
@@ -170,27 +170,27 @@ function ascent_scripts() {
     if ( is_singular() && wp_attachment_is_image() ) {
         wp_enqueue_script( 'ascent-keyboard-image-navigation', get_template_directory_uri() . '/includes/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
     }
-    
+
     wp_enqueue_script( 'ascent-smoothscroll', get_template_directory_uri() . '/includes/js/smoothscroll.js', array('jquery') );
-    
+
     if(of_get_option('enable_swipebox')) { //check if enable swipebox from theme options
         wp_enqueue_script( 'ascent-swipebox', get_template_directory_uri() . '/includes/js/jquery.swipebox.js', array('jquery') );
         wp_enqueue_script( 'ascent-swipebox-config', get_template_directory_uri() . '/includes/js/swipebox-config.js', array('jquery') );
     }
-    
-    wp_enqueue_script( 'ascent-owl-carousel', get_template_directory_uri() . '/includes/js/owl.carousel.js', array('jquery') );   
+
+    wp_enqueue_script( 'ascent-owl-carousel', get_template_directory_uri() . '/includes/js/owl.carousel.js', array('jquery') );
     wp_enqueue_script( 'ascent-appear', get_template_directory_uri() . '/includes/js/jquery.appear.js', array('jquery') );
     wp_enqueue_script( 'ascent-meanmenu', get_template_directory_uri() . '/includes/js/jquery.meanmenu.js', array('jquery') );
     wp_enqueue_script( 'ascent-velocity', get_template_directory_uri() . '/includes/js/jquery.velocity.js', array('jquery') );
     wp_enqueue_script( 'ascent-appear-config', get_template_directory_uri() . '/includes/js/appear.config.js', array('jquery') );
-    
+
     // Theme main js
     wp_enqueue_script( 'ascent-themejs', get_template_directory_uri() . '/includes/js/main.js', array('jquery') );
-    
+
     if(of_get_option('enable_sticky_header')) {
         wp_enqueue_script( 'ascent-enable-sticky-header', get_template_directory_uri() . '/includes/js/enable-sticky-header.js', array('jquery') );
     }
-    
+
 }
 
 add_action( 'wp_enqueue_scripts', 'ascent_scripts' );
@@ -237,7 +237,7 @@ if( !function_exists( 'ascent_socialmedia_navs' ) ){
             'pinterest_url' => 'fa fa-pinterest',
             'flickr_url' => 'fa fa-flickr',
             'rss_url' => 'fa fa-rss'
-        ); 
+        );
     }
 }
 
@@ -265,7 +265,7 @@ if( !function_exists( 'ascent_home_slider' ) ){
                 'image' => 'slider_image_5',
                 'description' => 'slider_description_5'
             ),
-        ); 
+        );
     }
 }
 
@@ -279,19 +279,19 @@ if( !function_exists( 'ascent_theme_option_custom_style' ) ) {
                 color: <?php echo of_get_option('body_text_color'); ?>;
             }
         <?php endif; ?>
-        
+
         <?php if(of_get_option('body_link_color')): ?>
             body a {
                 color: <?php echo of_get_option('body_link_color'); ?>;
             }
         <?php endif; ?>
-         
+
         <?php if(of_get_option('footer_top_border_color')): ?>
             #colophon {
                 border-color: <?php echo of_get_option('footer_top_border_color'); ?>;
             }
         <?php endif; ?>
-        
+
         <?php if(of_get_option('footer_background_color')): ?>
             #colophon {
                 background-color: <?php echo of_get_option('footer_background_color'); ?>;
@@ -307,3 +307,20 @@ if( !function_exists( 'ascent_theme_option_custom_style' ) ) {
     }
 }
 add_action( 'wp_head', 'ascent_theme_option_custom_style' );
+
+
+/*
+* The CSS file selected in the options panel 'stylesheet' option
+* is loaded on the theme front end
+*/
+if( !function_exists( 'ascent_options_stylesheets_alt_style' ) ) {
+    function ascent_options_stylesheets_alt_style()   {
+       if ( of_get_option('theme_color_scheme') && of_get_option('theme_color_scheme') !== 'default' ) {
+           $select_color_scheme = of_get_option('theme_color_scheme');
+           $color_scheme_css_path = get_template_directory_uri() . '/includes/css/theme-color-scheme/'.$select_color_scheme.'.css';
+
+           wp_enqueue_style( $select_color_scheme, $color_scheme_css_path, array(), null);
+       }
+    }
+}
+add_action( 'wp_enqueue_scripts', 'ascent_options_stylesheets_alt_style' );

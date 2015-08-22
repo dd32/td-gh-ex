@@ -4,7 +4,7 @@
  */
 
 function optionsframework_option_name() {
-	
+
 	// Change this to use your theme slug
 	$themename = wp_get_theme();
 	$themename = preg_replace("/\W/", "_", strtolower($themename) );
@@ -13,6 +13,7 @@ function optionsframework_option_name() {
 	$optionsframework_settings['id'] = $themename;
 	update_option( 'optionsframework', $optionsframework_settings );
 }
+
 
 /**
  * Defines an array of options that will be used to generate the settings page and be saved in the database.
@@ -42,12 +43,12 @@ function optionsframework_options() {
 	}
 
 	// If using image radio buttons, define a directory path
-	$imagepath =  get_template_directory_uri() . '/images/';
+	$imagepath =  get_template_directory_uri() . '/includes/images/theme-options/';
 
 	$options = array();
-	
+
 	/*  Tab 1: Header Settings
-	============================================================================================*/	
+	============================================================================================*/
 	$options[] = array(
 		'name' => __('Header Settings', 'ascent'),
 		'type' => 'heading');
@@ -57,26 +58,26 @@ function optionsframework_options() {
 		'desc' => __('Upload a 16px by 16px PNG image that will represent your website favicon.', 'ascent'),
 		'id' => 'favicon',
 		'type' => 'upload');
-	
+
 	$options[] = array(
 		'name' => __('Logo', 'ascent'),
 		'desc' => __('Upload logo image for your Website. Otherwise site title will be displayed in place of logo.', 'ascent'),
 		'id' => 'logo',
 		'type' => 'upload');
-	
+
 	$options[] = array(
 		'name' => __('Default Banner Image', 'ascent'),
 		'desc' => __('Default banner image will be displayed on all the pages where banner image is not overridden by page specific banner settings.', 'ascent'),
 		'id' => 'default_banner_image',
 		'type' => 'upload');
-	
+
 	$options[] = array(
 		'name' => __('Phone Number', 'ascent'),
 		'desc' => __('Provide the phone number.', 'ascent'),
 		'id' => 'phone_number',
-		'std' => '000',
+		'std' => '000-000-0000',
 		'type' => 'text');
-	
+
 	$options[] = array(
 		'name' => __('Email ID', 'ascent'),
 		'desc' => __('Provide the email address.', 'ascent'),
@@ -84,163 +85,178 @@ function optionsframework_options() {
 		'std' => 'support@wordpress.com',
 		'type' => 'text');
 
-	
+
+
 	/*  Tab 2: Styling
-	============================================================================================*/	
+	============================================================================================*/
 	$options[] = array(
 		'name' => __('Styling', 'ascent'),
 		'type' => 'heading');
-	
+
 	$options[] = array(
 		'name' => __('Body Text Color', 'ascent'),
 		'desc' => __('Configure body text color. ', 'ascent'),
 		'id' => 'body_text_color',
 		'std' => '',
 		'type' => 'color' );
-	
+
 	$options[] = array(
 		'name' => __('Body Link Color', 'ascent'),
 		'desc' => __('Configure body link color. ', 'ascent'),
 		'id' => 'body_link_color',
 		'std' => '',
 		'type' => 'color' );
-	
+
 	$options[] = array(
 		'name' => __('Footer Top Border Color', 'ascent'),
 		'desc' => __('Configure footer top border color. ', 'ascent'),
 		'id' => 'footer_top_border_color',
 		'std' => '',
 		'type' => 'color' );
-	
+
 	$options[] = array(
 		'name' => __('Footer Background Color', 'ascent'),
 		'desc' => __('Configure footer background color. ', 'ascent'),
 		'id' => 'footer_background_color',
 		'std' => '',
 		'type' => 'color' );
-	
+
 	$options[] = array(
 		'name' => __('Footer Bottom Background Color', 'ascent'),
 		'desc' => __('Configure footer bottom background color. ', 'ascent'),
 		'id' => 'footer_background_bottom_color',
 		'std' => '',
 		'type' => 'color' );
-	
-	
+
+	$options[] = array(
+		'name' => "Theme Color Scheme",
+		'desc' => "Select the color scheme.",
+		'id' => "theme_color_scheme",
+		'std' => "default",
+		'type' => "images",
+		'options' => array(
+			'default' => $imagepath . 'default-color.png',
+			'green' => $imagepath . 'green.png',
+			'gamboge' => $imagepath . 'gamboge.png',
+			'turquoise4' => $imagepath . 'turquoise4.png',
+		)
+	);
+
+
 	/*  Tab 3: Social Media
-	============================================================================================*/	
+	============================================================================================*/
 	$options[] = array(
 		'name' => __('Social Media', 'ascent'),
 		'type' => 'heading');
-	
+
 	$options[] = array(
 		'name' => __('Facebook', 'ascent'),
 		'desc' => __('Provide facebook url.', 'ascent'),
 		'id' => 'facebook_url',
 		'std' => 'http://facebook.com',
 		'type' => 'text');
-	
+
 	$options[] = array(
 		'name' => __('Twitter', 'ascent'),
 		'desc' => __('Provide twitter url.', 'ascent'),
 		'id' => 'twitter_url',
 		'std' => 'http://twitter.com',
 		'type' => 'text');
-	
+
 	$options[] = array(
 		'name' => __('LinkedIn', 'ascent'),
 		'desc' => __('Provide linkedin url.', 'ascent'),
 		'id' => 'linkedin_url',
 		'placeholder' => 'LinkedIn',
 		'type' => 'text');
-	
+
 	$options[] = array(
 		'name' => __('Google+', 'ascent'),
 		'desc' => __('Provide google plus url.', 'ascent'),
 		'id' => 'google_plus_url',
 		'placeholder' => 'Google+',
 		'type' => 'text');
-	
+
 	$options[] = array(
 		'name' => __('Instagram', 'ascent'),
 		'desc' => __('Provide instagram url.', 'ascent'),
 		'id' => 'instagram_url',
 		'placeholder' => 'Instagram',
 		'type' => 'text');
-	
+
 	$options[] = array(
 		'name' => __('YouTube', 'ascent'),
 		'desc' => __('Provide youtube url.', 'ascent'),
 		'id' => 'youtube_url',
 		'placeholder' => 'YouTube',
 		'type' => 'text');
-	
+
 	$options[] = array(
 		'name' => __('Skype', 'ascent'),
 		'desc' => __('Provide Skype url.', 'ascent'),
 		'id' => 'skype_url',
 		'placeholder' => 'Skype',
 		'type' => 'text');
-	
+
 	$options[] = array(
 		'name' => __('Dribbble', 'ascent'),
 		'desc' => __('Provide dribbble url.', 'ascent'),
 		'id' => 'dribbble_url',
 		'placeholder' => 'Dribbble',
 		'type' => 'text');
-	
+
 	$options[] = array(
 		'name' => __('Digg', 'ascent'),
 		'desc' => __('Provide digg url.', 'ascent'),
 		'id' => 'digg_url',
 		'placeholder' => 'Digg',
 		'type' => 'text');
-	
+
 	$options[] = array(
 		'name' => __('Github', 'ascent'),
 		'desc' => __('Provide github url.', 'ascent'),
 		'id' => 'github_url',
 		'placeholder' => 'Github',
 		'type' => 'text');
-	
+
 	$options[] = array(
 		'name' => __('Delicious', 'ascent'),
 		'desc' => __('Provide delicious url.', 'ascent'),
 		'id' => 'delicious_url',
 		'placeholder' => 'Delicious',
 		'type' => 'text');
-	
+
 	$options[] = array(
 		'name' => __('Reddit', 'ascent'),
 		'desc' => __('Provide reddit url.', 'ascent'),
 		'id' => 'reddit_url',
 		'placeholder' => 'Reddit',
 		'type' => 'text');
-	
+
 	$options[] = array(
 		'name' => __('Pinterest', 'ascent'),
 		'desc' => __('Provide pinterest url.', 'ascent'),
 		'id' => 'pinterest_url',
 		'placeholder' => 'Pinterest',
 		'type' => 'text');
-	
+
 	$options[] = array(
 		'name' => __('Flickr', 'ascent'),
 		'desc' => __('Provide flickr url.', 'ascent'),
 		'id' => 'flickr_url',
 		'placeholder' => 'Flickr',
 		'type' => 'text');
-	
+
 	$options[] = array(
 		'name' => __('RSS', 'ascent'),
 		'desc' => __('Provide rss url.', 'ascent'),
 		'id' => 'rss_url',
 		'placeholder' => 'RSS',
 		'type' => 'text');
-	
+
 
 	/*  Tab 4: Home Slider Settings
-	============================================================================================*/	
+	============================================================================================*/
 	$options[] = array(
 		'name' => __('Home Page Slider', 'ascent'),
 		'type' => 'heading');
@@ -251,14 +267,14 @@ function optionsframework_options() {
 		'id' => 'home_page_slider',
 		'std' => '1',
 		'type' => 'checkbox');
-	
+
 	$options[] = array(
 		'name' => __('Enable Slider Dotted Overlay BG', 'ascent'),
 		'desc' => __('Do you want to enable slider overlay dotted bg ?', 'ascent'),
 		'id' => 'slider_overlay_bg',
 		'std' => '1',
 		'type' => 'checkbox');
-	
+
 	/* Slider 1 */
 	$options[] = array(
 		'name' => __('Slider Image 1', 'ascent'),
@@ -271,7 +287,7 @@ function optionsframework_options() {
 		'desc' => __('slider description 1.', 'ascent'),
 		'id' => 'slider_description_1',
 		'type' => 'textarea');
-	
+
 	/* Slider 2 */
 	$options[] = array(
 		'name' => __('Slider Image 2', 'ascent'),
@@ -283,7 +299,7 @@ function optionsframework_options() {
 		'desc' => __('slider description 2.', 'ascent'),
 		'id' => 'slider_description_2',
 		'type' => 'textarea');
-	
+
 	/* Slider 3 */
 	$options[] = array(
 		'name' => __('Slider Image 3', 'ascent'),
@@ -295,7 +311,7 @@ function optionsframework_options() {
 		'desc' => __('slider description 3.', 'ascent'),
 		'id' => 'slider_description_3',
 		'type' => 'textarea');
-	
+
 	/* Slider 4 */
 	$options[] = array(
 		'name' => __('Slider Image 4', 'ascent'),
@@ -307,7 +323,7 @@ function optionsframework_options() {
 		'desc' => __('slider description 4.', 'ascent'),
 		'id' => 'slider_description_4',
 		'type' => 'textarea');
-	
+
 	/* Slider 5 */
 	$options[] = array(
 		'name' => __('Slider Image 5', 'ascent'),
@@ -319,14 +335,14 @@ function optionsframework_options() {
 		'desc' => __('slider description 5.', 'ascent'),
 		'id' => 'slider_description_5',
 		'type' => 'textarea');
-	
-	
+
+
 	/*  Tab 5: Other Settings
-	============================================================================================*/	
+	============================================================================================*/
 	$options[] = array(
 		'name' => __('Other Settings', 'ascent'),
 		'type' => 'heading');
-	
+
 	/* Enable/Disable Swipebox */
 	$options[] = array(
 		'name' => __('Enable Swipebox- A touchable jQuery lightbox ', 'ascent'),
@@ -334,7 +350,7 @@ function optionsframework_options() {
 		'id' => 'enable_swipebox',
 		'std' => '1',
 		'type' => 'checkbox');
-	
+
 	/* Enable/Disable Sticky Header */
 	$options[] = array(
 		'name' => __('Enable Sticky Header ', 'ascent'),

@@ -1,7 +1,7 @@
 == Ascent ==
 
 Tags: white, two-columns, left-sidebar, right-sidebar, responsive-layout, custom-background, custom-menu, featured-images, post-formats, rtl-language-support, theme-options, translation-ready
-Tested up to: 4.0.1
+Tested up to: 4.0.3
 Stable tag: 3.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,7 +19,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 == Description ==
 
 Ascent Theme is a fully responsive WordPress theme that looks elegant on any devices. It is simple, clean and lightweight WordPress theme based on the most modern technologies like HTML5 and CSS3. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10.
-If you are looking for a clean professional space, which accommodates your visuals and yet provides you with ample amount of textual area, Ascent is your perfect find. You check out the demo at http://testbase.info/c/theme/wp/ascent/
+If you are looking for a clean professional space, which accommodates your visuals and yet provides you with ample amount of textual area, Ascent is your perfect find. You can check out the demo at http://testbase.info/c/theme/wp/ascent/
 
 * Fully Bootstrap Power
 * FontAwesome implementation
@@ -34,6 +34,7 @@ If you are looking for a clean professional space, which accommodates your visua
 * Some small tweaks in `includes/extras.php` that can improve your theming experience.
 * Keyboard navigation for image attachment templates. The script can be found in `js/keyboard-navigation.js`. It's enqueued in `functions.php`.
 * Smartly organized starter CSS in `style.css` that will help you to quickly get your design off the ground.
+* Support multiple color scheme
 
 
 == Installation ==
@@ -53,6 +54,7 @@ Yes! these are the following options
 * Styling
 * Social Media
 * Home Page Slider
+* Other Settings
 
 = Where is my custom menu? =
 
@@ -64,7 +66,7 @@ Yes! You can add widgets under Appearance -> Widgets, and they will appear in th
 
 = Does Ascent support Post Formats? =
 
-Ascent supports Aside, Image, Video, Quote and Link post formats. 
+Ascent supports Aside, Image, Video, Quote and Link post formats.
 
 = How do I add Home page Slider? =
 
@@ -80,14 +82,27 @@ You can add Slider following these steps:
 
 Featured Images look best at 732 pixels wide or larger.
 
+= Does Ascent support multiple color scheme? =
+
+Yes! You can choose your color scheme under Appearance -> Theme Options -> Styling(Tab).
+
+
 
 = Changelog =
+
+### Version 2.0.1
+- Updated Swipebox
+- Updated Owl Carousel
+- Updated BootStrap
+- Updated Font Awesome
+- Updated jQueryAppear
+- Added multiple color scheme to the theme option
 
 ### Version 2.0
 - Updated swipebox.css
 - Fixed Social media links for 'Github and Google Plus URL'
 - Added Theme Option - Other Settings Tab for Swipebox, Sticky Header and Enable Scroll to Top
-- Added Sticky Header 
+- Added Sticky Header
 
 ### Version 1.0.9
 - Added 'main.css', Moved all css from style.css to 'includes/css/main.css'(Fixing child theme style issue)

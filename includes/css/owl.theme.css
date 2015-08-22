@@ -1,11 +1,11 @@
 /*
 * 	Owl Carousel Owl Demo Theme 
-*	v1.24
+*	v1.3.3
 */
 
 .owl-theme .owl-controls{
+	margin-top: 10px;
 	text-align: center;
-	margin-top: 30px;
 }
 
 /* Styling Next and Prev buttons */
@@ -23,12 +23,7 @@
 	border-radius: 30px;
 	background: #869791;
 	filter: Alpha(Opacity=50);/*IE7 fix*/
-	opacity: 0.3;
-	-webkit-transition: all .4s ease-in-out;
-	   -moz-transition: all .4s ease-in-out;
-		-ms-transition: all .4s ease-in-out;
-		 -o-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
+	opacity: 0.5;
 }
 /* Clickable class fix problem with hover on touch devices */
 /* Use it for non-touch hover action */
@@ -36,11 +31,6 @@
 	filter: Alpha(Opacity=100);/*IE7 fix*/
 	opacity: 1;
 	text-decoration: none;
-	-webkit-transition: all .4s ease-in-out;
-	   -moz-transition: all .4s ease-in-out;
-		-ms-transition: all .4s ease-in-out;
-		 -o-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
 }
 
 /* Styling Pagination*/
@@ -67,7 +57,6 @@
 .owl-theme .owl-controls.clickable .owl-page:hover span{
 	filter: Alpha(Opacity=100);/*IE7 fix*/
 	opacity: 1;
-	background: #000;
 }
 
 /* If PaginationNumbers is true */
@@ -88,57 +77,3 @@
 	min-height: 150px;
 	background: url(AjaxLoader.gif) no-repeat center center
 }
-
-/*EDITED BY DESIGNOVA : Customized Controls*/
-.owl-prev{
-	position: absolute;
-	width: 50px;
-	height: 50px;
-	background: transparent url(../images/prev.png) no-repeat center center !important;
-	top: 50%;
-}
-.owl-next{
-	position: absolute;
-	width: 50px;
-	height: 50px;
-	background: transparent url(../images/next.png) no-repeat center center !important;
-	top: 50%;
-}
-.owl-nav-sticky-wide .owl-prev{
-	left: 20px;
-}
-.owl-nav-sticky-wide .owl-next{
-	right: 20px;
-}
-
-.owl-nav-sticky-extra-wide .owl-prev{
-	left: -50px;
-}
-.owl-nav-sticky-extra-wide .owl-next{
-	right: -50px;
-}
-.owl-nav-sticky-center .owl-prev{
-	margin-left: -60px !important;
-}
-.owl-nav-sticky-center .owl-next{
-	margin-right: -60px !important;
-}
-
-.owl-nav-sticky-left .owl-prev{
-	left: 20px;
-}
-.owl-nav-sticky-left .owl-next{
-	left: 120px;
-}
-.owl-nav-sticky-right .owl-prev{
-	right: 120px;
-}
-.owl-nav-sticky-right .owl-next{
-	right: 20px;
-}
-
-
-
-
-
-
