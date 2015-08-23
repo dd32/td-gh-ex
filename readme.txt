@@ -74,3 +74,6 @@ Version 2.0.2
 
 Version 2.0.3
 * Removed the option to set the blog page layout from blog page metabox option itself which created the confusion within the users to set the blog layout.
+
+Version 2.0.4
+* Translation errors fixed.

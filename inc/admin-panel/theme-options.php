@@ -702,7 +702,7 @@
             						<hr />
             						
             						<p><?php _e('For documentation, click','accesspress-basic'); ?> <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/accesspress-basic-documentation/'); ?>"><?php _e('here','accesspress-basic'); ?></a></p>
-            						<p><?php _e('For Video tutorials, click','accesspresslite'); ?> <a target="_blank" href="<?php echo esc_url('https://www.youtube.com/watch?v=Mi60ORm_VMI&list=PLdSqn2S_qFxEzeboBioXZdAg5P4l32Hm3'); ?>"><?php _e('here','accesspress-basic'); ?></a></p>
+            						<p><?php _e('For Video tutorials, click','accesspress-basic'); ?> <a target="_blank" href="<?php echo esc_url('https://www.youtube.com/watch?v=Mi60ORm_VMI&list=PLdSqn2S_qFxEzeboBioXZdAg5P4l32Hm3'); ?>"><?php _e('here','accesspress-basic'); ?></a></p>
             						<hr />
             						
                                     <div>

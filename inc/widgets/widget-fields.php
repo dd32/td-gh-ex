@@ -209,7 +209,7 @@ function accesspress_basic_widgets_show_widget_field( $instance = '', $widget_fi
                     $output .= '';
 
                     // Standard generic output if it's not an image.
-                    $title = __('View File', 'textdomain');
+                    $title = __('View File', 'accesspress-basic');
                     $output .= '<div class="no-image"><span class="file_link"><a href="' . $value . '" target="_blank" rel="external">' . $title . '</a></span></div>';
                 }
             }
