@@ -198,6 +198,7 @@ function optionsframework_options() {
 		"class" =>"sub-option",
 		"type" => "background",
 		'std' => array(
+			'color' => '',
 			'image' => '',
 			'repeat' => 'repeat',
 			'position' => 'top center',

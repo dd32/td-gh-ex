@@ -97,6 +97,10 @@ Pattern Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.17
+* Textdomain issue fixed
+* PHP warning notice for background color fixed
+
 Version 1.16
 * Change in documentation and demo links
 * TGM activation plugin updated to 2.5.2

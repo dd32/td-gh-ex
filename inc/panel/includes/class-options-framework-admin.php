@@ -27,7 +27,7 @@ class Options_Framework_Admin {
     	if ( $options ) {
 
 			// Add the options page and menu item.
-			add_action( 'admin_menu', array( $this, 'add_custom_options_page' ) );
+			add_action( 'admin_menu', array( $this, 'add_page_custom_options' ) );
 
 			// Add the required scripts and styles
 			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
@@ -104,7 +104,7 @@ class Options_Framework_Admin {
      *
      * @since 1.7.0
      */
-	function add_custom_options_page() {
+	function add_page_custom_options() {
 
 		$menu = $this->menu_settings();
 
@@ -220,7 +220,7 @@ class Options_Framework_Admin {
 				<a href="<?php echo esc_url('https://accesspressthemes.com/wordpress-themes/accesspress-root-pro/'); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/upgrade-btn.png"></a>
 			</div>
 			<div class="any-question">
-				<?php echo sprintf(__( 'Any question!! Click <a href="%s" target="_blank">here</a> for Live Chat' , 'accesspress_ray' ), esc_url('https://accesspressthemes.com/contact/')); ?>.
+				<?php echo sprintf(__( 'Any question!! Click <a href="%s" target="_blank">here</a> for Live Chat' , 'accesspress-root' ), esc_url('https://accesspressthemes.com/contact/')); ?>.
 		    </div>
 		    <h4 class="pro-feature-title">Pro Features +</h4>
 		    <div class="feature-img">
