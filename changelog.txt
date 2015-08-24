@@ -1,6 +1,18 @@
 *** Hemingway Changelog ***
 
 
+Version 1.54 (2015-08-24)
+-------------------------
+- Fixed overflow bug with wp-caption
+- Added screen-reader-text styling
+
+
+Version 1.53 (2015-08-24)
+-------------------------
+- Fixed a floating bug with the single post navigation
+
+
+
 Version 1.52 (2015-08-11)
 -------------------------
 - Removed the title_tag fallback
