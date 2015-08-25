@@ -1,4 +1,10 @@
-*** Rams changelog ***
+*** Rams Changelog ***
+
+
+Version 1.13 (2015-08-25)
+-------------------------
+- Fixed an issue with overflowing images
+- Added the .screen-reader-text class
 
 
 Version 1.12 (2015-08-11)
