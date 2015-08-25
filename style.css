@@ -1,7 +1,7 @@
 /*---------------------------------------------------------------------------------
 
 	Theme Name: Garfunkel
-	Version: 1.06
+	Version: 1.07
 	Description: Garfunkel is a stylish and responsive Pinterest-style theme with Masonry layout. It features responsive and retina-ready design, support for six post formats (including a gallery slideshow), six custom widgets, two page templates, Jetpack Infinite Scroll support, editor styling and translation-ready code. Included translations: Swedish/svenska.
 	Tags: black, red, white, dark, one-column, three-columns, fluid-layout, responsive-layout, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 	Author: Anders Norén
@@ -39,6 +39,7 @@
 /* -------------------------------------------------------------------------------- */
 /*	0. CSS Reset
 /* -------------------------------------------------------------------------------- */
+
 
 html, body { margin:0; padding:0;}
 
@@ -137,14 +138,6 @@ img {
 /* Transitions --------------------------------------- */
 
 
- {
-	-webkit-transition: all 0s ease-in-out;
-	 -moz-transition: all 0s ease-in-out;
-	 -ms-transition: all 0s ease-in-out;
-	 -o-transition: all 0s ease-in-out;
-	 transition: all 0s ease-in-out;
-}
-
 body a {
 	-webkit-transition: all 0.1s ease-in-out;
 	 -moz-transition: all 0.1s ease-in-out;
@@ -197,6 +190,38 @@ a .post-icon img {
 	 -ms-transition: all 0.3s ease-in-out;
 	 -o-transition: all 0.3s ease-in-out;
 	 transition: all 0.3s ease-in-out;
+}
+
+
+/* Screen Reader Text --------------------------------------- */
+
+
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
 }
 
 
@@ -1601,6 +1626,11 @@ code, kbd, pre {
 
 /* Post media --------------------------------------- */
 
+
+.wp-caption,
+.post-content img {
+	max-width: 100%;
+}
 
 img.alignleft,
 .alignleft img,
