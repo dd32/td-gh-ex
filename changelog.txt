@@ -1,6 +1,12 @@
 *** Baskerville Changelog ***
 
 
+Version 1.17 (2015-08-25)
+-------------------------
+- Fixed an issue with overflowing images
+- Added the .screen-reader-text class
+
+
 Version 1.16 (2015-08-11)
 -------------------------
 - Added the title_tag() function, replaced old custom title function

@@ -29,21 +29,17 @@
 
 <?php endif; ?>
 
-<?php if($post->post_content != "") : ?>
-									                                    	    
-	<div class="post-excerpt">
-		
-		<?php 
-			if ($pos=strpos($post->post_content, '<!--more-->')) {
-				echo  '<p>' . mb_strimwidth($content_parts['extended'], 0, 200, '...') . '</p>';
-			} else {
-				the_excerpt('100');
-			}
-		?>
+<div class="post-excerpt">
 	
-	</div> <!-- /post-excerpt -->
+	<?php 
+		if ($pos=strpos($post->post_content, '<!--more-->')) {
+			echo  '<p>' . mb_strimwidth($content_parts['extended'], 0, 200, '...') . '</p>';
+		} else {
+			the_excerpt('100');
+		}
+	?>
 
-<?php endif; ?>
+</div> <!-- /post-excerpt -->
 
 <?php baskerville_meta(); ?>		                                    	    
             
