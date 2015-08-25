@@ -2,7 +2,7 @@
 
 	Theme Name: Hoffman
 	Theme URI: http://www.andersnoren.se/teman/hoffman-wordpress-theme/
-	Version: 1.11
+	Version: 1.12
 	Description: Hoffman is a beautifully minimal, responsive and retina-ready theme for bloggers. It features a social icon menu, Jetpack support for infinite scroll, five custom widgets, two page templates, editor styling, translation-ready code, custom accent color support, custom background support, support for the gallery post format and much more. Included translations: Swedish/svenska.
 	Tags: gray, white, light, silver, one-column, fluid-layout, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
 	Author: Anders Norén
@@ -183,14 +183,6 @@ body a,
 	transition: all 0.2s ease-in-out;
 }
 
- {
-	-webkit-transition: all 0.3s ease-in-out;
-	-moz-transition: all 0.3s ease-in-out;
-	-ms-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
-}
-
 .header .blog-title,
 .header .blog-description,
 .nav-toggle .bar,
@@ -202,12 +194,36 @@ body a,
 	transition: all 0.4s ease-in-out;
 }
 
-{
-	-webkit-transition: all 0.5s ease-in-out;
-	-moz-transition: all 0.5s ease-in-out;
-	-ms-transition: all 0.5s ease-in-out;
-	-o-transition: all 0.5s ease-in-out;
-	transition: all 0.5s ease-in-out;
+
+/* Screen Reader Text --------------------------------------- */
+
+
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
 }
 
 
@@ -1161,8 +1177,13 @@ abbr, acronym { cursor: help; }
 }
 
 
-/* Post media --------------------------------------- */
+/* Post Media --------------------------------------- */
 
+
+.wp-caption,
+.post-content img {
+	max-width: 100%;
+}
 
 .post-content .alignleft,
 .post-content .alignright {

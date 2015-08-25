@@ -1,13 +1,17 @@
 *** Hoffman Changelog ***
 
 
+Version 1.12 (2015-08-25)
+-------------------------
+- Fixed an issue with overflowing images
+- Added the .screen-reader-text class
+
 
 Version 1.11 (2015-08-11)
 -------------------------
 - Fixed align-center images overflowing on smaller devices
 - Replaced custom title function with title-tag support
 - The widgets now use __construct()
-
 
 
 Version 1.10 (2015-04-07)
@@ -23,7 +27,6 @@ Version 1.10 (2015-04-07)
 - Fixed an error in functions.php that would prevent Genericons from being loaded in child themes
 - Added sanitation to the Customize functions in functions.php
 - Removed a function in functions.php that used the add_shortcode() function
-
 
 
 Version 1.09 (2014-09-24)
