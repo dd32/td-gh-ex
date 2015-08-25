@@ -1,6 +1,12 @@
 *** Fukasawa Changelog ***
 
 
+Version 1.05 (2015-08-25)
+-------------------------
+- Fixed an issue with overflowing images
+- Added the .screen-reader-text class
+
+
 Version 1.04 (2015-08-11)
 -------------------------
 - Removed a superfluous closing <p> tag
