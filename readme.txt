@@ -68,6 +68,11 @@ This theme uses Bootstrap as a design tool
  * Copyright (c) 2011-2014 Twitter, Inc
  * Licensed under https://github.com/twbs/bootstrap/blob/master/LICENSE
 
+Version 2.0
+ * added .screen-reader-text class on style.css - line: 746
+ * added text-domain on esc_attr_e function at footer.php - line: 24
+ * updated depreciated code parent::WP_Widget into parent::__construct on includes/widgetsrecentposts.php - line: 13
+ * added add_theme_support( "title-tag" ) on function.php - line: 18 
 
 Version 1.4.2
  * Fixes to the following:

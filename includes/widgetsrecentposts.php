@@ -10,7 +10,7 @@ if ( ! function_exists( 'init_wp_newsstream_recent_posts' ) ) {
 class wp_newsstream_recent_posts extends WP_Widget {
 	/** constructor */
 	function wp_newsstream_recent_posts() {
-		parent::WP_Widget( 'wp_newsstream_recent_posts', $name = 'News Stream Recent Post' );
+		parent::__construct( 'wp_newsstream_recent_posts', $name = 'News Stream Recent Post' );
 	}
 	
 	// Widget	

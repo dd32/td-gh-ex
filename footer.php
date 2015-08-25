@@ -22,7 +22,7 @@
                         <div class="col-md-12">                    
                         <?php echo __('&copy; ', 'wp-newsstream') . esc_attr( get_bloginfo( 'name', 'display' ) );  ?>
                         <?php if(is_home() && !is_paged()){?>            
-                            <?php _e('- Powered by ', 'wp-newsstream'); ?><a href="<?php echo esc_url( __( 'http://wordpress.org/', 'wp-newsstream' ) ); ?>" title="<?php esc_attr_e( '' ); ?>"><?php _e('WordPress' ,'wp-newsstream'); ?></a>
+                            <?php _e('- Powered by ', 'wp-newsstream'); ?><a href="<?php echo esc_url( __( 'http://wordpress.org/', 'wp-newsstream' ) ); ?>" title="<?php esc_attr_e( 'WordPress' ,'wp-newsstream' ); ?>"><?php _e('WordPress' ,'wp-newsstream'); ?></a>
                             <?php _e(' and ', 'wp-newsstream'); ?><a href="<?php echo esc_url( __( 'http://hostmarks.com/', 'wp-newsstream' ) ); ?>"><?php _e('Hostmarks', 'wp-newsstream'); ?></a>
                         <?php } ?>
                         </div>
