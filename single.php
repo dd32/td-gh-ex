@@ -9,20 +9,13 @@ get_header();
 global $post;
 wp_reset_postdata();
 $accesspress_mag_show_breadcrumbs = of_get_option( 'show_hide_breadcrumbs' );
-$post_template_value =( of_get_option( 'global_post_template' ) == 'default-template' ) ? 'single' : 'style1';
-
+$post_template_value = of_get_option( 'global_post_template', 'single' );
 $accesspress_mag_post_template = get_post_meta( $post -> ID, 'accesspress_mag_post_template_layout', true );
-if($accesspress_mag_post_template=='global-template'){
+if($accesspress_mag_post_template == 'global-template'){
     $content_value = $post_template_value;
-} 
-else {
-    if( $accesspress_mag_post_template == 'default-template' ){
-        $content_value = 'single';
-    } else {
-        $content_value = 'style1';
-    }
-} 
-
+} else {
+    $content_value = $accesspress_mag_post_template;
+}
 do_action( 'accesspress_mag_before_body_content' );
 
 ?>

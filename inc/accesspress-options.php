@@ -11,7 +11,7 @@
 function optionsframework_options() {
     
     $imagepath =  get_template_directory_uri() . '/inc/option-framework/images/';
-     
+         
 	// Pull all the categories into an array
 	$options_categories = array();
 	$options_categories_obj = get_categories();
@@ -46,8 +46,14 @@ function optionsframework_options() {
         
     //Post Templates
     $post_template = array(
-        'default-template' => $imagepath.'post_template/post-templates-icons-0.png',
-        'style1-template' => $imagepath.'post_template/post-templates-icons-1.png', 
+        'single' => $imagepath.'post_template/post-templates-icons-0.png',
+        'single-style1' => $imagepath.'post_template/post-templates-icons-1.png', 
+        );
+        
+    //Archive Templates
+    $archive_template = array(
+        'archive-default' => $imagepath.'post_template/post-templates-icons-0.png',
+        'archive-style1' => $imagepath.'post_template/post-templates-icons-1.png',
         );
     
     //Post sidebar
@@ -606,7 +612,7 @@ function optionsframework_options() {
             'desc' => __( "Setting this option will make all post pages, that don't have a post template associated to them, to be displayed using this template. This option is OVERWRITTEN by the `Post template` option from the backend - post add / edit page.", 'accesspress-mag' ),
             'id' => 'global_post_template',
             'class'=>'post_template_image',
-            'std' => 'default-template',
+            'std' => 'single',
             'type' => 'images',
             'options' => $post_template
             );
@@ -693,9 +699,9 @@ function optionsframework_options() {
             'desc' => __( "Define - Choose template for all archive pages", 'accesspress-mag' ),
             'id' => 'global_archive_template',
             'class'=>'archive_post_template_image',
-            'std' => 'default-template',
+            'std' => 'archive-default',
             'type' => 'images',
-            'options' => $post_template
+            'options' => $archive_template
             );
     $options[] = array(
             'name' => __( 'Archive page sidebar', 'accesspress-mag' ),

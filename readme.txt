@@ -66,6 +66,12 @@ GPL compatible for own images
 
 ----------------------------------------------------
 == Changelog ==
+Version 2.1.0
+ * Fixed about setting of archive template and remove unused file.
+ * Change code about post layout.
+ * Added function to change post template layout if condition meet.
+ * Fixed some bugs in our theme functions
+ 
 Version 2.0.9
  * Added features of random post at primary menu section.
  * Fixed some bugs in our theme functions

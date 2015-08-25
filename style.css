@@ -4,7 +4,7 @@ Theme URI: http://accesspressthemes.com/accesspress-mag/
 Author: AccessPress Theme
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Mag is clean & modern WordPress magazine theme. It is ideal for newspaper, editorial, online magazine, blog or personal website. It is a cutting-edge, feature-rich FREE WordPress theme and is fully-responsive. Its feature includes: 2 post layout, news ticker, sticky menu, author block, large featured images for page/post, social media integration for wider social reach. Demo: http://demo.accesspressthemes.com/accesspress-mag/ Support forum: https://accesspressthemes.com/support/ 
-Version: 2.0.9
+Version: 2.1.0
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: accesspress-mag
@@ -2937,34 +2937,34 @@ Galleries
         Style1 css 
         --------------------------------------------------------------*/
 
-.single-post-style1-template .post_image,
-.archive-page-style1-template .post-image,
-.single-post-style1-template .singlepost-videotumb,
-.archive-page-style1-template .archive-videothumb,
-.single-post-style1-template .singlepost-audiotumb,
-.archive-page-style1-template .archive-audiotumb{
+.single-post-single-style1 .post_image,
+.archive-page-archive-style1 .post-image,
+.single-post-single-style1 .singlepost-videotumb,
+.archive-page-archive-style1 .archive-videothumb,
+.single-post-single-style1 .singlepost-audiotumb,
+.archive-page-archive-style1 .archive-audiotumb{
     float: left;
     margin: 0 20px 10px 0;
 }
 
-.single-post-style1-template .singlepost-videotumb,
-.archive-page-style1-template .archive-videothumb,
-.single-post-style1-template .singlepost-audiotumb,
-.archive-page-style1-template .archive-audiotumb{
+.single-post-single-style1 .singlepost-videotumb,
+.archive-page-single-style1 .archive-videothumb,
+.single-post-single-style1 .singlepost-audiotumb,
+.archive-page-archive-style1 .archive-audiotumb{
     width: 326px;
 }
 
-.single-post-style1-template .singlepost-videotumb iframe, 
-.archive-page-style1-template .archive-videothumb iframe {
+.single-post-single-style1 .singlepost-videotumb iframe, 
+.archive-page-archive-style1 .archive-videothumb iframe {
     height: 235px;
     margin-bottom: -10px;
     width: 326px;
 }
 
-.single-post-default-template .post_image iframe, 
-.archive-page-default-template .post-image iframe,
-.single-post-default-template .singlepost-videotumb iframe, 
-.archive-page-default-template .archive-videothumb iframe  {
+.single-post-single .post_image iframe, 
+.archive-page-archive-default .post-image iframe,
+.single-post-single .singlepost-videotumb iframe, 
+.archive-page-archive-default .archive-videothumb iframe  {
     width: 100%;
 }
 

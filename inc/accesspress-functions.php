@@ -754,3 +754,33 @@ function accesspress_mag_random_post() {
    wp_reset_query();
 }
 endif;
+
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+/**
+ * Change value of post template layout
+ */
+add_action( 'admin_init', 'change_post_style_meta' );
+
+function change_post_style_meta() {
+    $get_theme_option = get_option( 'accesspress-mag-theme' );
+    if( !empty( $get_theme_option ) ) {
+        if( !array_key_exists( 'post_meta_flag', $get_theme_option ) ){
+            if( $get_theme_option['post_meta_flag'] != 1 ){
+                $all_posts = get_posts( array( 'posts_per_page' => -1 ) );
+                foreach( $all_posts as $single_post ) {
+                    $post_meta_value = get_post_meta( $single_post->ID, 'accesspress_mag_post_template_layout', true );
+                    if( $post_meta_value == 'default-template' ) {
+                        $post_meta_value = 'single';
+                    } elseif( $post_meta_value == 'style1-template' ) {
+                        $post_meta_value = 'single-style1';
+                    } else {
+                        $post_meta_value = 'global-template';
+                    }
+                    update_post_meta( $single_post->ID, 'accesspress_mag_post_template_layout', $post_meta_value );
+                }
+                $get_theme_option['post_meta_flag'] = 1;
+                update_option( 'accesspress-mag-theme', $get_theme_option );
+            }
+        }
+    }
+}

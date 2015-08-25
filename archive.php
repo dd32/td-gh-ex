@@ -21,15 +21,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<?php
-            $archive_template = of_get_option( 'global_archive_template', 'default-template' );
-            if($archive_template=='default-template'){
-                $archive_template = 'archive-default';
-            } else {
-                $archive_template = 'archive-style1';
-            } 
-            if ( have_posts() ) : 
-        ?>
+		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
 				<?php
@@ -46,7 +38,7 @@ get_header(); ?>
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
-                    get_template_part( 'content', $archive_template );
+                    get_template_part( 'content', 'archive' );
 				?>
 
 			<?php endwhile; wp_reset_query(); ?>

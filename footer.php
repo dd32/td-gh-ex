@@ -16,10 +16,8 @@
         $accesspress_mag_sub_footer_switch = of_get_option( 'sub_footer_switch', 1 );
         $accesspress_mag_copyright_text = of_get_option( 'mag_footer_copyright' );
         $accesspress_mag_copyright_symbol = of_get_option( 'copyright_symbol' );
-        $trans_top = of_get_option( 'top_arrow' );
-        if( empty( $trans_top ) ){ $trans_top = __( 'Top', 'accesspress-mag' ); }
-        $trans_copyright = of_get_option( 'trans_copyright' );
-        if( empty( $trans_copyright ) ){ $trans_copyright = __( 'Copyright', 'accesspress-mag' ); }
+        $trans_top = of_get_option( 'top_arrow', 'Top' );
+        $trans_copyright = of_get_option( 'trans_copyright', 'Copyright' );
     ?>
     
     <?php do_action( 'accesspress_mag_before_footer' ); ?>

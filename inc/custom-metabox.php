@@ -81,13 +81,13 @@ $accesspress_mag_post_template_layout = array(
                         'available'=> 'free'
                     ),
         'default-template' => array(
-                        'value'     => 'default-template',
+                        'value'     => 'single',
                         'label'     => __( 'Default Template', 'accesspress-mag' ),
                         'thumbnail' => get_template_directory_uri() . '/inc/option-framework/images/post_template/post-templates-icons-0.png',
                         'available'=> 'free'
                     ), 
         'style1-template' => array(
-                        'value' => 'style1-template',
+                        'value' => 'single-style1',
                         'label' => __( 'Style 1', 'accesspress-mag' ),
                         'thumbnail' => get_template_directory_uri() . '/inc/option-framework/images/post_template/post-templates-icons-1.png',
                         'available'=> 'free'

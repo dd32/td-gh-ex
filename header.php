@@ -23,7 +23,6 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'accesspress-mag' ); ?></a>
     <?php 
         $accesspress_mag_logo = get_theme_mod( 'header_image' );
-        $branding_class = '';
         $accesspress_mag_logo_alt = of_get_option( 'logo_alt' );
         $accesspress_mag_logo_title = of_get_option( 'logo_title' );
         $accesspress_mag_ticker_option = of_get_option( 'news_ticker_option', '1' );
@@ -71,7 +70,7 @@
             
         <div class="logo-ad-wrapper clearfix">
             <div class="apmag-container">
-        		<div class="site-branding <?php echo esc_attr( $branding_class ) ;?>">
+        		<div class="site-branding">
                     <div class="sitelogo-wrap">  
                         <a itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( $accesspress_mag_logo ) ;?>" alt="<?php echo esc_attr( $accesspress_mag_logo_alt ); ?>" title="<?php echo esc_attr( $accesspress_mag_logo_title ); ?>" /></a>
                         <meta itemprop="name" content="<?php bloginfo( 'name' )?>" />
