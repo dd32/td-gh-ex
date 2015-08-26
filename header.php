@@ -14,12 +14,11 @@
 <html <?php language_attributes(); ?>>
 <!--<![endif]-->
 <head>
-<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
-<title><?php wp_title( '|', true, 'right' ); ?></title>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-<?php wp_head(); ?>
+	<meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?> >
 
@@ -36,9 +35,9 @@
 							<div class="row-fluid">      
 								<!-- #logo -->
 								<div id="logo" class="span4">
-									<?php if(avis_get_option($avis_shortname."_logo_img")){ ?>
+									<?php if(get_theme_mod('avis_logo_img')){ ?>
 										<div class="logo_inner">
-											<a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>" style="display: table;line-height: 0;" ><img class="logo" src="<?php echo avis_get_option($avis_shortname."_logo_img"); ?>" alt="<?php echo avis_get_option($avis_shortname."_logo_alt"); ?>" /></a>
+											<a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>" style="display: table;line-height: 0;" ><img class="logo" src="<?php echo esc_url(get_theme_mod('avis_logo_img')); ?>" alt="<?php bloginfo('name'); ?>" /></a>
 										</div>
 									<?php } else{ ?>
 									<!-- #description -->
@@ -120,7 +119,7 @@
 
 									} elseif (is_home()) {
 
-           								if(avis_get_option($avis_shortname.'_blogpage_heading')) { echo avis_get_option($avis_shortname.'_blogpage_heading'); } 
+           								echo get_theme_mod('avis_blogpage_heading', 'Blog');
 
 									} elseif (is_404()) {
 
@@ -143,11 +142,7 @@
 	<?php //} ?>
 	</div>
 
-	<?php
-		if( is_front_page() ) { 
-			 include("includes/front-bgimage-section.php"); 
-		}
-	?>
+	<?php include("includes/front-bgimage-section.php"); ?>
 </div>
 
 <div id="main" class="clearfix">

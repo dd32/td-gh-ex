@@ -2,13 +2,6 @@
 global $avis_themename;
 global $avis_shortname;
 
-if ( !class_exists( 'OT_Loader' )){	
-	//THEME SHORTNAME	
-	$avis_shortname = 'avis';	
-	$avis_themename = 'Avis';	
-	define('AVIS_ADMIN_MENU_NAME','Avis Lite');
-}
-
 /***************** EXCERPT LENGTH ************/
 function avis_excerpt_length($length) {
 	return 50;
@@ -86,29 +79,6 @@ function avis_title($title)
 	return $avis_title;
 }
 
-/**
- * SETS UP THE CONTENT WIDTH VALUE BASED ON THE THEME'S DESIGN.
- */
-
-if ( ! isset( $content_width ) ){
-    $content_width = 900;
-}
-
-/*************************************************
- Redirect to Theme setting page after activation
-**************************************************/
-if(is_admin() && isset($_GET['activated']) && $pagenow =='themes.php'){
-	//Do redirect
-	global $avis_shortname;
-	header( 'Location: '.admin_url().'themes.php?page=ot-theme-options' ) ;
-}
-
-/********************************************************
-	#DEFINE REQUIRED CONSTANTS HERE# &
-	#OPTIONAL: SET 'OT_SHOW_PAGES' FILTER TO FALSE#.
-	#THIS WILL HIDE THE SETTINGS & DOCUMENTATION PAGES.#
-*********************************************************/
-
 //CHECK AND FOUND OUT THE THEME VERSION AND ITS BASE NAME
 
 if(function_exists('wp_get_theme')){
@@ -116,69 +86,7 @@ if(function_exists('wp_get_theme')){
     $avis_theme_version = $avis_theme_data->Version;  
 }
 
-define( 'AVIS_OPTS_FRAMEWORK_DIRECTORY_URI', trailingslashit(get_template_directory_uri() . '/SketchBoard/includes/') );	
-define( 'AVIS_OPTS_FRAMEWORK_DIRECTORY_PATH', trailingslashit(get_template_directory() . '/SketchBoard/includes/') );
 define( 'AVIS_THEME_VERSION',$avis_theme_version);	
-	
-add_filter( 'ot_show_pages', '__return_false' );
-
-// REQUIRED: SET 'OT_THEME_MODE' FILTER TO TRUE.
-add_filter( 'ot_theme_mode', '__return_true' );
-
-// DISABLE ADD NEW LAYOUT SECTION FROM OPTIONS PAGE.
-add_filter( 'ot_show_new_layout', '__return_false' );
-
-// REQUIRED: INCLUDE OPTIONTREE.
-require_once get_template_directory() . '/SketchBoard/includes/ot-loader.php';
-
-// THEME OPTIONS
-require_once get_template_directory() . '/SketchBoard/includes/options/theme-options.php';
-
-
-/********************************************
-	GET THEME OPTIONS VALUE FUNCTION
-*********************************************/
-function avis_get_option( $option_id, $default = '' ){
-	return ot_get_option( $option_id, $default = '' );
-}
-
-
-function avis_bg_style($background) {
-	$bg_style = NULL;
-
-	if ($background) {
-		if($background['background-image']){
-			
-			$bg_style = 'background:';
-			
-			if ($background['background-color']) {
-				$bg_style .= $background['background-color'];
-			}
-			if ($background['background-image']) {
-				$bg_style .= ' url('.$background['background-image'].')';
-			}
-			if ($background['background-repeat']) {
-				$bg_style .= ' '.$background['background-repeat'];
-			}
-			if ($background['background-attachment']) {
-				$bg_style .= ' '.$background['background-attachment'];
-			}
-			if ($background['background-position']) {
-				$bg_style .= ' '.$background['background-position'];
-			}
-			if ($background['background-size']) {
-				$bg_style .= ' / '.$background['background-size']. ';';
-			}
-
-		} else{
-			if ($background['background-color']) {
-				$bg_style .= 'background:'.$background['background-color'];
-			}
-		}
-	}
-
-	return $bg_style;
-}
 
 /*********************************************
 *   LIMIT WORDS

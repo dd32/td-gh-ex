@@ -30,7 +30,6 @@
 
 $avis_shortname = 'avis';	
 $avis_themename = 'Avis';	
-require_once(get_template_directory() . '/SketchBoard/functions/admin-init.php');
  
 /**
  * FUNTION TO ADD CSS CLASS TO BODY
@@ -49,12 +48,12 @@ add_filter( 'body_class','avis_add_class' );
  */
 function avis_widgets_init() {
 	register_sidebar(array(
-			'name'          => __( 'Home Featured Sidebar', 'avis' ),
-			'id'            => 'Home Featured Sidebar',
-			'before_widget' => '<li id="%1$s" class="avis-containerr %2$s">',
-			'after_widget' => '</li>',
-			'before_title' => '',
-			'after_title' => '',
+		'name'          => __( 'Home Featured Sidebar', 'avis' ),
+		'id'            => 'Home Featured Sidebar',
+		'before_widget' => '<li id="%1$s" class="avis-containerr %2$s">',
+		'after_widget' => '</li>',
+		'before_title' => '',
+		'after_title' => '',
 	));
 	register_sidebar(array(
 		'name'          => __( 'Page Sidebar', 'avis' ),
@@ -109,6 +108,21 @@ function avis_theme_setup() {
 	// This theme styles the visual editor with editor-style.css to match the theme style.
 	add_editor_style();
 
+	add_theme_support( 'title-tag' );
+
+	add_theme_support( 'custom-header', array( 'flex-width' => true, 'width' => 1600, 'flex-height' => true, 'height' => 750, 'default-image' => get_template_directory_uri() . '/images/header.png') );
+
+	// This theme allows users to set a custom background.
+	add_theme_support( 'custom-background', apply_filters( 'avis_custom_background_args', array('default-color' => 'f5f5f5', ) ) );
+
+	/**
+	* SETS UP THE CONTENT WIDTH VALUE BASED ON THE THEME'S DESIGN.
+	*/
+	global $content_width;
+	if ( ! isset( $content_width ) ){
+	      $content_width = 900;
+	}
+
 	// Adds RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
 
@@ -123,8 +137,6 @@ function avis_theme_setup() {
 	 */
 	add_theme_support( 'post-formats', array('video', 'gallery', 'quote') );
 	set_post_thumbnail_size( 850, 400, true );
-	add_image_size( 'portfolio-thumb-image',390,350,true);
-	add_image_size( 'portfolio-fourcol-thumb-image',292,270,true);
 	add_image_size( 'avis_standard_img',850,400,true);  //standard size
 	add_image_size( 'avis_fullblog_img',1170,400,true); //Full Blog size
 	
@@ -135,9 +147,17 @@ function avis_theme_setup() {
 }
 add_action( 'after_setup_theme', 'avis_theme_setup' ); 
 
-//---------------------------------------------------------------------
-//---------------------------------------------------------------------
+/**
+ * Add Customizer 
+ */
+require get_template_directory() . '/includes/customizer.php';
 
+/**
+ * Add Config File 
+ */
+require_once(get_template_directory() . '/SketchBoard/functions/admin-init.php');
 
-
-
+/**
+ * Add SkethThemes File 
+ */
+require_once(get_template_directory() . '/includes/sketchtheme-upsell.php');

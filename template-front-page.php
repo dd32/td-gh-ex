@@ -1,5 +1,4 @@
 <?php 
-	
 	get_header();
 
 	get_template_part( 'includes/front', 'featured-boxes-section' ); // FEATURED BOXES SECTION

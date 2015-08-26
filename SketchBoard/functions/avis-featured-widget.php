@@ -6,16 +6,16 @@ WIDGET START
 class AvisFeaturedBox extends WP_Widget {
     
     /**
-     * Register widget with WordPress.
-     */
-
-    function AvisFeaturedBox() {
-		global $avis_shortname;
-		$widget_ops = array('classname' => 'mid-box span4 avis_start_animation  fade_in_hide element_fade_in', 'description' => 'Avis Lite Themes widget for Featured Box' );
-		$this->WP_Widget('AvisFeaturedBox',"Featured Box - $avis_shortname", $widget_ops);	
+    * Register widget with WordPress.
+    */
+    function __construct() {
+        $widget_ops = array('classname' => 'mid-box span4 avis_start_animation  fade_in_hide element_fade_in', 'description' => __('Avis Lite Themes widget for Featured Box','avis') );
+        parent::__construct(
+            'AvisFeaturedBox', // Base ID
+            __('Featured Box - Avis Lite','avis'), // Name
+           $widget_ops ); // Args
     }
     
-
     /**
      * Front-end display of widget.
      *
@@ -27,10 +27,10 @@ class AvisFeaturedBox extends WP_Widget {
 
     function widget($args, $instance) {	
 		extract( $args );
-		$title = esc_attr($instance['title']);
-		$fb_icon_class = esc_attr($instance['fb_icon_class']);						
-		$fb_content = esc_attr($instance['fb_content']);	
-		$fb_link = esc_url($instance['fb_link']);
+		if(isset($instance['title'])) { $title = esc_attr($instance['title']); } else { $title = ''; }
+		if(isset($instance['title'])) { $fb_icon_class = esc_attr($instance['fb_icon_class']); } else { $fb_icon_class = ''; }
+		if(isset($instance['title'])) { $fb_content = esc_attr($instance['fb_content']); } else { $fb_content = ''; }
+		if(isset($instance['title'])) { $fb_link = esc_url($instance['fb_link']); } else { $fb_link = ''; }
         ?>
               <?php echo $before_widget; ?>
               					

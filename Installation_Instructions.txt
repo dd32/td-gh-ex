@@ -10,7 +10,7 @@ Avis Lite WordPress theme is licensed under the GPL.
 Activation and Use
 1. Activate the Theme through the 'Themes' menu in WordPress
 2. See Appearance -> Avis Options to change theme options.
-3. create a page and set Home Page Template for front page.
+3. Create a page and set as Front Page.
 4. See Settings -> Reading -> Choose a Page for the Front page and Page for Posts page from drop-down.
 
 
@@ -18,7 +18,7 @@ Activation and Use
 
 == WP Version ==
 
-It's requires at least version 4.1 to work properly.Please make sure your WP version is at least 3.4.
+It's requires at least version 4.1 to work properly. Please make sure your WP version is at least 3.8.
 
 
 == Theme Setup ==
@@ -32,27 +32,30 @@ Go To Appearance -> Avis Options For Theme Options.
 
 *Header Settings:*
 1) Change Logo.
+2) Logo Width.
+3) Logo Height.
 
 *Header Image Setting :*
 1) Static Background Image.
 
 *Home Featured Section
-1) Featured box section heading
-2) Featured box section description
+1) Enable/Disable Featured box section.
+2) Featured box section heading.
+3) Featured box section description.
  
 Set featured boxes from widget(go to Appearance >> Widgets and use Home Featured Sidebar)
 
 *Breadcrumb Settings:*
-1) Breadcrumb Holder Background Image & Color.
-2) Breadcrumb Color
+1) Breadcrumb Holder Background Image.
+2) Breadcrumb Background Image Position.
+3) Breadcrumb Background Image Size.
 
 *Blog Settings :*
 1)  Enter Blog Page Title.
 
 *Footer :*
-1) Footer Social Box
-2) Enter Your Copyright Text(You can use HTML for links.)
+1) Enter Your Copyright Text (You can use HTML for links.)
+2) Footer Social Links.
 
 /*========= Translation =========*/
-
 The Avis Lite is ready for translation. Translation files are in /languages.

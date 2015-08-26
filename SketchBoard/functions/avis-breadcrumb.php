@@ -34,7 +34,7 @@ class avis_breadcrumb_class {
         if (!is_front_page() && is_home()) {
             
             global $avis_shortname;
-            if(avis_get_option($avis_shortname.'_blogpage_heading')) { echo avis_get_option($avis_shortname.'_blogpage_heading'); } 
+            echo get_theme_mod('avis_blogpage_heading', 'Blog');
 
         }
 

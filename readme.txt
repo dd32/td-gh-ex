@@ -22,5 +22,9 @@ Theme  uses js :-
 
 == Changelog ==
 
+= 1.0.1 =
+* Implemented Customizer Framework.
+* WordPress 4.3 compatible.
+
 = 1.0.0 =
 * Initial release

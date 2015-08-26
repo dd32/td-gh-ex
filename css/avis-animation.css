@@ -6,6 +6,7 @@
 .avis_start_animation.avis_left-to-right{-webkit-animation:wpb_ltr .7s 1 cubic-bezier(.175, .885, .32, 1.275);-moz-animation:wpb_ltr .7s 1 cubic-bezier(.175, .885, .32, 1.275);-o-animation:wpb_ltr .7s 1 cubic-bezier(.175, .885, .32, 1.275);animation:wpb_ltr .7s 1 cubic-bezier(.175, .885, .32, 1.275);opacity:1}
 .avis_start_animation.avis_right-to-left{-webkit-animation:wpb_rtl .7s 1 cubic-bezier(.175, .885, .32, 1.275);-moz-animation:wpb_rtl .7s 1 cubic-bezier(.175, .885, .32, 1.275);-o-animation:wpb_rtl .7s 1 cubic-bezier(.175, .885, .32, 1.275);animation:wpb_rtl .7s 1 cubic-bezier(.175, .885, .32, 1.275);opacity:1}
 .avis_start_animation.avis_appear{-webkit-animation:wpb_appear 0.5s 1 cubic-bezier(.175, .885, .32, 1.275);-moz-animation:wpb_appear 0.5s 1 cubic-bezier(.175, .885, .32, 1.275);-o-animation:wpb_appear 0.5s 1 cubic-bezier(.175, .885, .32, 1.275);animation:wpb_appear 0.5s 1 cubic-bezier(.175, .885, .32, 1.275);-webkit-transform:scale(1);-moz-transform:scale(1);-o-transform:scale(1);transform:scale(1);opacity:1}
+.avis_start_animation.scale-up { -webkit-animation: mk_scale 0.5s 1 cubic-bezier(0.445, 0.05, 0.55, 0.95);-moz-animation: mk_scale 0.5s 1 cubic-bezier(0.445, 0.05, 0.55, 0.95);	-o-animation: mk_scale 0.5s 1 cubic-bezier(0.445, 0.05, 0.55, 0.95);animation: mk_scale 0.5s 1 cubic-bezier(0.445, 0.05, 0.55, 0.95);opacity: 1;}
 @-webkit-keyframes wpb_ttb{0%{-webkit-transform:translate(0, -30%);opacity:0} 100%{-webkit-transform:translate(0, 0);opacity:1}}
 @-moz-keyframes wpb_ttb{0%{-moz-transform:translate(0, -30%);opacity:0} 100%{-moz-transform:translate(0, 0);opacity:1}}
 @-o-keyframes wpb_ttb{0%{-o-transform:translate(0, -30%);opacity:0} 100%{-o-transform:translate(0, 0);opacity:1}}
@@ -26,45 +27,8 @@
 @-moz-keyframes wpb_appear{0%{-moz-transform:scale(.3);opacity:.1} 100%{-moz-transform:scale(1);opacity:1}}
 @-o-keyframes wpb_appear{0%{-o-transform:scale(.3);opacity:.1} 100%{-o-transform:scale(1);opacity:1}}
 @keyframes wpb_appear{0%{transform:scale(.3);opacity:.1} 100%{transform:scale(1);opacity:1}}
-.avis_start_animation.scale-up {	-webkit-animation: mk_scale 0.5s 1 cubic-bezier(0.445, 0.05, 0.55, 0.95);-moz-animation: mk_scale 0.5s 1 cubic-bezier(0.445, 0.05, 0.55, 0.95);	-o-animation: mk_scale 0.5s 1 cubic-bezier(0.445, 0.05, 0.55, 0.95);animation: mk_scale 0.5s 1 cubic-bezier(0.445, 0.05, 0.55, 0.95);opacity: 1;}
 /* Scale Up animation */
-@-webkit-keyframes mk_scale {
-0% {
--webkit-transform: scale(0.3);
-opacity: 0.1;
-}
-100% {
--webkit-transform: scale(1);
-opacity: 1;
-}
-}
-@-moz-keyframes mk_scale {
-0% {
--moz-transform: scale(0.3);
-opacity: 0.1;
-}
-100% {
--moz-transform: scale(1);
-opacity: 1;
-}
-}
-@-o-keyframes mk_scale {
-0% {
--o-transform: scale(0.3);
-opacity: 0.1;
-}
-100% {
--o-transform: scale(1);
-opacity: 1;
-}
-}
-@keyframes mk_scale {
-0% {
-transform: scale(0.3);
-opacity: 0.1;
-}
-100% {
-transform: scale(1);
-opacity: 1;
-}
-}
+@-webkit-keyframes mk_scale {0% {-webkit-transform: scale(0.3); opacity: 0.1; } 100% {-webkit-transform: scale(1); opacity: 1; } }
+@-moz-keyframes mk_scale {0% {-moz-transform: scale(0.3); opacity: 0.1; } 100% {-moz-transform: scale(1); opacity: 1; } }
+@-o-keyframes mk_scale {0% {-o-transform: scale(0.3); opacity: 0.1; } 100% {-o-transform: scale(1); opacity: 1; } }
+@keyframes mk_scale {0% {transform: scale(0.3); opacity: 0.1; } 100% {transform: scale(1); opacity: 1; } }

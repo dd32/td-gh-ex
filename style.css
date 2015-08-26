@@ -2,7 +2,7 @@
 Theme Name: Avis Lite
 Theme URI: http://www.sketchthemes.com/themes/avis-consulting-business-wordpress-theme/
 Description: Avis Lite is an all new clean and brilliant Consulting Business WordPress Theme specially meant for advocate, business consultant, attorney, corporate lawyer, legal consultant and professionals running consultation company or legal office. With the advanced features like Portfolio, Skills, Multi Language Support and Advanced Contact Map Template, Avis Lite is for sure one of the finest themes by SketchThemes for all consultants.Take your consulting business to new high with Avis Lite. Get it now.
-Version: 1.0.0
+Version: 1.0.1
 Author: SketchThemes
 Author URI: http://www.Sketchthemes.com/
 License: GNU General Public License v3.0
@@ -130,7 +130,7 @@ body.page-template-template-front-page-php #main{margin-top:0 !important;}
 
 /* =Content
 -------------------------------------------------------------- */
-#main {padding: 0 0 0px;  background: none repeat scroll 0 0 #FEFEFE; }
+#main {padding: 0 0 0px; }
 #content {  word-wrap: break-word;  -ms-word-wrap: break-word; }
 .left-sidebar #content{margin-top:0px;padding-left: 20px;float: right;}
 .container.post-wrap { margin-top: 100px;  }
@@ -279,9 +279,17 @@ form input[type="submit"]:hover { background: none; color: #FFFFFF; transition: 
 /* = front css
 -------------------------------------------------------------- */
 .main-header-warpper {position: relative;line-height: 0;}
-.home.blog .Skt-header-image{display: none;}
-.front-page #main-head-wrap {background: none repeat scroll 0 0 rgba(0, 0, 0, 0);  position: absolute;left: 0;right: 0;width: 100%;}
-#featured-box{}
+.Skt-header-image{display: none;}
+.home.blog .Skt-header-image{display: block;}
+.home.page .Skt-header-image{display: block;}
+.home #main-head-wrap {background: none repeat scroll 0 0 rgba(0, 0, 0, 0);  position: absolute;left: 0;right: 0;width: 100%;}
+.front-blog-wrap{margin-top:50px;}
+.front-blog-wrap .span4:nth-child(3n+1) { margin-left: 0;}
+.front-blog-wrap.row-fluid .span4{padding-bottom:25px; min-height: 320px;}
+.front-page-content{display: none;}
+.home.page .front-page-content{ display: block; }
+
+
 .avis-section{ margin-top: 100px;}
 #avis-product-cat li > a {z-index: 22;background-color: #1abc9c; font-weight: 500;bottom: 35px; box-sizing: border-box; color: #fff; display: block; font-size: 18px; font-weight: 500; height: 70px; line-height: 30px; padding-top: 5px; position: absolute; text-align: center; text-transform: uppercase; width: 100%;} 	
 #avis-product-cat li > a span { font-weight: 300;text-transform: capitalize; font-size: 14px; }
@@ -597,6 +605,16 @@ ul.childpages {list-style-type: disc;  margin-left: 20px;  }
 .wp-caption-text {  margin-bottom: 5px;  margin-top: 5px;  font-size: 11px;  } 
 .sticky {}
 .gallery-caption {}
+.screen-reader-text {
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: polygon(0px 0px, 0px 0px,0px 0px, 0px 0px);
+  display: block;
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
 .gallery-item dd {float: none;}
 .alignright {float: right;margin: 5px 0px 20px 20px;}
 .alignleft {float: left;margin: 5px 20px 20px 0;}

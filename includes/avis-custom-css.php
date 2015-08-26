@@ -1,4 +1,4 @@
-<?php global $avis_shortname, $avis_themename, $post, $headercolorpicker, $color_scheme, $mobi_menu_width, $_persistent_on_off, $_primary_color_scheme, $_breadcrumb_on_off; ?>
+<?php global $avis_shortname, $avis_themename, $post;  ?>
 <?php 
 	$_primary_color_scheme ="";
 
@@ -20,27 +20,14 @@ function avis_skeHex2RGB($hexStr, $returnAsString = false, $seperator = ',') {
     return $returnAsString ? implode($seperator, $rgbArray) : $rgbArray; // returns the rgb string or the associative array
 } 
 
-	$front_bg_image = avis_get_option($avis_shortname."_home_bgimage");
-
+	$_primary_color_scheme = esc_attr( get_theme_mod('avis_pri_color','#0bbcee') );
+	$color_scheme = esc_attr( get_theme_mod('avis_sec_color', '#353b48') );
 	
+	$_bread_background = 'url("'.esc_url(get_theme_mod('avis_bread_img', '')).'") '.esc_attr(get_theme_mod('avis_bread_repeat', 'no-repeat')).' '.esc_attr(get_theme_mod('avis_bread_position', 'center'));
 
-	if(avis_get_option($avis_shortname.'_primary_color_scheme')){ $_primary_color_scheme = esc_attr(avis_get_option($avis_shortname.'_primary_color_scheme')); }
-	if(avis_get_option($avis_shortname.'_colorpicker')){ $color_scheme = esc_attr(avis_get_option($avis_shortname.'_colorpicker')); } 
+	$avis_logo_wdth = esc_attr( get_theme_mod('avis_logo_width', '120px') );
+	$avis_logo_hght = esc_attr( get_theme_mod('avis_logo_height', '40px') );
 	
-	if(avis_get_option($avis_shortname.'_bread_background')){ $_bread_background = avis_get_option($avis_shortname.'_bread_background'); } 
-
-	if(avis_get_option($avis_shortname.'_logo_width')){ $avis_logo_wdth = esc_attr(avis_get_option($avis_shortname.'_logo_width')); } 
-	if(avis_get_option($avis_shortname.'_logo_height')){ $avis_logo_hght = esc_attr(avis_get_option($avis_shortname.'_logo_height')); }  
-	
-	if(is_page() || is_search() || is_home() || is_404() || is_front_page() ||  is_archive()) {
-		$_bread_background  = avis_bg_style(avis_get_option($avis_shortname.'_bread_background'));
-	}
-
-	if(is_page() || is_singular()) {
-		$_pagetitle_bg = avis_bg_style(get_post_meta($post->ID, '_pagetitle_bg', true));
-		$_bread_background  = avis_bg_style(avis_get_option($avis_shortname.'_bread_background'));
-	}
-
 	$rgb=array();
 	$rgb = avis_skeHex2RGB($color_scheme);
 	$R = $rgb['red'];
@@ -65,9 +52,12 @@ function avis_skeHex2RGB($hexStr, $returnAsString = false, $seperator = ',') {
 	/***************** THEME *****************/
 
 	/*************** TOP HEADER **************/
-	<?php if($front_bg_image == '') { ?>
+	<?php if(!get_header_image()) { ?>
 		.front-page #header.skehead-headernav{ background-color: <?php if(isset($_primary_color_scheme)){ echo $_primary_color_scheme; } ?>;} 
 		.front-page #main-head-wrap{ position: inherit; }
+	<?php } ?>
+	<?php if( !display_header_text() ) { ?>
+		#logo #site-title { display: none; }
 	<?php } ?>
 	.topbar_info:hover i,
 	#footer .third_wrapper a:hover,
@@ -233,32 +223,13 @@ function avis_skeHex2RGB($hexStr, $returnAsString = false, $seperator = ',') {
 
 	<?php 
 		
-		if(isset($_bread_background) && $_bread_background !='') {	?>
-				#main-head-wrap {<?php echo $_bread_background; ?>}
+		if(get_theme_mod('avis_bread_img', '')) {	?>
+				#main-head-wrap {background: <?php echo $_bread_background; ?>}
 			<?php  }
 		else{
 			?>
 				#main-head-wrap{background: none repeat scroll 0 0 rgba(0, 0, 0, 0.6);}
-			<?php
-			}
-
-
-		if(isset($_pagetitle_bg) && $_pagetitle_bg !='') {
-			?> 
-				#main-head-wrap {<?php echo $_pagetitle_bg; ?>;}
-			<?php 
-			}
-		else if(isset($_bread_background) && $_bread_background !='') {
-			?>
-				#main-head-wrap {<?php echo $_bread_background; ?>;}
-			<?php
-			}
-		else{
-			?>
-				#main-head-wrap {background: none repeat scroll 0 0 rgba(0, 0, 0, 0.6);}
-			<?php
-			}
-	?>
+	<?php } ?>
 
 	#map_canvas .contact-map-overlay { <?php if(isset($_contact_map_bg_image)){ echo $_contact_map_bg_image; } else { ?>background-color: rgba(0, 0, 0, 0.8);<?php } ?> }
 

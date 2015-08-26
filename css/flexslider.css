@@ -25,52 +25,10 @@ html[xmlns] .slides {display: block;}
 .flex-viewport {max-height: 2000px; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; transition: all 1s ease;}
 .loading .flex-viewport {max-height: 300px;}
 /* caption */
-.flex-caption {
-    background-color: rgba(0, 0, 0, 0.7);
-	color: #FFFFFF;
-    left: 0;
-    margin: 0 auto;
-    padding: 41px 50px 100px; 
-    position: absolute;
-    right: 0;
-    bottom: 100px;
-    width: 65%; 
-	text-align:center;
-}
-.flex-caption span {font-size: 12px; line-height: 21px;display: block;font-weight: 300; }
-.flex-caption .slider-title {   
-    font-family: 'Open Sans';
-    font-size: 53px;
-    font-weight: 700;
-    letter-spacing: 0.2px;
-    line-height: 1;
-    padding-bottom: 20px;
-    text-align: center;
-    width: auto;
-	color: rgba(255, 255, 255, 0.9);
-}
-
-.flex-caption .text {
-    font-size: 16px;
-    font-weight: 300;
-    letter-spacing: 0.2px;
-    line-height: 1.7;
-    margin-bottom: 0px;
-    text-align: center;
-}
-
-.flex-control-paging li a.flex-active {
-    /*background: none repeat scroll 0 0 #ddd !important;*/
-}	
-
-.flexslider ul.slides{
-	display:table;
-}
-
-.flex-content-wrap{
-	/*display:table-cell;*/
-}
-	
+.flex-caption {background-color: rgba(0, 0, 0, 0.7); color: #FFFFFF; left: 0; margin: 0 auto; padding: 41px 50px 100px; position: absolute; right: 0; bottom: 100px; width: 65%; text-align:center; } .flex-caption span {font-size: 12px; line-height: 21px;display: block;font-weight: 300; }
+.flex-caption .slider-title {font-family: 'Open Sans'; font-size: 53px; font-weight: 700; letter-spacing: 0.2px; line-height: 1; padding-bottom: 20px; text-align: center; width: auto; color: rgba(255, 255, 255, 0.9); }
+.flex-caption .text {font-size: 16px; font-weight: 300; letter-spacing: 0.2px; line-height: 1.7; margin-bottom: 0px; text-align: center; }
+.flexslider ul.slides{display:table; }
 .slider-link  a {border: 1px solid #F54336; cursor: pointer;display: inline-block;position: relative; transition: all 0.3s linear 0s; display: inline-block; margin-top: 8px; padding: 4px 11px; }
 .slider-link  a:hover{ background: none repeat scroll 0 0 #F54336;color: #FFFFFF; transition: all 0.3s linear 0s;}
 /* Direction Nav */
