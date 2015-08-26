@@ -5,7 +5,7 @@ class Moesia_Projects extends WP_Widget {
 // constructor
     function moesia_projects() {
 		$widget_ops = array('classname' => 'moesia_projects_widget', 'description' => __( 'Show your most intresting projects.', 'moesia') );
-        parent::WP_Widget(false, $name = __('Moesia FP: Projects', 'moesia'), $widget_ops);
+        parent::__construct(false, $name = __('Moesia FP: Projects', 'moesia'), $widget_ops);
 		$this->alt_option_name = 'moesia_projects_widget';
 		
 		add_action( 'save_post', array($this, 'flush_widget_cache') );

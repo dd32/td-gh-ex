@@ -5,7 +5,7 @@ class Moesia_Latest_News extends WP_Widget {
 // constructor
     function moesia_latest_news() {
 		$widget_ops = array('classname' => 'moesia_latest_news_widget', 'description' => __( 'Show the latest news from your blog.', 'moesia') );
-        parent::WP_Widget(false, $name = __('Moesia FP: Latest News', 'moesia'), $widget_ops);
+        parent::__construct(false, $name = __('Moesia FP: Latest News', 'moesia'), $widget_ops);
 		$this->alt_option_name = 'moesia_latest_news_widget';
 		
 		add_action( 'save_post', array($this, 'flush_widget_cache') );

@@ -5,7 +5,7 @@ class Moesia_Blockquote extends WP_Widget {
 // constructor
     function moesia_blockquote() {
 		$widget_ops = array('classname' => 'moesia_blockquote_widget', 'description' => __( 'Add a short message to your visitors and an image', 'moesia') );
-        parent::WP_Widget(false, $name = __('Moesia FP: Blockquote', 'moesia'), $widget_ops);
+        parent::__construct(false, $name = __('Moesia FP: Blockquote', 'moesia'), $widget_ops);
 		$this->alt_option_name = 'moesia_blockquote_widget';
 		
 		add_action( 'save_post', array($this, 'flush_widget_cache') );

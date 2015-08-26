@@ -5,7 +5,7 @@ class Moesia_Contact_Info extends WP_Widget {
 // constructor
     function moesia_contact_info() {
 		$widget_ops = array('classname' => 'moesia_contact_info_widget', 'description' => __( 'Display your contact info', 'moesia') );
-        parent::WP_Widget(false, $name = __('Moesia: Contact info', 'moesia'), $widget_ops);
+        parent::__construct(false, $name = __('Moesia: Contact info', 'moesia'), $widget_ops);
 		$this->alt_option_name = 'moesia_contact_info';
 		
 		add_action( 'save_post', array($this, 'flush_widget_cache') );

@@ -5,7 +5,7 @@ class Moesia_Action extends WP_Widget {
 // constructor
     function moesia_action() {
 		$widget_ops = array('classname' => 'moesia_action_widget', 'description' => __( 'Display a call to action block.', 'moesia') );
-        parent::WP_Widget(false, $name = __('Moesia FP: Call to action', 'moesia'), $widget_ops);
+        parent::__construct(false, $name = __('Moesia FP: Call to action', 'moesia'), $widget_ops);
 		$this->alt_option_name = 'moesia_action_widget';
 		
 		add_action( 'save_post', array($this, 'flush_widget_cache') );

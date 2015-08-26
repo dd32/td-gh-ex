@@ -5,7 +5,7 @@ class Moesia_Recent_Posts extends WP_Widget {
 // constructor
     function moesia_recent_posts() {
 		$widget_ops = array('classname' => 'moesia_recent_posts_widget', 'description' => __( 'Display your site&#8217;s recent posts with thumbnails.', 'moesia') );
-        parent::WP_Widget(false, $name = __('Moesia: Recent Posts', 'moesia'), $widget_ops);
+        parent::__construct(false, $name = __('Moesia: Recent Posts', 'moesia'), $widget_ops);
 		$this->alt_option_name = 'moesia_Recent_Posts_widget';
 		
 		add_action( 'save_post', array($this, 'flush_widget_cache') );

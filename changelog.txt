@@ -1,5 +1,9 @@
 Changelog
 
+26 August 2015 - 1.35
+--------------------------------------
+- changed PHP 4 constructors in widgets.
+
 13 May 2015 - 1.33
 --------------------------------------
 - updated niceScroll to the latest version;

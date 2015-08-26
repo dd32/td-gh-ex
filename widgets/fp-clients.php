@@ -5,7 +5,7 @@ class Moesia_Clients extends WP_Widget {
 // constructor
     function moesia_clients() {
 		$widget_ops = array('classname' => 'moesia_clients_widget', 'description' => __( 'Show your visitors your impressive client list.', 'moesia') );
-        parent::WP_Widget(false, $name = __('Moesia FP: Clients', 'moesia'), $widget_ops);
+        parent::__construct(false, $name = __('Moesia FP: Clients', 'moesia'), $widget_ops);
 		$this->alt_option_name = 'moesia_clients_widget';
 		
 		add_action( 'save_post', array($this, 'flush_widget_cache') );
