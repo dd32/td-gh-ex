@@ -7,7 +7,7 @@ function init_wp_fanzone_recent_posts() { return register_widget('wp_fanzone_rec
 class wp_fanzone_recent_posts extends WP_Widget {
 	/** constructor */
 	function wp_fanzone_recent_posts() {
-		parent::WP_Widget( 'wp_fanzone_recent_posts', $name = 'FanZone Recent Post' );
+		parent::__construct( 'wp_fanzone_recent_posts', $name = 'FanZone Recent Post' );
 	}
 	
 	// Widget	

@@ -31,7 +31,7 @@
                 
                     <?php echo __('&copy; ', 'wp-fanzone') . esc_attr( get_bloginfo( 'name', 'wp-fanzone' ) );  ?>
                     <?php if(is_home() && !is_paged()){?>            
-                        <?php _e('- Powered by ', 'wp-fanzone'); ?><a href="<?php echo esc_url( __( 'http://wordpress.org/', 'wp-fanzone' ) ); ?>" title="<?php esc_attr_e( '' ); ?>"><?php _e('WordPress' ,'wp-fanzone'); ?></a>
+                        <?php _e('- Powered by ', 'wp-fanzone'); ?><a href="<?php echo esc_url( __( 'http://wordpress.org/', 'wp-fanzone' ) ); ?>" title="<?php esc_attr_e( 'WordPress' ,'wp-fanzone' ); ?>"><?php _e('WordPress' ,'wp-fanzone'); ?></a>
                         <?php _e(' and ', 'wp-fanzone'); ?><a href="<?php echo esc_url( __( 'http://hostmarks.com/', 'wp-fanzone' ) ); ?>"><?php _e('Hostmarks', 'wp-fanzone'); ?></a>
                     <?php } ?>
                     </div>

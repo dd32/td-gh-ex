@@ -87,6 +87,10 @@ This theme uses Bootstrap as a design tool
  * Copyright (c) 2011-2014 Twitter, Inc
  * Licensed under https://github.com/twbs/bootstrap/blob/master/LICENSE
 
+Version 2.2
+* added text-domain on esc_attr_e function at footer.php - line: 34
+* updated depreciated code parent::WP_Widget into parent::__construct on inc/widget.php - line: 10
+
 Version 2.1
 bug fixes below:
 style.css
