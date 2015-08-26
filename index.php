@@ -2,28 +2,24 @@
 /**
  * The main template file
  *
+ * @package WordPress
  * @subpackage Best_Reloaded
  * @since Best Reloaded 0.1
  */
 ?>
 
 <?php get_header(); ?>
-        <?php get_template_part( 'inc/parts/featured', 'bar' ); ?>
+        <?php get_template_part( 'featured', 'bar' ); ?>
 
         <div class="row">
             <div class="col-md-8">
                 <div id="main_content" role="main">
 
-                    <?php get_template_part( 'inc/parts/loop', 'main' ); ?>
+                    <?php get_template_part( 'loop', 'main' ); ?>
 
                     <?php
                             echo '<p class="hero-p">';
-								$args = array(
-									'prev_text'          => esc_html__('previous page', 'best-reloaded' ),
-									'next_text'          => esc_html__('next page', 'best-reloaded' ),
-									'screen_reader_text' => esc_html__('Posts Navigation', 'best-reloaded' )
-								);
-								the_posts_navigation( $args );
+                            posts_nav_link(' &#183; ', 'previous page', 'next page');
                             echo '</p><hr class="hr-row-divider">';
                     ?>
 

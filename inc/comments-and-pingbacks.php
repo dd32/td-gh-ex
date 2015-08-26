@@ -3,17 +3,19 @@
  * comments-and-pingbacks.php
  * Template for Comments and Pingbacks
  *
+ * @package WordPress
  * @subpackage Best_Reloaded
  * @since Best Reloaded 0.1
  */
 
-function best_reloaded_respond_comment( $comment, $args, $depth ) {
+function respond_comment( $comment, $args, $depth ) {
+    $GLOBALS['comment'] = $comment;
     switch ( $comment->comment_type ) :
         case 'pingback' :
         case 'trackback' :
     ?>
     <li class="post pingback">
-        <p><?php esc_html_e( 'Pingback:', 'best-reloaded' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( esc_html__('Edit.', 'best-reloaded' ) . ' &#x270E;', ' </br><span class="edit-link">', '</span>' ); ?></p>
+        <p><?php echo 'Pingback:'; ?> <?php comment_author_link(); ?><?php edit_comment_link( 'Edit &#x270E;', '<span class="edit-link">', '</span>' ); ?></p>
     <?php
             break;
         default :
@@ -24,6 +26,8 @@ function best_reloaded_respond_comment( $comment, $args, $depth ) {
                 <div class="comment-author vcard clearfix">
                     <?php
                         $avatar_size = 48;
+                        if ( '0' != $comment->comment_parent )
+                            $avatar_size = 48;
 
                         echo get_avatar( $comment, $avatar_size );
 
@@ -41,7 +45,7 @@ function best_reloaded_respond_comment( $comment, $args, $depth ) {
                 </div><!-- .comment-author .vcard -->
 
                 <?php if ( $comment->comment_approved == '0' ) : ?>
-                    <em class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'best-reloaded' ); ?></em>
+                    <em class="comment-awaiting-moderation"><?php echo 'Your comment is awaiting moderation.'; ?></em>
                     <br />
                 <?php endif; ?>
 
@@ -50,8 +54,8 @@ function best_reloaded_respond_comment( $comment, $args, $depth ) {
             <div class="comment-content"><?php comment_text(); ?></div>
 
             <div class="edit-reply">
-                <?php edit_comment_link( esc_html__('Edit.', 'best-reloaded' ) . ' &#x270E;', '<span class="edit-link">', '</span>' ); ?>
-                <?php comment_reply_link( array_merge( $args, array( 'reply_text' => esc_html__( 'Reply ', 'best-reloaded' ) .' <span>&#x21A9;</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+                <?php edit_comment_link( 'Edit &#x270E;', '<span class="edit-link">', '</span>' ); ?>
+                <?php comment_reply_link( array_merge( $args, array( 'reply_text' => 'Reply <span>&#x21A9;</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
             </div><!-- .reply -->
         </article><!-- #comment-## -->
 
@@ -59,3 +63,4 @@ function best_reloaded_respond_comment( $comment, $args, $depth ) {
             break;
     endswitch;
 }
+?>

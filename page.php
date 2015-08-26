@@ -3,13 +3,14 @@
   * page.php
   * Displays content for a single page
   *
+  * @package WordPress
   * @subpackage Best_Reloaded
   * @since Best Reloaded 0.1
   */
 ?>
 
 <?php get_header(); ?>
-        <?php get_template_part( 'inc/parts/featured', 'bar' ); ?>
+        <?php get_template_part( 'featured', 'bar' ); ?>
 
         <div class="row">
             <div class="col-md-8">
@@ -19,15 +20,10 @@
 
                     <h2 class="page-title"><?php the_title(); ?></h2>
                     <?php the_content(); ?>
-					<?php wp_link_pages( array(
-						'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'best-reloaded' ) . '</span>',
-						'after'       => '</div>',
-						'link_before' => '<span>',
-						'link_after'  => '</span>',
-					) ); ?>
+
                 <?php endwhile; else: ?>
 
-                    <p class="hero-p no-content-message"><?php esc_html_e( 'There is currently nothing to display.', 'best-reloaded' ); ?></p>
+                    <p class="hero-p" style="padding: 30px 0;">there is currently nothing to display :(</p>
 
                 <?php endif; ?>
 

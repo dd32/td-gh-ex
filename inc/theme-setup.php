@@ -3,6 +3,7 @@
  * theme-setup.php
  * Theme setup functions
  *
+ * @package WordPress
  * @subpackage Best_Reloaded
  * @since Best Reloaded 0.1
  */
@@ -11,84 +12,57 @@
  * Theme Setup Function
  * ============================================================= */
 
-add_action( 'after_setup_theme', 'best_reloaded_setup' );
-if ( !function_exists( 'best_reloaded_setup' ) ) {
-    function best_reloaded_setup() {
+add_action( 'after_setup_theme', 'pwwp_bestreloaded_setup' );
+if ( !function_exists( 'pwwp_bestreloaded_setup' ) ) {
+    function pwwp_bestreloaded_setup() {
+
+        // Set the content width
+        if ( ! isset( $content_width ) ) $content_width = 690;
 
         // This theme uses wp_nav_menu() in two locations
         register_nav_menus( array(
-            'best_reloaded_nav_topbar' => __('Topbar Navigation', 'best-reloaded' ),
-            'best_reloaded_nav_footer' => __('Footer Navigation', 'best-reloaded' )
+            'nav_topbar' => 'Topbar Navigation',
+            'nav_footer' => 'Footer Navigation'
         ) );
 
         // Fallback function for Topbar Navigation if it isn't set
-        function best_reloaded_topbar_nav_fallback() {
-			if( is_user_logged_in() ) {
-				echo '<ul class="navbar-nav mr-auto"><li class="nav-item"><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" class="nav-link">'. esc_html__('Add a menu', 'best-reloaded') .'</a></li></ul>';
-			} else {
-	            echo '<ul class="navbar-nav mr-auto"><li class="nav-item"><a href="' . esc_url( home_url() ) . '" title="' . esc_attr__( 'Home', 'best-reloaded' ) . '" class="nav-link">' . esc_html__('Home', 'best-reloaded') . '</a></li></ul>';
-			}
+        function topbar_nav_fallback() {
+            echo '<ul class="nav navbar-nav"><li><a href="' . home_url() . '" title="Home">Home</a></li></ul>';
         }
 
 
         // Fallback function for Footer Navigation if it isn't set
-        function best_reloaded_footer_nav_fallback() {
-			if( is_user_logged_in() ) {
-				echo '<ul class="nav"><li class="nav-item"><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" class="nav-link">'. esc_html__('Add a menu', 'best-reloaded') .'</a></li></ul>';
-			} else {
-	            echo '<ul class="nav"><li class="nav-item"><a href="' . esc_url( home_url() ) . '" title="' . esc_attr__( 'Home', 'best-reloaded' ) . '" class="nav-link">' . esc_html__('Home', 'best-reloaded') . '</a></li></ul>';
-			}
+        function footer_nav_fallback() {
+            echo '<ul><li><a href="' . home_url() . '" title="Home">Home</a></li></ul>';
         }
 
         // This theme uses Featured Images (also known as post thumbnails)
         add_theme_support( 'post-thumbnails' );
-
-		// Adds the image sizes we use
-		add_image_size('best-reloaded-featured-img', '865', '370', true);
 
         // This feature enables post and comment RSS feed links to head
         add_theme_support( 'automatic-feed-links' );
 
         // This enables WP 4.1+ title-tag support. Fallback in place for
         // old versions
-        // FALLBACK REMOVED - ONLY NEED TO SUPPORT 2 VERSIONS PREVIOUS
         add_theme_support( 'title-tag' );
-
-		// custom logo and background support via customizer
-		$custom_logo_args = array(
-		    'height'      => 100,
-		    'width'       => 760,
-		    'flex-height' => true,
-		    'flex-width'  => true
-		);
-		add_theme_support( 'custom-logo', $custom_logo_args );
-		$custom_bg_args = array(
-			'default-color' => 'dddddd',
-		);
-		add_theme_support( 'custom-background', $custom_bg_args );
 
     }
     /* ===| end bestreloaded_setup() |================================== */
 }
 /* ===| end !function_exists |================================== */
 
-// set content_sideth
-function best_reloaded_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'best_reloaded_content_width', 763 );
-}
-add_action( 'after_setup_theme', 'best_reloaded_content_width', 0 );
-
-
 /* =============================================================
  * Enqueue Styles
  * ============================================================= */
 
-add_action( 'wp_enqueue_scripts', 'best_reloaded_load_styles' );
-if ( !function_exists( 'best_reloaded_load_styles' ) ) {
-    function best_reloaded_load_styles() {
+add_action( 'wp_enqueue_scripts', 'pwwp_load_bestreloaded_styles' );
+if ( !function_exists( 'pwwp_load_bestreloaded_styles' ) ) {
+    function pwwp_load_bestreloaded_styles() {
         if ( !is_admin() ) {
-			wp_register_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css', '4.0.0-alpha.6' );
-            wp_enqueue_style( 'best-reloaded', get_template_directory_uri() . '/assets/css/style.min.css', array('bootstrap'), '0.13.0' );
+			wp_register_style( 'bootstrap-styles', get_template_directory_uri() . '/css/bootstrap.min.css', 3.3 );
+			wp_enqueue_style ( 'bootstrap-styles' );
+            wp_register_style( 'bestreloaded-styles', get_template_directory_uri() . '/style.min.css', array(), 0.6 );
+            wp_enqueue_style ( 'bestreloaded-styles' );
         }
     }
 }
@@ -97,20 +71,17 @@ if ( !function_exists( 'best_reloaded_load_styles' ) ) {
  * Enqueue Javascript
  * ============================================================= */
 
-add_action( 'wp_enqueue_scripts', 'best_reloaded_load_scripts' );
-if ( !function_exists( 'best_reloaded_load_scripts' ) ) {
-    function best_reloaded_load_scripts() {
+add_action( 'wp_enqueue_scripts', 'pwwp_load_bestreloaded_scripts' );
+if ( !function_exists( 'pwwp_load_bestreloaded_scripts' ) ) {
+    function pwwp_load_bestreloaded_scripts() {
         if ( !is_admin() ) {
-            // bootstrap scripts
-			wp_register_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery', 'tether'), '4.0.0-alpha.6', true );
-			// tether - needed by bootstrap affix
-			wp_register_script( 'tether', get_template_directory_uri() . '/assets/js/tether.min.js', array('jquery'), '1.4.0', true );
-
-			// enqueue the main theme scripts file - which will in turn
-			// bootstrap, tether and jQuery due to dependancy chaining
-            wp_register_script( 'best-reloaded', get_template_directory_uri() . '/assets/js/scripts.min.js', array('bootstrap', 'jquery'), '0.13.0', true );
-
-			// only enqueue comment-reply script on single pages
+            wp_register_script( 'modernizr', get_template_directory_uri() . '/js/libs/modernizr-2.5.3.min.js' );
+            wp_enqueue_script( 'modernizr' );
+            wp_enqueue_script( 'jquery' );
+            wp_register_script( 'bestreloaded-scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery', 'bootstrap'), 0.6, true );
+            wp_enqueue_script( 'bestreloaded-scripts' );
+			wp_register_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), 3.3, true );
+            wp_enqueue_script( 'bootstrap' );
             if ( is_single() ) wp_enqueue_script( 'comment-reply' );
         }
     }
@@ -122,50 +93,88 @@ if ( !function_exists( 'best_reloaded_load_scripts' ) ) {
  * Echo out color options from admin panel
  * ============================================================= */
 
-add_action( 'wp_head', 'best_reloaded_theme_options' );
+add_action( 'wp_head', 'pwwp_bestreloaded_theme_options' );
 
-if ( !function_exists( 'best_reloaded_theme_options' ) ) {
-    function best_reloaded_theme_options() {
+if ( !function_exists( 'pwwp_bestreloaded_theme_options' ) ) {
+    function pwwp_bestreloaded_theme_options() {
 
-		// these are all hex values
-        $text_color_featured    	= get_theme_mod( 'bestreloaded_text_color_featured_content' );
-        $link_color_main 			= get_theme_mod( 'bestreloaded_link_color_main' );
-        $link_color_hover_main 		= get_theme_mod( 'bestreloaded_link_hover_color_main' );
-        $link_color_footer 			= get_theme_mod( 'bestreloaded_link_color_footer' );
-        $link_color_hover_footer	= get_theme_mod( 'bestreloaded_link_hover_color_footer' );
-        $link_color_featured    	= get_theme_mod( 'bestreloaded_link_color_featured_content' );
-        $link_color_hover_featured 	= get_theme_mod( 'bestreloaded_link_hover_color_featured_content' ); ?>
+        $background                = of_get_option( 'bestreloaded_background', 'no entry' );
+        $link_color_main           = of_get_option( 'bestreloaded_link_color_main', 'no entry' );
+        $link_color_hover_main     = of_get_option( 'bestreloaded_link_hover_color_main', 'no entry' );
+        $link_color_footer         = of_get_option( 'bestreloaded_link_color_footer' );
+        $link_color_hover_footer   = of_get_option( 'bestreloaded_link_hover_color_footer' );
+        $background_featured       = of_get_option( 'bestreloaded_background_featured_content' );
+        $text_color_featured       = of_get_option( 'bestreloaded_text_color_featured_content' );
+        $link_color_featured       = of_get_option( 'bestreloaded_link_color_featured_content' );
+        $link_color_hover_featured = of_get_option( 'bestreloaded_link_hover_color_featured_content' ); ?>
 
             <style type="text/css">
 
-			<?php
-			if ( $text_color_featured ) { ?>
-				.featured-bar { color: <?php echo esc_html( $text_color_featured ); ?>; }
-			<?php } ?>
-			<?php if ( $link_color_featured ) { ?>
-				.featured-bar a { color: <?php echo esc_html( $link_color_featured ); ?>; }
-			<?php } ?>
-			<?php if ( $link_color_hover_featured ) { ?>
-				.featured-bar a:hover { color: <?php echo esc_html( $link_color_hover_featured ); ?>; }
-			<?php } ?>
-			<?php if ( $link_color_main ) { ?>
-				a, .comment-notes .required, .comment-form-author .required,
-				.comment-form-email .required, .comment-form-url .required, .comment-form-comment .required { color: <?php echo esc_html( $link_color_main ); ?>; }
-				footer .container.container-main.footer-top { border-top-color: <?php echo esc_html( $link_color_main ); ?>; }
-				.flex-direction-nav li a, .flex-control-nav li a.active,
-				.flex-control-nav li a:hover, .flex-control-nav li a:focus,
-				.sub-menu li > a:hover, .sub-menu .active > a, .sub-menu .active > a:hover { background-color: <?php echo esc_html( $link_color_main ); ?>; }
-				.wp-caption a:hover img { border-color: <?php echo esc_html( $link_color_main ); ?>; }
-			<?php } ?>
-			<?php if ( $link_color_hover_main ) { ?>
-				a:hover { color: <?php echo esc_html( $link_color_hover_main ); ?>; }
-			<?php } ?>
-			<?php if ( $link_color_footer ) { ?>
-				footer .container.container-main a { color: <?php echo esc_html( $link_color_footer ); ?>; }
-			<?php } ?>
-			<?php if ( $link_color_hover_footer ) { ?>
-				footer .container.container-main a:hover { color: <?php echo esc_html( $link_color_hover_footer );  ?>; }
-			<?php } ?>
+                <?php if ( $background ) {
+                          if ( $background['color'] && $background['image'] ) { ?>
+                              body { background-color: <?php echo $background['color']; ?>;
+                                     background-image: url(<?php echo $background['image']; ?>);
+                                     background-repeat: <?php echo $background['repeat']; ?>;
+                                     background-position: <?php echo $background['position']; ?>;
+                                     background-attachment: <?php echo $background['attachment']; ?>; } <?php
+                          } elseif ( $background['image'] ) { ?>
+                              body { background-image: url(<?php echo $background['image']; ?>);
+                                     background-repeat: <?php echo $background['repeat']; ?>;
+                                     background-position: <?php echo $background['position']; ?>;
+                                     background-attachment: <?php echo $background['attachment']; ?>; } <?php
+                          } else { ?>
+                              body { background-color: <?php echo $background['color']; ?>; } <?php
+                          }
+                      } else {
+                          echo 'no entry';
+                      };
+                ?>
+                <?php if ( $background_featured ) {
+                          if ( $background_featured['color'] && $background_featured['image'] ) { ?>
+                              .featured-bar { background-color: <?php echo $background_featured['color']; ?>;
+                                              background-image: url(<?php echo $background_featured['image']; ?>);
+                                              background-repeat: <?php echo $background_featured['repeat']; ?>;
+                                              background-position: <?php echo $background_featured['position']; ?>;
+                                              background-attachment: <?php echo $background_featured['attachment']; ?>; } <?php
+                          } elseif ( $background_featured['image'] ) { ?>
+                              .featured-bar { background-image: url(<?php echo $background_featured['image']; ?>);
+                                              background-repeat: <?php echo $background_featured['repeat']; ?>;
+                                              background-position: <?php echo $background_featured['position']; ?>;
+                                              background-attachment: <?php echo $background_featured['attachment']; ?>; } <?php
+                          } else { ?>
+                              .featured-bar { background-color: <?php echo $background_featured['color']; ?>; } <?php
+                          }
+                      } else {
+                          echo 'no entry';
+                      };
+                ?>
+                <?php if ( $text_color_featured ) : ?>
+                    .featured-bar { color: <?php echo $text_color_featured ?>; }
+                <?php endif; ?>
+                <?php if ( $link_color_featured ) : ?>
+                    .featured-bar a { color: <?php echo $link_color_featured ?>; }
+                <?php endif; ?>
+                <?php if ( $link_color_hover_featured ) : ?>
+                    .featured-bar a:hover { color: <?php echo $link_color_hover_featured ?>; }
+                <?php endif; ?>
+                <?php if ( $link_color_main ) : ?>
+                    a, .comment-notes .required, .comment-form-author .required,
+                    .comment-form-email .required, .comment-form-url .required, .comment-form-comment .required { color: <?php echo $link_color_main; ?>; }
+                    footer .container.container-main.footer-top { border-top-color: <?php echo $link_color_main; ?>; }
+                    .flex-direction-nav li a, .flex-control-nav li a.active,
+                    .flex-control-nav li a:hover, .flex-control-nav li a:focus,
+                    .sub-menu li > a:hover, .sub-menu .active > a, .sub-menu .active > a:hover { background-color: <?php echo $link_color_main; ?>; }
+                    .wp-caption a:hover img { border-color: <?php echo $link_color_main; ?>; }
+                <?php endif; ?>
+                <?php if ( $link_color_hover_main ) : ?>
+                    a:hover { color: <?php echo $link_color_hover_main; ?>; }
+                <?php endif; ?>
+                <?php if ( $link_color_footer ) : ?>
+                    footer .container.container-main a { color: <?php echo $link_color_footer; ?>; }
+                <?php endif; ?>
+                <?php if ( $link_color_hover_footer ) : ?>
+                    footer .container.container-main a:hover { color: <?php echo $link_color_hover_footer; ?>; }
+                <?php endif; ?>
 
             </style>
 
@@ -179,40 +188,29 @@ if ( !function_exists( 'best_reloaded_theme_options' ) ) {
  * Remove rel attribute from the category list
  * ============================================================= */
 
-add_filter('wp_list_categories', 'best_reloaded_remove_category_list_rel');
-add_filter('the_category', 'best_reloaded_remove_category_list_rel');
-if ( !function_exists( 'best_reloaded_remove_category_list_rel' ) ) {
-    function best_reloaded_remove_category_list_rel($output) {
+add_filter('wp_list_categories', 'pwwp_remove_category_list_rel');
+add_filter('the_category', 'pwwp_remove_category_list_rel');
+if ( !function_exists( 'pwwp_remove_category_list_rel' ) ) {
+    function pwwp_remove_category_list_rel($output) {
         $output = str_replace(' rel="category tag"', '', $output);
         return $output;
     }
 }
 
 /* =============================================================
- * Custom excerpt length and more etxt
+ * Custom excerpt length and styling
  * ============================================================= */
 
-add_filter( 'excerpt_length', 'best_reloaded_custom_excerpt_length', 999 );
-if ( !function_exists( 'best_reloaded_custom_excerpt_length' ) ) {
-    function best_reloaded_custom_excerpt_length($length) {
-		if( is_admin() ) {
-			return $length;
-		}
+add_filter( 'excerpt_length', 'pwwp_custom_excerpt_length', 999 );
+if ( !function_exists( 'pwwp_custom_excerpt_length' ) ) {
+    function pwwp_custom_excerpt_length() {
         return 40;
     }
 }
-/**
- * @link: https://github.com/WordPress/twentyseventeen/blob/master/functions.php#L222
- */
-add_filter('excerpt_more', 'best_reloaded_new_excerpt_more');
-if ( !function_exists( 'best_reloaded_new_excerpt_more' ) ) {
-    function best_reloaded_new_excerpt_more( $more ) {
-		$link = sprintf( '<p class="link-more"><a href="%1$s" class="more-link">%2$s</a></p>',
-			esc_url( get_permalink( get_the_ID() ) ),
-			/* translators: %s: Name of current post */
-			sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'best-reloaded' ), get_the_title( get_the_ID() ) )
-		);
-		return ' &hellip; ' . $link;
+add_filter('excerpt_more', 'pwwp_new_excerpt_more');
+if ( !function_exists( 'pwwp_new_excerpt_more' ) ) {
+    function pwwp_new_excerpt_more( $more ) {
+        return ' ...';
     }
 }
 
@@ -220,12 +218,36 @@ if ( !function_exists( 'best_reloaded_new_excerpt_more' ) ) {
  * Tweak tagcloud settings
  * ============================================================= */
 
-add_filter( 'widget_tag_cloud_args', 'best_reloaded_custom_tag_cloud_widget' );
-if ( !function_exists( 'best_reloaded_custom_tag_cloud_widget' ) ) {
-    function best_reloaded_custom_tag_cloud_widget( $args ) {
+add_filter( 'widget_tag_cloud_args', 'pwwp_custom_tag_cloud_widget' );
+if ( !function_exists( 'pwwp_custom_tag_cloud_widget' ) ) {
+    function pwwp_custom_tag_cloud_widget( $args ) {
         $args['largest'] = 18;
         $args['smallest'] = 14;
         $args['unit'] = 'px';
         return $args;
     }
 }
+
+/* =============================================================
+ * Pull in latest tweet and date from Twitter
+ * ============================================================= */
+
+if ( !function_exists( 'wp_echo_twitter' ) ) {
+    function wp_echo_twitter($username) {
+        include_once( ABSPATH . WPINC . '/class-simplepie.php' );
+
+        // Fetch feed, set cache locaiton, and initialize function
+        $feed = new SimplePie();
+        $feed->set_feed_url("http://search.twitter.com/search.atom?q=from:$username");
+        $feed->set_cache_location( ABSPATH . WPINC );
+        $feed->init();
+        $feed->handle_content_type();
+
+        // Output tweet
+        foreach ($feed->get_items(0, 1) as $item):
+            echo '<p class="hero-p" style="margin-bottom: 9px;">"' . $item->get_description() . '"</p>' . '<span><a href="' . $item->get_permalink() . '">' . $item->get_date('D, M j, Y') . '</a></span>';
+        endforeach;
+    }
+}
+
+?>

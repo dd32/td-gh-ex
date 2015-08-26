@@ -3,12 +3,13 @@
   * searchform.php
   * This is the markup that is used whenever the default wordpress seach is called front-end
   *
+  * @package WordPress
   * @subpackage Best_Reloaded
   * @since Best Reloaded 0.1
   */
 ?>
-<form role="search" method="get" class="form-inline my2 my-lg-0" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-    <label class="visually-hidden sr-only" for="s"><?php esc_html_e( 'Search:', 'best-reloaded' ); ?></label>
-    <input type="text" class="form-control mr-sm-2" placeholder="<?php esc_attr_e('type and hit "enter" to search', 'best-reloaded'); ?>" name="s" id="s" />
-    <button type="submit" class="btn btn-outline-success my-2 my-sm-0" id="searchsubmit" value="<?php esc_attr_e( 'Search', 'best-reloaded' ); ?>" /><?php esc_html_e( 'Search', 'best-reloaded' ); ?></button>
+<form role="search" method="get" class="navbar-search" action="<?php echo home_url( '/' ); ?>">
+    <label class="visually-hidden" for="s">Search:</label>
+    <input type="text" class="search-query" placeholder="type and hit &#x0022;enter&#x0022; to search" name="s" id="s" />
+    <input type="submit" class="hidden" id="searchsubmit" value="Search" />
 </form>

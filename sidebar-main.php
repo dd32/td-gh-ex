@@ -4,6 +4,7 @@
   * Displays the global sidebar that appears on posts and
   * pages throughout the theme
   *
+  * @package WordPress
   * @subpackage Best_Reloaded
   * @since Best Reloaded 0.1
   */
