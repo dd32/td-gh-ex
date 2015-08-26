@@ -3,7 +3,7 @@
  * Anarcho Notepad functions and definitions.
  *
  * @package	Anarcho Notepad
- * @since	2.22
+ * @since	2.24
  * @author	Arthur "Berserkr" Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013-2015, Arthur Gareginyan
  * @link      	http://mycyberuniverse.com/anarcho-notepad.html
@@ -171,15 +171,15 @@ add_action( 'wp_enqueue_scripts', 'anarcho_include_smoothscroll_script' );
 
 // Display block "About the Author".
 function anarcho_author_bio() {
-    if(get_theme_mod('disable_about_bio') == '0') {
+    if(get_theme_mod('disable_about_bio') !== '1') {
 	if ( ( get_the_author_meta( 'description' ) != '' ) ) echo esc_html(get_template_part( 'author-bio' ));
     }
 }
 
 // Red data ribbons.
 function anarcho_ribbons() {
-    if(get_theme_mod('disable_ribbons') == '0') {
-      if(get_theme_mod('enable_year_ribbons') == '0') {
+    if(get_theme_mod('disable_ribbons') !== '1') {
+      if(get_theme_mod('enable_year_ribbons') !== '1') {
         if ( is_home() || is_category() || is_archive() || is_search() ) {
            printf( '<a href="%1$s">',
                 esc_url( get_permalink() )
@@ -463,7 +463,7 @@ add_filter( 'wp_title', 'anarcho_wp_title', 10, 2 );
 // Copyright
 /* Enable info about copyright. */
 function anarcho_copyright() {
- if(get_theme_mod('disable_anarcho_copy') == '0') {
+ if(get_theme_mod('disable_anarcho_copy') !== '1') {
 	echo '<a href="http://mycyberuniverse.com/author.html">Theme "Anarcho Notepad" designed and engineered by Arthur "Berserkr" Gareginyan.</a><br/>';
  }
 }
@@ -491,7 +491,7 @@ add_action ('wp_footer','anarcho_mysql_queries', 999);
 // Top Button
 /* Enable Top Button. */
 function anarcho_top_button() {
- if(get_theme_mod('disable_top_button') == '0') {
+ if(get_theme_mod('disable_top_button') !== '1') {
 	echo '<a id="back-top" href="#top"><i class="fa fa-arrow-up fa-lg"></i></a>';
  }
 }
@@ -522,7 +522,7 @@ function anarcho_entry_meta() {
 			}
 			edit_post_link(__('&#9998; EDIT', 'anarcho-notepad' ), ' | ');
 		} elseif ( is_single() ) {
-			_e('Posted ', 'anarcho-notepad'); the_date(get_option('m.d.Y')); _e(' by ', 'anarcho-notepad'); the_author(); _e(' in category ', 'anarcho-notepad'); the_category(', '); edit_post_link(__('&#9998; EDIT', 'anarcho-notepad' ), ' | ');
+			_e('Posted ', 'anarcho-notepad'); the_date(get_option('m.d.Y')); _e(' by ', 'anarcho-notepad'); the_author(); _e(' in category "', 'anarcho-notepad'); the_category('", "'); edit_post_link(__('&#9998; EDIT', 'anarcho-notepad' ), '" | ');
 			?>
 			   <br/>
 			<?php

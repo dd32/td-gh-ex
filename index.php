@@ -27,7 +27,7 @@
 
       <h1><?php the_title(); ?></h1>
       <div class="post-inner">
-        
+
 		<?php the_post_thumbnail(); ?>
 
 		<?php the_content( __( 'Continue reading', 'anarcho-notepad' ) ); ?>

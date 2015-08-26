@@ -6,7 +6,7 @@
 
 	Author URI: http://mycyberuniverse.com/author.html
 
-	Copyright (C) 2013-2015 Arthur (Berserkr) Gareginyan
+	Copyright (C) 2013-2015 Arthur “Berserkr” Gareginyan
 
 	License: GNU General Public License, version 3 (GPLv3)
 
@@ -14,7 +14,7 @@
 
 == About Anarcho Notepad ==
 
-	Inspired by the idea of anarchy, I designed this theme for your personal blogs and diaries. This theme is perfect for writers and artists. Anarcho Notepad can be easily customized. It utilizes latest HTML 5, CSS3 and wordpress native functions for creating the awesomeness that looks good on every browser. I’m constantly adding new features to this theme to allow you to personalize it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it for you. I would like to thank you for your support, visit the Theme URI for the update history, and Enjoy!
+	Inspired by the idea of anarchy, I designed this theme for your personal blogs and diaries. This theme is perfect for writers and artists. "Anarcho Notepad" can be easily customised and already translated to different languages. It utilises latest HTML-5, CSS-3, PHP and WordPress native functions for creating the awesomeness that looks good on every browser. I’m constantly adding new features to this theme to allow you to personalise it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it. I'm glad to present you the Most Anarchist WP-Theme Of All! Enjoy!
 
 == Copyrights for Resources used in this theme.
 
@@ -43,7 +43,7 @@ Everything else used in this theme has been created by me, especially for "Anarc
 		3. From the Available Themes section, click on the Theme title (or Theme screenshot) for Anarcho Notepad to activate.
 		4. A preview of the Theme will be shown.
 		5. To activate the Theme click the Activate "Anarcho Notepad" link in the top right.
-		6. Then you need to go to the Appearance > Customize for further customization of your theme.
+		6. Then you need to go to the Appearance > Customize for further customisation of your theme.
 
 	Your selection should immediately become active.
 
@@ -51,11 +51,11 @@ Everything else used in this theme has been created by me, especially for "Anarc
 
 == Customizing Anarcho Notepad ==
 
-	To customize Anarcho Notepad using the built in options, Anarcho Notepad Should already be active:
+	To customise Anarcho Notepad using the built in options, Anarcho Notepad Should already be active:
 		1. Log in to the WordPress Administration Panel.
 		2. Select the Appearance panel, then Theme Options.
 		3. A page explaining the options will be displayed.
-		4. Click save to finilize your selections.
+		4. Click save to finalise your selections.
 
 	Your selection should immediately become active.
 
@@ -82,7 +82,7 @@ Everything else used in this theme has been created by me, especially for "Anarc
     2.2   (2014.1.5)   - added : more widget areas
     2.3   (2014.1.9)   - added : support for php versions below 5.3
                          fixed : many more minor fixes and changes. 
-    2.4   (2014.1.19)  - added : a lot more options for customization.
+    2.4   (2014.1.19)  - added : a lot more options for customisation.
                          added : ability to turn off unnecessary elements.
                          added : template page without date.
                          fixed : position of the title.
@@ -101,10 +101,10 @@ Everything else used in this theme has been created by me, especially for "Anarc
     2.9   (2014.3.29)  - translation : afrikaans.
     2.10  (2014.4.3)   - translation : ukraine.
     2.11  (2014.5.20)  - added : the ability to add year in to the red data ribbons.
-    2.12  (2014.6.18)  - added : the ability to diasable the block about author.
+    2.12  (2014.6.18)  - added : the ability to disable the block about author.
                          fixed : many more minor fixes and changes.
-    2.13  (2014.6.24)  - fixed : the fon image optimized for web.
-                         fixed : optimized images with text.
+    2.13  (2014.6.24)  - fixed : the background image optimised for web.
+                         fixed : optimised images with text.
                          fixed : many more minor fixes and changes.
     2.14  (2014.7.28)  - fixed : footer sticking to the bottom of the site.
                          fixed : footer modifications.
@@ -112,7 +112,7 @@ Everything else used in this theme has been created by me, especially for "Anarc
     2.14.1 (2014.7.28) - removed : option in customizer for header/footer scripts.
     2.15   (2014.7.30) - translation : slovenčina.
     2.16   (2014.8.29) - fixed : image align.
-                         fixed : optimized decoration links.
+                         fixed : optimised decoration links.
                          fixed : class aligncenter.
                          fixed : many more minor fixes and changes.
     2.17   (2014.9.12) - added : widget areas in the footer.
@@ -132,6 +132,10 @@ Everything else used in this theme has been created by me, especially for "Anarc
                          fixed : many more minor fixes and changes.
     2.23  (2015.08.11) - translation : estonian.
                          added : .pot file for translations.
+    2.24  (2015.08.26) - translation : catalan.
+                         fixed : some options in the customizer was not worked.
+                         fixed : many more minor fixes and changes.
+
 
 == Contact & Issues for Anarcho Notepad ==
 

@@ -2,20 +2,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Anarcho Notepad v2.22\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: 2015-08-11 09:07+0300\n"
+"POT-Creation-Date: 2015-08-26 13:15+0300\n"
+"PO-Revision-Date: 2015-08-26 13:16+0300\n"
 "Last-Translator: taf130 <ttiitsmaa@gmail.com>\n"
 "Language-Team: \n"
+"Language: et_EE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Poedit 1.8\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
 "X-Poedit-Basepath: ../\n"
 "X-Textdomain-Support: yes\n"
-"Language: et_EE\n"
 "X-Poedit-SearchPath-0: .\n"
 
 # @ anarcho-notepad
@@ -25,17 +26,26 @@ msgstr "Lehte ei leitud"
 
 # @ anarcho-notepad
 #: 404.php:22
-msgid "We're very sorry, but the page you requested has not been found! It may have been moved or deleted."
-msgstr "Vabandame, otsitavat lehte ei leitud! Leht on ümber tõstetud või kustutatud."
+msgid ""
+"We're very sorry, but the page you requested has not been found! It may have "
+"been moved or deleted."
+msgstr ""
+"Vabandame, otsitavat lehte ei leitud! Leht on ümber tõstetud või kustutatud."
 
 # @ anarcho-notepad
 #: 404.php:23
-msgid "I'm not blaming you, but have you checked your address bar? There might be a typo in the URL."
-msgstr "Me ei süüdista sind, kuid oled sa aadressi õigsuses kindel? Aadressis võib olla viga."
+msgid ""
+"I'm not blaming you, but have you checked your address bar? There might be a "
+"typo in the URL."
+msgstr ""
+"Me ei süüdista sind, kuid oled sa aadressi õigsuses kindel? Aadressis võib "
+"olla viga."
 
 # @ anarcho-notepad
 #: 404.php:24
-msgid "If there isn't, you could try searching my website for the content you were looking for:"
+msgid ""
+"If there isn't, you could try searching my website for the content you were "
+"looking for:"
 msgstr "Kui ei ole, siis vaata, kas leiad otsitava minu kodulehelt:"
 
 # @ anarcho-notepad
@@ -60,243 +70,242 @@ msgid "Comments are closed."
 msgstr "Kommentaarid on keelatud."
 
 # @ anarcho-notepad
-#: functions.php:50
+#: functions.php:53
 msgid "Primary"
 msgstr "Esmane"
 
 # @ anarcho-notepad
-#: functions.php:78
+#: functions.php:81
 msgid "Sidebar Area 1"
 msgstr "Sidebar Area 1"
 
 # @ anarcho-notepad
-#: functions.php:80
+#: functions.php:83
 msgid "Widgets in this area will be shown below \"Pages\"."
 msgstr "Selle ala vidinaid kuvatakse all pool \"Lehed\"."
 
 # @ anarcho-notepad
-#: functions.php:87
+#: functions.php:90
 msgid "Sidebar Area 2"
 msgstr "Sidebar Area 2"
 
 # @ anarcho-notepad
-#: functions.php:89
+#: functions.php:92
 msgid "Widgets in this area will be shown below \"What is this place\"."
 msgstr "Selle ala vidinaid kuvatakse all pool  \"Mis koht see on\"."
 
 # @ anarcho-notepad
-#: functions.php:96
+#: functions.php:99
 msgid "Sidebar Area 3"
 msgstr "Sidebar Area 3"
 
 # @ anarcho-notepad
-#: functions.php:98
+#: functions.php:101
 msgid "Widgets in this area will be shown below \"Friends & Links\"."
 msgstr "Selle ala vidinaid kuvatakse all pool \"Sõbrad & Lingid\"."
 
 # @ anarcho-notepad
-#: functions.php:105
+#: functions.php:108
 msgid "Sidebar Area 4"
 msgstr "Sidebar Area 4"
 
 # @ anarcho-notepad
-#: functions.php:107
+#: functions.php:110
 msgid "Widgets in this area will be shown below \"Recent Posts\"."
 msgstr "Selle ala vidinaid kuvatakse all pool \"Hiljutised Postitused\"."
 
 # @ anarcho-notepad
-#: functions.php:119
+#: functions.php:122
 msgid "Footer Area 1"
 msgstr "Footer Area 1"
 
 # @ anarcho-notepad
-#: functions.php:121
+#: functions.php:124
 msgid "Widgets in this area will be shown left."
 msgstr "Selle ala vidinaid kuvatakse vasakul."
 
 # @ anarcho-notepad
-#: functions.php:128
+#: functions.php:131
 msgid "Footer Area 2"
 msgstr "Footer Area 2"
 
 # @ anarcho-notepad
-#: functions.php:130
+#: functions.php:133
 msgid "Widgets in this area will be shown center."
 msgstr "Selle ala vidinaid kuvatakse keskel."
 
 # @ anarcho-notepad
-#: functions.php:137
+#: functions.php:140
 msgid "Footer Area 3"
 msgstr "Footer Area 3"
 
 # @ anarcho-notepad
-#: functions.php:139
+#: functions.php:142
 msgid "Widgets in this area will be shown right."
 msgstr "Selle ala vidinaid kuvatakse paremal."
 
 # @ anarcho-notepad
-#: functions.php:231
+#: functions.php:234
 msgid "Archive by category "
 msgstr "Arhiveeri kategooria järgi "
 
 # @ anarcho-notepad
-#: functions.php:235
+#: functions.php:238
 msgid "Archive by date "
 msgstr "Arhiveeri kuupäeva järgi "
 
 # @ anarcho-notepad
-#: functions.php:238
+#: functions.php:241
 msgid "Archive by month "
 msgstr "Arhiveeri kuu järgi "
 
 # @ anarcho-notepad
-#: functions.php:240
+#: functions.php:243
 msgid "Archive by year "
 msgstr "Arhiveeri aasta järgi "
 
 # @ anarcho-notepad
-#: functions.php:250 functions.php:278
+#: functions.php:253 functions.php:281
 msgid "You currently reading "
 msgstr "Praegu loed "
 
 # @ anarcho-notepad
-#: functions.php:280
+#: functions.php:283
 msgid "Search results for "
 msgstr "Vasted otsingule "
 
 # @ anarcho-notepad
-#: functions.php:282
+#: functions.php:285
 msgid "Archive by tag "
 msgstr "Arhiveeri sildi järgi "
 
 # @ anarcho-notepad
-#: functions.php:286
+#: functions.php:289
 msgid "Articles posted by "
 msgstr "Postituse avaldas "
 
 # @ anarcho-notepad
-#: functions.php:288
+#: functions.php:291
 msgid "You got it "
 msgstr "Õigesti tehtud "
 
 # @ anarcho-notepad
-#: functions.php:314
+#: functions.php:317
 msgid "Previous page"
 msgstr "Eelmine"
 
 # @ anarcho-notepad
-#: functions.php:315
+#: functions.php:318
 msgid "Next page"
 msgstr "Järgmine"
 
 # @ anarcho-notepad
-#: functions.php:317
+#: functions.php:320
 msgid "Page "
 msgstr "Leht "
 
 # @ anarcho-notepad
-#: functions.php:317
+#: functions.php:320
 msgid " of the "
 msgstr " sellest "
 
 # @ anarcho-notepad
-#: functions.php:329
+#: functions.php:332
 msgid "Posts navigation"
 msgstr "Postituste haldamine"
 
 # @ anarcho-notepad
-#: functions.php:360
+#: functions.php:363
 msgid "Post navigation"
 msgstr "Postituse haldamine"
 
 # @ anarcho-notepad
-#: functions.php:392
+#: functions.php:395
 msgid "Pingback:"
 msgstr ""
 
 # @ anarcho-notepad
-#: functions.php:392
+#: functions.php:395
 msgid "(Edit)"
 msgstr "(Muuda)"
 
 # @ anarcho-notepad
-#: functions.php:407
+#: functions.php:410
 msgid "(Post author) "
 msgstr "(Postituse autor) "
 
 # @ anarcho-notepad
-#: functions.php:418
+#: functions.php:421
 msgid "Your comment is awaiting moderation."
 msgstr "Teie kommentaar ootab modereerimist."
 
 # @ anarcho-notepad
-#: functions.php:423
+#: functions.php:426
 msgid "Edit"
 msgstr "Muuda"
 
 # @ anarcho-notepad
-#: functions.php:427
+#: functions.php:430
 msgid "Reply"
 msgstr "Vasta"
 
 # @ anarcho-notepad
-#: functions.php:454
+#: functions.php:457
 #, php-format
 msgid "Page %s"
 msgstr "Leht %s"
 
 # @ anarcho-notepad
-#: functions.php:476
+#: functions.php:479
 msgid " queries in "
 msgstr " päringuid "
 
 # @ anarcho-notepad
-#: functions.php:478
+#: functions.php:481
 msgid " seconds"
 msgstr " sekundis"
 
 # @ anarcho-notepad
-#: functions.php:481
+#: functions.php:484
 msgid " mb"
 msgstr " mb"
 
 # @ anarcho-notepad
-#: functions.php:503
+#: functions.php:506
 msgid "Not Found"
 msgstr "Ei Leitud"
 
 # @ anarcho-notepad
-#: functions.php:504
+#: functions.php:507
 msgid "Sorry, but you are looking for something that isn't here."
 msgstr "Vabdandust, aga sa otsid midagi, mida siin ei ole."
 
 # @ anarcho-notepad
-#: functions.php:518 functions.php:528 functions.php:530 sitemap.php:52
+#: functions.php:521 functions.php:531 functions.php:533 sitemap.php:52
 msgid "Category: "
 msgstr "Kategooria: "
 
 # @ anarcho-notepad
-#: functions.php:520 functions.php:522 functions.php:528 functions.php:530
+#: functions.php:523 functions.php:525 functions.php:531 functions.php:533
 msgid "&#9998; EDIT"
 msgstr "&#9998; Muuda"
 
 # @ anarcho-notepad
-#: functions.php:522
+#: functions.php:525
 msgid "Posted "
 msgstr "Avaldas "
 
 # @ anarcho-notepad
-#: functions.php:522
+#: functions.php:525
 msgid " by "
 msgstr ""
 
-# @ anarcho-notepad
-#: functions.php:522
-msgid " in category "
-msgstr " kategoorias "
+#: functions.php:525
+msgid " in category \""
+msgstr ""
 
 # @ anarcho-notepad
-#: functions.php:528 functions.php:530
+#: functions.php:531 functions.php:533
 msgid "LEAVE A COMMENT"
 msgstr "KOMMENTEERI"
 
@@ -399,6 +408,11 @@ msgstr "Kuva jaluses infot"
 #: inc/customizer.php:243
 msgid "Disable RSS icon in sidebar"
 msgstr "Lülita küljeribal olev RSS ikoon välja"
+
+# @ anarcho-notepad
+#: inc/customizer.php:265
+msgid "Numbers of recent posts in sidebar"
+msgstr ""
 
 # @ anarcho-notepad
 #: inc/customizer.php:275
@@ -505,15 +519,28 @@ msgstr "Sisaldab"
 msgid "Cover"
 msgstr "Katab"
 
-# @ anarcho-notepad
+#. Description of the plugin/theme
 #: inc/theme_info.php:29
-msgid "Inspired by the idea of Anarchy, I designed this theme for your personal blogs and diaries. \"Anarcho Notepad\" can be easily customized. It utilizes latest HTML 5, CSS3 and wordpress native functions for creating the awesomeness that looks good on every browser. I'm constantly adding new features to this theme to allow you to personalize it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it for you. I would like to thank you for your support, visit the Theme URI for the update history, and Enjoy!"
-msgstr "Lõin selle lehe blogide jaoks, mind inspireeris anarhism. \"Anarcho Notepad\" teemat on võimalik lihtsasti muudetav. Teema kasutab HTML 5 ja CSS3 platforme ning Wordpressis olevaid funktsioone, lisaks näeb hea välja igas veebilehitsejas. Lisan teemale jooksvalt funktsioone juurde, et oleks rohkem võimalusi lehe isikustamiseks. Kui sa soovid mingit uut funktsiooni või tahad lihtsalt mingeid muudatusi teha, siis võta minuga ühendust, aitan meeleldi. Tahan teid toetuse eest tänada, külasta minu kodulehte uuenduste ajaloo nägemiseks ja naudi!"
+msgid ""
+"Inspired by the idea of anarchy, I designed this theme for your personal "
+"blogs and diaries. This theme is perfect for writers and artists. \"Anarcho "
+"Notepad\" can be easily customised and already translated to different "
+"languages. It utilises latest HTML-5, CSS-3, PHP and WordPress native "
+"functions for creating the awesomeness that looks good on every browser. I’m "
+"constantly adding new features to this theme to allow you to personalise it "
+"to your own needs. If you want a new feature or just want to be able to "
+"change something just ask me and I would be happy to add it. I'm glad to "
+"present you the Most Anarchist WP-Theme Of All! Enjoy!"
+msgstr ""
 
 # @ anarcho-notepad
 #: inc/theme_info.php:33
-msgid "If you liked the theme \"Anarcho Notepad\", then I'll be glad if you consider donating:"
-msgstr "Kui sulle meeldis teema \"Anarcho Notepad\", siis ma oleksin õnnelik kui teeksid annetuse:"
+msgid ""
+"If you liked the theme \"Anarcho Notepad\", then I'll be glad if you "
+"consider donating:"
+msgstr ""
+"Kui sulle meeldis teema \"Anarcho Notepad\", siis ma oleksin õnnelik kui "
+"teeksid annetuse:"
 
 # @ anarcho-notepad
 #: inc/theme_info.php:36
@@ -522,8 +549,12 @@ msgstr "või kirjuta teema kohta tagassidet \"Anarcho Notepad\":"
 
 # @ anarcho-notepad
 #: inc/theme_info.php:40
-msgid "If you have any questions or suggestions for improving and adding new features, feel free to contact me at:"
-msgstr "Kui tekkib mingeid küsimusi või soovitusi teema arendamise ja uute funktsioonide lisamise kohta, siis võta minuga julgelt ühendust:"
+msgid ""
+"If you have any questions or suggestions for improving and adding new "
+"features, feel free to contact me at:"
+msgstr ""
+"Kui tekkib mingeid küsimusi või soovitusi teema arendamise ja uute "
+"funktsioonide lisamise kohta, siis võta minuga julgelt ühendust:"
 
 # @ anarcho-notepad
 #: inc/theme_info.php:42
@@ -531,32 +562,46 @@ msgid "or at:"
 msgstr "või:"
 
 # @ anarcho-notepad
-#: inc/theme_info.php:46
-msgid "Sorry for what I delete some functions from Customizer. I have to do it due to the rules of wordpress.org."
-msgstr "Vabandan, et pidin mõned funktsioonid eemaldama, need ei olnud wordpress.org reeglitega kooskõlas."
-
-# @ anarcho-notepad
-#: inc/theme_info.php:49
-msgid "Translation"
-msgstr "Tõlkimine"
+#: inc/theme_info.php:47
+msgid ""
+"Sorry for what I delete some functions from Customizer. I have to do it due "
+"to the rules of wordpress.org."
+msgstr ""
+"Vabandan, et pidin mõned funktsioonid eemaldama, need ei olnud wordpress.org "
+"reeglitega kooskõlas."
 
 # @ anarcho-notepad
 #: inc/theme_info.php:50
-msgid "The theme is in the process of translation into other languages of the world. If you have the desire then you can help me in translation to your native language."
-msgstr "Teema on tõlimisel igal poole üle maailma. Kui sul on tahtmist, siis võiksid aidata teemat enda emakeelde tõlkida."
+msgid "Translation"
+msgstr "Tõlkimine"
+
+#: inc/theme_info.php:51
+msgid ""
+"The theme is in the process of translation into other languages of the "
+"world. Already supports 11 languages! If you have the desire then you can "
+"help me in translation to your native language. Just send the translation "
+"files (*.po, *.mo) to me at the arthurgareginyan@gmail.com and I will "
+"include the translation within the one of the next theme update. Many of "
+"theme users would be delighted if you shared your translation with the "
+"community."
+msgstr ""
+
+#: inc/theme_info.php:54
+msgid ""
+"\"Anarcho-Notepad\" written on <strong>English<strong> and translated into:"
+msgstr ""
 
 # @ anarcho-notepad
-#: inc/theme_info.php:52
-msgid "\"Anarcho-Notepad\" written in English and translated into:"
-msgstr "\"Anarcho-Notepad\" kirjutatud ingilise keeles  ja tõlgitud keelde:"
+#: inc/theme_info.php:68
+msgid ""
+"Thanks to all who helped me translate \"Anarcho-Notepad\" into other "
+"languages!"
+msgstr ""
+"Tänan kõiki, kes on aidanud mul \"Anarcho-Notepad\" teemat teistesse "
+"keeltesse tõlkida!"
 
 # @ anarcho-notepad
-#: inc/theme_info.php:62
-msgid "Thanks to all who helped me translate \"Anarcho-Notepad\" into other languages!"
-msgstr "Tänan kõiki, kes on aidanud mul \"Anarcho-Notepad\" teemat teistesse keeltesse tõlkida!"
-
-# @ anarcho-notepad
-#: inc/theme_info.php:63
+#: inc/theme_info.php:69
 msgid "Thank you very much for your contribution!"
 msgstr "Tänan abi eest!"
 
@@ -576,22 +621,22 @@ msgid "Leave a comment"
 msgstr "Kommenteeri"
 
 # @ anarcho-notepad
-#: inc/theme_info.php:86
+#: inc/theme_info.php:87
 msgid "Follow me :"
 msgstr "Ole mu tegevusega kursis :"
 
 # @ anarcho-notepad
-#: inc/theme_info.php:110 inc/theme_info.php:111
+#: inc/theme_info.php:111 inc/theme_info.php:112
 msgid "Theme Info"
 msgstr "Teema Info"
 
 # @ anarcho-notepad
-#: inc/theme_info.php:126
+#: inc/theme_info.php:127
 msgid "Help"
 msgstr "Abi"
 
 # @ anarcho-notepad
-#: inc/theme_info.php:129
+#: inc/theme_info.php:130
 msgid "Need help with Anarcho-Notepad? Click here!"
 msgstr "Vajad Anarcho-Notepad teema kasutamisel abi? Vajuta siia!"
 
@@ -625,7 +670,56 @@ msgstr "Postitused:"
 msgid "Archives:"
 msgstr "Arhiivid:"
 
-# @ anarcho-notepad
-#: inc/customizer.php:265
-msgid "Numbers of recent posts in sidebar"
+#. Theme Name of the plugin/theme
+msgid "Anarcho Notepad"
 msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://mycyberuniverse.com/anarcho-notepad.html"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Arthur \"Berserkr\" Gareginyan"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://mycyberuniverse.com/author.html"
+msgstr ""
+
+# @ anarcho-notepad
+#~ msgid " in category "
+#~ msgstr " kategoorias "
+
+# @ anarcho-notepad
+#~ msgid ""
+#~ "Inspired by the idea of Anarchy, I designed this theme for your personal "
+#~ "blogs and diaries. \"Anarcho Notepad\" can be easily customized. It "
+#~ "utilizes latest HTML 5, CSS3 and wordpress native functions for creating "
+#~ "the awesomeness that looks good on every browser. I'm constantly adding "
+#~ "new features to this theme to allow you to personalize it to your own "
+#~ "needs. If you want a new feature or just want to be able to change "
+#~ "something just ask me and I would be happy to add it for you. I would "
+#~ "like to thank you for your support, visit the Theme URI for the update "
+#~ "history, and Enjoy!"
+#~ msgstr ""
+#~ "Lõin selle lehe blogide jaoks, mind inspireeris anarhism. \"Anarcho "
+#~ "Notepad\" teemat on võimalik lihtsasti muudetav. Teema kasutab HTML 5 ja "
+#~ "CSS3 platforme ning Wordpressis olevaid funktsioone, lisaks näeb hea "
+#~ "välja igas veebilehitsejas. Lisan teemale jooksvalt funktsioone juurde, "
+#~ "et oleks rohkem võimalusi lehe isikustamiseks. Kui sa soovid mingit uut "
+#~ "funktsiooni või tahad lihtsalt mingeid muudatusi teha, siis võta minuga "
+#~ "ühendust, aitan meeleldi. Tahan teid toetuse eest tänada, külasta minu "
+#~ "kodulehte uuenduste ajaloo nägemiseks ja naudi!"
+
+# @ anarcho-notepad
+#~ msgid ""
+#~ "The theme is in the process of translation into other languages of the "
+#~ "world. If you have the desire then you can help me in translation to your "
+#~ "native language."
+#~ msgstr ""
+#~ "Teema on tõlimisel igal poole üle maailma. Kui sul on tahtmist, siis "
+#~ "võiksid aidata teemat enda emakeelde tõlkida."
+
+# @ anarcho-notepad
+#~ msgid "\"Anarcho-Notepad\" written in English and translated into:"
+#~ msgstr "\"Anarcho-Notepad\" kirjutatud ingilise keeles  ja tõlgitud keelde:"

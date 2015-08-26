@@ -3,7 +3,7 @@
  * The template for displaying all single posts.
  *
  * @package	Anarcho Notepad
- * @since	2.22
+ * @since	2.24
  * @author	Arthur "Berserkr" Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013-2015, Arthur Gareginyan
  * @link      	http://mycyberuniverse.com/anarcho-notepad.html
@@ -39,6 +39,7 @@
       <div class="after-posts"><?php echo get_theme_mod('scripts_after_posts'); ?></div>
       <br/>
       <p class="tagsandcopy"><?php the_tags(); ?>
+      <br/>
       <br/>
       <?php echo esc_html(get_theme_mod('copyright_post')); ?></p>
 

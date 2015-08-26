@@ -3,7 +3,7 @@
  * The sidebar containing the secondary widget area, displays on posts and pages.
  *
  * @package	Anarcho Notepad
- * @since	2.22
+ * @since	2.24
  * @author	Arthur "Berserkr" Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013-2015, Arthur Gareginyan
  * @link      	http://mycyberuniverse.com/anarcho-notepad.html
@@ -14,7 +14,7 @@
 <aside id="sidebar" role="complementary">
 
 <!--FOLLOW-->
-<?php if(get_theme_mod('disable_rss_icon') == '0') {  ?>
+<?php if(get_theme_mod('disable_rss_icon') !== '1') {  ?>
   <div class="follow">
      <a href="http://www.specificfeeds.com/follow" target="_blank" rel="nofollow" >
         <img src="<?php echo get_template_directory_uri(); ?>/images/follow.png" alt="RSS" />
@@ -33,7 +33,7 @@
 <?php dynamic_sidebar( 'sidebar-1' ); ?>
 
 <!--ABOUT BOX-->
-<?php if(get_theme_mod('disable_about_box') == '0') {  ?>
+<?php if(get_theme_mod('disable_about_box') !== '1') {  ?>
 <div class="about-box">
   <p>
     <?php echo sanitize_text_field(get_theme_mod('about_box')); ?>
@@ -45,7 +45,7 @@
 <?php dynamic_sidebar( 'sidebar-2' ); ?>
 
 <!--LINKS BOX-->
-<?php if(get_theme_mod('disable_links_box') == '0') {  ?>
+<?php if(get_theme_mod('disable_links_box') !== '1') {  ?>
 <div class="links-box">
   <p>
     <ul>
@@ -59,7 +59,7 @@
 <?php dynamic_sidebar( 'sidebar-3' ); ?>
 
 <!--RECENT POSTS-->
-<?php if(get_theme_mod('disable_recent_sticker') == '0') {  ?>
+<?php if(get_theme_mod('disable_recent_sticker') !== '1') {  ?>
 <div class="recent-posts-upper"></div>
  <nav class="recent-posts">
     <?php $num_recent_post = get_theme_mod('num_recent_post'); ?>

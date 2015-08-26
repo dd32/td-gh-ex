@@ -3,7 +3,7 @@
  * Theme Information Page
  *
  * @package	Anarcho Notepad
- * @since	2.21
+ * @since	2.24
  * @author	Arthur "Berserkr" Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013-2015, Arthur Gareginyan
  * @link      	http://mycyberuniverse.com/anarcho-notepad.html
@@ -24,83 +24,78 @@ function anarcho_theme_options_do_page() { ?>
 
       <div class="content">
 
-      <h3>"Anarcho Notepad"</h3>
-      <h4>by Arthur "Berserkr" Gareginyan</h4>
-	<p><?php _e('Inspired by the idea of Anarchy, I designed this theme for your personal blogs and diaries. "Anarcho Notepad" can be easily customized. It utilizes latest HTML 5, CSS3 and wordpress native functions for creating the awesomeness that looks good on every browser. I\'m constantly adding new features to this theme to allow you to personalize it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it for you. I would like to thank you for your support, visit the Theme URI for the update history, and Enjoy!', 'anarcho-notepad');?></p>
-	</br>
-
-	<p>
-	<?php _e('If you liked the theme "Anarcho Notepad", then I\'ll be glad if you consider donating:', 'anarcho-notepad'); ?>
-	<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2EBT6E8BQ5RRQ" target="_blank" rel="nofollow"><img class="tc-donate" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" alt="Make a donation for Anarcho-Notepad"></a>
-	<br/>
-	<?php _e('or if you leave feedback about the "Anarcho Notepad":', 'anarcho-notepad'); ?>
-	<a class="button" href="http://wordpress.org/support/view/theme-reviews/anarcho-notepad" target="_blank"> Leave Feedback </a>
-	<br/><br/>
-
-	<?php _e('If you have any questions or suggestions for improving and adding new features, feel free to contact me at:', 'anarcho-notepad'); ?>
-	<a class="button" href="http://wordpress.org/support/theme/anarcho-notepad"> Support </a>
-	<?php _e('or at:', 'anarcho-notepad'); ?>
-        <a class="button" href="http://mycyberuniverse.com/anarcho-notepad.html"> My Website </a>
-
-	</br></br>
-	<?php _e('Sorry for what I delete some functions from Customizer. I have to do it due to the rules of wordpress.org.', 'anarcho-notepad'); ?>
-	</p>
-
-	<h4><?php _e('Translation', 'anarcho-notepad'); ?></h4>
-	<p><b><em><?php _e('The theme is in the process of translation into other languages of the world. If you have the desire then you can help me in translation to your native language.', 'anarcho-notepad'); ?></em></b></p>
+        <h3>"Anarcho Notepad"</h3>
+        <h4><a class="button" title="Author" target="_blank" href="http://mycyberuniverse.com/author.html">by Arthur "Berserkr" Gareginyan</a></h4>
         <p>
-	   <?php _e('"Anarcho-Notepad" written in English and translated into:', 'anarcho-notepad'); ?>
-	   <ul>
-	     <li><strong>Русский</strong> (translated by <strong>Arthur Gareginyan</strong>)</li>
-             <li><strong>Українська</strong> (translated by <strong>Svetlana Drotyanko</strong>)</li>
-             <li><strong>Slovenčina</strong> (translated by <strong>Martin Petrus</strong>)</li>
-             <li><strong>Afrikaans</strong> (translated by <strong>MadriVictor</strong>)</li>
-             <li><strong>Español</strong> (translated by <strong>Ivan Ratinoff</strong>)</li>
-             <li><strong>Polski</strong> (translated by <strong>Krzysztof Goral</strong>)</li>
-             <li><strong>German</strong> (translated by <strong>Alexander v. Falkenhausen</strong>)</li>
-             <li><strong>Estonian</strong> (translated by <strong>Taavi Tiitsmaa</strong>)</li>
-             <li><strong>Catalan</strong> (translated by <strong>Néstor Malet</strong>) – Coming soon!</li>
-             <li><strong>Danish</strong> (translated by <strong>Chano Klinck Andersen</strong>) – Coming soon!</li>
-           </ul>
-	   <em><b><?php _e('Thanks to all who helped me translate "Anarcho-Notepad" into other languages!', 'anarcho-notepad'); ?></b></em>
-	   <em><b><?php _e('Thank you very much for your contribution!', 'anarcho-notepad'); ?></b></em>
-	<p>
-	   You can translate this theme and send the translation file to me at the arthurgareginyan@gmail.com and I will include the translation within the one of the next theme update. Many of theme users would be delighted if you shared your translation with the community.
-	</p>
+            <?php _e('Inspired by the idea of anarchy, I designed this theme for your personal blogs and diaries. This theme is perfect for writers and artists. "Anarcho Notepad" can be easily customised and already translated to different languages. It utilises latest HTML-5, CSS-3, PHP and WordPress native functions for creating the awesomeness that looks good on every browser. I’m constantly adding new features to this theme to allow you to personalise it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it. I\'m glad to present you the Most Anarchist WP-Theme Of All! Enjoy!', 'anarcho-notepad');?>
+        </p>
 
-	</p>
-      </div><!--<div class="content">-->
+        <p>
+            <?php _e('If you have any questions or suggestions for improving and adding new features, feel free to contact me at:', 'anarcho-notepad'); ?>
+            <a class="button" href="http://mycyberuniverse.com/anarcho-notepad.html"> My Website </a>
+            </br>
+            </br>
+            <?php _e('Sorry for what I delete some functions from Customizer. I have to do it due to the rules of wordpress.org.', 'anarcho-notepad'); ?>
+        </p>
 
-      <aside id="sidebar">
-            <div class="donate">
-              <h3><?php _e('Please consider making a donation', 'anarcho-notepad');?></h3>
-              <p><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2EBT6E8BQ5RRQ" target="_blank" rel="nofollow"><img class="tc-donate" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" alt="Make a donation for Anarcho-Notepad"></a>
-              </p>
-            </div><!--<div class="donate">-->
+        <h4><?php _e('Translation', 'anarcho-notepad'); ?></h4>
+        <p>
+            <?php _e('The theme is in the process of translation into other languages of the world. Already supports 11 languages! If you have the desire then you can help me in translation to your native language. Just send the translation files (*.po, *.mo) to me at the arthurgareginyan@gmail.com and I will include the translation within the one of the next theme update. Many of theme users would be delighted if you shared your translation with the community.', 'anarcho-notepad'); ?>
+        </p>
+        <p>
+            <?php _e('"Anarcho-Notepad" written on <strong>English</strong> and translated into:', 'anarcho-notepad'); ?>
+            <ul>
+                <li><strong>Русский</strong> (translated by <strong>Arthur Gareginyan</strong>)</li>
+                <li><strong>Українська</strong> (translated by <strong>Svetlana Drotyanko</strong>)</li>
+                <li><strong>Slovenčina</strong> (translated by <strong>Martin Petrus</strong>)</li>
+                <li><strong>Afrikaans</strong> (translated by <strong>MadriVictor</strong>)</li>
+                <li><strong>Español</strong> (translated by <strong>Ivan Ratinoff</strong>)</li>
+                <li><strong>Polski</strong> (translated by <strong>Krzysztof Goral</strong>)</li>
+                <li><strong>German</strong> (translated by <strong>Alexander v. Falkenhausen</strong>)</li>
+                <li><strong>Estonian</strong> (translated by <strong>Taavi Tiitsmaa</strong>)</li>
+                <li><strong>Catalan</strong> (translated by <strong>Néstor Malet</strong>)</li>
+                <li><strong>Danish</strong> (translated by <strong>Chano Klinck Andersen</strong>) – Coming soon!</li>
+            </ul>
+            </br>
+            <em><b><?php _e('Thanks to all who helped me translate "Anarcho-Notepad" into other languages!', 'anarcho-notepad'); ?></b></em>
+            <em><b><?php _e('Thank you very much for your contribution!', 'anarcho-notepad'); ?></b></em>
+        </p>
+        </div><!--<div class="content">-->
+
+        <aside id="sidebar">
 
             <div class="comment">
-              <h3><?php _e('Happy to enjoy the Anarcho-Notepad?', 'anarcho-notepad');?></h3>
-              <p><a class="button-primary review-customizr" title="Leave a comment" href="http://wordpress.org/support/view/theme-reviews/anarcho-notepad" target="_blank"><?php _e('Leave a comment', 'anarcho-notepad');?></a></p>
+                <h3><?php _e('Happy to enjoy the Anarcho-Notepad?', 'anarcho-notepad');?></h3>
+                <p>
+                    <a class="button-primary review-customizr" title="Leave a comment" href="http://wordpress.org/support/view/theme-reviews/anarcho-notepad" target="_blank"><?php _e('Leave a comment', 'anarcho-notepad');?></a>
+                </p>
             </div><!--<div class="comment">-->
 
+            <div class="donate">
+                <h3><?php _e('Please consider making a donation', 'anarcho-notepad');?></h3>
+                <p>
+                    <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2EBT6E8BQ5RRQ" target="_blank" rel="nofollow"><img class="tc-donate" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" alt="Make a donation for Anarcho-Notepad"></a>
+                </p>
+            </div><!--<div class="donate">-->
+
             <div class="follow">
-              <h3><?php _e('Follow me :', 'anarcho-notepad');?></h3>
-              <p style="font-family:FontAwesome;">
-		 <a href="https://twitter.com/AGareginyan" target="_blank"> &#xf099; </a>
-		 <a href="https://www.facebook.com/arthur.gareginyan" target="_blank"> &#xf09a; </a>
-                 <a href="http://instagram.com/arthur_gareginyan" target="_blank"> &#xf16d; </a>
-		 <a href="https://plus.google.com/+ArthurGareginyan" target="_blank"> &#xf0d5; </a>
-	      </p>
+                <h3><?php _e('Follow me :', 'anarcho-notepad');?></h3>
+                <p style="font-family:FontAwesome;">
+                    <a href="https://twitter.com/AGareginyan" target="_blank"> &#xf099; </a>
+                    <a href="https://www.facebook.com/arthur.gareginyan" target="_blank"> &#xf09a; </a>
+                    <a href="http://instagram.com/arthur_gareginyan" target="_blank"> &#xf16d; </a>
+                    <a href="https://plus.google.com/+ArthurGareginyan" target="_blank"> &#xf0d5; </a>
+                </p>
             </div><!--<div class="follow">-->
 
-      </aside><!--<aside id="sidebar">-->
+        </aside><!--<aside id="sidebar">-->
 
-      <br clear="all">
+        <br clear="all">
 
-    </section><!--<section id="page">-->
-    <footer id="footer"></footer><!--<footer id="finishing">-->
+        </section><!--<section id="page">-->
+        <footer id="footer"></footer><!--<footer id="finishing">-->
 
-    </div><!--<div class="cover">-->
+        </div><!--<div class="cover">-->
 
 <?php }
 add_action('admin_menu', 'anarcho_theme_options_add_page');

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Anarcho Notepad\n"
-"POT-Creation-Date: 2015-08-11 10:18+0300\n"
+"POT-Creation-Date: 2015-08-26 13:05+0300\n"
 "PO-Revision-Date: 2015-08-11 10:16+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -244,7 +244,7 @@ msgid " by "
 msgstr ""
 
 #: functions.php:525
-msgid " in category "
+msgid " in category \""
 msgstr ""
 
 #: functions.php:531 functions.php:533
@@ -419,16 +419,18 @@ msgstr ""
 msgid "Cover"
 msgstr ""
 
+#. Description of the plugin/theme
 #: inc/theme_info.php:29
 msgid ""
-"Inspired by the idea of Anarchy, I designed this theme for your personal "
-"blogs and diaries. \"Anarcho Notepad\" can be easily customized. It utilizes "
-"latest HTML 5, CSS3 and wordpress native functions for creating the "
-"awesomeness that looks good on every browser. I'm constantly adding new "
-"features to this theme to allow you to personalize it to your own needs. If "
-"you want a new feature or just want to be able to change something just ask "
-"me and I would be happy to add it for you. I would like to thank you for "
-"your support, visit the Theme URI for the update history, and Enjoy!"
+"Inspired by the idea of anarchy, I designed this theme for your personal "
+"blogs and diaries. This theme is perfect for writers and artists. \"Anarcho "
+"Notepad\" can be easily customised and already translated to different "
+"languages. It utilises latest HTML-5, CSS-3, PHP and WordPress native "
+"functions for creating the awesomeness that looks good on every browser. I’m "
+"constantly adding new features to this theme to allow you to personalise it "
+"to your own needs. If you want a new feature or just want to be able to "
+"change something just ask me and I would be happy to add it. I'm glad to "
+"present you the Most Anarchist WP-Theme Of All! Enjoy!"
 msgstr ""
 
 #: inc/theme_info.php:33
@@ -451,34 +453,39 @@ msgstr ""
 msgid "or at:"
 msgstr ""
 
-#: inc/theme_info.php:46
+#: inc/theme_info.php:47
 msgid ""
 "Sorry for what I delete some functions from Customizer. I have to do it due "
 "to the rules of wordpress.org."
 msgstr ""
 
-#: inc/theme_info.php:49
+#: inc/theme_info.php:50
 msgid "Translation"
 msgstr ""
 
-#: inc/theme_info.php:50
+#: inc/theme_info.php:51
 msgid ""
 "The theme is in the process of translation into other languages of the "
-"world. If you have the desire then you can help me in translation to your "
-"native language."
+"world. Already supports 11 languages! If you have the desire then you can "
+"help me in translation to your native language. Just send the translation "
+"files (*.po, *.mo) to me at the arthurgareginyan@gmail.com and I will "
+"include the translation within the one of the next theme update. Many of "
+"theme users would be delighted if you shared your translation with the "
+"community."
 msgstr ""
 
-#: inc/theme_info.php:52
-msgid "\"Anarcho-Notepad\" written in English and translated into:"
+#: inc/theme_info.php:54
+msgid ""
+"\"Anarcho-Notepad\" written on <strong>English<strong> and translated into:"
 msgstr ""
 
-#: inc/theme_info.php:62
+#: inc/theme_info.php:68
 msgid ""
 "Thanks to all who helped me translate \"Anarcho-Notepad\" into other "
 "languages!"
 msgstr ""
 
-#: inc/theme_info.php:63
+#: inc/theme_info.php:69
 msgid "Thank you very much for your contribution!"
 msgstr ""
 
@@ -494,19 +501,19 @@ msgstr ""
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/theme_info.php:86
+#: inc/theme_info.php:87
 msgid "Follow me :"
 msgstr ""
 
-#: inc/theme_info.php:110 inc/theme_info.php:111
+#: inc/theme_info.php:111 inc/theme_info.php:112
 msgid "Theme Info"
 msgstr ""
 
-#: inc/theme_info.php:126
+#: inc/theme_info.php:127
 msgid "Help"
 msgstr ""
 
-#: inc/theme_info.php:129
+#: inc/theme_info.php:130
 msgid "Need help with Anarcho-Notepad? Click here!"
 msgstr ""
 
@@ -540,20 +547,6 @@ msgstr ""
 
 #. Theme URI of the plugin/theme
 msgid "http://mycyberuniverse.com/anarcho-notepad.html"
-msgstr ""
-
-#. Description of the plugin/theme
-msgid ""
-"Inspired by the idea of anarchy, I designed this theme for your personal "
-"blogs and diaries. This theme is perfect for writers and artists. \"Anarcho "
-"Notepad\" can be easily customized. It has been translated to different "
-"languages. It utilizes latest HTML-5, CSS-3, PHP and WordPress native "
-"functions for creating the awesomeness that looks good on every browser. I’m "
-"constantly adding new features to this theme to allow you to personalize it "
-"to your own needs. If you want a new feature or just want to be able to "
-"change something just ask me and I would be happy to add it for you. I would "
-"like to thank you for your support. I'm glad to present you the Most "
-"Anarchist WP-Theme Of All! Enjoy!"
 msgstr ""
 
 #. Author of the plugin/theme

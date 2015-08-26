@@ -3,7 +3,7 @@
  * Theme Customizer support
  *
  * @package	Anarcho Notepad
- * @since	2.22
+ * @since	2.24
  * @author	Arthur "Berserkr" Gareginyan <arthurgareginyan@gmail.com>
  * @copyright 	Copyright (c) 2013-2015, Arthur Gareginyan
  * @link      	http://mycyberuniverse.com/anarcho-notepad.html
@@ -790,7 +790,7 @@ add_action( 'customize_register', 'anarcho_customize_register' );
 add_action('wp_head', 'anarcho_notepad_inline_css');
 function anarcho_notepad_inline_css() {
 
-		if ( ( get_theme_mod('enable_title_animation') != '0' ) ) echo '<script>
+		if ( ( get_theme_mod('enable_title_animation') == '1' ) ) echo '<script>
 var tit=document.title,c=0;function writetitle(){document.title=tit.substring(0,c);c==tit.length?(c=0,setTimeout("writetitle()",3E3)):(c++,setTimeout("writetitle()",200))}writetitle(); 
 </script>' . "\n";
 
@@ -899,7 +899,7 @@ var tit=document.title,c=0;function writetitle(){document.title=tit.substring(0,
 				clip: rect(1px, 1px, 1px, 1px); }
 		<?php
 		}
-		if ( get_theme_mod('disable_paper_search') == '0') {
+		if ( get_theme_mod('disable_paper_search') !== '1') {
 		$outer_back_search=get_template_directory_uri() . '/images/outer-back-search.png';
 		?>
 			.site-header { background:url( <?php echo $outer_back_search ?> ) no-repeat top center; }
