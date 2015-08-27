@@ -13,7 +13,7 @@
             
                 <p>
                     <?php if (novalite_setting('novalite_copyright_text')): ?>
-                       <?php echo stripslashes(novalite_setting('novalite_copyright_text')); ?>
+                       <?php echo stripslashes(novalite_setting('novalite_copyright_text','html')); ?>
                     <?php else: ?>
                       <?php _e('Copyright','novalite'); ?> <?php echo get_bloginfo("name"); ?> <?php echo date("Y"); ?> 
                     <?php endif; ?> 

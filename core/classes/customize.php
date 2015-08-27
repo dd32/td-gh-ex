@@ -171,6 +171,27 @@ class novalite_customize {
 							
 				break;
 
+				case 'custom_css' :
+							
+					$wp_customize->add_setting( $element['id'], array(
+					
+						'default' => $element['std'],
+						'sanitize_callback'    => 'wp_filter_nohtml_kses',
+						'sanitize_js_callback' => 'wp_filter_nohtml_kses'
+
+					) );
+											 
+					$wp_customize->add_control( $element['id'] , array(
+					
+						'type' => 'textarea',
+						'section' => $element['section'],
+						'label' => $element['label'],
+						'description' => $element['description'],
+									
+					) );
+							
+				break;
+
 				case 'select' :
 							
 					$wp_customize->add_setting( $element['id'], array(

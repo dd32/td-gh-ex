@@ -68,37 +68,47 @@ function novalite_social_function() {
 	foreach ( $socials as $social_icon => $social_name) { 
 	
 		if (novalite_setting('novalite_footer_'.$social_name.'_button')): 
+		
 			$i++;	
-            $html.= '<a href="'.novalite_setting('novalite_footer_'.$social_name.'_button').'" target="_blank" class="social"> <i class="'.$social_icon.'" ></i> </a> ';
+            $html.= '<a href="'.novalite_setting('novalite_footer_'.$social_name.'_button','url').'" target="_blank" class="social"><i class="'.$social_icon.'" ></i></a>';
+		
 		endif;
 		
 	}
 	
 	if (novalite_setting('novalite_footer_rss_button') == "on"): 
+	
 		$i++;	
 		$html.= '<a href="'. get_bloginfo('rss2_url'). '" title="Rss" class="social rss"> <i class="icon-rss" ></i>  </a> ';
+	
 	endif; 
 		
 	if ( $i > 0 ) {
 		
 	?>
 
-    <section class="bottom bottom_socials">
-        <div class="container">
-            <div class="row copyright" >
-                <div class="span12">
+        <section class="bottom bottom_socials">
         
-                    <div class="socials">
-                        
-                        <?php echo $html; ?>
-                        
+            <div class="container">
+            
+                <div class="row copyright" >
+                
+                    <div class="span12">
+            
+                        <div class="socials">
+                            
+                            <?php echo $html; ?>
+                            
+                        </div>
+            
                     </div>
-        
+                    
                 </div>
+                
             </div>
-        </div>
-    </section>
-
+            
+        </section>
+    
 	<?php
 
 	}

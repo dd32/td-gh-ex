@@ -4,9 +4,9 @@ function novalite_widgets_init() {
 	
 	register_sidebar(array(
 	
-		'name' => 'Sidebar',
+		'name' => __('Sidebar', 'novalite'),
 		'id'   => 'side_sidebar_area',
-		'description'   => 'This sidebar will be shown at the side of content.',
+		'description'   => __('This sidebar will be shown at the side of content.','novalite'),
 		'before_widget' => '<div class="pin-article span4"><div class="article">',
 		'after_widget'  => '</div></div>',
 		'before_title'  => '<h3 class="title">',
@@ -15,10 +15,10 @@ function novalite_widgets_init() {
 	));
 
 	register_sidebar(array(
-	
-		'name' => 'Header Sidebar',
+
+		'name' => __('Header Sidebar', 'novalite'),
 		'id'   => 'header_sidebar_area',
-		'description'   => 'This sidebar will be shown before the content.',
+		'description'   => __('This sidebar will be shown before the content.','novalite'),
 		'before_widget' => '<div class="pin-article span4"><div class="article">',
 		'after_widget'  => '</div></div>',
 		'before_title'  => '<h3 class="title">',
@@ -27,10 +27,10 @@ function novalite_widgets_init() {
 	));
 
 	register_sidebar(array(
-	
-		'name' => 'Bottom Sidebar',
+
+		'name' => __('Bottom Sidebar', 'novalite'),
 		'id'   => 'bottom_sidebar_area',
-		'description'   => 'This sidebar will be shown after the content.',
+		'description'   => __('This sidebar will be shown after the content.','novalite'),
 		'before_widget' => '<div class="span4"><div class="widget-box">',
 		'after_widget'  => '</div></div>',
 		'before_title'  => '<h3 class="title">',

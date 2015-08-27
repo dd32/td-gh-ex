@@ -197,16 +197,24 @@ if (!function_exists('novalite_enqueue_style')) {
 
 if (!function_exists('novalite_setting')) {
 
-	function novalite_setting($id) {
+	function novalite_setting( $id, $type = "attr" ) {
 
-		$novalite_setting = get_theme_mod($id);
+		$sanitation = array(
 			
-		if ( isset($novalite_setting) ) :
+			"attr" => array( "function" => "esc_attr", "controls" => "" ),
+			"html" => array( "function" => "esc_html", "controls" => "" ),
+			"url"  => array( "function" => "esc_url",  "controls" => array('http', 'https', 'skype', 'mailto') ),
+			
+		);
+		
+		$novalite_setting = call_user_func( $sanitation[$type]["function"], get_theme_mod($id), $sanitation[$type]["controls"] );
+		
+		if (isset($novalite_setting)) :
 			
 			return $novalite_setting;
 	
 		endif;
-	
+
 	}
 	
 }
@@ -231,6 +239,27 @@ if (!function_exists('novalite_postmeta')) {
 	
 	}
 
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* FAVICON */
+/*-----------------------------------------------------------------------------------*/ 
+
+if (!function_exists('novalite_favicon')) {
+
+	function novalite_favicon() { 
+
+		if ( novalite_setting('novalite_custom_favicon') ) :
+	
+			echo '<link rel="shortcut icon" href="' . novalite_setting('novalite_custom_favicon','url') . '"/>';
+	
+		endif;
+
+	}
+	
+	add_action('wp_head', 'novalite_favicon');
+
+	
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -388,6 +417,11 @@ if (!function_exists('novalite_my_gallery_style')) {
 if (!function_exists('novalite_scripts_styles')) {
 
 	function novalite_scripts_styles() {
+
+		global $wp_styles;
+
+		wp_enqueue_style( 'my-theme-ie', get_stylesheet_directory_uri() . "/inc/css/ie.css", array( 'my-theme' )  );
+		$wp_styles->add_data( 'my-theme-ie', 'conditional', 'chrome' );
 
 		novalite_enqueue_style('/inc/css');
 

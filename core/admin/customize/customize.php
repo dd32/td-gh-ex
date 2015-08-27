@@ -119,7 +119,7 @@ if (!function_exists('novalite_customize_panel_function')) {
 				"label" => __( "Custom css","novalite"),
 				"description" => __( "Insert your custom css code.","novalite"),
 				"id" => "novalite_custom_css_code",
-				"type" => "textarea",
+				"type" => "custom_css",
 				"section" => "styles_section",
 				"std" => "",
 
