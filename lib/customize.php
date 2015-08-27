@@ -742,8 +742,8 @@ One is a method of up-loading the image from the below up-loading form. Another 
 			'section'			 => 'raindrops_theme_settings_sidebar',
 		),
 
-		"raindrops_sidebar_catetory"			 => array(
-			'default'			 => raindrops_warehouse_clone( 'raindrops_sidebar_catetory','option_value' ),
+		"raindrops_sidebar_category"			 => array(
+			'default'			 => raindrops_warehouse_clone( 'raindrops_sidebar_category','option_value' ),
 			'data_type'			 => $raindrops_setting_type,
 			'autoload'			 => 'yes',
 			'capability'		 => $raindrops_customize_cap,
@@ -757,7 +757,7 @@ One is a method of up-loading the image from the below up-loading form. Another 
 				3 =>  esc_html__( '3 columns', 'Raindrops' ),
 			),
 			'priority'			=> 15,
-			'sanitize_callback'	 => 'raindrops_sidebar_catetory_validate',
+			'sanitize_callback'	 => 'raindrops_sidebar_category_validate',
 			'active_callback'	 => 'raindrops_col_setting_type_is_details',
 			'section'			 => 'raindrops_theme_settings_sidebar',
 		),
@@ -2035,7 +2035,10 @@ function raindrops_customizer_style() {
 
 	$css = <<<CUSTOMIZER_CSS
 	
+
 /* control area */
+
+	
 #customize-footer-actions .collapse-sidebar-label,
 li.customize-control .customizer-section-intro,
 li.customize-control .raindrops-description,
@@ -2043,6 +2046,7 @@ li.customize-control .raindrops-changelog a,
 li.customize-control .inner span{
 		color:$admin_color_base;
 }
+li.customize-control .widget-inside .widget-content,
 .accordion-section-content	li.customize-control{
 	border:1px solid rgba(52,52,52,.1);
 	padding-bottom:1em;
@@ -2056,6 +2060,8 @@ li.customize-control .inner span{
 	color:$admin_color_focus;
 }
 /* label */
+li.customize-control .widget-content p,
+li.customize-control .widget-inside .widget-content h4,
 .accordion-section-content	li.customize-control label{
 	color:$admin_color_current;
 }
