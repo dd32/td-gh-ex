@@ -6,7 +6,6 @@ add_action( 'admin_init', 'medics_options_init' );
 function medics_options_validate( $input ) {
  
 	 $input['logo'] = medics_image_validation(esc_url_raw( $input['logo'] ));
-	 $input['favicon'] = medics_image_validation(esc_url_raw( $input['favicon'] ));
 	 $input['footertext'] = sanitize_text_field( $input['footertext'] );
 	 $input['email'] = is_email( $input['email'] );
 	 $input['phone'] = sanitize_text_field( $input['phone'] );
@@ -116,21 +115,7 @@ function medics_framework_page(){
                 </div>
               </div>
             </div>
-          </div>
-            <div class="section theme-tabs theme-favicon">
-              <a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e( 'Favicon', 'medics' ) ?></a>
-              <div class="faster-inner-tab-group">
-              	<div class="explain"><?php _e( 'Size of favicon should be exactly 32x32px for best results.', 'medics' ) ?></div>
-                <div class="ft-control">
-                  <input id="favicon-img" class="upload" type="text" name="medics_theme_options[favicon]" 
-                            value="<?php if(!empty($medics_options['favicon'])) { echo esc_url($medics_options['favicon']); } ?>" placeholder="<?php _e( 'No file chosen', 'medics' ) ?>" />
-                  <input id="upload_image_button1" class="upload-button button" type="button" value="<?php _e( 'Upload', 'medics' ) ?>" />
-                  <div class="screenshot" id="favicon-image">
-                    <?php  if(!empty($medics_options['favicon'])) { echo "<img src='".esc_url($medics_options['favicon'])."' /><a class='remove-image'></a>"; } ?>
-                  </div>
-                </div>              
-              </div>
-            </div>
+          </div> 
            <div id="section-footertext2" class="section theme-tabs">
             	<a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e( 'Copyright Text', 'medics' ) ?></a>
               <div class="faster-inner-tab-group">

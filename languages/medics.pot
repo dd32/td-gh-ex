@@ -1,7 +1,8 @@
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Medics V1.5\n"
-"POT-Creation-Date: 2014-12-15 14:14+0530\n"
+"Project-Id-Version: Medics V1.6\n"
+"POT-Creation-Date: 2015-08-28 11:09+0530\n"
 "PO-Revision-Date: 2014-12-15 14:14+0530\n"
 "Last-Translator: FasterThemes <support@fasterthemes.com>\n"
 "Language-Team: FasterThemes <support@fasterthemes.com>\n"
@@ -9,8 +10,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.10\n"
-"X-Poedit-Basepath: ../\n"
+"X-Generator: Poedit 1.8.3\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
@@ -44,7 +45,7 @@ msgstr ""
 msgid "All posts by"
 msgstr ""
 
-#: category.php:10 theme-options/medicstheme.php:253
+#: category.php:10 theme-options/medicstheme.php:238
 msgid "Category"
 msgstr ""
 
@@ -524,8 +525,8 @@ msgstr ""
 msgid "Download"
 msgstr ""
 
-#: page-template/full-width.php:50 page-template/left-sidebar.php:53
-#: page.php:43 single.php:44
+#: page-template/full-width.php:46 page-template/left-sidebar.php:49
+#: page.php:39 single.php:44
 msgid "Pages:"
 msgstr ""
 
@@ -537,209 +538,200 @@ msgstr ""
 msgid "Tag"
 msgstr ""
 
-#: theme-options/medicstheme.php:54
+#: theme-options/medicstheme.php:53
 msgid "Medics Options"
 msgstr ""
 
-#: theme-options/medicstheme.php:55 theme-options/medicstheme.php:84
+#: theme-options/medicstheme.php:54 theme-options/medicstheme.php:83
 msgid "Theme Options"
 msgstr ""
 
-#: theme-options/medicstheme.php:85 theme-options/medicstheme.php:314
+#: theme-options/medicstheme.php:84 theme-options/medicstheme.php:299
 msgid "Save Options"
 msgstr ""
 
-#: theme-options/medicstheme.php:94
+#: theme-options/medicstheme.php:93
 msgid "Basic Settings"
 msgstr ""
 
-#: theme-options/medicstheme.php:95
+#: theme-options/medicstheme.php:94
 msgid "Social Settings"
 msgstr ""
 
-#: theme-options/medicstheme.php:96
+#: theme-options/medicstheme.php:95
 msgid "Home Page Settings"
 msgstr ""
 
-#: theme-options/medicstheme.php:97
+#: theme-options/medicstheme.php:96
 msgid "PRO Theme Features"
 msgstr ""
 
-#: theme-options/medicstheme.php:109
+#: theme-options/medicstheme.php:108
 msgid "Site Logo"
 msgstr ""
 
-#: theme-options/medicstheme.php:112 theme-options/medicstheme.php:126
+#: theme-options/medicstheme.php:111
 msgid "No file chosen"
 msgstr ""
 
-#: theme-options/medicstheme.php:113 theme-options/medicstheme.php:127
-#: theme-options/medicstheme.php:227
+#: theme-options/medicstheme.php:112 theme-options/medicstheme.php:212
 msgid "Upload"
 msgstr ""
 
-#: theme-options/medicstheme.php:121
-msgid "Favicon"
-msgstr ""
-
-#: theme-options/medicstheme.php:123
-msgid "Size of favicon should be exactly 32x32px for best results."
-msgstr ""
-
-#: theme-options/medicstheme.php:135
+#: theme-options/medicstheme.php:120
 msgid "Copyright Text"
 msgstr ""
 
-#: theme-options/medicstheme.php:138
+#: theme-options/medicstheme.php:123
 msgid ""
 "Some text regarding copyright of your site, you would like to display in the "
 "footer."
 msgstr ""
 
-#: theme-options/medicstheme.php:144
+#: theme-options/medicstheme.php:129
 msgid "E-mail"
 msgstr ""
 
-#: theme-options/medicstheme.php:147
+#: theme-options/medicstheme.php:132
 msgid ""
 "Enter e-mail id for your site , you would like to display in the Top Header."
 msgstr ""
 
-#: theme-options/medicstheme.php:153
+#: theme-options/medicstheme.php:138
 msgid "Phone"
 msgstr ""
 
-#: theme-options/medicstheme.php:156
+#: theme-options/medicstheme.php:141
 msgid ""
 "Enter phone number for your site , you would like to display in the Top "
 "Header."
 msgstr ""
 
-#: theme-options/medicstheme.php:162
+#: theme-options/medicstheme.php:147
 msgid "Phone Title"
 msgstr ""
 
-#: theme-options/medicstheme.php:165
+#: theme-options/medicstheme.php:150
 msgid ""
 "Enter title to display before phone number , you would like to display in "
 "the Top Header."
 msgstr ""
 
-#: theme-options/medicstheme.php:174
+#: theme-options/medicstheme.php:159
 msgid "Facebook"
 msgstr ""
 
-#: theme-options/medicstheme.php:177
+#: theme-options/medicstheme.php:162
 msgid "Facebook profile or page URL i.e. "
 msgstr ""
 
-#: theme-options/medicstheme.php:182
+#: theme-options/medicstheme.php:167
 msgid "Twitter"
 msgstr ""
 
-#: theme-options/medicstheme.php:185
+#: theme-options/medicstheme.php:170
 msgid "Twitter profile or page URL i.e."
 msgstr ""
 
-#: theme-options/medicstheme.php:191
+#: theme-options/medicstheme.php:176
 msgid "Google +"
 msgstr ""
 
-#: theme-options/medicstheme.php:194
+#: theme-options/medicstheme.php:179
 msgid "Google plus profile or page URL i.e."
 msgstr ""
 
-#: theme-options/medicstheme.php:204 theme-options/medicstheme.php:234
+#: theme-options/medicstheme.php:189 theme-options/medicstheme.php:219
 msgid "Title"
 msgstr ""
 
-#: theme-options/medicstheme.php:207
+#: theme-options/medicstheme.php:192
 msgid ""
 "Enter home page title for your site , you would like to display in the Home "
 "Page."
 msgstr ""
 
-#: theme-options/medicstheme.php:213
+#: theme-options/medicstheme.php:198
 msgid "Short Description"
 msgstr ""
 
-#: theme-options/medicstheme.php:216
+#: theme-options/medicstheme.php:201
 msgid ""
 "Enter home content for your site , you would like to display in the Home "
 "Page."
 msgstr ""
 
-#: theme-options/medicstheme.php:220
+#: theme-options/medicstheme.php:205
 msgid "First Section"
 msgstr ""
 
-#: theme-options/medicstheme.php:223
+#: theme-options/medicstheme.php:208
 msgid "Tab"
 msgstr ""
 
-#: theme-options/medicstheme.php:233 theme-options/medicstheme.php:237
+#: theme-options/medicstheme.php:218 theme-options/medicstheme.php:222
 msgid "Enter"
 msgstr ""
 
-#: theme-options/medicstheme.php:233 theme-options/medicstheme.php:237
+#: theme-options/medicstheme.php:218 theme-options/medicstheme.php:222
 msgid ""
 " Section title for your home template , you would like to display in the "
 "Home Page."
 msgstr ""
 
-#: theme-options/medicstheme.php:242
+#: theme-options/medicstheme.php:227
 msgid "Post Settings"
 msgstr ""
 
-#: theme-options/medicstheme.php:244
+#: theme-options/medicstheme.php:229
 msgid "Home Blog Title"
 msgstr ""
 
-#: theme-options/medicstheme.php:247
+#: theme-options/medicstheme.php:232
 msgid ""
 "Enter Blog title for your site , you would like to display in Home page."
 msgstr ""
 
-#: theme-options/medicstheme.php:256
+#: theme-options/medicstheme.php:241
 msgid "Please select category to display post on Home page."
 msgstr ""
 
-#: theme-options/medicstheme.php:258
+#: theme-options/medicstheme.php:243
 msgid "Select Category"
 msgstr ""
 
-#: theme-options/medicstheme.php:280
+#: theme-options/medicstheme.php:265
 msgid "Download Settings"
 msgstr ""
 
-#: theme-options/medicstheme.php:282
+#: theme-options/medicstheme.php:267
 msgid "Download Text"
 msgstr ""
 
-#: theme-options/medicstheme.php:285
+#: theme-options/medicstheme.php:270
 msgid ""
 "Enter Download Link for your site , you would like to display in the Home "
 "Page."
 msgstr ""
 
-#: theme-options/medicstheme.php:291
+#: theme-options/medicstheme.php:276
 msgid "Home Download Link"
 msgstr ""
 
-#: theme-options/medicstheme.php:319
+#: theme-options/medicstheme.php:304
 msgid "Options saved successfully."
 msgstr ""
 
-#: theme-options/medicstheme.php:322
+#: theme-options/medicstheme.php:307
 msgid "Subscribe with us"
 msgstr ""
 
-#: theme-options/medicstheme.php:323
+#: theme-options/medicstheme.php:308
 msgid ""
 "Join our mailing list and we'll keep you updated on new themes as they're "
 "released and our exclusive special offers. "
 msgstr ""
 
-#: theme-options/medicstheme.php:323
+#: theme-options/medicstheme.php:308
 msgid "Click here to join"
 msgstr ""

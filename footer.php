@@ -28,7 +28,7 @@
         <?php if(!empty($medics_options['footertext'])) {
 			 	echo '<p>'.sanitize_text_field($medics_options['footertext']).' ' ; 
 			  } 
-				printf( __( 'Powered by %1$s and %2$s.', 'generator' ), '<a href="http://wordpress.org" target="_blank">WordPress</a>',
+				printf( __( 'Powered by %1$s and %2$s.', 'medics' ), '<a href="http://wordpress.org" target="_blank">WordPress</a>',
 				'<a href="http://fasterthemes.com/wordpress-themes/Medics" target="_blank">Medics</a>' ); 
 				echo '</p>';
 		 ?>

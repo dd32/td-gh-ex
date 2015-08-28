@@ -29,3 +29,7 @@ iii) Set translation ready
 
 Version: 1.5 (20 Aug 2015)
 i) Fixed WP_Widget constructor issue.
+
+Version: 1.6 (28 Aug 2015)
+i) Fixed Text Domain Issue.
+ii) Removed Favicon from header.php and theme options
