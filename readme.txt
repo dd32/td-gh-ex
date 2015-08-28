@@ -77,3 +77,6 @@ Version 2.0.3
 
 Version 2.0.4
 * Translation errors fixed.
+
+Version 2.0.5
+* Fixed Woocommerce Product Image not displaying problem.

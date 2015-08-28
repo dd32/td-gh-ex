@@ -21,7 +21,6 @@
 .nav-tab-wrapper {
 	float: left;
 	width: 21%;
-	border-bottom: 1px solid #CCC;
 }
 
 .nav-tab{
@@ -295,4 +294,30 @@
 
 .ak-socials p{
 	margin:10px 0;
+}
+
+.pro-adver {
+    text-align: center;
+}
+
+h3.view-features {
+  background: #333 none repeat scroll 0 0;
+  border: 1px solid #333;
+  color: #fff;
+}
+
+h3.view-features span{
+	float: right;
+    font-size: 18px !important;
+    line-height: 20px;
+}
+
+.banner-container{
+	background: #fff;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+.any-question{
+	text-align: center;
 }

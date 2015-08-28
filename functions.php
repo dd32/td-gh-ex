@@ -46,7 +46,7 @@ function accesspress_basic_setup() {
      * Add Feature Image Support to the Pages
      *
      */
-    add_theme_support( 'post-thumbnails', array( 'page','post' ) );
+    add_theme_support( 'post-thumbnails', array( 'page','post','product' ) );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.

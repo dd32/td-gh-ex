@@ -145,6 +145,22 @@
                     <a id="options-group-5-tab" class="nav-tab" disp="#options-group-5" href="#"><?php _e('About Accesspress Basic','accesspress-basic'); ?>
                         <i class="fa fa-info"></i>
                     </a>
+                    <div class="banner-container">
+                        <div class='update-banner'>
+                            <img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/banner2.png">
+                        </div>
+                        <div class='any-question'>
+                            <p>Any question!! <a href="<?php echo esc_url('https://accesspressthemes.com/contact/'); ?>">Click</a></p>
+                        </div>
+                        <div class='pro-adver clearfix'>
+                            <a target="_blank" href="<?php echo esc_url('http://demo.accesspressthemes.com/accesspress-basic-pro/'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/demo-btn.png"></a>
+                            <a target="_blank" href="<?php echo esc_url('https://accesspressthemes.com/wordpress-themes/accesspress-basic-pro/'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/upgrade-btn.png"></a>
+                        </div>
+                        <h3 style="font-size: 16px; padding-left: 6px; padding-right: 4px; cursor: pointer" class='view-features'><?php _e('Pro Features', 'accesspress-basic'); ?><span>&#8250;</span></h3>
+                        <div class='pro-banner' style="display: none">
+                            <img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/banner.png">
+                        </div>
+                    </div>
                 </div>
                 <div id="optionsframework-metabox" class="metabox-holder clearfix">
                     <form id="form_options" method="POST" action="options.php" enctype="multipart/form-data">

@@ -76,5 +76,7 @@ jQuery(document).ready(function ($){
 
     $(".pattern-img input:radio:checked").parent('div').addClass("active");
 
-    
+   $('.view-features').click(function (){
+        $(".pro-banner").slideToggle();
+   });
 });
