@@ -1,4 +1,4 @@
-/*  TABLE OF CONTENTS - LAST UPDATED 26/07/2015
+/*  TABLE OF CONTENTS - LAST UPDATED 14/08/2015
 01. ANIMATION
 02. BUTTONS
 03. CAROUSEL
@@ -290,7 +290,6 @@ float: left;
 	box-sizing: border-box;
 }
 .sc-carousel .entry-header {
-	width: 100%;
 	position: relative;
 	display: inline-block;
 	overflow: hidden;
@@ -485,6 +484,9 @@ float: left;
 /*	padding: 0;
 	padding-bottom: 65px;
 */}
+.sc-carousel.carousel-client img {
+	margin: 0 auto;
+}
 .sc-carousel.carousel-client li {
 	height: 100%;
 	display: table;
@@ -665,7 +667,6 @@ float: left;
 
 /* Disable padding for custom post type item */
 .sc-carousel.sc-postitem {
-	width: 100%;
 	height: auto !important;
 	padding: 0;
 	margin: 0 0 20px;

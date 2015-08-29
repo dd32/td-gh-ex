@@ -127,6 +127,13 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.2.1
+- New:     .screen-reader-text class added to style.css - unstyled.
+- Fixed:   Text "Current theme preview" now fully translation ready.
+- Fixed:   Custom social media icons now display correctly.
+- Fixed:   thinkup_check_ishome() now works correctly on all sites.
+- Removed: thinkup_custom_javaback() no longer used. Setting was never available for use by user.
+
 Version 1.2.0
 - Updated: css code in style-shortcodes.css completely rewritten. Much tidier and easier or end user to customize.
 

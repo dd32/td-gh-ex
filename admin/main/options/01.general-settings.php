@@ -139,12 +139,20 @@ $_thinkup_meta_layout = get_post_meta( $post->ID, '_thinkup_meta_layout', true )
 		} else if ( $_thinkup_meta_layout == 'option4' ) {
 			wp_enqueue_style ( 'sidebarright' );
 		}
-	} else if ( is_search() ) {	
+	} else if ( is_search() ) {
 		if ( $thinkup_general_layout == "option1" or empty( $thinkup_general_layout ) ) {		
 			echo '';
 		} else if ( $thinkup_general_layout == "option2" ) {
 			wp_enqueue_style ( 'sidebarleft' );
 		} else if ($thinkup_general_layout == "option3") {
+			wp_enqueue_style ( 'sidebarright' );
+		}
+	} else {
+		if ( $_thinkup_meta_layout == 'option2' ) {
+			echo '';
+		} else if ( $_thinkup_meta_layout == 'option3' ) {
+			wp_enqueue_style ( 'sidebarleft' );
+		} else if ( $_thinkup_meta_layout == 'option4' ) {
 			wp_enqueue_style ( 'sidebarright' );
 		}
 	}
@@ -229,12 +237,20 @@ do_action('thinkup_sidebar_html');
 		} else if ( $_thinkup_meta_layout == 'option4' ) {
 			echo get_sidebar();
 		}
-	} else if ( is_search() ) {	
+	} else if ( is_search() ) {
 		if ( $thinkup_general_layout == 'option1' or empty( $thinkup_general_layout ) ) {		
 			echo '';
 		} else if ( $thinkup_general_layout == "option2" ) {
 			get_sidebar();
 		} else if ( $thinkup_general_layout == "option3" ) {
+			get_sidebar();
+		}
+	} else {
+		if ( $_thinkup_meta_layout == 'option2' ) {
+			echo '';
+		} else if ( $_thinkup_meta_layout == 'option3' ) {
+			get_sidebar();
+		} else if ( $_thinkup_meta_layout == 'option4' ) {
 			get_sidebar();
 		}
 	}
@@ -272,8 +288,10 @@ $_thinkup_meta_sidebars = get_post_meta( $post->ID, '_thinkup_meta_sidebars', tr
 		}	
 	} else if ( thinkup_is_blog() and ! is_single() ) {
 		$output = $thinkup_blog_sidebars;
-	} else if ( is_search() ) {	
+	} else if ( is_search() ) {
 		$output = $thinkup_general_sidebars;
+	} else {
+		$output = $_thinkup_meta_sidebars;
 	}
 
 	if ( empty( $output ) or $output == 'Select a sidebar:' ) {
@@ -503,23 +521,6 @@ $_thinkup_meta_customjava = get_post_meta( $post->ID, '_thinkup_meta_customjava'
 	}
 }
 add_action( 'wp_footer', 'thinkup_custom_javafront' );
-
-
-/* ----------------------------------------------------------------------------------
-	Custom JavaScript - Back End
----------------------------------------------------------------------------------- */
-
-/* Add Custom Front-End Javascript */
-function thinkup_custom_javaback() {
-global $thinkup_general_customjavaback;
-
-	if ( ! empty( $thinkup_general_customcss ) ) {
-		echo 	'<script type="text/javascript">',
-				"\n" . $thinkup_general_customjavaback . "\n",
-				'</script>' . "\n";
-		}
-}
-add_action( 'admin_footer', 'thinkup_custom_javaback' );
 
 
 ?>

@@ -76,10 +76,10 @@ function redux_setup_framework_options(){
 			<?php if ( $screenshot ) : ?>
 				<?php if ( current_user_can( 'edit_theme_options' ) ) : ?>
 				<a href="<?php echo wp_customize_url(); ?>" class="load-customize hide-if-no-customize" title="<?php echo esc_attr( $customize_title ); ?>">
-					<img src="<?php echo esc_url( $screenshot ); ?>" alt="<?php esc_attr_e( 'Current theme preview' ); ?>" />
+					<img src="<?php echo esc_url( $screenshot ); ?>" alt="<?php esc_attr_e( 'Current theme preview', 'lan-thinkupthemes' ); ?>" />
 				</a>
 				<?php endif; ?>
-				<img class="hide-if-customize" src="<?php echo esc_url( $screenshot ); ?>" alt="<?php esc_attr_e( 'Current theme preview' ); ?>" />
+				<img class="hide-if-customize" src="<?php echo esc_url( $screenshot ); ?>" alt="<?php esc_attr_e( 'Current theme preview', 'lan-thinkupthemes' ); ?>" />
 			<?php endif; ?>
 
 			<h4>
