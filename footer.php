@@ -51,26 +51,25 @@
 	</div><!-- .footer-widgets -->
 	<?php endif; ?>
 	
-	<?php if( get_theme_mod('agama_to_top', true) ): ?>
-	<a id="toTop">
-		<i class="fa fa-angle-up"></i>
-	</a>
-	<?php endif; ?>
-	
 	<footer id="colophon" class="clear" role="contentinfo">
-		<div class="site-info col-md-6">
-			<?php do_action('agama_credits'); ?>
-		</div><!-- .site-info -->
-		
-		<?php if( get_theme_mod('agama_footer_social', false) ): ?>
-		<div class="social col-md-6">
-			<?php agama_social_icons( 'top' ); ?>
+		<div class="footer-sub-wrapper clear">
+			<div class="site-info col-md-6">
+				<?php do_action('agama_credits'); ?>
+			</div><!-- .site-info -->
+			
+			<?php if( get_theme_mod('agama_footer_social', true) ): ?>
+			<div class="social col-md-6">
+				<?php agama_social_icons( 'top' ); ?>
+			</div>
+			<?php endif; ?>
 		</div>
-		<?php endif; ?>
-		
 	</footer><!-- #colophon -->
 	
 </div><!-- .main-wrapper -->
+
+<?php if( get_theme_mod('agama_to_top', true) ): ?>
+	<?php echo sprintf( '<a id="%s"><i class="%s"></i></a>', 'toTop', 'fa fa-angle-up' ); ?>
+<?php endif; ?>
 
 <?php wp_footer(); ?>
 

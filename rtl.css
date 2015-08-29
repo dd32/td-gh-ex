@@ -12,9 +12,40 @@ th,
 td {
 	text-align: right;
 }
+blockquote {
+	border-left: 0 none;
+}
 
 /* =Repeatable patterns
 -------------------------------------------------------------- */
+
+/* Sticky Header */
+.sticky-header .col-md-4 {
+	float: right;
+}
+.site-header .sticky-header h1 {
+	float: right;
+}
+
+/* Top Navigation */
+#top-nav-social {
+	text-align: left;
+}
+#top-navigation {
+	float: right;
+	padding-right: 0;
+}
+.top-navigation ul.top-nav-menu, 
+.top-navigation div.top-nav-menu > ul {
+	text-align: right;
+}
+
+/* Sticky Navigation */
+.sticky-nav > li:first-child, 
+.sticky-nav > ul > li:first-child {
+	border-left: 0 none;
+	border-right: 1px solid #ededed;
+}
 
 /* Images */
 .site-content .gallery-columns-4 .gallery-item {
@@ -61,6 +92,10 @@ td {
 
 /* =Basic post styling
 -------------------------------------------------------------- */
+.entry-date {
+	float: right;
+	margin-left: 17px;
+}
 
 .entry-content li,
 .comment-content li {
@@ -170,6 +205,15 @@ label ~ span.required {
 	padding-left: 1.714285714rem;
 	text-align: left;
 	padding-right: 0;
+}
+
+/* =Footer
+-------------------------------------------------------------- */
+footer .site-info {
+	float: right;
+}
+footer[role="contentinfo"] .social {
+	text-align: left;
 }
 
 /* =Media queries

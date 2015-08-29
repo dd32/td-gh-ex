@@ -178,6 +178,10 @@ input[type="reset"]:active {
 }
 
 /* Site Content */
+.entry-content blockquote, 
+.comment-content blockquote {
+	background-color: #404040;
+}
 .site-content article {
 	border-bottom-color: #545454;
 }

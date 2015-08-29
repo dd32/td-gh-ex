@@ -4,7 +4,6 @@
  * Contains handlers to make Customizer preview reload changes asynchronously.
  * Things like site title, description, and background color changes.
  */
-
 ( function( $ ) {
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
@@ -108,25 +107,6 @@
 				skin.prepend( 'import url('+ agama.skin_url + to +'.css);' );
 			}
 		} );
-		
-	// Disable top navigation
-	wp.customize( 'agama_top_navigation', function( value ) {
-		top_nav = jQuery('.top-navigation');
-	
-		if(  1 == agama.top_nav_enable ) {
-			top_nav.show();
-		} else {
-			top_nav.hide();
-		}
-		
-		value.bind( function( to ) {
-			if( false == to ) {
-				top_nav.hide();
-			} else {
-				top_nav.show();
-			}
-		} );
-	});
 	
 	} );
 } )( jQuery );

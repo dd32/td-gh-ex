@@ -1,7 +1,15 @@
-Agama WordPress Theme, Copyright 2015 Theme-Vision.com (Jaroslav Svetlik)
+Agama WordPress Theme, Copyright 2015 Theme-Vision.com
 Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
+= 1.0.9 Aug 28 2015 =
+ADDED: Layout style options (Boxed / Fullwidth).
+FIXED: Blog list feature thumbnail size issue.
+IMPROVED: Right to Left (RTL) stylesheet issues.
+IMPROVED: Header style select options.
+IMPROVED: Sticky header navigation.
+IMPROVED: WooCommerce shop page.
+
 = 1.0.8 Aug 17 2015 =
 * FIXED: minor notices
 
@@ -58,7 +66,6 @@ Agama is distributed under the terms of the GNU GPL2
  * hoverIntent - http://cherne.net/brian/resources/jquery.hoverIntent.html - MIT License
  * HTML5 Shiv - https://github.com/afarkas/html5shiv - GPL2 License
  * Isotope - http://isotope.metafizzy.co - GPL3 License
- * FlexSlider - http://flexslider.woothemes.com/ - GPL2 License
  * NiceScroll - http://areaaperta.com/nicescroll, https://github.com/inuyaksa/jquery.nicescroll - MIT License
  * lightGallery - http://sachinchoolur.github.io/lightGallery/ - MIT License
  * Superfish - http://users.tpg.com.au/j_birch/plugins/superfish/ - MIT License

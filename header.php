@@ -38,15 +38,13 @@
 		<?php get_template_part( 'framework/headers' ); // Get headers ?>
 		
 		<!-- Header Image -->
-		<?php if ( get_header_image() && get_theme_mod('agama_enable_slider', false) !== '1' ) : ?>
+		<?php if ( get_header_image() ) : ?>
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<img src="<?php esc_url( header_image() ); ?>" class="header-image" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
 		</a>
 		<?php endif; ?><!-- / Header Image -->
 		
 	</header><!-- #masthead -->
-	
-	<?php get_template_part('framework/sliders'); ?>
 
 	<div id="page" class="hfeed site">
 		<div id="main" class="wrapper">

@@ -28,7 +28,7 @@ if( ! class_exists( 'Agama_Core' ) ) {
 
 			// Set up Agama version
 			if( !defined( 'AGAMA_VER' ) ) {
-				define( 'AGAMA_VER', '1.0.8' );
+				define( 'AGAMA_VER', '1.0.9' );
 			}
 			
 			// Defina Agama URI
@@ -139,20 +139,11 @@ if( ! class_exists( 'Agama_Core' ) ) {
 				// Echo script init in footer
 				add_action( 'wp_footer', 'agama_infinite_scroll_init' );
 			}
-			 
-			// Agama flex slider
-			if( get_theme_mod('agama_enable_slider', false) ) {
-				wp_register_style( 'flexSlider', AGAMA_CSS.'flexslider.min.css' );
-				 wp_enqueue_style( 'flexSlider' );
-				wp_register_script( 'flexSlider', AGAMA_JS.'jquery.flexslider-min.js' );
-				 wp_enqueue_script( 'flexSlider' );
-			}
 			
 			// Agama main.js
 			wp_register_script( 'agama-main', AGAMA_JS.'main.js' );
 			$translation_array = array(
 				'background_image'	=> esc_attr( get_header_image() ),
-				'enable_slider'		=> esc_attr( get_theme_mod( 'agama_enable_slider', false ) ),
 				'primary_color' 	=> esc_attr( get_theme_mod( 'agama_primary_color', '#f7a805' ) ),
 				'header_top_margin'	=> esc_attr( get_theme_mod( 'agama_header_top_margin', '0px' ) )
 			);
@@ -206,17 +197,6 @@ if( ! class_exists( 'Agama_Core' ) ) {
 						cursorborder:"1px solid #333",
 						zindex:"9999"
 					});
-				});
-				</script>
-				';
-			}
-			if( get_theme_mod('agama_enable_slider', false) ) {
-				echo '
-				<script>
-				jQuery(document).ready(function($) {
-				  $(".flexslider").flexslider({
-					animation: "slide"
-				  });
 				});
 				</script>
 				';

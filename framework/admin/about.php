@@ -70,15 +70,13 @@ if( ! class_exists( 'Agama_About' ) ) {
 				echo '</h2>';
 				
 				echo '<div class="changelog point-releases">';
-					echo '<h3>'.__( 'Changelog Agama v1.0.8', 'agama' ).'</h3>';
-					echo '<p><strong>Version 1.0.8</strong> fixed minor notices.</p>';
-					
-					echo '<h3>'.__( 'Changelog Agama v1.0.7', 'agama' ).'</h3>';
-					echo '<p><strong>Version 1.0.7</strong> fixed search page results.</p>';
-					echo '<p><strong>Version 1.0.7</strong> improved sticky header responsivity.</p>';
-					echo '<p><strong>Version 1.0.7</strong> improved navigation menus.</p>';
-					echo '<p><strong>Version 1.0.7</strong> improved logo centered on media devices.</p>';
-					echo '<p><strong>Version 1.0.7</strong> improved customizer options.</p>';
+					echo '<h3>'.__( 'Changelog Agama v1.0.9', 'agama' ).'</h3>';
+					echo '<p><strong>Version 1.0.9</strong> added Layout style options (Boxed / Fullwidth).</p>';
+					echo '<p><strong>Version 1.0.9</strong> fixed Blog list feature thumbnail size issue.</p>';
+					echo '<p><strong>Version 1.0.9</strong> improved right to left (RTL) stylesheet issues.</p>';
+					echo '<p><strong>Version 1.0.9</strong> improved header style select options.</p>';
+					echo '<p><strong>Version 1.0.9</strong> improved sticky header navigation.</p>';
+					echo '<p><strong>Version 1.0.9</strong> improved WooCommerce shop page.</p>';
 				echo '</div>';
 				
 			echo '</div>';

@@ -18,7 +18,7 @@
 				<?php // Attachments
 				if ( ! post_password_required() && ! is_attachment() && get_the_post_thumbnail() && ! is_search() ) :
 					// Output Post Thumbnail
-					if( get_theme_mod('agama_blog_layout') == 'list' ):
+					if( get_theme_mod('agama_blog_layout', 'list') == 'list' ):
 						echo '<figure class="effect-bubba" data-src="'.agama_return_image_src('agama-blog-large').'">';
 						echo '<img src='.agama_return_image_src('agama-blog-large').' class="img-responsive">';
 						echo '<figcaption>';

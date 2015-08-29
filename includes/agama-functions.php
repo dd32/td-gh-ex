@@ -36,14 +36,10 @@ function agama_setup() {
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote', 'status' ) );
 
 	// If sticky header enabled name menu as 'Sticky Header Menu' otherwise 'Top Menu'
-	if( get_theme_mod( 'agama_sticky_header', false ) ) {
+	if( get_theme_mod( 'agama_header_style', 'default' ) == 'sticky' ) {
 		register_nav_menu( 'top', __( 'Sticky Header Menu', 'agama' ) );
 	}else{
 		register_nav_menu( 'top', __( 'Top Menu', 'agama' ) );
-	}
-	
-	// Register primary menu only if sticky header is not enabled.
-	if( ! get_theme_mod( 'agama_sticky_header', false ) ) {
 		register_nav_menu( 'primary', __( 'Primary Menu', 'agama' ) );
 	}
 
@@ -299,7 +295,7 @@ function agama_body_class( $classes ) {
 	$background_color = get_background_color();
 	$background_image = get_background_image();
 	
-	if( get_theme_mod( 'agama_sticky_header', false ) ) {
+	if( get_theme_mod( 'agama_header_style', 'default' ) == 'sticky' ) {
 		$classes[] = 'sticky_header';
 	}
 
@@ -377,7 +373,6 @@ if( ! function_exists( 'agama_social_icons' ) ) {
 			'Facebook'	=> esc_url( get_theme_mod('social_facebook', '') ),
 			'Twitter'	=> esc_url( get_theme_mod('social_twitter', '') ),
 			'Flickr'	=> esc_url( get_theme_mod('social_flickr', '') ),
-			'RSS'		=> esc_url( get_theme_mod('social_rss', '') ),
 			'Vimeo'		=> esc_url( get_theme_mod('social_vimeo', '') ),
 			'Youtube'	=> esc_url( get_theme_mod('social_youtube', '') ),
 			'Instagram'	=> esc_url( get_theme_mod('social_instagram', '') ),
@@ -398,7 +393,8 @@ if( ! function_exists( 'agama_social_icons' ) ) {
 			'Dropbox'	=> esc_url( get_theme_mod('social_dropbox', '') ),
 			'Soundcloud'=> esc_url( get_theme_mod('social_soundcloud', '') ),
 			'VK'		=> esc_url( get_theme_mod('social_vk', '') ),
-			'Email'		=> esc_url( get_theme_mod('social_email', '') )
+			'Email'		=> esc_url( get_theme_mod('social_email', '') ),
+			'RSS'		=> esc_url( get_theme_mod('social_rss', get_bloginfo('rss2_url')) )
 		);
 		// Output icons
 		foreach( $social as $name => $url ) {

@@ -10,7 +10,7 @@
 get_header(); ?>
 
 	<div id="primary" class="site-content col-md-9">
-		<div id="content" role="main" <?php if( !is_single() && get_theme_mod('agama_blog_layout', 'list') !== 'list' ): ?>class="js-isotope"  data-isotope-options='{ "itemSelector": ".article-wrapper" }'<?php endif; ?>>
+		<div id="content" role="main" <?php if( ! is_single() && ! is_singular() && get_theme_mod('agama_blog_layout', 'list') == 'grid' ): ?>class="js-isotope"  data-isotope-options='{ "itemSelector": ".article-wrapper" }'<?php endif; ?>>
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>

@@ -1,14 +1,14 @@
 /*
-Theme Name: Agama
-Theme URI: http://theme-vision.com/agama/
-Author: Jaroslav Svetlik
-Author URI: http://theme-vision.com/
-Description: Agama Multi-Purpose, responsive Wordpress theme. Features: WooCommerce compatible, bbPress compatible, BuddyPress compatible, flexslider 2, light - dark skin, list - grid blog style, normal - sticky header style, 25 social icons options, FontAwesome included, translate ready.
-Version: 1.0.8
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: light,dark, white, one-column, two-columns, right-sidebar, left-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
-Text Domain: agama
+ Theme Name: Agama
+ Theme URI: http://theme-vision.com/agama/
+ Author: Jaroslav Svetlik
+ Author URI: http://theme-vision.com/
+ Description: Agama Multi-Purpose, responsive Wordpress theme. Features: Boxed / Fullwidth - Layout, WooCommerce compatible, bbPress compatible, BuddyPress compatible, light - dark skin, list - grid blog style, normal - sticky header style, 25 social icons options, FontAwesome included, translate ready.
+ Version: 1.0.9
+ License: GNU General Public License v2 or later
+ License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ Tags: light,dark, white, one-column, two-columns, right-sidebar, left-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+ Text Domain: agama
 */
 
 * {
@@ -543,40 +543,6 @@ img.wp-smiley,
 	        transition: all .2s;
 }
 
-/* FlexSlider */
-.flexslider .slide-title{
-	font-size: 24px;
-	font-weight: normal;
-	text-align: center;
-	position: relative;
-	padding: 15px 0;
-	bottom: 54px;
-	width: 100%;
-	color: #333;
-	background-color: rgba(255, 255, 255, .7);
-}
-.flex-direction-nav .flex-prev,
-.flex-direction-nav .flex-next {
-	background-color: #000;
-}
-.flex-direction-nav a:before {
-	font-family: "FontAwesome";
-	color: rgba(255,255,255, .5);
-	text-shadow: none;
-	position: relative;
-}
-.flex-direction-nav a:hover:before {
-	color: rgba(255,255,255, 1);
-}
-.flex-direction-nav a.flex-prev:before {
-	content: "\f104";
-	left: 10px;
-}
-.flex-direction-nav a.flex-next:before {
-	content: "\f105";
-	right: 10px;
-}
-
 /* Navigation */
 .site-content nav {
 	clear: both;
@@ -698,8 +664,8 @@ body.sticky_header #main-wrapper {
 .sticky-header {
 	position: relative;
 	background-color: #fff;
-	max-width: 1200px;
 	width: 100%;
+	margin: 0 auto;
 	-webkit-transition: height 0.4s;
 	-moz-transition: height 0.4s;
 	transition: height 0.4s;
@@ -715,6 +681,7 @@ body.sticky_header #main-wrapper {
 	position: fixed;
 }
 .site-header .sticky-header .sticky-header-inner {
+	max-width: 1200px;
 	margin: 0 auto;
 }
 .site-header .sticky-header h1,
@@ -737,6 +704,7 @@ body.sticky_header #main-wrapper {
 	padding: 0 25px;
 }
 .site-header .sticky-header nav {
+	padding-right: 0;
 	float: right;
 }
 .site-header .sticky-header nav a {
@@ -827,10 +795,6 @@ body.sticky_header #main-wrapper {
 .sticky-nav > ul > li:first-child {
 	border-left: 1px solid #ededed;
 }
-.sticky-nav > li:last-child,
-.sticky-nav > ul > li:last-child {
-	border-right: 0;
-}
 .sticky-nav > li.menu-item-has-children > a:after,
 .sticky-nav > ul > li.menu-item-has-children > a:after {
 	font-family: 'FontAwesome';
@@ -891,19 +855,19 @@ body.sticky_header #main-wrapper {
 /* Header Image */
 .header-image {
 	border-radius: 0 !important;
+	text-align: center;
+	margin: 0 auto;
+	display: block;
 }
 
 /* #main-wrapper */
 #main-wrapper {
-	margin: 0 auto;
-	max-width: 1200px;
-	width: 100%;
-	overflow: hidden;
 	box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
-	margin-bottom: 48px;
-	margin-bottom: 3.428571429rem;
 	background-color: #fff;
+	margin-bottom: 48px;
 	overflow: hidden;
+	margin: 0 auto;
+	width: 100%;
 }
 #content,
 #nav-below {
@@ -956,7 +920,8 @@ body.sticky_header #main-wrapper {
 
 /* Header */
 .site-header hgroup {
-	margin: 24px 0;
+	max-width: 1200px;
+	margin: 24px auto;
 	padding: 0 30px;
 }
 .site-header h1,
@@ -1145,6 +1110,7 @@ body.sticky_header #main-wrapper {
 /* Sticky Header Navigation */
 .sticky-header ul {
 	z-index: 9999;
+	float: right;
 }
 .sticky-header ul li ul {
 	background-color: #fff;
@@ -1159,7 +1125,10 @@ body.sticky_header #main-wrapper {
 	content: "";
 	width: 100%;
 }
-
+.top-nav-sub-wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+}
 .top-navigation li {
 	margin-bottom: 24px;
 	margin-bottom: 1.714285714rem;
@@ -1167,22 +1136,18 @@ body.sticky_header #main-wrapper {
 	font-size: 0.857142857rem;
 	line-height: 1.42857143;
 }
-
 .top-navigation a {
 	color: #5e5e5e;
 }
-
 .top-navigation a:hover,
 .top-navigation a:focus {
 	color: #21759b;
 }
-
 .top-navigation ul.top-nav-menu,
 .top-navigation div.top-nav-menu > ul {
 	padding: 0 10px;
 	display: none;
 }
-
 .top-navigation ul.top-nav-menu.toggled-on,
 .top-menu-toggle {
 	display: inline-block;
@@ -1192,6 +1157,8 @@ body.sticky_header #main-wrapper {
 /* Primary Navigation Menu */
 .main-navigation {
 	text-align: center;
+	border-top: 1px solid #ededed;
+	border-bottom: 1px solid #ededed;
 }
 .main-navigation li {
 	margin-top: 24px;
@@ -1209,7 +1176,9 @@ body.sticky_header #main-wrapper {
 }
 .main-navigation ul.nav-menu,
 .main-navigation div.nav-menu > ul {
+	max-width: 1200px;
 	padding: 0 30px;
+	margin: 0 auto;
 	display: none;
 }
 .main-navigation ul.nav-menu.toggled-on,
@@ -1326,7 +1295,6 @@ section[role="banner"] {
 }
 
 /* Back to Top */
-/* Back to Top */
 #toTop {
     display: none;
     position: fixed;
@@ -1341,7 +1309,7 @@ section[role="banner"] {
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
 	color: rgba(255, 255, 255, .8);
-	z-index: 99999;
+	z-index: 999;
 	cursor: pointer;
 	opacity: 0.8;
 	-moz-opacity: 0.8; /* Netscape */
@@ -1387,6 +1355,10 @@ footer[role="contentinfo"] a:hover {
 }
 footer[role="contentinfo"] .social {
 	text-align: right;
+}
+.footer-sub-wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
 }
 
 #primary.col-md-9 {
@@ -1458,6 +1430,9 @@ footer[role="contentinfo"] .social {
 	font-size: 1.428571429rem;
 	line-height: 1.2;
 	font-weight: normal;
+}
+.page .entry-title {
+	margin-bottom: 25px;
 }
 .entry-header .entry-title a {
 	text-decoration: none;
@@ -1660,6 +1635,8 @@ article.format-aside .single-line-meta {
 	padding: 24px;
 	padding: 1.714285714rem;
 	font-style: italic;
+	background-color: #f5f5f5;
+	margin: 0 25px;
 }
 .entry-content blockquote p:last-child,
 .comment-content blockquote p:last-child {
@@ -1836,7 +1813,6 @@ footer.entry-meta {
 figure.effect-bubba {
 	position: relative;
 	overflow: hidden;
-	background: #3085a3;
 	text-align: center;
 	cursor: pointer;
 }
@@ -1887,9 +1863,6 @@ figure.effect-bubba p {
 figure.effect-bubba p {
 	letter-spacing: 1px;
 	font-size: 68.5%;
-}
-figure.effect-bubba {
-	background: #F7A805;
 }
 figure.effect-bubba img {
 	opacity: 0.8;
@@ -2677,8 +2650,6 @@ img#wpstats {
 	}
 	.main-navigation ul.nav-menu,
 	.main-navigation div.nav-menu > ul {
-		border-bottom: 1px solid #ededed;
-		border-top: 1px solid #ededed;
 		display: inline-block !important;
 		text-align: left;
 		width: 100%;

@@ -1,17 +1,31 @@
-<div class="top-nav-wrapper">
-
-	<?php if( get_theme_mod( 'agama_top_navigation', '1' ) == '1' || is_customize_preview() ): // Top navigation?>
-		<nav id="top-navigation" class="top-navigation col-md-6" role="navigation">
-			<?php wp_nav_menu( array( 'theme_location' => 'top', 'menu_class' => 'top-nav-menu' ) ); ?>
-		</nav><!-- .top-navigation -->
-	<?php endif; ?>
+<?php
+	if( ! get_theme_mod( 'agama_top_navigation', true ) ) {
+		$agama_top_nav_social_class = 'class="col-md-12"';
+	} else {
+		$agama_top_nav_social_class = 'class="col-md-6"';
+	}
 	
-	<?php if( get_theme_mod( 'agama_top_nav_social', false ) ): // Social icons ?>
-		<div id="top-nav-social" class="col-md-6">
-			<?php agama_social_icons( $tip_position = 'bottom' ); ?>
-		</div><!-- #top-nav-social -->
-	<?php endif; ?>
+	if( ! get_theme_mod( 'agama_top_nav_social', true ) ) {
+		$agama_top_nav_class = 'class="top-navigation col-md-12"';
+	} else {
+		$agama_top_nav_class = 'class="top-navigation col-md-6"';
+	}
+?>
 
+<div class="top-nav-wrapper">
+	<div class="top-nav-sub-wrapper">
+		<?php if( get_theme_mod( 'agama_top_navigation', true ) ): // Top navigation?>
+			<nav id="top-navigation" <?php echo $agama_top_nav_class; ?> role="navigation">
+				<?php wp_nav_menu( array( 'theme_location' => 'top', 'menu_class' => 'top-nav-menu' ) ); ?>
+			</nav><!-- .top-navigation -->
+		<?php endif; ?>
+		
+		<?php if( get_theme_mod( 'agama_top_nav_social', true ) ): // Social icons ?>
+			<div id="top-nav-social" <?php echo $agama_top_nav_social_class; ?>>
+				<?php agama_social_icons( $tip_position = 'bottom' ); ?>
+			</div><!-- #top-nav-social -->
+		<?php endif; ?>
+	</div>
 </div><!-- .top-wrapper -->
 
 <hgroup>
