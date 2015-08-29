@@ -70,6 +70,9 @@ if( ! class_exists( 'Agama_About' ) ) {
 				echo '</h2>';
 				
 				echo '<div class="changelog point-releases">';
+					echo '<h3>'.__( 'Changelog Agama v1.1.0', 'agama' ).'</h3>';
+					echo '<p><strong>Version 1.1.0</strong> fixed textdomain issue in customizer.</p>';
+					
 					echo '<h3>'.__( 'Changelog Agama v1.0.9', 'agama' ).'</h3>';
 					echo '<p><strong>Version 1.0.9</strong> added Layout style options (Boxed / Fullwidth).</p>';
 					echo '<p><strong>Version 1.0.9</strong> fixed Blog list feature thumbnail size issue.</p>';

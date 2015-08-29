@@ -2,6 +2,9 @@ Agama WordPress Theme, Copyright 2015 Theme-Vision.com
 Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
+= 1.1.0 Aug 30 =
+FIXED: textdomain issue in customizer.
+
 = 1.0.9 Aug 28 2015 =
 ADDED: Layout style options (Boxed / Fullwidth).
 FIXED: Blog list feature thumbnail size issue.

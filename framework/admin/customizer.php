@@ -52,7 +52,7 @@ function agama_customize_headers_register($wp_customize) {
 		public function render_content() { ?>
 			<div class="theme-headers">
 				<label>
-					<span class="customize-control-title"><?php _e( 'Select Header Style', 'agama-pro' ); ?></span>
+					<span class="customize-control-title"><?php _e( 'Select Header Style', 'agama' ); ?></span>
 					<input name="agama_header_style" type="radio" value="default" data-customize-setting-link="agama_header_style">
 					<img src="<?php echo AGAMA_IMG . 'headers/header-default.jpg'; ?>">
 				</label>
