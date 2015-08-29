@@ -239,9 +239,9 @@ add_action( 'anderson_footer_text', 'anderson_display_footer_text' );
 function anderson_display_footer_text() { ?>
 
 	<span class="credit-link">
-		<?php printf(__( 'Powered by %1$s and %2$s.', 'anderson-lite' ), 
-			sprintf( '<a href="http://wordpress.org" title="WordPress">%s</a>', __( 'WordPress', 'anderson-lite' ) ),
-			sprintf( '<a href="http://themezee.com/themes/anderson/" title="Anderson WordPress Theme">%s</a>', __( 'Anderson', 'anderson-lite' ) )
+		<?php printf( __( 'Powered by %1$s and %2$s.', 'anderson-lite' ), 
+			'<a href="http://wordpress.org" title="WordPress">WordPress</a>',
+			'<a href="http://themezee.com/themes/anderson/" title="Anderson WordPress Theme">Anderson</a>'
 		); ?>
 	</span>
 
@@ -273,7 +273,7 @@ function anderson_display_social_icons() {
 	else: // Display Hint how to configure Social Icons ?>
 
 		<p class="social-icons-hint">
-			<?php _e('Please go to WP-Admin-> Appearance-> Menus and create a new custom menu with custom links to all your social networks. Then click on "Manage Locations" tab and assign your created menu to the "Social Icons" theme location.', 'anderson-lite'); ?>
+			<?php _e('Please go to Appearance &#8594; Menus and create a new custom menu with custom links to all your social networks. Then click on "Manage Locations" tab and assign your created menu to the "Social Icons" location.', 'anderson-lite'); ?>
 		</p>
 <?php
 	endif;

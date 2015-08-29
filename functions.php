@@ -171,7 +171,7 @@ function anderson_register_sidebars() {
 	register_sidebar( array(
 		'name' => __( 'Magazine Homepage', 'anderson-lite' ),
 		'id' => 'magazine-homepage',
-		'description' => __( 'Appears on "Magazine Homepage" page template only. You can use the Category Posts widgets here.', 'anderson-lite' ),
+		'description' => __( 'Appears on Magazine Homepage template only. You can use the Category Posts widgets here.', 'anderson-lite' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s clearfix">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3 class="widgettitle"><span>',
@@ -272,7 +272,7 @@ function anderson_list_comments($comment, $args, $depth) {
 
 				<div class="comment-author vcard">
 					<?php echo get_avatar( $comment, 56 ); ?>
-					<?php printf(__('<span class="fn">%s</span>', 'anderson-lite'), get_comment_author_link()) ?>
+					<?php printf( '<span class="fn">%s</span>', get_comment_author_link() ); ?>
 				</div>
 
 		<?php if ($comment->comment_approved == '0') : ?>
