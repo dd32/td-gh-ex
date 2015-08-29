@@ -19,7 +19,7 @@
 		<div id="comments-title">
 			<h3>
 				<?php
-					printf( _n( '1 Comment', '%1$s Comments', get_comments_number() ),
+					printf( _n( '1 Comment', '%1$s Comments', get_comments_number(), 'lan-thinkupthemes' ),
 						number_format_i18n( get_comments_number() ) );
 				?>
 			</h3>

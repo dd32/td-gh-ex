@@ -75,10 +75,10 @@ function setup_framework_options(){
 			<?php if ( $screenshot ) : ?>
 				<?php if ( current_user_can( 'edit_theme_options' ) ) : ?>
 				<a href="<?php echo wp_customize_url(); ?>" class="load-customize hide-if-no-customize" title="<?php echo esc_attr( $customize_title ); ?>">
-					<img src="<?php echo esc_url( $screenshot ); ?>" alt="<?php esc_attr_e( 'Current theme preview' ); ?>" />
+					<img src="<?php echo esc_url( $screenshot ); ?>" alt="<?php esc_attr_e( 'Current theme preview', 'lan-thinkupthemes' ); ?>" />
 				</a>
 				<?php endif; ?>
-				<img class="hide-if-customize" src="<?php echo esc_url( $screenshot ); ?>" alt="<?php esc_attr_e( 'Current theme preview' ); ?>" />
+				<img class="hide-if-customize" src="<?php echo esc_url( $screenshot ); ?>" alt="<?php esc_attr_e( 'Current theme preview', 'lan-thinkupthemes' ); ?>" />
 			<?php endif; ?>
 
 			<h4>
@@ -93,7 +93,7 @@ function setup_framework_options(){
 				</ul>
 				<p class="theme-description"><?php echo $ct->display('Description'); ?></p>
 				<?php if ( $ct->parent() ) {
-					printf( ' <p class="howto">' . __( 'This <a href="%1$s">child theme</a> requires its parent theme, %2$s.' ) . '</p>',
+					printf( ' <p class="howto">' . __( 'This <a href="%1$s">child theme</a> requires its parent theme, %2$s.', 'redux-framework' ) . '</p>',
 						__( 'http://codex.wordpress.org/Child_Themes', 'redux-framework' ),
 						$ct->parent()->display( 'Name' ) );
 				} ?>
