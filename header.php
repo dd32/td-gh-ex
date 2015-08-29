@@ -14,12 +14,7 @@
     <script src="<?php echo get_template_directory_uri(); ?>/inc/scripts/selectivizr-min.js" type="text/javascript"></script>
 <![endif]-->
 
-<?php 
-
-	if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
-	wp_head(); 
-	
-?>
+<?php wp_head(); ?>
 
 </head>
 
@@ -40,7 +35,7 @@
                         <?php 
                                         
                             if ( novalite_setting('novalite_custom_logo') ):
-                                echo "<img src='".novalite_setting('novalite_custom_logo','url')."' alt='logo'>"; 
+                                echo "<img src='".novalite_setting('novalite_custom_logo','url')."' alt='".__('Logo','novalite')."'>"; 
                             else: 
                                 bloginfo('name');
                             endif; 

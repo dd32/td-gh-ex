@@ -242,27 +242,6 @@ if (!function_exists('novalite_postmeta')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
-/* FAVICON */
-/*-----------------------------------------------------------------------------------*/ 
-
-if (!function_exists('novalite_favicon')) {
-
-	function novalite_favicon() { 
-
-		if ( novalite_setting('novalite_custom_favicon') ) :
-	
-			echo '<link rel="shortcut icon" href="' . novalite_setting('novalite_custom_favicon','url') . '"/>';
-	
-		endif;
-
-	}
-	
-	add_action('wp_head', 'novalite_favicon');
-
-	
-}
-
-/*-----------------------------------------------------------------------------------*/
 /* CONTENT TEMPLATE */
 /*-----------------------------------------------------------------------------------*/ 
 
@@ -411,6 +390,28 @@ if (!function_exists('novalite_my_gallery_style')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
+/* IE8 SCRIPTS */
+/*-----------------------------------------------------------------------------------*/ 
+
+if (!function_exists('novalite_ie8_scripts')) {
+
+	function novalite_ie8_scripts() { ?>
+
+<!--[if IE 8]>
+    <script src="<?php echo get_template_directory_uri(); ?>/inc/scripts/html5.js" type="text/javascript"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/inc/scripts/selectivizr-min.js" type="text/javascript"></script>
+<![endif]-->
+
+<?php
+
+	}
+	
+	add_action('wp_head', 'novalite_ie8_scripts');
+
+	
+}
+
+/*-----------------------------------------------------------------------------------*/
 /* STYLES AND SCRIPTS */
 /*-----------------------------------------------------------------------------------*/ 
 
@@ -428,7 +429,6 @@ if (!function_exists('novalite_scripts_styles')) {
 		if ( ( get_theme_mod('novalite_skin') ) && ( get_theme_mod('novalite_skin') <> "turquoise" ) ):
 	
 			wp_enqueue_style( 'novalite-' . get_theme_mod('novalite_skin') , get_template_directory_uri() . '/inc/skins/' . get_theme_mod('novalite_skin') . '.css' ); 
-		
 		endif;
 
 		wp_enqueue_style( 'suevafree-google-fonts', '//fonts.googleapis.com/css?family=Montez|Oxygen|Yanone+Kaffeesatz&subset=latin,latin-ext' );

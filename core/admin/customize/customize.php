@@ -211,17 +211,6 @@ if (!function_exists('novalite_customize_panel_function')) {
 
 			),
 
-			array( 
-
-				"label" => __( "Custom Favicon","novalite"),
-				"description" => __( "Insert the url of your custom favicon.","novalite"),
-				"id" => "novalite_custom_favicon",
-				"type" => "url",
-				"section" => "header_section",
-				"std" => "",
-
-			),
-
 			/* FOOTER AREA SECTION */ 
 
 			array( 
