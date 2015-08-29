@@ -93,6 +93,11 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.1.1
+- New:     .screen-reader-text class added to style.css - unstyled.
+- Fixed:   Custom social media icons now display correctly.
+- Fixed:   thinkup_check_ishome() now works correctly on all sites.
+
 Version 1.1.0
 - Fixed:   Breadcrumbs now work correctly on child pages. Prebiously 3rd level pages were breadking layout.
 - Updated: prettyPhoto updates to v3.1.6 to put in place prettyPhoto XSS fix.

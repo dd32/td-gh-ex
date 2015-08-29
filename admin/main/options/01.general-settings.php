@@ -199,6 +199,14 @@ if ( ! empty( $post->ID ) ) {
 		} else if ($thinkup_general_layout == "option3") {
 			wp_enqueue_style ( 'thinkup-sidebarright' );
 		}
+	} else {
+		if ( $_thinkup_meta_layout == 'option2' ) {
+			echo '';
+		} else if ( $_thinkup_meta_layout == 'option3' ) {
+			wp_enqueue_style ( 'sidebarleft' );
+		} else if ( $_thinkup_meta_layout == 'option4' ) {
+			wp_enqueue_style ( 'sidebarright' );
+		}
 	}
 }
 add_action( 'wp_enqueue_scripts', 'thinkup_sidebar_css', '11' );
@@ -343,12 +351,20 @@ do_action('thinkup_sidebar_html');
 //		} else if ( $_thinkup_meta_layout == 'option4' ) {
 //			echo get_sidebar();
 //		}
-	} else if ( is_search() ) {	
+	} else if ( is_search() ) {
 		if ( $thinkup_general_layout == 'option1' or empty( $thinkup_general_layout ) ) {		
 			echo '';
 		} else if ( $thinkup_general_layout == "option2" ) {
 			get_sidebar();
 		} else if ( $thinkup_general_layout == "option3" ) {
+			get_sidebar();
+		}
+	} else {
+		if ( $_thinkup_meta_layout == 'option2' ) {
+			echo '';
+		} else if ( $_thinkup_meta_layout == 'option3' ) {
+			get_sidebar();
+		} else if ( $_thinkup_meta_layout == 'option4' ) {
 			get_sidebar();
 		}
 	}
@@ -408,8 +424,10 @@ $_thinkup_meta_sidebars = get_post_meta( $post->ID, '_thinkup_meta_sidebars', tr
 		}
 	} else if ( is_singular( 'product' ) ) {
 		$output = $thinkup_woocommerce_sidebarsproduct;
-	} else if ( is_search() ) {	
+	} else if ( is_search() ) {
 		$output = $thinkup_general_sidebars;
+	} else {
+		$output = $_thinkup_meta_sidebars;
 	}
 
 	if ( empty( $output ) or $output == 'Select a sidebar:' ) {

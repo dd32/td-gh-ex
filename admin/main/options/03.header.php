@@ -56,9 +56,23 @@ function thinkup_input_facebookicon(){
 global $thinkup_header_facebookiconswitch;
 global $thinkup_header_facebookcustomicon;
 
+	$output = NULL;
+
 	if ( $thinkup_header_facebookiconswitch == '1' and ! empty( $thinkup_header_facebookcustomicon ) ) {
-		return '#pre-header-social .facebook a { background: url("' . $thinkup_header_facebookcustomicon . '") no-repeat center; background-size: 20px; }' . "\n";
+		$output .= '#pre-header-social li.facebook a,';
+		$output .= '#pre-header-social li.facebook a:hover {';
+		$output .= 'background: url("' . $thinkup_header_facebookcustomicon . '") no-repeat center;';
+		$output .= 'background-size: 25px;';
+		$output .= '-webkit-border-radius: 0;';
+		$output .= '-moz-border-radius: 0;';
+		$output .= '-o-border-radius: 0;';
+		$output .= 'border-radius: 0;';
+		$output .= '}' . "\n";
+		$output .= '#pre-header-social li.facebook i {';
+		$output .= 'display: none;';
+		$output .= '}' . "\n";
 	}
+	return $output;
 }
 
 /* Twitter - Custom Icon */
@@ -66,9 +80,23 @@ function thinkup_input_twittericon(){
 global $thinkup_header_twittericonswitch;
 global $thinkup_header_twittercustomicon;
 
+	$output = NULL;
+
 	if ( $thinkup_header_twittericonswitch == '1' and ! empty( $thinkup_header_twittercustomicon ) ) {
-		return '#pre-header-social .twitter a { background: url("' . $thinkup_header_twittercustomicon . '") no-repeat center; background-size: 20px; }' . "\n";
+		$output .= '#pre-header-social li.twitter a,';
+		$output .= '#pre-header-social li.twitter a:hover {';
+		$output .= 'background: url("' . $thinkup_header_twittercustomicon . '") no-repeat center;';
+		$output .= 'background-size: 25px;';
+		$output .= '-webkit-border-radius: 0;';
+		$output .= '-moz-border-radius: 0;';
+		$output .= '-o-border-radius: 0;';
+		$output .= 'border-radius: 0;';
+		$output .= '}' . "\n";
+		$output .= '#pre-header-social li.twitter i {';
+		$output .= 'display: none;';
+		$output .= '}' . "\n";
 	}
+	return $output;
 }
 
 /* Google+ - Custom Icon */
@@ -76,9 +104,23 @@ function thinkup_input_googleicon(){
 global $thinkup_header_googleiconswitch;
 global $thinkup_header_googlecustomicon;
 
+	$output = NULL;
+
 	if ( $thinkup_header_googleiconswitch == '1' and ! empty( $thinkup_header_googlecustomicon ) ) {
-		return '#pre-header-social .google a { background: url("' . $thinkup_header_googlecustomicon . '") no-repeat center; background-size: 20px; }' . "\n";
+		$output .= '#pre-header-social li.google-plus a,';
+		$output .= '#pre-header-social li.google-plus a:hover {';
+		$output .= 'background: url("' . $thinkup_header_googlecustomicon . '") no-repeat center;';
+		$output .= 'background-size: 25px;';
+		$output .= '-webkit-border-radius: 0;';
+		$output .= '-moz-border-radius: 0;';
+		$output .= '-o-border-radius: 0;';
+		$output .= 'border-radius: 0;';
+		$output .= '}' . "\n";
+		$output .= '#pre-header-social li.google-plus i {';
+		$output .= 'display: none;';
+		$output .= '}' . "\n";
 	}
+	return $output;
 }
 
 /* LinkedIn - Custom Icon */
@@ -86,9 +128,23 @@ function thinkup_input_linkedinicon(){
 global $thinkup_header_linkediniconswitch;
 global $thinkup_header_linkedincustomicon;
 
+	$output = NULL;
+
 	if ( $thinkup_header_linkediniconswitch == '1' and ! empty( $thinkup_header_linkedincustomicon ) ) {
-		return '#pre-header-social .linkedin a { background: url("' . $thinkup_header_linkedincustomicon . '") no-repeat center; background-size: 20px; }' . "\n";
+		$output .= '#pre-header-social li.linkedin a,';
+		$output .= '#pre-header-social li.linkedin a:hover {';
+		$output .= 'background: url("' . $thinkup_header_linkedincustomicon . '") no-repeat center;';
+		$output .= 'background-size: 25px;';
+		$output .= '-webkit-border-radius: 0;';
+		$output .= '-moz-border-radius: 0;';
+		$output .= '-o-border-radius: 0;';
+		$output .= 'border-radius: 0;';
+		$output .= '}' . "\n";
+		$output .= '#pre-header-social li.linkedin i {';
+		$output .= 'display: none;';
+		$output .= '}' . "\n";
 	}
+	return $output;
 }
 
 /* Flickr - Custom Icon */
@@ -96,9 +152,23 @@ function thinkup_input_flickricon(){
 global $thinkup_header_flickriconswitch;
 global $thinkup_header_flickrcustomicon;
 
+	$output = NULL;
+
 	if ( $thinkup_header_flickriconswitch == '1' and ! empty( $thinkup_header_flickrcustomicon ) ) {
-		return '#pre-header-social .flickr a { background: url("' . $thinkup_header_flickrcustomicon . '") no-repeat center; background-size: 20px; }' . "\n";
+		$output .= '#pre-header-social li.flickr a,';
+		$output .= '#pre-header-social li.flickr a:hover {';
+		$output .= 'background: url("' . $thinkup_header_flickrcustomicon . '") no-repeat center;';
+		$output .= 'background-size: 25px;';
+		$output .= '-webkit-border-radius: 0;';
+		$output .= '-moz-border-radius: 0;';
+		$output .= '-o-border-radius: 0;';
+		$output .= 'border-radius: 0;';
+		$output .= '}' . "\n";
+		$output .= '#pre-header-social li.flickr i {';
+		$output .= 'display: none;';
+		$output .= '}' . "\n";
 	}
+	return $output;
 }
 
 /* Pinterest - Custom Icon */
@@ -106,19 +176,46 @@ function thinkup_input_pinteresticon(){
 global $thinkup_header_pinteresticonswitch;
 global $thinkup_header_pinterestcustomicon;
 
+	$output = NULL;
+
 	if ( $thinkup_header_pinteresticonswitch == '1' and ! empty( $thinkup_header_pinterestcustomicon ) ) {
-		return '#pre-header-social .pinterest a { background: url("' . $thinkup_header_pinterestcustomicon . '") no-repeat center; background-size: 20px; }' . "\n";
+		$output .= '#pre-header-social li.pinterest a,';
+		$output .= '#pre-header-social li.pinterest a:hover {';
+		$output .= 'background: url("' . $thinkup_header_pinterestcustomicon . '") no-repeat center;';
+		$output .= 'background-size: 25px;';
+		$output .= '-webkit-border-radius: 0;';
+		$output .= '-moz-border-radius: 0;';
+		$output .= '-o-border-radius: 0;';
+		$output .= 'border-radius: 0;';
+		$output .= '}' . "\n";
+		$output .= '#pre-header-social li.pinterest i {';
+		$output .= 'display: none;';
+		$output .= '}' . "\n";
 	}
-}
+	return $output;}
 
 /* YouTube - Custom Icon */
 function thinkup_input_youtubeicon(){
 global $thinkup_header_youtubeiconswitch;
 global $thinkup_header_youtubecustomicon;
 
+	$output = NULL;
+
 	if ( $thinkup_header_youtubeiconswitch == '1' and ! empty( $thinkup_header_youtubecustomicon ) ) {
-		return '#pre-header-social .youtube a { background: url("' . $thinkup_header_youtubecustomicon . '") no-repeat center; background-size: 20px; }' . "\n";
+		$output .= '#pre-header-social li.youtube a,';
+		$output .= '#pre-header-social li.youtube a:hover {';
+		$output .= 'background: url("' . $thinkup_header_youtubecustomicon . '") no-repeat center;';
+		$output .= 'background-size: 25px;';
+		$output .= '-webkit-border-radius: 0;';
+		$output .= '-moz-border-radius: 0;';
+		$output .= '-o-border-radius: 0;';
+		$output .= 'border-radius: 0;';
+		$output .= '}' . "\n";
+		$output .= '#pre-header-social li.youtube i {';
+		$output .= 'display: none;';
+		$output .= '}' . "\n";
 	}
+	return $output;
 }
 
 /* RSS - Custom Icon */
@@ -126,9 +223,23 @@ function thinkup_input_rssicon(){
 global $thinkup_header_rssiconswitch;
 global $thinkup_header_rsscustomicon;
 
+	$output = NULL;
+
 	if ( $thinkup_header_rssiconswitch == '1' and ! empty( $thinkup_header_rsscustomicon ) ) {
-		return '#pre-header-social .rss a { background: url("' . $thinkup_header_rsscustomicon . '") no-repeat center; background-size: 20px; }' . "\n";
+		$output .= '#pre-header-social li.rss a,';
+		$output .= '#pre-header-social li.rss a:hover {';
+		$output .= 'background: url("' . $thinkup_header_rsscustomicon . '") no-repeat center;';
+		$output .= 'background-size: 25px;';
+		$output .= '-webkit-border-radius: 0;';
+		$output .= '-moz-border-radius: 0;';
+		$output .= '-o-border-radius: 0;';
+		$output .= 'border-radius: 0;';
+		$output .= '}' . "\n";
+		$output .= '#pre-header-social li.rss i {';
+		$output .= 'display: none;';
+		$output .= '}' . "\n";
 	}
+	return $output;
 }
 
 /* Input Custom Social Media Icons */
