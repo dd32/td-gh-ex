@@ -26,17 +26,13 @@ function dynamicnews_customize_register_options( $wp_customize ) {
 		'priority'       => 180,
 		'capability'     => 'edit_theme_options',
 		'theme_supports' => '',
-		'title'          => __( 'Theme Options', 'dynamicnewslite' ),
+		'title'          => __( 'Theme Options', 'dynamic-news-lite' ),
 		'description'    => '',
 	) );
 
 	// Add postMessage support for site title and description.
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	
-	// Change default background section
-	$wp_customize->get_control( 'background_color'  )->section   = 'background_image';
-	$wp_customize->get_section( 'background_image'  )->title     = 'Background';
 	
 	// Add Header Tagline option
 	$wp_customize->add_setting( 'dynamicnews_theme_options[header_tagline]', array(
@@ -47,7 +43,7 @@ function dynamicnews_customize_register_options( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'dynamicnews_control_header_tagline', array(
-        'label'    => __( 'Display Tagline below site title.', 'dynamicnewslite' ),
+        'label'    => __( 'Display Tagline below site title.', 'dynamic-news-lite' ),
         'section'  => 'title_tagline',
         'settings' => 'dynamicnews_theme_options[header_tagline]',
         'type'     => 'checkbox',

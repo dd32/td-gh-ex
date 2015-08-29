@@ -11,11 +11,14 @@
 add_action('admin_menu', 'dynamicnews_add_theme_info_page');
 function dynamicnews_add_theme_info_page() {
 	
+	// Get Theme Details from style.css
+	$theme = wp_get_theme(); 
+	
 	add_theme_page( 
-		__('Welcome to Dynamic News Lite', 'dynamicnewslite'), 
-		__('Theme Info', 'dynamicnewslite'), 
+		sprintf( __( 'Welcome to %1$s %2$s', 'dynamic-news-lite' ), $theme->get( 'Name' ), $theme->get( 'Version' ) ), 
+		__('Theme Info', 'dynamic-news-lite'), 
 		'edit_theme_options', 
-		'dynamicnewslite', 
+		'dynamicnews', 
 		'dynamicnews_display_theme_info_page'
 	);
 	
@@ -26,24 +29,24 @@ function dynamicnews_add_theme_info_page() {
 function dynamicnews_display_theme_info_page() { 
 	
 	// Get Theme Details from style.css
-	$theme_data = wp_get_theme(); 
+	$theme = wp_get_theme(); 
 	
 ?>
 			
 	<div class="wrap theme-info-wrap">
 
-		<h1><?php printf( __( 'Welcome to %1s %2s', 'dynamicnewslite' ), $theme_data->Name, $theme_data->Version ); ?></h1>
+		<h1><?php printf( __( 'Welcome to %1$s %2$s', 'dynamic-news-lite' ), $theme->get( 'Name' ), $theme->get( 'Version' ) ); ?></h1>
 
-		<div class="theme-description"><?php echo $theme_data->Description; ?></div>
+		<div class="theme-description"><?php echo $theme->get( 'Description' ); ?></div>
 		
 		<hr>
 		<div class="important-links clearfix">
-			<p><strong><?php _e('Important Links:', 'dynamicnewslite'); ?></strong>
-				<a href="http://themezee.com/themes/dynamicnews/" target="_blank"><?php _e('Theme Info Page', 'dynamicnewslite'); ?></a>
-				<a href="<?php echo get_template_directory_uri(); ?>/changelog.txt" target="_blank"><?php _e('Changelog', 'dynamicnewslite'); ?></a>
-				<a href="http://preview.themezee.com/dynamicnews/" target="_blank"><?php _e('Theme Demo', 'dynamicnewslite'); ?></a>
-				<a href="http://themezee.com/docs/dynamicnews-documentation/" target="_blank"><?php _e('Theme Documentation', 'dynamicnewslite'); ?></a>
-				<a href="http://wordpress.org/support/view/theme-reviews/dynamic-news-lite?filter=5" target="_blank"><?php _e('Rate this theme', 'dynamicnewslite'); ?></a>
+			<p><strong><?php _e('Important Links:', 'dynamic-news-lite'); ?></strong>
+				<a href="http://themezee.com/themes/dynamicnews/" target="_blank"><?php _e('Theme Page', 'dynamic-news-lite'); ?></a>
+				<a href="<?php echo get_template_directory_uri(); ?>/changelog.txt" target="_blank"><?php _e('Changelog', 'dynamic-news-lite'); ?></a>
+				<a href="http://preview.themezee.com/dynamicnews/" target="_blank"><?php _e('Theme Demo', 'dynamic-news-lite'); ?></a>
+				<a href="http://themezee.com/docs/dynamicnews-documentation/" target="_blank"><?php _e('Theme Documentation', 'dynamic-news-lite'); ?></a>
+				<a href="http://wordpress.org/support/view/theme-reviews/dynamic-news-lite?filter=5" target="_blank"><?php _e('Rate this theme', 'dynamic-news-lite'); ?></a>
 			</p>
 		</div>
 		<hr>
@@ -54,32 +57,42 @@ function dynamicnews_display_theme_info_page() {
 
 				<div class="column column-half clearfix">
 				
-					<h3><?php printf( __( 'Getting Started with %s', 'dynamicnewslite' ), $theme_data->Name ); ?></h3>
+					<h3><?php printf( __( 'Getting Started with %s', 'dynamic-news-lite' ), $theme->get( 'Name' ) ); ?></h3>
 						
 					<div class="section">
-						<h4><?php _e( 'Theme Documentation', 'dynamicnewslite' ); ?></h4>
+						<h4><?php _e( 'Theme Documentation', 'dynamic-news-lite' ); ?></h4>
 						
-						<p class="about"><?php _e( 'Need any help to setup and configure this theme? We got you covered with an extensive theme documentation on our website.', 'dynamicnewslite' ); ?></p>
+						<p class="about">
+							<?php _e( 'You need help to setup and configure this theme? We got you covered with an extensive theme documentation on our website.', 'dynamic-news-lite' ); ?>
+						</p>
 						<p>
-							<a href="http://themezee.com/docs/dynamicnews-documentation/" target="_blank" class="button button-secondary"><?php _e('Visit Dynamic News Documentation', 'dynamicnewslite'); ?></a>
+							<a href="http://themezee.com/docs/dynamicnews-documentation/" target="_blank" class="button button-secondary">
+								<?php printf( __( 'View %s Documentation', 'dynamic-news-lite' ), 'Dynamic News' ); ?>
+							</a>
 						</p>
 					</div>
 					
 					<div class="section">
-						<h4><?php _e( 'Theme Options', 'dynamicnewslite' ); ?></h4>
+						<h4><?php _e( 'Theme Options', 'dynamic-news-lite' ); ?></h4>
 						
-						<p class="about"><?php _e( 'Dynamic News supports the awesome Theme Customizer for all theme settings. Click "Customize Theme" to open the Customizer now.', 'dynamicnewslite' ); ?></p>
+						<p class="about">
+							<?php printf( __( '%s makes use of the Customizer for all theme settings. Click on "Customize Theme" to open the Customizer now.', 'dynamic-news-lite' ), $theme->get( 'Name' ) ); ?>
+						</p>
 						<p>
-							<a href="<?php echo admin_url( 'customize.php' ); ?>" class="button button-primary"><?php _e('Customize Theme', 'dynamicnewslite'); ?></a>
+							<a href="<?php echo admin_url( 'customize.php' ); ?>" class="button button-primary"><?php _e('Customize Theme', 'dynamic-news-lite'); ?></a>
 						</p>
 					</div>
 					
 					<div class="section">
-						<h4><?php _e( 'PRO Version', 'dynamicnewslite' ); ?></h4>
+						<h4><?php _e( 'Pro Version', 'dynamic-news-lite' ); ?></h4>
 						
-						<p class="about"><?php _e( 'Need more features? Check out the PRO version which comes with additional features and advanced customization options.', 'dynamicnewslite' ); ?></p>
+						<p class="about">
+							<?php _e( 'You need more features? Purchase the Pro Version to get additional features and advanced customization options.', 'dynamic-news-lite' ); ?>
+						</p>
 						<p>
-							<a href="http://themezee.com/themes/dynamicnews/#PROVersion-1" target="_blank" class="button button-secondary"><?php _e('Learn more about the PRO Version of Dynamic News', 'dynamicnewslite'); ?></a>
+							<a href="http://themezee.com/themes/dynamicnews/#PROVersion-1" target="_blank" class="button button-secondary">
+								<?php printf( __( 'Learn more about %s Pro', 'dynamic-news-lite' ), 'Dynamic News'); ?>
+							</a>
 						</p>
 					</div>
 
@@ -99,9 +112,10 @@ function dynamicnews_display_theme_info_page() {
 		
 		<div id="theme-author">
 			
-			<p><?php printf( __( 'Dynamic News is proudly brought to you by %1s. If you like this theme, %2s :) ', 'dynamicnewslite' ), 
+			<p><?php printf( __( '%1$s is proudly brought to you by %2$s. If you like this theme, %3$s :)', 'dynamic-news-lite' ), 
+				$theme->get( 'Name' ),
 				'<a target="_blank" href="http://themezee.com" title="ThemeZee">ThemeZee</a>',
-				'<a target="_blank" href="http://wordpress.org/support/view/theme-reviews/dynamic-news-lite?filter=5" title="Dynamic News Lite Review">' . __( 'rate it', 'dynamicnewslite' ) . '</a>'); ?>
+				'<a target="_blank" href="http://wordpress.org/support/view/theme-reviews/dynamic-news-lite?filter=5" title="Dynamic News Lite Review">' . __( 'rate it', 'dynamic-news-lite' ) . '</a>'); ?>
 			</p>
 		
 		</div>
@@ -117,7 +131,7 @@ add_action('admin_enqueue_scripts', 'dynamicnews_theme_info_page_css');
 function dynamicnews_theme_info_page_css($hook) { 
 
 	// Load styles and scripts only on theme info page
-	if ( 'appearance_page_dynamicnewslite' != $hook ) {
+	if ( 'appearance_page_dynamicnews' != $hook ) {
 		return;
 	}
 	
