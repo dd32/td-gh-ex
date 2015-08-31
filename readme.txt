@@ -89,6 +89,10 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.24.2
+* Option name mismatch for the child theme fixed
+* Issue of bxslider not working for RTL Website fixed
+
 Version 1.24.0
 * Theme Demo Url Changed
 * Changed Author url from http to https

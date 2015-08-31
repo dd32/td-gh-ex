@@ -13,6 +13,9 @@
 
 /** RESET AND LAYOUT
 ===================================*/
+.bx-wrapper *{
+	direction: ltr;
+}
 
 .bx-wrapper {
 	position: relative;

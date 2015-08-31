@@ -1,17 +1,5 @@
 <?php
 /**
- * A unique identifier is defined to store the options in the database and reference them from the theme.
- * By default it uses the theme name, in lowercase and without spaces, but this can be changed if needed.
- * If the identifier changes, it'll appear as if the options have been reset.
- */
-
-function optionsframework_option_name() {
-
-	return 'accesspress_parallax';
-
-}
-
-/**
  * Defines an array of options that will be used to generate the settings page and be saved in the database.
  * When creating the 'id' fields, make sure to use all lowercase and no spaces.
  *
@@ -83,8 +71,8 @@ function optionsframework_options() {
 
     $about_content .= "<h4>".__('Get in touch','accesspress-parallax')."</h4>";
     $about_content .= __('If you have any question/feedback regarding theme, please post in our forum','accesspress-parallax')."<br /><br />"; 
-    $about_content .= __('Forum:','accesspress-parallax')." <a target='_blank' href='".esc_url('https://accesspressthemes.com/support/')."'>http://accesspressthemes.com/support/</a><br /><br />";
-    $about_content .= __('Live Chat Support:','accesspress-parallax')." <a target='_blank' href='".esc_url('https://accesspressthemes.com/')."'>http://accesspressthemes.com</a><br /><br /><br />";
+    $about_content .= __('Forum:','accesspress-parallax')." <a target='_blank' href='".esc_url('https://accesspressthemes.com/support/')."'>https://accesspressthemes.com/support/</a><br /><br />";
+    $about_content .= __('Live Chat Support:','accesspress-parallax')." <a target='_blank' href='".esc_url('https://accesspressthemes.com/')."'>https://accesspressthemes.com</a><br /><br /><br />";
     $about_content .= "<hr/><br />";
     $about_content .= "<h4>".__('For Queries Regading Pro Themes:','accesspress-parallax')."</h4>";
     $about_content .= "<a href='mailto:support@accesspressthemes.com'>support@accesspressthemes.com</a><br /><br />";

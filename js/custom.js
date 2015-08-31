@@ -63,11 +63,11 @@ jQuery(document).ready(function($){
     });
 
     $('.team-content').each(function(){
-        $('.team-content .team-list:first').show();
+        $(this).find('.team-list:first').show();
     });
     
     $('.team-tab').each(function(){
-        $('.team-tab .team-image:first').addClass('active');
+        $(this).find('.team-image:first').addClass('active');
     });
 
     $('.team-tab .team-image').on('click', function(){
