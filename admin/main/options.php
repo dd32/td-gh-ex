@@ -135,7 +135,7 @@ function redux_setup_framework_options(){
     $args['dev_mode_icon_class'] = 'icon-large';
 
     // Set a custom option name. Don't forget to replace spaces with underscores!
-    $args['opt_name'] = 'redux';
+    $args['opt_name'] = 'thinkup_redux_variables';
 
     // Setting system info to true allows you to view info useful for debugging.
     // Default: true
