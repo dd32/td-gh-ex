@@ -134,7 +134,7 @@ function rubine_register_sidebars() {
 	register_sidebar( array(
 		'name' => __( 'Sidebar', 'rubine-lite' ),
 		'id' => 'sidebar',
-		'description' => __( 'Appears on posts and pages except front page and fullwidth template.', 'rubine-lite' ),
+		'description' => __( 'Appears on posts and pages except Magazine Homepage and Fullwidth template.', 'rubine-lite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widgettitle"><span>',

@@ -11,9 +11,9 @@
 			else : ?>
 
 			<aside class="widget">
-				<h3 class="widgettitle"><?php _e('Widget Area', 'rubine-lite'); ?></h3>
+				<h3 class="widgettitle"><?php _e('Sidebar', 'rubine-lite'); ?></h3>
 				<div class="textwidget">
-					<p><?php _e('There are no active widgets to be displayed. Please go to Appearance -> Widgets to setup your sidebar.', 'rubine-lite'); ?></p>
+					<p><?php _e('Please go to Appearance &#8594; Widgets and add some widgets to your sidebar.', 'rubine-lite'); ?></p>
 				</div>
 			</aside>
 		

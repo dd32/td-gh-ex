@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Rubine Lite\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-08 17:29+0100\n"
-"PO-Revision-Date: 2014-12-08 17:48+0100\n"
+"Report-Msgid-Bugs-To: http://themezee.com/\n"
+"POT-Creation-Date: 2015-08-29 14:31+0100\n"
+"PO-Revision-Date: 2015-08-29 14:57+0100\n"
 "Last-Translator: Marco Andrei Kichalowsky <contact@marcoandrei.com>\n"
 "Language-Team: Marco Andrei Kichalowsky <contact@marcoandrei.com>\n"
 "Language: pt_BR\n"
@@ -22,323 +22,259 @@ msgstr ""
 "X-Loco-Target-Locale: pt_BR\n"
 
 #: 404.php:9
-msgid "404 Error: Not found"
+#, fuzzy
+msgid "404: Page not found"
 msgstr "Erro 404: página não encontrada"
 
 #: 404.php:12
 msgid ""
-"The page you trying to reach does not exist, or has been moved. Please use "
-"the menus or the search box to find what you are looking for"
+"It looks like nothing was found at this location. Maybe try a search or one "
+"of the links below?"
 msgstr ""
-"A página que você está tentando acessar não existe ou foi movida para outro "
-"lugar. Por favor, use os menus ou a caixa de busca para encontrar o que está "
-"procurando."
-
-#: 404.php:14
-msgid "Search"
-msgstr "Buscar"
-
-#: 404.php:17
-msgid "Recent Posts"
-msgstr "Posts recentes"
-
-#: 404.php:27
-msgid "Pages"
-msgstr "Páginas"
-
-#: archive.php:14
-#, php-format
-msgid "Monthly Archives: %s"
-msgstr "Arquivos para o mês %s"
-
-#: archive.php:14
-msgid "F Y"
-msgstr "F de Y"
-
-#: archive.php:16
-msgid "Archives"
-msgstr "Arquivos"
-
-#: author.php:16
-#, php-format
-msgid "Author Archives: %s"
-msgstr "Arquivos para o autor %s"
-
-#: category.php:12
-#, php-format
-msgid "Category Archives: %s"
-msgstr "Arquivos para a categoria %s"
 
 #: comments.php:13
 msgid "Enter password to view comments."
 msgstr "Entre com a senha para ver os comentários."
 
-#: comments.php:23 inc/template-tags.php:78
+#: comments.php:23 inc/template-tags.php:112
 msgid "One comment"
 msgstr "1 comentário"
 
-#: comments.php:23 inc/template-tags.php:78
+#: comments.php:23 inc/template-tags.php:112
 #, php-format
 msgid "% comments"
 msgstr "% comentários"
 
-#: content.php:25
+#: content-search.php:8 content.php:25
 msgid "Read more"
 msgstr "Leia mais"
 
-#: functions.php:42
-msgid "Main Navigation"
-msgstr "Navegação principal"
-
-#: functions.php:43
-msgid "Top Navigation"
-msgstr "Navegação no topo"
-
-#: functions.php:44
-msgid "Social Icons"
-msgstr "Ícones de redes sociais"
-
-#: functions.php:66
+#: functions.php:20
 msgid "Menu"
 msgstr "Menu"
 
-#: functions.php:109
+#: functions.php:102
+msgid "Main Navigation"
+msgstr "Navegação principal"
+
+#: functions.php:103
+msgid "Top Navigation"
+msgstr "Navegação no topo"
+
+#: functions.php:104
+msgid "Social Icons"
+msgstr "Ícones de redes sociais"
+
+#: functions.php:135 sidebar.php:14
 msgid "Sidebar"
 msgstr "Barra lateral"
 
-#: functions.php:111
-msgid "Appears on posts and pages except front page and fullwidth template."
+#: functions.php:137
+#, fuzzy
+msgid ""
+"Appears on posts and pages except Magazine Homepage and Fullwidth template."
 msgstr ""
 "Aparece em posts e páginas, exceto na página inicial e no modelo de largura "
 "total"
 
-#: functions.php:142
-#, php-format
-msgid "Page %s"
-msgstr "Página %s"
-
-#: functions.php:169
-#, php-format
-msgid "Powered by %1$s and %2$s."
-msgstr "Com as tecnologias %1$s e %2$s."
-
-#: functions.php:170
-msgid "WordPress"
-msgstr "WordPress"
-
-#: functions.php:171
-msgid "Rubine Theme"
-msgstr ""
-
-#: functions.php:217
+#: functions.php:219
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: functions.php:218 functions.php:237
+#: functions.php:220 functions.php:239
 msgid "(Edit)"
 msgstr "(Editar)"
 
-#: functions.php:248
+#: functions.php:250
 msgid "Your comment is awaiting moderation."
 msgstr "Seu comentário aguarda moderação."
 
-#: image.php:19
-msgid "Previous"
-msgstr "Anterior"
-
-#: image.php:20
-msgid "Next"
-msgstr "Próximo"
-
-#: image.php:26
-msgid "Return to Gallery"
-msgstr "Retornar à Galeria"
-
-#: image.php:27
-msgid "Return to"
-msgstr "Retornar para"
-
-#: search.php:13 search.php:27
+#: search.php:8
 #, php-format
 msgid "Search Results for: %s"
 msgstr "Resultados da busca por %s"
 
-#: search.php:33
+#: search.php:31
+msgid "No matches"
+msgstr ""
+
+#: search.php:35
+#, fuzzy
 msgid ""
-"No matches. Please try again, or use the navigation menus to find what you "
-"search for."
+"Please try again, or use the navigation menus to find what you search for."
 msgstr ""
 "Sem correspondências. Por favor, tente novamente ou use os menus de "
 "navegação para encontrar o que está procurando."
 
 #: searchform.php:4
+#, fuzzy
+msgctxt "label"
 msgid "Search for:"
 msgstr "Buscar por:"
 
-#: sidebar.php:14
-msgid "Widget Area"
-msgstr "Área de widgets"
+#: searchform.php:5
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
 
 #: sidebar.php:16
 msgid ""
-"There are no active widgets to be displayed. Please go to Appearance -> "
-"Widgets to setup your sidebar."
+"Please go to Appearance &#8594; Widgets and add some widgets to your sidebar."
 msgstr ""
-"Não há widget ativos a serem exibidos. Por favor, acesse Aparência -> "
-"Widgets para configurar sua barra lateral."
 
-#: tag.php:12
-#, php-format
-msgid "Tag Archives: %s"
-msgstr "Arquivos para os tags %s"
-
-#: inc/featured-content.php:419
+#: inc/featured-content.php:348
 msgid "Featured Content"
 msgstr "Conteúdo em destaque"
 
-#: inc/featured-content.php:420
+#: inc/featured-content.php:349
 #, php-format
 msgid ""
-"Use a <a href=\"%1$s\">tag</a> to feature your posts. If no posts match the "
-"tag, <a href=\"%2$s\">sticky posts</a> will be displayed instead."
+"Easily feature all posts with the <a href=\"%1$s\">\"featured\" tag</a> or a "
+"tag of your choice. Your theme supports up to %2$s posts in its featured "
+"content area."
 msgstr ""
-"Use uma <a \n"
-"href=\"%1$s\">tag</a> para destacar seus posts. Se nenhum post corresponder "
-"a tag escolhida,  serão exibidos os <a href=\"%2$s\">posts fixos</a>."
 
-#: inc/featured-content.php:421 inc/featured-content.php:430
-#: inc/featured-content.php:490
-msgid "featured"
-msgstr "destaque"
-
-#: inc/featured-content.php:442
-msgid "Tag Name"
+#: inc/featured-content.php:376
+#, fuzzy
+msgid "Tag name"
 msgstr "Nome do tag"
 
-#: inc/featured-content.php:447
-msgid "Don&rsquo;t display tag on front end."
-msgstr "Não exibir o tag nas páginas."
+#: inc/featured-content.php:381
+msgid "Hide tag from displaying in post meta and tag clouds."
+msgstr ""
 
-#: inc/template-tags.php:66
+#: inc/featured-content.php:387
+msgid "Display featured posts in latest blog post listing."
+msgstr ""
+
+#: inc/template-tags.php:91
 #, php-format
 msgid "View all posts by %s"
 msgstr "Visualizar todos posts por %s"
 
-#: inc/template-tags.php:78
+#: inc/template-tags.php:112
 msgid "Leave a comment"
 msgstr "Deixar um comentário"
 
-#: inc/template-tags.php:177
+#: inc/template-tags.php:204
+#, php-format
+msgid "Powered by %1$s and %2$s."
+msgstr "Com as tecnologias %1$s e %2$s."
+
+#: inc/template-tags.php:238
+#, fuzzy
 msgid ""
-"Please go to WP-Admin-> Appearance-> Menus and create a new custom menu with "
+"Please go to Appearance &#8594; Menus and create a new custom menu with "
 "custom links to all your social networks. Then click on \"Manage Locations\" "
-"tab and assign your created menu to the \"Social Icons\" theme location."
+"tab and assign your created menu to the \"Social Icons\" location."
 msgstr ""
 "Por favor, acesse Aparência -> Menus e crie um menu com links personalizados "
 "para todos os seus perfis sociais. Então clique na aba Gerenciar Posições e "
 "atribua o menu recém-criado à posição no tem chamada \"Ícones de redes "
 "sociais\"."
 
-#: inc/theme-info.php:15
-msgid "Welcome to Rubine Lite"
-msgstr "Bem-vindo ao Rubine Lite"
+#: inc/theme-info.php:18 inc/theme-info.php:38
+#, fuzzy, php-format
+msgid "Welcome to %1$s %2$s"
+msgstr "Bem-vindo ao %1s versão %2s"
 
-#: inc/theme-info.php:16
+#: inc/theme-info.php:19
 msgid "Theme Info"
 msgstr "Informações do Tema"
 
-#: inc/theme-info.php:35
-#, php-format
-msgid "Welcome to %1s %2s"
-msgstr "Bem-vindo ao %1s versão %2s"
-
-#: inc/theme-info.php:41
+#: inc/theme-info.php:44
 msgid "Important Links:"
 msgstr "Links Importantes:"
 
-#: inc/theme-info.php:42
-msgid "Theme Info Page"
+#: inc/theme-info.php:45
+#, fuzzy
+msgid "Theme Page"
 msgstr "Página de Informações do Tema"
 
-#: inc/theme-info.php:43
+#: inc/theme-info.php:46
 msgid "Changelog"
 msgstr "Registro de Atualizações"
 
-#: inc/theme-info.php:44
+#: inc/theme-info.php:47
 msgid "Theme Demo"
 msgstr "Demonstração do Tema"
 
-#: inc/theme-info.php:45 inc/theme-info.php:66
+#: inc/theme-info.php:48 inc/theme-info.php:63
 msgid "Theme Documentation"
 msgstr "Documentação do Tema"
 
-#: inc/theme-info.php:46
+#: inc/theme-info.php:49
 msgid "Rate this theme"
 msgstr "Avalie este tema"
 
-#: inc/theme-info.php:63
+#: inc/theme-info.php:60
 #, php-format
 msgid "Getting Started with %s"
 msgstr "Primeiros passos com %s"
 
-#: inc/theme-info.php:68
+#: inc/theme-info.php:66
+#, fuzzy
 msgid ""
-"Need any help to setup and configure this theme? We got you covered with an "
+"You need help to setup and configure this theme? We got you covered with an "
 "extensive theme documentation on our website."
 msgstr ""
 "Precisa de alguma ajuda para instalar ou configurar este tema? Oferecemos a "
 "você uma vasta documentação sobre o tema em nosso <i>website</i>."
 
 #: inc/theme-info.php:70
-msgid "Visit Rubine Documentation"
-msgstr "Visitar a documentação do tema Rubine"
+#, fuzzy, php-format
+msgid "View %s Documentation"
+msgstr "Documentação do Tema"
 
-#: inc/theme-info.php:75 inc/customizer/customizer.php:28
+#: inc/theme-info.php:76 inc/customizer/customizer.php:28
 msgid "Theme Options"
 msgstr "Opções do Tema"
 
-#: inc/theme-info.php:77
+#: inc/theme-info.php:79
+#, fuzzy, php-format
 msgid ""
-"Rubine supports the awesome Theme Customizer for all theme settings. Click "
-"\"Customize Theme\" to open the Customizer now."
+"%s makes use of the Customizer for all theme settings. Click on \"Customize "
+"Theme\" to open the Customizer now."
 msgstr ""
 "Rubine suporta a incrível ferramenta de personalização de temas do WordPress "
 "para todas as suas configurações. Clique em \"Personalizar Tema\" para abrir "
 "a ferramenta agora. "
 
-#: inc/theme-info.php:79
+#: inc/theme-info.php:82
 msgid "Customize Theme"
 msgstr ""
 
-#: inc/theme-info.php:84 inc/customizer/sections/customizer-upgrade.php:14
-msgid "PRO Version"
+#: inc/theme-info.php:87 inc/customizer/sections/customizer-upgrade.php:14
+#, fuzzy
+msgid "Pro Version"
 msgstr "Versão PRO"
 
-#: inc/theme-info.php:86
+#: inc/theme-info.php:90
+#, fuzzy
 msgid ""
-"Need more features? Check out the PRO version which comes with additional "
-"features and advanced customization options."
+"You need more features? Purchase the Pro Version to get additional features "
+"and advanced customization options."
 msgstr ""
 "Precisa de mais recursos? Conheça a versão PRO, que vem com recursos "
 "adicionais e opções avançadas de personalização."
 
-#: inc/theme-info.php:88
-msgid "Learn more about the PRO Version of Rubine"
+#: inc/theme-info.php:94 inc/customizer/sections/customizer-upgrade.php:62
+#, fuzzy, php-format
+msgid "Learn more about %s Pro"
 msgstr "Saiba mais sobre a versão PRO do Rubine"
 
-#: inc/theme-info.php:108
-#, php-format
-msgid ""
-"Rubine is proudly brought to you by %1s. If you like this theme, %2s :) "
+#: inc/theme-info.php:115
+#, fuzzy, php-format
+msgid "%1$s is proudly brought to you by %2$s. If you like this theme, %3$s :)"
 msgstr ""
 "Rubine é orgulhosamente oferecido a você por %1s. Se você gosta deste tema, "
 "%s! :)"
 
-#: inc/theme-info.php:110
+#: inc/theme-info.php:118
 msgid "rate it"
 msgstr "faça uma avaliação 5 estrelas"
 
-#: inc/customizer/customizer.php:53
+#: inc/customizer/customizer.php:49
 msgid "Display Tagline below site title."
 msgstr "Exibe a Descrição abaixo do título do blog."
 
@@ -360,13 +296,21 @@ msgstr "Barra Lateral Direita"
 
 #: inc/customizer/sections/customizer-general.php:51
 #, fuzzy
-msgid "Footer Content"
+msgid "Footer Icons"
 msgstr "Conteúdo em destaque"
 
 #: inc/customizer/sections/customizer-general.php:68
 #, fuzzy
-msgid "Display Social Icons in footer line."
+msgid "Display Social Icons in footer"
 msgstr "Exibe ícones de redes sociais no cabeçalho"
+
+#: inc/customizer/sections/customizer-general.php:86
+msgid "Default Fonts"
+msgstr ""
+
+#: inc/customizer/sections/customizer-general.php:103
+msgid "Deactivate Google Fonts in case your language is not compatible."
+msgstr ""
 
 #: inc/customizer/sections/customizer-header.php:14
 #, fuzzy
@@ -399,30 +343,133 @@ msgid "Display featured images on single posts"
 msgstr ""
 
 #: inc/customizer/sections/customizer-post.php:63
-msgid "Excerpt More Text"
+msgid "Text after Excerpts"
 msgstr ""
 
 #: inc/customizer/sections/customizer-post.php:78
-msgid "Display [...] after text excerpts."
+msgid "Display [...] after excerpts"
+msgstr ""
+
+#: inc/customizer/sections/customizer-post.php:96
+#, fuzzy
+msgid "Post Meta"
+msgstr "Páginas"
+
+#: inc/customizer/sections/customizer-post.php:111
+msgid "Display post date"
+msgstr ""
+
+#: inc/customizer/sections/customizer-post.php:126
+msgid "Display post author"
+msgstr ""
+
+#: inc/customizer/sections/customizer-post.php:141
+msgid "Display post categories"
+msgstr ""
+
+#: inc/customizer/sections/customizer-post.php:156
+msgid "Display post tags"
 msgstr ""
 
 #: inc/customizer/sections/customizer-upgrade.php:30
-msgid "Need more features?"
+msgid "You need more features?"
 msgstr ""
 
 #: inc/customizer/sections/customizer-upgrade.php:46
 #, fuzzy
 msgid ""
-"Check out the PRO version which comes with additional features and advanced "
+"Purchase the Pro Version to get additional features and advanced "
 "customization options."
 msgstr ""
 "Precisa de mais recursos? Conheça a versão PRO, que vem com recursos "
 "adicionais e opções avançadas de personalização."
 
-#: inc/customizer/sections/customizer-upgrade.php:62
-#, fuzzy
-msgid "Learn more about the PRO Version"
-msgstr "Saiba mais sobre a versão PRO do Rubine"
+#~ msgid ""
+#~ "The page you trying to reach does not exist, or has been moved. Please "
+#~ "use the menus or the search box to find what you are looking for"
+#~ msgstr ""
+#~ "A página que você está tentando acessar não existe ou foi movida para "
+#~ "outro lugar. Por favor, use os menus ou a caixa de busca para encontrar o "
+#~ "que está procurando."
+
+#~ msgid "Search"
+#~ msgstr "Buscar"
+
+#~ msgid "Recent Posts"
+#~ msgstr "Posts recentes"
+
+#~ msgid "Pages"
+#~ msgstr "Páginas"
+
+#~ msgid "Monthly Archives: %s"
+#~ msgstr "Arquivos para o mês %s"
+
+#~ msgid "F Y"
+#~ msgstr "F de Y"
+
+#~ msgid "Archives"
+#~ msgstr "Arquivos"
+
+#~ msgid "Author Archives: %s"
+#~ msgstr "Arquivos para o autor %s"
+
+#~ msgid "Category Archives: %s"
+#~ msgstr "Arquivos para a categoria %s"
+
+#~ msgid "Page %s"
+#~ msgstr "Página %s"
+
+#~ msgid "WordPress"
+#~ msgstr "WordPress"
+
+#~ msgid "Previous"
+#~ msgstr "Anterior"
+
+#~ msgid "Next"
+#~ msgstr "Próximo"
+
+#~ msgid "Return to Gallery"
+#~ msgstr "Retornar à Galeria"
+
+#~ msgid "Return to"
+#~ msgstr "Retornar para"
+
+#~ msgid "Widget Area"
+#~ msgstr "Área de widgets"
+
+#~ msgid ""
+#~ "There are no active widgets to be displayed. Please go to Appearance -> "
+#~ "Widgets to setup your sidebar."
+#~ msgstr ""
+#~ "Não há widget ativos a serem exibidos. Por favor, acesse Aparência -> "
+#~ "Widgets para configurar sua barra lateral."
+
+#~ msgid "Tag Archives: %s"
+#~ msgstr "Arquivos para os tags %s"
+
+#~ msgid ""
+#~ "Use a <a href=\"%1$s\">tag</a> to feature your posts. If no posts match "
+#~ "the tag, <a href=\"%2$s\">sticky posts</a> will be displayed instead."
+#~ msgstr ""
+#~ "Use uma <a \n"
+#~ "href=\"%1$s\">tag</a> para destacar seus posts. Se nenhum post "
+#~ "corresponder a tag escolhida,  serão exibidos os <a href=\"%2$s\">posts "
+#~ "fixos</a>."
+
+#~ msgid "featured"
+#~ msgstr "destaque"
+
+#~ msgid "Don&rsquo;t display tag on front end."
+#~ msgstr "Não exibir o tag nas páginas."
+
+#~ msgid "Welcome to Rubine Lite"
+#~ msgstr "Bem-vindo ao Rubine Lite"
+
+#~ msgid "Visit Rubine Documentation"
+#~ msgstr "Visitar a documentação do tema Rubine"
+
+#~ msgid "Learn more about the PRO Version of Rubine"
+#~ msgstr "Saiba mais sobre a versão PRO do Rubine"
 
 #~ msgid "rubine-lite"
 #~ msgstr "Rubine Lite"

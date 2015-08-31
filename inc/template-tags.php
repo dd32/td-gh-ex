@@ -201,9 +201,9 @@ add_action( 'rubine_footer_text', 'rubine_display_footer_text' );
 function rubine_display_footer_text() { ?>
 
 	<span class="credit-link">
-		<?php printf(__( 'Powered by %1$s and %2$s.', 'rubine-lite' ), 
-			sprintf( '<a href="http://wordpress.org" title="WordPress">%s</a>', __( 'WordPress', 'rubine-lite' ) ),
-			sprintf( '<a href="http://themezee.com/themes/rubine/" title="Rubine WordPress Theme">%s</a>', __( 'Rubine', 'rubine-lite' ) )
+		<?php printf( __( 'Powered by %1$s and %2$s.', 'rubine-lite' ), 
+			'<a href="http://wordpress.org" title="WordPress">WordPress</a>',
+			'<a href="http://themezee.com/themes/rubine/" title="Rubine WordPress Theme">Rubine</a>'
 		); ?>
 	</span>
 
@@ -235,7 +235,7 @@ function rubine_display_social_icons() {
 	else: // Display Hint how to configure Social Icons ?>
 
 		<p class="social-icons-hint">
-			<?php _e('Please go to WP-Admin-> Appearance-> Menus and create a new custom menu with custom links to all your social networks. Then click on "Manage Locations" tab and assign your created menu to the "Social Icons" theme location.', 'rubine-lite'); ?>
+			<?php _e('Please go to Appearance &#8594; Menus and create a new custom menu with custom links to all your social networks. Then click on "Manage Locations" tab and assign your created menu to the "Social Icons" location.', 'rubine-lite'); ?>
 		</p>
 <?php
 	endif;

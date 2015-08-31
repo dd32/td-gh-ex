@@ -65,7 +65,7 @@ function rubine_customize_register_general_settings( $wp_customize ) {
 		)
 	);
     $wp_customize->add_control( 'rubine_control_footer_icons', array(
-        'label'    => __( 'Display Social Icons in footer line.', 'rubine-lite' ),
+        'label'    => __( 'Display Social Icons in footer', 'rubine-lite' ),
         'section'  => 'rubine_section_general',
         'settings' => 'rubine_theme_options[footer_icons]',
         'type'     => 'checkbox',
