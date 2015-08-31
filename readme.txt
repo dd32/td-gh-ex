@@ -97,6 +97,11 @@ Pattern Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.18
+* Service Section bug for post count fixed
+* FontAwesome updated to latest version
+* Minor Fixes in CSS
+
 Version 1.17
 * Textdomain issue fixed
 * PHP warning notice for background color fixed

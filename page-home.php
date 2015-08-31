@@ -77,7 +77,7 @@ get_header(); ?>
 					$args = array(
 						'post_type' => 'page',
 						'post__in' => $service_array,
-						'paged' => $paged,
+						'posts_per_page' => 4, 
 						'orderby' => 'post__in'
 						);
 

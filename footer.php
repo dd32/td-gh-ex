@@ -51,7 +51,7 @@
 
 		<div id="bottom-footer" class="clearfix">
 			<div class="ak-container">
-				<div class="copyright"><?php _e('WordPress Theme by', 'accesspress-root'); ?> <a title="AccessPress Themes" href="<?php echo esc_url('http://accesspressthemes.com','accesspress-root'); ?>">AccessPress Themes</a> </div>
+				<div class="copyright"><?php _e('WordPress Theme: ', 'accesspress-root'); ?> <a title="AccessPress Themes" href="<?php echo esc_url('https://accesspressthemes.com','accesspress-root'); ?>">AccessPress Root</a> </div>
 				<ul class="social-icon">
 					<?php do_action('accesspress_social'); ?>
 				</ul>
