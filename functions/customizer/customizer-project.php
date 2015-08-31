@@ -40,13 +40,13 @@ function wallstreet_project_customizer( $wp_customize ) {
 	
 	//Project one Title
 	$wp_customize->add_setting(
-	'wallstreet_pro_options[project_one_title]', array(
+	'wallstreet_pro_options[portfolio_title_one]', array(
         'default'        => 'Wall Street Style',
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
-    $wp_customize->add_control('wallstreet_pro_options[project_one_title]', array(
+    $wp_customize->add_control('wallstreet_pro_options[portfolio_title_one]', array(
         'label'   => __('Portfolio Title One', 'wallstreet'),
         'section' => 'project_one_section_settings',
 		'type' => 'text',
@@ -110,13 +110,13 @@ function wallstreet_project_customizer( $wp_customize ) {
 	
 	//Project Two Title
 	$wp_customize->add_setting(
-	'wallstreet_pro_options[project_two_title]', array(
+	'wallstreet_pro_options[portfolio_title_two]', array(
         'default'        => 'Wall Street Style',
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
-    $wp_customize->add_control('wallstreet_pro_options[project_two_title]', array(
+    $wp_customize->add_control('wallstreet_pro_options[portfolio_title_two]', array(
         'label'   => __('Portfolio Title Two', 'wallstreet'),
         'section' => 'project_two_section_settings',
 		'type' => 'text',
@@ -170,13 +170,13 @@ function wallstreet_project_customizer( $wp_customize ) {
 	
 	//Project Three Title
 	$wp_customize->add_setting(
-	'wallstreet_pro_options[project_three_title]', array(
+	'wallstreet_pro_options[portfolio_title_three]', array(
         'default'        => 'Wall Street Style',
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
-    $wp_customize->add_control('wallstreet_pro_options[project_three_title]', array(
+    $wp_customize->add_control('wallstreet_pro_options[portfolio_title_three]', array(
         'label'   => __('Portfolio Title Three', 'wallstreet'),
         'section' => 'project_three_section_settings',
 		'type' => 'text',
@@ -230,13 +230,13 @@ function wallstreet_project_customizer( $wp_customize ) {
 	
 	//Project Four Title
 	$wp_customize->add_setting(
-	'wallstreet_pro_options[project_four_title]', array(
+	'wallstreet_pro_options[portfolio_title_four]', array(
         'default'        => 'Wall Street Style',
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
-    $wp_customize->add_control('wallstreet_pro_options[project_four_title]', array(
+    $wp_customize->add_control('wallstreet_pro_options[portfolio_title_four]', array(
         'label'   => __('Portfolio Title Four', 'wallstreet'),
         'section' => 'project_four_section_settings',
 		'type' => 'text',
