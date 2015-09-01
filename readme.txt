@@ -71,3 +71,7 @@ Please visit https://wordpress.org/support/theme/the-box if you have any questio
 - New: Github Social Icon
 - New: Year in the date of Single Post
 - Update: Seo Optimization
+
+1.4.1
+- Fix: Site Title repeated in the head
+- Fix: Third Level Menu

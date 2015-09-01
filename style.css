@@ -4,7 +4,7 @@ Theme URI: http://design.altervista.org/thebox/
 Author: Design Lab
 Author URI: http://design.altervista.org
 Description: Simple and minimal two columns Theme: custom header, custom background, custom colors, post thumbnails, post formats
-Version: 1.4.0
+Version: 1.4.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: thebox
@@ -322,6 +322,36 @@ body {
 .page-numbers:after  {
 	display: table;
 	content: "";
+}
+
+/* Text meant only for screen readers */
+
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	margin: 0;
+	line-height: 1;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #10c0cc;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar */
 }
 
 /* 03: Headings */
@@ -969,21 +999,12 @@ hgroup h1 a {
 	content: none;
 }
 
-.main-navigation ul ul li:hover ul {
+.main-navigation div ul ul li:hover > ul {
 	display: block;
 }
 
-.main-navigation li:hover > a {
-}
-
-.main-navigation ul ul :hover > a {
-}
-
-.main-navigation ul ul a:hover {
-}
-
-.main-navigation li.current_page_item a,
-.main-navigation li.current-menu-item a {
+.main-navigation div ul ul ul li:hover > ul {
+	display: block;
 }
 
 /* 07: Header > Small menu */
@@ -1032,7 +1053,7 @@ button.menu-toggle .icon-font:before {
 		padding: 0;
 		position: relative;
 		z-index: 999;
-		background-color: #454545;
+		background-color: #252525;
 	}
 	.main-navigation.toggled > div {
     	margin: 0;
@@ -1068,7 +1089,7 @@ button.menu-toggle .icon-font:before {
 		padding: 1em;
 		line-height: 1.5;
 		color: #ddd;
-		border-bottom: 1px solid #656565;
+		border-bottom: 1px solid #353535;
 		background: transparent;
 	}
 	.main-navigation.toggled a:hover,
@@ -1077,7 +1098,7 @@ button.menu-toggle .icon-font:before {
 	.main-navigation.toggled ul ul a:active,
 	.main-navigation.toggled li:hover a,
 	.main-navigation.toggled li:focus a {
-		background-color: #454545;
+		background-color: #252525;
 	}
 	.site-header .main-navigation.toggled ul ul a:hover {
 		color: #fff;
@@ -1564,9 +1585,10 @@ object {
 	box-shadow: 0 1px 1px rgba(0,0,0,0.06);
 }
 
-#image-navigation.site-navigation {
+.image-attachment .site-navigation {
 	-webkit-box-shadow: none;
 	box-shadow: none;
+	padding: 0;
 }
 
 .post-navigation .nav-previous {
