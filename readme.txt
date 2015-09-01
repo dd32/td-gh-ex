@@ -60,6 +60,10 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.45.0
+* Demo Url in the theme description changed
+* accesspresslite.pot file updated with latest changes
+
 Version 2.44.9
 * Documentation and Demo link Updates according to new change in the website
 * Few Other link changed from http to https

@@ -90,6 +90,6 @@ $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspressl
 	}elseif(is_home() || is_front_page() ){
 	$accesspresslite_content_id = "home-content";
 	}else{
-	$accesspresslite_content_id ="content";
+	$accesspresslite_content_id = "content";
 	} ?>
 	<div id="<?php echo esc_attr($accesspresslite_content_id); ?>" class="site-content">

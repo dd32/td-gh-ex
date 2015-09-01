@@ -57,7 +57,7 @@
 			</h1><!-- .site-info -->
 
 			<div class="copyright">
-				Copyright &copy; <?php echo date('Y') ?> 
+				<?php _e('Copyright','accesspresslite') ?> &copy; <?php echo date('Y') ?> 
 				<a href="<?php echo home_url(); ?>">
 				<?php if(!empty($accesspresslite_settings['footer_copyright'])){
 					echo $accesspresslite_settings['footer_copyright']; 
