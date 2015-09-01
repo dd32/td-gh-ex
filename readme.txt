@@ -87,6 +87,9 @@ This theme is bundled with TGM-Plugin-Activation
 =================================
 CHANGELOG
 =================================
+Version 1.0.8
+ * updated the TGM PLugin Activation version(v2.5.2)
+ 
 Version 1.0.7
  * modified the email social icon to use the correct mailto protocol instead of http
  * replaced the 'is_email' with 'sanitize_email' for the email sanitize callback setting
