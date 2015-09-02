@@ -10,9 +10,9 @@
  function agleelite_additional_widgets(){
     // Registering main right sidebar
 	register_sidebar( array(
-		'name' 				=> __( 'Right Sidebar', 'agleelite' ),
+		'name' 				=> __( 'Right Sidebar', 'aglee-lite' ),
 		'id' 					=> 'aglee_right_sidebar',
-		'description'   	=> __( 'Shows widgets at Right side.', 'agleelite' ),
+		'description'   	=> __( 'Shows widgets at Right side.', 'aglee-lite' ),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  	=> '</aside>',
 		'before_title'  	=> '<h3 class="widget-title"><span>',
@@ -21,9 +21,9 @@
     
     // Registering main left sidebar
 	register_sidebar( array(
-		'name' 				=> __( 'Left Sidebar', 'agleelite' ),
+		'name' 				=> __( 'Left Sidebar', 'aglee-lite' ),
 		'id' 					=> 'aglee_left_sidebar',
-		'description'   	=> __( 'Shows widgets at Left side.', 'agleelite' ),
+		'description'   	=> __( 'Shows widgets at Left side.', 'aglee-lite' ),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  	=> '</aside>',
 		'before_title'  	=> '<h3 class="widget-title"><span>',
@@ -32,9 +32,9 @@
     
     // Registering featured section
 	register_sidebar( array(
-		'name' 				=> __( 'Featured Section', 'agleelite' ),
+		'name' 				=> __( 'Featured Section', 'aglee-lite' ),
 		'id' 					=> 'aglee_featured_section',
-		'description'   	=> __( 'Shows widgets at Featured Post.', 'agleelite' ),
+		'description'   	=> __( 'Shows widgets at Featured Post.', 'aglee-lite' ),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  	=> '</aside>',
 		'before_title'  	=> '<h3 class="widget-title"><span>',
@@ -43,9 +43,9 @@
     
     // Registering call to action section
 	register_sidebar( array(
-		'name' 				=> __( 'Call To Action Section', 'agleelite' ),
+		'name' 				=> __( 'Call To Action Section', 'aglee-lite' ),
 		'id' 					=> 'aglee_cta_section',
-		'description'   	=> __( 'Shows widgets at Call To Action.', 'agleelite' ),
+		'description'   	=> __( 'Shows widgets at Call To Action.', 'aglee-lite' ),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  	=> '</aside>',
 		'before_title'  	=> '<h3 class="widget-title"><span>',
@@ -54,9 +54,9 @@
     
     // Registering testimonial section
 	register_sidebar( array(
-		'name' 				=> __( 'Icon Text Block Section', 'agleelite' ),
+		'name' 				=> __( 'Icon Text Block Section', 'aglee-lite' ),
 		'id' 					=> 'icon_text_block_section',
-		'description'   	=> __( 'Shows widgets at Icon Text Block Section.', 'agleelite' ),
+		'description'   	=> __( 'Shows widgets at Icon Text Block Section.', 'aglee-lite' ),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  	=> '</aside>',
 		'before_title'  	=> '<h3 class="widget-title"><span>',
@@ -65,9 +65,9 @@
     
     // Registering toggle section
 	register_sidebar( array(
-		'name' 				=> __( 'Toggle Section', 'agleelite' ),
+		'name' 				=> __( 'Toggle Section', 'aglee-lite' ),
 		'id' 					=> 'aglee_toggle_section',
-		'description'   	=> __( 'Shows Toggles at Toggle Section.', 'agleelite' ),
+		'description'   	=> __( 'Shows Toggles at Toggle Section.', 'aglee-lite' ),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  	=> '</aside>',
 		'before_title'  	=> '<h3 class="widget-title"><span>',
@@ -76,33 +76,20 @@
     
     // Registering toggle section
 	register_sidebar( array(
-		'name' 				=> __( 'Featured Page Section', 'agleelite' ),
+		'name' 				=> __( 'Featured Page Section', 'aglee-lite' ),
 		'id' 					=> 'aglee_featured_page_section',
-		'description'   	=> __( 'Shows Featured Page In Featured Page Section.', 'agleelite' ),
+		'description'   	=> __( 'Shows Featured Page In Featured Page Section.', 'aglee-lite' ),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  	=> '</aside>',
 		'before_title'  	=> '<h3 class="widget-title"><span>',
 		'after_title'   	=> '</span></h3>'
 	) );
-    
-    /*
-    // Registering testimonial section
-	register_sidebar( array(
-		'name' 				=> __( 'Testimonials Section', 'agleelite' ),
-		'id' 					=> 'aglee_testimonial_section',
-		'description'   	=> __( 'Shows widgets at Testimonialss.', 'agleelite' ),
-		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  	=> '</aside>',
-		'before_title'  	=> '<h3 class="widget-title"><span>',
-		'after_title'   	=> '</span></h3>'
-	) );
-    */
     
     // Registering services section
 	register_sidebar( array(
-		'name' 				=> __( 'Services Section', 'agleelite' ),
+		'name' 				=> __( 'Services Section', 'aglee-lite' ),
 		'id' 					=> 'aglee_services_section',
-		'description'   	=> __( 'Shows widgets at Services.', 'agleelite' ),
+		'description'   	=> __( 'Shows widgets at Services.', 'aglee-lite' ),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  	=> '</aside>',
 		'before_title'  	=> '<h3 class="widget-title"><span>',
@@ -111,9 +98,9 @@
     
     // Registering Header Text Widget
 	register_sidebar( array(
-		'name' 				=> __( 'Header Text Section', 'agleelite' ),
+		'name' 				=> __( 'Header Text Section', 'aglee-lite' ),
 		'id' 					=> 'aglee_header_text',
-		'description'   	=> __( 'Shows widgets at Header Text Section.', 'agleelite' ),
+		'description'   	=> __( 'Shows widgets at Header Text Section.', 'aglee-lite' ),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  	=> '</aside>',
 		'before_title'  	=> '<h3 class="widget-title"><span>',
@@ -122,9 +109,9 @@
     
     // Registering Header Social Links Widget
 	register_sidebar( array(
-		'name' 				=> __( 'Header Social Links Section', 'agleelite' ),
+		'name' 				=> __( 'Header Social Links Section', 'aglee-lite' ),
 		'id' 					=> 'aglee_header_social_links',
-		'description'   	=> __( 'Shows widgets at Header Text Section.', 'agleelite' ),
+		'description'   	=> __( 'Shows widgets at Header Text Section.', 'aglee-lite' ),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  	=> '</aside>',
 		'before_title'  	=> '<h3 class="widget-title"><span>',
@@ -133,9 +120,9 @@
     
     // Registering Footer Social Links Widget
 	register_sidebar( array(
-		'name' 				=> __( 'Footer Social Links Section', 'agleelite' ),
+		'name' 				=> __( 'Footer Social Links Section', 'aglee-lite' ),
 		'id' 					=> 'aglee_footer_social_links',
-		'description'   	=> __( 'Shows widgets at Footer.', 'agleelite' ),
+		'description'   	=> __( 'Shows widgets at Footer.', 'aglee-lite' ),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  	=> '</aside>',
 		'before_title'  	=> '<h3 class="widget-title"><span>',
@@ -144,9 +131,9 @@
     
     // Registering footer one section
 	register_sidebar( array(
-		'name' 				=> __( 'Footer One', 'agleelite' ),
+		'name' 				=> __( 'Footer One', 'aglee-lite' ),
 		'id' 					=> 'aglee_footer_one',
-		'description'   	=> __( 'Shows widgets at Footer First Section .', 'agleelite' ),
+		'description'   	=> __( 'Shows widgets at Footer First Section .', 'aglee-lite' ),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  	=> '</aside>',
 		'before_title'  	=> '<h3 class="widget-title"><span>',
@@ -155,9 +142,9 @@
     
     // Registering footer two section
 	register_sidebar( array(
-		'name' 				=> __( 'Footer Two', 'agleelite' ),
+		'name' 				=> __( 'Footer Two', 'aglee-lite' ),
 		'id' 					=> 'aglee_footer_two',
-		'description'   	=> __( 'Shows widgets at Footer Second Section.', 'agleelite' ),
+		'description'   	=> __( 'Shows widgets at Footer Second Section.', 'aglee-lite' ),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  	=> '</aside>',
 		'before_title'  	=> '<h3 class="widget-title"><span>',
@@ -166,9 +153,9 @@
     
     // Registering footer three section
 	register_sidebar( array(
-		'name' 				=> __( 'Footer Three', 'agleelite' ),
+		'name' 				=> __( 'Footer Three', 'aglee-lite' ),
 		'id' 					=> 'aglee_footer_three',
-		'description'   	=> __( 'Shows widgets at Footer Third Section.', 'agleelite' ),
+		'description'   	=> __( 'Shows widgets at Footer Third Section.', 'aglee-lite' ),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  	=> '</aside>',
 		'before_title'  	=> '<h3 class="widget-title"><span>',
@@ -177,9 +164,9 @@
     
     // Registering footer four section
 	register_sidebar( array(
-		'name' 				=> __( 'Footer Four', 'agleelite' ),
+		'name' 				=> __( 'Footer Four', 'aglee-lite' ),
 		'id' 					=> 'aglee_footer_four',
-		'description'   	=> __( 'Shows widgets at Footer Fourth Section.', 'agleelite' ),
+		'description'   	=> __( 'Shows widgets at Footer Fourth Section.', 'aglee-lite' ),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  	=> '</aside>',
 		'before_title'  	=> '<h3 class="widget-title"><span>',

@@ -8,22 +8,12 @@
  * or theme author for support.
  *
  * @package   TGM-Plugin-Activation
- * @version   2.5.2
+ * @version   2.5.1
  * @link      http://tgmpluginactivation.com/
  * @author    Thomas Griffin, Gary Jones, Juliette Reinders Folmer
  * @copyright Copyright (c) 2011, Thomas Griffin
  * @license   GPL-2.0+
  *
- * @wordpress-plugin
- * Plugin Name: TGM Plugin Activation
- * Plugin URI:
- * Description: Plugin installation and activation for WordPress themes.
- * Version:     2.5.2
- * Author:      Thomas Griffin, Gary Jones, Juliette Reinders Folmer
- * Author URI:  http://tgmpluginactivation.com/
- * Text Domain: tgmpa
- * Domain Path: /languages/
- * Copyright:   2011, Thomas Griffin
  */
 
 /*
@@ -66,7 +56,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 *
 		 * @const string Version number.
 		 */
-		const TGMPA_VERSION = '2.5.2';
+		const TGMPA_VERSION = '2.5.1';
 
 		/**
 		 * Regular expression to test if a URL is a WP plugin repo URL.
@@ -149,7 +139,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 *
 		 * @var string
 		 */
-		protected $menu = 'tgmpa-install-plugins';
+		public $menu = 'tgmpa-install-plugins';
 
 		/**
 		 * Parent menu file slug.
@@ -256,15 +246,11 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 * Adds a reference of this object to $instance, populates default strings,
 		 * does the tgmpa_init action hook, and hooks in the interactions to init.
 		 *
-		 * @internal This method should be `protected`, but as too many TGMPA implementations
-		 * haven't upgraded beyond v2.3.6 yet, this gives backward compatibility issues.
-		 * Reverted back to public for the time being.
-		 *
 		 * @since 1.0.0
 		 *
 		 * @see TGM_Plugin_Activation::init()
 		 */
-		public function __construct() {
+		protected function __construct() {
 			// Set the current WordPress version.
 			$this->wp_version = $GLOBALS['wp_version'];
 
@@ -273,34 +259,6 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 			// When the rest of WP has loaded, kick-start the rest of the class.
 			add_action( 'init', array( $this, 'init' ) );
-		}
-
-		/**
-		 * Magic method to (not) set protected properties from outside of this class.
-		 *
-		 * @internal hackedihack... There is a serious bug in v2.3.2 - 2.3.6  where the `menu` property
-		 * is being assigned rather than tested in a conditional, effectively rendering it useless.
-		 * This 'hack' prevents this from happening.
-		 *
-		 * @see https://github.com/TGMPA/TGM-Plugin-Activation/blob/2.3.6/tgm-plugin-activation/class-tgm-plugin-activation.php#L1593
-		 *
-		 * @param string $name  Name of an inaccessible property.
-		 * @param mixed  $value Value to assign to the property.
-		 * @return void  Silently fail to set the property when this is tried from outside of this class context.
-		 *               (Inside this class context, the __set() method if not used as there is direct access.)
-		 */
-		public function __set( $name, $value ) {
-			return;
-		}
-
-		/**
-		 * Magic method to get the value of a protected property outside of this class context.
-		 *
-		 * @param string $name Name of an inaccessible property.
-		 * @return mixed The property value.
-		 */
-		public function __get( $name ) {
-			return $this->{$name};
 		}
 
 		/**
@@ -330,79 +288,79 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 			// Load class strings.
 			$this->strings = array(
-				'page_title'                      => __( 'Install Required Plugins', 'tgmpa' ),
-				'menu_title'                      => __( 'Install Plugins', 'tgmpa' ),
-				'installing'                      => __( 'Installing Plugin: %s', 'tgmpa' ),
-				'oops'                            => __( 'Something went wrong with the plugin API.', 'tgmpa' ),
+				'page_title'                      => __( 'Install Required Plugins', 'aglee-lite' ),
+				'menu_title'                      => __( 'Install Plugins', 'aglee-lite' ),
+				'installing'                      => __( 'Installing Plugin: %s', 'aglee-lite' ),
+				'oops'                            => __( 'Something went wrong with the plugin API.', 'aglee-lite' ),
 				'notice_can_install_required'     => _n_noop(
 					'This theme requires the following plugin: %1$s.',
 					'This theme requires the following plugins: %1$s.',
-					'tgmpa'
+					'aglee-lite'
 				),
 				'notice_can_install_recommended'  => _n_noop(
 					'This theme recommends the following plugin: %1$s.',
 					'This theme recommends the following plugins: %1$s.',
-					'tgmpa'
+					'aglee-lite'
 				),
 				'notice_cannot_install'           => _n_noop(
 					'Sorry, but you do not have the correct permissions to install the %1$s plugin.',
 					'Sorry, but you do not have the correct permissions to install the %1$s plugins.',
-					'tgmpa'
+					'aglee-lite'
 				),
 				'notice_ask_to_update'            => _n_noop(
 					'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.',
 					'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.',
-					'tgmpa'
+					'aglee-lite'
 				),
 				'notice_ask_to_update_maybe'      => _n_noop(
 					'There is an update available for: %1$s.',
 					'There are updates available for the following plugins: %1$s.',
-					'tgmpa'
+					'aglee-lite'
 				),
 				'notice_cannot_update'            => _n_noop(
 					'Sorry, but you do not have the correct permissions to update the %1$s plugin.',
 					'Sorry, but you do not have the correct permissions to update the %1$s plugins.',
-					'tgmpa'
+					'aglee-lite'
 				),
 				'notice_can_activate_required'    => _n_noop(
 					'The following required plugin is currently inactive: %1$s.',
 					'The following required plugins are currently inactive: %1$s.',
-					'tgmpa'
+					'aglee-lite'
 				),
 				'notice_can_activate_recommended' => _n_noop(
 					'The following recommended plugin is currently inactive: %1$s.',
 					'The following recommended plugins are currently inactive: %1$s.',
-					'tgmpa'
+					'aglee-lite'
 				),
 				'notice_cannot_activate'          => _n_noop(
 					'Sorry, but you do not have the correct permissions to activate the %1$s plugin.',
 					'Sorry, but you do not have the correct permissions to activate the %1$s plugins.',
-					'tgmpa'
+					'aglee-lite'
 				),
 				'install_link'                    => _n_noop(
 					'Begin installing plugin',
 					'Begin installing plugins',
-					'tgmpa'
+					'aglee-lite'
 				),
 				'update_link'                     => _n_noop(
 					'Begin updating plugin',
 					'Begin updating plugins',
-					'tgmpa'
+					'aglee-lite'
 				),
 				'activate_link'                   => _n_noop(
 					'Begin activating plugin',
 					'Begin activating plugins',
-					'tgmpa'
+					'aglee-lite'
 				),
-				'return'                          => __( 'Return to Required Plugins Installer', 'tgmpa' ),
-				'dashboard'                       => __( 'Return to the dashboard', 'tgmpa' ),
-				'plugin_activated'                => __( 'Plugin activated successfully.', 'tgmpa' ),
-				'activated_successfully'          => __( 'The following plugin was activated successfully:', 'tgmpa' ),
-				'plugin_already_active'           => __( 'No action taken. Plugin %1$s was already active.', 'tgmpa' ),
-				'plugin_needs_higher_version'     => __( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'tgmpa' ),
-				'complete'                        => __( 'All plugins installed and activated successfully. %1$s', 'tgmpa' ),
-				'dismiss'                         => __( 'Dismiss this notice', 'tgmpa' ),
-				'contact_admin'                   => __( 'Please contact the administrator of this site for help.', 'tgmpa' ),
+				'return'                          => __( 'Return to Required Plugins Installer', 'aglee-lite' ),
+				'dashboard'                       => __( 'Return to the dashboard', 'aglee-lite' ),
+				'plugin_activated'                => __( 'Plugin activated successfully.', 'aglee-lite' ),
+				'activated_successfully'          => __( 'The following plugin was activated successfully:', 'aglee-lite' ),
+				'plugin_already_active'           => __( 'No action taken. Plugin %1$s was already active.', 'aglee-lite' ),
+				'plugin_needs_higher_version'     => __( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'aglee-lite' ),
+				'complete'                        => __( 'All plugins installed and activated successfully. %1$s', 'aglee-lite' ),
+				'dismiss'                         => __( 'Dismiss this notice', 'aglee-lite' ),
+				'contact_admin'                   => __( 'Please contact the administrator of this site for help.', 'aglee-lite' ),
 			);
 
 			do_action( 'tgmpa_register' );
@@ -517,8 +475,8 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 			$actions['update'] = sprintf(
 				'<a href="%1$s" title="%2$s" class="edit">%3$s</a>',
 				esc_url( $this->get_tgmpa_status_url( 'update' ) ),
-				esc_attr__( 'This plugin needs to be updated to be compatible with your theme.', 'tgmpa' ),
-				esc_html__( 'Update Required', 'tgmpa' )
+				esc_attr__( 'This plugin needs to be updated to be compatible with your theme.', 'aglee-lite' ),
+				esc_html__( 'Update Required', 'aglee-lite' )
 			);
 
 			return $actions;
@@ -632,13 +590,13 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 */
 		protected function add_admin_menu( array $args ) {
 			if ( has_filter( 'tgmpa_admin_menu_use_add_theme_page' ) ) {
-				_deprecated_function( 'The "tgmpa_admin_menu_use_add_theme_page" filter', '2.5.0', esc_html__( 'Set the parent_slug config variable instead.', 'tgmpa' ) );
+				_deprecated_function( 'The "tgmpa_admin_menu_use_add_theme_page" filter', '2.5.0', esc_html__( 'Set the parent_slug config variable instead.', 'aglee-lite' ) );
 			}
 
 			if ( 'themes.php' === $this->parent_slug ) {
 				$this->page_hook = call_user_func( 'add_theme_page', $args['page_title'], $args['menu_title'], $args['capability'], $args['menu_slug'], $args['function'] );
 			} else {
-				$this->page_hook = call_user_func( 'add_submenu_page', $args['parent_slug'], $args['page_title'], $args['menu_title'], $args['capability'], $args['menu_slug'], $args['function'] );
+				//s$this->page_hook = call_user_func( 'add_submenu_page', $args['parent_slug'], $args['page_title'], $args['menu_title'], $args['capability'], $args['menu_slug'], $args['function'] );
 			}
 		}
 
@@ -825,7 +783,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 				// Display message based on if all plugins are now active or not.
 				if ( $this->is_tgmpa_complete() ) {
-					echo '<p>', sprintf( esc_html( $this->strings['complete'] ), '<a href="' . esc_url( self_admin_url() ) . '">' . esc_html__( 'Return to the Dashboard', 'tgmpa' ) . '</a>' ), '</p>';
+					echo '<p>', sprintf( esc_html( $this->strings['complete'] ), '<a href="' . esc_url( self_admin_url() ) . '">' . esc_html__( 'Return to the Dashboard', 'aglee-lite' ) . '</a>' ), '</p>';
 					echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
 				} else {
 					echo '<p><a href="', esc_url( $this->get_tgmpa_url() ), '" target="_parent">', esc_html( $this->strings['return'] ), '</a></p>';
@@ -932,10 +890,10 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 					if ( true === $GLOBALS['wp_filesystem']->move( $from, $to ) ) {
 						return trailingslashit( $to );
 					} else {
-						return new WP_Error( 'rename_failed', esc_html__( 'The remote plugin package does not contain a folder with the desired slug and renaming did not work.', 'tgmpa' ) . ' ' . esc_html__( 'Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines.', 'tgmpa' ), array( 'found' => $subdir_name, 'expected' => $desired_slug ) );
+						return new WP_Error( 'rename_failed', esc_html__( 'The remote plugin package does not contain a folder with the desired slug and renaming did not work.', 'aglee-lite' ) . ' ' . esc_html__( 'Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines.', 'aglee-lite' ), array( 'found' => $subdir_name, 'expected' => $desired_slug ) );
 					}
 				} elseif ( empty( $subdir_name ) ) {
-					return new WP_Error( 'packaged_wrong', esc_html__( 'The remote plugin package consists of more than one file, but the files are not packaged in a folder.', 'tgmpa' ) . ' ' . esc_html__( 'Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines.', 'tgmpa' ), array( 'found' => $subdir_name, 'expected' => $desired_slug ) );
+					return new WP_Error( 'packaged_wrong', esc_html__( 'The remote plugin package consists of more than one file, but the files are not packaged in a folder.', 'aglee-lite' ) . ' ' . esc_html__( 'Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines.', 'aglee-lite' ), array( 'found' => $subdir_name, 'expected' => $desired_slug ) );
 				}
 			}
 
@@ -1113,12 +1071,12 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 					$count          = count( $plugin_group );
 					$linked_plugins = array_map( array( 'TGMPA_Utils', 'wrap_in_em' ), $linked_plugins );
 					$last_plugin    = array_pop( $linked_plugins ); // Pop off last name to prep for readability.
-					$imploded       = empty( $linked_plugins ) ? $last_plugin : ( implode( ', ', $linked_plugins ) . ' ' . esc_html_x( 'and', 'plugin A *and* plugin B', 'tgmpa' ) . ' ' . $last_plugin );
+					$imploded       = empty( $linked_plugins ) ? $last_plugin : ( implode( ', ', $linked_plugins ) . ' ' . esc_html_x( 'and', 'plugin A *and* plugin B', 'aglee-lite' ) . ' ' . $last_plugin );
 
 					$rendered .= sprintf(
 						$line_template,
 						sprintf(
-							translate_nooped_plural( $this->strings[ $type ], $count, 'tgmpa' ),
+							translate_nooped_plural( $this->strings[ $type ], $count, 'aglee-lite' ),
 							$imploded,
 							$count
 						)
@@ -1144,14 +1102,14 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 					if ( $install_link_count > 0 ) {
 						$action_links['install'] = sprintf(
 							$link_template,
-							translate_nooped_plural( $this->strings['install_link'], $install_link_count, 'tgmpa' ),
+							translate_nooped_plural( $this->strings['install_link'], $install_link_count, 'aglee-lite' ),
 							esc_url( $this->get_tgmpa_status_url( 'install' ) )
 						);
 					}
 					if ( $update_link_count > 0 ) {
 						$action_links['update'] = sprintf(
 							$link_template,
-							translate_nooped_plural( $this->strings['update_link'], $update_link_count, 'tgmpa' ),
+							translate_nooped_plural( $this->strings['update_link'], $update_link_count, 'aglee-lite' ),
 							esc_url( $this->get_tgmpa_status_url( 'update' ) )
 						);
 					}
@@ -1160,7 +1118,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				if ( current_user_can( 'activate_plugins' ) && $activate_link_count > 0 ) {
 					$action_links['activate'] = sprintf(
 						$link_template,
-						translate_nooped_plural( $this->strings['activate_link'], $activate_link_count, 'tgmpa' ),
+						translate_nooped_plural( $this->strings['activate_link'], $activate_link_count, 'aglee-lite' ),
 						esc_url( $this->get_tgmpa_status_url( 'activate' ) )
 					);
 				}
@@ -1878,7 +1836,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 */
 		public function show_tgmpa_version() {
 			echo '<p style="float: right; padding: 0em 1.5em 0.5em 0;"><strong><small>',
-				esc_html( sprintf( _x( 'TGMPA v%s', '%s = version number', 'tgmpa' ), self::TGMPA_VERSION ) ),
+				esc_html( sprintf( _x( 'TGMPA v%s', '%s = version number', 'aglee-lite' ), self::TGMPA_VERSION ) ),
 				'</small></strong></p>';
 		}
 
@@ -1932,21 +1890,6 @@ if ( ! function_exists( 'tgmpa' ) ) {
 		}
 
 		if ( ! empty( $config ) && is_array( $config ) ) {
-			// Send out notices for deprecated arguments passed.
-			if ( isset( $config['notices'] ) ) {
-				_deprecated_argument( __FUNCTION__, '2.2.0', 'The `notices` config parameter was renamed to `has_notices` in TGMPA 2.2.0. Please adjust your configuration.' );
-				if ( ! isset( $config['has_notices'] ) ) {
-					$config['has_notices'] = $config['notices'];
-				}
-			}
-
-			if ( isset( $config['parent_menu_slug'] ) ) {
-				_deprecated_argument( __FUNCTION__, '2.4.0', 'The `parent_menu_slug` config parameter was removed in TGMPA 2.4.0. In TGMPA 2.5.0 an alternative was (re-)introduced. Please adjust your configuration. For more information visit the website: http://tgmpluginactivation.com/configuration/#h-configuration-options.' );
-			}
-			if ( isset( $config['parent_url_slug'] ) ) {
-				_deprecated_argument( __FUNCTION__, '2.4.0', 'The `parent_url_slug` config parameter was removed in TGMPA 2.4.0. In TGMPA 2.5.0 an alternative was (re-)introduced. Please adjust your configuration. For more information visit the website: http://tgmpluginactivation.com/configuration/#h-configuration-options.' );
-			}
-
 			call_user_func( array( $instance, 'config' ), $config );
 		}
 	}
@@ -2164,10 +2107,10 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		 */
 		protected function get_plugin_advise_type_text( $required ) {
 			if ( true === $required ) {
-				return __( 'Required', 'tgmpa' );
+				return __( 'Required', 'aglee-lite' );
 			}
 
-			return __( 'Recommended', 'tgmpa' );
+			return __( 'Recommended', 'aglee-lite' );
 		}
 
 		/**
@@ -2183,13 +2126,13 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 			switch ( $type ) {
 				case 'repo':
-					$string = __( 'WordPress Repository', 'tgmpa' );
+					$string = __( 'WordPress Repository', 'aglee-lite' );
 					break;
 				case 'external':
-					$string = __( 'External Source', 'tgmpa' );
+					$string = __( 'External Source', 'aglee-lite' );
 					break;
 				case 'bundled':
-					$string = __( 'Pre-Packaged', 'tgmpa' );
+					$string = __( 'Pre-Packaged', 'aglee-lite' );
 					break;
 			}
 
@@ -2206,25 +2149,25 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		 */
 		protected function get_plugin_status_text( $slug ) {
 			if ( ! $this->tgmpa->is_plugin_installed( $slug ) ) {
-				return __( 'Not Installed', 'tgmpa' );
+				return __( 'Not Installed', 'aglee-lite' );
 			}
 
 			if ( ! $this->tgmpa->is_plugin_active( $slug ) ) {
-				$install_status = __( 'Installed But Not Activated', 'tgmpa' );
+				$install_status = __( 'Installed But Not Activated', 'aglee-lite' );
 			} else {
-				$install_status = __( 'Active', 'tgmpa' );
+				$install_status = __( 'Active', 'aglee-lite' );
 			}
 
 			$update_status = '';
 
 			if ( $this->tgmpa->does_plugin_require_update( $slug ) && false === $this->tgmpa->does_plugin_have_update( $slug ) ) {
-				$update_status = __( 'Required Update not Available', 'tgmpa' );
+				$update_status = __( 'Required Update not Available', 'aglee-lite' );
 
 			} elseif ( $this->tgmpa->does_plugin_require_update( $slug ) ) {
-				$update_status = __( 'Requires Update', 'tgmpa' );
+				$update_status = __( 'Requires Update', 'aglee-lite' );
 
 			} elseif ( false !== $this->tgmpa->does_plugin_have_update( $slug ) ) {
-				$update_status = __( 'Update recommended', 'tgmpa' );
+				$update_status = __( 'Update recommended', 'aglee-lite' );
 			}
 
 			if ( '' === $update_status ) {
@@ -2232,7 +2175,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 			}
 
 			return sprintf(
-				_x( '%1$s, %2$s', '%1$s = install status, %2$s = update status', 'tgmpa' ),
+				_x( '%1$s, %2$s', '%1$s = install status, %2$s = update status', 'aglee-lite' ),
 				$install_status,
 				$update_status
 			);
@@ -2277,16 +2220,16 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 				switch ( $type ) {
 					case 'all':
-						$text = _nx( 'All <span class="count">(%s)</span>', 'All <span class="count">(%s)</span>', $count, 'plugins', 'tgmpa' );
+						$text = _nx( 'All <span class="count">(%s)</span>', 'All <span class="count">(%s)</span>', $count, 'plugins', 'aglee-lite' );
 						break;
 					case 'install':
-						$text = _n( 'To Install <span class="count">(%s)</span>', 'To Install <span class="count">(%s)</span>', $count, 'tgmpa' );
+						$text = _n( 'To Install <span class="count">(%s)</span>', 'To Install <span class="count">(%s)</span>', $count, 'aglee-lite' );
 						break;
 					case 'update':
-						$text = _n( 'Update Available <span class="count">(%s)</span>', 'Update Available <span class="count">(%s)</span>', $count, 'tgmpa' );
+						$text = _n( 'Update Available <span class="count">(%s)</span>', 'Update Available <span class="count">(%s)</span>', $count, 'aglee-lite' );
 						break;
 					case 'activate':
-						$text = _n( 'To Activate <span class="count">(%s)</span>', 'To Activate <span class="count">(%s)</span>', $count, 'tgmpa' );
+						$text = _n( 'To Activate <span class="count">(%s)</span>', 'To Activate <span class="count">(%s)</span>', $count, 'aglee-lite' );
 						break;
 					default:
 						$text = '';
@@ -2368,7 +2311,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 			$output = array();
 
 			if ( $this->tgmpa->is_plugin_installed( $item['slug'] ) ) {
-				$installed = ! empty( $item['installed_version'] ) ? $item['installed_version'] : _x( 'unknown', 'as in: "version nr unknown"', 'tgmpa' );
+				$installed = ! empty( $item['installed_version'] ) ? $item['installed_version'] : _x( 'unknown', 'as in: "version nr unknown"', 'aglee-lite' );
 
 				$color = '';
 				if ( ! empty( $item['minimum_version'] ) && $this->tgmpa->does_plugin_require_update( $item['slug'] ) ) {
@@ -2376,7 +2319,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				}
 
 				$output[] = sprintf(
-					'<p><span style="min-width: 32px; text-align: right; float: right;%1$s">%2$s</span>' . __( 'Installed version:', 'tgmpa' ) . '</p>',
+					'<p><span style="min-width: 32px; text-align: right; float: right;%1$s">%2$s</span>' . __( 'Installed version:', 'aglee-lite' ) . '</p>',
 					$color,
 					$installed
 				);
@@ -2384,7 +2327,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 			if ( ! empty( $item['minimum_version'] ) ) {
 				$output[] = sprintf(
-					'<p><span style="min-width: 32px; text-align: right; float: right;">%1$s</span>' . __( 'Minimum required version:', 'tgmpa' ) . '</p>',
+					'<p><span style="min-width: 32px; text-align: right; float: right;">%1$s</span>' . __( 'Minimum required version:', 'aglee-lite' ) . '</p>',
 					$item['minimum_version']
 				);
 			}
@@ -2396,7 +2339,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				}
 
 				$output[] = sprintf(
-					'<p><span style="min-width: 32px; text-align: right; float: right;%1$s">%2$s</span>' . __( 'Available version:', 'tgmpa' ) . '</p>',
+					'<p><span style="min-width: 32px; text-align: right; float: right;%1$s">%2$s</span>' . __( 'Available version:', 'aglee-lite' ) . '</p>',
 					$color,
 					$item['available_version']
 				);
@@ -2419,7 +2362,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		 * @since 2.2.0
 		 */
 		public function no_items() {
-			printf( wp_kses_post( __( 'No plugins to install, update or activate. <a href="%1$s">Return to the Dashboard</a>', 'tgmpa' ) ), esc_url( self_admin_url() ) );
+			printf( wp_kses_post( __( 'No plugins to install, update or activate. <a href="%1$s">Return to the Dashboard</a>', 'aglee-lite' ) ), esc_url( self_admin_url() ) );
 			echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
 		}
 
@@ -2433,14 +2376,14 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		public function get_columns() {
 			$columns = array(
 				'cb'     => '<input type="checkbox" />',
-				'plugin' => __( 'Plugin', 'tgmpa' ),
-				'source' => __( 'Source', 'tgmpa' ),
-				'type'   => __( 'Type', 'tgmpa' ),
+				'plugin' => __( 'Plugin', 'aglee-lite' ),
+				'source' => __( 'Source', 'aglee-lite' ),
+				'type'   => __( 'Type', 'aglee-lite' ),
 			);
 
 			if ( 'all' === $this->view_context || 'update' === $this->view_context ) {
-				$columns['version'] = __( 'Version', 'tgmpa' );
-				$columns['status']  = __( 'Status', 'tgmpa' );
+				$columns['version'] = __( 'Version', 'aglee-lite' );
+				$columns['status']  = __( 'Status', 'aglee-lite' );
 			}
 
 			return apply_filters( 'tgmpa_table_columns', $columns );
@@ -2488,16 +2431,16 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 			// Display the 'Install' action link if the plugin is not yet available.
 			if ( ! $this->tgmpa->is_plugin_installed( $item['slug'] ) ) {
-				$actions['install'] = _x( 'Install %2$s', '%2$s = plugin name in screen reader markup', 'tgmpa' );
+				$actions['install'] = _x( 'Install %2$s', '%2$s = plugin name in screen reader markup', 'aglee-lite' );
 			} else {
 				// Display the 'Update' action link if an update is available and WP complies with plugin minimum.
 				if ( false !== $this->tgmpa->does_plugin_have_update( $item['slug'] ) && $this->tgmpa->can_plugin_update( $item['slug'] ) ) {
-					$actions['update'] = _x( 'Update %2$s', '%2$s = plugin name in screen reader markup', 'tgmpa' );
+					$actions['update'] = _x( 'Update %2$s', '%2$s = plugin name in screen reader markup', 'aglee-lite' );
 				}
 
 				// Display the 'Activate' action link, but only if the plugin meets the minimum version.
 				if ( $this->tgmpa->can_plugin_activate( $item['slug'] ) ) {
-					$actions['activate'] = _x( 'Activate %2$s', '%2$s = plugin name in screen reader markup', 'tgmpa' );
+					$actions['activate'] = _x( 'Activate %2$s', '%2$s = plugin name in screen reader markup', 'aglee-lite' );
 				}
 			}
 
@@ -2567,7 +2510,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				<tr class="plugin-update-tr">
 					<td colspan="', absint( $this->get_column_count() ), '" class="plugin-update colspanchange">
 						<div class="update-message">',
-							esc_html__( 'Upgrade message from the plugin author:', 'tgmpa' ),
+							esc_html__( 'Upgrade message from the plugin author:', 'aglee-lite' ),
 							' <strong>', wp_kses_data( $item['upgrade_notice'] ), '</strong>
 						</div>
 					</td>
@@ -2600,16 +2543,16 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 			if ( 'update' !== $this->view_context && 'activate' !== $this->view_context ) {
 				if ( current_user_can( 'install_plugins' ) ) {
-					$actions['tgmpa-bulk-install'] = __( 'Install', 'tgmpa' );
+					$actions['tgmpa-bulk-install'] = __( 'Install', 'aglee-lite' );
 				}
 			}
 
 			if ( 'install' !== $this->view_context ) {
 				if ( current_user_can( 'update_plugins' ) ) {
-					$actions['tgmpa-bulk-update'] = __( 'Update', 'tgmpa' );
+					$actions['tgmpa-bulk-update'] = __( 'Update', 'aglee-lite' );
 				}
 				if ( current_user_can( 'activate_plugins' ) ) {
-					$actions['tgmpa-bulk-activate'] = __( 'Activate', 'tgmpa' );
+					$actions['tgmpa-bulk-activate'] = __( 'Activate', 'aglee-lite' );
 				}
 			}
 
@@ -2640,9 +2583,9 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				// Did user actually select any plugins to install/update ?
 				if ( empty( $_POST['plugin'] ) ) {
 					if ( 'install' === $install_type ) {
-						$message = __( 'No plugins were selected to be installed. No action taken.', 'tgmpa' );
+						$message = __( 'No plugins were selected to be installed. No action taken.', 'aglee-lite' );
 					} else {
-						$message = __( 'No plugins were selected to be updated. No action taken.', 'tgmpa' );
+						$message = __( 'No plugins were selected to be updated. No action taken.', 'aglee-lite' );
 					}
 
 					echo '<div id="message" class="error"><p>', esc_html( $message ), '</p></div>';
@@ -2678,9 +2621,9 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				// No need to proceed further if we have no plugins to handle.
 				if ( empty( $plugins_to_install ) ) {
 					if ( 'install' === $install_type ) {
-						$message = __( 'No plugins are available to be installed at this time.', 'tgmpa' );
+						$message = __( 'No plugins are available to be installed at this time.', 'aglee-lite' );
 					} else {
-						$message = __( 'No plugins are available to be updated at this time.', 'tgmpa' );
+						$message = __( 'No plugins are available to be updated at this time.', 'aglee-lite' );
 					}
 
 					echo '<div id="message" class="error"><p>', esc_html( $message ), '</p></div>';
@@ -2744,9 +2687,9 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				}
 				unset( $slug, $name, $source );
 
-				// Create a new instance of TGMPA_Bulk_Installer.
-				$installer = new TGMPA_Bulk_Installer(
-					new TGMPA_Bulk_Installer_Skin(
+				// Create a new instance of TGM_Bulk_Installer.
+				$installer = new TGM_Bulk_Installer(
+					new TGM_Bulk_Installer_Skin(
 						array(
 							'url'          => esc_url_raw( $this->tgmpa->get_tgmpa_url() ),
 							'nonce'        => 'bulk-' . $this->_args['plural'],
@@ -2785,7 +2728,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 				// Did user actually select any plugins to activate ?
 				if ( empty( $_POST['plugin'] ) ) {
-					echo '<div id="message" class="error"><p>', esc_html__( 'No plugins were selected to be activated. No action taken.', 'tgmpa' ), '</p></div>';
+					echo '<div id="message" class="error"><p>', esc_html__( 'No plugins were selected to be activated. No action taken.', 'aglee-lite' ), '</p></div>';
 
 					return false;
 				}
@@ -2811,7 +2754,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 				// Return early if there are no plugins to activate.
 				if ( empty( $plugins_to_activate ) ) {
-					echo '<div id="message" class="error"><p>', esc_html__( 'No plugins are available to be activated at this time.', 'tgmpa' ), '</p></div>';
+					echo '<div id="message" class="error"><p>', esc_html__( 'No plugins are available to be activated at this time.', 'aglee-lite' ), '</p></div>';
 
 					return false;
 				}
@@ -2825,11 +2768,11 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 					$count        = count( $plugin_names ); // Count so we can use _n function.
 					$plugin_names = array_map( array( 'TGMPA_Utils', 'wrap_in_strong' ), $plugin_names );
 					$last_plugin  = array_pop( $plugin_names ); // Pop off last name to prep for readability.
-					$imploded     = empty( $plugin_names ) ? $last_plugin : ( implode( ', ', $plugin_names ) . ' ' . esc_html_x( 'and', 'plugin A *and* plugin B', 'tgmpa' ) . ' ' . $last_plugin );
+					$imploded     = empty( $plugin_names ) ? $last_plugin : ( implode( ', ', $plugin_names ) . ' ' . esc_html_x( 'and', 'plugin A *and* plugin B', 'aglee-lite' ) . ' ' . $last_plugin );
 
 					printf( // WPCS: xss ok.
 						'<div id="message" class="updated"><p>%1$s %2$s.</p></div>',
-						esc_html( _n( 'The following plugin was activated successfully:', 'The following plugins were activated successfully:', $count, 'tgmpa' ) ),
+						esc_html( _n( 'The following plugin was activated successfully:', 'The following plugins were activated successfully:', $count, 'aglee-lite' ) ),
 						$imploded
 					);
 
@@ -2893,24 +2836,6 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 	}
 }
 
-
-if ( ! class_exists( 'TGM_Bulk_Installer' ) ) {
-
-	/**
-	 * Hack: Prevent TGMPA v2.4.1- bulk installer class from being loaded if 2.4.1- is loaded after 2.5+.
-	 */
-	class TGM_Bulk_Installer {
-	}
-}
-if ( ! class_exists( 'TGM_Bulk_Installer_Skin' ) ) {
-
-	/**
-	 * Hack: Prevent TGMPA v2.4.1- bulk installer skin class from being loaded if 2.4.1- is loaded after 2.5+.
-	 */
-	class TGM_Bulk_Installer_Skin {
-	}
-}
-
 /**
  * The WP_Upgrader file isn't always available. If it isn't available,
  * we load it here.
@@ -2927,11 +2852,6 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 	 * Load bulk installer
 	 */
 	function tgmpa_load_bulk_installer() {
-		// Silently fail if 2.5+ is loaded *after* an older version.
-		if ( ! isset( $GLOBALS['tgmpa'] ) ) {
-			return;
-		}
-
 		// Get TGMPA class instance.
 		$tgmpa_instance = call_user_func( array( get_class( $GLOBALS['tgmpa'] ), 'get_instance' ) );
 
@@ -2940,7 +2860,7 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 				require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
 			}
 
-			if ( ! class_exists( 'TGMPA_Bulk_Installer' ) ) {
+			if ( ! class_exists( 'TGM_Bulk_Installer' ) ) {
 
 				/**
 				 * Installer class to handle bulk plugin installations.
@@ -2951,14 +2871,12 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 				 * @since 2.2.0
 				 *
 				 * @internal Since 2.5.0 the class is an extension of Plugin_Upgrader rather than WP_Upgrader
-				 * @internal Since 2.5.2 the class has been renamed from TGM_Bulk_Installer to TGMPA_Bulk_Installer.
-				 *           This was done to prevent backward compatibility issues with v2.3.6.
 				 *
 				 * @package TGM-Plugin-Activation
 				 * @author  Thomas Griffin
 				 * @author  Gary Jones
 				 */
-				class TGMPA_Bulk_Installer extends Plugin_Upgrader {
+				class TGM_Bulk_Installer extends Plugin_Upgrader {
 					/**
 					 * Holds result of bulk plugin installation.
 					 *
@@ -3025,8 +2943,8 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 					 * @since 2.2.0
 					 */
 					public function activate_strings() {
-						$this->strings['activation_failed']  = __( 'Plugin activation failed.', 'tgmpa' );
-						$this->strings['activation_success'] = __( 'Plugin activated successfully.', 'tgmpa' );
+						$this->strings['activation_failed']  = __( 'Plugin activation failed.', 'aglee-lite' );
+						$this->strings['activation_success'] = __( 'Plugin activated successfully.', 'aglee-lite' );
 					}
 
 					/**
@@ -3264,7 +3182,7 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 				}
 			}
 
-			if ( ! class_exists( 'TGMPA_Bulk_Installer_Skin' ) ) {
+			if ( ! class_exists( 'TGM_Bulk_Installer_Skin' ) ) {
 
 				/**
 				 * Installer skin to set strings for the bulk plugin installations..
@@ -3274,17 +3192,13 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 				 *
 				 * @since 2.2.0
 				 *
-				 * @internal Since 2.5.2 the class has been renamed from TGM_Bulk_Installer_Skin to
-				 *           TGMPA_Bulk_Installer_Skin.
-				 *           This was done to prevent backward compatibility issues with v2.3.6.
-				 *
 				 * @see https://core.trac.wordpress.org/browser/trunk/src/wp-admin/includes/class-wp-upgrader-skins.php
 				 *
 				 * @package TGM-Plugin-Activation
 				 * @author  Thomas Griffin
 				 * @author  Gary Jones
 				 */
-				class TGMPA_Bulk_Installer_Skin extends Bulk_Upgrader_Skin {
+				class TGM_Bulk_Installer_Skin extends Bulk_Upgrader_Skin {
 					/**
 					 * Holds plugin info for each individual plugin installation.
 					 *
@@ -3359,23 +3273,23 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 					public function add_strings() {
 						if ( 'update' === $this->options['install_type'] ) {
 							parent::add_strings();
-							$this->upgrader->strings['skin_before_update_header'] = __( 'Updating Plugin %1$s (%2$d/%3$d)', 'tgmpa' );
+							$this->upgrader->strings['skin_before_update_header'] = __( 'Updating Plugin %1$s (%2$d/%3$d)', 'aglee-lite' );
 						} else {
-							$this->upgrader->strings['skin_update_failed_error'] = __( 'An error occurred while installing %1$s: <strong>%2$s</strong>.', 'tgmpa' );
-							$this->upgrader->strings['skin_update_failed']       = __( 'The installation of %1$s failed.', 'tgmpa' );
+							$this->upgrader->strings['skin_update_failed_error'] = __( 'An error occurred while installing %1$s: <strong>%2$s</strong>.', 'aglee-lite' );
+							$this->upgrader->strings['skin_update_failed']       = __( 'The installation of %1$s failed.', 'aglee-lite' );
 
 							if ( $this->tgmpa->is_automatic ) {
 								// Automatic activation strings.
-								$this->upgrader->strings['skin_upgrade_start']        = __( 'The installation and activation process is starting. This process may take a while on some hosts, so please be patient.', 'tgmpa' );
-								$this->upgrader->strings['skin_update_successful']    = __( '%1$s installed and activated successfully.', 'tgmpa' ) . ' <a href="#" class="hide-if-no-js" onclick="%2$s"><span>' . esc_html__( 'Show Details', 'tgmpa' ) . '</span><span class="hidden">' . esc_html__( 'Hide Details', 'tgmpa' ) . '</span>.</a>';
-								$this->upgrader->strings['skin_upgrade_end']          = __( 'All installations and activations have been completed.', 'tgmpa' );
-								$this->upgrader->strings['skin_before_update_header'] = __( 'Installing and Activating Plugin %1$s (%2$d/%3$d)', 'tgmpa' );
+								$this->upgrader->strings['skin_upgrade_start']        = __( 'The installation and activation process is starting. This process may take a while on some hosts, so please be patient.', 'aglee-lite' );
+								$this->upgrader->strings['skin_update_successful']    = __( '%1$s installed and activated successfully.', 'aglee-lite' ) . ' <a href="#" class="hide-if-no-js" onclick="%2$s"><span>' . esc_html__( 'Show Details', 'aglee-lite' ) . '</span><span class="hidden">' . esc_html__( 'Hide Details', 'aglee-lite' ) . '</span>.</a>';
+								$this->upgrader->strings['skin_upgrade_end']          = __( 'All installations and activations have been completed.', 'aglee-lite' );
+								$this->upgrader->strings['skin_before_update_header'] = __( 'Installing and Activating Plugin %1$s (%2$d/%3$d)', 'aglee-lite' );
 							} else {
 								// Default installation strings.
-								$this->upgrader->strings['skin_upgrade_start']        = __( 'The installation process is starting. This process may take a while on some hosts, so please be patient.', 'tgmpa' );
-								$this->upgrader->strings['skin_update_successful']    = esc_html__( '%1$s installed successfully.', 'tgmpa' ) . ' <a href="#" class="hide-if-no-js" onclick="%2$s"><span>' . esc_html__( 'Show Details', 'tgmpa' ) . '</span><span class="hidden">' . esc_html__( 'Hide Details', 'tgmpa' ) . '</span>.</a>';
-								$this->upgrader->strings['skin_upgrade_end']          = __( 'All installations have been completed.', 'tgmpa' );
-								$this->upgrader->strings['skin_before_update_header'] = __( 'Installing Plugin %1$s (%2$d/%3$d)', 'tgmpa' );
+								$this->upgrader->strings['skin_upgrade_start']        = __( 'The installation process is starting. This process may take a while on some hosts, so please be patient.', 'aglee-lite' );
+								$this->upgrader->strings['skin_update_successful']    = esc_html__( '%1$s installed successfully.', 'aglee-lite' ) . ' <a href="#" class="hide-if-no-js" onclick="%2$s"><span>' . esc_html__( 'Show Details', 'aglee-lite' ) . '</span><span class="hidden">' . esc_html__( 'Hide Details', 'aglee-lite' ) . '</span>.</a>';
+								$this->upgrader->strings['skin_upgrade_end']          = __( 'All installations have been completed.', 'aglee-lite' );
+								$this->upgrader->strings['skin_before_update_header'] = __( 'Installing Plugin %1$s (%2$d/%3$d)', 'aglee-lite' );
 							}
 						}
 					}
@@ -3435,7 +3349,7 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 							echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
 							$update_actions['dashboard'] = sprintf(
 								esc_html( $this->tgmpa->strings['complete'] ),
-								'<a href="' . esc_url( self_admin_url() ) . '">' . esc_html__( 'Return to the Dashboard', 'tgmpa' ) . '</a>'
+								'<a href="' . esc_url( self_admin_url() ) . '">' . esc_html__( 'Return to the Dashboard', 'aglee-lite' ) . '</a>'
 							);
 						} else {
 							$update_actions['tgmpa_page'] = '<a href="' . esc_url( $this->tgmpa->get_tgmpa_url() ) . '" target="_parent">' . esc_html( $this->tgmpa->strings['return'] ) . '</a>';

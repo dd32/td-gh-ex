@@ -39,7 +39,7 @@
         'both-sidebar-layout' => array(
             'id' => 'agleelite_page_layout',
             'value' => 'both_sidebar',
-            'label' => __('Both Sidebar','+aglee-lite'),
+            'label' => __('Both Sidebar','aglee-lite'),
             'img' => 'both-sidebar.png'
         ),
         'no-sidebar-wide-layout' => array(

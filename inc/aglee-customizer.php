@@ -9,14 +9,14 @@ function aglee_lite_customizer( $wp_customize ) {
             'priority' => 10,
             'capability' => 'edit_theme_options',
             'theme_supports' => '',
-            'title' => __( 'General Panel', 'textdomain' ),
-            'description' => __( 'Default section provided by wordpress customizer.', 'textdomain' ),
+            'title' => __( 'General Panel', 'aglee-lite' ),
+            'description' => __( 'Default section provided by wordpress customizer.', 'aglee-lite' ),
         ) 
     );  
     
     $wp_customize->get_section( 'colors' )->panel         = 'aglee_lite_general_panel';
     $wp_customize->get_section( 'background_image' )->panel         = 'aglee_lite_general_panel';
-    $wp_customize->get_section( 'nav' )->panel         = 'aglee_lite_general_panel';
+  //  $wp_customize->get_section( 'nav' )->panel         = 'aglee_lite_general_panel';
     $wp_customize->get_section( 'static_front_page' )->panel         = 'aglee_lite_general_panel';  
     
 
@@ -31,7 +31,7 @@ function aglee_lite_customizer( $wp_customize ) {
             'priority' => 20,
             'capability' => 'edit_theme_options',
             'theme_supports' => '',
-            'title' => __( 'Header Setting', 'textdomain' ),
+            'title' => __( 'Header Setting', 'aglee-lite' ),
         ) 
     );
     
@@ -42,7 +42,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize->add_section(
         'header_text_disp_option',
         array(
-            'title' => 'Header Display Option',
+            'title' => __('Header Display Option', 'aglee-lite'),
             'priority' => 60,
             'panel' => 'header_setting'
         )
@@ -76,7 +76,7 @@ function aglee_lite_customizer( $wp_customize ) {
         'header_text_image_display',
         array(
             'section' => 'header_text_disp_option',
-            'label' => 'Show',
+            'label' => __('Show', 'aglee-lite'),
             'type' => 'radio',
             'choices' => array(
                             'header_logo_only' => 'Header Logo Only',
@@ -91,7 +91,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize->add_section( 
         'favicon' , 
         array(
-            'title'       => 'Upload Favicon',
+            'title'       => __('Upload Favicon','aglee-lite'),
             'priority'    => 60,
             'description' => 'Upload favicon(.png) with size of 16px X 16px',
             'panel' => 'header_setting',
@@ -106,7 +106,7 @@ function aglee_lite_customizer( $wp_customize ) {
     );
     
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'aglee_lite_favicon', array(
-        'label'    => 'Upload Image',
+        'label'    => __('Upload Image', 'aglee-lite'),
         'section'  => 'favicon',
         'settings' => 'aglee_lite_favicon',
         ) 
@@ -116,7 +116,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize->add_section(
       'favicon_setting_section',
       array(
-        'title'=>'Favicon Display Option',
+        'title'=>__('Favicon Display Option', 'aglee-lite'),
         'priority'=>60,
         'panel'=>'header_setting'
       )  
@@ -133,7 +133,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize->add_control(
         'favicon_setting',
         array(
-            'label'=>'Activate the favicon to display it in your site',
+            'label'=>__('Activate the favicon to display it in your site','aglee-lite'),
             'section'=>'favicon_setting_section',
             'type'=>'checkbox'
         )
@@ -143,7 +143,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize->add_section(
         'header_text_display_section',
         array(
-            'title' => 'Top Header Content Options',
+            'title' => __('Top Header Content Options','aglee-lite'),
             'priorty' => 60,
             'panel' => 'header_setting'
         )
@@ -161,7 +161,7 @@ function aglee_lite_customizer( $wp_customize ) {
         'header_text_setting',
         array(
             'section' => 'header_text_display_section',
-            'label' => 'Header Right Text',
+            'label' => __('Header Right Text','aglee-lite'),
             'type' => 'textarea'
         )
     );
@@ -178,7 +178,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize->add_control(
         'show_social',
             array(
-                'label'=>'Hide Social Icons in Header',
+                'label'=>__('Hide Social Icons in Header','aglee-lite'),
                 'section'=>'header_text_display_section',
                 'type'=>'checkbox'
             )
@@ -196,7 +196,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize->add_control(
         'show_search',
         array(
-            'label'=>'Hide Search in Header',
+            'label'=>__('Hide Search in Header','aglee-lite'),
             'section'=>'header_text_display_section',
             'type'=>'checkbox'
         )
@@ -208,7 +208,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize->add_section(
         'aglee_lite_footertext_section',
         array(
-            'title' => 'Footer Text',
+            'title' => __('Footer Text','aglee-lite'),
             'priority' => 60,
             'panel' => 'header_setting'
         )
@@ -226,7 +226,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize->add_control(
         'aglee_lite_footertext',
         array(
-            'label' => 'Footer Text',
+            'label' => __('Footer Text','aglee-lite'),
             'section'=>'aglee_lite_footertext_section',
             'type'=>'text'
         )
@@ -245,7 +245,7 @@ function aglee_lite_customizer( $wp_customize ) {
             'priority' => 20,
             'capability' => 'edit_theme_options',
             'theme_supports' => '',
-            'title' => __( 'Design Setting', 'textdomain' ),
+            'title' => __( 'Design Setting', 'aglee-lite' ),
         ) 
     );
     
@@ -253,7 +253,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize->add_section(
         'site_layout_section',
         array(
-            'title' => 'Site Layout',
+            'title' => __('Site Layout','aglee-lite'),
             'description' => 'Site Layout Option',
             'priority' => 10,
             'panel' => 'design_setting',
@@ -271,7 +271,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize -> add_control(
         'site_layout_setting',
         array(
-            'label' => 'Site Layout',
+            'label' => __('Site Layout','aglee-lite'),
             'section' => 'site_layout_section',
             'type' => 'radio',
             'choices' => array(
@@ -298,16 +298,8 @@ function aglee_lite_customizer( $wp_customize ) {
         $wp_customize->add_section(
         'site_pattern_section',
         array(
-            'title' => 'Background Image',
-            'description' => 'Select Box layout above to use this functionality
-                              <ul>
-                                <li><img src="'. get_template_directory_uri(). '/inc/admin-panel/images/pattern0.png"/><span>None</span></li>
-                                <li><img src="'. get_template_directory_uri(). '/inc/admin-panel/images/pattern1.png"/><span>Pattern 1</span></li>
-                                <li><img src="'. get_template_directory_uri(). '/inc/admin-panel/images/pattern3.png"/><span>Pattern 2</span></li>
-                                <li><img src="'. get_template_directory_uri(). '/inc/admin-panel/images/pattern4.png"/><span>Pattern 3</span></li>
-                                <li><img src="'. get_template_directory_uri(). '/inc/admin-panel/images/pattern5.png"/><span>Pattern 4</span></li>
-                              </ul>
-                            ',
+            'title' => __('Background Image','aglee-lite'),
+            'description' => __('Select Box layout above to use this functionality','aglee-lite'),
             'priority' => 10,
             'panel' => 'design_setting',
         )
@@ -316,7 +308,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize->add_setting(
         'site_pattern_setting',
         array(
-            'default' => 'pattern0',
+            'default' => '',
             'sanitize_callback' => 'webpage_pattern_radio_sanitize',
             )
     );
@@ -324,7 +316,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize -> add_control(
         'site_pattern_setting',
         array(
-            'label' => 'Site Layout',
+            'label' => __('Site Layout','aglee-lite'),
             'section' => 'site_pattern_section',
             'type' => 'radio',
             'choices' => array(
@@ -359,14 +351,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize -> add_section(
         'layout_category_blog_section',
         array(
-            'title' => 'Default Layout (Category/Blog)',
-            'description' => '<ul>
-                                <li><img src="'. get_template_directory_uri(). '/inc/admin-panel/images/left-sidebar.png"/><span>Left Sidebar</span></li>
-                                <li><img src="'. get_template_directory_uri(). '/inc/admin-panel/images/right-sidebar.png"/><span>Right Sidebar</span></li>
-                                <li><img src="'. get_template_directory_uri(). '/inc/admin-panel/images/both-sidebar.png"/><span>Both Sidebar</span></li>
-                                <li><img src="'. get_template_directory_uri(). '/inc/admin-panel/images/no-sidebar-wide.png"/><span>No Sidebar Wide</span></li>
-                                <li><img src="'. get_template_directory_uri(). '/inc/admin-panel/images/no-sidebar-narrow.png"/><span>No Sidebar Narrow</span></li>
-                              </ul>',
+            'title' => __('Default Layout (Category/Blog)','aglee-lite'),
             'priority' => 10,
             'panel' => 'design_setting'
         )
@@ -384,7 +369,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize -> add_control(
         'layout_category_blog',
         array(
-            'label' => 'Default Layout (Category/Blog)',
+            'label' => __('Default Layout (Category/Blog)','aglee-lite'),
             'section' => 'layout_category_blog_section',
             'type' => 'radio',
             'choices' => array(
@@ -402,14 +387,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize -> add_section(
         'layout_default_page_section',
         array(
-            'title' => 'Default Layout (Pages Only)',
-            'description' => '<ul>
-                                <li><img src="'. get_template_directory_uri(). '/inc/admin-panel/images/left-sidebar.png"/><span>Left Sidebar</span></li>
-                                <li><img src="'. get_template_directory_uri(). '/inc/admin-panel/images/right-sidebar.png"/><span>Right Sidebar</span></li>
-                                <li><img src="'. get_template_directory_uri(). '/inc/admin-panel/images/both-sidebar.png"/><span>Both Sidebar</span></li>
-                                <li><img src="'. get_template_directory_uri(). '/inc/admin-panel/images/no-sidebar-wide.png"/><span>No Sidebar Wide</span></li>
-                                <li><img src="'. get_template_directory_uri(). '/inc/admin-panel/images/no-sidebar-narrow.png"/><span>No Sidebar Narrow</span></li>
-                              </ul>',
+            'title' => __('Default Layout (Pages Only)','aglee-lite'),
             'priority' => 10,
             'panel' => 'design_setting'
         )
@@ -427,7 +405,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize -> add_control(
         'layout_default_page',
         array(
-            'label' => 'Default Layout (Pages Only)',
+            'label' => __('Default Layout (Pages Only)','aglee-lite'),
             'section' => 'layout_default_page_section',
             'type' => 'radio',
             'choices' => array(
@@ -444,14 +422,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize -> add_section(
         'layout_default_post_section',
         array(
-            'title' => 'Default Layout (Post Only)',
-            'description' => '<ul>
-                                <li><img src="'. get_template_directory_uri(). '/inc/admin-panel/images/left-sidebar.png"/><span>Left Sidebar</span></li>
-                                <li><img src="'. get_template_directory_uri(). '/inc/admin-panel/images/right-sidebar.png"/><span>Right Sidebar</span></li>
-                                <li><img src="'. get_template_directory_uri(). '/inc/admin-panel/images/both-sidebar.png"/><span>Both Sidebar</span></li>
-                                <li><img src="'. get_template_directory_uri(). '/inc/admin-panel/images/no-sidebar-wide.png"/><span>No Sidebar Wide</span></li>
-                                <li><img src="'. get_template_directory_uri(). '/inc/admin-panel/images/no-sidebar-narrow.png"/><span>No Sidebar Narrow</span></li>
-                              </ul>',
+            'title' => __('Default Layout (Post Only)','aglee-lite'),
             'priority' => 10,
             'panel' => 'design_setting'
         )
@@ -469,7 +440,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize -> add_control(
         'layout_default_post',
         array(
-            'label' => 'Default Layout (Post Only)',
+            'label' => __('Default Layout (Post Only)','aglee-lite'),
             'section' => 'layout_default_post_section',
             'type' => 'radio',
             'choices' => array(
@@ -485,11 +456,11 @@ function aglee_lite_customizer( $wp_customize ) {
         // function to get webpage sanitize
         function webpage_sanitize_category_blog($input) {
     		$valid_keys = array(
-    			'no_sidebar_wide' => __('no_sidebar_wide', 'ap-basic'),
-    			'left_sidebar' => __('left_sidebar', 'ap-basic'),
-                'right_sidebar' => __('right_sidebar', 'ap-basic'),
-                'both_sidebar' => __('both_sidebar', 'ap-basic'),
-                'no_sidebar_narrow' => __('no_sidebar_narrow', 'ap-basic'),
+    			'no_sidebar_wide' => __('no_sidebar_wide', 'aglee-lite'),
+    			'left_sidebar' => __('left_sidebar', 'aglee-lite'),
+                'right_sidebar' => __('right_sidebar', 'aglee-lite'),
+                'both_sidebar' => __('both_sidebar', 'aglee-lite'),
+                'no_sidebar_narrow' => __('no_sidebar_narrow', 'aglee-lite'),
     			);
     		if ( array_key_exists( $input, $valid_keys)) {
     			return $input;
@@ -504,7 +475,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize->add_section(
         'footer_widget_section',
         array(
-            'title' => 'Enable/Disable (Footer Featured Widgets)',
+            'title' => __('Enable/Disable (Footer Featured Widgets)','aglee-lite'),
             'priorty' => 10,
             'panel' => 'design_setting'
         )
@@ -522,7 +493,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize->add_control(
         'footer_widget',
             array(
-                'label'=>'Show Footer Featured Widget Section',
+                'label'=>__('Show Footer Featured Widget Section','aglee-lite'),
                 'section'=>'footer_widget_section',
                 'type'=>'checkbox'
             )
@@ -533,7 +504,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize->add_section(
         'page_comment_section',
         array(
-            'title' => 'Enable/Disable (Page Comments)',
+            'title' => __('Enable/Disable (Page Comments)','aglee-lite'),
             'priorty' => 10,
             'panel' => 'design_setting'
         )
@@ -551,7 +522,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize->add_control(
         'page_comment',
             array(
-                'label'=>'Show Comments in Page',
+                'label'=>__('Show Comments in Page','aglee-lite'),
                 'section'=>'page_comment_section',
                 'type'=>'checkbox'
             )
@@ -562,7 +533,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize->add_section(
         'post_comment_section',
         array(
-            'title' => 'Enable/Disable (Post Comments)',
+            'title' => __('Enable/Disable (Post Comments)','aglee-lite'),
             'priorty' => 10,
             'panel' => 'design_setting'
         )
@@ -580,7 +551,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize->add_control(
         'post_comment',
             array(
-                'label'=>'Show Comments in Post',
+                'label'=>__('Show Comments in Post','aglee-lite'),
                 'section'=>'post_comment_section',
                 'type'=>'checkbox'
             )
@@ -597,7 +568,7 @@ function aglee_lite_customizer( $wp_customize ) {
             'priority' => 20,
             'capability' => 'edit_theme_options',
             'theme_supports' => '',
-            'title' => __( 'Slider Settings', 'textdomain' ),
+            'title' => __( 'Slider Settings', 'aglee-lite' ),
         ) 
     );
     
@@ -605,7 +576,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize->add_section(
         'slider_type',
         array(
-            'title' => 'Slider Settings',
+            'title' => __('Slider Settings','aglee-lite'),
             'priority' => 20,
             'panel' => 'slider_setting_pannel',
         )
@@ -622,7 +593,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize->add_control(
         'slider_type_choose',
         array(
-            'label' => 'Choose Slider Type',
+            'label' => __('Choose Slider Type','aglee-lite'),
             'section' => 'slider_type',
             'type' => 'radio',
             'choices' => array(
@@ -649,9 +620,9 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize->add_section(
         'slider_page_choose_section',
         array(
-            'title' => 'Slider Selection(Posts)',
+            'title' => __('Slider Selection(Posts)','aglee-lite'),
             'priority' => 20,
-            'description' => 'Enable single post as slider in slider setting section.',
+            'description' => __('Enable single post as slider in slider setting section.','aglee-lite'),
             'panel' => 'slider_setting_pannel',
         )
     );
@@ -664,7 +635,7 @@ function aglee_lite_customizer( $wp_customize ) {
     );
     $wp_customize->add_control( new Post_Dropdown( $wp_customize, 'slider_one',
         array(
-            'label' => 'Choose Slider 1',
+            'label' => __('Choose Slider 1','aglee-lite'),
             'section' => 'slider_page_choose_section',
             'type' => 'select',
         )
@@ -678,7 +649,7 @@ function aglee_lite_customizer( $wp_customize ) {
     );
     $wp_customize->add_control( new Post_Dropdown( $wp_customize, 'slider_two',
         array(
-            'label' => 'Choose Slider 2',
+            'label' => __('Choose Slider 2','aglee-lite'),
             'section' => 'slider_page_choose_section',
             'type' => 'select',
         )
@@ -692,7 +663,7 @@ function aglee_lite_customizer( $wp_customize ) {
     );
     $wp_customize->add_control( new Post_Dropdown( $wp_customize, 'slider_three',
         array(
-            'label' => 'Choose Slider 3',
+            'label' => __('Choose Slider 3','aglee-lite'),
             'section' => 'slider_page_choose_section',
             'type' => 'select',
         )
@@ -706,7 +677,7 @@ function aglee_lite_customizer( $wp_customize ) {
     );
     $wp_customize->add_control( new Post_Dropdown( $wp_customize, 'slider_four',
         array(
-            'label' => 'Choose Slider 4',
+            'label' => __('Choose Slider 4','aglee-lite'),
             'section' => 'slider_page_choose_section',
             'type' => 'select',
         )
@@ -716,9 +687,9 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize->add_section(
         'slider_category_choose_section',
         array(
-            'title' => 'Slider Selection(Category)',
+            'title' => __('Slider Selection(Category)','aglee-lite'),
             'priority' => 20,
-            'description' => 'Enable category as slider in slider setting section.',
+            'description' => __('Enable category as slider in slider setting section.','aglee-lite'),
             'panel' => 'slider_setting_pannel',
         )
     );
@@ -743,7 +714,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize->add_section(
         'slider_show_option',
         array(
-            'title' => 'Show Slider',
+            'title' => __('Show Slider','aglee-lite'),
             'priorty' => 20,
             'panel' => 'slider_setting_pannel'
         )
@@ -761,7 +732,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize->add_control(
         'slider_setting',
             array(
-                'label'=>'Show Slider',
+                'label'=>__('Show Slider','aglee-lite'),
                 'section'=>'slider_show_option',
                 'type'=>'checkbox'
             )
@@ -773,7 +744,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize -> add_section(
         'slider_show_post_section',
         array(
-            'title' => 'Enable/Disable slider (Post Page)',
+            'title' => __('Enable/Disable slider (Post Page)','aglee-lite'),
             'priority' => 30,
             'panel' => 'slider_setting_pannel'
         )
@@ -791,7 +762,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize -> add_control(
         'slider_show_post',
         array(
-            'label' => 'Enable Slider in Post',
+            'label' => __('Enable Slider in Post','aglee-lite'),
             'section' => 'slider_show_post_section',
             'type' =>'checkbox',
         )
@@ -801,7 +772,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize -> add_section(
         'slider_mode_section',
         array(
-            'title' => 'Slider Mode',
+            'title' => __('Slider Mode','aglee-lite'),
             'priority' => 30,
             'panel' => 'slider_setting_pannel'
         )
@@ -820,8 +791,8 @@ function aglee_lite_customizer( $wp_customize ) {
     
         function aglee_lite_san_slidermode ($input){
         		$valid_keys = array(
-        			'horizontal' => __('horizontal', 'ap-basic'),
-        			'fade' => __('fade', 'ap-basic'),
+        			'horizontal' => __('horizontal', 'aglee-lite'),
+        			'fade' => __('fade', 'aglee-lite'),
         			);
         		if ( array_key_exists( $input, $valid_keys)) {
         			return $input;
@@ -832,7 +803,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize -> add_control(
         'slider_mode_setting',
         array(
-            'label' => 'Slider Mode',
+            'label' => __('Slider Mode','aglee-lite'),
             'section' => 'slider_mode_section',
             'type' => 'radio',
             'choices' => array(
@@ -847,7 +818,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize->add_section(
         'homeslider_readmore_show_option',
         array(
-            'title' => 'Readmore Display Option',
+            'title' => __('Readmore Display Option','aglee-lite'),
             'priorty' => 20,
             'panel' => 'slider_setting_pannel'
         )
@@ -865,7 +836,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize->add_control(
         'readmore_slider_setting',
             array(
-                'label'=>'Click To Hide Readmore In Slider',
+                'label'=>__('Click To Hide Readmore In Slider','aglee-lite'),
                 'section'=>'homeslider_readmore_show_option',
                 'type'=>'checkbox'
             )
@@ -879,7 +850,7 @@ function aglee_lite_customizer( $wp_customize ) {
             'priority' => 20,
             'capability' => 'edit_theme_options',
             'theme_supports' => '',
-            'title' => __('Testimonial Slider', 'textdomain')
+            'title' => __('Testimonial Slider', 'aglee-lite')
         )
        ); 
     
@@ -887,9 +858,9 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize->add_section(
         'testimonial_category_choose_section',
         array(
-            'title' => 'Slider Selection(Category)',
+            'title' => __('Slider Selection(Category)','aglee-lite'),
             'priority' => 20,
-            'description' => 'Choose Category for testimonial slider',
+            'description' => __('Choose Category for testimonial slider','aglee-lite'),
             'panel' => 'testimonial_select_panel',
         )
     );
@@ -919,14 +890,14 @@ function aglee_lite_customizer( $wp_customize ) {
             'priority' => 20,
             'capability' => 'edit_theme_options',
             'theme_supports' => '',
-            'title' => __( 'Blog Page Option', 'textdomain' ),
+            'title' => __( 'Blog Page Option', 'aglee-lite' ),
         ) 
       );
       
       $wp_customize -> add_section(
         'blog_category_select_section',
         array(
-            'title' => 'Choose Category To Use As Blog',
+            'title' => __('Choose Category To Use As Blog','aglee-lite'),
             'priority' => 30,
             'panel' => 'blogpage_setting_pannel'
         )        
@@ -952,7 +923,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize -> add_section(
         'blog_post_layout_section',
         array(
-            'title' => 'Blog Post Display Layout',
+            'title' => __('Blog Post Display Layout','aglee-lite'),
             'description' => '',
             'priority' => 10,
             'panel' => 'blogpage_setting_pannel'
@@ -971,7 +942,7 @@ function aglee_lite_customizer( $wp_customize ) {
     $wp_customize -> add_control(
         'blog_post_layout',
         array(
-            'label' => 'Blog Posts Display Layout',
+            'label' => __('Blog Posts Display Layout','aglee-lite'),
             'section' => 'blog_post_layout_section',
             'type' => 'radio',
             'choices' => array(
@@ -987,10 +958,10 @@ function aglee_lite_customizer( $wp_customize ) {
         // function to get webpage sanitize
         function webpage_sanitize_blog_layout($input) {
     		$valid_keys = array(
-    			'blog_image_large' => __('blog_image_large', 'ap-basic'),
-    			'blog_image_medium' => __('blog_image_medium', 'ap-basic'),
-                'blog_image_alternate_medium' => __('blog_image_alternate_medium', 'ap-basic'),
-                'blog_full_content' => __('blog_full_content', 'ap-basic')
+    			'blog_image_large' => __('blog_image_large', 'aglee-lite'),
+    			'blog_image_medium' => __('blog_image_medium', 'aglee-lite'),
+                'blog_image_alternate_medium' => __('blog_image_alternate_medium', 'aglee-lite'),
+                'blog_full_content' => __('blog_full_content', 'aglee-lite')
     			);
     		if ( array_key_exists( $input, $valid_keys)) {
     			return $input;
@@ -1009,14 +980,14 @@ function aglee_lite_customizer( $wp_customize ) {
             'priority' => 20,
             'capability' => 'edit_theme_options',
             'theme_supports' => '',
-            'title' => __( 'Translations', 'textdomain' ),
+            'title' => __( 'Translations', 'aglee-lite' ),
         ) 
       );
       
       $wp_customize -> add_section(
         'home_page_translation_section',
         array(
-            'title' => 'Home Page',
+            'title' => __('Home Page','aglee-lite'),
             'priority' => 30,
             'panel' => 'translation_setting_pannel'
         )
@@ -1032,7 +1003,7 @@ function aglee_lite_customizer( $wp_customize ) {
       $wp_customize -> add_control(
         'home_page_translation',
         array(
-            'label' => 'Read More... (Features)',
+            'label' => __('Read More... (Features)','aglee-lite'),
             'section' => 'home_page_translation_section',
             'type' => 'text'
         )
@@ -1049,7 +1020,7 @@ function aglee_lite_customizer( $wp_customize ) {
       $wp_customize -> add_control(
         'home_page_moreinfo',
         array(
-            'label' => 'More Info... (Services)',
+            'label' => __('More Info... (Services)','aglee-lite'),
             'section' => 'home_page_translation_section',
             'type' => 'text'
         )
@@ -1059,7 +1030,7 @@ function aglee_lite_customizer( $wp_customize ) {
       $wp_customize -> add_section(
         'blog_page_translation_section',
         array(
-            'title' => 'Blog/Archive',
+            'title' => __('Blog/Archive','aglee-lite'),
             'priority' => 30,
             'panel' => 'translation_setting_pannel'
         )
@@ -1075,7 +1046,7 @@ function aglee_lite_customizer( $wp_customize ) {
       $wp_customize -> add_control(
         'blog_page_translation',
         array(
-            'label' => 'Read More... ',
+            'label' => __('Read More... ','aglee-lite'),
             'section' => 'blog_page_translation_section',
             'type' => 'text'
         )
@@ -1085,7 +1056,7 @@ function aglee_lite_customizer( $wp_customize ) {
       $wp_customize -> add_section(
         'single_post_page_section',
         array(
-            'title' => 'Single Post Page',
+            'title' => __('Single Post Page','aglee-lite'),
             'priority' => 30,
             'panel' => 'translation_setting_pannel'
         )
@@ -1109,7 +1080,7 @@ function aglee_lite_customizer( $wp_customize ) {
       $wp_customize -> add_control(
         'tagged_post_page',
         array(
-            'label' => 'Tagged',
+            'label' => __('Tagged','aglee-lite'),
             'section' => 'single_post_page_section',
             'type' => 'text'
         )
@@ -1126,7 +1097,7 @@ function aglee_lite_customizer( $wp_customize ) {
       $wp_customize -> add_control(
         'postedon_post_page',
         array(
-            'label' => 'Posted On .. by ..',
+            'label' => __('Posted On .. by ..','aglee-lite'),
             'section' => 'single_post_page_section',
             'type' => 'text'
         )
@@ -1161,7 +1132,7 @@ function aglee_lite_customizer( $wp_customize ) {
       $wp_customize -> add_control(
         'in_post_page',
         array(
-            'label' => 'Posted In',
+            'label' => __('Posted In','aglee-lite'),
             'section' => 'single_post_page_section',
             'type' => 'text'
         )
@@ -1171,7 +1142,7 @@ function aglee_lite_customizer( $wp_customize ) {
       $wp_customize -> add_section(
         'search_page_section',
         array(
-            'title' => 'Search Page',
+            'title' => __('Search Page','aglee-lite'),
             'priority' => 30,
             'panel' => 'translation_setting_pannel'
         )
@@ -1187,112 +1158,11 @@ function aglee_lite_customizer( $wp_customize ) {
       $wp_customize -> add_control(
         'search_page_setting',
         array(
-            'label' => 'Search Results For',
+            'label' => __('Search Results For','aglee-lite'),
             'section' => 'search_page_section',
             'type' => 'text'
         )
       );
-      
-      
-      /*
-      $wp_customize -> add_panel( 
-        'about_aglee_lite',
-         array(
-            'priority' => 20,
-            'capability' => 'edit_theme_options',
-            'theme_supports' => '',
-            'title' => __( 'About Aglee Lite', 'textdomain' ),
-        ) 
-      );
-      
-    $wp_customize->add_section(
-        'about_us_section',
-        array(
-            'title' => 'KNOW MORE ABOUT 8 Degree Themes',
-            'description' => '<p>Aglee Lite - is a FREE WordPress theme by <a href="http://8degreethemes.com/" target="_blank">8 Degree Themes</a> - Developed by a tem of Wordpress Developers - has developed more than 350 WordPress websites for its clients.
-            We want to give "a little beautiful thing" - back to the community.
-            With our experience, we are creating "Aglee Lite", a free WordPress theme, which includes the most useful features for a generic business website!</p>
-            <p>For documentation, <a href="">click here</a></p>
-            <p>For Video tutorials, <a href="">click here</a></p>
-            ',
-            'priority' => 1000,
-            'panel' => 'about_aglee_lite'
-        )
-    ); 
-    
-    $wp_customize->add_setting(
-        'about_us',
-        array(
-            'default' => '',
-            'sanitize_callback' => 'sanitize_text'
-            )
-    );
-    
-    $wp_customize->add_control(
-        'about_us',
-        array(
-            'section' => 'about_us_section',
-            'type' => 'select',
-        )
-    );
-    
-    
-    $wp_customize->add_section(
-        'about_other_product_section',
-        array(
-            'title' => 'Our other Products',
-            'description' => '<p>Themes - <a href="https://8degreethemes.com/" target="_blank">https://8degreethemes.com/</a></p>
-                              <p>Plugins - <a href="https://8degreethemes.com/" target="_blank">https://8degreethemes.com/</a></p>',
-            'priority' => 1000,
-            'panel' => 'about_aglee_lite'
-        )
-    ); 
-    
-    $wp_customize->add_setting(
-        'about_other_products',
-        array(
-            'default' => '',
-            'sanitize_callback' => 'sanitize_text'
-            )
-    );
-    
-    $wp_customize->add_control(
-        'about_other_products',
-        array(
-            'section' => 'about_other_product_section',
-            'type' => 'select',
-        )
-    );
-    
-    $wp_customize->add_section(
-        'about_get_in_touch_section',
-        array(
-            'title' => 'Get In Touch',
-            'description' => '<p>If you have any question/feedback regarding theme, please post in our forum <br/></br>
-                                Forum:<a href="https://8degreethemes.com/support/" target="_blank">https://8degreethemes.com/support/</a> 
-                                </p>
-                                <p>For Queries Regading Themes <br/>Support: <a href="support@8degreethemes.com" href="_blank">support@8degreethemes.com</a></p>',
-            'priority' => 1000,
-            'panel' => 'about_aglee_lite'
-        )
-    ); 
-    
-    $wp_customize->add_setting(
-        'about_get_in',
-        array(
-            'default' => '',
-            'sanitize_callback' => 'sanitize_text'
-            )
-    );
-    
-    $wp_customize->add_control(
-        'about_get_in',
-        array(
-            'section' => 'about_get_in_touch_section',
-            'type' => 'select',
-        )
-    );       
-    */
     
     //General dropdown sanitize for integer value
     function aglee_sanitize_dropdown_general( $input ) {

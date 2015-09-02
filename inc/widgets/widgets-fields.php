@@ -180,15 +180,15 @@ function aglee_lite_widgets_show_widget_field( $instance = '', $widget_field = '
             }
             $output .= '<div class="sub-option widget-upload">';
             $output .= '<label for="' . $instance->get_field_id($aglee_widgets_name) . '">' . $aglee_widgets_title . '</label><br/>';
-            $output .= '<input id="' . $id . '" class="upload' . $class . '" type="text" name="' . $name . '" value="' . $value . '" placeholder="' . __('No file chosen', 'agleelite-basic') . '" />' . "\n";
+            $output .= '<input id="' . $id . '" class="upload' . $class . '" type="text" name="' . $name . '" value="' . $value . '" placeholder="' . __('No file chosen', 'aglee-lite') . '" />' . "\n";
             if (function_exists('wp_enqueue_media')) {
                 //if (( $value == '')) {
-                    $output .= '<input id="upload-' . $id . '" class="upload-button button" type="button" value="' . __('Upload', 'agleelite-basic') . '" />' . "\n";
+                    $output .= '<input id="upload-' . $id . '" class="upload-button button" type="button" value="' . __('Upload', 'aglee-lite') . '" />' . "\n";
                 //} else {
-                //   $output .= '<input id="remove-' . $id . '" class="remove-file button" type="button" value="' . __('Remove', 'agleelite-basic') . '" />' . "\n";
+                //   $output .= '<input id="remove-' . $id . '" class="remove-file button" type="button" value="' . __('Remove', 'aglee-lite') . '" />' . "\n";
                 //}
             } else {
-                $output .= '<p><i>' . __('Upgrade your version of WordPress for full media support.', 'agleelite-basic') . '</i></p>';
+                $output .= '<p><i>' . __('Upgrade your version of WordPress for full media support.', 'aglee-lite') . '</i></p>';
             }
 
             $output .= '<div class="screenshot team-thumb" id="' . $id . '-image">' . "\n";
@@ -211,7 +211,7 @@ function aglee_lite_widgets_show_widget_field( $instance = '', $widget_field = '
                     $output .= '';
 
                     // Standard generic output if it's not an image.
-                    $title = __('View File', 'textdomain');
+                    $title = __('View File', 'aglee-lite');
                     $output .= '<div class="no-image"><span class="file_link"><a href="' . $value . '" target="_blank" rel="external">' . $title . '</a></span></div>';
                 }
             }
