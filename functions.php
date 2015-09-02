@@ -619,3 +619,4 @@ if( is_super_admin() && !is_plugin_active('wp-custom-post-template/wp-custom-pos
    add_action( 'admin_notices', 'require_plugin_notice' );
    add_action('admin_init', 'hide_plugin_notice');
 }
+

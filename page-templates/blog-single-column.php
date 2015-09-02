@@ -12,11 +12,7 @@ get_header(); ?>
 		
 		<?php
 		 $limit = get_option('posts_per_page');
-		 if(is_home()){
-	       $paged = (get_query_var('page')) ? get_query_var('page') : 1;
-	     }else{
-		   $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-	     }
+	     $paged = (get_query_var('page')) ? get_query_var('page') : 1;
 	     query_posts('post_type=post&posts_per_page='.$limit.'&paged='.$paged);
 		?>
 		
