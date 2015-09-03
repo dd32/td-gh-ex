@@ -34,7 +34,6 @@
         <?php
             /**
              * Top menu section
-             * 
              */ 
             if( has_nav_menu( 'top_menu' ) || has_nav_menu( 'top_menu_right' ) ){
                 $top_menu_class = 'has_menu'; 
@@ -43,7 +42,13 @@
             }
         ?>
         <div class="top-menu-wrapper <?php echo esc_attr( $top_menu_class ); ?> clearfix">
-            <div class="apmag-container">   
+            <div class="apmag-container">
+            <?php 
+                $apmag_date_option = of_get_option( 'header_current_date_option', '' );
+                if( empty( $apmag_date_option ) && $apmag_date_option != '1' ) {
+            ?>
+            <div class="current-date"><?php echo date('l, F j, Y'); ?></div>
+            <?php } ?>
             <?php if ( has_nav_menu( 'top_menu' ) ) { ?>   
                 <nav id="top-navigation" class="top-main-navigation" role="navigation">
                             <button class="menu-toggle hide" aria-controls="menu" aria-expanded="false"><?php _e( 'Top Menu', 'accesspress-mag' ); ?></button>
@@ -60,12 +65,8 @@
         </div><!-- .top-menu-wrapper -->
         
         <?php 
-            /**
-             * News Ticker section 
-             */
-             if( $accesspress_mag_ticker_option == '1' ){
-                accesspress_mag_ticker();
-             }
+             // News Ticker section
+             if( $accesspress_mag_ticker_option == '1' ){ accesspress_mag_ticker(); }
         ?>
             
         <div class="logo-ad-wrapper clearfix">

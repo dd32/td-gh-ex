@@ -11,13 +11,13 @@
 	</div><!-- #content -->
     
 	<?php
-        $accesspress_mag_show_footer_switch = of_get_option( 'footer_switch', 1 );
+        $accesspress_mag_show_footer_switch = of_get_option( 'footer_switch', '1' );
         $accesspress_mag_footer_layout = of_get_option( 'footer_layout' );
-        $accesspress_mag_sub_footer_switch = of_get_option( 'sub_footer_switch', 1 );
+        $accesspress_mag_sub_footer_switch = of_get_option( 'sub_footer_switch', '1' );
         $accesspress_mag_copyright_text = of_get_option( 'mag_footer_copyright' );
-        $accesspress_mag_copyright_symbol = of_get_option( 'copyright_symbol' );
+        $accesspress_mag_copyright_symbol = of_get_option( 'copyright_symbol', '1' );
         $trans_top = of_get_option( 'top_arrow', 'Top' );
-        $trans_copyright = of_get_option( 'trans_copyright', 'Copyright' );
+        if( empty( $trans_top ) ) { $trans_top = __( 'Top', 'accesspress-mag' ); }
     ?>
     
     <?php do_action( 'accesspress_mag_before_footer' ); ?>
@@ -25,7 +25,7 @@
     <footer id="colophon" class="site-footer" role="contentinfo">
     
         <?php 
-            if($accesspress_mag_show_footer_switch!='0'){
+            if( $accesspress_mag_show_footer_switch != '0' ){
             if ( is_active_sidebar( 'accesspress-mag-footer-1' ) ||  is_active_sidebar( 'accesspress-mag-footer-2' )  || is_active_sidebar( 'accesspress-mag-footer-3' ) || is_active_sidebar( 'accesspress-mag-footer-4' )  ) : ?>
 			<div class="top-footer footer-<?php echo esc_attr($accesspress_mag_footer_layout); ?>">
     			<div class="apmag-container">
@@ -62,7 +62,7 @@
             <?php if( $accesspress_mag_sub_footer_switch == 1 ){ ?>
         		<div class="site-info">
                     <?php if( $accesspress_mag_copyright_symbol == 1 ){ ?>
-                        <span class="copyright-symbol"><?php echo esc_attr( $trans_copyright ) ; ?> &copy; <?php echo date( 'Y' ) ?></span>
+                        <span class="copyright-symbol"> &copy; <?php echo date( 'Y' ) ?></span>
                     <?php } ?> 
                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
                     <?php
@@ -76,7 +76,7 @@
                 <div class="ak-info">
                     <?php _e( 'Powered by ', 'accesspress-mag' );  ?><a href="<?php echo esc_url( __( 'http://wordpress.org/', 'accesspress-mag' ) ); ?>"><?php _e( 'WordPress', 'accesspress-mag' ); ?> </a>
                     <?php _e( '| Theme: ' );?>
-                    <a title="AccessPress Themes" href="<?php echo esc_url( 'http://accesspressthemes.com', 'accesspress-mag' ); ?>">AccessPress Mag</a>
+                    <a title="AccessPress Themes" href="<?php echo esc_url( 'http://accesspressthemes.com', 'accesspress-mag' ); ?>"><?php _e( 'AccessPress Mag', 'accesspress-mag' ); ?></a>
                 </div>
              <?php if ( ( has_nav_menu( 'footer_menu' ) ) && ( $accesspress_mag_sub_footer_switch == 1 ) ) { ?>      
                 <div class="subfooter-menu">

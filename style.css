@@ -4,7 +4,7 @@ Theme URI: http://accesspressthemes.com/accesspress-mag/
 Author: AccessPress Theme
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Mag is clean & modern WordPress magazine theme. It is ideal for newspaper, editorial, online magazine, blog or personal website. It is a cutting-edge, feature-rich FREE WordPress theme and is fully-responsive. Its feature includes: 2 post layout, news ticker, sticky menu, author block, large featured images for page/post, social media integration for wider social reach. Demo: http://demo.accesspressthemes.com/accesspress-mag/ Support forum: https://accesspressthemes.com/support/ 
-Version: 2.1.0
+Version: 2.1.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: accesspress-mag
@@ -1055,6 +1055,7 @@ body.boxed-layout {
 
 #top-navigation {
     float: left;
+        margin-top: 3px;
 }
 
 #top-right-navigation {
@@ -1118,7 +1119,7 @@ body.boxed-layout {
 #top-right-navigation .menu li a:hover,
 #top-right-navigation .menu li.current-menu-item > a,
 #top-right-navigation .menu li.current-menu-ancestor > a {
-    color: #cccccc;
+    color: #fff;
 }
 
 #top-navigation ul.sub-menu,
@@ -1196,7 +1197,10 @@ body.boxed-layout {
 #footer-navigation ul.sub-menu li.current-menu-ancestor {
     border-bottom: 1px solid #dc3522;
 }
+ 
 
+.current-date{   float: left;
+    margin-right: 30px;     color: #fff;}
 .is-sticky{
     z-index: 999999;
 }
@@ -1222,6 +1226,8 @@ body.boxed-layout {
     top: 100%;
     left:0;
     width: 200px;
+    z-index: 999;
+    background-color: #fff;
 }
 
 #site-navigation .menu ul li:hover > ul.children,
@@ -1682,8 +1688,9 @@ body.boxed-layout {
 
 .big_slide {
     float: left;
-    width: 768px;
+    width: 765px;
     position: relative;
+    margin-right: 3px;
 }
 
 .big_slide:after,

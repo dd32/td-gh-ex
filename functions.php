@@ -196,4 +196,4 @@ require get_template_directory() . '/inc/accesspress-plugin-activation.php';
  */
 require get_template_directory() . '/inc/accesspress-tgmpa.php';
 
-define('OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri(). '/inc/option-framework/');
+define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri(). '/inc/option-framework/' );

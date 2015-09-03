@@ -37,6 +37,42 @@ function the_posts_navigation() {
 }
 endif;
 
+if ( ! function_exists( 'accesspress_mag_posts_navigation' ) ) :
+/**
+ * Display navigation to next/previous set of posts when applicable.
+ *
+ * @todo Remove this function when WordPress 4.3 is released.
+ */
+function accesspress_mag_posts_navigation() {
+	// Don't print empty markup if there's only one page.
+	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
+		return;
+	}
+	?>
+	<nav class="navigation posts-navigation clearfix" role="navigation">
+		<h2 class="screen-reader-text"><?php _e( 'Posts navigation', 'accesspress-mag' ); ?></h2>
+		<div class="nav-links">
+
+			<?php 
+                if ( get_next_posts_link() ) :
+                $older_text = of_get_option( 'trans_older_posts', 'Older Posts' );
+            ?>
+			<div class="nav-previous"><?php next_posts_link( $older_text ); ?></div>
+			<?php endif; ?>
+
+			<?php 
+                if ( get_previous_posts_link() ) :
+                $newer_text = $older_text = of_get_option( 'trans_newer_posts', 'Newer posts' );; 
+            ?>
+			<div class="nav-next"><?php previous_posts_link( $newer_text ); ?></div>
+			<?php endif; ?>
+
+		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	<?php
+}
+endif;
+
 if ( ! function_exists( 'accesspress_mag_post_navigation' ) ) :
 /**
  * Display navigation to next/previous post when applicable.
@@ -44,9 +80,9 @@ if ( ! function_exists( 'accesspress_mag_post_navigation' ) ) :
  * @todo Remove this function when WordPress 4.3 is released.
  */
 function accesspress_mag_post_navigation() {
-    $trans_next = of_get_option( 'trans_next_article' );
+    $trans_next = of_get_option( 'trans_next_article', 'Next article' );
     if( empty( $trans_next ) ){ $trans_next = __( 'Next article', 'accesspress-mag' ); }
-    $trans_prev = of_get_option( 'trans_previous_article' );
+    $trans_prev = of_get_option( 'trans_previous_article', 'Previous article' );
     if( empty( $trans_prev ) ){ $trans_prev = __( 'Previous article', 'accesspress-mag' ) ; }
 	// Don't print empty markup if there's nowhere to navigate.
 	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
@@ -120,7 +156,7 @@ if ( ! function_exists( 'accesspress_mag_entry_footer' ) ) :
  */
 function accesspress_mag_entry_footer() {
     if('post'==get_post_type() && !is_tag() ){
-        $trans_tagged = of_get_option( 'trans_tagged' );
+        $trans_tagged = of_get_option( 'trans_tagged', 'Tagged' );
         $accesspress_mag_show_tags = of_get_option('show_tags_post');
          if($accesspress_mag_show_tags!='0'){
             /* translators: used between list items, there is a space after the comma */

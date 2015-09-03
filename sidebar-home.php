@@ -4,14 +4,19 @@
  *
  * @package AccessPress Mag
  */
+ 
 $accesspress_mag_theme_option = get_option( 'accesspress-mag-theme' );
-$sidebar_bottom_ad = of_get_option('value_sidebar_bottom_ad'); 
-$trans_ads = of_get_option( 'trans_advertisement' );
+
+$trans_ads = of_get_option( 'trans_advertisement', 'Advertisement' );
 if( empty( $trans_ads ) ){ $trans_ads = __( 'Advertisement', 'accesspress-mag' ); }
+
 $trans_editor = of_get_option( 'trans_editor_picks' );
 if( empty( $trans_editor ) ){ $trans_editor = __( "Editor Pick's", "accesspress-mag" ); }
-$page_sidebar = get_post_meta( $post -> ID, 'accesspress_mag_page_sidebar_layout', true);
+
+$page_sidebar = get_post_meta( $post->ID, 'accesspress_mag_page_sidebar_layout', true);
+
 ?>
+
 <div id="secondary-<?php if( empty( $page_sidebar ) && ( $accesspress_mag_theme_option == '' ) ){ echo 'right-sidebar';}else{ echo $page_sidebar; } ?>" class="widget-area" role="complementary">
     <div id="secondary" class="secondary-wrapper">
         <?php if ( is_active_sidebar( 'accesspress-mag-home-top-sidebar' )) : ?>
@@ -47,12 +52,12 @@ $page_sidebar = get_post_meta( $post -> ID, 'accesspress_mag_page_sidebar_layout
             <?php
                 echo '<div class="sidebar-posts-wrapper">';
                 $editor_args = array(
-                                'category_name'=>$editor_cat,
-                                'post_status'=>'pubish',
-                                'posts_per_page'=>$editor_posts_per_page,
-                                'order'=>'DESC'
+                                'category_name' => $editor_cat,
+                                'post_status' => 'pubish',
+                                'posts_per_page' => $editor_posts_per_page,
+                                'order' => 'DESC'
                                 );
-                $editor_query = new WP_Query($editor_args);
+                $editor_query = new WP_Query( $editor_args );
                 $e_counter = 0;
                 $total_posts_editor = $editor_query->found_posts;
                 if($editor_query->have_posts()){

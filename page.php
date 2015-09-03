@@ -16,8 +16,8 @@ get_header(); ?>
 
 	<div class="apmag-container">
         <?php 
-            $accesspress_mag_show_breadcrumbs = of_get_option('show_hide_breadcrumbs');
-                if ((function_exists('accesspress_mag_breadcrumbs') && $accesspress_mag_show_breadcrumbs == 1)) {
+            $accesspress_mag_show_breadcrumbs = of_get_option( 'show_hide_breadcrumbs', '1' );
+                if ( !empty( $accesspress_mag_show_breadcrumbs ) && $accesspress_mag_show_breadcrumbs == 1 ) {
     				    accesspress_mag_breadcrumbs();
                     }
         ?>
@@ -42,10 +42,10 @@ get_header(); ?>
 
 <?php
 $page_sidebar = 'right-sidebar'; 
-$page_sidebar = get_post_meta( $post -> ID, 'accesspress_mag_page_sidebar_layout', true);
-    if($page_sidebar!='no-sidebar'){
-        $option_value = explode('-',$page_sidebar); 
-        get_sidebar($option_value[0]);
+$page_sidebar = get_post_meta( $post -> ID, 'accesspress_mag_page_sidebar_layout', true );
+    if( $page_sidebar != 'no-sidebar' ){
+        $option_value = explode('-',$page_sidebar ); 
+        get_sidebar( $option_value[0] );
     } 
 ?>
 </div>

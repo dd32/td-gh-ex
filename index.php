@@ -35,7 +35,7 @@ get_header();
 
 			<?php endwhile; ?>
 
-			<?php the_posts_navigation(); ?>
+			<?php accesspress_mag_posts_navigation(); ?>
 
 		<?php else : ?>
 

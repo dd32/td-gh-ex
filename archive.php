@@ -13,8 +13,8 @@ get_header(); ?>
 
 <div class="apmag-container">
     <?php   
-        $accesspress_mag_show_breadcrumbs = of_get_option('show_hide_breadcrumbs');
-        if ((function_exists('accesspress_mag_breadcrumbs') && $accesspress_mag_show_breadcrumbs == 1)) {
+        $accesspress_mag_show_breadcrumbs = of_get_option( 'show_hide_breadcrumbs', '1' );
+        if ( !empty( $accesspress_mag_show_breadcrumbs ) && $accesspress_mag_show_breadcrumbs == 1 ) {
 			    accesspress_mag_breadcrumbs();
             }
     ?>
@@ -43,7 +43,7 @@ get_header(); ?>
 
 			<?php endwhile; wp_reset_query(); ?>
 
-			<?php the_posts_navigation(); ?>
+			<?php accesspress_mag_posts_navigation(); ?>
 
 		<?php else : ?>
 

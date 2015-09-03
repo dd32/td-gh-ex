@@ -8,10 +8,10 @@
 get_header(); 
 global $post;
 wp_reset_postdata();
-$accesspress_mag_show_breadcrumbs = of_get_option( 'show_hide_breadcrumbs' );
+$accesspress_mag_show_breadcrumbs = of_get_option( 'show_hide_breadcrumbs', '1' );
 $post_template_value = of_get_option( 'global_post_template', 'single' );
-$accesspress_mag_post_template = get_post_meta( $post -> ID, 'accesspress_mag_post_template_layout', true );
-if($accesspress_mag_post_template == 'global-template'){
+$accesspress_mag_post_template = get_post_meta( $post->ID, 'accesspress_mag_post_template_layout', true );
+if( $accesspress_mag_post_template == 'global-template' ){
     $content_value = $post_template_value;
 } else {
     $content_value = $accesspress_mag_post_template;
@@ -21,7 +21,7 @@ do_action( 'accesspress_mag_before_body_content' );
 ?>
 <div class="apmag-container">
     <?php
-        if ( (function_exists( 'accesspress_mag_breadcrumbs' ) && $accesspress_mag_show_breadcrumbs == 1 ) ) {
+        if ( !empty( $accesspress_mag_show_breadcrumbs ) && $accesspress_mag_show_breadcrumbs == '1' ) {
     	    accesspress_mag_breadcrumbs();
         }
     ?>
@@ -53,18 +53,18 @@ do_action( 'accesspress_mag_before_body_content' );
             <?php endif ;?>
 
 			<?php 
-                $show_post_navigation = of_get_option( 'show_post_nextprev' );
-                if($show_post_navigation!='0'){ accesspress_mag_post_navigation(); }
-             ?>
-
-			<?php
+                $show_post_navigation = of_get_option( 'show_post_nextprev', '1' );
+                if( $show_post_navigation == '1' ) { 
+                    accesspress_mag_post_navigation();
+                }
+                
                 // If comments are open or we have at least one comment, load up the comment template
 				if ( comments_open() || get_comments_number() ) :
 					comments_template();
 				endif;
-			?>
-            
-            <?php accesspress_mag_setPostViews(get_the_ID()); ?>
+                
+                accesspress_mag_setPostViews( get_the_ID() ); 
+            ?>
 
 		<?php endwhile; // end of the loop. ?>
 

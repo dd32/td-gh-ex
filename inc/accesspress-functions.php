@@ -30,15 +30,6 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	add_action( 'wp_head', 'accesspress_mag_render_title' );
 endif;
 
-function accesspress_mag_header_scripts(){
-    
-    $accesspress_mag_favicon = of_get_option('favicon_upload');
-    if (!empty($accesspress_mag_favicon)) {
-        echo "<link type='image/png' rel='icon'  href='" . esc_url( $accesspress_mag_favicon ) . "'>";
-    }
-}
-
-add_action('wp_head', 'accesspress_mag_header_scripts');
 /*---------------------------------------------------------------------------------------------------------------------------------------*/
 /**
  * Enqueue custom admin panel JS
@@ -278,7 +269,7 @@ function accesspress_mag_function_script(){
 
         /*--------------For news ticker----------------*/
 
-            <?php if ( of_get_option( 'news_ticker_option', '1' ) == 1 ) {  ?>
+            <?php if ( of_get_option( 'news_ticker_option', '1' ) == '1' ) {  ?>
             $('#apmag-news').ticker({
                 speed: 0.10,
                 feedType: 'xml',
@@ -559,13 +550,15 @@ if( ! function_exists( 'accesspress_mag_breadcrumbs' ) ):
 function accesspress_mag_breadcrumbs() {
   wp_reset_postdata();
   global $post;
-  $trans_here = of_get_option( 'trans_you_are_here' );
+  $trans_here = of_get_option( 'trans_you_are_here', 'You are here' );
   if( empty( $trans_here ) ){ $trans_here = __( 'You are here', 'accesspress-mag' ); }
-  $trans_home = of_get_option( 'trans_home' );
+  
+  $trans_home = of_get_option( 'trans_home', 'Home' );
   if( empty( $trans_home ) ){ $trans_home = __( 'Home', 'accesspress-mag' ); }
-  $trans_search = of_get_option( '' );
-  //if( empty() )
-
+  
+  $search_result_text = of_get_option( 'trans_search_results_for', 'Search Results for' );
+  if( empty( $search_result_text ) ) { $search_result_text = __( 'Search Results for ', 'accesspress-mag' ); }
+  
     $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
     $delimiter = '<span class="bread_arrow"> > </span>'; // delimiter between crumbs
     $home = $trans_home; // text for the 'Home' link
@@ -594,7 +587,7 @@ function accesspress_mag_breadcrumbs() {
       echo $before .  single_cat_title('', false) . $after;
   
     } elseif ( is_search() ) {
-      echo $before . __( "Search results for", "accesspress-mag" ).' "' . get_search_query() . '"' . $after;
+      echo $before . $search_result_text.' "' . get_search_query() . '"' . $after;
   
     } elseif ( is_day() ) {
       echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
@@ -765,7 +758,6 @@ function change_post_style_meta() {
     $get_theme_option = get_option( 'accesspress-mag-theme' );
     if( !empty( $get_theme_option ) ) {
         if( !array_key_exists( 'post_meta_flag', $get_theme_option ) ){
-            if( $get_theme_option['post_meta_flag'] != 1 ){
                 $all_posts = get_posts( array( 'posts_per_page' => -1 ) );
                 foreach( $all_posts as $single_post ) {
                     $post_meta_value = get_post_meta( $single_post->ID, 'accesspress_mag_post_template_layout', true );
@@ -780,7 +772,6 @@ function change_post_style_meta() {
                 }
                 $get_theme_option['post_meta_flag'] = 1;
                 update_option( 'accesspress-mag-theme', $get_theme_option );
-            }
         }
     }
 }

@@ -29,48 +29,48 @@ get_header();
 		<main id="main" class="site-main" role="main">
               <section class="first-block wow fadeInUp clearfix" data-wow-delay="0.5s">
                     <?php 
-                        $block1_cat = of_get_option('featured_block_1');
-                        if(!empty( $block1_cat )):
-                                $posts_for_block1 = of_get_option('posts_for_block1');                                
-                                $category_info = get_category_by_slug($block1_cat);
+                        $block1_cat = of_get_option( 'featured_block_1' );
+                        if( !empty( $block1_cat ) ):
+                                $posts_for_block1 = of_get_option( 'posts_for_block1' );                                
+                                $category_info = get_category_by_slug( $block1_cat );
                                 echo '<div class="first-block-wrapper">';
-                                echo '<h3 class="block-cat-name"> <span> '.esc_attr($category_info->name).'</span></h3>';                            
+                                echo '<h3 class="block-cat-name"> <span> '.esc_attr( $category_info->name ).'</span></h3>';                            
                                 echo '<div class="block-post-wrapper clearfix">';
                                 $block1_args = array(
-                                                    'category_name'=>$block1_cat,
-                                                    'post_status'=>'publish',
-                                                    'posts_per_page'=>$posts_for_block1,
-                                                    'order'=>'DESC'
+                                                    'category_name' => $block1_cat,
+                                                    'post_status' => 'publish',
+                                                    'posts_per_page' => $posts_for_block1,
+                                                    'order' => 'DESC'
                                                     );
-                            $block1_query = new WP_Query($block1_args);
+                            $block1_query = new WP_Query( $block1_args );
                             $b_counter = 0;
                             $total_posts_block1 = $block1_query->found_posts;
-                            if($block1_query->have_posts()){
-                                while($block1_query->have_posts()){
+                            if( $block1_query->have_posts() ){
+                                while( $block1_query->have_posts() ){
                                     $b_counter++;
                                     $block1_query->the_post();
                                     $b1_image_id = get_post_thumbnail_id();
-                                    $b1_big_image_path = wp_get_attachment_image_src($b1_image_id,'accesspress-mag-block-big-thumb',true);
-                                    $b1_small_image_path = wp_get_attachment_image_src($b1_image_id,'accesspress-mag-block-small-thumb',true);
-                                    $b1_image_alt = get_post_meta($b1_image_id,'_wp_attachment_image_alt',true);
+                                    $b1_big_image_path = wp_get_attachment_image_src( $b1_image_id, 'accesspress-mag-block-big-thumb', true );
+                                    $b1_small_image_path = wp_get_attachment_image_src( $b1_image_id, 'accesspress-mag-block-small-thumb', true );
+                                    $b1_image_alt = get_post_meta( $b1_image_id, '_wp_attachment_image_alt', true );
                     ?>
-                        <?php if($b_counter==1){echo '<div class="toppost-wrapper">';} if($b_counter> 2 && $b_counter==3){echo '<div class="bottompost-wrapper">';}?>
+                        <?php if( $b_counter==1 ){echo '<div class="toppost-wrapper">';} if( $b_counter > 2 && $b_counter==3 ){ echo '<div class="bottompost-wrapper">'; }?>
                         <div class="single_post clearfix <?php if($b_counter <= 2){echo 'top-post non-zoomin';}?>">
                             <?php if(has_post_thumbnail()): ?>   
-                                <div class="post-image"><a href="<?php the_permalink();?>"><img src="<?php if($b_counter <=2){echo esc_url( $b1_big_image_path[0] );}else{ echo esc_url( $b1_small_image_path[0] ) ;}?>" alt="<?php echo esc_attr($b1_image_alt);?>" /></a>
-                                    <?php if($b_counter<=2):?> <a class="big-image-overlay" href="<?php the_permalink();?>"><i class="fa fa-external-link"></i></a><?php endif ;?>
+                                <div class="post-image"><a href="<?php the_permalink();?>"><img src="<?php if( $b_counter <= 2 ){echo esc_url( $b1_big_image_path[0] );}else{ echo esc_url( $b1_small_image_path[0] ) ;}?>" alt="<?php echo esc_attr($b1_image_alt);?>" /></a>
+                                    <?php if( $b_counter <= 2 ):?> <a class="big-image-overlay" href="<?php the_permalink();?>"><i class="fa fa-external-link"></i></a><?php endif ;?>
                                 </div>                                
                             <?php endif ; ?>
                                 <div class="post-desc-wrapper">
                                     <h3 class="post-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
                                     <div class="block-poston"><?php do_action('accesspress_mag_home_posted_on');?></div>
                                 </div>
-                                <?php if($b_counter <=2 ):?><div class="post-content"><?php echo '<p>'. accesspress_mag_word_count( get_the_content(), 25 ) .'</p>' ;?></div><?php endif ;?>
+                                <?php if( $b_counter <= 2 ):?><div class="post-content"><?php echo '<p>'. accesspress_mag_word_count( get_the_content(), 25 ) .'</p>' ;?></div><?php endif ;?>
                         </div>
                         <?php 
-                            if($b_counter%2==0){echo '<div class="clearfix"></div>';}
-                            if($b_counter >2 && $b_counter==$total_posts_block1){echo '</div>';}
-                            if($b_counter==2){echo '</div>';}
+                            if( $b_counter %2 == 0 ){ echo '<div class="clearfix"></div>'; }
+                            if( $b_counter > 2 && $b_counter == $total_posts_block1 ){ echo '</div>'; }
+                            if( $b_counter ==2 ){ echo '</div>'; }
                         ?>
                     <?php
                                 }

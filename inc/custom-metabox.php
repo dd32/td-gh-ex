@@ -5,7 +5,7 @@
  * @package AccessPress Mag
  */
  
-add_action('add_meta_boxes', 'accesspress_mag_add_sidebar_layout_box'); 
+add_action( 'add_meta_boxes', 'accesspress_mag_add_sidebar_layout_box' ); 
  
 function accesspress_mag_add_sidebar_layout_box()
 {

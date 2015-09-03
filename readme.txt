@@ -66,6 +66,12 @@ GPL compatible for own images
 
 ----------------------------------------------------
 == Changelog ==
+Version 2.1.1
+ * Added Current date at top header section.
+ * Fixed bugs on auto update meta value of post's sidebar.
+ * Complied translation fields
+ * Create new fucntion (accesspress_mag_posts_navigation) in template-tags file
+
 Version 2.1.0
  * Fixed about setting of archive template and remove unused file.
  * Change code about post layout.

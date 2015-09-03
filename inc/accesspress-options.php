@@ -68,12 +68,17 @@ function optionsframework_options() {
     
     //Traslations Array
     $translation_name = array(
-                            __( "You are here", "accesspess-mag" ),__( "Editor Pick`s", "accesspess-mag" ),__( "Home", "accesspess-mag" ),__( "Review overview", "accesspess-mag" ),__( "Summary", "accesspess-mag" ),
-                            __( "Search results for", "accesspess-mag" ),__( "Tagged", "accesspess-mag" ),__( "Next article", "accesspess-mag" ),__( "Previous article", "accesspess-mag" ),__( "Via", "accesspess-mag" ),__( "Source", "accesspess-mag" ),__( "Advertisement", "accesspress-mag" ),__( "Top arrow", "accesspress-mag" ),
-                            __( "Copyright", "accesspress-mag" )
-                            );
+                        __( "You are here", "accesspess-mag" ),__( "Editor Pick's", "accesspess-mag" ),__( "Home", "accesspess-mag" ),__( "Search results for", "accesspess-mag" ),
+                        __( "Tagged", "accesspess-mag" ),__( "Next article", "accesspess-mag" ),__( "Previous article", "accesspess-mag" ),__( "Older Posts", "accesspess-mag" ),__( "Newer Posts", "accesspess-mag" ),
+                        __( "Advertisement", "accesspress-mag" ),__( "Search", "accesspress-mag" ),__( "Search Placeholder", "accesspress-mag" ),__( "Top arrow", "accesspress-mag" )
+                        );
+    $translation_std = array(
+            	        __( "You are here", "accesspess-mag" ),__( "Editor Pick's", "accesspess-mag" ),__( "Home", "accesspess-mag" ),__( "Search Results for", "accesspess-mag" ),
+            	        __( "Tagged", "accesspess-mag" ),__( "Next article", "accesspess-mag" ),__( "Previous article", "accesspess-mag" ),__( "Older Posts", "accesspess-mag" ),__( "Newer Posts", "accesspess-mag" ),
+                        __( "Advertisement", "accesspress-mag" ),__( "Search", "accesspress-mag" ),__( "Search Content...", "accesspress-mag" ),__( "Top", "accesspress-mag" )
+            	        );
     $translation_id = array(
-                            'you_are_here','editor_picks','home','review_overview','summary','search_results_for','tagged','next_article','previous_article','via','source','advertisement','top_arrow','copyright'
+                            'you_are_here','editor_picks','home','search_results_for','tagged','next_article','previous_article','older_posts','newer_posts','advertisement','search_button','search_placeholder','top_arrow'
                             );
     $trans_count = count($translation_id);
 
@@ -168,6 +173,12 @@ function optionsframework_options() {
             'type' => 'switch'
             );
     $options[] = array(
+            'name' => __( 'Disable Current Date', 'accesspress-mag' ),                
+            'desc' => __( 'Checked to disable current date at top menu.', 'accesspress-mag' ),
+            'id' => 'header_current_date_option',
+            'type' => 'checkbox'
+            );
+    $options[] = array(
             'type' => 'groupend'
             );
     /*--------------Logo Setting-------------------*/
@@ -185,11 +196,9 @@ function optionsframework_options() {
 
      $options[] = array(
             'name' => __( 'Favicon', 'accesspress-mag' ),
-            'desc' => __( 'Upload a favicon image (Standard size of the favicon is 16 x 16px)', 'accesspress-mag' ),
+            'desc' => sprintf(__( 'Go to <a href="%s" target="_blank">customize page</a> to add Site Icon', 'accesspress-mag' ), esc_url(admin_url('/customize.php'))),
             'id' => 'favicon_upload',
-            'class' =>'sub-option',
-            'std' => '',
-            'type' => 'upload', 
+            'type' => 'info', 
             ); 
     
     $options[] = array(
@@ -784,8 +793,8 @@ function optionsframework_options() {
      {
         $options[] = array(
             'name' => $translation_name[$i],
-            'desc' => __( '', 'accesspress-mag' ),
             'id' => 'trans_'.$translation_id[$i],
+            'std' => $translation_std[$i],
             'type' => 'text', 
             );
      }       

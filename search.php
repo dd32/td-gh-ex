@@ -11,10 +11,14 @@ get_header(); ?>
 
 <div class="apmag-container">
      <?php   
-        $accesspress_mag_show_breadcrumbs = of_get_option('show_hide_breadcrumbs');
-        if ((function_exists('accesspress_mag_breadcrumbs') && $accesspress_mag_show_breadcrumbs == 1)) {
-			    accesspress_mag_breadcrumbs();
-            }
+        $accesspress_mag_show_breadcrumbs = of_get_option( 'show_hide_breadcrumbs', '1' );
+        if( !empty( $accesspress_mag_show_breadcrumbs ) && $accesspress_mag_show_breadcrumbs == '1' ) {
+            accesspress_mag_breadcrumbs();
+        }
+        $search_result_text = of_get_option( 'trans_search_results_for', 'Search Results for' );
+        if( empty( $search_result_text ) ) {
+            $search_result_text = __( 'Search Results for ', 'accesspress-mag' );
+        }
     ?>
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -22,7 +26,7 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title"><span><?php printf( __( 'Search Results for: %s', 'accesspress-mag' ), '</span><span>' . get_search_query() . '</span>' ); ?></h1>
+				<h1 class="page-title"><span><?php printf( $search_result_text.__( ': %s', 'accesspress-mag' ), '</span><span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>
@@ -39,7 +43,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php the_posts_navigation(); ?>
+			<?php accesspress_mag_posts_navigation(); ?>
 
 		<?php else : ?>
 
