@@ -35,7 +35,6 @@ function puro_theme_settings(){
 		'choose' => __('Choose Image', 'puro'),
 		'update' => __('Set Logo', 'puro'),
 		'description' => __('A double sized version of your logo for use on high pixel density displays. Must be used in addition to standard logo.', 'puro'),
-		'teaser-image' => get_template_directory_uri().'/upgrade/teasers/retina-logo.png',
 	) );
 
 	siteorigin_settings_add_field('header', 'center_logo', 'checkbox', __('Center Logo', 'puro'), array(
@@ -147,7 +146,6 @@ function puro_theme_settings(){
 		'description' => __( 'Display an Edit link below post content. Visible if a user is logged in and allowed to edit the content. Also applies to Pages.', 'puro' )
 	) );	
 
-
 	// Comments
 	siteorigin_settings_add_field('comments', 'comment_form_tags', 'checkbox', __('Comment Form Allowed Tags', 'puro'), array(
 		'description' => __('Display the explanatory text below the comment form that lets users know which HTML tags may be used.', 'puro')
@@ -161,12 +159,12 @@ function puro_theme_settings(){
 	// Social 
 	siteorigin_settings_add_teaser('social', 'share_post', __('Post Sharing', 'puro'), array(
 		'description' => __('Show icons to share your posts on Facebook, Twitter, Google+ and LinkedIn.', 'puro'),
-		'teaser-image' => get_template_directory_uri().'/upgrade/teasers/share.png',
+		'teaser-image' => get_template_directory_uri().'/upgrade/teasers/social-sharing.png',
 	));
 
 	siteorigin_settings_add_teaser('social', 'twitter', __('Twitter Handle', 'puro'), array(
 		'description' => __('This handle will be recommended after a user shares one of your posts.', 'puro'),
-		'teaser-image' => get_template_directory_uri().'/upgrade/teasers/share-rec.png',
+		'teaser-image' => get_template_directory_uri().'/upgrade/teasers/twitter-share-handle.png',
 	));	
 
 	// Footer

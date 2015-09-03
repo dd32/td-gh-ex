@@ -7,7 +7,7 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.0.7' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.0.7.1' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://updates.purothemes.com' ); 
 
 if( file_exists( get_template_directory() . '/premium/functions.php' ) ){
@@ -78,7 +78,7 @@ function puro_setup() {
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+	 * @link https://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
 
@@ -135,7 +135,7 @@ add_action( 'after_setup_theme', 'puro_setup' );
 /**
  * Register widget area.
  *
- * @link http://codex.wordpress.org/Function_Reference/register_sidebar
+ * @link https://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function puro_widgets_init() {
 	register_sidebar( array(
@@ -168,7 +168,7 @@ function puro_scripts() {
 
 	wp_enqueue_style( 'puro-style', get_stylesheet_uri(), array(), SITEORIGIN_THEME_VERSION );
 
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/font-awesome/css/font-awesome.min.css', array(), '4.2.0' );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/font-awesome/css/font-awesome.min.css', array(), '4.3.0' );
 
 	wp_enqueue_script( 'puro-main' , get_template_directory_uri().'/js/jquery.theme-main' . $js_suffix . '.js', array('jquery'), SITEORIGIN_THEME_VERSION, $in_footer );
 
@@ -192,8 +192,8 @@ add_action( 'wp_enqueue_scripts', 'puro_scripts' );
  * @return mixed
  */
 function puro_comment_form_defaults( $defaults ) {
-	if ( ! siteorigin_setting( 'comments_comment_form_tags' )) {
-		$defaults['comment_notes_after'] = null;
+	if ( siteorigin_setting( 'comments_comment_form_tags' ) ) {
+		$defaults['comment_notes_after'] = '<p class="form-allowed-tags">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', 'puro' ), ' <code>' . allowed_tags() . '</code>' ) . '</p>';	
 	}
 	
 	return $defaults;

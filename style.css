@@ -4,7 +4,7 @@ Author: Puro
 Author URI: http://purothemes.com/
 Theme URI: http://purothemes.com/themes/puro/
 Description: A content focussed minimalist theme, perfect for your blog, portfolio or small business site. We've closely integrated SiteOrigin's Page Builder for responsive layouts and Meta Slider for smooth, easy to build sliders. Puro is responsive, Retina ready and fully compatible with Jetpack, Contact Form 7, Gravity Forms and WP PageNavi. Included is a .rtl CSS file for right to left languages. For assistance, check out our <a href="http://purothemes.com/documentation/">theme documentation</a> (http://purothemes.com/documentation/) or ask a question on our <a href="http://purothemes.com/support/">support forum</a> (http://purothemes.com/support/).
-Version: 1.0.7
+Version: 1.0.7.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: puro
@@ -1057,6 +1057,9 @@ a:hover, a:focus, a:active {
 }
 .social-links-menu ul li a[href*="wordpress.com"]:before {
   content: "\f19a";
+}
+.social-links-menu ul li a[href*="xing"]:before {
+  content: "\f168";
 }
 .social-links-menu ul li a[href*="youtube.com"]:before {
   content: "\f167";

@@ -33,7 +33,7 @@ function puro_settings_tour($tour){
 	$tour[] = array(
 		'title' => __( 'Enable Post Sharing', 'puro' ),
 		'content' => __( 'Toggle this setting to quickly add Facebook, Twitter and Google Plus sharing buttons below your single post content. ', 'puro' ),
-		'image' => get_template_directory_uri() . '/tour/steps/social-sharing-icons.png',
+		'image' => get_template_directory_uri() . '/tour/steps/social-sharing.png',
 		'setting' => 'social_share_post',
 	);
 
@@ -47,7 +47,7 @@ function puro_settings_tour($tour){
 	$tour[] = array(
 		'title' => __( 'Additional Settings', 'puro' ),
 		'content' => __( 'Puro has many additional settings not covered in this brief tour. Head to Appearance > Theme Settings to check them out.', 'puro' ),
-		'image' => get_template_directory_uri() . '/tour/steps/additional-settings.png',
+		'image' => get_template_directory_uri() . '/tour/steps/more-settings.png',
 	);	
 
 	if( !defined('SITEORIGIN_IS_PREMIUM') ) {

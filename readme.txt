@@ -4,7 +4,7 @@ Contributors: Misplon
 Tags: custom-menu, featured-images, fluid-layout, full-width-template, two-columns, gray, green, light, one-column, post-formats, responsive-layout, right-sidebar, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, white
 
 Requires at least: 4.1
-Tested up to: 4.2.3
+Tested up to: 4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,7 +34,7 @@ A content focussed minimalist theme, perfect for your blog, portfolio or small b
 
 1. Puro makes use of a social icon menu system managed from Appearance > Menus. Icons are rendered by the [Font Awesome library](http://fontawesome.io/icons/). Navigate to Appearance > Menus and click the "create a new menu" link. Choose a name for your menu and click the blue "Save Menu" button. Next look at the left column and locate the “Custom Links” tab, open it and add your first network. For example if we were adding a Twitter icon for Puro Themes we'd add the following to the URL field: https://twitter.com/purothemes
 
-2.The URL should be a link to your profile page on one of the support networks above. The Link Text can be anything you'd like, it won't be displayed on the front end of your site.
+2. The URL should be a link to your profile page on one of the supported networks below. The Link Text can be anything you'd like, it won't be displayed on the front end of your site.
 
 3. Once you've added your networks, scroll down to the bottom of the page and locate the Theme Locations sub-heading under the Menu Settings heading. Locate the social icon menu location ( Social Network Icon Menu) and select it. Lastly, click the "Save Menu" button again.
 
@@ -65,6 +65,7 @@ Available icons:
 * Vk
 * Weibo
 * WordPress.com
+* Xing
 * YouTube
 
 Un-supported networks will be represented by a generic share icon.
@@ -99,11 +100,18 @@ This theme makes use of the SiteOrigin Extras Framework contained in the folder 
 
 == Changelog ==
 
+= 1.0.7.1 =
+* Reduced size of teaser images.
+* Updated WordPress Codex links from http to https.
+* Updated Font Awesome version.
+* Added Xing icon to social menus.
+* Introduced allowed tags to below the comment form. WP 4.3 removes this default. Since Puro has had this as a setting since 1.0 we'll maintain it.
+
 = 1.0.7 =
 * Added theme settings for Archive Post Content and Post Excerpt Length.
 * Fixed page navigation visibility problem when responsive layout enabled.
-* Standardised handles for Font Awesome and FitVids.
-* Removed Sass elements. If you require the Sass files for this theme please don't hesitate to get in touch via [Support](http://purothemes.com/support/forum/puro/).
+* Standardised handles for Font Awesome and FitVids. For more please see [WP Standard Handles](https://github.com/grappler/wp-standard-handles).
+* Removed Sass elements. If you require the Sass files for Puro, please, don't hesitate to get in touch via [support](http://purothemes.com/support/forum/puro/).
 * Premium: Fixed text color setting bug in Firefox and IE.
 * Premium: Fixed enqueue issue with responsive navigation. 
 

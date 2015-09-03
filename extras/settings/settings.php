@@ -462,7 +462,7 @@ function siteorigin_settings_field( $args ) {
 				<em></em>
 				<?php printf( __( 'Only available in <strong>%s</strong> - <strong class="upgrade">Upgrade Now</strong>', 'puro' ), apply_filters('siteorigin_premium_theme_name', ucfirst($theme) . ' ' . __( 'Premium', 'puro' ) ) ) ?>
 				<?php if(!empty($args['teaser-image'])) : ?>
-					<div class="teaser-image"><img src="<?php echo esc_url($args['teaser-image']) ?>" width="300" height="225" /><div class="pointer"></div></div>
+					<div class="teaser-image"><img src="<?php echo esc_url($args['teaser-image']) ?>" width="220" height="120" /><div class="pointer"></div></div>
 				<?php endif; ?>
 			</a>
 			<?php

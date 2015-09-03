@@ -20,22 +20,15 @@ function puro_premium_upgrade_content($content){
 	);
 
 	$content['features'][] = array(
+		'heading' => __("Retina Logo", 'puro'),
+		'content' => __("Puro Premium allows you to upload an additional, double-sized logo, to be displayed on Apple Retina displays only.", 'puro'),
+	);
+
+	$content['features'][] = array(
 		'heading' => __("Responsive Menu", 'puro'),
 		'content' => __("Improve your site's mobile experience with Puro's responsive menu. On smaller screens your menu will be neatly packed away. Clicking the three bar menu icon to the right of your logo will drop your menu down, revealing it's links. Each menu item has enough padding to ensure mobile users can easily touch the correct item.", 'puro'),
 		'image' => get_template_directory_uri().'/upgrade/teasers/responsive-menu.png',
-	);
-
-	$content['features'][] = array(
-		'heading' => __('Remove Attribution Links', 'puro'),
-		'content' => __('Puro Premium gives you the option to remove the "Puro WordPress Theme" text from your Footer without editing any code.', 'puro'),
-		'image' => get_template_directory_uri().'/upgrade/teasers/attribution.png',
-	);
-
-	$content['features'][] = array(
-		'heading' => __("Retina Logo", 'puro'),
-		'content' => __("Puro Premium allows you to upload an additional, double-sized logo, to be displayed on Apple Retina displays only.", 'puro'),
-		'image' => get_template_directory_uri().'/upgrade/teasers/retina-logo.png',
-	);
+	);	
 
 	$content['features'][] = array(
 		'heading' => __('Enhanced Customizer Integration', 'puro'),
@@ -52,13 +45,19 @@ function puro_premium_upgrade_content($content){
 	$content['features'][] = array(
 		'heading' => __("Post Sharing", 'puro'),
 		'content' => __("Add sharing icons for Facebook, Twitter, Google Plus and LinkedIn to the bottom of your posts.", 'puro'),
-		'image' => get_template_directory_uri().'/upgrade/teasers/share.png',
+		'image' => get_template_directory_uri().'/upgrade/teasers/social-sharing.png',
 	);
+
+	$content['features'][] = array(
+		'heading' => __('Remove Attribution Links', 'puro'),
+		'content' => __('Puro Premium gives you the option to remove the "Puro WordPress Theme" text from your Footer without editing any code.', 'puro'),
+		'image' => get_template_directory_uri().'/upgrade/teasers/attribution.png',
+	);	
 
 	$content['features'][] = array(
 		'heading' => __("Continued Updates", 'puro'),
 		'content' => __("Your premium upgrade is a valuable contribution to the future development of Puro, ensuring it's compatible with future versions of WordPress.", 'puro'),
-		'image' => get_template_directory_uri().'/upgrade/teasers/continued-updates.png',
+		'image' => get_template_directory_uri().'/upgrade/teasers/updates.png',
 	);
 
 	$content['testimonials'] = array(
