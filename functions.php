@@ -266,7 +266,7 @@ function azeria_fonts_url() {
  */
 function azeria_get_option( $name, $default = false ) {
 
-	$all_options = get_option( 'azeria' );
+	$all_options = get_theme_mod( 'azeria' );
 
 	if ( is_array( $all_options ) && isset( $all_options[$name] ) ) {
 		return $all_options[$name];
