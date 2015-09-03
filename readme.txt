@@ -5,6 +5,10 @@ Consider weblizar PRE-Fix for function-name and as a slug of the Theme Enigma.
 Enigma
 
 CHANGE-LOG:
+@Version: 1.9.7[03/09/2015]
+1. Minor bradcrumb Fix.
+2. Screen-reader Class Added. 
+
 @Version: 1.9.6[16/07/2015]
 1. Minor home page Issue Fixed.
 
