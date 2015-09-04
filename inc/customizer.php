@@ -33,33 +33,23 @@ function bbird_under_customize_register($wp_customize)
     
     $wp_customize->add_setting('copyright_textbox', array(
         'default' => 'Default copyright text',
-        'sanitize_callback' => 'sanitaze_textbox'
+        'sanitize_callback' => 'bbird_under_sanitize_text_field'
+     
     ));
     
-   
-    function sanitaze_textbox($input)
-    {
-        return wp_kses_post(force_balance_tags($input));
-    }
-    
-    
-    
+     
     $wp_customize->add_control('copyright_textbox', array(
         'section' => 'footer_section',
         'type' => 'text',
-        'sanitize_callback' => 'sanitize_text_field'
+        
         
     ));
     
     $wp_customize->add_setting('hide_copyright', array(
-              'sanitize_callback' => 'bbird_under_sanitize_checkbox'        
+         'sanitize_callback' => 'bbird_under_sanitize_checkbox'        
     ));
     
-    $wp_customize->add_control('hide_copyright', array(                
-    ));
-    
-
-    
+        
     $wp_customize->add_section('footer_widgets', array(
         'title' => 'Widget options',
         'priority' => 12,
@@ -114,8 +104,11 @@ function bbird_under_customize_register($wp_customize)
 	return ( ( isset( $checked ) && true == $checked ) ? true : false );
 }
 
-
-// Footer Styling Section Ends Here
+  
+    function bbird_under_sanitaze_textbox($input)
+    {
+        return wp_kses_post(force_balance_tags($input));}
+    
 add_action('customize_register', 'bbird_under_customize_register');
 
 /**

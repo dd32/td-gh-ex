@@ -81,26 +81,11 @@ printf( _nx( 'One Comment', '%1$s Comments', get_comments_number(), 'comments ti
         <p class="no-comments"><?php _e('Comments are closed.', 'bbird-under'); ?></p>
     <?php endif; ?>
 
- 
-        
+    
     <?php
 
-$commenter = wp_get_current_commenter();
-$req       = get_option('require_name_email');
-$aria_req  = ($req ? " aria-required='true'" : '');
-$html_req  = ($req ? " required='required'" : '');
-$html5     = 'html5';
-
-
-$fields = array(
-    'author' => '<div class="row"><div class="medium-6 columns"><p class="comment-form-author">' . '<label for="author">' . __('Name', 'bbird-under') . ($req ? ' <span class="required">*</span>' : '') . '</label> ' . '<input id="author" name="author" type="text" value="' . esc_attr($commenter['comment_author']) . '" size="30"' . $aria_req . $html_req . ' /></p></div>',
-    'email' => '<div class="medium-6 columns"><p class="comment-form-email"><label for="email">' . __('Email', 'bbird-under') . ($req ? ' <span class="required">*</span>' : '') . '</label> ' . '<input id="email" name="email" ' . ($html5 ? 'type="email"' : 'type="text"') . ' value="' . esc_attr($commenter['comment_author_email']) . '" size="30" aria-describedby="email-notes"' . $aria_req . $html_req . ' /></p></div></div>',
-    'url' => '<p class="comment-form-url"><label for="url">' . __('Website', 'bbird-under') . '</label> ' . '<input id="url" name="url" ' . ($html5 ? 'type="url"' : 'type="text"') . ' value="' . esc_attr($commenter['comment_author_url']) . '" size="30" /></p>'
-);
-comment_form(array(
-    
-    
-    'fields' => $fields,
+comment_form(array(   
+  
     'label_submit' => __('Post my Comment', 'bbird-under'),
     'title_reply' => __('Have something to say?', 'bbird-under'),
     'title_reply_to' => __('Respond to %s', 'bbird-under'),

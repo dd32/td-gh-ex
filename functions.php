@@ -150,6 +150,8 @@ function bbird_under_scripts() {
 	       
         wp_enqueue_script( 'foundation', get_template_directory_uri() . '/js/foundation.min.js', array('jquery'), '', true );
         
+        wp_enqueue_script( 'loadiframe', get_stylesheet_directory_uri() . '/js/loadiframe.js', array('jquery'));
+        
         if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -286,13 +288,14 @@ $tag = ( 'div' === $args['style'] ) ? 'div' : 'li'; ?>
                     <div class="comment-metadata">
                         <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID, $args ) ); ?>">
                             <time datetime="<?php comment_time( 'c' ); ?>">
-                                <?php printf( _x( '%1$s at %2$s', '1: date, 2: time' ), get_comment_date(), get_comment_time() ); ?>
+                                <?php printf( __( '%1$s at %2$s', '1: date, 2: time' ), get_comment_date(), get_comment_time() ); ?>
+                                
                             </time>
                         </a>
                      </div><!-- .comment-metadata -->
  
                     <?php if ( '0' == $comment->comment_approved ) : ?>
-                    <p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'bbird-under'  ); ?></p>
+                    <p class="comment-awaiting-moderation"><?php printf( __( 'Your comment is awaiting moderation.', 'bbird-under'  )); ?></p>
                     <?php endif; ?>
                 </footer><!-- .comment-meta -->
                    <div class="comment-content">
@@ -346,6 +349,28 @@ function bbird_under_register_required_plugins() {
         );
 	tgmpa( $plugins );
 }
+
+/**
+ Filtering comment form fields
+ */ 
+
+function bbird_under_comment_form_layout ($fields) {
+    
+$commenter = wp_get_current_commenter();
+$req       = get_option('require_name_email');
+$aria_req  = ($req ? " aria-required='true'" : '');
+$html_req  = ($req ? " required='required'" : '');
+$html5     = 'html5';
+
+$fields = array(
+    'author' => '<div class="row"><div class="medium-6 columns"><p class="comment-form-author">' . '<label for="author">' . __('Name', 'bbird-under') . ($req ? ' <span class="required">*</span>' : '') . '</label> ' . '<input id="author" name="author" type="text" value="' . esc_attr($commenter['comment_author']) . '" size="30"' . $aria_req . $html_req . ' /></p></div>',
+    'email' => '<div class="medium-6 columns"><p class="comment-form-email"><label for="email">' . __('Email', 'bbird-under') . ($req ? ' <span class="required">*</span>' : '') . '</label> ' . '<input id="email" name="email" ' . ($html5 ? 'type="email"' : 'type="text"') . ' value="' . esc_attr($commenter['comment_author_email']) . '" size="30" aria-describedby="email-notes"' . $aria_req . $html_req . ' /></p></div></div>',
+    'url' => '<p class="comment-form-url"><label for="url">' . __('Website', 'bbird-under') . '</label> ' . '<input id="url" name="url" ' . ($html5 ? 'type="url"' : 'type="text"') . ' value="' . esc_attr($commenter['comment_author_url']) . '" size="30" /></p>'
+);
+   return $fields;  
+   
+}
+add_filter( 'comment_form_default_fields', 'bbird_under_comment_form_layout' );
 
 
 

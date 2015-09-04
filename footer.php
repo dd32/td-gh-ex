@@ -66,7 +66,7 @@ endif;
                    
                    <div class="copyright">
                    <?php if( get_theme_mod( 'hide_copyright' ) == '') { ?>
-    <?php esc_attr_e('&copy;', 'responsive'); ?> <?php _e(date('Y')); ?><a href="<?php echo home_url('/') ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>">
+    <?php esc_attr_e('&copy;', 'responsive'); ?> <?php __(date('Y')); ?><a href="<?php echo home_url('/') ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>">
         <?php echo get_theme_mod( 'copyright_textbox', 'No copyright information has been saved yet.' ); ?>
     </a><?php } // end if ?>
                         <p> This site is powered by <a href="https://wordpress.org/">WordPress</a></p>

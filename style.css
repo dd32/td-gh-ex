@@ -4,7 +4,7 @@ Theme URI: http://bbird.me/bbird-under
 Author: Bruno Kos
 Author URI: http://bbird.me/
 Description: A simple yet nice and fully mobile responsive blogging theme, BBird Under (as the name suggests) is built on Underscores theme and Foundation framework. Includes the latest Font Awesome package. Full width page template also available.
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bbird-under
@@ -872,6 +872,51 @@ input[type="submit"] {
  display: block;
     float: none;
     border:none;
+}
+
+#infinite-handle span button
+
+{
+	  color: #FFFFFF;
+  padding: 10px 10px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+   background: #009393;
+  background: linear-gradient(top,  #00B5B5,  #009393);
+  background: -ms-linear-gradient(top,  #00B5B5,  #009393);
+  background: -webkit-gradient(linear, left top, left bottom, from(#00B5B5), to(#009393));
+  background: -moz-linear-gradient(top,  #00B5B5,  #009393);
+ display: block;
+    float: none;
+    border:none;
+}
+
+#infinite-handle span button:hover
+
+{
+	  color: #FFFFFF;
+  padding: 10px 10px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+   background: #009393;
+  background: linear-gradient(top,  #00B5B5,  #009393);
+  background: -ms-linear-gradient(top,  #00B5B5,  #009393);
+  background: -webkit-gradient(linear, left top, left bottom, from(#00B5B5), to(#009393));
+  background: -moz-linear-gradient(top,  #00B5B5,  #009393);
+ display: block;
+    float: none;
+    border:none;
+}
+
+#infinite-handle span {
+  background: #333 none repeat scroll 0 0;
+  border-radius: 1px;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0;
 }
 
 button:hover,

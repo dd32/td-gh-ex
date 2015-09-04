@@ -80,9 +80,9 @@
     
 <div id="page" class="container">    
    	<div id="content" class="row">         
-             <?php if ( get_theme_mod( 'themeslug_logo' ) ) : ?>
-    <div class='site-logo' style="background-image:<?php echo esc_url( get_theme_mod( 'themeslug_logo' ) ); ?>">
-        <a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><img src='<?php echo esc_url( get_theme_mod( 'themeslug_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></a>
+             <?php if ( get_theme_mod( 'bbird_under_logo' ) ) : ?>
+    <div class='site-logo' style="background-image:<?php echo esc_url( get_theme_mod( 'bbird_under_logo' ) ); ?>">
+        <a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><img src='<?php echo esc_url( get_theme_mod( 'bbird_under_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></a>
     </div>
 <?php else : ?>
    <!-- no image set -->
