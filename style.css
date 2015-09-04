@@ -4,7 +4,7 @@ Theme URI: http://themegrill.com/themes/freedom/
 Author: ThemeGrill
 Author URI: http://themegrill.com
 Description: Freedom is a simple, clean and responsive stylish photo blogging theme. The theme supports custom header, custom background, custom menu, widget areas and has built-in options panel to configure primary color, site logo, slider, site layout, sidebar layout, category layout and many more. Get free support at http://themegrill.com/support-forum/ and check the demo at http://demo.themegrill.com/freedom/
-Version: 1.0.4
+Version: 1.0.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: light, white, two-columns, right-sidebar, left-sidebar, fluid-layout, responsive-layout, custom-header, custom-background, custom-menu, custom-colors, sticky-post, threaded-comments, translation-ready, featured-images, theme-options
@@ -942,45 +942,45 @@ li.default-menu {
 /* =WORDPRESS GALLERY SUPPORT
 ----------------------------------------------- */
 .gallery {
-	margin: 0 auto 2em;
+	margin: 0 auto 15px;
 }
-.gallery .gallery-item {
-	float: left;
-	display: block;
-	background: #fff;
-	margin: 10px 1.5% 20px;
+.gallery-item {
+	display: inline-block;
+	padding: 15px 2%;
 	text-align: center;
+	vertical-align: top;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
-.gallery .gallery-item:hover { }
-.gallery .gallery-icon {
-	text-align: center;
-	padding: 0;
-	margin: 0;
-	overflow: hidden;
-	line-height: 0;
+.gallery-columns-3 .gallery-item,
+.gallery-columns-4 .gallery-item,
+.gallery-columns-5 .gallery-item {
+	padding: 15px 1%;
 }
-.gallery-columns-1 .gallery-item { float: none; text-align: center; width:100%; margin: 10px 0 20px; }
-.gallery-columns-2 .gallery-item { width:47%; }
-.gallery-columns-3 .gallery-item { width:30.33%; }
-.gallery-columns-4 .gallery-item { width:22%; }
-.gallery-columns-5 .gallery-item { width:17%; }
-.gallery-columns-6 .gallery-item { width:13.6%; }
-.gallery-columns-7 .gallery-item { width:12.25%; margin:10px 1% 10px; }
-.gallery-columns-8 .gallery-item { width:10.5%; margin:10px 1% 10px; }
-.gallery-columns-9 .gallery-item { width:9.11%; margin:10px 1% 10px; }
-.gallery dl a {
-	display: block;
+.gallery-columns-6 .gallery-item,
+.gallery-columns-7 .gallery-item,
+.gallery-columns-8 .gallery-item,
+.gallery-columns-9 .gallery-item {
+	padding: 10px 0.5%;
 }
-.gallery dl a img {
-	height: auto;
+.gallery-columns-2 .gallery-item { width:50%; }
+.gallery-columns-3 .gallery-item { width:33.33%; }
+.gallery-columns-4 .gallery-item { width:25%; }
+.gallery-columns-5 .gallery-item { width:20%; }
+.gallery-columns-6 .gallery-item { width:16.66%; }
+.gallery-columns-7 .gallery-item { width:14.28%; }
+.gallery-columns-8 .gallery-item { width:12.5%; }
+.gallery-columns-9 .gallery-item { width:11.11%; }
+.gallery-icon img {
 	margin: 0 auto;
 }
 .gallery .gallery-caption {
-	font-size: 20px;
+	font-size: 14px;
 	line-height: 1.2;
-	margin: 10px 0 0;
+	padding-top: 5px;
 }
-.gallery br+br { display:none; }
 
 /* =COMMENTS
 ----------------------------------------------- */
@@ -1543,6 +1543,11 @@ a#scroll-up:hover {
    text-shadow: 1px 1px 1px #000000;
 }
 
+/* Remove the updated class from entry meta */
+.posted-on .updated {
+  display: none;
+}
+
 /* =RESPONSIVE STRUCTURE
 ----------------------------------------------- */
 @media screen and (max-width: 1190px) {
@@ -1654,9 +1659,22 @@ a#scroll-up:hover {
 		margin-right: 0;
 		width: 100%;
 	}
+	.gallery-columns-4 .gallery-item,
+   .gallery-columns-5 .gallery-item,
+   .gallery-columns-6 .gallery-item,
+   .gallery-columns-7 .gallery-item,
+   .gallery-columns-8 .gallery-item,
+   .gallery-columns-9 .gallery-item {
+   	width:25%;
+   }
 }
-
-/* Remove the updated class from entry meta */
-.posted-on .updated {
-  display: none;
+@media only screen and (max-width: 420px) {
+   .gallery-columns-4 .gallery-item,
+   .gallery-columns-5 .gallery-item,
+   .gallery-columns-6 .gallery-item,
+   .gallery-columns-7 .gallery-item,
+   .gallery-columns-8 .gallery-item,
+   .gallery-columns-9 .gallery-item {
+      width:33.33%;
+   }
 }

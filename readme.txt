@@ -51,6 +51,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.0.5 =
+* WordPress default gallery alignment issue fixed. Also, responsiveness adjustment done for WordPress default gallery.
+* Text-domain name adjusted.
+
 = Version 1.0.4 =
 * Added HTML5 Markup theme support
 * Added the update class for Google Structured Data.

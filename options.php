@@ -49,7 +49,7 @@ function optionsframework_options() {
 		'id' 			=> 'freedom_show_header_logo_text',
 		'std' 		=> 'text_only',
 		'type' 		=> 'radio',
-		'options' 	=> $header_display_array 
+		'options' 	=> $header_display_array
 	);
 
 	// Header Image replace postion
@@ -150,7 +150,7 @@ function optionsframework_options() {
 		'desc' 		=> __( 'This will reflect in links, buttons and many others. Choose a color to match your site.', 'freedom' ),
 		'id' 			=> 'freedom_primary_color',
 		'std' 		=> '#46c9be',
-		'type' 		=> 'color' 
+		'type' 		=> 'color'
 	);
 
 	$options[] = array(
@@ -204,7 +204,7 @@ function optionsframework_options() {
 			'type' 	=> 'textarea'
 		);
 		$options[] = array(
-			'desc' 	=> __( 'Enter the button text.', 'spacious' ),
+			'desc' 	=> __( 'Enter the button text.', 'freedom' ),
 			'id' 		=> 'freedom_slider_button_text'.$i,
 			'std' 	=> '',
 			'type' 	=> 'text'
@@ -232,7 +232,7 @@ function freedom_options_display_sidebar() { ?>
 		<div class="metabox-holder">
 	    	<div class="postbox">
 	    		<h3><?php esc_attr_e( 'Freedom', 'freedom' ); ?></h3>
-      			<div class="inside"> 
+      			<div class="inside">
       				<div class="option-btn"><a class="btn upgrade" target="_blank" href="<?php echo esc_url( 'http://themegrill.com/themes/freedom-pro/' ); ?>"><?php esc_attr_e( 'Upgrade to Pro' , 'freedom' ); ?></a></div>
 					<div class="option-btn"><a class="btn support" target="_blank" href="<?php echo esc_url( 'http://themegrill.com/support-forum/' ); ?>"><?php esc_attr_e( 'Support Forum' , 'freedom' ); ?></a></div>
 					<div class="option-btn"><a class="btn doc" target="_blank" href="<?php echo esc_url( 'http://themegrill.com/theme-instruction/freedom/' ); ?>"><?php esc_attr_e( 'Documentation' , 'freedom' ); ?></a></div>
