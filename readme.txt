@@ -94,6 +94,8 @@ Source: http://fontawesome.io
 
 # --- EOF --- #
 ============================Change Log================================
+@version 2.2.3
+1. Change the label orange info Widget.
 @version 2.2.2
 1. Add img-responsive class in author avator image
 @version 2.2.1

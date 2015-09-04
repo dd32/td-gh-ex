@@ -6,7 +6,7 @@ Author URI: https://WordPress.org/
 Description: A responsive theme for all type of business that uses multiple nav menus, several sidebars etc etc . 
  It has a pixel-perfect design that's great for any blogger who wants a new look for their site. The theme is built using twitter bootstrap.
 Tags: orange, white, full-width-template, threaded-comments, microformats,two-columns,  right-sidebar, responsive-layout, sticky-post, custom-background, custom-menu,translation-ready
-Version: 2.2.2
+Version: 2.2.3
 License URI: https://webriti.com
 License: GNU General Public License v3 or later
 */
@@ -3283,4 +3283,34 @@ div.header-content h4 {
 
 .navbar-header h1 {
   margin-top: 0px !important;
+}
+
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
 }

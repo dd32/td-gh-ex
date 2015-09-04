@@ -23,7 +23,7 @@ register_sidebar( array(
 	) );
 //orange sidebar
 register_sidebar( array(
-		'name' => __( 'Homepage Orange Sidebar Left', 'appointment' ),
+		'name' => __( 'Left Widget Area Below Slider', 'appointment' ),
 		'id' => 'home-orange-sidebar_left',
 		'description' => __( 'Appointment Orange Sidebar Area', 'appointment' ),
 		'before_widget' => '<div class="contact-area">',
@@ -32,7 +32,7 @@ register_sidebar( array(
 		'after_title' => '</h3></div>',
 	) );
 register_sidebar( array(
-		'name' => __( 'Homepage Orange Sidebar Right', 'appointment' ),
+		'name' => __( 'Right Widget Area Below Slider', 'appointment' ),
 		'id' => 'home-orange-sidebar_right',
 		'description' => __( 'Appointment Orange Sidebar Area', 'appointment' ),
 		'before_widget' => '<div class="contact-area">',
@@ -41,7 +41,7 @@ register_sidebar( array(
 		'after_title' => '</h3></div>',
 	) );
 register_sidebar( array(
-		'name' => __( 'Homepage Orange Sidebar Center', 'appointment' ),
+		'name' => __( 'Center Widget Area Below Slider', 'appointment' ),
 		'id' => 'home-orange-sidebar_center',
 		'description' => __( 'Appointment Orange Sidebar Area', 'appointment' ),
 		'before_widget' => '<div class="contact-area">',
