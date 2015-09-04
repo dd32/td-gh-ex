@@ -42,6 +42,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.2.7 =
+* Minor Bug Fixed
+* WordPress default gallery support added.
+
 = Version 1.2.6 =
 * Removed deprecated function for WP_Widget class and used the __construct() instead as per WordPress 4.3
 
