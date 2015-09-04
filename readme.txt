@@ -64,6 +64,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.1.8 =
+* WordPress default gallery alignment issue fixed. Also, responsiveness adjustment done for WordPress default gallery.
+
 = Version 1.1.7 =
 * Added option to hide header search icon.
 * Unwanted gap removed if featured section is not used.
