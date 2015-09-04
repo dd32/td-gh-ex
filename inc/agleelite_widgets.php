@@ -5,9 +5,9 @@
  *  For Widgets
  * 
  */ 
- add_action('widgets_init','aglee_lite_additional_widgets');
+ add_action('widgets_init','agleelite_additional_widgets');
  
- function aglee_lite_additional_widgets(){
+ function agleelite_additional_widgets(){
     // Registering main right sidebar
 	register_sidebar( array(
 		'name' 				=> __( 'Right Sidebar', 'aglee-lite' ),
@@ -173,12 +173,12 @@
 		'after_title'   	=> '</span></h3>'
 	) );
     
- } // END OF AGLEE LITE REGISTER SIDEBAR FUNCTION
+ } // END OF ACCESSPRESS BASIC REGISTER SIDEBAR FUNCTION
 
 /**
- * Aglee Lite Custom Widgets
+ * AccessPress Basic Custom Widgets
  *
- * @package Aglee Lite Basic
+ * @package Accesspress Basic
  */
 
 function aglee_lite_widgets_updated_field_value( $widget_field, $new_field_value ) {
@@ -217,7 +217,7 @@ require get_template_directory() . '/inc/widgets/widgets-fields.php';
  *
  * @since Aglee Lite Widget Pack 1.0
  */
-require get_template_directory() . '/inc/widgets/widgets-testimonials.php';
+//require get_template_directory() . '/inc/widgets/widgets-testimonials.php';
 
 /**
  * Register Post Feature Posts

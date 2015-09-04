@@ -8,50 +8,60 @@
  */
  
 
- $aglee_lite_default_layout = get_theme_mod('layout_default_page');
+ $default_layout = get_theme_mod('layout_default_page');
  
- $aglee_lite_blog_display_type = get_theme_mod('blog_post_layout');
+ $blog_display_type = get_theme_mod('blog_post_layout');
  
- $aglee_lite_blog_display_class = '';
- switch($aglee_lite_blog_display_type){
+ $blog_display_class = '';
+ switch($blog_display_type){
     case 'blog_image_large' :
-        $aglee_lite_blog_display_class = 'blog-image-large';       
+        $blog_display_class = 'blog-image-large';       
         break;
     case 'blog_image_medium' :
-        $aglee_lite_blog_display_class = 'blog-image-medium';       
+        $blog_display_class = 'blog-image-medium';       
         break;
     case 'blog_image_alternate_medium' :
-        $aglee_lite_blog_display_class = 'blog-image-alternate-medium';       
+        $blog_display_class = 'blog-image-alternate-medium';       
         break;
     case 'blog_full_content' :
-        $aglee_lite_blog_display_class = 'blog-full-content';       
+        $blog_display_class = 'blog-full-content';       
         break;
  }
  
  // Dynamically Generating Classes for #primary on the basis of page layout
- $aglee_lite_content_class = '';
-    switch($aglee_lite_default_layout){
+ $content_class = '';
+    switch($default_layout){
         case 'left_sidebar':
-            $aglee_lite_content_class = 'left-sidebar';
+            $content_class = 'left-sidebar';
             break;
         case 'right_sidebar':
-            $aglee_lite_content_class = 'right-sidebar';
+            $content_class = 'right-sidebar';
             break;
         case 'both_sidebar':
-            $aglee_lite_content_class = 'both-sidebar';
+            $content_class = 'both-sidebar';
             break;
         case 'no_sidebar_wide':
-            $aglee_lite_content_class = 'no-sidebar-wide';
+            $content_class = 'no-sidebar-wide';
             break;
         case 'no_sidebar_narrow':
-            $aglee_lite_content_class = 'no-sidebar-narraow';
+            $content_class = 'no-sidebar-narraow';
             break;
     }
  
 get_header(); ?>
-	<main id="main" class="site-main <?php echo esc_attr($aglee_lite_content_class).' '.esc_attr($aglee_lite_blog_display_class); ?>" role="main">
+<?php if ( have_posts() ) : ?>
+	<header class="page-header">
+		<div class="ap-container">
+            <?php
+    			the_archive_title( '<h1 class="page-title">', '</h1>' );
+    			the_archive_description( '<div class="taxonomy-description">', '</div>' );
+    		?>
+        </div>
+	</header><!-- .page-header -->
+<?php endif; ?>
+	<main id="main" class="site-main <?php echo $content_class.' '.$blog_display_class; ?>" role="main">
         <div class="ap-container">
-        <?php if($aglee_lite_default_layout == 'both_sidebar') : ?>
+        <?php if($default_layout == 'both_sidebar') : ?>
             <div id="primary-wrap" class="clearfix">
         <?php endif; ?>
             <div id="primary" class="content-area">
@@ -77,13 +87,13 @@ get_header(); ?>
         
         		<?php endif; ?>
             </div><!-- #primary -->
-            <?php if($aglee_lite_default_layout == 'left_sidebar' || $aglee_lite_default_layout == 'both_sidebar') : ?>
+            <?php if($default_layout == 'left_sidebar' || $default_layout == 'both_sidebar') : ?>
                 <?php get_sidebar('left'); ?>
             <?php endif; ?>
-        <?php if($aglee_lite_default_layout == 'both_sidebar') : ?>
+        <?php if($default_layout == 'both_sidebar') : ?>
             </div>
         <?php endif; ?>
-        <?php if($aglee_lite_default_layout == 'right_sidebar' || $aglee_lite_default_layout == 'both_sidebar') : ?>
+        <?php if($default_layout == 'right_sidebar' || $default_layout == 'both_sidebar') : ?>
             <?php get_sidebar('right'); ?>
         <?php endif; ?>
         </div>

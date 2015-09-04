@@ -8,8 +8,8 @@
 /**
  * Adds Aglee_Lite_Preview_Post widget.
  */
-add_action( 'widgets_init', 'aglee_lite_register_contact_widget' );
-function aglee_lite_register_contact_widget() {
+add_action( 'widgets_init', 'register_contact_widget' );
+function register_contact_widget() {
     register_widget( 'aglee_lite_contact_widget' );
 }
 class Aglee_Lite_Contact_Widget extends WP_Widget {
@@ -101,7 +101,7 @@ class Aglee_Lite_Contact_Widget extends WP_Widget {
 	 * @param	array	$new_instance	Values just sent to be saved.
 	 * @param	array	$old_instance	Previously saved values from database.
 	 *
-	 * @uses	aglee_lite_widgets_updated_field_value()		defined in widget-fields.php
+	 * @uses	accesspress_pro_widgets_updated_field_value()		defined in widget-fields.php
 	 *
 	 * @return	array Updated safe values to be saved.
 	 */
@@ -131,7 +131,7 @@ class Aglee_Lite_Contact_Widget extends WP_Widget {
 	 *
 	 * @param	array $instance Previously saved values from database.
 	 *
-	 * @uses	aglee_lite_widgets_show_widget_field()		defined in widget-fields.php
+	 * @uses	accesspress_pro_widgets_show_widget_field()		defined in widget-fields.php
 	 */
 	public function form( $instance ) {
 		$widget_fields = $this->widget_fields();

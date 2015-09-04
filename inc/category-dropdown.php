@@ -6,13 +6,13 @@ if ( ! class_exists( 'WP_Customize_Control' ) )
 /**
  * A class to create a dropdown for all categories in your wordpress site
  */
- class Aglee_lite_Category_Dropdown extends WP_Customize_Control
+ class Category_Dropdown extends WP_Customize_Control
  {
-    private $aglee_lite_cats = false;
+    private $cats = false;
 
     public function __construct($manager, $id, $args = array(), $options = array())
     {
-        $this->aglee_lite_cats = get_categories($options);
+        $this->cats = get_categories($options);
 
         parent::__construct( $manager, $id, $args );
     }
@@ -24,18 +24,17 @@ if ( ! class_exists( 'WP_Customize_Control' ) )
      */
     public function render_content()
        {
-            if(!empty($this->aglee_lite_cats))
+            if(!empty($this->cats))
             {
                 ?>
                     <label>
                       <span class="customize-category-select-control"><?php echo esc_html( $this->label ); ?></span>
                       <select <?php $this->link(); ?>>
-    
-                            <option value=""><?php __('Choose Category','aglee-lite'); ?></option>
+                            <?php echo '<option value="">Choose Category</option>';?>
                            <?php
-                                foreach ( $this->aglee_lite_cats as $aglee_lite_cat )
+                                foreach ( $this->cats as $cat )
                                 {
-                                    printf('<option value="%s" %s>%s</option>', $aglee_lite_cat->term_id, selected($this->value(), $aglee_lite_cat->term_id, false), $aglee_lite_cat->name);
+                                    printf('<option value="%s" %s>%s</option>', $cat->term_id, selected($this->value(), $cat->term_id, false), $cat->name);
                                 }
                            ?>
                       </select>

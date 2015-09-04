@@ -89,7 +89,7 @@ class Aglee_Lite_Featured_Page_Widget extends WP_Widget {
                     <?php endif; ?>
                     <?php $img_src = wp_get_attachment_image_src( get_post_thumbnail_id(), 'feature-page-home', false ); ?>
                     <?php if(has_post_thumbnail()): ?>
-                        <img src="<?php echo esc_url($img_src[0]); ?>"/>
+                        <img src="<?php echo $img_src[0]; ?>"/>
                     <?php endif; ?>
                     <div class="feat-page-content">
                         <?php echo wp_trim_words(get_the_content(),12); ?>
@@ -112,7 +112,7 @@ class Aglee_Lite_Featured_Page_Widget extends WP_Widget {
 	 * @param	array	$new_instance	Values just sent to be saved.
 	 * @param	array	$old_instance	Previously saved values from database.
 	 *
-	 * @uses	aglee_lite_widgets_updated_field_value()		defined in widget-fields.php
+	 * @uses	accesspress_pro_widgets_updated_field_value()		defined in widget-fields.php
 	 *
 	 * @return	array Updated safe values to be saved.
 	 */
@@ -142,7 +142,7 @@ class Aglee_Lite_Featured_Page_Widget extends WP_Widget {
 	 *
 	 * @param	array $instance Previously saved values from database.
 	 *
-	 * @uses	aglee_lite_widgets_show_widget_field()		defined in widget-fields.php
+	 * @uses	accesspress_pro_widgets_show_widget_field()		defined in widget-fields.php
 	 */
 	public function form( $instance ) {
 		$widget_fields = $this->widget_fields();

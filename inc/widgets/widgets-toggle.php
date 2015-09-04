@@ -8,8 +8,8 @@
 /**
  * Adds aglee_lite_Preview_Post widget.
  */
-add_action( 'widgets_init', 'aglee_lite_register_toggle_widget' );
-function aglee_lite_register_toggle_widget() {
+add_action( 'widgets_init', 'register_toggle_widget' );
+function register_toggle_widget() {
     register_widget( 'aglee_lite_toggle_widget' );
 }
 class Aglee_Lite_Toggle_Widget extends WP_Widget {
@@ -77,7 +77,7 @@ class Aglee_Lite_Toggle_Widget extends WP_Widget {
         echo $before_widget;
         ?>
         <?php if(!empty($toggle_title)) : ?>
-            <div class="ap_toggle <?php echo esc_attr($toggle_status); ?>">
+            <div class="ap_toggle <?php echo $toggle_status; ?>">
                 <?php if(!empty($toggle_title)) : ?>
                     <div class="ap_toggle_title"><?php echo esc_attr($toggle_title); ?></div>           
                 <?php endif; ?>
@@ -98,7 +98,7 @@ class Aglee_Lite_Toggle_Widget extends WP_Widget {
 	 * @param	array	$new_instance	Values just sent to be saved.
 	 * @param	array	$old_instance	Previously saved values from database.
 	 *
-	 * @uses	aglee_lite_widgets_updated_field_value()		defined in widget-fields.php
+	 * @uses	accesspress_pro_widgets_updated_field_value()		defined in widget-fields.php
 	 *
 	 * @return	array Updated safe values to be saved.
 	 */
@@ -128,7 +128,7 @@ class Aglee_Lite_Toggle_Widget extends WP_Widget {
 	 *
 	 * @param	array $instance Previously saved values from database.
 	 *
-	 * @uses	aglee_lite_widgets_show_widget_field()		defined in widget-fields.php
+	 * @uses	accesspress_pro_widgets_show_widget_field()		defined in widget-fields.php
 	 */
 	public function form( $instance ) {
 		$widget_fields = $this->widget_fields();
