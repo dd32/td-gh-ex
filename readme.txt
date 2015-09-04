@@ -40,6 +40,12 @@ Azeria responsive WordPress theme is here for your reference. Clean minimalistic
 * FIX: remove functions, unnecessary from WordPress 4.3
 * FIX: follow box social icon colors
 
+= 1.0.3 =
+* UPD: provide license information for Google web fonts
+* UPD: translation files
+* FIX: rename Full Width page template according WordPress requirements
+* FIX: sanitize SQL query in azeria_post_images()
+
 == Credits ==
 
 * Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
@@ -50,3 +56,4 @@ Azeria responsive WordPress theme is here for your reference. Clean minimalistic
 * slick.js - Ken Wheeler, http://kenwheeler.github.io, licensed under MIT License (MIT)
 * other CSS and JS files licensed under GPLv2+
 * The image screenshot.png created by teFox team and licensed under GPL v2+
+* Google fonts used in theme released under the Apache License, version 2.0 and SIL Open Font License 1.1

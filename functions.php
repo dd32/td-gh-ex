@@ -218,7 +218,7 @@ function azeria_fonts_url() {
 	 * supported by Open Sans Condensed, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	$open_sans_condensed = _x( 'on', 'Libre Baskerville font: on or off', 'azeria' );
+	$open_sans_condensed = _x( 'on', 'Open Sans Condensed font: on or off', 'azeria' );
 
 	/* Translators: If there are characters in your language that are not
 	 * supported by Open Sans, translate this to 'off'. Do not translate
