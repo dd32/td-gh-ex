@@ -34,7 +34,6 @@
 	    wp_nav_menu(array(
 	        'container' => false,                           // Remove nav container
 	        'container_class' => '',                        // Class of container
-	        'menu' => '',                                   // Menu name
 	        'menu_class' => 'off-canvas-list',              // Adding custom nav class
 	        'theme_location' => 'mobile-off-canvas',        // Where it's located in the theme
 	        'before' => '',                                 // Before each link <a>
@@ -58,7 +57,6 @@
             wp_nav_menu(array(
 	        'container' => false,                           // Remove nav container
 	        'container_class' => '',                        // Class of container
-	        'menu' => '',                                   // Menu name
 	        'menu_class' => 'top-bar-menu right',           // Adding custom nav class
 	        'theme_location' => 'primary',                // Where it's located in the theme
 	        'before' => '',                                 // Before each link <a>
@@ -80,10 +78,4 @@
     
 <div id="page" class="container">    
    	<div id="content" class="row">         
-             <?php if ( get_theme_mod( 'bbird_under_logo' ) ) : ?>
-    <div class='site-logo' style="background-image:<?php echo esc_url( get_theme_mod( 'bbird_under_logo' ) ); ?>">
-        <a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><img src='<?php echo esc_url( get_theme_mod( 'bbird_under_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></a>
-    </div>
-<?php else : ?>
-   <!-- no image set -->
-<?php endif; ?>
+          

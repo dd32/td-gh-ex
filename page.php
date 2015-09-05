@@ -20,7 +20,7 @@ get_header(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
                       <?php             
                     if ( has_post_thumbnail() ) {
-                            the_post_thumbnail('page-featured-image');
+                            the_post_thumbnail();
                 } 
                 ?>
 				<?php get_template_part( 'template-parts/content', 'page' ); ?>

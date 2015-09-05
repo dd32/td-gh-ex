@@ -4,7 +4,7 @@ Theme URI: http://bbird.me/bbird-under
 Author: Bruno Kos
 Author URI: http://bbird.me/
 Description: A simple yet nice and fully mobile responsive blogging theme, BBird Under (as the name suggests) is built on Underscores theme and Foundation framework. Includes the latest Font Awesome package. Full width page template also available.
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bbird-under
@@ -40,55 +40,14 @@ BBird Under is based on Underscores http://underscores.me/, (C) 2012-2015 Automa
 1.0 Normalize
 --------------------------------------------------------------*/
 
-@font-face {
-    font-family: 'oswaldextralight';
-    src: url('fonts/oswald-extralight-webfont.eot');
-    src: url('fonts/oswald-extralight-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/oswald-extralight-webfont.woff2') format('woff2'),
-         url('fonts/oswald-extralight-webfont.woff') format('woff'),
-         url('fonts/oswald-extralight-webfont.ttf') format('truetype'),
-         url('fonts/oswald-extralight-webfont.svg#oswaldextralight') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-
-@font-face {
-    font-family: 'oswaldlight';
-    src: url('fonts/oswald-light-webfont.eot');
-    src: url('fonts/oswald-light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/oswald-light-webfont.woff2') format('woff2'),
-         url('fonts/oswald-light-webfont.woff') format('woff'),
-         url('fonts/oswald-light-webfont.ttf') format('truetype'),
-         url('fonts/oswald-light-webfont.svg#oswaldlight') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'oswalddemibold';
-    src: url('fonts/oswald-demibold-webfont.eot');
-    src: url('fonts/oswald-demibold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/oswald-demibold-webfont.woff2') format('woff2'),
-         url('fonts/oswald-demibold-webfont.woff') format('woff'),
-         url('fonts/oswald-demibold-webfont.ttf') format('truetype'),
-         url('fonts/oswald-demibold-webfont.svg#oswalddemibold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
- 
-
 html {
 	
 	}
 
 body {
 	 margin: 0 auto;
-    font-family: 'oswaldlight';
-  
+   font-family: 'Oswald', sans-serif;
+  font-weight:300;
     position: relative;
 
 }
@@ -217,7 +176,8 @@ color: rgba(255, 55, 0, 0.5);
 -ms-transition: all 200ms ease-in;
 -o-transition: all 200ms ease-in;
 transition: all 200ms ease-in;
- font-family: 'oswaldextralight';
+   font-family: 'Oswald', sans-serif;
+  font-weight:300;
   text-shadow: none !important;
   color:#000;
 }
@@ -485,7 +445,8 @@ textarea {
 	font-size: 18px;
 	
 	line-height: 1.5;
-         font-family: "oswaldlight";
+        font-family: 'Oswald', sans-serif;
+  font-weight:300;
 }
 
 h1,
@@ -495,16 +456,17 @@ h4,
 h5,
 h6 {
 	clear: both;
-           font-family: 'oswalddemibold';
+          font-family: 'Oswald', sans-serif;
+  font-weight:400;
          color: #009393;
 }
 
 #secondary h3 {
   color: #636467;
-  font-family: "oswaldlight";
+   font-family: 'Oswald', sans-serif;
+  font-weight:400;
   text-transform: uppercase;
   font-size: 21px;
-font-weight: bold;
   border-bottom: 1px dotted #222930;
   margin-bottom: 20px;
 padding-bottom: 10px;
@@ -522,8 +484,8 @@ footer.entry-footer a:visited {color: #fffcc4;}
 footer h2 {
   border-bottom: 1px dotted #fff;
   color: #fff;
-  font-family: "oswaldlight";
-  font-weight: normal;
+   font-family: 'Oswald', sans-serif;
+  font-weight:300;
   text-transform: uppercase;
 }
 
@@ -544,6 +506,7 @@ list-style: inside none disc;
 
 p {
 	margin-bottom: 15px;
+        font-weight:300;
 }
 
 a {
@@ -1071,7 +1034,8 @@ a:active {
 
 .top-bar-section ul li > a {
   color: #ffffff;
-font-family: 'oswaldlight';
+   font-family: 'Oswald', sans-serif;
+  font-weight:300;
 font-size: 16px;
 }
 
@@ -1452,10 +1416,8 @@ object {
 
 .top-bar-section .dropdown li a {
   white-space: normal;
+  font-weight: 300;
 }
-
-
-
 
 
 .row {max-width: 1200px;}

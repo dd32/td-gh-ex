@@ -32,8 +32,8 @@ function bbird_under_customize_register($wp_customize)
     
     
     $wp_customize->add_setting('copyright_textbox', array(
-        'default' => 'Default copyright text',
-        'sanitize_callback' => 'bbird_under_sanitize_text_field'
+        'sanitize_callback' => 'bbird_under_sanitize_text_field',
+        'default' => __('Default copyright text', 'bbird-under'),
      
     ));
     
@@ -41,6 +41,7 @@ function bbird_under_customize_register($wp_customize)
     $wp_customize->add_control('copyright_textbox', array(
         'section' => 'footer_section',
         'type' => 'text',
+        
         
         
     ));
