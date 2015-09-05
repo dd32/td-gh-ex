@@ -130,11 +130,20 @@ add_action( 'wp_enqueue_scripts', 'araiz_scripts' );
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
+/**
+ * Implement the Custom Footer feature.
+ */
+require get_template_directory() . '/inc/customizer-footer.php';
 
 /**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Customizer Sanitzer tags for this theme.
+ */
+require get_template_directory() . '/inc/customizer-sanitize.php';
 
 /**
  * Custom functions that act independently of the theme templates.
@@ -147,6 +156,15 @@ require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/premium.php';
+
+/**
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+if (is_admin()) {
+	require_once('inc/admin.php');
+}

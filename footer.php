@@ -14,7 +14,7 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
             <div class="container clear">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'araiz' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'araiz' ), 'WordPress' ); ?></a>
+                        <?php araiz_print_footer_info(); ?>
 		</div><!-- .site-info -->
             </div><!-- .container -->
 	</footer><!-- #colophon -->

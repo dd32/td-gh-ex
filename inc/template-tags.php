@@ -264,3 +264,31 @@ function araiz_category_transient_flusher() {
 }
 add_action( 'edit_category', 'araiz_category_transient_flusher' );
 add_action( 'save_post',     'araiz_category_transient_flusher' );
+
+
+
+/**
+ * Footer
+ */
+if ( ! function_exists( 'araiz_print_footer_info' ) ) :
+/**
+ * Prints footer information.
+ *
+ * @since 1.0.0
+ */
+function araiz_print_footer_info() {
+
+	$footer_info = '';
+
+  /**
+   * Filter to modify footer info content.
+   *
+   * @since 1.0.0
+   *
+   * @param string $footer_info Footer info content
+   */
+	$footer_info = apply_filters( 'araiz_footer_info_content', $footer_info );
+
+  echo wp_kses_post( force_balance_tags( $footer_info ) );
+}
+endif;
