@@ -131,6 +131,9 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
+@version 1.3.1
+1. Update Font-awesome Icon Folder.
+2. Added Screen Reader Class
 @version 1.2.9
 1. Removed unwanted extra white spaces.
 2. Removed webriti themes tab.

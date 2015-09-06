@@ -10,7 +10,7 @@ function rambo_scripts()
 {	if ( is_singular() ) wp_enqueue_script( "comment-reply" );
 	/*Template Color Scheme CSs*/
 	/*Font Awesome CSS*/
-	wp_enqueue_style ('rambo-font-awesome',WEBRITI_TEMPLATE_DIR_URI .'/font-awesome-4.0.0/css/font-awesome.css');	
+	wp_enqueue_style ('rambo-font-awesome',WEBRITI_TEMPLATE_DIR_URI .'/font-awesome/css/font-awesome.css');	
 		
 	wp_enqueue_style ('rambo-style-media',WEBRITI_TEMPLATE_DIR_URI .'/css/style-media.css'); //Style-Media
 	wp_enqueue_style ('rambo-bootstrap',WEBRITI_TEMPLATE_DIR_URI.'/css/bootstrap.css');		//bootstrap css
