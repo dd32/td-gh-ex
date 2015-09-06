@@ -152,7 +152,7 @@ function azeria_logo() {
 		$logo_content = get_bloginfo( 'name' );
 	}
 
-	printf( '<%1$s class="site-logo"><a class="site-logo-link" href="%2$s">%3$s</a></%1$s>', $logo_tag, home_url( '/' ), $logo_content );
+	printf( '<%1$s class="site-logo"><a class="site-logo-link" href="%2$s">%3$s</a></%1$s>', $logo_tag, esc_url( home_url( '/' ) ), $logo_content );
 
 }
 

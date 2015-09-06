@@ -46,6 +46,9 @@ Azeria responsive WordPress theme is here for your reference. Clean minimalistic
 * FIX: rename Full Width page template according WordPress requirements
 * FIX: sanitize SQL query in azeria_post_images()
 
+= 1.0.4 =
+* FIX: sanitize site URL with esc_url() in azeria_logo()
+
 == Credits ==
 
 * Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
