@@ -41,7 +41,7 @@
 	<form method="post" id="rambo_theme_options_6">
 		<?php wp_nonce_field('rambo_customization_nonce_gernalsetting','rambo_gernalsetting_nonce_customization'); ?>		
 		<div class="section">
-			<h3><?php _e('Enable Footer widgets','rambo','rambo');?></h3>
+			<h3><?php _e('Enable Footer widgets','rambo');?></h3>
 			<input type="checkbox" <?php if($current_options['footer_widgets_enabled']=='on') echo "checked='checked'"; ?> id="footer_widgets_enabled" name="footer_widgets_enabled" > <span class="explain"><?php _e('Enable Footer widgets in all pages.','rambo'); ?></span>
 		</div>					
 		<div class="section">
