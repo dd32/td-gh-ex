@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Adventurous\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-20 18:05+0545\n"
-"PO-Revision-Date: 2015-08-20 18:05+0545\n"
+"POT-Creation-Date: 2015-09-07 17:05+0545\n"
+"PO-Revision-Date: 2015-09-07 17:05+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Dinnye <pdinnye@gmail.com>\n"
 "Language: hu_HU\n"
@@ -355,7 +355,6 @@ msgstr "FourSquare"
 #: ../inc/adventurous-functions.php:755
 #: ../inc/panel/adventurous-theme-options.php:1143
 #: ../inc/panel/customizer/customizer.php:781
-#: ../inc/panel/customizer/customizer.php:871
 msgid "Flickr"
 msgstr "Flickr"
 
@@ -409,6 +408,7 @@ msgstr "Last.fm"
 
 #: ../inc/adventurous-functions.php:800
 #: ../inc/panel/adventurous-theme-options.php:1215
+#: ../inc/panel/customizer/customizer.php:871
 msgid "Instagram"
 msgstr "Instagram"
 

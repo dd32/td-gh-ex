@@ -697,7 +697,7 @@ function adventurous_customize_register( $wp_customize ) {
 			'default' 		=> $defaults['social_facebook']
 		),
 		'social_twitter' => array(
-			'id' 			=> 'social_facebook',
+			'id' 			=> 'social_twitter',
 			'title' 		=> __( 'Twitter', 'adventurous' ),
 			'description'	=> '',
 			'field_type' 	=> 'url',
@@ -868,7 +868,7 @@ function adventurous_customize_register( $wp_customize ) {
 		),
 		'social_instagram' => array(
 			'id' 			=> 'social_instagram',
-			'title' 		=> __( 'Flickr', 'adventurous' ),
+			'title' 		=> __( 'Instagram', 'adventurous' ),
 			'description'	=> '',
 			'field_type' 	=> 'url',
 			'sanitize' 		=> 'esc_url_raw',
@@ -954,7 +954,7 @@ function adventurous_customize_register( $wp_customize ) {
 			'sanitize' 		=> 'sanitize_email',
 			'panel' 		=> 'social_links',
 			'section' 		=> 'predefined_social_icons',
-			'default' 		=> $defaults['social_flickr']
+			'default' 		=> $defaults['social_email']
 		),
 		'social_contact' => array(
 			'id' 			=> 'social_contact',
@@ -1238,7 +1238,7 @@ function adventurous_customize_register( $wp_customize ) {
 			// parameters array
 			array(
 				'type'				=> 'option',
-				'sanitize_callback'	=> 'wp_kses_post;'
+				'sanitize_callback'	=> 'wp_kses_post'
 			)
 		);
 

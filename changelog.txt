@@ -1,5 +1,9 @@
 == Changelog ==
 
+Version 1.7.1
+* Bug Fixed: Renamed Flickr to Instagram
+* Big Fixed: Warning fixed on saving Featured Content
+
 Version 1.7
 * Added all theme options to customizer
 * Compatible with WordPress 4.3
