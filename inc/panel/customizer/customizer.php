@@ -754,7 +754,7 @@ function catchkathmandu_customize_register( $wp_customize ) {
 			'default' 		=> $defaults['social_facebook']
 		),
 		'social_twitter' => array(
-			'id' 			=> 'social_facebook',
+			'id' 			=> 'social_twitter',
 			'title' 		=> __( 'Twitter', 'catch-kathmandu' ),
 			'description'	=> '',
 			'field_type' 	=> 'url',
@@ -1011,7 +1011,7 @@ function catchkathmandu_customize_register( $wp_customize ) {
 			'sanitize' 		=> 'sanitize_email',
 			'panel' 		=> 'social_links',
 			'section' 		=> 'predefined_social_icons',
-			'default' 		=> $defaults['social_flickr']
+			'default' 		=> $defaults['social_email']
 		),
 		'social_contact' => array(
 			'id' 			=> 'social_contact',
@@ -1306,7 +1306,7 @@ function catchkathmandu_customize_register( $wp_customize ) {
 			// parameters array
 			array(
 				'type'				=> 'option',
-				'sanitize_callback'	=> 'wp_kses_post;'
+				'sanitize_callback'	=> 'wp_kses_post'
 			)
 		);
 
